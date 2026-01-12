@@ -1,6 +1,6 @@
 @use '~@proton/styles/scss/lib/config' as *;
-@use '~@proton/styles/scss/lib/em' as *;
 @use '~@proton/styles/scss/lib/include-media' as im;
+
 im.$breakpoints: $breakpoints-product;
 im.$media-expressions: $media-expressions;
 
@@ -10,6 +10,7 @@ im.$media-expressions: $media-expressions;
 
 .file-count {
 	inset-inline-end: 0;
+	top: -4px;
 }
 
 .conversation-header {
@@ -20,9 +21,42 @@ im.$media-expressions: $media-expressions;
 		}
 	}
 
+	.project-breadcrumb {
+		&:hover {
+			background-color: var(--background-weak);
+		}
+	}
+
 	@include im.media('<=small') {
 		.conversation-header-title-view {
 			display: none;
 		}
+	}
+
+	@media (max-width: 1024px) {
+        .hide-on-small-screens {
+            display: none;
+        }
+    }
+}
+
+.conversation-breadcrumb-mobile {
+	flex-shrink: 0;
+	background-color: var(--background-norm);
+	min-height: 44px;
+	z-index: 10;
+
+	.conversation-breadcrumb-back {
+		padding: 0;
+		color: var(--text-weak);
+
+		&:hover {
+			color: var(--text-norm);
+			background-color: transparent !important;
+		}
+	}
+
+	@include im.media('>small') {
+		display: none;
 	}
 }

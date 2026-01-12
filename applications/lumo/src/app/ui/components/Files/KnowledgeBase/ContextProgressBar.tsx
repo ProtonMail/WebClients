@@ -28,10 +28,11 @@ export const ContextProgressBar: React.FC<ContextProgressBarProps> = ({
     const allAttachments = useLumoSelector(selectAttachments);
 
     // Get all files currently available in the conversation (from all messages)
+    // Note: Project files are now retrieved via RAG, so only count what's in messages
     const allConversationFiles = React.useMemo(() => {
         const files: Attachment[] = [];
 
-        // Add all attachments from messages
+        // Add all attachments from messages (includes auto-retrieved files)
         messageChain.forEach((message) => {
             if (message.attachments) {
                 message.attachments.forEach((shallowAttachment) => {

@@ -1,0 +1,115 @@
+.selectable-conversation-list {
+	inline-size: 100%;
+	max-inline-size: 100%;
+	overflow: hidden;
+
+	.selectable-conversation-list-content {
+		overflow-y: auto;
+		block-size: 100%;
+		inline-size: 100%;
+	}
+
+	.selectable-conversation-list-header {
+		display: flex;
+		inline-size: 100%;
+		justify-content: space-between;
+		align-items: center;
+		padding-block: 0.5rem;
+		padding-inline: 0;
+	}
+
+	.selectable-conversation-select-link {
+		padding: 0;
+		font-weight: 500;
+
+		&:hover {
+			text-decoration: underline;
+		}
+
+		&:focus {
+			outline: none;
+			text-decoration: underline;
+		}
+	}
+
+	.selectable-conversation-item {
+		overflow: hidden;
+		min-inline-size: 0;
+		inline-size: 100%;
+		box-sizing: border-box;
+
+		&:hover {
+			background-color: var(--background-weak);
+			transition: background-color 0.15s ease-out;
+		}
+	}
+
+	.selectable-conversation-list-actions {
+		padding-block-end: 0.5rem;
+		border-block-end: 1px solid var(--border-weak);
+	}
+
+	.selectable-conversation-group {
+		margin-block-end: 1rem;
+		overflow: hidden;
+		inline-size: 100%;
+
+		&:last-child {
+			margin-block-end: 0;
+		}
+	}
+
+	.selectable-conversation-group-items {
+		overflow: hidden;
+		inline-size: 100%;
+	}
+
+	.selectable-conversation-group-title {
+		font-weight: 600;
+		text-transform: uppercase;
+		letter-spacing: 0.02em;
+		margin: 0;
+		padding-block: 0.5rem;
+		padding-inline: 0;
+		text-wrap: wrap;
+	}
+
+	.checkbox-container {
+		flex-shrink: 0;
+	}
+
+	.selectable-conversation-button {
+		background: none;
+		border: none;
+		padding: 0;
+		cursor: pointer;
+		min-inline-size: 0; // Allow text truncation
+		inline-size: 0; // Force flex item to use flex-grow only
+		flex: 1 1 0%;
+		overflow: hidden;
+	}
+
+	.selectable-conversation-content {
+		min-inline-size: 0; // Allow text truncation
+		inline-size: 100%;
+		overflow: hidden;
+	}
+
+	.selectable-conversation-title {
+		font-weight: 500;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		display: block;
+		inline-size: 100%;
+	}
+
+	.selectable-conversation-date {
+		margin-block-start: 0.125rem;
+	}
+}
+
+.checkbox-fakecheck,
+.radio-fakeradio {
+	border: 1px solid var(--border-weak) !important;
+}

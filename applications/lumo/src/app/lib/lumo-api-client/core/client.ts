@@ -3,7 +3,6 @@ import type { Api } from '@proton/shared/lib/interfaces';
 import type { GenerationToFrontendMessage } from '../../../types-api';
 import {
     DEFAULT_LUMO_PUB_KEY,
-    decryptContent,
     encryptTurns,
     generateRequestId,
     generateRequestKey,
@@ -11,7 +10,13 @@ import {
 } from './encryption';
 import { callEndpoint } from './network';
 import { RequestBuilder } from './request-builder';
-import { StreamProcessor } from './streaming';
+import { makeAbortTransformStream } from './transforms/abort';
+import { makeChunkParserTransformStream } from './transforms/chunks';
+import { makeContextUpdaterTransformStream } from './transforms/context';
+import { makeDecryptionTransformStream } from './transforms/decrypt';
+import { makeFinishSink } from './transforms/finish';
+import { makeSmoothingTransformStream } from './transforms/smoothing';
+import { makeUtf8DecodingTransformStream } from './transforms/utf8';
 import type {
     AssistantCallOptions,
     LumoApiClientConfig,
@@ -30,6 +35,7 @@ import type {
 // Default configuration
 const DEFAULT_CONFIG: Required<LumoApiClientConfig> = {
     enableU2LEncryption: true,
+    enableSmoothing: true,
     endpoint: '', // No custom endpoint by default
     lumoPubKey: DEFAULT_LUMO_PUB_KEY,
     externalTools: ['web_search', 'weather', 'stock', 'cryptocurrency'],
@@ -147,6 +153,7 @@ export class LumoApiClient {
             chunkCount: 0,
             totalContentLength: 0,
         };
+        const thisNotifyResponse = this.notifyResponse.bind(this);
 
         // Call server and read the streamed result
         try {
@@ -155,124 +162,25 @@ export class LumoApiClient {
                 signal,
             });
 
-            const reader = responseBody.getReader();
-            const decoder = new TextDecoder('utf-8');
-            const processor = new StreamProcessor();
+            // Run the processing stream: this is the core logic
+            await responseBody
+                .pipeThrough(makeAbortTransformStream(signal)) // deals with AbortSignal
+                .pipeThrough(makeUtf8DecodingTransformStream()) // bytes -> utf8
+                .pipeThrough(makeChunkParserTransformStream()) // utf8 -> chunk objects
+                .pipeThrough(
+                    // U2L decryption
+                    makeDecryptionTransformStream({
+                        enableU2LEncryption,
+                        requestKey,
+                        requestId,
+                    })
+                )
+                .pipeThrough(makeContextUpdaterTransformStream(responseContext)) // bookkeeping (read-only)
+                .pipeThrough(makeSmoothingTransformStream(this.config.enableSmoothing))
+                .pipeTo(makeFinishSink(thisNotifyResponse, chunkCallback, responseContext)); // calls callbacks with final chunks
 
-            while (true) {
-                // Manual signal check since API wrapper does not preserve abort signal connection to streams
-                if (signal?.aborted) {
-                    throw new DOMException('Aborted', 'AbortError');
-                }
-
-                const { done, value } = await reader.read();
-                if (done) {
-                    finalStatus = 'succeeded';
-                    break;
-                }
-                if (!value) continue;
-
-                const s = decoder.decode(value, { stream: true });
-                if (s === '') continue;
-
-                // todo: deduplicate complex logic (copy #1)
-                const parsedData = processor.processChunk(s);
-                for (const chunk of parsedData) {
-                    // Decrypt chunk content if needed
-                    let processedChunk = chunk;
-                    if (
-                        chunk.type === 'token_data' &&
-                        chunk.encrypted &&
-                        enableU2LEncryption &&
-                        requestKey &&
-                        requestId
-                    ) {
-                        try {
-                            const adString = `lumo.response.${requestId}.chunk`;
-                            const decryptedContent = await decryptContent(chunk.content, requestKey, adString);
-                            processedChunk = {
-                                ...chunk,
-                                content: decryptedContent,
-                                encrypted: false,
-                            };
-                        } catch (error) {
-                            console.error('Failed to decrypt chunk:', error);
-                            // Continue with encrypted content - let the callback handle it
-                            // FIXME I don't think it's a good idea to pass the encrypted content to the callback in
-                            //  case of error. It means we could start displaying gibberish base64 inside the Lumo UI
-                            //  instead of properly failing.
-                        }
-                    }
-
-                    // Update response context
-                    responseContext.chunkCount++;
-                    if (processedChunk.type === 'token_data') {
-                        responseContext.totalContentLength += processedChunk.content.length;
-                    }
-
-                    // Run response chunk interceptors
-                    try {
-                        processedChunk = await this.notifyResponse(processedChunk, responseContext);
-                    } catch (error: any) {
-                        // Run response error interceptors
-                        await this.notifyResponseError(error, responseContext);
-                        throw error;
-                    }
-
-                    if (chunkCallback) {
-                        const result = await chunkCallback(processedChunk);
-                        if (result && result.error) {
-                            throw result.error;
-                        }
-                    }
-                }
-            }
-
-            // Process any remaining data
-            // todo: deduplicate complex logic (copy #2)
-            const parsedData = processor.finalize();
-            for (const chunk of parsedData) {
-                // Decrypt chunk content if needed
-                let processedChunk = chunk;
-                if (chunk.type === 'token_data' && chunk.encrypted && enableU2LEncryption && requestKey && requestId) {
-                    try {
-                        const adString = `lumo.response.${requestId}.chunk`;
-                        const decryptedContent = await decryptContent(chunk.content, requestKey, adString);
-                        processedChunk = {
-                            ...chunk,
-                            content: decryptedContent,
-                            encrypted: false,
-                        };
-                    } catch (error) {
-                        console.error('Failed to decrypt chunk:', error);
-                        // Continue with encrypted content - let the callback handle it
-                    }
-                }
-
-                // Update response context
-                responseContext.chunkCount++;
-                if (processedChunk.type === 'token_data') {
-                    responseContext.totalContentLength += processedChunk.content.length;
-                }
-
-                // Run response chunk interceptors
-                try {
-                    processedChunk = await this.notifyResponse(processedChunk, responseContext);
-                } catch (error: any) {
-                    // Run response error interceptors
-                    await this.notifyResponseError(error, responseContext);
-                    throw error;
-                }
-
-                if (chunkCallback) {
-                    const result = await chunkCallback(processedChunk);
-                    if (result && result.error) {
-                        throw result.error;
-                    }
-                }
-            }
-
-            // Run response complete interceptors
+            // Stream is complete
+            finalStatus = 'succeeded';
             await this.notifyResponseComplete(finalStatus, responseContext);
         } catch (error: any) {
             // Run response error interceptors
@@ -298,7 +206,7 @@ export class LumoApiClient {
         }
     }
 
-    private async notifyResponse(processedChunk: GenerationToFrontendMessage, responseContext: ResponseContext) {
+    private async notifyResponse(value: GenerationToFrontendMessage, responseContext: ResponseContext) {
         // FIXME: The code supports modifying the response chunk, but I don't think we ever need to do it in
         //        fact. This is further highlighted by the fact that the function
         //        createContentTransformInterceptor() is never used.
@@ -308,10 +216,10 @@ export class LumoApiClient {
         //        TLDR: remove the transform capability
         for (const interceptor of this.config.interceptors.response || []) {
             if (interceptor.onResponseChunk) {
-                processedChunk = await interceptor.onResponseChunk(processedChunk, responseContext);
+                value = await interceptor.onResponseChunk(value, responseContext);
             }
         }
-        return processedChunk;
+        return value;
     }
 
     private async notifyRequest(request: LumoApiGenerationRequest, requestContext: RequestContext) {

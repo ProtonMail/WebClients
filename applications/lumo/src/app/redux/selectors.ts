@@ -9,13 +9,32 @@ import { listify, mapIds, setify } from '../util/collections';
 import { sortByDate } from '../util/date';
 import { objectFilterV } from '../util/objects';
 import { getInitials } from '../util/username';
+import { EMPTY_ATTACHMENT_MAP } from './slices/core/attachments';
+import { EMPTY_CONVERSATION_MAP } from './slices/core/conversations';
 import { EMPTY_MESSAGE_MAP } from './slices/core/messages';
 import type { LumoState, LumoState as RootState } from './store';
 
 export type LumoSelector<T> = Selector<LumoState, T>;
 
 /*
- * Selectors specific to this app's state.
+ * Helper that wraps any selector to accept optional input, returning
+ * a predefined fallback value if input is null/undefined.
+ */
+export const makeOptional =
+    <TArg, TResult>(selector: (arg: TArg) => LumoSelector<TResult>, fallback: TResult) =>
+    (arg: TArg | null | undefined): LumoSelector<TResult> =>
+    (state: RootState) =>
+        arg !== null && arg !== undefined ? selector(arg)(state) : fallback;
+
+/*
+ * Selectors from the shared Proton state.
+ */
+
+export const selectDisplayName = (state: UserState) => state.user.value?.DisplayName;
+export const selectDisplayNameInitials = (state: UserState) => getInitials(selectDisplayName(state));
+
+/*
+ * Selectors specific to Lumo.
  */
 
 export const selectMessages = (state: RootState) => state.messages;
@@ -48,15 +67,17 @@ export const selectMessagesByConversationId =
         objectFilterV(state.messages, (m: Message) => m.conversationId === conversationId, EMPTY_MESSAGE_MAP);
 
 export const selectConversationsBySpaceId = (spaceId: SpaceId | null | undefined) => (state: LumoState) =>
-    objectFilterV(state.conversations, (c: Conversation) => c.spaceId === spaceId);
+    objectFilterV(state.conversations, (c: Conversation) => c.spaceId === spaceId, EMPTY_CONVERSATION_MAP);
 
 export const selectMessagesBySpaceId = (spaceId: SpaceId | null | undefined) => (state: LumoState) => {
     const conversationIds = setify(mapIds(selectConversationsBySpaceId(spaceId)(state)));
-    return objectFilterV(state.messages, (m: Message) => conversationIds.has(m.conversationId));
+    return objectFilterV(state.messages, (m: Message) => conversationIds.has(m.conversationId), EMPTY_MESSAGE_MAP);
 };
 
 export const selectAttachmentsBySpaceId = (spaceId: SpaceId | null | undefined) => (state: LumoState) =>
-    objectFilterV(state.attachments, (c: Attachment) => c.spaceId === spaceId);
+    objectFilterV(state.attachments, (c: Attachment) => c.spaceId === spaceId, EMPTY_ATTACHMENT_MAP);
+
+export const selectSpaceByIdOptional = makeOptional(selectSpaceById, undefined);
 
 export const selectAllUserMessages = (state: LumoState) =>
     objectFilterV(state.messages, (m: Message) => m.role === Role.User);
@@ -86,14 +107,6 @@ export const selectRemoteIdFromLocal =
     (state: LumoState): RemoteId | undefined =>
         state.idmap.local2remote[type][localId];
 
-/*
- * Selectors from the shared Proton state.
- */
-
-export const selectDisplayName = (state: UserState) => state.user.value?.DisplayName;
-export const selectDisplayNameInitials = (state: UserState) => getInitials(selectDisplayName(state));
-
-// Context filters selectors
 export const selectContextFilters = (state: any) => state.contextFilters.filters;
 
 export const selectContextFiltersForMessage = (messageId: string) => (state: any) => {

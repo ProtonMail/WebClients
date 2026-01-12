@@ -39,6 +39,7 @@ import { OnboardingProvider } from '../../providers/OnboardingProvider';
 import { createLumoListenerMiddleware } from '../../redux/listeners';
 import type { LumoStore } from '../../redux/store';
 import { extendStore, setupStore } from '../../redux/store';
+import { setStoreRef } from '../../redux/storeRef';
 import { extraThunkArguments } from '../../redux/thunk';
 import ProtectGuestRouteGuard from '../../ui/components/ProtectGuestRouteGuard/ProtectGuestRouteGuard';
 import { PublicHeader } from '../../ui/header/PublicHeader';
@@ -94,6 +95,7 @@ const bootstrapApp = async () => {
 
     const listenerMiddleware = createLumoListenerMiddleware({ extra: extraThunkArguments });
     const store = setupStore({ listenerMiddleware });
+    setStoreRef(store);
 
     // need to await unleashPromise so prevent UI flickering when unleash flags updated later
     await unleashPromise;

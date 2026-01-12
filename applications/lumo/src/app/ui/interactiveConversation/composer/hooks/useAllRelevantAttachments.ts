@@ -1,12 +1,25 @@
 import { useMemo } from 'react';
 
 import { useLumoSelector } from '../../../../redux/hooks';
-import type { Attachment, Message } from '../../../../types';
+import { selectAttachmentsBySpaceId } from '../../../../redux/selectors';
+import type { Attachment, Message, SpaceId } from '../../../../types';
 
 // Custom hook to get all attachments relevant for context calculations
-export const useAllRelevantAttachments = (messageChain: Message[], provisionalAttachments: Attachment[]) => {
+export const useAllRelevantAttachments = (
+    messageChain: Message[],
+    provisionalAttachments: Attachment[],
+    spaceId?: SpaceId
+) => {
     // Get the full attachments state
     const allAttachments = useLumoSelector((state) => state.attachments);
+
+    // Get space-level attachments (project files)
+    // Exclude auto-retrieved attachments as they're conversation-specific
+    const spaceAttachments = useLumoSelector(selectAttachmentsBySpaceId(spaceId));
+    const spaceAttachmentsList = useMemo(
+        () => Object.values(spaceAttachments).filter((att) => !att.error && !att.processing && !att.autoRetrieved),
+        [spaceAttachments]
+    );
 
     // Get all attachment IDs from the message chain
     const messageAttachmentIds = useMemo(() => {
@@ -20,16 +33,24 @@ export const useAllRelevantAttachments = (messageChain: Message[], provisionalAt
         return messageAttachmentIds.map((id) => allAttachments[id]).filter(Boolean) as Attachment[];
     }, [messageAttachmentIds, allAttachments]);
 
-    // Combine provisional attachments with message attachments
-    // Filter out duplicates (provisional attachments take precedence)
+    // Combine all attachments: space assets + space attachments + provisional + message attachments
+    // Filter out duplicates (space attachments and provisional attachments take precedence)
     const combinedAttachments = useMemo(() => {
-        if (!provisionalAttachments) return messageAttachments;
-        if (!messageAttachments || messageAttachments.length === 0) return provisionalAttachments;
+        const allSources = [...spaceAttachmentsList, ...(provisionalAttachments || []), ...(messageAttachments || [])];
 
-        const provisionalIds = new Set(provisionalAttachments.map((a) => a.id));
-        const uniqueMessageAttachments = messageAttachments.filter((a) => !provisionalIds.has(a.id));
-        return [...provisionalAttachments, ...uniqueMessageAttachments];
-    }, [provisionalAttachments, messageAttachments]);
+        // Remove duplicates by ID
+        const seen = new Set<string>();
+        const unique: Attachment[] = [];
+
+        for (const attachment of allSources) {
+            if (!seen.has(attachment.id)) {
+                seen.add(attachment.id);
+                unique.push(attachment);
+            }
+        }
+
+        return unique;
+    }, [spaceAttachmentsList, provisionalAttachments, messageAttachments]);
 
     return combinedAttachments;
 };

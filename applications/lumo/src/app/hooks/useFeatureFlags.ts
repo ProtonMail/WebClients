@@ -9,8 +9,8 @@ export function useFeatureFlags() {
     const featureFlags = useLumoSelector((state) => state.featureFlags);
 
     const dismissFlag = useCallback(
-        (id: string, versionId: string) => {
-            dispatch(dismissFeatureFlag({ id, versionId }));
+        (id: string, versionId: string, wasDeclined: boolean) => {
+            dispatch(dismissFeatureFlag({ id, versionId, wasDeclined }));
         },
         [dispatch]
     );
@@ -33,11 +33,19 @@ export function useFeatureFlags() {
         [featureFlags]
     );
 
+    const isDeclined = useCallback(
+        (id: string, versionId: string) => {
+            return featureFlags.some((flag) => flag.id === id && flag.versionId === versionId && flag.wasDeclined);
+        },
+        [featureFlags]
+    );
+
     return {
         featureFlags,
         dismissFlag,
         setFeatureFlags,
         resetFlags,
         isDismissed,
+        isDeclined,
     };
 }

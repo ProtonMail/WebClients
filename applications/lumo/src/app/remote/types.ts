@@ -1,4 +1,5 @@
 import type {
+    AttachmentId,
     Base64,
     ConversationId,
     MessageId,
@@ -8,6 +9,9 @@ import type {
     SerializedSpace,
     SpaceId,
 } from '../types';
+
+// Type alias for backwards compatibility (assets are now attachments)
+type AssetId = AttachmentId;
 
 // prettier-ignore
 export type MessageFromApi = {
@@ -66,7 +70,7 @@ export type MasterKeyFromApi = {
 
 export type UserId = string;
 
-export const ResourceTypes = ['space', 'conversation', 'message', 'attachment'] as const;
+export const ResourceTypes = ['space', 'conversation', 'message', 'attachment', 'asset'] as const;
 export type ResourceType = (typeof ResourceTypes)[number];
 
 export type LocalId = string;
@@ -182,6 +186,8 @@ export type ListSpacesRemote = {
     conversations: Record<ConversationId, RemoteConversation>;
     deletedSpaces: Record<SpaceId, RemoteDeletedSpace>;
     deletedConversations: Record<ConversationId, RemoteDeletedConversation>;
+    assets: Record<AssetId, RemoteAsset>;
+    deletedAssets: Record<AssetId, RemoteDeletedAsset>;
 };
 
 export type GetConversationRemote = {

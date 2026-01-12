@@ -19,6 +19,7 @@ interface FilesManagementViewProps {
     onClearFilter?: () => void; // Optional callback to clear the filter
     initialShowDriveBrowser?: boolean; // Whether to show Drive browser initially
     forceModal?: boolean; // Force modal mode regardless of screen size
+    spaceId?: string; // Optional space ID to include space-level attachments
 }
 
 export const FilesManagementView = ({
@@ -29,6 +30,7 @@ export const FilesManagementView = ({
     onClearFilter,
     initialShowDriveBrowser = false,
     forceModal = false,
+    spaceId,
 }: FilesManagementViewProps) => {
     const [currentLink, setCurrentLink] = useState<string>('');
     const [fileToView, setFileToView] = useState<Attachment | null>(null);
@@ -73,7 +75,7 @@ export const FilesManagementView = ({
                         <FilesPanel
                             messageChain={messageChain}
                             filesContainerRef={filesContainerRef}
-                            onClose={onClose}
+                            onClose={modalProps.onClose}
                             handleLinkClick={handleLinkClick}
                             isModal={true}
                             onViewFile={handleViewFile}
@@ -81,6 +83,7 @@ export const FilesManagementView = ({
                             filterMessage={filterMessage}
                             onClearFilter={onClearFilter}
                             initialShowDriveBrowser={initialShowDriveBrowser}
+                            spaceId={spaceId}
                         />
                     </ModalTwoContent>
                 </ModalTwo>
@@ -96,6 +99,7 @@ export const FilesManagementView = ({
                     filterMessage={filterMessage}
                     onClearFilter={onClearFilter}
                     initialShowDriveBrowser={initialShowDriveBrowser}
+                    spaceId={spaceId}
                 />
             )}
             {linkWarningModal.render && (

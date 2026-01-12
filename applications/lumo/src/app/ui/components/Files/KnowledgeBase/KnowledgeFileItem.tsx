@@ -9,8 +9,7 @@ import { IcCross } from '@proton/icons/icons/IcCross';
 import { IcMinusCircle } from '@proton/icons/icons/IcMinusCircle';
 import { IcPlusCircle } from '@proton/icons/icons/IcPlusCircle';
 
-import { CONTEXT_LIMITS } from '../../../../llm/utils';
-import { getSizeColor, useFileItemData } from '../fileUtils';
+import { useFileItemData } from '../fileUtils';
 
 interface KnowledgeFileItemProps {
     file: any;
@@ -39,8 +38,6 @@ export const KnowledgeFileItem: React.FC<KnowledgeFileItemProps> = ({
         canView,
         mimeTypeIcon,
         prettyType,
-        tokenSize,
-        sizeLevel,
         isTooLargeForPreview,
     } = useFileItemData(file);
 
@@ -77,39 +74,41 @@ export const KnowledgeFileItem: React.FC<KnowledgeFileItemProps> = ({
 
     return (
         <div
-            className={`knowledge-file-item flex flex-row flex-nowrap items-center p-2 mb-3 rounded transition-all ${readonly ? 'opacity-75' : ''} ${
+            className={`knowledge-file-item flex flex-row flex-nowrap items-center p-1 mb-3 rounded transition-all ${readonly ? 'opacity-75' : ''} ${
                 canView ? 'hover:bg-weak cursor-pointer' : 'hover:bg-weak'
             }`}
             onClick={handleFileClick}
         >
-            {/* File icon */}
             <FileIcon mimeType={mimeTypeIcon} size={6} className="shrink-0 mr-3" />
 
-            {/* File info */}
             <div className="flex-1 min-w-0">
                 <div className="flex flex-row flex-nowrap items-center gap-2 mb-1">
                     <p
-                        className="m-0 text-sm font-semibold"
-                        style={{
-                            display: 'block',
-                            overflow: 'hidden',
-                            textOverflow: 'ellipsis',
-                            whiteSpace: 'nowrap',
-                            flex: 1,
-                            maxWidth: 'calc(85%)',
-                        }}
+                        className="m-0 text-sm font-semibold truncate"
                         title={file.filename}
                     >
                         {file.filename}
                     </p>
                 </div>
+                
                 <div className="flex flex-row flex-nowrap items-center">
                     <span className="text-xs color-weak">{prettyType}</span>
-                    <span className="text-xs color-weak gap-1 mr-1 ml-1">•</span>
-                    <span className={`text-xs ${getSizeColor(sizeLevel)} `}>
-                        {Math.round((tokenSize / CONTEXT_LIMITS.MAX_CONTEXT) * 100)}%{' '}
-                        {c('collider_2025: Info').t` of space`}
-                    </span>
+                    {file.isChunk && (
+                        <>
+                            <span className="text-xs color-weak gap-1 mr-1 ml-1">•</span>
+                            <span className="text-xs color-weak">
+                                {c('collider_2025: Info').t`Partial content`}
+                            </span>
+                        </>
+                    )}
+                    {file.autoRetrieved && (
+                        <>
+                            <span className="text-xs color-weak gap-1 mr-1 ml-1">•</span>
+                            <span className="text-xs color-primary">
+                                {c('collider_2025: Info').t`Auto-matched`}
+                            </span>
+                        </>
+                    )}
                 </div>
             </div>
 

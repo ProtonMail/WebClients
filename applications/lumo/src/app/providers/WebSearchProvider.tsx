@@ -1,38 +1,45 @@
-import { type ReactNode, createContext, useCallback, useContext, useState } from 'react';
+import { type ReactNode, createContext, useCallback, useContext, useEffect, useState } from 'react';
 
+import { useLumoUserSettings } from '../hooks';
 import { sendWebSearchButtonToggledEvent } from '../util/telemetry';
 
 interface WebSearchContextType {
     isWebSearchButtonToggled: boolean;
-    // toggleWebSearch: () => void;
     handleWebSearchButtonClick: () => void;
-    // setIsWebSearchButtonToggled: (value: boolean) => void;
 }
 
 const WebSearchContext = createContext<WebSearchContextType | undefined>(undefined);
 
 interface WebSearchProviderProps {
     children: ReactNode;
-    initialValue?: boolean;
 }
 
-export const WebSearchProvider = ({ children, initialValue = false }: WebSearchProviderProps) => {
-    const [isWebSearchButtonToggled, setIsWebSearchButtonToggled] = useState<boolean>(initialValue);
+export const WebSearchProvider = ({ children }: WebSearchProviderProps) => {
+    const { lumoUserSettings, updateSettings } = useLumoUserSettings();
+    const automaticWebSearch = lumoUserSettings.automaticWebSearch ?? false;
 
-    const toggleWebSearch = useCallback(() => {
-        setIsWebSearchButtonToggled((prev) => !prev);
-    }, []);
+    // Initialize from persisted setting
+    const [isWebSearchButtonToggled, setIsWebSearchButtonToggled] = useState<boolean>(automaticWebSearch);
+
+    // Sync with persisted setting when it changes (e.g., from settings modal)
+    useEffect(() => {
+        setIsWebSearchButtonToggled(automaticWebSearch);
+    }, [automaticWebSearch]);
 
     const handleWebSearchButtonClick = useCallback(() => {
         sendWebSearchButtonToggledEvent(isWebSearchButtonToggled);
-        toggleWebSearch();
-    }, [isWebSearchButtonToggled, toggleWebSearch]);
+        const newValue = !isWebSearchButtonToggled;
+        setIsWebSearchButtonToggled(newValue);
+        // Persist the setting change
+        updateSettings({
+            automaticWebSearch: newValue,
+            _autoSave: true,
+        });
+    }, [isWebSearchButtonToggled, updateSettings]);
 
     const value = {
         isWebSearchButtonToggled,
-        // toggleWebSearch,
         handleWebSearchButtonClick,
-        // setIsWebSearchButtonToggled,
     };
 
     return <WebSearchContext.Provider value={value}>{children}</WebSearchContext.Provider>;

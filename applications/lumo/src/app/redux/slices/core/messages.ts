@@ -55,6 +55,7 @@ const messagesReducer = createReducer<MessageMap>(initialState, (builder) => {
             const chunk = action.payload;
             const message = state[chunk.messageId];
             message.content ??= '';
+            console.log('appendChunk: ', chunk.content);
             message.content += chunk.content;
         })
         .addCase(setToolCall, (state, action) => {
