@@ -15,7 +15,6 @@ interface Props {
     icon?: ReactNode;
     description?: ReactNode;
     cta?: ReactNode;
-    loading?: boolean;
     hasDismissAction?: boolean;
     contentCentered?: boolean;
     mode?: 'row' | 'banner';
@@ -27,7 +26,6 @@ interface Props {
 export const PromotionBanner = ({
     className,
     rounded = false,
-    loading = false,
     contentCentered = true,
     mode = 'row',
     gradient = 'horizontal',
@@ -82,34 +80,24 @@ export const PromotionBanner = ({
                         if (mode === 'row') {
                             return 'm-2 pl-4 w-full';
                         }
-                    })(),
-                    loading && 'w-1/3'
+                    })()
                 )}
             >
-                {loading ? (
-                    <span
-                        className={clsx('bg-promotion-loading', contentCentered ? 'w-full' : 'w-1/3')}
-                        data-testid="promotion-banner:loading"
-                    />
-                ) : (
-                    <>
-                        {icon && <div className="shrink-0">{icon}</div>}
-                        {description && (
-                            <div
-                                className={clsx(
-                                    'bg-promotion-text',
-                                    !contentCentered && 'flex-1',
-                                    mode === 'banner' && !contentCentered && 'text-center md:text-left'
-                                )}
-                            >
-                                {description}
-                            </div>
+                {icon && <div className="shrink-0">{icon}</div>}
+                {description && (
+                    <div
+                        className={clsx(
+                            'bg-promotion-text',
+                            !contentCentered && 'flex-1',
+                            mode === 'banner' && !contentCentered && 'text-center md:text-left'
                         )}
-                        {cta && <div className="shrink-0 w-full md:w-auto md:max-w-1/3 text-right">{cta}</div>}
-                    </>
+                    >
+                        {description}
+                    </div>
                 )}
+                {cta && <div className="shrink-0 w-full md:w-auto md:max-w-1/3 text-right">{cta}</div>}
             </div>
-            {isTruthy(hasDismissAction && !loading) && (
+            {isTruthy(hasDismissAction) && (
                 <Button
                     onClick={handleClose}
                     icon
