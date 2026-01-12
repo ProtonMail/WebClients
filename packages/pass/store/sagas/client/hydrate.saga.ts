@@ -102,14 +102,11 @@ export function* hydrate(
             else if (autofill.cc === undefined) autofill.cc = true;
         }
 
-        /** Activate offline mode by default for paid users who
-         * haven't touched the `offlineEnabled` setting yet */
+        /** Activate offline mode by default if user
+         *  has an offline password available */
         if (BUILD_TARGET === 'web' || DESKTOP_BUILD) {
             const hasOfflinePassword = authStore.hasOfflinePassword();
-            const untouched = settings.offlineEnabled === undefined;
-
-            const autoSetup = untouched && hasOfflinePassword;
-            settings.offlineEnabled = autoSetup || settings.offlineEnabled;
+            settings.offlineEnabled = hasOfflinePassword;
         }
 
         const incoming = { user: userState, settings, organization };
