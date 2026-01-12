@@ -1,4 +1,5 @@
 import type { AuthSession } from '@proton/pass/lib/auth/session';
+import type { QA_STATE_KEY } from '@proton/pass/lib/qa/service';
 
 import type { ItemFilters, SelectedItem } from '../data';
 import type { Maybe, MaybeNull } from '../utils';
@@ -70,6 +71,7 @@ export type LocalStoreData = {
     telemetry: string;
     version: string;
     websiteRules: string;
+    [QA_STATE_KEY]: string;
 };
 
 export type LocalStoreKeys = keyof LocalStoreData;
