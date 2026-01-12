@@ -16,7 +16,7 @@ import {
   getUserSelections,
   useFocusSheet,
 } from '@rowsncolumns/spreadsheet'
-import { number2Alpha, sortSheetsByIndex, ssfFormat, uuid } from '@rowsncolumns/utils'
+import { number2Alpha, ssfFormat, uuid } from '@rowsncolumns/utils'
 import {
   CURRENCY,
   DATE_PATTERN_EXAMPLE_VALUE,
@@ -40,6 +40,55 @@ type PatternSpec = {
 
 function focusGridWarningFallback() {
   console.warn('Attempted to use focusGrid, but no focusSheet function is available.')
+}
+
+export type BaseSheet = {
+  index?: number | null
+  title: string
+  hidden?: boolean | null
+  sheetId: number
+} & Record<string, any>
+
+/**
+ * Sort sheets by index
+ * @param sheets
+ * @returns
+ */
+export const sortSheetsByIndex = <S extends BaseSheet>(sheets: S[], includeHidden?: boolean) => {
+  const seen = new Set<number>()
+  const deduplicated: S[] = []
+
+  for (let i = 0; i < sheets.length; i++) {
+    const sheet = sheets[i]
+    if (!sheet) {
+      continue
+    }
+    if (!includeHidden && sheet.hidden) {
+      continue
+    }
+    if (seen.has(sheet.sheetId)) {
+      continue
+    }
+    seen.add(sheet.sheetId)
+    deduplicated.push(sheet)
+  }
+
+  // Find the maximum index among sheets that have an index defined
+  const maxDefinedIndex = deduplicated.reduce((max, sheet) => {
+    return sheet.index !== undefined && sheet.index !== null ? Math.max(max, sheet.index) : max
+  }, -1)
+
+  // Assign indices to sheets without one, starting after the max defined index
+  let nextIndex = maxDefinedIndex + 1
+
+  return deduplicated
+    .map((sheet) => {
+      return {
+        ...sheet,
+        index: sheet.index ?? nextIndex++,
+      }
+    })
+    .sort((a, b) => (a.index ?? 0) - (b.index ?? 0))
 }
 
 /**
