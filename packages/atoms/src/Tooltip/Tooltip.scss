@@ -135,7 +135,6 @@
 	/* pseudo-element to make arrows */
 	&::before {
 		content: '';
-		speak: none;
 		position: absolute;
 		z-index: 1;
 		inline-size: $arrow-width;

@@ -1,4 +1,5 @@
-@use '~@proton/styles/scss/lib' as *;
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/rem' as *;
 @use '~@proton/styles/scss/lib/em' as *;
 @use '~@proton/styles/scss/lib/easing' as *;
 @use '~@proton/styles/scss/lib/include-media' as im;
