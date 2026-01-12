@@ -36,7 +36,7 @@ const OpenVPNCredentialsSection = (props: Props) => {
         await api(resetVPNSettings());
         await fetchUserVPN();
 
-        createNotification({ text: c('Notification').t`OpenVPN / IKEv2 credentials regenerated` });
+        createNotification({ text: c('Notification').t`OpenVPN credentials regenerated` });
     };
 
     const learnMore = (
@@ -77,7 +77,7 @@ const OpenVPNCredentialsSection = (props: Props) => {
 
             <SettingsLayout>
                 <SettingsLayoutLeft>
-                    <span className="label pt-0">{c('Label').t`OpenVPN / IKEv2 username`}</span>
+                    <span className="label pt-0">{c('Label').t`OpenVPN username`}</span>
                 </SettingsLayoutLeft>
                 <SettingsLayoutRight className="flex items-center">
                     <div className="text-ellipsis max-w-full mr-0 md:mr-4">
@@ -97,7 +97,7 @@ const OpenVPNCredentialsSection = (props: Props) => {
             </SettingsLayout>
             <SettingsLayout>
                 <SettingsLayoutLeft>
-                    <span className="label pt-0">{c('Label').t`OpenVPN / IKEv2 password`}</span>
+                    <span className="label pt-0">{c('Label').t`OpenVPN password`}</span>
                 </SettingsLayoutLeft>
                 <SettingsLayoutRight className="flex items-center">
                     <div className="text-ellipsis max-w-full mr-0 md:mr-4">
