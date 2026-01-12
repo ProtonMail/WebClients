@@ -13,10 +13,10 @@ import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import { UpsellRef } from '@proton/pass/constants';
+import { useVaultCreationPolicy } from '@proton/pass/hooks/organization/useVaultCreationPolicy';
 import type { ImportPayload, ImportVault } from '@proton/pass/lib/import/types';
 import {
     selectDefaultVault,
-    selectOrganizationVaultCreationDisabled,
     selectPassPlan,
     selectVaultLimits,
     selectWritableVaults,
@@ -40,8 +40,11 @@ export const ImportVaultsPickerModal: FC<ImportVaultsPickerProps> = ({ payload, 
     const writableVaults = useSelector(selectWritableVaults);
     const defaultVault = useSelector(selectDefaultVault);
     const { vaultLimit, vaultTotalCount } = useSelector(selectVaultLimits);
+    const { vaultRemainingCount } = useVaultCreationPolicy();
     const plan = useSelector(selectPassPlan);
-    const vaultCreationDisabled = useSelector(selectOrganizationVaultCreationDisabled);
+
+    const vaultCreationPolicyEnforced = vaultRemainingCount !== null;
+    const safeVaultLimit = vaultCreationPolicyEnforced ? vaultTotalCount + vaultRemainingCount : vaultLimit;
 
     const handleSubmit = useCallback(
         (values: VaultsPickerFormValues) =>
@@ -74,8 +77,8 @@ export const ImportVaultsPickerModal: FC<ImportVaultsPickerProps> = ({ payload, 
         [form.values]
     );
 
-    const vaultsRemaining = vaultLimit - vaultTotalCount - vaultsToCreate;
-    const canCreateVault = !vaultCreationDisabled && vaultsRemaining > 0;
+    const vaultsRemaining = safeVaultLimit - vaultTotalCount - vaultsToCreate;
+    const canCreateVault = vaultsRemaining > 0;
 
     return (
         <ModalTwo open onClose={onClose} onReset={onReset} size={'medium'} className="mt-10">
@@ -94,7 +97,7 @@ export const ImportVaultsPickerModal: FC<ImportVaultsPickerProps> = ({ payload, 
                                 c('Info').t`Select where you want your imported vaults to be saved.`
                             }
 
-                            {vaultsRemaining <= 0 && (
+                            {vaultsRemaining <= 0 && !vaultCreationPolicyEnforced && (
                                 <>
                                     <hr className="mt-2 mb-2" />
                                     {plan === UserPassPlan.FREE ? (

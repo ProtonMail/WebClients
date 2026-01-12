@@ -89,6 +89,7 @@ enum AccountFlag {
     PassB2BPasswordGenerator = 'PassB2BPasswordGenerator',
     SharedServerFeature = 'SharedServerFeature',
     PassB2BVaultCreation = 'PassB2BVaultCreation',
+    PassB2BVaultCreationV2 = 'PassB2BVaultCreationV2',
     PassB2BItemSharing = 'PassB2BItemSharing',
     CryptoPostQuantumOptIn = 'CryptoPostQuantumOptIn',
     PassB2BReports = 'PassB2BReports',

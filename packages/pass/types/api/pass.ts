@@ -17,6 +17,12 @@ export type DriveConstants = {
     UploadTokenExpirationTimeInSec?: '10800';
     DownloadTokenExpirationTimeInSec?: '1800';
 };
+export type FolderItemsMoveInputDto = {
+    /* FolderID to move the items into. Null to move to share root */
+    FolderID?: Id | null;
+    /* List of items to move to specified folder */
+    Items: FolderItemMoveInputDto[];
+};
 export type ItemMoveMultipleToShareRequest = {
     /* Encrypted ID of the destination share */
     ShareID: string;
@@ -66,6 +72,8 @@ export type ItemCreateRequest = {
     Content: string;
     /* Item key encrypted with the VaultKey, contents encoded in base64 */
     ItemKey: string;
+    /* FolderID under which to create the item */
+    FolderID?: string | null;
 };
 export type CustomAliasCreateRequest = {
     /* Prefix for the alias to be created (prefix.xxx@domain.com) */
@@ -154,6 +162,42 @@ export type UpdatePendingFileRequest = {
     /* File metadata encrypted with an attachmentKey and encoded in Base64 */
     Metadata: string;
 };
+export type FolderCreateInputDto = {
+    /* FolderID of the parent folder for this new folder. Use null for top folder. */
+    ParentFolderID?: Id | null;
+    /* Content format version for folder contents */
+    ContentFormatVersion: '1';
+    Content: BinaryString;
+    /* Rotation value for this key */
+    KeyRotation: '1';
+    FolderKey: BinaryString;
+};
+export type FolderGetResponse = { Folder: FolderDataResponse; Code: '1000' };
+export type FolderListQueryRequest = {
+    /* LastToken received on the previous request. To get the first page you can just not pass anything */
+    Since?: Id | null;
+    /* Amount of items to return per page. Default value is 100 */
+    PageSize?: number;
+    SincePagination: SincePagination;
+};
+export type Id = string;
+export type SincePagination = { Since?: number | null; PageSize: number };
+export type FolderListResponse = { Folders: FolderListContentsResponse; Code: '1000' };
+export type FolderMoveInputDto = {
+    /* Id of the parent folder under which this folder is moved to. Null if it will be a top folder */
+    ParentFolderID?: Id | null;
+    /* FolderKeys encrypted with the parent folder keys or vault keys if it is a top folder */
+    FolderKeys: FolderKeyPairDto[];
+};
+export type FolderUpdateInputDto = {
+    /* If the content has to be updated this should contain the new content. Otherwise, null */
+    Content?: FolderUpdateContentInputDto | null;
+};
+export type FolderDeleteInputDto = {
+    /* FolderIDs to be deleted */
+    FolderIDs: Id[];
+};
+export type SuccessfulResponse = { Code: '1000' };
 export type InviteAcceptRequest = {
     /* Invite keys encrypted and signed with the User Key */
     Keys: KeyRotationKeyPair[];
@@ -246,23 +290,23 @@ export type PendingShareKeyPromoteRequest = {
 };
 export type GetNotificationsQueryParams = { CountryCode?: string | null };
 export type ChangeNotificationStateRequest = { State: InAppNotificationState };
-export type OrganizationUpdateSettingsRequest = {
-    /* Allowed ways to share within the organization. 0 means unrestricted, 1 means sharing is only allowed within the organization */
-    ShareMode?: number | null;
-    /* Who is allowed to accept an invite from outside the organization. 0 means unrestricted, 1 means only admins can accept invites from outside the organization */
-    ShareAcceptMode?: number | null;
-    /* Is item sharing enabled. 0 means no, 1 yes */
-    ItemShareMode?: number | null;
-    /* Are secure links enabled. 0 means no, 1 yes */
-    PublicLinkMode?: number | null;
+export type OrganizationUpdateInput = {
+    /* Allowed ways to share within the organization. */
+    ShareMode?: OrganizationShareMode | null;
+    /* Who is allowed to accept an invite from outside the organization. */
+    ShareAcceptMode?: OrganizationShareMode | null;
+    /* Is item sharing enabled. */
+    ItemShareMode?: OrganizationItemShareMode | null;
+    /* Are secure links enabled. */
+    PublicLinkMode?: OrganizationPublicLinkMode | null;
     /* Force pass to lock after given seconds of time. 0 means disabled. */
     ForceLockSeconds?: number | null;
-    /* Allowed ways of exporting the data owned by the org. 0 means anyone can export. 1 means only org admins can export */
-    ExportMode?: number | null;
-    /* Who can create vaults in the organization. 0 means any user can create vaults. 1 means only org admins can create vaults */
-    VaultCreateMode?: number | null;
+    /* Allowed ways of exporting the data owned by the org. */
+    ExportMode?: OrganizationExportMode | null;
+    /* Who can create vaults in the organization. */
+    VaultCreateMode?: OrganizationVaultCreateMode | null;
 };
-export type OrganizationUpdatePasswordPolicyRequest = {
+export type OrganizationUpdatePasswordPolicyInput = {
     /* Whether subusers are allowed to generate random passwords */
     RandomPasswordAllowed: boolean;
     /* Minimum password length. Default limit if null. */
@@ -391,7 +435,6 @@ export type UserMailboxDeleteRequest = {
     /* Mailbox ID to which to transfer all existing aliases (optional) */
     TransferMailboxID?: number | null;
 };
-export type SuccessfulResponse = { Code: '1000' };
 export type UserMailboxChangeEmailRequest = {
     /* New email for this mailbox */
     Email: string;
@@ -513,6 +556,8 @@ export type ItemRevisionContentsResponse = {
     PinTime?: number | null;
     /* Number of shares this item has */
     ShareCount: number;
+    /* Parent FolderID if this item is in a folder */
+    FolderID?: string | null;
     /* In case this item contains an alias, this is the email address for the alias */
     AliasEmail?: string | null;
     /* Creation time of the item */
@@ -943,6 +988,18 @@ export type InviteRecommendationsResponse = {
     /* Token to retrieve the next page. Will be null for the last page. */
     PlanRecommendedEmailsNextToken: string;
 };
+export type InviteRecommendationSuggestedListOutput = {
+    /* Recent addresses used */
+    Suggested: InviteRecommendationAddressOutput[];
+};
+export type InviteRecommendationOrgOutput = {
+    /* Group display name. It will be null for free users. */
+    GroupDisplayName: string;
+    /* Token to retrieve the next page. Will be null for the last page. */
+    NextToken: string;
+    /* Recent addresses used */
+    Entries: InviteRecommendationOrgEntryOutput[];
+};
 export type ActiveSharesInVaultGetResponse = {
     /* Shares */
     Shares: ActiveShareGetResponse[];
@@ -1043,29 +1100,49 @@ export type SRPGetOutput = {
     Version: number;
 };
 export type SyncEventListOutput = {
-    LastEventID: Id;
+    /* The next event ID that has to be used for the next call to this endpoint */
+    LastEventID: string;
     /* Item IDs with ShareIDs that have been updated */
-    ItemsUpdated?: SyncEventShareItemOutput[];
+    ItemsUpdated: SyncEventShareItemOutput[];
     /* Item IDs with ShareIDs that have been deleted */
-    ItemsDeleted?: SyncEventShareItemOutput[];
+    ItemsDeleted: SyncEventShareItemOutput[];
     /* Item IDs with ShareIDs that have the alias note changed */
-    AliasNoteChanged?: SyncEventShareItemOutput[];
+    AliasNoteChanged: SyncEventShareItemOutput[];
+    /* New ShareIDs for the user. This means new access to a resource. Clients should clear all information for this share and depending objects that they have and re-download all the share contents again. */
+    SharesCreated: SyncEventShareOutput[];
     /* Share IDs that have been updated. It can be vault name, permissions, state... */
-    SharesUpdated?: SyncEventShareOutput[];
+    SharesUpdated: SyncEventShareOutput[];
     /* Share IDs that have been deleted */
-    SharesDeleted?: SyncEventShareOutput[];
+    SharesDeleted: SyncEventShareOutput[];
+    /* Folders that have been updated */
+    FoldersUpdated: SyncEventShareFolderOutput[];
+    /* Folders that have been deleted */
+    FoldersDeleted: SyncEventShareFolderOutput[];
     /* If not null, there are changes in the invites waiting to be accepted by this user */
-    InvitesChanged?: SyncEventInvitesChangedOutput | null;
+    InvitesChanged?: SyncEventChangedWithTokenOutput | null;
     /* If not null, there are changes in the group invites that this user can accept or reject */
-    GroupInvitesChanged?: SyncEventInvitesChangedOutput | null;
+    GroupInvitesChanged?: SyncEventChangedWithTokenOutput | null;
+    /* If not null, there are changes pending aliases to create items for this user */
+    PendingAliasToCreateChanged?: SyncEventChangedWithTokenOutput | null;
+    /* If not null, there are changes in the breached addresses or custom emails */
+    BreachUpdate?: SyncEventChangedWithTokenOutput | null;
+    /* If not null, there are changes in the organization data (including any policy change) */
+    OrganizationInfoChanged?: SyncEventChangedWithTokenOutput | null;
     /* Share IDs that have invites that have to be created due to a user having registered with a pending new user invite */
-    SharesWithInvitesToCreate?: SyncEventShareOutput[];
-    /* If the user plan has changed */
-    PlanChanged?: boolean;
+    SharesWithInvitesToCreate: SyncEventShareOutput[];
+    /* If the user plan or any other setting related to the user has changed */
+    RefreshUser: boolean;
     /* If there are more events pending to be processed. In that case call this endpoint again using the new LastEventID */
-    EventsPending?: boolean;
+    EventsPending: boolean;
     /* If true this user needs a full sync. Perform the same procedure as if the user just logged in. */
-    FullRefresh?: boolean;
+    FullRefresh: boolean;
+};
+export type FolderItemMoveInputDto = {
+    ItemID: Id;
+    /* Item revision */
+    Revision: number;
+    /* FolderKeys encrypted with the parent folder keys or vault keys if it is a top folder */
+    FolderKeys: FolderKeyPairDto[];
 };
 export type ItemMoveIndividualToShareRequest = {
     /* Encrypted ID of the source item to move */
@@ -1083,9 +1160,42 @@ export type KeyRotationKeyPair = {
     /* Encrypted key encoded in base64 */
     Key: string;
 };
-export type Id = string;
 export type EncryptedId = string;
 export type CreatePendingAliasRequest = { PendingAliasID: Id; Item: ItemCreateRequest };
+export type BinaryString = string;
+export type FolderDataResponse = {
+    VaultID: Id;
+    FolderID: Id;
+    /* FolderID of the parent folder for this folder */
+    ParentFolderID?: Id | null;
+    /* KeyRotation for this folder key */
+    KeyRotation: number;
+    FolderKey: BinaryString;
+    /* ContentFormatVersion for the folder data */
+    ContentFormatVersion: number;
+    Content: BinaryString;
+};
+export type FolderListContentsResponse = {
+    /* Folders listed */
+    Folders: FolderDataResponse[];
+    /* Total number of folders */
+    Total: number;
+    /* Token to pass for getting the next page. Null if there is none */
+    LastToken?: Id | null;
+    Code: '1000';
+};
+export type FolderKeyPairDto = {
+    /* Rotation value for this key */
+    KeyRotation: '1';
+    FolderKey: BinaryString;
+};
+export type FolderUpdateContentInputDto = {
+    /* Content format version for folder contents */
+    ContentFormatVersion: '1';
+    Content: BinaryString;
+    /* Key rotation used to encrypt the content */
+    KeyRotation: '1';
+};
 export type ImportItemRequest = {
     Item: ItemCreateRequest;
     /* Alias email in case this item is an alias item */
@@ -1150,7 +1260,27 @@ export enum InAppNotificationState {
     READ = 1,
     DISMISSED = 2,
 }
-export type BinaryString = string;
+export enum OrganizationShareMode {
+    UNRESTRICTED = 0,
+    ONLYSHAREINSIDEORG = 1,
+}
+export enum OrganizationItemShareMode {
+    DISABLED = 0,
+    ALLOWED = 1,
+}
+export enum OrganizationPublicLinkMode {
+    DISABLED = 0,
+    ALLOWED = 1,
+}
+export enum OrganizationExportMode {
+    UNRESTRICTED = 0,
+    ONLYADMINS = 1,
+}
+export enum OrganizationVaultCreateMode {
+    ALLOWED = 0,
+    ONLYORGADMINS = 1,
+    ONLYORGADMINSANDPERSONALVAULT = 2,
+}
 export type AliasSuffixResponse = {
     /* Alias ending including the domain */
     Suffix: string;
@@ -1268,6 +1398,10 @@ export type GroupInviteListItemResponse = {
     VaultData: InviteVaultDataForUser;
     /* Base64 encrypted invite data */
     Data?: string | null;
+    /* If true, this user is owner of the group invited */
+    IsGroupAdmin: boolean;
+    /* If true, this user is administrator of the organization that owns the group */
+    IsOrgAdmin: boolean;
     /* Creation time for the invite */
     CreateTime: number;
 };
@@ -1288,7 +1422,8 @@ export type InviteDataForUser = {
     InvitedAddressID: string;
     /* Share keys encrypted for the address key of the invitee and signed with the user keys of the inviter */
     Keys: KeyRotationKeyPair[];
-    VaultData: InviteVaultDataForUser;
+    /* Vault data for this invite. This will only appear if the invite is for a vault. */
+    VaultData?: InviteVaultDataForUser | null;
     /* Base64 encrypted invite data */
     Data?: string | null;
     /* True if the invite comes from a NewUserInvite */
@@ -1344,22 +1479,15 @@ export type InAppNotification = {
     Content: InAppNotificationContent;
 };
 export type OrganizationSettingsGetResponse = {
-    /* Bitfield with allowed ways to share within the organization. 0 means unrestricted, 1 means sharing is only allowed within the organization */
-    ShareMode: number;
-    /* Bitfield with allowed ways to accept invites outside the organization. 0 means unrestricted, 1 means only admins can accept invites from ouside the org */
-    ShareAcceptMode: number;
-    /* Is item sharing enabled. 0 means no, 1 yes */
-    ItemShareMode: number;
-    /* Are secure links enabled. 0 means no, 1 yes */
-    PublicLinkMode: number;
+    ShareMode: OrganizationShareMode;
+    ShareAcceptMode: OrganizationShareMode;
+    ItemShareMode: OrganizationItemShareMode;
+    PublicLinkMode: OrganizationPublicLinkMode;
     /* Force seconds to lock pass. 0 means lock time is not enforced */
     ForceLockSeconds: number;
-    /* Bitfield with allowed ways to export data. 0 means anyone can export. 1 means only admins can export data */
-    ExportMode: number;
-    /* Organization password policy */
-    PasswordPolicy?: OrganizationUpdatePasswordPolicyRequest | null;
-    /* Bitfield with who can create vaults. 0 means anyone, 1 means only admins can create vaults */
-    VaultCreateMode: number;
+    ExportMode: OrganizationExportMode;
+    PasswordPolicy: OrganizationUpdatePasswordPolicyInput;
+    VaultCreateMode: OrganizationVaultCreateMode;
 };
 export type MemberMonitorReport = {
     /* Primary email for this member */
@@ -1420,6 +1548,17 @@ export type NewUserInviteGetResponse = {
     /* Last modification time for the invite */
     ModifyTime: number;
 };
+export type InviteRecommendationAddressOutput = {
+    /* Email recommended */
+    Email: string;
+    AddressID: Id;
+    /* Whether is a group address or not. */
+    IsGroup: boolean;
+};
+export type InviteRecommendationOrgEntryOutput = {
+    /* Email recommended */
+    Email: string;
+};
 export type MissingAliasDto = {
     /* Email of the alias */
     Email: string;
@@ -1476,6 +1615,8 @@ export type PassPlanResponse = {
     StorageUsed: number;
     /* What is the storage quota for this user */
     StorageQuota: number;
+    /* Whether this account can use the cli */
+    CliAllowed: boolean;
 };
 export type UserDataResponse = {
     /* Default share to user for this user. Null if not set any default share */
@@ -1486,9 +1627,9 @@ export type UserDataResponse = {
     PendingAliasToSync: number;
 };
 export type SyncEventShareItemOutput = {
-    /* ItemID */
-    ShareID: string;
     /* ShareID */
+    ShareID: string;
+    /* ItemID */
     ItemID: string;
     /* EventToken used in the request to get the share info */
     EventToken: string;
@@ -1499,7 +1640,15 @@ export type SyncEventShareOutput = {
     /* EventToken used in the request to get the share info */
     EventToken: string;
 };
-export type SyncEventInvitesChangedOutput = { EventToken: Id };
+export type SyncEventShareFolderOutput = {
+    /* ShareID */
+    ShareID: string;
+    /* FolderID */
+    FolderID: string;
+    /* EventToken used in the request to get the share info */
+    EventToken: string;
+};
+export type SyncEventChangedWithTokenOutput = { EventToken: Id };
 export enum BreachAlertState {
     UNREAD = 1,
     READ = 2,
@@ -1564,13 +1713,13 @@ export type InAppNotificationContent = {
     /* Optional URL of the image to be shown */
     ImageUrl?: string | null;
     DisplayType: InAppNotificationDisplayType;
-    /* Translated title of the notification */
+    /* Translated title of the notification. Alternative text for minimizable promos. */
     Title: string;
     /* Translated message of the notification */
     Message: string;
     /* Theme of the notification */
     Theme?: string | null;
-    /* CTA of the notification */
+    /* CTA of the notification. For minimizable promos the text should be ignored */
     Cta?: InAppNotificationCta | null;
     /* Minimizable promo contents. Only for minimizable promos. */
     PromoContents?: InAppNotificationPromoContents | null;
@@ -1627,7 +1776,7 @@ export type InAppNotificationPromoContents = {
     StartMinimized: boolean;
     /* Text to show on the close promo link */
     ClosePromoText: string;
-    /* Text to show when the promo is minimized */
+    /* Text to show when the promo is minimized. Only relevant for web. */
     MinimizedPromoText: string;
     LightThemeContents: InAppNotificationPromoThemedContents;
     DarkThemeContents: InAppNotificationPromoThemedContents;
@@ -1733,6 +1882,14 @@ export type ApiResponse<Path extends string, Method extends string> =
         Method extends `post` ?
             { Code: ResponseCodeSuccess }
         :   never
+    : Path extends `pass/v1/share/${string}/invite/recommended_emails/organization` ?
+        Method extends `get` ?
+            { Code: ResponseCodeSuccess; Recommendation: InviteRecommendationOrgOutput }
+        :   never
+    : Path extends `pass/v1/share/${string}/invite/recommended_emails/suggested` ?
+        Method extends `get` ?
+            InviteRecommendationSuggestedListOutput & { Code: ResponseCodeSuccess }
+        :   never
     : Path extends `pass/v1/share/${string}/item/import/batch` ?
         Method extends `post` ?
             { Code: ResponseCodeSuccess; Revisions: ItemRevisionListResponse }
@@ -1768,6 +1925,10 @@ export type ApiResponse<Path extends string, Method extends string> =
     : Path extends `pass/v1/share/${string}/alias/${string}/status` ?
         Method extends `put` ?
             { Code: ResponseCodeSuccess; Item: ItemRevisionContentsResponse }
+        :   never
+    : Path extends `pass/v1/share/${string}/folder/${string}/move` ?
+        Method extends `put` ?
+            FolderGetResponse
         :   never
     : Path extends `pass/v1/share/${string}/invite/${string}/reminder` ?
         Method extends `post` ?
@@ -1906,6 +2067,10 @@ export type ApiResponse<Path extends string, Method extends string> =
         Method extends `get` ?
             { Code: ResponseCodeSuccess; Recommendation: InviteRecommendationsResponse }
         :   never
+    : Path extends `pass/v1/share/${string}/item/folder` ?
+        Method extends `put` ?
+            { Code: ResponseCodeSuccess }
+        :   never
     : Path extends `pass/v1/share/${string}/item/read` ?
         Method extends `put` ?
             { Code: ResponseCodeSuccess }
@@ -1938,6 +2103,10 @@ export type ApiResponse<Path extends string, Method extends string> =
         Method extends `get` ?
             { Code: ResponseCodeSuccess; Events: PassEventListResponse }
         :   never
+    : Path extends `pass/v1/share/${string}/folder/${string}` ?
+        Method extends `get` ? FolderGetResponse
+        : Method extends `put` ? FolderGetResponse
+        : never
     : Path extends `pass/v1/share/${string}/invite/${string}` ?
         Method extends `delete` ?
             { Code: ResponseCodeSuccess }
@@ -2047,6 +2216,11 @@ export type ApiResponse<Path extends string, Method extends string> =
         Method extends `get` ?
             EventIDGetResponse & { Code: ResponseCodeSuccess }
         :   never
+    : Path extends `pass/v1/share/${string}/folder` ?
+        Method extends `get` ? FolderListResponse
+        : Method extends `post` ? FolderGetResponse
+        : Method extends `delete` ? SuccessfulResponse
+        : never
     : Path extends `pass/v1/share/${string}/hide` ?
         Method extends `put` ?
             { Code: ResponseCodeSuccess; Share: ShareGetResponse }
@@ -2270,6 +2444,10 @@ export type ApiRequestBody<Path extends string, Method extends string> =
         Method extends `put` ?
             AliasUpdateStatusRequest
         :   never
+    : Path extends `pass/v1/share/${string}/folder/${string}/move` ?
+        Method extends `put` ?
+            FolderMoveInputDto
+        :   never
     : Path extends `pass/v1/share/${string}/item/${string}/flags` ?
         Method extends `put` ?
             ItemUpdateFlagsRequest
@@ -2342,6 +2520,10 @@ export type ApiRequestBody<Path extends string, Method extends string> =
         Method extends `post` ?
             NewUserInviteCreateRequest
         :   never
+    : Path extends `pass/v1/share/${string}/item/folder` ?
+        Method extends `put` ?
+            FolderItemsMoveInputDto
+        :   never
     : Path extends `pass/v1/share/${string}/item/read` ?
         Method extends `put` ?
             ItemMarkAsReadBatchRequest
@@ -2366,6 +2548,10 @@ export type ApiRequestBody<Path extends string, Method extends string> =
         Method extends `post` ?
             PendingShareKeyPromoteRequest
         :   never
+    : Path extends `pass/v1/share/${string}/folder/${string}` ?
+        Method extends `put` ?
+            FolderUpdateInputDto
+        :   never
     : Path extends `pass/v1/share/${string}/item/${string}` ?
         Method extends `put` ?
             ItemUpdateRequest
@@ -2380,7 +2566,7 @@ export type ApiRequestBody<Path extends string, Method extends string> =
         :   never
     : Path extends `pass/v1/organization/settings/password_policy` ?
         Method extends `put` ?
-            OrganizationUpdatePasswordPolicyRequest
+            OrganizationUpdatePasswordPolicyInput
         :   never
     : Path extends `pass/v1/user/alias/custom_domain` ?
         Method extends `post` ?
@@ -2414,6 +2600,10 @@ export type ApiRequestBody<Path extends string, Method extends string> =
         Method extends `put` ?
             UpdatePendingFileRequest
         :   never
+    : Path extends `pass/v1/share/${string}/folder` ?
+        Method extends `post` ? FolderCreateInputDto
+        : Method extends `delete` ? FolderDeleteInputDto
+        : never
     : Path extends `pass/v1/share/${string}/invite` ?
         Method extends `post` ?
             InviteCreateRequest
@@ -2440,7 +2630,7 @@ export type ApiRequestBody<Path extends string, Method extends string> =
         :   never
     : Path extends `pass/v1/organization/settings` ?
         Method extends `put` ?
-            OrganizationUpdateSettingsRequest
+            OrganizationUpdateInput
         :   never
     : Path extends `pass/v1/organization/urlpause` ?
         Method extends `post` ?

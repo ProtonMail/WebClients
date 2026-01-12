@@ -10,7 +10,7 @@ import { itemPinRequest, itemUnpinRequest } from '@proton/pass/store/actions/req
 import type { ShareItem } from '@proton/pass/store/reducers';
 import { selectAllVaults, selectPassPlan, selectRequestInFlight } from '@proton/pass/store/selectors';
 import type { ItemRevision } from '@proton/pass/types';
-import { BitField, ShareRole } from '@proton/pass/types';
+import { OrganizationItemShareMode, ShareRole } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 
@@ -60,7 +60,7 @@ export const useItemState: UseItemState = (item, share) => {
         const hasMultipleVaults = vaults.length > 1;
         const trashed = isTrashed(item);
         const pinned = isPinned(item);
-        const orgItemSharingDisabled = org?.settings.ItemShareMode === BitField.DISABLED;
+        const orgItemSharingDisabled = org?.settings.ItemShareMode === OrganizationItemShareMode.DISABLED;
         const monitored = isMonitored(item);
 
         const canManage = isShareManageable(share);

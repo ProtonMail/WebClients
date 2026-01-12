@@ -9,7 +9,7 @@ import { selectShare } from '@proton/pass/store/selectors/shares';
 import { selectPassPlan, selectUser } from '@proton/pass/store/selectors/user';
 import type { State } from '@proton/pass/store/types';
 import type { FileDescriptor, IndexedByShareIdAndItemId } from '@proton/pass/types';
-import { BitField } from '@proton/pass/types';
+import { OrganizationExportMode } from '@proton/pass/types';
 
 import { SelectorError } from './errors';
 import { selectOrganizationSettings } from './organization';
@@ -23,7 +23,7 @@ export const selectExportData =
         const plan = selectPassPlan(state);
         const orgSettings = selectOrganizationSettings(state);
         const b2bAdmin = user ? isB2BAdmin(user, plan) : false;
-        const orgExportDisabled = orgSettings?.ExportMode === BitField.ACTIVE;
+        const orgExportDisabled = orgSettings?.ExportMode === OrganizationExportMode.ONLYADMINS;
 
         /** Safe-guard export data selector against organization exporting policies */
         const exportDisabled = !b2bAdmin && orgExportDisabled;
