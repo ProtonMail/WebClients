@@ -47,7 +47,7 @@ const LayoutLogos = ({ size, className }: AppLogosProps) => {
                 return (
                     <div
                         key={title}
-                        className="inline-block max-w-custom sm:max-w-auto"
+                        className="inline-block max-w-custom"
                         style={{ '--max-w-custom': '3.125rem' }}
                         title={title}
                     >

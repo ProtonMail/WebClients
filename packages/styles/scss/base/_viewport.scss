@@ -12,24 +12,25 @@
  * user-scalable=no => user-zoom: fixed;
  *
  * for Win8 snap mode => only width: device-width; works for the moment
+ * kept for compatibility with older browsers
  */
 
-@-webkit-viewport {
-	inline-size: device-width;
-}
+// @-webkit-viewport {
+// 	inline-size: device-width;
+// }
 
-@-moz-viewport {
-	inline-size: device-width;
-}
+// @-moz-viewport {
+// 	inline-size: device-width;
+// }
 
 @-ms-viewport {
 	inline-size: device-width;
 }
 
-@-o-viewport {
-	inline-size: device-width;
-}
+// @-o-viewport {
+// 	inline-size: device-width;
+// }
 
-@viewport {
-	inline-size: device-width;
-}
+// @viewport {
+// 	inline-size: device-width;
+// }

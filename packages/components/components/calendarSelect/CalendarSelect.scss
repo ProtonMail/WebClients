@@ -1,5 +1,8 @@
-@use '~@proton/styles/scss/lib' as *;
-@use '~@proton/styles/scss/lib/include-media' as *;
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/rem' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
 
 .calendar-select-color {
 	inline-size: var(--calendar-select-color-size, #{rem(12)});
@@ -8,8 +11,8 @@
 	border-radius: 50%;
 	display: inline-flex;
 
-	@include media('screen') {
-		outline: rem(2) solid var(--background-norm);
+	@include im.media('screen') {
+		outline: #{rem(2)} solid var(--background-norm);
 	}
 
 	&--large {

@@ -32,7 +32,6 @@
 		.tag-label::before {
 			display: block;
 			content: attr(title);
-			speak: never;
 			font-weight: 600;
 			block-size: 0;
 			overflow: hidden;

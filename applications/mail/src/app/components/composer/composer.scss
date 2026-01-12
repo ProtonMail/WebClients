@@ -539,7 +539,7 @@ im.$media-expressions: $media-expressions;
 
 		.composer-title-bar {
 			background: var(--background-weak);
-			color: var(text-norm);
+			color: var(--text-norm);
 
 			& > * {
 				opacity: var(--blur-opacity);

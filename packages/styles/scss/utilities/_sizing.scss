@@ -42,7 +42,14 @@ $dummy-map-sizing: ();
 					'none': 'none'
 				)
 		{
-			@if not(($sizingname == 'auto' and $boundary != '') or ($sizingname == 'none' and $boundary == '')) {
+			@if not(
+				($sizingname == 'auto' and $boundary != '') or
+					// no min/max-w-auto, min/max-h-auto
+				($sizingname == 'none' and $boundary == '') or
+					// no w-none, h-none
+				($sizingname == 'none' and $boundary == 'min') // no min-w-none, min-h-none
+			)
+			{
 				$classname: dash-join($boundary, $direction, $sizingname);
 				$value: pixel-to-rem($size);
 				$dummy-map-sizing: map.merge($dummy-map-sizing, (#{$classname}: (#{$propname}: #{$value})));
