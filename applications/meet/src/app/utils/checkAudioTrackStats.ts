@@ -6,6 +6,7 @@ interface AudioTrackStats {
     kind: string;
     packetsReceived?: number;
     bytesReceived?: number;
+    concealedSamples?: number;
 }
 
 interface AudioTrackContext {
@@ -18,6 +19,7 @@ interface AudioTrackThresholds {
     speakingActivityMarginMs: number;
     minExpectedPackets: number;
     minExpectedAudioBytesWhileSpeaking: number;
+    maxConcealedSamplesDelta: number;
 }
 
 const findInboundAudioRtpReport = (stats: RTCStatsReport) => {
@@ -30,8 +32,9 @@ const getAudioProgressCounters = (report: AudioTrackStats) => {
     // Prefer packets (widely available); fall back to bytes for portability.
     const packetsReceived = typeof report.packetsReceived === 'number' ? report.packetsReceived : undefined;
     const bytesReceived = typeof report.bytesReceived === 'number' ? report.bytesReceived : undefined;
+    const concealedSamples = typeof report.concealedSamples === 'number' ? report.concealedSamples : undefined;
     const currentValue = packetsReceived ?? bytesReceived ?? 0;
-    return { packetsReceived, bytesReceived, currentValue };
+    return { packetsReceived, bytesReceived, concealedSamples, currentValue };
 };
 
 const getParticipantLastSpokeAtMs = (participant: RemoteParticipant) => {
@@ -87,7 +90,7 @@ export const checkAudioTrackStats = async (
             return null;
         }
 
-        const { packetsReceived, currentValue } = getAudioProgressCounters(audioReport);
+        const { packetsReceived, concealedSamples, currentValue } = getAudioProgressCounters(audioReport);
 
         const nowMs = Date.now();
         const spokeRecently = context ? didParticipantSpeakRecently(context.participant, nowMs, thresholds) : false;
@@ -98,6 +101,8 @@ export const checkAudioTrackStats = async (
             currentValue,
             isStuck: false,
             minExpectedDelta,
+            concealedSamples: concealedSamples ?? 0,
+            maxConcealedSamplesDelta: thresholds.maxConcealedSamplesDelta,
         };
     } catch {
         return null;
