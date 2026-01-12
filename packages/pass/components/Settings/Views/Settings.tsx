@@ -1,10 +1,13 @@
+import type { ReactNode } from 'react';
 import { type ComponentProps, type FC, useEffect, useMemo, useState } from 'react';
 import type { RouteChildrenProps } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import Tabs from '@proton/components/components/tabs/Tabs';
+import { Tabs } from '@proton/components/components/tabs/Tabs';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
+import { useNavigate } from '@proton/pass/components/Navigation/NavigationActions';
+import { getLocalPath } from '@proton/pass/components/Navigation/routing';
 import { useOrganization } from '@proton/pass/components/Organization/OrganizationProvider';
 import { Import } from '@proton/pass/components/Settings/Import';
 import { AccountPath } from '@proton/pass/constants';
@@ -13,7 +16,6 @@ import type { Unpack } from '@proton/pass/types';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 import { Aliases } from './Tabs/Aliases';
-import { Export } from './Tabs/Export';
 import { General } from './Tabs/General';
 import { Security } from './Tabs/Security';
 import { Support } from './Tabs/Support';
@@ -22,12 +24,12 @@ import './Settings.scss';
 
 type SettingTab = Unpack<Exclude<ComponentProps<typeof Tabs>['tabs'], undefined>> & { hash: string };
 
-const getSettingsTabs = (orgEnabled: boolean = false): SettingTab[] => [
+const getSettingsTabs = (exportTab: ReactNode, orgEnabled: boolean = false): SettingTab[] => [
     { hash: 'general', title: c('Label').t`General`, content: <General /> },
     { hash: 'aliases', title: c('Label').t`Aliases`, content: <Aliases /> },
     { hash: 'security', title: c('Label').t`Security`, content: <Security /> },
     { hash: 'import', title: c('Label').t`Import`, content: <Import /> },
-    { hash: 'export', title: c('Label').t`Export`, content: <Export /> },
+    { hash: 'export', title: c('Label').t`Export`, content: exportTab },
     { hash: 'account', title: c('Label').t`Account`, icon: 'arrow-within-square', content: <></> },
     ...(orgEnabled
         ? [
@@ -47,21 +49,25 @@ const pathnameToIndex = (tabs: SettingTab[], hash: string) => {
     return idx !== -1 ? idx : 0;
 };
 
-export const SettingsTabs: FC<RouteChildrenProps> = (props) => {
-    const { openSettings } = usePassCore();
+type Props = RouteChildrenProps & {
+    exportTab: ReactNode;
+};
+
+export const SettingsTabs: FC<Props> = ({ exportTab, ...props }) => {
+    const navigate = useNavigate();
     const navigateToAccount = useNavigateToAccount(AccountPath.ACCOUNT_PASSWORD);
     const navigateToOrganization = useNavigateToAccount(AccountPath.POLICIES);
     const pathname = props.location.hash?.substring(1, props.location.hash.length);
 
     const organization = useOrganization();
 
-    const tabs = useMemo(() => getSettingsTabs(organization?.settings.enabled), [organization]);
+    const tabs = useMemo(() => getSettingsTabs(exportTab, organization?.settings.enabled), [organization]);
     const [activeTab, setActiveTab] = useState<number>(pathnameToIndex(tabs, pathname));
 
     const handleOnChange = (nextTab: number) => {
         if (tabs[nextTab].hash === 'account') navigateToAccount();
         else if (tabs[nextTab].hash === 'organization') navigateToOrganization();
-        else openSettings?.(tabs[nextTab].hash);
+        else navigate(getLocalPath('settings'), { hash: tabs[nextTab].hash });
     };
 
     useEffect(() => setActiveTab(pathnameToIndex(tabs, pathname)), [pathname]);
@@ -78,7 +84,7 @@ export const SettingsTabs: FC<RouteChildrenProps> = (props) => {
     );
 };
 
-export const Settings: FC<RouteChildrenProps> = (props) => {
+export const Settings: FC<Props> = (props) => {
     const { config } = usePassCore();
     return (
         <div
@@ -96,3 +102,5 @@ export const Settings: FC<RouteChildrenProps> = (props) => {
         </div>
     );
 };
+
+export default Settings;

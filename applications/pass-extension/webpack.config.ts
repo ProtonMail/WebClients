@@ -5,6 +5,7 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import path from 'path';
 import type { Configuration } from 'webpack';
 import webpack from 'webpack';
+import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 
 import getAssetsLoaders from '@proton/pack/webpack/assets.loader';
 import getCssLoaders from '@proton/pack/webpack/css.loader';
@@ -34,6 +35,7 @@ const {
     RUNTIME_RELOAD_PORT,
     RUNTIME_RELOAD,
     WEBPACK_CIRCULAR_DEPS,
+    WEBPACK_BUNDLE_ANALYZER,
     WEBPACK_DEV_PORT,
 } = envVars;
 
@@ -371,6 +373,7 @@ const config: Configuration = {
                   }),
               ]
             : []),
+        ...(WEBPACK_BUNDLE_ANALYZER ? [new BundleAnalyzerPlugin({ generateStatsFile: true })] : []),
         ...(webpackOptions.isProduction
             ? [
                   new ProtonIconsTreeShakePlugin({

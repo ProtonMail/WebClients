@@ -1,7 +1,6 @@
 import type { FC, MouseEventHandler, ReactNode } from 'react';
 import { useCallback, useMemo } from 'react';
 
-import { useAuthService } from 'proton-pass-web/app/Auth/AuthServiceProvider';
 import { c } from 'ttag';
 
 import useNotifications from '@proton/components/hooks/useNotifications';
@@ -23,19 +22,22 @@ type MenuAction = {
     onClick?: MouseEventHandler;
 };
 
-export const MenuActions: FC = () => {
+type Props = {
+    onLogout: (options: { soft: boolean }) => void;
+};
+
+export const MenuActions: FC<Props> = ({ onLogout }) => {
     const navigate = useNavigate();
     const { createNotification, clearNotifications } = useNotifications();
     const enhance = useNotificationEnhancer();
-    const authService = useAuthService();
     const orgEnabled = useOrganization()?.settings.enabled ?? false;
 
     const navigateToAccount = useNavigateToAccount(AccountPath.ACCOUNT_PASSWORD);
     const navigateToOrganization = useNavigateToAccount(AccountPath.POLICIES);
 
-    const onLogout = useCallback(async () => {
+    const handleLogout = useCallback(async () => {
         createNotification(enhance({ text: c('Info').t`Logging you out...`, type: 'info', loading: true }));
-        await authService.logout({ soft: false });
+        onLogout({ soft: false });
         clearNotifications();
     }, []);
 
@@ -58,7 +60,7 @@ export const MenuActions: FC = () => {
                   ]
                 : []),
             { key: 'support', label: c('Label').t`Support`, icon: 'speech-bubble' },
-            { key: 'logout', label: c('Action').t`Sign out`, icon: 'arrow-out-from-rectangle', onClick: onLogout },
+            { key: 'logout', label: c('Action').t`Sign out`, icon: 'arrow-out-from-rectangle', onClick: handleLogout },
         ],
         [orgEnabled]
     );

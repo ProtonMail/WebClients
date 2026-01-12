@@ -1,9 +1,6 @@
 import { type FC, useMemo } from 'react';
 import { useSelector } from 'react-redux';
 
-import { usePopupContext } from 'proton-pass-extension/app/popup/PopupProvider';
-import { MenuUser } from 'proton-pass-extension/app/popup/Views/Header/MenuUser';
-import { useExtensionClient } from 'proton-pass-extension/lib/components/Extension/ExtensionClient';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
@@ -15,20 +12,21 @@ import usePopperAnchor from '@proton/components/components/popper/usePopperAncho
 import { verticalPopperPlacements } from '@proton/components/components/popper/utils';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
+import { MenuUser } from '@proton/pass/components/Menu/Dropdown/MenuUser';
 import { SharedMenuContent } from '@proton/pass/components/Menu/Shared/SharedMenu';
 import { Submenu } from '@proton/pass/components/Menu/Submenu';
 import { VaultMenu } from '@proton/pass/components/Menu/Vault/VaultMenu';
-import { getPassWebUrl } from '@proton/pass/components/Navigation/routing';
+import { useNavigate } from '@proton/pass/components/Navigation/NavigationActions';
+import { getLocalPath } from '@proton/pass/components/Navigation/routing';
 import { OrganizationPolicyTooltip } from '@proton/pass/components/Organization/OrganizationPolicyTooltip';
 import { useVaultActions } from '@proton/pass/components/Vault/VaultActionsProvider';
 import { AccountPath } from '@proton/pass/constants';
 import { type MenuItem, useMenuItems } from '@proton/pass/hooks/useMenuItems';
 import { useNavigateToAccount } from '@proton/pass/hooks/useNavigateToAccount';
-import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
 import { selectOrganizationVaultCreationDisabled } from '@proton/pass/store/selectors/organization';
 import { selectLockEnabled } from '@proton/pass/store/selectors/settings';
 import { withTap } from '@proton/pass/utils/fp/pipe';
-import { PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
+import { PASS_APP_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import { AppMenuButton, VaultMenuButton } from './MenuButtons';
 
@@ -40,12 +38,16 @@ const DROPDOWN_SIZE: NonNullable<DropdownProps['size']> = {
     width: `22em`,
 };
 
-export const MenuDropdown: FC = () => {
-    const { onLink, popup, openSettings } = usePassCore();
-    const { API_URL } = usePassConfig();
-    const { lock, logout } = useExtensionClient();
-    const { interactive } = usePopupContext();
+type Props = {
+    onLock: () => void;
+    onLogout: (options: { soft: boolean }) => void;
+    interactive: boolean;
+};
+
+export const MenuDropdown: FC<Props> = ({ onLock, onLogout, interactive }) => {
+    const { popup, openSettings } = usePassCore();
     const vaultActions = useVaultActions();
+    const navigate = useNavigate();
 
     const navigateToAccount = useNavigateToAccount(AccountPath.ACCOUNT_PASSWORD);
     const canLock = useSelector(selectLockEnabled);
@@ -68,7 +70,7 @@ export const MenuDropdown: FC = () => {
                 icon: 'arrow-within-square',
             },
             {
-                onClick: () => logout({ soft: false }),
+                onClick: () => onLogout({ soft: false }),
                 label: c('Action').t`Sign out`,
                 icon: 'arrow-out-from-rectangle',
             },
@@ -78,8 +80,10 @@ export const MenuDropdown: FC = () => {
 
     return (
         <nav className="flex gap-2">
-            <AppMenuButton ref={appMenu.anchorRef} toggle={appMenu.toggle} isOpen={appMenu.isOpen} />
-            <VaultMenuButton ref={vaultMenu.anchorRef} toggle={vaultMenu.toggle} isOpen={vaultMenu.isOpen} />
+            <div className="flex gap-2 md:hidden">
+                <AppMenuButton ref={appMenu.anchorRef} toggle={appMenu.toggle} isOpen={appMenu.isOpen} />
+                <VaultMenuButton ref={vaultMenu.anchorRef} toggle={vaultMenu.toggle} isOpen={vaultMenu.isOpen} />
+            </div>
 
             <Dropdown
                 anchorRef={appMenu.anchorRef}
@@ -96,7 +100,9 @@ export const MenuDropdown: FC = () => {
                     <hr className="mb-2 mx-4" aria-hidden="true" />
 
                     <DropdownMenuButton
-                        onClick={withAppMenuClose(() => onLink(getPassWebUrl(API_URL, 'monitor')))}
+                        onClick={withAppMenuClose(
+                            EXTENSION_BUILD ? () => popup?.expand?.('monitor') : () => navigate(getLocalPath('monitor'))
+                        )}
                         label={c('Label').t`${PASS_SHORT_APP_NAME} Monitor`}
                         icon={'pass-shield-warning'}
                         className="pt-1.5 pb-1.5"
@@ -109,7 +115,7 @@ export const MenuDropdown: FC = () => {
                         className="pt-1.5 pb-1.5"
                     />
 
-                    {!popup?.expanded && (
+                    {popup?.expanded === false && (
                         <DropdownMenuButton
                             onClick={withAppMenuClose(() => popup?.expand?.())}
                             label={c('Label').t`Larger window`}
@@ -120,9 +126,11 @@ export const MenuDropdown: FC = () => {
 
                     {canLock && (
                         <DropdownMenuButton
-                            onClick={withAppMenuClose(lock)}
+                            onClick={withAppMenuClose(onLock)}
                             disabled={!interactive}
-                            label={c('Action').t`Lock extension`}
+                            label={
+                                EXTENSION_BUILD ? c('Action').t`Lock extension` : c('Action').t`Lock ${PASS_APP_NAME}`
+                            }
                             icon="lock"
                             className="pt-1.5 pb-1.5"
                         />
