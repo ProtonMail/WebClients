@@ -589,9 +589,7 @@ export const createAuthService = ({
 
     auth.registerLockAdapter(LockMode.SESSION, sessionLockAdapterFactory(auth));
     auth.registerLockAdapter(LockMode.PASSWORD, passwordLockAdapterFactory(auth));
-    if (!EXTENSION_BUILD) {
-        auth.registerLockAdapter(LockMode.BIOMETRICS, biometricsLockAdapterFactory(auth, core));
-    }
+    auth.registerLockAdapter(LockMode.BIOMETRICS, biometricsLockAdapterFactory(auth, core));
 
     return auth;
 };
