@@ -10,6 +10,7 @@ const PRE_RESET_JITTER_MS = 1000;
 
 interface TrackStats {
     lastValue: number;
+    lastConcealedSamples: number;
     resetAttempts: number;
     isResetting: boolean;
     nextAllowedResetAt: number;
@@ -19,6 +20,8 @@ interface StuckCheckResult {
     isStuck: boolean;
     currentValue: number;
     minExpectedDelta?: number;
+    concealedSamples?: number;
+    maxConcealedSamplesDelta?: number;
 }
 
 interface UseStuckTrackMonitorParams {
@@ -56,13 +59,13 @@ export const useStuckTrackMonitor = ({
         publication.setSubscribed(false);
         await wait(100);
 
-        // Check if publication is still valid before re-subscribing
-        if (!publication.track) {
+        try {
+            publication.setSubscribed(true);
+        } catch {
+            // eslint-disable-next-line no-console
+            console.error('Error resetting track', publication.trackSid);
             return;
         }
-
-        publication.setSubscribed(true);
-        publication.setEnabled(true);
     };
 
     const resetStuckTrack = async (publication: RemoteTrackPublication, trackSid: string) => {
@@ -94,6 +97,7 @@ export const useStuckTrackMonitor = ({
             }
 
             stats.lastValue = 0;
+            stats.lastConcealedSamples = 0;
         } catch {
         } finally {
             stats.isResetting = false;
@@ -110,6 +114,7 @@ export const useStuckTrackMonitor = ({
             if (!statsRef.current.has(trackSid)) {
                 statsRef.current.set(trackSid, {
                     lastValue: 0,
+                    lastConcealedSamples: 0,
                     resetAttempts: 0,
                     isResetting: false,
                     nextAllowedResetAt: 0,
@@ -127,7 +132,7 @@ export const useStuckTrackMonitor = ({
                     continue;
                 }
 
-                const { currentValue, isStuck } = result;
+                const { currentValue, isStuck, concealedSamples, maxConcealedSamplesDelta } = result;
                 const expectedDelta = result.minExpectedDelta ?? minExpectedDelta;
 
                 const delta = currentValue - stats.lastValue;
@@ -137,17 +142,29 @@ export const useStuckTrackMonitor = ({
                     continue;
                 }
 
+                // Check for concealed samples spike
+                const concealedSamplesDelta =
+                    concealedSamples !== undefined ? concealedSamples - stats.lastConcealedSamples : 0;
+                const hasConcealedSamplesIssue =
+                    maxConcealedSamplesDelta !== undefined &&
+                    concealedSamplesDelta > 0 &&
+                    concealedSamplesDelta >= maxConcealedSamplesDelta;
+
                 if (delta >= expectedDelta && stats.resetAttempts > 0) {
                     stats.resetAttempts = 0;
                 }
 
-                const badThisInterval = isStuck || (expectedDelta > 0 && delta < expectedDelta);
+                const badThisInterval =
+                    isStuck || (expectedDelta > 0 && delta < expectedDelta) || hasConcealedSamplesIssue;
                 if (badThisInterval) {
                     await resetStuckTrack(publication, trackSid);
                     continue;
                 }
 
                 stats.lastValue = currentValue;
+                if (concealedSamples !== undefined) {
+                    stats.lastConcealedSamples = concealedSamples;
+                }
             } catch (error) {
                 // eslint-disable-next-line no-console
                 console.error('Error checking track stats', error);
