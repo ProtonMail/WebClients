@@ -1,5 +1,4 @@
 @use '~@proton/styles/scss/lib/config' as *;
-@use '~@proton/styles/scss/specifics/placeholder-loading' as *;
 
 .bg-promotion {
 	&-gradient-horizontal {
@@ -8,15 +7,6 @@
 
 	&-gradient-vertical {
 		background: linear-gradient(0deg, var(--promotion-background-start) 0%, var(--promotion-background-end) 100%);
-	}
-
-	&-loading {
-		&::before {
-			@extend %item-loading-pseudo;
-			@extend %placeholder-loading;
-
-			inline-size: 100%;
-		}
 	}
 
 	&-text {
