@@ -604,50 +604,42 @@ export type SerializedAttachment = AttachmentPub & Partial<Encrypted> & LocalFla
 export type DeletedAttachment = Omit<SerializedAttachment, 'encrypted'> & Deleted;
 export type SerializedAttachmentMap = Record<AttachmentId, SerializedAttachment>;
 
-// FIXME!!! `null` isn't allowed on optional fields `?`, the `... == null` clauses MUST BE REMOVED from the guard function
-// prettier-ignore
 export function isAttachmentPub(value: any): value is AttachmentPub {
+    // prettier-ignore
     return (
         typeof value === 'object' &&
         value !== null &&
         typeof value.id === 'string' &&
-        (value.spaceId === undefined || value.spaceId === null || typeof value.spaceId === 'string') &&
-        (value.mimeType === undefined || value.mimeType === null || typeof value.mimeType === 'string') &&
+        (value.spaceId === undefined || typeof value.spaceId === 'string') &&
+        (value.mimeType === undefined || typeof value.mimeType === 'string') &&
         typeof value.uploadedAt === 'string' &&
-        (value.rawBytes === undefined || value.rawBytes === null || typeof value.rawBytes === 'number') &&
-        (value.processing === undefined || value.processing === null || typeof value.processing === 'boolean') &&
-        (value.error === undefined || value.error === null || typeof value.error === 'boolean') &&
-        (value.autoRetrieved === undefined ||
-            value.autoRetrieved === null ||
-            typeof value.autoRetrieved === 'boolean') &&
-        (value.driveNodeId === undefined || value.driveNodeId === null || typeof value.driveNodeId === 'string') &&
-        (value.relevanceScore === undefined ||
-            value.relevanceScore === null ||
-            typeof value.relevanceScore === 'number') &&
-        (value.isChunk === undefined || value.isChunk === null || typeof value.isChunk === 'boolean') &&
-        (value.chunkTitle === undefined || value.chunkTitle === null || typeof value.chunkTitle === 'string') &&
-        (value.isUploadedProjectFile === undefined ||
-            value.isUploadedProjectFile === null ||
-            typeof value.isUploadedProjectFile === 'boolean')
+        (value.rawBytes === undefined || typeof value.rawBytes === 'number') &&
+        (value.processing === undefined || typeof value.processing === 'boolean') &&
+        (value.error === undefined || typeof value.error === 'boolean') &&
+        (value.autoRetrieved === undefined || typeof value.autoRetrieved === 'boolean') &&
+        (value.driveNodeId === undefined || typeof value.driveNodeId === 'string') &&
+        (value.relevanceScore === undefined || typeof value.relevanceScore === 'number') &&
+        (value.isChunk === undefined || typeof value.isChunk === 'boolean') &&
+        (value.chunkTitle === undefined || typeof value.chunkTitle === 'string') &&
+        (value.isUploadedProjectFile === undefined || typeof value.isUploadedProjectFile === 'boolean')
     );
 }
 
-// FIXME!!! `null` isn't allowed on optional fields `?`, the `... == null` clauses MUST BE REMOVED from the guard function
-// prettier-ignore
 export function isAttachmentPriv(value: any): value is AttachmentPriv {
+    // prettier-ignore
     return (
         typeof value === 'object' &&
         value !== null &&
-        (value.filename === undefined || value.filename === null || typeof value.filename === 'string') &&
-        (value.data === undefined || value.data === null || value.data instanceof Uint8Array) &&
-        (value.markdown === undefined || value.markdown === null || typeof value.markdown === 'string') &&
-        (value.errorMessage === undefined || value.errorMessage === null || typeof value.errorMessage === 'string') &&
-        (value.truncated === undefined || value.truncated === null || typeof value.truncated === 'boolean') &&
-        (value.originalRowCount === undefined || value.originalRowCount === null || typeof value.originalRowCount === 'number') &&
-        (value.processedRowCount === undefined || value.processedRowCount === null || typeof value.processedRowCount === 'number') &&
-        (value.imagePreview === undefined || value.imagePreview === null || value.imagePreview instanceof Uint8Array) &&
-        (value.tokenCount === undefined || value.tokenCount === null || typeof value.tokenCount === 'number') &&
-        (value.role === undefined || value.role === null || value.role === 'user' || value.role === 'assistant')
+        (value.filename === undefined || typeof value.filename === 'string') &&
+        (value.data === undefined || value.data instanceof Uint8Array) &&
+        (value.markdown === undefined || typeof value.markdown === 'string') &&
+        (value.errorMessage === undefined || typeof value.errorMessage === 'string') &&
+        (value.truncated === undefined || typeof value.truncated === 'boolean') &&
+        (value.originalRowCount === undefined || typeof value.originalRowCount === 'number') &&
+        (value.processedRowCount === undefined || typeof value.processedRowCount === 'number') &&
+        (value.imagePreview === undefined || value.imagePreview instanceof Uint8Array) &&
+        (value.tokenCount === undefined || typeof value.tokenCount === 'number') &&
+        (value.role === undefined || value.role === 'user' || value.role === 'assistant')
     );
 }
 
