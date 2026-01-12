@@ -6,7 +6,6 @@ import { c } from 'ttag';
 import { useRetentionPolicies } from '@proton/account/retentionPolicies/hooks';
 import { SimpleSidebarListItemHeader } from '@proton/components';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import type { MailSettings } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
 import type { ApplyLabelsParams } from 'proton-mail/hooks/actions/label/interface';
@@ -19,7 +18,6 @@ import SidebarItem from './SidebarItem';
 
 interface Props {
     counterMap: LocationCountMap;
-    mailSettings: MailSettings;
     setFocusedItem: (id: string) => void;
     displayMoreItems: boolean;
     showScheduled: boolean;
@@ -51,7 +49,6 @@ type HandleDragOver = (elementId: MAILBOX_LABEL_IDS | typeof DND_MORE_FOLDER_ID)
 
 const MailSidebarSystemFolders = ({
     counterMap,
-    mailSettings,
     setFocusedItem,
     showScheduled,
     showSnoozed,
@@ -61,15 +58,12 @@ const MailSidebarSystemFolders = ({
     moveToFolder,
     applyLabels,
 }: Props) => {
-    const { ShowMoved, AlmostAllMail } = mailSettings;
     const [retentionRules] = useRetentionPolicies();
     const showSoftDeletedFolder = !!retentionRules?.length;
 
     const [sidebarElements, moveSidebarElement] = useMoveSystemFolders({
-        showMoved: ShowMoved,
         showScheduled,
         showSnoozed,
-        showAlmostAllMail: AlmostAllMail,
         showSoftDeletedFolder,
     });
 
