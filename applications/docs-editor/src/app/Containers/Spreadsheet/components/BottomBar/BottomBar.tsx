@@ -177,7 +177,8 @@ function SheetTab({ sheet, index, isActive }: SheetTabProps) {
   }, [])
 
   const confirmRename = useCallback(() => {
-    if (title === sheet.name) {
+    if (!title || title === sheet.name) {
+      setTitle(sheet.name)
       setIsRenaming(false)
       return
     }
@@ -257,7 +258,7 @@ function SheetTab({ sheet, index, isActive }: SheetTabProps) {
               )}
               aria-hidden={isRenaming}
             >
-              {title}
+              {title || c('Info').t`No title`}
             </div>
           </div>
         </div>
