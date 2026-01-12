@@ -8,6 +8,7 @@ import type { ItemsByShareId } from '@proton/pass/store/reducers/items';
 import { withOptimisticItemsByShareId } from '@proton/pass/store/reducers/items';
 import { SelectorError } from '@proton/pass/store/selectors/errors';
 import { createVisibilityFilterSelector } from '@proton/pass/store/selectors/shares';
+import { createUncachedSelector } from '@proton/pass/store/selectors/utils';
 import type { State } from '@proton/pass/store/types';
 import type { ItemRevision, ItemRevisionWithOptimistic, ItemType, Maybe, MaybeNull, SelectedItem } from '@proton/pass/types';
 import { first } from '@proton/pass/utils/array/first';
@@ -64,7 +65,7 @@ export const selectItem = <T extends ItemType = ItemType>(shareId: string, itemI
     });
 
 export const selectItemOrThrow = <T extends ItemType = ItemType>(shareId: string, itemId: string) =>
-    createSelector(selectItem<T>(shareId, itemId), (item) => {
+    createUncachedSelector(selectItem<T>(shareId, itemId), (item) => {
         if (!item) throw new SelectorError(`Item ${itemId} not found`);
         return item;
     });
