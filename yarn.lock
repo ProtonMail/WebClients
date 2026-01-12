@@ -31332,9 +31332,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"livekit-client@npm:2.16.1":
-  version: 2.16.1
-  resolution: "livekit-client@npm:2.16.1"
+"livekit-client@npm:2.17.0":
+  version: 2.17.0
+  resolution: "livekit-client@npm:2.17.0"
   dependencies:
     "@livekit/mutex": "npm:1.1.1"
     "@livekit/protocol": "npm:1.42.2"
@@ -31348,7 +31348,7 @@ __metadata:
     webrtc-adapter: "npm:^9.0.1"
   peerDependencies:
     "@types/dom-mediacapture-record": ^1
-  checksum: 10/29937868db1b1377a3da005de354f38a1e876619dd1a7653f16f3b089fe1cbd148ce68ee80c1d1c579db0fce0dd59ba25a74ff73bcefbe0c8bc10df1c4084932
+  checksum: 10/3f2ea48aae991e60c1a00e9da39ee78709ca64f45aa4e078781b1a52e523b5e0b7e00d8902324b8d19c537bbd7b402a3860e2da95191ce40904a48cfa840e260
   languageName: node
   linkType: hard
 
@@ -37968,7 +37968,7 @@ __metadata:
     cross-env: "npm:^10.1.0"
     eslint: "npm:^9.39.2"
     happy-dom: "npm:^20.0.11"
-    livekit-client: "npm:2.16.1"
+    livekit-client: "npm:2.17.0"
     prettier: "npm:^3.7.4"
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
