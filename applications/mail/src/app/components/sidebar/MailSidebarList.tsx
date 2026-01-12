@@ -247,7 +247,6 @@ const MailSidebarList = ({ postItems, collapsed = false, onClickExpandNav }: Pro
                 <SidebarList>
                     <MailSidebarSystemFolders
                         counterMap={counterMap}
-                        mailSettings={mailSettings}
                         setFocusedItem={setFocusedItem}
                         displayMoreItems={displayMoreItems}
                         showScheduled={showScheduled}
