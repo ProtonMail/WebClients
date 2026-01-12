@@ -30,7 +30,7 @@ export type FileDetails = {
         ok: boolean;
         message: string;
         details: string[];
-    };
+    } | null;
     name: string;
     location: string;
     createdBy: string;
@@ -55,12 +55,22 @@ export type UseFileDetailsModalProps = ModalStateProps & {
     volumeId: string;
     linkId: string;
     drive: Drive;
+    verifySignatures?: boolean;
 
     // Only required for the legacy modal.
     shareId: string;
 };
 
-export function useFileDetailsModalState({ volumeId, linkId, drive, ...modalProps }: UseFileDetailsModalProps) {
+export function useFileDetailsModalState({
+    volumeId,
+    linkId,
+    drive,
+    verifySignatures = true,
+    open,
+    onClose,
+    onExit,
+    shareId,
+}: UseFileDetailsModalProps) {
     const { handleError } = useSdkErrorHandler();
 
     const [isLoading, withLoading] = useLoading();
@@ -90,7 +100,7 @@ export function useFileDetailsModalState({ volumeId, linkId, drive, ...modalProp
                 setDetails({
                     uid: nodeEntity.uid,
                     hasDecryptionError: hasDecryptionError(node),
-                    authorshipStatus: getAuthorshipStatus(node),
+                    authorshipStatus: verifySignatures ? getAuthorshipStatus(node) : null,
                     name: getNodeName(node),
                     location,
                     safeEntityInJson: JSON.stringify({
@@ -138,10 +148,13 @@ export function useFileDetailsModalState({ volumeId, linkId, drive, ...modalProp
             }
         };
         void withLoading(fetchFileDetails());
-    }, [volumeId, linkId, drive, withLoading, handleError]);
+    }, [volumeId, linkId, drive, withLoading, handleError, verifySignatures]);
 
     return {
-        ...modalProps,
+        open,
+        onClose,
+        onExit,
+        shareId,
         isLoading,
         title,
         hasError,

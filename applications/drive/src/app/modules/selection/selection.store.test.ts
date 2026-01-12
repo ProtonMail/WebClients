@@ -4,7 +4,7 @@ import { SelectionState } from './types';
 describe('selectionStore', () => {
     beforeEach(() => {
         useSelectionStore.getState().clearSelections();
-        useSelectionStore.getState().setAllItemIds([]);
+        useSelectionStore.getState().setAllItemIds(new Set());
     });
 
     describe('initialization', () => {
@@ -20,31 +20,31 @@ describe('selectionStore', () => {
 
     describe('setAllItemIds', () => {
         it('should update allItemIds', () => {
-            useSelectionStore.getState().setAllItemIds(['id1', 'id2', 'id3']);
+            useSelectionStore.getState().setAllItemIds(new Set(new Set(['id1', 'id2', 'id3'])));
 
             const state = useSelectionStore.getState();
             expect(state.allItemIds).toEqual(['id1', 'id2', 'id3']);
         });
 
         it('should filter out invalid selections when items change', () => {
-            useSelectionStore.getState().setAllItemIds(['id1', 'id2', 'id3']);
+            useSelectionStore.getState().setAllItemIds(new Set(['id1', 'id2', 'id3']));
             useSelectionStore.getState().toggleSelectItem('id1');
             useSelectionStore.getState().toggleSelectItem('id2');
 
             expect(useSelectionStore.getState().selectedItemIds.size).toBe(2);
 
-            useSelectionStore.getState().setAllItemIds(['id2', 'id3', 'id4']);
+            useSelectionStore.getState().setAllItemIds(new Set(['id2', 'id3', 'id4']));
 
             expect(useSelectionStore.getState().selectedItemIds).toEqual(new Set(['id2']));
         });
 
         it('should clear multiSelectStartId if it becomes invalid', () => {
-            useSelectionStore.getState().setAllItemIds(['id1', 'id2', 'id3']);
+            useSelectionStore.getState().setAllItemIds(new Set(['id1', 'id2', 'id3']));
             useSelectionStore.getState().selectItem('id1');
 
             expect(useSelectionStore.getState().multiSelectStartId).toBe('id1');
 
-            useSelectionStore.getState().setAllItemIds(['id2', 'id3', 'id4']);
+            useSelectionStore.getState().setAllItemIds(new Set(['id2', 'id3', 'id4']));
 
             expect(useSelectionStore.getState().multiSelectStartId).toBeUndefined();
         });
@@ -52,7 +52,7 @@ describe('selectionStore', () => {
 
     describe('toggleSelectItem', () => {
         beforeEach(() => {
-            useSelectionStore.getState().setAllItemIds(['id1', 'id2', 'id3']);
+            useSelectionStore.getState().setAllItemIds(new Set(['id1', 'id2', 'id3']));
         });
 
         it('should select an unselected item', () => {
@@ -88,7 +88,7 @@ describe('selectionStore', () => {
 
     describe('toggleAllSelected', () => {
         beforeEach(() => {
-            useSelectionStore.getState().setAllItemIds(['id1', 'id2', 'id3']);
+            useSelectionStore.getState().setAllItemIds(new Set(['id1', 'id2', 'id3']));
         });
 
         it('should select all items when none are selected', () => {
@@ -125,7 +125,7 @@ describe('selectionStore', () => {
 
     describe('toggleRange', () => {
         beforeEach(() => {
-            useSelectionStore.getState().setAllItemIds(['id1', 'id2', 'id3', 'id4', 'id5']);
+            useSelectionStore.getState().setAllItemIds(new Set(['id1', 'id2', 'id3', 'id4', 'id5']));
         });
 
         it('should select single item when no start is set', () => {
@@ -153,7 +153,7 @@ describe('selectionStore', () => {
 
     describe('selectItem', () => {
         beforeEach(() => {
-            useSelectionStore.getState().setAllItemIds(['id1', 'id2', 'id3']);
+            useSelectionStore.getState().setAllItemIds(new Set(['id1', 'id2', 'id3']));
         });
 
         it('should select single item', () => {
@@ -185,7 +185,7 @@ describe('selectionStore', () => {
 
     describe('clearSelections', () => {
         it('should clear all selections', () => {
-            useSelectionStore.getState().setAllItemIds(['id1', 'id2', 'id3']);
+            useSelectionStore.getState().setAllItemIds(new Set(['id1', 'id2', 'id3']));
             useSelectionStore.getState().toggleSelectItem('id1');
             useSelectionStore.getState().toggleSelectItem('id2');
             useSelectionStore.getState().clearSelections();
@@ -199,7 +199,7 @@ describe('selectionStore', () => {
 
     describe('isSelected', () => {
         beforeEach(() => {
-            useSelectionStore.getState().setAllItemIds(['id1', 'id2', 'id3']);
+            useSelectionStore.getState().setAllItemIds(new Set(['id1', 'id2', 'id3']));
             useSelectionStore.getState().toggleSelectItem('id1');
             useSelectionStore.getState().toggleSelectItem('id3');
         });
@@ -218,7 +218,7 @@ describe('selectionStore', () => {
 
     describe('getSelectedItemIds', () => {
         it('should return array of selected IDs', () => {
-            useSelectionStore.getState().setAllItemIds(['id1', 'id2', 'id3']);
+            useSelectionStore.getState().setAllItemIds(new Set(['id1', 'id2', 'id3']));
             useSelectionStore.getState().toggleSelectItem('id1');
             useSelectionStore.getState().toggleSelectItem('id3');
 

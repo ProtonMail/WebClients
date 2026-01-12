@@ -5,17 +5,17 @@
  */
 import { renderHook, waitFor } from '@testing-library/react';
 
-import { ThumbnailType, useDrive } from '@proton/drive/index';
+import { ThumbnailType, getDrive } from '@proton/drive';
 
 import { useSdkErrorHandler } from '../../utils/errorHandling/useSdkErrorHandler';
 import { useThumbnailStore } from '../../zustand/thumbnails/thumbnails.store';
 import { useBatchThumbnailLoader } from './useBatchThumbnailLoader';
 
-jest.mock('@proton/drive/index');
+jest.mock('@proton/drive');
 jest.mock('../../utils/errorHandling/useSdkErrorHandler');
 jest.mock('../../zustand/thumbnails/thumbnails.store');
 
-const mockUseDrive = jest.mocked(useDrive);
+const mockGetDrive = jest.mocked(getDrive);
 const mockUseSdkErrorHandler = jest.mocked(useSdkErrorHandler);
 const mockUseThumbnailStore = jest.mocked(useThumbnailStore);
 
@@ -51,7 +51,7 @@ describe('useBatchThumbnailLoader', () => {
         jest.useFakeTimers();
         mockGetThumbnail.mockReturnValue(undefined);
 
-        mockUseDrive.mockReturnValue({ drive: mockDriveClient } as any);
+        mockGetDrive.mockReturnValue(mockDriveClient as any);
         mockUseSdkErrorHandler.mockReturnValue({ handleError: mockHandleError });
         mockUseThumbnailStore.mockReturnValue({
             setThumbnail: mockSetThumbnail,
@@ -345,6 +345,7 @@ describe('useBatchThumbnailLoader', () => {
             expect(mockDriveClient.iterateThumbnails).toHaveBeenCalledTimes(1);
 
             // Resolve first call
+            // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
             resolveFirstCall!();
 
             await waitFor(() => expect(mockDriveClient.iterateThumbnails).toHaveBeenCalledTimes(1));

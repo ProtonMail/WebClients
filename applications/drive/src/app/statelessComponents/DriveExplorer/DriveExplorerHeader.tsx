@@ -22,6 +22,7 @@ interface DriveExplorerHeaderProps {
     layout: LayoutSetting;
     loading: boolean;
     showCheckboxColumn?: boolean;
+    showContextMenuButton?: boolean;
 }
 
 export const DriveExplorerHeader = ({
@@ -35,6 +36,7 @@ export const DriveExplorerHeader = ({
     layout,
     loading,
     showCheckboxColumn = true,
+    showContextMenuButton = true,
 }: DriveExplorerHeaderProps) => {
     const selectedCount = selection?.selectedItems.size;
 
@@ -164,7 +166,7 @@ export const DriveExplorerHeader = ({
                                     );
                                 })}
                             {/* Empty space for context menu */}
-                            {!(selectedCount && selectedCount > 0) && (
+                            {showContextMenuButton && !(selectedCount && selectedCount > 0) && (
                                 <TableHeaderCell
                                     className="m-0 w-custom"
                                     style={{

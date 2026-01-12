@@ -1,4 +1,4 @@
-import type { ProtonDriveClient } from '@proton/drive/index';
+import type { ProtonDriveClient, ProtonDrivePublicLinkClient } from '@proton/drive/index';
 import { MemberRole, type NodeEntity } from '@proton/drive/index';
 
 import { sendErrorReport } from '../errorHandling';
@@ -14,7 +14,7 @@ const MemberHierarchy = {
 
 export const getNodeEffectiveRole = async (
     node: NodeEntity,
-    drive: ProtonDriveClient,
+    drive: ProtonDriveClient | ProtonDrivePublicLinkClient,
     role: MemberRole = MemberRole.Inherited
 ): Promise<MemberRole.Admin | MemberRole.Editor | MemberRole.Viewer> => {
     if (role === MemberRole.Admin || node.directRole === MemberRole.Admin) {

@@ -16,6 +16,7 @@ export interface PreviewProps {
     nodeUid: string;
     previewableNodeUids?: string[];
     onNodeChange?: (nodeUid: string) => void;
+    verifySignatures?: boolean;
     onClose: () => void;
 
     /**
@@ -39,14 +40,16 @@ export function Preview({
     nodeUid,
     previewableNodeUids,
     onNodeChange,
+    verifySignatures = true,
     onClose,
     photos,
 }: PreviewProps) {
     const preview = usePreviewState({
         drive,
-        nodeUid: nodeUid,
-        previewableNodeUids: previewableNodeUids,
-        onNodeChange: onNodeChange,
+        nodeUid,
+        previewableNodeUids,
+        onNodeChange,
+        verifySignatures,
     });
 
     // Ensure Photos version of the preview is used in the photo section.
@@ -66,7 +69,7 @@ export function Preview({
     const rootRef = useRef<HTMLDivElement>(null);
 
     const onDetails = () => {
-        showDetailsModal({ drive, volumeId, shareId: deprecatedContextShareId, linkId: nodeId });
+        showDetailsModal({ drive, volumeId, shareId: deprecatedContextShareId, linkId: nodeId, verifySignatures });
     };
 
     const onShare = preview.canShare

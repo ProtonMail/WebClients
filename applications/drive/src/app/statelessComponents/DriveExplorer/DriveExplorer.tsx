@@ -79,7 +79,7 @@ export interface DriveExplorerProps {
      * }
      * ```
      */
-    grid: GridDefinition;
+    grid?: GridDefinition;
 
     /**
      * Display configuration (item height, overscan, gaps, CSS classes).
@@ -303,8 +303,9 @@ const DriveExplorer = ({
                 layout={layout}
                 loading={loading}
                 showCheckboxColumn={showCheckboxColumn}
+                showContextMenuButton={Boolean(contextMenu)}
             />
-            {layout === LayoutSetting.Grid ? (
+            {grid && layout === LayoutSetting.Grid ? (
                 <DriveExplorerGridBody
                     itemIds={itemIds}
                     grid={grid}

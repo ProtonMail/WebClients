@@ -42,38 +42,42 @@ function FileDetailsComponent({ details }: { details: FileDetails }) {
                     {c('Info').t`Unfortunately, it appears that the file or some of its data cannot be decrypted.`}
                 </Banner>
             ) : (
-                <Banner
-                    noIcon
-                    variant={details.authorshipStatus.ok ? BannerVariants.SUCCESS : BannerVariants.DANGER}
-                    data-testid="drive:signature-alert"
-                    className="flex mb-4 banner-signature-alert"
-                >
-                    {details.authorshipStatus.details.length === 0 ? (
-                        <span dangerouslySetInnerHTML={{ __html: details.authorshipStatus.message }} />
-                    ) : (
-                        <Collapsible>
-                            <CollapsibleHeader
-                                suffix={
-                                    <CollapsibleHeaderIconButton>
-                                        <Icon name="chevron-down" />
-                                    </CollapsibleHeaderIconButton>
-                                }
-                            >
-                                <span dangerouslySetInnerHTML={{ __html: details.authorshipStatus.message }} />
-                            </CollapsibleHeader>
-                            <CollapsibleContent>
-                                <ul>
-                                    {details.authorshipStatus.details.map((detail) => (
-                                        <li key={detail}>{detail}</li>
-                                    ))}
-                                </ul>
-                                <a href={getKnowledgeBaseUrl('/drive-signature-management')} target="_blank">
-                                    {c('Action').t`Learn more`}
-                                </a>
-                            </CollapsibleContent>
-                        </Collapsible>
-                    )}
-                </Banner>
+                // TODO: We need to find a better way of handling skipping of signature check (In anonymous context)
+                // Probably showing a warning message would be the proper solution
+                details.authorshipStatus !== null && (
+                    <Banner
+                        noIcon
+                        variant={details.authorshipStatus.ok ? BannerVariants.SUCCESS : BannerVariants.DANGER}
+                        data-testid="drive:signature-alert"
+                        className="flex mb-4 banner-signature-alert"
+                    >
+                        {details.authorshipStatus.details.length === 0 ? (
+                            <span dangerouslySetInnerHTML={{ __html: details.authorshipStatus.message }} />
+                        ) : (
+                            <Collapsible>
+                                <CollapsibleHeader
+                                    suffix={
+                                        <CollapsibleHeaderIconButton>
+                                            <Icon name="chevron-down" />
+                                        </CollapsibleHeaderIconButton>
+                                    }
+                                >
+                                    <span dangerouslySetInnerHTML={{ __html: details.authorshipStatus.message }} />
+                                </CollapsibleHeader>
+                                <CollapsibleContent>
+                                    <ul>
+                                        {details.authorshipStatus.details.map((detail) => (
+                                            <li key={detail}>{detail}</li>
+                                        ))}
+                                    </ul>
+                                    <a href={getKnowledgeBaseUrl('/drive-signature-management')} target="_blank">
+                                        {c('Action').t`Learn more`}
+                                    </a>
+                                </CollapsibleContent>
+                            </Collapsible>
+                        )}
+                    </Banner>
+                )
             )}
             <FileNameRow label={c('Title').t`Name`} name={details.name} />
             <FileNameRow label={c('Title').t`Location`} name={details.location} />
