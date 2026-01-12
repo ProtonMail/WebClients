@@ -40,6 +40,7 @@ import { usePaymentFacade as useInnerPaymentFacade } from '../react-extensions';
 import type { ThemeCode, ThemeLike } from './helpers';
 import { getThemeCode } from './helpers';
 import { wrapMethods } from './useMethods';
+import { type TelemetryPaymentFlow, usePaymentsTelemetry } from './usePaymentsTelemetry';
 import {
     getDefaultVerifyPayment,
     getDefaultVerifyPaypal,
@@ -78,6 +79,7 @@ type PaymentFacadeProps = {
      * The flow parameter can modify the list of available payment methods and modify their behavior in certain cases.
      */
     flow: PaymentMethodFlow;
+    telemetryFlow?: TelemetryPaymentFlow;
     /**
      * The main callback that will be called when the payment is ready to be charged
      * after the payment token is fetched and verified with 3DS or other confirmation from the user.
@@ -123,6 +125,7 @@ export const usePaymentFacade = ({
     onChargeable,
     coupon,
     flow,
+    telemetryFlow,
     onMethodChanged,
     paymentMethods,
     paymentStatus,
@@ -158,6 +161,16 @@ export const usePaymentFacade = ({
     const iframeHandles = useCbIframe();
     const chargebeeHandles: ChargebeeIframeHandles = iframeHandles.handles;
     const chargebeeEvents: ChargebeeIframeEvents = iframeHandles.events;
+
+    const telemetry = usePaymentsTelemetry({
+        apiOverride: api,
+        plan: selectedPlanName,
+        flow: telemetryFlow ?? flow,
+        amount,
+        cycle: checkResult?.Cycle,
+    });
+
+    const { reportPaymentLoad } = telemetry;
 
     const verifyPaymentChargebeeCard = useChargebeeCardVerifyPayment(api, {
         checkResult,
@@ -441,6 +454,8 @@ export const usePaymentFacade = ({
         userCanTriggerSelected,
         iframeHandles,
         selectedPlanName,
+        paymentComponentLoaded: reportPaymentLoad,
+        telemetry,
         themeCode,
         user,
         checkResult,

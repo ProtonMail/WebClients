@@ -18,6 +18,7 @@ import { useHandler } from '@proton/components/hooks/useHandler';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import useVPNServersCount from '@proton/components/hooks/useVPNServersCount';
 import { useCurrencies } from '@proton/components/payments/client-extensions/useCurrencies';
+import type { TelemetryPaymentFlow } from '@proton/components/payments/client-extensions/usePaymentsTelemetry';
 import { InvalidZipCodeError } from '@proton/components/payments/react-extensions/errors';
 import { useLoading } from '@proton/hooks';
 import { IcGift } from '@proton/icons/icons/IcGift';
@@ -246,6 +247,7 @@ export interface SubscriptionContainerProps {
     metrics: {
         source: Source;
     };
+    telemetryFlow?: TelemetryPaymentFlow;
     render: (renderProps: RenderProps) => ReactNode;
     subscription: Subscription | FreeSubscription;
     organization: Organization;
@@ -283,6 +285,7 @@ const SubscriptionContainerInner = ({
     defaultAudience = Audience.B2C,
     defaultSelectedProductPlans,
     metrics: outerMetricsProps,
+    telemetryFlow,
     render,
     subscription,
     organization,
@@ -533,7 +536,7 @@ const SubscriptionContainerInner = ({
 
     const handleSubscribe = async (
         operations: Operations,
-        { operationsSubscriptionData, paymentMethodValue }: SubscriptionContext
+        { operationsSubscriptionData, paymentMethodValue, paymentProcessorType }: SubscriptionContext
     ) => {
         if (!hasPlanIDs(operationsSubscriptionData.Plans)) {
             const result = await cancelSubscription({});
@@ -581,6 +584,8 @@ const SubscriptionContainerInner = ({
                     vatNumber: vatNumber.vatNumber,
                 });
 
+                // eslint-disable-next-line @typescript-eslint/no-use-before-define
+                paymentFacade.telemetry.reportPaymentSuccess(paymentProcessorType);
                 if (parent === 'subscription-modal') {
                     void reportSubscriptionModalPayment({
                         cycle: model.cycle,
@@ -590,6 +595,9 @@ const SubscriptionContainerInner = ({
                     });
                 }
             } catch (error) {
+                // eslint-disable-next-line @typescript-eslint/no-use-before-define
+                paymentFacade.telemetry.reportPaymentFailure(paymentProcessorType);
+
                 // eslint-disable-next-line @typescript-eslint/no-use-before-define
                 paymentFacade.reset();
 
@@ -671,6 +679,7 @@ const SubscriptionContainerInner = ({
             return promise.catch(noop);
         },
         flow: 'subscription',
+        telemetryFlow,
         user,
         subscription,
         planIDs: model.planIDs,

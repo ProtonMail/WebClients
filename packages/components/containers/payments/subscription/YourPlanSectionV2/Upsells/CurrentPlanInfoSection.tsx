@@ -432,6 +432,7 @@ interface Props {
     vpnUpsells: UpsellsHook['upsells'];
     bundleUpsells: UpsellsHook['upsells'];
     handleExplorePlans: () => void;
+    telemetryFlow: UpsellsHook['telemetryFlow'];
     userCanHave24MonthPlan: boolean;
 }
 

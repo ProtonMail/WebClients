@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
+import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
 import { PLANS, PLAN_NAMES, type Subscription } from '@proton/payments';
 
 import { useSubscriptionModal } from '../../SubscriptionModalProvider';
@@ -20,12 +21,14 @@ const DuoBanner = ({ app, subscription }: Props) => {
     const plan = PLANS.DUO;
     const [openSubscriptionModal] = useSubscriptionModal();
     const { cheapestMonthlyPrice } = useSubscriptionPriceComparison(app, subscription, plan);
+    const telemetryFlow = useDashboardPaymentFlow(app);
 
     const handleGetPlan = () => {
         openSubscriptionModal({
             step: SUBSCRIPTION_STEPS.CHECKOUT,
             plan: plan,
             metrics: { source: 'upsells' },
+            telemetryFlow,
         });
     };
 

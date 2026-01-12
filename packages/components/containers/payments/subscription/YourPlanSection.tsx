@@ -8,6 +8,7 @@ import { useCalendars } from '@proton/calendar/calendars/hooks';
 import Loader from '@proton/components/components/loader/Loader';
 import SettingsSectionExtraWide from '@proton/components/containers/account/SettingsSectionExtraWide';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
+import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
 import useLoad from '@proton/components/hooks/useLoad';
 import { usePreferredPlansMap } from '@proton/components/hooks/usePreferredPlansMap';
 import { useTrialOnlyPaymentMethods } from '@proton/components/hooks/useTrialOnlyPaymentMethods';
@@ -49,6 +50,7 @@ const YourPlanSectionInner = ({ app }: Props) => {
     const { plansMap, plansMapLoading } = usePreferredPlansMap();
     const isReferralExpansionEnabled = useFlag('ReferralExpansionDiscover');
     const isMeetPlansEnabled = useFlag('MeetPlans');
+    const telemetryFlow = useDashboardPaymentFlow(app);
     useLoad();
 
     const { upsells, loading: upsellsLoading } = useUpsellsToDisplay({
@@ -62,6 +64,7 @@ const YourPlanSectionInner = ({ app }: Props) => {
         user,
         isReferralExpansionEnabled,
         isMeetPlansEnabled,
+        telemetryFlow,
         ...pick(user, ['canPay', 'isFree', 'hasPaidMail']),
     });
 

@@ -130,7 +130,7 @@ const AccountSettingsRouter = ({
                     >
                         <YourPlanSectionV2 app={app} />
                         <YourPlanUpsellsSectionV2 app={app} />
-                        <VpnDownloadAndInfoSection />
+                        <VpnDownloadAndInfoSection app={app} />
                         <VpnAlsoInYourPlanSection app={app} />
                         <VpnBlogSection />
                     </PrivateMainSettingsArea>
@@ -152,7 +152,11 @@ const AccountSettingsRouter = ({
                         wrapperClass="w-full p-4 lg:p-6 xl:p-12 max-w-custom mx-auto"
                         style={{ '--max-w-custom': '1500px' }}
                     >
-                        <YourPlanSectionV2 app={app} editBillingCycle={true} cta={<DashboardComparePlansCTA />} />
+                        <YourPlanSectionV2
+                            app={app}
+                            editBillingCycle={true}
+                            cta={<DashboardComparePlansCTA app={app} />}
+                        />
                         <AssistantToggle />
                         <SubscriptionsSection />
                         <PaymentMethodsSection app={app} />

@@ -84,6 +84,7 @@ export interface Props {
     savedMethodExternal?: SavedPaymentMethodExternal;
     currency: Currency;
     amount: number;
+    paymentComponentLoaded: () => void;
     themeCode?: ThemeCode;
     bitcoinChargebee: BitcoinHook;
     directDebit: ChargebeeDirectDebitProcessorHook;
@@ -119,6 +120,7 @@ export const PaymentsNoApi = ({
     iframeHandles,
     chargebeeCard,
     chargebeePaypal,
+    paymentComponentLoaded,
     themeCode,
     bitcoinChargebee,
     user,
@@ -141,6 +143,10 @@ export const PaymentsNoApi = ({
     const isBitcoinMethod = method === PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN;
     const showBitcoinMethod = isBitcoinMethod && !isBilledUser(user);
     const showBitcoinPlaceholder = isBitcoinMethod && isBilledUser(user);
+
+    useEffect(() => {
+        paymentComponentLoaded();
+    }, []);
 
     useEffect(() => {
         if (loading) {

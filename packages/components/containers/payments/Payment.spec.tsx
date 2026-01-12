@@ -159,6 +159,7 @@ describe('Payment', () => {
                 savedPaymentMethods={[]}
                 currencyOverride={{ isCurrencyOverriden: false } as any}
                 showTaxCountry={true}
+                paymentComponentLoaded={jest.fn()}
             />
         );
     });
@@ -198,6 +199,7 @@ describe('Payment', () => {
                 savedPaymentMethods={[]}
                 currencyOverride={{ isCurrencyOverriden: false } as any}
                 showTaxCountry={true}
+                paymentComponentLoaded={jest.fn()}
             />
         );
 
@@ -280,6 +282,7 @@ describe('Payment', () => {
                 savedPaymentMethods={[]}
                 currencyOverride={{ isCurrencyOverriden: false } as any}
                 showTaxCountry={true}
+                paymentComponentLoaded={jest.fn()}
             />
         );
 
@@ -353,6 +356,7 @@ describe('Payment', () => {
                 savedPaymentMethods={[]}
                 currencyOverride={{ isCurrencyOverriden: false } as any}
                 showTaxCountry={true}
+                paymentComponentLoaded={jest.fn()}
             />
         );
 
@@ -395,6 +399,7 @@ describe('Payment', () => {
                 savedPaymentMethods={[]}
                 currencyOverride={{ isCurrencyOverriden: true } as any}
                 showTaxCountry={true}
+                paymentComponentLoaded={jest.fn()}
             />
         );
 
