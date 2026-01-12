@@ -1,39 +1,34 @@
-import { put, takeLeading } from 'redux-saga/effects';
+import { put } from 'redux-saga/effects';
 
 import { isPassCryptoError } from '@proton/pass/lib/crypto/utils/errors';
 import { offlineResume, startEventPolling } from '@proton/pass/store/actions';
-import type { RootSagaOptions } from '@proton/pass/store/types';
+import { createRequestSaga } from '@proton/pass/store/request/sagas';
 import identity from '@proton/utils/identity';
 
 import { hydrate } from './hydrate.saga';
 
-function* offlineResumeWorker(options: RootSagaOptions, { payload, meta }: ReturnType<typeof offlineResume.intent>) {
-    const auth = options.getAuthService();
-    const requestId = meta.request.id;
-    const { localID } = payload;
+export default createRequestSaga({
+    actions: offlineResume,
+    call: function* ({ localID }, options) {
+        const auth = options.getAuthService();
 
-    try {
-        if ((yield auth.resumeSession(localID, { retryable: false })) as boolean) {
-            yield hydrate(
-                {
-                    online: true,
-                    merge: identity,
-                    onError: function* (err) {
-                        if (isPassCryptoError(err)) {
-                            yield auth.logout({ soft: true });
-                        }
-                    },
+        const resumed: boolean = yield auth.resumeSession(localID, { retryable: false });
+        if (!resumed) throw new Error();
+
+        yield hydrate(
+            {
+                online: true,
+                merge: identity,
+                onError: function* (err) {
+                    if (isPassCryptoError(err)) {
+                        yield auth.logout({ soft: true });
+                    }
                 },
-                options
-            );
-            yield put(startEventPolling());
-            yield put(offlineResume.success(requestId));
-        } else throw new Error();
-    } catch (err) {
-        yield put(offlineResume.failure(requestId, err));
-    }
-}
+            },
+            options
+        );
 
-export default function* watcher(options: RootSagaOptions): Generator {
-    yield takeLeading(offlineResume.intent.match, offlineResumeWorker, options);
-}
+        yield put(startEventPolling());
+        return true;
+    },
+});
