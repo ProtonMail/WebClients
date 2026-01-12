@@ -1,7 +1,6 @@
 import type { DragEvent, DragEventHandler } from 'react';
 import { useEffect, useRef, useState } from 'react';
 
-import type { Location } from 'history';
 import { c } from 'ttag';
 
 import { useRetentionPolicies } from '@proton/account/retentionPolicies/hooks';
@@ -14,7 +13,6 @@ import type { ApplyLabelsParams } from 'proton-mail/hooks/actions/label/interfac
 import type { LocationCountMap } from 'proton-mail/hooks/useMailboxCounter';
 import { getLocationCount } from 'proton-mail/hooks/useMailboxCounter.helpers';
 
-import { isConversationMode } from '../../helpers/mailSettings';
 import type { MoveParams } from '../../hooks/actions/move/useMoveToFolder';
 import useMoveSystemFolders, { SYSTEM_FOLDER_SECTION } from '../../hooks/useMoveSystemFolders';
 import SidebarItem from './SidebarItem';
@@ -22,7 +20,6 @@ import SidebarItem from './SidebarItem';
 interface Props {
     counterMap: LocationCountMap;
     currentLabelID: string;
-    location: Location;
     mailSettings: MailSettings;
     setFocusedItem: (id: string) => void;
     displayMoreItems: boolean;
@@ -51,10 +48,11 @@ const DnDElementWrapper = ({ isDnDAllowed, children, ...rest }: DnDWrapperProps)
     );
 };
 
+type HandleDragOver = (elementId: MAILBOX_LABEL_IDS | typeof DND_MORE_FOLDER_ID) => DragEventHandler<HTMLDivElement>;
+
 const MailSidebarSystemFolders = ({
     counterMap,
     currentLabelID,
-    location,
     mailSettings,
     setFocusedItem,
     showScheduled,
@@ -76,7 +74,6 @@ const MailSidebarSystemFolders = ({
         showAlmostAllMail: AlmostAllMail,
         showSoftDeletedFolder,
     });
-    const isConversation = isConversationMode(currentLabelID, mailSettings, location);
 
     const lastDragTimeRef = useRef<number>();
     const isDragging = useRef<boolean>();
@@ -85,17 +82,6 @@ const MailSidebarSystemFolders = ({
     const [dragOveredElementId, setDragOveredElementId] = useState<string | undefined>();
     const [isOverMoreFolder, setIsOverMoreFolder] = useState<boolean>();
 
-    const getCommonProps = (labelID: string) => ({
-        currentLabelID,
-        labelID,
-        isConversation,
-        unreadCount: getLocationCount(counterMap, labelID).Unread,
-        totalMessagesCount: getLocationCount(counterMap, labelID).Total,
-    });
-
-    type HandleDragOver = (
-        elementId: MAILBOX_LABEL_IDS | typeof DND_MORE_FOLDER_ID
-    ) => DragEventHandler<HTMLDivElement>;
     const handleDragOver: HandleDragOver = (elementId) => (event) => {
         if (!isDragging.current) {
             event.preventDefault();
@@ -238,32 +224,39 @@ const MailSidebarSystemFolders = ({
         <>
             {sidebarElements
                 .filter((element) => element.display === SYSTEM_FOLDER_SECTION.MAIN)
-                .map((element) => (
-                    <DnDElementWrapper
-                        isDnDAllowed
-                        key={element.ID}
-                        onDragStart={handleDragStart(element.labelID)}
-                        onDragEnd={handleResetDragState}
-                        onDragOver={handleDragOver(element.labelID)}
-                        onDrop={handleDrop(element.labelID, draggedElementId)}
-                        className={clsx([getDnDClasses(element.labelID, draggedElementId)])}
-                        onClick={(e) => e.stopPropagation()}
-                    >
-                        <SidebarItem
-                            {...getCommonProps(element.labelID)}
-                            icon={element.icon}
-                            id={element.ID}
-                            hideCountOnHover={false}
-                            isFolder={element.labelID !== MAILBOX_LABEL_IDS.STARRED}
-                            onFocus={setFocusedItem}
-                            shortcutText={element.shortcutText}
-                            text={element.text}
-                            collapsed={collapsed}
-                            moveToFolder={moveToFolder}
-                            applyLabels={applyLabels}
-                        />
-                    </DnDElementWrapper>
-                ))}
+                .map((element) => {
+                    const locationCount = getLocationCount(counterMap, element.labelID);
+
+                    return (
+                        <DnDElementWrapper
+                            isDnDAllowed
+                            key={element.ID}
+                            onDragStart={handleDragStart(element.labelID)}
+                            onDragEnd={handleResetDragState}
+                            onDragOver={handleDragOver(element.labelID)}
+                            onDrop={handleDrop(element.labelID, draggedElementId)}
+                            className={clsx([getDnDClasses(element.labelID, draggedElementId)])}
+                            onClick={(e) => e.stopPropagation()}
+                        >
+                            <SidebarItem
+                                currentLabelID={currentLabelID}
+                                labelID={element.labelID}
+                                unreadCount={locationCount.Unread}
+                                totalMessagesCount={locationCount.Total}
+                                icon={element.icon}
+                                id={element.ID}
+                                hideCountOnHover={false}
+                                isFolder={element.labelID !== MAILBOX_LABEL_IDS.STARRED}
+                                onFocus={setFocusedItem}
+                                shortcutText={element.shortcutText}
+                                text={element.text}
+                                collapsed={collapsed}
+                                moveToFolder={moveToFolder}
+                                applyLabels={applyLabels}
+                            />
+                        </DnDElementWrapper>
+                    );
+                })}
             {!collapsed && (
                 <DnDElementWrapper
                     isDnDAllowed
@@ -286,32 +279,39 @@ const MailSidebarSystemFolders = ({
             {displayMoreItems
                 ? sidebarElements
                       .filter((element) => element.display === SYSTEM_FOLDER_SECTION.MORE)
-                      .map((element) => (
-                          <DnDElementWrapper
-                              isDnDAllowed
-                              onClick={(e) => e.stopPropagation()}
-                              key={element.ID}
-                              onDragStart={handleDragStart(element.labelID)}
-                              onDragEnd={handleResetDragState}
-                              onDragOver={handleDragOver(element.labelID)}
-                              onDrop={handleDrop(element.labelID, draggedElementId)}
-                              className={clsx([getDnDClasses(element.labelID, draggedElementId)])}
-                          >
-                              <SidebarItem
-                                  {...getCommonProps(element.labelID)}
-                                  icon={element.icon}
-                                  id={element.ID}
-                                  isFolder={element.labelID !== MAILBOX_LABEL_IDS.STARRED}
-                                  hideCountOnHover={false}
-                                  onFocus={setFocusedItem}
-                                  shortcutText={element.shortcutText}
-                                  text={element.text}
-                                  collapsed={collapsed}
-                                  moveToFolder={moveToFolder}
-                                  applyLabels={applyLabels}
-                              />
-                          </DnDElementWrapper>
-                      ))
+                      .map((element) => {
+                          const locationCount = getLocationCount(counterMap, element.labelID);
+
+                          return (
+                              <DnDElementWrapper
+                                  isDnDAllowed
+                                  onClick={(e) => e.stopPropagation()}
+                                  key={element.ID}
+                                  onDragStart={handleDragStart(element.labelID)}
+                                  onDragEnd={handleResetDragState}
+                                  onDragOver={handleDragOver(element.labelID)}
+                                  onDrop={handleDrop(element.labelID, draggedElementId)}
+                                  className={clsx([getDnDClasses(element.labelID, draggedElementId)])}
+                              >
+                                  <SidebarItem
+                                      currentLabelID={currentLabelID}
+                                      labelID={element.labelID}
+                                      unreadCount={locationCount.Unread}
+                                      totalMessagesCount={locationCount.Total}
+                                      icon={element.icon}
+                                      id={element.ID}
+                                      isFolder={element.labelID !== MAILBOX_LABEL_IDS.STARRED}
+                                      hideCountOnHover={false}
+                                      onFocus={setFocusedItem}
+                                      shortcutText={element.shortcutText}
+                                      text={element.text}
+                                      collapsed={collapsed}
+                                      moveToFolder={moveToFolder}
+                                      applyLabels={applyLabels}
+                                  />
+                              </DnDElementWrapper>
+                          );
+                      })
                 : null}
         </>
     );
