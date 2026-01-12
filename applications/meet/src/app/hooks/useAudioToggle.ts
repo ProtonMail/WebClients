@@ -1,9 +1,9 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
-import { useLocalParticipant } from '@livekit/components-react';
-import type { KrispNoiseFilterProcessor } from '@livekit/krisp-noise-filter';
-import { KrispNoiseFilter, isKrispNoiseFilterSupported } from '@livekit/krisp-noise-filter';
-import { Track } from 'livekit-client';
+import { useLocalParticipant, useRoomContext } from '@livekit/components-react';
+import { useKrispNoiseFilter } from '@livekit/components-react/krisp';
+import { isKrispNoiseFilterSupported } from '@livekit/krisp-noise-filter';
+import { ConnectionState, RoomEvent, Track } from 'livekit-client';
 import throttle from 'lodash/throttle';
 
 import { DEFAULT_DEVICE_ID } from '../constants';
@@ -19,69 +19,39 @@ export const useAudioToggle = (
     initialAudioState: boolean,
     systemDefaultMicrophone: MediaDeviceInfo
 ) => {
-    const [noiseFilter, setNoiseFilter] = useState(isAdvancedNoiseFilterSupported);
     const { isMicrophoneEnabled, localParticipant } = useLocalParticipant();
 
-    const noiseFilterProcessor = useRef<KrispNoiseFilterProcessor | null>(null);
-    const audioContext = useRef<AudioContext | null>(null);
-    const trackId = useRef<string | null>(null);
+    const [initialNoiseFilterState, setInitialNoiseFilterState] = useState(true);
+
+    const { isNoiseFilterEnabled, setNoiseFilterEnabled } = useKrispNoiseFilter();
 
     const toggleInProgress = useRef(false);
     const currentDeviceId = useRef<string | null>(null);
 
+    const room = useRoomContext();
+
+    useEffect(() => {
+        const activateNoiseFilter = async () => {
+            if (isAdvancedNoiseFilterSupported && initialNoiseFilterState) {
+                await setNoiseFilterEnabled(true);
+            }
+        };
+        room.on(RoomEvent.Connected, activateNoiseFilter);
+
+        return () => {
+            room.off(RoomEvent.Connected, activateNoiseFilter);
+        };
+    }, [room, initialNoiseFilterState]);
+
     const getCurrentPublication = useCallback(() => {
-        return [...localParticipant.audioTrackPublications.values()].find(
+        return [...room.localParticipant.audioTrackPublications.values()].find(
             (item) =>
                 item.kind === Track.Kind.Audio &&
                 item.source !== Track.Source.ScreenShare &&
                 item.source !== Track.Source.ScreenShareAudio &&
                 item.audioTrack
         );
-    }, [localParticipant]);
-
-    const tearDownNoiseFilter = useCallback(async () => {
-        const publication = getCurrentPublication();
-        const audioTrack = publication?.audioTrack;
-
-        if (audioTrack?.getProcessor()) {
-            await audioTrack.stopProcessor();
-        }
-
-        if (audioContext.current) {
-            await noiseFilterProcessor.current?.setEnabled(false);
-            noiseFilterProcessor.current = null;
-            await audioContext.current.close();
-            audioContext.current = null;
-        }
-        trackId.current = null;
-        noiseFilterProcessor.current = null;
-    }, [getCurrentPublication]);
-
-    const setupNoiseFilter = useCallback(async () => {
-        const publication = getCurrentPublication();
-        const currentAudioTrack = publication?.audioTrack;
-
-        if (!currentAudioTrack || !isAdvancedNoiseFilterSupported || trackId.current === currentAudioTrack.id) {
-            return;
-        }
-
-        await tearDownNoiseFilter();
-
-        trackId.current = currentAudioTrack.id;
-
-        noiseFilterProcessor.current = KrispNoiseFilter();
-        // @ts-ignore - webkitAudioContext is not available in all browsers
-        audioContext.current = new (window.AudioContext || window.webkitAudioContext)();
-
-        await currentAudioTrack?.setAudioContext(audioContext.current);
-        await currentAudioTrack?.setProcessor(noiseFilterProcessor.current);
-    }, [getCurrentPublication, tearDownNoiseFilter]);
-
-    useEffect(() => {
-        return () => {
-            void tearDownNoiseFilter();
-        };
-    }, []);
+    }, [room]);
 
     const toggleAudio = useCallback(
         async (
@@ -117,7 +87,7 @@ export const useAudioToggle = (
                 ...(useIOSWorkaround ? {} : { deviceId: { exact: deviceId as string } }),
                 echoCancellation: { ideal: true },
                 autoGainControl: { ideal: true },
-                noiseSuppression: isAdvancedNoiseFilterSupported ? false : noiseFilter,
+                noiseSuppression: isAdvancedNoiseFilterSupported ? false : isNoiseFilterEnabled,
                 channelCount: { ideal: 1 },
             };
 
@@ -189,16 +159,6 @@ export const useAudioToggle = (
                 if (!currentAudioTrack) {
                     return;
                 }
-
-                if (isEnabled && audioDeviceId && isAdvancedNoiseFilterSupported) {
-                    if (noiseFilter) {
-                        await setupNoiseFilter();
-                    }
-
-                    if (noiseFilter && noiseFilterProcessor.current && !noiseFilterProcessor.current.isEnabled()) {
-                        await noiseFilterProcessor.current.setEnabled(true);
-                    }
-                }
             } catch (error) {
                 throw error;
             } finally {
@@ -209,28 +169,17 @@ export const useAudioToggle = (
             activeMicrophoneDeviceId,
             initialAudioState,
             localParticipant,
-            noiseFilter,
-            setupNoiseFilter,
+            isNoiseFilterEnabled,
             switchActiveDevice,
             getCurrentPublication,
         ]
     );
 
     const toggleNoiseFilter = async () => {
-        if (isMicrophoneEnabled) {
-            const newValue = !noiseFilter;
-
-            if (!noiseFilterProcessor.current && newValue) {
-                await setupNoiseFilter();
-            }
-
-            if (noiseFilterProcessor.current) {
-                await noiseFilterProcessor.current?.setEnabled(newValue);
-            }
-
-            setNoiseFilter(newValue);
+        if (room.state === ConnectionState.Connected) {
+            await setNoiseFilterEnabled(!isNoiseFilterEnabled);
         } else {
-            setNoiseFilter((prev) => !prev);
+            setInitialNoiseFilterState((prev) => !prev);
         }
     };
 
@@ -247,5 +196,10 @@ export const useAudioToggle = (
         [toggleAudio]
     );
 
-    return { toggleAudio: throttledToggleAudio, noiseFilter, toggleNoiseFilter, isAudioEnabled };
+    return {
+        toggleAudio: throttledToggleAudio,
+        noiseFilter: room.state === ConnectionState.Connected ? isNoiseFilterEnabled : initialNoiseFilterState,
+        toggleNoiseFilter,
+        isAudioEnabled,
+    };
 };
