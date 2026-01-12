@@ -193,6 +193,15 @@ const AccessControlSettingsSection = () => {
     const allowedProducts = deserializeAllowedProducts(organization?.Settings?.AllowedProducts);
     const previousSerialisedProducts = serializeAllowedProducts(allowedProducts);
 
+    for (const accessControlItem of accessControlItems) {
+        if (accessControlItem.available === false) {
+            for (const product of accessControlItem.targetProducts) {
+                // Make sure hidden products are always toggled since they'd get automatically disabled without possibility to toggle
+                allowedProducts.add(product);
+            }
+        }
+    }
+
     const enhancedAccessControlItems = accessControlItems
         .filter((value) => value.available !== false)
         .map((item): EnhancedAccessControlItem => {
