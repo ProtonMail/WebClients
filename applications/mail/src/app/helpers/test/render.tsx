@@ -224,6 +224,7 @@ export const getStoreWrapper = ({
             mailContacts: mailContactsInitialState,
             messages: {} as MessagesState,
             snooze: snoozeInitialState,
+            retentionPolicies: getModelState([]),
             ...preloadedState,
         },
     });

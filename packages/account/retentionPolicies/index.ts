@@ -37,7 +37,7 @@ const canFetch = (user: UserModel, organization: Organization) => {
 const modelThunk = createAsyncModelThunk<Model, RetentionPoliciesState, ProtonThunkArguments>(`${name}/fetch`, {
     miss: async ({ extraArgument, dispatch }) => {
         const [user, organization] = await Promise.all([dispatch(userThunk()), dispatch(organizationThunk())]);
-        const flag = extraArgument.unleashClient.isEnabled('DataRetentionPolicy');
+        const flag = extraArgument.unleashClient?.isEnabled('DataRetentionPolicy') ?? false;
         if (!flag || !canFetch(user, organization)) {
             return [];
         }
