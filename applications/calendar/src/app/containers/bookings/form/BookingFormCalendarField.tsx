@@ -2,13 +2,19 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { useWriteableCalendars } from '@proton/calendar/calendars/hooks';
+import { useCalendars, useWriteableCalendars } from '@proton/calendar/calendars/hooks';
 import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
 import Checkbox from '@proton/components/components/input/Checkbox';
 import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import { InputField } from '@proton/components/components/v2/field/InputField';
 import { IcCalendarGrid } from '@proton/icons/icons/IcCalendarGrid';
+import {
+    getIsCalendarDisabled,
+    getIsHolidaysCalendar,
+    getVisualCalendars,
+    sortCalendars,
+} from '@proton/shared/lib/calendar/calendar';
 import useFlag from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
@@ -20,6 +26,11 @@ export const BookingFormCalendarField = () => {
     const isConflictCalendarsEnabled = useFlag('CalendarBookingsConflictCalendars');
     const { formData, updateFormData, bookingsState } = useBookings();
 
+    const [calendars = []] = useCalendars();
+    const visualCalendars = sortCalendars(getVisualCalendars(calendars));
+    const availabilityCalendars = visualCalendars.filter((calendar) => {
+        return !(getIsCalendarDisabled(calendar) || getIsHolidaysCalendar(calendar));
+    });
     const [writeableCalendars = []] = useWriteableCalendars({ canBeDisabled: false, canBeShared: false });
     const selectedCalendar = writeableCalendars.find((calendar) => calendar.ID === formData.selectedCalendar);
 
@@ -75,7 +86,7 @@ export const BookingFormCalendarField = () => {
                 </p>
             )}
 
-            {isConflictCalendarsEnabled && writeableCalendars.length > 1 && (
+            {isConflictCalendarsEnabled && availabilityCalendars.length > 1 && (
                 <Checkbox
                     className="gap-0 my-4 text-sm items-center"
                     checked={hasConflictingCalendarIDs}
@@ -89,7 +100,7 @@ export const BookingFormCalendarField = () => {
                 <div className="flex flex-column gap-4 ml-8 pl-1">
                     <span className="text-sm color-weak">{c('Info').t`Which calendars should block bookings?`}</span>
 
-                    {writeableCalendars.map((calendar) => {
+                    {availabilityCalendars.map((calendar) => {
                         const calendarID = calendar.ID;
                         const isSelectedCalendar = calendarID === formData.selectedCalendar;
                         const isChecked = formData.conflictCalendarIDs.includes(calendarID) || isSelectedCalendar;
