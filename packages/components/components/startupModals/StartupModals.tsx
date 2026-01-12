@@ -26,6 +26,8 @@ const StartupModals = ({
         return { time: Date.now() };
     });
 
+    const modalVisibilitySignature = modals.map((m) => m.showModal).join('');
+
     useEffect(() => {
         const startModalExpired = getStartModalExpired(initial, { time: Date.now() });
         if (onceRef.current || domIsBusy() || startModalExpired) {
@@ -43,7 +45,7 @@ const StartupModals = ({
         onceRef.current = true;
         modal.activateModal();
         setModalOpen(true);
-    }, [modals.map(({ showModal }) => showModal)]);
+    }, [modalVisibilitySignature]);
 
     const modal = modals.find(({ showModal }) => showModal);
     return modal?.component;
