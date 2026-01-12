@@ -178,8 +178,16 @@ im.$media-expressions: $media-expressions;
 		transition: transform var(--transition-duration) ease;
 		transform: translateY(0);
 		background-color: rgb(255 255 255 / 0.5);
-		text-shadow: 0 0.05rem 0.05rem var(--primary-contrast);
 		backdrop-filter: blur(0.19rem);
+		color: var(--text-norm);
+
+		[data-theme-mode='light'] & {
+			text-shadow: 0 0.05rem 0.05rem var(--text-invert);
+		}
+
+		[data-theme-mode='dark'] & {
+			color: var(--text-invert);
+		}
 
 		&::after {
 			content: '';
