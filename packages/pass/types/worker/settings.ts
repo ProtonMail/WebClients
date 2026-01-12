@@ -15,4 +15,4 @@ export type AutoSaveSettings = { prompt: boolean; shareId?: string; passwordSugg
 export type AutoSuggestSettings = { password: boolean; email: boolean; passwordCopy: boolean };
 export type PasskeySettings = { create: boolean; get: boolean };
 
-export type OfflineModeDTO = { loginPassword: string; enabled: boolean };
+export type OfflineModeDTO = { password: string };
