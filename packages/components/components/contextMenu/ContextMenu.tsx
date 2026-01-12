@@ -1,7 +1,7 @@
 import type { ReactNode, RefObject } from 'react';
 import { useEffect, useState } from 'react';
 
-import type { DropdownProps } from '@proton/components/components/dropdown/Dropdown';
+import type { DropdownBorderRadius, DropdownProps } from '@proton/components/components/dropdown/Dropdown';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import type { PopperPosition } from '@proton/components/components/popper/interface';
 import { cornerPopperPlacements } from '@proton/components/components/popper/utils';
@@ -15,9 +15,21 @@ export interface ContextMenuProps {
     close: () => void;
     autoClose?: boolean;
     size?: DropdownProps['size'];
+    className?: string;
+    borderRadius?: DropdownBorderRadius;
 }
 
-const ContextMenu = ({ anchorRef, children, isOpen, position, close, autoClose = true, size }: ContextMenuProps) => {
+const ContextMenu = ({
+    anchorRef,
+    children,
+    isOpen,
+    position,
+    close,
+    autoClose = true,
+    size,
+    className,
+    borderRadius,
+}: ContextMenuProps) => {
     const [uid] = useState(generateUID('context-menu'));
 
     useEffect(() => {
@@ -52,6 +64,8 @@ const ContextMenu = ({ anchorRef, children, isOpen, position, close, autoClose =
             onClose={close}
             onContextMenu={(e) => e.stopPropagation()}
             size={size}
+            className={className}
+            borderRadius={borderRadius}
         >
             {children}
         </Dropdown>

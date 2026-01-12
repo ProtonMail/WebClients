@@ -72,6 +72,7 @@ const DelightfulProductSwitcher = ({ onLogin, onSwitch, state }: Props) => {
                             isMeetAvailable,
                             isAuthenticatorAvailable,
                         })}
+                        localID={persistedSession.localID}
                         onExplore={async (app) => {
                             await onLogin({
                                 ...session,
