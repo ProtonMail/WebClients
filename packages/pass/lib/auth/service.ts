@@ -306,11 +306,21 @@ export const createAuthService = (config: AuthServiceConfig) => {
                     const { UserID, Payload } = await pullFork({ api, apiUrl, payload, pullFork: config.pullFork });
                     if (UserID !== encryptedSession.UserID) throw new Error('Reauth session mismatch');
 
-                    const decryptedBlob = await (async () => {
-                        if (payload.mode === 'web') {
-                            const { payloadVersion, key } = payload;
-                            const clientKey = await importKey(key!);
-                            return getForkDecryptedBlob(clientKey, Payload, payloadVersion);
+                    const decryptedBlob: Maybe<ForkEncryptedBlob> = await (async () => {
+                        switch (payload.mode) {
+                            case 'web':
+                                const { payloadVersion, key } = payload;
+                                const clientKey = await importKey(key!);
+                                return getForkDecryptedBlob(clientKey, Payload, payloadVersion);
+                            case 'extension':
+                                if (payload.offlineKey) {
+                                    return {
+                                        type: 'offline',
+                                        keyPassword: payload.keyPassword!,
+                                        offlineKeyPassword: payload.offlineKey.password,
+                                        offlineKeySalt: payload.offlineKey.salt,
+                                    };
+                                }
                         }
                     })();
 

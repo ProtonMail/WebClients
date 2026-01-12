@@ -7,12 +7,18 @@ import { safariPullFork, sendSafariMessage } from 'proton-pass-extension/lib/uti
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import { SESSION_RESUME_MAX_RETRIES, SESSION_RESUME_RETRY_TIMEOUT } from '@proton/pass/constants';
-import { AccountForkResponse, getAccountForkResponsePayload, getStateKey } from '@proton/pass/lib/auth/fork';
+import {
+    AccountForkResponse,
+    extractBlobOfflineComponents,
+    getAccountForkResponsePayload,
+    getStateKey,
+} from '@proton/pass/lib/auth/fork';
 import { AppStatusFromLockMode, LockMode } from '@proton/pass/lib/auth/lock/types';
 import { ReauthAction } from '@proton/pass/lib/auth/reauth';
 import { createAuthService as createCoreAuthService } from '@proton/pass/lib/auth/service';
 import { SESSION_KEYS } from '@proton/pass/lib/auth/session';
 import type { AuthStore } from '@proton/pass/lib/auth/store';
+import { getOfflineVerifier } from '@proton/pass/lib/cache/crypto';
 import {
     clientAuthorized,
     clientBooted,
@@ -22,6 +28,7 @@ import {
 } from '@proton/pass/lib/client';
 import { fileStorage } from '@proton/pass/lib/file-storage/fs';
 import browser from '@proton/pass/lib/globals/browser';
+import { settingsEditIntent } from '@proton/pass/store/actions';
 import { lockSync, unlock } from '@proton/pass/store/actions/creators/auth';
 import { cacheCancel, stateDestroy, stopEventPolling } from '@proton/pass/store/actions/creators/client';
 import { notification } from '@proton/pass/store/actions/creators/notification';
@@ -35,6 +42,7 @@ import { epochToMs, getEpoch } from '@proton/pass/utils/time/epoch';
 import { InvalidPersistentSessionError } from '@proton/shared/lib/authentication/error';
 import type { ExtensionForkPayload } from '@proton/shared/lib/authentication/fork/extension';
 import { FIBONACCI_LIST } from '@proton/shared/lib/constants';
+import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 import { setUID as setSentryUID } from '@proton/shared/lib/helpers/sentry';
 import { getSecondLevelDomain } from '@proton/shared/lib/helpers/url';
 import noop from '@proton/utils/noop';
@@ -144,17 +152,32 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
             else await authService.config.onLoginStart?.();
         },
 
-        onForkReauth: async (data, state) => {
+        onForkReauth: withContext(async (ctx, data, state, blob) => {
             switch (data.reauth.type) {
                 case ReauthAction.EXPORT_CONFIRM:
-                    const path = `/settings.html#export?state=${state}`;
-                    await browser.tabs.create({ url: browser.runtime.getURL(path) });
+                    const exportTabPath = `/settings.html#export?state=${state}`;
+                    await browser.tabs.create({ url: browser.runtime.getURL(exportTabPath) });
+                    return true;
+
+                case ReauthAction.OFFLINE_SETUP:
+                    if (blob?.type === 'offline') {
+                        const { offlineKD, offlineConfig } = extractBlobOfflineComponents(blob);
+                        const offlineVerifier = await getOfflineVerifier(stringToUint8Array(offlineKD));
+                        authStore.setOfflineKD(offlineKD);
+                        authStore.setOfflineConfig(offlineConfig);
+                        authStore.setOfflineVerifier(offlineVerifier);
+                        await authService.persistSession();
+                        ctx.service.store.dispatch(settingsEditIntent('offline', { offlineEnabled: true }, true));
+                    }
+
+                    const settingsPath = `/settings.html#?state=${state}`;
+                    await browser.tabs.create({ url: browser.runtime.getURL(settingsPath) });
                     return true;
 
                 default:
                     return true;
             }
-        },
+        }),
 
         onSessionInvalid: withContext(async (ctx, error, _data) => {
             if (error instanceof InvalidPersistentSessionError) {
