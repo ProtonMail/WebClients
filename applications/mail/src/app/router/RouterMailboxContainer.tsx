@@ -1,6 +1,7 @@
 import { type RefObject, useMemo, useState } from 'react';
 import { Redirect, Route, Switch, useLocation } from 'react-router-dom';
 
+import { useRetentionPolicies } from '@proton/account/retentionPolicies/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import {
     DrawerSidebar,
@@ -45,6 +46,7 @@ export const RouterMailboxContainer = () => {
     const actions = useElementActions({ params, navigation, elementsData });
 
     const [user] = useUser();
+    const [retentionRules] = useRetentionPolicies();
     const { isColumnModeActive, messageContainerRef, mainAreaRef, scrollContainerRef } = useMailboxLayoutProvider();
 
     const { labelID, elementID } = params;
@@ -99,6 +101,11 @@ export const RouterMailboxContainer = () => {
 
     // Prevent non-admin users from accessing the Deleted folder via URL
     if (labelID === MAILBOX_LABEL_IDS.SOFT_DELETED && !isAdminOrLoginAsAdmin(user)) {
+        return <Redirect to={`/${LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.INBOX]}`} />;
+    }
+
+    // Redirect users without retention rules from accessing the Deleted folder via URL
+    if (labelID === MAILBOX_LABEL_IDS.SOFT_DELETED && retentionRules && !retentionRules.length) {
         return <Redirect to={`/${LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.INBOX]}`} />;
     }
 
