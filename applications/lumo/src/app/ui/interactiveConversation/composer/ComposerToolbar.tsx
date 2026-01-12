@@ -13,7 +13,7 @@ import { useWebSearch } from '../../../providers/WebSearchProvider';
 import { getAcceptAttributeString } from '../../../util/filetypes';
 import PressEnterToReturn from '../../components/PressEnterToReturn';
 import LumoComposerToggleUpsell from '../../upsells/composed/LumoComposerToggleUpsell';
-import { UploadMenu } from './UploadMenu';
+import { UploadMenuDropdown } from './UploadMenuDropdown';
 
 export interface ComposerToolbarProps {
     // File handling props
@@ -30,6 +30,10 @@ export interface ComposerToolbarProps {
 
     //UI props
     canShowLumoUpsellToggle?: boolean;
+    /** Hide the "Add from Proton Drive" option in upload menu */
+    hideDriveOption?: boolean;
+    /** When true, shows "Add file to Drive" instead of "Upload from device" */
+    uploadsToDrive?: boolean;
 }
 
 export const ComposerToolbar = ({
@@ -42,6 +46,8 @@ export const ComposerToolbar = ({
     handleUploadButtonClick,
     hasAttachments,
     canShowLumoUpsellToggle,
+    hideDriveOption = false,
+    uploadsToDrive = false,
 }: ComposerToolbarProps) => {
     const { isWebSearchButtonToggled, handleWebSearchButtonClick } = useWebSearch();
     const uploadButtonRef = useRef<HTMLButtonElement>(null);
@@ -59,29 +65,29 @@ export const ComposerToolbar = ({
                     multiple
                     onChange={handleFileInputChange}
                 />
-                <div className="relative">
-                    <Button
-                        ref={uploadButtonRef}
-                        icon
-                        className={clsx(
-                            'border-0 shrink-0 flex flex-row flex-nowrap gap-1 items-center color-weak',
-                            showUploadMenu && 'is-active'
-                        )}
-                        onClick={handleUploadButtonClick}
-                        shape="ghost"
-                        size="small"
-                    >
-                        <IcPaperClip size={6} />
-                        <span className="hidden sm:block text-sm mt-0.5">{c('collider_2025: Button').t`Upload`}</span>
-                    </Button>
-                    <UploadMenu
-                        isOpen={showUploadMenu}
-                        onClose={() => setShowUploadMenu(false)}
-                        onUploadFromComputer={handleOpenFileDialog}
-                        onBrowseDrive={handleBrowseDrive}
-                        buttonRef={uploadButtonRef}
-                    />
-                </div>
+                <Button
+                    ref={uploadButtonRef}
+                    icon
+                    className={clsx(
+                        'border-0 shrink-0 flex flex-row flex-nowrap gap-1 items-center color-weak',
+                        showUploadMenu && 'is-active'
+                    )}
+                    onClick={handleUploadButtonClick}
+                    shape="ghost"
+                    size="small"
+                >
+                    <IcPaperClip size={6} />
+                    <span className="hidden sm:block text-sm mt-0.5">{c('collider_2025: Button').t`Upload`}</span>
+                </Button>
+                <UploadMenuDropdown
+                    isOpen={showUploadMenu}
+                    anchorRef={uploadButtonRef}
+                    onClose={() => setShowUploadMenu(false)}
+                    onUploadFromComputer={handleOpenFileDialog}
+                    onBrowseDrive={handleBrowseDrive}
+                    hideDriveOption={hideDriveOption}
+                    uploadsToDrive={uploadsToDrive}
+                />
                 {isLumoToolingEnabled && (
                     <Button
                         icon

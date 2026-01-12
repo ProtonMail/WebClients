@@ -3,15 +3,15 @@ import { useMemo } from 'react';
 import { c } from 'ttag';
 
 import { Scroll } from '@proton/atoms/Scroll/Scroll';
-import { Icon } from '@proton/components';
 
+import { useLumoUserSettings } from '../../hooks';
 import { useLumoPlan } from '../../hooks/useLumoPlan';
 import { useConversation } from '../../providers/ConversationProvider';
 import { useGhostChat } from '../../providers/GhostChatProvider';
 import { useIsGuest } from '../../providers/IsGuestProvider';
-import { useSidebar } from '../../providers/SidebarProvider';
 import { useLumoSelector } from '../../redux/hooks';
 import { selectConversations } from '../../redux/selectors';
+import type { Space } from '../../types';
 import { sortByDate } from '../../util/date';
 import ChatHistorySkeleton from '../components/ChatHistorySkeleton';
 import { ChatHistoryGuestUserUpsell } from '../components/ChatHistoryUpsell.tsx/ChatHistoryUpsell';
@@ -26,12 +26,14 @@ interface Props {
 }
 
 /**
- * Filters conversations based on user type and ghost chat mode
+ * Filters conversations based on user type, ghost chat mode, and project settings
  */
 const getVisibleConversations = (
     conversationMap: Record<string, any>,
+    spaceMap: Record<string, Space>,
     isGuest: boolean,
     isGhostChatMode: boolean,
+    showProjectConversations: boolean,
     conversationId?: string
 ) => {
     // Guest users in ghost chat mode see no conversations
@@ -45,38 +47,53 @@ const getVisibleConversations = (
         return activeConversation ? [activeConversation] : [];
     }
 
-    // Regular users see all non-ghost conversations
-    return Object.values(conversationMap).filter((conversation) => !conversation.ghost);
+    return Object.values(conversationMap).filter((conversation) => {
+        if (conversation.ghost) return false;
+        if (!showProjectConversations) {
+            const space = conversation.spaceId ? spaceMap[conversation.spaceId] : undefined;
+            // Only filter out if the space is explicitly marked as a project
+            if (space?.isProject === true) return false;
+        }
+        return true;
+    });
 };
 
 export const ChatHistory = ({ onItemClick, searchInput = '' }: Props) => {
     const conversationMap = useLumoSelector(selectConversations);
+    const spaceMap = useLumoSelector((state) => state.spaces) as Record<string, Space>;
     const { conversationId } = useConversation(); //switch to using react-router-dom parameters
     const isGuest = useIsGuest();
     const { hasLumoPlus } = useLumoPlan();
     const { isGhostChatMode } = useGhostChat();
-    const { isSmallScreen } = useSidebar();
+    const { lumoUserSettings } = useLumoUserSettings();
+    const showProjectConversationsInHistory = lumoUserSettings.showProjectConversationsInHistory ?? false;
 
     // Only show loading state during initial data fetch
     // const isLoading = !isGuest && !persistence.ready;
     const isLoading = false; // fixme is this correct?
 
-    const { favorites, categorizedConversations, noConversationAtAll, noSearchMatch } = useMemo(() => {
-        const conversations = getVisibleConversations(conversationMap, isGuest, isGhostChatMode, conversationId);
+    const { categorizedConversations, noConversationAtAll, noSearchMatch } = useMemo(() => {
+        const conversations = getVisibleConversations(
+            conversationMap,
+            spaceMap,
+            isGuest,
+            isGhostChatMode,
+            showProjectConversationsInHistory,
+            conversationId
+        );
 
         const sortedConversations = conversations.sort(sortByDate('desc'));
-        const allFavorites = sortedConversations.filter((conversation) => conversation.starred === true);
-        const favorites = searchConversations(allFavorites, searchInput); // Apply search filter to favorites
-        const filteredConversations = searchConversations(sortedConversations, searchInput);
+        // Exclude favorites from history - they appear in a separate section
+        const nonFavorites = sortedConversations.filter((conversation) => !conversation.starred);
+        const filteredConversations = searchConversations(nonFavorites, searchInput);
         const categorizedConversations = categorizeConversations(filteredConversations);
 
         return {
-            favorites,
             categorizedConversations,
             noConversationAtAll: sortedConversations.length === 0,
-            noSearchMatch: filteredConversations.length === 0 && sortedConversations.length > 0,
+            noSearchMatch: filteredConversations.length === 0 && nonFavorites.length > 0,
         };
-    }, [conversationMap, searchInput, isGuest, conversationId, isGhostChatMode]);
+    }, [conversationMap, spaceMap, searchInput, isGuest, conversationId, isGhostChatMode, showProjectConversationsInHistory]);
 
     const { today, lastWeek, lastMonth, earlier } = categorizedConversations;
 
@@ -87,29 +104,6 @@ export const ChatHistory = ({ onItemClick, searchInput = '' }: Props) => {
     return (
         <div className="chat-history-container flex flex-column flex-nowrap gap-2">
             <Scroll className="flex-1">
-                {favorites.length > 0 && (
-                    <>
-                        <div className="sidebar-section-header">
-                            <Icon name="star" size={4} />
-                            <span>{c('collider_2025:Title').t`Favorites`}</span>
-                        </div>
-                        <div className="max-h-custom overflow-y-auto" style={{ '--max-h-custom': '20%' }}>
-                            <RecentChatsList
-                                conversations={favorites}
-                                selectedConversationId={conversationId}
-                                onItemClick={onItemClick}
-                            />
-                        </div>
-                    </>
-                )}
-                {/* History section header - hide for mobile guests to keep UI clean, but show when searching */}
-                {(searchInput || !(isSmallScreen && isGuest)) && (
-                    <div className="sidebar-section-header">
-                        <Icon name="clock-rotate-left" size={4} />
-                        <span>{c('collider_2025:Title').t`History`}</span>
-                    </div>
-                )}
-
                 {/* Enhanced sign-in section for all guest users */}
                 {isGuest && <ChatHistoryGuestUserUpsell />}
 
@@ -126,59 +120,62 @@ export const ChatHistory = ({ onItemClick, searchInput = '' }: Props) => {
                             .t`No result.`}</p>
                     </>
                 )}
-                {today.length > 0 && (
-                    <>
-                        <h4 className="block color-weak text-sm my-2 ml-3">{c('collider_2025:Title').t`Today`}</h4>
-                        <RecentChatsList
-                            conversations={today}
-                            selectedConversationId={conversationId}
-                            disabled={isGuest}
-                            onItemClick={onItemClick}
-                        />
-                    </>
-                )}
-                {lastWeek.length > 0 && (
-                    <>
-                        <h4 className="block color-weak text-sm mt-3 mb-2 ml-3">
-                            {c('collider_2025:Title').t`Last 7 days`}
-                        </h4>
-                        <RecentChatsList
-                            conversations={lastWeek}
-                            selectedConversationId={conversationId}
-                            onItemClick={onItemClick}
-                        />
-                    </>
-                )}
-                {/* For free users, an upsell is shown when they have conversations beyond 30 days */}
-                {lastMonth.length > 0 && (
-                    <>
-                        <h4 className="block color-weak text-sm mt-4 mb-2 ml-3">
-                            {c('collider_2025:Title').t`Last 30 days`}
-                        </h4>
-                        {hasLumoPlus ? (
+                <div className="chat-history-list ml-5">
+                    {today.length > 0 && (
+                        <>
+                            <h4 className="block color-weak text-sm my-2 ml-3">{c('collider_2025:Title').t`Today`}</h4>
                             <RecentChatsList
-                                conversations={lastMonth}
+                                conversations={today}
+                                selectedConversationId={conversationId}
+                                disabled={isGuest}
+                                onItemClick={onItemClick}
+                            />
+                        </>
+                    )}
+                    {lastWeek.length > 0 && (
+                        <>
+                            <h4 className="block color-weak text-sm mt-3 mb-2 ml-3">
+                                {c('collider_2025:Title').t`Last 7 days`}
+                            </h4>
+                            <RecentChatsList
+                                conversations={lastWeek}
                                 selectedConversationId={conversationId}
                                 onItemClick={onItemClick}
                             />
-                        ) : (
-                            <LumoChatHistoryUpsell />
-                        )}
-                    </>
-                )}
-                {/* Only show earlier chats for paid users */}
-                {hasLumoPlus && earlier.length > 0 && (
-                    <>
-                        <h4 className="block color-weak text-sm mt-4 mb-2 ml-2">{c('collider_2025:Title')
-                            .t`Earlier`}</h4>
+                        </>
+                    )}
+                    {/* For free users, an upsell is shown when they have conversations beyond 30 days */}
+                    {lastMonth.length > 0 && (
+                        <>
+                            <h4 className="block color-weak text-sm mt-4 mb-2 ml-3">
+                                {c('collider_2025:Title').t`Last 30 days`}
+                            </h4>
+                            {hasLumoPlus ? (
+                                <RecentChatsList
+                                    conversations={lastMonth}
+                                    selectedConversationId={conversationId}
+                                    onItemClick={onItemClick}
+                                />
+                            ) : (
+                                <LumoChatHistoryUpsell />
+                            )}
+                        </>
+                    )}
 
-                        <RecentChatsList
-                            conversations={earlier}
-                            selectedConversationId={conversationId}
-                            onItemClick={onItemClick}
-                        />
-                    </>
-                )}
+                    {/* Only show earlier chats for paid users */}
+                    {hasLumoPlus && earlier.length > 0 && (
+                        <>
+                            <h4 className="block color-weak text-sm mt-4 mb-2 ml-3">{c('collider_2025:Title')
+                                .t`Earlier`}</h4>
+
+                            <RecentChatsList
+                                conversations={earlier}
+                                selectedConversationId={conversationId}
+                                onItemClick={onItemClick}
+                            />
+                        </>
+                    )}
+                </div>
             </Scroll>
         </div>
     );

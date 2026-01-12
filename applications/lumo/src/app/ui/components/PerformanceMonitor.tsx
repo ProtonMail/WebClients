@@ -1,17 +1,17 @@
-import { useEffect, useState, useRef } from 'react';
-import { useLumoSelector } from '../../redux/hooks';
+import { useEffect, useRef, useState } from 'react';
 
-/**
- * Performance Monitor Component
- *
- * Shows real-time performance metrics for debugging:
- * - Tokens per second during streaming
- * - Redux update frequency
- * - Render count (this component's renders, which reflect Redux updates)
- * - Memory usage estimates
- *
- * Enable with: localStorage.setItem('lumo_debug_perf', 'true')
- */
+import { c } from 'ttag';
+
+import { LAG0 } from '../../lib/lumo-api-client/core/transforms/smoothing';
+import { useLumoSelector } from '../../redux/hooks';
+import { SearchIndexDebugModal } from './SettingsModal/SearchIndex/SearchIndexDebugModal';
+
+import './PerformanceMonitor.scss';
+
+interface TimePoint {
+    t: number;
+    v: number;
+}
 
 interface PerformanceMetrics {
     tokensPerSecond: number;
@@ -21,66 +21,196 @@ interface PerformanceMetrics {
     lastUpdateTime: number;
     streamStartTime: number | null;
     streamingTokensGenerated?: number;
-    timeSinceLastToken?: number; // ms since last token arrived
-    renderTime?: number; // time spent rendering (estimate)
-    memoryUsage?: number; // MB
-    fps?: number; // Frames per second
-    messageCount?: number; // Total messages in Redux
-    longestRenderTime?: number; // Max render time this session
+    timeSinceLastToken?: number;
+    renderTime?: number;
+    memoryUsage?: number;
+    fps?: number;
+    messageCount?: number;
+    longestRenderTime?: number;
+    smoothing?: {
+        lag: number;
+        bufferSize: number;
+        differential: number;
+        rate: number;
+        drate: number;
+        stiffness: number;
+        isPulling: boolean;
+    } | null;
     history?: {
-        tokenDelays: number[]; // Last N token delays
-        renderTimes: number[]; // Last N render times
-        tokensPerSecHistory: number[]; // Last N tokens/sec readings
-        fpsHistory: number[]; // FPS over time
+        tokenDelays: TimePoint[];
+        renderTimes: TimePoint[];
+        tokensPerSecHistory: TimePoint[];
+        fpsHistory: TimePoint[];
+        smoothingLag: TimePoint[];
+        smoothingRate: TimePoint[];
+        smoothingDifferential: TimePoint[];
     };
 }
 
-const HISTORY_SIZE = 200; // Keep last 200 data points for smoother visualization
+const HISTORY_SIZE = 1000;
+const TIME_WINDOW_MS = 30000; // 30 seconds
 
-/**
- * Mini sparkline chart component with fixed bounds
- */
-const Sparkline: React.FC<{
-    data: number[];
+// Helper to filter time-based history to last 30s
+const filterByTimeWindow = (history: TimePoint[], now: number): TimePoint[] => {
+    return history.filter((p) => now - p.t <= TIME_WINDOW_MS).slice(-HISTORY_SIZE);
+};
+
+interface SparklineProps {
+    data: TimePoint[];
     width?: number;
     height?: number;
     color?: string;
     minValue?: number;
-    maxValue: number; // Now required for stable visualization
+    maxValue: number;
     warningThreshold?: number;
     dangerThreshold?: number;
-}> = ({ data, width = 100, height = 30, color = '#00ff00', minValue = 0, maxValue, warningThreshold, dangerThreshold }) => {
+}
+
+interface SpringMassVisualizationProps {
+    lag: number;
+    differential: number;
+    isPulling: boolean;
+    rate: number;
+}
+
+const SpringMassVisualization = ({ lag, differential, isPulling, rate }: SpringMassVisualizationProps) => {
+    const width = 220;
+    const height = 80;
+    const restPosition = LAG0; // lag0
+    const maxLag = 400;
+
+    // Calculate positions (inverted: wall on right, mass moves left as lag increases)
+    // massX represents the RIGHT edge of the mass
+    const massSize = 20;
+    const massX = width - massSize - (lag / maxLag) * (width - 60);
+    const springStartX = massX; // Spring connects to right edge of mass
+    const springEndX = width - massSize;
+
+    // Spring parameters
+    const springCoils = 8;
+    const springAmplitude = 8;
+    const springColor = isPulling ? 'var(--signal-danger)' : 'var(--signal-success)';
+    const restX = width - 20 - (restPosition / maxLag) * (width - 60);
+
+    // Generate spring path
+    const springPath = [];
+    const springLength = springEndX - springStartX;
+    const segmentLength = springLength / (springCoils * 2);
+
+    springPath.push(`M ${springStartX} ${height / 2}`);
+    for (let i = 0; i < springCoils; i++) {
+        const x1 = springStartX + (i * 2 + 1) * segmentLength;
+        const x2 = springStartX + (i * 2 + 2) * segmentLength;
+        springPath.push(`L ${x1} ${height / 2 - springAmplitude}`);
+        springPath.push(`L ${x2} ${height / 2 + springAmplitude}`);
+    }
+    springPath.push(`L ${springEndX} ${height / 2}`);
+
+    const massOpacity = Math.min(0.4 + (rate / 100) * 0.6, 1);
+
+    return (
+        <svg width={width} height={height} style={{ display: 'block', background: 'var(--background-weak)' }}>
+            {/* Rest position indicator */}
+            <line
+                x1={restX}
+                y1={10}
+                x2={restX}
+                y2={height - 10}
+                stroke="var(--text-weak)"
+                strokeWidth="1"
+                strokeDasharray="3,3"
+                opacity="0.4"
+            />
+            <text x={restX} y={8} fontSize="8" fill="var(--text-weak)" textAnchor="middle">
+                rest
+            </text>
+
+            {/* Wall/anchor */}
+            <rect x={width - 20} y={height / 2 - 15} width={5} height={30} fill="var(--text-norm)" opacity="0.6" />
+
+            {/* Spring */}
+            <path d={springPath.join(' ')} fill="none" stroke={springColor} strokeWidth="2" opacity="0.8" />
+
+            {/* Mass - positioned with right edge at massX */}
+            <rect
+                x={massX - massSize}
+                y={height / 2 - massSize / 2}
+                width={massSize}
+                height={massSize}
+                fill={springColor}
+                opacity={massOpacity}
+                stroke="var(--text-norm)"
+                strokeWidth="1.5"
+            />
+
+            {/* Direction arrow - above the mass */}
+            {rate > 1 && (
+                <path
+                    d={
+                        isPulling
+                            ? `M ${massX} ${height / 2 - massSize / 2 - 5} L ${massX + 10} ${height / 2 - massSize / 2 - 5} L ${massX + 7} ${height / 2 - massSize / 2 - 8} M ${massX + 10} ${height / 2 - massSize / 2 - 5} L ${massX + 7} ${height / 2 - massSize / 2 - 2}`
+                            : `M ${massX - massSize} ${height / 2 - massSize / 2 - 5} L ${massX - massSize - 10} ${height / 2 - massSize / 2 - 5} L ${massX - massSize - 7} ${height / 2 - massSize / 2 - 8} M ${massX - massSize - 10} ${height / 2 - massSize / 2 - 5} L ${massX - massSize - 7} ${height / 2 - massSize / 2 - 2}`
+                    }
+                    stroke={springColor}
+                    strokeWidth="2"
+                    fill="none"
+                />
+            )}
+
+            {/* Labels */}
+            <text x={10} y={height - 5} fontSize="9" fill="var(--text-weak)">
+                {maxLag}
+            </text>
+            <text x={width - 25} y={height - 5} fontSize="9" fill="var(--text-weak)">
+                0
+            </text>
+        </svg>
+    );
+};
+
+const Sparkline = ({
+    data,
+    width = 100,
+    height = 30,
+    color = '#00ff00',
+    minValue = 0,
+    maxValue,
+    warningThreshold,
+    dangerThreshold,
+}: SparklineProps) => {
     if (data.length < 2) return null;
 
     const range = maxValue - minValue || 1;
 
-    // Create SVG path
-    const points = data.map((value, index) => {
-        const x = (index / (data.length - 1)) * width;
-        const clampedValue = Math.min(Math.max(value, minValue), maxValue);
+    // Time-based x-positioning
+    const oldestTime = data[0].t;
+    const newestTime = data[data.length - 1].t;
+    const timeWindow = newestTime - oldestTime || 1; // avoid div by 0
+
+    const points = data.map((point) => {
+        const x = ((point.t - oldestTime) / timeWindow) * width;
+        const clampedValue = Math.min(Math.max(point.v, minValue), maxValue);
         const y = height - ((clampedValue - minValue) / range) * height;
         return `${x},${y}`;
     });
 
     const pathData = `M ${points.join(' L ')}`;
 
-    // Check if any recent values exceed thresholds
     const recentValues = data.slice(-10);
-    const hasWarning = warningThreshold && recentValues.some(v => v >= warningThreshold);
-    const hasDanger = dangerThreshold && recentValues.some(v => v >= dangerThreshold);
+    const hasWarning = warningThreshold && recentValues.some((p) => p.v >= warningThreshold);
+    const hasDanger = dangerThreshold && recentValues.some((p) => p.v >= dangerThreshold);
 
-    const lineColor = hasDanger ? '#ff0000' : hasWarning ? '#ffaa00' : color;
+    const lineColor = hasDanger ? 'var(--signal-danger)' : hasWarning ? 'var(--signal-warning)' : color;
 
     return (
         <svg width={width} height={height} style={{ display: 'block' }}>
-            {/* Reference lines */}
             {warningThreshold && (
                 <line
                     x1="0"
                     y1={height - ((warningThreshold - minValue) / range) * height}
                     x2={width}
                     y2={height - ((warningThreshold - minValue) / range) * height}
-                    stroke="#ffaa00"
+                    stroke="var(--signal-warning)"
                     strokeWidth="0.5"
                     strokeDasharray="2,2"
                     opacity="0.3"
@@ -92,24 +222,18 @@ const Sparkline: React.FC<{
                     y1={height - ((dangerThreshold - minValue) / range) * height}
                     x2={width}
                     y2={height - ((dangerThreshold - minValue) / range) * height}
-                    stroke="#ff0000"
+                    stroke="var(--signal-danger)"
                     strokeWidth="0.5"
                     strokeDasharray="2,2"
                     opacity="0.3"
                 />
             )}
-            <path
-                d={pathData}
-                fill="none"
-                stroke={lineColor}
-                strokeWidth="1.5"
-                opacity="0.8"
-            />
+            <path d={pathData} fill="none" stroke={lineColor} strokeWidth="1.5" opacity="0.8" />
         </svg>
     );
 };
 
-export const PerformanceMonitor: React.FC = () => {
+export const PerformanceMonitor = () => {
     const [metrics, setMetrics] = useState<PerformanceMetrics>({
         tokensPerSecond: 0,
         totalTokens: 0,
@@ -126,11 +250,14 @@ export const PerformanceMonitor: React.FC = () => {
             renderTimes: [],
             tokensPerSecHistory: [],
             fpsHistory: [],
+            smoothingLag: [],
+            smoothingRate: [],
+            smoothingDifferential: [],
         },
     });
     const [isVisible, setIsVisible] = useState(false);
+    const [showSearchIndexDebug, setShowSearchIndexDebug] = useState(false);
 
-    // Check if debug mode is enabled
     useEffect(() => {
         const checkDebug = () => {
             const enabled = localStorage.getItem('lumo_debug_perf') === 'true';
@@ -138,13 +265,10 @@ export const PerformanceMonitor: React.FC = () => {
         };
 
         checkDebug();
-
-        // Listen for storage changes
         window.addEventListener('storage', checkDebug);
         return () => window.removeEventListener('storage', checkDebug);
     }, []);
 
-    // Keyboard shortcut: Cmd/Ctrl + Shift + P to toggle
     useEffect(() => {
         const handleKeyPress = (e: KeyboardEvent) => {
             if ((e.metaKey || e.ctrlKey) && e.shiftKey && e.key === 'P') {
@@ -159,16 +283,26 @@ export const PerformanceMonitor: React.FC = () => {
         return () => window.removeEventListener('keydown', handleKeyPress);
     }, [isVisible]);
 
-    // Monitor Redux state changes (but use a ref to avoid counting our own re-renders)
     const messages = useLumoSelector((state) => state.messages || {});
     const renderCountRef = useRef(0);
     const lastTokenTimeRef = useRef<number>(Date.now());
     const historyRef = useRef<{
-        tokenDelays: number[];
-        renderTimes: number[];
-        tokensPerSecHistory: number[];
-        fpsHistory: number[];
-    }>({ tokenDelays: [], renderTimes: [], tokensPerSecHistory: [], fpsHistory: [] });
+        tokenDelays: TimePoint[];
+        renderTimes: TimePoint[];
+        tokensPerSecHistory: TimePoint[];
+        fpsHistory: TimePoint[];
+        smoothingLag: TimePoint[];
+        smoothingRate: TimePoint[];
+        smoothingDifferential: TimePoint[];
+    }>({
+        tokenDelays: [],
+        renderTimes: [],
+        tokensPerSecHistory: [],
+        fpsHistory: [],
+        smoothingLag: [],
+        smoothingRate: [],
+        smoothingDifferential: [],
+    });
     const fpsFrameRef = useRef<number>(0);
     const fpsLastTimeRef = useRef<number>(Date.now());
     const longestRenderRef = useRef<number>(0);
@@ -180,67 +314,51 @@ export const PerformanceMonitor: React.FC = () => {
         const now = Date.now();
         const timeSinceLastUpdate = now - metrics.lastUpdateTime;
 
-        // Increment external render counter (tracks actual component renders in the app)
         renderCountRef.current += 1;
 
-        // Calculate tokens (approximate: chars / 4 for GPT tokenization)
         const totalChars = Object.values(messages).reduce((sum: number, msg: any) => {
             return sum + (msg.content?.length || 0);
         }, 0);
 
-        // Convert chars to approximate tokens (1 token ≈ 4 chars for English)
         const totalTokens = Math.round(totalChars / 4);
-
         const tokenDelta = totalTokens - metrics.totalTokens;
 
-        // Track time since last token (to detect backend slowdowns)
         let timeSinceLastToken = now - lastTokenTimeRef.current;
         if (tokenDelta > 0) {
             lastTokenTimeRef.current = now;
             timeSinceLastToken = 0;
         }
 
-        // Start streaming timer if we detect new content
         let streamStartTime = metrics.streamStartTime;
         let streamingTokensGenerated = metrics.streamingTokensGenerated || 0;
 
         if (tokenDelta > 0 && !streamStartTime) {
-            // Just started streaming - reset counters (but keep rolling history)
             streamStartTime = now;
             streamingTokensGenerated = 0;
-            renderCountRef.current = 0; // Reset Redux updates counter
-            // Don't clear history - let it roll continuously for better visualization
+            renderCountRef.current = 0;
         } else if (tokenDelta === 0 && streamStartTime && timeSinceLastToken > 5000) {
-            // Only stop tracking streaming if idle for > 5 seconds (more lenient)
             streamStartTime = null;
             streamingTokensGenerated = 0;
-            // Don't reset renderCount - keep it visible even after streaming stops
         }
 
-        // Accumulate tokens generated during this streaming session
         if (tokenDelta > 0 && streamStartTime) {
             streamingTokensGenerated += tokenDelta;
         }
 
-        // Calculate rate: tokens generated THIS session / time elapsed
-        const tokensPerSecond = streamStartTime && streamingTokensGenerated > 0
-            ? (streamingTokensGenerated / ((now - streamStartTime) / 1000))
-            : 0;
+        const tokensPerSecond =
+            streamStartTime && streamingTokensGenerated > 0
+                ? streamingTokensGenerated / ((now - streamStartTime) / 1000)
+                : 0;
 
-        const reduxUpdatesPerSecond = timeSinceLastUpdate > 0
-            ? (1000 / timeSinceLastUpdate)
-            : 0;
+        const reduxUpdatesPerSecond = timeSinceLastUpdate > 0 ? 1000 / timeSinceLastUpdate : 0;
 
-        // Measure render time
         const renderEndTime = performance.now();
         const renderTime = renderEndTime - renderStartTime;
 
-        // Track longest render time
         if (renderTime > longestRenderRef.current) {
             longestRenderRef.current = renderTime;
         }
 
-        // Calculate FPS (frames per second based on Redux updates)
         fpsFrameRef.current++;
         const fpsDelta = now - fpsLastTimeRef.current;
         let fps = 0;
@@ -250,20 +368,45 @@ export const PerformanceMonitor: React.FC = () => {
             fpsLastTimeRef.current = now;
         }
 
-        // Get memory usage (if available)
         const memoryUsage = (performance as any).memory
             ? Math.round(((performance as any).memory.usedJSHeapSize / 1024 / 1024) * 10) / 10
             : 0;
 
-        // Count messages
         const messageCount = Object.keys(messages).length;
 
-        // Update history arrays (keep last N entries) using ref to avoid re-render cycles
+        // Read smoothing metrics from window
+        const smoothingMetrics =
+            typeof window !== 'undefined' && (window as any).lumoSmoothingDebug
+                ? (window as any).lumoSmoothingDebug
+                : null;
+
+        // Update history with time-stamped points, filter by 30s window
         historyRef.current = {
-            tokenDelays: [...historyRef.current.tokenDelays, timeSinceLastToken].slice(-HISTORY_SIZE),
-            renderTimes: [...historyRef.current.renderTimes, renderTime].slice(-HISTORY_SIZE),
-            tokensPerSecHistory: [...historyRef.current.tokensPerSecHistory, tokensPerSecond].slice(-HISTORY_SIZE),
-            fpsHistory: fps > 0 ? [...historyRef.current.fpsHistory, fps].slice(-HISTORY_SIZE) : historyRef.current.fpsHistory,
+            tokenDelays: filterByTimeWindow(
+                [...historyRef.current.tokenDelays, { t: now, v: timeSinceLastToken }],
+                now
+            ),
+            renderTimes: filterByTimeWindow([...historyRef.current.renderTimes, { t: now, v: renderTime }], now),
+            tokensPerSecHistory: filterByTimeWindow(
+                [...historyRef.current.tokensPerSecHistory, { t: now, v: tokensPerSecond }],
+                now
+            ),
+            fpsHistory:
+                fps > 0
+                    ? filterByTimeWindow([...historyRef.current.fpsHistory, { t: now, v: fps }], now)
+                    : filterByTimeWindow(historyRef.current.fpsHistory, now),
+            smoothingLag: smoothingMetrics
+                ? filterByTimeWindow([...historyRef.current.smoothingLag, { t: now, v: smoothingMetrics.lag }], now)
+                : filterByTimeWindow(historyRef.current.smoothingLag, now),
+            smoothingRate: smoothingMetrics
+                ? filterByTimeWindow([...historyRef.current.smoothingRate, { t: now, v: smoothingMetrics.rate }], now)
+                : filterByTimeWindow(historyRef.current.smoothingRate, now),
+            smoothingDifferential: smoothingMetrics
+                ? filterByTimeWindow(
+                      [...historyRef.current.smoothingDifferential, { t: now, v: smoothingMetrics.differential }],
+                      now
+                  )
+                : filterByTimeWindow(historyRef.current.smoothingDifferential, now),
         };
 
         setMetrics({
@@ -280,6 +423,7 @@ export const PerformanceMonitor: React.FC = () => {
             fps: fps || metrics.fps,
             messageCount,
             longestRenderTime: Math.round(longestRenderRef.current * 100) / 100,
+            smoothing: smoothingMetrics,
             history: historyRef.current,
         });
     }, [messages, isVisible]);
@@ -289,10 +433,18 @@ export const PerformanceMonitor: React.FC = () => {
     const isStreaming = metrics.streamStartTime !== null;
 
     const handleClearHistory = () => {
-        historyRef.current = { tokenDelays: [], renderTimes: [], tokensPerSecHistory: [], fpsHistory: [] };
+        historyRef.current = {
+            tokenDelays: [],
+            renderTimes: [],
+            tokensPerSecHistory: [],
+            fpsHistory: [],
+            smoothingLag: [],
+            smoothingRate: [],
+            smoothingDifferential: [],
+        };
         renderCountRef.current = 0;
         longestRenderRef.current = 0;
-        setMetrics(prev => ({
+        setMetrics((prev) => ({
             ...prev,
             history: historyRef.current,
             renderCount: 0,
@@ -300,106 +452,204 @@ export const PerformanceMonitor: React.FC = () => {
         }));
     };
 
+    const getTokensValueClass = () => {
+        if (metrics.tokensPerSecond > 50) return 'debug-view-value--good';
+        return 'debug-view-value--muted';
+    };
+
+    const getReduxValueClass = () => {
+        if (metrics.reduxUpdatesPerSecond >= 100) return 'debug-view-value--danger';
+        return '';
+    };
+
+    const getFpsValueClass = () => {
+        if ((metrics.fps || 0) >= 60) return 'debug-view-value--good';
+        return 'debug-view-value--warn';
+    };
+
+    const getLastTokenValueClass = () => {
+        const value = metrics.timeSinceLastToken || 0;
+        if (value < 100) return 'debug-view-value--good';
+        if (value < 500) return 'debug-view-value--warn';
+        return 'debug-view-value--danger';
+    };
+
+    const getRenderTimeValueClass = () => {
+        const value = metrics.renderTime || 0;
+        if (value < 16) return 'debug-view-value--good';
+        if (value < 33) return 'debug-view-value--warn';
+        return 'debug-view-value--danger';
+    };
+
     return (
-        <div
-            style={{
-                position: 'fixed',
-                bottom: '20px',
-                right: '20px',
-                backgroundColor: 'rgba(0, 0, 0, 0.9)',
-                color: '#00ff00',
-                padding: '12px 16px',
-                borderRadius: '8px',
-                fontFamily: 'monospace',
-                fontSize: '12px',
-                zIndex: 99999,
-                minWidth: '250px',
-                boxShadow: '0 4px 12px rgba(0, 0, 0, 0.5)',
-                border: '1px solid rgba(0, 255, 0, 0.3)',
-            }}
-        >
-            <div style={{ marginBottom: '8px', fontSize: '14px', fontWeight: 'bold', color: '#00ff00' }}>
-                ⚡ Performance Monitor
+        <div className="debug-view">
+            <div className="debug-view-header">
+                <span className="debug-view-header-icon">⚡</span>
+                {c('lumo: Debug View').t`Debug View`}
             </div>
 
-            <div style={{ marginBottom: '4px' }}>
-                <span style={{ color: '#888' }}>Status:</span>{' '}
-                <span style={{ color: isStreaming ? '#00ff00' : '#888' }}>
-                    {isStreaming ? '🔴 Streaming' : '⚪ Idle'}
+            <div className="debug-view-row">
+                <span className="debug-view-label">{c('lumo: Debug View').t`Status`}</span>
+                <span className="debug-view-value">
+                    {isStreaming ? `🔴 ${c('lumo: Debug View').t`Streaming`}` : `⚪ ${c('lumo: Debug View').t`Idle`}`}
                 </span>
             </div>
 
-            <div style={{ marginBottom: '4px' }}>
-                <span style={{ color: '#888' }}>Tokens/sec:</span>{' '}
-                <span style={{ color: metrics.tokensPerSecond > 50 ? '#00ff00' : '#555' }}>
-                    {metrics.tokensPerSecond}
-                </span>
-                <span style={{ fontSize: '9px', color: '#555', marginLeft: '4px' }}>(~chars÷4)</span>
+            <div className="debug-view-row">
+                <span className="debug-view-label">{c('lumo: Debug View').t`Tokens/sec`}</span>
+                <span className={`debug-view-value ${getTokensValueClass()}`}>{metrics.tokensPerSecond}</span>
             </div>
 
-            <div style={{ marginBottom: '4px' }}>
-                <span style={{ color: '#888' }}>Redux/sec:</span>{' '}
-                <span style={{ color: metrics.reduxUpdatesPerSecond < 100 ? '#00ff00' : '#ff0000' }}>
-                    {metrics.reduxUpdatesPerSecond}
-                </span>
+            <div className="debug-view-row">
+                <span className="debug-view-label">{c('lumo: Debug View').t`Redux/sec`}</span>
+                <span className={`debug-view-value ${getReduxValueClass()}`}>{metrics.reduxUpdatesPerSecond}</span>
             </div>
 
-            <div style={{ marginBottom: '4px' }}>
-                <span style={{ color: '#888' }}>Redux updates:</span>{' '}
-                <span style={{ color: '#00aaff' }}>{metrics.renderCount}</span>
+            <div className="debug-view-row">
+                <span className="debug-view-label">{c('lumo: Debug View').t`Redux updates`}</span>
+                <span className="debug-view-value">{metrics.renderCount}</span>
             </div>
 
-            <div style={{ marginBottom: '4px' }}>
-                <span style={{ color: '#888' }}>FPS:</span>{' '}
-                <span style={{ color: (metrics.fps || 0) >= 60 ? '#00ff00' : '#ffaa00' }}>
-                    {metrics.fps || 0}
-                </span>
+            <div className="debug-view-row">
+                <span className="debug-view-label">{c('lumo: Debug View').t`FPS`}</span>
+                <span className={`debug-view-value ${getFpsValueClass()}`}>{metrics.fps || 0}</span>
             </div>
 
-            <div style={{ marginBottom: '4px' }}>
-                <span style={{ color: '#888' }}>Memory:</span>{' '}
-                <span style={{ color: '#00aaff' }}>{metrics.memoryUsage}MB</span>
+            <div className="debug-view-row">
+                <span className="debug-view-label">{c('lumo: Debug View').t`Memory`}</span>
+                <span className="debug-view-value">{metrics.memoryUsage}MB</span>
             </div>
 
-            <div style={{ marginBottom: '4px' }}>
-                <span style={{ color: '#888' }}>Messages:</span>{' '}
-                <span style={{ color: '#888' }}>{metrics.messageCount}</span>
+            <div className="debug-view-row">
+                <span className="debug-view-label">{c('lumo: Debug View').t`Messages`}</span>
+                <span className="debug-view-value">{metrics.messageCount}</span>
             </div>
 
-            <div style={{ marginBottom: '4px' }}>
-                <span style={{ color: '#888' }}>Last token:</span>{' '}
-                <span style={{
-                    color: (metrics.timeSinceLastToken || 0) < 100 ? '#00ff00' :
-                           (metrics.timeSinceLastToken || 0) < 500 ? '#ffaa00' : '#ff0000'
-                }}>
+            <div className="debug-view-row">
+                <span className="debug-view-label">{c('lumo: Debug View').t`Last token`}</span>
+                <span className={`debug-view-value ${getLastTokenValueClass()}`}>
                     {metrics.timeSinceLastToken || 0}ms
                 </span>
             </div>
 
-            <div style={{ marginBottom: '4px' }}>
-                <span style={{ color: '#888' }}>Render time:</span>{' '}
-                <span style={{
-                    color: (metrics.renderTime || 0) < 16 ? '#00ff00' :
-                           (metrics.renderTime || 0) < 33 ? '#ffaa00' : '#ff0000'
-                }}>
+            <div className="debug-view-row">
+                <span className="debug-view-label">{c('lumo: Debug View').t`Render time`}</span>
+                <span className={`debug-view-value ${getRenderTimeValueClass()}`}>
                     {metrics.renderTime || 0}ms
-                </span>
-                <span style={{ fontSize: '9px', color: '#555', marginLeft: '4px' }}>
-                    (max: {metrics.longestRenderTime}ms)
+                    <span className="debug-view-max">
+                        ({c('lumo: Debug View').t`max`}: {metrics.longestRenderTime}ms)
+                    </span>
                 </span>
             </div>
 
-            {/* Sparklines with fixed bounds - always show */}
-            <div style={{ marginTop: '12px', paddingTop: '8px', borderTop: '1px solid rgba(255, 255, 255, 0.1)' }}>
-                <div style={{ marginBottom: '8px' }}>
-                    <div style={{ fontSize: '10px', color: '#888', marginBottom: '4px' }}>
-                        Token delays: 0-500ms <span style={{ color: '#555' }}>(warn: 200ms, danger: 400ms)</span>
+            {metrics.smoothing && (
+                <>
+                    <div className="debug-view-header" style={{ marginTop: '12px' }}>
+                        <span className="debug-view-header-icon">🧮</span>
+                        {c('lumo: Debug View').t`Smoothing (Spring-Mass)`}
                     </div>
+
+                    <div className="debug-view-row">
+                        <span className="debug-view-label">{c('lumo: Debug View').t`Lag`}</span>
+                        <span className="debug-view-value">{metrics.smoothing.lag.toFixed(1)} chars</span>
+                    </div>
+
+                    <div className="debug-view-row">
+                        <span className="debug-view-label">{c('lumo: Debug View').t`Buffer size`}</span>
+                        <span className="debug-view-value">{metrics.smoothing.bufferSize} chars</span>
+                    </div>
+
+                    <div className="debug-view-row">
+                        <span className="debug-view-label">{c('lumo: Debug View').t`Differential`}</span>
+                        <span className="debug-view-value">{metrics.smoothing.differential.toFixed(1)} chars</span>
+                    </div>
+
+                    <div className="debug-view-row">
+                        <span className="debug-view-label">{c('lumo: Debug View').t`Rate`}</span>
+                        <span className="debug-view-value">{metrics.smoothing.rate.toFixed(1)} c/s</span>
+                    </div>
+
+                    <div className="debug-view-row">
+                        <span className="debug-view-label">{c('lumo: Debug View').t`Acceleration`}</span>
+                        <span className="debug-view-value">{metrics.smoothing.drate.toFixed(2)} c/s²</span>
+                    </div>
+
+                    <div className="debug-view-row">
+                        <span className="debug-view-label">{c('lumo: Debug View').t`Stiffness`}</span>
+                        <span className="debug-view-value">{metrics.smoothing.stiffness}</span>
+                    </div>
+
+                    <div className="debug-view-row">
+                        <span className="debug-view-label">{c('lumo: Debug View').t`Spring state`}</span>
+                        <span className="debug-view-value">
+                            {metrics.smoothing.isPulling ? '➡️ Pulling' : '⬅️ Pushing'}
+                        </span>
+                    </div>
+
+                    <div style={{ marginTop: '12px', marginBottom: '8px' }}>
+                        <div className="debug-view-chart-label" style={{ marginBottom: '4px' }}>
+                            {c('lumo: Debug View').t`Spring-Mass Visualization`}
+                        </div>
+                        <SpringMassVisualization
+                            lag={metrics.smoothing.lag}
+                            differential={metrics.smoothing.differential}
+                            isPulling={metrics.smoothing.isPulling}
+                            rate={metrics.smoothing.rate}
+                        />
+                    </div>
+
+                    <div className="debug-view-section" style={{ marginTop: '8px' }}>
+                        <div className="debug-view-chart">
+                            <div className="debug-view-chart-label">{c('lumo: Debug View').t`Lag`} (0-400 chars)</div>
+                            <Sparkline
+                                data={metrics.history?.smoothingLag || []}
+                                width={220}
+                                height={30}
+                                color="var(--interaction-norm)"
+                                minValue={0}
+                                maxValue={400}
+                                warningThreshold={200}
+                                dangerThreshold={300}
+                            />
+                        </div>
+
+                        <div className="debug-view-chart">
+                            <div className="debug-view-chart-label">{c('lumo: Debug View').t`Rate`} (0-400 c/s)</div>
+                            <Sparkline
+                                data={metrics.history?.smoothingRate || []}
+                                width={220}
+                                height={30}
+                                color="var(--signal-success)"
+                                minValue={0}
+                                maxValue={400}
+                            />
+                        </div>
+
+                        <div className="debug-view-chart">
+                            <div className="debug-view-chart-label">
+                                {c('lumo: Debug View').t`Differential`} (-10-40 chars)
+                            </div>
+                            <Sparkline
+                                data={metrics.history?.smoothingDifferential || []}
+                                width={220}
+                                height={30}
+                                color="var(--signal-warning)"
+                                minValue={-10}
+                                maxValue={40}
+                            />
+                        </div>
+                    </div>
+                </>
+            )}
+
+            <div className="debug-view-section">
+                <div className="debug-view-chart">
+                    <div className="debug-view-chart-label">{c('lumo: Debug View').t`Token delays`} (0-500ms)</div>
                     <Sparkline
                         data={metrics.history?.tokenDelays || []}
                         width={220}
-                        height={35}
-                        color="#00aaff"
+                        height={30}
+                        color="var(--interaction-norm)"
                         minValue={0}
                         maxValue={500}
                         warningThreshold={200}
@@ -407,15 +657,13 @@ export const PerformanceMonitor: React.FC = () => {
                     />
                 </div>
 
-                <div style={{ marginBottom: '8px' }}>
-                    <div style={{ fontSize: '10px', color: '#888', marginBottom: '4px' }}>
-                        Render time: 0-50ms <span style={{ color: '#555' }}>(warn: 16ms, danger: 33ms)</span>
-                    </div>
+                <div className="debug-view-chart">
+                    <div className="debug-view-chart-label">{c('lumo: Debug View').t`Render time`} (0-50ms)</div>
                     <Sparkline
                         data={metrics.history?.renderTimes || []}
                         width={220}
-                        height={35}
-                        color="#00ff00"
+                        height={30}
+                        color="var(--interaction-norm)"
                         minValue={0}
                         maxValue={50}
                         warningThreshold={16}
@@ -423,48 +671,39 @@ export const PerformanceMonitor: React.FC = () => {
                     />
                 </div>
 
-                <div style={{ marginBottom: '4px' }}>
-                    <div style={{ fontSize: '10px', color: '#888', marginBottom: '4px' }}>
-                        Tokens/sec: 0-200 <span style={{ color: '#555' }}>(good: &gt;50)</span>
-                    </div>
+                <div className="debug-view-chart">
+                    <div className="debug-view-chart-label">{c('lumo: Debug View').t`Tokens/sec`} (0-200)</div>
                     <Sparkline
                         data={metrics.history?.tokensPerSecHistory || []}
                         width={220}
-                        height={35}
-                        color="#00ff00"
+                        height={30}
+                        color="var(--signal-success)"
                         minValue={0}
                         maxValue={200}
                     />
                 </div>
             </div>
 
-            <div style={{ marginTop: '12px', paddingTop: '8px', borderTop: '1px solid rgba(255, 255, 255, 0.1)' }}>
-                <button
-                    onClick={handleClearHistory}
-                    style={{
-                        fontSize: '10px',
-                        padding: '4px 8px',
-                        marginBottom: '8px',
-                        backgroundColor: 'rgba(255, 255, 255, 0.1)',
-                        color: '#00ff00',
-                        border: '1px solid rgba(0, 255, 0, 0.3)',
-                        borderRadius: '4px',
-                        cursor: 'pointer',
-                        width: '100%',
-                    }}
-                >
-                    Clear History
+            <div className="debug-view-section debug-view-actions">
+                <button className="debug-view-btn debug-view-btn--secondary" onClick={handleClearHistory}>
+                    {c('lumo: Debug View').t`Clear History`}
                 </button>
-                <div style={{ fontSize: '10px', color: '#666', lineHeight: '1.4' }}>
-                    <div>Toggle: <strong>Cmd/Ctrl + Shift + P</strong></div>
-                    <div style={{ marginTop: '4px', color: '#555' }}>
-                        or localStorage.setItem('lumo_debug_perf', 'false')
-                    </div>
+                <button
+                    className="debug-view-btn debug-view-btn--primary"
+                    onClick={() => setShowSearchIndexDebug(true)}
+                >
+                    🔍 {c('lumo: Debug View').t`Search Index Debug`}
+                </button>
+                <div className="debug-view-hint">
+                    <strong>Cmd/Ctrl + Shift + P</strong> {c('lumo: Debug View').t`to toggle`}
                 </div>
             </div>
+
+            {showSearchIndexDebug && (
+                <SearchIndexDebugModal open={showSearchIndexDebug} onClose={() => setShowSearchIndexDebug(false)} />
+            )}
         </div>
     );
 };
 
 export default PerformanceMonitor;
-

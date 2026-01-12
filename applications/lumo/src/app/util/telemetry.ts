@@ -170,3 +170,30 @@ export const sendConversationEditTitleEvent = (location?: 'sidebar' | 'header') 
         location,
     });
 };
+
+/**
+ * Telemetry events for projects
+ */
+
+const sendLumoProjectEvent = (eventType: string, eventData?: Record<string, any>) => {
+    telemetry.sendCustomEvent('lumo-project-event', {
+        eventType,
+        ...eventData,
+    });
+};
+
+export const sendProjectCreateEvent = () => {
+    sendLumoProjectEvent('create');
+};
+
+export const sendProjectDeleteEvent = () => {
+    sendLumoProjectEvent('delete');
+};
+
+export const sendProjectDriveFolderLinkEvent = () => {
+    sendLumoProjectEvent('drive-folder-link');
+};
+
+export const sendProjectDriveFolderUnlinkEvent = () => {
+    sendLumoProjectEvent('drive-folder-unlink');
+};

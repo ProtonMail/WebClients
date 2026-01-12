@@ -33,6 +33,7 @@ import { createLumoListenerMiddleware } from './redux/listeners';
 import { rootSaga } from './redux/sagas';
 import type { LumoSaga, LumoSagaContext, LumoState } from './redux/store';
 import { extendStore, setupStore } from './redux/store';
+import { setStoreRef } from './redux/storeRef';
 import { extraThunkArguments } from './redux/thunk';
 import { LumoApi } from './remote/api';
 import { LUMO_ELIGIBILITY } from './types';
@@ -94,6 +95,7 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
             context: {} as LumoSagaContext,
         });
         const store = setupStore({ preloadedState: persistedState?.state, listenerMiddleware, sagaMiddleware });
+        setStoreRef(store);
         const dispatch = store.dispatch;
 
         if (user) {

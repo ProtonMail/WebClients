@@ -97,6 +97,12 @@ export const FileCard = ({ attachment, onRemove, onView, className, readonly = f
                     >
                         {processing ? c('collider_2025:Info').t`Processing...` : prettyType}
                     </p>
+                    {attachment.autoRetrieved && (
+                        <span className="text-xs color-primary flex items-center gap-1 mt-0.5">
+                            <Icon name="magic-wand" size={3} />
+                            {c('collider_2025:Info').t`Auto-retrieved`}
+                        </span>
+                    )}
                 </div>
             </div>
 

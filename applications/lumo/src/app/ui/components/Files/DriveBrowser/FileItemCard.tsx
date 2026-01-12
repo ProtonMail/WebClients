@@ -3,6 +3,7 @@ import React from 'react';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { FileIcon, Icon } from '@proton/components';
+import { NodeType } from '@proton/drive';
 import { IcFolderFilled } from '@proton/icons/icons/IcFolderFilled';
 
 import { getFileTypeDescription, getMimeTypeFromExtension } from '../../../../util/filetypes';
@@ -21,9 +22,9 @@ export interface FileItemAction {
 export interface FileItemData {
     id: string;
     name: string;
-    mimeType?: string;
+    mediaType?: string;
     size?: number;
-    type?: 'file' | 'folder';
+    type?: NodeType;
     processing?: boolean;
     error?: boolean;
     // Additional metadata
@@ -75,21 +76,29 @@ export const FileItemCard: React.FC<FileItemCardProps> = ({
         return 'hover:bg-weak';
     };
 
+    const getFileTypeClasses = () => {
+        if (file.type === NodeType.Folder) return 'folder-type';
+        else if (file.type === NodeType.File) return 'file-type';
+        return;
+    };
+
     // Use centralized functions directly - no need to redefine them
-    const fileTypeDescription = getFileTypeDescription(file.name, file.mimeType);
+    const fileTypeDescription = getFileTypeDescription(file.name, file.mediaType);
     const detectedMimeType = getMimeTypeFromExtension(file.name);
 
     return (
+        // TODO: Remove eslint-disable and fix issues
+        /* eslint-disable-next-line jsx-a11y/no-static-element-interactions, jsx-a11y/click-events-have-key-events */
         <div
-            className={`${getBaseClasses()} ${getStateClasses()} ${className}`}
+            className={`${getBaseClasses()} ${getStateClasses()} ${getFileTypeClasses()} ${className}`}
             onClick={isClickable ? onClick : undefined}
         >
             {/* File icon */}
             <div className="shrink-0 mr-3">
-                {file.type === 'folder' ? (
+                {file.type === NodeType.Folder ? (
                     <IcFolderFilled size={6} className="color-warning" />
                 ) : (
-                    <FileIcon mimeType={file.mimeType || detectedMimeType} size={6} />
+                    <FileIcon mimeType={file.mediaType || detectedMimeType} size={6} />
                 )}
             </div>
 
@@ -111,7 +120,7 @@ export const FileItemCard: React.FC<FileItemCardProps> = ({
 
                 <div className="flex flex-row items-center gap-2 flex-nowrap">
                     <span className={`color-weak shrink-0 text-xs`}>
-                        {file.subtitle || (file.type === 'file' ? fileTypeDescription : '')}
+                        {file.subtitle || (file.type === NodeType.File ? fileTypeDescription : '')}
                     </span>
 
                     {file.size && <span className={`color-weak shrink-0 text-xs`}>{formatFileSize(file.size)}</span>}
@@ -123,7 +132,7 @@ export const FileItemCard: React.FC<FileItemCardProps> = ({
             </div>
 
             {/* Actions on the right */}
-            <div className={`flex flex-row items-center gap-2 shrink-0 ${file.type === 'folder' ? 'mr-1' : ''}`}>
+            <div className={`flex flex-row items-center gap-2 shrink-0 ${file.type === NodeType.Folder ? 'mr-1' : ''}`}>
                 {isProcessing && <Icon name="arrows-rotate" className="color-primary animate-spin" size={4} />}
 
                 {hasError && <Icon name="exclamation-triangle-filled" className="color-danger" size={4} />}
@@ -160,7 +169,9 @@ export const FileItemCard: React.FC<FileItemCardProps> = ({
                 })}
 
                 {/* Chevron for folders */}
-                {file.type === 'folder' && isClickable && <Icon name="chevron-right" className="color-weak" size={4} />}
+                {file.type === NodeType.Folder && isClickable && (
+                    <Icon name="chevron-right" className="color-weak" size={4} />
+                )}
             </div>
         </div>
     );

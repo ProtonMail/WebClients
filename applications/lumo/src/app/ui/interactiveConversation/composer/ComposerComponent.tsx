@@ -3,27 +3,54 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import { clsx } from 'clsx';
 import { c } from 'ttag';
 
+import { useUser } from '@proton/account/user/hooks';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import type { HandleSendMessage } from '../../../hooks/useLumoActions';
+import { useDriveSDK } from '../../../hooks/useDriveSDK';
 import { useTierErrors } from '../../../hooks/useTierErrors';
 import useTipTapEditor from '../../../hooks/useTipTapEditor';
 import { useDragArea } from '../../../providers/DragAreaProvider';
 import { useGhostChat } from '../../../providers/GhostChatProvider';
+import { useIsGuest } from '../../../providers/IsGuestProvider';
 import { useWebSearch } from '../../../providers/WebSearchProvider';
 import { useLumoSelector } from '../../../redux/hooks';
-import { selectProvisionalAttachments } from '../../../redux/selectors';
+import { selectProvisionalAttachments, selectSpaceByIdOptional } from '../../../redux/selectors';
+import type { ProjectSpace } from '../../../types';
 import type { Attachment, Message } from '../../../types';
 import { sendVoiceEntryClickEvent } from '../../../util/telemetry';
 import { AttachmentArea, FileContentModal } from '../../components/Files';
 import GuestDisclaimer from '../../components/GuestDisclaimer';
 import { ComposerAttachmentArea } from './ComposerAttachmentArea';
-import { ComposerEditorArea } from './ComposerEditorArea';
+import { ComposerEditorArea, type ComposerEditorAreaProps } from './ComposerEditorArea';
 import { ComposerToolbar } from './ComposerToolbar';
 import { useAllRelevantAttachments } from './hooks/useAllRelevantAttachments';
 import { useFileHandling } from './hooks/useFileHandling';
 
 import './ComposerComponent.scss';
+
+/**
+ * Wrapper component that provides Drive SDK functions to ComposerEditorArea.
+ * This is a separate component so we can conditionally render it only for authenticated users.
+ */
+const ComposerEditorAreaWithDrive = (props: Omit<ComposerEditorAreaProps, 'browseFolderChildren' | 'downloadFile' | 'userId'>) => {
+    const { browseFolderChildren, downloadFile } = useDriveSDK();
+    const [user] = useUser();
+    
+    return (
+        <ComposerEditorArea
+            {...props}
+            browseFolderChildren={browseFolderChildren}
+            downloadFile={downloadFile}
+            userId={user?.ID}
+        />
+    );
+};
+
+/** Inner props that include the optional Drive upload function */
+type ComposerComponentInnerProps = ComposerComponentProps & {
+    uploadToDrive?: (folderId: string, file: File, onProgress?: (progress: number) => void) => Promise<string>;
+};
 
 export type ComposerComponentProps = {
     handleSendMessage: HandleSendMessage;
@@ -41,9 +68,15 @@ export type ComposerComponentProps = {
     canShowLegalDisclaimer?: boolean;
     canShowLumoUpsellToggle?: boolean;
     initialQuery?: string; // Initial query to populate and auto-execute
+    prefillQuery?: string; // Query to prefill without auto-executing
+    spaceId?: string; // Optional space ID to include space-level attachments
 };
 
-export const ComposerComponent = ({
+/**
+ * Inner component that handles the actual composer logic.
+ * Receives optional uploadToDrive from wrapper.
+ */
+const ComposerComponentInner = ({
     handleSendMessage,
     onAbort,
     isGenerating,
@@ -59,21 +92,29 @@ export const ComposerComponent = ({
     canShowLegalDisclaimer,
     canShowLumoUpsellToggle,
     initialQuery,
-}: ComposerComponentProps) => {
+    prefillQuery,
+    spaceId,
+    uploadToDrive,
+}: ComposerComponentInnerProps) => {
     const { isDragging: isDraggingOverScreen } = useDragArea();
     const provisionalAttachments = useLumoSelector(selectProvisionalAttachments);
     const { hasTierErrors } = useTierErrors();
     const { isWebSearchButtonToggled } = useWebSearch();
+    const isGuest = useIsGuest();
     const hasAttachments = provisionalAttachments.length > 0;
     const composerContainerRef = useRef<HTMLElement | null>(null);
     const [fileToView, setFileToView] = useState<Attachment | null>(null);
     const [showUploadMenu, setShowUploadMenu] = useState(false);
     const { isGhostChatMode } = useGhostChat();
 
-    // Get all relevant attachments for context calculations
-    const allRelevantAttachments = useAllRelevantAttachments(messageChain, provisionalAttachments);
+    // Get space to check for linked Drive folder (hides "Add from Drive" option when folder is linked)
+    const space = useLumoSelector(selectSpaceByIdOptional(spaceId));
+    const linkedDriveFolder = (space as ProjectSpace | undefined)?.linkedDriveFolder;
 
-    // File handling hook
+    // Get all relevant attachments for context calculations (includes space-level attachments if spaceId is provided)
+    const allRelevantAttachments = useAllRelevantAttachments(messageChain, provisionalAttachments, spaceId);
+
+    // File handling hook - pass uploadToDrive only for authenticated users
     const {
         fileInputRef,
         handleFileProcessing,
@@ -81,7 +122,7 @@ export const ComposerComponent = ({
         handleOpenFileDialog,
         handleBrowseDrive,
         handleDeleteAttachment,
-    } = useFileHandling({ messageChain, onShowDriveBrowser });
+    } = useFileHandling({ messageChain, onShowDriveBrowser, spaceId, linkedDriveFolder, uploadToDrive });
 
     const sendGenerateMessage = useCallback(
         async (editor: any) => {
@@ -126,13 +167,25 @@ export const ComposerComponent = ({
         }
     }, []);
 
+    // Use a ref instead of state to avoid infinite loops
+    // useTipTapEditor reads this via a ref internally, so we can pass a ref directly
+    const isAutocompleteActiveRef = useRef(false);
+    const handleFocus = useCallback(() => {
+        setIsEditorFocused?.(true);
+    }, [setIsEditorFocused]);
+    
+    const handleBlur = useCallback(() => {
+        setIsEditorFocused?.(false);
+    }, [setIsEditorFocused]);
+    
     const { editor, handleSubmit } = useTipTapEditor({
         onSubmitCallback: sendGenerateMessage,
         hasTierErrors,
         isGenerating,
         isProcessingAttachment,
-        onFocus: () => setIsEditorFocused?.(true),
-        onBlur: () => setIsEditorFocused?.(false),
+        isAutocompleteActiveRef: isAutocompleteActiveRef,
+        onFocus: handleFocus,
+        onBlur: handleBlur,
     });
     const isEditorEmpty = editor?.isEmpty;
     const sendIsDisabled = !(isGenerating ?? false) && (isEditorEmpty || isProcessingAttachment);
@@ -143,7 +196,7 @@ export const ComposerComponent = ({
         setIsEditorEmpty?.(isEditorEmpty ?? true);
     }, [isEditorEmpty, setIsEditorEmpty]);
 
-    // Handle initial query from URL parameter
+    // Handle initial query from URL parameter (auto-execute)
     const hasExecutedInitialQuery = useRef(false);
     const lastExecutedQuery = useRef<string | null>(null);
 
@@ -167,6 +220,27 @@ export const ComposerComponent = ({
             }, 100);
         }
     }, [initialQuery, editor, isProcessingAttachment, sendGenerateMessage]);
+
+    // Handle prefill query (just populate, don't auto-execute)
+    const hasExecutedPrefillQuery = useRef(false);
+    const lastPrefillQuery = useRef<string | null>(null);
+
+    useEffect(() => {
+        // Reset execution flag if prefillQuery changes to a new value
+        if (prefillQuery !== lastPrefillQuery.current) {
+            hasExecutedPrefillQuery.current = false;
+            lastPrefillQuery.current = prefillQuery || null;
+        }
+
+        if (prefillQuery && editor && !hasExecutedPrefillQuery.current && !isProcessingAttachment) {
+            // Set the content in the editor without submitting
+            editor.commands.setContent(prefillQuery);
+            editor.commands.focus('end');
+
+            // Mark as executed to prevent re-execution
+            hasExecutedPrefillQuery.current = true;
+        }
+    }, [prefillQuery, editor, isProcessingAttachment]);
 
     const showLegalDisclaimer = canShowLegalDisclaimer && !isEditorFocused && isEditorEmpty;
 
@@ -204,15 +278,33 @@ export const ComposerComponent = ({
                                 onOpenFiles={handleOpenFiles}
                             />
                         )}
-                        <ComposerEditorArea
-                            editor={editor}
-                            canShowSendButton={canShowSendButton}
-                            sendIsDisabled={sendIsDisabled}
-                            isGenerating={isGenerating ?? false}
-                            isProcessingAttachment={isProcessingAttachment}
-                            onAbort={onAbort}
-                            onSubmit={handleSubmit}
-                        />
+                        {isGuest ? (
+                            <ComposerEditorArea
+                                editor={editor}
+                                canShowSendButton={canShowSendButton}
+                                sendIsDisabled={sendIsDisabled}
+                                isGenerating={isGenerating ?? false}
+                                isProcessingAttachment={isProcessingAttachment}
+                                onAbort={onAbort}
+                                onSubmit={handleSubmit}
+                                spaceId={spaceId}
+                                messageChain={messageChain}
+                                isAutocompleteActiveRef={isAutocompleteActiveRef}
+                            />
+                        ) : (
+                            <ComposerEditorAreaWithDrive
+                                editor={editor}
+                                canShowSendButton={canShowSendButton}
+                                sendIsDisabled={sendIsDisabled}
+                                isGenerating={isGenerating ?? false}
+                                isProcessingAttachment={isProcessingAttachment}
+                                onAbort={onAbort}
+                                onSubmit={handleSubmit}
+                                spaceId={spaceId}
+                                messageChain={messageChain}
+                                isAutocompleteActiveRef={isAutocompleteActiveRef}
+                            />
+                        )}
                         <ComposerToolbar
                             fileInputRef={fileInputRef}
                             handleFileInputChange={handleFileInputChange}
@@ -223,6 +315,8 @@ export const ComposerComponent = ({
                             handleUploadButtonClick={handleUploadButtonClick}
                             hasAttachments={hasAttachments}
                             canShowLumoUpsellToggle={canShowLumoUpsellToggle}
+                            hideDriveOption={!!linkedDriveFolder}
+                            uploadsToDrive={!!linkedDriveFolder}
                         />
                     </div>
                 </section>
@@ -242,4 +336,28 @@ export const ComposerComponent = ({
             )}
         </>
     );
+};
+
+/**
+ * Wrapper component that provides Drive SDK upload function for authenticated users.
+ * For guest users, uploadToDrive is not provided.
+ */
+const ComposerComponentWithDrive = (props: ComposerComponentProps) => {
+    const { uploadFile } = useDriveSDK();
+    return <ComposerComponentInner {...props} uploadToDrive={uploadFile} />;
+};
+
+/**
+ * Main exported component that conditionally uses Drive SDK based on guest status.
+ */
+export const ComposerComponent = (props: ComposerComponentProps) => {
+    const isGuest = useIsGuest();
+    
+    // For guest users, render without Drive SDK (avoids useUser() error)
+    if (isGuest) {
+        return <ComposerComponentInner {...props} />;
+    }
+    
+    // For authenticated users, provide Drive SDK upload function
+    return <ComposerComponentWithDrive {...props} />;
 };

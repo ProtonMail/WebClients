@@ -1,0 +1,44 @@
+.icon-picker-trigger {
+    &:hover {
+        background-color: var(--background-weak);
+    }
+}
+
+.icon-picker-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 0.25rem;
+    min-width: 16rem;
+}
+
+.icon-picker-option {
+    background-color: transparent;
+    color: var(--text-norm);
+    transition: background-color 0.15s ease;
+
+    &:hover {
+        background-color: var(--background-weak);
+    }
+
+    &.is-selected {
+        background-color: var(--primary);
+        color: var(--primary-contrast);
+
+        &:hover {
+            background-color: var(--primary);
+        }
+    }
+}
+
+// Mobile-specific dropdown positioning fixes
+@media (max-width: 768px) {
+    .icon-picker-grid {
+        min-width: 14rem; // Slightly smaller on mobile for better fit
+    }
+
+    // Ensure dropdown appears above modal content on mobile
+    :global(.dropdown) {
+        z-index: 1000 !important;
+        position: relative !important;
+    }
+}

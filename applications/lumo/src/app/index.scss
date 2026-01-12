@@ -1,8 +1,10 @@
-@use '~@proton/styles/scss/lib/config' as *;
 @use './assets/fonts/fonts.css' as *;
-@use '~@proton/styles/scss/lib/rem' as *;
 @use '~@proton/styles/scss/proton-lumo' as *;
+
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/rem' as *;
 @use '~@proton/styles/scss/lib/include-media' as im;
+
 im.$breakpoints: $breakpoints-product;
 im.$media-expressions: $media-expressions;
 
@@ -90,7 +92,7 @@ im.$media-expressions: $media-expressions;
 	}
 
 	&:not(.sidebar--collapsed) {
-		inline-size: 260px; // Expanded width - comfortable for text
+		inline-size: 300px; // Expanded width - comfortable for text
 	}
 
 	// Mobile sidebar transitions - true overlay that doesn't affect layout
@@ -98,9 +100,9 @@ im.$media-expressions: $media-expressions;
 		position: fixed !important;
 		inset-block-start: 0 !important;
 		inset-inline-start: 0 !important;
-		block-size: 100% !important; // Use percentage instead of viewport units for Safari compatibility
+		block-size: 100% !important;
 		z-index: 100 !important;
-		inline-size: 260px !important; // Always full width on mobile
+		inline-size: 100% !important;
 
 		// Force transitions to work even with immediate class changes
 		transition: transform 0.3s ease-in-out !important;
@@ -192,30 +194,6 @@ im.$media-expressions: $media-expressions;
 	&.navigation-link {
 		font-weight: 600 !important;
 		border-radius: 8px;
-	}
-}
-
-.sidebar button:hover,
-.sidebar .navigation-link:hover {
-	background-color: var(--interaction-default-hover) !important;
-	border-radius: 8px;
-}
-
-.sidebar-list-item-content {
-	.shrink-0 {
-		min-inline-size: 1rem;
-		inline-size: 1rem;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		will-change: transform;
-		backface-visibility: hidden;
-		transform: translateZ(0);
-	}
-
-	.text-ellipsis {
-		transition: opacity 0.15s ease-in-out;
-		will-change: opacity;
 	}
 }
 
@@ -683,4 +661,8 @@ im.$media-expressions: $media-expressions;
 .new-label {
 	background-color: #8080ff;
 	color: white;
+}
+
+.no-border {
+	border: none !important;
 }

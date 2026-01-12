@@ -50,7 +50,6 @@ im.$media-expressions: $media-expressions;
 @media screen and (max-width: #{$mobile-breakpoint-width}) {
 	.assistant-msg-container {
 		padding: 0 !important; // reset .p-4
-		border: none !important; // reset .border, .border-weak
 		background-color: transparent !important; // reset bg-norm
 	}
 }

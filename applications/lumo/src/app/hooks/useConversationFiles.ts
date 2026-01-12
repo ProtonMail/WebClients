@@ -2,17 +2,36 @@ import { useMemo } from 'react';
 
 import type { ContextFilter } from '../llm';
 import { useLumoSelector } from '../redux/hooks';
-import { selectAttachments, selectContextFilters } from '../redux/selectors';
-import type { Attachment, Message } from '../types';
+import { selectAttachments, selectAttachmentsBySpaceId, selectContextFilters } from '../redux/selectors';
+import type { Attachment, Message, SpaceId } from '../types';
 import { measureExecution } from '../util/performance';
 
-export const useConversationFiles = (messageChain: Message[], currentAttachments: Attachment[] = []) => {
+export const useConversationFiles = (
+    messageChain: Message[],
+    currentAttachments: Attachment[] = [],
+    spaceId?: SpaceId
+) => {
     const allAttachments = useLumoSelector(selectAttachments);
     const contextFilters = useLumoSelector(selectContextFilters);
+    
+    // Get space-level attachments (project files)
+    // Exclude auto-retrieved attachments as they're conversation-specific
+    const spaceAttachments = useLumoSelector(selectAttachmentsBySpaceId(spaceId));
+    const spaceAttachmentsList = useMemo(() => 
+        Object.values(spaceAttachments).filter(att => !att.autoRetrieved), 
+        [spaceAttachments]
+    );
 
     // Get all files currently available in the conversation
     const allConversationFiles = useMemo(() => {
         const files: Attachment[] = [];
+
+        // Add space-level attachments first (project files)
+        spaceAttachmentsList.forEach((attachment) => {
+            if (!files.some((f) => f.id === attachment.id)) {
+                files.push(attachment);
+            }
+        });
 
         // Add all attachments from messages
         messageChain.forEach((message) => {
@@ -34,12 +53,16 @@ export const useConversationFiles = (messageChain: Message[], currentAttachments
         });
 
         return files;
-    }, [messageChain, allAttachments, currentAttachments]);
+    }, [spaceAttachmentsList, messageChain, allAttachments, currentAttachments]);
 
     // Apply context filters to determine which files would actually be used
     const activeFiles = useMemo(() => {
         return measureExecution('useConversationFiles:activeFiles', () => {
             return allConversationFiles.filter((file) => {
+                // Space-level attachments are always included (they have spaceId but no message)
+                const isSpaceAttachment = spaceAttachmentsList.some((a) => a.id === file.id);
+                if (isSpaceAttachment) return true;
+
                 // Check if this file is excluded by any context filter
                 // We need to find which message this file belongs to
                 let messageId = '';
@@ -56,7 +79,7 @@ export const useConversationFiles = (messageChain: Message[], currentAttachments
                 return !filter || !filter.excludedFiles.includes(file.filename);
             });
         });
-    }, [allConversationFiles, contextFilters, messageChain]);
+    }, [allConversationFiles, contextFilters, messageChain, spaceAttachmentsList]);
 
     return {
         allConversationFiles,
