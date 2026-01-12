@@ -20,6 +20,7 @@ import { IcArrowRight } from '@proton/icons/icons/IcArrowRight';
 import { revoke } from '@proton/shared/lib/api/auth';
 // eslint-disable-next-line no-restricted-imports
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
+import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { AccessType } from '@proton/shared/lib/authentication/accessType';
 import { InvalidPersistentSessionError } from '@proton/shared/lib/authentication/error';
 import { ForkSearchParameters } from '@proton/shared/lib/authentication/fork';
@@ -31,9 +32,9 @@ import {
 } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { removePersistedSession } from '@proton/shared/lib/authentication/persistedSessionStorage';
 import { getSessionDisplayData } from '@proton/shared/lib/authentication/sessionDisplay';
-import type { APP_NAMES } from '@proton/shared/lib/constants';
-import { BRAND_NAME } from '@proton/shared/lib/constants';
+import { APPS, type APP_NAMES, BRAND_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
 import { withUIDHeaders } from '@proton/shared/lib/fetch/headers';
+import { getShouldProcessLinkClick } from '@proton/shared/lib/helpers/dom';
 import type { Api } from '@proton/shared/lib/interfaces';
 import { getHasRecoveryMessage, removeDeviceRecovery } from '@proton/shared/lib/recoveryFile/storage';
 import clamp from '@proton/utils/clamp';
@@ -70,11 +71,13 @@ const AccountItem = ({
     sessionDisplayData,
     onClick,
     onSignout,
+    href,
 }: {
     onClick: (localID: number) => void;
     onSignout: () => void;
     isLoading: boolean;
     sessionDisplayData: ReturnType<typeof getSessionDisplayData>;
+    href: string;
 }) => {
     const nameToDisplay = sessionDisplayData.name;
     const maybeEmailInBrackets = sessionDisplayData.maybeEmailInBrackets;
@@ -97,17 +100,23 @@ const AccountItem = ({
                 </span>
             </span>
             <div className="account-button-content mx-3 flex-1 mt-custom" style={{ '--mt-custom': `-0.25em` }}>
-                <button
-                    type="button"
-                    className="text-left expand-click-area outline-none--at-all w-full"
+                <a
+                    href={href}
+                    className="text-left expand-click-area outline-none--at-all w-full text-no-decoration"
                     title={continueWithText}
                     aria-label={continueWithText}
-                    onClick={() => {
-                        onClick(sessionDisplayData.localID);
+                    onClick={(event) => {
+                        const target = event.currentTarget?.getAttribute('target') || '';
+                        if (getShouldProcessLinkClick(event.nativeEvent, target)) {
+                            event.preventDefault();
+                            onClick(sessionDisplayData.localID);
+                            return;
+                        }
+                        // Otherwise let link (e.g. new tab) clicks fall through
                     }}
                 >
                     <div className="text-break text-ellipsis">
-                        <strong>{nameToDisplay}</strong>
+                        <strong className="color-norm">{nameToDisplay}</strong>
                         {sessionDisplayData.accessType === AccessType.AdminAccess && (
                             <span className="color-weak">
                                 {' - '}
@@ -124,7 +133,7 @@ const AccountItem = ({
                     {sessionDisplayData.email && (
                         <div className="text-break color-weak text-ellipsis">{sessionDisplayData.email}</div>
                     )}
-                </button>
+                </a>
                 <div>
                     <InlineLinkButton
                         className="relative z-up"
@@ -306,6 +315,14 @@ const SwitchAccountContainer = ({
             return (
                 <Fragment key={localID}>
                     <AccountItem
+                        href={
+                            toApp
+                                ? getAppHref('', toApp, session.persisted.localID)
+                                : getAppHref(
+                                      `${SSO_PATHS.APP_SWITCHER}?u=${session.persisted.localID}`,
+                                      APPS.PROTONACCOUNT
+                                  )
+                        }
                         onClick={handleClickSession}
                         onSignout={() => {
                             handleSignOutMultiple([session], 'single');
