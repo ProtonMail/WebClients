@@ -10,7 +10,6 @@ import { SortField } from '../../../modules/sorting/types';
 import type { CellDefinitionConfig } from '../../../statelessComponents/DriveExplorer/types';
 
 export interface SharedByCellProps {
-    uid: string;
     displayName: string;
     isPublicLink?: boolean;
     className?: string;

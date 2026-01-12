@@ -27,11 +27,13 @@ export function usePreviewState({
     nodeUid: passedNodeUid,
     previewableNodeUids,
     onNodeChange,
+    verifySignatures = true,
 }: {
     drive: Drive;
     nodeUid: string;
     previewableNodeUids?: string[];
     onNodeChange?: (nodeUid: string) => void;
+    verifySignatures: boolean;
 }) {
     const [nodeUid, setNodeUid] = useState<string>(passedNodeUid);
     const nodeUidRef = useRef<string>(nodeUid);
@@ -78,7 +80,7 @@ export function usePreviewState({
                     setErrorMessage(errorMessage);
                 })
         );
-    }, [nodeUid, withIsLoading]);
+    }, [drive, nodeUid, withIsLoading]);
 
     const loadSmallThumbnail = useCallback(() => {
         if (!node) {
@@ -115,7 +117,7 @@ export function usePreviewState({
                     logger.debug(`Failed to get large thumbnail: ${error}`);
                 })
         );
-    }, [nodeUid, withIsLargeThumbnailLoading]);
+    }, [drive, nodeUid, withIsLargeThumbnailLoading]);
 
     const loadContents = useCallback(
         (abortSignal: AbortSignal) => {
@@ -139,7 +141,7 @@ export function usePreviewState({
                     })
             );
         },
-        [node, nodeUid, previewMethod, withIsContentLoading]
+        [drive, node, nodeUid, previewMethod, withIsContentLoading]
     );
 
     // Metadata load is triggered by the node UID change.
@@ -183,7 +185,7 @@ export function usePreviewState({
             mediaType: mimeType,
             sharedStatus: getSharedStatus(node),
             displaySize: getNodeDisplaySize(node),
-            contentSignatureIssue: getContentSignatureIssue(node),
+            contentSignatureIssue: verifySignatures ? getContentSignatureIssue(node) : undefined,
         },
         content: {
             thumbnailUrl: largeThumbnail?.url || smallThumbnailUrl,
