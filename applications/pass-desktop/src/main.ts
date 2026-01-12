@@ -141,10 +141,15 @@ const createWindow = async (session: Session): Promise<BrowserWindow> => {
     setApplicationMenu(ctx.window);
     registerWindowManagementHandlers(ctx.window);
 
+    ctx.window.on('show', () => {
+        if (isMac) void app.dock?.show();
+    });
+
     ctx.window.on('close', (e) => {
         if (!ctx.quitting) {
             e.preventDefault();
             ctx.window?.hide();
+            if (isMac) app.dock?.hide();
         }
     });
 
