@@ -1,0 +1,18 @@
+.delete-project-modal-content {
+    .delete-project-modal-warning {
+        padding: 1rem;
+        background-color: var(--signal-danger-minor-1);
+        border-radius: var(--border-radius-md);
+        color: var(--signal-danger);
+
+        ul {
+            list-style: disc;
+            margin-block-start: 0.5rem;
+        }
+
+        li {
+            margin-block-end: 0.25rem;
+        }
+    }
+}
+

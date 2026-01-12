@@ -23,9 +23,22 @@ export const ReferenceFilesButton = ({ messageChain, onClick, message }: FilesBu
         messageChain.flatMap((msg) => [...(msg.attachments || []).map((att) => att.id), ...(msg.contextFiles || [])])
     );
 
-    // Filter attachments to only include those from the current conversation
+    // Build attachments map from both Redux store AND message chain attachments
+    // This is important because auto-retrieved Drive attachments are not pushed to server,
+    // so on synced browsers they only exist as shallow attachments in the message chain
+    const messageChainAttachments: Record<string, Attachment> = {};
+    messageChain.forEach((msg) => {
+        msg.attachments?.forEach((att) => {
+            // Shallow attachments from messages have enough metadata for display
+            messageChainAttachments[att.id] = att as Attachment;
+        });
+    });
+
+    // Merge: Redux attachments take precedence (have full data), then message chain attachments
     const currentConversationAttachments = Object.fromEntries(
-        Object.entries(allAttachments).filter(([id, _]) => currentConversationAttachmentIds.has(id))
+        [...Object.entries(messageChainAttachments), ...Object.entries(allAttachments)].filter(([id, _]) =>
+            currentConversationAttachmentIds.has(id)
+        )
     );
 
     // const uniqueAttachmentCount = new Set(Object.values(currentConversationAttachments).map(item => item.filename)).size;
@@ -36,7 +49,7 @@ export const ReferenceFilesButton = ({ messageChain, onClick, message }: FilesBu
     };
 
     // Get files to display - use the attachments that were available at the time of this message
-    const relevantFiles = message
+    const relevantFilesRaw = message
         ? (() => {
               if (message.role === 'assistant' && message.contextFiles) {
                   // For assistant messages, show the files that were used in context
@@ -58,6 +71,19 @@ export const ReferenceFilesButton = ({ messageChain, onClick, message }: FilesBu
                   .filter((file): file is NonNullable<typeof file> => file !== null && file !== undefined)
                   .filter((file) => !isFileExcludedForNextMessage(file, msg.id));
           });
+
+    // Deduplicate files by driveNodeId (for auto-retrieved) or by filename (for manual)
+    const relevantFiles = (() => {
+        const seen = new Set<string>();
+        return relevantFilesRaw.filter((file) => {
+            const key = file.driveNodeId || file.filename;
+            if (seen.has(key)) {
+                return false;
+            }
+            seen.add(key);
+            return true;
+        });
+    })();
 
     // Only show button if there are relevant files to display
     if (relevantFiles.length === 0) {

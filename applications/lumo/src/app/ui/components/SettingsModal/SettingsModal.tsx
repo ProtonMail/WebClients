@@ -8,7 +8,7 @@ import { Avatar } from '@proton/atoms/Avatar/Avatar';
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import type { ModalOwnProps } from '@proton/components';
-import { Icon, ModalTwo, ModalTwoContent, SettingsLink, useConfig } from '@proton/components';
+import { Icon, ModalTwo, ModalTwoContent, SettingsLink, Toggle, useConfig } from '@proton/components';
 import type { IconName } from '@proton/icons/types';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import { format } from '@proton/shared/lib/date-fns-utc';
@@ -16,18 +16,29 @@ import { dateLocale } from '@proton/shared/lib/i18n';
 import lumoAvatarNeutral from '@proton/styles/assets/img/lumo/lumo-avatar-neutral.svg';
 import useFlag from '@proton/unleash/useFlag';
 
+import { useDriveFolderIndexing } from '../../../hooks/useDriveFolderIndexing';
 import { useLumoPlan } from '../../../hooks/useLumoPlan';
+import { useLumoUserSettings } from '../../../hooks';
+import { useMessageSearch } from '../../../hooks/useMessageSearch';
+import { DbApi } from '../../../indexedDb/db';
 import { useIsGuest } from '../../../providers/IsGuestProvider';
 import { useLumoTheme } from '../../../providers/LumoThemeProvider';
+import { useLumoSelector } from '../../../redux/hooks';
+import { selectAttachments, selectConversations, selectMessages } from '../../../redux/selectors';
+import { selectSpaceMap } from '../../../redux/slices/core/spaces';
+import { SearchService } from '../../../services/search/searchService';
+import type { Conversation, Message, SpaceId } from '../../../types';
 import { getInitials } from '../../../util/username';
 import { LumoSettingsPanelUpsell } from '../../upsells/composed/LumoSettingsPanelUpsell';
 import CreateFreeAccountLink from '../CreateFreeAccountLink/CreateFreeAccountLink';
+import { IndexingStatusBanner } from '../Files/DriveBrowser/IndexingStatusBanner';
 import { LumoLogoThemeAware } from '../LumoLogoThemeAware';
 import LumoThemeButton from '../LumoThemeButton';
 import { SignInLinkButton } from '../SignInLink';
 import DeleteAllButton from './DeleteAllButton';
 import { PaidSubscriptionPanel } from './PaidSubscriptionPanel';
 import PersonalizationPanel from './PersonalizationPanel';
+import { SearchIndexManagement } from './SearchIndex/SearchIndexManagement';
 
 import './SettingsModal.scss';
 
@@ -148,14 +159,15 @@ const LumoSettingsSidebar = ({
     );
 };
 
-const GeneralSettingsPanel = ({ isGuest, onClose }: { isGuest: boolean; onClose?: () => void }) => {
+/** Guest-safe General settings panel - only shows theme and about */
+const GeneralSettingsPanelGuest = () => {
     const { DATE_VERSION } = useConfig();
     const { isDarkLumoTheme } = useLumoTheme();
     const isLumoDarkModeEnabled = useFlag('LumoDarkMode');
-
     const formattedDate = DATE_VERSION ? `${format(new Date(DATE_VERSION), 'PPpp', { locale: dateLocale })} UTC` : '';
+
     return (
-        <div>
+        <div className="flex flex-column gap-4">
             {isLumoDarkModeEnabled && (
                 <div className="flex flex-column flex-nowrap gap-4 mb-4">
                     <SettingsSectionItem
@@ -166,14 +178,191 @@ const GeneralSettingsPanel = ({ isGuest, onClose }: { isGuest: boolean; onClose?
                     <LumoThemeButton />
                 </div>
             )}
-            {!isGuest && (
+            <SettingsSectionItem
+                icon="info-circle"
+                text={c('collider_2025: Title').t`About ${LUMO_SHORT_APP_NAME}`}
+                subtext={c('collider_2025: Description').jt`Last updated on ${formattedDate}`}
+            />
+        </div>
+    );
+};
+
+/** Full General settings panel for authenticated users */
+const GeneralSettingsPanelAuth = ({ onClose }: { onClose?: () => void }) => {
+    const { DATE_VERSION } = useConfig();
+    const { isDarkLumoTheme } = useLumoTheme();
+    const isLumoDarkModeEnabled = useFlag('LumoDarkMode');
+    const isLumoToolingEnabled = useFlag('LumoTooling');
+    const [user] = useUser();
+    const userId = user?.ID;
+    const { lumoUserSettings, updateSettings } = useLumoUserSettings();
+    const showProjectConversationsInHistory = lumoUserSettings.showProjectConversationsInHistory ?? false;
+    const automaticWebSearch = lumoUserSettings.automaticWebSearch ?? false;
+
+    // Index management state
+    const conversations = useLumoSelector(selectConversations);
+    const messages = useLumoSelector(selectMessages);
+    const spaceMap = useLumoSelector(selectSpaceMap);
+    const attachments = useLumoSelector(selectAttachments);
+    const { indexingStatus: messageIndexingStatus } = useMessageSearch();
+    const {
+        rehydrateFolders,
+        isIndexing: isDriveIndexing,
+        indexingStatus: driveIndexingStatus,
+    } = useDriveFolderIndexing();
+    const [isIndexing, setIsIndexing] = useState(false);
+    const [indexError, setIndexError] = useState<string | null>(null);
+
+    const handleReindex = React.useCallback(async () => {
+        if (isIndexing || isDriveIndexing || !userId) {
+            return;
+        }
+
+        setIsIndexing(true);
+        setIndexError(null);
+
+        try {
+            const db = new DbApi(userId);
+            await db.clearAllSearchBlobs();
+            await new Promise((resolve) => setTimeout(resolve, 100));
+
+            const searchService = SearchService.get(userId);
+            if (!searchService) {
+                setIndexError(c('collider_2025: Error').t`Search service not available`);
+                return;
+            }
+
+            const conversationList = Object.values(conversations) as Conversation[];
+            const conversationsWithMessages: Record<string, any> = {};
+            for (const conversation of conversationList) {
+                const conversationMessages = Object.values(messages).filter(
+                    (msg: Message) => msg.conversationId === conversation.id
+                ) as Message[];
+                conversationsWithMessages[conversation.id] = {
+                    ...conversation,
+                    messages: conversationMessages,
+                };
+            }
+
+            try {
+                await searchService.populateEngine(conversationsWithMessages);
+            } catch (error) {
+                console.error('[Settings] Conversation populate failed:', error);
+            }
+
+            const validSpaceIds = new Set<SpaceId>(Object.keys(spaceMap) as SpaceId[]);
+            await rehydrateFolders(validSpaceIds);
+
+            // Reindex uploaded project attachments (non-Drive files)
+            try {
+                const attachmentList = Object.values(attachments);
+                if (attachmentList.length > 0) {
+                    console.log('[Settings] Reindexing uploaded attachments...');
+                    const result = await searchService.reindexUploadedAttachments(attachmentList);
+                    console.log('[Settings] Attachment reindexing result:', result);
+                }
+            } catch (error) {
+                console.error('[Settings] Attachment reindexing failed:', error);
+            }
+        } catch (error) {
+            console.error('[Settings] Re-indexing failed:', error);
+            setIndexError(c('collider_2025: Error').t`Re-indexing failed. Please try again.`);
+        } finally {
+            setIsIndexing(false);
+        }
+    }, [conversations, messages, isIndexing, isDriveIndexing, userId, rehydrateFolders, spaceMap, attachments]);
+
+    const formattedDate = DATE_VERSION ? `${format(new Date(DATE_VERSION), 'PPpp', { locale: dateLocale })} UTC` : '';
+    const showIndexingProgress = isDriveIndexing && driveIndexingStatus;
+    const hasError = indexError || messageIndexingStatus.error;
+
+    return (
+        <div className="flex flex-column gap-4">
+            {isLumoDarkModeEnabled && (
+                <div className="flex flex-column flex-nowrap gap-4 mb-4">
+                    <SettingsSectionItem
+                        icon={isDarkLumoTheme ? 'moon' : 'sun'}
+                        text={c('collider_2025: Title').t`Theme`}
+                        subtext={c('collider_2025: Description').t`Switch between light and dark mode`}
+                    />
+                    <LumoThemeButton />
+                </div>
+            )}
+
+            {/* Project conversations in history toggle */}
+            <SettingsSectionItem
+                icon="folder"
+                text={c('collider_2025: Title').t`Show project chats in history`}
+                subtext={c('collider_2025: Description').t`Include project conversations in the main chat history`}
+                button={
+                    <Toggle
+                        id="show-project-conversations-toggle"
+                        checked={showProjectConversationsInHistory}
+                        onChange={() => {
+                            updateSettings({
+                                showProjectConversationsInHistory: !showProjectConversationsInHistory,
+                                _autoSave: true,
+                            });
+                        }}
+                    />
+                }
+            />
+
+            {/* Automatic web search toggle */}
+            {isLumoToolingEnabled && (
                 <SettingsSectionItem
-                    icon="speech-bubble"
-                    text={c('collider_2025: Title').t`Delete all chats`}
-                    subtext={c('collider_2025: Description').t`Permanently delete your chats. This is irreversible.`}
-                    button={<DeleteAllButton onClose={onClose} />}
+                    icon="globe"
+                    text={c('collider_2025: Title').t`Automatic web search`}
+                    subtext={c('collider_2025: Description').t`Always enable web search for new conversations`}
+                    button={
+                        <Toggle
+                            id="automatic-web-search-toggle"
+                            checked={automaticWebSearch}
+                            onChange={() => {
+                                updateSettings({
+                                    automaticWebSearch: !automaticWebSearch,
+                                    _autoSave: true,
+                                });
+                            }}
+                        />
+                    }
                 />
             )}
+
+            {/* Search Index Management */}
+            <SettingsSectionItem
+                icon="magnifier"
+                text={c('collider_2025: Title').t`Search Index`}
+                subtext={
+                    <div className="flex flex-column gap-1">
+                        <span className="color-weak">{c('collider_2025: Description')
+                            .t`Encrypted search index for chats and Drive files.`}</span>
+
+                        {showIndexingProgress && (
+                            <IndexingStatusBanner
+                                indexingStatus={driveIndexingStatus}
+                                isIndexing={isDriveIndexing}
+                                inline
+                            />
+                        )}
+                        {hasError && (
+                            <span className="color-danger text-sm">
+                                {indexError || messageIndexingStatus.error}
+                            </span>
+                        )}
+                    </div>
+                }
+                button={
+                    <SearchIndexManagement onReindex={handleReindex} disabled={isIndexing || isDriveIndexing} />
+                }
+            />
+
+            <SettingsSectionItem
+                icon="speech-bubble"
+                text={c('collider_2025: Title').t`Delete everything`}
+                subtext={c('collider_2025: Description').t`Permanently delete your project and chats. This is irreversible.`}
+                button={<DeleteAllButton onClose={onClose} />}
+            />
             <SettingsSectionItem
                 icon="info-circle"
                 text={c('collider_2025: Title').t`About ${LUMO_SHORT_APP_NAME}`}
@@ -294,15 +483,14 @@ const SettingsModal = ({ initialPanel = 'account', ...modalProps }: SettingsModa
 
                             {/* Panel content */}
                             <div
-                                className="flex flex-column flex-nowrap gap-2 flex-1 overflow-hidden"
+                                className="flex flex-row gap-2 flex-1 overflow-y-auto mb-10"
                                 style={{ minHeight: 0 }}
                             >
                                 {activePanel === 'account' &&
                                     (isGuest ? <AccountSettingsPanelGuest /> : <AccountSettingsPanel />)}
                                 {activePanel === 'personalization' && <PersonalizationPanel />}
-                                {activePanel === 'general' && (
-                                    <GeneralSettingsPanel isGuest={isGuest} onClose={closeModal} />
-                                )}
+                                {activePanel === 'general' &&
+                                    (isGuest ? <GeneralSettingsPanelGuest /> : <GeneralSettingsPanelAuth onClose={closeModal} />)}
                             </div>
                         </div>
                     </div>
@@ -338,9 +526,8 @@ const SettingsModal = ({ initialPanel = 'account', ...modalProps }: SettingsModa
                             {activePanel === 'account' &&
                                 (isGuest ? <AccountSettingsPanelGuest /> : <AccountSettingsPanel />)}
                             {activePanel === 'personalization' && <PersonalizationPanel />}
-                            {activePanel === 'general' && (
-                                <GeneralSettingsPanel isGuest={isGuest} onClose={closeModal} />
-                            )}
+                            {activePanel === 'general' &&
+                                (isGuest ? <GeneralSettingsPanelGuest /> : <GeneralSettingsPanelAuth onClose={closeModal} />)}
                         </div>
                     </div>
                 </div>

@@ -3,7 +3,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 import type { Priority } from '../../../remote/scheduler';
 import type { IdMapEntry, RemoteAttachment } from '../../../remote/types';
-import type { Attachment, AttachmentId, SerializedAttachment } from '../../../types';
+import type { Attachment, AttachmentId, SerializedAttachment, SpaceId } from '../../../types';
 
 export type PushAttachmentRequest = {
     id: AttachmentId;
@@ -27,6 +27,7 @@ export type PullAttachmentRequest = {
 export const upsertAttachment = createAction<Attachment>('lumo/attachment/upsert');
 export const deleteAttachment = createAction<AttachmentId>('lumo/attachment/delete');
 export const deleteAllAttachments = createAction('lumo/attachment/deleteAll');
+export const deleteAttachmentsBySpaceId = createAction<SpaceId>('lumo/attachment/deleteBySpaceId');
 export const clearProvisionalAttachments = createAction('lumo/attachment/clearProvisional');
 export const addAttachment = createAction<Attachment>('lumo/attachment/add');
 
@@ -53,7 +54,7 @@ export const pullAttachmentSuccess = createAction<RemoteAttachment>('lumo/attach
 export const pullAttachmentFailure = createAction<AttachmentId>('lumo/attachment/pullFailure');
 
 export type AttachmentMap = Record<AttachmentId, Attachment>;
-export const EMPTY_ATTACHMENT_MAP = {};
+export const EMPTY_ATTACHMENT_MAP: AttachmentMap = {};
 export const EMPTY_ATTACHMENT_ARRAY = [];
 
 const initialState: AttachmentMap = EMPTY_ATTACHMENT_MAP;
@@ -77,6 +78,15 @@ const attachmentsReducer = createReducer<AttachmentMap>(initialState, (builder) 
         .addCase(deleteAllAttachments, () => {
             console.log('Action triggered: deleteAllAttachments');
             return EMPTY_ATTACHMENT_MAP;
+        })
+        .addCase(deleteAttachmentsBySpaceId, (state, action) => {
+            console.log('Action triggered: deleteAttachmentsBySpaceId', action.payload);
+            const spaceId = action.payload;
+            Object.keys(state).forEach((attachmentId) => {
+                if (state[attachmentId].spaceId === spaceId) {
+                    delete state[attachmentId];
+                }
+            });
         })
         .addCase(clearProvisionalAttachments, (state) => {
             console.log('Action triggered: clearProvisionalAttachments');

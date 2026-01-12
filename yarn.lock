@@ -8995,6 +8995,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@proton/proton-foundation-search@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "@proton/proton-foundation-search@npm:1.0.0"
+  checksum: 10/19af9351e1ce47db94700538fad3abe23d449704d639745dfbeddefdefe9cec7838c3668f62bffe5f9f89b6e3e1bbbab67b47ebfc497f3d5e15b812ed8016643
+  languageName: node
+  linkType: hard
+
 "@proton/raw-images@workspace:^, @proton/raw-images@workspace:packages/raw-images":
   version: 0.0.0-use.local
   resolution: "@proton/raw-images@workspace:packages/raw-images"
@@ -37703,6 +37710,7 @@ __metadata:
     "@proton/drive": "workspace:^"
     "@proton/i18n": "workspace:^"
     "@proton/pack": "workspace:^"
+    "@proton/proton-foundation-search": "npm:^1.0.0"
     "@proton/shared": "workspace:^"
     "@proton/styles": "workspace:^"
     "@proton/testing": "workspace:^"

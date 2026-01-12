@@ -75,10 +75,27 @@ export type SpacePub = {
     // todo: updatedAt (for sorting)
 };
 
-export type SpacePriv = {
-    // todo: title and other metadata
-    // do not remove
+export type LinkedDriveFolder = {
+    folderId: string; // Drive folder nodeId
+    folderName: string;
+    folderPath: string;
 };
+
+export type ProjectSpace = {
+    isProject: true; // Flag to indicate this space is being used as a project
+    // Project metadata (optional - only for spaces used as projects)
+    projectName?: string;
+    projectInstructions?: string;
+    projectIcon?: string; // Icon identifier for the project (e.g., 'health', 'finance', 'legal')
+    // Linked Drive folder (optional - only for projects with linked Drive folders)
+    linkedDriveFolder?: LinkedDriveFolder;
+};
+
+export type SimpleSpace = {
+    isProject?: false; // Not a project (false, undefined, or unspecified)
+};
+
+export type SpacePriv = ProjectSpace | SimpleSpace;
 
 export type SpaceKeyClear = {
     spaceKey: Base64; // type: HkdfCryptoKey
@@ -110,7 +127,15 @@ export function isSpacePub(value: any): value is SpacePub {
 }
 
 export function isSpacePriv(value: any): value is SpacePriv {
-    return typeof value === 'object' && value !== null;
+    return isProjectSpace(value) || isSimpleSpace(value);
+}
+
+export function isProjectSpace(value: any): value is ProjectSpace {
+    return typeof value === 'object' && value !== null && value.isProject === true;
+}
+
+export function isSimpleSpace(value: any): value is SimpleSpace {
+    return typeof value === 'object' && value !== null && (value.isProject === false || value.isProject === undefined);
 }
 
 export function isSpaceKeyClear(value: any): value is SpaceKeyClear {
@@ -121,14 +146,23 @@ export function isSpaceKeyEnc(value: any): value is SpaceKeyEnc {
     return typeof value === 'object' && value !== null && typeof value.wrappedSpaceKey === 'string';
 }
 
+export function isSpace(value: any): value is Space {
+    return isSpacePub(value) && isSpacePriv(value) && isSpaceKeyClear(value);
+}
+
 export function isDeletedSpace(value: any): value is DeletedSpace {
     return isSpacePub(value) && 'deleted' in value && value.deleted === true;
 }
 
 export function getSpacePriv(s: SpacePriv): SpacePriv {
-    // Do not remove
-    const {} = s;
-    return {};
+    if (s.isProject) {
+        const { projectName, projectInstructions, isProject, projectIcon, linkedDriveFolder } =
+            s satisfies ProjectSpace;
+        return { projectName, projectInstructions, isProject, projectIcon, linkedDriveFolder };
+    } else {
+        const { isProject } = s;
+        return { isProject };
+    }
 }
 
 export function getSpacePub(s: SpacePub): SpacePub {
@@ -154,13 +188,46 @@ export function splitSpace(s: Space): {
 }
 
 export function cleanSpace(space: Space): Space {
-    const { id, createdAt, spaceKey } = space;
-    return {
-        id,
-        createdAt,
-        spaceKey,
-    };
+    if (space.isProject === true) {
+        const { id, createdAt, spaceKey, projectName, projectInstructions, isProject, projectIcon, linkedDriveFolder } =
+            space;
+        return {
+            id,
+            createdAt,
+            spaceKey,
+            isProject,
+            ...(projectName !== undefined && { projectName }),
+            ...(projectInstructions !== undefined && { projectInstructions }),
+            ...(projectIcon !== undefined && { projectIcon }),
+            ...(linkedDriveFolder !== undefined && { linkedDriveFolder }),
+        };
+    } else {
+        const { id, createdAt, spaceKey, isProject } = space;
+        return {
+            id,
+            createdAt,
+            spaceKey,
+            ...(isProject !== undefined && { isProject }),
+        };
+    }
 }
+
+// Helper to extract project and drive folder information from a space
+type ProjectInfoLinked = {
+    space: Space;
+    project: ProjectSpace;
+    linkedDriveFolder: LinkedDriveFolder;
+    isLinked: true;
+};
+
+type ProjectInfoNotLinked = {
+    space: Space;
+    project: ProjectSpace | undefined;
+    linkedDriveFolder: undefined;
+    isLinked: false;
+};
+
+type ProjectInfo = ProjectInfoLinked | ProjectInfoNotLinked;
 
 export function cleanSerializedSpace(space: SerializedSpace): SerializedSpace {
     const { id, createdAt, encrypted, wrappedSpaceKey, dirty, deleted } = space;
@@ -189,6 +256,38 @@ export function cleanSerializedSpace(space: SerializedSpace): SerializedSpace {
 export async function getSpaceDek(s: SpaceKeyClear): Promise<AesGcmCryptoKey> {
     const spaceKeyBytes = Uint8Array.fromBase64(s.spaceKey);
     return deriveDataEncryptionKey(spaceKeyBytes);
+}
+
+export function getProjectInfo(space: Space | undefined): ProjectInfo | Partial<ProjectInfo>;
+export function getProjectInfo(space: Space): ProjectInfo;
+export function getProjectInfo(space: undefined): Partial<ProjectInfo>;
+export function getProjectInfo(space: Space | undefined): Partial<ProjectInfo> {
+    if (space === undefined) {
+        return {
+            space: undefined,
+            project: undefined,
+            linkedDriveFolder: undefined,
+            isLinked: false,
+        } satisfies Partial<ProjectInfo>;
+    }
+    const project = space.isProject ? (space satisfies ProjectSpace) : undefined;
+    const linkedDriveFolder = project?.linkedDriveFolder;
+
+    if (project !== undefined && linkedDriveFolder !== undefined) {
+        return {
+            space,
+            project: project,
+            linkedDriveFolder,
+            isLinked: true,
+        } satisfies ProjectInfo;
+    }
+
+    return {
+        space,
+        project,
+        linkedDriveFolder: undefined,
+        isLinked: false,
+    } satisfies ProjectInfo;
 }
 
 // *** Message ***
@@ -234,13 +333,15 @@ export function isMessagePriv(value: any): value is MessagePriv {
     return (
         typeof value === 'object' &&
         value !== null &&
-        (value.content === undefined || typeof value.content === 'string') &&
-        (value.context === undefined || typeof value.context === 'string') &&
+        (value.content === undefined || value.content === null || typeof value.content === 'string') &&
+        (value.context === undefined || value.context === null || typeof value.context === 'string') &&
         (value.attachments === undefined ||
+            value.attachments === null ||
             (Array.isArray(value.attachments) && value.attachments.every((a: unknown) => isShallowAttachment(a)))) &&
-        (value.toolCall === undefined || typeof value.toolCall === 'string') &&
-        (value.toolResult === undefined || typeof value.toolResult === 'string') &&
+        (value.toolCall === undefined || value.toolCall === null || typeof value.toolCall === 'string') &&
+        (value.toolResult === undefined || value.toolResult === null || typeof value.toolResult === 'string') &&
         (value.contextFiles === undefined ||
+            value.contextFiles === null ||
             (Array.isArray(value.contextFiles) && value.contextFiles.every((id: unknown) => typeof id === 'string')))
     );
 }
@@ -312,8 +413,7 @@ export function cleanSerializedMessage(message: SerializedMessage): SerializedMe
 }
 
 export function cleanSerializedAttachment(attachment: SerializedAttachment): SerializedAttachment {
-    const { id, spaceId, mimeType, uploadedAt, rawBytes, processing, error, encrypted, dirty, deleted } =
-        attachment;
+    const { id, spaceId, mimeType, uploadedAt, rawBytes, processing, error, encrypted, dirty, deleted } = attachment;
     return {
         id,
         ...(spaceId !== undefined && { spaceId }),
@@ -455,6 +555,17 @@ export type AttachmentPub = {
     rawBytes?: number; // size of original binary as sent by user
     processing?: boolean; // not meant to be persisted
     error?: boolean; // not meant to be persisted
+    // Auto-retrieved from Drive index via RAG (not manually uploaded)
+    autoRetrieved?: boolean;
+    // Source Drive node ID (for auto-retrieved attachments)
+    driveNodeId?: string;
+    // Relevance score for auto-retrieved attachments (0-1 normalized, 1 = most relevant)
+    relevanceScore?: number;
+    // Chunk-related fields for large documents split into sections
+    isChunk?: boolean; // Whether this attachment represents a section of a larger document
+    chunkTitle?: string; // Section title or context for this chunk
+    // Project file retrieved via RAG (uploaded to project, not to this message)
+    isUploadedProjectFile?: boolean;
 };
 
 // This is represents the sensitive data in its decrypted form.
@@ -485,12 +596,18 @@ export function isAttachmentPub(value: any): value is AttachmentPub {
         typeof value === 'object' &&
         value !== null &&
         typeof value.id === 'string' &&
-        (value.spaceId === undefined || typeof value.spaceId === 'string') &&
-        (typeof value.mimeType === 'string' || value.mimeType === undefined) &&
+        (value.spaceId === undefined || value.spaceId === null || typeof value.spaceId === 'string') &&
+        (value.mimeType === undefined || value.mimeType === null || typeof value.mimeType === 'string') &&
         typeof value.uploadedAt === 'string' &&
-        (typeof value.rawBytes === 'number' || value.rawBytes === undefined) &&
-        (value.processing === undefined || typeof value.processing === 'boolean') &&
-        (value.error === undefined || typeof value.error === 'boolean')
+        (value.rawBytes === undefined || value.rawBytes === null || typeof value.rawBytes === 'number') &&
+        (value.processing === undefined || value.processing === null || typeof value.processing === 'boolean') &&
+        (value.error === undefined || value.error === null || typeof value.error === 'boolean') &&
+        (value.autoRetrieved === undefined || value.autoRetrieved === null || typeof value.autoRetrieved === 'boolean') &&
+        (value.driveNodeId === undefined || value.driveNodeId === null || typeof value.driveNodeId === 'string') &&
+        (value.relevanceScore === undefined || value.relevanceScore === null || typeof value.relevanceScore === 'number') &&
+        (value.isChunk === undefined || value.isChunk === null || typeof value.isChunk === 'boolean') &&
+        (value.chunkTitle === undefined || value.chunkTitle === null || typeof value.chunkTitle === 'string') &&
+        (value.isUploadedProjectFile === undefined || value.isUploadedProjectFile === null || typeof value.isUploadedProjectFile === 'boolean')
     );
 }
 
@@ -498,14 +615,14 @@ export function isAttachmentPriv(value: any): value is AttachmentPriv {
     return (
         typeof value === 'object' &&
         value !== null &&
-        (value.filename === undefined || typeof value.filename === 'string') &&
-        (value.data === undefined || value.data instanceof Uint8Array) &&
-        (value.markdown === undefined || typeof value.markdown === 'string') &&
-        (value.errorMessage === undefined || typeof value.errorMessage === 'string') &&
-        (value.truncated === undefined || typeof value.truncated === 'boolean') &&
-        (value.originalRowCount === undefined || typeof value.originalRowCount === 'number') &&
-        (value.processedRowCount === undefined || typeof value.processedRowCount === 'number') &&
-        (value.tokenCount === undefined || typeof value.tokenCount === 'number')
+        (value.filename === undefined || value.filename === null || typeof value.filename === 'string') &&
+        (value.data === undefined || value.data === null || value.data instanceof Uint8Array) &&
+        (value.markdown === undefined || value.markdown === null || typeof value.markdown === 'string') &&
+        (value.errorMessage === undefined || value.errorMessage === null || typeof value.errorMessage === 'string') &&
+        (value.truncated === undefined || value.truncated === null || typeof value.truncated === 'boolean') &&
+        (value.originalRowCount === undefined || value.originalRowCount === null || typeof value.originalRowCount === 'number') &&
+        (value.processedRowCount === undefined || value.processedRowCount === null || typeof value.processedRowCount === 'number') &&
+        (value.tokenCount === undefined || value.tokenCount === null || typeof value.tokenCount === 'number')
     );
 }
 
@@ -514,12 +631,37 @@ export function isAttachment(value: any): value is Attachment {
 }
 
 export function isShallowAttachment(value: any): value is ShallowAttachment {
-    return isAttachment(value) && value.data === undefined && value.markdown === undefined;
+    // Check that data and markdown are not present (undefined, null, or missing after JSON parsing)
+    const hasNoData = value.data === undefined || value.data === null;
+    const hasNoMarkdown = value.markdown === undefined || value.markdown === null;
+    return isAttachment(value) && hasNoData && hasNoMarkdown;
 }
 
 export function getAttachmentPub(attachment: AttachmentPub): AttachmentPub {
-    const { id, spaceId, mimeType, uploadedAt, rawBytes, processing, error } = attachment;
-    return { id, spaceId, mimeType, uploadedAt, rawBytes, processing, error };
+    const {
+        id,
+        spaceId,
+        mimeType,
+        uploadedAt,
+        rawBytes,
+        processing,
+        error,
+        autoRetrieved,
+        driveNodeId,
+        relevanceScore,
+    } = attachment;
+    return {
+        id,
+        spaceId,
+        mimeType,
+        uploadedAt,
+        rawBytes,
+        processing,
+        error,
+        autoRetrieved,
+        driveNodeId,
+        relevanceScore,
+    };
 }
 
 export function getAttachmentPriv(m: AttachmentPriv): AttachmentPriv {
@@ -546,8 +688,15 @@ export function cleanAttachment(attachment: Attachment): Attachment {
         rawBytes,
         processing,
         error,
+        autoRetrieved,
+        driveNodeId,
+        relevanceScore,
+        isChunk,
+        chunkTitle,
         filename,
-        data,
+        // Note: `data` (raw Uint8Array) is intentionally excluded from cleaned attachments
+        // to prevent large binary blobs from being stored in Redux state.
+        // The data is only needed temporarily during file processing and serialization.
         markdown,
         errorMessage,
         truncated,
@@ -563,8 +712,13 @@ export function cleanAttachment(attachment: Attachment): Attachment {
         ...(rawBytes !== undefined && { rawBytes }),
         ...(processing && { processing: true }),
         ...(error && { error: true }),
+        ...(autoRetrieved !== undefined && { autoRetrieved }),
+        ...(driveNodeId !== undefined && { driveNodeId }),
+        ...(relevanceScore !== undefined && { relevanceScore }),
+        ...(isChunk !== undefined && { isChunk }),
+        ...(chunkTitle !== undefined && { chunkTitle }),
         filename,
-        ...(data !== undefined && { data }),
+        // data is intentionally NOT included - see comment above
         ...(markdown !== undefined && { markdown }),
         ...(errorMessage !== undefined && { errorMessage }),
         ...(truncated !== undefined && { truncated }),

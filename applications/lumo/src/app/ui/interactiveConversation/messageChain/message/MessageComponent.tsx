@@ -45,7 +45,8 @@ const areEqual = (prevProps: MessageComponentProps, nextProps: MessageComponentP
         prevProps.message.content !== nextProps.message.content ||
         prevProps.message.placeholder !== nextProps.message.placeholder ||
         prevProps.message.status !== nextProps.message.status ||
-        prevProps.message.toolCall !== nextProps.message.toolCall;
+        prevProps.message.toolCall !== nextProps.message.toolCall ||
+        prevProps.message.contextFiles?.length !== nextProps.message.contextFiles?.length;
 
     // Compare siblingInfo by its key properties
     const siblingInfoChanged =
@@ -97,6 +98,7 @@ const MessageComponentPure = ({
                     siblingInfo={siblingInfo}
                     handleEditMessage={handleEditMessage}
                     newMessageRef={newMessageRef}
+                    onOpenFiles={handleOpenFiles}
                 />
             ) : (
                 <AssistantMessage

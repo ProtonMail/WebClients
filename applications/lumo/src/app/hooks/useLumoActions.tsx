@@ -9,7 +9,7 @@ import { buildLinearChain } from '../messageTree';
 import { useGhostChat } from '../providers/GhostChatProvider';
 import { useGuestTracking } from '../providers/GuestTrackingProvider';
 import { useLumoDispatch, useLumoSelector } from '../redux/hooks';
-import { selectContextFilters } from '../redux/selectors';
+import { selectAttachments, selectContextFilters } from '../redux/selectors';
 import type { MessageMap } from '../redux/slices/core/messages';
 import { addMessage, createDate, newMessageId } from '../redux/slices/core/messages';
 import type { ConversationError } from '../redux/slices/meta/errors';
@@ -73,7 +73,9 @@ export const useLumoActions = ({
     const { hasConversationErrors, clearErrors } = useConversationErrors(conversationId);
     const { hasTierErrors } = useTierErrors();
     const isLumoToolingEnabled = useFlag('LumoTooling');
+    const enableSmoothing = useFlag('LumoSmoothedRendering');
     const contextFilters = useLumoSelector(selectContextFilters);
+    const allAttachments = useLumoSelector(selectAttachments);
     const lumoUserSettings = useLumoSelector((state) => state.lumoUserSettings);
     const { handleActionError } = useActionErrorHandler();
 
@@ -121,6 +123,7 @@ export const useLumoActions = ({
                 signal,
                 navigateCallback,
                 enableExternalToolsToggled: !!isWebSearchButtonToggled && isLumoToolingEnabled,
+                enableSmoothing,
                 contextFilters,
                 datePair,
             })
@@ -165,6 +168,12 @@ export const useLumoActions = ({
             console.log('Retry: Personalization not enabled or no saved personalization data');
         }
 
+        // Get project instructions from space if this is a project conversation
+        let projectInstructions: string | undefined;
+        if (space?.isProject && space?.projectInstructions) {
+            projectInstructions = space.projectInstructions;
+        }
+
         await retrySendMessage({
             api,
             dispatch,
@@ -176,6 +185,8 @@ export const useLumoActions = ({
             enableExternalTools: isWebSearchButtonToggled && isLumoToolingEnabled,
             contextFilters,
             personalizationPrompt,
+            projectInstructions,
+            allAttachments,
         });
     };
 
@@ -209,6 +220,7 @@ export const useLumoActions = ({
                 isEdit: true,
                 updateSibling: preferSibling,
                 enableExternalToolsToggled: isWebSearchButtonToggled && isLumoToolingEnabled,
+                enableSmoothing,
                 contextFilters,
             })
         );
@@ -291,6 +303,7 @@ export const useLumoActions = ({
                 messagesWithContext,
                 signal,
                 enableExternalTools,
+                enableSmoothing,
                 contextFilters,
                 retryInstructions
             )

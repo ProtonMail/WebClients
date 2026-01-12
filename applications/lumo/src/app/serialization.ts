@@ -17,7 +17,6 @@ import {
     wrapAesKey,
 } from './crypto';
 import type { AesGcmCryptoKey, AesKwCryptoKey } from './crypto/types';
-import { safeLogger } from './util/safeLogger';
 import type { LumoUserSettings } from './redux/slices/lumoUserSettings';
 import type { SerializedUserSettings, UserSettingsToApi } from './remote/types';
 import {
@@ -34,6 +33,7 @@ import {
     type SerializedConversation,
     type SerializedMessage,
     type SerializedSpace,
+    type ShallowAttachment,
     type Space,
     type SpaceKeyClear,
     type SpaceKeyEnc,
@@ -48,12 +48,14 @@ import {
     isConversationPriv,
     isEmptyMessagePriv,
     isMessagePriv,
+    isShallowAttachment,
     isSpacePriv,
     splitAttachment,
     splitConversation,
     splitSpace,
 } from './types';
 import { objectMapV } from './util/objects';
+import { safeLogger } from './util/safeLogger';
 
 const APP_NAME = 'lumo';
 
@@ -79,7 +81,7 @@ function getSpaceAd(space: SpacePub): AdString {
 // because the AD won't match anymore during decryption.
 function getConversationAd(conversation: ConversationPub): AdString {
     const { id, spaceId } = conversation;
-    
+
     const _adString = stableStringify({
         app: APP_NAME,
         type: 'conversation',
@@ -96,7 +98,7 @@ function getConversationAd(conversation: ConversationPub): AdString {
 // because the AD won't match anymore during decryption.
 function getMessageAd(message: MessagePub): AdString {
     const { id, role, parentId, conversationId } = message;
-    
+
     const _adString = stableStringify({
         app: APP_NAME,
         type: 'message',
@@ -109,13 +111,9 @@ function getMessageAd(message: MessagePub): AdString {
     return _adString;
 }
 
-// Warning: It is critical to always get the same AD for the same attachment.
-// This has consequences in terms of backward compatibility: if you
-// change this logic, this might make older messages unreadable,
-// because the AD won't match anymore during decryption.
 function getAttachmentAd(attachment: AttachmentPub): AdString {
     const { id } = attachment;
-    
+
     const _adString = stableStringify({
         app: APP_NAME,
         type: 'attachment',
@@ -261,7 +259,35 @@ export async function deserializeMessage(
         let messagePriv: MessagePriv = {};
         if (encrypted !== undefined) {
             const messagePrivJson = await decryptString(encrypted, spaceDek, ad);
-            messagePriv = JSON.parse(messagePrivJson);
+            const parsed = JSON.parse(messagePrivJson);
+
+            // Filter out invalid attachments instead of failing the entire message
+            // This can happen when attachments have unexpected fields from newer clients
+            if (parsed.attachments && Array.isArray(parsed.attachments)) {
+                const validAttachments: ShallowAttachment[] = [];
+                for (const att of parsed.attachments) {
+                    if (isShallowAttachment(att)) {
+                        validAttachments.push(att);
+                    } else {
+                        // Log the issue but don't fail - attachment may have extra fields
+                        safeLogger.warn(
+                            `deserializeMessage: Invalid attachment in message ${serializedMessage.id}, attempting recovery`,
+                            { attachmentId: att?.id, hasData: !!att?.data, hasMarkdown: !!att?.markdown }
+                        );
+                        // Try to recover by removing data and markdown if they exist
+                        if (att && typeof att === 'object' && att.id && att.uploadedAt) {
+                            const { data, markdown, ...shallowAtt } = att;
+                            if (isShallowAttachment(shallowAtt)) {
+                                validAttachments.push(shallowAtt);
+                            }
+                        }
+                    }
+                }
+                parsed.attachments = validAttachments.length > 0 ? validAttachments : undefined;
+            }
+
+            messagePriv = parsed;
+            // Re-validate after fixing attachments
             if (!isMessagePriv(messagePriv)) {
                 throw new Error('Deserialized object is not a MessagePriv');
             }
@@ -287,11 +313,16 @@ export async function serializeAttachment(
 
         // We copy some metadata from Pub to Priv, because SQL does not have the columns to store them,
         // so we have to cram it in the encrypted payload.
-        const { mimeType, rawBytes } = attachmentPub;
+        const { mimeType, rawBytes, autoRetrieved, driveNodeId, relevanceScore, isChunk, chunkTitle } = attachmentPub;
         const privPlus = {
             ...attachmentPriv,
             mimeType,
             rawBytes,
+            autoRetrieved,
+            driveNodeId,
+            relevanceScore,
+            isChunk,
+            chunkTitle,
         };
 
         const packed = msgpackEncode(privPlus) as Uint8Array<ArrayBuffer>;
@@ -332,18 +363,27 @@ export async function deserializeAttachment(
         // See analogous comment in `serializeAttachment()`.
         const mimeType = (decoded as { mimeType?: unknown }).mimeType;
         const rawBytes = (decoded as { rawBytes?: unknown }).rawBytes;
+        const autoRetrieved = (decoded as { autoRetrieved?: unknown }).autoRetrieved;
+        const driveNodeId = (decoded as { driveNodeId?: unknown }).driveNodeId;
+        const relevanceScore = (decoded as { relevanceScore?: unknown }).relevanceScore;
+        const isChunk = (decoded as { isChunk?: unknown }).isChunk;
+        const chunkTitle = (decoded as { chunkTitle?: unknown }).chunkTitle;
         return {
             ...attachmentPub,
             ...decoded,
             ...(mimeType && typeof mimeType === 'string' ? { mimeType } : {}),
             ...(!isNil(rawBytes) && typeof rawBytes === 'number' && Number.isInteger(rawBytes) ? { rawBytes } : {}),
+            ...(typeof autoRetrieved === 'boolean' ? { autoRetrieved } : {}),
+            ...(typeof driveNodeId === 'string' ? { driveNodeId } : {}),
+            ...(typeof relevanceScore === 'number' ? { relevanceScore } : {}),
+            ...(typeof isChunk === 'boolean' ? { isChunk } : {}),
+            ...(typeof chunkTitle === 'string' ? { chunkTitle } : {}),
         };
     } catch (e) {
         safeLogger.warn(`Cannot deserialize attachment ${serializedAttachment.id}:`, e);
         return null;
     }
 }
-
 
 // User settings serialization functions
 // Warning: It is critical to always get the same AD for the same user settings.
@@ -365,13 +405,9 @@ export async function serializeUserSettings(
 ): Promise<UserSettingsToApi> {
     // Create a data encryption key for user settings (similar to space DEK)
     const userSettingsDek = await generateAndImportKey();
-    
 
     // Wrap the DEK with the master key
-    const wrappedKey = await wrapAesKey(
-        { type: 'AesGcmCryptoKey', encryptKey: userSettingsDek },
-        masterKey
-    );
+    const wrappedKey = await wrapAesKey({ type: 'AesGcmCryptoKey', encryptKey: userSettingsDek }, masterKey);
     const wrappedKeyBase64 = wrappedKey.toBase64();
 
     // Serialize user settings to JSON
@@ -379,7 +415,11 @@ export async function serializeUserSettings(
 
     // Encrypt the user settings data
     const ad = getUserSettingsAd();
-    const encrypted = await encryptString(userSettingsJson, { type: 'AesGcmCryptoKey', encryptKey: userSettingsDek }, ad);
+    const encrypted = await encryptString(
+        userSettingsJson,
+        { type: 'AesGcmCryptoKey', encryptKey: userSettingsDek },
+        ad
+    );
 
     // Combine wrapped key and encrypted data
     const combined = {
@@ -404,17 +444,17 @@ export async function deserializeUserSettings(
             wrappedKey: string;
             encrypted: EncryptedData;
         };
-        
+
         // Unwrap the DEK
         const wrappedKeyBytes = Uint8Array.fromBase64(combined.wrappedKey);
         const userSettingsDek = await unwrapAesKey(wrappedKeyBytes, masterKey);
-        
+
         // Decrypt the user settings data
         const ad = getUserSettingsAd();
         const userSettingsJson = await decryptString(combined.encrypted, userSettingsDek, ad);
-        
+
         const result = JSON.parse(userSettingsJson) as LumoUserSettings;
-        
+
         return result;
     } catch (error) {
         safeLogger.warn('Failed to deserialize user settings:', error);

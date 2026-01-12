@@ -50,11 +50,22 @@ export type GenerationToFrontendMessage =
     | { type: 'rejected' }
     | { type: 'harmful' };
 
+export type GenerationToFrontendMessageDecrypted =
+    | { type: 'queued'; target?: GenerationTarget }
+    | { type: 'ingesting'; target: GenerationTarget }
+    | { type: 'token_data'; target: GenerationTarget; count: number; content: string; encrypted?: false }
+    | { type: 'done' }
+    | { type: 'timeout' }
+    | { type: 'error' }
+    | { type: 'rejected' }
+    | { type: 'harmful' };
+
 export type Status = 'succeeded' | 'failed';
 
 // Configuration interfaces
 export interface LumoApiClientConfig {
     enableU2LEncryption?: boolean;
+    enableSmoothing?: boolean;
     endpoint?: string;
     lumoPubKey?: string;
     externalTools?: ToolName[];

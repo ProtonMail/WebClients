@@ -1,6 +1,9 @@
 import isNil from 'lodash/isNil';
 
 import type { SerializedAttachment } from '../types';
+
+// Type alias for backwards compatibility (assets are now attachments)
+type SerializedAsset = SerializedAttachment;
 import {
     type Base64,
     type EncryptedData,
@@ -128,11 +131,15 @@ export function convertSpacesFromApi(input: unknown): ListSpacesRemote {
         conversations: {},
         deletedSpaces: {},
         deletedConversations: {},
+        assets: {},
+        deletedAssets: {},
     };
     return input.reduce((acc: ListSpacesRemote, item: unknown): ListSpacesRemote => {
-        const { space, conversations, deletedConversations } = convertSpaceFromApi(item);
+        const { space, conversations, deletedConversations, assets, deletedAssets } = convertSpaceFromApi(item);
         const conversationMap = mapify(conversations);
         const deletedConversationMap = mapify(deletedConversations);
+        const assetMap = mapify(assets);
+        const deletedAssetMap = mapify(deletedAssets);
         const base = {
             conversations: {
                 ...acc.conversations,
@@ -141,6 +148,14 @@ export function convertSpacesFromApi(input: unknown): ListSpacesRemote {
             deletedConversations: {
                 ...acc.deletedConversations,
                 ...deletedConversationMap,
+            },
+            assets: {
+                ...acc.assets,
+                ...assetMap,
+            },
+            deletedAssets: {
+                ...acc.deletedAssets,
+                ...deletedAssetMap,
             },
             spaces: acc.spaces,
             deletedSpaces: acc.deletedSpaces,
@@ -410,6 +425,16 @@ export function convertSpaceToApi(space: SerializedSpace): SpaceToApi {
 
 export function convertNewAttachmentToApi(attachment: SerializedAttachment, remoteSpaceId: RemoteId): NewAssetToApi {
     const { id, encrypted } = attachment;
+    const encryptedConcat = ensureConcat(encrypted);
+    return {
+        SpaceID: remoteSpaceId,
+        Encrypted: encryptedConcat,
+        AssetTag: id,
+    };
+}
+
+export function convertNewAssetToApi(asset: SerializedAsset, remoteSpaceId: RemoteId): NewAssetToApi {
+    const { id, encrypted } = asset;
     const encryptedConcat = ensureConcat(encrypted);
     return {
         SpaceID: remoteSpaceId,

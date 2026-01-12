@@ -101,10 +101,12 @@ export interface LumoApi {
     ): Promise<RemoteMessage | null>;
 
     postAttachment(attachmentArgs: NewAssetToApi, priority: Priority): Promise<RemoteId | null>;
-    putAttachment(attachmentArgs: NewAssetToApi, remoteId: RemoteId, priority: Priority): Promise<RemoteStatus>;
     deleteAttachment(attachmentId: RemoteId, priority: Priority): Promise<RemoteStatus>;
     getAttachment(attachmentId: RemoteId, spaceId: LocalId): Promise<RemoteAttachment | null>;
 
+    postAsset(assetArgs: NewAssetToApi, priority: Priority): Promise<RemoteId | null>;
+    deleteAsset(assetId: RemoteId, priority: Priority): Promise<RemoteStatus>;
+    getAsset(assetId: RemoteId, spaceId: LocalId): Promise<RemoteAsset | null>;
 
     // User settings methods
     getUserSettings(): Promise<SerializedUserSettings | null>;
@@ -482,12 +484,6 @@ export class LumoApi {
         return this.postAsset(attachmentArgs, priority);
     }
 
-    public putAttachment(attachmentArgs: NewAssetToApi, remoteId: RemoteId, priority: Priority): Promise<RemoteStatus> {
-        const asset = { ...attachmentArgs, ID: remoteId };
-        const fn = () => this.callPutJson('assets', asset);
-        return this.scheduler.schedule(fn, priority);
-    }
-
     public deleteSpace(id: RemoteId, priority: Priority): Promise<RemoteStatus> {
         const fn = () => this.callDelete('spaces', id);
         return this.scheduler.schedule(fn, priority);
@@ -525,6 +521,8 @@ export class LumoApi {
             conversations: {},
             deletedSpaces: {},
             deletedConversations: {},
+            assets: {},
+            deletedAssets: {},
         };
         let lastTimestamp: Date | undefined;
         while (true) {
@@ -540,6 +538,8 @@ export class LumoApi {
                 conversations: { ...result.conversations, ...next.conversations },
                 deletedSpaces: { ...result.deletedSpaces, ...next.deletedSpaces },
                 deletedConversations: { ...result.deletedConversations, ...next.deletedConversations },
+                assets: { ...result.assets, ...(next.assets || {}) },
+                deletedAssets: { ...result.deletedAssets, ...(next.deletedAssets || {}) },
             };
         }
         return result;

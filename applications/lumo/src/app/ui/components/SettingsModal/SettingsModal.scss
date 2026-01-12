@@ -44,6 +44,28 @@ im.$media-expressions: $media-expressions;
 		}
 	}
 
+	.toggle-container {
+
+		&::before {
+			border-color: #4b5563 !important;
+			background-color: #aaaaaa;
+			
+		}
+
+		&.toggle-container--checked::before {
+			background-color: var(--primary);
+		}
+
+		&.toggle-container {
+			background-color: var(--interaction-weak-major-3);
+		}
+
+		:not(.toggle-container--disabled):hover::before {
+			background-color: #4b5563;
+			
+		}
+	}
+
 	// Allow content container to scroll
 	.content-container {
 		.overflow-y-auto {

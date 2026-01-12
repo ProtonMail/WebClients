@@ -12,7 +12,6 @@ import { deserializeAttachment, serializeAttachment } from '../../serialization'
 import {
     type Attachment,
     type AttachmentId,
-    type DeletedAttachment,
     type SerializedAttachment,
     type ShallowAttachment,
     type Space,
@@ -190,8 +189,24 @@ export function* softDeleteAttachmentFromRemote({ payload: localId }: { payload:
 export function* softDeleteAttachmentFromLocal({ payload: localId }: { payload: AttachmentId }): SagaIterator<any> {
     console.log('Saga triggered: softDeleteAttachmentFromLocal', localId);
     const dbApi: DbApi = yield getContext('dbApi');
+
+    // Get user ID for search service cleanup
+    const userId: string | undefined = yield select((state: LumoState) => state.user?.value?.ID);
+
     yield put(deleteAttachment(localId)); // Redux
     yield call([dbApi, dbApi.softDeleteAttachment], localId, { dirty: true }); // IDB
+
+    // Clean up search index for this attachment
+    if (userId) {
+        try {
+            const SearchService = yield call(() => import('../../services/search/searchService').then(m => m.SearchService));
+            const searchService = SearchService.get(userId);
+            searchService.removeDocument(localId);
+            console.log('[Attachment] Removed from search index:', localId);
+        } catch (error) {
+            console.error('[Attachment] Failed to remove from search index:', error);
+        }
+    }
 }
 
 /*** loggers ***/
@@ -237,30 +252,6 @@ function* httpPostAttachment(serializedAttachment: SerializedAttachment, priorit
     const entry = { type, localId, remoteId };
     yield put(addIdMapEntry({ ...entry, saveToIdb: true }));
     return entry;
-}
-
-function* httpPutAttachment(
-    serializedAttachment: SerializedAttachment,
-    remoteId: RemoteId,
-    priority: Priority
-): SagaIterator<any> {
-    console.log('Saga triggered: httpPutAttachment', { serializedAttachment, remoteId });
-    const type: ResourceType = 'attachment';
-    const lumoApi: LumoApi = yield getContext('lumoApi');
-    const { id: localId, spaceId: localSpaceId } = serializedAttachment;
-
-    if (!localSpaceId) {
-        throw new Error(`httpPutAttachment ${localId}: attachment has no spaceId`);
-    }
-
-    const remoteSpaceId: RemoteId = yield call(waitForMapping, 'space', localSpaceId);
-    const attachmentToApi = convertNewAttachmentToApi(serializedAttachment, remoteSpaceId);
-    const status: RemoteStatus = yield call([lumoApi, lumoApi.putAttachment], attachmentToApi, remoteId, priority);
-    if (status === 'deleted') {
-        console.log(`PUT ${type}: ${localId} was deleted remotely, deleting also locally: ${localId} ${remoteId})`);
-        const deletedAttachment: DeletedAttachment = { ...serializedAttachment, deleted: true };
-        yield put(locallyDeleteAttachmentFromRemoteRequest(deletedAttachment.id));
-    }
 }
 
 function* httpDeleteAttachment(localId: LocalId, remoteId: RemoteId, priority: Priority): SagaIterator<RemoteStatus> {
@@ -315,7 +306,12 @@ export function* pushAttachment({ payload }: { payload: PushAttachmentRequest })
 
         // Encrypt the attachment for IDB and the remote
         const attachment: Attachment | undefined = yield select(selectAttachmentById(localId));
-        if (!attachment) throw new Error(`cannot find ${type} ${localId} in Redux`);
+        if (!attachment) {
+            // Attachment was deleted (e.g., auto-retrieved file cleaned up on folder unlink)
+            console.log(`pushAttachment: attachment ${localId} not found in Redux, skipping`);
+            yield put(pushAttachmentNoop(payload));
+            return;
+        }
 
         if (!attachment.spaceId) {
             console.log(
@@ -330,15 +326,8 @@ export function* pushAttachment({ payload }: { payload: PushAttachmentRequest })
         // Save the attachment to IndexedDB with a dirty flag
         yield call(saveDirtyAttachment, serializedAttachment);
 
-        // Choose between POST or PUT
-        let entry: IdMapEntry | undefined;
-        if (!remoteId) {
-            // POST
-            entry = yield call(callWithRetry, httpPostAttachment, [serializedAttachment, priority]);
-        } else {
-            // PUT
-            yield call(callWithRetry, httpPutAttachment, [serializedAttachment, remoteId, priority]);
-        }
+        // Always use POST for attachments (which are assets), never PUT
+        const entry: IdMapEntry = yield call(callWithRetry, httpPostAttachment, [serializedAttachment, priority]);
 
         // Finish
         const updated: boolean = yield call(clearDirtyIfUnchanged, serializedAttachment);
@@ -500,5 +489,51 @@ export function* processPullAttachmentResult({ payload }: { payload: RemoteAttac
         yield put(locallyDeleteAttachmentFromRemoteRequest(id));
     } else {
         yield put(locallyRefreshAttachmentFromRemoteRequest(payload));
+        yield call(indexPulledAttachment, payload);
+    }
+}
+
+/**
+ * Index a pulled attachment for search if it's a project file with content.
+ * This ensures files added in other browsers are indexed for RAG.
+ */
+function* indexPulledAttachment(remoteAttachment: RemoteAttachment): SagaIterator<void> {
+    try {
+        const { id, spaceId } = remoteAttachment;
+
+        if (!spaceId) {
+            return;
+        }
+
+        const space: Space | undefined = yield select(selectSpaceById(spaceId));
+        if (!space) {
+            console.log(`[indexPulledAttachment] Space ${spaceId} not found, skipping indexing`);
+            return;
+        }
+
+        const spaceDek: AesGcmCryptoKey = yield call(getSpaceDek, space);
+        const attachment: Attachment | null = yield call(deserializeAttachment, remoteAttachment, spaceDek);
+
+        if (!attachment || !attachment.markdown || attachment.driveNodeId) {
+            return;
+        }
+
+        const userId: string | undefined = yield select((state: LumoState) => state.user?.value?.ID);
+        if (!userId) {
+            return;
+        }
+
+        const { SearchService } = yield call(() => import('../../services/search/searchService'));
+        const searchService = SearchService.get(userId);
+
+        // Index the attachment
+        const result: { success: boolean; indexed: number } = yield call(
+            [searchService, searchService.reindexUploadedAttachments],
+            [attachment]
+        );
+
+        console.log(`[indexPulledAttachment] Indexed attachment ${id}:`, result);
+    } catch (error) {
+        console.warn('[indexPulledAttachment] Failed to index pulled attachment:', error);
     }
 }

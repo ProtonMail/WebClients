@@ -1,13 +1,16 @@
 import { useCallback, useMemo } from 'react';
 
 import { useIsGuest } from '../providers/IsGuestProvider';
-import type { WhatsNewFeature } from '../ui/components/WhatsNew/WhatsNew';
+import type { WhatsNewFeature } from '../ui/components/WhatsNew/types';
 import { getSeenFeatureFlags, hasSeenFeatureFlag, markFeatureFlagAsSeen } from '../utils/whatsNewStorage';
 import { useFeatureFlags } from './useFeatureFlags';
 
 interface UseStaggeredWhatsNewFeaturesReturn {
     currentFeature: WhatsNewFeature | null;
+    // Dismiss feature (user clicked "Try")
     dismissFeature: (featureId: string, versionFlag: string) => void;
+    // Decline feature (user clicked "Maybe later" or closes modal)
+    declineFeature: (featureId: string, versionFlag: string) => void;
     isFeatureDismissed: (featureId: string, versionFlag: string) => boolean;
 }
 
@@ -23,9 +26,20 @@ export const useStaggeredWhatsNewFeatures = (
     const dismissFeature = useCallback(
         (featureId: string, versionFlag: string) => {
             if (isGuest) {
-                markFeatureFlagAsSeen(featureId, versionFlag);
+                markFeatureFlagAsSeen(featureId, versionFlag, false);
             } else {
-                dismissFlag(featureId, versionFlag);
+                dismissFlag(featureId, versionFlag, false);
+            }
+        },
+        [dismissFlag, isGuest]
+    );
+
+    const declineFeature = useCallback(
+        (featureId: string, versionFlag: string) => {
+            if (isGuest) {
+                markFeatureFlagAsSeen(featureId, versionFlag, true);
+            } else {
+                dismissFlag(featureId, versionFlag, true);
             }
         },
         [dismissFlag, isGuest]
@@ -47,6 +61,7 @@ export const useStaggeredWhatsNewFeatures = (
             return {
                 currentFeature: null,
                 dismissFeature,
+                declineFeature,
                 isFeatureDismissed,
             };
         }
@@ -58,6 +73,7 @@ export const useStaggeredWhatsNewFeatures = (
             return {
                 currentFeature: null,
                 dismissFeature,
+                declineFeature,
                 isFeatureDismissed,
             };
         }
@@ -88,6 +104,7 @@ export const useStaggeredWhatsNewFeatures = (
             return {
                 currentFeature: null,
                 dismissFeature,
+                declineFeature,
                 isFeatureDismissed,
             };
         }
@@ -99,9 +116,10 @@ export const useStaggeredWhatsNewFeatures = (
         return {
             currentFeature,
             dismissFeature,
+            declineFeature,
             isFeatureDismissed,
         };
-    }, [features, isFeatureEnabled, isFeatureDismissed, dismissFlag, isGuest, featureFlags]);
+    }, [features, isFeatureEnabled, isFeatureDismissed, dismissFlag, isGuest, featureFlags, declineFeature]);
 
     return result;
 };

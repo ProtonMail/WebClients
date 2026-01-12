@@ -1,6 +1,4 @@
 @use '~@proton/styles/scss/lib/config' as *;
-@use '~@proton/styles/scss/lib/em' as *;
-@use '~@proton/styles/scss/lib/rem' as *;
 @use '~@proton/styles/scss/lib/include-media' as im;
 im.$breakpoints: $breakpoints-product;
 im.$media-expressions: $media-expressions;
@@ -12,7 +10,6 @@ im.$media-expressions: $media-expressions;
 	padding: 12px;
 	gap: 8px;
 
-	// background-color: var(--background-norm);
 	@include im.media('<=small') {
 		background-color: var(--background-composer-mobile);
 	}
@@ -34,15 +31,12 @@ im.$media-expressions: $media-expressions;
 		button {
 			@extend .sidebar-item;
 
-			// Override any conflicting styles
 			border-radius: 8px !important;
 			block-size: 40px !important;
 			display: flex !important;
 			align-items: center !important;
 			padding: 8px !important;
 			padding-inline: 6px !important;
-
-			// background-color: var(--background-upsell-button) !important;
 
 			&:hover {
 				background-color: var(--interaction-default-hover) !important;
@@ -59,12 +53,7 @@ im.$media-expressions: $media-expressions;
 	&.sidebar-bottom {
 		margin-block-start: auto;
 		padding-block-start: 12px;
-		gap: 4px;
 	}
-}
-
-.search-section {
-	margin-block-end: 8px;
 }
 
 .search-container {
@@ -80,7 +69,7 @@ im.$media-expressions: $media-expressions;
 		background-color 0.3s ease,
 		border 0.3s ease,
 		border-color 0.3s ease;
-	overflow: hidden; // Prevent text from showing when collapsed
+	overflow: visible; // Allow shortcut to be visible
 
 	// Always maintain input field styling initially
 	background-color: var(--background-weak);
@@ -129,8 +118,12 @@ im.$media-expressions: $media-expressions;
 
 .search-input-wrapper {
 	flex: 1;
+	display: flex;
+	align-items: center;
+	gap: 8px;
 	opacity: 1;
 	transition: opacity 0.3s ease; // Smooth fade transition
+	min-inline-size: 0; // Allow flex item to shrink
 
 	&.hidden {
 		opacity: 0;
@@ -138,12 +131,26 @@ im.$media-expressions: $media-expressions;
 	}
 }
 
+.search-shortcut {
+	flex-shrink: 0;
+	margin-inline-start: auto;
+	opacity: 0.6;
+
+	.kbd {
+		font-size: 11px;
+		padding-block: 2px;
+		padding-inline: 4px;
+	}
+}
+
 .sidebar-search-input {
-	inline-size: 100%;
+	flex: 1;
+	min-inline-size: 0;
 	border: none;
+	margin-inline-start: -7px;
 	background: transparent;
 	outline: none;
-	font-size: rem(14);
+	font-size: 14px;
 	color: var(--text-norm);
 
 	&::placeholder {
@@ -167,7 +174,7 @@ im.$media-expressions: $media-expressions;
 
 .search-label {
 	flex: 1;
-	font-size: rem(14);
+	font-size: 14px;
 	color: var(--text-norm);
 	opacity: 1;
 	transition: opacity 0.3s ease;
@@ -179,19 +186,26 @@ im.$media-expressions: $media-expressions;
 	}
 }
 
-// Favorites and History section
-.favorites-history-section {
-	display: flex;
-	flex-direction: column;
-	gap: 2px;
-	margin-block-start: 4px;
+// Favorites content - only specific styling needed
+.favorites-content {
+	max-block-size: 30vh;
+	overflow-y: auto;
 }
 
-// Chat history section
-.chat-history-section {
+// Chat history sidebar section - structured like projects
+.chat-history-sidebar-section {
+	display: flex;
+	flex-direction: column;
 	flex: 1;
 	min-block-size: 0;
-	margin-block: 8px;
+	overflow: hidden;
+}
+
+// Chat history content area
+.chat-history-content {
+	flex: 1;
+	min-block-size: 0;
+	margin-block: 0;
 	margin-inline: 0;
 	opacity: 0;
 	transition: opacity 0.3s ease-in-out;
@@ -220,7 +234,7 @@ im.$media-expressions: $media-expressions;
 
 // Prevent text reflow during sidebar transitions by maintaining fixed layout
 // Target the ChatHistory container to prevent responsive width changes
-.chat-history-section .chat-history-container {
+.chat-history-content .chat-history-container {
 	position: absolute;
 	inset-block-start: 0;
 	inset-inline-start: 0;
@@ -249,7 +263,7 @@ im.$media-expressions: $media-expressions;
 	cursor: pointer;
 	text-decoration: none;
 	color: inherit;
-	font-size: rem(14);
+	font-size: 14px;
 	transition: background-color 0.15s ease;
 	padding-inline: 6px;
 
@@ -270,21 +284,62 @@ im.$media-expressions: $media-expressions;
 	inline-size: 24px;
 	block-size: 24px;
 	flex-shrink: 0;
-	margin-inline-end: 12px;
+	margin-inline-end: 6px;
 }
 
 .sidebar-item-text {
 	flex: 1;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 	text-align: start;
 	white-space: nowrap;
 	overflow: hidden;
-	text-overflow: ellipsis;
 	opacity: 1;
 	transition: opacity 0.3s ease;
+	gap: 8px;
+	min-inline-size: 0; // Allow flex item to shrink below content size
+
+	// Note: not sure what this is for, commenting out for now
+	// // Text content that can truncate
+	// > :first-child {
+	// 	overflow: hidden;
+	// 	text-overflow: ellipsis;
+	// 	white-space: nowrap;
+	// 	flex: 1;
+	// 	min-inline-size: 0;
+	// }
 
 	&.hidden {
 		opacity: 0;
 		pointer-events: none;
+	}
+}
+
+.sidebar-item-shortcut {
+	flex-shrink: 0;
+	margin-inline-start: auto;
+	opacity: 0.6;
+	transition: opacity 0.15s ease;
+
+	.kbd {
+		font-size: 11px;
+		padding-block: 2px;
+		padding-inline: 4px;
+		display: inline-block;
+	}
+}
+
+// Hide shortcut by default, show on hover for items with showShortcutOnHover class
+.sidebar-item.show-shortcut-on-hover {
+	.sidebar-item-shortcut {
+		opacity: 0;
+		pointer-events: none;
+	}
+
+	&:hover .sidebar-item-shortcut {
+		opacity: 0.6;
+		pointer-events: auto;
 	}
 }
 
@@ -295,12 +350,6 @@ im.$media-expressions: $media-expressions;
 	padding-block: 4px;
 	padding-inline: 8px;
 	margin-block: 8px 4px;
-	margin-inline: 0;
-	font-size: rem(12);
-	color: var(--text-weak);
-	font-weight: 600;
-	text-transform: uppercase;
-	letter-spacing: 0.5px;
 
 	svg,
 	.icon {
@@ -311,7 +360,6 @@ im.$media-expressions: $media-expressions;
 		opacity: 0.7;
 	}
 
-	// Text styling
 	span {
 		white-space: nowrap;
 		overflow: hidden;
@@ -319,10 +367,91 @@ im.$media-expressions: $media-expressions;
 	}
 }
 
+.sidebar-section-header-collapsed {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	block-size: 40px;
+	padding: 8px;
+	margin-block: 4px;
+	cursor: pointer;
+	border-radius: 8px;
+	transition: background-color 0.15s ease;
+
+	&:hover {
+		background-color: var(--background-weak);
+	}
+
+	svg,
+	.icon {
+		inline-size: 20px;
+		block-size: 20px;
+		opacity: 0.7;
+	}
+}
+
 // Desktop sidebar z-index to ensure it's above disclaimers and other content
 .sidebar {
 	z-index: 10; // Higher than disclaimer (z-1) but lower than mobile overlay (z-100)
 	position: relative;
+}
+
+.sidebar button:hover,
+.sidebar .navigation-link:hover {
+	border-radius: 8px;
+}
+
+.sidebar-list-item-content {
+	.shrink-0 {
+		min-inline-size: 1rem;
+		inline-size: 1rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		will-change: transform;
+		backface-visibility: hidden;
+		transform: translateZ(0);
+	}
+
+	.text-ellipsis {
+		transition: opacity 0.15s ease-in-out;
+		will-change: opacity;
+	}
+}
+
+.projects-list {
+	margin-inline-start: 23px;
+}
+
+.projects-text-div {
+	flex: 1;
+	text-align: start;
+	transition: background-color 0.15s ease;
+
+	&:focus {
+		outline: 2px solid var(--focus-outline);
+		outline-offset: -2px;
+	}
+
+	&:hover {
+		background-color: transparent !important;
+	}
+}
+
+.projects-create-button {
+	border-radius: 4px;
+	opacity: 0.6;
+	transition:
+		opacity 0.15s ease,
+		background-color 0.15s ease;
+	block-size: 22px;
+	inline-size: 21px;
+	padding-block-end: 2px;
+
+	&:hover {
+		opacity: 0.6;
+		background-color: #e7e7e7;
+	}
 }
 
 // Mobile-specific sidebar enhancements (core positioning handled in index.scss)
@@ -388,54 +517,52 @@ im.$media-expressions: $media-expressions;
 		// New chat and search sections are now conditionally rendered for mobile guests
 	}
 
-	// ChatGPT-style mobile header with logo and close button
-	.sidebar-mobile-header {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		padding-block: 16px;
-		padding-inline: 20px 16px;
-		margin-block: -16px 0;
-		margin-inline: -16px; // Extend to edges, add bottom margin
-		border-block-end: 1px solid var(--border-weak);
+	.projects-header-container {
+		position: relative;
+		border-radius: 8px;
 
-		.sidebar-mobile-logo {
-			.sidebar-logo {
-				block-size: 24px;
-				inline-size: auto;
-				max-inline-size: 100px;
-				opacity: 0.9;
-			}
+		&:hover {
+			background-color: var(--background-weak);
+			transition: 0.3s all;
 		}
+	}
 
-		.sidebar-mobile-close-btn {
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			inline-size: 32px;
-			block-size: 32px;
-			background: transparent;
-			border: none;
-			border-radius: 6px;
-			color: var(--text-weak);
-			cursor: pointer;
-			transition: all 0.2s ease-in-out;
+	.projects-header-button {
+		position: relative;
+		flex: 1;
+	}
 
-			&:hover {
-				background: var(--background-weak);
-				color: var(--text-norm);
-			}
+	.projects-icon-button {
+		border-radius: 6px;
+		flex-shrink: 0;
+		min-inline-size: 24px;
+		block-size: 24px;
+	}
 
-			&:focus {
-				outline: 2px solid var(--focus-outline);
-				outline-offset: 2px;
-			}
+	.project-sidebar-item {
+		padding-block: 6px;
+		padding-inline: 12px;
+		border-radius: 6px;
+		text-decoration: none;
+		color: var(--text-norm);
+		transition: background-color 0.15s ease;
+		min-block-size: 32px;
 
-			svg {
-				inline-size: 16px;
-				block-size: 16px;
-			}
+		&.is-active {
+			background-color: var(--interaction-default-hover);
+			font-weight: 500;
 		}
+	}
+
+	.project-sidebar-item-see-all {
+		padding-block: 4px;
+		padding-inline: 12px;
+		border-radius: 4px;
+	}
+
+	.projects-empty {
+		color: var(--text-weak);
+		margin-inline-start: 36px;
 	}
 
 	.sidebar-bottom-user-dropdown {
@@ -450,54 +577,12 @@ im.$media-expressions: $media-expressions;
 		}
 	}
 
-	// Lumo logo section for mobile sidebar - centered branding
-	.sidebar-logo-section {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		padding-block: 24px 16px;
-		padding-inline: 16px;
-		margin-block-end: 8px;
-
-		.sidebar-logo {
-			block-size: 32px;
-			inline-size: auto;
-			max-inline-size: 120px;
-			opacity: 0.9;
-			transition: opacity 0.2s ease-in-out;
-
-			&:hover {
-				opacity: 1;
-			}
-		}
-	}
-
-	// Hide the close button inside the sidebar on mobile
-	.sidebar .hamburger-button,
-	.sidebar button[class*='hamburger'] {
-		display: none !important; // Hide close button inside sidebar
-	}
-
 	// Larger touch targets and spacing for mobile sidebar items
 	.sidebar-item {
 		block-size: 44px;
-		font-size: rem(16);
 	}
 }
 
 .bg-white {
 	background-color: white !important;
-}
-
-// Fix for UserDropdown visibility issues in Brave/iOS
-// Force dropdown to be visible when it should be open
-.userDropdown:not(.is-dropdown-out) {
-	opacity: 1 !important;
-	visibility: visible !important;
-	display: block !important;
-}
-
-// Hide dropdown completely when closing animation is active
-.userDropdown.is-dropdown-out {
-	display: none !important;
 }

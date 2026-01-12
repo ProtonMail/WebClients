@@ -211,7 +211,7 @@ const AssistantMessage = ({
                 <div
                     // ref={markdownContainerRef}
                     className={clsx(
-                        'assistant-msg-container w-full flex flex-row flex-nowrap rounded-xl p-4 border border-weak bg-norm'
+                        'assistant-msg-container w-full flex flex-row flex-nowrap rounded-xl p-4 bg-norm'
                     )}
                     style={{
                         '--min-h-custom': '62px',
