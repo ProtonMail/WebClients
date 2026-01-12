@@ -133,7 +133,6 @@ interface Props {
     onClose: () => void;
     onLock: (lock: boolean) => void;
     selectAll?: boolean;
-    onCheckAll?: (check: boolean) => void;
 }
 
 const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, selectAll, onCheckAll }: Props) => {
