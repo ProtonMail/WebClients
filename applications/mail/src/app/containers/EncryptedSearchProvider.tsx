@@ -24,7 +24,6 @@ import { EVENT_ERRORS } from '@proton/shared/lib/errors';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { getItem, removeItem, setItem } from '@proton/shared/lib/helpers/storage';
-import useFlag from '@proton/unleash/useFlag';
 
 import { useCategoriesView } from 'proton-mail/components/categoryView/useCategoriesView';
 import ESDeletedConversationsCache from 'proton-mail/helpers/encryptedSearch/ESDeletedConversationsCache';
@@ -62,8 +61,6 @@ const EncryptedSearchProvider = ({ children }: Props) => {
 
     const [addresses] = useAddresses();
 
-    const doNotUseTurndown = useFlag('FasterEncryptedSearchIndexing');
-
     const [esMailStatus, setESMailStatus] = useState<ESDBStatusMail>(defaultESMailStatus);
     // Allow to track changes in page to set the elements list accordingly
     const pageRef = useRef<number>(0);
@@ -76,7 +73,6 @@ const EncryptedSearchProvider = ({ children }: Props) => {
         history,
         numAddresses: addresses?.length || 0,
         disabledCategoriesIDs: categoriesView.disabledCategoriesIDs,
-        doNotUseTurndown,
     });
 
     const contentIndexingSuccessMessage = c('Success').t`Message content search enabled`;
