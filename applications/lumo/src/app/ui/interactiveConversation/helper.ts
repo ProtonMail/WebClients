@@ -1151,21 +1151,32 @@ export async function retrySendMessage({
             dispatch(pushMessageRequest({ id: lastUserMessage.id }));
         }
 
-        // First, get basic turns without images
+        // Build conversation context for turn preparation (includes attachments for image enrichment)
+        const c: ConversationContext = {
+            spaceId,
+            conversationId,
+            allConversationAttachments: attachments,
+            messageChain: updatedLinearChain,
+            contextFilters,
+        };
+
+        // Prepare turns with images (prepareTurns handles enrichment internally when c is provided)
         let turns = prepareTurns(
             updatedLinearChain,
             contextFilters,
             personalization,
             projectInstructions,
-            ragResult?.context
-        ); // caution: missing `c`
+            ragResult?.context,
+            c
+        );
 
         // If no attachments, nothing to add
         if (attachments.length === 0) {
             return turns;
         }
 
-        // Now enrich user turns with images
+        // Note: Image enrichment already handled by prepareTurns via the c parameter
+        // The code below is legacy and should be considered for removal
         turns = await Promise.all(
             turns.map((turn, index) => enrichTurnWithImages(turn, index, turns, updatedLinearChain, attachments))
         );
@@ -1428,21 +1439,32 @@ export function fetchAssistantResponse({
             dispatch(pushMessageRequest({ id: lastUserMessage.id }));
         }
 
-        // First, get basic turns without images
+        // Build conversation context for turn preparation (includes attachments for image enrichment)
+        const c: ConversationContext = {
+            spaceId,
+            conversationId,
+            allConversationAttachments: attachments || [],
+            messageChain: updatedLinearChain,
+            contextFilters,
+        };
+
+        // Prepare turns with images (prepareTurns handles enrichment internally when c is provided)
         let turns = prepareTurns(
             updatedLinearChain,
             contextFilters,
             personalization,
             projectInstructions,
-            ragResult?.context
-        ); // caution: missing `c`
+            ragResult?.context,
+            c
+        );
 
         // If no attachments, nothing to add
         if (attachments.length === 0) {
             return turns;
         }
 
-        // Now enrich user turns with images
+        // Note: Image enrichment already handled by prepareTurns via the c parameter
+        // The code below is legacy and should be considered for removal
         if (attachments.length > 0) {
             turns = await Promise.all(
                 turns.map((turn, index) => enrichTurnWithImages(turn, index, turns, updatedLinearChain, attachments))
