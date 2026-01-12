@@ -10,8 +10,8 @@ import { PendingExistingMember, PendingNewMember } from '@proton/pass/components
 import { OrganizationPolicyTooltip } from '@proton/pass/components/Organization/OrganizationPolicyTooltip';
 import { useOrganization } from '@proton/pass/components/Organization/OrganizationProvider';
 import { type AccessDTO, AccessTarget } from '@proton/pass/lib/access/types';
-import type { NewUserPendingInvite, PendingInvite } from '@proton/pass/types';
-import { BitField, type ShareMember as ShareMemberType } from '@proton/pass/types';
+import type { NewUserPendingInvite, PendingInvite, ShareMember as ShareMemberType } from '@proton/pass/types';
+import { OrganizationItemShareMode } from '@proton/pass/types';
 import clsx from '@proton/utils/clsx';
 
 export type InviteListItem =
@@ -43,7 +43,7 @@ export const AccessList: FC<Props> = ({
     onInvite,
 }) => {
     const org = useOrganization();
-    const orgItemSharingDisabled = org?.settings.ItemShareMode === BitField.DISABLED;
+    const orgItemSharingDisabled = org?.settings.ItemShareMode === OrganizationItemShareMode.DISABLED;
     const inviteDisabled = !canManage || (target === AccessTarget.Item && orgItemSharingDisabled);
 
     return (

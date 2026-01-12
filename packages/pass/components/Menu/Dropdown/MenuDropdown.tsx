@@ -21,9 +21,9 @@ import { getLocalPath } from '@proton/pass/components/Navigation/routing';
 import { OrganizationPolicyTooltip } from '@proton/pass/components/Organization/OrganizationPolicyTooltip';
 import { useVaultActions } from '@proton/pass/components/Vault/VaultActionsProvider';
 import { AccountPath } from '@proton/pass/constants';
+import { useVaultCreationPolicy } from '@proton/pass/hooks/organization/useVaultCreationPolicy';
 import { type MenuItem, useMenuItems } from '@proton/pass/hooks/useMenuItems';
 import { useNavigateToAccount } from '@proton/pass/hooks/useNavigateToAccount';
-import { selectOrganizationVaultCreationDisabled } from '@proton/pass/store/selectors/organization';
 import { selectLockEnabled } from '@proton/pass/store/selectors/settings';
 import { withTap } from '@proton/pass/utils/fp/pipe';
 import { PASS_APP_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
@@ -58,7 +58,7 @@ export const MenuDropdown: FC<Props> = ({ onLock, onLogout, interactive }) => {
     const withAppMenuClose = withTap(appMenu.close);
     const withVaultMenuClose = withTap(vaultMenu.close);
 
-    const vaultCreationDisabled = useSelector(selectOrganizationVaultCreationDisabled);
+    const { vaultCreationDisabled } = useVaultCreationPolicy();
 
     const { advanced, download } = useMenuItems(useMemo(() => ({ onAction: appMenu.close }), [appMenu.close]));
 

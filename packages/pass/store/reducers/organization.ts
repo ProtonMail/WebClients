@@ -2,19 +2,27 @@ import type { Reducer } from 'redux';
 
 import { getUserAccessSuccess, userEvent } from '@proton/pass/store/actions';
 import { getOrganizationSettings } from '@proton/pass/store/actions/creators/organization';
-import { BitField, type MaybeNull, PlanType } from '@proton/pass/types';
+import {
+    type MaybeNull,
+    OrganizationExportMode,
+    OrganizationItemShareMode,
+    OrganizationPublicLinkMode,
+    OrganizationShareMode,
+    OrganizationVaultCreateMode,
+    PlanType,
+} from '@proton/pass/types';
 import type { OrganizationSettings } from '@proton/pass/types/data/organization';
 import type { Organization } from '@proton/shared/lib/interfaces';
 
 export const INITIAL_ORGANIZATION_SETTINGS: OrganizationSettings = {
-    ExportMode: BitField.DISABLED,
-    ShareMode: BitField.DISABLED,
-    ForceLockSeconds: BitField.DISABLED,
+    ExportMode: OrganizationExportMode.UNRESTRICTED,
+    ShareMode: OrganizationShareMode.UNRESTRICTED,
+    ForceLockSeconds: 0,
     PasswordPolicy: null,
-    ShareAcceptMode: BitField.DISABLED,
-    VaultCreateMode: BitField.DISABLED,
-    ItemShareMode: BitField.DISABLED,
-    PublicLinkMode: BitField.DISABLED,
+    ShareAcceptMode: OrganizationShareMode.UNRESTRICTED,
+    VaultCreateMode: OrganizationVaultCreateMode.ALLOWED,
+    ItemShareMode: OrganizationItemShareMode.DISABLED,
+    PublicLinkMode: OrganizationPublicLinkMode.DISABLED,
 };
 
 export type OrganizationState = {

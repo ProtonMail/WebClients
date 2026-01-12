@@ -5,7 +5,7 @@ import { Form, FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import type { Maybe, MaybeNull, OrganizationUpdatePasswordPolicyRequest } from '@proton/pass/types';
+import type { Maybe, MaybeNull, OrganizationUpdatePasswordPolicyInput } from '@proton/pass/types';
 
 import { PasswordGeneratorPolicyOption } from './PasswordGeneratorOption';
 
@@ -13,7 +13,7 @@ export type PasswordGeneratorOptionValue = Maybe<boolean | number | null>;
 
 const FORM_ID = 'password-generator-form';
 
-const PASSWORD_GENERATOR_DEFAULT: OrganizationUpdatePasswordPolicyRequest = {
+const PASSWORD_GENERATOR_DEFAULT: OrganizationUpdatePasswordPolicyInput = {
     RandomPasswordAllowed: true,
     RandomPasswordMinLength: 4,
     RandomPasswordMaxLength: 64,
@@ -32,7 +32,7 @@ export type PasswordLength = {
     max: number;
 };
 type PasswordGeneratorRule = {
-    id: keyof OrganizationUpdatePasswordPolicyRequest;
+    id: keyof OrganizationUpdatePasswordPolicyInput;
     label: string;
     length?: PasswordLength;
 };
@@ -111,9 +111,9 @@ export const getRangeError = (type: 'character' | 'word', value?: MaybeNull<numb
 };
 
 export const validatePasswordGeneratorForm = (
-    values: OrganizationUpdatePasswordPolicyRequest
-): FormikErrors<OrganizationUpdatePasswordPolicyRequest> => {
-    const errors: FormikErrors<OrganizationUpdatePasswordPolicyRequest> = {};
+    values: OrganizationUpdatePasswordPolicyInput
+): FormikErrors<OrganizationUpdatePasswordPolicyInput> => {
+    const errors: FormikErrors<OrganizationUpdatePasswordPolicyInput> = {};
 
     const randomMinError = getRangeError('character', values.RandomPasswordMinLength);
     if (randomMinError) {
@@ -155,13 +155,13 @@ export const validatePasswordGeneratorForm = (
 };
 
 type Props = {
-    config: MaybeNull<OrganizationUpdatePasswordPolicyRequest>;
-    onSubmit: (config: OrganizationUpdatePasswordPolicyRequest) => Promise<void>;
+    config: MaybeNull<OrganizationUpdatePasswordPolicyInput>;
+    onSubmit: (config: OrganizationUpdatePasswordPolicyInput) => Promise<void>;
     loading?: boolean;
 };
 
 export const PasswordGeneratorPolicyForm: FC<Props> = ({ onSubmit, config, loading }) => {
-    const form = useFormik<OrganizationUpdatePasswordPolicyRequest>({
+    const form = useFormik<OrganizationUpdatePasswordPolicyInput>({
         initialValues: config ?? PASSWORD_GENERATOR_DEFAULT,
         validate: validatePasswordGeneratorForm,
         onSubmit: async (values) => {
@@ -170,7 +170,7 @@ export const PasswordGeneratorPolicyForm: FC<Props> = ({ onSubmit, config, loadi
         },
     });
 
-    const handleOnChange = (id: keyof OrganizationUpdatePasswordPolicyRequest, value: PasswordGeneratorOptionValue) => {
+    const handleOnChange = (id: keyof OrganizationUpdatePasswordPolicyInput, value: PasswordGeneratorOptionValue) => {
         void form.setFieldValue(id, value);
 
         // Don't allow both RandomPasswordAllowed & MemorablePasswordAllowed toggles to be off

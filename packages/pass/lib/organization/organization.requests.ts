@@ -5,7 +5,7 @@ import type {
     MaybeNull,
     MemberMonitorReportList,
     OrganizationGetResponse,
-    OrganizationUpdatePasswordPolicyRequest,
+    OrganizationUpdatePasswordPolicyInput,
     OrganizationUrlPauseEntryDto,
 } from '@proton/pass/types';
 import type { OrganizationSettings } from '@proton/pass/types/data/organization';
@@ -52,7 +52,7 @@ export const getOrganization = async (): Promise<MaybeNull<OrganizationState>> =
 };
 
 export const setPasswordGeneratorPolicySettings = async (
-    settings: OrganizationUpdatePasswordPolicyRequest
+    settings: OrganizationUpdatePasswordPolicyInput
 ): Promise<OrganizationGetResponse> =>
     (
         await api({

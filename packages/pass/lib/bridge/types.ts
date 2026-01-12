@@ -6,7 +6,7 @@ import type {
     Maybe,
     MemberMonitorReportList,
     OrganizationGetResponse,
-    OrganizationUpdatePasswordPolicyRequest,
+    OrganizationUpdatePasswordPolicyInput,
     OrganizationUrlPauseEntryDto,
     ResponseCodeSuccess,
     Share,
@@ -72,7 +72,7 @@ export interface PassBridge {
                 value: OrganizationSettings[K]
             ) => Promise<OrganizationGetResponse>;
             setPasswordGeneratorPolicy: (
-                value: OrganizationUpdatePasswordPolicyRequest
+                value: OrganizationUpdatePasswordPolicyInput
             ) => Promise<OrganizationGetResponse>;
         };
         reports: {
