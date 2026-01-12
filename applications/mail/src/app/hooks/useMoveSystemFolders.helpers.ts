@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import { ACCENT_COLORS } from '@proton/shared/lib/colors';
 import { LINKED_LABEL_IDS, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import type { MailSettings } from '@proton/shared/lib/interfaces';
 import { LABEL_IDS_TO_HUMAN } from '@proton/shared/lib/mail/constants';
 import { SHOW_MOVED } from '@proton/shared/lib/mail/mailSettings';
 import move from '@proton/utils/move';
@@ -161,10 +162,10 @@ export const moveSystemFolders: MoveSystemFolders = (draggedID, droppedId, syste
 };
 
 export const getDefaultSystemFolders = (
-    showMoved: UseMoveSystemFoldersProps['showMoved'],
+    showMoved: MailSettings['ShowMoved'],
     showScheduled: UseMoveSystemFoldersProps['showScheduled'],
     showSnoozed: UseMoveSystemFoldersProps['showSnoozed'],
-    showAlmostAllMail: UseMoveSystemFoldersProps['showAlmostAllMail'],
+    showAlmostAllMail: MailSettings['AlmostAllMail'],
     showSoftDeletedFolder: UseMoveSystemFoldersProps['showSoftDeletedFolder']
 ): BaseSystemFolder[] => [
     {
@@ -317,14 +318,14 @@ export const getDefaultSystemFolders = (
 ];
 
 export const getSidebarNavItems = (
-    showMoved: UseMoveSystemFoldersProps['showMoved'],
+    showMoved: MailSettings['ShowMoved'],
     showScheduled: UseMoveSystemFoldersProps['showScheduled'],
     showSnoozed: UseMoveSystemFoldersProps['showSnoozed'],
-    showAlmostAllMail: UseMoveSystemFoldersProps['showAlmostAllMail'],
+    showAlmostAllMail: MailSettings['AlmostAllMail'],
     showSoftDeletedFolder: UseMoveSystemFoldersProps['showSoftDeletedFolder'],
     apiSystemFolders: SystemFolderPayload[]
 ): { orderedSystemFolders: SystemFolder[]; unexpectedFolderIDs: MAILBOX_LABEL_IDS[] } => {
-    /** Harcoded system folders, used to complete missing infos in API fetched ones */
+    /** Hardcoded system folders, used to complete missing infos in API fetched ones */
     const defaultSystemFolders = getDefaultSystemFolders(
         showMoved,
         showScheduled,
