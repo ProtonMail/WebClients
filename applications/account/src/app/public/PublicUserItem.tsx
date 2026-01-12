@@ -13,18 +13,18 @@ const UserItem = forwardRef<HTMLButtonElement, UserItemProps>(({ User, ...rest }
     const nameToDisplay = User.DisplayName || User.Name || User.Email || '';
     const initials = getInitials(nameToDisplay);
     return (
-        <div className="public-user-item color-primary">
+        <div className="public-user-item">
             <button
                 type="button"
                 {...rest}
-                className="public-user-item--container color-primary w-full max-w-custom flex interactive items-start rounded p-2 text-right relative text-sm"
+                className="public-user-item--container w-full max-w-custom flex interactive items-start rounded p-2 text-right relative text-sm"
                 style={{ '--max-w-custom': '25em' }}
                 ref={ref}
             >
                 <div className="mr-3 flex-1 mt-custom" style={{ '--mt-custom': `-0.25em` }}>
                     <div className="text-right">
                         <div className="text-ellipsis text-bold">{nameToDisplay}</div>
-                        {User.Email && <div className="text-ellipsis">{User.Email}</div>}
+                        {User.Email && <div className="text-ellipsis color-weak">{User.Email}</div>}
                     </div>
                 </div>
                 <div>
