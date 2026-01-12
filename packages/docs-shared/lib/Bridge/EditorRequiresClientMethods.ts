@@ -53,6 +53,8 @@ export type FileMenuAction =
     }
 export const FileMenuActionEvent = 'FileMenuAction' as const
 
+export type AppPlatform = 'web' | 'nativeMobileWeb'
+
 export interface EditorRequiresClientMethods {
   editorRequestsPropagationOfUpdate(message: RtsMessagePayload, debugSource: BroadcastSource): Promise<void>
   editorReportingEvent(event: EditorEvent, data: EditorEventData[EditorEvent]): Promise<void>
@@ -104,7 +106,7 @@ export interface EditorRequiresClientMethods {
   showGenericAlertModal(message: string): void
   showGenericInfoModal(props: { title: string; translatedMessage: string }): void
   fetchExternalImageAsBase64(url: string): Promise<string | undefined>
-  getIsRunningInNativeMobileWeb(): Promise<boolean>
+  getAppPlatform(): Promise<AppPlatform>
 
   handleFileMenuAction(action: FileMenuAction): Promise<void>
 
