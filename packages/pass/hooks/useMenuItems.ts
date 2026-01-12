@@ -28,10 +28,10 @@ type MenuItemsOptions = {
     };
 };
 
-export const useMenuItems = ({
-    onAction = noop,
-    extra = {},
-}: MenuItemsOptions): Record<'download' | 'advanced', MenuItem[]> => {
+export const useMenuItems = ({ onAction = noop, extra = {} }: MenuItemsOptions = {}): Record<
+    'download' | 'advanced',
+    MenuItem[]
+> => {
     const dispatch = useDispatch();
     const passwordHistory = usePasswordHistoryActions();
 

@@ -1,22 +1,22 @@
 import { memo } from 'react';
 
-import type { HeaderProps } from 'proton-pass-web/app/Views/Header/types';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import CoreHeader from '@proton/components/components/header/Header';
 import Icon from '@proton/components/components/icon/Icon';
-import Hamburger from '@proton/components/components/sidebar/Hamburger';
+import type { HeaderProps } from '@proton/pass/components/Header/types';
+import { MenuDropdown } from '@proton/pass/components/Menu/Dropdown/MenuDropdown';
 import { useNavigate } from '@proton/pass/components/Navigation/NavigationActions';
 import { getLocalPath } from '@proton/pass/components/Navigation/routing';
 
-export const HeaderSettings = memo(({ sidebarExpanded, sidebarToggle }: HeaderProps) => {
+export const HeaderSettings = memo((props: HeaderProps) => {
     const navigate = useNavigate();
 
     return (
         <CoreHeader className="border-bottom border-weak h-auto p-2">
             <div className="flex items-center gap-2">
-                <Hamburger expanded={sidebarExpanded} onToggle={sidebarToggle} />
+                <MenuDropdown {...props} />
                 <Button
                     className="shrink-0"
                     size="small"
