@@ -10,7 +10,7 @@ im.$media-expressions: $media-expressions;
 	@include im.media('>medium') {
 		inline-size: $context-bar-width;
 		min-inline-size: rem($context-bar-min-width);
-		max-inline-size: $context-bar-max-width;
+		max-inline-size: rem($context-bar-max-width);
 		border-inline-start: 1px solid var(--border-norm);
 	}
 

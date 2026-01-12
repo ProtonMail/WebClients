@@ -44,7 +44,7 @@
 
 		&:active::before {
 			background-color: var(--interaction-norm-active);
-			transition-delay: 0;
+			transition-delay: 0s;
 			transition-duration: 0.1s;
 		}
 	}

@@ -1,3 +1,6 @@
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/em' as *;
+
 .modal-two-header {
 	margin-block: var(--margin) 0.5em;
 	margin-inline: var(--margin);
