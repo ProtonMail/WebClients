@@ -3,6 +3,7 @@ import { hasPDFSupport } from './browser';
 import {
     isAudio,
     isComicBook,
+    isHEIC,
     isPDF,
     isSTLFile,
     isSupportedImage,
@@ -36,6 +37,7 @@ export const isPreviewAvailable = (mimeType: string, fileSize?: number) => {
     return (
         ((!fileSize || !isPreviewTooLarge(mimeType, fileSize)) &&
             (isSupportedImage(mimeType) ||
+                isHEIC(mimeType) || // For this one the preview might or might be not available depending on the thumbnail
                 isVideo(mimeType) ||
                 isAudio(mimeType) ||
                 isSupportedText(mimeType) ||

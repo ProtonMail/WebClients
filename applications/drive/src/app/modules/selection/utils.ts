@@ -32,7 +32,10 @@ export const getRangeOfItems = (allItems: string[], startId: string, endId: stri
 /**
  * Filter selected items to only include those that exist in current items
  */
-export const filterValidSelections = (selectedIds: Set<string>, currentItemIds: string[]): Set<string> => {
+export const filterValidSelections = (
+    selectedIds: Set<string>,
+    currentItemIds: string[] | Set<string>
+): Set<string> => {
     const validIds = new Set<string>();
     const currentIdsSet = new Set(currentItemIds);
 

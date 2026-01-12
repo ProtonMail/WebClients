@@ -11,14 +11,15 @@ export const useSelectionStore = create<SelectionStore>()(
             multiSelectStartId: undefined,
             allItemIds: [],
 
-            setAllItemIds: (itemIds: string[]) => {
+            setAllItemIds: (itemIds: Set<string>) => {
                 set((state) => {
                     const validSelections = filterValidSelections(state.selectedItemIds, itemIds);
                     const needsUpdate = validSelections.size !== state.selectedItemIds.size;
+                    const itemIdsArray = Array.from(itemIds);
 
                     if (needsUpdate) {
                         return {
-                            allItemIds: itemIds,
+                            allItemIds: itemIdsArray,
                             selectedItemIds: validSelections,
                             multiSelectStartId:
                                 state.multiSelectStartId && !validSelections.has(state.multiSelectStartId)
@@ -27,7 +28,7 @@ export const useSelectionStore = create<SelectionStore>()(
                         };
                     }
 
-                    return { allItemIds: itemIds };
+                    return { allItemIds: itemIdsArray };
                 });
             },
 

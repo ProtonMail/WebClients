@@ -9,7 +9,7 @@ export interface SelectionStore {
     multiSelectStartId: string | undefined;
     allItemIds: string[];
 
-    setAllItemIds: (itemIds: string[]) => void;
+    setAllItemIds: (itemIds: Set<string>) => void;
     toggleSelectItem: (id: string) => void;
     toggleAllSelected: () => void;
     toggleRange: (id: string) => void;

@@ -86,7 +86,7 @@ export const useSharedWithMeItems = () => {
     const [previewModal, showPreviewModal] = useDrivePreviewModal();
 
     useEffect(() => {
-        setAllItemIds(sortedUids);
+        setAllItemIds(new Set(sortedUids));
     }, [sortedUids, setAllItemIds]);
 
     const handleRenderItem = useCallback(

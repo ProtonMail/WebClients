@@ -30,3 +30,4 @@ export {
     useDrivePreviewModal,
 } from './useDrivePreviewModal';
 export { usePhotosPreviewModal } from './usePhotosPreviewModal';
+export { useDrivePublicPreviewModal } from './useDrivePublicPreviewModal';
