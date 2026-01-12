@@ -26,12 +26,6 @@ export const DriveEmptyState: React.FC<DriveEmptyStateProps> = ({
 
     return (
         <div className="text-center py-8 text-gray-500">
-            <img
-                className="w-custom h-custom mx-auto mt-6 mb-6"
-                src={lumoDrive}
-                alt="Lumo + Proton Drive"
-                style={{ '--w-custom': '11.5rem' } as React.CSSProperties}
-            />
             <p className="mb-4">{c('collider_2025: Info').t`This folder is empty`}</p>
 
             <div className="flex flex-row items-center justify-center gap-2">
