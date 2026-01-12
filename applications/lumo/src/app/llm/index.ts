@@ -39,7 +39,9 @@ export function prepareTurns(
     linearChain: Message[],
     finalTurn = ASSISTANT_TURN,
     contextFilters: ContextFilter[] = [],
-    personalizationPrompt?: string
+    personalizationPrompt?: string,
+    projectInstructions?: string,
+    documentContext?: string
 ): Turn[] {
     // Apply context filters to the original message chain before processing
     const filteredMessageChain = linearChain.map((message) => {
@@ -68,31 +70,65 @@ export function prepareTurns(
     // Insert the final turn, which should be assistant normally
     let turns: ExtraTurn[] = [...filteredMessageChain, finalTurn];
 
-    // Add personalization to the user message content if provided
-    // This way it doesn't affect title generation or system-level behavior
-    if (personalizationPrompt && turns.length > 0) {
-        console.log('Adding personalization to user message:', personalizationPrompt);
+    // Add RAG document context to the FIRST user message's context field (like an attachment)
+    // This ensures documents are included once and won't be duplicated across turns
+    if (documentContext && turns.length > 0) {
+        const firstUserIndex = turns.findIndex(turn => turn.role === Role.User);
+        if (firstUserIndex !== -1) {
+            const userTurn = turns[firstUserIndex];
+            // Prepend document context to existing context (which may have file attachments)
+            const existingContext = userTurn.context || '';
+            turns[firstUserIndex] = {
+                ...userTurn,
+                context: existingContext 
+                    ? `${documentContext}\n\n${existingContext}`
+                    : documentContext,
+            };
+            console.log('Added RAG document context to first user message context field');
+        }
+    }
 
-        // Find the last user message (should be the first user message for new conversations)
-        const lastUserIndex = turns.findIndex((turn) => turn.role === Role.User);
+    // Add personalization and project instructions to the LAST user message content
+    // These are per-request instructions that should apply to the current question
+    if ((personalizationPrompt || projectInstructions) && turns.length > 0) {
+        // Find the last user message
+        let lastUserIndex = -1;
+        for (let i = turns.length - 1; i >= 0; i--) {
+            if (turns[i].role === Role.User) {
+                lastUserIndex = i;
+                break;
+            }
+        }
+        
         if (lastUserIndex !== -1) {
             const userTurn = turns[lastUserIndex];
             const originalContent = userTurn.content || '';
 
-            // Append personalization context to the user's message
-            const updatedContent = originalContent
-                ? `${originalContent}\n\n[Personal context: ${personalizationPrompt}]`
-                : `[Personal context: ${personalizationPrompt}]`;
+            // Build instruction parts
+            const instructionParts: string[] = [];
+            if (personalizationPrompt) {
+                instructionParts.push(`[Personal context: ${personalizationPrompt}]`);
+            }
+            if (projectInstructions) {
+                instructionParts.push(`[Project instructions: ${projectInstructions}]`);
+            }
+
+            // Prepend instructions to the user's message
+            const instructionText = instructionParts.join('\n\n');
+            const updatedContent = instructionText
+                ? `${instructionText}\n\n${originalContent}`
+                : originalContent;
 
             turns[lastUserIndex] = {
                 ...userTurn,
                 content: updatedContent,
             };
 
-            console.log('Updated user message with personalization:', turns[lastUserIndex]);
+            console.log('Updated user message with instructions:', { 
+                personalizationPrompt: !!personalizationPrompt, 
+                projectInstructions: !!projectInstructions,
+            });
         }
-    } else {
-        console.log('Not adding personalization - no prompt provided or no user message found');
     }
 
     // Remove context and prepend it to the message content
@@ -124,11 +160,13 @@ export function appendFinalTurn(turns: Turn[], finalTurn = ASSISTANT_TURN): Turn
 
 // return turns that are either user or assistant where assistant turns are not empty
 export const getFilteredTurns = (
-    linearChain: Message[],
-    contextFilters: ContextFilter[] = [],
-    personalizationPrompt?: string
+    linearChain: Message[], 
+    contextFilters: ContextFilter[] = [], 
+    personalizationPrompt?: string, 
+    projectInstructions?: string,
+    documentContext?: string
 ) => {
-    return prepareTurns(linearChain, ASSISTANT_TURN, contextFilters, personalizationPrompt)
+    return prepareTurns(linearChain, ASSISTANT_TURN, contextFilters, personalizationPrompt, projectInstructions, documentContext)
         .filter((turn) => {
             // Keep system messages that contain personalization, filter out other system messages
             if (turn.role === Role.System) {

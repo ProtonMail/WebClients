@@ -28,6 +28,10 @@ const lumoCharacteristics: LumoCharacteristic[] = [
         icon: 'tag',
         getText: () => c('collider_2025: Characteristic').t`Priority access`,
     },
+    {
+        icon: 'folder',
+        getText: () => c('collider_2025: Characteristic').t`Unlimited projects`,
+    },
 ];
 
 interface SubscriptionPanelProps {
@@ -40,7 +44,7 @@ interface SubscriptionPanelProps {
 export const SubscriptionPanel = ({ message, children, logo }: SubscriptionPanelProps) => (
     <div
         className={
-            'settings-modal-panel flex flex-row gap-6 p-6 rounded-lg lumo-plus-settings-gradient border border-weak flex-nowrap '
+            'settings-modal-panel w-full flex flex-row gap-6 p-6 rounded-lg lumo-plus-settings-gradient border border-weak flex-nowrap '
         }
     >
         {/* Left side - Content */}
@@ -59,8 +63,8 @@ export const SubscriptionPanel = ({ message, children, logo }: SubscriptionPanel
             <ul className="unstyled m-0 flex flex-column gap-2">
                 {lumoCharacteristics.map((characteristic) => (
                     <li key={characteristic.getText()} className="flex items-center gap-3">
-                        <Icon className="color-primary shrink-0" name="checkmark" size={3} />
-                        <span className="text-sm">{characteristic.getText()}</span>
+                        <Icon className="color-norm shrink-0" name={characteristic.icon} size={4} />
+                        <span className="text-sm color-norm">{characteristic.getText()}</span>
                     </li>
                 ))}
             </ul>

@@ -48,6 +48,7 @@ export enum CommonFeatureFlag {
     AlwaysOnUpsell = 'AlwaysOnUpsell',
     LumoEarlyAccess = 'LumoEarlyAccess',
     LumoTooling = 'LumoTooling',
+    LumoSmoothedRendering = 'LumoSmoothedRendering',
     LumoHighLoad = 'LumoHighLoad',
     LumoDeactivateGuestModeFrontend = 'LumoDeactivateGuestModeFrontend',
     ScheduleInAdvance = 'ScheduleInAdvance',
@@ -271,6 +272,8 @@ enum LumoFeatureFlag {
     LumoDarkMode = 'LumoDarkMode',
     WhatsNewV1p2 = 'WhatsNewV1p2',
     LumoSpecialTheme = 'LumoSpecialTheme',
+    WhatsNewV1p3 = 'WhatsNewV1p3',
+    LumoProjects = 'LumoProjects',
 }
 
 export type FeatureFlag =

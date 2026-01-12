@@ -217,6 +217,13 @@ export function useDrive() {
             await driveEntitiesCacheSingleton?.removeEntities([`node-${nodeUid}`]);
             await photosEntitiesCacheSingleton?.removeEntities([`node-${nodeUid}`]);
         }, []),
+        /**
+         * Clears all cached entities from the Drive SDK.
+         * Use this to force a refresh of folder contents.
+         */
+        clearCache: useCallback(async () => {
+            await driveEntitiesCacheSingleton?.clear();
+        }, []),
     };
 }
 

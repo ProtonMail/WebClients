@@ -1,30 +1,30 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
-import { MemoryCache, ProtonDriveClient } from '@protontech/drive-sdk';
+import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
-import { useLocalState } from '@proton/components';
-import { initOpenPGPCryptoModule } from '@proton/drive/internal/openPGPCryptoModule';
-import { initTelemetry } from '@proton/drive/internal/telemetry';
-import { useAccount } from '@proton/drive/internal/useAccount';
-import { useHttpClient } from '@proton/drive/internal/useHttpClient';
-import { useSrpModule } from '@proton/drive/internal/useSrpModule';
-import { Logging } from '@proton/drive/modules/logging';
+import { NodeType, useDrive } from '@proton/drive';
+import { generateThumbnail } from '@proton/drive/modules/thumbnails';
 import { isPaid } from '@proton/shared/lib/user/helpers';
 
+import config from '../config';
+import { useIsGuest } from '../providers/IsGuestProvider';
+import { getNodeEntity, logging } from '../util/driveSdk';
+
+let hasInitialized = false;
+
 export interface DriveNode {
-    nodeId: string;
+    nodeUid: string;
     name: string;
-    type: 'file' | 'folder';
+    type: NodeType;
     size?: number;
-    mimeType?: string;
     mediaType?: string;
-    modifiedTime?: number;
-    parentNodeId?: string;
+    modifiedTime?: Date;
+    parentUid?: string;
+    treeEventScopeId?: string;
 }
 
 export interface DriveSDKState {
-    isInitialized: boolean;
     isLoading: boolean;
     error: string | null;
     currentFolder: DriveNode | null;
@@ -34,18 +34,40 @@ export interface DriveSDKState {
     lastRefreshTime: number;
 }
 
-export interface DriveSDKMethods {
-    browseFolderChildren: (folderId?: string, forceRefresh?: boolean) => Promise<DriveNode[]>;
-    downloadFile: (nodeId: string, onProgress?: (progress: number) => void) => Promise<ArrayBuffer>;
-    uploadFile: (folderId: string, file: File, onProgress?: (progress: number) => void) => Promise<string>;
-    navigateToFolder: (folderId: string) => void;
-    navigateUp: () => void;
-    getRootFolder: () => Promise<DriveNode>;
+export interface DriveEvent {
+    eventId: string;
+    treeEventScopeId: string;
+    type?: string;
+    action?: string;
+    nodeUid?: string;
+    parentNodeUid?: string;
+    name?: string;
+    nodeType?: string;
+    isTrashed?: boolean;
+    isShared?: boolean;
 }
 
-export function useDriveSDK(): DriveSDKState & DriveSDKMethods {
+export interface EventSubscription {
+    dispose: () => void;
+}
+
+export interface DriveSDKMethods {
+    browseFolderChildren: (folderUid?: string, forceRefresh?: boolean) => Promise<DriveNode[]>;
+    downloadFile: (nodeUid: string, onProgress?: (progress: number) => void) => Promise<ArrayBuffer>;
+    uploadFile: (folderUid: string, file: File, onProgress?: (progress: number) => void) => Promise<string>;
+    createFolder: (parentFolderUid: string, folderName: string) => Promise<string>;
+    navigateToFolder: (folderUid: string) => void;
+    navigateUp: () => void;
+    getRootFolder: () => Promise<DriveNode>;
+    subscribeToDriveEvents: (callback: (event: DriveEvent) => Promise<void>) => Promise<EventSubscription>;
+    subscribeToTreeEvents: (treeEventScopeId: string, callback: (event: DriveEvent) => Promise<void>) => Promise<EventSubscription>;
+}
+
+export function useDriveSDK(): DriveSDKState & DriveSDKMethods & { isInitialized: boolean } {
+    const { drive, init: initDrive, clearCache } = useDrive();
+    const [user] = useUser();
+    const isGuest = useIsGuest();
     const [state, setState] = useState<DriveSDKState>({
-        isInitialized: false,
         isLoading: false,
         error: null,
         currentFolder: null,
@@ -55,117 +77,29 @@ export function useDriveSDK(): DriveSDKState & DriveSDKMethods {
         lastRefreshTime: Date.now(),
     });
 
-    const [user] = useUser();
-    const [debug] = useLocalState(false, 'proton-drive-debug');
-    const httpClient = useHttpClient([]);
-    const account = useAccount();
-    const openPGPCryptoModule = initOpenPGPCryptoModule();
-    const srpModule = useSrpModule();
-
-    // Create our own controllable cache instances
-    const entitiesCacheRef = useRef<MemoryCache<any>>();
-    const cryptoCacheRef = useRef<MemoryCache<any>>();
-    const driveClientRef = useRef<ProtonDriveClient>();
-
-    const initializeDriveSDK = useCallback(async () => {
-        try {
-            setState((prev) => ({ ...prev, isLoading: true, error: null }));
-
-            // Create fresh cache instances that we control
-            entitiesCacheRef.current = new MemoryCache();
-            cryptoCacheRef.current = new MemoryCache();
-
-            const userPlan = isPaid(user) ? 'paid' : 'free';
-            const telemetry = initTelemetry(userPlan, new Logging(), debug);
-
-            // Create our own ProtonDriveClient instance with controllable caches
-            driveClientRef.current = new ProtonDriveClient({
-                httpClient,
-                entitiesCache: entitiesCacheRef.current,
-                cryptoCache: cryptoCacheRef.current,
-                account,
-                openPGPCryptoModule,
-                config: {
-                    baseUrl: `${window.location.host}/api`,
-                },
-                telemetry,
-                srpModule,
-            });
-
-            setState((prev) => ({ ...prev, isInitialized: true, isLoading: false }));
-        } catch (error) {
-            console.error('Failed to initialize Drive:', error);
-            setState((prev) => ({
-                ...prev,
-                isLoading: false,
-                error: error instanceof Error ? error.message : 'Failed to initialize Drive',
-            }));
-        }
-    }, [user, debug, httpClient, account, openPGPCryptoModule]);
-
-    const clearCaches = useCallback(() => {
-        console.log('Clearing Drive SDK caches...');
-        try {
-            if (entitiesCacheRef.current && typeof entitiesCacheRef.current.clear === 'function') {
-                void entitiesCacheRef.current.clear();
-                console.log('Cleared entitiesCache');
-            }
-            if (cryptoCacheRef.current && typeof cryptoCacheRef.current.clear === 'function') {
-                void cryptoCacheRef.current.clear();
-                console.log('Cleared cryptoCache');
-            }
-        } catch (error) {
-            console.warn('Failed to clear caches:', error);
-        }
-    }, []);
-
     const getRootFolder = useCallback(async (): Promise<DriveNode> => {
-        const drive = driveClientRef.current;
-        if (!drive) {
-            throw new Error('Drive not initialized');
-        }
-
         try {
             const rootFolderResponse = await drive.getMyFilesRootFolder();
-            console.log('Raw root folder response:', rootFolderResponse);
-
-            if (!rootFolderResponse) {
-                throw new Error('Root folder is undefined - Drive may not be fully initialized');
-            }
-
-            // Handle MaybeNode structure
-            let rootFolder;
-            if ('ok' in rootFolderResponse && rootFolderResponse.ok && rootFolderResponse.value) {
-                rootFolder = rootFolderResponse.value;
-            } else {
-                rootFolder = rootFolderResponse;
-            }
-
-            const nodeId = (rootFolder as any).uid || (rootFolder as any).linkId || (rootFolder as any).nodeId;
-            if (!nodeId) {
-                console.error('Root folder object:', rootFolder);
-                throw new Error('Could not extract node ID from root folder');
-            }
-
+            const { node: rootFolderNode } = getNodeEntity(rootFolderResponse);
             return {
-                nodeId,
-                name: 'My Files',
-                type: 'folder',
-                parentNodeId: undefined,
+                nodeUid: rootFolderNode.uid,
+                name: c('Title').t`My Files`,
+                type: NodeType.Folder,
+                parentUid: undefined,
             };
         } catch (error) {
             console.error('Failed to get root folder:', error);
 
             // Check if this is the "Unprocessable Content" error that occurs when Drive hasn't been initialized
             if (error && typeof error === 'object' && 'message' in error) {
-                const errorMessage = (error as any).message || '';
-                const errorName = (error as any).name || '';
+                const errorMessage = (error as Error).message || '';
+                const errorName = (error as Error).name || '';
 
                 // Check for StatusCodeError with Unprocessable Content (422)
                 if (
                     errorName === 'StatusCodeError' ||
                     errorMessage.includes('Unprocessable Content') ||
-                    (error as any).status === 422
+                    (error as { status?: number }).status === 422
                 ) {
                     throw new Error('DRIVE_NOT_INITIALIZED');
                 }
@@ -173,44 +107,27 @@ export function useDriveSDK(): DriveSDKState & DriveSDKMethods {
 
             throw error;
         }
-    }, []);
+    }, [drive]);
 
     const browseFolderChildren = useCallback(
-        async (folderId?: string, forceRefresh?: boolean): Promise<DriveNode[]> => {
-            const drive = driveClientRef.current;
-            if (!drive) {
-                throw new Error('Drive not initialized');
+        async (folderUid?: string, forceRefresh?: boolean): Promise<DriveNode[]> => {
+            // Prevent Drive API calls for guest users
+            if (isGuest) {
+                throw new Error('Drive is not available for guest users');
             }
 
             try {
                 setState((prev) => ({ ...prev, isLoading: true, error: null }));
 
-                // Clear caches if force refresh is requested
-                if (forceRefresh) {
-                    clearCaches();
+                // Clear cache if force refresh is requested to get fresh data from server
+                if (forceRefresh && clearCache) {
+                    console.log('[DriveSDK] Force refresh - clearing cache');
+                    await clearCache();
                 }
 
-                let targetFolderId = folderId;
-                if (!targetFolderId) {
-                    const rootFolderResponse = await drive.getMyFilesRootFolder();
-                    if (!rootFolderResponse) {
-                        throw new Error('Root folder is undefined - Drive may not be fully initialized');
-                    }
+                const maybeRootFolderNode = await drive.getMyFilesRootFolder();
+                const { node: rootFolderNode } = getNodeEntity(maybeRootFolderNode);
 
-                    // Handle MaybeNode structure
-                    let rootFolder;
-                    if ('ok' in rootFolderResponse && rootFolderResponse.ok && rootFolderResponse.value) {
-                        rootFolder = rootFolderResponse.value;
-                    } else {
-                        rootFolder = rootFolderResponse;
-                    }
-
-                    targetFolderId =
-                        (rootFolder as any).uid || (rootFolder as any).linkId || (rootFolder as any).nodeId;
-                    if (!targetFolderId) {
-                        throw new Error('Could not extract node ID from root folder');
-                    }
-                }
                 const children: DriveNode[] = [];
 
                 // Create a new AbortController for each request
@@ -218,37 +135,29 @@ export function useDriveSDK(): DriveSDKState & DriveSDKMethods {
 
                 // Use the drive.iterateFolderChildren method
                 for await (const maybeNode of drive.iterateFolderChildren(
-                    targetFolderId,
+                    folderUid || rootFolderNode.uid,
                     undefined,
                     abortController.signal
                 )) {
-                    // Handle the MaybeNode type - check if it's successful
-                    if ('ok' in maybeNode && maybeNode.ok && maybeNode.value) {
-                        const node = maybeNode.value;
+                    const { node } = getNodeEntity(maybeNode);
 
-                        // Determine file type based on node.type property
-                        const isFile = (node as any).type === 'file';
-
-                        children.push({
-                            nodeId: (node as any).uid || (node as any).linkId || (node as any).nodeId,
-                            name: (node as any).name,
-                            type: isFile ? 'file' : 'folder',
-                            size: isFile
-                                ? (node as any).size || (node as any).fileSize || (node as any).contentSize
-                                : undefined,
-                            mimeType: isFile ? (node as any).mimeType : undefined,
-                            mediaType: isFile ? (node as any).mediaType : undefined,
-                            modifiedTime: (node as any).modifyTime || (node as any).modifiedTime,
-                            parentNodeId: targetFolderId,
-                        });
-                    }
+                    children.push({
+                        nodeUid: node.uid,
+                        name: node.name,
+                        type: node.type,
+                        size: node.activeRevision?.storageSize || node.totalStorageSize,
+                        mediaType: node.mediaType,
+                        modifiedTime: node.activeRevision?.claimedModificationTime || node.creationTime,
+                        parentUid: node.parentUid,
+                        treeEventScopeId: node.treeEventScopeId,
+                    });
                 }
 
                 const currentFolder: DriveNode = {
-                    nodeId: targetFolderId,
-                    name: folderId ? 'Folder' : 'My Files',
-                    type: 'folder',
-                    parentNodeId: undefined,
+                    nodeUid: folderUid || rootFolderNode.uid,
+                    name: folderUid ? c('Title').t`Folder` : c('Title').t`My Files`,
+                    type: NodeType.Folder,
+                    parentUid: undefined,
                 };
 
                 setState((prev) => ({
@@ -267,14 +176,14 @@ export function useDriveSDK(): DriveSDKState & DriveSDKMethods {
 
                 // Check if this is the "Unprocessable Content" error that occurs when Drive hasn't been initialized
                 if (error && typeof error === 'object' && 'message' in error) {
-                    const errorMsg = (error as any).message || '';
-                    const errorName = (error as any).name || '';
+                    const errorMsg = (error as Error).message || '';
+                    const errorName = (error as Error).name || '';
 
                     // Check for StatusCodeError with Unprocessable Content (422)
                     if (
                         errorName === 'StatusCodeError' ||
                         errorMsg.includes('Unprocessable Content') ||
-                        (error as any).status === 422
+                        (error as { status?: number }).status === 422
                     ) {
                         errorMessage = 'DRIVE_NOT_INITIALIZED';
                     }
@@ -288,23 +197,23 @@ export function useDriveSDK(): DriveSDKState & DriveSDKMethods {
                 throw error;
             }
         },
-        [clearCaches]
+        [drive, isGuest, clearCache]
     );
 
     const downloadFile = useCallback(
-        async (nodeId: string, onProgress?: (progress: number) => void): Promise<ArrayBuffer> => {
-            const drive = driveClientRef.current;
-            if (!drive) {
-                throw new Error('Drive not initialized');
+        async (nodeUid: string, onProgress?: (progress: number) => void): Promise<ArrayBuffer> => {
+            // Prevent Drive API calls for guest users
+            if (isGuest) {
+                throw new Error('Drive is not available for guest users');
             }
 
             try {
                 setState((prev) => ({
                     ...prev,
-                    downloadProgress: { ...prev.downloadProgress, [nodeId]: 0 },
+                    downloadProgress: { ...prev.downloadProgress, [nodeUid]: 0 },
                 }));
 
-                const downloader = await drive.getFileDownloader(nodeId);
+                const downloader = await drive.getFileDownloader(nodeUid);
                 const claimedSize = downloader.getClaimedSizeInBytes() || 0;
 
                 // Create a WritableStream to collect the data
@@ -321,7 +230,7 @@ export function useDriveSDK(): DriveSDKState & DriveSDKMethods {
                             onProgress(progress);
                             setState((prev) => ({
                                 ...prev,
-                                downloadProgress: { ...prev.downloadProgress, [nodeId]: progress },
+                                downloadProgress: { ...prev.downloadProgress, [nodeUid]: progress },
                             }));
                         }
                     },
@@ -334,7 +243,7 @@ export function useDriveSDK(): DriveSDKState & DriveSDKMethods {
                         onProgress(progress);
                         setState((prev) => ({
                             ...prev,
-                            downloadProgress: { ...prev.downloadProgress, [nodeId]: progress },
+                            downloadProgress: { ...prev.downloadProgress, [nodeUid]: progress },
                         }));
                     }
                 });
@@ -356,7 +265,7 @@ export function useDriveSDK(): DriveSDKState & DriveSDKMethods {
                 // Clean up progress tracking
                 setState((prev) => {
                     const newProgress = { ...prev.downloadProgress };
-                    delete newProgress[nodeId];
+                    delete newProgress[nodeUid];
                     return { ...prev, downloadProgress: newProgress };
                 });
 
@@ -365,7 +274,7 @@ export function useDriveSDK(): DriveSDKState & DriveSDKMethods {
                 // Clean up progress tracking on error
                 setState((prev) => {
                     const newProgress = { ...prev.downloadProgress };
-                    delete newProgress[nodeId];
+                    delete newProgress[nodeUid];
                     return { ...prev, downloadProgress: newProgress };
                 });
 
@@ -373,24 +282,43 @@ export function useDriveSDK(): DriveSDKState & DriveSDKMethods {
                 throw error;
             }
         },
-        []
+        [drive, isGuest]
     );
 
     const uploadFile = useCallback(
-        async (folderId: string, file: File, onProgress?: (progress: number) => void): Promise<string> => {
-            const drive = driveClientRef.current;
-            if (!drive) {
-                throw new Error('Drive not initialized');
+        async (folderUid: string, file: File, onProgress?: (progress: number) => void): Promise<string> => {
+            // Prevent Drive API calls for guest users
+            if (isGuest) {
+                throw new Error('Drive is not available for guest users');
             }
 
             try {
-                console.log(`Starting upload of ${file.name} to folder ${folderId}`);
+                console.log(`Starting upload of ${file.name} to folder ${folderUid}`);
+
+                const { mimeTypePromise, thumbnailsPromise } = generateThumbnail(file, file.name, file.size);
+                const thumbnailsResult = await thumbnailsPromise;
+                const mediaInfo = thumbnailsResult.ok
+                    ? {
+                          duration: thumbnailsResult.result?.duration,
+                          width: thumbnailsResult.result?.width,
+                          height: thumbnailsResult.result?.height,
+                      }
+                    : undefined;
+                const metadata = {
+                    mediaType: await mimeTypePromise,
+                    expectedSize: file.size,
+                    additionalMetadata: {
+                        media: {
+                            width: mediaInfo?.width,
+                            height: mediaInfo?.height,
+                            duration: mediaInfo?.duration,
+                        },
+                    },
+                    modificationTime: new Date(file.lastModified),
+                };
 
                 // Get the file uploader
-                const uploader = await drive.getFileUploader(folderId, file.name, {
-                    mediaType: file.type,
-                    expectedSize: file.size,
-                });
+                const uploader = await drive.getFileUploader(folderUid, file.name, metadata);
 
                 // Create a ReadableStream from the file with progress tracking
                 const originalStream = file.stream();
@@ -410,9 +338,13 @@ export function useDriveSDK(): DriveSDKState & DriveSDKMethods {
                 });
 
                 const streamWithProgress = originalStream.pipeThrough(progressStream);
-
                 // Start the upload
-                const uploadController = await uploader.uploadFromStream(streamWithProgress, []);
+                const uploadController = await uploader.uploadFromStream(
+                    streamWithProgress,
+                    thumbnailsResult.ok && thumbnailsResult.result?.thumbnails
+                        ? thumbnailsResult.result?.thumbnails
+                        : []
+                );
 
                 // Wait for completion and get the node UID
                 const { nodeUid } = await uploadController.completion();
@@ -424,37 +356,102 @@ export function useDriveSDK(): DriveSDKState & DriveSDKMethods {
                 throw error;
             }
         },
-        []
+        [drive, isGuest]
     );
 
     const navigateToFolder = useCallback(
-        (folderId: string) => {
-            void browseFolderChildren(folderId);
+        (folderUid: string) => {
+            void browseFolderChildren(folderUid);
         },
         [browseFolderChildren]
     );
 
     const navigateUp = useCallback(() => {
-        if (state.currentFolder?.parentNodeId) {
-            void browseFolderChildren(state.currentFolder.parentNodeId);
+        if (state.currentFolder?.parentUid) {
+            void browseFolderChildren(state.currentFolder.parentUid);
         } else {
             void browseFolderChildren(); // Go to root
         }
     }, [state.currentFolder, browseFolderChildren]);
 
+    const subscribeToDriveEvents = useCallback(
+        async (callback: (event: DriveEvent) => Promise<void>): Promise<EventSubscription> => {
+            if (!drive) {
+                throw new Error('Drive not initialized');
+            }
+
+            console.log('[DriveSDK] Subscribing to drive events');
+            const subscription = await drive.subscribeToDriveEvents(callback);
+            console.log('[DriveSDK] Successfully subscribed to drive events');
+            return subscription;
+        },
+        [drive]
+    );
+
+    const createFolder = useCallback(
+        async (parentFolderUid: string, folderName: string): Promise<string> => {
+            // Prevent Drive API calls for guest users
+            if (isGuest) {
+                throw new Error('Drive is not available for guest users');
+            }
+
+            try {
+                console.log(`Creating folder "${folderName}" in parent ${parentFolderUid}`);
+                const result = await drive.createFolder(parentFolderUid, folderName);
+                const { node } = getNodeEntity(result);
+                console.log(`Folder created successfully, node UID: ${node.uid}`);
+                return node.uid;
+            } catch (error) {
+                console.error('Failed to create folder:', error);
+                throw error;
+            }
+        },
+        [drive, isGuest]
+    );
+
+    const subscribeToTreeEvents = useCallback(
+        async (treeEventScopeId: string, callback: (event: DriveEvent) => Promise<void>): Promise<EventSubscription> => {
+            if (!drive) {
+                throw new Error('Drive not initialized');
+            }
+
+            console.log('[DriveSDK] Subscribing to tree events for scope:', treeEventScopeId);
+            const subscription = await drive.subscribeToTreeEvents(treeEventScopeId, callback);
+            console.log('[DriveSDK] Successfully subscribed to tree events');
+            return subscription;
+        },
+        [drive]
+    );
+
     useEffect(() => {
-        if (!state.isInitialized && !state.isLoading && user) {
-            void initializeDriveSDK();
+        // Skip initialization for guest users
+        if (isGuest) {
+            return;
         }
-    }, [initializeDriveSDK, state.isInitialized, state.isLoading, user]);
+        if (!drive && !state.isLoading && !hasInitialized) {
+            hasInitialized = true;
+            const userPlan = isPaid(user) ? 'paid' : 'free';
+            setState((prev) => ({ ...prev, isLoading: true }));
+            initDrive({
+                appName: config.APP_NAME,
+                appVersion: config.APP_VERSION,
+                userPlan,
+                logging,
+            });
+        }
+    }, [initDrive, drive, state.isLoading, isGuest, user]);
 
     return {
         ...state,
+        isInitialized: !!drive,
         browseFolderChildren,
         downloadFile,
         uploadFile,
+        createFolder,
         navigateToFolder,
         navigateUp,
         getRootFolder,
+        subscribeToDriveEvents,
+        subscribeToTreeEvents,
     };
 }

@@ -1,6 +1,7 @@
 import isEqual from 'lodash/isEqual';
 
 import { computeSha256AsBase64 } from '../crypto';
+import { handleIndexedDBVersionDowngrade } from '../helpers/indexedDBVersionHandler';
 import type { IdMapEntry, LocalId, RemoteId, ResourceType } from '../remote/types';
 import type { SerializedConversationMap, SerializedMessageMap, SerializedSpaceMap } from '../types';
 import {
@@ -22,11 +23,18 @@ import { mapify } from '../util/collections';
 import { isNonNullable } from '../util/nullable';
 import { requestToPromise, withCursor } from './util';
 
+// Type aliases for backwards compatibility (assets are now attachments)
+type AssetId = AttachmentId;
+type SerializedAsset = SerializedAttachment;
+const cleanSerializedAsset = cleanSerializedAttachment;
+
 export const SPACE_STORE = 'spaces_v4';
 export const CONVERSATION_STORE = 'conversations_v4';
 export const MESSAGE_STORE = 'messages_v4';
 export const ATTACHMENT_STORE = 'attachments_v4';
+export const ASSET_STORE = 'assets_v1';
 export const REMOTE_ID_STORE = 'remote_ids_v4';
+export const FOUNDATION_SEARCH_STORE = 'foundation_search_v1';
 
 export const DB_BASE_NAME = 'LumoDB';
 export const DB_NAME_SALT = 'AT8hqCBf9sDXLeCNXbaWXD769XdpPDfk';
@@ -50,6 +58,12 @@ export enum AttachmentStoreFields {
     SpaceId = 'spaceId',
 }
 
+export enum FoundationSearchStoreFields {
+    BlobName = 'blobName',
+    BlobData = 'blobData',
+    LastUpdated = 'lastUpdated',
+}
+
 export enum RemoteIdStoreFields {
     Type = 'type',
     RemoteId = 'remoteId',
@@ -65,6 +79,10 @@ export enum MessageStoreIndexes {
 }
 
 export enum AttachmentStoreIndexes {
+    SpaceId = 'idx_spaceId',
+}
+
+export enum AssetStoreIndexes {
     SpaceId = 'idx_spaceId',
 }
 
@@ -295,12 +313,12 @@ class StoreOperations<T extends BaseResource> {
         }
     }
 
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    markAsSynced(snapshot: T, resourceType: ResourceType, tx?: IDBTransaction): Promise<boolean> {
+    async markAsSynced(snapshot: T, resourceType: ResourceType, tx?: IDBTransaction): Promise<boolean> {
         const id = snapshot.id;
         console.log(`Marking ${resourceType} ${id} as synced`);
-        return this.getTransaction('readwrite')
-            .then((tx) => this.getById(id, tx).then((objectInDb) => ({ tx, objectInDb })))
+        if (!tx) tx = await this.getTransaction('readwrite');
+        return this.getById(id, tx)
+            .then((objectInDb) => ({ tx, objectInDb }))
             .then(({ tx, objectInDb }): Promise<boolean> => {
                 if (!objectInDb) {
                     throw new Error(`Error while marking ${resourceType} as synced: ${id} does not exist in db`);
@@ -380,6 +398,19 @@ const storeConfigs = {
         ],
         cleanFunction: cleanSerializedAttachment,
     } satisfies StoreConfig<SerializedAttachment>,
+
+    asset: {
+        storeName: ASSET_STORE,
+        keyPath: AttachmentStoreFields.Id, // Assets use same ID structure
+        type: 'asset' satisfies ResourceType,
+        indexes: [
+            {
+                name: AssetStoreIndexes.SpaceId,
+                keyPath: AttachmentStoreFields.SpaceId,
+            },
+        ],
+        cleanFunction: cleanSerializedAsset,
+    } satisfies StoreConfig<SerializedAsset>,
 };
 
 export type UnsyncedMaps = {
@@ -395,6 +426,7 @@ export class DbApi {
     private readonly conversationStore: StoreOperations<SerializedConversation>;
     private readonly messageStore: StoreOperations<SerializedMessage>;
     private readonly attachmentStore: StoreOperations<SerializedAttachment>;
+    private readonly assetStore: StoreOperations<SerializedAsset>;
 
     constructor(userId: string | undefined) {
         this.db = this.openDb(userId);
@@ -404,6 +436,7 @@ export class DbApi {
         this.conversationStore = new StoreOperations(this.db, storeConfigs.conversation);
         this.messageStore = new StoreOperations(this.db, storeConfigs.message);
         this.attachmentStore = new StoreOperations(this.db, storeConfigs.attachment);
+        this.assetStore = new StoreOperations(this.db, storeConfigs.asset);
     }
 
     public newTransaction = async (storeName: string | string[], mode?: IDBTransactionMode) => {
@@ -484,6 +517,55 @@ export class DbApi {
 
     public deleteAttachment = async (id: AttachmentId, tx?: IDBTransaction) => {
         return this.attachmentStore.delete(id, tx);
+    };
+
+    // Asset operations
+    public addAsset = async (asset: SerializedAsset, { dirty }: { dirty: boolean }, tx?: IDBTransaction) => {
+        return this.assetStore.add(asset, { dirty }, tx);
+    };
+
+    public updateAsset = async (asset: SerializedAsset, { dirty }: { dirty: boolean }, tx?: IDBTransaction) => {
+        return this.assetStore.update(asset, { dirty }, tx);
+    };
+
+    public getAssetById = async (id: AssetId, tx?: IDBTransaction) => {
+        return this.assetStore.getById(id, tx);
+    };
+
+    public softDeleteAsset = async (id: AssetId, { dirty }: { dirty: boolean }, tx?: IDBTransaction): Promise<void> => {
+        tx ??= (await this.db).transaction(ASSET_STORE, 'readwrite');
+        const asset = await this.getAssetById(id, tx);
+        // If asset doesn't exist in IDB, it's already deleted or was never persisted - noop
+        if (!asset) {
+            console.log(`Asset ${id} not found in IDB, skipping soft delete`);
+            return;
+        }
+
+        // If already deleted, noop
+        if (asset.deleted === true) {
+            console.log(`Asset ${id} already marked as deleted, skipping soft delete`);
+            return;
+        }
+
+        // Keep only essential metadata from AssetPub and remove heavy fields
+        const { id: assetId, spaceId, uploadedAt, mimeType, rawBytes } = asset;
+        const updatedAsset = {
+            id: assetId,
+            spaceId,
+            uploadedAt,
+            mimeType,
+            rawBytes,
+            deleted: true,
+        } as SerializedAsset;
+        await this.updateAsset(updatedAsset, { dirty }, tx);
+    };
+
+    public deleteAsset = async (id: AssetId, tx?: IDBTransaction) => {
+        return this.assetStore.delete(id, tx);
+    };
+
+    public getAllAssets = async (tx?: IDBTransaction): Promise<SerializedAsset[]> => {
+        return this.assetStore.getAll(tx);
     };
 
     // Bulk operations
@@ -899,19 +981,26 @@ export class DbApi {
             const userAndSalt = `${userId}:${DB_NAME_SALT}`;
             const userHash = userId ? await computeSha256AsBase64(userAndSalt) : undefined;
             const dbName = userHash ? `${DB_BASE_NAME}_${userHash}` : DB_BASE_NAME;
-            const request = indexedDB.open(dbName, 8);
+            const dbVersion = 11;
+
+            // Handle version downgrade by deleting the database if needed
+            try {
+                await handleIndexedDBVersionDowngrade(dbName, dbVersion);
+            } catch (error) {
+                console.error('[LumoDB] Error handling version downgrade:', error);
+            }
+
+            const request = indexedDB.open(dbName, dbVersion);
             request.onupgradeneeded = async (event) => {
                 const db = (event.target as IDBOpenDBRequest).result;
                 const tx = (event.target as IDBOpenDBRequest).transaction;
 
                 // Initial DB setup (version 6)
                 if (event.oldVersion < 6) {
-                    // Create space store
                     if (!db.objectStoreNames.contains(SPACE_STORE)) {
                         void db.createObjectStore(SPACE_STORE, { keyPath: SpaceStoreFields.Id });
                     }
 
-                    // Create conversation store
                     if (!db.objectStoreNames.contains(CONVERSATION_STORE)) {
                         const conversationStore = db.createObjectStore(CONVERSATION_STORE, {
                             keyPath: ConversationStoreFields.Id,
@@ -921,7 +1010,6 @@ export class DbApi {
                         });
                     }
 
-                    // Create message store
                     if (!db.objectStoreNames.contains(MESSAGE_STORE)) {
                         const messageStore = db.createObjectStore(MESSAGE_STORE, { keyPath: MessageStoreFields.Id });
                         messageStore.createIndex(MessageStoreIndexes.ConversationId, ConversationStoreFields.Id, {
@@ -929,7 +1017,6 @@ export class DbApi {
                         });
                     }
 
-                    // Create local <-> remote ID store
                     if (!db.objectStoreNames.contains(REMOTE_ID_STORE)) {
                         const I = RemoteIdStoreIndexes;
                         const F = RemoteIdStoreFields;
@@ -966,6 +1053,38 @@ export class DbApi {
                         });
                     }
                 }
+
+                // Migration 8 -> 9
+                if (event.oldVersion < 9) {
+                    console.log('Upgrading IndexedDB from version', event.oldVersion, 'to 9 (adding assets store)');
+                    if (!db.objectStoreNames.contains(ASSET_STORE)) {
+                        const F = AttachmentStoreFields; // Assets use same fields structure
+                        const I = AssetStoreIndexes;
+                        const assetStore = db.createObjectStore(ASSET_STORE, { keyPath: F.Id });
+                        assetStore.createIndex(I.SpaceId, F.SpaceId, {
+                            unique: false,
+                        });
+                        console.log('Successfully created ASSET_STORE');
+                    }
+
+                    if (!db.objectStoreNames.contains(FOUNDATION_SEARCH_STORE)) {
+                        const F = FoundationSearchStoreFields;
+                        db.createObjectStore(FOUNDATION_SEARCH_STORE, {
+                            keyPath: F.BlobName,
+                        });
+                    }
+                }
+
+                // Migration 9 -> 10: ensure foundation_search exists for existing v9 DBs
+                if (event.oldVersion < 10) {
+                    if (!db.objectStoreNames.contains(FOUNDATION_SEARCH_STORE)) {
+                        const F = FoundationSearchStoreFields;
+                        db.createObjectStore(FOUNDATION_SEARCH_STORE, {
+                            keyPath: F.BlobName,
+                        });
+                        console.log('Successfully created FOUNDATION_SEARCH_STORE');
+                    }
+                }
             };
 
             request.onsuccess = () => {
@@ -999,5 +1118,117 @@ export class DbApi {
         const unsyncedAttachments = mapify(allAttachments.filter((a) => a.dirty === true));
 
         return { unsyncedMessages, unsyncedConversations, unsyncedSpaces, unsyncedAttachments };
+    };
+
+    // Foundation Search blob management
+    public saveSearchBlob = async (
+        blobName: string,
+        blobData: Uint8Array<ArrayBuffer> | string,
+        tx?: IDBTransaction
+    ): Promise<void> => {
+        tx ??= (await this.db).transaction([FOUNDATION_SEARCH_STORE], 'readwrite');
+        const store = tx.objectStore(FOUNDATION_SEARCH_STORE);
+
+        const blobEntry = {
+            blobName,
+            blobData,
+            lastUpdated: Date.now(),
+        };
+
+        await requestToPromise(store.put(blobEntry));
+    };
+
+    public loadSearchBlob = async (
+        blobName: string,
+        tx?: IDBTransaction
+    ): Promise<Uint8Array<ArrayBuffer> | string | null> => {
+        tx ??= (await this.db).transaction([FOUNDATION_SEARCH_STORE], 'readonly');
+        const store = tx.objectStore(FOUNDATION_SEARCH_STORE);
+
+        const result = await requestToPromise(store.get(blobName));
+        return result?.blobData || null;
+    };
+
+    public removeSearchBlob = async (blobName: string, tx?: IDBTransaction): Promise<void> => {
+        tx ??= (await this.db).transaction([FOUNDATION_SEARCH_STORE], 'readwrite');
+        const store = tx.objectStore(FOUNDATION_SEARCH_STORE);
+        await requestToPromise(store.delete(blobName));
+    };
+
+    public getAllSearchBlobs = async (tx?: IDBTransaction): Promise<Map<string, Uint8Array<ArrayBuffer>>> => {
+        tx ??= (await this.db).transaction([FOUNDATION_SEARCH_STORE], 'readonly');
+        const store = tx.objectStore(FOUNDATION_SEARCH_STORE);
+
+        const results = await requestToPromise(store.getAll());
+        const blobMap = new Map<string, Uint8Array<ArrayBuffer>>();
+
+        results.forEach((entry: any) => {
+            if (entry.blobName && entry.blobData) {
+                blobMap.set(entry.blobName, entry.blobData);
+            }
+        });
+
+        return blobMap;
+    };
+
+    public clearAllSearchBlobs = async (tx?: IDBTransaction): Promise<void> => {
+        const db = await this.db;
+        // Gracefully handle older DBs that don't have the foundation store yet
+        if (!db.objectStoreNames.contains(FOUNDATION_SEARCH_STORE)) {
+            return;
+        }
+
+        tx ??= db.transaction([FOUNDATION_SEARCH_STORE], 'readwrite');
+        const store = tx.objectStore(FOUNDATION_SEARCH_STORE);
+
+        await requestToPromise(store.clear());
+    };
+
+    public checkFoundationSearchStatus = async (): Promise<{
+        tableExists: boolean;
+        hasEntries: boolean;
+        entryCount: number;
+        totalBytes?: number;
+        isEnabled: boolean;
+    }> => {
+        try {
+            const db = await this.db;
+            const tableExists = db.objectStoreNames.contains(FOUNDATION_SEARCH_STORE);
+
+            if (!tableExists) {
+                return { tableExists: false, hasEntries: false, entryCount: 0, totalBytes: 0, isEnabled: true };
+            }
+
+            const tx = db.transaction([FOUNDATION_SEARCH_STORE], 'readonly');
+            const store = tx.objectStore(FOUNDATION_SEARCH_STORE);
+            const entries = await requestToPromise(store.getAll());
+            const count = entries.length;
+            const totalBytes = entries.reduce((acc: number, entry: any) => {
+                const data = entry?.blobData;
+                if (!data) return acc;
+                if (typeof data === 'string') {
+                    // base64 size approximation
+                    return acc + Math.floor(data.length * 0.75);
+                }
+                if (data instanceof Uint8Array) {
+                    return acc + data.byteLength;
+                }
+                if (typeof data.byteLength === 'number') {
+                    return acc + data.byteLength;
+                }
+                return acc;
+            }, 0);
+
+            return {
+                tableExists: true,
+                hasEntries: count > 0,
+                entryCount: count,
+                totalBytes,
+                isEnabled: true,
+            };
+        } catch (error) {
+            console.warn('Failed to check foundation search status:', error);
+            return { tableExists: false, hasEntries: false, entryCount: 0, totalBytes: 0, isEnabled: true };
+        }
     };
 }

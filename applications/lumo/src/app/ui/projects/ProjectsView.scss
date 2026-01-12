@@ -1,0 +1,172 @@
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
+
+.projects-view {
+	display: flex;
+	flex-direction: column;
+	block-size: 100%;
+	overflow: hidden;
+	background-color: var(--background-norm);
+}
+
+.projects-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-block-start: 32px;
+	gap: 12px;
+	max-inline-size: 900px;
+	margin-block: 0;
+	margin-inline: auto;
+	inline-size: 100%;
+
+	@include im.media('<=medium') {
+		padding: 32px;
+		max-inline-size: none;
+	}
+
+	@include im.media('<=small') {
+		padding-block: 16px 0;
+		padding-inline: 32px;
+		max-inline-size: none;
+	}
+}
+
+.projects-title {
+	font-size: 28px;
+	font-weight: 600;
+	margin: 0;
+	color: var(--text-norm);
+}
+
+.projects-content {
+	flex: 1;
+	overflow: hidden;
+	padding: 32px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+	gap: 32px;
+	min-block-size: 0;
+
+	@include im.media('<=small') {
+		padding: 20px;
+		gap: 24px;
+	}
+}
+
+.projects-grid-wrapper {
+	flex: 1;
+	overflow-y: auto;
+	inline-size: 100%;
+	max-inline-size: 900px;
+	min-block-size: 0;
+}
+
+.projects-grid {
+	display: grid;
+	margin-block-start: 2px;
+	grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+	gap: 16px;
+	max-inline-size: 900px;
+	inline-size: 100%;
+
+	@include im.media('<=small') {
+		grid-template-columns: 1fr;
+		gap: 12px;
+	}
+}
+
+.projects-grid--inspiration {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 12px;
+	max-inline-size: 900px;
+
+	@include im.media ('<=small') {
+		display: flex;
+		overflow-x: auto;
+		scroll-snap-type: x mandatory;
+		-webkit-overflow-scrolling: touch;
+		padding-block-end: 8px; // Space for scrollbar
+
+		> * {
+			flex: 0 0 auto;
+			inline-size: 260px;
+			scroll-snap-align: start;
+		}
+	}
+
+	@include im.media('<=small') {
+		display: none;
+	}
+}
+
+.projects-empty-state-wrapper {
+	flex: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-block-size: 0;
+	inline-size: 100%;
+	max-inline-size: 900px;
+}
+
+.projects-empty-state {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	padding-block: 40px;
+	padding-inline: 20px;
+	inline-size: 100%;
+}
+
+.projects-empty-icon {
+	inline-size: 200px;
+	block-size: 200px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-block-end: 24px;
+}
+
+.projects-empty-title {
+	font-size: 20px;
+	font-weight: 600;
+	color: var(--text-norm);
+	margin-block: 0 12px;
+	margin-inline: 0;
+}
+
+.projects-empty-description {
+	font-size: 14px;
+	color: var(--text-weak);
+	margin: 0;
+	max-inline-size: 400px;
+}
+
+.projects-inspiration-section {
+	inline-size: 100%;
+	max-inline-size: 900px;
+	padding-block-start: 32px;
+	flex-shrink: 0;
+	overflow-x: visible;
+
+	@include im.media('<=small') {
+		display: none;
+	}
+}
+
+.projects-inspiration-title {
+	font-size: 16px;
+	font-weight: 600;
+	color: var(--text-norm);
+	margin-block: 0 12px;
+	margin-inline: 0;
+}

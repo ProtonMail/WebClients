@@ -8,7 +8,9 @@ import { mimeToHuman } from '../../../util/filetypes';
 
 // Shared hook for file item data
 export const useFileItemData = (file: any, attachment?: Attachment) => {
-    const fullAttachment = useLumoSelector(selectAttachmentById(file.id)) || attachment;
+    // Find attachment from store, or use provided attachment
+    const attachmentFromStore = useLumoSelector(selectAttachmentById(file.id));
+    const fullAttachment = attachmentFromStore || attachment;
 
     const hasContent = fullAttachment?.markdown && fullAttachment.markdown.trim() !== '';
     const mimeTypeIcon = file.mimeType ?? fullAttachment?.mimeType ?? 'unknown';

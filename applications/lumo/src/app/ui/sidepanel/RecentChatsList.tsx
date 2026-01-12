@@ -8,13 +8,13 @@ import ChatDropdownMenu from './ChatDropdownMenu';
 interface ChatsListProps {
     conversations: Conversation[];
     selectedConversationId?: ConversationId;
-    disabled?: boolean; //used to disabled links for guest users
+    disabled?: boolean; //used to disabled links for guest users TODO: check if this is still true
     onItemClick?: () => void;
 }
 
-const RecentChatsList = ({ conversations, selectedConversationId, disabled = false, onItemClick }: ChatsListProps) => {
+const RecentChatsList = ({ conversations, selectedConversationId, onItemClick }: ChatsListProps) => {
     return (
-        <ul className="flex flex-column flex-nowrap gap-0.5 shrink-0 px-3 my-0">
+        <ul className="flex flex-column flex-nowrap gap-0.5 shrink-0 pl-1 my-0">
             {conversations.map((conversation) => {
                 const isSelected = selectedConversationId === conversation.id;
                 const title = conversation.title.trim() || c('collider_2025:Button').t`Untitled chat`;
@@ -24,24 +24,29 @@ const RecentChatsList = ({ conversations, selectedConversationId, disabled = fal
                         className={clsx(
                             'relative group-hover-hide-container group-hover-opacity-container flex items-center shrink-0',
                             'flex navigation-link w-full items-center flex-nowrap justify-space-between',
-                            'py-2 w-full px-2',
+                            'py-0 w-full pl-2 text-sm',
+                            'max-w-full w-custom',
                             isSelected && 'is-active'
                         )}
+                        style={{ '--w-custom': '95%' }}
                     >
                         <LumoLink
                             to={`/c/${conversation.id}`}
                             className={clsx(
-                                'flex flex-1 items-center ml-2',
+                                'absolute inset-0 pl-2',
+                                'flex items-center',
                                 'text-ellipsis hover:text-primary',
                                 isSelected && 'text-semibold'
                             )}
                             onClick={onItemClick}
                         >
-                            <span className="text-ellipsis" title={title}>
+                            <span className="text-ellipsis pr-8" title={title}>
                                 {title}
                             </span>
                         </LumoLink>
-                        <ChatDropdownMenu conversation={conversation} />
+                        <div className="relative z-1 ml-auto">
+                            <ChatDropdownMenu conversation={conversation} />
+                        </div>
                     </li>
                 );
             })}

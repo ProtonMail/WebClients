@@ -19,7 +19,7 @@ import {
     cleanSerializedMessage,
     getSpaceDek,
 } from '../../types';
-import { selectConversationById, selectMessageById, selectSpaceById } from '../selectors';
+import { selectConversationById, selectMessageById, selectRemoteIdFromLocal, selectSpaceById } from '../selectors';
 import { locallyRefreshAttachmentFromRemoteRequest } from '../slices/core/attachments';
 import { pullConversationRequest } from '../slices/core/conversations';
 import { addIdMapEntry } from '../slices/core/idmap';
@@ -49,7 +49,9 @@ export function* saveDirtyMessage(serializedMessage: SerializedMessage): SagaIte
     console.log('Saga triggered: saveDirtyMessage', serializedMessage);
 
     // Check if this message belongs to a ghost conversation - if so, skip saving to IndexedDB
-    const conversation: Conversation | undefined = yield select(selectConversationById(serializedMessage.conversationId));
+    const conversation: Conversation | undefined = yield select(
+        selectConversationById(serializedMessage.conversationId)
+    );
     if (conversation?.ghost) {
         console.log('saveDirtyMessage: Message belongs to ghost conversation, skipping IndexedDB persistence');
         return;
@@ -378,6 +380,23 @@ export function* refreshMessageFromRemote({ payload: remoteMessage }: { payload:
             `refreshMessageFromRemote: processing ${cleanRemote.attachments.length} shallow attachments for message ${localId}`
         );
         for (const shallowAttachment of cleanRemote.attachments) {
+            // Look up the remote IDs from the idmap (should already be populated by processPullSpacesPage)
+            const attachmentRemoteId: RemoteId | undefined = yield select(
+                selectRemoteIdFromLocal('attachment', shallowAttachment.id)
+            );
+            const spaceRemoteId: RemoteId | undefined = yield select(selectRemoteIdFromLocal('space', localSpaceId));
+
+            if (!attachmentRemoteId) {
+                console.warn(
+                    `refreshMessageFromRemote: attachment ${shallowAttachment.id} has no remote ID in idmap, skipping`
+                );
+                continue;
+            }
+            if (!spaceRemoteId) {
+                console.warn(`refreshMessageFromRemote: space ${localSpaceId} has no remote ID in idmap, skipping`);
+                continue;
+            }
+
             // Convert shallow attachment to RemoteAttachment format for locallyRefreshAttachmentFromRemoteRequest
             const remoteAttachment: RemoteAttachment = {
                 ...shallowAttachment,
@@ -386,8 +405,8 @@ export function* refreshMessageFromRemote({ payload: remoteMessage }: { payload:
                 uploadedAt: shallowAttachment.uploadedAt,
                 mimeType: shallowAttachment.mimeType,
                 rawBytes: shallowAttachment.rawBytes,
-                remoteId: shallowAttachment.id, // Use the attachment's local ID as remote ID for now
-                remoteSpaceId: localSpaceId, // Use the space ID
+                remoteId: attachmentRemoteId,
+                remoteSpaceId: spaceRemoteId,
                 deleted: false as const,
             };
             yield put(locallyRefreshAttachmentFromRemoteRequest(remoteAttachment));

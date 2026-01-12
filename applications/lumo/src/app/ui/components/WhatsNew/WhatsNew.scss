@@ -3,6 +3,11 @@
 		border-radius: var(--border-radius-lg);
 	}
 
+	// Override border-radius for feature point SVGs to show corners
+	.feature-point svg {
+		border-radius: 0;
+	}
+
 	.modal-two-header-title {
 		h1 {
 			font-family: Syne, Inter, system-ui, sans-serif !important;
@@ -12,5 +17,13 @@
 
 	p {
 		line-height: 1.5;
+	}
+
+	.feature-point {
+		line-height: 26px;
+	}
+
+	.background {
+		background: linear-gradient(71.11deg, #cfc7f9 5.69%, #f6f4fa 62.41%);
 	}
 }

@@ -1,0 +1,35 @@
+.project-limit-modal-content {
+    text-align: center;
+}
+
+.project-limit-modal-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.project-limit-features {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    text-align: left;
+    padding: 1rem;
+    background-color: var(--background-weak);
+    border-radius: var(--border-radius-md);
+}
+
+.project-limit-feature {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+
+    svg {
+        flex-shrink: 0;
+    }
+
+    span {
+        color: var(--text-norm);
+        font-size: 0.875rem;
+    }
+}
+
