@@ -4,6 +4,7 @@ import type { EditorRequiresClientMethods } from '@proton/docs-shared'
 import { useApplication } from '../../../ApplicationProvider'
 import { useActiveBreakpoint } from '@proton/components'
 import { useEffect, useRef } from 'react'
+import { useAppPlatform } from '../../../../Hooks/useAppPlatform'
 
 const { s } = createStringifier(strings)
 
@@ -17,16 +18,17 @@ export function EditingDisabledDialog({ clientInvoker }: EditingDisabledDialogPr
   const { viewportWidth } = useActiveBreakpoint()
   const canEdit = application.getRole().canEdit()
   const isSmallViewport = viewportWidth['<=small']
+  const appPlatform = useAppPlatform(clientInvoker)
 
   useEffect(() => {
-    if (canEdit && isSmallViewport && alertShown.current === false) {
+    if (appPlatform === 'web' && canEdit && isSmallViewport && alertShown.current === false) {
       alertShown.current = true
       clientInvoker.showGenericInfoModal({
         title: s('Screen too small for editing'),
         translatedMessage: s('Info'),
       })
     }
-  }, [canEdit, isSmallViewport, clientInvoker])
+  }, [appPlatform, canEdit, isSmallViewport, clientInvoker])
 
   return null
 }
