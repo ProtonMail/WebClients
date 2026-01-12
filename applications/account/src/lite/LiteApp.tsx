@@ -3,14 +3,12 @@ import { Fragment, useMemo, useState } from 'react';
 import { BrowserRouter, useLocation } from 'react-router-dom';
 
 import * as bootstrap from '@proton/account/bootstrap';
-import type { CreateNotificationOptions } from '@proton/components';
 import {
     AuthenticationProvider,
     CacheProvider,
     ConfigProvider,
     ErrorBoundary,
     ModalsProvider,
-    NotificationsHijack,
     NotificationsProvider,
     PreventLeaveProvider,
     RightToLeftProvider,
@@ -39,7 +37,8 @@ import Setup from './Setup';
 import broadcast, { MessageType } from './broadcast';
 import LiteLayout from './components/LiteLayout';
 import LiteLoaderPage from './components/LiteLoaderPage';
-import { SupportedActions, getApp } from './helper';
+import type { SupportedActions } from './helper';
+import { getApp } from './helper';
 
 const bootstrapApp = ({ appVersion, app }: { appVersion: string | null; app: ProductParam }) => {
     const defaultHeaders = appVersion ? getAppVersionHeader(appVersion) : undefined;
@@ -131,17 +130,6 @@ const App = () => {
         };
     }, [UID]);
 
-    const handleNotificationCreate = (options: CreateNotificationOptions) => {
-        const { type = 'success', text } = options;
-
-        if (typeof text === 'string') {
-            broadcast({
-                type: MessageType.NOTIFICATION,
-                payload: { type, text },
-            });
-        }
-    };
-
     const layout = (children: ReactNode, props?: any) => {
         return (
             <LiteLayout searchParams={searchParams} {...props}>
@@ -161,39 +149,31 @@ const App = () => {
                         <ThemeProvider appName={config.APP_NAME}>
                             <PreventLeaveProvider>
                                 <NotificationsProvider>
-                                    <NotificationsHijack
-                                        onCreate={
-                                            redirect || action === SupportedActions.SubscribeAccountLink
-                                                ? undefined
-                                                : handleNotificationCreate
-                                        }
-                                    >
-                                        <ModalsProvider>
-                                            <AuthenticationProvider store={authenticationValue}>
-                                                <CacheProvider cache={cache}>
-                                                    <ErrorBoundary big component={<StandardErrorPage big />}>
-                                                        {isLogout ? null : (
-                                                            <Setup
-                                                                api={api}
-                                                                UID={UID}
-                                                                onLogin={handleLogin}
+                                    <ModalsProvider>
+                                        <AuthenticationProvider store={authenticationValue}>
+                                            <CacheProvider cache={cache}>
+                                                <ErrorBoundary big component={<StandardErrorPage big />}>
+                                                    {isLogout ? null : (
+                                                        <Setup
+                                                            api={api}
+                                                            UID={UID}
+                                                            onLogin={handleLogin}
+                                                            loader={loader}
+                                                        >
+                                                            <MainContainer
+                                                                layout={layout}
                                                                 loader={loader}
-                                                            >
-                                                                <MainContainer
-                                                                    layout={layout}
-                                                                    loader={loader}
-                                                                    action={action}
-                                                                    redirect={redirect}
-                                                                    app={app}
-                                                                    searchParams={searchParams}
-                                                                />
-                                                            </Setup>
-                                                        )}
-                                                    </ErrorBoundary>
-                                                </CacheProvider>
-                                            </AuthenticationProvider>
-                                        </ModalsProvider>
-                                    </NotificationsHijack>
+                                                                action={action}
+                                                                redirect={redirect}
+                                                                app={app}
+                                                                searchParams={searchParams}
+                                                            />
+                                                        </Setup>
+                                                    )}
+                                                </ErrorBoundary>
+                                            </CacheProvider>
+                                        </AuthenticationProvider>
+                                    </ModalsProvider>
                                 </NotificationsProvider>
                             </PreventLeaveProvider>
                         </ThemeProvider>
