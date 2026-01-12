@@ -16,7 +16,6 @@ import SidebarItem from './SidebarItem';
 import SidebarLabelActions from './SidebarLabelActions';
 
 interface Props {
-    currentLabelID: string;
     folders: Folder[];
     folder: FolderWithSubFolders;
     level: number;
@@ -31,7 +30,6 @@ interface Props {
 }
 
 const SidebarFolder = ({
-    currentLabelID,
     folder,
     folders,
     level,
@@ -70,7 +68,6 @@ const SidebarFolder = ({
 
     return (
         <SidebarItem
-            currentLabelID={currentLabelID}
             labelID={folder.ID}
             isFolder
             text={folder.Name}

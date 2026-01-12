@@ -19,7 +19,6 @@ import SidebarItem from './SidebarItem';
 
 interface Props {
     counterMap: LocationCountMap;
-    currentLabelID: string;
     mailSettings: MailSettings;
     setFocusedItem: (id: string) => void;
     displayMoreItems: boolean;
@@ -52,7 +51,6 @@ type HandleDragOver = (elementId: MAILBOX_LABEL_IDS | typeof DND_MORE_FOLDER_ID)
 
 const MailSidebarSystemFolders = ({
     counterMap,
-    currentLabelID,
     mailSettings,
     setFocusedItem,
     showScheduled,
@@ -239,7 +237,6 @@ const MailSidebarSystemFolders = ({
                             onClick={(e) => e.stopPropagation()}
                         >
                             <SidebarItem
-                                currentLabelID={currentLabelID}
                                 labelID={element.labelID}
                                 unreadCount={locationCount.Unread}
                                 totalMessagesCount={locationCount.Total}
@@ -294,7 +291,6 @@ const MailSidebarSystemFolders = ({
                                   className={clsx([getDnDClasses(element.labelID, draggedElementId)])}
                               >
                                   <SidebarItem
-                                      currentLabelID={currentLabelID}
                                       labelID={element.labelID}
                                       unreadCount={locationCount.Unread}
                                       totalMessagesCount={locationCount.Total}

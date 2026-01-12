@@ -14,7 +14,6 @@ import type { MoveParams } from '../../hooks/actions/move/useMoveToFolder';
 import SidebarFolder from './SidebarFolder';
 
 interface Props {
-    currentLabelID: string;
     counterMap: LocationCountMap;
     folders: Folder[];
     loadingFolders: boolean;
@@ -26,7 +25,6 @@ interface Props {
 }
 
 const SidebarFolders = ({
-    currentLabelID,
     counterMap,
     folders,
     loadingFolders,
@@ -43,7 +41,6 @@ const SidebarFolders = ({
         acc.push(
             <SidebarFolder
                 key={folder.ID}
-                currentLabelID={currentLabelID}
                 folders={folders}
                 folder={folder}
                 level={level}

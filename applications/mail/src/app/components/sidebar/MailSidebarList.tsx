@@ -35,7 +35,6 @@ import SidebarFolders from './SidebarFolders';
 import SidebarLabels from './SidebarLabels';
 
 interface Props {
-    labelID: string;
     postItems: ReactNode;
     collapsed?: boolean;
     onClickExpandNav?: (sourceEvent: SOURCE_EVENT) => void;
@@ -43,7 +42,7 @@ interface Props {
 
 const formatFolderID = (folderID: string): string => `folder_expanded_state_${folderID}`;
 
-const MailSidebarList = ({ labelID: currentLabelID, postItems, collapsed = false, onClickExpandNav }: Props) => {
+const MailSidebarList = ({ postItems, collapsed = false, onClickExpandNav }: Props) => {
     const [user] = useUser();
     const [mailSettings] = useMailSettings();
     const [systemFolders] = useSystemFolders();
@@ -248,7 +247,6 @@ const MailSidebarList = ({ labelID: currentLabelID, postItems, collapsed = false
                 <SidebarList>
                     <MailSidebarSystemFolders
                         counterMap={counterMap}
-                        currentLabelID={currentLabelID}
                         mailSettings={mailSettings}
                         setFocusedItem={setFocusedItem}
                         displayMoreItems={displayMoreItems}
@@ -299,7 +297,6 @@ const MailSidebarList = ({ labelID: currentLabelID, postItems, collapsed = false
                             />
                             {displayFolders && (
                                 <SidebarFolders
-                                    currentLabelID={currentLabelID}
                                     counterMap={counterMap}
                                     folders={folders || []}
                                     loadingFolders={loadingFolders}
@@ -350,7 +347,6 @@ const MailSidebarList = ({ labelID: currentLabelID, postItems, collapsed = false
                             />
                             {displayLabels && (
                                 <SidebarLabels
-                                    currentLabelID={currentLabelID}
                                     counterMap={counterMap}
                                     labels={labels || []}
                                     updateFocusItem={updateFocusItem}

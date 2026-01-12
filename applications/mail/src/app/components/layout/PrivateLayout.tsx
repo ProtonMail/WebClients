@@ -23,10 +23,9 @@ const LazyInboxDesktopMailTop = lazy(() => import('@proton/components/containers
 
 interface Props {
     children: ReactNode;
-    labelID: string;
 }
 
-const PrivateLayout = ({ children, labelID }: Props, ref: Ref<HTMLDivElement>) => {
+const PrivateLayout = ({ children }: Props, ref: Ref<HTMLDivElement>) => {
     const location = useLocation();
     const dispatch = useMailDispatch();
     const onCompose = useOnCompose();
@@ -65,7 +64,7 @@ const PrivateLayout = ({ children, labelID }: Props, ref: Ref<HTMLDivElement>) =
     return (
         <PrivateAppContainer
             top={top}
-            sidebar={<MailSidebar labelID={labelID} />}
+            sidebar={<MailSidebar />}
             containerRef={ref}
             drawerApp={
                 <DrawerApp
