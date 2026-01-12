@@ -1,6 +1,5 @@
 import type { ReactNode } from 'react';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
@@ -45,7 +44,6 @@ interface Props {
 const formatFolderID = (folderID: string): string => `folder_expanded_state_${folderID}`;
 
 const MailSidebarList = ({ labelID: currentLabelID, postItems, collapsed = false, onClickExpandNav }: Props) => {
-    const location = useLocation();
     const [user] = useUser();
     const [mailSettings] = useMailSettings();
     const [systemFolders] = useSystemFolders();
@@ -251,7 +249,6 @@ const MailSidebarList = ({ labelID: currentLabelID, postItems, collapsed = false
                     <MailSidebarSystemFolders
                         counterMap={counterMap}
                         currentLabelID={currentLabelID}
-                        location={location}
                         mailSettings={mailSettings}
                         setFocusedItem={setFocusedItem}
                         displayMoreItems={displayMoreItems}
