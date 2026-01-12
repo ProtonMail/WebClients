@@ -396,7 +396,7 @@ const ExploreAppsListV2 = ({ onExplore, apps, subscription, localID }: Props) =>
                                         )}
                                     </AppIcon>
                                     {isNew && (
-                                        <span className="explore-app-new-badge absolute text-xs rounded-full px-2 py-1 color-norm text-semibold">
+                                        <span className="explore-app-new-badge absolute text-xs rounded-full px-2 py-1 text-semibold">
                                             {c('Info').t`New`}
                                         </span>
                                     )}
