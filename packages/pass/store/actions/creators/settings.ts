@@ -1,6 +1,8 @@
 import { createAction } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
+import type { PasswordTypeConfig } from '@proton/pass/lib/auth/utils';
+import { passwordTypeSwitch } from '@proton/pass/lib/auth/utils';
 import type { CriteriaMasks } from '@proton/pass/lib/settings/pause-list';
 import { withCache } from '@proton/pass/store/actions/enhancers/cache';
 import { withNotification } from '@proton/pass/store/actions/enhancers/notification';
@@ -50,34 +52,35 @@ export const updatePauseListItem = createAction('settings::pause-list::update', 
     pipe(withSettings, withCache)({ payload })
 );
 
-export const offlineToggle = requestActionsFactory<OfflineModeDTO, boolean, boolean>('offline::toggle')({
+export const offlineSetup = requestActionsFactory<OfflineModeDTO, PasswordTypeConfig, void>('offline::toggle')({
     intent: {
         prepare: (payload) =>
             withNotification({
                 loading: true,
-                text: payload.enabled ? c('Info').t`Enabling offline mode...` : c('Info').t`Disabling offline mode...`,
+                text: c('Info').t`Enabling offline mode...`,
                 type: 'info',
             })({ payload }),
     },
     success: {
-        prepare: (enabled) =>
+        prepare: (payload) =>
             pipe(
                 withCache,
                 withSettings,
                 withNotification({
-                    text: enabled
-                        ? c('Info').t`You can now use your ${BRAND_NAME} password to access ${PASS_SHORT_APP_NAME} offline`
-                        : c('Info').t`Offline support successfully disabled`,
                     type: 'info',
+                    text: passwordTypeSwitch(payload)({
+                        extra: c('Info').t`You can now use your extra password to access ${PASS_SHORT_APP_NAME} offline`,
+                        twoPwd: c('Info').t`You can now use your second password to access ${PASS_SHORT_APP_NAME} offline`,
+                        sso: c('Info').t`You can now use your backup password to access ${PASS_SHORT_APP_NAME} offline`,
+                        default: c('Info').t`You can now use your ${BRAND_NAME} password to access ${PASS_SHORT_APP_NAME} offline`,
+                    }),
                 })
-            )({ payload: enabled }),
+            )({ payload }),
     },
     failure: {
-        prepare: (error, enabled) =>
+        prepare: (error) =>
             withNotification({
-                text: enabled
-                    ? c('Info').t`Offline mode could not be enabled at the moment`
-                    : c('Info').t`Offline mode could not be disabled at the moment`,
+                text: c('Info').t`Offline mode could not be enabled at the moment`,
                 type: 'error',
                 error,
             })({ payload: null }),
