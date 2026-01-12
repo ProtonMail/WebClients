@@ -10,10 +10,12 @@ import type { PLANS } from '@proton/payments';
 import { getHasPlusPlan, getHasProPlan } from '@proton/payments';
 import { getHasBusinessProductPlan } from '@proton/payments/core/plan/helpers';
 import { getAvailableApps } from '@proton/shared/lib/apps/apps';
-import { getAppName, getAppShortName } from '@proton/shared/lib/apps/helper';
+import { getAppHref, getAppName, getAppShortName } from '@proton/shared/lib/apps/helper';
+import { getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, PRODUCT_BIT } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
+import { getShouldProcessLinkClick } from '@proton/shared/lib/helpers/dom';
 import { goToPlanOrAppNameText } from '@proton/shared/lib/i18n/ttag';
 import { getIsBYOEAccount, getIsExternalAccount } from '@proton/shared/lib/keys';
 import {
@@ -28,8 +30,32 @@ import {
 import clsx from '@proton/utils/clsx';
 
 import LumoLogoAnimated from './LumoLogoAnimated';
+import { useExploreAppContextMenu } from './useExploreAppContextMenu';
 
 import './ExploreAppsListV2.scss';
+
+/**
+ * Get the correct app href for explore apps
+ * VPN and Authenticator live on account.proton.me/{slug}/
+ */
+const getExploreAppHref = (path: string, appName: APP_NAMES, localID?: number) => {
+    if (appName === APPS.PROTONVPN_SETTINGS || appName === APPS.PROTONAUTHENTICATOR) {
+        const slug = getSlugFromApp(appName);
+        return getAppHref(`/${slug}${path}`, APPS.PROTONACCOUNT, localID);
+    }
+    return getAppHref(path, appName, localID);
+};
+
+/**
+ * Get the correct settings href for each app
+ * Pass has its own settings page, other apps use the account settings
+ */
+const getSettingsHref = (appName: APP_NAMES, localID?: number): string => {
+    if (appName === APPS.PROTONPASS) {
+        return getAppHref('/settings', APPS.PROTONPASS, localID);
+    }
+    return getAppHref(`/${getSlugFromApp(appName)}`, APPS.PROTONACCOUNT, localID);
+};
 
 interface App {
     name: APP_NAMES;
@@ -233,6 +259,7 @@ interface Props {
         subscribed: number;
         plan: PLANS | undefined;
     };
+    localID?: number;
 }
 
 const allBits =
@@ -292,9 +319,11 @@ const AppIcon = ({ children, appName }: { children: ReactNode; appName: APP_NAME
     );
 };
 
-const ExploreAppsListV2 = ({ onExplore, apps, subscription }: Props) => {
+const ExploreAppsListV2 = ({ onExplore, apps, subscription, localID }: Props) => {
     const [loading, withLoading] = useLoading();
     const [type, setType] = useState<APP_NAMES | null>(null);
+
+    const { contextMenu, onContextMenu } = useExploreAppContextMenu();
 
     let planName = getNameFromPlan(subscription.plan);
     if (hasBit(subscription.subscribed, allBits)) {
@@ -316,22 +345,33 @@ const ExploreAppsListV2 = ({ onExplore, apps, subscription }: Props) => {
                     const showLoader = type === appName && loading;
                     const paid = hasBit(subscription.subscribed, app.bit);
                     const isNew = app.isNew;
+                    const href = getExploreAppHref('/', appName, localID);
+                    const settingsHref = getSettingsHref(appName, localID);
                     return (
                         <li className="explore-apps-list-item" key={appName} style={{ '--animation-order': index }}>
-                            <button
-                                disabled={showLoader}
+                            <a
+                                href={href}
                                 data-testid={appName.replace('proton-', 'explore-')}
-                                onClick={() => {
+                                onClick={(event) => {
                                     if (loading) {
+                                        event.preventDefault();
                                         return;
                                     }
-                                    setType(appName);
-                                    void withLoading(onExplore(appName));
+                                    const target = event.currentTarget?.getAttribute('target') || '';
+                                    if (getShouldProcessLinkClick(event.nativeEvent, target)) {
+                                        event.preventDefault();
+                                        setType(appName);
+                                        void withLoading(onExplore(appName));
+                                        return;
+                                    }
+                                    // Otherwise let link (e.g. new tab) clicks fall through
                                 }}
+                                onContextMenu={(e) => onContextMenu(e, href, settingsHref)}
                                 aria-label={goToPlanOrAppNameText(getAppName(appName))}
                                 className={clsx(
                                     `explore-app explore-app-${appName}`,
-                                    'flex flex-column items-center flex-nowrap gap-1'
+                                    'flex flex-column items-center flex-nowrap gap-1 text-no-decoration text-center',
+                                    showLoader && 'pointer-events-none'
                                 )}
                                 style={app.style}
                             >
@@ -380,11 +420,12 @@ const ExploreAppsListV2 = ({ onExplore, apps, subscription }: Props) => {
                                         {description}
                                     </div>
                                 </div>
-                            </button>
+                            </a>
                         </li>
                     );
                 })}
             </ul>
+            {contextMenu}
         </nav>
     );
 };

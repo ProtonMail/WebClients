@@ -277,7 +277,7 @@ export const APPS_CONFIGURATION: { [key in APP_NAMES]: AppConfiguration } = {
         bareName: SHEETS_SHORT_APP_NAME,
         clientID: 'web-sheets',
         icon: 'brand-proton', // TODO: brand icon for Sheets
-        settingsSlug: 'sheets',
+        settingsSlug: 'docs', // Sheets doesn't have its own settings
         product: Product.Sheets,
     },
     [APPS.PROTONSHEETSEDITOR]: {
