@@ -1,7 +1,6 @@
 import type { NodeEntity, ProtonDriveClient } from '@proton/drive/index';
 import { NodeType, SDKEvent, getDrive, getDriveForPhotos } from '@proton/drive/index';
 
-import { TransferSignatureIssueStrategy } from '../../store';
 import fileSaver from '../../store/_downloads/fileSaver/fileSaver';
 import { bufferToStream } from '../../utils/stream';
 import { TransferCancel } from '../../utils/transfer';
@@ -22,8 +21,12 @@ import { getNodeStorageSize } from './utils/getNodeStorageSize';
 import { handleDownloadError } from './utils/handleError';
 import { hydrateAndCheckNodes, hydratePhotos } from './utils/hydrateAndCheckNodes';
 import { queueDownloadRequest } from './utils/queueDownloadRequest';
+import {
+    addAndWaitForManifestIssueDecision,
+    addAndWaitForMetadataIssueDecision,
+    detectMetadataSignatureIssue,
+} from './utils/signatureIssues';
 import { traverseNodeStructure } from './utils/traverseNodeStructure';
-import { waitForSignatureIssueDecision } from './utils/waitForUserDecision';
 
 const DEFAULT_MIME_TYPE = 'application/octet-stream';
 /**
@@ -63,22 +66,13 @@ export class DownloadManager {
         return DownloadManager.instance;
     }
 
-    resolveSignatureIssue(
-        item: DownloadItem,
-        issueName: string,
-        strategy: TransferSignatureIssueStrategy | IssueStatus,
-        applyAll?: boolean
-    ) {
+    resolveSignatureIssue(item: DownloadItem, issueName: string, decision: IssueStatus, applyAll?: boolean) {
         const { updateDownloadItem, updateSignatureIssueStatus } = useDownloadManagerStore.getState();
 
-        const resolution =
-            strategy === TransferSignatureIssueStrategy.Continue || IssueStatus.Approved
-                ? IssueStatus.Approved
-                : IssueStatus.Rejected;
         if (applyAll) {
-            updateDownloadItem(item.downloadId, { signatureIssueAllDecision: resolution });
+            updateDownloadItem(item.downloadId, { signatureIssueAllDecision: decision });
         }
-        updateSignatureIssueStatus(item.downloadId, issueName, resolution);
+        updateSignatureIssueStatus(item.downloadId, issueName, decision);
     }
 
     addListeners() {
@@ -221,7 +215,7 @@ export class DownloadManager {
     }
 
     private async startSingleFileDownload(node: NodeEntity, downloadId: string): Promise<void> {
-        const { updateDownloadItem, addSignatureIssue } = useDownloadManagerStore.getState();
+        const { updateDownloadItem } = useDownloadManagerStore.getState();
         const drive = getDownloadSdk(downloadId);
 
         const abortController = new AbortController();
@@ -278,16 +272,21 @@ export class DownloadManager {
             });
 
             try {
-                await controller.completion();
+                const metadataIssueLocation = detectMetadataSignatureIssue(node);
+                if (metadataIssueLocation !== undefined) {
+                    const decision = await addAndWaitForMetadataIssueDecision(downloadId, node, metadataIssueLocation);
+                    if (decision === IssueStatus.Approved) {
+                        await controller.completion();
+                    } else {
+                        // This is user cancellation
+                        void streamWriter.abort(new TransferCancel({ id: downloadId }));
+                    }
+                } else {
+                    await controller.completion();
+                }
             } catch (error) {
                 if (controller.isDownloadCompleteWithSignatureIssues()) {
-                    addSignatureIssue(downloadId, {
-                        name: node.name,
-                        nodeType: node.type,
-                        location: 'manifest',
-                        issueStatus: IssueStatus.Detected,
-                    });
-                    const decision = await waitForSignatureIssueDecision(downloadId, node.name);
+                    const decision = await addAndWaitForManifestIssueDecision(downloadId, node);
                     writerClosed = true;
                     if (decision === IssueStatus.Approved) {
                         void streamWriter.close();
@@ -371,7 +370,7 @@ export class DownloadManager {
                 entries: nodesQueue.iterator(),
                 onProgress: updateProgress,
                 scheduler: this.scheduler,
-                abortSignal: abortController.signal,
+                abortController,
                 parentPathByUid,
                 downloadId,
             });

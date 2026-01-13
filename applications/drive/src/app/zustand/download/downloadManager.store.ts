@@ -15,16 +15,6 @@ export enum BaseTransferStatus {
     Cancelled = 'cancelled',
 }
 
-type SignatureIssueLocation =
-    | 'passphrase'
-    | 'hash'
-    | 'name'
-    | 'xattrs'
-    | 'contentKeyPacket'
-    | 'blocks'
-    | 'thumbnail'
-    | 'manifest';
-
 export enum DownloadStatus {
     InProgress = BaseTransferStatus.InProgress,
     Failed = BaseTransferStatus.Failed,
@@ -54,7 +44,7 @@ export type SignatureIssue = {
     name: string;
     nodeType: NodeType;
     issueStatus: IssueStatus;
-    location: SignatureIssueLocation;
+    message: string;
 };
 
 export type DownloadItem = {
