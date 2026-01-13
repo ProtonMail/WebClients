@@ -37,6 +37,12 @@
       "Accept and view the item": [
         "Terima dan lihat item"
       ],
+      "Account": [
+        "Akun"
+      ],
+      "Account settings": [
+        "Pengaturan akun"
+      ],
       "Add": [
         "Tambah"
       ],
@@ -402,6 +408,9 @@
       ],
       "Lock ${ PASS_APP_NAME }": [
         "Kunci ${ PASS_APP_NAME }"
+      ],
+      "Lock extension": [
+        "Kunci ekstensi"
       ],
       "Make admin": [
         "Jadikan admin"
@@ -2415,9 +2424,6 @@
       "You may close this tab.": [
         "Anda dapat menutup tab ini."
       ],
-      "You may need to accept a permission prompt and may have to restart the application depending on your system.": [
-        "Tergantung dari sistem yang Anda gunakan, Anda mungkin akan perlu untuk menerima permintaan izin dan menyalakan ulang aplikasi."
-      ],
       "You may need to grant accessiblity permission to ${ PASS_APP_NAME }.": [
         "Anda mungkin akan perlu untuk memberikan izin aksesibilitas kepada ${ PASS_APP_NAME }."
       ],
@@ -2511,6 +2517,9 @@
       ],
       "${ months } month": [
         "${ months } bulan"
+      ],
+      "${ PASS_SHORT_APP_NAME } Monitor": [
+        "${ PASS_SHORT_APP_NAME } Monitor"
       ],
       "${ PASS_SHORT_APP_NAME } version": [
         "Versi ${ PASS_SHORT_APP_NAME }"
@@ -3022,6 +3031,9 @@
       "Language": [
         "Bahasa"
       ],
+      "Larger window": [
+        "Jendela yang lebih besar"
+      ],
       "Last 2 weeks": [
         "2 minggu yang lalu"
       ],
@@ -3372,6 +3384,9 @@
       ],
       "Server": [
         "Server"
+      ],
+      "Settings": [
+        "Pengaturan"
       ],
       "Share": [
         "Bagikan"

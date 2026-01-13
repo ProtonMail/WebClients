@@ -37,6 +37,12 @@
       "Accept and view the item": [
         "Annehmen und das Element anzeigen"
       ],
+      "Account": [
+        "Konto"
+      ],
+      "Account settings": [
+        "Konto-Einstellungen"
+      ],
       "Add": [
         "Hinzufügen"
       ],
@@ -402,6 +408,9 @@
       ],
       "Lock ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } sperren"
+      ],
+      "Lock extension": [
+        "Erweiterung sperren"
       ],
       "Make admin": [
         "Zum Administrator ändern"
@@ -1455,6 +1464,9 @@
       "Admin": [
         "Administrator"
       ],
+      "After confirming, you will need to accept a permission prompt for ${ PASS_APP_NAME }.": [
+        "Nach der Bestätigung musst du eine Berechtigungsaufforderung für ${ PASS_APP_NAME } akzeptieren."
+      ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Nachdem du deine Daten erfolgreich importiert hast, kannst du die CSV-Datei mit deinen Passwörtern zur Sicherheit löschen."
       ],
@@ -2271,6 +2283,9 @@
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Dieser Export ist unverschlüsselt und jeder, der Zugang zu deiner exportierten Datei hat, kann deine Passwörter sehen. Bitte lösche die Datei aus Sicherheitsgründen, wenn du sie nicht mehr benötigst."
       ],
+      "This feature is currently experimental on Linux. Please ensure your system is up-to-date.": [
+        "Diese Funktion ist unter Linux noch experimentell. Bitte stelle sicher, dass dein System auf dem neuesten Stand ist."
+      ],
       "This item is not currently shared with anyone. Invite people to share it with others.": [
         "Dieser Eintrag ist bisher für niemanden freigegeben. Lade Personen ein, ihn mit anderen zu teilen."
       ],
@@ -2461,9 +2476,6 @@
       "You may close this tab.": [
         "Du kannst diesen Tab schließen."
       ],
-      "You may need to accept a permission prompt and may have to restart the application depending on your system.": [
-        "Je nach System musst du eventuell eine Berechtigungsaufforderung akzeptieren und die Anwendung neu starten."
-      ],
       "You may need to grant accessiblity permission to ${ PASS_APP_NAME }.": [
         "Du musst eventuell ${ PASS_APP_NAME } die Bedienungshilfen-Berechtigung erteilen."
       ],
@@ -2567,6 +2579,9 @@
       "${ months } month": [
         "${ months } Monat",
         "${ months } Monate"
+      ],
+      "${ PASS_SHORT_APP_NAME } Monitor": [
+        "${ PASS_SHORT_APP_NAME } Monitor"
       ],
       "${ PASS_SHORT_APP_NAME } version": [
         "${ PASS_SHORT_APP_NAME } Version"
@@ -3082,6 +3097,9 @@
       "Language": [
         "Sprache"
       ],
+      "Larger window": [
+        "Größeres Fenster"
+      ],
       "Last 2 weeks": [
         "Letzte 2 Wochen"
       ],
@@ -3432,6 +3450,9 @@
       ],
       "Server": [
         "Server"
+      ],
+      "Settings": [
+        "Einstellungen"
       ],
       "Share": [
         "Teilen"
