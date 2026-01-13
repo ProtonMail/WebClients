@@ -30,7 +30,7 @@ export const useAutotypeShortcut = DESKTOP_BUILD
                       action &&
                       (evt.ctrlKey || evt.metaKey) &&
                       evt.shiftKey &&
-                      evt.key === 'v'
+                      evt.code === 'KeyV'
                   ) {
                       evt.preventDefault();
                       const autotypeProps = action.getAutotypeProps();
