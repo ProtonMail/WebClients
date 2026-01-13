@@ -17,7 +17,7 @@ export const SplitStorageLimitTopBanner = ({
     space: ReturnType<typeof getSpace>;
 }) => {
     const details = getCompleteSpaceDetails(space);
-    const upgrade = <StorageUpgradeCta />;
+    const upgrade = <StorageUpgradeCta key="storage-upgrade-cta" />;
 
     if (details.base.type === SpaceState.Danger && details.drive.type === SpaceState.Danger) {
         return (
