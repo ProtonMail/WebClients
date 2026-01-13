@@ -12,9 +12,8 @@ import { UploadStatus } from '@proton/drive/modules/upload';
 import { shortHumanSize } from '@proton/shared/lib/helpers/humanSize';
 
 import { useDownloadContainsDocumentsModal } from '../../../components/modals/DownloadContainsDocumentsModal';
-import { useSignatureIssueModal } from '../../../components/modals/SignatureIssueModal';
 import { DownloadManager } from '../../../managers/download/DownloadManager';
-import type { TransferSignatureIssueStrategy } from '../../../store';
+import { useSignatureIssueModal } from '../../../modals/SignatureIssueModal/SignatureIssueModal';
 import {
     BaseTransferStatus,
     IssueStatus,
@@ -128,15 +127,14 @@ export const TransferItem = ({ entry, onShare }: Props) => {
             dm.resolveSignatureIssue(item, issue.name, item?.signatureIssueAllDecision);
         } else {
             showSignatureIssueModal({
-                name: issue.name,
                 isFile: issue.nodeType === NodeType.File || issue.nodeType === NodeType.Photo,
                 downloadName: item.name,
-                signatureIssues: { [issue.location]: 0 },
-                apply: (strategy: TransferSignatureIssueStrategy, applyAll: boolean) => {
-                    dm.resolveSignatureIssue(item, issue.name, strategy, applyAll);
+                message: issue.message,
+                apply: (decision: IssueStatus, applyAll: boolean) => {
+                    dm.resolveSignatureIssue(item, issue.name, decision, applyAll);
                 },
                 cancelAll: () => {
-                    dm.resolveSignatureIssue(item, issue.name, IssueStatus.Rejected);
+                    dm.resolveSignatureIssue(item, issue.name, IssueStatus.Rejected, true);
                     cancelTransfer(entry);
                 },
             });

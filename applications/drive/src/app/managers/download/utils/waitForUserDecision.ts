@@ -3,7 +3,7 @@ import { downloadLogDebug } from './downloadLogger';
 
 const USER_DECISION_CHECK_TIMEOUT = 500;
 
-type UserDecision = IssueStatus.Approved | IssueStatus.Rejected;
+export type UserDecision = IssueStatus.Approved | IssueStatus.Rejected;
 
 export const waitForUnsupportedFileDecision = (downloadId: string, onSuccess: () => void): Promise<UserDecision> => {
     const { getQueueItem } = useDownloadManagerStore.getState();
