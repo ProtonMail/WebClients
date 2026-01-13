@@ -100,7 +100,8 @@ const attachmentsReducer = createReducer<AttachmentMap>(initialState, (builder) 
             console.log('Action triggered: deleteAttachmentsBySpaceId', action.payload);
             const spaceId = action.payload;
             Object.keys(state).forEach((attachmentId) => {
-                if (state[attachmentId].spaceId === spaceId) {
+                const attachment = state[attachmentId];
+                if (attachment && attachment.spaceId === spaceId) {
                     delete state[attachmentId];
                 }
             });
@@ -108,7 +109,9 @@ const attachmentsReducer = createReducer<AttachmentMap>(initialState, (builder) 
         .addCase(clearProvisionalAttachments, (state) => {
             console.log('Action triggered: clearProvisionalAttachments');
             // Remove all attachments that don't have a spaceId (provisional attachments)
-            const provisionalIds = Object.keys(state).filter((id) => !state[id].spaceId);
+            const provisionalIds = Object.entries(state)
+                .filter(([_, attachment]) => !attachment.spaceId)
+                .map(([id]) => id);
             provisionalIds.forEach((id) => {
                 delete state[id];
             });
