@@ -246,6 +246,11 @@ export const useLumoActions = ({
                     messageChain: messagesWithContext,
                     contextFilters,
                 },
+                projectContext: {
+                    isProject: !!space?.isProject,
+                    projectInstructions,
+                    allAttachments,
+                },
                 uiContext: {
                     enableExternalTools: isWebSearchButtonToggled && isLumoToolingEnabled,
                     navigateCallback,
@@ -258,10 +263,6 @@ export const useLumoActions = ({
                 retryData: {
                     lastUserMessage,
                 },
-                isProject: space?.isProject ?? false,
-                userId: user?.ID,
-                projectInstructions,
-                allAttachments,
             })
         );
     };
