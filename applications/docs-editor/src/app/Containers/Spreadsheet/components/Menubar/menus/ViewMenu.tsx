@@ -22,8 +22,29 @@ export function ViewMenu({ renderMenuButton, ...props }: ViewMenuProps) {
         <ShowSubmenu />
         <FreezeSubmenu />
         <UI.MenuSeparator />
+        <HiddenSheetsSubmenu />
+        <UI.MenuSeparator />
         <ZoomSubmenu />
       </UI.Menu>
+    </Ariakit.MenuProvider>
+  )
+}
+
+function HiddenSheetsSubmenu() {
+  const hiddenSheets = useUI((ui) => ui.sheets.hidden)
+  const showSheet = useUI.$.sheets.show
+  return (
+    <Ariakit.MenuProvider>
+      <UI.SubMenuButton leadingIconSlot={<UI.Icon legacyName="eye-slash" />} disabled={hiddenSheets.length === 0}>
+        {s('Hidden sheets')} {hiddenSheets.length > 0 ? `(${hiddenSheets.length})` : ''}
+      </UI.SubMenuButton>
+      <UI.SubMenu unmountOnHide>
+        {hiddenSheets.map((sheet) => (
+          <UI.MenuItem key={sheet.sheetId} onClick={() => showSheet(sheet.sheetId)}>
+            {s('Show')} <span className="font-bold">{sheet.title}</span>
+          </UI.MenuItem>
+        ))}
+      </UI.SubMenu>
     </Ariakit.MenuProvider>
   )
 }
@@ -178,5 +199,6 @@ function strings() {
     // translator: this is used in the context of two strings put together - (freeze) "Up to | row X" or (freeze) "up to | column X" (the | symbol is used to show the separation between the two strings), and it's separate because "row X" (or "column X") needs to be bold, the order of these two strings cannot be changed and they will be separated by spaces
     'Up to': c('sheets_2025:Spreadsheet editor menubar view menu (freeze submenu)').t`Up to`,
     Zoom: c('sheets_2025:Spreadsheet editor menubar view menu').t`Zoom`,
+    'Hidden sheets': c('sheets_2025:Spreadsheet editor menubar view menu (hidden sheets submenu)').t`Hidden sheets`,
   }
 }
