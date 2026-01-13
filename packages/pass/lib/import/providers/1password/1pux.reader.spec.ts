@@ -267,7 +267,7 @@ describe('Import 1password 1pux', () => {
         expect(item.content.fullName).toStrictEqual('');
         expect(item.content.email).toStrictEqual(':email:');
         expect(item.content.phoneNumber).toStrictEqual(':default-phone:');
-        expect(item.content.birthdate).toStrictEqual('12 Aug 1995');
+        expect(item.content.birthdate).toStrictEqual('Aug 12, 1995');
         expect(item.content.gender).toStrictEqual(':gender:');
         expect(item.content.organization).toStrictEqual(':company:');
         expect(item.content.streetAddress).toStrictEqual(':main-street:');

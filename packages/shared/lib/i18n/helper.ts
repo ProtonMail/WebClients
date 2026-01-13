@@ -43,8 +43,8 @@ export const getBrowserLanguageTags = (): string[] => {
  * If the first locale does not have a region and the second is a regional variant of the first, take it instead.
  */
 export const getBrowserLocale = () => {
-    const first = window.navigator?.languages?.[0];
-    const second = window.navigator?.languages?.[1];
+    const first = navigator?.languages?.[0];
+    const second = navigator?.languages?.[1];
 
     if (!/[_-]/.test(first) && /[_-]/.test(second) && getLanguageCode(first) === getLanguageCode(second)) {
         return second;

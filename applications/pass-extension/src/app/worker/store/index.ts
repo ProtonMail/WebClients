@@ -23,7 +23,7 @@ import { requestMiddlewareFactory } from '@proton/pass/store/request/middleware'
 import { rootSagaFactory } from '@proton/pass/store/sagas';
 import { EXTENSION_SAGAS } from '@proton/pass/store/sagas/extension';
 import { selectLocale } from '@proton/pass/store/selectors/settings';
-import { selectFeatureFlag } from '@proton/pass/store/selectors/user';
+import { selectFeatureFlag, selectUserSettings } from '@proton/pass/store/selectors/user';
 import type { RootSagaOptions } from '@proton/pass/store/types';
 import { PassFeature } from '@proton/pass/types/api/features';
 import { first } from '@proton/pass/utils/array/first';
@@ -124,7 +124,7 @@ export const options: RootSagaOptions = {
 
             ctx.service.telemetry?.start().catch(noop);
             ctx.service.b2bEvents?.start().catch(noop);
-            ctx.service.i18n.setLocale(selectLocale(state)).catch(noop);
+            ctx.service.i18n.setLocale(selectLocale(state), selectUserSettings(state)?.DateFormatOptions).catch(noop);
             WorkerMessageBroker.buffer.flush();
 
             const lockMode = authStore.getLockMode();

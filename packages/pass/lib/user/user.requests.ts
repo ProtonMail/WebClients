@@ -83,6 +83,11 @@ export const getUserData = async (): Promise<HydratedUserState> => {
             Email: { Status: userSettings.Email.Status },
             HighSecurity: userSettings.HighSecurity,
             Locale: userSettings.Locale,
+            DateFormatOptions: {
+                DateFormat: userSettings.DateFormat,
+                TimeFormat: userSettings.TimeFormat,
+                WeekStart: userSettings.WeekStart,
+            },
             News: userSettings.News,
             Password: { Mode: userSettings.Password.Mode },
             Telemetry: userSettings.Telemetry,

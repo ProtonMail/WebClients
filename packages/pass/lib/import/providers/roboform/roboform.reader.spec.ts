@@ -27,7 +27,7 @@ describe('Import Roboform csv', () => {
         const [primary, secondary] = payload.vaults;
         expect(payload.vaults.length).toEqual(2);
         expect(primary.name).toEqual('company services');
-        expect(secondary.name).toEqual('Import - 27 Apr 2023');
+        expect(secondary.name).toEqual('Import - Apr 27, 2023');
     });
 
     it('parses primary vault items correctly', async () => {
