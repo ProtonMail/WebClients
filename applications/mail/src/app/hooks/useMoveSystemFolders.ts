@@ -3,17 +3,15 @@ import { useEffect, useRef, useState } from 'react';
 import { useApi } from '@proton/components';
 import type { IconName } from '@proton/icons/types';
 import { useSystemFolders } from '@proton/mail';
+import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { orderSystemFolders, updateSystemFolders } from '@proton/shared/lib/api/labels';
 import type { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import type { MailSettings } from '@proton/shared/lib/interfaces';
 
 import { getSidebarNavItems, moveSystemFolders } from './useMoveSystemFolders.helpers';
 
 export interface UseMoveSystemFoldersProps {
-    showMoved: MailSettings['ShowMoved'];
     showScheduled: boolean;
     showSnoozed: boolean;
-    showAlmostAllMail: MailSettings['AlmostAllMail'];
     showSoftDeletedFolder: boolean;
 }
 
@@ -58,12 +56,12 @@ type UseSidebarElementsResponse = [
 ];
 
 const useMoveSystemFolders = ({
-    showMoved,
     showScheduled,
     showSnoozed,
-    showAlmostAllMail,
     showSoftDeletedFolder,
 }: UseMoveSystemFoldersProps): UseSidebarElementsResponse => {
+    const [{ ShowMoved, AlmostAllMail }] = useMailSettings();
+
     const api = useApi();
     const abortUpdateOrderCallRef = useRef<AbortController>(new AbortController());
     const [systemFoldersFromApi, loading] = useSystemFolders();
@@ -128,10 +126,10 @@ const useMoveSystemFolders = ({
                 .filter((item) => !!item.ID);
 
             const { orderedSystemFolders, unexpectedFolderIDs } = getSidebarNavItems(
-                showMoved,
+                ShowMoved,
                 showScheduled,
                 showSnoozed,
-                showAlmostAllMail,
+                AlmostAllMail,
                 showSoftDeletedFolder,
                 formattedLabels
             );
@@ -139,7 +137,7 @@ const useMoveSystemFolders = ({
             setSystemFolders(orderedSystemFolders);
             setUnexpectedSystemFolderIDs(unexpectedFolderIDs);
         }
-    }, [systemFoldersFromApi, showMoved, showSnoozed, showScheduled, showAlmostAllMail, showSoftDeletedFolder]);
+    }, [systemFoldersFromApi, ShowMoved, showSnoozed, showScheduled, AlmostAllMail, showSoftDeletedFolder]);
 
     return [visibleSystemFolders, moveItem, loading];
 };
