@@ -8,7 +8,7 @@ import { SafeItemIcon } from '@proton/pass/components/Layout/Icon/ItemIcon';
 import { useSelectItem } from '@proton/pass/components/Navigation/NavigationActions';
 import { isTrashed } from '@proton/pass/lib/items/item.predicates';
 import type { LoginItem } from '@proton/pass/types';
-import { formatEpoch } from '@proton/pass/utils/time/format';
+import { epochToDate } from '@proton/pass/utils/time/format';
 
 type Props = { item: LoginItem };
 
@@ -29,7 +29,7 @@ export const BreachUsageRow: FC<Props> = ({ item }) => {
                     <span className="text-ellipsis">{item.data.metadata.name}</span>
                 </div>
             </TableCell>
-            <TableCell className="text-ellipsis">{formatEpoch('MMM d, yyyy')(item.modifyTime)}</TableCell>
+            <TableCell className="text-ellipsis">{epochToDate(item.modifyTime)}</TableCell>
             <TableCell>
                 <div className="flex justify-end">
                     <Button pill size="small" shape="ghost" type="button" onClick={handleClick}>

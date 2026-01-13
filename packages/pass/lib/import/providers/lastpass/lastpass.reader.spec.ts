@@ -80,7 +80,7 @@ describe('LastPass CSV importer', () => {
         expect(vaults).toHaveLength(2);
         expect(vaults[0].name).toBe('company services');
         expect(vaults[0].items.length).toEqual(4);
-        expect(vaults[1].name).toBe('Import - 27 Apr 2023');
+        expect(vaults[1].name).toBe('Import - Apr 27, 2023');
         expect(vaults[1].items.length).toEqual(8);
     });
 

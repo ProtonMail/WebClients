@@ -9,7 +9,7 @@ import { UpsellRef } from '@proton/pass/constants';
 import { selectExtraFieldLimits } from '@proton/pass/store/selectors';
 import type { DeobfuscatedItemExtraField } from '@proton/pass/types';
 import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
-import { formatYYYYMMDD } from '@proton/pass/utils/time/format';
+import { formatISOYYYYMMDD, formatYYYYMMDD } from '@proton/pass/utils/time/format';
 
 import { OTPValueControl } from './OTPValueControl';
 import { UpgradeControl } from './UpgradeControl';
@@ -67,6 +67,7 @@ export const ExtraFieldsControl: FC<PropsWithChildren<ExtraFieldsControlProps>> 
                             icon={icon}
                             label={fieldName}
                             value={formatYYYYMMDD(data.timestamp)}
+                            clipboardValue={formatISOYYYYMMDD(data.timestamp)}
                             onCopy={onCopy}
                         />
                     );
