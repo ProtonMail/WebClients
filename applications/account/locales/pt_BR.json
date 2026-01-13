@@ -1056,11 +1056,17 @@
       "Open in ${ SHEETS_APP_NAME }": [
         "Abrir no ${ SHEETS_APP_NAME }"
       ],
+      "Open in new tab": [
+        "Abrir em nova aba"
+      ],
       "Open navigation": [
         "Abrir navegação"
       ],
       "Open recovery settings": [
         "Abrir configurações de recuperação"
+      ],
+      "Open settings": [
+        "Abrir configurações"
       ],
       "Opt out": [
         "Rejeitar"
@@ -2696,6 +2702,9 @@
       "Everything": [
         "Tudo"
       ],
+      "Failed to load OAuth": [
+        "Falha ao carregar o OAuth"
+      ],
       "Install migration app": [
         "Instalar aplicativo de migração"
       ],
@@ -2720,6 +2729,9 @@
       "Not started": [
         "Não iniciado"
       ],
+      "Required to create user accounts": [
+        "Obrigatório para criar contas de usuário"
+      ],
       "Select what you want to migrate, this will apply to all users whether they are created now or later. Migration will start after user accounts are created.": [
         "Selecione o que você deseja migrar, isso se aplicará a todos os usuários, sejam eles criados agora ou depois. A migração começará após a criação das contas de usuário."
       ],
@@ -2740,6 +2752,9 @@
       ],
       "Status": [
         "Status"
+      ],
+      "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Markeplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue. Learn more": [
+        "Para migrar os dados da sua organização, você precisa instalar o aplicativo Assistente de Migração do ${ BRAND_NAME } na Google Workspace Marketplace. Isso concederá permissão ao ${ BRAND_NAME } para copiar seus dados. Após a instalação, volte aqui para continuar. Saiba mais"
       ],
       "Transfer data from": [
         "Transferir dados de"
@@ -3268,6 +3283,9 @@
       ],
       "Open source": [
         "Código aberto"
+      ],
+      "Private video calls for the conversations that matter.": [
+        "Videochamadas privadas para as conversas importantes."
       ]
     },
     "collider_2025: Navigation": {
@@ -4464,6 +4482,11 @@
     "customer_support.feature.mail": {
       "For ${ MAIL_APP_NAME }": [
         "Para ${ MAIL_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.meet": {
+      "For ${ MEET_APP_NAME }": [
+        "Por ${ MEET_APP_NAME }"
       ]
     },
     "customer_support.feature.pass": {
@@ -7753,6 +7776,11 @@
         "${ BRAND_NAME }. Privacy by default."
       ]
     },
+    "Force upgrade safety review": {
+      "I understand that I will no longer be able to sign in to older versions of ${ BRAND_NAME } mobile apps.": [
+        "Eu entendo que não conseguirei mais fazer login em versões mais antigas dos aplicativos móveis ${ BRAND_NAME }."
+      ]
+    },
     "Free trial dekstop": {
       "web app": [
         "aplicativo para web"
@@ -8796,6 +8824,9 @@
       "**This will disable end-to-end encrypted email forwardings:** you can set them up again later.": [
         "**Isso desativará os encaminhamentos de e-mail criptografados de ponta a ponta:** você pode configurá-los novamente mais tarde."
       ],
+      "**Your recovery methods will be invalidated:** you can generate new recovery data later.": [
+        "**Seus métodos de recuperação serão invalidados:** você pode gerar novos dados de recuperação mais tarde."
+      ],
       "+ ${ invisibleCount } More": [
         "+ ${ invisibleCount } mais",
         "+ ${ invisibleCount } mais"
@@ -9093,6 +9124,9 @@
       "Auto-reply is always active on the days of the week you select, between the selected hours.": [
         "A resposta automática está sempre ativa nos dias da semana que você selecionar, entre as horas selecionadas."
       ],
+      "Automatically add Meet links to your calendar invitations when there is at least one invitee.": [
+        "Adicione automaticamente links do Meet aos seus convites de calendário quando houver pelo menos um convidado."
+      ],
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
         "Limpe automaticamente os e-mails movidos para a Lixeira e Spam há mais de 30 dias."
       ],
@@ -9233,6 +9267,9 @@
       ],
       "Continuing will connect your ${ BRAND_NAME } Account to ${ name }.": [
         "Continuar conectará sua conta da ${ BRAND_NAME } a ${ name }."
+      ],
+      "Control whether organization members can create vaults or require an administrator to create and share a vault with them.": [
+        "Controle se os membros da organização podem criar cofres ou exija que um administrador crie e compartilhe um cofre com eles."
       ],
       "Copied to clipboard": [
         "Copiado para a área de transferência"
@@ -9763,9 +9800,6 @@
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Se outro administrador alterou esta senha, você precisará perguntar a nova senha da organização."
-      ],
-      "If disabled, new organization members will require an admin to manually create the first vault for them (via sharing) so they can start to create items.": [
-        "Se desabilitado, novos membros da organização precisarão que um administrador crie manualmente o primeiro cofre para eles (por meio de compartilhamento) para que possam começar a criar itens."
       ],
       "If disabled, only administrators will be able to export data.": [
         "Se desabilitado, apenas os administradores poderão exportar os dados."
@@ -10724,6 +10758,9 @@
       ],
       "Snooze messages for later so they are top of your inbox when you want": [
         "Adie as mensagens para mais tarde para que elas estejam no topo da sua caixa de entrada quando você quiser"
+      ],
+      "Some ${ BRAND_NAME } apps may not support security keys yet. If you turn off authenticator app 2FA, you may not be able to sign in to those apps.": [
+        "Alguns aplicativos ${ BRAND_NAME } podem ainda não ter suporte para chaves de segurança. Se você desativar a A2F do aplicativo de autenticação, talvez não consiga iniciar sessão nesses aplicativos."
       ],
       "Some keys successfully reactivated": [
         "Algumas chaves foram reativadas"
@@ -13212,6 +13249,9 @@
       "New second password": [
         "Nova segunda senha"
       ],
+      "No (users cannot use the app until a vault is shared with them)": [
+        "Não (os usuários não podem usar o aplicativo até que um cofre seja compartilhado com eles)"
+      ],
       "No filter": [
         "Sem filtro"
       ],
@@ -13239,14 +13279,17 @@
       "Online privacy for your whole family": [
         "Privacidade online para toda sua família"
       ],
+      "Only a single personal vault can be created": [
+        "Somente leitura um cofre pessoal pode ser criado"
+      ],
       "Only available on ${ PASS_SHORT_APP_NAME } paid plans": [
         "Disponível apenas nos planos pagos do ${ PASS_SHORT_APP_NAME }"
       ],
-      "OpenVPN / IKEv2 password": [
-        "Senha OpenVPN / IKEv2"
+      "OpenVPN password": [
+        "Senha do OpenVPN"
       ],
-      "OpenVPN / IKEv2 username": [
-        "Nome de usuário OpenVPN / IKEv2"
+      "OpenVPN username": [
+        "Nome de usuário do OpenVPN"
       ],
       "Operating system": [
         "Sistema operacional"
@@ -13665,6 +13708,9 @@
       ],
       "Without attachment": [
         "Sem anexo"
+      ],
+      "Yes": [
+        "Sim"
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Sim, eu quero excluir permanentemente esta conta e todos os seus dados."
@@ -14339,6 +14385,111 @@
         "Você atingiu o número máximo de ${ MAX_CALENDAR_MEMBERS } membros."
       ]
     },
+    "meet_2025: Feature": {
+      "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
+        "${ MEET_APP_NAME }: Videoconferência confidencial para as conversas importantes"
+      ],
+      "${ n } active meeting at a time": [
+        "${ n } reunião ativa por vez",
+        "${ n } reuniões ativas por vez"
+      ],
+      "24 hours per meeting": [
+        "24 horas por reunião"
+      ],
+      "60 minutes per meeting": [
+        "60 minutos por reunião"
+      ],
+      "Appointment scheduling": [
+        "Agendamento de compromissos"
+      ],
+      "Browser, mobile, and desktop apps": [
+        "Aplicativos para navegadores, dispositivos móveis e computadores"
+      ],
+      "Built-in chat": [
+        "Bate-papo integrado"
+      ],
+      "End-to-end encrypted screen sharing and ephemeral in-call chat": [
+        "Compartilhamento de tela com criptografia de ponta a ponta e chat efêmero durante a chamada"
+      ],
+      "Meeting recording (coming soon)": [
+        "Gravação da reunião (em breve)"
+      ],
+      "One active meeting at a time": [
+        "Uma reunião ativa por vez"
+      ],
+      "Screen-sharing": [
+        "Compartilhamento de tela"
+      ],
+      "Unlimited meetings per day": [
+        "Reuniões ilimitadas por dia"
+      ],
+      "Up to ${ n } meeting per day": [
+        "Até ${ n } reunião por dia",
+        "Até ${ n } reuniões por dia"
+      ],
+      "Up to ${ n } participant": [
+        "Até ${ n } participante",
+        "Até ${ n } participantes"
+      ]
+    },
+    "meet_2025: Info": {
+      "100 ${ BRAND_NAME } email addresses": [
+        "100 endereços de e-mail da ${ BRAND_NAME }"
+      ],
+      "Cloud storage and file sharing": [
+        "Armazenamento em nuvem e compartilhamento de arquivos"
+      ],
+      "Data never used for AI training": [
+        "Os dados nunca são usados para treinamento de IA"
+      ],
+      "Data retention policies": [
+        "Políticas de retenção de dados"
+      ],
+      "Document & spreadsheet editor": [
+        "Editor de documentos e planilhas"
+      ],
+      "Email writing assistant": [
+        "Assistente de escrita de e-mail"
+      ],
+      "Everything from ${ title }, plus...": [
+        "Tudo do ${ title }, mais ..."
+      ],
+      "Everything in Meet Professional, plus:": [
+        "Tudo no Meet Professional, mais:"
+      ],
+      "Open source": [
+        "Código aberto"
+      ],
+      "Password manager with team vaults": [
+        "Gerenciador de senhas com cofres para equipes"
+      ],
+      "Private AI Chat (${ LUMO_SHORT_APP_NAME })": [
+        "Bate-papo de IA Privada (${ LUMO_SHORT_APP_NAME })"
+      ],
+      "Private and unlimited AI chat (${ LUMO_SHORT_APP_NAME })": [
+        "Bate-papo de IA privado e ilimitado (${ LUMO_SHORT_APP_NAME })"
+      ],
+      "Private video calls for the conversations that matter": [
+        "Videochamadas privadas para as conversas importantes"
+      ],
+      "Secure calendar": [
+        "Calendário seguro"
+      ],
+      "Strict no-logs policy": [
+        "Política rigorosa contra registros"
+      ],
+      "Video meetings, ${ PAID_MAX_PARTICIPANTS } participants": [
+        "Reuniões por vídeo, ${ PAID_MAX_PARTICIPANTS } participantes"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN com bloqueador de anúncios e proteção contra malware"
+      ]
+    },
+    "meet_signup_2025: title": {
+      "For businesses": [
+        "Para empresas"
+      ]
+    },
     "Member action": {
       "Activate user": [
         "Ativar usuário"
@@ -14504,6 +14655,21 @@
       ],
       "Euro": [
         "Euro"
+      ],
+      "Hong Kong dollar": [
+        "Dólar de Hong Kong"
+      ],
+      "Japanese yen": [
+        "Iene Japonês"
+      ],
+      "Polish złoty": [
+        "Złoty polonês"
+      ],
+      "Singapore dollar": [
+        "Dólar de Singapura"
+      ],
+      "South Korean won": [
+        "Won sul-coreano"
       ],
       "Swiss franc": [
         "Franco suíço"
@@ -15884,8 +16050,8 @@
       "Number of records exceeds the download limit of 10000": [
         "O número de registros excede o limite de download de 10.000"
       ],
-      "OpenVPN / IKEv2 credentials regenerated": [
-        "Credenciais OpenVPN / IKEv2 regeneradas"
+      "OpenVPN credentials regenerated": [
+        "Credenciais OpenVPN regeneradas"
       ],
       "Reminder has been sent": [
         "O lembrete foi enviado"
@@ -17741,6 +17907,16 @@
         "Faça upgrade para ${ upsellPlanTitle }"
       ]
     },
+    "PQC account key generation": {
+      "Couldn’t generate keys. To activate post-quantum protection, you’ll need to generate your new encryption keys manually.\n\n${ settingsLink } and select 'Generate key' for your account and for each address.": [
+        "Não foi possível gerar as chaves. Para ativar a proteção pós-quântica, você precisará gerar suas novas chaves de criptografia manualmente.\n\n${ settingsLink } e selecione 'Gerar chave' para sua conta e para cada endereço."
+      ]
+    },
+    "PQC adress key generation": {
+      "Couldn’t generate address keys. To activate post-quantum protection, you’ll need to generate your new encryption keys manually.\n\nGo to ${ settingsLink } and select 'Generate key' for each address.": [
+        "Não foi possível gerar chaves de endereço. Para ativar a proteção pós-quântica, você precisará gerar suas novas chaves de criptografia manualmente.\n\nAcesse ${ settingsLink } e selecione 'Gerar chave' para cada endereço."
+      ]
+    },
     "PQC compatibility warning": {
       "**You must update all ${ BRAND_NAME } mobile apps**: your new keys won't work on older app versions.": [
         "**Você deve atualizar todos os aplicativos móveis ${ BRAND_NAME }**: suas novas chaves não funcionarão em versões mais antigas do aplicativo."
@@ -17767,6 +17943,9 @@
       "Go to ${ encryptionAndKeysSettingsTitle }": [
         "Vá para ${ encryptionAndKeysSettingsTitle }"
       ],
+      "Please try again. If that doesn’t work, contact our customer support team.": [
+        "Tente novamente. Se não funcionar, entre em contato com nossa equipe de suporte ao cliente."
+      ],
       "Post-quantum protection": [
         "Proteção pós-quântica"
       ],
@@ -17783,6 +17962,9 @@
       ]
     },
     "pqc-optin: Info": {
+      "Don't forget to generate new recovery data.": [
+        "Não se esqueça de gerar novos dados de recuperação."
+      ],
       "Post-quantum protection is enabled.": [
         "Proteção pós-quântica está ativada."
       ]
@@ -17796,11 +17978,6 @@
       ],
       "Opting into post-quantum protection": [
         "Optando pela proteção pós-quântica"
-      ]
-    },
-    "Price": {
-      "Free": [
-        "Gratuito"
       ]
     },
     "Primary timezone": {
@@ -19792,6 +19969,26 @@
       ],
       "Works on all devices": [
         "Funciona em todos os dispositivos"
+      ]
+    },
+    "Signup: Meet": {
+      "**Trusted by over 100 million** users and organizations": [
+        "**Confiado por mais de 100 milhões de usuários e organizações**"
+      ],
+      "Get ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
+        "Obtenha ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
+      ],
+      "Own a business?": [
+        "Você tem um negócio?"
+      ],
+      "Sign up, meet privately": [
+        "Inscreva-se, encontre-se em particular"
+      ],
+      "Start using ${ MEET_APP_NAME } now": [
+        "Começar a usar o ${ MEET_APP_NAME }"
+      ],
+      "Your account also includes access to ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME } free features.": [
+        "Sua conta também inclui acesso aos recursos gratuitos do ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } e ${ PASS_SHORT_APP_NAME }."
       ]
     },
     "signup_2024: Feature": {
@@ -22490,8 +22687,8 @@
       "Open pagination": [
         "Abrir paginação"
       ],
-      "OpenVPN / IKEv2": [
-        "OpenVPN / IKEv2"
+      "OpenVPN": [
+        "OpenVPN"
       ],
       "OpenVPN configuration files": [
         "Arquivos de configuração OpenVPN"

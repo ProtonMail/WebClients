@@ -2656,6 +2656,9 @@
       ],
       "High-speed chats and advanced AI features.": [
         "Discussions rapides et fonctionnalités d'IA avancées."
+      ],
+      "Private video calls for the conversations that matter.": [
+        "Appels vidéo privés pour les conversations qui comptent."
       ]
     },
     "color": {
@@ -3854,6 +3857,11 @@
         "Pour ${ MAIL_APP_NAME }"
       ]
     },
+    "customer_support.feature.meet": {
+      "For ${ MEET_APP_NAME }": [
+        "Pour ${ MEET_APP_NAME }"
+      ]
+    },
     "customer_support.feature.pass": {
       "For ${ PASS_APP_NAME }": [
         "Pour ${ PASS_APP_NAME }"
@@ -4838,6 +4846,9 @@
       "re-activate the previous key": [
         "réactiver la clé précédente"
       ],
+      "re-importing": [
+        "réimporter"
+      ],
       "Removed duplicate recipient: ${ recipents }": [
         "Destinataire dupliqué retiré : ${ recipents }",
         "Destinataires dupliqués retirés : ${ recipents }"
@@ -4945,6 +4956,9 @@
       "There has been an issue with content search. Default search has been used instead.": [
         "Il y a eu un problème avec la recherche dans le contenu. La recherche par défaut a été utilisée à la place."
       ],
+      "There was a problem decrypting your message. If the issue persists, contact our customer support.": [
+        "Il y a eu un problème lors du déchiffrement de votre message. Si le problème persiste, contactez notre service client."
+      ],
       "There was an error when exporting the contacts vCards": [
         "Une erreur s’est produite pendant l’exportation des vCards des contacts."
       ],
@@ -5031,11 +5045,14 @@
       "Your emails cannot be decrypted due to a recent password reset. If you remember your previous password, you can ${ reActivateKeyLink } in order to access your messages. ${ learnMoreLink }": [
         "Vos messages ne peuvent pas être déchiffrés suite à une récente réinitialisation du mot de passe. Si vous vous souvenez de votre ancien mot de passe, vous pouvez ${ reActivateKeyLink } pour accéder à vos messages. ${ learnMoreLink }"
       ],
-      "Your emails cannot be decrypted. This may be due to a password reset. ${ learnMoreLink }": [
-        "Vos messages ne peuvent pas être déchiffrés. Ceci peut être dû à une réinitialisation du mot de passe. ${ learnMoreLink }"
-      ],
       "Your import will not be processed.": [
         "Votre importation ne sera pas traitée."
+      ],
+      "Your message cannot be decrypted. If you deleted any of your address keys, try ${ reimportKeyLink } them. ${ learnMoreLink }": [
+        "Votre message n'a pas pu être déchiffré. Si vous avez supprimé l'une de vos clés d'adresse, essayez de les ${ reimportKeyLink }. ${ learnMoreLink }"
+      ],
+      "Your message cannot be decrypted. The key used to encrypt this message does not match any of the keys associated with your address. If you deleted any of your address keys, try ${ reimportKeyLink } them. ${ learnMoreLink }": [
+        "Votre message n'a pas pu être déchiffré. La clé utilisée pour chiffrer ce message ne correspond à aucune des clés associées à votre adresse. Si vous avez supprimé l'une de vos clés d'adresse, essayez de les ${ reimportKeyLink }. ${ learnMoreLink }"
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Votre recherche a donné trop de résultats. Nous vous invitons à limiter votre recherche et à réessayer."
@@ -8211,6 +8228,15 @@
       "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
         "Ce message sera déplacé dans le dossier Brouillons pour que vous puissiez le modifier. Vous devrez reprogrammer la date et l'heure d'envoi."
       ],
+      "This message will be purged on ${ value }": [
+        "Ce message sera purgé le ${ value }."
+      ],
+      "This message will be purged today at ${ value }": [
+        "Ce message sera purgé aujourd'hui à ${ value }."
+      ],
+      "This message will be purged tomorrow at ${ value }": [
+        "Ce message sera purgé demain à ${ value }."
+      ],
       "This message will be sent in the morning at ${ formattedTime }": [
         "Ce message sera envoyé dans la matinée à ${ formattedTime }."
       ],
@@ -9398,6 +9424,9 @@
       "Filter Name": [
         "Nom du filtre"
       ],
+      "Filters": [
+        "Filtres"
+      ],
       "First name": [
         "Prénom"
       ],
@@ -9445,6 +9474,9 @@
       ],
       "Go to Updates": [
         "Accéder aux mises à jour"
+      ],
+      "Has attachments": [
+        "Avec pièces jointes"
       ],
       "Help us improve categories by choosing the one that best fits this email. Thanks for your help!": [
         "Aidez-nous à améliorer les catégories en choisissant celle qui correspond le mieux à ce message. Merci pour votre aide !"
@@ -10332,6 +10364,53 @@
       ],
       "Trash": [
         "Déplacer vers la corbeille"
+      ]
+    },
+    "meet_2025: Feature": {
+      "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
+        "${ MEET_APP_NAME } : Conférence vidéo confidentielle pour les conversations qui comptent"
+      ],
+      "${ n } active meeting at a time": [
+        "${ n } réunion active à la fois",
+        "${ n } réunions actives simultanément"
+      ],
+      "24 hours per meeting": [
+        "24 heures par réunion"
+      ],
+      "60 minutes per meeting": [
+        "60 minutes par réunion"
+      ],
+      "Appointment scheduling": [
+        "Planification de rendez-vous"
+      ],
+      "Browser, mobile, and desktop apps": [
+        "Navigateur, l'application mobile et l'application de bureau"
+      ],
+      "Built-in chat": [
+        "Chat intégré"
+      ],
+      "End-to-end encrypted screen sharing and ephemeral in-call chat": [
+        "Partage d'écran chiffré de bout en bout et chat éphémère pendant les appels"
+      ],
+      "Meeting recording (coming soon)": [
+        "Enregistrement de réunion (à venir)"
+      ],
+      "One active meeting at a time": [
+        "Une réunion active à la fois"
+      ],
+      "Screen-sharing": [
+        "Partage d'écran"
+      ],
+      "Unlimited meetings per day": [
+        "Réunions illimitées par jour"
+      ],
+      "Up to ${ n } meeting per day": [
+        "Jusqu'à ${ n } réunion par jour",
+        "Jusqu'à ${ n } réunions par jour"
+      ],
+      "Up to ${ n } participant": [
+        "Jusqu'à ${ n } participant",
+        "Jusqu'à ${ n } participants"
       ]
     },
     "Message": {
@@ -12553,11 +12632,6 @@
       ],
       "Upgrade to ${ upsellPlanTitle }": [
         "Passez à ${ upsellPlanTitle }"
-      ]
-    },
-    "Price": {
-      "Free": [
-        "Gratuit"
       ]
     },
     "Progress bar description": {

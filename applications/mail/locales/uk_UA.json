@@ -4547,9 +4547,6 @@
       "Your emails cannot be decrypted due to a recent password reset. If you remember your previous password, you can ${ reActivateKeyLink } in order to access your messages. ${ learnMoreLink }": [
         "Ваші електронні листи неможливо розшифрувати через нещодавнє скидання пароля. Якщо ви пам'ятаєте свій попередній пароль, можете ${ reActivateKeyLink }, щоб отримати доступ до своїх повідомлень. ${ learnMoreLink }"
       ],
-      "Your emails cannot be decrypted. This may be due to a password reset. ${ learnMoreLink }": [
-        "Ваші електронні листи неможливо розшифрувати. Це може бути спричинено скиданням пароля. ${ learnMoreLink }"
-      ],
       "Your import will not be processed.": [
         "Ваш імпорт не буде оброблений."
       ],
@@ -11185,11 +11182,6 @@
     "plus_block": {
       "Upgrade to ${ upsellPlanTitle }": [
         "Покращити до ${ upsellPlanTitle }"
-      ]
-    },
-    "Price": {
-      "Free": [
-        "Безплатно"
       ]
     },
     "Progress bar description": {

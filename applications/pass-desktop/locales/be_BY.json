@@ -37,6 +37,12 @@
       "Accept and view the item": [
         "Прыняць і паглядзець элемент"
       ],
+      "Account": [
+        "Уліковы запіс"
+      ],
+      "Account settings": [
+        "Налады ўліковага запісу"
+      ],
       "Add": [
         "Дадаць"
       ],
@@ -417,6 +423,9 @@
       ],
       "Lock ${ PASS_APP_NAME }": [
         "Заблакіраваць ${ PASS_APP_NAME }"
+      ],
+      "Lock extension": [
+        "Заблакіраваць пашырэнне"
       ],
       "Make admin": [
         "Можа адміністраваць"
@@ -1569,6 +1578,9 @@
       "Admin": [
         "Адміністратар"
       ],
+      "After confirming, you will need to accept a permission prompt for ${ PASS_APP_NAME }.": [
+        "Пасля пацвярджэння вам неабходна будзе прыняць запыт дазволу для ${ PASS_APP_NAME }."
+      ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "У мэтах бяспекі вы можаце выдаліць файл CSV, які змяшчае вашы паролі пасля таго, як вашы даныя будуць паспяхова імпартаваны."
       ],
@@ -2016,12 +2028,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Перамяшчэнне ўсіх элементаў з \"${ payload.content.name }\""
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Перамяшчэнне элемента ў іншае сховішча прывядзе да сцірання яго бяспечных спасылак",
-        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак.",
-        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак.",
-        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак."
-      ],
       "Moving items": [
         "Перамяшчэнне элементаў"
       ],
@@ -2412,6 +2418,9 @@
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Гэта экспартаванне будзе незашыфравана, і кожны ў каго ёсць доступ да файла экспартаванага файла зможа ўбачыць вашы паролі. Для вашай бяспекі, мы раім адразу выдаліць яго пасля таго, як вы скарысталіся ім."
       ],
+      "This feature is currently experimental on Linux. Please ensure your system is up-to-date.": [
+        "Гэтая функцыя пакуль з'яўляецца эксперыментальнай у Linux. Пераканайцеся, што ваша сістэма знаходзіцца ў актуальным стане."
+      ],
       "This item is not currently shared with anyone. Invite people to share it with others.": [
         "Элемент у цяперашні час ні з кім не абагулены. Запрасіце ўдзельнікаў, каб абагуліць яго з іншымі."
       ],
@@ -2607,9 +2616,6 @@
       "You may close this tab.": [
         "Вы можаце закрыць гэту ўкладку."
       ],
-      "You may need to accept a permission prompt and may have to restart the application depending on your system.": [
-        "Магчыма, што спатрэбіцца прыняць запыт на дазвол і перазапусціць праграму ў залежнасці ад вашай сістэмы."
-      ],
       "You may need to grant accessiblity permission to ${ PASS_APP_NAME }.": [
         "Магчыма, што спатрэбіцца даць дазвол на доступ для ${ PASS_APP_NAME }."
       ],
@@ -2742,6 +2748,9 @@
       ],
       "${ PASS_APP_NAME } recognizes the websites and apps you use and autofills forms with your credentials for you on any browser or device. No need to copy and paste.": [
         "${ PASS_APP_NAME } распазнае вэб-сайты і праграмы, якія вы выкарыстоўваеце і аўтазапаўняе формы з вашымі ўліковымі данымі для вас у любым браўзеры і на любой прыладзе. Больш няма неабходнасці капіяваць і ўстаўляць гэтыя звесткі ўручную."
+      ],
+      "${ PASS_SHORT_APP_NAME } Monitor": [
+        "${ PASS_SHORT_APP_NAME } Monitor"
       ],
       "${ PASS_SHORT_APP_NAME } version": [
         "Версія ${ PASS_SHORT_APP_NAME }"
@@ -3082,6 +3091,9 @@
       "Enter email or username": [
         "Увядзіце электронную пошту або імя карыстальніка"
       ],
+      "Experimental": [
+        "Эксперыментальная"
+      ],
       "Expiration date": [
         "Тэрмін дзеяння"
       ],
@@ -3285,6 +3297,9 @@
       ],
       "Language": [
         "Мова"
+      ],
+      "Larger window": [
+        "Большае акно"
       ],
       "Last 2 weeks": [
         "Апошнія 2 тыдні"
@@ -3657,6 +3672,9 @@
       ],
       "Server": [
         "Сервер"
+      ],
+      "Settings": [
+        "Налады"
       ],
       "Share": [
         "Абагуліць"

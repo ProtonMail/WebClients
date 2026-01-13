@@ -31,6 +31,12 @@
       "Accept and view the item": [
         "接受并查看项目"
       ],
+      "Account": [
+        "账户"
+      ],
+      "Account settings": [
+        "账户设置"
+      ],
       "Add": [
         "添加"
       ],
@@ -372,6 +378,9 @@
       ],
       "Lock ${ PASS_APP_NAME }": [
         "锁定 ${ PASS_APP_NAME }"
+      ],
+      "Lock extension": [
+        "锁定扩展"
       ],
       "Make admin": [
         "设为管理员"
@@ -1864,9 +1873,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "正在从 \"${ payload.content.name }\" 移动所有项目"
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "将项目移动到另一个保险库会删除其安全链接。"
-      ],
       "Moving items": [
         "正在移动"
       ],
@@ -2494,6 +2500,9 @@
       ],
       "${ PASS_APP_NAME } recognizes the websites and apps you use and autofills forms with your credentials for you on any browser or device. No need to copy and paste.": [
         "${ PASS_APP_NAME } 能识别您使用的网站和应用程序，并在任何浏览器或设备上为您自动填写包含凭据的表单。无需复制和粘贴。"
+      ],
+      "${ PASS_SHORT_APP_NAME } Monitor": [
+        "${ PASS_SHORT_APP_NAME } Monitor"
       ],
       "${ PASS_SHORT_APP_NAME } version": [
         "${ PASS_SHORT_APP_NAME } 版本"
@@ -3394,6 +3403,9 @@
       ],
       "Server": [
         "服务器"
+      ],
+      "Settings": [
+        "设置"
       ],
       "Share": [
         "分享"

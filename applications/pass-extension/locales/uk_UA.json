@@ -4,6 +4,26 @@
     "language": "uk_UA"
   },
   "contexts": {
+    "Account Settings - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Виявлено ${ name } та ${ remainingCount } інші потенційні витоки даних. Увімкніть ${ DARK_WEB_MONITORING_NAME }, щоб переглянути подробиці та вжити заходів. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Виявлено ${ name } та ще 1 потенційний витік даних. Увімкніть ${ DARK_WEB_MONITORING_NAME }, щоб переглянути подробиці та вжити заходів. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Виявлено потенційний витік даних ${ name }. Увімкніть ${ DARK_WEB_MONITORING_NAME }, щоб переглянути подробиці та вжити заходів. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Виявлено потенційний витік даних з ${ name }. Увімкніть ${ DARK_WEB_MONITORING_NAME }, щоб переглянути подробиці та вжити заходів. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Виявлено потенційний витік даних з ${ name }. Увімкніть ${ DARK_WEB_MONITORING_NAME }, щоб переглянути подробиці. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Вашу інформацію знайдено принаймні в одному витоці даних. Увімкніть ${ DARK_WEB_MONITORING_NAME }, щоб переглянути подробиці та вжити заходів. ${ link }"
+      ]
+    },
     "Action": {
       "Accept": [
         "Схвалити"
@@ -46,6 +66,9 @@
       ],
       "Add username field": [
         "Додати поле імені користувача"
+      ],
+      "Admin panel": [
+        "Панель адміністратора"
       ],
       "Advanced": [
         "Розширені"
@@ -155,6 +178,9 @@
       "Create a ${ BRAND_NAME } Account": [
         "Створіть обліковий запис ${ BRAND_NAME }"
       ],
+      "Create a new vault": [
+        "Створити нове сховище"
+      ],
       "Create alias": [
         "Створити псевдонім"
       ],
@@ -257,6 +283,9 @@
       "Edit vault": [
         "Редагувати сховище"
       ],
+      "Enable ${ DARK_WEB_MONITORING_NAME }": [
+        "Увімкнути ${ DARK_WEB_MONITORING_NAME }"
+      ],
       "Enable this alias to receive emails sent to this alias": [
         "Увімкнути цей псевдонім для отримання електронних листів, надісланих на цей псевдонім"
       ],
@@ -290,11 +319,17 @@
       "Generating secure link...": [
         "Створення безпечного посилання..."
       ],
+      "Get mobile apps": [
+        "Отримати програму для мобільного пристрою"
+      ],
       "Get Pass Business": [
         "Отримати Pass Business"
       ],
       "Get Pass Plus": [
         "Отримати Pass Plus"
+      ],
+      "Get Started": [
+        "Розпочнімо"
       ],
       "Hide": [
         "Сховати"
@@ -338,6 +373,9 @@
       "Link expires after": [
         "Термін дії посилання закінчується після"
       ],
+      "Lock ${ PASS_APP_NAME }": [
+        "Заблокувати ${ PASS_APP_NAME }"
+      ],
       "Lock extension": [
         "Блокування розширення"
       ],
@@ -358,6 +396,9 @@
       ],
       "Manually sync your data": [
         "Синхронізація даних вручну"
+      ],
+      "Mark as resolved": [
+        "Позначити як вирішене"
       ],
       "Maximum views": [
         "Максимум переглядів"
@@ -406,6 +447,12 @@
       ],
       "Open navigation": [
         "Відкрити панель навігації"
+      ],
+      "Pass Monitor": [
+        "Pass Monitor"
+      ],
+      "Pause monitoring": [
+        "Призупинити моніторинг"
       ],
       "Pin item": [
         "Закріпити елемент"
@@ -475,6 +522,9 @@
       ],
       "Restrict number of views": [
         "Обмежити кількість переглядів"
+      ],
+      "Resume monitoring": [
+        "Відновити моніторинг"
       ],
       "Retry": [
         "Повторити спробу"
@@ -587,6 +637,9 @@
       "Try again": [
         "Спробувати знову"
       ],
+      "Try again.": [
+        "Спробувати знову."
+      ],
       "Unblock contact": [
         "Розблокувати контакт"
       ],
@@ -635,6 +688,9 @@
       "View app logs": [
         "Перегляд журналів програми"
       ],
+      "View details": [
+        "Переглянути подробиці"
+      ],
       "View history": [
         "Переглянути історію"
       ],
@@ -679,6 +735,9 @@
         "${ total } записів входу використовують той самий пароль",
         "${ total } записів входу використовують той самий пароль"
       ],
+      "2FA adds another layer of security to your logins. ${ PASS_APP_NAME } makes 2FA easier by storing and automatically autofilling your 2FA codes.": [
+        "2ЕП додає ще один рівень безпеки до ваших входів. ${ PASS_APP_NAME } спрощує 2ЕП, зберігаючи та автоматично заповнюючи ваші 2ЕП-коди."
+      ],
       "A checked box means the feature is disabled.": [
         "Відмічена галочка означає, що функція вимкнена."
       ],
@@ -691,11 +750,23 @@
       "Add the following TXT DNS record to your domain.": [
         "Додайте наступний TXT DNS-запис до вашого домену."
       ],
+      "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
+        "Псевдонім працює так само, як і адреса електронної пошти, але зменшує кількість спаму і зберігає вашу справжню адресу електронної пошти та особистість прихованою."
+      ],
+      "Change your passwords": [
+        "Змінення ваша пароля"
+      ],
+      "Create unique passwords": [
+        "Створити унікальні паролі"
+      ],
       "DKIM ${ WIKIPEDIA_LINK_DKIM } is an email authentication method designed to avoid email spoofing. Setting up DKIM is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
         "DKIM ${ WIKIPEDIA_LINK_DKIM } - це метод автентифікації електронної пошти, призначений для уникнення підміни електронних листів. Наполегливо рекомендуємо налаштувати DKIM, щоб зменшити ймовірність потрапляння ваших електронних листів до теки Спам одержувача."
       ],
       "DMARC ${ WIKIPEDIA_LINK_DMARC } is designed to protect the domain from unauthorized use, commonly known as email spoofing. Built around SPF and DKIM, a DMARC policy tells the receiving mail server what to do if neither of those authentication methods passes.": [
         "DMARC ${ WIKIPEDIA_LINK_DMARC } призначений для захисту домену від несанкціонованого використання, відомого як підміна електронної пошти. Побудована на основі SPF і DKIM, політика DMARC вказує поштовому серверу, який отримує пошту, що робити, якщо жоден з цих методів автентифікації не пройшов."
+      ],
+      "Get notified if your email, password or other personal data was leaked.": [
+        "Отримуйте сповіщення, якщо ваша електронна пошта, пароль або інші персональні дані були виточені."
       ],
       "If you are using a subdomain, e.g. ${ subdomainExample }, you need to use ${ dmarcExampleSubdomain } as the domain instead.": [
         "Якщо ви використовуєте субдомен, наприклад, ${ subdomainExample }, вам потрібно використовувати ${ dmarcExampleSubdomain } як домен."
@@ -706,8 +777,17 @@
       "If you are using Cloudflare, please make sure to not select the Proxy option.": [
         "Якщо ви використовуєте CloudFlare, переконайтеся, що ви не вибрали опцію Проксі."
       ],
+      "Keep your info more secure and private with these guides and tips.": [
+        "Тримайте вашу інформацію більш безпечно та приватно разом з даними посібниками та порадами."
+      ],
       "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.${ infoText }": [
         "Список доменів, для яких певні автоматичні функції ${ PASS_SHORT_APP_NAME } (Автозаповнення, Пропозиції, Автозбереження) не повинні виконуватися.${ infoText }"
+      ],
+      "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
+        "Наше передове рішення з безпеки на основі ШІ, призначене для користувачів, яким потрібен підвищений рівень захисту облікових записів. ${ learnMoreLink }"
+      ],
+      "Set up 2FA for more security": [
+        "Налаштуйте 2ЕП для більшої безпеки"
       ],
       "Some DNS registrar might require a full record path, in this case please use ${ domain } as domain value instead.": [
         "Деякі реєстратори DNS можуть вимагати повний шлях до запису, у цьому випадку використовуйте ${ domain } як значення домену."
@@ -717,6 +797,15 @@
       ],
       "SPF ${ WIKIPEDIA_LINK_SPF } is an email authentication method designed to detect forging sender addresses during the delivery of the email. Setting up SPF is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
         "SPF ${ WIKIPEDIA_LINK_SPF } - це метод автентифікації електронної пошти, призначений для виявлення підроблених адрес відправників під час доставлення листа. Наполегливо рекомендуємо налаштувати SPF, щоб зменшити ймовірність потрапляння ваших електронних листів до теки Спам одержувача."
+      ],
+      "Start monitoring for data breaches related to accounts created with your email address and your hide-my-email aliases.": [
+        "Start monitoring for data breaches related to accounts created with your email address and your hide-my-email aliases."
+      ],
+      "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
+        "Темна павутина - це прихована частина інтернету, де можна купувати та продавати викрадену особисту інформацію, наприклад, ідентифікаційні дані."
+      ],
+      "These items remain at risk": [
+        "Ці елементи залишаються в зоні ризику"
       ],
       "This account is vulnerable, visit the service and change your password.": [
         "Цей обліковий запис вразливий, відвідайте сервіс і змініть пароль."
@@ -729,6 +818,15 @@
       ],
       "Unlock advanced security features and detailed logs to safeguard your online presence.": [
         "Розблокуйте розширені функції безпеки та докладні журнали, щоб захистити свою присутність в мережі."
+      ],
+      "With ${ PASS_SHORT_APP_NAME } Monitor, stay ahead of threats by getting instant alerts if your credentials are compromised. Unlock advanced security features and detailed logs to safeguard your online presence.": [
+        "З відстеження ${ PASS_SHORT_APP_NAME } випереджайте загрози, отримуючи миттєві сповіщення, якщо ваші облікові дані будуть скомпрометовані. Розблокуйте розширені функції безпеки та детальні журнали, щоб захистити свою присутність в мережі."
+      ],
+      "Your email addresses were leaked in at least 1 data breach.": [
+        "Ваші адреси пошти були виявлені щонайменше в 1 випадку витоку даних."
+      ],
+      "Your personal info was leaked in a data breach of a third-party service.": [
+        "Ваша особиста інформація була виточена в результаті витоку даних стороннього сервісу."
       ]
     },
     "Email": {
@@ -1139,6 +1237,17 @@
         "Виникла проблема"
       ]
     },
+    "Feature": {
+      "Integrated 2FA authenticator": [
+        "Інтегрований автентифікатор 2FA"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Необмежена кількість псевдонімів Hide-my-email"
+      ],
+      "Vault sharing (up to ${ MAX_VAULT_MEMBERS } people)": [
+        "Спільне використання сховища (до ${ MAX_VAULT_MEMBERS } осіб)"
+      ]
+    },
     "file size format": {
       "byte": [
         "байт",
@@ -1294,6 +1403,12 @@
         "${ repliedEmailsCount } надіслано",
         "${ repliedEmailsCount } надіслано"
       ],
+      "${ row.breachCount } breach detected": [
+        "Виявлено ${ row.breachCount } витік",
+        "Виявлено ${ row.breachCount } витоки",
+        "Виявлено ${ row.breachCount } витоків",
+        "Виявлено ${ row.breachCount } витоків"
+      ],
       "${ trialDaysLeft } day left": [
         "Залишився ${ trialDaysLeft } день",
         "Залишилось ${ trialDaysLeft } дні",
@@ -1327,6 +1442,9 @@
       "Access your passwords on the go with our mobile apps.": [
         "Отримуйте доступ до своїх паролів на ходу за допомогою наших програм для мобільних пристроїв."
       ],
+      "Add your custom email address to monitor:": [
+        "Додайте власну адресу електронної пошти для моніторингу:"
+      ],
       "Admin": [
         "Адміністратор"
       ],
@@ -1342,11 +1460,17 @@
       "Aliases out of sync (${ aliasCount })": [
         "Псевдоніми не синхронізовані (${ aliasCount })"
       ],
+      "Aliases with custom domains are not monitored, please add them as a custom email for monitoring.": [
+        "Псевдоніми з власними доменами не відстежуються, будь ласка, додайте їх як власну пошту для відстеження."
+      ],
       "All aliases using the mailbox ${ emailJSX } will be also deleted.": [
         "Всі псевдоніми, що використовують поштову скриньку ${ emailJSX }, також буде видалено."
       ],
       "All breaches for this address were resolved": [
         "Всі витоки за цією адресою були усунені"
+      ],
+      "All current breaches will be marked as resolved. In case of future data breaches, you'll be notified.": [
+        "Всі поточні витоки будуть позначені як вирішені. У разі майбутніх витоків даних ви будете повідомлені."
       ],
       "All inactive secure links were removed": [
         "Всі неактивні безпечні посилання були вилучені"
@@ -1396,6 +1520,9 @@
       "Biometrics will be disabled and will need to be enabled again.": [
         "Біометрію буде вимкнено, і її потрібно буде ввімкнути знову."
       ],
+      "Breaches detected": [
+        "Виявлено витоки"
+      ],
       "Bring your own domain and you don't have to buy yet another email hosting solution.": [
         "Використовуйте власний домен, і вам не доведеться купувати ще одне рішення для хостингу електронної пошти."
       ],
@@ -1419,6 +1546,9 @@
       ],
       "Can view this item.": [
         "Можна переглянути цей елемент."
+      ],
+      "Change your password": [
+        "Змініть свій пароль"
       ],
       "Choose a saved passkey to sign-in to ${ domain }": [
         "Оберіть збережений ключ доступу для входу до ${ domain }"
@@ -1480,9 +1610,6 @@
       "Disabling offline mode...": [
         "Вимкнення автономного режиму..."
       ],
-      "Discover ${ PASS_APP_NAME } Youtube Video": [
-        "Перегляньте відео про ${ PASS_APP_NAME } на Youtube"
-      ],
       "DNS changes could take up to 24 hours to update.": [
         "Оновлення змін DNS може зайняти до 24 годин."
       ],
@@ -1500,6 +1627,9 @@
       ],
       "Editor": [
         "Редактор"
+      ],
+      "email": [
+        "е-пошта"
       ],
       "Email address successfully deleted from monitoring": [
         "Адресу пошти успішно видалено з відстеження"
@@ -1573,6 +1703,9 @@
       "Fill in the CSV with your data": [
         "Заповніть CSV своїми даними"
       ],
+      "finance": [
+        "фінанси"
+      ],
       "For easy access to your passwords and more.": [
         "Для легкого доступу до ваших паролів та більшого."
       ],
@@ -1605,6 +1738,12 @@
       ],
       "Here's how it works:": [
         "Ось як це працює:"
+      ],
+      "High Priority": [
+        "Високий пріоритет"
+      ],
+      "How does monitoring work?": [
+        "Як працює моніторинг?"
       ],
       "Import the CSV file below.": [
         "Імпортуйте файл CSV нижче."
@@ -1672,6 +1811,9 @@
       "Item successfully unpinned": [
         "Елемент успішно відкріплено"
       ],
+      "Latest breach on ${ formattedDate }": [
+        "Останній витік у ${ formattedDate }"
+      ],
       "Leaving vault...": [
         "Покидання сховища..."
       ],
@@ -1687,8 +1829,17 @@
       "Loading...": [
         "Завантаження..."
       ],
+      "Low Priority": [
+        "Низький пріоритет"
+      ],
       "me": [
         "я"
+      ],
+      "Medium Priority": [
+        "Середній пріоритет"
+      ],
+      "Monitor accounts": [
+        "Моніторинг облікових записів"
       ],
       "Monitoring settings successfully updated": [
         "Налаштування відстеження успішно оновлено"
@@ -1723,6 +1874,9 @@
       "Never": [
         "Ніколи"
       ],
+      "No breaches detected": [
+        "Витоків не виявлено"
+      ],
       "No identity item found": [
         "Не знайдено ідентифікаційного елемента"
       ],
@@ -1753,6 +1907,9 @@
       "Open the Extensions menu": [
         "Відкрити меню розширень"
       ],
+      "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Пріоритетом наших сповіщень є безпека. Якщо ви не впізнаєте жодної з порушених даних, ви можете сміливо ігнорувати це повідомлення."
+      ],
       "Owner": [
         "Власник"
       ],
@@ -1765,6 +1922,9 @@
       "Passkey sign-in": [
         "Вхід з ключем доступу"
       ],
+      "password": [
+        "пароль"
+      ],
       "Password copied": [
         "Пароль скопійовано"
       ],
@@ -1776,6 +1936,9 @@
         "Паролі старші за ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } тижні автоматично видаляються з історії.",
         "Паролі старші за ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } тижні автоматично видаляються з історії.",
         "Паролі старші за ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } тижні автоматично видаляються з історії."
+      ],
+      "Paused": [
+        "Зупинено"
       ],
       "Pending access to the shared data": [
         "Очікування доступу до спільних даних"
@@ -1978,6 +2141,9 @@
       "Successfully synced all vaults": [
         "Усі сховища успішно синхронізовано"
       ],
+      "Suggested": [
+        "Запропоновано"
+      ],
       "Switch to another vault or create an item in this vault": [
         "Перемкнутися на інше сховище або створити елемент в цьому сховищі"
       ],
@@ -1995,6 +2161,9 @@
       ],
       "The exported file will be encrypted using PGP and requires a strong passphrase.": [
         "Експортований файл буде зашифровано за допомогою PGP і вимагатиме надійної парольної фрази."
+      ],
+      "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
+        "На сторонньому сервісі стався витік даних. Інформація вашого облікового запису ${ BRAND_NAME } у безпеці та зашифрована. ${ learnMoreLink }"
       ],
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "Додатковий пароль буде потрібен для використання ${ PASS_APP_NAME }. Він діє як додатковий пароль до вашого пароля ${ BRAND_NAME }."
@@ -2113,6 +2282,9 @@
       "User's access successfully updated": [
         "Доступ користувача успішно оновлено"
       ],
+      "username": [
+        "ім'я користувача"
+      ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Сховище \"${ payload.content.name }\" успішно видалено"
       ],
@@ -2133,6 +2305,9 @@
       ],
       "Verification code": [
         "Код підтвердження"
+      ],
+      "Verification code sent.": [
+        "Код підтвердження відправлено."
       ],
       "Viewer": [
         "Користувач"
@@ -2206,6 +2381,18 @@
       "You will be logged out and need to log in again on all of your other devices.": [
         "Ви вийдете з системи, і вам потрібно буде увійти знову на всіх інших пристроях."
       ],
+      "You will be notified of data breaches for these email addresses.": [
+        "Вас буде сповіщено про витоки даних цих поштових адрес"
+      ],
+      "You will be notified of data breaches for this email address.": [
+        "Вас буде сповіщено про витоки даних цієї пошти."
+      ],
+      "You will no longer be notified of data breaches for these email addresses.": [
+        "Вас більше не будете сповіщено про витоки даних цих адрес пошти."
+      ],
+      "You will no longer be notified of data breaches for this email address.": [
+        "Вас більше не буде сповіщено про витоки даних цієї пошти."
+      ],
       "You will no longer have access to sharing, 2FA, credit card and other advanced features in ${ PASS_APP_NAME }": [
         "Ви більше не матимете доступу до спільного доступу, 2FA, кредитної картки та інших розширених функцій у ${ PASS_APP_NAME }"
       ],
@@ -2229,6 +2416,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "Ваші файли буде зашифровано, а потім збережено"
+      ],
+      "Your information was found on ${ displayedDate }": [
+        "Вашу інформацію було знайдено на ${ displayedDate }"
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Ваша організація вимагає, щоб ви захистили свій доступ до ${ PASS_APP_NAME }"
@@ -2309,6 +2499,12 @@
         "${ repliedCount } відповіді",
         "${ repliedCount } відповідей",
         "${ repliedCount } відповіді"
+      ],
+      "${ usageCount } login": [
+        "${ usageCount } запис входу",
+        "${ usageCount } записи входу",
+        "${ usageCount } записів входу",
+        "${ usageCount } записів входу"
       ],
       "${ years } year": [
         "${ years } рік",
@@ -2571,6 +2767,9 @@
       "Email (new alias)": [
         "Пошта (новий псевдонім)"
       ],
+      "Email address": [
+        "Адреса е-пошти"
+      ],
       "Email aliases": [
         "Псевдоніми електронної пошти"
       ],
@@ -2633,6 +2832,9 @@
       ],
       "Generic CSV": [
         "Загальний CSV"
+      ],
+      "Get Started": [
+        "Розпочати"
       ],
       "Grant": [
         "Дозволити"
@@ -2732,6 +2934,9 @@
       ],
       "Last name": [
         "Прізвище"
+      ],
+      "Last updated": [
+        "Востаннє оновлено"
       ],
       "Last week": [
         "Минулого тижня"
@@ -3048,6 +3253,9 @@
       "State or province": [
         "Область або район"
       ],
+      "Status": [
+        "Статус"
+      ],
       "Street address": [
         "Вулиця"
       ],
@@ -3138,6 +3346,9 @@
       "Use ${ PASS_APP_NAME } as your browser's default password manager": [
         "Використовуйте ${ PASS_APP_NAME } як менеджер паролів за замовчуванням у вашому браузері"
       ],
+      "Used in": [
+        "Використано в"
+      ],
       "Useful for permanent sharing": [
         "Корисно для постійного спільного доступу"
       ],
@@ -3152,6 +3363,9 @@
       ],
       "Vault ID": [
         "ID сховища"
+      ],
+      "Vaults": [
+        "Сховища"
       ],
       "View details": [
         "Переглянути подробиці"
@@ -3208,6 +3422,14 @@
     "Link": {
       "auto create rules ››": [
         "автоматичне створення правил ››"
+      ],
+      "Learn more": [
+        "Докладніше"
+      ]
+    },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "Увімкнути ${ reason }"
       ]
     },
     "Message": {
@@ -3225,6 +3447,19 @@
       ],
       "You selected ${ semiboldText } in this vault.": [
         "Ви вибрали ${ semiboldText } у цьому сховищі."
+      ]
+    },
+    "new_plans: feature": {
+      "Require 2FA for organization": [
+        "Вимагати двоетапну автентифікацію для організації"
+      ]
+    },
+    "Notification": {
+      "${ reason } has been disabled": [
+        "${ reason } вимкнено"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } увімкнено"
       ]
     },
     "Onboarding": {
@@ -3406,6 +3641,20 @@
         "Використовується на ${ url }"
       ]
     },
+    "Security Center - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Виявлено ${ name } та ${ remainingCount } інших потенційних витоків даних. Увімкніть ${ DARK_WEB_MONITORING_NAME }, щоб переглянути подробиці. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Виявлено ${ name } та ще 1 потенційний витік даних. Увімкніть ${ DARK_WEB_MONITORING_NAME }, щоб переглянути подробиці. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Виявлено потенційний витік даних ${ name }. Увімкніть ${ DARK_WEB_MONITORING_NAME }, щоб переглянути подробиці. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Вашу інформацію знайдено принаймні в одному витоці даних. Увімкніть ${ DARK_WEB_MONITORING_NAME }, щоб переглянути подробиці. ${ link }"
+      ]
+    },
     "sso": {
       "Approve or deny it now": [
         "Затвердити або відхилити це зараз"
@@ -3544,8 +3793,17 @@
       ]
     },
     "Title": {
+      "${ BRAND_NAME } addresses": [
+        "${ BRAND_NAME } адрес"
+      ],
       "${ PASS_APP_NAME } Settings": [
         "Налаштування ${ PASS_APP_NAME }"
+      ],
+      "${ PASS_SHORT_APP_NAME } Monitor": [
+        "${ PASS_SHORT_APP_NAME } Monitor"
+      ],
+      "Account protection": [
+        "Захист облікового запису"
       ],
       "Actions": [
         "Дії"
@@ -3577,6 +3835,15 @@
       "Blocked addresses": [
         "Заблоковані адреси"
       ],
+      "Breach detected": [
+        "Виявлено витік даних"
+      ],
+      "Breaches": [
+        "Порушення"
+      ],
+      "Breaches detected for": [
+        "Порушення виявлено для"
+      ],
       "Change your lock method": [
         "Змінити ваш метод блокування"
       ],
@@ -3607,8 +3874,17 @@
       "Current version": [
         "Поточна версія"
       ],
+      "Custom addresses": [
+        "Користувацькі адреси"
+      ],
       "Custom domains": [
         "Власні домени"
+      ],
+      "Custom email monitoring": [
+        "Користувацький моніторинг електронної пошти"
+      ],
+      "Custom emails": [
+        "Користувацькі електронні листи"
       ],
       "Default": [
         "За замовчуванням"
@@ -3664,6 +3940,9 @@
       "Enter your PIN": [
         "Введіть Ваш PIN"
       ],
+      "Excluded items": [
+        "Виключені елементи"
+      ],
       "Fill & copy password": [
         "Заповнення та копіювання пароля"
       ],
@@ -3682,6 +3961,9 @@
       "Hide my email": [
         "Hide-my-email"
       ],
+      "Hide-my-email aliases": [
+        "Псевдоніми Hide-my-email"
+      ],
       "History": [
         "Історія"
       ],
@@ -3693,6 +3975,9 @@
       ],
       "Import to vault(s)": [
         "Імпорт до сховища (сховищ)"
+      ],
+      "Inactive 2FA": [
+        "Неактивна 2FA"
       ],
       "Item": [
         "Елемент"
@@ -3709,6 +3994,9 @@
       "Leave vault?": [
         "Покинути сховище?"
       ],
+      "Loading breaches...": [
+        "Завантаження порушень..."
+      ],
       "Log in as...": [
         "Увійти як..."
       ],
@@ -3717,6 +4005,9 @@
       ],
       "Mailbox": [
         "Поштова скринька"
+      ],
+      "Mark as resolved?": [
+        "Позначити як вирішене?"
       ],
       "Member limit": [
         "Ліміт учасників"
@@ -3751,11 +4042,29 @@
       "MX record": [
         "MX запис"
       ],
+      "Next": [
+        "Далі"
+      ],
+      "No excluded items": [
+        "Немає виключених елементів"
+      ],
+      "No inactive 2FAs": [
+        "Немає неактивних 2FA"
+      ],
+      "No insecure passwords": [
+        "Немає ненадійних паролів"
+      ],
       "No items selected": [
         "Жоден елемент не вибрано"
       ],
+      "No reused passwords": [
+        "Немає повторно використовуваних паролів"
+      ],
       "No shared secure links": [
         "Немає поширених безпечних посилань"
+      ],
+      "Open pagination": [
+        "Показати нумерацію сторінок"
       ],
       "Our welcome gift to you": [
         "Наш вітальний подарунок для вас"
@@ -3765,6 +4074,12 @@
       ],
       "Password": [
         "Пароль"
+      ],
+      "Password Health": [
+        "Якість пароля"
+      ],
+      "Pause monitoring?": [
+        "Призупинити моніторинг?"
       ],
       "Pending access confirmation": [
         "Очікується підтвердження доступу"
@@ -3787,11 +4102,20 @@
         "Зверніть увагу, що після видалення псевдоніми не можна відновити.",
         "Зверніть увагу, що після видалення псевдоніми не можна відновити."
       ],
+      "Previous": [
+        "Назад"
+      ],
       "Random Prefix Generation": [
         "Генерація випадкових префіксів"
       ],
+      "Recommended actions": [
+        "Рекомендовані дії"
+      ],
       "Reject device?": [
         "Відхилити пристрій?"
+      ],
+      "Remove email address?": [
+        "Вилучити адресу електронної пошти"
       ],
       "Remove extra password": [
         "Видалення додаткового пароля"
@@ -3799,8 +4123,23 @@
       "Remove secure link?": [
         "Видалити безпечне посилання?"
       ],
+      "Resolved breaches": [
+        "Вирішені порушення"
+      ],
       "Restore this version?": [
         "Відновити цю версію?"
+      ],
+      "Resume monitoring?": [
+        "Відновити моніторинг?"
+      ],
+      "Reused ${ count } time": [
+        "Повторювався ${ count } раз",
+        "Повторювався ${ count } рази",
+        "Повторювався ${ count } разів",
+        "Повторювався ${ count } разів"
+      ],
+      "Reused passwords": [
+        "Повторювальні паролі"
       ],
       "Review and share": [
         "Перегляд і спільний доступ"
@@ -3817,8 +4156,14 @@
       "Set extra password": [
         "Встановлення додаткового пароля"
       ],
+      "Set up 2FA for better security": [
+        "Налаштуйте 2FA для кращої безпеки"
+      ],
       "Set up 2FA for more security": [
         "Налаштуйте 2FA для більшої безпеки"
+      ],
+      "Settings": [
+        "Налаштування"
       ],
       "Share with": [
         "Поділитися"
@@ -3880,8 +4225,14 @@
       "Vault shared with you": [
         "Вам надано спільний доступ до сховища"
       ],
+      "Want to learn more?": [
+        "Хочете дізнатися більше?"
+      ],
       "Weak password": [
         "Слабкий пароль"
+      ],
+      "Weak passwords": [
+        "Слабкі паролі"
       ],
       "Welcome to ${ brandNameJSX }": [
         "Ласкаво просимо до ${ brandNameJSX }"
@@ -3889,11 +4240,20 @@
       "Welcome to your new password manager!": [
         "Ласкаво просимо до нового менеджера паролів!"
       ],
+      "What is an alias?": [
+        "Що таке псевдонім?"
+      ],
+      "What is the dark web?": [
+        "Що таке dark web?"
+      ],
       "What is the difference between ${ PASS_SHORT_APP_NAME } note and SimpleLogin note?": [
         "Яка різниця між приміткою ${ PASS_SHORT_APP_NAME } та приміткою SimpleLogin?"
       ],
       "Your ${ planName } subscription will end on ${ endDate }": [
         "Ваша підписка на ${ planName } закінчується на ${ endDate }"
+      ],
+      "Your exposed information": [
+        "Ваша викрита інформація"
       ],
       "Your vault is empty": [
         "Ваше сховище порожнє"
@@ -4008,6 +4368,9 @@
       "Email cannot be empty": [
         "Електронна пошта не може бути порожньою"
       ],
+      "Email is required": [
+        "Потрібна поштова адреса"
+      ],
       "Empty note": [
         "Порожня нотатка"
       ],
@@ -4022,6 +4385,9 @@
       ],
       "Extra password should have at least 8 characters": [
         "Додатковий пароль повинен містити щонайменше 8 символів"
+      ],
+      "Failed to load breaches.": [
+        "Не вдалося завантажити порушення."
       ],
       "Invalid alias prefix": [
         "Недійсний префікс псевдоніма"
@@ -4106,6 +4472,9 @@
       ],
       "This alias \"${ aliasEmail }\" is currently used in the login \"${ relatedLoginName }\".": [
         "Цей псевдонім \"${ aliasEmail }\" наразі використовується в даних входу \"${ relatedLoginName }\"."
+      ],
+      "This email address will no longer be monitored for data breaches.": [
+        "Ця електронна адреса більше не буде перевірятися на предмет витоку даних."
       ],
       "Title is required": [
         "Необхідна назва"

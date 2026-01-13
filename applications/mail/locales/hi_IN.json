@@ -3882,9 +3882,6 @@
       "Your emails cannot be decrypted due to a recent password reset. If you remember your previous password, you can ${ reActivateKeyLink } in order to access your messages. ${ learnMoreLink }": [
         "हाल ही के पासवर्ड रीसेट के कारण आपके ईमेल को डिक्रिप्ट नहीं किया जा सकता है। यदि आपको अपना पिछला पासवर्ड याद है, तो आप अपने संदेशों तक पहुंचने के लिए ${ reActivateKeyLink } कर सकते हैं। ${ learnMoreLink }"
       ],
-      "Your emails cannot be decrypted. This may be due to a password reset. ${ learnMoreLink }": [
-        "आपके ईमेल को डिक्रिप्ट नहीं किया जा सकता है। यह पासवर्ड रीसेट के कारण हो सकता है। ${ learnMoreLink }"
-      ],
       "Your import will not be processed.": [
         "आपका आयात संसाधित नहीं किया जाएगा।"
       ],
@@ -9050,11 +9047,6 @@
     "plus_block": {
       "Upgrade to ${ upsellPlanTitle }": [
         "${ upsellPlanTitle } पे अपग्रेड करें"
-      ]
-    },
-    "Price": {
-      "Free": [
-        "मुफ्त"
       ]
     },
     "Progress bar description": {

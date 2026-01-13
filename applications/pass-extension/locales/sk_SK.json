@@ -4,6 +4,26 @@
     "language": "sk_SK"
   },
   "contexts": {
+    "Account Settings - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } a ${ remainingCount } ďalšie zistené potenciálne úniky. Ak chcete zobraziť podrobnosti a prijať opatrenia zapnite ${ DARK_WEB_MONITORING_NAME }. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } a 1 ďalší zistený potenciálny únik. Ak chcete zobraziť podrobnosti a prijať opatrenia zapnite ${ DARK_WEB_MONITORING_NAME }. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Bol zistený potenciálny únik ${ name }. Ak chcete zobraziť podrobnosti a prijať opatrenia, zapnite ${ DARK_WEB_MONITORING_NAME }. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Bol zistený potenciálny únik z položky ${ name }. Zapnite ${ DARK_WEB_MONITORING_NAME } pre zobrazenie podrobností a prijatie opatrení. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Bol zistený potenciálny únik z položky ${ name }. Ak chcete zobraziť podrobnosti, zapnite ${ DARK_WEB_MONITORING_NAME }. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Vaše informácie sa našli v najmenej jednom úniku údajov. Zapnite ${ DARK_WEB_MONITORING_NAME } pre zobrazenie podrobností a prijatie opatrení. ${ link }"
+      ]
+    },
     "Action": {
       "${ PASS_SHORT_APP_NAME } for Android": [
         "${ PASS_SHORT_APP_NAME } pre Android"
@@ -55,6 +75,9 @@
       ],
       "Add username field": [
         "Pridať pole mena používateľa"
+      ],
+      "Admin panel": [
+        "Panel správcu"
       ],
       "Advanced": [
         "Pokročilé"
@@ -197,6 +220,9 @@
       "Create a ${ BRAND_NAME } Account": [
         "Vytvoriť ${ BRAND_NAME } účet"
       ],
+      "Create a new vault": [
+        "Vytvoriť nový trezor"
+      ],
       "Create alias": [
         "Vytvoriť alias"
       ],
@@ -305,6 +331,9 @@
       "Edit vault": [
         "Upraviť trezor"
       ],
+      "Enable ${ DARK_WEB_MONITORING_NAME }": [
+        "Povoliť ${ DARK_WEB_MONITORING_NAME }"
+      ],
       "Enable this alias to receive emails sent to this alias": [
         "Zapnite tento alias, ak chcete prijímať emaily zasielané na tento alias"
       ],
@@ -341,11 +370,17 @@
       "Get mobile and desktop apps": [
         "Získať mobilné a desktopové aplikácie"
       ],
+      "Get mobile apps": [
+        "Získať mobilné aplikácie"
+      ],
       "Get Pass Business": [
         "Získajte Pass Business"
       ],
       "Get Pass Plus": [
         "Získajte Pass Plus"
+      ],
+      "Get Started": [
+        "Začíname"
       ],
       "Hide": [
         "Skryť"
@@ -395,6 +430,9 @@
       "Link expires after": [
         "Platnosť odkazu vyprší po"
       ],
+      "Lock ${ PASS_APP_NAME }": [
+        "Uzamknúť ${ PASS_APP_NAME }"
+      ],
       "Lock extension": [
         "Zamknúť rozšírenie"
       ],
@@ -418,6 +456,9 @@
       ],
       "Manually sync your data": [
         "Synchronizovať údaje manuálne"
+      ],
+      "Mark as resolved": [
+        "Označiť ako vyriešené"
       ],
       "Maximum views": [
         "Maximálny počet zobrazení"
@@ -469,6 +510,12 @@
       ],
       "Organize vaults": [
         "Usporiadať trezory"
+      ],
+      "Pass Monitor": [
+        "Pass Monitor"
+      ],
+      "Pause monitoring": [
+        "Pozastaviť monitorovanie"
       ],
       "Pin item": [
         "Pripnúť položku"
@@ -544,6 +591,9 @@
       ],
       "Restrict number of views": [
         "Obmedziť počet zobrazení"
+      ],
+      "Resume monitoring": [
+        "Pokračovať v monitorovaní"
       ],
       "Retry": [
         "Opakovať"
@@ -662,6 +712,9 @@
       "Try again": [
         "Skús znova"
       ],
+      "Try again.": [
+        "Skúsiť znova."
+      ],
       "Unblock contact": [
         "Odblokovať kontakt"
       ],
@@ -709,6 +762,9 @@
       ],
       "View app logs": [
         "Zobraziť zázmamy aplikácie"
+      ],
+      "View details": [
+        "Zobraziť podrobnosti"
       ],
       "View history": [
         "Zobraziť históriu"
@@ -765,6 +821,9 @@
         "${ total } iných prihlasovaní už používa rovnaké heslo",
         "${ total } iných prihlasovaní už používa rovnaké heslo"
       ],
+      "2FA adds another layer of security to your logins. ${ PASS_APP_NAME } makes 2FA easier by storing and automatically autofilling your 2FA codes.": [
+        "Funkcia 2FA pridáva ďalšiu úroveň zabezpečenia prihlásenia. ${ PASS_APP_NAME } uľahčuje 2FA ukladaním a automatickým vypĺňaním kódov 2FA."
+      ],
       "A checked box means the feature is disabled.": [
         "Začiarknuté políčko znamená, že funkcia je vypnutá."
       ],
@@ -777,11 +836,23 @@
       "Add the following TXT DNS record to your domain.": [
         "Pridajte do svojej domény nasledujúci TXT DNS záznam."
       ],
+      "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
+        "Emailový alias funguje ako emailová adresa, ale znižuje množstvo spamu a udržuje vašu skutočnú emailovú adresu a identitu skrytú."
+      ],
+      "Change your passwords": [
+        "Zmeňte vaše heslá"
+      ],
+      "Create unique passwords": [
+        "Vytvorte jedinečné heslá"
+      ],
       "DKIM ${ WIKIPEDIA_LINK_DKIM } is an email authentication method designed to avoid email spoofing. Setting up DKIM is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
         "DKIM ${ WIKIPEDIA_LINK_DKIM } je metóda overovania elektronickej pošty navrhnutá na zabránenie falšovania emailov. Nastavenie DKIM sa dôrazne odporúča, aby ste znížili pravdepodobnosť, že vaše emaily skončia v priečinku nevyžiadanej pošty príjemcu."
       ],
       "DMARC ${ WIKIPEDIA_LINK_DMARC } is designed to protect the domain from unauthorized use, commonly known as email spoofing. Built around SPF and DKIM, a DMARC policy tells the receiving mail server what to do if neither of those authentication methods passes.": [
         "DMARC ${ WIKIPEDIA_LINK_DMARC } je určený na ochranu domény pred neoprávneným použitím, bežne známym ako spoofing emailu. Zásady DMARC, ktoré sú postavené na SPF a DKIM, hovoria prijímajúcemu poštovému serveru, čo má robiť, ak ani jedna z týchto metód overovania neprejde."
+      ],
+      "Get notified if your email, password or other personal data was leaked.": [
+        "Dostávajte upozornenia, ak došlo k úniku vášho emailu, hesla alebo iných osobných údajov."
       ],
       "If you are using a subdomain, e.g. ${ subdomainExample }, you need to use ${ dmarcExampleSubdomain } as the domain instead.": [
         "Ak používate subdoménu, napr. ${ subdomainExample }, musíte namiesto toho použiť ${ dmarcExampleSubdomain } ako doménu."
@@ -792,8 +863,17 @@
       "If you are using Cloudflare, please make sure to not select the Proxy option.": [
         "Ak používate službu Cloudflare, uistite sa, že ste nevybrali možnosť Proxy."
       ],
+      "Keep your info more secure and private with these guides and tips.": [
+        "Udržujte svoje informácie v bezpečí a súkromí pomocou týchto návodov a tipov."
+      ],
       "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.${ infoText }": [
         "Zoznam domén, na ktorých by sa nemali spúšťať určité automatické funkcie v ${ PASS_SHORT_APP_NAME } (automatické vypĺňanie, automatické návrhy, automatické ukladanie). ${ infoText }"
+      ],
+      "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
+        "Naše špičkové bezpečnostné riešenie založené na umelej inteligencii určené pre používateľov, ktorí hľadajú zvýšenú ochranu svojich účtov. ${ learnMoreLink }"
+      ],
+      "Set up 2FA for more security": [
+        "Nastavte 2FA na zvýšenie bezpečnosti"
       ],
       "Some DNS registrar might require a full record path, in this case please use ${ domain } as domain value instead.": [
         "Niektorí registrátori DNS môžu vyžadovať úplnú cestu k záznamu, v takom prípade použite ${ domain } ako hodnotu domény."
@@ -803,6 +883,15 @@
       ],
       "SPF ${ WIKIPEDIA_LINK_SPF } is an email authentication method designed to detect forging sender addresses during the delivery of the email. Setting up SPF is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
         "SPF ${ WIKIPEDIA_LINK_SPF } je metóda overovania elektronickej pošty určená na zisťovanie falšovania adries odosielateľov počas doručovania emailov. Nastavenie SPF sa dôrazne odporúča, aby ste znížili pravdepodobnosť, že vaše emaily skončia v priečinku nevyžiadanej pošty príjemcu."
+      ],
+      "Start monitoring for data breaches related to accounts created with your email address and your hide-my-email aliases.": [
+        "Začnite monitorovať prípady únikov údajov v súvislosti s účtami vytvorenými pomocou vašej emailovej adresy a aliasov typu hide-my-email."
+      ],
+      "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
+        "Dark web je skrytá časť internetu, kde sa dajú kúpiť a predať ukradnuté osobné údaje, ako napríklad identita."
+      ],
+      "These items remain at risk": [
+        "Tieto položky zostávajú ohrozené"
       ],
       "These vaults will not be accessible and their content won’t be available to Search or Autofill.": [
         "Tieto trezory nebudú dostupné a ich obsah nebude k dispozícii pre Hľadanie alebo Automatické dopĺňanie."
@@ -818,6 +907,15 @@
       ],
       "Unlock advanced security features and detailed logs to safeguard your online presence.": [
         "Odomknite pokročilé funkcie zabezpečenia a podrobné protokoly na ochranu vašej online prítomnosti."
+      ],
+      "With ${ PASS_SHORT_APP_NAME } Monitor, stay ahead of threats by getting instant alerts if your credentials are compromised. Unlock advanced security features and detailed logs to safeguard your online presence.": [
+        "Pomocou ${ PASS_SHORT_APP_NAME } Monitor máte pred hrozbami náskok vďaka okamžitým upozorneniam, ak dôjde ku kompromitácii vašich prihlasovacích údajov. Odomknite pokročilé funkcie zabezpečenia a podrobné protokoly na ochranu vašej online prítomnosti."
+      ],
+      "Your email addresses were leaked in at least 1 data breach.": [
+        "Vaše emailové adresy unikli najmenej v 1 prípade porušenia ochrany osobných údajov."
+      ],
+      "Your personal info was leaked in a data breach of a third-party service.": [
+        "Vaše osobné údaje boli zverejnené pri úniku údajov zo služby tretej strany."
       ]
     },
     "Email": {
@@ -1276,6 +1374,17 @@
         "Niečo sa pokazilo"
       ]
     },
+    "Feature": {
+      "Integrated 2FA authenticator": [
+        "Integrovaný 2FA autentifikátor"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Neobmedzený počet hide-my-email aliasov"
+      ],
+      "Vault sharing (up to ${ MAX_VAULT_MEMBERS } people)": [
+        "Zdieľanie trezora (až s ${ MAX_VAULT_MEMBERS } osobami)"
+      ]
+    },
     "file size format": {
       "byte": [
         "bajt",
@@ -1326,6 +1435,17 @@
         "terabajty",
         "terabajtov",
         "terabajtov"
+      ]
+    },
+    "Header": {
+      "Domain": [
+        "Doména"
+      ],
+      "Password ends with": [
+        "Heslo končí znakmi"
+      ],
+      "Username": [
+        "Používateľské meno"
       ]
     },
     "Info": {
@@ -1431,6 +1551,12 @@
         "${ repliedEmailsCount } odoslaných",
         "${ repliedEmailsCount } odoslaných"
       ],
+      "${ row.breachCount } breach detected": [
+        "${ row.breachCount } zistený únik",
+        "${ row.breachCount } zistených únikov",
+        "${ row.breachCount } zistené úniky",
+        "${ row.breachCount } zistených únikov"
+      ],
       "${ trialDaysLeft } day left": [
         "Zostáva ${ trialDaysLeft } deň",
         "Zostávajú ${ trialDaysLeft } dni",
@@ -1476,8 +1602,14 @@
       "Access your passwords on the go with our mobile apps.": [
         "Prístup k heslám na cestách pomocou našich mobilných aplikácií."
       ],
+      "Add your custom email address to monitor:": [
+        "Pridajte vašu vlastnú emailovú adresu na monitorovanie:"
+      ],
       "Admin": [
         "Správca"
+      ],
+      "After confirming, you will need to accept a permission prompt for ${ PASS_APP_NAME }.": [
+        "Po potvrdení budete musieť prijať výzvu na povolenie pre aplikáciu ${ PASS_APP_NAME }."
       ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Po úspešnom importe údajov môžete z bezpečnostných dôvodov odstrániť CSV súbor obsahujúci vaše heslá."
@@ -1497,11 +1629,17 @@
       "Aliases out of sync (${ aliasCount })": [
         "Nesynchronizované aliasy (${ aliasCount })"
       ],
+      "Aliases with custom domains are not monitored, please add them as a custom email for monitoring.": [
+        "Aliasy s vlastnými doménami nie sú monitorované, pridajte ich na monitorovanie ako vlastný email."
+      ],
       "All aliases using the mailbox ${ emailJSX } will be also deleted.": [
         "Všetky aliasy používajúce poštovú schránku ${ emailJSX } budú tiež odstránené."
       ],
       "All breaches for this address were resolved": [
         "Všetky úniky pre túto emailovú adresu boli vyriešené"
+      ],
+      "All current breaches will be marked as resolved. In case of future data breaches, you'll be notified.": [
+        "Všetky aktuálne úniky budú označené ako vyriešené. V prípade budúcich únikov údajov dostanete informáciu."
       ],
       "All inactive secure links were removed": [
         "Všetky neaktívne bezpečné odkazy boli odstránené"
@@ -1557,6 +1695,9 @@
       "Biometrics will be disabled and will need to be enabled again.": [
         "Biometria bude deaktivovaná a bude potrebné ju znova zapnúť."
       ],
+      "Breaches detected": [
+        "Zistený únik"
+      ],
       "Bring your own domain and you don't have to buy yet another email hosting solution.": [
         "Pripojte si vlastnú doménu a nemusíte si kupovať ďalšie riešenie emailového hostingu."
       ],
@@ -1592,6 +1733,9 @@
       ],
       "Can view this item.": [
         "Môže zobraziť túto položku."
+      ],
+      "Change your password": [
+        "Zmeňte si heslo"
       ],
       "Choose a saved passkey to sign-in to ${ domain }": [
         "Vyberte uložený prístupový kľúč na prihlásenie do ${ domain }"
@@ -1659,8 +1803,8 @@
       "Disabling offline mode...": [
         "Vypínanie offline režimu..."
       ],
-      "Discover ${ PASS_APP_NAME } Youtube Video": [
-        "Objavte ${ PASS_APP_NAME } na kanáli YouTube"
+      "Discover ${ PASS_APP_NAME } video": [
+        "Pozrite si video o ${ PASS_APP_NAME }"
       ],
       "DNS changes could take up to 24 hours to update.": [
         "Aktualizácia zmien DNS môže trvať až 24 hodín."
@@ -1679,6 +1823,9 @@
       ],
       "Editor": [
         "Editor"
+      ],
+      "email": [
+        "email"
       ],
       "Email address successfully deleted from monitoring": [
         "Emailová adresa bola z monitorovania úspešne odstránená"
@@ -1761,6 +1908,9 @@
       "Fill in the CSV with your data": [
         "Vyplňte CSV súbor svojimi údajmi"
       ],
+      "finance": [
+        "financie"
+      ],
       "Follow those steps to import your data with a generic CSV:": [
         "Pre importovanie údajov pomocou všeobecného CSV súboru, postupujte nasledovne:"
       ],
@@ -1802,6 +1952,12 @@
       ],
       "Here's how it works:": [
         "Funguje to takto:"
+      ],
+      "High Priority": [
+        "Vysoká priorita"
+      ],
+      "How does monitoring work?": [
+        "Ako monitorovanie funguje?"
       ],
       "Identity confirmed": [
         "Identita potvrdená"
@@ -1875,6 +2031,12 @@
       "Item successfully unpinned": [
         "Položka bola úspešne odopnutá"
       ],
+      "Latest breach on ${ formattedDate }": [
+        "Posledný únik údajov dňa ${ formattedDate }"
+      ],
+      "Learn what to do ${ dataLeakedLink }": [
+        "Zistite, čo robiť ${ dataLeakedLink }"
+      ],
       "Leaving item...": [
         "Opúšťanie položky..."
       ],
@@ -1893,11 +2055,20 @@
       "Loading...": [
         "Načítavanie..."
       ],
+      "Low Priority": [
+        "Nízka priorita"
+      ],
       "Manager": [
         "Správca"
       ],
       "me": [
         "ja"
+      ],
+      "Medium Priority": [
+        "Stredná priorita"
+      ],
+      "Monitor accounts": [
+        "Monitorujte účty"
       ],
       "Monitoring settings successfully updated": [
         "Nastavenia monitorovania boli úspešne aktualizované"
@@ -1913,12 +2084,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Presúvanie všetkých položiek z \"${ payload.content.name }\""
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Presunutím položky do iného trezora sa vymažú jej bezpečné odkazy.",
-        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy.",
-        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy.",
-        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy."
       ],
       "Moving items": [
         "Presúvanie položiek"
@@ -1940,6 +2105,9 @@
       ],
       "Never": [
         "Nikdy"
+      ],
+      "No breaches detected": [
+        "Neboli zistené žiadne prípady únikov"
       ],
       "No credit cards found": [
         "Nenašli sa žiadne platobné karty"
@@ -1977,6 +2145,9 @@
       "Open the Safari settings, find ${ PASS_APP_NAME }, go to \"Permissions\" and enable site permissions.": [
         "Otvorte nastavenia Safari, nájdite ${ PASS_APP_NAME }, prejdite do časti „Oprávnenia“ a povolte oprávnenia pre webové stránky."
       ],
+      "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Prioritou našich upozornení je bezpečnosť. Ak nepoznáte žiadnu z ohrozených informácií, môžete túto správu pokojne ignorovať."
+      ],
       "Owner": [
         "Vlastník"
       ],
@@ -1989,6 +2160,9 @@
       "Passkey sign-in": [
         "Prihlásenie prístupovým kľúčom"
       ],
+      "password": [
+        "heslo"
+      ],
       "Password copied": [
         "Heslo skopírované"
       ],
@@ -2000,6 +2174,9 @@
         "Heslá staršie ako ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } týždne sa automaticky odstránia z histórie.",
         "Heslá staršie ako ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } týždňov sa automaticky odstránia z histórie.",
         "Heslá staršie ako ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } týždňov sa automaticky odstránia z histórie."
+      ],
+      "Paused": [
+        "Pozastavené"
       ],
       "Pending access to the shared data": [
         "Čaká sa na prístup k zdieľaným údajom"
@@ -2277,6 +2454,9 @@
       "Successfully synced all vaults": [
         "Všetky trezory boli úspešne synchronizované"
       ],
+      "Suggested": [
+        "Odporúčané"
+      ],
       "Switch to another vault or create an item in this vault": [
         "Prepnite sa do iného trezora alebo vytvorte položku v tomto trezore"
       ],
@@ -2298,6 +2478,9 @@
       "The exported file will be encrypted using PGP and requires a strong passphrase.": [
         "Exportovaný súbor bude šifrovaný pomocou PGP a vyžaduje silnú prístupovú frázu."
       ],
+      "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
+        "Informácie, ktoré boli zverejnené, unikli zo služby tretej strany. Vaše informácie o účte ${ BRAND_NAME } zostávajú zabezpečené a zašifrované. ${ learnMoreLink }"
+      ],
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "Na použitie ${ PASS_APP_NAME } bude vyžadované dodatočné heslo. Funguje ako dodatočné heslo k vášmu heslu pre ${ BRAND_NAME }."
       ],
@@ -2318,6 +2501,9 @@
       ],
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Tento export bude nezašifrovaný a ktokoľvek s prístupom k vášmu exportovanému súboru uvidí vaše heslá. Z bezpečnostných dôvodov ho po skončení používania vymažte."
+      ],
+      "This feature is currently experimental on Linux. Please ensure your system is up-to-date.": [
+        "Táto funkcia je momentálne experimentálna na platforme Linux. Uistite sa, prosím, že váš systém je aktuálny."
       ],
       "This item is not currently shared with anyone. Invite people to share it with others.": [
         "Táto položka zatiaľ nie je s nikým zdieľaná. Pozvite ľudí, s ktorými ju chcete zdieľať."
@@ -2430,6 +2616,9 @@
       "User's access successfully updated": [
         "Prístup používateľa bol úspešne aktualizovaný"
       ],
+      "username": [
+        "používateľské meno"
+      ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Trezor \"${ payload.content.name }\" bol úspešne odstránený"
       ],
@@ -2453,6 +2642,9 @@
       ],
       "Verification code": [
         "Overovací kód"
+      ],
+      "Verification code sent.": [
+        "Overovací kód bol odoslaný."
       ],
       "Viewer": [
         "Čitateľ"
@@ -2523,9 +2715,6 @@
       "You may close this tab.": [
         "Túto kartu môžete zatvoriť."
       ],
-      "You may need to accept a permission prompt and may have to restart the application depending on your system.": [
-        "V závislosti od vášho systému môže byť potrebné prijať výzvu na povolenie a možno budete musieť aplikáciu reštartovať."
-      ],
       "You may need to grant accessiblity permission to ${ PASS_APP_NAME }.": [
         "Možno budete musieť udeliť povolenie na prístup aplikácii ${ PASS_APP_NAME }."
       ],
@@ -2537,6 +2726,18 @@
       ],
       "You will be logged out and need to log in again on all of your other devices.": [
         "Dôjde k odhláseniu a budete sa musieť znova prihlásiť na všetkých ďalších zariadeniach."
+      ],
+      "You will be notified of data breaches for these email addresses.": [
+        "V prípade týchto emailových adries vám budú zasielané oznámenia o úniku údajov."
+      ],
+      "You will be notified of data breaches for this email address.": [
+        "Na túto emailovú adresu vám budú zasielané oznámenia o úniku údajov."
+      ],
+      "You will no longer be notified of data breaches for these email addresses.": [
+        "V prípade týchto emailových adries vám už nebudú zasielané oznámenia o úniku údajov."
+      ],
+      "You will no longer be notified of data breaches for this email address.": [
+        "Na túto emailovú adresu vám už nebudú zasielané oznámenia o úniku údajov."
       ],
       "You will no longer have access to sharing, 2FA and other advanced features in ${ PASS_APP_NAME }": [
         "Už nebudete mať prístup k zdieľaniu, 2FA a ďalším pokročilým funkciám v aplikácii ${ PASS_APP_NAME }"
@@ -2564,6 +2765,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "Vaše súbory budú zašifrované a potom uložené"
+      ],
+      "Your information was found on ${ displayedDate }": [
+        "Vaše informácie boli nájdené dňa ${ displayedDate }"
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Vaša organizácia vyžaduje, aby ste zabezpečili svoj prístup k ${ PASS_APP_NAME }"
@@ -2658,6 +2862,12 @@
         "${ secureLinksCount } bezpečné odkazy",
         "${ secureLinksCount } bezpečných odkazov",
         "${ secureLinksCount } bezpečných odkazov"
+      ],
+      "${ usageCount } login": [
+        "${ usageCount } prihlásenie",
+        "${ usageCount } prihlásenia",
+        "${ usageCount } prihlásení",
+        "${ usageCount } prihlásení"
       ],
       "${ years } year": [
         "${ years } rok",
@@ -2965,6 +3175,9 @@
       "Email (new alias)": [
         "Email (nový alias)"
       ],
+      "Email address": [
+        "Emailová adresa"
+      ],
       "Email aliases": [
         "Emailové aliasy"
       ],
@@ -3033,6 +3246,9 @@
       ],
       "Generic CSV": [
         "Všeobecné CSV"
+      ],
+      "Get Started": [
+        "Začíname"
       ],
       "Grant": [
         "Povoliť"
@@ -3147,6 +3363,9 @@
       ],
       "Last name": [
         "Priezvisko"
+      ],
+      "Last updated": [
+        "Posledná aktualizácia"
       ],
       "Last week": [
         "Posledný týždeň"
@@ -3529,6 +3748,9 @@
       "State or province": [
         "Štát alebo provincia"
       ],
+      "Status": [
+        "Stav"
+      ],
       "Street address": [
         "Ulica a č."
       ],
@@ -3637,6 +3859,9 @@
       "Use ${ PASS_APP_NAME } as your browser's default password manager": [
         "Použite ${ PASS_APP_NAME } ako predvoleného správcu hesiel v prehliadači"
       ],
+      "Used in": [
+        "Použité v"
+      ],
       "Useful for permanent sharing": [
         "Užitočné na trvalé zdieľanie"
       ],
@@ -3651,6 +3876,9 @@
       ],
       "Vault ID": [
         "ID trezoru"
+      ],
+      "Vaults": [
+        "Trezory"
       ],
       "View details": [
         "Zobraziť podrobnosti"
@@ -3710,6 +3938,17 @@
     "Link": {
       "auto create rules ››": [
         "automatické vytvorenie pravidiel ››"
+      ],
+      "if your data is leaked": [
+        "ak dôjde k úniku vašich údajov"
+      ],
+      "Learn more": [
+        "Zistiť viac"
+      ]
+    },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "Povoliť ${ reason }"
       ]
     },
     "Message": {
@@ -3727,6 +3966,22 @@
       ],
       "You selected ${ semiboldText } in this vault.": [
         "Vybrali ste ${ semiboldText } v tomto trezore."
+      ]
+    },
+    "new_plans: feature": {
+      "Require 2FA for organization": [
+        "Vyžadovať 2FA pre organizáciu"
+      ],
+      "SSO integration": [
+        "SSO integrácia"
+      ]
+    },
+    "Notification": {
+      "${ reason } has been disabled": [
+        "${ reason } bol zakázaný"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } bol povolený"
       ]
     },
     "Onboarding": {
@@ -3994,6 +4249,20 @@
         "Používa sa na ${ url }"
       ]
     },
+    "Security Center - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } a ${ remainingCount } ďalšie zistené potenciálne úniky. Ak chcete zobraziť podrobnosti, zapnite ${ DARK_WEB_MONITORING_NAME }. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } a 1 ďalší zistený potenciálny únik. Ak chcete zobraziť podrobnosti, zapnite ${ DARK_WEB_MONITORING_NAME }. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Bol zistený potenciálny únik ${ name }. Ak chcete zobraziť podrobnosti, zapnite ${ DARK_WEB_MONITORING_NAME }. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Vaše informácie sa našli v najmenej jednom úniku údajov. Ak chcete zobraziť podrobnosti, zapnite ${ DARK_WEB_MONITORING_NAME }. ${ link }"
+      ]
+    },
     "sso": {
       "Approve or deny it now": [
         "Schváliť alebo zamietnuť teraz"
@@ -4141,11 +4410,20 @@
       ]
     },
     "Title": {
+      "${ BRAND_NAME } addresses": [
+        "${ BRAND_NAME } adresy"
+      ],
       "${ PASS_APP_NAME } Logs": [
         "Logy ${ PASS_APP_NAME }"
       ],
       "${ PASS_APP_NAME } Settings": [
         "Nastavenia ${ PASS_APP_NAME }"
+      ],
+      "${ PASS_SHORT_APP_NAME } Monitor": [
+        "${ PASS_SHORT_APP_NAME } Monitor"
+      ],
+      "Account protection": [
+        "Ochrana účtu"
       ],
       "Actions": [
         "Akcie"
@@ -4176,6 +4454,15 @@
       ],
       "Blocked addresses": [
         "Zablokované adresy"
+      ],
+      "Breach detected": [
+        "Zistený únik"
+      ],
+      "Breaches": [
+        "Úniky informácií"
+      ],
+      "Breaches detected for": [
+        "Zistený únik informácií pre"
       ],
       "Cancel changing your email?": [
         "Zrušiť zmenu vášho emailu?"
@@ -4219,8 +4506,17 @@
       "Current version": [
         "Súčasná verzia"
       ],
+      "Custom addresses": [
+        "Vlastné adresy"
+      ],
       "Custom domains": [
         "Vlastné domény"
+      ],
+      "Custom email monitoring": [
+        "Monitorovanie vlastného emailu"
+      ],
+      "Custom emails": [
+        "Vlastné emaily"
       ],
       "Default": [
         "Predvolená"
@@ -4291,6 +4587,9 @@
       "Enter your second password": [
         "Zadajte vaše druhé heslo"
       ],
+      "Excluded items": [
+        "Vylúčené položky"
+      ],
       "Fill & copy password": [
         "Vyplniť a kopírovať heslo"
       ],
@@ -4312,6 +4611,9 @@
       "Hide my email": [
         "Skryť môj email"
       ],
+      "Hide-my-email aliases": [
+        "Hide-my-email aliasy"
+      ],
       "History": [
         "História"
       ],
@@ -4326,6 +4628,12 @@
       ],
       "Importing your data": [
         "Import vašich údajov"
+      ],
+      "Inactive 2FA": [
+        "Neaktívne 2FA"
+      ],
+      "Information exposed in breach": [
+        "Informácie odhalené pri úniku"
       ],
       "Item": [
         "Položka"
@@ -4342,6 +4650,9 @@
       "Leave vault?": [
         "Opustiť trezor?"
       ],
+      "Loading breaches...": [
+        "Načítavanie únikov..."
+      ],
       "Log in as...": [
         "Prihlásiť sa ako..."
       ],
@@ -4350,6 +4661,9 @@
       ],
       "Mailbox": [
         "Poštová schránka"
+      ],
+      "Mark as resolved?": [
+        "Označiť ako vyriešené?"
       ],
       "Member limit": [
         "Limit počtu členov"
@@ -4384,14 +4698,32 @@
       "MX record": [
         "MX záznam"
       ],
+      "Next": [
+        "Ďalej"
+      ],
+      "No excluded items": [
+        "Žiadne vylúčené položky"
+      ],
+      "No inactive 2FAs": [
+        "Žiadne neaktívne 2FA"
+      ],
+      "No insecure passwords": [
+        "Žiadne nezabezpečené heslá"
+      ],
       "No items selected": [
         "Žiadne vybrané položky"
+      ],
+      "No reused passwords": [
+        "Žiadne opakovane použité heslá"
       ],
       "No shared items": [
         "Žiadne zdieľané položky"
       ],
       "No shared secure links": [
         "Žiadne zdieľané bezpečné odkazy"
+      ],
+      "Open pagination": [
+        "Otvoriť stránkovanie"
       ],
       "Organize vaults": [
         "Usporiadať trezory"
@@ -4404,6 +4736,12 @@
       ],
       "Password": [
         "Heslo"
+      ],
+      "Password Health": [
+        "Stav hesla"
+      ],
+      "Pause monitoring?": [
+        "Pozastaviť monitorovanie?"
       ],
       "Pending access confirmation": [
         "Čaká sa na potvrdenie prístupu"
@@ -4429,11 +4767,20 @@
         "Upozorňujeme, že vymazané aliasy nie je možné obnoviť.",
         "Upozorňujeme, že vymazané aliasy nie je možné obnoviť."
       ],
+      "Previous": [
+        "Predchádzajúci"
+      ],
       "Random Prefix Generation": [
         "Generovanie náhodných predpôn"
       ],
+      "Recommended actions": [
+        "Odporúčané opatrenia"
+      ],
       "Reject device?": [
         "Odmietnuť zariadenie?"
+      ],
+      "Remove email address?": [
+        "Odstrániť emailovú adresu?"
       ],
       "Remove extra password": [
         "Odstrániť dodatočné heslo"
@@ -4444,8 +4791,23 @@
       "Reset history for this item?": [
         "Resetovať históriu tejto položky?"
       ],
+      "Resolved breaches": [
+        "Vyriešené úniky"
+      ],
       "Restore this version?": [
         "Obnoviť túto verziu?"
+      ],
+      "Resume monitoring?": [
+        "Pokračovať v monitorovaní?"
+      ],
+      "Reused ${ count } time": [
+        "Použité ${ count }-krát",
+        "Použité ${ count }-krát",
+        "Použité ${ count }-krát",
+        "Použité ${ count }-krát"
+      ],
+      "Reused passwords": [
+        "Opakovane použité heslá"
       ],
       "Review and share": [
         "Skontrolovať a zdieľať"
@@ -4462,8 +4824,14 @@
       "Set extra password": [
         "Nastaviť dodatočné heslo"
       ],
+      "Set up 2FA for better security": [
+        "Nastavte 2FA pre lepšiu bezpečnosť"
+      ],
       "Set up 2FA for more security": [
         "Nastavte 2FA pre zvýšenie bezpečnosti"
+      ],
+      "Settings": [
+        "Nastavenia"
       ],
       "Share with": [
         "Zdieľať s"
@@ -4528,14 +4896,26 @@
       "Visible vaults": [
         "Viditeľné trezory"
       ],
+      "Want to learn more?": [
+        "Chcete sa dozvedieť viac?"
+      ],
       "Weak password": [
         "Slabé heslo"
+      ],
+      "Weak passwords": [
+        "Slabé heslá"
       ],
       "Welcome to ${ brandNameJSX }": [
         "Víta vás ${ brandNameJSX }"
       ],
       "Welcome to your new password manager!": [
         "Vitajte vo svojom novom správcovi hesiel!"
+      ],
+      "What is an alias?": [
+        "Čo je alias?"
+      ],
+      "What is the dark web?": [
+        "Čo je dark web?"
       ],
       "What is the difference between ${ PASS_SHORT_APP_NAME } note and SimpleLogin note?": [
         "Aký je rozdiel medzi poznámkou v ${ PASS_SHORT_APP_NAME } a poznámkou v SimpleLogin?"
@@ -4545,6 +4925,9 @@
       ],
       "Your ${ planName } subscription will end on ${ endDate }": [
         "Vaše predplatné ${ planName } skončí dňa ${ endDate }"
+      ],
+      "Your exposed information": [
+        "Vaše odhalené informácie"
       ],
       "Your vault is empty": [
         "Váš trezor je prázdny"
@@ -4567,6 +4950,14 @@
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Dnes"
+      ]
+    },
+    "Tooltip": {
+      "Not all information listed here was exposed for all users.": [
+        "Nie všetky informácie, ktoré sú tu uvedené, boli sprístupnené všetkým používateľom."
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "Pokiaľ nie sú dešifrované, zašifrované heslá zostávajú v bezpečí, aj keď sú odhalené."
       ]
     },
     "Validation": {
@@ -4685,6 +5076,9 @@
       "Email cannot be empty": [
         "Email nemôže byť prázdny"
       ],
+      "Email is required": [
+        "Email je povinný"
+      ],
       "Empty note": [
         "Prázdna poznámka"
       ],
@@ -4699,6 +5093,12 @@
       ],
       "Extra password should have at least 8 characters": [
         "Dodatočné heslo by malo mať aspoň 8 znakov"
+      ],
+      "Failed to autotype. Please make sure ${ PASS_APP_NAME } has the necessary permissions and try again (${ error }).": [
+        "Automatické zadávanie zlyhalo. Uistite sa, že aplikácia ${ PASS_APP_NAME } má potrebné povolenia a skúste to znova (${ error })."
+      ],
+      "Failed to load breaches.": [
+        "Načítanie únikov zlyhalo."
       ],
       "Grant clipboard access to enable automatic clearing of copied passwords and data.": [
         "Povoľte prístup k schránke, aby bolo možné automaticky vymazať skopírované heslá a údaje."
@@ -4798,6 +5198,9 @@
       ],
       "This alias \"${ aliasEmail }\" is currently used in the login \"${ relatedLoginName }\".": [
         "Tento alias „${ aliasEmail }“ sa v súčasnosti používa v prihlásení „${ relatedLoginName }“."
+      ],
+      "This email address will no longer be monitored for data breaches.": [
+        "Táto emailová adresa už nebude monitorovaná na úniky údajov"
       ],
       "This item is currently shared. Deleting it will remove access for all other users.": [
         "Táto položka je v súčasnosti zdieľaná. Jej odstránením sa zruší prístup pre všetkých ostatných používateľov."

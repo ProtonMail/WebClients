@@ -4760,9 +4760,6 @@
       "Your emails cannot be decrypted due to a recent password reset. If you remember your previous password, you can ${ reActivateKeyLink } in order to access your messages. ${ learnMoreLink }": [
         "由於您近期重新設定密碼，致使您的電郵無法解密。如果您記得先前的密碼，可透過 ${ reActivateKeyLink } 存取您的信件。相關資訊參考 ${ learnMoreLink }"
       ],
-      "Your emails cannot be decrypted. This may be due to a password reset. ${ learnMoreLink }": [
-        "無法解密您的電郵。這可能是因為密碼重設。${ learnMoreLink }"
-      ],
       "Your import will not be processed.": [
         "將不會處理您的匯入。"
       ],
@@ -11607,11 +11604,6 @@
     "plus_block": {
       "Upgrade to ${ upsellPlanTitle }": [
         "升級至${ upsellPlanTitle }"
-      ]
-    },
-    "Price": {
-      "Free": [
-        "免費"
       ]
     },
     "Progress bar description": {

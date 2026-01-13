@@ -1056,11 +1056,17 @@
       "Open in ${ SHEETS_APP_NAME }": [
         "In ${ SHEETS_APP_NAME } öffnen"
       ],
+      "Open in new tab": [
+        "In neuem Tab öffnen"
+      ],
       "Open navigation": [
         "Navigation öffnen"
       ],
       "Open recovery settings": [
         "Wiederherstellungseinstellungen öffnen"
+      ],
+      "Open settings": [
+        "Einstellungen öffnen"
       ],
       "Opt out": [
         "Abwählen"
@@ -3277,6 +3283,9 @@
       ],
       "Open source": [
         "Open Source"
+      ],
+      "Private video calls for the conversations that matter.": [
+        "Private Videoanrufe für die Unterhaltungen, die wichtig sind."
       ]
     },
     "collider_2025: Navigation": {
@@ -4473,6 +4482,11 @@
     "customer_support.feature.mail": {
       "For ${ MAIL_APP_NAME }": [
         "Für ${ MAIL_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.meet": {
+      "For ${ MEET_APP_NAME }": [
+        "Für ${ MEET_APP_NAME }"
       ]
     },
     "customer_support.feature.pass": {
@@ -9251,6 +9265,9 @@
       "Continuing will connect your ${ BRAND_NAME } Account to ${ name }.": [
         "Wenn du fortfährst, wird dein ${ BRAND_NAME }-Konto mit ${ name } verbunden."
       ],
+      "Control whether organization members can create vaults or require an administrator to create and share a vault with them.": [
+        "Lege fest, ob Organisationsmitglieder Tresore erstellen können oder ob ein Administrator einen Tresor für sie erstellen und freigeben muss."
+      ],
       "Copied to clipboard": [
         "In die Zwischenablage kopiert"
       ],
@@ -9780,9 +9797,6 @@
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Wenn ein anderer Administrator dieses Passwort geändert hat, musst du ihn um das neue Organisationspasswort bitten."
-      ],
-      "If disabled, new organization members will require an admin to manually create the first vault for them (via sharing) so they can start to create items.": [
-        "Wenn diese Option deaktiviert ist, muss ein Administrator den ersten Tresor für neue Organisationsmitglieder manuell erstellen (über die Freigabe), damit sie mit der Erstellung von Einträgen beginnen können."
       ],
       "If disabled, only administrators will be able to export data.": [
         "Wenn diese Option deaktiviert ist, können nur Administratoren Daten exportieren."
@@ -13232,6 +13246,9 @@
       "New second password": [
         "Neues zusätzliches Passwort"
       ],
+      "No (users cannot use the app until a vault is shared with them)": [
+        "Nein (Benutzer können die App erst verwenden, wenn ein Tresor mit ihnen geteilt wird)"
+      ],
       "No filter": [
         "Kein Filter"
       ],
@@ -13259,14 +13276,17 @@
       "Online privacy for your whole family": [
         "Online-Privatsphäre für deine ganze Familie"
       ],
+      "Only a single personal vault can be created": [
+        "Es kann nur ein persönlicher Tresor erstellt werden"
+      ],
       "Only available on ${ PASS_SHORT_APP_NAME } paid plans": [
         "Nur in kostenpflichtigen Abonnements von ${ PASS_SHORT_APP_NAME } verfügbar"
       ],
-      "OpenVPN / IKEv2 password": [
-        "OpenVPN‐/IKEv2‐Passwort"
+      "OpenVPN password": [
+        "OpenVPN-Passwort"
       ],
-      "OpenVPN / IKEv2 username": [
-        "OpenVPN/IKEv2-Benutzername"
+      "OpenVPN username": [
+        "OpenVPN-Benutzername"
       ],
       "Operating system": [
         "Betriebssystem"
@@ -13685,6 +13705,9 @@
       ],
       "Without attachment": [
         "Ohne Anhang"
+      ],
+      "Yes": [
+        "Ja"
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Ja, ich möchte dieses Konto und alle enthaltenen Daten endgültig und unwiderruflich löschen."
@@ -14359,6 +14382,111 @@
         "Die maximale Anzahl von ${ MAX_CALENDAR_MEMBERS } Mitgliedern wurde erreicht."
       ]
     },
+    "meet_2025: Feature": {
+      "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
+        "${ MEET_APP_NAME }: Vertrauliche Videokonferenzen für die Unterhaltungen, die wichtig sind"
+      ],
+      "${ n } active meeting at a time": [
+        "${ n } aktives Meeting gleichzeitig",
+        "${ n } aktive Meetings gleichzeitig"
+      ],
+      "24 hours per meeting": [
+        "24 Stunden pro Meeting"
+      ],
+      "60 minutes per meeting": [
+        "60 Minuten pro Meeting"
+      ],
+      "Appointment scheduling": [
+        "Terminplanung"
+      ],
+      "Browser, mobile, and desktop apps": [
+        "Browser-, Mobile- und Desktop-Apps"
+      ],
+      "Built-in chat": [
+        "Eingebauter Chat"
+      ],
+      "End-to-end encrypted screen sharing and ephemeral in-call chat": [
+        "Ende-zu-Ende-verschlüsselte Bildschirmfreigabe und temporärer Chat während des Anrufs"
+      ],
+      "Meeting recording (coming soon)": [
+        "Aufnahme des Meetings (Demnächst verfügbar)"
+      ],
+      "One active meeting at a time": [
+        "Ein aktives Meeting gleichzeitig"
+      ],
+      "Screen-sharing": [
+        "Bildschirmfreigabe"
+      ],
+      "Unlimited meetings per day": [
+        "Unbegrenzte Meetings pro Tag"
+      ],
+      "Up to ${ n } meeting per day": [
+        "Bis zu ${ n } Meeting pro Tag",
+        "Bis zu ${ n } Meetings pro Tag"
+      ],
+      "Up to ${ n } participant": [
+        "Bis zu ${ n } Teilnehmer",
+        "Bis zu ${ n } Teilnehmer"
+      ]
+    },
+    "meet_2025: Info": {
+      "100 ${ BRAND_NAME } email addresses": [
+        "100 ${ BRAND_NAME } E-Mail-Adressen"
+      ],
+      "Cloud storage and file sharing": [
+        "Cloud-Speicher und Dateifreigabe"
+      ],
+      "Data never used for AI training": [
+        "Deine Daten werden niemals für KI-Training verwendet"
+      ],
+      "Data retention policies": [
+        "Datenspeicherungsrichtlinien"
+      ],
+      "Document & spreadsheet editor": [
+        "Dokumenten- und Tabellenkalkulationseditor"
+      ],
+      "Email writing assistant": [
+        "E-Mail-Schreibassistent"
+      ],
+      "Everything from ${ title }, plus...": [
+        "Alles aus ${ title }, plus..."
+      ],
+      "Everything in Meet Professional, plus:": [
+        "Alles in Meet Professional, plus:"
+      ],
+      "Open source": [
+        "Open Source"
+      ],
+      "Password manager with team vaults": [
+        "Passwort-Manager mit Team-Tresoren"
+      ],
+      "Private AI Chat (${ LUMO_SHORT_APP_NAME })": [
+        "Privater KI-Chat (${ LUMO_SHORT_APP_NAME })"
+      ],
+      "Private and unlimited AI chat (${ LUMO_SHORT_APP_NAME })": [
+        "Privater und unbegrenzter Ki-Chat (${ LUMO_SHORT_APP_NAME })"
+      ],
+      "Private video calls for the conversations that matter": [
+        "Private Videoanrufe für die Unterhaltungen, die wichtig sind"
+      ],
+      "Secure calendar": [
+        "Sicherer Kalender"
+      ],
+      "Strict no-logs policy": [
+        "Strenge \"No Logs\"-Richtlinie"
+      ],
+      "Video meetings, ${ PAID_MAX_PARTICIPANTS } participants": [
+        "Video-Meetings, ${ PAID_MAX_PARTICIPANTS } Teilnehmer"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN mit Werbeblocker und Malware-Schutz"
+      ]
+    },
+    "meet_signup_2025: title": {
+      "For businesses": [
+        "Für Unternehmen"
+      ]
+    },
     "Member action": {
       "Activate user": [
         "Benutzer aktivieren"
@@ -14524,6 +14652,21 @@
       ],
       "Euro": [
         "Euro"
+      ],
+      "Hong Kong dollar": [
+        "Hongkong-Dollar"
+      ],
+      "Japanese yen": [
+        "Japanischer Yen"
+      ],
+      "Polish złoty": [
+        "Polnischer Zloty"
+      ],
+      "Singapore dollar": [
+        "Singapur-Dollar"
+      ],
+      "South Korean won": [
+        "Südkoreanischer Won"
       ],
       "Swiss franc": [
         "Schweizer Franken"
@@ -15901,8 +16044,8 @@
       "Number of records exceeds the download limit of 10000": [
         "Die Anzahl der Datensätze überschreitet die Grenze der maximalen Downloads von 10000"
       ],
-      "OpenVPN / IKEv2 credentials regenerated": [
-        "OpenVPN/IKEv2-Zugangsdaten wiederhergestellt"
+      "OpenVPN credentials regenerated": [
+        "OpenVPN-Anmeldedaten neu generiert"
       ],
       "Reminder has been sent": [
         "Eine Erinnerung wurde versandt"
@@ -17823,11 +17966,6 @@
       ],
       "Opting into post-quantum protection": [
         "Post-Quantum-Schutz wird aktiviert"
-      ]
-    },
-    "Price": {
-      "Free": [
-        "Kostenlos"
       ]
     },
     "Primary timezone": {
@@ -19819,6 +19957,26 @@
       ],
       "Works on all devices": [
         "Funktioniert auf allen Geräten"
+      ]
+    },
+    "Signup: Meet": {
+      "**Trusted by over 100 million** users and organizations": [
+        "**Vertrauenswürdig für über 100 Millionen** Benutzer und Organisationen"
+      ],
+      "Get ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
+        "${ PLAN_NAMES[PLANS.MEET_BUSINESS] } holen"
+      ],
+      "Own a business?": [
+        "Besitzt du ein Unternehmen?"
+      ],
+      "Sign up, meet privately": [
+        "Anmelden, privat treffen"
+      ],
+      "Start using ${ MEET_APP_NAME } now": [
+        "\"${ MEET_APP_NAME }\" jetzt nutzen"
+      ],
+      "Your account also includes access to ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME } free features.": [
+        "Dein Account beinhaltet auch Zugriff auf die kostenlosen Funktionen von ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } und ${ PASS_SHORT_APP_NAME }."
       ]
     },
     "signup_2024: Feature": {
@@ -22510,6 +22668,9 @@
       ],
       "Open pagination": [
         "Seitennummerierung öffnen"
+      ],
+      "OpenVPN": [
+        "OpenVPN"
       ],
       "OpenVPN configuration files": [
         "OpenVPN Konfigurationsdateien"

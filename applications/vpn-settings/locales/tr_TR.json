@@ -2166,6 +2166,9 @@
       ],
       "High-speed chats and advanced AI features.": [
         "Yüksek hızlı sohbetler ve gelişmiş yapay zeka özellikleri."
+      ],
+      "Private video calls for the conversations that matter.": [
+        "Önemli görüşmeler için gizliliği koruyan görüntülü çağrılar."
       ]
     },
     "color": {
@@ -3198,6 +3201,11 @@
     "customer_support.feature.mail": {
       "For ${ MAIL_APP_NAME }": [
         "${ MAIL_APP_NAME } için"
+      ]
+    },
+    "customer_support.feature.meet": {
+      "For ${ MEET_APP_NAME }": [
+        "${ MEET_APP_NAME } için"
       ]
     },
     "customer_support.feature.pass": {
@@ -7412,7 +7420,7 @@
         "Sadık bir kullanıcı olduğunuz için, hesabınızda yeni özellikler eklendi."
       ],
       "Some ${ BRAND_NAME } apps may not support security keys yet. If you turn off authenticator app 2FA, you may not be able to sign in to those apps.": [
-        "Bazı ${ BRAND_NAME } uygulamaları henüz güvenlik anahtarlarını desteklemeyebilir. Kimlik doğrulama uygulaması İki adımlı doğrulamayı kapatırsanız bu uygulamalarda oturum açamayabilirsiniz."
+        "Bazı ${ BRAND_NAME } uygulamaları henüz güvenlik anahtarlarını desteklemiyor olabilir. Kimlik doğrulama uygulamasında iki adımlı doğrulamayı kapatırsanız bu uygulamalarda oturum açamayabilirsiniz."
       ],
       "Some keys successfully reactivated": [
         "Bazı anahtarlar yeniden kullanıma alındı"
@@ -8266,7 +8274,7 @@
         "Kendi hesap bilgilerinizi görmeyi sürdürebileceksiniz. Ancak kuruluşunuzun tüm kullanıcı hesapları silinecek."
       ],
       "Zoom meeting": [
-        "Zoom toplantısı"
+        "Zoom görüşmesi"
       ]
     },
     "info": {
@@ -8969,12 +8977,6 @@
       ],
       "Numbers": [
         "Rakamlar"
-      ],
-      "OpenVPN / IKEv2 password": [
-        "OpenVPN / IKEv2 parolası"
-      ],
-      "OpenVPN / IKEv2 username": [
-        "OpenVPN / IKEv2 kullanıcı adı"
       ],
       "Operating system": [
         "İşletim sistemi"
@@ -9736,6 +9738,53 @@
         "Hesabınızı Porkbun etki alanınızla kurun."
       ]
     },
+    "meet_2025: Feature": {
+      "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
+        "${ MEET_APP_NAME }: Önemli görüşmeler için gizliliği koruyan görüntülü toplantı"
+      ],
+      "${ n } active meeting at a time": [
+        "Aynı anda ${ n } etkin görüşme",
+        "Aynı anda ${ n } etkin görüşme"
+      ],
+      "24 hours per meeting": [
+        "Görüşme başına 24 saat"
+      ],
+      "60 minutes per meeting": [
+        "Görüşme başına 60 dakika"
+      ],
+      "Appointment scheduling": [
+        "Randevu planlama"
+      ],
+      "Browser, mobile, and desktop apps": [
+        "Tarayıcı, mobil ve bilgisayar uygulamaları"
+      ],
+      "Built-in chat": [
+        "Hazır sohbet"
+      ],
+      "End-to-end encrypted screen sharing and ephemeral in-call chat": [
+        "Uçtan uca şifrelenmiş ekran paylaşımı ve geçici çağrı içi sohbet"
+      ],
+      "Meeting recording (coming soon)": [
+        "Görüşme kaydı (yakında)"
+      ],
+      "One active meeting at a time": [
+        "Aynı anda bir etkin görüşme"
+      ],
+      "Screen-sharing": [
+        "Ekran paylaşımı"
+      ],
+      "Unlimited meetings per day": [
+        "Günlük sınırsız görüşme"
+      ],
+      "Up to ${ n } meeting per day": [
+        "Günde ${ n } görüşme",
+        "Günde ${ n } görüşme"
+      ],
+      "Up to ${ n } participant": [
+        "${ n } katılımcı",
+        "${ n } katılımcı"
+      ]
+    },
     "Member action": {
       "Activate user": [
         "Kullanıcıyı etkinleştir"
@@ -9866,6 +9915,21 @@
       ],
       "Euro": [
         "Euro"
+      ],
+      "Hong Kong dollar": [
+        "Hong Kong Doları"
+      ],
+      "Japanese yen": [
+        "Japon Yeni"
+      ],
+      "Polish złoty": [
+        "Polonya Zlotisi"
+      ],
+      "Singapore dollar": [
+        "Singapur Doları"
+      ],
+      "South Korean won": [
+        "Güney Kore Wonu"
       ],
       "Swiss franc": [
         "İsviçre frangı"
@@ -11008,9 +11072,6 @@
       ],
       "Number of records exceeds the download limit of 10000": [
         "Kayıt sayısı 10.000 indirme sayısı sınırını aşıyor"
-      ],
-      "OpenVPN / IKEv2 credentials regenerated": [
-        "OpenVPN / IKEv2 kimlik bilgileri yeniden oluşturuldu"
       ],
       "Reminder has been sent": [
         "Hatırlatıcı gönderildi"
@@ -12205,11 +12266,6 @@
       ],
       "Upgrade to ${ upsellPlanTitle }": [
         "${ upsellPlanTitle } tarifesine yükselt"
-      ]
-    },
-    "Price": {
-      "Free": [
-        "Ücretsiz"
       ]
     },
     "Property type": {
@@ -15391,9 +15447,6 @@
       "Open pagination": [
         "Sayfalandırmayı aç"
       ],
-      "OpenVPN / IKEv2 username": [
-        "OpenVPN / IKEv2 kullanıcı adı"
-      ],
       "OpenVPN configuration files": [
         "OpenVPN yapılandırma dosyaları"
       ],
@@ -15536,7 +15589,7 @@
         "SAML kimlik doğrulaması"
       ],
       "Schedule meetings in one click": [
-        "Tek tıklamayla toplantılar planlayın"
+        "Tek tıklamayla görüşmeler planlayın"
       ],
       "Search for additional servers": [
         "Ek sunucuları arayın"

@@ -958,11 +958,17 @@
       "Open in ${ SHEETS_APP_NAME }": [
         "Avaa ${ SHEETS_APP_NAME } -sovelluksessa"
       ],
+      "Open in new tab": [
+        "Avaa uudessa välilehdessä"
+      ],
       "Open navigation": [
         "Avaa navigaatio"
       ],
       "Open recovery settings": [
         "Avaa palautusasetukset"
+      ],
+      "Open settings": [
+        "Avaa asetukset"
       ],
       "Opt out": [
         "Kieltäydy"
@@ -1575,6 +1581,10 @@
       ]
     },
     "Addon": {
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "${ BRAND_NAME } Scribe -kirjoitusavustaja (${ quantity } käyttäjälle)",
+        "${ BRAND_NAME } Scribe-kirjoitusavustaja (${ quantity } käyttäjälle)"
+      ],
       "${ domains } additional custom domain": [
         "${ domains } oma lisäverkkotunnus",
         "${ domains } omaa lisäverkkotunnusta"
@@ -1582,6 +1592,10 @@
       "${ ips } server": [
         "${ ips } palvelin",
         "${ ips } palvelinta"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "${ LUMO_APP_NAME } tekoälyavustaja (${ quantity } käyttäjä)",
+        "${ LUMO_APP_NAME } AI-avustaja (${ quantity } käyttäjälle)"
       ],
       "${ price } per dedicated server": [
         "${ price }/oma palvelin"
@@ -1594,6 +1608,10 @@
       ],
       "${ price } per user": [
         "${ price }/käyttäjä"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } oma verkkotunnus",
+        "${ quantity } omaa verkkotunnusta"
       ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } ${ LUMO_APP_NAME }-lisenssi",
@@ -7982,6 +8000,9 @@
       "Continuing will connect your ${ BRAND_NAME } Account to ${ name }.": [
         "Jatkamalla ${ BRAND_NAME }-tilisi yhdistetään palveluun ${ name }."
       ],
+      "Control whether organization members can create vaults or require an administrator to create and share a vault with them.": [
+        "Hallitse, voivatko organisaation jäsenet luoda holveja vai vaaditaanko järjestelmänvalvojaa luomaan ja jakamaan holvi heidän kanssaan."
+      ],
       "Copied to clipboard": [
         "Kopioitu leikepöydälle"
       ],
@@ -11402,6 +11423,9 @@
       "New second password": [
         "Uusi toinen salasana"
       ],
+      "No (users cannot use the app until a vault is shared with them)": [
+        "Ei (käyttäjät eivät voi käyttää sovellusta, ennen kuin holvi on jaettu heidän kanssaan)"
+      ],
       "No filter": [
         "Ei suodatusta"
       ],
@@ -11423,14 +11447,17 @@
       "Numbers": [
         "Numerot"
       ],
+      "Only a single personal vault can be created": [
+        "Vain yksi henkilökohtainen holvi voidaan luoda"
+      ],
       "Only available on ${ PASS_SHORT_APP_NAME } paid plans": [
         "Saatavilla vain ${ PASS_SHORT_APP_NAME } -maksullisissa tilauksissa"
       ],
-      "OpenVPN / IKEv2 password": [
-        "OpenVPN/IKEv2-salasana"
+      "OpenVPN password": [
+        "OpenVPN -salasana"
       ],
-      "OpenVPN / IKEv2 username": [
-        "OpenVPN-/IKEv2-käyttäjätunnus"
+      "OpenVPN username": [
+        "OpenVPN -käyttäjäjtunnus"
       ],
       "Operating system": [
         "Käyttöjärjestelmä"
@@ -11771,6 +11798,9 @@
       ],
       "Without attachment": [
         "Liitteittä"
+      ],
+      "Yes": [
+        "Kyllä"
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Kyllä, haluan poistaa tilin ja kaikki sen tiedot pysyvästi."
@@ -12528,6 +12558,21 @@
       ],
       "Euro": [
         "euroa"
+      ],
+      "Hong Kong dollar": [
+        "Hongkongin dollari"
+      ],
+      "Japanese yen": [
+        "Japanin jeni"
+      ],
+      "Polish złoty": [
+        "Puolan złoty"
+      ],
+      "Singapore dollar": [
+        "Singaporen dollari"
+      ],
+      "South Korean won": [
+        "Etelä-Korean won"
       ],
       "Swiss franc": [
         "Sveitsin frangia"
@@ -13869,8 +13914,8 @@
       "Number of records exceeds the download limit of 10000": [
         "Tietueiden määrä ylittää 10000 latausrajan"
       ],
-      "OpenVPN / IKEv2 credentials regenerated": [
-        "OpenVPN/IKEv2-kirjautumistiedot luotiin uudelleen"
+      "OpenVPN credentials regenerated": [
+        "OpenVPN -kirjautumistiedot luotiin uudeelleen"
       ],
       "Reminder has been sent": [
         "Muistutus on lähetetty"
@@ -15550,11 +15595,6 @@
         "Post-kvanttisuojaus on käytössä."
       ]
     },
-    "Price": {
-      "Free": [
-        "Ilmainen"
-      ]
-    },
     "Primary timezone": {
       "Secondary time zone": [
         "Toissijainen aikavyöhyke"
@@ -16867,6 +16907,10 @@
       "${ VPN_CONNECTIONS } high-speed VPN connection": [
         "${ VPN_CONNECTIONS } suurinopeuksinen VPN-yhteys",
         "${ VPN_CONNECTIONS } suurinopeuksista VPN-yhteyttä"
+      ],
+      "${ vpnServersCountData.free.servers }+ VPN servers in ${ vpnServersCountData.free.countries } country": [
+        "${ vpnServersCountData.free.servers }+ VPN-palvelinta ${ vpnServersCountData.free.countries } maassa",
+        "${ vpnServersCountData.free.servers }+ VPN-palvelinta ${ vpnServersCountData.free.countries } maassa"
       ],
       "${ vpnServersCountData.paid.countries }+ country": [
         "${ vpnServersCountData.paid.countries }+ maa",
@@ -18782,6 +18826,10 @@
       "${ feature } is now active": [
         "${ feature } on nyt käytössä"
       ],
+      "${ friendsSubscribed } Friend subscribed": [
+        "${ friendsSubscribed } ystävä tilasi",
+        "${ friendsSubscribed } ystävää tilannut"
+      ],
       "${ MAIL_APP_NAME } Export Tool": [
         "${ MAIL_APP_NAME } Export Tool"
       ],
@@ -19638,6 +19686,9 @@
       ],
       "Open pagination": [
         "Avaa sivunavigaatio"
+      ],
+      "OpenVPN": [
+        "OpenVPN"
       ],
       "OpenVPN configuration files": [
         "OpenVPN-määritystiedostot"

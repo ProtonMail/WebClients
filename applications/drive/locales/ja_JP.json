@@ -3752,6 +3752,9 @@
       "We were not able to load some of your shared items": [
         "共有アイテムの一部を読み込むことができませんでした"
       ],
+      "We were not able to load the folder contents": [
+        "フォルダーの内容を読み込めませんでした"
+      ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "${ maxContacts }件以上の宛先へメールを送信することはできません"
       ],
@@ -10007,11 +10010,6 @@
       ],
       "Upgrade to ${ upsellPlanTitle }": [
         "${ upsellPlanTitle }にアップグレード"
-      ]
-    },
-    "Price": {
-      "Free": [
-        "無料"
       ]
     },
     "Progress bar description": {

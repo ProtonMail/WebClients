@@ -4,6 +4,26 @@
     "language": "ca_ES"
   },
   "contexts": {
+    "Account Settings - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "S'han detectat ${ name } i ${ remainingCount } altres fuites potencials. Activeu ${ DARK_WEB_MONITORING_NAME } per a veure'n els detalls i prendre mesures. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "S'han detectat ${ name } i una altra fuita potencial. Activeu ${ DARK_WEB_MONITORING_NAME } per a veure'n els detalls i prendre mesures. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "S'ha detectat una possible fuita de ${ name }. Activeu ${ DARK_WEB_MONITORING_NAME } per a veure'n els detalls i prendre mesures. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "S'ha detectat una possible fuita de ${ name }. Activeu ${ DARK_WEB_MONITORING_NAME } per a veure'n els detalls i prendre mesures. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "S'ha detectat una possible fuita de ${ name }. Activeu ${ DARK_WEB_MONITORING_NAME } per a veure'n els detalls. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "S'ha trobat la vostra informació en almenys una fuita de dades. Activeu ${ DARK_WEB_MONITORING_NAME } per a veure'n els detalls i prendre mesures. ${ link }"
+      ]
+    },
     "Action": {
       "${ PASS_SHORT_APP_NAME } for Android": [
         "${ PASS_SHORT_APP_NAME } per Android"
@@ -55,6 +75,9 @@
       ],
       "Add username field": [
         "Afegiu un camp de nom d'usuari"
+      ],
+      "Admin panel": [
+        "Panell d'administració"
       ],
       "Advanced": [
         "Avançat"
@@ -197,6 +220,9 @@
       "Create a ${ BRAND_NAME } Account": [
         "Crea un compte de ${ BRAND_NAME }"
       ],
+      "Create a new vault": [
+        "Crea una caixa forta nova"
+      ],
       "Create alias": [
         "Crea un àlies"
       ],
@@ -305,6 +331,9 @@
       "Edit vault": [
         "Edita la caixa forta"
       ],
+      "Enable ${ DARK_WEB_MONITORING_NAME }": [
+        "Activeu ${ DARK_WEB_MONITORING_NAME }"
+      ],
       "Enable this alias to receive emails sent to this alias": [
         "Activeu aquest àlies per rebre correus electrònics enviats a aquest àlies"
       ],
@@ -341,11 +370,17 @@
       "Get mobile and desktop apps": [
         "Obtingueu les aplicacions mòbils i d'escriptori"
       ],
+      "Get mobile apps": [
+        "Baixeu l'aplicació mòbil"
+      ],
       "Get Pass Business": [
         "Aconsegueixi Pass Business"
       ],
       "Get Pass Plus": [
         "Obtingui Pass Plus"
+      ],
+      "Get Started": [
+        "Comença"
       ],
       "Hide": [
         "Amaga"
@@ -395,6 +430,9 @@
       "Link expires after": [
         "L'enllaç caduca després de"
       ],
+      "Lock ${ PASS_APP_NAME }": [
+        "Bloca ${ PASS_APP_NAME }"
+      ],
       "Lock extension": [
         "Bloqueja l'extensió"
       ],
@@ -418,6 +456,9 @@
       ],
       "Manually sync your data": [
         "Sincronitzeu les vostres dades manualment"
+      ],
+      "Mark as resolved": [
+        "Marca com a resolt"
       ],
       "Maximum views": [
         "Màxim de visualitzacions"
@@ -469,6 +510,12 @@
       ],
       "Organize vaults": [
         "Organitza les caixes fortes"
+      ],
+      "Pass Monitor": [
+        "Pass Monitor"
+      ],
+      "Pause monitoring": [
+        "Posa en pausa el monitoratge"
       ],
       "Pin item": [
         "Ancora l'element"
@@ -544,6 +591,9 @@
       ],
       "Restrict number of views": [
         "Restringeix el nombre de visualitzacions"
+      ],
+      "Resume monitoring": [
+        "Reprèn el monitoratge"
       ],
       "Retry": [
         "Reintenta"
@@ -660,6 +710,9 @@
       "Try again": [
         "Proveu de nou"
       ],
+      "Try again.": [
+        "Torni-ho a intentar."
+      ],
       "Unblock contact": [
         "Desbloqueja el contacte"
       ],
@@ -705,6 +758,9 @@
       ],
       "View app logs": [
         "Mostra els registres de l'aplicació"
+      ],
+      "View details": [
+        "Mostra els detalls"
       ],
       "View history": [
         "Visualitza l'historial"
@@ -759,6 +815,9 @@
         "${ total } altre inici de sessió fa servir la mateixa contrasenya.",
         "${ total } altres inicis de sessió fan servir la mateixa contrasenya."
       ],
+      "2FA adds another layer of security to your logins. ${ PASS_APP_NAME } makes 2FA easier by storing and automatically autofilling your 2FA codes.": [
+        "L'autenticació de doble factor (A2F) afegeix una altra capa de seguretat als vostres inicis de sessió. ${ PASS_APP_NAME } facilita l'A2F emmagatzemant i omplint automàticament els vostres codis d'A2F."
+      ],
       "A checked box means the feature is disabled.": [
         "Una casella marcada significa que la funció està desactivada."
       ],
@@ -771,11 +830,23 @@
       "Add the following TXT DNS record to your domain.": [
         "Afegiu el següent registre TXT DNS al vostre domini."
       ],
+      "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
+        "Un àlies de correu electrònic funciona com una adreça de correu electrònic, però redueix el correu brossa i manté ocultes la vostra adreça de correu electrònic real i la vostra identitat."
+      ],
+      "Change your passwords": [
+        "Canvieu les vostres contrasenyes"
+      ],
+      "Create unique passwords": [
+        "Creeu contrasenyes úniques"
+      ],
       "DKIM ${ WIKIPEDIA_LINK_DKIM } is an email authentication method designed to avoid email spoofing. Setting up DKIM is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
         "El protocol DKIM ${ WIKIPEDIA_LINK_DKIM } és un mètode d'autenticació de correu electrònic dissenyat per evitar la falsificació de correu electrònic. Es recomana configurar DKIM per reduir la possibilitat que els vostres correus electrònics acabin a la carpeta de correu brossa del destinatari."
       ],
       "DMARC ${ WIKIPEDIA_LINK_DMARC } is designed to protect the domain from unauthorized use, commonly known as email spoofing. Built around SPF and DKIM, a DMARC policy tells the receiving mail server what to do if neither of those authentication methods passes.": [
         "La política DMARC ${ WIKIPEDIA_LINK_DMARC } està dissenyat per protegir el domini de l'ús no autoritzat, comunament conegut com a falsificació de correu electrònic. Creada al voltant de SPF i DKIM, una política DMARC indica al servidor de correu receptor què ha de fer si cap d'aquests mètodes d'autenticació passa."
+      ],
+      "Get notified if your email, password or other personal data was leaked.": [
+        "Rebi una notificació si s'han filtrat el seu correu electrònic, contrasenya o altres dades personals."
       ],
       "If you are using a subdomain, e.g. ${ subdomainExample }, you need to use ${ dmarcExampleSubdomain } as the domain instead.": [
         "Si utilitzeu un subdomini, per exemple ${ subdomainExample }, heu d'utilitzar ${ dmarcExampleSubdomain } com a domini."
@@ -786,8 +857,17 @@
       "If you are using Cloudflare, please make sure to not select the Proxy option.": [
         "Si utilitzeu Cloudflare, assegureu-vos de no seleccionar l'opció Proxy."
       ],
+      "Keep your info more secure and private with these guides and tips.": [
+        "Manteniu la vostra informació més segura i privada amb aquestes guies i consells."
+      ],
       "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.${ infoText }": [
         "Llista de dominis on certes funcions automàtiques de ${ PASS_SHORT_APP_NAME } (emplenament, suggeriment i desament automàtics) no s'han d'executar.${ infoText }"
+      ],
+      "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
+        "La nostra solució de seguretat d'avantguarda, impulsada per IA, dissenyada per als usuaris que busquen una protecció més elevada per als seus comptes. ${ learnMoreLink }"
+      ],
+      "Set up 2FA for more security": [
+        "Configureu A2F per a més seguretat"
       ],
       "Some DNS registrar might require a full record path, in this case please use ${ domain } as domain value instead.": [
         "Alguns registradors de DNS poden requerir una ruta de registre completa. En aquest cas, utilitzeu ${ domain } com a valor de domini."
@@ -797,6 +877,15 @@
       ],
       "SPF ${ WIKIPEDIA_LINK_SPF } is an email authentication method designed to detect forging sender addresses during the delivery of the email. Setting up SPF is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
         "La norma SPF ${ WIKIPEDIA_LINK_SPF } és un mètode d'autenticació de correu electrònic dissenyat per detectar adreces de remitents falsificades durant l'enviament del correu electrònic. Es recomana configurar SPF per reduir la possibilitat que els vostres correus electrònics acabin a la carpeta de correu brossa del destinatari."
+      ],
+      "Start monitoring for data breaches related to accounts created with your email address and your hide-my-email aliases.": [
+        "Comenceu a monitorar les filtracions de dades relacionades amb els comptes creats amb la vostra adreça de correu electrònic i amb els vostres àlies de hide-my-email."
+      ],
+      "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
+        "El web fosc és una part amagada d'internet on es pot comprar i vendre informació personal robada, com ara les identitats."
+      ],
+      "These items remain at risk": [
+        "Aquests elements continuen en risc"
       ],
       "These vaults will not be accessible and their content won’t be available to Search or Autofill.": [
         "Aquestes caixes fortes no seran accessibles i el seu contingut no estarà disponible per a cerca o emplenament automàtic."
@@ -812,6 +901,15 @@
       ],
       "Unlock advanced security features and detailed logs to safeguard your online presence.": [
         "Desbloquegeu característiques de seguretat avançades i registres detallats per a protegir la vostra presència en línia."
+      ],
+      "With ${ PASS_SHORT_APP_NAME } Monitor, stay ahead of threats by getting instant alerts if your credentials are compromised. Unlock advanced security features and detailed logs to safeguard your online presence.": [
+        "Amb el monitoratge de ${ PASS_SHORT_APP_NAME }, avanceu-vos a les amenaces amb alertes instantànies si les vostres credencials es veuen compromeses. Desbloquegeu les característiques de seguretat avançades i els registres detallats per a salvaguardar la vostra presència en línia."
+      ],
+      "Your email addresses were leaked in at least 1 data breach.": [
+        "Les vostres adreces de correu electrònic s'han filtrat en almenys 1 infracció de dades."
+      ],
+      "Your personal info was leaked in a data breach of a third-party service.": [
+        "La vostra informació personal s'ha filtrat en una violació de les dades d'un servei de tercers."
       ]
     },
     "Email": {
@@ -1266,6 +1364,17 @@
         "S'ha produït un error."
       ]
     },
+    "Feature": {
+      "Integrated 2FA authenticator": [
+        "Autenticador A2F integrat"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Nombre il·limitat d'àlies hide-my-email"
+      ],
+      "Vault sharing (up to ${ MAX_VAULT_MEMBERS } people)": [
+        "Compartició de la caixa forta (fins a ${ MAX_VAULT_MEMBERS } persones)"
+      ]
+    },
     "file size format": {
       "byte": [
         "byte",
@@ -1304,6 +1413,17 @@
       "Terabyte": [
         "Terabyte",
         "Terabytes"
+      ]
+    },
+    "Header": {
+      "Domain": [
+        "Domini"
+      ],
+      "Password ends with": [
+        "La contrasenya acaba amb"
+      ],
+      "Username": [
+        "Nom d'usuari"
       ]
     },
     "Info": {
@@ -1391,6 +1511,10 @@
         "${ repliedEmailsCount } enviat",
         "${ repliedEmailsCount } enviats"
       ],
+      "${ row.breachCount } breach detected": [
+        "S'ha detectat ${ row.breachCount } infracció.",
+        "S'han detectat ${ row.breachCount } infraccions."
+      ],
       "${ trialDaysLeft } day left": [
         "Queda ${ trialDaysLeft } dia",
         "Queden ${ trialDaysLeft } dies"
@@ -1434,8 +1558,14 @@
       "Access your passwords on the go with our mobile apps.": [
         "Accediu a les vostres contrasenyes sobre la marxa amb les nostres aplicacions mòbils."
       ],
+      "Add your custom email address to monitor:": [
+        "Afegiu la vostra adreça electrònica personalitzada per monitoritzar:"
+      ],
       "Admin": [
         "Administrador"
+      ],
+      "After confirming, you will need to accept a permission prompt for ${ PASS_APP_NAME }.": [
+        "Un cop ho hagueu confirmat, haureu d'acceptar una petició de permís per a ${ PASS_APP_NAME }."
       ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Després d'importar correctament les dades, podeu suprimir el fitxer CSV que conté les contrasenyes per seguretat."
@@ -1455,11 +1585,17 @@
       "Aliases out of sync (${ aliasCount })": [
         "Àlies no sincronitzats (${ aliasCount })"
       ],
+      "Aliases with custom domains are not monitored, please add them as a custom email for monitoring.": [
+        "Els àlies amb dominis personalitzats no se supervisen; afegeixi'ls com a correu electrònic personalitzat per al seguiment."
+      ],
       "All aliases using the mailbox ${ emailJSX } will be also deleted.": [
         "També se suprimiran tots els àlies que utilitzin la bústia ${ emailJSX }."
       ],
       "All breaches for this address were resolved": [
         "S'han resolt totes les infraccions d'aquesta adreça"
+      ],
+      "All current breaches will be marked as resolved. In case of future data breaches, you'll be notified.": [
+        "Totes les infraccions actuals es marcaran com a resoltes. En cas de futures infraccions de dades, se us notificarà."
       ],
       "All inactive secure links were removed": [
         "S'han esborrat tots els enllaços segurs inactius."
@@ -1515,6 +1651,9 @@
       "Biometrics will be disabled and will need to be enabled again.": [
         "Les dades biomètriques es desactivaran i caldrà tornar-les a activar."
       ],
+      "Breaches detected": [
+        "S'han detectat infraccions"
+      ],
       "Bring your own domain and you don't have to buy yet another email hosting solution.": [
         "Porteu el vostre propi domini i no haureu de comprar una altra solució d'allotjament de correu electrònic."
       ],
@@ -1550,6 +1689,9 @@
       ],
       "Can view this item.": [
         "Pot veure aquest element."
+      ],
+      "Change your password": [
+        "Canvieu la vostra contrasenya"
       ],
       "Choose a saved passkey to sign-in to ${ domain }": [
         "Trieu una clau d'accés desada per a iniciar la sessió a ${ domain }"
@@ -1617,8 +1759,8 @@
       "Disabling offline mode...": [
         "S'està desactivant el mode fora de línia..."
       ],
-      "Discover ${ PASS_APP_NAME } Youtube Video": [
-        "Descobriu el vídeo de Youtube de ${ PASS_APP_NAME }"
+      "Discover ${ PASS_APP_NAME } video": [
+        "Descobriu el vídeo de ${ PASS_APP_NAME }"
       ],
       "DNS changes could take up to 24 hours to update.": [
         "Els canvis de DNS poden trigar fins a 24 hores a actualitzar-se."
@@ -1637,6 +1779,9 @@
       ],
       "Editor": [
         "Editor"
+      ],
+      "email": [
+        "corrreu electrònic"
       ],
       "Email address successfully deleted from monitoring": [
         "L'adreça de correu electrònic s'ha suprimit del monitoratge."
@@ -1719,6 +1864,9 @@
       "Fill in the CSV with your data": [
         "Empleneu el CSV amb les vostres dades"
       ],
+      "finance": [
+        "finances"
+      ],
       "Follow those steps to import your data with a generic CSV:": [
         "Seguiu aquests passos per a importar les dades amb un fitxer CSV genèric:"
       ],
@@ -1756,6 +1904,12 @@
       ],
       "Here's how it works:": [
         "Així funciona:"
+      ],
+      "High Priority": [
+        "Alta prioritat"
+      ],
+      "How does monitoring work?": [
+        "Com funciona el monitoratge?"
       ],
       "Identity confirmed": [
         "S'ha confirmat la identitat."
@@ -1827,6 +1981,12 @@
       "Item successfully unpinned": [
         "S'ha desancorat l'element."
       ],
+      "Latest breach on ${ formattedDate }": [
+        "Última infracció el ${ formattedDate }"
+      ],
+      "Learn what to do ${ dataLeakedLink }": [
+        "Més informació sobre què fer ${ dataLeakedLink }"
+      ],
       "Leaving item...": [
         "S'està deixant l'element..."
       ],
@@ -1845,11 +2005,20 @@
       "Loading...": [
         "S'està carregant..."
       ],
+      "Low Priority": [
+        "Prioritat baixa"
+      ],
       "Manager": [
         "Gestor"
       ],
       "me": [
         "jo"
+      ],
+      "Medium Priority": [
+        "Prioritat mitjana"
+      ],
+      "Monitor accounts": [
+        "Supervisar els comptes"
       ],
       "Monitoring settings successfully updated": [
         "S'han actualitzat les preferències de seguiment."
@@ -1865,8 +2034,7 @@
         "S'estan movent tots els elements de «${ payload.content.name }»"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Si moveu un element a una altra caixa forta, se n'esborrarà els enllaces segurs.",
-        "Si moveu els elements a una altra caixa forta, se n'esborrarà els enllaces segurs."
+        "Si moveu un element a una altra caixa forta, se n'esborrarà els enllaces segurs."
       ],
       "Moving items": [
         "S'estan movent elements"
@@ -1888,6 +2056,9 @@
       ],
       "Never": [
         "Mai"
+      ],
+      "No breaches detected": [
+        "No s'han detectat infraccions"
       ],
       "No credit cards found": [
         "No s'ha trobat cap targeta de crèdit."
@@ -1925,6 +2096,9 @@
       "Open the Safari settings, find ${ PASS_APP_NAME }, go to \"Permissions\" and enable site permissions.": [
         "Obriu la configuració de Safari, busqueu ${ PASS_APP_NAME }, aneu a \"Permisos\" i activeu-hi els corresponents al lloc."
       ],
+      "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Les nostres alertes prioritzen la seguretat. Si no reconeixeu la informació compromesa, podeu ignorar aquest informe amb seguretat."
+      ],
       "Owner": [
         "Propietari"
       ],
@@ -1937,6 +2111,9 @@
       "Passkey sign-in": [
         "Inici de sessió amb clau d'accés"
       ],
+      "password": [
+        "contrasenya"
+      ],
       "Password copied": [
         "S'ha copiat la contrasenya."
       ],
@@ -1946,6 +2123,9 @@
       "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
         "Les contrasenyes anteriors a ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } setmana s'esborren automàticament de l'historial.",
         "Les contrasenyes anteriors a ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } setmanes s'esborren automàticament de l'historial."
+      ],
+      "Paused": [
+        "Pausat"
       ],
       "Pending access to the shared data": [
         "L'accés a les dades compartides està pendent"
@@ -2223,6 +2403,9 @@
       "Successfully synced all vaults": [
         "S'han sincronitzat totes les caixes fortes"
       ],
+      "Suggested": [
+        "Suggeriment"
+      ],
       "Switch to another vault or create an item in this vault": [
         "Canvieu a una altra caixa forta o creeu un element en aquesta"
       ],
@@ -2244,6 +2427,9 @@
       "The exported file will be encrypted using PGP and requires a strong passphrase.": [
         "El fitxer exportat es xifrarà amb PGP i requereix una contrasenya forta."
       ],
+      "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
+        "La informació exposada es va filtrar d'un servei de tercers. La informació del vostre compte de ${ BRAND_NAME } continua sent segura i xifrada. ${ learnMoreLink }"
+      ],
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "Es requerirà la contrasenya addicional per utilitzar ${ PASS_APP_NAME }. Actua com una contrasenya addicional a la contrasenya de ${ BRAND_NAME }."
       ],
@@ -2262,6 +2448,9 @@
       ],
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Aquesta exportació no es xifrarà i qualsevol persona amb accés al fitxer exportat podrà veure les contrasenyes. Per seguretat, elimineu-lo un cop hàgiu acabat d'utilitzar-lo."
+      ],
+      "This feature is currently experimental on Linux. Please ensure your system is up-to-date.": [
+        "Aquesta funció és experimental a Linux per ara. Assegureu-vos que el vostre sistema estigui actualitzat."
       ],
       "This item is not currently shared with anyone. Invite people to share it with others.": [
         "Aquest element no està compartit actualment amb ningú. Inviteu persones a compartir-la amb altres."
@@ -2374,6 +2563,9 @@
       "User's access successfully updated": [
         "S'ha actualitzat l'accés de l'usuari."
       ],
+      "username": [
+        "nom d'usuari"
+      ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "S'ha eliminat la caixa forta \"${ payload.content.name }\""
       ],
@@ -2395,6 +2587,9 @@
       ],
       "Verification code": [
         "Codi de verificació"
+      ],
+      "Verification code sent.": [
+        "Codi de verificació enviat."
       ],
       "Viewer": [
         "Lector"
@@ -2459,9 +2654,6 @@
       "You may close this tab.": [
         "Ara podeu tancar aquesta pestanya."
       ],
-      "You may need to accept a permission prompt and may have to restart the application depending on your system.": [
-        "Potser necessitareu acceptar una sol·licitud de permís i reiniciar l'aplicació en funció del vostre sistema."
-      ],
       "You may need to grant accessiblity permission to ${ PASS_APP_NAME }.": [
         "Potser necessitareu concedir permisos d'accessibilitat a ${ PASS_APP_NAME }."
       ],
@@ -2473,6 +2665,18 @@
       ],
       "You will be logged out and need to log in again on all of your other devices.": [
         "Se us tancarà la sessió i haureu de tornar a iniciar-la en tots els altres dispositius."
+      ],
+      "You will be notified of data breaches for these email addresses.": [
+        "Rebreu notificacions sobre les infraccions de dades d'aquestes adreces de correu electrònic."
+      ],
+      "You will be notified of data breaches for this email address.": [
+        "Se us notificaran les infraccions de dades d'aquesta adreça de correu electrònic."
+      ],
+      "You will no longer be notified of data breaches for these email addresses.": [
+        "Ja no us notificaran les infraccions de dades d'aquestes adreces de correu electrònic."
+      ],
+      "You will no longer be notified of data breaches for this email address.": [
+        "Aquesta adreça de correu electrònic deixarà de rebre notificacions sobre infraccions de dades."
       ],
       "You will no longer have access to sharing, 2FA and other advanced features in ${ PASS_APP_NAME }": [
         "Ja no tindreu accés a compartir, a 2FA i altres característiques avançades de ${ PASS_APP_NAME }"
@@ -2500,6 +2704,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "Es xifraran els fitxers i després es desaran."
+      ],
+      "Your information was found on ${ displayedDate }": [
+        "La vostra informació es va trobar el ${ displayedDate }"
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "La vostra organització us demana que assegureu el vostre accés a ${ PASS_APP_NAME }."
@@ -2570,6 +2777,10 @@
       "${ secureLinksCount } secure link": [
         "${ secureLinksCount } enllaç segur",
         "${ secureLinksCount } enllaços segurs"
+      ],
+      "${ usageCount } login": [
+        "${ usageCount } inici de sessió",
+        "${ usageCount } inicis de sessió"
       ],
       "${ years } year": [
         "${ years } any",
@@ -2875,6 +3086,9 @@
       "Email (new alias)": [
         "Correu electrònic (nou àlies)"
       ],
+      "Email address": [
+        "Adreça de correu electrònic"
+      ],
       "Email aliases": [
         "Àlies de correu electrònic"
       ],
@@ -2943,6 +3157,9 @@
       ],
       "Generic CSV": [
         "CSV genèric"
+      ],
+      "Get Started": [
+        "Comenceu"
       ],
       "Grant": [
         "Autoritza"
@@ -3057,6 +3274,9 @@
       ],
       "Last name": [
         "Cognom"
+      ],
+      "Last updated": [
+        "Última actualització"
       ],
       "Last week": [
         "La setmana passada"
@@ -3439,6 +3659,9 @@
       "State or province": [
         "Estat o província"
       ],
+      "Status": [
+        "Estat"
+      ],
       "Street address": [
         "Adreça de carrer"
       ],
@@ -3547,6 +3770,9 @@
       "Use ${ PASS_APP_NAME } as your browser's default password manager": [
         "Utilitzeu ${ PASS_APP_NAME } com a gestor de contrasenyes predeterminat del vostre navegador"
       ],
+      "Used in": [
+        "Utilitzat en"
+      ],
       "Useful for permanent sharing": [
         "Útil per compartir permanentment"
       ],
@@ -3561,6 +3787,9 @@
       ],
       "Vault ID": [
         "ID de la caixa forta"
+      ],
+      "Vaults": [
+        "Caixes fortes"
       ],
       "View details": [
         "Mostra els detalls"
@@ -3620,6 +3849,17 @@
     "Link": {
       "auto create rules ››": [
         "crear regles automàticament ››"
+      ],
+      "if your data is leaked": [
+        "si es filtren les vostres dades"
+      ],
+      "Learn more": [
+        "Més informació"
+      ]
+    },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "Activa ${ reason }"
       ]
     },
     "Message": {
@@ -3633,6 +3873,22 @@
       ],
       "You selected ${ semiboldText } in this vault.": [
         "Heu seleccionat ${ semiboldText } en aquesta caixa forta."
+      ]
+    },
+    "new_plans: feature": {
+      "Require 2FA for organization": [
+        "Requereix A2F per a l'organització"
+      ],
+      "SSO integration": [
+        "Integració SSO"
+      ]
+    },
+    "Notification": {
+      "${ reason } has been disabled": [
+        "${ reason } s'ha desactivat"
+      ],
+      "${ reason } has been enabled": [
+        "S'ha activat ${ reason } "
       ]
     },
     "Onboarding": {
@@ -3898,6 +4154,20 @@
         "Utilitzada a ${ url }"
       ]
     },
+    "Security Center - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "S'han detectat ${ name } i ${ remainingCount } altres fuites potencials. Activeu ${ DARK_WEB_MONITORING_NAME } per a veure'n els detalls. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "S'han detectat ${ name } i una altra fuita potencial. Activeu ${ DARK_WEB_MONITORING_NAME } per a veure'n els detalls. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "S'ha detectat una possible fuita de ${ name }. Activeu ${ DARK_WEB_MONITORING_NAME } per a veure'n els detalls. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "S'ha trobat la vostra informació en almenys una fuita de dades. Activeu ${ DARK_WEB_MONITORING_NAME } per a veure'n els detalls. ${ link }"
+      ]
+    },
     "sso": {
       "Approve or deny it now": [
         "Aprova-ho o denega-ho ara"
@@ -4041,11 +4311,20 @@
       ]
     },
     "Title": {
+      "${ BRAND_NAME } addresses": [
+        "Adreces de ${ BRAND_NAME }"
+      ],
       "${ PASS_APP_NAME } Logs": [
         "Registres de ${ PASS_APP_NAME }"
       ],
       "${ PASS_APP_NAME } Settings": [
         "Preferències de ${ PASS_APP_NAME }"
+      ],
+      "${ PASS_SHORT_APP_NAME } Monitor": [
+        "${ PASS_SHORT_APP_NAME } Monitor"
+      ],
+      "Account protection": [
+        "Protecció del compte"
       ],
       "Actions": [
         "Accions"
@@ -4076,6 +4355,15 @@
       ],
       "Blocked addresses": [
         "Adreces bloquejades"
+      ],
+      "Breach detected": [
+        "S'ha detectat una violació de les dades"
+      ],
+      "Breaches": [
+        "Infraccions"
+      ],
+      "Breaches detected for": [
+        "Infraccions detectades per"
       ],
       "Cancel changing your email?": [
         "Voleu cancel·lar el canvi de correu electrònic?"
@@ -4119,8 +4407,17 @@
       "Current version": [
         "Versió actual"
       ],
+      "Custom addresses": [
+        "Adreces personalitzades"
+      ],
       "Custom domains": [
         "Dominis personalitzats"
+      ],
+      "Custom email monitoring": [
+        "Supervisió personalitzada del correu electrònic"
+      ],
+      "Custom emails": [
+        "Correus electrònics personalitzats"
       ],
       "Default": [
         "Per defecte"
@@ -4189,6 +4486,9 @@
       "Enter your second password": [
         "Introduïu la segona contrasenya"
       ],
+      "Excluded items": [
+        "Elements exclosos"
+      ],
       "Fill & copy password": [
         "Emplena i copia la contrasenya"
       ],
@@ -4210,6 +4510,9 @@
       "Hide my email": [
         "Amaga el correu electrònic"
       ],
+      "Hide-my-email aliases": [
+        "Àlies hide-my-email"
+      ],
       "History": [
         "Historial"
       ],
@@ -4224,6 +4527,12 @@
       ],
       "Importing your data": [
         "Importació de les vostres dades"
+      ],
+      "Inactive 2FA": [
+        "2FA inactiva"
+      ],
+      "Information exposed in breach": [
+        "Informació exposada en la filtració"
       ],
       "Item": [
         "Element"
@@ -4240,6 +4549,9 @@
       "Leave vault?": [
         "Voleu deixar la caixa forta?"
       ],
+      "Loading breaches...": [
+        "S'estan carregant les infraccions..."
+      ],
       "Log in as...": [
         "Inicieu sessió com a..."
       ],
@@ -4248,6 +4560,9 @@
       ],
       "Mailbox": [
         "Bústia de correu"
+      ],
+      "Mark as resolved?": [
+        "Marca com a resolt?"
       ],
       "Member limit": [
         "Límit de nombre de membres"
@@ -4278,14 +4593,32 @@
       "MX record": [
         "Registre MX"
       ],
+      "Next": [
+        "Següent"
+      ],
+      "No excluded items": [
+        "No hi ha elements exclosos"
+      ],
+      "No inactive 2FAs": [
+        "No hi ha 2FA inactives"
+      ],
+      "No insecure passwords": [
+        "Sense contrasenyes insegures"
+      ],
       "No items selected": [
         "No s'ha seleccionat cap element."
+      ],
+      "No reused passwords": [
+        "No hi ha contrasenyes reutilitzades"
       ],
       "No shared items": [
         "Sense element compartit"
       ],
       "No shared secure links": [
         "Sense enllaços segurs compartits"
+      ],
+      "Open pagination": [
+        "Obrir paginació"
       ],
       "Organize vaults": [
         "Organitza les caixes fortes"
@@ -4298,6 +4631,12 @@
       ],
       "Password": [
         "Contrasenya"
+      ],
+      "Password Health": [
+        "Salut de les contrasenyes"
+      ],
+      "Pause monitoring?": [
+        "Voleu posar en pausa el monitoratge?"
       ],
       "Pending access confirmation": [
         "Confirmació d'accés pendent"
@@ -4321,11 +4660,20 @@
         "Recordeu que un cop eliminat, l'àlies no es pot recuperar.",
         "Recordeu que un cop eliminats, els àlies no es poden recuperar."
       ],
+      "Previous": [
+        "Anterior"
+      ],
       "Random Prefix Generation": [
         "Generació aleatòria de prefixos"
       ],
+      "Recommended actions": [
+        "Accions recomanades"
+      ],
       "Reject device?": [
         "Voleu rebutjar el dispositiu?"
+      ],
+      "Remove email address?": [
+        "Vols esborrar l'adreça de correu electrònic?"
       ],
       "Remove extra password": [
         "Esborra la contrasenya addicional"
@@ -4336,8 +4684,21 @@
       "Reset history for this item?": [
         "Voleu restablir l'historial d'aquest element?"
       ],
+      "Resolved breaches": [
+        "Infraccions resoltes"
+      ],
       "Restore this version?": [
         "Vol restaurar aquesta versió?"
+      ],
+      "Resume monitoring?": [
+        "Cal reprendre el monitoratge?"
+      ],
+      "Reused ${ count } time": [
+        "Reutilitzat ${ count } vegada",
+        "Reutilitzat ${ count } vegades"
+      ],
+      "Reused passwords": [
+        "Contrasenyes reutilitzades"
       ],
       "Review and share": [
         "Reviseu i comparteu"
@@ -4354,8 +4715,14 @@
       "Set extra password": [
         "Estableixi la contrasenya addicional"
       ],
+      "Set up 2FA for better security": [
+        "Configureu A2F per a major seguretat"
+      ],
       "Set up 2FA for more security": [
         "Configureu A2F per a més seguretat"
+      ],
+      "Settings": [
+        "Preferències"
       ],
       "Share with": [
         "Comparteix amb"
@@ -4420,14 +4787,26 @@
       "Visible vaults": [
         "Caixes fortes visibles"
       ],
+      "Want to learn more?": [
+        "Voleu saber-ne més?"
+      ],
       "Weak password": [
         "Contrasenya feble"
+      ],
+      "Weak passwords": [
+        "Contrasenyes febles"
       ],
       "Welcome to ${ brandNameJSX }": [
         "Us donem la benvinguda a ${ brandNameJSX }"
       ],
       "Welcome to your new password manager!": [
         "Us donem la benvinguda al vostre nou gestor de contrasenyes!"
+      ],
+      "What is an alias?": [
+        "Què és un àlies?"
+      ],
+      "What is the dark web?": [
+        "Què és el web fosc?"
       ],
       "What is the difference between ${ PASS_SHORT_APP_NAME } note and SimpleLogin note?": [
         "Quina diferència hi ha entre una nota de ${ PASS_SHORT_APP_NAME } i una nota de SimpleLogin?"
@@ -4437,6 +4816,9 @@
       ],
       "Your ${ planName } subscription will end on ${ endDate }": [
         "La vostra subscripció a ${ planName } finalitzarà el ${ endDate }."
+      ],
+      "Your exposed information": [
+        "La vostra informació exposada"
       ],
       "Your vault is empty": [
         "La caixa forta està buida"
@@ -4457,6 +4839,14 @@
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Avui"
+      ]
+    },
+    "Tooltip": {
+      "Not all information listed here was exposed for all users.": [
+        "No tota la informació enumerada aquí es va exposar per a tots els usuaris."
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "A menys que es desxifrin, les contrasenyes xifrades romanen segures encara que estiguin exposades."
       ]
     },
     "Validation": {
@@ -4569,6 +4959,9 @@
       "Email cannot be empty": [
         "El correu electrònic no pot estar buit."
       ],
+      "Email is required": [
+        "El correu electrònic és obligatori"
+      ],
       "Empty note": [
         "Nota buida"
       ],
@@ -4583,6 +4976,12 @@
       ],
       "Extra password should have at least 8 characters": [
         "La contrasenya addicional ha de tenir com a mínim 8 caràcters."
+      ],
+      "Failed to autotype. Please make sure ${ PASS_APP_NAME } has the necessary permissions and try again (${ error }).": [
+        "No s'ha pogut autocompletar. Assegureu-vos que ${ PASS_APP_NAME } tingui els permisos necessaris i torneu-ho a provar (${ error })."
+      ],
+      "Failed to load breaches.": [
+        "No s'han pogut carregar les infraccions."
       ],
       "Grant clipboard access to enable automatic clearing of copied passwords and data.": [
         "Concediu accés al porta-retalls per habilitar la neteja automàtica de les contrasenyes i dades copiades."
@@ -4680,6 +5079,9 @@
       ],
       "This alias \"${ aliasEmail }\" is currently used in the login \"${ relatedLoginName }\".": [
         "Aquest àlies «${ aliasEmail }» s'utilitza actualment a l'inici de sessió «${ relatedLoginName }»."
+      ],
+      "This email address will no longer be monitored for data breaches.": [
+        "Aquesta adreça de correu electrònic ja no es controlarà per detectar infraccions de dades."
       ],
       "This item is currently shared. Deleting it will remove access for all other users.": [
         "Aquest element està compartit actualment. Eliminar-ho eliminarà l'accés per a tots els altres usuaris."

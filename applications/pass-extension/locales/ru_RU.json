@@ -4,6 +4,26 @@
     "language": "ru_RU"
   },
   "contexts": {
+    "Account Settings - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Обнаружены ${ name } и ${ remainingCount } других потенциальных утечек. Включите ${ DARK_WEB_MONITORING_NAME }, чтобы просмотреть информацию и принять меры. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Обнаружена ${ name } и еще 1 потенциальная утечка. Включите ${ DARK_WEB_MONITORING_NAME }, чтобы просмотреть информацию и принять меры. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Обнаружена потенциальная утечка данных ${ name }. Включите ${ DARK_WEB_MONITORING_NAME }, чтобы просмотреть информацию и принять меры. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Обнаружена потенциальная утечка из ${ name }. Включите ${ DARK_WEB_MONITORING_NAME }, чтобы просмотреть информацию и принять меры. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Обнаружена потенциальная утечка с ${ name }. Включите ${ DARK_WEB_MONITORING_NAME } для просмотра информации. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Ваша информация была обнаружена как минимум в одной утечке данных. Включите ${ DARK_WEB_MONITORING_NAME }, чтобы просмотреть информацию и принять меры. ${ link }"
+      ]
+    },
     "Action": {
       "Accept": [
         "Принять"
@@ -49,6 +69,9 @@
       ],
       "Add username field": [
         "Добавить поле имени пользователя"
+      ],
+      "Admin panel": [
+        "Панель администратора"
       ],
       "Advanced": [
         "Продвинутые"
@@ -167,6 +190,9 @@
       "Create a ${ BRAND_NAME } Account": [
         "Создайте свой аккаунт ${ BRAND_NAME }"
       ],
+      "Create a new vault": [
+        "Создать новое хранилище"
+      ],
       "Create alias": [
         "Создать псевдоним"
       ],
@@ -269,6 +295,9 @@
       "Edit vault": [
         "Редактировать хранилище"
       ],
+      "Enable ${ DARK_WEB_MONITORING_NAME }": [
+        "Включить ${ DARK_WEB_MONITORING_NAME }"
+      ],
       "Enable this alias to receive emails sent to this alias": [
         "Включите этот псевдоним, чтобы получать электронные письма, на него отправленные."
       ],
@@ -302,11 +331,17 @@
       "Generating secure link...": [
         "Создание защищенной ссылки..."
       ],
+      "Get mobile apps": [
+        "Получить мобильные приложения"
+      ],
       "Get Pass Business": [
         "Получить Pass Business"
       ],
       "Get Pass Plus": [
         "Получить Pass Plus"
+      ],
+      "Get Started": [
+        "Начать"
       ],
       "Hide": [
         "Скрыть"
@@ -356,6 +391,9 @@
       "Link expires after": [
         "Срок действия ссылки истекает после"
       ],
+      "Lock ${ PASS_APP_NAME }": [
+        "Заблокировать ${ PASS_APP_NAME }"
+      ],
       "Lock extension": [
         "Заблокировать расширение"
       ],
@@ -379,6 +417,9 @@
       ],
       "Manually sync your data": [
         "Синхронизировать ваши данные вручную"
+      ],
+      "Mark as resolved": [
+        "Отметить как устраненную"
       ],
       "Maximum views": [
         "Максимум просмотров"
@@ -427,6 +468,12 @@
       ],
       "Open navigation": [
         "Открыть панель навигации"
+      ],
+      "Pass Monitor": [
+        "Pass Monitor"
+      ],
+      "Pause monitoring": [
+        "Приостановить мониторинг"
       ],
       "Pin item": [
         "Закрепить элемент"
@@ -499,6 +546,9 @@
       ],
       "Restrict number of views": [
         "Ограничить количество просмотров"
+      ],
+      "Resume monitoring": [
+        "Возобновить мониторинг"
       ],
       "Retry": [
         "Повторить"
@@ -614,6 +664,9 @@
       "Try again": [
         "Попробовать снова"
       ],
+      "Try again.": [
+        "Повторите попытку."
+      ],
       "Unblock contact": [
         "Разблокировать контакт"
       ],
@@ -661,6 +714,9 @@
       ],
       "View app logs": [
         "Просмотр журналов приложений"
+      ],
+      "View details": [
+        "Просмотреть информацию"
       ],
       "View history": [
         "Посмотреть историю"
@@ -712,6 +768,9 @@
         "${ total } других имен пользователей используют тот же пароль",
         "${ total } других имен пользователей используют тот же пароль"
       ],
+      "2FA adds another layer of security to your logins. ${ PASS_APP_NAME } makes 2FA easier by storing and automatically autofilling your 2FA codes.": [
+        "Двухфакторная идентификация добавляет еще один уровень безопасности к вашим именам пользователей. ${ PASS_APP_NAME } делает двухфакторную идентификацию проще, сохраняя и автоматически заполняя ваши коды двухфакторной идентификации."
+      ],
       "A checked box means the feature is disabled.": [
         "Установленный флажок означает, что функция отключена."
       ],
@@ -724,11 +783,23 @@
       "Add the following TXT DNS record to your domain.": [
         "Добавьте следующую запись TXT DNS к вашему домену."
       ],
+      "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
+        "Псевдоним электронной почты работает так же, как и адрес электронной почты, но при этом уменьшает количество спама и сохраняет в тайне ваш реальный адрес электронной почты и вашу личность."
+      ],
+      "Change your passwords": [
+        "Измените ваши пароли"
+      ],
+      "Create unique passwords": [
+        "Создать уникальный пароль"
+      ],
       "DKIM ${ WIKIPEDIA_LINK_DKIM } is an email authentication method designed to avoid email spoofing. Setting up DKIM is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
         "DKIM ${ WIKIPEDIA_LINK_DKIM } - это метод аутентификации электронной почты, предназначенный для предотвращения подделки писем. Настоятельно рекомендуется настроить DKIM, чтобы снизить вероятность попадания ваших писем в папку «Спам» получателя."
       ],
       "DMARC ${ WIKIPEDIA_LINK_DMARC } is designed to protect the domain from unauthorized use, commonly known as email spoofing. Built around SPF and DKIM, a DMARC policy tells the receiving mail server what to do if neither of those authentication methods passes.": [
         "DMARC ${ WIKIPEDIA_LINK_DMARC } предназначен для защиты домена от несанкционированного использования, известного как подделка электронной почты. Построенная на основе SPF и DKIM, политика DMARC указывает принимающему почтовому серверу, что делать, если ни один из этих методов аутентификации не проходит."
+      ],
+      "Get notified if your email, password or other personal data was leaked.": [
+        "Получите уведомление о том, что ваш адрес электронной почты, пароль или другие личные данные подверглись утечке."
       ],
       "If you are using a subdomain, e.g. ${ subdomainExample }, you need to use ${ dmarcExampleSubdomain } as the domain instead.": [
         "Если вы используете поддомен, например ${ subdomainExample }, вам нужно использовать ${ dmarcExampleSubdomain } в качестве домена."
@@ -739,8 +810,17 @@
       "If you are using Cloudflare, please make sure to not select the Proxy option.": [
         "Если вы используете Cloudflare, убедитесь, что не выбрали опцию Proxy."
       ],
+      "Keep your info more secure and private with these guides and tips.": [
+        "Обеспечьте защищенность и конфиденциальность своей информации с помощью этих руководств и советов."
+      ],
       "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.${ infoText }": [
         "Список доменов, в которых определенные автоматические функции в ${ PASS_SHORT_APP_NAME } (автозаполнение, автопредложение, автосохранение) не должны запускаться.${ infoText }"
+      ],
+      "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
+        "Наше передовое средство безопасности на основе искусственного интеллекта, предназначенное для пользователей, желающих обеспечить надежную защиту своих учетных записей. ${ learnMoreLink }"
+      ],
+      "Set up 2FA for more security": [
+        "Настройте двухфакторную идентификацию для повышения безопасности"
       ],
       "Some DNS registrar might require a full record path, in this case please use ${ domain } as domain value instead.": [
         "Некоторые регистраторы DNS могут потребовать полный путь к записи, в этом случае используйте ${ domain } в качестве значения домена."
@@ -750,6 +830,15 @@
       ],
       "SPF ${ WIKIPEDIA_LINK_SPF } is an email authentication method designed to detect forging sender addresses during the delivery of the email. Setting up SPF is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
         "SPF ${ WIKIPEDIA_LINK_SPF } - это метод проверки подлинности электронной почты, предназначенный для обнаружения подделки адреса отправителя во время доставки письма. Настройка SPF настоятельно рекомендуется для снижения вероятности попадания ваших писем в папку «Спам» получателя."
+      ],
+      "Start monitoring for data breaches related to accounts created with your email address and your hide-my-email aliases.": [
+        "Начните отслеживать утечки данных, связанные с аккаунтами, созданными с помощью вашего адреса электронной почты и псевдонимов hide-my-email."
+      ],
+      "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
+        "Темная паутина - это скрытая часть Интернета, где можно купить и продать украденную персональную информацию, например, личные данные."
+      ],
+      "These items remain at risk": [
+        "Эти элементы остаются под угрозой"
       ],
       "This account is vulnerable, visit the service and change your password.": [
         "Этот аккаунт уязвим, посетите службу и смените пароль."
@@ -762,6 +851,15 @@
       ],
       "Unlock advanced security features and detailed logs to safeguard your online presence.": [
         "Разблокируйте расширенные функции безопасности и подробные журналы для защиты вашего присутствия в Интернете."
+      ],
+      "With ${ PASS_SHORT_APP_NAME } Monitor, stay ahead of threats by getting instant alerts if your credentials are compromised. Unlock advanced security features and detailed logs to safeguard your online presence.": [
+        "С помощью ${ PASS_SHORT_APP_NAME } Monitor вы сможете опережать угрозы, получая мгновенные уведомления о том, что ваши учетные данные раскрыты. Разблокируйте расширенные функции безопасности и подробные журналы, чтобы защитить свое присутствие в Интернете."
+      ],
+      "Your email addresses were leaked in at least 1 data breach.": [
+        "Ваши адреса электронной почты стали известны как минимум в одном случае утечки данных."
+      ],
+      "Your personal info was leaked in a data breach of a third-party service.": [
+        "Ваша личная информация стала известна в результате утечки данных из сторонней службы."
       ]
     },
     "Email": {
@@ -1199,6 +1297,17 @@
         "Что-то пошло не так"
       ]
     },
+    "Feature": {
+      "Integrated 2FA authenticator": [
+        "Интегрированная двухфакторная аутентификация"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Неограниченное количество псевдонимов hide-my-email"
+      ],
+      "Vault sharing (up to ${ MAX_VAULT_MEMBERS } people)": [
+        "Совместное использование хранилища (до ${ MAX_VAULT_MEMBERS } человек)"
+      ]
+    },
     "file size format": {
       "byte": [
         "байт",
@@ -1354,6 +1463,12 @@
         "${ repliedEmailsCount } отправлены",
         "${ repliedEmailsCount } отправлены"
       ],
+      "${ row.breachCount } breach detected": [
+        "Обнаружена ${ row.breachCount } утечка",
+        "Обнаружены ${ row.breachCount } утечки",
+        "Обнаружены ${ row.breachCount } утечек",
+        "Обнаружены ${ row.breachCount } утечек"
+      ],
       "${ trialDaysLeft } day left": [
         "${ trialDaysLeft } день остался",
         "${ trialDaysLeft } дня осталось",
@@ -1396,6 +1511,9 @@
       "Access your passwords on the go with our mobile apps.": [
         "Получайте доступ к своим паролям на ходу с нашими мобильными приложениями."
       ],
+      "Add your custom email address to monitor:": [
+        "Добавьте свой пользовательский адрес электронной почты для мониторинга:"
+      ],
       "Admin": [
         "Админ"
       ],
@@ -1417,11 +1535,17 @@
       "Aliases out of sync (${ aliasCount })": [
         "Псевдонимы не синхронизируются (${ aliasCount })"
       ],
+      "Aliases with custom domains are not monitored, please add them as a custom email for monitoring.": [
+        "Псевдонимы с пользовательскими доменами не отслеживаются, добавьте их в качестве пользовательского электронного адреса для мониторинга."
+      ],
       "All aliases using the mailbox ${ emailJSX } will be also deleted.": [
         "Все псевдонимы, использующие почтовый ящик ${ emailJSX }, также будут удалены."
       ],
       "All breaches for this address were resolved": [
         "Все утечки по этому адресу были устранены"
+      ],
+      "All current breaches will be marked as resolved. In case of future data breaches, you'll be notified.": [
+        "Все текущие утечки будут отмечены как устраненные. В случае будущих утечек данных вы будете уведомлены."
       ],
       "All inactive secure links were removed": [
         "Все неактивные защищенные ссылки были удалены"
@@ -1471,6 +1595,9 @@
       "Biometrics will be disabled and will need to be enabled again.": [
         "Биометрические данные будут отключены и должны быть снова активированы."
       ],
+      "Breaches detected": [
+        "Обнаружены утечки"
+      ],
       "Bring your own domain and you don't have to buy yet another email hosting solution.": [
         "Заведите собственный домен, и вам не придется покупать еще один хостинг электронной почты."
       ],
@@ -1506,6 +1633,9 @@
       ],
       "Can view this item.": [
         "Можно просматривать этот элемент."
+      ],
+      "Change your password": [
+        "Измените пароль"
       ],
       "Choose a saved passkey to sign-in to ${ domain }": [
         "Выберите сохраненный passkey для входа в ${ domain }"
@@ -1570,9 +1700,6 @@
       "Disabling offline mode...": [
         "Отключение режима офлайн ..."
       ],
-      "Discover ${ PASS_APP_NAME } Youtube Video": [
-        "Откройте видео ${ PASS_APP_NAME } на YouTube"
-      ],
       "DNS changes could take up to 24 hours to update.": [
         "Обновление DNS может занять до 24 часов."
       ],
@@ -1590,6 +1717,9 @@
       ],
       "Editor": [
         "Редактор"
+      ],
+      "email": [
+        "электронная почта"
       ],
       "Email address successfully deleted from monitoring": [
         "Адрес электронной почты успешно удален из мониторинга"
@@ -1669,6 +1799,9 @@
       "Fill in the CSV with your data": [
         "Заполните CSV данными"
       ],
+      "finance": [
+        "финансы"
+      ],
       "Follow those steps to import your data with a generic CSV:": [
         "Выполните эти шаги, чтобы импортировать данные с помощью стандартного CSV:"
       ],
@@ -1710,6 +1843,12 @@
       ],
       "Here's how it works:": [
         "Вот как это работает:"
+      ],
+      "High Priority": [
+        "Высокий приоритет"
+      ],
+      "How does monitoring work?": [
+        "Как работает мониторинг?"
       ],
       "Identity confirmed": [
         "Личные данные подтверждены"
@@ -1783,6 +1922,12 @@
       "Item successfully unpinned": [
         "Элемент откреплен"
       ],
+      "Latest breach on ${ formattedDate }": [
+        "Последняя утечка ${ formattedDate }"
+      ],
+      "Learn what to do ${ dataLeakedLink }": [
+        "Узнайте, что делать ${ dataLeakedLink }"
+      ],
       "Leaving item...": [
         "Покидание элемента..."
       ],
@@ -1801,11 +1946,20 @@
       "Loading...": [
         "Загрузка..."
       ],
+      "Low Priority": [
+        "Низкий приоритет"
+      ],
       "Manager": [
         "Менеджер"
       ],
       "me": [
         "я"
+      ],
+      "Medium Priority": [
+        "Средний приоритет"
+      ],
+      "Monitor accounts": [
+        "Отслеживать аккаунты"
       ],
       "Monitoring settings successfully updated": [
         "Настройки мониторинга успешно обновлены"
@@ -1821,12 +1975,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Перемещение всех элементов из \"${ payload.content.name }\""
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Перемещение элемента в другое хранилище удалит его защищенные ссылки.",
-        "Перемещение элемента в другое хранилище удалит его защищенные ссылки.",
-        "Перемещение элемента в другое хранилище удалит его защищенные ссылки.",
-        "Перемещение элемента в другое хранилище удалит его защищенные ссылки."
       ],
       "Moving items": [
         "Перемещение элементов"
@@ -1845,6 +1993,9 @@
       ],
       "Never": [
         "Никогда"
+      ],
+      "No breaches detected": [
+        "Утечки не обнаружены"
       ],
       "No identity item found": [
         "Элемент личных данных не найден"
@@ -1876,6 +2027,9 @@
       "Open the Extensions menu": [
         "Откройте меню Расширения"
       ],
+      "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Наши предупреждения приоритизируют безопасность. Если вы не узнаёте ничего из скомпрометированных данных, вы можете смело игнорировать этот отчёт."
+      ],
       "Owner": [
         "Владелец"
       ],
@@ -1888,6 +2042,9 @@
       "Passkey sign-in": [
         "Вход с passkey"
       ],
+      "password": [
+        "пароль"
+      ],
       "Password copied": [
         "Пароль скопирован"
       ],
@@ -1899,6 +2056,9 @@
         "Пароли, старше ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } недель, автоматически удаляются из истории.",
         "Пароли, старше ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } недель, автоматически удаляются из истории.",
         "Пароли, старше ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } недель, автоматически удаляются из истории."
+      ],
+      "Paused": [
+        "Приостановлено"
       ],
       "Pending access to the shared data": [
         "Доступ к общим данным ожидает подтверждения"
@@ -2152,6 +2312,9 @@
       "Successfully synced all vaults": [
         "Все хранилища успешно синхронизированы"
       ],
+      "Suggested": [
+        "Рекомендуется"
+      ],
       "Switch to another vault or create an item in this vault": [
         "Переход в другое хранилище или создание элемента в этом хранилище"
       ],
@@ -2172,6 +2335,9 @@
       ],
       "The exported file will be encrypted using PGP and requires a strong passphrase.": [
         "Экспортированный файл будет зашифрован с помощью PGP и требует надежной парольной фразы."
+      ],
+      "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
+        "Утечка информации произошла из сторонней службы. Информация о вашем аккаунте ${ BRAND_NAME } остается защищенной и зашифрованной. ${ learnMoreLink }"
       ],
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "Дополнительный пароль потребуется для использования ${ PASS_APP_NAME }. Он действует как дополнительный пароль поверх вашего пароля ${ BRAND_NAME }."
@@ -2302,6 +2468,9 @@
       "User's access successfully updated": [
         "Доступ пользователя обновлен"
       ],
+      "username": [
+        "имя пользователя"
+      ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Хранилище \"${ payload.content.name }\" успешно удалено"
       ],
@@ -2322,6 +2491,9 @@
       ],
       "Verification code": [
         "Код подтверждения"
+      ],
+      "Verification code sent.": [
+        "Код подтверждения отправлен"
       ],
       "Viewer": [
         "Читатель"
@@ -2401,6 +2573,18 @@
       "You will be logged out and need to log in again on all of your other devices.": [
         "Вы выйдете из системы и должны будете заново войти в нее на всех остальных устройствах."
       ],
+      "You will be notified of data breaches for these email addresses.": [
+        "Вы будете получать уведомления об утечках данных по этим адресам электронной почты."
+      ],
+      "You will be notified of data breaches for this email address.": [
+        "Вы будете получать уведомления об утечках данных для этого адреса электронной почты."
+      ],
+      "You will no longer be notified of data breaches for these email addresses.": [
+        "Вы больше не будете получать уведомления об утечках данных для этих адресов электронной почты."
+      ],
+      "You will no longer be notified of data breaches for this email address.": [
+        "Вы больше не будете получать уведомления об утечках данных на этот адрес электронной почты."
+      ],
       "You will no longer have access to sharing, 2FA, credit card and other advanced features in ${ PASS_APP_NAME }": [
         "Общий доступ, двухфакторная аутентификация, кредитная карта и другие расширенные функции в ${ PASS_APP_NAME } будут больше недоступны"
       ],
@@ -2424,6 +2608,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "Ваши файлы будут зашифрованы и затем сохранены"
+      ],
+      "Your information was found on ${ displayedDate }": [
+        "Ваша информация была найдена ${ displayedDate }"
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Ваша организация требует, чтобы вы обеспечили защищенный доступ к ${ PASS_APP_NAME }"
@@ -2510,6 +2697,12 @@
         "${ secureLinksCount } защищенные ссылки",
         "${ secureLinksCount } защищенных ссылок",
         "${ secureLinksCount } защищенных ссылок"
+      ],
+      "${ usageCount } login": [
+        "${ usageCount } имя пользователя",
+        "${ usageCount } имени пользователей",
+        "${ usageCount } имен пользователей",
+        "${ usageCount } имен пользователей"
       ],
       "${ years } year": [
         "${ years } год",
@@ -2805,6 +2998,9 @@
       "Email (new alias)": [
         "Электронная почта (новый псевдоним)"
       ],
+      "Email address": [
+        "Адрес эл. почты"
+      ],
       "Email aliases": [
         "Псевдонимы электронной почты"
       ],
@@ -2870,6 +3066,9 @@
       ],
       "Generic CSV": [
         "Общий CSV"
+      ],
+      "Get Started": [
+        "Начать"
       ],
       "Grant": [
         "Предоставить"
@@ -2969,6 +3168,9 @@
       ],
       "Last name": [
         "Фамилия"
+      ],
+      "Last updated": [
+        "Последнее обновление"
       ],
       "Last week": [
         "Последняя неделя"
@@ -3315,6 +3517,9 @@
       "State or province": [
         "Штат или провинция"
       ],
+      "Status": [
+        "Состояние"
+      ],
       "Street address": [
         "Адрес"
       ],
@@ -3405,6 +3610,9 @@
       "Use ${ PASS_APP_NAME } as your browser's default password manager": [
         "Используйте ${ PASS_APP_NAME } в качестве менеджера паролей по умолчанию в вашем браузере"
       ],
+      "Used in": [
+        "Используется в"
+      ],
       "Useful for permanent sharing": [
         "Полезно для постоянного обмена"
       ],
@@ -3419,6 +3627,9 @@
       ],
       "Vault ID": [
         "ID хранилища"
+      ],
+      "Vaults": [
+        "Хранилища"
       ],
       "View details": [
         "Просмотреть детали"
@@ -3478,6 +3689,17 @@
     "Link": {
       "auto create rules ››": [
         "автоматическое создание правил ››"
+      ],
+      "if your data is leaked": [
+        "в случае утечки ваших данных"
+      ],
+      "Learn more": [
+        "Подробнее"
+      ]
+    },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "Включить ${ reason }"
       ]
     },
     "Message": {
@@ -3495,6 +3717,22 @@
       ],
       "You selected ${ semiboldText } in this vault.": [
         "Вы выбрали ${ semiboldText } в этом хранилище."
+      ]
+    },
+    "new_plans: feature": {
+      "Require 2FA for organization": [
+        "Требуется двухфакторная идентификация для организации"
+      ],
+      "SSO integration": [
+        "Интеграция с SSO"
+      ]
+    },
+    "Notification": {
+      "${ reason } has been disabled": [
+        "${ reason } был отключен"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } был включен"
       ]
     },
     "Onboarding": {
@@ -3751,6 +3989,20 @@
         "Использовать на ${ url }"
       ]
     },
+    "Security Center - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Обнаружены другие потенциальные утечки ${ name } и ${ remainingCount }. Включите ${ DARK_WEB_MONITORING_NAME } для просмотра информации. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Обнаружена ${ name } и еще 1 потенциальная утечка. Включите ${ DARK_WEB_MONITORING_NAME } для просмотра информации. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Обнаружена потенциальная утечка ${ name }. Включите ${ DARK_WEB_MONITORING_NAME } для просмотра информации. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Ваша информация была обнаружена как минимум в одной утечке данных. Включите ${ DARK_WEB_MONITORING_NAME } для просмотра подробностей. ${ link }"
+      ]
+    },
     "sso": {
       "Approve or deny it now": [
         "Одобрить или отклонить сейчас"
@@ -3898,11 +4150,20 @@
       ]
     },
     "Title": {
+      "${ BRAND_NAME } addresses": [
+        "${ BRAND_NAME } адресов"
+      ],
       "${ PASS_APP_NAME } Logs": [
         "Журналы ${ PASS_APP_NAME }"
       ],
       "${ PASS_APP_NAME } Settings": [
         "Настройки ${ PASS_APP_NAME }"
+      ],
+      "${ PASS_SHORT_APP_NAME } Monitor": [
+        "Монитор ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Account protection": [
+        "Защита аккаунта"
       ],
       "Actions": [
         "Действия"
@@ -3933,6 +4194,15 @@
       ],
       "Blocked addresses": [
         "Заблокированные адреса"
+      ],
+      "Breach detected": [
+        "Обнаружена утечка"
+      ],
+      "Breaches": [
+        "Утечки"
+      ],
+      "Breaches detected for": [
+        "Обнаружены утечки для"
       ],
       "Cancel changing your email?": [
         "Отменить изменение электронной почты?"
@@ -3973,8 +4243,17 @@
       "Current version": [
         "Текущая версия"
       ],
+      "Custom addresses": [
+        "Пользовательские адреса"
+      ],
       "Custom domains": [
         "Пользовательские домены"
+      ],
+      "Custom email monitoring": [
+        "Мониторинг пользовательской электронной почты"
+      ],
+      "Custom emails": [
+        "Пользовательские адреса электронной почты"
       ],
       "Default": [
         "По умолчанию"
@@ -4045,6 +4324,9 @@
       "Enter your second password": [
         "Введите ваш второй пароль"
       ],
+      "Excluded items": [
+        "Исключенные элементы"
+      ],
       "Fill & copy password": [
         "Заполнить и скопировать пароль"
       ],
@@ -4063,6 +4345,9 @@
       "Hide my email": [
         "Скрыть мою почту"
       ],
+      "Hide-my-email aliases": [
+        "Псевдонимы hide-my-email"
+      ],
       "History": [
         "История"
       ],
@@ -4077,6 +4362,12 @@
       ],
       "Importing your data": [
         "Импорт ваших данных"
+      ],
+      "Inactive 2FA": [
+        "Неактивная двухфакторная аутентификация"
+      ],
+      "Information exposed in breach": [
+        "Информация, раскрытая при утечке"
       ],
       "Item": [
         "Элемент"
@@ -4093,6 +4384,9 @@
       "Leave vault?": [
         "Покинуть хранилище?"
       ],
+      "Loading breaches...": [
+        "Загрузка утечек..."
+      ],
       "Log in as...": [
         "Войдите как..."
       ],
@@ -4101,6 +4395,9 @@
       ],
       "Mailbox": [
         "Почтовый ящик"
+      ],
+      "Mark as resolved?": [
+        "Отметить как устраненную?"
       ],
       "Member limit": [
         "Ограничение количества участников"
@@ -4135,14 +4432,32 @@
       "MX record": [
         "Запись MX"
       ],
+      "Next": [
+        "Далее"
+      ],
+      "No excluded items": [
+        "Нет исключенных элементов"
+      ],
+      "No inactive 2FAs": [
+        "Нет неактивных двухфакторных идентификаций"
+      ],
+      "No insecure passwords": [
+        "Никаких ненадежных паролей"
+      ],
       "No items selected": [
         "Элементы не выбраны"
+      ],
+      "No reused passwords": [
+        "Нет повторно использованных паролей"
       ],
       "No shared items": [
         "Нет общих элементов"
       ],
       "No shared secure links": [
         "Нет общих защищенных ссылок"
+      ],
+      "Open pagination": [
+        "Открыть нумерацию страниц"
       ],
       "Our welcome gift to you": [
         "Our welcome gift to you"
@@ -4152,6 +4467,12 @@
       ],
       "Password": [
         "Пароль"
+      ],
+      "Password Health": [
+        "Здоровье пароля"
+      ],
+      "Pause monitoring?": [
+        "Приостановить мониторинг?"
       ],
       "Pending access confirmation": [
         "Ожидается подтверждение доступа"
@@ -4174,11 +4495,20 @@
         "Обратите внимание, что после удаления псевдонимы не могут быть восстановлены.",
         "Обратите внимание, что после удаления псевдонимы не могут быть восстановлены."
       ],
+      "Previous": [
+        "Назад"
+      ],
       "Random Prefix Generation": [
         "Создание случайного префикса"
       ],
+      "Recommended actions": [
+        "Рекомендуемые действия"
+      ],
       "Reject device?": [
         "Отклонить устройство?"
+      ],
+      "Remove email address?": [
+        "Удалить адрес электронной почты?"
       ],
       "Remove extra password": [
         "Удалить дополнительный пароль"
@@ -4189,8 +4519,23 @@
       "Reset history for this item?": [
         "Сбросить историю для этого элемента?"
       ],
+      "Resolved breaches": [
+        "Устраненные утечки"
+      ],
       "Restore this version?": [
         "Восстановить эту версию?"
+      ],
+      "Resume monitoring?": [
+        "Возобновить мониторинг?"
+      ],
+      "Reused ${ count } time": [
+        "Повторно использовано ${ count } раз",
+        "Повторно использовано ${ count } раза",
+        "Повторно использовано ${ count } раз",
+        "Повторно использовано ${ count } раз"
+      ],
+      "Reused passwords": [
+        "Повторно используемые пароли"
       ],
       "Review and share": [
         "Review and share"
@@ -4207,8 +4552,14 @@
       "Set extra password": [
         "Установить дополнительный пароль"
       ],
+      "Set up 2FA for better security": [
+        "Настройте двухфакторную идентификацию для повышения безопасности"
+      ],
       "Set up 2FA for more security": [
         "Настройте двухфакторную идентификацию для повышения безопасности"
+      ],
+      "Settings": [
+        "Настройки"
       ],
       "Share with": [
         "Поделиться с"
@@ -4270,14 +4621,26 @@
       "Vault shared with you": [
         "Хранилище, предоставленное вам"
       ],
+      "Want to learn more?": [
+        "Хотите узнать больше?"
+      ],
       "Weak password": [
         "Слабый Пароль"
+      ],
+      "Weak passwords": [
+        "Слабые пароли"
       ],
       "Welcome to ${ brandNameJSX }": [
         "Добро пожаловать в ${ brandNameJSX }"
       ],
       "Welcome to your new password manager!": [
         "Добро пожаловать в ваш новый менеджер паролей!"
+      ],
+      "What is an alias?": [
+        "Что такое псевдоним?"
+      ],
+      "What is the dark web?": [
+        "Что такое Dark Web?"
       ],
       "What is the difference between ${ PASS_SHORT_APP_NAME } note and SimpleLogin note?": [
         "В чем разница между заметкой ${ PASS_SHORT_APP_NAME } и заметкой SimpleLogin?"
@@ -4287,6 +4650,9 @@
       ],
       "Your ${ planName } subscription will end on ${ endDate }": [
         "Ваша подписка на ${ planName } закончится в ${ endDate }"
+      ],
+      "Your exposed information": [
+        "Ваша раскрытая информация"
       ],
       "Your vault is empty": [
         "Ваше хранилище пусто"
@@ -4304,6 +4670,14 @@
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Сегодня"
+      ]
+    },
+    "Tooltip": {
+      "Not all information listed here was exposed for all users.": [
+        "Не вся перечисленная здесь информация была открыта для всех пользователей."
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "Зашифрованные пароли остаются в безопасности, пока их не расшифруют, даже если они находятся в открытом доступе."
       ]
     },
     "Validation": {
@@ -4422,6 +4796,9 @@
       "Email cannot be empty": [
         "Электронная почта не может быть пустой"
       ],
+      "Email is required": [
+        "Требуется адрес электронной почты"
+      ],
       "Empty note": [
         "Пустая заметка"
       ],
@@ -4436,6 +4813,9 @@
       ],
       "Extra password should have at least 8 characters": [
         "Дополнительный пароль должен содержать не менее 8 символов"
+      ],
+      "Failed to load breaches.": [
+        "Не удалось загрузить утечки."
       ],
       "Invalid alias prefix": [
         "Недопустимый префикс псевдонима"
@@ -4532,6 +4912,9 @@
       ],
       "This alias \"${ aliasEmail }\" is currently used in the login \"${ relatedLoginName }\".": [
         "Этот псевдоним \"${ aliasEmail }\" в настоящее время используется в логине \"${ relatedLoginName }\"."
+      ],
+      "This email address will no longer be monitored for data breaches.": [
+        "Этот адрес электронной почты больше не будет отслеживаться на предмет утечек."
       ],
       "This item is currently shared. Deleting it will remove access for all other users.": [
         "В настоящее время этот элемент совместно используется. При его удалении доступ к нему будет закрыт для всех остальных пользователей."

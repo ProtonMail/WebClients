@@ -294,6 +294,9 @@
       "Continue import": [
         "Nadaljuj z uvozom"
       ],
+      "Continue with categories": [
+        "Nadaljuj s kategorijami"
+      ],
       "Continue with Google": [
         "Nadaljuj z Googlovim računom"
       ],
@@ -1917,6 +1920,9 @@
       "Password health alerts": [
         "Opozorila o kakovosti gesla"
       ],
+      "Recover previous file versions": [
+        "Obnovi prejšnje različice datoteke"
+      ],
       "Unlimited folders, labels and filters": [
         "Neomejeno število map, oznak in filtrov"
       ],
@@ -2427,6 +2433,12 @@
       "${ maxSpaceTB } storage": [
         "${ maxSpaceTB } prostora za shranjevanje"
       ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } uporabnik",
+        "Do ${ numberOfUsers } uporabnika",
+        "Do ${ numberOfUsers } uporabniki",
+        "Do ${ numberOfUsers } uporabnikov"
+      ],
       "${ planMaxSpace } email storage": [
         "${ planMaxSpace } shrambe za e-pošto"
       ],
@@ -2487,6 +2499,12 @@
       ]
     },
     "collider_2025: feature": {
+      "Access to advanced AI models": [
+        "Dostop do naprednih modelov UI"
+      ],
+      "Data never used for AI training": [
+        "Podatki se ne bodo nikoli uporabljali za urjenje UI"
+      ],
       "Large file upload support": [
         "Podpora za nalaganje velikih datotek"
       ]
@@ -4084,6 +4102,9 @@
       "All events in this series were updated.": [
         "Vsi dogodki v tej seriji so bili posodobljeni."
       ],
+      "DESCRIPTION:": [
+        "OPIS:"
+      ],
       "Here's what changed:": [
         "Kaj se je spremenilo:"
       ],
@@ -4705,6 +4726,9 @@
       "There has been an issue with content search. Default search has been used instead.": [
         "Prišlo je do težave z iskanjem po vsebini. Namesto njega je bilo uporabljeno privzeto iskanje."
       ],
+      "There was a problem decrypting your message. If the issue persists, contact our customer support.": [
+        "Pri dešifriranju sporočila je prišlo do napake. Če se težava ponavlja, se obrnite na našo podporo strankam."
+      ],
       "There was an error when exporting the contacts vCards": [
         "Pri izvozu stikov vCard je prišlo do napake"
       ],
@@ -4792,14 +4816,16 @@
       "Your emails cannot be decrypted due to a recent password reset. If you remember your previous password, you can ${ reActivateKeyLink } in order to access your messages. ${ learnMoreLink }": [
         "Vaših e-poštnih sporočil ni bilo mogoče dešifrirati, ker je bilo vaše geslo nedavno ponastavljeno. Če se spomnite staro geslo, lahko za dostop do sporočil uporabite ${ reActivateKeyLink }. ${ learnMoreLink }"
       ],
-      "Your emails cannot be decrypted. This may be due to a password reset. ${ learnMoreLink }": [
-        "Vaša e-pošta ne more biti dešifrirana. To je morda posledica ponastavitve gesla. ${ learnMoreLink }."
-      ],
       "Your import will not be processed.": [
         "Vaš uvoz ne bo obdelan."
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Vašemu iskanju ustreza preveč rezultatov. Omejite iskanje in poskusite znova."
+      ]
+    },
+    "error": {
+      "Please sign in with the same Gmail address you originally connected": [
+        "Prijavite se z istim naslovom Gmail, s katerim ste se povezali prvič"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -5127,6 +5153,12 @@
       "The subscription will be billed to the primary admin of this plan.": [
         "Naročnina bo zaračunana glavnemu skrbniku tega paketa."
       ],
+      "View the invitation": [
+        "Oglej si povabilo",
+        "Oglej si povabili",
+        "Oglej si povabila",
+        "Oglej si povabila"
+      ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Vabljeni ste, da se pridružite organizaciji ${ invite.OrganizationName }."
       ],
@@ -5205,6 +5237,9 @@
       ]
     },
     "Feature": {
+      "More premium features": [
+        "Več premijskih funkcij"
+      ],
       "Unlimited hide-my-email aliases": [
         "Neomejeno število vzdevkov hide-my-email"
       ]
@@ -6314,6 +6349,12 @@
         "${ pureAttachmentsCount } pripete datoteke",
         "${ pureAttachmentsCount } pripetih datotek"
       ],
+      "${ receivedMessagesCount } email last month": [
+        "${ receivedMessagesCount } sporočilo prejšnji mesec",
+        "${ receivedMessagesCount } sporočili prejšnji mesec",
+        "${ receivedMessagesCount } sporočila prejšnji mesec",
+        "${ receivedMessagesCount } sporočil prejšnji mesec"
+      ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } od ${ providerCalendars.length } koledarja",
         "${ selectedCalendarsTotal } od ${ providerCalendars.length } koledarjev",
@@ -7046,6 +7087,12 @@
       "For more search results, try searching for this keyword in the content of your email messages.": [
         "Morda bo več zadetkov našlo iskanje te ključne besede v vsebini sporočil."
       ],
+      "Free to try for ${ ASSISTANT_TRIAL_TIME_DAYS } day": [
+        "Brezplačen ${ ASSISTANT_TRIAL_TIME_DAYS }-dnevni preizkus",
+        "Brezplačen ${ ASSISTANT_TRIAL_TIME_DAYS }-dnevni preizkus",
+        "Brezplačen ${ ASSISTANT_TRIAL_TIME_DAYS }-dnevni preizkus",
+        "Brezplačen ${ ASSISTANT_TRIAL_TIME_DAYS }-dnevni preizkus"
+      ],
       "From": [
         "Od"
       ],
@@ -7261,6 +7308,9 @@
       ],
       "Low Priority": [
         "Nizka pomembnost"
+      ],
+      "Make ${ MAIL_APP_NAME } your default email application.": [
+        "Nastavite ${ MAIL_APP_NAME } kot privzeto aplikacijo za e-pošto."
       ],
       "Manage your folders": [
         "Upravljanje map"
@@ -9132,6 +9182,9 @@
       "Filter Name": [
         "Ime filtra"
       ],
+      "Filters": [
+        "Filtri"
+      ],
       "First name": [
         "Ime"
       ],
@@ -9438,6 +9491,9 @@
       "System information": [
         "Podatki o sistemu"
       ],
+      "The category has been updated, thanks for your feedback!": [
+        "Kategorija je bila posodobljena, hvala za povratne informacije!"
+      ],
       "The filter is disabled. ${ enableButton }": [
         "Filter je onemogočen. ${ enableButton }"
       ],
@@ -9503,6 +9559,9 @@
       ],
       "What is your main reason for canceling or downgrading?": [
         "Kaj je vaš glavni razlog za preklic naročnine ali menjavo za nižji paket?"
+      ],
+      "Which category should this be recategorized under?": [
+        "Pod katero kategorijo naj se to prekategorizira?"
       ],
       "Why am I seeing this?": [
         "Zakaj se mi to prikazuje?"
@@ -9983,6 +10042,29 @@
       ],
       "Trash": [
         "Smeti"
+      ]
+    },
+    "meet_2025: Feature": {
+      "${ n } active meeting at a time": [
+        "${ n } sestanek hkrati",
+        "${ n } sestanka hkrati",
+        "${ n } sestanki hkrati",
+        "${ n } sestankov hkrati"
+      ],
+      "24 hours per meeting": [
+        "24 ur na sestanek"
+      ],
+      "Up to ${ n } meeting per day": [
+        "Do ${ n } sestanek na dan",
+        "Do ${ n } sestanka na dan",
+        "Do ${ n } sestanki na dan",
+        "Do ${ n } sestankov na dan"
+      ],
+      "Up to ${ n } participant": [
+        "Do ${ n } udeleženec",
+        "Do ${ n } udeleženca",
+        "Do ${ n } udeleženci",
+        "Do ${ n } udeležencev"
       ]
     },
     "Message": {
@@ -11224,6 +11306,9 @@
       "Don’t show this offer again": [
         "Te ponudbe ne prikazuj več"
       ],
+      "Get ${ BRAND_NAME } Duo": [
+        "Pridobi ${ BRAND_NAME } Duo"
+      ],
       "Get the deal": [
         "Izkoristite posebno ponudbo"
       ],
@@ -11790,6 +11875,12 @@
       ]
     },
     "Payments.VAT number name": {
+      "Edit ABN": [
+        "Uredi ABN"
+      ],
+      "Edit EIN": [
+        "Uredi EIN"
+      ],
       "VAT number": [
         "ID za DDV"
       ]
@@ -12010,11 +12101,6 @@
     "plus_block": {
       "Upgrade to ${ upsellPlanTitle }": [
         "Nadgradi na ${ upsellPlanTitle }."
-      ]
-    },
-    "Price": {
-      "Free": [
-        "Brezplačno"
       ]
     },
     "Progress bar description": {
@@ -12306,10 +12392,10 @@
         "Naslednji naslovi niso veljavni: ${ invalidAddresses }"
       ],
       "We have detected some warnings. The following email address may not receive emails:": [
-        "Zaznali smo nekaj možnih težav. Naslednji naslov morda ne sprejema e-pošte:",
-        "Zaznali smo nekaj možnih težav. Naslednja naslova morda ne sprejemata e-pošte:",
-        "Zaznali smo nekaj možnih težav. Naslednji naslovi morda ne sprejemajo e-pošte:",
-        "Zaznali smo nekaj možnih težav. Naslednji naslovi morda ne sprejemajo e-pošte:"
+        "Zaznali smo nekaj opozoril. Naslednji naslov morda ne sprejema e-pošte:",
+        "Zaznali smo nekaj opozoril. Naslednja naslova morda ne sprejemata e-pošte:",
+        "Zaznali smo nekaj opozoril. Naslednji naslovi morda ne sprejemajo e-pošte:",
+        "Zaznali smo nekaj opozoril. Naslednji naslovi morda ne sprejemajo e-pošte:"
       ]
     },
     "Sender verification details": {
@@ -13510,6 +13596,12 @@
         "${ elementsCount } pogovorom je odstranjena oznaka ${ labelName }.",
         "${ elementsCount } pogovorom je odstranjena oznaka ${ labelName }."
       ],
+      "${ elementsCount } conversation removed from Starred.": [
+        "${ elementsCount } pogovoru je odstranjena zvezdica.",
+        "${ elementsCount } pogovoroma je odstranjena zvezdica.",
+        "${ elementsCount } pogovorom je odstranjena zvezdica.",
+        "${ elementsCount } pogovorom je odstranjena zvezdica."
+      ],
       "${ elementsCount } conversation snoozed": [
         "${ elementsCount } pogovor preložen.",
         "${ elementsCount } pogovora preložena.",
@@ -13569,6 +13661,12 @@
         "${ elementsCount } sporočiloma je odstranjena oznaka ${ labelName }.",
         "${ elementsCount } sporočilom je odstranjena oznaka ${ labelName }.",
         "${ elementsCount } sporočilom je odstranjena oznaka ${ labelName }."
+      ],
+      "${ elementsCount } message removed from Starred.": [
+        "${ elementsCount } sporočilu je odstranjena zvezdica.",
+        "${ elementsCount } sporočiloma je odstranjena zvezdica.",
+        "${ elementsCount } sporočilom je odstranjena zvezdica.",
+        "${ elementsCount } sporočilom je odstranjena zvezdica."
       ],
       "Address copied to clipboard": [
         "Naslov kopiran v odložišče"
@@ -13773,6 +13871,12 @@
       ],
       "Read receipt sent": [
         "Potrdilo o branju je poslano"
+      ],
+      "Recategorized ${ elementsCount } message.": [
+        "${ elementsCount } sporočilo prekategorizirano.",
+        "${ elementsCount } sporočili prekategorizirani.",
+        "${ elementsCount } sporočila prekategorizirana.",
+        "${ elementsCount } sporočil prekategoriziranih."
       ],
       "Self-destruction removed": [
         "Samouničenje odstranjeno."
@@ -14315,6 +14419,9 @@
       "Desktop": [
         "Namizje"
       ],
+      "Disable categories?": [
+        "Ali želite onemogočiti kategorije?"
+      ],
       "Discover your subscription benefits": [
         "Odkrijte ugodnosti svoje naročnine"
       ],
@@ -14389,6 +14496,9 @@
       ],
       "External encryption": [
         "Zunanje šifriranje"
+      ],
+      "Fewer distractions, more focus": [
+        "Manj motenj, več osredotočenosti"
       ],
       "Filter for more focus": [
         "Filter za večjo osredotočenost"
@@ -14956,6 +15066,9 @@
         "Zaščitili smo vas pred ${ trackersCount } sledilnikoma",
         "Zaščitili smo vas pred ${ trackersCount } sledilniki",
         "Zaščitili smo vas pred ${ trackersCount } sledilniki."
+      ],
+      "We'd love to hear from you!": [
+        "Radi bi vas slišali!"
       ],
       "Welcome": [
         "Dobrodošli"

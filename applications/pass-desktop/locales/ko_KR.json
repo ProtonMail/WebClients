@@ -37,6 +37,12 @@
       "Accept and view the item": [
         "항목 공유 수락 및 확인"
       ],
+      "Account": [
+        "계정"
+      ],
+      "Account settings": [
+        "계정 설정"
+      ],
       "Add": [
         "추가"
       ],
@@ -165,6 +171,9 @@
       ],
       "Continue offline": [
         "오프라인으로 계속하기"
+      ],
+      "Copy": [
+        "복사"
       ],
       "Copy and close": [
         "복사 및 닫기"
@@ -391,6 +400,9 @@
       "Lock ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } 잠금"
       ],
+      "Lock extension": [
+        "확장 프로그램 잠그기"
+      ],
       "Make admin": [
         "관리자 생성"
       ],
@@ -471,6 +483,9 @@
       ],
       "Pass Monitor": [
         "Pass Monitor"
+      ],
+      "Paste": [
+        "붙여놓기"
       ],
       "Pause monitoring": [
         "모니터링 일시정지"
@@ -1422,6 +1437,9 @@
       "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
         "${ PASS_APP_NAME }가 오직 로그인, 메모, 신용 카드 및 신원 정보에 한해 불러옵니다."
       ],
+      "${ PASS_SHORT_APP_NAME } offline mode enabled.": [
+        "${ PASS_SHORT_APP_NAME } 오프라인 모드 활성화됨."
+      ],
       "${ payload.count } invite successfully sent": [
         "초대 ${ payload.count }개를 성공적으로 보냈습니다."
       ],
@@ -1906,7 +1924,7 @@
         "\"${ payload.content.name }\" 에서 모든 항목 이동 중"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "항목을 다른 금고로 이동하면 이 항목의 모든 안전한 링크가 삭제됩니다."
+        "항목을 다른 금고로 이동시 안전한 링크가 삭제됩니다."
       ],
       "Moving items": [
         "항목 이동 중"
@@ -2286,6 +2304,9 @@
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "이 내보내기는 암호화되지 않으며 내보낸 파일에 액세스할 수 있는 사람은 누구나 비밀번호를 볼 수 있습니다. 보안을 위해, 사용을 마친 뒤에 삭제해 주세요."
       ],
+      "This feature is currently experimental on Linux. Please ensure your system is up-to-date.": [
+        "이 기능은 현재 Linux에서 실험 중입니다. 시스템이 최신 상태인지 확인해 주세요."
+      ],
       "This item is not currently shared with anyone. Invite people to share it with others.": [
         "이 항목은 모두에게 공유되지 않습니다. 다른 사람과 공유하려면 사람을 초대하세요."
       ],
@@ -2466,9 +2487,6 @@
       "You may close this tab.": [
         "이 탭을 닫아도 됩니다."
       ],
-      "You may need to accept a permission prompt and may have to restart the application depending on your system.": [
-        "사용자의 시스템에 따라 권한 프롬프트를 수락해야 할 수 있으며, 어플리케이션을 재시작해야 할 수도 있습니다."
-      ],
       "You may need to grant accessiblity permission to ${ PASS_APP_NAME }.": [
         "${ PASS_APP_NAME }에 접근성 권한을 부여해야 할 수 있습니다."
       ],
@@ -2492,6 +2510,9 @@
       ],
       "You will no longer be notified of data breaches for this email address.": [
         "이 이메일 주소에 대한 데이터 침해 알림을 받지 않게 됩니다."
+      ],
+      "You will no longer have access to sharing, 2FA and other advanced features in ${ PASS_APP_NAME }": [
+        "더 이상 ${ PASS_APP_NAME }에서 공유, 2단계 인증 및 기타 고급 기능에 접근할 수 없습니다."
       ],
       "You will no longer have access to sharing, 2FA, credit card and other advanced features in ${ PASS_APP_NAME }": [
         "더 이상 ${ PASS_APP_NAME }에서 항목 공유, 2단계 인증, 신용 카드 및 다른 향상된 기능을 사용할 수 없게됩니다."
@@ -2568,6 +2589,9 @@
       ],
       "${ PASS_APP_NAME } recognizes the websites and apps you use and autofills forms with your credentials for you on any browser or device. No need to copy and paste.": [
         "${ PASS_APP_NAME }는 어떤 브라우저나 기기에서도 당신이 이용하는 웹사이트와 앱을 인식하고 양식에 자격증명을 자동입력합니다. 더 이상 복사하고 붙여넣을 필요는 없습니다."
+      ],
+      "${ PASS_SHORT_APP_NAME } Monitor": [
+        "${ PASS_SHORT_APP_NAME } Monitor"
       ],
       "${ PASS_SHORT_APP_NAME } version": [
         "${ PASS_SHORT_APP_NAME } 버전"
@@ -2896,6 +2920,9 @@
       "Enter email or username": [
         "이메일 및 사용자 이름 입력"
       ],
+      "Experimental": [
+        "실험 버전"
+      ],
       "Expiration date": [
         "만료 시간"
       ],
@@ -3099,6 +3126,9 @@
       ],
       "Language": [
         "언어"
+      ],
+      "Larger window": [
+        "더 큰 창"
       ],
       "Last 2 weeks": [
         "지난 2주"
@@ -3471,6 +3501,9 @@
       ],
       "Server": [
         "서버"
+      ],
+      "Settings": [
+        "설정"
       ],
       "Share": [
         "공유"
@@ -4588,6 +4621,9 @@
       "Settings": [
         "설정"
       ],
+      "Setup offline mode": [
+        "오프라인 모드 설정"
+      ],
       "Share vaults with your team": [
         "내 팀과 금고 공유"
       ],
@@ -4737,6 +4773,9 @@
     "Warning": {
       "${ BRAND_NAME } password is required": [
         "${ BRAND_NAME } 비밀번호가 필요합니다"
+      ],
+      "${ PASS_SHORT_APP_NAME } offline mode disabled.": [
+        "${ PASS_SHORT_APP_NAME } 오프라인 모드 비활성화됨."
       ],
       "2 consecutive dots are not allowed": [
         "마침표 2개가 연속해서 올 수 없습니다"

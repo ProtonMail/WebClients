@@ -511,6 +511,9 @@
       "Download CSV sample": [
         "Descargar modelo CSV"
       ],
+      "Download for macOS": [
+        "Descargar para macOS"
+      ],
       "Download logs": [
         "Descargar los registros"
       ],
@@ -612,6 +615,9 @@
       ],
       "Export": [
         "Exportar"
+      ],
+      "Export as CSV": [
+        "Exportar como CSV"
       ],
       "Export key": [
         "Exportar clave"
@@ -955,11 +961,17 @@
       "Open in ${ SHEETS_APP_NAME }": [
         "Abrir en ${ SHEETS_APP_NAME }"
       ],
+      "Open in new tab": [
+        "Abrir en una pestaña nueva"
+      ],
       "Open navigation": [
         "Abrir la navegación"
       ],
       "Open recovery settings": [
         "Abrir ajustes de recuperación"
+      ],
+      "Open settings": [
+        "Abrir configuración"
       ],
       "Opt out": [
         "No participar"
@@ -3039,6 +3051,9 @@
       ],
       "Open source": [
         "Código abierto"
+      ],
+      "Private video calls for the conversations that matter.": [
+        "Videollamadas privadas para las conversaciones que importan."
       ]
     },
     "collider_2025: Navigation": {
@@ -4232,6 +4247,11 @@
         "Para ${ MAIL_APP_NAME }"
       ]
     },
+    "customer_support.feature.meet": {
+      "For ${ MEET_APP_NAME }": [
+        "Para ${ MEET_APP_NAME }"
+      ]
+    },
     "customer_support.feature.pass": {
       "For ${ PASS_APP_NAME }": [
         "Para ${ PASS_APP_NAME }"
@@ -5221,6 +5241,9 @@
       "Got it": [
         "Entendido"
       ],
+      "Next": [
+        "Siguiente"
+      ],
       "Pause": [
         "Pausa"
       ],
@@ -5304,6 +5327,9 @@
       ],
       "Paused": [
         "En pausa"
+      ],
+      "Pending": [
+        "Pendiente"
       ]
     },
     "email_forwarding_2023: Success": {
@@ -5326,6 +5352,11 @@
       ],
       "Forwarding activated": [
         "Se ha activado el reenvío ha sido."
+      ]
+    },
+    "email_forwarding_2023: Warning": {
+      "Warning": [
+        "Advertencia"
       ]
     },
     "emergency_access": {
@@ -7530,6 +7561,9 @@
       "Contact us": [
         "Contáctanos"
       ],
+      "Downloads": [
+        "Descargas"
+      ],
       "Enjoying ${ planName }?": [
         "¿Disfrutando de ${ planName }?"
       ],
@@ -8640,6 +8674,9 @@
       ],
       "Continuing will connect your ${ BRAND_NAME } Account to ${ name }.": [
         "Al continuar se conectará tu cuenta de ${ BRAND_NAME } a ${ name }."
+      ],
+      "Control whether organization members can create vaults or require an administrator to create and share a vault with them.": [
+        "Controla si los miembros de la organización pueden crear cajas fuertes o si se requiere que un administrador cree y comparta una caja fuerte con ellos."
       ],
       "Copied to clipboard": [
         "Copiada al portapapeles"
@@ -11925,6 +11962,9 @@
       "Date format": [
         "Formato de fecha"
       ],
+      "Days of the week": [
+        "Días de la semana"
+      ],
       "Default email address": [
         "Dirección de correo electrónico por defecto"
       ],
@@ -12297,6 +12337,9 @@
       "New second password": [
         "Nueva segunda contraseña"
       ],
+      "No (users cannot use the app until a vault is shared with them)": [
+        "No (los usuarios no podrán usar la aplicación hasta que se comparta una caja fuerte con ellos)"
+      ],
       "No filter": [
         "Sin filtro"
       ],
@@ -12324,14 +12367,17 @@
       "Online privacy for your whole family": [
         "Privacidad online para toda la familia"
       ],
+      "Only a single personal vault can be created": [
+        "Solo se puede crear una caja fuerte personal"
+      ],
       "Only available on ${ PASS_SHORT_APP_NAME } paid plans": [
         "Solo disponible en los planes de pago de ${ PASS_SHORT_APP_NAME }"
       ],
-      "OpenVPN / IKEv2 password": [
-        "Contraseña OpenVPN / IKEv2"
+      "OpenVPN password": [
+        "Contraseña de OpenVPN"
       ],
-      "OpenVPN / IKEv2 username": [
-        "Nombre de usuario de OpenVPN / IKEv2"
+      "OpenVPN username": [
+        "Nombre de usuario de OpenVPN"
       ],
       "Operating system": [
         "Sistema operativo"
@@ -12697,6 +12743,9 @@
       "Without attachment": [
         "Sin archivo adjunto"
       ],
+      "Yes": [
+        "Sí"
+      ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Sí, quiero eliminar permanentemente esta cuenta y todos sus datos."
       ],
@@ -12746,6 +12795,11 @@
     "Label for adding a new custom domain": {
       "Add a domain that you own to your ${ MAIL_APP_NAME } account.": [
         "Añade un dominio propio a tu cuenta ${ MAIL_APP_NAME }."
+      ]
+    },
+    "Label for default event notifications": {
+      "Notifications": [
+        "Notificaciones"
       ]
     },
     "Label for domain modal": {
@@ -13332,6 +13386,111 @@
         "Has alcanzado el máximo de ${ MAX_CALENDAR_MEMBERS } miembros."
       ]
     },
+    "meet_2025: Feature": {
+      "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
+        "${ MEET_APP_NAME }: videollamadas privadas para lo que de verdad importa"
+      ],
+      "${ n } active meeting at a time": [
+        "${ n } reunión activa a la vez",
+        "${ n } reuniones activas a la vez"
+      ],
+      "24 hours per meeting": [
+        "24 horas por reunión"
+      ],
+      "60 minutes per meeting": [
+        "60 minutos por reunión"
+      ],
+      "Appointment scheduling": [
+        "Programación de citas"
+      ],
+      "Browser, mobile, and desktop apps": [
+        "Aplicaciones para navegador, móvil y escritorio"
+      ],
+      "Built-in chat": [
+        "Chat integrado"
+      ],
+      "End-to-end encrypted screen sharing and ephemeral in-call chat": [
+        "Pantalla compartida con cifrado de extremo a extremo y chat efímero en la llamada"
+      ],
+      "Meeting recording (coming soon)": [
+        "Grabación de la reunión (próximamente)"
+      ],
+      "One active meeting at a time": [
+        "Una reunión activa a la vez"
+      ],
+      "Screen-sharing": [
+        "Compartir pantalla"
+      ],
+      "Unlimited meetings per day": [
+        "Reuniones ilimitadas al día"
+      ],
+      "Up to ${ n } meeting per day": [
+        "Hasta ${ n } reunión por día",
+        "Hasta ${ n } reuniones al día"
+      ],
+      "Up to ${ n } participant": [
+        "Hasta ${ n } participante",
+        "Hasta ${ n } participantes"
+      ]
+    },
+    "meet_2025: Info": {
+      "100 ${ BRAND_NAME } email addresses": [
+        "100 direcciones de correo electrónico de ${ BRAND_NAME }"
+      ],
+      "Cloud storage and file sharing": [
+        "Almacenamiento en la nube y compartición de archivos"
+      ],
+      "Data never used for AI training": [
+        "Tus datos nunca se usan para entrenar la IA"
+      ],
+      "Data retention policies": [
+        "Políticas de retención de datos"
+      ],
+      "Document & spreadsheet editor": [
+        "Editor de documentos y hojas de cálculo"
+      ],
+      "Email writing assistant": [
+        "Asistente de redacción de correos"
+      ],
+      "Everything from ${ title }, plus...": [
+        "Todo lo incluido en ${ title }, y además..."
+      ],
+      "Everything in Meet Professional, plus:": [
+        "Todo lo incluido en Meet Professional, y además:"
+      ],
+      "Open source": [
+        "Código abierto"
+      ],
+      "Password manager with team vaults": [
+        "Gestor de contraseñas con cajas fuertes compartidas"
+      ],
+      "Private AI Chat (${ LUMO_SHORT_APP_NAME })": [
+        "Chat de IA privado (${ LUMO_SHORT_APP_NAME })"
+      ],
+      "Private and unlimited AI chat (${ LUMO_SHORT_APP_NAME })": [
+        "Chat de IA privado e ilimitado (${ LUMO_SHORT_APP_NAME })"
+      ],
+      "Private video calls for the conversations that matter": [
+        "Videollamadas privadas para las conversaciones que importan"
+      ],
+      "Secure calendar": [
+        "Calendario seguro"
+      ],
+      "Strict no-logs policy": [
+        "Política estricta de no registros"
+      ],
+      "Video meetings, ${ PAID_MAX_PARTICIPANTS } participants": [
+        "Videollamadas de hasta ${ PAID_MAX_PARTICIPANTS } participantes"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN con bloqueador de publicidad y protección contra malware"
+      ]
+    },
+    "meet_signup_2025: title": {
+      "For businesses": [
+        "Para empresas"
+      ]
+    },
     "Member action": {
       "Activate user": [
         "Activar el usuario"
@@ -13494,6 +13653,21 @@
       ],
       "Euro": [
         "Euro"
+      ],
+      "Hong Kong dollar": [
+        "Dólar de Hong Kong"
+      ],
+      "Japanese yen": [
+        "Yen japonés"
+      ],
+      "Polish złoty": [
+        "Złoty polaco"
+      ],
+      "Singapore dollar": [
+        "Dólar de Singapur"
+      ],
+      "South Korean won": [
+        "Won surcoreano"
       ],
       "Swiss franc": [
         "Franco suizo"
@@ -14859,8 +15033,8 @@
       "Number of records exceeds the download limit of 10000": [
         "El número de registros excede el límite de 10 000 descargas."
       ],
-      "OpenVPN / IKEv2 credentials regenerated": [
-        "Credenciales OpenVPN / IKEv2 regeneradas"
+      "OpenVPN credentials regenerated": [
+        "Se han regenerado las credenciales de OpenVPN"
       ],
       "Reminder has been sent": [
         "Se ha enviado un recordatorio"
@@ -15311,6 +15485,9 @@
       ],
       "Trash": [
         "Enviar a la papelera"
+      ],
+      "Windows": [
+        "Windows"
       ]
     },
     "option": {
@@ -16628,11 +16805,6 @@
     "pqc-optin: Progress status": {
       "Generating post-quantum account key": [
         "Generando clave de cuenta postcuántica"
-      ]
-    },
-    "Price": {
-      "Free": [
-        "Gratis"
       ]
     },
     "Primary timezone": {
@@ -18577,6 +18749,26 @@
       ],
       "Works on all devices": [
         "Funciona en todos los dispositivos"
+      ]
+    },
+    "Signup: Meet": {
+      "**Trusted by over 100 million** users and organizations": [
+        "**Más de 100 millones** de usuarios y organizaciones confían en nosotros"
+      ],
+      "Get ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
+        "Contratar ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
+      ],
+      "Own a business?": [
+        "¿Tienes una empresa?"
+      ],
+      "Sign up, meet privately": [
+        "Regístrate y reúnete de forma privada"
+      ],
+      "Start using ${ MEET_APP_NAME } now": [
+        "Empieza a usar ${ MEET_APP_NAME } ahora"
+      ],
+      "Your account also includes access to ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME } free features.": [
+        "Tu cuenta también incluye acceso a las funciones gratuitas de ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } y ${ PASS_SHORT_APP_NAME }."
       ]
     },
     "signup_2024: Feature": {
@@ -20885,6 +21077,9 @@
       "Export": [
         "Exportar"
       ],
+      "Export calendar": [
+        "Exportar calendario"
+      ],
       "Export private key": [
         "Exportar clave privada"
       ],
@@ -21178,6 +21373,9 @@
       "Open pagination": [
         "Abrir paginación"
       ],
+      "OpenVPN": [
+        "OpenVPN"
+      ],
       "OpenVPN configuration files": [
         "Archivos de configuración de OpenVPN"
       ],
@@ -21297,6 +21495,9 @@
       ],
       "Remove all members?": [
         "¿Eliminar todos los miembros?"
+      ],
+      "Remove calendar": [
+        "Eliminar calendario"
       ],
       "Remove device?": [
         "¿Eliminar el dispositivo?"
@@ -22632,6 +22833,9 @@
       ]
     },
     "VPNClient": {
+      "Android": [
+        "Android"
+      ],
       "Android TV": [
         "Android TV"
       ]

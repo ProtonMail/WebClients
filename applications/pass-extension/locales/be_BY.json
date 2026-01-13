@@ -4,6 +4,26 @@
     "language": "be_BY"
   },
   "contexts": {
+    "Account Settings - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Выяўлены ${ name } і ${ remainingCount } іншыя(х) патэнцыяльныя(х) ўцечкі(ак). Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці і прыняць адпаведныя дзеянні. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Выяўлены ${ name } і 1 іншая патэнцыяльная ўцечка. Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці і прыняць адпаведныя дзеянні. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Выяўлена патэнцыяльная ўцечка ${ name }. Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці і прыняць адпаведныя дзеянні. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Выяўлена патэнцыяльная ўцечка ад ${ name }. Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці і прыняць адпаведныя дзеянні. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Выяўлена патэнцыяльная ўцечка ад ${ name }. Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Вашы звесткі былі знойдзены прынамсі ў адной уцечкі даных. Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці і прыняць адпаведныя дзеянні. ${ link }"
+      ]
+    },
     "Action": {
       "${ PASS_SHORT_APP_NAME } for Android": [
         "${ PASS_SHORT_APP_NAME } для Android"
@@ -55,6 +75,9 @@
       ],
       "Add username field": [
         "Дадаць поле імя карыстальніка"
+      ],
+      "Admin panel": [
+        "Панэль адміністратара"
       ],
       "Advanced": [
         "Дадаткова"
@@ -197,6 +220,9 @@
       "Create a ${ BRAND_NAME } Account": [
         "Стварыць уліковы запіс ${ BRAND_NAME }"
       ],
+      "Create a new vault": [
+        "Стварыць новае сховішча"
+      ],
       "Create alias": [
         "Стварыць псеўданім"
       ],
@@ -305,6 +331,9 @@
       "Edit vault": [
         "Рэдагаваць сховішча"
       ],
+      "Enable ${ DARK_WEB_MONITORING_NAME }": [
+        "Уключыць ${ DARK_WEB_MONITORING_NAME }"
+      ],
       "Enable this alias to receive emails sent to this alias": [
         "Уключыць гэты псеўданім і зноў пачаць атрымліваць лісты, якія адпраўляюцца на яго"
       ],
@@ -341,11 +370,17 @@
       "Get mobile and desktop apps": [
         "Атрымаць мабільныя праграмы і праграмы для камп'ютара"
       ],
+      "Get mobile apps": [
+        "Атрымаць мабільныя праграмы"
+      ],
       "Get Pass Business": [
         "Атрымаць Pass Business"
       ],
       "Get Pass Plus": [
         "Атрымаць Pass Plus"
+      ],
+      "Get Started": [
+        "Пачаць працу"
       ],
       "Hide": [
         "Схаваць"
@@ -395,6 +430,9 @@
       "Link expires after": [
         "Спасылка міне праз"
       ],
+      "Lock ${ PASS_APP_NAME }": [
+        "Заблакіраваць ${ PASS_APP_NAME }"
+      ],
       "Lock extension": [
         "Заблакіраваць пашырэнне"
       ],
@@ -418,6 +456,9 @@
       ],
       "Manually sync your data": [
         "Сінхранізацыя даных уручную"
+      ],
+      "Mark as resolved": [
+        "Пазначыць як вырашанае"
       ],
       "Maximum views": [
         "Максімум праглядаў"
@@ -469,6 +510,12 @@
       ],
       "Organize vaults": [
         "Упарадкаваць сховішчы"
+      ],
+      "Pass Monitor": [
+        "Pass Monitor"
+      ],
+      "Pause monitoring": [
+        "Прыпыніць назіранне"
       ],
       "Pin item": [
         "Замацаваць элемент"
@@ -544,6 +591,9 @@
       ],
       "Restrict number of views": [
         "Абмежаваць колькасць праглядаў"
+      ],
+      "Resume monitoring": [
+        "Узнавіць назіранне"
       ],
       "Retry": [
         "Паўтарыць"
@@ -662,6 +712,9 @@
       "Try again": [
         "Паспрабуйце яшчэ раз"
       ],
+      "Try again.": [
+        "Паспрабаваць яшчэ раз."
+      ],
       "Unblock contact": [
         "Разблакіраваць кантакт"
       ],
@@ -709,6 +762,9 @@
       ],
       "View app logs": [
         "Паглядзець журналы праграмы"
+      ],
+      "View details": [
+        "Паглядзець падрабязнасці"
       ],
       "View history": [
         "Праглядзець гісторыю"
@@ -765,6 +821,9 @@
         "${ total } запісаў уваходу выкарыстоўваюць такі ж самы пароль",
         "${ total } запісаў уваходу выкарыстоўваюць такі ж самы пароль"
       ],
+      "2FA adds another layer of security to your logins. ${ PASS_APP_NAME } makes 2FA easier by storing and automatically autofilling your 2FA codes.": [
+        "2ФА дадае яшчэ адзін слой бяспекі вашым запісам уваходу. ${ PASS_APP_NAME } робіць 2ФА больш простым захоўваючы і аўтаматычна запаўняючы вашы коды 2ФА."
+      ],
       "A checked box means the feature is disabled.": [
         "Сцяжок азначае, што функцыя адключана."
       ],
@@ -777,11 +836,23 @@
       "Add the following TXT DNS record to your domain.": [
         "Дадайце наступны запіс TXT DNS у свой дамен."
       ],
+      "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
+        "Псеўданімы электроннай пошты працуюць аналагічна адрасам электроннай пошты, але змяншаюць колькасць спама і захоўваюць ваш фактычны адрас электроннай пошты і ідэнтычнасць схаванымі."
+      ],
+      "Change your passwords": [
+        "Змяненне вашага пароля"
+      ],
+      "Create unique passwords": [
+        "Стварэнне ўнікальнага пароля"
+      ],
       "DKIM ${ WIKIPEDIA_LINK_DKIM } is an email authentication method designed to avoid email spoofing. Setting up DKIM is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
         "DKIM ${ WIKIPEDIA_LINK_DKIM } - гэта спосаб аўтэнтыфікацыі электроннай пошты, які распрацаваны для прадухілення падробкі электроннай пошты. Настойліва рэкамендуецца наладзіць DKIM, каб паменшыць верагоднасць траплення вашых лістоў у папку са спамам атрымальніка."
       ],
       "DMARC ${ WIKIPEDIA_LINK_DMARC } is designed to protect the domain from unauthorized use, commonly known as email spoofing. Built around SPF and DKIM, a DMARC policy tells the receiving mail server what to do if neither of those authentication methods passes.": [
         "Палітыка DMARC ${ WIKIPEDIA_LINK_DMARC } распрацавана для абароны дамена ад неаўтарызаванага выкарыстання. Яна таксама вядома пад назвай падробка электроннай пошты. Дадзеная тэхналогія пабудавана на аснове SPF і DKIM і дае ўказанні паштоваму серверу, што рабіць, калі ні адзін з гэтых метадаў аўтэнтыфікацыі не праходзіць."
+      ],
+      "Get notified if your email, password or other personal data was leaked.": [
+        "Атрымлівайце апавяшчэнні, калі адбываецца ўцечка вашай электроннай пошты, пароля або іншых асабістых даных."
       ],
       "If you are using a subdomain, e.g. ${ subdomainExample }, you need to use ${ dmarcExampleSubdomain } as the domain instead.": [
         "Вам неабходна замест гэтага выкарыстоўваць ${ dmarcExampleSubdomain } у якасці дамена, калі вы выкарыстоўваеце паддамен (напрыклад, ${ subdomainExample })."
@@ -792,8 +863,17 @@
       "If you are using Cloudflare, please make sure to not select the Proxy option.": [
         "Пераканайцеся, што не выбраны параметр проксі, калі вы выкарыстоўваеце Cloudflare."
       ],
+      "Keep your info more secure and private with these guides and tips.": [
+        "Захоўвайце свае звесткі больш бяспечна і прыватна з дапамогай гэтых дапаможнікаў і парад."
+      ],
       "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.${ infoText }": [
         "Спіс даменаў, дзе некаторыя функцыі ў праграме ${ PASS_SHORT_APP_NAME } (аўтазапаўненне, аўтапрапанова, аўтазахаванне) могуць не працаваць.${ infoText }"
+      ],
+      "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
+        "Наша перадавое рашэнне па бяспецы на базе штучнага інтэлекту распрацавана для карыстальнікаў, якія шукаюць дадатковую абарону для сваіх уліковых запісаў. ${ learnMoreLink }"
+      ],
+      "Set up 2FA for more security": [
+        "Наладжванне 2ФА для большай бяспекі"
       ],
       "Some DNS registrar might require a full record path, in this case please use ${ domain } as domain value instead.": [
         "Некаторыя рэгістратары DNS могуць патрабаваць поўны шлях да запісу. У гэтым выпадку выкарыстайце ${ domain } у якасці значэння дамена."
@@ -803,6 +883,15 @@
       ],
       "SPF ${ WIKIPEDIA_LINK_SPF } is an email authentication method designed to detect forging sender addresses during the delivery of the email. Setting up SPF is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
         "SPF ${ WIKIPEDIA_LINK_SPF } - гэта спосаб аўтэнтыфікацыі электроннай пошты, які распрацаваны для выяўлення падробкі адраса адпраўніка падчас дастаўкі ліста. Настойліва рэкамендуецца наладзіць SPF, каб паменшыць верагоднасць з'яўлення вашых лістоў у папцы са спамам атрымальніка."
+      ],
+      "Start monitoring for data breaches related to accounts created with your email address and your hide-my-email aliases.": [
+        "Пачаць назіранне за ўцечкай даных звязаных уліковых запісаў, якія створаны з дапамогай вашага адраса электроннай пошты і вашых псеўданімаў hide-my-email."
+      ],
+      "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
+        "Цёмная сетка - гэта схаваная частка інтэрнэту, дзе знаходзяцца скрадзеныя асабістыя звесткі, якія можна купіць або прадаць."
+      ],
+      "These items remain at risk": [
+        "Гэтыя элементы застаюцца ў зоне рызыкі"
       ],
       "These vaults will not be accessible and their content won’t be available to Search or Autofill.": [
         "Гэтыя сховішчы не будуць даступныя, а іх змесціва не будзе даступна для пошуку або аўтазапаўнення."
@@ -818,6 +907,15 @@
       ],
       "Unlock advanced security features and detailed logs to safeguard your online presence.": [
         "Разблакіруйце дадатковыя функцыі бяспекі і падрабязныя журналы для абароны сваёй прысутнасці ў інтэрнэце."
+      ],
+      "With ${ PASS_SHORT_APP_NAME } Monitor, stay ahead of threats by getting instant alerts if your credentials are compromised. Unlock advanced security features and detailed logs to safeguard your online presence.": [
+        "З дапамогай ${ PASS_SHORT_APP_NAME } Monitor вы будзеце заўсёды надзейна абаронены ад пагроз. Сістэма неадкладна апавясціць вас, калі адбудзецца кампраметацыя вашых уліковых даных. Разблакіруйце пашыраныя функцыі бяспекі і падрабязныя журналы бяспекі, каб абараніць сябе ў інтэрнэце."
+      ],
+      "Your email addresses were leaked in at least 1 data breach.": [
+        "Ваш адрас электроннай пошты выяўлены прынамсі ў 1 уцечцы даных."
+      ],
+      "Your personal info was leaked in a data breach of a third-party service.": [
+        "Адбылася ўцечка вашых асабістых звестак са старонняга сэрвісу."
       ]
     },
     "Email": {
@@ -1276,6 +1374,17 @@
         "Нешта пайшло не так"
       ]
     },
+    "Feature": {
+      "Integrated 2FA authenticator": [
+        "Інтэграваны аўтэнтыфікатар 2ФА"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Неабмежаваная колькасць псеўданімаў hide-my-email"
+      ],
+      "Vault sharing (up to ${ MAX_VAULT_MEMBERS } people)": [
+        "Абагуленне сховішча (максімальная колькасць карыстальнікаў: ${ MAX_VAULT_MEMBERS })"
+      ]
+    },
     "file size format": {
       "byte": [
         "байт",
@@ -1326,6 +1435,17 @@
         "тэрабайты",
         "тэрабайтаў",
         "тэрабайтаў"
+      ]
+    },
+    "Header": {
+      "Domain": [
+        "Дамен"
+      ],
+      "Password ends with": [
+        "Пароль заканчваецца на"
+      ],
+      "Username": [
+        "Імя карыстальніка"
       ]
     },
     "Info": {
@@ -1431,6 +1551,12 @@
         "${ repliedEmailsCount } адпраўлена",
         "${ repliedEmailsCount } адпраўлена"
       ],
+      "${ row.breachCount } breach detected": [
+        "Выяўлена ${ row.breachCount } парушэнне",
+        "Выяўлена ${ row.breachCount } парушэнні",
+        "Выяўлена ${ row.breachCount } парушэнняў",
+        "Выяўлена ${ row.breachCount } парушэнняў"
+      ],
       "${ trialDaysLeft } day left": [
         "Застаўся ${ trialDaysLeft } дзень",
         "Засталося ${ trialDaysLeft } дні",
@@ -1476,8 +1602,14 @@
       "Access your passwords on the go with our mobile apps.": [
         "Атрымлівайце доступ да сваіх пароляў дзе б вы не знаходзіліся пры дапамозе нашых мабільных праграм."
       ],
+      "Add your custom email address to monitor:": [
+        "Дадайце карыстальніцкі адрас электроннай пошты для назірання:"
+      ],
       "Admin": [
         "Адміністратар"
+      ],
+      "After confirming, you will need to accept a permission prompt for ${ PASS_APP_NAME }.": [
+        "Пасля пацвярджэння вам неабходна будзе прыняць запыт дазволу для ${ PASS_APP_NAME }."
       ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "У мэтах бяспекі вы можаце выдаліць файл CSV, які змяшчае вашы паролі пасля таго, як вашы даныя будуць паспяхова імпартаваны."
@@ -1497,11 +1629,17 @@
       "Aliases out of sync (${ aliasCount })": [
         "Псеўданімы не сінхранізаваныя (${ aliasCount })"
       ],
+      "Aliases with custom domains are not monitored, please add them as a custom email for monitoring.": [
+        "Псеўданімы з карыстальніцкіх даменаў не адсочваюцца. Дадайце іх як карыстальніцкія адрасы электроннай пошты, каб рабіць гэта."
+      ],
       "All aliases using the mailbox ${ emailJSX } will be also deleted.": [
         "Усе псеўданімы, якія выкарыстоўваюць паштовую скрыню ${ emailJSX }, таксама будуць выдалены."
       ],
       "All breaches for this address were resolved": [
         "Усе парушэнні для гэтага адраса былі вырашаны"
+      ],
+      "All current breaches will be marked as resolved. In case of future data breaches, you'll be notified.": [
+        "Усе бягучыя парушэнні будуць пазначаны як вырашаныя. Вы будзеце апавешчаны ў выпадку, калі адбудзецца ўцечка даных."
       ],
       "All inactive secure links were removed": [
         "Усе неактыўныя бяспечныя спасылкі былі выдалены"
@@ -1557,6 +1695,9 @@
       "Biometrics will be disabled and will need to be enabled again.": [
         "Біяметрыя будзе адключана і яе неабходна будзе ўключыць паўторна."
       ],
+      "Breaches detected": [
+        "Выяўлены парушэнні"
+      ],
       "Bring your own domain and you don't have to buy yet another email hosting solution.": [
         "Набудзьце свой уласны дамен, і вам не спатрэбіцца купляць яшчэ адно рашэнне для размяшчэння электроннай пошты."
       ],
@@ -1592,6 +1733,9 @@
       ],
       "Can view this item.": [
         "Можа праглядаць гэты элемент."
+      ],
+      "Change your password": [
+        "Змяніць свой пароль"
       ],
       "Choose a saved passkey to sign-in to ${ domain }": [
         "Выбраць захаваны ключ доступу для ўваходу ў ${ domain }"
@@ -1659,8 +1803,8 @@
       "Disabling offline mode...": [
         "Адключэнне рэжыму па-за сеткай..."
       ],
-      "Discover ${ PASS_APP_NAME } Youtube Video": [
-        "Пазнаёмцеся з усімі функцыямі ${ PASS_APP_NAME } паглядзеўшы відэа на YouTube"
+      "Discover ${ PASS_APP_NAME } video": [
+        "Азнаямляльнае відэа ${ PASS_APP_NAME }"
       ],
       "DNS changes could take up to 24 hours to update.": [
         "Змена DNS можа заняць да 24 гадзін."
@@ -1679,6 +1823,9 @@
       ],
       "Editor": [
         "Рэдактар​​"
+      ],
+      "email": [
+        "электронная пошта"
       ],
       "Email address successfully deleted from monitoring": [
         "Адрас электроннай пошты паспяхова выдалены з назірання"
@@ -1702,7 +1849,7 @@
         "Ачышчэнне сметніцы..."
       ],
       "Enable ${ PASS_APP_NAME } by connecting your ${ BRAND_NAME } account": [
-        "Уключыць ${ PASS_APP_NAME }, падключыўшы свой уліковы запіс ${ BRAND_NAME }"
+        "Уключыце ${ PASS_APP_NAME }, падключыўшы свой уліковы запіс ${ BRAND_NAME }"
       ],
       "Enable auto-locking to secure your data": [
         "Уключыць аўтаматычную блакіроўку для бяспекі вашых даных"
@@ -1761,6 +1908,9 @@
       "Fill in the CSV with your data": [
         "Запоўніце CSV сваімі данымі"
       ],
+      "finance": [
+        "фінансы"
+      ],
       "Follow those steps to import your data with a generic CSV:": [
         "Выканайце наступныя дзеянні, каб імпартаваць свае даныя з агульнага CSV:"
       ],
@@ -1802,6 +1952,12 @@
       ],
       "Here's how it works:": [
         "Вось як яно працуе:"
+      ],
+      "High Priority": [
+        "Высокі прыярытэт"
+      ],
+      "How does monitoring work?": [
+        "Як працуе назіранне?"
       ],
       "Identity confirmed": [
         "Ідэнтычнасць пацверджана"
@@ -1875,6 +2031,12 @@
       "Item successfully unpinned": [
         "Элемент паспяхова адмацаваны"
       ],
+      "Latest breach on ${ formattedDate }": [
+        "Апошняе парушэнне ў ${ formattedDate }"
+      ],
+      "Learn what to do ${ dataLeakedLink }": [
+        "Даведайцеся, што рабіць ${ dataLeakedLink }"
+      ],
       "Leaving item...": [
         "Выхад з элемента..."
       ],
@@ -1893,11 +2055,20 @@
       "Loading...": [
         "Загрузка..."
       ],
+      "Low Priority": [
+        "Нізкі прыярытэт"
+      ],
       "Manager": [
         "Менеджар"
       ],
       "me": [
         "я"
+      ],
+      "Medium Priority": [
+        "Сярэдні прыярытэт"
+      ],
+      "Monitor accounts": [
+        "Назіранне за ўліковымі запісамі"
       ],
       "Monitoring settings successfully updated": [
         "Налады назірання паспяхова абноўлены"
@@ -1913,12 +2084,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Перамяшчэнне ўсіх элементаў з \"${ payload.content.name }\""
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Перамяшчэнне элемента ў іншае сховішча прывядзе да сцірання яго бяспечных спасылак",
-        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак.",
-        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак.",
-        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак."
       ],
       "Moving items": [
         "Перамяшчэнне элементаў"
@@ -1940,6 +2105,9 @@
       ],
       "Never": [
         "Ніколі"
+      ],
+      "No breaches detected": [
+        "Парушэнні не выяўлены"
       ],
       "No credit cards found": [
         "Крэдытныя карткі не знойдзены"
@@ -1977,6 +2145,9 @@
       "Open the Safari settings, find ${ PASS_APP_NAME }, go to \"Permissions\" and enable site permissions.": [
         "Адкрыйце налады Safari, знайдзіце ${ PASS_APP_NAME }, перайдзіце ў \"Дазволы\" і ўключыце дазволы вэб-сайта."
       ],
+      "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Папярэджанні з нашага боку нацэлены на бяспеку. Калі вы не выявілі ў сябе ніякай уцечкі звестак, то можаце смела праігнараваць гэту справаздачу."
+      ],
       "Owner": [
         "Уладальнік"
       ],
@@ -1989,6 +2160,9 @@
       "Passkey sign-in": [
         "Увайсці з ключом доступу"
       ],
+      "password": [
+        "пароль"
+      ],
       "Password copied": [
         "Пароль скапіяваны"
       ],
@@ -2000,6 +2174,9 @@
         "Паролі старэйшыя за ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } тыдні будуць аўтаматычна выдаляцца з гісторыі.",
         "Паролі старэйшыя за ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } тыдняў будуць аўтаматычна выдаляцца з гісторыі.",
         "Паролі старэйшыя за ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } тыдняў будуць аўтаматычна выдаляцца з гісторыі."
+      ],
+      "Paused": [
+        "Прыпынена"
       ],
       "Pending access to the shared data": [
         "Чаканне доступу да абагуленых даных"
@@ -2277,6 +2454,9 @@
       "Successfully synced all vaults": [
         "Паспяхова сінхранізаваны ўсе сховішчы"
       ],
+      "Suggested": [
+        "Прапанавана"
+      ],
       "Switch to another vault or create an item in this vault": [
         "Пераключыцеся на іншае сховішча або стварыце элемент у гэтым сховішчы."
       ],
@@ -2298,6 +2478,9 @@
       "The exported file will be encrypted using PGP and requires a strong passphrase.": [
         "Экспартаваны файл будзе зашыфраваны з дапамогай PGP і яму спатрэбіцца надзейная парольная фраза."
       ],
+      "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
+        "Адбылася ўцечка скампраметаваных звестак са старонняга сэрвісу. Гэта не закранула звесткі вашага ўліковага запісу ${ BRAND_NAME }, бо яны зашыфраваны і знаходзяцца ў бяспецы. ${ learnMoreLink }"
+      ],
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "Для выкарыстання ${ PASS_APP_NAME } спатрэбіцца дадатковы пароль. Ён дзейнічае як дадатковы пароль паверх вашага пароля ${ BRAND_NAME }."
       ],
@@ -2318,6 +2501,9 @@
       ],
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Гэта экспартаванне будзе незашыфравана, і кожны ў каго ёсць доступ да файла экспартаванага файла зможа ўбачыць вашы паролі. Для вашай бяспекі, мы раім адразу выдаліць яго пасля таго, як вы скарысталіся ім."
+      ],
+      "This feature is currently experimental on Linux. Please ensure your system is up-to-date.": [
+        "Гэтая функцыя пакуль з'яўляецца эксперыментальнай у Linux. Пераканайцеся, што ваша сістэма знаходзіцца ў актуальным стане."
       ],
       "This item is not currently shared with anyone. Invite people to share it with others.": [
         "Элемент у цяперашні час ні з кім не абагулены. Запрасіце ўдзельнікаў, каб абагуліць яго з іншымі."
@@ -2430,6 +2616,9 @@
       "User's access successfully updated": [
         "Доступ карыстальніка паспяхова абноўлены"
       ],
+      "username": [
+        "імя карыстальніка"
+      ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Сховішча \"${ payload.content.name }\" паспяхова выдалена"
       ],
@@ -2453,6 +2642,9 @@
       ],
       "Verification code": [
         "Праверачны код"
+      ],
+      "Verification code sent.": [
+        "Код спраўджання."
       ],
       "Viewer": [
         "Праглядальнік"
@@ -2523,9 +2715,6 @@
       "You may close this tab.": [
         "Вы можаце закрыць гэту ўкладку."
       ],
-      "You may need to accept a permission prompt and may have to restart the application depending on your system.": [
-        "Магчыма, што спатрэбіцца прыняць запыт на дазвол і перазапусціць праграму ў залежнасці ад вашай сістэмы."
-      ],
       "You may need to grant accessiblity permission to ${ PASS_APP_NAME }.": [
         "Магчыма, што спатрэбіцца даць дазвол на доступ для ${ PASS_APP_NAME }."
       ],
@@ -2537,6 +2726,18 @@
       ],
       "You will be logged out and need to log in again on all of your other devices.": [
         "На ўсіх вашых іншых прыладах сеанс будзе завершаны і вам неабходна будзе аўтарызавацца паўторна."
+      ],
+      "You will be notified of data breaches for these email addresses.": [
+        "Вы будзеце атрымліваць апавяшчэнні аб уцечцы даных для гэтых адрасоў электроннай пошты."
+      ],
+      "You will be notified of data breaches for this email address.": [
+        "Вы будзеце атрымліваць апавяшчэнні ўцечкі даных для гэтага адраса электроннай пошты."
+      ],
+      "You will no longer be notified of data breaches for these email addresses.": [
+        "Вы больш не будзеце атрымліваць апавяшчэнні аб уцечцы даных для гэтых адрасоў электроннай пошты."
+      ],
+      "You will no longer be notified of data breaches for this email address.": [
+        "Вы больш не будзеце атрымліваць апавяшчэнні ўцечкі даных для гэтага адраса электроннай пошты."
       ],
       "You will no longer have access to sharing, 2FA and other advanced features in ${ PASS_APP_NAME }": [
         "У вас больш не будзе доступу да абагульвання, 2ФА і іншых пашыраных функцый у ${ PASS_APP_NAME }"
@@ -2564,6 +2765,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "Вашы файлы будуць зашыфраваны, а пасля гэтага захаваны"
+      ],
+      "Your information was found on ${ displayedDate }": [
+        "Вашы звесткі былі знойдзены ${ displayedDate }"
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Ваша арганізацыя патрабуе, каб вы забяспечылі доступ да ${ PASS_APP_NAME }"
@@ -2658,6 +2862,12 @@
         "${ secureLinksCount } бяспечныя спасылкі",
         "${ secureLinksCount } бяспечных спасылак",
         "${ secureLinksCount } бяспечных спасылак"
+      ],
+      "${ usageCount } login": [
+        "${ usageCount } запіс уваходу",
+        "${ usageCount } запісы ўваходу",
+        "${ usageCount } запісаў уваходу",
+        "${ usageCount } запісаў уваходу"
       ],
       "${ years } year": [
         "${ years } год",
@@ -2965,6 +3175,9 @@
       "Email (new alias)": [
         "Электронная пошта (новы псеўданім)"
       ],
+      "Email address": [
+        "Адрас электроннай пошты"
+      ],
       "Email aliases": [
         "Псеўданімы электроннай пошты"
       ],
@@ -3033,6 +3246,9 @@
       ],
       "Generic CSV": [
         "Агульны CSV"
+      ],
+      "Get Started": [
+        "Пачаць працу"
       ],
       "Grant": [
         "Дазволіць"
@@ -3147,6 +3363,9 @@
       ],
       "Last name": [
         "Прозвішча"
+      ],
+      "Last updated": [
+        "Апошняе абнаўленне"
       ],
       "Last week": [
         "Мінулы тыдзень"
@@ -3529,6 +3748,9 @@
       "State or province": [
         "Вобласць або раён"
       ],
+      "Status": [
+        "Статус"
+      ],
       "Street address": [
         "Вуліца"
       ],
@@ -3637,6 +3859,9 @@
       "Use ${ PASS_APP_NAME } as your browser's default password manager": [
         "Выкарыстоўваць ${ PASS_APP_NAME } як прадвызначаны менеджар пароляў у вашым браўзеры"
       ],
+      "Used in": [
+        "Выкарыстоўвалася ў"
+      ],
       "Useful for permanent sharing": [
         "Карысна для пастаяннага абагульвання"
       ],
@@ -3651,6 +3876,9 @@
       ],
       "Vault ID": [
         "Ідэнтыфікатар сховішча"
+      ],
+      "Vaults": [
+        "Сховішчы"
       ],
       "View details": [
         "Паглядзець падрабязнасці"
@@ -3710,6 +3938,17 @@
     "Link": {
       "auto create rules ››": [
         "аўтаматычнае стварэнне правіл ››"
+      ],
+      "if your data is leaked": [
+        "пры ўцечцы вашых даных"
+      ],
+      "Learn more": [
+        "Даведацца больш"
+      ]
+    },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "Уключыць ${ reason }"
       ]
     },
     "Message": {
@@ -3727,6 +3966,22 @@
       ],
       "You selected ${ semiboldText } in this vault.": [
         "Вы выбралі ${ semiboldText } у гэтым сховішчы."
+      ]
+    },
+    "new_plans: feature": {
+      "Require 2FA for organization": [
+        "Патрабаванне 2ФА для арганізацыі"
+      ],
+      "SSO integration": [
+        "Інтэграцыя SSO"
+      ]
+    },
+    "Notification": {
+      "${ reason } has been disabled": [
+        "${ reason } быў адключаны"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } было ўключана"
       ]
     },
     "Onboarding": {
@@ -3994,6 +4249,20 @@
         "Выкарыстоўваецца на ${ url }"
       ]
     },
+    "Security Center - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Выяўлены іншыя патэнцыяльныя ўцечкі з назвай ${ name } і колькасцю роўнай ${ remainingCount }. Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Выяўлена ${ name } і 1 іншая патэнцыяльная ўцечка. Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Выяўлена патэнцыяльная ўцечка ${ name }. Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Вашы звесткі былі знойдзены прынамсі ў адной уцечцы даных. Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці. ${ link }"
+      ]
+    },
     "sso": {
       "Approve or deny it now": [
         "Ухваліць або забараніць яго"
@@ -4141,11 +4410,20 @@
       ]
     },
     "Title": {
+      "${ BRAND_NAME } addresses": [
+        "Адрасы ${ BRAND_NAME }"
+      ],
       "${ PASS_APP_NAME } Logs": [
         "Журналы ${ PASS_APP_NAME }"
       ],
       "${ PASS_APP_NAME } Settings": [
         "Налады ${ PASS_APP_NAME }"
+      ],
+      "${ PASS_SHORT_APP_NAME } Monitor": [
+        "${ PASS_SHORT_APP_NAME } Monitor"
+      ],
+      "Account protection": [
+        "Абарона ўліковага запісу"
       ],
       "Actions": [
         "Дзеянні"
@@ -4176,6 +4454,15 @@
       ],
       "Blocked addresses": [
         "Заблакіраваныя адрасы"
+      ],
+      "Breach detected": [
+        "Выяўлена парушэнне"
+      ],
+      "Breaches": [
+        "Парушэнні"
+      ],
+      "Breaches detected for": [
+        "Выяўлены парушэнні для"
       ],
       "Cancel changing your email?": [
         "Скасаваць змяненні вашай электроннай пошты?"
@@ -4219,8 +4506,17 @@
       "Current version": [
         "Бягучая версія"
       ],
+      "Custom addresses": [
+        "Карыстальніцкія адрасы"
+      ],
       "Custom domains": [
         "Карыстальніцкія дамены"
+      ],
+      "Custom email monitoring": [
+        "Карыстальніцкі адрас электроннай пошты для назірання"
+      ],
+      "Custom emails": [
+        "Карыстальніцкія адрасы электроннай пошты"
       ],
       "Default": [
         "Прадвызначаныя"
@@ -4291,6 +4587,9 @@
       "Enter your second password": [
         "Увядзіце свой другі пароль"
       ],
+      "Excluded items": [
+        "Выключаныя элементы"
+      ],
       "Fill & copy password": [
         "Запаўненне і капіяванне пароля"
       ],
@@ -4312,6 +4611,9 @@
       "Hide my email": [
         "Схаваць маю электронную пошту"
       ],
+      "Hide-my-email aliases": [
+        "Псеўданімы Hide-my-email"
+      ],
       "History": [
         "Гісторыя"
       ],
@@ -4326,6 +4628,12 @@
       ],
       "Importing your data": [
         "Імпартаванне вашых даных"
+      ],
+      "Inactive 2FA": [
+        "Неактыўныя 2ФА"
+      ],
+      "Information exposed in breach": [
+        "Звесткі, якія былі скампраметаваныя ў выніку парушэння"
       ],
       "Item": [
         "Элемент"
@@ -4342,6 +4650,9 @@
       "Leave vault?": [
         "Выйсці са сховішча?"
       ],
+      "Loading breaches...": [
+        "Загрузка парушэнняў..."
+      ],
       "Log in as...": [
         "Увайсці як..."
       ],
@@ -4350,6 +4661,9 @@
       ],
       "Mailbox": [
         "Паштовая скрыня"
+      ],
+      "Mark as resolved?": [
+        "Пазначыць як вырашанае?"
       ],
       "Member limit": [
         "Абмежаванне ўдзельніка"
@@ -4384,14 +4698,32 @@
       "MX record": [
         "Запіс MX"
       ],
+      "Next": [
+        "Далей"
+      ],
+      "No excluded items": [
+        "Няма выключаных элементаў"
+      ],
+      "No inactive 2FAs": [
+        "Няма неактыўных 2ФА"
+      ],
+      "No insecure passwords": [
+        "Небяспечныя паролі адсутнічаюць"
+      ],
       "No items selected": [
         "Элементы не выбраны"
+      ],
+      "No reused passwords": [
+        "Паўторна выкарыстаныя паролі адсутнічаюць"
       ],
       "No shared items": [
         "Абагуленыя элементы адсутнічаюць"
       ],
       "No shared secure links": [
         "Няма абагуленых бяспечных спасылак"
+      ],
+      "Open pagination": [
+        "Паказваць нумарацыю старонак"
       ],
       "Organize vaults": [
         "Упарадкаваць сховішчы"
@@ -4404,6 +4736,12 @@
       ],
       "Password": [
         "Пароль"
+      ],
+      "Password Health": [
+        "Якасць пароля"
+      ],
+      "Pause monitoring?": [
+        "Прыпыніць назіранне?"
       ],
       "Pending access confirmation": [
         "Чакаецца пацвярджэнне доступу"
@@ -4429,11 +4767,20 @@
         "Звярніце ўвагу, што псеўданімы немагчыма аднавіць пасля іх выдалення.",
         "Звярніце ўвагу, што псеўданімы немагчыма аднавіць пасля іх выдалення."
       ],
+      "Previous": [
+        "Папярэдні"
+      ],
       "Random Prefix Generation": [
         "Выпадковая генерацыя прэфікса"
       ],
+      "Recommended actions": [
+        "Рэкамендаваныя дзеянні"
+      ],
       "Reject device?": [
         "Адхіліць прыладу?"
+      ],
+      "Remove email address?": [
+        "Выдаліць адрас электроннай пошты?"
       ],
       "Remove extra password": [
         "Выдаленне дадатковага пароля"
@@ -4444,8 +4791,23 @@
       "Reset history for this item?": [
         "Скінуць гісторыю для гэтага элемента?"
       ],
+      "Resolved breaches": [
+        "Вырашаныя парушэнні"
+      ],
       "Restore this version?": [
         "Аднавіць гэту версію?"
+      ],
+      "Resume monitoring?": [
+        "Узнавіць назіранне?"
+      ],
+      "Reused ${ count } time": [
+        "Паўторна выкарыстаны ${ count } раз",
+        "Паўторна выкарыстаны ${ count } разы",
+        "Паўторна выкарыстаны ${ count } разоў",
+        "Паўторна выкарыстаны ${ count } разоў"
+      ],
+      "Reused passwords": [
+        "Паўторна выкарыстаныя паролі"
       ],
       "Review and share": [
         "Прагляд і абагульванне"
@@ -4462,8 +4824,14 @@
       "Set extra password": [
         "Заданне дадатковага пароля"
       ],
+      "Set up 2FA for better security": [
+        "Наладзьце 2ФА для лепшай бяспекі"
+      ],
       "Set up 2FA for more security": [
         "Наладзьце 2ФА для большай бяспекі"
+      ],
+      "Settings": [
+        "Налады"
       ],
       "Share with": [
         "Абагуліць з"
@@ -4528,14 +4896,26 @@
       "Visible vaults": [
         "Бачныя сховішчы"
       ],
+      "Want to learn more?": [
+        "Хочаце даведацца больш?"
+      ],
       "Weak password": [
         "Ненадзейны пароль"
+      ],
+      "Weak passwords": [
+        "Ненадзейныя паролі"
       ],
       "Welcome to ${ brandNameJSX }": [
         "Вітаем у ${ brandNameJSX }"
       ],
       "Welcome to your new password manager!": [
         "Вітаем у вашым новым менеджары пароляў!"
+      ],
+      "What is an alias?": [
+        "Што такое псеўданім?"
+      ],
+      "What is the dark web?": [
+        "Што такое цёмная сетка?"
       ],
       "What is the difference between ${ PASS_SHORT_APP_NAME } note and SimpleLogin note?": [
         "Якая розніца паміж нататкамі ${ PASS_SHORT_APP_NAME } і SimpleLogin?"
@@ -4545,6 +4925,9 @@
       ],
       "Your ${ planName } subscription will end on ${ endDate }": [
         "Ваша падпіска ${ planName } завершыцца ${ endDate }"
+      ],
+      "Your exposed information": [
+        "Вашы скампраметаваныя звесткі"
       ],
       "Your vault is empty": [
         "Ваша сховішча нічога не змяшчае"
@@ -4567,6 +4950,14 @@
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Сёння"
+      ]
+    },
+    "Tooltip": {
+      "Not all information listed here was exposed for all users.": [
+        "Не ўсе пералічаныя тут звесткі былі скампраметаваны для ўсіх карыстальнікаў."
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "Зашыфраваныя паролі (нават скампраметаваныя) застануцца ў бяспецы, пакуль не будуць расшыфраваны."
       ]
     },
     "Validation": {
@@ -4685,6 +5076,9 @@
       "Email cannot be empty": [
         "Поле электроннай пошты не можа быць пустым"
       ],
+      "Email is required": [
+        "Патрабуецца электронная пошта"
+      ],
       "Empty note": [
         "Пустая нататка"
       ],
@@ -4699,6 +5093,12 @@
       ],
       "Extra password should have at least 8 characters": [
         "Дадатковы пароль павінен мець прынамсі 8 сімвалаў"
+      ],
+      "Failed to autotype. Please make sure ${ PASS_APP_NAME } has the necessary permissions and try again (${ error }).": [
+        "Збой аўтаматычнага ўводу даных. Пераканайцеся, што ў ${ PASS_APP_NAME } ёсць неабходныя дазволы і паспрабуйце яшчэ раз (${ error })."
+      ],
+      "Failed to load breaches.": [
+        "Не ўдалося загрузіць парушэнні."
       ],
       "Grant clipboard access to enable automatic clearing of copied passwords and data.": [
         "Дайце доступ да буфера абмену, каб уключыць аўтаматычную ачыстку скапіяваных пароляў і даных."
@@ -4798,6 +5198,9 @@
       ],
       "This alias \"${ aliasEmail }\" is currently used in the login \"${ relatedLoginName }\".": [
         "Псеўданім \"${ aliasEmail }\" у цяперашні час выкарыстоўваецца ў запісе ўваходу \"${ relatedLoginName }\"."
+      ],
+      "This email address will no longer be monitored for data breaches.": [
+        "Гэты адрас электроннай пошты больш не будзе адсочвацца на прадмет уцечкі даных."
       ],
       "This item is currently shared. Deleting it will remove access for all other users.": [
         "Гэты элемент у цяперашні час абагулены. Яго выдаленне пазбавіць доступу ўсіх іншых карыстальнікаў."

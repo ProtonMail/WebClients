@@ -1236,6 +1236,9 @@
       "${ maxSpaceTB } storage": [
         "저장공간 ${ maxSpaceTB }"
       ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers }명 사용자"
+      ],
       "${ planMaxSpace } email storage": [
         "${ planMaxSpace }의 이메일 저장 공간"
       ],
@@ -1345,6 +1348,9 @@
       ],
       "High-speed chats and advanced AI features.": [
         "고속 채팅 및 고급 AI 기능"
+      ],
+      "Private video calls for the conversations that matter.": [
+        "중요한 대화를 위한 개인 영상 통화."
       ]
     },
     "color": {
@@ -2329,6 +2335,11 @@
     "customer_support.feature.mail": {
       "For ${ MAIL_APP_NAME }": [
         "${ MAIL_APP_NAME }용"
+      ]
+    },
+    "customer_support.feature.meet": {
+      "For ${ MEET_APP_NAME }": [
+        "${ MEET_APP_NAME }용"
       ]
     },
     "customer_support.feature.pass": {
@@ -5991,6 +6002,50 @@
       ],
       "Add-on with free trial": [
         "무료 체험 애드온"
+      ]
+    },
+    "meet_2025: Feature": {
+      "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
+        "${ MEET_APP_NAME }: 중요한 대화를 위한 안전한 영상 회의"
+      ],
+      "${ n } active meeting at a time": [
+        "동시 활성 회의 ${ n }개"
+      ],
+      "24 hours per meeting": [
+        "회의 당 24시간"
+      ],
+      "60 minutes per meeting": [
+        "회의 당 60분"
+      ],
+      "Appointment scheduling": [
+        "일정 예약"
+      ],
+      "Browser, mobile, and desktop apps": [
+        "브라우저, 모바일 및 데스크톱 앱"
+      ],
+      "Built-in chat": [
+        "내장 채팅"
+      ],
+      "End-to-end encrypted screen sharing and ephemeral in-call chat": [
+        "종단간 암호화된 화면 공유 및 임시 통화 중 채팅"
+      ],
+      "Meeting recording (coming soon)": [
+        "회의 녹화 (출시 예정)"
+      ],
+      "One active meeting at a time": [
+        "동싀 활성 회의 1개"
+      ],
+      "Screen-sharing": [
+        "화면 공유"
+      ],
+      "Unlimited meetings per day": [
+        "하루 무제한 회의"
+      ],
+      "Up to ${ n } meeting per day": [
+        "하루 최대 ${ n }개 회의"
+      ],
+      "Up to ${ n } participant": [
+        "최대 ${ n }명 참가자"
       ]
     },
     "Message": {

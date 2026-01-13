@@ -4,6 +4,26 @@
     "language": "da_DK"
   },
   "contexts": {
+    "Account Settings - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } og ${ remainingCount } andre potentielle lækager fundet. Tænd for ${ DARK_WEB_MONITORING_NAME } for at se detaljer og tage handling. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } og 1 anden potentiel lækage fundet. Tænd for ${ DARK_WEB_MONITORING_NAME } for at se detaljer og tage handling. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "En potentiel lækage på ${ name } blev fundet. Tænd for ${ DARK_WEB_MONITORING_NAME } for at se detaljer og tage handling. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "En potentiel lækage fra ${ name } blev fundet. Tænd for ${ DARK_WEB_MONITORING_NAME } for at se detaljer og tage handling. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "En potentiel lækage fra ${ name } blev fundet. Tænd for ${ DARK_WEB_MONITORING_NAME } for at se detaljer. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Dine oplysninger blev fundet i mindst én datalækage. Tænd for ${ DARK_WEB_MONITORING_NAME } for at se detaljer og tage handling. ${ link }"
+      ]
+    },
     "Action": {
       "${ PASS_SHORT_APP_NAME } for Android": [
         "${ PASS_SHORT_APP_NAME } til Android"
@@ -55,6 +75,9 @@
       ],
       "Add username field": [
         "Tilføj brugernavn-felt"
+      ],
+      "Admin panel": [
+        "Admin-panel"
       ],
       "Advanced": [
         "Avanceret"
@@ -197,6 +220,9 @@
       "Create a ${ BRAND_NAME } Account": [
         "Opret en ${ BRAND_NAME }-konto"
       ],
+      "Create a new vault": [
+        "Opret en ny boks"
+      ],
       "Create alias": [
         "Opret alias"
       ],
@@ -305,6 +331,9 @@
       "Edit vault": [
         "Redigér boks"
       ],
+      "Enable ${ DARK_WEB_MONITORING_NAME }": [
+        "Aktivér ${ DARK_WEB_MONITORING_NAME }"
+      ],
       "Enable this alias to receive emails sent to this alias": [
         "Aktiver dette alias for at modtage mails sendt til dette alias"
       ],
@@ -341,11 +370,17 @@
       "Get mobile and desktop apps": [
         "Få mobil- og desktop-apps"
       ],
+      "Get mobile apps": [
+        "Hent mobilapps"
+      ],
       "Get Pass Business": [
         "Få Pass Business"
       ],
       "Get Pass Plus": [
         "Få Pass Plus"
+      ],
+      "Get Started": [
+        "Kom i gang"
       ],
       "Hide": [
         "Skjul"
@@ -395,6 +430,9 @@
       "Link expires after": [
         "Linket udløber efter"
       ],
+      "Lock ${ PASS_APP_NAME }": [
+        "Lås ${ PASS_APP_NAME }"
+      ],
       "Lock extension": [
         "Lås udvidelse"
       ],
@@ -418,6 +456,9 @@
       ],
       "Manually sync your data": [
         "Synkronisér data manuelt"
+      ],
+      "Mark as resolved": [
+        "Markér som løst"
       ],
       "Maximum views": [
         "Maks. visninger"
@@ -469,6 +510,12 @@
       ],
       "Organize vaults": [
         "Organisér bokse"
+      ],
+      "Pass Monitor": [
+        "Pass Monitor"
+      ],
+      "Pause monitoring": [
+        "Sæt monitorering på pause"
       ],
       "Pin item": [
         "Fastgør element"
@@ -544,6 +591,9 @@
       ],
       "Restrict number of views": [
         "Begræns antallet af visninger"
+      ],
+      "Resume monitoring": [
+        "Genoptag monitorering"
       ],
       "Retry": [
         "Prøv igen"
@@ -660,6 +710,9 @@
       "Try again": [
         "Prøv igen"
       ],
+      "Try again.": [
+        "Prøv igen."
+      ],
       "Unblock contact": [
         "Ophæv blokering af kontakt"
       ],
@@ -705,6 +758,9 @@
       ],
       "View app logs": [
         "Se app-logs"
+      ],
+      "View details": [
+        "Vis detaljer"
       ],
       "View history": [
         "Se historik"
@@ -759,6 +815,9 @@
         "${ total } andet login bruger samme adgangskode",
         "${ total } andre logins bruger samme adgangskode"
       ],
+      "2FA adds another layer of security to your logins. ${ PASS_APP_NAME } makes 2FA easier by storing and automatically autofilling your 2FA codes.": [
+        "2FA tilføjer endnu et lag af sikkerhed til dine logins. ${ PASS_APP_NAME } gør 2FA nemmere ved at gemme og automatisk udfylde dine 2FA-koder."
+      ],
       "A checked box means the feature is disabled.": [
         "Et afkrydset felt betyder, at funktionen er deaktiveret."
       ],
@@ -771,11 +830,23 @@
       "Add the following TXT DNS record to your domain.": [
         "Tilføj følgende TXT DNS-record til dit domæne."
       ],
+      "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
+        "Et e-mailalias fungerer som en e-mailadresse, men reducerer spam og holder din faktiske e-mailadresse og identitet skjult."
+      ],
+      "Change your passwords": [
+        "Skift dine adgangskoder"
+      ],
+      "Create unique passwords": [
+        "Opret unikke adgangskoder"
+      ],
       "DKIM ${ WIKIPEDIA_LINK_DKIM } is an email authentication method designed to avoid email spoofing. Setting up DKIM is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
         "DKIM ${ WIKIPEDIA_LINK_DKIM } er en e-mail-godkendelsesmetode, der er designet til at undgå e-mail-spoofing. Det anbefales stærkt at sætte DKIM op for at reducere risikoen for, at dine e-mails ender i modtagerens spam-mappe."
       ],
       "DMARC ${ WIKIPEDIA_LINK_DMARC } is designed to protect the domain from unauthorized use, commonly known as email spoofing. Built around SPF and DKIM, a DMARC policy tells the receiving mail server what to do if neither of those authentication methods passes.": [
         "DMARC ${ WIKIPEDIA_LINK_DMARC } er designet til at beskytte domænet mod uautoriseret brug, almindeligvis kendt som e-mail-spoofing. En DMARC-politik er bygget op omkring SPF og DKIM og fortæller den modtagende mailserver, hvad den skal gøre, hvis ingen af disse godkendelsesmetoder bestås."
+      ],
+      "Get notified if your email, password or other personal data was leaked.": [
+        "Få besked, hvis din e-mail, adgangskode eller andre personlige data er blevet lækket."
       ],
       "If you are using a subdomain, e.g. ${ subdomainExample }, you need to use ${ dmarcExampleSubdomain } as the domain instead.": [
         "Hvis du bruger et underdomæne, f.eks. ${ subdomainExample }, skal du bruge ${ dmarcExampleSubdomain } som domæne i stedet."
@@ -786,8 +857,17 @@
       "If you are using Cloudflare, please make sure to not select the Proxy option.": [
         "Hvis du bruger CloudFlare, bedes du sørge for ikke at vælge Proxy-muligheden."
       ],
+      "Keep your info more secure and private with these guides and tips.": [
+        "Hold dine oplysninger mere sikre og private med disse vejledninger og tips."
+      ],
       "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.${ infoText }": [
         "Liste over domæner, hvor visse automatiske funktioner i ${ PASS_SHORT_APP_NAME } (Autofyld, Autoforslag, Autogem) ikke skal køre.${ infoText }"
+      ],
+      "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
+        "Vores banebrydende AI-drevne sikkerhedsløsning designet til brugere, der søger øget beskyttelse for deres konto. ${ learnMoreLink }"
+      ],
+      "Set up 2FA for more security": [
+        "Indstil 2FA for mere sikkerhed"
       ],
       "Some DNS registrar might require a full record path, in this case please use ${ domain } as domain value instead.": [
         "Nogle DNS-registratorer kræver måske en fuld record-sti, i så fald skal du bruge ${ domain } som domæneværdi i stedet."
@@ -797,6 +877,15 @@
       ],
       "SPF ${ WIKIPEDIA_LINK_SPF } is an email authentication method designed to detect forging sender addresses during the delivery of the email. Setting up SPF is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
         "SPF ${ WIKIPEDIA_LINK_SPF } er en e-mail-godkendelsesmetode, der er designet til at detektere falske afsenderadresser under leveringen af e-mailen. Det anbefales stærkt at opsætte SPF for at reducere risikoen for, at dine e-mails ender i modtagerens spam-mappe."
+      ],
+      "Start monitoring for data breaches related to accounts created with your email address and your hide-my-email aliases.": [
+        "Begynd at monitorere for databrud relateret til konti, der er oprettet med din e-mailadresse og dine hide-my-email-aliasser."
+      ],
+      "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
+        "Det mørke net (engelsk: dark web) er en skjult del af internettet, hvor stjålne personlige oplysninger, f.eks. identiteter, kan købes og sælges."
+      ],
+      "These items remain at risk": [
+        "Disse elementer er fortsat i farezonen"
       ],
       "These vaults will not be accessible and their content won’t be available to Search or Autofill.": [
         "Disse bokse vil ikke være tilgængelige, og deres indhold vil ikke være tilgængeligt ved søgning eller autofyldning."
@@ -812,6 +901,15 @@
       ],
       "Unlock advanced security features and detailed logs to safeguard your online presence.": [
         "Frigør avancerede sikkerhedsfunktioner og udførlige logfiler for at beskytte din færden på nettet."
+      ],
+      "With ${ PASS_SHORT_APP_NAME } Monitor, stay ahead of threats by getting instant alerts if your credentials are compromised. Unlock advanced security features and detailed logs to safeguard your online presence.": [
+        "Med ${ PASS_SHORT_APP_NAME } Monitor er du på forkant af trusler ved at få øjeblikkelige varsler, hvis dine legitimationsoplysninger kompromitteres. Lås op for avancerede sikkerhedsfunktioner og detaljerede logfiler for at beskytte din online tilstedeværelse."
+      ],
+      "Your email addresses were leaked in at least 1 data breach.": [
+        "Dine e-mailadresser blev lækket i mindst 1 databrud."
+      ],
+      "Your personal info was leaked in a data breach of a third-party service.": [
+        "Dine personlige oplysninger blev lækket i et databrud hos en tredjepartstjeneste."
       ]
     },
     "Email": {
@@ -1266,6 +1364,17 @@
         "Noget gik galt"
       ]
     },
+    "Feature": {
+      "Integrated 2FA authenticator": [
+        "Integreret 2FA-godkendelsesværktøj"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Ubegrænsede hide-my-email-aliasser"
+      ],
+      "Vault sharing (up to ${ MAX_VAULT_MEMBERS } people)": [
+        "Deling af boks (op til ${ MAX_VAULT_MEMBERS } personer)"
+      ]
+    },
     "file size format": {
       "byte": [
         "byte",
@@ -1304,6 +1413,17 @@
       "Terabyte": [
         "Terabyte",
         "Terabyte"
+      ]
+    },
+    "Header": {
+      "Domain": [
+        "Domæne"
+      ],
+      "Password ends with": [
+        "Adgangskode slutter med"
+      ],
+      "Username": [
+        "Brugernavn"
       ]
     },
     "Info": {
@@ -1391,6 +1511,10 @@
         "${ repliedEmailsCount } sendt",
         "${ repliedEmailsCount } sendte"
       ],
+      "${ row.breachCount } breach detected": [
+        "${ row.breachCount } databrud registreret",
+        "${ row.breachCount } databrud registreret"
+      ],
       "${ trialDaysLeft } day left": [
         "${ trialDaysLeft } dag tilbage",
         "${ trialDaysLeft } dage tilbage"
@@ -1434,8 +1558,14 @@
       "Access your passwords on the go with our mobile apps.": [
         "Tilgå dine adgangskoder på farten med vores mobil-apps."
       ],
+      "Add your custom email address to monitor:": [
+        "Tilføj din brugerdefinerede e-mailadresse, som skal monitoreres:"
+      ],
       "Admin": [
         "Admin"
+      ],
+      "After confirming, you will need to accept a permission prompt for ${ PASS_APP_NAME }.": [
+        "Efter bekræftelse skal du acceptere en tilladelsesanmodning for ${ PASS_APP_NAME }."
       ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Når du har importeret dine data, kan du slette CSV-filen med dine adgangskoder for en sikkerheds skyld."
@@ -1455,11 +1585,17 @@
       "Aliases out of sync (${ aliasCount })": [
         "Usynkroniserede aliasser (${ aliasCount })"
       ],
+      "Aliases with custom domains are not monitored, please add them as a custom email for monitoring.": [
+        "Aliasser med brugerdefinerede domæner monitoreres ikke, tilføj dem som en brugerdefineret e-mail for monitorering."
+      ],
       "All aliases using the mailbox ${ emailJSX } will be also deleted.": [
         "Alle aliasser, der bruger postkassen ${ emailJSX }, bliver også slettet."
       ],
       "All breaches for this address were resolved": [
         "Alle databrud for denne adresse blev håndteret"
+      ],
+      "All current breaches will be marked as resolved. In case of future data breaches, you'll be notified.": [
+        "Alle aktuelle databrud vil blive markeret som håndteret. I tilfælde af fremtidige databrud får du besked."
       ],
       "All inactive secure links were removed": [
         "Alle inaktive sikre links blev fjernet"
@@ -1515,6 +1651,9 @@
       "Biometrics will be disabled and will need to be enabled again.": [
         "Biometri vil blive deaktiveret og skal aktiveres igen."
       ],
+      "Breaches detected": [
+        "Databrud registreret"
+      ],
       "Bring your own domain and you don't have to buy yet another email hosting solution.": [
         "Tag dit eget domæne med, så behøver du ikke at købe endnu en e-mail-hostingløsning."
       ],
@@ -1550,6 +1689,9 @@
       ],
       "Can view this item.": [
         "Kan se dette element."
+      ],
+      "Change your password": [
+        "Skift din adgangskode"
       ],
       "Choose a saved passkey to sign-in to ${ domain }": [
         "Vælg en gemt adgangsnøgle til at logge ind på ${ domain }"
@@ -1617,8 +1759,8 @@
       "Disabling offline mode...": [
         "Deaktiverer offline-tilstand..."
       ],
-      "Discover ${ PASS_APP_NAME } Youtube Video": [
-        "Opdag ${ PASS_APP_NAME } YouTube-video"
+      "Discover ${ PASS_APP_NAME } video": [
+        "Udforsk ${ PASS_APP_NAME }-video"
       ],
       "DNS changes could take up to 24 hours to update.": [
         "DNS-ændringer kan tage op til 24 timer at opdatere."
@@ -1637,6 +1779,9 @@
       ],
       "Editor": [
         "Redaktør"
+      ],
+      "email": [
+        "e-mail"
       ],
       "Email address successfully deleted from monitoring": [
         "E-mail-adresse slettet fra monitorering"
@@ -1719,6 +1864,9 @@
       "Fill in the CSV with your data": [
         "Udfyld CSV-filen med dine data"
       ],
+      "finance": [
+        "finans"
+      ],
       "Follow those steps to import your data with a generic CSV:": [
         "Følg de trin for at importere dine data med en generisk CSV:"
       ],
@@ -1756,6 +1904,12 @@
       ],
       "Here's how it works:": [
         "Det virker sådan her:"
+      ],
+      "High Priority": [
+        "Høj prioritet"
+      ],
+      "How does monitoring work?": [
+        "Hvordan fungerer monitorering?"
       ],
       "Identity confirmed": [
         "Identitet bekræftet"
@@ -1827,6 +1981,12 @@
       "Item successfully unpinned": [
         "Element frigjort"
       ],
+      "Latest breach on ${ formattedDate }": [
+        "Seneste databrud ${ formattedDate }"
+      ],
+      "Learn what to do ${ dataLeakedLink }": [
+        "Se hvad du skal gøre her ${ dataLeakedLink }"
+      ],
       "Leaving item...": [
         "Forlader element..."
       ],
@@ -1845,11 +2005,20 @@
       "Loading...": [
         "Indlæser..."
       ],
+      "Low Priority": [
+        "Lav prioritet"
+      ],
       "Manager": [
         "Leder"
       ],
       "me": [
         "mig"
+      ],
+      "Medium Priority": [
+        "Mellem prioritet"
+      ],
+      "Monitor accounts": [
+        "Overvåg konti"
       ],
       "Monitoring settings successfully updated": [
         "Indstillinger for monitorering opdateret"
@@ -1865,8 +2034,7 @@
         "Flytter alle elementer fra \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Flyttes et element til en anden boks, slettes dets sikre links.",
-        "Flyttes elementer til en anden boks, slettes deres sikre links."
+        "Flyttes et element til en anden boks, slettes dets sikre links."
       ],
       "Moving items": [
         "Flytter elementer"
@@ -1888,6 +2056,9 @@
       ],
       "Never": [
         "Aldrig"
+      ],
+      "No breaches detected": [
+        "Ingen databrud registreret"
       ],
       "No credit cards found": [
         "Intet betalingskort fundet"
@@ -1925,6 +2096,9 @@
       "Open the Safari settings, find ${ PASS_APP_NAME }, go to \"Permissions\" and enable site permissions.": [
         "Åbn Safari-indstillingerne, find ${ PASS_APP_NAME }, gå til \"Tilladelser\", og aktivér webstedstilladelser."
       ],
+      "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Vores advarsler prioriterer sikkerhed. Hvis du ikke genkender nogen af de kompromitterede oplysninger, kan du roligt ignorere denne rapport."
+      ],
       "Owner": [
         "Ejer"
       ],
@@ -1937,6 +2111,9 @@
       "Passkey sign-in": [
         "Login med adgangsnøgle"
       ],
+      "password": [
+        "adgangskode"
+      ],
       "Password copied": [
         "Adgangskode kopieret"
       ],
@@ -1946,6 +2123,9 @@
       "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
         "Adgangskoder, der er ældre end ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } uge slettes automatisk fra historikken.",
         "Adgangskoder, der er ældre end ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } uger slettes automatisk fra historikken."
+      ],
+      "Paused": [
+        "Sat på pause"
       ],
       "Pending access to the shared data": [
         "Afventer adgang til de delte data"
@@ -2223,6 +2403,9 @@
       "Successfully synced all vaults": [
         "Synkroniserede alle bokse"
       ],
+      "Suggested": [
+        "Foreslået"
+      ],
       "Switch to another vault or create an item in this vault": [
         "Skift til en anden boks, eller opret et element i denne boks"
       ],
@@ -2244,6 +2427,9 @@
       "The exported file will be encrypted using PGP and requires a strong passphrase.": [
         "Den eksporterede fil vil blive krypteret med PGP og kræver en stærk adgangssætning."
       ],
+      "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
+        "De eksponerede oplysninger blev lækket fra en tredjepartstjeneste. Din ${ BRAND_NAME }-kontooplysninger er stadig sikre og krypterede. ${ learnMoreLink }"
+      ],
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "Den ekstra adgangskode er påkrævet for at bruge ${ PASS_APP_NAME }. Den virker som en tillægskode til din ${ BRAND_NAME }-adgangskode."
       ],
@@ -2262,6 +2448,9 @@
       ],
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Denne eksport vil ikke være krypteret, og hvem som helst med adgang til den eksporterede fil vil kunne se dine adgangskoder. For en sikkerheds skyld bedes du slette den, når du er færdig med at bruge den."
+      ],
+      "This feature is currently experimental on Linux. Please ensure your system is up-to-date.": [
+        "Denne funktion er i øjeblikket eksperimentel på Linux. Sørg for, at dit system er opdateret."
       ],
       "This item is not currently shared with anyone. Invite people to share it with others.": [
         "Dette element deles i øjeblikket ikke med nogen. Inviter folk for at dele det med andre."
@@ -2374,6 +2563,9 @@
       "User's access successfully updated": [
         "Brugers adgang opdateret"
       ],
+      "username": [
+        "brugernavn"
+      ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Boksen \"${ payload.content.name }\" blev slettet"
       ],
@@ -2395,6 +2587,9 @@
       ],
       "Verification code": [
         "Bekræftelseskode"
+      ],
+      "Verification code sent.": [
+        "Bekræftelseskode sendt."
       ],
       "Viewer": [
         "Seer"
@@ -2459,9 +2654,6 @@
       "You may close this tab.": [
         "Du kan lukke denne fane."
       ],
-      "You may need to accept a permission prompt and may have to restart the application depending on your system.": [
-        "Du skal muligvis acceptere en tilladelsesanmodning og kan være nødt til at genstarte applikationen, afhængigt af dit system."
-      ],
       "You may need to grant accessiblity permission to ${ PASS_APP_NAME }.": [
         "Det kan være nødvendigt at give tilgængelighedstilladelse til ${ PASS_APP_NAME }."
       ],
@@ -2473,6 +2665,18 @@
       ],
       "You will be logged out and need to log in again on all of your other devices.": [
         "Du bliver logget ud og skal logge ind igen på alle dine andre enheder."
+      ],
+      "You will be notified of data breaches for these email addresses.": [
+        "Du vil blive underrettet om databrud for disse e-mailadresser."
+      ],
+      "You will be notified of data breaches for this email address.": [
+        "Du vil blive underrettet om databrud for denne e-mailadresse."
+      ],
+      "You will no longer be notified of data breaches for these email addresses.": [
+        "Du vil ikke længere blive underrettet om databrud for disse e-mailadresser."
+      ],
+      "You will no longer be notified of data breaches for this email address.": [
+        "Du vil ikke længere blive underrettet om databrud for denne e-mailadresse."
       ],
       "You will no longer have access to sharing, 2FA and other advanced features in ${ PASS_APP_NAME }": [
         "Du vil ikke længere have adgang til deling, 2FA og andre avancerede funktioner i ${ PASS_APP_NAME }"
@@ -2500,6 +2704,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "Din filer vil blive krypteret og derefter gemt"
+      ],
+      "Your information was found on ${ displayedDate }": [
+        "Dine oplysninger blev fundet ${ displayedDate }"
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Din organisation kræver, at du sikrer din adgang til ${ PASS_APP_NAME }"
@@ -2570,6 +2777,10 @@
       "${ secureLinksCount } secure link": [
         "${ secureLinksCount } sikkert link",
         "${ secureLinksCount } sikre links"
+      ],
+      "${ usageCount } login": [
+        "${ usageCount } login",
+        "${ usageCount } logins"
       ],
       "${ years } year": [
         "${ years } år",
@@ -2875,6 +3086,9 @@
       "Email (new alias)": [
         "E-mail (nyt alias)"
       ],
+      "Email address": [
+        "E-mail"
+      ],
       "Email aliases": [
         "E-mail-aliasser"
       ],
@@ -2943,6 +3157,9 @@
       ],
       "Generic CSV": [
         "Generisk CSV"
+      ],
+      "Get Started": [
+        "Kom i gang"
       ],
       "Grant": [
         "Tildel"
@@ -3057,6 +3274,9 @@
       ],
       "Last name": [
         "Efternavn"
+      ],
+      "Last updated": [
+        "Sidst opdateret"
       ],
       "Last week": [
         "Sidste uge"
@@ -3439,6 +3659,9 @@
       "State or province": [
         "Landsdel eller provins"
       ],
+      "Status": [
+        "Status"
+      ],
       "Street address": [
         "Adresse"
       ],
@@ -3547,6 +3770,9 @@
       "Use ${ PASS_APP_NAME } as your browser's default password manager": [
         "Brug ${ PASS_APP_NAME } som din browsers standard adgangskodeadministrator"
       ],
+      "Used in": [
+        "Anvendt i"
+      ],
       "Useful for permanent sharing": [
         "Nyttigt til permanent deling"
       ],
@@ -3561,6 +3787,9 @@
       ],
       "Vault ID": [
         "Boks-ID"
+      ],
+      "Vaults": [
+        "Bokse"
       ],
       "View details": [
         "Vis detaljer"
@@ -3620,6 +3849,17 @@
     "Link": {
       "auto create rules ››": [
         "regler for automatisk oprettelse ››"
+      ],
+      "if your data is leaked": [
+        "hvis dine data er lækket"
+      ],
+      "Learn more": [
+        "Få mere at vide"
+      ]
+    },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "Aktiver ${ reason }"
       ]
     },
     "Message": {
@@ -3633,6 +3873,22 @@
       ],
       "You selected ${ semiboldText } in this vault.": [
         "Du valgte ${ semiboldText } i denne boks."
+      ]
+    },
+    "new_plans: feature": {
+      "Require 2FA for organization": [
+        "Kræv 2FA for organisation"
+      ],
+      "SSO integration": [
+        "SSO-integration"
+      ]
+    },
+    "Notification": {
+      "${ reason } has been disabled": [
+        "${ reason } er blevet deaktiveret"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } er blevet aktiveret"
       ]
     },
     "Onboarding": {
@@ -3898,6 +4154,20 @@
         "Brugt på ${ url }"
       ]
     },
+    "Security Center - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } og ${ remainingCount } andre potentielle lækager fundet. Tænd for ${ DARK_WEB_MONITORING_NAME } for at se detaljer. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } og 1 anden potentiel lækage fundet. Tænd for ${ DARK_WEB_MONITORING_NAME } for at se detaljer. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Et potentielt ${ name } læk blev opdaget. Tænd for ${ DARK_WEB_MONITORING_NAME } for at se detaljer. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Dine oplysninger blev fundet i mindst én datalækage. Tænd for ${ DARK_WEB_MONITORING_NAME } for at se detaljer. ${ link }"
+      ]
+    },
     "sso": {
       "Approve or deny it now": [
         "Godkend eller nægt det nu"
@@ -4041,11 +4311,20 @@
       ]
     },
     "Title": {
+      "${ BRAND_NAME } addresses": [
+        "${ BRAND_NAME } adresser"
+      ],
       "${ PASS_APP_NAME } Logs": [
         "${ PASS_APP_NAME }-logs"
       ],
       "${ PASS_APP_NAME } Settings": [
         "${ PASS_APP_NAME }-indstillinger"
+      ],
+      "${ PASS_SHORT_APP_NAME } Monitor": [
+        "${ PASS_SHORT_APP_NAME } Monitor"
+      ],
+      "Account protection": [
+        "Kontobeskyttelse"
       ],
       "Actions": [
         "Handlinger"
@@ -4076,6 +4355,15 @@
       ],
       "Blocked addresses": [
         "Blokerede adresser"
+      ],
+      "Breach detected": [
+        "Databrud registreret"
+      ],
+      "Breaches": [
+        "Databrud"
+      ],
+      "Breaches detected for": [
+        "Databrud registreret for"
       ],
       "Cancel changing your email?": [
         "Annuller ændring af din e-mail?"
@@ -4119,8 +4407,17 @@
       "Current version": [
         "Aktuel version"
       ],
+      "Custom addresses": [
+        "Brugerdefinerede adresser"
+      ],
       "Custom domains": [
         "Brugerdomæner"
+      ],
+      "Custom email monitoring": [
+        "Monitorering af brugerdefinerede e-mails"
+      ],
+      "Custom emails": [
+        "Brugerdefinerede e-mails"
       ],
       "Default": [
         "Standard"
@@ -4189,6 +4486,9 @@
       "Enter your second password": [
         "Indtast din anden adgangskode"
       ],
+      "Excluded items": [
+        "Ekskluderede elementer"
+      ],
       "Fill & copy password": [
         "Udfyld og kopiér adgangskode"
       ],
@@ -4210,6 +4510,9 @@
       "Hide my email": [
         "Skjul min e-mailadresse"
       ],
+      "Hide-my-email aliases": [
+        "Hide-my-email-aliasser"
+      ],
       "History": [
         "Historik"
       ],
@@ -4224,6 +4527,12 @@
       ],
       "Importing your data": [
         "Importerer dine data"
+      ],
+      "Inactive 2FA": [
+        "Inaktiv 2FA"
+      ],
+      "Information exposed in breach": [
+        "Information afsløret i en datalækage"
       ],
       "Item": [
         "Element"
@@ -4240,6 +4549,9 @@
       "Leave vault?": [
         "Forlad boks?"
       ],
+      "Loading breaches...": [
+        "Indlæser databrud..."
+      ],
       "Log in as...": [
         "Log ind som..."
       ],
@@ -4248,6 +4560,9 @@
       ],
       "Mailbox": [
         "Postkasse"
+      ],
+      "Mark as resolved?": [
+        "Markér som løst?"
       ],
       "Member limit": [
         "Medlemsgrænse"
@@ -4278,14 +4593,32 @@
       "MX record": [
         "MX-record"
       ],
+      "Next": [
+        "Næste"
+      ],
+      "No excluded items": [
+        "Ingen ekskluderede elementer"
+      ],
+      "No inactive 2FAs": [
+        "Ingen inaktive 2FA'er"
+      ],
+      "No insecure passwords": [
+        "Ingen usikre adgangskoder"
+      ],
       "No items selected": [
         "Ingen elementer valgt"
+      ],
+      "No reused passwords": [
+        "Ingen genbrugte adgangskoder"
       ],
       "No shared items": [
         "Ingen delte elementer"
       ],
       "No shared secure links": [
         "Ingen sikre links delt"
+      ],
+      "Open pagination": [
+        "Åbn sidenummerering"
       ],
       "Organize vaults": [
         "Organisér bokse"
@@ -4298,6 +4631,12 @@
       ],
       "Password": [
         "Adgangskode"
+      ],
+      "Password Health": [
+        "Adgangskode-sundhed"
+      ],
+      "Pause monitoring?": [
+        "Sæt monitorering på pause?"
       ],
       "Pending access confirmation": [
         "Afventer bekræftelse på adgang"
@@ -4321,11 +4660,20 @@
         "Bemærk, at aliasset ikke kan gendannes, når først det er slettet.",
         "Bemærk, at aliasserne ikke kan gendannes, når først de er slettet."
       ],
+      "Previous": [
+        "Forrige"
+      ],
       "Random Prefix Generation": [
         "Generering af tilfældige præfikser"
       ],
+      "Recommended actions": [
+        "Anbefalede handlinger"
+      ],
       "Reject device?": [
         "Afvis enhed?"
+      ],
+      "Remove email address?": [
+        "Fjern e-mailadresse?"
       ],
       "Remove extra password": [
         "Fjern ekstra adgangskode"
@@ -4336,8 +4684,21 @@
       "Reset history for this item?": [
         "Nulstil historik for dette element?"
       ],
+      "Resolved breaches": [
+        "Løste databrud"
+      ],
       "Restore this version?": [
         "Gendan denne version?"
+      ],
+      "Resume monitoring?": [
+        "Genoptag monitorering?"
+      ],
+      "Reused ${ count } time": [
+        "Genbrugt ${ count } gang",
+        "Genbrugt ${ count } gange"
+      ],
+      "Reused passwords": [
+        "Genbrugte adgangskoder"
       ],
       "Review and share": [
         "Gennemgå og del"
@@ -4354,8 +4715,14 @@
       "Set extra password": [
         "Indstil ekstra adgangskode"
       ],
+      "Set up 2FA for better security": [
+        "Indstil 2FA for bedre sikkerhed"
+      ],
       "Set up 2FA for more security": [
         "Indstil 2FA for mere sikkerhed"
+      ],
+      "Settings": [
+        "Indstillinger"
       ],
       "Share with": [
         "Del med"
@@ -4420,14 +4787,26 @@
       "Visible vaults": [
         "Synlige bokse"
       ],
+      "Want to learn more?": [
+        "Vil du vide mere?"
+      ],
       "Weak password": [
         "Svag adgangskode"
+      ],
+      "Weak passwords": [
+        "Svage adgangskoder"
       ],
       "Welcome to ${ brandNameJSX }": [
         "Velkommen til ${ brandNameJSX }"
       ],
       "Welcome to your new password manager!": [
         "Velkommen til din nye adgangskodeadministrator!"
+      ],
+      "What is an alias?": [
+        "Hvad er et alias?"
+      ],
+      "What is the dark web?": [
+        "Hvad er det mørke net?"
       ],
       "What is the difference between ${ PASS_SHORT_APP_NAME } note and SimpleLogin note?": [
         "Hvad er forskellen mellem en ${ PASS_SHORT_APP_NAME } note og en SimpleLogin note?"
@@ -4437,6 +4816,9 @@
       ],
       "Your ${ planName } subscription will end on ${ endDate }": [
         "Dit ${ planName }-abonnement udløber ${ endDate }"
+      ],
+      "Your exposed information": [
+        "Dine blotlagte oplysninger"
       ],
       "Your vault is empty": [
         "Din boks er tom"
@@ -4457,6 +4839,14 @@
     "Today icon tooltip in mini calendar": {
       "Today": [
         "I dag"
+      ]
+    },
+    "Tooltip": {
+      "Not all information listed here was exposed for all users.": [
+        "Ikke alle oplysninger på listen blev afsløret for alle brugere"
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "Medmindre de dechifreres, forbliver krypterede adgangskoder sikre, selv hvis de eksponeres."
       ]
     },
     "Validation": {
@@ -4569,6 +4959,9 @@
       "Email cannot be empty": [
         "E-mail må ikke være tom"
       ],
+      "Email is required": [
+        "E-mail er påkrævet"
+      ],
       "Empty note": [
         "Tom note"
       ],
@@ -4583,6 +4976,12 @@
       ],
       "Extra password should have at least 8 characters": [
         "Ekstra adgangskode skal have mindst 8 tegn"
+      ],
+      "Failed to autotype. Please make sure ${ PASS_APP_NAME } has the necessary permissions and try again (${ error }).": [
+        "Autoindtastning mislykkedes. Vær sikker på at ${ PASS_APP_NAME } har de nødvendige tilladelser og prøv igen (${ error })."
+      ],
+      "Failed to load breaches.": [
+        "Kunne ikke indlæse databrud."
       ],
       "Grant clipboard access to enable automatic clearing of copied passwords and data.": [
         "Giv adgang til udklipsholderen for at aktivere automatisk rydning af kopierede adgangskoder og data."
@@ -4680,6 +5079,9 @@
       ],
       "This alias \"${ aliasEmail }\" is currently used in the login \"${ relatedLoginName }\".": [
         "Dette alias \"${ aliasEmail }\" indgår i øjeblikket i login'et \"${ relatedLoginName }\"."
+      ],
+      "This email address will no longer be monitored for data breaches.": [
+        "Denne e-mailadresse vil ikke længere blive monitoreret for databrud."
       ],
       "This item is currently shared. Deleting it will remove access for all other users.": [
         "Dette element er i øjeblikket delt. Hvis du sletter det, fjernes adgangen for alle andre brugere."

@@ -37,6 +37,12 @@
       "Accept and view the item": [
         "Accepta i mostra l'element"
       ],
+      "Account": [
+        "Compte"
+      ],
+      "Account settings": [
+        "Configuració del compte"
+      ],
       "Add": [
         "Afegeix"
       ],
@@ -417,6 +423,9 @@
       ],
       "Lock ${ PASS_APP_NAME }": [
         "Bloca ${ PASS_APP_NAME }"
+      ],
+      "Lock extension": [
+        "Bloqueja l'extensió"
       ],
       "Make admin": [
         "Estableix com a administrador"
@@ -1527,6 +1536,9 @@
       "Admin": [
         "Administrador"
       ],
+      "After confirming, you will need to accept a permission prompt for ${ PASS_APP_NAME }.": [
+        "Un cop ho hagueu confirmat, haureu d'acceptar una petició de permís per a ${ PASS_APP_NAME }."
+      ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Després d'importar correctament les dades, podeu suprimir el fitxer CSV que conté les contrasenyes per seguretat."
       ],
@@ -1967,8 +1979,7 @@
         "S'estan movent tots els elements de «${ payload.content.name }»"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Si moveu un element a una altra caixa forta, se n'esborrarà els enllaces segurs.",
-        "Si moveu els elements a una altra caixa forta, se n'esborrarà els enllaces segurs."
+        "Si moveu un element a una altra caixa forta, se n'esborraran els enllaços segurs."
       ],
       "Moving items": [
         "S'estan movent elements"
@@ -2356,6 +2367,9 @@
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Aquesta exportació no es xifrarà i qualsevol persona amb accés al fitxer exportat podrà veure les contrasenyes. Per seguretat, elimineu-lo un cop hàgiu acabat d'utilitzar-lo."
       ],
+      "This feature is currently experimental on Linux. Please ensure your system is up-to-date.": [
+        "Aquesta funció és experimental a Linux per ara. Assegureu-vos que el vostre sistema estigui actualitzat."
+      ],
       "This item is not currently shared with anyone. Invite people to share it with others.": [
         "Aquest element no està compartit actualment amb ningú. Inviteu persones a compartir-la amb altres."
       ],
@@ -2543,9 +2557,6 @@
       "You may close this tab.": [
         "Ara podeu tancar aquesta pestanya."
       ],
-      "You may need to accept a permission prompt and may have to restart the application depending on your system.": [
-        "Potser necessitareu acceptar una sol·licitud de permís i reiniciar l'aplicació en funció del vostre sistema."
-      ],
       "You may need to grant accessiblity permission to ${ PASS_APP_NAME }.": [
         "Potser necessitareu concedir permisos d'accessibilitat a ${ PASS_APP_NAME }."
       ],
@@ -2658,6 +2669,9 @@
       ],
       "${ PASS_APP_NAME } recognizes the websites and apps you use and autofills forms with your credentials for you on any browser or device. No need to copy and paste.": [
         "${ PASS_APP_NAME } reconeix els llocs web i les aplicacions que utilitzeu i emplena automàticament els formularis amb les vostres credencials en qualsevol navegador o dispositiu. No cal copiar i enganxar."
+      ],
+      "${ PASS_SHORT_APP_NAME } Monitor": [
+        "${ PASS_SHORT_APP_NAME } Monitor"
       ],
       "${ PASS_SHORT_APP_NAME } version": [
         "Versió ${ PASS_SHORT_APP_NAME }"
@@ -2990,6 +3004,9 @@
       "Enter email or username": [
         "Introduïu el correu electrònic o el nom d’usuari"
       ],
+      "Experimental": [
+        "Experimental"
+      ],
       "Expiration date": [
         "Data de caducitat"
       ],
@@ -3193,6 +3210,9 @@
       ],
       "Language": [
         "Idioma"
+      ],
+      "Larger window": [
+        "Finestra més gran"
       ],
       "Last 2 weeks": [
         "Les últimes 2 setmanes"
@@ -3565,6 +3585,9 @@
       ],
       "Server": [
         "Servidor"
+      ],
+      "Settings": [
+        "Preferències"
       ],
       "Share": [
         "Comparteix"

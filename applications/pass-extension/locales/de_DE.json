@@ -4,6 +4,26 @@
     "language": "de_DE"
   },
   "contexts": {
+    "Account Settings - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } und noch ${ remainingCount } weitere potenzielle Lecks entdeckt. Schalte ${ DARK_WEB_MONITORING_NAME } ein, um Details anzuzeigen und Maßnahmen zu ergreifen. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } und noch 1 weiteres potenzielles Leck entdeckt. Schalte ${ DARK_WEB_MONITORING_NAME } ein, um Details anzuzeigen und Maßnahmen zu ergreifen. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Ein mögliches Leck bei ${ name } wurde entdeckt. Schalte ${ DARK_WEB_MONITORING_NAME } ein, um Details dazu anzuzeigen und Maßnahmen zu ergreifen. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Ein mögliches Leck bei ${ name } wurde entdeckt. Schalte ${ DARK_WEB_MONITORING_NAME } ein, um Details dazu anzuzeigen und Maßnahmen zu ergreifen. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Ein mögliches Leck bei ${ name } wurde entdeckt. Schalte ${ DARK_WEB_MONITORING_NAME } ein, um Details dazu anzuzeigen und Maßnahmen zu ergreifen. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Deine Informationen wurden bei mindestens einem Datenleck gefunden. Schalte ${ DARK_WEB_MONITORING_NAME } ein, um Details anzuzeigen und Maßnahmen zu ergreifen. ${ link }"
+      ]
+    },
     "Action": {
       "${ PASS_SHORT_APP_NAME } for Android": [
         "${ PASS_SHORT_APP_NAME } für Android"
@@ -55,6 +75,9 @@
       ],
       "Add username field": [
         "Benutzername-Feld hinzufügen"
+      ],
+      "Admin panel": [
+        "Administrationskonsole"
       ],
       "Advanced": [
         "Erweitert"
@@ -197,6 +220,9 @@
       "Create a ${ BRAND_NAME } Account": [
         "${ BRAND_NAME }-Konto erstellen"
       ],
+      "Create a new vault": [
+        "Neuen Tresor erstellen"
+      ],
       "Create alias": [
         "Alias erstellen"
       ],
@@ -305,6 +331,9 @@
       "Edit vault": [
         "Tresor bearbeiten"
       ],
+      "Enable ${ DARK_WEB_MONITORING_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME } aktivieren"
+      ],
       "Enable this alias to receive emails sent to this alias": [
         "Aktiviere diesen Alias, um E-Mails zu empfangen, die an diesen Alias gesendet werden"
       ],
@@ -341,11 +370,17 @@
       "Get mobile and desktop apps": [
         "Mobile und Desktop-Apps herunterladen"
       ],
+      "Get mobile apps": [
+        "Mobile Apps holen"
+      ],
       "Get Pass Business": [
         "Pass Business holen"
       ],
       "Get Pass Plus": [
         "Pass Plus holen"
+      ],
+      "Get Started": [
+        "Erste Schritte"
       ],
       "Hide": [
         "Ausblenden"
@@ -395,6 +430,9 @@
       "Link expires after": [
         "Link läuft ab nach"
       ],
+      "Lock ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } sperren"
+      ],
       "Lock extension": [
         "Erweiterung sperren"
       ],
@@ -418,6 +456,9 @@
       ],
       "Manually sync your data": [
         "Daten manuell synchronisieren"
+      ],
+      "Mark as resolved": [
+        "Als gelöst markieren"
       ],
       "Maximum views": [
         "Maximale Ansichten"
@@ -469,6 +510,12 @@
       ],
       "Organize vaults": [
         "Tresore organisieren"
+      ],
+      "Pass Monitor": [
+        "Pass Monitor"
+      ],
+      "Pause monitoring": [
+        "Überwachung pausieren"
       ],
       "Pin item": [
         "Eintrag anheften"
@@ -544,6 +591,9 @@
       ],
       "Restrict number of views": [
         "Anzahl der Ansichten einschränken"
+      ],
+      "Resume monitoring": [
+        "Überwachung fortsetzen"
       ],
       "Retry": [
         "Erneut versuchen"
@@ -660,6 +710,9 @@
       "Try again": [
         "Erneut versuchen"
       ],
+      "Try again.": [
+        "Bitte versuche es erneut."
+      ],
       "Unblock contact": [
         "Kontakt entsperren"
       ],
@@ -705,6 +758,9 @@
       ],
       "View app logs": [
         "App-Protokolle anzeigen"
+      ],
+      "View details": [
+        "Details anzeigen"
       ],
       "View history": [
         "Verlauf anzeigen"
@@ -759,6 +815,9 @@
         "${ total } anderer Login verwendet das gleiche Passwort",
         "${ total } andere Logins verwenden das gleiche Passwort"
       ],
+      "2FA adds another layer of security to your logins. ${ PASS_APP_NAME } makes 2FA easier by storing and automatically autofilling your 2FA codes.": [
+        "Zwei-Faktor-Authentifizierung fügt deinem Anmeldevorgang eine weitere Sicherheitsstufe hinzu. ${ PASS_APP_NAME } erleichtert die Zwei-Faktor-Authentifizierung durch die Speicherung und das automatische Ausfüllen deiner Authentifizierungscodes."
+      ],
       "A checked box means the feature is disabled.": [
         "Ein angekreuztes Kästchen bedeutet, dass die Funktion deaktiviert ist."
       ],
@@ -771,11 +830,23 @@
       "Add the following TXT DNS record to your domain.": [
         "Füge den folgenden TXT DNS-Eintrag deiner Domäne hinzu."
       ],
+      "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
+        "Ein E-Mail-Alias funktioniert genau wie eine E-Mail-Adresse. Es verhindert zusätzlich Spam-Nachrichten und versteckt deine richtige E-Mail-Adresse sowie deine Identität."
+      ],
+      "Change your passwords": [
+        "Ändere deine Passwörter"
+      ],
+      "Create unique passwords": [
+        "Erstelle einzigartige Passwörter"
+      ],
       "DKIM ${ WIKIPEDIA_LINK_DKIM } is an email authentication method designed to avoid email spoofing. Setting up DKIM is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
         "DKIM ${ WIKIPEDIA_LINK_DKIM } ist eine E-Mail-Authentifizierungsmethode, die dazu dient, E-Mail-Spoofing zu verhindern. Die Einrichtung von DKIM wird dringend empfohlen, um die Wahrscheinlichkeit zu verringern, dass deine E-Mails im Spam-Ordner des Empfängers landen."
       ],
       "DMARC ${ WIKIPEDIA_LINK_DMARC } is designed to protect the domain from unauthorized use, commonly known as email spoofing. Built around SPF and DKIM, a DMARC policy tells the receiving mail server what to do if neither of those authentication methods passes.": [
         "DMARC ${ WIKIPEDIA_LINK_DMARC } wurde entwickelt, um die Domäne vor unbefugter Nutzung zu schützen, die allgemein als E-Mail-Spoofing bekannt ist. Eine DMARC-Richtlinie, die auf SPF und DKIM aufbaut, teilt dem empfangenden E-Mail-Server mit, was zu tun ist, wenn keine der beiden Authentifizierungsmethoden funktioniert."
+      ],
+      "Get notified if your email, password or other personal data was leaked.": [
+        "Lass dich benachrichtigen, wenn deine E-Mail, dein Passwort oder andere persönliche Daten entwendet wurden."
       ],
       "If you are using a subdomain, e.g. ${ subdomainExample }, you need to use ${ dmarcExampleSubdomain } as the domain instead.": [
         "Wenn du eine Subdomain verwendest, z. B. ${ subdomainExample }, musst du stattdessen ${ dmarcExampleSubdomain } als Domain verwenden."
@@ -786,8 +857,17 @@
       "If you are using Cloudflare, please make sure to not select the Proxy option.": [
         "Wenn du Cloudflare verwendest, stelle bitte sicher, dass du die Proxy-Option nicht auswählst."
       ],
+      "Keep your info more secure and private with these guides and tips.": [
+        "Mit diesen Anleitungen und Tipps kannst du deine Daten schützen."
+      ],
       "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.${ infoText }": [
         "Liste der Domains, bei denen bestimmte automatische Funktionen in ${ PASS_SHORT_APP_NAME } (Automatisches Ausfüllen, automatische Vorschläge, automatisches Speichern) nicht ausgeführt werden sollen. ${ infoText }"
+      ],
+      "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
+        "Unsere hochmoderne, KI-gesteuerte Sicherheitslösung für Benutzer, die einen erhöhten Schutz für ihre Konten wünschen. ${ learnMoreLink }"
+      ],
+      "Set up 2FA for more security": [
+        "Richte 2FA für mehr Sicherheit ein"
       ],
       "Some DNS registrar might require a full record path, in this case please use ${ domain } as domain value instead.": [
         "Einige DNS-Registrierungsstellen verlangen möglicherweise einen vollständigen Eintragspfad. Verwende in diesem Fall bitte stattdessen ${ domain } als Domainwert."
@@ -797,6 +877,15 @@
       ],
       "SPF ${ WIKIPEDIA_LINK_SPF } is an email authentication method designed to detect forging sender addresses during the delivery of the email. Setting up SPF is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
         "SPF ${ WIKIPEDIA_LINK_SPF } ist eine E-Mail-Authentifizierungsmethode, die dazu dient, gefälschte Absenderadressen während der Zustellung der E-Mail zu erkennen. Die Einrichtung von SPF wird dringend empfohlen, um die Wahrscheinlichkeit zu verringern, dass deine E-Mails im Spam-Ordner des Empfängers landen."
+      ],
+      "Start monitoring for data breaches related to accounts created with your email address and your hide-my-email aliases.": [
+        "Beginne mit der Überwachung auf Datenlecks im Zusammenhang mit Konten, welche du mit deiner E-Mail-Adresse oder deinen hide-my-email Aliassen erstellt hast."
+      ],
+      "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
+        "Das Dark Web ist ein verborgener Teil des Internets, in dem gestohlene persönliche Informationen, wie z. B. Identitäten, gekauft und verkauft werden können."
+      ],
+      "These items remain at risk": [
+        "Diese Einträge sind weiterhin gefährdet"
       ],
       "These vaults will not be accessible and their content won’t be available to Search or Autofill.": [
         "Diese Tresore werden nicht zugänglich sein und ihr Inhalt wird weder für die Suche noch für das automatische Ausfüllen verfügbar sein."
@@ -812,6 +901,15 @@
       ],
       "Unlock advanced security features and detailed logs to safeguard your online presence.": [
         "Schalte erweiterte Sicherheitsfunktionen und detaillierte Protokolle zum Schutz deiner Online-Präsenz frei."
+      ],
+      "With ${ PASS_SHORT_APP_NAME } Monitor, stay ahead of threats by getting instant alerts if your credentials are compromised. Unlock advanced security features and detailed logs to safeguard your online presence.": [
+        "Mit ${ PASS_SHORT_APP_NAME } Überwachung bist du Gefahren durch Sofort-Benachrichtigungen, falls deine Zugangsdaten kompromittiert wurden, immer eine Stufe voraus. Schalte fortschrittliche Sicherheitsfunktionen und die Erfassung detaillierter Logeinträge frei, um deinen Internetauftritt zu schützen."
+      ],
+      "Your email addresses were leaked in at least 1 data breach.": [
+        "Deine E-Mail-Adressen sind bei mindestens 1 Datendiebstahl veröffentlicht worden."
+      ],
+      "Your personal info was leaked in a data breach of a third-party service.": [
+        "Deine persönlichen Daten wurden durch ein Datenleck bei einem Drittanbieterdienst bekannt."
       ]
     },
     "Email": {
@@ -1266,6 +1364,17 @@
         "Etwas ist schief gelaufen."
       ]
     },
+    "Feature": {
+      "Integrated 2FA authenticator": [
+        "Integrierter 2FA-Authentifikator"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Unbegrenzte hide-my-email-Aliasse"
+      ],
+      "Vault sharing (up to ${ MAX_VAULT_MEMBERS } people)": [
+        "Tresor teilen (bis zu ${ MAX_VAULT_MEMBERS } Personen)"
+      ]
+    },
     "file size format": {
       "byte": [
         "Byte",
@@ -1304,6 +1413,17 @@
       "Terabyte": [
         "Terabyte",
         "Terabyte"
+      ]
+    },
+    "Header": {
+      "Domain": [
+        "Domain"
+      ],
+      "Password ends with": [
+        "Passwort endet mit"
+      ],
+      "Username": [
+        "Benutzername"
       ]
     },
     "Info": {
@@ -1391,6 +1511,10 @@
         "${ repliedEmailsCount } gesendet",
         "${ repliedEmailsCount } gesendet"
       ],
+      "${ row.breachCount } breach detected": [
+        "${ row.breachCount } Datendiebstahl entdeckt",
+        "${ row.breachCount } Datendiebstähle entdeckt"
+      ],
       "${ trialDaysLeft } day left": [
         "${ trialDaysLeft } verbleibender Tag",
         "${ trialDaysLeft } verbleibende Tage"
@@ -1434,8 +1558,14 @@
       "Access your passwords on the go with our mobile apps.": [
         "Greife mit unseren mobilen Apps auch unterwegs auf deine Passwörter zu."
       ],
+      "Add your custom email address to monitor:": [
+        "Füge deine eigene E-Mail-Adresse zur Überwachung hinzu:"
+      ],
       "Admin": [
         "Administrator"
+      ],
+      "After confirming, you will need to accept a permission prompt for ${ PASS_APP_NAME }.": [
+        "Nach der Bestätigung musst du eine Berechtigungsaufforderung für ${ PASS_APP_NAME } akzeptieren."
       ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Nachdem du deine Daten erfolgreich importiert hast, kannst du die CSV-Datei mit deinen Passwörtern zur Sicherheit löschen."
@@ -1455,11 +1585,17 @@
       "Aliases out of sync (${ aliasCount })": [
         "Aliasse nicht synchronisiert (${ aliasCount })"
       ],
+      "Aliases with custom domains are not monitored, please add them as a custom email for monitoring.": [
+        "Aliasse mit eigenen Domains werden nicht überwacht. Bitte füge diese als eigene E-Mail-Adresse hinzu, um sie zu überwachen."
+      ],
       "All aliases using the mailbox ${ emailJSX } will be also deleted.": [
         "Alle Aliase, die die Mailbox ${ emailJSX } verwenden, werden ebenfalls gelöscht."
       ],
       "All breaches for this address were resolved": [
         "Alle Datenlecks für diese Adresse wurden behoben."
+      ],
+      "All current breaches will be marked as resolved. In case of future data breaches, you'll be notified.": [
+        "Alle vorhandenen Datenlecks werden als behoben markiert. Im Falle künftiger Datenlecks wirst du benachrichtigt."
       ],
       "All inactive secure links were removed": [
         "Alle inaktiven sicheren Links wurden entfernt."
@@ -1515,6 +1651,9 @@
       "Biometrics will be disabled and will need to be enabled again.": [
         "Biometrie wird deaktiviert und muss erneut aktiviert werden."
       ],
+      "Breaches detected": [
+        "Datenlecks entdeckt"
+      ],
       "Bring your own domain and you don't have to buy yet another email hosting solution.": [
         "Verwende deine eigene Domain, damit du nicht noch eine weitere E-Mail-Hosting-Lösung kaufen musst."
       ],
@@ -1550,6 +1689,9 @@
       ],
       "Can view this item.": [
         "Darf dieses Element anzeigen."
+      ],
+      "Change your password": [
+        "Passwort ändern"
       ],
       "Choose a saved passkey to sign-in to ${ domain }": [
         "Wähle einen gespeicherten Passkey für die Anmeldung bei ${ domain }"
@@ -1617,8 +1759,8 @@
       "Disabling offline mode...": [
         "Offline-Modus wird deaktiviert..."
       ],
-      "Discover ${ PASS_APP_NAME } Youtube Video": [
-        "Entdecke ${ PASS_APP_NAME }"
+      "Discover ${ PASS_APP_NAME } video": [
+        "Entdecke das Video von ${ PASS_APP_NAME }"
       ],
       "DNS changes could take up to 24 hours to update.": [
         "Bei DNS-Änderungen kann die Aktualisierung bis zu 24 Stunden dauern."
@@ -1637,6 +1779,9 @@
       ],
       "Editor": [
         "Bearbeiter"
+      ],
+      "email": [
+        "E-Mail"
       ],
       "Email address successfully deleted from monitoring": [
         "E-Mail-Adresse erfolgreich aus der Überwachung gelöscht."
@@ -1719,6 +1864,9 @@
       "Fill in the CSV with your data": [
         "Fülle die CSV-Datei mit deinen Daten aus."
       ],
+      "finance": [
+        "Finanzen"
+      ],
       "Follow those steps to import your data with a generic CSV:": [
         "Befolge diese Schritte, um deine Daten mit einer generischen CSV zu importieren:"
       ],
@@ -1756,6 +1904,12 @@
       ],
       "Here's how it works:": [
         "So funktioniert es:"
+      ],
+      "High Priority": [
+        "Hohe Priorität"
+      ],
+      "How does monitoring work?": [
+        "Wie funktioniert die Überwachung?"
       ],
       "Identity confirmed": [
         "Identität bestätigt"
@@ -1827,6 +1981,12 @@
       "Item successfully unpinned": [
         "Eintrag erfolgreich losgelöst"
       ],
+      "Latest breach on ${ formattedDate }": [
+        "Letztes Datenleck am ${ formattedDate }"
+      ],
+      "Learn what to do ${ dataLeakedLink }": [
+        "Erfahre, was zu tun ist ${ dataLeakedLink }"
+      ],
       "Leaving item...": [
         "Eintrag verlassen..."
       ],
@@ -1845,11 +2005,20 @@
       "Loading...": [
         "Wird geladen..."
       ],
+      "Low Priority": [
+        "Niedrige Priorität"
+      ],
       "Manager": [
         "Manager"
       ],
       "me": [
         "Ich"
+      ],
+      "Medium Priority": [
+        "Mittlere Priorität"
+      ],
+      "Monitor accounts": [
+        "Konten überwachen"
       ],
       "Monitoring settings successfully updated": [
         "Überwachungseinstellungen erfolgreich aktualisiert."
@@ -1863,10 +2032,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Verschiebe alle Einträge von \"${ payload.content.name }\""
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Beim Verschieben eines Eintrags in einen anderen Tresor, werden seine sicheren Verknüpfungen gelöscht.",
-        "Beim Verschieben von Einträgen in einen anderen Tresor, werden ihre sicheren Verknüpfungen gelöscht."
       ],
       "Moving items": [
         "Einträge verschieben"
@@ -1888,6 +2053,9 @@
       ],
       "Never": [
         "Niemals"
+      ],
+      "No breaches detected": [
+        "Keine Datenlecks entdeckt"
       ],
       "No credit cards found": [
         "Keine Kreditkarten gefunden"
@@ -1925,6 +2093,9 @@
       "Open the Safari settings, find ${ PASS_APP_NAME }, go to \"Permissions\" and enable site permissions.": [
         "Öffne die Safari-Einstellungen, finde ${ PASS_APP_NAME }, gehe zu \"Berechtigungen\" und aktiviere die Website-Berechtigungen."
       ],
+      "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Bei unseren Warnungen steht die Sicherheit im Vordergrund. Wenn du keine der gefährdeten Informationen erkennst, kannst du diesen Bericht getrost ignorieren."
+      ],
       "Owner": [
         "Besitzer"
       ],
@@ -1937,6 +2108,9 @@
       "Passkey sign-in": [
         "Passkey-Anmeldung"
       ],
+      "password": [
+        "Passwort"
+      ],
       "Password copied": [
         "Passwort kopiert"
       ],
@@ -1946,6 +2120,9 @@
       "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
         "Passwörter, die älter als ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } Woche sind, werden automatisch aus dem Verlauf gelöscht.",
         "Passwörter, die älter als ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } Wochen sind, werden automatisch aus dem Verlauf gelöscht."
+      ],
+      "Paused": [
+        "Angehalten"
       ],
       "Pending access to the shared data": [
         "Zugriff auf die geteilten Daten ist ausstehend"
@@ -2223,6 +2400,9 @@
       "Successfully synced all vaults": [
         "Alle Tresore erfolgreich synchronisiert."
       ],
+      "Suggested": [
+        "Vorgeschlagen"
+      ],
       "Switch to another vault or create an item in this vault": [
         "Wechsle zu einem anderen Tresor oder erstelle einen Eintrag in diesem Tresor."
       ],
@@ -2244,6 +2424,9 @@
       "The exported file will be encrypted using PGP and requires a strong passphrase.": [
         "Die exportierte Datei wird mit PGP verschlüsselt und erfordert eine starke Passphrase."
       ],
+      "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
+        "Die offengelegten Informationen wurden von einem Service eines Drittanbieters preisgegeben. Deine ${ BRAND_NAME } Kontoinformationen bleiben sicher und verschlüsselt. ${ learnMoreLink }"
+      ],
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "Das zusätzliche Passwort wird für die Verwendung von ${ PASS_APP_NAME } benötigt. Es dient als zusätzliches Passwort zu deinem ${ BRAND_NAME }-Passwort."
       ],
@@ -2262,6 +2445,9 @@
       ],
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Dieser Export ist unverschlüsselt und jeder, der Zugang zu deiner exportierten Datei hat, kann deine Passwörter sehen. Bitte lösche die Datei aus Sicherheitsgründen, wenn du sie nicht mehr benötigst."
+      ],
+      "This feature is currently experimental on Linux. Please ensure your system is up-to-date.": [
+        "Diese Funktion ist unter Linux noch experimentell. Bitte stelle sicher, dass dein System auf dem neuesten Stand ist."
       ],
       "This item is not currently shared with anyone. Invite people to share it with others.": [
         "Dieser Eintrag ist bisher für niemanden freigegeben. Lade Personen ein, ihn mit anderen zu teilen."
@@ -2374,6 +2560,9 @@
       "User's access successfully updated": [
         "Benutzerzugriff aktualisiert"
       ],
+      "username": [
+        "Benutzername"
+      ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Tresor \"${ payload.content.name }\" erfolgreich gelöscht."
       ],
@@ -2395,6 +2584,9 @@
       ],
       "Verification code": [
         "Bestätigungsschlüssel"
+      ],
+      "Verification code sent.": [
+        "Bestätigungscode gesendet."
       ],
       "Viewer": [
         "Betrachter"
@@ -2459,9 +2651,6 @@
       "You may close this tab.": [
         "Du kannst diesen Tab schließen."
       ],
-      "You may need to accept a permission prompt and may have to restart the application depending on your system.": [
-        "Je nach System musst du eventuell eine Berechtigungsaufforderung akzeptieren und die Anwendung neu starten."
-      ],
       "You may need to grant accessiblity permission to ${ PASS_APP_NAME }.": [
         "Du musst eventuell ${ PASS_APP_NAME } die Bedienungshilfen-Berechtigung erteilen."
       ],
@@ -2473,6 +2662,18 @@
       ],
       "You will be logged out and need to log in again on all of your other devices.": [
         "Du wirst abgemeldet und musst dich bei allen anderen Geräten erneut anmelden."
+      ],
+      "You will be notified of data breaches for these email addresses.": [
+        "Du wirst über Datenlecks im Zusammenhang mit diesen E-Mail-Adressen benachrichtigt."
+      ],
+      "You will be notified of data breaches for this email address.": [
+        "Du wirst über Datenlecks im Zusammenhang mit dieser E-Mail-Adresse benachrichtigt."
+      ],
+      "You will no longer be notified of data breaches for these email addresses.": [
+        "Du wirst nicht länger über Datenlecks im Zusammenhang mit diesen E-Mail-Adressen benachrichtigt."
+      ],
+      "You will no longer be notified of data breaches for this email address.": [
+        "Du wirst nicht länger über Datenlecks im Zusammenhang mit dieser E-Mail-Adresse benachrichtigt."
       ],
       "You will no longer have access to sharing, 2FA and other advanced features in ${ PASS_APP_NAME }": [
         "Du wirst keinen Zugriff mehr auf Freigaben, 2FA und andere erweiterte Funktionen in ${ PASS_APP_NAME } haben."
@@ -2500,6 +2701,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "Deine Dateien werden verschlüsselt und anschließend gespeichert"
+      ],
+      "Your information was found on ${ displayedDate }": [
+        "Deine Informationen wurden am ${ displayedDate } gefunden."
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Deine Organisation verlangt, dass du deinen Zugang zu ${ PASS_APP_NAME } absicherst."
@@ -2570,6 +2774,10 @@
       "${ secureLinksCount } secure link": [
         "${ secureLinksCount } sicherer Link",
         "${ secureLinksCount } sichere Links"
+      ],
+      "${ usageCount } login": [
+        "${ usageCount } Login",
+        "${ usageCount } Logins"
       ],
       "${ years } year": [
         "${ years } Jahr",
@@ -2875,6 +3083,9 @@
       "Email (new alias)": [
         "E-Mail (neuer Alias)"
       ],
+      "Email address": [
+        "E-Mail-Adresse"
+      ],
       "Email aliases": [
         "E-Mail-Aliasse"
       ],
@@ -2943,6 +3154,9 @@
       ],
       "Generic CSV": [
         "Generische CSV"
+      ],
+      "Get Started": [
+        "Erste Schritte"
       ],
       "Grant": [
         "Zulassen"
@@ -3057,6 +3271,9 @@
       ],
       "Last name": [
         "Nachname"
+      ],
+      "Last updated": [
+        "Zuletzt aktualisiert"
       ],
       "Last week": [
         "Letzte Woche"
@@ -3439,6 +3656,9 @@
       "State or province": [
         "Bundesland"
       ],
+      "Status": [
+        "Status"
+      ],
       "Street address": [
         "Straße und Hausnummer"
       ],
@@ -3547,6 +3767,9 @@
       "Use ${ PASS_APP_NAME } as your browser's default password manager": [
         "Verwende ${ PASS_APP_NAME } als Standard-Passwortmanager deines Browsers"
       ],
+      "Used in": [
+        "Verwendet in"
+      ],
       "Useful for permanent sharing": [
         "Nützlich für permanentes Teilen"
       ],
@@ -3561,6 +3784,9 @@
       ],
       "Vault ID": [
         "Tresor-ID"
+      ],
+      "Vaults": [
+        "Tresore"
       ],
       "View details": [
         "Details anzeigen"
@@ -3620,6 +3846,17 @@
     "Link": {
       "auto create rules ››": [
         "Regeln automatisch erstellen ››"
+      ],
+      "if your data is leaked": [
+        "wenn deine Daten offengelegt wurden"
+      ],
+      "Learn more": [
+        "Mehr erfahren"
+      ]
+    },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "${ reason } aktivieren"
       ]
     },
     "Message": {
@@ -3633,6 +3870,22 @@
       ],
       "You selected ${ semiboldText } in this vault.": [
         "Du hast ${ semiboldText } in diesem Tresor ausgewählt."
+      ]
+    },
+    "new_plans: feature": {
+      "Require 2FA for organization": [
+        "2FA für die Organisation erforderlich"
+      ],
+      "SSO integration": [
+        "SSO-Integration"
+      ]
+    },
+    "Notification": {
+      "${ reason } has been disabled": [
+        "${ reason } wurde deaktiviert."
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } wurde aktiviert."
       ]
     },
     "Onboarding": {
@@ -3898,6 +4151,20 @@
         "Verwendet auf ${ url }"
       ]
     },
+    "Security Center - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } und noch ${ remainingCount } weitere potenzielle Lecks entdeckt. Schalte ${ DARK_WEB_MONITORING_NAME } ein, um Details anzuzeigen. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } und noch 1 weiteres potenzielles Leck entdeckt. Schalte ${ DARK_WEB_MONITORING_NAME } ein, um Details anzuzeigen. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Ein mögliches Leck bei ${ name } wurde entdeckt. Schalte ${ DARK_WEB_MONITORING_NAME } ein, um Details dazu anzuzeigen. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Deine Informationen wurden bei mindestens einem Datenleck gefunden. Schalte ${ DARK_WEB_MONITORING_NAME } ein, um Details anzuzeigen. ${ link }"
+      ]
+    },
     "sso": {
       "Approve or deny it now": [
         "Jetzt genehmigen oder ablehnen"
@@ -4041,11 +4308,20 @@
       ]
     },
     "Title": {
+      "${ BRAND_NAME } addresses": [
+        "${ BRAND_NAME } Adressen"
+      ],
       "${ PASS_APP_NAME } Logs": [
         "${ PASS_APP_NAME } Logs"
       ],
       "${ PASS_APP_NAME } Settings": [
         "${ PASS_APP_NAME }-Einstellungen"
+      ],
+      "${ PASS_SHORT_APP_NAME } Monitor": [
+        "${ PASS_SHORT_APP_NAME } Monitor"
+      ],
+      "Account protection": [
+        "Kontoschutz"
       ],
       "Actions": [
         "Aktionen"
@@ -4076,6 +4352,15 @@
       ],
       "Blocked addresses": [
         "Blockierte Adressen"
+      ],
+      "Breach detected": [
+        "Datenleck entdeckt"
+      ],
+      "Breaches": [
+        "Datenlecks"
+      ],
+      "Breaches detected for": [
+        "Datenlecks entdeckt für"
       ],
       "Cancel changing your email?": [
         "Änderung deiner E-Mail abbrechen?"
@@ -4119,8 +4404,17 @@
       "Current version": [
         "Aktuelle Version"
       ],
+      "Custom addresses": [
+        "Eigene Adressen"
+      ],
       "Custom domains": [
         "Eigene Domains"
+      ],
+      "Custom email monitoring": [
+        "Benutzerdefinierte E-Mail-Überwachung"
+      ],
+      "Custom emails": [
+        "Eigene E-Mails"
       ],
       "Default": [
         "Standard"
@@ -4189,6 +4483,9 @@
       "Enter your second password": [
         "Gib dein zweites Passwort ein"
       ],
+      "Excluded items": [
+        "Ausgeschlossene Einträge"
+      ],
       "Fill & copy password": [
         "Ausfüllen & Passwort kopieren"
       ],
@@ -4210,6 +4507,9 @@
       "Hide my email": [
         "Meine E-Mail-Adresse verbergen"
       ],
+      "Hide-my-email aliases": [
+        "Hide-my-email-Aliasse"
+      ],
       "History": [
         "Verlauf"
       ],
@@ -4224,6 +4524,12 @@
       ],
       "Importing your data": [
         "Daten werden importiert"
+      ],
+      "Inactive 2FA": [
+        "Inaktive 2FA"
+      ],
+      "Information exposed in breach": [
+        "Informationen, die beim Datenleck offengelegt wurden"
       ],
       "Item": [
         "Element"
@@ -4240,6 +4546,9 @@
       "Leave vault?": [
         "Tresor verlassen?"
       ],
+      "Loading breaches...": [
+        "Lade Datenlecks..."
+      ],
       "Log in as...": [
         "Anmelden als..."
       ],
@@ -4248,6 +4557,9 @@
       ],
       "Mailbox": [
         "Postfach"
+      ],
+      "Mark as resolved?": [
+        "Als gelöst markieren?"
       ],
       "Member limit": [
         "Mitgliederlimit"
@@ -4278,14 +4590,32 @@
       "MX record": [
         "MX-Eintrag"
       ],
+      "Next": [
+        "Weiter"
+      ],
+      "No excluded items": [
+        "Keine ausgeschlossenen Einträge"
+      ],
+      "No inactive 2FAs": [
+        "Keine inaktiven 2FAs"
+      ],
+      "No insecure passwords": [
+        "Keine unsicheren Passwörter"
+      ],
       "No items selected": [
         "Keine Einträge ausgewählt"
+      ],
+      "No reused passwords": [
+        "Keine wiederverwendeten Passwörter"
       ],
       "No shared items": [
         "Keine geteilten Elemente"
       ],
       "No shared secure links": [
         "Keine geteilten sicheren Links"
+      ],
+      "Open pagination": [
+        "Seitennummerierung öffnen"
       ],
       "Organize vaults": [
         "Tresore organisieren"
@@ -4298,6 +4628,12 @@
       ],
       "Password": [
         "Passwort"
+      ],
+      "Password Health": [
+        "Passwortsicherheit"
+      ],
+      "Pause monitoring?": [
+        "Überwachung pausieren?"
       ],
       "Pending access confirmation": [
         "Ausstehende Zugriffsbestätigung"
@@ -4321,11 +4657,20 @@
         "Bitte beachte, dass einmal gelöschte Aliasse nicht wiederhergestellt werden können.",
         "Bitte beachte, dass einmal gelöschte Aliasse nicht wiederhergestellt werden können."
       ],
+      "Previous": [
+        "Zurück"
+      ],
       "Random Prefix Generation": [
         "Zufällige Präfix-Generierung"
       ],
+      "Recommended actions": [
+        "Empfohlene Aktionen"
+      ],
       "Reject device?": [
         "Gerät verweigern?"
+      ],
+      "Remove email address?": [
+        "E-Mail-Adresse entfernen?"
       ],
       "Remove extra password": [
         "Zusätzliches Passwort entfernen"
@@ -4336,8 +4681,21 @@
       "Reset history for this item?": [
         "Verlauf für dieses Element löschen?"
       ],
+      "Resolved breaches": [
+        "Gelöste Datenlecks"
+      ],
       "Restore this version?": [
         "Diese Version wiederherstellen?"
+      ],
+      "Resume monitoring?": [
+        "Überwachung fortsetzen?"
+      ],
+      "Reused ${ count } time": [
+        "${ count } Mal wiederverwendet",
+        "${ count } Mal wiederverwendet"
+      ],
+      "Reused passwords": [
+        "Wiederverwendete Passwörter"
       ],
       "Review and share": [
         "Überprüfen und teilen"
@@ -4354,8 +4712,14 @@
       "Set extra password": [
         "Zusätzliches Passwort festlegen"
       ],
+      "Set up 2FA for better security": [
+        "Richte 2FA für bessere Sicherheit ein"
+      ],
       "Set up 2FA for more security": [
         "Richte 2FA für mehr Sicherheit ein"
+      ],
+      "Settings": [
+        "Einstellungen"
       ],
       "Share with": [
         "Teilen mit"
@@ -4420,14 +4784,26 @@
       "Visible vaults": [
         "Sichtbare Tresore"
       ],
+      "Want to learn more?": [
+        "Möchtest du mehr erfahren?"
+      ],
       "Weak password": [
         "Schwaches Passwort"
+      ],
+      "Weak passwords": [
+        "Schwache Passwörter"
       ],
       "Welcome to ${ brandNameJSX }": [
         "Willkommen bei ${ brandNameJSX }"
       ],
       "Welcome to your new password manager!": [
         "Willkommen bei deinem neuen Passwort-Manager!"
+      ],
+      "What is an alias?": [
+        "Was ist ein Alias?"
+      ],
+      "What is the dark web?": [
+        "Was ist das Dark Web?"
       ],
       "What is the difference between ${ PASS_SHORT_APP_NAME } note and SimpleLogin note?": [
         "Was ist der Unterschied zwischen einer ${ PASS_SHORT_APP_NAME }-Notiz und einer SimpleLogin-Notiz?"
@@ -4437,6 +4813,9 @@
       ],
       "Your ${ planName } subscription will end on ${ endDate }": [
         "Dein ${ planName }-Abonnement endet am ${ endDate }"
+      ],
+      "Your exposed information": [
+        "Deine exponierten Informationen"
       ],
       "Your vault is empty": [
         "Dein Tresor ist leer."
@@ -4457,6 +4836,14 @@
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Heute"
+      ]
+    },
+    "Tooltip": {
+      "Not all information listed here was exposed for all users.": [
+        "Nicht alle hier aufgeführten Informationen wurden für alle Benutzer offengelegt."
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "Solange sie nicht entschlüsselt werden, bleiben verschlüsselte Passwörter sicher, auch wenn sie offengelegt wurden."
       ]
     },
     "Validation": {
@@ -4569,6 +4956,9 @@
       "Email cannot be empty": [
         "E-Mail darf nicht leer sein"
       ],
+      "Email is required": [
+        "E-Mail-Adresse erforderlich"
+      ],
       "Empty note": [
         "Leere Notiz"
       ],
@@ -4583,6 +4973,12 @@
       ],
       "Extra password should have at least 8 characters": [
         "Zusätzliches Passwort sollte mindestens 8 Zeichen lang sein."
+      ],
+      "Failed to autotype. Please make sure ${ PASS_APP_NAME } has the necessary permissions and try again (${ error }).": [
+        "Automatisches Ausfüllen fehlgeschlagen. Bitte stelle sicher, dass ${ PASS_APP_NAME } die nötigen Berechtigungen hat und versuche es erneut (${ error })."
+      ],
+      "Failed to load breaches.": [
+        "Fehler beim Laden der Datenlecks."
       ],
       "Grant clipboard access to enable automatic clearing of copied passwords and data.": [
         "Gewähre Zugriff auf die Zwischenablage, um das automatische Leeren von kopierten Passwörtern und Daten zu aktivieren."
@@ -4680,6 +5076,9 @@
       ],
       "This alias \"${ aliasEmail }\" is currently used in the login \"${ relatedLoginName }\".": [
         "Dieser Alias „${ aliasEmail }“ wird derzeit im Login „${ relatedLoginName }“ verwendet."
+      ],
+      "This email address will no longer be monitored for data breaches.": [
+        "Diese E-Mail-Adresse wird nicht länger auf Datenlecks überwacht."
       ],
       "This item is currently shared. Deleting it will remove access for all other users.": [
         "Dieses Element wird derzeit geteilt. Wenn du es löschst, wird der Zugang für alle anderen Benutzer gesperrt."

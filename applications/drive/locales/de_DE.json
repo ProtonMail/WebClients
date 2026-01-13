@@ -1798,6 +1798,9 @@
       ],
       "High-speed chats and advanced AI features.": [
         "Schnelle Chats und erweiterte KI-Funktionen."
+      ],
+      "Private video calls for the conversations that matter.": [
+        "Private Videoanrufe für die Unterhaltungen, die wichtig sind."
       ]
     },
     "color": {
@@ -2782,6 +2785,11 @@
     "customer_support.feature.mail": {
       "For ${ MAIL_APP_NAME }": [
         "Für ${ MAIL_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.meet": {
+      "For ${ MEET_APP_NAME }": [
+        "Für ${ MEET_APP_NAME }"
       ]
     },
     "customer_support.feature.pass": {
@@ -3772,6 +3780,9 @@
       ],
       "We were not able to load some of your shared items": [
         "Wir konnten einige deiner geteilten Einträge nicht laden."
+      ],
+      "We were not able to load the folder contents": [
+        "Der Ordnerinhalt konnte nicht geladen werden"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Es können keine Mails an mehr als ${ maxContacts } Empfänger gesendet werden.",
@@ -6782,6 +6793,17 @@
         "Nur anzeigen"
       ]
     },
+    "Into": {
+      "Can edit and manage access": [
+        "Kann bearbeiten und Zugriff verwalten"
+      ],
+      "Can view and edit": [
+        "Kann anzeigen und bearbeiten"
+      ],
+      "Can view only": [
+        "Kann nur anzeigen"
+      ]
+    },
     "Item": {
       "file attributes": [
         "Dateiattribute"
@@ -6879,6 +6901,9 @@
       ],
       "Address": [
         "Anschrift"
+      ],
+      "Admin": [
+        "Administrator"
       ],
       "Alias title": [
         "Aliasbezeichnung"
@@ -7740,6 +7765,53 @@
       ],
       "for ${ price }": [
         "für ${ price }"
+      ]
+    },
+    "meet_2025: Feature": {
+      "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
+        "${ MEET_APP_NAME }: Vertrauliche Videokonferenzen für die Unterhaltungen, die wichtig sind"
+      ],
+      "${ n } active meeting at a time": [
+        "${ n } aktives Meeting gleichzeitig",
+        "${ n } aktive Meetings gleichzeitig"
+      ],
+      "24 hours per meeting": [
+        "24 Stunden pro Meeting"
+      ],
+      "60 minutes per meeting": [
+        "60 Minuten pro Meeting"
+      ],
+      "Appointment scheduling": [
+        "Terminplanung"
+      ],
+      "Browser, mobile, and desktop apps": [
+        "Browser-, Mobile- und Desktop-Apps"
+      ],
+      "Built-in chat": [
+        "Eingebauter Chat"
+      ],
+      "End-to-end encrypted screen sharing and ephemeral in-call chat": [
+        "Ende-zu-Ende-verschlüsselte Bildschirmfreigabe und temporärer Chat während des Anrufs"
+      ],
+      "Meeting recording (coming soon)": [
+        "Aufnahme des Meetings (Demnächst verfügbar)"
+      ],
+      "One active meeting at a time": [
+        "Ein aktives Meeting gleichzeitig"
+      ],
+      "Screen-sharing": [
+        "Bildschirmfreigabe"
+      ],
+      "Unlimited meetings per day": [
+        "Unbegrenzte Meetings pro Tag"
+      ],
+      "Up to ${ n } meeting per day": [
+        "Bis zu ${ n } Meeting pro Tag",
+        "Bis zu ${ n } Meetings pro Tag"
+      ],
+      "Up to ${ n } participant": [
+        "Bis zu ${ n } Teilnehmer",
+        "Bis zu ${ n } Teilnehmer"
       ]
     },
     "Message": {
@@ -10227,11 +10299,6 @@
       ],
       "Upgrade to ${ upsellPlanTitle }": [
         "Auf ${ upsellPlanTitle } upgraden"
-      ]
-    },
-    "Price": {
-      "Free": [
-        "Kostenlos"
       ]
     },
     "Progress bar description": {

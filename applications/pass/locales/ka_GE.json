@@ -37,6 +37,12 @@
       "Accept and view the item": [
         "მიღება და ელემენტის ნახვა"
       ],
+      "Account": [
+        "ანგარიში"
+      ],
+      "Account settings": [
+        "ანგარიშის მორგება"
+      ],
       "Add": [
         "დამატება"
       ],
@@ -402,6 +408,9 @@
       ],
       "Lock ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME }-ის დაბლოკვა"
+      ],
+      "Lock extension": [
+        "გაფართოების დაბლოკვა"
       ],
       "Make admin": [
         "ადმინობის მინიჭება"
@@ -1383,6 +1392,9 @@
       "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
         "${ PASS_APP_NAME }, მხოლოდ, შესვლის დეტალებს, შენიშვნებს, საკრედიტო ბარათებს და იდენტიფიკატორებს შემოიტანს."
       ],
+      "${ PASS_SHORT_APP_NAME } offline mode enabled.": [
+        "${ PASS_SHORT_APP_NAME }-ის ხაზგარეშე რეჟიმი ჩართულია."
+      ],
       "${ payload.count } invite successfully sent": [
         "${ payload.count } მოსაწვევი წარმატებით გაიგზავნა",
         "${ payload.count } მოსაწვევი წარმატებით გაიგზავნა"
@@ -2069,11 +2081,17 @@
       "Please use full path domain, for example my-domain.com or my-subdomain.my-domain.com if you are using a subdomain.": [
         "გამოიყენეთ სრული ბილიკის დომენი. მაგალითად, my-domain.com ან my-subdomain.my-domain.com, თუ სუბდომენი გაქვთ."
       ],
+      "Premium domain": [
+        "ფასიანი დომენი"
+      ],
       "Press Enter to copy": [
         "დასაკოპირებლად დააჭირეთ Enter-ს"
       ],
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "დაცულია ${ PROTON_SENTINEL_LINK }-ით, ჩვენი გაუმჯობესებული ანგარიშის დაცვის პროგრამით"
+      ],
+      "Public domain": [
+        "საჯარო დომენი"
       ],
       "Reconnect": [
         "თავიდან დაკავშირება"
@@ -2513,6 +2531,9 @@
       "${ months } month": [
         "${ months } თვე",
         "${ months } თვე"
+      ],
+      "${ PASS_SHORT_APP_NAME } Monitor": [
+        "${ PASS_SHORT_APP_NAME }-ის მონიტორი"
       ],
       "${ PASS_SHORT_APP_NAME } version": [
         "${ PASS_SHORT_APP_NAME }-ის ვერსია"
@@ -3028,6 +3049,9 @@
       "Language": [
         "ენა"
       ],
+      "Larger window": [
+        "უფრო დიდი ფანჯარა"
+      ],
       "Last 2 weeks": [
         "ბოლო 2 კვირა"
       ],
@@ -3378,6 +3402,9 @@
       ],
       "Server": [
         "სერვერი"
+      ],
+      "Settings": [
+        "მორგება"
       ],
       "Share": [
         "გაზიარება"
@@ -4482,6 +4509,9 @@
       "Settings": [
         "მორგება"
       ],
+      "Setup offline mode": [
+        "ქსელის გარეშე მუშაობის რეჟიმის მორგება"
+      ],
       "Share vaults with your team": [
         "საცავების გაზიარება თქვენს გუნდთან"
       ],
@@ -4633,6 +4663,9 @@
     "Warning": {
       "${ BRAND_NAME } password is required": [
         "${ BRAND_NAME }-ის პაროლი აუცილებელია"
+      ],
+      "${ PASS_SHORT_APP_NAME } offline mode disabled.": [
+        "${ PASS_SHORT_APP_NAME }-ის ხაზგარეშე რეჟიმი გამორთულია."
       ],
       "2 consecutive dots are not allowed": [
         "2 წერტილი ზედიზედ დაშებული არაა"

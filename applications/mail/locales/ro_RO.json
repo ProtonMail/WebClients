@@ -2673,6 +2673,9 @@
       ],
       "High-speed chats and advanced AI features.": [
         "Conversații rapide și funcții avansate de inteligență artificială."
+      ],
+      "Private video calls for the conversations that matter.": [
+        "Apeluri video private pentru conversațiile importante."
       ]
     },
     "color": {
@@ -3871,6 +3874,11 @@
         "Pentru ${ MAIL_APP_NAME }"
       ]
     },
+    "customer_support.feature.meet": {
+      "For ${ MEET_APP_NAME }": [
+        "Pentru ${ MEET_APP_NAME }"
+      ]
+    },
     "customer_support.feature.pass": {
       "For ${ PASS_APP_NAME }": [
         "Pentru ${ PASS_APP_NAME }"
@@ -4869,6 +4877,9 @@
       "re-activate the previous key": [
         "reactivați cheia anterioară"
       ],
+      "re-importing": [
+        "reimportare"
+      ],
       "Removed duplicate recipient: ${ recipents }": [
         "Destinatari duplicați eliminați: ${ recipents }",
         "Destinatari duplicați eliminați: ${ recipents }",
@@ -4978,6 +4989,9 @@
       "There has been an issue with content search. Default search has been used instead.": [
         "A apărut o problemă la căutarea în conținut. S-a folosit căutarea implicită."
       ],
+      "There was a problem decrypting your message. If the issue persists, contact our customer support.": [
+        "A existat o problemă la decriptarea mesajului. Dacă problema persistă, contactați asistența pentru clienți."
+      ],
       "There was an error when exporting the contacts vCards": [
         "A apărut o eroare la exportarea cărților de vizită a contactelor („vCards”)."
       ],
@@ -5066,11 +5080,14 @@
       "Your emails cannot be decrypted due to a recent password reset. If you remember your previous password, you can ${ reActivateKeyLink } in order to access your messages. ${ learnMoreLink }": [
         "Mesajele nu pot fi decriptate din cauza unei resetări recente a parolei. Dacă vă amintiți parola anterioară, puteți să ${ reActivateKeyLink } pentru a vă accesa mesajele. ${ learnMoreLink }"
       ],
-      "Your emails cannot be decrypted. This may be due to a password reset. ${ learnMoreLink }": [
-        "Mesajele nu pot fi decriptate din cauza unei resetări recente a parolei. ${ learnMoreLink }"
-      ],
       "Your import will not be processed.": [
         "Importarea nu va fi procesată."
+      ],
+      "Your message cannot be decrypted. If you deleted any of your address keys, try ${ reimportKeyLink } them. ${ learnMoreLink }": [
+        "Mesajul nu poate fi decriptat. Dacă ați șters vreo cheie de adrese, încercați să faceți o ${ reimportKeyLink } a cesteia. ${ learnMoreLink }"
+      ],
+      "Your message cannot be decrypted. The key used to encrypt this message does not match any of the keys associated with your address. If you deleted any of your address keys, try ${ reimportKeyLink } them. ${ learnMoreLink }": [
+        "Mesajul nu poate fi decriptat. Cheia utilizată pentru criptarea acestui mesaj nu corespunde niciuneia dintre cheile asociate cu adresa. Dacă ați șters oricare dintre cheile adresei, încercați să faceți o ${ reimportKeyLink }. ${ learnMoreLink }"
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Căutarea a găsit prea multe rezultate. Vă rugăm să limitați căutarea și să reîncercați."
@@ -7601,6 +7618,9 @@
       "Low Priority": [
         "Prioritate scăzută"
       ],
+      "Make ${ MAIL_APP_NAME } your default email application.": [
+        "Setați ${ MAIL_APP_NAME } ca aplicație implicită de e-mail."
+      ],
       "Manage your folders": [
         "Gestionare foldere"
       ],
@@ -8332,6 +8352,15 @@
       ],
       "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
         "Acest mesaj va fi mutat în „Ciorne” pentru a putea fi editat. Va trebui să replanificați când va fi trimis."
+      ],
+      "This message will be purged on ${ value }": [
+        "Acest mesaj va fi șters la ${ value }"
+      ],
+      "This message will be purged today at ${ value }": [
+        "Acest mesaj va fi șters astăzi la ${ value }."
+      ],
+      "This message will be purged tomorrow at ${ value }": [
+        "Acest mesaj va fi șters mâine la ${ value }"
       ],
       "This message will be sent in the morning at ${ formattedTime }": [
         "Mesajul va fi trimis dimineață la ora ${ formattedTime }"
@@ -9545,6 +9574,9 @@
       "Filter Name": [
         "Nume filtru"
       ],
+      "Filters": [
+        "Filtre"
+      ],
       "First name": [
         "Prenume"
       ],
@@ -9592,6 +9624,9 @@
       ],
       "Go to Updates": [
         "Accesare actualizări"
+      ],
+      "Has attachments": [
+        "Cu atașamente"
       ],
       "Help us improve categories by choosing the one that best fits this email. Thanks for your help!": [
         "Ajutați-ne să îmbunătățim categoriile alegând-o pe cea care se potrivește cel mai bine acestui e-mail. Vă mulțumim pentru ajutor!"
@@ -10484,6 +10519,56 @@
       ],
       "Trash": [
         "Gunoi"
+      ]
+    },
+    "meet_2025: Feature": {
+      "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
+        "${ MEET_APP_NAME }: conferințe video confidențiale pentru conversațiile importante"
+      ],
+      "${ n } active meeting at a time": [
+        "Conferințe active simultan: ${ n }",
+        "Conferințe active simultan: ${ n }",
+        "Conferințe active simultan: ${ n }"
+      ],
+      "24 hours per meeting": [
+        "Conferințe de 24 de ore"
+      ],
+      "60 minutes per meeting": [
+        "60 de minute per întâlnire"
+      ],
+      "Appointment scheduling": [
+        "Planificare întâlniri"
+      ],
+      "Browser, mobile, and desktop apps": [
+        "Aplicații pentru navigator web, mobil și desktop"
+      ],
+      "Built-in chat": [
+        "Sistem de conversații integrat"
+      ],
+      "End-to-end encrypted screen sharing and ephemeral in-call chat": [
+        "Partajare ecran cu criptare bilaterală și conversații temporare pe durata apelului"
+      ],
+      "Meeting recording (coming soon)": [
+        "Înregistrare conferințe (în curând)"
+      ],
+      "One active meeting at a time": [
+        "O conferință activă simultan"
+      ],
+      "Screen-sharing": [
+        "Partajare ecran"
+      ],
+      "Unlimited meetings per day": [
+        "Conferințe nelimitate pe zi"
+      ],
+      "Up to ${ n } meeting per day": [
+        "Maxim conferințe pe zi: ${ n }",
+        "Maxim conferințe pe zi: ${ n }",
+        "Maxim conferințe pe zi: ${ n }"
+      ],
+      "Up to ${ n } participant": [
+        "Maxim participanți: ${ n }",
+        "Maxim participanți: ${ n }",
+        "Maxim participanți: ${ n }"
       ]
     },
     "Message": {
@@ -12742,11 +12827,6 @@
       ],
       "Upgrade to ${ upsellPlanTitle }": [
         "Trecere la ${ upsellPlanTitle }"
-      ]
-    },
-    "Price": {
-      "Free": [
-        "Gratuit"
       ]
     },
     "Progress bar description": {

@@ -77,6 +77,9 @@
       "Copy address": [
         "Copia l'indirizzo"
       ],
+      "Create": [
+        "Crea"
+      ],
       "Create folder": [
         "Crea una cartella"
       ],
@@ -185,6 +188,9 @@
       "More options for accounts": [
         "Altre opzioni per gli account"
       ],
+      "Next page": [
+        "Pagina successiva"
+      ],
       "OK": [
         "OK"
       ],
@@ -199,6 +205,12 @@
       ],
       "Pay ${ price } now": [
         "Paga ${ price } adesso"
+      ],
+      "Previous page": [
+        "Pagina precedente"
+      ],
+      "Re-index all content - conversations and files": [
+        "Reindicizza tutti i contenuti - conversazioni e file"
       ],
       "Refer a friend": [
         "Invita un amico"
@@ -226,6 +238,9 @@
       ],
       "Resend code": [
         "Reinvia il codice"
+      ],
+      "Reset": [
+        "Azzera"
       ],
       "Reset all": [
         "Reimposta tutto"
@@ -854,11 +869,11 @@
       "Try again": [
         "Riprova"
       ],
-      "Upload a file": [
-        "Carica file"
-      ],
       "Upload file and add to knowledge base": [
         "Carica file e aggiungi alla base delle conoscenze"
+      ],
+      "Upload files": [
+        "Carica il files"
       ],
       "Upload from device": [
         "Carica dal dispositivo"
@@ -1022,9 +1037,6 @@
       "Last updated on ${ formattedDate }": [
         "Ultimo aggiornamento il ${ formattedDate }"
       ],
-      "Permanently delete your chats. This is irreversible.": [
-        "Elimina definitivamente le tue chat. Questo è irreversibile."
-      ],
       "Sign in to access your account and unlock more features. Don't have one? ${ createLink }": [
         "Accedi per accedere al tuo account e sbloccare più funzionalità. Non ne hai uno? ${ createLink }"
       ],
@@ -1069,6 +1081,9 @@
       ],
       "PowerPoint files are not supported. Please convert to PDF and upload the PDF version for better text extraction.": [
         "I file PowerPoint non sono supportati. Converti in PDF e carica la versione PDF per una migliore estrazione del testo."
+      ],
+      "Search service not available": [
+        "Servizio di ricerca non disponibile"
       ],
       "Sign up for free to continue chatting and unlock access to chat history, starred chats, and more features.": [
         "Iscriviti gratuitamente per continuare a chattare e sbloccare l'accesso alla cronologia chat, alle chat preferite e ad altre funzionalità."
@@ -1218,9 +1233,6 @@
       " files are hidden (unsupported file types)": [
         " I file sono nascosti (tipi di file non supportati)"
       ],
-      " of space": [
-        " di spazio"
-      ],
       " talk to your admin.": [
         " parla con il tuo amministratore."
       ],
@@ -1239,17 +1251,11 @@
       "Access ${ DRIVE_APP_NAME }": [
         "Accedi a ${ DRIVE_APP_NAME }"
       ],
-      "Active": [
-        "Abilitata"
-      ],
       "Add ${ LUMO_APP_NAME }": [
         "Aggiungi ${ LUMO_APP_NAME }"
       ],
       "Add to active": [
         "Aggiungi a quelli attivi"
-      ],
-      "Adding to knowledge base...": [
-        "Sto aggiungendo alla base di conoscenza..."
       ],
       "Advanced account and network security in one plan": [
         "Sicurezza avanzata dell'account e della rete in un unico piano"
@@ -1308,11 +1314,11 @@
       "files": [
         "file"
       ],
-      "Files": [
-        "File"
-      ],
       "files are not currently supported for content extraction.": [
         "i file non sono attualmente supportati per l'estrazione del contenuto."
+      ],
+      "Files automatically retrieved based on your question.": [
+        "File recuperati automaticamente in base alla tua domanda."
       ],
       "For each conversation, ${ LUMO_SHORT_APP_NAME } has the capacity to process a limited amount of information. The progress bar shows how much capacity your current files are using. ": [
         "Per ogni conversazione, ${ LUMO_SHORT_APP_NAME } ha la capacità di elaborare una quantità limitata di informazioni. La barra di avanzamento mostra quanta capacità stanno usando i tuoi file attuali. "
@@ -1364,6 +1370,9 @@
       ],
       "Press ${ shiftEnterBoldText } to ask": [
         "Premi ${ shiftEnterBoldText } per chiedere"
+      ],
+      "Private video calls for the conversations that matter.": [
+        "Videochiamate private per le conversazioni importanti."
       ],
       "Processed content": [
         "Contenuto elaborato"
@@ -1451,9 +1460,6 @@
       ],
       "Unsupported File Type": [
         "Tipo di file non supportato"
-      ],
-      "Unused ": [
-        "Non utilizzato "
       ],
       "Uploading ${ uploadProgress.fileName }": [
         "Caricamento ${ uploadProgress.fileName }..."
@@ -1719,8 +1725,8 @@
       "About ${ LUMO_SHORT_APP_NAME }": [
         "Informazioni su ${ LUMO_SHORT_APP_NAME }"
       ],
-      "Delete all chats": [
-        "Rimuovi tutte le chat"
+      "Delete everything": [
+        "Elimina tutto"
       ],
       "Don't lose the thread": [
         "Non perdere il filo"
@@ -1739,6 +1745,9 @@
       ],
       "Secure your spot": [
         "Assicurati il tuo posto"
+      ],
+      "Show project chats in history": [
+        "Mostra le chat del progetto nella cronologia"
       ],
       "Theme": [
         "Tema"
@@ -1913,6 +1922,9 @@
       "Cancel": [
         "Annulla"
       ],
+      "Click to edit title": [
+        "Fai clic per modificare il titolo"
+      ],
       "Describe desired changes...": [
         "Descrivi i cambiamenti desiderati"
       ],
@@ -1936,6 +1948,9 @@
       ],
       "Retry with the same prompt": [
         "Riprova con lo stesso prompt"
+      ],
+      "Select conversation": [
+        "Seleziona conversazione"
       ],
       "Think longer": [
         "Elabora più a lungo"
@@ -2000,9 +2015,38 @@
         "Chat senza titolo"
       ]
     },
+    "collider_2025:Error": {
+      "Failed to create folder": [
+        "Impossibile creare la cartella"
+      ],
+      "Failed to link Drive folder": [
+        "Impossibile collegare la cartella Drive"
+      ],
+      "Failed to unlink Drive folder": [
+        "Impossibile scollegare la cartella Drive"
+      ],
+      "File \"${ file.name }\" (${ fileSizeFormatted }) exceeds the ${ maxSizeFormatted } limit. Link a ${ DRIVE_APP_NAME } folder to upload larger files.": [
+        "Il file \"${ file.name }\" (${ fileSizeFormatted }) supera il limite di ${ maxSizeFormatted }. Collega una cartella ${ DRIVE_APP_NAME } per caricare file più grandi."
+      ]
+    },
+    "collider_2025:Feature": {
+      "Advanced AI models": [
+        "Modelli AI avanzati"
+      ]
+    },
     "collider_2025:Info": {
+      " Chat in Project": [
+        " Chatta nel progetto",
+        " Chat in Progetto"
+      ],
+      "${ project.fileCount } files": [
+        "${ project.fileCount } file"
+      ],
       "AIs from Big Tech are built on harvesting your data. But ${ LUMO_SHORT_APP_NAME } is different. It was created by the scientists behind innovative, privacy-first services like ${ MAIL_APP_NAME } and ${ VPN_APP_NAME }. And it’s owned by a Swiss nonprofit, whose mission is to advance privacy and never make money from user data.": [
         "I modelli AI delle Big Tech sono basati sulla raccolta dei tuoi dati. Ma ${ LUMO_SHORT_APP_NAME } è diverso. È stato creato dagli scienziati che hanno sviluppato servizi innovativi e attenti alla privacy come ${ MAIL_APP_NAME } e ${ VPN_APP_NAME }. Ed è di proprietà di un'organizzazione svizzera senza scopo di lucro, la cui missione è promuovere la privacy e non lucrare mai sui dati degli utenti."
+      ],
+      "Are you sure you want to delete \"${ project.name }\"? This action cannot be undone.": [
+        "Sei sicuro di voler eliminare \"${ project.name }\"? Questa azione non può essere annullata."
       ],
       "Conversation encrypted": [
         "Conversazione crittografata"
@@ -2051,11 +2095,31 @@
       ]
     },
     "collider_2025:Prompt": {
+      "Can you explain why this answer is correct?": [
+        "Puoi spiegare perché questa risposta è corretta?"
+      ],
+      "Explain this medication and its potential side effects": [
+        "Spiega questo farmaco e i suoi potenziali effetti collaterali"
+      ],
+      "Help me prepare talking points for this presentation": [
+        "Aiutami a preparare i punti chiave per questa presentazione"
+      ],
       "How do people celebrate New Year's Eve around the world?": [
         "Come si festeggia il Capodanno in tutto il mondo?"
       ],
+      "Identify any unusual or potentially unfavorable terms": [
+        "Individua eventuali termini insoliti o potenzialmente sfavorevoli"
+      ],
+      "Suggest hidden gems and local favorites in Barcelona": [
+        "Suggerisci gemme nascoste e locali preferiti a Barcellona"
+      ],
       "What are the origins of Christmas?": [
         "Quali sono le origini del Natale?"
+      ]
+    },
+    "collider_2025:Success": {
+      "Folder created successfully": [
+        "Cartella creata con successo"
       ]
     },
     "collider_2025:Title": {
@@ -2065,11 +2129,8 @@
       "Built by the team that knows privacy": [
         "Creato dal team che conosce la privacy"
       ],
-      "Dark mode has been one of our community’s most highly anticipated updates for ${ LUMO_SHORT_APP_NAME }. Throughout the ${ BRAND_NAME } ecosystem, you can customize the look of all of your apps, and now you can customize ${ LUMO_SHORT_APP_NAME }, too, with a light or dark theme.": [
-        "La modalità scura è stata uno degli aggiornamenti più attesi dalla nostra community per ${ LUMO_SHORT_APP_NAME }. In tutto l'ecosistema ${ BRAND_NAME }, puoi personalizzare l'aspetto di tutte le tue app, e ora puoi personalizzare anche ${ LUMO_SHORT_APP_NAME }, con un tema chiaro o scuro."
-      ],
-      "Dark mode is here": [
-        "La modalità scura è arrivata"
+      "Delete conversation?": [
+        "Elimina la conversazione?"
       ],
       "Earlier": [
         "Precedente"
@@ -2106,12 +2167,6 @@
       ],
       "No result.": [
         "Nessun risultato."
-      ],
-      "Personalization lets you tailor how ${ LUMO_SHORT_APP_NAME } interacts with you. Tell ${ LUMO_SHORT_APP_NAME } your name, what you do, and exactly how you want it to respond, witty banter, technical precision, or straight-to-the-point brevity. Because the best AI isn't one-size-fits-all. It's one that feels like it was built just for you.": [
-        "La personalizzazione ti permette di adattare il modo in cui ${ LUMO_SHORT_APP_NAME } interagisce con te. Comunica a ${ LUMO_SHORT_APP_NAME } il tuo nome, cosa fai e come desideri che risponda: con battute spiritose, precisione tecnica o concisione diretta. Perché la migliore intelligenza artificiale non è valida per tutti. È quella che sembra creata apposta per te."
-      ],
-      "Personalization: ${ LUMO_SHORT_APP_NAME } for you": [
-        "Personalizza la tua esperienza ${ LUMO_SHORT_APP_NAME }"
       ],
       "The AI that respects your privacy": [
         "L'AI che rispetta la tua privacy"
@@ -3006,6 +3061,11 @@
         "Per ${ MAIL_APP_NAME }"
       ]
     },
+    "customer_support.feature.meet": {
+      "For ${ MEET_APP_NAME }": [
+        "Per ${ MEET_APP_NAME }"
+      ]
+    },
     "customer_support.feature.pass": {
       "For ${ PASS_APP_NAME }": [
         "Per ${ PASS_APP_NAME }"
@@ -3325,6 +3385,9 @@
       ],
       "ZIP code is required": [
         "Il codice postale è obbligatorio"
+      ],
+      "⚠️ Undecryptable name": [
+        "⚠️ Nome indecifrabile"
       ]
     },
     "Error message": {
@@ -3830,6 +3893,9 @@
       "Registering your subscription…": [
         "Registrazione dell'abbonamento…"
       ],
+      "Searchable chunks:": [
+        "Chunk ricercabili:"
+      ],
       "SEPA payments are not available at the moment. Please try again later.": [
         "I pagamenti SEPA non sono disponibili al momento. Si prega di riprovare più tardi."
       ],
@@ -4162,6 +4228,9 @@
       "Folder location": [
         "Percorso cartella"
       ],
+      "Folder name": [
+        "Nome cartella"
+      ],
       "Get the deal": [
         "Approfitta dell'offerta"
       ],
@@ -4179,6 +4248,9 @@
       ],
       "Integrated 2FA authenticator": [
         "Autenticatore 2FA integrato"
+      ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "Scorciatoia da tastiera: ${ shortcut }"
       ],
       "Last name": [
         "Cognome"
@@ -4375,6 +4447,53 @@
       ],
       "for ${ price }": [
         "per ${ price }"
+      ]
+    },
+    "meet_2025: Feature": {
+      "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
+        "${ MEET_APP_NAME }: Videoconferenze confidenziali per le conversazioni importanti"
+      ],
+      "${ n } active meeting at a time": [
+        "${ n } riunione attiva alla volta",
+        "${ n } riunioni attive contemporaneamente"
+      ],
+      "24 hours per meeting": [
+        "24 ore per riunione"
+      ],
+      "60 minutes per meeting": [
+        "60 minuti per riunione"
+      ],
+      "Appointment scheduling": [
+        "Pianificazione degli appuntamenti"
+      ],
+      "Browser, mobile, and desktop apps": [
+        "App per browser, per dispositivi mobili e per desktop"
+      ],
+      "Built-in chat": [
+        "Chat integrata"
+      ],
+      "End-to-end encrypted screen sharing and ephemeral in-call chat": [
+        "Condivisione dello schermo con crittografia end-to-end e chat effimera durante la chiamata"
+      ],
+      "Meeting recording (coming soon)": [
+        "Registrazione riunione (prossimamente)"
+      ],
+      "One active meeting at a time": [
+        "Una riunione attiva alla volta"
+      ],
+      "Screen-sharing": [
+        "Condivisione dello schermo"
+      ],
+      "Unlimited meetings per day": [
+        "Riunioni illimitate al giorno"
+      ],
+      "Up to ${ n } meeting per day": [
+        "Fino a ${ n } riunione al giorno",
+        "Fino a ${ n } riunioni al giorno"
+      ],
+      "Up to ${ n } participant": [
+        "Fino a ${ n } partecipante",
+        "Fino a ${ n } partecipanti"
       ]
     },
     "New Label form": {
@@ -5654,6 +5773,9 @@
       "Company name": [
         "Nome dell'azienda"
       ],
+      "Enter a new folder name": [
+        "Inserisci un nuovo nome del file"
+      ],
       "Gift code": [
         "Codice regalo"
       ],
@@ -5731,11 +5853,6 @@
       ],
       "Upgrade to ${ upsellPlanTitle }": [
         "Effettua l'upgrade a ${ upsellPlanTitle }"
-      ]
-    },
-    "Price": {
-      "Free": [
-        "Gratis"
       ]
     },
     "Safety review": {
@@ -5992,6 +6109,11 @@
     "State": {
       "Canceling your subscription, please wait": [
         "Annullamento dell'abbonamento in corso, attendere prego"
+      ]
+    },
+    "Status": {
+      "Not available": [
+        "Non disponibile"
       ]
     },
     "storage_split: action": {
@@ -6262,6 +6384,11 @@
         "Per gli individui"
       ]
     },
+    "Time": {
+      "Yesterday": [
+        "Ieri"
+      ]
+    },
     "Title": {
       "${ feature } is now active": [
         "${ feature } è adesso attivo"
@@ -6323,6 +6450,9 @@
       "Coupon": [
         "Coupon"
       ],
+      "Create a new folder": [
+        "Crea una nuova cartella"
+      ],
       "Currency": [
         "Valuta"
       ],
@@ -6352,6 +6482,9 @@
       ],
       "Error": [
         "Errore"
+      ],
+      "Folder": [
+        "Cartella"
       ],
       "Get the apps": [
         "Ottieni le app"

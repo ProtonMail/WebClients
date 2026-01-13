@@ -2183,6 +2183,9 @@
       ],
       "High-speed chats and advanced AI features.": [
         "Conversații rapide și funcții avansate de inteligență artificială."
+      ],
+      "Private video calls for the conversations that matter.": [
+        "Apeluri video private pentru conversațiile importante."
       ]
     },
     "color": {
@@ -3217,6 +3220,11 @@
     "customer_support.feature.mail": {
       "For ${ MAIL_APP_NAME }": [
         "Pentru ${ MAIL_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.meet": {
+      "For ${ MEET_APP_NAME }": [
+        "Pentru ${ MEET_APP_NAME }"
       ]
     },
     "customer_support.feature.pass": {
@@ -7507,6 +7515,9 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Deoarece sunteți un utilizator loial, contul are funcții adiționale activate."
       ],
+      "Some ${ BRAND_NAME } apps may not support security keys yet. If you turn off authenticator app 2FA, you may not be able to sign in to those apps.": [
+        "Unele aplicații ${ BRAND_NAME } s-ar putea să nu suporte încă cheile de securitate. Dacă dezactivați funcția de A2F a aplicației, este posibil să nu vă puteți conecta la acele aplicații."
+      ],
       "Some keys successfully reactivated": [
         "Unele chei au fost reactivate"
       ],
@@ -9086,11 +9097,11 @@
       "Numbers": [
         "Cifre"
       ],
-      "OpenVPN / IKEv2 password": [
-        "Parola OpenVPN/IKEv2"
+      "OpenVPN password": [
+        "Parola OpenVPN"
       ],
-      "OpenVPN / IKEv2 username": [
-        "Nume utilizator OpenVPN/IKEv2"
+      "OpenVPN username": [
+        "Nume de utilizator OpenVPN"
       ],
       "Operating system": [
         "Sistem de operare"
@@ -9859,6 +9870,56 @@
         "Setați-vă contul cu domeniul Porkbun."
       ]
     },
+    "meet_2025: Feature": {
+      "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
+        "${ MEET_APP_NAME }: conferințe video confidențiale pentru conversațiile importante"
+      ],
+      "${ n } active meeting at a time": [
+        "Conferințe active simultan: ${ n }",
+        "Conferințe active simultan: ${ n }",
+        "Conferințe active simultan: ${ n }"
+      ],
+      "24 hours per meeting": [
+        "Conferințe de 24 de ore"
+      ],
+      "60 minutes per meeting": [
+        "60 de minute per întâlnire"
+      ],
+      "Appointment scheduling": [
+        "Planificare întâlniri"
+      ],
+      "Browser, mobile, and desktop apps": [
+        "Aplicații pentru navigator web, mobil și desktop"
+      ],
+      "Built-in chat": [
+        "Sistem de conversații integrat"
+      ],
+      "End-to-end encrypted screen sharing and ephemeral in-call chat": [
+        "Partajare ecran cu criptare bilaterală și conversații temporare pe durata apelului"
+      ],
+      "Meeting recording (coming soon)": [
+        "Înregistrare conferințe (în curând)"
+      ],
+      "One active meeting at a time": [
+        "O conferință activă simultan"
+      ],
+      "Screen-sharing": [
+        "Partajare ecran"
+      ],
+      "Unlimited meetings per day": [
+        "Conferințe nelimitate pe zi"
+      ],
+      "Up to ${ n } meeting per day": [
+        "Maxim conferințe pe zi: ${ n }",
+        "Maxim conferințe pe zi: ${ n }",
+        "Maxim conferințe pe zi: ${ n }"
+      ],
+      "Up to ${ n } participant": [
+        "Maxim participanți: ${ n }",
+        "Maxim participanți: ${ n }",
+        "Maxim participanți: ${ n }"
+      ]
+    },
     "Member action": {
       "Activate user": [
         "Activare utilizator"
@@ -9989,6 +10050,21 @@
       ],
       "Euro": [
         "Euro"
+      ],
+      "Hong Kong dollar": [
+        "Dolar Hong Kong"
+      ],
+      "Japanese yen": [
+        "Yen japonez"
+      ],
+      "Polish złoty": [
+        "Zlot polonez"
+      ],
+      "Singapore dollar": [
+        "Dolar singaporez"
+      ],
+      "South Korean won": [
+        "Won sud-coreean"
       ],
       "Swiss franc": [
         "Franci elvețieni"
@@ -11151,8 +11227,8 @@
       "Number of records exceeds the download limit of 10000": [
         "Numărul de înregistrări depășește limita de descărcare de 10.000."
       ],
-      "OpenVPN / IKEv2 credentials regenerated": [
-        "Credențiale OpenVPN/IKE2 regenerate"
+      "OpenVPN credentials regenerated": [
+        "S-au generat acreditările OpenVPN"
       ],
       "Reminder has been sent": [
         "Notificările au fost trimise"
@@ -12359,11 +12435,6 @@
       ],
       "Upgrade to ${ upsellPlanTitle }": [
         "Trecere la ${ upsellPlanTitle }"
-      ]
-    },
-    "Price": {
-      "Free": [
-        "Gratuit"
       ]
     },
     "Property type": {
@@ -15609,11 +15680,11 @@
       "Open pagination": [
         "Deschidere paginare"
       ],
-      "OpenVPN / IKEv2 username": [
-        "Utilizator OpenVPN/IKEv2"
-      ],
       "OpenVPN configuration files": [
         "Fișiere de configurare OpenVPN"
+      ],
+      "OpenVPN username": [
+        "Nume de utilizator OpenVPN"
       ],
       "Org setup": [
         "Setare organizație"
