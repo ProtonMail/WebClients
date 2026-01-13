@@ -2784,6 +2784,11 @@
         "För ${ MAIL_APP_NAME }"
       ]
     },
+    "customer_support.feature.meet": {
+      "For ${ MEET_APP_NAME }": [
+        "För ${ MEET_APP_NAME }"
+      ]
+    },
     "customer_support.feature.pass": {
       "For ${ PASS_APP_NAME }": [
         "För ${ PASS_APP_NAME }"
@@ -6755,6 +6760,17 @@
         "Endast visa"
       ]
     },
+    "Into": {
+      "Can edit and manage access": [
+        "Kan redigera och hantera åtkomst"
+      ],
+      "Can view and edit": [
+        "Kan visa och redigera"
+      ],
+      "Can view only": [
+        "Kan endast visa"
+      ]
+    },
     "Item": {
       "file attributes": [
         "filattribut"
@@ -6852,6 +6868,9 @@
       ],
       "Address": [
         "Adress"
+      ],
+      "Admin": [
+        "Admin"
       ],
       "Alias title": [
         "Alias-rubrik"
@@ -7710,6 +7729,37 @@
       ],
       "for ${ price }": [
         "för ${ price }"
+      ]
+    },
+    "meet_2025: Feature": {
+      "24 hours per meeting": [
+        "24 timmar per möte"
+      ],
+      "60 minutes per meeting": [
+        "60 minuter per möte"
+      ],
+      "Browser, mobile, and desktop apps": [
+        "Appar för webbläsare, mobil och stationär dator"
+      ],
+      "Built-in chat": [
+        "Inbyggd chatt"
+      ],
+      "Meeting recording (coming soon)": [
+        "Mötesinspelning (kommer snart)"
+      ],
+      "Screen-sharing": [
+        "Skärmdelning"
+      ],
+      "Unlimited meetings per day": [
+        "Obegränsat antal möten per dag"
+      ],
+      "Up to ${ n } meeting per day": [
+        "Upp till ${ n } möte per dag",
+        "Upp till ${ n } möten per dag"
+      ],
+      "Up to ${ n } participant": [
+        "Upp till ${ n } deltagare",
+        "Upp till ${ n } deltagare"
       ]
     },
     "Message": {
@@ -10186,11 +10236,6 @@
       ],
       "Upgrade to ${ upsellPlanTitle }": [
         "Uppgradera till ${ upsellPlanTitle }"
-      ]
-    },
-    "Price": {
-      "Free": [
-        "Gratis"
       ]
     },
     "Progress bar description": {

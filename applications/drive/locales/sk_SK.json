@@ -1838,6 +1838,9 @@
       ],
       "High-speed chats and advanced AI features.": [
         "Vysokorýchlostné chaty a pokročilé funkcie AI"
+      ],
+      "Private video calls for the conversations that matter.": [
+        "Súkromné videohovory pre konverzácie, na ktorých záleží."
       ]
     },
     "color": {
@@ -2822,6 +2825,11 @@
     "customer_support.feature.mail": {
       "For ${ MAIL_APP_NAME }": [
         "Za ${ MAIL_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.meet": {
+      "For ${ MEET_APP_NAME }": [
+        "Na ${ MEET_APP_NAME }"
       ]
     },
     "customer_support.feature.pass": {
@@ -6982,6 +6990,17 @@
         "Iba zobrazenie"
       ]
     },
+    "Into": {
+      "Can edit and manage access": [
+        "Môže upravovať a spravovať prístup"
+      ],
+      "Can view and edit": [
+        "Môže zobraziť a upraviť"
+      ],
+      "Can view only": [
+        "Môže len zobraziť"
+      ]
+    },
     "Item": {
       "file attributes": [
         "atribúty súboru"
@@ -7085,6 +7104,9 @@
       ],
       "Address": [
         "Adresa"
+      ],
+      "Admin": [
+        "Správca"
       ],
       "Alias title": [
         "Názov aliasu"
@@ -7960,6 +7982,59 @@
         "za ${ price }"
       ]
     },
+    "meet_2025: Feature": {
+      "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
+        "${ MEET_APP_NAME }: Dôverné videokonferencie pre rozhovory, na ktorých záleží"
+      ],
+      "${ n } active meeting at a time": [
+        "${ n } aktívne stretnutie naraz",
+        "${ n } aktívne stretnutia naraz",
+        "${ n } aktívnych stretnutí naraz",
+        "${ n } aktívnych stretnutí naraz"
+      ],
+      "24 hours per meeting": [
+        "24 hodín na schôdzu"
+      ],
+      "60 minutes per meeting": [
+        "60 minút na schôdzu"
+      ],
+      "Appointment scheduling": [
+        "Plánovanie schôdzok"
+      ],
+      "Browser, mobile, and desktop apps": [
+        "Aplikácie pre prehliadače, mobily a desktopy"
+      ],
+      "Built-in chat": [
+        "Vstavaný chat"
+      ],
+      "End-to-end encrypted screen sharing and ephemeral in-call chat": [
+        "End-to-end šifrované zdieľanie obrazovky a dočasný chat počas hovoru"
+      ],
+      "Meeting recording (coming soon)": [
+        "Nahrávanie stretnutia (čoskoro)"
+      ],
+      "One active meeting at a time": [
+        "Jeden aktívny hovor naraz"
+      ],
+      "Screen-sharing": [
+        "Zdieľanie obrazovky"
+      ],
+      "Unlimited meetings per day": [
+        "Neobmedzený počet stretnutí za deň"
+      ],
+      "Up to ${ n } meeting per day": [
+        "Až ${ n } stretnutie za deň",
+        "Až ${ n } stretnutia za deň",
+        "Až ${ n } stretnutí za deň",
+        "Až ${ n } stretnutí za deň"
+      ],
+      "Up to ${ n } participant": [
+        "Až do ${ n } účastníka",
+        "Až do ${ n } účastníkov",
+        "Až do ${ n } účastníkov",
+        "Až do ${ n } účastníkov"
+      ]
+    },
     "Message": {
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "Vaša bezplatná skúšobná verzia skončila. ${ nonAutoRenewalAction }"
@@ -8202,7 +8277,7 @@
     },
     "new_plans": {
       "Highest VPN speed": [
-        "Vysoká VPN rýchlosť"
+        "Vysoká rýchlosť VPN"
       ],
       "Keep your inbox organized with folders": [
         "Udržujte svoju doručenú poštu organizovanú pomocou priečinkov"
@@ -8499,7 +8574,7 @@
         "Šifrované VPN servery"
       ],
       "End-to-end encryption": [
-        "Šifrovanie End-to-end"
+        "End-to-end šifrovanie"
       ],
       "Existing ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } benefits": [
         "Existujúce výhody ${ PLAN_NAMES[PLANS.VPN_BUSINESS] }"
@@ -8535,7 +8610,7 @@
         "HTML podpisy"
       ],
       "Kill switch/always-on VPN": [
-        "Kill switch/Trvalá sieť VPN"
+        "Kill switch/vždy zapnutá VPN"
       ],
       "Limited support": [
         "Obmedzená podpora"
@@ -10510,11 +10585,6 @@
         "Navýšiť na ${ upsellPlanTitle }"
       ]
     },
-    "Price": {
-      "Free": [
-        "Zdarma"
-      ]
-    },
     "Progress bar description": {
       "${ contactsExported.length } out of ${ countContacts } contact successfully exported.": [
         "${ contactsExported.length } z ${ countContacts } kontaktov bol úspešne exportovaný.",
@@ -10637,7 +10707,7 @@
         "Po začatí platnosti predplatného môžete do 30 dní predplatné zrušiť a získať pomernú refundáciu."
       ],
       "Refer friends": [
-        "Odporučiť priateľov"
+        "Odporučiť priateľom"
       ],
       "Start earning credits": [
         "Začnite zarábať kredity"
