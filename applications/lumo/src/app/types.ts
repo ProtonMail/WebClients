@@ -4,6 +4,28 @@ import type { AttachmentMap } from './redux/slices/core/attachments';
 import type { ConversationMap } from './redux/slices/core/conversations';
 import type { MessageMap } from './redux/slices/core/messages';
 import type { SpaceMap } from './redux/slices/core/spaces';
+import {
+    type EncryptedWireTurn,
+    type GenerationResponseMessage,
+    Role,
+    type UnencryptedWireTurn,
+    type WireTurn,
+    isEncryptedWireTurn,
+    isRole,
+    isUnencryptedWireTurn,
+    isWireTurn,
+} from './types-api';
+
+// *** Turn aliases ***
+// Turn types are defined in types-api as WireTurn (matching backend schema)
+// We export them here as Turn for convenience throughout the codebase
+export type Turn = WireTurn;
+export type EncryptedTurn = EncryptedWireTurn;
+export type UnencryptedTurn = UnencryptedWireTurn;
+export const isTurn = isWireTurn;
+export const isEncryptedTurn = isEncryptedWireTurn;
+export const isUnencryptedTurn = isUnencryptedWireTurn;
+export { Role };
 
 // *** Various string aliases ***
 export type Base64 = string;
@@ -49,26 +71,6 @@ export type Encrypted = {
 export type Shallow = {
     encrypted?: undefined; // means the `encrypted` field is NOT present (or set to undefined)
 };
-
-// *** Role ***
-
-export enum Role {
-    Assistant = 'assistant',
-    User = 'user',
-    System = 'system',
-    ToolCall = 'tool_call',
-    ToolResult = 'tool_result',
-}
-
-export function isRole(value: any): value is Role {
-    return (
-        value === Role.Assistant ||
-        value === Role.User ||
-        value === Role.System ||
-        value === Role.ToolCall ||
-        value === Role.ToolResult
-    );
-}
 
 // *** Space ***
 
@@ -812,54 +814,6 @@ export type MasterKey = {
     masterKey: Base64;
 };
 
-// *** Turn ***
-
-export type WireImage = {
-    encrypted: boolean;
-    image_id: string;
-    data: string; // base64-encoded image bytes
-};
-
-export type Turn = {
-    role: Role;
-    content?: string;
-    encrypted?: boolean;
-    images?: WireImage[];
-};
-
-export type EncryptedTurn = Turn & { encrypted: true };
-export type UnencryptedTurn = Turn & { encrypted?: false };
-
-export function isTurn(obj: any): obj is Turn {
-    return (
-        obj &&
-        typeof obj === 'object' &&
-        'role' in obj &&
-        isRole(obj.role) &&
-        (obj.content === undefined || typeof obj.content === 'string') &&
-        (obj.encrypted === undefined || typeof obj.encrypted === 'boolean') &&
-        (obj.images === undefined || (Array.isArray(obj.images) && obj.images.every((img: any) => isWireImage(img))))
-    );
-}
-
-export function isWireImage(obj: any): obj is WireImage {
-    return (
-        obj &&
-        typeof obj === 'object' &&
-        typeof obj.encrypted === 'boolean' &&
-        typeof obj.image_id === 'string' &&
-        typeof obj.data === 'string'
-    );
-}
-
-export function isEncryptedTurn(obj: any): obj is EncryptedTurn {
-    return isTurn(obj) && obj.encrypted === true;
-}
-
-export function isUnencryptedTurn(obj: any): obj is UnencryptedTurn {
-    return isTurn(obj) && (obj.encrypted === false || obj.encrypted === undefined);
-}
-
 // *** Misc ***
 
 export type SiblingInfo = {
@@ -917,3 +871,42 @@ export enum LUMO_USER_TYPE {
     FREE = 'FREE',
     PAID = 'PAID',
 }
+
+export enum LUMO_API_ERRORS {
+    // CONTEXT_WINDOW_EXCEEDED = 'ContextWindow',
+    HIGH_DEMAND = 'HighDemand',
+    GENERATION_ERROR = 'GenerationError', // This is a catch-all for any error that occurs during generation
+    TIER_LIMIT = 'TierLimit', //not implemented yet for free and paid tiers - BE needs to be updated
+    GENERATION_REJECTED = 'GenerationRejected',
+    HARMFUL_CONTENT = 'HarmfulContent',
+    STREAM_DISCONNECTED = 'StreamDisconnected', // When the server closes the stream prematurely after queuing
+}
+
+export type RetryStrategy = 'simple' | 'try_again' | 'add_details' | 'more_concise' | 'think_longer' | 'custom';
+
+export interface ActionParams {
+    actionType: 'send' | 'edit' | 'regenerate';
+    newMessageContent?: string;
+    originalMessage?: Message;
+    isWebSearchButtonToggled?: boolean;
+    retryStrategy?: RetryStrategy;
+    customRetryInstructions?: string;
+}
+
+export interface ErrorContext {
+    actionType: string;
+    conversationId?: ConversationId;
+    actionParams: ActionParams;
+}
+
+export interface GenerationError {
+    type: LUMO_API_ERRORS;
+    conversationId: ConversationId;
+    originalMessage: GenerationResponseMessage;
+    actionParams?: ActionParams;
+}
+
+export type GenerationErrorAction = {
+    type: 'generation_error';
+    payload: GenerationError;
+};

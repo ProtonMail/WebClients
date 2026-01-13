@@ -1,8 +1,7 @@
 import { memo, useCallback, useRef, useState } from 'react';
 
 import type { HandleRegenerateMessage } from 'applications/lumo/src/app/hooks/useLumoActions';
-import type { Message, SiblingInfo } from 'applications/lumo/src/app/types';
-import type { RetryStrategy } from 'applications/lumo/src/app/types-api';
+import type { Message, RetryStrategy, SiblingInfo } from 'applications/lumo/src/app/types';
 import { clsx } from 'clsx';
 import { c } from 'ttag';
 import TurndownService from 'turndown';
