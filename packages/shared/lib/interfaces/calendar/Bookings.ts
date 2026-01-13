@@ -43,16 +43,15 @@ export interface ExternalBookingPagePayload {
     CalendarID: string;
     BookingUID: string;
     BookingKeySalt: string;
-    // Optional because of V1 Crypto model, can be mandatory once all pages migrated
-    CalendarKeySignature?: string;
-    CalendarPublicKey?: string;
+    CalendarKeySignature: string;
+    CalendarPublicKey: string;
     EncryptedContent: string;
     Duration: number | null;
     Timezone: string | null;
     DisplayName: string;
     Email: string;
     AvailableSlots: ExternalBookingPageSlotsPayload[];
-    Version: 1 | 2;
+    Version: 2;
 }
 
 export interface InternalBookingPagePayload {
