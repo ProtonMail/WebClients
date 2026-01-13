@@ -11053,8 +11053,10 @@ __metadata:
   dependencies:
     "@rowsncolumns/utils": "workspace:^"
     "@types/uzip": "npm:^0.20201231.2"
+    "@zip.js/zip.js": "npm:^2.7.57"
     fast-xml-parser: "npm:^5.2.3"
     rxjs: "npm:^7.8.2"
+    saxes: "npm:^6.0.0"
     uzip: "npm:^0.20201231.0"
     xlsx: "npm:^0.18.5"
   languageName: unknown
@@ -15651,10 +15653,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@zip.js/zip.js@npm:^2.8.11":
-  version: 2.8.11
-  resolution: "@zip.js/zip.js@npm:2.8.11"
-  checksum: 10/5cb2b382a58e932daf5493acf67f382fa54c74660307a3c85f7e70cdf8ea3bd41fecd4e64a763dce6cf1bd75638be1ba04e1a77a7a47d9ed7fb510aeb31c411e
+"@zip.js/zip.js@npm:^2.7.57, @zip.js/zip.js@npm:^2.8.11":
+  version: 2.8.14
+  resolution: "@zip.js/zip.js@npm:2.8.14"
+  checksum: 10/b24018bc1a63e68172598208ebea374e92631d3f5c550655d022143602cfe4850e567b292e4186fbac9973bc3f9490406fecd5eeed4618238ae4b46f52633efc
   languageName: node
   linkType: hard
 
