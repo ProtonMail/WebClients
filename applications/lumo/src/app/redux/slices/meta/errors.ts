@@ -108,15 +108,4 @@ export const selectHasTierErrors = createSelector(
     (errorsState) => errorsState.tierErrors.length > 0
 );
 
-// export const addTestTierError = () => (dispatch: LumoDispatch) => {
-//     dispatch(
-//         addTierError({
-//             userType: LUMO_USER_TYPE.FREE,
-//             errorTitle: "You've reached your weekly limit of 40 questions.",
-//             errorMessage: "Upgrade to Lumo Plus to get unlimited questions and access to all premium features.",
-//             errorType: LUMO_API_ERRORS.TIER_LIMIT,
-//         })
-//     );
-// };
-
 export default errorsSlice.reducer;
