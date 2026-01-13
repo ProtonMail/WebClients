@@ -1,104 +1,129 @@
-// FIXME FIXME FIXME
-//
-// Most of those types are duplicated from `applications/lumo/src/app/types-api.ts`!
-// It would be wise to merge them to have a single source of truth.
-// I'm not sure what is the best location: here (lib/lumo-api-client) or there (applications/lumo) -> TBD.
-//
-// FIXME FIXME FIXME
-import type { WireImage } from '../../../types-api';
+/* Types for the lumo-api-client library.
+ *
+ * This file contains:
+ * 1. Library-internal types (config, callbacks, interceptors)
+ * 2. Re-exports from types-api.ts (backend API types)
+ * 3. Re-exports from types.ts (app-wide types)
+ *
+ * Most types are re-exported to avoid breaking existing imports within the library.
+ */
 
-export type Role = 'assistant' | 'user' | 'system' | 'tool_call' | 'tool_result';
+// *** Import and re-export from types-api.ts (Backend API types) ***
+import type {
+    Decrypted,
+    DecryptedImageDataMessage,
+    DecryptedTokenDataMessage,
+    DoneMessage,
+    Encrypted,
+    EncryptedImageDataMessage,
+    EncryptedTokenDataMessage,
+    EncryptedWireTurn,
+    ErrorMessage,
+    GenerationResponseMessage,
+    GenerationResponseMessageDecrypted,
+    GenerationTarget,
+    HarmfulMessage,
+    ImageDataMessage,
+    IngestingMessage,
+    LumoApiGenerationRequest,
+    QueuedMessage,
+    RejectedMessage,
+    RequestableGenerationTarget,
+    Role,
+    TimeoutMessage,
+    TokenDataMessage,
+    ToolName,
+    UnencryptedWireTurn,
+    WireImage,
+    WireTurn,
+} from '../../../types-api';
 
-export type Turn = {
-    role: Role;
-    content?: string;
-    encrypted?: boolean;
-    images?: WireImage[];
+import {
+    isDecrypted,
+    isDecryptedImageDataMessage,
+    isDecryptedTokenDataMessage,
+    isDoneMessage,
+    isEncrypted,
+    isEncryptedImageDataMessage,
+    isEncryptedTokenDataMessage,
+    isEncryptedWireTurn,
+    isErrorMessage,
+    isGenerationResponseMessage,
+    isGenerationTarget,
+    isHarmfulMessage,
+    isImageDataMessage,
+    isIngestingMessage,
+    isQueuedMessage,
+    isRejectedMessage,
+    isTimeoutMessage,
+    isTokenDataMessage,
+    isUnencryptedWireTurn,
+    isWireTurn,
+} from '../../../types-api';
+
+// Re-export types with aliases
+export type {
+    Decrypted,
+    DecryptedImageDataMessage,
+    DecryptedTokenDataMessage,
+    DoneMessage,
+    Encrypted,
+    EncryptedImageDataMessage,
+    EncryptedTokenDataMessage,
+    ErrorMessage,
+    GenerationResponseMessage,
+    GenerationResponseMessageDecrypted,
+    GenerationTarget,
+    HarmfulMessage,
+    ImageDataMessage,
+    IngestingMessage,
+    LumoApiGenerationRequest,
+    QueuedMessage,
+    RejectedMessage,
+    RequestableGenerationTarget,
+    Role,
+    TimeoutMessage,
+    TokenDataMessage,
+    ToolName,
+    WireImage,
 };
+export type EncryptedTurn = EncryptedWireTurn;
+export type UnencryptedTurn = UnencryptedWireTurn;
+export type Turn = WireTurn;
 
-export type EncryptedTurn = Turn & { encrypted: true };
-
-export type Base64 = string;
-export type RequestId = string;
-
-export type AesGcmCryptoKey = {
-    type: 'AesGcmCryptoKey';
-    encryptKey: CryptoKey;
+// Re-export functions with aliases
+export {
+    isDecrypted,
+    isDecryptedImageDataMessage,
+    isDecryptedTokenDataMessage,
+    isDoneMessage,
+    isEncrypted,
+    isEncryptedImageDataMessage,
+    isEncryptedTokenDataMessage,
+    isErrorMessage,
+    isGenerationResponseMessage,
+    isGenerationTarget,
+    isHarmfulMessage,
+    isImageDataMessage,
+    isIngestingMessage,
+    isQueuedMessage,
+    isRejectedMessage,
+    isTimeoutMessage,
+    isTokenDataMessage,
 };
+export const isEncryptedTurn = isEncryptedWireTurn;
+export const isUnencryptedTurn = isUnencryptedWireTurn;
+export const isTurn = isWireTurn;
 
-export type ToolName = 'proton_info' | 'web_search' | 'weather' | 'stock' | 'cryptocurrency' | 'generate_image';
+// *** Import and re-export from types.ts (App-wide types) ***
+import type { Base64, RequestId, Status } from '../../../types';
+export type { Base64, RequestId, Status };
 
-export type RequestableGenerationTarget = 'message' | 'title';
+// *** Import and re-export from crypto/types.ts ***
+import type { AesGcmCryptoKey } from '../../../crypto/types';
+export type { AesGcmCryptoKey };
 
-export type GenerationTarget = 'message' | 'title' | 'tool_call' | 'tool_result';
-
-export type LumoApiGenerationRequest = {
-    type: 'generation_request';
-    turns: Turn[];
-    options?: {
-        tools?: ToolName[] | boolean;
-    };
-    targets?: RequestableGenerationTarget[];
-    request_key?: string; // aes-gcm-256, pgp-encrypted, base64
-    request_id?: RequestId; // uuid used solely for AEAD encryption
-};
-
-// Type utilities for encryption state
-export type Encrypted<T extends { encrypted?: boolean }> = Omit<T, 'encrypted'> & { encrypted: true };
-export type Decrypted<T extends { encrypted?: boolean }> = Omit<T, 'encrypted'> & { encrypted?: false };
-
-export type QueuedMessage = { type: 'queued'; target?: GenerationTarget };
-export type IngestingMessage = { type: 'ingesting'; target: GenerationTarget };
-export type TokenDataMessage = {
-    type: 'token_data';
-    target: GenerationTarget;
-    count: number;
-    content: string;
-    encrypted?: boolean;
-};
-export type ImageDataMessage = {
-    type: 'image_data';
-    image_id?: string;
-    data: string;
-    is_final?: boolean;
-    seed?: number;
-    encrypted?: boolean;
-};
-
-export type EncryptedTokenDataMessage = Encrypted<TokenDataMessage>;
-export type DecryptedTokenDataMessage = Decrypted<TokenDataMessage>;
-export type EncryptedImageDataMessage = Encrypted<ImageDataMessage>;
-export type DecryptedImageDataMessage = Decrypted<ImageDataMessage>;
-
-export type DoneMessage = { type: 'done' };
-export type TimeoutMessage = { type: 'timeout' };
-export type ErrorMessage = { type: 'error' };
-export type RejectedMessage = { type: 'rejected' };
-export type HarmfulMessage = { type: 'harmful' };
-
-export type GenerationResponseMessage =
-    | QueuedMessage
-    | IngestingMessage
-    | TokenDataMessage
-    | ImageDataMessage
-    | DoneMessage
-    | TimeoutMessage
-    | ErrorMessage
-    | RejectedMessage
-    | HarmfulMessage;
-
-export type GenerationResponseMessageDecrypted =
-    | QueuedMessage
-    | IngestingMessage
-    | DecryptedTokenDataMessage
-    | DecryptedImageDataMessage
-    | DoneMessage
-    | TimeoutMessage
-    | ErrorMessage
-    | RejectedMessage
-    | HarmfulMessage;
-
-export type Status = 'succeeded' | 'failed';
+// *** Library-internal types (lumo-api-client only) ***
 
 // Configuration interfaces
 export interface LumoApiClientConfig {
@@ -128,121 +153,6 @@ export interface AssistantCallOptions {
     requestId?: RequestId;
     requestTitle?: boolean;
     autoGenerateEncryption?: boolean;
-}
-
-// Type guards
-export function isQueuedMessage(obj: any): obj is QueuedMessage {
-    return typeof obj === 'object' && obj !== null && obj.type === 'queued';
-}
-
-export function isIngestingMessage(obj: any): obj is IngestingMessage {
-    return (
-        typeof obj === 'object' &&
-        obj !== null &&
-        obj.type === 'ingesting' &&
-        'target' in obj &&
-        isGenerationTarget(obj.target)
-    );
-}
-
-export function isTokenDataMessage(obj: any): obj is TokenDataMessage {
-    return (
-        typeof obj === 'object' &&
-        obj !== null &&
-        obj.type === 'token_data' &&
-        'target' in obj &&
-        'count' in obj &&
-        'content' in obj &&
-        isGenerationTarget(obj.target) &&
-        typeof obj.count === 'number' &&
-        typeof obj.content === 'string' &&
-        (!('encrypted' in obj) || typeof obj.encrypted === 'boolean')
-    );
-}
-
-export function isImageDataMessage(obj: any): obj is ImageDataMessage {
-    const isValid =
-        typeof obj === 'object' &&
-        obj !== null &&
-        obj.type === 'image_data' &&
-        (!('image_id' in obj) || typeof obj.image_id === 'string') &&
-        (!('data' in obj) || typeof obj.data === 'string') &&
-        (!('is_final' in obj) || typeof obj.is_final === 'boolean') &&
-        (!('seed' in obj) || typeof obj.seed === 'number') &&
-        (!('encrypted' in obj) || typeof obj.encrypted === 'boolean');
-    if (!isValid) {
-        console.warn('[IMAGE_DATA] Type guard failed:', obj);
-    }
-    return isValid;
-}
-
-// Type guard utilities for encryption state
-export function isEncrypted<T extends { encrypted?: boolean }>(
-    obj: any,
-    guard: (obj: any) => obj is T
-): obj is Encrypted<T> {
-    return guard(obj) && obj.encrypted === true;
-}
-
-export function isDecrypted<T extends { encrypted?: boolean }>(
-    obj: any,
-    guard: (obj: any) => obj is T
-): obj is Decrypted<T> {
-    return guard(obj) && (obj.encrypted === undefined || obj.encrypted === false);
-}
-
-export function isEncryptedTokenDataMessage(obj: any): obj is EncryptedTokenDataMessage {
-    return isEncrypted(obj, isTokenDataMessage);
-}
-
-export function isDecryptedTokenDataMessage(obj: any): obj is DecryptedTokenDataMessage {
-    return isDecrypted(obj, isTokenDataMessage);
-}
-
-export function isEncryptedImageDataMessage(obj: any): obj is EncryptedImageDataMessage {
-    return isEncrypted(obj, isImageDataMessage);
-}
-
-export function isDecryptedImageDataMessage(obj: any): obj is DecryptedImageDataMessage {
-    return isDecrypted(obj, isImageDataMessage);
-}
-
-export function isDoneMessage(obj: any): obj is DoneMessage {
-    return typeof obj === 'object' && obj !== null && obj.type === 'done';
-}
-
-export function isTimeoutMessage(obj: any): obj is TimeoutMessage {
-    return typeof obj === 'object' && obj !== null && obj.type === 'timeout';
-}
-
-export function isErrorMessage(obj: any): obj is ErrorMessage {
-    return typeof obj === 'object' && obj !== null && obj.type === 'error';
-}
-
-export function isRejectedMessage(obj: any): obj is RejectedMessage {
-    return typeof obj === 'object' && obj !== null && obj.type === 'rejected';
-}
-
-export function isHarmfulMessage(obj: any): obj is HarmfulMessage {
-    return typeof obj === 'object' && obj !== null && obj.type === 'harmful';
-}
-
-export function isGenerationResponseMessage(obj: any): obj is GenerationResponseMessage {
-    return (
-        isQueuedMessage(obj) ||
-        isIngestingMessage(obj) ||
-        isTokenDataMessage(obj) ||
-        isImageDataMessage(obj) ||
-        isDoneMessage(obj) ||
-        isTimeoutMessage(obj) ||
-        isErrorMessage(obj) ||
-        isRejectedMessage(obj) ||
-        isHarmfulMessage(obj)
-    );
-}
-
-export function isGenerationTarget(value: any): value is GenerationTarget {
-    return ['message', 'title', 'tool_call', 'tool_result'].includes(value);
 }
 
 /**
