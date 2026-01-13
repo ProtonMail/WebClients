@@ -164,12 +164,12 @@ const DriveIndexingProviderInner = ({ children, userId }: { children: ReactNode;
                                 const inferredMime = getMimeTypeFromExtension(file.name) || 'application/octet-stream';
                                 const fileObj = new File([fileData], file.name, { type: inferredMime });
                                 const result = await fileProcessingService.processFile(fileObj);
-                                
-                                if (result.success && result.result) {
+
+                                if (result.type === 'text') {
                                     documents.push({
                                         id: file.nodeUid,
                                         name: file.name,
-                                        content: result.result.convertedContent,
+                                        content: result.content,
                                         mimeType: inferredMime,
                                         size: fileData.byteLength,
                                         modifiedTime: Date.now(),
@@ -334,11 +334,11 @@ const DriveIndexingProviderInner = ({ children, userId }: { children: ReactNode;
                 const fileObj = new File([fileData], fileName, { type: inferredMime });
 
                 const result = await fileProcessingService.processFile(fileObj);
-                if (result.success && result.result) {
+                if (result.type === 'text') {
                     const document: DriveDocument = {
                         id: fileNodeUid,
                         name: fileName,
-                        content: result.result.convertedContent,
+                        content: result.content,
                         mimeType: inferredMime,
                         size: fileData.byteLength,
                         modifiedTime: Date.now(),
