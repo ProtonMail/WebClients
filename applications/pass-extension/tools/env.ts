@@ -17,7 +17,6 @@ const API_ENV = parseEnvVar('API_ENV', 'proton.me', String);
 const BETA = parseEnvVar('BETA', false, Boolean);
 const BUILD_TARGET = parseEnvVar('BUILD_TARGET', 'chrome', String);
 const BUILD_STORE_TARGET = parseEnvVar('BUILD_STORE_TARGET', '', String);
-const CLEAN_MANIFEST = parseEnvVar('CLEAN_MANIFEST', false, parseBool);
 const ENV = parseEnvVar('NODE_ENV', 'development', String);
 const HTTP_DEBUGGER = parseEnvVar('HTTP_DEBUGGER', false, parseBool);
 const HTTP_DEBUGGER_PORT = parseEnvVar('HTTP_DEBUGGER_PORT', 3000, Number);
@@ -40,7 +39,6 @@ export default {
     BETA,
     BUILD_TARGET,
     BUILD_STORE_TARGET,
-    CLEAN_MANIFEST,
     E2E_TESTS,
     ENV,
     HOT_MANIFEST_UPDATE,
