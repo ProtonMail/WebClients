@@ -20,24 +20,31 @@ const PasswordUnlockContext = createContext<PasswordUnlockContextValue>(async ()
 
 export const usePasswordUnlock = () => useContext(PasswordUnlockContext);
 
-/** Should only be used once the app has booted and state hydrated */
+/** Returns a password type switch function for use after app boot and state
+ * hydration. Checks `hasOfflinePassword` to ensure i18n strings are only adapted
+ * when the user can actually use their second password with a local verifier.
+ * This matters for both SSO and two-password users during password verification.
+ * NOTE: Requires unlocked session and hydrated app state */
 export const usePasswordTypeSwitch = () => {
-    /** Only web & desktop can use the user's second password as an unlock
-     * mechanism. Any password verification done in the extension must go
-     * through SRP to validate the primary user password. */
-    const twoPwd = useSelector(selectHasTwoPasswordMode) && !EXTENSION_BUILD;
+    const authStore = useAuthStore();
+    const hasOfflinePassword = Boolean(authStore?.hasOfflinePassword());
+    const twoPwd = useSelector(selectHasTwoPasswordMode) && hasOfflinePassword;
+    const sso = useSelector(selectIsSSO) && hasOfflinePassword;
     const extra = useSelector(selectExtraPasswordEnabled);
-    const sso = useSelector(selectIsSSO);
 
     return useCallback(passwordTypeSwitch({ extra, sso, twoPwd }), [extra, sso, twoPwd]);
 };
 
-/** Should only be used before the app has booted and state
- * has not been hydrated yet. Otherwise, prefer `usePasswordTypeSwitch` */
+/** Returns a password type switch function for use before app boot and state
+ * hydration. Use this to derive i18n strings when the session is password-locked
+ * and hydrated state is unavailable. Assumes offline password checks have already
+ * been performed—SSO or two-password users should never reach a password-lock
+ * screen without a valid offline config/verifier.
+ * NOTE: Only for pre-boot password-lock screens */
 export const useAuthStorePasswordTypeSwitch = () => {
     const authStore = useAuthStore();
     const extra = Boolean(authStore?.getExtraPassword());
-    const twoPwd = Boolean(authStore?.getTwoPasswordMode()) && !EXTENSION_BUILD;
+    const twoPwd = Boolean(authStore?.getTwoPasswordMode());
     const sso = Boolean(authStore?.getSSO());
 
     return useCallback(passwordTypeSwitch({ extra, sso, twoPwd }), [extra, sso, twoPwd]);
@@ -53,14 +60,6 @@ export const PasswordUnlockProvider: FC<PropsWithChildren<PasswordUnlockProps>> 
     const sso = useSelector(selectIsSSO);
     const twoPwd = useSelector(selectHasTwoPasswordMode);
     const hasOfflinePassword = Boolean(authStore?.hasOfflinePassword());
-
-    /** SSO or two-pwd mode users which do not have an offline password
-     * should trigger a re-auth via account when unlocking. For SSO users,
-     * we cannot verify their backup-password without going through account.
-     * Same for two-password mode users, the pass scope is insufficient to
-     * retrieve the user salts in order to verify the second password */
-    const shouldReauth = (sso || (twoPwd && !EXTENSION_BUILD)) && !hasOfflinePassword;
-    const Component = shouldReauth ? ReauthModal : PasswordModal;
 
     const getInitialModalState = useCallback((): PasswordModalState => {
         const { message, title, label } = passwordTypeSwitch({
@@ -98,6 +97,13 @@ export const PasswordUnlockProvider: FC<PropsWithChildren<PasswordUnlockProps>> 
 
     const modal = useAsyncModalHandles<string, PasswordModalState>({ getInitialModalState });
     const { handler, abort, resolver, state, key } = modal;
+
+    /** SSO and two-password users without an offline password must re-auth
+     * via account to unlock. SSO users require account to verify their backup
+     * password; two-password users need it to retrieve user salts for second
+     * password verification (pass scope alone is insufficient). */
+    const shouldReauth = (sso || (twoPwd && !state.reauth?.srpDowngrade)) && !hasOfflinePassword;
+    const Component = shouldReauth ? ReauthModal : PasswordModal;
 
     return (
         <PasswordUnlockContext.Provider value={handler}>
