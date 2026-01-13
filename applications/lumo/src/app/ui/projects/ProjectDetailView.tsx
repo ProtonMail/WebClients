@@ -448,7 +448,7 @@ const ProjectDetailViewInner = () => {
                                 )}
                             </div>
                         ) : (
-                            <div className="project-detail-conversations pt-5">
+                            <div className="project-detail-conversations pt-5 mb-0">
                                 <div className="project-detail-conversation-list p-0 md:py-4 md:pl-8 md:pr-6">
                                     <SelectableConversationList
                                         groups={
