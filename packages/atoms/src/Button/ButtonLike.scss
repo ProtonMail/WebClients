@@ -273,6 +273,12 @@ im.$media-expressions: $media-expressions;
 	--button-hover-text-color: var(--interaction-norm);
 }
 
+.button-outline-weak-text-norm {
+	--button-default-text-color: var(--interaction-norm);
+	--button-hover-text-color: var(--interaction-norm);
+	--button-active-text-color: var(--interaction-norm);
+}
+
 /*
  * Modifiers
  */
