@@ -31,7 +31,7 @@ const HeartbeatEnabled: false = false
 export const TIME_TO_WAIT_BEFORE_CLOSING_CONNECTION_AFTER_DOCUMENT_HIDES = hours_to_ms(1)
 
 export const DebugConnection = {
-  enabled: isLocalEnvironment() && true,
+  enabled: isLocalEnvironment() && false,
   url: 'ws://localhost:4000/websockets',
 }
 
