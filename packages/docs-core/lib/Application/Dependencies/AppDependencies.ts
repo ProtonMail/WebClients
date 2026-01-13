@@ -31,7 +31,6 @@ import { CreateThread } from '../../UseCase/CreateThread'
 import { LoadThreads } from '../../UseCase/LoadThreads'
 import { WebsocketService } from '../../Services/Websockets/WebsocketService'
 import { VerifyMessages } from '../../UseCase/VerifyMessages'
-import { ExportAndDownload } from '../../UseCase/ExportAndDownload'
 import type { ImageProxyParams } from '../../Api/Types/ImageProxyParams'
 import { MetricService } from '../../Services/Metrics/MetricService'
 import { RecentDocumentsService } from '../../Services/recent-documents'
@@ -299,17 +298,12 @@ export class AppDependencies extends DependencyContainer {
       return new FetchRealtimeToken(this.get<DocsApi>(App_TYPES.DocsApi))
     })
 
-    this.bind(App_TYPES.ExportAndDownload, () => {
-      return new ExportAndDownload()
-    })
-
     this.bind(App_TYPES.PublicDocLoader, () => {
       return new PublicDocLoader(
         compatWrapper.getPublicCompat(),
         this.get<WebsocketService>(App_TYPES.WebsocketService),
         this.get<DocsApi>(App_TYPES.DocsApi),
         this.get<LoadDocument>(App_TYPES.LoadDocument),
-        this.get<ExportAndDownload>(App_TYPES.ExportAndDownload),
         this.get<InternalEventBusInterface>(App_TYPES.EventBus),
         this.get<FetchDecryptedCommit>(App_TYPES.LoadCommit),
         this.get<GetDocumentMeta>(App_TYPES.GetDocumentMeta),
@@ -345,7 +339,6 @@ export class AppDependencies extends DependencyContainer {
         this.get<DuplicateDocument>(App_TYPES.DuplicateDocument),
         this.get<CreateNewDocument>(App_TYPES.CreateNewDocument),
         this.get<GetDocumentMeta>(App_TYPES.GetDocumentMeta),
-        this.get<ExportAndDownload>(App_TYPES.ExportAndDownload),
         this.get<GetNode>(App_TYPES.GetNode),
         this.get<InternalEventBusInterface>(App_TYPES.EventBus),
         this.get<LoggerInterface>(App_TYPES.Logger),

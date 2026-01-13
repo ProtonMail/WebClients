@@ -12,7 +12,6 @@ import {
   type ClientRequiresEditorMethods,
   type DataTypesThatDocumentCanBeExportedAs,
 } from '@proton/docs-shared'
-import type { ExportAndDownload } from '../UseCase/ExportAndDownload'
 import type { SerializedEditorState } from 'lexical'
 import type { DocumentState, DocumentStateValues, PublicDocumentState } from '../State/DocumentState'
 import metrics from '@proton/metrics'
@@ -21,6 +20,7 @@ import { EventTypeEnum, EventType } from '@proton/docs-proto'
 import { LoadLogger } from '../LoadLogger/LoadLogger'
 import { PostApplicationError } from '../Application/ApplicationEvent'
 import { c } from 'ttag'
+import { downloadExport } from '../UseCase/ExportAndDownload'
 
 export interface EditorControllerInterface {
   copyCurrentSelection(format: DataTypesThatDocumentCanBeExportedAs): Promise<void>
@@ -54,7 +54,6 @@ export class EditorController implements EditorControllerInterface {
 
   constructor(
     private readonly logger: LoggerInterface,
-    private _exportAndDownload: ExportAndDownload,
     private readonly documentState: DocumentState | PublicDocumentState,
     private eventBus: InternalEventBusInterface,
   ) {
@@ -344,7 +343,7 @@ export class EditorController implements EditorControllerInterface {
 
     const data = await this.exportData(format)
 
-    await this._exportAndDownload.execute(data, this.documentState.getProperty('documentName'), format)
+    downloadExport(data, this.documentState.getProperty('documentName'), format)
   }
 
   public async getDocumentClientId(): Promise<number | undefined> {
