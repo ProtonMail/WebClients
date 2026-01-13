@@ -1,5 +1,6 @@
 import type { AesGcmCryptoKey } from '../../crypto/types';
 import { DbApi } from '../../indexedDb/db';
+import type { SpaceMap } from '../../redux/slices/core/spaces';
 import { Role } from '../../types';
 import type { DriveDocument } from '../../types/documents';
 import { applyRetentionPolicy } from '../../ui/sidepanel/helpers';
@@ -19,9 +20,6 @@ const buildSearchableText = (doc: DriveDocument, includeChunkTitle = false): str
     return `${doc.name}${chunkContext} ${doc.folderPath || ''} ${doc.content}`;
 };
 
-// TODO: looks like it can be replaced by SpaceMap in core/spaces.ts
-type SpaceMap = Record<string, { isProject?: boolean; projectName?: string; projectIcon?: string }>;
-
 const getProjectInfo = (spaceId: string, spaces: SpaceMap): { projectName?: string; projectIcon?: string } => {
     const space = spaces[spaceId];
     if (space?.isProject) {
@@ -33,6 +31,7 @@ const getProjectInfo = (spaceId: string, spaces: SpaceMap): { projectName?: stri
 export class SearchService {
     private static instances: Map<string, SearchService> = new Map();
     private static defaultInstance: SearchService | null = null;
+
     // Keep the userId to allow per-user instances when needed
     private constructor(private readonly userId?: string) {
         if (userId) {
