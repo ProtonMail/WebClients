@@ -127,7 +127,7 @@ function DirectoryTreeBranch({
                             onClick={handleExpand}
                             disabled={isLoading}
                         >
-                            <Icon name="chevron-down" className="border border-norm rounded-50" />
+                            <Icon name="chevron-up" className="border border-norm rounded-50" />
                         </button>
                     )}
 
