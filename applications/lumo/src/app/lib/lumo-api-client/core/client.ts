@@ -413,12 +413,13 @@ export class LumoApiClient {
     async executeQuickRequest(builder: RequestBuilder, api: Api): Promise<string> {
         const turns = builder.getTurns();
 
-        if (turns.length !== 1 || turns[0].role !== 'user') {
+        const turn = turns[0];
+        if (!turn || turns.length !== 1 || turn.role !== 'user') {
             throw new Error('Quick requests must contain exactly one user message');
         }
 
         const options = builder.getOptions();
-        return this.quickChat(api, turns[0].content || '', {
+        return this.quickChat(api, turn.content || '', {
             enableWebSearch: options.enableExternalTools,
             signal: options.signal,
         });

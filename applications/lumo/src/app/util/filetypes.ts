@@ -493,9 +493,14 @@ export function getAllSupportedExtensions(): Set<string> {
 export function getExtensionToMimeTypeMap(): Record<string, string> {
     const map: Record<string, string> = {};
     Object.values(FILE_TYPE_CONFIGS).forEach((config) => {
+        // Use the first MIME type as the primary one
+        const mime = config.mimeTypes[0];
+        if (!mime) {
+            console.warn('Config has no mime types defined');
+            return;
+        }
         config.extensions.forEach((ext) => {
-            // Use the first MIME type as the primary one
-            map[ext] = config.mimeTypes[0];
+            map[ext] = mime;
         });
     });
     return map;
