@@ -1,0 +1,11 @@
+.provider-users-table.simple-table--responsive-stacked {
+	@container (max-width: 35rem) {
+		.provider-users-table-cell {
+			padding-inline: var(--space-6);
+		}
+
+		.provider-users-table-cell-check-users {
+			padding-inline: 0;
+		}
+	}
+}

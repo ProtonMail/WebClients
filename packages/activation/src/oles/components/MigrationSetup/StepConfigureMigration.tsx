@@ -1,10 +1,10 @@
-import { type FC, useEffect } from 'react';
+import type { FC } from 'react';
 
-import { c, msgid } from 'ttag';
+import { c } from 'ttag';
 
-import { Checkbox, InputFieldTwo, Label, Option, SelectTwo } from '@proton/components';
+import { Checkbox, Label } from '@proton/components';
 
-import type { MigrationSetupModel, Product, TimePeriod } from '../../types';
+import type { MigrationSetupModel, Product } from '../../types';
 
 const availableProducts: { id: Product; label: string }[] = [
     {
@@ -21,32 +21,7 @@ const availableProducts: { id: Product; label: string }[] = [
     },
 ];
 
-const getTimePeriodLabel = (n: number) => c('BOSS').ngettext(msgid`${n} year ago`, `${n} years ago`, n);
-
-const timePeriods: { id: TimePeriod; label: string }[] = [
-    {
-        id: 'all',
-        label: c('BOSS').t`Everything`,
-    },
-    {
-        id: '1yr',
-        label: getTimePeriodLabel(1),
-    },
-    {
-        id: '2yr',
-        label: getTimePeriodLabel(2),
-    },
-    {
-        id: '5yr',
-        label: getTimePeriodLabel(5),
-    },
-];
-
 const StepConfigureMigration: FC<{ model: MigrationSetupModel }> = ({ model }) => {
-    useEffect(() => {
-        model.setSelectedProducts(['Mail', 'Calendar', 'Contacts']);
-    }, []);
-
     const handleServiceSelected = (serviceId: Product) => () => {
         const nextValue = model.selectedProducts.includes(serviceId)
             ? model.selectedProducts.filter((id) => id !== serviceId)
@@ -78,30 +53,15 @@ const StepConfigureMigration: FC<{ model: MigrationSetupModel }> = ({ model }) =
                         <Label htmlFor={`migrate-${s.id}`}>{s.label}</Label>
                     </div>
                 ))}
-            </section>
-
-            <section>
-                <header className="mt-8 mb-2">
-                    <div className="text-bold mb-1">{c('BOSS').t`Transfer data from`}</div>
-                </header>
-                <SelectTwo value={model.timePeriod} onChange={({ value }) => model.setTimePeriod(value)}>
-                    {timePeriods.map((tp) => (
-                        <Option key={tp.id} value={tp.id} title={tp.label} />
-                    ))}
-                </SelectTwo>
-            </section>
-
-            <section>
-                <header className="mt-8 mb-2">
-                    <div className="text-bold mb-1">{c('BOSS').t`Who will be notified?`}</div>
-                    <div className="color-weak">{c('BOSS')
-                        .t`Email notifications will be sent when migration starts and when it’s completed. You will also be notified if there are errors and if migration is paused due to expired links.`}</div>
-                </header>
-                <InputFieldTwo
-                    value={model.notifyList.join('')}
-                    onChange={(e) => model.setNotifyList([e.target.value])}
-                    placeholder={c('BOSS').t`Add more users...`}
-                />
+                <div className="py-1 color-weak">
+                    <Checkbox
+                        className="mr-2"
+                        onChange={() => model.setImportOrganizationSettings(!model.importOrganizationSettings)}
+                        checked={model.importOrganizationSettings}
+                        id={`migrate-settings`}
+                    />
+                    <Label htmlFor={`migrate-settings`}>{c('BOSS').t`Organization settings`}</Label>
+                </div>
             </section>
         </div>
     );
