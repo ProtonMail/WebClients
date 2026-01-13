@@ -62,15 +62,23 @@ export const getIsUnreachableError = (e: any) => {
     if (!e) {
         return false;
     }
-    // On 503, even if there's response, it's an unreachable error
-    if (e.status === HTTP_ERROR_CODES.SERVICE_UNAVAILABLE) {
-        return true;
+
+    switch (e.status) {
+        // On 500/503, even if there's response, it's an unreachable error
+        case HTTP_ERROR_CODES.INTERNAL_SERVER_ERROR:
+        case HTTP_ERROR_CODES.SERVICE_UNAVAILABLE:
+            return true;
+        // On 502 or 504, we verify that the API did not actually give a response.
+        // It can return these codes when acting as a proxy (e.g. email-list unsubscribe).
+        case HTTP_ERROR_CODES.BAD_GATEWAY:
+        case HTTP_ERROR_CODES.GATEWAY_TIMEOUT:
+            return e.data?.Code === undefined;
+        // 505s are likely VPN access issues
+        case HTTP_ERROR_CODES.VERSION_NOT_SUPPORTED:
+            return false;
+        default:
+            return e.status ? e.status > 500 : false;
     }
-    // On 502 or 504, we verify that the API did not actually give a response. It can return these codes when acting as a proxy (e.g. email-list unsubscribe).
-    return (
-        [HTTP_ERROR_CODES.BAD_GATEWAY, HTTP_ERROR_CODES.GATEWAY_TIMEOUT].includes(e.status) &&
-        e.data?.Code === undefined
-    );
 };
 
 export const getIsNetworkError = (e: any) => {
