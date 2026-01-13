@@ -210,6 +210,7 @@ export const useExternalBookingLoader = () => {
                 let failedToVerifyCalendarKey = false;
                 let calendarPublicKey: PublicKeyReference | undefined;
                 if (
+                    // TODO what to do here? Should we remove the === 2 test
                     bookingPageData.Version === 2 &&
                     bookingPageData.CalendarPublicKey &&
                     bookingPageData.CalendarKeySignature
