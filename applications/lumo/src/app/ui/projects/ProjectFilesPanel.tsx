@@ -278,7 +278,7 @@ export const ProjectFilesPanel = ({
         >
             <div className="project-files-panel-content">
                 {/* Instructions Section */}
-                <div className="project-files-section flex-none md:flex-1">
+                <div className="project-files-section flex-none md:flex-1 flex flex-column flex-nowrap">
                     <div className="project-files-section-header">
                         <h3 className="project-files-section-title flex flex-nowrap items-center gap-1">
                             {c('collider_2025:Title').t`Instructions`}{' '}
@@ -304,9 +304,9 @@ export const ProjectFilesPanel = ({
                             <Icon name="pen" size={4} />
                         </Button>
                     </div>
-                    <div className="project-files-section-content">
+                    <div className="project-files-section-content flex-auto">
                         {instructions ? (
-                            <p className="project-instructions-text">{instructions}</p>
+                            <p className="project-instructions-text h-full">{instructions}</p>
                         ) : (
                             <button className="project-instructions-add" onClick={onEditInstructions}>
                                 <Icon name="plus" size={4} />
