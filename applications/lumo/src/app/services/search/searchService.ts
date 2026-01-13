@@ -791,10 +791,11 @@ export class SearchService {
                 .filter((doc) => doc.parentDocumentId === documentId)
                 .sort((a, b) => (a.chunkIndex || 0) - (b.chunkIndex || 0));
 
-            if (allChunks.length > 0) {
+            const chunk0 = allChunks[0];
+            if (chunk0) {
                 // Return a combined document
                 return {
-                    ...allChunks[0],
+                    ...chunk0,
                     id: documentId,
                     content: allChunks.map((c) => c.content).join('\n\n'),
                     isChunk: false,
@@ -822,11 +823,12 @@ export class SearchService {
             .filter((doc) => doc.name === name && doc.isChunk)
             .sort((a, b) => (a.chunkIndex || 0) - (b.chunkIndex || 0));
 
-        if (chunks.length > 0) {
+        const chunk0 = chunks[0];
+        if (chunk0) {
             // Return a combined document
             return {
-                ...chunks[0],
-                id: chunks[0].parentDocumentId || chunks[0].id,
+                ...chunk0,
+                id: chunk0.parentDocumentId || chunk0.id,
                 content: chunks.map((c) => c.content).join('\n\n'),
                 isChunk: false,
                 parentDocumentId: undefined,
