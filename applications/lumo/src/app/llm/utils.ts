@@ -1,6 +1,5 @@
-import type { MessageMap } from '../redux/slices/core/messages';
 import type { Attachment, ContentBlock, Message } from '../types';
-import { getApproximateTokenCount } from './tokenizer';
+import { countTokens } from './tokenizer';
 
 /**
  * Calculate token count for a single content block.
@@ -9,39 +8,16 @@ import { getApproximateTokenCount } from './tokenizer';
 function calculateBlockTokens(block: ContentBlock): number {
     switch (block.type) {
         case 'text':
-            return getApproximateTokenCount(block.content);
+            return countTokens(block.content);
         case 'tool_call':
-            return getApproximateTokenCount(block.content);
+            return countTokens(block.content);
         case 'tool_result':
-            return getApproximateTokenCount(block.content);
+            return countTokens(block.content);
         default:
             // Future-proof: unknown block types
             return 0;
     }
 }
-
-export const calculateContextSize = (messageMap: MessageMap): number => {
-    // Use fast approximation for better performance (4 chars/token)
-    return Object.values(messageMap).reduce((total, message) => {
-        // Calculate content tokens from blocks if available, otherwise use legacy fields
-        let contentTokens = 0;
-        if (message.blocks && message.blocks.length > 0) {
-            // New format: iterate through blocks and delegate to helper
-            contentTokens = message.blocks.reduce((sum, block) => sum + calculateBlockTokens(block), 0);
-        } else {
-            // Legacy format: calculate from individual fields
-            contentTokens =
-                getApproximateTokenCount(message.content || '') +
-                getApproximateTokenCount(message.toolCall || '') +
-                getApproximateTokenCount(message.toolResult || '');
-        }
-
-        // Context (from attachments) is not part of blocks
-        const contextTokens = getApproximateTokenCount(message.context || '');
-
-        return total + contentTokens + contextTokens;
-    }, 0);
-};
 
 /**
  * Calculate tokens from message content only (excluding context)
@@ -55,10 +31,7 @@ export const calculateMessageContentTokens = (messageChain: Message[]): number =
         } else {
             // Legacy format
             return (
-                total +
-                getApproximateTokenCount(message.content || '') +
-                getApproximateTokenCount(message.toolCall || '') +
-                getApproximateTokenCount(message.toolResult || '')
+                total + countTokens(message.content) + countTokens(message.toolCall) + countTokens(message.toolResult)
             );
         }
     }, 0);
@@ -86,7 +59,7 @@ export const calculateSingleAttachmentContextSize = (attachment: Attachment): nu
         const fullContext = [filename, header, beginMarker, content, endMarker].join('\n');
 
         // Use fast approximation for better performance (4 chars/token)
-        return getApproximateTokenCount(fullContext);
+        return countTokens(fullContext);
     } catch (error) {
         console.warn('Error calculating attachment context size:', error, attachment);
         return 0;
@@ -182,13 +155,11 @@ export const calculateConversationContextSize = (messageChain: Message[]): numbe
         } else {
             // Legacy format
             contentTokens =
-                getApproximateTokenCount(message.content || '') +
-                getApproximateTokenCount(message.toolCall || '') +
-                getApproximateTokenCount(message.toolResult || '');
+                countTokens(message.content) + countTokens(message.toolCall) + countTokens(message.toolResult);
         }
 
         // Context from attachments in this message (already formatted by flattenAttachmentsForLlm)
-        const contextTokens = getApproximateTokenCount(message.context || '');
+        const contextTokens = countTokens(message.context);
 
         return total + contentTokens + contextTokens;
     }, 0);
