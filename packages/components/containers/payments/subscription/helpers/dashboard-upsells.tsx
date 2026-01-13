@@ -45,6 +45,7 @@ import {
     isPlan,
     isTrial,
 } from '@proton/payments';
+import { hasMeetBusiness } from '@proton/payments/core/subscription/helpers';
 import {
     type PreloadedPaymentsContextType,
     getPlanToCheck,
@@ -434,6 +435,26 @@ const getLumoUpsell = ({ plansMap, openSubscriptionModal, app, ...rest }: GetPla
             openSubscriptionModal({
                 cycle: defaultUpsellCycleB2C,
                 plan: PLANS.LUMO,
+                step: SUBSCRIPTION_STEPS.CHECKOUT,
+                disablePlanSelection: true,
+                metrics: {
+                    source: 'upsells',
+                },
+            }),
+        ...rest,
+    });
+};
+
+const getMeetUpsell = ({ plansMap, openSubscriptionModal, app, ...rest }: GetPlanUpsellArgs): MaybeUpsell => {
+    return getUpsell({
+        plan: PLANS.MEET_BUSINESS,
+        plansMap,
+        app,
+        upsellPath: DASHBOARD_UPSELL_PATHS.MEET,
+        onUpgrade: () =>
+            openSubscriptionModal({
+                cycle: defaultUpsellCycleB2B,
+                plan: PLANS.MEET_BUSINESS,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
                 disablePlanSelection: true,
                 metrics: {
@@ -850,6 +871,7 @@ export const resolveUpsellsToDisplay = ({
         const hasPassFree = isFree && app === APPS.PROTONPASS && !user.hasPassLifetime;
         const hasVPNFree = isFree && app === APPS.PROTONVPN_SETTINGS;
         const hasLumoFree = isFree && app === APPS.PROTONLUMO;
+        const hasMeetFree = isFree && app === APPS.PROTONMEET;
 
         // Please remove this once bundlebiz2025 is available for all users.
         const bundleBizExists = plansMap[PLANS.BUNDLE_BIZ_2025] !== undefined;
@@ -882,6 +904,11 @@ export const resolveUpsellsToDisplay = ({
                 return [getVPNUpsell(upsellsPayload)];
             case Boolean(hasLumoFree):
                 return [getLumoUpsell({ ...upsellsPayload, isRecommended: true })];
+            case Boolean(hasMeetFree):
+                return [
+                    getMeetUpsell({ ...upsellsPayload, isRecommended: true }),
+                    getBundleBizUpsell({ ...upsellsPayload }),
+                ];
             case Boolean(hasPass(subscription)):
                 return [
                     getPassFamilyUpsell({ ...upsellsPayload, isRecommended: true }),
@@ -950,6 +977,13 @@ export const resolveUpsellsToDisplay = ({
                         description,
                     }),
                     getBundleBizUpsell({ ...upsellsPayload, description }),
+                ];
+            }
+
+            case hasMeetBusiness(subscription): {
+                return [
+                    getBundleProUpsell({ ...upsellsPayload, isRecommended: true }),
+                    getBundleBizUpsell(upsellsPayload),
                 ];
             }
 
