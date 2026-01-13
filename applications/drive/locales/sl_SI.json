@@ -1300,6 +1300,9 @@
       "Password health alerts": [
         "Opozorila o kakovosti gesla"
       ],
+      "Recover previous file versions": [
+        "Obnovi prejšnje različice datoteke"
+      ],
       "Unlimited folders, labels and filters": [
         "Neomejeno število map, oznak in filtrov"
       ],
@@ -1533,6 +1536,12 @@
       "${ maxSpaceTB } storage": [
         "${ maxSpaceTB } prostora za shranjevanje"
       ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } uporabnik",
+        "Do ${ numberOfUsers } uporabnika",
+        "Do ${ numberOfUsers } uporabniki",
+        "Do ${ numberOfUsers } uporabnikov"
+      ],
       "${ planMaxSpace } email storage": [
         "${ planMaxSpace } shrambe za e-pošto"
       ],
@@ -1593,6 +1602,12 @@
       ]
     },
     "collider_2025: feature": {
+      "Access to advanced AI models": [
+        "Dostop do naprednih modelov UI"
+      ],
+      "Data never used for AI training": [
+        "Podatki se ne bodo nikoli uporabljali za urjenje UI"
+      ],
       "Large file upload support": [
         "Podpora za nalaganje velikih datotek"
       ]
@@ -2840,6 +2855,9 @@
       "All events in this series were updated.": [
         "Vsi dogodki v tej seriji so bili posodobljeni."
       ],
+      "DESCRIPTION:": [
+        "OPIS:"
+      ],
       "Here's what changed:": [
         "Kaj se je spremenilo:"
       ],
@@ -3405,6 +3423,11 @@
         "Vaš uvoz ne bo obdelan."
       ]
     },
+    "error": {
+      "Please sign in with the same Gmail address you originally connected": [
+        "Prijavite se z istim naslovom Gmail, s katerim ste se povezali prvič"
+      ]
+    },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
         "Pri branju datoteke ${ formattedFilename } je prišlo do napake. Neveljavna oblika datoteke."
@@ -3711,6 +3734,12 @@
       "The subscription will be billed to the primary admin of this plan.": [
         "Naročnina bo zaračunana glavnemu skrbniku tega paketa."
       ],
+      "View the invitation": [
+        "Oglej si povabilo",
+        "Oglej si povabili",
+        "Oglej si povabila",
+        "Oglej si povabila"
+      ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Vabljeni ste, da se pridružite organizaciji ${ invite.OrganizationName }."
       ],
@@ -3775,6 +3804,9 @@
       ]
     },
     "Feature": {
+      "More premium features": [
+        "Več premijskih funkcij"
+      ],
       "Unlimited hide-my-email aliases": [
         "Neomejeno število vzdevkov hide-my-email"
       ]
@@ -7142,6 +7174,29 @@
         "za ${ price }"
       ]
     },
+    "meet_2025: Feature": {
+      "${ n } active meeting at a time": [
+        "${ n } sestanek hkrati",
+        "${ n } sestanka hkrati",
+        "${ n } sestanki hkrati",
+        "${ n } sestankov hkrati"
+      ],
+      "24 hours per meeting": [
+        "24 ur na sestanek"
+      ],
+      "Up to ${ n } meeting per day": [
+        "Do ${ n } sestanek na dan",
+        "Do ${ n } sestanka na dan",
+        "Do ${ n } sestanki na dan",
+        "Do ${ n } sestankov na dan"
+      ],
+      "Up to ${ n } participant": [
+        "Do ${ n } udeleženec",
+        "Do ${ n } udeleženca",
+        "Do ${ n } udeleženci",
+        "Do ${ n } udeležencev"
+      ]
+    },
     "Message": {
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Vaše brezplačno preskusno obdobje se je končalo. Dostop do vašega računa bo kmalu onemogočen. ${ action }"
@@ -8626,6 +8681,9 @@
       "Don’t show this offer again": [
         "Te ponudbe ne prikazuj več"
       ],
+      "Get ${ BRAND_NAME } Duo": [
+        "Pridobi ${ BRAND_NAME } Duo"
+      ],
       "Get the deal": [
         "Izkoristite posebno ponudbo"
       ],
@@ -9075,6 +9133,12 @@
       ]
     },
     "Payments.VAT number name": {
+      "Edit ABN": [
+        "Uredi ABN"
+      ],
+      "Edit EIN": [
+        "Uredi EIN"
+      ],
       "VAT number": [
         "ID za DDV"
       ]
@@ -9241,11 +9305,6 @@
     "plus_block": {
       "Upgrade to ${ upsellPlanTitle }": [
         "Nadgradi na ${ upsellPlanTitle }."
-      ]
-    },
-    "Price": {
-      "Free": [
-        "Brezplačno"
       ]
     },
     "Progress bar description": {

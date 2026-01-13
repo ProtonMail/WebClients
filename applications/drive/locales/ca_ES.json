@@ -1804,6 +1804,9 @@
       ],
       "High-speed chats and advanced AI features.": [
         "Xats d'alta velocitat i característiques d'IA avançades."
+      ],
+      "Private video calls for the conversations that matter.": [
+        "Videotrucades privades per les converses importants."
       ]
     },
     "color": {
@@ -2788,6 +2791,11 @@
     "customer_support.feature.mail": {
       "For ${ MAIL_APP_NAME }": [
         "Per a ${ MAIL_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.meet": {
+      "For ${ MEET_APP_NAME }": [
+        "Per ${ MEET_APP_NAME }"
       ]
     },
     "customer_support.feature.pass": {
@@ -3778,6 +3786,9 @@
       ],
       "We were not able to load some of your shared items": [
         "No s'han pogut carregar alguns dels vostres elements compartits"
+      ],
+      "We were not able to load the folder contents": [
+        "No s'ha pogut carregar el contingut de la carpeta"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "No podeu enviar un correu a més d'${ maxContacts } destinatari.",
@@ -6788,6 +6799,17 @@
         "Només lectura"
       ]
     },
+    "Into": {
+      "Can edit and manage access": [
+        "Podeu editar i gestionar l'accés"
+      ],
+      "Can view and edit": [
+        "Podeu visualitzar-ho i editar-ho"
+      ],
+      "Can view only": [
+        "Només ho podeu visualitzar"
+      ]
+    },
     "Item": {
       "file attributes": [
         "atributs del fitxer"
@@ -6885,6 +6907,9 @@
       ],
       "Address": [
         "Adreça"
+      ],
+      "Admin": [
+        "Administració"
       ],
       "Album": [
         "Àlbum"
@@ -7749,6 +7774,53 @@
       ],
       "for ${ price }": [
         "per ${ price }"
+      ]
+    },
+    "meet_2025: Feature": {
+      "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
+        "${ MEET_APP_NAME }: Videoconferències confidencials per les converses importants"
+      ],
+      "${ n } active meeting at a time": [
+        "${ n } reunió activa alhora",
+        "${ n } reunions actives alhora"
+      ],
+      "24 hours per meeting": [
+        "24 hores per reunió"
+      ],
+      "60 minutes per meeting": [
+        "60 minuts per reunió"
+      ],
+      "Appointment scheduling": [
+        "Programació de cites"
+      ],
+      "Browser, mobile, and desktop apps": [
+        "Aplicacions de navegador, de mòbil i d'escriptori"
+      ],
+      "Built-in chat": [
+        "Xat integrat"
+      ],
+      "End-to-end encrypted screen sharing and ephemeral in-call chat": [
+        "Compartició de pantalla xifrada d’extrem a extrem i xat efímer durant la trucada"
+      ],
+      "Meeting recording (coming soon)": [
+        "Gravació de la reunió (pròximament)"
+      ],
+      "One active meeting at a time": [
+        "Una reunió activa alhora"
+      ],
+      "Screen-sharing": [
+        "Compartir pantalla"
+      ],
+      "Unlimited meetings per day": [
+        "Reunions il·limitades per dia"
+      ],
+      "Up to ${ n } meeting per day": [
+        "Fins a ${ n } reunió al dia",
+        "Fins a ${ n } reunions per dia"
+      ],
+      "Up to ${ n } participant": [
+        "Fins a ${ n } participant",
+        "Fins a ${ n } participants"
       ]
     },
     "Message": {
@@ -10236,11 +10308,6 @@
       ],
       "Upgrade to ${ upsellPlanTitle }": [
         "Milloreu el vostre pla a ${ upsellPlanTitle }"
-      ]
-    },
-    "Price": {
-      "Free": [
-        "Gratuït"
       ]
     },
     "Progress bar description": {

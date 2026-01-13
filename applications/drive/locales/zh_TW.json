@@ -3375,6 +3375,9 @@
       "Validation error": [
         "驗證錯誤"
       ],
+      "We were not able to load the folder contents": [
+        "無法載入資料夾內容"
+      ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "您無法將郵件傳送給超過 ${ maxContacts } 位收件人"
       ],
@@ -6024,6 +6027,17 @@
         "僅能檢視"
       ]
     },
+    "Into": {
+      "Can edit and manage access": [
+        "可編輯及管理存取權"
+      ],
+      "Can view and edit": [
+        "可檢視和編輯"
+      ],
+      "Can view only": [
+        "僅供檢視"
+      ]
+    },
     "Item": {
       "file attributes": [
         "檔案屬性"
@@ -6112,6 +6126,9 @@
       ],
       "Address": [
         "電郵位址"
+      ],
+      "Admin": [
+        "管理員"
       ],
       "All": [
         "全部"
@@ -9018,11 +9035,6 @@
     "plus_block": {
       "Upgrade to ${ upsellPlanTitle }": [
         "升級至${ upsellPlanTitle }"
-      ]
-    },
-    "Price": {
-      "Free": [
-        "免費"
       ]
     },
     "Progress bar description": {

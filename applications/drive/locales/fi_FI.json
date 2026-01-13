@@ -3673,6 +3673,9 @@
       "We were not able to load some of your shared items": [
         "Emme voineet ladata joitain jaettuja kohteitasi."
       ],
+      "We were not able to load the folder contents": [
+        "Emme voineet ladata kansion sisältöä"
+      ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Voit lähettää viestin enintään ${ maxContacts } vastaanottajalle",
         "Voit lähettää viestin enintään ${ maxContacts } vastaanottajalle"
@@ -6598,6 +6601,17 @@
         "Vain tarkastelu"
       ]
     },
+    "Into": {
+      "Can edit and manage access": [
+        "Voi muokata ja hallita käyttöoikeutta"
+      ],
+      "Can view and edit": [
+        "Voi tarkastella ja muokata"
+      ],
+      "Can view only": [
+        "Voi vain tarkastella"
+      ]
+    },
     "Item": {
       "file attributes": [
         "tiedoston attribuutit"
@@ -6695,6 +6709,9 @@
       ],
       "Address": [
         "Osoite"
+      ],
+      "Admin": [
+        "Ylläpitäjä"
       ],
       "Alias title": [
         "Aliaksen otsikko"
@@ -9824,11 +9841,6 @@
     "plus_block": {
       "Upgrade to ${ upsellPlanTitle }": [
         "Päivitä ${ upsellPlanTitle } -tilaukseen"
-      ]
-    },
-    "Price": {
-      "Free": [
-        "Ilmainen"
       ]
     },
     "Progress bar description": {

@@ -1668,6 +1668,10 @@
       "${ maxSpaceTB } storage": [
         "${ maxSpaceTB } საცავი"
       ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } მომხმარებელი",
+        "${ numberOfUsers } მომხმარებლამდე"
+      ],
       "${ planMaxSpace } email storage": [
         "${ planMaxSpace } ელფოსტის საცავი"
       ],
@@ -2772,6 +2776,11 @@
     "customer_support.feature.mail": {
       "For ${ MAIL_APP_NAME }": [
         "${ MAIL_APP_NAME }-თვის"
+      ]
+    },
+    "customer_support.feature.meet": {
+      "For ${ MEET_APP_NAME }": [
+        "${ MEET_APP_NAME }-ისთვის"
       ]
     },
     "customer_support.feature.pass": {
@@ -5016,6 +5025,9 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "შემოწმების ახალი კოდის მოთხოვნამდე შეამოწმეთ თქვენი სპამის საქაღალდე და რომ ${ strong } სწორი მისამართია."
       ],
+      "Better in the app": [
+        "უკეთესი აპლიკაციაში"
+      ],
       "Billing cycle: ${ text }": [
         "გადახდის ციკლი: ${ text }"
       ],
@@ -6652,6 +6664,14 @@
         "მხოლოდ დათვალიერებისათვის"
       ]
     },
+    "Into": {
+      "Can view and edit": [
+        "შეუძლია ნახვა და ჩასწორება"
+      ],
+      "Can view only": [
+        "მხოლოდ ნახვა"
+      ]
+    },
     "Item": {
       "file attributes": [
         "ფაილის ატრიბუტები"
@@ -6746,6 +6766,9 @@
       ],
       "Address": [
         "მისამართი"
+      ],
+      "Admin": [
+        "ადმინი"
       ],
       "Alias title": [
         "ფსევდონიმის სათაური"
@@ -7604,6 +7627,23 @@
       ],
       "for ${ price }": [
         "${ price }-თვის"
+      ]
+    },
+    "meet_2025: Feature": {
+      "24 hours per meeting": [
+        "24 საათი თითო შეხვედრისთვის"
+      ],
+      "60 minutes per meeting": [
+        "60 წუთი თითო შეხვედრისთვის"
+      ],
+      "Appointment scheduling": [
+        "შეხვედრის დაგეგმვა"
+      ],
+      "Built-in chat": [
+        "ჩაშენებული ჩატი"
+      ],
+      "Screen-sharing": [
+        "ეკრანის გაზიარება"
       ]
     },
     "Message": {
@@ -9996,11 +10036,6 @@
         "სატარიფო გეგმის განახლება: ${ upsellPlanTitle }"
       ]
     },
-    "Price": {
-      "Free": [
-        "უფასო"
-      ]
-    },
     "Progress bar description": {
       "${ contactsExported.length } out of ${ countContacts } contact successfully exported.": [
         "${ countContacts }-დან ${ contactsExported.length } კონტაქტის გატანა წარმატებულია.",
@@ -11859,6 +11894,9 @@
         "ნაპოვნია ${ searchView.numberOfResults } შედეგი",
         "ნაპოვნია ${ searchView.numberOfResults } შედეგი"
       ],
+      "Get ${ DRIVE_SHORT_APP_NAME } on your phone": [
+        "გადმოწერე ${ DRIVE_SHORT_APP_NAME } ტელეფონზე"
+      ],
       "Get **${ referralInfo.uiData.refereeRewardAmount }** in credits with ${ planTitle }": [
         "მიიღეთ **${ referralInfo.uiData.refereeRewardAmount }** კრედიტებში ${ planTitle }-ისთან ერთად"
       ],
@@ -12767,6 +12805,9 @@
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "თქვენი უფასო სატესტო ვერსიის დამთავრების თარიღია ${ textDate }. ${ action }"
+      ],
+      "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
+        "თქვენი საცდელი პერიოდი დასრულდება: ${ textDate }. თუ გააუქმებთ ${ textDate }-მდე, თანხა არ ჩამოგეჭრებათ. ${ action }"
       ]
     }
   }
