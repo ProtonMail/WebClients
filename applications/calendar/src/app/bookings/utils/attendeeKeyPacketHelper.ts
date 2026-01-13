@@ -1,4 +1,4 @@
-import type { SessionKey } from '@proton/crypto/lib';
+import type { SessionKey } from '@proton/crypto';
 import { getIsAddressActive, getIsAddressExternal, getIsBYOEAddress } from '@proton/shared/lib/helpers/address';
 import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import type { Address } from '@proton/shared/lib/interfaces';
