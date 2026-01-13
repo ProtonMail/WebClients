@@ -485,36 +485,38 @@ export const useFileMentionAutocomplete = (
 
                             const result = await fileProcessingService.processFile(driveFile);
 
-                            if (result.success && result.result) {
-                                content = result.result.convertedContent;
-                            } else if (result.isUnsupported) {
-                                dispatch(
-                                    upsertAttachment({
-                                        ...provisionalAttachment,
-                                        error: true,
-                                        errorMessage: 'File format not supported',
-                                        processing: false,
-                                    })
-                                );
-                                createNotification({
-                                    text: c('collider_2025:Error').t`File format not supported: ${file.name}`,
-                                    type: 'error',
-                                });
-                                return;
-                            } else {
-                                dispatch(
-                                    upsertAttachment({
-                                        ...provisionalAttachment,
-                                        error: true,
-                                        errorMessage: result.error || 'Failed to process file',
-                                        processing: false,
-                                    })
-                                );
-                                createNotification({
-                                    text: c('collider_2025:Error').t`Failed to process file: ${file.name}`,
-                                    type: 'error',
-                                });
-                                return;
+                            if (result.type === 'text') {
+                                content = result.content;
+                            } else if (result.type === 'error') {
+                                if (result.unsupported) {
+                                    dispatch(
+                                        upsertAttachment({
+                                            ...provisionalAttachment,
+                                            error: true,
+                                            errorMessage: 'File format not supported',
+                                            processing: false,
+                                        })
+                                    );
+                                    createNotification({
+                                        text: c('collider_2025:Error').t`File format not supported: ${file.name}`,
+                                        type: 'error',
+                                    });
+                                    return;
+                                } else {
+                                    dispatch(
+                                        upsertAttachment({
+                                            ...provisionalAttachment,
+                                            error: true,
+                                            errorMessage: result.message,
+                                            processing: false,
+                                        })
+                                    );
+                                    createNotification({
+                                        text: c('collider_2025:Error').t`Failed to process file: ${file.name}`,
+                                        type: 'error',
+                                    });
+                                    return;
+                                }
                             }
                         }
 
