@@ -4,6 +4,26 @@
     "language": "zh_TW"
   },
   "contexts": {
+    "Account Settings - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "偵測到 ${ name } 及 ${ remainingCount } 個其他潛在資料外洩。請開啟 ${ DARK_WEB_MONITORING_NAME } 檢視詳情並採取行動。${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "偵測到 ${ name } 及 1 個其他潛在資料外洩。請開啟 ${ DARK_WEB_MONITORING_NAME } 檢視詳情並採取行動。${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "偵測到 ${ name } 的潛在資料外洩。請開啟 ${ DARK_WEB_MONITORING_NAME } 檢視詳情並採取行動。${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "偵測到來自 ${ name } 的潛在資料外洩。請開啟 ${ DARK_WEB_MONITORING_NAME } 檢視詳情並採取行動。${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "偵測到來自 ${ name } 的潛在資料外洩。請開啟 ${ DARK_WEB_MONITORING_NAME } 檢視詳情。${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "您的資料在最少一次的資料外洩之中被發現。開啟 ${ DARK_WEB_MONITORING_NAME } 來瀏覽詳細資料及採取行動。 ${ link }"
+      ]
+    },
     "Action": {
       "Accept": [
         "接受"
@@ -37,6 +57,9 @@
       ],
       "Add section": [
         "加入區塊"
+      ],
+      "Admin panel": [
+        "管理員面板"
       ],
       "Advanced": [
         "進階"
@@ -130,6 +153,9 @@
       ],
       "Create a ${ BRAND_NAME } Account": [
         "創建一個${ BRAND_NAME } 帳號"
+      ],
+      "Create a new vault": [
+        "新建加密檔案庫"
       ],
       "Create alias": [
         "創建別名"
@@ -230,6 +256,9 @@
       "Edit vault": [
         "編輯保管庫"
       ],
+      "Enable ${ DARK_WEB_MONITORING_NAME }": [
+        "啟用${ DARK_WEB_MONITORING_NAME }"
+      ],
       "Exclude from monitoring": [
         "排除監控"
       ],
@@ -254,11 +283,17 @@
       "Generated passwords": [
         "已生成的密碼"
       ],
+      "Get mobile apps": [
+        "取得手機應用程式"
+      ],
       "Get Pass Business": [
         "取得Pass Business"
       ],
       "Get Pass Plus": [
         "取得Pass Plus"
+      ],
+      "Get Started": [
+        "入門指南"
       ],
       "Hide": [
         "隱藏"
@@ -302,6 +337,9 @@
       "Link copied to clipboard": [
         "已複製連結到剪貼簿"
       ],
+      "Lock ${ PASS_APP_NAME }": [
+        "鎖定${ PASS_APP_NAME }"
+      ],
       "Lock extension": [
         "鎖定擴充"
       ],
@@ -325,6 +363,9 @@
       ],
       "Manually sync your data": [
         "手動同步您的資料"
+      ],
+      "Mark as resolved": [
+        "標記為已解決"
       ],
       "More info": [
         "更多資訊"
@@ -370,6 +411,12 @@
       ],
       "Organize vaults": [
         "整理保管庫"
+      ],
+      "Pass Monitor": [
+        "Pass 監控"
+      ],
+      "Pause monitoring": [
+        "暫停監控"
       ],
       "Pin item": [
         "固定物品"
@@ -439,6 +486,9 @@
       ],
       "Restore item": [
         "還原項目"
+      ],
+      "Resume monitoring": [
+        "繼續監控"
       ],
       "Retry": [
         "重試"
@@ -542,6 +592,9 @@
       "Try again": [
         "再試一次"
       ],
+      "Try again.": [
+        "重試。"
+      ],
       "Unblock contact": [
         "解除封鎖聯絡人"
       ],
@@ -584,6 +637,9 @@
       "View app logs": [
         "瀏覽應用程式記錄檔"
       ],
+      "View details": [
+        "詳情查看"
+      ],
       "View history": [
         "查看歷史"
       ],
@@ -625,14 +681,35 @@
       "A checked box means the feature is disabled.": [
         "勾選的選項表示以被禁用的功能"
       ],
+      "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
+        "電子郵件別名就像電子郵件地址，但減少垃圾郵件及保持隱藏您真實電子郵件地址及身分。"
+      ],
+      "Change your passwords": [
+        "更改您的密碼"
+      ],
+      "Create unique passwords": [
+        "建立獨立的密碼"
+      ],
       "DMARC ${ WIKIPEDIA_LINK_DMARC } is designed to protect the domain from unauthorized use, commonly known as email spoofing. Built around SPF and DKIM, a DMARC policy tells the receiving mail server what to do if neither of those authentication methods passes.": [
         "DMARC ${ WIKIPEDIA_LINK_DMARC } 旨在保護網域免受未經授權的使用，這通常稱為電子郵件詐騙。DMARC 政策圍繞 SPF 和 DKIM 建構，它會告知接收的電郵伺服器，如果這些驗證方法都沒有通過時應採取的動作。"
+      ],
+      "Keep your info more secure and private with these guides and tips.": [
+        "透過導引及建議確保您的資料安全及隱私。"
       ],
       "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.${ infoText }": [
         "禁用 ${ PASS_SHORT_APP_NAME } 中自動功能(填入、建議、儲存)的網域清單。${ infoText }"
       ],
+      "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
+        "最新的 AI 安全方案，為希望加強帳號防護的人而設計。 ${ learnMoreLink }"
+      ],
+      "Set up 2FA for more security": [
+        "為更好安全設定雙重驗證"
+      ],
       "SPF ${ WIKIPEDIA_LINK_SPF } is an email authentication method designed to detect forging sender addresses during the delivery of the email. Setting up SPF is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
         "SPF ${ WIKIPEDIA_LINK_SPF } 是一種電子郵件驗證方法，旨在偵測電子郵件遞送期間偽造的寄件者位址。強烈建議設定 SPF，以減少您的電子郵件最終進入收件者的垃圾郵件資料夾的機會。"
+      ],
+      "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
+        "暗網是隱藏的網路充斥著個人資訊，如身分，可為買賣。"
       ]
     },
     "Error": {
@@ -921,6 +998,17 @@
         "發生錯誤"
       ]
     },
+    "Feature": {
+      "Integrated 2FA authenticator": [
+        "整合了雙重驗證的驗證器"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "無限制的 hide-my-email 別名"
+      ],
+      "Vault sharing (up to ${ MAX_VAULT_MEMBERS } people)": [
+        "保管共享(每人至多${ MAX_VAULT_MEMBERS })"
+      ]
+    },
     "file size format": {
       "byte": [
         "位元組"
@@ -953,6 +1041,14 @@
       ],
       "Terabyte": [
         "Terabytes"
+      ]
+    },
+    "Header": {
+      "Domain": [
+        "網域"
+      ],
+      "Password ends with": [
+        "密碼結尾是"
       ]
     },
     "Info": {
@@ -1055,6 +1151,9 @@
       "Autosaved on ${ url }": [
         "已自動儲存到 ${ url }"
       ],
+      "Breaches detected": [
+        "已偵測到外洩"
+      ],
       "Built in 2FA authenticator": [
         "內建雙重驗證機制"
       ],
@@ -1072,6 +1171,9 @@
       ],
       "Can view this item.": [
         "可查看此項目."
+      ],
+      "Change your password": [
+        "變更您的密碼"
       ],
       "Choose a saved passkey to sign-in to ${ domain }": [
         "選擇一個通行密鑰登入${ domain }"
@@ -1115,9 +1217,6 @@
       "Disabling offline mode...": [
         "停用離線模式..."
       ],
-      "Discover ${ PASS_APP_NAME } Youtube Video": [
-        "於YouTube觀看${ PASS_APP_NAME }的影片"
-      ],
       "Drop file here to upload": [
         "拖曳檔案到此處來上傳"
       ],
@@ -1129,6 +1228,9 @@
       ],
       "Editor": [
         "編輯器"
+      ],
+      "email": [
+        "電子信箱"
       ],
       "Email address successfully deleted from monitoring": [
         "電子郵件地址成功從於監控刪除"
@@ -1172,6 +1274,9 @@
       "Fill in the CSV with your data": [
         "CSV格式的檔案"
       ],
+      "finance": [
+        "金融"
+      ],
       "For easy access to your passwords and more.": [
         "容易存取密碼及更多。"
       ],
@@ -1189,6 +1294,12 @@
       ],
       "Here you will find all the necessary information to get you started.": [
         "這裡是您需要的資訊"
+      ],
+      "High Priority": [
+        "首要優先順序"
+      ],
+      "How does monitoring work?": [
+        "監控如何工作"
       ],
       "Import the CSV file below.": [
         "於底下匯入CSV。"
@@ -1256,11 +1367,20 @@
       "Loading...": [
         "載入中‧‧‧"
       ],
+      "Low Priority": [
+        "較低優先順序"
+      ],
       "Manager": [
         "管理員"
       ],
       "me": [
         "我"
+      ],
+      "Medium Priority": [
+        "中等優先順序"
+      ],
+      "Monitor accounts": [
+        "監控帳號"
       ],
       "Monitoring settings successfully updated": [
         "監控設定已成功更新"
@@ -1283,6 +1403,9 @@
       "Never": [
         "永不"
       ],
+      "No breaches detected": [
+        "無偵測到外洩"
+      ],
       "No identity item found": [
         "身分無法查詢"
       ],
@@ -1298,6 +1421,9 @@
       "Open the Extensions menu": [
         "開啟擴充功能選單"
       ],
+      "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "我們的警示偏向於謹慎。如果您不認識任何外洩的資訊，您可以放心地忽略此報告。"
+      ],
       "Owner": [
         "擁有者"
       ],
@@ -1310,11 +1436,17 @@
       "Passkey sign-in": [
         "密碼金鑰登錄"
       ],
+      "password": [
+        "密碼"
+      ],
       "Password copied": [
         "已複製密碼"
       ],
       "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "已成功註冊密碼鎖定，使用密碼以解鎖 ${ PASS_APP_NAME }"
+      ],
+      "Paused": [
+        "已暫停"
       ],
       "Pending access to the shared data": [
         "暫緩存取分享的資料"
@@ -1439,11 +1571,17 @@
       "Successfully synced all vaults": [
         "成功同步保管庫"
       ],
+      "Suggested": [
+        "建議"
+      ],
       "Syncing your vaults…": [
         "同步你的保管庫…"
       ],
       "Thank you, the problem has been reported": [
         "感謝您舉報問題"
+      ],
+      "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
+        "您被曝露的資料來自第三方服務。您 ${ BRAND_NAME } 帳號資料保持安全及加密。 ${ learnMoreLink }"
       ],
       "The following ${ totalIgnored } item could not be imported:": [
         "以下 ${ totalIgnored } 個項目無法匯入:"
@@ -1505,6 +1643,9 @@
       "User's access removed": [
         "使用者存取權已撤銷"
       ],
+      "username": [
+        "使用者名稱"
+      ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "保管庫${ payload.content.name }已成功刪除"
       ],
@@ -1522,6 +1663,9 @@
       ],
       "Verification code": [
         "驗證碼"
+      ],
+      "Verification code sent.": [
+        "驗證碼寄送。"
       ],
       "Viewer": [
         "檢視者"
@@ -1573,6 +1717,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "你的檔案將加密後再儲存"
+      ],
+      "Your information was found on ${ displayedDate }": [
+        "您的資料在 ${ displayedDate } 被發現。"
       ]
     },
     "Keyboard key": {
@@ -1610,6 +1757,9 @@
       ],
       "${ PASS_SHORT_APP_NAME } version": [
         "${ PASS_SHORT_APP_NAME }版本"
+      ],
+      "${ usageCount } login": [
+        "${ usageCount }登入"
       ],
       "${ years } year": [
         "${ years } 年"
@@ -1887,6 +2037,9 @@
       "Email (alias)": [
         "電子郵件 (別名)"
       ],
+      "Email address": [
+        "電郵位址"
+      ],
       "Email aliases": [
         "電子郵件別名"
       ],
@@ -1952,6 +2105,9 @@
       ],
       "Generic CSV": [
         "通用 CSV"
+      ],
+      "Get Started": [
+        "入門指南"
       ],
       "Grant": [
         "授予"
@@ -2048,6 +2204,9 @@
       ],
       "Last name": [
         "姓"
+      ],
+      "Last updated": [
+        "最後更新"
       ],
       "Last week": [
         "上週"
@@ -2367,6 +2526,9 @@
       "State or province": [
         "州或省"
       ],
+      "Status": [
+        "狀態"
+      ],
       "Street address": [
         "街道位址"
       ],
@@ -2457,6 +2619,9 @@
       "Use ${ PASS_APP_NAME } as your browser's default password manager": [
         "使用 ${ PASS_APP_NAME } 作為瀏覽器的預設密碼管理器"
       ],
+      "Used in": [
+        "使用於："
+      ],
       "Useful for permanent sharing": [
         "永久共用"
       ],
@@ -2471,6 +2636,9 @@
       ],
       "Vault ID": [
         "保管庫 ID"
+      ],
+      "Vaults": [
+        "保管庫"
       ],
       "View details": [
         "查看詳情資料"
@@ -2527,12 +2695,38 @@
         "郵遞區號"
       ]
     },
+    "Link": {
+      "Learn more": [
+        "瞭解詳情"
+      ]
+    },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "啟用${ reason }"
+      ]
+    },
     "Message": {
       "${ count } item": [
         "${ count } 個項目"
       ],
       "You selected ${ semiboldText } in this vault.": [
         "您選取於保管庫的${ semiboldText }."
+      ]
+    },
+    "new_plans: feature": {
+      "Require 2FA for organization": [
+        "要求組織雙重驗證"
+      ],
+      "SSO integration": [
+        "SSO 整合"
+      ]
+    },
+    "Notification": {
+      "${ reason } has been disabled": [
+        "${ reason } 已停用。"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } 已啟用。"
       ]
     },
     "Onboarding": {
@@ -2693,6 +2887,20 @@
         "使用${ url }"
       ]
     },
+    "Security Center - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "偵測到 ${ name } 與 ${ remainingCount } 筆外洩的資料。開啟 ${ DARK_WEB_MONITORING_NAME } 檢視詳細資料。 ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "偵測到${ name }及一個其他潛在資料外洩。請開啟${ DARK_WEB_MONITORING_NAME }去檢視詳情。${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "偵測到${ name }潛在資料外洩。請開啟${ DARK_WEB_MONITORING_NAME }去檢視詳情。${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "您的資訊已證實暴露在最少一次的資料外洩事件中。請開啟 ${ DARK_WEB_MONITORING_NAME } 以檢視詳細資料。 ${ link }"
+      ]
+    },
     "sso": {
       "Approve or deny it now": [
         "立即允許或拒絕"
@@ -2771,8 +2979,17 @@
       ]
     },
     "Title": {
+      "${ BRAND_NAME } addresses": [
+        "${ BRAND_NAME } 個電郵位址"
+      ],
       "${ PASS_APP_NAME } Settings": [
         "${ PASS_APP_NAME } 設定"
+      ],
+      "${ PASS_SHORT_APP_NAME } Monitor": [
+        "${ PASS_SHORT_APP_NAME }監控"
+      ],
+      "Account protection": [
+        "帳號保護"
       ],
       "Actions": [
         "操作"
@@ -2797,6 +3014,15 @@
       ],
       "Blocked addresses": [
         "已封鎖位址"
+      ],
+      "Breach detected": [
+        "已偵測到外洩"
+      ],
+      "Breaches": [
+        "外露"
+      ],
+      "Breaches detected for": [
+        "為已偵測到外洩"
       ],
       "Change mailbox email": [
         "變更電郵信箱位址"
@@ -2831,8 +3057,17 @@
       "Current version": [
         "目前版本"
       ],
+      "Custom addresses": [
+        "自訂地址"
+      ],
       "Custom domains": [
         "個自訂網域"
+      ],
+      "Custom email monitoring": [
+        "自訂電子郵件監控"
+      ],
+      "Custom emails": [
+        "自訂電子郵件"
       ],
       "Default": [
         "預設"
@@ -2876,6 +3111,9 @@
       "Enter your PIN": [
         "輸入 PIN"
       ],
+      "Excluded items": [
+        "排除的物品"
+      ],
       "Fill & copy password": [
         "填寫並複製密碼"
       ],
@@ -2894,6 +3132,9 @@
       "Hide my email": [
         "隱藏我的電子郵件"
       ],
+      "Hide-my-email aliases": [
+        "Hide-my-email 別名"
+      ],
       "History": [
         "歷程記錄"
       ],
@@ -2905,6 +3146,9 @@
       ],
       "Import to vault(s)": [
         "匯入至(多個)保管庫"
+      ],
+      "Inactive 2FA": [
+        "未啟用雙重驗證"
       ],
       "Item": [
         "項目"
@@ -2918,6 +3162,9 @@
       "Leave vault?": [
         "離開保管庫？"
       ],
+      "Loading breaches...": [
+        "載入外洩..."
+      ],
       "Log in as...": [
         "以登入..."
       ],
@@ -2926,6 +3173,9 @@
       ],
       "Mailbox": [
         "電郵信箱"
+      ],
+      "Mark as resolved?": [
+        "標記為已解決?"
       ],
       "Member limit": [
         "成員限制"
@@ -2942,11 +3192,26 @@
       "MX record": [
         "MX 記錄"
       ],
+      "Next": [
+        "下一頁"
+      ],
+      "No excluded items": [
+        "無排除的項目"
+      ],
+      "No inactive 2FAs": [
+        "無啟用的2FAsFAs"
+      ],
       "No items selected": [
         "未選擇任何項目"
       ],
+      "No reused passwords": [
+        "無重複使用的密碼"
+      ],
       "No shared items": [
         "無共享項目"
+      ],
+      "Open pagination": [
+        "開啟分頁"
       ],
       "Organize vaults": [
         "整理保管庫"
@@ -2960,6 +3225,12 @@
       "Password": [
         "密碼"
       ],
+      "Password Health": [
+        "密碼健檢"
+      ],
+      "Pause monitoring?": [
+        "暫停監控?"
+      ],
       "Pending access to the shared data": [
         "暫緩存取分享的資料"
       ],
@@ -2972,14 +3243,35 @@
       "Please note that once deleted, the alias can't be restored.": [
         "需注意別名一旦刪除，將無法恢復"
       ],
+      "Previous": [
+        "上一頁"
+      ],
+      "Recommended actions": [
+        "建議行動"
+      ],
       "Reject device?": [
         "拒絕裝置？"
+      ],
+      "Remove email address?": [
+        "移除電子郵件地址?"
       ],
       "Remove extra password": [
         "移除第二密碼"
       ],
+      "Resolved breaches": [
+        "處理外洩"
+      ],
       "Restore this version?": [
         "還原此版本?"
+      ],
+      "Resume monitoring?": [
+        "繼續監控?"
+      ],
+      "Reused ${ count } time": [
+        "接續${ count }時間"
+      ],
+      "Reused passwords": [
+        "重複使用的密碼"
       ],
       "Review and share": [
         "審閱並分享"
@@ -2993,8 +3285,14 @@
       "Set extra password": [
         "設定第二密碼"
       ],
+      "Set up 2FA for better security": [
+        "為更好安全設定雙重驗證"
+      ],
       "Set up 2FA for more security": [
         "為更好安全設定雙重驗證"
+      ],
+      "Settings": [
+        "設定"
       ],
       "Share with": [
         "與分享"
@@ -3050,14 +3348,29 @@
       "Vault shared with you": [
         "與您分享的保管庫"
       ],
+      "Want to learn more?": [
+        "點擊瞭解更多"
+      ],
       "Weak password": [
         "脆弱密碼"
+      ],
+      "Weak passwords": [
+        "強度不足的密碼"
       ],
       "Welcome to ${ brandNameJSX }": [
         "歡迎使用 ${ brandNameJSX }"
       ],
       "Welcome to your new password manager!": [
         "歡迎來到你的新密碼管理器!"
+      ],
+      "What is an alias?": [
+        "甚麼是別名?"
+      ],
+      "What is the dark web?": [
+        "甚麼是暗網?"
+      ],
+      "Your exposed information": [
+        "你的外﻿﻿﻿洩資料"
       ],
       "Your vault is empty": [
         "您的保管庫為空的"
@@ -3144,8 +3457,14 @@
       "Email cannot be empty": [
         "電子信箱不能空白"
       ],
+      "Email is required": [
+        "電子郵件為必填項"
+      ],
       "Empty note": [
         "清空備註"
+      ],
+      "Failed to load breaches.": [
+        "載入外洩失敗。"
       ],
       "Invalid alias prefix": [
         "別名前綴無效"

@@ -4,6 +4,26 @@
     "language": "hu_HU"
   },
   "contexts": {
+    "Account Settings - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } és ${ remainingCount } más lehetséges adatszivárgást észleltünk. Kapcsolja be a ${ DARK_WEB_MONITORING_NAME } a részletek megtekintéséhez és intézkedjen. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } és egy másik más lehetséges adatszivárgást észleltünk. Kapcsolja be a ${ DARK_WEB_MONITORING_NAME } a részletek megtekintéséhez és intézkedjen. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Egy lehetséges adatszivárgást észleltünk ettől: ${ name }. Kapcsolja be a ${ DARK_WEB_MONITORING_NAME } a részletek megtekintéséhez és intézkedjen. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Egy lehetséges adatszivárgást észleltünk ettől: ${ name }. Kapcsolja be a ${ DARK_WEB_MONITORING_NAME } a részletek megtekintéséhez és intézkedjen. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Egy lehetséges adatszivárgást észleltünk ettől: ${ name }. Kapcsolja be a ${ DARK_WEB_MONITORING_NAME } a részletek megtekintéséhez. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Az ön információja legalább egy adatszivárgásban megtalálható. Kapcsolja be a ${ DARK_WEB_MONITORING_NAME } a részletek megtekintéséhez és intézkedjen. ${ link }"
+      ]
+    },
     "Action": {
       "Accept": [
         "Elfogadás"
@@ -49,6 +69,9 @@
       ],
       "Add username field": [
         "Felhasználónév mező hozzáadása"
+      ],
+      "Admin panel": [
+        "Adminisztrációs felület"
       ],
       "Advanced": [
         "Speciális"
@@ -167,6 +190,9 @@
       "Create a ${ BRAND_NAME } Account": [
         "${ BRAND_NAME } fiók létrehozása"
       ],
+      "Create a new vault": [
+        "Új tároló létrehozása"
+      ],
       "Create alias": [
         "E-mail álnév létrehozása"
       ],
@@ -269,6 +295,9 @@
       "Edit vault": [
         "Tároló szerkesztése"
       ],
+      "Enable ${ DARK_WEB_MONITORING_NAME }": [
+        "Engedélyezi: ${ DARK_WEB_MONITORING_NAME }"
+      ],
       "Enable this alias to receive emails sent to this alias": [
         "Engedélyezem ezt az álnevet az erre az álnévre küldött e-mailek fogadására."
       ],
@@ -302,11 +331,17 @@
       "Generating secure link...": [
         "Biztonságos hivatkozás létrehozása..."
       ],
+      "Get mobile apps": [
+        "Mobilalkalmazások beszerzése"
+      ],
       "Get Pass Business": [
         "Pass Business választása"
       ],
       "Get Pass Plus": [
         "Pass Plus megszerzése"
+      ],
+      "Get Started": [
+        "Kezdés"
       ],
       "Hide": [
         "Elrejtés"
@@ -356,6 +391,9 @@
       "Link expires after": [
         "A hivatkozás lejárata"
       ],
+      "Lock ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } zárolása"
+      ],
       "Lock extension": [
         "Bővítmény lezárása"
       ],
@@ -379,6 +417,9 @@
       ],
       "Manually sync your data": [
         "Adatok manuális szinkronizálása"
+      ],
+      "Mark as resolved": [
+        "Megjelölés megoldottként"
       ],
       "Maximum views": [
         "Maximális megtekintések"
@@ -427,6 +468,12 @@
       ],
       "Open navigation": [
         "Navigáció megnyitása"
+      ],
+      "Pass Monitor": [
+        "Pass Monitor"
+      ],
+      "Pause monitoring": [
+        "Figyelés szüneteltetése"
       ],
       "Pin item": [
         "Elem rögzítése"
@@ -502,6 +549,9 @@
       ],
       "Restrict number of views": [
         "Korlátozott számú megtekintés"
+      ],
+      "Resume monitoring": [
+        "Megfigyelés folytatása"
       ],
       "Retry": [
         "Újra"
@@ -618,6 +668,9 @@
       "Try again": [
         "Próbálja újra"
       ],
+      "Try again.": [
+        "Próbálja újra."
+      ],
       "Unblock contact": [
         "Névjegy feloldása"
       ],
@@ -663,6 +716,9 @@
       ],
       "View app logs": [
         "Alkalmazásnapló megtekintése"
+      ],
+      "View details": [
+        "Részletek megtekintése"
       ],
       "View history": [
         "Előzmények megtekintése"
@@ -712,6 +768,9 @@
         "${ total } másik bejelentkezés ugyanazt a jelszót használja",
         "${ total } másik bejelentkezés ugyanazt a jelszót használja"
       ],
+      "2FA adds another layer of security to your logins. ${ PASS_APP_NAME } makes 2FA easier by storing and automatically autofilling your 2FA codes.": [
+        "A kétlépcsős hitelesítés (2FA) egy újabb biztonsági réteget ad a bejelentkezéshez. A ${ PASS_APP_NAME } megkönnyíti a kétlépcsős hitelesítést azáltal, hogy tárolja és automatikusan kitölti a kétlépcsős hitelesítés kódjait."
+      ],
       "A checked box means the feature is disabled.": [
         "Egy bejelölt mező azt jelenti, hogy a funkció le van tiltva."
       ],
@@ -724,11 +783,23 @@
       "Add the following TXT DNS record to your domain.": [
         "Adja hozzá a következő TXT DNS rekordot a domain nevéhez."
       ],
+      "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
+        "Az e-mail álnév ugyanúgy működik, mint egy e-mail cím, de csökkenti a levélszemét mennyiségét, és elrejti a tényleges e-mail címet és személyazonosságot."
+      ],
+      "Change your passwords": [
+        "Változtassa meg a jelszavait"
+      ],
+      "Create unique passwords": [
+        "Hozzon létre egyedi jelszavakat"
+      ],
       "DKIM ${ WIKIPEDIA_LINK_DKIM } is an email authentication method designed to avoid email spoofing. Setting up DKIM is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
         "A DKIM ${ WIKIPEDIA_LINK_DKIM } egy e-mail hitelesítési módszer, amelyet az e-mail címek hamisításának elkerülésére terveztek. A DKIM beállítása erősen ajánlott annak csökkentése érdekében, hogy az e-mailjei a címzett levélszemét mappájába kerüljenek."
       ],
       "DMARC ${ WIKIPEDIA_LINK_DMARC } is designed to protect the domain from unauthorized use, commonly known as email spoofing. Built around SPF and DKIM, a DMARC policy tells the receiving mail server what to do if neither of those authentication methods passes.": [
         "A DMARC ${ WIKIPEDIA_LINK_DMARC } célja, hogy megvédje a domain nevet a jogosulatlan használattól, közismert nevén az e-mail-címekkel való visszaélésektől (spoofing). Az SPF-re és a DKIM-re építve a DMARC-szabályzat megmondja a fogadó levelezőszervernek, hogy mit tegyen, ha egyik hitelesítési módszer sem megy át."
+      ],
+      "Get notified if your email, password or other personal data was leaked.": [
+        "Értesüljön arról, ha e-mail címe, jelszava vagy más személyes adatai kiszivárogtak."
       ],
       "If you are using a subdomain, e.g. ${ subdomainExample }, you need to use ${ dmarcExampleSubdomain } as the domain instead.": [
         "Ha aldomaint használ, pl. ${ subdomainExample }, akkor a ${ dmarcExampleSubdomain } címet kell használnia domain helyett."
@@ -739,8 +810,17 @@
       "If you are using Cloudflare, please make sure to not select the Proxy option.": [
         "Ha Cloudflare-et használ, kérjük, ne jelölje be a proxy opciót."
       ],
+      "Keep your info more secure and private with these guides and tips.": [
+        "Tartsa adatait biztonságban és kezelje bizalmasan ezekkel az útmutatókkal és tippekkel."
+      ],
       "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.${ infoText }": [
         "Domain nevek, amelyeken a ${ PASS_SHORT_APP_NAME } bizonyos funkciói (Automatikus kitöltés, -javaslat, -mentés) ne legyenek üzemben.${ infoText }"
+      ],
+      "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
+        "Élvonalbeli, mesterséges intelligencia által vezérelt biztonsági megoldásunk, amelyet olyan felhasználók számára terveztünk, akik fokozott védelmet keresnek a fiókjaikhoz. ${ learnMoreLink }"
+      ],
+      "Set up 2FA for more security": [
+        "Kapcsolja be a kétlépcsős hitelesítést nagyobb biztonságért"
       ],
       "Some DNS registrar might require a full record path, in this case please use ${ domain } as domain value instead.": [
         "Egyes DNS regisztrárok teljes rekord útvonalat igényelhetnek, ebben az esetben kérjük, használja a ${ domain } domain nevet értékként."
@@ -750,6 +830,15 @@
       ],
       "SPF ${ WIKIPEDIA_LINK_SPF } is an email authentication method designed to detect forging sender addresses during the delivery of the email. Setting up SPF is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
         "Az SPF ${ WIKIPEDIA_LINK_SPF } egy e-mail hitelesítési módszer, melyet az e-mail kézbesítése során lehetséges feladói címek hamisításának észlelésére terveztek. Az SPF beállítása erősen ajánlott, hogy csökkentse annak az esélyét, hogy e-mailjei a címzett levélszemét mappájába kerüljenek."
+      ],
+      "Start monitoring for data breaches related to accounts created with your email address and your hide-my-email aliases.": [
+        "Indítsa el az e-mail címekkel és a hide-my-email álnevekkel létrehozott fiókokhoz kapcsolódó adatvédelmi incidensek figyelését."
+      ],
+      "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
+        "A dark web az internet egy rejtett része, ahol lopott személyes adatokat, például személyazonosságokat lehet vásárolni és eladni."
+      ],
+      "These items remain at risk": [
+        "Ezek az elemek veszélynek vannak kitéve."
       ],
       "This account is vulnerable, visit the service and change your password.": [
         "Ez a fiók sérülékeny. Keresse fel a szolgáltatást, és változtassa meg a jelszavát."
@@ -762,6 +851,15 @@
       ],
       "Unlock advanced security features and detailed logs to safeguard your online presence.": [
         "Fejlett biztonsági funkciók és részletes naplók feloldása az Ön online jelenlétének védelme érdekében."
+      ],
+      "With ${ PASS_SHORT_APP_NAME } Monitor, stay ahead of threats by getting instant alerts if your credentials are compromised. Unlock advanced security features and detailed logs to safeguard your online presence.": [
+        "A ${ PASS_SHORT_APP_NAME } figyelővel mindig egy lépéssel a fenyegetések előtt járhat, mivel azonnali értesítéseket kap, ha a hitelesítő adatai kompromittálódtak. Oldja fel a speciális biztonsági funkciókat és a részletes naplókat az online jelenlétének védelme érdekében."
+      ],
+      "Your email addresses were leaked in at least 1 data breach.": [
+        "Az Ön e-mail címei legalább 1 adatvédelmi incidensben kiszivárogtak."
+      ],
+      "Your personal info was leaked in a data breach of a third-party service.": [
+        "Egy harmadik fél szolgáltatásának adatvédelmi incidensében kiszivárogtak az Ön személyes adatai."
       ]
     },
     "Email": {
@@ -1201,6 +1299,17 @@
         "Hiba történt"
       ]
     },
+    "Feature": {
+      "Integrated 2FA authenticator": [
+        "Beépített kétlépcsős hitelesítés"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Korlátlan számú hide-my-email álnév"
+      ],
+      "Vault sharing (up to ${ MAX_VAULT_MEMBERS } people)": [
+        "Archívum megosztás (${ MAX_VAULT_MEMBERS } személyig)."
+      ]
+    },
     "file size format": {
       "byte": [
         "bájt",
@@ -1239,6 +1348,17 @@
       "Terabyte": [
         "Terabájt",
         "Terabájt"
+      ]
+    },
+    "Header": {
+      "Domain": [
+        "Domain név"
+      ],
+      "Password ends with": [
+        "Jelszó ezzel végződik:"
+      ],
+      "Username": [
+        "Felhasználónév"
       ]
     },
     "Info": {
@@ -1326,6 +1446,10 @@
         "${ repliedEmailsCount } küldés",
         "${ repliedEmailsCount } küldés"
       ],
+      "${ row.breachCount } breach detected": [
+        "${ row.breachCount } adatszivárgás észlelve",
+        "${ row.breachCount } adatszivárgások észlelve"
+      ],
       "${ trialDaysLeft } day left": [
         "${ trialDaysLeft } nap van hátra",
         "${ trialDaysLeft } nap van hátra"
@@ -1366,6 +1490,9 @@
       "Access your passwords on the go with our mobile apps.": [
         "Férjen hozzá a jelszavaihoz bárhol, a mobilalkalmazásainkkal."
       ],
+      "Add your custom email address to monitor:": [
+        "Adjon hozzá egyéni e-mail címet a felügyelethez:"
+      ],
       "Admin": [
         "Adminisztrátor"
       ],
@@ -1387,11 +1514,17 @@
       "Aliases out of sync (${ aliasCount })": [
         "Az álnevek szinkronizálása sikertelen (${ aliasCount })"
       ],
+      "Aliases with custom domains are not monitored, please add them as a custom email for monitoring.": [
+        "Az saját domain névvel létrehozott e-mail álnevek nincsenek figyelve, ezeket egyéni e-mail figyelésként adhatja hozzá."
+      ],
       "All aliases using the mailbox ${ emailJSX } will be also deleted.": [
         "A ${ emailJSX } postafiókot használó összes e-mail álnév szintén törölve lesz."
       ],
       "All breaches for this address were resolved": [
         "Az ehhez a címhez tartozó összes adatvédelmi incidens megoldva"
+      ],
+      "All current breaches will be marked as resolved. In case of future data breaches, you'll be notified.": [
+        "Minden jelenlegi adatvédelmi incidens megoldottnak lesz jelölve. A jövőbeni adatvédelmi incidensek esetén értesítjük."
       ],
       "All inactive secure links were removed": [
         "Az összes inaktív biztonságos hivatkozás el lett távolítva"
@@ -1444,6 +1577,9 @@
       "Biometrics will be disabled and will need to be enabled again.": [
         "A biometrikus azonosítás le lesz tiltva, és újra engedélyezni kell."
       ],
+      "Breaches detected": [
+        "Adatszivárgásokat észleltünk"
+      ],
       "Bring your own domain and you don't have to buy yet another email hosting solution.": [
         "Hozza a saját domain nevét, és nem kell újabb e-mail tárhelyszolgáltatást vásárolnia."
       ],
@@ -1479,6 +1615,9 @@
       ],
       "Can view this item.": [
         "Megtekintheti ezt az elemet."
+      ],
+      "Change your password": [
+        "Jelszó megváltoztatása"
       ],
       "Choose a saved passkey to sign-in to ${ domain }": [
         "Válasszon egy hitelesítő kulcsot a(z) ${ domain } bejelentkezéshez"
@@ -1543,9 +1682,6 @@
       "Disabling offline mode...": [
         "Offline üzemmód letiltása..."
       ],
-      "Discover ${ PASS_APP_NAME } Youtube Video": [
-        "${ PASS_APP_NAME } bemutató YouTube videó"
-      ],
       "DNS changes could take up to 24 hours to update.": [
         "A DNS-változások frissítéséhez az átfutási idő akár 24 óra is lehet."
       ],
@@ -1563,6 +1699,9 @@
       ],
       "Editor": [
         "Szerkesztő"
+      ],
+      "email": [
+        "e-mail cím"
       ],
       "Email address successfully deleted from monitoring": [
         "Az e-mail cím sikeresen törölve a figyelésből"
@@ -1642,6 +1781,9 @@
       "Fill in the CSV with your data": [
         "Töltse ki a CSV fájlt az adataival"
       ],
+      "finance": [
+        "pénzügyi"
+      ],
       "Follow those steps to import your data with a generic CSV:": [
         "A következő lépésekkel importálhat adatokat általános CSV fájlból:"
       ],
@@ -1679,6 +1821,12 @@
       ],
       "Here's how it works:": [
         "Így működik:"
+      ],
+      "High Priority": [
+        "Magas prioritású"
+      ],
+      "How does monitoring work?": [
+        "Hogyan működik a figyelés?"
       ],
       "Identity confirmed": [
         "Személyazonosság megerősítve"
@@ -1750,6 +1898,12 @@
       "Item successfully unpinned": [
         "Elem feloldva"
       ],
+      "Latest breach on ${ formattedDate }": [
+        "Legutolsó adatszivárgás: ${ formattedDate }"
+      ],
+      "Learn what to do ${ dataLeakedLink }": [
+        "Tudja meg, mit kell tennie ${ dataLeakedLink }"
+      ],
       "Leaving item...": [
         "Elem elhagyása..."
       ],
@@ -1768,11 +1922,20 @@
       "Loading...": [
         "Betöltés..."
       ],
+      "Low Priority": [
+        "Alacsony prioritású"
+      ],
       "Manager": [
         "Kezelő"
       ],
       "me": [
         "én"
+      ],
+      "Medium Priority": [
+        "Közepes prioritású"
+      ],
+      "Monitor accounts": [
+        "Fiókok megfigyelése"
       ],
       "Monitoring settings successfully updated": [
         "A megfigyelési beállítások frissítve"
@@ -1786,10 +1949,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Az összes elem áthelyezése innen: \"${ payload.content.name }\""
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Egy elem másik tárolóba történő áthelyezése törli a biztonságos hivatkozásokat.",
-        "Az elemek másik tárolóba történő áthelyezése törli a biztonságos hivatkozásokat."
       ],
       "Moving items": [
         "Elemek áthelyezése"
@@ -1808,6 +1967,9 @@
       ],
       "Never": [
         "Soha"
+      ],
+      "No breaches detected": [
+        "Nem észleltünk adatszivárgást"
       ],
       "No identity item found": [
         "Nem található azonosító elem"
@@ -1839,6 +2001,9 @@
       "Open the Extensions menu": [
         "Nyissa meg a bővítmények menüt"
       ],
+      "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Figyelmeztetéseink a biztonságot helyezik előtérbe.Ha nem ismeri fel ezeket a feltört információkat nyugodtan figyelmen kívül hagyhatja ezt."
+      ],
       "Owner": [
         "Tulajdonos"
       ],
@@ -1851,6 +2016,9 @@
       "Passkey sign-in": [
         "Hitelesítő kulcsos bejelentkezés"
       ],
+      "password": [
+        "jelszó"
+      ],
       "Password copied": [
         "Jelszó másolva"
       ],
@@ -1860,6 +2028,9 @@
       "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
         "${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } hétnél régebbi jelszavak automatikusan törlődnek az előzményekből.",
         "${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } hétnél régebbi jelszavak automatikusan törlődnek az előzményekből."
+      ],
+      "Paused": [
+        "Felfüggesztve"
       ],
       "Pending access to the shared data": [
         "A megosztott adatok elérése függőben van"
@@ -2113,6 +2284,9 @@
       "Successfully synced all vaults": [
         "Minden tároló szinkronizálva"
       ],
+      "Suggested": [
+        "Javasolt"
+      ],
       "Switch to another vault or create an item in this vault": [
         "Váltson másik tárolóra vagy hozzon létre elemet ebben a tárolóban"
       ],
@@ -2133,6 +2307,9 @@
       ],
       "The exported file will be encrypted using PGP and requires a strong passphrase.": [
         "Az exportált fájl PGP-vel titkosított és egy erős jelszó szükséges hozzá."
+      ],
+      "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
+        "A kiszivárgott információ egy harmadik féltől származó szolgáltatás volt. Az ön ${ BRAND_NAME } fiókja biztonságban van. ${ learnMoreLink }"
       ],
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "A ${ PASS_APP_NAME } használatához szüksége lesz az extra jelszóra. Ez kiegészítő jelszóként működik a ${ BRAND_NAME } jelszava mellett."
@@ -2261,6 +2438,9 @@
       "User's access successfully updated": [
         "A felhasználói hozzáférés frissítve"
       ],
+      "username": [
+        "felhasználónév"
+      ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Tároló törölve: \"${ payload.content.name }\""
       ],
@@ -2279,6 +2459,9 @@
       ],
       "Verification code": [
         "Ellenőrző kód"
+      ],
+      "Verification code sent.": [
+        "Ellenőrző kód kiküldve"
       ],
       "Viewer": [
         "Megtekintésre jogosult"
@@ -2352,6 +2535,18 @@
       "You will be logged out and need to log in again on all of your other devices.": [
         "Ki kell majd lépnie és újra belépni az összes eszközén."
       ],
+      "You will be notified of data breaches for these email addresses.": [
+        "Értesítést fog kapni ezeknek az e-mail címeknek az adatvédelmi incidenseiről."
+      ],
+      "You will be notified of data breaches for this email address.": [
+        "Ennek az e-mail címnek az adatvédelmi incidenséről értesítést fog kapni."
+      ],
+      "You will no longer be notified of data breaches for these email addresses.": [
+        "A továbbiakban nem kap értesítést ezekhez az e-mail címekhez tartozó adatvédelmi incidensekről."
+      ],
+      "You will no longer be notified of data breaches for this email address.": [
+        "A továbbiakban nem kap értesítést ennek az e-mail címnek az adatvédelmi incidenséről."
+      ],
       "You will no longer have access to sharing, 2FA, credit card and other advanced features in ${ PASS_APP_NAME }": [
         "Nem fog hozzáférni a megosztáshoz, a kétlépcsős hitelesítéshez, a bankkártyához és egyéb speciális funkciókhoz a következőben: ${ PASS_APP_NAME }"
       ],
@@ -2375,6 +2570,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "A fájlok titkosításra majd pedig mentésre kerülnek"
+      ],
+      "Your information was found on ${ displayedDate }": [
+        "Az ön információja meg lett találva ezen a napon: ${ displayedDate }"
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Szervezete megköveteli, hogy biztosítsa a ${ PASS_APP_NAME } alkalmazáshoz való hozzáférését"
@@ -2437,6 +2635,10 @@
       "${ secureLinksCount } secure link": [
         "${ secureLinksCount } biztonságos hivatkozás",
         "${ secureLinksCount } biztonságos hivatkozás"
+      ],
+      "${ usageCount } login": [
+        "${ usageCount } belépés",
+        "${ usageCount } belépés"
       ],
       "${ years } year": [
         "${ years } év",
@@ -2739,6 +2941,9 @@
       "Email (new alias)": [
         "E-mail (új álnév)"
       ],
+      "Email address": [
+        "E-mail cím"
+      ],
       "Email aliases": [
         "E-mail álnevek"
       ],
@@ -2807,6 +3012,9 @@
       ],
       "Generic CSV": [
         "Általános CSV"
+      ],
+      "Get Started": [
+        "Kezdje el"
       ],
       "Grant": [
         "Engedélyezés"
@@ -2918,6 +3126,9 @@
       ],
       "Last name": [
         "Vezetéknév"
+      ],
+      "Last updated": [
+        "Utolsó frissítés"
       ],
       "Last week": [
         "Múlt hét"
@@ -3300,6 +3511,9 @@
       "State or province": [
         "Állam vagy tartomány"
       ],
+      "Status": [
+        "Állapot"
+      ],
       "Street address": [
         "Utca, házszám"
       ],
@@ -3408,6 +3622,9 @@
       "Use ${ PASS_APP_NAME } as your browser's default password manager": [
         "Használja a ${ PASS_APP_NAME } alkalmazást böngészője alapértelmezett jelszókezelőjeként"
       ],
+      "Used in": [
+        "Használva"
+      ],
       "Useful for permanent sharing": [
         "Kiváló állandó megosztáshoz"
       ],
@@ -3422,6 +3639,9 @@
       ],
       "Vault ID": [
         "Tároló azonosító"
+      ],
+      "Vaults": [
+        "Tárolók"
       ],
       "View details": [
         "Részletek megtekintése"
@@ -3481,6 +3701,17 @@
     "Link": {
       "auto create rules ››": [
         "szabályok automatikus létrehozása ››"
+      ],
+      "if your data is leaked": [
+        "ha az adatai kiszivárogtak"
+      ],
+      "Learn more": [
+        "További információk"
+      ]
+    },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "Engedélyezi: ${ reason }"
       ]
     },
     "Message": {
@@ -3494,6 +3725,22 @@
       ],
       "You selected ${ semiboldText } in this vault.": [
         "${ semiboldText } jelölt ki ebben a tárolóban."
+      ]
+    },
+    "new_plans: feature": {
+      "Require 2FA for organization": [
+        "Kétlépcsős hitelesítés megkövetelése a szervezetben"
+      ],
+      "SSO integration": [
+        "SSO integráció"
+      ]
+    },
+    "Notification": {
+      "${ reason } has been disabled": [
+        "${ reason } letiltva"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } engedélyezésre került"
       ]
     },
     "Onboarding": {
@@ -3754,6 +4001,20 @@
         "Használva: ${ url }"
       ]
     },
+    "Security Center - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } és ${ remainingCount } lehetséges adatszivárgást észleltünk. Kapcsolja be a ${ DARK_WEB_MONITORING_NAME } szolgáltatást a részletek megtekintéséhez. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } és 1 másik lehetséges adatszivárgást észleltünk. Kapcsolja be a ${ DARK_WEB_MONITORING_NAME } szolgáltatást a részletek megtekintéséhez. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Lehetséges ${ name } adatszivárgást észleltünk. A részletek megtekintéséhez kapcsolja be a ${ DARK_WEB_MONITORING_NAME } funkciót. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Az Ön információja legalább egy adatszivárgásban megtalálható. Kapcsolja be a ${ DARK_WEB_MONITORING_NAME } szolgáltatást a részletek megtekintéséhez. ${ link }"
+      ]
+    },
     "sso": {
       "Approve or deny it now": [
         "Most hagyja jóvá vagy utasítsa el"
@@ -3897,11 +4158,20 @@
       ]
     },
     "Title": {
+      "${ BRAND_NAME } addresses": [
+        "${ BRAND_NAME } cím"
+      ],
       "${ PASS_APP_NAME } Logs": [
         "${ PASS_APP_NAME } naplók"
       ],
       "${ PASS_APP_NAME } Settings": [
         "${ PASS_APP_NAME } beállítások"
+      ],
+      "${ PASS_SHORT_APP_NAME } Monitor": [
+        "${ PASS_SHORT_APP_NAME } Figyelő"
+      ],
+      "Account protection": [
+        "Fiókvédelem"
       ],
       "Actions": [
         "Műveletek"
@@ -3932,6 +4202,15 @@
       ],
       "Blocked addresses": [
         "Letiltott címek"
+      ],
+      "Breach detected": [
+        "Adatszivárgást észleltünk"
+      ],
+      "Breaches": [
+        "Adatszivárgások"
+      ],
+      "Breaches detected for": [
+        "Adatvédelmi incidens észlelve:"
       ],
       "Cancel changing your email?": [
         "Mégsem módosítja az e-mail címét?"
@@ -3972,8 +4251,17 @@
       "Current version": [
         "Jelenlegi változat"
       ],
+      "Custom addresses": [
+        "Egyéni címek"
+      ],
       "Custom domains": [
         "Saját domain név"
+      ],
+      "Custom email monitoring": [
+        "Egyéni e-mail cím figyelés"
+      ],
+      "Custom emails": [
+        "Egyéni e-mailek"
       ],
       "Default": [
         "Alapértelmezett"
@@ -4042,6 +4330,9 @@
       "Enter your second password": [
         "Írja be a második jelszavát"
       ],
+      "Excluded items": [
+        "Kizárt elemek"
+      ],
       "Fill & copy password": [
         "Jelszó kitöltése és másolása"
       ],
@@ -4060,6 +4351,9 @@
       "Hide my email": [
         "Rejtse el az e-mail címemet"
       ],
+      "Hide-my-email aliases": [
+        "Hide-my-email álnevek"
+      ],
       "History": [
         "Előzmények"
       ],
@@ -4074,6 +4368,12 @@
       ],
       "Importing your data": [
         "Az adatok importálása"
+      ],
+      "Inactive 2FA": [
+        "Kétlépcsős hitelesítés kikapcsolva"
+      ],
+      "Information exposed in breach": [
+        "Adatvédelmi incidens során kiszivárgott információk"
       ],
       "Item": [
         "Elem"
@@ -4090,6 +4390,9 @@
       "Leave vault?": [
         "Tároló elhagyása?"
       ],
+      "Loading breaches...": [
+        "Adatvédelmi incidensek betöltése..."
+      ],
       "Log in as...": [
         "Bejelentkezés mint..."
       ],
@@ -4098,6 +4401,9 @@
       ],
       "Mailbox": [
         "Postafiók"
+      ],
+      "Mark as resolved?": [
+        "Megjelölés megoldottként?"
       ],
       "Member limit": [
         "Tagság korlát"
@@ -4128,14 +4434,32 @@
       "MX record": [
         "MX rekord"
       ],
+      "Next": [
+        "Következő"
+      ],
+      "No excluded items": [
+        "Nincsenek kizárt elemek"
+      ],
+      "No inactive 2FAs": [
+        "Nincs inaktív 2FA"
+      ],
+      "No insecure passwords": [
+        "Nincsenek nem biztonságos jelszavak"
+      ],
       "No items selected": [
         "Nincs elem kiválasztva"
+      ],
+      "No reused passwords": [
+        "Nincsenek újrahasznált jelszavak"
       ],
       "No shared items": [
         "Nincsenek megosztott elemek"
       ],
       "No shared secure links": [
         "Nincsenek megosztott biztonságos hivatkozások"
+      ],
+      "Open pagination": [
+        "Lapozó megnyitása"
       ],
       "Our welcome gift to you": [
         "Üdvözlő ajándékunk önnek"
@@ -4145,6 +4469,12 @@
       ],
       "Password": [
         "Jelszó"
+      ],
+      "Password Health": [
+        "Jelszó-egészség"
+      ],
+      "Pause monitoring?": [
+        "Figyelés szüneteltetése?"
       ],
       "Pending access confirmation": [
         "Függőben lévő hozzáférés-jóváhagyás"
@@ -4165,11 +4495,20 @@
         "Vegye figyelembe, hogy törlés után az e-mail álnév nem állítható vissza.",
         "Vegye figyelembe, hogy törlés után az e-mail álnevek nem állíthatók vissza."
       ],
+      "Previous": [
+        "Előző"
+      ],
       "Random Prefix Generation": [
         "Véletlenszerű előtag létrehozása"
       ],
+      "Recommended actions": [
+        "Javasolt műveletek"
+      ],
       "Reject device?": [
         "Eszköz elutasítása?"
+      ],
+      "Remove email address?": [
+        "E-mail cím eltávolítása?"
       ],
       "Remove extra password": [
         "Extra jelszó eltávolítása"
@@ -4180,8 +4519,21 @@
       "Reset history for this item?": [
         "Törli az elem előzményeit?"
       ],
+      "Resolved breaches": [
+        "Megoldott adatszivárgások"
+      ],
       "Restore this version?": [
         "Visszatérés ehhez a változathoz?"
+      ],
+      "Resume monitoring?": [
+        "Figyelés folytatása?"
+      ],
+      "Reused ${ count } time": [
+        "Újrafelhasználva ${ count } alkalommal",
+        "Újrafelhasználva ${ count } alkalommal"
+      ],
+      "Reused passwords": [
+        "Újrahasznált jelszavak"
       ],
       "Review and share": [
         "Áttekintés és megosztás"
@@ -4198,8 +4550,14 @@
       "Set extra password": [
         "Extra jelszó beállítása"
       ],
+      "Set up 2FA for better security": [
+        "Állítson be kétlépcsős hitelesítést a nagyobb biztonság érdekében"
+      ],
       "Set up 2FA for more security": [
         "Kapcsolja be a kétlépcsős hitelesítést nagyobb biztonságért"
+      ],
+      "Settings": [
+        "Beállítások"
       ],
       "Share with": [
         "Megosztás:"
@@ -4261,14 +4619,26 @@
       "Vault shared with you": [
         "Önnel megosztott tárolók"
       ],
+      "Want to learn more?": [
+        "Szeretne többet megtudni?"
+      ],
       "Weak password": [
         "Gyenge jelszó"
+      ],
+      "Weak passwords": [
+        "Gyenge jelszavak"
       ],
       "Welcome to ${ brandNameJSX }": [
         "Üdvözli a ${ brandNameJSX }"
       ],
       "Welcome to your new password manager!": [
         "Üdvözli az új jelszókezelője!"
+      ],
+      "What is an alias?": [
+        "Mi az az e-mail álnév?"
+      ],
+      "What is the dark web?": [
+        "Mi az a dark web?"
       ],
       "What is the difference between ${ PASS_SHORT_APP_NAME } note and SimpleLogin note?": [
         "Mi a különbség a ${ PASS_SHORT_APP_NAME } jegyzet és a SimpleLogin jegyzet között?"
@@ -4278,6 +4648,9 @@
       ],
       "Your ${ planName } subscription will end on ${ endDate }": [
         "Az Ön ${ planName } előfizetése lejár ekkor: ${ endDate }"
+      ],
+      "Your exposed information": [
+        "Az ön kiszivárgott információi"
       ],
       "Your vault is empty": [
         "A tároló üres"
@@ -4293,6 +4666,14 @@
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Ma"
+      ]
+    },
+    "Tooltip": {
+      "Not all information listed here was exposed for all users.": [
+        "Nem minden itt felsorolt információt tettek közzé minden felhasználó esetén."
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "Hacsak nem fejtik meg őket, a titkosított jelszavak akkor is biztonságban maradnak, ha nyilvánosságra kerülnek."
       ]
     },
     "Validation": {
@@ -4405,6 +4786,9 @@
       "Email cannot be empty": [
         "Az email nem lehet üres"
       ],
+      "Email is required": [
+        "E-mail cím szükséges"
+      ],
       "Empty note": [
         "Üres jegyzet"
       ],
@@ -4419,6 +4803,9 @@
       ],
       "Extra password should have at least 8 characters": [
         "Az extra jelszónak legalább 8 karakterből kell állnia"
+      ],
+      "Failed to load breaches.": [
+        "Nem sikerült betölteni az adatvédelmi incidenseket."
       ],
       "Invalid alias prefix": [
         "Érvénytelen e-mail álnév előtag"
@@ -4513,6 +4900,9 @@
       ],
       "This alias \"${ aliasEmail }\" is currently used in the login \"${ relatedLoginName }\".": [
         "„${ aliasEmail }” e-mail álnév jelenleg „${ relatedLoginName }” bejelentkezésben használatos."
+      ],
+      "This email address will no longer be monitored for data breaches.": [
+        "Ezt az e-mail címet a továbbiakban nem figyeljük az adatvédelmi incidensek szempontjából."
       ],
       "This item is currently shared. Deleting it will remove access for all other users.": [
         "Ez az elem jelenleg meg van osztva. Törlésével minden más felhasználó számára is megszűnik a hozzáférés."

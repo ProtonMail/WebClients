@@ -4,6 +4,26 @@
     "language": "ko_KR"
   },
   "contexts": {
+    "Account Settings - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name }과 ${ remainingCount }개의 잠재적인 유출이 탐지되었습니다. ${ DARK_WEB_MONITORING_NAME }을 활성화하여 세부사항을 확인하고 조치를 취하십시오. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name }과 하나의 잠재적인 유출이 탐지되었습니다. ${ DARK_WEB_MONITORING_NAME }을 활성화하여 세부사항을 확인하고 조치를 취하십시오. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "잠재적인 ${ name } 유출이 탐지되었습니다. ${ DARK_WEB_MONITORING_NAME }을 활성화하여 세부사항을 확인하고 조치를 취하십시오. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name }에서 잠재적인 유출이 탐지되었습니다. ${ DARK_WEB_MONITORING_NAME }을 활성화하여 세부사항을 확인하고 조치를 취하십시오. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name }에서 잠재적인 유출이 탐지되었습니다. ${ DARK_WEB_MONITORING_NAME }을 활성화하여 세부사항을 확인하십시오. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "사용자의 정보가 적어도 하나의 데이터 유출에서 발견되었습니다. ${ DARK_WEB_MONITORING_NAME }을 활성화하여 세부사항을 확인하고 조치를 취하십시오. ${ link }"
+      ]
+    },
     "Action": {
       "${ PASS_SHORT_APP_NAME } for Android": [
         "Android용 ${ PASS_SHORT_APP_NAME }"
@@ -55,6 +75,9 @@
       ],
       "Add username field": [
         "사용자 이름 입력란 추가"
+      ],
+      "Admin panel": [
+        "관리자 패널"
       ],
       "Advanced": [
         "고급"
@@ -176,6 +199,9 @@
       "Create a ${ BRAND_NAME } Account": [
         "${ BRAND_NAME } 계정 생성하기"
       ],
+      "Create a new vault": [
+        "새 금고 생성"
+      ],
       "Create alias": [
         "별칭 생성"
       ],
@@ -284,6 +310,9 @@
       "Edit vault": [
         "금고 편집"
       ],
+      "Enable ${ DARK_WEB_MONITORING_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME } 활성화"
+      ],
       "Enable this alias to receive emails sent to this alias": [
         "이 이메일 주소로 수신하려면 이 별칭을 활성화하십시오."
       ],
@@ -320,11 +349,17 @@
       "Get mobile and desktop apps": [
         "모바일 및 데스크톱 앱 설치"
       ],
+      "Get mobile apps": [
+        "모바일 앱 다운로드"
+      ],
       "Get Pass Business": [
         "Pass Business 구매"
       ],
       "Get Pass Plus": [
         "Pass Plus 구매하기"
+      ],
+      "Get Started": [
+        "시작하기"
       ],
       "Hide": [
         "숨기기"
@@ -374,6 +409,9 @@
       "Link expires after": [
         "링크 만료시점"
       ],
+      "Lock ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } 잠금"
+      ],
       "Lock extension": [
         "확장 프로그램 잠그기"
       ],
@@ -397,6 +435,9 @@
       ],
       "Manually sync your data": [
         "수동으로 데이터 동기화"
+      ],
+      "Mark as resolved": [
+        "해결됨으로 표시"
       ],
       "Maximum views": [
         "최대 보기 횟수"
@@ -448,6 +489,12 @@
       ],
       "Organize vaults": [
         "조직 보관함"
+      ],
+      "Pass Monitor": [
+        "Pass Monitor"
+      ],
+      "Pause monitoring": [
+        "모니터링 일시정지"
       ],
       "Pin item": [
         "항목 고정"
@@ -523,6 +570,9 @@
       ],
       "Restrict number of views": [
         "보기 횟수 제한"
+      ],
+      "Resume monitoring": [
+        "모니터링 재개"
       ],
       "Retry": [
         "재시도"
@@ -638,6 +688,9 @@
       "Try again": [
         "다시 시도"
       ],
+      "Try again.": [
+        "다시 시도하세요."
+      ],
       "Unblock contact": [
         "연락처 차단 해제"
       ],
@@ -682,6 +735,9 @@
       ],
       "View app logs": [
         "앱 로그 보기"
+      ],
+      "View details": [
+        "자세히 보기"
       ],
       "View history": [
         "기록 보기"
@@ -735,6 +791,9 @@
       "${ total } other login uses the same password": [
         "${ total }개의 다른 로그인이 같은 비밀번호를 사용하고 있습니다"
       ],
+      "2FA adds another layer of security to your logins. ${ PASS_APP_NAME } makes 2FA easier by storing and automatically autofilling your 2FA codes.": [
+        "2단계 인증은 로그인에 또 하나의 보안 계층을 추가합니다. ${ PASS_APP_NAME }가 2단계 인증 코드를 저장하고 자동으로 자동 완성하여 더 사용하기 쉽게 만들어드립니다."
+      ],
       "A checked box means the feature is disabled.": [
         "해당 체크박스가 이 기능이 비활성화 상태임을 의미합니다."
       ],
@@ -747,11 +806,23 @@
       "Add the following TXT DNS record to your domain.": [
         "도메인에 다음 TXT DNS 레코드를 추가하세요."
       ],
+      "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
+        "이메일 별칭은 이메일 주소와 같이 동작하지만 스팸을 줄여주고 당신의 실제 이메일 주소와 신원을 감추어 줍니다."
+      ],
+      "Change your passwords": [
+        "비밀번호 변경"
+      ],
+      "Create unique passwords": [
+        "고유한 비밀번호 만들기"
+      ],
       "DKIM ${ WIKIPEDIA_LINK_DKIM } is an email authentication method designed to avoid email spoofing. Setting up DKIM is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
         "DKIM ${ WIKIPEDIA_LINK_DKIM }은 이메일 스푸핑을 피하기 위해 고안된 이메일 인증 방식입니다. 이메일이 수신자의 스팸 폴더로 전송되는 가능성을 줄이기 위해 DKIM을 설정하는 것이 좋습니다."
       ],
       "DMARC ${ WIKIPEDIA_LINK_DMARC } is designed to protect the domain from unauthorized use, commonly known as email spoofing. Built around SPF and DKIM, a DMARC policy tells the receiving mail server what to do if neither of those authentication methods passes.": [
         "DMARC ${ WIKIPEDIA_LINK_DMARC } 는 일반적으로 이메일 스푸핑으로 알려진 무단 사용으로부터 도메인을 보호하도록 설계되었습니다. SPF와 DKIM을 중심으로 구축된 DMARC 정책은 수신 메일 서버에 이러한 인증 방법 중 어느 것도 통과하지 않을 경우 어떻게 수행하는지 알려줍니다."
+      ],
+      "Get notified if your email, password or other personal data was leaked.": [
+        "이메일, 비밀번호나 다른 개인 정보가 유출되는 경우에 알림을 받아보세요."
       ],
       "If you are using a subdomain, e.g. ${ subdomainExample }, you need to use ${ dmarcExampleSubdomain } as the domain instead.": [
         "${ subdomainExample }와(과) 같은 서브 도메인을 사용 중이시라면, 대신 도메인을 ${ dmarcExampleSubdomain }(으)로 사용해야 합니다."
@@ -762,8 +833,17 @@
       "If you are using Cloudflare, please make sure to not select the Proxy option.": [
         "만약 Cloudflare를 사용하신다면 프록시 옵션을 꺼주세요."
       ],
+      "Keep your info more secure and private with these guides and tips.": [
+        "이 가이드와 팁을 통해 내 정보가 더욱 안전하고 사적이도록 하세요."
+      ],
       "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.${ infoText }": [
         "${ PASS_SHORT_APP_NAME } (자동 완성, 자동 제안, 자동 저장)의 특정 자동화 기능을 실행해서는 안 되는 도메인 목록을 관리합니다. ${ infoText }"
+      ],
+      "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
+        "계정에 대한 강화된 보호를 원하는 사용자를 위해 설계된 최첨단 AI 기반 보안 솔루션입니다. ${ learnMoreLink }"
+      ],
+      "Set up 2FA for more security": [
+        "더 나은 보안을 위해 2단계 인증 설정"
       ],
       "Some DNS registrar might require a full record path, in this case please use ${ domain } as domain value instead.": [
         "일부 DNS 기관은 전체 레코드 경로를 요구할 수 있습니다. 이 경우 대신 ${ domain }(을)를 도메인 값으로 사용하세요."
@@ -773,6 +853,15 @@
       ],
       "SPF ${ WIKIPEDIA_LINK_SPF } is an email authentication method designed to detect forging sender addresses during the delivery of the email. Setting up SPF is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
         "SPF ${ WIKIPEDIA_LINK_SPF } 는 이메일 전달 중 위조 발신자 주소를 감지하도록 설계된 이메일 인증 방식입니다. 이메일이 수신자의 스팸 폴더로 전송되는 가능성을 줄이기 위해 SPF를 설정하는 것이 좋습니다."
+      ],
+      "Start monitoring for data breaches related to accounts created with your email address and your hide-my-email aliases.": [
+        "이메일 주소와 hide-my-email 별칭으로 만든 계정과 관련된 데이터 유출에 대한 모니터링을 시작하세요."
+      ],
+      "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
+        "다크 웹이란 신원과 같은 도난당한 개인 정보의 매매가 이루어지기도 하는 인터넷의 숨겨진 일부입니다."
+      ],
+      "These items remain at risk": [
+        "이 항목들이 위험에 처해있음"
       ],
       "These vaults will not be accessible and their content won’t be available to Search or Autofill.": [
         "이 금고는 접근할 수 없으며, 해당 콘텐츠는 검색 또는 자동완성에서 사용할 수 없습니다."
@@ -788,6 +877,15 @@
       ],
       "Unlock advanced security features and detailed logs to safeguard your online presence.": [
         "나의 온라인 활동을 보호할 고급 보안 기능과 자세한 로그를 잠금해제 하세요."
+      ],
+      "With ${ PASS_SHORT_APP_NAME } Monitor, stay ahead of threats by getting instant alerts if your credentials are compromised. Unlock advanced security features and detailed logs to safeguard your online presence.": [
+        "${ PASS_SHORT_APP_NAME } Monitor를 사용하여 자격 증명이 훼손되었을 때 위협을 앞서나가세요. 회원님의 온라인 활동을 보호할 고급 보안 기능과 자세한 로그를 잠금해제하세요."
+      ],
+      "Your email addresses were leaked in at least 1 data breach.": [
+        "사용자의 이메일 주소가 하나 이상의 데이터 침해에 처해있습니다."
+      ],
+      "Your personal info was leaked in a data breach of a third-party service.": [
+        "사용자의 개인 정보가 제3자 서비스의 데이터 유출 사고로 인해 유출되었습니다."
       ]
     },
     "Email": {
@@ -1240,6 +1338,17 @@
         "문제가 발생했습니다"
       ]
     },
+    "Feature": {
+      "Integrated 2FA authenticator": [
+        "2단계 인증기 내장"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "무제한 hide-my-email 별칭"
+      ],
+      "Vault sharing (up to ${ MAX_VAULT_MEMBERS } people)": [
+        "금고 공유 (최대 ${ MAX_VAULT_MEMBERS }명)"
+      ]
+    },
     "file size format": {
       "byte": [
         "바이트"
@@ -1272,6 +1381,17 @@
       ],
       "Terabyte": [
         "테라바이트"
+      ]
+    },
+    "Header": {
+      "Domain": [
+        "도메인"
+      ],
+      "Password ends with": [
+        "비밀번호 마지막 글자"
+      ],
+      "Username": [
+        "사용자 이름"
       ]
     },
     "Info": {
@@ -1350,6 +1470,9 @@
       "${ repliedEmailsCount } sent": [
         "${ repliedEmailsCount }개 전송됨"
       ],
+      "${ row.breachCount } breach detected": [
+        "${ row.breachCount }개 침해 사례 감지됨"
+      ],
       "${ trialDaysLeft } day left": [
         "${ trialDaysLeft }일 남음"
       ],
@@ -1392,6 +1515,9 @@
       "Access your passwords on the go with our mobile apps.": [
         "이동 중에 모바일 앱에서도 비밀번호에 쉽게 접근하세요."
       ],
+      "Add your custom email address to monitor:": [
+        "모니터랑할 커스텀 이메일 주소를 추가하세요:"
+      ],
       "Admin": [
         "관리자"
       ],
@@ -1413,11 +1539,17 @@
       "Aliases out of sync (${ aliasCount })": [
         "동기화되지 않은 별칭 (${ aliasCount })"
       ],
+      "Aliases with custom domains are not monitored, please add them as a custom email for monitoring.": [
+        "커스텀 도메인을 사용한 별칭은 모니터링 대상이 아니므로, 커스텀 이메일로 모니터링에 추가해 주세요."
+      ],
       "All aliases using the mailbox ${ emailJSX } will be also deleted.": [
         "또한 메일함 ${ emailJSX }을(를) 사용하는 모든 별칭이 삭제됩니다."
       ],
       "All breaches for this address were resolved": [
         "이 주소의 모든 침해가 해결되었습니다"
+      ],
+      "All current breaches will be marked as resolved. In case of future data breaches, you'll be notified.": [
+        "현재의 모든 침해가 해결된 것으로 표시됩니다. 나중에 데이터 침해가 발생하는 경우에는 알림이 전송됩니다."
       ],
       "All inactive secure links were removed": [
         "모든 비활성 상태의 안전한 링크가 삭제됨"
@@ -1470,6 +1602,9 @@
       "Biometrics will be disabled and will need to be enabled again.": [
         "생체인증이 비활성화되며 다시 활성화가 필요합니다."
       ],
+      "Breaches detected": [
+        "침해 사례 감지됨"
+      ],
       "Bring your own domain and you don't have to buy yet another email hosting solution.": [
         "도메인을 가져오면 다른 이메일 호스팅 솔루션을 구매할 필요가 없습니다."
       ],
@@ -1505,6 +1640,9 @@
       ],
       "Can view this item.": [
         "이 항목을 볼 수 있습니다."
+      ],
+      "Change your password": [
+        "비밀번호를 변경하십시오"
       ],
       "Choose a saved passkey to sign-in to ${ domain }": [
         "${ domain }에 로그인할 저장된 패스키를 선택하세요."
@@ -1572,9 +1710,6 @@
       "Disabling offline mode...": [
         "오프라인 모드 비활성화 중..."
       ],
-      "Discover ${ PASS_APP_NAME } Youtube Video": [
-        "${ PASS_APP_NAME } YouTube 비디오 살펴보기"
-      ],
       "DNS changes could take up to 24 hours to update.": [
         "DNS 변경 사항의 업데이트에 최대 24시간이 소요될 수 있습니다."
       ],
@@ -1592,6 +1727,9 @@
       ],
       "Editor": [
         "편집자"
+      ],
+      "email": [
+        "이메일"
       ],
       "Email address successfully deleted from monitoring": [
         "이메일 주소가 모니터링에서 삭제되었습니다"
@@ -1674,6 +1812,9 @@
       "Fill in the CSV with your data": [
         "사용자의 데이터인 CSV를 채워 넣으십시오"
       ],
+      "finance": [
+        "금융정보"
+      ],
       "Follow those steps to import your data with a generic CSV:": [
         "생성된 CSV로 데이터를 불러오려면 다음 단계를 따르세요:"
       ],
@@ -1709,6 +1850,12 @@
       ],
       "Here's how it works:": [
         "작동 방식은 다음과 같습니다:"
+      ],
+      "High Priority": [
+        "중요도 높음"
+      ],
+      "How does monitoring work?": [
+        "모니터링이 어떻게 작동하나요?"
       ],
       "Identity confirmed": [
         "신원 확인됨"
@@ -1779,6 +1926,12 @@
       "Item successfully unpinned": [
         "항목을 성공적으로 고정 해제했습니다."
       ],
+      "Latest breach on ${ formattedDate }": [
+        "${ formattedDate }에 마지막으로 유출됨"
+      ],
+      "Learn what to do ${ dataLeakedLink }": [
+        "대처법에 대해 알아보세요 ${ dataLeakedLink }"
+      ],
       "Leaving item...": [
         "항목에서 떠나는 중..."
       ],
@@ -1797,11 +1950,20 @@
       "Loading...": [
         "불러오는 중..."
       ],
+      "Low Priority": [
+        "중요도 낮음"
+      ],
       "Manager": [
         "중간 관리자"
       ],
       "me": [
         "나"
+      ],
+      "Medium Priority": [
+        "중요도 보통"
+      ],
+      "Monitor accounts": [
+        "계정 모니터링"
       ],
       "Monitoring settings successfully updated": [
         "모니터링 설정이 업데이트되었습니다"
@@ -1814,6 +1976,9 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "\"${ payload.content.name }\" 에서 모든 항목 이동 중"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "항목을 다른 금고로 이동시 안전한 링크가 삭제됩니다."
       ],
       "Moving items": [
         "항목 이동 중"
@@ -1835,6 +2000,9 @@
       ],
       "Never": [
         "안 함"
+      ],
+      "No breaches detected": [
+        "감지된 침해사례 없음"
       ],
       "No identity item found": [
         "발견된 신원 항목 없음"
@@ -1869,6 +2037,9 @@
       "Open the Safari settings, find ${ PASS_APP_NAME }, go to \"Permissions\" and enable site permissions.": [
         "Safari 설정을 열고, ${ PASS_APP_NAME }를 찾아서, \"권한\"으로 이동한 다음, 사이트 권한을 활성화하세요."
       ],
+      "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "당사의 알림은 안전을 최우선으로 합니다. 만약 유출된 정보에 대해 아는 것이 없다면, 이 보고서를 무시할 수 있습니다."
+      ],
       "Owner": [
         "소유자"
       ],
@@ -1881,6 +2052,9 @@
       "Passkey sign-in": [
         "패스키 로그인"
       ],
+      "password": [
+        "비밀번호"
+      ],
       "Password copied": [
         "비밀번호를 복사했습니다"
       ],
@@ -1889,6 +2063,9 @@
       ],
       "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
         "${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS }주보다 오래된 비밀번호는 기록에서 자동 삭제됩니다."
+      ],
+      "Paused": [
+        "일시 정지됨"
       ],
       "Pending access to the shared data": [
         "공유 데이터에 대한 접근 대기 중"
@@ -2160,6 +2337,9 @@
       "Successfully synced all vaults": [
         "모든 금고를 성공적으로 동기화 했습니다."
       ],
+      "Suggested": [
+        "추천"
+      ],
       "Switch to another vault or create an item in this vault": [
         "다른 큼고로 전환하거나 이 금고 내에 항목을 생성하세요."
       ],
@@ -2181,6 +2361,9 @@
       "The exported file will be encrypted using PGP and requires a strong passphrase.": [
         "내보낸 파일이 PGP를 통해 암호화되며 강력한 암호가 필요합니다."
       ],
+      "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
+        "노출된 정보가 서드 파티 서비스에서 유출되었습니다. 사용자의 ${ BRAND_NAME } 계정 정보는 안전하고 암호화 상태로 유지됩니다. ${ learnMoreLink }"
+      ],
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "${ PASS_APP_NAME }를 사용할 때 추가 비밀번호가 요구됩니다. 사용자의 ${ BRAND_NAME } 비밀번호의 추가적인 비밀번호가 됩니다."
       ],
@@ -2198,6 +2381,9 @@
       ],
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "이 내보내기는 암호화되지 않으며 내보낸 파일에 액세스할 수 있는 사람은 누구나 비밀번호를 볼 수 있습니다. 보안을 위해, 사용을 마친 뒤에 삭제해 주세요."
+      ],
+      "This feature is currently experimental on Linux. Please ensure your system is up-to-date.": [
+        "이 기능은 현재 Linux에서 실험 중입니다. 시스템이 최신 상태인지 확인해 주세요."
       ],
       "This item is not currently shared with anyone. Invite people to share it with others.": [
         "이 항목은 모두에게 공유되지 않습니다. 다른 사람과 공유하려면 사람을 초대하세요."
@@ -2310,6 +2496,9 @@
       "User's access successfully updated": [
         "사용자 접근 권한이 성공적으로 업데이트 되었습니다"
       ],
+      "username": [
+        "사용자 이름"
+      ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "금고 :${ payload.content.name }\" 이(가) 성공적으로 삭제되었습니다."
       ],
@@ -2330,6 +2519,9 @@
       ],
       "Verification code": [
         "인증 코드"
+      ],
+      "Verification code sent.": [
+        "인증 코드가 전송되었습니다."
       ],
       "Viewer": [
         "보기"
@@ -2391,9 +2583,6 @@
       "You may close this tab.": [
         "이 탭을 닫아도 됩니다."
       ],
-      "You may need to accept a permission prompt and may have to restart the application depending on your system.": [
-        "사용자의 시스템에 따라 권한 프롬프트를 수락해야 할 수 있으며, 어플리케이션을 재시작해야 할 수도 있습니다."
-      ],
       "You may need to grant accessiblity permission to ${ PASS_APP_NAME }.": [
         "${ PASS_APP_NAME }에 접근성 권한을 부여해야 할 수 있습니다."
       ],
@@ -2405,6 +2594,21 @@
       ],
       "You will be logged out and need to log in again on all of your other devices.": [
         "사용자가 로그아웃되고 다른 모든 장치에서 다시 로그인해야 합니다."
+      ],
+      "You will be notified of data breaches for these email addresses.": [
+        "이 이메일 주소에 대한 데이터 침해 알림을 받게 됩니다."
+      ],
+      "You will be notified of data breaches for this email address.": [
+        "이 이메일 주소에 대한 데이터 침해 알림을 받게 됩니다."
+      ],
+      "You will no longer be notified of data breaches for these email addresses.": [
+        "이 이메일 주소에 대한 데이터 침해 알림을 받지 않게 됩니다."
+      ],
+      "You will no longer be notified of data breaches for this email address.": [
+        "이 이메일 주소에 대한 데이터 침해 알림을 받지 않게 됩니다."
+      ],
+      "You will no longer have access to sharing, 2FA and other advanced features in ${ PASS_APP_NAME }": [
+        "더 이상 ${ PASS_APP_NAME }에서 공유, 2단계 인증 및 기타 고급 기능에 접근할 수 없습니다."
       ],
       "You will no longer have access to sharing, 2FA, credit card and other advanced features in ${ PASS_APP_NAME }": [
         "더 이상 ${ PASS_APP_NAME }에서 항목 공유, 2단계 인증, 신용 카드 및 다른 향상된 기능을 사용할 수 없게됩니다."
@@ -2429,6 +2633,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "파일이 암호화된 후 저장됩니다"
+      ],
+      "Your information was found on ${ displayedDate }": [
+        "${ displayedDate }에 사용자의 정보가 발견되었습니다."
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "조직에서 ${ PASS_APP_NAME }에 대한 액세스 권한을 보호해야 합니다"
@@ -2487,6 +2694,9 @@
       ],
       "${ secureLinksCount } secure link": [
         "${ secureLinksCount } 안전한 링크"
+      ],
+      "${ usageCount } login": [
+        "${ usageCount }개 로그인"
       ],
       "${ years } year": [
         "${ years }년"
@@ -2788,6 +2998,9 @@
       "Email (new alias)": [
         "이메일 (새 별칭)"
       ],
+      "Email address": [
+        "이메일 주소"
+      ],
       "Email aliases": [
         "이메일 별칭"
       ],
@@ -2856,6 +3069,9 @@
       ],
       "Generic CSV": [
         "일반 CSV"
+      ],
+      "Get Started": [
+        "시작하기"
       ],
       "Grant": [
         "허용"
@@ -2970,6 +3186,9 @@
       ],
       "Last name": [
         "성"
+      ],
+      "Last updated": [
+        "최종 업데이트됨"
       ],
       "Last week": [
         "지난 주"
@@ -3352,6 +3571,9 @@
       "State or province": [
         "시/도"
       ],
+      "Status": [
+        "상태"
+      ],
       "Street address": [
         "도로명 주소"
       ],
@@ -3460,6 +3682,9 @@
       "Use ${ PASS_APP_NAME } as your browser's default password manager": [
         "${ PASS_APP_NAME }를 브라우저의 기본 패스워드 관리자로 사용하기"
       ],
+      "Used in": [
+        "다음 항목에서 사용됨:"
+      ],
       "Useful for permanent sharing": [
         "기간 제한 없이 공유할 때 유용합니다"
       ],
@@ -3474,6 +3699,9 @@
       ],
       "Vault ID": [
         "금고 ID"
+      ],
+      "Vaults": [
+        "금고"
       ],
       "View details": [
         "세부사항 보기"
@@ -3533,6 +3761,17 @@
     "Link": {
       "auto create rules ››": [
         "자동 생성 규칙 ››"
+      ],
+      "if your data is leaked": [
+        "사용자의 데이터가 유출된 경우"
+      ],
+      "Learn more": [
+        "더 알아보기"
+      ]
+    },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "${ reason } 활성화"
       ]
     },
     "Message": {
@@ -3544,6 +3783,22 @@
       ],
       "You selected ${ semiboldText } in this vault.": [
         "이 금고에서 ${ semiboldText }을 선택했습니다."
+      ]
+    },
+    "new_plans: feature": {
+      "Require 2FA for organization": [
+        "조직에 2단계 인증 요구"
+      ],
+      "SSO integration": [
+        "SSO 통합"
+      ]
+    },
+    "Notification": {
+      "${ reason } has been disabled": [
+        "${ reason }이(가) 비활성화 되었습니다."
+      ],
+      "${ reason } has been enabled": [
+        "${ reason }이(가) 활성화 되었습니다."
       ]
     },
     "Onboarding": {
@@ -3808,6 +4063,20 @@
         "${ url }(애)서 사용됨"
       ]
     },
+    "Security Center - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name }와(과) ${ remainingCount }개의 잠재적인 유출이 탐지되었습니다. ${ DARK_WEB_MONITORING_NAME }을 활성화하여 세부사항을 확인하십시오. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name }와(과) 하나의 잠재적인 유출이 탐지되었습니다. ${ DARK_WEB_MONITORING_NAME }을 활성화하여 세부사항을 확인하십시오. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "잠재적인 ${ name } 유출이 탐지되었습니다. ${ DARK_WEB_MONITORING_NAME }을 활성화하여 세부사항을 확인하십시오. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "회원님의 정보가 적어도 하나의 데이터 유출에서 발견되었습니다. ${ DARK_WEB_MONITORING_NAME }을 활성화하여 세부사항을 확인하십시오. ${ link }"
+      ]
+    },
     "sso": {
       "Approve or deny it now": [
         "지금 수락 및 거부"
@@ -3949,11 +4218,20 @@
       ]
     },
     "Title": {
+      "${ BRAND_NAME } addresses": [
+        "${ BRAND_NAME } 주소"
+      ],
       "${ PASS_APP_NAME } Logs": [
         "${ PASS_APP_NAME } 로그"
       ],
       "${ PASS_APP_NAME } Settings": [
         "${ PASS_APP_NAME } 설정"
+      ],
+      "${ PASS_SHORT_APP_NAME } Monitor": [
+        "${ PASS_SHORT_APP_NAME } Monitor"
+      ],
+      "Account protection": [
+        "계정 보호"
       ],
       "Actions": [
         "작업"
@@ -3984,6 +4262,15 @@
       ],
       "Blocked addresses": [
         "차단된 주소"
+      ],
+      "Breach detected": [
+        "침해사례 감지됨"
+      ],
+      "Breaches": [
+        "유출"
+      ],
+      "Breaches detected for": [
+        "침해 사례가 다음에서 감지됨:"
       ],
       "Cancel changing your email?": [
         "이메일 변경을 취소할까요?"
@@ -4027,8 +4314,17 @@
       "Current version": [
         "현재 버전"
       ],
+      "Custom addresses": [
+        "커스텀 주소"
+      ],
       "Custom domains": [
         "커스텀 도메인"
+      ],
+      "Custom email monitoring": [
+        "사용자 지정 이메일 모니터링"
+      ],
+      "Custom emails": [
+        "커스텀 이메일"
       ],
       "Default": [
         "기본"
@@ -4096,6 +4392,9 @@
       "Enter your second password": [
         "백업 비밀번호를 입력하세요"
       ],
+      "Excluded items": [
+        "제외된 항목"
+      ],
       "Fill & copy password": [
         "비밀번호 복사 및 채우기"
       ],
@@ -4117,6 +4416,9 @@
       "Hide my email": [
         "내 이메일 숨기기"
       ],
+      "Hide-my-email aliases": [
+        "Hide-my-email 별칭"
+      ],
       "History": [
         "기록"
       ],
@@ -4131,6 +4433,12 @@
       ],
       "Importing your data": [
         "데이터를 불러오는 중"
+      ],
+      "Inactive 2FA": [
+        "2단계 인증 꺼짐"
+      ],
+      "Information exposed in breach": [
+        "유출 시 노출된 정보"
       ],
       "Item": [
         "항목"
@@ -4147,6 +4455,9 @@
       "Leave vault?": [
         "금고를 떠날까요?"
       ],
+      "Loading breaches...": [
+        "유출 검색 중..."
+      ],
       "Log in as...": [
         "다음으로 로그인..."
       ],
@@ -4155,6 +4466,9 @@
       ],
       "Mailbox": [
         "메일함"
+      ],
+      "Mark as resolved?": [
+        "해결됨으로 표시합니까?"
       ],
       "Member limit": [
         "구성원 제한"
@@ -4183,14 +4497,32 @@
       "MX record": [
         "MX 레코드"
       ],
+      "Next": [
+        "다음"
+      ],
+      "No excluded items": [
+        "제외된 항목 없음"
+      ],
+      "No inactive 2FAs": [
+        "비활성화된 2단계 인증 없음"
+      ],
+      "No insecure passwords": [
+        "위험한 비밀번호 없음"
+      ],
       "No items selected": [
         "선택된 항목 없음"
+      ],
+      "No reused passwords": [
+        "재사용된 비밀번호 없음"
       ],
       "No shared items": [
         "공유된 항목 없음"
       ],
       "No shared secure links": [
         "안전한 링크로 공유된 항목이 없습니다."
+      ],
+      "Open pagination": [
+        "페이지 번호 열기"
       ],
       "Organize vaults": [
         "금고 정리"
@@ -4203,6 +4535,12 @@
       ],
       "Password": [
         "비밀번호"
+      ],
+      "Password Health": [
+        "비밀번호 건강도"
+      ],
+      "Pause monitoring?": [
+        "모니터링을 일시정지합니까?"
       ],
       "Pending access confirmation": [
         "액세스 확인 대기 중"
@@ -4225,11 +4563,20 @@
       "Please note that once deleted, the alias can't be restored.": [
         "별칭이 삭제되면 복구할 수 없습니다."
       ],
+      "Previous": [
+        "이전"
+      ],
       "Random Prefix Generation": [
         "무작위 접두사 생성"
       ],
+      "Recommended actions": [
+        "권장하는 조치"
+      ],
       "Reject device?": [
         "기기를 거절할까요?"
+      ],
+      "Remove email address?": [
+        "이메일 주소를 삭제하시겠습니까?"
       ],
       "Remove extra password": [
         "추가 비밀번호 지우기"
@@ -4240,8 +4587,20 @@
       "Reset history for this item?": [
         "이 항목에 대한 기록을 재설정하시겠어요?"
       ],
+      "Resolved breaches": [
+        "해결된 유출"
+      ],
       "Restore this version?": [
         "이 버전을 복구하시겠습니까?"
+      ],
+      "Resume monitoring?": [
+        "모니터링을 재개합니까?"
+      ],
+      "Reused ${ count } time": [
+        "재사용한 횟수 ${ count }회"
+      ],
+      "Reused passwords": [
+        "재사용한 비밀번호"
       ],
       "Review and share": [
         "검토 및 공유"
@@ -4258,8 +4617,14 @@
       "Set extra password": [
         "추가 비밀번호 설정"
       ],
+      "Set up 2FA for better security": [
+        "더 나은 보안을 위해 2단계 인증 설정"
+      ],
       "Set up 2FA for more security": [
         "더 나은 보안을 위해 2단계 인증 설정"
+      ],
+      "Settings": [
+        "설정"
       ],
       "Share with": [
         "공유 대상:"
@@ -4324,7 +4689,13 @@
       "Visible vaults": [
         "표시되는 금고"
       ],
+      "Want to learn more?": [
+        "더 알아보시겠어요?"
+      ],
       "Weak password": [
+        "약한 비밀번호"
+      ],
+      "Weak passwords": [
         "약한 비밀번호"
       ],
       "Welcome to ${ brandNameJSX }": [
@@ -4332,6 +4703,12 @@
       ],
       "Welcome to your new password manager!": [
         "새로운 패스워드 관리자에 오신 것을 환영합니다!"
+      ],
+      "What is an alias?": [
+        "별칭이란?"
+      ],
+      "What is the dark web?": [
+        "다크 웹이란?"
       ],
       "What is the difference between ${ PASS_SHORT_APP_NAME } note and SimpleLogin note?": [
         "${ PASS_SHORT_APP_NAME } 메모와 SimpleLogin 메모와의 차이점이 무엇인가요?"
@@ -4341,6 +4718,9 @@
       ],
       "Your ${ planName } subscription will end on ${ endDate }": [
         "${ planName } 구독이 ${ endDate }에 종료됩니다."
+      ],
+      "Your exposed information": [
+        "사용자의 노출된 정보"
       ],
       "Your vault is empty": [
         "금고가 비어있음"
@@ -4360,6 +4740,14 @@
     "Today icon tooltip in mini calendar": {
       "Today": [
         "오늘"
+      ]
+    },
+    "Tooltip": {
+      "Not all information listed here was exposed for all users.": [
+        "여기에 나열된 모든 정보가 모든 사용자에게 공개된 것은 아닙니다."
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "해독되지 않는 한, 암호화된 비밀번호는 노출되더라도 안전하게 유지됩니다."
       ]
     },
     "Validation": {
@@ -4469,6 +4857,9 @@
       "Email cannot be empty": [
         "이메일은 필수 정보입니다."
       ],
+      "Email is required": [
+        "이메일이 필요합니다"
+      ],
       "Empty note": [
         "빈 메모"
       ],
@@ -4483,6 +4874,12 @@
       ],
       "Extra password should have at least 8 characters": [
         "추가 비밀번호는 최소 8글자여야합니다."
+      ],
+      "Failed to autotype. Please make sure ${ PASS_APP_NAME } has the necessary permissions and try again (${ error }).": [
+        "자동 입력에 실패했습니다. ${ PASS_APP_NAME }가 필요한 권한을 가지고 있는지 확인 후 다시 시도해주세요. (${ error })"
+      ],
+      "Failed to load breaches.": [
+        "침해를 불러오지 못했습니다."
       ],
       "Grant clipboard access to enable automatic clearing of copied passwords and data.": [
         "복사된 비밀번호 및 데이터의 자동 삭제를 활성화하기 위해 클립보드 접근 권한을 부여하십시오."
@@ -4579,6 +4976,9 @@
       ],
       "This alias \"${ aliasEmail }\" is currently used in the login \"${ relatedLoginName }\".": [
         "최근 해당 별칭 \"${ aliasEmail }\"이(가) 로그인 \"${ relatedLoginName }\"(에)서 사용되었습니다."
+      ],
+      "This email address will no longer be monitored for data breaches.": [
+        "데이터 침해에 대한 이 이메일 주소가 더 이상 모니터링되지 않습니다."
       ],
       "This item is currently shared. Deleting it will remove access for all other users.": [
         "이 항목이 현재 공유 중입니다. 휴지통에 항목을 이동하면 다른 사용자들과의 접근 권한도 상실됩니다."

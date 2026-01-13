@@ -4,6 +4,26 @@
     "language": "sv_SE"
   },
   "contexts": {
+    "Account Settings - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } och ${ remainingCount } andra potentiella läckor har upptäckts. Aktivera ${ DARK_WEB_MONITORING_NAME } för att se detaljer och vidta åtgärder. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } och 1 annan potentiell läcka upptäcktes. Aktivera ${ DARK_WEB_MONITORING_NAME } för att se detaljer och vidta åtgärd. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "En potentiell läcka på ${ name } upptäcktes. Aktivera ${ DARK_WEB_MONITORING_NAME } för att se detaljer och vidta åtgärd. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "En potentiell läcka från ${ name } upptäcktes. Slå på ${ DARK_WEB_MONITORING_NAME } för att visa detaljer och vita åtgärd. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "En potentiell läcka från ${ name } upptäcktes. Aktivera ${ DARK_WEB_MONITORING_NAME } för att se detaljer. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Din information hittades i minst en dataläcka. Aktivera ${ DARK_WEB_MONITORING_NAME } för att se detaljer och vidta åtgärder. ${ link }"
+      ]
+    },
     "Action": {
       "${ PASS_SHORT_APP_NAME } for Android": [
         "${ PASS_SHORT_APP_NAME } för Android"
@@ -55,6 +75,9 @@
       ],
       "Add username field": [
         "Lägg till fält för användarnamn"
+      ],
+      "Admin panel": [
+        "Administratörspanel"
       ],
       "Advanced": [
         "Avancerad"
@@ -197,6 +220,9 @@
       "Create a ${ BRAND_NAME } Account": [
         "Skapa ett ${ BRAND_NAME }-konto"
       ],
+      "Create a new vault": [
+        "Skapa ett nytt valv"
+      ],
       "Create alias": [
         "Skapa alias"
       ],
@@ -305,6 +331,9 @@
       "Edit vault": [
         "Redigera valv"
       ],
+      "Enable ${ DARK_WEB_MONITORING_NAME }": [
+        "Aktivera ${ DARK_WEB_MONITORING_NAME }"
+      ],
       "Enable this alias to receive emails sent to this alias": [
         "Aktivera detta alias för att ta emot e-post skickat till detta alias"
       ],
@@ -341,11 +370,17 @@
       "Get mobile and desktop apps": [
         "Skaffa appar för mobil och stationär dator"
       ],
+      "Get mobile apps": [
+        "Skaffa mobilappar"
+      ],
       "Get Pass Business": [
         "Skaffa Pass Business"
       ],
       "Get Pass Plus": [
         "Skaffa Pass Plus"
+      ],
+      "Get Started": [
+        "Kom igång"
       ],
       "Hide": [
         "Dölj"
@@ -395,6 +430,9 @@
       "Link expires after": [
         "Länk löper ut efter"
       ],
+      "Lock ${ PASS_APP_NAME }": [
+        "Lås ${ PASS_APP_NAME }"
+      ],
       "Lock extension": [
         "Lås tillägg"
       ],
@@ -418,6 +456,9 @@
       ],
       "Manually sync your data": [
         "Synkronisera dina data manuellt"
+      ],
+      "Mark as resolved": [
+        "Markera som löst"
       ],
       "Maximum views": [
         "Maximalt antal visningar"
@@ -469,6 +510,12 @@
       ],
       "Organize vaults": [
         "Organisera valv"
+      ],
+      "Pass Monitor": [
+        "Pass Monitor"
+      ],
+      "Pause monitoring": [
+        "Pausa övervakning"
       ],
       "Pin item": [
         "Fäst objekt"
@@ -544,6 +591,9 @@
       ],
       "Restrict number of views": [
         "Begränsa antalet visningar"
+      ],
+      "Resume monitoring": [
+        "Återuppta övervakning"
       ],
       "Retry": [
         "Försök igen"
@@ -660,6 +710,9 @@
       "Try again": [
         "Försök igen"
       ],
+      "Try again.": [
+        "Försök igen."
+      ],
       "Unblock contact": [
         "Avblockera kontakt"
       ],
@@ -705,6 +758,9 @@
       ],
       "View app logs": [
         "Visa apploggar"
+      ],
+      "View details": [
+        "Visa detaljer"
       ],
       "View history": [
         "Visa historik"
@@ -759,6 +815,9 @@
         "${ total } annan inloggning använder samma lösenord",
         "${ total } andra inloggningar använder samma lösenord"
       ],
+      "2FA adds another layer of security to your logins. ${ PASS_APP_NAME } makes 2FA easier by storing and automatically autofilling your 2FA codes.": [
+        "2FA lägger till ytterligare ett lager av säkerhet till dina inloggningar. ${ PASS_APP_NAME } gör 2FA enklare genom att lagra och automatiskt fylla i dina 2FA-koder."
+      ],
       "A checked box means the feature is disabled.": [
         "En ikryssad ruta betyder att funktionen är inaktiverad."
       ],
@@ -771,11 +830,23 @@
       "Add the following TXT DNS record to your domain.": [
         "Lägg till följande TXT DNS-post till din domän."
       ],
+      "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
+        "Ett e-postalias fungerar som en e-postadress, men minskar skräppost och håller din faktiska e-postadress och identitet dold."
+      ],
+      "Change your passwords": [
+        "Ändra dina lösenord"
+      ],
+      "Create unique passwords": [
+        "Skapa unika lösenord"
+      ],
       "DKIM ${ WIKIPEDIA_LINK_DKIM } is an email authentication method designed to avoid email spoofing. Setting up DKIM is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
         "DKIM ${ WIKIPEDIA_LINK_DKIM } är en autentiseringsmetod för e-post designat för att undvika e-postspoofing. Konfiguration av DKIM rekommenderas starkt för att minska risken för att dina e-postmeddelanden hamnar i mottagarens skräppostmapp."
       ],
       "DMARC ${ WIKIPEDIA_LINK_DMARC } is designed to protect the domain from unauthorized use, commonly known as email spoofing. Built around SPF and DKIM, a DMARC policy tells the receiving mail server what to do if neither of those authentication methods passes.": [
         "DMARC ${ WIKIPEDIA_LINK_DMARC } är designat för att skydda domänen mot obehörig användning, vilket ofta kallas för e-postspoofing. Byggt kring SPF och DKIM så berättar en DMARC-policy för den mottagande e-postserver vad som ska göras om ingen av de två autentiseringsmetoderna lyckas."
+      ],
+      "Get notified if your email, password or other personal data was leaked.": [
+        "Bli aviserad om din e-post, lösenord eller annan personlig data har läckt."
       ],
       "If you are using a subdomain, e.g. ${ subdomainExample }, you need to use ${ dmarcExampleSubdomain } as the domain instead.": [
         "Om du använder en underdomän, t.ex. ${ subdomainExample } måste du använda ${ dmarcExampleSubdomain } som domän istället."
@@ -786,8 +857,17 @@
       "If you are using Cloudflare, please make sure to not select the Proxy option.": [
         "Om du använder Cloudflare, se till att inte välja proxyalternativet."
       ],
+      "Keep your info more secure and private with these guides and tips.": [
+        "Håll din information mer säker och privat med dessa guider och tips."
+      ],
       "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.${ infoText }": [
         "Lista över domäner där vissa automatiska funktioner i ${ PASS_SHORT_APP_NAME } (automatisk ifyllnad, automatiskt förslag, automatiskt spara) inte ska köras.${ infoText }"
+      ],
+      "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
+        "Vår banbrytande AI-drivna säkerhetslösning designad för användare som söker utökat skydd för sina konton. ${ learnMoreLink }"
+      ],
+      "Set up 2FA for more security": [
+        "Konfigurera 2FA för mer säkerhet"
       ],
       "Some DNS registrar might require a full record path, in this case please use ${ domain } as domain value instead.": [
         "Vissa DNS-registratorer kan kräva en fullständig postsökväg, i detta fall använd ${ domain } som domänvärde istället."
@@ -797,6 +877,15 @@
       ],
       "SPF ${ WIKIPEDIA_LINK_SPF } is an email authentication method designed to detect forging sender addresses during the delivery of the email. Setting up SPF is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
         "SPF ${ WIKIPEDIA_LINK_SPF } är en autentiseringsmetod för e-post designat för att upptäcka förfalskade sändaradresser under leveransen av e-postmeddelandet. Konfiguration av SPF rekommenderas starkt för att minska risken för att dina e-postmeddelanden hamnar i mottagarens skräppostmapp."
+      ],
+      "Start monitoring for data breaches related to accounts created with your email address and your hide-my-email aliases.": [
+        "Börja övervaka för dataintrång relaterade till konton som skapats med din e-postadress och dina hide-my-email-alias."
+      ],
+      "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
+        "Mörka webben är en dold del av Internet där stulen personlig information, som identiteter, kan köpas och säljas."
+      ],
+      "These items remain at risk": [
+        "Dessa objekt är fortfarande i fara"
       ],
       "These vaults will not be accessible and their content won’t be available to Search or Autofill.": [
         "Dessa valv kommer inte vara åtkomliga och deras innehåll kommer inte vara tillgängligt för sök eller automatisk ifyllning."
@@ -812,6 +901,15 @@
       ],
       "Unlock advanced security features and detailed logs to safeguard your online presence.": [
         "Lås upp avancerade säkerhetsfunktioner och detaljerade loggar för att skydda din närvaro online."
+      ],
+      "With ${ PASS_SHORT_APP_NAME } Monitor, stay ahead of threats by getting instant alerts if your credentials are compromised. Unlock advanced security features and detailed logs to safeguard your online presence.": [
+        "Med ${ PASS_SHORT_APP_NAME } Monitor kan du ligga steget före hot genom att få omedelbara varningar om dina inloggningsuppgifter är komprometterade. Lås upp avancerade säkerhetsfunktioner och detaljerade loggar för att skydda din närvaro online."
+      ],
+      "Your email addresses were leaked in at least 1 data breach.": [
+        "Dina e-postadresser läckte vid minst 1 dataintrång."
+      ],
+      "Your personal info was leaked in a data breach of a third-party service.": [
+        "Din personliga information läckte i ett dataintrång från en tredjepartstjänst."
       ]
     },
     "Email": {
@@ -1263,6 +1361,17 @@
         "Något gick fel"
       ]
     },
+    "Feature": {
+      "Integrated 2FA authenticator": [
+        "Integrerad 2FA-autentisering"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Obegränsat antal hide-my-email-alias"
+      ],
+      "Vault sharing (up to ${ MAX_VAULT_MEMBERS } people)": [
+        "Valvdelning (upp till ${ MAX_VAULT_MEMBERS } personer)"
+      ]
+    },
     "file size format": {
       "byte": [
         "byte",
@@ -1301,6 +1410,17 @@
       "Terabyte": [
         "Terabyte",
         "Terabyte"
+      ]
+    },
+    "Header": {
+      "Domain": [
+        "Domän"
+      ],
+      "Password ends with": [
+        "Lösenord slutar med"
+      ],
+      "Username": [
+        "Användarnamn"
       ]
     },
     "Info": {
@@ -1388,6 +1508,10 @@
         "${ repliedEmailsCount } skickat",
         "${ repliedEmailsCount } skickade"
       ],
+      "${ row.breachCount } breach detected": [
+        "${ row.breachCount } intrång upptäckt",
+        "${ row.breachCount } intrång upptäckta"
+      ],
       "${ trialDaysLeft } day left": [
         "${ trialDaysLeft } dag kvar",
         "${ trialDaysLeft } dagar kvar"
@@ -1431,6 +1555,9 @@
       "Access your passwords on the go with our mobile apps.": [
         "Kom åt dina lösenord när du är på språng med våra mobilappar."
       ],
+      "Add your custom email address to monitor:": [
+        "Lägg till din anpassade e-postadress att övervaka:"
+      ],
       "Admin": [
         "Admin"
       ],
@@ -1452,11 +1579,17 @@
       "Aliases out of sync (${ aliasCount })": [
         "Ej synkroniserade alias (${ aliasCount })"
       ],
+      "Aliases with custom domains are not monitored, please add them as a custom email for monitoring.": [
+        "Alias med anpassade domäner övervakas inte, lägg till dem som en anpassad e-post för övervakning."
+      ],
       "All aliases using the mailbox ${ emailJSX } will be also deleted.": [
         "Alla alias som använder brevlådan ${ emailJSX } kommer också att tas bort."
       ],
       "All breaches for this address were resolved": [
         "Alla intrång för denna adress löstes"
+      ],
+      "All current breaches will be marked as resolved. In case of future data breaches, you'll be notified.": [
+        "Alla nuvarande intrång kommer att markeras som lösta. I händelse av framtida dataintrång kommer du att aviseras."
       ],
       "All inactive secure links were removed": [
         "Alla inaktiva säkra länkar togs bort"
@@ -1509,6 +1642,9 @@
       "Biometrics will be disabled and will need to be enabled again.": [
         "Biometri kommer att inaktiveras och måste aktiveras igen."
       ],
+      "Breaches detected": [
+        "Intrång upptäckta"
+      ],
       "Bring your own domain and you don't have to buy yet another email hosting solution.": [
         "Skaffa en egen domän så slipper du köpa ännu en värdlösning för din e-post."
       ],
@@ -1544,6 +1680,9 @@
       ],
       "Can view this item.": [
         "Kan visa detta objekt."
+      ],
+      "Change your password": [
+        "Ändra ditt lösenord"
       ],
       "Choose a saved passkey to sign-in to ${ domain }": [
         "Välj en sparad passkey för att logga in på ${ domain }"
@@ -1611,9 +1750,6 @@
       "Disabling offline mode...": [
         "Inaktiverar offlineläge …"
       ],
-      "Discover ${ PASS_APP_NAME } Youtube Video": [
-        "Upptäck ${ PASS_APP_NAME } YouTube-video"
-      ],
       "DNS changes could take up to 24 hours to update.": [
         "DNS-ändringar kan ta upp till 24 timmar att uppdateras."
       ],
@@ -1631,6 +1767,9 @@
       ],
       "Editor": [
         "Redigerare"
+      ],
+      "email": [
+        "e-post"
       ],
       "Email address successfully deleted from monitoring": [
         "E-postadress borttagen från övervakning"
@@ -1713,6 +1852,9 @@
       "Fill in the CSV with your data": [
         "Fyll i CSV med dina data"
       ],
+      "finance": [
+        "finans"
+      ],
       "Follow those steps to import your data with a generic CSV:": [
         "Följ dessa steg för att importera dina data med en generisk CSV:"
       ],
@@ -1750,6 +1892,12 @@
       ],
       "Here's how it works:": [
         "Så här fungerar det:"
+      ],
+      "High Priority": [
+        "Hög prioritet"
+      ],
+      "How does monitoring work?": [
+        "Hur fungerar övervakning?"
       ],
       "Identity confirmed": [
         "Identitet bekräftad"
@@ -1821,6 +1969,12 @@
       "Item successfully unpinned": [
         "Objekt lossat"
       ],
+      "Latest breach on ${ formattedDate }": [
+        "Senaste intrång den ${ formattedDate }"
+      ],
+      "Learn what to do ${ dataLeakedLink }": [
+        "Lär dig vad du ska göra ${ dataLeakedLink }"
+      ],
       "Leaving item...": [
         "Lämnar objekt …"
       ],
@@ -1839,11 +1993,20 @@
       "Loading...": [
         "Laddar in …"
       ],
+      "Low Priority": [
+        "Låg prioritet"
+      ],
       "Manager": [
         "Ägare"
       ],
       "me": [
         "jag"
+      ],
+      "Medium Priority": [
+        "Medium prioritet"
+      ],
+      "Monitor accounts": [
+        "Övervaka konton"
       ],
       "Monitoring settings successfully updated": [
         "Övervakningsinställningar uppdaterades"
@@ -1857,10 +2020,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Flyttar alla objekt från “${ payload.content.name }“"
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Att flytta ett objekt till annat valv kommer radera dess säkra länkar.",
-        "Att flytta objekt till annat valv kommer radera deras säkra länkar."
       ],
       "Moving items": [
         "Flyttar objekt"
@@ -1879,6 +2038,9 @@
       ],
       "Never": [
         "Aldrig"
+      ],
+      "No breaches detected": [
+        "Inga intrång upptäckta"
       ],
       "No credit cards found": [
         "Inga kreditkort hittades"
@@ -1916,6 +2078,9 @@
       "Open the Safari settings, find ${ PASS_APP_NAME }, go to \"Permissions\" and enable site permissions.": [
         "Öppna Safaris inställningar, hitta ${ PASS_APP_NAME }, gå till “Behörigheter“och aktivera webbplatsbehörigheter."
       ],
+      "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Våra varningar prioriterar säkerhet. Om du inte känner igen någon av intrångsinformationen kan du lugnt ignorera denna rapport."
+      ],
       "Owner": [
         "Ägare"
       ],
@@ -1928,6 +2093,9 @@
       "Passkey sign-in": [
         "Passkey-inloggning"
       ],
+      "password": [
+        "lösenord"
+      ],
       "Password copied": [
         "Lösenord kopierat"
       ],
@@ -1937,6 +2105,9 @@
       "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
         "Lösenord som är äldre än ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } vecka tas bort automatiskt från historiken.",
         "Lösenord som är äldre än ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } veckor tas bort automatiskt från historiken."
+      ],
+      "Paused": [
+        "Pausad"
       ],
       "Pending access to the shared data": [
         "Väntar på åtkomst till delade data"
@@ -2205,6 +2376,9 @@
       "Successfully synced all vaults": [
         "Alla valv synkroniserade"
       ],
+      "Suggested": [
+        "Föreslagen"
+      ],
       "Switch to another vault or create an item in this vault": [
         "Byt till ett annat valv eller skapa ett objekt i detta valv"
       ],
@@ -2226,6 +2400,9 @@
       "The exported file will be encrypted using PGP and requires a strong passphrase.": [
         "Den exporterade filen kommer att krypteras med PGP och kräver en stark lösenfras."
       ],
+      "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
+        "Den exponerade informationen läckte från en tredjepartstjänst. Din ${ BRAND_NAME }-kontoinformation förblir säker och krypterad. ${ learnMoreLink }"
+      ],
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "Extralösenordet kommer att krävas för att använda ${ PASS_APP_NAME }. Det fungerar som ett extra lösenord utöver ditt ${ BRAND_NAME }-lösenord."
       ],
@@ -2244,6 +2421,9 @@
       ],
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Denna export kommer vara okrypterad och alla som har åtkomst till din exporterade fil kommer att kunna se dina lösenord. Av säkerhetsskäl, ta bort den när du är klar med den."
+      ],
+      "This feature is currently experimental on Linux. Please ensure your system is up-to-date.": [
+        "Denna funktion är för närvarande experimentell på Linux. Se till att ditt system är uppdaterat."
       ],
       "This item is not currently shared with anyone. Invite people to share it with others.": [
         "Detta objekt delas för närvarande inte med någon. Bjud in människor att dela det med andra."
@@ -2356,6 +2536,9 @@
       "User's access successfully updated": [
         "Användarens åtkomst uppdaterad"
       ],
+      "username": [
+        "användarnamn"
+      ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Valv “${ payload.content.name }“ borttaget"
       ],
@@ -2377,6 +2560,9 @@
       ],
       "Verification code": [
         "Verifieringskod"
+      ],
+      "Verification code sent.": [
+        "Verifieringskod skickad."
       ],
       "Viewer": [
         "Läsare"
@@ -2453,6 +2639,18 @@
       "You will be logged out and need to log in again on all of your other devices.": [
         "Du kommer bli utloggad och måste logga in igen på alla dina andra enheter."
       ],
+      "You will be notified of data breaches for these email addresses.": [
+        "Du kommer att aviseras om dataintrång för dessa e-postadresser."
+      ],
+      "You will be notified of data breaches for this email address.": [
+        "Du kommer att aviseras om dataintrång för denna e-postadress."
+      ],
+      "You will no longer be notified of data breaches for these email addresses.": [
+        "Du kommer inte längre att aviseras om dataintrång för dessa e-postadresser."
+      ],
+      "You will no longer be notified of data breaches for this email address.": [
+        "Du kommer inte längre att aviseras om dataintrång för denna e-postadress."
+      ],
       "You will no longer have access to sharing, 2FA and other advanced features in ${ PASS_APP_NAME }": [
         "Du kommer inte längre att ha åtkomst till delning, 2FA och andra avancerade funktioner i ${ PASS_APP_NAME }"
       ],
@@ -2479,6 +2677,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "Dina filer kommer att krypteras och sedan sparas"
+      ],
+      "Your information was found on ${ displayedDate }": [
+        "Din information hittades den ${ displayedDate }"
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Din organisation kräver att du säkrar din åtkomst till ${ PASS_APP_NAME }"
@@ -2549,6 +2750,10 @@
       "${ secureLinksCount } secure link": [
         "${ secureLinksCount } säker länk",
         "${ secureLinksCount } säkra länkar"
+      ],
+      "${ usageCount } login": [
+        "${ usageCount } inloggning",
+        "${ usageCount } inloggningar"
       ],
       "${ years } year": [
         "${ years } år",
@@ -2851,6 +3056,9 @@
       "Email (new alias)": [
         "E-post (nytt alias)"
       ],
+      "Email address": [
+        "E-postadress"
+      ],
       "Email aliases": [
         "E-postalias"
       ],
@@ -2919,6 +3127,9 @@
       ],
       "Generic CSV": [
         "Generisk CSV"
+      ],
+      "Get Started": [
+        "Kom igång"
       ],
       "Grant": [
         "Bevilja"
@@ -3033,6 +3244,9 @@
       ],
       "Last name": [
         "Efternamn"
+      ],
+      "Last updated": [
+        "Senast uppdaterad"
       ],
       "Last week": [
         "Förra veckan"
@@ -3412,6 +3626,9 @@
       "State or province": [
         "Delstat eller provins"
       ],
+      "Status": [
+        "Status"
+      ],
       "Street address": [
         "Gatuadress"
       ],
@@ -3520,6 +3737,9 @@
       "Use ${ PASS_APP_NAME } as your browser's default password manager": [
         "Använd ${ PASS_APP_NAME } som din webbläsares lösenordshanterare som standard"
       ],
+      "Used in": [
+        "Används i"
+      ],
       "Useful for permanent sharing": [
         "Användbart för permanent delning"
       ],
@@ -3534,6 +3754,9 @@
       ],
       "Vault ID": [
         "Valv-ID"
+      ],
+      "Vaults": [
+        "Valv"
       ],
       "View details": [
         "Visa detaljer"
@@ -3593,6 +3816,17 @@
     "Link": {
       "auto create rules ››": [
         "skapa regler automatiskt ››"
+      ],
+      "if your data is leaked": [
+        "om dina uppgifter läcker ut"
+      ],
+      "Learn more": [
+        "Lär dig mer"
+      ]
+    },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "Aktivera ${ reason }"
       ]
     },
     "Message": {
@@ -3606,6 +3840,22 @@
       ],
       "You selected ${ semiboldText } in this vault.": [
         "Du valde ${ semiboldText } i detta valv."
+      ]
+    },
+    "new_plans: feature": {
+      "Require 2FA for organization": [
+        "Kräver 2FA för organisation"
+      ],
+      "SSO integration": [
+        "SSO-integration"
+      ]
+    },
+    "Notification": {
+      "${ reason } has been disabled": [
+        "${ reason } har inaktiverats"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } har aktiverats"
       ]
     },
     "Onboarding": {
@@ -3871,6 +4121,20 @@
         "Används på ${ url }"
       ]
     },
+    "Security Center - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } och ${ remainingCount } andra potentiella läckor har upptäckts. Slå på ${ DARK_WEB_MONITORING_NAME } för att visa detaljer. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } och 1 annan potentiell läcka upptäcktes. Slå på ${ DARK_WEB_MONITORING_NAME } för att visa detaljer. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "En potentiell läcka på ${ name } upptäcktes. Slå på ${ DARK_WEB_MONITORING_NAME } för att visa detaljer. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Din information hittades i minst en dataläcka. Slå på ${ DARK_WEB_MONITORING_NAME } för att visa detaljer. ${ link }"
+      ]
+    },
     "sso": {
       "Approve or deny it now": [
         "Godkänn eller neka det nu"
@@ -4014,11 +4278,20 @@
       ]
     },
     "Title": {
+      "${ BRAND_NAME } addresses": [
+        "${ BRAND_NAME }-adresser"
+      ],
       "${ PASS_APP_NAME } Logs": [
         "${ PASS_APP_NAME } Logg"
       ],
       "${ PASS_APP_NAME } Settings": [
         "Inställningar för ${ PASS_APP_NAME }"
+      ],
+      "${ PASS_SHORT_APP_NAME } Monitor": [
+        "${ PASS_SHORT_APP_NAME } Monitor"
+      ],
+      "Account protection": [
+        "Kontoskydd"
       ],
       "Actions": [
         "Åtgärder"
@@ -4049,6 +4322,15 @@
       ],
       "Blocked addresses": [
         "Blockerade adresser"
+      ],
+      "Breach detected": [
+        "Intrång upptäckt"
+      ],
+      "Breaches": [
+        "Intrång"
+      ],
+      "Breaches detected for": [
+        "Intrång upptäckta för"
       ],
       "Cancel changing your email?": [
         "Avbryt ändring av din e-post?"
@@ -4092,8 +4374,17 @@
       "Current version": [
         "Nuvarande version"
       ],
+      "Custom addresses": [
+        "Anpassade adresser"
+      ],
       "Custom domains": [
         "Anpassade domäner"
+      ],
+      "Custom email monitoring": [
+        "Anpassad e-postövervakning"
+      ],
+      "Custom emails": [
+        "Anpassad e-post"
       ],
       "Default": [
         "Standard"
@@ -4162,6 +4453,9 @@
       "Enter your second password": [
         "Ange ditt andra lösenord"
       ],
+      "Excluded items": [
+        "Exkluderade objekt"
+      ],
       "Fill & copy password": [
         "Fyll och kopiera lösenord"
       ],
@@ -4183,6 +4477,9 @@
       "Hide my email": [
         "Dölj min e-post"
       ],
+      "Hide-my-email aliases": [
+        "Hide-my-email-alias"
+      ],
       "History": [
         "Historik"
       ],
@@ -4197,6 +4494,12 @@
       ],
       "Importing your data": [
         "Importerar din data"
+      ],
+      "Inactive 2FA": [
+        "Inaktiv 2FA"
+      ],
+      "Information exposed in breach": [
+        "Information exponerad vid intrång"
       ],
       "Item": [
         "Objekt"
@@ -4213,6 +4516,9 @@
       "Leave vault?": [
         "Lämna valv?"
       ],
+      "Loading breaches...": [
+        "Laddar in intrång …"
+      ],
       "Log in as...": [
         "Logga in som …"
       ],
@@ -4221,6 +4527,9 @@
       ],
       "Mailbox": [
         "Brevlåda"
+      ],
+      "Mark as resolved?": [
+        "Markera som löst?"
       ],
       "Member limit": [
         "Medlemsgräns"
@@ -4251,14 +4560,32 @@
       "MX record": [
         "MX-post"
       ],
+      "Next": [
+        "Nästa"
+      ],
+      "No excluded items": [
+        "Inga exkluderade objekt"
+      ],
+      "No inactive 2FAs": [
+        "Inga inaktiva 2FA"
+      ],
+      "No insecure passwords": [
+        "Inga osäkra lösenord"
+      ],
       "No items selected": [
         "Inga objekt markerade"
+      ],
+      "No reused passwords": [
+        "Inga återanvända lösenord"
       ],
       "No shared items": [
         "Inga delade objekt"
       ],
       "No shared secure links": [
         "Inga delade säkra länkar"
+      ],
+      "Open pagination": [
+        "Öppna sidnumrering"
       ],
       "Organize vaults": [
         "Organisera valv"
@@ -4271,6 +4598,12 @@
       ],
       "Password": [
         "Lösenord"
+      ],
+      "Password Health": [
+        "Lösenordshälsa"
+      ],
+      "Pause monitoring?": [
+        "Pausa övervakning?"
       ],
       "Pending access confirmation": [
         "Väntande åtkomstbekräftelse"
@@ -4294,11 +4627,20 @@
         "Observera att när aliaset väl har tagits bort kan det inte återställas.",
         "Observera att när alias väl har tagits bort kan de inte återställas."
       ],
+      "Previous": [
+        "Föregående"
+      ],
       "Random Prefix Generation": [
         "Slumpmässig prefixgenerering"
       ],
+      "Recommended actions": [
+        "Rekommenderade åtgärder"
+      ],
       "Reject device?": [
         "Neka enhet?"
+      ],
+      "Remove email address?": [
+        "Ta bort e-postadress?"
       ],
       "Remove extra password": [
         "Ta bort extralösenord"
@@ -4309,8 +4651,21 @@
       "Reset history for this item?": [
         "Återställ historik för detta objekt?"
       ],
+      "Resolved breaches": [
+        "Lösta intrång"
+      ],
       "Restore this version?": [
         "Återställ denna version?"
+      ],
+      "Resume monitoring?": [
+        "Återuppta övervakning?"
+      ],
+      "Reused ${ count } time": [
+        "Återanvänt ${ count } gång",
+        "Återanvänt ${ count } gånger"
+      ],
+      "Reused passwords": [
+        "Återanvända lösenord"
       ],
       "Review and share": [
         "Granska och dela"
@@ -4327,8 +4682,14 @@
       "Set extra password": [
         "Ställ in extralösenord"
       ],
+      "Set up 2FA for better security": [
+        "Konfigurera 2FA för bättre säkerhet"
+      ],
       "Set up 2FA for more security": [
         "Konfigurera 2FA för mer säkerhet"
+      ],
+      "Settings": [
+        "Inställningar"
       ],
       "Share with": [
         "Dela med"
@@ -4393,14 +4754,26 @@
       "Visible vaults": [
         "Synliga valv"
       ],
+      "Want to learn more?": [
+        "Vill du lära dig mer?"
+      ],
       "Weak password": [
         "Svagt lösenord"
+      ],
+      "Weak passwords": [
+        "Svaga lösenord"
       ],
       "Welcome to ${ brandNameJSX }": [
         "Välkommen till ${ brandNameJSX }"
       ],
       "Welcome to your new password manager!": [
         "Välkommen till din nya lösenordshanterare!"
+      ],
+      "What is an alias?": [
+        "Vad är ett alias?"
+      ],
+      "What is the dark web?": [
+        "Vad är mörka webben?"
       ],
       "What is the difference between ${ PASS_SHORT_APP_NAME } note and SimpleLogin note?": [
         "Vad är skillnaden mellan en ${ PASS_SHORT_APP_NAME }-anteckning och en SimpleLogin-anteckning?"
@@ -4410,6 +4783,9 @@
       ],
       "Your ${ planName } subscription will end on ${ endDate }": [
         "Din ${ planName }-prenumeration kommer avslutas den ${ endDate }"
+      ],
+      "Your exposed information": [
+        "Din exponerade information"
       ],
       "Your vault is empty": [
         "Ditt valv är tomt"
@@ -4430,6 +4806,14 @@
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Idag"
+      ]
+    },
+    "Tooltip": {
+      "Not all information listed here was exposed for all users.": [
+        "All information som anges här har inte exponerats för alla användare."
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "Om de inte avkodas förblir krypterade lösenord säkra även om de exponeras."
       ]
     },
     "Validation": {
@@ -4542,6 +4926,9 @@
       "Email cannot be empty": [
         "E-post kan inte vara tom"
       ],
+      "Email is required": [
+        "E-post är obligatoriskt"
+      ],
       "Empty note": [
         "Tom anteckning"
       ],
@@ -4556,6 +4943,12 @@
       ],
       "Extra password should have at least 8 characters": [
         "Extralösenord bör ha minst 8 tecken"
+      ],
+      "Failed to autotype. Please make sure ${ PASS_APP_NAME } has the necessary permissions and try again (${ error }).": [
+        "Misslyckades att skriva automatiskt. Se till att ${ PASS_APP_NAME } har nödvändiga behörigheter och försök igen (${ error })."
+      ],
+      "Failed to load breaches.": [
+        "Misslyckades att ladda intrång."
       ],
       "Grant clipboard access to enable automatic clearing of copied passwords and data.": [
         "Bevilja åtkomst till urklipp för att aktivera automatisk rensning av kopierade lösenord och data."
@@ -4653,6 +5046,9 @@
       ],
       "This alias \"${ aliasEmail }\" is currently used in the login \"${ relatedLoginName }\".": [
         "Detta alias ”${ aliasEmail }” används för närvarande i inloggningen ”${ relatedLoginName }”."
+      ],
+      "This email address will no longer be monitored for data breaches.": [
+        "Denna e-postadress kommer inte längre att övervakas för dataintrång."
       ],
       "This item is currently shared. Deleting it will remove access for all other users.": [
         "Detta objekt delas för närvarande. Att ta bort det kommer ta bort åtkomst för alla andra användare."

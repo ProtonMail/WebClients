@@ -4,6 +4,26 @@
     "language": "ja_JP"
   },
   "contexts": {
+    "Account Settings - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } および他 ${ remainingCount } 件の漏洩の可能性が検出されました。${ DARK_WEB_MONITORING_NAME } を有効にして詳細を表示し、アクションを実行してください。${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } および他 1 件の漏洩の可能性が検出されました。${ DARK_WEB_MONITORING_NAME } を有効にして詳細を表示し、アクションを実行してください。${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } の漏洩の可能性が検出されました。${ DARK_WEB_MONITORING_NAME } を有効にして詳細を表示し、アクションを実行してください。${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } からの漏洩の可能性が検出されました。${ DARK_WEB_MONITORING_NAME } を有効にして詳細を表示し、アクションを実行してください。${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } からの漏洩の可能性が検出されました。${ DARK_WEB_MONITORING_NAME } を有効にして詳細を表示してください。${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "あなたの情報が少なくとも1件のデータ漏洩で見つかりました。詳細を確認し、対策を講じるために${ DARK_WEB_MONITORING_NAME }をオンにしてください。${ link }"
+      ]
+    },
     "Action": {
       "${ PASS_SHORT_APP_NAME } for Android": [
         "Android 向け ${ PASS_SHORT_APP_NAME }"
@@ -55,6 +75,9 @@
       ],
       "Add username field": [
         "ユーザー名フィールドを追加"
+      ],
+      "Admin panel": [
+        "管理者パネル"
       ],
       "Advanced": [
         "詳細設定"
@@ -197,6 +220,9 @@
       "Create a ${ BRAND_NAME } Account": [
         "${ BRAND_NAME } アカウントを作成する"
       ],
+      "Create a new vault": [
+        "新しい保管庫を作成する"
+      ],
       "Create alias": [
         "エイリアスを作成"
       ],
@@ -305,6 +331,9 @@
       "Edit vault": [
         "保管庫を編集"
       ],
+      "Enable ${ DARK_WEB_MONITORING_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME } を有効にする"
+      ],
       "Enable this alias to receive emails sent to this alias": [
         "エイリアスを有効にして、このエイリアスに送信されたメールを受信する"
       ],
@@ -341,11 +370,17 @@
       "Get mobile and desktop apps": [
         "モバイルアプリとデスクトップアプリを入手する"
       ],
+      "Get mobile apps": [
+        "モバイルアプリを入手する"
+      ],
       "Get Pass Business": [
         "Business Passを入手する"
       ],
       "Get Pass Plus": [
         "Pass Plusを入手"
+      ],
+      "Get Started": [
+        "始めましょう"
       ],
       "Hide": [
         "非表示"
@@ -395,6 +430,9 @@
       "Link expires after": [
         "リンクの有効期限："
       ],
+      "Lock ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME }をロックする"
+      ],
       "Lock extension": [
         "ロック延長"
       ],
@@ -418,6 +456,9 @@
       ],
       "Manually sync your data": [
         "手動でデータを同期する"
+      ],
+      "Mark as resolved": [
+        "解決済みにする"
       ],
       "Maximum views": [
         "最大閲覧回数"
@@ -469,6 +510,12 @@
       ],
       "Organize vaults": [
         "保管庫を整理"
+      ],
+      "Pass Monitor": [
+        "Pass Monitor"
+      ],
+      "Pause monitoring": [
+        "監視を一時停止する"
       ],
       "Pin item": [
         "アイテムをピン留め"
@@ -544,6 +591,9 @@
       ],
       "Restrict number of views": [
         "閲覧数を制限する"
+      ],
+      "Resume monitoring": [
+        "監視を再開する"
       ],
       "Retry": [
         "再試行"
@@ -659,6 +709,9 @@
       "Try again": [
         "再試行"
       ],
+      "Try again.": [
+        "もう一度やり直してください。"
+      ],
       "Unblock contact": [
         "ブロックされていない連絡先"
       ],
@@ -703,6 +756,9 @@
       ],
       "View app logs": [
         "アプリのログを表示する"
+      ],
+      "View details": [
+        "詳細を見る"
       ],
       "View history": [
         "履歴を見る"
@@ -756,6 +812,9 @@
       "${ total } other login uses the same password": [
         "${ total } 個の他のログインは同じパスワードを使用しています"
       ],
+      "2FA adds another layer of security to your logins. ${ PASS_APP_NAME } makes 2FA easier by storing and automatically autofilling your 2FA codes.": [
+        "2FA はログインに別のセキュリティ層を追加します。 ${ PASS_APP_NAME } は、2FA コードを保存して自動的に自動入力することで、2FA を簡単にします。"
+      ],
       "A checked box means the feature is disabled.": [
         "チェックボックスは、機能が無効になっていることを意味します。"
       ],
@@ -768,11 +827,23 @@
       "Add the following TXT DNS record to your domain.": [
         "以下のTXT DNSレコードをドメインに追加してください。"
       ],
+      "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
+        "メールエイリアスはメールアドレスと同じように機能しますが、スパムを減らし、実際のメールアドレスと身元を隠します。"
+      ],
+      "Change your passwords": [
+        "パスワードを変更してください"
+      ],
+      "Create unique passwords": [
+        "一意のパスワードを作成してください"
+      ],
       "DKIM ${ WIKIPEDIA_LINK_DKIM } is an email authentication method designed to avoid email spoofing. Setting up DKIM is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
         "DKIM ${ WIKIPEDIA_LINK_DKIM }は、メールのなりすましを防ぐために設計されたメール認証方法です。DKIM の設定を行うことで、受信者の迷惑メールフォルダにメールが入る可能性を減らすことが強く推奨されます。"
       ],
       "DMARC ${ WIKIPEDIA_LINK_DMARC } is designed to protect the domain from unauthorized use, commonly known as email spoofing. Built around SPF and DKIM, a DMARC policy tells the receiving mail server what to do if neither of those authentication methods passes.": [
         "DMARC${ WIKIPEDIA_LINK_DMARC }は、一般的にメールスプーフィングとして知られる不正使用からドメインを保護するために設計されています。SPFとDKIMを基に構築されたDMARCポリシーは、これらの認証方法のどちらも通過しなかった場合に、受信メールサーバーが何をすべきかを指示します。"
+      ],
+      "Get notified if your email, password or other personal data was leaked.": [
+        "メールアドレス、パスワード、その他の個人データが漏洩した場合に通知を受け取ります。"
       ],
       "If you are using a subdomain, e.g. ${ subdomainExample }, you need to use ${ dmarcExampleSubdomain } as the domain instead.": [
         "もしサブドメイン、例えば${ subdomainExample }を使う場合、ドメインの代わりに${ dmarcExampleSubdomain }を使う必要があります。"
@@ -783,8 +854,17 @@
       "If you are using Cloudflare, please make sure to not select the Proxy option.": [
         "Cloudflareを使う場合、プロキシオプションを選択していないことを確認してください。"
       ],
+      "Keep your info more secure and private with these guides and tips.": [
+        "これらのガイドとヒントを活用して、情報をより安全かつプライベートに保ちましょう。"
+      ],
       "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.${ infoText }": [
         "${ PASS_SHORT_APP_NAME } の特定の自動機能 (自動入力、自動提案、自動保存) を実行すべきでないドメインをリストしてください。${ infoText }"
+      ],
+      "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
+        "私たちの、最先端のAI駆動セキュリティソリューションは、アカウントの高度な保護を求めるユーザー向けに設計されています。${ learnMoreLink }"
+      ],
+      "Set up 2FA for more security": [
+        "2要素認証を設定するとより安全になります"
       ],
       "Some DNS registrar might require a full record path, in this case please use ${ domain } as domain value instead.": [
         "DNS レジストラによっては、完全なレコードパスが必要な場合があります。この場合は、代わりにドメイン値として ${ domain } を使用してください。"
@@ -794,6 +874,15 @@
       ],
       "SPF ${ WIKIPEDIA_LINK_SPF } is an email authentication method designed to detect forging sender addresses during the delivery of the email. Setting up SPF is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
         "SPF${ WIKIPEDIA_LINK_SPF }は、メールの配信中に送信者アドレスの偽装を検出するために設計されたメール認証方法です。SPFの設定は、あなたのメールが受信者の迷惑メールフォルダに入る可能性を減らすために強く推奨されます。"
+      ],
+      "Start monitoring for data breaches related to accounts created with your email address and your hide-my-email aliases.": [
+        "メール アドレスとhide-my-emailエイリアスを使用して作成されたアカウントに関連するデータ侵害の監視を開始します。"
+      ],
+      "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
+        "ダークウェブは、アイデンティティなどの盗まれた個人情報が売買されるインターネットの隠れた部分です。"
+      ],
+      "These items remain at risk": [
+        "これらのアイテムは危険なままです"
       ],
       "These vaults will not be accessible and their content won’t be available to Search or Autofill.": [
         "これらの保管庫にはアクセスできなくなり、そのコンテンツは検索や自動入力では利用できなくなります。"
@@ -809,6 +898,15 @@
       ],
       "Unlock advanced security features and detailed logs to safeguard your online presence.": [
         "高度なセキュリティ機能と詳細なログのロックを解除して、オンライン プレゼンスを保護します。"
+      ],
+      "With ${ PASS_SHORT_APP_NAME } Monitor, stay ahead of threats by getting instant alerts if your credentials are compromised. Unlock advanced security features and detailed logs to safeguard your online presence.": [
+        "${ PASS_SHORT_APP_NAME } Monitor を使用すると、認証情報が侵害された場合に即座にアラートを受け取ることで、脅威に先回りできます。高度なセキュリティ機能と詳細なログのロックを解除して、オンライン プレゼンスを保護します。"
+      ],
+      "Your email addresses were leaked in at least 1 data breach.": [
+        "少なくとも 1 件のデータ侵害により、あなたのメール アドレスが漏洩しました。"
+      ],
+      "Your personal info was leaked in a data breach of a third-party service.": [
+        "サードパーティサービスのデータ侵害により、あなたの個人情報が漏洩しました。"
       ]
     },
     "Email": {
@@ -1261,6 +1359,17 @@
         "不具合が発生しました"
       ]
     },
+    "Feature": {
+      "Integrated 2FA authenticator": [
+        "統合された 2FA 認証システム"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "無制限の Hide-my-email エイリアス"
+      ],
+      "Vault sharing (up to ${ MAX_VAULT_MEMBERS } people)": [
+        "保管庫の共有 (最大 ${ MAX_VAULT_MEMBERS } 人)"
+      ]
+    },
     "file size format": {
       "byte": [
         "バイト"
@@ -1293,6 +1402,17 @@
       ],
       "Terabyte": [
         "テラバイト"
+      ]
+    },
+    "Header": {
+      "Domain": [
+        "ドメイン"
+      ],
+      "Password ends with": [
+        "パスワードの末尾"
+      ],
+      "Username": [
+        "ユーザー名"
       ]
     },
     "Info": {
@@ -1371,6 +1491,9 @@
       "${ repliedEmailsCount } sent": [
         "${ repliedEmailsCount }件の送信済み"
       ],
+      "${ row.breachCount } breach detected": [
+        "${ row.breachCount } 件の違反が検出されました"
+      ],
       "${ trialDaysLeft } day left": [
         "残り ${ trialDaysLeft } 日"
       ],
@@ -1413,6 +1536,9 @@
       "Access your passwords on the go with our mobile apps.": [
         "モバイルアプリで外出先からパスワードにアクセス。"
       ],
+      "Add your custom email address to monitor:": [
+        "監視対象にカスタムメールアドレスを追加："
+      ],
       "Admin": [
         "管理者"
       ],
@@ -1434,11 +1560,17 @@
       "Aliases out of sync (${ aliasCount })": [
         "エイリアスが同期されていません (${ aliasCount })"
       ],
+      "Aliases with custom domains are not monitored, please add them as a custom email for monitoring.": [
+        "カスタム ドメインを持つエイリアスは監視されません。監視用のカスタムメールとして追加してください。"
+      ],
       "All aliases using the mailbox ${ emailJSX } will be also deleted.": [
         "メールボックス${ emailJSX }を使用している全てのエイリアスは削除されます。"
       ],
       "All breaches for this address were resolved": [
         "このアドレスの侵害はすべて解決されました"
+      ],
+      "All current breaches will be marked as resolved. In case of future data breaches, you'll be notified.": [
+        "現在の侵害はすべて解決済みとしてマークされます。今後データ侵害が発生した場合には、通知が届きます。"
       ],
       "All inactive secure links were removed": [
         "すべての非アクティブなセキュアリンクが削除されました"
@@ -1494,6 +1626,9 @@
       "Biometrics will be disabled and will need to be enabled again.": [
         "生体認証は無効化され、再び有効化する必要があります。"
       ],
+      "Breaches detected": [
+        "侵害が検出されました"
+      ],
       "Bring your own domain and you don't have to buy yet another email hosting solution.": [
         "独自ドメインを持ち込むことで、別のメールホスティングソリューションを購入する必要がありません。"
       ],
@@ -1529,6 +1664,9 @@
       ],
       "Can view this item.": [
         "このアイテムを閲覧できます。"
+      ],
+      "Change your password": [
+        "パスワードを変更"
       ],
       "Choose a saved passkey to sign-in to ${ domain }": [
         "${ domain } にサインインするための保存されたパスキーを選択してください"
@@ -1596,9 +1734,6 @@
       "Disabling offline mode...": [
         "オフラインモードを無効にしています..."
       ],
-      "Discover ${ PASS_APP_NAME } Youtube Video": [
-        "${ PASS_APP_NAME } の YouTube 動画をご覧ください"
-      ],
       "DNS changes could take up to 24 hours to update.": [
         "DNSの変更が更新されるまでに最大 24 時間かかることがあります。"
       ],
@@ -1616,6 +1751,9 @@
       ],
       "Editor": [
         "編集者"
+      ],
+      "email": [
+        "メール"
       ],
       "Email address successfully deleted from monitoring": [
         "メールアドレスが監視から正常に削除されました"
@@ -1698,6 +1836,9 @@
       "Fill in the CSV with your data": [
         "CSV にデータを入力します"
       ],
+      "finance": [
+        "ファイナンス"
+      ],
       "Follow those steps to import your data with a generic CSV:": [
         "以下の手順に従って、汎用 CSV を使用してデータをインポートします:"
       ],
@@ -1733,6 +1874,12 @@
       ],
       "Here's how it works:": [
         "こちらがその仕組みです："
+      ],
+      "High Priority": [
+        "優先度：高"
+      ],
+      "How does monitoring work?": [
+        "モニタリングの仕組みは？"
       ],
       "Identity confirmed": [
         "本人確認済み"
@@ -1803,6 +1950,12 @@
       "Item successfully unpinned": [
         "アイテムのピン留めが解除されました"
       ],
+      "Latest breach on ${ formattedDate }": [
+        "${ formattedDate } の最新の侵害"
+      ],
+      "Learn what to do ${ dataLeakedLink }": [
+        "${ dataLeakedLink } で何をすべきか学びましょう"
+      ],
       "Leaving item...": [
         "アイテムから退出しています..."
       ],
@@ -1821,11 +1974,20 @@
       "Loading...": [
         "読み込み中..."
       ],
+      "Low Priority": [
+        "優先度：低"
+      ],
       "Manager": [
         "管理者"
       ],
       "me": [
         "私"
+      ],
+      "Medium Priority": [
+        "優先度：中"
+      ],
+      "Monitor accounts": [
+        "アカウントモニター"
       ],
       "Monitoring settings successfully updated": [
         "モニタリング設定が正常に更新されました"
@@ -1859,6 +2021,9 @@
       ],
       "Never": [
         "なし"
+      ],
+      "No breaches detected": [
+        "侵害は検出されませんでした"
       ],
       "No credit cards found": [
         "クレジットカードが見つかりません"
@@ -1896,6 +2061,9 @@
       "Open the Safari settings, find ${ PASS_APP_NAME }, go to \"Permissions\" and enable site permissions.": [
         "Safari の設定を開き、${ PASS_APP_NAME } を見つけ、「権限」に進み、サイトの権限を有効にしてください。"
       ],
+      "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "当社のアラートは安全性を優先しています。侵害された情報を認識できない場合は、このレポートを無視してください。"
+      ],
       "Owner": [
         "所有者"
       ],
@@ -1908,6 +2076,9 @@
       "Passkey sign-in": [
         "パスキーでサインイン"
       ],
+      "password": [
+        "パスワード"
+      ],
       "Password copied": [
         "パスワードをコピーしました"
       ],
@@ -1916,6 +2087,9 @@
       ],
       "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
         "${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } 週間より古いパスワードは履歴から自動的に削除されます。"
+      ],
+      "Paused": [
+        "一時停止"
       ],
       "Pending access to the shared data": [
         "共有データへのアクセスが保留中です"
@@ -2187,6 +2361,9 @@
       "Successfully synced all vaults": [
         "すべての保管庫が正常に同期されました"
       ],
+      "Suggested": [
+        "提案"
+      ],
       "Switch to another vault or create an item in this vault": [
         "別の保管庫に切り替えるか、この保管庫にアイテムを作成"
       ],
@@ -2207,6 +2384,9 @@
       ],
       "The exported file will be encrypted using PGP and requires a strong passphrase.": [
         "エクスポートされるファイルを PGP を使用して暗号化するため、強力なパスフレーズが必要です。"
+      ],
+      "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
+        "公開された情報は第三者サービスから漏洩しました。あなたの ${ BRAND_NAME } アカウント情報は安全で暗号化されたままです。${ learnMoreLink }"
       ],
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "${ PASS_APP_NAME } を使用するには追加パスワードが必要になります。追加パスワードは ${ BRAND_NAME } のパスワードに加えて、さらに追加して必要になるパスワードとして機能します。"
@@ -2337,6 +2517,9 @@
       "User's access successfully updated": [
         "ユーザーアクセスは正しく更新されました"
       ],
+      "username": [
+        "ユーザー名"
+      ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "保管庫「${ payload.content.name }」が正常に削除されました"
       ],
@@ -2357,6 +2540,9 @@
       ],
       "Verification code": [
         "検証コード"
+      ],
+      "Verification code sent.": [
+        "確認コードが送信されました。"
       ],
       "Viewer": [
         "閲覧者"
@@ -2418,9 +2604,6 @@
       "You may close this tab.": [
         "このタブを閉じても構いません。"
       ],
-      "You may need to accept a permission prompt and may have to restart the application depending on your system.": [
-        "お客様のシステムによっては、許可を求めるプロンプトを承認し、アプリを再起動していただく必要がある場合があります。"
-      ],
       "You may need to grant accessiblity permission to ${ PASS_APP_NAME }.": [
         "${ PASS_APP_NAME } にアクセシビリティ権限を付与する必要がある場合があります。"
       ],
@@ -2432,6 +2615,18 @@
       ],
       "You will be logged out and need to log in again on all of your other devices.": [
         "ログアウトされ、他のすべてのデバイスで再度ログインする必要があります。"
+      ],
+      "You will be notified of data breaches for these email addresses.": [
+        "これらのメール アドレスのデータ侵害について通知されます。"
+      ],
+      "You will be notified of data breaches for this email address.": [
+        "このメール アドレスのデータ侵害について通知されます。"
+      ],
+      "You will no longer be notified of data breaches for these email addresses.": [
+        "これらのメール アドレスのデータ侵害については通知されなくなります。"
+      ],
+      "You will no longer be notified of data breaches for this email address.": [
+        "このメール アドレスのデータ侵害については今後通知されません。"
       ],
       "You will no longer have access to sharing, 2FA and other advanced features in ${ PASS_APP_NAME }": [
         "あなたは、${ PASS_APP_NAME } での共有、2要素認証、その他の高度な機能へのアクセスができなくなります。"
@@ -2459,6 +2654,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "ファイルは暗号化して保存されます"
+      ],
+      "Your information was found on ${ displayedDate }": [
+        "あなたの情報は ${ displayedDate }で見つかりました。"
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "あなたの組織では、 ${ PASS_APP_NAME }へのアクセスの安全性を要求しています"
@@ -2517,6 +2715,9 @@
       ],
       "${ secureLinksCount } secure link": [
         "${ secureLinksCount } 個のセキュアリンク"
+      ],
+      "${ usageCount } login": [
+        "${ usageCount } 件のログイン"
       ],
       "${ years } year": [
         "${ years }年"
@@ -2821,6 +3022,9 @@
       "Email (new alias)": [
         "メール (新しいエイリアス)"
       ],
+      "Email address": [
+        "メールアドレス"
+      ],
       "Email aliases": [
         "メールエイリアス"
       ],
@@ -2889,6 +3093,9 @@
       ],
       "Generic CSV": [
         "汎用CSV"
+      ],
+      "Get Started": [
+        "始めましょう"
       ],
       "Grant": [
         "付与"
@@ -3003,6 +3210,9 @@
       ],
       "Last name": [
         "姓"
+      ],
+      "Last updated": [
+        "最終更新"
       ],
       "Last week": [
         "先週"
@@ -3385,6 +3595,9 @@
       "State or province": [
         "都道府県"
       ],
+      "Status": [
+        "ステータス"
+      ],
       "Street address": [
         "番地"
       ],
@@ -3493,6 +3706,9 @@
       "Use ${ PASS_APP_NAME } as your browser's default password manager": [
         "${ PASS_APP_NAME }をブラウザの既定のパスワードマネージャーに設定"
       ],
+      "Used in": [
+        "で使われる"
+      ],
       "Useful for permanent sharing": [
         "永続的な共有に役立ちます"
       ],
@@ -3507,6 +3723,9 @@
       ],
       "Vault ID": [
         "保管庫 ID"
+      ],
+      "Vaults": [
+        "保管庫"
       ],
       "View details": [
         "詳細の表示"
@@ -3566,6 +3785,17 @@
     "Link": {
       "auto create rules ››": [
         "自動生成ルール >>"
+      ],
+      "if your data is leaked": [
+        "もしデータが漏洩した場合"
+      ],
+      "Learn more": [
+        "詳細"
+      ]
+    },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "${ reason } を有効にする"
       ]
     },
     "Message": {
@@ -3577,6 +3807,22 @@
       ],
       "You selected ${ semiboldText } in this vault.": [
         "この保管庫で${ semiboldText }を選択しました。"
+      ]
+    },
+    "new_plans: feature": {
+      "Require 2FA for organization": [
+        "組織には 2FA が必要です"
+      ],
+      "SSO integration": [
+        "SSO 統合"
+      ]
+    },
+    "Notification": {
+      "${ reason } has been disabled": [
+        "${ reason } が無効になりました"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } が有効になりました"
       ]
     },
     "Onboarding": {
@@ -3841,6 +4087,20 @@
         "${ url } で使用されます"
       ]
     },
+    "Security Center - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } および他 ${ remainingCount } 件の漏洩の可能性が検出されました。${ DARK_WEB_MONITORING_NAME } を有効にして詳細を表示してください。${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } および他 1 件の漏洩の可能性が検出されました。${ DARK_WEB_MONITORING_NAME } を有効にして詳細を表示してください。${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } の漏洩の可能性が検出されました。${ DARK_WEB_MONITORING_NAME } を有効にして詳細を表示してください。${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "あなたの情報の漏洩が見つかりました。${ DARK_WEB_MONITORING_NAME } を有効にして詳細を表示してください。${ link }"
+      ]
+    },
     "sso": {
       "Approve or deny it now": [
         "承認するか否認するか決めてください"
@@ -3982,11 +4242,20 @@
       ]
     },
     "Title": {
+      "${ BRAND_NAME } addresses": [
+        "${ BRAND_NAME } アドレス"
+      ],
       "${ PASS_APP_NAME } Logs": [
         "${ PASS_APP_NAME } のログ"
       ],
       "${ PASS_APP_NAME } Settings": [
         "${ PASS_APP_NAME } の設定"
+      ],
+      "${ PASS_SHORT_APP_NAME } Monitor": [
+        "${ PASS_SHORT_APP_NAME } Monitor"
+      ],
+      "Account protection": [
+        "アカウントの保護"
       ],
       "Actions": [
         "アクション"
@@ -4017,6 +4286,15 @@
       ],
       "Blocked addresses": [
         "ブロックしたアドレス"
+      ],
+      "Breach detected": [
+        "違反が検出されました"
+      ],
+      "Breaches": [
+        "侵害"
+      ],
+      "Breaches detected for": [
+        "検出された侵害"
       ],
       "Cancel changing your email?": [
         "メールアドレスの変更をキャンセルしますか？"
@@ -4060,8 +4338,17 @@
       "Current version": [
         "現在のバージョン"
       ],
+      "Custom addresses": [
+        "カスタムアドレス"
+      ],
       "Custom domains": [
         "カスタムドメイン"
+      ],
+      "Custom email monitoring": [
+        "カスタムメール監視"
+      ],
+      "Custom emails": [
+        "カスタムメール"
       ],
       "Default": [
         "既定"
@@ -4129,6 +4416,9 @@
       "Enter your second password": [
         "2つ目のパスワードを入力してください"
       ],
+      "Excluded items": [
+        "除外されたアイテム"
+      ],
       "Fill & copy password": [
         "パスワードを入力してコピー"
       ],
@@ -4150,6 +4440,9 @@
       "Hide my email": [
         "メールを非表示にする"
       ],
+      "Hide-my-email aliases": [
+        "Hide-my-email エイリアス"
+      ],
       "History": [
         "履歴"
       ],
@@ -4164,6 +4457,12 @@
       ],
       "Importing your data": [
         "データのインポート"
+      ],
+      "Inactive 2FA": [
+        "非アクティブな 2FA"
+      ],
+      "Information exposed in breach": [
+        "侵害で漏洩した情報"
       ],
       "Item": [
         "アイテム"
@@ -4180,6 +4479,9 @@
       "Leave vault?": [
         "保管庫を離れますか？"
       ],
+      "Loading breaches...": [
+        "違反を読み込み中..."
+      ],
       "Log in as...": [
         "次としてログインしています..."
       ],
@@ -4188,6 +4490,9 @@
       ],
       "Mailbox": [
         "メールボックス"
+      ],
+      "Mark as resolved?": [
+        "解決済みとしてマークしますか?"
       ],
       "Member limit": [
         "メンバー上限"
@@ -4216,14 +4521,32 @@
       "MX record": [
         "MX レコード"
       ],
+      "Next": [
+        "次へ"
+      ],
+      "No excluded items": [
+        "除外項目なし"
+      ],
+      "No inactive 2FAs": [
+        "非アクティブな 2FA はありません"
+      ],
+      "No insecure passwords": [
+        "安全でないパスワードはありません"
+      ],
       "No items selected": [
         "アイテムが選択されていません"
+      ],
+      "No reused passwords": [
+        "パスワードの再利用は禁止"
       ],
       "No shared items": [
         "共有アイテムはありません"
       ],
       "No shared secure links": [
         "共有セキュアリンクはありません"
+      ],
+      "Open pagination": [
+        "ページネーションを開く"
       ],
       "Organize vaults": [
         "保管庫を整理する"
@@ -4236,6 +4559,12 @@
       ],
       "Password": [
         "パスワード"
+      ],
+      "Password Health": [
+        "パスワードの健全性"
+      ],
+      "Pause monitoring?": [
+        "監視を一時停止しますか?"
       ],
       "Pending access confirmation": [
         "アクセス確認が保留中"
@@ -4258,11 +4587,20 @@
       "Please note that once deleted, the alias can't be restored.": [
         "削除したエイリアスは復元できませんので、ご注意ください。"
       ],
+      "Previous": [
+        "前へ"
+      ],
       "Random Prefix Generation": [
         "ランダムプレフィックス生成"
       ],
+      "Recommended actions": [
+        "推奨されるアクション"
+      ],
       "Reject device?": [
         "デバイスを拒否しますか？"
+      ],
+      "Remove email address?": [
+        "メールアドレスを削除しますか?"
       ],
       "Remove extra password": [
         "追加パスワードを削除"
@@ -4273,8 +4611,20 @@
       "Reset history for this item?": [
         "このアイテムの履歴をリセットしますか？"
       ],
+      "Resolved breaches": [
+        "解決された違反"
+      ],
       "Restore this version?": [
         "このバージョンを復元しますか？"
+      ],
+      "Resume monitoring?": [
+        "監視を再開しますか?"
+      ],
+      "Reused ${ count } time": [
+        "${ count } 回再利用しました"
+      ],
+      "Reused passwords": [
+        "再利用パスワード"
       ],
       "Review and share": [
         "レビューして共有"
@@ -4291,8 +4641,14 @@
       "Set extra password": [
         "追加のパスワードを設定する"
       ],
+      "Set up 2FA for better security": [
+        "2要素認証を設定するとより安全になります"
+      ],
       "Set up 2FA for more security": [
         "2要素認証を設定するとより安全になります"
+      ],
+      "Settings": [
+        "設定"
       ],
       "Share with": [
         "と共有する"
@@ -4357,7 +4713,13 @@
       "Visible vaults": [
         "閲覧可能な保管庫"
       ],
+      "Want to learn more?": [
+        "もっと詳しく知りたいですか?"
+      ],
       "Weak password": [
+        "弱いパスワード"
+      ],
+      "Weak passwords": [
         "弱いパスワード"
       ],
       "Welcome to ${ brandNameJSX }": [
@@ -4365,6 +4727,12 @@
       ],
       "Welcome to your new password manager!": [
         "新しいパスワード マネージャーへようこそ!"
+      ],
+      "What is an alias?": [
+        "エイリアスとは？"
+      ],
+      "What is the dark web?": [
+        "ダークウェブとは？"
       ],
       "What is the difference between ${ PASS_SHORT_APP_NAME } note and SimpleLogin note?": [
         "${ PASS_SHORT_APP_NAME }メモとSimpleLoginメモの違いはなんですか？"
@@ -4374,6 +4742,9 @@
       ],
       "Your ${ planName } subscription will end on ${ endDate }": [
         "${ planName }サブスクリプションは${ endDate }に終了します"
+      ],
+      "Your exposed information": [
+        "あなたの公開情報"
       ],
       "Your vault is empty": [
         "保管庫は空です"
@@ -4393,6 +4764,14 @@
     "Today icon tooltip in mini calendar": {
       "Today": [
         "今日"
+      ]
+    },
+    "Tooltip": {
+      "Not all information listed here was exposed for all users.": [
+        "ここに記載されているすべての情報がすべてのユーザーに公開されたわけではありません。"
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "暗号化されたパスワードは、それらが解読されない限り、漏洩した場合でも安全です。"
       ]
     },
     "Validation": {
@@ -4502,6 +4881,9 @@
       "Email cannot be empty": [
         "メールは空欄にできません"
       ],
+      "Email is required": [
+        "メールアドレスは必須です"
+      ],
       "Empty note": [
         "空のメモ"
       ],
@@ -4516,6 +4898,12 @@
       ],
       "Extra password should have at least 8 characters": [
         "追加パスワードは8文字以上必要です"
+      ],
+      "Failed to autotype. Please make sure ${ PASS_APP_NAME } has the necessary permissions and try again (${ error }).": [
+        "オートタイプに失敗しました。${ PASS_APP_NAME } に必要な権限が付与されていることをご確認の上、もう一度お試しください (${ error })。"
+      ],
+      "Failed to load breaches.": [
+        "侵害を読み込めませんでした。"
       ],
       "Grant clipboard access to enable automatic clearing of copied passwords and data.": [
         "コピーされたパスワードとデータの自動消去を有効にするために、クリップボードへのアクセスを許可してください。"
@@ -4612,6 +5000,9 @@
       ],
       "This alias \"${ aliasEmail }\" is currently used in the login \"${ relatedLoginName }\".": [
         "このエイリアス \"${ aliasEmail }\" はログイン \"${ relatedLoginName } \" で現在使用されています。"
+      ],
+      "This email address will no longer be monitored for data breaches.": [
+        "このメール アドレスは、データ侵害について監視されなくなります。"
       ],
       "This item is currently shared. Deleting it will remove access for all other users.": [
         "このアイテムは現在共有されています。削除すると、他のすべてのユーザーのアクセス権が削除されます。"
