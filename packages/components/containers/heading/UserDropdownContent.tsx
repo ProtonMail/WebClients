@@ -240,7 +240,8 @@ const UserDropdownContent = () => {
 
     const showSettingsButton =
         (viewportWidth['<=small'] && APP_NAME !== APPS.PROTONACCOUNT && APP_NAME !== APPS.PROTONVPN_SETTINGS) ||
-        APP_NAME === APPS.PROTONDOCS;
+        APP_NAME === APPS.PROTONDOCS ||
+        APP_NAME === APPS.PROTONMEET;
 
     return (
         <Dropdown
@@ -293,13 +294,13 @@ const UserDropdownContent = () => {
                         >{c('Action').t`Settings`}</ButtonLike>
                     ) : undefined}
 
-                    {showSwitchAccountButton && !accountSessions.hasList ? (
-                        accountSessions.hasAddAccount ? (
+                    {showSwitchAccountButton &&
+                        !accountSessions.hasList &&
+                        (accountSessions.hasAddAccount ? (
                             <AddAccountButton showAsButton cta={c('Action').t`Add another account`} />
                         ) : (
                             <SwitchAccountButton />
-                        )
-                    ) : null}
+                        ))}
 
                     <Button
                         shape="outline"
