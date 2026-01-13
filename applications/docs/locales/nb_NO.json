@@ -1249,6 +1249,10 @@
       "${ maxSpaceTB } storage": [
         "${ maxSpaceTB } lagring"
       ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } bruker",
+        "Opptil ${ numberOfUsers } brukere"
+      ],
       "${ planMaxSpace } email storage": [
         "${ planMaxSpace } e-postlagring"
       ],
@@ -1359,6 +1363,9 @@
       ],
       "High-speed chats and advanced AI features.": [
         "Høyhastighetschatter og avanserte KI-funksjoner."
+      ],
+      "Private video calls for the conversations that matter.": [
+        "Private videosamtaler for samtalene som betyr noe."
       ]
     },
     "color": {
@@ -2343,6 +2350,11 @@
     "customer_support.feature.mail": {
       "For ${ MAIL_APP_NAME }": [
         "For ${ MAIL_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.meet": {
+      "For ${ MEET_APP_NAME }": [
+        "For ${ MEET_APP_NAME }"
       ]
     },
     "customer_support.feature.pass": {
@@ -6067,6 +6079,53 @@
       ],
       "Add-on with free trial": [
         "Tillegg med gratis prøveperiode"
+      ]
+    },
+    "meet_2025: Feature": {
+      "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
+        "${ MEET_APP_NAME }: konfidensielle videokonferanser for samtalene som betyr noe"
+      ],
+      "${ n } active meeting at a time": [
+        "${ n } aktivt møte om gangen",
+        "${ n } aktive møter om gangen"
+      ],
+      "24 hours per meeting": [
+        "24 timer per møte"
+      ],
+      "60 minutes per meeting": [
+        "60 minutter per møte"
+      ],
+      "Appointment scheduling": [
+        "Avtaleplanlegging"
+      ],
+      "Browser, mobile, and desktop apps": [
+        "Nettleser-, mobil- og skrivebordsapper"
+      ],
+      "Built-in chat": [
+        "Innebygd chat"
+      ],
+      "End-to-end encrypted screen sharing and ephemeral in-call chat": [
+        "Ende-til-ende-kryptert skjermdeling og kortvarig chat under samtaler"
+      ],
+      "Meeting recording (coming soon)": [
+        "Møteopptak (kommer snart)"
+      ],
+      "One active meeting at a time": [
+        "Ett aktivt møte om gangen"
+      ],
+      "Screen-sharing": [
+        "Skjermdeling"
+      ],
+      "Unlimited meetings per day": [
+        "Ubegrenset antall møter per dag"
+      ],
+      "Up to ${ n } meeting per day": [
+        "Opptil ${ n } møte per dag",
+        "Opptil ${ n } møter per dag"
+      ],
+      "Up to ${ n } participant": [
+        "Opptil ${ n } deltaker",
+        "Opptil ${ n } deltakere"
       ]
     },
     "Message": {

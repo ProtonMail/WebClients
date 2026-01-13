@@ -1363,6 +1363,9 @@
       ],
       "High-speed chats and advanced AI features.": [
         "Yüksek hızlı sohbetler ve gelişmiş yapay zeka özellikleri."
+      ],
+      "Private video calls for the conversations that matter.": [
+        "Önemli görüşmeler için gizliliği koruyan görüntülü çağrılar."
       ]
     },
     "color": {
@@ -2347,6 +2350,11 @@
     "customer_support.feature.mail": {
       "For ${ MAIL_APP_NAME }": [
         "${ MAIL_APP_NAME } için"
+      ]
+    },
+    "customer_support.feature.meet": {
+      "For ${ MEET_APP_NAME }": [
+        "${ MEET_APP_NAME } için"
       ]
     },
     "customer_support.feature.pass": {
@@ -6071,6 +6079,53 @@
       ],
       "Add-on with free trial": [
         "Ücretsiz deneme sürümü ile eklenti"
+      ]
+    },
+    "meet_2025: Feature": {
+      "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
+        "${ MEET_APP_NAME }: Önemli görüşmeler için gizliliği koruyan görüntülü toplantı"
+      ],
+      "${ n } active meeting at a time": [
+        "Aynı anda ${ n } etkin görüşme",
+        "Aynı anda ${ n } etkin görüşme"
+      ],
+      "24 hours per meeting": [
+        "Görüşme başına 24 saat"
+      ],
+      "60 minutes per meeting": [
+        "Görüşme başına 60 dakika"
+      ],
+      "Appointment scheduling": [
+        "Randevu planlama"
+      ],
+      "Browser, mobile, and desktop apps": [
+        "Tarayıcı, mobil ve bilgisayar uygulamaları"
+      ],
+      "Built-in chat": [
+        "Hazır sohbet"
+      ],
+      "End-to-end encrypted screen sharing and ephemeral in-call chat": [
+        "Uçtan uca şifrelenmiş ekran paylaşımı ve geçici çağrı içi sohbet"
+      ],
+      "Meeting recording (coming soon)": [
+        "Görüşme kaydı (yakında)"
+      ],
+      "One active meeting at a time": [
+        "Aynı anda bir etkin görüşme"
+      ],
+      "Screen-sharing": [
+        "Ekran paylaşımı"
+      ],
+      "Unlimited meetings per day": [
+        "Günlük sınırsız görüşme"
+      ],
+      "Up to ${ n } meeting per day": [
+        "Günde ${ n } görüşme",
+        "Günde ${ n } görüşme"
+      ],
+      "Up to ${ n } participant": [
+        "${ n } katılımcı",
+        "${ n } katılımcı"
       ]
     },
     "Message": {
