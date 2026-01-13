@@ -16,4 +16,4 @@ export const selectOpenedComposersIds = createSelector([composers], (composers) 
 
 export const selectComposer = createSelector([composers, composerID], (composers, id) => composers[id]);
 
-export const selectHasFocusedComposer = createSelector([hasFocusedComposer], (hasFocused) => hasFocused);
+export const selectHasFocusedComposer = hasFocusedComposer;
