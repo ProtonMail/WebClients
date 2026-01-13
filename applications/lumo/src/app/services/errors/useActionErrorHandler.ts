@@ -4,7 +4,7 @@ import { useErrorHandler as useProtonErrorHandler } from '@proton/components';
 
 import { useLumoPlan } from '../../providers/LumoPlanProvider';
 import { useLumoDispatch } from '../../redux/hooks';
-import { type ErrorContext, LUMO_API_ERRORS } from '../../types-api';
+import { type ErrorContext, LUMO_API_ERRORS } from '../../types';
 import { analyzeError } from './errorAnalyzer';
 import { handleGenerationError, handleTierError } from './errorHandling';
 
