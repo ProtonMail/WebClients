@@ -218,8 +218,8 @@ export function useDrive() {
             await photosEntitiesCacheSingleton?.removeEntities([`node-${nodeUid}`]);
         }, []),
         /**
-         * Clears all cached entities from the Drive SDK.
-         * Use this to force a refresh of folder contents.
+         * This is temporary function for lumo to be able to clear sdk cache
+         * @deprecated This should not be used
          */
         clearCache: useCallback(async () => {
             await driveEntitiesCacheSingleton?.clear();
