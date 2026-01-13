@@ -4,9 +4,8 @@ import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import { addConversationError, addTierError } from '../../redux/slices/meta/errors';
 import type { LumoDispatch } from '../../redux/store';
-import type { ConversationId, LUMO_USER_TYPE } from '../../types';
-import type { GenerationError, GenerationResponseMessage } from '../../types-api';
-import { LUMO_API_ERRORS } from '../../types-api';
+import { type ConversationId, type GenerationError, LUMO_API_ERRORS, type LUMO_USER_TYPE } from '../../types';
+import type { GenerationResponseMessage } from '../../types-api';
 import { getExceedTierErrorMessage, getExceededTierErrorTitle } from '../../util/errorMessages';
 
 export const createGenerationError = (

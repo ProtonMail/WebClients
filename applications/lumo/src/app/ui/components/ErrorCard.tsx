@@ -7,7 +7,7 @@ import lumoAlert from '@proton/styles/assets/img/lumo/lumo-cat-alert.svg';
 import { useLumoDispatch } from '../../redux/hooks';
 import type { ConversationError } from '../../redux/slices/meta/errors';
 import { dismissConversationError } from '../../redux/slices/meta/errors';
-import { LUMO_API_ERRORS } from '../../types-api';
+import { LUMO_API_ERRORS } from '../../types';
 import ChatContainerItem from './ChatContainerItem';
 
 import './ErrorCard.scss';

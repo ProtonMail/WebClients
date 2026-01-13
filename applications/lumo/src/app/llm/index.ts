@@ -17,19 +17,19 @@ import {
 } from '../redux/slices/core/messages';
 import type { LumoDispatch } from '../redux/store';
 import { createGenerationError, getErrorTypeFromMessage } from '../services/errors/errorHandling';
-import type {
-    Attachment,
-    Base64,
-    ConversationId,
-    Message,
-    RequestId,
-    SpaceId,
-    Status,
-    Turn,
-    WireImage,
+import {
+    type Attachment,
+    type Base64,
+    type ConversationId,
+    ConversationStatus,
+    type Message,
+    type RequestId,
+    Role,
+    type SpaceId,
+    type Status,
+    type Turn,
 } from '../types';
-import { ConversationStatus, Role } from '../types';
-import type { GenerationResponseMessage } from '../types-api';
+import type { GenerationResponseMessage, WireImage } from '../types-api';
 import { separateAttachmentsByType } from './attachments';
 import { removeFileFromMessageContext } from './utils';
 
