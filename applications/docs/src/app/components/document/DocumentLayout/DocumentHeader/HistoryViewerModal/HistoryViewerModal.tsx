@@ -20,6 +20,8 @@ import type {
   NativeVersionHistory,
   EditorInvoker,
   EditorControllerInterface,
+  DocumentState,
+  PublicDocumentState,
 } from '@proton/docs-core'
 import { useCallback, useMemo, useState } from 'react'
 import { c } from 'ttag'
@@ -29,6 +31,7 @@ import { useLoading } from '@proton/hooks/index'
 import type { SerializedEditorState } from 'lexical'
 import type { DocumentType } from '@proton/drive-store/store/_documents'
 import { useDebugMode } from '~/utils/debug-mode-context'
+import { downloadExport } from '@proton/docs-core/lib/UseCase/ExportAndDownload'
 
 type RestoreType = 'replace' | 'as-copy'
 
@@ -38,6 +41,7 @@ type HistoryViewerModalContentProps = {
   editorController: EditorControllerInterface
   docController: AuthenticatedDocControllerInterface
   documentType: DocumentType
+  documentState: DocumentState | PublicDocumentState
 }
 
 function HistoryViewerModalContent({
@@ -46,6 +50,7 @@ function HistoryViewerModalContent({
   editorController,
   docController,
   documentType,
+  documentState,
 }: HistoryViewerModalContentProps) {
   const { isDebugMode } = useDebugMode()
 
@@ -58,6 +63,7 @@ function HistoryViewerModalContent({
 
   const [isRestoring, withRestoring] = useLoading()
   const [isRestoringAsCopy, withRestoringAsCopy] = useLoading()
+  const [isExporting, withExporting] = useLoading()
 
   const isSelectedRevisionCurrentDocument = useMemo(() => {
     return versionHistory.isCurrentBatchIndex(selectedBatchIndex)
@@ -271,10 +277,14 @@ function HistoryViewerModalContent({
                 type="number"
                 value={batchThreshold}
                 onChange={(event) => {
-                  const value = parseInt(event.target.value)
-                  versionHistory.setBatchThreshold(value)
+                  let value = parseInt(event.target.value)
+                  if (isNaN(value) || value < 1) {
+                    value = 1
+                  }
                   setBatchThreshold(value)
+                  versionHistory.setBatchThreshold(value)
                   setFormattedBatchGroups(versionHistory.getFormattedBatchGroups())
+                  setSelectedBatchIndex(versionHistory.batches.length - 1)
                 }}
                 min={1}
               />
@@ -303,6 +313,25 @@ function HistoryViewerModalContent({
               >
                 {c('Action').t`Restore this version`}
               </Button>
+              {documentType === 'sheet' && (
+                <Button
+                  className="mt-2 w-full"
+                  data-testid="export-revision"
+                  loading={isExporting}
+                  disabled={!editorInvoker}
+                  onClick={() => {
+                    if (!editorInvoker) {
+                      return
+                    }
+                    void withExporting(async () => {
+                      const data = await editorInvoker.exportData('xlsx')
+                      downloadExport(data, documentState.getProperty('documentName'), 'xlsx')
+                    })
+                  }}
+                >
+                  {c('Action').t`Export this version (as xlsx)`}
+                </Button>
+              )}
             </>
           )}
         </div>
@@ -316,6 +345,7 @@ type HistoryViewerModalProps = ModalStateProps & {
   editorController: EditorControllerInterface
   docController: AuthenticatedDocControllerInterface
   documentType: DocumentType
+  documentState: DocumentState | PublicDocumentState
 }
 
 function HistoryViewerModal({
@@ -324,6 +354,7 @@ function HistoryViewerModal({
   editorController,
   docController,
   documentType,
+  documentState,
   ...rest
 }: HistoryViewerModalProps) {
   const isVersionHistoryAvailable = !!versionHistory
@@ -343,6 +374,7 @@ function HistoryViewerModal({
           editorController={editorController}
           docController={docController}
           documentType={documentType}
+          documentState={documentState}
         />
       ) : (
         <>

@@ -222,9 +222,10 @@ export function DocumentTitleDropdown({
         editorController,
         docController: authenticatedController,
         documentType,
+        documentState,
       })
     }
-  }, [authenticatedController, actionMode, showHistoryModal, editorController, documentType])
+  }, [authenticatedController, actionMode, showHistoryModal, editorController, documentType, documentState])
 
   const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>()
   const focusInputOnMount = useCallback((input: HTMLInputElement | null) => {
@@ -307,8 +308,9 @@ export function DocumentTitleDropdown({
       editorController,
       docController: authenticatedController,
       documentType,
+      documentState,
     })
-  }, [authenticatedController, editorController, documentType, showHistoryModal])
+  }, [authenticatedController, editorController, documentType, showHistoryModal, documentState])
 
   const openHelp = useCallback(() => {
     window.open(getStaticURL('/support/drive/sheets'), '_blank')

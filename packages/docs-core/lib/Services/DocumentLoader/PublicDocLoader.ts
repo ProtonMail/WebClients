@@ -13,7 +13,6 @@ import type { DocsApi } from '../../Api/DocsApi'
 import type { EditorControllerInterface } from '../../EditorController/EditorController'
 import type { EditorOrchestratorInterface } from '../Orchestrator/EditorOrchestratorInterface'
 import type { EncryptComment } from '../../UseCase/EncryptComment'
-import type { ExportAndDownload } from '../../UseCase/ExportAndDownload'
 import type { FeatureFlag, UnleashClient } from '@proton/unleash'
 import type { GetDocumentMeta } from '../../UseCase/GetDocumentMeta'
 import type { HandleRealtimeCommentsEvent } from '../../UseCase/HandleRealtimeCommentsEvent'
@@ -44,7 +43,6 @@ export class PublicDocLoader implements DocLoaderInterface<PublicDocumentState> 
     private websocketSerivce: WebsocketServiceInterface,
     private docsApi: DocsApi,
     private loadDocument: LoadDocument,
-    private exportAndDownload: ExportAndDownload,
     private eventBus: InternalEventBusInterface,
     private loadCommit: FetchDecryptedCommit,
     private getDocumentMeta: GetDocumentMeta,
@@ -116,12 +114,7 @@ export class PublicDocLoader implements DocLoaderInterface<PublicDocumentState> 
 
     this.documentState = documentState
 
-    const editorController = new EditorController(
-      this.logger,
-      this.exportAndDownload,
-      this.documentState,
-      this.eventBus,
-    )
+    const editorController = new EditorController(this.logger, this.documentState, this.eventBus)
     this.editorController = editorController
 
     if (publicEditingEnabled) {
