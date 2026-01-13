@@ -4,8 +4,7 @@ import { c } from 'ttag';
 
 import { Href } from '@proton/atoms/Href/Href';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
-import { PLANS, type Subscription } from '@proton/payments';
-import { getPlan } from '@proton/payments';
+import { PLANS, type Subscription, getPlan } from '@proton/payments';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, BRAND_NAME, DRIVE_SHORT_APP_NAME, MAIL_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
@@ -139,7 +138,14 @@ export const LockedStateTopBanner = ({ app, user, subscription, upsellRef, locke
     }
 
     const cta = (
-        <StorageBannerCTA user={user} subscription={subscription} upsellRef={upsellRef} plan={plan} type={type} />
+        <StorageBannerCTA
+            key="storage-banner-cta"
+            user={user}
+            subscription={subscription}
+            upsellRef={upsellRef}
+            plan={plan}
+            type={type}
+        />
     );
 
     return (

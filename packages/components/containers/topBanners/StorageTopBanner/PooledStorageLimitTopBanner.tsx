@@ -14,7 +14,7 @@ export const PooledStorageLimitTopBanner = ({
     space: ReturnType<typeof getSpace>;
 }) => {
     const details = getCompleteSpaceDetails(space);
-    const upgrade = <StorageUpgradeCta />;
+    const upgrade = <StorageUpgradeCta key="storage-upgrade-cta" />;
 
     if (details.pooled.type === SpaceState.Danger) {
         return (
