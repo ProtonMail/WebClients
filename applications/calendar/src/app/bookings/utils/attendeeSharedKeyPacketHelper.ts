@@ -1,5 +1,5 @@
-import type { SessionKey } from '@proton/crypto/lib';
-import { CryptoProxy } from '@proton/crypto/lib';
+import type { SessionKey } from '@proton/crypto';
+import { CryptoProxy } from '@proton/crypto';
 import { getPrimaryCalendarKey } from '@proton/shared/lib/calendar/crypto/keys/helpers';
 import type { Address } from '@proton/shared/lib/interfaces';
 import type { CalendarUserSettings, DecryptedCalendarKey } from '@proton/shared/lib/interfaces/calendar';

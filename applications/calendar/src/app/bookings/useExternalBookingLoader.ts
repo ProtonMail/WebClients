@@ -7,7 +7,7 @@ import { shouldCheckSignatureVerificationStatus } from '@proton/account/publicKe
 import { useGetUser } from '@proton/account/user/hooks';
 import { useGetVerificationPreferences } from '@proton/components';
 import { useSilentApi } from '@proton/components/hooks/useSilentApi';
-import { CryptoProxy, type PublicKeyReference, VERIFICATION_STATUS } from '@proton/crypto';
+import { CryptoProxy, VERIFICATION_STATUS } from '@proton/crypto';
 import { getNextAvailableSlot, queryPublicBookingPage } from '@proton/shared/lib/api/calendarBookings';
 import { SentryCalendarInitiatives, traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 import type { Api, User } from '@proton/shared/lib/interfaces';
@@ -208,40 +208,34 @@ export const useExternalBookingLoader = () => {
                 });
 
                 let failedToVerifyCalendarKey = false;
-                let calendarPublicKey: PublicKeyReference | undefined;
-                if (
-                    bookingPageData.Version === 2 &&
-                    bookingPageData.CalendarPublicKey &&
-                    bookingPageData.CalendarKeySignature
-                ) {
-                    calendarPublicKey = await CryptoProxy.importPublicKey({
-                        binaryKey: Uint8Array.fromBase64(bookingPageData.CalendarPublicKey),
-                    });
-                    const { verificationStatus, errors: verificationErrors } = await CryptoProxy.verifyMessage({
-                        textData: calendarPublicKey.getSHA256Fingerprints().join(';'),
-                        verificationKeys: verificationPreferences?.verifyingKeys ?? [],
-                        binarySignature: Uint8Array.fromBase64(bookingPageData.CalendarKeySignature),
-                        signatureContext:
-                            verificationPreferences && verificationPreferences.verifyingKeys.length > 0
-                                ? {
-                                      required: true,
-                                      value: bookingCalendarKeySignatureContextValue(bookingPageData.BookingUID),
-                                  }
-                                : undefined,
-                    });
-                    if (
-                        verificationPreferences &&
-                        shouldCheckSignatureVerificationStatus(verificationPreferences) &&
-                        verificationStatus !== VERIFICATION_STATUS.SIGNED_AND_VALID
-                    ) {
-                        traceInitiativeError(SentryCalendarInitiatives.BOOKINGS, {
-                            type: 'calendarPublicKey',
-                            verificationErrors,
-                            bookingUID: bookingPageData.BookingUID,
-                        });
+                const calendarPublicKey = await CryptoProxy.importPublicKey({
+                    binaryKey: Uint8Array.fromBase64(bookingPageData.CalendarPublicKey),
+                });
 
-                        failedToVerifyCalendarKey = true;
-                    }
+                const { verificationStatus, errors: verificationErrors } = await CryptoProxy.verifyMessage({
+                    textData: calendarPublicKey.getSHA256Fingerprints().join(';'),
+                    verificationKeys: verificationPreferences?.verifyingKeys ?? [],
+                    binarySignature: Uint8Array.fromBase64(bookingPageData.CalendarKeySignature),
+                    signatureContext:
+                        verificationPreferences && verificationPreferences.verifyingKeys.length > 0
+                            ? {
+                                  required: true,
+                                  value: bookingCalendarKeySignatureContextValue(bookingPageData.BookingUID),
+                              }
+                            : undefined,
+                });
+                if (
+                    verificationPreferences &&
+                    shouldCheckSignatureVerificationStatus(verificationPreferences) &&
+                    verificationStatus !== VERIFICATION_STATUS.SIGNED_AND_VALID
+                ) {
+                    traceInitiativeError(SentryCalendarInitiatives.BOOKINGS, {
+                        type: 'calendarPublicKey',
+                        verificationErrors,
+                        bookingUID: bookingPageData.BookingUID,
+                    });
+
+                    failedToVerifyCalendarKey = true;
                 }
 
                 const failedToVerify = failedToVerifyCalendarKey || failedToVerifyContent;

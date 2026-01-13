@@ -39,8 +39,7 @@ import {
     modelToOrganizerProperties,
 } from '../components/eventModal/eventForm/modelToProperties';
 import config from '../config';
-import { decryptBookingSessionKey } from '../containers/bookings/utils/crypto/bookingDecryption';
-import type { BookingDetails, BookingTimeslot, OldBookingTimeslot } from './booking.store';
+import type { BookingDetails, BookingTimeslot } from './booking.store';
 
 interface PrepareBookingSubmissionParams {
     timeslot: BookingTimeslot;
@@ -56,24 +55,6 @@ interface PrepareBookingSubmissionParams {
     getCanonicalEmailsMap: GetCanonicalEmailsMap;
     getVTimezonesMap: GetVTimezonesMap;
     sharedSessionKey: SessionKey;
-}
-
-// V1 Crypto model
-interface OldPrepareBookingSubmissionParams {
-    timeslot: OldBookingTimeslot;
-    bookingDetails: BookingDetails;
-    bookingSecretBase64Url: string;
-    bookingKeySalt: string;
-    attendeeName: string;
-    attendeeEmail: string;
-    organizerName: string;
-    organizerEmail: string;
-    saveMeeting: (params: SaveMeetingParams) => Promise<{
-        response: CreateMeetingResponse;
-        passwordBase: string;
-    }>;
-    getCanonicalEmailsMap: GetCanonicalEmailsMap;
-    getVTimezonesMap: GetVTimezonesMap;
 }
 
 const prodId = getProdId(config);
@@ -234,118 +215,6 @@ export const prepareBookingSubmission = async ({
     getVTimezonesMap,
     sharedSessionKey,
 }: PrepareBookingSubmissionParams) => {
-    const uid = generateProtonCalendarUID();
-
-    const dtstart = getDateTimeProperty(
-        convertTimestampToTimezone(timeslot.startTime, timeslot.timezone),
-        timeslot.timezone
-    );
-    const dtend = getDateTimeProperty(
-        convertTimestampToTimezone(timeslot.endTime, timeslot.timezone),
-        timeslot.timezone
-    );
-
-    const canonicalEmailMap = await getCanonicalEmailsMap([attendeeEmail]);
-
-    const canonicalEmail = canonicalEmailMap[attendeeEmail] || canonicalizeEmailByGuess(attendeeEmail);
-    const attendeeToken = await generateAttendeeToken(canonicalEmail, uid);
-
-    const generalProperties = await getBookingGeneralProperties({
-        timeslot,
-        bookingDetails,
-        saveMeeting,
-        uid,
-        attendeeName,
-    });
-    const organizerProperties = modelToOrganizerProperties({ organizer: { email: organizerEmail, cn: organizerName } });
-    const attendeeProperties = modelToAttendeeProperties({
-        attendees: [
-            {
-                email: attendeeEmail,
-                cn: attendeeName,
-                rsvp: ICAL_ATTENDEE_RSVP.TRUE,
-                role: ICAL_ATTENDEE_ROLE.REQUIRED,
-                partstat: ICAL_ATTENDEE_STATUS.NEEDS_ACTION,
-                token: attendeeToken,
-            },
-        ],
-    });
-    const descriptionProperties = modelToDescriptionProperties({ description: bookingDetails.description.trim() });
-
-    const vevent: VcalVeventComponent = withDtstamp({
-        ...generalProperties,
-        ...organizerProperties,
-        ...attendeeProperties,
-        ...descriptionProperties,
-        dtstart,
-        dtend,
-        component: 'vevent',
-        'x-pm-BookingUID': { value: bookingDetails.bookingUID },
-        sequence: { value: 0 },
-        // TODO add frequencyProperties (rrule) once we support recurring events
-        // TODO check if we need to support valarmComponents
-    });
-
-    const [{ timePartIcsRaw, encryptedContentPart, encryptedAttendeePart }, vtimezones] = await Promise.all([
-        encryptBookingParts(vevent, sharedSessionKey),
-        generateVtimezonesComponents(vevent, getVTimezonesMap),
-    ]);
-
-    const fullIcs = createInviteIcs({
-        method: ICAL_METHOD.REQUEST,
-        prodId,
-        vevent: vevent,
-        vtimezones,
-        keepDtstamp: true,
-    });
-
-    const invitationInfo = {
-        method: ICAL_METHOD.REQUEST,
-        vevent,
-        isCreateEvent: true,
-        dateFormatOptions: { locale: dateLocale },
-    };
-
-    const emailSubject = generateEmailSubject(invitationInfo);
-
-    const emailBody = generateEmailBody(invitationInfo);
-
-    return {
-        sharedSessionKey,
-        contentPart: encryptedContentPart,
-        timePart: timePartIcsRaw,
-        attendeeData: encryptedAttendeePart,
-        attendeeToken: attendeeToken,
-        emailData: {
-            name: attendeeName,
-            email: attendeeEmail,
-            subject: emailSubject,
-            body: emailBody,
-        },
-        ics: fullIcs,
-    };
-};
-
-// V1 Crypto model
-export const oldPrepareBookingSubmission = async ({
-    timeslot,
-    bookingDetails,
-    bookingSecretBase64Url,
-    bookingKeySalt,
-    attendeeName,
-    attendeeEmail,
-    organizerName,
-    organizerEmail,
-    saveMeeting,
-    getCanonicalEmailsMap,
-    getVTimezonesMap,
-}: OldPrepareBookingSubmissionParams) => {
-    const sharedSessionKey = await decryptBookingSessionKey(
-        bookingSecretBase64Url,
-        bookingKeySalt,
-        bookingDetails.calendarId,
-        timeslot.bookingKeyPacket
-    );
     const uid = generateProtonCalendarUID();
 
     const dtstart = getDateTimeProperty(

@@ -22,21 +22,19 @@ import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import { emailValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { dateLocale } from '@proton/shared/lib/i18n';
 
-import type { OldBookingTimeslot } from '../../booking.store';
 import { type BookingTimeslot, useBookingStore } from '../../booking.store';
 import { useBookingsProvider } from '../../entryPoints/BookingsExternalProvider';
 import { useExternalBookingActions } from '../../useExternalBookingActions';
 
 interface BookingSlotModalProps extends ModalProps {
-    // Remove OldBookingTimeslot once the migration is done
-    timeslot: BookingTimeslot | OldBookingTimeslot;
+    timeslot: BookingTimeslot;
 }
 
 const NAME_MAX_LENGTH = 100;
 const EMAIL_MAX_LENGTH = 320;
 
 export const BookSlotModal = ({ timeslot, ...rest }: BookingSlotModalProps) => {
-    const { submitOldCryptoModel, submitBooking, bookingDetails } = useExternalBookingActions();
+    const { submitBooking, bookingDetails } = useExternalBookingActions();
     const selectedTimezone = useBookingStore((state) => state.selectedTimezone);
 
     const [name, setName] = useState<string>('');
@@ -80,11 +78,7 @@ export const BookSlotModal = ({ timeslot, ...rest }: BookingSlotModalProps) => {
             return;
         }
 
-        const result =
-            bookingDetails?.version === 2
-                ? await submitBooking(timeslot, { name, email })
-                : // We use the old crypto model for legacy booking pages (version 1)
-                  await submitOldCryptoModel(timeslot as OldBookingTimeslot, { name, email });
+        const result = await submitBooking(timeslot, { name, email });
 
         if (result === 'success') {
             rest.onClose?.();
