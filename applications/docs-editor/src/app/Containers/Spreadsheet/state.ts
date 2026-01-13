@@ -51,6 +51,7 @@ type LocalState = {
   cellXfs: CellXfs | null | undefined
   scale: number
   userDefinedColors: string[]
+  sharedStrings: string[]
 
   onChangeSheets: SetState<Sheet[]>
   onChangeSheetData: SetState<SheetData<CellData>>
@@ -65,6 +66,7 @@ type LocalState = {
   onChangeCellXfs: SetState<CellXfs | null | undefined>
   onChangeScale: SetState<number>
   onChangeUserDefinedColors: SetState<string[]>
+  onChangeSharedStrings: SetState<string[]>
 }
 type LocalStateWithoutActions = Omit<
   LocalState,
@@ -81,6 +83,7 @@ type LocalStateWithoutActions = Omit<
   | 'onChangeCellXfs'
   | 'onChangeScale'
   | 'onChangeUserDefinedColors'
+  | 'onChangeSharedStrings'
 >
 function getValueFromUpdateAction<T>(updateAction: UpdateAction<T>, prevValue: T): T {
   return typeof updateAction === 'function' ? (updateAction as (state: T) => T)(prevValue) : updateAction
@@ -100,6 +103,7 @@ const useLocalSpreadsheetState = create<LocalState>()((set) => ({
   cellXfs: new Map(),
   scale: 1,
   userDefinedColors: [],
+  sharedStrings: [],
 
   onChangeSheets: (sheets) => set((state) => ({ sheets: getValueFromUpdateAction(sheets, state.sheets) })),
   onChangeSheetData: (sheetData) =>
@@ -126,6 +130,8 @@ const useLocalSpreadsheetState = create<LocalState>()((set) => ({
   onChangeScale: (scale) => set((state) => ({ scale: getValueFromUpdateAction(scale, state.scale) })),
   onChangeUserDefinedColors: (userDefinedColors) =>
     set((state) => ({ userDefinedColors: getValueFromUpdateAction(userDefinedColors, state.userDefinedColors) })),
+  onChangeSharedStrings: (sharedStrings) =>
+    set((state) => ({ sharedStrings: getValueFromUpdateAction(sharedStrings, state.sharedStrings) })),
 }))
 
 // spreadsheet state
@@ -280,7 +286,7 @@ export function useProtonSheetsState(deps: ProtonSheetsStateDependencies) {
   const spreadsheetState = useSpreadsheetState(depsWithLocalState)
   const canvasGridMethods = useSpreadsheet()
 
-  const { scrollToCell, getCellOffsetFromCoords: _getCellOffsetFromCoords, getGridRef, redrawGrid } = canvasGridMethods
+  const { scrollToCell, getCellOffsetFromCoords: _getCellOffsetFromCoords, getGridRef } = canvasGridMethods
 
   useEffect(() => {
     const xfsValues = localState.cellXfs?.values()
@@ -297,7 +303,7 @@ export function useProtonSheetsState(deps: ProtonSheetsStateDependencies) {
     if (fontFamiliesToRequest.size > 0) {
       onRequestFonts(Array.from(fontFamiliesToRequest)).catch(console.error)
     }
-  }, [localState.cellXfs, redrawGrid, onRequestFonts])
+  }, [localState.cellXfs, onRequestFonts])
 
   const debouncedHandleFontLoaded = useMemo(
     () =>
@@ -499,6 +505,7 @@ export function useLocalState(
       cellXfs: (state.cellXfs ? Object.fromEntries(state.cellXfs.entries()) : {}) as unknown as CellXfs,
       scale: state.scale,
       userDefinedColors: state.userDefinedColors,
+      sharedStrings: state.sharedStrings,
     }),
     [
       state.cellXfs,
@@ -514,6 +521,7 @@ export function useLocalState(
       state.tables,
       state.theme,
       state.userDefinedColors,
+      state.sharedStrings,
     ],
   )
 

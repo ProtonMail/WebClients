@@ -78,7 +78,7 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
   const { viewportWidth } = useActiveBreakpoint()
 
   const didConvertFromFile = useRef(false)
-  const [isImportingExcelFile, setIsImportingExcelFile] = useState(false)
+  const [importType, setImportType] = useState<'excel' | 'ods'>()
 
   // TODO: Consider refactoring these into a single derived mode "state"
   const isRevisionMode = systemMode === EditorSystemMode.Revision
@@ -92,6 +92,19 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
   const exportData = async (format: DataTypesThatDocumentCanBeExportedAs) => {
     if (format === 'yjs') {
       return docState.getDocState()
+    }
+    // Do a pass to check if all sheet data objects are present in the sheets list.
+    // If not, we log a warning and add a missing sheet to the sheets list.
+    const sheetIDs = state.sheets.map((sheet) => sheet.sheetId.toString())
+    for (const sheetID of Object.keys(state.sheetData)) {
+      if (!sheetIDs.includes(sheetID)) {
+        application.logger.warn('Spreadsheet: object for sheet ID', sheetID, 'not found in sheets list')
+        state.sheets.push({
+          sheetId: parseInt(sheetID),
+          title: `Sheet ${sheetID}`,
+          hidden: false,
+        })
+      }
     }
     if (format === 'xlsx') {
       const buffer = await createExcelFile({
@@ -108,11 +121,11 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
       return new Uint8Array(buffer)
     }
     if (format === 'csv') {
-      const csv = createCSVFromSheetData(state.sheetData[state.activeSheetId])
+      const csv = createCSVFromSheetData(state.sheetData[state.activeSheetId], state.sharedStrings)
       return stringToUint8Array(csv)
     }
     if (format === 'tsv') {
-      const tsv = createCSVFromSheetData(state.sheetData[state.activeSheetId], {
+      const tsv = createCSVFromSheetData(state.sheetData[state.activeSheetId], state.sharedStrings, {
         delimiter: '\t',
       })
       return stringToUint8Array(tsv)
@@ -127,13 +140,14 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
 
   const { onInsertFile, importExcelFile, importCSVFile, generateStatePatches, calculateNow } = state
   const handleExcelFileImport = useCallback(
-    async (file: File) => {
-      setIsImportingExcelFile(true)
+    async (file: File, type: 'excel' | 'ods') => {
+      setImportType(type)
       docState.startSheetsExcelImport()
       const { requiresRecalc } = await importExcelFile(file, {
         minRowCount: 1000,
         minColumnCount: 100,
         enableCellXfsRegistry: true,
+        enabledSharedStrings: true,
       })
       const patches = await generateStatePatches()
       for (const key of Object.keys(patches)) {
@@ -147,7 +161,7 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
       }
       docState.endSheetsExcelImport()
       await docState.waitForImportSuccess()
-      setIsImportingExcelFile(false)
+      setImportType(undefined)
       calculateNow({
         disableEvaluation: requiresRecalc,
         shouldResetCellDependencyGraph: true,
@@ -165,8 +179,10 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
       const file = new File([editorInitializationConfig.data], `import.${editorInitializationConfig.type.dataType}`, {
         type: SupportedProtonDocsMimeTypes[editorInitializationConfig.type.dataType as SpreadsheetConversionType],
       })
-      if (editorInitializationConfig.type.dataType === 'xlsx' || editorInitializationConfig.type.dataType === 'ods') {
-        void handleExcelFileImport(file)
+      const isExcelFile = editorInitializationConfig.type.dataType === 'xlsx'
+      const isODSFile = editorInitializationConfig.type.dataType === 'ods'
+      if (isExcelFile || isODSFile) {
+        void handleExcelFileImport(file, isExcelFile ? 'excel' : 'ods')
       } else {
         void importCSVFile(file)
       }
@@ -178,11 +194,10 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
   useEffect(
     () =>
       application.eventBus.addEventCallback((data: SheetImportData) => {
-        if (
-          data.file.type === SupportedProtonDocsMimeTypes.xlsx ||
-          data.file.type === SupportedProtonDocsMimeTypes.ods
-        ) {
-          void handleExcelFileImport(data.file)
+        const isExcelFile = data.file.type === SupportedProtonDocsMimeTypes.xlsx
+        const isODSFile = data.file.type === SupportedProtonDocsMimeTypes.ods
+        if (isExcelFile || isODSFile) {
+          void handleExcelFileImport(data.file, isExcelFile ? 'excel' : 'ods')
           return
         }
         let sheetId = undefined
@@ -203,6 +218,7 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
         onInsertFile(data.file, sheetId, cellCoords, {
           preserveFormatting: data.shouldConvertCellContents,
           replaceSheetData: data.destination === SheetImportDestination.ReplaceCurrentSheet,
+          enabledSharedStrings: true,
         })
           .then(() => {
             calculateNow({
@@ -244,11 +260,12 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
 
   const isNewUIEnabled = useNewUIEnabled()
 
-  if (isImportingExcelFile) {
+  if (importType) {
     return (
       <div className="absolute left-0 top-0 flex h-full w-full flex-col items-center justify-center gap-4">
         <CircleLoader size="large" />
-        <p className="text-sm">{c('Info').t`Importing Excel file...`}</p>
+        {importType === 'excel' && <p className="text-sm">{c('Info').t`Importing Excel file...`}</p>}
+        {importType === 'ods' && <p className="text-sm">{c('Info').t`Importing ODS file...`}</p>}
       </div>
     )
   }
