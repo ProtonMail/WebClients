@@ -1056,11 +1056,17 @@
       "Open in ${ SHEETS_APP_NAME }": [
         "Abrir en ${ SHEETS_APP_NAME }"
       ],
+      "Open in new tab": [
+        "Abrir en una nueva pestaña"
+      ],
       "Open navigation": [
         "Abrir navegación"
       ],
       "Open recovery settings": [
         "Abrir ajustes de recuperación"
+      ],
+      "Open settings": [
+        "Abrir los ajustes"
       ],
       "Opt out": [
         "No participar"
@@ -3277,6 +3283,9 @@
       ],
       "Open source": [
         "Código abierto"
+      ],
+      "Private video calls for the conversations that matter.": [
+        "Videollamadas privadas para las conversaciones que importan."
       ]
     },
     "collider_2025: Navigation": {
@@ -4473,6 +4482,11 @@
     "customer_support.feature.mail": {
       "For ${ MAIL_APP_NAME }": [
         "Para ${ MAIL_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.meet": {
+      "For ${ MEET_APP_NAME }": [
+        "Para ${ MEET_APP_NAME }"
       ]
     },
     "customer_support.feature.pass": {
@@ -9254,6 +9268,9 @@
       "Continuing will connect your ${ BRAND_NAME } Account to ${ name }.": [
         "Al continuar se conectará la cuenta de ${ BRAND_NAME } a ${ name }."
       ],
+      "Control whether organization members can create vaults or require an administrator to create and share a vault with them.": [
+        "Controle si los miembros de la organización pueden crear cajas fuertes o si se requiere que un administrador cree y comparta una caja fuerte con ellos."
+      ],
       "Copied to clipboard": [
         "Copiado al portapapeles"
       ],
@@ -9783,9 +9800,6 @@
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Si otro administrador cambió esta contraseña, necesita pedir la contraseña nueva de la organización."
-      ],
-      "If disabled, new organization members will require an admin to manually create the first vault for them (via sharing) so they can start to create items.": [
-        "Si se desactiva, los nuevos miembros de la organización necesitarán un administrador para crear manualmente la primera bóveda para ellos (mediante la opción de compartir) para que puedan empezar a crear elementos."
       ],
       "If disabled, only administrators will be able to export data.": [
         "Si se desactiva, solo los administradores podrán exportar los datos."
@@ -10746,7 +10760,7 @@
         "Pause los mensajes para más tarde, para que estén al principio de su bandeja de entrada cuando los necesite."
       ],
       "Some ${ BRAND_NAME } apps may not support security keys yet. If you turn off authenticator app 2FA, you may not be able to sign in to those apps.": [
-        "Es posible que algunos servicios de ${ BRAND_NAME } aún no sean compatibles con las llaves de seguridad. Si desactiva el 2FA como modo de autenticación, podría perder el acceso a ellos."
+        "Es posible que algunos servicios de ${ BRAND_NAME } aún no sean compatibles con las claves de seguridad. Si desactiva el 2FA como modo de autenticación, podría perder el acceso a ellos."
       ],
       "Some keys successfully reactivated": [
         "Algunas claves fueron reactivadas."
@@ -13235,6 +13249,9 @@
       "New second password": [
         "Nueva segunda contraseña"
       ],
+      "No (users cannot use the app until a vault is shared with them)": [
+        "No (los usuarios no podrán usar la aplicación hasta que se comparta una caja fuerte con ellos)"
+      ],
       "No filter": [
         "Sin filtro"
       ],
@@ -13262,14 +13279,17 @@
       "Online privacy for your whole family": [
         "Privacidad en línea para toda la familia"
       ],
+      "Only a single personal vault can be created": [
+        "Solo se puede crear una caja fuerte personal"
+      ],
       "Only available on ${ PASS_SHORT_APP_NAME } paid plans": [
         "Solo disponible en los planes de pago de ${ PASS_SHORT_APP_NAME }"
       ],
-      "OpenVPN / IKEv2 password": [
-        "Contraseña OpenVPN / IKEv2"
+      "OpenVPN password": [
+        "Contraseña de OpenVPN"
       ],
-      "OpenVPN / IKEv2 username": [
-        "Usuario de OpenVPN / IKEv2"
+      "OpenVPN username": [
+        "Nombre de usuario de OpenVPN"
       ],
       "Operating system": [
         "Sistema operativo"
@@ -13688,6 +13708,9 @@
       ],
       "Without attachment": [
         "Sin archivo adjunto"
+      ],
+      "Yes": [
+        "Sí"
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Sí, quiero eliminar permanentemente esta cuenta y todos los datos."
@@ -14362,6 +14385,111 @@
         "Ha alcanzado el máximo de ${ MAX_CALENDAR_MEMBERS } miembros."
       ]
     },
+    "meet_2025: Feature": {
+      "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
+        "${ MEET_APP_NAME }: videollamadas privadas para lo que realmente importa"
+      ],
+      "${ n } active meeting at a time": [
+        "${ n } reunión activa a la vez",
+        "${ n } reuniones activas a la vez"
+      ],
+      "24 hours per meeting": [
+        "24 horas por reunión"
+      ],
+      "60 minutes per meeting": [
+        "60 minutos por reunión"
+      ],
+      "Appointment scheduling": [
+        "Programación de citas"
+      ],
+      "Browser, mobile, and desktop apps": [
+        "Aplicaciones para navegador, móvil y escritorio"
+      ],
+      "Built-in chat": [
+        "Chat integrado"
+      ],
+      "End-to-end encrypted screen sharing and ephemeral in-call chat": [
+        "Pantalla compartida con cifrado de extremo a extremo y chat efímero en la llamada"
+      ],
+      "Meeting recording (coming soon)": [
+        "Grabación de la reunión (próximamente)"
+      ],
+      "One active meeting at a time": [
+        "Una reunión activa a la vez"
+      ],
+      "Screen-sharing": [
+        "Compartir pantalla"
+      ],
+      "Unlimited meetings per day": [
+        "Reuniones ilimitadas al día"
+      ],
+      "Up to ${ n } meeting per day": [
+        "Hasta ${ n } reunión por día",
+        "Hasta ${ n } reuniones al día"
+      ],
+      "Up to ${ n } participant": [
+        "Hasta ${ n } participante",
+        "Hasta ${ n } participantes"
+      ]
+    },
+    "meet_2025: Info": {
+      "100 ${ BRAND_NAME } email addresses": [
+        "100 direcciones de correo de ${ BRAND_NAME }"
+      ],
+      "Cloud storage and file sharing": [
+        "Almacenamiento en la nube e intercambio de archivos"
+      ],
+      "Data never used for AI training": [
+        "Sus datos nunca se usan para entrenar la IA"
+      ],
+      "Data retention policies": [
+        "Políticas de retención de datos"
+      ],
+      "Document & spreadsheet editor": [
+        "Editor de documentos y hojas de cálculo"
+      ],
+      "Email writing assistant": [
+        "Asistente de redacción de correos"
+      ],
+      "Everything from ${ title }, plus...": [
+        "Todo lo incluido en ${ title } y además..."
+      ],
+      "Everything in Meet Professional, plus:": [
+        "Todo lo incluido en Meet Professional y además:"
+      ],
+      "Open source": [
+        "Código abierto"
+      ],
+      "Password manager with team vaults": [
+        "Gestor de contraseñas con bóvedas compartidas"
+      ],
+      "Private AI Chat (${ LUMO_SHORT_APP_NAME })": [
+        "Chat de IA privado (${ LUMO_SHORT_APP_NAME })"
+      ],
+      "Private and unlimited AI chat (${ LUMO_SHORT_APP_NAME })": [
+        "Chat de IA privado e ilimitado (${ LUMO_SHORT_APP_NAME })"
+      ],
+      "Private video calls for the conversations that matter": [
+        "Videollamadas privadas para las conversaciones que importan"
+      ],
+      "Secure calendar": [
+        "Calendario seguro"
+      ],
+      "Strict no-logs policy": [
+        "Política estricta de cero registros"
+      ],
+      "Video meetings, ${ PAID_MAX_PARTICIPANTS } participants": [
+        "Videollamadas de hasta ${ PAID_MAX_PARTICIPANTS } participantes"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN con bloqueador de publicidad y protección contra malware"
+      ]
+    },
+    "meet_signup_2025: title": {
+      "For businesses": [
+        "Para empresas"
+      ]
+    },
     "Member action": {
       "Activate user": [
         "Activar el usuario"
@@ -14527,6 +14655,21 @@
       ],
       "Euro": [
         "Euro"
+      ],
+      "Hong Kong dollar": [
+        "Dólar de Hong Kong"
+      ],
+      "Japanese yen": [
+        "Yen japonés"
+      ],
+      "Polish złoty": [
+        "Złoty polaco"
+      ],
+      "Singapore dollar": [
+        "Dólar de Singapur"
+      ],
+      "South Korean won": [
+        "Won surcoreano"
       ],
       "Swiss franc": [
         "Franco suizo"
@@ -15904,8 +16047,8 @@
       "Number of records exceeds the download limit of 10000": [
         "El número de registros excede el límite de 10 000 descargas."
       ],
-      "OpenVPN / IKEv2 credentials regenerated": [
-        "Credenciales OpenVPN/IKEv2 regeneradas"
+      "OpenVPN credentials regenerated": [
+        "Se han regenerado las credenciales de OpenVPN"
       ],
       "Reminder has been sent": [
         "El recordatorio ha sido enviado"
@@ -17826,11 +17969,6 @@
       ],
       "Opting into post-quantum protection": [
         "Activando la protección postcuántica"
-      ]
-    },
-    "Price": {
-      "Free": [
-        "Gratis"
       ]
     },
     "Primary timezone": {
@@ -19822,6 +19960,26 @@
       ],
       "Works on all devices": [
         "Funciona en todos los dispositivos"
+      ]
+    },
+    "Signup: Meet": {
+      "**Trusted by over 100 million** users and organizations": [
+        "**Más de 100 millones** de usuarios y organizaciones confían en nosotros"
+      ],
+      "Get ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
+        "Obtener ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
+      ],
+      "Own a business?": [
+        "¿Tiene una empresa?"
+      ],
+      "Sign up, meet privately": [
+        "Regístrese y reúnase de forma privada"
+      ],
+      "Start using ${ MEET_APP_NAME } now": [
+        "Empiece a usar ${ MEET_APP_NAME } ahora"
+      ],
+      "Your account also includes access to ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME } free features.": [
+        "Su cuenta también incluye acceso a las funciones gratuitas de ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } y ${ PASS_SHORT_APP_NAME }."
       ]
     },
     "signup_2024: Feature": {
@@ -22513,6 +22671,9 @@
       ],
       "Open pagination": [
         "Abrir paginación"
+      ],
+      "OpenVPN": [
+        "OpenVPN"
       ],
       "OpenVPN configuration files": [
         "Archivos de configuración de OpenVPN"

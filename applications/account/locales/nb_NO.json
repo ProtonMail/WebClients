@@ -1056,11 +1056,17 @@
       "Open in ${ SHEETS_APP_NAME }": [
         "Åpne i ${ SHEETS_APP_NAME }"
       ],
+      "Open in new tab": [
+        "Åpne i ny fane"
+      ],
       "Open navigation": [
         "Åpne navigasjonsmeny"
       ],
       "Open recovery settings": [
         "Åpne innstillinger for gjenoppretting"
+      ],
+      "Open settings": [
+        "Åpne innstillinger"
       ],
       "Opt out": [
         "Takke nei"
@@ -3117,6 +3123,10 @@
       "${ maxSpaceTB } storage": [
         "${ maxSpaceTB } lagring"
       ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } bruker",
+        "Opptil ${ numberOfUsers } brukere"
+      ],
       "${ planMaxSpace } email storage": [
         "${ planMaxSpace } e-postlagring"
       ],
@@ -3273,6 +3283,9 @@
       ],
       "Open source": [
         "Åpen kildekode"
+      ],
+      "Private video calls for the conversations that matter.": [
+        "Private videosamtaler for samtalene som betyr noe."
       ]
     },
     "collider_2025: Navigation": {
@@ -4469,6 +4482,11 @@
     "customer_support.feature.mail": {
       "For ${ MAIL_APP_NAME }": [
         "For ${ MAIL_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.meet": {
+      "For ${ MEET_APP_NAME }": [
+        "For ${ MEET_APP_NAME }"
       ]
     },
     "customer_support.feature.pass": {
@@ -9103,6 +9121,9 @@
       "Auto-reply is always active on the days of the week you select, between the selected hours.": [
         "Autosvar er alltid aktiv på de dagene av uka du velger, mellom de valgte timene."
       ],
+      "Automatically add Meet links to your calendar invitations when there is at least one invitee.": [
+        "Legg automatisk til Meet-koblinger i kalenderinvitasjonene dine når det er minst én invitert."
+      ],
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
         "Fjern automatisk e-poster som ble flyttet til papirkurven og søppelpost for mer enn 30 dager siden."
       ],
@@ -9243,6 +9264,9 @@
       ],
       "Continuing will connect your ${ BRAND_NAME } Account to ${ name }.": [
         "Hvis du fortsetter, kobles ${ BRAND_NAME }-kontoen din til ${ name }."
+      ],
+      "Control whether organization members can create vaults or require an administrator to create and share a vault with them.": [
+        "Kontroller om organisasjonsmedlemmer kan opprette hvelv eller kreve at en administrator oppretter og deler et hvelv med dem."
       ],
       "Copied to clipboard": [
         "Kopiert til utklippstavlen"
@@ -9773,9 +9797,6 @@
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Dersom en administrator endret dette passordet, må du be om det nye organisasjonspassordet."
-      ],
-      "If disabled, new organization members will require an admin to manually create the first vault for them (via sharing) so they can start to create items.": [
-        "Hvis deaktivert, vil nye organisasjonsmedlemmer kreve at en administrator manuelt oppretter det første hvelvet for dem (via deling) slik at de kan begynne å opprette elementer."
       ],
       "If disabled, only administrators will be able to export data.": [
         "Hvis deaktivert, vil bare administratorer kunne eksportere data."
@@ -10734,6 +10755,9 @@
       ],
       "Snooze messages for later so they are top of your inbox when you want": [
         "Slumre meldinger til senere, slik at de er øverst i innboksen din når du vil"
+      ],
+      "Some ${ BRAND_NAME } apps may not support security keys yet. If you turn off authenticator app 2FA, you may not be able to sign in to those apps.": [
+        "Enkelte ${ BRAND_NAME }-apper støtter kanskje ikke sikkerhetsnøkler ennå. Hvis du slår av autentiseringsappen 2FA, kan du kanskje ikke logge på disse appene."
       ],
       "Some keys successfully reactivated": [
         "Noen nøkler aktivert på nytt"
@@ -12580,6 +12604,9 @@
       "Auto show remote images": [
         "Vis automatisk eksterne bilder"
       ],
+      "Auto-add Meet links": [
+        "Legg til Meet-koblinger automatisk"
+      ],
       "Auto-advance": [
         "Gå frem automatisk"
       ],
@@ -13219,6 +13246,9 @@
       "New second password": [
         "Nytt andre passord"
       ],
+      "No (users cannot use the app until a vault is shared with them)": [
+        "Nei (brukere kan ikke bruke appen før et hvelv er delt med dem)"
+      ],
       "No filter": [
         "Ingen filter"
       ],
@@ -13246,14 +13276,11 @@
       "Online privacy for your whole family": [
         "Personvern på nettet for hele familien din"
       ],
+      "Only a single personal vault can be created": [
+        "Kun ett personlig hvelv kan opprettes"
+      ],
       "Only available on ${ PASS_SHORT_APP_NAME } paid plans": [
         "Kun tilgjengelig på betalte planer for ${ PASS_SHORT_APP_NAME }"
-      ],
-      "OpenVPN / IKEv2 password": [
-        "OpenVPN / IKEv2-passord"
-      ],
-      "OpenVPN / IKEv2 username": [
-        "OpenVPN / IKEv2-brukernavn"
       ],
       "Operating system": [
         "Operativsystem"
@@ -13672,6 +13699,9 @@
       ],
       "Without attachment": [
         "Uten vedlegg"
+      ],
+      "Yes": [
+        "Ja"
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Ja, jeg ønsker å slette denne kontoen og all dataen dens permanent."
@@ -14346,6 +14376,111 @@
         "Du har nådd maksimum ${ MAX_CALENDAR_MEMBERS } medlemmer."
       ]
     },
+    "meet_2025: Feature": {
+      "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
+        "${ MEET_APP_NAME }: konfidensielle videokonferanser for samtalene som betyr noe"
+      ],
+      "${ n } active meeting at a time": [
+        "${ n } aktivt møte om gangen",
+        "${ n } aktive møter om gangen"
+      ],
+      "24 hours per meeting": [
+        "24 timer per møte"
+      ],
+      "60 minutes per meeting": [
+        "60 minutter per møte"
+      ],
+      "Appointment scheduling": [
+        "Avtaleplanlegging"
+      ],
+      "Browser, mobile, and desktop apps": [
+        "Nettleser-, mobil- og skrivebordsapper"
+      ],
+      "Built-in chat": [
+        "Innebygd chat"
+      ],
+      "End-to-end encrypted screen sharing and ephemeral in-call chat": [
+        "Ende-til-ende-kryptert skjermdeling og kortvarig chat under samtaler"
+      ],
+      "Meeting recording (coming soon)": [
+        "Møteopptak (kommer snart)"
+      ],
+      "One active meeting at a time": [
+        "Ett aktivt møte om gangen"
+      ],
+      "Screen-sharing": [
+        "Skjermdeling"
+      ],
+      "Unlimited meetings per day": [
+        "Ubegrenset antall møter per dag"
+      ],
+      "Up to ${ n } meeting per day": [
+        "Opptil ${ n } møte per dag",
+        "Opptil ${ n } møter per dag"
+      ],
+      "Up to ${ n } participant": [
+        "Opptil ${ n } deltaker",
+        "Opptil ${ n } deltakere"
+      ]
+    },
+    "meet_2025: Info": {
+      "100 ${ BRAND_NAME } email addresses": [
+        "100 ${ BRAND_NAME }-e-postadresser"
+      ],
+      "Cloud storage and file sharing": [
+        "Skylagring og fildeling"
+      ],
+      "Data never used for AI training": [
+        "Data blir aldri brukt til KI-trening"
+      ],
+      "Data retention policies": [
+        "Retningslinjer for dataoppbevaring"
+      ],
+      "Document & spreadsheet editor": [
+        "Dokument- og regnearkredigering"
+      ],
+      "Email writing assistant": [
+        "Assistent for e-postskriving"
+      ],
+      "Everything from ${ title }, plus...": [
+        "Alt fra ${ title }, pluss..."
+      ],
+      "Everything in Meet Professional, plus:": [
+        "Alt i Meet Professional, pluss:"
+      ],
+      "Open source": [
+        "Åpen kildekode"
+      ],
+      "Password manager with team vaults": [
+        "Passordbehandler med teamhvelv"
+      ],
+      "Private AI Chat (${ LUMO_SHORT_APP_NAME })": [
+        "Privat KI-chat (${ LUMO_SHORT_APP_NAME })"
+      ],
+      "Private and unlimited AI chat (${ LUMO_SHORT_APP_NAME })": [
+        "Privat og ubegrenset KI-chat (${ LUMO_SHORT_APP_NAME })"
+      ],
+      "Private video calls for the conversations that matter": [
+        "Private videosamtaler for samtalene som betyr noe"
+      ],
+      "Secure calendar": [
+        "Sikker kalender"
+      ],
+      "Strict no-logs policy": [
+        "Strenge retningslinjer mot loggføring"
+      ],
+      "Video meetings, ${ PAID_MAX_PARTICIPANTS } participants": [
+        "Videomøter, ${ PAID_MAX_PARTICIPANTS } deltakere"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN med annonseblokkering og skadevarebeskyttelse"
+      ]
+    },
+    "meet_signup_2025: title": {
+      "For businesses": [
+        "For bedrifter"
+      ]
+    },
     "Member action": {
       "Activate user": [
         "Aktiver bruker"
@@ -14511,6 +14646,21 @@
       ],
       "Euro": [
         "Euro"
+      ],
+      "Hong Kong dollar": [
+        "Hongkong-dollar"
+      ],
+      "Japanese yen": [
+        "Japanske yen"
+      ],
+      "Polish złoty": [
+        "Polske zloty"
+      ],
+      "Singapore dollar": [
+        "Singapore-dollar"
+      ],
+      "South Korean won": [
+        "Sørkoreansk won"
       ],
       "Swiss franc": [
         "Sveitsisk franc"
@@ -15887,9 +16037,6 @@
       ],
       "Number of records exceeds the download limit of 10000": [
         "Antall poster overskrider nedlastingsgrensen på 10000"
-      ],
-      "OpenVPN / IKEv2 credentials regenerated": [
-        "OpenVPN / IKEv2-påloggingsinformasjon generert på nytt"
       ],
       "Reminder has been sent": [
         "Påminnelse er sendt"
@@ -17810,11 +17957,6 @@
       ],
       "Opting into post-quantum protection": [
         "Aktivering av postkvantebeskyttelse"
-      ]
-    },
-    "Price": {
-      "Free": [
-        "Gratis"
       ]
     },
     "Primary timezone": {
@@ -19806,6 +19948,26 @@
       ],
       "Works on all devices": [
         "Fungerer på alle enheter"
+      ]
+    },
+    "Signup: Meet": {
+      "**Trusted by over 100 million** users and organizations": [
+        "**Betrodd av over 100 millioner** brukere og organisasjoner"
+      ],
+      "Get ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
+        "Skaff deg ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
+      ],
+      "Own a business?": [
+        "Eier du en bedrift?"
+      ],
+      "Sign up, meet privately": [
+        "Registrer deg, møt privat"
+      ],
+      "Start using ${ MEET_APP_NAME } now": [
+        "Begynn å bruke ${ MEET_APP_NAME } nå"
+      ],
+      "Your account also includes access to ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME } free features.": [
+        "Kontoen din inkluderer også tilgang til gratis funksjoner for ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } og ${ PASS_SHORT_APP_NAME }."
       ]
     },
     "signup_2024: Feature": {

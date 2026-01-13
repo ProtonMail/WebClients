@@ -1062,6 +1062,9 @@
       "Open recovery settings": [
         "აღდგენის პარამეტრების გახსნა"
       ],
+      "Open settings": [
+        "მორგების ფანჯრის გახსნა"
+      ],
       "Opt out": [
         "უარის თქმა"
       ],
@@ -3033,6 +3036,10 @@
       "${ maxSpaceTB } storage": [
         "${ maxSpaceTB } საცავი"
       ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } მომხმარებელი",
+        "${ numberOfUsers } მომხმარებლამდე"
+      ],
       "${ planMaxSpace } email storage": [
         "${ planMaxSpace } ელფოსტის საცავი"
       ],
@@ -4379,6 +4386,11 @@
     "customer_support.feature.mail": {
       "For ${ MAIL_APP_NAME }": [
         "${ MAIL_APP_NAME }-თვის"
+      ]
+    },
+    "customer_support.feature.meet": {
+      "For ${ MEET_APP_NAME }": [
+        "${ MEET_APP_NAME }-ისთვის"
       ]
     },
     "customer_support.feature.pass": {
@@ -8916,6 +8928,9 @@
       "Auto-reply is always active on the days of the week you select, between the selected hours.": [
         "ავტომოპასუხე ყოველთვის აქტიურია კვირის იმ დღეებში, რომლებსაც აირჩევთ, არჩეულ საათებს შორის."
       ],
+      "Automatically add Meet links to your calendar invitations when there is at least one invitee.": [
+        "Meet-ის ბმულების ავტომატური დამატება თქვენი კალენდრის მოსაწვევებში, როცა არსებობს, სულ ცოტა, ერთი მიწვეული."
+      ],
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
         "ნაგვის ყუთში და სპამში 30 დღეზე მეტი დროით გადატანილი ელფოსტების ავტომატური გასუფთავება."
       ],
@@ -9026,6 +9041,9 @@
       ],
       "CNET editors choice award with a rating of 8.4 out of 10": [
         "CNET-ის რედაქტორების არჩევნის ჯილდო 8.4 რეიტინგიტ 10-დან"
+      ],
+      "Compromised": [
+        "კომპრომენტირებული"
       ],
       "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
         "მოირგეთ SAML ავთენტიკაცია თქვენი ორგანიზაციისთვის იდენტიფიკატორის მომწოდებლებისთვის (IdP). ეს ჩართავს SAML-ს მთელი ორგანიზაციისთვის."
@@ -12250,6 +12268,9 @@
       "Auto show remote images": [
         "გარე გამოსახულებების ავტომატური ჩვენება"
       ],
+      "Auto-add Meet links": [
+        "Meet-ის ბმულების ავტოდამატება"
+      ],
       "Auto-advance": [
         "ავტომატური გადასვლა"
       ],
@@ -12915,12 +12936,6 @@
       ],
       "Only available on ${ PASS_SHORT_APP_NAME } paid plans": [
         "ხელმისაწვდომია, მხოლოდ, ${ PASS_SHORT_APP_NAME }-ის ფასიან სატარიფო გეგმებზე"
-      ],
-      "OpenVPN / IKEv2 password": [
-        "OpenVPN / IKEv2 -ის პაროლი"
-      ],
-      "OpenVPN / IKEv2 username": [
-        "OpenVPN / IKEv2 -ის მომხმარებელი"
       ],
       "Operating system": [
         "ოპერაციული სისტემა"
@@ -13996,6 +14011,45 @@
         "მიაღწიეთ მაქსიმუმ ${ MAX_CALENDAR_MEMBERS } წევრს."
       ]
     },
+    "meet_2025: Feature": {
+      "24 hours per meeting": [
+        "24 საათი თითო შეხვედრისთვის"
+      ],
+      "60 minutes per meeting": [
+        "60 წუთი თითო შეხვედრისთვის"
+      ],
+      "Appointment scheduling": [
+        "შეხვედრის დაგეგმვა"
+      ],
+      "Built-in chat": [
+        "ჩაშენებული ჩატი"
+      ],
+      "Screen-sharing": [
+        "ეკრანის გაზიარება"
+      ]
+    },
+    "meet_2025: Info": {
+      "Data retention policies": [
+        "მონაცემთა შენახვის პოლიტიკა"
+      ],
+      "Email writing assistant": [
+        "ელფოსტის წერის დამხმარე"
+      ],
+      "Open source": [
+        "ღია კოდი"
+      ],
+      "Secure calendar": [
+        "უსაფრთხო კალენდარი"
+      ],
+      "Strict no-logs policy": [
+        "ჩვენ არ ვინახავთ ჟურნალს"
+      ]
+    },
+    "meet_signup_2025: title": {
+      "For businesses": [
+        "ბიზნესებისთვის"
+      ]
+    },
     "Member action": {
       "Activate user": [
         "მომხმარებლის გააქტიურება"
@@ -14158,6 +14212,21 @@
       ],
       "Euro": [
         "ევრო"
+      ],
+      "Hong Kong dollar": [
+        "ჰონკონგური დოლარი"
+      ],
+      "Japanese yen": [
+        "იაპონური იენი"
+      ],
+      "Polish złoty": [
+        "პოლონური ზლოტი"
+      ],
+      "Singapore dollar": [
+        "სინგაპურის დოლარი"
+      ],
+      "South Korean won": [
+        "სამხრეთ კორეული ვონი"
       ],
       "Swiss franc": [
         "შვედური ფრანკი"
@@ -15531,9 +15600,6 @@
       ],
       "Number of records exceeds the download limit of 10000": [
         "ჩანაწერების რაოდენობა გადმოწერის ლიმიტს (1000) სცდება"
-      ],
-      "OpenVPN / IKEv2 credentials regenerated": [
-        "OpenVPN / IKEv2 მომხმარებელი და პაროლი თავიდან დაგენერირდა"
       ],
       "Reminder has been sent": [
         "შეხსენება გაგზავნილია"
@@ -17397,11 +17463,6 @@
         "პოსტკვანტური დაცვის არჩევა"
       ]
     },
-    "Price": {
-      "Free": [
-        "უფასო"
-      ]
-    },
     "Primary timezone": {
       "Primary time zone": [
         "ძირითადი დროის სარტყელი"
@@ -17735,6 +17796,9 @@
       ]
     },
     "retention_policy_2025_Error": {
+      "Invalid value": [
+        "არასწორი მნიშვნელობა"
+      ],
       "Lifetime must be greater than ${ MIN_LIFETIME } day": [
         "სიცოცხლის დრო ${ MIN_LIFETIME } დღეზე მეტი უნდა იყოს",
         "სიცოცხლის დრო ${ MIN_LIFETIME } დღეზე მეტი უნდა იყოს"
@@ -19345,6 +19409,14 @@
       ],
       "Works on all devices": [
         "მუშაობს ყველა მოწყობილობაზე"
+      ]
+    },
+    "Signup: Meet": {
+      "Own a business?": [
+        "გაქვთ ბიზნესი?"
+      ],
+      "Sign up, meet privately": [
+        "დარეგისტრირდით, შეხვდით კონფიდენციალურად"
       ]
     },
     "signup_2024: Feature": {
@@ -23738,6 +23810,9 @@
       ],
       "Your recovery phrase is outdated. It can't recover new data if you reset your password again.": [
         "თქვენი აღდგენის ფრაზა ვადაგასულია. თუ პაროლს კიდევ ჩამოყრით ახალ მონაცემებს მისით ვერ აღადგენთ."
+      ],
+      "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
+        "თქვენი საცდელი პერიოდი დასრულდება: ${ textDate }. თუ გააუქმებთ ${ textDate }-მდე, თანხა არ ჩამოგეჭრებათ. ${ action }"
       ]
     },
     "Warning for domain modal": {

@@ -1062,6 +1062,9 @@
       "Open recovery settings": [
         "Buka pengaturan pemulihan"
       ],
+      "Open settings": [
+        "Buka pengaturan"
+      ],
       "Opt out": [
         "Undur diri"
       ],
@@ -9669,9 +9672,6 @@
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Apabila administrator lain mengubah kata sandi ini, Anda harus menanyakan Kata Sandi Organisasi yang baru kepada mereka."
       ],
-      "If disabled, new organization members will require an admin to manually create the first vault for them (via sharing) so they can start to create items.": [
-        "Apabila dinonaktifkan, anggota organisasi baru akan memerlukan bantuan admin untuk membuat brankas pertama bagi mereka (via pembagian) sehingga mereka dapat mulai membuat item."
-      ],
       "If disabled, only administrators will be able to export data.": [
         "Apabila dinonaktifkan, data hanya akan diekspor oleh administrator."
       ],
@@ -13112,12 +13112,6 @@
       "Only available on ${ PASS_SHORT_APP_NAME } paid plans": [
         "Hanya tersedia pada paket ${ PASS_SHORT_APP_NAME } berbayar"
       ],
-      "OpenVPN / IKEv2 password": [
-        "Kata sandi OpenVPN / IKEv2"
-      ],
-      "OpenVPN / IKEv2 username": [
-        "Nama pengguna OpenVPN / IKEv2"
-      ],
       "Operating system": [
         "Sistem operasi"
       ],
@@ -15711,9 +15705,6 @@
       "Number of records exceeds the download limit of 10000": [
         "Jumlah rekaman melebihi batas maksimal 10000 unduhan"
       ],
-      "OpenVPN / IKEv2 credentials regenerated": [
-        "Kredensial OpenVPN / IKEv2 berhasil dibuat ulang"
-      ],
       "Reminder has been sent": [
         "Pengingat telah dikirim"
       ],
@@ -17615,11 +17606,6 @@
       ],
       "Opting into post-quantum protection": [
         "Menerapkan perlindungan post-quantum"
-      ]
-    },
-    "Price": {
-      "Free": [
-        "Gratis"
       ]
     },
     "Primary timezone": {

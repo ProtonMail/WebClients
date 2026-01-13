@@ -1056,11 +1056,17 @@
       "Open in ${ SHEETS_APP_NAME }": [
         "Openen in ${ SHEETS_APP_NAME }"
       ],
+      "Open in new tab": [
+        "Open in een nieuwe tabblad"
+      ],
       "Open navigation": [
         "Navigatie openen"
       ],
       "Open recovery settings": [
         "Herstelinstellingen weergeven"
+      ],
+      "Open settings": [
+        "Instellingen openen"
       ],
       "Opt out": [
         "Opt-out"
@@ -3277,6 +3283,9 @@
       ],
       "Open source": [
         "Open source"
+      ],
+      "Private video calls for the conversations that matter.": [
+        "Privé videogesprekken voor de gesprekken die ertoe doen."
       ]
     },
     "collider_2025: Navigation": {
@@ -4473,6 +4482,11 @@
     "customer_support.feature.mail": {
       "For ${ MAIL_APP_NAME }": [
         "Voor ${ MAIL_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.meet": {
+      "For ${ MEET_APP_NAME }": [
+        "Voor ${ MEET_APP_NAME }"
       ]
     },
     "customer_support.feature.pass": {
@@ -9107,6 +9121,9 @@
       "Auto-reply is always active on the days of the week you select, between the selected hours.": [
         "Automatisch antwoord is altijd actief op de dagen van de week die u selecteert, tussen de geselecteerde uren."
       ],
+      "Automatically add Meet links to your calendar invitations when there is at least one invitee.": [
+        "Voeg automatisch Agenda-koppelingen toe aan uw agenda-uitnodigingen wanneer er ten minste één genodigde is."
+      ],
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
         "Wis automatisch e-mails die meer dan 30 dagen geleden naar Prullenbak en Spam zijn verplaatst."
       ],
@@ -9218,6 +9235,9 @@
       "CNET editors choice award with a rating of 8.4 out of 10": [
         "CNET editors keuze met een beoordeling van 8,4 van de 10"
       ],
+      "Compromised": [
+        "Gecompromitteerd"
+      ],
       "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
         "SAML-authenticatie voor de organisatie configureren via een identiteitsprovider (IdP). Dit zal SAML voor de hele organisatie inschakelen."
       ],
@@ -9244,6 +9264,9 @@
       ],
       "Continuing will connect your ${ BRAND_NAME } Account to ${ name }.": [
         "Doorgaan zal uw ${ BRAND_NAME }-account verbinden met ${ name }."
+      ],
+      "Control whether organization members can create vaults or require an administrator to create and share a vault with them.": [
+        "Bepaal of organisatieleden kluizen kunnen aanmaken of dat een beheerder een kluis moet aanmaken en met hen delen."
       ],
       "Copied to clipboard": [
         "Gekopieerd naar het klembord"
@@ -9774,9 +9797,6 @@
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Wanneer een andere beheerder dit wachtwoord heeft aangepast, dan moet u hem naar het nieuwe organisatiewachtwoord vragen."
-      ],
-      "If disabled, new organization members will require an admin to manually create the first vault for them (via sharing) so they can start to create items.": [
-        "Als deze optie is uitgeschakeld, zullen nieuwe leden een beheerder nodig hebben om handmatig de eerste kluis voor hen aan te maken (via delen) zodat zij items kunnen aanmaken."
       ],
       "If disabled, only administrators will be able to export data.": [
         "Indien uitgeschakeld, kunnen alleen administrators gegevens exporteren."
@@ -10735,6 +10755,9 @@
       ],
       "Snooze messages for later so they are top of your inbox when you want": [
         "Snooze berichten voor later zodat ze bovenaan uw inbox staan wanneer u wilt"
+      ],
+      "Some ${ BRAND_NAME } apps may not support security keys yet. If you turn off authenticator app 2FA, you may not be able to sign in to those apps.": [
+        "Sommige ${ BRAND_NAME }-apps ondersteunen mogelijk nog geen beveiligingssleutels. Als u 2FA authenticatie-app uitschakelt, kunt u mogelijk niet bij die apps aanmelden."
       ],
       "Some keys successfully reactivated": [
         "Sommige sleutels zijn succesvol geheractiveerd"
@@ -12581,6 +12604,9 @@
       "Auto show remote images": [
         "Externe afbeeldingen automatisch weergeven"
       ],
+      "Auto-add Meet links": [
+        "Automatisch Meet-koppelingen toevoegen"
+      ],
       "Auto-advance": [
         "Automatisch doorgaan"
       ],
@@ -13220,6 +13246,9 @@
       "New second password": [
         "Nieuw tweede wachtwoord"
       ],
+      "No (users cannot use the app until a vault is shared with them)": [
+        "Nee (gebruikers kunnen de app pas gebruiken als er een kluis met hen gedeeld is)"
+      ],
       "No filter": [
         "Geen filter"
       ],
@@ -13247,14 +13276,17 @@
       "Online privacy for your whole family": [
         "Online privacy voor het hele gezin"
       ],
+      "Only a single personal vault can be created": [
+        "Er kan slechts één persoonlijke kluis aangemaakt worden"
+      ],
       "Only available on ${ PASS_SHORT_APP_NAME } paid plans": [
         "Alleen beschikbaar met betaalde abonnementen van ${ PASS_SHORT_APP_NAME }"
       ],
-      "OpenVPN / IKEv2 password": [
-        "OpenVPN / IKEv2 wachtwoord"
+      "OpenVPN password": [
+        "OpenVPN-wachtwoord"
       ],
-      "OpenVPN / IKEv2 username": [
-        "OpenVPN / IKEv2 gebruikersnaam"
+      "OpenVPN username": [
+        "OpenVPN-gebruikersnaam"
       ],
       "Operating system": [
         "Besturingssysteem"
@@ -13673,6 +13705,9 @@
       ],
       "Without attachment": [
         "Zonder bijlage"
+      ],
+      "Yes": [
+        "Ja"
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Ja, ik wil permanent mijn account inclusief alle gegevens verwijderen."
@@ -14347,6 +14382,111 @@
         "U heeft het maximum van ${ MAX_CALENDAR_MEMBERS } leden bereikt."
       ]
     },
+    "meet_2025: Feature": {
+      "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
+        "${ MEET_APP_NAME }: Vertrouwelijke videogesprekken voor de gesprekken die ertoe doen"
+      ],
+      "${ n } active meeting at a time": [
+        "${ n } actieve vergadering tegelijkertijd",
+        "${ n } actieve vergaderingen tegelijk"
+      ],
+      "24 hours per meeting": [
+        "24 uur per vergadering"
+      ],
+      "60 minutes per meeting": [
+        "60 uur per vergadering"
+      ],
+      "Appointment scheduling": [
+        "Afspraak Plannen"
+      ],
+      "Browser, mobile, and desktop apps": [
+        "Browser-, mobiele en desktop-apps"
+      ],
+      "Built-in chat": [
+        "Ingebouwde chat"
+      ],
+      "End-to-end encrypted screen sharing and ephemeral in-call chat": [
+        "End-to-end versleutelde schermdeling en korte chats tijdens telefoongesprekken"
+      ],
+      "Meeting recording (coming soon)": [
+        "Opname van vergaderingen (binnenkort beschikbaar)"
+      ],
+      "One active meeting at a time": [
+        "Eén actieve vergadering tegelijkertijd"
+      ],
+      "Screen-sharing": [
+        "Scherm delen"
+      ],
+      "Unlimited meetings per day": [
+        "Onbeperkt aantal vergaderingen per dag"
+      ],
+      "Up to ${ n } meeting per day": [
+        "Maximaal ${ n } vergadering per dag",
+        "Maximaal ${ n } vergaderingen per dag"
+      ],
+      "Up to ${ n } participant": [
+        "Tot ${ n } deelnemer",
+        "Tot ${ n } deelnemers"
+      ]
+    },
+    "meet_2025: Info": {
+      "100 ${ BRAND_NAME } email addresses": [
+        "100 ${ BRAND_NAME } e-mailadressen"
+      ],
+      "Cloud storage and file sharing": [
+        "Cloudopslag en bestanden delen"
+      ],
+      "Data never used for AI training": [
+        "Gegevens worden nooit gebruikt voor AI-training"
+      ],
+      "Data retention policies": [
+        "Dataretentiebeleid"
+      ],
+      "Document & spreadsheet editor": [
+        "Document & rekenblad editor"
+      ],
+      "Email writing assistant": [
+        "Schrijfassistent voor e-mail"
+      ],
+      "Everything from ${ title }, plus...": [
+        "Alles van ${ title }, plus..."
+      ],
+      "Everything in Meet Professional, plus:": [
+        "Alles in Meet Professional, plus:"
+      ],
+      "Open source": [
+        "Open source"
+      ],
+      "Password manager with team vaults": [
+        "Wachtwoordbeheerder met teamkluizen"
+      ],
+      "Private AI Chat (${ LUMO_SHORT_APP_NAME })": [
+        "Privé AI-chat (${ LUMO_SHORT_APP_NAME })"
+      ],
+      "Private and unlimited AI chat (${ LUMO_SHORT_APP_NAME })": [
+        "Privé en onbeperkte AI-chat (${ LUMO_SHORT_APP_NAME })"
+      ],
+      "Private video calls for the conversations that matter": [
+        "Privé videogesprekken voor de gesprekken die ertoe doen"
+      ],
+      "Secure calendar": [
+        "Beveiligde agenda"
+      ],
+      "Strict no-logs policy": [
+        "Strikt beleid zonder logboeken"
+      ],
+      "Video meetings, ${ PAID_MAX_PARTICIPANTS } participants": [
+        "Videovergaderingen, ${ PAID_MAX_PARTICIPANTS } deelnemers"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN met advertentieblokkering en bescherming tegen malware"
+      ]
+    },
+    "meet_signup_2025: title": {
+      "For businesses": [
+        "Voor bedrijven"
+      ]
+    },
     "Member action": {
       "Activate user": [
         "Activeer gebruiker"
@@ -14512,6 +14652,21 @@
       ],
       "Euro": [
         "Euro"
+      ],
+      "Hong Kong dollar": [
+        "Hong Kong dollar"
+      ],
+      "Japanese yen": [
+        "Japanse yen"
+      ],
+      "Polish złoty": [
+        "Poolse złoty"
+      ],
+      "Singapore dollar": [
+        "Singapore dollar"
+      ],
+      "South Korean won": [
+        "Zuid-Koreaanse won"
       ],
       "Swiss franc": [
         "Zwitserse Frank"
@@ -15889,8 +16044,8 @@
       "Number of records exceeds the download limit of 10000": [
         "Aantal records overschrijdt de download limiet van 10000"
       ],
-      "OpenVPN / IKEv2 credentials regenerated": [
-        "OpenVPN / IKEv2 inloggegevens opnieuw gegenereerd"
+      "OpenVPN credentials regenerated": [
+        "OpenVPN-inloggegevens opnieuw gegenereerd"
       ],
       "Reminder has been sent": [
         "Herinnering is verstuurd"
@@ -17811,11 +17966,6 @@
       ],
       "Opting into post-quantum protection": [
         "Aanmelden voor post-kwantumbescherming"
-      ]
-    },
-    "Price": {
-      "Free": [
-        "Gratis"
       ]
     },
     "Primary timezone": {
@@ -19807,6 +19957,26 @@
       ],
       "Works on all devices": [
         "Werkt op alle apparaten"
+      ]
+    },
+    "Signup: Meet": {
+      "**Trusted by over 100 million** users and organizations": [
+        "**Vertrouwd door meer dan 100 miljoen** gebruikers en organisaties"
+      ],
+      "Get ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
+        "Neem ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
+      ],
+      "Own a business?": [
+        "Heeft u een eigen bedrijf?"
+      ],
+      "Sign up, meet privately": [
+        "Meld u aan, ontmoet privé"
+      ],
+      "Start using ${ MEET_APP_NAME } now": [
+        "Begin nu met het gebruik van ${ MEET_APP_NAME }"
+      ],
+      "Your account also includes access to ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME } free features.": [
+        "Uw account bevat ook gratis functies voor ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } en ${ PASS_SHORT_APP_NAME }."
       ]
     },
     "signup_2024: Feature": {
@@ -22498,6 +22668,9 @@
       ],
       "Open pagination": [
         "Paginering openen"
+      ],
+      "OpenVPN": [
+        "OpenVPN"
       ],
       "OpenVPN configuration files": [
         "OpenVPN-configuratiebestanden"
