@@ -37,6 +37,12 @@
       "Accept and view the item": [
         "Aksepter og se elementet"
       ],
+      "Account": [
+        "Konto"
+      ],
+      "Account settings": [
+        "Kontoinnstillinger"
+      ],
       "Add": [
         "Legg til"
       ],
@@ -417,6 +423,9 @@
       ],
       "Lock ${ PASS_APP_NAME }": [
         "Lås ${ PASS_APP_NAME }"
+      ],
+      "Lock extension": [
+        "Lås utvidelse"
       ],
       "Make admin": [
         "Gjør til administrator"
@@ -1470,6 +1479,9 @@
       "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
         "${ PASS_APP_NAME } vil bare importere pålogginger, notater, kredittkort og identiteter."
       ],
+      "${ PASS_SHORT_APP_NAME } offline mode enabled.": [
+        "${ PASS_SHORT_APP_NAME } frakoblet modus aktivert."
+      ],
       "${ payload.count } invite successfully sent": [
         "${ payload.count } invitasjon sendt",
         "${ payload.count } invitasjoner sendt"
@@ -1523,6 +1535,9 @@
       ],
       "Admin": [
         "Administrator"
+      ],
+      "After confirming, you will need to accept a permission prompt for ${ PASS_APP_NAME }.": [
+        "Etter bekreftelse må du godta en tillatelsesforespørsel for ${ PASS_APP_NAME }."
       ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Når du har importert dataene dine, kan du av sikkerhetsgrunner slette CSV-filen som inneholder passordene dine."
@@ -1733,6 +1748,9 @@
       ],
       "Enable auto-locking to secure your data": [
         "Aktiver automatisk låsing for å sikre dataene dine"
+      ],
+      "Enable offline mode to access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
+        "Aktiver frakoblet modus for å få tilgang til ${ PASS_SHORT_APP_NAME }-dataene dine hvis du mister internettilkoblingen eller hvis ${ BRAND_NAME }-tjenerne er utilgjengelige."
       ],
       "Enabling biometrics auto-lock": [
         "Aktiverer biometrisk auto-lås"
@@ -1959,10 +1977,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Flytter alle elementer fra \"${ payload.content.name }\""
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Hvis du flytter et element til et annet hvelv, slettes de sikre koblingene.",
-        "Hvis du flytter elementer til et annet hvelv, slettes de sikre koblingene."
       ],
       "Moving items": [
         "Flytter elementer"
@@ -2350,6 +2364,9 @@
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Denne eksporten vil være ukryptert, og alle med tilgang til den eksporterte filen vil kunne se passordene dine. For sikkerhets skyld, slett den etter at du er ferdig med å bruke den."
       ],
+      "This feature is currently experimental on Linux. Please ensure your system is up-to-date.": [
+        "Denne funksjonen er for øyeblikket eksperimentell på Linux. Forsikre deg om at systemet ditt er oppdatert."
+      ],
       "This item is not currently shared with anyone. Invite people to share it with others.": [
         "Dette elementet er for øyeblikket ikke delt med noen. Inviter folk til å dele det med andre."
       ],
@@ -2490,6 +2507,9 @@
       "When creating/editing a Login on ${ PASS_APP_NAME } the 'username' input will always be visible.": [
         "Når du oppretter/redigerer en pålogging på ${ PASS_APP_NAME } vil 'brukernavn'-feltet alltid være synlig."
       ],
+      "When enabled, you can still access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
+        "Når aktivert, kan du fortsatt få tilgang til dine ${ PASS_SHORT_APP_NAME }-data hvis du mister internettilkoblingen eller hvis ${ BRAND_NAME }-servere er utilgjengelige."
+      ],
       "When sending an email from this alias, the email will display ${ emailSender } as sender.": [
         "Når du sender en e-post fra dette aliaset, vil e-posten vise ${ emailSender } som avsender."
       ],
@@ -2533,9 +2553,6 @@
       ],
       "You may close this tab.": [
         "Du kan lukke denne fanen."
-      ],
-      "You may need to accept a permission prompt and may have to restart the application depending on your system.": [
-        "Du må kanskje godta en tillatelsesforespørsel og starte programmet på nytt, avhengig av systemet ditt."
       ],
       "You may need to grant accessiblity permission to ${ PASS_APP_NAME }.": [
         "Du må kanskje gi tilgjengelighetstillatelse til ${ PASS_APP_NAME }."
@@ -2649,6 +2666,9 @@
       ],
       "${ PASS_APP_NAME } recognizes the websites and apps you use and autofills forms with your credentials for you on any browser or device. No need to copy and paste.": [
         "${ PASS_APP_NAME } gjenkjenner nettstedene og appene du bruker, og fyller ut skjemaer automatisk med legitimasjonen din for deg i en hvilken som helst nettleser eller enhet. Du trenger ikke å kopiere og lime inn."
+      ],
+      "${ PASS_SHORT_APP_NAME } Monitor": [
+        "${ PASS_SHORT_APP_NAME } Monitor"
       ],
       "${ PASS_SHORT_APP_NAME } version": [
         "${ PASS_SHORT_APP_NAME }-versjon"
@@ -2981,6 +3001,9 @@
       "Enter email or username": [
         "Skriv inn e-post eller brukernavn"
       ],
+      "Experimental": [
+        "Eksperimentell"
+      ],
       "Expiration date": [
         "Utløpsdato"
       ],
@@ -3184,6 +3207,9 @@
       ],
       "Language": [
         "Språk"
+      ],
+      "Larger window": [
+        "Større vindu"
       ],
       "Last 2 weeks": [
         "Siste 2 uker"
@@ -3556,6 +3582,9 @@
       ],
       "Server": [
         "Tjener"
+      ],
+      "Settings": [
+        "Innstillinger"
       ],
       "Share": [
         "Del"
@@ -4683,6 +4712,9 @@
       "Settings": [
         "Innstillinger"
       ],
+      "Setup offline mode": [
+        "Konfigurer frakoblet modus"
+      ],
       "Share vaults with your team": [
         "Del hvelv med teamet ditt"
       ],
@@ -4834,6 +4866,9 @@
     "Warning": {
       "${ BRAND_NAME } password is required": [
         "${ BRAND_NAME }-passord kreves"
+      ],
+      "${ PASS_SHORT_APP_NAME } offline mode disabled.": [
+        "${ PASS_SHORT_APP_NAME } frakoblet modus deaktivert."
       ],
       "2 consecutive dots are not allowed": [
         "2 påfølgende prikker er ikke tillatt"

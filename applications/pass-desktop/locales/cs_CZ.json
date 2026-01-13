@@ -37,6 +37,12 @@
       "Accept and view the item": [
         "Přijmout a zobrazit položku"
       ],
+      "Account": [
+        "Účet"
+      ],
+      "Account settings": [
+        "Nastavení účtu"
+      ],
       "Add": [
         "Přidat"
       ],
@@ -417,6 +423,9 @@
       ],
       "Lock ${ PASS_APP_NAME }": [
         "Uzamknout ${ PASS_APP_NAME }"
+      ],
+      "Lock extension": [
+        "Zamknout rozšíření"
       ],
       "Make admin": [
         "Nastavit správcem"
@@ -1569,6 +1578,9 @@
       "Admin": [
         "Správce"
       ],
+      "After confirming, you will need to accept a permission prompt for ${ PASS_APP_NAME }.": [
+        "Po potvrzení bude potřeba váš souhlas s udělením oprávnění ${ PASS_APP_NAME }."
+      ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Po úspěšném importu vašich dat můžete z bezpečnostních důvodů smazat CSV soubor obsahující vaše hesla."
       ],
@@ -2017,10 +2029,7 @@
         "Přesouvání všech položek z \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Přesunutím položky do jiného trezoru se smažou její bezpečné odkazy.",
-        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy.",
-        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy.",
-        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy."
+        "Přesunutím položky do jiného trezoru se smažou její bezpečné odkazy."
       ],
       "Moving items": [
         "Přesouvání položek"
@@ -2412,6 +2421,9 @@
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Tento export bude nešifrovaný a kdokoli s přístupem k exportovanému souboru bude moci zobrazit vaše hesla. Z bezpečnostních důvodů jej po ukončení používání odstraňte."
       ],
+      "This feature is currently experimental on Linux. Please ensure your system is up-to-date.": [
+        "Tato funkce je v současné době na platformě Linux ve fázi testování. Ujistěte se, že je váš systém aktualizován."
+      ],
       "This item is not currently shared with anyone. Invite people to share it with others.": [
         "Tato položka není v současné době s nikým sdílena. Pozvěte ostatní, se kterými ji chcete sdílet."
       ],
@@ -2607,9 +2619,6 @@
       "You may close this tab.": [
         "Tuto kartu můžete zavřít."
       ],
-      "You may need to accept a permission prompt and may have to restart the application depending on your system.": [
-        "V závislosti na vašem systému může být nutné přijmout výzvu k udělení oprávnění a restartovat aplikaci."
-      ],
       "You may need to grant accessiblity permission to ${ PASS_APP_NAME }.": [
         "Možná bude nutné udělit oprávnění přístupu pro ${ PASS_APP_NAME }."
       ],
@@ -2742,6 +2751,9 @@
       ],
       "${ PASS_APP_NAME } recognizes the websites and apps you use and autofills forms with your credentials for you on any browser or device. No need to copy and paste.": [
         "${ PASS_APP_NAME } rozpozná webové stránky a aplikace, které používáte, a automaticky vyplní formuláře vašimi přihlašovacími údaji v jakémkoli prohlížeči nebo zařízení. Není třeba nic kopírovat a vkládat."
+      ],
+      "${ PASS_SHORT_APP_NAME } Monitor": [
+        "${ PASS_SHORT_APP_NAME } Monitor"
       ],
       "${ PASS_SHORT_APP_NAME } version": [
         "${ PASS_SHORT_APP_NAME } verze"
@@ -3082,6 +3094,9 @@
       "Enter email or username": [
         "Zadejte e-mail nebo uživatelské jméno"
       ],
+      "Experimental": [
+        "Experimentální"
+      ],
       "Expiration date": [
         "Konec platnosti"
       ],
@@ -3285,6 +3300,9 @@
       ],
       "Language": [
         "Jazyk"
+      ],
+      "Larger window": [
+        "Větší okno"
       ],
       "Last 2 weeks": [
         "Minulé 2 týdny"
@@ -3657,6 +3675,9 @@
       ],
       "Server": [
         "Server"
+      ],
+      "Settings": [
+        "Nastavení"
       ],
       "Share": [
         "Sdílet"

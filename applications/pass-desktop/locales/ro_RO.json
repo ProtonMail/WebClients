@@ -37,6 +37,12 @@
       "Accept and view the item": [
         "Acceptare și vizualizare articol"
       ],
+      "Account": [
+        "Cont"
+      ],
+      "Account settings": [
+        "Setări cont"
+      ],
       "Add": [
         "Adăugare"
       ],
@@ -341,7 +347,7 @@
         "Generare legătură web sigură"
       ],
       "Generated passwords": [
-        "Parola generate"
+        "Parole generate"
       ],
       "Generating secure link...": [
         "Se generare legătura web sigură..."
@@ -350,7 +356,7 @@
         "Luați ${ PASS_APP_NAME }"
       ],
       "Get mobile and desktop apps": [
-        "Obțineți aplicațiile mobile și pentru desktop"
+        "Aplicații mobile și desktop"
       ],
       "Get mobile apps": [
         "Luați aplicația pentru dispozitive mobile"
@@ -417,6 +423,9 @@
       ],
       "Lock ${ PASS_APP_NAME }": [
         "Blocare ${ PASS_APP_NAME }"
+      ],
+      "Lock extension": [
+        "Blocare extensie"
       ],
       "Make admin": [
         "Stabilire administrator"
@@ -1488,6 +1497,9 @@
       "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
         "${ PASS_APP_NAME } va importa doar date de conectare, notițe, carduri de plată și identități."
       ],
+      "${ PASS_SHORT_APP_NAME } offline mode enabled.": [
+        "Modul deconectat ${ PASS_SHORT_APP_NAME } activat."
+      ],
       "${ payload.count } invite successfully sent": [
         "Invitații trimise: ${ payload.count }",
         "Invitații trimise: ${ payload.count }",
@@ -1544,6 +1556,9 @@
       ],
       "Admin": [
         "Administrator"
+      ],
+      "After confirming, you will need to accept a permission prompt for ${ PASS_APP_NAME }.": [
+        "După confirmare, va trebui să acceptați o solicitare de permisiune pentru ${ PASS_APP_NAME }."
       ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "După reușirea importării datelor, puteți șterge fișierul CSV care conține parolele pentru a vă păstra securitatea."
@@ -1754,6 +1769,9 @@
       ],
       "Enable auto-locking to secure your data": [
         "Activați autoblocarea pentru a securiza datele."
+      ],
+      "Enable offline mode to access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
+        "Activați modul de deconectare pentru a vă accesa datele ${ PASS_SHORT_APP_NAME } dacă pierdeți conectivitatea la internet sau dacă serverele ${ BRAND_NAME } nu sunt accesibile."
       ],
       "Enabling biometrics auto-lock": [
         "Se activează autoblocarea cu date biometrice."
@@ -1984,11 +2002,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Se mută toate articolele din „${ payload.content.name }”."
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Mutarea unui articol într-un alt seif îi va șterge legăturile web securizate.",
-        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate.",
-        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate."
       ],
       "Moving items": [
         "Se mută articolele."
@@ -2378,6 +2391,9 @@
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Acest fișier exportat va fi necriptat și oricine are acces la el va putea vedea parolele. Pentru securitate, trebuie să-l ștergeți după ce l-ați terminat de utilizat."
       ],
+      "This feature is currently experimental on Linux. Please ensure your system is up-to-date.": [
+        "Această funcție este în prezent experimentală pe Linux. Asigurați-vă că sistemul este actualizat."
+      ],
       "This item is not currently shared with anyone. Invite people to share it with others.": [
         "Acest articol nu este în prezent partajat cu nimeni. Invitați persoane pentru a-l partaja."
       ],
@@ -2520,6 +2536,9 @@
       "When creating/editing a Login on ${ PASS_APP_NAME } the 'username' input will always be visible.": [
         "Când creați/editați date de autentificare în ${ PASS_APP_NAME } câmpul „nume utilizator” va fi întotdeauna vizibil."
       ],
+      "When enabled, you can still access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
+        "Când este activată, puteți accesa în continuare datele ${ PASS_SHORT_APP_NAME } dacă pierdeți conectivitatea la internet sau dacă serverele ${ BRAND_NAME } nu sunt accesibile."
+      ],
       "When sending an email from this alias, the email will display ${ emailSender } as sender.": [
         "Când trimiteți un mesaj de pe acest alias, acesta va afișa ${ emailSender } ca expeditor."
       ],
@@ -2565,9 +2584,6 @@
       ],
       "You may close this tab.": [
         "Puteți închide această filă."
-      ],
-      "You may need to accept a permission prompt and may have to restart the application depending on your system.": [
-        "Trebuie să acceptați o solicitare de permisiune și s-ar putea să fie necesar să reporniți aplicația în funcție de sistem."
       ],
       "You may need to grant accessiblity permission to ${ PASS_APP_NAME }.": [
         "Trebuie să acordați aplicației ${ PASS_APP_NAME } permisiunea pentru accesibilitate."
@@ -2691,6 +2707,9 @@
       ],
       "${ PASS_APP_NAME } recognizes the websites and apps you use and autofills forms with your credentials for you on any browser or device. No need to copy and paste.": [
         "${ PASS_APP_NAME } recunoaște site-urile web și aplicațiile pe care le utilizați și completează automat formularele din orice navigator web sau dispozitiv cu acreditările salvate. Nu este nevoie să copiați și să lipiți datele."
+      ],
+      "${ PASS_SHORT_APP_NAME } Monitor": [
+        "Monitorizare ${ PASS_SHORT_APP_NAME }"
       ],
       "${ PASS_SHORT_APP_NAME } version": [
         "Versiune ${ PASS_SHORT_APP_NAME }"
@@ -3027,6 +3046,9 @@
       "Enter email or username": [
         "Introduceți e-mail sau utilizator"
       ],
+      "Experimental": [
+        "Experimental"
+      ],
       "Expiration date": [
         "Dată expirare"
       ],
@@ -3230,6 +3252,9 @@
       ],
       "Language": [
         "Limba"
+      ],
+      "Larger window": [
+        "Fereastră mai mare"
       ],
       "Last 2 weeks": [
         "Ultimele două săptămâni"
@@ -3602,6 +3627,9 @@
       ],
       "Server": [
         "Server"
+      ],
+      "Settings": [
+        "Setări"
       ],
       "Share": [
         "Partajare"
@@ -4739,6 +4767,9 @@
       "Settings": [
         "Setări"
       ],
+      "Setup offline mode": [
+        "Configurare mod deconectat"
+      ],
       "Share vaults with your team": [
         "Partajați seifuri cu echipa proprie"
       ],
@@ -4892,6 +4923,9 @@
     "Warning": {
       "${ BRAND_NAME } password is required": [
         "Este necesară parola ${ BRAND_NAME }"
+      ],
+      "${ PASS_SHORT_APP_NAME } offline mode disabled.": [
+        "Modul deconectat ${ PASS_SHORT_APP_NAME } dezactivat."
       ],
       "2 consecutive dots are not allowed": [
         "Nu se acceptă două puncte simultan."
