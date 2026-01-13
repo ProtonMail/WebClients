@@ -17,20 +17,29 @@ const MigrationFlow = () => {
     const api = useApi();
     const [customDomains, customDomainsLoading] = useCustomDomains();
     const [importerOrganization, importerOrganizationLoading] = useImporterOrganization();
-    const [migrationConfig, setMigrationConfig] = useState<MigrationConfiguration>();
+    const [migrationConfig, setMigrationConfig] = useState<MigrationConfiguration>({
+        importerOrganizationId: undefined,
+        domainName: undefined,
+        selectedProducts: ['Mail', 'Contacts', 'Calendar'],
+        notifyList: [],
+        timePeriod: 'all',
+        importOrganizationSettings: true,
+    });
     const loading = customDomainsLoading || importerOrganizationLoading;
 
-    const onMigrationSetupSubmit = async (payload: MigrationSetupModel) => {
+    const onMigrationSetupSubmit = async (payload: MigrationConfiguration) => {
         const result = await api<ApiImporterOrganization>(
             createOrganizationImporter({
                 Provider: ApiImportProvider.GOOGLE,
                 Products: payload.selectedProducts,
+                ImportOrganizationSettings: payload.importOrganizationSettings,
             })
         );
 
         setMigrationConfig({
             ...payload,
             importerOrganizationId: result.ImporterOrganizationID,
+            domainName: result.DomainName,
         });
     };
 
@@ -39,36 +48,43 @@ const MigrationFlow = () => {
             return;
         }
 
-        try {
-            const { ImporterConfig, ImporterOrganizationID } = importerOrganization;
+        const { ImporterConfig, ImporterOrganizationID, DomainName } = importerOrganization;
 
-            setMigrationConfig({
-                importerOrganizationId: ImporterOrganizationID,
-                domain: customDomains?.find((d) => d.DomainName === importerOrganization.DomainName),
-                selectedProducts: ImporterConfig.Products,
-                notifyList: [],
-                timePeriod: 'all',
-            });
-        } catch {}
+        setMigrationConfig((config) => ({
+            ...config,
+            importerOrganizationId: ImporterOrganizationID,
+            selectedProducts: ImporterConfig.Products,
+            domainName: DomainName,
+            importOrganizationSettings: ImporterConfig.ImportOrganizationSettings,
+        }));
     }, [importerOrganization, customDomains, loading]);
+
+    const model: MigrationSetupModel = {
+        ...migrationConfig,
+        setSelectedProducts: (products) => setMigrationConfig((state) => ({ ...state, selectedProducts: products })),
+        setNotifyList: (emails) => setMigrationConfig((state) => ({ ...state, notifyList: emails })),
+        setTimePeriod: (timePeriod) => setMigrationConfig((state) => ({ ...state, timePeriod })),
+        setImportOrganizationSettings: (importOrganizationSettings) =>
+            setMigrationConfig((state) => ({ ...state, importOrganizationSettings })),
+    };
 
     const component = (() => {
         if (customDomainsLoading || importerOrganizationLoading) {
             return <SkeletonLoader />;
         }
 
-        if (!migrationConfig) {
-            return <MigrationSetup onSubmit={onMigrationSetupSubmit} />;
+        if (!migrationConfig.importerOrganizationId) {
+            return <MigrationSetup model={model} onSubmit={onMigrationSetupSubmit} />;
         }
 
-        return <MigrationAssistant config={migrationConfig} />;
+        return <MigrationAssistant model={model} />;
     })();
 
     return (
-        <div className="flex-1 flex flex-column">
+        <div className="flex-1 flex flex-column flex-nowrap">
             <div className="w-full flex items-center p-4 border-bottom border-top border-weak">
-                <img src={protonGoogleIcon} alt="" width={48} />
-                <p className="text-xl text-bold ml-4 my-0">{c('BOSS').t`Migrate from Google Workspace`}</p>
+                <img src={protonGoogleIcon} alt="" className="shrink-0" width={48} />
+                <h2 className="text-xl text-bold ml-4 my-0">{c('BOSS').t`Migrate from Google Workspace`}</h2>
             </div>
 
             {component}
