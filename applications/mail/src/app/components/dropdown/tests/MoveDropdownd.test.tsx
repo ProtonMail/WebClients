@@ -7,7 +7,8 @@ import { LABEL_TYPE, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import type { Label } from '@proton/shared/lib/interfaces';
 
-import { addApiMock } from '../../../helpers/test/api';
+import * as mailboxActions from 'proton-mail/store/mailbox/mailboxActions';
+
 import { minimalCache } from '../../../helpers/test/cache';
 import { mailTestRender } from '../../../helpers/test/render';
 import { initialize } from '../../../store/messages/read/messagesReadActions';
@@ -83,8 +84,7 @@ describe('MoveDropdown', () => {
     });
 
     it('should move to a folder', async () => {
-        const apiMock = jest.fn(() => ({ UndoToken: 1000 }));
-        addApiMock(`mail/v4/messages/label`, apiMock);
+        const labelMessagesSpy = jest.spyOn(mailboxActions, 'labelMessages');
 
         await setup();
 
@@ -107,7 +107,13 @@ describe('MoveDropdown', () => {
         });
 
         // label call has been made
-        expect(apiMock).toHaveBeenCalled();
+        expect(labelMessagesSpy).toHaveBeenCalledWith(
+            expect.objectContaining({
+                destinationLabelID: folder1ID,
+            })
+        );
+
+        labelMessagesSpy.mockRestore();
     });
 
     it('should create a folder from the button', async () => {
