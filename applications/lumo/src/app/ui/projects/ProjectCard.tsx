@@ -136,7 +136,11 @@ export const ProjectCard = ({ project, onSignInRequired, onOpenNewProjectModal }
             </div>
 
             <div className="project-card-body">
-                {project.description && <p className="project-card-description">{project.description}</p>}
+                {project.description && (
+                    <p className="project-card-description" style={{ display: '-webkit-box' }}>
+                        {project.description}
+                    </p>
+                )}
 
                 {!project.isExample && (
                     <div className="project-card-stats">
