@@ -428,6 +428,7 @@ export const useApplyLocation = () => {
                 changes: { [labelID]: value },
                 removeLabel: !value,
                 showSuccessNotification: false,
+                createFilters: params.createFilters,
             });
         });
         let timeout: NodeJS.Timeout;

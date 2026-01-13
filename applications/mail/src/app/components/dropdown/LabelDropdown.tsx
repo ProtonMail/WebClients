@@ -252,7 +252,7 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, selectAll, onChe
         const promises = [];
 
         if (applyOptimisticLocationEnabled) {
-            promises.push(applyMultipleLocations({ elements, changes }));
+            promises.push(applyMultipleLocations({ elements, changes, createFilters: always }));
         } else {
             promises.push(
                 applyLabels({
