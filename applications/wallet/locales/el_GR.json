@@ -1092,6 +1092,9 @@
       ],
       "High-speed chats and advanced AI features.": [
         "Υψηλής ταχύτητας συνομιλίες και προηγμένα χαρακτηριστικά AI."
+      ],
+      "Private video calls for the conversations that matter.": [
+        "Ιδιωτικές βιντεοκλήσεις για τις σημαντικές συνομιλίες."
       ]
     },
     "color": {
@@ -1985,6 +1988,11 @@
     "customer_support.feature.mail": {
       "For ${ MAIL_APP_NAME }": [
         "Για ${ MAIL_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.meet": {
+      "For ${ MEET_APP_NAME }": [
+        "Για ${ MEET_APP_NAME }"
       ]
     },
     "customer_support.feature.pass": {
@@ -3477,6 +3485,53 @@
         "για ${ price }"
       ]
     },
+    "meet_2025: Feature": {
+      "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
+        "${ MEET_APP_NAME }: Εμπιστευτικές βιντεοδιασκέψεις για τις σημαντικές συνομιλίες σας"
+      ],
+      "${ n } active meeting at a time": [
+        "${ n } ενεργή σύσκεψη τη φορά",
+        "${ n } ενεργή συσκέψεις τη φορά"
+      ],
+      "24 hours per meeting": [
+        "24 ώρες ανά σύσκεψη"
+      ],
+      "60 minutes per meeting": [
+        "60 λεπτά ανά σύσκεψη"
+      ],
+      "Appointment scheduling": [
+        "Προγραμματισμός ραντεβού"
+      ],
+      "Browser, mobile, and desktop apps": [
+        "Εφαρμογές για προγράμματα περιήγησης, κινητά και επιτραπέζιους υπολογιστές"
+      ],
+      "Built-in chat": [
+        "Ενσωματωμένη συνομιλία"
+      ],
+      "End-to-end encrypted screen sharing and ephemeral in-call chat": [
+        "Κρυπτογραφημένη κοινή χρήση οθόνης διατερματικά και εφήμερη συνομιλία κατά τη διάρκεια της κλήσης"
+      ],
+      "Meeting recording (coming soon)": [
+        "Ηχογράφηση συσκέψεων (σύντομα διαθέσιμη)"
+      ],
+      "One active meeting at a time": [
+        "Μία ενεργή σύσκεψη τη φορά"
+      ],
+      "Screen-sharing": [
+        "Κοινή χρήση οθόνης"
+      ],
+      "Unlimited meetings per day": [
+        "Απεριόριστες συσκέψεις ανά ημέρα"
+      ],
+      "Up to ${ n } meeting per day": [
+        "Έως ${ n } συνάντηση την ημέρα",
+        "Έως ${ n } συναντήσεις την ημέρα"
+      ],
+      "Up to ${ n } participant": [
+        "Έως ${ n } συμμετέχων",
+        "Έως ${ n } συμμετέχοντες"
+      ]
+    },
     "New Label form": {
       "Color": [
         "Χρώμα"
@@ -4814,11 +4869,6 @@
       ],
       "Upgrade to ${ upsellPlanTitle }": [
         "Αναβάθμιση σε ${ upsellPlanTitle }"
-      ]
-    },
-    "Price": {
-      "Free": [
-        "Δωρεάν"
       ]
     },
     "QRCode Reader": {

@@ -1108,6 +1108,9 @@
       ],
       "High-speed chats and advanced AI features.": [
         "Velmi rychlé konverzace a pokročilé funkce AI."
+      ],
+      "Private video calls for the conversations that matter.": [
+        "Soukromé videohovory pro důležité konverzace."
       ]
     },
     "color": {
@@ -2001,6 +2004,11 @@
     "customer_support.feature.mail": {
       "For ${ MAIL_APP_NAME }": [
         "Pro ${ MAIL_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.meet": {
+      "For ${ MEET_APP_NAME }": [
+        "Pro ${ MEET_APP_NAME }"
       ]
     },
     "customer_support.feature.pass": {
@@ -3523,6 +3531,59 @@
         "za ${ price }"
       ]
     },
+    "meet_2025: Feature": {
+      "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
+        "${ MEET_APP_NAME }: Důvěrné videokonference pro důležité konverzace"
+      ],
+      "${ n } active meeting at a time": [
+        "${ n } aktivní schůzka ve stejný čas",
+        "${ n } aktivní schůzky ve stejný čas",
+        "${ n } aktivních schůzek ve stejný čas",
+        "${ n } aktivních schůzek ve stejný čas"
+      ],
+      "24 hours per meeting": [
+        "Schůzka o délce 24 hodin"
+      ],
+      "60 minutes per meeting": [
+        "Schůzka o délce 60 minut"
+      ],
+      "Appointment scheduling": [
+        "Plánování schůzek"
+      ],
+      "Browser, mobile, and desktop apps": [
+        "Aplikace pro prohlížeče, mobilní telefony a desktopy"
+      ],
+      "Built-in chat": [
+        "Integrovaný chat"
+      ],
+      "End-to-end encrypted screen sharing and ephemeral in-call chat": [
+        "Sdílení obrazovky s koncovým šifrováním a dočasný chat během hovoru"
+      ],
+      "Meeting recording (coming soon)": [
+        "Nahrávání schůzky (již brzy)"
+      ],
+      "One active meeting at a time": [
+        "Jedna aktivní schůzka ve stejný čas"
+      ],
+      "Screen-sharing": [
+        "Sdílení obrazovky"
+      ],
+      "Unlimited meetings per day": [
+        "Neomezený počet schůzek za den"
+      ],
+      "Up to ${ n } meeting per day": [
+        "Až ${ n } schůzka za den",
+        "Až ${ n } schůzky za den",
+        "Až ${ n } schůzek za den",
+        "Až ${ n } schůzek za den"
+      ],
+      "Up to ${ n } participant": [
+        "Až ${ n } účastník",
+        "Až ${ n } účastníci",
+        "Až ${ n } účastníků",
+        "Až ${ n } účastníků"
+      ]
+    },
     "New Label form": {
       "Color": [
         "Barva"
@@ -4928,11 +4989,6 @@
       ],
       "Upgrade to ${ upsellPlanTitle }": [
         "Navýšit na ${ upsellPlanTitle }"
-      ]
-    },
-    "Price": {
-      "Free": [
-        "Zdarma"
       ]
     },
     "QRCode Reader": {
