@@ -724,6 +724,7 @@ describe('useApplyLocation', () => {
                 result.current.applyMultipleLocations({
                     elements: [],
                     changes: { [MAILBOX_LABEL_IDS.ARCHIVE]: true },
+                    createFilters: false,
                 })
             ).toThrow('Elements are required');
 
@@ -743,6 +744,7 @@ describe('useApplyLocation', () => {
                 result.current.applyMultipleLocations({
                     elements: [{ ID: '1', ConversationID: '123' }],
                     changes: {},
+                    createFilters: false,
                 })
             ).toThrow('Changes are required');
         });
@@ -762,6 +764,7 @@ describe('useApplyLocation', () => {
             const promises = result.current.applyMultipleLocations({
                 elements,
                 changes,
+                createFilters: false,
             });
 
             // applyMultipleLocations returns Promise.all(promises)
@@ -785,6 +788,7 @@ describe('useApplyLocation', () => {
             void result.current.applyMultipleLocations({
                 elements,
                 changes,
+                createFilters: false,
             });
 
             // Should create a notification with undo functionality
@@ -809,6 +813,7 @@ describe('useApplyLocation', () => {
             void result.current.applyMultipleLocations({
                 elements,
                 changes,
+                createFilters: false,
             });
 
             // Should show "Messages updated" text for multiple messages
@@ -833,6 +838,7 @@ describe('useApplyLocation', () => {
             void result.current.applyMultipleLocations({
                 elements,
                 changes,
+                createFilters: false,
             });
 
             // Should show "Conversation updated" text for single conversation
@@ -849,6 +855,7 @@ describe('useApplyLocation', () => {
             void result.current.applyMultipleLocations({
                 elements,
                 changes,
+                createFilters: false,
             });
 
             expect(mockedCreateNotification).toHaveBeenCalled();

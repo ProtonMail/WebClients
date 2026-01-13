@@ -21,6 +21,7 @@ export enum APPLY_LOCATION_TYPES {
 
 export interface ApplyMultipleLocationsParams {
     elements: Element[];
+    createFilters: boolean;
     changes: { [labelID: string]: boolean };
 }
 
