@@ -286,10 +286,23 @@ export function useProtonSheetsUIState(
       })),
     [state.sheets],
   )
+  const sheetListIncludingHidden = useMemo(
+    () =>
+      sortSheetsByIndex(state.sheets, true).map((sheet) => ({
+        id: sheet.sheetId,
+        name: sheet.title,
+        hidden: sheet.hidden ?? false,
+        tabColor: sheet.tabColor ?? undefined,
+      })),
+    [state.sheets],
+  )
   const visibleSheets = useMemo(() => sheetList.filter((sheet) => !sheet.hidden), [sheetList])
+  const hiddenSheets = useMemo(() => state.sheets.filter((sheet) => sheet.hidden), [state.sheets])
   const sheets = {
     list: sheetList,
+    listIncludingHidden: sheetListIncludingHidden,
     visible: visibleSheets,
+    hidden: hiddenSheets,
     activeId: state.activeSheetId,
     setActiveId: useEvent((sheetId: number) => state.onChangeActiveSheet(sheetId)),
     delete: useEvent((sheetId: number) => {
@@ -303,6 +316,14 @@ export function useProtonSheetsUIState(
     duplicate: useEvent((sheetId: number) => {
       logger.info('action: duplicate sheet', sheetId)
       state.onDuplicateSheet(sheetId)
+    }),
+    hide: useEvent((sheetId: number) => {
+      logger.info('action: hide sheet', sheetId)
+      state.onHideSheet(sheetId)
+    }),
+    show: useEvent((sheetId: number) => {
+      logger.info('action: show sheet', sheetId)
+      state.onShowSheet(sheetId)
     }),
     move: useEvent((sheetId: number, currentPosition: number, newPosition: number) => {
       logger.info('action: move sheet', sheetId, currentPosition, newPosition)
