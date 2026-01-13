@@ -20,7 +20,6 @@ describe('transformAvailableSlotToTimeslot', () => {
             endTime: 1705323600,
             timezone: 'America/New_York',
             rrule: 'FREQ=WEEKLY',
-            bookingKeyPacket: 'base64encodedpacket',
             detachedSignature: 'signature',
         });
     });
@@ -45,7 +44,6 @@ describe('transformAvailableSlotToTimeslot', () => {
             endTime: 1705323600,
             timezone: 'Europe/Zurich',
             rrule: undefined,
-            bookingKeyPacket: 'base64encodedpacket',
             detachedSignature: 'signature',
         });
     });
