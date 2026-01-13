@@ -1,4 +1,4 @@
-import { format, formatISO, formatRelative, intervalToDuration, isThisWeek } from 'date-fns';
+import { formatRelative as dateFnsFormatRelative, format, formatISO, intervalToDuration, isThisWeek } from 'date-fns';
 import { c, msgid } from 'ttag';
 
 import type { Maybe } from '@proton/pass/types';
@@ -8,25 +8,18 @@ import identity from '@proton/utils/identity';
 
 import { epochToMs } from './epoch';
 
-export const formatEpoch = (dateFormat: string) => (epoch: number) =>
-    `${format(epochToMs(epoch), dateFormat, { locale: dateLocale })}`;
+export const formatRelative = (date: Date | number) =>
+    capitalize(dateFnsFormatRelative(date, new Date(), { locale: dateLocale }));
+export const formatDateTime = (date: Date | number) => format(date, "PP 'at' p", { locale: dateLocale });
+export const formatDate = (date: Date | number) => format(date, 'PP', { locale: dateLocale });
 
-export const epochToDateTime = formatEpoch('dd MMM yyyy, HH:mm');
-export const epochToDate = formatEpoch('dd MMM yyyy');
+export const formatEpoch = (format: (date: Date | number) => string) => (epoch: number) => format(epochToMs(epoch));
+export const epochToDateTime = formatEpoch(formatDateTime);
+export const epochToDate = formatEpoch(formatDate);
 
-type RelativeDaysAgoOptions = {
-    /** format value is 'dd MMM yyyy, HH:mm' */
-    formatDate?: (value: string) => string;
-    /** format value is "Today/Tomorrow/Monday-Sunday at 10:30AM" */
-    formatDays?: (value: string) => string;
-};
-
-export const epochToRelativeDaysAgo = (epoch: number, options?: RelativeDaysAgoOptions) => {
+export const epochToRelativeDaysAgo = (epoch: number) => {
     const date = new Date(epochToMs(epoch));
-
-    return isThisWeek(date)
-        ? (options?.formatDays ?? capitalize)(formatRelative(date, new Date(), { locale: dateLocale }))
-        : (options?.formatDate ?? identity)(epochToDateTime(epoch));
+    return isThisWeek(date) ? formatRelative(date) : formatDateTime(date);
 };
 
 const isExpired = (epoch: number): boolean => {
@@ -94,20 +87,29 @@ export const dateFromYYYYMMDD = (yyyymmdd: string): Maybe<Date> => {
 export const formatYYYYMMDD = (yyyymmdd: string): Maybe<string> => {
     try {
         const date = dateFromYYYYMMDD(yyyymmdd);
-        if (date) return format(date, 'PP', { locale: dateLocale });
+        if (date) return formatDate(date);
     } catch {}
 };
 
 /** Formats a Date object to ISO date string (YYYY-MM-DD format) in UTC. */
 export const formatISODate = (date: Date) => formatISO(date).split('T')[0];
 
+/** Formats a `YYYY-MM-DD` date string into ISO date string. */
+export const formatISOYYYYMMDD = (yyyymmdd: string): Maybe<string> => {
+    try {
+        const date = dateFromYYYYMMDD(yyyymmdd);
+        if (date) return formatISODate(date);
+    } catch {}
+};
+
 /** Creates a sample date using December 31st of the current year to demonstrate
  * the date format to users. Uses day 31 to avoid ambiguity between month/day
  * ordering in different locales (since no month has 31 as a valid month number).
+ * Use the same formatDate "PP" as when a value is set
  *
  * ```
- * formatPlaceholder() // → "12/31/2024" (in en-US)
- * formatPlaceholder() // → "31/12/2024" (in en-GB)
+ * formatPlaceholder() // → "Dec 31, 2026" (in en-US)
+ * formatPlaceholder() // → "31 déc. 2026" (in fr-FR)
  * ```
  */
-export const formatPlaceholder = () => format(new Date(new Date().getFullYear(), 11, 31), 'P', { locale: dateLocale });
+export const formatPlaceholder = () => formatDate(new Date(new Date().getFullYear(), 11, 31));

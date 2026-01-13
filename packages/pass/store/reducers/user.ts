@@ -22,7 +22,7 @@ import { objectDelete } from '@proton/pass/utils/object/delete';
 import { merge, partialMerge } from '@proton/pass/utils/object/merge';
 import { SETTINGS_PROTON_SENTINEL_STATE } from '@proton/shared/lib/constants';
 import updateCollection from '@proton/shared/lib/helpers/updateCollection';
-import type { Address, SETTINGS_PASSWORD_MODE, SETTINGS_STATUS, User } from '@proton/shared/lib/interfaces';
+import type { Address, DateFormatOptions, SETTINGS_PASSWORD_MODE, SETTINGS_STATUS, User } from '@proton/shared/lib/interfaces';
 import type { AuthDeviceOutput } from '@proton/shared/lib/keys/device';
 
 export type AddressState = { [addressId: string]: Address };
@@ -34,6 +34,7 @@ export type UserSettingsState = {
         Value: SETTINGS_PROTON_SENTINEL_STATE;
     };
     Locale?: string;
+    DateFormatOptions?: DateFormatOptions;
     News: BitField;
     Password: { Mode: SETTINGS_PASSWORD_MODE };
     Telemetry: BitField;
@@ -102,6 +103,11 @@ const reducer: Reducer<UserState> = (state = getInitialState(), action) => {
                   Email: { Status: UserSettings.Email.Status },
                   HighSecurity: UserSettings.HighSecurity,
                   Locale: UserSettings.Locale,
+                  DateFormatOptions: {
+                      DateFormat: UserSettings.DateFormat,
+                      TimeFormat: UserSettings.TimeFormat,
+                      WeekStart: UserSettings.WeekStart,
+                  },
                   News: UserSettings.News,
                   Password: { Mode: UserSettings.Password.Mode },
                   Telemetry: UserSettings.Telemetry,
@@ -159,6 +165,11 @@ const reducer: Reducer<UserState> = (state = getInitialState(), action) => {
                 Email: { Status: settings.Email.Status },
                 HighSecurity: settings.HighSecurity,
                 Locale: settings.Locale,
+                DateFormatOptions: {
+                    DateFormat: settings.DateFormat,
+                    TimeFormat: settings.TimeFormat,
+                    WeekStart: settings.WeekStart,
+                },
                 News: settings.News,
                 Password: { Mode: settings.Password.Mode },
                 Telemetry: settings.Telemetry,

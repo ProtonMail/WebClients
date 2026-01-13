@@ -29,7 +29,7 @@ describe('Import KeePass xml', () => {
         expect(payload.vaults[0].name).toEqual('Group A');
         expect(payload.vaults[1].name).toEqual('Group B');
         expect(payload.vaults[2].name).toEqual('Group C');
-        expect(payload.vaults[3].name).toEqual('Import - 27 Apr 2023');
+        expect(payload.vaults[3].name).toEqual('Import - Apr 27, 2023');
         expect(payload.vaults[4].name).toEqual('TOTP definitions');
     });
 

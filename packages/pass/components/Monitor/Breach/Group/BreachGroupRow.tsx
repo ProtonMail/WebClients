@@ -11,7 +11,7 @@ import type { MonitorTableRow } from '@proton/pass/hooks/monitor/useBreachesTabl
 import { getAddressId } from '@proton/pass/lib/monitor/monitor.utils';
 import { AddressType } from '@proton/pass/lib/monitor/types';
 import { selectMonitorSettingByType } from '@proton/pass/store/selectors';
-import { formatEpoch } from '@proton/pass/utils/time/format';
+import { epochToDate } from '@proton/pass/utils/time/format';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
@@ -33,7 +33,7 @@ const getStatusLabel = (row: MonitorTableRow) => {
     if (!row.breached) return c('Info').t`No breaches detected`;
 
     if (row.breachedAt) {
-        const formattedDate = formatEpoch('MMM d, yyyy')(row.breachedAt);
+        const formattedDate = epochToDate(row.breachedAt);
         return c('Info').t`Latest breach on ${formattedDate}`;
     }
 
