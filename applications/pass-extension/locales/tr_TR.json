@@ -4,6 +4,26 @@
     "language": "tr_TR"
   },
   "contexts": {
+    "Account Settings - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } ve ${ remainingCount } diğer olası sızıntı bulundu. Ayrıntıları görmek ve önlem almak için ${ DARK_WEB_MONITORING_NAME } özelliğini açın. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } ve 1 başka olası sızıntı bulundu. Ayrıntıları görmek ve önlem almak için ${ DARK_WEB_MONITORING_NAME } özelliğini açın. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Olası bir ${ name } sızıntısı bulundu. Ayrıntıları görmek ve önlem almak için ${ DARK_WEB_MONITORING_NAME } özelliğini açın. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Olası bir ${ name } sızıntısı bulundu. Ayrıntıları görmek ve önlem almak için ${ DARK_WEB_MONITORING_NAME } özelliğini açın. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Olası bir ${ name } sızıntısı bulundu. Ayrıntıları görmek için ${ DARK_WEB_MONITORING_NAME } özelliğini açın. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Bilgileriniz en az bir veri sızıntısında bulundu. Ayrıntıları görmek ve önlem almak için ${ DARK_WEB_MONITORING_NAME } seçeneğini açın. ${ link }"
+      ]
+    },
     "Action": {
       "${ PASS_SHORT_APP_NAME } for Android": [
         "Android için ${ PASS_SHORT_APP_NAME }"
@@ -55,6 +75,9 @@
       ],
       "Add username field": [
         "Kullanıcı adı alanı ekle"
+      ],
+      "Admin panel": [
+        "Yönetim panosu"
       ],
       "Advanced": [
         "Gelişmiş"
@@ -197,6 +220,9 @@
       "Create a ${ BRAND_NAME } Account": [
         "Bir ${ BRAND_NAME } hesabı açın"
       ],
+      "Create a new vault": [
+        "Yeni bir kasa oluştur"
+      ],
       "Create alias": [
         "Takma ad oluştur"
       ],
@@ -305,6 +331,9 @@
       "Edit vault": [
         "Kasayı düzenle"
       ],
+      "Enable ${ DARK_WEB_MONITORING_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME } özelliğini aç"
+      ],
       "Enable this alias to receive emails sent to this alias": [
         "Bu takma adı kullanıma alarak bu takma ada gönderilen e-postaları alın"
       ],
@@ -341,11 +370,17 @@
       "Get mobile and desktop apps": [
         "Mobil ve bilgisayar uygulamalarını edinin"
       ],
+      "Get mobile apps": [
+        "Mobil uygulamaları edinin"
+      ],
       "Get Pass Business": [
         "Pass Business edinin"
       ],
       "Get Pass Plus": [
         "Pass Plus edinin"
+      ],
+      "Get Started": [
+        "Başlayalım"
       ],
       "Hide": [
         "Gizle"
@@ -395,6 +430,9 @@
       "Link expires after": [
         "Bağlantının geçerlilik süresi sonu"
       ],
+      "Lock ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } kilitle"
+      ],
       "Lock extension": [
         "Eklentiyi kilitle"
       ],
@@ -418,6 +456,9 @@
       ],
       "Manually sync your data": [
         "Verilerinizi el ile eşitleyin"
+      ],
+      "Mark as resolved": [
+        "Çözümlenmiş olarak işaretle"
       ],
       "Maximum views": [
         "En fazla görüntüleme sayısı"
@@ -469,6 +510,12 @@
       ],
       "Organize vaults": [
         "Kasaları düzenle"
+      ],
+      "Pass Monitor": [
+        "Pass Monitor"
+      ],
+      "Pause monitoring": [
+        "İzlemeyi duraklat"
       ],
       "Pin item": [
         "Ögeyi sabitle"
@@ -544,6 +591,9 @@
       ],
       "Restrict number of views": [
         "Görüntüleme sayısı sınırlansın"
+      ],
+      "Resume monitoring": [
+        "İzlemeyi sürdür"
       ],
       "Retry": [
         "Yeniden dene"
@@ -660,6 +710,9 @@
       "Try again": [
         "Yeniden dene"
       ],
+      "Try again.": [
+        "Yeniden deneyin."
+      ],
       "Unblock contact": [
         "Kişinin engellemesini kaldır"
       ],
@@ -705,6 +758,9 @@
       ],
       "View app logs": [
         "Uygulama günlüğünü görüntüle"
+      ],
+      "View details": [
+        "Ayrıntıları görüntüle"
       ],
       "View history": [
         "Geçmişi görüntüle"
@@ -759,6 +815,9 @@
         "${ total } oturum açma kaydı aynı parolayı kullanıyor",
         "${ total } oturum açma kaydı aynı parolayı kullanıyor"
       ],
+      "2FA adds another layer of security to your logins. ${ PASS_APP_NAME } makes 2FA easier by storing and automatically autofilling your 2FA codes.": [
+        "İki adımlı doğrulama, oturum açma işlemlerinize ek bir güvenlik katmanı ekler. ${ PASS_APP_NAME }, iki adımlı doğrulama kodlarınızı saklayarak ve otomatik olarak otomatik doldurarak iki adımlı doğrulamayı kullanmanızı kolaylaştırır."
+      ],
       "A checked box means the feature is disabled.": [
         "Seçeneğin işaretlenmesi özelliğin kapatılmasını sağlar."
       ],
@@ -771,11 +830,23 @@
       "Add the following TXT DNS record to your domain.": [
         "Etki alanınızın DNS kayıtlarına şu TXT kaydını ekleyin."
       ],
+      "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
+        "E-posta takma adı e-posta adresi gibi çalışır. Ancak istenmeyen e-postaları azaltır ve gerçek e-posta adresiniz ile kimliğinizi gizli tutar."
+      ],
+      "Change your passwords": [
+        "Parolalarınızı değiştirin"
+      ],
+      "Create unique passwords": [
+        "Benzersiz parolalar oluşturun"
+      ],
       "DKIM ${ WIKIPEDIA_LINK_DKIM } is an email authentication method designed to avoid email spoofing. Setting up DKIM is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
         "DKIM ${ WIKIPEDIA_LINK_DKIM }, e-posta sahteciliğini önlemek için tasarlanmış bir e-posta kimlik doğrulama yöntemidir. E-postalarınızın alıcının İstenmeyen klasörüne düşme olasılığını azaltmak için DKIM kullanmanız şiddetle önerilir."
       ],
       "DMARC ${ WIKIPEDIA_LINK_DMARC } is designed to protect the domain from unauthorized use, commonly known as email spoofing. Built around SPF and DKIM, a DMARC policy tells the receiving mail server what to do if neither of those authentication methods passes.": [
         "DMARC ${ WIKIPEDIA_LINK_DMARC }, etki alanını izinsiz kullanılmasından, yaygın olarak e-posta sahteciliği olarak bilinen şeyden korumak için tasarlanmıştır. SPF ve DKIM etrafında oluşturulan bir DMARC ilkesi, alıcı e-posta sunucusuna bu kimlik doğrulama yöntemlerinden hiçbiri geçemezse ne yapacağını söyler."
+      ],
+      "Get notified if your email, password or other personal data was leaked.": [
+        "E-posta adresiniz, parolanız veya diğer kişisel verileriniz sızdırıldığında bildirim alın."
       ],
       "If you are using a subdomain, e.g. ${ subdomainExample }, you need to use ${ dmarcExampleSubdomain } as the domain instead.": [
         "Örneğin ${ subdomainExample } gibi bir alt etki alanı kullanıyorsanız, etki alanı olarak ${ dmarcExampleSubdomain } kullanmanız gerekir."
@@ -786,8 +857,17 @@
       "If you are using Cloudflare, please make sure to not select the Proxy option.": [
         "CloudFlare kullanıyorsanız vekil sunucu seçeneğini seçmediğinizden emin olun."
       ],
+      "Keep your info more secure and private with these guides and tips.": [
+        "Bu rehberler ve ipuçları ile bilgilerinizi daha güvenli ve gizli tutun."
+      ],
       "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.${ infoText }": [
         "${ PASS_SHORT_APP_NAME } içinde belirli otomatik işlemlerin (otomatik doldurma, otomatik önerme, otomatik kaydetme) yapılmayacağı etki alanlarının listesi.${ infoText }"
+      ],
+      "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
+        "Hesapları için daha yüksek düzeyde koruma isteyen kullanıcılar için tasarlanmış, yapay zeka destekli son teknoloji güvenlik çözümümüz. ${ learnMoreLink }"
+      ],
+      "Set up 2FA for more security": [
+        "Güvenliği artırmak için iki adımlı doğrulamayı açın"
       ],
       "Some DNS registrar might require a full record path, in this case please use ${ domain } as domain value instead.": [
         "Bazı DNS kayıt kuruluşları için tam kayıt yolu gerekebilir. Bu durumda lütfen etki alanı değeri olarak ${ domain } kullanın."
@@ -797,6 +877,15 @@
       ],
       "SPF ${ WIKIPEDIA_LINK_SPF } is an email authentication method designed to detect forging sender addresses during the delivery of the email. Setting up SPF is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
         "SPF ${ WIKIPEDIA_LINK_SPF }, e-posta teslimi sırasında sahte gönderici adreslerini bulmak için tasarlanmış bir e-posta kimlik doğrulama yöntemidir. E-postalarınızın alıcının İstenmeyen klasörüne düşme olasılığını azaltmak için SPF kullanılması şiddetle önerilir."
+      ],
+      "Start monitoring for data breaches related to accounts created with your email address and your hide-my-email aliases.": [
+        "E-posta adresiniz ve hide-my-email takma adlarınızla oluşturulan hesaplarla ilgili veri sızıntılarını izlemeye başlayın."
+      ],
+      "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
+        "Karanlık ağ, kimlikler gibi çalınan kişisel bilgilerin alınıp satılabildiği gizli bir internet bölümüdür."
+      ],
+      "These items remain at risk": [
+        "Bu ögeler risk altında"
       ],
       "These vaults will not be accessible and their content won’t be available to Search or Autofill.": [
         "Bu kasalara erişilemeyecek ve içerikleri arama veya otomatik doldurma için kullanılamayacak."
@@ -812,6 +901,15 @@
       ],
       "Unlock advanced security features and detailed logs to safeguard your online presence.": [
         "Çevrim içi varlığınızı korumak için gelişmiş güvenlik özellikleri ile ayrıntılı günlük kayıtlarına erişin."
+      ],
+      "With ${ PASS_SHORT_APP_NAME } Monitor, stay ahead of threats by getting instant alerts if your credentials are compromised. Unlock advanced security features and detailed logs to safeguard your online presence.": [
+        "${ PASS_SHORT_APP_NAME } izleyici ile kimlik bilgilerinizin ele geçirildiğinde anında uyarı alarak tehditlerin önünde kalın. Çevrim içi varlığınızı korumak için gelişmiş güvenlik özelliklerine ve ayrıntılı günlük kayıtlarına erişin."
+      ],
+      "Your email addresses were leaked in at least 1 data breach.": [
+        "E-posta adresleriniz en az 1 veri sızıntısında açığa çıkmış."
+      ],
+      "Your personal info was leaked in a data breach of a third-party service.": [
+        "Kişisel bilgileriniz üçüncü taraf bir hizmetin verilerinin sızdırılması nedeniyle ele geçirildi."
       ]
     },
     "Email": {
@@ -1266,6 +1364,17 @@
         "Bir şeyler ters gitti"
       ]
     },
+    "Feature": {
+      "Integrated 2FA authenticator": [
+        "Bütünleşik iki adımlı doğrulayıcı"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Sınırsız sayıda hide-my-email takma adı"
+      ],
+      "Vault sharing (up to ${ MAX_VAULT_MEMBERS } people)": [
+        "Kasa paylaşma (${ MAX_VAULT_MEMBERS } kişiye kadar)"
+      ]
+    },
     "file size format": {
       "byte": [
         "bayt",
@@ -1304,6 +1413,17 @@
       "Terabyte": [
         "Terabayt",
         "Terabayt"
+      ]
+    },
+    "Header": {
+      "Domain": [
+        "Etki alanı"
+      ],
+      "Password ends with": [
+        "Parola şununla bitiyor"
+      ],
+      "Username": [
+        "Kullanıcı adı"
       ]
     },
     "Info": {
@@ -1391,6 +1511,10 @@
         "${ repliedEmailsCount } gönderildi",
         "${ repliedEmailsCount } gönderildi"
       ],
+      "${ row.breachCount } breach detected": [
+        "${ row.breachCount } veri sızıntısı bulundu",
+        "${ row.breachCount } veri sızıntısı bulundu"
+      ],
       "${ trialDaysLeft } day left": [
         "${ trialDaysLeft } gün kaldı",
         "${ trialDaysLeft } gün kaldı"
@@ -1434,8 +1558,14 @@
       "Access your passwords on the go with our mobile apps.": [
         "Mobil uygulamamız ile hareket halindeyken parolalarınıza erişin."
       ],
+      "Add your custom email address to monitor:": [
+        "İzlenecek özel e-posta adresinizi ekleyin:"
+      ],
       "Admin": [
         "Yönetici"
+      ],
+      "After confirming, you will need to accept a permission prompt for ${ PASS_APP_NAME }.": [
+        "Onayladıktan sonra ${ PASS_APP_NAME } için bir izin istemini kabul etmeniz gerekecektir."
       ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "İçe aktarma işlemi tamamlandığında, güvende kalmak için parolalarınızın bulunduğu dosyayı silebilirsiniz."
@@ -1455,11 +1585,17 @@
       "Aliases out of sync (${ aliasCount })": [
         "Takma adlar eşitlenmemiş (${ aliasCount })"
       ],
+      "Aliases with custom domains are not monitored, please add them as a custom email for monitoring.": [
+        "Özel etki alanlarındaki takma adlar izlenmez. Lütfen bunları izlemek için bir özel e-posta olarak ekleyin."
+      ],
       "All aliases using the mailbox ${ emailJSX } will be also deleted.": [
         "${ emailJSX } e-posta kutusunu kullanan tüm takma adlar da silinecek."
       ],
       "All breaches for this address were resolved": [
         "Bu adres için tüm veri sızıntıları çözümlendi"
+      ],
+      "All current breaches will be marked as resolved. In case of future data breaches, you'll be notified.": [
+        "Tüm veri sızıntıları çözümlenmiş olarak işaretlenecek. Gelecekte olabilecek veri sızıntıları size bildirilecek."
       ],
       "All inactive secure links were removed": [
         "Etkin olmayan tüm güvenli bağlantılar kaldırıldı"
@@ -1515,6 +1651,9 @@
       "Biometrics will be disabled and will need to be enabled again.": [
         "Biyometrik veriler kullanımdan kaldırılacak ve yeniden kullanıma alınması gerekecek."
       ],
+      "Breaches detected": [
+        "Veri sızıntısı bulundu"
+      ],
       "Bring your own domain and you don't have to buy yet another email hosting solution.": [
         "Kendi etki alanınızı kullanın ve başka bir e-posta barındırma çözümü satın almanıza gerek kalmasın."
       ],
@@ -1550,6 +1689,9 @@
       ],
       "Can view this item.": [
         "Bu ögeyi görüntüleyebilir."
+      ],
+      "Change your password": [
+        "Parolanızı değiştirin"
       ],
       "Choose a saved passkey to sign-in to ${ domain }": [
         "${ domain } oturumu açmak için kaydedilmiş bir geçiş anahtarı seçin"
@@ -1617,8 +1759,8 @@
       "Disabling offline mode...": [
         "Çevrim dışı kip kapatılıyor..."
       ],
-      "Discover ${ PASS_APP_NAME } Youtube Video": [
-        "${ PASS_APP_NAME } YouTube bölümüne bakın"
+      "Discover ${ PASS_APP_NAME } video": [
+        "${ PASS_APP_NAME } videosunu izleyin"
       ],
       "DNS changes could take up to 24 hours to update.": [
         "DNS değişikliklerinin güncellenmesi 24 saat kadar sürebilir."
@@ -1637,6 +1779,9 @@
       ],
       "Editor": [
         "Düzenleyici"
+      ],
+      "email": [
+        "e-posta"
       ],
       "Email address successfully deleted from monitoring": [
         "E-posta adresi izlemeden çıkarıldı"
@@ -1719,6 +1864,9 @@
       "Fill in the CSV with your data": [
         "CSV dosyasına verilerinizi ekleyin"
       ],
+      "finance": [
+        "finans"
+      ],
       "Follow those steps to import your data with a generic CSV:": [
         "Verilerinizi sıradan bir CSV dosyası ile içe aktarmak için şu adımları izleyin:"
       ],
@@ -1756,6 +1904,12 @@
       ],
       "Here's how it works:": [
         "Şöyle çalışır:"
+      ],
+      "High Priority": [
+        "Yüksek öncelik"
+      ],
+      "How does monitoring work?": [
+        "İzleme nasıl çalışır?"
       ],
       "Identity confirmed": [
         "Kimlik onaylandı"
@@ -1827,6 +1981,12 @@
       "Item successfully unpinned": [
         "Ögenin sabitlemesi kaldırıldı"
       ],
+      "Latest breach on ${ formattedDate }": [
+        "Son veri sızıntısı: ${ formattedDate }"
+      ],
+      "Learn what to do ${ dataLeakedLink }": [
+        "${ dataLeakedLink } ne yapacağınızı öğrenin"
+      ],
       "Leaving item...": [
         "Öge bırakılıyor…"
       ],
@@ -1845,11 +2005,20 @@
       "Loading...": [
         "Yükleniyor..."
       ],
+      "Low Priority": [
+        "Düşük Öncelik"
+      ],
       "Manager": [
         "Yönetici"
       ],
       "me": [
         "benim"
+      ],
+      "Medium Priority": [
+        "Orta öncelik"
+      ],
+      "Monitor accounts": [
+        "Hesapları izle"
       ],
       "Monitoring settings successfully updated": [
         "İzleme ayarları güncellendi"
@@ -1865,8 +2034,7 @@
         "\"${ payload.content.name }\" içindeki tüm ögeler taşınıyor"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Bir ögeyi başka bir kasaya taşımak onun güvenli bağlantılarını siler.",
-        "Ögeleri başka bir kasaya taşımak onların güvenli bağlantılarını siler."
+        "Başka bir kasaya taşınan ögenin güvenli bağlantıları silinir."
       ],
       "Moving items": [
         "Ögeler taşınıyor"
@@ -1888,6 +2056,9 @@
       ],
       "Never": [
         "Asla"
+      ],
+      "No breaches detected": [
+        "Herhangi bir veri sızmamış"
       ],
       "No credit cards found": [
         "Kredi kartı bulunamadı"
@@ -1925,6 +2096,9 @@
       "Open the Safari settings, find ${ PASS_APP_NAME }, go to \"Permissions\" and enable site permissions.": [
         "Safari ayarlarını açın, ${ PASS_APP_NAME } uygulamasını bulun. Ardından \"İzinler\" bölümüne gidin ve site izinlerini açın"
       ],
+      "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Uyarılarımız güvenliğe öncelik verir. Sızdırılmış bilgiler size tanıdık gelmiyorsa, bu raporu güvenle yok sayabilirsiniz."
+      ],
       "Owner": [
         "Sahibi"
       ],
@@ -1937,6 +2111,9 @@
       "Passkey sign-in": [
         "Geçiş anahtarı ile oturum açma"
       ],
+      "password": [
+        "parola"
+      ],
       "Password copied": [
         "Parola kopyalandı"
       ],
@@ -1946,6 +2123,9 @@
       "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
         "${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } haftadan eski parolalar geçmişten otomatik olarak silinir.",
         "${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } haftadan eski parolalar geçmişten otomatik olarak silinir."
+      ],
+      "Paused": [
+        "Duraklatıldı"
       ],
       "Pending access to the shared data": [
         "Paylaşılmış verilere erişilmesi bekleniyor"
@@ -2223,6 +2403,9 @@
       "Successfully synced all vaults": [
         "Tüm kasalar eşitlendi"
       ],
+      "Suggested": [
+        "Önerilir"
+      ],
       "Switch to another vault or create an item in this vault": [
         "Başka bir kasaya geçin ya da bu kasa içine bir öge ekleyin"
       ],
@@ -2244,6 +2427,9 @@
       "The exported file will be encrypted using PGP and requires a strong passphrase.": [
         "Dışa aktarılan dosya PGP ile şifrelenir ve güçlü bir parola ifadesi kullanılması gerekir."
       ],
+      "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
+        "Bilgiler üçüncü taraf bir hizmetten sızdırılmış. ${ BRAND_NAME } hesap bilgileriniz güvende ve şifrelenmiş olarak kalır. ${ learnMoreLink }"
+      ],
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "${ PASS_APP_NAME } kullanmak için ek parola gerekir. ${ BRAND_NAME } parolanıza ek bir parola olarak kullanılır."
       ],
@@ -2262,6 +2448,9 @@
       ],
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Bu dışa aktarma şifrelenmemiş olacak ve dışarıya aktarılmış dosyanıza erişebilen herhangi biri parolalarınızı görebilecek. Güvenlik için lütfen işiniz bittikten sonra dosyayı silin."
+      ],
+      "This feature is currently experimental on Linux. Please ensure your system is up-to-date.": [
+        "Bu özellik şu anda Linux üzerinde deneyseldir. Lütfen sisteminizin güncel olduğundan emin olun."
       ],
       "This item is not currently shared with anyone. Invite people to share it with others.": [
         "Bu öge şu anda kimseyle paylaşılmıyor. Paylaşmak istediğiniz kişileri davet edin."
@@ -2374,6 +2563,9 @@
       "User's access successfully updated": [
         "Kullanıcının erişimi güncellendi"
       ],
+      "username": [
+        "kullanıcı adı"
+      ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "\"${ payload.content.name }\" kasası silindi"
       ],
@@ -2395,6 +2587,9 @@
       ],
       "Verification code": [
         "Doğrulama kodu"
+      ],
+      "Verification code sent.": [
+        "Doğrulama kodu gönderildi."
       ],
       "Viewer": [
         "Görüntüleyici"
@@ -2459,9 +2654,6 @@
       "You may close this tab.": [
         "Bu sekmeyi kapatabilirsiniz."
       ],
-      "You may need to accept a permission prompt and may have to restart the application depending on your system.": [
-        "Sisteminize bağlı olarak bir izin isteğini kabul etmeniz ve uygulamayı yeniden başlatmanız gerekebilir."
-      ],
       "You may need to grant accessiblity permission to ${ PASS_APP_NAME }.": [
         "${ PASS_APP_NAME } için erişilebilirlik izni vermeniz gerekebilir."
       ],
@@ -2473,6 +2665,18 @@
       ],
       "You will be logged out and need to log in again on all of your other devices.": [
         "Oturumunuz kapatılacak ve diğer tüm aygıtlarınızda yeniden oturum açmanız gerekecek."
+      ],
+      "You will be notified of data breaches for these email addresses.": [
+        "Bu e-posta adresleri için veri sızıntıları size bildirilecek."
+      ],
+      "You will be notified of data breaches for this email address.": [
+        "Bu e-posta adresi için veri sızıntıları size bildirilmeyecek."
+      ],
+      "You will no longer be notified of data breaches for these email addresses.": [
+        "Bu e-posta adresleri için veri sızıntıları artık size bildirilmeyecek."
+      ],
+      "You will no longer be notified of data breaches for this email address.": [
+        "Bu e-posta adresi için veri sızıntıları artık size bildirilmeyecek."
       ],
       "You will no longer have access to sharing, 2FA and other advanced features in ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } uygulamasında paylaşım, iki adımlı doğrulama ve diğer gelişmiş özelliklere artık erişemeyeceksiniz."
@@ -2500,6 +2704,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "Dosyalarınız şifrelendikten sonra kaydedilir"
+      ],
+      "Your information was found on ${ displayedDate }": [
+        "Bilgileriniz ${ displayedDate } tarihinde bulundu"
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Kuruluşunuz ${ PASS_APP_NAME } erişiminizi güvence altına almanızı zorunlu kılmış"
@@ -2570,6 +2777,10 @@
       "${ secureLinksCount } secure link": [
         "${ secureLinksCount } güvenli bağlantı",
         "${ secureLinksCount } güvenli bağlantı"
+      ],
+      "${ usageCount } login": [
+        "${ usageCount } oturum açma kaydı",
+        "${ usageCount } oturum açma kaydı"
       ],
       "${ years } year": [
         "${ years } yıl",
@@ -2875,6 +3086,9 @@
       "Email (new alias)": [
         "E-posta (yeni takma ad)"
       ],
+      "Email address": [
+        "E-posta adresi"
+      ],
       "Email aliases": [
         "E-posta takma adları"
       ],
@@ -2943,6 +3157,9 @@
       ],
       "Generic CSV": [
         "CSV dosyası"
+      ],
+      "Get Started": [
+        "Başlayalım"
       ],
       "Grant": [
         "İzin ver"
@@ -3057,6 +3274,9 @@
       ],
       "Last name": [
         "Soyad"
+      ],
+      "Last updated": [
+        "Son güncelleme"
       ],
       "Last week": [
         "Son bir hafta"
@@ -3439,6 +3659,9 @@
       "State or province": [
         "İl ya da bölge"
       ],
+      "Status": [
+        "Durum"
+      ],
       "Street address": [
         "Sokak adresi"
       ],
@@ -3547,6 +3770,9 @@
       "Use ${ PASS_APP_NAME } as your browser's default password manager": [
         "Tarayıcınızın varsayılan parola yöneticisi olarak ${ PASS_APP_NAME } kullanın"
       ],
+      "Used in": [
+        "Şurada kullanılmış"
+      ],
       "Useful for permanent sharing": [
         "Kalıcı paylaşım için uygundur"
       ],
@@ -3561,6 +3787,9 @@
       ],
       "Vault ID": [
         "Kasa kimliği"
+      ],
+      "Vaults": [
+        "Kasalar"
       ],
       "View details": [
         "Bilgileri görüntüle"
@@ -3620,6 +3849,17 @@
     "Link": {
       "auto create rules ››": [
         "kurallar otomatik oluşturulsun ››"
+      ],
+      "if your data is leaked": [
+        "Verileriniz sızarsa"
+      ],
+      "Learn more": [
+        "Ayrıntılı bilgi alın"
+      ]
+    },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "${ reason } özelliğini aç"
       ]
     },
     "Message": {
@@ -3633,6 +3873,22 @@
       ],
       "You selected ${ semiboldText } in this vault.": [
         "Bu kasada ${ semiboldText } seçtiniz."
+      ]
+    },
+    "new_plans: feature": {
+      "Require 2FA for organization": [
+        "Kuruluş için iki adımlı doğrulama gereksin"
+      ],
+      "SSO integration": [
+        "Tek oturum açma bütünleştirmesi"
+      ]
+    },
+    "Notification": {
+      "${ reason } has been disabled": [
+        "${ reason } kullanım dışı bırakıldı"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } özelliği açıldı"
       ]
     },
     "Onboarding": {
@@ -3898,6 +4154,20 @@
         "${ url } üzerinde kullanılmış"
       ]
     },
+    "Security Center - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } ve ${ remainingCount } diğer olası veri sızıntısı bulundu. Ayrıntıları görüntülemek için ${ DARK_WEB_MONITORING_NAME } özelliğini açın. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } ve 1 diğer olası veri sızıntısı bulundu. Ayrıntıları görüntülemek için ${ DARK_WEB_MONITORING_NAME } özelliğini açın. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Olası ${ name } veri sızıntısı bulundu. Ayrıntıları görüntülemek için ${ DARK_WEB_MONITORING_NAME } özelliğini açın. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Bilgileriniz en az bir veri sızıntısı olayında görüldü. Ayrıntıları görmek için ${ DARK_WEB_MONITORING_NAME } özelliğini açın. ${ link }"
+      ]
+    },
     "sso": {
       "Approve or deny it now": [
         "Şimdi izin verin ya da vermeyin"
@@ -4041,11 +4311,20 @@
       ]
     },
     "Title": {
+      "${ BRAND_NAME } addresses": [
+        "${ BRAND_NAME } adresleri"
+      ],
       "${ PASS_APP_NAME } Logs": [
         "${ PASS_APP_NAME } günlükleri"
       ],
       "${ PASS_APP_NAME } Settings": [
         "${ PASS_APP_NAME } ayarları"
+      ],
+      "${ PASS_SHORT_APP_NAME } Monitor": [
+        "${ PASS_SHORT_APP_NAME } Monitor"
+      ],
+      "Account protection": [
+        "Hesap koruması"
       ],
       "Actions": [
         "İşlemler"
@@ -4076,6 +4355,15 @@
       ],
       "Blocked addresses": [
         "Engellenmiş adresler"
+      ],
+      "Breach detected": [
+        "Veri sızıntısı bulundu"
+      ],
+      "Breaches": [
+        "Veri sızıntıları"
+      ],
+      "Breaches detected for": [
+        "Şunun için veri sızıntıları bulundu"
       ],
       "Cancel changing your email?": [
         "E-posta adresi değişikliği iptal edilsin mi?"
@@ -4119,8 +4407,17 @@
       "Current version": [
         "Güncel sürüm"
       ],
+      "Custom addresses": [
+        "Özel adresler"
+      ],
       "Custom domains": [
         "Özel etki alanları"
+      ],
+      "Custom email monitoring": [
+        "Özel e-posta adresi izleme"
+      ],
+      "Custom emails": [
+        "Özel e-posta adresleri"
       ],
       "Default": [
         "Varsayılan"
@@ -4189,6 +4486,9 @@
       "Enter your second password": [
         "İkinci parolanızı yazın"
       ],
+      "Excluded items": [
+        "Katılmayan ögeler"
+      ],
       "Fill & copy password": [
         "Doldur ve parolayı kopyala"
       ],
@@ -4210,6 +4510,9 @@
       "Hide my email": [
         "Hide my email"
       ],
+      "Hide-my-email aliases": [
+        "Hide-my-email takma adları"
+      ],
       "History": [
         "Geçmiş"
       ],
@@ -4224,6 +4527,12 @@
       ],
       "Importing your data": [
         "Verileriniz içe aktarılıyor"
+      ],
+      "Inactive 2FA": [
+        "İki adımlı doğrulama etkin olmayan"
+      ],
+      "Information exposed in breach": [
+        "Veri sızıntısında açığa çıkan bilgiler"
       ],
       "Item": [
         "Öge"
@@ -4240,6 +4549,9 @@
       "Leave vault?": [
         "Kasayı bırakmak istiyor musunuz?"
       ],
+      "Loading breaches...": [
+        "Veri sızıntıları yükleniyor..."
+      ],
       "Log in as...": [
         "Şu olarak oturum aç..."
       ],
@@ -4248,6 +4560,9 @@
       ],
       "Mailbox": [
         "E-posta kutusu"
+      ],
+      "Mark as resolved?": [
+        "Çözümlenmiş olarak işaretlensin mi?"
       ],
       "Member limit": [
         "Üye sayısı sınırı"
@@ -4278,14 +4593,32 @@
       "MX record": [
         "MX kaydı"
       ],
+      "Next": [
+        "Sonraki"
+      ],
+      "No excluded items": [
+        "Katılmayan bir öge yok"
+      ],
+      "No inactive 2FAs": [
+        "Etkin olmayan iki adımlı doğrulama yok"
+      ],
+      "No insecure passwords": [
+        "Güvenli olmayan bir parola yok"
+      ],
       "No items selected": [
         "Herhangi bir öge seçilmemiş"
+      ],
+      "No reused passwords": [
+        "Yeniden kullanılan bir parola yok"
       ],
       "No shared items": [
         "Herhangi bir öge paylaşılmamış"
       ],
       "No shared secure links": [
         "Paylaşılan bir güvenli bağlantı yok"
+      ],
+      "Open pagination": [
+        "Sayfalandırmayı aç"
       ],
       "Organize vaults": [
         "Kasaları düzenle"
@@ -4298,6 +4631,12 @@
       ],
       "Password": [
         "Parola"
+      ],
+      "Password Health": [
+        "Parola sağlığı"
+      ],
+      "Pause monitoring?": [
+        "İzleme durdurulsun mu?"
       ],
       "Pending access confirmation": [
         "Bekleyen erişme izni onayı"
@@ -4321,11 +4660,20 @@
         "Takma adın silindikten sonra geri alınamayacağını unutmayın",
         "Takma adın silindikten sonra geri alınamayacağını unutmayın"
       ],
+      "Previous": [
+        "Önceki"
+      ],
       "Random Prefix Generation": [
         "Rastgele ön ek oluşturma"
       ],
+      "Recommended actions": [
+        "Önerilen işlemler"
+      ],
       "Reject device?": [
         "Aygıt reddedilsin mi?"
+      ],
+      "Remove email address?": [
+        "E-posta adresi kaldırılsın mı?"
       ],
       "Remove extra password": [
         "Ek parolayı kaldır"
@@ -4336,8 +4684,21 @@
       "Reset history for this item?": [
         "Bu ögenin geçmişini silmek istiyor musunuz?"
       ],
+      "Resolved breaches": [
+        "Çözümlenmiş veri sızıntıları"
+      ],
       "Restore this version?": [
         "Bu sürüm geri yüklensin mi?"
+      ],
+      "Resume monitoring?": [
+        "İzleme sürdürülsün mü?"
+      ],
+      "Reused ${ count } time": [
+        "${ count } kez yeniden kullanılmış",
+        "${ count } kez yeniden kullanılmış"
+      ],
+      "Reused passwords": [
+        "Yeniden kullanılmış parolalar"
       ],
       "Review and share": [
         "Gözden geçirip paylaş"
@@ -4354,8 +4715,14 @@
       "Set extra password": [
         "Ek parolayı ayarla"
       ],
+      "Set up 2FA for better security": [
+        "Daha iyi güvenlik için iki adımlı doğrulamayı açın"
+      ],
       "Set up 2FA for more security": [
         "Güvenliği artırmak için iki adımlı doğrulamayı açın"
+      ],
+      "Settings": [
+        "Ayarlar"
       ],
       "Share with": [
         "Şununla paylaş"
@@ -4420,14 +4787,26 @@
       "Visible vaults": [
         "Görülebilir kasalar"
       ],
+      "Want to learn more?": [
+        "Ayrıntılı bilgi almak ister misiniz?"
+      ],
       "Weak password": [
         "Parola zayıf"
+      ],
+      "Weak passwords": [
+        "Zayıf parolalar"
       ],
       "Welcome to ${ brandNameJSX }": [
         "${ brandNameJSX } uygulamasına hoş geldiniz"
       ],
       "Welcome to your new password manager!": [
         "Yeni parola yöneticinize hoş geldiniz!"
+      ],
+      "What is an alias?": [
+        "Takma ad nedir?"
+      ],
+      "What is the dark web?": [
+        "Karanlık ağ nedir?"
       ],
       "What is the difference between ${ PASS_SHORT_APP_NAME } note and SimpleLogin note?": [
         "${ PASS_SHORT_APP_NAME } notu ile SimpleLogin notu arasındaki fark nedir?"
@@ -4437,6 +4816,9 @@
       ],
       "Your ${ planName } subscription will end on ${ endDate }": [
         "${ planName } aboneliğiniz ${ endDate } tarihinde sona erecek"
+      ],
+      "Your exposed information": [
+        "Sızdırılmış bilgileriniz"
       ],
       "Your vault is empty": [
         "Kasanız boş"
@@ -4457,6 +4839,14 @@
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Bugün"
+      ]
+    },
+    "Tooltip": {
+      "Not all information listed here was exposed for all users.": [
+        "Burada listelenen tüm bilgiler tüm kullanıcılara görüntülenmez."
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "Şifrelenmiş parolalar, şifreleri çözülmediği sürece açığa çıksalar bile güvende kalırlar."
       ]
     },
     "Validation": {
@@ -4569,6 +4959,9 @@
       "Email cannot be empty": [
         "E-posta adresi boş olamaz"
       ],
+      "Email is required": [
+        "E-posta adresinin yazılması zorunludur"
+      ],
       "Empty note": [
         "Boş not"
       ],
@@ -4583,6 +4976,12 @@
       ],
       "Extra password should have at least 8 characters": [
         "Ek parola en az 8 karakter uzunluğunda olmalıdır"
+      ],
+      "Failed to autotype. Please make sure ${ PASS_APP_NAME } has the necessary permissions and try again (${ error }).": [
+        "Otomatik olarak doldurulamadı. Lütfen ${ PASS_APP_NAME } uygulamasına gerekli izinlerin verildiğinden emin olun ve yeniden deneyin (${ error })."
+      ],
+      "Failed to load breaches.": [
+        "Veri sızıntıları yüklenemedi."
       ],
       "Grant clipboard access to enable automatic clearing of copied passwords and data.": [
         "Kopyalanan parola ve verilerin otomatik olarak temizlenmesi için panoya erişme izni verin."
@@ -4680,6 +5079,9 @@
       ],
       "This alias \"${ aliasEmail }\" is currently used in the login \"${ relatedLoginName }\".": [
         "\"${ aliasEmail }\" takma adı şu anda \"${ relatedLoginName }\" oturumu açmak için kullanılıyor."
+      ],
+      "This email address will no longer be monitored for data breaches.": [
+        "Bu e-posta adresi artık veri sızıntıları için izlenmeyecek."
       ],
       "This item is currently shared. Deleting it will remove access for all other users.": [
         "Bu öge şu anda paylaşılıyor. Silerseniz diğer kullanıcıların erişimi kaldırılacak."

@@ -4,6 +4,26 @@
     "language": "zh_CN"
   },
   "contexts": {
+    "Account Settings - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "检测到 ${ name } 和 ${ remainingCount } 个其他潜在泄漏。打开 ${ DARK_WEB_MONITORING_NAME } 查看详细信息并采取行动。${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "检测到 ${ name } 和 1 个其他潜在泄漏。打开 ${ DARK_WEB_MONITORING_NAME } 查看详细信息并采取行动。${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "检测到潜在的 ${ name } 泄漏。打开 ${ DARK_WEB_MONITORING_NAME } 以查看详细信息并采取措施。${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "检测到来自 ${ name } 的潜在泄漏。打开 ${ DARK_WEB_MONITORING_NAME } 以查看详细信息并采取措施。${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "检测到来自 ${ name } 的潜在泄漏。打开 ${ DARK_WEB_MONITORING_NAME } 以查看详细信息。${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "您的信息至少涉及一次数据泄露。请开启 ${ DARK_WEB_MONITORING_NAME } 查看详情并采取措施。${ link }"
+      ]
+    },
     "Action": {
       "Accept": [
         "接受"
@@ -49,6 +69,9 @@
       ],
       "Add username field": [
         "添加用户名字段"
+      ],
+      "Admin panel": [
+        "管理面板"
       ],
       "Advanced": [
         "高级"
@@ -167,6 +190,9 @@
       "Create a ${ BRAND_NAME } Account": [
         "创建 ${ BRAND_NAME } 账户"
       ],
+      "Create a new vault": [
+        "创建新保险库"
+      ],
       "Create alias": [
         "创建别名"
       ],
@@ -269,6 +295,9 @@
       "Edit vault": [
         "编辑保险库"
       ],
+      "Enable ${ DARK_WEB_MONITORING_NAME }": [
+        "启用 ${ DARK_WEB_MONITORING_NAME }"
+      ],
       "Enable this alias to receive emails sent to this alias": [
         "启用此别名以接收发送到此别名的邮件"
       ],
@@ -302,11 +331,17 @@
       "Generating secure link...": [
         "正在生成安全链接..."
       ],
+      "Get mobile apps": [
+        "获取移动应用"
+      ],
       "Get Pass Business": [
         "获取 Pass Business"
       ],
       "Get Pass Plus": [
         "获取 Pass Plus"
+      ],
+      "Get Started": [
+        "立即体验"
       ],
       "Hide": [
         "隐藏"
@@ -356,6 +391,9 @@
       "Link expires after": [
         "链接过期于"
       ],
+      "Lock ${ PASS_APP_NAME }": [
+        "锁定 ${ PASS_APP_NAME }"
+      ],
       "Lock extension": [
         "锁定扩展"
       ],
@@ -379,6 +417,9 @@
       ],
       "Manually sync your data": [
         "手动同步您的数据"
+      ],
+      "Mark as resolved": [
+        "标记为已解决"
       ],
       "Maximum views": [
         "最大访问次数"
@@ -427,6 +468,12 @@
       ],
       "Open navigation": [
         "打开导航栏"
+      ],
+      "Pass Monitor": [
+        "Pass Monitor"
+      ],
+      "Pause monitoring": [
+        "暂停监测"
       ],
       "Pin item": [
         "固定项"
@@ -502,6 +549,9 @@
       ],
       "Restrict number of views": [
         "限制浏览次数"
+      ],
+      "Resume monitoring": [
+        "恢复监测"
       ],
       "Retry": [
         "重试"
@@ -617,6 +667,9 @@
       "Try again": [
         "重试"
       ],
+      "Try again.": [
+        "重试."
+      ],
       "Unblock contact": [
         "取消屏蔽联系人"
       ],
@@ -661,6 +714,9 @@
       ],
       "View app logs": [
         "查看应用日志"
+      ],
+      "View details": [
+        "查看详细信息"
       ],
       "View history": [
         "查看历史"
@@ -709,6 +765,9 @@
       "${ total } other login uses the same password": [
         "其他 ${ total } 个登录项目使用相同密码"
       ],
+      "2FA adds another layer of security to your logins. ${ PASS_APP_NAME } makes 2FA easier by storing and automatically autofilling your 2FA codes.": [
+        "2FA 给您的登录添加了另一层安全。${ PASS_APP_NAME } 通过储存并自动填充您的 2FA 验证码，让 2FA 变得更简单。"
+      ],
       "A checked box means the feature is disabled.": [
         "选中复选框表示禁用该功能。"
       ],
@@ -721,11 +780,23 @@
       "Add the following TXT DNS record to your domain.": [
         "为您的域名添加以下 TXT DNS 记录。"
       ],
+      "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
+        "邮箱别名的作用与邮箱地址类似，但可以减少垃圾邮件，并隐藏您的真实邮箱地址和身份。"
+      ],
+      "Change your passwords": [
+        "更改密码"
+      ],
+      "Create unique passwords": [
+        "创建唯一密码"
+      ],
       "DKIM ${ WIKIPEDIA_LINK_DKIM } is an email authentication method designed to avoid email spoofing. Setting up DKIM is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
         "DKIM ${ WIKIPEDIA_LINK_DKIM } 是一种电子邮件验证方法，旨在避免电子邮件被欺骗。强烈建议设置 DKIM，以减少您的电子邮件被收件人放入垃圾邮件文件夹的几率。"
       ],
       "DMARC ${ WIKIPEDIA_LINK_DMARC } is designed to protect the domain from unauthorized use, commonly known as email spoofing. Built around SPF and DKIM, a DMARC policy tells the receiving mail server what to do if neither of those authentication methods passes.": [
         "DMARC ${ WIKIPEDIA_LINK_DMARC } 旨在保护域免遭未经授权的使用，也就是通常所说的电子邮件欺骗。DMARC 策略以 SPF 和 DKIM 为基础，告诉接收邮件服务器在这两种验证方法都不通过时该怎么办。"
+      ],
+      "Get notified if your email, password or other personal data was leaked.": [
+        "如果您的电子邮件、密码或其他个人数据被泄露，您会收到通知。"
       ],
       "If you are using a subdomain, e.g. ${ subdomainExample }, you need to use ${ dmarcExampleSubdomain } as the domain instead.": [
         "如果您正在使用子域，例如 ${ subdomainExample }，那么您需要使用 ${ dmarcExampleSubdomain } 作为域名。"
@@ -736,8 +807,17 @@
       "If you are using Cloudflare, please make sure to not select the Proxy option.": [
         "如果使用 Cloudflare，请确保不要选择代理选项。"
       ],
+      "Keep your info more secure and private with these guides and tips.": [
+        "使用这些指南和技巧，让您的信息更安全、更私密。"
+      ],
       "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.${ infoText }": [
         "${ PASS_SHORT_APP_NAME } 中某些自动功能（自动填写、自动建议、自动保存）不应运行的域列表。${ infoText }"
+      ],
+      "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
+        "我们的顶尖安全体系，由人工智能技术驱动，专为寻求高标准安全防护的用户而生。${ learnMoreLink }"
+      ],
+      "Set up 2FA for more security": [
+        "设置 2FA 以获得更多安全"
       ],
       "Some DNS registrar might require a full record path, in this case please use ${ domain } as domain value instead.": [
         "某些 DNS 注册商可能需要完整的记录路径，在这种情况下，请使用 ${ domain } 作为域值。"
@@ -747,6 +827,15 @@
       ],
       "SPF ${ WIKIPEDIA_LINK_SPF } is an email authentication method designed to detect forging sender addresses during the delivery of the email. Setting up SPF is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
         "SPF ${ WIKIPEDIA_LINK_SPF } 是一种电子邮件验证方法，旨在检测电子邮件发送过程中伪造的发件人地址。强烈建议设置 SPF，以减少您的电子邮件被收件人放入垃圾邮件文件夹的几率。"
+      ],
+      "Start monitoring for data breaches related to accounts created with your email address and your hide-my-email aliases.": [
+        "开始监测与您的电子邮件地址和 hide-my-email 别名创建的账户相关的数据泄露。"
+      ],
+      "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
+        "暗网是互联网的一个隐蔽部分，在这里可以买卖被盗的个人信息，比如身份信息。"
+      ],
+      "These items remain at risk": [
+        "这些项目仍然处于危险中"
       ],
       "This account is vulnerable, visit the service and change your password.": [
         "该账户存在漏洞，请访问该服务并更改密码。"
@@ -759,6 +848,15 @@
       ],
       "Unlock advanced security features and detailed logs to safeguard your online presence.": [
         "解锁高级安全功能和详细日志，保护您的在线形象。"
+      ],
+      "With ${ PASS_SHORT_APP_NAME } Monitor, stay ahead of threats by getting instant alerts if your credentials are compromised. Unlock advanced security features and detailed logs to safeguard your online presence.": [
+        "使用 ${ PASS_SHORT_APP_NAME } 监视器，在您的凭证受到威胁时，您会收到即时警报，从而在威胁面前保持领先。解锁高级安全功能和详细日志，保护您的在线形象。"
+      ],
+      "Your email addresses were leaked in at least 1 data breach.": [
+        "您的电子邮件地址在至少一次数据泄露事件中被泄露。"
+      ],
+      "Your personal info was leaked in a data breach of a third-party service.": [
+        "您的个人信息在第三方服务数据泄露事件中被泄露。"
       ]
     },
     "Email": {
@@ -1196,6 +1294,17 @@
         "出错了"
       ]
     },
+    "Feature": {
+      "Integrated 2FA authenticator": [
+        "内置 2FA 验证器"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "无限制地 hide-my-email"
+      ],
+      "Vault sharing (up to ${ MAX_VAULT_MEMBERS } people)": [
+        "密码分享（最多 ${ MAX_VAULT_MEMBERS } 个人）"
+      ]
+    },
     "file size format": {
       "byte": [
         "B"
@@ -1228,6 +1337,17 @@
       ],
       "Terabyte": [
         "TB"
+      ]
+    },
+    "Header": {
+      "Domain": [
+        "域名"
+      ],
+      "Password ends with": [
+        "密码结尾是"
+      ],
+      "Username": [
+        "用户名"
       ]
     },
     "Info": {
@@ -1306,6 +1426,9 @@
       "${ repliedEmailsCount } sent": [
         "${ repliedEmailsCount } 已发送"
       ],
+      "${ row.breachCount } breach detected": [
+        "检测到 ${ row.breachCount } 泄露"
+      ],
       "${ trialDaysLeft } day left": [
         "剩余 ${ trialDaysLeft } 天"
       ],
@@ -1345,6 +1468,9 @@
       "Access your passwords on the go with our mobile apps.": [
         "使用我们的移动应用访问您的密码。"
       ],
+      "Add your custom email address to monitor:": [
+        "添加您的自定义电子邮件地址进行监控："
+      ],
       "Admin": [
         "管理员"
       ],
@@ -1366,11 +1492,17 @@
       "Aliases out of sync (${ aliasCount })": [
         "别名未同步 (${ aliasCount })"
       ],
+      "Aliases with custom domains are not monitored, please add them as a custom email for monitoring.": [
+        "自定义域名的别名不受监控，请将其添加为自定义电子邮件以便监控。"
+      ],
       "All aliases using the mailbox ${ emailJSX } will be also deleted.": [
         "使用邮箱 ${ emailJSX } 的所有别名也将被删除。"
       ],
       "All breaches for this address were resolved": [
         "该地址的所有泄露问题均已解决"
+      ],
+      "All current breaches will be marked as resolved. In case of future data breaches, you'll be notified.": [
+        "所有当前的数据泄露事件都将被标记为已解决。如果将来发生数据泄露，我们将通知您。"
       ],
       "All inactive secure links were removed": [
         "所有不活动的安全链接都已删除"
@@ -1423,6 +1555,9 @@
       "Biometrics will be disabled and will need to be enabled again.": [
         "生物识别将被禁用，需要重新启用。"
       ],
+      "Breaches detected": [
+        "检测到的泄露行为"
+      ],
       "Bring your own domain and you don't have to buy yet another email hosting solution.": [
         "自带域名，无需再购买其他电子邮件托管解决方案。"
       ],
@@ -1458,6 +1593,9 @@
       ],
       "Can view this item.": [
         "可以查看此项目。"
+      ],
+      "Change your password": [
+        "更改密码"
       ],
       "Choose a saved passkey to sign-in to ${ domain }": [
         "请选择一个保存的密钥以登录到 ${ domain }"
@@ -1522,9 +1660,6 @@
       "Disabling offline mode...": [
         "正在关闭离线模式..."
       ],
-      "Discover ${ PASS_APP_NAME } Youtube Video": [
-        "发现 ${ PASS_APP_NAME } Youtube 视频"
-      ],
       "DNS changes could take up to 24 hours to update.": [
         "DNS更改可能需要长达24小时才能更新。"
       ],
@@ -1542,6 +1677,9 @@
       ],
       "Editor": [
         "编辑者"
+      ],
+      "email": [
+        "电子邮箱"
       ],
       "Email address successfully deleted from monitoring": [
         "从监测中成功删除电子邮件地址"
@@ -1621,6 +1759,9 @@
       "Fill in the CSV with your data": [
         "在 CSV 中填入您的数据"
       ],
+      "finance": [
+        "金融"
+      ],
       "Follow those steps to import your data with a generic CSV:": [
         "按照这些步骤使用通用 CSV 导入数据："
       ],
@@ -1656,6 +1797,12 @@
       ],
       "Here's how it works:": [
         "具体操作如下："
+      ],
+      "High Priority": [
+        "首要优先顺序"
+      ],
+      "How does monitoring work?": [
+        "监测原理是什么？"
       ],
       "Identity confirmed": [
         "身份已确认"
@@ -1726,6 +1873,12 @@
       "Item successfully unpinned": [
         "项目成功取消固定"
       ],
+      "Latest breach on ${ formattedDate }": [
+        "最近一次泄露的时间 ${ formattedDate }"
+      ],
+      "Learn what to do ${ dataLeakedLink }": [
+        "请通过 ${ dataLeakedLink } 了解应对措施"
+      ],
       "Leaving item...": [
         "正在离开项目..."
       ],
@@ -1744,11 +1897,20 @@
       "Loading...": [
         "加载中..."
       ],
+      "Low Priority": [
+        "较低优先顺序"
+      ],
       "Manager": [
         "管理员"
       ],
       "me": [
         "我"
+      ],
+      "Medium Priority": [
+        "中等优先顺序"
+      ],
+      "Monitor accounts": [
+        "监控账户"
       ],
       "Monitoring settings successfully updated": [
         "监测设置已更新"
@@ -1761,6 +1923,9 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "正在从 \"${ payload.content.name }\" 移动所有项目"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "将项目移至其他保险库会清除其安全链接。"
       ],
       "Moving items": [
         "正在移动"
@@ -1779,6 +1944,9 @@
       ],
       "Never": [
         "从不"
+      ],
+      "No breaches detected": [
+        "未检测到数据泄露"
       ],
       "No identity item found": [
         "未找到身份信息"
@@ -1810,6 +1978,9 @@
       "Open the Extensions menu": [
         "打开扩展菜单"
       ],
+      "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "我们的警报以安全为先。若您不认识任何被泄露的信息，则可以安全地忽略这份报告。"
+      ],
       "Owner": [
         "所有者"
       ],
@@ -1822,6 +1993,9 @@
       "Passkey sign-in": [
         "密钥登录"
       ],
+      "password": [
+        "密码"
+      ],
       "Password copied": [
         "密码已复制"
       ],
@@ -1830,6 +2004,9 @@
       ],
       "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
         "超过 ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } 周的密码将自动从历史记录中删除。"
+      ],
+      "Paused": [
+        "已暂停"
       ],
       "Pending access to the shared data": [
         "等待访问共享数据"
@@ -2083,6 +2260,9 @@
       "Successfully synced all vaults": [
         "所有保险库已同步成功"
       ],
+      "Suggested": [
+        "建议"
+      ],
       "Switch to another vault or create an item in this vault": [
         "切换到另一个保险库或在此保险库中创建一个项目"
       ],
@@ -2103,6 +2283,9 @@
       ],
       "The exported file will be encrypted using PGP and requires a strong passphrase.": [
         "导出的文件将使用 PGP 加密，需要一个强大的口令。"
+      ],
+      "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
+        "所暴露的信息是从第三方服务泄露的。您的 ${ BRAND_NAME } 账户信息仍然安全且被加密。${ learnMoreLink }"
       ],
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "使用 ${ PASS_APP_NAME } 时需要输入额外密码。它是 ${ BRAND_NAME } 密码之外的附加密码。"
@@ -2230,6 +2413,9 @@
       "User's access successfully updated": [
         "用户访问权限成功更新"
       ],
+      "username": [
+        "用户名"
+      ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "保险库 “${ payload.content.name }” 成功删除"
       ],
@@ -2247,6 +2433,9 @@
       ],
       "Verification code": [
         "验证码验证码"
+      ],
+      "Verification code sent.": [
+        "验证码已发送。"
       ],
       "Viewer": [
         "查看者"
@@ -2317,6 +2506,18 @@
       "You will be logged out and need to log in again on all of your other devices.": [
         "您将被注销并需要在所有其他设备上重新登录。"
       ],
+      "You will be notified of data breaches for these email addresses.": [
+        "您将收到这些电子邮件地址的数据泄露通知。"
+      ],
+      "You will be notified of data breaches for this email address.": [
+        "您将收到有关此电子邮件地址数据泄露的通知。"
+      ],
+      "You will no longer be notified of data breaches for these email addresses.": [
+        "您将不再收到这些电子邮件地址的数据泄露通知。"
+      ],
+      "You will no longer be notified of data breaches for this email address.": [
+        "您将不再收到该电子邮件地址的数据泄露通知。"
+      ],
       "You will no longer have access to sharing, 2FA, credit card and other advanced features in ${ PASS_APP_NAME }": [
         "您将无法再访问 ${ PASS_APP_NAME } 中的共享、2FA、信用卡和其他高级功能"
       ],
@@ -2340,6 +2541,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "文件会加密保存"
+      ],
+      "Your information was found on ${ displayedDate }": [
+        "您的信息在 ${ displayedDate } 找到"
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "您的组织要求您确保您对 ${ PASS_APP_NAME }的访问"
@@ -2390,6 +2594,9 @@
       ],
       "${ secureLinksCount } secure link": [
         "${ secureLinksCount }安全链接"
+      ],
+      "${ usageCount } login": [
+        "${ usageCount } 登录项目"
       ],
       "${ years } year": [
         "${ years } 年"
@@ -2688,6 +2895,9 @@
       "Email (new alias)": [
         "电子邮件 (新别名)"
       ],
+      "Email address": [
+        "邮箱地址"
+      ],
       "Email aliases": [
         "个邮箱别名"
       ],
@@ -2756,6 +2966,9 @@
       ],
       "Generic CSV": [
         "通用 CSV"
+      ],
+      "Get Started": [
+        "立即体验"
       ],
       "Grant": [
         "授权"
@@ -2867,6 +3080,9 @@
       ],
       "Last name": [
         "姓"
+      ],
+      "Last updated": [
+        "上次更新于"
       ],
       "Last week": [
         "上周"
@@ -3249,6 +3465,9 @@
       "State or province": [
         "省、自治区或直辖市"
       ],
+      "Status": [
+        "状态"
+      ],
       "Street address": [
         "街道地址"
       ],
@@ -3357,6 +3576,9 @@
       "Use ${ PASS_APP_NAME } as your browser's default password manager": [
         "使用 ${ PASS_APP_NAME } 作为浏览器的默认密码管理器"
       ],
+      "Used in": [
+        "已用于"
+      ],
       "Useful for permanent sharing": [
         "有利于永久共享"
       ],
@@ -3371,6 +3593,9 @@
       ],
       "Vault ID": [
         "保险库 ID"
+      ],
+      "Vaults": [
+        "保险库"
       ],
       "View details": [
         "查看详细信息"
@@ -3430,6 +3655,17 @@
     "Link": {
       "auto create rules ››": [
         "自动创建规则 ››"
+      ],
+      "if your data is leaked": [
+        "如果您的数据遭到泄露"
+      ],
+      "Learn more": [
+        "了解详情"
+      ]
+    },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "启用 ${ reason }"
       ]
     },
     "Message": {
@@ -3441,6 +3677,22 @@
       ],
       "You selected ${ semiboldText } in this vault.": [
         "您在此保险库中选择了 ${ semiboldText }。"
+      ]
+    },
+    "new_plans: feature": {
+      "Require 2FA for organization": [
+        "可要求机构全员开启 2FA"
+      ],
+      "SSO integration": [
+        "SSO 集成"
+      ]
+    },
+    "Notification": {
+      "${ reason } has been disabled": [
+        "${ reason } 已停用"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } 已启用"
       ]
     },
     "Onboarding": {
@@ -3700,6 +3952,20 @@
         "用于 ${ url }"
       ]
     },
+    "Security Center - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "检测到 ${ name } 和 ${ remainingCount } 个其他潜在泄露。打开 ${ DARK_WEB_MONITORING_NAME } 以查看详细信息。${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "检测到 ${ name } 和 1 个其他潜在泄露。打开 ${ DARK_WEB_MONITORING_NAME } 以查看详细信息。${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "检测到来自 ${ name } 的潜在泄露。打开 ${ DARK_WEB_MONITORING_NAME } 以查看详细信息。${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "您的信息至少涉及一次数据泄露。请打开 ${ DARK_WEB_MONITORING_NAME } 以查看详细信息。${ link }"
+      ]
+    },
     "sso": {
       "Approve or deny it now": [
         "立即批准或否决"
@@ -3841,11 +4107,20 @@
       ]
     },
     "Title": {
+      "${ BRAND_NAME } addresses": [
+        "${ BRAND_NAME } 个地址"
+      ],
       "${ PASS_APP_NAME } Logs": [
         "${ PASS_APP_NAME } 日志"
       ],
       "${ PASS_APP_NAME } Settings": [
         "${ PASS_APP_NAME } 设置"
+      ],
+      "${ PASS_SHORT_APP_NAME } Monitor": [
+        "${ PASS_SHORT_APP_NAME } 监视器"
+      ],
+      "Account protection": [
+        "账户保护"
       ],
       "Actions": [
         "操作"
@@ -3876,6 +4151,15 @@
       ],
       "Blocked addresses": [
         "屏蔽名单"
+      ],
+      "Breach detected": [
+        "已监测到泄露信息"
+      ],
+      "Breaches": [
+        "泄露信息"
+      ],
+      "Breaches detected for": [
+        "检测到的泄露信息"
       ],
       "Cancel changing your email?": [
         "取消更改您的邮箱？"
@@ -3916,8 +4200,17 @@
       "Current version": [
         "当前版本"
       ],
+      "Custom addresses": [
+        "自定义地址"
+      ],
       "Custom domains": [
         "自定义域名"
+      ],
+      "Custom email monitoring": [
+        "自定义电子邮件监测"
+      ],
+      "Custom emails": [
+        "自定义电子邮件"
       ],
       "Default": [
         "默认"
@@ -3985,6 +4278,9 @@
       "Enter your second password": [
         "输入您的二次密码"
       ],
+      "Excluded items": [
+        "不包括的项目"
+      ],
       "Fill & copy password": [
         "填写并复制密码"
       ],
@@ -4003,6 +4299,9 @@
       "Hide my email": [
         "隐藏我的邮箱"
       ],
+      "Hide-my-email aliases": [
+        "个hide-my-email别名"
+      ],
       "History": [
         "历史记录"
       ],
@@ -4017,6 +4316,12 @@
       ],
       "Importing your data": [
         "正在导入您的数据"
+      ],
+      "Inactive 2FA": [
+        "未启用 2FA"
+      ],
+      "Information exposed in breach": [
+        "数据外泄事件中泄露的信息"
       ],
       "Item": [
         "项目"
@@ -4033,6 +4338,9 @@
       "Leave vault?": [
         "离开保险库?"
       ],
+      "Loading breaches...": [
+        "正在加载泄露信息..."
+      ],
       "Log in as...": [
         "登录为..."
       ],
@@ -4041,6 +4349,9 @@
       ],
       "Mailbox": [
         "邮箱"
+      ],
+      "Mark as resolved?": [
+        "标记为已解决?"
       ],
       "Member limit": [
         "成员上限"
@@ -4069,14 +4380,32 @@
       "MX record": [
         "MX 记录"
       ],
+      "Next": [
+        "下一页"
+      ],
+      "No excluded items": [
+        "无除外项目"
+      ],
+      "No inactive 2FAs": [
+        "没有未激活的 2FA"
+      ],
+      "No insecure passwords": [
+        "没有不安全的密码"
+      ],
       "No items selected": [
         "未选择任何项目"
+      ],
+      "No reused passwords": [
+        "没有重复使用的密码"
       ],
       "No shared items": [
         "没有共享的项目"
       ],
       "No shared secure links": [
         "没有共享的安全链接"
+      ],
+      "Open pagination": [
+        "选择页码"
       ],
       "Our welcome gift to you": [
         "我们送给您的欢迎礼物"
@@ -4086,6 +4415,12 @@
       ],
       "Password": [
         "密码"
+      ],
+      "Password Health": [
+        "密码安全"
+      ],
+      "Pause monitoring?": [
+        "暂停监测?"
       ],
       "Pending access confirmation": [
         "正在等待访问确认"
@@ -4105,11 +4440,20 @@
       "Please note that once deleted, the alias can't be restored.": [
         "请注意，别名一旦删除就无法恢复。"
       ],
+      "Previous": [
+        "上一页"
+      ],
       "Random Prefix Generation": [
         "随机前缀生成"
       ],
+      "Recommended actions": [
+        "建议采取的行动"
+      ],
       "Reject device?": [
         "剔除设备？"
+      ],
+      "Remove email address?": [
+        "移除电子邮件地址？"
       ],
       "Remove extra password": [
         "移除额外密码"
@@ -4120,8 +4464,20 @@
       "Reset history for this item?": [
         "重置此项目的历史记录？"
       ],
+      "Resolved breaches": [
+        "已解决的泄露信息"
+      ],
       "Restore this version?": [
         "恢复此版本?"
+      ],
+      "Resume monitoring?": [
+        "恢复监测?"
+      ],
+      "Reused ${ count } time": [
+        "重复使用 ${ count } 次"
+      ],
+      "Reused passwords": [
+        "重复使用的密码"
       ],
       "Review and share": [
         "回顾与分享"
@@ -4138,8 +4494,14 @@
       "Set extra password": [
         "设置额外密码"
       ],
+      "Set up 2FA for better security": [
+        "设置 2FA 以获得更多安全"
+      ],
       "Set up 2FA for more security": [
         "设置 2FA 以获得更多安全"
+      ],
+      "Settings": [
+        "设置"
       ],
       "Share with": [
         "分享给"
@@ -4201,7 +4563,13 @@
       "Vault shared with you": [
         "与您共享的保险库"
       ],
+      "Want to learn more?": [
+        "想详细了解？"
+      ],
       "Weak password": [
+        "弱密码"
+      ],
+      "Weak passwords": [
         "弱密码"
       ],
       "Welcome to ${ brandNameJSX }": [
@@ -4209,6 +4577,12 @@
       ],
       "Welcome to your new password manager!": [
         "欢迎来到您新的密码管理器！"
+      ],
+      "What is an alias?": [
+        "什么是邮箱别名？"
+      ],
+      "What is the dark web?": [
+        "什么是暗网？"
       ],
       "What is the difference between ${ PASS_SHORT_APP_NAME } note and SimpleLogin note?": [
         "${ PASS_SHORT_APP_NAME } 笔记和 SimpleLogin 笔记之间有什么区别？"
@@ -4218,6 +4592,9 @@
       ],
       "Your ${ planName } subscription will end on ${ endDate }": [
         "您的 ${ planName } 订阅将在 ${ endDate } 结束"
+      ],
+      "Your exposed information": [
+        "您的泄露信息"
       ],
       "Your vault is empty": [
         "您的保险库是空的"
@@ -4232,6 +4609,14 @@
     "Today icon tooltip in mini calendar": {
       "Today": [
         "今天"
+      ]
+    },
+    "Tooltip": {
+      "Not all information listed here was exposed for all users.": [
+        "并非所有用户都能查看此处列出的全部信息。"
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "只要未被破译，即便加密密码遭到泄露，它们依然安全无虞。"
       ]
     },
     "Validation": {
@@ -4341,6 +4726,9 @@
       "Email cannot be empty": [
         "邮箱地址不能为空"
       ],
+      "Email is required": [
+        "电子邮件为必填项"
+      ],
       "Empty note": [
         "空注"
       ],
@@ -4355,6 +4743,12 @@
       ],
       "Extra password should have at least 8 characters": [
         "额外密码至少要有 8 个字符"
+      ],
+      "Failed to autotype. Please make sure ${ PASS_APP_NAME } has the necessary permissions and try again (${ error }).": [
+        "自动填充失败。请确保 ${ PASS_APP_NAME } 拥有所需权限，并重试（${ error }）。"
+      ],
+      "Failed to load breaches.": [
+        "加载泄露信息失败"
       ],
       "Invalid alias prefix": [
         "无效的别名前缀"
@@ -4448,6 +4842,9 @@
       ],
       "This alias \"${ aliasEmail }\" is currently used in the login \"${ relatedLoginName }\".": [
         "此别名 \"${ aliasEmail }\" 目前用于登录 \"${ relatedLoginName }\"。"
+      ],
+      "This email address will no longer be monitored for data breaches.": [
+        "该电子邮件地址将不再受到数据泄露监测。"
       ],
       "This item is currently shared. Deleting it will remove access for all other users.": [
         "此项目目前是共享的。删除它将取消所有其他用户的访问权限。"

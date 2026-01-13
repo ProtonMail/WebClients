@@ -4,6 +4,26 @@
     "language": "cs_CZ"
   },
   "contexts": {
+    "Account Settings - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Byl zjištěn potenciální únik ${ name } a ${ remainingCount } dalších. Zapněte ${ DARK_WEB_MONITORING_NAME } pro zobrazení podrobností a provedení akce. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Byl zjištěn potenciální únik ${ name } a 1 další. Zapněte ${ DARK_WEB_MONITORING_NAME } pro zobrazení podrobností a provedení akce. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Byl zjištěn potenciální únik ${ name }. Zapněte ${ DARK_WEB_MONITORING_NAME } pro zobrazení podrobností a provedení akce. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Byl zjištěn potenciální únik z ${ name }. Zapněte ${ DARK_WEB_MONITORING_NAME } pro zobrazení podrobností a provedení akce. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Byl zjištěn potenciální únik z ${ name }. Zapněte ${ DARK_WEB_MONITORING_NAME } pro zobrazení podrobností. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Vaše údaje byly nalezeny při nejméně jednom úniku informací. Zapnutím ${ DARK_WEB_MONITORING_NAME } zobrazíte podrobnosti a provedete akci. ${ link }"
+      ]
+    },
     "Action": {
       "${ PASS_SHORT_APP_NAME } for Android": [
         "${ PASS_SHORT_APP_NAME } pro Android"
@@ -55,6 +75,9 @@
       ],
       "Add username field": [
         "Přidat pole uživatelského jména"
+      ],
+      "Admin panel": [
+        "Panel správce"
       ],
       "Advanced": [
         "Pokročilé"
@@ -197,6 +220,9 @@
       "Create a ${ BRAND_NAME } Account": [
         "Vytvořte účet ${ BRAND_NAME }"
       ],
+      "Create a new vault": [
+        "Vytvořit nový trezor"
+      ],
       "Create alias": [
         "Vytvořit alias"
       ],
@@ -305,6 +331,9 @@
       "Edit vault": [
         "Upravit trezor"
       ],
+      "Enable ${ DARK_WEB_MONITORING_NAME }": [
+        "Povolit ${ DARK_WEB_MONITORING_NAME }"
+      ],
       "Enable this alias to receive emails sent to this alias": [
         "Povolte tento alias pro příjem e-mailů odesílaných na tento alias"
       ],
@@ -341,11 +370,17 @@
       "Get mobile and desktop apps": [
         "Získat mobilní a desktopové aplikace"
       ],
+      "Get mobile apps": [
+        "Získat mobilní aplikace"
+      ],
       "Get Pass Business": [
         "Získat Pass Business"
       ],
       "Get Pass Plus": [
         "Získejte Pass Plus"
+      ],
+      "Get Started": [
+        "Začínáme"
       ],
       "Hide": [
         "Skrýt"
@@ -395,6 +430,9 @@
       "Link expires after": [
         "Odkazu vyprší platnost za"
       ],
+      "Lock ${ PASS_APP_NAME }": [
+        "Uzamknout ${ PASS_APP_NAME }"
+      ],
       "Lock extension": [
         "Zamknout rozšíření"
       ],
@@ -418,6 +456,9 @@
       ],
       "Manually sync your data": [
         "Manuálně synchronizovat"
+      ],
+      "Mark as resolved": [
+        "Označit jako vyřešené"
       ],
       "Maximum views": [
         "Maximální počet zobrazení"
@@ -469,6 +510,12 @@
       ],
       "Organize vaults": [
         "Organizovat trezory"
+      ],
+      "Pass Monitor": [
+        "Pass Monitor"
+      ],
+      "Pause monitoring": [
+        "Pozastavit sledování"
       ],
       "Pin item": [
         "Připnout položku"
@@ -544,6 +591,9 @@
       ],
       "Restrict number of views": [
         "Omezit počet zobrazení"
+      ],
+      "Resume monitoring": [
+        "Obnovit sledování"
       ],
       "Retry": [
         "Opakovat"
@@ -662,6 +712,9 @@
       "Try again": [
         "Zkuste to znovu"
       ],
+      "Try again.": [
+        "Zkusit znovu."
+      ],
       "Unblock contact": [
         "Odblokovat kontakt"
       ],
@@ -709,6 +762,9 @@
       ],
       "View app logs": [
         "Prohlédnout logy aplikace"
+      ],
+      "View details": [
+        "Zobrazit podrobnosti"
       ],
       "View history": [
         "Zobrazit historii"
@@ -765,6 +821,9 @@
         "${ total } jiných přihlášení používá stejné heslo",
         "${ total } jiných přihlášení používá stejné heslo"
       ],
+      "2FA adds another layer of security to your logins. ${ PASS_APP_NAME } makes 2FA easier by storing and automatically autofilling your 2FA codes.": [
+        "2FA přidává další úroveň zabezpečení k vašim přihlašovacím údajům. ${ PASS_APP_NAME } usnadňuje 2FA tím, že uchovává a automaticky vyplňuje kódy 2FA."
+      ],
       "A checked box means the feature is disabled.": [
         "Zaškrtnuté políčko znamená, že je funkce deaktivována."
       ],
@@ -777,11 +836,23 @@
       "Add the following TXT DNS record to your domain.": [
         "Přidejte do své domény následující záznam TXT DNS."
       ],
+      "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
+        "E-mailový alias funguje stejně jako e-mailová adresa, ale omezuje šíření spamu a udržuje vaši skutečnou e-mailovou adresu a identitu skrytou."
+      ],
+      "Change your passwords": [
+        "Změňte svá hesla"
+      ],
+      "Create unique passwords": [
+        "Vytvářejte jedinečná hesla"
+      ],
       "DKIM ${ WIKIPEDIA_LINK_DKIM } is an email authentication method designed to avoid email spoofing. Setting up DKIM is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
         "DKIM ${ WIKIPEDIA_LINK_DKIM } je metoda ověřování e-mailů určená k zamezení falšování e-mailů. Nastavení DKIM se důrazně doporučuje, aby se snížila pravděpodobnost, že vaše e-maily skončí ve spamu příjemce."
       ],
       "DMARC ${ WIKIPEDIA_LINK_DMARC } is designed to protect the domain from unauthorized use, commonly known as email spoofing. Built around SPF and DKIM, a DMARC policy tells the receiving mail server what to do if neither of those authentication methods passes.": [
         "DMARC ${ WIKIPEDIA_LINK_DMARC } je určen k ochraně domény před neoprávněným použitím, které je běžně známé jako podvržení e-mailu. Zásada DMARC, která je postavena na metodách SPF a DKIM, říká přijímajícímu poštovnímu serveru, co má dělat, pokud ani jedna z těchto metod ověřování neprojde."
+      ],
+      "Get notified if your email, password or other personal data was leaked.": [
+        "Buďte upozorněni, pokud dojde k úniku vašeho e-mailu, hesla nebo jiných osobních údajů."
       ],
       "If you are using a subdomain, e.g. ${ subdomainExample }, you need to use ${ dmarcExampleSubdomain } as the domain instead.": [
         "Pokud používáte subdoménu, např. ${ subdomainExample }, musíte místo ní použít ${ dmarcExampleSubdomain } jako doménu."
@@ -792,8 +863,17 @@
       "If you are using Cloudflare, please make sure to not select the Proxy option.": [
         "Pokud používáte Cloudflare, ujistěte se, že není vybrána možnost Proxy."
       ],
+      "Keep your info more secure and private with these guides and tips.": [
+        "Udržujte své informace v bezpečí a soukromí pomocí těchto návodů a tipů."
+      ],
       "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.${ infoText }": [
         "Seznam domén, na kterých by neměly být spuštěny automatické funkce ${ PASS_SHORT_APP_NAME } (automatické vyplňování, automatické doporučení, automatické uložení).${ infoText }"
+      ],
+      "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
+        "Naše špičkové řešení s pomocí umělé inteligence zaměřené na uživatele, kteří vyžadují zvýšenou ochranu svých účtů. ${ learnMoreLink }"
+      ],
+      "Set up 2FA for more security": [
+        "Nastavte 2FA pro větší zabezpečení"
       ],
       "Some DNS registrar might require a full record path, in this case please use ${ domain } as domain value instead.": [
         "Někteří registrátoři DNS mohou vyžadovat úplnou cestu k záznamu, v takovém případě použijte ${ domain } jako hodnotu domény."
@@ -803,6 +883,15 @@
       ],
       "SPF ${ WIKIPEDIA_LINK_SPF } is an email authentication method designed to detect forging sender addresses during the delivery of the email. Setting up SPF is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
         "SPF ${ WIKIPEDIA_LINK_SPF } je metoda ověřování e-mailů určená k odhalování podvržených adres odesílatele během doručování e-mailu. Nastavení SPF se důrazně doporučuje, aby se snížila pravděpodobnost, že vaše e-maily skončí ve spamu příjemce."
+      ],
+      "Start monitoring for data breaches related to accounts created with your email address and your hide-my-email aliases.": [
+        "Začněte sledovat úniky informací, jejichž součástí jsou účty používající vaši e-mailovou addresu a aliasy Hide-my-email."
+      ],
+      "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
+        "Dark web je skrytá část internetu, kde lze koupit a prodat ukradené osobní údaje, například identitu."
+      ],
+      "These items remain at risk": [
+        "Tyto položky jsou nadále rizikové"
       ],
       "These vaults will not be accessible and their content won’t be available to Search or Autofill.": [
         "Tyto trezory nebudou přístupné a jejich obsah nebude k dispozici pro vyhledávání ani automatické vyplňování."
@@ -818,6 +907,15 @@
       ],
       "Unlock advanced security features and detailed logs to safeguard your online presence.": [
         "Odemkněte pokročilé funkce zabezpečení a podrobné logy, abyste zabezpečili svou online přítomnost."
+      ],
+      "With ${ PASS_SHORT_APP_NAME } Monitor, stay ahead of threats by getting instant alerts if your credentials are compromised. Unlock advanced security features and detailed logs to safeguard your online presence.": [
+        "Pomocí ${ PASS_SHORT_APP_NAME } Monitoru můžete mít před hrozbami náskok díky okamžitým upozorněním při kompromitaci vašich přihlašovacích údajů. Odemkněte pokročilé bezpečnostní funkce a podrobné logy pro ochranu vaší přítomnosti na internetu."
+      ],
+      "Your email addresses were leaked in at least 1 data breach.": [
+        "Vaše e-mailové adresy unikly nejméně při 1 úniku informací."
+      ],
+      "Your personal info was leaked in a data breach of a third-party service.": [
+        "Vaše soukromé informace jsou součástí úniku informací ze služby třetí strany."
       ]
     },
     "Email": {
@@ -1276,6 +1374,17 @@
         "Něco se pokazilo"
       ]
     },
+    "Feature": {
+      "Integrated 2FA authenticator": [
+        "Integrované ověřování 2FA"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Neomezený počet aliasů Hide-my-email"
+      ],
+      "Vault sharing (up to ${ MAX_VAULT_MEMBERS } people)": [
+        "Sdílení trezoru (až ${ MAX_VAULT_MEMBERS } osob)"
+      ]
+    },
     "file size format": {
       "byte": [
         "bajt",
@@ -1326,6 +1435,17 @@
         "Terabajty",
         "Terabajtů",
         "Terabajtů"
+      ]
+    },
+    "Header": {
+      "Domain": [
+        "Doména"
+      ],
+      "Password ends with": [
+        "Heslo končí na"
+      ],
+      "Username": [
+        "Uživatelské jméno"
       ]
     },
     "Info": {
@@ -1431,6 +1551,12 @@
         "${ repliedEmailsCount } odesláno",
         "${ repliedEmailsCount } odesláno"
       ],
+      "${ row.breachCount } breach detected": [
+        "Zjištěn ${ row.breachCount } únik informací",
+        "Zjištěny ${ row.breachCount } úniky informací",
+        "Zjištěno ${ row.breachCount } úniků informací",
+        "Zjištěno ${ row.breachCount } úniků informací"
+      ],
       "${ trialDaysLeft } day left": [
         "Zbývá ${ trialDaysLeft } den",
         "Zbývají ${ trialDaysLeft } dny",
@@ -1476,8 +1602,14 @@
       "Access your passwords on the go with our mobile apps.": [
         "Pomocí našich mobilních aplikací přistupujte ke svým heslům i na cestách."
       ],
+      "Add your custom email address to monitor:": [
+        "Přidejte vlastní e-mailovou adresu pro sledování:"
+      ],
       "Admin": [
         "Správce"
+      ],
+      "After confirming, you will need to accept a permission prompt for ${ PASS_APP_NAME }.": [
+        "Po potvrzení bude potřeba váš souhlas s udělením oprávnění ${ PASS_APP_NAME }."
       ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Po úspěšném importu vašich dat můžete z bezpečnostních důvodů smazat CSV soubor obsahující vaše hesla."
@@ -1497,11 +1629,17 @@
       "Aliases out of sync (${ aliasCount })": [
         "Nesynchronizované aliasy (${ aliasCount })"
       ],
+      "Aliases with custom domains are not monitored, please add them as a custom email for monitoring.": [
+        "Aliasy s vlastními doménami nejsou sledovány, pro sledování je prosím přidejte jako vlastní e-mail."
+      ],
       "All aliases using the mailbox ${ emailJSX } will be also deleted.": [
         "Všechny aliasy používající e-mailovou schránku ${ emailJSX } budou také smazány."
       ],
       "All breaches for this address were resolved": [
         "Všechny úniky informací pro tuto adresu byly vyřešeny"
+      ],
+      "All current breaches will be marked as resolved. In case of future data breaches, you'll be notified.": [
+        "Všechny stávající úniky informací budou označeny jako vyřešené. V případě budoucích úniků informací budete informováni."
       ],
       "All inactive secure links were removed": [
         "Všechny neaktivních bezpečné odkazy byly odebrány"
@@ -1557,6 +1695,9 @@
       "Biometrics will be disabled and will need to be enabled again.": [
         "Biometrie bude deaktivována a bude potřeba ji znovu povolit."
       ],
+      "Breaches detected": [
+        "Zjištěny úniky informací"
+      ],
       "Bring your own domain and you don't have to buy yet another email hosting solution.": [
         "Přidejte si vlastní doménu a nemusíte kupovat další řešení e-mailového hostingu."
       ],
@@ -1592,6 +1733,9 @@
       ],
       "Can view this item.": [
         "Může zobrazit tuto položku."
+      ],
+      "Change your password": [
+        "Změňte své heslo"
       ],
       "Choose a saved passkey to sign-in to ${ domain }": [
         "Vyberte uložený přístupový klíč pro přihlášení k ${ domain }"
@@ -1659,8 +1803,8 @@
       "Disabling offline mode...": [
         "Deaktivace režimu offline..."
       ],
-      "Discover ${ PASS_APP_NAME } Youtube Video": [
-        "Objevte ${ PASS_APP_NAME } Youtube video"
+      "Discover ${ PASS_APP_NAME } video": [
+        "Objevte video ${ PASS_APP_NAME }"
       ],
       "DNS changes could take up to 24 hours to update.": [
         "Aktualizace změn DNS může trvat až 24 hodin."
@@ -1679,6 +1823,9 @@
       ],
       "Editor": [
         "Editor"
+      ],
+      "email": [
+        "e-mail"
       ],
       "Email address successfully deleted from monitoring": [
         "E-mailová adresa úspěšně smazána ze sledování"
@@ -1761,6 +1908,9 @@
       "Fill in the CSV with your data": [
         "Vyplňte CSV vašimi daty"
       ],
+      "finance": [
+        "finance"
+      ],
       "Follow those steps to import your data with a generic CSV:": [
         "Postupujte podle těchto kroků pro import vašich dat pomocí obecného CSV:"
       ],
@@ -1802,6 +1952,12 @@
       ],
       "Here's how it works:": [
         "Funguje to takto:"
+      ],
+      "High Priority": [
+        "Vysoká priorita"
+      ],
+      "How does monitoring work?": [
+        "Jak sledování funguje?"
       ],
       "Identity confirmed": [
         "Identita potvrzena"
@@ -1875,6 +2031,12 @@
       "Item successfully unpinned": [
         "Položka úspěšně odepnuta"
       ],
+      "Latest breach on ${ formattedDate }": [
+        "Poslední únik informací v(e) ${ formattedDate }"
+      ],
+      "Learn what to do ${ dataLeakedLink }": [
+        "Zjistěte, co dělat, ${ dataLeakedLink }"
+      ],
       "Leaving item...": [
         "Opouštění položky..."
       ],
@@ -1893,11 +2055,20 @@
       "Loading...": [
         "Načítání..."
       ],
+      "Low Priority": [
+        "Nízká priorita"
+      ],
       "Manager": [
         "Správce"
       ],
       "me": [
         "já"
+      ],
+      "Medium Priority": [
+        "Střední priorita"
+      ],
+      "Monitor accounts": [
+        "Sledování účtů"
       ],
       "Monitoring settings successfully updated": [
         "Nastavení sledování úspěšně aktualizováno"
@@ -1915,10 +2086,7 @@
         "Přesouvání všech položek z \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Přesunutím položky do jiného trezoru se smažou její bezpečné odkazy.",
-        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy.",
-        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy.",
-        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy."
+        "Přesunutím položky do jiného trezoru se smažou její bezpečné odkazy."
       ],
       "Moving items": [
         "Přesouvání položek"
@@ -1940,6 +2108,9 @@
       ],
       "Never": [
         "Nikdy"
+      ],
+      "No breaches detected": [
+        "Žádné úniky informací nebyly zjištěny"
       ],
       "No credit cards found": [
         "Nebyly nalezeny žádné platební karty"
@@ -1977,6 +2148,9 @@
       "Open the Safari settings, find ${ PASS_APP_NAME }, go to \"Permissions\" and enable site permissions.": [
         "Otevřete nastavení Safari, vyhledejte ${ PASS_APP_NAME }, přejděte na \"Oprávnění\" a povolte oprávnění webu."
       ],
+      "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Prioritou našich upozornění je bezpečnost. Pokud nepoznáváte žádné z uniklých informací, můžete tuto zprávu bez obav ignorovat."
+      ],
       "Owner": [
         "Vlastník"
       ],
@@ -1989,6 +2163,9 @@
       "Passkey sign-in": [
         "Přihlášení pomocí přístupového klíče"
       ],
+      "password": [
+        "heslo"
+      ],
       "Password copied": [
         "Heslo zkopírováno"
       ],
@@ -2000,6 +2177,9 @@
         "Hesla starší než ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } týdny budou z historie automaticky smazána.",
         "Hesla starší než ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } týdnů budou z historie automaticky smazána.",
         "Hesla starší než ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } týdnů budou z historie automaticky smazána."
+      ],
+      "Paused": [
+        "Pozastaveno"
       ],
       "Pending access to the shared data": [
         "Čekání na přístup ke sdíleným datům"
@@ -2277,6 +2457,9 @@
       "Successfully synced all vaults": [
         "Všechny trezory byly úspěšně synchronizovány"
       ],
+      "Suggested": [
+        "Doporučeno"
+      ],
       "Switch to another vault or create an item in this vault": [
         "Přejděte do jiného trezoru nebo vytvořte položku v tomto trezoru"
       ],
@@ -2298,6 +2481,9 @@
       "The exported file will be encrypted using PGP and requires a strong passphrase.": [
         "Exportovaný soubor bude zašifrován pomocí PGP a vyžaduje silné heslo."
       ],
+      "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
+        "Odhalené informace unikly ze služby třetí strany. Informace vašeho účtu ${ BRAND_NAME } zůstaly v bezpečí a šifrované. ${ learnMoreLink }"
+      ],
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "Pro použití ${ PASS_APP_NAME } bude vyžadováno dodatečné heslo. Slouží jako doplněk k vašemu heslu ${ BRAND_NAME }."
       ],
@@ -2318,6 +2504,9 @@
       ],
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Tento export bude nešifrovaný a kdokoli s přístupem k exportovanému souboru bude moci zobrazit vaše hesla. Z bezpečnostních důvodů jej po ukončení používání odstraňte."
+      ],
+      "This feature is currently experimental on Linux. Please ensure your system is up-to-date.": [
+        "Tato funkce je v současné době na platformě Linux ve fázi testování. Ujistěte se, že je váš systém aktualizován."
       ],
       "This item is not currently shared with anyone. Invite people to share it with others.": [
         "Tato položka není v současné době s nikým sdílena. Pozvěte ostatní, se kterými ji chcete sdílet."
@@ -2430,6 +2619,9 @@
       "User's access successfully updated": [
         "Přístup uživatele byl úspěšně aktualizován"
       ],
+      "username": [
+        "uživatelské jméno"
+      ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Trezor \"${ payload.content.name }\" úspěšně smazán"
       ],
@@ -2453,6 +2645,9 @@
       ],
       "Verification code": [
         "Ověřovací kód"
+      ],
+      "Verification code sent.": [
+        "Ověřovací kód byl odeslán."
       ],
       "Viewer": [
         "Prohlížející"
@@ -2523,9 +2718,6 @@
       "You may close this tab.": [
         "Tuto kartu můžete zavřít."
       ],
-      "You may need to accept a permission prompt and may have to restart the application depending on your system.": [
-        "V závislosti na vašem systému může být nutné přijmout výzvu k udělení oprávnění a restartovat aplikaci."
-      ],
       "You may need to grant accessiblity permission to ${ PASS_APP_NAME }.": [
         "Možná bude nutné udělit oprávnění přístupu pro ${ PASS_APP_NAME }."
       ],
@@ -2537,6 +2729,18 @@
       ],
       "You will be logged out and need to log in again on all of your other devices.": [
         "Budete odhlášeni a budete se muset znovu přihlásit na všech svých ostatních zařízeních."
+      ],
+      "You will be notified of data breaches for these email addresses.": [
+        "U těchto e-mailových adres budete informováni o únicích informací."
+      ],
+      "You will be notified of data breaches for this email address.": [
+        "Budete upozorněni na úniky informací této e-mailové adresy."
+      ],
+      "You will no longer be notified of data breaches for these email addresses.": [
+        "U těchto e-mailových adres již nebudete informováni o únicích informací."
+      ],
+      "You will no longer be notified of data breaches for this email address.": [
+        "Nebudete již upozorněni na úniky informací této e-mailové adresy."
       ],
       "You will no longer have access to sharing, 2FA and other advanced features in ${ PASS_APP_NAME }": [
         "Již nebudete mít přístup ke sdílení, dvoufázovému ověřování a dalším pokročilým funkcím ${ PASS_APP_NAME }"
@@ -2564,6 +2768,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "Vaše soubory budou zašifrovány a uloženy"
+      ],
+      "Your information was found on ${ displayedDate }": [
+        "Vaše informace byly nalezeny ${ displayedDate }"
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Vaše organizace vyžaduje, abyste zabezpečili svůj přístup k ${ PASS_APP_NAME }"
@@ -2658,6 +2865,12 @@
         "${ secureLinksCount } bezpečné odkazy",
         "${ secureLinksCount } bezpečných odkazů",
         "${ secureLinksCount } bezpečných odkazů"
+      ],
+      "${ usageCount } login": [
+        "${ usageCount } přihlášení",
+        "${ usageCount } přihlášení",
+        "${ usageCount } přihlášení",
+        "${ usageCount } přihlášení"
       ],
       "${ years } year": [
         "${ years } rok",
@@ -2965,6 +3178,9 @@
       "Email (new alias)": [
         "E-mail (nový alias)"
       ],
+      "Email address": [
+        "E-mailová adresa"
+      ],
       "Email aliases": [
         "E-mailové aliasy"
       ],
@@ -3033,6 +3249,9 @@
       ],
       "Generic CSV": [
         "Obyčejný CSV"
+      ],
+      "Get Started": [
+        "Začínáme"
       ],
       "Grant": [
         "Udělit"
@@ -3147,6 +3366,9 @@
       ],
       "Last name": [
         "Příjmení"
+      ],
+      "Last updated": [
+        "Naposledy aktualizováno"
       ],
       "Last week": [
         "Minulý týden"
@@ -3529,6 +3751,9 @@
       "State or province": [
         "Stát nebo provincie"
       ],
+      "Status": [
+        "Stav"
+      ],
       "Street address": [
         "Ulice a č. p."
       ],
@@ -3637,6 +3862,9 @@
       "Use ${ PASS_APP_NAME } as your browser's default password manager": [
         "Použijte ${ PASS_APP_NAME } jako výchozí správce hesel v prohlížeči"
       ],
+      "Used in": [
+        "Používá se v"
+      ],
       "Useful for permanent sharing": [
         "Užitečné pro trvalé sdílení"
       ],
@@ -3651,6 +3879,9 @@
       ],
       "Vault ID": [
         "ID trezoru"
+      ],
+      "Vaults": [
+        "Trezory"
       ],
       "View details": [
         "Zobrazit podrobnosti"
@@ -3710,6 +3941,17 @@
     "Link": {
       "auto create rules ››": [
         "automatické vytváření pravidel ››"
+      ],
+      "if your data is leaked": [
+        "když dojde k úniku vašich dat"
+      ],
+      "Learn more": [
+        "Více informací"
+      ]
+    },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "Povolit ${ reason }"
       ]
     },
     "Message": {
@@ -3727,6 +3969,22 @@
       ],
       "You selected ${ semiboldText } in this vault.": [
         "V tomto trezoru jste vybrali ${ semiboldText }."
+      ]
+    },
+    "new_plans: feature": {
+      "Require 2FA for organization": [
+        "Vyžaduje 2FA pro organizaci"
+      ],
+      "SSO integration": [
+        "Integrace SSO"
+      ]
+    },
+    "Notification": {
+      "${ reason } has been disabled": [
+        "${ reason } byl deaktivován"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } byl povolen"
       ]
     },
     "Onboarding": {
@@ -3994,6 +4252,20 @@
         "Použito na ${ url }"
       ]
     },
+    "Security Center - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } a ${ remainingCount } další zjištěné potenciální úniky. Zapněte ${ DARK_WEB_MONITORING_NAME } pro zobrazení podrobností. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Byl zjištěn potenciální únik ${ name } a 1 další. Zapněte ${ DARK_WEB_MONITORING_NAME } pro zobrazení podrobností. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Byl zjištěn potenciální únik ${ name }. Zapněte ${ DARK_WEB_MONITORING_NAME } pro zobrazení podrobností. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Vaše údaje byly nalezeny při nejméně jednom úniku informací. Zapnutím ${ DARK_WEB_MONITORING_NAME } zobrazíte podrobnosti. ${ link }"
+      ]
+    },
     "sso": {
       "Approve or deny it now": [
         "Schválit nebo zamítnout nyní"
@@ -4141,11 +4413,20 @@
       ]
     },
     "Title": {
+      "${ BRAND_NAME } addresses": [
+        "${ BRAND_NAME } adresy"
+      ],
       "${ PASS_APP_NAME } Logs": [
         "Logy ${ PASS_APP_NAME }"
       ],
       "${ PASS_APP_NAME } Settings": [
         "Nastavení ${ PASS_APP_NAME }"
+      ],
+      "${ PASS_SHORT_APP_NAME } Monitor": [
+        "${ PASS_SHORT_APP_NAME } Monitor"
+      ],
+      "Account protection": [
+        "Ochrana účtu"
       ],
       "Actions": [
         "Akce"
@@ -4176,6 +4457,15 @@
       ],
       "Blocked addresses": [
         "Blokované adresy"
+      ],
+      "Breach detected": [
+        "Zjištěny úniky informací"
+      ],
+      "Breaches": [
+        "Úniky informací"
+      ],
+      "Breaches detected for": [
+        "Zjištěny úniky informací pro"
       ],
       "Cancel changing your email?": [
         "Zrušit změnu vašeho e-mailu?"
@@ -4219,8 +4509,17 @@
       "Current version": [
         "Aktuální verze"
       ],
+      "Custom addresses": [
+        "Vlastní adresy"
+      ],
       "Custom domains": [
         "Vlastní domény"
+      ],
+      "Custom email monitoring": [
+        "Sledování vlastního e-mailu"
+      ],
+      "Custom emails": [
+        "Vlastní e-maily"
       ],
       "Default": [
         "Výchozí"
@@ -4291,6 +4590,9 @@
       "Enter your second password": [
         "Zadejte své druhé heslo"
       ],
+      "Excluded items": [
+        "Vyloučené položky"
+      ],
       "Fill & copy password": [
         "Vyplnit a kopírovat heslo"
       ],
@@ -4312,6 +4614,9 @@
       "Hide my email": [
         "Hide my email"
       ],
+      "Hide-my-email aliases": [
+        "Aliasy Hide-my-email"
+      ],
       "History": [
         "Historie"
       ],
@@ -4326,6 +4631,12 @@
       ],
       "Importing your data": [
         "Importování vašich dat"
+      ],
+      "Inactive 2FA": [
+        "Neaktivní 2FA"
+      ],
+      "Information exposed in breach": [
+        "Informace odhalené při úniku"
       ],
       "Item": [
         "Položka"
@@ -4342,6 +4653,9 @@
       "Leave vault?": [
         "Opustit trezor?"
       ],
+      "Loading breaches...": [
+        "Načítání úniků..."
+      ],
       "Log in as...": [
         "Přihlaste se jako..."
       ],
@@ -4350,6 +4664,9 @@
       ],
       "Mailbox": [
         "E-mailová schránka"
+      ],
+      "Mark as resolved?": [
+        "Označit jako vyřešené?"
       ],
       "Member limit": [
         "Limit počtu členů"
@@ -4384,14 +4701,32 @@
       "MX record": [
         "MX záznam"
       ],
+      "Next": [
+        "Další"
+      ],
+      "No excluded items": [
+        "Žádné vyloučené položky"
+      ],
+      "No inactive 2FAs": [
+        "Žádné neaktivní 2FA"
+      ],
+      "No insecure passwords": [
+        "Žádná nezabezpečená hesla"
+      ],
       "No items selected": [
         "Žádné vybrané položky"
+      ],
+      "No reused passwords": [
+        "Žádná opakovaně používaná hesla"
       ],
       "No shared items": [
         "Žádné sdílené položky"
       ],
       "No shared secure links": [
         "Žádné sdílené bezpečné odkazy"
+      ],
+      "Open pagination": [
+        "Otevřít stránkování"
       ],
       "Organize vaults": [
         "Organizovat trezory"
@@ -4404,6 +4739,12 @@
       ],
       "Password": [
         "Heslo"
+      ],
+      "Password Health": [
+        "Síla hesla"
+      ],
+      "Pause monitoring?": [
+        "Pozastavit sledování?"
       ],
       "Pending access confirmation": [
         "Čeká se na potvrzení přístupu"
@@ -4429,11 +4770,20 @@
         "Upozorňujeme, že jednou smazané aliasy nelze obnovit.",
         "Upozorňujeme, že jednou smazané aliasy nelze obnovit."
       ],
+      "Previous": [
+        "Předchozí"
+      ],
       "Random Prefix Generation": [
         "Generování náhodné předpony"
       ],
+      "Recommended actions": [
+        "Doporučené akce"
+      ],
       "Reject device?": [
         "Odmítnout zařízení?"
+      ],
+      "Remove email address?": [
+        "Odebrat e-mailovou adresu?"
       ],
       "Remove extra password": [
         "Odstranit dodatečné heslo"
@@ -4444,8 +4794,23 @@
       "Reset history for this item?": [
         "Resetovat historii této položky?"
       ],
+      "Resolved breaches": [
+        "Vyřešené úniky informací"
+      ],
       "Restore this version?": [
         "Obnovit tuto verzi?"
+      ],
+      "Resume monitoring?": [
+        "Obnovit sledování?"
+      ],
+      "Reused ${ count } time": [
+        "Opakovaně použito ${ count } krát",
+        "Opakovaně použito ${ count } krát",
+        "Opakovaně použito ${ count } krát",
+        "Opakovaně použito ${ count } krát"
+      ],
+      "Reused passwords": [
+        "Opakovaně použitá hesla"
       ],
       "Review and share": [
         "Zkontrolovat a sdílet"
@@ -4462,8 +4827,14 @@
       "Set extra password": [
         "Nastavte dodatečné heslo"
       ],
+      "Set up 2FA for better security": [
+        "Nastavte 2FA pro lepší zabezpečení"
+      ],
       "Set up 2FA for more security": [
         "Nastavte 2FA pro větší zabezpečení"
+      ],
+      "Settings": [
+        "Nastavení"
       ],
       "Share with": [
         "Sdílet s"
@@ -4528,14 +4899,26 @@
       "Visible vaults": [
         "Viditelné trezory"
       ],
+      "Want to learn more?": [
+        "Chcete se dozvědět více?"
+      ],
       "Weak password": [
         "Slabé heslo"
+      ],
+      "Weak passwords": [
+        "Slabá hesla"
       ],
       "Welcome to ${ brandNameJSX }": [
         "Vítejte v ${ brandNameJSX }"
       ],
       "Welcome to your new password manager!": [
         "Vítejte ve svém novém správci hesel!"
+      ],
+      "What is an alias?": [
+        "Co je alias?"
+      ],
+      "What is the dark web?": [
+        "Co je dark web?"
       ],
       "What is the difference between ${ PASS_SHORT_APP_NAME } note and SimpleLogin note?": [
         "Jaký je rozdíl mezi poznámkou ${ PASS_SHORT_APP_NAME } a poznámkou SimpleLogin?"
@@ -4545,6 +4928,9 @@
       ],
       "Your ${ planName } subscription will end on ${ endDate }": [
         "Vaše předplatné ${ planName } skončí ${ endDate }"
+      ],
+      "Your exposed information": [
+        "Vaše uniklé informace"
       ],
       "Your vault is empty": [
         "Váš trezor je prázdný"
@@ -4567,6 +4953,14 @@
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Dnes"
+      ]
+    },
+    "Tooltip": {
+      "Not all information listed here was exposed for all users.": [
+        "Ne všechny informace, které jsou zde uvedeny, byly zpřístupněny všem uživatelům."
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "Pokud nejsou dešifrována, zůstávají zašifrovaná hesla bezpečná, i když uniknou."
       ]
     },
     "Validation": {
@@ -4685,6 +5079,9 @@
       "Email cannot be empty": [
         "E–mail nemůže být prázdný"
       ],
+      "Email is required": [
+        "Je vyžadován e-mail"
+      ],
       "Empty note": [
         "Prázdná poznámka"
       ],
@@ -4699,6 +5096,12 @@
       ],
       "Extra password should have at least 8 characters": [
         "Dodatečné heslo by mělo mít alespoň 8 znaků"
+      ],
+      "Failed to autotype. Please make sure ${ PASS_APP_NAME } has the necessary permissions and try again (${ error }).": [
+        "Automatické vyplnění selhalo. Ujistěte se, prosím, že ${ PASS_APP_NAME } má potřebná oprávnění a zkuste to znovu (${ error })."
+      ],
+      "Failed to load breaches.": [
+        "Nelze načíst úniky informací."
       ],
       "Grant clipboard access to enable automatic clearing of copied passwords and data.": [
         "Povolte přístup ke schránce, abyste umožnili automatické mazání zkopírovaných hesel a dat."
@@ -4798,6 +5201,9 @@
       ],
       "This alias \"${ aliasEmail }\" is currently used in the login \"${ relatedLoginName }\".": [
         "Tento alias \"${ aliasEmail }\" je používán v přihlášení \"${ relatedLoginName }\"."
+      ],
+      "This email address will no longer be monitored for data breaches.": [
+        "Tato e-mailová adresa již nebude sledována v únicích informací."
       ],
       "This item is currently shared. Deleting it will remove access for all other users.": [
         "Tato položka je v současné době sdílena. Jejím smazáním se zruší přístup pro všechny ostatní uživatele."

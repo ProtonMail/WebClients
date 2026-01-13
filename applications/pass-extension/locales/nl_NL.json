@@ -4,6 +4,26 @@
     "language": "nl_NL"
   },
   "contexts": {
+    "Account Settings - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } en ${ remainingCount } andere potentiële lekken gedetecteerd. Schakel ${ DARK_WEB_MONITORING_NAME } in om details te bekijken en actie te ondernemen. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } en 1 ander potentieel lek gedetecteerd. Schakel ${ DARK_WEB_MONITORING_NAME } in om details te bekijken. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Een potentieel ${ name } lek werd gedetecteerd. Schakel ${ DARK_WEB_MONITORING_NAME } in om details te bekijken en actie te ondernemen. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Er is een potentieel lek van ${ name } gedetecteerd. Schakel ${ DARK_WEB_MONITORING_NAME } in om de details te bekijken en actie te ondernemen. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Een potentieel lek van ${ name } werd gedetecteerd. Schakel ${ DARK_WEB_MONITORING_NAME } in om details te bekijken. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Uw informatie is in tenminste één gegevenslek gevonden. Schakel ${ DARK_WEB_MONITORING_NAME } in om de details te zien en actie te ondernemen. ${ link }"
+      ]
+    },
     "Action": {
       "${ PASS_SHORT_APP_NAME } for Android": [
         "${ PASS_SHORT_APP_NAME } voor Android"
@@ -55,6 +75,9 @@
       ],
       "Add username field": [
         "Veld gebruikersnaam toevoegen"
+      ],
+      "Admin panel": [
+        "Beheerderspaneel"
       ],
       "Advanced": [
         "Geavanceerd"
@@ -197,6 +220,9 @@
       "Create a ${ BRAND_NAME } Account": [
         "Maak een ${ BRAND_NAME }-account aan"
       ],
+      "Create a new vault": [
+        "Nieuwe kluis aanmaken"
+      ],
       "Create alias": [
         "Alias aanmaken"
       ],
@@ -305,6 +331,9 @@
       "Edit vault": [
         "Kluis bewerken"
       ],
+      "Enable ${ DARK_WEB_MONITORING_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME } inschakelen"
+      ],
       "Enable this alias to receive emails sent to this alias": [
         "Schakel deze alias in om e-mails te ontvangen die naar deze alias verzonden worden"
       ],
@@ -341,11 +370,17 @@
       "Get mobile and desktop apps": [
         "Download mobiele en desktop apps"
       ],
+      "Get mobile apps": [
+        "Download mobiele apps"
+      ],
       "Get Pass Business": [
         "Kies Pass Business"
       ],
       "Get Pass Plus": [
         "Neem Pass Plus"
+      ],
+      "Get Started": [
+        "Aan de slag"
       ],
       "Hide": [
         "Verbergen"
@@ -395,6 +430,9 @@
       "Link expires after": [
         "Link verloopt na"
       ],
+      "Lock ${ PASS_APP_NAME }": [
+        "Vergrendel ${ PASS_APP_NAME }"
+      ],
       "Lock extension": [
         "Extensie vergrendelen"
       ],
@@ -418,6 +456,9 @@
       ],
       "Manually sync your data": [
         "Synchroniseer uw data manueel"
+      ],
+      "Mark as resolved": [
+        "Markeren als opgelost"
       ],
       "Maximum views": [
         "Maximum aantal weergaven"
@@ -469,6 +510,12 @@
       ],
       "Organize vaults": [
         "Kluizen organiseren"
+      ],
+      "Pass Monitor": [
+        "Pass Monitor"
+      ],
+      "Pause monitoring": [
+        "Monitoren onderbreken"
       ],
       "Pin item": [
         "Item vastpinnen"
@@ -544,6 +591,9 @@
       ],
       "Restrict number of views": [
         "Beperk aantal weergaven"
+      ],
+      "Resume monitoring": [
+        "Monitoren hervatten"
       ],
       "Retry": [
         "Opnieuw proberen"
@@ -660,6 +710,9 @@
       "Try again": [
         "Opnieuw proberen"
       ],
+      "Try again.": [
+        "Probeer opnieuw."
+      ],
       "Unblock contact": [
         "Contact deblokkeren"
       ],
@@ -705,6 +758,9 @@
       ],
       "View app logs": [
         "Bekijk app logs"
+      ],
+      "View details": [
+        "Details weergeven"
       ],
       "View history": [
         "Geschiedenis bekijken"
@@ -759,6 +815,9 @@
         "${ total } andere login gebruikt hetzelfde wachtwoord",
         "${ total } andere logins gebruiken hetzelfde wachtwoord"
       ],
+      "2FA adds another layer of security to your logins. ${ PASS_APP_NAME } makes 2FA easier by storing and automatically autofilling your 2FA codes.": [
+        "2FA voegt een extra beveiligingslaag toe aan uw inloggegevens. ${ PASS_APP_NAME } maakt 2FA makkelijker door uw 2FA op te slaan en automatisch uw 2FA-codes in te vullen."
+      ],
       "A checked box means the feature is disabled.": [
         "Een selectievakje betekent dat de functie is uitgeschakeld."
       ],
@@ -771,11 +830,23 @@
       "Add the following TXT DNS record to your domain.": [
         "Voeg het volgende TXT DNS-record toe aan uw domein."
       ],
+      "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
+        "Een e-mailadres alias werkt als een e-mailadres, maar vermindert spam en houdt uw werkelijke e-mailadres en identiteit verborgen."
+      ],
+      "Change your passwords": [
+        "Uw wachtwoorden wijzigen"
+      ],
+      "Create unique passwords": [
+        "Maak unieke wachtwoorden"
+      ],
       "DKIM ${ WIKIPEDIA_LINK_DKIM } is an email authentication method designed to avoid email spoofing. Setting up DKIM is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
         "DKIM ${ WIKIPEDIA_LINK_DKIM } is een authenticatiemethode ontworpen om te voorkomen dat e-mail vervalst wordt. Het instellen van DKIM is sterk aanbevolen om de kans te verminderen dat uw e-mails in de spammap van de ontvanger terechtkomen."
       ],
       "DMARC ${ WIKIPEDIA_LINK_DMARC } is designed to protect the domain from unauthorized use, commonly known as email spoofing. Built around SPF and DKIM, a DMARC policy tells the receiving mail server what to do if neither of those authentication methods passes.": [
         "DMARC ${ WIKIPEDIA_LINK_DMARC } is ontworpen om het domein te beschermen tegen ongeautoriseerd gebruik, algemeen bekend als e-mail spoofing. Gebouwd rond SPF en DKIM, vertelt een DMARC-beleid de ontvangende mailserver wat te doen als geen van deze authenticatiemethoden doorgaat."
+      ],
+      "Get notified if your email, password or other personal data was leaked.": [
+        "Ontvang een melding als uw e-mail, wachtwoord of andere persoonlijke gegevens zijn gelekt."
       ],
       "If you are using a subdomain, e.g. ${ subdomainExample }, you need to use ${ dmarcExampleSubdomain } as the domain instead.": [
         "Als u een subdomein gebruikt, bijvoorbeeld ${ subdomainExample }, dan moet u ${ dmarcExampleSubdomain } als het domein gebruiken."
@@ -786,8 +857,17 @@
       "If you are using Cloudflare, please make sure to not select the Proxy option.": [
         "Als u Cloudflare gebruikt, zorg er dan voor dat u de Proxy optie niet selecteert."
       ],
+      "Keep your info more secure and private with these guides and tips.": [
+        "Houd uw info veiliger en privé met deze handleidingen en tips."
+      ],
       "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.${ infoText }": [
         "Lijst van domeinen waar bepaalde automatische functies in ${ PASS_SHORT_APP_NAME } (Automatisch invullen, automatisch suggesties geven, automatisch opslaan) niet mogen uitgevoerd worden. ${ infoText }"
+      ],
+      "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
+        "Onze geavanceerde AI-gedreven beveiligingsoplossing ontworpen voor gebruikers die verhoogde bescherming zoeken voor hun accounts. ${ learnMoreLink }"
+      ],
+      "Set up 2FA for more security": [
+        "2FA instellen voor meer beveiliging"
       ],
       "Some DNS registrar might require a full record path, in this case please use ${ domain } as domain value instead.": [
         "Voor sommige DNS registrarors is een volledig record pad vereist, in dit geval moet u ${ domain } als domeinwaarde gebruiken."
@@ -797,6 +877,15 @@
       ],
       "SPF ${ WIKIPEDIA_LINK_SPF } is an email authentication method designed to detect forging sender addresses during the delivery of the email. Setting up SPF is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
         "SPF ${ WIKIPEDIA_LINK_SPF } is een verificatiemethode ontworpen om het vervalsen van afzenderadressen te detecteren tijdens de levering van de e-mail. Het instellen van SPF wordt sterk aanbevolen om de kans te verminderen dat uw e-mails in de Spam map van de ontvanger terechtkomen."
+      ],
+      "Start monitoring for data breaches related to accounts created with your email address and your hide-my-email aliases.": [
+        "Start monitoring voor datalekken gerelateerd aan accounts met uw e-mailadres en uw hide-my-email aliassen."
+      ],
+      "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
+        "Het dark web is een verborgen onderdeel van het internet waar gestolen persoonlijke informatie, zoals identiteiten, gekocht en verkocht kunnen worden."
+      ],
+      "These items remain at risk": [
+        "Deze items blijven in gevaar"
       ],
       "These vaults will not be accessible and their content won’t be available to Search or Autofill.": [
         "Deze kluizen zullen niet toegankelijk zijn en hun inhoud zal niet beschikbaar zijn voor Zoeken of Automatisch aanvullen."
@@ -812,6 +901,15 @@
       ],
       "Unlock advanced security features and detailed logs to safeguard your online presence.": [
         "Ontgrendel geavanceerde beveiligingsfuncties en gedetailleerde logs om uw online aanwezigheid te beschermen."
+      ],
+      "With ${ PASS_SHORT_APP_NAME } Monitor, stay ahead of threats by getting instant alerts if your credentials are compromised. Unlock advanced security features and detailed logs to safeguard your online presence.": [
+        "Met ${ PASS_SHORT_APP_NAME } Monitor, blijf bedreigingen voor door onmiddellijke waarschuwingen te krijgen als uw inloggegevens in gevaar komen. Ontgrendel geavanceerde beveiligingsfuncties en gedetailleerde logs om uw online aanwezigheid te beschermen."
+      ],
+      "Your email addresses were leaked in at least 1 data breach.": [
+        "Uw e-mailadressen zijn gelekt in ten minste 1 datalek."
+      ],
+      "Your personal info was leaked in a data breach of a third-party service.": [
+        "Uw persoonlijke informatie is uitgelekt in een data-inbreuk van een service van derden."
       ]
     },
     "Email": {
@@ -1266,6 +1364,17 @@
         "Er is iets fout gegaan"
       ]
     },
+    "Feature": {
+      "Integrated 2FA authenticator": [
+        "Geïntegreerde tweestapsverificatie"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Onbeperkt aantal hide-my-email-aliassen"
+      ],
+      "Vault sharing (up to ${ MAX_VAULT_MEMBERS } people)": [
+        "Kluis delen (tot ${ MAX_VAULT_MEMBERS } personen)"
+      ]
+    },
     "file size format": {
       "byte": [
         "byte",
@@ -1304,6 +1413,17 @@
       "Terabyte": [
         "Terabyte",
         "Terabytes"
+      ]
+    },
+    "Header": {
+      "Domain": [
+        "Domein"
+      ],
+      "Password ends with": [
+        "Wachtwoord eindigt met"
+      ],
+      "Username": [
+        "Gebruikersnaam"
       ]
     },
     "Info": {
@@ -1391,6 +1511,10 @@
         "${ repliedEmailsCount } verzonden",
         "${ repliedEmailsCount } verzonden"
       ],
+      "${ row.breachCount } breach detected": [
+        "${ row.breachCount } inbreuk gedetecteerd",
+        "${ row.breachCount } inbreuken gedetecteerd"
+      ],
       "${ trialDaysLeft } day left": [
         "${ trialDaysLeft } dag over",
         "${ trialDaysLeft } dagen over"
@@ -1434,8 +1558,14 @@
       "Access your passwords on the go with our mobile apps.": [
         "Krijg onderweg toegang tot uw wachtwoorden met onze mobiele apps."
       ],
+      "Add your custom email address to monitor:": [
+        "Voeg uw aangepast e-mailadres toe om te monitoren:"
+      ],
       "Admin": [
         "Beheerder"
+      ],
+      "After confirming, you will need to accept a permission prompt for ${ PASS_APP_NAME }.": [
+        "Na bevestiging moet u een machtigingsverzoek accepteren voor ${ PASS_APP_NAME }."
       ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Na het importeren van uw gegevens kunt u het CSV-bestand verwijderen dat uw wachtwoorden voor beveiliging bevat."
@@ -1455,11 +1585,17 @@
       "Aliases out of sync (${ aliasCount })": [
         "Aliassen niet gesynchroniseerd (${ aliasCount })"
       ],
+      "Aliases with custom domains are not monitored, please add them as a custom email for monitoring.": [
+        "Aliassen met aangepaste domeinen worden niet gecontroleerd, voeg ze toe als een aangepaste e-mail voor controle."
+      ],
       "All aliases using the mailbox ${ emailJSX } will be also deleted.": [
         "Alle aliassen die de mailbox ${ emailJSX } gebruiken zullen ook worden verwijderd."
       ],
       "All breaches for this address were resolved": [
         "Alle inbreuken op dit adres zijn opgelost"
+      ],
+      "All current breaches will be marked as resolved. In case of future data breaches, you'll be notified.": [
+        "Alle huidige inbreuken worden gemarkeerd als opgelost. In het geval van toekomstige datalekken, wordt u op de hoogte gebracht."
       ],
       "All inactive secure links were removed": [
         "Alle inactieve beveiligde links zijn verwijderd"
@@ -1515,6 +1651,9 @@
       "Biometrics will be disabled and will need to be enabled again.": [
         "Biometrie wordt uitgeschakeld en moet opnieuw worden ingeschakeld."
       ],
+      "Breaches detected": [
+        "Inbreuken gedetecteerd"
+      ],
       "Bring your own domain and you don't have to buy yet another email hosting solution.": [
         "Gebruik uw eigen domein en u hoeft niet nog een andere e-mailhosting oplossing te kopen."
       ],
@@ -1550,6 +1689,9 @@
       ],
       "Can view this item.": [
         "Kan dit item bekijken"
+      ],
+      "Change your password": [
+        "Wijzig uw wachtwoord"
       ],
       "Choose a saved passkey to sign-in to ${ domain }": [
         "Kies een opgeslagen toegangssleutel om aan te melden bij ${ domain }"
@@ -1617,8 +1759,8 @@
       "Disabling offline mode...": [
         "Offline modus uitschakelen..."
       ],
-      "Discover ${ PASS_APP_NAME } Youtube Video": [
-        "Ontdek ${ PASS_APP_NAME } YouTube-video"
+      "Discover ${ PASS_APP_NAME } video": [
+        "Ontdek ${ PASS_APP_NAME } video"
       ],
       "DNS changes could take up to 24 hours to update.": [
         "Het kan tot 24 uur duren om de DNS-wijzigingen bij te werken."
@@ -1637,6 +1779,9 @@
       ],
       "Editor": [
         "Bewerker"
+      ],
+      "email": [
+        "e-mail"
       ],
       "Email address successfully deleted from monitoring": [
         "E-mailadres succesvol verwijderd uit monitoring"
@@ -1719,6 +1864,9 @@
       "Fill in the CSV with your data": [
         "Vul de CSV in met uw gegevens"
       ],
+      "finance": [
+        "financiën"
+      ],
       "Follow those steps to import your data with a generic CSV:": [
         "Volg deze stappen om uw gegevens te importeren met een algemeen CSV-bestand:"
       ],
@@ -1756,6 +1904,12 @@
       ],
       "Here's how it works:": [
         "Zo werkt het:"
+      ],
+      "High Priority": [
+        "Hoge Prioriteit"
+      ],
+      "How does monitoring work?": [
+        "Hoe werkt monitoring?"
       ],
       "Identity confirmed": [
         "Identiteit bevestigd"
@@ -1827,6 +1981,12 @@
       "Item successfully unpinned": [
         "Item succesvol losgemaakt"
       ],
+      "Latest breach on ${ formattedDate }": [
+        "Laatste inbreuk op ${ formattedDate }"
+      ],
+      "Learn what to do ${ dataLeakedLink }": [
+        "Leer wat te doen ${ dataLeakedLink }"
+      ],
       "Leaving item...": [
         "Item verlaten..."
       ],
@@ -1845,11 +2005,20 @@
       "Loading...": [
         "Laden..."
       ],
+      "Low Priority": [
+        "Lage Prioriteit"
+      ],
       "Manager": [
         "Beheerder"
       ],
       "me": [
         "ik"
+      ],
+      "Medium Priority": [
+        "Middelmatige prioriteit"
+      ],
+      "Monitor accounts": [
+        "Accounts monitoren"
       ],
       "Monitoring settings successfully updated": [
         "Monitoring instellingen succesvol bijgewerkt"
@@ -1865,8 +2034,7 @@
         "Alle items uit \"${ payload.content.name }\" verplaatsen"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Het verplaatsen van een item naar een andere kluis verwijdert zijn geschiedenis.",
-        "Het verplaatsen van items naar een andere kluis verwijdert hun geschiedenis."
+        "Het verplaatsen van een item naar een andere kluis verwijdert zijn beveiligde links."
       ],
       "Moving items": [
         "Items verplaatsen"
@@ -1888,6 +2056,9 @@
       ],
       "Never": [
         "Nooit"
+      ],
+      "No breaches detected": [
+        "Geen inbreuken gedetecteerd"
       ],
       "No credit cards found": [
         "Geen creditcard gevonden"
@@ -1925,6 +2096,9 @@
       "Open the Safari settings, find ${ PASS_APP_NAME }, go to \"Permissions\" and enable site permissions.": [
         "Open de Safari-instellingen, zoek ${ PASS_APP_NAME }, ga naar \"Machtigingen\" en schakel sitemachtigingen in."
       ],
+      "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Onze waarschuwingen geven prioriteit aan veiligheid. Als u de geschonden informatie niet herkent, kunt u dit rapport gerust negeren."
+      ],
       "Owner": [
         "Eigenaar"
       ],
@@ -1937,6 +2111,9 @@
       "Passkey sign-in": [
         "Aanmelden met toegangssleutel"
       ],
+      "password": [
+        "wachtwoord"
+      ],
       "Password copied": [
         "Wachtwoord gekopieerd"
       ],
@@ -1946,6 +2123,9 @@
       "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
         "Wachtwoorden ouder dan ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week worden automatisch uit de geschiedenis verwijderd.",
         "Wachtwoorden ouder dan ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } weken worden automatisch uit de geschiedenis verwijderd."
+      ],
+      "Paused": [
+        "Gepauzeerd"
       ],
       "Pending access to the shared data": [
         "Toegang tot gedeelde data in afwachting"
@@ -2082,11 +2262,17 @@
       "Please use full path domain, for example my-domain.com or my-subdomain.my-domain.com if you are using a subdomain.": [
         "Gebruik het volledige domeinpad, bijvoorbeeld my-domain.com of my-subdomein.my-domain.com als u een subdomein gebruikt."
       ],
+      "Premium domain": [
+        "Premium domein"
+      ],
       "Press Enter to copy": [
         "Druk op Enter om te kopiëren"
       ],
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Beschermd door ${ PROTON_SENTINEL_LINK }, ons geavanceerde accountbeveiligingsprogramma"
+      ],
+      "Public domain": [
+        "Publiek domein"
       ],
       "Quickly autofill your 2FA tokens.": [
         "Vul snel uw 2FA-tokens in."
@@ -2217,6 +2403,9 @@
       "Successfully synced all vaults": [
         "Alle kluizen succesvol gesynchroniseerd"
       ],
+      "Suggested": [
+        "Voorgesteld"
+      ],
       "Switch to another vault or create an item in this vault": [
         "Wissel naar een andere kluis of maak een item aan in deze kluis"
       ],
@@ -2238,6 +2427,9 @@
       "The exported file will be encrypted using PGP and requires a strong passphrase.": [
         "Het geëxporteerde bestand wordt versleuteld met PGP en vereist een sterke wachtwoordzin."
       ],
+      "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
+        "De gelekte informatie werd gelekt door een dienst van een derde partij. Uw ${ BRAND_NAME } accountinformatie blijft veilig en versleuteld. ${ learnMoreLink }"
+      ],
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "Het extra wachtwoord is nodig om ${ PASS_APP_NAME }te gebruiken. Het werkt als een extra wachtwoord bovenop uw ${ BRAND_NAME } wachtwoord."
       ],
@@ -2256,6 +2448,9 @@
       ],
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Deze export wordt niet versleuteld en iedereen met toegang tot uw geëxporteerde bestand kan uw wachtwoorden zien. Verwijder het voor de veiligheid nadat u klaar bent met het gebruik ervan."
+      ],
+      "This feature is currently experimental on Linux. Please ensure your system is up-to-date.": [
+        "Dit is momenteel een experimentele functie op Linux. Zorg ervoor dat uw systeem up-to-date is."
       ],
       "This item is not currently shared with anyone. Invite people to share it with others.": [
         "Dit item wordt momenteel niet met iemand gedeeld. Nodig mensen uit om het met anderen te delen."
@@ -2368,6 +2563,9 @@
       "User's access successfully updated": [
         "Toegang van de gebruiker bijgewerkt"
       ],
+      "username": [
+        "gebruikersnaam"
+      ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Kluis \"${ payload.content.name }\" succesvol verwijderd"
       ],
@@ -2389,6 +2587,9 @@
       ],
       "Verification code": [
         "Verificatiecode"
+      ],
+      "Verification code sent.": [
+        "Verificatiecode verzonden"
       ],
       "Viewer": [
         "Bekijken"
@@ -2453,9 +2654,6 @@
       "You may close this tab.": [
         "U kunt dit tabblad nu sluiten."
       ],
-      "You may need to accept a permission prompt and may have to restart the application depending on your system.": [
-        "U moet mogelijk een toestemmingsmelding accepteren en de toepassing herstarten, afhankelijk van uw systeem."
-      ],
       "You may need to grant accessiblity permission to ${ PASS_APP_NAME }.": [
         "U moet mogelijk toegangsrechten verlenen aan ${ PASS_APP_NAME }."
       ],
@@ -2467,6 +2665,18 @@
       ],
       "You will be logged out and need to log in again on all of your other devices.": [
         "U wordt uitgelogd en moet opnieuw inloggen op al uw andere apparaten."
+      ],
+      "You will be notified of data breaches for these email addresses.": [
+        "U wordt op de hoogte gebracht van datalekken voor deze e-mailadressen."
+      ],
+      "You will be notified of data breaches for this email address.": [
+        "U zal op de hoogte worden gebracht van datalekken voor dit e-mailadres."
+      ],
+      "You will no longer be notified of data breaches for these email addresses.": [
+        "U wordt niet langer op de hoogte gehouden van datalekken voor deze e-mailadressen."
+      ],
+      "You will no longer be notified of data breaches for this email address.": [
+        "U zal niet langer op de hoogte worden gehouden van datalekken voor dit e-mailadres."
       ],
       "You will no longer have access to sharing, 2FA and other advanced features in ${ PASS_APP_NAME }": [
         "U krijgt geen toegang meer tot delen, 2FA en andere geavanceerde functionaliteiten in ${ PASS_APP_NAME }"
@@ -2494,6 +2704,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "Uw bestanden worden versleuteld en vervolgens opgeslagen"
+      ],
+      "Your information was found on ${ displayedDate }": [
+        "Uw informatie is gevonden op ${ displayedDate }"
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Uw organisatie vereist dat u uw toegang tot ${ PASS_APP_NAME } beveiligen"
@@ -2564,6 +2777,10 @@
       "${ secureLinksCount } secure link": [
         "${ secureLinksCount } beveiligde link",
         "${ secureLinksCount } beveiligde links"
+      ],
+      "${ usageCount } login": [
+        "${ usageCount } login",
+        "${ usageCount } logins"
       ],
       "${ years } year": [
         "${ years } jaar",
@@ -2869,6 +3086,9 @@
       "Email (new alias)": [
         "E-mail (nieuwe alias)"
       ],
+      "Email address": [
+        "E-mailadres"
+      ],
       "Email aliases": [
         "E-mailaliassen"
       ],
@@ -2937,6 +3157,9 @@
       ],
       "Generic CSV": [
         "Generieke CSV"
+      ],
+      "Get Started": [
+        "Aan de slag"
       ],
       "Grant": [
         "Verlenen"
@@ -3051,6 +3274,9 @@
       ],
       "Last name": [
         "Achternaam"
+      ],
+      "Last updated": [
+        "Voor het laatst bijgewerkt"
       ],
       "Last week": [
         "Vorige week"
@@ -3433,6 +3659,9 @@
       "State or province": [
         "Provincie"
       ],
+      "Status": [
+        "Status"
+      ],
       "Street address": [
         "Adres"
       ],
@@ -3541,6 +3770,9 @@
       "Use ${ PASS_APP_NAME } as your browser's default password manager": [
         "${ PASS_APP_NAME } gebruiken als standaard wachtwoordbeheer van uw browser"
       ],
+      "Used in": [
+        "Gebruikt in"
+      ],
       "Useful for permanent sharing": [
         "Nuttig voor permanent delen"
       ],
@@ -3555,6 +3787,9 @@
       ],
       "Vault ID": [
         "Kluis ID"
+      ],
+      "Vaults": [
+        "Kluizen"
       ],
       "View details": [
         "Details weergeven"
@@ -3614,6 +3849,17 @@
     "Link": {
       "auto create rules ››": [
         "automatisch regels creëren"
+      ],
+      "if your data is leaked": [
+        "als uw gegevens zijn gelekt"
+      ],
+      "Learn more": [
+        "Meer informatie"
+      ]
+    },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "${ reason } inschakelen"
       ]
     },
     "Message": {
@@ -3627,6 +3873,22 @@
       ],
       "You selected ${ semiboldText } in this vault.": [
         "U heeft ${ semiboldText } geselecteerd in deze kluis."
+      ]
+    },
+    "new_plans: feature": {
+      "Require 2FA for organization": [
+        "Tweestapsauthenticatie vereist voor organisatie"
+      ],
+      "SSO integration": [
+        "SSO-integratie"
+      ]
+    },
+    "Notification": {
+      "${ reason } has been disabled": [
+        "${ reason } is uitgezet"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } is aangezet"
       ]
     },
     "Onboarding": {
@@ -3892,6 +4154,20 @@
         "Gebruikt op ${ url }"
       ]
     },
+    "Security Center - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } en ${ remainingCount } ander potentieel lek gedetecteerd. Schakel ${ DARK_WEB_MONITORING_NAME } in om details te bekijken. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } en 1 ander potentieel lek gedetecteerd. Schakel ${ DARK_WEB_MONITORING_NAME } in om details te bekijken. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Een potentieel ${ name } lek werd gedetecteerd. Schakel ${ DARK_WEB_MONITORING_NAME } in om details te bekijken. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Uw informatie is in ten minste één datalek gevonden. Shakel ${ DARK_WEB_MONITORING_NAME } in om details te bekijken. ${ link }"
+      ]
+    },
     "sso": {
       "Approve or deny it now": [
         "Keur goed of weiger nu"
@@ -4035,11 +4311,20 @@
       ]
     },
     "Title": {
+      "${ BRAND_NAME } addresses": [
+        "${ BRAND_NAME } adressen"
+      ],
       "${ PASS_APP_NAME } Logs": [
         "${ PASS_APP_NAME } logbestanden"
       ],
       "${ PASS_APP_NAME } Settings": [
         "${ PASS_APP_NAME } Instellingen"
+      ],
+      "${ PASS_SHORT_APP_NAME } Monitor": [
+        "${ PASS_SHORT_APP_NAME } Monitor"
+      ],
+      "Account protection": [
+        "Account beveiliging"
       ],
       "Actions": [
         "Acties"
@@ -4070,6 +4355,15 @@
       ],
       "Blocked addresses": [
         "Geblokkeerde adressen"
+      ],
+      "Breach detected": [
+        "Inbreuk gedetecteerd"
+      ],
+      "Breaches": [
+        "Inbreuken"
+      ],
+      "Breaches detected for": [
+        "Inbreuken gedetecteerd voor"
       ],
       "Cancel changing your email?": [
         "Wijzigen e-mail annuleren?"
@@ -4113,8 +4407,17 @@
       "Current version": [
         "Huidige versie"
       ],
+      "Custom addresses": [
+        "Aangepaste adressen"
+      ],
       "Custom domains": [
         "Aangepaste domeinen"
+      ],
+      "Custom email monitoring": [
+        "Gepersonaliseerde e-mail monitoring"
+      ],
+      "Custom emails": [
+        "Aangepaste e-mails"
       ],
       "Default": [
         "Standaard"
@@ -4183,6 +4486,9 @@
       "Enter your second password": [
         "Voer uw extra wachtwoord in"
       ],
+      "Excluded items": [
+        "Uitgesloten items"
+      ],
       "Fill & copy password": [
         "Wachtwoord invullen en kopiëren"
       ],
@@ -4204,6 +4510,9 @@
       "Hide my email": [
         "Verberg mijn e-mail"
       ],
+      "Hide-my-email aliases": [
+        "Hide-my-email-aliassen"
+      ],
       "History": [
         "Geschiedenis"
       ],
@@ -4218,6 +4527,12 @@
       ],
       "Importing your data": [
         "Uw gegevens importeren"
+      ],
+      "Inactive 2FA": [
+        "Inactieve 2FA"
+      ],
+      "Information exposed in breach": [
+        "Informatie die is blootgesteld bij datalek"
       ],
       "Item": [
         "Item"
@@ -4234,6 +4549,9 @@
       "Leave vault?": [
         "Kluis verlaten?"
       ],
+      "Loading breaches...": [
+        "Inbreuken laden..."
+      ],
       "Log in as...": [
         "Log in als..."
       ],
@@ -4242,6 +4560,9 @@
       ],
       "Mailbox": [
         "Mailbox"
+      ],
+      "Mark as resolved?": [
+        "Markeren als opgelost?"
       ],
       "Member limit": [
         "Limiet aantal leden"
@@ -4272,14 +4593,32 @@
       "MX record": [
         "MX-record"
       ],
+      "Next": [
+        "Volgende"
+      ],
+      "No excluded items": [
+        "Geen uitgesloten onderdelen"
+      ],
+      "No inactive 2FAs": [
+        "Geen inactieve 2FA's"
+      ],
+      "No insecure passwords": [
+        "Geen onveilige wachtwoorden"
+      ],
       "No items selected": [
         "Geen items geselecteerd"
+      ],
+      "No reused passwords": [
+        "Geen hergebruikte wachtwoorden"
       ],
       "No shared items": [
         "Geen gedeelde items gevonden"
       ],
       "No shared secure links": [
         "Geen gedeelde beveiligde links"
+      ],
+      "Open pagination": [
+        "Paginering openen"
       ],
       "Organize vaults": [
         "Kluizen organiseren"
@@ -4292,6 +4631,12 @@
       ],
       "Password": [
         "Wachtwoord"
+      ],
+      "Password Health": [
+        "Wachtwoord gezondheid"
+      ],
+      "Pause monitoring?": [
+        "Monitoren onderbreken?"
       ],
       "Pending access confirmation": [
         "Wachtend op toegangsbevestiging"
@@ -4315,11 +4660,20 @@
         "Houd er rekening mee dat de alias eenmaal verwijderd, niet kan worden hersteld.",
         "Houd er rekening mee dat aliassen eenmaal verwijderd, niet kunnen worden hersteld."
       ],
+      "Previous": [
+        "Vorige"
+      ],
       "Random Prefix Generation": [
         "Willekeurige Voorvoegsel Generatie"
       ],
+      "Recommended actions": [
+        "Aanbevolen acties"
+      ],
       "Reject device?": [
         "Apparaat weigeren?"
+      ],
+      "Remove email address?": [
+        "E-mailadres verwijderen?"
       ],
       "Remove extra password": [
         "Verwijder uw extra wachtwoord"
@@ -4330,8 +4684,21 @@
       "Reset history for this item?": [
         "Historiek van dit item resetten"
       ],
+      "Resolved breaches": [
+        "Opgeloste inbreuken"
+      ],
       "Restore this version?": [
         "Deze versie herstellen?"
+      ],
+      "Resume monitoring?": [
+        "Monitoren hervatten?"
+      ],
+      "Reused ${ count } time": [
+        "${ count } keer hergebruikt",
+        "${ count } keer hergebruikt"
+      ],
+      "Reused passwords": [
+        "Hergebruikte wachtwoorden"
       ],
       "Review and share": [
         "Beoordelen en delen"
@@ -4348,8 +4715,14 @@
       "Set extra password": [
         "Stel uw extra wachtwoord in"
       ],
+      "Set up 2FA for better security": [
+        "2FA instellen voor betere beveiliging"
+      ],
       "Set up 2FA for more security": [
         "2FA instellen voor meer beveiliging"
+      ],
+      "Settings": [
+        "Instellingen"
       ],
       "Share with": [
         "Deel met"
@@ -4414,14 +4787,26 @@
       "Visible vaults": [
         "Zichtbare kluizen"
       ],
+      "Want to learn more?": [
+        "Wilt u meer weten?"
+      ],
       "Weak password": [
         "Zwak wachtwoord"
+      ],
+      "Weak passwords": [
+        "Zwakke wachtwoorden"
       ],
       "Welcome to ${ brandNameJSX }": [
         "Welkom bij ${ brandNameJSX }"
       ],
       "Welcome to your new password manager!": [
         "Welkom bij uw nieuwe wachtwoordbeheerder!"
+      ],
+      "What is an alias?": [
+        "Wat is een alias?"
+      ],
+      "What is the dark web?": [
+        "Wat is het dark web?"
       ],
       "What is the difference between ${ PASS_SHORT_APP_NAME } note and SimpleLogin note?": [
         "Wat is het verschil tussen ${ PASS_SHORT_APP_NAME } notitie en SimpleLogin notitie?"
@@ -4431,6 +4816,9 @@
       ],
       "Your ${ planName } subscription will end on ${ endDate }": [
         "Uw ${ planName } abonnement zal eindigen op ${ endDate }"
+      ],
+      "Your exposed information": [
+        "Uw blootgestelde informatie"
       ],
       "Your vault is empty": [
         "Uw kluis is leeg."
@@ -4451,6 +4839,14 @@
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Vandaag"
+      ]
+    },
+    "Tooltip": {
+      "Not all information listed here was exposed for all users.": [
+        "Niet alle hier vermelde informatie werd voor alle gebruikers blootgesteld."
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "Tenzij ze worden ontcijferd, blijven versleutelde wachtwoorden veilig, zelfs als ze worden blootgesteld."
       ]
     },
     "Validation": {
@@ -4563,6 +4959,9 @@
       "Email cannot be empty": [
         "E-mail mag niet leeg zijn."
       ],
+      "Email is required": [
+        "E-mailadres is vereist"
+      ],
       "Empty note": [
         "Lege notitie"
       ],
@@ -4577,6 +4976,12 @@
       ],
       "Extra password should have at least 8 characters": [
         "Extra wachtwoord moet ten minste 8 tekens bevatten"
+      ],
+      "Failed to autotype. Please make sure ${ PASS_APP_NAME } has the necessary permissions and try again (${ error }).": [
+        "Automatisch invullen is mislukt. Zorg ervoor dat ${ PASS_APP_NAME } de nodige machtigingen heeft en probeer het opnieuw (${ error })."
+      ],
+      "Failed to load breaches.": [
+        "Kon inbreuken niet laden."
       ],
       "Grant clipboard access to enable automatic clearing of copied passwords and data.": [
         "Verleen klembordtoegang om het automatisch wissen van gekopieerde wachtwoorden en gegevens in te schakelen."
@@ -4674,6 +5079,9 @@
       ],
       "This alias \"${ aliasEmail }\" is currently used in the login \"${ relatedLoginName }\".": [
         "Deze alias \"${ aliasEmail }\" wordt momenteel gebruikt in de login \"${ relatedLoginName }\""
+      ],
+      "This email address will no longer be monitored for data breaches.": [
+        "Dit e-mailadres zal niet langer worden gemonitord op datalekken."
       ],
       "This item is currently shared. Deleting it will remove access for all other users.": [
         "Dit item wordt momenteel gedeeld. Als u het verwijdert, wordt de toegang voor alle andere gebruikers uitgeschakeld."
