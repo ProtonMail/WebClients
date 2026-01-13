@@ -6,7 +6,7 @@ import { c } from 'ttag';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { Icon } from '@proton/components';
 
-import { calculateSingleAttachmentContextSize, getFileSizeLevel } from '../../../llm/utils';
+import { countAttachmentToken, getFileSizeLevel } from '../../../llm/utils';
 import type { Attachment } from '../../../types';
 
 interface ContextSizeIndicatorProps {
@@ -20,7 +20,7 @@ export const ContextSizeIndicator = ({ attachment }: ContextSizeIndicatorProps) 
             return { tokenCount: 0, sizeLevel: 'small' as const };
         }
 
-        const tokens = calculateSingleAttachmentContextSize(attachment);
+        const tokens = countAttachmentToken(attachment);
         const level = getFileSizeLevel(tokens);
 
         return { tokenCount: tokens, sizeLevel: level };
