@@ -68,7 +68,7 @@ import {
     type Status,
     getSpaceDek,
 } from '../../types';
-import type { GenerationToFrontendMessage } from '../../types-api';
+import type { GenerationResponseMessage } from '../../types-api';
 import { clarify } from '../../util/clarify';
 import { listify, mapIds, mapLength, mapify, setify } from '../../util/collections';
 import { sleep } from '../../util/date';
@@ -540,7 +540,7 @@ describe('Lumo Persistence Integration Tests', () => {
 
                 // Simulate receiving token data and finishing the answer message
                 console.log('Simulate receiving token data and finishing the answer message');
-                type G = GenerationToFrontendMessage;
+                type G = GenerationResponseMessage;
                 const sseMessages: G[] = [
                     { type: 'queued' },
                     { type: 'queued' },

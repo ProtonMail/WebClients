@@ -1,7 +1,7 @@
 import { StreamProcessor } from '../streaming';
-import type { GenerationToFrontendMessage } from '../types';
+import type { GenerationResponseMessage } from '../types';
 
-const makeChunkParserTransformer = (): Transformer<string, GenerationToFrontendMessage> => {
+const makeChunkParserTransformer = (): Transformer<string, GenerationResponseMessage> => {
     const processor = new StreamProcessor();
     return {
         transform(s: string, controller: TransformStreamDefaultController) {
@@ -19,5 +19,5 @@ const makeChunkParserTransformer = (): Transformer<string, GenerationToFrontendM
     };
 };
 
-export const makeChunkParserTransformStream = (): TransformStream<string, GenerationToFrontendMessage> =>
+export const makeChunkParserTransformStream = (): TransformStream<string, GenerationResponseMessage> =>
     new TransformStream(makeChunkParserTransformer());
