@@ -283,6 +283,8 @@ export function useAccessiblePlans({
 
     if (isWalletIndividualPlans) {
         IndividualPlans = walletIndividualPlans;
+    } else if (isMeetSettingsApp) {
+        IndividualPlans = [];
     } else {
         const plusPlan =
             enabledProductB2CPlans.find((plan) => plan.Name === selectedProductPlans[Audience.B2C]) ??
@@ -306,7 +308,7 @@ export function useAccessiblePlans({
         hasPassFamily(subscription);
 
     let FamilyPlans: Plan[] = [];
-    if (getCanAccessFamilyPlans(subscription)) {
+    if (getCanAccessFamilyPlans(subscription) && !isMeetSettingsApp) {
         FamilyPlans = filterPlans([
             hasFreePlan ? FREE_PLAN : null,
             canAccessDuoPlan && !canAccessPassFamilyPlan ? plansMap[PLANS.DUO] : null,
@@ -338,7 +340,11 @@ export function useAccessiblePlans({
 
     const lumoB2BPlans = filterPlans([plansMap[PLANS.LUMO_BUSINESS]]);
 
-    const meetB2BPlans = filterPlans([plansMap[PLANS.MEET_BUSINESS]]);
+    const meetB2BPlans = filterPlans([
+        plansMap[PLANS.MEET_BUSINESS],
+        plansMap[bundleProPlan],
+        isNewB2BPlanEnabled ? plansMap[PLANS.BUNDLE_BIZ_2025] : null,
+    ]);
 
     /**
      * The VPN B2B plans should be displayed only in the ProtonVPN Settings app (protonvpn.com).

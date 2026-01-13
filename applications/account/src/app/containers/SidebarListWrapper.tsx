@@ -12,6 +12,10 @@ interface Props extends SidebarConfig {
 const SidebarListWrapper = ({ header, routes, prefix }: Props) => {
     const referralRef = useRef<HTMLLIElement>(null);
 
+    if (!Object.values(routes).some(getIsSectionAvailable)) {
+        return null;
+    }
+
     return (
         <SidebarList>
             <SidebarListItem className="navigation-link-header-group">
