@@ -57,7 +57,6 @@ const CopyItemsModal = ({ open, onClose, onExit, itemsToCopy }: { itemsToCopy: C
 
     const [copyTargetTreeId, setCopyTargetTreeId] = useState<string>();
     const copyTargetUid = copyTargetTreeId ? getNodeUidFromTreeItemId(copyTargetTreeId) : undefined;
-    const isCopyAllowed = checkIsCopyAllowed(itemsToCopy, copyTargetUid);
     const targetIsWritable = copyTargetUid
         ? [MemberRole.Admin, MemberRole.Editor].includes(get(copyTargetUid)?.highestEffectiveRole ?? MemberRole.Viewer)
         : undefined;
@@ -80,7 +79,7 @@ const CopyItemsModal = ({ open, onClose, onExit, itemsToCopy }: { itemsToCopy: C
             .finally(() => setIsCopying(false));
     };
 
-    const errorMessage = getErrorMessage(isCopyAllowed, targetIsWritable);
+    const errorMessage = targetIsWritable ? null : c('Info').t`You don’t have permission to copy files to this folder.`;
 
     return (
         <ModalTwo size="large" open={open} onClose={onClose} onExit={onExit}>
@@ -133,17 +132,6 @@ const CopyItemsModal = ({ open, onClose, onExit, itemsToCopy }: { itemsToCopy: C
     );
 };
 
-function getErrorMessage(isCopyAllowed: boolean, targetIsWritable: boolean | undefined) {
-    const messages = [];
-    if (isCopyAllowed) {
-        messages.push(c('Info').t`One of the files or folders you want to copy already exist in selected folder.`);
-    }
-    if (targetIsWritable === false) {
-        messages.push(c('Info').t`You don’t have permission to copy files to this folder.`);
-    }
-    return messages.length > 0 ? messages.join('\n') : undefined;
-}
-
 export const useCopyItemsModal = () => {
     const [copyModal, showModal] = useModalTwoStatic(CopyItemsModal);
 
@@ -156,7 +144,3 @@ export const useCopyItemsModal = () => {
 
     return { copyModal, showCopyItemsModal };
 };
-
-function checkIsCopyAllowed(itemsToCopy: CopyModalItem[], copyTargetUid: string | undefined) {
-    return !!itemsToCopy.find((sourceItem) => copyTargetUid === sourceItem.uid);
-}
