@@ -182,8 +182,9 @@ export function useDriveFolderIndexing(): UseDriveFolderIndexingReturn {
 
                 // Get treeEventScopeId from first file or subfolder in the folder
                 let treeEventScopeId: string | undefined;
-                if (allFiles.length > 0 && allFiles[0].treeEventScopeId) {
-                    treeEventScopeId = allFiles[0].treeEventScopeId;
+                const firstFile = allFiles[0];
+                if (firstFile?.treeEventScopeId) {
+                    treeEventScopeId = firstFile.treeEventScopeId;
                     console.log('[DriveIndexing] Captured treeEventScopeId:', treeEventScopeId);
                 }
 
