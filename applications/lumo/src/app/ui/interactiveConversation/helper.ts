@@ -318,7 +318,7 @@ async function retrieveDocumentContextForProject(
         const MAX_DOCS = 50; // Allow retrieving all relevant documents (quality gates will filter)
 
         for (let i = 0; i < nonZeroDocs.length && relevantDocs.length < MAX_DOCS; i++) {
-            const doc = nonZeroDocs[i];
+            const doc = nonZeroDocs[i]!;
 
             // Must meet the effective threshold
             if (doc.score < effectiveThreshold) {
@@ -330,7 +330,7 @@ async function retrieveDocumentContextForProject(
 
             // Check for score gap with previous doc (if not first) - detect relevance cliffs
             if (i > 0) {
-                const prevScore = nonZeroDocs[i - 1].score;
+                const prevScore = nonZeroDocs[i - 1]!.score;
                 const dropRatio = doc.score / prevScore;
                 if (dropRatio < 0.5) {
                     // More than 50% drop from previous - this is a relevance cliff
