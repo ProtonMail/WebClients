@@ -45,8 +45,8 @@ export const AutotypeDropdown: FC<AutotypeDropdownProps> = ({ actions }) => {
                 ref={anchorRef}
                 label={
                     <>
-                        {c('Action').t`Auto-type`}
-                        {isFreePlan && <PassPlusIcon className="ml-2" />}
+                        <div className="text-ellipsis">{c('Action').t`Auto-type`}</div>
+                        {isFreePlan && <PassPlusIcon className="ml-2 shrink-0" />}
                     </>
                 }
                 icon="magic-wand"
