@@ -427,7 +427,7 @@ export const ProjectFilesPanel = ({
                                 </h4>
                                 <p className="project-files-empty-subtitle color-weak">
                                     {c('collider_2025:Info')
-                                        .t`Upload files from ${DRIVE_APP_NAME} or straight from your computer.`}
+                                        .t`Link files from ${DRIVE_APP_NAME} or upload from your computer.`}
                                 </p>
                                 <p className="project-files-empty-hint color-weak text-sm">
                                     {c('collider_2025:Info')
@@ -439,7 +439,7 @@ export const ProjectFilesPanel = ({
                                         onClick={() => linkDriveFolderModal.openModal(true)}
                                         className="project-files-action-button"
                                     >
-                                        {c('collider_2025:Button').t`Upload from ${DRIVE_APP_NAME}`}
+                                        {c('collider_2025:Button').t`Link with ${DRIVE_APP_NAME} folder`}
                                     </Button>
                                     <Button
                                         shape="outline"

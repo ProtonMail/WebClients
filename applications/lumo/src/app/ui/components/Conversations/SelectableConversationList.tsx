@@ -118,17 +118,14 @@ export const SelectableConversationList = ({
     }
 
     return (
-        <div className={`selectable-conversation-list ${className}`}>
+        <div className={`selectable-conversation-list flex flex-column flex-nowrap ${className}`}>
             {/* Header row */}
             <div
                 className={`selectable-conversation-list-header flex items-center justify-between mb-2 ${isSelectionMode ? 'is-selection-mode' : ''}`}
             >
                 <span className="text-md color-weak">
-                    {totalConversations}{c('collider_2025:Info').ngettext(
-                        msgid` Chat in Project`,
-                        ` Chats in Project`,
-                        totalConversations
-                    )}
+                    {totalConversations}
+                    {c('collider_2025:Info').ngettext(msgid` Chat in Project`, ` Chats in Project`, totalConversations)}
                 </span>
                 <button
                     className="selectable-conversation-select-link text-sm color-weak bg-transparent border-none cursor-pointer hover:underline"
@@ -144,8 +141,7 @@ export const SelectableConversationList = ({
                     <Button size="small" shape="ghost" onClick={toggleSelectAll} className="text-sm">
                         {allSelected
                             ? c('collider_2025:Action').t`Deselect all`
-                            : c('collider_2025:Action').t`Select all`
-                        }
+                            : c('collider_2025:Action').t`Select all`}
                     </Button>
                     {selectedCount > 0 && (
                         <Button
@@ -177,8 +173,7 @@ export const SelectableConversationList = ({
                                     {group.conversations.map((conversation) => {
                                         const isSelected = selectedIds.has(conversation.id);
                                         const title =
-                                            conversation.title?.trim() ||
-                                            c('collider_2025:Label').t`Untitled chat`;
+                                            conversation.title?.trim() || c('collider_2025:Label').t`Untitled chat`;
 
                                         return (
                                             <div
@@ -190,12 +185,9 @@ export const SelectableConversationList = ({
                                                 {isSelectionMode && (
                                                     <Checkbox
                                                         checked={isSelected}
-                                                        onChange={() =>
-                                                            toggleSelectConversation(conversation.id)
-                                                        }
+                                                        onChange={() => toggleSelectConversation(conversation.id)}
                                                         className="mr-2"
-                                                        aria-label={c('collider_2025:Action')
-                                                            .t`Select conversation`}
+                                                        aria-label={c('collider_2025:Action').t`Select conversation`}
                                                     />
                                                 )}
                                                 <button
@@ -232,4 +224,3 @@ export const SelectableConversationList = ({
 };
 
 export default SelectableConversationList;
-
