@@ -453,8 +453,18 @@ export const DriveBrowser = forwardRef<DriveBrowserHandle, DriveBrowserProps>(
                                             type: 'success',
                                         });
                                     }
+                                } else if (result.type === 'error') {
+                                    console.warn(`[DriveBrowser] File processing failed for ${file.name}: ${result.message}`);
+                                    createNotification({
+                                        text: c('collider_2025: Success').t`File uploaded to Drive folder`,
+                                        type: 'success',
+                                    });
+                                    createNotification({
+                                        text: c('collider_2025: Warning').t`Failed to index file for search: ${result.message}`,
+                                        type: 'warning',
+                                    });
                                 } else {
-                                    // Processing failed or not supported, just show upload success
+                                    console.log(`[DriveBrowser] Skipping indexing for ${file.name} (type '${result.type}')`);
                                     createNotification({
                                         text: c('collider_2025: Success').t`File uploaded to Drive folder`,
                                         type: 'success',

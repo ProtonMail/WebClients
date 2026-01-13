@@ -233,6 +233,10 @@ export function useDriveFolderIndexing(): UseDriveFolderIndexingReturn {
                                 folderPath: `${folderPath}/${file.relativePath}`.replace(/\/[^/]+$/, ''),
                                 spaceId,
                             };
+                        } else if (result.type === 'error') {
+                            console.warn(`[DriveIndexing] File processing failed for ${file.relativePath}: ${result.message}`);
+                        } else {
+                            console.log(`[DriveIndexing] Skipping indexing for ${file.relativePath} (type '${result.type}')`);
                         }
                         return null;
                     } catch (error) {
