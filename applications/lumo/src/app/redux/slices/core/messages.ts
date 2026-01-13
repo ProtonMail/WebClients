@@ -54,6 +54,10 @@ const messagesReducer = createReducer<MessageMap>(initialState, (builder) => {
         .addCase(appendChunk, (state, action) => {
             const chunk = action.payload;
             const message = state[chunk.messageId];
+            if (!message) {
+                console.warn(`appendChunk: message ${chunk.messageId} not found`);
+                return;
+            }
             message.content ??= '';
             console.log('appendChunk: ', chunk.content);
             message.content += chunk.content;
@@ -61,13 +65,17 @@ const messagesReducer = createReducer<MessageMap>(initialState, (builder) => {
         .addCase(setToolCall, (state, action) => {
             const chunk = action.payload;
             const message = state[chunk.messageId];
+            if (!message) {
+                console.warn(`setToolCall: message ${chunk.messageId} not found`);
+                return;
+            }
             message.toolCall = chunk.content;
         })
         .addCase(setToolResult, (state, action) => {
             const chunk = action.payload;
             const message = state[chunk.messageId];
             if (!message) {
-                console.warn(`cannot modify message ${chunk.messageId}: not found in Redux state`);
+                console.warn(`setToolResult: message ${chunk.messageId}: not found`);
                 return;
             }
             message.toolResult = chunk.content;
