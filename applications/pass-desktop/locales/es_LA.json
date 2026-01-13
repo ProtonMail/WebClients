@@ -37,6 +37,12 @@
       "Accept and view the item": [
         "Aceptar y ver el elemento"
       ],
+      "Account": [
+        "Cuenta"
+      ],
+      "Account settings": [
+        "Ajustes de la cuenta"
+      ],
       "Add": [
         "Agregar"
       ],
@@ -417,6 +423,9 @@
       ],
       "Lock ${ PASS_APP_NAME }": [
         "Bloquear ${ PASS_APP_NAME }"
+      ],
+      "Lock extension": [
+        "Bloquear extensión"
       ],
       "Make admin": [
         "Dar permisos para administrar"
@@ -1527,6 +1536,9 @@
       "Admin": [
         "Administrador"
       ],
+      "After confirming, you will need to accept a permission prompt for ${ PASS_APP_NAME }.": [
+        "Después de confirmar, deberá aceptar una solicitud de permiso para ${ PASS_APP_NAME }."
+      ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Después de importar los datos, puede eliminar el archivo CSV que contiene sus contraseñas por seguridad."
       ],
@@ -1966,10 +1978,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Moviendo todos los elementos desde \"${ payload.content.name }\""
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Mover un elemento a otra bóveda eliminará sus enlaces seguros.",
-        "Mover elementos a otra bóveda eliminará sus enlaces seguros."
-      ],
       "Moving items": [
         "Moviendo los elementos"
       ],
@@ -2356,6 +2364,9 @@
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Esta exportación no estará cifrada y cualquier persona con acceso al archivo exportado podrá ver sus contraseñas. Por seguridad, elimínelo una vez que haya terminado de usarlo."
       ],
+      "This feature is currently experimental on Linux. Please ensure your system is up-to-date.": [
+        "Esta función se encuentra en fase experimental en Linux. Asegúrese de que su sistema esté actualizado."
+      ],
       "This item is not currently shared with anyone. Invite people to share it with others.": [
         "Este elemento no está compartido con nadie en este momento. Invite a otras personas a compartirlo con otros."
       ],
@@ -2543,9 +2554,6 @@
       "You may close this tab.": [
         "Puede cerrar esta pestaña."
       ],
-      "You may need to accept a permission prompt and may have to restart the application depending on your system.": [
-        "Puede que tenga que aceptar una solicitud de permiso y que tenga que reiniciar la aplicación dependiendo de su sistema."
-      ],
       "You may need to grant accessiblity permission to ${ PASS_APP_NAME }.": [
         "Puede que necesite otorgar permiso de accesibilidad a ${ PASS_APP_NAME }."
       ],
@@ -2658,6 +2666,9 @@
       ],
       "${ PASS_APP_NAME } recognizes the websites and apps you use and autofills forms with your credentials for you on any browser or device. No need to copy and paste.": [
         "${ PASS_APP_NAME } reconoce los sitios web y las apps que usa para completar automáticamente formularios con sus credenciales en cualquier navegador o dispositivo. No es necesario copiar y pegar."
+      ],
+      "${ PASS_SHORT_APP_NAME } Monitor": [
+        "Monitor ${ PASS_SHORT_APP_NAME }"
       ],
       "${ PASS_SHORT_APP_NAME } version": [
         "Versión de ${ PASS_SHORT_APP_NAME }"
@@ -2990,6 +3001,9 @@
       "Enter email or username": [
         "Ingresar correo o nombre de usuario"
       ],
+      "Experimental": [
+        "Experimental"
+      ],
       "Expiration date": [
         "Fecha de expiración"
       ],
@@ -3193,6 +3207,9 @@
       ],
       "Language": [
         "Idioma"
+      ],
+      "Larger window": [
+        "Ventana más grande"
       ],
       "Last 2 weeks": [
         "Últimas 2 semanas"
@@ -3565,6 +3582,9 @@
       ],
       "Server": [
         "Servidor"
+      ],
+      "Settings": [
+        "Ajustes"
       ],
       "Share": [
         "Compartir"

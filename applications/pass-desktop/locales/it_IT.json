@@ -37,6 +37,12 @@
       "Accept and view the item": [
         "Accetta e visualizza l'elemento"
       ],
+      "Account": [
+        "Account"
+      ],
+      "Account settings": [
+        "Impostazioni dell'account"
+      ],
       "Add": [
         "Aggiungi"
       ],
@@ -417,6 +423,9 @@
       ],
       "Lock ${ PASS_APP_NAME }": [
         "Blocca ${ PASS_APP_NAME }"
+      ],
+      "Lock extension": [
+        "Blocca l'estensione"
       ],
       "Make admin": [
         "Rendi amministratore"
@@ -1527,6 +1536,9 @@
       "Admin": [
         "Amministratore"
       ],
+      "After confirming, you will need to accept a permission prompt for ${ PASS_APP_NAME }.": [
+        "Dopo la conferma, dovrai accettare una richiesta di autorizzazione per ${ PASS_APP_NAME }."
+      ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Dopo aver importato i tuoi dati, puoi eliminare questo file CSV contenente le tue password per questioni di sicurezza."
       ],
@@ -1966,10 +1978,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Spostamento di tutti gli elementi da \"${ payload.content.name }\" in corso"
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Spostare un elemento in un'altra cassaforte cancellerà i suoi link sicuri.",
-        "Spostare degli elementi in un'altra cassaforte cancellerà i loro link sicuri."
-      ],
       "Moving items": [
         "Spostamento degli elementi"
       ],
@@ -2356,6 +2364,9 @@
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Questa esportazione non sarà crittografata e chiunque abbia accesso al file esportato potrà vedere le tue password. Per la tua sicurezza, ricordati di cancellarlo una volta che hai terminato di utilizzarlo."
       ],
+      "This feature is currently experimental on Linux. Please ensure your system is up-to-date.": [
+        "Questa funzionalità è attualmente sperimentale su Linux. Assicurati che il tuo sistema sia aggiornato."
+      ],
       "This item is not currently shared with anyone. Invite people to share it with others.": [
         "Questo elemento non è attualmente condiviso con nessuno. Per condividerlo con qualcuno, invita delle persone."
       ],
@@ -2543,9 +2554,6 @@
       "You may close this tab.": [
         "Puoi chiudere questa scheda."
       ],
-      "You may need to accept a permission prompt and may have to restart the application depending on your system.": [
-        "Potresti dover accettare un prompt di autorizzazione e potresti dover restartare l'application a seconda del tuo sistema."
-      ],
       "You may need to grant accessiblity permission to ${ PASS_APP_NAME }.": [
         "Potresti dover concedere l'autorizzazione di accessibilità a ${ PASS_APP_NAME }."
       ],
@@ -2658,6 +2666,9 @@
       ],
       "${ PASS_APP_NAME } recognizes the websites and apps you use and autofills forms with your credentials for you on any browser or device. No need to copy and paste.": [
         "${ PASS_APP_NAME } riconosce i siti web e le app che usi e compila automaticamente i moduli con le tue credenziali su qualsiasi browser o dispositivo. Non serve il copia e incolla."
+      ],
+      "${ PASS_SHORT_APP_NAME } Monitor": [
+        "${ PASS_SHORT_APP_NAME } Monitor"
       ],
       "${ PASS_SHORT_APP_NAME } version": [
         "Versione di ${ PASS_SHORT_APP_NAME }"
@@ -2990,6 +3001,9 @@
       "Enter email or username": [
         "Inserisci email o nome utente"
       ],
+      "Experimental": [
+        "Sperimentale"
+      ],
       "Expiration date": [
         "Data di scadenza"
       ],
@@ -3193,6 +3207,9 @@
       ],
       "Language": [
         "Lingua"
+      ],
+      "Larger window": [
+        "Finestra più grande"
       ],
       "Last 2 weeks": [
         "Ultimi 14 giorni"
@@ -3565,6 +3582,9 @@
       ],
       "Server": [
         "Server"
+      ],
+      "Settings": [
+        "Impostazioni"
       ],
       "Share": [
         "Condividi"
