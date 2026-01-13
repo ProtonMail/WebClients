@@ -80,12 +80,12 @@ export const useFileHandling = ({
                             console.log(`[useFileHandling] Processing uploaded Drive file for indexing: ${file.name}`);
                             const processingResult = await fileProcessingService.processFile(file);
 
-                            if (processingResult.success && processingResult.result) {
+                            if (processingResult.type === 'text') {
                                 const searchService = SearchService.get(userId);
                                 const document: DriveDocument = {
                                     id: nodeId,
                                     name: file.name,
-                                    content: processingResult.result.convertedContent,
+                                    content: processingResult.content,
                                     mimeType: file.type,
                                     size: file.size,
                                     modifiedTime: Date.now(),
