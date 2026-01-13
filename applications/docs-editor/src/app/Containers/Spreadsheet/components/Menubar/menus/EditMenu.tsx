@@ -24,7 +24,7 @@ export function EditMenu({ renderMenuButton, ...props }: EditMenuProps) {
         {/* <Cut /> */}
         <Copy />
         <Paste />
-        {/* <PasteSpecialSubmenu /> */}
+        <PasteSpecialSubmenu />
         <UI.MenuSeparator />
         <Find />
       </UI.Menu>
@@ -89,7 +89,6 @@ function Paste() {
   )
 }
 
-// @ts-expect-error Temporarily disabled.
 function PasteSpecialSubmenu() {
   return (
     <Ariakit.MenuProvider>
@@ -115,9 +114,9 @@ function PasteSpecialSubmenu() {
         >
           {s('Formatting only')}
         </UI.MenuItem>
-        <UI.MenuItem onClick={useUI.$.operation.paste.formula} disabled={useUI((ui) => ui.info.isReadonly)}>
+        {/* <UI.MenuItem onClick={useUI.$.operation.paste.formula} disabled={useUI((ui) => ui.info.isReadonly)}>
           {s('Formula only')}
-        </UI.MenuItem>
+        </UI.MenuItem> */}
         <UI.MenuSeparator />
         <UI.MenuItem onClick={useUI.$.operation.paste.transposed} disabled={useUI((ui) => ui.info.isReadonly)}>
           {s('Transposed')}
