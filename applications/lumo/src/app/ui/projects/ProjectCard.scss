@@ -81,8 +81,9 @@
 	color: var(--text-weak);
 	margin: 0;
 	line-height: 1.4;
-	display: flex;
+	line-clamp: 2;
 	-webkit-line-clamp: 2;
+	/* stylelint-disable-next-line property-no-vendor-prefix */
 	-webkit-box-orient: vertical;
 	overflow: hidden;
 }
