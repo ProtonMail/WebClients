@@ -42,11 +42,7 @@ import OnboardingChecklistSidebar from '../onboarding/checklist/sidebar/Onboardi
 import MailSidebarList from './MailSidebarList';
 import MailSidebarPrimaryButton from './MailSidebarPrimaryButton';
 
-interface Props {
-    labelID: string;
-}
-
-const MailSidebar = ({ labelID }: Props) => {
+const MailSidebar = () => {
     const api = useApi();
     const [user] = useUser();
     const [showSideBar, setShowSideBar] = useLocalState(true, `${user.ID}-${APPS.PROTONMAIL}-left-nav-opened`);
@@ -102,7 +98,6 @@ const MailSidebar = ({ labelID }: Props) => {
         >
             <SidebarNav className="flex *:min-size-auto">
                 <MailSidebarList
-                    labelID={labelID}
                     postItems={
                         <>
                             {displayContactsInHeader && (
