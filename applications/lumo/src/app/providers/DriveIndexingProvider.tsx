@@ -177,6 +177,10 @@ const DriveIndexingProviderInner = ({ children, userId }: { children: ReactNode;
                                         folderPath: folder.path,
                                         spaceId: folder.spaceId,
                                     });
+                                } else if (result.type === 'error') {
+                                    console.warn('[DriveIndexingProvider] File processing failed during rehydration:', file.name, result.message);
+                                } else {
+                                    console.log(`[DriveIndexingProvider] Skipping indexing for ${file.name} (type '${result.type}')`);
                                 }
                             } catch (error) {
                                 console.warn('[DriveIndexingProvider] Failed to process file during rehydration:', file.name, error);
@@ -379,6 +383,10 @@ const DriveIndexingProviderInner = ({ children, userId }: { children: ReactNode;
                             }
                         }
                     }
+                } else if (result.type === 'error') {
+                    console.warn('[DriveIndexingProvider] File processing failed:', fileName, result.message);
+                } else {
+                    console.log(`[DriveIndexingProvider] Skipping indexing for ${fileName} (type '${result.type}')`);
                 }
 
                 // Update status - file processed

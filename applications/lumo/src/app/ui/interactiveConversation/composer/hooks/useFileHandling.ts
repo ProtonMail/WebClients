@@ -95,8 +95,14 @@ export const useFileHandling = ({
                                 };
                                 await searchService.indexDocuments([document]);
                                 console.log(`[useFileHandling] Indexed Drive file for RAG: ${file.name}`);
+                            } else if (processingResult.type === 'error') {
+                                console.warn(`[useFileHandling] File processing failed for ${file.name}: ${processingResult.message}`);
+                                createNotification({
+                                    text: c('collider_2025: Warning').t`Failed to index file for search: ${processingResult.message}`,
+                                    type: 'warning',
+                                });
                             } else {
-                                console.warn(`[useFileHandling] File processing failed, not indexing: ${file.name}`);
+                                console.log(`[useFileHandling] Skipping indexing for ${file.name} (type '${processingResult.type}')`);
                             }
                         } catch (indexError) {
                             console.warn('[useFileHandling] Failed to index Drive file for RAG:', indexError);
