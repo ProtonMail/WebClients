@@ -63,7 +63,7 @@ function uint8ArrayToBase64(buffer: Uint8Array<ArrayBuffer>): string {
     let binary = '';
     const len = buffer.byteLength;
     for (let i = 0; i < len; i++) {
-        binary += String.fromCharCode(buffer[i]);
+        binary += String.fromCharCode(buffer[i]!);
     }
     return btoa(binary);
 }
@@ -149,7 +149,7 @@ export function prepareTurns(
     if (documentContext && turns.length > 0) {
         const firstUserIndex = turns.findIndex((turn) => turn.role === Role.User);
         if (firstUserIndex !== -1) {
-            const userTurn = turns[firstUserIndex];
+            const userTurn = turns[firstUserIndex]!;
             // Prepend document context to existing context (which may have file attachments)
             const existingContext = userTurn.context || '';
             turns[firstUserIndex] = {
@@ -165,16 +165,10 @@ export function prepareTurns(
     const personalizationPrompt = formatPersonalization(personalization);
     if (personalizationPrompt || projectInstructions) {
         // Find the last user message
-        let lastUserIndex = -1;
-        for (let i = turns.length - 1; i >= 0; i--) {
-            if (turns[i].role === Role.User) {
-                lastUserIndex = i;
-                break;
-            }
-        }
+        const lastUserIndex = turns.findLastIndex((turn) => turn.role === Role.User);
 
         if (lastUserIndex !== -1) {
-            const userTurn = turns[lastUserIndex];
+            const userTurn = turns[lastUserIndex]!;
             const originalContent = userTurn.content || '';
 
             // Build instruction parts
@@ -331,7 +325,7 @@ export function postProcessTitle(title: string): string {
     const regex = /"([^"]+)"/;
     const match = title.match(regex);
     if (match) {
-        title = match[1].trim();
+        title = match[1]!.trim();
     }
     while (title.endsWith('.')) {
         title = title.substring(0, title.length - 1);
