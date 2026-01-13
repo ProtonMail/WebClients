@@ -7,6 +7,7 @@ import { sendMessageWithRedux } from '../../lib/lumo-api-client/integrations/red
 import { type ContextFilter, ENABLE_U2L_ENCRYPTION, prepareTurns } from '../../llm';
 import { flattenAttachmentsForLlm } from '../../llm/attachments';
 import { calculateSingleAttachmentContextSize } from '../../llm/utils';
+import type { AttachmentMap } from '../../redux/slices/core/attachments';
 import { newAttachmentId, pushAttachmentRequest, upsertAttachment } from '../../redux/slices/core/attachments';
 import {
     addConversation,
@@ -454,6 +455,7 @@ function getMimeTypeFromName(filename: string): string {
 export type ApplicationContext = {
     api: Api;
     signal: AbortSignal;
+    userId?: string;
 };
 
 export type NewMessageData = {
@@ -467,6 +469,12 @@ export type ConversationContext = {
     allConversationAttachments: Attachment[];
     messageChain: Message[];
     contextFilters: ContextFilter[];
+};
+
+export type ProjectContext = {
+    isProject: boolean;
+    projectInstructions?: string;
+    allAttachments: AttachmentMap;
 };
 
 export type UiContext = {
@@ -969,23 +977,17 @@ export type RetryData = {
 export function retrySendMessage({
     applicationContext: a,
     conversationContext: c,
+    projectContext: p,
     uiContext: ui,
     settingsContext: s,
     retryData: r,
-    isProject, // todo incorporate in context param objects
-    userId, // todo incorporate in context param objects
-    projectInstructions,
-    allAttachments = {},
 }: {
     applicationContext: ApplicationContext;
     conversationContext: ConversationContext;
+    projectContext: ProjectContext;
     uiContext: UiContext;
     settingsContext: SettingsContext;
     retryData: RetryData;
-    isProject: boolean;
-    userId?: string;
-    projectInstructions?: string;
-    allAttachments?: Record<string, Attachment>;
 }) {
     return async (dispatch: LumoDispatch) => {
         const date = createDate();
@@ -1032,10 +1034,10 @@ export function retrySendMessage({
         const ragResult = await retrieveDocumentContextForProject(
             userQuery,
             c.spaceId,
-            userId,
-            isProject,
+            a.userId,
+            p.isProject,
             linearChain,
-            allAttachments || {},
+            p.allAttachments || {},
             referencedFileNames
         );
 
@@ -1111,7 +1113,7 @@ export function retrySendMessage({
             updatedLinearChain,
             c.contextFilters,
             s.personalization,
-            projectInstructions,
+            p.projectInstructions,
             ragResult?.context,
             c2
         );
