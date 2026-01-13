@@ -99,12 +99,14 @@ export const replyAll = (
     addresses: Address[]
 ): PartialMessageState => {
     const { data = {}, decryption: { decryptedSubject = '' } = {} } = referenceMessage;
+    console.log({ referenceMessage });
 
     const Subject = formatSubject(useEncrypted ? decryptedSubject : data.Subject, RE_PREFIX);
 
     const { Attachments, messageImages } = keepImages(referenceMessage);
 
     if (isSent(referenceMessage.data) || isSentAndReceived(referenceMessage.data)) {
+        console.log('xxx');
         return {
             data: { Subject, ToList: data.ToList, CCList: data.CCList, BCCList: data.BCCList, Attachments },
             messageImages,

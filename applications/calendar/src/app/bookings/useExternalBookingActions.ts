@@ -9,15 +9,14 @@ import { useApi, useNotifications } from '@proton/components';
 import { useGetCanonicalEmailsMap } from '@proton/components/hooks/useGetCanonicalEmailsMap';
 import { useGetVtimezonesMap } from '@proton/components/hooks/useGetVtimezonesMap';
 import { useSaveMeeting } from '@proton/meet';
-import { confirmBookingSlot, oldConfirmBookingSlot } from '@proton/shared/lib/api/calendarBookings';
+import { confirmBookingSlot } from '@proton/shared/lib/api/calendarBookings';
 import { traceError } from '@proton/shared/lib/helpers/sentry';
 
 import { extractBookingUidFromSecret } from '../containers/bookings/utils/crypto/bookingEncryption';
 import { useBookingStore } from './booking.store';
-import type { BookingTimeslot, OldBookingTimeslot } from './booking.store';
-import { oldPrepareBookingSubmission, prepareBookingSubmission } from './bookingSubmissionUtils';
+import type { BookingTimeslot } from './booking.store';
+import { prepareBookingSubmission } from './bookingSubmissionUtils';
 import { useBookingsProvider } from './entryPoints/BookingsExternalProvider';
-import { getAttendeeSharedKeyPacket } from './utils/attendeeKeyPacketHelper';
 import { getBookingSharedKeyPacket } from './utils/attendeeSharedKeyPacketHelper';
 
 interface AttendeeInfo {
@@ -118,80 +117,9 @@ export const useExternalBookingActions = () => {
         }
     };
 
-    // V1 Crypto model
-    const submitOldCryptoModel = async (timeslot: OldBookingTimeslot, attendeeInfo: AttendeeInfo) => {
-        if (!bookingDetails) {
-            throw new Error('Booking details not available');
-        }
-
-        try {
-            const bookingUidBase64Url = await extractBookingUidFromSecret(bookingSecretBase64Url);
-
-            const submissionData = await oldPrepareBookingSubmission({
-                timeslot,
-                bookingDetails,
-                bookingSecretBase64Url,
-                bookingKeySalt: bookingDetails.bookingKeySalt,
-                attendeeName: attendeeInfo.name,
-                attendeeEmail: attendeeInfo.email,
-                organizerName: bookingDetails.inviterDisplayName || '',
-                organizerEmail: bookingDetails.inviterEmail,
-                saveMeeting,
-                getCanonicalEmailsMap,
-                getVTimezonesMap,
-            });
-
-            const attendeeSharedKeyPacketResult = await getAttendeeSharedKeyPacket({
-                isGuest,
-                attendeeEmail: attendeeInfo.email,
-                sharedSessionKey: submissionData.sharedSessionKey,
-                getCalendarUserSettings,
-                getAddresses,
-                getCalendarKeys,
-            });
-
-            if (attendeeSharedKeyPacketResult.type === 'disabled_address') {
-                createNotification({
-                    type: 'error',
-                    text: c('Error').t`Cannot create a booking with a disabled address`,
-                });
-                return;
-            }
-
-            const attendeeSharedKeyPacket =
-                attendeeSharedKeyPacketResult.type === 'success' ? attendeeSharedKeyPacketResult.keyPacket : undefined;
-
-            await api(
-                oldConfirmBookingSlot(bookingUidBase64Url, timeslot.id, {
-                    ContentPart: submissionData.contentPart,
-                    TimePart: submissionData.timePart,
-                    AttendeeData: submissionData.attendeeData,
-                    AttendeeToken: submissionData.attendeeToken,
-                    AttendeeSharedKeyPacket: attendeeSharedKeyPacket,
-                    EmailData: {
-                        Name: submissionData.emailData.name,
-                        Email: submissionData.emailData.email,
-                        Subject: submissionData.emailData.subject,
-                        Body: submissionData.emailData.body,
-                        Ics: submissionData.ics,
-                        Type: 'external',
-                    },
-                })
-            );
-
-            setSelectedBookingSlot(timeslot);
-            history.push(`/bookings/success#${bookingSecretBase64Url}`);
-            return 'success';
-        } catch (error: unknown) {
-            traceError(error);
-            throw error;
-        }
-    };
-
     return {
         bookingSecretBase64Url,
         bookingDetails,
         submitBooking,
-        submitOldCryptoModel,
     };
 };

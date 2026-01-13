@@ -1,5 +1,5 @@
 import { shouldCheckSignatureVerificationStatus } from '@proton/account/publicKeys/verificationPreferences';
-import type { PrivateKeyReference, SessionKey } from '@proton/crypto/lib';
+import type { PrivateKeyReference } from '@proton/crypto/lib';
 import { CryptoProxy, VERIFICATION_STATUS } from '@proton/crypto/lib';
 import { SentryCalendarInitiatives, traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 import type { VerificationPreferences } from '@proton/shared/lib/interfaces/VerificationPreferences';
@@ -48,32 +48,6 @@ export const decryptAndVerifyBookingPageSecret = async ({
     }
 
     return { data: decrypted.data, failedToVerify };
-};
-
-/**
- * Decrypts the booking session key using the booking secret
- * @param bookingSecretBase64Url - The booking secret in base64url format (from URL hash)
- * @param bookingKeySalt - The salt in base64 format (from API)
- * @param calendarId - The calendar ID
- * @param bookingKeyPacket - The encrypted session key packet in base64 format (from API)
- * @returns The decrypted session key
- */
-export const decryptBookingSessionKey = async (
-    bookingSecretBase64Url: string,
-    bookingKeySalt: string,
-    calendarId: string,
-    bookingKeyPacket: string
-): Promise<SessionKey | undefined> => {
-    const bookingSecretBytes = Uint8Array.fromBase64(bookingSecretBase64Url, { alphabet: 'base64url' });
-    const saltBytes = Uint8Array.fromBase64(bookingKeySalt);
-    const bookingKeyPassword = (await deriveBookingKeyPassword(calendarId, bookingSecretBytes, saltBytes)).toBase64();
-
-    const bookingKeyPacketBytes = Uint8Array.fromBase64(bookingKeyPacket);
-
-    return CryptoProxy.decryptSessionKey({
-        binaryMessage: bookingKeyPacketBytes,
-        passwords: [bookingKeyPassword],
-    });
 };
 
 export const decryptBookingContent = async ({
