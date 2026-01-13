@@ -59,16 +59,22 @@ const IconButton = createComponent(function Item({ legacyIconName, children, ...
 
 const SheetSwitcherMenu = memo(function SheetSwitcherMenu() {
   const setActiveId = useUI.$.sheets.setActiveId
+  const showSheet = useUI.$.sheets.show
   return (
     <UI.Menu>
-      {useUI((ui) => ui.sheets.list).map((sheet) => (
+      {useUI((ui) => ui.sheets.listIncludingHidden).map((sheet) => (
         <UI.MenuItemCheckbox
           name="sheet"
           value={sheet.id}
           key={sheet.id}
           onClick={() => {
+            if (sheet.hidden) {
+              showSheet(sheet.id)
+            }
             setActiveId(sheet.id)
           }}
+          trailingIconSlot={sheet.hidden ? <Icon legacyName="eye-slash" /> : undefined}
+          className={sheet.hidden ? 'opacity-50' : undefined}
         >
           {sheet.name}
         </UI.MenuItemCheckbox>
@@ -107,6 +113,7 @@ function SheetOptions({ sheet, rename, index, ...props }: SheetOptionsProps) {
   const duplicateSheet = useUI.$.sheets.duplicate
   const moveInDirection = useUI.$.sheets.moveInDirection
   const changeTabColor = useUI.$.sheets.changeTabColor
+  const hideSheet = useUI.$.sheets.hide
 
   const canMoveLeft = index > 0
   const canMoveRight = index < useUI((ui) => ui.sheets.visible.length) - 1
@@ -141,6 +148,7 @@ function SheetOptions({ sheet, rename, index, ...props }: SheetOptionsProps) {
             />
           </UI.SubMenu>
         </Ariakit.MenuProvider>
+        <UI.MenuItem onClick={() => hideSheet(sheet.id)}>{s('Hide sheet')}</UI.MenuItem>
         <UI.MenuSeparator />
         <UI.MenuItem disabled={!canMoveLeft} onClick={() => moveInDirection(sheet.id, 'left')}>
           {s('Move left')}
@@ -360,5 +368,6 @@ function strings() {
     'Change color': c('sheets_2025:Sheet tab options').t`Change color`,
     'Move left': c('sheets_2025:Sheet tab options').t`Move left`,
     'Move right': c('sheets_2025:Sheet tab options').t`Move right`,
+    'Hide sheet': c('sheets_2025:Sheet tab options').t`Hide sheet`,
   }
 }
