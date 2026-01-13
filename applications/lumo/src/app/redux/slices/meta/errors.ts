@@ -1,7 +1,6 @@
 import { type PayloadAction, createSelector, createSlice } from '@reduxjs/toolkit';
 
-import type { LUMO_API_ERRORS } from '../../../types';
-import type { ActionParams, ConversationId, LUMO_USER_TYPE } from '../../../types';
+import type { ActionParams, ConversationId, LUMO_API_ERRORS, LUMO_USER_TYPE } from '../../../types';
 
 // Base error interface for consistent error structure
 interface BaseError {
