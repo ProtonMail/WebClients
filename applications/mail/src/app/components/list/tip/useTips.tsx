@@ -144,7 +144,7 @@ const useTips = () => {
                 cta: (
                     <ProtonTipCTA
                         actionType={TipActionType.DownloadDesktopApp}
-                        ctaText={c('Tip Action').t`Download Desktop app`}
+                        ctaText={c('Tip Action').t`Download the desktop app`}
                         settingsUrl="/get-the-apps#proton-mail-desktop-apps"
                     />
                 ),
