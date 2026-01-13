@@ -9,7 +9,7 @@ import type { DecryptMessage } from '../../UseCase/DecryptMessage'
 import type { EncryptMessage } from '../../UseCase/EncryptMessage'
 import { WebsocketService } from './WebsocketService'
 import type { InternalEventBusInterface, WebsocketConnectionInterface } from '@proton/docs-shared'
-import { BroadcastSource, Result } from '@proton/docs-shared'
+import { BroadcastSource, ConnectionType, Result } from '@proton/docs-shared'
 import type { AnonymousEncryptionMetadata, EncryptionMetadata } from '../../Types/EncryptionMetadata'
 import type { DocumentConnectionRecord } from './DocumentConnectionRecord'
 import { WebsocketConnectionEvent } from '../../Realtime/WebsocketEvent/WebsocketConnectionEvent'
@@ -132,7 +132,7 @@ describe('WebsocketService', () => {
 
   describe('createConnection', () => {
     it('should post ConnectionEstablishedButNotYetReady when connection is opened', async () => {
-      connection.callbacks.onOpen()
+      connection.callbacks.onOpen(ConnectionType.Normal)
 
       expect(eventBus.publish).toHaveBeenCalledWith({
         type: WebsocketConnectionEvent.ConnectionEstablishedButNotYetReady,

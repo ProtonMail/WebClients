@@ -10,6 +10,7 @@ import {
   ProcessedIncomingRealtimeEventMessage,
   assertUnreachableAndLog,
   GenerateUUID,
+  ConnectionType,
 } from '@proton/docs-shared'
 import type { FetchRealtimeToken } from '../../UseCase/FetchRealtimeToken'
 import type { WebsocketServiceInterface } from './WebsocketServiceInterface'
@@ -71,6 +72,7 @@ import type { DocumentType } from '@proton/drive-store/store/_documents'
 import type { DocSizeTracker } from '../../SizeTracker/SizeTracker'
 import { tmpConvertOldDocTypeToNew } from '../../utils/convert-doc-type'
 import { traceError } from '@proton/shared/lib/helpers/sentry'
+import { seconds_to_ms } from '../../Util/time-utils'
 
 type LinkID = string
 
@@ -91,6 +93,7 @@ export class WebsocketService implements WebsocketServiceInterface {
   destroyed = false
 
   connectionReadyTimeout: ReturnType<typeof setTimeout> | undefined = undefined
+  attemptsAfterFailingToReceiveReadyMessage = 0
 
   constructor(
     private _createRealtimeValetToken: FetchRealtimeToken,
@@ -183,7 +186,7 @@ export class WebsocketService implements WebsocketServiceInterface {
         })
       },
 
-      onOpen: () => {
+      onOpen: (connectionType) => {
         this.eventBus.publish<
           WebsocketConnectionEventPayloads[WebsocketConnectionEvent.ConnectionEstablishedButNotYetReady]
         >({
@@ -194,9 +197,13 @@ export class WebsocketService implements WebsocketServiceInterface {
         })
 
         this.connectionReadyTimeout = setTimeout(() => {
-          this.logger.warn('Connection established but no ready message received from RTS in a reasonable time')
+          const timeoutType =
+            connectionType === ConnectionType.RetryDueToNotReceivingReadyMessage ? 'retry-timeout' : 'first-timeout'
+          this.logger.warn(
+            `Connection established but no ready message received from RTS in a reasonable time (${timeoutType})`,
+          )
           metrics.docs_connection_ready_total.increment({
-            type: 'timeout',
+            type: timeoutType,
             visibility: this.visibility,
             docType: tmpConvertOldDocTypeToNew(this.documentType),
           })
@@ -206,10 +213,21 @@ export class WebsocketService implements WebsocketServiceInterface {
               docVisibility: this.visibility,
             },
           })
-          this.closeConnection(nodeMeta)
-          this.queueReconnectionForDocument(nodeMeta).catch((error) => {
-            this.logger.error('Error queuing reconnection for document', error)
-          })
+
+          this.attemptsAfterFailingToReceiveReadyMessage++
+
+          this.closeConnection(nodeMeta, undefined, true)
+          const reconnectDelay = Math.min(
+            Math.pow(2, this.attemptsAfterFailingToReceiveReadyMessage) * 1000,
+            seconds_to_ms(32),
+          )
+          this.logger.info(`Retrying connection in ${reconnectDelay}ms`)
+          setTimeout(() => {
+            void this.connectToDocument(nodeMeta, {
+              invalidateTokenCache: false,
+              connectionType: ConnectionType.RetryDueToNotReceivingReadyMessage,
+            })
+          }, reconnectDelay)
         }, MAX_MS_TO_WAIT_FOR_RTS_READY_MESSAGE)
       },
 
@@ -328,11 +346,18 @@ export class WebsocketService implements WebsocketServiceInterface {
       },
     })
 
+    const successType =
+      record.connection.connectionType === ConnectionType.RetryDueToNotReceivingReadyMessage
+        ? 'retry-success'
+        : 'first-success'
+    this.logger.info(`Connection ready (${successType})`)
     metrics.docs_connection_ready_total.increment({
-      type: 'success',
+      type: successType,
       visibility: this.visibility,
       docType: tmpConvertOldDocTypeToNew(this.documentType),
     })
+
+    this.attemptsAfterFailingToReceiveReadyMessage = 0
 
     this.retryFailedDocumentUpdatesForDoc(record.document)
   }
@@ -405,13 +430,16 @@ export class WebsocketService implements WebsocketServiceInterface {
     await record.connection.connect(undefined, options)
   }
 
-  async queueReconnectionForDocument(nodeMeta: NodeMeta | PublicNodeMeta): Promise<void> {
+  async connectToDocument(
+    nodeMeta: NodeMeta | PublicNodeMeta,
+    options: { invalidateTokenCache: boolean; connectionType?: ConnectionType },
+  ): Promise<void> {
     const record = this.getConnectionRecord(nodeMeta.linkId)
     if (!record) {
       throw new Error('Connection not found')
     }
 
-    record.connection.queueReconnection()
+    await record.connection.connect(undefined, options)
   }
 
   async createAndBroadcastDocumentUpdateMessage(
@@ -931,6 +959,7 @@ export class WebsocketService implements WebsocketServiceInterface {
   public closeConnection(
     document: { linkId: string },
     code: number = ConnectionCloseReason.CODES.NORMAL_CLOSURE,
+    preventAutoReconnectOnClose: boolean = false,
   ): void {
     this.logger.info('Closing connection')
 
@@ -939,6 +968,10 @@ export class WebsocketService implements WebsocketServiceInterface {
       throw new Error('Connection not found')
     }
 
-    void record.connection.disconnect(code)
+    if (preventAutoReconnectOnClose) {
+      record.connection.preventAutoReconnectOnClose()
+    }
+
+    record.connection.disconnect(code)
   }
 }
