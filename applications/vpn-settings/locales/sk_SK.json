@@ -2200,6 +2200,9 @@
       ],
       "High-speed chats and advanced AI features.": [
         "Vysokorýchlostné chaty a pokročilé funkcie AI"
+      ],
+      "Private video calls for the conversations that matter.": [
+        "Súkromné videohovory pre konverzácie, na ktorých záleží."
       ]
     },
     "color": {
@@ -3236,6 +3239,11 @@
     "customer_support.feature.mail": {
       "For ${ MAIL_APP_NAME }": [
         "Za ${ MAIL_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.meet": {
+      "For ${ MEET_APP_NAME }": [
+        "Na ${ MEET_APP_NAME }"
       ]
     },
     "customer_support.feature.pass": {
@@ -9208,12 +9216,6 @@
       "Numbers": [
         "Čísla"
       ],
-      "OpenVPN / IKEv2 password": [
-        "Heslo OpenVPN / IKEv2"
-      ],
-      "OpenVPN / IKEv2 username": [
-        "Používateľské meno OpenVPN / IKEv2"
-      ],
       "Operating system": [
         "Operačný systém"
       ],
@@ -9988,6 +9990,59 @@
         "Nastavte si účet s doménou Porkbun."
       ]
     },
+    "meet_2025: Feature": {
+      "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
+        "${ MEET_APP_NAME }: Dôverné videokonferencie pre rozhovory, na ktorých záleží"
+      ],
+      "${ n } active meeting at a time": [
+        "${ n } aktívne stretnutie naraz",
+        "${ n } aktívne stretnutia naraz",
+        "${ n } aktívnych stretnutí naraz",
+        "${ n } aktívnych stretnutí naraz"
+      ],
+      "24 hours per meeting": [
+        "24 hodín na schôdzu"
+      ],
+      "60 minutes per meeting": [
+        "60 minút na schôdzu"
+      ],
+      "Appointment scheduling": [
+        "Plánovanie schôdzok"
+      ],
+      "Browser, mobile, and desktop apps": [
+        "Aplikácie pre prehliadače, mobily a desktopy"
+      ],
+      "Built-in chat": [
+        "Vstavaný chat"
+      ],
+      "End-to-end encrypted screen sharing and ephemeral in-call chat": [
+        "End-to-end šifrované zdieľanie obrazovky a dočasný chat počas hovoru"
+      ],
+      "Meeting recording (coming soon)": [
+        "Nahrávanie stretnutia (čoskoro)"
+      ],
+      "One active meeting at a time": [
+        "Jeden aktívny hovor naraz"
+      ],
+      "Screen-sharing": [
+        "Zdieľanie obrazovky"
+      ],
+      "Unlimited meetings per day": [
+        "Neobmedzený počet stretnutí za deň"
+      ],
+      "Up to ${ n } meeting per day": [
+        "Až ${ n } stretnutie za deň",
+        "Až ${ n } stretnutia za deň",
+        "Až ${ n } stretnutí za deň",
+        "Až ${ n } stretnutí za deň"
+      ],
+      "Up to ${ n } participant": [
+        "Až do ${ n } účastníka",
+        "Až do ${ n } účastníkov",
+        "Až do ${ n } účastníkov",
+        "Až do ${ n } účastníkov"
+      ]
+    },
     "Member action": {
       "Activate user": [
         "Aktivovať používateľa"
@@ -10119,6 +10174,21 @@
       "Euro": [
         "Euro"
       ],
+      "Hong Kong dollar": [
+        "Hongkongský dolár"
+      ],
+      "Japanese yen": [
+        "Japonský jen"
+      ],
+      "Polish złoty": [
+        "Poľský zlotý"
+      ],
+      "Singapore dollar": [
+        "Singapurský dolár"
+      ],
+      "South Korean won": [
+        "Juhokórejský won"
+      ],
       "Swiss franc": [
         "Švajčiarsky frank"
       ],
@@ -10153,7 +10223,7 @@
     },
     "new_plans": {
       "Highest VPN speed": [
-        "Vysoká VPN rýchlosť"
+        "Vysoká rýchlosť VPN"
       ],
       "Keep your inbox organized with folders": [
         "Udržujte svoju doručenú poštu organizovanú pomocou priečinkov"
@@ -11308,9 +11378,6 @@
       ],
       "Number of records exceeds the download limit of 10000": [
         "Počet záznamov presahuje limit na stiahnutie 10000"
-      ],
-      "OpenVPN / IKEv2 credentials regenerated": [
-        "OpenVPN / IKEv2 poverenia boli obnovené"
       ],
       "Reminder has been sent": [
         "Pripomienka bola odoslaná"
@@ -12531,11 +12598,6 @@
         "Navýšiť na ${ upsellPlanTitle }"
       ]
     },
-    "Price": {
-      "Free": [
-        "Zdarma"
-      ]
-    },
     "Property type": {
       "Address": [
         "Adresa"
@@ -12701,7 +12763,7 @@
         "Po začatí platnosti predplatného môžete do 30 dní predplatné zrušiť a získať pomernú refundáciu."
       ],
       "Refer friends": [
-        "Odporučiť priateľov"
+        "Odporučiť priateľom"
       ],
       "Share using ${ name }": [
         "Zdieľať pomocou ${ name }"
@@ -15854,9 +15916,6 @@
       ],
       "Open pagination": [
         "Otvoriť stránkovanie"
-      ],
-      "OpenVPN / IKEv2 username": [
-        "Používateľské meno OpenVPN / IKEv2"
       ],
       "OpenVPN configuration files": [
         "Konfiguračné súbory OpenVPN"

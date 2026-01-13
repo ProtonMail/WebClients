@@ -1866,7 +1866,7 @@
         "Не запушчана"
       ],
       "Required to create user accounts": [
-        "Неабходна, каб стараць уліковыя запісы карыстальнікаў"
+        "Неабходна для стварэння ўліковых запісаў карыстальнікаў"
       ],
       "Select what you want to migrate, this will apply to all users whether they are created now or later. Migration will start after user accounts are created.": [
         "Выберыце, што вы хочаце перанесці. Гэта дзеянне будзе ўжыта да ўсіх карыстальнікаў незалежна ад таго, калі яны былі створаны. Перанос пачнецца пасля стварэння ўліковых запісаў карыстальнікаў."
@@ -2200,6 +2200,9 @@
       ],
       "High-speed chats and advanced AI features.": [
         "Высакахуткасныя чаты і перадавыя функцыі ШІ."
+      ],
+      "Private video calls for the conversations that matter.": [
+        "Прыватныя відэазванкі для важных размоў."
       ]
     },
     "color": {
@@ -3236,6 +3239,11 @@
     "customer_support.feature.mail": {
       "For ${ MAIL_APP_NAME }": [
         "За ${ MAIL_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.meet": {
+      "For ${ MEET_APP_NAME }": [
+        "Для ${ MEET_APP_NAME }"
       ]
     },
     "customer_support.feature.pass": {
@@ -5083,7 +5091,7 @@
         "Дазволіць ключы платформы"
       ],
       "Allows you to register built-in security keys (like Windows Hello, Face ID, Touch ID, or internal TPMs)": [
-        "Дазваляе рэгістраваць убудаваныя ключы бяспекі (такія, як Windows Hello, Touch ID, Face ID, або ўбудаваны TPM)"
+        "Дазваляе рэгістраваць убудаваныя ключы бяспекі (такія, як Windows Hello, Touch ID, Face ID або ўбудаваны TPM)"
       ],
       "Are you sure you want to delete security key ${ name }?": [
         "Вы сапраўды хочаце выдаліць ключ бяспекі ${ name }?"
@@ -7862,7 +7870,7 @@
         "у ${ product } Business"
       ],
       "To allow the domain **${ domainName }** to use SAML SSO, you must verify ownership of it by adding the following DNS TXT record to your domain in your DNS provider.": [
-        "Вы павінны спраўдзіць уладальніка дамена дадаўшы наступны запіс DNS TXT у свой дамен у вашым пастаўшчыку DNS, каб дазволіць дамену **${ domainName }** выкарыстоўваць SAML SSO."
+        "Вы павінны спраўдзіць уладальніка дамена дадаўшы наступны запіс DNS TXT у свой дамен у сваім пастаўшчыку DNS, каб дазволіць дамену **${ domainName }** выкарыстоўваць SAML SSO."
       ],
       "To cancel your subscription, please reach out to us.": [
         "Звяжыцеся з намі, каб скасаваць сваю падпіску"
@@ -9208,12 +9216,6 @@
       "Numbers": [
         "Лічбы"
       ],
-      "OpenVPN / IKEv2 password": [
-        "Пароль OpenVPN / IKEv2"
-      ],
-      "OpenVPN / IKEv2 username": [
-        "Імя карыстальніка OpenVPN / IKEv2"
-      ],
       "Operating system": [
         "Аперацыйная сістэма"
       ],
@@ -9988,6 +9990,59 @@
         "Наладзьце свой уліковы запіс з дапамогай дамена Porkbun."
       ]
     },
+    "meet_2025: Feature": {
+      "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
+        "${ MEET_APP_NAME }: канфідэнцыйныя відэаканферэнцыі для важных размоў"
+      ],
+      "${ n } active meeting at a time": [
+        "${ n } актыўная сустрэча адначасова",
+        "${ n } актыўныя сустрэчы адначасова",
+        "${ n } актыўных сустрэч адначасова",
+        "${ n } актыўных сустрэч адначасова"
+      ],
+      "24 hours per meeting": [
+        "24 гадзіны на сустрэчу"
+      ],
+      "60 minutes per meeting": [
+        "60 хвілін на сустрэчу"
+      ],
+      "Appointment scheduling": [
+        "Планаванне сустрэч"
+      ],
+      "Browser, mobile, and desktop apps": [
+        "Браўзер, мабільныя прылады і праграмы для камп'ютараў"
+      ],
+      "Built-in chat": [
+        "Убудаваны чат"
+      ],
+      "End-to-end encrypted screen sharing and ephemeral in-call chat": [
+        "Дэманстрацыя экрана са скразным шыфраваннем і эфемерны чат пры званках"
+      ],
+      "Meeting recording (coming soon)": [
+        "Запісы сустрэч (неўзабаве з'явяцца)"
+      ],
+      "One active meeting at a time": [
+        "Адна актыўная сустрэча адначасова"
+      ],
+      "Screen-sharing": [
+        "Абагулены экран"
+      ],
+      "Unlimited meetings per day": [
+        "Неабмежаваная колькасць сустрэч у дзень"
+      ],
+      "Up to ${ n } meeting per day": [
+        "Да ${ n } сустрэчы ў дзень",
+        "Да ${ n } сустрэч у дзень",
+        "Да ${ n } сустрэч у дзень",
+        "Да ${ n } сустрэч у дзень"
+      ],
+      "Up to ${ n } participant": [
+        "Да ${ n } удзельніка",
+        "Да ${ n } удзельнікаў",
+        "Да ${ n } удзельнікаў",
+        "Да ${ n } удзельнікаў"
+      ]
+    },
     "Member action": {
       "Activate user": [
         "Актываваць карыстальніка"
@@ -10118,6 +10173,21 @@
       ],
       "Euro": [
         "Еўра"
+      ],
+      "Hong Kong dollar": [
+        "Ганконгскі долар"
+      ],
+      "Japanese yen": [
+        "Японская іена"
+      ],
+      "Polish złoty": [
+        "Польскі злоты"
+      ],
+      "Singapore dollar": [
+        "Сінгапурскі долар"
+      ],
+      "South Korean won": [
+        "Паўднёвакарэйскі вон"
       ],
       "Swiss franc": [
         "Швейцарскі франк"
@@ -11320,9 +11390,6 @@
       ],
       "Number of records exceeds the download limit of 10000": [
         "Колькасць запісаў перавышае абмежаванне спампоўвання ў 10 000"
-      ],
-      "OpenVPN / IKEv2 credentials regenerated": [
-        "Уліковыя даныя OpenVPN / IKEv2 паўторна згенерыраваны"
       ],
       "Reminder has been sent": [
         "Напамін адпраўлены"
@@ -12546,11 +12613,6 @@
         "Палепшыць да ${ upsellPlanTitle }"
       ]
     },
-    "Price": {
-      "Free": [
-        "Бясплатна"
-      ]
-    },
     "Property type": {
       "Address": [
         "Адрас"
@@ -12597,7 +12659,7 @@
         "OK"
       ],
       "Ownership verification": [
-        "Праверка ўладальніка"
+        "Спраўджанне ўладальніка"
       ],
       "Unknown": [
         "Невядома"
@@ -15592,7 +15654,7 @@
         "Адключыць двухфактарную аўтэнтыфікацыю"
       ],
       "Disable two-factor authentication app?": [
-        "Адключыць праграму двухфактарнай аўтэнтыфікацыі?"
+        "Адключэнне праграмы двухфактарнай аўтэнтыфікацыі?"
       ],
       "Disable two-factor authentication?": [
         "Адключыць двухфактарную аўтэнтыфікацыю?"
@@ -15863,9 +15925,6 @@
       ],
       "Open pagination": [
         "Паказваць нумарацыю старонак"
-      ],
-      "OpenVPN / IKEv2 username": [
-        "Імя карыстальніка OpenVPN / IKEv2"
       ],
       "OpenVPN configuration files": [
         "Канфігурацыйныя файлы OpenVPN"
@@ -16715,7 +16774,7 @@
         "Ці ведалі вы што?"
       ],
       "Get ${ drivePlusPlanMaxSpace } storage for your files, photos and documents, and recover file versions with 10-year file recovery.": [
-        "Атрымайце ${ drivePlusPlanMaxSpace } сховішча для вашых файлаў, фатаграфій і дакументаў, а таксама ў вас будзе магчымасць аднаўляць версіі файлаў за 10 гадоў."
+        "Атрымайце ${ drivePlusPlanMaxSpace } сховішча для вашых файлаў, фатаграфій і дакументаў, а таксама магчымасць аднаўляць версіі файлаў за 10 гадоў."
       ],
       "Privacy suite with secure email, ${ VPN_SHORT_APP_NAME }, cloud storage, and password manager in one bundle. From only ${ fallBackString } per month": [
         "Набор прыватнасці з бяспечнай электроннай поштай, ${ VPN_SHORT_APP_NAME }, воблачным сховішчам і менеджарам пароляў у адным камплекце. Кошт платнай падпіскі складае ад ${ fallBackString } у месяц"
