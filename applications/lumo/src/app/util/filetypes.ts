@@ -790,3 +790,22 @@ export function getProcessingCategory(mimeType: string, fileName?: string): Proc
 
     return 'unsupported';
 }
+
+/** Get MIME type from filename */
+export function getMimeTypeFromName(filename: string): string {
+    const ext = filename.split('.').pop()?.toLowerCase() || '';
+    const mimeTypes: Record<string, string> = {
+        pdf: 'application/pdf',
+        doc: 'application/msword',
+        docx: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+        txt: 'text/plain',
+        md: 'text/markdown',
+        csv: 'text/csv',
+        xls: 'application/vnd.ms-excel',
+        xlsx: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+        json: 'application/json',
+        html: 'text/html',
+        xml: 'application/xml',
+    };
+    return mimeTypes[ext] || 'application/octet-stream';
+}
