@@ -1,5 +1,5 @@
 import type { GenerationResponseMessage } from './types';
-import { isGenerationToFrontendMessage } from './types';
+import { isGenerationResponseMessage } from './types';
 
 /**
  * Processes streaming data chunks from the API
@@ -24,7 +24,7 @@ export class StreamProcessor {
                 const jsonStr = line.replace(/^data:\s*/, '');
                 const item = JSON.parse(jsonStr);
                 console.log('[STREAM] Parsed item:', item.type, item);
-                if (!isGenerationToFrontendMessage(item)) {
+                if (!isGenerationResponseMessage(item)) {
                     console.warn('Unexpected format for json payload received from API server, ignoring', item);
                     continue;
                 }
@@ -39,7 +39,7 @@ export class StreamProcessor {
             try {
                 const jsonStr = lastLine.replace(/^data:\s*/, '');
                 const item = JSON.parse(jsonStr);
-                if (isGenerationToFrontendMessage(item)) {
+                if (isGenerationResponseMessage(item)) {
                     parsedData.push(item);
                 } else {
                     console.warn('Unexpected format for json payload received from API server, ignoring');
@@ -64,7 +64,7 @@ export class StreamProcessor {
         try {
             const jsonStr = this.leftover.replace(/^data:\s*/, '');
             const item = JSON.parse(jsonStr);
-            if (isGenerationToFrontendMessage(item)) {
+            if (isGenerationResponseMessage(item)) {
                 return [item];
             }
         } catch {

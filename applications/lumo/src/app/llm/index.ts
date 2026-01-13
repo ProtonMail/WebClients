@@ -29,7 +29,7 @@ import type {
     WireImage,
 } from '../types';
 import { ConversationStatus, Role } from '../types';
-import type { GenerationToFrontendMessage } from '../types-api';
+import type { GenerationResponseMessage } from '../types-api';
 import { separateAttachmentsByType } from './attachments';
 import { removeFileFromMessageContext } from './utils';
 
@@ -113,16 +113,14 @@ export function prepareTurns(
     // Add RAG document context to the FIRST user message's context field (like an attachment)
     // This ensures documents are included once and won't be duplicated across turns
     if (documentContext && turns.length > 0) {
-        const firstUserIndex = turns.findIndex(turn => turn.role === Role.User);
+        const firstUserIndex = turns.findIndex((turn) => turn.role === Role.User);
         if (firstUserIndex !== -1) {
             const userTurn = turns[firstUserIndex];
             // Prepend document context to existing context (which may have file attachments)
             const existingContext = userTurn.context || '';
             turns[firstUserIndex] = {
                 ...userTurn,
-                context: existingContext
-                    ? `${documentContext}\n\n${existingContext}`
-                    : documentContext,
+                context: existingContext ? `${documentContext}\n\n${existingContext}` : documentContext,
             };
             console.log('Added RAG document context to first user message context field');
         }
@@ -155,9 +153,7 @@ export function prepareTurns(
 
             // Prepend instructions to the user's message
             const instructionText = instructionParts.join('\n\n');
-            const updatedContent = instructionText
-                ? `${instructionText}\n\n${originalContent}`
-                : originalContent;
+            const updatedContent = instructionText ? `${instructionText}\n\n${originalContent}` : originalContent;
 
             turns[lastUserIndex] = {
                 ...userTurn,
@@ -288,7 +284,14 @@ export async function prepareTurnsWithImages(
     documentContext?: string
 ): Promise<Turn[]> {
     // First, get basic turns without images
-    const turns = prepareTurns(linearChain, finalTurn, contextFilters, personalizationPrompt, projectInstructions, documentContext);
+    const turns = prepareTurns(
+        linearChain,
+        finalTurn,
+        contextFilters,
+        personalizationPrompt,
+        projectInstructions,
+        documentContext
+    );
 
     // If no attachments, nothing to add
     if (attachments.length === 0) {
@@ -315,7 +318,14 @@ export const getFilteredTurns = (
     projectInstructions?: string,
     documentContext?: string
 ) => {
-    return prepareTurns(linearChain, ASSISTANT_TURN, contextFilters, personalizationPrompt, projectInstructions, documentContext)
+    return prepareTurns(
+        linearChain,
+        ASSISTANT_TURN,
+        contextFilters,
+        personalizationPrompt,
+        projectInstructions,
+        documentContext
+    )
         .filter((turn) => {
             // Keep system messages that contain personalization, filter out other system messages
             if (turn.role === Role.System) {
@@ -391,7 +401,7 @@ export function getCallbacks(
     let content = '';
 
     // todo turn chunkCallback(message, dispatch) into dispatch(chunkCallback(message))
-    const chunkCallback = async (m: GenerationToFrontendMessage, dispatch: LumoDispatch): Promise<{ error?: any }> => {
+    const chunkCallback = async (m: GenerationResponseMessage, dispatch: LumoDispatch): Promise<{ error?: any }> => {
         switch (m.type) {
             case 'error':
             case 'timeout':

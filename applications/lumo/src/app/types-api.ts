@@ -31,7 +31,7 @@ export enum LUMO_API_ERRORS {
     STREAM_DISCONNECTED = 'StreamDisconnected', // When the server closes the stream prematurely after queuing
 }
 
-export type GenerationToFrontendMessage =
+export type GenerationResponseMessage =
     | { type: 'queued'; target?: GenerationTarget }
     | { type: 'ingesting'; target: GenerationTarget }
     | { type: 'token_data'; target: GenerationTarget; count: number; content: string; encrypted?: boolean }
@@ -49,7 +49,7 @@ export type GenerationToFrontendMessage =
     | { type: 'rejected' }
     | { type: 'harmful' };
 
-export function isGenerationToFrontendMessage(obj: any): obj is GenerationToFrontendMessage {
+export function isGenerationResponseMessage(obj: any): obj is GenerationResponseMessage {
     if (typeof obj !== 'object' || obj === null) {
         return false;
     }
@@ -127,7 +127,7 @@ export interface ErrorContext {
 export interface GenerationError {
     type: LUMO_API_ERRORS;
     conversationId: ConversationId;
-    originalMessage: GenerationToFrontendMessage;
+    originalMessage: GenerationResponseMessage;
     actionParams?: ActionParams;
 }
 

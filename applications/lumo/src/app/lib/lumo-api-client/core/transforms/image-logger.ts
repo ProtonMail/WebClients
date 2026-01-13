@@ -1,14 +1,12 @@
-import type { GenerationToFrontendMessage } from '../../../../types-api';
+import type { GenerationResponseMessage } from '../../../../types-api';
 
-type M = GenerationToFrontendMessage;
+type M = GenerationResponseMessage;
 
 const makeImageLoggerTransformer = (): Transformer<M, M> => ({
     transform(chunk: M, controller: TransformStreamDefaultController) {
         // Log image_data packets
         if (chunk.type === 'image_data') {
-            const dataPreview = chunk.data
-                ? `${chunk.data.substring(0, 50)}... (${chunk.data.length} chars)`
-                : 'none';
+            const dataPreview = chunk.data ? `${chunk.data.substring(0, 50)}... (${chunk.data.length} chars)` : 'none';
             console.log('[IMAGE_DATA]', {
                 image_id: chunk.image_id,
                 data: dataPreview,
