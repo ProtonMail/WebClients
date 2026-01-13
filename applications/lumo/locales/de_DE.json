@@ -77,6 +77,9 @@
       "Copy address": [
         "Adresse kopieren"
       ],
+      "Create": [
+        "Erstellen"
+      ],
       "Create folder": [
         "Ordner erstellen"
       ],
@@ -185,6 +188,9 @@
       "More options for accounts": [
         "Mehr Optionen für Konten"
       ],
+      "Next page": [
+        "Nächste Seite"
+      ],
       "OK": [
         "OK"
       ],
@@ -199,6 +205,9 @@
       ],
       "Pay ${ price } now": [
         "${ price } jetzt zahlen"
+      ],
+      "Previous page": [
+        "Vorherige Seite"
       ],
       "Refer a friend": [
         "Wirb einen Freund"
@@ -226,6 +235,9 @@
       ],
       "Resend code": [
         "Code erneut senden"
+      ],
+      "Reset": [
+        "Zurücksetzen"
       ],
       "Reset all": [
         "Alle zurücksetzen"
@@ -854,9 +866,6 @@
       "Try again": [
         "Erneut versuchen"
       ],
-      "Upload a file": [
-        "Eine Datei hochladen"
-      ],
       "Upload file and add to knowledge base": [
         "Datei hochladen und zur Wissensdatenbank hinzufügen"
       ],
@@ -1021,9 +1030,6 @@
       ],
       "Last updated on ${ formattedDate }": [
         "Zuletzt aktualisiert am ${ formattedDate }"
-      ],
-      "Permanently delete your chats. This is irreversible.": [
-        "Lösche deine Chats dauerhaft. Das ist unwiderruflich."
       ],
       "Sign in to access your account and unlock more features. Don't have one? ${ createLink }": [
         "Melde dich an, um auf dein Konto zuzugreifen und weitere Funktionen freizuschalten. Hast du keins? ${ createLink }"
@@ -1218,9 +1224,6 @@
       " files are hidden (unsupported file types)": [
         " Dateien sind ausgeblendet (nicht unterstützte Dateitypen)"
       ],
-      " of space": [
-        " Speicherplatz"
-      ],
       " talk to your admin.": [
         " Sprich mit deinem Administrator."
       ],
@@ -1239,17 +1242,11 @@
       "Access ${ DRIVE_APP_NAME }": [
         "${ DRIVE_APP_NAME } öffnen"
       ],
-      "Active": [
-        "Aktiv"
-      ],
       "Add ${ LUMO_APP_NAME }": [
         "${ LUMO_APP_NAME } hinzufügen"
       ],
       "Add to active": [
         "Zur aktuellen Unterhaltung hinzufügen"
-      ],
-      "Adding to knowledge base...": [
-        "Wird zur Wissensdatenbank hinzugefügt..."
       ],
       "Advanced account and network security in one plan": [
         "Erweiterte Konto- und Netzwerksicherheit in einem Abonnement"
@@ -1308,9 +1305,6 @@
       "files": [
         "dateien"
       ],
-      "Files": [
-        "Dateien"
-      ],
       "files are not currently supported for content extraction.": [
         "Dateien werden derzeit nicht zur Inhaltsextraktion unterstützt."
       ],
@@ -1364,6 +1358,9 @@
       ],
       "Press ${ shiftEnterBoldText } to ask": [
         "Drücke ${ shiftEnterBoldText }, um zu fragen"
+      ],
+      "Private video calls for the conversations that matter.": [
+        "Private Videoanrufe für die Unterhaltungen, die wichtig sind."
       ],
       "Processed content": [
         "Verarbeiteter Inhalt"
@@ -1451,9 +1448,6 @@
       ],
       "Unsupported File Type": [
         "Nicht unterstützter Dateityp"
-      ],
-      "Unused ": [
-        "Ungenutzt "
       ],
       "Uploading ${ uploadProgress.fileName }": [
         "${ uploadProgress.fileName } wird hochgeladen"
@@ -1718,9 +1712,6 @@
       ],
       "About ${ LUMO_SHORT_APP_NAME }": [
         "Über ${ LUMO_SHORT_APP_NAME }"
-      ],
-      "Delete all chats": [
-        "Alle Chats löschen"
       ],
       "Don't lose the thread": [
         "Verliere nicht den Faden"
@@ -2065,12 +2056,6 @@
       "Built by the team that knows privacy": [
         "Entwickelt vom Team, das Datenschutz versteht"
       ],
-      "Dark mode has been one of our community’s most highly anticipated updates for ${ LUMO_SHORT_APP_NAME }. Throughout the ${ BRAND_NAME } ecosystem, you can customize the look of all of your apps, and now you can customize ${ LUMO_SHORT_APP_NAME }, too, with a light or dark theme.": [
-        "Der dunkle Modus war eines der am sehnlichsten erwarteten Updates unserer Community für ${ LUMO_SHORT_APP_NAME }. Im gesamten ${ BRAND_NAME }-Ökosystem kannst du das Aussehen all deiner Apps anpassen, und jetzt kannst du auch ${ LUMO_SHORT_APP_NAME } mit einem hellen oder dunklen Farbschema anpassen."
-      ],
-      "Dark mode is here": [
-        "Der dunkle Modus ist da"
-      ],
       "Earlier": [
         "Früher"
       ],
@@ -2106,12 +2091,6 @@
       ],
       "No result.": [
         "Kein Ergebnis."
-      ],
-      "Personalization lets you tailor how ${ LUMO_SHORT_APP_NAME } interacts with you. Tell ${ LUMO_SHORT_APP_NAME } your name, what you do, and exactly how you want it to respond, witty banter, technical precision, or straight-to-the-point brevity. Because the best AI isn't one-size-fits-all. It's one that feels like it was built just for you.": [
-        "Die Personalisierung lässt dich anpassen, wie ${ LUMO_SHORT_APP_NAME } mit dir interagiert. Teile ${ LUMO_SHORT_APP_NAME } mit, wie du heisst, welches deine Tätigkeiten sind und wie genau es reagieren soll, ob mit witzigem Geplänkel, technischer Präzision oder direkter Kürze. Denn die beste KI ist nicht für alle gleich. Sie ist eine, die sich anfühlt, als wäre sie nur für dich gemacht."
-      ],
-      "Personalization: ${ LUMO_SHORT_APP_NAME } for you": [
-        "Personalisierung: ${ LUMO_SHORT_APP_NAME } für dich"
       ],
       "The AI that respects your privacy": [
         "Die KI, die deine Privatsphäre respektiert"
@@ -3006,6 +2985,11 @@
         "Für ${ MAIL_APP_NAME }"
       ]
     },
+    "customer_support.feature.meet": {
+      "For ${ MEET_APP_NAME }": [
+        "Für ${ MEET_APP_NAME }"
+      ]
+    },
     "customer_support.feature.pass": {
       "For ${ PASS_APP_NAME }": [
         "Für ${ PASS_APP_NAME }"
@@ -3325,6 +3309,9 @@
       ],
       "ZIP code is required": [
         "Eine Postleitzahl ist erforderlich"
+      ],
+      "⚠️ Undecryptable name": [
+        "⚠️ Nicht entschlüsselbarer Name"
       ]
     },
     "Error message": {
@@ -4162,6 +4149,9 @@
       "Folder location": [
         "Pfad des Ordners"
       ],
+      "Folder name": [
+        "Ordnername"
+      ],
       "Get the deal": [
         "Zugreifen"
       ],
@@ -4179,6 +4169,9 @@
       ],
       "Integrated 2FA authenticator": [
         "Integrierter 2FA-Authentifikator"
+      ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "Tastaturkürzel: ${ shortcut }"
       ],
       "Last name": [
         "Nachname"
@@ -4375,6 +4368,53 @@
       ],
       "for ${ price }": [
         "für ${ price }"
+      ]
+    },
+    "meet_2025: Feature": {
+      "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
+        "${ MEET_APP_NAME }: Vertrauliche Videokonferenzen für die Unterhaltungen, die wichtig sind"
+      ],
+      "${ n } active meeting at a time": [
+        "${ n } aktives Meeting gleichzeitig",
+        "${ n } aktive Meetings gleichzeitig"
+      ],
+      "24 hours per meeting": [
+        "24 Stunden pro Meeting"
+      ],
+      "60 minutes per meeting": [
+        "60 Minuten pro Meeting"
+      ],
+      "Appointment scheduling": [
+        "Terminplanung"
+      ],
+      "Browser, mobile, and desktop apps": [
+        "Browser-, Mobile- und Desktop-Apps"
+      ],
+      "Built-in chat": [
+        "Eingebauter Chat"
+      ],
+      "End-to-end encrypted screen sharing and ephemeral in-call chat": [
+        "Ende-zu-Ende-verschlüsselte Bildschirmfreigabe und temporärer Chat während des Anrufs"
+      ],
+      "Meeting recording (coming soon)": [
+        "Aufnahme des Meetings (Demnächst verfügbar)"
+      ],
+      "One active meeting at a time": [
+        "Ein aktives Meeting gleichzeitig"
+      ],
+      "Screen-sharing": [
+        "Bildschirmfreigabe"
+      ],
+      "Unlimited meetings per day": [
+        "Unbegrenzte Meetings pro Tag"
+      ],
+      "Up to ${ n } meeting per day": [
+        "Bis zu ${ n } Meeting pro Tag",
+        "Bis zu ${ n } Meetings pro Tag"
+      ],
+      "Up to ${ n } participant": [
+        "Bis zu ${ n } Teilnehmer",
+        "Bis zu ${ n } Teilnehmer"
       ]
     },
     "New Label form": {
@@ -5654,6 +5694,9 @@
       "Company name": [
         "Unternehmensname"
       ],
+      "Enter a new folder name": [
+        "Neuen Ordnernamen eingeben"
+      ],
       "Gift code": [
         "Gutscheincode"
       ],
@@ -5731,11 +5774,6 @@
       ],
       "Upgrade to ${ upsellPlanTitle }": [
         "Auf ${ upsellPlanTitle } upgraden"
-      ]
-    },
-    "Price": {
-      "Free": [
-        "Kostenlos"
       ]
     },
     "Safety review": {
@@ -6262,6 +6300,11 @@
         "Für Einzelpersonen"
       ]
     },
+    "Time": {
+      "Yesterday": [
+        "Gestern"
+      ]
+    },
     "Title": {
       "${ feature } is now active": [
         "${ feature } ist jetzt aktiv"
@@ -6323,6 +6366,9 @@
       "Coupon": [
         "Gutschein"
       ],
+      "Create a new folder": [
+        "Neuen Ordner erstellen"
+      ],
       "Currency": [
         "Währung"
       ],
@@ -6352,6 +6398,9 @@
       ],
       "Error": [
         "Fehler"
+      ],
+      "Folder": [
+        "Ordner"
       ],
       "Get the apps": [
         "Apps herunterladen"
