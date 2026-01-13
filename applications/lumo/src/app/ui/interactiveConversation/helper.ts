@@ -995,7 +995,7 @@ export function retrySendMessage({
 
         // Create a new assistant message for the retry
         const assistantMessageId = newMessageId();
-        const assistantMessage: Message = {
+        let assistantMessage: Message = {
             id: assistantMessageId,
             parentId: r.lastUserMessage.id,
             createdAt: date,
@@ -1010,12 +1010,12 @@ export function retrySendMessage({
         const contextFiles = collectContextAttachmentIds(c.messageChain, c.contextFilters);
 
         // Update the assistant message with the context files that will be used
-        const assistantMessageWithContext: Message = {
+        assistantMessage = {
             ...assistantMessage,
             ...(contextFiles.length > 0 && { contextFiles }),
         };
 
-        dispatch(addMessage(assistantMessageWithContext));
+        dispatch(addMessage(assistantMessage));
 
         // Call the LLM
         const linearChain = c.messageChain;
@@ -1086,19 +1086,14 @@ export function retrySendMessage({
 
             // IMMEDIATELY update the assistant message's contextFiles BEFORE streaming starts
             // This ensures the "X files" button appears right away
-            // todo: simplify, since `assistantMessage` is known the dispatch/innerDispatch/getState can disappear
-            dispatch((innerDispatch: AppDispatch, getState: () => any) => {
-                const state = getState();
-                const assistantMessage = state.messages[assistantMessageId];
-                if (assistantMessage) {
-                    const updatedAssistantMessage: Message = {
-                        ...assistantMessage,
-                        contextFiles: updatedContextFiles,
-                    };
-                    innerDispatch(addMessage(updatedAssistantMessage));
-                    // Note: Don't push to server yet - the message is still being generated
-                }
-            });
+            if (assistantMessage) {
+                const updatedAssistantMessage: Message = {
+                    ...assistantMessage,
+                    contextFiles: updatedContextFiles,
+                };
+                dispatch(addMessage(updatedAssistantMessage));
+                // Note: Don't push to server yet - the message is still being generated
+            }
         } else if (lastUserMessage) {
             // No RAG attachments, but still need to push the user message
             // (it wasn't pushed earlier to allow for RAG attachments to be added first)
