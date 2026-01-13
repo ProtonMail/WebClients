@@ -1,6 +1,6 @@
 import { decryptString, decryptUint8Array, encryptString } from '../../../crypto';
 import { LUMO_GPG_PUB_KEY } from '../../../keys';
-import type { WireImage } from '../../../types';
+import type { WireImage } from '../../../types-api';
 import type { RequestEncryptionParams } from './encryptionParams';
 import type { EncryptedTurn, Turn } from './types';
 

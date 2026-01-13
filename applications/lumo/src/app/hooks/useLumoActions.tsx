@@ -14,9 +14,8 @@ import type { MessageMap } from '../redux/slices/core/messages';
 import { addMessage, createDate, newMessageId } from '../redux/slices/core/messages';
 import type { ConversationError } from '../redux/slices/meta/errors';
 import { useActionErrorHandler } from '../services/errors/useActionErrorHandler';
-import type { Attachment } from '../types';
+import type { ActionParams, Attachment, ErrorContext, RetryStrategy } from '../types';
 import { type ConversationId, type Message, Role, type Space, type SpaceId, getSpaceDek } from '../types';
-import type { ActionParams, ErrorContext, RetryStrategy } from '../types-api';
 import {
     generateFakeConversationToShowTierError,
     getPersonalizationPromptFromState,
@@ -50,7 +49,12 @@ interface Props {
 }
 
 export type HandleSendMessage = (newMessage: string, enableExternalTools: boolean) => Promise<void>;
-export type HandleRegenerateMessage = (message: Message, isWebSearchButtonToggled: boolean, retryStrategy?: RetryStrategy, customInstructions?: string) => Promise<void>;
+export type HandleRegenerateMessage = (
+    message: Message,
+    isWebSearchButtonToggled: boolean,
+    retryStrategy?: RetryStrategy,
+    customInstructions?: string
+) => Promise<void>;
 export type HandleEditMessage = (
     originalMessage: Message,
     newContent: string,
@@ -356,7 +360,13 @@ export const useLumoActions = ({
     };
 
     const handleMessageAction = async (actionParams: ActionParams) => {
-        const { actionType, newMessageContent, originalMessage, retryStrategy = 'simple', customRetryInstructions } = actionParams;
+        const {
+            actionType,
+            newMessageContent,
+            originalMessage,
+            retryStrategy = 'simple',
+            customRetryInstructions,
+        } = actionParams;
         const isWebSearchButtonToggled = !!actionParams.isWebSearchButtonToggled;
 
         // Validate input parameters
@@ -419,7 +429,14 @@ export const useLumoActions = ({
                 await handleEditAction(actionParams, originalMessage!, spaceDek, signal, isWebSearchButtonToggled);
             }
             if (actionType === 'regenerate') {
-                await handleRegenerateAction(originalMessage!, spaceDek, signal, isWebSearchButtonToggled, retryStrategy, customRetryInstructions);
+                await handleRegenerateAction(
+                    originalMessage!,
+                    spaceDek,
+                    signal,
+                    isWebSearchButtonToggled,
+                    retryStrategy,
+                    customRetryInstructions
+                );
             }
         } catch (error: any) {
             handleActionError(error, errorContext);
