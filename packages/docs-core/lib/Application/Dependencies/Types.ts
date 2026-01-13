@@ -30,7 +30,6 @@ export const App_TYPES = {
   DuplicateDocument: Symbol.for('DuplicateDocument'),
   EncryptComment: Symbol.for('EncryptComment'),
   EncryptMessage: Symbol.for('EncryptMessage'),
-  ExportAndDownload: Symbol.for('ExportAndDownload'),
   FetchMetaAndRawCommit: Symbol.for('FetchMetaAndRawCommit'),
   GetCommitData: Symbol.for('GetCommitData'),
   GetDocumentKeys: Symbol.for('GetDocumentKeys'),
