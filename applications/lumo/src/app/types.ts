@@ -386,21 +386,17 @@ export function isMessagePub(value: any): value is MessagePub {
     );
 }
 
-// FIXME: nulls are not valid
 export function isMessagePriv(value: any): value is MessagePriv {
+    // prettier-ignore
     return (
         typeof value === 'object' &&
         value !== null &&
-        (value.content === undefined || value.content === null || typeof value.content === 'string') &&
-        (value.context === undefined || value.context === null || typeof value.context === 'string') &&
-        (value.attachments === undefined ||
-            value.attachments === null ||
-            (Array.isArray(value.attachments) && value.attachments.every((a: unknown) => isShallowAttachment(a)))) &&
-        (value.toolCall === undefined || value.toolCall === null || typeof value.toolCall === 'string') &&
-        (value.toolResult === undefined || value.toolResult === null || typeof value.toolResult === 'string') &&
-        (value.contextFiles === undefined ||
-            value.contextFiles === null ||
-            (Array.isArray(value.contextFiles) && value.contextFiles.every((id: unknown) => typeof id === 'string'))) &&
+        (value.content === undefined || typeof value.content === 'string') &&
+        (value.context === undefined || typeof value.context === 'string') &&
+        (value.attachments === undefined || (Array.isArray(value.attachments) && value.attachments.every((a: unknown) => isShallowAttachment(a)))) &&
+        (value.toolCall === undefined || typeof value.toolCall === 'string') &&
+        (value.toolResult === undefined || typeof value.toolResult === 'string') &&
+        (value.contextFiles === undefined || (Array.isArray(value.contextFiles) && value.contextFiles.every((id: unknown) => typeof id === 'string'))) &&
         (value.blocks === undefined || (Array.isArray(value.blocks) && value.blocks.every(isContentBlock)))
     );
 }
@@ -701,10 +697,7 @@ export function isAttachment(value: any): value is Attachment {
 }
 
 export function isShallowAttachment(value: any): value is ShallowAttachment {
-    // Check that data and markdown are not present (undefined, null, or missing after JSON parsing)
-    const hasNoData = value.data === undefined || value.data === null;
-    const hasNoMarkdown = value.markdown === undefined || value.markdown === null;
-    return isAttachment(value) && hasNoData && hasNoMarkdown;
+    return isAttachment(value) && value.data === undefined && value.markdown === undefined;
 }
 
 export function getAttachmentPub(attachment: AttachmentPub): AttachmentPub {
