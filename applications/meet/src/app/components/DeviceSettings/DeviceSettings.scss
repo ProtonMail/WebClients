@@ -64,7 +64,3 @@ im.$media-expressions: $media-expressions;
 .white-border {
 	border-color: color-mix(in srgb, var(--background-invert), transparent 76%) !important;
 }
-
-.device-toggle-buttons {
-	z-index: +1;
-}
