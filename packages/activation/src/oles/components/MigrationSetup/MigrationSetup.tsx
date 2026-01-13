@@ -2,7 +2,6 @@ import React, { type FC, useEffect, useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { useCustomDomains } from '@proton/account/domains/hooks';
 import { OAUTH_PROVIDER } from '@proton/activation/src/interface';
 import { Button } from '@proton/atoms/Button/Button';
 import SkeletonLoader from '@proton/components/components/skeletonLoader/SkeletonLoader';
@@ -16,34 +15,27 @@ import StepConfigureMigration from './StepConfigureMigration';
 import StepInstallApp from './StepInstallApp';
 
 export type MigrationSetupProps = {
-    onSubmit: (payload: MigrationSetupModel) => void;
+    model: MigrationSetupModel;
+    onSubmit: (payload: MigrationConfiguration) => void;
 };
 
-type MigrationSetupState = MigrationConfiguration & {
+type MigrationSetupState = {
     currentStep: number;
     completedSteps: number[];
 };
 
-const MigrationSetup: FC<MigrationSetupProps> = ({ onSubmit }) => {
-    const [customDomains, customDomainsLoading] = useCustomDomains();
+const MigrationSetup: FC<MigrationSetupProps> = ({ model, onSubmit }) => {
     const [tokens, tokensLoading] = useProviderTokens(OAUTH_PROVIDER.GSUITE);
 
     const [state, setState] = useState<MigrationSetupState>({
-        importerOrganizationId: undefined,
         currentStep: 0,
         completedSteps: [],
-        selectedProducts: [],
-        notifyList: [],
-        timePeriod: 'all',
-        domain: undefined,
     });
-
-    const domain = useMemo(() => customDomains?.at(0), [customDomains]);
 
     const steps: {
         id: string;
         text: string;
-        check: () => boolean;
+        isInvalid: () => boolean;
         component: React.FC<{ model: MigrationSetupModel }>;
     }[] = useMemo(
         () =>
@@ -52,34 +44,26 @@ const MigrationSetup: FC<MigrationSetupProps> = ({ onSubmit }) => {
                     id: 'install-app',
                     text: c('BOSS').t`Authenticate`,
                     component: StepInstallApp,
-                    check: () => !tokens.length,
+                    isInvalid: () => !tokens.length,
                 },
                 {
                     id: 'configure-migration',
                     text: c('BOSS').t`Configure migration`,
                     component: StepConfigureMigration,
-                    check: () => !state.selectedProducts.length,
+                    isInvalid: () => !model.selectedProducts.length,
                 },
             ].filter(isTruthy),
-        [state.selectedProducts, domain, tokens]
+        [model.selectedProducts, tokens]
     );
 
-    const { component: StepComponent, check } = steps[state.currentStep];
+    const { component: StepComponent, isInvalid: check } = steps[state.currentStep];
 
     const isLastStep = state.currentStep === steps.length - 1;
 
-    const loading = tokensLoading || customDomainsLoading;
-
-    const model: MigrationSetupModel = {
-        ...state,
-        domain,
-        setSelectedProducts: (products) => setState((state) => ({ ...state, selectedProducts: products })),
-        setNotifyList: (emails) => setState((state) => ({ ...state, notifyList: emails })),
-        setTimePeriod: (timePeriod) => setState((state) => ({ ...state, timePeriod })),
-    };
+    const loading = tokensLoading;
 
     const getNextStep = () => {
-        const nextStep = steps.findIndex((s) => s.check());
+        const nextStep = steps.findIndex((s) => s.isInvalid());
         if (nextStep === -1) {
             return steps.length - 1;
         }
@@ -91,7 +75,9 @@ const MigrationSetup: FC<MigrationSetupProps> = ({ onSubmit }) => {
             return;
         }
 
-        const completedSteps = steps.map((step, ix) => (!step.check() ? ix : undefined)).filter((e) => e !== undefined);
+        const completedSteps = steps
+            .map((step, ix) => (!step.isInvalid() ? ix : undefined))
+            .filter((e) => e !== undefined);
         const nextStep = getNextStep();
         setState((state) => ({ ...state, currentStep: nextStep, completedSteps }));
     }, [loading]);
@@ -134,7 +120,7 @@ const MigrationSetup: FC<MigrationSetupProps> = ({ onSubmit }) => {
                                 className="bg-norm flex-noshrink border rounded-full mr-2 ratio-square w-custom text-xs flex items-center justify-center"
                                 style={{ '--w-custom': '1rem' }}
                             >
-                                {state.completedSteps.includes(ix) ? <IcCheckmark /> : ix + 1}
+                                {ix < steps.length - 1 && state.completedSteps.includes(ix) ? <IcCheckmark /> : ix + 1}
                             </span>
                             <span>{step.text}</span>
                         </li>

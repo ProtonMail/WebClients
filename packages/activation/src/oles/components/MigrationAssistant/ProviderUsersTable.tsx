@@ -6,6 +6,8 @@ import type { ApiImporterOrganizationUser } from '@proton/activation/src/api/api
 import { Checkbox, Table, TableBody, TableCell, TableHeader, TableHeaderCell, TableRow } from '@proton/components';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 
+import './ProviderUsersTable.scss';
+
 type Props = {
     users: ApiImporterOrganizationUser[];
     selected: string[];
@@ -27,42 +29,50 @@ const ProviderUsersTable: FC<Props> = ({ users, selected, setSelected }) => {
     };
 
     return (
-        <Table borderWeak responsive="stacked">
+        <Table borderWeak responsive="stacked" hasActions className="mb-0 provider-users-table">
             <TableHeader>
                 <TableRow>
-                    <TableHeaderCell>
-                        <Checkbox
-                            className="mr-2"
-                            onChange={handleSelectAll}
-                            checked={allChecked}
-                            indeterminate={!allChecked && selected.length > 0}
-                        />
-                        {c('BOSS').t`User`}
+                    <TableHeaderCell className="w-1/2">
+                        <div className="p-4 flex items-center flex-nowrap">
+                            <Checkbox
+                                className="mr-4 shrink-0"
+                                id="select-all"
+                                onChange={handleSelectAll}
+                                checked={allChecked}
+                                indeterminate={!allChecked && selected.length > 0}
+                            />
+                            <label htmlFor="select-all" className="m-0 flex-1">{c('BOSS').t`User`}</label>
+                        </div>
                     </TableHeaderCell>
-                    <TableHeaderCell className="w-custom" style={{ '--w-custom': '10em' }}>{c('BOSS')
-                        .t`Estimated size`}</TableHeaderCell>
-                    <TableHeaderCell className="w-custom" style={{ '--w-custom': '10em' }}>{c('BOSS')
-                        .t`Status`}</TableHeaderCell>
+                    <TableHeaderCell className="text-right">
+                        <span className="pr-4">{c('BOSS').t`Estimated size`}</span>
+                    </TableHeaderCell>
                 </TableRow>
             </TableHeader>
             <TableBody>
-                {users.map((u) => (
+                {users.map((u, index) => (
                     <TableRow key={u.ID}>
-                        <TableCell>
-                            <div className="flex flex-nowrap items-start">
+                        <TableCell className="provider-users-table-cell">
+                            <div className="flex flex-nowrap items-center py-2 relative px-4 provider-users-table-cell-check-users">
                                 <Checkbox
-                                    className="mr-2"
+                                    className="mr-4"
+                                    id={`select-user-${index}`}
                                     checked={selected.includes(u.ID)}
                                     onChange={handleSelectSingle(u.ID)}
                                 />
-                                <div>
-                                    <p className="m-0">{u.AdminSetName}</p>
-                                    <p className="m-0 text-sm color-weak">{u.Email}</p>
-                                </div>
+                                <label htmlFor={`select-user-${index}`} className="m-0">
+                                    <p className="m-0 text-ellipsis" title={u.AdminSetName}>
+                                        {u.AdminSetName}
+                                    </p>
+                                    <p className="m-0 text-sm color-hint text-ellipsis" title={u.Email}>
+                                        {u.Email}
+                                    </p>
+                                </label>
                             </div>
                         </TableCell>
-                        <TableCell>{humanSize({ bytes: u.UsedQuota, fraction: 0 })}</TableCell>
-                        <TableCell>{c('BOSS').t`Not started`}</TableCell>
+                        <TableCell className="text-right pr-4 text-left-when-stacked provider-users-table-cell">
+                            <span className="pr-4">{humanSize({ bytes: u.UsedQuota, fraction: 0 })}</span>
+                        </TableCell>
                     </TableRow>
                 ))}
             </TableBody>

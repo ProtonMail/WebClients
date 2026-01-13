@@ -279,6 +279,7 @@ export interface ApiImporterOrganization {
     ExternalCustomerID: string;
     ImporterConfig: {
         Products: ApiImporterProduct[];
+        ImportOrganizationSettings: boolean;
     };
     ImporterOrganizationID: string;
     ModifyTime: string;
@@ -289,6 +290,7 @@ export interface ApiImporterOrganization {
 export interface ApiCreateImporterOrganization {
     Provider: ApiImportProvider;
     Products: ApiImporterProduct[];
+    ImportOrganizationSettings: boolean;
 }
 
 export interface ApiCreateImporterOrganizationMigration {
