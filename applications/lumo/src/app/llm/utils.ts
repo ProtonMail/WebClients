@@ -38,7 +38,7 @@ export const calculateMessageContentTokens = (messageChain: Message[]): number =
 };
 
 // Calculate estimated tokn size for a single attachment
-export const calculateSingleAttachmentContextSize = (attachment: Attachment): number => {
+export const countAttachmentToken = (attachment: Attachment): number => {
     if (!attachment || attachment.processing || !attachment.markdown || !attachment.filename) {
         return 0;
     }
@@ -75,7 +75,7 @@ export const calculateSingleAttachmentContextSize = (attachment: Attachment): nu
  */
 export const calculateAttachmentContextSize = (attachments: Attachment[]): number => {
     return attachments.reduce((total, attachment) => {
-        return total + calculateSingleAttachmentContextSize(attachment);
+        return total + countAttachmentToken(attachment);
     }, 0);
 };
 
