@@ -4979,9 +4979,6 @@
       "Your emails cannot be decrypted due to a recent password reset. If you remember your previous password, you can ${ reActivateKeyLink } in order to access your messages. ${ learnMoreLink }": [
         "Viestiesi salausta ei voida purkaa taannoisen salasanan nollauksen vuoksi. Jos muistat edellisen salasanasi, voit avata viestisi ${ reActivateKeyLink }. ${ learnMoreLink }"
       ],
-      "Your emails cannot be decrypted. This may be due to a password reset. ${ learnMoreLink }": [
-        "Viestiesi salausta ei voida purkaa. Tämä saattaa johtua salasanan nollauksesta. ${ learnMoreLink }"
-      ],
       "Your import will not be processed.": [
         "Tuontiasi ei käsitellä."
       ],
@@ -8147,6 +8144,15 @@
       "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
         "Viesti siirretään luonnoksiin, jotta voit muokata sitä. Sinun on ajoitettava sen lähetys uudelleen."
       ],
+      "This message will be purged on ${ value }": [
+        "Tämä viesti poistetaan ${ value }"
+      ],
+      "This message will be purged today at ${ value }": [
+        "Tämä viesti poistetaan tänään klo ${ value }"
+      ],
+      "This message will be purged tomorrow at ${ value }": [
+        "Tämä viesti poistetaan huomenna klo ${ value }."
+      ],
       "This message will be sent in the morning at ${ formattedTime }": [
         "Viesti lähetetään aamulla klo ${ formattedTime }"
       ],
@@ -9322,6 +9328,9 @@
       "Filter Name": [
         "Suodattimen nimi"
       ],
+      "Filters": [
+        "Suodattimet"
+      ],
       "First name": [
         "Etunimi"
       ],
@@ -9369,6 +9378,9 @@
       ],
       "Go to Updates": [
         "Siirry päivityksiin"
+      ],
+      "Has attachments": [
+        "Sisältää liitteitä"
       ],
       "Help us improve categories by choosing the one that best fits this email. Thanks for your help!": [
         "Auta meitä parantamaan luokkia valitsemalla se, joka sopii parhaiten tälle sähköpostille. Kiitos avustasi!"
@@ -12379,11 +12391,6 @@
     "plus_block": {
       "Upgrade to ${ upsellPlanTitle }": [
         "Päivitä ${ upsellPlanTitle } -tilaukseen"
-      ]
-    },
-    "Price": {
-      "Free": [
-        "Ilmainen"
       ]
     },
     "Progress bar description": {

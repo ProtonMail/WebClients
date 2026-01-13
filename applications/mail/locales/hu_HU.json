@@ -4918,9 +4918,6 @@
       "Your emails cannot be decrypted due to a recent password reset. If you remember your previous password, you can ${ reActivateKeyLink } in order to access your messages. ${ learnMoreLink }": [
         "Az üzenetek visszafejtése nem lehetséges, a jelszó korábbi visszaállítása miatt. Ha emlékszik az előző jelszavára, ${ reActivateKeyLink } az üzenetek eléréséhez. ${ learnMoreLink }"
       ],
-      "Your emails cannot be decrypted. This may be due to a password reset. ${ learnMoreLink }": [
-        "Az üzenetek visszafejtése nem lehetséges. Ezt okozhatja a jelszó korábbi visszaállítása. ${ learnMoreLink }"
-      ],
       "Your import will not be processed.": [
         "Az importálás nem lesz feldolgozva."
       ],
@@ -12309,11 +12306,6 @@
     "plus_block": {
       "Upgrade to ${ upsellPlanTitle }": [
         "Frissítés ${ upsellPlanTitle }"
-      ]
-    },
-    "Price": {
-      "Free": [
-        "Ingyenes"
       ]
     },
     "Progress bar description": {

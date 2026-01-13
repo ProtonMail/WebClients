@@ -4993,9 +4993,6 @@
       "Your emails cannot be decrypted due to a recent password reset. If you remember your previous password, you can ${ reActivateKeyLink } in order to access your messages. ${ learnMoreLink }": [
         "最近パスワードをリセットしたため、メールを復号化できません。以前のパスワードを覚えていらっしゃる場合、${ reActivateKeyLink }してメッセージにアクセスすることができます。${ learnMoreLink }"
       ],
-      "Your emails cannot be decrypted. This may be due to a password reset. ${ learnMoreLink }": [
-        "電子メールを復号できません。パスワードをリセットしたためかもしれません。${ learnMoreLink }"
-      ],
       "Your import will not be processed.": [
         "インポートできませんでした。"
       ],
@@ -12355,11 +12352,6 @@
       ],
       "Upgrade to ${ upsellPlanTitle }": [
         "${ upsellPlanTitle }にアップグレード"
-      ]
-    },
-    "Price": {
-      "Free": [
-        "無料"
       ]
     },
     "Progress bar description": {

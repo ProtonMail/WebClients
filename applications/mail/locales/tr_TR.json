@@ -2656,6 +2656,9 @@
       ],
       "High-speed chats and advanced AI features.": [
         "Yüksek hızlı sohbetler ve gelişmiş yapay zeka özellikleri."
+      ],
+      "Private video calls for the conversations that matter.": [
+        "Önemli görüşmeler için gizliliği koruyan görüntülü çağrılar."
       ]
     },
     "color": {
@@ -3854,6 +3857,11 @@
         "${ MAIL_APP_NAME } için"
       ]
     },
+    "customer_support.feature.meet": {
+      "For ${ MEET_APP_NAME }": [
+        "${ MEET_APP_NAME } için"
+      ]
+    },
     "customer_support.feature.pass": {
       "For ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } için"
@@ -4838,6 +4846,9 @@
       "re-activate the previous key": [
         "önceki anahtarı yeniden kullanıma al"
       ],
+      "re-importing": [
+        "yeniden içe aktarmayı"
+      ],
       "Removed duplicate recipient: ${ recipents }": [
         "Yinelenen alıcı kaldırıldı: ${ recipents }",
         "Yinelenen alıcılar kaldırıldı: ${ recipents }"
@@ -4945,6 +4956,9 @@
       "There has been an issue with content search. Default search has been used instead.": [
         "İçerik aramasıyla ilgili bir sorun çıktı. Varsayılan arama yöntemi kullanıldı."
       ],
+      "There was a problem decrypting your message. If the issue persists, contact our customer support.": [
+        "İletinizin şifresi çözülürken bir sorun çıktı. Sorun sürerse, lütfen müşteri desteği ekibimizle görüşün."
+      ],
       "There was an error when exporting the contacts vCards": [
         "Kişilerin vCard dosyaları dışa aktarılırken bir sorun çıktı"
       ],
@@ -5031,11 +5045,14 @@
       "Your emails cannot be decrypted due to a recent password reset. If you remember your previous password, you can ${ reActivateKeyLink } in order to access your messages. ${ learnMoreLink }": [
         "Yakın zamanda yapılan bir parola sıfırlaması nedeniyle e-postalarınızın şifresi çözülemedi. Önceki parolanızı hatırlıyorsanız iletilerinize ulaşmak için ${ reActivateKeyLink }me işlemi yapabilirsiniz. ${ learnMoreLink }"
       ],
-      "Your emails cannot be decrypted. This may be due to a password reset. ${ learnMoreLink }": [
-        "E-postalarınızın şifresi çözülemedi. Bunun nedeni bir parola sıfırlama işlemi olabilir. ${ learnMoreLink }"
-      ],
       "Your import will not be processed.": [
         "İçe aktarma işleminiz yapılmayacak."
+      ],
+      "Your message cannot be decrypted. If you deleted any of your address keys, try ${ reimportKeyLink } them. ${ learnMoreLink }": [
+        "İletinizin şifresi çözülemedi. Adres anahtarlarınızdan herhangi birini sildiyseniz, bunları ${ reimportKeyLink } deneyin. ${ learnMoreLink }"
+      ],
+      "Your message cannot be decrypted. The key used to encrypt this message does not match any of the keys associated with your address. If you deleted any of your address keys, try ${ reimportKeyLink } them. ${ learnMoreLink }": [
+        "İletinizin şifresi çözülemez. Bu iletiyi şifrelemek için kullanılan anahtar, adresinizle ilişkili anahtarlardan hiçbiriyle eşleşmiyor. Adres anahtarlarınızdan herhangi birini sildiyseniz, bunları ${ reimportKeyLink } deneyin. ${ learnMoreLink }"
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Aramanız çok fazla sonuç döndürdü. Lütfen aramanızı sınırlandırıp yeniden deneyin."
@@ -8211,6 +8228,15 @@
       "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
         "Bu ileti, Taslaklar kutusuna taşınacak. Böylece onu düzenleyebilirsiniz. Ne zaman gönderileceğini yeniden zamanlamanız gerekecek."
       ],
+      "This message will be purged on ${ value }": [
+        "Bu ileti ${ value } zamanında silinecek"
+      ],
+      "This message will be purged today at ${ value }": [
+        "Bu ileti bugün ${ value } saatinde silinecek"
+      ],
+      "This message will be purged tomorrow at ${ value }": [
+        "Bu ileti yarın ${ value } saatinde silinecek"
+      ],
       "This message will be sent in the morning at ${ formattedTime }": [
         "Bu ileti sabah ${ formattedTime } saatinde gönderilecek"
       ],
@@ -9398,6 +9424,9 @@
       "Filter Name": [
         "Süzgeç adı"
       ],
+      "Filters": [
+        "Süzgeçler"
+      ],
       "First name": [
         "Ad"
       ],
@@ -9445,6 +9474,9 @@
       ],
       "Go to Updates": [
         "Güncellemelere git"
+      ],
+      "Has attachments": [
+        "Ek dosyaları olan"
       ],
       "Help us improve categories by choosing the one that best fits this email. Thanks for your help!": [
         "Kategoriler özelliğini geliştirmemize yardımcı olmak için bu e-postaya en uygun olanı seçin. Yardımınız için teşekkür ederiz!"
@@ -10332,6 +10364,53 @@
       ],
       "Trash": [
         "Çöp kutusu"
+      ]
+    },
+    "meet_2025: Feature": {
+      "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
+        "${ MEET_APP_NAME }: Önemli görüşmeler için gizliliği koruyan görüntülü toplantı"
+      ],
+      "${ n } active meeting at a time": [
+        "Aynı anda ${ n } etkin görüşme",
+        "Aynı anda ${ n } etkin görüşme"
+      ],
+      "24 hours per meeting": [
+        "Görüşme başına 24 saat"
+      ],
+      "60 minutes per meeting": [
+        "Görüşme başına 60 dakika"
+      ],
+      "Appointment scheduling": [
+        "Randevu planlama"
+      ],
+      "Browser, mobile, and desktop apps": [
+        "Tarayıcı, mobil ve bilgisayar uygulamaları"
+      ],
+      "Built-in chat": [
+        "Hazır sohbet"
+      ],
+      "End-to-end encrypted screen sharing and ephemeral in-call chat": [
+        "Uçtan uca şifrelenmiş ekran paylaşımı ve geçici çağrı içi sohbet"
+      ],
+      "Meeting recording (coming soon)": [
+        "Görüşme kaydı (yakında)"
+      ],
+      "One active meeting at a time": [
+        "Aynı anda bir etkin görüşme"
+      ],
+      "Screen-sharing": [
+        "Ekran paylaşımı"
+      ],
+      "Unlimited meetings per day": [
+        "Günlük sınırsız görüşme"
+      ],
+      "Up to ${ n } meeting per day": [
+        "Günde ${ n } görüşme",
+        "Günde ${ n } görüşme"
+      ],
+      "Up to ${ n } participant": [
+        "${ n } katılımcı",
+        "${ n } katılımcı"
       ]
     },
     "Message": {
@@ -12553,11 +12632,6 @@
       ],
       "Upgrade to ${ upsellPlanTitle }": [
         "${ upsellPlanTitle } tarifesine yükselt"
-      ]
-    },
-    "Price": {
-      "Free": [
-        "Ücretsiz"
       ]
     },
     "Progress bar description": {
