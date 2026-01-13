@@ -266,6 +266,7 @@ const MailSidebarList = ({ labelID: currentLabelID, postItems, collapsed = false
                                       changes: params.changes,
                                       elements: params.elements,
                                       destinationLabelID: params.destinationLabelID!, // TODO: Improve this when removing old apply labels function
+                                      createFilters: params.createFilters,
                                   })
                                 : applyLabels(params)
                         }
@@ -275,6 +276,7 @@ const MailSidebarList = ({ labelID: currentLabelID, postItems, collapsed = false
                                       type: APPLY_LOCATION_TYPES.MOVE,
                                       elements: params.elements,
                                       destinationLabelID: params.destinationLabelID!, // TODO: Improve this when removing old apply labels function
+                                      createFilters: params.createFilters,
                                   })
                                 : moveToFolder(params)
                         }
@@ -316,6 +318,7 @@ const MailSidebarList = ({ labelID: currentLabelID, postItems, collapsed = false
                                                   changes: params.changes,
                                                   elements: params.elements,
                                                   destinationLabelID: params.destinationLabelID!, // TODO: Improve this when removing old apply labels function
+                                                  createFilters: params.createFilters,
                                               })
                                             : applyLabels(params)
                                     }
@@ -325,6 +328,7 @@ const MailSidebarList = ({ labelID: currentLabelID, postItems, collapsed = false
                                                   type: APPLY_LOCATION_TYPES.MOVE,
                                                   elements: params.elements,
                                                   destinationLabelID: params.destinationLabelID!, // TODO: Improve this when removing old apply labels function
+                                                  createFilters: params.createFilters,
                                               })
                                             : moveToFolder(params)
                                     }
@@ -364,6 +368,7 @@ const MailSidebarList = ({ labelID: currentLabelID, postItems, collapsed = false
                                                   changes: params.changes,
                                                   elements: params.elements,
                                                   destinationLabelID: params.destinationLabelID!, // TODO: Improve this when removing old apply labels function
+                                                  createFilters: params.createFilters,
                                               })
                                             : applyLabels(params)
                                     }
@@ -373,6 +378,7 @@ const MailSidebarList = ({ labelID: currentLabelID, postItems, collapsed = false
                                                   type: APPLY_LOCATION_TYPES.MOVE,
                                                   elements: params.elements,
                                                   destinationLabelID: params.destinationLabelID!, // TODO: Improve this when removing old apply labels function
+                                                  createFilters: params.createFilters,
                                               })
                                             : moveToFolder(params)
                                     }
