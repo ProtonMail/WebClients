@@ -4736,9 +4736,6 @@
       "Your emails cannot be decrypted due to a recent password reset. If you remember your previous password, you can ${ reActivateKeyLink } in order to access your messages. ${ learnMoreLink }": [
         "Os seus e-mails não podem ser desencriptados devido a uma redefinição recente da palavra-passe. Se se lembrar da sua palavra-passe anterior, pode ${ reActivateKeyLink } para aceder às suas mensagens. ${ learnMoreLink }"
       ],
-      "Your emails cannot be decrypted. This may be due to a password reset. ${ learnMoreLink }": [
-        "As suas mensagens de e-mail não podem ser desencriptadas. Isto pode dever-se a uma reposição da palavra-passe. ${ learnMoreLink }"
-      ],
       "Your import will not be processed.": [
         "A sua importação não será processada."
       ],
@@ -11796,11 +11793,6 @@
       ],
       "Upgrade to ${ upsellPlanTitle }": [
         "Melhorar para o plano ${ upsellPlanTitle }"
-      ]
-    },
-    "Price": {
-      "Free": [
-        "Gratuito"
       ]
     },
     "Progress bar description": {

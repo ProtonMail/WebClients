@@ -2656,6 +2656,9 @@
       ],
       "High-speed chats and advanced AI features.": [
         "Bate-papos de alta velocidade e recursos avançados de IA."
+      ],
+      "Private video calls for the conversations that matter.": [
+        "Videochamadas privadas para as conversas importantes."
       ]
     },
     "color": {
@@ -3854,6 +3857,11 @@
         "Para ${ MAIL_APP_NAME }"
       ]
     },
+    "customer_support.feature.meet": {
+      "For ${ MEET_APP_NAME }": [
+        "Por ${ MEET_APP_NAME }"
+      ]
+    },
     "customer_support.feature.pass": {
       "For ${ PASS_APP_NAME }": [
         "Para ${ PASS_APP_NAME }"
@@ -4492,6 +4500,9 @@
       "Cannot export this contact": [
         "Não é possível exportar este contato."
       ],
+      "Cannot set expiration longer than retention policy allows.": [
+        "Não é possível definir uma expiração maior do que a política de retenção permite."
+      ],
       "Checkout expired, please try again": [
         "Pedido expirado. Tente novamente"
       ],
@@ -4835,6 +4846,9 @@
       "re-activate the previous key": [
         "reativar a chave anterior"
       ],
+      "re-importing": [
+        "re-importando"
+      ],
       "Removed duplicate recipient: ${ recipents }": [
         "Destinatário duplicado removido: ${ recipents }",
         "Destinatários duplicados removidos: ${ recipents }"
@@ -4942,6 +4956,9 @@
       "There has been an issue with content search. Default search has been used instead.": [
         "Ocorreu um problema com a pesquisa de conteúdo. A pesquisa padrão foi usada."
       ],
+      "There was a problem decrypting your message. If the issue persists, contact our customer support.": [
+        "Houve um problema ao descriptografar sua mensagem. Se o problema persistir, entre em contato com nosso suporte ao cliente."
+      ],
       "There was an error when exporting the contacts vCards": [
         "Houve um erro ao exportar os vCards dos contatos"
       ],
@@ -5028,11 +5045,14 @@
       "Your emails cannot be decrypted due to a recent password reset. If you remember your previous password, you can ${ reActivateKeyLink } in order to access your messages. ${ learnMoreLink }": [
         "Seus e-mails não podem ser descriptografados devido a uma redefinição de senha recente. Se você se lembrar da sua senha anterior, poderá ${ reActivateKeyLink } para acessar suas mensagens. ${ learnMoreLink }"
       ],
-      "Your emails cannot be decrypted. This may be due to a password reset. ${ learnMoreLink }": [
-        "Suas mensagens não podem ser descriptografadas. Isso pode ser devido a uma recente redefinição de senha. ${ learnMoreLink }"
-      ],
       "Your import will not be processed.": [
         "Sua importação não será processada."
+      ],
+      "Your message cannot be decrypted. If you deleted any of your address keys, try ${ reimportKeyLink } them. ${ learnMoreLink }": [
+        "Sua mensagem não pôde ser descriptografada. Se você excluiu alguma de suas chaves de endereço, tente ${ reimportKeyLink } elas. ${ learnMoreLink }"
+      ],
+      "Your message cannot be decrypted. The key used to encrypt this message does not match any of the keys associated with your address. If you deleted any of your address keys, try ${ reimportKeyLink } them. ${ learnMoreLink }": [
+        "Sua mensagem não pôde ser descriptografada. A chave usada para criptografar esta mensagem não corresponde a nenhuma das chaves associadas ao seu endereço. Se você excluiu alguma das suas chaves, tente ${ reimportKeyLink } importá-las novamente. ${ learnMoreLink }"
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "A sua pesquisa correspondeu a muitos resultados. Limite sua busca e tente novamente."
@@ -8208,6 +8228,15 @@
       "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
         "Esta mensagem será movida para Rascunhos para que você possa editá-la. Você precisará reagendar quando ela será enviada."
       ],
+      "This message will be purged on ${ value }": [
+        "Esta mensagem será excluída em ${ value }"
+      ],
+      "This message will be purged today at ${ value }": [
+        "Esta mensagem será excluída hoje às ${ value }"
+      ],
+      "This message will be purged tomorrow at ${ value }": [
+        "Esta mensagem será excluida amanhã às ${ value }"
+      ],
       "This message will be sent in the morning at ${ formattedTime }": [
         "Esta mensagem será enviada pela manhã às ${ formattedTime }."
       ],
@@ -9395,6 +9424,9 @@
       "Filter Name": [
         "Nome do filtro"
       ],
+      "Filters": [
+        "Filtros"
+      ],
       "First name": [
         "Primeiro nome"
       ],
@@ -9442,6 +9474,9 @@
       ],
       "Go to Updates": [
         "Ir para Atualizações"
+      ],
+      "Has attachments": [
+        "Tem anexos"
       ],
       "Help us improve categories by choosing the one that best fits this email. Thanks for your help!": [
         "Ajude a gente a melhorar as categorias escolhendo a que melhor se encaixa neste e-mail. Obrigado pela sua ajuda!"
@@ -10329,6 +10364,53 @@
       ],
       "Trash": [
         "Lixeira"
+      ]
+    },
+    "meet_2025: Feature": {
+      "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
+        "${ MEET_APP_NAME }: Videoconferência confidencial para as conversas importantes"
+      ],
+      "${ n } active meeting at a time": [
+        "${ n } reunião ativa por vez",
+        "${ n } reuniões ativas por vez"
+      ],
+      "24 hours per meeting": [
+        "24 horas por reunião"
+      ],
+      "60 minutes per meeting": [
+        "60 minutos por reunião"
+      ],
+      "Appointment scheduling": [
+        "Agendamento de compromissos"
+      ],
+      "Browser, mobile, and desktop apps": [
+        "Aplicativos para navegadores, dispositivos móveis e computadores"
+      ],
+      "Built-in chat": [
+        "Bate-papo integrado"
+      ],
+      "End-to-end encrypted screen sharing and ephemeral in-call chat": [
+        "Compartilhamento de tela com criptografia de ponta a ponta e chat efêmero durante a chamada"
+      ],
+      "Meeting recording (coming soon)": [
+        "Gravação da reunião (em breve)"
+      ],
+      "One active meeting at a time": [
+        "Uma reunião ativa por vez"
+      ],
+      "Screen-sharing": [
+        "Compartilhamento de tela"
+      ],
+      "Unlimited meetings per day": [
+        "Reuniões ilimitadas por dia"
+      ],
+      "Up to ${ n } meeting per day": [
+        "Até ${ n } reunião por dia",
+        "Até ${ n } reuniões por dia"
+      ],
+      "Up to ${ n } participant": [
+        "Até ${ n } participante",
+        "Até ${ n } participantes"
       ]
     },
     "Message": {
@@ -12556,11 +12638,6 @@
       ],
       "Upgrade to ${ upsellPlanTitle }": [
         "Faça upgrade para ${ upsellPlanTitle }"
-      ]
-    },
-    "Price": {
-      "Free": [
-        "Gratuito"
       ]
     },
     "Progress bar description": {

@@ -2512,6 +2512,9 @@
       "${ maxSpaceTB } storage": [
         "저장공간 ${ maxSpaceTB }"
       ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers }명 사용자"
+      ],
       "${ planMaxSpace } email storage": [
         "${ planMaxSpace }의 이메일 저장 공간"
       ],
@@ -2636,6 +2639,9 @@
       ],
       "High-speed chats and advanced AI features.": [
         "고속 채팅 및 고급 AI 기능"
+      ],
+      "Private video calls for the conversations that matter.": [
+        "중요한 대화를 위한 개인 영상 통화."
       ]
     },
     "color": {
@@ -3834,6 +3840,11 @@
         "${ MAIL_APP_NAME }용"
       ]
     },
+    "customer_support.feature.meet": {
+      "For ${ MEET_APP_NAME }": [
+        "${ MEET_APP_NAME }용"
+      ]
+    },
     "customer_support.feature.pass": {
       "For ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME }용"
@@ -4804,6 +4815,9 @@
       "re-activate the previous key": [
         "기존 키 재활성화"
       ],
+      "re-importing": [
+        "다시 가져오기"
+      ],
       "Removed duplicate recipient: ${ recipents }": [
         "중복된 수신자를 삭제했습니다: ${ recipents }"
       ],
@@ -4909,6 +4923,9 @@
       "There has been an issue with content search. Default search has been used instead.": [
         "콘텐츠 검색에 문제가 있었습니다. 일반 검색이 대신 사용되었습니다."
       ],
+      "There was a problem decrypting your message. If the issue persists, contact our customer support.": [
+        "메시지 복호화 중 문제가 발생했습니다. 문제가 지속되면 고객 지원팀에 문의하십시오."
+      ],
       "There was an error when exporting the contacts vCards": [
         "연락처 vCard를 내보낼 때 오류가 발생했어요."
       ],
@@ -4993,11 +5010,14 @@
       "Your emails cannot be decrypted due to a recent password reset. If you remember your previous password, you can ${ reActivateKeyLink } in order to access your messages. ${ learnMoreLink }": [
         "최근 비밀번호 재설정으로 인해 이메일을 복호화 할 수 없습니다. 이전 비밀번호를 기억하고 계시다면, 메시지에서 접근을 위해 ${ reActivateKeyLink } 하실 수 있습니다. ${ learnMoreLink }"
       ],
-      "Your emails cannot be decrypted. This may be due to a password reset. ${ learnMoreLink }": [
-        "이메일을 복호화 할 수 없습니다. 비밀번호 재설정이 필요합니다. ${ learnMoreLink }"
-      ],
       "Your import will not be processed.": [
         "가져오기가 처리되지 않았습니다."
+      ],
+      "Your message cannot be decrypted. If you deleted any of your address keys, try ${ reimportKeyLink } them. ${ learnMoreLink }": [
+        "메시지를 복호화할 수 없습니다. 주소 키를 삭제한 경우, ${ reimportKeyLink }를 진행하여 가져올 수 있습니다. ${ learnMoreLink }"
+      ],
+      "Your message cannot be decrypted. The key used to encrypt this message does not match any of the keys associated with your address. If you deleted any of your address keys, try ${ reimportKeyLink } them. ${ learnMoreLink }": [
+        "메시지를 복호화할 수 없습니다. 이 메시지 암호화에 사용된 키가 사용자의 주소와 연결된 키와 일치하지 않습니다. 주소 키를 삭제한 경우 ${ reimportKeyLink }를 진행해야 합니다. ${ learnMoreLink }"
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "검색 결과가 너무 많습니다. 검색을 제한하고 다시 시도해주세요."
@@ -7360,6 +7380,9 @@
       "Low Priority": [
         "중요도 낮음"
       ],
+      "Make ${ MAIL_APP_NAME } your default email application.": [
+        "${ MAIL_APP_NAME }을 기본 이메일 어플리케이션으로 설정하세요."
+      ],
       "Manage your folders": [
         "폴더 관리"
       ],
@@ -8079,6 +8102,15 @@
       ],
       "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
         "이 메시지가 임시보관함으로 이동되었으며, 편집할 수 있습니다. 전송될 때의 다시 예약이 필요합니다."
+      ],
+      "This message will be purged on ${ value }": [
+        "이 메시지가 ${ value }에 삭제됩니다"
+      ],
+      "This message will be purged today at ${ value }": [
+        "이 메시지가 ${ value }에 삭제됩니다"
+      ],
+      "This message will be purged tomorrow at ${ value }": [
+        "이 메시지가 내일 ${ value }에 삭제됩니다"
       ],
       "This message will be sent in the morning at ${ formattedTime }": [
         "이 메시지가 오늘 ${ formattedTime } 에 전송됩니다"
@@ -9242,6 +9274,9 @@
       "Filter Name": [
         "필터 이름"
       ],
+      "Filters": [
+        "필터"
+      ],
       "First name": [
         "이름"
       ],
@@ -9289,6 +9324,9 @@
       ],
       "Go to Updates": [
         "업데이트로 이동"
+      ],
+      "Has attachments": [
+        "첨부 파일 포함"
       ],
       "Help us improve categories by choosing the one that best fits this email. Thanks for your help!": [
         "이 이메일에 적합한 카테고리를 선택하여 기능 성능을 향상하는데 도와주세요. 도움에 감사드립니다!"
@@ -10171,6 +10209,50 @@
       ],
       "Trash": [
         "휴지통"
+      ]
+    },
+    "meet_2025: Feature": {
+      "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
+        "${ MEET_APP_NAME }: 중요한 대화를 위한 안전한 영상 회의"
+      ],
+      "${ n } active meeting at a time": [
+        "동시 활성 회의 ${ n }개"
+      ],
+      "24 hours per meeting": [
+        "회의 당 24시간"
+      ],
+      "60 minutes per meeting": [
+        "회의 당 60분"
+      ],
+      "Appointment scheduling": [
+        "일정 예약"
+      ],
+      "Browser, mobile, and desktop apps": [
+        "브라우저, 모바일 및 데스크톱 앱"
+      ],
+      "Built-in chat": [
+        "내장 채팅"
+      ],
+      "End-to-end encrypted screen sharing and ephemeral in-call chat": [
+        "종단간 암호화된 화면 공유 및 임시 통화 중 채팅"
+      ],
+      "Meeting recording (coming soon)": [
+        "회의 녹화 (출시 예정)"
+      ],
+      "One active meeting at a time": [
+        "동싀 활성 회의 1개"
+      ],
+      "Screen-sharing": [
+        "화면 공유"
+      ],
+      "Unlimited meetings per day": [
+        "하루 무제한 회의"
+      ],
+      "Up to ${ n } meeting per day": [
+        "하루 최대 ${ n }개 회의"
+      ],
+      "Up to ${ n } participant": [
+        "최대 ${ n }명 참가자"
       ]
     },
     "Message": {
@@ -12355,11 +12437,6 @@
       ],
       "Upgrade to ${ upsellPlanTitle }": [
         "${ upsellPlanTitle }(으)로 업그레이드"
-      ]
-    },
-    "Price": {
-      "Free": [
-        "무료"
       ]
     },
     "Progress bar description": {

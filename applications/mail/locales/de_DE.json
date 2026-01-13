@@ -2656,6 +2656,9 @@
       ],
       "High-speed chats and advanced AI features.": [
         "Schnelle Chats und erweiterte KI-Funktionen."
+      ],
+      "Private video calls for the conversations that matter.": [
+        "Private Videoanrufe für die Unterhaltungen, die wichtig sind."
       ]
     },
     "color": {
@@ -3854,6 +3857,11 @@
         "Für ${ MAIL_APP_NAME }"
       ]
     },
+    "customer_support.feature.meet": {
+      "For ${ MEET_APP_NAME }": [
+        "Für ${ MEET_APP_NAME }"
+      ]
+    },
     "customer_support.feature.pass": {
       "For ${ PASS_APP_NAME }": [
         "Für ${ PASS_APP_NAME }"
@@ -4838,6 +4846,9 @@
       "re-activate the previous key": [
         "Vorherigen Schlüssel erneut aktivieren"
       ],
+      "re-importing": [
+        "erneut zu importieren"
+      ],
       "Removed duplicate recipient: ${ recipents }": [
         "Doppelter Empfänger wurde entfernt: ${ recipents }",
         "Doppelte Empfänger wurden entfernt: ${ recipents }"
@@ -4945,6 +4956,9 @@
       "There has been an issue with content search. Default search has been used instead.": [
         "Es ist ein Problem mit der Inhaltssuche aufgetreten. Stattdessen wurde die Standardsuche verwendet."
       ],
+      "There was a problem decrypting your message. If the issue persists, contact our customer support.": [
+        "Beim Entschlüsseln deiner Nachricht ist ein Problem aufgetreten. Wenn das Problem weiterhin besteht, kontaktiere unseren Kundensupport."
+      ],
       "There was an error when exporting the contacts vCards": [
         "Es gab einen Fehler beim Exportieren der vCards der Kontakte"
       ],
@@ -5031,11 +5045,14 @@
       "Your emails cannot be decrypted due to a recent password reset. If you remember your previous password, you can ${ reActivateKeyLink } in order to access your messages. ${ learnMoreLink }": [
         "Deine E-Mails konnten nicht entschlüsselt werden, da dein Passwort kürzlich zurückgesetzt wurde. Falls du dich an dein früheres Passwort erinnerst, kannst du den ${ reActivateKeyLink }, um auf deine Nachrichten zuzugreifen. ${ learnMoreLink }"
       ],
-      "Your emails cannot be decrypted. This may be due to a password reset. ${ learnMoreLink }": [
-        "Deine E-Mails konnten nicht entschlüsselt werden. Dies könnte auf das Zurücksetzen des Passworts zurückzuführen sein. ${ learnMoreLink }"
-      ],
       "Your import will not be processed.": [
         "Dein Import wird nicht verarbeitet."
+      ],
+      "Your message cannot be decrypted. If you deleted any of your address keys, try ${ reimportKeyLink } them. ${ learnMoreLink }": [
+        "Deine Nachricht konnte nicht entschlüsselt werden. Falls du einen deiner Adressschlüssel gelöscht hast, versuche ihn ${ reimportKeyLink }. ${ learnMoreLink }"
+      ],
+      "Your message cannot be decrypted. The key used to encrypt this message does not match any of the keys associated with your address. If you deleted any of your address keys, try ${ reimportKeyLink } them. ${ learnMoreLink }": [
+        "Deine Nachricht kann nicht entschlüsselt werden. Der Schlüssel, der zum Verschlüsseln dieser Nachricht verwendet wurde, stimmt mit keinem der Schlüssel überein, die mit deiner Adresse verknüpft sind. Wenn du eine deiner Adressschlüssel gelöscht hast, versuche sie ${ reimportKeyLink }. ${ learnMoreLink }"
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Deine Suche ergab zu viele Treffer. Schränke deine Suche ein und versuche es erneut."
@@ -8211,6 +8228,15 @@
       "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
         "Diese Nachricht wird in Entwürfen gespeichert, damit diese bearbeitet werden kann. Der Zeitpunkt für das Versenden der Nachricht muss neu angeben werden."
       ],
+      "This message will be purged on ${ value }": [
+        "Diese Nachricht wird am ${ value } gelöscht."
+      ],
+      "This message will be purged today at ${ value }": [
+        "Diese Nachricht wird heute um ${ value } gelöscht."
+      ],
+      "This message will be purged tomorrow at ${ value }": [
+        "Diese Nachricht wird morgen um ${ value } gelöscht."
+      ],
       "This message will be sent in the morning at ${ formattedTime }": [
         "Diese Nachricht wird morgens um ${ formattedTime } gesendet."
       ],
@@ -9398,6 +9424,9 @@
       "Filter Name": [
         "Filtername"
       ],
+      "Filters": [
+        "Filter"
+      ],
       "First name": [
         "Vorname"
       ],
@@ -9445,6 +9474,9 @@
       ],
       "Go to Updates": [
         "Zu Updates wechseln"
+      ],
+      "Has attachments": [
+        "Enthält Anhänge"
       ],
       "Help us improve categories by choosing the one that best fits this email. Thanks for your help!": [
         "Hilf uns, Kategorien zu verbessern, indem du die auswählst, die am besten zu dieser E-Mail passt. Vielen Dank für deine Hilfe."
@@ -10332,6 +10364,53 @@
       ],
       "Trash": [
         "In Papierkorb verschieben"
+      ]
+    },
+    "meet_2025: Feature": {
+      "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
+        "${ MEET_APP_NAME }: Vertrauliche Videokonferenzen für die Unterhaltungen, die wichtig sind"
+      ],
+      "${ n } active meeting at a time": [
+        "${ n } aktives Meeting gleichzeitig",
+        "${ n } aktive Meetings gleichzeitig"
+      ],
+      "24 hours per meeting": [
+        "24 Stunden pro Meeting"
+      ],
+      "60 minutes per meeting": [
+        "60 Minuten pro Meeting"
+      ],
+      "Appointment scheduling": [
+        "Terminplanung"
+      ],
+      "Browser, mobile, and desktop apps": [
+        "Browser-, Mobile- und Desktop-Apps"
+      ],
+      "Built-in chat": [
+        "Eingebauter Chat"
+      ],
+      "End-to-end encrypted screen sharing and ephemeral in-call chat": [
+        "Ende-zu-Ende-verschlüsselte Bildschirmfreigabe und temporärer Chat während des Anrufs"
+      ],
+      "Meeting recording (coming soon)": [
+        "Aufnahme des Meetings (Demnächst verfügbar)"
+      ],
+      "One active meeting at a time": [
+        "Ein aktives Meeting gleichzeitig"
+      ],
+      "Screen-sharing": [
+        "Bildschirmfreigabe"
+      ],
+      "Unlimited meetings per day": [
+        "Unbegrenzte Meetings pro Tag"
+      ],
+      "Up to ${ n } meeting per day": [
+        "Bis zu ${ n } Meeting pro Tag",
+        "Bis zu ${ n } Meetings pro Tag"
+      ],
+      "Up to ${ n } participant": [
+        "Bis zu ${ n } Teilnehmer",
+        "Bis zu ${ n } Teilnehmer"
       ]
     },
     "Message": {
@@ -12553,11 +12632,6 @@
       ],
       "Upgrade to ${ upsellPlanTitle }": [
         "Auf ${ upsellPlanTitle } upgraden"
-      ]
-    },
-    "Price": {
-      "Free": [
-        "Kostenlos"
       ]
     },
     "Progress bar description": {

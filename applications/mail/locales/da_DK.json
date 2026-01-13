@@ -517,7 +517,7 @@
         "Redigér etikette"
       ],
       "Edit phone number": [
-        "Rediger telefonnummer"
+        "Redigér telefonnummer"
       ],
       "Edit sign-in details": [
         "Rediger login-detaljer"
@@ -2656,6 +2656,9 @@
       ],
       "High-speed chats and advanced AI features.": [
         "Højhastighedschats og avancerede AI-funktioner."
+      ],
+      "Private video calls for the conversations that matter.": [
+        "Private videoopkald til de samtaler, der betyder noget."
       ]
     },
     "color": {
@@ -3854,6 +3857,11 @@
         "For ${ MAIL_APP_NAME }"
       ]
     },
+    "customer_support.feature.meet": {
+      "For ${ MEET_APP_NAME }": [
+        "For ${ MEET_APP_NAME }"
+      ]
+    },
     "customer_support.feature.pass": {
       "For ${ PASS_APP_NAME }": [
         "For ${ PASS_APP_NAME }"
@@ -4785,7 +4793,7 @@
         "Vælg venligst et land"
       ],
       "Please select a state": [
-        "Vælg venligst en region"
+        "Vælg en stat"
       ],
       "Please select billing country": [
         "Vælg faktureringsland"
@@ -4837,6 +4845,9 @@
       ],
       "re-activate the previous key": [
         "genaktivér den forrige nøgle"
+      ],
+      "re-importing": [
+        "importerer igen"
       ],
       "Removed duplicate recipient: ${ recipents }": [
         "Duplikeret modtager fjernet: ${ recipents }",
@@ -4945,6 +4956,9 @@
       "There has been an issue with content search. Default search has been used instead.": [
         "Der var et problem med indholdssøgning. Standardsøgning er blevet brugt i stedet."
       ],
+      "There was a problem decrypting your message. If the issue persists, contact our customer support.": [
+        "Der var et problem med at dekryptere din besked. Hvis problemet fortsætter bedes du kontakte vores kundesupport."
+      ],
       "There was an error when exporting the contacts vCards": [
         "Der opstod en fejl under eksport af kontakternes vCards"
       ],
@@ -5031,11 +5045,14 @@
       "Your emails cannot be decrypted due to a recent password reset. If you remember your previous password, you can ${ reActivateKeyLink } in order to access your messages. ${ learnMoreLink }": [
         "Dine e-mails kan ikke dekrypteres på grund af en nylig nulstilling af adgangskoden. Hvis du kan huske din forrige adgangskode, kan du ${ reActivateKeyLink } for at få adgang til dine beskeder. ${ learnMoreLink }"
       ],
-      "Your emails cannot be decrypted. This may be due to a password reset. ${ learnMoreLink }": [
-        "Dine e-mails kan ikke dekrypteres. Dette kan skyldes en nulstilling af adgangskoden. ${ learnMoreLink }"
-      ],
       "Your import will not be processed.": [
         "Din import vil ikke blive behandlet."
+      ],
+      "Your message cannot be decrypted. If you deleted any of your address keys, try ${ reimportKeyLink } them. ${ learnMoreLink }": [
+        "Din besked kan ikke dekrypteres. Hvis du har slettet nogle af dine adresse-nøgler, forsøg at ${ reimportKeyLink } dem. ${ learnMoreLink }"
+      ],
+      "Your message cannot be decrypted. The key used to encrypt this message does not match any of the keys associated with your address. If you deleted any of your address keys, try ${ reimportKeyLink } them. ${ learnMoreLink }": [
+        "Din besked kan ikke dekrypteres. Nøglen, der blev brugt til at kryptere denne besked, stemmer ikke overens med nogen af de nøgler, der er tilknyttet din adresse. Hvis du har slettet nogen af dine adressenøgler, kan du prøve at ${ reimportKeyLink } dem. ${ learnMoreLink }"
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Din søgning gav for mange resultater. Begræns din søgning, og forsøg igen."
@@ -8211,6 +8228,15 @@
       "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
         "Denne besked flyttes til udkast, så du kan redigere den. Du skal igen planlægge, hvornår den skal sendes."
       ],
+      "This message will be purged on ${ value }": [
+        "Denne besked vil blive slettet den ${ value }"
+      ],
+      "This message will be purged today at ${ value }": [
+        "Denne besked vil blive slettet i dag kl. ${ value }"
+      ],
+      "This message will be purged tomorrow at ${ value }": [
+        "Denne besked vil blive slettet i morgen kl. ${ value }"
+      ],
       "This message will be sent in the morning at ${ formattedTime }": [
         "Denne besked vil blive sendt om morgenen kl. ${ formattedTime }."
       ],
@@ -9398,6 +9424,9 @@
       "Filter Name": [
         "Filternavn"
       ],
+      "Filters": [
+        "Filtre"
+      ],
       "First name": [
         "Fornavn"
       ],
@@ -9445,6 +9474,9 @@
       ],
       "Go to Updates": [
         "Gå til Opdateringer"
+      ],
+      "Has attachments": [
+        "Har vedhæftninger"
       ],
       "Help us improve categories by choosing the one that best fits this email. Thanks for your help!": [
         "Hjælp os med at forbedre kategorierne ved at vælge den, der bedst passer til denne e-mail. Tak for din hjælp!"
@@ -9684,7 +9716,7 @@
         "Adressat"
       ],
       "Region": [
-        "Område"
+        "Region"
       ],
       "Remember my choice": [
         "Husk mit valg"
@@ -9735,7 +9767,7 @@
         "Startdato"
       ],
       "State": [
-        "Stat/Region"
+        "Stat"
       ],
       "Statement": [
         "Udsagn"
@@ -10332,6 +10364,53 @@
       ],
       "Trash": [
         "Papirkurv"
+      ]
+    },
+    "meet_2025: Feature": {
+      "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
+        "${ MEET_APP_NAME }: Fortrolige videomøder til de samtaler, der betyder noget"
+      ],
+      "${ n } active meeting at a time": [
+        "${ n } aktivt møde ad gangen",
+        "${ n } aktive møder ad gangen"
+      ],
+      "24 hours per meeting": [
+        "24 timer pr. møde"
+      ],
+      "60 minutes per meeting": [
+        "60 minutter pr. møde"
+      ],
+      "Appointment scheduling": [
+        "Aftaleplanlægning"
+      ],
+      "Browser, mobile, and desktop apps": [
+        "Browser-, mobil- og desktop-apps"
+      ],
+      "Built-in chat": [
+        "Indbygget chat"
+      ],
+      "End-to-end encrypted screen sharing and ephemeral in-call chat": [
+        "End-to-end-krypteret skærmdeling og midlertidig chat under opkald"
+      ],
+      "Meeting recording (coming soon)": [
+        "Møde-optagelse (kommer snart)"
+      ],
+      "One active meeting at a time": [
+        "Ét aktivt møde ad gangen"
+      ],
+      "Screen-sharing": [
+        "Deling af skærm"
+      ],
+      "Unlimited meetings per day": [
+        "Ubegrænset antal møder om dagen"
+      ],
+      "Up to ${ n } meeting per day": [
+        "Op til ${ n } møde om dagen",
+        "Op til ${ n } møder om dagen"
+      ],
+      "Up to ${ n } participant": [
+        "Op til ${ n } deltager",
+        "Op til ${ n } deltagere"
       ]
     },
     "Message": {
@@ -11404,7 +11483,7 @@
         "Vi gemmer ingen sessionslog af din færden online og vi logger ikke metadata, som kan kompromittere dit privatliv"
       ],
       "We’re committed to helping customers subject to HIPAA/HITECH regulations safeguard protected health information (PHI). Signed BAAs are available for all ${ BRAND_NAME } for Business customers.": [
-        "Vi stræber efter at hjælpe kunder, der er underlagt HIPAA/HITECH-bestemmelser, med at beskytte beskyttede sundhedsoplysninger (PHI). Underskrevne BAA'er er tilgængelige for alle ${ BRAND_NAME } for Business-kunder."
+        "Vi stræber efter at hjælpe kunder, der er underlagt HIPAA-/HITECH-lovgivning, med at beskytte beskyttede sundhedsoplysninger (PHI). Underskrevne BAA'er (Business Associate Agreement) er tilgængelige for alle ${ BRAND_NAME } for virksomhedskunder."
       ],
       "When connected to our VPN, your DNS queries through our encrypted VPN tunnel, adding to your online privacy and security": [
         "Når du er forbundet til vores VPN, går dine DNS-forespørgsler gennem vores krypterede VPN-tunnel, hvilket øger dit privatliv og din sikkerhed online"
@@ -12219,7 +12298,7 @@
         "Vi er ikke i stand til at godkende din betalingsmetode. Vælg venligst en anden betalingsmetode, eller prøv igen."
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
-        "Dit kort blev afvist. Prøv venligst et andet kort eller kontakt din bank for at godkende opkrævningen."
+        "Dit kort blev afvist. Prøv venligst et andet kort eller kontakt din bank for at godkende betalingen."
       ]
     },
     "Payments.error": {
@@ -12553,11 +12632,6 @@
       ],
       "Upgrade to ${ upsellPlanTitle }": [
         "Opgradér til ${ upsellPlanTitle }"
-      ]
-    },
-    "Price": {
-      "Free": [
-        "Gratis"
       ]
     },
     "Progress bar description": {

@@ -2656,6 +2656,9 @@
       ],
       "High-speed chats and advanced AI features.": [
         "Chats op hoge snelheid en geavanceerde AI-functies."
+      ],
+      "Private video calls for the conversations that matter.": [
+        "Privé videogesprekken voor de gesprekken die ertoe doen."
       ]
     },
     "color": {
@@ -3854,6 +3857,11 @@
         "Voor ${ MAIL_APP_NAME }"
       ]
     },
+    "customer_support.feature.meet": {
+      "For ${ MEET_APP_NAME }": [
+        "Voor ${ MEET_APP_NAME }"
+      ]
+    },
     "customer_support.feature.pass": {
       "For ${ PASS_APP_NAME }": [
         "Voor ${ PASS_APP_NAME }"
@@ -4838,6 +4846,9 @@
       "re-activate the previous key": [
         "de vorige sleutel opnieuw activeren"
       ],
+      "re-importing": [
+        "opnieuw importeren"
+      ],
       "Removed duplicate recipient: ${ recipents }": [
         "Dubbele ontvanger verwijderd: ${ recipents }",
         "Dubbele ontvangers verwijderd: ${ recipents }"
@@ -4945,6 +4956,9 @@
       "There has been an issue with content search. Default search has been used instead.": [
         "Er is een probleem opgetreden met het zoeken naar inhoud. In plaats daarvan is de standaard zoekopdracht gebruikt."
       ],
+      "There was a problem decrypting your message. If the issue persists, contact our customer support.": [
+        "Er was een probleem met het ontsleutelen van uw bericht. Als het probleem zich blijft voordoen, neem dan contact op met onze klantenondersteuning."
+      ],
       "There was an error when exporting the contacts vCards": [
         "Er is een fout opgetreden bij het exporteren van de contacten vCards"
       ],
@@ -5031,11 +5045,14 @@
       "Your emails cannot be decrypted due to a recent password reset. If you remember your previous password, you can ${ reActivateKeyLink } in order to access your messages. ${ learnMoreLink }": [
         "Uw e-mails kunnen niet worden ontsleuteld omdat u onlangs uw wachtwoord opnieuw hebt ingesteld. Als u uw vorige wachtwoord nog weet, kunt u ${ reActivateKeyLink } om toegang te krijgen tot uw berichten. ${ learnMoreLink }"
       ],
-      "Your emails cannot be decrypted. This may be due to a password reset. ${ learnMoreLink }": [
-        "Uw e-mails kunnen niet worden gedecodeerd, mogelijk als gevolg van een wachtwoord-reset. ${ learnMoreLink }"
-      ],
       "Your import will not be processed.": [
         "Uw import zal niet worden verwerkt."
+      ],
+      "Your message cannot be decrypted. If you deleted any of your address keys, try ${ reimportKeyLink } them. ${ learnMoreLink }": [
+        "Uw bericht kan niet worden ontsleuteld. Als u een van uw adres-sleutels hebt verwijderd, probeer deze dan ${ reimportKeyLink } opnieuw te importeren. ${ learnMoreLink }"
+      ],
+      "Your message cannot be decrypted. The key used to encrypt this message does not match any of the keys associated with your address. If you deleted any of your address keys, try ${ reimportKeyLink } them. ${ learnMoreLink }": [
+        "Uw bericht kan niet worden ontsleuteld. De sleutel die is gebruikt om dit bericht te versleutelen, komt niet overeen met een van de sleutels die aan uw adres zijn gekoppeld. Als u een van uw adres-sleutels hebt verwijderd, probeer dan ${ reimportKeyLink } opnieuw te importeren. ${ learnMoreLink }"
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Uw zoekopdracht leverde te veel resultaten op. Verfijn uw zoekopdracht en probeer het opnieuw."
@@ -8211,6 +8228,15 @@
       "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
         "Dit bericht zal worden verplaatst naar Concepten, zodat u het kunt bewerken. U zult opnieuw moeten plannen wanneer het verzonden wordt."
       ],
+      "This message will be purged on ${ value }": [
+        "Dit bericht wordt op ${ value } verwijderd"
+      ],
+      "This message will be purged today at ${ value }": [
+        "Dit bericht wordt vandaag verwijderd om ${ value }"
+      ],
+      "This message will be purged tomorrow at ${ value }": [
+        "Dit bericht wordt morgen om ${ value } verwijderd"
+      ],
       "This message will be sent in the morning at ${ formattedTime }": [
         "Dit bericht zal 's ochtends worden verzonden om ${ formattedTime }"
       ],
@@ -9398,6 +9424,9 @@
       "Filter Name": [
         "Filternaam"
       ],
+      "Filters": [
+        "Filters"
+      ],
       "First name": [
         "Voornaam"
       ],
@@ -9445,6 +9474,9 @@
       ],
       "Go to Updates": [
         "Ga naar Updates"
+      ],
+      "Has attachments": [
+        "Heeft bijlagen"
       ],
       "Help us improve categories by choosing the one that best fits this email. Thanks for your help!": [
         "Help ons de categorieën te verbeteren door de categorie te kiezen die het beste bij deze e-mail past. Bedankt voor uw hulp!"
@@ -10332,6 +10364,53 @@
       ],
       "Trash": [
         "Prullenbak"
+      ]
+    },
+    "meet_2025: Feature": {
+      "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
+        "${ MEET_APP_NAME }: Vertrouwelijke videogesprekken voor de gesprekken die ertoe doen"
+      ],
+      "${ n } active meeting at a time": [
+        "${ n } actieve vergadering tegelijkertijd",
+        "${ n } actieve vergaderingen tegelijk"
+      ],
+      "24 hours per meeting": [
+        "24 uur per vergadering"
+      ],
+      "60 minutes per meeting": [
+        "60 uur per vergadering"
+      ],
+      "Appointment scheduling": [
+        "Afspraak Plannen"
+      ],
+      "Browser, mobile, and desktop apps": [
+        "Browser-, mobiele en desktop-apps"
+      ],
+      "Built-in chat": [
+        "Ingebouwde chat"
+      ],
+      "End-to-end encrypted screen sharing and ephemeral in-call chat": [
+        "End-to-end versleutelde schermdeling en korte chats tijdens telefoongesprekken"
+      ],
+      "Meeting recording (coming soon)": [
+        "Opname van vergaderingen (binnenkort beschikbaar)"
+      ],
+      "One active meeting at a time": [
+        "Eén actieve vergadering tegelijkertijd"
+      ],
+      "Screen-sharing": [
+        "Scherm delen"
+      ],
+      "Unlimited meetings per day": [
+        "Onbeperkt aantal vergaderingen per dag"
+      ],
+      "Up to ${ n } meeting per day": [
+        "Maximaal ${ n } vergadering per dag",
+        "Maximaal ${ n } vergaderingen per dag"
+      ],
+      "Up to ${ n } participant": [
+        "Tot ${ n } deelnemer",
+        "Tot ${ n } deelnemers"
       ]
     },
     "Message": {
@@ -12553,11 +12632,6 @@
       ],
       "Upgrade to ${ upsellPlanTitle }": [
         "Upgraden naar ${ upsellPlanTitle }"
-      ]
-    },
-    "Price": {
-      "Free": [
-        "Gratis"
       ]
     },
     "Progress bar description": {

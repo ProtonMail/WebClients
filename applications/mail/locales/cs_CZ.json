@@ -2690,6 +2690,9 @@
       ],
       "High-speed chats and advanced AI features.": [
         "Velmi rychlé konverzace a pokročilé funkce AI."
+      ],
+      "Private video calls for the conversations that matter.": [
+        "Soukromé videohovory pro důležité konverzace."
       ]
     },
     "color": {
@@ -3888,6 +3891,11 @@
         "Pro ${ MAIL_APP_NAME }"
       ]
     },
+    "customer_support.feature.meet": {
+      "For ${ MEET_APP_NAME }": [
+        "Pro ${ MEET_APP_NAME }"
+      ]
+    },
     "customer_support.feature.pass": {
       "For ${ PASS_APP_NAME }": [
         "Pro ${ PASS_APP_NAME }"
@@ -4900,6 +4908,9 @@
       "re-activate the previous key": [
         "znovu aktivovat předchozí klíč"
       ],
+      "re-importing": [
+        "znovu importovat"
+      ],
       "Removed duplicate recipient: ${ recipents }": [
         "Odebrán duplicitní příjemce: ${ recipents }",
         "Odebráni duplicitní příjemci: ${ recipents }",
@@ -5011,6 +5022,9 @@
       "There has been an issue with content search. Default search has been used instead.": [
         "Vyskytl se problém s vyhledáváním v obsahu. Místo toho bylo použito výchozí vyhledávání."
       ],
+      "There was a problem decrypting your message. If the issue persists, contact our customer support.": [
+        "Při dešifrování vaší zprávy došlo k problému. Pokud problém přetrvává, kontaktujte naši zákaznickou podporu."
+      ],
       "There was an error when exporting the contacts vCards": [
         "Při exportu kontaktů vCard došlo k chybě"
       ],
@@ -5101,11 +5115,14 @@
       "Your emails cannot be decrypted due to a recent password reset. If you remember your previous password, you can ${ reActivateKeyLink } in order to access your messages. ${ learnMoreLink }": [
         "Vaše e-maily nelze dešifrovat kvůli nedávnému resetu hesla. Pokud si pamatujete své předchozí heslo, můžete ${ reActivateKeyLink } abyste získali přístup ke svým zprávám. ${ learnMoreLink }"
       ],
-      "Your emails cannot be decrypted. This may be due to a password reset. ${ learnMoreLink }": [
-        "Vaše e-maily nelze dešifrovat. Důvodem může být resetování hesla. ${ learnMoreLink }"
-      ],
       "Your import will not be processed.": [
         "Váš import nebude zpracován."
+      ],
+      "Your message cannot be decrypted. If you deleted any of your address keys, try ${ reimportKeyLink } them. ${ learnMoreLink }": [
+        "Vaši zprávu nelze dešifrovat. Pokud jste smazali některý ze svých klíčů adresy, zkuste je ${ reimportKeyLink }. ${ learnMoreLink }"
+      ],
+      "Your message cannot be decrypted. The key used to encrypt this message does not match any of the keys associated with your address. If you deleted any of your address keys, try ${ reimportKeyLink } them. ${ learnMoreLink }": [
+        "Vaši zprávu nelze dešifrovat. Klíč použitý k zašifrování této zprávy neodpovídá žádnému z klíčů přidružených k vaší adrese. Pokud jste některý ze svých adresních klíčů smazali, zkuste je ${ reimportKeyLink }. ${ learnMoreLink }"
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Vyhledávání našlo příliš mnoho výsledků. Upřesněte hledání a zkuste to prosím znovu."
@@ -8461,6 +8478,15 @@
       "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
         "Tato zpráva bude přesunuta do konceptů, takže ji budete moci měnit. Bude potřeba znovu naplánovat její odeslání."
       ],
+      "This message will be purged on ${ value }": [
+        "Tato zpráva bude smazána v(e) ${ value }"
+      ],
+      "This message will be purged today at ${ value }": [
+        "Tato zpráva bude smazána dnes v(e) ${ value }"
+      ],
+      "This message will be purged tomorrow at ${ value }": [
+        "Tato zpráva bude smazána zítra v(e) ${ value }"
+      ],
       "This message will be sent in the morning at ${ formattedTime }": [
         "Tato zpráva bude odeslána ráno v(e) ${ formattedTime }"
       ],
@@ -9698,6 +9724,9 @@
       "Filter Name": [
         "Název filtru"
       ],
+      "Filters": [
+        "Filtry"
+      ],
       "First name": [
         "Křestní jméno"
       ],
@@ -9745,6 +9774,9 @@
       ],
       "Go to Updates": [
         "Přejít na aktualizace"
+      ],
+      "Has attachments": [
+        "S přílohami"
       ],
       "Help us improve categories by choosing the one that best fits this email. Thanks for your help!": [
         "Pomozte nám vylepšit kategorie tím, že vyberete tu, která nejlépe odpovídá tomuto e-mailu. Děkujeme za vaši pomoc!"
@@ -10642,6 +10674,59 @@
       ],
       "Trash": [
         "Koš"
+      ]
+    },
+    "meet_2025: Feature": {
+      "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
+        "${ MEET_APP_NAME }: Důvěrné videokonference pro důležité konverzace"
+      ],
+      "${ n } active meeting at a time": [
+        "${ n } aktivní schůzka ve stejný čas",
+        "${ n } aktivní schůzky ve stejný čas",
+        "${ n } aktivních schůzek ve stejný čas",
+        "${ n } aktivních schůzek ve stejný čas"
+      ],
+      "24 hours per meeting": [
+        "Schůzka o délce 24 hodin"
+      ],
+      "60 minutes per meeting": [
+        "Schůzka o délce 60 minut"
+      ],
+      "Appointment scheduling": [
+        "Plánování schůzek"
+      ],
+      "Browser, mobile, and desktop apps": [
+        "Aplikace pro prohlížeče, mobilní telefony a desktopy"
+      ],
+      "Built-in chat": [
+        "Integrovaný chat"
+      ],
+      "End-to-end encrypted screen sharing and ephemeral in-call chat": [
+        "Sdílení obrazovky s koncovým šifrováním a dočasný chat během hovoru"
+      ],
+      "Meeting recording (coming soon)": [
+        "Nahrávání schůzky (již brzy)"
+      ],
+      "One active meeting at a time": [
+        "Jedna aktivní schůzka ve stejný čas"
+      ],
+      "Screen-sharing": [
+        "Sdílení obrazovky"
+      ],
+      "Unlimited meetings per day": [
+        "Neomezený počet schůzek za den"
+      ],
+      "Up to ${ n } meeting per day": [
+        "Až ${ n } schůzka za den",
+        "Až ${ n } schůzky za den",
+        "Až ${ n } schůzek za den",
+        "Až ${ n } schůzek za den"
+      ],
+      "Up to ${ n } participant": [
+        "Až ${ n } účastník",
+        "Až ${ n } účastníci",
+        "Až ${ n } účastníků",
+        "Až ${ n } účastníků"
       ]
     },
     "Message": {
@@ -12937,11 +13022,6 @@
       ],
       "Upgrade to ${ upsellPlanTitle }": [
         "Navýšit na ${ upsellPlanTitle }"
-      ]
-    },
-    "Price": {
-      "Free": [
-        "Zdarma"
       ]
     },
     "Progress bar description": {
