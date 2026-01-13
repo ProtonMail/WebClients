@@ -40,7 +40,7 @@ describe('NordPass CSV Importer', () => {
             const [primary, secondary] = vaults;
             expect(vaults.length).toEqual(2);
             expect(primary.name).toEqual('company services');
-            expect(secondary.name).toEqual('Import - 27 Apr 2023');
+            expect(secondary.name).toEqual('Import - Apr 27, 2023');
             expect(primary.items.length).toEqual(4);
             expect(secondary.items.length).toEqual(5);
         });
@@ -156,7 +156,7 @@ describe('NordPass CSV Importer', () => {
             const [primary, secondary] = vaults;
             expect(vaults.length).toEqual(2);
             expect(primary.name).toEqual('sub-folder');
-            expect(secondary.name).toEqual('Import - 27 Apr 2023');
+            expect(secondary.name).toEqual('Import - Apr 27, 2023');
             expect(primary.items.length).toEqual(1);
             expect(secondary.items.length).toEqual(2);
         });

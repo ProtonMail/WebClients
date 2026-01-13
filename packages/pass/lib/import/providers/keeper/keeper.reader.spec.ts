@@ -33,7 +33,7 @@ describe('Import Keeper JSON', () => {
         expect(data.vaults[0].name).toEqual('folder2');
         expect(data.vaults[1].name).toEqual('folder1');
         expect(data.vaults[2].name).toEqual('subfolder1');
-        expect(data.vaults[3].name).toEqual('Import - 27 Apr 2023');
+        expect(data.vaults[3].name).toEqual('Import - Apr 27, 2023');
 
         expect(data.vaults[0].items.length).toEqual(1);
     });

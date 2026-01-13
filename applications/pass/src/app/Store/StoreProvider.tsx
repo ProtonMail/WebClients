@@ -46,6 +46,7 @@ import {
     selectFeatureFlag,
     selectFilters,
     selectLocale,
+    selectUserSettings,
 } from '@proton/pass/store/selectors';
 import { SpotlightMessage } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
@@ -106,7 +107,9 @@ export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
 
                     if (res.ok) {
                         await spotlight.init().catch(noop);
-                        await core.i18n.setLocale(selectLocale(state)).catch(noop);
+                        await core.i18n
+                            .setLocale(selectLocale(state), selectUserSettings(state)?.DateFormatOptions)
+                            .catch(noop);
 
                         telemetry.start().catch(noop);
                         B2BEvents.start().catch(noop);
