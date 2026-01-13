@@ -1,5 +1,5 @@
 import { useParticipants } from '@livekit/components-react';
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { IcMeetParticipants } from '@proton/icons/icons/IcMeetParticipants';
@@ -56,6 +56,14 @@ export const ParticipantsButton = ({
     };
 
     const getParticipantButtonTooltipTitle = () => {
+        if (maxParticipants === 0) {
+            return c('Info').ngettext(
+                msgid`${participantCount} participant`,
+                `${participantCount} participants`,
+                participantCount
+            );
+        }
+
         if (isPaid) {
             return participantCount >= maxParticipants
                 ? c('Info').t`Meeting full (${maxParticipants} participants)`
@@ -66,6 +74,7 @@ export const ParticipantsButton = ({
             ? c('Info').t`${maxParticipants} participant limit reached`
             : c('Info').t`${participantCount} of ${maxParticipants} participants`;
     };
+
     return (
         <CircleButton
             IconComponent={IcMeetParticipants}
