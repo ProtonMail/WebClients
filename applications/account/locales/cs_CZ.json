@@ -1056,11 +1056,17 @@
       "Open in ${ SHEETS_APP_NAME }": [
         "Otevřít v ${ SHEETS_APP_NAME }"
       ],
+      "Open in new tab": [
+        "Otevřít na nové kartě"
+      ],
       "Open navigation": [
         "Otevřít menu"
       ],
       "Open recovery settings": [
         "Otevřít nastavení obnovení"
+      ],
+      "Open settings": [
+        "Otevřít nastavení"
       ],
       "Opt out": [
         "Odhlásit se"
@@ -3313,6 +3319,9 @@
       ],
       "Open source": [
         "Otevřený zdrojový kód"
+      ],
+      "Private video calls for the conversations that matter.": [
+        "Soukromé videohovory pro důležité konverzace."
       ]
     },
     "collider_2025: Navigation": {
@@ -4513,6 +4522,11 @@
     "customer_support.feature.mail": {
       "For ${ MAIL_APP_NAME }": [
         "Pro ${ MAIL_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.meet": {
+      "For ${ MEET_APP_NAME }": [
+        "Pro ${ MEET_APP_NAME }"
       ]
     },
     "customer_support.feature.pass": {
@@ -9447,6 +9461,9 @@
       "Continuing will connect your ${ BRAND_NAME } Account to ${ name }.": [
         "Pokračováním se váš ${ BRAND_NAME } účet připojí k ${ name }."
       ],
+      "Control whether organization members can create vaults or require an administrator to create and share a vault with them.": [
+        "Ovládejte, zda členové organizace mohou vytvářet trezory, nebo vyžadujte, aby správce vytvořil a sdílel trezor s nimi."
+      ],
       "Copied to clipboard": [
         "Zkopírováno do schránky"
       ],
@@ -9986,9 +10003,6 @@
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Pokud některý ze správců změnil heslo, budete ho muset požádat o nové heslo organizace."
-      ],
-      "If disabled, new organization members will require an admin to manually create the first vault for them (via sharing) so they can start to create items.": [
-        "Pokud je deaktivováno, noví členové budou potřebovat, aby jim správce ručně vytvořil první trezor (prostřednictvím sdílení), aby mohli začít vytvářet položky."
       ],
       "If disabled, only administrators will be able to export data.": [
         "Pokud je deaktivováno, pouze správci budou moci exportovat data."
@@ -13502,6 +13516,9 @@
       "New second password": [
         "Nové druhé heslo"
       ],
+      "No (users cannot use the app until a vault is shared with them)": [
+        "Ne (uživatelé nemohou aplikaci používat, dokud s nimi není sdílen trezor)"
+      ],
       "No filter": [
         "Žádný filtr"
       ],
@@ -13529,14 +13546,17 @@
       "Online privacy for your whole family": [
         "Online soukromí pro celou vaši rodinu"
       ],
+      "Only a single personal vault can be created": [
+        "Lze vytvořit pouze jeden osobní trezor"
+      ],
       "Only available on ${ PASS_SHORT_APP_NAME } paid plans": [
         "Dostupné pouze v placených tarifech ${ PASS_SHORT_APP_NAME }"
       ],
-      "OpenVPN / IKEv2 password": [
-        "Heslo OpenVPN / IKEv2"
+      "OpenVPN password": [
+        "Heslo OpenVPN"
       ],
-      "OpenVPN / IKEv2 username": [
-        "Uživatelské jméno OpenVPN / IKEv2"
+      "OpenVPN username": [
+        "Uživatelské jméno OpenVPN"
       ],
       "Operating system": [
         "Operační systém"
@@ -13957,6 +13977,9 @@
       ],
       "Without attachment": [
         "Bez přílohy"
+      ],
+      "Yes": [
+        "Ano"
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Ano, chci trvale smazat tento účet a všechna data s ním spojená."
@@ -14647,6 +14670,117 @@
         "Dosáhli jste maximálního počtu ${ MAX_CALENDAR_MEMBERS } členů."
       ]
     },
+    "meet_2025: Feature": {
+      "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
+        "${ MEET_APP_NAME }: Důvěrné videokonference pro důležité konverzace"
+      ],
+      "${ n } active meeting at a time": [
+        "${ n } aktivní schůzka ve stejný čas",
+        "${ n } aktivní schůzky ve stejný čas",
+        "${ n } aktivních schůzek ve stejný čas",
+        "${ n } aktivních schůzek ve stejný čas"
+      ],
+      "24 hours per meeting": [
+        "Schůzka o délce 24 hodin"
+      ],
+      "60 minutes per meeting": [
+        "Schůzka o délce 60 minut"
+      ],
+      "Appointment scheduling": [
+        "Plánování schůzek"
+      ],
+      "Browser, mobile, and desktop apps": [
+        "Aplikace pro prohlížeče, mobilní telefony a desktopy"
+      ],
+      "Built-in chat": [
+        "Integrovaný chat"
+      ],
+      "End-to-end encrypted screen sharing and ephemeral in-call chat": [
+        "Sdílení obrazovky s koncovým šifrováním a dočasný chat během hovoru"
+      ],
+      "Meeting recording (coming soon)": [
+        "Nahrávání schůzky (již brzy)"
+      ],
+      "One active meeting at a time": [
+        "Jedna aktivní schůzka ve stejný čas"
+      ],
+      "Screen-sharing": [
+        "Sdílení obrazovky"
+      ],
+      "Unlimited meetings per day": [
+        "Neomezený počet schůzek za den"
+      ],
+      "Up to ${ n } meeting per day": [
+        "Až ${ n } schůzka za den",
+        "Až ${ n } schůzky za den",
+        "Až ${ n } schůzek za den",
+        "Až ${ n } schůzek za den"
+      ],
+      "Up to ${ n } participant": [
+        "Až ${ n } účastník",
+        "Až ${ n } účastníci",
+        "Až ${ n } účastníků",
+        "Až ${ n } účastníků"
+      ]
+    },
+    "meet_2025: Info": {
+      "100 ${ BRAND_NAME } email addresses": [
+        "100 e-mailových adres ${ BRAND_NAME }"
+      ],
+      "Cloud storage and file sharing": [
+        "Cloudové úložiště a sdílení souborů"
+      ],
+      "Data never used for AI training": [
+        "Data nejsou nikdy použita pro trénování AI"
+      ],
+      "Data retention policies": [
+        "Zásady uchovávání dat"
+      ],
+      "Document & spreadsheet editor": [
+        "Editor dokumentů a tabulek"
+      ],
+      "Email writing assistant": [
+        "Asistent psaní e-mailů"
+      ],
+      "Everything from ${ title }, plus...": [
+        "Vše z ${ title } plus..."
+      ],
+      "Everything in Meet Professional, plus:": [
+        "Vše z Meet Professional plus:"
+      ],
+      "Open source": [
+        "Otevřený zdrojový kód"
+      ],
+      "Password manager with team vaults": [
+        "Správce hesel s týmovými trezory"
+      ],
+      "Private AI Chat (${ LUMO_SHORT_APP_NAME })": [
+        "Soukromý chat s AI (${ LUMO_SHORT_APP_NAME })"
+      ],
+      "Private and unlimited AI chat (${ LUMO_SHORT_APP_NAME })": [
+        "Soukromý a neomezený chat s AI (${ LUMO_SHORT_APP_NAME })"
+      ],
+      "Private video calls for the conversations that matter": [
+        "Soukromé videohovory pro důležité konverzace"
+      ],
+      "Secure calendar": [
+        "Zabezpečený kalendář"
+      ],
+      "Strict no-logs policy": [
+        "Přísné zásady neukládání logů"
+      ],
+      "Video meetings, ${ PAID_MAX_PARTICIPANTS } participants": [
+        "Videokonference, ${ PAID_MAX_PARTICIPANTS } účastníků"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN s blokováním reklam a ochranou proti malware"
+      ]
+    },
+    "meet_signup_2025: title": {
+      "For businesses": [
+        "Pro firmy"
+      ]
+    },
     "Member action": {
       "Activate user": [
         "Aktivovat uživatele"
@@ -14812,6 +14946,21 @@
       ],
       "Euro": [
         "Euro"
+      ],
+      "Hong Kong dollar": [
+        "Hongkongský dolar"
+      ],
+      "Japanese yen": [
+        "Japonský jen"
+      ],
+      "Polish złoty": [
+        "Polský zlotý"
+      ],
+      "Singapore dollar": [
+        "Singapurský dolar"
+      ],
+      "South Korean won": [
+        "Jihokorejský won"
       ],
       "Swiss franc": [
         "Švýcarský frank"
@@ -16251,8 +16400,8 @@
       "Number of records exceeds the download limit of 10000": [
         "Počet záznamů překračuje limit počtu stahování 10000"
       ],
-      "OpenVPN / IKEv2 credentials regenerated": [
-        "OpenVPN / IKEv2 údaje byly obnoveny"
+      "OpenVPN credentials regenerated": [
+        "Přihlašovací údaje OpenVPN byly znovu vygenerovány"
       ],
       "Reminder has been sent": [
         "Připomenutí bylo odesláno"
@@ -18209,11 +18358,6 @@
       ],
       "Opting into post-quantum protection": [
         "Přihlášení se k postkvantové ochraně"
-      ]
-    },
-    "Price": {
-      "Free": [
-        "Zdarma"
       ]
     },
     "Primary timezone": {
@@ -20271,6 +20415,26 @@
       ],
       "Works on all devices": [
         "Funguje na všech zařízeních"
+      ]
+    },
+    "Signup: Meet": {
+      "**Trusted by over 100 million** users and organizations": [
+        "**Důvěra více než 100 milionů** uživatelů a organizací"
+      ],
+      "Get ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
+        "Získejte ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
+      ],
+      "Own a business?": [
+        "Vlastníte firmu?"
+      ],
+      "Sign up, meet privately": [
+        "Zaregistrujte se, komunikujte soukromě"
+      ],
+      "Start using ${ MEET_APP_NAME } now": [
+        "Začněte nyní používat ${ MEET_APP_NAME }"
+      ],
+      "Your account also includes access to ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME } free features.": [
+        "Váš účet zahrnuje také přístup k bezplatným funkcím ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } a ${ PASS_SHORT_APP_NAME }."
       ]
     },
     "signup_2024: Feature": {
@@ -23068,6 +23232,9 @@
       ],
       "Open pagination": [
         "Otevřít stránkování"
+      ],
+      "OpenVPN": [
+        "OpenVPN"
       ],
       "OpenVPN configuration files": [
         "Konfigurační soubory OpenVPN"

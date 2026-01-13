@@ -1056,11 +1056,17 @@
       "Open in ${ SHEETS_APP_NAME }": [
         "Адкрыць у ${ SHEETS_APP_NAME }"
       ],
+      "Open in new tab": [
+        "Адкрыць у новай укладцы"
+      ],
       "Open navigation": [
         "Адкрыць панэль навігацыі"
       ],
       "Open recovery settings": [
         "Адкрыць налады аднаўлення"
+      ],
+      "Open settings": [
+        "Адкрыць налады"
       ],
       "Opt out": [
         "Адмовіцца"
@@ -2752,7 +2758,7 @@
         "Не запушчана"
       ],
       "Required to create user accounts": [
-        "Неабходна, каб стараць уліковыя запісы карыстальнікаў"
+        "Неабходна для стварэння ўліковых запісаў карыстальнікаў"
       ],
       "Select what you want to migrate, this will apply to all users whether they are created now or later. Migration will start after user accounts are created.": [
         "Выберыце, што вы хочаце перанесці. Гэта дзеянне будзе ўжыта да ўсіх карыстальнікаў незалежна ад таго, калі яны былі створаны. Перанос пачнецца пасля стварэння ўліковых запісаў карыстальнікаў."
@@ -3313,6 +3319,9 @@
       ],
       "Open source": [
         "Адкрыты зыходны код"
+      ],
+      "Private video calls for the conversations that matter.": [
+        "Прыватныя відэазванкі для важных размоў."
       ]
     },
     "collider_2025: Navigation": {
@@ -4513,6 +4522,11 @@
     "customer_support.feature.mail": {
       "For ${ MAIL_APP_NAME }": [
         "За ${ MAIL_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.meet": {
+      "For ${ MEET_APP_NAME }": [
+        "Для ${ MEET_APP_NAME }"
       ]
     },
     "customer_support.feature.pass": {
@@ -6066,7 +6080,7 @@
         "Зэканомлены час чакання"
       ],
       "We’ll notify **${ user }** that you requested emergency access.": [
-        "Мы апавясцім **${ user }**, што вы запыталі экстранны доступ."
+        "**${ user }** атрымае апавяшчэнне, што вы запыталі экстранны доступ."
       ],
       "You are signed in to the account ${ account }.": [
         "Вы ўвайшлі ва ўліковы запіс ${ account }."
@@ -6087,7 +6101,7 @@
         "Вы дасягнулі максімальнай колькасці ў ${ limit } экстранных кантактаў."
       ],
       "You will be notified when someone requests emergency access.": [
-        "Вы атрымаеце апавяшчэнне, калі хто-небудзь запытае экстраны доступ."
+        "Вы атрымаеце апавяшчэнне, калі хто-небудзь запытае экстранны доступ."
       ],
       "You will no longer be able to request access to the account of ${ user } in case of an emergency.": [
         "Вы больш не зможаце запытваць доступ да ўліковага запісу ${ user } у выпадку экстраннай сітуацыі."
@@ -7589,7 +7603,7 @@
         "Дазволіць ключы платформы"
       ],
       "Allows you to register built-in security keys (like Windows Hello, Face ID, Touch ID, or internal TPMs)": [
-        "Дазваляе рэгістраваць убудаваныя ключы бяспекі (такія, як Windows Hello, Touch ID, Face ID, або ўбудаваны TPM)"
+        "Дазваляе рэгістраваць убудаваныя ключы бяспекі (такія, як Windows Hello, Touch ID, Face ID або ўбудаваны TPM)"
       ],
       "Are you sure you want to delete security key ${ name }?": [
         "Вы сапраўды хочаце выдаліць ключ бяспекі ${ name }?"
@@ -9447,6 +9461,9 @@
       "Continuing will connect your ${ BRAND_NAME } Account to ${ name }.": [
         "Працягнуўшы, вы падключыце ўліковы запіс ${ BRAND_NAME } да ${ name }."
       ],
+      "Control whether organization members can create vaults or require an administrator to create and share a vault with them.": [
+        "Кантралюйце, ці могуць удзельнікі арганізацыі ствараць сховішчы, або патрабуецца, каб адміністратар ствараў і абагульваў сховішча з імі."
+      ],
       "Copied to clipboard": [
         "Скапіявана ў буфер абмену"
       ],
@@ -9739,7 +9756,7 @@
         "Уключыце гэты адрас, каб далучыцца да гэтага календара"
       ],
       "Enable TLS or SSL on the external service if it is supported.": [
-        "Уключыце TLS або SSL у знешнім сэрвісе, калі ім падтрымліваюцца гэтыя пратаколы."
+        "Уключыце TLS або SSL у знешнім сэрвісе, калі ён падтрымлівае гэтыя пратаколы."
       ],
       "Enabled countries": [
         "Уключаныя краіны"
@@ -9986,9 +10003,6 @@
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Калі іншы адміністратар змяніў гэты пароль, вам неабходна будзе спытаць у яго новы пароль арганізацыі."
-      ],
-      "If disabled, new organization members will require an admin to manually create the first vault for them (via sharing) so they can start to create items.": [
-        "Новым удзельнікам арганізацыі спатрэбіцца, каб адміністратар уручную стварыў для іх першае сховішча (праз абагульванне) і толькі пасля гэтага яны змогуць пачаць ствараць элементы, калі функцыя адключана."
       ],
       "If disabled, only administrators will be able to export data.": [
         "Толькі адміністратары будуць здольныя экспартаваць даныя, калі гэты параметр будзе адключаны."
@@ -11299,7 +11313,7 @@
         "у ${ product } Business"
       ],
       "To allow the domain **${ domainName }** to use SAML SSO, you must verify ownership of it by adding the following DNS TXT record to your domain in your DNS provider.": [
-        "Вы павінны спраўдзіць уладальніка дамена дадаўшы наступны запіс DNS TXT у свой дамен у вашым пастаўшчыку DNS, каб дазволіць дамену **${ domainName }** выкарыстоўваць SAML SSO."
+        "Вы павінны спраўдзіць уладальніка дамена дадаўшы наступны запіс DNS TXT у свой дамен у сваім пастаўшчыку DNS, каб дазволіць дамену **${ domainName }** выкарыстоўваць SAML SSO."
       ],
       "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
         "Выдаляйце даныя толькі пасля экспартавання копіі або калі цалкам упэўнены ў сваіх дзеяннях, каб пазбегнуць іх страты."
@@ -13502,6 +13516,9 @@
       "New second password": [
         "Новы другі пароль"
       ],
+      "No (users cannot use the app until a vault is shared with them)": [
+        "Не (карыстальнікі не змогуць выкарыстоўваць праграму, пакуль сховішча не будзе абагулена з імі)"
+      ],
       "No filter": [
         "Не фільтраваць"
       ],
@@ -13529,14 +13546,11 @@
       "Online privacy for your whole family": [
         "Прыватнасць у інтэрнэце для ўсёй вашай сям'і"
       ],
+      "Only a single personal vault can be created": [
+        "Можна стварыць толькі адно асабістае сховішча"
+      ],
       "Only available on ${ PASS_SHORT_APP_NAME } paid plans": [
         "Даступна толькі на платных тарыфных планах ${ PASS_SHORT_APP_NAME }"
-      ],
-      "OpenVPN / IKEv2 password": [
-        "Пароль OpenVPN / IKEv2"
-      ],
-      "OpenVPN / IKEv2 username": [
-        "Імя карыстальніка OpenVPN / IKEv2"
       ],
       "Operating system": [
         "Аперацыйная сістэма"
@@ -13914,7 +13928,7 @@
         "Код спраўджання"
       ],
       "Verify keys with Key Transparency": [
-        "Спраўджанне ключоў пры дапамозе Key Transparency"
+        "Спраўджанне ключоў з дапамогай Key Transparency"
       ],
       "Video conferencing with Zoom": [
         "Відэаканферэнцыя з Zoom"
@@ -13957,6 +13971,9 @@
       ],
       "Without attachment": [
         "Без далучэння"
+      ],
+      "Yes": [
+        "Так"
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Так, я хачу незваротна выдаліць гэты ўліковы запіс і ўсе яго даныя."
@@ -14333,7 +14350,7 @@
         "Умовы"
       ],
       "terms of our referral program": [
-        "ўмовамі рэферальнай праграмы"
+        "ўмовамі нашай рэферальнай праграмы"
       ],
       "Trouble signing in?": [
         "Праблемы з уваходам?"
@@ -14647,6 +14664,117 @@
         "Вы дасягнулі максімальнай колькасці з ${ MAX_CALENDAR_MEMBERS } удзельнікаў."
       ]
     },
+    "meet_2025: Feature": {
+      "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
+        "${ MEET_APP_NAME }: канфідэнцыйныя відэаканферэнцыі для важных размоў"
+      ],
+      "${ n } active meeting at a time": [
+        "${ n } актыўная сустрэча адначасова",
+        "${ n } актыўныя сустрэчы адначасова",
+        "${ n } актыўных сустрэч адначасова",
+        "${ n } актыўных сустрэч адначасова"
+      ],
+      "24 hours per meeting": [
+        "24 гадзіны на сустрэчу"
+      ],
+      "60 minutes per meeting": [
+        "60 хвілін на сустрэчу"
+      ],
+      "Appointment scheduling": [
+        "Планаванне сустрэч"
+      ],
+      "Browser, mobile, and desktop apps": [
+        "Браўзер, мабільныя прылады і праграмы для камп'ютараў"
+      ],
+      "Built-in chat": [
+        "Убудаваны чат"
+      ],
+      "End-to-end encrypted screen sharing and ephemeral in-call chat": [
+        "Дэманстрацыя экрана са скразным шыфраваннем і эфемерны чат пры званках"
+      ],
+      "Meeting recording (coming soon)": [
+        "Запісы сустрэч (неўзабаве з'явяцца)"
+      ],
+      "One active meeting at a time": [
+        "Адна актыўная сустрэча адначасова"
+      ],
+      "Screen-sharing": [
+        "Абагулены экран"
+      ],
+      "Unlimited meetings per day": [
+        "Неабмежаваная колькасць сустрэч у дзень"
+      ],
+      "Up to ${ n } meeting per day": [
+        "Да ${ n } сустрэчы ў дзень",
+        "Да ${ n } сустрэч у дзень",
+        "Да ${ n } сустрэч у дзень",
+        "Да ${ n } сустрэч у дзень"
+      ],
+      "Up to ${ n } participant": [
+        "Да ${ n } удзельніка",
+        "Да ${ n } удзельнікаў",
+        "Да ${ n } удзельнікаў",
+        "Да ${ n } удзельнікаў"
+      ]
+    },
+    "meet_2025: Info": {
+      "100 ${ BRAND_NAME } email addresses": [
+        "100 адрасоў электроннай пошты ${ BRAND_NAME }"
+      ],
+      "Cloud storage and file sharing": [
+        "Воблачнае сховішча і абагуленне файлаў"
+      ],
+      "Data never used for AI training": [
+        "Даныя ніколі не выкарыстоўваюцца для навучання ШІ"
+      ],
+      "Data retention policies": [
+        "Палітыка захоўвання даных"
+      ],
+      "Document & spreadsheet editor": [
+        "Рэдактар дакументаў і электронных табліц"
+      ],
+      "Email writing assistant": [
+        "Памочнік у напісанні лістоў"
+      ],
+      "Everything from ${ title }, plus...": [
+        "Усе функцыі тарыфнага плана ${ title }, а яшчэ..."
+      ],
+      "Everything in Meet Professional, plus:": [
+        "Усе функцыі з Meet Professional, а яшчэ:"
+      ],
+      "Open source": [
+        "Адкрыты зыходны код"
+      ],
+      "Password manager with team vaults": [
+        "Менеджар пароляў са сховішчам для каманд"
+      ],
+      "Private AI Chat (${ LUMO_SHORT_APP_NAME })": [
+        "Прыватны чат з ШІ (${ LUMO_SHORT_APP_NAME })"
+      ],
+      "Private and unlimited AI chat (${ LUMO_SHORT_APP_NAME })": [
+        "Прыватны і неабмежаваны чат з ШІ (${ LUMO_SHORT_APP_NAME })"
+      ],
+      "Private video calls for the conversations that matter": [
+        "Прыватныя відэазванкі для важных размоў"
+      ],
+      "Secure calendar": [
+        "Бяспечны каляндар"
+      ],
+      "Strict no-logs policy": [
+        "Палітыка строгай адсутнасці журналаў актыўнасці"
+      ],
+      "Video meetings, ${ PAID_MAX_PARTICIPANTS } participants": [
+        "Відэасустрэчы, ${ PAID_MAX_PARTICIPANTS } удзельнікаў"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN з блакіроўшчыкам рэкламы і абаронай ад шкодных праграм"
+      ]
+    },
+    "meet_signup_2025: title": {
+      "For businesses": [
+        "Для бізнесу"
+      ]
+    },
     "Member action": {
       "Activate user": [
         "Актываваць карыстальніка"
@@ -14812,6 +14940,21 @@
       ],
       "Euro": [
         "Еўра"
+      ],
+      "Hong Kong dollar": [
+        "Ганконгскі долар"
+      ],
+      "Japanese yen": [
+        "Японская іена"
+      ],
+      "Polish złoty": [
+        "Польскі злоты"
+      ],
+      "Singapore dollar": [
+        "Сінгапурскі долар"
+      ],
+      "South Korean won": [
+        "Паўднёвакарэйскі вон"
       ],
       "Swiss franc": [
         "Швейцарскі франк"
@@ -16250,9 +16393,6 @@
       ],
       "Number of records exceeds the download limit of 10000": [
         "Колькасць запісаў перавышае абмежаванне спампоўвання ў 10 000"
-      ],
-      "OpenVPN / IKEv2 credentials regenerated": [
-        "Уліковыя даныя OpenVPN / IKEv2 паўторна згенерыраваны"
       ],
       "Reminder has been sent": [
         "Напамін адпраўлены"
@@ -18211,11 +18351,6 @@
         "Уключэнне постквантавай абароны"
       ]
     },
-    "Price": {
-      "Free": [
-        "Бясплатна"
-      ]
-    },
     "Primary timezone": {
       "Primary time zone": [
         "Асноўны часавы пояс"
@@ -18270,7 +18405,7 @@
         "OK"
       ],
       "Ownership verification": [
-        "Праверка ўладальніка"
+        "Спраўджанне ўладальніка"
       ],
       "Unknown": [
         "Невядома"
@@ -18370,7 +18505,7 @@
         "Спампаваць PDF"
       ],
       "download PDF": [
-        "спампаваць PDF"
+        "спампуйце PDF"
       ],
       "I understand that if I lose my recovery phrase, I may permanently lose access to my account.": [
         "Я разумею, што пры страце маёй фразы аднаўлення, я магу незваротна згубіць доступ да свайго ўліковага запісу."
@@ -18821,7 +18956,7 @@
         "Адключыць аднаўленне па электроннай пошце"
       ],
       "Disable recovery by email ": [
-        "Адключыць аднаўленне па электроннай пошце "
+        "Адключыце аднаўленне па электроннай пошце "
       ],
       "Disable recovery by phone": [
         "Адключыць аднаўленне па нумары тэлефона"
@@ -20271,6 +20406,26 @@
       ],
       "Works on all devices": [
         "Працуе на ўсіх прыладах"
+      ]
+    },
+    "Signup: Meet": {
+      "**Trusted by over 100 million** users and organizations": [
+        "**Нам давяраюць больш за 100 мільёнаў** карыстальнікаў і арганізацыі"
+      ],
+      "Get ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
+        "Атрымайце ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
+      ],
+      "Own a business?": [
+        "Уласны бізнес?"
+      ],
+      "Sign up, meet privately": [
+        "Зарэгістрэгістравацца для прыватных сустрэч"
+      ],
+      "Start using ${ MEET_APP_NAME } now": [
+        "Пачаць выкарыстоўваць ${ MEET_APP_NAME }"
+      ],
+      "Your account also includes access to ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME } free features.": [
+        "Ваш уліковы запіс таксама ўключае доступ да бясплатных функцый ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } і ${ PASS_SHORT_APP_NAME }."
       ]
     },
     "signup_2024: Feature": {
@@ -22593,7 +22748,7 @@
         "Адключыць двухфактарную аўтэнтыфікацыю"
       ],
       "Disable two-factor authentication app?": [
-        "Адключыць праграму двухфактарнай аўтэнтыфікацыі?"
+        "Адключэнне праграмы двухфактарнай аўтэнтыфікацыі?"
       ],
       "Disable two-factor authentication?": [
         "Адключыць двухфактарную аўтэнтыфікацыю?"
@@ -24329,7 +24484,7 @@
         "Ці ведалі вы што?"
       ],
       "Get ${ drivePlusPlanMaxSpace } storage for your files, photos and documents, and recover file versions with 10-year file recovery.": [
-        "Атрымайце ${ drivePlusPlanMaxSpace } сховішча для вашых файлаў, фатаграфій і дакументаў, а таксама ў вас будзе магчымасць аднаўляць версіі файлаў за 10 гадоў."
+        "Атрымайце ${ drivePlusPlanMaxSpace } сховішча для вашых файлаў, фатаграфій і дакументаў, а таксама магчымасць аднаўляць версіі файлаў за 10 гадоў."
       ],
       "Privacy suite with secure email, ${ VPN_SHORT_APP_NAME }, cloud storage, and password manager in one bundle. From only ${ fallBackString } per month": [
         "Набор прыватнасці з бяспечнай электроннай поштай, ${ VPN_SHORT_APP_NAME }, воблачным сховішчам і менеджарам пароляў у адным камплекце. Кошт платнай падпіскі складае ад ${ fallBackString } у месяц"

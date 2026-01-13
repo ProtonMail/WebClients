@@ -1056,11 +1056,17 @@
       "Open in ${ SHEETS_APP_NAME }": [
         "${ SHEETS_APP_NAME } ile aç"
       ],
+      "Open in new tab": [
+        "Yeni sekmede aç"
+      ],
       "Open navigation": [
         "Gezinmeyi aç"
       ],
       "Open recovery settings": [
         "Kurtarma ayarlarını aç"
+      ],
+      "Open settings": [
+        "Ayarları aç"
       ],
       "Opt out": [
         "Bırak"
@@ -3277,6 +3283,9 @@
       ],
       "Open source": [
         "Açık kaynaklı"
+      ],
+      "Private video calls for the conversations that matter.": [
+        "Önemli görüşmeler için gizliliği koruyan görüntülü çağrılar."
       ]
     },
     "collider_2025: Navigation": {
@@ -4473,6 +4482,11 @@
     "customer_support.feature.mail": {
       "For ${ MAIL_APP_NAME }": [
         "${ MAIL_APP_NAME } için"
+      ]
+    },
+    "customer_support.feature.meet": {
+      "For ${ MEET_APP_NAME }": [
+        "${ MEET_APP_NAME } için"
       ]
     },
     "customer_support.feature.pass": {
@@ -9251,6 +9265,9 @@
       "Continuing will connect your ${ BRAND_NAME } Account to ${ name }.": [
         "İlerlerseniz ${ BRAND_NAME } hesabınız ${ name } ile bağlanacak."
       ],
+      "Control whether organization members can create vaults or require an administrator to create and share a vault with them.": [
+        "Kuruluş üyelerinin mi kasa oluşturacağını yoksa bir yöneticinin kasa oluşturarak mı onlarla paylaşması gerekeceğini kontrol edin."
+      ],
       "Copied to clipboard": [
         "Panoya kopyalandı"
       ],
@@ -9780,9 +9797,6 @@
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Bu parolayı başka bir yönetici değiştirdiyse, ondan yeni kuruluş parolasını istemeniz gerekecek."
-      ],
-      "If disabled, new organization members will require an admin to manually create the first vault for them (via sharing) so they can start to create items.": [
-        "Bu seçenek kapatılırsa, yeni kuruluş üyelerinin öge oluşturmaya başlayabilmeleri için bir yöneticinin onlar için ilk kasayı el ile (paylaşarak) oluşturması gerekir."
       ],
       "If disabled, only administrators will be able to export data.": [
         "Bu seçenek kapatılırsa, verileri yalnızca yöneticiler dışa aktarabilir."
@@ -10743,7 +10757,7 @@
         "İletilerinizi daha sonraya erteleyin ve istediğiniz zamanda gelen kutunuzun üstünde görüntülensinler"
       ],
       "Some ${ BRAND_NAME } apps may not support security keys yet. If you turn off authenticator app 2FA, you may not be able to sign in to those apps.": [
-        "Bazı ${ BRAND_NAME } uygulamaları henüz güvenlik anahtarlarını desteklemeyebilir. Kimlik doğrulama uygulaması İki adımlı doğrulamayı kapatırsanız bu uygulamalarda oturum açamayabilirsiniz."
+        "Bazı ${ BRAND_NAME } uygulamaları henüz güvenlik anahtarlarını desteklemiyor olabilir. Kimlik doğrulama uygulamasında iki adımlı doğrulamayı kapatırsanız bu uygulamalarda oturum açamayabilirsiniz."
       ],
       "Some keys successfully reactivated": [
         "Bazı anahtarlar yeniden kullanıma alındı"
@@ -11829,7 +11843,7 @@
         "Bugün herhangi bir şey ödemeyin"
       ],
       "Zoom meeting": [
-        "Zoom toplantısı"
+        "Zoom görüşmesi"
       ]
     },
     "info": {
@@ -13232,6 +13246,9 @@
       "New second password": [
         "Yeni ikinci parola"
       ],
+      "No (users cannot use the app until a vault is shared with them)": [
+        "Hayır (bir kasa kendileriyle paylaşılmadıkça kullanıcılar uygulamayı kullanamaz)"
+      ],
       "No filter": [
         "Süzgeç yok"
       ],
@@ -13259,14 +13276,11 @@
       "Online privacy for your whole family": [
         "Tüm aileniz için çevrim içi gizlilik"
       ],
+      "Only a single personal vault can be created": [
+        "Yalnızca tek bir kişisel kasa oluşturulabilir"
+      ],
       "Only available on ${ PASS_SHORT_APP_NAME } paid plans": [
         "Yalnızca ücretli ${ PASS_SHORT_APP_NAME } tarifeleri ile kullanılabilir"
-      ],
-      "OpenVPN / IKEv2 password": [
-        "OpenVPN / IKEv2 parolası"
-      ],
-      "OpenVPN / IKEv2 username": [
-        "OpenVPN / IKEv2 kullanıcı adı"
       ],
       "Operating system": [
         "İşletim sistemi"
@@ -13685,6 +13699,9 @@
       ],
       "Without attachment": [
         "Ek dosyası olmayan"
+      ],
+      "Yes": [
+        "Evet"
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Evet, bu hesabı ve tüm verilerini kalıcı olarak silmek istiyorum."
@@ -14359,6 +14376,111 @@
         "Eklenebilecek en fazla ${ MAX_CALENDAR_MEMBERS } üye sayısına ulaştınız."
       ]
     },
+    "meet_2025: Feature": {
+      "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
+        "${ MEET_APP_NAME }: Önemli görüşmeler için gizliliği koruyan görüntülü toplantı"
+      ],
+      "${ n } active meeting at a time": [
+        "Aynı anda ${ n } etkin görüşme",
+        "Aynı anda ${ n } etkin görüşme"
+      ],
+      "24 hours per meeting": [
+        "Görüşme başına 24 saat"
+      ],
+      "60 minutes per meeting": [
+        "Görüşme başına 60 dakika"
+      ],
+      "Appointment scheduling": [
+        "Randevu planlama"
+      ],
+      "Browser, mobile, and desktop apps": [
+        "Tarayıcı, mobil ve bilgisayar uygulamaları"
+      ],
+      "Built-in chat": [
+        "Hazır sohbet"
+      ],
+      "End-to-end encrypted screen sharing and ephemeral in-call chat": [
+        "Uçtan uca şifrelenmiş ekran paylaşımı ve geçici çağrı içi sohbet"
+      ],
+      "Meeting recording (coming soon)": [
+        "Görüşme kaydı (yakında)"
+      ],
+      "One active meeting at a time": [
+        "Aynı anda bir etkin görüşme"
+      ],
+      "Screen-sharing": [
+        "Ekran paylaşımı"
+      ],
+      "Unlimited meetings per day": [
+        "Günlük sınırsız görüşme"
+      ],
+      "Up to ${ n } meeting per day": [
+        "Günde ${ n } görüşme",
+        "Günde ${ n } görüşme"
+      ],
+      "Up to ${ n } participant": [
+        "${ n } katılımcı",
+        "${ n } katılımcı"
+      ]
+    },
+    "meet_2025: Info": {
+      "100 ${ BRAND_NAME } email addresses": [
+        "100 ${ BRAND_NAME } e-posta adresi"
+      ],
+      "Cloud storage and file sharing": [
+        "Bulut depolama alanı ve dosya paylaşımı"
+      ],
+      "Data never used for AI training": [
+        "Veriler asla yapay zekayı eğitmek için kullanılmaz"
+      ],
+      "Data retention policies": [
+        "Verileri tutma ilkeleri"
+      ],
+      "Document & spreadsheet editor": [
+        "Belge ve hesap tablosu düzenleyici"
+      ],
+      "Email writing assistant": [
+        "E-posta yazma yardımcısı"
+      ],
+      "Everything from ${ title }, plus...": [
+        "${ title } tarifesindeki her şeye ek olarak..."
+      ],
+      "Everything in Meet Professional, plus:": [
+        "Meet Professional tarifesindeki her şeye ek olarak:"
+      ],
+      "Open source": [
+        "Açık kaynaklı"
+      ],
+      "Password manager with team vaults": [
+        "Ekip kasaları ile parola yöneticisi"
+      ],
+      "Private AI Chat (${ LUMO_SHORT_APP_NAME })": [
+        "Gizli yapay zeka sohbeti (${ LUMO_SHORT_APP_NAME })"
+      ],
+      "Private and unlimited AI chat (${ LUMO_SHORT_APP_NAME })": [
+        "Gizli ve sınırsız yapay zeka sohbeti (${ LUMO_SHORT_APP_NAME })"
+      ],
+      "Private video calls for the conversations that matter": [
+        "Önemli görüşmeler için gizliliği koruyan görüntülü çağrılar"
+      ],
+      "Secure calendar": [
+        "Güvenli takvim"
+      ],
+      "Strict no-logs policy": [
+        "Katı kayıt tutmama ilkesi"
+      ],
+      "Video meetings, ${ PAID_MAX_PARTICIPANTS } participants": [
+        "Görüntülü görüşmeler, ${ PAID_MAX_PARTICIPANTS } katılımcı"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "Reklam engelleme ve kötü amaçlı yazılım koruması ile VPN"
+      ]
+    },
+    "meet_signup_2025: title": {
+      "For businesses": [
+        "Kuruluşlar için"
+      ]
+    },
     "Member action": {
       "Activate user": [
         "Kullanıcıyı etkinleştir"
@@ -14524,6 +14646,21 @@
       ],
       "Euro": [
         "Euro"
+      ],
+      "Hong Kong dollar": [
+        "Hong Kong Doları"
+      ],
+      "Japanese yen": [
+        "Japon Yeni"
+      ],
+      "Polish złoty": [
+        "Polonya Zlotisi"
+      ],
+      "Singapore dollar": [
+        "Singapur Doları"
+      ],
+      "South Korean won": [
+        "Güney Kore Wonu"
       ],
       "Swiss franc": [
         "İsviçre frangı"
@@ -15900,9 +16037,6 @@
       ],
       "Number of records exceeds the download limit of 10000": [
         "Kayıt sayısı 10.000 indirme sayısı sınırını aşıyor"
-      ],
-      "OpenVPN / IKEv2 credentials regenerated": [
-        "OpenVPN / IKEv2 kimlik bilgileri yeniden oluşturuldu"
       ],
       "Reminder has been sent": [
         "Hatırlatıcı gönderildi"
@@ -17823,11 +17957,6 @@
       ],
       "Opting into post-quantum protection": [
         "Kuantum sonrası korumasına geçiliyor"
-      ]
-    },
-    "Price": {
-      "Free": [
-        "Ücretsiz"
       ]
     },
     "Primary timezone": {
@@ -19819,6 +19948,26 @@
       ],
       "Works on all devices": [
         "Tüm aygıtlarda çalışır"
+      ]
+    },
+    "Signup: Meet": {
+      "**Trusted by over 100 million** users and organizations": [
+        "**100 milyon üzerinde** kullanıcı ve kuruluş tarafından güveniliyor"
+      ],
+      "Get ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
+        "${ PLAN_NAMES[PLANS.MEET_BUSINESS] } edinin"
+      ],
+      "Own a business?": [
+        "Bir kuruluşunuz mu var?"
+      ],
+      "Sign up, meet privately": [
+        "Hesap açın, gizliliğinizi koruyarak görüşün"
+      ],
+      "Start using ${ MEET_APP_NAME } now": [
+        "${ MEET_APP_NAME } kullanmaya başlayın"
+      ],
+      "Your account also includes access to ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME } free features.": [
+        "Hesabınızla ayrıca ücretsiz ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } ve ${ PASS_SHORT_APP_NAME } özelliklerini kullanabilirsiniz."
       ]
     },
     "signup_2024: Feature": {
@@ -22704,7 +22853,7 @@
         "SAML kimlik doğrulaması"
       ],
       "Schedule meetings in one click": [
-        "Tek tıklamayla toplantılar planlayın"
+        "Tek tıklamayla görüşmeler planlayın"
       ],
       "Schedule send:": [
         "Gönderimi zamanla:"

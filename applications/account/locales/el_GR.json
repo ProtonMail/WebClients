@@ -1056,11 +1056,17 @@
       "Open in ${ SHEETS_APP_NAME }": [
         "Άνοιγμα με ${ SHEETS_APP_NAME }"
       ],
+      "Open in new tab": [
+        "Άνοιγμα σε νέα καρτέλα"
+      ],
       "Open navigation": [
         "Άνοιγμα μενού πλοήγησης"
       ],
       "Open recovery settings": [
         "Άνοιγμα ρυθμίσεων αποκατάστασης"
+      ],
+      "Open settings": [
+        "Άνοιγμα ρυθμίσεων"
       ],
       "Opt out": [
         "Εξαίρεση"
@@ -3277,6 +3283,9 @@
       ],
       "Open source": [
         "Ανοιχτού κώδικα"
+      ],
+      "Private video calls for the conversations that matter.": [
+        "Ιδιωτικές βιντεοκλήσεις για τις σημαντικές συνομιλίες."
       ]
     },
     "collider_2025: Navigation": {
@@ -4473,6 +4482,11 @@
     "customer_support.feature.mail": {
       "For ${ MAIL_APP_NAME }": [
         "Για ${ MAIL_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.meet": {
+      "For ${ MEET_APP_NAME }": [
+        "Για ${ MEET_APP_NAME }"
       ]
     },
     "customer_support.feature.pass": {
@@ -9251,6 +9265,9 @@
       "Continuing will connect your ${ BRAND_NAME } Account to ${ name }.": [
         "Συνεχίζοντας θα συνδέσετε τον ${ BRAND_NAME } Λογαριασμό σας με το ${ name }."
       ],
+      "Control whether organization members can create vaults or require an administrator to create and share a vault with them.": [
+        "Ελέγξτε αν τα μέλη του οργανισμού μπορούν να δημιουργούν κρύπτες ή αν απαιτείται διαχειριστής για τη δημιουργία και κοινή χρήση μίας κρύπτης μαζί τους."
+      ],
       "Copied to clipboard": [
         "Αντιγράφηκε στο πρόχειρο"
       ],
@@ -9780,9 +9797,6 @@
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Εάν ένας άλλος διαχειριστής άλλαξε αυτόν τον κωδικό πρόσβασης, θα πρέπει να του ζητήσετε τον νέο κωδικό οργανισμού."
-      ],
-      "If disabled, new organization members will require an admin to manually create the first vault for them (via sharing) so they can start to create items.": [
-        "Εάν αυτή η επιλογή είναι απενεργοποιημένη, τα νέα μέλη του οργανισμού θα απαιτούν από έναν διαχειριστή να δημιουργήσει με μη αυτόματο τρόπο την πρώτη κρύπτη για αυτούς (μέσω κοινής χρήσης), ώστε να μπορούν να αρχίσουν να δημιουργούν στοιχεία."
       ],
       "If disabled, only administrators will be able to export data.": [
         "Εάν αυτή η επιλογή είναι απενεργοποιημένη, μόνο οι διαχειριστές θα μπορούν να εξάγουν δεδομένα."
@@ -13232,6 +13246,9 @@
       "New second password": [
         "Νέος δεύτερος κωδικός πρόσβασης"
       ],
+      "No (users cannot use the app until a vault is shared with them)": [
+        "Όχι (οι χρήστες δεν μπορούν να χρησιμοποιήσουν την εφαρμογή έως ότου μοιραστεί μαζί τους μία κρύπτη)"
+      ],
       "No filter": [
         "Χωρίς φίλτρο"
       ],
@@ -13259,14 +13276,17 @@
       "Online privacy for your whole family": [
         "Online ιδιωτικότητα για όλη την οικογένειά σας"
       ],
+      "Only a single personal vault can be created": [
+        "Μπορεί να δημιουργηθεί μόνο μία προσωπική κρύπτη"
+      ],
       "Only available on ${ PASS_SHORT_APP_NAME } paid plans": [
         "Διαθέσιμο μόνο στα προγράμματα επί πληρωμή ${ PASS_SHORT_APP_NAME }"
       ],
-      "OpenVPN / IKEv2 password": [
-        "Κωδικός πρόσβασης OpenVPN / IKEv2"
+      "OpenVPN password": [
+        "Κωδικός πρόσβασης OpenVPN"
       ],
-      "OpenVPN / IKEv2 username": [
-        "Όνομα χρήστη OpenVPN / IKEv2"
+      "OpenVPN username": [
+        "Όνομα χρήστη OpenVPN"
       ],
       "Operating system": [
         "Λειτουργικό σύστημα (OS)"
@@ -13685,6 +13705,9 @@
       ],
       "Without attachment": [
         "Χωρίς συνημμένα"
+      ],
+      "Yes": [
+        "Ναι"
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Ναι, θέλω να διαγράψω οριστικά αυτόν τον λογαριασμό και όλα τα δεδομένα του."
@@ -14359,6 +14382,111 @@
         "Έχετε φτάσει τον μέγιστο αριθμό των ${ MAX_CALENDAR_MEMBERS } μελών."
       ]
     },
+    "meet_2025: Feature": {
+      "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
+        "${ MEET_APP_NAME }: Εμπιστευτικές βιντεοδιασκέψεις για τις σημαντικές συνομιλίες σας"
+      ],
+      "${ n } active meeting at a time": [
+        "${ n } ενεργή σύσκεψη τη φορά",
+        "${ n } ενεργή συσκέψεις τη φορά"
+      ],
+      "24 hours per meeting": [
+        "24 ώρες ανά σύσκεψη"
+      ],
+      "60 minutes per meeting": [
+        "60 λεπτά ανά σύσκεψη"
+      ],
+      "Appointment scheduling": [
+        "Προγραμματισμός ραντεβού"
+      ],
+      "Browser, mobile, and desktop apps": [
+        "Εφαρμογές για προγράμματα περιήγησης, κινητά και επιτραπέζιους υπολογιστές"
+      ],
+      "Built-in chat": [
+        "Ενσωματωμένη συνομιλία"
+      ],
+      "End-to-end encrypted screen sharing and ephemeral in-call chat": [
+        "Κρυπτογραφημένη κοινή χρήση οθόνης διατερματικά και εφήμερη συνομιλία κατά τη διάρκεια της κλήσης"
+      ],
+      "Meeting recording (coming soon)": [
+        "Ηχογράφηση συσκέψεων (σύντομα διαθέσιμη)"
+      ],
+      "One active meeting at a time": [
+        "Μία ενεργή σύσκεψη τη φορά"
+      ],
+      "Screen-sharing": [
+        "Κοινή χρήση οθόνης"
+      ],
+      "Unlimited meetings per day": [
+        "Απεριόριστες συσκέψεις ανά ημέρα"
+      ],
+      "Up to ${ n } meeting per day": [
+        "Έως ${ n } συνάντηση την ημέρα",
+        "Έως ${ n } συναντήσεις την ημέρα"
+      ],
+      "Up to ${ n } participant": [
+        "Έως ${ n } συμμετέχων",
+        "Έως ${ n } συμμετέχοντες"
+      ]
+    },
+    "meet_2025: Info": {
+      "100 ${ BRAND_NAME } email addresses": [
+        "100 ${ BRAND_NAME } ηλεκτρονικές διευθύνσεις"
+      ],
+      "Cloud storage and file sharing": [
+        "Αποθήκευση στο cloud και κοινοποίηση αρχείων"
+      ],
+      "Data never used for AI training": [
+        "Δεδομένα που δεν έχουν χρησιμοποιηθεί για την εκπαίδευση της τεχνητής νοημοσύνης"
+      ],
+      "Data retention policies": [
+        "Πολιτικές διατήρησης δεδομένων"
+      ],
+      "Document & spreadsheet editor": [
+        "Επεξεργαστής εγγράφων & υπολογιστικών φύλλων"
+      ],
+      "Email writing assistant": [
+        "Βοηθός σύνταξης ηλεκτρονικού ταχυδρομείου"
+      ],
+      "Everything from ${ title }, plus...": [
+        "Τα πάντα από ${ title }, συν..."
+      ],
+      "Everything in Meet Professional, plus:": [
+        "Τα πάντα στο Meet Professional, συν:"
+      ],
+      "Open source": [
+        "Ανοιχτού κώδικα"
+      ],
+      "Password manager with team vaults": [
+        "Διαχειριστής κωδικών πρόσβασης με ομαδικές κρύπτες"
+      ],
+      "Private AI Chat (${ LUMO_SHORT_APP_NAME })": [
+        "Ιδιωτική συνομιλία με τεχνητή νοημοσύνη (${ LUMO_SHORT_APP_NAME })"
+      ],
+      "Private and unlimited AI chat (${ LUMO_SHORT_APP_NAME })": [
+        "Ιδιωτική και απεριόριστη συνομιλία με τεχνητή νοημοσύνη (${ LUMO_SHORT_APP_NAME })"
+      ],
+      "Private video calls for the conversations that matter": [
+        "Ιδιωτικές βιντεοκλήσεις για τις σημαντικές συνομιλίες"
+      ],
+      "Secure calendar": [
+        "Ασφαλές ημερολόγιο"
+      ],
+      "Strict no-logs policy": [
+        "Αυστηρή πολιτική χωρίς αρχεία καταγραφής"
+      ],
+      "Video meetings, ${ PAID_MAX_PARTICIPANTS } participants": [
+        "Βιντεοκλήσεις, ${ PAID_MAX_PARTICIPANTS } συμμετέχοντες"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN με αποκλεισμός διαφημίσεων και προστασία από κακόβουλο λογισμικό"
+      ]
+    },
+    "meet_signup_2025: title": {
+      "For businesses": [
+        "Για επιχειρήσεις"
+      ]
+    },
     "Member action": {
       "Activate user": [
         "Ενεργοποίηση χρήστη"
@@ -14524,6 +14652,21 @@
       ],
       "Euro": [
         "Ευρώ"
+      ],
+      "Hong Kong dollar": [
+        "Δολάριο Χονγκ-Κονγκ"
+      ],
+      "Japanese yen": [
+        "Ιαπωνικό Γιεν"
+      ],
+      "Polish złoty": [
+        "Πολωνικό Ζλότι"
+      ],
+      "Singapore dollar": [
+        "Δολάριο Σιγκαπούρης"
+      ],
+      "South Korean won": [
+        "Γουόν Νότιας Κορέας"
       ],
       "Swiss franc": [
         "Ελβετικό Φράγκο"
@@ -15901,8 +16044,8 @@
       "Number of records exceeds the download limit of 10000": [
         "Ο αριθμός των εγγραφών υπερβαίνει το όριο λήψης των 10000"
       ],
-      "OpenVPN / IKEv2 credentials regenerated": [
-        "Τα διαπιστευτήρια του OpenVPN / IKEv2 επαναδημιουργήθηκαν"
+      "OpenVPN credentials regenerated": [
+        "Τα διαπιστευτήρια του OpenVPN επαναδημιουργήθηκαν"
       ],
       "Reminder has been sent": [
         "Η υπενθύμιση έχει σταλεί"
@@ -17823,11 +17966,6 @@
       ],
       "Opting into post-quantum protection": [
         "Ενεργοποίηση μετά-κβαντικής προστασίας"
-      ]
-    },
-    "Price": {
-      "Free": [
-        "Δωρεάν"
       ]
     },
     "Primary timezone": {
@@ -19819,6 +19957,26 @@
       ],
       "Works on all devices": [
         "Λειτουργεί σε όλες τις συσκευές"
+      ]
+    },
+    "Signup: Meet": {
+      "**Trusted by over 100 million** users and organizations": [
+        "**Αξιόπιστο από πάνω από 100 εκατομμύρια** χρήστες και οργανισμούς"
+      ],
+      "Get ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
+        "Αποκτήστε το ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
+      ],
+      "Own a business?": [
+        "Έχετε δική σας επιχείρηση;"
+      ],
+      "Sign up, meet privately": [
+        "Εγγραφείτε, συναντηθείτε ιδιωτικά"
+      ],
+      "Start using ${ MEET_APP_NAME } now": [
+        "Ξεκινήστε να χρησιμοποιείτε το ${ MEET_APP_NAME } τώρα"
+      ],
+      "Your account also includes access to ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME } free features.": [
+        "Ο λογαριασμός σας περιλαμβάνει επίσης πρόσβαση στις δωρεάν λειτουργίες ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } και ${ PASS_SHORT_APP_NAME }."
       ]
     },
     "signup_2024: Feature": {
@@ -22510,6 +22668,9 @@
       ],
       "Open pagination": [
         "Άνοιγμα σελιδοποίησης"
+      ],
+      "OpenVPN": [
+        "OpenVPN"
       ],
       "OpenVPN configuration files": [
         "Αρχεία διαμόρφωσης OpenVPN"

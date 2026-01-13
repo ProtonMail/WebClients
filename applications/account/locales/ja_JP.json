@@ -1056,11 +1056,17 @@
       "Open in ${ SHEETS_APP_NAME }": [
         "${ SHEETS_APP_NAME } で開く"
       ],
+      "Open in new tab": [
+        "新しいタブで開く"
+      ],
       "Open navigation": [
         "ナビゲーションを開く"
       ],
       "Open recovery settings": [
         "リカバリ設定を開く"
+      ],
+      "Open settings": [
+        "設定を開く"
       ],
       "Opt out": [
         "オプトアウト"
@@ -9669,9 +9675,6 @@
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "別の管理者がこのパスワードを変更した場合、変更した人に新しい組織パスワードを問合せてください。"
       ],
-      "If disabled, new organization members will require an admin to manually create the first vault for them (via sharing) so they can start to create items.": [
-        "無効にすると、新しい組織メンバーは直接アイテムの作成を開始できません。まず、管理者が共有を通じて、手動で最初の保管庫を作成してあげる必要があります。"
-      ],
       "If disabled, only administrators will be able to export data.": [
         "無効にすると、管理者のみがデータをエクスポートできるようになります。"
       ],
@@ -13112,11 +13115,11 @@
       "Only available on ${ PASS_SHORT_APP_NAME } paid plans": [
         "${ PASS_SHORT_APP_NAME }有料プランでのみご利用いただけます"
       ],
-      "OpenVPN / IKEv2 password": [
-        "OpenVPN / IKEv2 パスワード"
+      "OpenVPN password": [
+        "OpenVPNパスワード"
       ],
-      "OpenVPN / IKEv2 username": [
-        "OpenVPN / IKEv2 ユーザー名"
+      "OpenVPN username": [
+        "OpenVPNユーザー名"
       ],
       "Operating system": [
         "OS"
@@ -15711,8 +15714,8 @@
       "Number of records exceeds the download limit of 10000": [
         "レコードの数がダウンロード制限の10000件を超えています。"
       ],
-      "OpenVPN / IKEv2 credentials regenerated": [
-        "OpenVPN / IKEv2 認証情報を更新しました"
+      "OpenVPN credentials regenerated": [
+        "OpenVPN 認証情報を更新しました"
       ],
       "Reminder has been sent": [
         "リマインダーが送信されました"
@@ -17615,11 +17618,6 @@
       ],
       "Opting into post-quantum protection": [
         "ポスト量子保護を有効にしています"
-      ]
-    },
-    "Price": {
-      "Free": [
-        "無料"
       ]
     },
     "Primary timezone": {
@@ -22216,6 +22214,9 @@
       ],
       "Open pagination": [
         "ページネーションを開く"
+      ],
+      "OpenVPN": [
+        "OpenVPN"
       ],
       "OpenVPN configuration files": [
         "OpenVPN 設定ファイル"

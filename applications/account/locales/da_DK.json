@@ -631,7 +631,7 @@
         "Redigér adgangskode"
       ],
       "Edit phone number": [
-        "Rediger telefonnummer"
+        "Redigér telefonnummer"
       ],
       "Edit servers": [
         "Rediger servere"
@@ -1056,11 +1056,17 @@
       "Open in ${ SHEETS_APP_NAME }": [
         "Åbn i ${ SHEETS_APP_NAME }"
       ],
+      "Open in new tab": [
+        "Åbn i en ny fane"
+      ],
       "Open navigation": [
         "Åbn navigation"
       ],
       "Open recovery settings": [
         "Åbn indstillinger for gendannelse"
+      ],
+      "Open settings": [
+        "Åbn Indstillinger"
       ],
       "Opt out": [
         "Fravælg"
@@ -1126,7 +1132,7 @@
         "Opdater siden"
       ],
       "refresh the page": [
-        "opdater siden"
+        "opdatér siden"
       ],
       "Refuse access": [
         "Afvis adgang"
@@ -3277,6 +3283,9 @@
       ],
       "Open source": [
         "Open source"
+      ],
+      "Private video calls for the conversations that matter.": [
+        "Private videoopkald til de samtaler, der betyder noget."
       ]
     },
     "collider_2025: Navigation": {
@@ -4473,6 +4482,11 @@
     "customer_support.feature.mail": {
       "For ${ MAIL_APP_NAME }": [
         "For ${ MAIL_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.meet": {
+      "For ${ MEET_APP_NAME }": [
+        "For ${ MEET_APP_NAME }"
       ]
     },
     "customer_support.feature.pass": {
@@ -6419,7 +6433,7 @@
         "Vælg venligst et land"
       ],
       "Please select a state": [
-        "Vælg venligst en region"
+        "Vælg en stat"
       ],
       "Please select at least one location before continuing.": [
         "Vælg mindst én placering før du fortsætter."
@@ -9254,6 +9268,9 @@
       "Continuing will connect your ${ BRAND_NAME } Account to ${ name }.": [
         "At fortsætte vil forbinde din ${ BRAND_NAME }-konto til ${ name }."
       ],
+      "Control whether organization members can create vaults or require an administrator to create and share a vault with them.": [
+        "Kontrollér, om organisationsmedlemmer kan oprette bokse, eller kræv, at en administrator opretter og deler en boks med dem."
+      ],
       "Copied to clipboard": [
         "Kopieret til udklipsholder"
       ],
@@ -9783,9 +9800,6 @@
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Hvis en anden administrator ændrede denne adgangskode, må du bede dem om den nye Organisationsadgangskode."
-      ],
-      "If disabled, new organization members will require an admin to manually create the first vault for them (via sharing) so they can start to create items.": [
-        "Hvis deaktiveret, vil nye organisationsmedlemmer kræve, at en admin manuelt opretter den første boks til dem (via deling), så de kan begynde at oprette elementer."
       ],
       "If disabled, only administrators will be able to export data.": [
         "Hvis deaktiveret, kan administratorer kun eksportere data."
@@ -13235,6 +13249,9 @@
       "New second password": [
         "Ny anden adgangskode"
       ],
+      "No (users cannot use the app until a vault is shared with them)": [
+        "Nej (brugere kan ikke bruge appen før en boks er delt med dem)"
+      ],
       "No filter": [
         "Intet filter"
       ],
@@ -13262,14 +13279,11 @@
       "Online privacy for your whole family": [
         "Online privatliv for hele familien"
       ],
+      "Only a single personal vault can be created": [
+        "Kun én personlig boks kan oprettes"
+      ],
       "Only available on ${ PASS_SHORT_APP_NAME } paid plans": [
         "Kun tilgængelig i ${ PASS_SHORT_APP_NAME } betalte abonnementer"
-      ],
-      "OpenVPN / IKEv2 password": [
-        "OpenVPN / IKEv2-adgangskode"
-      ],
-      "OpenVPN / IKEv2 username": [
-        "OpenVPN- /IKEv2-brugernavn"
       ],
       "Operating system": [
         "Operativsystem"
@@ -13528,7 +13542,7 @@
         "Første ugedag"
       ],
       "State": [
-        "Stat/Region"
+        "Stat"
       ],
       "Statement": [
         "Udsagn"
@@ -13688,6 +13702,9 @@
       ],
       "Without attachment": [
         "Uden vedhæftning"
+      ],
+      "Yes": [
+        "Ja"
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Ja, jeg ønsker at slette denne konto og alle dens data permanent."
@@ -14362,6 +14379,111 @@
         "Du har nået maksimum på ${ MAX_CALENDAR_MEMBERS } medlemmer."
       ]
     },
+    "meet_2025: Feature": {
+      "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
+        "${ MEET_APP_NAME }: Fortrolige videomøder til de samtaler, der betyder noget"
+      ],
+      "${ n } active meeting at a time": [
+        "${ n } aktivt møde ad gangen",
+        "${ n } aktive møder ad gangen"
+      ],
+      "24 hours per meeting": [
+        "24 timer pr. møde"
+      ],
+      "60 minutes per meeting": [
+        "60 minutter pr. møde"
+      ],
+      "Appointment scheduling": [
+        "Aftaleplanlægning"
+      ],
+      "Browser, mobile, and desktop apps": [
+        "Browser-, mobil- og desktop-apps"
+      ],
+      "Built-in chat": [
+        "Indbygget chat"
+      ],
+      "End-to-end encrypted screen sharing and ephemeral in-call chat": [
+        "End-to-end-krypteret skærmdeling og midlertidig chat under opkald"
+      ],
+      "Meeting recording (coming soon)": [
+        "Møde-optagelse (kommer snart)"
+      ],
+      "One active meeting at a time": [
+        "Ét aktivt møde ad gangen"
+      ],
+      "Screen-sharing": [
+        "Deling af skærm"
+      ],
+      "Unlimited meetings per day": [
+        "Ubegrænset antal møder om dagen"
+      ],
+      "Up to ${ n } meeting per day": [
+        "Op til ${ n } møde om dagen",
+        "Op til ${ n } møder om dagen"
+      ],
+      "Up to ${ n } participant": [
+        "Op til ${ n } deltager",
+        "Op til ${ n } deltagere"
+      ]
+    },
+    "meet_2025: Info": {
+      "100 ${ BRAND_NAME } email addresses": [
+        "100 ${ BRAND_NAME } e-mailadresser"
+      ],
+      "Cloud storage and file sharing": [
+        "Cloudlager og fildeling"
+      ],
+      "Data never used for AI training": [
+        "Data bruges aldrig til AI-træning"
+      ],
+      "Data retention policies": [
+        "Databevaringspolitikker"
+      ],
+      "Document & spreadsheet editor": [
+        "Dokument- og regnearkseditor"
+      ],
+      "Email writing assistant": [
+        "E-mail skriveassistent"
+      ],
+      "Everything from ${ title }, plus...": [
+        "Alt fra ${ title }, plus..."
+      ],
+      "Everything in Meet Professional, plus:": [
+        "Alt i Meet Professional, plus:"
+      ],
+      "Open source": [
+        "Open-source"
+      ],
+      "Password manager with team vaults": [
+        "Adgangskodeadministrator med team-bokse"
+      ],
+      "Private AI Chat (${ LUMO_SHORT_APP_NAME })": [
+        "Privat AI-chat (${ LUMO_SHORT_APP_NAME })"
+      ],
+      "Private and unlimited AI chat (${ LUMO_SHORT_APP_NAME })": [
+        "Privat og ubegrænset AI-chat (${ LUMO_SHORT_APP_NAME })"
+      ],
+      "Private video calls for the conversations that matter": [
+        "Private videoopkald til de samtaler, der betyder noget"
+      ],
+      "Secure calendar": [
+        "Sikker kalender"
+      ],
+      "Strict no-logs policy": [
+        "Streng nul-logningspolitik"
+      ],
+      "Video meetings, ${ PAID_MAX_PARTICIPANTS } participants": [
+        "Videomøder, ${ PAID_MAX_PARTICIPANTS } deltagere"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN med annonceblokering og beskyttelse mod malware"
+      ]
+    },
+    "meet_signup_2025: title": {
+      "For businesses": [
+        "Til virksomheder"
+      ]
+    },
     "Member action": {
       "Activate user": [
         "Aktiver bruger"
@@ -14527,6 +14649,21 @@
       ],
       "Euro": [
         "Euro"
+      ],
+      "Hong Kong dollar": [
+        "Hongkong-dollar"
+      ],
+      "Japanese yen": [
+        "Japansk yen"
+      ],
+      "Polish złoty": [
+        "Polsk zloty"
+      ],
+      "Singapore dollar": [
+        "Singapore-dollar"
+      ],
+      "South Korean won": [
+        "Sydkoreansk won"
       ],
       "Swiss franc": [
         "Schweizer franc"
@@ -15694,7 +15831,7 @@
         "Vi gemmer ingen sessionslog af din færden online og vi logger ikke metadata, som kan kompromittere dit privatliv"
       ],
       "We’re committed to helping customers subject to HIPAA/HITECH regulations safeguard protected health information (PHI). Signed BAAs are available for all ${ BRAND_NAME } for Business customers.": [
-        "Vi stræber efter at hjælpe kunder, der er underlagt HIPAA/HITECH-bestemmelser, med at beskytte beskyttede sundhedsoplysninger (PHI). Underskrevne BAA'er er tilgængelige for alle ${ BRAND_NAME } for Business-kunder."
+        "Vi stræber efter at hjælpe kunder, der er underlagt HIPAA-/HITECH-lovgivning, med at beskytte beskyttede sundhedsoplysninger (PHI). Underskrevne BAA'er (Business Associate Agreement) er tilgængelige for alle ${ BRAND_NAME } for virksomhedskunder."
       ],
       "When connected to our VPN, your DNS queries through our encrypted VPN tunnel, adding to your online privacy and security": [
         "Når du er forbundet til vores VPN, går dine DNS-forespørgsler gennem vores krypterede VPN-tunnel, hvilket øger dit privatliv og din sikkerhed online"
@@ -15903,9 +16040,6 @@
       ],
       "Number of records exceeds the download limit of 10000": [
         "Antallet af poster overskrider downloadgrænsen på 10000"
-      ],
-      "OpenVPN / IKEv2 credentials regenerated": [
-        "OpenVPN / IKEv2-legitimationsoplysninger regenereret"
       ],
       "Reminder has been sent": [
         "En påmindelse er blevet sendt."
@@ -17349,7 +17483,7 @@
         "Vi er ikke i stand til at godkende din betalingsmetode. Vælg venligst en anden betalingsmetode, eller prøv igen."
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
-        "Dit kort blev afvist. Prøv venligst et andet kort eller kontakt din bank for at godkende opkrævningen."
+        "Dit kort blev afvist. Prøv venligst et andet kort eller kontakt din bank for at godkende betalingen."
       ]
     },
     "Payments.error": {
@@ -17826,11 +17960,6 @@
       ],
       "Opting into post-quantum protection": [
         "Aktivering af post-kvantebeskyttelse"
-      ]
-    },
-    "Price": {
-      "Free": [
-        "Gratis"
       ]
     },
     "Primary timezone": {
@@ -19822,6 +19951,26 @@
       ],
       "Works on all devices": [
         "Virker på alle enheder"
+      ]
+    },
+    "Signup: Meet": {
+      "**Trusted by over 100 million** users and organizations": [
+        "**Brugt med tillid af mere end 100 millioner** brugere og organisationer"
+      ],
+      "Get ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
+        "Få ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
+      ],
+      "Own a business?": [
+        "Ejer du en virksomhed?"
+      ],
+      "Sign up, meet privately": [
+        "Tilmeld dig, mød privat"
+      ],
+      "Start using ${ MEET_APP_NAME } now": [
+        "Begynd at bruge ${ MEET_APP_NAME } nu"
+      ],
+      "Your account also includes access to ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME } free features.": [
+        "Din konto inkluderer også gratis adgang til funktionerne i ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } og ${ PASS_SHORT_APP_NAME }."
       ]
     },
     "signup_2024: Feature": {
