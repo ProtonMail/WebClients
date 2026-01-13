@@ -37,14 +37,7 @@ const EXCLUDED_WEBPACK_ENTRIES = [
 ];
 
 const sanitizeWebpackConfig = (config: Configuration) => {
-    const alias = config.resolve!.alias as Record<string, string>;
-
     if (!RUNTIME_RELOAD) {
-        /** In `@pmmmwh/react-refresh-webpack-plugin/client/ReactRefreshEntry.js`, the import of
-         * `core-js-pure` introduces corejs polyfills which we aim to exclude when injecting into
-         * content-scripts. Therefore, we are aliasing the import to prevent this behavior. */
-        alias['core-js-pure/features/global-this'] = path.resolve(__dirname, './global-this.js');
-
         /* Only allow hot reloading capabilities for the pop-up
          * app while maintaining a "stale watch mode" for other
          * parts of the extension. */
