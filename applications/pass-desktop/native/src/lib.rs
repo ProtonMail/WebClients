@@ -5,6 +5,8 @@ mod clipboards;
 #[macro_use]
 extern crate napi_derive;
 
+use napi::tokio;
+
 use crate::autotypes::Autotype as AutotypeCore;
 
 #[napi]
@@ -66,10 +68,15 @@ pub struct Autotype {
 // "rust-analyzer.procMacro.ignored": { "napi-derive": ["napi"] }
 // (See https://github.com/napi-rs/napi-rs/issues/2390)
 impl Autotype {
-    #[napi(constructor)]
-    pub fn new() -> napi::Result<Self> {
-        let autotype = AutotypeCore::new().map_err(|e| napi::Error::from_reason(e.to_string()))?;
-        Ok(Autotype { autotype })
+    #[napi(factory)]
+    pub async fn create() -> napi::Result<Self> {
+        // Use spawn_blocking to avoid app being unresponsive while Linux OS permission prompt is not closed
+        tokio::task::spawn_blocking(move || {
+            let autotype = AutotypeCore::new().map_err(|e| napi::Error::from_reason(e.to_string()))?;
+            Ok(Autotype { autotype })
+        })
+        .await
+        .map_err(|e| napi::Error::from_reason(e.to_string()))?
     }
 
     #[napi]
