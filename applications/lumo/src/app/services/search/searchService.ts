@@ -997,7 +997,7 @@ export class SearchService {
         }));
     }
 
-    formatRAGContext(
+    static formatRAGContext(
         documents: { name: string; content: string; score?: number }[],
         maxContextChars: number = 100000
     ): string {
