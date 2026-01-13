@@ -18,12 +18,20 @@ import type { Maybe } from '@proton/pass/types';
 
 import type { OnReauthFn } from './PasswordUnlockProvider';
 
+export type PasswordReauthOptions = ReauthActionPayload & {
+    /** Fork request options for re-authentication */
+    fork: Partial<RequestForkOptions>;
+    /** If `true`, allows two-password users to verify using their primary
+     * Proton password via SRP instead of triggering a full re-auth flow */
+    srpDowngrade?: boolean;
+};
+
 export type PasswordModalState = {
     autofillable?: boolean;
     label?: string;
     message?: string;
     placeholder?: string;
-    reauth?: ReauthActionPayload & { fork: Partial<RequestForkOptions> };
+    reauth?: PasswordReauthOptions;
     submitLabel?: string;
     title: string;
     type: 'new-password' | 'current-password';

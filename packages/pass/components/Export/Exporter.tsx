@@ -78,6 +78,7 @@ export const Exporter: FC<Props> = ({ onConfirm }) => {
                             type: ReauthAction.EXPORT_CONFIRM,
                             data: values,
                             fork: { promptBypass: 'none', promptType: 'default' },
+                            srpDowngrade: true,
                         },
                         message: passwordTypeSwitch({
                             extra: c('Info')
