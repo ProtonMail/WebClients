@@ -14,9 +14,9 @@ import { makeFinishSink } from './transforms/finish';
 import { makeImageLoggerTransformStream } from './transforms/image-logger';
 import { makeSmoothingTransformStream } from './transforms/smoothing';
 import { makeUtf8DecodingTransformStream } from './transforms/utf8';
-import type { GenerationResponseMessage } from './types';
 import type {
     AssistantCallOptions,
+    GenerationResponseMessage,
     LumoApiClientConfig,
     LumoApiGenerationRequest,
     RequestContext,
