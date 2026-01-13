@@ -1,4 +1,4 @@
-import { assertValidPasskeyRequest } from './passkey';
+import { assertValidPasskeyRequest, isSecureLocalhost } from './passkey';
 
 describe('assertValidPasskeyRequest', () => {
     test('should throw error when domain is not defined', () => {
@@ -47,5 +47,32 @@ describe('assertValidPasskeyRequest', () => {
         const domain = 'example.com';
         const tabUrl = 'https://example.com:8080/path';
         expect(() => assertValidPasskeyRequest(domain, tabUrl)).not.toThrow();
+    });
+});
+
+describe('isSecureLocalhost', () => {
+    test('should return true for secure localhost URL', () => {
+        expect(isSecureLocalhost('https://localhost')).toBe(true);
+        expect(isSecureLocalhost('https://localhost/')).toBe(true);
+        expect(isSecureLocalhost('https://localhost/path')).toBe(true);
+        expect(isSecureLocalhost('https://localhost:8080')).toBe(true);
+        expect(isSecureLocalhost('https://localhost:3000/path')).toBe(true);
+    });
+
+    test('should return false for insecure localhost URL', () => {
+        expect(isSecureLocalhost('http://localhost')).toBe(false);
+        expect(isSecureLocalhost('http://localhost/')).toBe(false);
+        expect(isSecureLocalhost('http://localhost:8080')).toBe(false);
+    });
+
+    test('should return false for non-localhost hostnames', () => {
+        expect(isSecureLocalhost('https://example.com')).toBe(false);
+        expect(isSecureLocalhost('https://127.0.0.1')).toBe(false);
+        expect(isSecureLocalhost('https://sub.localhost')).toBe(false);
+    });
+
+    test('should return false for invalid or missing URLs', () => {
+        expect(isSecureLocalhost(undefined)).toBe(false);
+        expect(isSecureLocalhost('')).toBe(false);
     });
 });
