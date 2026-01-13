@@ -1,9 +1,9 @@
 import { ConnectionCloseReason } from '@proton/docs-proto'
-import type { HttpsProtonMeDocsRealtimeDisconnectErrorTotalV1SchemaJson } from '@proton/metrics/types/docs_realtime_disconnect_error_total_v1.schema'
+import type { HttpsProtonMeDocsRealtimeDisconnectErrorTotalV2SchemaJson } from '@proton/metrics/types/docs_realtime_disconnect_error_total_v2.schema'
 
 export const ConnectionCloseMetrics: Record<
   number,
-  HttpsProtonMeDocsRealtimeDisconnectErrorTotalV1SchemaJson['Labels']['type']
+  HttpsProtonMeDocsRealtimeDisconnectErrorTotalV2SchemaJson['Labels']['type']
 > = {
   [ConnectionCloseReason.CODES.NORMAL_CLOSURE]: 'normal_closure',
   [ConnectionCloseReason.CODES.GOING_AWAY]: 'going_away',
@@ -32,4 +32,16 @@ export const ConnectionCloseMetrics: Record<
   [ConnectionCloseReason.CODES.KILL_SWITCH_ENABLED]: 'kill_switch_enabled',
   [ConnectionCloseReason.CODES.DOCUMENT_CAPACITY_REACHED]: 'document_capacity_reached',
   [ConnectionCloseReason.CODES.DOCUMENT_RECREATING]: 'document_recreating',
+  [ConnectionCloseReason.CODES.DOCUMENT_PARTICIPANT_LIMIT_REACHED]: 'document_participant_limit_reached',
+  [ConnectionCloseReason.CODES.CLIENT_VERSION_NOT_SUPPORTED]: 'client_version_not_supported',
+  [ConnectionCloseReason.CODES.USER_PERMISSIONS_TO_DOCUMENT_CHANGED]: 'user_permissions_to_document_changed',
+  [ConnectionCloseReason.CODES.DOCUMENT_IS_INACCESSIBLE]: 'document_is_inaccessible',
+  [ConnectionCloseReason.CODES.DOCUMENT_CLEANUP]: 'document_cleanup',
+  [ConnectionCloseReason.CODES.DC_EMPTYING]: 'dc_emptying',
+  [ConnectionCloseReason.CODES.ROOM_CREATION_FAILED]: 'room_creation_failed',
+  [ConnectionCloseReason.CODES.MESSAGE_BROKER_CONNECTION_LOST]: 'message_broker_connection_lost',
+  [ConnectionCloseReason.CODES.SESSION_PING_ERROR]: 'session_ping_error',
+  [ConnectionCloseReason.CODES.WEBSOCKET_MESSAGE_HANDLING_ERROR]: 'websocket_message_handling_error',
+  [ConnectionCloseReason.CODES.ROOM_JOINING_ERROR]: 'room_joining_error',
+  [ConnectionCloseReason.CODES.CONNECTION_CONFIGURING_ERROR]: 'connection_configuring_error',
 }
