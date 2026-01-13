@@ -45,7 +45,7 @@ export const AutotypeDropdown: FC<AutotypeDropdownProps> = ({ actions }) => {
                 ref={anchorRef}
                 label={
                     <>
-                        <div className="text-ellipsis">{c('Action').t`Auto-type`}</div>
+                        <div className="text-ellipsis">{c('Action').t`Autotype`}</div>
                         {isFreePlan && <PassPlusIcon className="ml-2 shrink-0" />}
                     </>
                 }
@@ -78,7 +78,7 @@ export const AutotypeDropdown: FC<AutotypeDropdownProps> = ({ actions }) => {
             >
                 {
                     <div className="flex flex-nowrap text-bold px-4 my-2 gap-2">
-                        {c('Label').t`Auto-type in previous window`} {isFreePlan && <PassPlusIcon />}
+                        {c('Action').t`Autotype in previous window`} {isFreePlan && <PassPlusIcon />}
                     </div>
                 }
                 <DropdownMenu className="flex flex-column">
