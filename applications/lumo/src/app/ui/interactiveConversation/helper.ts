@@ -39,7 +39,7 @@ import {
     getAttachmentPriv,
     getAttachmentPub,
 } from '../../types';
-import type { GenerationToFrontendMessage } from '../../types-api';
+import type { GenerationResponseMessage } from '../../types-api';
 import { parseFileReferences } from '../../util/fileReferences';
 
 const SMALL_FILE_SET_TOKEN_THRESHOLD = 30000; // ~45k tokens threshold to include all uploaded files in the first message
@@ -70,7 +70,7 @@ function getContextFilesForMessage(messageChain: Message[], contextFilters: Cont
     return contextFiles;
 }
 
-const createLumoErrorHandler = () => (message: GenerationToFrontendMessage, cId: string) =>
+const createLumoErrorHandler = () => (message: GenerationResponseMessage, cId: string) =>
     createGenerationError(getErrorTypeFromMessage(message.type), cId, message);
 
 interface RAGRetrievalResult {
