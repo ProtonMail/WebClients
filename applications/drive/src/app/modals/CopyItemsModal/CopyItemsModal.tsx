@@ -99,7 +99,7 @@ const CopyItemsModal = ({ open, onClose, onExit, itemsToCopy }: { itemsToCopy: C
                 )}
             </ModalTwoContent>
             <ModalTwoFooter>
-                <div className="flex justify-space-between">
+                <div className="flex justify-space-between w-full">
                     <ButtonWithTextAndIcon
                         onClick={() =>
                             showCreateFolderModal({
@@ -158,7 +158,5 @@ export const useCopyItemsModal = () => {
 };
 
 function checkIsCopyAllowed(itemsToCopy: CopyModalItem[], copyTargetUid: string | undefined) {
-    return !!itemsToCopy.find(
-        (sourceItem) => copyTargetUid === sourceItem.uid || copyTargetUid === sourceItem.parentUid
-    );
+    return !!itemsToCopy.find((sourceItem) => copyTargetUid === sourceItem.uid);
 }
