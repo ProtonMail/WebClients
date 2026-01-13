@@ -18,6 +18,7 @@ import envVars from './tools/env';
 import { MANIFEST_PATH, getAppVersion, webpackOptions } from './webpack.options';
 
 const {
+    API_ENV,
     BETA,
     BUILD_TARGET,
     BUILD_STORE_TARGET,
@@ -59,6 +60,7 @@ const section = (title: string, content: () => void) => {
 
 section('Build configuration', () => {
     console.log(` ENV = ${ENV}`);
+    console.log(` API_ENV=${API_ENV}`);
     console.log(` RELEASE = ${RELEASE}`);
     console.log(` BUILD_TARGET = ${BUILD_TARGET}`);
     console.log(` BUILD_STORE_TARGET = ${BUILD_STORE_TARGET}`);
@@ -323,28 +325,26 @@ const config: Configuration = {
                         }
 
                         /* sanitize manifest when building for production */
-                        if (CLEAN_MANIFEST) {
-                            switch (BUILD_TARGET) {
-                                case 'firefox':
-                                    manifest.content_scripts[1].matches = [
-                                        'https://account.proton.me/*',
-                                        'https://pass.proton.me/*',
-                                    ];
-                                    break;
-                                case 'chrome':
-                                    manifest.externally_connectable.matches = [
-                                        'https://account.proton.me/*',
-                                        'https://pass.proton.me/*',
-                                    ];
-                                    break;
-                                case 'safari':
-                                    manifest.content_scripts[1].matches = ['https://account.proton.me/*'];
-                                    manifest.externally_connectable.matches = [
-                                        'https://account.proton.me/*',
-                                        'https://pass.proton.me/*',
-                                    ];
-                                    break;
-                            }
+                        switch (BUILD_TARGET) {
+                            case 'firefox':
+                                manifest.content_scripts[1].matches = [
+                                    `https://account.${API_ENV}/*`,
+                                    `https://pass.${API_ENV}/*`,
+                                ];
+                                break;
+                            case 'chrome':
+                                manifest.externally_connectable.matches = [
+                                    `https://account.${API_ENV}/*`,
+                                    `https://pass.${API_ENV}/*`,
+                                ];
+                                break;
+                            case 'safari':
+                                manifest.content_scripts[1].matches = [`https://account.${API_ENV}/*`];
+                                manifest.externally_connectable.matches = [
+                                    `https://account.${API_ENV}/*`,
+                                    `https://pass.${API_ENV}/*`,
+                                ];
+                                break;
                         }
 
                         if (BETA) {
