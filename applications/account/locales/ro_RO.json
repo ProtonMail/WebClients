@@ -1056,11 +1056,17 @@
       "Open in ${ SHEETS_APP_NAME }": [
         "Deschidere în ${ SHEETS_APP_NAME }"
       ],
+      "Open in new tab": [
+        "Deschidere în filă nouă"
+      ],
       "Open navigation": [
         "Deschidere navigare"
       ],
       "Open recovery settings": [
         "Deschidere setări de recuperare"
+      ],
+      "Open settings": [
+        "Deschidere setări"
       ],
       "Opt out": [
         "Renunțare"
@@ -3295,6 +3301,9 @@
       ],
       "Open source": [
         "Cod sursă public"
+      ],
+      "Private video calls for the conversations that matter.": [
+        "Apeluri video private pentru conversațiile importante."
       ]
     },
     "collider_2025: Navigation": {
@@ -4493,6 +4502,11 @@
     "customer_support.feature.mail": {
       "For ${ MAIL_APP_NAME }": [
         "Pentru ${ MAIL_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.meet": {
+      "For ${ MEET_APP_NAME }": [
+        "Pentru ${ MEET_APP_NAME }"
       ]
     },
     "customer_support.feature.pass": {
@@ -9349,6 +9363,9 @@
       "Continuing will connect your ${ BRAND_NAME } Account to ${ name }.": [
         "Continuând contul ${ BRAND_NAME } se va conecta la ${ name }."
       ],
+      "Control whether organization members can create vaults or require an administrator to create and share a vault with them.": [
+        "Controlați dacă membrii organizației pot crea seifuri sau solicitați unui administrator să creeze și să partajeze un seif cu ei."
+      ],
       "Copied to clipboard": [
         "Copiat în memorie."
       ],
@@ -9883,9 +9900,6 @@
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Dacă un alt administrator a schimbat această parolă, va trebui să-i solicitați noua parolă a organizației."
-      ],
-      "If disabled, new organization members will require an admin to manually create the first vault for them (via sharing) so they can start to create items.": [
-        "Dacă este dezactivată, noii membri ai organizației vor avea nevoie de un administrator pentru a le crea manual primul seif (prin partajare) pentru a putea începe să creeze elemente."
       ],
       "If disabled, only administrators will be able to export data.": [
         "Dacă e dezactivată, doar administratorii vor putea să exporte date."
@@ -10851,6 +10865,9 @@
       ],
       "Snooze messages for later so they are top of your inbox when you want": [
         "Amânați mesajele pentru mai târziu, astfel încât să apară în mesajele primite când doriți."
+      ],
+      "Some ${ BRAND_NAME } apps may not support security keys yet. If you turn off authenticator app 2FA, you may not be able to sign in to those apps.": [
+        "Unele aplicații ${ BRAND_NAME } s-ar putea să nu suporte încă cheile de securitate. Dacă dezactivați funcția de A2F a aplicației, este posibil să nu vă puteți conecta la acele aplicații."
       ],
       "Some keys successfully reactivated": [
         "Unele chei au fost reactivate"
@@ -13364,6 +13381,9 @@
       "New second password": [
         "Parola secundară nouă"
       ],
+      "No (users cannot use the app until a vault is shared with them)": [
+        "Nu (utilizatorii nu pot folosi aplicația până când un seif nu este partajat cu ei)"
+      ],
       "No filter": [
         "Fără filtru"
       ],
@@ -13391,14 +13411,17 @@
       "Online privacy for your whole family": [
         "Confidențialitate online pentru întreaga familie"
       ],
+      "Only a single personal vault can be created": [
+        "Se poate crea un singur seif personal"
+      ],
       "Only available on ${ PASS_SHORT_APP_NAME } paid plans": [
         "Disponibil doar pe planurile cu plată ale ${ PASS_SHORT_APP_NAME }"
       ],
-      "OpenVPN / IKEv2 password": [
-        "Parola OpenVPN/IKEv2"
+      "OpenVPN password": [
+        "Parola OpenVPN"
       ],
-      "OpenVPN / IKEv2 username": [
-        "Nume utilizator OpenVPN/IKEv2"
+      "OpenVPN username": [
+        "Nume de utilizator OpenVPN"
       ],
       "Operating system": [
         "Sistem de operare"
@@ -13818,6 +13841,9 @@
       ],
       "Without attachment": [
         "Fără atașamente"
+      ],
+      "Yes": [
+        "Da"
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Da, vreau să șterg definitiv acest cont și toate datele sale."
@@ -14500,6 +14526,114 @@
         "Ați atins numărul maxim de ${ MAX_CALENDAR_MEMBERS } de membri."
       ]
     },
+    "meet_2025: Feature": {
+      "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
+        "${ MEET_APP_NAME }: conferințe video confidențiale pentru conversațiile importante"
+      ],
+      "${ n } active meeting at a time": [
+        "Conferințe active simultan: ${ n }",
+        "Conferințe active simultan: ${ n }",
+        "Conferințe active simultan: ${ n }"
+      ],
+      "24 hours per meeting": [
+        "Conferințe de 24 de ore"
+      ],
+      "60 minutes per meeting": [
+        "60 de minute per întâlnire"
+      ],
+      "Appointment scheduling": [
+        "Planificare întâlniri"
+      ],
+      "Browser, mobile, and desktop apps": [
+        "Aplicații pentru navigator web, mobil și desktop"
+      ],
+      "Built-in chat": [
+        "Sistem de conversații integrat"
+      ],
+      "End-to-end encrypted screen sharing and ephemeral in-call chat": [
+        "Partajare ecran cu criptare bilaterală și conversații temporare pe durata apelului"
+      ],
+      "Meeting recording (coming soon)": [
+        "Înregistrare conferințe (în curând)"
+      ],
+      "One active meeting at a time": [
+        "O conferință activă simultan"
+      ],
+      "Screen-sharing": [
+        "Partajare ecran"
+      ],
+      "Unlimited meetings per day": [
+        "Conferințe nelimitate pe zi"
+      ],
+      "Up to ${ n } meeting per day": [
+        "Maxim conferințe pe zi: ${ n }",
+        "Maxim conferințe pe zi: ${ n }",
+        "Maxim conferințe pe zi: ${ n }"
+      ],
+      "Up to ${ n } participant": [
+        "Maxim participanți: ${ n }",
+        "Maxim participanți: ${ n }",
+        "Maxim participanți: ${ n }"
+      ]
+    },
+    "meet_2025: Info": {
+      "100 ${ BRAND_NAME } email addresses": [
+        "100 de adrese de e-mail ${ BRAND_NAME }"
+      ],
+      "Cloud storage and file sharing": [
+        "Stocare în cloud și partajare fișiere"
+      ],
+      "Data never used for AI training": [
+        "Datele nu sunt utilizate niciodată pentru antrenarea IA"
+      ],
+      "Data retention policies": [
+        "Politici de păstrare a datelor"
+      ],
+      "Document & spreadsheet editor": [
+        "Editor de documente și foi de calcul"
+      ],
+      "Email writing assistant": [
+        "Asistent de scriere pentru e-mail"
+      ],
+      "Everything from ${ title }, plus...": [
+        "Totul din ${ title }, plus..."
+      ],
+      "Everything in Meet Professional, plus:": [
+        "Totul din Meet Professional, plus:"
+      ],
+      "Open source": [
+        "Cod sursă public"
+      ],
+      "Password manager with team vaults": [
+        "Manager de parole cu seifuri pentru echipe"
+      ],
+      "Private AI Chat (${ LUMO_SHORT_APP_NAME })": [
+        "Conversații private cu IA (${ LUMO_SHORT_APP_NAME })"
+      ],
+      "Private and unlimited AI chat (${ LUMO_SHORT_APP_NAME })": [
+        "Conversații private și nelimitate cu IA (${ LUMO_SHORT_APP_NAME })"
+      ],
+      "Private video calls for the conversations that matter": [
+        "Apeluri video private pentru conversațiile importante"
+      ],
+      "Secure calendar": [
+        "Calendar securizat"
+      ],
+      "Strict no-logs policy": [
+        "Politică strictă fără înregistrări"
+      ],
+      "Video meetings, ${ PAID_MAX_PARTICIPANTS } participants": [
+        "Conferințe video, ${ PAID_MAX_PARTICIPANTS } participanți"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN cu protecție împotriva programelor malware și blocare reclame"
+      ]
+    },
+    "meet_signup_2025: title": {
+      "For businesses": [
+        "Pentru companii"
+      ]
+    },
     "Member action": {
       "Activate user": [
         "Activare utilizator"
@@ -14665,6 +14799,21 @@
       ],
       "Euro": [
         "Euro"
+      ],
+      "Hong Kong dollar": [
+        "Dolar Hong Kong"
+      ],
+      "Japanese yen": [
+        "Yen japonez"
+      ],
+      "Polish złoty": [
+        "Zlot polonez"
+      ],
+      "Singapore dollar": [
+        "Dolar singaporez"
+      ],
+      "South Korean won": [
+        "Won sud-coreean"
       ],
       "Swiss franc": [
         "Franci elvețieni"
@@ -16073,8 +16222,8 @@
       "Number of records exceeds the download limit of 10000": [
         "Numărul de înregistrări depășește limita de descărcare de 10.000."
       ],
-      "OpenVPN / IKEv2 credentials regenerated": [
-        "Credențiale OpenVPN/IKE2 regenerate"
+      "OpenVPN credentials regenerated": [
+        "S-au generat acreditările OpenVPN"
       ],
       "Reminder has been sent": [
         "Notificările au fost trimise"
@@ -18013,11 +18162,6 @@
       ],
       "Opting into post-quantum protection": [
         "Optare pentru protecție post-cuantică"
-      ]
-    },
-    "Price": {
-      "Free": [
-        "Gratuit"
       ]
     },
     "Primary timezone": {
@@ -20042,6 +20186,26 @@
       ],
       "Works on all devices": [
         "Funcționează pe toate dispozitivele"
+      ]
+    },
+    "Signup: Meet": {
+      "**Trusted by over 100 million** users and organizations": [
+        "**Aprobat de peste 100 de milioane** de utilizatori și organizații"
+      ],
+      "Get ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
+        "Luați ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
+      ],
+      "Own a business?": [
+        "Dețineți o afacere?"
+      ],
+      "Sign up, meet privately": [
+        "Înregistrați-vă, întâlniți-vă în privat"
+      ],
+      "Start using ${ MEET_APP_NAME } now": [
+        "Începeți să utilizați ${ MEET_APP_NAME } acum"
+      ],
+      "Your account also includes access to ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME } free features.": [
+        "Contul actual include și acces gratuit la funcțiile de bază ale ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } și ${ PASS_SHORT_APP_NAME }."
       ]
     },
     "signup_2024: Feature": {
@@ -22786,6 +22950,9 @@
       ],
       "Open pagination": [
         "Deschidere paginare"
+      ],
+      "OpenVPN": [
+        "OpenVPN"
       ],
       "OpenVPN configuration files": [
         "Fișiere de configurare OpenVPN"

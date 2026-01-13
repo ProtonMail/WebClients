@@ -37,6 +37,12 @@
       "Accept and view the item": [
         "承諾してアイテムを閲覧"
       ],
+      "Account": [
+        "アカウント"
+      ],
+      "Account settings": [
+        "アカウントの設定"
+      ],
       "Add": [
         "追加"
       ],
@@ -402,6 +408,9 @@
       ],
       "Lock ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME }をロックする"
+      ],
+      "Lock extension": [
+        "ロック延長"
       ],
       "Make admin": [
         "管理者として設定"
@@ -2415,9 +2424,6 @@
       "You may close this tab.": [
         "このタブを閉じても構いません。"
       ],
-      "You may need to accept a permission prompt and may have to restart the application depending on your system.": [
-        "お客様のシステムによっては、許可を求めるプロンプトを承認し、アプリを再起動していただく必要がある場合があります。"
-      ],
       "You may need to grant accessiblity permission to ${ PASS_APP_NAME }.": [
         "${ PASS_APP_NAME } にアクセシビリティ権限を付与する必要がある場合があります。"
       ],
@@ -2511,6 +2517,9 @@
       ],
       "${ months } month": [
         "${ months }ヶ月"
+      ],
+      "${ PASS_SHORT_APP_NAME } Monitor": [
+        "${ PASS_SHORT_APP_NAME } モニター"
       ],
       "${ PASS_SHORT_APP_NAME } version": [
         "${ PASS_SHORT_APP_NAME } バージョン"
@@ -3022,6 +3031,9 @@
       "Language": [
         "言語"
       ],
+      "Larger window": [
+        "より大きなウィンドウ"
+      ],
       "Last 2 weeks": [
         "過去 2 週間"
       ],
@@ -3372,6 +3384,9 @@
       ],
       "Server": [
         "サーバー"
+      ],
+      "Settings": [
+        "設定"
       ],
       "Share": [
         "共有"

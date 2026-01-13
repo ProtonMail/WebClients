@@ -2520,6 +2520,10 @@
       "${ maxSpaceTB } storage": [
         "${ maxSpaceTB } საცავი"
       ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } მომხმარებელი",
+        "${ numberOfUsers } მომხმარებლამდე"
+      ],
       "${ planMaxSpace } email storage": [
         "${ planMaxSpace } ელფოსტის საცავი"
       ],
@@ -3838,6 +3842,11 @@
         "${ MAIL_APP_NAME }-თვის"
       ]
     },
+    "customer_support.feature.meet": {
+      "For ${ MEET_APP_NAME }": [
+        "${ MEET_APP_NAME }-ისთვის"
+      ]
+    },
     "customer_support.feature.pass": {
       "For ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME }-სთვის"
@@ -4459,6 +4468,9 @@
       "Cannot export this contact": [
         "ამ კონტაქტის გატანა შეუძლებელია"
       ],
+      "Cannot set expiration longer than retention policy allows.": [
+        "ვადა შენარჩუნების პოლიტიკაზე გრძელი ვერ იქნება."
+      ],
       "Checkout expired, please try again": [
         "გადახდის დრო გავიდა. თავიდან სცადეთ"
       ],
@@ -4802,6 +4814,9 @@
       "re-activate the previous key": [
         "წინა გასაღების გააქტიურება"
       ],
+      "re-importing": [
+        "თავიდან შემოტანა"
+      ],
       "Removed duplicate recipient: ${ recipents }": [
         "წაშლილია ${ recipents } გამეორებადი მიმღები",
         "წაშლილია ${ recipents } გამეორებადი მიმღები"
@@ -4994,9 +5009,6 @@
       ],
       "Your emails cannot be decrypted due to a recent password reset. If you remember your previous password, you can ${ reActivateKeyLink } in order to access your messages. ${ learnMoreLink }": [
         "თქვენი ელფოსტების გაშიფვრა შეუძლებელია პაროლის შეცვლის გამო. თუ გაიხსენებთ წინა პაროლს, თქვენ შეგიძლიათ ${ reActivateKeyLink } თქვენი შეტყობინებების სანახავად. ${ learnMoreLink }"
-      ],
-      "Your emails cannot be decrypted. This may be due to a password reset. ${ learnMoreLink }": [
-        "თქვენი ელფოსტების გაშიფვრა შეუძლებელია. შესაძლოა პაროლის შეცვლის გამო. ${ learnMoreLink }"
       ],
       "Your import will not be processed.": [
         "თქვენი შემოტანა არ დამუშავდება."
@@ -7398,6 +7410,9 @@
       "Low Priority": [
         "დაბალი პრიორიტეტი"
       ],
+      "Make ${ MAIL_APP_NAME } your default email application.": [
+        "დააყენეთ ${ MAIL_APP_NAME } თქვენს ნაგულისხმევ ელფოსტის აპლიკაციად."
+      ],
       "Manage your folders": [
         "თქვენი საქაღალდეების მართვა"
       ],
@@ -9263,6 +9278,9 @@
       "Filter Name": [
         "ფილტრის სახელი"
       ],
+      "Filters": [
+        "ფილტრები"
+      ],
       "First name": [
         "სახელი"
       ],
@@ -9310,6 +9328,9 @@
       ],
       "Go to Updates": [
         "განახლებებზე გადასვლა"
+      ],
+      "Has attachments": [
+        "აქვს მიმაგრებული ფაილები"
       ],
       "Help us improve categories by choosing the one that best fits this email. Thanks for your help!": [
         "დაგვეხმარეთ კატეგორიების გაუმჯობესებაში იმის კატეგორიის არჩევით, რომელიც ამ ელფოსტას ყველაზე კარგად ერგება. მადლობა დახმარებისთვის!"
@@ -10191,6 +10212,23 @@
       ],
       "Trash": [
         "ნაგვის ყუთი"
+      ]
+    },
+    "meet_2025: Feature": {
+      "24 hours per meeting": [
+        "24 საათი თითო შეხვედრისთვის"
+      ],
+      "60 minutes per meeting": [
+        "60 წუთი თითო შეხვედრისთვის"
+      ],
+      "Appointment scheduling": [
+        "შეხვედრის დაგეგმვა"
+      ],
+      "Built-in chat": [
+        "ჩაშენებული ჩატი"
+      ],
+      "Screen-sharing": [
+        "ეკრანის გაზიარება"
       ]
     },
     "Message": {
@@ -11518,6 +11556,9 @@
       ]
     },
     "Onboarding List Placeholder": {
+      "Change your email address for popular services now to avoid being tracked and profiled. ${ learnMoreLink }": [
+        "შეცვალეთ თქვენი პოპულარული სერვისების ელფოსტის მისამართი ახლავე, რათა თავიდან აიცილოთ თვალთვალი და პროფილების შექმნა. ${ learnMoreLink }"
+      ],
       "Finance": [
         "ფინანსები"
       ],
@@ -12369,11 +12410,6 @@
       ],
       "Upgrade to ${ upsellPlanTitle }": [
         "სატარიფო გეგმის განახლება: ${ upsellPlanTitle }"
-      ]
-    },
-    "Price": {
-      "Free": [
-        "უფასო"
       ]
     },
     "Progress bar description": {
@@ -15384,6 +15420,9 @@
       "Your free trial has ended": [
         "თქვენი გამოსაცდელი პერიოდი დასრულდა"
       ],
+      "Your newsletters in one place": [
+        "თქვენი სიახლეები ერთ ადგილას"
+      ],
       "Your plan": [
         "თქვენი გეგმა"
       ],
@@ -15691,6 +15730,9 @@
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "თქვენი უფასო სატესტო ვერსიის დამთავრების თარიღია ${ textDate }. ${ action }"
+      ],
+      "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
+        "თქვენი საცდელი პერიოდი დასრულდება: ${ textDate }. თუ გააუქმებთ ${ textDate }-მდე, თანხა არ ჩამოგეჭრებათ. ${ action }"
       ]
     },
     "WeekDay": {

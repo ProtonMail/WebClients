@@ -31,6 +31,12 @@
       "Accept and view the item": [
         "Aceitar e ver o item"
       ],
+      "Account": [
+        "Conta"
+      ],
+      "Account settings": [
+        "Definições de conta"
+      ],
       "Add": [
         "Adicionar"
       ],
@@ -369,6 +375,9 @@
       ],
       "Lock ${ PASS_APP_NAME }": [
         "Bloquear o ${ PASS_APP_NAME }"
+      ],
+      "Lock extension": [
+        "Bloquear a extensão"
       ],
       "Make admin": [
         "Tornar administrador"
@@ -1872,10 +1881,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Movendo todos os itens de \"${ payload.content.name }\""
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Mover um item para outro cofre apagará as suas ligações seguras.",
-        "Mover itens para outro cofre apagará as suas ligações seguras."
-      ],
       "Moving items": [
         "A mover itens"
       ],
@@ -2511,6 +2516,9 @@
       ],
       "${ PASS_APP_NAME } recognizes the websites and apps you use and autofills forms with your credentials for you on any browser or device. No need to copy and paste.": [
         "${ PASS_APP_NAME } reconhece os sítios web e as aplicações que utiliza e preenche automaticamente os formulários com as suas credenciais em qualquer navegador ou dispositivo. Não é necessário copiar e colar."
+      ],
+      "${ PASS_SHORT_APP_NAME } Monitor": [
+        "${ PASS_SHORT_APP_NAME } Monitor"
       ],
       "${ PASS_SHORT_APP_NAME } version": [
         "Versão do ${ PASS_SHORT_APP_NAME }"
@@ -3403,6 +3411,9 @@
       ],
       "Server": [
         "Servidor"
+      ],
+      "Settings": [
+        "Definições"
       ],
       "Share": [
         "Partilhar"

@@ -31,6 +31,12 @@
       "Accept and view the item": [
         "Принять и просмотреть элемент"
       ],
+      "Account": [
+        "Счёт"
+      ],
+      "Account settings": [
+        "Настройки учётной записи"
+      ],
       "Add": [
         "Добавить"
       ],
@@ -369,6 +375,9 @@
       ],
       "Lock ${ PASS_APP_NAME }": [
         "Заблокировать ${ PASS_APP_NAME }"
+      ],
+      "Lock extension": [
+        "Заблокировать расширение"
       ],
       "Make admin": [
         "Сделать администратором"
@@ -1910,12 +1919,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Перемещение всех элементов из \"${ payload.content.name }\""
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Перемещение элемента в другое хранилище удалит его защищенные ссылки.",
-        "Перемещение элемента в другое хранилище удалит его защищенные ссылки.",
-        "Перемещение элемента в другое хранилище удалит его защищенные ссылки.",
-        "Перемещение элемента в другое хранилище удалит его защищенные ссылки."
-      ],
       "Moving items": [
         "Перемещение элементов"
       ],
@@ -2583,6 +2586,9 @@
       ],
       "${ PASS_APP_NAME } recognizes the websites and apps you use and autofills forms with your credentials for you on any browser or device. No need to copy and paste.": [
         "Автозаполнение в ${ PASS_APP_NAME } позволяет моментально подставлять учётные данные на часто посещаемых веб-сайтах и в приложениях. Вам не придётся ничего копировать вручную. Функция работает на любых устройствах и во всех браузерах."
+      ],
+      "${ PASS_SHORT_APP_NAME } Monitor": [
+        "Монитор ${ PASS_SHORT_APP_NAME }"
       ],
       "${ PASS_SHORT_APP_NAME } version": [
         "Версия ${ PASS_SHORT_APP_NAME }"
@@ -3432,6 +3438,9 @@
       ],
       "Server": [
         "Сервер"
+      ],
+      "Settings": [
+        "Настройки"
       ],
       "Share": [
         "Поделиться"

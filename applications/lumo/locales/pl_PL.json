@@ -77,6 +77,9 @@
       "Copy address": [
         "Kopiuj adres"
       ],
+      "Create": [
+        "Utwórz"
+      ],
       "Create folder": [
         "Utwórz folder"
       ],
@@ -185,6 +188,9 @@
       "More options for accounts": [
         "Więcej opcji dla kont"
       ],
+      "Next page": [
+        "Następna strona"
+      ],
       "OK": [
         "OK"
       ],
@@ -199,6 +205,9 @@
       ],
       "Pay ${ price } now": [
         "Zapłać ${ price }"
+      ],
+      "Previous page": [
+        "Poprzednia strona"
       ],
       "Refer a friend": [
         "Poleć znajomemu"
@@ -226,6 +235,9 @@
       ],
       "Resend code": [
         "Wyślij ponownie kod"
+      ],
+      "Reset": [
+        "Resetuj"
       ],
       "Save": [
         "Zapisz"
@@ -813,9 +825,6 @@
       ],
       "Submit": [
         "Prześlij"
-      ],
-      "Upload a file": [
-        "Prześlij plik"
       ]
     },
     "collider_2025: Button": {
@@ -998,9 +1007,6 @@
       "Add ${ LUMO_APP_NAME }": [
         "Dodaj ${ LUMO_APP_NAME }"
       ],
-      "Adding to knowledge base...": [
-        "Dodawanie do bazy wiedzy..."
-      ],
       "Ask anything to ${ LUMO_SHORT_APP_NAME }": [
         "Zapytaj ${ LUMO_SHORT_APP_NAME } o cokolwiek"
       ],
@@ -1039,9 +1045,6 @@
       ],
       "files": [
         "pliki"
-      ],
-      "Files": [
-        "Pliki"
       ],
       "files are not currently supported for content extraction.": [
         "pliki nie są obecnie obsługiwane do ekstrakcji treści."
@@ -1241,9 +1244,6 @@
       ],
       "About ${ LUMO_SHORT_APP_NAME }": [
         "O aplikacji ${ LUMO_SHORT_APP_NAME }"
-      ],
-      "Delete all chats": [
-        "Usuń wszystkie czaty"
       ],
       "Don't lose the thread": [
         "Nie strać wątku"
@@ -2669,6 +2669,9 @@
       ],
       "ZIP code is required": [
         "Kod pocztowy jest wymagany"
+      ],
+      "⚠️ Undecryptable name": [
+        "⚠️ Zaszyfrowana nazwa"
       ]
     },
     "Error message": {
@@ -3519,6 +3522,9 @@
       "Folder location": [
         "Lokalizacja folderu"
       ],
+      "Folder name": [
+        "Nazwa folderu"
+      ],
       "Hide password": [
         "Ukryj hasło"
       ],
@@ -3530,6 +3536,9 @@
       ],
       "Integrated 2FA authenticator": [
         "Zintegrowana aplikacja uwierzytelniająca 2FA"
+      ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "Skróty klawiszowe: ${ shortcut }"
       ],
       "Last name": [
         "Nazwisko"
@@ -4950,6 +4959,9 @@
       "Company name": [
         "Nazwa firmy"
       ],
+      "Enter a new folder name": [
+        "Wpisz nową nazwę folderu"
+      ],
       "Gift code": [
         "Kod podarunkowy"
       ],
@@ -5024,11 +5036,6 @@
       ],
       "Upgrade to ${ upsellPlanTitle }": [
         "Ulepsz do planu ${ upsellPlanTitle }"
-      ]
-    },
-    "Price": {
-      "Free": [
-        "Za darmo"
       ]
     },
     "Safety review": {
@@ -5553,6 +5560,11 @@
         "Dla Ciebie"
       ]
     },
+    "Time": {
+      "Yesterday": [
+        "Wczoraj"
+      ]
+    },
     "Title": {
       "${ feature } is now active": [
         "Funkcja ${ feature } jest aktywna"
@@ -5611,6 +5623,9 @@
       "Coupon": [
         "Kupon"
       ],
+      "Create a new folder": [
+        "Utwórz nowy folder"
+      ],
       "Currency": [
         "Waluta"
       ],
@@ -5640,6 +5655,9 @@
       ],
       "Error": [
         "Błąd"
+      ],
+      "Folder": [
+        "Folder"
       ],
       "Get the apps": [
         "Pobierz aplikacje"

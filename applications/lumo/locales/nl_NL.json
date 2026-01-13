@@ -77,6 +77,9 @@
       "Copy address": [
         "Adres kopiëren"
       ],
+      "Create": [
+        "Aanmaken"
+      ],
       "Create folder": [
         "Maak map"
       ],
@@ -185,6 +188,9 @@
       "More options for accounts": [
         "Meer opties voor accounts"
       ],
+      "Next page": [
+        "Volgende pagina"
+      ],
       "OK": [
         "OK"
       ],
@@ -199,6 +205,9 @@
       ],
       "Pay ${ price } now": [
         "Betaal nu ${ price }"
+      ],
+      "Previous page": [
+        "Vorige pagina"
       ],
       "Refer a friend": [
         "Verwijs een vriend door"
@@ -226,6 +235,9 @@
       ],
       "Resend code": [
         "Verstuur code opnieuw"
+      ],
+      "Reset": [
+        "Reset"
       ],
       "Reset all": [
         "Alles resetten"
@@ -854,11 +866,11 @@
       "Try again": [
         "Probeer opnieuw"
       ],
-      "Upload a file": [
-        "Upload een bestand"
-      ],
       "Upload file and add to knowledge base": [
         "Bestand uploaden en toevoegen aan kennisbank"
+      ],
+      "Upload files": [
+        "Upload bestanden"
       ],
       "Upload from device": [
         "Uploaden vanaf uw apparaat"
@@ -1021,9 +1033,6 @@
       ],
       "Last updated on ${ formattedDate }": [
         "Laatst bijgewerkt op ${ formattedDate }"
-      ],
-      "Permanently delete your chats. This is irreversible.": [
-        "Verwijder uw gesprekken permanent. Dit is onomkeerbaar."
       ],
       "Sign in to access your account and unlock more features. Don't have one? ${ createLink }": [
         "Meld u aan om toegang te krijgen tot uw account en meer functies te ontgrendelen. Hebt u er geen? ${ createLink }"
@@ -1218,9 +1227,6 @@
       " files are hidden (unsupported file types)": [
         " bestanden zijn verborgen (niet ondersteunde bestandstypen)"
       ],
-      " of space": [
-        " ruimte"
-      ],
       " talk to your admin.": [
         " neem contact op met uw beheerder."
       ],
@@ -1239,17 +1245,11 @@
       "Access ${ DRIVE_APP_NAME }": [
         "Open ${ DRIVE_APP_NAME }"
       ],
-      "Active": [
-        "Actief"
-      ],
       "Add ${ LUMO_APP_NAME }": [
         "${ LUMO_APP_NAME } toevoegen"
       ],
       "Add to active": [
         "Toevoegen aan actief"
-      ],
-      "Adding to knowledge base...": [
-        "Toevoegen aan kennisbank..."
       ],
       "Advanced account and network security in one plan": [
         "Geavanceerde account- en netwerkbeveiliging in één abonnement"
@@ -1308,9 +1308,6 @@
       "files": [
         "bestanden"
       ],
-      "Files": [
-        "Bestanden"
-      ],
       "files are not currently supported for content extraction.": [
         "bestanden worden momenteel niet ondersteund voor inhoudsextractie."
       ],
@@ -1364,6 +1361,9 @@
       ],
       "Press ${ shiftEnterBoldText } to ask": [
         "Druk op ${ shiftEnterBoldText } om te vragen"
+      ],
+      "Private video calls for the conversations that matter.": [
+        "Privé videogesprekken voor de gesprekken die ertoe doen."
       ],
       "Processed content": [
         "Verwerkte inhoud"
@@ -1451,9 +1451,6 @@
       ],
       "Unsupported File Type": [
         "Niet-ondersteund bestandstype"
-      ],
-      "Unused ": [
-        "Niet gebruikt "
       ],
       "Uploading ${ uploadProgress.fileName }": [
         "Opladen van ${ uploadProgress.fileName }"
@@ -1719,8 +1716,8 @@
       "About ${ LUMO_SHORT_APP_NAME }": [
         "Over ${ LUMO_SHORT_APP_NAME }"
       ],
-      "Delete all chats": [
-        "Verwijder alle gesprekken"
+      "Delete everything": [
+        "Alles verwijderen"
       ],
       "Don't lose the thread": [
         "Raak de draad niet kwijt"
@@ -1739,6 +1736,9 @@
       ],
       "Secure your spot": [
         "Beveilig uw plek"
+      ],
+      "Show project chats in history": [
+        "Toon projectchats in geschiedenis"
       ],
       "Theme": [
         "Thema"
@@ -2000,7 +2000,21 @@
         "Naamloos gesprek"
       ]
     },
+    "collider_2025:Error": {
+      "File \"${ file.name }\" (${ fileSizeFormatted }) exceeds the ${ maxSizeFormatted } limit. Link a ${ DRIVE_APP_NAME } folder to upload larger files.": [
+        "Bestand \"${ file.name }\" (${ fileSizeFormatted }) overschrijdt de limiet van ${ maxSizeFormatted }. Koppel een ${ DRIVE_APP_NAME }-map om grotere bestanden te uploaden."
+      ]
+    },
+    "collider_2025:Feature": {
+      "Advanced AI models": [
+        "Geavanceerde AI-modellen"
+      ]
+    },
     "collider_2025:Info": {
+      " Chat in Project": [
+        " Chatten in Project",
+        " Chats in Project"
+      ],
       "AIs from Big Tech are built on harvesting your data. But ${ LUMO_SHORT_APP_NAME } is different. It was created by the scientists behind innovative, privacy-first services like ${ MAIL_APP_NAME } and ${ VPN_APP_NAME }. And it’s owned by a Swiss nonprofit, whose mission is to advance privacy and never make money from user data.": [
         "AI's van grote technologiebedrijven zijn gebouwd op het verzamelen van uw gegevens. Maar ${ LUMO_SHORT_APP_NAME } is anders. Het is ontwikkeld door de wetenschappers achter innovatieve, privacy-gerichte diensten zoals ${ MAIL_APP_NAME } en ${ VPN_APP_NAME }. En het is eigendom van een Zwitserse non-profitorganisatie, wiens missie het is om privacy te bevorderen en nooit geld te verdienen aan gebruikersgegevens."
       ],
@@ -2065,12 +2079,6 @@
       "Built by the team that knows privacy": [
         "Gebouwd door het team dat privacy kent"
       ],
-      "Dark mode has been one of our community’s most highly anticipated updates for ${ LUMO_SHORT_APP_NAME }. Throughout the ${ BRAND_NAME } ecosystem, you can customize the look of all of your apps, and now you can customize ${ LUMO_SHORT_APP_NAME }, too, with a light or dark theme.": [
-        "Donkere modus was een van de meest langverwachte updates van onze community voor ${ LUMO_SHORT_APP_NAME }. Binnen het ${ BRAND_NAME } ecosysteem kunt u het uiterlijk van al uw apps aanpassen, en nu kunt u ook ${ LUMO_SHORT_APP_NAME } aanpassen, met een licht of donker thema."
-      ],
-      "Dark mode is here": [
-        "Donkere modus is hier"
-      ],
       "Earlier": [
         "Eerder"
       ],
@@ -2106,12 +2114,6 @@
       ],
       "No result.": [
         "Geen resultaat."
-      ],
-      "Personalization lets you tailor how ${ LUMO_SHORT_APP_NAME } interacts with you. Tell ${ LUMO_SHORT_APP_NAME } your name, what you do, and exactly how you want it to respond, witty banter, technical precision, or straight-to-the-point brevity. Because the best AI isn't one-size-fits-all. It's one that feels like it was built just for you.": [
-        "Met personalisatie kunt u aanpassen hoe ${ LUMO_SHORT_APP_NAME } met u communiceert. Vertel ${ LUMO_SHORT_APP_NAME } uw naam, wat u doet en precies hoe u wilt dat het reageert: met geestige plagerijen, technicsche precisie of beknoptheid. Want de beste AI is niet voor iedereen hetzelfde. Het is er een die aanvoelt alsof het speciaal voor u is gemaakt."
-      ],
-      "Personalization: ${ LUMO_SHORT_APP_NAME } for you": [
-        "Personalisatie: ${ LUMO_SHORT_APP_NAME } voor u"
       ],
       "The AI that respects your privacy": [
         "De AI die uw privacy respecteert"
@@ -3006,6 +3008,11 @@
         "Voor ${ MAIL_APP_NAME }"
       ]
     },
+    "customer_support.feature.meet": {
+      "For ${ MEET_APP_NAME }": [
+        "Voor ${ MEET_APP_NAME }"
+      ]
+    },
     "customer_support.feature.pass": {
       "For ${ PASS_APP_NAME }": [
         "Voor ${ PASS_APP_NAME }"
@@ -3325,6 +3332,9 @@
       ],
       "ZIP code is required": [
         "Postcode is vereist"
+      ],
+      "⚠️ Undecryptable name": [
+        "⚠️ Onversleutelbare naam"
       ]
     },
     "Error message": {
@@ -4162,6 +4172,9 @@
       "Folder location": [
         "Map locatie"
       ],
+      "Folder name": [
+        "Mapnaam"
+      ],
       "Get the deal": [
         "Pak deze deal"
       ],
@@ -4179,6 +4192,9 @@
       ],
       "Integrated 2FA authenticator": [
         "Geïntegreerde tweestapsverificatie"
+      ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "Toetsenbordsneltoets: ${ shortcut }"
       ],
       "Last name": [
         "Achternaam"
@@ -4375,6 +4391,53 @@
       ],
       "for ${ price }": [
         "voor ${ price }"
+      ]
+    },
+    "meet_2025: Feature": {
+      "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
+        "${ MEET_APP_NAME }: Vertrouwelijke videogesprekken voor de gesprekken die ertoe doen"
+      ],
+      "${ n } active meeting at a time": [
+        "${ n } actieve vergadering tegelijkertijd",
+        "${ n } actieve vergaderingen tegelijk"
+      ],
+      "24 hours per meeting": [
+        "24 uur per vergadering"
+      ],
+      "60 minutes per meeting": [
+        "60 uur per vergadering"
+      ],
+      "Appointment scheduling": [
+        "Afspraak Plannen"
+      ],
+      "Browser, mobile, and desktop apps": [
+        "Browser-, mobiele en desktop-apps"
+      ],
+      "Built-in chat": [
+        "Ingebouwde chat"
+      ],
+      "End-to-end encrypted screen sharing and ephemeral in-call chat": [
+        "End-to-end versleutelde schermdeling en korte chats tijdens telefoongesprekken"
+      ],
+      "Meeting recording (coming soon)": [
+        "Opname van vergaderingen (binnenkort beschikbaar)"
+      ],
+      "One active meeting at a time": [
+        "Eén actieve vergadering tegelijkertijd"
+      ],
+      "Screen-sharing": [
+        "Scherm delen"
+      ],
+      "Unlimited meetings per day": [
+        "Onbeperkt aantal vergaderingen per dag"
+      ],
+      "Up to ${ n } meeting per day": [
+        "Maximaal ${ n } vergadering per dag",
+        "Maximaal ${ n } vergaderingen per dag"
+      ],
+      "Up to ${ n } participant": [
+        "Tot ${ n } deelnemer",
+        "Tot ${ n } deelnemers"
       ]
     },
     "New Label form": {
@@ -5654,6 +5717,9 @@
       "Company name": [
         "Bedrijfsnaam"
       ],
+      "Enter a new folder name": [
+        "Voer een nieuwe naam in"
+      ],
       "Gift code": [
         "Geschenkcode"
       ],
@@ -5731,11 +5797,6 @@
       ],
       "Upgrade to ${ upsellPlanTitle }": [
         "Upgraden naar ${ upsellPlanTitle }"
-      ]
-    },
-    "Price": {
-      "Free": [
-        "Gratis"
       ]
     },
     "Safety review": {
@@ -5992,6 +6053,11 @@
     "State": {
       "Canceling your subscription, please wait": [
         "Uw abonnement wordt geannuleerd, even geduld"
+      ]
+    },
+    "Status": {
+      "Not available": [
+        "Niet beschikbaar"
       ]
     },
     "storage_split: action": {
@@ -6262,6 +6328,11 @@
         "Voor particulieren"
       ]
     },
+    "Time": {
+      "Yesterday": [
+        "Gisteren"
+      ]
+    },
     "Title": {
       "${ feature } is now active": [
         "${ feature } is nu actief"
@@ -6323,6 +6394,9 @@
       "Coupon": [
         "Kortingscode"
       ],
+      "Create a new folder": [
+        "Nieuwe map aanmaken"
+      ],
       "Currency": [
         "Valuta"
       ],
@@ -6352,6 +6426,9 @@
       ],
       "Error": [
         "Fout"
+      ],
+      "Folder": [
+        "Map"
       ],
       "Get the apps": [
         "Verkrijg de apps"

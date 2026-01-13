@@ -28,6 +28,12 @@
       "Accept": [
         "Sprejmi"
       ],
+      "Account": [
+        "Račun"
+      ],
+      "Account settings": [
+        "Nastavitve računa"
+      ],
       "Add": [
         "Dodaj"
       ],
@@ -336,6 +342,9 @@
       ],
       "Lock ${ PASS_APP_NAME }": [
         "Zakleni ${ PASS_APP_NAME }"
+      ],
+      "Lock extension": [
+        "Zakleni razširitev"
       ],
       "Make admin": [
         "Naredite za skrbnika"
@@ -1783,6 +1792,9 @@
         "${ months } meseci",
         "${ months } meseci"
       ],
+      "${ PASS_SHORT_APP_NAME } Monitor": [
+        "${ PASS_SHORT_APP_NAME } Nadzor"
+      ],
       "${ PASS_SHORT_APP_NAME } version": [
         "Različica ${ PASS_SHORT_APP_NAME }"
       ],
@@ -2418,6 +2430,9 @@
       ],
       "Server": [
         "Strežnik"
+      ],
+      "Settings": [
+        "Nastavitve"
       ],
       "Share": [
         "Deli"

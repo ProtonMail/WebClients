@@ -2166,6 +2166,9 @@
       ],
       "High-speed chats and advanced AI features.": [
         "Chats de gran velocidad y funciones de IA avanzadas."
+      ],
+      "Private video calls for the conversations that matter.": [
+        "Videollamadas privadas para las conversaciones que importan."
       ]
     },
     "color": {
@@ -3198,6 +3201,11 @@
     "customer_support.feature.mail": {
       "For ${ MAIL_APP_NAME }": [
         "Para ${ MAIL_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.meet": {
+      "For ${ MEET_APP_NAME }": [
+        "Para ${ MEET_APP_NAME }"
       ]
     },
     "customer_support.feature.pass": {
@@ -7412,7 +7420,7 @@
         "Como es un usuario leal, la cuenta tiene activadas funciones adicionales."
       ],
       "Some ${ BRAND_NAME } apps may not support security keys yet. If you turn off authenticator app 2FA, you may not be able to sign in to those apps.": [
-        "Es posible que algunos servicios de ${ BRAND_NAME } aún no sean compatibles con las llaves de seguridad. Si desactiva el 2FA como modo de autenticación, podría perder el acceso a ellos."
+        "Es posible que algunos servicios de ${ BRAND_NAME } aún no sean compatibles con las claves de seguridad. Si desactiva el 2FA como modo de autenticación, podría perder el acceso a ellos."
       ],
       "Some keys successfully reactivated": [
         "Algunas claves fueron reactivadas."
@@ -8970,11 +8978,11 @@
       "Numbers": [
         "Números"
       ],
-      "OpenVPN / IKEv2 password": [
-        "Contraseña OpenVPN / IKEv2"
+      "OpenVPN password": [
+        "Contraseña de OpenVPN"
       ],
-      "OpenVPN / IKEv2 username": [
-        "Usuario de OpenVPN / IKEv2"
+      "OpenVPN username": [
+        "Nombre de usuario de OpenVPN"
       ],
       "Operating system": [
         "Sistema operativo"
@@ -9736,6 +9744,53 @@
         "Configure su cuenta con su dominio de Porkbun."
       ]
     },
+    "meet_2025: Feature": {
+      "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
+        "${ MEET_APP_NAME }: videollamadas privadas para lo que realmente importa"
+      ],
+      "${ n } active meeting at a time": [
+        "${ n } reunión activa a la vez",
+        "${ n } reuniones activas a la vez"
+      ],
+      "24 hours per meeting": [
+        "24 horas por reunión"
+      ],
+      "60 minutes per meeting": [
+        "60 minutos por reunión"
+      ],
+      "Appointment scheduling": [
+        "Programación de citas"
+      ],
+      "Browser, mobile, and desktop apps": [
+        "Aplicaciones para navegador, móvil y escritorio"
+      ],
+      "Built-in chat": [
+        "Chat integrado"
+      ],
+      "End-to-end encrypted screen sharing and ephemeral in-call chat": [
+        "Pantalla compartida con cifrado de extremo a extremo y chat efímero en la llamada"
+      ],
+      "Meeting recording (coming soon)": [
+        "Grabación de la reunión (próximamente)"
+      ],
+      "One active meeting at a time": [
+        "Una reunión activa a la vez"
+      ],
+      "Screen-sharing": [
+        "Compartir pantalla"
+      ],
+      "Unlimited meetings per day": [
+        "Reuniones ilimitadas al día"
+      ],
+      "Up to ${ n } meeting per day": [
+        "Hasta ${ n } reunión por día",
+        "Hasta ${ n } reuniones al día"
+      ],
+      "Up to ${ n } participant": [
+        "Hasta ${ n } participante",
+        "Hasta ${ n } participantes"
+      ]
+    },
     "Member action": {
       "Activate user": [
         "Activar el usuario"
@@ -9866,6 +9921,21 @@
       ],
       "Euro": [
         "Euro"
+      ],
+      "Hong Kong dollar": [
+        "Dólar de Hong Kong"
+      ],
+      "Japanese yen": [
+        "Yen japonés"
+      ],
+      "Polish złoty": [
+        "Złoty polaco"
+      ],
+      "Singapore dollar": [
+        "Dólar de Singapur"
+      ],
+      "South Korean won": [
+        "Won surcoreano"
       ],
       "Swiss franc": [
         "Franco suizo"
@@ -11025,8 +11095,8 @@
       "Number of records exceeds the download limit of 10000": [
         "El número de registros excede el límite de 10 000 descargas."
       ],
-      "OpenVPN / IKEv2 credentials regenerated": [
-        "Credenciales OpenVPN/IKEv2 regeneradas"
+      "OpenVPN credentials regenerated": [
+        "Se han regenerado las credenciales de OpenVPN"
       ],
       "Reminder has been sent": [
         "El recordatorio ha sido enviado"
@@ -12224,11 +12294,6 @@
       ],
       "Upgrade to ${ upsellPlanTitle }": [
         "Actualizar a ${ upsellPlanTitle }"
-      ]
-    },
-    "Price": {
-      "Free": [
-        "Gratis"
       ]
     },
     "Property type": {
@@ -15418,11 +15483,11 @@
       "Open pagination": [
         "Abrir paginación"
       ],
-      "OpenVPN / IKEv2 username": [
-        "Nombre de usuario OpenVPN / IKEv2"
-      ],
       "OpenVPN configuration files": [
         "Archivos de configuración de OpenVPN"
+      ],
+      "OpenVPN username": [
+        "Nombre de usuario de OpenVPN"
       ],
       "Org setup": [
         "Configuración de la organización"

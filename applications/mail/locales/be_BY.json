@@ -2690,6 +2690,9 @@
       ],
       "High-speed chats and advanced AI features.": [
         "Высакахуткасныя чаты і перадавыя функцыі ШІ."
+      ],
+      "Private video calls for the conversations that matter.": [
+        "Прыватныя відэазванкі для важных размоў."
       ]
     },
     "color": {
@@ -3888,6 +3891,11 @@
         "За ${ MAIL_APP_NAME }"
       ]
     },
+    "customer_support.feature.meet": {
+      "For ${ MEET_APP_NAME }": [
+        "Для ${ MEET_APP_NAME }"
+      ]
+    },
     "customer_support.feature.pass": {
       "For ${ PASS_APP_NAME }": [
         "За ${ PASS_APP_NAME }"
@@ -4900,6 +4908,9 @@
       "re-activate the previous key": [
         "паўторна актываваць папярэдні ключ"
       ],
+      "re-importing": [
+        "паўторнае імпартаванне"
+      ],
       "Removed duplicate recipient: ${ recipents }": [
         "Выдалены дублікат атрымальніка: ${ recipents }",
         "Выдалены дублікаты атрымальнікаў: ${ recipents }",
@@ -5011,6 +5022,9 @@
       "There has been an issue with content search. Default search has been used instead.": [
         "Узнікла праблема з пошукам змесціва. Замест гэтага быў выкарыстаны прадвызначаны пошук."
       ],
+      "There was a problem decrypting your message. If the issue persists, contact our customer support.": [
+        "Узнікла праблема з расшыфроўкай вашага паведамлення. Звярніцеся ў службу падтрымкі кліентаў, калі праблема застанецца."
+      ],
       "There was an error when exporting the contacts vCards": [
         "Адбылася памылка падчас экспартавання кантактаў vCard"
       ],
@@ -5101,11 +5115,14 @@
       "Your emails cannot be decrypted due to a recent password reset. If you remember your previous password, you can ${ reActivateKeyLink } in order to access your messages. ${ learnMoreLink }": [
         "Вашы лісты не могуць быць расшыфраваны з прычыны нядаўняга скідання пароля. Калі вы памятаеце свой папярэдні пароль, то можна ${ reActivateKeyLink } для атрымання доступу да сваіх паведамленняў. ${ learnMoreLink }"
       ],
-      "Your emails cannot be decrypted. This may be due to a password reset. ${ learnMoreLink }": [
-        "Вашы лісты немагчыма расшыфраваць. Прычынай гэтаму можа быць нядаўняе скіданне пароля. ${ learnMoreLink }"
-      ],
       "Your import will not be processed.": [
         "Ваша імпартаванне не будзе апрацавана."
+      ],
+      "Your message cannot be decrypted. If you deleted any of your address keys, try ${ reimportKeyLink } them. ${ learnMoreLink }": [
+        "Ваша паведамленне не можа быць расшыфравана. Паспрабуйце ${ reimportKeyLink } адрасныя ключы, калі вы выдалілі адзін з іх. ${ learnMoreLink }"
+      ],
+      "Your message cannot be decrypted. The key used to encrypt this message does not match any of the keys associated with your address. If you deleted any of your address keys, try ${ reimportKeyLink } them. ${ learnMoreLink }": [
+        "Немагчыма расшыфраваць ваша паведамленне. Ключ, які выкарыстоўваўся для шыфравання гэтага паведамлення, не супадае ні з адным з ключоў, якія звязаны з вашым адрасам. Паспрабуйце ${ reimportKeyLink } адрасныя ключы, калі вы выдалялі якія-небудзь з іх. ${ learnMoreLink }"
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Ваш пошук вярнуў занадта шмат вынікаў. Абмяжуйце вобласць пошуку і паспрабуйце яшчэ раз."
@@ -8461,6 +8478,15 @@
       "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
         "Гэта паведамленне будзе перамешчана ў папку Чарнавікі, таму вы зможаце рэдагаваць яго. Вам неабходна будзе зноў запланаваць яго перад адпраўкай."
       ],
+      "This message will be purged on ${ value }": [
+        "Гэта паведамленне будзе ачышчана ў ${ value }"
+      ],
+      "This message will be purged today at ${ value }": [
+        "Гэтае паведамленне будзе выдалена сёння ў ${ value }"
+      ],
+      "This message will be purged tomorrow at ${ value }": [
+        "Гэтае паведамленне будзе ачышчана заўтра ў ${ value }"
+      ],
       "This message will be sent in the morning at ${ formattedTime }": [
         "Гэта паведамленне будзе адпраўлена раніцай у ${ formattedTime }"
       ],
@@ -9698,6 +9724,9 @@
       "Filter Name": [
         "Назва фільтра"
       ],
+      "Filters": [
+        "Фільтры"
+      ],
       "First name": [
         "Імя"
       ],
@@ -9745,6 +9774,9 @@
       ],
       "Go to Updates": [
         "Перайсці ў абнаўленні"
+      ],
+      "Has attachments": [
+        "Змяшчаюць далучэнні"
       ],
       "Help us improve categories by choosing the one that best fits this email. Thanks for your help!": [
         "Дапамажыце нам палепшыць катэгорыі. Выберыце тую, якая найлепш пасуе гэтаму лісту. Дзякуй за вашу дапамогу!"
@@ -10642,6 +10674,59 @@
       ],
       "Trash": [
         "Сметніца"
+      ]
+    },
+    "meet_2025: Feature": {
+      "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
+        "${ MEET_APP_NAME }: канфідэнцыйныя відэаканферэнцыі для важных размоў"
+      ],
+      "${ n } active meeting at a time": [
+        "${ n } актыўная сустрэча адначасова",
+        "${ n } актыўныя сустрэчы адначасова",
+        "${ n } актыўных сустрэч адначасова",
+        "${ n } актыўных сустрэч адначасова"
+      ],
+      "24 hours per meeting": [
+        "24 гадзіны на сустрэчу"
+      ],
+      "60 minutes per meeting": [
+        "60 хвілін на сустрэчу"
+      ],
+      "Appointment scheduling": [
+        "Планаванне сустрэч"
+      ],
+      "Browser, mobile, and desktop apps": [
+        "Браўзер, мабільныя прылады і праграмы для камп'ютараў"
+      ],
+      "Built-in chat": [
+        "Убудаваны чат"
+      ],
+      "End-to-end encrypted screen sharing and ephemeral in-call chat": [
+        "Дэманстрацыя экрана са скразным шыфраваннем і эфемерны чат пры званках"
+      ],
+      "Meeting recording (coming soon)": [
+        "Запісы сустрэч (неўзабаве з'явяцца)"
+      ],
+      "One active meeting at a time": [
+        "Адна актыўная сустрэча адначасова"
+      ],
+      "Screen-sharing": [
+        "Абагулены экран"
+      ],
+      "Unlimited meetings per day": [
+        "Неабмежаваная колькасць сустрэч у дзень"
+      ],
+      "Up to ${ n } meeting per day": [
+        "Да ${ n } сустрэчы ў дзень",
+        "Да ${ n } сустрэч у дзень",
+        "Да ${ n } сустрэч у дзень",
+        "Да ${ n } сустрэч у дзень"
+      ],
+      "Up to ${ n } participant": [
+        "Да ${ n } удзельніка",
+        "Да ${ n } удзельнікаў",
+        "Да ${ n } удзельнікаў",
+        "Да ${ n } удзельнікаў"
       ]
     },
     "Message": {
@@ -12937,11 +13022,6 @@
       ],
       "Upgrade to ${ upsellPlanTitle }": [
         "Палепшыць да ${ upsellPlanTitle }"
-      ]
-    },
-    "Price": {
-      "Free": [
-        "Бясплатна"
       ]
     },
     "Progress bar description": {

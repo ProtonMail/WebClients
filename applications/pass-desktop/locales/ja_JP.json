@@ -37,6 +37,12 @@
       "Accept and view the item": [
         "承諾してアイテムを閲覧"
       ],
+      "Account": [
+        "アカウント"
+      ],
+      "Account settings": [
+        "アカウントの設定"
+      ],
       "Add": [
         "追加"
       ],
@@ -417,6 +423,9 @@
       ],
       "Lock ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME }をロックする"
+      ],
+      "Lock extension": [
+        "ロック延長"
       ],
       "Make admin": [
         "管理者として設定"
@@ -1935,9 +1944,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "「${ payload.content.name }」からすべてのアイテムを移動します"
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "アイテムを別の保管庫に移動すると、すべてのセキュアリンクが消去されます。"
-      ],
       "Moving items": [
         "アイテムの移動"
       ],
@@ -2496,9 +2502,6 @@
       "You may close this tab.": [
         "このタブを閉じても構いません。"
       ],
-      "You may need to accept a permission prompt and may have to restart the application depending on your system.": [
-        "お客様のシステムによっては、許可を求めるプロンプトを承認し、アプリを再起動していただく必要がある場合があります。"
-      ],
       "You may need to grant accessiblity permission to ${ PASS_APP_NAME }.": [
         "${ PASS_APP_NAME } にアクセシビリティ権限を付与する必要がある場合があります。"
       ],
@@ -2601,6 +2604,9 @@
       ],
       "${ PASS_APP_NAME } recognizes the websites and apps you use and autofills forms with your credentials for you on any browser or device. No need to copy and paste.": [
         "${ PASS_APP_NAME }は、あなたが使用するウェブサイトやアプリを認識し、どのブラウザやデバイスでもフォームに自動的にあなたの資格情報を入力します。コピー＆ペーストの必要はありません。"
+      ],
+      "${ PASS_SHORT_APP_NAME } Monitor": [
+        "${ PASS_SHORT_APP_NAME } モニター"
       ],
       "${ PASS_SHORT_APP_NAME } version": [
         "${ PASS_SHORT_APP_NAME } バージョン"
@@ -3133,6 +3139,9 @@
       "Language": [
         "言語"
       ],
+      "Larger window": [
+        "より大きなウィンドウ"
+      ],
       "Last 2 weeks": [
         "過去 2 週間"
       ],
@@ -3504,6 +3513,9 @@
       ],
       "Server": [
         "サーバー"
+      ],
+      "Settings": [
+        "設定"
       ],
       "Share": [
         "共有"

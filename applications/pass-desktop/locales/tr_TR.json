@@ -37,6 +37,12 @@
       "Accept and view the item": [
         "Kabul et ve ögeyi görüntüle"
       ],
+      "Account": [
+        "Hesap"
+      ],
+      "Account settings": [
+        "Hesap ayarları"
+      ],
       "Add": [
         "Ekle"
       ],
@@ -417,6 +423,9 @@
       ],
       "Lock ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } kilitle"
+      ],
+      "Lock extension": [
+        "Eklentiyi kilitle"
       ],
       "Make admin": [
         "Yönetici yap"
@@ -1527,6 +1536,9 @@
       "Admin": [
         "Yönetici"
       ],
+      "After confirming, you will need to accept a permission prompt for ${ PASS_APP_NAME }.": [
+        "Onayladıktan sonra ${ PASS_APP_NAME } için bir izin istemini kabul etmeniz gerekecektir."
+      ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "İçe aktarma işlemi tamamlandığında, güvende kalmak için parolalarınızın bulunduğu dosyayı silebilirsiniz."
       ],
@@ -1738,7 +1750,7 @@
         "Verilerinizi korumak için otomatik kilitlemeyi açın"
       ],
       "Enable offline mode to access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
-        "İnternet bağlantınızı kaybederseniz veya ${ BRAND_NAME } sunucularına ulaşılamazsa ${ PASS_SHORT_APP_NAME } verilerinize erişim için çevrim dışı kipi kullanıma alın."
+        "İnternet bağlantınızı kaybederseniz veya ${ BRAND_NAME } sunucularına ulaşılamazsa ${ PASS_SHORT_APP_NAME } verilerinize erişmek için çevrim dışı kipi açın."
       ],
       "Enabling biometrics auto-lock": [
         "Otomatik biyometri kilidi kullanıma alınıyor"
@@ -1967,8 +1979,7 @@
         "\"${ payload.content.name }\" içindeki tüm ögeler taşınıyor"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Bir ögeyi başka bir kasaya taşımak onun güvenli bağlantılarını siler.",
-        "Ögeleri başka bir kasaya taşımak onların güvenli bağlantılarını siler."
+        "Başka bir kasaya taşınan ögenin güvenli bağlantıları silinir."
       ],
       "Moving items": [
         "Ögeler taşınıyor"
@@ -2356,6 +2367,9 @@
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Bu dışa aktarma şifrelenmemiş olacak ve dışarıya aktarılmış dosyanıza erişebilen herhangi biri parolalarınızı görebilecek. Güvenlik için lütfen işiniz bittikten sonra dosyayı silin."
       ],
+      "This feature is currently experimental on Linux. Please ensure your system is up-to-date.": [
+        "Bu özellik şu anda Linux üzerinde deneyseldir. Lütfen sisteminizin güncel olduğundan emin olun."
+      ],
       "This item is not currently shared with anyone. Invite people to share it with others.": [
         "Bu öge şu anda kimseyle paylaşılmıyor. Paylaşmak istediğiniz kişileri davet edin."
       ],
@@ -2497,7 +2511,7 @@
         "${ PASS_APP_NAME } üzerinde bir kayıt oluştururken ya da düzenlerken 'kullanıcı adı' alanı her zaman görüntülenir."
       ],
       "When enabled, you can still access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
-        "Bu kullanıma alınırsa internet bağlantınızı kaybetseniz veya ${ BRAND_NAME } sunucularına ulaşılamasa dahi ${ PASS_SHORT_APP_NAME } verilerinize erişebilirsiniz."
+        "Bu seçeneği açarsanız, internet bağlantınız kesilirse veya ${ BRAND_NAME } sunucularına ulaşılamazsa ${ PASS_SHORT_APP_NAME } verilerinize erişebilirsiniz."
       ],
       "When sending an email from this alias, the email will display ${ emailSender } as sender.": [
         "Bu takma addan gönderilecek e-postaların göndericisi olarak ${ emailSender } görüntülenecek."
@@ -2542,9 +2556,6 @@
       ],
       "You may close this tab.": [
         "Bu sekmeyi kapatabilirsiniz."
-      ],
-      "You may need to accept a permission prompt and may have to restart the application depending on your system.": [
-        "Sisteminize bağlı olarak bir izin isteğini kabul etmeniz ve uygulamayı yeniden başlatmanız gerekebilir."
       ],
       "You may need to grant accessiblity permission to ${ PASS_APP_NAME }.": [
         "${ PASS_APP_NAME } için erişilebilirlik izni vermeniz gerekebilir."
@@ -2658,6 +2669,9 @@
       ],
       "${ PASS_APP_NAME } recognizes the websites and apps you use and autofills forms with your credentials for you on any browser or device. No need to copy and paste.": [
         "${ PASS_APP_NAME } kullandığınız site ve uygulamaları tanıyarak herhangi bir tarayıcı ya da aygıt üzerindeki formları bilgilerinizle otomatik olarak doldurur. Herhangi bir şey kopyalayıp yapıştırmanız gerekmez."
+      ],
+      "${ PASS_SHORT_APP_NAME } Monitor": [
+        "${ PASS_SHORT_APP_NAME } izleyici"
       ],
       "${ PASS_SHORT_APP_NAME } version": [
         "${ PASS_SHORT_APP_NAME } sürümü"
@@ -2990,6 +3004,9 @@
       "Enter email or username": [
         "E-posta adresi ya da kullanıcı adı yazın"
       ],
+      "Experimental": [
+        "Deneysel"
+      ],
       "Expiration date": [
         "Son kullanma tarihi"
       ],
@@ -3193,6 +3210,9 @@
       ],
       "Language": [
         "Dil"
+      ],
+      "Larger window": [
+        "Daha büyük pencere"
       ],
       "Last 2 weeks": [
         "Son 2 hafta"
@@ -3565,6 +3585,9 @@
       ],
       "Server": [
         "Sunucu"
+      ],
+      "Settings": [
+        "Ayarlar"
       ],
       "Share": [
         "Paylaş"

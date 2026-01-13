@@ -3848,6 +3848,11 @@
         "För ${ MAIL_APP_NAME }"
       ]
     },
+    "customer_support.feature.meet": {
+      "For ${ MEET_APP_NAME }": [
+        "För ${ MEET_APP_NAME }"
+      ]
+    },
     "customer_support.feature.pass": {
       "For ${ PASS_APP_NAME }": [
         "För ${ PASS_APP_NAME }"
@@ -4829,6 +4834,9 @@
       "re-activate the previous key": [
         "återaktivera föregående nyckel"
       ],
+      "re-importing": [
+        "importerar igen"
+      ],
       "Removed duplicate recipient: ${ recipents }": [
         "Tog bort duplicerad mottagare: ${ recipents }",
         "Tog bort duplicerade mottagare: ${ recipents }"
@@ -5022,11 +5030,11 @@
       "Your emails cannot be decrypted due to a recent password reset. If you remember your previous password, you can ${ reActivateKeyLink } in order to access your messages. ${ learnMoreLink }": [
         "Dina e-postmeddelanden kan inte dekrypteras på grund av en nylig lösenordsåterställning. Om du kommer ihåg ditt tidigare lösenord kan du ${ reActivateKeyLink } för att komma åt dina meddelanden. ${ learnMoreLink }"
       ],
-      "Your emails cannot be decrypted. This may be due to a password reset. ${ learnMoreLink }": [
-        "Dina e-postmeddelanden kan inte dekrypteras. Detta kan bero på en lösenordsåterställning. ${ learnMoreLink }"
-      ],
       "Your import will not be processed.": [
         "Din import kommer inte att bearbetas."
+      ],
+      "Your message cannot be decrypted. If you deleted any of your address keys, try ${ reimportKeyLink } them. ${ learnMoreLink }": [
+        "Ditt meddelande kan inte dekrypteras. Om du tog bort några av dina adressnycklar, försök att ${ reimportKeyLink } dem. ${ learnMoreLink }"
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Din sökning matchade för många resultat. Begränsa din sökning och försök igen."
@@ -8190,6 +8198,9 @@
       "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
         "Detta meddelande kommer att flyttas till “Utkast“ så du kan redigera det. Du måste schemalägga det igen när det ska skickas."
       ],
+      "This message will be purged today at ${ value }": [
+        "Detta meddelande kommer att tömmas bort idag kl. ${ value }"
+      ],
       "This message will be sent in the morning at ${ formattedTime }": [
         "Detta meddelande kommer att skickas på morgonen kl. ${ formattedTime }."
       ],
@@ -9368,6 +9379,9 @@
       "Filter Name": [
         "Filternamn"
       ],
+      "Filters": [
+        "Filter"
+      ],
       "First name": [
         "Förnamn"
       ],
@@ -9415,6 +9429,9 @@
       ],
       "Go to Updates": [
         "Gå till uppdateringar"
+      ],
+      "Has attachments": [
+        "Har bilagor"
       ],
       "Help us improve categories by choosing the one that best fits this email. Thanks for your help!": [
         "Hjälp oss att förbättra kategorier genom att välja den som bäst passar denna e-post. Tack för din hjälp!"
@@ -10302,6 +10319,37 @@
       ],
       "Trash": [
         "Papperskorg"
+      ]
+    },
+    "meet_2025: Feature": {
+      "24 hours per meeting": [
+        "24 timmar per möte"
+      ],
+      "60 minutes per meeting": [
+        "60 minuter per möte"
+      ],
+      "Browser, mobile, and desktop apps": [
+        "Appar för webbläsare, mobil och stationär dator"
+      ],
+      "Built-in chat": [
+        "Inbyggd chatt"
+      ],
+      "Meeting recording (coming soon)": [
+        "Mötesinspelning (kommer snart)"
+      ],
+      "Screen-sharing": [
+        "Skärmdelning"
+      ],
+      "Unlimited meetings per day": [
+        "Obegränsat antal möten per dag"
+      ],
+      "Up to ${ n } meeting per day": [
+        "Upp till ${ n } möte per dag",
+        "Upp till ${ n } möten per dag"
+      ],
+      "Up to ${ n } participant": [
+        "Upp till ${ n } deltagare",
+        "Upp till ${ n } deltagare"
       ]
     },
     "Message": {
@@ -12518,11 +12566,6 @@
       ],
       "Upgrade to ${ upsellPlanTitle }": [
         "Uppgradera till ${ upsellPlanTitle }"
-      ]
-    },
-    "Price": {
-      "Free": [
-        "Gratis"
       ]
     },
     "Progress bar description": {

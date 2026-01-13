@@ -1241,6 +1241,10 @@
       "${ maxSpaceTB } storage": [
         "${ maxSpaceTB } საცავი"
       ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } მომხმარებელი",
+        "${ numberOfUsers } მომხმარებლამდე"
+      ],
       "${ planMaxSpace } email storage": [
         "${ planMaxSpace } ელფოსტის საცავი"
       ],
@@ -2332,6 +2336,11 @@
     "customer_support.feature.mail": {
       "For ${ MAIL_APP_NAME }": [
         "${ MAIL_APP_NAME }-თვის"
+      ]
+    },
+    "customer_support.feature.meet": {
+      "For ${ MEET_APP_NAME }": [
+        "${ MEET_APP_NAME }-ისთვის"
       ]
     },
     "customer_support.feature.pass": {
@@ -4488,6 +4497,9 @@
       "Important note": [
         "მნიშვნელოვანი შენიშვნა"
       ],
+      "Importing ODS files is currently in beta": [
+        "ODS ფაილების შემოტანა, ამჟამად, ბეტა ვერსიაშია"
+      ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "მიმდინარეობს მონაცემების ${ fromEmail }-დან ${ toEmail }-ში შემოტანა."
       ],
@@ -5951,6 +5963,23 @@
       ],
       "Add-on with free trial": [
         "დამატება უფასო გამოსაცდელი ვადით"
+      ]
+    },
+    "meet_2025: Feature": {
+      "24 hours per meeting": [
+        "24 საათი თითო შეხვედრისთვის"
+      ],
+      "60 minutes per meeting": [
+        "60 წუთი თითო შეხვედრისთვის"
+      ],
+      "Appointment scheduling": [
+        "შეხვედრის დაგეგმვა"
+      ],
+      "Built-in chat": [
+        "ჩაშენებული ჩატი"
+      ],
+      "Screen-sharing": [
+        "ეკრანის გაზიარება"
       ]
     },
     "Message": {
@@ -9821,6 +9850,9 @@
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "თქვენი უფასო სატესტო ვერსიის დამთავრების თარიღია ${ textDate }. ${ action }"
+      ],
+      "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
+        "თქვენი საცდელი პერიოდი დასრულდება: ${ textDate }. თუ გააუქმებთ ${ textDate }-მდე, თანხა არ ჩამოგეჭრებათ. ${ action }"
       ]
     }
   }

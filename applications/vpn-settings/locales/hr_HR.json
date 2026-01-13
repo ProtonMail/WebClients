@@ -996,8 +996,34 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
+        "Klikom na \"Isprobaj\", slažete se s našim ${ termsAndConditions }."
+      ],
+      "During the trial period, you can have up to 10 users.": [
+        "Tijekom probnog razdoblja, možete imati do 10 korisnika"
+      ],
+      "free for ${ TRIAL_DURATION_DAYS } days": [
+        "Besplatno ${ TRIAL_DURATION_DAYS } dana"
+      ],
+      "on ${ formattedDate }": [
+        "dana ${ formattedDate }"
+      ],
+      "Try ${ selected } ${ freeForNDays }": [
+        "Isprobajte ${ selected } ${ freeForNDays }"
+      ],
+      "Try it free for ${ TRIAL_DURATION_DAYS } days": [
+        "Isprobajte besplatno ${ TRIAL_DURATION_DAYS } dana"
+      ],
       "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Kada ga otkažete, Vaš besplatni probni period neće biti pretvoren u plaćenu pretplatu, ali i dalje možete uživati u pogodnostima plana do kraja probnog perioda. Nakon toga, bit ćete unazađeni na ${ BRAND_NAME } Free plan."
+      ]
+    },
+    "b2b_trials_2025_Label": {
+      "Amount due after trial": [
+        "Iznos za plaćanje nakon probnog razdoblja"
+      ],
+      "Amount due now": [
+        "Dospjeli iznos sada"
       ]
     },
     "b2b_trials_Action": {
@@ -5581,12 +5607,6 @@
       "Numbers": [
         "Brojke"
       ],
-      "OpenVPN / IKEv2 password": [
-        "OpenVPN / IKEv2 lozinka"
-      ],
-      "OpenVPN / IKEv2 username": [
-        "OpenVPN / IKEv2 korisničko ime"
-      ],
       "Operating system": [
         "Operativni sustav"
       ],
@@ -6772,9 +6792,6 @@
       "Invalid input. Search an email or IP address.": [
         "Neispravan unos. Pretražite adresu e-pošte ili IP adresu."
       ],
-      "OpenVPN / IKEv2 credentials regenerated": [
-        "OpenVPN / IKEv2 vjerodajnice su ponovno stvorene"
-      ],
       "Too many recent API requests": [
         "Prevelik broj zahtjeva API-ju"
       ],
@@ -7348,11 +7365,6 @@
       ],
       "Upgrade to ${ upsellPlanTitle }": [
         "Nadogradite na ${ upsellPlanTitle }"
-      ]
-    },
-    "Price": {
-      "Free": [
-        "Besplatno"
       ]
     },
     "Property type": {
@@ -9222,9 +9234,6 @@
       ],
       "Open pagination": [
         "Otvori paginaciju"
-      ],
-      "OpenVPN / IKEv2 username": [
-        "Korisničko ime za OpenVPN / IKEv2"
       ],
       "OpenVPN configuration files": [
         "OpenVPN konfiguracijske datoteke"

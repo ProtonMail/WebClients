@@ -2166,6 +2166,9 @@
       ],
       "High-speed chats and advanced AI features.": [
         "Chats op hoge snelheid en geavanceerde AI-functies."
+      ],
+      "Private video calls for the conversations that matter.": [
+        "Privé videogesprekken voor de gesprekken die ertoe doen."
       ]
     },
     "color": {
@@ -3198,6 +3201,11 @@
     "customer_support.feature.mail": {
       "For ${ MAIL_APP_NAME }": [
         "Voor ${ MAIL_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.meet": {
+      "For ${ MEET_APP_NAME }": [
+        "Voor ${ MEET_APP_NAME }"
       ]
     },
     "customer_support.feature.pass": {
@@ -6235,6 +6243,9 @@
       "CNET editors choice award with a rating of 8.4 out of 10": [
         "CNET editors keuze met een beoordeling van 8,4 van de 10"
       ],
+      "Compromised": [
+        "Gecompromitteerd"
+      ],
       "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
         "SAML-authenticatie voor de organisatie configureren via een identiteitsprovider (IdP). Dit zal SAML voor de hele organisatie inschakelen."
       ],
@@ -7407,6 +7418,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Aangezien u een loyale gebruiker bent, heeft uw account extra functies ingeschakeld."
+      ],
+      "Some ${ BRAND_NAME } apps may not support security keys yet. If you turn off authenticator app 2FA, you may not be able to sign in to those apps.": [
+        "Sommige ${ BRAND_NAME }-apps ondersteunen mogelijk nog geen beveiligingssleutels. Als u 2FA authenticatie-app uitschakelt, kunt u mogelijk niet bij die apps aanmelden."
       ],
       "Some keys successfully reactivated": [
         "Sommige sleutels zijn succesvol geheractiveerd"
@@ -8964,11 +8978,11 @@
       "Numbers": [
         "Getallen"
       ],
-      "OpenVPN / IKEv2 password": [
-        "OpenVPN / IKEv2 wachtwoord"
+      "OpenVPN password": [
+        "OpenVPN-wachtwoord"
       ],
-      "OpenVPN / IKEv2 username": [
-        "OpenVPN / IKEv2 gebruikersnaam"
+      "OpenVPN username": [
+        "OpenVPN-gebruikersnaam"
       ],
       "Operating system": [
         "Besturingssysteem"
@@ -9730,6 +9744,53 @@
         "Maak uw account aan met uw Porkbun domein."
       ]
     },
+    "meet_2025: Feature": {
+      "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
+        "${ MEET_APP_NAME }: Vertrouwelijke videogesprekken voor de gesprekken die ertoe doen"
+      ],
+      "${ n } active meeting at a time": [
+        "${ n } actieve vergadering tegelijkertijd",
+        "${ n } actieve vergaderingen tegelijk"
+      ],
+      "24 hours per meeting": [
+        "24 uur per vergadering"
+      ],
+      "60 minutes per meeting": [
+        "60 uur per vergadering"
+      ],
+      "Appointment scheduling": [
+        "Afspraak Plannen"
+      ],
+      "Browser, mobile, and desktop apps": [
+        "Browser-, mobiele en desktop-apps"
+      ],
+      "Built-in chat": [
+        "Ingebouwde chat"
+      ],
+      "End-to-end encrypted screen sharing and ephemeral in-call chat": [
+        "End-to-end versleutelde schermdeling en korte chats tijdens telefoongesprekken"
+      ],
+      "Meeting recording (coming soon)": [
+        "Opname van vergaderingen (binnenkort beschikbaar)"
+      ],
+      "One active meeting at a time": [
+        "Eén actieve vergadering tegelijkertijd"
+      ],
+      "Screen-sharing": [
+        "Scherm delen"
+      ],
+      "Unlimited meetings per day": [
+        "Onbeperkt aantal vergaderingen per dag"
+      ],
+      "Up to ${ n } meeting per day": [
+        "Maximaal ${ n } vergadering per dag",
+        "Maximaal ${ n } vergaderingen per dag"
+      ],
+      "Up to ${ n } participant": [
+        "Tot ${ n } deelnemer",
+        "Tot ${ n } deelnemers"
+      ]
+    },
     "Member action": {
       "Activate user": [
         "Activeer gebruiker"
@@ -9860,6 +9921,21 @@
       ],
       "Euro": [
         "Euro"
+      ],
+      "Hong Kong dollar": [
+        "Hong Kong dollar"
+      ],
+      "Japanese yen": [
+        "Japanse yen"
+      ],
+      "Polish złoty": [
+        "Poolse złoty"
+      ],
+      "Singapore dollar": [
+        "Singapore dollar"
+      ],
+      "South Korean won": [
+        "Zuid-Koreaanse won"
       ],
       "Swiss franc": [
         "Zwitserse Frank"
@@ -10999,8 +11075,8 @@
       "Number of records exceeds the download limit of 10000": [
         "Aantal records overschrijdt de download limiet van 10000"
       ],
-      "OpenVPN / IKEv2 credentials regenerated": [
-        "OpenVPN / IKEv2 inloggegevens opnieuw gegenereerd"
+      "OpenVPN credentials regenerated": [
+        "OpenVPN-inloggegevens opnieuw gegenereerd"
       ],
       "Reminder has been sent": [
         "Herinnering is verstuurd"
@@ -12195,11 +12271,6 @@
       ],
       "Upgrade to ${ upsellPlanTitle }": [
         "Upgraden naar ${ upsellPlanTitle }"
-      ]
-    },
-    "Price": {
-      "Free": [
-        "Gratis"
       ]
     },
     "Property type": {
@@ -15381,11 +15452,11 @@
       "Open pagination": [
         "Paginering openen"
       ],
-      "OpenVPN / IKEv2 username": [
-        "OpenVPN / IKEv2 gebruikersnaam"
-      ],
       "OpenVPN configuration files": [
         "OpenVPN-configuratiebestanden"
+      ],
+      "OpenVPN username": [
+        "OpenVPN-gebruikersnaam"
       ],
       "Org setup": [
         "Org instelling"

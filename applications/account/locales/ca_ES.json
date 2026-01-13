@@ -1056,11 +1056,17 @@
       "Open in ${ SHEETS_APP_NAME }": [
         "Obriu-ho a ${ SHEETS_APP_NAME }"
       ],
+      "Open in new tab": [
+        "Obriu en una pestanya nova"
+      ],
       "Open navigation": [
         "Obre la navegació"
       ],
       "Open recovery settings": [
         "Obriu les preferències de recuperació"
+      ],
+      "Open settings": [
+        "Obre les preferències"
       ],
       "Opt out": [
         "Renuncia"
@@ -3277,6 +3283,9 @@
       ],
       "Open source": [
         "De codi obert"
+      ],
+      "Private video calls for the conversations that matter.": [
+        "Videotrucades privades per les converses importants."
       ]
     },
     "collider_2025: Navigation": {
@@ -4473,6 +4482,11 @@
     "customer_support.feature.mail": {
       "For ${ MAIL_APP_NAME }": [
         "Per a ${ MAIL_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.meet": {
+      "For ${ MEET_APP_NAME }": [
+        "Per ${ MEET_APP_NAME }"
       ]
     },
     "customer_support.feature.pass": {
@@ -9251,6 +9265,9 @@
       "Continuing will connect your ${ BRAND_NAME } Account to ${ name }.": [
         "Si continueu, connectareu el vostre compte de ${ BRAND_NAME } amb ${ name }."
       ],
+      "Control whether organization members can create vaults or require an administrator to create and share a vault with them.": [
+        "Controla si els membres de l'organització poden crear caixes fortes o si cal que un administrador en creï una i la comparteixi amb ells."
+      ],
       "Copied to clipboard": [
         "S'ha copiat al porta-retalls."
       ],
@@ -9780,9 +9797,6 @@
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Si un altre administrador ha canviat aquesta contrasenya, haureu de preguntar-li quina és la nova contrasenya d'organització."
-      ],
-      "If disabled, new organization members will require an admin to manually create the first vault for them (via sharing) so they can start to create items.": [
-        "Si ho deshabiliteu, els nous membres de l'organització necessitaran que un administrador els creï manualment la primera caixa forta (mitjançant compartició) perquè hi puguin afegir elements."
       ],
       "If disabled, only administrators will be able to export data.": [
         "Si es desactiva, només els administradors podran exportar dades."
@@ -13232,6 +13246,9 @@
       "New second password": [
         "Nova segona contrasenya"
       ],
+      "No (users cannot use the app until a vault is shared with them)": [
+        "No (els usuaris no poden utilitzar l'aplicació fins que no es comparteixi una caixa forta amb ells)"
+      ],
       "No filter": [
         "Sense filtre"
       ],
@@ -13259,14 +13276,17 @@
       "Online privacy for your whole family": [
         "Privacitat en línia per a tota la família"
       ],
+      "Only a single personal vault can be created": [
+        "Només es pot crear una caixa forta personal"
+      ],
       "Only available on ${ PASS_SHORT_APP_NAME } paid plans": [
         "Disponible només amb els plans de pagament de ${ PASS_SHORT_APP_NAME }"
       ],
-      "OpenVPN / IKEv2 password": [
-        "Contrasenya OpenVPN / IKEv2"
+      "OpenVPN password": [
+        "Contrasenya d'OpenVPN"
       ],
-      "OpenVPN / IKEv2 username": [
-        "Nom d'usuari OpenVPN / IKEv2"
+      "OpenVPN username": [
+        "Nom d'usuari d'OpenVPN"
       ],
       "Operating system": [
         "Sistema operatiu"
@@ -13685,6 +13705,9 @@
       ],
       "Without attachment": [
         "Sense adjunt"
+      ],
+      "Yes": [
+        "Sí"
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Sí, vull suprimir definitivament aquest compte i totes les seves dades."
@@ -14359,6 +14382,111 @@
         "Heu assolit el màxim de ${ MAX_CALENDAR_MEMBERS } membres."
       ]
     },
+    "meet_2025: Feature": {
+      "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
+        "${ MEET_APP_NAME }: Videoconferències confidencials per les converses importants"
+      ],
+      "${ n } active meeting at a time": [
+        "${ n } reunió activa alhora",
+        "${ n } reunions actives alhora"
+      ],
+      "24 hours per meeting": [
+        "24 hores per reunió"
+      ],
+      "60 minutes per meeting": [
+        "60 minuts per reunió"
+      ],
+      "Appointment scheduling": [
+        "Programació de cites"
+      ],
+      "Browser, mobile, and desktop apps": [
+        "Aplicacions de navegador, de mòbil i d'escriptori"
+      ],
+      "Built-in chat": [
+        "Xat integrat"
+      ],
+      "End-to-end encrypted screen sharing and ephemeral in-call chat": [
+        "Compartició de pantalla xifrada d’extrem a extrem i xat efímer durant la trucada"
+      ],
+      "Meeting recording (coming soon)": [
+        "Gravació de la reunió (pròximament)"
+      ],
+      "One active meeting at a time": [
+        "Una reunió activa alhora"
+      ],
+      "Screen-sharing": [
+        "Compartir pantalla"
+      ],
+      "Unlimited meetings per day": [
+        "Reunions il·limitades per dia"
+      ],
+      "Up to ${ n } meeting per day": [
+        "Fins a ${ n } reunió al dia",
+        "Fins a ${ n } reunions per dia"
+      ],
+      "Up to ${ n } participant": [
+        "Fins a ${ n } participant",
+        "Fins a ${ n } participants"
+      ]
+    },
+    "meet_2025: Info": {
+      "100 ${ BRAND_NAME } email addresses": [
+        "100 adreces de correu electrònic de ${ BRAND_NAME }"
+      ],
+      "Cloud storage and file sharing": [
+        "Emmagatzematge al núvol i intercanvi d'arxius"
+      ],
+      "Data never used for AI training": [
+        "Les dades no s'utilitzaran mai per entrenament d'IA"
+      ],
+      "Data retention policies": [
+        "Polítiques de conservació de dades"
+      ],
+      "Document & spreadsheet editor": [
+        "Editor de documents i fulls de càlcul"
+      ],
+      "Email writing assistant": [
+        "Assistent d'escriptura de correus electrònics"
+      ],
+      "Everything from ${ title }, plus...": [
+        "Tot el que inclou ${ title }, i a més..."
+      ],
+      "Everything in Meet Professional, plus:": [
+        "Tot el contingut de Meet Professional, i a més:"
+      ],
+      "Open source": [
+        "Codi obert"
+      ],
+      "Password manager with team vaults": [
+        "Gestor de contrasenyes amb caixes fortes d'equip"
+      ],
+      "Private AI Chat (${ LUMO_SHORT_APP_NAME })": [
+        "Xat d'IA privat (${ LUMO_SHORT_APP_NAME })"
+      ],
+      "Private and unlimited AI chat (${ LUMO_SHORT_APP_NAME })": [
+        "Xat d'IA privat i il·limitat (${ LUMO_SHORT_APP_NAME })"
+      ],
+      "Private video calls for the conversations that matter": [
+        "Videotrucades privades per les converses importants"
+      ],
+      "Secure calendar": [
+        "Calendari segur"
+      ],
+      "Strict no-logs policy": [
+        "Política estricta de no guardar dades"
+      ],
+      "Video meetings, ${ PAID_MAX_PARTICIPANTS } participants": [
+        "Videoconferències, ${ PAID_MAX_PARTICIPANTS } participants"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN amb bloquejador de publicitat i protecció contra programari maliciós"
+      ]
+    },
+    "meet_signup_2025: title": {
+      "For businesses": [
+        "Per empreses"
+      ]
+    },
     "Member action": {
       "Activate user": [
         "Activa l'usuari"
@@ -14524,6 +14652,21 @@
       ],
       "Euro": [
         "Euro"
+      ],
+      "Hong Kong dollar": [
+        "Dòlar de Hong Kong"
+      ],
+      "Japanese yen": [
+        "Ien japonès"
+      ],
+      "Polish złoty": [
+        "Zloty polonès"
+      ],
+      "Singapore dollar": [
+        "Dòlar de Singapur"
+      ],
+      "South Korean won": [
+        "Won sud-coreà"
       ],
       "Swiss franc": [
         "Franc suís"
@@ -15901,8 +16044,8 @@
       "Number of records exceeds the download limit of 10000": [
         "El nombre de registres excedeix el límit de 10 000 descàrregues."
       ],
-      "OpenVPN / IKEv2 credentials regenerated": [
-        "Credencials OpenVPN / IKEv2 regenerades"
+      "OpenVPN credentials regenerated": [
+        "S'han regenerat les credencials d'OpenVPN"
       ],
       "Reminder has been sent": [
         "S'ha enviat un recordatori"
@@ -17823,11 +17966,6 @@
       ],
       "Opting into post-quantum protection": [
         "S'està activant la protecció postquàntica"
-      ]
-    },
-    "Price": {
-      "Free": [
-        "Gratuït"
       ]
     },
     "Primary timezone": {
@@ -19822,6 +19960,26 @@
       ],
       "Works on all devices": [
         "Funciona en tots els dispositius"
+      ]
+    },
+    "Signup: Meet": {
+      "**Trusted by over 100 million** users and organizations": [
+        "**Amb la confiança de més de 100 milions** d'usuaris i organitzacions"
+      ],
+      "Get ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
+        "Obtingueu ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
+      ],
+      "Own a business?": [
+        "Teniu un negoci?"
+      ],
+      "Sign up, meet privately": [
+        "Registreu-vos, feu reunions privades"
+      ],
+      "Start using ${ MEET_APP_NAME } now": [
+        "Comenceu a utilitzar ${ MEET_APP_NAME } ara"
+      ],
+      "Your account also includes access to ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME } free features.": [
+        "El vostre compte també inclou accés gratuït a les funcions de ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } i ${ PASS_SHORT_APP_NAME }."
       ]
     },
     "signup_2024: Feature": {
@@ -22513,6 +22671,9 @@
       ],
       "Open pagination": [
         "Obrir paginació"
+      ],
+      "OpenVPN": [
+        "OpenVPN"
       ],
       "OpenVPN configuration files": [
         "Fitxers de configuració d'OpenVPN"

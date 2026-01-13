@@ -1998,6 +1998,10 @@
       "${ maxSpaceTB } storage": [
         "${ maxSpaceTB } საცავი"
       ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } მომხმარებელი",
+        "${ numberOfUsers } მომხმარებლამდე"
+      ],
       "${ planMaxSpace } email storage": [
         "${ planMaxSpace } ელფოსტის საცავი"
       ],
@@ -3161,6 +3165,11 @@
     "customer_support.feature.mail": {
       "For ${ MAIL_APP_NAME }": [
         "${ MAIL_APP_NAME }-თვის"
+      ]
+    },
+    "customer_support.feature.meet": {
+      "For ${ MEET_APP_NAME }": [
+        "${ MEET_APP_NAME }-ისთვის"
       ]
     },
     "customer_support.feature.pass": {
@@ -6147,6 +6156,9 @@
       "CNET editors choice award with a rating of 8.4 out of 10": [
         "CNET-ის რედაქტორების არჩევნის ჯილდო 8.4 რეიტინგიტ 10-დან"
       ],
+      "Compromised": [
+        "კომპრომენტირებული"
+      ],
       "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
         "მოირგეთ SAML ავთენტიკაცია თქვენი ორგანიზაციისთვის იდენტიფიკატორის მომწოდებლებისთვის (IdP). ეს ჩართავს SAML-ს მთელი ორგანიზაციისთვის."
       ],
@@ -8808,12 +8820,6 @@
       "Numbers": [
         "რიცხვები"
       ],
-      "OpenVPN / IKEv2 password": [
-        "OpenVPN / IKEv2 -ის პაროლი"
-      ],
-      "OpenVPN / IKEv2 username": [
-        "OpenVPN / IKEv2 -ის მომხმარებელი"
-      ],
       "Operating system": [
         "ოპერაციული სისტემა"
       ],
@@ -9560,6 +9566,23 @@
         "მოირგეთ თქვენი ანგარიში Porkbun-ის დომენთან ერთად."
       ]
     },
+    "meet_2025: Feature": {
+      "24 hours per meeting": [
+        "24 საათი თითო შეხვედრისთვის"
+      ],
+      "60 minutes per meeting": [
+        "60 წუთი თითო შეხვედრისთვის"
+      ],
+      "Appointment scheduling": [
+        "შეხვედრის დაგეგმვა"
+      ],
+      "Built-in chat": [
+        "ჩაშენებული ჩატი"
+      ],
+      "Screen-sharing": [
+        "ეკრანის გაზიარება"
+      ]
+    },
     "Member action": {
       "Activate user": [
         "მომხმარებლის გააქტიურება"
@@ -9690,6 +9713,21 @@
       ],
       "Euro": [
         "ევრო"
+      ],
+      "Hong Kong dollar": [
+        "ჰონკონგური დოლარი"
+      ],
+      "Japanese yen": [
+        "იაპონური იენი"
+      ],
+      "Polish złoty": [
+        "პოლონური ზლოტი"
+      ],
+      "Singapore dollar": [
+        "სინგაპურის დოლარი"
+      ],
+      "South Korean won": [
+        "სამხრეთ კორეული ვონი"
       ],
       "Swiss franc": [
         "შვედური ფრანკი"
@@ -10833,9 +10871,6 @@
       ],
       "Number of records exceeds the download limit of 10000": [
         "ჩანაწერების რაოდენობა გადმოწერის ლიმიტს (1000) სცდება"
-      ],
-      "OpenVPN / IKEv2 credentials regenerated": [
-        "OpenVPN / IKEv2 მომხმარებელი და პაროლი თავიდან დაგენერირდა"
       ],
       "Reminder has been sent": [
         "შეხსენება გაგზავნილია"
@@ -11995,11 +12030,6 @@
         "სატარიფო გეგმის განახლება: ${ upsellPlanTitle }"
       ]
     },
-    "Price": {
-      "Free": [
-        "უფასო"
-      ]
-    },
     "Property type": {
       "Address": [
         "მისამართი"
@@ -12233,6 +12263,9 @@
       ]
     },
     "retention_policy_2025_Error": {
+      "Invalid value": [
+        "არასწორი მნიშვნელობა"
+      ],
       "Lifetime must be greater than ${ MIN_LIFETIME } day": [
         "სიცოცხლის დრო ${ MIN_LIFETIME } დღეზე მეტი უნდა იყოს",
         "სიცოცხლის დრო ${ MIN_LIFETIME } დღეზე მეტი უნდა იყოს"
@@ -15141,9 +15174,6 @@
       "Open pagination": [
         "გვერდების დანომრვა"
       ],
-      "OpenVPN / IKEv2 username": [
-        "OpenVPN / IKEv2 -ის მომხმარებელი"
-      ],
       "OpenVPN configuration files": [
         "OpenVPN-ის კონფიგურაციის ფაილები"
       ],
@@ -16406,6 +16436,9 @@
       ],
       "Your recovery phrase is outdated. It can't recover new data if you reset your password again.": [
         "თქვენი აღდგენის ფრაზა ვადაგასულია. თუ პაროლს კიდევ ჩამოყრით ახალ მონაცემებს მისით ვერ აღადგენთ."
+      ],
+      "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
+        "თქვენი საცდელი პერიოდი დასრულდება: ${ textDate }. თუ გააუქმებთ ${ textDate }-მდე, თანხა არ ჩამოგეჭრებათ. ${ action }"
       ]
     },
     "Warning for domain modal": {

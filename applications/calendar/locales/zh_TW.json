@@ -2947,6 +2947,17 @@
         "您的${ PLAN_NAMES[PLANS.PASS] }訂閱為特殊價格${ price }每年。若降級為免費方案，您將永久失去此折扣，就算未來再次升級。"
       ]
     },
+    "Drawer tab, Action": {
+      "Download for Linux": [
+        "適用於 Linux 的下載"
+      ],
+      "Download for macOS": [
+        "適用於 macOS 的下載"
+      ],
+      "Download for Windows": [
+        "適用於 Windows 的下載"
+      ]
+    },
     "driveplus2024: Deal details": {
       "Extended version history": [
         "展開版本紀錄"
@@ -3558,6 +3569,9 @@
       ],
       "Try using only letters, numerals, and _.-": [
         "嘗試僅使用字母、數字與 _.-"
+      ],
+      "Unable to load VPN dashboard. Please check your connection and try again.": [
+        "無法載入 VPN 儀表板。請檢查您的連線，然後重試。"
       ],
       "Unexpected error, we can't import the contacts": [
         "未知錯誤，無法匯入聯絡人"
@@ -4601,6 +4615,9 @@
       "${ updated } contact updated successfully.": [
         "已成功更新 ${ updated } 位聯絡人。"
       ],
+      "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
+        "${ VPN_APP_NAME } 將遮蔽您的 IP 位址，所以網站無法識別您。"
+      ],
       "(${ memberCount } member)": [
         "(${ memberCount } 位成員)"
       ],
@@ -4637,8 +4654,17 @@
       "A user is an account associated with a single username, mailbox, and person": [
         "一位使用者意味著一個帳號與單一使用者名稱、信箱及個人對應"
       ],
+      "A VPN encrypts your connection and hides your IP address, making it much harder for anyone to track or monitor your browsing.": [
+        "VPN 會加密您的連線並隱藏您的 IP 位址，使任何人都更難追蹤或監控您的瀏覽。"
+      ],
+      "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
+        "VPN 是您裝置與網際網路之間的安全通道。它能隱藏您的位置與活動，讓 ISP 及您造訪的網站無法追蹤。"
+      ],
       "Account successfully updated": [
         "帳號已成功更新"
+      ],
+      "Ad targeting": [
+        "廣告目標鎖定"
       ],
       "Added and removed participants will be notified about all the events in this series.": [
         "已加入及已移除的參與者將獲通知此一系列中的全部事件。"
@@ -4651,6 +4677,9 @@
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "此電郵位址已啟用以受信任的金鑰驗證位址。若要傳送到此電郵位址，請首先信任可用於傳送的公開金鑰。"
+      ],
+      "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
+        "廣告商會追蹤您的瀏覽紀錄，以顯示目標式廣告。${ VPN_APP_NAME } 會封鎖追蹤程式和廣告，讓您的連線速度更快，並改善您的線上體驗。"
       ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "AI驅動撰寫功能以創建更好電子郵件，快速地和有效地。"
@@ -4949,6 +4978,9 @@
       "Frequency modifications will be lost.": [
         "頻率修改將會消失。"
       ],
+      "Geoblocking": [
+        "地理封鎖"
+      ],
       "here": [
         "這裡"
       ],
@@ -4997,6 +5029,9 @@
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "正在把你的資料從 ${ fromEmail } 匯入至 ${ toEmail }。"
       ],
+      "In restrictive countries": [
+        "在受限制的國家"
+      ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "在下一步驟裡，您將可以使用比特幣數位錢包，提交單筆存款。"
       ],
@@ -5020,6 +5055,9 @@
       ],
       "It's better to have:": [
         "更好擁有:"
+      ],
+      "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
+        "最好始終使用 VPN。但在以下情況下，網路安全威脅可能會達到最高點："
       ],
       "JCB logo": [
         "JCB 符號"
@@ -5093,6 +5131,9 @@
       "Monthly ${ onDayString }": [
         "每月 ${ onDayString } 日"
       ],
+      "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
+        "大多數公共 WiFi 網路是安全的，但有些缺乏安全性，讓您暴露於網路威脅之下。VPN 會加密您的流量，保護您的安全。"
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "請命名您的新資料夾，並選取放置的上層資料夾。若您不選取上層資料夾，將以頂層資料夾創建。"
       ],
@@ -5122,6 +5163,9 @@
       ],
       "Not a valid URL": [
         "無效的網址"
+      ],
+      "Not connected": [
+        "未連線"
       ],
       "Number of dedicated servers in the organization": [
         "團隊專用的伺服器數量"
@@ -5288,6 +5332,9 @@
       "Some of your answers to occurrences previously updated by the organizer will be lost.": [
         "您對召集人先前更新的事件所作的某些回答將會遺失。"
       ],
+      "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
+        "有些網站和串流服務會根據地區限制內容。VPN 能讓您繞過這些限制並自由存取網路。"
+      ],
       "Start sharing it with contacts and use it for online services.": [
         "開始共享此內容和使用於線上服務。"
       ],
@@ -5305,6 +5352,9 @@
       ],
       "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
         "訂購授權即將到期，請於${ byDate }前至Play 商店重新訂購以保留您的${ planName }權益。${ reactivateLink }"
+      ],
+      "Surveillance": [
+        "監視"
       ],
       "Symbols (#$&)": [
         "符號(#$&)"
@@ -5375,6 +5425,9 @@
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "此連結可能是同形異義字攻擊，請核對此連結是否是您想要造訪的連結，否則請不要開啟。"
       ],
+      "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
+        "這表示您的 ISP 和您造訪的網站無法將您的個人資訊與您的線上活動連線。"
+      ],
       "This will sign you out of all accounts currently logged in.": [
         "這麼做會把您所有已登入的帳號登出。"
       ],
@@ -5438,6 +5491,9 @@
       "Visa Secure logo": [
         "Visa Secure 標誌"
       ],
+      "VPN IP": [
+        "VPN IP"
+      ],
       "Warning": [
         "注意"
       ],
@@ -5470,6 +5526,9 @@
       ],
       "Week and month views only apply to desktop.": [
         "週和月檢視僅適用於電腦版。"
+      ],
+      "When working remotely": [
+        "當遠端工作時"
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "設定兩步驟驗證後提供一組復原代碼，無法使用驗證器應用程式時可用復原代碼登入。"
@@ -5657,6 +5716,12 @@
       "Your information was found on ${ displayedDate }": [
         "您的資料在 ${ displayedDate } 被發現。"
       ],
+      "Your IP": [
+        "您的 IP"
+      ],
+      "Your IP address is visible and can be used to track your online activity.": [
+        "您的 IP 位址可見且可用於追蹤您的線上活動。"
+      ],
       "Your login information will not be saved after the import is completed.": [
         "匯入完成後不會保存您的登入資訊。"
       ],
@@ -5666,11 +5731,17 @@
       "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
         "您下一個收費日為${ renewalTime }。若您需要立即變更方案請聯繫客服。"
       ],
+      "Your online activity is protected": [
+        "你的線上活動受到保護"
+      ],
       "Your password was leaked:": [
         "您的密碼已外洩:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "您的手機號碼只會用於此一次性驗證。"
+      ],
+      "Your physical location is visible and can be used to restrict your access to the internet.": [
+        "您的實體位置可見，並可用於限制您對網際網路的存取。"
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
         "您的方案開始於${ renewalTime }及於${ cycle }月重新開始。"
@@ -6311,6 +6382,15 @@
       ],
       "Your calendar URL": [
         "您的行事曆網址"
+      ],
+      "Your IP": [
+        "您的 IP"
+      ],
+      "Your ISP": [
+        "您的 ISP"
+      ],
+      "Your location": [
+        "您的位置"
       ],
       "Your password (admin)": [
         "您的密碼（管理員）"
@@ -8508,11 +8588,6 @@
         "升級至${ upsellPlanTitle }"
       ]
     },
-    "Price": {
-      "Free": [
-        "免費"
-      ]
-    },
     "Progress bar description": {
       "${ contactsExported.length } out of ${ countContacts } contact successfully exported.": [
         "${ countContacts } 位聯絡人之中，有 ${ contactsExported.length } 位已成功匯出。"
@@ -10160,6 +10235,9 @@
       "Deleting contacts": [
         "正在刪除聯絡人"
       ],
+      "Desktop": [
+        "電腦版應用程式"
+      ],
       "Discard changes?": [
         "捨棄變更？"
       ],
@@ -10171,6 +10249,9 @@
       ],
       "Downgrade to ${ downgradedPlanName }?": [
         "降級後的方案為 ${ downgradedPlanName }?"
+      ],
+      "Download the app": [
+        "下載應用程式"
       ],
       "Drop to upload": [
         "拖放到此處以上傳"
@@ -10238,6 +10319,9 @@
       "Exporting contacts": [
         "正在匯出聯絡人"
       ],
+      "Get more from your VPN": [
+        "從您的VPN取得更多"
+      ],
       "Get the ${ appName[APP_NAME] } apps": [
         "獲得 ${ appName[APP_NAME] } 應用程式"
       ],
@@ -10261,6 +10345,9 @@
       ],
       "High security for your account": [
         "高安全性帳號"
+      ],
+      "How does it all work?": [
+        "這一切是如何運作的？"
       ],
       "How does it work?": [
         "那是如何運作的？"
@@ -10300,6 +10387,9 @@
       ],
       "Minicalendar": [
         "小型行事曆"
+      ],
+      "Mobile": [
+        "手機"
       ],
       "Need more aliases?": [
         "需要更多別名?"
@@ -10357,6 +10447,9 @@
       ],
       "Previous": [
         "上一頁"
+      ],
+      "Private browsing vs VPN": [
+        "私有瀏覽 對比 VPN"
       ],
       "Processing...": [
         "處理中..."
@@ -10532,6 +10625,9 @@
       "Verifying your payment...": [
         "正在驗證您的付款..."
       ],
+      "VPN explained": [
+        "VPN 說明"
+      ],
       "Warning": [
         "警告"
       ],
@@ -10552,6 +10648,9 @@
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "歡迎使用 ${ BRAND_NAME } 商務版"
+      ],
+      "What is a VPN?": [
+        "甚麼是 VPN?"
       ],
       "What would you like to import?": [
         "您打算要匯入什麼資料呢？"

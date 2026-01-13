@@ -1045,6 +1045,9 @@
       "Open recovery settings": [
         "복구 설정 열기"
       ],
+      "Open settings": [
+        "설정 열기"
+      ],
       "Opt out": [
         "선택 취소"
       ],
@@ -3024,6 +3027,9 @@
       "${ maxSpaceTB } storage": [
         "저장공간 ${ maxSpaceTB }"
       ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers }명 사용자"
+      ],
       "${ planMaxSpace } email storage": [
         "${ planMaxSpace }의 이메일 저장 공간"
       ],
@@ -3178,6 +3184,9 @@
       ],
       "Open source": [
         "오픈 소스"
+      ],
+      "Private video calls for the conversations that matter.": [
+        "중요한 대화를 위한 개인 영상 통화."
       ]
     },
     "collider_2025: Navigation": {
@@ -4372,6 +4381,11 @@
     "customer_support.feature.mail": {
       "For ${ MAIL_APP_NAME }": [
         "${ MAIL_APP_NAME }용"
+      ]
+    },
+    "customer_support.feature.meet": {
+      "For ${ MEET_APP_NAME }": [
+        "${ MEET_APP_NAME }용"
       ]
     },
     "customer_support.feature.pass": {
@@ -6780,6 +6794,9 @@
     "Error when exporting event from calendar": {
       "Event @ ${ timeString }": [
         "@ ${ timeString } 이벤트"
+      ],
+      "Event from ${ timeString }, ${ rruleString }": [
+        "${ timeString }, ${ rruleString }에 있는 이벤트"
       ]
     },
     "Event invistation error": {
@@ -7239,6 +7256,9 @@
     "Features": {
       "15 GB storage": [
         "15 GB 저장공간"
+      ],
+      "4 more privacy services": [
+        "4개 추가 프라이버시 서비스"
       ],
       "@pm.me address": [
         "@pm.me 이메일 주소"
@@ -9429,6 +9449,9 @@
       "finance": [
         "금융정보"
       ],
+      "For a 10-year version history, please contact our sales team.": [
+        "10년 버전 기록은 영업팀에 문의하세요."
+      ],
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
         "언제든지 이메일에 접근하고 최적화된 모바일 경험을 위해, ${ androidAppLink } 또는 ${ iosAppLink } 을(를)다운로드하세요."
       ],
@@ -9518,9 +9541,6 @@
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "다른 관리자가 이 비밀번호를 변경 한 경우 새 조직 비밀번호를 요청해야 합니다."
-      ],
-      "If disabled, new organization members will require an admin to manually create the first vault for them (via sharing) so they can start to create items.": [
-        "비활성화시, 새로운 조직 구성원이 항목 생성을 시작할 수 있도록 관리자가 (공유를 통해) 첫 번째 금고를 수동으로 생성해야 합니다."
       ],
       "If disabled, only administrators will be able to export data.": [
         "비활성화시, 관리자만 데이터를 내보낼 수 있습니다."
@@ -11541,6 +11561,11 @@
         "선택한 색상:"
       ]
     },
+    "Info (Scribe)": {
+      "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddresses } or ${ addMoreSeats }": [
+        "이메일 작성, 답장 및 교정을 지원합니다. 비활성화된 경우 관리자만 접근할 수 있습니다. 개별 사용자를 ${ userAndAddresses }에서 또는 ${ addMoreSeats }하여 관리합니다."
+      ]
+    },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
         "활성화되면, 하위 폴더는 상위 폴더의 색상과 일치됩니다."
@@ -12900,12 +12925,6 @@
       "Only available on ${ PASS_SHORT_APP_NAME } paid plans": [
         "${ PASS_SHORT_APP_NAME } 유료 플랜에서 사용 가능"
       ],
-      "OpenVPN / IKEv2 password": [
-        "OpenVPN / IKEv2 비밀번호"
-      ],
-      "OpenVPN / IKEv2 username": [
-        "OpenVPN / IKEv2 사용자 이름"
-      ],
       "Operating system": [
         "운영체제"
       ],
@@ -13067,6 +13086,9 @@
       ],
       "Secure password generator": [
         "안전한 비밀번호 생성기"
+      ],
+      "Select Linux package format": [
+        "Linux 패키지 포맷 선택"
       ],
       "Select Linux platform": [
         "Linux 플랫폼 선태 ㄱ"
@@ -13982,6 +14004,85 @@
         "최대 ${ MAX_CALENDAR_MEMBERS }명 구성원 수에 도달했습니다."
       ]
     },
+    "meet_2025: Feature": {
+      "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
+        "${ MEET_APP_NAME }: 중요한 대화를 위한 안전한 영상 회의"
+      ],
+      "${ n } active meeting at a time": [
+        "동시 활성 회의 ${ n }개"
+      ],
+      "24 hours per meeting": [
+        "회의 당 24시간"
+      ],
+      "60 minutes per meeting": [
+        "회의 당 60분"
+      ],
+      "Appointment scheduling": [
+        "일정 예약"
+      ],
+      "Browser, mobile, and desktop apps": [
+        "브라우저, 모바일 및 데스크톱 앱"
+      ],
+      "Built-in chat": [
+        "내장 채팅"
+      ],
+      "End-to-end encrypted screen sharing and ephemeral in-call chat": [
+        "종단간 암호화된 화면 공유 및 임시 통화 중 채팅"
+      ],
+      "Meeting recording (coming soon)": [
+        "회의 녹화 (출시 예정)"
+      ],
+      "One active meeting at a time": [
+        "동싀 활성 회의 1개"
+      ],
+      "Screen-sharing": [
+        "화면 공유"
+      ],
+      "Unlimited meetings per day": [
+        "하루 무제한 회의"
+      ],
+      "Up to ${ n } meeting per day": [
+        "하루 최대 ${ n }개 회의"
+      ],
+      "Up to ${ n } participant": [
+        "최대 ${ n }명 참가자"
+      ]
+    },
+    "meet_2025: Info": {
+      "100 ${ BRAND_NAME } email addresses": [
+        "${ BRAND_NAME } 이메일 주소 100개"
+      ],
+      "Data retention policies": [
+        "데이터 보존 정책"
+      ],
+      "Document & spreadsheet editor": [
+        "문서 및 스프레드시트 편집기"
+      ],
+      "Everything from ${ title }, plus...": [
+        "${ title }(에)서의 모든 것, 게다가..."
+      ],
+      "Password manager with team vaults": [
+        "팀 금고를 지원하는 비밀번호 관리자"
+      ],
+      "Private AI Chat (${ LUMO_SHORT_APP_NAME })": [
+        "개인 정보 보호 AI 채팅 (${ LUMO_SHORT_APP_NAME })"
+      ],
+      "Private video calls for the conversations that matter": [
+        "중요한 대화를 위한 개인 영상 통화"
+      ],
+      "Secure calendar": [
+        "안전한 캘린더"
+      ],
+      "Strict no-logs policy": [
+        "엄격한 무로그 정책"
+      ],
+      "Video meetings, ${ PAID_MAX_PARTICIPANTS } participants": [
+        "${ PAID_MAX_PARTICIPANTS }명 참가자의 화상 회의"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "광고 차단기 및 멀웨어 보호 기능이 포함된 VPN"
+      ]
+    },
     "Member action": {
       "Activate user": [
         "사용자 활성화"
@@ -14144,6 +14245,12 @@
       ],
       "Euro": [
         "유로"
+      ],
+      "Hong Kong dollar": [
+        "홍콩 달러"
+      ],
+      "South Korean won": [
+        "대한민국 원"
       ],
       "Swiss franc": [
         "스위스 프랑"
@@ -15486,9 +15593,6 @@
       ],
       "Number of records exceeds the download limit of 10000": [
         "기록 수가 최대 10000개의 다운로드 제한을 초과합니다."
-      ],
-      "OpenVPN / IKEv2 credentials regenerated": [
-        "OpenVPN / IKEv2 자격 증명 재생성됨"
       ],
       "Reminder has been sent": [
         "알리미가 전송되었습니다."
@@ -17314,6 +17418,9 @@
       "Go to ${ encryptionAndKeysSettingsTitle }": [
         "${ encryptionAndKeysSettingsTitle }(으)로 이동"
       ],
+      "Please try again. If that doesn’t work, contact our customer support team.": [
+        "다시 시도해 주세요. 그래도 문제가 해결되지 않으면 당사 고객 지원팀에 문의해 주세요."
+      ],
       "Post-quantum protection": [
         "양자 내성 보호"
       ],
@@ -17343,11 +17450,6 @@
       ],
       "Generating post-quantum address keys for each address": [
         "각 주소에 대한 양자 내성 주소 키를 생성하는 중"
-      ]
-    },
-    "Price": {
-      "Free": [
-        "무료"
       ]
     },
     "Primary timezone": {
@@ -19300,6 +19402,20 @@
       ],
       "Works on all devices": [
         "모든 기기에서 작동"
+      ]
+    },
+    "Signup: Meet": {
+      "Get ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
+        "${ PLAN_NAMES[PLANS.MEET_BUSINESS] } 구독"
+      ],
+      "Own a business?": [
+        "사업체를 운영하시나요?"
+      ],
+      "Start using ${ MEET_APP_NAME } now": [
+        "${ MEET_APP_NAME } 사용 시작"
+      ],
+      "Your account also includes access to ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME } free features.": [
+        "회원님의 계정에 ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, 및 ${ PASS_SHORT_APP_NAME }의 무료 기능에 대한 접근 권한도 포함됩니다."
       ]
     },
     "signup_2024: Feature": {

@@ -1366,6 +1366,9 @@
       ],
       "High-speed chats and advanced AI features.": [
         "Bate-papos de alta velocidade e recursos avançados de IA."
+      ],
+      "Private video calls for the conversations that matter.": [
+        "Videochamadas privadas para as conversas importantes."
       ]
     },
     "color": {
@@ -2352,6 +2355,11 @@
         "Para ${ MAIL_APP_NAME }"
       ]
     },
+    "customer_support.feature.meet": {
+      "For ${ MEET_APP_NAME }": [
+        "Por ${ MEET_APP_NAME }"
+      ]
+    },
     "customer_support.feature.pass": {
       "For ${ PASS_APP_NAME }": [
         "Para ${ PASS_APP_NAME }"
@@ -2859,6 +2867,9 @@
       "Failed to open to contact": [
         "Não foi possível abrir o contato"
       ],
+      "Failed to remove older revisions": [
+        "Falha ao remover revisões antigas"
+      ],
       "Failed to rename document. Please try again later.": [
         "A renomeação do documento falhou, tente novamente mais tarde"
       ],
@@ -3142,6 +3153,9 @@
       ],
       "We are having trouble syncing your document. Please refresh the page.": [
         "Estamos com problemas para sincronizar seu documento. Atualize a página."
+      ],
+      "We couldn’t import this file into ${ SHEETS_APP_NAME }. You can try to copy and paste the contents into a new ${ SHEETS_APP_NAME }.": [
+        "Não foi possível importar este arquivo para o ${ SHEETS_APP_NAME }. Você pode tentar copiar e colar o conteúdo em um novo ${ SHEETS_APP_NAME }."
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Você não pode enviar um e-mail para mais de ${ maxContacts } destinatário",
@@ -4971,6 +4985,12 @@
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Este endereço está desativado. Para poder enviar para este endereço, o proprietário deve primeiro ativar o endereço."
       ],
+      "This document has grown too large to edit. You can remove older revisions to continue editing.": [
+        "Este documento ficou muito grande para editar. Você pode remover revisões mais antigas para continuar editando."
+      ],
+      "This document has grown too large, and your latest changes couldn’t be saved. Download a copy to keep your work.": [
+        "Este documento ficou muito grande e suas últimas alterações não puderam ser salvas. Baixe uma cópia para manter seu trabalho."
+      ],
       "This document has lots of activity. Some features may be temporarily unavailable.": [
         "Este documento tem muitas atividades. Alguns recursos podem estar temporariamente indisponíveis."
       ],
@@ -6062,6 +6082,53 @@
       ],
       "Add-on with free trial": [
         "Extensão com avaliação gratuita"
+      ]
+    },
+    "meet_2025: Feature": {
+      "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
+        "${ MEET_APP_NAME }: Videoconferência confidencial para as conversas importantes"
+      ],
+      "${ n } active meeting at a time": [
+        "${ n } reunião ativa por vez",
+        "${ n } reuniões ativas por vez"
+      ],
+      "24 hours per meeting": [
+        "24 horas por reunião"
+      ],
+      "60 minutes per meeting": [
+        "60 minutos por reunião"
+      ],
+      "Appointment scheduling": [
+        "Agendamento de compromissos"
+      ],
+      "Browser, mobile, and desktop apps": [
+        "Aplicativos para navegadores, dispositivos móveis e computadores"
+      ],
+      "Built-in chat": [
+        "Bate-papo integrado"
+      ],
+      "End-to-end encrypted screen sharing and ephemeral in-call chat": [
+        "Compartilhamento de tela com criptografia de ponta a ponta e chat efêmero durante a chamada"
+      ],
+      "Meeting recording (coming soon)": [
+        "Gravação da reunião (em breve)"
+      ],
+      "One active meeting at a time": [
+        "Uma reunião ativa por vez"
+      ],
+      "Screen-sharing": [
+        "Compartilhamento de tela"
+      ],
+      "Unlimited meetings per day": [
+        "Reuniões ilimitadas por dia"
+      ],
+      "Up to ${ n } meeting per day": [
+        "Até ${ n } reunião por dia",
+        "Até ${ n } reuniões por dia"
+      ],
+      "Up to ${ n } participant": [
+        "Até ${ n } participante",
+        "Até ${ n } participantes"
       ]
     },
     "Message": {
@@ -9345,6 +9412,12 @@
       ],
       "Docs": [
         "Documentos"
+      ],
+      "Document Size Limit Exceeded": [
+        "Limite de tamanho do documento excedido"
+      ],
+      "Document Size Limit Reached": [
+        "Limite de tamanho do documento atingido"
       ],
       "Document verification failed": [
         "Erro na verificação do documento"

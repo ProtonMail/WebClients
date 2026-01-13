@@ -2656,6 +2656,9 @@
       ],
       "High-speed chats and advanced AI features.": [
         "Υψηλής ταχύτητας συνομιλίες και προηγμένα χαρακτηριστικά AI."
+      ],
+      "Private video calls for the conversations that matter.": [
+        "Ιδιωτικές βιντεοκλήσεις για τις σημαντικές συνομιλίες."
       ]
     },
     "color": {
@@ -3854,6 +3857,11 @@
         "Για ${ MAIL_APP_NAME }"
       ]
     },
+    "customer_support.feature.meet": {
+      "For ${ MEET_APP_NAME }": [
+        "Για ${ MEET_APP_NAME }"
+      ]
+    },
     "customer_support.feature.pass": {
       "For ${ PASS_APP_NAME }": [
         "Για ${ PASS_APP_NAME }"
@@ -4838,6 +4846,9 @@
       "re-activate the previous key": [
         "επανενεργοποιήστε το προηγούμενο κλειδί"
       ],
+      "re-importing": [
+        "επαναεισαγωγή"
+      ],
       "Removed duplicate recipient: ${ recipents }": [
         "Αφαιρέθηκε διπλότυπος παραλήπτης: ${ recipents }",
         "Αφαιρέθηκαν διπλότυποι παραλήπτες: ${ recipents }"
@@ -4945,6 +4956,9 @@
       "There has been an issue with content search. Default search has been used instead.": [
         "Υπήρξε κάποιο ζήτημα με την αναζήτηση περιεχομένων. Χρησιμοποιήθηκε στη θέση της η προεπιλεγμένη αναζήτηση."
       ],
+      "There was a problem decrypting your message. If the issue persists, contact our customer support.": [
+        "Παρουσιάστηκε πρόβλημα κατά την αποκρυπτογράφηση του μηνύματός σας. Εάν το πρόβλημα παραμένει, επικοινωνήστε με την εξυπηρέτηση πελατών μας."
+      ],
       "There was an error when exporting the contacts vCards": [
         "Παρουσιάστηκε σφάλμα κατά την εξαγωγή επαφών σε vCards"
       ],
@@ -5031,11 +5045,14 @@
       "Your emails cannot be decrypted due to a recent password reset. If you remember your previous password, you can ${ reActivateKeyLink } in order to access your messages. ${ learnMoreLink }": [
         "Τα μηνύματα ηλεκτρονικού ταχυδρομείου σας δεν μπορούν να αποκρυπτογραφηθούν λόγω πρόσφατης επαναφοράς κωδικού πρόσβασης. Εάν θυμάστε τον προηγούμενο κωδικό πρόσβασής σας, μπορείτε να ${ reActivateKeyLink } για να αποκτήσετε πρόσβαση στα μηνύματά σας. ${ learnMoreLink }"
       ],
-      "Your emails cannot be decrypted. This may be due to a password reset. ${ learnMoreLink }": [
-        "Τα μηνύματα ηλεκτρονικού ταχυδρομείου σας δεν μπορούν να αποκρυπτογραφηθούν. Αυτό μπορεί να είναι λόγω πρόσφατης επαναφοράς κωδικού πρόσβασης. ${ learnMoreLink }"
-      ],
       "Your import will not be processed.": [
         "Η εισαγωγή σας δεν θα υποβληθεί σε επεξεργασία."
+      ],
+      "Your message cannot be decrypted. If you deleted any of your address keys, try ${ reimportKeyLink } them. ${ learnMoreLink }": [
+        "Το μήνυμά σας δεν μπορεί να αποκρυπτογραφηθεί. Εάν διαγράψατε κάποιο από τα κλειδιά διεύθυνσης σας, δοκιμάστε να τα εισαγάγετε ξανά με το ${ reimportKeyLink }. ${ learnMoreLink }"
+      ],
+      "Your message cannot be decrypted. The key used to encrypt this message does not match any of the keys associated with your address. If you deleted any of your address keys, try ${ reimportKeyLink } them. ${ learnMoreLink }": [
+        "Το μήνυμά σας δεν μπορεί να αποκρυπτογραφηθεί. Το κλειδί που χρησιμοποιήθηκε για την κρυπτογράφηση αυτού του μηνύματος δεν ταιριάζει με κανένα από τα κλειδιά που σχετίζονται με τη διεύθυνσή σας. Εάν διαγράψατε κάποιο από τα κλειδιά της διεύθυνσής σας, δοκιμάστε ${ reimportKeyLink } ξανά. ${ learnMoreLink }"
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Η αναζήτησή σας ταίριαξε με υπερβολικό αριθμό αποτελεσμάτων. Παρακαλούμε περιορίστε την αναζήτησή σας και δοκιμάστε ξανά."
@@ -8211,6 +8228,15 @@
       "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
         "Αυτό το μήνυμα θα μετακινηθεί στα Πρόχειρα, ώστε να μπορείτε να το επεξεργαστείτε. Θα πρέπει να επαναπρογραμματίσετε πότε θα σταλεί."
       ],
+      "This message will be purged on ${ value }": [
+        "Αυτό το μήνυμα θα εκκαθαριστεί την ${ value }"
+      ],
+      "This message will be purged today at ${ value }": [
+        "Αυτό το μήνυμα θα εκκαθαριστεί σήμερα στις ${ value }"
+      ],
+      "This message will be purged tomorrow at ${ value }": [
+        "Αυτό το μήνυμα θα εκκαθαριστεί αύριο στις ${ value }"
+      ],
       "This message will be sent in the morning at ${ formattedTime }": [
         "Αυτό το μήνυμα θα σταλεί το πρωί στις ${ formattedTime }"
       ],
@@ -9398,6 +9424,9 @@
       "Filter Name": [
         "Όνομα φίλτρου"
       ],
+      "Filters": [
+        "Φίλτρα"
+      ],
       "First name": [
         "Όνομα"
       ],
@@ -9445,6 +9474,9 @@
       ],
       "Go to Updates": [
         "Μετάβαση στις Ενημερώσεις"
+      ],
+      "Has attachments": [
+        "Έχει συνημμένα"
       ],
       "Help us improve categories by choosing the one that best fits this email. Thanks for your help!": [
         "Βοηθήστε μας να βελτιώσουμε τις κατηγορίες επιλέγοντας αυτή που ταιριάζει καλύτερα σε αυτό το email. Ευχαριστούμε για τη βοήθειά σας!"
@@ -10332,6 +10364,53 @@
       ],
       "Trash": [
         "Κάδος απορριμμάτων"
+      ]
+    },
+    "meet_2025: Feature": {
+      "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
+        "${ MEET_APP_NAME }: Εμπιστευτικές βιντεοδιασκέψεις για τις σημαντικές συνομιλίες σας"
+      ],
+      "${ n } active meeting at a time": [
+        "${ n } ενεργή σύσκεψη τη φορά",
+        "${ n } ενεργή συσκέψεις τη φορά"
+      ],
+      "24 hours per meeting": [
+        "24 ώρες ανά σύσκεψη"
+      ],
+      "60 minutes per meeting": [
+        "60 λεπτά ανά σύσκεψη"
+      ],
+      "Appointment scheduling": [
+        "Προγραμματισμός ραντεβού"
+      ],
+      "Browser, mobile, and desktop apps": [
+        "Εφαρμογές για προγράμματα περιήγησης, κινητά και επιτραπέζιους υπολογιστές"
+      ],
+      "Built-in chat": [
+        "Ενσωματωμένη συνομιλία"
+      ],
+      "End-to-end encrypted screen sharing and ephemeral in-call chat": [
+        "Κρυπτογραφημένη κοινή χρήση οθόνης διατερματικά και εφήμερη συνομιλία κατά τη διάρκεια της κλήσης"
+      ],
+      "Meeting recording (coming soon)": [
+        "Ηχογράφηση συσκέψεων (σύντομα διαθέσιμη)"
+      ],
+      "One active meeting at a time": [
+        "Μία ενεργή σύσκεψη τη φορά"
+      ],
+      "Screen-sharing": [
+        "Κοινή χρήση οθόνης"
+      ],
+      "Unlimited meetings per day": [
+        "Απεριόριστες συσκέψεις ανά ημέρα"
+      ],
+      "Up to ${ n } meeting per day": [
+        "Έως ${ n } συνάντηση την ημέρα",
+        "Έως ${ n } συναντήσεις την ημέρα"
+      ],
+      "Up to ${ n } participant": [
+        "Έως ${ n } συμμετέχων",
+        "Έως ${ n } συμμετέχοντες"
       ]
     },
     "Message": {
@@ -12553,11 +12632,6 @@
       ],
       "Upgrade to ${ upsellPlanTitle }": [
         "Αναβάθμιση σε ${ upsellPlanTitle }"
-      ]
-    },
-    "Price": {
-      "Free": [
-        "Δωρεάν"
       ]
     },
     "Progress bar description": {

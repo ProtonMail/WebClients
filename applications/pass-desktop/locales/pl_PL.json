@@ -31,6 +31,12 @@
       "Accept and view the item": [
         "Zaakceptuj i zobacz element"
       ],
+      "Account": [
+        "Konto"
+      ],
+      "Account settings": [
+        "Ustawienia konta"
+      ],
       "Add": [
         "Dodaj"
       ],
@@ -369,6 +375,9 @@
       ],
       "Lock ${ PASS_APP_NAME }": [
         "Zablokuj ${ PASS_APP_NAME }"
+      ],
+      "Lock extension": [
+        "Zablokuj rozszerzenie"
       ],
       "Make admin": [
         "Administrator"
@@ -1923,10 +1932,7 @@
         "Przenoszenie wszystkich elementów z sejfu \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Przeniesienie elementu do innego sejfu spowoduje usunięcie jego linków.",
-        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich linków.",
-        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich linków.",
-        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich linków."
+        "Przeniesienie elementu do innego sejfu spowoduje usunięcie jego linków."
       ],
       "Moving items": [
         "Przenoszenie elementów"
@@ -2595,6 +2601,9 @@
       ],
       "${ PASS_APP_NAME } recognizes the websites and apps you use and autofills forms with your credentials for you on any browser or device. No need to copy and paste.": [
         "${ PASS_APP_NAME } rozpoznaje strony internetowe oraz aplikacje i automatycznie uzupełnia formularze Twoimi danymi logowania, niezależnie od przeglądarki i urządzenia. Nie musisz niczego kopiować i wklejać."
+      ],
+      "${ PASS_SHORT_APP_NAME } Monitor": [
+        "${ PASS_SHORT_APP_NAME } Monitor"
       ],
       "${ PASS_SHORT_APP_NAME } version": [
         "Wersja ${ PASS_SHORT_APP_NAME }"
@@ -3498,6 +3507,9 @@
       ],
       "Server": [
         "Serwer"
+      ],
+      "Settings": [
+        "Ustawienia"
       ],
       "Share": [
         "Udostępnij"

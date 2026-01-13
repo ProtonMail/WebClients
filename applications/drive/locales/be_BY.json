@@ -1838,6 +1838,9 @@
       ],
       "High-speed chats and advanced AI features.": [
         "Высакахуткасныя чаты і перадавыя функцыі ШІ."
+      ],
+      "Private video calls for the conversations that matter.": [
+        "Прыватныя відэазванкі для важных размоў."
       ]
     },
     "color": {
@@ -2822,6 +2825,11 @@
     "customer_support.feature.mail": {
       "For ${ MAIL_APP_NAME }": [
         "За ${ MAIL_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.meet": {
+      "For ${ MEET_APP_NAME }": [
+        "Для ${ MEET_APP_NAME }"
       ]
     },
     "customer_support.feature.pass": {
@@ -6982,6 +6990,17 @@
         "Толькі прагляд"
       ]
     },
+    "Into": {
+      "Can edit and manage access": [
+        "Можа рэдагаваць і кіраваць доступам"
+      ],
+      "Can view and edit": [
+        "Можа праглядаць і рэдагаваць"
+      ],
+      "Can view only": [
+        "Можа толькі праглядаць"
+      ]
+    },
     "Item": {
       "file attributes": [
         "атрыбуты файла"
@@ -7085,6 +7104,9 @@
       ],
       "Address": [
         "Адрас"
+      ],
+      "Admin": [
+        "Адміністратар"
       ],
       "Alias title": [
         "Загаловак псеўданіма"
@@ -7958,6 +7980,59 @@
       ],
       "for ${ price }": [
         "за ${ price }"
+      ]
+    },
+    "meet_2025: Feature": {
+      "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
+        "${ MEET_APP_NAME }: канфідэнцыйныя відэаканферэнцыі для важных размоў"
+      ],
+      "${ n } active meeting at a time": [
+        "${ n } актыўная сустрэча адначасова",
+        "${ n } актыўныя сустрэчы адначасова",
+        "${ n } актыўных сустрэч адначасова",
+        "${ n } актыўных сустрэч адначасова"
+      ],
+      "24 hours per meeting": [
+        "24 гадзіны на сустрэчу"
+      ],
+      "60 minutes per meeting": [
+        "60 хвілін на сустрэчу"
+      ],
+      "Appointment scheduling": [
+        "Планаванне сустрэч"
+      ],
+      "Browser, mobile, and desktop apps": [
+        "Браўзер, мабільныя прылады і праграмы для камп'ютараў"
+      ],
+      "Built-in chat": [
+        "Убудаваны чат"
+      ],
+      "End-to-end encrypted screen sharing and ephemeral in-call chat": [
+        "Дэманстрацыя экрана са скразным шыфраваннем і эфемерны чат пры званках"
+      ],
+      "Meeting recording (coming soon)": [
+        "Запісы сустрэч (неўзабаве з'явяцца)"
+      ],
+      "One active meeting at a time": [
+        "Адна актыўная сустрэча адначасова"
+      ],
+      "Screen-sharing": [
+        "Абагулены экран"
+      ],
+      "Unlimited meetings per day": [
+        "Неабмежаваная колькасць сустрэч у дзень"
+      ],
+      "Up to ${ n } meeting per day": [
+        "Да ${ n } сустрэчы ў дзень",
+        "Да ${ n } сустрэч у дзень",
+        "Да ${ n } сустрэч у дзень",
+        "Да ${ n } сустрэч у дзень"
+      ],
+      "Up to ${ n } participant": [
+        "Да ${ n } удзельніка",
+        "Да ${ n } удзельнікаў",
+        "Да ${ n } удзельнікаў",
+        "Да ${ n } удзельнікаў"
       ]
     },
     "Message": {
@@ -10559,11 +10634,6 @@
       ],
       "Upgrade to ${ upsellPlanTitle }": [
         "Палепшыць да ${ upsellPlanTitle }"
-      ]
-    },
-    "Price": {
-      "Free": [
-        "Бясплатна"
       ]
     },
     "Progress bar description": {

@@ -1979,6 +1979,9 @@
       "${ maxSpaceTB } storage": [
         "저장공간 ${ maxSpaceTB }"
       ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers }명 사용자"
+      ],
       "${ planMaxSpace } email storage": [
         "${ planMaxSpace }의 이메일 저장 공간"
       ],
@@ -2114,6 +2117,9 @@
       ],
       "High-speed chats and advanced AI features.": [
         "고속 채팅 및 고급 AI 기능"
+      ],
+      "Private video calls for the conversations that matter.": [
+        "중요한 대화를 위한 개인 영상 통화."
       ]
     },
     "color": {
@@ -3144,6 +3150,11 @@
     "customer_support.feature.mail": {
       "For ${ MAIL_APP_NAME }": [
         "${ MAIL_APP_NAME }용"
+      ]
+    },
+    "customer_support.feature.meet": {
+      "For ${ MEET_APP_NAME }": [
+        "${ MEET_APP_NAME }용"
       ]
     },
     "customer_support.feature.pass": {
@@ -4846,6 +4857,9 @@
     "Features": {
       "15 GB storage": [
         "15 GB 저장공간"
+      ],
+      "4 more privacy services": [
+        "4개 추가 프라이버시 서비스"
       ],
       "@pm.me address": [
         "@pm.me 이메일 주소"
@@ -8105,6 +8119,11 @@
         "선택한 색상:"
       ]
     },
+    "Info (Scribe)": {
+      "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddresses } or ${ addMoreSeats }": [
+        "이메일 작성, 답장 및 교정을 지원합니다. 비활성화된 경우 관리자만 접근할 수 있습니다. 개별 사용자를 ${ userAndAddresses }에서 또는 ${ addMoreSeats }하여 관리합니다."
+      ]
+    },
     "Info for cash payment method": {
       "How to send a cash payment?": [
         "결제 수단 전송 방법"
@@ -8780,12 +8799,6 @@
       ],
       "Numbers": [
         "숫자"
-      ],
-      "OpenVPN / IKEv2 password": [
-        "OpenVPN / IKEv2 비밀번호"
-      ],
-      "OpenVPN / IKEv2 username": [
-        "OpenVPN / IKEv2 사용자 이름"
       ],
       "Operating system": [
         "운영체제"
@@ -9526,6 +9539,50 @@
         "Porkbun 도메인으로 계정을 설정하세요."
       ]
     },
+    "meet_2025: Feature": {
+      "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
+        "${ MEET_APP_NAME }: 중요한 대화를 위한 안전한 영상 회의"
+      ],
+      "${ n } active meeting at a time": [
+        "동시 활성 회의 ${ n }개"
+      ],
+      "24 hours per meeting": [
+        "회의 당 24시간"
+      ],
+      "60 minutes per meeting": [
+        "회의 당 60분"
+      ],
+      "Appointment scheduling": [
+        "일정 예약"
+      ],
+      "Browser, mobile, and desktop apps": [
+        "브라우저, 모바일 및 데스크톱 앱"
+      ],
+      "Built-in chat": [
+        "내장 채팅"
+      ],
+      "End-to-end encrypted screen sharing and ephemeral in-call chat": [
+        "종단간 암호화된 화면 공유 및 임시 통화 중 채팅"
+      ],
+      "Meeting recording (coming soon)": [
+        "회의 녹화 (출시 예정)"
+      ],
+      "One active meeting at a time": [
+        "동싀 활성 회의 1개"
+      ],
+      "Screen-sharing": [
+        "화면 공유"
+      ],
+      "Unlimited meetings per day": [
+        "하루 무제한 회의"
+      ],
+      "Up to ${ n } meeting per day": [
+        "하루 최대 ${ n }개 회의"
+      ],
+      "Up to ${ n } participant": [
+        "최대 ${ n }명 참가자"
+      ]
+    },
     "Member action": {
       "Activate user": [
         "사용자 활성화"
@@ -9656,6 +9713,12 @@
       ],
       "Euro": [
         "유로"
+      ],
+      "Hong Kong dollar": [
+        "홍콩 달러"
+      ],
+      "South Korean won": [
+        "대한민국 원"
       ],
       "Swiss franc": [
         "스위스 프랑"
@@ -10786,9 +10849,6 @@
       ],
       "Number of records exceeds the download limit of 10000": [
         "기록 수가 최대 10000개의 다운로드 제한을 초과합니다."
-      ],
-      "OpenVPN / IKEv2 credentials regenerated": [
-        "OpenVPN / IKEv2 자격 증명 재생성됨"
       ],
       "Reminder has been sent": [
         "알리미가 전송되었습니다."
@@ -11971,11 +12031,6 @@
       ],
       "Upgrade to ${ upsellPlanTitle }": [
         "${ upsellPlanTitle }(으)로 업그레이드"
-      ]
-    },
-    "Price": {
-      "Free": [
-        "무료"
       ]
     },
     "Property type": {

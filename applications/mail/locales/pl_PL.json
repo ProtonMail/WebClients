@@ -4881,9 +4881,6 @@
       "Your emails cannot be decrypted due to a recent password reset. If you remember your previous password, you can ${ reActivateKeyLink } in order to access your messages. ${ learnMoreLink }": [
         "Wiadomości nie mogą zostać odszyfrowane z powodu zresetowania hasła. Jeśli pamiętasz poprzednie hasło, możesz ${ reActivateKeyLink }, aby uzyskać dostęp do wiadomości. ${ learnMoreLink }"
       ],
-      "Your emails cannot be decrypted. This may be due to a password reset. ${ learnMoreLink }": [
-        "Wiadomości nie mogą zostać odszyfrowane. To może być spowodowane zresetowaniem hasła. ${ learnMoreLink }"
-      ],
       "Your import will not be processed.": [
         "Twój import nie zostanie przetworzony."
       ],
@@ -12341,11 +12338,6 @@
       ],
       "Upgrade to ${ upsellPlanTitle }": [
         "Ulepsz do planu ${ upsellPlanTitle }"
-      ]
-    },
-    "Price": {
-      "Free": [
-        "Za darmo"
       ]
     },
     "Progress bar description": {

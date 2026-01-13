@@ -37,6 +37,12 @@
       "Accept and view the item": [
         "Accepter et afficher l'élément"
       ],
+      "Account": [
+        "Compte"
+      ],
+      "Account settings": [
+        "Paramètres du compte"
+      ],
       "Add": [
         "Ajouter"
       ],
@@ -417,6 +423,9 @@
       ],
       "Lock ${ PASS_APP_NAME }": [
         "Verrouiller ${ PASS_APP_NAME }"
+      ],
+      "Lock extension": [
+        "Verrouiller l'extension"
       ],
       "Make admin": [
         "Définir comme administrateur"
@@ -1527,6 +1536,9 @@
       "Admin": [
         "Administrateur"
       ],
+      "After confirming, you will need to accept a permission prompt for ${ PASS_APP_NAME }.": [
+        "Après confirmation, vous devrez accepter une demande d'autorisation pour ${ PASS_APP_NAME }."
+      ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Après avoir importé vos données, vous pouvez supprimer le fichier CSV contenant vos mots de passe pour des raisons de sécurité."
       ],
@@ -1967,8 +1979,7 @@
         "Déplacement de tous les éléments depuis « ${ payload.content.name } »"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Déplacer un élément vers un autre coffre-fort effacera ses liens sécurisés.",
-        "Déplacer des éléments vers un autre coffre-fort effacera leurs liens sécurisés."
+        "Déplacer un élément vers un autre coffre-fort supprimera ses liens sécurisés."
       ],
       "Moving items": [
         "Déplacement des éléments"
@@ -2356,6 +2367,9 @@
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Cette exportation ne sera pas chiffrée et toute personne ayant accès au fichier exporté pourra voir vos mots de passe. Pour des raisons de sécurité, supprimez ce fichier après l'avoir utilisé."
       ],
+      "This feature is currently experimental on Linux. Please ensure your system is up-to-date.": [
+        "Cette fonctionnalité est actuellement expérimentale sous Linux. Veuillez vous assurer que votre système est à jour."
+      ],
       "This item is not currently shared with anyone. Invite people to share it with others.": [
         "Cet élément n'est partagé avec personne pour le moment. Pour le partager avec d'autres personnes, invitez-les."
       ],
@@ -2543,9 +2557,6 @@
       "You may close this tab.": [
         "Vous pouvez fermer cet onglet."
       ],
-      "You may need to accept a permission prompt and may have to restart the application depending on your system.": [
-        "Vous devrez peut-être accepter un prompt d'autorisation et devrez peut-être redémarrer l'application en fonction de votre système."
-      ],
       "You may need to grant accessiblity permission to ${ PASS_APP_NAME }.": [
         "Vous devrez peut-être accorder l'autorisation d'accessibilité à ${ PASS_APP_NAME }."
       ],
@@ -2658,6 +2669,9 @@
       ],
       "${ PASS_APP_NAME } recognizes the websites and apps you use and autofills forms with your credentials for you on any browser or device. No need to copy and paste.": [
         "${ PASS_APP_NAME } reconnaît les sites internet et les applications que vous utilisez et renseigne automatiquement vos identifiants, sur n'importe quel navigateur ou appareil. Fini les copier-coller."
+      ],
+      "${ PASS_SHORT_APP_NAME } Monitor": [
+        "${ PASS_SHORT_APP_NAME } Monitor"
       ],
       "${ PASS_SHORT_APP_NAME } version": [
         "Version de ${ PASS_SHORT_APP_NAME }"
@@ -2990,6 +3004,9 @@
       "Enter email or username": [
         "Saisissez un e-mail ou un nom d’utilisateur."
       ],
+      "Experimental": [
+        "Expérimental"
+      ],
       "Expiration date": [
         "Date d’expiration"
       ],
@@ -3193,6 +3210,9 @@
       ],
       "Language": [
         "Langue"
+      ],
+      "Larger window": [
+        "Fenêtre plus grande"
       ],
       "Last 2 weeks": [
         "Les 2 dernières semaines"
@@ -3566,6 +3586,9 @@
       "Server": [
         "Serveur"
       ],
+      "Settings": [
+        "Paramètres"
+      ],
       "Share": [
         "Partager"
       ],
@@ -3789,7 +3812,7 @@
         "Sites internet"
       ],
       "What's included": [
-        "Ce qui est inclu"
+        "Ce qui est inclus"
       ],
       "WiFi network": [
         "Réseau wifi"

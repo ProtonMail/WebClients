@@ -2166,6 +2166,9 @@
       ],
       "High-speed chats and advanced AI features.": [
         "Chat veloci e funzioni AI avanzate."
+      ],
+      "Private video calls for the conversations that matter.": [
+        "Videochiamate private per le conversazioni importanti."
       ]
     },
     "color": {
@@ -3198,6 +3201,11 @@
     "customer_support.feature.mail": {
       "For ${ MAIL_APP_NAME }": [
         "Per ${ MAIL_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.meet": {
+      "For ${ MEET_APP_NAME }": [
+        "Per ${ MEET_APP_NAME }"
       ]
     },
     "customer_support.feature.pass": {
@@ -8970,11 +8978,11 @@
       "Numbers": [
         "Numeri"
       ],
-      "OpenVPN / IKEv2 password": [
-        "Password OpenVPN / IKEv2"
+      "OpenVPN password": [
+        "Password OpenVPN"
       ],
-      "OpenVPN / IKEv2 username": [
-        "Nome utente OpenVPN / IKEv2"
+      "OpenVPN username": [
+        "Nome utente OpenVPN"
       ],
       "Operating system": [
         "Sistema operativo"
@@ -9736,6 +9744,53 @@
         "Configura il tuo account con il tuo dominio Porkbun."
       ]
     },
+    "meet_2025: Feature": {
+      "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
+        "${ MEET_APP_NAME }: Videoconferenze confidenziali per le conversazioni importanti"
+      ],
+      "${ n } active meeting at a time": [
+        "${ n } riunione attiva alla volta",
+        "${ n } riunioni attive contemporaneamente"
+      ],
+      "24 hours per meeting": [
+        "24 ore per riunione"
+      ],
+      "60 minutes per meeting": [
+        "60 minuti per riunione"
+      ],
+      "Appointment scheduling": [
+        "Pianificazione degli appuntamenti"
+      ],
+      "Browser, mobile, and desktop apps": [
+        "App per browser, per dispositivi mobili e per desktop"
+      ],
+      "Built-in chat": [
+        "Chat integrata"
+      ],
+      "End-to-end encrypted screen sharing and ephemeral in-call chat": [
+        "Condivisione dello schermo con crittografia end-to-end e chat effimera durante la chiamata"
+      ],
+      "Meeting recording (coming soon)": [
+        "Registrazione riunione (prossimamente)"
+      ],
+      "One active meeting at a time": [
+        "Una riunione attiva alla volta"
+      ],
+      "Screen-sharing": [
+        "Condivisione dello schermo"
+      ],
+      "Unlimited meetings per day": [
+        "Riunioni illimitate al giorno"
+      ],
+      "Up to ${ n } meeting per day": [
+        "Fino a ${ n } riunione al giorno",
+        "Fino a ${ n } riunioni al giorno"
+      ],
+      "Up to ${ n } participant": [
+        "Fino a ${ n } partecipante",
+        "Fino a ${ n } partecipanti"
+      ]
+    },
     "Member action": {
       "Activate user": [
         "Attiva l'utente"
@@ -9866,6 +9921,21 @@
       ],
       "Euro": [
         "Euro"
+      ],
+      "Hong Kong dollar": [
+        "Dollaro di Hong Kong"
+      ],
+      "Japanese yen": [
+        "Yen Giapponese"
+      ],
+      "Polish złoty": [
+        "Złoty polacco"
+      ],
+      "Singapore dollar": [
+        "Dollaro di Singapore"
+      ],
+      "South Korean won": [
+        "Won Sud Coreano"
       ],
       "Swiss franc": [
         "Franco svizzero"
@@ -11025,8 +11095,8 @@
       "Number of records exceeds the download limit of 10000": [
         "Il numero di record supera il limite di download di 10000"
       ],
-      "OpenVPN / IKEv2 credentials regenerated": [
-        "Credenziali OpenVPN / IKEv2 rigenerate"
+      "OpenVPN credentials regenerated": [
+        "Credenziali OpenVPN rigenerate"
       ],
       "Reminder has been sent": [
         "Il promemoria è stato inviato"
@@ -12224,11 +12294,6 @@
       ],
       "Upgrade to ${ upsellPlanTitle }": [
         "Effettua l'upgrade a ${ upsellPlanTitle }"
-      ]
-    },
-    "Price": {
-      "Free": [
-        "Gratis"
       ]
     },
     "Property type": {
@@ -15418,11 +15483,11 @@
       "Open pagination": [
         "Apri paginazione"
       ],
-      "OpenVPN / IKEv2 username": [
-        "Nome utente OpenVPN / IKEv2"
-      ],
       "OpenVPN configuration files": [
         "File di configurazione di OpenVPN"
+      ],
+      "OpenVPN username": [
+        "Nome utente OpenVPN"
       ],
       "Org setup": [
         "Configurazione dell'organizzazione"
@@ -16597,6 +16662,9 @@
       ],
       "Android TV": [
         "Android TV"
+      ],
+      "Chromebook": [
+        "Chromebook"
       ],
       "GNU/Linux": [
         "GNU/Linux"

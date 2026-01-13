@@ -1810,6 +1810,9 @@
       "Everything": [
         "Tudo"
       ],
+      "Failed to load OAuth": [
+        "Falha ao carregar o OAuth"
+      ],
       "Install migration app": [
         "Instalar aplicativo de migração"
       ],
@@ -1834,6 +1837,9 @@
       "Not started": [
         "Não iniciado"
       ],
+      "Required to create user accounts": [
+        "Obrigatório para criar contas de usuário"
+      ],
       "Select what you want to migrate, this will apply to all users whether they are created now or later. Migration will start after user accounts are created.": [
         "Selecione o que você deseja migrar, isso se aplicará a todos os usuários, sejam eles criados agora ou depois. A migração começará após a criação das contas de usuário."
       ],
@@ -1845,6 +1851,9 @@
       ],
       "Status": [
         "Status"
+      ],
+      "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Markeplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue. Learn more": [
+        "Para migrar os dados da sua organização, você precisa instalar o aplicativo Assistente de Migração do ${ BRAND_NAME } na Google Workspace Marketplace. Isso concederá permissão ao ${ BRAND_NAME } para copiar seus dados. Após a instalação, volte aqui para continuar. Saiba mais"
       ],
       "Transfer data from": [
         "Transferir dados de"
@@ -2157,6 +2166,9 @@
       ],
       "High-speed chats and advanced AI features.": [
         "Bate-papos de alta velocidade e recursos avançados de IA."
+      ],
+      "Private video calls for the conversations that matter.": [
+        "Videochamadas privadas para as conversas importantes."
       ]
     },
     "color": {
@@ -3189,6 +3201,11 @@
     "customer_support.feature.mail": {
       "For ${ MAIL_APP_NAME }": [
         "Para ${ MAIL_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.meet": {
+      "For ${ MEET_APP_NAME }": [
+        "Por ${ MEET_APP_NAME }"
       ]
     },
     "customer_support.feature.pass": {
@@ -7402,6 +7419,9 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Como você é um usuário fiel, sua conta tem recursos adicionais ativados."
       ],
+      "Some ${ BRAND_NAME } apps may not support security keys yet. If you turn off authenticator app 2FA, you may not be able to sign in to those apps.": [
+        "Alguns aplicativos ${ BRAND_NAME } podem ainda não ter suporte para chaves de segurança. Se você desativar a A2F do aplicativo de autenticação, talvez não consiga iniciar sessão nesses aplicativos."
+      ],
       "Some keys successfully reactivated": [
         "Algumas chaves foram reativadas"
       ],
@@ -8958,11 +8978,11 @@
       "Numbers": [
         "Números"
       ],
-      "OpenVPN / IKEv2 password": [
-        "Senha OpenVPN / IKEv2"
+      "OpenVPN password": [
+        "Senha do OpenVPN"
       ],
-      "OpenVPN / IKEv2 username": [
-        "Nome de usuário OpenVPN / IKEv2"
+      "OpenVPN username": [
+        "Nome de usuário do OpenVPN"
       ],
       "Operating system": [
         "Sistema operacional"
@@ -9724,6 +9744,53 @@
         "Configure sua conta com seu domínio Porkbun."
       ]
     },
+    "meet_2025: Feature": {
+      "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
+        "${ MEET_APP_NAME }: Videoconferência confidencial para as conversas importantes"
+      ],
+      "${ n } active meeting at a time": [
+        "${ n } reunião ativa por vez",
+        "${ n } reuniões ativas por vez"
+      ],
+      "24 hours per meeting": [
+        "24 horas por reunião"
+      ],
+      "60 minutes per meeting": [
+        "60 minutos por reunião"
+      ],
+      "Appointment scheduling": [
+        "Agendamento de compromissos"
+      ],
+      "Browser, mobile, and desktop apps": [
+        "Aplicativos para navegadores, dispositivos móveis e computadores"
+      ],
+      "Built-in chat": [
+        "Bate-papo integrado"
+      ],
+      "End-to-end encrypted screen sharing and ephemeral in-call chat": [
+        "Compartilhamento de tela com criptografia de ponta a ponta e chat efêmero durante a chamada"
+      ],
+      "Meeting recording (coming soon)": [
+        "Gravação da reunião (em breve)"
+      ],
+      "One active meeting at a time": [
+        "Uma reunião ativa por vez"
+      ],
+      "Screen-sharing": [
+        "Compartilhamento de tela"
+      ],
+      "Unlimited meetings per day": [
+        "Reuniões ilimitadas por dia"
+      ],
+      "Up to ${ n } meeting per day": [
+        "Até ${ n } reunião por dia",
+        "Até ${ n } reuniões por dia"
+      ],
+      "Up to ${ n } participant": [
+        "Até ${ n } participante",
+        "Até ${ n } participantes"
+      ]
+    },
     "Member action": {
       "Activate user": [
         "Ativar usuário"
@@ -9854,6 +9921,21 @@
       ],
       "Euro": [
         "Euro"
+      ],
+      "Hong Kong dollar": [
+        "Dólar de Hong Kong"
+      ],
+      "Japanese yen": [
+        "Iene Japonês"
+      ],
+      "Polish złoty": [
+        "Złoty polonês"
+      ],
+      "Singapore dollar": [
+        "Dólar de Singapura"
+      ],
+      "South Korean won": [
+        "Won sul-coreano"
       ],
       "Swiss franc": [
         "Franco suíço"
@@ -11013,8 +11095,8 @@
       "Number of records exceeds the download limit of 10000": [
         "O número de registros excede o limite de download de 10.000"
       ],
-      "OpenVPN / IKEv2 credentials regenerated": [
-        "Credenciais OpenVPN / IKEv2 regeneradas"
+      "OpenVPN credentials regenerated": [
+        "Credenciais OpenVPN regeneradas"
       ],
       "Reminder has been sent": [
         "O lembrete foi enviado"
@@ -12212,11 +12294,6 @@
       ],
       "Upgrade to ${ upsellPlanTitle }": [
         "Faça upgrade para ${ upsellPlanTitle }"
-      ]
-    },
-    "Price": {
-      "Free": [
-        "Gratuito"
       ]
     },
     "Property type": {
@@ -15406,11 +15483,11 @@
       "Open pagination": [
         "Abrir paginação"
       ],
-      "OpenVPN / IKEv2 username": [
-        "Nome de usuário OpenVPN / IKEv2"
-      ],
       "OpenVPN configuration files": [
         "Arquivos de configuração OpenVPN"
+      ],
+      "OpenVPN username": [
+        "Nome de usuário do OpenVPN"
       ],
       "Org setup": [
         "Configuração da organização"

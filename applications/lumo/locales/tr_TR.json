@@ -77,6 +77,9 @@
       "Copy address": [
         "Adresi kopyala"
       ],
+      "Create": [
+        "Ekle"
+      ],
       "Create folder": [
         "Klasör oluştur"
       ],
@@ -185,6 +188,9 @@
       "More options for accounts": [
         "Hesaplar için diğer seçenekler"
       ],
+      "Next page": [
+        "Sonraki sayfa"
+      ],
       "OK": [
         "Tamam"
       ],
@@ -199,6 +205,9 @@
       ],
       "Pay ${ price } now": [
         "Şimdi ${ price } öde"
+      ],
+      "Previous page": [
+        "Önceki sayfa"
       ],
       "Refer a friend": [
         "Arkadaşınıza önerin"
@@ -226,6 +235,9 @@
       ],
       "Resend code": [
         "Kodu yeniden gönder"
+      ],
+      "Reset": [
+        "Sıfırla"
       ],
       "Reset all": [
         "Tümünü sıfırla"
@@ -854,9 +866,6 @@
       "Try again": [
         "Yeniden dene"
       ],
-      "Upload a file": [
-        "Bir dosya yükleyin"
-      ],
       "Upload file and add to knowledge base": [
         "Dosyayı yükle ve bilgi bankasına ekle"
       ],
@@ -1021,9 +1030,6 @@
       ],
       "Last updated on ${ formattedDate }": [
         "Son güncelleme: ${ formattedDate }"
-      ],
-      "Permanently delete your chats. This is irreversible.": [
-        "Sohbetlerinizi kalıcı olarak silin. Bu işlem geri alınamaz."
       ],
       "Sign in to access your account and unlock more features. Don't have one? ${ createLink }": [
         "Hesabınıza erişmek ve daha fazla özelliğe erişmek için oturum açın. Bir hesabınız yok mu? ${ createLink }"
@@ -1218,9 +1224,6 @@
       " files are hidden (unsupported file types)": [
         " dosya gizlenmiş (dosya türü desteklenmiyor)"
       ],
-      " of space": [
-        " toplam alandan"
-      ],
       " talk to your admin.": [
         " yöneticiniz ile görüşün."
       ],
@@ -1239,17 +1242,11 @@
       "Access ${ DRIVE_APP_NAME }": [
         "${ DRIVE_APP_NAME } erişimi"
       ],
-      "Active": [
-        "Etkin"
-      ],
       "Add ${ LUMO_APP_NAME }": [
         "${ LUMO_APP_NAME } uygulamasını ekle"
       ],
       "Add to active": [
         "Etkin olana ekle"
-      ],
-      "Adding to knowledge base...": [
-        "Bilgi bankasına ekleniyor..."
       ],
       "Advanced account and network security in one plan": [
         "Gelişmiş hesap ve ağ güvenliği tek bir tarifede"
@@ -1308,9 +1305,6 @@
       "files": [
         "dosyalar"
       ],
-      "Files": [
-        "Dosyalar"
-      ],
       "files are not currently supported for content extraction.": [
         "dosyalar şu anda içeriklerin çıkarılması için desteklenmiyor."
       ],
@@ -1364,6 +1358,9 @@
       ],
       "Press ${ shiftEnterBoldText } to ask": [
         "Sormak için ${ shiftEnterBoldText } üzerine basın."
+      ],
+      "Private video calls for the conversations that matter.": [
+        "Önemli görüşmeler için gizliliği koruyan görüntülü çağrılar."
       ],
       "Processed content": [
         "İşlenmiş içerik"
@@ -1451,9 +1448,6 @@
       ],
       "Unsupported File Type": [
         "Dosya türü desteklenmiyor"
-      ],
-      "Unused ": [
-        "Kullanılmamış "
       ],
       "Uploading ${ uploadProgress.fileName }": [
         "Yükleniyor ${ uploadProgress.fileName }"
@@ -1718,9 +1712,6 @@
       ],
       "About ${ LUMO_SHORT_APP_NAME }": [
         "${ LUMO_SHORT_APP_NAME } hakkında"
-      ],
-      "Delete all chats": [
-        "Tüm sohbetleri sil"
       ],
       "Don't lose the thread": [
         "Konudan uzaklaşmayın"
@@ -2065,12 +2056,6 @@
       "Built by the team that knows privacy": [
         "Gizliliği bilen bir ekip tarafından geliştirildi"
       ],
-      "Dark mode has been one of our community’s most highly anticipated updates for ${ LUMO_SHORT_APP_NAME }. Throughout the ${ BRAND_NAME } ecosystem, you can customize the look of all of your apps, and now you can customize ${ LUMO_SHORT_APP_NAME }, too, with a light or dark theme.": [
-        "Koyu kip ${ LUMO_SHORT_APP_NAME } için topluluğumuzun en çok beklediği güncellemelerden biriydi. ${ BRAND_NAME } ekosisteminde, tüm uygulamalarınızın görünümünü özelleştirebilirsiniz ve artık ${ LUMO_SHORT_APP_NAME } uygulamasını da açık veya koyu tema ile özelleştirebilirsiniz."
-      ],
-      "Dark mode is here": [
-        "Koyu kip geldi"
-      ],
       "Earlier": [
         "Daha önce"
       ],
@@ -2106,12 +2091,6 @@
       ],
       "No result.": [
         "Herhangi bir sonuç bulunamadı."
-      ],
-      "Personalization lets you tailor how ${ LUMO_SHORT_APP_NAME } interacts with you. Tell ${ LUMO_SHORT_APP_NAME } your name, what you do, and exactly how you want it to respond, witty banter, technical precision, or straight-to-the-point brevity. Because the best AI isn't one-size-fits-all. It's one that feels like it was built just for you.": [
-        "Kişiselleştirme, ${ LUMO_SHORT_APP_NAME } uygulamasının sizinle nasıl etkileşime gireceğini özelleştirmenizi sağlar. ${ LUMO_SHORT_APP_NAME } uygulamasına adınızı, ne iş yaptığınızı ve tam olarak nasıl yanıt vermesini istediğinizi söyleyin: Esprili sohbet, teknik hassasiyet veya doğrudan konuya odaklanan kısalık. Çünkü en iyi yapay zeka, herkese uyan tek bir model değildir. Size özel geliştirilmiş gibi hissettiren yapay zekadır."
-      ],
-      "Personalization: ${ LUMO_SHORT_APP_NAME } for you": [
-        "Kişiselleştirme: Sizin için ${ LUMO_SHORT_APP_NAME }"
       ],
       "The AI that respects your privacy": [
         "Gizliliğinize saygı duyan yapay zeka"
@@ -3006,6 +2985,11 @@
         "${ MAIL_APP_NAME } için"
       ]
     },
+    "customer_support.feature.meet": {
+      "For ${ MEET_APP_NAME }": [
+        "${ MEET_APP_NAME } için"
+      ]
+    },
     "customer_support.feature.pass": {
       "For ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } için"
@@ -3325,6 +3309,9 @@
       ],
       "ZIP code is required": [
         "Posta kodunun yazılması zorunludur"
+      ],
+      "⚠️ Undecryptable name": [
+        "⚠️ Şifresi çözülemeyen ad"
       ]
     },
     "Error message": {
@@ -4162,6 +4149,9 @@
       "Folder location": [
         "Klasör konumu"
       ],
+      "Folder name": [
+        "Klasör adı"
+      ],
       "Get the deal": [
         "Tekliften yararlanın"
       ],
@@ -4179,6 +4169,9 @@
       ],
       "Integrated 2FA authenticator": [
         "Bütünleşik iki adımlı kimlik doğrulayıcı"
+      ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "Klavye kısayolu: ${ shortcut }"
       ],
       "Last name": [
         "Soyad"
@@ -4375,6 +4368,53 @@
       ],
       "for ${ price }": [
         "${ price }"
+      ]
+    },
+    "meet_2025: Feature": {
+      "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
+        "${ MEET_APP_NAME }: Önemli görüşmeler için gizliliği koruyan görüntülü toplantı"
+      ],
+      "${ n } active meeting at a time": [
+        "Aynı anda ${ n } etkin görüşme",
+        "Aynı anda ${ n } etkin görüşme"
+      ],
+      "24 hours per meeting": [
+        "Görüşme başına 24 saat"
+      ],
+      "60 minutes per meeting": [
+        "Görüşme başına 60 dakika"
+      ],
+      "Appointment scheduling": [
+        "Randevu planlama"
+      ],
+      "Browser, mobile, and desktop apps": [
+        "Tarayıcı, mobil ve bilgisayar uygulamaları"
+      ],
+      "Built-in chat": [
+        "Hazır sohbet"
+      ],
+      "End-to-end encrypted screen sharing and ephemeral in-call chat": [
+        "Uçtan uca şifrelenmiş ekran paylaşımı ve geçici çağrı içi sohbet"
+      ],
+      "Meeting recording (coming soon)": [
+        "Görüşme kaydı (yakında)"
+      ],
+      "One active meeting at a time": [
+        "Aynı anda bir etkin görüşme"
+      ],
+      "Screen-sharing": [
+        "Ekran paylaşımı"
+      ],
+      "Unlimited meetings per day": [
+        "Günlük sınırsız görüşme"
+      ],
+      "Up to ${ n } meeting per day": [
+        "Günde ${ n } görüşme",
+        "Günde ${ n } görüşme"
+      ],
+      "Up to ${ n } participant": [
+        "${ n } katılımcı",
+        "${ n } katılımcı"
       ]
     },
     "New Label form": {
@@ -5654,6 +5694,9 @@
       "Company name": [
         "Kuruluş adı"
       ],
+      "Enter a new folder name": [
+        "Yeni bir klasör adı yazın"
+      ],
       "Gift code": [
         "Hediye kodu"
       ],
@@ -5731,11 +5774,6 @@
       ],
       "Upgrade to ${ upsellPlanTitle }": [
         "${ upsellPlanTitle } tarifesine yükselt"
-      ]
-    },
-    "Price": {
-      "Free": [
-        "Ücretsiz"
       ]
     },
     "Safety review": {
@@ -6262,6 +6300,11 @@
         "Bireyler için"
       ]
     },
+    "Time": {
+      "Yesterday": [
+        "Dün"
+      ]
+    },
     "Title": {
       "${ feature } is now active": [
         "${ feature } etkinleştirildi"
@@ -6323,6 +6366,9 @@
       "Coupon": [
         "Kupon"
       ],
+      "Create a new folder": [
+        "Yeni bir klasör ekle"
+      ],
       "Currency": [
         "Para birimi"
       ],
@@ -6352,6 +6398,9 @@
       ],
       "Error": [
         "Hata"
+      ],
+      "Folder": [
+        "Klasör"
       ],
       "Get the apps": [
         "Uygulamaları indirme"

@@ -37,6 +37,12 @@
       "Accept and view the item": [
         "Aceitar e ver esse item"
       ],
+      "Account": [
+        "Conta"
+      ],
+      "Account settings": [
+        "Configurações da conta"
+      ],
       "Add": [
         "Adicionar"
       ],
@@ -417,6 +423,9 @@
       ],
       "Lock ${ PASS_APP_NAME }": [
         "Bloquear o ${ PASS_APP_NAME }"
+      ],
+      "Lock extension": [
+        "Bloquear extensão"
       ],
       "Make admin": [
         "Tornar administrador"
@@ -1527,6 +1536,9 @@
       "Admin": [
         "Administrador"
       ],
+      "After confirming, you will need to accept a permission prompt for ${ PASS_APP_NAME }.": [
+        "Após confirmar, você precisará aceitar um prompt de permissão para ${ PASS_APP_NAME }."
+      ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Após importar seus dados, você pode excluir o arquivo CSV que contém suas senhas por segurança."
       ],
@@ -1736,6 +1748,9 @@
       ],
       "Enable auto-locking to secure your data": [
         "Ative o bloqueio automático para proteger seus dados."
+      ],
+      "Enable offline mode to access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
+        "Ative o modo off-line para acessar seus dados do ${ PASS_SHORT_APP_NAME } caso você perca a conexão com a internet ou se os servidores do ${ BRAND_NAME } estiverem inacessíveis."
       ],
       "Enabling biometrics auto-lock": [
         "Ativando o bloqueio automático"
@@ -1964,8 +1979,7 @@
         "Movendo todos os itens de \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Movendo um item para outro cofre apagará seu link seguro.",
-        "Movendo item para outro cofre apagará seus links seguros."
+        "Movendo um item para outra pasta apagará seus links seguros."
       ],
       "Moving items": [
         "Movendo itens"
@@ -2353,6 +2367,9 @@
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Esta exportação não será criptografada e qualquer pessoa com acesso ao seu arquivo exportado poderá ver suas senhas. Por segurança, exclua-o após terminar de usá-lo."
       ],
+      "This feature is currently experimental on Linux. Please ensure your system is up-to-date.": [
+        "Este recurso é experimental no Linux por enquanto. Certifique-se de que seu sistema esteja atualizado."
+      ],
       "This item is not currently shared with anyone. Invite people to share it with others.": [
         "Este item não está atualmente compartilhado com ninguém. Convide as pessoas a compartilhá-lo com outras pessoas."
       ],
@@ -2493,6 +2510,9 @@
       "When creating/editing a Login on ${ PASS_APP_NAME } the 'username' input will always be visible.": [
         "Ao criar/editar um Início de Sessão no ${ PASS_APP_NAME }, a entrada “nome de usuário” estará sempre visível."
       ],
+      "When enabled, you can still access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
+        "Quando ativado, você ainda consegue acessar seus dados do ${ PASS_SHORT_APP_NAME } se perder a conectividade com a internet ou se os servidores do ${ BRAND_NAME } estiverem inacessíveis."
+      ],
       "When sending an email from this alias, the email will display ${ emailSender } as sender.": [
         "Ao enviar um e-mail a partir desse alias, o e-mail exibirá ${ emailSender } como remetente."
       ],
@@ -2536,9 +2556,6 @@
       ],
       "You may close this tab.": [
         "Você pode fechar esta guia."
-      ],
-      "You may need to accept a permission prompt and may have to restart the application depending on your system.": [
-        "Pode ser necessário aceitar um aviso de permissão e reiniciar o aplicativo, a depender de seu sistema."
       ],
       "You may need to grant accessiblity permission to ${ PASS_APP_NAME }.": [
         "Pode ser necessário conceder permissão de acessibilidade a ${ PASS_APP_NAME }."
@@ -2652,6 +2669,9 @@
       ],
       "${ PASS_APP_NAME } recognizes the websites and apps you use and autofills forms with your credentials for you on any browser or device. No need to copy and paste.": [
         "${ PASS_APP_NAME } reconhece os sites e aplicativos que você usa e preenche automaticamente os formulários com suas credenciais em qualquer navegador ou dispositivo. Não é necessário copiar e colar."
+      ],
+      "${ PASS_SHORT_APP_NAME } Monitor": [
+        "${ PASS_SHORT_APP_NAME } Monitor"
       ],
       "${ PASS_SHORT_APP_NAME } version": [
         "Versão do ${ PASS_SHORT_APP_NAME }"
@@ -2984,6 +3004,9 @@
       "Enter email or username": [
         "Digite o e-mail ou nome de usuário"
       ],
+      "Experimental": [
+        "Experimental"
+      ],
       "Expiration date": [
         "Data de expiração"
       ],
@@ -3187,6 +3210,9 @@
       ],
       "Language": [
         "Idioma"
+      ],
+      "Larger window": [
+        "Janela maior"
       ],
       "Last 2 weeks": [
         "Últimas 2 semanas"
@@ -3559,6 +3585,9 @@
       ],
       "Server": [
         "Servidor"
+      ],
+      "Settings": [
+        "Configurações"
       ],
       "Share": [
         "Compartilhar"

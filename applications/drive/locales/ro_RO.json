@@ -512,7 +512,7 @@
         "Obținere legătură web"
       ],
       "Get mobile and desktop apps": [
-        "Obțineți aplicațiile mobile și pentru desktop"
+        "Aplicații mobile și desktop"
       ],
       "Get secure storage for ${ simplePriceString }": [
         "Obțineți stocare securizată cu ${ simplePriceString }"
@@ -1821,6 +1821,9 @@
       ],
       "High-speed chats and advanced AI features.": [
         "Conversații rapide și funcții avansate de inteligență artificială."
+      ],
+      "Private video calls for the conversations that matter.": [
+        "Apeluri video private pentru conversațiile importante."
       ]
     },
     "color": {
@@ -2805,6 +2808,11 @@
     "customer_support.feature.mail": {
       "For ${ MAIL_APP_NAME }": [
         "Pentru ${ MAIL_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.meet": {
+      "For ${ MEET_APP_NAME }": [
+        "Pentru ${ MEET_APP_NAME }"
       ]
     },
     "customer_support.feature.pass": {
@@ -3802,6 +3810,9 @@
       ],
       "We were not able to load some of your shared items": [
         "Nu sau putut încărca unele dintre articolele partajate."
+      ],
+      "We were not able to load the folder contents": [
+        "Conținutul folderului nu s-a putut încărca."
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Număr maxim de destinatari la care puteți trimite mesaje: ${ maxContacts }",
@@ -6885,6 +6896,17 @@
         "Numai vizualizare"
       ]
     },
+    "Into": {
+      "Can edit and manage access": [
+        "Puteți edita și gestiona accesul"
+      ],
+      "Can view and edit": [
+        "Poate vedea și edita"
+      ],
+      "Can view only": [
+        "Poate doar vedea"
+      ]
+    },
     "Item": {
       "file attributes": [
         "atribute fișier"
@@ -6985,6 +7007,9 @@
       ],
       "Address": [
         "Adresa"
+      ],
+      "Admin": [
+        "Administrator"
       ],
       "Alias title": [
         "Titlu alias"
@@ -7852,6 +7877,56 @@
       ],
       "for ${ price }": [
         "cu ${ price }"
+      ]
+    },
+    "meet_2025: Feature": {
+      "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
+        "${ MEET_APP_NAME }: conferințe video confidențiale pentru conversațiile importante"
+      ],
+      "${ n } active meeting at a time": [
+        "Conferințe active simultan: ${ n }",
+        "Conferințe active simultan: ${ n }",
+        "Conferințe active simultan: ${ n }"
+      ],
+      "24 hours per meeting": [
+        "Conferințe de 24 de ore"
+      ],
+      "60 minutes per meeting": [
+        "60 de minute per întâlnire"
+      ],
+      "Appointment scheduling": [
+        "Planificare întâlniri"
+      ],
+      "Browser, mobile, and desktop apps": [
+        "Aplicații pentru navigator web, mobil și desktop"
+      ],
+      "Built-in chat": [
+        "Sistem de conversații integrat"
+      ],
+      "End-to-end encrypted screen sharing and ephemeral in-call chat": [
+        "Partajare ecran cu criptare bilaterală și conversații temporare pe durata apelului"
+      ],
+      "Meeting recording (coming soon)": [
+        "Înregistrare conferințe (în curând)"
+      ],
+      "One active meeting at a time": [
+        "O conferință activă simultan"
+      ],
+      "Screen-sharing": [
+        "Partajare ecran"
+      ],
+      "Unlimited meetings per day": [
+        "Conferințe nelimitate pe zi"
+      ],
+      "Up to ${ n } meeting per day": [
+        "Maxim conferințe pe zi: ${ n }",
+        "Maxim conferințe pe zi: ${ n }",
+        "Maxim conferințe pe zi: ${ n }"
+      ],
+      "Up to ${ n } participant": [
+        "Maxim participanți: ${ n }",
+        "Maxim participanți: ${ n }",
+        "Maxim participanți: ${ n }"
       ]
     },
     "Message": {
@@ -10342,11 +10417,6 @@
       ],
       "Upgrade to ${ upsellPlanTitle }": [
         "Trecere la ${ upsellPlanTitle }"
-      ]
-    },
-    "Price": {
-      "Free": [
-        "Gratuit"
       ]
     },
     "Progress bar description": {

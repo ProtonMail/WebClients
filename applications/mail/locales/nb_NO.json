@@ -2526,6 +2526,10 @@
       "${ maxSpaceTB } storage": [
         "${ maxSpaceTB } lagring"
       ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } bruker",
+        "Opptil ${ numberOfUsers } brukere"
+      ],
       "${ planMaxSpace } email storage": [
         "${ planMaxSpace } e-postlagring"
       ],
@@ -2652,6 +2656,9 @@
       ],
       "High-speed chats and advanced AI features.": [
         "Høyhastighetschatter og avanserte KI-funksjoner."
+      ],
+      "Private video calls for the conversations that matter.": [
+        "Private videosamtaler for samtalene som betyr noe."
       ]
     },
     "color": {
@@ -3850,6 +3857,11 @@
         "For ${ MAIL_APP_NAME }"
       ]
     },
+    "customer_support.feature.meet": {
+      "For ${ MEET_APP_NAME }": [
+        "For ${ MEET_APP_NAME }"
+      ]
+    },
     "customer_support.feature.pass": {
       "For ${ PASS_APP_NAME }": [
         "For ${ PASS_APP_NAME }"
@@ -4834,6 +4846,9 @@
       "re-activate the previous key": [
         "aktiver forrige nøkkel på nytt"
       ],
+      "re-importing": [
+        "importere igjen"
+      ],
       "Removed duplicate recipient: ${ recipents }": [
         "Fjernet duplisert mottaker: ${ recipents }",
         "Fjernet dupliserte mottakere: ${ recipents }"
@@ -4941,6 +4956,9 @@
       "There has been an issue with content search. Default search has been used instead.": [
         "Det er et problem med innholdssøk. Standard søk er brukt istedenfor."
       ],
+      "There was a problem decrypting your message. If the issue persists, contact our customer support.": [
+        "Det oppstod et problem med dekryptering av meldingen din. Hvis problemet vedvarer, kontakt kundestøtten vår."
+      ],
       "There was an error when exporting the contacts vCards": [
         "Det oppsto en feil under eksport av kontaktenes vCards."
       ],
@@ -5027,11 +5045,14 @@
       "Your emails cannot be decrypted due to a recent password reset. If you remember your previous password, you can ${ reActivateKeyLink } in order to access your messages. ${ learnMoreLink }": [
         "E-postene dine kan ikke dekrypteres på grunn av en nylig tilbakestilling av passord. Hvis du husker ditt forrige passord, kan du ${ reActivateKeyLink } for å få tilgang til meldingene dine. ${ learnMoreLink }"
       ],
-      "Your emails cannot be decrypted. This may be due to a password reset. ${ learnMoreLink }": [
-        "E-postene dine kan ikke dekrypteres. Dette kan skyldes tilbakestilling av passord. ${ learnMoreLink }"
-      ],
       "Your import will not be processed.": [
         "Importen din blir ikke behandlet."
+      ],
+      "Your message cannot be decrypted. If you deleted any of your address keys, try ${ reimportKeyLink } them. ${ learnMoreLink }": [
+        "Meldingen din kan ikke dekrypteres. Hvis du slettet noen av adressenøklene dine, prøv å ${ reimportKeyLink }. ${ learnMoreLink }."
+      ],
+      "Your message cannot be decrypted. The key used to encrypt this message does not match any of the keys associated with your address. If you deleted any of your address keys, try ${ reimportKeyLink } them. ${ learnMoreLink }": [
+        "Meldingen din kan ikke dekrypteres. Nøkkelen som ble brukt til å kryptere meldingen samsvarer ikke med noen av nøklene som er knyttet til adressen din. Hvis du har slettet noen av adressenøklene dine, prøv ${ reimportKeyLink }. ${ learnMoreLink }."
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Søket samsvarte med for mange resultater. Begrens søket, og prøv på nytt."
@@ -7478,6 +7499,9 @@
       "Low Priority": [
         "Lav prioritet"
       ],
+      "Make ${ MAIL_APP_NAME } your default email application.": [
+        "Gjør ${ MAIL_APP_NAME } til standard e-postapplikasjon."
+      ],
       "Manage your folders": [
         "Administrer mappene dine"
       ],
@@ -8203,6 +8227,15 @@
       ],
       "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
         "Denne meldingen flyttes til utkast, slik at du kan redigere den. Du må planlegge på nytt når den skal sendes."
+      ],
+      "This message will be purged on ${ value }": [
+        "Denne meldingen vil bli slettet på ${ value }"
+      ],
+      "This message will be purged today at ${ value }": [
+        "Denne meldingen vil bli slettet i dag kl. ${ value }"
+      ],
+      "This message will be purged tomorrow at ${ value }": [
+        "Denne meldingen vil bli slettet i morgen kl. ${ value }."
       ],
       "This message will be sent in the morning at ${ formattedTime }": [
         "Denne meldingen blir sendt om morgenen kl. ${ formattedTime }"
@@ -9391,6 +9424,9 @@
       "Filter Name": [
         "Filternavn"
       ],
+      "Filters": [
+        "Filtre"
+      ],
       "First name": [
         "Fornavn"
       ],
@@ -9438,6 +9474,9 @@
       ],
       "Go to Updates": [
         "Gå til oppdateringer"
+      ],
+      "Has attachments": [
+        "Har vedlegg"
       ],
       "Help us improve categories by choosing the one that best fits this email. Thanks for your help!": [
         "Hjelp oss med å forbedre kategorier ved å velge den som passer best til denne e-posten. Takk for hjelpen!"
@@ -10325,6 +10364,53 @@
       ],
       "Trash": [
         "Papirkurv"
+      ]
+    },
+    "meet_2025: Feature": {
+      "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
+        "${ MEET_APP_NAME }: konfidensielle videokonferanser for samtalene som betyr noe"
+      ],
+      "${ n } active meeting at a time": [
+        "${ n } aktivt møte om gangen",
+        "${ n } aktive møter om gangen"
+      ],
+      "24 hours per meeting": [
+        "24 timer per møte"
+      ],
+      "60 minutes per meeting": [
+        "60 minutter per møte"
+      ],
+      "Appointment scheduling": [
+        "Avtaleplanlegging"
+      ],
+      "Browser, mobile, and desktop apps": [
+        "Nettleser-, mobil- og skrivebordsapper"
+      ],
+      "Built-in chat": [
+        "Innebygd chat"
+      ],
+      "End-to-end encrypted screen sharing and ephemeral in-call chat": [
+        "Ende-til-ende-kryptert skjermdeling og kortvarig chat under samtaler"
+      ],
+      "Meeting recording (coming soon)": [
+        "Møteopptak (kommer snart)"
+      ],
+      "One active meeting at a time": [
+        "Ett aktivt møte om gangen"
+      ],
+      "Screen-sharing": [
+        "Skjermdeling"
+      ],
+      "Unlimited meetings per day": [
+        "Ubegrenset antall møter per dag"
+      ],
+      "Up to ${ n } meeting per day": [
+        "Opptil ${ n } møte per dag",
+        "Opptil ${ n } møter per dag"
+      ],
+      "Up to ${ n } participant": [
+        "Opptil ${ n } deltaker",
+        "Opptil ${ n } deltakere"
       ]
     },
     "Message": {
@@ -12546,11 +12632,6 @@
       ],
       "Upgrade to ${ upsellPlanTitle }": [
         "Oppgrader til ${ upsellPlanTitle }"
-      ]
-    },
-    "Price": {
-      "Free": [
-        "Gratis"
       ]
     },
     "Progress bar description": {

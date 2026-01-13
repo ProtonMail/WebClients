@@ -37,6 +37,12 @@
       "Accept and view the item": [
         "Acceptera och visa objektet"
       ],
+      "Account": [
+        "Konto"
+      ],
+      "Account settings": [
+        "Kontoinställningar"
+      ],
       "Add": [
         "Lägg till"
       ],
@@ -417,6 +423,9 @@
       ],
       "Lock ${ PASS_APP_NAME }": [
         "Lås ${ PASS_APP_NAME }"
+      ],
+      "Lock extension": [
+        "Lås tillägg"
       ],
       "Make admin": [
         "Gör till admin"
@@ -1960,10 +1969,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Flyttar alla objekt från “${ payload.content.name }“"
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Att flytta ett objekt till annat valv kommer radera dess säkra länkar.",
-        "Att flytta objekt till annat valv kommer radera deras säkra länkar."
-      ],
       "Moving items": [
         "Flyttar objekt"
       ],
@@ -2347,6 +2352,9 @@
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Denna export kommer vara okrypterad och alla som har åtkomst till din exporterade fil kommer att kunna se dina lösenord. Av säkerhetsskäl, ta bort den när du är klar med den."
       ],
+      "This feature is currently experimental on Linux. Please ensure your system is up-to-date.": [
+        "Denna funktion är för närvarande experimentell på Linux. Se till att ditt system är uppdaterat."
+      ],
       "This item is not currently shared with anyone. Invite people to share it with others.": [
         "Detta objekt delas för närvarande inte med någon. Bjud in människor att dela det med andra."
       ],
@@ -2643,6 +2651,9 @@
       ],
       "${ PASS_APP_NAME } recognizes the websites and apps you use and autofills forms with your credentials for you on any browser or device. No need to copy and paste.": [
         "${ PASS_APP_NAME } känner igen de webbplatser och appar som du använder och fyller automatiskt i formulär och inloggningsuppgifter i alla webbläsare och enheter. Du behöver inte kopiera och klistra in."
+      ],
+      "${ PASS_SHORT_APP_NAME } Monitor": [
+        "${ PASS_SHORT_APP_NAME }-Övervakning"
       ],
       "${ PASS_SHORT_APP_NAME } version": [
         "${ PASS_SHORT_APP_NAME }-version"
@@ -2975,6 +2986,9 @@
       "Enter email or username": [
         "Ange e-post eller användarnamn"
       ],
+      "Experimental": [
+        "Experimentell"
+      ],
       "Expiration date": [
         "Utgångsdatum"
       ],
@@ -3178,6 +3192,9 @@
       ],
       "Language": [
         "Språk"
+      ],
+      "Larger window": [
+        "Större fönster"
       ],
       "Last 2 weeks": [
         "Senaste 2 veckorna"
@@ -3547,6 +3564,9 @@
       ],
       "Server": [
         "Server"
+      ],
+      "Settings": [
+        "Inställningar"
       ],
       "Share": [
         "Dela"
