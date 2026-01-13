@@ -1849,6 +1849,9 @@
       ],
       "High-speed chats and advanced AI features.": [
         "Υψηλής ταχύτητας συνομιλίες και προηγμένα χαρακτηριστικά AI."
+      ],
+      "Private video calls for the conversations that matter.": [
+        "Ιδιωτικές βιντεοκλήσεις για τις σημαντικές συνομιλίες."
       ]
     },
     "colon": {
@@ -2886,6 +2889,11 @@
         "Για ${ MAIL_APP_NAME }"
       ]
     },
+    "customer_support.feature.meet": {
+      "For ${ MEET_APP_NAME }": [
+        "Για ${ MEET_APP_NAME }"
+      ]
+    },
     "customer_support.feature.pass": {
       "For ${ PASS_APP_NAME }": [
         "Για ${ PASS_APP_NAME }"
@@ -3217,6 +3225,17 @@
       ],
       "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
         "Η ${ PLAN_NAMES[PLANS.PASS] } συνδρομή είναι σε ειδική τιμή ${ price } ανά έτος. Με την υποβάθμιση στο Free πλάνο, θα χάσετε οριστικά την έκπτωση, ακόμα και αν κάνετε αναβάθμιση ξανά στο μέλλον."
+      ]
+    },
+    "Drawer tab, Action": {
+      "Download for Linux": [
+        "Λήψη για Linux"
+      ],
+      "Download for macOS": [
+        "Λήψη για MacOS"
+      ],
+      "Download for Windows": [
+        "Λήψη για Windows"
       ]
     },
     "driveplus2024: Deal details": {
@@ -3905,6 +3924,9 @@
       ],
       "Try using only letters, numerals, and _.-": [
         "Δοκιμάστε να χρησιμοποιήσετε μόνο γράμματα, αριθμούς και _.-"
+      ],
+      "Unable to load VPN dashboard. Please check your connection and try again.": [
+        "Δεν είναι δυνατή η φόρτωση του πίνακα ελέγχου VPN. Παρακαλούμε ελέγξτε τη σύνδεσή σας και προσπαθήστε ξανά."
       ],
       "Unexpected error, we can't import the contacts": [
         "Μη αναμενόμενο σφάλμα, δεν είναι δυνατή η εισαγωγή των επαφών"
@@ -5029,12 +5051,21 @@
         "${ updated } επαφή ενημερώθηκε επιτυχώς.",
         "${ updated } επαφές ενημερώθηκαν επιτυχώς."
       ],
+      "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
+        "Το ${ VPN_APP_NAME } καλύπτει τη διεύθυνση IP σας, επομένως οι ιστότοποι δεν μπορούν να σας αναγνωρίσουν."
+      ],
       "(${ memberCount } member)": [
         "(${ memberCount } μέλος)",
         "(${ memberCount } μέλη)"
       ],
       "(${ serverPrice }/month)": [
         "(${ serverPrice }/μήνα)"
+      ],
+      "**Auto-connect**: Opens and connects to VPN as soon as you turn on your device.": [
+        "**Αυτόματη σύνδεση**: Ανοίγει και συνδέεται στο VPN μόλις ενεργοποιήσετε τη συσκευή σας."
+      ],
+      "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
+        "**Λειτουργία kill switch**: Σταματά τις διαρροές δεδομένων μπλοκάροντας το διαδίκτυο αν το VPN αποσυνδεθεί απροσδόκητα."
       ],
       "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
         "**Βήμα 1:** Προσκαλέστε τους φίλους σας στο ${ BRAND_NAME } με τον σύνδεσμο παραπομπής σας."
@@ -5073,11 +5104,26 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Ένας αριθμός τηλεφώνου μπορεί να χρησιμοποιηθεί μόνο για την επαλήθευση ενός λογαριασμού ${ BRAND_NAME }"
       ],
+      "A secure connection is essential when working remotely. A VPN protects company data from cyber threats and keeps your work private.": [
+        "Μια ασφαλής σύνδεση είναι απαραίτητη όταν εργάζεστε εξ αποστάσεως. Ένα VPN προστατεύει εταιρικά δεδομένα από απειλές στον κυβερνοχώρο και διατηρεί την εργασία σας ιδιωτική."
+      ],
       "A user is an account associated with a single username, mailbox, and person": [
         "Χρήστης νοείται ένας λογαριασμός συσχετισμένος με μοναδικό όνομα χρήστη, θυρίδα και πρόσωπο"
       ],
+      "A VPN encrypts your connection and hides your IP address, making it much harder for anyone to track or monitor your browsing.": [
+        "Ένα VPN κρυπτογραφεί τη σύνδεσή σας και κρύβει την ΙΡ διεύθυνσή σας, καθιστώντας πολύ πιο δύσκολο για οποιονδήποτε να παρακολουθεί ή να παρακολουθεί την περιήγησή σας."
+      ],
+      "A VPN hides your IP address and encrypts your browsing activity, making it harder for websites, advertisers, and ISPs to track you over time.": [
+        "Ένα VPN κρύβει τη διεύθυνσή ΙΡ σας και κρυπτογραφεί τη δραστηριότητα περιήγησής σας, καθιστώντας πιο δύσκολο για τους ιστότοπους, τους διαφημιστές και τους ISP να σας παρακολουθούν με την πάροδο του χρόνου."
+      ],
+      "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
+        "Ένα VPN είναι μια ασφαλής σήραγγα μεταξύ της συσκευής σας και του διαδικτύου. Αποκρύπτει την τοποθεσία και τη δραστηριότητά σας από τον πάροχο υπηρεσιών διαδικτύου (ISP) και τους ιστότοπους που επισκέπτεστε."
+      ],
       "Account successfully updated": [
         "Ο λογαριασμός ενημερώθηκε επιτυχώς"
+      ],
+      "Ad targeting": [
+        "Στόχευση διαφημίσεων"
       ],
       "Added and removed participants will be notified about all the events in this series.": [
         "Οι συμμετέχοντες που έχουν προστεθεί και αφαιρεθεί θα ειδοποιηθούν για όλες τις εκδηλώσεις αυτής της σειράς."
@@ -5090,6 +5136,9 @@
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Η επαλήθευση διεύθυνσης με αξιόπιστα κλειδιά είναι ενεργοποιημένη για αυτήν τη διεύθυνση. Για να είναι δυνατή η αποστολή σε αυτήν τη διεύθυνση, πρώτα \"εμπιστευθείτε\" τα δημόσια κλειδιά που μπορούν να χρησιμοποιηθούν για αποστολή."
+      ],
+      "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
+        "Οι διαφημιζόμενοι παρακολουθούν την περιήγησή σας για να εμφανίζουν στοχευμένες διαφημίσεις. Το ${ VPN_APP_NAME } αποκλείει ιχνηλάτες και διαφημίσεις, κάνοντας τη σύνδεσή σας ταχύτερη και βελτιώνοντας την εμπειρία σας στο διαδίκτυο."
       ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "Βοηθός με τεχνητή νοημοσύνη που σας βοηθά να δημιουργείτε καλύτερα μηνύματα ηλεκτρονικού ταχυδρομείου, γρήγορα και αβίαστα."
@@ -5240,6 +5289,9 @@
       ],
       "Close this screen to exit.": [
         "Κλείστε αυτήν την οθόνη για έξοδο."
+      ],
+      "Connect to ${ VPN_APP_NAME } to browse privately": [
+        "Συνδεθείτε στο ${ VPN_APP_NAME } για ιδιωτική περιήγηση"
       ],
       "Contact assigned to group ${ contactGroupName }": [
         "Η επαφή προστέθηκε στην ομάδα ${ contactGroupName }"
@@ -5440,8 +5492,14 @@
       "Frequency modifications will be lost.": [
         "Οι τροποποιήσεις συχνότητας θα χαθούν."
       ],
+      "Geoblocking": [
+        "Γεωγραφικός αποκλεισμός"
+      ],
       "Google Pay mark": [
         "Σήμα Google Pay"
+      ],
+      "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
+        "Οι κυβερνήσεις και οι ISP μπορούν να παρακολουθούν τη δραστηριότητά σας στο διαδίκτυο. Κρύβοντας την πραγματική σας IP και κρυπτογραφώντας τη δραστηριότητά σας, η περιήγησή σας γίνεται ιδιωτική."
       ],
       "here": [
         "εδώ"
@@ -5501,6 +5559,9 @@
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Γίνεται εισαγωγή δεδομένων από ${ fromEmail } προς ${ toEmail }."
       ],
+      "In restrictive countries": [
+        "Σε περιοριστικές χώρες"
+      ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "Στο επόμενο βήμα, θα μπορείτε να υποβάλετε μια κατάθεση χρησιμοποιώντας μια διεύθυνση Bitcoin."
       ],
@@ -5527,6 +5588,9 @@
       ],
       "It's better to have:": [
         "Είναι καλύτερα να έχετε:"
+      ],
+      "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
+        "Είναι καλύτερο να χρησιμοποιείτε ένα VPN ανά πάσα στιγμή. Αλλά εδώ είναι όπου οι απειλές στον κυβερνοχώρο μπορεί να είναι οι υψηλότερες:"
       ],
       "JCB logo": [
         "Λογότυπο JCB"
@@ -5618,6 +5682,9 @@
       "Monthly ${ onDayString }": [
         "Μηνιαίως ${ onDayString }"
       ],
+      "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
+        "Τα περισσότερα δημόσια δίκτυα WiFi είναι ασφαλή, αλλά ορισμένα στερούνται ασφάλειας, εκθέτοντάς σας σε απειλές στον κυβερνοχώρο. Ένα VPN κρυπτογραφεί την κίνησή σας, διατηρώντας σας προστατευμένους."
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Ονομάστε το νέο σας φάκελο και επιλέξτε τον γονικό φάκελο στον οποίο θέλετε να τον τοποθετήσετε. Εάν δεν επιλέξετε γονικό φάκελο, αυτός ο νέος φάκελος θα δημιουργηθεί ως φάκελος ανώτατου επιπέδου."
       ],
@@ -5660,6 +5727,9 @@
       "Not a valid URL": [
         "Μη έγκυρο URL"
       ],
+      "Not connected": [
+        "Μη συνδεδεμένο"
+      ],
       "Not on the same day": [
         "Όχι την ίδια ημέρα"
       ],
@@ -5677,6 +5747,9 @@
       ],
       "Occurrences previously updated by the organizer will be kept.": [
         "Οι εμφανίσεις που ενημερώθηκαν προηγουμένως από τον διοργανωτή θα διατηρηθούν."
+      ],
+      "On public WiFi networks": [
+        "Σε δημόσια δίκτυα WiFi"
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Ένα η περισσότερα από τα αξιόπιστα κλειδιά σας έχουν επισημανθεί ως \"παραβιασμένα\" από τον κάτοχό τους. Σας συνιστούμε να τα επισημάνετε ως \"μη αξιόπιστα\"."
@@ -5796,6 +5869,9 @@
       "Privacy by default": [
         "Ιδιωτικότητα από προεπιλογή"
       ],
+      "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
+        "Η ιδιωτική περιήγηση (ή η κατάσταση ανώνυμης περιήγησης) είναι χρήσιμη μόνο για να διατηρείτε τη δραστηριότητά σας κρυφή στη συσκευή σας. Εμποδίζει το πρόγραμμα περιήγησής σας να αποθηκεύει ιστορικό και cookies, αλλά δεν σας κάνει αόρατους. Η υπηρεσία παροχής Internet, ο διαχειριστής δικτύου και οι τοποθεσίες Web που επισκέπτεστε εξακολουθούν να μπορούν να δουν τι κάνετε στο Internet."
+      ],
       "Range already exists.": [
         "Το εύρος υπάρχει ήδη."
       ],
@@ -5823,6 +5899,9 @@
       "Saving event": [
         "Αποθήκευση εκδήλωσης",
         "Αποθήκευση εκδηλώσεων"
+      ],
+      "Scan the QR code with your mobile device": [
+        "Σαρώστε τον κωδικό QR με την κινητή συσκευή σας"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Επιλέξτε τη μορφή ηλεκτρονικού ταχυδρομείου που θέλετε να χρησιμοποιηθεί από προεπιλογή κατά την αποστολή ενός E-mail σε αυτό το E-mail."
@@ -5860,11 +5939,20 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Επειδή είστε πιστός χρήστης, ο λογαριασμός σας έχει ενεργοποιημένες πρόσθετες λειτουργίες."
       ],
+      "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
+        "Ορισμένες κυβερνήσεις αποκλείουν ή περιορίζουν την πρόσβαση σε ορισμένους ιστότοπους. Ένα VPN βοηθά στην παράκαμψη της λογοκρισίας, διατηρώντας παράλληλα τη δραστηριότητα και την ταυτότητά σας ιδιωτικές."
+      ],
       "Some of your answers to occurrences previously updated by the organizer will be lost.": [
         "Μερικές από τις απαντήσεις σας σε γεγονότα που ενημερώθηκαν προηγουμένως από τον διοργανωτή, θα χαθούν."
       ],
+      "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
+        "Ορισμένοι ιστότοποι και υπηρεσίες ροής αποκλείουν περιεχόμενο ανά περιοχή. Ένα VPN σάς επιτρέπει να παρακάμψετε αυτούς τους περιορισμούς και να έχετε ελεύθερη πρόσβαση στο διαδίκτυο."
+      ],
       "Start sharing it with contacts and use it for online services.": [
         "Ξεκινήστε να το μοιράζεστε με επαφές και χρησιμοποιήστε το για ηλεκτρονικές υπηρεσίες."
+      ],
+      "Stay connected effortlessly by enabling the following VPN settings:": [
+        "Μείνετε συνδεδεμένοι χωρίς κόπο ενεργοποιώντας τις ακόλουθες ρυθμίσεις VPN:"
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Υποβάλετε μια κατάθεση χρησιμοποιώντας την ακόλουθη διεύθυνση ή σαρώστε τον κωδικό QR. Η κατάθεσή σας θα εμφανιστεί στον λογαριασμό σας μετά την επιβεβαίωση."
@@ -5884,6 +5972,9 @@
       ],
       "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
         "Η συνδρομή λήγει: Για να διατηρήσετε τα οφέλη του ${ planName }, επανεκκινήστε τη συνδρομή σας στο Google Play Store έως ${ byDate }. ${ reactivateLink }"
+      ],
+      "Surveillance": [
+        "Παρακολούθηση"
       ],
       "Symbols (#$&)": [
         "Σύμβολα (#$&)"
@@ -5969,6 +6060,12 @@
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Αυτός ο σύνδεσμος μπορεί να είναι επίθεση ομογραφίας. Βεβαιωθείτε ότι πρόκειται για το σύνδεσμο που θέλετε να επισκεφθείτε, ή μην το ανοίξετε."
       ],
+      "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
+        "Αυτό σημαίνει ότι ο ISP σας και οι ιστότοποι που επισκέπτεστε δεν μπορούν να συνδέσουν τα προσωπικά σας στοιχεία με τη δραστηριότητά σας στο Internet."
+      ],
+      "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
+        "Αυτός ο μοναδικός κωδικός μπορεί να χρησιμοποιηθεί από ιστότοπους και ISP (internet service providers) για τη σύνδεση της τοποθεσίας και του ιστορικού περιήγησής σας με τη συσκευή σας."
+      ],
       "This will sign you out of all accounts currently logged in.": [
         "Αυτό θα σας αποσυνδέσει από όλους τους λογαριασμούς που είναι συνδεδεμένοι αυτήν τη στιγμή."
       ],
@@ -6011,6 +6108,9 @@
       "Total VPN connections": [
         "Σύνολο συνδέσεων VPN"
       ],
+      "Tracking": [
+        "Παρακολούθηση"
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Δοκιμάστε νέες δυνατότητες, ενημερώσεις και προϊόντα ${ BRAND_NAME } πριν κυκλοφορήσουν στο κοινό. Αυτό θα φορτώσει ξανά την εφαρμογή"
       ],
@@ -6043,6 +6143,9 @@
       ],
       "Visa Secure logo": [
         "λογότυπο Visa Secure"
+      ],
+      "VPN IP": [
+        "VPN IP"
       ],
       "Warning": [
         "Προειδοποίηση"
@@ -6085,6 +6188,12 @@
       ],
       "When can appointments be booked?": [
         "Πότε μπορούν να κλείνονται ραντεβού;"
+      ],
+      "When working remotely": [
+        "Όταν εργάζεστε εξ αποστάσεως"
+      ],
+      "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
+        "Όταν συνδέεστε στο VPN, χρησιμοποιεί τεχνολογία κρυπτογράφησης για να κρύψει τη διεύθυνση IP σας (ένας μοναδικός κωδικός που έχει εκχωρηθεί στη συσκευή σας)."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Όταν ρυθμίσετε τον έλεγχο ταυτοποίησης δύο παραγόντων, σας παρέχουμε κωδικούς ανάκτησης τους οποίους μπορείτε να χρησιμοποιήσετε για να συνδεθείτε σε περίπτωση που χάσετε την πρόσβαση στην εφαρμογή ταυτοποίησης σας."
@@ -6290,6 +6399,15 @@
       "Your information was found on ${ displayedDate }": [
         "Οι πληροφορίες σας βρέθηκαν στις ${ displayedDate }"
       ],
+      "Your internet service provider can monitor and sometimes sell your data, or even restrict what websites you can access.": [
+        "Ο πάροχος υπηρεσιών διαδικτύου σας μπορεί να παρακολουθεί και μερικές φορές να πουλά τα δεδομένα σας ή ακόμα και να περιορίζει τους ιστότοπους στους οποίους μπορείτε να έχετε πρόσβαση."
+      ],
+      "Your IP": [
+        "Η διεύθυνση IP σας"
+      ],
+      "Your IP address is visible and can be used to track your online activity.": [
+        "Η διεύθυνση IP σας είναι ορατή και μπορεί να χρησιμοποιηθεί για την παρακολούθηση της δραστηριότητάς σας στο διαδίκτυο."
+      ],
       "Your login information will not be saved after the import is completed.": [
         "Τα στοιχεία σύνδεσής σας δεν θα αποθηκευτούν μετά την ολοκλήρωση της εισαγωγής."
       ],
@@ -6299,11 +6417,17 @@
       "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
         "Η επόμενη ημερομηνία χρέωσης είναι ${ renewalTime }. Παρακαλούμε επικοινωνήστε με την υποστήριξη εάν χρειάζεστε άμεση αλλαγή πλάνου."
       ],
+      "Your online activity is protected": [
+        "Η δραστηριότητά σας στο διαδίκτυο προστατεύεται"
+      ],
       "Your password was leaked:": [
         "Ο κωδικός πρόσβασής σας διέρρευσε:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Ο αριθμός τηλεφώνου σας θα χρησιμοποιηθεί μόνο για αυτή την εφάπαξ επαλήθευση."
+      ],
+      "Your physical location is visible and can be used to restrict your access to the internet.": [
+        "Η φυσική σας τοποθεσία είναι ορατή και μπορεί να χρησιμοποιηθεί για να περιορίσει την πρόσβασή σας στο διαδίκτυο."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
         "Το προγραμματισμένο πλάνο σας ξεκινά από ${ renewalTime } και θα ανανεώνεται αυτόματα κάθε ${ cycle } μήνα.",
@@ -7033,6 +7157,15 @@
       "Your calendar URL": [
         "Η διεύθυνση URL του ημερολογίου σας"
       ],
+      "Your IP": [
+        "Η διεύθυνση IP σας"
+      ],
+      "Your ISP": [
+        "Ο ISP σας"
+      ],
+      "Your location": [
+        "Η τοποθεσία σας"
+      ],
       "Your password (admin)": [
         "Ο κωδικός σας (διαχειριστής)"
       ],
@@ -7328,6 +7461,53 @@
       ],
       "for ${ price }": [
         "για ${ price }"
+      ]
+    },
+    "meet_2025: Feature": {
+      "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
+        "${ MEET_APP_NAME }: Εμπιστευτικές βιντεοδιασκέψεις για τις σημαντικές συνομιλίες σας"
+      ],
+      "${ n } active meeting at a time": [
+        "${ n } ενεργή σύσκεψη τη φορά",
+        "${ n } ενεργή συσκέψεις τη φορά"
+      ],
+      "24 hours per meeting": [
+        "24 ώρες ανά σύσκεψη"
+      ],
+      "60 minutes per meeting": [
+        "60 λεπτά ανά σύσκεψη"
+      ],
+      "Appointment scheduling": [
+        "Προγραμματισμός ραντεβού"
+      ],
+      "Browser, mobile, and desktop apps": [
+        "Εφαρμογές για προγράμματα περιήγησης, κινητά και επιτραπέζιους υπολογιστές"
+      ],
+      "Built-in chat": [
+        "Ενσωματωμένη συνομιλία"
+      ],
+      "End-to-end encrypted screen sharing and ephemeral in-call chat": [
+        "Κρυπτογραφημένη κοινή χρήση οθόνης διατερματικά και εφήμερη συνομιλία κατά τη διάρκεια της κλήσης"
+      ],
+      "Meeting recording (coming soon)": [
+        "Ηχογράφηση συσκέψεων (σύντομα διαθέσιμη)"
+      ],
+      "One active meeting at a time": [
+        "Μία ενεργή σύσκεψη τη φορά"
+      ],
+      "Screen-sharing": [
+        "Κοινή χρήση οθόνης"
+      ],
+      "Unlimited meetings per day": [
+        "Απεριόριστες συσκέψεις ανά ημέρα"
+      ],
+      "Up to ${ n } meeting per day": [
+        "Έως ${ n } συνάντηση την ημέρα",
+        "Έως ${ n } συναντήσεις την ημέρα"
+      ],
+      "Up to ${ n } participant": [
+        "Έως ${ n } συμμετέχων",
+        "Έως ${ n } συμμετέχοντες"
       ]
     },
     "Message": {
@@ -9544,11 +9724,6 @@
         "Αναβάθμιση σε ${ upsellPlanTitle }"
       ]
     },
-    "Price": {
-      "Free": [
-        "Δωρεάν"
-      ]
-    },
     "Progress bar description": {
       "${ contactsExported.length } out of ${ countContacts } contact successfully exported.": [
         "${ contactsExported.length } από τις ${ countContacts } επαφές έχουν εξαχθεί με επιτυχία.",
@@ -11408,6 +11583,9 @@
       "Deleting contacts": [
         "Διαγραφή επαφών"
       ],
+      "Desktop": [
+        "Υπολογιστής"
+      ],
       "Discard changes?": [
         "Απόρριψη αλλαγών;"
       ],
@@ -11422,6 +11600,9 @@
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Λήψη εφαρμογών ${ DRIVE_APP_NAME }"
+      ],
+      "Download the app": [
+        "Λήψη της εφαρμογής"
       ],
       "Drop to upload": [
         "Αποθέστε εδώ για ανέβασμα"
@@ -11495,6 +11676,9 @@
       "Get **${ referralInfo.uiData.refereeRewardAmount }** in credits with ${ planTitle }": [
         "Λάβετε **${ referralInfo.uiData.refereeRewardAmount }** σε πιστώσεις με το ${ planTitle }"
       ],
+      "Get more from your VPN": [
+        "Αποκτήστε περισσότερα από το VPN σας."
+      ],
       "Get the ${ appName[APP_NAME] } apps": [
         "Λήψη των ${ appName[APP_NAME] } εφαρμογών"
       ],
@@ -11521,6 +11705,9 @@
       ],
       "Host": [
         "Διακομιστής"
+      ],
+      "How does it all work?": [
+        "Πώς λειτουργούν όλα;"
       ],
       "How does it work?": [
         "Πώς λειτουργεί;"
@@ -11565,6 +11752,9 @@
       "Location": [
         "Τοποθεσία"
       ],
+      "Make a secure connection your default": [
+        "Ορισμός ασφαλούς σύνδεσης ως προεπιλογής"
+      ],
       "Merge contacts": [
         "Συγχώνευση Επαφών"
       ],
@@ -11573,6 +11763,9 @@
       ],
       "Minicalendar": [
         "Μίνι ημερολόγιο"
+      ],
+      "Mobile": [
+        "Κινητό"
       ],
       "Need more aliases?": [
         "Χρειάζεστε περισσότερα ψευδώνυμα;"
@@ -11633,6 +11826,9 @@
       ],
       "Previous": [
         "Προηγούμενο"
+      ],
+      "Private browsing vs VPN": [
+        "Ιδιωτική περιήγηση έναντι VPN"
       ],
       "Processing...": [
         "Γίνεται επεξεργασία..."
@@ -11844,6 +12040,9 @@
       "Verifying your payment...": [
         "Γίνεται επαλήθευση της πληρωμής σας..."
       ],
+      "VPN explained": [
+        "Επεξήγηση VPN"
+      ],
       "Warning": [
         "Προειδοποίηση"
       ],
@@ -11865,8 +12064,17 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "Καλώς ορίσατε στο ${ BRAND_NAME } για Business"
       ],
+      "What can a VPN protect you from?": [
+        "Από τι μπορεί να σας προστατεύσει ένα VPN;"
+      ],
+      "What is a VPN?": [
+        "Τι είναι το VPN;"
+      ],
       "What would you like to import?": [
         "Τι θα θέλατε να εισάγετε;"
+      ],
+      "When is it most important to use a VPN?": [
+        "Πότε είναι πιο σημαντικό να χρησιμοποιήσετε ένα VPN;"
       ],
       "You can now create unlimited folders and labels": [
         "Τώρα μπορείτε να δημιουργήσετε απεριόριστους φακέλους και ετικέτες"
