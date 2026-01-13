@@ -403,7 +403,7 @@ export const DriveBrowser = forwardRef<DriveBrowserHandle, DriveBrowserProps>(
                                 // Process the file we already have in memory
                                 const result = await fileProcessingService.processFile(file);
 
-                                if (result.success && result.result && user?.ID) {
+                                if (result.type === 'text' && user?.ID) {
                                     // Find the indexed folder for this upload
                                     const indexedFolder = indexedFolders.find(
                                         (f) => f.nodeUid === currentFolder.nodeUid || f.nodeUid === initialFolderId
@@ -412,7 +412,7 @@ export const DriveBrowser = forwardRef<DriveBrowserHandle, DriveBrowserProps>(
                                     const document: DriveDocument = {
                                         id: nodeUid,
                                         name: file.name,
-                                        content: result.result.convertedContent,
+                                        content: result.content,
                                         mimeType:
                                             file.type ||
                                             getMimeTypeFromExtension(file.name) ||
