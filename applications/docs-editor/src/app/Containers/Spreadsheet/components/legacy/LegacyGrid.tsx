@@ -200,6 +200,7 @@ export function LegacyGrid() {
         isReadonly ? undefined : <GridFooter sheetId={activeSheetId} onRequestAddRows={onRequestAddRows} />
       }
       FilterBox={FilterBox}
+      getFormattedValue={useUI((ui) => ui.legacy.getFormattedValue)}
     />
   )
 }
