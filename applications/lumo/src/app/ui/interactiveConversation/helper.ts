@@ -6,7 +6,7 @@ import { generateSpaceKeyBase64 } from '../../crypto';
 import { sendMessageWithRedux } from '../../lib/lumo-api-client/integrations/redux';
 import { type ContextFilter, ENABLE_U2L_ENCRYPTION, prepareTurns } from '../../llm';
 import { flattenAttachmentsForLlm } from '../../llm/attachments';
-import { calculateSingleAttachmentContextSize } from '../../llm/utils';
+import { countAttachmentToken } from '../../llm/utils';
 import type { AttachmentMap } from '../../redux/slices/core/attachments';
 import { newAttachmentId, pushAttachmentRequest, upsertAttachment } from '../../redux/slices/core/attachments';
 import {
@@ -87,107 +87,175 @@ function collectContextAttachmentIds(messageChain: Message[], contextFilters: Co
 const createLumoErrorHandler = () => (message: GenerationResponseMessage, cId: string) =>
     createGenerationError(getErrorTypeFromMessage(message.type), cId, message);
 
-interface RAGRetrievalResult {
+type RAGRetrievalResult = {
     context: string;
     attachments: Attachment[];
+};
+
+/**
+ * Calculate total token count for a list of attachments.
+ */
+function countTokens(attachments: Attachment[]): number {
+    return attachments.map((attachment) => countAttachmentToken(attachment)).reduce((sum, tokens) => sum + tokens, 0);
 }
 
 /**
- * Get all uploaded files for a project space and calculate their total token count.
- * This is used to determine if we should include all files in the first message
- * instead of relying on search-based retrieval.
- *
- * @param spaceId - The project space ID
- * @param allAttachments - All attachments from Redux state
- * @param alreadyRetrievedDocIds - Set of document IDs already used in conversation
- * @param referencedFileNames - Set of @mentioned file names to exclude
- * @returns Object with uploaded files and their total token count
+ * Get all uploaded files for a project space, excluding already-used and @mentioned files.
  */
 function getUploadedProjectFiles(
     spaceId: string,
-    allAttachments: Record<string, Attachment>,
+    allAttachments: AttachmentMap,
     alreadyRetrievedDocIds: Set<string>,
     referencedFileNames: Set<string>,
-    maxSingleFileTokens?: number
-): { files: Attachment[]; totalTokens: number; hasOversizedFile: boolean } {
-    const uploadedFiles: Attachment[] = [];
-    let totalTokens = 0;
-    let hasOversizedFile = false;
+    maxSingleFileTokens: number = MAX_SINGLE_FILE_TOKENS
+): { files: Attachment[]; hasOversizedFile: boolean } {
+    // Only include files that:
+    // 1. Belong to this project space
+    // 2. Are uploaded files (not auto-retrieved from Drive)
+    // 3. Haven't been used in the conversation yet
+    // 4. Weren't explicitly @mentioned
+    // 5. Have markdown content (successfully processed)
 
-    for (const attachment of Object.values(allAttachments)) {
-        // Only include files that:
-        // 1. Belong to this project space
-        // 2. Are uploaded files (not auto-retrieved from Drive)
-        // 3. Haven't been used in the conversation yet
-        // 4. Weren't explicitly @mentioned
-        // 5. Have markdown content (successfully processed)
-        if (
-            attachment.spaceId === spaceId &&
-            !attachment.autoRetrieved &&
-            !alreadyRetrievedDocIds.has(attachment.id) &&
-            !referencedFileNames.has(attachment.filename.toLowerCase()) &&
-            attachment.markdown
-        ) {
-            const fileTokens = calculateSingleAttachmentContextSize(attachment);
+    const taggedFiles = Object.values(allAttachments)
+        .filter((attachment) => {
+            const { spaceId: attachmentSpaceId, autoRetrieved, id, filename, markdown } = attachment;
+            return (
+                attachmentSpaceId === spaceId &&
+                !autoRetrieved &&
+                !alreadyRetrievedDocIds.has(id) &&
+                !referencedFileNames.has(filename.toLowerCase()) &&
+                markdown
+            );
+        })
+        .map((attachment) => {
+            const tokens = countAttachmentToken(attachment);
+            const isOversize = maxSingleFileTokens !== undefined && tokens > maxSingleFileTokens;
+            return { attachment, tokens, isOversize };
+        });
 
-            // Check if this file exceeds the per-file limit
-            if (maxSingleFileTokens && fileTokens > maxSingleFileTokens) {
-                console.log(
-                    `[RAG] File ${attachment.filename} exceeds per-file limit: ${fileTokens} > ${maxSingleFileTokens} tokens`
-                );
-                hasOversizedFile = true;
-                continue; // Skip this file
-            }
+    const acceptedFiles = taggedFiles.filter((item) => !item.isOversize);
 
-            uploadedFiles.push(attachment);
-            totalTokens += fileTokens;
-        }
+    const files = acceptedFiles.map((item) => item.attachment);
+    const hasOversizedFile = taggedFiles.some((item) => item.isOversize);
+
+    for (const {
+        attachment: { filename },
+        tokens,
+    } of taggedFiles.filter((f) => f.isOversize)) {
+        console.log(`[RAG] File ${filename} exceeds per-file limit: ${tokens} > ${maxSingleFileTokens} tokens`);
     }
 
-    return { files: uploadedFiles, totalTokens, hasOversizedFile };
+    return { files, hasOversizedFile };
 }
 
 /**
- * Retrieve relevant documents from the project's indexed Drive folder and format them for the LLM context.
- * This is the RAG (Retrieval Augmented Generation) function for automatic document injection.
- *
- * Documents are only retrieved for the FIRST user message in a conversation.
- * Follow-up questions already have the document context from the first turn in the conversation history,
- * so re-injecting would cause duplication.
- *
- * Smart filtering:
- * - Gets top N documents by BM25 score
- * - Filters out documents with < 10% relevance relative to the top document
- * - Creates real Attachment objects for persistence and UI display
- *
- * @param query - The user's prompt/question
- * @param spaceId - The project spaceId
- * @param userId - The user's ID for accessing the search service
- * @param isProject - Whether this is a project conversation
- * @param messageChain - The message chain including the current message
- * @returns RAG result with context string and attachments, or undefined if not applicable
+ * Search for RAG documents and filter out zero-score, already-retrieved, and @mentioned files.
  */
-async function retrieveDocumentContextForProject(
+async function retrieveRelevantRagFiles(
+    searchService: SearchService,
     query: string,
     spaceId: string,
-    userId: string | undefined,
-    isProject: boolean,
-    messageChain: Message[] = [],
-    allAttachments: Record<string, Attachment> = {},
-    referencedFileNames: Set<string> = new Set()
-): Promise<RAGRetrievalResult | undefined> {
-    const userMessageCount = messageChain.filter((m) => m.role === Role.User).length;
-
+    alreadyRetrievedDocIds: Set<string>,
+    referencedFileNames: Set<string>
+) {
+    console.log(`[RAG] Calling retrieveForRAG with query="${query.slice(0, 100)}", spaceId=${spaceId}`);
+    const retrievedDocs = await searchService.retrieveForRAG(query, spaceId);
+    const candidateDocs = retrievedDocs
+        .filter((doc) => doc.score > 0)
+        .filter((doc) => !alreadyRetrievedDocIds.has(doc.id))
+        .filter((doc) => !referencedFileNames.has(doc.name.toLowerCase()));
     console.log(
-        `[RAG] retrieveDocumentContextForProject called: isProject=${isProject}, spaceId=${spaceId}, userId=${userId ? 'present' : 'missing'}, userMessages=${userMessageCount}`
+        `[RAG] retrieveForRAG returned ${candidateDocs.length} candidates:`,
+        candidateDocs.map((d) => ({ name: d.name, score: d.score }))
     );
+    return { nRetrieved: retrievedDocs.length, candidateDocs };
+}
 
-    // Only retrieve documents for project conversations
-    if (!isProject || !userId) {
-        console.log(`[RAG] Skipping: isProject=${isProject}, userId=${!!userId}`);
-        return undefined;
+type CandidateDoc = {
+    id: string;
+    name: string;
+    content: string;
+    score: number;
+    isChunk?: boolean; // unsure (duplicated from Attachment?)
+    chunkTitle?: string; // unsure
+    parentDocumentId?: string; // unsure
+};
+
+const RAG_MAX_DOCS = 50;
+const RAG_MIN_RELATIVE_SCORE = 0.4;
+
+function computeNormalizedScore(topScore: number, doc: CandidateDoc) {
+    return topScore > 0 ? doc.score / topScore : 0;
+}
+
+/* Create Attachment objects from retrieved documents
+ * - For uploaded files: reuse existing attachment (document ID = attachment ID)
+ * - For Drive files: check driveNodeId, or create new attachment
+ */
+function ragDocToAttachment(doc: CandidateDoc, topScore: number, spaceId: string, allAttachments: AttachmentMap) {
+    const normalizedScore = computeNormalizedScore(topScore, doc);
+    const { isChunk, chunkTitle, parentDocumentId } = doc;
+    const originalDocId = parentDocumentId || doc.id;
+
+    // Check if this is an uploaded file (document ID matches an existing attachment ID)
+    const uploadedFileAttachment = allAttachments[originalDocId];
+    if (uploadedFileAttachment && !uploadedFileAttachment.autoRetrieved) {
+        // This is an uploaded project file - mark as autoRetrieved for consistent handling with Drive files
+        console.log(`[RAG] Using uploaded file attachment for ${doc.name} (ID: ${uploadedFileAttachment.id})`);
+        return {
+            ...uploadedFileAttachment,
+            relevanceScore: normalizedScore,
+            autoRetrieved: true, // Mark as auto-retrieved (same as Drive files)
+            isUploadedProjectFile: true, // Also mark that this came from project files
+            ...(isChunk && { isChunk, chunkTitle }),
+        };
     }
 
+    // Check if we already have an auto-retrieved attachment for this driveNodeId
+    const existingAutoRetrieved = Object.values(allAttachments).find(
+        (att) => att.autoRetrieved && att.driveNodeId === originalDocId
+    );
+
+    if (existingAutoRetrieved) {
+        // Reuse the existing auto-retrieved attachment, update the relevance score
+        console.log(
+            `[RAG] Reusing existing auto-retrieved attachment for ${doc.name} (ID: ${existingAutoRetrieved.id})`
+        );
+        return {
+            ...existingAutoRetrieved,
+            relevanceScore: normalizedScore,
+            ...(isChunk && { isChunk, chunkTitle }),
+        };
+    }
+
+    // Create a new attachment for Drive files
+    return {
+        // AttachmentPub
+        id: newAttachmentId(),
+        spaceId,
+        uploadedAt: new Date().toISOString(),
+        mimeType: getMimeTypeFromName(doc.name),
+        rawBytes: new TextEncoder().encode(doc.content).length,
+        autoRetrieved: true,
+        driveNodeId: originalDocId,
+        relevanceScore: normalizedScore,
+        ...(isChunk && { isChunk, chunkTitle }),
+        // AttachmentPriv
+        filename: doc.name,
+        markdown: doc.content,
+    };
+}
+
+function ragDocsToAttachments(
+    relevantDocs: CandidateDoc[],
+    topScore: number,
+    spaceId: string,
+    allAttachments: AttachmentMap
+) {
+    return relevantDocs.map((doc) => ragDocToAttachment(doc, topScore, spaceId, allAttachments));
+}
+
+function collectAlreadyRetrievedDocIds(messageChain: Message[], allAttachments: AttachmentMap): Set<string> {
     // Collect document IDs that have already been used in this conversation
     // This includes both driveNodeIds (for Drive files) and attachment IDs (for uploaded files)
     const alreadyRetrievedDocIds = new Set<string>();
@@ -206,225 +274,217 @@ async function retrieveDocumentContextForProject(
     });
 
     console.log(`[RAG] Already retrieved ${alreadyRetrievedDocIds.size} documents in this conversation`);
+    return alreadyRetrievedDocIds;
+}
 
-    // For the first message in a project, check if we should include all uploaded files
-    // instead of relying on search. This ensures better responses for small file sets.
+function trySmallDataOptimization(
+    spaceId: string,
+    allAttachments: AttachmentMap,
+    alreadyRetrievedDocIds: Set<string>,
+    referencedFileNames: Set<string>
+): RAGRetrievalResult | undefined {
+    const { files: uploadedFiles, hasOversizedFile } = getUploadedProjectFiles(
+        spaceId,
+        allAttachments,
+        alreadyRetrievedDocIds,
+        referencedFileNames
+    );
+    const totalTokens = countTokens(uploadedFiles);
+
+    console.log(
+        `[RAG] First message - found ${uploadedFiles.length} uploaded files with ${totalTokens} total tokens${hasOversizedFile ? ' (some files excluded due to size)' : ''}`
+    );
+
+    // If total tokens are under threshold AND no files were excluded due to size, include all uploaded files directly
+    // If we had to exclude oversized files, fall back to search-based retrieval to ensure fair selection
+    if (uploadedFiles.length > 0 && totalTokens <= SMALL_FILE_SET_TOKEN_THRESHOLD && !hasOversizedFile) {
+        console.log(
+            `[RAG] Including all ${uploadedFiles.length} uploaded files (${totalTokens} tokens < ${SMALL_FILE_SET_TOKEN_THRESHOLD} threshold)`
+        );
+
+        // Mark files as auto-retrieved for consistent handling
+        const attachments: Attachment[] = uploadedFiles.map((file) => ({
+            ...file,
+            autoRetrieved: true,
+            isUploadedProjectFile: true,
+            relevanceScore: 1.0, // All files are equally relevant when including everything
+        }));
+
+        // Format context for all files
+        const formattedDocs = uploadedFiles.map((file) => ({
+            id: file.id,
+            name: file.filename,
+            content: file.markdown || '',
+            score: 1.0,
+        }));
+
+        return {
+            context: SearchService.formatRAGContext(formattedDocs),
+            attachments,
+        };
+    } else if (uploadedFiles.length > 0 || hasOversizedFile) {
+        const reason = hasOversizedFile
+            ? 'some files exceed per-file limit'
+            : `total tokens (${totalTokens}) > ${SMALL_FILE_SET_TOKEN_THRESHOLD}`;
+        console.log(`[RAG] Falling back to search-based retrieval: ${reason}`);
+    }
+}
+
+function mostRelevantDocs(candidateDocs: CandidateDoc[]): CandidateDoc[] {
+    // Smart percentile-based filtering
+    const topScore = candidateDocs[0]?.score || 0;
+    const scores = candidateDocs.map((d) => d.score);
+
+    // Calculate the 75th percentile threshold (top 25% of documents)
+    // This means we only include documents scoring in the top quarter
+    const sortedScores = [...scores].sort((a, b) => b - a);
+    const percentile75Index = Math.floor(sortedScores.length * 0.25);
+    const percentile75Threshold = sortedScores[Math.min(percentile75Index, sortedScores.length - 1)] || 0;
+
+    // Also require at least 40% of top score (absolute quality gate)
+    const absoluteThreshold = topScore * RAG_MIN_RELATIVE_SCORE;
+
+    // Use the higher of the two thresholds
+    const effectiveThreshold = Math.max(percentile75Threshold, absoluteThreshold);
+
+    console.log(
+        [
+            `[RAG] Thresholds:`,
+            `top=${topScore.toFixed(4)},`,
+            `p75=${percentile75Threshold.toFixed(4)},`,
+            `min40%=${absoluteThreshold.toFixed(4)},`,
+            `effective=${effectiveThreshold.toFixed(4)}`,
+        ].join(' ')
+    );
+    // Select documents above threshold, with gap detection
+    const relevantDocs: typeof candidateDocs = [];
+
+    for (let i = 0; i < candidateDocs.length && relevantDocs.length < RAG_MAX_DOCS; i++) {
+        const doc = candidateDocs[i]!;
+
+        // Must meet the effective threshold
+        if (doc.score < effectiveThreshold) {
+            console.log(
+                `[RAG] Stopping at doc ${i}: score ${doc.score.toFixed(4)} below threshold ${effectiveThreshold.toFixed(4)}`
+            );
+            break;
+        }
+
+        // Check for score gap with previous doc (if not first) - detect relevance cliffs
+        if (i > 0) {
+            const prevScore = candidateDocs[i - 1]!.score;
+            const dropRatio = doc.score / prevScore;
+            if (dropRatio < 0.5) {
+                // More than 50% drop from previous - this is a relevance cliff
+                console.log(`[RAG] Stopping at doc ${i}: score gap detected (${formatPercent(dropRatio)} of previous)`);
+                break;
+            }
+        }
+
+        relevantDocs.push(doc);
+    }
+    return relevantDocs;
+}
+
+export function formatPercent(x: number | undefined): string {
+    const pc = ((x ?? 0) * 100).toFixed(0);
+    return `${pc}%`;
+}
+
+const debugAttachment = (a: Attachment) => {
+    const { isChunk, chunkTitle, filename, relevanceScore } = a;
+    const chunkInfo = isChunk ? ` [CHUNK: ${chunkTitle || 'untitled'}]` : '';
+    return `${filename}${chunkInfo} (${formatPercent(relevanceScore)})`;
+};
+
+function debugAttachmentsAsList(attachments: Attachment[]) {
+    return attachments
+        .map(debugAttachment)
+        .map((s) => `    - ${s}`)
+        .join('\n');
+}
+
+/**
+ * Retrieve relevant documents from the project's indexed Drive folder for LLM context.
+ *
+ * Smart filtering:
+ * - Gets top N documents by BM25 score
+ * - Filters using percentile (top 25%) and absolute (40% of top) thresholds
+ * - Creates Attachment objects for persistence and UI display
+ */
+async function retrieveDocumentContextForProject(
+    query: string,
+    spaceId: string,
+    userId: string | undefined,
+    isProject: boolean,
+    messageChain: Message[] = [],
+    allAttachments: AttachmentMap = {},
+    referencedFileNames: Set<string> = new Set()
+): Promise<RAGRetrievalResult | undefined> {
+    // Early validation and setup
+    const userMessageCount = messageChain.filter((m) => m.role === Role.User).length;
+    console.log(
+        `[RAG] retrieveDocumentContextForProject called: isProject=${isProject}, spaceId=${spaceId}, userId=${userId ? 'present' : 'missing'}, userMessages=${userMessageCount}`
+    );
+    if (!isProject || !userId) {
+        console.log(`[RAG] Skipping: isProject=${isProject}, userId=${!!userId}`);
+        return undefined;
+    }
+    const searchService = SearchService.get(userId);
+    const alreadyRetrievedDocIds = collectAlreadyRetrievedDocIds(messageChain, allAttachments);
+
+    // Small data optimization: include all files if under token threshold (first message only)
     const isFirstMessage = userMessageCount === 1;
-
     if (isFirstMessage) {
-        const {
-            files: uploadedFiles,
-            totalTokens,
-            hasOversizedFile,
-        } = getUploadedProjectFiles(
+        const smallDataRagResult = trySmallDataOptimization(
             spaceId,
             allAttachments,
             alreadyRetrievedDocIds,
-            referencedFileNames,
-            MAX_SINGLE_FILE_TOKENS
+            referencedFileNames
         );
-
-        console.log(
-            `[RAG] First message - found ${uploadedFiles.length} uploaded files with ${totalTokens} total tokens${hasOversizedFile ? ' (some files excluded due to size)' : ''}`
-        );
-
-        // If total tokens are under threshold AND no files were excluded due to size, include all uploaded files directly
-        // If we had to exclude oversized files, fall back to search-based retrieval to ensure fair selection
-        if (uploadedFiles.length > 0 && totalTokens <= SMALL_FILE_SET_TOKEN_THRESHOLD && !hasOversizedFile) {
-            console.log(
-                `[RAG] Including all ${uploadedFiles.length} uploaded files (${totalTokens} tokens < ${SMALL_FILE_SET_TOKEN_THRESHOLD} threshold)`
-            );
-
-            // Mark files as auto-retrieved for consistent handling
-            const attachments: Attachment[] = uploadedFiles.map((file) => ({
-                ...file,
-                autoRetrieved: true,
-                isUploadedProjectFile: true,
-                relevanceScore: 1.0, // All files are equally relevant when including everything
-            }));
-
-            // Format context for all files
-            const searchService = SearchService.get(userId);
-            const formattedDocs = uploadedFiles.map((file) => ({
-                id: file.id,
-                name: file.filename,
-                content: file.markdown || '',
-                score: 1.0,
-            }));
-
-            return {
-                context: searchService.formatRAGContext(formattedDocs),
-                attachments,
-            };
-        } else if (uploadedFiles.length > 0 || hasOversizedFile) {
-            const reason = hasOversizedFile
-                ? 'some files exceed per-file limit'
-                : `total tokens (${totalTokens}) > ${SMALL_FILE_SET_TOKEN_THRESHOLD}`;
-            console.log(`[RAG] Falling back to search-based retrieval: ${reason}`);
+        if (smallDataRagResult) {
+            return smallDataRagResult;
         }
     }
 
+    // Search and filter candidate documents
     try {
-        const searchService = SearchService.get(userId);
-        console.log(`[RAG] Calling retrieveForRAG with query="${query.slice(0, 100)}", spaceId=${spaceId}`);
-
-        // Get candidates for intelligent filtering (use higher limit to allow more relevant docs through)
-        const candidateDocs = await searchService.retrieveForRAG(query, spaceId, 50, 0);
-
-        console.log(
-            `[RAG] retrieveForRAG returned ${candidateDocs.length} candidates:`,
-            candidateDocs.map((d) => ({ name: d.name, score: d.score }))
+        const { nRetrieved, candidateDocs } = await retrieveRelevantRagFiles(
+            searchService,
+            query,
+            spaceId,
+            alreadyRetrievedDocIds,
+            referencedFileNames
         );
 
-        // Filter out zero-score documents, already-retrieved documents, and @mentioned files
-        const nonZeroDocs = candidateDocs.filter((doc) => {
-            if (doc.score <= 0) return false;
-            if (alreadyRetrievedDocIds.has(doc.id)) return false;
-            // Exclude files that were explicitly @mentioned (their content is already in the message)
-            if (referencedFileNames.has(doc.name.toLowerCase())) {
-                console.log(`[RAG] Excluding @mentioned file from RAG: ${doc.name}`);
-                return false;
-            }
-            return true;
-        });
-
-        if (nonZeroDocs.length === 0) {
+        const nCandidates = candidateDocs.length;
+        if (nCandidates === 0) {
             console.log(`[RAG] No relevant documents found for project ${spaceId}`);
             return undefined;
         }
 
-        // Smart percentile-based filtering
-        const topScore = nonZeroDocs[0]?.score || 0;
-        const scores = nonZeroDocs.map((d) => d.score);
+        const topScore = candidateDocs[0]?.score || 0;
 
-        // Calculate the 75th percentile threshold (top 25% of documents)
-        // This means we only include documents scoring in the top quarter
-        const sortedScores = [...scores].sort((a, b) => b - a);
-        const percentile75Index = Math.floor(sortedScores.length * 0.25);
-        const percentile75Threshold = sortedScores[Math.min(percentile75Index, sortedScores.length - 1)] || 0;
-
-        // Also require at least 40% of top score (absolute quality gate)
-        const MIN_RELATIVE_SCORE = 0.4;
-        const absoluteThreshold = topScore * MIN_RELATIVE_SCORE;
-
-        // Use the higher of the two thresholds
-        const effectiveThreshold = Math.max(percentile75Threshold, absoluteThreshold);
-
-        console.log(
-            `[RAG] Thresholds: top=${topScore.toFixed(4)}, p75=${percentile75Threshold.toFixed(4)}, min40%=${absoluteThreshold.toFixed(4)}, effective=${effectiveThreshold.toFixed(4)}`
-        );
-
-        // Select documents above threshold, with gap detection
-        const relevantDocs: typeof nonZeroDocs = [];
-        const MAX_DOCS = 50; // Allow retrieving all relevant documents (quality gates will filter)
-
-        for (let i = 0; i < nonZeroDocs.length && relevantDocs.length < MAX_DOCS; i++) {
-            const doc = nonZeroDocs[i]!;
-
-            // Must meet the effective threshold
-            if (doc.score < effectiveThreshold) {
-                console.log(
-                    `[RAG] Stopping at doc ${i}: score ${doc.score.toFixed(4)} below threshold ${effectiveThreshold.toFixed(4)}`
-                );
-                break;
-            }
-
-            // Check for score gap with previous doc (if not first) - detect relevance cliffs
-            if (i > 0) {
-                const prevScore = nonZeroDocs[i - 1]!.score;
-                const dropRatio = doc.score / prevScore;
-                if (dropRatio < 0.5) {
-                    // More than 50% drop from previous - this is a relevance cliff
-                    console.log(
-                        `[RAG] Stopping at doc ${i}: score gap detected (${(dropRatio * 100).toFixed(0)}% of previous)`
-                    );
-                    break;
-                }
-            }
-
-            relevantDocs.push(doc);
-        }
-
-        if (relevantDocs.length === 0) {
+        // Apply smart threshold filtering (percentile + gap detection)
+        const relevantDocs = mostRelevantDocs(candidateDocs);
+        const nRelevant = relevantDocs.length;
+        if (nRelevant === 0) {
             console.log(`[RAG] No sufficiently relevant documents found for project ${spaceId}`);
             return undefined;
         }
 
-        // Create Attachment objects from retrieved documents
-        // - For uploaded files: reuse existing attachment (document ID = attachment ID)
-        // - For Drive files: check driveNodeId, or create new attachment
-        const attachments: Attachment[] = relevantDocs.map((doc) => {
-            const normalizedScore = topScore > 0 ? doc.score / topScore : 0;
-            // Extract chunk info from doc if present
-            const isChunk = (doc as { isChunk?: boolean }).isChunk;
-            const chunkTitle = (doc as { chunkTitle?: string }).chunkTitle;
-            // Get parent document ID for chunks
-            const parentDocumentId = (doc as { parentDocumentId?: string }).parentDocumentId;
-            const originalDocId = parentDocumentId || doc.id;
-
-            // Check if this is an uploaded file (document ID matches an existing attachment ID)
-            const uploadedFileAttachment = allAttachments[originalDocId];
-            if (uploadedFileAttachment && !uploadedFileAttachment.autoRetrieved) {
-                // This is an uploaded project file - mark as autoRetrieved for consistent handling with Drive files
-                console.log(`[RAG] Using uploaded file attachment for ${doc.name} (ID: ${uploadedFileAttachment.id})`);
-                return {
-                    ...uploadedFileAttachment,
-                    relevanceScore: normalizedScore,
-                    autoRetrieved: true, // Mark as auto-retrieved (same as Drive files)
-                    isUploadedProjectFile: true, // Also mark that this came from project files
-                    ...(isChunk && { isChunk, chunkTitle }),
-                };
-            }
-
-            // Check if we already have an auto-retrieved attachment for this driveNodeId
-            const existingAutoRetrieved = Object.values(allAttachments).find(
-                (att) => att.autoRetrieved && att.driveNodeId === originalDocId
-            );
-
-            if (existingAutoRetrieved) {
-                // Reuse the existing auto-retrieved attachment, update the relevance score
-                console.log(
-                    `[RAG] Reusing existing auto-retrieved attachment for ${doc.name} (ID: ${existingAutoRetrieved.id})`
-                );
-                return {
-                    ...existingAutoRetrieved,
-                    relevanceScore: normalizedScore,
-                    ...(isChunk && { isChunk, chunkTitle }),
-                };
-            }
-
-            // Create a new attachment for Drive files
-            return {
-                // AttachmentPub
-                id: newAttachmentId(),
-                spaceId,
-                uploadedAt: new Date().toISOString(),
-                mimeType: getMimeTypeFromName(doc.name),
-                rawBytes: new TextEncoder().encode(doc.content).length,
-                autoRetrieved: true,
-                driveNodeId: originalDocId,
-                relevanceScore: normalizedScore,
-                ...(isChunk && { isChunk, chunkTitle }),
-                // AttachmentPriv
-                filename: doc.name,
-                markdown: doc.content,
-            };
-        });
-
+        // Convert documents to attachments and return results
+        const attachments: Attachment[] = ragDocsToAttachments(relevantDocs, topScore, spaceId, allAttachments);
         console.log(
-            `[RAG] Retrieved ${attachments.length} relevant documents for project ${spaceId}:`,
-            `\n  Candidates: ${candidateDocs.length}, Non-zero: ${nonZeroDocs.length}, Selected: ${relevantDocs.length}`,
-            `\n  Top score: ${topScore.toFixed(4)}, Threshold: ${(topScore * MIN_RELATIVE_SCORE).toFixed(4)}`,
-            `\n  Selected: ${attachments
-                .map((a) => {
-                    const chunkInfo = a.isChunk ? ` [CHUNK: ${a.chunkTitle || 'untitled'}]` : '';
-                    return `${a.filename}${chunkInfo} (${((a.relevanceScore ?? 0) * 100).toFixed(0)}%)`;
-                })
-                .join(', ')}`
+            [
+                `[RAG] Retrieved ${attachments.length} relevant documents for project ${spaceId}:`,
+                `  Retrieved: ${nRetrieved}, candidates: ${nCandidates}, relevant: ${nRelevant}`,
+                `  Top score: ${topScore.toFixed(4)}, Threshold: ${(topScore * RAG_MIN_RELATIVE_SCORE).toFixed(4)}`,
+                `  Selected docs: \n${debugAttachmentsAsList(attachments)}`,
+            ].join('\n')
         );
-
         return {
-            context: searchService.formatRAGContext(relevantDocs),
+            context: SearchService.formatRAGContext(relevantDocs),
             attachments,
         };
     } catch (error) {
