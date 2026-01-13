@@ -27,6 +27,10 @@
 		border-block-end: 1px solid var(--table-border-color);
 	}
 
+	.show-when-stacked {
+		display: none;
+	}
+
 	// NEW RESPONSIVE TABLES
 	&--responsive {
 		@container (max-width: 35rem) {
@@ -56,6 +60,18 @@
 
 			td {
 				padding-block-end: var(--space-2);
+			}
+
+			td.text-left-when-stacked {
+				text-align: start;
+			}
+
+			.show-when-stacked {
+				display: block;
+			}
+
+			.hide-when-stacked {
+				display: none;
 			}
 		}
 	}
