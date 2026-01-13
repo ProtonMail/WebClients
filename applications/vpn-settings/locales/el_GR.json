@@ -2166,6 +2166,9 @@
       ],
       "High-speed chats and advanced AI features.": [
         "Υψηλής ταχύτητας συνομιλίες και προηγμένα χαρακτηριστικά AI."
+      ],
+      "Private video calls for the conversations that matter.": [
+        "Ιδιωτικές βιντεοκλήσεις για τις σημαντικές συνομιλίες."
       ]
     },
     "color": {
@@ -3198,6 +3201,11 @@
     "customer_support.feature.mail": {
       "For ${ MAIL_APP_NAME }": [
         "Για ${ MAIL_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.meet": {
+      "For ${ MEET_APP_NAME }": [
+        "Για ${ MEET_APP_NAME }"
       ]
     },
     "customer_support.feature.pass": {
@@ -8970,11 +8978,11 @@
       "Numbers": [
         "Αριθμοί"
       ],
-      "OpenVPN / IKEv2 password": [
-        "Κωδικός πρόσβασης OpenVPN / IKEv2"
+      "OpenVPN password": [
+        "Κωδικός πρόσβασης OpenVPN"
       ],
-      "OpenVPN / IKEv2 username": [
-        "Όνομα χρήστη OpenVPN / IKEv2"
+      "OpenVPN username": [
+        "Όνομα χρήστη OpenVPN"
       ],
       "Operating system": [
         "Λειτουργικό σύστημα (OS)"
@@ -9736,6 +9744,53 @@
         "Ρυθμίστε τον λογαριασμό σας με τον τομέα Porkbun σας."
       ]
     },
+    "meet_2025: Feature": {
+      "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
+        "${ MEET_APP_NAME }: Εμπιστευτικές βιντεοδιασκέψεις για τις σημαντικές συνομιλίες σας"
+      ],
+      "${ n } active meeting at a time": [
+        "${ n } ενεργή σύσκεψη τη φορά",
+        "${ n } ενεργή συσκέψεις τη φορά"
+      ],
+      "24 hours per meeting": [
+        "24 ώρες ανά σύσκεψη"
+      ],
+      "60 minutes per meeting": [
+        "60 λεπτά ανά σύσκεψη"
+      ],
+      "Appointment scheduling": [
+        "Προγραμματισμός ραντεβού"
+      ],
+      "Browser, mobile, and desktop apps": [
+        "Εφαρμογές για προγράμματα περιήγησης, κινητά και επιτραπέζιους υπολογιστές"
+      ],
+      "Built-in chat": [
+        "Ενσωματωμένη συνομιλία"
+      ],
+      "End-to-end encrypted screen sharing and ephemeral in-call chat": [
+        "Κρυπτογραφημένη κοινή χρήση οθόνης διατερματικά και εφήμερη συνομιλία κατά τη διάρκεια της κλήσης"
+      ],
+      "Meeting recording (coming soon)": [
+        "Ηχογράφηση συσκέψεων (σύντομα διαθέσιμη)"
+      ],
+      "One active meeting at a time": [
+        "Μία ενεργή σύσκεψη τη φορά"
+      ],
+      "Screen-sharing": [
+        "Κοινή χρήση οθόνης"
+      ],
+      "Unlimited meetings per day": [
+        "Απεριόριστες συσκέψεις ανά ημέρα"
+      ],
+      "Up to ${ n } meeting per day": [
+        "Έως ${ n } συνάντηση την ημέρα",
+        "Έως ${ n } συναντήσεις την ημέρα"
+      ],
+      "Up to ${ n } participant": [
+        "Έως ${ n } συμμετέχων",
+        "Έως ${ n } συμμετέχοντες"
+      ]
+    },
     "Member action": {
       "Activate user": [
         "Ενεργοποίηση χρήστη"
@@ -9866,6 +9921,21 @@
       ],
       "Euro": [
         "Ευρώ"
+      ],
+      "Hong Kong dollar": [
+        "Δολάριο Χονγκ-Κονγκ"
+      ],
+      "Japanese yen": [
+        "Ιαπωνικό Γιεν"
+      ],
+      "Polish złoty": [
+        "Πολωνικό Ζλότι"
+      ],
+      "Singapore dollar": [
+        "Δολάριο Σιγκαπούρης"
+      ],
+      "South Korean won": [
+        "Γουόν Νότιας Κορέας"
       ],
       "Swiss franc": [
         "Ελβετικό Φράγκο"
@@ -11021,8 +11091,8 @@
       "Number of records exceeds the download limit of 10000": [
         "Ο αριθμός των εγγραφών υπερβαίνει το όριο λήψης των 10000"
       ],
-      "OpenVPN / IKEv2 credentials regenerated": [
-        "Τα διαπιστευτήρια του OpenVPN / IKEv2 επαναδημιουργήθηκαν"
+      "OpenVPN credentials regenerated": [
+        "Τα διαπιστευτήρια του OpenVPN επαναδημιουργήθηκαν"
       ],
       "Reminder has been sent": [
         "Η υπενθύμιση έχει σταλεί"
@@ -12217,11 +12287,6 @@
       ],
       "Upgrade to ${ upsellPlanTitle }": [
         "Αναβάθμιση σε ${ upsellPlanTitle }"
-      ]
-    },
-    "Price": {
-      "Free": [
-        "Δωρεάν"
       ]
     },
     "Property type": {
@@ -15411,11 +15476,11 @@
       "Open pagination": [
         "Άνοιγμα σελιδοποίησης"
       ],
-      "OpenVPN / IKEv2 username": [
-        "Όνομα χρήστη OpenVPN / IKEv2"
-      ],
       "OpenVPN configuration files": [
         "Αρχεία διαμόρφωσης OpenVPN"
+      ],
+      "OpenVPN username": [
+        "Όνομα χρήστη OpenVPN"
       ],
       "Org setup": [
         "Ρύθμιση οργανισμού"

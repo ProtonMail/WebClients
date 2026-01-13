@@ -2200,6 +2200,9 @@
       ],
       "High-speed chats and advanced AI features.": [
         "Velmi rychlé konverzace a pokročilé funkce AI."
+      ],
+      "Private video calls for the conversations that matter.": [
+        "Soukromé videohovory pro důležité konverzace."
       ]
     },
     "color": {
@@ -3236,6 +3239,11 @@
     "customer_support.feature.mail": {
       "For ${ MAIL_APP_NAME }": [
         "Pro ${ MAIL_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.meet": {
+      "For ${ MEET_APP_NAME }": [
+        "Pro ${ MEET_APP_NAME }"
       ]
     },
     "customer_support.feature.pass": {
@@ -9208,11 +9216,11 @@
       "Numbers": [
         "Číslice"
       ],
-      "OpenVPN / IKEv2 password": [
-        "Heslo OpenVPN / IKEv2"
+      "OpenVPN password": [
+        "Heslo OpenVPN"
       ],
-      "OpenVPN / IKEv2 username": [
-        "Uživatelské jméno OpenVPN / IKEv2"
+      "OpenVPN username": [
+        "Uživatelské jméno OpenVPN"
       ],
       "Operating system": [
         "Operační systém"
@@ -9988,6 +9996,59 @@
         "Nastavte svůj účet s doménou Porkbun."
       ]
     },
+    "meet_2025: Feature": {
+      "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
+        "${ MEET_APP_NAME }: Důvěrné videokonference pro důležité konverzace"
+      ],
+      "${ n } active meeting at a time": [
+        "${ n } aktivní schůzka ve stejný čas",
+        "${ n } aktivní schůzky ve stejný čas",
+        "${ n } aktivních schůzek ve stejný čas",
+        "${ n } aktivních schůzek ve stejný čas"
+      ],
+      "24 hours per meeting": [
+        "Schůzka o délce 24 hodin"
+      ],
+      "60 minutes per meeting": [
+        "Schůzka o délce 60 minut"
+      ],
+      "Appointment scheduling": [
+        "Plánování schůzek"
+      ],
+      "Browser, mobile, and desktop apps": [
+        "Aplikace pro prohlížeče, mobilní telefony a desktopy"
+      ],
+      "Built-in chat": [
+        "Integrovaný chat"
+      ],
+      "End-to-end encrypted screen sharing and ephemeral in-call chat": [
+        "Sdílení obrazovky s koncovým šifrováním a dočasný chat během hovoru"
+      ],
+      "Meeting recording (coming soon)": [
+        "Nahrávání schůzky (již brzy)"
+      ],
+      "One active meeting at a time": [
+        "Jedna aktivní schůzka ve stejný čas"
+      ],
+      "Screen-sharing": [
+        "Sdílení obrazovky"
+      ],
+      "Unlimited meetings per day": [
+        "Neomezený počet schůzek za den"
+      ],
+      "Up to ${ n } meeting per day": [
+        "Až ${ n } schůzka za den",
+        "Až ${ n } schůzky za den",
+        "Až ${ n } schůzek za den",
+        "Až ${ n } schůzek za den"
+      ],
+      "Up to ${ n } participant": [
+        "Až ${ n } účastník",
+        "Až ${ n } účastníci",
+        "Až ${ n } účastníků",
+        "Až ${ n } účastníků"
+      ]
+    },
     "Member action": {
       "Activate user": [
         "Aktivovat uživatele"
@@ -10118,6 +10179,21 @@
       ],
       "Euro": [
         "Euro"
+      ],
+      "Hong Kong dollar": [
+        "Hongkongský dolar"
+      ],
+      "Japanese yen": [
+        "Japonský jen"
+      ],
+      "Polish złoty": [
+        "Polský zlotý"
+      ],
+      "Singapore dollar": [
+        "Singapurský dolar"
+      ],
+      "South Korean won": [
+        "Jihokorejský won"
       ],
       "Swiss franc": [
         "Švýcarský frank"
@@ -11303,8 +11379,8 @@
       "Number of records exceeds the download limit of 10000": [
         "Počet záznamů překračuje limit počtu stahování 10000"
       ],
-      "OpenVPN / IKEv2 credentials regenerated": [
-        "OpenVPN / IKEv2 údaje byly obnoveny"
+      "OpenVPN credentials regenerated": [
+        "Přihlašovací údaje OpenVPN byly znovu vygenerovány"
       ],
       "Reminder has been sent": [
         "Připomenutí bylo odesláno"
@@ -12526,11 +12602,6 @@
       ],
       "Upgrade to ${ upsellPlanTitle }": [
         "Navýšit na ${ upsellPlanTitle }"
-      ]
-    },
-    "Price": {
-      "Free": [
-        "Zdarma"
       ]
     },
     "Property type": {
@@ -15846,11 +15917,11 @@
       "Open pagination": [
         "Otevřít stránkování"
       ],
-      "OpenVPN / IKEv2 username": [
-        "Uživatelské jméno OpenVPN / IKEv2"
-      ],
       "OpenVPN configuration files": [
         "Konfigurační soubory OpenVPN"
+      ],
+      "OpenVPN username": [
+        "Uživatelské jméno OpenVPN"
       ],
       "Org setup": [
         "Nastavení organizace"

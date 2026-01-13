@@ -2025,6 +2025,10 @@
       "${ maxSpaceTB } storage": [
         "${ maxSpaceTB } lagring"
       ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } bruker",
+        "Opptil ${ numberOfUsers } brukere"
+      ],
       "${ planMaxSpace } email storage": [
         "${ planMaxSpace } e-postlagring"
       ],
@@ -2162,6 +2166,9 @@
       ],
       "High-speed chats and advanced AI features.": [
         "Høyhastighetschatter og avanserte KI-funksjoner."
+      ],
+      "Private video calls for the conversations that matter.": [
+        "Private videosamtaler for samtalene som betyr noe."
       ]
     },
     "color": {
@@ -3194,6 +3201,11 @@
     "customer_support.feature.mail": {
       "For ${ MAIL_APP_NAME }": [
         "For ${ MAIL_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.meet": {
+      "For ${ MEET_APP_NAME }": [
+        "For ${ MEET_APP_NAME }"
       ]
     },
     "customer_support.feature.pass": {
@@ -7407,6 +7419,9 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Siden du er en lojal bruker, har din konto tilleggsfunksjoner aktivert."
       ],
+      "Some ${ BRAND_NAME } apps may not support security keys yet. If you turn off authenticator app 2FA, you may not be able to sign in to those apps.": [
+        "Enkelte ${ BRAND_NAME }-apper støtter kanskje ikke sikkerhetsnøkler ennå. Hvis du slår av autentiseringsappen 2FA, kan du kanskje ikke logge på disse appene."
+      ],
       "Some keys successfully reactivated": [
         "Noen nøkler aktivert på nytt"
       ],
@@ -8963,12 +8978,6 @@
       "Numbers": [
         "Tall"
       ],
-      "OpenVPN / IKEv2 password": [
-        "OpenVPN / IKEv2-passord"
-      ],
-      "OpenVPN / IKEv2 username": [
-        "OpenVPN / IKEv2-brukernavn"
-      ],
       "Operating system": [
         "Operativsystem"
       ],
@@ -9729,6 +9738,53 @@
         "Sett opp kontoen med Porkbun-domenet ditt."
       ]
     },
+    "meet_2025: Feature": {
+      "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
+        "${ MEET_APP_NAME }: konfidensielle videokonferanser for samtalene som betyr noe"
+      ],
+      "${ n } active meeting at a time": [
+        "${ n } aktivt møte om gangen",
+        "${ n } aktive møter om gangen"
+      ],
+      "24 hours per meeting": [
+        "24 timer per møte"
+      ],
+      "60 minutes per meeting": [
+        "60 minutter per møte"
+      ],
+      "Appointment scheduling": [
+        "Avtaleplanlegging"
+      ],
+      "Browser, mobile, and desktop apps": [
+        "Nettleser-, mobil- og skrivebordsapper"
+      ],
+      "Built-in chat": [
+        "Innebygd chat"
+      ],
+      "End-to-end encrypted screen sharing and ephemeral in-call chat": [
+        "Ende-til-ende-kryptert skjermdeling og kortvarig chat under samtaler"
+      ],
+      "Meeting recording (coming soon)": [
+        "Møteopptak (kommer snart)"
+      ],
+      "One active meeting at a time": [
+        "Ett aktivt møte om gangen"
+      ],
+      "Screen-sharing": [
+        "Skjermdeling"
+      ],
+      "Unlimited meetings per day": [
+        "Ubegrenset antall møter per dag"
+      ],
+      "Up to ${ n } meeting per day": [
+        "Opptil ${ n } møte per dag",
+        "Opptil ${ n } møter per dag"
+      ],
+      "Up to ${ n } participant": [
+        "Opptil ${ n } deltaker",
+        "Opptil ${ n } deltakere"
+      ]
+    },
     "Member action": {
       "Activate user": [
         "Aktiver bruker"
@@ -9859,6 +9915,21 @@
       ],
       "Euro": [
         "Euro"
+      ],
+      "Hong Kong dollar": [
+        "Hongkong-dollar"
+      ],
+      "Japanese yen": [
+        "Japanske yen"
+      ],
+      "Polish złoty": [
+        "Polske zloty"
+      ],
+      "Singapore dollar": [
+        "Singapore-dollar"
+      ],
+      "South Korean won": [
+        "Sørkoreansk won"
       ],
       "Swiss franc": [
         "Sveitsisk franc"
@@ -11005,9 +11076,6 @@
       ],
       "Number of records exceeds the download limit of 10000": [
         "Antall poster overskrider nedlastingsgrensen på 10000"
-      ],
-      "OpenVPN / IKEv2 credentials regenerated": [
-        "OpenVPN / IKEv2-påloggingsinformasjon generert på nytt"
       ],
       "Reminder has been sent": [
         "Påminnelse er sendt"
@@ -12202,11 +12270,6 @@
       ],
       "Upgrade to ${ upsellPlanTitle }": [
         "Oppgrader til ${ upsellPlanTitle }"
-      ]
-    },
-    "Price": {
-      "Free": [
-        "Gratis"
       ]
     },
     "Property type": {
@@ -15391,9 +15454,6 @@
       ],
       "Open pagination": [
         "Åpne sidenummerering"
-      ],
-      "OpenVPN / IKEv2 username": [
-        "OpenVPN / IKEv2-brukernavn"
       ],
       "OpenVPN configuration files": [
         "OpenVPN-konfigurasjonsfiler"

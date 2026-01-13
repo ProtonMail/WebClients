@@ -411,7 +411,7 @@
         "Redigér adgangskode"
       ],
       "Edit phone number": [
-        "Rediger telefonnummer"
+        "Redigér telefonnummer"
       ],
       "Edit servers": [
         "Rediger servere"
@@ -2166,6 +2166,9 @@
       ],
       "High-speed chats and advanced AI features.": [
         "Højhastighedschats og avancerede AI-funktioner."
+      ],
+      "Private video calls for the conversations that matter.": [
+        "Private videoopkald til de samtaler, der betyder noget."
       ]
     },
     "color": {
@@ -3200,6 +3203,11 @@
         "For ${ MAIL_APP_NAME }"
       ]
     },
+    "customer_support.feature.meet": {
+      "For ${ MEET_APP_NAME }": [
+        "For ${ MEET_APP_NAME }"
+      ]
+    },
     "customer_support.feature.pass": {
       "For ${ PASS_APP_NAME }": [
         "For ${ PASS_APP_NAME }"
@@ -4138,7 +4146,7 @@
         "Vælg venligst et land"
       ],
       "Please select a state": [
-        "Vælg venligst en region"
+        "Vælg en stat"
       ],
       "Please select at least one location before continuing.": [
         "Vælg mindst én placering før du fortsætter."
@@ -8970,12 +8978,6 @@
       "Numbers": [
         "Tal"
       ],
-      "OpenVPN / IKEv2 password": [
-        "OpenVPN / IKEv2-adgangskode"
-      ],
-      "OpenVPN / IKEv2 username": [
-        "OpenVPN- /IKEv2-brugernavn"
-      ],
       "Operating system": [
         "Operativsystem"
       ],
@@ -9137,7 +9139,7 @@
         "Startdato"
       ],
       "State": [
-        "Stat/Region"
+        "Stat"
       ],
       "Street address": [
         "Adresse"
@@ -9736,6 +9738,53 @@
         "Konfigurer din konto med dit Porkbun-domæne."
       ]
     },
+    "meet_2025: Feature": {
+      "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
+        "${ MEET_APP_NAME }: Fortrolige videomøder til de samtaler, der betyder noget"
+      ],
+      "${ n } active meeting at a time": [
+        "${ n } aktivt møde ad gangen",
+        "${ n } aktive møder ad gangen"
+      ],
+      "24 hours per meeting": [
+        "24 timer pr. møde"
+      ],
+      "60 minutes per meeting": [
+        "60 minutter pr. møde"
+      ],
+      "Appointment scheduling": [
+        "Aftaleplanlægning"
+      ],
+      "Browser, mobile, and desktop apps": [
+        "Browser-, mobil- og desktop-apps"
+      ],
+      "Built-in chat": [
+        "Indbygget chat"
+      ],
+      "End-to-end encrypted screen sharing and ephemeral in-call chat": [
+        "End-to-end-krypteret skærmdeling og midlertidig chat under opkald"
+      ],
+      "Meeting recording (coming soon)": [
+        "Møde-optagelse (kommer snart)"
+      ],
+      "One active meeting at a time": [
+        "Ét aktivt møde ad gangen"
+      ],
+      "Screen-sharing": [
+        "Deling af skærm"
+      ],
+      "Unlimited meetings per day": [
+        "Ubegrænset antal møder om dagen"
+      ],
+      "Up to ${ n } meeting per day": [
+        "Op til ${ n } møde om dagen",
+        "Op til ${ n } møder om dagen"
+      ],
+      "Up to ${ n } participant": [
+        "Op til ${ n } deltager",
+        "Op til ${ n } deltagere"
+      ]
+    },
     "Member action": {
       "Activate user": [
         "Aktiver bruger"
@@ -9866,6 +9915,21 @@
       ],
       "Euro": [
         "Euro"
+      ],
+      "Hong Kong dollar": [
+        "Hongkong-dollar"
+      ],
+      "Japanese yen": [
+        "Japansk yen"
+      ],
+      "Polish złoty": [
+        "Polsk zloty"
+      ],
+      "Singapore dollar": [
+        "Singapore-dollar"
+      ],
+      "South Korean won": [
+        "Sydkoreansk won"
       ],
       "Swiss franc": [
         "Schweizer franc"
@@ -11016,9 +11080,6 @@
       ],
       "Number of records exceeds the download limit of 10000": [
         "Antallet af poster overskrider downloadgrænsen på 10000"
-      ],
-      "OpenVPN / IKEv2 credentials regenerated": [
-        "OpenVPN / IKEv2-legitimationsoplysninger regenereret"
       ],
       "Reminder has been sent": [
         "En påmindelse er blevet sendt."
@@ -12213,11 +12274,6 @@
       ],
       "Upgrade to ${ upsellPlanTitle }": [
         "Opgradér til ${ upsellPlanTitle }"
-      ]
-    },
-    "Price": {
-      "Free": [
-        "Gratis"
       ]
     },
     "Property type": {
@@ -15406,9 +15462,6 @@
       ],
       "Open pagination": [
         "Åbn sidenummerering"
-      ],
-      "OpenVPN / IKEv2 username": [
-        "OpenVPN-/IKEv2-brugernavn"
       ],
       "OpenVPN configuration files": [
         "OpenVPN-konfigurationsfiler"

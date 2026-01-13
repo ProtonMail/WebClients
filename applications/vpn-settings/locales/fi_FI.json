@@ -1155,6 +1155,10 @@
       ]
     },
     "Addon": {
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "${ BRAND_NAME } Scribe -kirjoitusavustaja (${ quantity } käyttäjälle)",
+        "${ BRAND_NAME } Scribe-kirjoitusavustaja (${ quantity } käyttäjälle)"
+      ],
       "${ domains } additional custom domain": [
         "${ domains } oma lisäverkkotunnus",
         "${ domains } omaa lisäverkkotunnusta"
@@ -1162,6 +1166,10 @@
       "${ ips } server": [
         "${ ips } palvelin",
         "${ ips } palvelinta"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "${ LUMO_APP_NAME } tekoälyavustaja (${ quantity } käyttäjä)",
+        "${ LUMO_APP_NAME } AI-avustaja (${ quantity } käyttäjälle)"
       ],
       "${ price } per dedicated server": [
         "${ price }/oma palvelin"
@@ -1174,6 +1182,10 @@
       ],
       "${ price } per user": [
         "${ price }/käyttäjä"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } oma verkkotunnus",
+        "${ quantity } omaa verkkotunnusta"
       ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } ${ LUMO_APP_NAME }-lisenssi",
@@ -8562,11 +8574,11 @@
       "Numbers": [
         "Numerot"
       ],
-      "OpenVPN / IKEv2 password": [
-        "OpenVPN/IKEv2-salasana"
+      "OpenVPN password": [
+        "OpenVPN -salasana"
       ],
-      "OpenVPN / IKEv2 username": [
-        "OpenVPN-/IKEv2-käyttäjätunnus"
+      "OpenVPN username": [
+        "OpenVPN -käyttäjäjtunnus"
       ],
       "Operating system": [
         "Käyttöjärjestelmä"
@@ -9417,6 +9429,21 @@
       ],
       "Euro": [
         "euroa"
+      ],
+      "Hong Kong dollar": [
+        "Hongkongin dollari"
+      ],
+      "Japanese yen": [
+        "Japanin jeni"
+      ],
+      "Polish złoty": [
+        "Puolan złoty"
+      ],
+      "Singapore dollar": [
+        "Singaporen dollari"
+      ],
+      "South Korean won": [
+        "Etelä-Korean won"
       ],
       "Swiss franc": [
         "Sveitsin frangia"
@@ -10541,8 +10568,8 @@
       "Number of records exceeds the download limit of 10000": [
         "Tietueiden määrä ylittää 10000 latausrajan"
       ],
-      "OpenVPN / IKEv2 credentials regenerated": [
-        "OpenVPN/IKEv2-kirjautumistiedot luotiin uudelleen"
+      "OpenVPN credentials regenerated": [
+        "OpenVPN -kirjautumistiedot luotiin uudeelleen"
       ],
       "Reminder has been sent": [
         "Muistutus on lähetetty"
@@ -11628,11 +11655,6 @@
     "plus_block": {
       "Upgrade to ${ upsellPlanTitle }": [
         "Päivitä ${ upsellPlanTitle } -tilaukseen"
-      ]
-    },
-    "Price": {
-      "Free": [
-        "Ilmainen"
       ]
     },
     "Property type": {
@@ -14008,6 +14030,10 @@
       "${ feature } is now active": [
         "${ feature } on nyt käytössä"
       ],
+      "${ friendsSubscribed } Friend subscribed": [
+        "${ friendsSubscribed } ystävä tilasi",
+        "${ friendsSubscribed } ystävää tilannut"
+      ],
       "${ VPN_APP_NAME } clients": [
         "${ VPN_APP_NAME } -päätteet"
       ],
@@ -14625,11 +14651,11 @@
       "Open pagination": [
         "Avaa sivunavigaatio"
       ],
-      "OpenVPN / IKEv2 username": [
-        "OpenVPN-/IKEv2-käyttäjätunnus"
-      ],
       "OpenVPN configuration files": [
         "OpenVPN-määritystiedostot"
+      ],
+      "OpenVPN username": [
+        "OpenVPN -käyttäjäjtunnus"
       ],
       "Org setup": [
         "Organisaation määritys"
