@@ -77,6 +77,9 @@
       "Copy address": [
         "Kopírovat adresu"
       ],
+      "Create": [
+        "Vytvořit"
+      ],
       "Create folder": [
         "Vytvořit složku"
       ],
@@ -185,6 +188,9 @@
       "More options for accounts": [
         "Další možnosti účtů"
       ],
+      "Next page": [
+        "Další stránka"
+      ],
       "OK": [
         "OK"
       ],
@@ -199,6 +205,9 @@
       ],
       "Pay ${ price } now": [
         "Nyní zaplatit ${ price }"
+      ],
+      "Previous page": [
+        "Předchozí stránka"
       ],
       "Refer a friend": [
         "Doporučit přátelům"
@@ -226,6 +235,9 @@
       ],
       "Resend code": [
         "Znovu odeslat kód"
+      ],
+      "Reset": [
+        "Resetovat"
       ],
       "Reset all": [
         "Resetovat vše"
@@ -874,9 +886,6 @@
       "Try again": [
         "Zkusit znovu"
       ],
-      "Upload a file": [
-        "Nahrát soubor"
-      ],
       "Upload file and add to knowledge base": [
         "Nahrát soubor a přidat do databáze znalostí"
       ],
@@ -1041,9 +1050,6 @@
       ],
       "Last updated on ${ formattedDate }": [
         "Poslední aktualizace: ${ formattedDate }"
-      ],
-      "Permanently delete your chats. This is irreversible.": [
-        "Trvale smazat vaše konverzace. Toto je nevratné."
       ],
       "Sign in to access your account and unlock more features. Don't have one? ${ createLink }": [
         "Přihlaste se pro přístup k účtu a odemknutí dalších funkcí. Nemáte účet? ${ createLink }"
@@ -1238,9 +1244,6 @@
       " files are hidden (unsupported file types)": [
         " soubory jsou skryté (nepodporované typy souborů)"
       ],
-      " of space": [
-        " místa"
-      ],
       " talk to your admin.": [
         " kontaktujte svého správce."
       ],
@@ -1259,17 +1262,11 @@
       "Access ${ DRIVE_APP_NAME }": [
         "Otevřít ${ DRIVE_APP_NAME }"
       ],
-      "Active": [
-        "Aktivní"
-      ],
       "Add ${ LUMO_APP_NAME }": [
         "Přidat ${ LUMO_APP_NAME }"
       ],
       "Add to active": [
         "Přidat k aktivním"
-      ],
-      "Adding to knowledge base...": [
-        "Přidávání do databáze znalostí..."
       ],
       "Advanced account and network security in one plan": [
         "Pokročilé zabezpečení účtu a sítě v jednom tarifu"
@@ -1328,9 +1325,6 @@
       "files": [
         "soubory"
       ],
-      "Files": [
-        "Soubory"
-      ],
       "files are not currently supported for content extraction.": [
         "soubory nejsou v současné době podporovány pro extrakci obsahu."
       ],
@@ -1384,6 +1378,9 @@
       ],
       "Press ${ shiftEnterBoldText } to ask": [
         "Stisknutím ${ shiftEnterBoldText } odešlete dotaz"
+      ],
+      "Private video calls for the conversations that matter.": [
+        "Soukromé videohovory pro důležité konverzace."
       ],
       "Processed content": [
         "Zpracovaný obsah"
@@ -1471,9 +1468,6 @@
       ],
       "Unsupported File Type": [
         "Nepodporovaný typ souboru"
-      ],
-      "Unused ": [
-        "Nepoužito "
       ],
       "Uploading ${ uploadProgress.fileName }": [
         "Nahrávání ${ uploadProgress.fileName }"
@@ -1738,9 +1732,6 @@
       ],
       "About ${ LUMO_SHORT_APP_NAME }": [
         "O ${ LUMO_SHORT_APP_NAME }"
-      ],
-      "Delete all chats": [
-        "Smazat všechny konverzace"
       ],
       "Don't lose the thread": [
         "Neztrácejte nit"
@@ -2087,12 +2078,6 @@
       "Built by the team that knows privacy": [
         "Vytvořeno týmem, který rozumí soukromí"
       ],
-      "Dark mode has been one of our community’s most highly anticipated updates for ${ LUMO_SHORT_APP_NAME }. Throughout the ${ BRAND_NAME } ecosystem, you can customize the look of all of your apps, and now you can customize ${ LUMO_SHORT_APP_NAME }, too, with a light or dark theme.": [
-        "Tmavý režim ${ LUMO_SHORT_APP_NAME } byl jednou z nejočekávanějších funkcí. V rámci ekosystému ${ BRAND_NAME } si můžete přizpůsobit vzhled všech svých aplikací a nyní si můžete přizpůsobit i ${ LUMO_SHORT_APP_NAME } pomocí světlého nebo tmavého motivu."
-      ],
-      "Dark mode is here": [
-        "Tmavý režim je zde"
-      ],
       "Earlier": [
         "Dříve"
       ],
@@ -2128,12 +2113,6 @@
       ],
       "No result.": [
         "Žádný výsledek."
-      ],
-      "Personalization lets you tailor how ${ LUMO_SHORT_APP_NAME } interacts with you. Tell ${ LUMO_SHORT_APP_NAME } your name, what you do, and exactly how you want it to respond, witty banter, technical precision, or straight-to-the-point brevity. Because the best AI isn't one-size-fits-all. It's one that feels like it was built just for you.": [
-        "Personalizace vám umožňuje nastavit jak s vámi ${ LUMO_SHORT_APP_NAME } komunikuje. Sdělte ${ LUMO_SHORT_APP_NAME } své jméno, co děláte a jak přesně chcete, aby reagovala: neformálně a vtipně, technicky přesně nebo přímočaře. Protože nejlepší AI není univerzální, ale působí tak, jako kdyby byla vytvořena přímo pro vás."
-      ],
-      "Personalization: ${ LUMO_SHORT_APP_NAME } for you": [
-        "Personalizace: ${ LUMO_SHORT_APP_NAME } pro vás na míru"
       ],
       "The AI that respects your privacy": [
         "AI, která respektuje vaše soukromí"
@@ -3028,6 +3007,11 @@
         "Pro ${ MAIL_APP_NAME }"
       ]
     },
+    "customer_support.feature.meet": {
+      "For ${ MEET_APP_NAME }": [
+        "Pro ${ MEET_APP_NAME }"
+      ]
+    },
     "customer_support.feature.pass": {
       "For ${ PASS_APP_NAME }": [
         "Pro ${ PASS_APP_NAME }"
@@ -3347,6 +3331,9 @@
       ],
       "ZIP code is required": [
         "PSČ je potřeba vyplnit"
+      ],
+      "⚠️ Undecryptable name": [
+        "⚠️ Nerozšifrovatelný název"
       ]
     },
     "Error message": {
@@ -4212,6 +4199,9 @@
       "Folder location": [
         "Umístění složky"
       ],
+      "Folder name": [
+        "Název složky"
+      ],
       "Get the deal": [
         "Využít nabídku"
       ],
@@ -4229,6 +4219,9 @@
       ],
       "Integrated 2FA authenticator": [
         "Integrované ověřování 2FA"
+      ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "Klávesová zkratka: ${ shortcut }"
       ],
       "Last name": [
         "Příjmení"
@@ -4425,6 +4418,59 @@
       ],
       "for ${ price }": [
         "za ${ price }"
+      ]
+    },
+    "meet_2025: Feature": {
+      "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
+        "${ MEET_APP_NAME }: Důvěrné videokonference pro důležité konverzace"
+      ],
+      "${ n } active meeting at a time": [
+        "${ n } aktivní schůzka ve stejný čas",
+        "${ n } aktivní schůzky ve stejný čas",
+        "${ n } aktivních schůzek ve stejný čas",
+        "${ n } aktivních schůzek ve stejný čas"
+      ],
+      "24 hours per meeting": [
+        "Schůzka o délce 24 hodin"
+      ],
+      "60 minutes per meeting": [
+        "Schůzka o délce 60 minut"
+      ],
+      "Appointment scheduling": [
+        "Plánování schůzek"
+      ],
+      "Browser, mobile, and desktop apps": [
+        "Aplikace pro prohlížeče, mobilní telefony a desktopy"
+      ],
+      "Built-in chat": [
+        "Integrovaný chat"
+      ],
+      "End-to-end encrypted screen sharing and ephemeral in-call chat": [
+        "Sdílení obrazovky s koncovým šifrováním a dočasný chat během hovoru"
+      ],
+      "Meeting recording (coming soon)": [
+        "Nahrávání schůzky (již brzy)"
+      ],
+      "One active meeting at a time": [
+        "Jedna aktivní schůzka ve stejný čas"
+      ],
+      "Screen-sharing": [
+        "Sdílení obrazovky"
+      ],
+      "Unlimited meetings per day": [
+        "Neomezený počet schůzek za den"
+      ],
+      "Up to ${ n } meeting per day": [
+        "Až ${ n } schůzka za den",
+        "Až ${ n } schůzky za den",
+        "Až ${ n } schůzek za den",
+        "Až ${ n } schůzek za den"
+      ],
+      "Up to ${ n } participant": [
+        "Až ${ n } účastník",
+        "Až ${ n } účastníci",
+        "Až ${ n } účastníků",
+        "Až ${ n } účastníků"
       ]
     },
     "New Label form": {
@@ -5772,6 +5818,9 @@
       "Company name": [
         "Název společnosti"
       ],
+      "Enter a new folder name": [
+        "Zadejte nový název složky"
+      ],
       "Gift code": [
         "Dárkový kód"
       ],
@@ -5849,11 +5898,6 @@
       ],
       "Upgrade to ${ upsellPlanTitle }": [
         "Navýšit na ${ upsellPlanTitle }"
-      ]
-    },
-    "Price": {
-      "Free": [
-        "Zdarma"
       ]
     },
     "Safety review": {
@@ -6410,6 +6454,11 @@
         "Pro jednotlivce"
       ]
     },
+    "Time": {
+      "Yesterday": [
+        "Včera"
+      ]
+    },
     "Title": {
       "${ feature } is now active": [
         "${ feature } je nyní aktivní"
@@ -6471,6 +6520,9 @@
       "Coupon": [
         "Kupón"
       ],
+      "Create a new folder": [
+        "Vytvořit novou složku"
+      ],
       "Currency": [
         "Měna"
       ],
@@ -6500,6 +6552,9 @@
       ],
       "Error": [
         "Chyba"
+      ],
+      "Folder": [
+        "Složka"
       ],
       "Get the apps": [
         "Získat aplikace"
