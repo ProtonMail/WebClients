@@ -37,6 +37,12 @@
       "Accept and view the item": [
         "Αποδοχή και προβολή αντικειμένου"
       ],
+      "Account": [
+        "Λογαριασμός"
+      ],
+      "Account settings": [
+        "Ρυθμίσεις λογαριασμού"
+      ],
       "Add": [
         "Προσθήκη"
       ],
@@ -402,6 +408,9 @@
       ],
       "Lock ${ PASS_APP_NAME }": [
         "Κλείδωμα ${ PASS_APP_NAME }"
+      ],
+      "Lock extension": [
+        "Κλείδωμα προέκτασης"
       ],
       "Make admin": [
         "Ορισμός ως διαχειριστή"
@@ -1455,6 +1464,9 @@
       "Admin": [
         "Διαχειριστής"
       ],
+      "After confirming, you will need to accept a permission prompt for ${ PASS_APP_NAME }.": [
+        "Μετά την επιβεβαίωση, θα πρέπει να αποδεχτείτε ένα μήνυμα αίτησης άδειας για το ${ PASS_APP_NAME }."
+      ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Μετά την επιτυχή εισαγωγή των δεδομένων σας, μπορείτε να διαγράψετε το αρχείο CSV που περιέχει τους κωδικούς πρόσβασής σας για λόγους ασφαλείας."
       ],
@@ -2271,6 +2283,9 @@
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Αυτή η εξαγωγή θα είναι μην κρυπτογραφημένη και οποιοσδήποτε έχει πρόσβαση στο εξαγόμενο αρχείο σας θα μπορεί να δει τους κωδικούς πρόσβασής σας. Για λόγους ασφαλείας, διαγράψτε το αφού ολοκληρώσετε τη χρήση του."
       ],
+      "This feature is currently experimental on Linux. Please ensure your system is up-to-date.": [
+        "Αυτή η λειτουργία είναι προς το παρόν πειραματική στο Linux. Παρακαλούμε βεβαιωθείτε ότι το σύστημά σας είναι ενημερωμένο."
+      ],
       "This item is not currently shared with anyone. Invite people to share it with others.": [
         "Αυτό το στοιχείο δεν είναι προς το παρόν κοινόχρηστο με κανέναν. Προσκαλέστε άτομα να το μοιράστε με άλλους."
       ],
@@ -2461,9 +2476,6 @@
       "You may close this tab.": [
         "Μπορείτε να κλείσετε αυτήν την καρτέλα."
       ],
-      "You may need to accept a permission prompt and may have to restart the application depending on your system.": [
-        "Ενδέχεται να χρειαστεί να αποδεχτείτε ένα μήνυμα αίτησης άδειας και να επανεκκινήσετε την εφαρμογή, ανάλογα με το σύστημά σας."
-      ],
       "You may need to grant accessiblity permission to ${ PASS_APP_NAME }.": [
         "Ενδέχεται να χρειαστεί να παραχωρήσετε άδεια προσβασιμότητας στο ${ PASS_APP_NAME }."
       ],
@@ -2567,6 +2579,9 @@
       "${ months } month": [
         "${ months } μήνα",
         "${ months } μήνες"
+      ],
+      "${ PASS_SHORT_APP_NAME } Monitor": [
+        "Παρακολούθηση ${ PASS_SHORT_APP_NAME }"
       ],
       "${ PASS_SHORT_APP_NAME } version": [
         "${ PASS_SHORT_APP_NAME } έκδοση"
@@ -3082,6 +3097,9 @@
       "Language": [
         "Γλώσσα"
       ],
+      "Larger window": [
+        "Μεγαλύτερο παράθυρο"
+      ],
       "Last 2 weeks": [
         "Τελευταίες 2 εβδομάδες"
       ],
@@ -3432,6 +3450,9 @@
       ],
       "Server": [
         "Διακομιστής"
+      ],
+      "Settings": [
+        "Ρυθμίσεις"
       ],
       "Share": [
         "Κοινοποίηση"

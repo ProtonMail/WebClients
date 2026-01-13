@@ -31,6 +31,12 @@
       "Accept and view the item": [
         "Hyväksy ja tarkastele kohdetta"
       ],
+      "Account": [
+        "Tili"
+      ],
+      "Account settings": [
+        "Tilin asetukset"
+      ],
       "Add": [
         "Lisää"
       ],
@@ -369,6 +375,9 @@
       ],
       "Lock ${ PASS_APP_NAME }": [
         "Lukitse ${ PASS_APP_NAME }"
+      ],
+      "Lock extension": [
+        "Lukitse laajennus"
       ],
       "Make admin": [
         "Määritä ylläpitäjäksi"
@@ -1372,6 +1381,9 @@
       "Admin": [
         "Ylläpito"
       ],
+      "After confirming, you will need to accept a permission prompt for ${ PASS_APP_NAME }.": [
+        "Vahvistuksen jälkeen sinun on hyväksyttävä lupapyyntö ${ PASS_APP_NAME } sovellukselle."
+      ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Kun tietosi on tuotu, on suositeltavaa suojata tietosi poistamalla salasanasi sisältävän CSV-tiedosto."
       ],
@@ -2143,6 +2155,9 @@
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Vientitiedosto on salaamaton, eli kuka tahansa sen käsittelijä voi nähdä salasanasi. Tietojesi suojaamiseksi, poista tiedosto heti kun et enää tarvitse sitä."
       ],
+      "This feature is currently experimental on Linux. Please ensure your system is up-to-date.": [
+        "Tämä ominaisuus on tällä hetkellä kokeiluvaiheessa Linuxissa. Varmista, että järjestelmäsi on ajan tasalla."
+      ],
       "This item is not currently shared with anyone. Invite people to share it with others.": [
         "Tätä kohdetta ei ole tällä hetkellä jaettu kenellekään. Jaa se muille lähettämällä kutsuja."
       ],
@@ -2415,6 +2430,9 @@
       "${ months } month": [
         "${ months } kuukausi",
         "${ months } kuukautta"
+      ],
+      "${ PASS_SHORT_APP_NAME } Monitor": [
+        "${ PASS_SHORT_APP_NAME } Monitor"
       ],
       "${ PASS_SHORT_APP_NAME } version": [
         "${ PASS_SHORT_APP_NAME }-versio"
@@ -3259,6 +3277,9 @@
       ],
       "Server": [
         "Palvelin"
+      ],
+      "Settings": [
+        "Asetukset"
       ],
       "Share": [
         "Jaa"

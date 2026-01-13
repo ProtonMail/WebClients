@@ -37,6 +37,12 @@
       "Accept and view the item": [
         "항목 공유 수락 및 확인"
       ],
+      "Account": [
+        "계정"
+      ],
+      "Account settings": [
+        "계정 설정"
+      ],
       "Add": [
         "추가"
       ],
@@ -381,6 +387,9 @@
       ],
       "Lock ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } 잠금"
+      ],
+      "Lock extension": [
+        "확장 프로그램 잠그기"
       ],
       "Make admin": [
         "관리자 생성"
@@ -1359,6 +1368,9 @@
       "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
         "${ PASS_APP_NAME }가 오직 로그인, 메모, 신용 카드 및 신원 정보에 한해 불러옵니다."
       ],
+      "${ PASS_SHORT_APP_NAME } offline mode enabled.": [
+        "${ PASS_SHORT_APP_NAME } 오프라인 모드 활성화됨."
+      ],
       "${ payload.count } invite successfully sent": [
         "초대 ${ payload.count }개를 성공적으로 보냈습니다."
       ],
@@ -2214,6 +2226,9 @@
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "이 내보내기는 암호화되지 않으며 내보낸 파일에 액세스할 수 있는 사람은 누구나 비밀번호를 볼 수 있습니다. 보안을 위해, 사용을 마친 뒤에 삭제해 주세요."
       ],
+      "This feature is currently experimental on Linux. Please ensure your system is up-to-date.": [
+        "이 기능은 현재 Linux에서 실험 중입니다. 시스템이 최신 상태인지 확인해 주세요."
+      ],
       "This item is not currently shared with anyone. Invite people to share it with others.": [
         "이 항목은 모두에게 공유되지 않습니다. 다른 사람과 공유하려면 사람을 초대하세요."
       ],
@@ -2397,9 +2412,6 @@
       "You may close this tab.": [
         "이 탭을 닫아도 됩니다."
       ],
-      "You may need to accept a permission prompt and may have to restart the application depending on your system.": [
-        "사용자의 시스템에 따라 권한 프롬프트를 수락해야 할 수 있으며, 어플리케이션을 재시작해야 할 수도 있습니다."
-      ],
       "You may need to grant accessiblity permission to ${ PASS_APP_NAME }.": [
         "${ PASS_APP_NAME }에 접근성 권한을 부여해야 할 수 있습니다."
       ],
@@ -2423,6 +2435,9 @@
       ],
       "You will no longer be notified of data breaches for this email address.": [
         "이 이메일 주소에 대한 데이터 침해 알림을 받지 않게 됩니다."
+      ],
+      "You will no longer have access to sharing, 2FA and other advanced features in ${ PASS_APP_NAME }": [
+        "더 이상 ${ PASS_APP_NAME }에서 공유, 2단계 인증 및 기타 고급 기능에 접근할 수 없습니다."
       ],
       "You will no longer have access to sharing, 2FA, credit card and other advanced features in ${ PASS_APP_NAME }": [
         "더 이상 ${ PASS_APP_NAME }에서 항목 공유, 2단계 인증, 신용 카드 및 다른 향상된 기능을 사용할 수 없게됩니다."
@@ -2490,6 +2505,9 @@
       ],
       "${ months } month": [
         "${ months }개월"
+      ],
+      "${ PASS_SHORT_APP_NAME } Monitor": [
+        "${ PASS_SHORT_APP_NAME } Monitor"
       ],
       "${ PASS_SHORT_APP_NAME } version": [
         "${ PASS_SHORT_APP_NAME } 버전"
@@ -3001,6 +3019,9 @@
       "Language": [
         "언어"
       ],
+      "Larger window": [
+        "더 큰 창"
+      ],
       "Last 2 weeks": [
         "지난 2주"
       ],
@@ -3351,6 +3372,9 @@
       ],
       "Server": [
         "서버"
+      ],
+      "Settings": [
+        "설정"
       ],
       "Share": [
         "공유"
@@ -4445,6 +4469,9 @@
       "Settings": [
         "설정"
       ],
+      "Setup offline mode": [
+        "오프라인 모드 설정"
+      ],
       "Share vaults with your team": [
         "내 팀과 금고 공유"
       ],
@@ -4594,6 +4621,9 @@
     "Warning": {
       "${ BRAND_NAME } password is required": [
         "${ BRAND_NAME } 비밀번호가 필요합니다"
+      ],
+      "${ PASS_SHORT_APP_NAME } offline mode disabled.": [
+        "${ PASS_SHORT_APP_NAME } 오프라인 모드 비활성화됨."
       ],
       "2 consecutive dots are not allowed": [
         "마침표 2개가 연속해서 올 수 없습니다"
