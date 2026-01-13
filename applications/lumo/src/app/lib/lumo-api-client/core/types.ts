@@ -5,7 +5,7 @@
 // I'm not sure what is the best location: here (lib/lumo-api-client) or there (applications/lumo) -> TBD.
 //
 // FIXME FIXME FIXME
-import type { WireImage } from '../../../types';
+import type { WireImage } from '../../../types-api';
 
 export type Role = 'assistant' | 'user' | 'system' | 'tool_call' | 'tool_result';
 

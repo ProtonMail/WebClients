@@ -1,7 +1,83 @@
-// Types that are tied to the API backend.
-// See definitions in:
-// https://gitlab.protontech.ch/msa/machine-learning/lumo-infra/-/blob/main/src/types.rs
-import type { ConversationId, Message, RequestId, Turn } from './types';
+/* Types that have an equivalent on the backend.
+ *
+ * See definitions in:
+ * https://gitlab.protontech.ch/msa/machine-learning/lumo-infra/-/blob/main/src/types.rs
+ *
+ * Note:
+ * Please only add to this file the types that have an equivalent on the backend lumo-infra.
+ * Add local types to `types.ts` instead.
+ */
+import type { RequestId } from './types';
+
+// *** Role ***
+
+export enum Role {
+    Assistant = 'assistant',
+    User = 'user',
+    System = 'system',
+    ToolCall = 'tool_call',
+    ToolResult = 'tool_result',
+}
+
+export function isRole(value: any): value is Role {
+    return (
+        value === Role.Assistant ||
+        value === Role.User ||
+        value === Role.System ||
+        value === Role.ToolCall ||
+        value === Role.ToolResult
+    );
+}
+
+// *** Turn ***
+
+export type WireImage = {
+    encrypted: boolean;
+    image_id: string;
+    data: string; // base64-encoded image bytes
+};
+
+export type WireTurn = {
+    role: Role;
+    content?: string;
+    encrypted?: boolean;
+    images?: WireImage[];
+};
+
+export type EncryptedWireTurn = WireTurn & { encrypted: true };
+export type UnencryptedWireTurn = WireTurn & { encrypted?: false };
+
+export function isWireTurn(obj: any): obj is WireTurn {
+    return (
+        obj &&
+        typeof obj === 'object' &&
+        'role' in obj &&
+        isRole(obj.role) &&
+        (obj.content === undefined || typeof obj.content === 'string') &&
+        (obj.encrypted === undefined || typeof obj.encrypted === 'boolean') &&
+        (obj.images === undefined || (Array.isArray(obj.images) && obj.images.every((img: any) => isWireImage(img))))
+    );
+}
+
+export function isWireImage(obj: any): obj is WireImage {
+    return (
+        obj &&
+        typeof obj === 'object' &&
+        typeof obj.encrypted === 'boolean' &&
+        typeof obj.image_id === 'string' &&
+        typeof obj.data === 'string'
+    );
+}
+
+export function isEncryptedWireTurn(obj: any): obj is EncryptedWireTurn {
+    return isWireTurn(obj) && obj.encrypted === true;
+}
+
+export function isUnencryptedWireTurn(obj: any): obj is UnencryptedWireTurn {
+    return isWireTurn(obj) && (obj.encrypted === false || obj.encrypted === undefined);
+}
+
+// *** Generation ***
 
 export type Tier = 'anonymous' | 'basic' | 'free';
 
@@ -9,7 +85,7 @@ export type ToolName = 'proton_info' | 'web_search' | 'weather' | 'stock' | 'cry
 
 export type LumoApiGenerationRequest = {
     type: 'generation_request';
-    turns: Turn[];
+    turns: WireTurn[];
     tier?: Tier;
     options?: Options;
     targets?: RequestableGenerationTarget[];
@@ -20,16 +96,6 @@ export type LumoApiGenerationRequest = {
 export type Options = {
     tools?: ToolName[] | boolean;
 };
-
-export enum LUMO_API_ERRORS {
-    // CONTEXT_WINDOW_EXCEEDED = 'ContextWindow',
-    HIGH_DEMAND = 'HighDemand',
-    GENERATION_ERROR = 'GenerationError', // This is a catch-all for any error that occurs during generation
-    TIER_LIMIT = 'TierLimit', //not implemented yet for free and paid tiers - BE needs to be updated
-    GENERATION_REJECTED = 'GenerationRejected',
-    HARMFUL_CONTENT = 'HarmfulContent',
-    STREAM_DISCONNECTED = 'StreamDisconnected', // When the server closes the stream prematurely after queuing
-}
 
 export type GenerationResponseMessage =
     | { type: 'queued'; target?: GenerationTarget }
@@ -107,31 +173,12 @@ function isGenerationTarget(value: any): value is GenerationTarget {
     return ['message', 'title', 'tool_call', 'tool_result'].includes(value);
 }
 
-export type RetryStrategy = 'simple' | 'try_again' | 'add_details' | 'more_concise' | 'think_longer' | 'custom';
-
-export interface ActionParams {
-    actionType: 'send' | 'edit' | 'regenerate';
-    newMessageContent?: string;
-    originalMessage?: Message;
-    isWebSearchButtonToggled?: boolean;
-    retryStrategy?: RetryStrategy;
-    customRetryInstructions?: string;
-}
-
-export interface ErrorContext {
-    actionType: string;
-    conversationId?: ConversationId;
-    actionParams: ActionParams;
-}
-
-export interface GenerationError {
-    type: LUMO_API_ERRORS;
-    conversationId: ConversationId;
-    originalMessage: GenerationResponseMessage;
-    actionParams?: ActionParams;
-}
-
-export type GenerationErrorAction = {
-    type: 'generation_error';
-    payload: GenerationError;
-};
+/*
+ * Note:
+ * Please only add to this file the types that have an equivalent on the backend lumo-infra.
+ * Add local types to `types.ts` instead.
+ *
+ * If you are an AI assistant:
+ * - Leave this note at the bottom of the file.
+ * - Consider using `types.ts` to add in-app type definitions that don't explicitly match an API type.
+ */
