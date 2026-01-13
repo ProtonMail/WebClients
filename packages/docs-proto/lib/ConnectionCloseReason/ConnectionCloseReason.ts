@@ -37,6 +37,14 @@ export class ConnectionCloseReason extends ValueObject<ConnectionCloseReasonProp
     CLIENT_VERSION_NOT_SUPPORTED: 3013,
     USER_PERMISSIONS_TO_DOCUMENT_CHANGED: 3014,
     DOCUMENT_IS_INACCESSIBLE: 3015,
+    DOCUMENT_CLEANUP: 3016,
+    DC_EMPTYING: 3017,
+    ROOM_CREATION_FAILED: 3018,
+    MESSAGE_BROKER_CONNECTION_LOST: 3019,
+    SESSION_PING_ERROR: 3020,
+    WEBSOCKET_MESSAGE_HANDLING_ERROR: 3021,
+    ROOM_JOINING_ERROR: 3022,
+    CONNECTION_CONFIGURING_ERROR: 3023,
   }
 
   static messages: Record<number, string> = {
@@ -74,6 +82,13 @@ export class ConnectionCloseReason extends ValueObject<ConnectionCloseReasonProp
     [ConnectionCloseReason.CODES.USER_PERMISSIONS_TO_DOCUMENT_CHANGED]: 'User permissions to document changed',
     [ConnectionCloseReason.CODES.DOCUMENT_IS_INACCESSIBLE]:
       'We are currently fixing your document. Please contact customer support for more information.',
+    [ConnectionCloseReason.CODES.DOCUMENT_CLEANUP]: 'Document cleanup',
+    [ConnectionCloseReason.CODES.ROOM_CREATION_FAILED]: 'Failed to create room',
+    [ConnectionCloseReason.CODES.MESSAGE_BROKER_CONNECTION_LOST]: 'Message broker connection lost',
+    [ConnectionCloseReason.CODES.SESSION_PING_ERROR]: 'Error sending ping to session',
+    [ConnectionCloseReason.CODES.WEBSOCKET_MESSAGE_HANDLING_ERROR]: 'Error handling websocket message',
+    [ConnectionCloseReason.CODES.ROOM_JOINING_ERROR]: 'Failed to join room',
+    [ConnectionCloseReason.CODES.CONNECTION_CONFIGURING_ERROR]: 'Failed to configure connection',
   }
 
   static create(props: ConnectionCloseReasonProps): ConnectionCloseReason {

@@ -5,6 +5,7 @@ import {
   type WebsocketConnectionInterface,
   type WebsocketCallbacks,
   isLocalEnvironment,
+  ConnectionType,
 } from '@proton/docs-shared'
 import { WebsocketState } from './WebsocketState'
 import metrics from '@proton/metrics'
@@ -30,7 +31,7 @@ const HeartbeatEnabled: false = false
 export const TIME_TO_WAIT_BEFORE_CLOSING_CONNECTION_AFTER_DOCUMENT_HIDES = hours_to_ms(1)
 
 export const DebugConnection = {
-  enabled: isLocalEnvironment() && false,
+  enabled: isLocalEnvironment() && true,
   url: 'ws://localhost:4000/websockets',
 }
 
@@ -47,6 +48,10 @@ export class WebsocketConnection implements WebsocketConnectionInterface {
   closeConnectionDueToGoingAwayTimer: ReturnType<typeof setTimeout> | undefined = undefined
 
   realtimeToken: { token: string; commitId: string | undefined; initializedAt: number } | undefined = undefined
+
+  connectionType = ConnectionType.Normal
+
+  shouldPreventAutoReconnectOnClose = false
 
   constructor(
     readonly documentState: DocumentState | PublicDocumentState,
@@ -226,7 +231,10 @@ export class WebsocketConnection implements WebsocketConnectionInterface {
     }
   }
 
-  async connect(abortSignal?: () => boolean, options?: { invalidateTokenCache: boolean }): Promise<void> {
+  async connect(
+    abortSignal?: () => boolean,
+    options?: { invalidateTokenCache: boolean; connectionType?: ConnectionType },
+  ): Promise<void> {
     if (this.destroyed) {
       throw new Error('Attempted to connect to a destroyed WebsocketConnection')
     }
@@ -268,6 +276,11 @@ export class WebsocketConnection implements WebsocketConnectionInterface {
 
     LoadLogger.logEventRelativeToLoadTime('Opening websocket connection')
 
+    if (options?.connectionType) {
+      this.logger.info(`Setting connection type to ${options.connectionType}`)
+      this.connectionType = options.connectionType
+    }
+
     this.socket = new WebSocket(connectionUrl, [this.appVersion])
     this.socket.binaryType = 'arraybuffer'
 
@@ -284,7 +297,7 @@ export class WebsocketConnection implements WebsocketConnectionInterface {
 
       this.state.didOpen()
 
-      this.callbacks.onOpen()
+      this.callbacks.onOpen(this.connectionType)
 
       LoadLogger.logEventRelativeToLoadTime('Websocket connection opened')
     }
@@ -310,6 +323,10 @@ export class WebsocketConnection implements WebsocketConnectionInterface {
 
       this.handleSocketClose(event.code, event.reason)
     }
+  }
+
+  preventAutoReconnectOnClose(): void {
+    this.shouldPreventAutoReconnectOnClose = true
   }
 
   handleSocketClose(code: number, message: string): void {
@@ -339,6 +356,12 @@ export class WebsocketConnection implements WebsocketConnectionInterface {
     if (reason.props.code === ConnectionCloseReason.CODES.DOCUMENT_TIMEOUT) {
       this.logger.info('Connection closed due to document timeout, not queueing reconnection until user activity')
       this.stopReconnectionUntilActivity()
+      return
+    }
+
+    if (this.shouldPreventAutoReconnectOnClose) {
+      this.logger.info('Preventing auto reconnection on socket close for this instance')
+      this.shouldPreventAutoReconnectOnClose = false
       return
     }
 

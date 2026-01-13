@@ -18,7 +18,7 @@ import type { HttpsProtonMeDocsCommentsErrorTotalV1SchemaJson } from './types/do
 import type { HttpsProtonMeDocsCommentsTotalV1SchemaJson } from './types/docs_comments_total_v1.schema';
 import type { HttpsProtonMeDocsCommitIdOutOfSyncTotalV1SchemaJson } from './types/docs_commit_id_out_of_sync_total_v1.schema';
 import type { HttpsProtonMeDocsCommitSignatureErrorTotalV1SchemaJson } from './types/docs_commit_signature_error_total_v1.schema';
-import type { HttpsProtonMeDocsConnectionReadyTotalV1SchemaJson } from './types/docs_connection_ready_total_v1.schema';
+import type { HttpsProtonMeDocsConnectionReadyTotalV2SchemaJson } from './types/docs_connection_ready_total_v2.schema';
 import type { HttpsProtonMeDocsDocumentUpdatesAckErrorTotalV1SchemaJson } from './types/docs_document_updates_ack_error_total_v1.schema';
 import type { HttpsProtonMeDocsDocumentUpdatesDecryptionErrorTotalV1SchemaJson } from './types/docs_document_updates_decryption_error_total_v1.schema';
 import type { HttpsProtonMeDocsDocumentUpdatesLoadErrorTotalV1SchemaJson } from './types/docs_document_updates_load_error_total_v1.schema';
@@ -29,7 +29,7 @@ import type { HttpsProtonMeDocsHomepageInteractionTotalV1SchemaJson } from './ty
 import type { HttpsProtonMeDocsOpenDocumentsHeartbeatTotalV2SchemaJson } from './types/docs_open_documents_heartbeat_total_v2.schema';
 import type { HttpsProtonMeDocsPublicSharingCustomPasswordSuccessRateTotalV1SchemaJson } from './types/docs_public_sharing_custom_password_success_rate_total_v1.schema';
 import type { HttpsProtonMeDocsReadonlyModeDocumentsTotalV1SchemaJson } from './types/docs_readonly_mode_documents_total_v1.schema';
-import type { HttpsProtonMeDocsRealtimeDisconnectErrorTotalV1SchemaJson } from './types/docs_realtime_disconnect_error_total_v1.schema';
+import type { HttpsProtonMeDocsRealtimeDisconnectErrorTotalV2SchemaJson } from './types/docs_realtime_disconnect_error_total_v2.schema';
 import type { HttpsProtonMeDocsRealtimeEditLatencyHistogramV1SchemaJson } from './types/docs_realtime_edit_latency_histogram_v1.schema';
 import type { HttpsProtonMeDocsRealtimeEditTimeToAckHistogramV1SchemaJson } from './types/docs_realtime_edit_time_to_ack_histogram_v1.schema';
 import type { HttpsProtonMeDocsSquashesLatencyHistogramV1SchemaJson } from './types/docs_squashes_latency_histogram_v1.schema';
@@ -204,7 +204,7 @@ class Metrics extends MetricsBase {
 
     public docs_commit_signature_error_total: Counter<HttpsProtonMeDocsCommitSignatureErrorTotalV1SchemaJson>;
 
-    public docs_connection_ready_total: Counter<HttpsProtonMeDocsConnectionReadyTotalV1SchemaJson>;
+    public docs_connection_ready_total: Counter<HttpsProtonMeDocsConnectionReadyTotalV2SchemaJson>;
 
     public docs_document_updates_ack_error_total: Counter<HttpsProtonMeDocsDocumentUpdatesAckErrorTotalV1SchemaJson>;
 
@@ -226,7 +226,7 @@ class Metrics extends MetricsBase {
 
     public docs_readonly_mode_documents_total: Counter<HttpsProtonMeDocsReadonlyModeDocumentsTotalV1SchemaJson>;
 
-    public docs_realtime_disconnect_error_total: Counter<HttpsProtonMeDocsRealtimeDisconnectErrorTotalV1SchemaJson>;
+    public docs_realtime_disconnect_error_total: Counter<HttpsProtonMeDocsRealtimeDisconnectErrorTotalV2SchemaJson>;
 
     public docs_realtime_edit_latency_histogram: Histogram<HttpsProtonMeDocsRealtimeEditLatencyHistogramV1SchemaJson>;
 
@@ -584,8 +584,8 @@ class Metrics extends MetricsBase {
             this.requestService
         );
 
-        this.docs_connection_ready_total = new Counter<HttpsProtonMeDocsConnectionReadyTotalV1SchemaJson>(
-            { name: 'docs_connection_ready_total', version: 1 },
+        this.docs_connection_ready_total = new Counter<HttpsProtonMeDocsConnectionReadyTotalV2SchemaJson>(
+            { name: 'docs_connection_ready_total', version: 2 },
             this.requestService
         );
 
@@ -647,8 +647,8 @@ class Metrics extends MetricsBase {
         );
 
         this.docs_realtime_disconnect_error_total =
-            new Counter<HttpsProtonMeDocsRealtimeDisconnectErrorTotalV1SchemaJson>(
-                { name: 'docs_realtime_disconnect_error_total', version: 1 },
+            new Counter<HttpsProtonMeDocsRealtimeDisconnectErrorTotalV2SchemaJson>(
+                { name: 'docs_realtime_disconnect_error_total', version: 2 },
                 this.requestService
             );
 
