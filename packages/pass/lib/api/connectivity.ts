@@ -20,7 +20,7 @@ export const intoConnectivityStatus = <T extends ConnectivityOptions>(state: T):
 
 export const getConnectivityRetryTimeout = (status: ConnectivityStatus, retryCount: number): number =>
     CONNECTIVITY_RETRY_TIMEOUT *
-    (status === ConnectivityStatus.DOWNTIME ? FIBONACCI_LIST[retryCount % FIBONACCI_LIST.length] : 1);
+    (status === ConnectivityStatus.DOWNTIME ? FIBONACCI_LIST[Math.min(retryCount, FIBONACCI_LIST.length - 1)] : 1);
 
 export const getConnectivityWarning = (connectivity: ConnectivityStatus): Maybe<string> => {
     switch (connectivity) {
