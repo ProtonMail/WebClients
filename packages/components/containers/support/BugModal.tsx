@@ -110,6 +110,12 @@ const getMailOptions = ({ isAuthenticatorAvailable }: { isAuthenticatorAvailable
         },
         {
             type: optionType,
+            value: 'Sheets problem',
+            title: c('Bug category').t`Sheets problem`,
+            app: APPS.PROTONSHEETS,
+        },
+        {
+            type: optionType,
             value: 'Mail problem',
             title: c('Bug category').t`Mail problem`,
             app: APPS.PROTONMAIL,
