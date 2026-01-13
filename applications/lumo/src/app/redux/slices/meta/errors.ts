@@ -47,7 +47,7 @@ const errorsSlice = createSlice({
             if (!state.conversationErrors[error.conversationId]) {
                 state.conversationErrors[error.conversationId] = [];
             }
-            state.conversationErrors[error.conversationId].push(error);
+            state.conversationErrors[error.conversationId]!.push(error);
         },
 
         addTierError: (state, action: PayloadAction<Omit<TierError, 'timestamp'>>) => {
