@@ -18,7 +18,6 @@ import type { DuplicateDocument } from '../../UseCase/DuplicateDocument'
 import type { EditorControllerInterface } from '../../EditorController/EditorController'
 import type { EditorOrchestratorInterface } from '../Orchestrator/EditorOrchestratorInterface'
 import type { EncryptComment } from '../../UseCase/EncryptComment'
-import type { ExportAndDownload } from '../../UseCase/ExportAndDownload'
 import type { GetDocumentMeta } from '../../UseCase/GetDocumentMeta'
 import type { GetNode } from './../../UseCase/GetNode'
 import type { HandleRealtimeCommentsEvent } from '../../UseCase/HandleRealtimeCommentsEvent'
@@ -63,7 +62,6 @@ export class DocLoader implements DocLoaderInterface<DocumentState> {
     private duplicateDocument: DuplicateDocument,
     private createNewDocument: CreateNewDocument,
     private getDocumentMeta: GetDocumentMeta,
-    private exportAndDownload: ExportAndDownload,
     private getNode: GetNode,
     private eventBus: InternalEventBusInterface,
     private logger: LoggerInterface,
@@ -103,7 +101,7 @@ export class DocLoader implements DocLoaderInterface<DocumentState> {
 
     this.documentState = documentState
 
-    const editorController = new EditorController(this.logger, this.exportAndDownload, documentState, this.eventBus)
+    const editorController = new EditorController(this.logger, documentState, this.eventBus)
     this.editorController = editorController
 
     const controller = new AuthenticatedDocController(
