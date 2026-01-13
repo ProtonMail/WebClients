@@ -11,7 +11,12 @@ import { getDownloadSdk } from './utils/getDownloadSdk';
 import { getNodeStorageSize } from './utils/getNodeStorageSize';
 import { handleDownloadError } from './utils/handleError';
 import { getNodeModifiedTime } from './utils/nodeHelpers';
-import { waitForSignatureIssueDecision, waitForUnsupportedFileDecision } from './utils/waitForUserDecision';
+import {
+    addAndWaitForManifestIssueDecision,
+    addAndWaitForMetadataIssueDecision,
+    detectMetadataSignatureIssue,
+} from './utils/signatureIssues';
+import { waitForUnsupportedFileDecision } from './utils/waitForUserDecision';
 
 export type { ArchiveItem, ArchiveTracker } from './downloadTypes';
 
@@ -113,7 +118,7 @@ type ArchiveStreamGeneratorParams = {
     entries: AsyncIterable<NodeEntity>;
     onProgress: (downloadedBytes: number, claimedSize: number) => void;
     scheduler: DownloadScheduler;
-    abortSignal: AbortSignal;
+    abortController: AbortController;
     parentPathByUid: Map<string, string[]>;
     downloadId: string;
 };
@@ -121,7 +126,7 @@ type ArchiveStreamGeneratorParams = {
 export class ArchiveStreamGenerator {
     private readonly entries: AsyncIterable<NodeEntity>;
     private readonly scheduler: DownloadScheduler;
-    private readonly abortSignal: AbortSignal;
+    private readonly abortController: AbortController;
     private readonly parentPathByUid: Map<string, string[]>;
     private readonly downloadId: string;
     // Queue of the items that have started actively downloading
@@ -145,13 +150,13 @@ export class ArchiveStreamGenerator {
         entries,
         onProgress,
         scheduler,
-        abortSignal,
+        abortController,
         parentPathByUid,
         downloadId,
     }: ArchiveStreamGeneratorParams) {
         this.entries = entries;
         this.scheduler = scheduler;
-        this.abortSignal = abortSignal;
+        this.abortController = abortController;
         this.parentPathByUid = parentPathByUid;
         this.downloadId = downloadId;
         this.tracker = createArchiveTracker(onProgress);
@@ -163,7 +168,7 @@ export class ArchiveStreamGenerator {
             isDownloadCompleteWithSignatureIssues: () => this.hasSignatureIssues,
         };
 
-        this.abortSignal.addEventListener('abort', () => {
+        this.abortController.signal.addEventListener('abort', () => {
             const abortError = new AbortError();
             this.handleTrackerError(abortError);
             this.archiveItemsQueue.error(abortError);
@@ -179,15 +184,22 @@ export class ArchiveStreamGenerator {
      */
     private async createArchiveItem(taskId: string, node: NodeEntity, parentPath: string[]): Promise<ArchiveItem> {
         if (node.type !== NodeType.File && node.type !== NodeType.Photo) {
-            return {
-                isFile: false,
-                name: node.name,
-                parentPath,
-            };
+            const metadataIssueError = detectMetadataSignatureIssue(node);
+            if (metadataIssueError !== undefined) {
+                const decision = await addAndWaitForMetadataIssueDecision(this.downloadId, node, metadataIssueError);
+                if (decision === IssueStatus.Approved) {
+                    return { isFile: false, name: node.name, parentPath };
+                } else {
+                    // This is user cancellation
+                    this.abortController.abort();
+                }
+            } else {
+                return { isFile: false, name: node.name, parentPath };
+            }
         }
-        const { getQueueItem, addSignatureIssue } = useDownloadManagerStore.getState();
+        const { getQueueItem } = useDownloadManagerStore.getState();
         const drive = getDownloadSdk(this.downloadId);
-        const downloader = await drive.getFileDownloader(node.uid, this.abortSignal);
+        const downloader = await drive.getFileDownloader(node.uid, this.abortController.signal);
         const claimedSize = downloader.getClaimedSizeInBytes();
 
         const transformStream = new TransformStream<Uint8Array<ArrayBuffer>>();
@@ -223,13 +235,7 @@ export class ArchiveStreamGenerator {
                 // Manifest issues cannot be inferred by metadata, can only be thrown when completing the download
                 if (controller.isDownloadCompleteWithSignatureIssues()) {
                     this.hasSignatureIssues = true;
-                    addSignatureIssue(this.downloadId, {
-                        name: node.name,
-                        nodeType: node.type,
-                        location: 'manifest',
-                        issueStatus: IssueStatus.Detected,
-                    });
-                    const decision = await waitForSignatureIssueDecision(this.downloadId, node.name);
+                    const decision = await addAndWaitForManifestIssueDecision(this.downloadId, node);
                     writerClosed = true;
                     if (decision === IssueStatus.Approved) {
                         void streamWriter.close();
@@ -239,7 +245,7 @@ export class ArchiveStreamGenerator {
                     }
                 } else {
                     void streamWriter.abort(error);
-                    handleDownloadError(this.downloadId, [node], error, this.abortSignal.aborted);
+                    handleDownloadError(this.downloadId, [node], error, this.abortController.signal.aborted);
                     this.handleTrackerError(error);
                     this.archiveItemsQueue.error(error);
                     throw error;
@@ -259,7 +265,19 @@ export class ArchiveStreamGenerator {
             await waitForUnsupportedFileDecision(this.downloadId, completeIndividualFile);
         }
 
-        void completeIndividualFile();
+        const metadataIssueError = detectMetadataSignatureIssue(node);
+        if (metadataIssueError !== undefined) {
+            const decision = await addAndWaitForMetadataIssueDecision(this.downloadId, node, metadataIssueError);
+            if (decision === IssueStatus.Approved) {
+                void completeIndividualFile();
+            } else {
+                // This is user cancellation
+                void streamWriter.abort(new TransferCancel({ id: this.downloadId }));
+            }
+        } else {
+            void completeIndividualFile();
+        }
+
         this.tracker.attachController(taskId, controller);
 
         return {

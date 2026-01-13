@@ -2,6 +2,7 @@ import { jest } from '@jest/globals';
 
 import { NodeType } from '@proton/drive/index';
 
+import { DownloadStatus, useDownloadManagerStore } from '../../zustand/download/downloadManager.store';
 import type { ArchiveStreamGenerator as ArchiveStreamGeneratorClass } from './ArchiveStreamGenerator';
 import type { DownloadQueueTask } from './downloadTypes';
 import { createDeferred, createMockNodeEntity, flushAsync, trackInstances } from './testUtils';
@@ -25,6 +26,25 @@ const ensureTransformStream = () => {
     if (typeof globalThis.TransformStream === 'undefined') {
         require('web-streams-polyfill/polyfill/es6');
     }
+};
+
+const seedDownloadItem = (downloadId: string) => {
+    useDownloadManagerStore.setState((state) => {
+        const downloadItem = {
+            downloadId,
+            name: 'download',
+            storageSize: 0,
+            status: DownloadStatus.Pending,
+            nodeUids: [],
+            downloadedBytes: 0,
+            lastStatusUpdateTime: new Date(),
+        };
+        const queue = new Map(state.queue);
+        queue.set(downloadId, downloadItem);
+        const queueIds = new Set(state.queueIds);
+        queueIds.add(downloadId);
+        return { ...state, queue, queueIds };
+    });
 };
 
 const schedulerTracker = trackInstances(() => {
@@ -54,6 +74,8 @@ describe('ArchiveStreamGenerator', () => {
         schedulerTracker.reset();
         getDownloadSdkMock.mockReset();
         handleDownloadErrorMock.mockReset();
+        useDownloadManagerStore.getState().clearQueue();
+        seedDownloadItem('download-id');
     });
 
     it('should schedule file entries and expose generator/controller', async () => {
@@ -97,7 +119,7 @@ describe('ArchiveStreamGenerator', () => {
             entries: entries(),
             onProgress: progressSpy,
             scheduler: schedulerInstance,
-            abortSignal: abortController.signal,
+            abortController,
             parentPathByUid: parentPaths,
             downloadId: 'download-id',
         });
@@ -149,7 +171,6 @@ describe('ArchiveStreamGenerator', () => {
             uid: 'folder-1',
             name: 'Folder',
             type: NodeType.Folder,
-            activeRevision: undefined,
         });
 
         async function* entries() {
@@ -157,11 +178,12 @@ describe('ArchiveStreamGenerator', () => {
         }
 
         const progressSpy = jest.fn();
+        const folderAbortController = new AbortController();
         const generatorInstance = new ArchiveStreamGenerator({
             entries: entries(),
             onProgress: progressSpy,
             scheduler: schedulerInstance,
-            abortSignal: new AbortController().signal,
+            abortController: folderAbortController,
             parentPathByUid: new Map<string, string[]>([['folder-1', [] as string[]]]),
             downloadId: 'download-id',
         });
@@ -211,7 +233,7 @@ describe('ArchiveStreamGenerator', () => {
             entries: entries(),
             onProgress: jest.fn(),
             scheduler: schedulerInstance,
-            abortSignal: abortController.signal,
+            abortController,
             parentPathByUid: new Map<string, string[]>([['file-wait', [] as string[]]]),
             downloadId: 'download-id',
         });
@@ -257,7 +279,7 @@ describe('ArchiveStreamGenerator', () => {
             entries: entries(),
             onProgress: jest.fn(),
             scheduler: schedulerInstance,
-            abortSignal: abortController.signal,
+            abortController,
             parentPathByUid: new Map<string, string[]>([['file-error', [] as string[]]]),
             downloadId: 'download-id',
         });

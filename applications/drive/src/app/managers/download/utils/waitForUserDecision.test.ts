@@ -94,7 +94,7 @@ describe('waitForUserDecision', () => {
         const signatureIssue: SignatureIssue = {
             name: issueName,
             nodeType: NodeType.File,
-            location: 'manifest',
+            message: 'Signature issue',
             issueStatus: IssueStatus.Detected,
         };
 
