@@ -221,11 +221,11 @@ export function useDriveFolderIndexing(): UseDriveFolderIndexingReturn {
 
                         console.log(`[DriveIndexing] Processing: ${file.relativePath}`);
                         const result = await fileProcessingService.processFile(fileObj);
-                        if (result.success && result.result) {
+                        if (result.type === 'text') {
                             return {
                                 id: file.nodeUid,
                                 name: file.name,
-                                content: result.result.convertedContent,
+                                content: result.content,
                                 mimeType: inferredMime,
                                 size: file.size || fileData.byteLength || 0,
                                 modifiedTime: file.modifiedTime?.getTime() || Date.now(),
