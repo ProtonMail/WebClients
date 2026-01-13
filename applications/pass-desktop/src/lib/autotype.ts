@@ -17,10 +17,10 @@ declare module 'proton-pass-desktop/lib/ipc' {
 let autotypeInstance: MaybeNull<Autotype> = null;
 
 // Instantiating Autotype more than once can create an error on Linux
-const getAutotypeInstance = (): Autotype => {
+const getAutotypeInstance = async (): Promise<Autotype> => {
     if (!autotypeInstance) {
         logger.info(`[Autotype] Initializing autotype...`);
-        autotypeInstance = new Autotype();
+        autotypeInstance = await Autotype.create();
         logger.info(`[Autotype] Autotype initialized`);
     }
     return autotypeInstance;
@@ -31,7 +31,7 @@ export const setupIpcHandlers = (getWindow: () => MaybeNull<BrowserWindow>) => {
         const mainWindow = getWindow();
         if (!mainWindow) return;
 
-        const autotype = getAutotypeInstance();
+        const autotype = await getAutotypeInstance();
         hideWindow(mainWindow);
         await wait(1000);
 
