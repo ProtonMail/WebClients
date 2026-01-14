@@ -22,7 +22,6 @@ import {
     getPersistedSessions,
     registerSessionRemovalListener,
 } from '@proton/shared/lib/authentication/persistedSessionStorage';
-import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { getAppVersionStr } from '@proton/shared/lib/fetch/headers';
 import { initElectronClassnames } from '@proton/shared/lib/helpers/initElectronClassnames';
 import type { ProtonConfig, Unwrap } from '@proton/shared/lib/interfaces';
@@ -81,7 +80,7 @@ const getSession = async ({ authentication, api }: Pick<ProtonThunkArguments, 'a
     return sessionResult;
 };
 
-const loadUserData = async (dispatch: MeetDispatch, appName: APP_NAMES) => {
+const loadUserData = async (dispatch: MeetDispatch) => {
     const [user, userSettings, features] = await Promise.all([
         dispatch(userThunk()),
         dispatch(userSettingsThunk()),
@@ -91,7 +90,7 @@ const loadUserData = async (dispatch: MeetDispatch, appName: APP_NAMES) => {
     dispatch(welcomeFlagsActions.initial(userSettings));
 
     const [scopes] = await Promise.all([
-        bootstrap.initUser({ appName, user, userSettings }),
+        bootstrap.enableTelemetryBasedOnUserSettings({ userSettings }),
         bootstrap.loadLocales({ userSettings, locales }),
     ]);
 
@@ -170,7 +169,7 @@ const completeAppBootstrap = async ({
     }
 
     const [userData, wasmApp] = await Promise.all([
-        loadUserData(dispatch, config.APP_NAME),
+        loadUserData(dispatch),
         initializeWasmApp(authentication, appVersion),
         bootstrap.loadCrypto({ appName: config.APP_NAME, unleashClient }),
         bootstrap.unleashReady({ unleashClient }).catch(noop),
