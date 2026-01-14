@@ -2,6 +2,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 import type { Api } from '@proton/shared/lib/interfaces';
 
+import { when } from '../../../util/collections';
 import { DEFAULT_LUMO_PUB_KEY, encryptTurns } from './encryption';
 import { RequestEncryptionParams } from './encryptionParams';
 import { LUMO_CHAT_ENDPOINT, callChatEndpoint } from './network';
