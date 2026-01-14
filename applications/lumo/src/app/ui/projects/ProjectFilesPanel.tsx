@@ -23,6 +23,7 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import { MAX_ASSET_SIZE } from '../../constants';
 import { useDriveSDK } from '../../hooks/useDriveSDK';
+import { useFileProcessing } from '../../hooks/useFileProcessing';
 import { useSearchService } from '../../hooks/useSearchService';
 import { useLumoDispatch, useLumoSelector } from '../../redux/hooks';
 import { selectAttachmentsBySpaceId, selectSpaceById } from '../../redux/selectors';
@@ -63,6 +64,7 @@ export const ProjectFilesPanel = ({
     const [uploadProgress, setUploadProgress] = useState<UploadProgress | null>(null);
     const [breadcrumbs, setBreadcrumbs] = useState<BreadcrumbItem[]>([]);
     const searchService = useSearchService();
+    const fileProcessingService = useFileProcessing();
 
     const space = useLumoSelector(selectSpaceById(projectId));
     const spaceProject = space?.isProject ? (space satisfies ProjectSpace) : undefined;
@@ -142,7 +144,7 @@ export const ProjectFilesPanel = ({
 
                 setUploadProgress({ fileName: file.name, progress: 0, isProcessing: true });
 
-                const result = await dispatch(handleSpaceAttachmentFileAsync(file, projectId));
+                const result = await dispatch(handleSpaceAttachmentFileAsync(file, projectId, fileProcessingService));
 
                 setUploadProgress(null);
 
@@ -193,7 +195,9 @@ export const ProjectFilesPanel = ({
             try {
                 const blob = new Blob([content]);
                 const fileObj = new File([blob], file.name, { type: file.mimeType || 'application/octet-stream' });
-                const result = await dispatch(handleSpaceAttachmentFileAsync(fileObj, projectId));
+                const result = await dispatch(
+                    handleSpaceAttachmentFileAsync(fileObj, projectId, fileProcessingService)
+                );
 
                 if (result.success) {
                     createNotification({

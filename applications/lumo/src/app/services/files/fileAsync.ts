@@ -5,11 +5,11 @@ import type { Attachment, Message } from '../../types';
 import { calculateAttachmentTokenCount, storeAttachmentInRedux } from '../../util/attachmentHelpers';
 import { isImageFile } from '../../util/fileTypeHelpers';
 import { sendFileUploadFinishEvent } from '../../util/telemetry';
-import { fileProcessingService } from '../fileProcessingService';
+import type { FileProcessingService } from '../fileProcessingService';
 import { findDuplicateAttachment } from './duplicateDetection';
 
 export const handleFileAsync =
-    (file: File, messageChain: Message[] = []) =>
+    (file: File, messageChain: Message[] = [], fileProcessingService: FileProcessingService) =>
     async (
         dispatch: LumoDispatch,
         getState: () => LumoState
