@@ -2558,6 +2558,10 @@
       ],
       "Ultra fast and private VPN": [
         "ზეჩქარი და კონფიდენციალური VPN"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } მომხმარებელი",
+        "${ numberOfUsers } მომხმარებლამდე"
       ]
     },
     "Checkout row": {
@@ -5006,6 +5010,12 @@
       ],
       "ZIP code is required": [
         "საფოსტო კოდი აუცილებელია"
+      ],
+      "Cannot set expiration longer than retention policy allows.": [
+        "ვადა შენარჩუნების პოლიტიკაზე გრძელი ვერ იქნება."
+      ],
+      "re-importing": [
+        "თავიდან შემოტანა"
       ]
     },
     "error": {
@@ -8677,6 +8687,9 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "გაჭედვისგან თავისუფალი საფოსტო ყუთისგან რამდენიმე წკაპი გაშორებთ"
+      ],
+      "Make ${ MAIL_APP_NAME } your default email application.": [
+        "დააყენეთ ${ MAIL_APP_NAME } თქვენს ნაგულისხმევ ელფოსტის აპლიკაციად."
       ]
     },
     "info": {
@@ -9739,6 +9752,12 @@
       ],
       "ZIP code": [
         "საფოსტო კოდი"
+      ],
+      "Filters": [
+        "ფილტრები"
+      ],
+      "Has attachments": [
+        "აქვს მიმაგრებული ფაილები"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11532,6 +11551,9 @@
       ],
       "Social media": [
         "სოციალური მედია"
+      ],
+      "Change your email address for popular services now to avoid being tracked and profiled. ${ learnMoreLink }": [
+        "შეცვალეთ თქვენი პოპულარული სერვისების ელფოსტის მისამართი ახლავე, რათა თავიდან აიცილოთ თვალთვალი და პროფილების შექმნა. ${ learnMoreLink }"
       ]
     },
     "Onboarding modal": {
@@ -15392,6 +15414,9 @@
       ],
       "✨ Categories are coming!": [
         "✨ კატეგორიები გზაშია!"
+      ],
+      "Your newsletters in one place": [
+        "თქვენი სიახლეები ერთ ადგილას"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15691,6 +15716,9 @@
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "თქვენი უფასო სატესტო ვერსიის დამთავრების თარიღია ${ textDate }. ${ action }"
+      ],
+      "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
+        "თქვენი საცდელი პერიოდი დასრულდება: ${ textDate }. თუ გააუქმებთ ${ textDate }-მდე, თანხა არ ჩამოგეჭრებათ. ${ action }"
       ]
     },
     "WeekDay": {
@@ -15960,6 +15988,28 @@
       ],
       "Passcode:": [
         "საკვანძო კოდი:"
+      ]
+    },
+    "customer_support.feature.meet": {
+      "For ${ MEET_APP_NAME }": [
+        "${ MEET_APP_NAME }-ისთვის"
+      ]
+    },
+    "meet_2025: Feature": {
+      "24 hours per meeting": [
+        "24 საათი თითო შეხვედრისთვის"
+      ],
+      "60 minutes per meeting": [
+        "60 წუთი თითო შეხვედრისთვის"
+      ],
+      "Appointment scheduling": [
+        "შეხვედრის დაგეგმვა"
+      ],
+      "Built-in chat": [
+        "ჩაშენებული ჩატი"
+      ],
+      "Screen-sharing": [
+        "ეკრანის გაზიარება"
       ]
     }
   }

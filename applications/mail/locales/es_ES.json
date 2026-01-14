@@ -2656,6 +2656,9 @@
       ],
       "High-speed chats and advanced AI features.": [
         "Chats de alta velocidad y funciones de IA avanzadas."
+      ],
+      "Private video calls for the conversations that matter.": [
+        "Videollamadas privadas para las conversaciones que importan."
       ]
     },
     "color": {
@@ -5042,6 +5045,18 @@
       ],
       "ZIP code is required": [
         "Se requiere el código postal."
+      ],
+      "re-importing": [
+        "volver a importarlas"
+      ],
+      "There was a problem decrypting your message. If the issue persists, contact our customer support.": [
+        "Se ha producido un problema al descifrar tu mensaje. Si el error persiste, ponte en contacto con nuestro servicio de soporte."
+      ],
+      "Your message cannot be decrypted. If you deleted any of your address keys, try ${ reimportKeyLink } them. ${ learnMoreLink }": [
+        "Tu mensaje no se puede descifrar. Si has eliminado alguna de las llaves de tus direcciones, intenta ${ reimportKeyLink }. ${ learnMoreLink }"
+      ],
+      "Your message cannot be decrypted. The key used to encrypt this message does not match any of the keys associated with your address. If you deleted any of your address keys, try ${ reimportKeyLink } them. ${ learnMoreLink }": [
+        "Tu mensaje no se puede descifrar. La llave utilizada para cifrarlo no coincide con ninguna de las llaves asociadas a tu dirección. Si has eliminado alguna de tus llaves, intenta ${ reimportKeyLink }. ${ learnMoreLink }"
       ]
     },
     "error": {
@@ -8809,6 +8824,15 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Estás a solo unos clics de tener una bandeja de entrada ordenada"
+      ],
+      "This message will be purged on ${ value }": [
+        "Este mensaje se eliminará el ${ value }"
+      ],
+      "This message will be purged today at ${ value }": [
+        "Este mensaje se eliminará hoy a las ${ value }"
+      ],
+      "This message will be purged tomorrow at ${ value }": [
+        "Este mensaje se eliminará mañana a las ${ value }"
       ]
     },
     "info": {
@@ -9877,6 +9901,12 @@
       ],
       "ZIP code": [
         "Código postal"
+      ],
+      "Filters": [
+        "Filtros"
+      ],
+      "Has attachments": [
+        "Tiene adjuntos"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -14576,6 +14606,9 @@
       ],
       "Show me how": [
         "Muéstrame cómo"
+      ],
+      "Download the desktop app": [
+        "Descarga la aplicación de escritorio"
       ]
     },
     "Title": {
@@ -16178,6 +16211,58 @@
       ],
       "Passcode:": [
         "Código de acceso:"
+      ]
+    },
+    "customer_support.feature.meet": {
+      "For ${ MEET_APP_NAME }": [
+        "Para ${ MEET_APP_NAME }"
+      ]
+    },
+    "meet_2025: Feature": {
+      "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
+        "${ MEET_APP_NAME }: videollamadas privadas para lo que de verdad importa"
+      ],
+      "${ n } active meeting at a time": [
+        "${ n } reunión activa a la vez",
+        "${ n } reuniones activas a la vez"
+      ],
+      "24 hours per meeting": [
+        "24 horas por reunión"
+      ],
+      "60 minutes per meeting": [
+        "60 minutos por reunión"
+      ],
+      "Appointment scheduling": [
+        "Programación de citas"
+      ],
+      "Browser, mobile, and desktop apps": [
+        "Aplicaciones para navegador, móvil y escritorio"
+      ],
+      "Built-in chat": [
+        "Chat integrado"
+      ],
+      "End-to-end encrypted screen sharing and ephemeral in-call chat": [
+        "Pantalla compartida con cifrado de extremo a extremo y chat efímero en la llamada"
+      ],
+      "Meeting recording (coming soon)": [
+        "Grabación de la reunión (próximamente)"
+      ],
+      "One active meeting at a time": [
+        "Una reunión activa a la vez"
+      ],
+      "Screen-sharing": [
+        "Compartir pantalla"
+      ],
+      "Unlimited meetings per day": [
+        "Reuniones ilimitadas al día"
+      ],
+      "Up to ${ n } meeting per day": [
+        "Hasta ${ n } reunión por día",
+        "Hasta ${ n } reuniones al día"
+      ],
+      "Up to ${ n } participant": [
+        "Hasta ${ n } participante",
+        "Hasta ${ n } participantes"
       ]
     }
   }
