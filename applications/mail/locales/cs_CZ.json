@@ -1513,10 +1513,7 @@
         "Důvěřovat"
       ],
       "Trust key": [
-        "Důvěřovat klíči",
-        "Důvěřovat klíčům",
-        "Důvěřovat klíčům",
-        "Důvěřovat klíčům"
+        "Důvěřovat klíči"
       ],
       "Trust public key": [
         "Důvěřovat veřejnému klíči"
@@ -2690,6 +2687,9 @@
       ],
       "High-speed chats and advanced AI features.": [
         "Velmi rychlé konverzace a pokročilé funkce AI."
+      ],
+      "Private video calls for the conversations that matter.": [
+        "Soukromé videohovory pro důležité konverzace."
       ]
     },
     "color": {
@@ -5112,6 +5112,18 @@
       ],
       "Cannot set expiration longer than retention policy allows.": [
         "Nelze nastavit pozdější vypršení platnosti, než co povolují zásady uchovávání."
+      ],
+      "re-importing": [
+        "znovu importovat"
+      ],
+      "There was a problem decrypting your message. If the issue persists, contact our customer support.": [
+        "Při dešifrování vaší zprávy došlo k problému. Pokud problém přetrvává, kontaktujte naši zákaznickou podporu."
+      ],
+      "Your message cannot be decrypted. If you deleted any of your address keys, try ${ reimportKeyLink } them. ${ learnMoreLink }": [
+        "Vaši zprávu nelze dešifrovat. Pokud jste smazali některý ze svých klíčů adresy, zkuste je ${ reimportKeyLink }. ${ learnMoreLink }"
+      ],
+      "Your message cannot be decrypted. The key used to encrypt this message does not match any of the keys associated with your address. If you deleted any of your address keys, try ${ reimportKeyLink } them. ${ learnMoreLink }": [
+        "Vaši zprávu nelze dešifrovat. Klíč použitý k zašifrování této zprávy neodpovídá žádnému z klíčů přidružených k vaší adrese. Pokud jste některý ze svých adresních klíčů smazali, zkuste je ${ reimportKeyLink }. ${ learnMoreLink }"
       ]
     },
     "error": {
@@ -9093,6 +9105,15 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Od doručené pošty bez nepořádku vás dělí jen několik kliknutí"
+      ],
+      "This message will be purged on ${ value }": [
+        "Tato zpráva bude smazána v(e) ${ value }"
+      ],
+      "This message will be purged today at ${ value }": [
+        "Tato zpráva bude smazána dnes v(e) ${ value }"
+      ],
+      "This message will be purged tomorrow at ${ value }": [
+        "Tato zpráva bude smazána zítra v(e) ${ value }"
       ]
     },
     "info": {
@@ -10177,6 +10198,12 @@
       ],
       "ZIP code": [
         "PSČ"
+      ],
+      "Filters": [
+        "Filtry"
+      ],
+      "Has attachments": [
+        "S přílohami"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -15130,6 +15157,9 @@
       ],
       "Show me how": [
         "Ukažte mi jak"
+      ],
+      "Download the desktop app": [
+        "Stáhněte si desktopovou aplikaci"
       ]
     },
     "Title": {
@@ -16849,6 +16879,64 @@
       ],
       "Passcode:": [
         "Přístupový kód:"
+      ]
+    },
+    "customer_support.feature.meet": {
+      "For ${ MEET_APP_NAME }": [
+        "Pro ${ MEET_APP_NAME }"
+      ]
+    },
+    "meet_2025: Feature": {
+      "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
+        "${ MEET_APP_NAME }: Důvěrné videokonference pro důležité konverzace"
+      ],
+      "${ n } active meeting at a time": [
+        "${ n } aktivní schůzka ve stejný čas",
+        "${ n } aktivní schůzky ve stejný čas",
+        "${ n } aktivních schůzek ve stejný čas",
+        "${ n } aktivních schůzek ve stejný čas"
+      ],
+      "24 hours per meeting": [
+        "Schůzka o délce 24 hodin"
+      ],
+      "60 minutes per meeting": [
+        "Schůzka o délce 60 minut"
+      ],
+      "Appointment scheduling": [
+        "Plánování schůzek"
+      ],
+      "Browser, mobile, and desktop apps": [
+        "Aplikace pro prohlížeče, mobilní telefony a desktopy"
+      ],
+      "Built-in chat": [
+        "Integrovaný chat"
+      ],
+      "End-to-end encrypted screen sharing and ephemeral in-call chat": [
+        "Sdílení obrazovky s koncovým šifrováním a dočasný chat během hovoru"
+      ],
+      "Meeting recording (coming soon)": [
+        "Nahrávání schůzky (již brzy)"
+      ],
+      "One active meeting at a time": [
+        "Jedna aktivní schůzka ve stejný čas"
+      ],
+      "Screen-sharing": [
+        "Sdílení obrazovky"
+      ],
+      "Unlimited meetings per day": [
+        "Neomezený počet schůzek za den"
+      ],
+      "Up to ${ n } meeting per day": [
+        "Až ${ n } schůzka za den",
+        "Až ${ n } schůzky za den",
+        "Až ${ n } schůzek za den",
+        "Až ${ n } schůzek za den"
+      ],
+      "Up to ${ n } participant": [
+        "Až ${ n } účastník",
+        "Až ${ n } účastníci",
+        "Až ${ n } účastníků",
+        "Až ${ n } účastníků"
       ]
     }
   }

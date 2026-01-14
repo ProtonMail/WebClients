@@ -2673,6 +2673,9 @@
       ],
       "High-speed chats and advanced AI features.": [
         "Conversații rapide și funcții avansate de inteligență artificială."
+      ],
+      "Private video calls for the conversations that matter.": [
+        "Apeluri video private pentru conversațiile importante."
       ]
     },
     "color": {
@@ -5077,6 +5080,18 @@
       ],
       "Cannot set expiration longer than retention policy allows.": [
         "Nu se poate seta o expirare mai lungă decât permite politica de păstrare."
+      ],
+      "re-importing": [
+        "reimportare"
+      ],
+      "There was a problem decrypting your message. If the issue persists, contact our customer support.": [
+        "A existat o problemă la decriptarea mesajului. Dacă problema persistă, contactați asistența pentru clienți."
+      ],
+      "Your message cannot be decrypted. If you deleted any of your address keys, try ${ reimportKeyLink } them. ${ learnMoreLink }": [
+        "Mesajul nu poate fi decriptat. Dacă ați șters vreo cheie de adrese, încercați să faceți o ${ reimportKeyLink } a cesteia. ${ learnMoreLink }"
+      ],
+      "Your message cannot be decrypted. The key used to encrypt this message does not match any of the keys associated with your address. If you deleted any of your address keys, try ${ reimportKeyLink } them. ${ learnMoreLink }": [
+        "Mesajul nu poate fi decriptat. Cheia utilizată pentru criptarea acestui mesaj nu corespunde niciuneia dintre cheile asociate cu adresa. Dacă ați șters oricare dintre cheile adresei, încercați să faceți o ${ reimportKeyLink }. ${ learnMoreLink }"
       ]
     },
     "error": {
@@ -8951,6 +8966,15 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Sunteți la doar câteva clicuri distanță de un cont cu mesaje ordonate."
+      ],
+      "This message will be purged on ${ value }": [
+        "Acest mesaj va fi șters la ${ value }"
+      ],
+      "This message will be purged today at ${ value }": [
+        "Acest mesaj va fi șters astăzi la ${ value }."
+      ],
+      "This message will be purged tomorrow at ${ value }": [
+        "Acest mesaj va fi șters mâine la ${ value }"
       ]
     },
     "info": {
@@ -10027,6 +10051,12 @@
       ],
       "ZIP code": [
         "Cod poștal"
+      ],
+      "Filters": [
+        "Filtre"
+      ],
+      "Has attachments": [
+        "Cu atașamente"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -16517,6 +16547,61 @@
       ],
       "Passcode:": [
         "Cod de acces:"
+      ]
+    },
+    "customer_support.feature.meet": {
+      "For ${ MEET_APP_NAME }": [
+        "Pentru ${ MEET_APP_NAME }"
+      ]
+    },
+    "meet_2025: Feature": {
+      "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
+        "${ MEET_APP_NAME }: conferințe video confidențiale pentru conversațiile importante"
+      ],
+      "${ n } active meeting at a time": [
+        "Conferințe active simultan: ${ n }",
+        "Conferințe active simultan: ${ n }",
+        "Conferințe active simultan: ${ n }"
+      ],
+      "24 hours per meeting": [
+        "Conferințe de 24 de ore"
+      ],
+      "60 minutes per meeting": [
+        "60 de minute per întâlnire"
+      ],
+      "Appointment scheduling": [
+        "Planificare întâlniri"
+      ],
+      "Browser, mobile, and desktop apps": [
+        "Aplicații pentru navigator web, mobil și desktop"
+      ],
+      "Built-in chat": [
+        "Sistem de conversații integrat"
+      ],
+      "End-to-end encrypted screen sharing and ephemeral in-call chat": [
+        "Partajare ecran cu criptare bilaterală și conversații temporare pe durata apelului"
+      ],
+      "Meeting recording (coming soon)": [
+        "Înregistrare conferințe (în curând)"
+      ],
+      "One active meeting at a time": [
+        "O conferință activă simultan"
+      ],
+      "Screen-sharing": [
+        "Partajare ecran"
+      ],
+      "Unlimited meetings per day": [
+        "Conferințe nelimitate pe zi"
+      ],
+      "Up to ${ n } meeting per day": [
+        "Maxim conferințe pe zi: ${ n }",
+        "Maxim conferințe pe zi: ${ n }",
+        "Maxim conferințe pe zi: ${ n }"
+      ],
+      "Up to ${ n } participant": [
+        "Maxim participanți: ${ n }",
+        "Maxim participanți: ${ n }",
+        "Maxim participanți: ${ n }"
       ]
     }
   }

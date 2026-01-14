@@ -1513,10 +1513,7 @@
         "Dôverovať"
       ],
       "Trust key": [
-        "Dôveryhodný kľúč",
-        "Dôveryhodné kľúče",
-        "Dôveryhodné kľúče",
-        "Dôveryhodné kľúče"
+        "Dôveryhodný kľúč"
       ],
       "Trust public key": [
         "Dôverovať verejnému kľúču"
@@ -2595,6 +2592,12 @@
       ],
       "Ultra fast and private VPN": [
         "Ultra rýchla a súkromná VPN"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } používateľ",
+        "Až ${ numberOfUsers } používatelia",
+        "Až ${ numberOfUsers } používateľov",
+        "Až ${ numberOfUsers } používateľov"
       ]
     },
     "Checkout row": {
@@ -2684,6 +2687,9 @@
       ],
       "High-speed chats and advanced AI features.": [
         "Vysokorýchlostné chaty a pokročilé funkcie AI"
+      ],
+      "Private video calls for the conversations that matter.": [
+        "Súkromné videohovory pre konverzácie, na ktorých záleží."
       ]
     },
     "color": {
@@ -2890,7 +2896,7 @@
     },
     "Composer email icon": {
       "End-to-end encrypted": [
-        "Šifrovanie počas celého spojenia"
+        "End-to-end šifrované"
       ],
       "End-to-end encrypted to verified recipient": [
         "Šifrované typu End-to-end overenému príjemcovi"
@@ -5106,6 +5112,18 @@
       ],
       "Cannot set expiration longer than retention policy allows.": [
         "Nemožno nastaviť expiráciu dlhšiu, než povoľujú zásady uchovávania."
+      ],
+      "re-importing": [
+        "opätovné importovanie"
+      ],
+      "There was a problem decrypting your message. If the issue persists, contact our customer support.": [
+        "Pri dešifrovaní vašej správy nastal problém. Ak problém pretrváva, kontaktujte našu zákaznícku podporu."
+      ],
+      "Your message cannot be decrypted. If you deleted any of your address keys, try ${ reimportKeyLink } them. ${ learnMoreLink }": [
+        "Vašu správu sa nepodarilo dešifrovať. Ak ste odstránili niektorý z vašich kľúčov adries, skúste ich ${ reimportKeyLink }. ${ learnMoreLink }"
+      ],
+      "Your message cannot be decrypted. The key used to encrypt this message does not match any of the keys associated with your address. If you deleted any of your address keys, try ${ reimportKeyLink } them. ${ learnMoreLink }": [
+        "Vašu správu sa nepodarilo dešifrovať. Kľúč použitý na šifrovanie tejto správy sa nezhoduje so žiadnym z kľúčov pridružených k vašej adrese. Ak ste odstránili niektorý z kľúčov vašej adresy, skúste ich ${ reimportKeyLink }. ${ learnMoreLink }"
       ]
     },
     "error": {
@@ -6520,8 +6538,8 @@
       "${ elementsCount } conversation will be marked as read.": [
         "${ elementsCount } konverzácia bude označená ako prečítaná.",
         "${ elementsCount } konverzácie budú označené ako prečítané.",
-        "${ elementsCount } konverzácií bude označené ako prečítané.",
-        "${ elementsCount } konverzácií bude označených ako prečítané."
+        "${ elementsCount } konverzácií bude označených ako prečítané",
+        "${ elementsCount } konverzácií bude označených ako prečítané"
       ],
       "${ elementsCount } conversation will be marked as unread.": [
         "${ elementsCount } konverzácia bude označená ako neprečítaná.",
@@ -7715,7 +7733,7 @@
         "Nízka priorita"
       ],
       "Make ${ MAIL_APP_NAME } your default email application.": [
-        "Nastavte ${ MAIL_APP_NAME } ako predvolenú emailovú aplikáciu."
+        "Nastavte ${ MAIL_APP_NAME } ako vašu predvolenú emailovú aplikáciu."
       ],
       "Manage your folders": [
         "Spravovať priečinky"
@@ -9087,6 +9105,15 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Ste len pár kliknutí od prehľadnej doručenej pošty."
+      ],
+      "This message will be purged on ${ value }": [
+        "Táto správa bude vymazaná ${ value }"
+      ],
+      "This message will be purged today at ${ value }": [
+        "Táto správa bude dnes vymazaná o ${ value }"
+      ],
+      "This message will be purged tomorrow at ${ value }": [
+        "Táto správa bude vymazaná zajtra o ${ value }"
       ]
     },
     "info": {
@@ -10171,6 +10198,12 @@
       ],
       "Command line interface (CLI)": [
         "Rozhranie príkazového riadka (CLI)"
+      ],
+      "Filters": [
+        "Filtre"
+      ],
+      "Has attachments": [
+        "Má prílohy"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10866,7 +10899,7 @@
     },
     "new_plans": {
       "Highest VPN speed": [
-        "Vysoká VPN rýchlosť"
+        "Vysoká rýchlosť VPN"
       ],
       "Keep your inbox organized with folders": [
         "Udržujte svoju doručenú poštu organizovanú pomocou priečinkov"
@@ -11166,7 +11199,7 @@
         "Šifrované VPN servery"
       ],
       "End-to-end encryption": [
-        "Šifrovanie End-to-end"
+        "End-to-end šifrovanie"
       ],
       "Existing ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } benefits": [
         "Existujúce výhody ${ PLAN_NAMES[PLANS.VPN_BUSINESS] }"
@@ -11202,7 +11235,7 @@
         "HTML podpisy"
       ],
       "Kill switch/always-on VPN": [
-        "Kill switch/Trvalá sieť VPN"
+        "Kill switch/vždy zapnutá VPN"
       ],
       "Limited support": [
         "Obmedzená podpora"
@@ -13101,7 +13134,7 @@
         "Po začatí platnosti predplatného môžete do 30 dní predplatné zrušiť a získať pomernú refundáciu."
       ],
       "Refer friends": [
-        "Odporučiť priateľov"
+        "Odporučiť priateľom"
       ],
       "Start earning credits": [
         "Začnite zarábať kredity"
@@ -13323,7 +13356,7 @@
         "Šifrované pomocou ${ MAIL_APP_NAME } overenému príjemcovi"
       ],
       "End-to-end encrypted": [
-        "Šifrovanie počas celého spojenia"
+        "End-to-end šifrované"
       ],
       "End-to-end encrypted to PGP recipient": [
         "Šifrované typu End-to-end pre príjemcu PGP"
@@ -16843,6 +16876,64 @@
       ],
       "Passcode:": [
         "Prístupový kód:"
+      ]
+    },
+    "customer_support.feature.meet": {
+      "For ${ MEET_APP_NAME }": [
+        "Na ${ MEET_APP_NAME }"
+      ]
+    },
+    "meet_2025: Feature": {
+      "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
+        "${ MEET_APP_NAME }: Dôverné videokonferencie pre rozhovory, na ktorých záleží"
+      ],
+      "${ n } active meeting at a time": [
+        "${ n } aktívne stretnutie naraz",
+        "${ n } aktívne stretnutia naraz",
+        "${ n } aktívnych stretnutí naraz",
+        "${ n } aktívnych stretnutí naraz"
+      ],
+      "24 hours per meeting": [
+        "24 hodín na schôdzu"
+      ],
+      "60 minutes per meeting": [
+        "60 minút na schôdzu"
+      ],
+      "Appointment scheduling": [
+        "Plánovanie schôdzok"
+      ],
+      "Browser, mobile, and desktop apps": [
+        "Aplikácie pre prehliadače, mobily a desktopy"
+      ],
+      "Built-in chat": [
+        "Vstavaný chat"
+      ],
+      "End-to-end encrypted screen sharing and ephemeral in-call chat": [
+        "End-to-end šifrované zdieľanie obrazovky a dočasný chat počas hovoru"
+      ],
+      "Meeting recording (coming soon)": [
+        "Nahrávanie stretnutia (čoskoro)"
+      ],
+      "One active meeting at a time": [
+        "Jeden aktívny hovor naraz"
+      ],
+      "Screen-sharing": [
+        "Zdieľanie obrazovky"
+      ],
+      "Unlimited meetings per day": [
+        "Neobmedzený počet stretnutí za deň"
+      ],
+      "Up to ${ n } meeting per day": [
+        "Až ${ n } stretnutie za deň",
+        "Až ${ n } stretnutia za deň",
+        "Až ${ n } stretnutí za deň",
+        "Až ${ n } stretnutí za deň"
+      ],
+      "Up to ${ n } participant": [
+        "Až do ${ n } účastníka",
+        "Až do ${ n } účastníkov",
+        "Až do ${ n } účastníkov",
+        "Až do ${ n } účastníkov"
       ]
     }
   }
