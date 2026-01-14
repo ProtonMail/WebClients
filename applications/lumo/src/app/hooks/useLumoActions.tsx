@@ -78,8 +78,9 @@ export const useLumoActions = ({
     const guestTracking = useGuestTracking();
     const { hasConversationErrors, clearErrors } = useConversationErrors(conversationId);
     const { hasTierErrors } = useTierErrors();
-    const isLumoToolingEnabled = useFlag('LumoTooling');
-    const enableSmoothing = useFlag('LumoSmoothedRendering');
+    const ffSmoothRendering = useFlag('LumoSmoothedRendering');
+    const ffExternalTools = useFlag('LumoTooling');
+    const ffImageTools = useFlag('LumoImageTools');
     const contextFilters = useLumoSelector(selectContextFilters);
     const allAttachments = useLumoSelector(selectAttachments);
     const lumoUserSettings = useLumoSelector((state) => state.lumoUserSettings);
@@ -145,16 +146,16 @@ export const useLumoActions = ({
         signal: AbortSignal
     ) => {
         const { newMessageContent, isWebSearchButtonToggled } = actionParams;
+        if (!newMessageContent) return;
 
-        if (!newMessageContent) {
-            return;
-        }
+        const enableExternalTools = ffExternalTools && isWebSearchButtonToggled;
+        const enableImageTools = ffImageTools && isWebSearchButtonToggled;
+        const enableSmoothing = ffSmoothRendering;
 
+        // Load messages and all attachments from conversation history and combine with new message attachments
         const messagesWithContext = await addContextToMessages(messageChain, user, spaceDek);
-
-        // Load all attachments from conversation history and combine with new message attachments
         const historyAttachments = await loadAttachments(messagesWithContext, user, spaceDek);
-        const allAttachments = [...historyAttachments, ...provisionalAttachments];
+        const allConversationAttachments = [...historyAttachments, ...provisionalAttachments];
 
         await dispatch(
             sendMessage({
@@ -169,12 +170,13 @@ export const useLumoActions = ({
                 conversationContext: {
                     spaceId,
                     conversationId,
-                    allConversationAttachments: allAttachments,
+                    allConversationAttachments,
                     messageChain: messagesWithContext,
                     contextFilters,
                 },
                 uiContext: {
-                    enableExternalTools: isWebSearchButtonToggled && isLumoToolingEnabled,
+                    enableExternalTools,
+                    enableImageTools,
                     navigateCallback,
                     enableSmoothing,
                     isGhostMode,
@@ -253,10 +255,10 @@ export const useLumoActions = ({
                     allAttachments,
                 },
                 uiContext: {
-                    enableExternalTools: isWebSearchButtonToggled && isLumoToolingEnabled,
+                    enableExternalTools: isWebSearchButtonToggled && ffExternalTools,
                     navigateCallback,
                     isGhostMode,
-                    enableSmoothing,
+                    enableSmoothing: ffSmoothRendering,
                 },
                 settingsContext: {
                     personalization,
@@ -314,9 +316,9 @@ export const useLumoActions = ({
                 uiContext: {
                     isEdit: true,
                     updateSibling: preferSibling,
-                    enableExternalTools: isWebSearchButtonToggled && isLumoToolingEnabled,
+                    enableExternalTools: isWebSearchButtonToggled && ffExternalTools,
                     navigateCallback,
-                    enableSmoothing,
+                    enableSmoothing: ffSmoothRendering,
                     isGhostMode,
                 },
                 settingsContext: {
@@ -392,7 +394,7 @@ export const useLumoActions = ({
         preferSibling(assistantMessage);
 
         const parentMessageHasAttachments = !!parentMessage?.attachments?.length;
-        const enableExternalTools = isWebSearchButtonToggled && !parentMessageHasAttachments && isLumoToolingEnabled;
+        const enableExternalTools = isWebSearchButtonToggled && !parentMessageHasAttachments && ffExternalTools;
 
         if (!spaceId) {
             throw new Error(OPERATION_MESSAGES.SPACE_ID_REQUIRED);
@@ -415,7 +417,7 @@ export const useLumoActions = ({
                     enableExternalTools,
                     navigateCallback,
                     isGhostMode,
-                    enableSmoothing,
+                    enableSmoothing: ffSmoothRendering,
                 },
                 settingsContext: {
                     personalization,
