@@ -60,14 +60,14 @@ export function useDriveFolderIndexing(): UseDriveFolderIndexingReturn {
     // Derive indexingStatus from the shared context eventIndexingStatus
     const indexingStatus: FolderIndexingStatus | null = eventIndexingStatus.isIndexing
         ? {
-            folderId: '', // We don't track folderId in context, but it's not used by the banner
-            status: 'indexing',
-            progress: {
-                indexed: eventIndexingStatus.processedCount,
-                total: eventIndexingStatus.totalCount,
-            },
-            stage: eventIndexingStatus.stage,
-        }
+              folderId: '', // We don't track folderId in context, but it's not used by the banner
+              status: 'indexing',
+              progress: {
+                  indexed: eventIndexingStatus.processedCount,
+                  total: eventIndexingStatus.totalCount,
+              },
+              stage: eventIndexingStatus.stage,
+          }
         : null;
 
     // Derive isIndexing from the shared context
@@ -160,7 +160,12 @@ export function useDriveFolderIndexing(): UseDriveFolderIndexingReturn {
     );
 
     const indexFolder = useCallback(
-        async (folderUid: string, folderName: string, folderPath: string, options?: IndexFolderOptions): Promise<IndexFolderResult> => {
+        async (
+            folderUid: string,
+            folderName: string,
+            folderPath: string,
+            options?: IndexFolderOptions
+        ): Promise<IndexFolderResult> => {
             if (!user?.ID) {
                 return {
                     success: false,
@@ -195,7 +200,13 @@ export function useDriveFolderIndexing(): UseDriveFolderIndexingReturn {
                     return isFileTypeSupported(file.name, mimeType);
                 });
 
-                console.log('[DriveIndexing] Found', allFiles.length, 'total files,', indexableFiles.length, 'indexable files in folder tree');
+                console.log(
+                    '[DriveIndexing] Found',
+                    allFiles.length,
+                    'total files,',
+                    indexableFiles.length,
+                    'indexable files in folder tree'
+                );
 
                 const totalIndexableFiles = indexableFiles.length;
                 const limitExceeded = totalIndexableFiles > MAX_INDEXABLE_FILES;
@@ -203,7 +214,9 @@ export function useDriveFolderIndexing(): UseDriveFolderIndexingReturn {
                 const skippedFiles = limitExceeded ? totalIndexableFiles - MAX_INDEXABLE_FILES : 0;
 
                 if (limitExceeded) {
-                    console.warn(`[DriveIndexing] File limit exceeded. Indexing first ${MAX_INDEXABLE_FILES} of ${totalIndexableFiles} indexable files. ${skippedFiles} files will be skipped.`);
+                    console.warn(
+                        `[DriveIndexing] File limit exceeded. Indexing first ${MAX_INDEXABLE_FILES} of ${totalIndexableFiles} indexable files. ${skippedFiles} files will be skipped.`
+                    );
                 }
 
                 setIndexingProgress(0, filesToProcess.length);
@@ -236,9 +249,13 @@ export function useDriveFolderIndexing(): UseDriveFolderIndexingReturn {
                                 spaceId,
                             };
                         } else if (result.type === 'error') {
-                            console.warn(`[DriveIndexing] File processing failed for ${file.relativePath}: ${result.message}`);
+                            console.warn(
+                                `[DriveIndexing] File processing failed for ${file.relativePath}: ${result.message}`
+                            );
                         } else {
-                            console.log(`[DriveIndexing] Skipping indexing for ${file.relativePath} (type '${result.type}')`);
+                            console.log(
+                                `[DriveIndexing] Skipping indexing for ${file.relativePath} (type '${result.type}')`
+                            );
                         }
                         return null;
                     } catch (error) {
@@ -257,10 +274,14 @@ export function useDriveFolderIndexing(): UseDriveFolderIndexingReturn {
                     console.log(`[DriveIndexing] Processing batch ${batchNum}/${totalBatches} (${batch.length} files)`);
 
                     // Show progress as "processing files X to Y"
-                    setIndexingProgress(i, filesToProcess.length, `Downloading files ${i + 1}-${batchEndIndex} of ${filesToProcess.length}`);
+                    setIndexingProgress(
+                        i,
+                        filesToProcess.length,
+                        `Downloading files ${i + 1}-${batchEndIndex} of ${filesToProcess.length}`
+                    );
 
                     // Yield to allow UI to update
-                    await new Promise(resolve => setTimeout(resolve, 0));
+                    await new Promise((resolve) => setTimeout(resolve, 0));
 
                     // Download and process batch in parallel
                     const batchResults = await Promise.all(batch.map(processFile));
@@ -273,7 +294,11 @@ export function useDriveFolderIndexing(): UseDriveFolderIndexingReturn {
                         processedCount++;
                     }
 
-                    setIndexingProgress(processedCount, filesToProcess.length, `Processed ${processedCount}/${filesToProcess.length} files`);
+                    setIndexingProgress(
+                        processedCount,
+                        filesToProcess.length,
+                        `Processed ${processedCount}/${filesToProcess.length} files`
+                    );
                 }
 
                 const documentsWithContent = documents.filter((d) => d.content && d.content.length > 0);
@@ -334,7 +359,17 @@ export function useDriveFolderIndexing(): UseDriveFolderIndexingReturn {
                 resetIndexingStatus();
             }
         },
-        [user?.ID, collectAllFiles, downloadFile, indexedFolders, updateSettings, removeIndexedFolder, setIndexingFile, setIndexingProgress, resetIndexingStatus]
+        [
+            user?.ID,
+            collectAllFiles,
+            downloadFile,
+            indexedFolders,
+            updateSettings,
+            removeIndexedFolder,
+            setIndexingFile,
+            setIndexingProgress,
+            resetIndexingStatus,
+        ]
     );
 
     const rehydrateFolders = useCallback(
@@ -364,9 +399,14 @@ export function useDriveFolderIndexing(): UseDriveFolderIndexingReturn {
                         path: folder.path,
                         spaceId: folder.spaceId,
                     });
-                    await indexFolder(folder.nodeUid, folder.name || folder.path || '', folder.path || folder.name || '', {
-                        spaceId: folder.spaceId,
-                    });
+                    await indexFolder(
+                        folder.nodeUid,
+                        folder.name || folder.path || '',
+                        folder.path || folder.name || '',
+                        {
+                            spaceId: folder.spaceId,
+                        }
+                    );
                     processed += 1;
                 } catch (error) {
                     console.error('[DriveIndexing] Rehydrate failed for folder', folder.nodeUid, error);
