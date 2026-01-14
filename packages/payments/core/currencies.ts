@@ -139,21 +139,8 @@ const countryToRegionalCurrencyMap: Readonly<Partial<Record<string, Currency>>> 
     HK: 'HKD',
 });
 
-export function mapCountryToRegionalCurrency(
-    countryCode: string,
-    enableNewBatchCurrencies: boolean
-): Currency | undefined {
-    const result = countryToRegionalCurrencyMap[countryCode];
-    if (!result) {
-        return;
-    }
-
-    const isNewBatchCurrency = isNewBatchRegionalCurrency(result);
-    if (!isNewBatchCurrency) {
-        return result;
-    }
-
-    return enableNewBatchCurrencies ? result : undefined;
+export function mapCountryToRegionalCurrency(countryCode: string): Currency | undefined {
+    return countryToRegionalCurrencyMap[countryCode];
 }
 
 export function mapRegionalCurrencyToCountry(currency: Currency): string | undefined {
@@ -174,7 +161,7 @@ function getMaybeRegionalPlansCurrency(
         !!plansCurrency &&
         isRegionalCurrency(plansCurrency) &&
         !!paymentStatus &&
-        plansCurrency === mapCountryToRegionalCurrency(paymentStatus?.CountryCode, true)
+        plansCurrency === mapCountryToRegionalCurrency(paymentStatus?.CountryCode)
             ? plansCurrency
             : null;
 
@@ -186,13 +173,10 @@ export function getStatusCurrency(
     user: User | undefined,
     enableNewBatchCurrencies: boolean
 ): Currency | undefined {
-    // we ignore regional currency coming from the status endpoint if user doesn't exist yet. This is because we
-    // want the backend to control the rollout of regional currencies, especially for the new signups.
-    // So expected behavior is: new users should fully rely on the backend to determine the available currencies.
-    // And existing users can rely on status, subscription, and user currency.
-    return !!paymentStatus && !!user
-        ? mapCountryToRegionalCurrency(paymentStatus.CountryCode, enableNewBatchCurrencies)
-        : undefined;
+    const statusCurrency = paymentStatus ? mapCountryToRegionalCurrency(paymentStatus.CountryCode) : undefined;
+    const newBatchCurrency = isNewBatchRegionalCurrency(statusCurrency);
+
+    return !user || enableNewBatchCurrencies || !newBatchCurrency ? statusCurrency : undefined;
 }
 
 export function getSupportedRegionalCurrencies({
