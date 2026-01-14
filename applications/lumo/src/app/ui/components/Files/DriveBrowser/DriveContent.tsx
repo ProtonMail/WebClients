@@ -8,11 +8,10 @@ import { NodeType } from '@proton/drive';
 import type { DriveNode } from '../../../../hooks/useDriveSDK';
 import { isFileTypeSupported } from '../../../../util/filetypes';
 import type { BreadcrumbItem } from './DriveBreadcrumbs';
+import { DriveBreadcrumbs } from './DriveBreadcrumbs';
 import { DriveEmptyState } from './DriveEmptyState';
 import { DriveFileList } from './DriveFileList';
 import { DriveHiddenFilesNotice } from './DriveHiddenFilesNotice';
-
-import './DriveContent.scss';
 
 interface DriveContentProps {
     loading: boolean;
@@ -30,6 +29,7 @@ interface DriveContentProps {
     isLinkedFolder?: boolean;
     folderSelectionMode?: boolean;
     handleBreadcrumbClick: (breadcrumb: BreadcrumbItem) => void;
+    showBreadcrumbs: boolean;
 }
 
 export const DriveContent: React.FC<DriveContentProps> = ({
@@ -37,7 +37,7 @@ export const DriveContent: React.FC<DriveContentProps> = ({
     isRefreshing,
     children,
     currentFolder,
-    // breadcrumbs,
+    breadcrumbs,
     existingFiles,
     downloadingFile,
     downloadProgress,
@@ -47,7 +47,8 @@ export const DriveContent: React.FC<DriveContentProps> = ({
     onCreateFolder,
     isLinkedFolder = false,
     folderSelectionMode = false,
-    // handleBreadcrumbClick,
+    handleBreadcrumbClick,
+    showBreadcrumbs,
 }) => {
     if (loading) {
         return (
@@ -81,11 +82,13 @@ export const DriveContent: React.FC<DriveContentProps> = ({
 
     return (
         <>
-            {/* <DriveBreadcrumbs
-                breadcrumbs={breadcrumbs}
-                currentFolder={currentFolder}
-                onBreadcrumbClick={handleBreadcrumbClick}
-            /> */}
+            {showBreadcrumbs && (
+                <DriveBreadcrumbs
+                    breadcrumbs={breadcrumbs}
+                    currentFolder={currentFolder}
+                    onBreadcrumbClick={handleBreadcrumbClick}
+                />
+            )}
 
             <div className="drive-content-container overflow-auto" style={{ minHeight: '200px' }}>
                 <DriveHiddenFilesNotice
