@@ -1849,6 +1849,9 @@
       ],
       "High-speed chats and advanced AI features.": [
         "Chats de gran velocidad y funciones de IA avanzadas."
+      ],
+      "Private video calls for the conversations that matter.": [
+        "Videollamadas privadas para las conversaciones que importan."
       ]
     },
     "colon": {
@@ -3954,6 +3957,9 @@
       ],
       "ZIP code is required": [
         "Se requiere el código postal."
+      ],
+      "Unable to load VPN dashboard. Please check your connection and try again.": [
+        "No se puede cargar el panel de control de la VPN. Revise su conexión e intente de nuevo."
       ]
     },
     "error": {
@@ -5607,10 +5613,10 @@
         "Los mensajes de todas sus direcciones de correo se enviarán a su bandeja de entrada."
       ],
       "Min. 2 hours before": [
-        "Mín. 2 horas antes"
+        "Min. 2 horas antes"
       ],
       "Min. 48 hours before": [
-        "Mín. 48 horas antes"
+        "Min. 48 horas antes"
       ],
       "Monitor accounts": [
         "Monitoreo de cuentas"
@@ -6332,6 +6338,108 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Ha alcanzado el límite de franjas de reserva (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
+        "${ VPN_APP_NAME } está enmascarando su dirección IP por lo que los sitios web no pueden identificarle."
+      ],
+      "**Auto-connect**: Opens and connects to VPN as soon as you turn on your device.": [
+        "**Conexión automática**: Inicie y conéctese a la VPN en cuanto encienda su dispositivo."
+      ],
+      "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
+        "**Interruptor de bloqueo**: Detiene las filtraciones de datos al bloquear su conexión internet si la VPN se desconecta inesperadamente."
+      ],
+      "A secure connection is essential when working remotely. A VPN protects company data from cyber threats and keeps your work private.": [
+        "Una conexión segura es esencial al trabajar remotamente. Una VPN protege los datos de la compañía de amenazas cibernéticas y mantiene su trabajo privado."
+      ],
+      "A VPN encrypts your connection and hides your IP address, making it much harder for anyone to track or monitor your browsing.": [
+        "Una VPN cifra su conexión y oculta su dirección IP, lo que hace que sea mucho más difícil para cualquiera rastrear o monitorear su navegación."
+      ],
+      "A VPN hides your IP address and encrypts your browsing activity, making it harder for websites, advertisers, and ISPs to track you over time.": [
+        "Una VPN oculta su dirección IP y cifra su actividad de navegación, lo que dificulta que sitios web, anunciantes e ISP lo rastreen a lo largo del tiempo."
+      ],
+      "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
+        "Una VPN es un túnel seguro entre su dispositivo e internet. Oculta su ubicación y su actividad de su proveedor de servicios de internet (ISP) y los sitios web que visita."
+      ],
+      "Ad targeting": [
+        "Orientación de anuncios"
+      ],
+      "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
+        "Los anunciantes rastrean su navegación para mostrar anuncios específicos. ${ VPN_APP_NAME } bloquea rastreadores y anuncios, lo que hace que su conexión sea más rápida y mejora su experiencia en línea."
+      ],
+      "Connect to ${ VPN_APP_NAME } to browse privately": [
+        "Conéctese a ${ VPN_APP_NAME } para navegar de forma privada."
+      ],
+      "Geoblocking": [
+        "Bloqueo geográfico"
+      ],
+      "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
+        "Los gobiernos y los proveedores de servicios de internet pueden monitorear su actividad en línea. Ocultando su IP real y cifrando su actividad de navegación se vuelve privada."
+      ],
+      "In restrictive countries": [
+        "En países con restricciones"
+      ],
+      "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
+        "Es mejor usar una VPN en todo momento. Pero estos son los casos en que las amenazas de ciberseguridad pueden ser mayores:"
+      ],
+      "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
+        "La mayoría de las redes Wi-Fi públicas son seguras, pero algunas carecen de seguridad, exponiéndole a amenazas cibernéticas. Una VPN cifra su tráfico brindándole protección."
+      ],
+      "Not connected": [
+        "No conectado"
+      ],
+      "On public WiFi networks": [
+        "En redes Wi-Fi públicas"
+      ],
+      "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
+        "La navegación privada (o modo «incógnito») solo es útil para mantener oculta su actividad en su dispositivo. Evita que su navegador guarde el historial y las cookies, pero no le hace invisible. Su ISP, administrador de red y los sitios web que visita aún pueden ver lo que hace en línea."
+      ],
+      "Scan the QR code with your mobile device": [
+        "Escanee el código QR con su dispositivo móvil."
+      ],
+      "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
+        "Algunos gobiernos bloquean o restringen el acceso a ciertos sitios web. Una VPN ayuda a evitar la censura al mantener su actividad e identidad privadas."
+      ],
+      "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
+        "Algunos sitios web y servicios de streaming bloquean los contenidos por región. Una VPN te permite evitar estas restricciones y acceder a internet."
+      ],
+      "Stay connected effortlessly by enabling the following VPN settings:": [
+        "Manténgase en línea sin ningún esfuerzo al activar los siguientes ajustes VPN:"
+      ],
+      "Surveillance": [
+        "Vigilancia"
+      ],
+      "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
+        "Esto significa que su proveedor de servicios de internet y los sitios web que visita no pueden conectar su información personal con su actividad en línea."
+      ],
+      "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
+        "Este código único puede ser usado por sitios web e ISP (proveedores de servicios de Internet) para vincular su ubicación y su historial de navegación a su dispositivo."
+      ],
+      "Tracking": [
+        "Rastreadores"
+      ],
+      "VPN IP": [
+        "IP de VPN"
+      ],
+      "When working remotely": [
+        "Al trabajar de forma remota"
+      ],
+      "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
+        "Cuando se conecta a una VPN, usa tecnología de cifrado para ocultar su dirección IP (un código único asignado a su dispositivo)."
+      ],
+      "Your internet service provider can monitor and sometimes sell your data, or even restrict what websites you can access.": [
+        "Su proveedor de servicios de internet puede monitorear y, en ocasiones, vender sus datos, o incluso restringir a qué sitios web puede acceder."
+      ],
+      "Your IP": [
+        "Su IP"
+      ],
+      "Your IP address is visible and can be used to track your online activity.": [
+        "Su dirección IP es visible y puede usarse para rastrear su actividad en línea."
+      ],
+      "Your online activity is protected": [
+        "Su actividad en línea está protegida."
+      ],
+      "Your physical location is visible and can be used to restrict your access to the internet.": [
+        "Su ubicación física es visible y puede usarse para restringir su acceso a internet."
       ]
     },
     "info": {
@@ -7044,6 +7152,15 @@
       ],
       "Zoom meeting": [
         "Reunión de Zoom"
+      ],
+      "Your IP": [
+        "Su IP"
+      ],
+      "Your ISP": [
+        "Su proveedor de internet"
+      ],
+      "Your location": [
+        "Su ubicación"
       ]
     },
     "label": {
@@ -11903,6 +12020,39 @@
       ],
       "Your shorter address is now ready": [
         "Su dirección en formato más corto ya está lista."
+      ],
+      "Desktop": [
+        "Escritorio"
+      ],
+      "Download the app": [
+        "Descargar la aplicación"
+      ],
+      "Get more from your VPN": [
+        "Obtenga más de su VPN"
+      ],
+      "How does it all work?": [
+        "¿Cómo funciona?"
+      ],
+      "Make a secure connection your default": [
+        "Elija una conexión segura como opción predeterminada"
+      ],
+      "Mobile": [
+        "Móvil"
+      ],
+      "Private browsing vs VPN": [
+        "Navegación privada y VPN"
+      ],
+      "VPN explained": [
+        "Explicaciones sobre la VPN"
+      ],
+      "What can a VPN protect you from?": [
+        "¿De qué le puede proteger una VPN?"
+      ],
+      "What is a VPN?": [
+        "¿Qué es una VPN?"
+      ],
+      "When is it most important to use a VPN?": [
+        "¿Cuándo es más importante utilizar una VPN?"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -12476,6 +12626,69 @@
       ],
       "Passcode:": [
         "Código de acceso:"
+      ]
+    },
+    "customer_support.feature.meet": {
+      "For ${ MEET_APP_NAME }": [
+        "Para ${ MEET_APP_NAME }"
+      ]
+    },
+    "Drawer tab, Action": {
+      "Download for Linux": [
+        "Descargar para Linux"
+      ],
+      "Download for macOS": [
+        "Descargar para macOS"
+      ],
+      "Download for Windows": [
+        "Descargar para Windows"
+      ]
+    },
+    "meet_2025: Feature": {
+      "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
+        "${ MEET_APP_NAME }: videollamadas privadas para lo que realmente importa"
+      ],
+      "${ n } active meeting at a time": [
+        "${ n } reunión activa a la vez",
+        "${ n } reuniones activas a la vez"
+      ],
+      "24 hours per meeting": [
+        "24 horas por reunión"
+      ],
+      "60 minutes per meeting": [
+        "60 minutos por reunión"
+      ],
+      "Appointment scheduling": [
+        "Programación de citas"
+      ],
+      "Browser, mobile, and desktop apps": [
+        "Aplicaciones para navegador, móvil y escritorio"
+      ],
+      "Built-in chat": [
+        "Chat integrado"
+      ],
+      "End-to-end encrypted screen sharing and ephemeral in-call chat": [
+        "Pantalla compartida con cifrado de extremo a extremo y chat efímero en la llamada"
+      ],
+      "Meeting recording (coming soon)": [
+        "Grabación de la reunión (próximamente)"
+      ],
+      "One active meeting at a time": [
+        "Una reunión activa a la vez"
+      ],
+      "Screen-sharing": [
+        "Compartir pantalla"
+      ],
+      "Unlimited meetings per day": [
+        "Reuniones ilimitadas al día"
+      ],
+      "Up to ${ n } meeting per day": [
+        "Hasta ${ n } reunión por día",
+        "Hasta ${ n } reuniones al día"
+      ],
+      "Up to ${ n } participant": [
+        "Hasta ${ n } participante",
+        "Hasta ${ n } participantes"
       ]
     }
   }
