@@ -14,21 +14,22 @@ import { makeFinishSink } from './transforms/finish';
 import { makeImageLoggerTransformStream } from './transforms/image-logger';
 import { makeSmoothingTransformStream } from './transforms/smoothing';
 import { makeUtf8DecodingTransformStream } from './transforms/utf8';
-import type {
-    AssistantCallOptions,
-    ChatEndpointGenerationRequest,
-    ChunkCallback,
-    FinishCallback,
-    GenerationResponseMessage,
-    LumoApiClientConfig,
-    LumoApiGenerationRequest,
-    RequestContext,
-    RequestInterceptor,
-    RequestableGenerationTarget,
-    ResponseContext,
-    ResponseInterceptor,
-    Status,
-    Turn,
+import {
+    type AssistantCallOptions,
+    type ChatEndpointGenerationRequest,
+    type ChunkCallback,
+    type FinishCallback,
+    type GenerationResponseMessage,
+    type LumoApiClientConfig,
+    type LumoApiGenerationRequest,
+    type RequestContext,
+    type RequestInterceptor,
+    type RequestableGenerationTarget,
+    type ResponseContext,
+    type ResponseInterceptor,
+    Role,
+    type Status,
+    type Turn,
 } from './types';
 
 // Default configuration
@@ -368,7 +369,7 @@ export class LumoApiClient {
         const { enableWebSearch = false, onChunk, signal } = options;
         let response = '';
 
-        await this.callAssistant(api, [{ role: 'user', content: message }], {
+        await this.callAssistant(api, [{ role: Role.User, content: message }], {
             enableExternalTools: enableWebSearch,
             signal,
             chunkCallback: async (msg) => {

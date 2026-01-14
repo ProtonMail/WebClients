@@ -1,3 +1,5 @@
+/* eslint-disable no-duplicate-imports */
+
 /* Types for the lumo-api-client library.
  *
  * This file contains:
@@ -7,35 +9,37 @@
  *
  * Most types are re-exported to avoid breaking existing imports within the library.
  */
+
 import type { AesGcmCryptoKey } from '../../../crypto/types';
 import type { Base64, RequestId, Status } from '../../../types';
-import type {
-    Decrypted,
-    DecryptedImageDataMessage,
-    DecryptedTokenDataMessage,
-    DoneMessage,
-    Encrypted,
-    EncryptedImageDataMessage,
-    EncryptedTokenDataMessage,
-    EncryptedWireTurn,
-    ErrorMessage,
-    GenerationResponseMessage,
-    GenerationResponseMessageDecrypted,
-    GenerationTarget,
-    HarmfulMessage,
-    ImageDataMessage,
-    IngestingMessage,
-    LumoApiGenerationRequest,
-    QueuedMessage,
-    RejectedMessage,
-    RequestableGenerationTarget,
+import {
+    type ChatEndpointGenerationRequest,
+    type Decrypted,
+    type DecryptedImageDataMessage,
+    type DecryptedTokenDataMessage,
+    type DoneMessage,
+    type Encrypted,
+    type EncryptedImageDataMessage,
+    type EncryptedTokenDataMessage,
+    type EncryptedWireTurn,
+    type ErrorMessage,
+    type GenerationResponseMessage,
+    type GenerationResponseMessageDecrypted,
+    type GenerationTarget,
+    type HarmfulMessage,
+    type ImageDataMessage,
+    type IngestingMessage,
+    type LumoApiGenerationRequest,
+    type QueuedMessage,
+    type RejectedMessage,
+    type RequestableGenerationTarget,
     Role,
-    TimeoutMessage,
-    TokenDataMessage,
-    ToolName,
-    UnencryptedWireTurn,
-    WireImage,
-    WireTurn,
+    type TimeoutMessage,
+    type TokenDataMessage,
+    type ToolName,
+    type UnencryptedWireTurn,
+    type WireImage,
+    type WireTurn,
 } from '../../../types-api';
 import {
     isDecrypted,
@@ -61,30 +65,31 @@ import {
 } from '../../../types-api';
 
 // Re-export types with aliases
-export type {
-    Decrypted,
-    DecryptedImageDataMessage,
-    DecryptedTokenDataMessage,
-    DoneMessage,
-    Encrypted,
-    EncryptedImageDataMessage,
-    EncryptedTokenDataMessage,
-    ErrorMessage,
-    GenerationResponseMessage,
-    GenerationResponseMessageDecrypted,
-    GenerationTarget,
-    HarmfulMessage,
-    ImageDataMessage,
-    IngestingMessage,
-    LumoApiGenerationRequest,
-    QueuedMessage,
-    RejectedMessage,
-    RequestableGenerationTarget,
+export {
+    type ChatEndpointGenerationRequest,
+    type Decrypted,
+    type DecryptedImageDataMessage,
+    type DecryptedTokenDataMessage,
+    type DoneMessage,
+    type Encrypted,
+    type EncryptedImageDataMessage,
+    type EncryptedTokenDataMessage,
+    type ErrorMessage,
+    type GenerationResponseMessage,
+    type GenerationResponseMessageDecrypted,
+    type GenerationTarget,
+    type HarmfulMessage,
+    type ImageDataMessage,
+    type IngestingMessage,
+    type LumoApiGenerationRequest,
+    type QueuedMessage,
+    type RejectedMessage,
+    type RequestableGenerationTarget,
     Role,
-    TimeoutMessage,
-    TokenDataMessage,
-    ToolName,
-    WireImage,
+    type TimeoutMessage,
+    type TokenDataMessage,
+    type ToolName,
+    type WireImage,
 };
 export type EncryptedTurn = EncryptedWireTurn;
 export type UnencryptedTurn = UnencryptedWireTurn;
