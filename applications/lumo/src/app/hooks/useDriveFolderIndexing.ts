@@ -3,14 +3,14 @@ import { useCallback } from 'react';
 import { useUser } from '@proton/account/user/hooks';
 import { NodeType } from '@proton/drive';
 
-import type { IndexedDriveFolder } from '../redux/slices/lumoUserSettings';
 import { useDriveIndexing } from '../providers/DriveIndexingProvider';
-import { fileProcessingService } from '../services/fileProcessingService';
-import { getMimeTypeFromExtension, isFileTypeSupported } from '../util/filetypes';
+import type { IndexedDriveFolder } from '../redux/slices/lumoUserSettings';
 import { SearchService } from '../services/search/searchService';
-import type { DriveDocument, FolderIndexingStatus } from '../types/documents';
 import type { SpaceId } from '../types';
-import { useDriveSDK, type DriveNode } from './useDriveSDK';
+import type { DriveDocument, FolderIndexingStatus } from '../types/documents';
+import { getMimeTypeFromExtension, isFileTypeSupported } from '../util/filetypes';
+import { type DriveNode, useDriveSDK } from './useDriveSDK';
+import { useFileProcessing } from './useFileProcessing';
 import { useLumoUserSettings } from './useLumoUserSettings';
 
 interface IndexFolderOptions {
@@ -55,6 +55,7 @@ export function useDriveFolderIndexing(): UseDriveFolderIndexingReturn {
     const { browseFolderChildren, downloadFile } = useDriveSDK();
     const { lumoUserSettings, updateSettings } = useLumoUserSettings();
     const { setIndexingFile, setIndexingProgress, resetIndexingStatus, eventIndexingStatus } = useDriveIndexing();
+    const fileProcessingService = useFileProcessing();
 
     // Derive indexingStatus from the shared context eventIndexingStatus
     const indexingStatus: FolderIndexingStatus | null = eventIndexingStatus.isIndexing
