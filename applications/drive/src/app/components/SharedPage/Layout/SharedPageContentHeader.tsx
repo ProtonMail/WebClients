@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { shortHumanSize } from '@proton/shared/lib/helpers/humanSize';
-import { isProtonDocsDocument } from '@proton/shared/lib/helpers/mimetype';
+import { isProtonDocsDocument, isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype';
 import clsx from '@proton/utils/clsx';
 
 import type { useBookmarksPublicView } from '../../../store';
@@ -30,7 +30,7 @@ interface Props extends DownloadButtonProps {
     isFolderView?: boolean;
     token: string;
     linkId: string;
-    openInDocs?: (linkId: string, options?: { redirect?: boolean; download?: boolean }) => void;
+    openInDocs?: (linkId: string, options?: { redirect?: boolean; download?: boolean; mimeType?: string }) => void;
 }
 
 export function SharedPageContentHeader({
@@ -56,8 +56,14 @@ export function SharedPageContentHeader({
     const selectedItems = getSelectedItems(items || [], selectionControls?.selectedItemIds || []);
 
     const hasOnlyDocuments =
-        (items.length > 0 && items.every((item) => item.isFile && isProtonDocsDocument(item.mimeType))) ||
-        (selectedItems.length > 0 && selectedItems.every((item) => item.isFile && isProtonDocsDocument(item.mimeType)));
+        (items.length > 0 &&
+            items.every(
+                (item) => item.isFile && (isProtonDocsDocument(item.mimeType) || isProtonDocsSpreadsheet(item.mimeType))
+            )) ||
+        (selectedItems.length > 0 &&
+            selectedItems.every(
+                (item) => item.isFile && (isProtonDocsDocument(item.mimeType) || isProtonDocsSpreadsheet(item.mimeType))
+            ));
     const sharedBy = rootLink.signatureEmail;
 
     return (

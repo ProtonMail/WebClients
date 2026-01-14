@@ -23,12 +23,15 @@ export function useContextMenuItemsVisibility({ selectedLinks }: { selectedLinks
         .map((link) => ({ link, docsType: mimeTypeToOpenInDocsType(link?.mimeType, isODSImportEnabled) }))
         .filter((item): item is { link: DecryptedLink; docsType: OpenInDocsType } => item.docsType !== undefined);
 
+    // Only native Proton Docs can be opened in Docs on public pages (no conversion support)
+    const nativeProtonDocuments = protonDocuments.filter((item) => item.docsType.isNative);
+
     const canOpenInDocs =
         isOnlyOneItem &&
-        protonDocuments.length === 1 &&
-        (protonDocuments[0].docsType.type === 'spreadsheet' ? isSheetsEnabled : true);
+        nativeProtonDocuments.length === 1 &&
+        (nativeProtonDocuments[0].docsType.type === 'spreadsheet' ? isSheetsEnabled : true);
 
-    const showDownloadDocument = isOnlyOneItem && protonDocuments.length === 1;
+    const showDownloadDocument = isOnlyOneItem && nativeProtonDocuments.length === 1;
     const showDownloadScanButton = isDownloadScanEnabled && protonDocuments.length === 0;
 
     return {

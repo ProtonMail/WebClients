@@ -6,7 +6,7 @@ import { useFlagsDriveSheetODSImport } from '../../../../flags/useFlagsDriveShee
 import { ContextMenuButton } from '../../ContextMenu';
 
 interface Props {
-    openInDocs: (linkId: string) => void;
+    openInDocs: (linkId: string, options?: { redirect?: boolean; download?: boolean; mimeType?: string }) => void;
     linkId: string;
     mimeType: string;
     close: () => void;
@@ -23,7 +23,7 @@ export const OpenInDocsButton = ({ openInDocs, mimeType, linkId, close }: Props)
             name={getOpenInDocsString(openInDocsType, mimeType)}
             icon={<MimeIcon name={getOpenInDocsMimeIconName(openInDocsType)} className="mr-2" />}
             testId="context-menu-open-in-docs"
-            action={() => openInDocs(linkId)}
+            action={() => openInDocs(linkId, { mimeType })}
             close={close}
         />
     );
