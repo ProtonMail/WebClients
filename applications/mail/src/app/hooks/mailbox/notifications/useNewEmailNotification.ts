@@ -13,7 +13,7 @@ import { isImported } from '@proton/shared/lib/mail/messages';
 
 import { isElementReminded } from '../../../helpers/snooze';
 import type { ConversationEvent, Event, MessageEvent } from '../../../models/event';
-import { displayGrouppedNotification, displayNotification } from './notificationHelpers';
+import { displayGroupedNotification, displayNotification } from './notificationHelpers';
 
 const MAX_WINDOWS_NOTIFICATIONS = 3;
 
@@ -73,7 +73,7 @@ const useNewEmailNotification = (onOpenElement: () => void) => {
         ) as Message[];
 
         if (isWindows() && notificationsToShow.length > MAX_WINDOWS_NOTIFICATIONS) {
-            void displayGrouppedNotification({
+            void displayGroupedNotification({
                 body: c('Desktop notification body').ngettext(
                     msgid`${notificationsToShow.length} new message`,
                     `${notificationsToShow.length} new messages`,
