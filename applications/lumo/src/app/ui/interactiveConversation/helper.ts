@@ -550,6 +550,7 @@ export function regenerateMessage({
                     spaceId: c.spaceId!,
                     signal: a.signal,
                     enableExternalTools: ui.enableExternalTools,
+                    enableImageTools: ui.enableImageTools,
                     config: {
                         enableU2LEncryption: ENABLE_U2L_ENCRYPTION,
                         enableSmoothing: ui.enableSmoothing,
