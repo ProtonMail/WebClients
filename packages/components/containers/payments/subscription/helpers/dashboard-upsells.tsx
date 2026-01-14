@@ -489,7 +489,7 @@ const getPassFamilyUpsell = ({ plansMap, openSubscriptionModal, app, ...rest }: 
     const features: MaybeUpsellFeature[] = [
         getPassUsers(FAMILY_MAX_USERS),
         getPassAdminPanel(),
-        getLoginsAndNotes('paid'),
+        getLoginsAndNotes(),
         getDevices(),
         getHideMyEmailAliases('unlimited'),
         getAdvancedAliasFeatures(true),

@@ -31,7 +31,7 @@ const AlsoInYourPlanProtonPass = () => {
         image: pass,
         buttonCopy: () => goToPlanOrAppNameText(PASS_APP_NAME),
         logo: <PassLogo />,
-        features: [getLoginsAndNotes('paid'), getVaultSharing(PASS_PLUS_VAULT_SHARING), get2FAAuthenticator(true)],
+        features: [getLoginsAndNotes(), getVaultSharing(PASS_PLUS_VAULT_SHARING), get2FAAuthenticator(true)],
     };
 
     return <AlsoInYourPlanSectionCard app={app} config={cardConfig} shouldDisplayAllFeatures={isBundlePlan} />;

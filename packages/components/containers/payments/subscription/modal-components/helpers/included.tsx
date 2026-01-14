@@ -139,7 +139,7 @@ export const getWhatsIncluded = ({
     const passFeatures: Included[] = [
         {
             type: 'text',
-            text: getLoginsAndNotesText('paid'),
+            text: getLoginsAndNotesText(),
         },
         {
             type: 'text',
@@ -184,7 +184,7 @@ export const getWhatsIncluded = ({
             },
             {
                 type: 'text',
-                text: getLoginsAndNotesText('paid'),
+                text: getLoginsAndNotesText(),
             },
             {
                 type: 'text',

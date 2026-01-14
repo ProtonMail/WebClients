@@ -81,10 +81,8 @@ export const getPassAdminPanel = (): PlanCardFeatureDefinition => {
     };
 };
 
-export const getLoginsAndNotesText = (type: 'free' | 'paid') => {
-    if (type === 'free') {
-        return c('new_plans: feature').t`Unlimited logins and notes`;
-    }
+export const getLoginsAndNotesText = () => {
+    // translator: Logins here doesn't mean a connection to the app but a login entry (username/password) in Proton Pass
     return c('new_plans: feature').t`Unlimited logins, notes and credit cards`;
 };
 
@@ -96,9 +94,9 @@ export const getGroupManagement = (included: boolean = false): PlanCardFeatureDe
     };
 };
 
-export const getLoginsAndNotes = (type: Parameters<typeof getLoginsAndNotesText>[0]): PlanCardFeatureDefinition => {
+export const getLoginsAndNotes = (): PlanCardFeatureDefinition => {
     return {
-        text: getLoginsAndNotesText(type),
+        text: getLoginsAndNotesText(),
         icon: 'note',
         included: true,
     };
@@ -396,32 +394,32 @@ export const getPassFeatures = (): PlanCardFeature[] => {
         {
             name: 'passwords-and-notes',
             plans: {
-                [PLANS.FREE]: getLoginsAndNotes('free'),
-                [PLANS.BUNDLE]: getLoginsAndNotes('paid'),
-                [PLANS.MAIL]: getLoginsAndNotes('free'),
-                [PLANS.VPN2024]: getLoginsAndNotes('free'),
-                [PLANS.DRIVE]: getLoginsAndNotes('free'),
-                [PLANS.DRIVE_1TB]: getLoginsAndNotes('free'),
-                [PLANS.DRIVE_BUSINESS]: getLoginsAndNotes('free'),
-                [PLANS.PASS]: getLoginsAndNotes('paid'),
-                [PLANS.PASS_LIFETIME]: getLoginsAndNotes('paid'),
-                [PLANS.PASS_FAMILY]: getLoginsAndNotes('paid'),
-                [PLANS.FAMILY]: getLoginsAndNotes('paid'),
-                [PLANS.DUO]: getLoginsAndNotes('paid'),
-                [PLANS.MAIL_PRO]: getLoginsAndNotes('free'),
-                [PLANS.MAIL_BUSINESS]: getLoginsAndNotes('free'),
-                [PLANS.BUNDLE_PRO]: getLoginsAndNotes('paid'),
-                [PLANS.BUNDLE_PRO_2024]: getLoginsAndNotes('paid'),
-                [PLANS.BUNDLE_BIZ_2025]: getLoginsAndNotes('paid'),
-                [PLANS.PASS_PRO]: getLoginsAndNotes('paid'),
-                [PLANS.PASS_BUSINESS]: getLoginsAndNotes('paid'),
+                [PLANS.FREE]: getLoginsAndNotes(),
+                [PLANS.BUNDLE]: getLoginsAndNotes(),
+                [PLANS.MAIL]: getLoginsAndNotes(),
+                [PLANS.VPN2024]: getLoginsAndNotes(),
+                [PLANS.DRIVE]: getLoginsAndNotes(),
+                [PLANS.DRIVE_1TB]: getLoginsAndNotes(),
+                [PLANS.DRIVE_BUSINESS]: getLoginsAndNotes(),
+                [PLANS.PASS]: getLoginsAndNotes(),
+                [PLANS.PASS_LIFETIME]: getLoginsAndNotes(),
+                [PLANS.PASS_FAMILY]: getLoginsAndNotes(),
+                [PLANS.FAMILY]: getLoginsAndNotes(),
+                [PLANS.DUO]: getLoginsAndNotes(),
+                [PLANS.MAIL_PRO]: getLoginsAndNotes(),
+                [PLANS.MAIL_BUSINESS]: getLoginsAndNotes(),
+                [PLANS.BUNDLE_PRO]: getLoginsAndNotes(),
+                [PLANS.BUNDLE_PRO_2024]: getLoginsAndNotes(),
+                [PLANS.BUNDLE_BIZ_2025]: getLoginsAndNotes(),
+                [PLANS.PASS_PRO]: getLoginsAndNotes(),
+                [PLANS.PASS_BUSINESS]: getLoginsAndNotes(),
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
-                [PLANS.LUMO]: getLoginsAndNotes('free'),
-                [PLANS.LUMO_BUSINESS]: getLoginsAndNotes('free'),
-                [PLANS.MEET_BUSINESS]: getLoginsAndNotes('free'),
-                [PLANS.VISIONARY]: getLoginsAndNotes('paid'),
-                [PLANS.VPN_PASS_BUNDLE_BUSINESS]: getLoginsAndNotes('paid'),
+                [PLANS.LUMO]: getLoginsAndNotes(),
+                [PLANS.LUMO_BUSINESS]: getLoginsAndNotes(),
+                [PLANS.MEET_BUSINESS]: getLoginsAndNotes(),
+                [PLANS.VISIONARY]: getLoginsAndNotes(),
+                [PLANS.VPN_PASS_BUNDLE_BUSINESS]: getLoginsAndNotes(),
             },
         },
         {
