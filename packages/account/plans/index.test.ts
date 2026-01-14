@@ -354,7 +354,7 @@ describe('plans', () => {
         });
     });
 
-    it(`should NOT fetch BRL plans if backend didn't return them - if user doesn't exist (backend-controlled regional currencies rollout for new signups)`, async () => {
+    it(`should fetch BRL plans if backend didn't return them, if user doesn't exist`, async () => {
         const { store } = setup({ ...defaultPaymentStatus, CountryCode: 'BR' }, null, null);
 
         mockPlans.USD = [
@@ -420,6 +420,24 @@ describe('plans', () => {
                             1: 200,
                             12: 2000,
                             24: 3600,
+                        },
+                    },
+                    {
+                        Name: PLANS.MAIL,
+                        Currency: 'BRL',
+                        Pricing: {
+                            1: 80,
+                            12: 800,
+                            24: 1440,
+                        },
+                    },
+                    {
+                        Name: PLANS.BUNDLE,
+                        Currency: 'BRL',
+                        Pricing: {
+                            1: 160,
+                            12: 1600,
+                            24: 2880,
                         },
                     },
                     {
