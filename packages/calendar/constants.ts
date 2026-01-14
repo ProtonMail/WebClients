@@ -3,6 +3,10 @@ export const calendarUrlQueryParams = {
     eventId: 'eventId',
     calendarId: 'calendarId',
     videoConferenceProvider: 'videoConferenceProvider',
+    conferenceUrl: 'conferenceUrl',
+    title: 'title',
+    location: 'location',
+    description: 'description',
 };
 
 export const calendarUrlQueryParamsActions = {

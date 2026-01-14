@@ -1,6 +1,6 @@
 import type { Dispatch, MutableRefObject, RefObject, SetStateAction } from 'react';
 import { useCallback, useEffect, useImperativeHandle, useMemo, useRef, useState } from 'react';
-import { Prompt } from 'react-router';
+import { Prompt, useLocation } from 'react-router';
 
 import { addMinutes, differenceInMinutes, isBefore } from 'date-fns';
 import { c, msgid } from 'ttag';
@@ -9,6 +9,7 @@ import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
+import { validateDeepLinkParams } from '@proton/calendar';
 import { useGetCalendarBootstrap, useReadCalendarBootstrap } from '@proton/calendar/calendarBootstrap/hooks';
 import { useGetCalendarKeys } from '@proton/calendar/calendarBootstrap/keys';
 import { changeCalendarVisiblity } from '@proton/calendar/calendars/actions';
@@ -352,6 +353,8 @@ const InteractiveCalendarView = ({
     getOpenedMailEvents,
 }: Props) => {
     const api = useApi();
+    const location = useLocation();
+    const searchParams = new URLSearchParams(location.search);
     const [userSettings] = useUserSettings();
     const isTmpEventSaving = useCalendarSelector(selectIsTmpEventSaving);
     const pendingUniqueIds = useCalendarSelector(pendingUniqueIdsSelector);
@@ -1437,20 +1440,34 @@ const InteractiveCalendarView = ({
         attendees,
         startModel,
         isDuplicating,
+        title,
+        location,
+        description,
     }: {
         attendees?: AttendeeModel[];
         startModel?: EventModel;
         isDuplicating?: boolean;
+        title?: string;
+        location?: string;
+        description?: string;
     }) => {
         if (!createEventCalendar) {
             return;
         }
 
-        const model = startModel || getCreateModel(false, attendees);
+        let model = startModel || getCreateModel(false, attendees);
 
         if (!model) {
             throw new Error('Unable to get create model');
         }
+
+        model = {
+            ...model,
+            ...(title && { title }),
+            ...(location && { location }),
+            ...(description && { description }),
+        };
+
         const newTemporaryEvent = getTemporaryEvent(
             getCreateTemporaryEvent(createEventCalendar, model, tzid),
             model,
@@ -2172,8 +2189,13 @@ const InteractiveCalendarView = ({
     };
 
     useImperativeHandle(interactiveRef, () => ({
-        createEvent: (attendees) => {
-            handleCreateEvent({ attendees });
+        createEvent: (attendees, title, location, description) => {
+            handleCreateEvent({
+                attendees,
+                title,
+                location,
+                description,
+            });
         },
     }));
 
@@ -2327,7 +2349,8 @@ const InteractiveCalendarView = ({
 
     useCalendarActionsOnLoad({
         create: () => {
-            handleCreateEvent({ attendees: [] });
+            const { title, location: eventLocation, description } = validateDeepLinkParams(searchParams);
+            handleCreateEvent({ attendees: [], title, location: eventLocation, description });
         },
         update: async (eventId: string, calendarID: string) => {
             try {
