@@ -5,12 +5,12 @@ import type { LumoDispatch, LumoState } from '../../redux/store';
 import type { Attachment, SpaceId } from '../../types';
 import type { DriveDocument } from '../../types/documents';
 import { sendFileUploadFinishEvent } from '../../util/telemetry';
-import { fileProcessingService } from '../fileProcessingService';
+import type { FileProcessingService } from '../fileProcessingService';
 import { SearchService } from '../search/searchService';
 import { storePendingAttachment } from './pendingAttachments';
 
 export const handleSpaceAttachmentFileAsync =
-    (file: File, spaceId: SpaceId) =>
+    (file: File, spaceId: SpaceId, fileProcessingService: FileProcessingService) =>
     async (
         dispatch: LumoDispatch,
         getState: () => LumoState

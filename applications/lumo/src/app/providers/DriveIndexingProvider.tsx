@@ -4,11 +4,11 @@ import { useUser } from '@proton/account/user/hooks';
 import { NodeType } from '@proton/drive';
 
 import type { IndexedDriveFolder } from '../redux/slices/lumoUserSettings';
-import { fileProcessingService } from '../services/fileProcessingService';
 import { getMimeTypeFromExtension } from '../util/filetypes';
 import { SearchService } from '../services/search/searchService';
 import type { DriveDocument } from '../types/documents';
 import { useDriveSDK, type DriveEvent, type DriveNode, type EventSubscription } from '../hooks/useDriveSDK';
+import { useFileProcessing } from '../hooks/useFileProcessing';
 import { useLumoUserSettings } from '../hooks';
 import { useIsGuest } from './IsGuestProvider';
 
@@ -80,6 +80,7 @@ const DriveIndexingProviderInner = ({ children, userId }: { children: ReactNode;
     const { browseFolderChildren, downloadFile, subscribeToTreeEvents, isInitialized: isDriveInitialized } = useDriveSDK();
     const { lumoUserSettings, updateSettings } = useLumoUserSettings();
     const [isSubscribed, setIsSubscribed] = useState(false);
+    const fileProcessingService = useFileProcessing();
     const [subscribedScopes, setSubscribedScopes] = useState<string[]>([]);
     const [eventIndexingStatus, setEventIndexingStatus] = useState<EventIndexingStatus>({
         isIndexing: false,
@@ -110,10 +111,10 @@ const DriveIndexingProviderInner = ({ children, userId }: { children: ReactNode;
 
         const checkAndRehydrate = async () => {
             hasCheckedRehydrationRef.current = true;
-            
+
             const searchService = SearchService.get(userId);
             const documents = await searchService.getDriveDocuments();
-            
+
             console.log('[DriveIndexingProvider] Auto-rehydration check:', {
                 indexedFoldersCount: indexedFolders.length,
                 documentsInManifest: documents.length,
@@ -122,7 +123,7 @@ const DriveIndexingProviderInner = ({ children, userId }: { children: ReactNode;
             // If we have indexed folders but no documents, trigger rehydration
             if (indexedFolders.length > 0 && documents.length === 0) {
                 console.log('[DriveIndexingProvider] Manifest empty but folders exist - triggering auto-rehydration');
-                
+
                 setEventIndexingStatus({
                     isIndexing: true,
                     currentFile: 'Rehydrating index...',
@@ -133,7 +134,7 @@ const DriveIndexingProviderInner = ({ children, userId }: { children: ReactNode;
                 // Rehydrate each folder
                 for (const folder of indexedFolders) {
                     if (folder.isActive === false) continue;
-                    
+
                     try {
                         console.log('[DriveIndexingProvider] Rehydrating folder:', folder.name);
                         setEventIndexingStatus(prev => ({
@@ -279,7 +280,7 @@ const DriveIndexingProviderInner = ({ children, userId }: { children: ReactNode;
                     console.log('[DriveIndexingProvider] Found node name:', node.name);
                     return node.name;
                 }
-                
+
                 // If not found in immediate children, search recursively in subfolders
                 for (const child of children) {
                     if (child.type === NodeType.Folder) {
@@ -291,7 +292,7 @@ const DriveIndexingProviderInner = ({ children, userId }: { children: ReactNode;
                         }
                     }
                 }
-                
+
                 console.log('[DriveIndexingProvider] Node not found in folder tree');
                 return null;
             } catch (error) {
@@ -495,7 +496,7 @@ const DriveIndexingProviderInner = ({ children, userId }: { children: ReactNode;
                     continue;
                 }
 
-                console.log('[DriveIndexingProvider] Found', matchingFolders.length, 'indexed folders for scope:', 
+                console.log('[DriveIndexingProvider] Found', matchingFolders.length, 'indexed folders for scope:',
                     matchingFolders.map(f => f.name).join(', '));
 
                 // Handle delete events OR trashed items (node_updated with isTrashed: true)
