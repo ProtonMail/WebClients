@@ -885,42 +885,6 @@ export function getAvailableSubscriptionActions(subscription: Subscription): Sub
 }
 
 /**
- * Lists plans that should be automatically donwcycled to 12m after initial 24m period
- */
-const plansWithAutomatic12mTo24mDowncycling: Record<PLANS, boolean> = {
-    [PLANS.FREE]: false,
-    [PLANS.DRIVE]: true,
-    [PLANS.DRIVE_1TB]: false,
-    [PLANS.DRIVE_PRO]: false,
-    [PLANS.DRIVE_BUSINESS]: false,
-    [PLANS.DRIVE_LITE]: false,
-    [PLANS.PASS]: true,
-    [PLANS.MAIL]: true,
-    [PLANS.MAIL_PRO]: false,
-    [PLANS.MAIL_BUSINESS]: false,
-    [PLANS.MEET_BUSINESS]: false,
-    [PLANS.VPN]: false,
-    [PLANS.VPN2024]: true,
-    [PLANS.BUNDLE]: true,
-    [PLANS.BUNDLE_PRO]: false,
-    [PLANS.BUNDLE_PRO_2024]: false,
-    [PLANS.BUNDLE_BIZ_2025]: false,
-    [PLANS.FAMILY]: true,
-    [PLANS.DUO]: true,
-    [PLANS.VISIONARY]: true,
-    [PLANS.VPN_PRO]: false,
-    [PLANS.VPN_BUSINESS]: false,
-    [PLANS.VPN_PASS_BUNDLE]: false,
-    [PLANS.PASS_PRO]: false,
-    [PLANS.PASS_BUSINESS]: false,
-    [PLANS.PASS_FAMILY]: false,
-    [PLANS.PASS_LIFETIME]: false,
-    [PLANS.LUMO]: false,
-    [PLANS.LUMO_BUSINESS]: false,
-    [PLANS.VPN_PASS_BUNDLE_BUSINESS]: false,
-};
-
-/**
  * This logic doesn't really belong to the frontend. It's a patch until it's moved to the backend, see P2-1546.
  */
 export function shouldHaveUpcomingSubscription(subscription: Subscription | FreeSubscription) {
@@ -933,17 +897,7 @@ export function shouldHaveUpcomingSubscription(subscription: Subscription | Free
         return false;
     }
 
-    if (subscription.Cycle === CYCLE.TWO_YEARS) {
-        return plansWithAutomatic12mTo24mDowncycling[planName];
-    }
-
-    if (subscription.Cycle === CYCLE.SIX) {
-        // vpn2024 and bundle2022 can have 6m cycles which always renew for 12m.
-        // Other plans do not support 6m subscription at the moment.
-        return true;
-    }
-
-    return false;
+    return subscription.RenewCycle !== subscription.Cycle;
 }
 
 export const getBundleProPlanToUse = ({ plansMap, planIDs }: { plansMap: PlansMap; planIDs: PlanIDs | undefined }) => {

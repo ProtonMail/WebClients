@@ -1,7 +1,9 @@
-import { PLANS } from '@proton/payments';
+import { CYCLE, PLANS } from '@proton/payments';
 import type { Currency } from '@proton/payments';
+import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
+import { buildSubscription } from '@proton/testing/builders';
+import { getTestPlans } from '@proton/testing/data';
 
-import { freePlan, plans, subscriptionBundlePro } from './__mocks__/data';
 import type { Feature } from './helpers/getPlanFeatures';
 import { useUpsellModal } from './useUpsellModal';
 
@@ -12,14 +14,14 @@ const expectedResult = {
     freePlanFeatures: [
         {
             icon: 'storage',
-            text: '1 GB email storage',
+            text: '0.5 GB email storage',
         },
         {
             icon: 'envelope',
             text: '1 email address',
         },
     ] as Feature[],
-    freePlanTitle: 'Proton Free',
+    freePlanTitle: 'Free',
     upsellPlanAmount: 399,
     upsellPlanFeatures: [
         {
@@ -50,9 +52,13 @@ const expectedResult = {
 describe('useUpsellModal', () => {
     test('given freePlan, plans, and subscription data and upsellPlanId, should return correct data', () => {
         const actualResult = useUpsellModal({
-            freePlan,
-            plans,
-            subscription: subscriptionBundlePro,
+            freePlan: FREE_PLAN,
+            plans: getTestPlans('CHF'),
+            subscription: buildSubscription({
+                planName: PLANS.BUNDLE,
+                cycle: CYCLE.YEARLY,
+                currency: 'CHF',
+            }),
             upsellPlanId: PLANS.MAIL,
         });
         expect(actualResult).toEqual(expectedResult);

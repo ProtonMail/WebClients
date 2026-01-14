@@ -18,7 +18,7 @@ import {
     familyUpsell,
     mailPlusUpsell,
     passPlusUpsell,
-    subscription,
+    subscriptionMail,
     unlimitedUpsell,
     vpnBusinessUpsell,
 } from '../__mocks__/data';
@@ -45,7 +45,7 @@ describe('resolveUpsellsToDisplay', () => {
         mockedOpenSubscriptionModal = jest.fn();
         base = {
             app: APPS.PROTONMAIL,
-            subscription,
+            subscription: subscriptionMail,
             freePlan: FREE_PLAN,
             serversCount: {
                 paid: {

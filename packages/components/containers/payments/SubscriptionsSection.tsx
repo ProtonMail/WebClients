@@ -37,12 +37,8 @@ import {
     isUpcomingSubscriptionUnpaid,
     subscriptionExpires,
 } from '@proton/payments';
-import {
-    shouldHaveUpcomingSubscription as getShouldHaveUpcomingSubscription,
-    isReferralTrial,
-} from '@proton/payments/core/subscription/helpers';
+import { isReferralTrial, shouldHaveUpcomingSubscription } from '@proton/payments/core/subscription/helpers';
 import { useIsB2BTrial } from '@proton/payments/ui';
-import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
@@ -130,20 +126,27 @@ const SubscriptionRow = ({ subscription }: SubscriptionRowProps) => {
 
     const latestSubscription = upcoming ?? subscription;
 
-    const renewAmount =
-        upcoming && isUpcomingSubscriptionUnpaid(subscription)
-            ? // typically upcoming unpaid subscription have Amount == 0. This behavior might change in the future and
-              // take into account the actual amount that take into account coupons. But currently we need to fallback
-              // to BaseRenewAmount which is typically set to the full amount of the selected plan. And it doesn't make
-              // sense to use RenewAmount for unpaid upcoming subscription because we want to know what user will pay
-              // when we actually trigger the charge for this subscription term.
-              upcoming.Amount || upcoming.BaseRenewAmount
-            : latestSubscription.RenewAmount;
+    const { renewAmount, renewCurrency, renewCycle } = (() => {
+        const hasUpcomingUnpaidSubscription = upcoming && isUpcomingSubscriptionUnpaid(subscription);
+        if (hasUpcomingUnpaidSubscription) {
+            return {
+                // typically upcoming unpaid subscription have Amount == 0. This behavior might change in the future and
+                // take into account the actual amount that take into account coupons. But currently we need to fallback
+                // to BaseRenewAmount which is typically set to the full amount of the selected plan. And it doesn't make
+                // sense to use RenewAmount for unpaid upcoming subscription because we want to know what user will pay
+                // when we actually trigger the charge for this subscription term.
+                renewAmount: upcoming.Amount || upcoming.BaseRenewAmount,
+                renewCurrency: upcoming.Currency,
+                renewCycle: upcoming.Cycle,
+            };
+        }
 
-    const renewCurrency = latestSubscription.Currency;
-    const renewLength = latestSubscription.Cycle;
-
-    const shouldHaveUpcomingSubscription = getShouldHaveUpcomingSubscription(subscription);
+        return {
+            renewAmount: latestSubscription.RenewAmount,
+            renewCurrency: latestSubscription.Currency,
+            renewCycle: latestSubscription.RenewCycle,
+        };
+    })();
 
     const renewalText = (() => {
         if (hasLifetimeCoupon(subscription)) {
@@ -156,32 +159,30 @@ const SubscriptionRow = ({ subscription }: SubscriptionRowProps) => {
             return c('Billing cycle').t`Renews automatically on ${subscriptionManagerName}`;
         }
 
-        /**
-         * When user subscribes, for example, to mail2022 24m then the backend must automatically schedule a 12m
-         * subscription. In case if this upcoming subscription is missing, it means that the frontend didn't receive the
-         * upcoming subscription yet. Typically it's a 2-step process (even though it lasts only one second). First user
-         * creates the subscription, we call the events endpoint, and know that we need to fetch the subscription. The
-         * frontend fetches the subscription, but at this point it might not have the upcoming subscription yet, because
-         * the backend creates the upcoming subscription asynchronously. At this point the frontend has a risk of
-         * displaying wrong information about renewal price and cycle. It usually lasts only a second, if happens at
-         * all, so soon enough the frontend receives another event that the subscription was updated, and now the
-         * frontend finally fetches the subscription endpoint that now contains the upcoming subscription. Basically
-         * this condition handles the situation when the upcoming subscription is unexpectedly missing.
-         */
-        if (shouldHaveUpcomingSubscription && !upcoming) {
+        // This condition handles transitional states: when subscription was already created, but we don't have the
+        // upcoming subscription yet. It typically takes up to 1 minute for upcoming subscription to be created in case
+        // of variable cycle offers. In an ideal world, we wouldn't need this condition, but because of limitations of
+        // backend-chargebee integration, we should avoid displaying potentially incorrect data.
+        // The only case that we handle here is:
+        //  - current subscription that must have a variable cycle offer (e.g. vpn2024 24m -> 12m)
+        //
+        // There are other situations with upcoming subscription that luckily don't require special handling and we
+        // simply can take RenewCycle and RenewAmount from the latest subscription.
+        // - upcoming subscription that must have a variable cycle offer. For example, user with current vpn2024 12m
+        //   creates vpn2024 24m upcoming. In this case it's assumed that the upcoming subscription will eventually have
+        //   its own upcoming subscription with 12m cycle.
+        // - users with 24m subscriptions before the cutoff date. For example, users with mail2022 24m subscription that
+        //   were created before Q1 2025. These users must have 24m renew cycle and the corresponding amount.
+        if (shouldHaveUpcomingSubscription(subscription) && !upcoming) {
             return null;
         }
 
-        // handle the case when user has an upcoming subscription that should eventually downcycle automatically.
-        if (upcoming && getShouldHaveUpcomingSubscription(upcoming)) {
-            return c('Billing cycle').t`Renews automatically`;
-        }
-
         const renewPrice = getSimplePriceString(renewCurrency, renewAmount);
+
         return c('Billing cycle').ngettext(
-            msgid`Renews automatically at ${renewPrice}, for ${renewLength} month`,
-            `Renews automatically at ${renewPrice}, for ${renewLength} months`,
-            renewLength
+            msgid`Renews automatically at ${renewPrice}, for ${renewCycle} month`,
+            `Renews automatically at ${renewPrice}, for ${renewCycle} months`,
+            renewCycle
         );
     })();
 
@@ -205,22 +206,17 @@ const SubscriptionRow = ({ subscription }: SubscriptionRowProps) => {
         return null;
     })();
 
-    // Adding an alias to make it clearer that this logic also affects the layout. When we change the renewal text, the
-    // size of table cells will change. To prevent it, we manually override the width of table cells. But we do so only
-    // when we know that the renewal text can change.
-    const mightChangeRenewalText = shouldHaveUpcomingSubscription;
-
     return (
         <TableRow>
-            <TableCell label={c('Title subscription').t`Plan`} className={clsx(mightChangeRenewalText && 'w-1/6')}>
+            <TableCell label={c('Title subscription').t`Plan`}>
                 <span data-testid="planNameId">{planTitle}</span>
             </TableCell>
-            <TableCell data-testid="subscriptionStatusId" className={clsx(mightChangeRenewalText && 'w-1/10')}>
+            <TableCell data-testid="subscriptionStatusId">
                 <Badge type={status.type} className="text-nowrap">
                     {status.label}
                 </Badge>
             </TableCell>
-            <TableCell label={c('Title subscription').t`End date`} className={clsx(mightChangeRenewalText && 'w-2/10')}>
+            <TableCell label={c('Title subscription').t`End date`}>
                 <div className="flex items-center">
                     {hasLifetimeCoupon(subscription) ? (
                         c('Payments.Lifetime Subscription.Renewal time').t`Never`
@@ -239,7 +235,7 @@ const SubscriptionRow = ({ subscription }: SubscriptionRowProps) => {
                     )}
                 </div>
             </TableCell>
-            <TableCell data-testid="subscriptionActionsId" className={clsx(mightChangeRenewalText && 'w-full')}>
+            <TableCell data-testid="subscriptionActionsId">
                 {subscriptionExpiresSoon ? (
                     <DropdownActions size="small" list={reactivateAction} />
                 ) : (

@@ -1,6 +1,7 @@
-import { PLANS, type Plan } from '@proton/payments';
+import { CYCLE, PLANS, type Plan } from '@proton/payments';
+import { buildSubscription } from '@proton/testing/builders';
+import { getTestPlans } from '@proton/testing/data';
 
-import { plans, subscriptionBundlePro } from '../__mocks__/data';
 import { getUpsellAmountAndSavings } from './getUpsellAmountAndSavings';
 
 const currency = 'CHF';
@@ -45,7 +46,16 @@ const upsellPlan: Plan = {
 
 describe('getUpsellAmountAndSavings', () => {
     it('given currency, plans, subscription, and upsell plan, should return correct upsell amount and savings', () => {
-        const result = getUpsellAmountAndSavings({ currency, plans, subscription: subscriptionBundlePro, upsellPlan });
+        const result = getUpsellAmountAndSavings({
+            currency,
+            plans: getTestPlans('CHF'),
+            subscription: buildSubscription({
+                planName: PLANS.BUNDLE,
+                cycle: CYCLE.YEARLY,
+                currency: 'CHF',
+            }),
+            upsellPlan,
+        });
 
         expect(result).toEqual([399, '60%']);
     });
