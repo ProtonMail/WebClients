@@ -15,8 +15,8 @@ import { MAX_ASSET_SIZE, MAX_FILE_SIZE } from '../../../../constants';
 import { useDriveFolderIndexing } from '../../../../hooks/useDriveFolderIndexing';
 import type { DriveNode } from '../../../../hooks/useDriveSDK';
 import { useDriveSDK } from '../../../../hooks/useDriveSDK';
+import { useFileProcessing } from '../../../../hooks/useFileProcessing';
 import { useDriveIndexing } from '../../../../providers/DriveIndexingProvider';
-import { fileProcessingService } from '../../../../services/fileProcessingService';
 import { SearchService } from '../../../../services/search/searchService';
 import type { DriveDocument } from '../../../../types/documents';
 import { getAcceptAttributeString, getMimeTypeFromExtension } from '../../../../util/filetypes';
@@ -79,6 +79,7 @@ export const DriveBrowser = forwardRef<DriveBrowserHandle, DriveBrowserProps>(
         const { indexingStatus, isIndexing, indexedFolders } = useDriveFolderIndexing();
         const { setIndexingFile } = useDriveIndexing();
         const { createNotification } = useNotifications();
+        const fileProcessingService = useFileProcessing();
         const [user] = useUser();
         const [currentFolder, setCurrentFolder] = useState<DriveNode | null>(null);
         const [children, setChildren] = useState<DriveNode[]>([]);
