@@ -122,6 +122,7 @@ export function ContextMenu({
   const clearContent = useUI.$.withFocusGrid(useUI.$.operation.delete)
   const openConditionalFormat = useUI.$.format.conditional.open
   const openDataValidation = useUI.$.data.validation.open
+  const onAutoResize = useUI((ui) => ui.legacy.onAutoResize)
 
   const multiColumnTitle = generateMultiDimTitle(selectedColumnHeadersIds, 'y')
   const multiRowTitle = generateMultiDimTitle(selectedRowHeadersIds, 'x')
@@ -317,13 +318,31 @@ export function ContextMenu({
           >
             {s('Hide column')} {multiColumnTitle}
           </UI.MenuItem>
-          <UI.MenuItem
-            leadingIconSlot={<UI.Icon legacyName="arrows-from-center" />}
-            onClick={() => onRequestResize?.(sheetId, selectedColumnHeadersIds, 'y')}
-            disabled={readonly || !onRequestResize}
-          >
-            {s('Resize column')} {multiColumnTitle}
-          </UI.MenuItem>
+
+          <Ariakit.MenuProvider>
+            <UI.SubMenuButton leadingIconSlot={<UI.Icon data={Icons.resize} />} disabled={readonly || !onRequestResize}>
+              {s('Resize column')} {multiColumnTitle}
+            </UI.SubMenuButton>
+            <UI.SubMenu unmountOnHide>
+              <UI.MenuItem
+                leadingIconSlot={<UI.Icon legacyName="bolt" />}
+                onClick={() => {
+                  onAutoResize?.(sheetId, selectedColumnHeadersIds, 'y')
+                }}
+                disabled={readonly || !onRequestResize}
+              >
+                {s('Auto fit to data')}
+              </UI.MenuItem>
+              <UI.MenuItem
+                leadingIconSlot={<UI.Icon data={Icons.resize} />}
+                onClick={() => onRequestResize?.(sheetId, selectedColumnHeadersIds, 'y')}
+                disabled={readonly || !onRequestResize}
+              >
+                {s('Custom')}
+              </UI.MenuItem>
+            </UI.SubMenu>
+          </Ariakit.MenuProvider>
+
           <UI.MenuItem
             leadingIconSlot={<UI.Icon data={Icons.freezeTable} />}
             onClick={() => onFreezeColumn?.(sheetId, activeCell.columnIndex)}
@@ -394,13 +413,30 @@ export function ContextMenu({
           >
             {s('Hide row')} {multiRowTitle}
           </UI.MenuItem>
-          <UI.MenuItem
-            leadingIconSlot={<UI.Icon legacyName="arrows-from-center" />}
-            onClick={() => onRequestResize?.(sheetId, selectedRowHeadersIds, 'x')}
-            disabled={readonly || !onRequestResize}
-          >
-            {s('Resize row')} {multiRowTitle}
-          </UI.MenuItem>
+
+          <Ariakit.MenuProvider>
+            <UI.SubMenuButton leadingIconSlot={<UI.Icon data={Icons.resize} />} disabled={readonly || !onRequestResize}>
+              {s('Resize row')} {multiRowTitle}
+            </UI.SubMenuButton>
+            <UI.SubMenu unmountOnHide>
+              <UI.MenuItem
+                leadingIconSlot={<UI.Icon legacyName="bolt" />}
+                onClick={() => {
+                  onAutoResize?.(sheetId, selectedRowHeadersIds, 'x')
+                }}
+                disabled={readonly || !onRequestResize}
+              >
+                {s('Auto fit to data')}
+              </UI.MenuItem>
+              <UI.MenuItem
+                leadingIconSlot={<UI.Icon data={Icons.resize} />}
+                onClick={() => onRequestResize?.(sheetId, selectedRowHeadersIds, 'x')}
+                disabled={readonly || !onRequestResize}
+              >
+                {s('Custom')}
+              </UI.MenuItem>
+            </UI.SubMenu>
+          </Ariakit.MenuProvider>
 
           <UI.MenuItem
             leadingIconSlot={<UI.Icon data={Icons.freezeTable} />}
@@ -821,6 +857,8 @@ function strings() {
     'Hide row': c('sheets_2025:Spreadsheet context menu').t`Hide row`,
     'Resize column': c('sheets_2025:Spreadsheet context menu').t`Resize column`,
     'Resize row': c('sheets_2025:Spreadsheet context menu').t`Resize row`,
+    'Auto fit to data': c('sheets_2025:Spreadsheet context menu').t`Auto fit to data`,
+    Custom: c('sheets_2025:Spreadsheet context menu').t`Custom`,
 
     'Freeze up to column': c('sheets_2025:Spreadsheet context menu').t`Freeze up to column`,
     'Unfreeze columns': c('sheets_2025:Spreadsheet context menu').t`Unfreeze columns`,
