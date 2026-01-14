@@ -633,6 +633,7 @@ describe('initializePaymentMethods()', () => {
             billingAddress: undefined,
             enableSepa: false,
             enablePaypalRegionalCurrenciesBatch3: false,
+            enablePaypalKrw: false,
         });
 
         expect(methods).toBeDefined();
@@ -682,6 +683,7 @@ describe('initializePaymentMethods()', () => {
             billingAddress: undefined,
             enableSepa: false,
             enablePaypalRegionalCurrenciesBatch3: false,
+            enablePaypalKrw: false,
         });
 
         expect(methods).toBeDefined();
@@ -1628,6 +1630,63 @@ describe('Chargebee PayPal', () => {
         });
 
         expect(methods.getNewMethods().some((method) => method.type === 'chargebee-paypal')).toBe(false);
+    });
+
+    it('should disable paypal for KRW currency when enablePaypalKrw is false', () => {
+        const flow: PaymentMethodFlow = 'subscription';
+
+        const methods = new PaymentMethods({
+            paymentStatus: status,
+            paymentMethods: [],
+            amount: 500000,
+            currency: 'KRW',
+            coupon: '',
+            flow: flow,
+            selectedPlanName: undefined,
+            billingAddress: undefined,
+            enableSepa: true,
+            enablePaypalKrw: false,
+        });
+
+        expect(methods.getNewMethods().some((method) => method.type === 'chargebee-paypal')).toBe(false);
+    });
+
+    it('should enable paypal for KRW currency when enablePaypalKrw is true', () => {
+        const flow: PaymentMethodFlow = 'subscription';
+
+        const methods = new PaymentMethods({
+            paymentStatus: status,
+            paymentMethods: [],
+            amount: 500000,
+            currency: 'KRW',
+            coupon: '',
+            flow: flow,
+            selectedPlanName: undefined,
+            billingAddress: undefined,
+            enableSepa: true,
+            enablePaypalKrw: true,
+        });
+
+        expect(methods.getNewMethods().some((method) => method.type === 'chargebee-paypal')).toBe(true);
+    });
+
+    it('should not affect non-KRW currencies when enablePaypalKrw is false', () => {
+        const flow: PaymentMethodFlow = 'subscription';
+
+        const methods = new PaymentMethods({
+            paymentStatus: status,
+            paymentMethods: [],
+            amount: 500,
+            currency: 'EUR',
+            coupon: '',
+            flow: flow,
+            selectedPlanName: undefined,
+            billingAddress: undefined,
+            enableSepa: true,
+            enablePaypalKrw: false,
+        });
+
+        expect(methods.getNewMethods().some((method) => method.type === 'chargebee-paypal')).toBe(true);
     });
 });
 
