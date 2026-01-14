@@ -49,6 +49,11 @@ export interface Subscription {
      * Contains additional subscriptions if user has multiple subscriptions.
      */
     SecondarySubscriptions?: Subscription[];
+    /**
+     * The cycle of the next subscription term. It's introduced in P2-1435 to handle edge cases for users with variable
+     * cycle offers.
+     */
+    RenewCycle: Cycle;
 }
 
 type CouponBase = {
