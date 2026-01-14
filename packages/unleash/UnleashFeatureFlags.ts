@@ -51,7 +51,6 @@ export enum CommonFeatureFlag {
     LumoSmoothedRendering = 'LumoSmoothedRendering',
     LumoHighLoad = 'LumoHighLoad',
     LumoDeactivateGuestModeFrontend = 'LumoDeactivateGuestModeFrontend',
-    ScheduleInAdvance = 'ScheduleInAdvance',
     AllowGuestInit = 'AllowGuestInit',
     NewScheduleOption = 'NewScheduleOption',
     PMVC2025 = 'PMVC2025',
@@ -270,6 +269,8 @@ enum MeetFeatureFlag {
     MeetClientMetricsLog = 'MeetClientMetricsLog',
     MeetVp9 = 'MeetVp9',
     MeetHigherBitrate = 'MeetHigherBitrate',
+    MeetScheduleInAdvance = 'MeetScheduleInAdvance',
+    MeetProtonCalendarDeepLink = 'MeetProtonCalendarDeepLink',
 }
 
 enum LumoFeatureFlag {

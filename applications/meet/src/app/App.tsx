@@ -11,18 +11,18 @@ import clsx from '@proton/utils/clsx';
 import { ComingSoon } from './components/ComingSoon/ComingSoon';
 import { WasmUnsupportedError } from './components/WasmUnsupportedError';
 import config from './config';
-import { AdminContainer } from './containers/AdminContainer';
 import { DashboardContainer } from './containers/DashboardContainer/DashboardContainer';
 import { GuestDashboardContainer } from './containers/DashboardContainer/GuestDashboardContainer';
 import { GuestContainer } from './containers/GuestContainer';
 import { WrappedProtonMeetContainer } from './containers/ProtonMeetContainer/WrappedProtonMeetContainer';
 import { ProviderContainer } from './containers/ProviderContainer';
+import { ScheduleContainer } from './containers/ScheduleContainer';
 import { getPublicToken } from './hooks/srp/usePublicToken';
 
 // @ts-ignore
 import meetTheme from './styles/meet.theme.css';
 
-const routes = ['join', 'admin/create', 'dashboard', 'incognito'];
+const routes = ['join', 'schedule/create', 'dashboard', 'incognito'];
 
 const landingPageRoute = '/start-free-meeting';
 
@@ -126,7 +126,7 @@ export const App = () => {
                         <RedirectWrapper>
                             <ComingSoonWrapper>
                                 <Route path="/join" render={() => <WrappedProtonMeetContainer />} />
-                                <Route path="/admin" component={AdminContainer} />
+                                <Route path="/schedule" component={ScheduleContainer} />
                                 <Route path="/dashboard" component={DashboardContainer} />
                             </ComingSoonWrapper>
                         </RedirectWrapper>

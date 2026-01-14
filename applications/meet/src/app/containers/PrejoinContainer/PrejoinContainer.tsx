@@ -1,7 +1,6 @@
 import { useRef } from 'react';
 
 import { getItem, removeItem, setItem } from '@proton/shared/lib/helpers/storage';
-import useFlag from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import { DeviceSettings } from '../../components/DeviceSettings/DeviceSettings';
@@ -45,7 +44,6 @@ export const PrejoinContainer = ({
     isInstantJoin,
     userId,
 }: PrejoinContainerProps) => {
-    const isScheduleInAdvanceEnabled = useFlag('ScheduleInAdvance');
     // check if a custom display name is already stored for the user
     const hasStoredDisplayName = getItem(getDisplayNameStorageKey(guestMode, userId)) != null;
 
@@ -112,12 +110,7 @@ export const PrejoinContainer = ({
         <>
             {isLoading && <div className="w-full h-full absolute top-0 left-0 z-up" />}
             <div className="absolute w-full meet-container-padding-x">
-                <PageHeader
-                    isScheduleInAdvanceEnabled={isScheduleInAdvanceEnabled}
-                    guestMode={guestMode}
-                    showAppSwitcher={false}
-                    isInstantJoin={isInstantJoin}
-                />
+                <PageHeader guestMode={guestMode} showAppSwitcher={false} isInstantJoin={isInstantJoin} />
             </div>
             <div className="prejoin-container flex flex-column md:flex-row flex-nowrap w-full md:items-center md:justify-center meet-container-padding-x">
                 <div

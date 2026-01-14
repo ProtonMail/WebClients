@@ -6,7 +6,10 @@ import type { Input } from '@proton/atoms/Input/Input';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import type { InputFieldProps } from '@proton/components/components/v2/field/InputField';
+import type { SETTINGS_TIME_FORMAT } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
+
+import { formatTimeHHMM } from '../../utils/timeFormat';
 
 import './TimeInput.scss';
 
@@ -22,11 +25,13 @@ export const TimeInput = ({
     className,
     error,
     options,
+    timeFormat,
     ...rest
 }: Omit<InputFieldProps<typeof Input>, 'onChange' | 'value'> & {
     onChange: (value: string) => void;
     value: string;
     options: { value: string; label: string }[];
+    timeFormat: SETTINGS_TIME_FORMAT;
 }) => {
     const currentPlaceholder = placeholder || c('Placeholder').t`Enter time`;
 
@@ -35,6 +40,14 @@ export const TimeInput = ({
     const activeButtonRef = useRef<HTMLButtonElement>(null);
 
     const activeOption = options.find((option) => option.value >= value);
+
+    const displayValue = value
+        ? (() => {
+              const [hours, minutes] = value.split(':');
+              const date = new Date(2024, 0, 1, parseInt(hours), parseInt(minutes), 0, 0);
+              return formatTimeHHMM(date, timeFormat);
+          })()
+        : '';
 
     useEffect(() => {
         if (isOpen && activeButtonRef.current) {
@@ -51,9 +64,14 @@ export const TimeInput = ({
         <div className={clsx('relative', className)}>
             <InputFieldTwo
                 ref={anchorRef}
-                value={value}
+                value={displayValue}
                 onClick={() => setIsOpen(true)}
-                onChange={(e) => onChange(e.target.value)}
+                onChange={(e) => {
+                    const inputValue = e.target.value;
+                    if (!inputValue || validateTimeFormat(inputValue)) {
+                        onChange(inputValue);
+                    }
+                }}
                 placeholder={currentPlaceholder}
                 autoComplete="off"
                 error={error || (value && !validateTimeFormat(value))}
