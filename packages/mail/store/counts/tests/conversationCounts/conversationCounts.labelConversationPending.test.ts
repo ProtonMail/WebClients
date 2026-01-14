@@ -805,7 +805,7 @@ describe('conversation counts - label messages', () => {
             });
         });
 
-        it('should not decrease Category counters', () => {
+        it('should decrease category counters when moving to archive', () => {
             const conversation = {
                 ID: 'conversationID',
                 Labels: [
@@ -843,7 +843,7 @@ describe('conversation counts - label messages', () => {
                 type: 'mailbox/labelMessages',
                 payload: {
                     conversations: [conversation],
-                    sourceLabelID: MAILBOX_LABEL_IDS.INBOX,
+                    sourceLabelID: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
                     destinationLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
                     labels: customLabels,
                     folders: customFolders,
@@ -858,9 +858,75 @@ describe('conversation counts - label messages', () => {
             const archiveCount = updatedCounters.find((c) => c.LabelID === MAILBOX_LABEL_IDS.ARCHIVE);
             expect(archiveCount).toEqual({ LabelID: MAILBOX_LABEL_IDS.ARCHIVE, Unread: 2, Total: 3 });
 
+            const socialCount = updatedCounters.find((c) => c.LabelID === MAILBOX_LABEL_IDS.CATEGORY_SOCIAL);
+            expect(socialCount).toEqual({ LabelID: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL, Unread: 0, Total: 1 });
+
             checkUpdatedCounters({
                 updatedCounters,
-                skippedLabelIDs: [MAILBOX_LABEL_IDS.INBOX, MAILBOX_LABEL_IDS.ARCHIVE],
+                skippedLabelIDs: [
+                    MAILBOX_LABEL_IDS.INBOX,
+                    MAILBOX_LABEL_IDS.ARCHIVE,
+                    MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
+                ],
+            });
+        });
+
+        it('should update both categories counters when moving between categories', () => {
+            const conversation = {
+                ID: 'conversationID',
+                Labels: [
+                    {
+                        ID: MAILBOX_LABEL_IDS.INBOX,
+                        ContextNumMessages: 2,
+                        ContextNumUnread: 1,
+                        ContextNumAttachments: 1,
+                    },
+                    {
+                        ID: MAILBOX_LABEL_IDS.ALL_MAIL,
+                        ContextNumMessages: 2,
+                        ContextNumUnread: 1,
+                        ContextNumAttachments: 1,
+                    },
+                    {
+                        ID: MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
+                        ContextNumMessages: 2,
+                        ContextNumUnread: 1,
+                        ContextNumAttachments: 1,
+                    },
+                    {
+                        ID: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
+                        ContextNumMessages: 2,
+                        ContextNumUnread: 1,
+                        ContextNumAttachments: 1,
+                    },
+                ],
+                NumMessages: 2,
+                NumUnread: 1,
+                NumAttachments: 1,
+            } as Conversation;
+
+            labelConversationsPending(state, {
+                type: 'mailbox/labelMessages',
+                payload: {
+                    conversations: [conversation],
+                    sourceLabelID: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
+                    destinationLabelID: MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS,
+                    labels: customLabels,
+                    folders: customFolders,
+                },
+            });
+
+            const updatedCounters = state.value as LabelCount[];
+
+            const socialCount = updatedCounters.find((c) => c.LabelID === MAILBOX_LABEL_IDS.CATEGORY_SOCIAL);
+            expect(socialCount).toEqual({ LabelID: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL, Unread: 0, Total: 1 });
+
+            const newslettersCount = updatedCounters.find((c) => c.LabelID === MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS);
+            expect(newslettersCount).toEqual({ LabelID: MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS, Unread: 1, Total: 1 });
+
+            checkUpdatedCounters({
+                updatedCounters,
+                skippedLabelIDs: [MAILBOX_LABEL_IDS.CATEGORY_SOCIAL, MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS],
             });
         });
 
