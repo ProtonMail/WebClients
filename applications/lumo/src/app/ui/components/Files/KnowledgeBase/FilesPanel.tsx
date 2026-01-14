@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
+import { useFileProcessing } from 'applications/lumo/src/app/hooks/useFileProcessing';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
@@ -60,6 +61,7 @@ export const FilesPanel = ({
     const { createNotification } = useNotifications();
     const contextFilters = useLumoSelector(selectContextFilters);
     const [selectedFiles] = useState<Set<string>>(new Set());
+    const fileProcessingService = useFileProcessing();
 
     // Drive browser state
     const [showDriveBrowser, setShowDriveBrowser] = useState(initialShowDriveBrowser);
@@ -177,7 +179,7 @@ export const FilesPanel = ({
                 console.log(
                     `Processing downloaded Drive file: ${file.name} (${(content.length / 1024 / 1024).toFixed(2)} MB)`
                 );
-                const result = await dispatch(handleFileAsync(fileObject, messageChain));
+                const result = await dispatch(handleFileAsync(fileObject, messageChain, fileProcessingService));
 
                 if (result.isDuplicate) {
                     // Show toast notification for duplicate file
