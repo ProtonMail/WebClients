@@ -18,7 +18,8 @@ import { REACTIVATE_SOURCE } from '@proton/components/containers/payments/subscr
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import { getReactivateSubscriptionAction } from '@proton/components/containers/payments/subscription/helpers/subscriptionExpires';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
-import { SettingsLink } from '@proton/components/index';
+import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
+import { SettingsLink, useConfig } from '@proton/components/index';
 import { IcArrowOutSquare } from '@proton/icons/icons/IcArrowOutSquare';
 import { PLANS, PLAN_NAMES, getPlanTitle, isAutoRenewTrial } from '@proton/payments';
 import { isTrialRenewing } from '@proton/payments/core/subscription/helpers';
@@ -162,7 +163,9 @@ interface TrialInfoFooterProps {
 
 const TrialInfoFooter = ({ modalProps }: TrialInfoFooterProps) => {
     const [subscription, loadingSubscription] = useSubscription();
+    const { APP_NAME } = useConfig();
     const { onClose } = modalProps || {};
+    const telemetryFlow = useDashboardPaymentFlow(APP_NAME);
     const [openSubscriptionModal] = useSubscriptionModal();
     const goToSettings = useSettingsLink();
 
@@ -173,6 +176,7 @@ const TrialInfoFooter = ({ modalProps }: TrialInfoFooterProps) => {
         openSubscriptionModal({
             step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
             metrics: { source: 'plans' },
+            telemetryFlow,
         });
     };
 

@@ -3,9 +3,10 @@ import { c } from 'ttag';
 import DriveLogo from '@proton/components/components/logo/DriveLogo';
 import { useSubscriptionModal } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
+import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
 import type { Subscription } from '@proton/payments';
 import { PLANS, PLAN_NAMES, hasFree } from '@proton/payments';
-import { DOCS_APP_NAME, DRIVE_APP_NAME } from '@proton/shared/lib/constants';
+import { APPS, DOCS_APP_NAME, DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 
 import type { DashboardMoreInfoSection } from '../../../shared/DashboardMoreInfoSection/DashboardMoreInfoSection';
 import {
@@ -24,12 +25,14 @@ interface Props {
 const DriveGetMoreSection = ({ subscription }: Props) => {
     const isFreeSubscription = hasFree(subscription);
     const [openSubscriptionModal] = useSubscriptionModal();
+    const telemetryFlow = useDashboardPaymentFlow(APPS.PROTONDRIVE);
 
     const handleDrivePlusUpsell = () => {
         openSubscriptionModal({
             step: SUBSCRIPTION_STEPS.CHECKOUT,
             plan: PLANS.DRIVE,
             metrics: { source: 'upsells' },
+            telemetryFlow,
         });
     };
 

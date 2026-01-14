@@ -228,7 +228,11 @@ export {
     ChargebeePaypalPaymentProcessor,
     type ChargebeePaypalModalHandles,
 } from './core/payment-processors/chargebeePaypalPayment';
-export { type PaymentProcessorHook, type PaymentProcessorType } from './core/payment-processors/interface';
+export {
+    getSystemByHookType,
+    type PaymentProcessorHook,
+    type PaymentProcessorType,
+} from './core/payment-processors/interface';
 export { PaymentProcessor, InvalidDataError } from './core/payment-processors/paymentProcessor';
 export { PaypalPaymentProcessor } from './core/payment-processors/paypalPayment';
 export { SavedChargebeePaymentProcessor } from './core/payment-processors/savedChargebeePayment';

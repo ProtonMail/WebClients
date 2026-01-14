@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
+import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
 import { PLANS, PLAN_NAMES, type Subscription } from '@proton/payments';
 import { FAMILY_MAX_USERS } from '@proton/shared/lib/constants';
 
@@ -20,6 +21,7 @@ interface Props extends UpsellSectionBaseProps {
 const FamilyUpgradeBanner = ({ app, subscription }: Props) => {
     const plan = PLANS.FAMILY;
     const [openSubscriptionModal] = useSubscriptionModal();
+    const telemetryFlow = useDashboardPaymentFlow(app);
     const { cheapestMonthlyPrice } = useSubscriptionPriceComparison(app, subscription, plan);
 
     const handleGetPlan = () => {
@@ -27,6 +29,7 @@ const FamilyUpgradeBanner = ({ app, subscription }: Props) => {
             step: SUBSCRIPTION_STEPS.CHECKOUT,
             plan: plan,
             metrics: { source: 'upsells' },
+            telemetryFlow,
         });
     };
 
