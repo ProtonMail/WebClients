@@ -98,7 +98,13 @@ async function processImageFile(fileData: FileData): Promise<InternalImageResult
     };
 }
 
+export type FileProcessingServiceProps = {
+    enableImageTools: boolean;
+};
+
 export class FileProcessingService {
+    private enableImageTools: boolean;
+
     private worker: Worker | null = null;
 
     private requestCounter = 0;
@@ -111,7 +117,8 @@ export class FileProcessingService {
         }
     >();
 
-    constructor() {
+    constructor(props: FileProcessingServiceProps) {
+        this.enableImageTools = props.enableImageTools;
         this.initializeWorker();
     }
 
@@ -301,4 +308,4 @@ export class FileProcessingService {
 }
 
 // Create a singleton instance
-export const fileProcessingService = new FileProcessingService();
+// export const fileProcessingService = new FileProcessingService(); // todo remove
