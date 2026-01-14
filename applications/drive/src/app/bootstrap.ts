@@ -97,7 +97,7 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
             const userInitFeature = measureFeaturePerformance(api, Features.globalBootstrapAppUserInit);
             userInitFeature.start();
             const [scopes] = await Promise.all([
-                bootstrap.initUser({ appName, user, userSettings }),
+                bootstrap.enableTelemetryBasedOnUserSettings({ userSettings }),
                 bootstrap.loadLocales({ userSettings, locales }),
             ]);
             userInitFeature.end();

@@ -2,7 +2,8 @@ import type { ReactNode } from 'react';
 import { useEffect, useState } from 'react';
 import { flushSync } from 'react-dom';
 
-import { type EventLoop, serverEvent, userThunk } from '@proton/account';
+import { type EventLoop, serverEvent, userSettingsThunk, userThunk } from '@proton/account';
+import * as bootstrap from '@proton/account/bootstrap';
 import {
     ApiProvider,
     EventManagerProvider,
@@ -12,6 +13,7 @@ import {
     useErrorHandler,
     useThemeQueryParameter,
 } from '@proton/components';
+import useConfig from '@proton/components/hooks/useConfig';
 import { authJwt, pullForkSession, setCookies, setRefreshCookies } from '@proton/shared/lib/api/auth';
 import type { ApiWithListener } from '@proton/shared/lib/api/createApi';
 import { getEvents, getLatestID } from '@proton/shared/lib/api/events';
@@ -27,6 +29,8 @@ import { loadCryptoWorker } from '@proton/shared/lib/helpers/setupCryptoWorker';
 import { getBrowserLocale } from '@proton/shared/lib/i18n/helper';
 import { loadLocales as loadLocalesI18n } from '@proton/shared/lib/i18n/loadLocale';
 import { locales } from '@proton/shared/lib/i18n/locales';
+import type { ProtonConfig } from '@proton/shared/lib/interfaces';
+import { telemetry } from '@proton/shared/lib/telemetry';
 import {
     FlagProvider,
     UnleashClient,
@@ -42,6 +46,21 @@ import { extraThunkArguments } from '../app/store/thunk';
 import broadcast, { MessageType } from './broadcast';
 import ExpiredLink from './components/ExpiredLink';
 
+const initializeProtonTelemetry = (config: ProtonConfig, UID: string) => {
+    telemetry.init({
+        config,
+        uid: UID,
+        eventOptions: {
+            pageView: false,
+            click: false,
+            form: false,
+            performance: false,
+            modal: false,
+        },
+        overridenPageTitle: 'Account',
+    });
+};
+
 interface Props {
     onLogin: (UID: string) => void;
     UID?: string;
@@ -51,6 +70,7 @@ interface Props {
 }
 
 const Setup = ({ api, onLogin, UID, children, loader }: Props) => {
+    const config = useConfig();
     const errorHandler = useErrorHandler();
     const dispatch = useAccountDispatch();
 
@@ -124,7 +144,12 @@ const Setup = ({ api, onLogin, UID, children, loader }: Props) => {
             });
 
             const setupModels = async () => {
-                const [user] = await Promise.all([dispatch(userThunk())]);
+                const [user, userSettings] = await Promise.all([dispatch(userThunk()), dispatch(userSettingsThunk())]);
+                bootstrap.enableTelemetryBasedOnUserSettings({ userSettings });
+                if (!!userSettings.Telemetry) {
+                    initializeProtonTelemetry(config, UID);
+                }
+
                 return { user };
             };
 
