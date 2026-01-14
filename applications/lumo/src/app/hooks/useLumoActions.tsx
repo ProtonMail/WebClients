@@ -149,7 +149,7 @@ export const useLumoActions = ({
         if (!newMessageContent) return;
 
         const enableExternalTools = ffExternalTools && isWebSearchButtonToggled;
-        const enableImageTools = ffImageTools && isWebSearchButtonToggled;
+        const enableImageTools = ffImageTools;
         const enableSmoothing = ffSmoothRendering;
 
         // Load messages and all attachments from conversation history and combine with new message attachments
@@ -259,6 +259,7 @@ export const useLumoActions = ({
                     navigateCallback,
                     isGhostMode,
                     enableSmoothing: ffSmoothRendering,
+                    enableImageTools: ffImageTools,
                 },
                 settingsContext: {
                     personalization,
@@ -317,6 +318,7 @@ export const useLumoActions = ({
                     isEdit: true,
                     updateSibling: preferSibling,
                     enableExternalTools: isWebSearchButtonToggled && ffExternalTools,
+                    enableImageTools: ffImageTools,
                     navigateCallback,
                     enableSmoothing: ffSmoothRendering,
                     isGhostMode,
@@ -394,7 +396,8 @@ export const useLumoActions = ({
         preferSibling(assistantMessage);
 
         const parentMessageHasAttachments = !!parentMessage?.attachments?.length;
-        const enableExternalTools = isWebSearchButtonToggled && !parentMessageHasAttachments && ffExternalTools;
+        const enableExternalTools = ffExternalTools && isWebSearchButtonToggled && !parentMessageHasAttachments;
+        const enableImageTools = ffImageTools;
 
         if (!spaceId) {
             throw new Error(OPERATION_MESSAGES.SPACE_ID_REQUIRED);
@@ -415,6 +418,7 @@ export const useLumoActions = ({
                 },
                 uiContext: {
                     enableExternalTools,
+                    enableImageTools,
                     navigateCallback,
                     isGhostMode,
                     enableSmoothing: ffSmoothRendering,
