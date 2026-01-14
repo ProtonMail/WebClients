@@ -246,7 +246,7 @@ export function ContextMenu({
 
   return (
     <Ariakit.MenuProvider store={store}>
-      <UI.MenuItem leadingIconSlot={<UI.Icon legacyName="squares" />} onClick={copy} disabled={readonly}>
+      <UI.MenuItem leadingIconSlot={<UI.Icon legacyName="squares" />} onClick={copy}>
         {s('Copy')}
       </UI.MenuItem>
 
