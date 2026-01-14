@@ -2567,6 +2567,10 @@
       ],
       "Ultra fast and private VPN": [
         "Superrask og privat VPN"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } bruker",
+        "Opptil ${ numberOfUsers } brukere"
       ]
     },
     "Checkout row": {
@@ -2652,6 +2656,9 @@
       ],
       "High-speed chats and advanced AI features.": [
         "Høyhastighetschatter og avanserte KI-funksjoner."
+      ],
+      "Private video calls for the conversations that matter.": [
+        "Private videosamtaler for samtalene som betyr noe."
       ]
     },
     "color": {
@@ -5038,6 +5045,18 @@
       ],
       "ZIP code is required": [
         "Postnummer kreves"
+      ],
+      "re-importing": [
+        "importere igjen"
+      ],
+      "There was a problem decrypting your message. If the issue persists, contact our customer support.": [
+        "Det oppstod et problem med dekryptering av meldingen din. Hvis problemet vedvarer, kontakt kundestøtten vår."
+      ],
+      "Your message cannot be decrypted. If you deleted any of your address keys, try ${ reimportKeyLink } them. ${ learnMoreLink }": [
+        "Meldingen din kan ikke dekrypteres. Hvis du slettet noen av adressenøklene dine, prøv å ${ reimportKeyLink }. ${ learnMoreLink }."
+      ],
+      "Your message cannot be decrypted. The key used to encrypt this message does not match any of the keys associated with your address. If you deleted any of your address keys, try ${ reimportKeyLink } them. ${ learnMoreLink }": [
+        "Meldingen din kan ikke dekrypteres. Nøkkelen som ble brukt til å kryptere meldingen samsvarer ikke med noen av nøklene som er knyttet til adressen din. Hvis du har slettet noen av adressenøklene dine, prøv ${ reimportKeyLink }. ${ learnMoreLink }."
       ]
     },
     "error": {
@@ -8802,6 +8821,18 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Du er bare noen få klikk unna en ryddig innboks"
+      ],
+      "Make ${ MAIL_APP_NAME } your default email application.": [
+        "Gjør ${ MAIL_APP_NAME } til standard e-postapplikasjon."
+      ],
+      "This message will be purged on ${ value }": [
+        "Denne meldingen vil bli slettet på ${ value }"
+      ],
+      "This message will be purged today at ${ value }": [
+        "Denne meldingen vil bli slettet i dag kl. ${ value }"
+      ],
+      "This message will be purged tomorrow at ${ value }": [
+        "Denne meldingen vil bli slettet i morgen kl. ${ value }."
       ]
     },
     "info": {
@@ -9870,6 +9901,12 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Filters": [
+        "Filtre"
+      ],
+      "Has attachments": [
+        "Har vedlegg"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -16171,6 +16208,58 @@
       ],
       "Passcode:": [
         "Adgangskode:"
+      ]
+    },
+    "customer_support.feature.meet": {
+      "For ${ MEET_APP_NAME }": [
+        "For ${ MEET_APP_NAME }"
+      ]
+    },
+    "meet_2025: Feature": {
+      "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
+        "${ MEET_APP_NAME }: konfidensielle videokonferanser for samtalene som betyr noe"
+      ],
+      "${ n } active meeting at a time": [
+        "${ n } aktivt møte om gangen",
+        "${ n } aktive møter om gangen"
+      ],
+      "24 hours per meeting": [
+        "24 timer per møte"
+      ],
+      "60 minutes per meeting": [
+        "60 minutter per møte"
+      ],
+      "Appointment scheduling": [
+        "Avtaleplanlegging"
+      ],
+      "Browser, mobile, and desktop apps": [
+        "Nettleser-, mobil- og skrivebordsapper"
+      ],
+      "Built-in chat": [
+        "Innebygd chat"
+      ],
+      "End-to-end encrypted screen sharing and ephemeral in-call chat": [
+        "Ende-til-ende-kryptert skjermdeling og kortvarig chat under samtaler"
+      ],
+      "Meeting recording (coming soon)": [
+        "Møteopptak (kommer snart)"
+      ],
+      "One active meeting at a time": [
+        "Ett aktivt møte om gangen"
+      ],
+      "Screen-sharing": [
+        "Skjermdeling"
+      ],
+      "Unlimited meetings per day": [
+        "Ubegrenset antall møter per dag"
+      ],
+      "Up to ${ n } meeting per day": [
+        "Opptil ${ n } møte per dag",
+        "Opptil ${ n } møter per dag"
+      ],
+      "Up to ${ n } participant": [
+        "Opptil ${ n } deltaker",
+        "Opptil ${ n } deltakere"
       ]
     }
   }
