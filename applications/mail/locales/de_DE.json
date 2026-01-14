@@ -2656,6 +2656,9 @@
       ],
       "High-speed chats and advanced AI features.": [
         "Schnelle Chats und erweiterte KI-Funktionen."
+      ],
+      "Private video calls for the conversations that matter.": [
+        "Private Videoanrufe für die Unterhaltungen, die wichtig sind."
       ]
     },
     "color": {
@@ -5042,6 +5045,18 @@
       ],
       "Cannot set expiration longer than retention policy allows.": [
         "Du kannst das Ablaufdatum nicht länger einstellen, als es die Aufbewahrungsrichtlinie erlaubt."
+      ],
+      "re-importing": [
+        "erneut zu importieren"
+      ],
+      "There was a problem decrypting your message. If the issue persists, contact our customer support.": [
+        "Beim Entschlüsseln deiner Nachricht ist ein Problem aufgetreten. Wenn das Problem weiterhin besteht, kontaktiere unseren Kundensupport."
+      ],
+      "Your message cannot be decrypted. If you deleted any of your address keys, try ${ reimportKeyLink } them. ${ learnMoreLink }": [
+        "Deine Nachricht konnte nicht entschlüsselt werden. Falls du einen deiner Adressschlüssel gelöscht hast, versuche ihn ${ reimportKeyLink }. ${ learnMoreLink }"
+      ],
+      "Your message cannot be decrypted. The key used to encrypt this message does not match any of the keys associated with your address. If you deleted any of your address keys, try ${ reimportKeyLink } them. ${ learnMoreLink }": [
+        "Deine Nachricht kann nicht entschlüsselt werden. Der Schlüssel, der zum Verschlüsseln dieser Nachricht verwendet wurde, stimmt mit keinem der Schlüssel überein, die mit deiner Adresse verknüpft sind. Wenn du eine deiner Adressschlüssel gelöscht hast, versuche sie ${ reimportKeyLink }. ${ learnMoreLink }"
       ]
     },
     "error": {
@@ -8809,6 +8824,15 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Du bist nur ein paar Klicks von einem aufgeräumten Posteingang entfernt"
+      ],
+      "This message will be purged on ${ value }": [
+        "Diese Nachricht wird am ${ value } gelöscht."
+      ],
+      "This message will be purged today at ${ value }": [
+        "Diese Nachricht wird heute um ${ value } gelöscht."
+      ],
+      "This message will be purged tomorrow at ${ value }": [
+        "Diese Nachricht wird morgen um ${ value } gelöscht."
       ]
     },
     "info": {
@@ -9877,6 +9901,12 @@
       ],
       "ZIP code": [
         "Postleitzahl"
+      ],
+      "Filters": [
+        "Filter"
+      ],
+      "Has attachments": [
+        "Enthält Anhänge"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -14580,6 +14610,9 @@
       ],
       "Show me how": [
         "Zeig mir wie"
+      ],
+      "Download the desktop app": [
+        "Desktop-App herunterladen"
       ]
     },
     "Title": {
@@ -16185,6 +16218,58 @@
       ],
       "Passcode:": [
         "Passcode:"
+      ]
+    },
+    "customer_support.feature.meet": {
+      "For ${ MEET_APP_NAME }": [
+        "Für ${ MEET_APP_NAME }"
+      ]
+    },
+    "meet_2025: Feature": {
+      "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
+        "${ MEET_APP_NAME }: Vertrauliche Videokonferenzen für die Unterhaltungen, die wichtig sind"
+      ],
+      "${ n } active meeting at a time": [
+        "${ n } aktives Meeting gleichzeitig",
+        "${ n } aktive Meetings gleichzeitig"
+      ],
+      "24 hours per meeting": [
+        "24 Stunden pro Meeting"
+      ],
+      "60 minutes per meeting": [
+        "60 Minuten pro Meeting"
+      ],
+      "Appointment scheduling": [
+        "Terminplanung"
+      ],
+      "Browser, mobile, and desktop apps": [
+        "Browser-, Mobile- und Desktop-Apps"
+      ],
+      "Built-in chat": [
+        "Eingebauter Chat"
+      ],
+      "End-to-end encrypted screen sharing and ephemeral in-call chat": [
+        "Ende-zu-Ende-verschlüsselte Bildschirmfreigabe und temporärer Chat während des Anrufs"
+      ],
+      "Meeting recording (coming soon)": [
+        "Aufnahme des Meetings (Demnächst verfügbar)"
+      ],
+      "One active meeting at a time": [
+        "Ein aktives Meeting gleichzeitig"
+      ],
+      "Screen-sharing": [
+        "Bildschirmfreigabe"
+      ],
+      "Unlimited meetings per day": [
+        "Unbegrenzte Meetings pro Tag"
+      ],
+      "Up to ${ n } meeting per day": [
+        "Bis zu ${ n } Meeting pro Tag",
+        "Bis zu ${ n } Meetings pro Tag"
+      ],
+      "Up to ${ n } participant": [
+        "Bis zu ${ n } Teilnehmer",
+        "Bis zu ${ n } Teilnehmer"
       ]
     }
   }

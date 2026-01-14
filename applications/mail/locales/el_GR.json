@@ -1505,8 +1505,7 @@
         "Αξιόπιστο"
       ],
       "Trust key": [
-        "Κλειδί Εμπιστοσύνης",
-        "Κλειδιά Εμπιστοσύνης"
+        "Εμπιστοσύνη στο κλειδί"
       ],
       "Trust public key": [
         "Εμπιστοσύνη στο δημόσιο κλειδί"
@@ -2656,6 +2655,9 @@
       ],
       "High-speed chats and advanced AI features.": [
         "Υψηλής ταχύτητας συνομιλίες και προηγμένα χαρακτηριστικά AI."
+      ],
+      "Private video calls for the conversations that matter.": [
+        "Ιδιωτικές βιντεοκλήσεις για τις σημαντικές συνομιλίες."
       ]
     },
     "color": {
@@ -5042,6 +5044,18 @@
       ],
       "Cannot set expiration longer than retention policy allows.": [
         "Δεν είναι δυνατή η ρύθμιση λήξης που υπερβαίνει το χρονικό διάστημα που επιτρέπει η πολιτική διατήρησης."
+      ],
+      "re-importing": [
+        "επαναεισαγωγή"
+      ],
+      "There was a problem decrypting your message. If the issue persists, contact our customer support.": [
+        "Παρουσιάστηκε πρόβλημα κατά την αποκρυπτογράφηση του μηνύματός σας. Εάν το πρόβλημα παραμένει, επικοινωνήστε με την εξυπηρέτηση πελατών μας."
+      ],
+      "Your message cannot be decrypted. If you deleted any of your address keys, try ${ reimportKeyLink } them. ${ learnMoreLink }": [
+        "Το μήνυμά σας δεν μπορεί να αποκρυπτογραφηθεί. Εάν διαγράψατε κάποιο από τα κλειδιά διεύθυνσης σας, δοκιμάστε να τα εισαγάγετε ξανά με το ${ reimportKeyLink }. ${ learnMoreLink }"
+      ],
+      "Your message cannot be decrypted. The key used to encrypt this message does not match any of the keys associated with your address. If you deleted any of your address keys, try ${ reimportKeyLink } them. ${ learnMoreLink }": [
+        "Το μήνυμά σας δεν μπορεί να αποκρυπτογραφηθεί. Το κλειδί που χρησιμοποιήθηκε για την κρυπτογράφηση αυτού του μηνύματος δεν ταιριάζει με κανένα από τα κλειδιά που σχετίζονται με τη διεύθυνσή σας. Εάν διαγράψατε κάποιο από τα κλειδιά της διεύθυνσής σας, δοκιμάστε ${ reimportKeyLink } ξανά. ${ learnMoreLink }"
       ]
     },
     "error": {
@@ -8809,6 +8823,15 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Είστε μόνο μερικά κλικ μακριά από τα εισερχόμενα χωρίς ακαταστασία"
+      ],
+      "This message will be purged on ${ value }": [
+        "Αυτό το μήνυμα θα εκκαθαριστεί την ${ value }"
+      ],
+      "This message will be purged today at ${ value }": [
+        "Αυτό το μήνυμα θα εκκαθαριστεί σήμερα στις ${ value }"
+      ],
+      "This message will be purged tomorrow at ${ value }": [
+        "Αυτό το μήνυμα θα εκκαθαριστεί αύριο στις ${ value }"
       ]
     },
     "info": {
@@ -9877,6 +9900,12 @@
       ],
       "ZIP code": [
         "Τ.Κ."
+      ],
+      "Filters": [
+        "Φίλτρα"
+      ],
+      "Has attachments": [
+        "Έχει συνημμένα"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -14580,6 +14609,9 @@
       ],
       "Show me how": [
         "Δείξε μου πώς"
+      ],
+      "Download the desktop app": [
+        "Κατεβάστε την εφαρμογή για υπολογιστές"
       ]
     },
     "Title": {
@@ -16185,6 +16217,58 @@
       ],
       "Passcode:": [
         "Κωδικός πρόσβασης:"
+      ]
+    },
+    "customer_support.feature.meet": {
+      "For ${ MEET_APP_NAME }": [
+        "Για ${ MEET_APP_NAME }"
+      ]
+    },
+    "meet_2025: Feature": {
+      "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
+        "${ MEET_APP_NAME }: Εμπιστευτικές βιντεοδιασκέψεις για τις σημαντικές συνομιλίες σας"
+      ],
+      "${ n } active meeting at a time": [
+        "${ n } ενεργή σύσκεψη τη φορά",
+        "${ n } ενεργή συσκέψεις τη φορά"
+      ],
+      "24 hours per meeting": [
+        "24 ώρες ανά σύσκεψη"
+      ],
+      "60 minutes per meeting": [
+        "60 λεπτά ανά σύσκεψη"
+      ],
+      "Appointment scheduling": [
+        "Προγραμματισμός ραντεβού"
+      ],
+      "Browser, mobile, and desktop apps": [
+        "Εφαρμογές για προγράμματα περιήγησης, κινητά και επιτραπέζιους υπολογιστές"
+      ],
+      "Built-in chat": [
+        "Ενσωματωμένη συνομιλία"
+      ],
+      "End-to-end encrypted screen sharing and ephemeral in-call chat": [
+        "Κρυπτογραφημένη κοινή χρήση οθόνης διατερματικά και εφήμερη συνομιλία κατά τη διάρκεια της κλήσης"
+      ],
+      "Meeting recording (coming soon)": [
+        "Ηχογράφηση συσκέψεων (σύντομα διαθέσιμη)"
+      ],
+      "One active meeting at a time": [
+        "Μία ενεργή σύσκεψη τη φορά"
+      ],
+      "Screen-sharing": [
+        "Κοινή χρήση οθόνης"
+      ],
+      "Unlimited meetings per day": [
+        "Απεριόριστες συσκέψεις ανά ημέρα"
+      ],
+      "Up to ${ n } meeting per day": [
+        "Έως ${ n } συνάντηση την ημέρα",
+        "Έως ${ n } συναντήσεις την ημέρα"
+      ],
+      "Up to ${ n } participant": [
+        "Έως ${ n } συμμετέχων",
+        "Έως ${ n } συμμετέχοντες"
       ]
     }
   }

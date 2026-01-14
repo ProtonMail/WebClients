@@ -8733,6 +8733,15 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Olet vain muutaman klikkauksen päässä siististä postilaatikosta"
+      ],
+      "This message will be purged on ${ value }": [
+        "Tämä viesti poistetaan ${ value }"
+      ],
+      "This message will be purged today at ${ value }": [
+        "Tämä viesti poistetaan tänään klo ${ value }"
+      ],
+      "This message will be purged tomorrow at ${ value }": [
+        "Tämä viesti poistetaan huomenna klo ${ value }."
       ]
     },
     "info": {
@@ -9795,6 +9804,12 @@
       ],
       "ZIP code": [
         "Postinumero"
+      ],
+      "Filters": [
+        "Suodattimet"
+      ],
+      "Has attachments": [
+        "Sisältää liitteitä"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -14366,6 +14381,9 @@
       ],
       "Show me how": [
         "Näytä miten"
+      ],
+      "Download the desktop app": [
+        "Lataa työpöytäsovellus"
       ]
     },
     "Title": {

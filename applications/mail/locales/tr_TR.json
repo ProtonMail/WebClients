@@ -1505,8 +1505,7 @@
         "Güven"
       ],
       "Trust key": [
-        "Güvenilen anahtar",
-        "Güvenilen anahtarlar"
+        "Anahtara güven"
       ],
       "Trust public key": [
         "Herkese açık anahtara güven"
@@ -2656,6 +2655,9 @@
       ],
       "High-speed chats and advanced AI features.": [
         "Yüksek hızlı sohbetler ve gelişmiş yapay zeka özellikleri."
+      ],
+      "Private video calls for the conversations that matter.": [
+        "Önemli görüşmeler için gizliliği koruyan görüntülü çağrılar."
       ]
     },
     "color": {
@@ -5042,6 +5044,18 @@
       ],
       "Cannot set expiration longer than retention policy allows.": [
         "Geçerlilik sonu tarihi, verileri tutma ilkesinin izin verdiğinden daha uzun bir süre için ayarlanamaz."
+      ],
+      "re-importing": [
+        "yeniden içe aktarmayı"
+      ],
+      "There was a problem decrypting your message. If the issue persists, contact our customer support.": [
+        "İletinizin şifresi çözülürken bir sorun çıktı. Sorun sürerse, lütfen müşteri desteği ekibimizle görüşün."
+      ],
+      "Your message cannot be decrypted. If you deleted any of your address keys, try ${ reimportKeyLink } them. ${ learnMoreLink }": [
+        "İletinizin şifresi çözülemedi. Adres anahtarlarınızdan herhangi birini sildiyseniz, bunları ${ reimportKeyLink } deneyin. ${ learnMoreLink }"
+      ],
+      "Your message cannot be decrypted. The key used to encrypt this message does not match any of the keys associated with your address. If you deleted any of your address keys, try ${ reimportKeyLink } them. ${ learnMoreLink }": [
+        "İletinizin şifresi çözülemez. Bu iletiyi şifrelemek için kullanılan anahtar, adresinizle ilişkili anahtarlardan hiçbiriyle eşleşmiyor. Adres anahtarlarınızdan herhangi birini sildiyseniz, bunları ${ reimportKeyLink } deneyin. ${ learnMoreLink }"
       ]
     },
     "error": {
@@ -8809,6 +8823,15 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Dağınıklıktan arındırılmış bir gelen kutusundan yalnızca birkaç tık uzaktasınız."
+      ],
+      "This message will be purged on ${ value }": [
+        "Bu ileti ${ value } zamanında silinecek"
+      ],
+      "This message will be purged today at ${ value }": [
+        "Bu ileti bugün ${ value } saatinde silinecek"
+      ],
+      "This message will be purged tomorrow at ${ value }": [
+        "Bu ileti yarın ${ value } saatinde silinecek"
       ]
     },
     "info": {
@@ -9877,6 +9900,12 @@
       ],
       "ZIP code": [
         "Posta kodu"
+      ],
+      "Filters": [
+        "Süzgeçler"
+      ],
+      "Has attachments": [
+        "Ek dosyaları olan"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -14580,6 +14609,9 @@
       ],
       "Show me how": [
         "Nasıl yapılacağını göster"
+      ],
+      "Download the desktop app": [
+        "Masaüstü uygulamasını indirin"
       ]
     },
     "Title": {
@@ -16185,6 +16217,58 @@
       ],
       "Passcode:": [
         "Parola:"
+      ]
+    },
+    "customer_support.feature.meet": {
+      "For ${ MEET_APP_NAME }": [
+        "${ MEET_APP_NAME } için"
+      ]
+    },
+    "meet_2025: Feature": {
+      "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
+        "${ MEET_APP_NAME }: Önemli görüşmeler için gizliliği koruyan görüntülü toplantı"
+      ],
+      "${ n } active meeting at a time": [
+        "Aynı anda ${ n } etkin görüşme",
+        "Aynı anda ${ n } etkin görüşme"
+      ],
+      "24 hours per meeting": [
+        "Görüşme başına 24 saat"
+      ],
+      "60 minutes per meeting": [
+        "Görüşme başına 60 dakika"
+      ],
+      "Appointment scheduling": [
+        "Randevu planlama"
+      ],
+      "Browser, mobile, and desktop apps": [
+        "Tarayıcı, mobil ve bilgisayar uygulamaları"
+      ],
+      "Built-in chat": [
+        "Hazır sohbet"
+      ],
+      "End-to-end encrypted screen sharing and ephemeral in-call chat": [
+        "Uçtan uca şifrelenmiş ekran paylaşımı ve geçici çağrı içi sohbet"
+      ],
+      "Meeting recording (coming soon)": [
+        "Görüşme kaydı (yakında)"
+      ],
+      "One active meeting at a time": [
+        "Aynı anda bir etkin görüşme"
+      ],
+      "Screen-sharing": [
+        "Ekran paylaşımı"
+      ],
+      "Unlimited meetings per day": [
+        "Günlük sınırsız görüşme"
+      ],
+      "Up to ${ n } meeting per day": [
+        "Günde ${ n } görüşme",
+        "Günde ${ n } görüşme"
+      ],
+      "Up to ${ n } participant": [
+        "${ n } katılımcı",
+        "${ n } katılımcı"
       ]
     }
   }

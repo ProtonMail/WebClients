@@ -1505,8 +1505,7 @@
         "Confiar"
       ],
       "Trust key": [
-        "Clave de confianza",
-        "Claves de confianza"
+        "Confiar clave"
       ],
       "Trust public key": [
         "Confiar clave pública"
@@ -2656,6 +2655,9 @@
       ],
       "High-speed chats and advanced AI features.": [
         "Chats de gran velocidad y funciones de IA avanzadas."
+      ],
+      "Private video calls for the conversations that matter.": [
+        "Videollamadas privadas para las conversaciones que importan."
       ]
     },
     "color": {
@@ -5042,6 +5044,18 @@
       ],
       "Cannot set expiration longer than retention policy allows.": [
         "No se puede establecer una caducidad superior a la permitida por la política de retención."
+      ],
+      "re-importing": [
+        "importarlas nuevamente"
+      ],
+      "There was a problem decrypting your message. If the issue persists, contact our customer support.": [
+        "Se ha producido un problema al descifrar su mensaje. Si el error persiste, póngase en contacto con nuestro servicio de soporte."
+      ],
+      "Your message cannot be decrypted. If you deleted any of your address keys, try ${ reimportKeyLink } them. ${ learnMoreLink }": [
+        "Su mensaje no se puede descifrar. Si ha eliminado alguna de las claves de sus direcciones, intente ${ reimportKeyLink }. ${ learnMoreLink }"
+      ],
+      "Your message cannot be decrypted. The key used to encrypt this message does not match any of the keys associated with your address. If you deleted any of your address keys, try ${ reimportKeyLink } them. ${ learnMoreLink }": [
+        "Su mensaje no se puede descifrar. La clave usada para cifrarlo no coincide con ninguna de las claves asociadas a su dirección. Si ha eliminado alguna de sus claves, intente ${ reimportKeyLink }. ${ learnMoreLink }"
       ]
     },
     "error": {
@@ -8809,6 +8823,15 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Está a solo unos clics de tener una bandeja de entrada ordenada"
+      ],
+      "This message will be purged on ${ value }": [
+        "Este mensaje se eliminará el ${ value }"
+      ],
+      "This message will be purged today at ${ value }": [
+        "Este mensaje se eliminará hoy a las ${ value }"
+      ],
+      "This message will be purged tomorrow at ${ value }": [
+        "Este mensaje se eliminará mañana a las ${ value }"
       ]
     },
     "info": {
@@ -9877,6 +9900,12 @@
       ],
       "ZIP code": [
         "Código postal"
+      ],
+      "Filters": [
+        "Filtros"
+      ],
+      "Has attachments": [
+        "Contiene adjuntos"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -14580,6 +14609,9 @@
       ],
       "Show me how": [
         "Mostrarme cómo"
+      ],
+      "Download the desktop app": [
+        "Descargue la aplicación de escritorio"
       ]
     },
     "Title": {
@@ -15607,7 +15639,7 @@
         "✨ ¡Llegan las categorías!"
       ],
       "Your newsletters in one place": [
-        "Tus boletines en un solo lugar"
+        "Sus boletines en un solo lugar"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16185,6 +16217,58 @@
       ],
       "Passcode:": [
         "Código de acceso:"
+      ]
+    },
+    "customer_support.feature.meet": {
+      "For ${ MEET_APP_NAME }": [
+        "Para ${ MEET_APP_NAME }"
+      ]
+    },
+    "meet_2025: Feature": {
+      "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
+        "${ MEET_APP_NAME }: videollamadas privadas para lo que realmente importa"
+      ],
+      "${ n } active meeting at a time": [
+        "${ n } reunión activa a la vez",
+        "${ n } reuniones activas a la vez"
+      ],
+      "24 hours per meeting": [
+        "24 horas por reunión"
+      ],
+      "60 minutes per meeting": [
+        "60 minutos por reunión"
+      ],
+      "Appointment scheduling": [
+        "Programación de citas"
+      ],
+      "Browser, mobile, and desktop apps": [
+        "Aplicaciones para navegador, móvil y escritorio"
+      ],
+      "Built-in chat": [
+        "Chat integrado"
+      ],
+      "End-to-end encrypted screen sharing and ephemeral in-call chat": [
+        "Pantalla compartida con cifrado de extremo a extremo y chat efímero en la llamada"
+      ],
+      "Meeting recording (coming soon)": [
+        "Grabación de la reunión (próximamente)"
+      ],
+      "One active meeting at a time": [
+        "Una reunión activa a la vez"
+      ],
+      "Screen-sharing": [
+        "Compartir pantalla"
+      ],
+      "Unlimited meetings per day": [
+        "Reuniones ilimitadas al día"
+      ],
+      "Up to ${ n } meeting per day": [
+        "Hasta ${ n } reunión por día",
+        "Hasta ${ n } reuniones al día"
+      ],
+      "Up to ${ n } participant": [
+        "Hasta ${ n } participante",
+        "Hasta ${ n } participantes"
       ]
     }
   }
