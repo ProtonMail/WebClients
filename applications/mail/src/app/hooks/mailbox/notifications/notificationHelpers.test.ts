@@ -1,6 +1,7 @@
 import type { History } from 'history';
 
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import type { MailSettings } from '@proton/shared/lib/interfaces';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 
@@ -32,7 +33,7 @@ const MOCK_HISTORY = {
 const MOCK_MAIL_SETTINGS = {
     labelID: MAILBOX_LABEL_IDS.INBOX,
     ViewMode: VIEW_MODE.GROUP,
-} as const;
+} as unknown as MailSettings;
 
 describe('prepareNotificationData', () => {
     it('should prepare notification data for conversation view with matching label', () => {
@@ -41,6 +42,7 @@ describe('prepareNotificationData', () => {
             history: MOCK_HISTORY,
             mailSettings: MOCK_MAIL_SETTINGS,
             notifier: [MAILBOX_LABEL_IDS.INBOX],
+            categoryViewAccess: false,
         });
 
         expect(result).toEqual({
@@ -64,6 +66,7 @@ describe('prepareNotificationData', () => {
             history: MOCK_HISTORY,
             mailSettings: MOCK_MAIL_SETTINGS,
             notifier: [MAILBOX_LABEL_IDS.SENT],
+            categoryViewAccess: false,
         });
 
         expect(result.labelID).toBe(MAILBOX_LABEL_IDS.ALL_MAIL);
@@ -75,6 +78,7 @@ describe('prepareNotificationData', () => {
             history: MOCK_HISTORY,
             mailSettings: { ...MOCK_MAIL_SETTINGS, ViewMode: VIEW_MODE.SINGLE },
             notifier: [MAILBOX_LABEL_IDS.INBOX],
+            categoryViewAccess: false,
         });
 
         expect(result.elementID).toBe('123');
