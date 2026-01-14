@@ -94,7 +94,7 @@ export const displayNotification = ({
     });
 };
 
-export const displayGrouppedNotification = ({
+export const displayGroupedNotification = ({
     body,
     history,
     onOpenElement,
@@ -103,7 +103,7 @@ export const displayGrouppedNotification = ({
     history: History<unknown>;
     onOpenElement: () => void;
 }) => {
-    const ID = generateUID('groupped-notification');
+    const ID = generateUID('grouped-notification');
     const title = c('Desktop notification title').t`New email received`;
 
     if (isElectronMail) {
