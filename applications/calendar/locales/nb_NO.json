@@ -1019,6 +1019,12 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Den gratis prøveperioden for skrivebordsappen avsluttes ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Disable auto-add ${ MEET_APP_NAME } links feature": [
+        "Deaktiver funksjonen for automatisk å legge til ${ MEET_APP_NAME }-koblinger"
+      ],
+      "Turn off auto-add": [
+        "Slå av automatisk tillegg"
       ]
     },
     "action": {
@@ -1754,6 +1760,10 @@
       ],
       "Ultra fast and private VPN": [
         "Superrask og privat VPN"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } bruker",
+        "Opptil ${ numberOfUsers } brukere"
       ]
     },
     "Checkout row": {
@@ -1839,6 +1849,9 @@
       ],
       "High-speed chats and advanced AI features.": [
         "Høyhastighetschatter og avanserte KI-funksjoner."
+      ],
+      "Private video calls for the conversations that matter.": [
+        "Private videosamtaler for samtalene som betyr noe."
       ]
     },
     "colon": {
@@ -3955,6 +3968,9 @@
       ],
       "ZIP code is required": [
         "Postnummer kreves"
+      ],
+      "Failed to update settings": [
+        "Kunne ikke oppdatere innstillinger"
       ]
     },
     "error": {
@@ -6432,6 +6448,9 @@
       ],
       "Which calendars should block bookings?": [
         "Hvilke kalendere skal blokkere bestillinger?"
+      ],
+      "We automatically added a ${ MEET_APP_NAME } link": [
+        "Vi la automatisk til en ${ MEET_APP_NAME }-kobling"
       ]
     },
     "info": {
@@ -11135,6 +11154,9 @@
       ],
       "You have successfully unsubscribed": [
         "Du har avsluttet abonnementet"
+      ],
+      "Auto-add ${ MEET_APP_NAME } links disabled": [
+        "Automatisk tillegg av ${ MEET_APP_NAME }-koblinger er deaktivert"
       ]
     },
     "Suffix": {
@@ -12619,6 +12641,58 @@
       ],
       "Passcode:": [
         "Adgangskode:"
+      ]
+    },
+    "customer_support.feature.meet": {
+      "For ${ MEET_APP_NAME }": [
+        "For ${ MEET_APP_NAME }"
+      ]
+    },
+    "meet_2025: Feature": {
+      "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
+        "${ MEET_APP_NAME }: konfidensielle videokonferanser for samtalene som betyr noe"
+      ],
+      "${ n } active meeting at a time": [
+        "${ n } aktivt møte om gangen",
+        "${ n } aktive møter om gangen"
+      ],
+      "24 hours per meeting": [
+        "24 timer per møte"
+      ],
+      "60 minutes per meeting": [
+        "60 minutter per møte"
+      ],
+      "Appointment scheduling": [
+        "Avtaleplanlegging"
+      ],
+      "Browser, mobile, and desktop apps": [
+        "Nettleser-, mobil- og skrivebordsapper"
+      ],
+      "Built-in chat": [
+        "Innebygd chat"
+      ],
+      "End-to-end encrypted screen sharing and ephemeral in-call chat": [
+        "Ende-til-ende-kryptert skjermdeling og kortvarig chat under samtaler"
+      ],
+      "Meeting recording (coming soon)": [
+        "Møteopptak (kommer snart)"
+      ],
+      "One active meeting at a time": [
+        "Ett aktivt møte om gangen"
+      ],
+      "Screen-sharing": [
+        "Skjermdeling"
+      ],
+      "Unlimited meetings per day": [
+        "Ubegrenset antall møter per dag"
+      ],
+      "Up to ${ n } meeting per day": [
+        "Opptil ${ n } møte per dag",
+        "Opptil ${ n } møter per dag"
+      ],
+      "Up to ${ n } participant": [
+        "Opptil ${ n } deltaker",
+        "Opptil ${ n } deltakere"
       ]
     }
   }

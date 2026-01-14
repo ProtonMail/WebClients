@@ -1019,6 +1019,12 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "თქვენი კომპიუტერის აპის უფასო სატესტო ვერსიის დასრულების დროა ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Disable auto-add ${ MEET_APP_NAME } links feature": [
+        "${ MEET_APP_NAME }-ის ბმულების ავტოდამატების ფუნქციის გამორთვა"
+      ],
+      "Turn off auto-add": [
+        "ავტოდამატების გამორთვა"
       ]
     },
     "action": {
@@ -1745,6 +1751,10 @@
       ],
       "Ultra fast and private VPN": [
         "ზეჩქარი და კონფიდენციალური VPN"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } მომხმარებელი",
+        "${ numberOfUsers } მომხმარებლამდე"
       ]
     },
     "Checkout row": {
@@ -3926,6 +3936,9 @@
       ],
       "ZIP code is required": [
         "საფოსტო კოდი აუცილებელია"
+      ],
+      "Failed to update settings": [
+        "პარამეტრების განახლების შეცდომა"
       ]
     },
     "error": {
@@ -6328,6 +6341,9 @@
       ],
       "Which calendars should block bookings?": [
         "რომელმა კალენდრებმა უნდა დაბლოკონ დაჯავშნა?"
+      ],
+      "We automatically added a ${ MEET_APP_NAME } link": [
+        "ჩვენ ავტომატურად დავამატეთ ${ MEET_APP_NAME }-ის ბმული"
       ]
     },
     "info": {
@@ -10963,6 +10979,9 @@
       ],
       "You have successfully unsubscribed": [
         "გამოწერა წარმატებით გაუქმდა"
+      ],
+      "Auto-add ${ MEET_APP_NAME } links disabled": [
+        "${ MEET_APP_NAME }-ის ბმულების ავტოდამატება გამორთულია"
       ]
     },
     "Suffix": {
@@ -12172,6 +12191,9 @@
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "თქვენი უფასო სატესტო ვერსიის დამთავრების თარიღია ${ textDate }. ${ action }"
+      ],
+      "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
+        "თქვენი საცდელი პერიოდი დასრულდება: ${ textDate }. თუ გააუქმებთ ${ textDate }-მდე, თანხა არ ჩამოგეჭრებათ. ${ action }"
       ]
     },
     "Warning in modal to accept calendar invitation; Description": {
@@ -12438,6 +12460,28 @@
       ],
       "Passcode:": [
         "საკვანძო კოდი:"
+      ]
+    },
+    "customer_support.feature.meet": {
+      "For ${ MEET_APP_NAME }": [
+        "${ MEET_APP_NAME }-ისთვის"
+      ]
+    },
+    "meet_2025: Feature": {
+      "24 hours per meeting": [
+        "24 საათი თითო შეხვედრისთვის"
+      ],
+      "60 minutes per meeting": [
+        "60 წუთი თითო შეხვედრისთვის"
+      ],
+      "Appointment scheduling": [
+        "შეხვედრის დაგეგმვა"
+      ],
+      "Built-in chat": [
+        "ჩაშენებული ჩატი"
+      ],
+      "Screen-sharing": [
+        "ეკრანის გაზიარება"
       ]
     }
   }

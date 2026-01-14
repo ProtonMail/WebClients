@@ -1027,6 +1027,12 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Ваш бясплатны пробны перыяд праграмы для камп'ютара завершыцца ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Disable auto-add ${ MEET_APP_NAME } links feature": [
+        "Адключыць функцыю аўтаматычнага дадавання спасылак ${ MEET_APP_NAME }"
+      ],
+      "Turn off auto-add": [
+        "Адключыць аўтаматычнае дадаванне"
       ]
     },
     "action": {
@@ -1784,6 +1790,12 @@
       ],
       "Ultra fast and private VPN": [
         "Звышхуткі і прыватны VPN"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } карыстальнік",
+        "Да ${ numberOfUsers } карыстальнікаў",
+        "Да ${ numberOfUsers } карыстальнікаў",
+        "Да ${ numberOfUsers } карыстальнікаў"
       ]
     },
     "Checkout row": {
@@ -1873,6 +1885,9 @@
       ],
       "High-speed chats and advanced AI features.": [
         "Высакахуткасныя чаты і перадавыя функцыі ШІ."
+      ],
+      "Private video calls for the conversations that matter.": [
+        "Прыватныя відэазванкі для важных размоў."
       ]
     },
     "colon": {
@@ -4023,6 +4038,9 @@
       ],
       "ZIP code is required": [
         "Патрабуецца ўвесці паштовы індэкс"
+      ],
+      "Failed to update settings": [
+        "Не ўдалося абнавіць налады"
       ]
     },
     "error": {
@@ -6602,6 +6620,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Вы дасягнулі абмежавання па прамежках браніравання (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "We automatically added a ${ MEET_APP_NAME } link": [
+        "Мы аўтаматычна дадалі спасылку на ${ MEET_APP_NAME }"
       ]
     },
     "info": {
@@ -11531,6 +11552,9 @@
       ],
       "You have successfully unsubscribed": [
         "Вы паспяхова скасавалі падпіску"
+      ],
+      "Auto-add ${ MEET_APP_NAME } links disabled": [
+        "Аўтаматычнае дадаванне спасылак ${ MEET_APP_NAME } адключана"
       ]
     },
     "Suffix": {
@@ -13133,6 +13157,64 @@
       ],
       "Passcode:": [
         "Код доступу:"
+      ]
+    },
+    "customer_support.feature.meet": {
+      "For ${ MEET_APP_NAME }": [
+        "Для ${ MEET_APP_NAME }"
+      ]
+    },
+    "meet_2025: Feature": {
+      "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
+        "${ MEET_APP_NAME }: канфідэнцыйныя відэаканферэнцыі для важных размоў"
+      ],
+      "${ n } active meeting at a time": [
+        "${ n } актыўная сустрэча адначасова",
+        "${ n } актыўныя сустрэчы адначасова",
+        "${ n } актыўных сустрэч адначасова",
+        "${ n } актыўных сустрэч адначасова"
+      ],
+      "24 hours per meeting": [
+        "24 гадзіны на сустрэчу"
+      ],
+      "60 minutes per meeting": [
+        "60 хвілін на сустрэчу"
+      ],
+      "Appointment scheduling": [
+        "Планаванне сустрэч"
+      ],
+      "Browser, mobile, and desktop apps": [
+        "Браўзер, мабільныя прылады і праграмы для камп'ютараў"
+      ],
+      "Built-in chat": [
+        "Убудаваны чат"
+      ],
+      "End-to-end encrypted screen sharing and ephemeral in-call chat": [
+        "Дэманстрацыя экрана са скразным шыфраваннем і эфемерны чат пры званках"
+      ],
+      "Meeting recording (coming soon)": [
+        "Запісы сустрэч (неўзабаве з'явяцца)"
+      ],
+      "One active meeting at a time": [
+        "Адна актыўная сустрэча адначасова"
+      ],
+      "Screen-sharing": [
+        "Абагулены экран"
+      ],
+      "Unlimited meetings per day": [
+        "Неабмежаваная колькасць сустрэч у дзень"
+      ],
+      "Up to ${ n } meeting per day": [
+        "Да ${ n } сустрэчы ў дзень",
+        "Да ${ n } сустрэч у дзень",
+        "Да ${ n } сустрэч у дзень",
+        "Да ${ n } сустрэч у дзень"
+      ],
+      "Up to ${ n } participant": [
+        "Да ${ n } удзельніка",
+        "Да ${ n } удзельнікаў",
+        "Да ${ n } удзельнікаў",
+        "Да ${ n } удзельнікаў"
       ]
     }
   }
