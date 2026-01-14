@@ -40,7 +40,8 @@ const DEFAULT_CONFIG: LumoApiClientConfig = {
     endpoint: LUMO_CHAT_ENDPOINT,
     lumoPubKey: DEFAULT_LUMO_PUB_KEY,
     externalTools: ['web_search', 'weather', 'stock', 'cryptocurrency'],
-    internalTools: ['proton_info', 'generate_image', 'describe_image', 'edit_image'],
+    internalTools: ['proton_info'],
+    imageTools: ['generate_image', 'describe_image', 'edit_image'],
     interceptors: {
         request: [],
         response: [],
@@ -72,6 +73,7 @@ export class LumoApiClient {
             finishCallback,
             signal,
             enableExternalTools = false,
+            enableImageTools = false,
             requestKey,
             requestId,
             generateTitle = false,
@@ -88,6 +90,7 @@ export class LumoApiClient {
         // Prepare the request
         let request: LumoApiGenerationRequest = await this.prepareGenerationRequest(turns, encryption, {
             enableExternalTools,
+            enableImageTools,
             generateTitle,
         });
 
@@ -183,11 +186,12 @@ export class LumoApiClient {
         encryption: RequestEncryptionParams | null,
         flags: {
             enableExternalTools: boolean;
+            enableImageTools: boolean;
             generateTitle: boolean;
         }
     ): Promise<LumoApiGenerationRequest> {
         const { lumoPubKey } = this.config;
-        const { enableExternalTools, generateTitle } = flags;
+        const { enableExternalTools, enableImageTools, generateTitle } = flags;
 
         // Encrypt request if needed
         if (encryption) {
@@ -195,7 +199,7 @@ export class LumoApiClient {
         }
 
         // Determine tools and targets
-        const tools = this.getTools(enableExternalTools);
+        const tools = this.getTools(enableExternalTools, enableImageTools);
         const targets = this.getTargets(generateTitle);
 
         return {
@@ -208,9 +212,13 @@ export class LumoApiClient {
         };
     }
 
-    private getTools(enableExternalTools: boolean) {
-        const { internalTools, externalTools } = this.config;
-        return enableExternalTools ? [...internalTools, ...externalTools] : internalTools;
+    private getTools(enableExternalTools: boolean, enableImageTools: boolean) {
+        const { internalTools, externalTools, imageTools } = this.config;
+        return [
+            ...internalTools,
+            ...when(enableExternalTools, externalTools),
+            ...when(enableImageTools, imageTools),
+        ]
     }
 
     private getTargets(requestTitle: boolean): RequestableGenerationTarget[] {
