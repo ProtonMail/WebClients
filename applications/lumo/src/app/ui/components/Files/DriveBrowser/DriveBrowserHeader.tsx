@@ -34,12 +34,12 @@ export const DriveBrowserHeader: React.FC<DriveBrowserHeaderProps> = ({
     isRefreshing,
     hasCurrentFolder,
     folderSelectionMode,
-    onLinkCurrentFolder,
-    currentFolderName,
+    // onLinkCurrentFolder,
+    // currentFolderName,
 }) => {
     return (
         <div className="mb-4">
-            <div className="flex flex-row flex-nowrap items-center justify-space-between mb-2">
+            <div className="flex flex-row flex-nowrap items-center justify-space-between mb-2 p-2">
                 <div className="flex flex-row items-center gap-1">
                     <div className="flex flex-row items-center gap-1">
                         {onBack && !initialShowDriveBrowser && (
