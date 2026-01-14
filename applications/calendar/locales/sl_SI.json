@@ -1156,6 +1156,9 @@
       ],
       "Use your own email domain": [
         "Uporabite svojo e-poštno domeno"
+      ],
+      "Recover previous file versions": [
+        "Obnovi prejšnje različice datoteke"
       ]
     },
     "BF2024: Offers": {
@@ -1600,6 +1603,12 @@
       ],
       "Ultra fast and private VPN": [
         "Ultra hiter in zaseben VPN"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } uporabnik",
+        "Do ${ numberOfUsers } uporabnika",
+        "Do ${ numberOfUsers } uporabniki",
+        "Do ${ numberOfUsers } uporabnikov"
       ]
     },
     "Checkout row": {
@@ -1630,6 +1639,12 @@
     "collider_2025: feature": {
       "Large file upload support": [
         "Podpora za nalaganje velikih datotek"
+      ],
+      "Access to advanced AI models": [
+        "Dostop do naprednih modelov UI"
+      ],
+      "Data never used for AI training": [
+        "Podatki se ne bodo nikoli uporabljali za urjenje UI"
       ]
     },
     "colon": {
@@ -3032,6 +3047,9 @@
       ],
       "This event was updated.": [
         "Ta dogodek je bil posodobljen."
+      ],
+      "DESCRIPTION:": [
+        "OPIS:"
       ]
     },
     "Email body for invitation (date part)": {
@@ -3991,6 +4009,12 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Vaš račun zaseda ${ usedSpace } prostora za shranjevanje, kar presega vam dodeljenih ${ inviteSpace }. Izbrišite nekaj podatkov ali prosite skrbnika paketa, naj vam dodeli več prostora."
+      ],
+      "View the invitation": [
+        "Oglej si povabilo",
+        "Oglej si povabili",
+        "Oglej si povabila",
+        "Oglej si povabila"
       ]
     },
     "familyOffer_2023:Label": {
@@ -4042,6 +4066,9 @@
     "Feature": {
       "Unlimited hide-my-email aliases": [
         "Neomejeno število vzdevkov hide-my-email"
+      ],
+      "More premium features": [
+        "Več premijskih funkcij"
       ]
     },
     "Features": {
@@ -8302,6 +8329,9 @@
       ],
       "Your subscription renews soon": [
         "Vaša naročnina se bo kmalu obnovila"
+      ],
+      "Get ${ BRAND_NAME } Duo": [
+        "Pridobi ${ BRAND_NAME } Duo"
       ]
     },
     "Offer fearue": {
@@ -8722,6 +8752,12 @@
     "Payments.VAT number name": {
       "VAT number": [
         "ID za DDV"
+      ],
+      "Edit ABN": [
+        "Uredi ABN"
+      ],
+      "Edit EIN": [
+        "Uredi EIN"
       ]
     },
     "PGP key encryption warning": {
@@ -11158,6 +11194,9 @@
       ],
       "Your shorter address is now ready": [
         "Vaš krajši naslov je zdaj pripravljen"
+      ],
+      "We'd love to hear from you!": [
+        "Radi bi vas slišali!"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -11796,6 +11835,34 @@
       ],
       "Passcode:": [
         "Koda za dostop:"
+      ]
+    },
+    "error": {
+      "Please sign in with the same Gmail address you originally connected": [
+        "Prijavite se z istim naslovom Gmail, s katerim ste se povezali prvič"
+      ]
+    },
+    "meet_2025: Feature": {
+      "${ n } active meeting at a time": [
+        "${ n } sestanek hkrati",
+        "${ n } sestanka hkrati",
+        "${ n } sestanki hkrati",
+        "${ n } sestankov hkrati"
+      ],
+      "24 hours per meeting": [
+        "24 ur na sestanek"
+      ],
+      "Up to ${ n } meeting per day": [
+        "Do ${ n } sestanek na dan",
+        "Do ${ n } sestanka na dan",
+        "Do ${ n } sestanki na dan",
+        "Do ${ n } sestankov na dan"
+      ],
+      "Up to ${ n } participant": [
+        "Do ${ n } udeleženec",
+        "Do ${ n } udeleženca",
+        "Do ${ n } udeleženci",
+        "Do ${ n } udeležencev"
       ]
     }
   }

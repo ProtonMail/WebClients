@@ -369,7 +369,7 @@
         "Redigér etikette"
       ],
       "Edit phone number": [
-        "Rediger telefonnummer"
+        "Redigér telefonnummer"
       ],
       "Edit sign-in details": [
         "Rediger login-detaljer"
@@ -1849,6 +1849,9 @@
       ],
       "High-speed chats and advanced AI features.": [
         "Højhastighedschats og avancerede AI-funktioner."
+      ],
+      "Private video calls for the conversations that matter.": [
+        "Private videoopkald til de samtaler, der betyder noget."
       ]
     },
     "colon": {
@@ -3779,7 +3782,7 @@
         "Vælg venligst et land"
       ],
       "Please select a state": [
-        "Vælg venligst en region"
+        "Vælg en stat"
       ],
       "Please select billing country": [
         "Vælg faktureringsland"
@@ -7027,7 +7030,7 @@
         "Offentlige nøgler"
       ],
       "Region": [
-        "Område"
+        "Region"
       ],
       "Remove ${ MEET_APP_NAME } video conference": [
         "Fjern ${ MEET_APP_NAME } videokonference"
@@ -7063,7 +7066,7 @@
         "Startdato"
       ],
       "State": [
-        "Stat/Region"
+        "Stat"
       ],
       "Street address": [
         "Adresse"
@@ -8548,7 +8551,7 @@
         "Vi gemmer ingen sessionslog af din færden online og vi logger ikke metadata, som kan kompromittere dit privatliv"
       ],
       "We’re committed to helping customers subject to HIPAA/HITECH regulations safeguard protected health information (PHI). Signed BAAs are available for all ${ BRAND_NAME } for Business customers.": [
-        "Vi stræber efter at hjælpe kunder, der er underlagt HIPAA/HITECH-bestemmelser, med at beskytte beskyttede sundhedsoplysninger (PHI). Underskrevne BAA'er er tilgængelige for alle ${ BRAND_NAME } for Business-kunder."
+        "Vi stræber efter at hjælpe kunder, der er underlagt HIPAA-/HITECH-lovgivning, med at beskytte beskyttede sundhedsoplysninger (PHI). Underskrevne BAA'er (Business Associate Agreement) er tilgængelige for alle ${ BRAND_NAME } for virksomhedskunder."
       ],
       "When connected to our VPN, your DNS queries through our encrypted VPN tunnel, adding to your online privacy and security": [
         "Når du er forbundet til vores VPN, går dine DNS-forespørgsler gennem vores krypterede VPN-tunnel, hvilket øger dit privatliv og din sikkerhed online"
@@ -9368,7 +9371,7 @@
         "Vi er ikke i stand til at godkende din betalingsmetode. Vælg venligst en anden betalingsmetode, eller prøv igen."
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
-        "Dit kort blev afvist. Prøv venligst et andet kort eller kontakt din bank for at godkende opkrævningen."
+        "Dit kort blev afvist. Prøv et andet kort eller kontakt din bank for at godkende betalingen."
       ]
     },
     "Payments.error": {
@@ -12638,6 +12641,58 @@
       ],
       "Passcode:": [
         "Adgangskode:"
+      ]
+    },
+    "customer_support.feature.meet": {
+      "For ${ MEET_APP_NAME }": [
+        "For ${ MEET_APP_NAME }"
+      ]
+    },
+    "meet_2025: Feature": {
+      "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
+        "${ MEET_APP_NAME }: Fortrolige videomøder til de samtaler, der betyder noget"
+      ],
+      "${ n } active meeting at a time": [
+        "${ n } aktivt møde ad gangen",
+        "${ n } aktive møder ad gangen"
+      ],
+      "24 hours per meeting": [
+        "24 timer pr. møde"
+      ],
+      "60 minutes per meeting": [
+        "60 minutter pr. møde"
+      ],
+      "Appointment scheduling": [
+        "Aftaleplanlægning"
+      ],
+      "Browser, mobile, and desktop apps": [
+        "Browser-, mobil- og desktop-apps"
+      ],
+      "Built-in chat": [
+        "Indbygget chat"
+      ],
+      "End-to-end encrypted screen sharing and ephemeral in-call chat": [
+        "End-to-end-krypteret skærmdeling og midlertidig chat under opkald"
+      ],
+      "Meeting recording (coming soon)": [
+        "Møde-optagelse (kommer snart)"
+      ],
+      "One active meeting at a time": [
+        "Ét aktivt møde ad gangen"
+      ],
+      "Screen-sharing": [
+        "Deling af skærm"
+      ],
+      "Unlimited meetings per day": [
+        "Ubegrænset antal møder om dagen"
+      ],
+      "Up to ${ n } meeting per day": [
+        "Op til ${ n } møde om dagen",
+        "Op til ${ n } møder om dagen"
+      ],
+      "Up to ${ n } participant": [
+        "Op til ${ n } deltager",
+        "Op til ${ n } deltagere"
       ]
     }
   }

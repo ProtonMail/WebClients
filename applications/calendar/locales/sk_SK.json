@@ -1027,6 +1027,12 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Bezplatná skúšobná verzia desktopovej aplikácie končí dňa ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Disable auto-add ${ MEET_APP_NAME } links feature": [
+        "Zakázať funkciu automatického pridávania odkazov ${ MEET_APP_NAME }"
+      ],
+      "Turn off auto-add": [
+        "Vypnúť automatické pridávanie"
       ]
     },
     "action": {
@@ -1784,6 +1790,12 @@
       ],
       "Ultra fast and private VPN": [
         "Ultra rýchla a súkromná VPN"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } používateľ",
+        "Až ${ numberOfUsers } používatelia",
+        "Až ${ numberOfUsers } používateľov",
+        "Až ${ numberOfUsers } používateľov"
       ]
     },
     "Checkout row": {
@@ -1873,6 +1885,9 @@
       ],
       "High-speed chats and advanced AI features.": [
         "Vysokorýchlostné chaty a pokročilé funkcie AI"
+      ],
+      "Private video calls for the conversations that matter.": [
+        "Súkromné videohovory pre konverzácie, na ktorých záleží."
       ]
     },
     "colon": {
@@ -4023,6 +4038,9 @@
       ],
       "ZIP code is required": [
         "PSČ je povinné"
+      ],
+      "Failed to update settings": [
+        "Aktualizácia nastavení zlyhala"
       ]
     },
     "error": {
@@ -6602,6 +6620,9 @@
       ],
       "Which calendars should block bookings?": [
         "Ktoré kalendáre by mali blokovať rezervácie?"
+      ],
+      "We automatically added a ${ MEET_APP_NAME } link": [
+        "Automaticky sme pridali odkaz na ${ MEET_APP_NAME }"
       ]
     },
     "info": {
@@ -7881,7 +7902,7 @@
     },
     "new_plans": {
       "Highest VPN speed": [
-        "Vysoká VPN rýchlosť"
+        "Vysoká rýchlosť VPN"
       ],
       "Keep your inbox organized with folders": [
         "Udržujte svoju doručenú poštu organizovanú pomocou priečinkov"
@@ -8178,7 +8199,7 @@
         "Šifrované VPN servery"
       ],
       "End-to-end encryption": [
-        "Šifrovanie End-to-end"
+        "End-to-end šifrovanie"
       ],
       "Existing ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } benefits": [
         "Existujúce výhody ${ PLAN_NAMES[PLANS.VPN_BUSINESS] }"
@@ -8214,7 +8235,7 @@
         "HTML podpisy"
       ],
       "Kill switch/always-on VPN": [
-        "Kill switch/Trvalá sieť VPN"
+        "Kill switch/vždy zapnutá VPN"
       ],
       "Limited support": [
         "Obmedzená podpora"
@@ -10102,7 +10123,7 @@
         "Po začatí platnosti predplatného môžete do 30 dní predplatné zrušiť a získať pomernú refundáciu."
       ],
       "Refer friends": [
-        "Odporučiť priateľov"
+        "Odporučiť priateľom"
       ],
       "Start earning credits": [
         "Začnite zarábať kredity"
@@ -11531,6 +11552,9 @@
       ],
       "You have successfully unsubscribed": [
         "Predplatné bolo úspešne zrušené"
+      ],
+      "Auto-add ${ MEET_APP_NAME } links disabled": [
+        "Automatické pridávanie odkazov ${ MEET_APP_NAME } je deaktivované"
       ]
     },
     "Suffix": {
@@ -13133,6 +13157,64 @@
       ],
       "Passcode:": [
         "Prístupový kód:"
+      ]
+    },
+    "customer_support.feature.meet": {
+      "For ${ MEET_APP_NAME }": [
+        "Na ${ MEET_APP_NAME }"
+      ]
+    },
+    "meet_2025: Feature": {
+      "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
+        "${ MEET_APP_NAME }: Dôverné videokonferencie pre rozhovory, na ktorých záleží"
+      ],
+      "${ n } active meeting at a time": [
+        "${ n } aktívne stretnutie naraz",
+        "${ n } aktívne stretnutia naraz",
+        "${ n } aktívnych stretnutí naraz",
+        "${ n } aktívnych stretnutí naraz"
+      ],
+      "24 hours per meeting": [
+        "24 hodín na schôdzu"
+      ],
+      "60 minutes per meeting": [
+        "60 minút na schôdzu"
+      ],
+      "Appointment scheduling": [
+        "Plánovanie schôdzok"
+      ],
+      "Browser, mobile, and desktop apps": [
+        "Aplikácie pre prehliadače, mobily a desktopy"
+      ],
+      "Built-in chat": [
+        "Vstavaný chat"
+      ],
+      "End-to-end encrypted screen sharing and ephemeral in-call chat": [
+        "End-to-end šifrované zdieľanie obrazovky a dočasný chat počas hovoru"
+      ],
+      "Meeting recording (coming soon)": [
+        "Nahrávanie stretnutia (čoskoro)"
+      ],
+      "One active meeting at a time": [
+        "Jeden aktívny hovor naraz"
+      ],
+      "Screen-sharing": [
+        "Zdieľanie obrazovky"
+      ],
+      "Unlimited meetings per day": [
+        "Neobmedzený počet stretnutí za deň"
+      ],
+      "Up to ${ n } meeting per day": [
+        "Až ${ n } stretnutie za deň",
+        "Až ${ n } stretnutia za deň",
+        "Až ${ n } stretnutí za deň",
+        "Až ${ n } stretnutí za deň"
+      ],
+      "Up to ${ n } participant": [
+        "Až do ${ n } účastníka",
+        "Až do ${ n } účastníkov",
+        "Až do ${ n } účastníkov",
+        "Až do ${ n } účastníkov"
       ]
     }
   }

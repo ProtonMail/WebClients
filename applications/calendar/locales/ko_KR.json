@@ -1015,6 +1015,12 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "회원님의 데스크톱 앱 무료 체험 기간이 ${ formattedEndDate }에 종료됩니다. ${ upgradeButton }"
+      ],
+      "Disable auto-add ${ MEET_APP_NAME } links feature": [
+        "${ MEET_APP_NAME } 링크 자동 추가 비활성화"
+      ],
+      "Turn off auto-add": [
+        "자동 추가 끄기"
       ]
     },
     "action": {
@@ -1739,6 +1745,9 @@
       ],
       "Ultra fast and private VPN": [
         "초고속 비공개 VPN"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers }명 사용자"
       ]
     },
     "Checkout row": {
@@ -1822,6 +1831,9 @@
       ],
       "High-speed chats and advanced AI features.": [
         "고속 채팅 및 고급 AI 기능"
+      ],
+      "Private video calls for the conversations that matter.": [
+        "중요한 대화를 위한 개인 영상 통화."
       ]
     },
     "colon": {
@@ -3921,6 +3933,9 @@
       ],
       "You cannot enter the organizer's email": [
         "주최자의 이메일을 입력할 수 없습니다"
+      ],
+      "Failed to update settings": [
+        "설정값 업데이트 실패"
       ]
     },
     "error": {
@@ -6347,6 +6362,9 @@
       ],
       "Which calendars should block bookings?": [
         "어떤 캘린더에서 예약을 차단할까요?"
+      ],
+      "We automatically added a ${ MEET_APP_NAME } link": [
+        "${ MEET_APP_NAME } 링크를 자동으로 추가했습니다"
       ]
     },
     "info": {
@@ -10937,6 +10955,9 @@
       ],
       "You have successfully unsubscribed": [
         "성공적으로 구독 취소했습니다."
+      ],
+      "Auto-add ${ MEET_APP_NAME } links disabled": [
+        "${ MEET_APP_NAME } 링크 자동 추가가 비활성화되었습니다"
       ]
     },
     "Suffix": {
@@ -12362,6 +12383,55 @@
       ],
       "Passcode:": [
         "비밀번호:"
+      ]
+    },
+    "customer_support.feature.meet": {
+      "For ${ MEET_APP_NAME }": [
+        "${ MEET_APP_NAME }용"
+      ]
+    },
+    "meet_2025: Feature": {
+      "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
+        "${ MEET_APP_NAME }: 중요한 대화를 위한 안전한 영상 회의"
+      ],
+      "${ n } active meeting at a time": [
+        "동시 활성 회의 ${ n }개"
+      ],
+      "24 hours per meeting": [
+        "회의 당 24시간"
+      ],
+      "60 minutes per meeting": [
+        "회의 당 60분"
+      ],
+      "Appointment scheduling": [
+        "일정 예약"
+      ],
+      "Browser, mobile, and desktop apps": [
+        "브라우저, 모바일 및 데스크톱 앱"
+      ],
+      "Built-in chat": [
+        "내장 채팅"
+      ],
+      "End-to-end encrypted screen sharing and ephemeral in-call chat": [
+        "종단간 암호화된 화면 공유 및 임시 통화 중 채팅"
+      ],
+      "Meeting recording (coming soon)": [
+        "회의 녹화 (출시 예정)"
+      ],
+      "One active meeting at a time": [
+        "동싀 활성 회의 1개"
+      ],
+      "Screen-sharing": [
+        "화면 공유"
+      ],
+      "Unlimited meetings per day": [
+        "하루 무제한 회의"
+      ],
+      "Up to ${ n } meeting per day": [
+        "하루 최대 ${ n }개 회의"
+      ],
+      "Up to ${ n } participant": [
+        "최대 ${ n }명 참가자"
       ]
     }
   }

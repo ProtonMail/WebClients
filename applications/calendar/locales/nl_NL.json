@@ -1019,6 +1019,12 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "De gratis proefperiode van uw desktop programma loopt af op ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Disable auto-add ${ MEET_APP_NAME } links feature": [
+        "Schakel de functie voor het automatisch toevoegen van ${ MEET_APP_NAME }-koppelingen uit"
+      ],
+      "Turn off auto-add": [
+        "Schakel automatisch toevoegen uit"
       ]
     },
     "action": {
@@ -1843,6 +1849,9 @@
       ],
       "High-speed chats and advanced AI features.": [
         "Chats op hoge snelheid en geavanceerde AI-functies."
+      ],
+      "Private video calls for the conversations that matter.": [
+        "Privé videogesprekken voor de gesprekken die ertoe doen."
       ]
     },
     "colon": {
@@ -3959,6 +3968,9 @@
       ],
       "ZIP code is required": [
         "Postcode is vereist"
+      ],
+      "Failed to update settings": [
+        "Het is niet gelukt om de instellingen bij te werken"
       ]
     },
     "error": {
@@ -6436,6 +6448,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "U heeft de limiet voor boekingen bereikt (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "We automatically added a ${ MEET_APP_NAME } link": [
+        "We hebben automatisch een ${ MEET_APP_NAME } koppeling toegevoegd"
       ]
     },
     "info": {
@@ -11139,6 +11154,9 @@
       ],
       "You have successfully unsubscribed": [
         "U bent succesvol afgemeld"
+      ],
+      "Auto-add ${ MEET_APP_NAME } links disabled": [
+        "Automatisch ${ MEET_APP_NAME }-koppelingen toevoegen uitgeschakeld"
       ]
     },
     "Suffix": {
@@ -12623,6 +12641,58 @@
       ],
       "Passcode:": [
         "Toegangscode:"
+      ]
+    },
+    "customer_support.feature.meet": {
+      "For ${ MEET_APP_NAME }": [
+        "Voor ${ MEET_APP_NAME }"
+      ]
+    },
+    "meet_2025: Feature": {
+      "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
+        "${ MEET_APP_NAME }: Vertrouwelijke videogesprekken voor de gesprekken die ertoe doen"
+      ],
+      "${ n } active meeting at a time": [
+        "${ n } actieve vergadering tegelijkertijd",
+        "${ n } actieve vergaderingen tegelijk"
+      ],
+      "24 hours per meeting": [
+        "24 uur per vergadering"
+      ],
+      "60 minutes per meeting": [
+        "60 uur per vergadering"
+      ],
+      "Appointment scheduling": [
+        "Afspraak Plannen"
+      ],
+      "Browser, mobile, and desktop apps": [
+        "Browser-, mobiele en desktop-apps"
+      ],
+      "Built-in chat": [
+        "Ingebouwde chat"
+      ],
+      "End-to-end encrypted screen sharing and ephemeral in-call chat": [
+        "End-to-end versleutelde schermdeling en korte chats tijdens telefoongesprekken"
+      ],
+      "Meeting recording (coming soon)": [
+        "Opname van vergaderingen (binnenkort beschikbaar)"
+      ],
+      "One active meeting at a time": [
+        "Eén actieve vergadering tegelijkertijd"
+      ],
+      "Screen-sharing": [
+        "Scherm delen"
+      ],
+      "Unlimited meetings per day": [
+        "Onbeperkt aantal vergaderingen per dag"
+      ],
+      "Up to ${ n } meeting per day": [
+        "Maximaal ${ n } vergadering per dag",
+        "Maximaal ${ n } vergaderingen per dag"
+      ],
+      "Up to ${ n } participant": [
+        "Tot ${ n } deelnemer",
+        "Tot ${ n } deelnemers"
       ]
     }
   }

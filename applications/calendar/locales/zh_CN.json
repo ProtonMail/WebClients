@@ -931,6 +931,12 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "您的桌面应用免费试用将在 ${ formattedEndDate }结束。 ${ upgradeButton }"
+      ],
+      "Disable auto-add ${ MEET_APP_NAME } links feature": [
+        "停用自动添加 ${ MEET_APP_NAME } 链接功能"
+      ],
+      "Turn off auto-add": [
+        "关闭自动添加"
       ]
     },
     "action": {
@@ -3642,6 +3648,12 @@
       ],
       "ZIP code is required": [
         "必须填写邮政编码"
+      ],
+      "Failed to update settings": [
+        "更新设置失败"
+      ],
+      "You cannot enter the organizer's email": [
+        "您不能输入组织者的电子邮件"
       ]
     },
     "Error accepting calendar invitation": {
@@ -5869,6 +5881,27 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "您仍然可以查看您自己的账户数据，但所有用户账户将从您的组织中移除。"
+      ],
+      "Booking contact email: ${ selectedCalendar.Email }": [
+        "预订联系人电子邮件：${ selectedCalendar.Email }"
+      ],
+      "How far in advance can someone book?": [
+        "可以提前多久预订？"
+      ],
+      "Min. 2 hours before": [
+        "提前至少 2 小时"
+      ],
+      "Min. 48 hours before": [
+        "至少提前 48 小时"
+      ],
+      "Not on the same day": [
+        "不在同一天"
+      ],
+      "We automatically added a ${ MEET_APP_NAME } link": [
+        "我们已自动添加 ${ MEET_APP_NAME } 链接"
+      ],
+      "Which calendars should block bookings?": [
+        "哪些日历应阻止预订？"
       ]
     },
     "info": {
@@ -6521,6 +6554,12 @@
       ],
       "ZIP code": [
         "邮政编码"
+      ],
+      "Add notice period": [
+        "添加通知期"
+      ],
+      "Check additional calendars for availability": [
+        "检查其他日历的可用性"
       ]
     },
     "Label for contact group color": {
@@ -10131,6 +10170,9 @@
       ],
       "You have successfully unsubscribed": [
         "您已退订成功"
+      ],
+      "Auto-add ${ MEET_APP_NAME } links disabled": [
+        "已禁用自动添加 ${ MEET_APP_NAME } 链接"
       ]
     },
     "Suffix": {
