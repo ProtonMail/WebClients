@@ -1076,7 +1076,7 @@ describe('message counts - label conversations', () => {
             });
         });
 
-        it('should not decrease Category counters', () => {
+        it('should decrease category counters when moving to archive', () => {
             const conversation1 = {
                 ID: 'conversation1',
                 Labels: [
@@ -1129,7 +1129,7 @@ describe('message counts - label conversations', () => {
             expect(archiveCount).toEqual({ LabelID: MAILBOX_LABEL_IDS.ARCHIVE, Unread: 2, Total: 4 });
 
             const categoryCount = updatedCounters.find((c) => c.LabelID === MAILBOX_LABEL_IDS.CATEGORY_SOCIAL);
-            expect(categoryCount).toEqual({ LabelID: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL, Unread: 1, Total: 2 });
+            expect(categoryCount).toEqual({ LabelID: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL, Unread: 0, Total: 0 });
 
             checkUpdatedCounters({
                 updatedCounters,
@@ -1205,6 +1205,9 @@ describe('message counts - label conversations', () => {
             const almostAllMailCount = updatedCounters.find((c) => c.LabelID === MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL);
             expect(almostAllMailCount).toEqual({ LabelID: MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL, Unread: 10, Total: 25 });
 
+            const socialCount = updatedCounters.find((c) => c.LabelID === MAILBOX_LABEL_IDS.CATEGORY_SOCIAL);
+            expect(socialCount).toEqual({ LabelID: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL, Unread: 0, Total: 0 });
+
             checkUpdatedCounters({
                 updatedCounters,
                 skippedLabelIDs: [
@@ -1212,6 +1215,7 @@ describe('message counts - label conversations', () => {
                     MAILBOX_LABEL_IDS.ARCHIVE,
                     MAILBOX_LABEL_IDS.TRASH,
                     MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
+                    MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
                 ],
             });
         });
@@ -1280,6 +1284,9 @@ describe('message counts - label conversations', () => {
             const almostAllMailCount = updatedCounters.find((c) => c.LabelID === MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL);
             expect(almostAllMailCount).toEqual({ LabelID: MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL, Unread: 10, Total: 25 });
 
+            const socialCount = updatedCounters.find((c) => c.LabelID === MAILBOX_LABEL_IDS.CATEGORY_SOCIAL);
+            expect(socialCount).toEqual({ LabelID: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL, Unread: 0, Total: 0 });
+
             checkUpdatedCounters({
                 updatedCounters,
                 skippedLabelIDs: [
@@ -1287,6 +1294,7 @@ describe('message counts - label conversations', () => {
                     MAILBOX_LABEL_IDS.ARCHIVE,
                     MAILBOX_LABEL_IDS.SPAM,
                     MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
+                    MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
                 ],
             });
         });
