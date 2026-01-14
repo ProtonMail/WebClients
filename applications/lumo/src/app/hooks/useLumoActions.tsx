@@ -4,6 +4,7 @@ import useApi from '@proton/components/hooks/useApi';
 import type { User } from '@proton/shared/lib/interfaces';
 import useFlag from '@proton/unleash/useFlag';
 
+import type { AesGcmCryptoKey } from '../crypto/types';
 import { addContextToMessages, fillAttachmentData } from '../llm/attachments';
 import { buildLinearChain } from '../messageTree';
 import { useGhostChat } from '../providers/GhostChatProvider';
@@ -107,7 +108,7 @@ export const useLumoActions = ({
     const loadAttachments = async (
         messages: Message[],
         user: User | undefined,
-        spaceDek: any
+        spaceDek: AesGcmCryptoKey | undefined
     ): Promise<Attachment[]> => {
         const allAttachments: Attachment[] = [];
         const seenIds = new Set<string>();
@@ -140,7 +141,7 @@ export const useLumoActions = ({
         actionParams: ActionParams,
         conversationId: ConversationId,
         spaceId: SpaceId,
-        spaceDek: any,
+        spaceDek: AesGcmCryptoKey | undefined,
         signal: AbortSignal
     ) => {
         const { newMessageContent, isWebSearchButtonToggled } = actionParams;
@@ -191,7 +192,7 @@ export const useLumoActions = ({
     const handleRetryAction = async (
         finalConversationId: ConversationId,
         finalSpaceId: SpaceId,
-        spaceDek: any,
+        spaceDek: AesGcmCryptoKey | undefined,
         signal: AbortSignal,
         isWebSearchButtonToggled: boolean
     ) => {
@@ -272,7 +273,7 @@ export const useLumoActions = ({
         conversationId: ConversationId,
         spaceId: SpaceId,
         originalMessage: Message,
-        spaceDek: any,
+        spaceDek: AesGcmCryptoKey | undefined,
         signal: AbortSignal
     ) => {
         const { newMessageContent, isWebSearchButtonToggled } = actionParams;
@@ -349,7 +350,7 @@ export const useLumoActions = ({
 
     const handleRegenerateAction = async (
         originalMessage: Message,
-        spaceDek: any,
+        spaceDek: AesGcmCryptoKey | undefined,
         signal: AbortSignal,
         isWebSearchButtonToggled: boolean,
         retryStrategy: RetryStrategy = 'simple',
