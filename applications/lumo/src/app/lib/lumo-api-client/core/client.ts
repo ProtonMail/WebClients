@@ -88,6 +88,7 @@ export class LumoApiClient {
         });
 
         // Prepare the request
+        // TODO consider just passing `options` instead of rebuilding a narrower object
         let request: LumoApiGenerationRequest = await this.prepareGenerationRequest(turns, encryption, {
             enableExternalTools,
             enableImageTools,
@@ -214,11 +215,12 @@ export class LumoApiClient {
 
     private getTools(enableExternalTools: boolean, enableImageTools: boolean) {
         const { internalTools, externalTools, imageTools } = this.config;
+        // prettier-ignore
         return [
             ...internalTools,
             ...when(enableExternalTools, externalTools),
             ...when(enableImageTools, imageTools),
-        ]
+        ];
     }
 
     private getTargets(requestTitle: boolean): RequestableGenerationTarget[] {
