@@ -1019,6 +1019,12 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "თქვენი კომპიუტერის აპის უფასო სატესტო ვერსიის დასრულების დროა ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Disable auto-add ${ MEET_APP_NAME } links feature": [
+        "${ MEET_APP_NAME }-ის ბმულების ავტოდამატების ფუნქციის გამორთვა"
+      ],
+      "Turn off auto-add": [
+        "ავტოდამატების გამორთვა"
       ]
     },
     "action": {
@@ -1745,6 +1751,10 @@
       ],
       "Ultra fast and private VPN": [
         "ზეჩქარი და კონფიდენციალური VPN"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } მომხმარებელი",
+        "${ numberOfUsers } მომხმარებლამდე"
       ]
     },
     "Checkout row": {
@@ -3912,6 +3922,12 @@
       ],
       "ZIP code is required": [
         "საფოსტო კოდი აუცილებელია"
+      ],
+      "Failed to update settings": [
+        "პარამეტრების განახლების შეცდომა"
+      ],
+      "Unable to load VPN dashboard. Please check your connection and try again.": [
+        "VPN-ის სამუშაო მაგიდის ჩატვირთვა შეუძლებელია. გადაამოწმეთ თქვენი კავშირი და თავიდან სცადეთ."
       ]
     },
     "error": {
@@ -6245,6 +6261,78 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "თქვენ მიაღწიეთ დაჯავშნის სლოტების ლიმიტს (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
+        "${ VPN_APP_NAME } ნიღბავს თქვენს IP მისამართს და ვებგვერდები თქვენს იდენტიფიკაციას ვერ მოახდენენ."
+      ],
+      "**Auto-connect**: Opens and connects to VPN as soon as you turn on your device.": [
+        "**ავტოდაკავშირება**: გახსნის და დააკავშირებს VPN-ს მაშინვე, როცა თქვენს მოწყობილობას ჩართავთ."
+      ],
+      "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
+        "**Kill switch**: აჩერებს მონაცემების გაჟონვას თქვენი ინტერნეტის დაბლოკვით, თუ VPN გაითიშება."
+      ],
+      "Ad targeting": [
+        "დამიზნებული რეკლამა"
+      ],
+      "Connect to ${ VPN_APP_NAME } to browse privately": [
+        "მიუერთდით ${ VPN_APP_NAME } ინტერნეტში უსაფრთხოდ სამუშაოდ"
+      ],
+      "Geoblocking": [
+        "გეოდაბლოკვა"
+      ],
+      "In restrictive countries": [
+        "აკრძალვების მქონე ქვეყნებში"
+      ],
+      "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
+        "საუკეთესო გზაა, VPN ყოველთვის გამოიყენოთ. მაგრამ ეს ადგილებია, სადაც კიბერუსაფრთხოების საფრთხეები ყველაზე დიდია:"
+      ],
+      "Not connected": [
+        "მიერთებული არაა"
+      ],
+      "On public WiFi networks": [
+        "ან საჯარო WiFi ქსელები"
+      ],
+      "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
+        "პირადი დათვალიერება (ან „ინკოგნიტო“ რეჟიმი) სასარგებლოა, მხოლოდ, თქვენი აქტივობის თქვენს მოწყობილობაზე დამალვისთვის. ის ხელს უშლის თქვენს ბრაუზერს ისტორიისა და ქუქი-ფაილების შენახვაში, მაგრამ არ გხდით უხილავს. თქვენს ინტერნეტ პროვაიდერს, ქსელის ადმინისტრატორს და ვებსაიტებს, რომლებსაც სტუმრობთ, კვლავ შეუძლიათ ნახონ, რას აკეთებთ ონლაინ."
+      ],
+      "Scan the QR code with your mobile device": [
+        "დაასკანერეთ QR კოდი თქვენი მობილური მოწყობილობით"
+      ],
+      "Stay connected effortlessly by enabling the following VPN settings:": [
+        "დარჩით დაკავშირებული შემდეგი VPN-ის პარამეტრების ჩართვით:"
+      ],
+      "Surveillance": [
+        "დაზვერვა"
+      ],
+      "Tracking": [
+        "ტრეკინგი"
+      ],
+      "VPN IP": [
+        "VPN IP"
+      ],
+      "We automatically added a ${ MEET_APP_NAME } link": [
+        "ჩვენ ავტომატურად დავამატეთ ${ MEET_APP_NAME }-ის ბმული"
+      ],
+      "When working remotely": [
+        "დისტანციურად მუშაობისას"
+      ],
+      "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
+        "როცა მიუერთდებით VPN-ს, ის იყენებს დაშიფვრის ტექნოლოგიებს, რომ თქვენი IP მისამართი (თქვენი მოწყობილობისთვის მინიჭებული ნიკალური კოდი) დამალოს."
+      ],
+      "Your internet service provider can monitor and sometimes sell your data, or even restrict what websites you can access.": [
+        "თქვენს პროვაიდერს შეუძლია თქვენი მონიტორინგი და, ხანდახან, თქვენი მონაცემების გაყიდვა და შეზღუდვა, სად შეგიძლიათ შესვლა."
+      ],
+      "Your IP": [
+        "თქვენი IP"
+      ],
+      "Your IP address is visible and can be used to track your online activity.": [
+        "თქვენი IP მისამართი ხილულია და შეიძლება, თქვენი ინტერნეტში მუშაობის ტრეკინგისთვის იქნეს გამოყენებული."
+      ],
+      "Your online activity is protected": [
+        "თქვენი აქტივობა ინტერნეეტში დაცულია"
+      ],
+      "Your physical location is visible and can be used to restrict your access to the internet.": [
+        "თქვენი ფიზიკური მდებარეობა ხილულია და, შეიძლება, თქვენთვის ინტერნთან წვდომის შესაზღუდად იქნეს გამოყენებული."
       ]
     },
     "info": {
@@ -6954,6 +7042,15 @@
       ],
       "Zoom meeting": [
         "Zoom-ის შეხვედრა"
+      ],
+      "Your IP": [
+        "თქვენი IP"
+      ],
+      "Your ISP": [
+        "თქვენი ISP"
+      ],
+      "Your location": [
+        "თქვენი მდებარეობა"
       ]
     },
     "label": {
@@ -10867,6 +10964,9 @@
       ],
       "You have successfully unsubscribed": [
         "გამოწერა წარმატებით გაუქმდა"
+      ],
+      "Auto-add ${ MEET_APP_NAME } links disabled": [
+        "${ MEET_APP_NAME }-ის ბმულების ავტოდამატება გამორთულია"
       ]
     },
     "Suffix": {
@@ -11745,6 +11845,39 @@
       ],
       "Your shorter address is now ready": [
         "თქვენი მოკლე მისამართი ახლა მზადაა"
+      ],
+      "Desktop": [
+        "სამუშაო მაგიდა"
+      ],
+      "Download the app": [
+        "აპის გადმოწერა"
+      ],
+      "Get more from your VPN": [
+        "მიიღეთ მეტი თქვენი VPN-სგან"
+      ],
+      "How does it all work?": [
+        "როგორ მუშაობს ეს ყველაფერი?"
+      ],
+      "Make a secure connection your default": [
+        "დაცული კავშირის გამოყენება ნაგულისხმევად"
+      ],
+      "Mobile": [
+        "მობილური"
+      ],
+      "Private browsing vs VPN": [
+        "კონფიდენციალური რეჟიმი vs VPN"
+      ],
+      "VPN explained": [
+        "VPN-ის ახსნა"
+      ],
+      "What can a VPN protect you from?": [
+        "რისგან გიცავთ VPN?"
+      ],
+      "What is a VPN?": [
+        "რა არის VPN?"
+      ],
+      "When is it most important to use a VPN?": [
+        "როდისაა VPN-ის გამოყენება ყველაზე მნიშვნელოვანი?"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -12043,6 +12176,9 @@
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "თქვენი უფასო სატესტო ვერსიის დამთავრების თარიღია ${ textDate }. ${ action }"
+      ],
+      "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
+        "თქვენი საცდელი პერიოდი დასრულდება: ${ textDate }. თუ გააუქმებთ ${ textDate }-მდე, თანხა არ ჩამოგეჭრებათ. ${ action }"
       ]
     },
     "Warning in modal to accept calendar invitation; Description": {
@@ -12309,6 +12445,39 @@
       ],
       "Passcode:": [
         "საკვანძო კოდი:"
+      ]
+    },
+    "customer_support.feature.meet": {
+      "For ${ MEET_APP_NAME }": [
+        "${ MEET_APP_NAME }-ისთვის"
+      ]
+    },
+    "Drawer tab, Action": {
+      "Download for Linux": [
+        "გადმოწერა Linux-სთვის"
+      ],
+      "Download for macOS": [
+        "გადმოწერა macOS-სთვის"
+      ],
+      "Download for Windows": [
+        "გადმოწერა Windows-სთვის"
+      ]
+    },
+    "meet_2025: Feature": {
+      "24 hours per meeting": [
+        "24 საათი თითო შეხვედრისთვის"
+      ],
+      "60 minutes per meeting": [
+        "60 წუთი თითო შეხვედრისთვის"
+      ],
+      "Appointment scheduling": [
+        "შეხვედრის დაგეგმვა"
+      ],
+      "Built-in chat": [
+        "ჩაშენებული ჩატი"
+      ],
+      "Screen-sharing": [
+        "ეკრანის გაზიარება"
       ]
     }
   }

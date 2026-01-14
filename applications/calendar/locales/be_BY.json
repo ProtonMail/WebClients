@@ -1885,6 +1885,9 @@
       ],
       "High-speed chats and advanced AI features.": [
         "Высакахуткасныя чаты і перадавыя функцыі ШІ."
+      ],
+      "Private video calls for the conversations that matter.": [
+        "Прыватныя відэазванкі для важных размоў."
       ]
     },
     "colon": {
@@ -4024,6 +4027,9 @@
       ],
       "ZIP code is required": [
         "Патрабуецца ўвесці паштовы індэкс"
+      ],
+      "Unable to load VPN dashboard. Please check your connection and try again.": [
+        "Немагчыма загрузіць панэль кіравання VPN. Праверце падключэнне і паўтарыце спробу."
       ]
     },
     "error": {
@@ -6504,6 +6510,108 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Вы дасягнулі абмежавання па прамежках браніравання (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
+        "${ VPN_APP_NAME } маскіруе ваш IP-адрас і вэб-сайты не могуць вызначыць вас."
+      ],
+      "**Auto-connect**: Opens and connects to VPN as soon as you turn on your device.": [
+        "**Аўтаматычнае падключэнне**: падключэнне да сервера VPN адбываецца адразу пасля ўключэння прылады."
+      ],
+      "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
+        "**Kill Switch**: спыняе ўцечку даных блакіруючы інтэрнэт, калі падключэнне па VPN нечакана знікла."
+      ],
+      "A secure connection is essential when working remotely. A VPN protects company data from cyber threats and keeps your work private.": [
+        "Бяспечнае падключэнне неабходна пры аддаленай працы. VPN абараняе даныя кампаніі ад кіберпагроз і захоўвае прыватнасць вашай працы."
+      ],
+      "A VPN encrypts your connection and hides your IP address, making it much harder for anyone to track or monitor your browsing.": [
+        "VPN шыфруе ваша падключэнне і хавае ваш IP-адрас. Гэта вельмі ўскладняе адсочванне або назеранне прагляду вэб-старонак для любых зацікаўленых структур."
+      ],
+      "A VPN hides your IP address and encrypts your browsing activity, making it harder for websites, advertisers, and ISPs to track you over time.": [
+        "VPN хавае ваш IP-адрас і шыфруе вашу актыўнасць у браўзеры. Гэта вельмі ўскладняе вэб-сайтам, рэкламадаўцам і пастаўшчыкам паслуг інтэрнэту адсочваць вас з цягам часу."
+      ],
+      "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
+        "VPN - гэта бяспечны тунэль паміж вашай прыладай і інтэрнэтам. Ён хавае ваша месцазнаходжанне і актыўнасць ад вашага пастаўшчыка паслуг інтэрнэту (ISP) і вэб-сайтаў, якія вы наведваеце."
+      ],
+      "Ad targeting": [
+        "Мэтавая рэклама"
+      ],
+      "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
+        "Рэкламадаўцы адсочваюць, якія вэб-старонкі вы наведваеце для паказу мэтавай рэкламы. ${ VPN_APP_NAME } блакіруе праграмы адсочвання і рэкламу, робіць ваша падключэнне хутчэйшым і паляпшае працу ў інтэрнэце."
+      ],
+      "Connect to ${ VPN_APP_NAME } to browse privately": [
+        "Падключыцеся да ${ VPN_APP_NAME } для прыватнага прагляду"
+      ],
+      "Geoblocking": [
+        "Геаблакіроўка"
+      ],
+      "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
+        "Урады і пастаўшчыкі паслуг інтэрнэту могуць сачыць за тым, якія сайты вы наведваеце. Ваш прагляд вэб-старонак у інтэрнэце становіцца прыватным дзякуючы хаванню вашага рэальнага IP-адраса і шыфраванню."
+      ],
+      "In restrictive countries": [
+        "У краінах, якія абмяжоўваюць інтэрнэт"
+      ],
+      "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
+        "Лепш за ўсё выкарыстоўваць VPN пастаянна, але тут прыведзены выпадкі калі пагрозы кібербяспекі могуць быць самымі высокімі:"
+      ],
+      "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
+        "Большасць агульнадаступных сетак Wi-Fi з'яўляюцца бяспечнымі, але ў некаторых адсутнічаюць функцыі бяспекі і гэта падвяргае вас кіберпагрозам. VPN шыфруе трафік і абараняе ваша падключэнне."
+      ],
+      "Not connected": [
+        "Не падключана"
+      ],
+      "On public WiFi networks": [
+        "У грамадскіх сетках Wi-Fi"
+      ],
+      "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
+        "Прыватны прагляд вэб-старонак (або рэжым \"інкогніта\") карысны толькі для хавання актыўнасці на вашай прыладзе. Браўзер не будзе захоўваць гісторыю і файлы cookie, але гэта не робіць вас нябачным. Ваш пастаўшчык паслуг інтэрнэту, сеткавы адміністратар і вэб-сайты ўсё яшчэ могуць бачыць, што вы робіце ў інтэрнэце."
+      ],
+      "Scan the QR code with your mobile device": [
+        "Адсканіруйце QR-код з дапамогай мабільнай прылады"
+      ],
+      "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
+        "Некаторыя ўрады блакіруюць або абмяжоўваюць доступ да пэўных вэб-сайтаў. VPN дапамагае абысці цэнзуру, захоўваючы вашу актыўнасць і асобу ў таямніцы."
+      ],
+      "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
+        "Некаторыя вэб-сайты і сэрвісы з трансляцыямі блакіруюць змесціва па рэгіёнах. VPN дазваляе абысці гэтыя абмежаванні і атрымаць свабодны доступ у інтэрнэт."
+      ],
+      "Stay connected effortlessly by enabling the following VPN settings:": [
+        "Уключыце наступныя налады VPN, каб заставацца падключанымі без асаблівых намаганняў:"
+      ],
+      "Surveillance": [
+        "Назіранне"
+      ],
+      "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
+        "Гэта азначае, што ваш пастаўшчык паслуг інтэрнэту і вэб-сайты не змогуць атрымліваць асабістыя звесткі з вашай актыўнасцю ў інтэрнэце."
+      ],
+      "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
+        "Гэты ўнікальны код можа быць выкарыстаны вэб-сайтамі і пастаўшчыком паслуг інтэрнэту (ISP), каб звязаць ваша месцазнаходжанне і гісторыю прагляду старонак на вашай прыладзе."
+      ],
+      "Tracking": [
+        "Адсочванне"
+      ],
+      "VPN IP": [
+        "IP VPN"
+      ],
+      "When working remotely": [
+        "Пры аддаленай працы"
+      ],
+      "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
+        "VPN выкарыстоўвае тэхналогію шыфравання, каб схаваць ваш IP-адрас пры падключэнні да VPN (унікальны код, які прызначаны вашай прыладзе)."
+      ],
+      "Your internet service provider can monitor and sometimes sell your data, or even restrict what websites you can access.": [
+        "Ваш пастаўшчык паслуг інтэрнэту можа назіраць за вашымі дзеяннямі ў інтэрнэце і час ад часу прадаваць вашы даныя або нават абмяжоўваць доступ да некаторых вэб-сайтаў"
+      ],
+      "Your IP": [
+        "Ваш IP"
+      ],
+      "Your IP address is visible and can be used to track your online activity.": [
+        "Ваш IP-адрас з'яўляецца бачным і можа быць выкарыстаны для адсочвання вашай актыўнасці ў інтэрнэце."
+      ],
+      "Your online activity is protected": [
+        "Ваша актыўнасць у інтэрнэце абаронена"
+      ],
+      "Your physical location is visible and can be used to restrict your access to the internet.": [
+        "Ваша фізічнае месцазнаходжанне з'яўляецца бачным і можа выкарыстоўвацца для забароны доступу ў інтэрнэт."
       ]
     },
     "info": {
@@ -7228,6 +7336,15 @@
       ],
       "Zoom meeting": [
         "Сустрэча па Zoom"
+      ],
+      "Your IP": [
+        "Ваш IP"
+      ],
+      "Your ISP": [
+        "Ваш ISP"
+      ],
+      "Your location": [
+        "Ваша месцазнаходжанне"
       ]
     },
     "label": {
@@ -12329,6 +12446,39 @@
       ],
       "Your shorter address is now ready": [
         "Ваш больш кароткі адрас гатовы да выкарыстання"
+      ],
+      "Desktop": [
+        "Для камп'ютара"
+      ],
+      "Download the app": [
+        "Спампаваць праграму"
+      ],
+      "Get more from your VPN": [
+        "Атрымайце больш ад свайго VPN"
+      ],
+      "How does it all work?": [
+        "Як гэта ўсё працуе?"
+      ],
+      "Make a secure connection your default": [
+        "Зрабіце бяспечнае падключэнне сваім прадвызначаным"
+      ],
+      "Mobile": [
+        "Для смартфона"
+      ],
+      "Private browsing vs VPN": [
+        "Прыватны прагляд у параўнанні з VPN"
+      ],
+      "VPN explained": [
+        "Тлумачэнне VPN"
+      ],
+      "What can a VPN protect you from?": [
+        "Ад чаго можа абараніць VPN?"
+      ],
+      "What is a VPN?": [
+        "Што такое VPN?"
+      ],
+      "When is it most important to use a VPN?": [
+        "У якіх выпадках варта выкарыстоўваць VPN?"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -12990,6 +13140,75 @@
       ],
       "Passcode:": [
         "Код доступу:"
+      ]
+    },
+    "customer_support.feature.meet": {
+      "For ${ MEET_APP_NAME }": [
+        "Для ${ MEET_APP_NAME }"
+      ]
+    },
+    "Drawer tab, Action": {
+      "Download for Linux": [
+        "Спампаваць для Linux"
+      ],
+      "Download for macOS": [
+        "Спампаваць для macOS"
+      ],
+      "Download for Windows": [
+        "Спампаваць для Windows"
+      ]
+    },
+    "meet_2025: Feature": {
+      "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
+        "${ MEET_APP_NAME }: канфідэнцыйныя відэаканферэнцыі для важных размоў"
+      ],
+      "${ n } active meeting at a time": [
+        "${ n } актыўная сустрэча адначасова",
+        "${ n } актыўныя сустрэчы адначасова",
+        "${ n } актыўных сустрэч адначасова",
+        "${ n } актыўных сустрэч адначасова"
+      ],
+      "24 hours per meeting": [
+        "24 гадзіны на сустрэчу"
+      ],
+      "60 minutes per meeting": [
+        "60 хвілін на сустрэчу"
+      ],
+      "Appointment scheduling": [
+        "Планаванне сустрэч"
+      ],
+      "Browser, mobile, and desktop apps": [
+        "Браўзер, мабільныя прылады і праграмы для камп'ютараў"
+      ],
+      "Built-in chat": [
+        "Убудаваны чат"
+      ],
+      "End-to-end encrypted screen sharing and ephemeral in-call chat": [
+        "Дэманстрацыя экрана са скразным шыфраваннем і эфемерны чат пры званках"
+      ],
+      "Meeting recording (coming soon)": [
+        "Запісы сустрэч (неўзабаве з'явяцца)"
+      ],
+      "One active meeting at a time": [
+        "Адна актыўная сустрэча адначасова"
+      ],
+      "Screen-sharing": [
+        "Абагулены экран"
+      ],
+      "Unlimited meetings per day": [
+        "Неабмежаваная колькасць сустрэч у дзень"
+      ],
+      "Up to ${ n } meeting per day": [
+        "Да ${ n } сустрэчы ў дзень",
+        "Да ${ n } сустрэч у дзень",
+        "Да ${ n } сустрэч у дзень",
+        "Да ${ n } сустрэч у дзень"
+      ],
+      "Up to ${ n } participant": [
+        "Да ${ n } удзельніка",
+        "Да ${ n } удзельнікаў",
+        "Да ${ n } удзельнікаў",
+        "Да ${ n } удзельнікаў"
       ]
     }
   }
