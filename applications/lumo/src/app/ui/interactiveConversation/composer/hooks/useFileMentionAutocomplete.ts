@@ -5,6 +5,7 @@ import { c } from 'ttag';
 
 import { useNotifications } from '@proton/components';
 
+import { useFileProcessing } from '../../../../hooks/useFileProcessing';
 import { getApproximateTokenCount } from '../../../../llm/tokenizer';
 import { useIsGuest } from '../../../../providers/IsGuestProvider';
 import { useLumoDispatch, useLumoSelector } from '../../../../redux/hooks';
@@ -15,7 +16,6 @@ import {
     selectSpaceByIdOptional,
 } from '../../../../redux/selectors';
 import { newAttachmentId, upsertAttachment } from '../../../../redux/slices/core/attachments';
-import { fileProcessingService } from '../../../../services/fileProcessingService';
 import { SearchService } from '../../../../services/search/searchService';
 import type { Attachment, Message, ProjectSpace, SpaceId } from '../../../../types';
 import { getMimeTypeFromExtension } from '../../../../util/filetypes';
@@ -168,6 +168,7 @@ export const useFileMentionAutocomplete = (
     const isGuest = useIsGuest();
     const dispatch = useLumoDispatch();
     const { createNotification } = useNotifications();
+    const fileProcessingService = useFileProcessing();
     const space = useLumoSelector(selectSpaceByIdOptional(spaceId));
     const spaceProject = space?.isProject ? (space satisfies ProjectSpace) : undefined;
     const linkedDriveFolder = spaceProject?.linkedDriveFolder;

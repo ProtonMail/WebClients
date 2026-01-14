@@ -1,5 +1,6 @@
 import { useCallback, useRef } from 'react';
 
+import { useFileProcessing } from 'applications/lumo/src/app/hooks/useFileProcessing';
 import { c } from 'ttag';
 
 import { useNotifications } from '@proton/components';
@@ -10,7 +11,6 @@ import { MAX_FILE_SIZE } from '../../../../constants';
 import { useIsGuest } from '../../../../providers/IsGuestProvider';
 import { useLumoDispatch, useLumoSelector } from '../../../../redux/hooks';
 import { deleteAttachment } from '../../../../redux/slices/core/attachments';
-import { fileProcessingService } from '../../../../services/fileProcessingService';
 import { handleFileAsync } from '../../../../services/files';
 import { SearchService } from '../../../../services/search/searchService';
 import type { AttachmentId, LinkedDriveFolder, Message } from '../../../../types';
@@ -38,6 +38,7 @@ export const useFileHandling = ({
 }: UseFileHandlingProps) => {
     const dispatch = useLumoDispatch();
     const { createNotification } = useNotifications();
+    const fileProcessingService = useFileProcessing();
     const fileInputRef = useRef<HTMLInputElement>(null);
     const userId = useLumoSelector((state) => state.user?.value?.ID);
     const isGuest = useIsGuest();
@@ -129,7 +130,7 @@ export const useFileHandling = ({
                     console.log(`Processing large spreadsheet file - this may take a moment...`);
                 }
 
-                const result = await dispatch(handleFileAsync(file, messageChain));
+                const result = await dispatch(handleFileAsync(file, messageChain, fileProcessingService));
 
                 // Handle duplicate file
                 if (result.isDuplicate) {
