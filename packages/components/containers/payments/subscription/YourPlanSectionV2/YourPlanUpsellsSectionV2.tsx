@@ -9,6 +9,7 @@ import Loader from '@proton/components/components/loader/Loader';
 import useLoad from '@proton/components/hooks/useLoad';
 import { usePreferredPlansMap } from '@proton/components/hooks/usePreferredPlansMap';
 import useVPNServersCount from '@proton/components/hooks/useVPNServersCount';
+import type { TelemetryPaymentFlow } from '@proton/components/payments/client-extensions/usePaymentsTelemetry';
 import useLoading from '@proton/hooks/useLoading';
 import type { FreeSubscription, FullPlansMap } from '@proton/payments';
 import {
@@ -102,6 +103,7 @@ export type UpsellsHook = {
     upsells: Upsell[];
     handleExplorePlans: () => void;
     serversCount: VPNServersCountData;
+    telemetryFlow: TelemetryPaymentFlow;
     plansMap: FullPlansMap;
     freePlan: FreePlanDefault;
     user: UserModel;
@@ -200,6 +202,7 @@ const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, fre
                     vpnUpsells={vpnPlusFromFreeUpsells.upsells}
                     bundleUpsells={unlimitedBannerGradientUpsells.upsells}
                     handleExplorePlans={vpnPlusFromFreeUpsells.handleExplorePlans}
+                    telemetryFlow={vpnPlusFromFreeUpsells.telemetryFlow}
                     userCanHave24MonthPlan={userCanHave24MonthPlan}
                 />
             ),
@@ -432,7 +435,7 @@ const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, fre
                         subscription={subscription as Subscription}
                         {...unlimitedBannerGradientUpsells}
                     />
-                    <DrivePlusFromFreeBanner />
+                    <DrivePlusFromFreeBanner app={app} />
                 </>
             ),
         },
@@ -544,7 +547,7 @@ const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, fre
                 hasFamily(subscription) &&
                 subscription?.Cycle !== CYCLE.MONTHLY &&
                 app === APPS.PROTONVPN_SETTINGS,
-            element: <VPNB2BBanner />,
+            element: <VPNB2BBanner app={app} />,
         },
         {
             enabled: hasVisionary(subscription) && canSaveByExtendingPlan,
@@ -560,7 +563,7 @@ const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, fre
         },
         {
             enabled: app !== APPS.PROTONVPN_SETTINGS && (hasFamily(subscription) || hasVisionary(subscription)),
-            element: <PBSB2BBanner />,
+            element: <PBSB2BBanner app={app} />,
         },
         {
             enabled: hasVPNPassBundle(subscription),

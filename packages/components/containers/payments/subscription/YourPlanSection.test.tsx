@@ -166,6 +166,7 @@ describe('YourPlanSection', () => {
                 metrics: {
                     source: 'upsells',
                 },
+                telemetryFlow: 'subscription',
             });
         });
     });

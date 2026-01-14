@@ -12,29 +12,29 @@ import type { SUBSCRIPTION_STEPS } from './constants';
 
 export type SubscriptionOverridableStep = SUBSCRIPTION_STEPS.UPGRADE | SUBSCRIPTION_STEPS.THANKS;
 
-export interface OpenCallbackProps
-    extends Pick<
-        SubscriptionContainerProps,
-        | 'step'
-        | 'cycle'
-        | 'currency'
-        | 'plan'
-        | 'planIDs'
-        | 'coupon'
-        | 'disablePlanSelection'
-        | 'disableThanksStep'
-        | 'defaultAudience'
-        | 'disableCycleSelector'
-        | 'defaultSelectedProductPlans'
-        | 'metrics'
-        | 'upsellRef'
-        | 'maximumCycle'
-        | 'minimumCycle'
-        | 'onSubscribed'
-        | 'onUnsubscribed'
-        | 'mode'
-        | 'allowedAddonTypes'
-    > {
+export interface OpenCallbackProps extends Pick<
+    SubscriptionContainerProps,
+    | 'step'
+    | 'cycle'
+    | 'currency'
+    | 'plan'
+    | 'planIDs'
+    | 'coupon'
+    | 'disablePlanSelection'
+    | 'disableThanksStep'
+    | 'defaultAudience'
+    | 'disableCycleSelector'
+    | 'defaultSelectedProductPlans'
+    | 'metrics'
+    | 'telemetryFlow'
+    | 'upsellRef'
+    | 'maximumCycle'
+    | 'minimumCycle'
+    | 'onSubscribed'
+    | 'onUnsubscribed'
+    | 'mode'
+    | 'allowedAddonTypes'
+> {
     hasClose?: boolean;
     onClose?: () => void;
     disableCloseOnEscape?: boolean;

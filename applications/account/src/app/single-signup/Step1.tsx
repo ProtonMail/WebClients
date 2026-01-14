@@ -369,7 +369,10 @@ const Step1 = ({
         billingAddress: options.billingAddress,
         selectedPlanName: getPlanFromPlanIDs(model.plansMap, options.planIDs)?.Name,
         paymentStatus: model.paymentStatus,
-        onChargeable: (_, { chargeablePaymentParameters, sourceType, paymentsVersion, source }) => {
+        onChargeable: (
+            _,
+            { chargeablePaymentParameters, sourceType, paymentsVersion, source, paymentProcessorType }
+        ) => {
             return withLoadingSignup(async () => {
                 const isFreeSignup = chargeablePaymentParameters.Amount <= 0 && !checkTrial;
 
@@ -377,6 +380,7 @@ const Step1 = ({
                     paymentsVersion,
                     paymentMethodType: sourceType,
                     paymentMethodValue: source,
+                    paymentProcessorType,
                 };
 
                 if (isFreeSignup) {

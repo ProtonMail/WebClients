@@ -3,6 +3,7 @@ import { type ReactNode, useEffect } from 'react';
 import { c } from 'ttag';
 
 import type { ButtonLikeProps } from '@proton/atoms/Button/ButtonLike';
+import type { TelemetryPaymentFlow } from '@proton/components/payments/client-extensions/usePaymentsTelemetry';
 import useLoading from '@proton/hooks/useLoading';
 import {
     ADDON_NAMES,
@@ -213,6 +214,7 @@ type GetUpsellArgs = {
     upsellPath: DASHBOARD_UPSELL_PATHS;
     serversCount: VPNServersCountData;
     customCycle?: CYCLE;
+    telemetryFlow: TelemetryPaymentFlow;
 } & Partial<UpsellWithPlan>;
 
 export type GetPlanUpsellArgs = Omit<GetUpsellArgs, 'plan' | 'upsellPath' | 'otherCtas'> & {
@@ -377,6 +379,7 @@ const getMailPlusUpsell = ({
                 metrics: {
                     source: 'upsells',
                 },
+                telemetryFlow: rest.telemetryFlow,
             }),
         ...rest,
     });
@@ -397,6 +400,7 @@ const getDriveUpsell = ({ plansMap, openSubscriptionModal, app, ...rest }: GetPl
                 metrics: {
                     source: 'upsells',
                 },
+                telemetryFlow: rest.telemetryFlow,
             }),
         ...rest,
     });
@@ -419,6 +423,7 @@ const getVPNUpsell = ({ plansMap, openSubscriptionModal, app, ...rest }: GetPlan
                 metrics: {
                     source: 'upsells',
                 },
+                telemetryFlow: rest.telemetryFlow,
             }),
         customCycle: CYCLE.TWO_YEARS,
         ...rest,
@@ -440,6 +445,7 @@ const getLumoUpsell = ({ plansMap, openSubscriptionModal, app, ...rest }: GetPla
                 metrics: {
                     source: 'upsells',
                 },
+                telemetryFlow: rest.telemetryFlow,
             }),
         ...rest,
     });
@@ -480,6 +486,7 @@ const getPassUpsell = ({ plansMap, openSubscriptionModal, app, ...rest }: GetPla
                 metrics: {
                     source: 'upsells',
                 },
+                telemetryFlow: rest.telemetryFlow,
             }),
         ...rest,
     });
@@ -517,6 +524,7 @@ const getPassFamilyUpsell = ({ plansMap, openSubscriptionModal, app, ...rest }: 
                 metrics: {
                     source: 'upsells',
                 },
+                telemetryFlow: rest.telemetryFlow,
             }),
         ...rest,
     });
@@ -567,6 +575,7 @@ const getBundleUpsell = ({
                 metrics: {
                     source: 'upsells',
                 },
+                telemetryFlow: rest.telemetryFlow,
             }),
         otherCtas: isTrialEnding ? [exploreAllPlansCTA(openSubscriptionModal)] : [],
         isTrialEnding,
@@ -616,6 +625,7 @@ const getDuoUpsell = ({
                 metrics: {
                     source: 'upsells',
                 },
+                telemetryFlow: rest.telemetryFlow,
             }),
         ...rest,
     });
@@ -663,6 +673,7 @@ const getFamilyUpsell = ({
                 metrics: {
                     source: 'upsells',
                 },
+                telemetryFlow: rest.telemetryFlow,
             }),
         ...rest,
     });
@@ -802,6 +813,7 @@ const getVPNPassProUpsell = ({ plansMap, openSubscriptionModal, ...rest }: GetPl
                 metrics: {
                     source: 'upsells',
                 },
+                telemetryFlow: rest.telemetryFlow,
             }),
         ...rest,
     });
@@ -832,6 +844,7 @@ type ResolveUpsellsToDisplayProps = {
     user: UserModel;
     isReferralExpansionEnabled?: boolean;
     isMeetPlansEnabled?: boolean;
+    telemetryFlow: TelemetryPaymentFlow;
 };
 
 export const resolveUpsellsToDisplay = ({
@@ -846,6 +859,7 @@ export const resolveUpsellsToDisplay = ({
     user,
     isReferralExpansionEnabled,
     isMeetPlansEnabled,
+    telemetryFlow,
     ...rest
 }: ResolveUpsellsToDisplayProps) => {
     if (!subscription) {
@@ -863,6 +877,7 @@ export const resolveUpsellsToDisplay = ({
             hasVPN: getHasConsumerVpnPlan(subscription),
             serversCount,
             freePlan,
+            telemetryFlow,
             ...rest,
         };
 

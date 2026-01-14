@@ -7,6 +7,7 @@ import { Pill } from '@proton/atoms/Pill/Pill';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import useSettingsLink from '@proton/components/components/link/useSettingsLink';
+import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
 import { useTrialOnlyPaymentMethods } from '@proton/components/hooks/useTrialOnlyPaymentMethods';
 import type { ADDON_NAMES } from '@proton/payments';
 import {
@@ -156,6 +157,7 @@ export const CurrentPlanInfoSection = ({
 }: CurrentPlanInfoSectionProps) => {
     const [openSubscriptionModal] = useSubscriptionModal();
     const { isFree, canPay, isMember } = user;
+    const telemetryFlow = useDashboardPaymentFlow(app);
     const goToSettings = useSettingsLink();
 
     const { MaxMembers = 1 } = organization || {};
@@ -182,6 +184,7 @@ export const CurrentPlanInfoSection = ({
         openSubscriptionModal({
             step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
             metrics: { source: 'upsells' },
+            telemetryFlow,
         });
     };
 
@@ -192,6 +195,7 @@ export const CurrentPlanInfoSection = ({
             metrics: {
                 source: 'plans',
             },
+            telemetryFlow,
         });
 
     const handleCancelSubscription = () => {

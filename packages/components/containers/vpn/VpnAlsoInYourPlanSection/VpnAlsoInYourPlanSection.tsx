@@ -20,6 +20,7 @@ import PassLogo from '@proton/components/components/logo/PassLogo';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import useConfig from '@proton/components/hooks/useConfig';
+import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
 import useLoad from '@proton/components/hooks/useLoad';
 import { IcArrowRight } from '@proton/icons/icons/IcArrowRight';
 import {
@@ -173,6 +174,7 @@ export const VpnAlsoInYourPlanSection = ({ app }: { app: APP_NAMES }) => {
     const { APP_NAME } = useConfig();
     const [subscription, loadingSubscription] = useSubscription();
     const [openSubscriptionModal] = useSubscriptionModal();
+    const telemetryFlow = useDashboardPaymentFlow(app);
     const plan = PLANS.BUNDLE;
     const planIsManagedExternally = isManagedExternally(subscription);
 
@@ -233,6 +235,7 @@ export const VpnAlsoInYourPlanSection = ({ app }: { app: APP_NAMES }) => {
             step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
             plan: plan,
             metrics: { source: 'upsells' },
+            telemetryFlow,
         });
     };
 

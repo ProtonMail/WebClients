@@ -17,6 +17,7 @@ import { PromotionBanner } from '@proton/components/containers/banner/PromotionB
 import { useSubscriptionModal } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
+import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
 import useLoad from '@proton/components/hooks/useLoad';
 import { IcArrowRight } from '@proton/icons/icons/IcArrowRight';
 import {
@@ -55,6 +56,7 @@ const AlsoInYourPlanSection = ({ app, children }: PropsWithChildren<{ app: APP_N
     const [user] = useUser();
     const [subscription, loadingSubscription] = useSubscription();
     const [openSubscriptionModal] = useSubscriptionModal();
+    const telemetryFlow = useDashboardPaymentFlow(app);
     const plan = PLANS.BUNDLE;
     const planIsManagedExternally = isManagedExternally(subscription);
 
@@ -105,6 +107,7 @@ const AlsoInYourPlanSection = ({ app, children }: PropsWithChildren<{ app: APP_N
             step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
             plan: plan,
             metrics: { source: 'upsells' },
+            telemetryFlow,
         });
     };
 

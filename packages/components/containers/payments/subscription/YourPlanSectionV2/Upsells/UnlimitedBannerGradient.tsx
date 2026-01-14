@@ -14,6 +14,7 @@ import usePopper from '@proton/components/components/popper/usePopper';
 import Price from '@proton/components/components/price/Price';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
+import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import {
     CYCLE,
@@ -84,6 +85,7 @@ const getBundleUpsell = ({ plansMap, openSubscriptionModal, app, ...rest }: GetP
                 metrics: {
                     source: 'upsells',
                 },
+                telemetryFlow: rest.telemetryFlow,
             }),
         ...rest,
     });
@@ -228,11 +230,13 @@ export const useUnlimitedBannerGradientUpsells = ({
     user,
 }: UpsellSectionProps): UpsellsHook => {
     const [openSubscriptionModal] = useSubscriptionModal();
+    const telemetryFlow = useDashboardPaymentFlow(app);
 
     const handleExplorePlans = () => {
         openSubscriptionModal({
             step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
             metrics: { source: 'upsells' },
+            telemetryFlow,
         });
     };
 
@@ -243,6 +247,7 @@ export const useUnlimitedBannerGradientUpsells = ({
         serversCount,
         freePlan,
         openSubscriptionModal,
+        telemetryFlow,
     };
 
     const upsells = [
@@ -269,7 +274,7 @@ export const useUnlimitedBannerGradientUpsells = ({
             }),
     ].filter(isTruthy);
 
-    return { upsells, serversCount, handleExplorePlans, plansMap, freePlan, user };
+    return { upsells, serversCount, handleExplorePlans, telemetryFlow, plansMap, freePlan, user };
 };
 
 interface Props extends UpsellsHook {
@@ -291,6 +296,7 @@ const UnlimitedBannerGradient = ({
     gridSectionHeaderCopy,
     gridSectionSubTitleCopy,
     subscription,
+    telemetryFlow,
     upsells,
     handleExplorePlans,
     plansMap,
@@ -313,6 +319,7 @@ const UnlimitedBannerGradient = ({
             metrics: {
                 source: 'upsells',
             },
+            telemetryFlow,
         });
     };
 

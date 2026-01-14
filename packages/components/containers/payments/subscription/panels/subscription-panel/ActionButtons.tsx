@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
 import {
     type Subscription,
     getHasPassB2BPlan,
@@ -21,12 +22,14 @@ import { SUBSCRIPTION_STEPS } from '../../constants';
 export const ActionButtons = ({
     user,
     subscription,
+    app,
 }: {
     user: UserModel;
     subscription?: Subscription;
     app: APP_NAMES;
 }) => {
     const [openSubscriptionModal] = useSubscriptionModal();
+    const telemetryFlow = useDashboardPaymentFlow(app);
 
     /**
      * Since all the components here are used in the same context, we can use the same metrics source for all of them.
@@ -40,12 +43,14 @@ export const ActionButtons = ({
             step: SUBSCRIPTION_STEPS.CHECKOUT,
             disablePlanSelection: true,
             metrics,
+            telemetryFlow,
         });
     };
     const handleExplorePlans = () => {
         openSubscriptionModal({
             step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
             metrics,
+            telemetryFlow,
         });
     };
     const handleEditPayment = () =>
@@ -53,6 +58,7 @@ export const ActionButtons = ({
             step: SUBSCRIPTION_STEPS.CHECKOUT,
             disablePlanSelection: true,
             metrics,
+            telemetryFlow,
         });
 
     const hasPassB2B = getHasPassB2BPlan(subscription);

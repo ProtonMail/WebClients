@@ -181,12 +181,16 @@ const AccountStepPayment = ({
         user,
         subscription: model.session?.subscription,
         planIDs: model.subscriptionData.planIDs,
-        onChargeable: (_, { chargeablePaymentParameters, paymentsVersion, source, sourceType }) => {
+        onChargeable: (
+            _,
+            { chargeablePaymentParameters, paymentsVersion, source, sourceType, paymentProcessorType }
+        ) => {
             return withLoadingSignup(async () => {
                 const extendedTokenPayment: ExtendedTokenPayment = {
                     paymentsVersion,
                     paymentMethodType: sourceType,
                     paymentMethodValue: source,
+                    paymentProcessorType,
                 };
 
                 const isFreeSignup = chargeablePaymentParameters.Amount <= 0 && !isTrial;
