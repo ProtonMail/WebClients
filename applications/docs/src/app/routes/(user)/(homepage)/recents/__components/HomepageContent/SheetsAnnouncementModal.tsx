@@ -49,7 +49,12 @@ function SheetsAnnouncementModal(modalProps: ModalProps) {
         >
           {c('Action').t`Create a spreadsheet`}
         </Button>
-        <Button size="medium" shape="outline" onClick={modalProps.onClose}>
+        <Button
+          size="medium"
+          shape="outline"
+          onClick={modalProps.onClose}
+          data-testid="sheets-announcement-modal-close-button"
+        >
           {c('Onboarding Action').t`Maybe later`}
         </Button>
       </ModalTwoFooter>
