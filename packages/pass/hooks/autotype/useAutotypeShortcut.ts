@@ -1,16 +1,21 @@
+import { useSelector } from 'react-redux';
+
 import useKeyPress from '@proton/components/hooks/useKeyPress';
 import { useItemsActions } from '@proton/pass/components/Item/ItemActionsProvider';
 import { useSpotlightFor } from '@proton/pass/components/Spotlight/WithSpotlight';
 import { useAutotypeActions } from '@proton/pass/hooks/autotype/useAutotypeActions';
 import { useAutotypeExecute } from '@proton/pass/hooks/autotype/useAutotypeExecute';
 import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
+import { selectPassPlan } from '@proton/pass/store/selectors';
 import { type Item, SpotlightMessage } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
+import { UserPassPlan } from '@proton/pass/types/api/plan';
 import noop from '@proton/utils/noop';
 
 export const useAutotypeShortcut = DESKTOP_BUILD
     ? (data: Item<'login'>) => {
           const autotypeEnabled = useFeatureFlag(PassFeature.PassDesktopAutotype);
+          const isFreePlan = useSelector(selectPassPlan) === UserPassPlan.FREE;
           const { actions } = useAutotypeActions(data);
           const executeAutotype = useAutotypeExecute();
           const { autotypeConfirmShortcut } = useItemsActions();
@@ -19,7 +24,14 @@ export const useAutotypeShortcut = DESKTOP_BUILD
 
           useKeyPress(
               (evt) => {
-                  if (autotypeEnabled && action && (evt.ctrlKey || evt.metaKey) && evt.shiftKey && evt.key === 'v') {
+                  if (
+                      autotypeEnabled &&
+                      !isFreePlan &&
+                      action &&
+                      (evt.ctrlKey || evt.metaKey) &&
+                      evt.shiftKey &&
+                      evt.code === 'KeyV'
+                  ) {
                       evt.preventDefault();
                       const autotypeProps = action.getAutotypeProps();
 
@@ -32,7 +44,7 @@ export const useAutotypeShortcut = DESKTOP_BUILD
                       void executeAutotype?.(autotypeProps);
                   }
               },
-              [action, confirmationSpotlight, autotypeEnabled]
+              [action, confirmationSpotlight, autotypeEnabled, isFreePlan]
           );
       }
     : noop;
