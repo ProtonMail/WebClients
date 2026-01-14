@@ -114,6 +114,7 @@ export interface PaymentMethodsParameters {
     canUseGooglePay?: boolean;
     isTrial?: boolean;
     enablePaypalRegionalCurrenciesBatch3?: boolean;
+    enablePaypalKrw?: boolean;
 }
 
 const sepaCountries = new Set([
@@ -243,6 +244,8 @@ export class PaymentMethods {
 
     public enablePaypalRegionalCurrenciesBatch3: boolean;
 
+    public enablePaypalKrw: boolean;
+
     constructor({
         paymentStatus,
         paymentMethods,
@@ -261,6 +264,7 @@ export class PaymentMethods {
         canUseGooglePay,
         isTrial,
         enablePaypalRegionalCurrenciesBatch3,
+        enablePaypalKrw,
     }: PaymentMethodsParameters) {
         this._paymentStatus = paymentStatus;
 
@@ -280,6 +284,7 @@ export class PaymentMethods {
         this.canUseGooglePay = !!canUseGooglePay;
         this.isTrial = !!isTrial;
         this.enablePaypalRegionalCurrenciesBatch3 = !!enablePaypalRegionalCurrenciesBatch3;
+        this.enablePaypalKrw = !!enablePaypalKrw;
     }
 
     getAvailablePaymentMethods(): { usedMethods: AvailablePaymentMethod[]; methods: AvailablePaymentMethod[] } {
@@ -540,15 +545,19 @@ export class PaymentMethods {
         const isInvoice = this.flow === 'invoice';
 
         // hide Paypal until Braintree enables new regional currencies
-        const newCurrencies: Currency[] = ['HKD', 'SGD', 'JPY', 'KRW', 'PLN'];
+        const newCurrencies: Currency[] = ['HKD', 'SGD', 'JPY', 'PLN'];
         const isNewCurrency = newCurrencies.includes(this.currency);
+
+        // KRW has a separate flag because it requires additional support from PayPal
+        const isKrwCurrency = this.currency === 'KRW';
 
         const paypalAvailable =
             this.paymentStatus.VendorStates.Paypal &&
             !alreadyHasPayPal &&
             (isPaypalAmountValid || isInvoice) &&
             !this.isTrial &&
-            (!isNewCurrency || this.enablePaypalRegionalCurrenciesBatch3);
+            (!isNewCurrency || this.enablePaypalRegionalCurrenciesBatch3) &&
+            (!isKrwCurrency || this.enablePaypalKrw);
         return paypalAvailable;
     }
 
@@ -645,6 +654,7 @@ export async function initializePaymentMethods({
     canUseGooglePay?: boolean;
     isTrial?: boolean;
     enablePaypalRegionalCurrenciesBatch3: boolean;
+    enablePaypalKrw: boolean;
 }) {
     const paymentMethodStatusPromise = maybePaymentMethodStatus ?? paymentsApi.paymentStatus();
     const paymentMethodsPromise = (() => {
