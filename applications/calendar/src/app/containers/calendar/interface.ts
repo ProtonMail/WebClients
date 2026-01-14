@@ -64,7 +64,7 @@ export interface TimeGridRef {
 }
 
 export interface InteractiveRef {
-    createEvent: (attendees: AttendeeModel[]) => void;
+    createEvent: (attendees: AttendeeModel[], title?: string, location?: string, description?: string) => void;
 }
 
 export interface CalendarViewEventTemporaryEvent extends CalendarViewEvent {
@@ -73,8 +73,10 @@ export interface CalendarViewEventTemporaryEvent extends CalendarViewEvent {
     tmpOriginalTarget?: CalendarViewEvent | CalendarViewEventTemporaryEvent;
 }
 
-export interface CalendarViewBusyEvent
-    extends Pick<CalendarViewEvent, 'start' | 'end' | 'isAllDay' | 'isAllPartDay' | 'uniqueId' | 'isTemporary'> {
+export interface CalendarViewBusyEvent extends Pick<
+    CalendarViewEvent,
+    'start' | 'end' | 'isAllDay' | 'isAllPartDay' | 'uniqueId' | 'isTemporary'
+> {
     type: 'busy';
     color: string;
     email: string;
