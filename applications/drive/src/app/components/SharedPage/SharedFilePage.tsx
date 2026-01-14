@@ -22,7 +22,7 @@ interface Props {
     bookmarksPublicView: ReturnType<typeof useBookmarksPublicView>;
     hideSaveToDrive: boolean;
     isPartialView: boolean;
-    openInDocs?: (linkId: string, options?: { redirect?: boolean; download?: boolean }) => void;
+    openInDocs?: (linkId: string, options?: { redirect?: boolean; download?: boolean; mimeType?: string }) => void;
 }
 
 export default function SharedFilePage({
@@ -91,7 +91,11 @@ export default function SharedFilePage({
                     isSharedFile={true}
                     isPublicDocsAvailable={isDocsPublicSharingEnabled}
                     sheetsEnabled={sheetsEnabled}
-                    onOpenInDocs={rootLink && isDocument && openInDocs ? () => openInDocs(rootLink.linkId) : undefined}
+                    onOpenInDocs={
+                        rootLink && isDocument && openInDocs
+                            ? () => openInDocs(rootLink.linkId, { mimeType: rootLink.mimeType })
+                            : undefined
+                    }
                 />
                 {!viewportWidth['<=small'] && <ReportAbuseButton linkInfo={rootLink} />}
             </SharedPageLayout>

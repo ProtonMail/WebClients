@@ -1,4 +1,4 @@
-import { splitNodeUid } from '@proton/drive/index';
+import { splitNodeUid } from '@proton/drive';
 import type { ProtonDocumentType } from '@proton/shared/lib/helpers/mimetype';
 import { getCurrentTab, getNewWindow } from '@proton/shared/lib/helpers/window';
 

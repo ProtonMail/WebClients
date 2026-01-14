@@ -53,10 +53,10 @@ export function DownloadDocumentButton({
 }: {
     documentLink: SelectedBrowserItem;
     close: () => void;
-    openInDocs: (linkId: string, options?: { redirect?: boolean; download?: boolean }) => void;
+    openInDocs: (linkId: string, options?: { redirect?: boolean; download?: boolean; mimeType?: string }) => void;
 }) {
     const onClick = async () => {
-        void openInDocs(documentLink.linkId, { download: true });
+        void openInDocs(documentLink.linkId, { download: true, mimeType: documentLink.mimeType });
     };
 
     return (
