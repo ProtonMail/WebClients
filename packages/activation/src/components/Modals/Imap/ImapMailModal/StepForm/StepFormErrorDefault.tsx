@@ -34,7 +34,7 @@ const StepFormErrorDefault = ({ isReconnect, errorCode }: Props) => {
                     </ul>
                     <div className="mb-4">{c('Import error').t`Use your app password if:`}</div>
                     <ul className="m-0 pb-4">
-                        <li>{c('Import error').t`2-step verification is enabled in your external account.`}</li>
+                        <li>{c('Import error').t`Two-factor authentication is enabled in your external account.`}</li>
                         <li>{c('Import error').t`Your email account requires one to export your data.`}</li>
                     </ul>
                 </>
@@ -57,7 +57,7 @@ const StepFormErrorDefault = ({ isReconnect, errorCode }: Props) => {
                         {c('Import error').t`Use your app password instead of your regular password if:`}
                     </div>
                     <ul className="m-0 pb-4">
-                        <li>{c('Import error').t`2-step verification is enabled in your external email account.`}</li>
+                        <li>{c('Import error').t`Two-factor authentication is enabled in your external email account.`}</li>
                         <li>{c('Import error').t`Your email account requires an app password to export your data.`}</li>
                     </ul>
                 </>
