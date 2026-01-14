@@ -102,7 +102,6 @@ export const UpgradePlanStep: FC<Props> = ({ onContinue }) => {
                 c('Label').t`Unlimited hide-my-email aliases`,
                 c('Label').t`Built-in 2FA authenticator`,
                 c('Label').t`Vault, item & secure link sharing`,
-                c('Label').t`Credit cards`,
                 DARK_WEB_MONITORING_NAME,
                 c('Label').t`File attachments (up to 10GB)`,
                 getPassCliText(),

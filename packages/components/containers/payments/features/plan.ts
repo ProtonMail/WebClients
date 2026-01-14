@@ -263,7 +263,7 @@ export const getPassPlan = (plan: Plan): ShortPlan => {
         description: c('new_plans: info').t`For next-level password management and identity protection.`,
         cta: getCTA(plan.Title),
         features: [
-            getLoginsAndNotes('paid'),
+            getLoginsAndNotes(),
             getDevices(),
             getHideMyEmailAliases('unlimited'),
             getAdvancedAliasFeatures(true),
@@ -296,7 +296,7 @@ export const getPassProPlan = (plan: Plan): ShortPlan => {
         description: c('new_plans: info').t`Essential protection and secure collaboration for unlimited users.`,
         cta: getCTA(plan.Title),
         features: [
-            getLoginsAndNotes('paid'),
+            getLoginsAndNotes(),
             getDevices(),
             getHideMyEmailAliases('unlimited'),
             getAdvancedAliasFeatures(true),
@@ -321,7 +321,7 @@ export const getPassBusinessPlan = (plan?: Plan): ShortPlan => {
         description: c('new_plans: info').t`Advanced protection for teams that goes beyond industry standards.`,
         cta: getCTA(title),
         features: [
-            getLoginsAndNotes('paid'),
+            getLoginsAndNotes(),
             getDevices(),
             getHideMyEmailAliases('unlimited'),
             getAdvancedAliasFeatures(true),
@@ -348,7 +348,7 @@ export const getPassEssentialsSignupPlan = (plan?: Plan): ShortPlan => {
         label: '',
         description: '',
         cta: getCTA(title),
-        features: [getLoginsAndNotes('paid'), getDevicesAndAliases(), get2FAAuthenticator(true)],
+        features: [getLoginsAndNotes(), getDevicesAndAliases(), get2FAAuthenticator(true)],
     };
 };
 
@@ -364,7 +364,7 @@ export const getPassFamilyPlan = (plan?: Plan): ShortPlan => {
         features: [
             getPassUsers(FAMILY_MAX_USERS),
             getPassAdminPanel(),
-            getLoginsAndNotes('paid'),
+            getLoginsAndNotes(),
             getDevices(),
             getHideMyEmailAliases('unlimited'),
             getAdvancedAliasFeatures(true),
@@ -407,7 +407,7 @@ export const getFreePassPlan = (): ShortPlan => {
             .t`The no-cost starter account designed to empower everyone with privacy by default.`,
         cta: c('new_plans: action').t`Get ${BRAND_NAME} for free`,
         features: [
-            getLoginsAndNotes('free'),
+            getLoginsAndNotes(),
             getDevices(),
             getHideMyEmailAliases(FREE_PASS_ALIASES),
             getVaults(FREE_VAULTS),

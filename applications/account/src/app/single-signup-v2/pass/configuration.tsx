@@ -274,7 +274,7 @@ const getOpenSourceAndAuditedBenefit = (): BenefitItem => {
 const getLoginsAndNotesBenefit = (): BenefitItem => {
     return {
         key: 'notes',
-        text: getLoginsAndNotesText('paid'),
+        text: getLoginsAndNotesText(),
         icon: {
             name: 'note' as const,
         },
@@ -422,7 +422,7 @@ export const getPassBenefits = (
 };
 
 export const getFreePassFeatures = () => {
-    return [getPassUsers(1), getLoginsAndNotes('free'), getDevices(), getPassKeys(true)];
+    return [getPassUsers(1), getLoginsAndNotes(), getDevices(), getPassKeys(true)];
 };
 
 export const getCustomPassFeatures = ({ isLifetime }: { isLifetime?: boolean } = {}) => {
@@ -434,7 +434,6 @@ export const getCustomPassFeatures = ({ isLifetime }: { isLifetime?: boolean } =
                   included: true,
               }
             : null,
-        getLoginsAndNotes('paid'),
         get2FAAuthenticator(true),
         getDevicesAndAliases(),
         getPassKeys(true),
@@ -466,7 +465,6 @@ export const getCustomPassFamilyFeatures = () => {
         getDevicesAndAliases(),
         get2FAAuthenticator(true),
         getSecureVaultSharing(true),
-        getLoginsAndNotes('paid'),
         getAdvancedAliasFeatures(true),
         getPassKeys(true),
         getPassMonitor(true),
@@ -650,7 +648,7 @@ export const getPassConfiguration = ({
                     <Benefits
                         className="mt-5 mb-5"
                         features={getBenefitItems([
-                            getLoginsAndNotes('paid'),
+                            getLoginsAndNotes(),
                             getDevicesAndAliases(),
                             get2FAAuthenticator(true),
                             getVaultSharing(10),
