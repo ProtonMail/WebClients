@@ -1,3 +1,13 @@
+### Version 1.33.5
+
+- Improve connectivity retry logic
+- Add autotype feature (behind feature flag)
+- Exclude copied values from clipboard history on Linux (Klipper)
+
+### Version 1.33.4
+
+- Fix offline mode check
+
 ### Version 1.33.3
 
 - Fix zip.js WASM incorrectly loaded

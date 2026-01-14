@@ -1,3 +1,11 @@
+### Version 1.33.5
+
+- Improve connectivity retry logic
+
+### Version 1.33.4
+
+- Fix offline mode check
+
 ### Version 1.33.3
 
 - Fix zip.js WASM incorrectly loaded
