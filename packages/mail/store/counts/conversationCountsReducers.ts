@@ -371,11 +371,6 @@ export const labelConversationsPending = (
                 return;
             }
 
-            // Do not update category
-            if (isCategoryLabel(labelID)) {
-                return;
-            }
-
             // Remove the conversation messages from all locations (except the destination)
             if (destinationLabelID !== labelID) {
                 messageCountState.Total = safeDecreaseCount(messageCountState?.Total, 1);
