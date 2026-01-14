@@ -50,3 +50,7 @@ export const listIds = <T extends { id: string }>(xs: T[]): string[] => {
 export const dedup = <T>(xs: Iterable<T>): T[] => {
     return listify(setify(xs));
 };
+
+export const when = <T, U extends T[] | Record<string, T>>(condition: boolean, data: U): U => {
+    return condition ? data : (Array.isArray(data) ? [] : {});
+}
