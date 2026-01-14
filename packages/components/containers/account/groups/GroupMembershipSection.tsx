@@ -69,12 +69,12 @@ const GroupMembershipSection = () => {
     const [originalGroupMemberships, loading] = useGroupMemberships();
 
     const groupMemberships: GroupMembership[] = (originalGroupMemberships ?? []).map(
-        ({ Group, State, ForwardingKeys, AddressId, ID, Permissions }) => ({
+        ({ Group, State, ForwardingKeys, AddressID, ID, Permissions }) => ({
             Name: Group.Name,
             Address: Group.Address,
             Status: State === 0 ? 'unanswered' : 'active',
             Keys: ForwardingKeys,
-            AddressID: AddressId,
+            AddressID: AddressID,
             ID,
             Permissions,
         })
