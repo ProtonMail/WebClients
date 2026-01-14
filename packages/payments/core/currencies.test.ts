@@ -59,7 +59,7 @@ describe('currencies', () => {
             ).toEqual('BRL');
         });
 
-        it('should not respect BRL param if status currency is the same and there is no user', () => {
+        it('should respect BRL param if status currency is the same and there is no user', () => {
             const status: PaymentStatus = {
                 CountryCode: 'BR',
                 VendorStates: {} as any,
@@ -71,7 +71,7 @@ describe('currencies', () => {
                     paramCurrency: 'BRL',
                     enableNewBatchCurrencies: false,
                 })
-            ).toEqual('USD');
+            ).toEqual('BRL');
         });
 
         it('should return fallback currency if BRL is requested via param but status currency is not BRL', () => {
@@ -144,7 +144,7 @@ describe('currencies', () => {
             }
         );
 
-        it('should not return regional currency if there is no param currency and no user', () => {
+        it('should return regional currency if there is no param currency and no user', () => {
             const status: PaymentStatus = {
                 CountryCode: 'BR',
                 VendorStates: {} as any,
@@ -165,7 +165,7 @@ describe('currencies', () => {
                     plans,
                     enableNewBatchCurrencies: false,
                 })
-            ).toEqual('USD');
+            ).toEqual('BRL');
         });
 
         it('should return regional currency if there is no param currency but user has it', () => {
@@ -597,7 +597,7 @@ describe('currencies', () => {
     });
 
     describe('getAvailableCurrencies', () => {
-        it('should NOT return regional currency if only status is provided (without user)', () => {
+        it('should return regional currency if only status is provided (without user)', () => {
             const status: PaymentStatus = {
                 CountryCode: 'BR',
                 VendorStates: {} as any,
@@ -608,7 +608,7 @@ describe('currencies', () => {
                     paymentStatus: status,
                     enableNewBatchCurrencies: false,
                 })
-            ).toEqual(['USD', 'EUR', 'CHF']);
+            ).toEqual(['USD', 'EUR', 'CHF', 'BRL']);
         });
 
         it('should return regional currency if user is provided', () => {
@@ -858,7 +858,7 @@ describe('currencies', () => {
     });
 
     describe('getSupportedRegionalCurrencies', () => {
-        it('should NOT return regional currency if only status is provided (without user)', () => {
+        it('should return regional currency if only status is provided (without user)', () => {
             const status: PaymentStatus = {
                 CountryCode: 'BR',
                 VendorStates: {} as any,
@@ -869,7 +869,7 @@ describe('currencies', () => {
                     paymentStatus: status,
                     enableNewBatchCurrencies: false,
                 })
-            ).toEqual([]);
+            ).toEqual(['BRL']);
         });
 
         it('should return regional currency if user is provided', () => {
@@ -1437,28 +1437,22 @@ describe('isMainCurrency', () => {
 
 describe('mapCountryToRegionalCurrency', () => {
     it('should map country codes to their regional currencies', () => {
-        expect(mapCountryToRegionalCurrency('BR', true)).toBe('BRL');
-        expect(mapCountryToRegionalCurrency('GB', true)).toBe('GBP');
-        expect(mapCountryToRegionalCurrency('AU', true)).toBe('AUD');
-        expect(mapCountryToRegionalCurrency('CA', true)).toBe('CAD');
+        expect(mapCountryToRegionalCurrency('BR')).toBe('BRL');
+        expect(mapCountryToRegionalCurrency('GB')).toBe('GBP');
+        expect(mapCountryToRegionalCurrency('AU')).toBe('AUD');
+        expect(mapCountryToRegionalCurrency('CA')).toBe('CAD');
 
-        expect(mapCountryToRegionalCurrency('JP', true)).toBe('JPY');
-        expect(mapCountryToRegionalCurrency('KR', true)).toBe('KRW');
-        expect(mapCountryToRegionalCurrency('PL', true)).toBe('PLN');
-        expect(mapCountryToRegionalCurrency('SG', true)).toBe('SGD');
-        expect(mapCountryToRegionalCurrency('HK', true)).toBe('HKD');
-
-        expect(mapCountryToRegionalCurrency('JP', false)).toBeUndefined();
-        expect(mapCountryToRegionalCurrency('KR', false)).toBeUndefined();
-        expect(mapCountryToRegionalCurrency('PL', false)).toBeUndefined();
-        expect(mapCountryToRegionalCurrency('SG', false)).toBeUndefined();
-        expect(mapCountryToRegionalCurrency('HK', false)).toBeUndefined();
+        expect(mapCountryToRegionalCurrency('JP')).toBe('JPY');
+        expect(mapCountryToRegionalCurrency('KR')).toBe('KRW');
+        expect(mapCountryToRegionalCurrency('PL')).toBe('PLN');
+        expect(mapCountryToRegionalCurrency('SG')).toBe('SGD');
+        expect(mapCountryToRegionalCurrency('HK')).toBe('HKD');
     });
 
     it('should return undefined for countries without regional currencies', () => {
-        expect(mapCountryToRegionalCurrency('US', true)).toBeUndefined();
-        expect(mapCountryToRegionalCurrency('DE', true)).toBeUndefined();
-        expect(mapCountryToRegionalCurrency('XX', true)).toBeUndefined();
+        expect(mapCountryToRegionalCurrency('US')).toBeUndefined();
+        expect(mapCountryToRegionalCurrency('DE')).toBeUndefined();
+        expect(mapCountryToRegionalCurrency('XX')).toBeUndefined();
     });
 });
 
@@ -1538,12 +1532,12 @@ describe('getStatusCurrency', () => {
         expect(getStatusCurrency(undefined, user, false)).toBeUndefined();
     });
 
-    it('should return undefined if user is undefined', () => {
+    it('should return the currency from the status if user is undefined', () => {
         const status: PaymentStatus = {
             CountryCode: 'BR',
             VendorStates: {} as any,
         };
-        expect(getStatusCurrency(status, undefined, false)).toBeUndefined();
+        expect(getStatusCurrency(status, undefined, false)).toEqual('BRL');
     });
 
     it('should return undefined if both paymentStatus and user are undefined', () => {
