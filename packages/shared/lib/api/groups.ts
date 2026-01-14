@@ -168,3 +168,19 @@ export const inviteGroupOwner = (inviteGroupOwnerParams: InviteGroupOwnerParamet
     url: 'core/v4/groups/owners/invites',
     data: inviteGroupOwnerParams,
 });
+
+export const getGroupOwnerInvites = () => ({
+    method: 'get',
+    url: 'core/v4/groups/owners/invites',
+});
+
+export interface AcceptGroupOwnerInviteParameters {
+    TokenKeyPacket: string;
+    TokenSignaturePacket: string;
+}
+
+export const acceptGroupOwnerInvite = (inviteID: string, params: AcceptGroupOwnerInviteParameters) => ({
+    method: 'post',
+    url: `core/v4/groups/owners/accept/${inviteID}`,
+    data: params,
+});

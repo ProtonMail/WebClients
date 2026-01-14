@@ -1,5 +1,7 @@
 import { parseInvitationData } from '@proton/shared/lib/keys/unprivatization';
 
+import { ADDRESS_STATUS } from '../constants';
+import { canonicalizeInternalEmail } from '../helpers/email';
 import {
     type EnhancedMember,
     MEMBER_STATE,
@@ -83,6 +85,18 @@ export const getMemberEmailOrName = (member: Member) => {
     return member.Addresses?.[0]?.Email || member.Name || '';
 };
 
-export const getMemberByAddressId = (members: EnhancedMember[], addressID: string) => {
+export const getMemberByAddressId = (members: EnhancedMember[], addressID: string): EnhancedMember | undefined => {
     return members.find((member: EnhancedMember) => member.Addresses?.some((address) => address.ID === addressID));
+};
+
+export const getMemberByEmail = (members: EnhancedMember[], email: string): EnhancedMember | undefined => {
+    const canonicalEmail = canonicalizeInternalEmail(email);
+
+    return members.find((member) =>
+        member.Addresses?.some((address) => {
+            const isEnabled = address.Status === ADDRESS_STATUS.STATUS_ENABLED;
+            const isCanonicalEmail = canonicalizeInternalEmail(address.Email) === canonicalEmail;
+            return isEnabled && isCanonicalEmail;
+        })
+    );
 };
