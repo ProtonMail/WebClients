@@ -1,9 +1,11 @@
 import type { History } from 'history';
 import { c } from 'ttag';
 
+import { isCategoryLabel } from '@proton/mail/helpers/location';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { create, createElectronNotification } from '@proton/shared/lib/helpers/desktopNotification';
+import type { MailSettings } from '@proton/shared/lib/interfaces';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import generateUID from '@proton/utils/generateUID';
 
@@ -16,17 +18,32 @@ export const prepareNotificationData = ({
     history,
     mailSettings,
     notifier,
+    categoryViewAccess,
 }: {
     message: Message;
     history: History<unknown>;
-    mailSettings: any;
-    notifier: any;
+    mailSettings: MailSettings;
+    notifier: string[];
+    categoryViewAccess: boolean;
 }) => {
     const { Subject, Sender, ID, ConversationID, LabelIDs } = message;
     const sender = Sender.Name || Sender.Address;
     const title = c('Desktop notification title').t`New email received`;
     const body = c('Desktop notification body').t`From: ${sender} - ${Subject}`;
-    const labelID = LabelIDs.find((labelID) => notifier.includes(labelID)) || MAILBOX_LABEL_IDS.ALL_MAIL;
+
+    let labelID = LabelIDs.find((labelID) => notifier.includes(labelID)) || MAILBOX_LABEL_IDS.ALL_MAIL;
+    if (labelID === MAILBOX_LABEL_IDS.INBOX && categoryViewAccess) {
+        const categoryLabel = LabelIDs.find(isCategoryLabel);
+        if (categoryLabel && notifier.includes(categoryLabel)) {
+            labelID = categoryLabel;
+        } else {
+            // This prevents from showing a notification that would redirect users to Inbox and break the UI
+            labelID = MAILBOX_LABEL_IDS.ALL_MAIL;
+        }
+        // Fallback case, when categories are disabled we redirect to Inbox
+    } else if (isCategoryLabel(labelID) && !categoryViewAccess) {
+        labelID = MAILBOX_LABEL_IDS.INBOX;
+    }
 
     // Remove the search keyword from the URL to find the message or conversation. Otherwise we can have a 'Conversation does not exists' error.
     const cleanHistoryLocation = { ...history.location, hash: '' };
@@ -44,33 +61,34 @@ export const displayNotification = ({
     mailSettings,
     notifier,
     onOpenElement,
+    categoryViewAccess,
 }: {
     message: Message;
     history: History<unknown>;
-    mailSettings: any;
-    notifier: any;
+    mailSettings: MailSettings;
+    notifier: string[];
     onOpenElement: () => void;
+    categoryViewAccess: boolean;
 }) => {
     const notificationData = prepareNotificationData({
         message,
         history,
         mailSettings,
         notifier,
+        categoryViewAccess,
     });
-
-    const { title, body, location, ID } = notificationData;
 
     if (isElectronMail) {
         return createElectronNotification({ app: 'mail', ...notificationData });
     }
 
-    return create(title, {
-        tag: ID,
-        body,
+    return create(notificationData.title, {
+        tag: notificationData.ID,
+        body: notificationData.body,
         icon: notificationIcon,
         onClick() {
             window.focus();
-            history.push(location);
+            history.push(notificationData.location);
             onOpenElement();
         },
     });
