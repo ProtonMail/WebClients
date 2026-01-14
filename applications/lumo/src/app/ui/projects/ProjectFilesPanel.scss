@@ -24,6 +24,12 @@
 		}
 	}
 
+	.drive-content-container {
+		.file-type {
+			pointer-events: none;
+		}
+	}
+
 	// Smooth panel entrance animation
 	animation: slideInFromRight 0.3s ease-out;
 
@@ -572,5 +578,13 @@
 	50% {
 		transform: scale(1.2);
 		opacity: 0.1;
+	}
+}
+
+.link-drive-folder-modal {
+	.drive-content-container {
+		.file-type {
+			pointer-events: none;
+		}
 	}
 }

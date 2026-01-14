@@ -50,6 +50,7 @@ interface DriveBrowserProps {
     isLinkedFolder?: boolean; // When true, folder is linked to project - files are automatically active
     hideHeader?: boolean; // When true, hides the header (for project view)
     onBreadcrumbsChange?: (breadcrumbs: BreadcrumbItem[]) => void; // Called when breadcrumbs change
+    showBreadcrumbs?: boolean;
 }
 
 export const DriveBrowser = forwardRef<DriveBrowserHandle, DriveBrowserProps>(
@@ -69,6 +70,7 @@ export const DriveBrowser = forwardRef<DriveBrowserHandle, DriveBrowserProps>(
             isLinkedFolder = false,
             hideHeader = false,
             onBreadcrumbsChange,
+            showBreadcrumbs = true,
         },
         ref
     ) => {
@@ -722,6 +724,7 @@ export const DriveBrowser = forwardRef<DriveBrowserHandle, DriveBrowserProps>(
                         isLinkedFolder={isLinkedFolder}
                         folderSelectionMode={folderSelectionMode}
                         handleBreadcrumbClick={handleBreadcrumbClick}
+                        showBreadcrumbs={showBreadcrumbs}
                     />
                 )}
 

@@ -63,7 +63,7 @@ const WhatsNew = () => {
                                 viewBox="0 0 16 16"
                                 fill="none"
                                 xmlns="http://www.w3.org/2000/svg"
-                                className="color-norm"
+                                className="color-norm shrink-0"
                             >
                                 <g clipPath="url(#clip0_16758_9935)">
                                     <path
@@ -92,7 +92,7 @@ const WhatsNew = () => {
                                 viewBox="0 0 16 16"
                                 fill="none"
                                 xmlns="http://www.w3.org/2000/svg"
-                                className="color-norm"
+                                className="color-norm shrink-0"
                             >
                                 <path
                                     d="M8 14.0001C4.68629 14.0001 2 12.8061 2 11.3334C2 9.86068 4.68629 8.66675 8 8.66675C11.3137 8.66675 14 9.86068 14 11.3334C14 12.8061 11.3137 14.0001 8 14.0001Z"
@@ -133,7 +133,7 @@ const WhatsNew = () => {
                                 viewBox="0 0 16 16"
                                 fill="none"
                                 xmlns="http://www.w3.org/2000/svg"
-                                className="color-norm"
+                                className="color-norm shrink-0"
                             >
                                 <g clipPath="url(#clip0_16758_9945)">
                                     <path
