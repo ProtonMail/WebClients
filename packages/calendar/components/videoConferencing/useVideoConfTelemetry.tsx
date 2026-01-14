@@ -37,6 +37,8 @@ export enum VideoConferenceZoomIntegration {
 export enum VideoConferenceProtonMeetIntegration {
     create_proton_meet = 'create_proton_meet',
     create_proton_meet_failed = 'create_proton_meet_failed',
+    add_existing_proton_meet = 'add_existing_proton_meet',
+    add_existing_proton_meet_failed = 'add_existing_proton_meet_failed',
 }
 
 export const useVideoConfTelemetry = () => {

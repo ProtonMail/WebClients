@@ -7,7 +7,7 @@ import { c } from 'ttag';
 import { useUser } from '@proton/account/user/hooks';
 import { useNotifications } from '@proton/components';
 import type { SessionKey } from '@proton/crypto';
-import { useGetMeetingDependencies, useProtonMeet } from '@proton/meet';
+import { getMeetingLink, useGetMeetingDependencies, useProtonMeet } from '@proton/meet';
 import {
     decryptSessionKey,
     encryptMeetingName,
@@ -22,7 +22,7 @@ import { VIDEO_CONFERENCE_PROVIDER } from '@proton/shared/lib/interfaces/calenda
 import type { EventModel } from '@proton/shared/lib/interfaces/calendar/Event';
 import { useFlag } from '@proton/unleash';
 
-import { calendarUrlQueryParams } from '../../constants';
+import { calendarUrlQueryParams, validateDeepLinkParams } from '../../index';
 import {
     VideoConferenceProtonMeetIntegration,
     useVideoConfTelemetry,
@@ -101,6 +101,66 @@ export const useProtonMeetIntegration = ({
 
     const { sentEventProtonMeet } = useVideoConfTelemetry();
 
+    const setupMeetingConference = async ({
+        meetingId,
+        urlPassword,
+        meeting,
+        conferenceId,
+        conferenceUrl,
+    }: {
+        meetingId: string;
+        urlPassword: string;
+        meeting: Meeting;
+        conferenceId: string;
+        conferenceUrl: string;
+    }) => {
+        const { userKeys } = await getMeetingDependencies();
+
+        const { passphrase, password } = await getPassphraseFromEncryptedPassword({
+            encryptedPassword: meeting?.Password as string,
+            basePassword: urlPassword,
+            userKeys,
+        });
+
+        const decryptedSessionKey = await decryptSessionKey({
+            encryptedSessionKey: meeting?.SessionKey as string,
+            password,
+            salt: meeting?.Salt as string,
+        });
+
+        if (!decryptedSessionKey) {
+            throw new Error('Missing session key');
+        }
+
+        setSessionKey(decryptedSessionKey);
+
+        setMeetingDetails((prev) => ({
+            ...prev,
+            id: meetingId ?? '',
+            passwordBase: urlPassword,
+            passphrase,
+            failed: false,
+        }));
+
+        setModel({
+            ...modelRef.current,
+            conferenceId,
+            conferenceUrl,
+            conferenceHost: user.Email,
+            conferenceProvider: VIDEO_CONFERENCE_PROVIDER.PROTON_MEET,
+            isConferenceTmpDeleted: false,
+        });
+
+        protonMeetConferenceDetails.current = {
+            conferenceId,
+            conferenceUrl,
+        };
+
+        setMeetingObject(meeting);
+
+        setProcessState('meeting-present');
+    };
+
     const createVideoConferenceMeeting = async () => {
         if (processState === 'loading' || processState === 'meeting-present') {
             return;
@@ -134,52 +194,15 @@ export const useProtonMeetIntegration = ({
             });
 
             const { meetingId, urlPassword } = parseMeetingLink(meetingLink);
+            const conferenceUrl = getAppHref(meetingLink, APPS.PROTONMEET);
 
-            const { userKeys } = await getMeetingDependencies();
-
-            const { passphrase, password } = await getPassphraseFromEncryptedPassword({
-                encryptedPassword: meeting?.Password as string,
-                basePassword: urlPassword,
-                userKeys,
-            });
-
-            const decryptedSessionKey = await decryptSessionKey({
-                encryptedSessionKey: meeting?.SessionKey as string,
-                password,
-                salt: meeting?.Salt as string,
-            });
-
-            if (!decryptedSessionKey) {
-                throw new Error('Missing session key');
-            }
-
-            setSessionKey(decryptedSessionKey);
-
-            setMeetingDetails((prev) => ({
-                ...prev,
-                id: meetingId ?? '',
-                passwordBase: urlPassword,
-                passphrase,
-                failed: false,
-            }));
-
-            setModel({
-                ...modelRef.current,
+            await setupMeetingConference({
+                meetingId,
+                urlPassword,
+                meeting,
                 conferenceId: id,
-                conferenceUrl: getAppHref(meetingLink, APPS.PROTONMEET),
-                conferenceHost: user.Email,
-                conferenceProvider: VIDEO_CONFERENCE_PROVIDER.PROTON_MEET,
-                isConferenceTmpDeleted: false,
+                conferenceUrl,
             });
-
-            protonMeetConferenceDetails.current = {
-                conferenceId: id,
-                conferenceUrl: getAppHref(meetingLink, APPS.PROTONMEET),
-            };
-
-            setMeetingObject(meeting);
-
-            setProcessState('meeting-present');
 
             sentEventProtonMeet(VideoConferenceProtonMeetIntegration.create_proton_meet);
         } catch (error) {
@@ -191,6 +214,49 @@ export const useProtonMeetIntegration = ({
                 key: 'proton-meet-row-create-meeting-error',
                 type: 'error',
                 text: c('Error').t`Failed to create ${MEET_APP_NAME} video conference`,
+            });
+
+            setProcessState(undefined);
+        } finally {
+            setIsVideoConferenceLoading(false);
+        }
+    };
+
+    const addExistingVideoConferenceMeeting = async (conferenceUrl: string) => {
+        if (processState === 'loading') {
+            return;
+        }
+
+        setActiveProvider(VIDEO_CONFERENCE_PROVIDER.PROTON_MEET);
+
+        setIsVideoConferenceLoading(true);
+
+        setProcessState('loading');
+
+        try {
+            const { meetingId, urlPassword } = parseMeetingLink(conferenceUrl);
+            const meeting = await getProtonMeetByLinkName(meetingId);
+            const meetingLink = getMeetingLink(meeting.MeetingLinkName, urlPassword);
+            const meetingConferenceUrl = getAppHref(meetingLink, APPS.PROTONMEET);
+
+            await setupMeetingConference({
+                meetingId,
+                urlPassword,
+                meeting,
+                conferenceId: meetingId,
+                conferenceUrl: meetingConferenceUrl,
+            });
+
+            sentEventProtonMeet(VideoConferenceProtonMeetIntegration.add_existing_proton_meet);
+        } catch (error) {
+            setActiveProvider(null);
+
+            sentEventProtonMeet(VideoConferenceProtonMeetIntegration.add_existing_proton_meet_failed);
+
+            notifications.createNotification({
+                key: 'proton-meet-row-add-existing-meeting-error',
+                type: 'error',
+                text: c('Error').t`Failed to add existing ${MEET_APP_NAME} video conference`,
             });
 
             setProcessState(undefined);
@@ -237,16 +303,24 @@ export const useProtonMeetIntegration = ({
             (Number(searchParams.get(calendarUrlQueryParams.videoConferenceProvider)) as VIDEO_CONFERENCE_PROVIDER) ===
             VIDEO_CONFERENCE_PROVIDER.PROTON_MEET;
 
-        if (shouldCreateMeeting) {
-            void createVideoConferenceMeeting();
+        const { conferenceUrl } = validateDeepLinkParams(searchParams);
 
-            // Cleanup so the query params don't have the create action anymore
+        const cleanupUrlParams = () => {
             searchParams.delete(calendarUrlQueryParams.videoConferenceProvider);
+            searchParams.delete(calendarUrlQueryParams.conferenceUrl);
 
             history.replace({
                 ...location,
                 search: searchParams.toString() ? `?${searchParams.toString()}` : '',
             });
+        };
+
+        if (shouldCreateMeeting && !conferenceUrl) {
+            void createVideoConferenceMeeting();
+            cleanupUrlParams();
+        } else if (shouldCreateMeeting && conferenceUrl) {
+            void addExistingVideoConferenceMeeting(conferenceUrl);
+            cleanupUrlParams();
         }
     }, [history, location, isMeetVideoConferenceEnabled]);
 

@@ -20,3 +20,11 @@ export const parseMeetingLink = (link: string) => {
         urlPassword,
     };
 };
+
+export const isValidMeetingLink = (link: string) => {
+    try {
+        return !!parseMeetingLink(link);
+    } catch {
+        return false;
+    }
+};
