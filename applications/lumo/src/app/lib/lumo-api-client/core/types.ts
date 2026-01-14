@@ -133,6 +133,7 @@ export interface LumoApiClientConfig {
     lumoPubKey: string;
     externalTools: ToolName[];
     internalTools: ToolName[];
+    imageTools: ToolName[];
     interceptors: {
         request?: RequestInterceptor[];
         response?: ResponseInterceptor[];
@@ -149,6 +150,7 @@ export interface AssistantCallOptions {
     finishCallback?: FinishCallback;
     signal?: AbortSignal;
     enableExternalTools?: boolean;
+    enableImageTools?: boolean,
     requestKey?: AesGcmCryptoKey;
     requestId?: RequestId;
     generateTitle?: boolean;
