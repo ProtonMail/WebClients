@@ -117,6 +117,7 @@ enum PaymentsFlag {
     GooglePay = 'GooglePay',
     RegionalCurrenciesBatch3 = 'RegionalCurrenciesBatch3',
     PaypalRegionalCurrenciesBatch3 = 'PaypalRegionalCurrenciesBatch3',
+    PaypalKrw = 'PaypalKrw',
 }
 
 export enum CalendarFeatureFlag {

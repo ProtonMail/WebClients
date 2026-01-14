@@ -144,6 +144,7 @@ export const usePaymentFacade = ({
     const enableSepa = useFlag('SepaPayments');
     const enableSepaB2C = useFlag('SepaPaymentsB2C');
     const enablePaypalRegionalCurrenciesBatch3 = useFlag('PaypalRegionalCurrenciesBatch3');
+    const enablePaypalKrw = useFlag('PaypalKrw');
 
     const defaultApi = useApi();
     const api = apiOverride ?? defaultApi;
@@ -241,6 +242,7 @@ export const usePaymentFacade = ({
             canUseApplePay,
             canUseGooglePay,
             enablePaypalRegionalCurrenciesBatch3,
+            enablePaypalKrw,
             telemetryContext,
             onDeclined: ({ selectedMethodType, selectedMethodValue }) =>
                 reportPaymentEvent('payment_declined', selectedMethodType, selectedMethodValue),
