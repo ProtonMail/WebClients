@@ -90,7 +90,11 @@ export const labelMessages = (
 
         if (isTargetAFolder) {
             selectedMessage.LabelIDs.forEach((selectedLabelID) => {
-                if (isSystemFolder(selectedLabelID) || isCustomFolder(selectedLabelID, folders)) {
+                if (
+                    isSystemFolder(selectedLabelID) ||
+                    isCustomFolder(selectedLabelID, folders) ||
+                    isCategoryLabel(selectedLabelID)
+                ) {
                     const updatedMessageCounter = state.value?.find((counter) => counter.LabelID === selectedLabelID);
 
                     if (updatedMessageCounter) {
@@ -265,11 +269,6 @@ export const labelConversationsPending = (
                 isSystemLabel(destinationLabelID) ||
                 isCategoryLabel(destinationLabelID)
             ) {
-                return;
-            }
-
-            // Do not update category
-            if (isCategoryLabel(labelID)) {
                 return;
             }
 
