@@ -63,7 +63,7 @@ import { getPathFromLocation } from '@proton/shared/lib/helpers/url';
 import { getBrowserLocale, getClosestLocaleCode, getClosestLocaleMatch } from '@proton/shared/lib/i18n/helper';
 import { loadLocales as loadLocalesI18n } from '@proton/shared/lib/i18n/loadLocale';
 import { setTtagLocales } from '@proton/shared/lib/i18n/locales';
-import type { Api, Environment, ProtonConfig, Unwrap, User, UserSettings } from '@proton/shared/lib/interfaces';
+import type { Api, Environment, ProtonConfig, Unwrap, UserSettings } from '@proton/shared/lib/interfaces';
 import type { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 import { telemetry } from '@proton/shared/lib/telemetry';
 import { EVENTS, UnleashClient, createCustomFetch, getUnleashConfig } from '@proton/unleash';
@@ -448,7 +448,7 @@ export const loadLocales = ({
     return loadLocalesI18n({ locale: userSettings.Locale, locales, userSettings });
 };
 
-export const initUser = ({ userSettings }: { appName: APP_NAMES; user: User; userSettings: UserSettings }) => {
+export const enableTelemetryBasedOnUserSettings = ({ userSettings }: { userSettings: UserSettings }) => {
     setSentryEnabled(!!userSettings.CrashReports);
     setMetricsEnabled(!!userSettings.Telemetry);
 

@@ -161,7 +161,7 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
             dispatch(welcomeFlagsActions.initial(userSettings));
 
             const [scopes] = await Promise.all([
-                bootstrap.initUser({ appName, user, userSettings }),
+                bootstrap.enableTelemetryBasedOnUserSettings({ userSettings }),
                 bootstrap.loadLocales({ userSettings, locales }),
             ]);
 
