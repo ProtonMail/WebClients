@@ -156,7 +156,7 @@ export const getPlanInformation = ({
                 {
                     title: PLAN_NAMES[PLANS.PASS],
                     features: [
-                        getLoginsAndNotes('paid'),
+                        getLoginsAndNotes(),
                         getHideMyEmailAliases('unlimited'),
                         get2FAAuthenticator(true),
                         getItems(),
