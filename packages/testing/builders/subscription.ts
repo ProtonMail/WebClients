@@ -21,6 +21,9 @@ const innerBuildSubscription = (value?: Partial<Subscription>): Subscription => 
 
     return {
         Cycle,
+        // This is technically wrong, because with variable cycle offers we often have 24m subscription that renews for
+        // 12m. Probably it's still good enough for testing purposes.
+        RenewCycle: Cycle,
         Currency,
         Plans: [],
         ID: 'subscriptionId123',
@@ -108,10 +111,19 @@ export const buildSubscription = (plan: SelectedPlanParam = PLANS.BUNDLE, overri
         RenewAmount: totalPrice,
         Currency: selectedPlan.currency,
         Cycle: selectedPlan.cycle,
-        Plans: plansAndQuantities.map(({ plan, quantity }) => ({
-            ...plan,
-            Quantity: quantity,
-        })),
+        Plans: plansAndQuantities.map(({ plan, quantity }) => {
+            const Cycle = selectedPlan.cycle;
+            const Amount = plan.Pricing[Cycle] ?? 0;
+            const Currency = selectedPlan.currency;
+
+            return {
+                ...plan,
+                Quantity: quantity,
+                Cycle,
+                Amount,
+                Currency,
+            };
+        }),
         PeriodStart,
         PeriodEnd,
         CreateTime,
