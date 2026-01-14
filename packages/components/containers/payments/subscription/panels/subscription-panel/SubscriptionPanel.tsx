@@ -192,7 +192,7 @@ const SubscriptionPanel = ({ app, vpnServers, subscription, organization, user, 
 
         const items: Item[] = [
             ...vpnItems,
-            getLoginsAndNotes('paid'),
+            getLoginsAndNotes(),
             getHideMyEmailAliases('unlimited'),
             get2FAAuthenticator(true),
             getVaultSharing(10),
@@ -216,7 +216,7 @@ const SubscriptionPanel = ({ app, vpnServers, subscription, organization, user, 
 
     const getPassAppFree = () => {
         const items: Item[] = [
-            getLoginsAndNotes('free'),
+            getLoginsAndNotes(),
             getDevices(),
             getVaults(FREE_VAULTS),
             getVaultSharing(FREE_VAULT_SHARING),
@@ -233,7 +233,7 @@ const SubscriptionPanel = ({ app, vpnServers, subscription, organization, user, 
 
     const getPassAppPassPlus = () => {
         const items: Item[] = [
-            getLoginsAndNotes('paid'),
+            getLoginsAndNotes(),
             getDevices(),
             getHideMyEmailAliases('unlimited'),
             getVaults(PASS_PLUS_VAULTS),
@@ -293,7 +293,7 @@ const SubscriptionPanel = ({ app, vpnServers, subscription, organization, user, 
         const items: (Item | false)[] = [
             b2bUsersItem,
             getPassAdminPanel(),
-            getLoginsAndNotes('paid'),
+            getLoginsAndNotes(),
             getDevices(),
             getHideMyEmailAliases('unlimited'),
             getVaults(PASS_PLUS_VAULTS),
