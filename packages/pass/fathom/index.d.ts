@@ -16,6 +16,7 @@ declare const kEditorPatterns: string[];
 declare const kEditorSelector: string;
 declare const kDomDialogSelector =
     '[role="dialog"], [role="tabpanel"], [role="group"], [role="form"], [id*="modal"], [class*="modal"]';
+declare const kDomClusterSelector: string;
 declare const kDomGroupSelector: string;
 declare const kUsernameSelector: string;
 declare const kHiddenUsernameSelector: string;
@@ -26,7 +27,9 @@ declare const kAnchorLinkSelector = 'a, [role="link"], span[role="button"]';
 declare const formCandidateSelector: string;
 declare const inputCandidateSelector =
     'input:not([type="hidden"]):not([type="submit"]):not([type="button"]):not([type="image"]):not([type="checkbox"])';
-declare const buttonSelector: string;
+declare const kInputIteratorSelector =
+    'input:not([type="hidden"]):not([type="submit"]):not([type="button"]):not([type="image"]), textarea, select';
+declare const kButtonSelector: string;
 
 type AnyRule = ReturnType<typeof rule>;
 type Ruleset = ReturnType<typeof ruleset>;
@@ -98,15 +101,6 @@ declare const matchCCFieldCandidate: (input: HTMLInputElement, { visible }: CCFi
 declare const isCCInputField: (fnode: Fnode) => boolean;
 declare const isCCSelectField: (fnode: Fnode) => boolean;
 
-declare const getTypeScore: (node: Fnode | null, type: string) => any;
-type FormClassification = {
-    login: boolean;
-    register: boolean;
-    pwChange: boolean;
-    recovery: boolean;
-    noop: boolean;
-};
-
 type HTMLFieldElement = HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement;
 declare const splitFieldsByVisibility: (els: HTMLElement[]) => [HTMLElement[], HTMLElement[]];
 declare const fType: (type: FieldType) => (fnode: Fnode) => boolean;
@@ -123,6 +117,32 @@ declare const isBtnCandidate: (btn: HTMLElement) => boolean;
 declare const isProcessableField: (input: HTMLElement) => boolean;
 declare const isClassifiableField: (fnode: Fnode) => boolean;
 declare const selectInputCandidates: (target?: Document | HTMLElement) => HTMLInputElement[];
+
+declare const getFormParent: (form: HTMLElement) => HTMLElement;
+interface FormInputIterator {
+    prev: (el: HTMLElement, tagNameFilter?: string) => HTMLElement | null;
+    next: (el: HTMLElement, tagNameFilter?: string) => HTMLElement | null;
+}
+declare const createInputIterator: (form: HTMLElement) => FormInputIterator;
+declare const selectFormCandidates: (root?: Document | HTMLElement) => HTMLElement[];
+type FormComplexityOptions = {
+    fields: HTMLFieldElement[];
+    visibleFields: number;
+    nonVisibleFields: number;
+    hiddenFields: number;
+    buttons: number;
+    anchors: number;
+};
+declare const getFormComplexity: (form: HTMLElement, options: FormComplexityOptions) => number;
+
+declare const getTypeScore: (node: Fnode | null, type: string) => any;
+type FormClassification = {
+    login: boolean;
+    register: boolean;
+    pwChange: boolean;
+    recovery: boolean;
+    noop: boolean;
+};
 
 declare const isCluster: (el: HTMLElement) => boolean;
 declare const flagCluster: (el: HTMLElement) => void;
@@ -157,14 +177,6 @@ declare const removeClassifierFlags: (
         fields?: HTMLElement[];
     }
 ) => void;
-
-declare const getFormParent: (form: HTMLElement) => HTMLElement;
-type FormInputIterator = ReturnType<typeof createInputIterator>;
-declare const createInputIterator: (form: HTMLElement) => {
-    prev(input: HTMLElement): HTMLElement | null;
-    next(input: HTMLElement): HTMLElement | null;
-};
-declare const selectFormCandidates: (root?: Document | HTMLElement) => HTMLElement[];
 
 type IdentityFieldMatchParams = {
     form: FormClassification;
@@ -253,7 +265,6 @@ export {
     addFieldOverride,
     addFormOverride,
     attrIgnored,
-    buttonSelector,
     cacheContext,
     clearDetectionCache,
     clearOverrides,
@@ -279,6 +290,7 @@ export {
     getExpirationFormat,
     getFieldAttributes,
     getFormAttributes,
+    getFormComplexity,
     getFormParent,
     getIdentityFieldType,
     getIdentityHaystack,
@@ -323,8 +335,10 @@ export {
     isVisibleField,
     isVisibleForm,
     kAnchorLinkSelector,
+    kButtonSelector,
     kButtonSubmitSelector,
     kCaptchaSelector,
+    kDomClusterSelector,
     kDomDialogSelector,
     kDomGroupSelector,
     kEditorElements,
@@ -335,6 +349,7 @@ export {
     kFieldSelector,
     kHeadingSelector,
     kHiddenUsernameSelector,
+    kInputIteratorSelector,
     kLayoutSelector,
     kPasswordSelector,
     kSocialSelector,
