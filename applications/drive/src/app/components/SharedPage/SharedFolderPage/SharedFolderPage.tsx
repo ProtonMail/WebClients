@@ -38,7 +38,7 @@ interface Props {
     bookmarksPublicView: ReturnType<typeof useBookmarksPublicView>;
     hideSaveToDrive: boolean;
     isPartialView: boolean;
-    openInDocs?: (linkId: string, options?: { redirect?: boolean; download?: boolean }) => void;
+    openInDocs?: (linkId: string, options?: { redirect?: boolean; download?: boolean; mimeType?: string }) => void;
 }
 
 interface PreviewContainerProps {
@@ -48,7 +48,7 @@ interface PreviewContainerProps {
     onClose: () => void;
     onNavigate: (linkId: DecryptedLink['linkId']) => void;
     onDownload: () => void;
-    openInDocs?: (linkId: string, options?: { redirect?: boolean; download?: boolean }) => void;
+    openInDocs?: (linkId: string, options?: { redirect?: boolean; download?: boolean; mimeType?: string }) => void;
 }
 
 function SharedPagePreviewContainer({
@@ -118,7 +118,9 @@ function SharedPagePreviewContainer({
                 isPublicDocsAvailable={isDocsPublicSharingEnabled}
                 sheetsEnabled={sheetsEnabled}
                 onOpenInDocs={
-                    openInDocs && loadedLink && openInDocsType ? () => openInDocs(loadedLink.linkId) : undefined
+                    openInDocs && loadedLink && openInDocsType
+                        ? () => openInDocs(loadedLink.linkId, { mimeType: loadedLink.mimeType })
+                        : undefined
                 }
             />
             {publicDetailsModal}
@@ -150,7 +152,7 @@ export default function SharedFolder({
     const onItemOpen = (item: DecryptedLink) => {
         const itemOpenInDocsType = isProtonDocsDocument(item.mimeType) || isProtonDocsSpreadsheet(item.mimeType);
         if (itemOpenInDocsType && openInDocs) {
-            openInDocs(item.linkId);
+            openInDocs(item.linkId, { mimeType: item.mimeType });
             return;
         }
 
