@@ -70,12 +70,13 @@ export type ProjectContext = {
 };
 
 export type UiContext = {
-    isEdit?: boolean;
-    updateSibling?: (message: Message | undefined) => void;
+    isEdit?: boolean; // todo remove optional
+    updateSibling?: (message: Message | undefined) => void; // todo remove optional
     enableExternalTools: boolean;
-    enableSmoothing?: boolean;
-    navigateCallback?: (conversationId: ConversationId) => void;
-    isGhostMode?: boolean;
+    enableImageTools: boolean;
+    enableSmoothing?: boolean; // todo remove optional
+    navigateCallback?: (conversationId: ConversationId) => void; // todo remove optional
+    isGhostMode?: boolean; // todo remove optional
 };
 
 export type SettingsContext = {
@@ -106,12 +107,13 @@ function populateMessageContext(message: Message, messageChain: Message[], c: Co
 }
 
 function updateUi(userMessage: Message, conversationId: ConversationId, ui: UiContext) {
+    const { isEdit, navigateCallback, updateSibling } = ui;
     // Navigate to /c/:conversationId
-    if (!ui.isEdit && ui.navigateCallback) ui.navigateCallback(conversationId);
+    if (!isEdit && navigateCallback) navigateCallback(conversationId);
 
     // In case of edit, pin the current message so it shows e.g. `< 2 / 2 >`.
     // If we didn't do this, the new message would be hidden, and we'd see `< 1 / 2 >`.
-    if (ui.isEdit && ui.updateSibling) ui.updateSibling(userMessage);
+    if (isEdit && updateSibling) updateSibling(userMessage);
 }
 
 export function sendMessage({
