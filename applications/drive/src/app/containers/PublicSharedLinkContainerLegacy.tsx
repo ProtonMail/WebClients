@@ -106,7 +106,6 @@ function PublicShareLinkInitContainer() {
         link &&
         link.isFile &&
         (isProtonDocsDocument(link.mimeType) || isProtonDocsSpreadsheet(link.mimeType));
-    const isSheet = link && link.isFile && isProtonDocsSpreadsheet(link.mimeType);
 
     const getDocsWindow = useCallback((redirect: boolean, customPassword: string) => {
         if (redirect) {
@@ -121,13 +120,18 @@ function PublicShareLinkInitContainer() {
     }, []);
 
     const openInDocs = useCallback(
-        (linkId: string, { redirect, download }: { redirect?: boolean; download?: boolean } = {}) => {
+        (
+            linkId: string,
+            { redirect, download, mimeType }: { redirect?: boolean; download?: boolean; mimeType?: string } = {}
+        ) => {
             if (!isDocsPublicSharingEnabled || error) {
                 return;
             }
 
+            const documentType = mimeType && isProtonDocsSpreadsheet(mimeType) ? 'sheet' : 'doc';
+
             openDocumentWindow({
-                type: isSheet ? 'sheet' : 'doc',
+                type: documentType,
                 mode: download ? 'open-url-download' : 'open-url',
                 token,
                 urlPassword,
@@ -136,13 +140,13 @@ function PublicShareLinkInitContainer() {
             });
         },
 
-        [isDocsPublicSharingEnabled, error, token, urlPassword, customPassword, getDocsWindow, isSheet]
+        [isDocsPublicSharingEnabled, error, token, urlPassword, customPassword, getDocsWindow]
     );
 
     // This hook automatically redirects to Docs when opening a document.
     useEffect(() => {
         if (shouldRedirectToDocs) {
-            openInDocs(link.linkId, { redirect: true });
+            openInDocs(link.linkId, { redirect: true, mimeType: link.mimeType });
         }
     }, [isDocsPublicSharingEnabled, error, link]);
 

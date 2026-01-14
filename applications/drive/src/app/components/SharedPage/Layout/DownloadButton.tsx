@@ -12,7 +12,7 @@ import {
     Icon,
     usePopperAnchor,
 } from '@proton/components';
-import { isProtonDocsDocument } from '@proton/shared/lib/helpers/mimetype';
+import { isProtonDocsDocument, isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype';
 
 import usePublicToken from '../../../hooks/drive/usePublicToken';
 import type { DecryptedLink } from '../../../store';
@@ -30,7 +30,7 @@ export interface DownloadButtonProps {
     className?: string;
     color?: ThemeColorUnion;
     disabled?: boolean;
-    openInDocs?: (linkId: string, options?: { redirect?: boolean; download?: boolean }) => void;
+    openInDocs?: (linkId: string, options?: { redirect?: boolean; download?: boolean; mimeType?: string }) => void;
 }
 
 export function DownloadButton({ items, rootLink, openInDocs, disabled }: DownloadButtonProps) {
@@ -53,12 +53,15 @@ export function DownloadButton({ items, rootLink, openInDocs, disabled }: Downlo
         //  1. single files are redirected to the Docs app using `downloadDocument`
         //  2. multiple files are ignored, using `handleContainsDocument` in the queue
         const documentLink =
-            count === 1 && isProtonDocsDocument(selectedItems[0].mimeType) ? selectedItems[0] : undefined;
+            count === 1 &&
+            (isProtonDocsDocument(selectedItems[0].mimeType) || isProtonDocsSpreadsheet(selectedItems[0].mimeType))
+                ? selectedItems[0]
+                : undefined;
 
         if (documentLink) {
             // Should never happen to have openInDocs false as the button will be disabled in that case
             if (openInDocs) {
-                void openInDocs(documentLink.linkId, { download: true });
+                void openInDocs(documentLink.linkId, { download: true, mimeType: documentLink.mimeType });
             }
             return;
         }
