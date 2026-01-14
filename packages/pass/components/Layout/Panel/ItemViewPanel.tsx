@@ -24,9 +24,10 @@ import { useItemState } from '@proton/pass/hooks/items/useItemState';
 import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { useItemLoading } from '@proton/pass/hooks/useItemLoading';
 import { isVaultShare } from '@proton/pass/lib/shares/share.predicates';
-import { selectAllVaults } from '@proton/pass/store/selectors';
+import { selectAllVaults, selectPassPlan } from '@proton/pass/store/selectors';
 import { type ItemType, SpotlightMessage } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
+import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 
 import { Panel } from './Panel';
@@ -51,6 +52,7 @@ export const ItemViewPanel: FC<Props> = ({
     handleSecureLinkClick,
 }) => {
     const upsell = useUpselling();
+    const isFreePlan = useSelector(selectPassPlan) === UserPassPlan.FREE;
 
     const { data, optimistic, failed } = revision;
     const { name } = data.metadata;
@@ -79,6 +81,7 @@ export const ItemViewPanel: FC<Props> = ({
     const signalQuickActions =
         BUILD_TARGET !== 'linux' &&
         autotypeEnabled &&
+        !isFreePlan &&
         autotypeDiscoverySpotlight.open &&
         data.type === 'login' &&
         Boolean(data.content.password.v || data.content.itemEmail.v || data.content.itemUsername.v);

@@ -105,6 +105,7 @@ export enum UpsellRef {
     LIFETIME_PLAN_ONBOARDING = 'lifetime_plan_onboarding',
     PLUS_PLAN_ONBOARDING = 'plus_plan_onboarding',
     UNLIMITED_PLAN_ONBOARDING = 'unlimited_plan_onboarding',
+    AUTOTYPE = 'autotype',
 }
 
 export const MAX_LOCAL_STORAGE_SIZE = 5 * 1024 * 1024; /* 5MB */
