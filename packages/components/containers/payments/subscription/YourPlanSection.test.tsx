@@ -35,7 +35,7 @@ import {
     organization,
     pendingInvite,
     subscriptionBundle,
-    subscriptionBusiness,
+    subscriptionMailEssentials,
     user,
     vpnServersCount,
 } from './__mocks__/data';
@@ -280,7 +280,7 @@ describe('YourPlanSection', () => {
     describe('[business] when there is more than one user in organization', () => {
         it.skip('should render subscription, usage and upsells', async () => {
             mockUseOrganization.mockReturnValue([organization]);
-            mockUseSubscription.mockReturnValue([subscriptionBusiness]);
+            mockUseSubscription.mockReturnValue([subscriptionMailEssentials]);
 
             const { getByTestId } = renderWithProviders(<YourPlanSectionWrapped app={APPS.PROTONMAIL} />);
 
@@ -307,7 +307,7 @@ describe('YourPlanSection', () => {
 
         it('should render subscription, upsells but not usage when organisation is locked', async () => {
             mockUseOrganization.mockReturnValue([{ ...organization, State: ORGANIZATION_STATE.DELINQUENT }]);
-            mockUseSubscription.mockReturnValue([subscriptionBusiness]);
+            mockUseSubscription.mockReturnValue([subscriptionMailEssentials]);
 
             const { getByTestId } = renderWithProviders(<YourPlanSectionWrapped app={APPS.PROTONMAIL} />);
 
@@ -321,7 +321,7 @@ describe('YourPlanSection', () => {
 
             // Subscription Panel
             expect(subscriptionPanel).toBeTruthy();
-            within(subscriptionPanel as HTMLElement).getByText('Proton Pro');
+            within(subscriptionPanel as HTMLElement).getByText('Mail Essentials');
 
             // Upsell Panel
             expect(upsellPanel).toBeTruthy();
