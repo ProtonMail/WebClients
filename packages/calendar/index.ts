@@ -28,7 +28,7 @@ export { holidaysDirectoryReducer, holidaysDirectoryThunk, selectHolidaysDirecto
 export type { HolidaysDirectoryState } from './holidaysDirectory';
 export { startHolidaysDirectoryListener } from './holidaysDirectory/listener';
 export { calendarUrlQueryParams, calendarUrlQueryParamsActions } from './constants';
-export { getQueryParamsStatus } from './utils';
+export { getQueryParamsStatus, validateDeepLinkParams } from './utils';
 export { useZoomIntegration } from './components/zoomIntegration/useZoomIntegration';
 export { useProtonMeetIntegration } from './components/protonMeetIntegration/useProtonMeetIntegration';
 export { useVideoConfTelemetry } from './components/videoConferencing/useVideoConfTelemetry';
