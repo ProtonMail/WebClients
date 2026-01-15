@@ -197,8 +197,17 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Abrir configurações do ${ CALENDAR_APP_NAME }"
       ],
+      "Open conversation": [
+        "Abrir conversa"
+      ],
+      "Open file preview": [
+        "Abrir pré-visualização do arquivo"
+      ],
       "Open navigation": [
         "Abrir navegação"
+      ],
+      "Open project": [
+        "Abrir projeto"
       ],
       "Pay": [
         "Pagar"
@@ -665,6 +674,9 @@
       "Payments problem": [
         "Problema com pagamento"
       ],
+      "Sheets problem": [
+        "Problema no Sheets"
+      ],
       "Sign in problem": [
         "Problema no login"
       ],
@@ -809,6 +821,9 @@
       "Continue": [
         "Continuar"
       ],
+      "Create folder": [
+        "Criar pasta"
+      ],
       "Dark": [
         "Escuro"
       ],
@@ -869,13 +884,16 @@
       "Upload file and add to knowledge base": [
         "Enviar arquivo e adicionar à base de conhecimento"
       ],
+      "Upload files": [
+        "Enviar arquivos"
+      ],
       "Upload from device": [
         "Enviar do dispositivo"
       ]
     },
     "collider_2025: b2b": {
       "By ${ BRAND_NAME }": [
-        "Por ${ BRAND_NAME }"
+        "Pela ${ BRAND_NAME }"
       ],
       "For Business": [
         "Para empresas"
@@ -907,7 +925,7 @@
         "Experimente agora"
       ],
       "Upload": [
-        "Upload"
+        "Enviar"
       ],
       "Web search": [
         "Pesquisa na web"
@@ -921,7 +939,7 @@
         "Histórico de bate-papo estendido"
       ],
       "Multiple large uploads": [
-        "Múltiplos uploads grandes"
+        "Múltiplos envios grandes"
       ],
       "Not even ${ BRAND_NAME } can access our chat history.": [
         "Nem mesmo a ${ BRAND_NAME } pode acessar nosso histórico de bate-papo."
@@ -940,6 +958,9 @@
       ],
       "Unlimited daily chats": [
         "Bate-papos diários ilimitados"
+      ],
+      "Unlimited projects": [
+        "Projetos ilimitados"
       ],
       "We keep no logs of what you ask, or what ${ LUMO_SHORT_APP_NAME } replies. Your chats can’t be seen, shared, or used to profile you. ${ LUMO_SHORT_APP_NAME } saves nothing on our servers.": [
         "Não mantemos registros do que você pergunta ou do que o ${ LUMO_SHORT_APP_NAME } responde. Seus bate-papos não podem ser vistos, compartilhados nem usados para criar seu perfil. O ${ LUMO_SHORT_APP_NAME } não salva nada em nossos servidores."
@@ -1185,6 +1206,9 @@
       "Large file uploads": [
         "Envios de arquivos grandes"
       ],
+      "New": [
+        "Novo"
+      ],
       "Unlimited chat history": [
         "Histórico de bate-papos ilimitado"
       ],
@@ -1213,16 +1237,16 @@
     },
     "collider_2025: Info": {
       " ${ BRAND_NAME } file is hidden (not supported yet)": [
-        " O arquivo ${ BRAND_NAME } está oculto (ainda não suportado)"
+        " O arquivo da ${ BRAND_NAME } está oculto (ainda não suportado)"
       ],
       " ${ BRAND_NAME } files are hidden (not supported yet)": [
-        " Os arquivos ${ BRAND_NAME } estão ocultos (ainda não suportados)"
+        " arquivos da ${ BRAND_NAME } estão ocultos (ainda não suportados)"
       ],
       " file is hidden (unsupported file type)": [
         " arquivo está oculto (tipo de arquivo não suportado)"
       ],
       " files are hidden (unsupported file types)": [
-        " os arquivos estão ocultos (tipos de arquivo não suportados)"
+        " arquivos estão ocultos (tipos de arquivo não suportados)"
       ],
       " talk to your admin.": [
         " fale com seu administrador."
@@ -1278,6 +1302,9 @@
       "Domain name": [
         "Nome do domínio"
       ],
+      "Downloading (${ progressPct }%)": [
+        "Baixando (${ progressPct }%)"
+      ],
       "Drag and drop your files here to add them to the chat.": [
         "Arraste e solte seus arquivos aqui para adicioná-los ao bate-papo."
       ],
@@ -1293,11 +1320,17 @@
       "Exclude file": [
         "Excluir arquivo"
       ],
+      "Excluded": [
+        "Excluído"
+      ],
       "File capacity": [
         "Capacidade de arquivo"
       ],
       "File capacity for this conversation": [
         "Capacidade de arquivo para esta conversa"
+      ],
+      "File too large": [
+        "Arquivo muito grande"
       ],
       "File too large for preview (>150k tokens)": [
         "Arquivo muito grande para pré-visualização (>150k tokens)"
@@ -1349,6 +1382,9 @@
       ],
       "of": [
         "de"
+      ],
+      "Partial content": [
+        "Conteúdo parcial"
       ],
       "Please share what you expected": [
         "Compartilhe o que você esperava"
@@ -1448,6 +1484,9 @@
       ],
       "Unsupported File Type": [
         "Tipo de arquivo não suportado"
+      ],
+      "Uploading \"${ file.name }\" to ${ DRIVE_APP_NAME }...": [
+        "Enviando \"${ file.name }\" para o ${ DRIVE_APP_NAME }..."
       ],
       "Uploading ${ uploadProgress.fileName }": [
         "Enviando ${ uploadProgress.fileName }"
@@ -1659,7 +1698,7 @@
     },
     "collider_2025: Pill": {
       "Protected by ${ BRAND_NAME }": [
-        "Protegido por ${ BRAND_NAME }"
+        "Protegido pela ${ BRAND_NAME }"
       ]
     },
     "collider_2025: Placeholder": {
@@ -1713,6 +1752,12 @@
       "About ${ LUMO_SHORT_APP_NAME }": [
         "Sobre o ${ LUMO_SHORT_APP_NAME }"
       ],
+      "Automatic web search": [
+        "Pesquisa automática da web"
+      ],
+      "Delete everything": [
+        "Excluir tudo"
+      ],
       "Don't lose the thread": [
         "Não perca o fio"
       ],
@@ -1728,14 +1773,20 @@
       "Save your favorites": [
         "Salve seus favoritos"
       ],
+      "Search Index": [
+        "Pesquisar índice"
+      ],
       "Secure your spot": [
         "Garanta sua vaga"
+      ],
+      "Show project chats in history": [
+        "Mostrar bate-papos de projetos no histórico"
       ],
       "Theme": [
         "Tema"
       ],
       "Upload files": [
-        "Carregar arquivos"
+        "Enviar arquivos"
       ],
       "Visionary": [
         "Visionary"
@@ -1901,23 +1952,80 @@
       "Ask the model to be more careful and thorough": [
         "Peça ao modelo para ser mais cauteloso e detalhista"
       ],
+      "Back to project": [
+        "Voltar ao projeto"
+      ],
       "Cancel": [
         "Cancelar"
+      ],
+      "Choose project icon": [
+        "Escolher ícone do projeto"
+      ],
+      "Click to edit title": [
+        "Clique para editar o título"
+      ],
+      "Create": [
+        "Criar"
+      ],
+      "Create folder": [
+        "Criar pasta"
+      ],
+      "Delete": [
+        "Excluir"
+      ],
+      "Delete conversation": [
+        "Excluir conversa"
+      ],
+      "Delete project": [
+        "Excluir projeto"
       ],
       "Describe desired changes...": [
         "Descreva as mudanças desejadas..."
       ],
+      "Deselect all": [
+        "Desmarcar todos"
+      ],
+      "Edit instructions": [
+        "Editar instruções"
+      ],
+      "Edit project": [
+        "Editar projeto"
+      ],
+      "Go to project": [
+        "Ir para o projeto"
+      ],
+      "Hide settings": [
+        "Ocultar configurações"
+      ],
+      "Hide sidebar": [
+        "Ocultar barra lateral"
+      ],
+      "Manage chats": [
+        "Gerenciar bate-papos"
+      ],
       "More concise": [
         "Mais conciso"
       ],
+      "More options": [
+        "Mais opções"
+      ],
       "Next message": [
         "Próxima mensagem"
+      ],
+      "Open conversation": [
+        "Abrir conversa"
       ],
       "Previous message": [
         "Mensagem anterior"
       ],
       "Regenerate": [
         "Gerar novamente"
+      ],
+      "Remove all": [
+        "Remover todos"
+      ],
+      "Remove all files": [
+        "Remover todos os arquivos"
       ],
       "Remove file": [
         "Remover arquivo"
@@ -1928,28 +2036,76 @@
       "Retry with the same prompt": [
         "Tentar novamente com o mesmo prompt"
       ],
+      "Select all": [
+        "Selecionar tudo"
+      ],
+      "Select conversation": [
+        "Selecionar conversa"
+      ],
+      "Settings": [
+        "Configurações"
+      ],
+      "Show instructions and files": [
+        "Mostar instruções e arquivos"
+      ],
+      "Show settings": [
+        "Mostrar configurações"
+      ],
+      "Show sidebar": [
+        "Mostrar barra lateral"
+      ],
       "Think longer": [
         "Pense mais"
       ],
       "Try again": [
         "Tentar novamente"
       ],
+      "Unlink Folder": [
+        "Desvincular pasta"
+      ],
+      "Upgrade to Plus": [
+        "Fazer upgrade para o Plus"
+      ],
+      "Upload file": [
+        "Enviar arquivo"
+      ],
+      "Upload files": [
+        "Enviar arquivos"
+      ],
       "What needs changed?": [
         "O que precisa ser alterado?"
       ]
     },
     "collider_2025:Button": {
+      "Back to projects": [
+        "Voltar aos projetos"
+      ],
       "Cancel": [
         "Cancelar"
       ],
       "Close sidebar": [
         "Fechar barra lateral"
       ],
+      "Collapse projects": [
+        "Recolher projetos"
+      ],
+      "Create a free account": [
+        "Criar uma conta gratuita"
+      ],
+      "Create project": [
+        "Criar projeto"
+      ],
+      "Delete": [
+        "Excluir"
+      ],
       "Edit": [
         "Editar"
       ],
       "Expand": [
         "Expandir"
+      ],
+      "Expand projects": [
+        "Expandir projetos"
       ],
       "Favorite": [
         "Favorito"
@@ -1963,6 +2119,12 @@
       "Hide sidebar": [
         "Ocultar barra lateral"
       ],
+      "Link this folder": [
+        "Vincular esta pasta"
+      ],
+      "Link with ${ DRIVE_APP_NAME } folder": [
+        "Vincular com a pasta do ${ DRIVE_APP_NAME }"
+      ],
       "Manage chat knowledge files (${ totalFiles })": [
         "Gerenciar arquivos da base de conhecimento dos bate-papos (${ totalFiles })"
       ],
@@ -1972,8 +2134,20 @@
       "New chat": [
         "Novo bate-papo"
       ],
+      "New project": [
+        "Novo projeto"
+      ],
+      "Projects": [
+        "Projetos"
+      ],
+      "Save": [
+        "Salvar"
+      ],
       "Search": [
         "Pesquisar"
+      ],
+      "See all": [
+        "Ver tudo"
       ],
       "Send": [
         "Enviar"
@@ -1984,16 +2158,56 @@
       "Show sidebar": [
         "Mostrar barra lateral"
       ],
+      "Sign in": [
+        "Iniciar sessão"
+      ],
       "Unfavorite": [
         "Remover dos favoritos"
       ],
       "Untitled chat": [
         "Bate-papo sem título"
+      ],
+      "Upload from computer": [
+        "Enviar do computador"
+      ]
+    },
+    "collider_2025:Error": {
+      "Project not found": [
+        "Projeto não encontrado"
+      ]
+    },
+    "collider_2025:Feature": {
+      "Advanced AI models": [
+        "Modelos avançados de IA"
+      ],
+      "Priority access & faster responses": [
+        "Acesso prioritário e respostas mais rápidas"
+      ],
+      "Unlimited projects": [
+        "Projetos ilimitados"
       ]
     },
     "collider_2025:Info": {
+      "${ project.conversationCount } conversation": [
+        "${ project.conversationCount } conversa"
+      ],
+      "${ project.conversationCount } conversations": [
+        "${ project.conversationCount } conversas"
+      ],
+      "${ project.fileCount } files": [
+        "${ project.fileCount } arquivos"
+      ],
       "AIs from Big Tech are built on harvesting your data. But ${ LUMO_SHORT_APP_NAME } is different. It was created by the scientists behind innovative, privacy-first services like ${ MAIL_APP_NAME } and ${ VPN_APP_NAME }. And it’s owned by a Swiss nonprofit, whose mission is to advance privacy and never make money from user data.": [
         "As IAs das big techs são criadas para coletar seus dados, mas o ${ LUMO_SHORT_APP_NAME } é diferente. Ele foi criado pelos cientistas por trás de serviços inovadores e que priorizam a privacidade, como o ${ MAIL_APP_NAME } e o ${ VPN_APP_NAME }. E é propriedade de uma organização suíça sem fins lucrativos, cuja missão é promover a privacidade e nunca lucrar com os dados dos usuários."
+      ],
+      "Are you sure you want to delete \"${ project.name }\"? This action cannot be undone.": [
+        "Você tem certeza de que deseja excluir \"${ project.name }\"? Esta ação não pode ser desfeita."
+      ],
+      "Are you sure you want to delete this conversation? This action cannot be undone.": [
+        "Você tem certeza de que deseja excluir essa conversa? Esta ação não pode ser desfeita."
+      ],
+      "Browse to the ${ DRIVE_SHORT_APP_NAME } folder you want to link to this project, then click \"Link this folder\".": [
+        "Navegue até a pasta do ${ DRIVE_SHORT_APP_NAME } que você deseja vincular a este projeto e clique em \"Vincular esta pasta\"."
       ],
       "Conversation encrypted": [
         "Conversa criptografada"
@@ -2001,22 +2215,75 @@
       "Current chat:": [
         "Bate-papo atual:"
       ],
+      "File \"${ file.name }\" is already in this project": [
+        "O arquivo \"${ file.name }\" já está neste projeto"
+      ],
+      "Files uploaded to this project will be saved to the linked Drive folder.": [
+        "Arquivos enviados para este projeto serão salvos na pasta do Drive vinculada."
+      ],
+      "From ${ DRIVE_APP_NAME }": [
+        "A partir de ${ DRIVE_APP_NAME }"
+      ],
+      "Initializing Drive...": [
+        "Inicializando Drive..."
+      ],
+      "No projects yet": [
+        "Nenhum projeto ainda"
+      ],
       "Processing file...": [
         "Processando arquivo..."
       ],
       "Processing...": [
         "Processando..."
       ],
+      "Projects help you organize conversations with custom instructions and files. Sign in or create a free account to get started.": [
+        "Os projetos ajudam você a organizar conversas com instruções e arquivos personalizados. Inicie sessão ou crie uma conta gratuita para começar.iniciar sessão"
+      ],
       "This message is empty. Sorry about that.": [
         "Lamentamos, mas esta mensagem está vazia."
+      ],
+      "This project already has files. Please remove all files before linking a Drive folder.": [
+        "Esse projeto já tem arquivos. Remova todos os arquivos antes de vincular uma pasta do Drive."
+      ],
+      "Type @filename to ask questions about a specific file": [
+        "Digite @nomedoarquivo para fazer perguntas sobre um arquivo específico"
+      ],
+      "Upgrade to ${ LUMO_SHORT_APP_NAME } Plus to create unlimited projects, unlock advanced AI models, and more.": [
+        "Faça upgrade para o ${ LUMO_SHORT_APP_NAME } Plus para criar projetos ilimitados, desbloquear modelos avançados de IA e muito mais."
       ],
       "Your files are large. ${ LUMO_SHORT_APP_NAME } may not be able to process all information.": [
         "Seus arquivos são grandes. ${ LUMO_SHORT_APP_NAME } talvez não consiga processar todas as informações."
       ]
     },
     "collider_2025:Label": {
+      "chat": [
+        "bate-papo"
+      ],
+      "chats": [
+        "bate-papos"
+      ],
+      "Current folder:": [
+        "Pasta atual:"
+      ],
       "Edit conversation title": [
         "Editar título da conversa"
+      ],
+      "Folder name": [
+        "Nome da pasta"
+      ],
+      "Instructions": [
+        "Instruções"
+      ],
+      "Project Instructions (optional)": [
+        "Instruções do projeto (opcional)"
+      ],
+      "Untitled chat": [
+        "Bate-papo sem título"
+      ]
+    },
+    "collider_2025:Navigation": {
+      "All projects": [
+        "Todos os projetos"
       ]
     },
     "collider_2025:Notification": {
@@ -2031,6 +2298,15 @@
       "Ask anything…": [
         "Pergunte qualquer coisa…"
       ],
+      "Enter folder name": [
+        "Insira o nome da pasta"
+      ],
+      "Enter project name": [
+        "Insira o nome do projeto"
+      ],
+      "Holiday planner": [
+        "Planejador de feriados"
+      ],
       "Processing files, please wait...": [
         "Processando arquivos. Aguarde..."
       ],
@@ -2041,12 +2317,71 @@
         "É necessário iniciar sessão"
       ]
     },
+    "collider_2025:Project": {
+      "Financial assistant": [
+        "Assistente financeiro"
+      ],
+      "Get help understanding assignments, solving problems, and learning concepts": [
+        "Obtenha ajuda para compreender tarefas, resolver problemas e aprender conceitos"
+      ],
+      "Learn a language": [
+        "Aprenda um idioma"
+      ],
+      "Practice conversations, learn grammar, and build vocabulary in your target language": [
+        "Pratique conversas, aprenda gramática e amplie seu vocabulário no idioma que deseja aprender."
+      ],
+      "Study companion": [
+        "Companheiro de estudo"
+      ],
+      "Synthesize sources, analyze data, and develop insights for your research projects": [
+        "Sintetize fontes, analise dados e desenvolva insights para seus projetos de pesquisa."
+      ]
+    },
     "collider_2025:Prompt": {
       "How do people celebrate New Year's Eve around the world?": [
         "Como as pessoas celebram a véspera de Ano Novo ao redor do mundo?"
+      ]
+    },
+    "collider_2025:Status": {
+      "Complete": [
+        "Completa"
       ],
-      "What are the origins of Christmas?": [
-        "Quais são as origens do Natal?"
+      "Error": [
+        "Erro"
+      ],
+      "Indexing": [
+        "Indexando"
+      ],
+      "Indexing complete": [
+        "Indexação completa"
+      ],
+      "Indexing error": [
+        "Erro ao indexar"
+      ]
+    },
+    "collider_2025:Subline": {
+      "Projects help you keep related chats, files, and instructions in one place. They make it easy to stay organized and reuse context across chats.": [
+        "Os projetos ajudam você a manter bate-papos, arquivos e instruções relacionados em um só lugar. Eles facilitam a organização e a reutilização do contexto entre os bate-papos."
+      ]
+    },
+    "collider_2025:Success": {
+      "All files removed from project": [
+        "Todos os arquivos foram removidos do projeto"
+      ],
+      "Drive folder linked successfully": [
+        "Pasta vinculada ao Drive com sucesso"
+      ],
+      "Drive folder unlinked": [
+        "Pasta do Drive desvinculada"
+      ],
+      "File \"${ file.name }\" added to project": [
+        "O arquivo \"${ file.name }\" adicionado ao projeto"
+      ],
+      "File removed from project": [
+        "Arquivo removido do projeto"
+      ],
+      "Folder created successfully": [
+        "Pasta criada com sucesso"
       ]
     },
     "collider_2025:Title": {
@@ -2056,11 +2391,32 @@
       "Built by the team that knows privacy": [
         "Desenvolvido pela equipe que entende de privacidade"
       ],
+      "Create folder": [
+        "Criar pasta"
+      ],
+      "Create new project": [
+        "Criar novo projeto"
+      ],
+      "Delete conversation?": [
+        "Excluir conversa?"
+      ],
+      "Delete project?": [
+        "Excluir projeto?"
+      ],
       "Earlier": [
         "Anterior"
       ],
+      "Edit Instructions": [
+        "Editar instruções"
+      ],
+      "Edit Project": [
+        "Editar projeto"
+      ],
       "Favorites": [
         "Favoritos"
+      ],
+      "Get started by creating a new project": [
+        "Comece criando um projeto"
       ],
       "Ghost mode": [
         "Modo fantasma"
@@ -2077,11 +2433,26 @@
       "How does ${ LUMO_SHORT_APP_NAME } keep our conversations confidential?": [
         "Como o ${ LUMO_SHORT_APP_NAME } mantém nossas conversas confidenciais?"
       ],
+      "Inspiration": [
+        "Inspiração"
+      ],
+      "Instructions": [
+        "Instruções"
+      ],
+      "Introducing Projects": [
+        "Apresentamos os Projetos"
+      ],
       "Last 30 days": [
         "Últimos 30 dias"
       ],
       "Last 7 days": [
         "Últimos 7 dias"
+      ],
+      "Link Drive Folder": [
+        "Vincular pasta do Drive"
+      ],
+      "Linked Drive Folder": [
+        "Pasta do Drive vinculado"
       ],
       "More options": [
         "Mais opções"
@@ -2091,6 +2462,24 @@
       ],
       "No result.": [
         "Nenhum resultado."
+      ],
+      "Nothing here yet": [
+        "Nada aqui ainda"
+      ],
+      "Project knowledge": [
+        "Conhecimento do projeto"
+      ],
+      "Projects": [
+        "Projetos"
+      ],
+      "Remove all files?": [
+        "Remover todos os arquivos?"
+      ],
+      "Settings": [
+        "Configurações"
+      ],
+      "Start a new conversation": [
+        "Iniciar uma nova conversa"
       ],
       "The AI that respects your privacy": [
         "A IA que respeita sua privacidade"
@@ -2103,6 +2492,11 @@
       ],
       "Whatever you ask me is:": [
         "Suas perguntas são:"
+      ]
+    },
+    "collider_2025:Tooltip": {
+      "Choose icon": [
+        "Escolher ícone"
       ]
     },
     "color": {
@@ -3567,6 +3961,9 @@
         "+${ organization.BonusVPN } conexão para ${ VPN_APP_NAME } (permite que você conecte mais dispositivos na VPN)",
         "+${ organization.BonusVPN } conexões para ${ VPN_APP_NAME } (permite que você conecte mais dispositivos na VPN)"
       ],
+      "0 MB": [
+        "0 MB"
+      ],
       "30-day money-back guarantee.": [
         "Garantia de devolução do seu dinheiro por até 30 dias."
       ],
@@ -3581,6 +3978,9 @@
       ],
       "Address copied to clipboard": [
         "O endereço foi copiado para a área de transferência"
+      ],
+      "Advanced search:": [
+        "Pesquisa avançada:"
       ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "Assistente com tecnologia de IA para ajudar você a criar e-mails melhores, com rapidez e facilidade."
@@ -3703,6 +4103,9 @@
       "Expired": [
         "Expirado"
       ],
+      "Folder:": [
+        "Pasta:"
+      ],
       "Google Pay mark": [
         "Marca Google Pay"
       ],
@@ -3751,6 +4154,9 @@
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Carregando o calendário, aguarde. Você será redirecionado à nossa plataforma de agendamento Calendly numa nova guia."
       ],
+      "Loading file preview...": [
+        "Carregando pré-visualização do arquivo..."
+      ],
       "Mastercard SecureCode logo": [
         "Logotipo do MasterCard SecureCode"
       ],
@@ -3759,6 +4165,9 @@
       ],
       "Messages to all your email addresses will go to your inbox.": [
         "As mensagens para todos os seus endereços de e-mail irão para sua caixa de entrada."
+      ],
+      "MIME:": [
+        "MIME:"
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Nomeie sua nova pasta e selecione a pasta superior onde deseja colocá-la. Se você não selecionar uma pasta superior, esta nova pasta será criada como uma pasta de nível superior."
@@ -3835,6 +4244,9 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Como você é um usuário fiel, sua conta tem recursos adicionais ativados."
       ],
+      "Size:": [
+        "Tamanho:"
+      ],
       "Start sharing it with contacts and use it for online services.": [
         "Comece a compartilhá-lo com contatos e a usá-lo em serviços online."
       ],
@@ -3872,8 +4284,14 @@
       "To fight spam and abuse, please verify you are human.": [
         "Para combater o spam e/ou abuso, verifique se você é humano."
       ],
+      "Total conversations:": [
+        "Total de conversas:"
+      ],
       "Total email addresses": [
         "Endereços de e-mail adicionais"
+      ],
+      "Total messages:": [
+        "Total de mensagens:"
       ],
       "Total storage": [
         "Total de armazenamento"
@@ -3883,6 +4301,9 @@
       ],
       "Total VPN connections": [
         "Conexões VPN adicionais"
+      ],
+      "Unknown": [
+        "Desconhecido"
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Faça upgrade agora para obter recursos premium, produtos e armazenamento por um preço especial"
@@ -4356,6 +4777,44 @@
         "O que é isso?"
       ]
     },
+    "lumo: Debug View": {
+      "Acceleration": [
+        "Aceleração"
+      ],
+      "Clear History": [
+        "Limpar histórico"
+      ],
+      "Differential": [
+        "Diferencial"
+      ],
+      "FPS": [
+        "FPS"
+      ],
+      "Last token": [
+        "Último token"
+      ],
+      "Memory": [
+        "Memória"
+      ],
+      "Messages": [
+        "Mensagens"
+      ],
+      "Rate": [
+        "Avaliar"
+      ],
+      "Redux/sec": [
+        "Redux/sec"
+      ],
+      "Render time": [
+        "Tempo de renderização"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "Streaming": [
+        "Streaming"
+      ]
+    },
     "mail_signup_2024: Info": {
       "${ BRAND_NAME } Scribe writing assistant": [
         "Assistente de escrita ${ BRAND_NAME } Scribe"
@@ -4817,9 +5276,6 @@
       ],
       "Unlimited labels": [
         "Marcadores ilimitados"
-      ],
-      "Unlimited logins and notes": [
-        "Notas e inícios de sessão ilimitados"
       ],
       "Unlimited logins, notes and credit cards": [
         "Inícios de sessão ilimitados, notas e cartões de crédito"
@@ -5724,6 +6180,9 @@
       "Search parent folder": [
         "Pesquisar pasta pai"
       ],
+      "Search...": [
+        "Pesquisar..."
+      ],
       "Select": [
         "Selecionar"
       ],
@@ -6038,6 +6497,17 @@
         "Cancelando sua assinatura, aguarde"
       ]
     },
+    "Status": {
+      "Disabled": [
+        "Desativado"
+      ],
+      "Enabled": [
+        "Ativado"
+      ],
+      "Not available": [
+        "Não disponível"
+      ]
+    },
     "storage_split: action": {
       "Keep ${ currentPlanName }": [
         "Manter o ${ currentPlanName }"
@@ -6307,6 +6777,21 @@
       ]
     },
     "Time": {
+      "${ days } days ago": [
+        "${ days } dias atrás"
+      ],
+      "${ hours } hours ago": [
+        "${ hours } horas atrás"
+      ],
+      "${ minutes } minutes ago": [
+        "${ minutes } minutos atrás"
+      ],
+      "1 hour ago": [
+        "1 hora atrás"
+      ],
+      "Just now": [
+        "Agora mesmo"
+      ],
       "Yesterday": [
         "Ontem"
       ]
@@ -6428,6 +6913,9 @@
       ],
       "Invalid verification code": [
         "O código de verificação não é válido."
+      ],
+      "My Files": [
+        "Meus arquivos"
       ],
       "Network error": [
         "Erro de rede"

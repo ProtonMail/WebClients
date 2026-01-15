@@ -38,6 +38,9 @@
       "Back": [
         "Terug"
       ],
+      "Back to search settings": [
+        "Terug naar zoekinstellingen"
+      ],
       "Cancel": [
         "Annuleren"
       ],
@@ -52,6 +55,9 @@
       ],
       "Chat with us": [
         "Chat met ons"
+      ],
+      "Clean up orphaned documents": [
+        "Verwijder verweesde documenten"
       ],
       "Close": [
         "Sluiten"
@@ -161,6 +167,9 @@
       "Increase": [
         "Verhogen"
       ],
+      "Inspect indexed documents": [
+        "Geïndexeerde documenten inspecteren"
+      ],
       "Keep my subscription": [
         "Mijn abonnement behouden"
       ],
@@ -197,8 +206,17 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Open ${ CALENDAR_APP_NAME }-instellingen"
       ],
+      "Open conversation": [
+        "Gesprek openen"
+      ],
+      "Open file preview": [
+        "Bestandsvoorbeeld openen"
+      ],
       "Open navigation": [
         "Navigatie openen"
+      ],
+      "Open project": [
+        "Project openen"
       ],
       "Pay": [
         "Betalen"
@@ -208,6 +226,9 @@
       ],
       "Previous page": [
         "Vorige pagina"
+      ],
+      "Re-index all content - conversations and files": [
+        "Indexeer alle inhoud opnieuw – gesprekken en bestanden"
       ],
       "Refer a friend": [
         "Verwijs een vriend door"
@@ -289,6 +310,9 @@
       ],
       "Show more benefits": [
         "Toon meer voordelen"
+      ],
+      "Show orphaned space IDs": [
+        "Toon ongebruikte spatie-ID's"
       ],
       "Sign out": [
         "Uitloggen"
@@ -665,6 +689,9 @@
       "Payments problem": [
         "Probleem met betalingen"
       ],
+      "Sheets problem": [
+        "Werkblad probleem"
+      ],
       "Sign in problem": [
         "Inlogprobleem"
       ],
@@ -718,7 +745,7 @@
         "${ maxSpaceTB } opslagruimte"
       ],
       "${ numberOfUsers } user": [
-        "Tot ${ numberOfUsers } gebruiker",
+        "${ numberOfUsers } gebruiker",
         "Tot ${ numberOfUsers } gebruikers"
       ],
       "${ planMaxSpace } email storage": [
@@ -797,8 +824,17 @@
       ]
     },
     "collider_2025: Action": {
+      "Add file to ${ DRIVE_APP_NAME }": [
+        "Bestand toevoegen aan ${ DRIVE_APP_NAME }"
+      ],
       "Add from ${ DRIVE_APP_NAME }": [
         "Toevoegen vanuit ${ DRIVE_APP_NAME }"
+      ],
+      "Add to active": [
+        "Toevoegen aan actief"
+      ],
+      "Already in KB": [
+        "Al in KB"
       ],
       "Browse ${ DRIVE_SHORT_APP_NAME }": [
         "Blader door ${ DRIVE_SHORT_APP_NAME }"
@@ -808,6 +844,9 @@
       ],
       "Continue": [
         "Doorgaan"
+      ],
+      "Create folder": [
+        "Map maken"
       ],
       "Dark": [
         "Donker"
@@ -944,6 +983,9 @@
       "Unlimited daily chats": [
         "Onbeperkt aantal dagelijkse gesprekken"
       ],
+      "Unlimited projects": [
+        "Onbeperkte projecten"
+      ],
       "We keep no logs of what you ask, or what ${ LUMO_SHORT_APP_NAME } replies. Your chats can’t be seen, shared, or used to profile you. ${ LUMO_SHORT_APP_NAME } saves nothing on our servers.": [
         "Wij bewaren geen logboeken van wat u vraagt, of wat ${ LUMO_SHORT_APP_NAME } antwoordt. Uw gesprekken kunnen niet worden gezien, gedeeld of gebruikt om een profiel van u op te stellen. ${ LUMO_SHORT_APP_NAME } slaat niets op onze servers op."
       ],
@@ -1028,11 +1070,23 @@
       ]
     },
     "collider_2025: Description": {
+      "Always enable web search for new conversations": [
+        "Schakel web zoeken altijd in voor nieuwe gesprekken"
+      ],
       "Elevate your private AI experience and unlock advanced models and premium features with ${ LUMO_SHORT_APP_NAME } Plus.": [
         "Verhoog uw privé AI-ervaring en ontgrendel geavanceerde modellen en premium functies met ${ LUMO_SHORT_APP_NAME } Plus."
       ],
+      "Encrypted search index for chats and Drive files.": [
+        "Versleutelde zoekindex voor chats en Drive-bestanden."
+      ],
+      "Include project conversations in the main chat history": [
+        "Neem projectgesprekken op in de hoofdchatgeschiedenis"
+      ],
       "Last updated on ${ formattedDate }": [
         "Laatst bijgewerkt op ${ formattedDate }"
+      ],
+      "Permanently delete your project and chats. This is irreversible.": [
+        "Verwijder uw project en gesprekken permanent. Dit is onomkeerbaar."
       ],
       "Sign in to access your account and unlock more features. Don't have one? ${ createLink }": [
         "Meld u aan om toegang te krijgen tot uw account en meer functies te ontgrendelen. Hebt u er geen? ${ createLink }"
@@ -1061,6 +1115,12 @@
       "Failed to process ${ DRIVE_SHORT_APP_NAME } file: ${ file.name }": [
         "Het verwerken van het ${ DRIVE_SHORT_APP_NAME } bestand is mislukt: ${ file.name }"
       ],
+      "Failed to upload \"${ file.name }\" to ${ DRIVE_APP_NAME }": [
+        "Kon \"${ file.name }\" niet opladen naar ${ DRIVE_APP_NAME }."
+      ],
+      "File \"${ file.name }\" (${ fileSizeFormatted }) exceeds the ${ maxSizeFormatted } limit. Link a Drive folder to your project to work with larger files.": [
+        "Bestand \"${ file.name }\" (${ fileSizeFormatted }) overschrijdt de limiet van ${ maxSizeFormatted }. Koppel een Drive-map om grotere bestanden op te laden."
+      ],
       "File \"${ file.name }\" is too large (${ fileSizeFormatted }). Maximum allowed size is ${ maxSizeFormatted }.": [
         "Bestand \"${ file.name }\" is te groot (${ fileSizeFormatted }). Maximale toegestane grootte is ${ maxSizeFormatted }."
       ],
@@ -1078,6 +1138,12 @@
       ],
       "PowerPoint files are not supported. Please convert to PDF and upload the PDF version for better text extraction.": [
         "PowerPoint-bestanden worden niet ondersteund. Converteer naar PDF en upload de PDF-versie voor betere tekstextractie."
+      ],
+      "Re-indexing failed. Please try again.": [
+        "Herindexering mislukt. Probeer het opnieuw."
+      ],
+      "Search service not available": [
+        "Zoekservice niet beschikbaar"
       ],
       "Sign up for free to continue chatting and unlock access to chat history, starred chats, and more features.": [
         "Meld u gratis aan om door te gaan met chatten en toegang te krijgen tot gespreksgeschiedenis, favoriete gesprekken en meer functies."
@@ -1188,6 +1254,9 @@
       "Large file uploads": [
         "Grote bestandsuploads"
       ],
+      "New": [
+        "Nieuw"
+      ],
       "Unlimited chat history": [
         "Onbeperkte gespreksgeschiedenis"
       ],
@@ -1257,11 +1326,20 @@
       "Ask anything to ${ LUMO_SHORT_APP_NAME }": [
         "Vraag alles aan ${ LUMO_SHORT_APP_NAME }"
       ],
+      "Attached Files": [
+        "Bijgevoegde bestanden"
+      ],
+      "Auto-matched": [
+        "Automatisch gematcht"
+      ],
       "Be cautious of unfamiliar domains or excessive subdomains": [
         "Wees voorzichtig met onbekende domeinen of excessieve subdomeinen"
       ],
       "characters": [
         "tekens"
+      ],
+      "characters not shown": [
+        "tekens niet weergegeven"
       ],
       "Chat knowledge": [
         "Gesprek kennis"
@@ -1281,6 +1359,9 @@
       "Domain name": [
         "Domeinnaam"
       ],
+      "Downloading (${ progressPct }%)": [
+        "Downloaden ${ progressPct }%)"
+      ],
       "Drag and drop your files here to add them to the chat.": [
         "Sleep uw bestanden hierheen om ze aan het gesprek toe te voegen."
       ],
@@ -1293,14 +1374,23 @@
       "Error Processing File": [
         "Fout bij verwerken bestand"
       ],
+      "Exceeds ${ maxSize } limit": [
+        "Overschrijdt ${ maxSize } limiet"
+      ],
       "Exclude file": [
         "Bestand uitsluiten"
+      ],
+      "Excluded": [
+        "Uitgesloten"
       ],
       "File capacity": [
         "Bestand capaciteit"
       ],
       "File capacity for this conversation": [
         "Bestandscapaciteit voor dit gesprek"
+      ],
+      "File too large": [
+        "Bestand te groot"
       ],
       "File too large for preview (>150k tokens)": [
         "Bestand te groot voor voorbeeld (>150k tokens)"
@@ -1310,6 +1400,15 @@
       ],
       "files are not currently supported for content extraction.": [
         "bestanden worden momenteel niet ondersteund voor inhoudsextractie."
+      ],
+      "Files automatically retrieved based on your question.": [
+        "Bestanden automatisch opgehaald op basis van uw vraag."
+      ],
+      "Files automatically retrieved based on your questions:": [
+        "Bestanden automatisch opgehaald op basis van uw vragen:"
+      ],
+      "Files you've added to this conversation.": [
+        "Bestanden die u aan dit gesprek hebt toegevoegd."
       ],
       "For each conversation, ${ LUMO_SHORT_APP_NAME } has the capacity to process a limited amount of information. The progress bar shows how much capacity your current files are using. ": [
         "Voor elk gesprek heeft ${ LUMO_SHORT_APP_NAME } de capaciteit om een beperkte hoeveelheid informatie te verwerken. De voortgangsbalk toont hoeveel capaciteit uw huidige bestanden gebruiken. "
@@ -1347,11 +1446,17 @@
       "No files available": [
         "Geen bestanden beschikbaar"
       ],
+      "No supported files in this folder": [
+        "Geen ondersteunde bestanden in deze map"
+      ],
       "Note:": [
         "Let op:"
       ],
       "of": [
         "van"
+      ],
+      "Partial content": [
+        "Gedeeltelijke inhoud"
       ],
       "Please share what you expected": [
         "Deel wat uw verwachting was"
@@ -1374,6 +1479,9 @@
       "Processing file contents...": [
         "Bestandsinhoud wordt verwerkt..."
       ],
+      "Relevant files will be automatically retrieved based on your questions.": [
+        "Relevante bestanden zullen automatisch opgehaald worden op basis van uw vragen"
+      ],
       "Remove": [
         "Verwijderen"
       ],
@@ -1382,6 +1490,12 @@
       ],
       "Remove message filter": [
         "Berichtfilter verwijderen"
+      ],
+      "Removed from future questions": [
+        "Verwijderd uit toekomstige vragen"
+      ],
+      "Retrieved Project Knowledge": [
+        "Projectkennis opgehaald"
       ],
       "rows": [
         "rijen"
@@ -1428,6 +1542,9 @@
       "There was an error processing this file. The content may not be readable or the file format might not be fully supported.": [
         "Er is een fout opgetreden bij het verwerken van dit bestand. De inhoud is mogelijk niet leesbaar of het bestandsformaat wordt mogelijk niet volledig ondersteund."
       ],
+      "These files won't be used for future questions.": [
+        "Deze bestanden worden niet gebruikt voor toekomstige vragen."
+      ],
       "This file appears to be empty or contains no extractable text content.": [
         "Dit bestand lijkt leeg te zijn of bevat geen extraheerbare tekstinhoud."
       ],
@@ -1451,6 +1568,9 @@
       ],
       "Unsupported File Type": [
         "Niet-ondersteund bestandstype"
+      ],
+      "Uploading \"${ file.name }\" to ${ DRIVE_APP_NAME }...": [
+        "\"${ file.name }\" wordt opgeladen naar ${ DRIVE_APP_NAME }..."
       ],
       "Uploading ${ uploadProgress.fileName }": [
         "Opladen van ${ uploadProgress.fileName }"
@@ -1696,11 +1816,20 @@
       "All chats deleted successfully": [
         "Alle gesprekken zijn succesvol verwijderd."
       ],
+      "File \"${ file.name }\" uploaded to ${ DRIVE_APP_NAME }": [
+        "Bestand \"${ file.name }\" is opgeladen naar ${ DRIVE_APP_NAME }"
+      ],
       "File added to knowledge base: ${ result.fileName }": [
         "Bestand toegevoegd aan kennisbank: ${ result.fileName }"
       ],
       "File uploaded and added to knowledge base": [
         "Bestand geüpload en toegevoegd aan de kennisbank"
+      ],
+      "File uploaded and indexed for search": [
+        "Bestand opgeladen en geïndexeerd voor zoeken"
+      ],
+      "File uploaded to Drive folder": [
+        "Bestand opgeladen naar Drive-map"
       ],
       "Thanks for the feedback!": [
         "Bedankt voor de feedback!"
@@ -1715,6 +1844,9 @@
       ],
       "About ${ LUMO_SHORT_APP_NAME }": [
         "Over ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Automatic web search": [
+        "Automatisch zoeken op internet"
       ],
       "Delete everything": [
         "Alles verwijderen"
@@ -1733,6 +1865,9 @@
       ],
       "Save your favorites": [
         "Sla uw favorieten op"
+      ],
+      "Search Index": [
+        "Zoekindex"
       ],
       "Secure your spot": [
         "Beveilig uw plek"
@@ -1910,23 +2045,89 @@
       "Ask the model to be more careful and thorough": [
         "Vraag het model om voorzichtiger en grondiger te zijn."
       ],
+      "Back to project": [
+        "Terug naar project"
+      ],
+      "Back to projects": [
+        "Terug naar het project"
+      ],
       "Cancel": [
         "Annuleren"
+      ],
+      "Choose project icon": [
+        "Kies projectpictogram"
+      ],
+      "Click to edit title": [
+        "Klik om titel te bewerken"
+      ],
+      "Create": [
+        "Aanmaken"
+      ],
+      "Create folder": [
+        "Map maken"
+      ],
+      "Delete": [
+        "Verwijderen"
+      ],
+      "Delete conversation": [
+        "Gesprek verwijderen"
+      ],
+      "Delete project": [
+        "Project verwijderen"
       ],
       "Describe desired changes...": [
         "Beschrijf de gewenste wijzigingen..."
       ],
+      "Deselect all": [
+        "Deselecteer alles"
+      ],
+      "Edit instructions": [
+        "Instructies bewerken"
+      ],
+      "Edit project": [
+        "Project bewerken"
+      ],
+      "Go to project": [
+        "Ga naar project"
+      ],
+      "Hide settings": [
+        "Instellingen verbergen"
+      ],
+      "Hide sidebar": [
+        "Zijbalk verbergen"
+      ],
+      "Manage chats": [
+        "Gesprekken beheren"
+      ],
+      "Manage Drive folder link": [
+        "Beheer Drive-mapkoppeling"
+      ],
+      "More breadcrumbs": [
+        "Meer kruimelpaden"
+      ],
       "More concise": [
         "Beknopter"
       ],
+      "More options": [
+        "Meer opties"
+      ],
       "Next message": [
         "Volgend bericht"
+      ],
+      "Open conversation": [
+        "Gesprek openen"
       ],
       "Previous message": [
         "Vorig bericht"
       ],
       "Regenerate": [
         "Opnieuw genereren"
+      ],
+      "Remove all": [
+        "Alles verwijderen"
+      ],
+      "Remove all files": [
+        "Verwijder alle bestanden"
       ],
       "Remove file": [
         "Bestand verwijderen"
@@ -1937,28 +2138,82 @@
       "Retry with the same prompt": [
         "Opnieuw proberen met dezelfde prompt"
       ],
+      "Select all": [
+        "Alles selecteren"
+      ],
+      "Select conversation": [
+        "Gesprek selecteren"
+      ],
+      "Settings": [
+        "Instellingen"
+      ],
+      "Show instructions and files": [
+        "Instructies en bestanden tonen"
+      ],
+      "Show settings": [
+        "Instellingen tonen"
+      ],
+      "Show sidebar": [
+        "Toon de zijbalk"
+      ],
       "Think longer": [
         "Langer nadenken"
       ],
+      "Toggle selection": [
+        "Selectie in-/uitschakelen"
+      ],
       "Try again": [
         "Probeer opnieuw"
+      ],
+      "Unlink Folder": [
+        "Map ontkoppelen"
+      ],
+      "Upgrade to Plus": [
+        "Upgrade naar Plus"
+      ],
+      "Upload file": [
+        "Bestand opladen"
+      ],
+      "Upload files": [
+        "Bestanden opladen"
       ],
       "What needs changed?": [
         "Wat moet er worden gewijzigd?"
       ]
     },
     "collider_2025:Button": {
+      "Add instructions to tailor ${ LUMO_SHORT_APP_NAME }'s responses": [
+        "Instructies toevoegen om de antwoorden van ${ LUMO_SHORT_APP_NAME } aan te passen"
+      ],
+      "Back to projects": [
+        "Terug naar het projecten"
+      ],
       "Cancel": [
         "Annuleren"
       ],
       "Close sidebar": [
         "Zijbalk sluiten"
       ],
+      "Collapse projects": [
+        "Projecten inklappen"
+      ],
+      "Create a free account": [
+        "Maak een gratis account aan"
+      ],
+      "Create project": [
+        "Project aanmaken"
+      ],
+      "Delete": [
+        "Verwijderen"
+      ],
       "Edit": [
         "Bewerken"
       ],
       "Expand": [
         "Uitvouwen"
+      ],
+      "Expand projects": [
+        "Projecten uitvouwen"
       ],
       "Favorite": [
         "Favoriet"
@@ -1972,6 +2227,12 @@
       "Hide sidebar": [
         "Zijbalk verbergen"
       ],
+      "Link this folder": [
+        "Koppel deze map"
+      ],
+      "Link with ${ DRIVE_APP_NAME } folder": [
+        "Koppel met ${ DRIVE_APP_NAME } map"
+      ],
       "Manage chat knowledge files (${ totalFiles })": [
         "Gesprek kennis bestanden beheren (${ totalFiles })"
       ],
@@ -1981,8 +2242,20 @@
       "New chat": [
         "Nieuwe chat"
       ],
+      "New project": [
+        "Nieuw project"
+      ],
+      "Projects": [
+        "Projecten"
+      ],
+      "Save": [
+        "Opslaan"
+      ],
       "Search": [
         "Zoeken"
+      ],
+      "See all": [
+        "Alles weergeven"
       ],
       "Send": [
         "Verzenden"
@@ -1993,21 +2266,83 @@
       "Show sidebar": [
         "Toon zijbalk"
       ],
+      "Sign in": [
+        "Inloggen"
+      ],
       "Unfavorite": [
         "Verwijderen uit favorieten"
       ],
       "Untitled chat": [
         "Naamloos gesprek"
+      ],
+      "Upload from computer": [
+        "Uploaden vanaf computer"
       ]
     },
     "collider_2025:Error": {
+      "Cannot link the root folder. Please select a subfolder.": [
+        "Kan de hoofdmap niet koppelen. Selecteer een submap."
+      ],
+      "Error processing file: ${ file.name }": [
+        "Fout bij het verwerken van bestand: ${ file.name }"
+      ],
+      "Error uploading file: ${ file.name }": [
+        "Fout bij het opladen van bestand: ${ file.name }"
+      ],
+      "Failed to create folder": [
+        "Kan map niet maken"
+      ],
+      "Failed to download \"${ file.name }\": Data integrity check failed. Please try again.": [
+        "Downloaden van \"${ file.name }\" mislukt: Dataintegriteitscontrole is mislukt. Probeer het opnieuw."
+      ],
+      "Failed to index Drive folder for search": [
+        "Kon Drive-map niet indexeren voor zoeken"
+      ],
+      "Failed to link Drive folder": [
+        "Kon Drive-map niet koppelen"
+      ],
+      "Failed to process file: ${ file.name }": [
+        "Kon bestand: ${ file.name } niet verwerken"
+      ],
+      "Failed to unlink Drive folder": [
+        "Kon Drive-map niet ontkoppelen"
+      ],
       "File \"${ file.name }\" (${ fileSizeFormatted }) exceeds the ${ maxSizeFormatted } limit. Link a ${ DRIVE_APP_NAME } folder to upload larger files.": [
         "Bestand \"${ file.name }\" (${ fileSizeFormatted }) overschrijdt de limiet van ${ maxSizeFormatted }. Koppel een ${ DRIVE_APP_NAME }-map om grotere bestanden te uploaden."
+      ],
+      "File download failed due to integrity check. Please try again.": [
+        "Bestand downloaden mislukt vanwege integriteitscontrole. Probeer het opnieuw."
+      ],
+      "File format not supported: ${ file.name }": [
+        "Bestandsformaat wordt niet ondersteund: ${ file.name }"
+      ],
+      "File type not supported: ${ file.name }": [
+        "Bestandstype wordt niet ondersteund: ${ file.name }"
+      ],
+      "Project not found": [
+        "Project niet gevonden"
       ]
     },
     "collider_2025:Feature": {
       "Advanced AI models": [
         "Geavanceerde AI-modellen"
+      ],
+      "Priority access & faster responses": [
+        "Prioriteitstoegang en snellere reacties"
+      ],
+      "Unlimited projects": [
+        "Onbeperkte projecten"
+      ]
+    },
+    "collider_2025:FeaturePoint": {
+      "Chats, files, and context stay together in an encrypted workspace.": [
+        "Chats, bestanden en context blijven samen in een geëncrypteerde werkruimte."
+      ],
+      "Project-specific instructions mean no repeating yourself.": [
+        "Projectspecifieke instructies betekenen dat u zich niet hoeft te herhalen."
+      ],
+      "Tailored responses based on your project’s files and instructions.": [
+        "Op maat gemaakte reacties op basis van de bestanden en instructies van uw project."
       ]
     },
     "collider_2025:Info": {
@@ -2015,8 +2350,35 @@
         " Chatten in Project",
         " Chats in Project"
       ],
+      "${ project.conversationCount } conversation": [
+        "${ project.conversationCount } gesprek"
+      ],
+      "${ project.conversationCount } conversations": [
+        "${ project.conversationCount } gesprekken"
+      ],
+      "${ project.fileCount } file": [
+        "${ project.fileCount } bestand"
+      ],
+      "${ project.fileCount } files": [
+        "${ project.fileCount } bestanden"
+      ],
       "AIs from Big Tech are built on harvesting your data. But ${ LUMO_SHORT_APP_NAME } is different. It was created by the scientists behind innovative, privacy-first services like ${ MAIL_APP_NAME } and ${ VPN_APP_NAME }. And it’s owned by a Swiss nonprofit, whose mission is to advance privacy and never make money from user data.": [
         "AI's van grote technologiebedrijven zijn gebouwd op het verzamelen van uw gegevens. Maar ${ LUMO_SHORT_APP_NAME } is anders. Het is ontwikkeld door de wetenschappers achter innovatieve, privacy-gerichte diensten zoals ${ MAIL_APP_NAME } en ${ VPN_APP_NAME }. En het is eigendom van een Zwitserse non-profitorganisatie, wiens missie het is om privacy te bevorderen en nooit geld te verdienen aan gebruikersgegevens."
+      ],
+      "All messages and chat history": [
+        "Alle berichten en chatgeschiedenis"
+      ],
+      "Are you sure you want to delete \"${ project.name }\"? This action cannot be undone.": [
+        "Weet u zeker dat u \"${ project.name }\" wilt verwijderen? Deze actie kan niet ongedaan worden gemaakt."
+      ],
+      "Are you sure you want to delete this conversation? This action cannot be undone.": [
+        "Weet u zeker dat u dit gesprek wilt verwijderen? Deze actie kan niet ongedaan worden gemaakt."
+      ],
+      "Auto-retrieved": [
+        "Automatisch opgehaald"
+      ],
+      "Browse to the ${ DRIVE_SHORT_APP_NAME } folder you want to link to this project, then click \"Link this folder\".": [
+        "Blader naar de map \"${ DRIVE_SHORT_APP_NAME }\" die u aan dit project wilt koppelen en klik vervolgens op \"Deze map koppelen\"."
       ],
       "Conversation encrypted": [
         "Gesprek versleuteld"
@@ -2024,22 +2386,102 @@
       "Current chat:": [
         "Huidig gesprek:"
       ],
+      "Drive files are not available for guest users": [
+        "Drive-bestanden zijn niet beschikbaar voor gastgebruikers"
+      ],
+      "File \"${ file.name }\" is already added to this conversation": [
+        "Bestand \"${ file.name }\" is al toegevoegd aan dit gesprek"
+      ],
+      "File \"${ file.name }\" is already in this project": [
+        "Bestand \"${ file.name }\" is al in dit project"
+      ],
+      "Files uploaded to this project will be saved to the linked Drive folder.": [
+        "Bestanden die naar dit project worden geüpload, worden opgeslagen in de gekoppelde Drive-map."
+      ],
+      "From ${ DRIVE_APP_NAME }": [
+        "Van ${ DRIVE_APP_NAME }"
+      ],
+      "Initializing Drive...": [
+        "Drive initialiseren..."
+      ],
+      "Learn more about how project knowledge works": [
+        "Meer informatie over hoe projectkennis werkt"
+      ],
+      "Link files from ${ DRIVE_APP_NAME } or upload from your computer.": [
+        "Koppel bestanden van ${ DRIVE_APP_NAME } of upload vanaf uw computer."
+      ],
+      "No projects yet": [
+        "Nog geen projecten"
+      ],
       "Processing file...": [
         "Bestand wordt verwerkt..."
       ],
       "Processing...": [
         "Wordt verwerkt..."
       ],
+      "Projects help you organize conversations with custom instructions and files.": [
+        "Projecten helpen u gesprekken te organiseren met aangepaste instructies en bestanden."
+      ],
+      "Projects help you organize conversations with custom instructions and files. Sign in or create a free account to get started.": [
+        "Projecten helpen u gesprekken te organiseren met aangepaste instructies en bestanden. Log in of maak een gratis account aan om te beginnen."
+      ],
       "This message is empty. Sorry about that.": [
         "Dit bericht is leeg. Onze excuses hiervoor."
       ],
+      "This project already has files. Please remove all files before linking a Drive folder.": [
+        "Dit project bevat al bestanden. Verwijder alle bestanden voordat u een Drive-map koppelt."
+      ],
+      "This will remove all ${ files.length } files from this project. This action cannot be undone.": [
+        "Dit verwijdert alle ${ files.length } bestanden uit dit project. Deze actie kan niet ongedaan worden gemaakt."
+      ],
+      "Tips on how to write useful instructions": [
+        "Tips voor het schrijven van nuttige instructies"
+      ],
+      "Type @filename to ask questions about a specific file": [
+        "Typ @bestandsnaam om vragen te stellen over een specifiek bestand"
+      ],
+      "Upgrade to ${ LUMO_SHORT_APP_NAME } Plus to create unlimited projects, unlock advanced AI models, and more.": [
+        "Upgrade naar ${ LUMO_SHORT_APP_NAME } Plus om onbeperkte projecten aan te maken, geavanceerde AI-modellen te ontgrendelen en meer."
+      ],
+      "Using ${ DRIVE_APP_NAME } lets ${ LUMO_SHORT_APP_NAME } work with larger files.": [
+        "Door ${ LUMO_SHORT_APP_NAME } te gebruiken, kan ${ DRIVE_APP_NAME } grotere bestanden verwerken."
+      ],
       "Your files are large. ${ LUMO_SHORT_APP_NAME } may not be able to process all information.": [
         "Uw bestanden zijn groot. ${ LUMO_SHORT_APP_NAME } kan mogelijk niet alle informatie verwerken."
+      ],
+      "Your information is zero-access encrypted": [
+        "Uw informatie is versleuteld met zero-access encryptie"
       ]
     },
     "collider_2025:Label": {
+      "chat": [
+        "chat"
+      ],
+      "chats": [
+        "gesprekken"
+      ],
+      "Current folder:": [
+        "Huidige map:"
+      ],
       "Edit conversation title": [
         "Gesprekstitel bewerken"
+      ],
+      "Folder name": [
+        "Mapnaam"
+      ],
+      "Instructions": [
+        "Instructies"
+      ],
+      "Project Instructions (optional)": [
+        "Project Instructies (optioneel)"
+      ],
+      "Untitled chat": [
+        "Naamloos gesprek"
+      ]
+    },
+    "collider_2025:Navigation": {
+      "All projects": [
+        "Alle projecten"
       ]
     },
     "collider_2025:Notification": {
@@ -2051,8 +2493,23 @@
       ]
     },
     "collider_2025:Placeholder": {
+      "Add instructions about the tone, style, and persona you want ${ LUMO_SHORT_APP_NAME } to adopt.": [
+        "Voeg instructies toe over de toon, stijl en persona die u wilt dat ${ LUMO_SHORT_APP_NAME } aanneemt."
+      ],
+      "Add instructions about the tone, style, and persona you want ${ LUMO_SHORT_APP_NAME } to adopt. These instructions will apply to all chats in this project.": [
+        "Voeg instructies toe over de toon, stijl en persona die u wilt dat ${ LUMO_SHORT_APP_NAME } aanneemt. Deze instructies zijn van toepassing op alle chats in dit project."
+      ],
       "Ask anything…": [
         "Vraag alles..."
+      ],
+      "Enter folder name": [
+        "Voer mapnaam in"
+      ],
+      "Enter project name": [
+        "Projectnaam invoeren"
+      ],
+      "Holiday planner": [
+        "Vakantieplanner"
       ],
       "Processing files, please wait...": [
         "Bestanden worden verwerkt, even geduld alstublieft..."
@@ -2064,12 +2521,191 @@
         "Aanmelden vereist"
       ]
     },
+    "collider_2025:Project": {
+      "Develop stories, refine prose, and improve your writing craft": [
+        "Ontwikkel verhalen, verfijn proza en verbeter uw schrijfvaardigheid"
+      ],
+      "Financial assistant": [
+        "Financiële assistent"
+      ],
+      "Get help understanding assignments, solving problems, and learning concepts": [
+        "Hulp krijgen bij het begrijpen van opdrachten, het oplossen van problemen en het leren van concepten"
+      ],
+      "Learn a language": [
+        "Een taal leren"
+      ],
+      "Plan financial goals with personalized insights": [
+        "Plan financiële doelen met gepersonaliseerde inzichten"
+      ],
+      "Practice conversations, learn grammar, and build vocabulary in your target language": [
+        "Oefen gesprekken, leer grammatica en bouw woordenschat op in uw doeltaal"
+      ],
+      "Research & Analysis Partner": [
+        "Onderzoeks- en analysepartner"
+      ],
+      "Study companion": [
+        "Studiemaatje"
+      ],
+      "Synthesize sources, analyze data, and develop insights for your research projects": [
+        "Synthetiseer bronnen, analyseer gegevens en ontwikkel inzichten voor uw onderzoeksprojecten"
+      ],
+      "Writing coach": [
+        "Schrijfhulp"
+      ]
+    },
     "collider_2025:Prompt": {
+      "Analyze my spending patterns and suggest areas to reduce expenses": [
+        "Analyseer mijn uitgavenpatronen en suggereer gebieden om kosten te besparen"
+      ],
+      "Can you explain why this answer is correct?": [
+        "Kunt u uitleggen waarom dit antwoord correct is?"
+      ],
+      "Compare the methodologies used across these studies": [
+        "Vergelijk de gebruikte methodologieën in deze studies"
+      ],
+      "Create a packing list for a winter hiking trip in Patagonia": [
+        "Maak een paklijst voor een winterse wandeltocht in Patagonië"
+      ],
+      "Explain the risks associated with this type of asset": [
+        "Leg de risico's uit die aan dit type asset zijn verbonden"
+      ],
+      "Explain the trade-offs between paying off debt vs investing": [
+        "Leg uit wat de afwegingen zijn tussen schulden aflossen versus beleggen"
+      ],
+      "Explain this medication and its potential side effects": [
+        "Leg deze medicatie en mogelijke bijwerkingen uit"
+      ],
+      "Help me create a plan to achieve this goal": [
+        "Help mij een plan op te stellen om dit doel te bereiken"
+      ],
+      "Help me draft a professional response to this email": [
+        "Help mij een professionele reactie op deze e-mail op te stellen"
+      ],
+      "Help me organize my thoughts on this decision": [
+        "Help mij mijn gedachten over deze beslissing te ordenen"
+      ],
+      "Help me plan a 2-week itinerary for Japan with cultural experiences": [
+        "Help mij een reisschema van 2 weken voor Japan samen te stellen met culturele ervaringen"
+      ],
+      "Help me prepare questions about this diagnosis for my doctor": [
+        "Help mij vragen voorbereiden over deze diagnose voor mijn arts"
+      ],
+      "Help me prepare talking points for this presentation": [
+        "Help mij bij het opstellen van gesprekspunten voor deze presentatie"
+      ],
+      "Help me refine this draft to be more concise and impactful": [
+        "Help me refine this draft to be more concise and impactful"
+      ],
+      "Help me understand different retirement account options and their tax implications": [
+        "Help me de verschillende pensioenrekeningopties en hun fiscale gevolgen te begrijpen."
+      ],
+      "Help me understand how to read and analyze financial statements": [
+        "Help mij begrijpen hoe ik financiële overzichten moet lezen en analyseren"
+      ],
+      "Help me understand this concept step by step": [
+        "Help mij dit concept stap voor stap te begrijpen"
+      ],
+      "Help me understand what this code does": [
+        "Help me bij het begrijpen wat deze code doet"
+      ],
       "How do people celebrate New Year's Eve around the world?": [
         "Hoe viert men over de hele wereld Oudejaarsavond?"
       ],
-      "What are the origins of Christmas?": [
-        "Wat zijn de oorsprongen van Kerstmis?"
+      "Identify any unusual or potentially unfavorable terms": [
+        "Identificeer ongebruikelijke of potentieel ongunstige termen"
+      ],
+      "Identify research gaps and suggest future research directions": [
+        "Onderzoeksgaten identificeren en toekomstige onderzoeksrichtingen voorstellen"
+      ],
+      "Review this code for bugs and potential improvements": [
+        "Herzie deze code op fouten en mogelijke verbeteringen"
+      ],
+      "Review this for clarity, tone, and grammatical errors": [
+        "Beoordeel dit op duidelijkheid, toon en grammaticafouten"
+      ],
+      "Suggest hidden gems and local favorites in Barcelona": [
+        "Geef verborgen pareltjes en lokale favorieten in Barcelona aan"
+      ],
+      "Suggest ways to improve the flow and structure of this text": [
+        "Geef manieren aan om de stroom en structuur van deze tekst te verbeteren"
+      ],
+      "Suggest ways to optimize this for better performance": [
+        "Geef suggesties voor optimalisatie voor betere prestaties"
+      ],
+      "Summarize the key obligations and rights in this contract": [
+        "Vat de belangrijkste verplichtingen en rechten in dit contract samen"
+      ],
+      "Summarize the key points from this meeting": [
+        "Vat de belangrijkste punten van deze vergadering samen"
+      ],
+      "What are the key points I should remember for this topic?": [
+        "Wat zijn de belangrijkste punten die ik voor dit onderwerp moet onthouden?"
+      ],
+      "What are the main findings and how do they relate to each other?": [
+        "Wat zijn de belangrijkste bevindingen en hoe verhouden deze zich tot elkaar?"
+      ],
+      "What are the termination clauses and notice requirements?": [
+        "Wat zijn de beëindigingsclausules en kennisgevingsvereisten?"
+      ],
+      "What do these lab values mean and are any outside normal ranges?": [
+        "Wat betekenen deze laboratoriumwaarden en vallen er waarden buiten het normale bereik?"
+      ],
+      "What metrics and research should I review for this investment?": [
+        "Welke statistieken en onderzoeken moet ik voor deze investering bekijken?"
+      ],
+      "What questions should I consider before making this choice?": [
+        "Welke vragen moet ik overwegen voordat ik deze keuze maak?"
+      ],
+      "What should I know about emergency funds and where to keep them?": [
+        "Wat moet ik weten over noodfondsen en waar kan ik ze het beste bewaren?"
+      ]
+    },
+    "collider_2025:Status": {
+      "Complete": [
+        "Voltooid"
+      ],
+      "Error": [
+        "Fout"
+      ],
+      "Indexing": [
+        "Indexeren"
+      ],
+      "Indexing complete": [
+        "Indexering voltooid"
+      ],
+      "Indexing error": [
+        "Indexeerfout"
+      ],
+      "Indexing for search": [
+        "Indexeren voor zoeken"
+      ]
+    },
+    "collider_2025:Subline": {
+      "Projects help you keep related chats, files, and instructions in one place. They make it easy to stay organized and reuse context across chats.": [
+        "Projecten helpen u gerelateerde gesprekken, bestanden en instructies op één plek te bewaren. Ze maken het eenvoudig om georganiseerd te blijven en context te hergebruiken in gesprekken."
+      ]
+    },
+    "collider_2025:Success": {
+      "All files removed from project": [
+        "Alle bestanden verwijderd uit project"
+      ],
+      "Drive folder linked successfully": [
+        "Drive-map succesvol gekoppeld"
+      ],
+      "Drive folder unlinked": [
+        "Drive-map ontkoppeld"
+      ],
+      "File \"${ file.name }\" added to project": [
+        "Bestand \"${ file.name }\" toegevoegd aan project"
+      ],
+      "File removed from project": [
+        "Bestand verwijderd uit project"
+      ],
+      "Folder \"${ trimmedFolderName }\" created successfully": [
+        "Map \"${ trimmedFolderName }\" succesvol aangemaakt"
+      ],
+      "Folder created successfully": [
+        "Map succesvol aangemaakt"
       ]
     },
     "collider_2025:Title": {
@@ -2079,11 +2715,32 @@
       "Built by the team that knows privacy": [
         "Gebouwd door het team dat privacy kent"
       ],
+      "Create folder": [
+        "Map maken"
+      ],
+      "Create new project": [
+        "Nieuw project aanmaken"
+      ],
+      "Delete conversation?": [
+        "Gesprek verwijderen?"
+      ],
+      "Delete project?": [
+        "Project verwijderen?"
+      ],
       "Earlier": [
         "Eerder"
       ],
+      "Edit Instructions": [
+        "Instructies bewerken"
+      ],
+      "Edit Project": [
+        "Edit Project"
+      ],
       "Favorites": [
         "Favorieten"
+      ],
+      "Get started by creating a new project": [
+        "Begin met het aanmaken van een nieuw project"
       ],
       "Ghost mode": [
         "Spookmodus"
@@ -2100,20 +2757,62 @@
       "How does ${ LUMO_SHORT_APP_NAME } keep our conversations confidential?": [
         "Hoe houdt ${ LUMO_SHORT_APP_NAME } onze gesprekken vertrouwelijk?"
       ],
+      "Inspiration": [
+        "Inspiratie"
+      ],
+      "Instructions": [
+        "Instructies"
+      ],
+      "Introducing Projects": [
+        "Introductie van Projecten"
+      ],
       "Last 30 days": [
         "Afgelopen 30 dagen"
       ],
       "Last 7 days": [
         "Afgelopen 7 dagen"
       ],
+      "Link Drive Folder": [
+        "Koppel Drive-map"
+      ],
+      "Linked Drive Folder": [
+        "Gekoppelde Drive-map"
+      ],
       "More options": [
         "Meer opties"
+      ],
+      "More Projects with ${ LUMO_SHORT_APP_NAME } Plus": [
+        "Meer projecten met ${ LUMO_SHORT_APP_NAME } Plus"
       ],
       "No chat history yet. Let's start chatting!": [
         "Nog geen gespreksgeschiedenis. Laten we beginnen met chatten!"
       ],
       "No result.": [
         "Geen resultaat."
+      ],
+      "Nothing here yet": [
+        "Nog niets aanwezig"
+      ],
+      "Older": [
+        "Ouder"
+      ],
+      "Project knowledge": [
+        "Projectkennis"
+      ],
+      "Projects": [
+        "Projecten"
+      ],
+      "Remove all files?": [
+        "Verwijder alle bestanden?"
+      ],
+      "Settings": [
+        "Instellingen"
+      ],
+      "Sign in to create projects": [
+        "Inloggen om projecten te maken"
+      ],
+      "Start a new conversation": [
+        "Start een nieuw gesprek"
       ],
       "The AI that respects your privacy": [
         "De AI die uw privacy respecteert"
@@ -2126,6 +2825,22 @@
       ],
       "Whatever you ask me is:": [
         "Wat u mij ook vraagt, is:"
+      ]
+    },
+    "collider_2025:Tooltip": {
+      "Choose icon": [
+        "Kies pictogram"
+      ]
+    },
+    "collider_2025:Warning": {
+      "Cannot Link Drive Folder": [
+        "Kan Drive-map niet koppelen"
+      ],
+      "This folder contains ${ result.totalFiles } indexable files. Only the first ${ MAX_INDEXABLE_FILES } files were indexed. ${ result.skippedFiles } files were skipped.": [
+        "Deze map bevat ${ result.totalFiles } indexeerbare bestanden. Alleen de eerste ${ MAX_INDEXABLE_FILES } bestanden zijn geïndexeerd. ${ result.skippedFiles } bestanden zijn overgeslagen."
+      ],
+      "This will also permanently delete:": [
+        "Dit verwijdert ook permanent:"
       ]
     },
     "color": {
@@ -3590,6 +4305,9 @@
         "+${ organization.BonusVPN } verbinding voor ${ VPN_APP_NAME } (stelt u in staat meer apparaten aan VPN te verbinden)",
         "+${ organization.BonusVPN } verbindingen voor ${ VPN_APP_NAME } (stelt u in staat meer apparaten aan VPN te verbinden)"
       ],
+      "0 MB": [
+        "0 MB"
+      ],
       "30-day money-back guarantee.": [
         "30-dagen geld terug garantie."
       ],
@@ -3604,6 +4322,9 @@
       ],
       "Address copied to clipboard": [
         "Adres gekopieerd naar het klembord"
+      ],
+      "Advanced search:": [
+        "Geavanceerd zoeken:"
       ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "AI-aangedreven assistent om u te helpen snel en moeiteloos betere e-mails te schrijven."
@@ -3637,6 +4358,15 @@
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Door het downgraden naar een gratis abonnement verliest u deze voordelen, zelfs als u in de toekomst opnieuw upgrade."
+      ],
+      "Chunk": [
+        "Chunk"
+      ],
+      "chunks": [
+        "delen"
+      ],
+      "Chunks:": [
+        "Delen:"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klik op \"Vraag nieuwe code aan\" om een nieuwe verificatiecode te sturen naar ${ strong }. Als dit telefoonnummer onjuist is, klik op \"Bewerken\" om het te corrigeren."
@@ -3726,6 +4456,9 @@
       "Expired": [
         "Verlopen"
       ],
+      "Folder:": [
+        "Map:"
+      ],
       "Google Pay mark": [
         "Google Pay merk"
       ],
@@ -3749,6 +4482,18 @@
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "In de volgende stap kunt u een storting doen met een Bitcoin-adres."
+      ],
+      "Index size:": [
+        "Index grootte"
+      ],
+      "Indexed content (first 2000 chars):": [
+        "Geïndexeerde inhoud (eerste 2000 tekens):"
+      ],
+      "Indexed files:": [
+        "Geïndexeerde bestanden:"
+      ],
+      "Indexed folders:": [
+        "Geïndexeerde mappen"
       ],
       "Inherited from parent folder": [
         "Overgenomen van bovenliggende map"
@@ -3774,6 +4519,9 @@
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Laden van kalender, gelieve te wachten. U wordt automatisch doorverwezen naar onze agendaplanner Calendly in een nieuw tabblad."
       ],
+      "Loading file preview...": [
+        "Bestandsvoorbeeld laden..."
+      ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode logo"
       ],
@@ -3783,17 +4531,29 @@
       "Messages to all your email addresses will go to your inbox.": [
         "Berichten naar al uw e-mailadressen gaan naar uw inbox."
       ],
+      "MIME:": [
+        "MIME:"
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Benoem uw nieuwe map en selecteer de bovenliggende map waarin u deze wilt plaatsen. Als u geen bovenliggende map selecteert, wordt deze als hoofdmap gemaakt."
       ],
       "New": [
         "Nieuw"
       ],
+      "No conversations yet. Start a new chat to begin.": [
+        "Nog geen gesprekken. Start een nieuw gesprek om te beginnen."
+      ],
+      "No Drive documents are loaded for inspection in this session.": [
+        "Geen Drive-documenten geladen voor inspectie in deze sessie."
+      ],
       "No payment is required at this time.": [
         "Er is op dit moment geen betaling vereist."
       ],
       "No results found": [
         "Geen resultaten gevonden"
+      ],
+      "No results found for \"${ query }\"": [
+        "Geen resultaten voor \"${ query }\""
       ],
       "Number of dedicated servers in the organization": [
         "Aantal toegewijde servers in uw organisatie"
@@ -3840,6 +4600,15 @@
       "Registering your subscription…": [
         "Uw abonnement registreren…"
       ],
+      "Searchable chunks": [
+        "Doorzoekbare chunks"
+      ],
+      "Searchable chunks:": [
+        "Doorzoekbare stukken:"
+      ],
+      "searchable sections": [
+        "doorzoekbare secties"
+      ],
       "SEPA payments are not available at the moment. Please try again later.": [
         "SEPA-betalingen zijn momenteel niet beschikbaar. Probeer het later nogmaals."
       ],
@@ -3858,6 +4627,9 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Aangezien u een loyale gebruiker bent, heeft uw account extra functies ingeschakeld."
       ],
+      "Size:": [
+        "Grootte:"
+      ],
       "Start sharing it with contacts and use it for online services.": [
         "Begin het te delen met contacten en gebruik het voor online diensten."
       ],
@@ -3874,6 +4646,9 @@
       "Thank you for subscribing. Secure browsing starts now.": [
         "Bedankt voor uw abonnement. Veilig browsen begint nu."
       ],
+      "The index reports ${ displayDriveDocs } Drive documents. Re-index or keep the session open after indexing to view details here.": [
+        "De index rapporteert ${ displayDriveDocs } Drive-documenten. Herindexeer of hou de sessie open na indexering om de details te bekijken"
+      ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Het verificatieproces zal een nieuw browsertabblad openen. Schakel het blokkeren van alle pop-ups uit."
       ],
@@ -3886,6 +4661,9 @@
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Dit is nu uw ${ defaultEmailAddress } voor het verzenden van nieuwe berichten."
       ],
+      "This may indicate that projects were deleted but their indexed files weren't cleaned up, or that spaces failed to load from IndexedDB.": [
+        "Dit kan erop wijzen dat projecten zijn verwijderd, maar dat hun geïndexeerde bestanden niet zijn opgeschoond, of dat ruimtes niet uit IndexedDB konden worden geladen."
+      ],
       "This will sign you out of all accounts currently logged in.": [
         "Dit zal u uitloggen uit alle accounts die momenteel zijn ingelogd."
       ],
@@ -3895,8 +4673,14 @@
       "To fight spam and abuse, please verify you are human.": [
         "Bevestig dat u een natuurlijk persoon bent, om spam en misbruik tegen te gaan."
       ],
+      "Total conversations:": [
+        "Totaal aantal gesprekken:"
+      ],
       "Total email addresses": [
         "Totaal e-mailadressen"
+      ],
+      "Total messages:": [
+        "Totaal aantal berichten:"
       ],
       "Total storage": [
         "Totale opslagruimte"
@@ -3906,6 +4690,9 @@
       ],
       "Total VPN connections": [
         "Totale VPN-verbindingen"
+      ],
+      "Unknown": [
+        "Onbekend"
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Upgrade nu om alle premium functionaliteiten, producten en opslag te krijgen voor een speciale prijs"
@@ -4379,6 +5166,86 @@
         "Wat is dit?"
       ]
     },
+    "lumo: Debug View": {
+      "Acceleration": [
+        "Versnelling"
+      ],
+      "Buffer size": [
+        "Buffergrootte"
+      ],
+      "Clear History": [
+        "Geschiedenis verwijderen"
+      ],
+      "Debug View": [
+        "Debug-weergave"
+      ],
+      "Differential": [
+        "Verschil"
+      ],
+      "FPS": [
+        "FPS"
+      ],
+      "Idle": [
+        "Inactief"
+      ],
+      "Lag": [
+        "Vertraging"
+      ],
+      "Last token": [
+        "Laatste token"
+      ],
+      "max": [
+        "max"
+      ],
+      "Memory": [
+        "Geheugen"
+      ],
+      "Messages": [
+        "Berichten"
+      ],
+      "Rate": [
+        "Beoordeel"
+      ],
+      "Redux updates": [
+        "Redux-updates"
+      ],
+      "Redux/sec": [
+        "Redux/sec"
+      ],
+      "Render time": [
+        "Geef tijd weer"
+      ],
+      "Search Index Debug": [
+        "Zoekindex Foutopsporing"
+      ],
+      "Smoothing (Spring-Mass)": [
+        "Vloeiend maken (veer-massa)"
+      ],
+      "Spring state": [
+        "Spring status"
+      ],
+      "Spring-Mass Visualization": [
+        "Spring-Massa Visualisatie"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "Stiffness": [
+        "Stijfheid"
+      ],
+      "Streaming": [
+        "Streaming"
+      ],
+      "to toggle": [
+        "om te wisselen"
+      ],
+      "Token delays": [
+        "Tokenvertragingen"
+      ],
+      "Tokens/sec": [
+        "Tokens/sec"
+      ]
+    },
     "mail_signup_2024: Info": {
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Schrijfassistent"
@@ -4840,9 +5707,6 @@
       ],
       "Unlimited labels": [
         "Onbeperkt aantal labels"
-      ],
-      "Unlimited logins and notes": [
-        "Onbeperkt aantal logins en notities"
       ],
       "Unlimited logins, notes and credit cards": [
         "Onbeperkt aantal logins, notities en creditcards"
@@ -5741,6 +6605,9 @@
       "Search parent folder": [
         "Zoek in bovenliggende map"
       ],
+      "Search...": [
+        "Zoeken ..."
+      ],
       "Select": [
         "Selecteer"
       ],
@@ -6056,6 +6923,12 @@
       ]
     },
     "Status": {
+      "Disabled": [
+        "Uitgeschakeld"
+      ],
+      "Enabled": [
+        "Ingeschakeld"
+      ],
       "Not available": [
         "Niet beschikbaar"
       ]
@@ -6329,6 +7202,21 @@
       ]
     },
     "Time": {
+      "${ days } days ago": [
+        "${ days } dagen geleden"
+      ],
+      "${ hours } hours ago": [
+        "${ hours } uur geleden"
+      ],
+      "${ minutes } minutes ago": [
+        "${ minutes } minuten geleden"
+      ],
+      "1 hour ago": [
+        "1 uur geleden"
+      ],
+      "Just now": [
+        "Zojuist"
+      ],
       "Yesterday": [
         "Gisteren"
       ]
@@ -6448,11 +7336,20 @@
       "Import emails, calendars, contacts": [
         "Importeer e-mails, agenda's, contacten"
       ],
+      "Indexed Drive documents": [
+        "Geïndexeerde Drive-documenten"
+      ],
       "Invalid verification code": [
         "De ingevoerde code is ongeldig"
       ],
+      "My Files": [
+        "Mijn bestanden"
+      ],
       "Network error": [
         "Netwerkfout"
+      ],
+      "Orphaned Documents Detected": [
+        "Wees documenten Gedetecteerd"
       ],
       "Payment failed": [
         "Betaling mislukt"
@@ -6474,6 +7371,9 @@
       ],
       "Request new code": [
         "Nieuwe code aanvragen"
+      ],
+      "Search Index Debug": [
+        "Zoekindex Foutopsporing"
       ],
       "Select a plan": [
         "Selecteer een abonnement"
@@ -6657,6 +7557,9 @@
       ]
     },
     "Warning": {
+      "Found ${ orphanedDocCount } documents (${ orphanedChunkCount } chunks) referencing ${ orphanedSpaceIds.length } missing space(s).": [
+        "Vond ${ orphanedDocCount } document(en) (${ orphanedChunkCount } chunks) met verwijzingen naar ${ orphanedSpaceIds.length } ontbrekende ruimte(s)."
+      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Rapporten zijn niet versleuteld met end-to-end-versleuteling, stuur geen gevoelige informatie."
       ],
