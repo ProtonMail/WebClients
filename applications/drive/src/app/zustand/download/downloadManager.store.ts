@@ -64,6 +64,7 @@ export type DownloadItem = {
     signatureIssueAllDecision?: IssueStatus;
     lastStatusUpdateTime: Date;
     isPhoto?: boolean;
+    isRetried?: boolean;
 };
 
 export type DownloadItemInput = Omit<DownloadItem, 'downloadId' | 'lastStatusUpdateTime'>;
@@ -85,6 +86,9 @@ const initialState = {
     queue: new Map(),
     queueIds: new Set<string>(),
 };
+
+const isAborted = (state: Partial<DownloadItem>) =>
+    state.status === DownloadStatus.Cancelled || state.status === DownloadStatus.Failed;
 
 export const useDownloadManagerStore = create<DownloadManagerStore>()(
     devtools(
@@ -118,6 +122,11 @@ export const useDownloadManagerStore = create<DownloadManagerStore>()(
                     }
                     const shouldUpdateTimestamp = update.status !== existing.status;
                     const queue = new Map(state.queue);
+                    if (isAborted(update)) {
+                        update.signatureIssueAllDecision = undefined;
+                        update.signatureIssues = undefined;
+                        update.unsupportedFileDetected = undefined;
+                    }
                     queue.set(downloadId, {
                         ...existing,
                         ...update,

@@ -1,7 +1,6 @@
 import type { NodeEntity, ProtonDriveClient } from '@proton/drive/index';
 import { NodeType, SDKEvent, getDrive, getDriveForPhotos } from '@proton/drive/index';
 
-import fileSaver from '../../store/_downloads/fileSaver/fileSaver';
 import { bufferToStream } from '../../utils/stream';
 import { TransferCancel } from '../../utils/transfer';
 import { loadCreateReadableStreamWrapper } from '../../utils/webStreamsPolyfill';
@@ -12,6 +11,7 @@ import {
     MalawareDownloadResolution,
     useDownloadManagerStore,
 } from '../../zustand/download/downloadManager.store';
+import { fileSaver } from '../fileSaver/fileSaver';
 import ArchiveGenerator from './ArchiveGenerator';
 import { ArchiveStreamGenerator } from './ArchiveStreamGenerator';
 import { DownloadScheduler } from './DownloadScheduler';
@@ -151,24 +151,20 @@ export class DownloadManager {
         const stream = bufferToStream(buffer);
         const storageSize = getNodeStorageSize(node);
 
-        const log = (message: string) => downloadLogDebug('FileSaver', message);
-        await fileSaver.instance.saveAsFile(
-            stream,
-            {
-                filename: node.name,
-                mimeType: mimeType ?? DEFAULT_MIME_TYPE,
-            },
-            log
-        );
-
         const { addDownloadItem } = useDownloadManagerStore.getState();
-        addDownloadItem({
+        const downloadId = addDownloadItem({
             name: node.name,
             storageSize,
             status: DownloadStatus.Finished,
             nodeUids: [node.uid],
             downloadedBytes: storageSize,
             isPhoto: false,
+        });
+
+        await fileSaver.saveAsFile(stream, {
+            downloadId,
+            filename: node.name,
+            mimeType: mimeType ?? DEFAULT_MIME_TYPE,
         });
     }
 
@@ -228,7 +224,6 @@ export class DownloadManager {
             const storageSize = getNodeStorageSize(node);
             updateDownloadItem(downloadId, { storageSize: storageSize, status: DownloadStatus.InProgress });
 
-            const log = (message: string) => downloadLogDebug('FileSaver', message);
             const transformStream = new TransformStream<Uint8Array<ArrayBuffer>>();
             const streamWriter = transformStream.writable.getWriter();
             const streamWrapperPromise = loadCreateReadableStreamWrapper(transformStream.readable);
@@ -249,11 +244,12 @@ export class DownloadManager {
             });
 
             const savePromise = streamWrapperPromise.then((streamForSaver) =>
-                fileSaver.instance.saveAsFile(
-                    streamForSaver,
-                    { filename: node.name, mimeType: DEFAULT_MIME_TYPE, size: storageSize },
-                    log
-                )
+                fileSaver.saveAsFile(streamForSaver, {
+                    downloadId,
+                    filename: node.name,
+                    mimeType: DEFAULT_MIME_TYPE,
+                    size: storageSize,
+                })
             );
 
             const abortSaving = async (reason?: unknown) => {
@@ -377,7 +373,6 @@ export class DownloadManager {
             const generator = archiveStreamGenerator.generator;
             const trackerController = archiveStreamGenerator.controller;
 
-            const log = (message: string) => downloadLogDebug('FileSaver', message);
             abortController.signal.addEventListener('abort', () => archiveGenerator.cancel());
 
             const waitForFirstItemPromise = archiveStreamGenerator.waitForFirstItem();
@@ -397,14 +392,13 @@ export class DownloadManager {
             })();
 
             const savingPromise = (async () => {
-                const meta = {
+                await waitForFirstItemPromise;
+                const savePromise = fileSaver.saveAsFile(archiveGenerator.stream, {
+                    downloadId,
                     filename: archiveName,
                     mimeType: 'application/zip',
                     size: totalEncryptedSize > 0 ? totalEncryptedSize : undefined,
-                } as const;
-
-                await waitForFirstItemPromise;
-                const savePromise = fileSaver.instance.saveAsFile(archiveGenerator.stream, meta, log);
+                });
 
                 if (abortController.signal.aborted || archiveStreamGenerator.lastError) {
                     // Super important that we don't save the file if cancelled or erroring
@@ -545,12 +539,13 @@ export class DownloadManager {
     }
 
     retry(downloadIds: string[] = []) {
-        const { getQueueItem } = useDownloadManagerStore.getState();
+        const { getQueueItem, updateDownloadItem } = useDownloadManagerStore.getState();
         downloadIds.forEach((id) => {
             const storeItem = getQueueItem(id);
             const requestedDownload = this.requestedDownloads.get(id);
             if (storeItem && requestedDownload) {
                 downloadLogDebug('Retry download', { downloadId: id });
+                updateDownloadItem(id, { isRetried: true });
                 if (requestedDownload.length === 1 && requestedDownload[0].type !== NodeType.Folder) {
                     void this.scheduleSingleFileDownload(id, requestedDownload[0]);
                 } else {
