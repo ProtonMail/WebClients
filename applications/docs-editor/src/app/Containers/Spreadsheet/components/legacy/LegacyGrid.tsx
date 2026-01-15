@@ -203,6 +203,7 @@ export function LegacyGrid() {
       }
       FilterBox={FilterBox}
       getFormattedValue={useUI((ui) => ui.legacy.getFormattedValue)}
+      getEffectiveExtendedValue={useUI((ui) => ui.legacy.getEffectiveExtendedValue)}
     />
   )
 }
