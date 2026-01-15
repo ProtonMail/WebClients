@@ -1650,12 +1650,6 @@
       ]
     },
     "Billing cycle": {
-      "Renews automatically": [
-        "자동으로 갱신"
-      ],
-      "Renews automatically at ${ renewPrice }, for ${ renewLength } month": [
-        "${ renewLength }개월간 자동으로 ${ renewPrice }에 갱신"
-      ],
       "Renews automatically on ${ subscriptionManagerName }": [
         "${ subscriptionManagerName }에 자동으로 갱신합니다."
       ]
@@ -1752,15 +1746,6 @@
       ]
     },
     "BOSS": {
-      "${ n } year ago": [
-        "${ n }년 전"
-      ],
-      "Add a domain": [
-        "도메인 추가"
-      ],
-      "Add more users...": [
-        "사용자 더 추가하기..."
-      ],
       "Authenticate": [
         "인증"
       ],
@@ -1773,17 +1758,8 @@
       "Domain ownership verified": [
         "도메인 소유권 인증됨"
       ],
-      "Domain setup": [
-        "도메인 설정"
-      ],
-      "Email notifications will be sent when migration starts and when it’s completed. You will also be notified if there are errors and if migration is paused due to expired links.": [
-        "이메일 알림은 이전 작업이 시작되고 완료될 때 전송됩니다. 또한 오류 발생시, 혹은 만료된 링크로 인하여 작업이 일시정지될 경우에도 알림이 전송됩니다."
-      ],
       "Estimated size": [
         "예상 용량"
-      ],
-      "Everything": [
-        "전체"
       ],
       "Failed to load OAuth": [
         "OAuth를 불러오지 못했습니다."
@@ -1809,9 +1785,6 @@
       "Migration includes": [
         "이전에 포함되는 항목:"
       ],
-      "Not started": [
-        "시작되지 않음"
-      ],
       "Required to create user accounts": [
         "사용자 계정 생성 필요"
       ],
@@ -1824,26 +1797,14 @@
       "Sign in to Google Workspace": [
         "Google Workspace에 로그인"
       ],
-      "Status": [
-        "상태"
-      ],
       "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Markeplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue. Learn more": [
         "조직의 데이터를 이전하기 위해, Google Workspace Marketplace에서 ${ BRAND_NAME } 이전 작업 도우미를 설치해야 합니다. 데이터 복사를 위해 ${ BRAND_NAME }에 권한 부여가 필요합니다. 설치 완료 후, 작업을 계속하기 위해 다시 이 탭으로 전환하세요. 더 알아보기"
-      ],
-      "Transfer data from": [
-        "데이터 양식 전환"
       ],
       "User": [
         "사용자"
       ],
-      "Users migrated": [
-        "사용자가 이전되었습니다."
-      ],
       "Verify your domain": [
         "내 도메인 인증"
-      ],
-      "Who will be notified?": [
-        "누구에게 알림이 전송되나요?"
       ]
     },
     "Browser": {
@@ -5477,12 +5438,6 @@
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
         "${ BRAND_NAME } 이(가) Yahoo 계정에 연결할 수 없습니다. 확인해 주세요:"
       ],
-      "2-step verification is enabled in your external account.": [
-        "2단계 인증이 사용자의 외부 계정에 활성화되어 있습니다."
-      ],
-      "2-step verification is enabled in your external email account.": [
-        "2단계 인증이 사용자의 외부 이메일 계정에 활성화 된 상태의 경우"
-      ],
       "IMAP access is enabled in your external account.": [
         "사용자 외부 계정의 IMAP 접근이 활성화되어 있는지 여부"
       ],
@@ -8800,6 +8755,12 @@
       "Numbers": [
         "숫자"
       ],
+      "OpenVPN password": [
+        "OpenVPN 비밀번호"
+      ],
+      "OpenVPN username": [
+        "OpenVPN 사용자 이름"
+      ],
       "Operating system": [
         "운영체제"
       ],
@@ -10212,9 +10173,6 @@
       "Unlimited labels": [
         "무제한 라벨"
       ],
-      "Unlimited logins and notes": [
-        "무제한 로그인 및 메모"
-      ],
       "Unlimited logins, notes and credit cards": [
         "무제한 로그인, 메모 및 신용 카드"
       ],
@@ -10849,6 +10807,9 @@
       ],
       "Number of records exceeds the download limit of 10000": [
         "기록 수가 최대 10000개의 다운로드 제한을 초과합니다."
+      ],
+      "OpenVPN credentials regenerated": [
+        "OpenVPN 자격 증명 재생성됨"
       ],
       "Reminder has been sent": [
         "알리미가 전송되었습니다."

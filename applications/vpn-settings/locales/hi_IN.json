@@ -1245,10 +1245,6 @@
       ]
     },
     "Billing cycle": {
-      "Renews automatically at ${ renewPrice }, for ${ renewLength } month": [
-        "${ renewLength } महीने के लिए ${ renewPrice } पर स्वचालित रूप से नवीनीकरण होगा।",
-        "${ renewLength } महीनों के लिए ${ renewPrice } पर स्वचालित रूप से नवीनीकरण होगा।"
-      ],
       "Renews automatically on ${ subscriptionManagerName }": [
         "${ subscriptionManagerName } को अपनेआप रिन्यू होगा"
       ]
@@ -4309,12 +4305,6 @@
       ],
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
         "${ BRAND_NAME } आपके Yahoo खाते से जुड़ नहीं सका। देख ले की:"
-      ],
-      "2-step verification is enabled in your external account.": [
-        "आपके बाहरी खाते में 2-कदम सत्यापन सक्षम है।"
-      ],
-      "2-step verification is enabled in your external email account.": [
-        "आपके बाहरी ईमेल खाते में 2-कदम सत्यापन सक्षम है।"
       ],
       "IMAP access is enabled in your external account.": [
         "आपके बाहरी खाते में IMAP एक्सेस सक्षम है।"
@@ -8215,9 +8205,6 @@
       ],
       "Unlimited labels": [
         "असीमित लेबल"
-      ],
-      "Unlimited logins and notes": [
-        "असीम लॉगइन और नोट"
       ],
       "Unlimited messages per day": [
         "असीमित संदेश हर दिन"
