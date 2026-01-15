@@ -287,6 +287,9 @@
       "Deselect all": [
         "取消全选"
       ],
+      "Disable auto-add ${ MEET_APP_NAME } links feature": [
+        "停用自动添加 ${ MEET_APP_NAME } 链接功能"
+      ],
       "Discard": [
         "放弃"
       ],
@@ -829,6 +832,9 @@
       ],
       "Try another method": [
         "更换验证方式"
+      ],
+      "Turn off auto-add": [
+        "关闭自动添加"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "启用 ${ DARK_WEB_MONITORING_NAME }"
@@ -3286,6 +3292,9 @@
       "Failed to update secret passphrase": [
         "更新密码短语失败"
       ],
+      "Failed to update settings": [
+        "更新设置失败"
+      ],
       "First name is too long": [
         "名字太长。"
       ],
@@ -3624,6 +3633,9 @@
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "邮件收件人不能超过 ${ maxContacts } 位"
+      ],
+      "You cannot enter the organizer's email": [
+        "您不能输入组织者的电子邮件"
       ],
       "You have reached the maximum number of calendars.": [
         "您已达到日历创建数量的上限。"
@@ -4407,12 +4419,6 @@
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
         "${ BRAND_NAME } 无法连接您的 Yahoo 账户，请确认："
       ],
-      "2-step verification is enabled in your external account.": [
-        "该邮箱开启了两步验证."
-      ],
-      "2-step verification is enabled in your external email account.": [
-        "该邮箱开启了两步验证."
-      ],
       "IMAP access is enabled in your external account.": [
         "您的外部账户已开启 IMAP 访问。"
       ],
@@ -4793,6 +4799,9 @@
       "Billing cycle: ${ text }": [
         "计费周期：${ text }"
       ],
+      "Booking contact email: ${ selectedCalendar.Email }": [
+        "预订联系人电子邮件：${ selectedCalendar.Email }"
+      ],
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "提升组织品牌形象，为用户创造更加一致的在线体验。"
       ],
@@ -5042,6 +5051,9 @@
       "High Priority": [
         "首要优先顺序"
       ],
+      "How far in advance can someone book?": [
+        "可以提前多久预订？"
+      ],
       "If keyboard shortcuts are enabled, you can use the following keys for quick actions or to jump to different views. ${ metaKey } + K is always enabled.": [
         "如果启用了键盘快捷键，可以使用以下按键进行快速操作或跳转到不同视图。${ metaKey } + K 始终处于启用状态。"
       ],
@@ -5183,6 +5195,12 @@
       "Messages to all your email addresses will go to your inbox.": [
         "发送到您所有邮箱地址的信息将全部转至您的收件箱。"
       ],
+      "Min. 2 hours before": [
+        "提前至少 2 小时"
+      ],
+      "Min. 48 hours before": [
+        "至少提前 48 小时"
+      ],
       "Monitor accounts": [
         "监控账户"
       ],
@@ -5224,6 +5242,9 @@
       ],
       "Not connected": [
         "未连接"
+      ],
+      "Not on the same day": [
+        "不在同一天"
       ],
       "Number of dedicated servers in the organization": [
         "组织中的专用服务器数量"
@@ -5588,6 +5609,9 @@
       "Warning": [
         "注意"
       ],
+      "We automatically added a ${ MEET_APP_NAME } link": [
+        "我们已自动添加 ${ MEET_APP_NAME } 链接"
+      ],
       "We couldn’t process your payment.": [
         "我们未能处理您的支付。"
       ],
@@ -5626,6 +5650,9 @@
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "当您设置双因素身份验证时，我们会提供恢复代码，当您无法访问身份验证应用时，可以使用这些代码登录。"
+      ],
+      "Which calendars should block bookings?": [
+        "哪些日历应阻止预订？"
       ],
       "Which event would you like to delete?": [
         "您要删除哪些日程？"
@@ -6051,6 +6078,9 @@
       "Add image URL": [
         "添加图像网址"
       ],
+      "Add notice period": [
+        "添加通知期"
+      ],
       "Add to group": [
         "添加至群组"
       ],
@@ -6116,6 +6146,9 @@
       ],
       "Category": [
         "类别"
+      ],
+      "Check additional calendars for availability": [
+        "检查其他日历的可用性"
       ],
       "City": [
         "城市"
@@ -7420,9 +7453,6 @@
       ],
       "Unlimited labels": [
         "标签数量不限"
-      ],
-      "Unlimited logins and notes": [
-        "无限登录和笔记"
       ],
       "Unlimited logins, notes and credit cards": [
         "无限制登录、备注和信用卡"
@@ -9978,6 +10008,9 @@
       ],
       "Answer sent and event deleted": [
         "答复已发送且日程已删除"
+      ],
+      "Auto-add ${ MEET_APP_NAME } links disabled": [
+        "已禁用自动添加 ${ MEET_APP_NAME } 链接"
       ],
       "Billing details updated": [
         "账单详细信息已更新"
