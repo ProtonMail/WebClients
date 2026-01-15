@@ -2,8 +2,7 @@ import type { ReactNode } from 'react';
 import { useEffect, useState } from 'react';
 import { flushSync } from 'react-dom';
 
-import { type EventLoop, serverEvent, userSettingsThunk, userThunk } from '@proton/account';
-import * as bootstrap from '@proton/account/bootstrap';
+import { type EventLoop, serverEvent, userThunk } from '@proton/account';
 import {
     ApiProvider,
     EventManagerProvider,
@@ -14,6 +13,7 @@ import {
     useThemeQueryParameter,
 } from '@proton/components';
 import useConfig from '@proton/components/hooks/useConfig';
+import metrics from '@proton/metrics';
 import { authJwt, pullForkSession, setCookies, setRefreshCookies } from '@proton/shared/lib/api/auth';
 import type { ApiWithListener } from '@proton/shared/lib/api/createApi';
 import { getEvents, getLatestID } from '@proton/shared/lib/api/events';
@@ -25,6 +25,8 @@ import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import createEventManager from '@proton/shared/lib/eventManager/eventManager';
 import { withAuthHeaders, withUIDHeaders } from '@proton/shared/lib/fetch/headers';
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
+import { setMetricsEnabled } from '@proton/shared/lib/helpers/metrics';
+import { setSentryEnabled } from '@proton/shared/lib/helpers/sentry';
 import { loadCryptoWorker } from '@proton/shared/lib/helpers/setupCryptoWorker';
 import { getBrowserLocale } from '@proton/shared/lib/i18n/helper';
 import { loadLocales as loadLocalesI18n } from '@proton/shared/lib/i18n/loadLocale';
@@ -46,7 +48,13 @@ import { extraThunkArguments } from '../app/store/thunk';
 import broadcast, { MessageType } from './broadcast';
 import ExpiredLink from './components/ExpiredLink';
 
-const initializeProtonTelemetry = (config: ProtonConfig, UID: string) => {
+const initializeTelemetry = (config: ProtonConfig, UID: string) => {
+    // Deliberately ignoring user settings as lite app uses JWT token for auth and the token does not have permissions to fetch user settings
+    // There are very few users for lite app, so the impact is very low
+    setSentryEnabled(true);
+    setMetricsEnabled(true);
+    metrics.setReportMetrics(true);
+
     telemetry.init({
         config,
         uid: UID,
@@ -144,11 +152,8 @@ const Setup = ({ api, onLogin, UID, children, loader }: Props) => {
             });
 
             const setupModels = async () => {
-                const [user, userSettings] = await Promise.all([dispatch(userThunk()), dispatch(userSettingsThunk())]);
-                bootstrap.enableTelemetryBasedOnUserSettings({ userSettings });
-                if (!!userSettings.Telemetry) {
-                    initializeProtonTelemetry(config, UID);
-                }
+                const [user] = await Promise.all([dispatch(userThunk())]);
+                initializeTelemetry(config, UID);
 
                 return { user };
             };
