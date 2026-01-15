@@ -180,7 +180,7 @@ export class ClientError extends Error {
     }
 }
 
-export class ConflictClientError extends Error {
+export class ConflictClientError extends ClientError {
     constructor(message: string) {
         super(message);
         Object.setPrototypeOf(this, ConflictClientError.prototype);
