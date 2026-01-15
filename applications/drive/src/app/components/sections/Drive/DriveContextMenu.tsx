@@ -11,7 +11,7 @@ import type { ContextMenuProps } from '../../FileBrowser/interface';
 import { useDetailsModal } from '../../modals/DetailsModal';
 import { useFilesDetailsModal } from '../../modals/FilesDetailsModal';
 import { useMoveToFolderModal } from '../../modals/MoveToFolderModal/MoveToFolderModal';
-import { useRenameModal } from '../../modals/RenameModal';
+import { useRenameModalDeprecated } from '../../modals/RenameModal';
 import { useRevisionsModal } from '../../modals/RevisionsModal/RevisionsModal';
 import { useLinkSharingModal } from '../../modals/ShareLinkModal/ShareLinkModal';
 import {
@@ -57,7 +57,7 @@ export function DriveItemContextMenu({
     const [detailsModal, showDetailsModal] = useDetailsModal();
     const [filesDetailsModal, showFilesDetailsModal] = useFilesDetailsModal();
     const [moveToFolderModal, showMoveToFolderModal] = useMoveToFolderModal();
-    const [renameModal, showRenameModal] = useRenameModal();
+    const [renameModal, showRenameModal] = useRenameModalDeprecated();
     const [linkSharingModal, showLinkSharingModal] = useLinkSharingModal();
 
     const [revisionsModal, showRevisionsModal] = useRevisionsModal();

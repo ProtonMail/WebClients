@@ -14,7 +14,7 @@ import type { DecryptedLink, useActions } from '../../../../store';
 import { useDetailsModal } from '../../../modals/DetailsModal';
 import { useFilesDetailsModal } from '../../../modals/FilesDetailsModal';
 import { useMoveToFolderModal } from '../../../modals/MoveToFolderModal/MoveToFolderModal';
-import { useRenameModal } from '../../../modals/RenameModal';
+import { useRenameModalDeprecated } from '../../../modals/RenameModal';
 import { useLinkSharingModal } from '../../../modals/ShareLinkModal/ShareLinkModal';
 
 interface Props {
@@ -32,7 +32,7 @@ const ActionsDropdown = ({ volumeId, shareId, selectedLinks, permissions, trashL
     const [filesDetailsModal, showFilesDetailsModal] = useFilesDetailsModal();
     const [detailsModal, showDetailsModal] = useDetailsModal();
     const [moveToFolderModal, showMoveToFolderModal] = useMoveToFolderModal();
-    const [renameModal, showRenameModal] = useRenameModal();
+    const [renameModal, showRenameModal] = useRenameModalDeprecated();
     const [linkSharingModal, showLinkSharingModal] = useLinkSharingModal();
     const isEditor = useMemo(() => getCanWrite(permissions), [permissions]);
     const isAdmin = useMemo(() => getCanAdmin(permissions), [permissions]);
@@ -71,7 +71,6 @@ const ActionsDropdown = ({ volumeId, shareId, selectedLinks, permissions, trashL
                 showRenameModal({
                     isFile: selectedLinks[0].isFile,
                     name: selectedLinks[0].name,
-                    mediaType: selectedLinks[0].mimeType,
                     isDoc: isProtonDocsDocument(selectedLinks[0].mimeType),
                     volumeId: selectedLinks[0].volumeId,
                     linkId: selectedLinks[0].linkId,

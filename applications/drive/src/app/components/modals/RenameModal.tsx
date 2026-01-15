@@ -19,9 +19,7 @@ import {
 import { useLoading } from '@proton/hooks';
 import noop from '@proton/utils/noop';
 
-import { RenameModal } from '../../modals/RenameModal';
 import { formatLinkName, splitLinkName, validateLinkNameField } from '../../store';
-import { getIsPublicContext } from '../../utils/getIsPublicContext';
 
 interface Props {
     onClose?: () => void;
@@ -124,10 +122,7 @@ const RenameModalDeprecated = ({
     );
 };
 
-export const useRenameModal = () => {
-    const isPublic = getIsPublicContext();
-
-    const [renameModal, showRenameModal] = useModalTwoStatic(!isPublic ? RenameModal : RenameModalDeprecated);
-
+export const useRenameModalDeprecated = () => {
+    const [renameModal, showRenameModal] = useModalTwoStatic(RenameModalDeprecated);
     return [renameModal, showRenameModal] as const;
 };

@@ -3,16 +3,15 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Dropdown, DropdownMenu, DropdownMenuButton, Icon, ToolbarButton, usePopperAnchor } from '@proton/components';
-import { MemberRole, getDrive } from '@proton/drive/index';
+import { MemberRole, generateNodeUid, getDrive } from '@proton/drive/index';
 import type { IconName } from '@proton/icons/types';
-import { isProtonDocsDocument } from '@proton/shared/lib/helpers/mimetype';
 import generateUID from '@proton/utils/generateUID';
 
 import { useFilesDetailsModal } from '../../../components/modals/FilesDetailsModal';
 import { useMoveToFolderModal } from '../../../components/modals/MoveToFolderModal/MoveToFolderModal';
-import { useRenameModal } from '../../../components/modals/RenameModal';
 import { useLinkSharingModal } from '../../../components/modals/ShareLinkModal/ShareLinkModal';
 import { useDetailsModal } from '../../../modals/DetailsModal';
+import { useRenameModal } from '../../../modals/RenameModal';
 import { useActions } from '../../../store';
 
 type Item = {
@@ -41,7 +40,7 @@ export const ActionsDropdown = ({ volumeId, shareId, selectedItems, role }: Prop
     const [linkSharingModal, showLinkSharingModal] = useLinkSharingModal();
     const isEditor = role === MemberRole.Editor;
     const isAdmin = role === MemberRole.Admin;
-    const { renameLink, trashLinks } = useActions();
+    const { trashLinks } = useActions();
     const hasFoldersSelected = selectedItems.some((item) => !item.isFile);
     const isMultiSelect = selectedItems.length > 1;
     const selectedLinkIds = selectedItems.map(({ linkId }) => linkId);
@@ -72,22 +71,11 @@ export const ActionsDropdown = ({ volumeId, shareId, selectedItems, role }: Prop
             name: c('Action').t`Rename`,
             icon: 'pen-square',
             testId: 'actions-dropdown-rename',
-            action: () =>
+            action: () => {
                 showRenameModal({
-                    isFile: selectedItems[0].isFile,
-                    name: selectedItems[0].name,
-                    isDoc: isProtonDocsDocument(selectedItems[0].mimeType),
-                    volumeId: selectedItems[0].volumeId,
-                    linkId: selectedItems[0].linkId,
-                    mediaType: selectedItems[0].mimeType,
-                    onSubmit: (formattedName) =>
-                        renameLink(
-                            new AbortController().signal,
-                            selectedItems[0].rootShareId,
-                            selectedItems[0].linkId,
-                            formattedName
-                        ),
-                }),
+                    nodeUid: generateNodeUid(selectedItems[0].volumeId, selectedItems[0].linkId),
+                });
+            },
         },
         {
             hidden: isMultiSelect,
