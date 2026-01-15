@@ -375,6 +375,9 @@
       "Export selection as .vcf": [
         "Экспарт вылучэння ў фармат .vcf"
       ],
+      "Export this version (as xlsx)": [
+        "Экспартаваць гэту версію (у фармаце xlsx)"
+      ],
       "Forgot password?": [
         "Забылі пароль?"
       ],
@@ -3933,12 +3936,6 @@
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
         "${ BRAND_NAME } не можа падключыцца да вашага ўліковага запісу Yahoo. Пераканайцеся, што:"
       ],
-      "2-step verification is enabled in your external account.": [
-        "Двухэтапная праверка ўключана ў вашым знешнім уліковым запісе."
-      ],
-      "2-step verification is enabled in your external email account.": [
-        "Двухэтапная праверка ўключана ў вашым знешнім уліковым запісе электроннай пошты."
-      ],
       "IMAP access is enabled in your external account.": [
         "У вашым знешнім уліковым запісе ўключаны IMAP."
       ],
@@ -3947,6 +3944,12 @@
       ],
       "Too many recent requests. Please try again in a few moments.": [
         "Занадта шмат запытаў за апошні час. Паспрабуйце яшчэ раз праз некаторы час."
+      ],
+      "Two-factor authentication is enabled in your external account.": [
+        "Двухфактарная аўтэнтыфікацыя ўключана ў вашым знешнім уліковым запісе."
+      ],
+      "Two-factor authentication is enabled in your external email account.": [
+        "Двухфактарная аўтэнтыфікацыя ўключана ў вашым знешнім уліковым запісе электроннай пошты."
       ],
       "Use your app password if:": [
         "Выкарыстоўвайце свой пароль праграмы, калі:"
@@ -7053,9 +7056,6 @@
       ],
       "Unlimited labels": [
         "Неабмежаваная колькасць метак"
-      ],
-      "Unlimited logins and notes": [
-        "Неабмежаваная колькасць запісаў уваходу і нататак"
       ],
       "Unlimited logins, notes and credit cards": [
         "Неабмежаваная колькасць запісаў уваходу, нататак і крэдытных картак"

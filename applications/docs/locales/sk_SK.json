@@ -375,6 +375,9 @@
       "Export selection as .vcf": [
         "Exportovať výber ako .vcf"
       ],
+      "Export this version (as xlsx)": [
+        "Exportovať túto verziu (ako xlsx)"
+      ],
       "Forgot password?": [
         "Zabudnuté heslo?"
       ],
@@ -3930,12 +3933,6 @@
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
         "${ BRAND_NAME } sa nemôže pripojiť k vášmu účtu Yahoo. Uistite sa, že:"
       ],
-      "2-step verification is enabled in your external account.": [
-        "Dvojstupňové overenie je zapnuté vo vašom vzdialenom účte."
-      ],
-      "2-step verification is enabled in your external email account.": [
-        "Dvojfázové overovanie je zapnuté vo vašom vzdialenom emailovom účte."
-      ],
       "IMAP access is enabled in your external account.": [
         "IMAP prístup je zapnutý vo vašom externom účte."
       ],
@@ -3944,6 +3941,12 @@
       ],
       "Too many recent requests. Please try again in a few moments.": [
         "Bolo zadaných príliš veľa požiadaviek. Skúste to za pár minút."
+      ],
+      "Two-factor authentication is enabled in your external account.": [
+        "Dvojfázové overovanie je zapnuté vo vašom externom účte."
+      ],
+      "Two-factor authentication is enabled in your external email account.": [
+        "Dvojfázové overovanie je zapnuté vo vašom externom emailovom účte."
       ],
       "Use your app password if:": [
         "Použite heslo aplikácie, ak:"
@@ -6999,9 +7002,6 @@
       ],
       "Unlimited labels": [
         "Neobmedzený počet štítkov"
-      ],
-      "Unlimited logins and notes": [
-        "Neobmedzený počet prihlásení a poznámok"
       ],
       "Unlimited logins, notes and credit cards": [
         "Neobmedzené prihlásenia, poznámky a platobné karty"
