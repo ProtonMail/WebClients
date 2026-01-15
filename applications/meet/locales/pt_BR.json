@@ -457,6 +457,9 @@
       "Payments problem": [
         "Problema com pagamento"
       ],
+      "Sheets problem": [
+        "Problema no Sheets"
+      ],
       "Sign in problem": [
         "Problema no login"
       ],
@@ -1579,6 +1582,10 @@
       ],
       "${ participantCount } of ${ maxParticipants } participants": [
         "${ participantCount } de ${ maxParticipants } participantes"
+      ],
+      "${ participantCount } participant": [
+        "${ participantCount } participante",
+        "${ participantCount } participantes"
       ],
       "${ presenterName } (you) is presenting": [
         "${ presenterName } (você) está apresentando"
