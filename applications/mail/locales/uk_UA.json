@@ -1308,6 +1308,9 @@
       "Trust": [
         "Довіряти"
       ],
+      "Trust key": [
+        "Довіряти ключу"
+      ],
       "Trust public key": [
         "Довіряти відкритому ключу"
       ],
@@ -5652,12 +5655,6 @@
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
         "${ BRAND_NAME } не може з'єднатися з вашим обліковим записом Yahoo. Переконайтеся, що:"
       ],
-      "2-step verification is enabled in your external account.": [
-        "Двоетапну перевірку увімкнено у вашому зовнішньому обліковому записі."
-      ],
-      "2-step verification is enabled in your external email account.": [
-        "Двоетапну перевірку увімкнено у вашому зовнішньому обліковому записі пошти."
-      ],
       "IMAP access is enabled in your external account.": [
         "Доступ до IMAP увімкнено у вашому зовнішньому обліковому записі."
       ],
@@ -6803,6 +6800,9 @@
         "Ініціалізація…"
       ],
       "Insert image": [
+        "Вставити зображення",
+        "Вставити зображення",
+        "Вставити зображення",
         "Вставити зображення"
       ],
       "Insert link": [
@@ -9976,9 +9976,6 @@
       "Unlimited labels": [
         "Необмежена кількість міток"
       ],
-      "Unlimited logins and notes": [
-        "Необмежена кількість імен користувачів та нотаток"
-      ],
       "Unlimited logins, notes and credit cards": [
         "Необмежена кількість записів входу, нотаток та банківських карток"
       ],
@@ -13136,9 +13133,6 @@
       ],
       "Download ${ VPN_APP_NAME }": [
         "Завантажити ${ VPN_APP_NAME }"
-      ],
-      "Download Desktop app": [
-        "Завантажити програму для комп'ютера"
       ],
       "Enable ${ DARK_WEB_MONITORING_NAME }": [
         "Увімкнути ${ DARK_WEB_MONITORING_NAME }"

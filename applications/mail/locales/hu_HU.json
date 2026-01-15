@@ -1487,8 +1487,7 @@
         "Megbízható"
       ],
       "Trust key": [
-        "Kulcs megjelölése megbízhatóként",
-        "Kulcsok megjelölése megbízhatóként"
+        "Megbízható kulcs"
       ],
       "Trust public key": [
         "Nyilvános kulcs megjelölése megbízhatóként"
@@ -6030,12 +6029,6 @@
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
         "A ${ BRAND_NAME } nem tud csatlakozni a Yahoo fiókjához. Ellenőrizze a következőket:"
       ],
-      "2-step verification is enabled in your external account.": [
-        "A kétlépcsős hitelesítés engedélyezve van a külső fiókon."
-      ],
-      "2-step verification is enabled in your external email account.": [
-        "A kétlépcsős hitelesítés engedélyezve van a külső fiókon."
-      ],
       "IMAP access is enabled in your external account.": [
         "Az IMAP elérés engedélyezve van a külső fiókon."
       ],
@@ -7255,6 +7248,7 @@
         "Inicializálás…"
       ],
       "Insert image": [
+        "Kép beillesztése",
         "Kép beillesztése"
       ],
       "Insert link": [
@@ -10818,9 +10812,6 @@
       "Unlimited labels": [
         "Korlátlan számú címke"
       ],
-      "Unlimited logins and notes": [
-        "Korlátlan számú bejelentkezés és jegyzet"
-      ],
       "Unlimited logins, notes and credit cards": [
         "Korlátlan bejelentkezés, jegyzet és bankkártya"
       ],
@@ -14275,9 +14266,6 @@
       ],
       "Download ${ VPN_APP_NAME }": [
         "${ VPN_APP_NAME } letöltése"
-      ],
-      "Download Desktop app": [
-        "Asztali alkalmazás letöltése"
       ],
       "Enable ${ DARK_WEB_MONITORING_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } engedélyezése"
