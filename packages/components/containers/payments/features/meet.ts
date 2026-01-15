@@ -9,9 +9,10 @@ export const FREE_MAX_ACTIVE_MEETINGS = 1;
 export const PAID_MAX_ACTIVE_MEETINGS = 2;
 
 export const FREE_MAX_PARTICIPANTS = 50;
-export const PAID_MAX_PARTICIPANTS = 250;
+export const PAID_MAX_PARTICIPANTS = 100;
+export const PAID_PREMIUM_MAX_PARTICIPANTS = 250;
 
-export const FREE_MAX_MEETINGS_PER_DAY = 50;
+export const FREE_MAX_MEETINGS_PER_DAY = 5;
 export const PAID_MAX_MEETINGS_PER_DAY = 'unlimited';
 
 export const getMeetAppFeature = (): PlanCardFeatureDefinition => {
@@ -201,15 +202,15 @@ export const getMeetFeatures = (): PlanCardFeature[] => {
                 [PLANS.MAIL_PRO]: getMaxParticipants(FREE_MAX_PARTICIPANTS),
                 [PLANS.MAIL_BUSINESS]: getMaxParticipants(FREE_MAX_PARTICIPANTS),
                 [PLANS.BUNDLE_PRO]: getMaxParticipants(FREE_MAX_PARTICIPANTS),
-                [PLANS.BUNDLE_PRO_2024]: getMaxParticipants(FREE_MAX_PARTICIPANTS),
-                [PLANS.BUNDLE_BIZ_2025]: getMaxParticipants(PAID_MAX_PARTICIPANTS),
+                [PLANS.BUNDLE_PRO_2024]: getMaxParticipants(PAID_MAX_PARTICIPANTS),
+                [PLANS.BUNDLE_BIZ_2025]: getMaxParticipants(PAID_PREMIUM_MAX_PARTICIPANTS),
                 [PLANS.PASS_PRO]: getMaxParticipants(FREE_MAX_PARTICIPANTS),
                 [PLANS.PASS_BUSINESS]: getMaxParticipants(FREE_MAX_PARTICIPANTS),
                 [PLANS.VPN_PRO]: getMaxParticipants(FREE_MAX_PARTICIPANTS),
                 [PLANS.VPN_BUSINESS]: getMaxParticipants(FREE_MAX_PARTICIPANTS),
                 [PLANS.LUMO]: getMaxParticipants(FREE_MAX_PARTICIPANTS),
                 [PLANS.LUMO_BUSINESS]: getMaxParticipants(FREE_MAX_PARTICIPANTS),
-                [PLANS.MEET_BUSINESS]: getMaxParticipants(FREE_MAX_PARTICIPANTS),
+                [PLANS.MEET_BUSINESS]: getMaxParticipants(PAID_MAX_PARTICIPANTS),
                 [PLANS.VISIONARY]: getMaxParticipants(PAID_MAX_PARTICIPANTS),
                 [PLANS.VPN_PASS_BUNDLE_BUSINESS]: getMaxParticipants(FREE_MAX_PARTICIPANTS),
             },
