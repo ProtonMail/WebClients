@@ -62,6 +62,7 @@ export enum CommonFeatureFlag {
     WebNPSModal = 'WebNPSModal',
     MeetPlans = 'MeetPlans',
     WebApiRateLimiter = 'WebApiRateLimiter',
+    PassSimpleLoginLifetimeOffer = 'PassSimpleLoginLifetimeOffer',
 }
 
 enum AccountFlag {
