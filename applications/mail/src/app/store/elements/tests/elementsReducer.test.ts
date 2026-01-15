@@ -192,6 +192,93 @@ describe('markMessageAs', () => {
                 },
             ]);
         });
+
+        it('should mark category as read when marking the conversation as read', () => {
+            const message = setupMessage({
+                messageID: MESSAGE_ID,
+                unreadState: 'unread',
+                labelIDs: [
+                    MAILBOX_LABEL_IDS.INBOX,
+                    MAILBOX_LABEL_IDS.ALL_MAIL,
+                    MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
+                    MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
+                ],
+            });
+
+            const conversation = setupConversation({
+                conversationLabels: [
+                    {
+                        ID: MAILBOX_LABEL_IDS.INBOX,
+                        ContextNumMessages: 2,
+                        ContextNumUnread: 1,
+                    },
+                    {
+                        ID: MAILBOX_LABEL_IDS.ALL_MAIL,
+                        ContextNumMessages: 2,
+                        ContextNumUnread: 1,
+                    },
+                    {
+                        ID: MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
+                        ContextNumMessages: 2,
+                        ContextNumUnread: 1,
+                    },
+                    {
+                        ID: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
+                        ContextNumMessages: 2,
+                        ContextNumUnread: 1,
+                    },
+                ] as ConversationLabel[],
+                numMessages: 2,
+                numUnread: 1,
+                numAttachments: 1,
+            });
+
+            testState.elements = {
+                [CONVERSATION_ID]: conversation,
+                [MESSAGE_ID]: message,
+            };
+
+            markConversationsAsReadPending(testState, {
+                type: 'mailbox/markConversationsAsRead',
+                payload: undefined,
+                meta: {
+                    arg: {
+                        elements: [message, conversation],
+                        labelID: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
+                    },
+                },
+            });
+
+            const updatedMessage = testState.elements[MESSAGE_ID] as Message;
+            expect(updatedMessage.Unread).toEqual(0);
+
+            const updatedConversation = testState.elements[CONVERSATION_ID] as Conversation;
+            expect(updatedConversation.NumMessages).toBe(2);
+            expect(updatedConversation.NumUnread).toBe(0);
+            expect(updatedConversation.NumAttachments).toBe(1);
+            expectConversationLabelsSameArray(updatedConversation.Labels, [
+                {
+                    ID: MAILBOX_LABEL_IDS.INBOX,
+                    ContextNumMessages: 2,
+                    ContextNumUnread: 0,
+                },
+                {
+                    ID: MAILBOX_LABEL_IDS.ALL_MAIL,
+                    ContextNumMessages: 2,
+                    ContextNumUnread: 0,
+                },
+                {
+                    ID: MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
+                    ContextNumMessages: 2,
+                    ContextNumUnread: 0,
+                },
+                {
+                    ID: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
+                    ContextNumMessages: 2,
+                    ContextNumUnread: 0,
+                },
+            ]);
+        });
     });
 
     describe('markAsUnRead', () => {
@@ -350,6 +437,93 @@ describe('markMessageAs', () => {
                     ContextNumMessages: 2,
                     ContextNumUnread: 0,
                     ContextNumAttachments: 1,
+                },
+            ]);
+        });
+
+        it('should update inbox when marking category conversation as read', () => {
+            const message = setupMessage({
+                messageID: MESSAGE_ID,
+                unreadState: 'read',
+                labelIDs: [
+                    MAILBOX_LABEL_IDS.INBOX,
+                    MAILBOX_LABEL_IDS.ALL_MAIL,
+                    MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
+                    MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
+                ],
+            });
+
+            const conversation = setupConversation({
+                conversationLabels: [
+                    {
+                        ID: MAILBOX_LABEL_IDS.INBOX,
+                        ContextNumMessages: 2,
+                        ContextNumUnread: 0,
+                    },
+                    {
+                        ID: MAILBOX_LABEL_IDS.ALL_MAIL,
+                        ContextNumMessages: 2,
+                        ContextNumUnread: 0,
+                    },
+                    {
+                        ID: MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
+                        ContextNumMessages: 2,
+                        ContextNumUnread: 0,
+                    },
+                    {
+                        ID: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
+                        ContextNumMessages: 2,
+                        ContextNumUnread: 0,
+                    },
+                ] as ConversationLabel[],
+                numMessages: 2,
+                numUnread: 0,
+                numAttachments: 1,
+            });
+
+            testState.elements = {
+                [CONVERSATION_ID]: conversation,
+                [MESSAGE_ID]: message,
+            };
+
+            markConversationsAsUnreadPending(testState, {
+                type: 'mailbox/markConversationsAsUnRead',
+                payload: undefined,
+                meta: {
+                    arg: {
+                        elements: [message, conversation],
+                        labelID: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
+                    },
+                },
+            });
+
+            const updatedMessage = testState.elements[MESSAGE_ID] as Message;
+            expect(updatedMessage.Unread).toEqual(0);
+
+            const updatedConversation = testState.elements[CONVERSATION_ID] as Conversation;
+            expect(updatedConversation.NumMessages).toBe(2);
+            expect(updatedConversation.NumUnread).toBe(1);
+            expect(updatedConversation.NumAttachments).toBe(1);
+            expectConversationLabelsSameArray(updatedConversation.Labels, [
+                {
+                    ID: MAILBOX_LABEL_IDS.INBOX,
+                    ContextNumMessages: 2,
+                    ContextNumUnread: 1,
+                },
+                {
+                    ID: MAILBOX_LABEL_IDS.ALL_MAIL,
+                    ContextNumMessages: 2,
+                    ContextNumUnread: 0,
+                },
+                {
+                    ID: MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
+                    ContextNumMessages: 2,
+                    ContextNumUnread: 0,
+                },
+                {
+                    ID: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
+                    ContextNumMessages: 2,
+                    ContextNumUnread: 1,
                 },
             ]);
         });
