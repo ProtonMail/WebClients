@@ -1,7 +1,6 @@
 import type { ReactNode } from 'react';
 
 import DriveLogo from '@proton/components/components/logo/DriveLogo';
-import LumoLogo from '@proton/components/components/logo/LumoLogo';
 import MailLogo from '@proton/components/components/logo/MailLogo';
 import PassLogo from '@proton/components/components/logo/PassLogo';
 import VpnLogo from '@proton/components/components/logo/VpnLogo';
@@ -27,6 +26,7 @@ import {
     hasVisionary,
     hasVpnBusiness,
 } from '@proton/payments';
+import { hasBundlePro, hasMeetBusiness } from '@proton/payments/core/subscription/helpers';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
 import { hasPassLifetime } from '@proton/shared/lib/user/helpers';
@@ -94,7 +94,7 @@ export const PlanIcon = ({
     if (hasLumo(subscription) || planName === PLANS.LUMO) {
         return (
             <LogoIconShape size={size}>
-                <LumoLogo variant="glyph-only" scale={size / 44} />
+                <CustomLogo planName={PLANS.LUMO} app={app} />
             </LogoIconShape>
         );
     }
@@ -102,6 +102,13 @@ export const PlanIcon = ({
         return (
             <LogoIconShape size={size}>
                 <PassLogo variant="glyph-only" scale={size / 44} />
+            </LogoIconShape>
+        );
+    }
+    if (hasMeetBusiness(subscription) || planName === PLANS.MEET_BUSINESS) {
+        return (
+            <LogoIconShape size={size}>
+                <CustomLogo planName={PLANS.MEET_BUSINESS} app={app} />
             </LogoIconShape>
         );
     }
@@ -164,7 +171,12 @@ export const PlanIcon = ({
             </LogoIconShape>
         );
     }
-    if (hasBundlePro2024(subscription) || planName === PLANS.BUNDLE_PRO_2024) {
+    if (
+        hasBundlePro(subscription) ||
+        hasBundlePro2024(subscription) ||
+        planName === PLANS.BUNDLE_PRO_2024 ||
+        planName === PLANS.BUNDLE_PRO
+    ) {
         return (
             <LogoIconShape border={false} size={size}>
                 <CustomLogo planName={PLANS.BUNDLE_PRO_2024} app={app} size={size} />

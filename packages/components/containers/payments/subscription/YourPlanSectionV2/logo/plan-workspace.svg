@@ -1,0 +1,118 @@
+<svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g clip-path="url(#clip0_8086_1510)">
+        <path d="M0 0H36V36H0V0Z" fill="#1B1340" />
+        <mask
+            id="mask0_8086_1510"
+            style="mask-type: alpha"
+            maskUnits="userSpaceOnUse"
+            x="0"
+            y="0"
+            width="36"
+            height="36"
+        >
+            <path d="M0 0H36V36H0V0Z" fill="black" />
+        </mask>
+        <g mask="url(#mask0_8086_1510)">
+            <circle
+                opacity="0.8"
+                cx="20"
+                cy="20"
+                r="20"
+                transform="matrix(-1 0 0 1 20 -20)"
+                fill="url(#paint0_radial_8086_1510)"
+            />
+            <circle
+                opacity="0.8"
+                cx="20"
+                cy="20"
+                r="20"
+                transform="matrix(-1 0 0 1 56 -20)"
+                fill="url(#paint1_radial_8086_1510)"
+            />
+            <circle
+                opacity="0.8"
+                cx="20"
+                cy="20"
+                r="20"
+                transform="matrix(-1 0 0 1 20 16)"
+                fill="url(#paint2_radial_8086_1510)"
+            />
+            <circle
+                opacity="0.8"
+                cx="20"
+                cy="20"
+                r="20"
+                transform="matrix(-1 0 0 1 56 16)"
+                fill="url(#paint3_radial_8086_1510)"
+            />
+        </g>
+        <path
+            d="M11 22.7502V27.9464H14.7797V22.9753C14.7797 22.4916 14.9789 22.0278 15.3333 21.6857C15.6878 21.3436 16.1686 21.1514 16.67 21.1511H20.5468C22.3547 21.1511 24.0886 20.4584 25.367 19.2252C26.6454 17.992 27.3636 16.3195 27.3636 14.5756C27.3626 12.8319 26.644 11.16 25.3659 9.92707C24.0877 8.69414 22.3544 8.00102 20.5468 8H11.0032V14.4982H14.7805V11.4263H20.2926C21.1485 11.4263 21.9693 11.7542 22.5745 12.338C23.1797 12.9218 23.5197 13.7136 23.5197 14.5392C23.5195 15.3648 23.1794 16.1564 22.5743 16.7402C21.9691 17.3239 21.1484 17.652 20.2926 17.6522H16.2883C15.5939 17.6517 14.9063 17.7832 14.2647 18.0391C13.623 18.2951 13.04 18.6706 12.5489 19.144C12.0577 19.6175 11.6682 20.1796 11.4024 20.7984C11.1366 21.4172 10.9999 22.0804 11 22.7502Z"
+            fill="white"
+        />
+        <path
+            d="M16.67 21.1511C15.9253 21.1511 15.188 21.2926 14.5 21.5675C13.812 21.8424 13.1869 22.2454 12.6604 22.7533C12.1339 23.2613 11.7163 23.8643 11.4314 24.528C11.1465 25.1916 10.9999 25.9029 11 26.6212V27.9464H14.7797V22.9753C14.7797 22.4916 14.9789 22.0277 15.3333 21.6857C15.6878 21.3436 16.1686 21.1513 16.67 21.1511Z"
+            fill="url(#paint4_linear_8086_1510)"
+        />
+    </g>
+    <defs>
+        <radialGradient
+            id="paint0_radial_8086_1510"
+            cx="0"
+            cy="0"
+            r="1"
+            gradientUnits="userSpaceOnUse"
+            gradientTransform="translate(20 20) rotate(90) scale(20)"
+        >
+            <stop stop-color="#FF62C0" />
+            <stop offset="1" stop-color="#FF62C0" stop-opacity="0" />
+        </radialGradient>
+        <radialGradient
+            id="paint1_radial_8086_1510"
+            cx="0"
+            cy="0"
+            r="1"
+            gradientUnits="userSpaceOnUse"
+            gradientTransform="translate(20 20) rotate(90) scale(20)"
+        >
+            <stop stop-color="#15ADFF" />
+            <stop offset="1" stop-color="#15ADFF" stop-opacity="0" />
+        </radialGradient>
+        <radialGradient
+            id="paint2_radial_8086_1510"
+            cx="0"
+            cy="0"
+            r="1"
+            gradientUnits="userSpaceOnUse"
+            gradientTransform="translate(20 20) rotate(90) scale(20)"
+        >
+            <stop stop-color="#24ECC6" />
+            <stop offset="1" stop-color="#24ECC6" stop-opacity="0" />
+        </radialGradient>
+        <radialGradient
+            id="paint3_radial_8086_1510"
+            cx="0"
+            cy="0"
+            r="1"
+            gradientUnits="userSpaceOnUse"
+            gradientTransform="translate(20 20) rotate(90) scale(20)"
+        >
+            <stop stop-color="#FFD583" />
+            <stop offset="1" stop-color="#FFD583" stop-opacity="0" />
+        </radialGradient>
+        <linearGradient
+            id="paint4_linear_8086_1510"
+            x1="13.835"
+            y1="26.9632"
+            x2="13.835"
+            y2="16.091"
+            gradientUnits="userSpaceOnUse"
+        >
+            <stop stop-color="white" />
+            <stop offset="1" stop-color="#1C0554" />
+        </linearGradient>
+        <clipPath id="clip0_8086_1510">
+            <rect width="36" height="36" fill="white" />
+        </clipPath>
+    </defs>
+</svg>
