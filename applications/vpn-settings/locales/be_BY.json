@@ -1691,14 +1691,11 @@
       ]
     },
     "Billing cycle": {
-      "Renews automatically": [
-        "Падаўжаецца аўтаматычна"
-      ],
-      "Renews automatically at ${ renewPrice }, for ${ renewLength } month": [
-        "Аўтаматычнае падаўжэнне па кошце ${ renewPrice } за перыяд часу ${ renewLength } месяц",
-        "Аўтаматычнае падаўжэнне па кошце ${ renewPrice } за перыяд часу ${ renewLength } месяцы",
-        "Аўтаматычнае падаўжэнне па кошце ${ renewPrice } за перыяд часу ${ renewLength } месяцаў",
-        "Аўтаматычнае падаўжэнне па кошце ${ renewPrice } за перыяд часу ${ renewLength } месяцаў"
+      "Renews automatically at ${ renewPrice }, for ${ renewCycle } month": [
+        "Аўтаматычнае падаўжэнне па кошце ${ renewPrice } за перыяд часу ${ renewCycle } месяц",
+        "Аўтаматычнае падаўжэнне па кошце ${ renewPrice } за перыяд часу ${ renewCycle } месяцы",
+        "Аўтаматычнае падаўжэнне па кошце ${ renewPrice } за перыяд часу ${ renewCycle } месяцаў",
+        "Аўтаматычнае падаўжэнне па кошце ${ renewPrice } за перыяд часу ${ renewCycle } месяцаў"
       ],
       "Renews automatically on ${ subscriptionManagerName }": [
         "Падаўжаецца аўтаматычна ў ${ subscriptionManagerName }"
@@ -1796,21 +1793,6 @@
       ]
     },
     "BOSS": {
-      "${ migratedCount } of ${ providerUsers.length }": [
-        "${ migratedCount } з ${ providerUsers.length }"
-      ],
-      "${ n } year ago": [
-        "${ n } год таму",
-        "${ n } гады таму",
-        "${ n } гадоў таму",
-        "${ n } гадоў таму"
-      ],
-      "Add a domain": [
-        "Дадаць дамен"
-      ],
-      "Add more users...": [
-        "Дадаць больш карыстальнікаў..."
-      ],
       "Authenticate": [
         "Аўтэнтыфікаваць"
       ],
@@ -1823,20 +1805,14 @@
       "Contacts": [
         "Кантакты"
       ],
+      "Domain connected": [
+        "Дамен падключаны"
+      ],
       "Domain ownership verified": [
         "Уладальнік дамена спраўджаны"
       ],
-      "Domain setup": [
-        "Наладка дамена"
-      ],
-      "Email notifications will be sent when migration starts and when it’s completed. You will also be notified if there are errors and if migration is paused due to expired links.": [
-        "Апавяшчэнні па электроннай пошце будуць адпраўлены, калі пачнецца перанос і калі ён будзе завершаны. Вы таксама будзеце апавешчаны, калі будуць памылкі і калі перанос будзе прыпынена з прычыны пратэрмінаваных спасылак."
-      ],
       "Estimated size": [
         "Прыблізны памер"
-      ],
-      "Everything": [
-        "Усе"
       ],
       "Failed to load OAuth": [
         "Не ўдалося загрузіць OAuth"
@@ -1862,11 +1838,32 @@
       "Migration includes": [
         "Перанос уключаны"
       ],
-      "Not started": [
-        "Не запушчана"
+      "Migration started for ${ n } user": [
+        "Перанос пачаты для ${ n } карыстальніка",
+        "Перанос пачаты для ${ n } карыстальнікаў",
+        "Перанос пачаты для ${ n } карыстальнікаў",
+        "Перанос пачаты для ${ n } карыстальнікаў"
+      ],
+      "Migration status": [
+        "Статус пераносу"
+      ],
+      "Organization does not have enough seats available": [
+        "У арганізацыі недастаткова даступных ліцэнзій"
+      ],
+      "Organization does not have enough storage available": [
+        "У арганізацыі недастаткова даступнага месца для захоўвання"
+      ],
+      "Organization settings": [
+        "Налады арганізацыі"
+      ],
+      "Required": [
+        "Абавязкова"
       ],
       "Required to create user accounts": [
         "Неабходна для стварэння ўліковых запісаў карыстальнікаў"
+      ],
+      "Select at least one user to start a migration": [
+        "Выберыце прынамсі аднаго карыстальніка, каб пачаць перанос"
       ],
       "Select what you want to migrate, this will apply to all users whether they are created now or later. Migration will start after user accounts are created.": [
         "Выберыце, што вы хочаце перанесці. Гэта дзеянне будзе ўжыта да ўсіх карыстальнікаў незалежна ад таго, калі яны былі створаны. Перанос пачнецца пасля стварэння ўліковых запісаў карыстальнікаў."
@@ -1877,29 +1874,23 @@
       "Sign in to Google Workspace": [
         "Увайсці ў Google Workspace"
       ],
-      "Status": [
-        "Статус"
-      ],
       "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Markeplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue. Learn more": [
         "Вам неабходна ўсталяваць праграму ${ BRAND_NAME } Migration Assistant з Google Workspace Marketplace, каб перанесці даныя сваёй арганізацыі. Гэта дзеянне дазволіць ${ BRAND_NAME } скапіяваць вашы даныя. Вярніцеся сюды для працягу пасля таго, як праграма будзе ўсталявана. Даведацца больш"
       ],
-      "Transfer data from": [
-        "Перанесці даныя з"
+      "Transfer errors": [
+        "Памылкі перадачы"
       ],
       "User": [
         "Карыстальнік"
       ],
-      "Users migrated": [
-        "Карыстальнікі перанесены"
-      ],
       "Verify your domain": [
         "Спраўдзіць свой дамен"
       ],
+      "Verify your domain to start a migration": [
+        "Спраўдзіце свой дамен, каб пачаць перанос"
+      ],
       "What are you migrating?": [
         "Што вы плануеце перанесці?"
-      ],
-      "Who will be notified?": [
-        "Хто будзе апавешчаны?"
       ]
     },
     "Browser": {
@@ -5668,12 +5659,6 @@
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
         "${ BRAND_NAME } не можа падключыцца да вашага ўліковага запісу Yahoo. Пераканайцеся, што:"
       ],
-      "2-step verification is enabled in your external account.": [
-        "Двухэтапная праверка ўключана ў вашым знешнім уліковым запісе."
-      ],
-      "2-step verification is enabled in your external email account.": [
-        "Двухэтапная праверка ўключана ў вашым знешнім уліковым запісе электроннай пошты."
-      ],
       "IMAP access is enabled in your external account.": [
         "У вашым знешнім уліковым запісе ўключаны IMAP."
       ],
@@ -5682,6 +5667,12 @@
       ],
       "Too many recent requests. Please try again in a few moments.": [
         "Занадта шмат запытаў за апошні час. Паспрабуйце яшчэ раз праз некаторы час."
+      ],
+      "Two-factor authentication is enabled in your external account.": [
+        "Двухфактарная аўтэнтыфікацыя ўключана ў вашым знешнім уліковым запісе."
+      ],
+      "Two-factor authentication is enabled in your external email account.": [
+        "Двухфактарная аўтэнтыфікацыя ўключана ў вашым знешнім уліковым запісе электроннай пошты."
       ],
       "Use your app password if:": [
         "Выкарыстоўвайце свой пароль праграмы, калі:"
@@ -9216,6 +9207,12 @@
       "Numbers": [
         "Лічбы"
       ],
+      "OpenVPN password": [
+        "Пароль OpenVPN"
+      ],
+      "OpenVPN username": [
+        "Імя карыстальніка OpenVPN"
+      ],
       "Operating system": [
         "Аперацыйная сістэма"
       ],
@@ -10723,9 +10720,6 @@
       "Unlimited labels": [
         "Неабмежаваная колькасць метак"
       ],
-      "Unlimited logins and notes": [
-        "Неабмежаваная колькасць запісаў уваходу і нататак"
-      ],
       "Unlimited logins, notes and credit cards": [
         "Неабмежаваная колькасць запісаў уваходу, нататак і крэдытных картак"
       ],
@@ -11390,6 +11384,9 @@
       ],
       "Number of records exceeds the download limit of 10000": [
         "Колькасць запісаў перавышае абмежаванне спампоўвання ў 10 000"
+      ],
+      "OpenVPN credentials regenerated": [
+        "Уліковыя даныя OpenVPN паўторна згенерыраваны"
       ],
       "Reminder has been sent": [
         "Напамін адпраўлены"
@@ -15928,6 +15925,9 @@
       ],
       "OpenVPN configuration files": [
         "Канфігурацыйныя файлы OpenVPN"
+      ],
+      "OpenVPN username": [
+        "Імя карыстальніка OpenVPN"
       ],
       "Org setup": [
         "Наладка арганізацыі"

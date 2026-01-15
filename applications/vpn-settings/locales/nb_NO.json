@@ -1667,13 +1667,6 @@
       ]
     },
     "Billing cycle": {
-      "Renews automatically": [
-        "Fornyes automatisk"
-      ],
-      "Renews automatically at ${ renewPrice }, for ${ renewLength } month": [
-        "Fornyes automatisk til ${ renewPrice }, for ${ renewLength } måned",
-        "Fornyes automatisk til ${ renewPrice }, for ${ renewLength } måneder"
-      ],
       "Renews automatically on ${ subscriptionManagerName }": [
         "Fornyes automatisk på ${ subscriptionManagerName }"
       ]
@@ -1770,19 +1763,6 @@
       ]
     },
     "BOSS": {
-      "${ migratedCount } of ${ providerUsers.length }": [
-        "${ migratedCount } av ${ providerUsers.length }"
-      ],
-      "${ n } year ago": [
-        "${ n } år siden",
-        "${ n } år siden"
-      ],
-      "Add a domain": [
-        "Legg til et domene"
-      ],
-      "Add more users...": [
-        "Legg til flere brukere..."
-      ],
       "Authenticate": [
         "Autentiser"
       ],
@@ -1798,17 +1778,8 @@
       "Domain ownership verified": [
         "Domeneeierskap er verifisert"
       ],
-      "Domain setup": [
-        "Domeneoppsett"
-      ],
-      "Email notifications will be sent when migration starts and when it’s completed. You will also be notified if there are errors and if migration is paused due to expired links.": [
-        "E-postvarsler vil bli sendt når migreringen starter og når den er fullført. Du vil også bli varslet hvis det er feil og hvis migreringen blir satt på pause på grunn av utløpte koblinger."
-      ],
       "Estimated size": [
         "Estimert størrelse"
-      ],
-      "Everything": [
-        "Alt"
       ],
       "Failed to load OAuth": [
         "Kunne ikke laste inn OAuth"
@@ -1834,9 +1805,6 @@
       "Migration includes": [
         "Migrering inkluderer"
       ],
-      "Not started": [
-        "Ikke påbegynt"
-      ],
       "Required to create user accounts": [
         "Kreves for å opprette brukerkontoer"
       ],
@@ -1849,29 +1817,17 @@
       "Sign in to Google Workspace": [
         "Logg på Google Workspace"
       ],
-      "Status": [
-        "Status"
-      ],
       "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Markeplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue. Learn more": [
         "For å migrere organisasjonens data, må du installere ${ BRAND_NAME } Migration Assistant-appen fra Google Workspace Marketplace. Dette vil gi ${ BRAND_NAME } tillatelse til å kopiere dataene dine. Etter å ha installert den, kom tilbake hit for å fortsette. Lær mer"
       ],
-      "Transfer data from": [
-        "Overfør data fra"
-      ],
       "User": [
         "Bruker"
-      ],
-      "Users migrated": [
-        "Brukere migrert"
       ],
       "Verify your domain": [
         "Verifiser domenet ditt"
       ],
       "What are you migrating?": [
         "Hva migrerer du?"
-      ],
-      "Who will be notified?": [
-        "Hvem vil bli varslet?"
       ]
     },
     "Browser": {
@@ -5569,12 +5525,6 @@
       ],
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
         "${ BRAND_NAME } kan ikke koble til Yahoo-kontoen din. Sørg for at:"
-      ],
-      "2-step verification is enabled in your external account.": [
-        "Totrinnsbekreftelse er aktiveret på din eksterne konto."
-      ],
-      "2-step verification is enabled in your external email account.": [
-        "Totrinnsbekreftelse er aktiveret på din eksterne e-postkonto."
       ],
       "IMAP access is enabled in your external account.": [
         "IMAP-adgang er aktivert på din eksterne konto."
@@ -10428,9 +10378,6 @@
       ],
       "Unlimited labels": [
         "Ubegrenset antall etiketter"
-      ],
-      "Unlimited logins and notes": [
-        "Ubegrenset antall pålogginger og notater"
       ],
       "Unlimited logins, notes and credit cards": [
         "Ubegrenset antall pålogginger, notater og kredittkort"
