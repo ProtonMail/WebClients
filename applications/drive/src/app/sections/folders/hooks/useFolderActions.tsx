@@ -107,8 +107,7 @@ export const useFolderActions = ({ allSortedItems, selectedItems, shareId, linkI
         }
 
         showRenameModal({
-            ...item,
-            mediaType: item.mimeType,
+            nodeUid: item.uid,
         });
     };
 

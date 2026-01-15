@@ -1,7 +1,6 @@
 import { Vr } from '@proton/atoms/Vr/Vr';
 import { ContextSeparator, type useConfirmActionModal } from '@proton/components';
-import { NodeType, splitNodeUid } from '@proton/drive/index';
-import { isProtonDocsDocument } from '@proton/shared/lib/helpers/mimetype';
+import { splitNodeUid } from '@proton/drive/index';
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 
 import type { useLinkSharingModal } from '../../../components/modals/ShareLinkModal/ShareLinkModal';
@@ -135,19 +134,7 @@ export const SharedByMeActions = ({
                     type={'context'}
                     onClick={() =>
                         showRenameModal({
-                            isFile: singleItem.type === NodeType.File || singleItem.type === NodeType.Photo,
-                            isDoc: !!singleItem.mediaType && isProtonDocsDocument(singleItem.mediaType),
-                            name: singleItem.name,
-                            volumeId: splitedSingleItemUid.volumeId,
-                            linkId: splitedSingleItemUid.nodeId,
-                            mediaType: singleItem.mediaType,
-                            onSubmit: (formattedName) =>
-                                renameLink(
-                                    new AbortController().signal,
-                                    singleItem.rootShareId,
-                                    splitedSingleItemUid.nodeId,
-                                    formattedName
-                                ),
+                            nodeUid: singleItem.nodeUid,
                         })
                     }
                     close={close}
