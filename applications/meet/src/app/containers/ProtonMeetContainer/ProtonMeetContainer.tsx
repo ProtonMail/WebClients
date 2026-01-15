@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 
 import { type GroupKeyInfo, MeetCoreErrorEnum } from '@proton-meet/proton-meet-core';
-import { type Room, Track } from 'livekit-client';
+import { DisconnectReason, type Room, Track } from 'livekit-client';
 import { c } from 'ttag';
 
 import { useSubscription } from '@proton/account/subscription/hooks';
@@ -566,14 +566,22 @@ export const ProtonMeetContainer = ({
                 originalOnTokenRefresh?.(token);
             };
 
-            room.on('disconnected', () => {
+            room.on('disconnected', (reason?: DisconnectReason) => {
                 instantMeetingRef.current = false;
                 mlsSetupDone.current = false;
                 startHealthCheck.current = false;
 
                 setJoinedRoom(false);
                 joinedRoomLoggedRef.current = false;
+                void wasmApp?.leaveMeeting();
                 void stopPiP();
+
+                if (reason === DisconnectReason.ROOM_DELETED) {
+                    createNotification({
+                        type: 'info',
+                        text: c('Info').t`The host has ended the meeting`,
+                    });
+                }
             });
 
             if (!isMobile()) {
