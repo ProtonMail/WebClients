@@ -20,7 +20,7 @@ export const LazyLottie = ({ getAnimationData, ...props }: Props) => {
                 console.error('Failed to load animation');
             }
         })();
-    }, []);
+    }, [getAnimationData]);
 
     const fallback = <div className={props.className} style={props.style} />;
 

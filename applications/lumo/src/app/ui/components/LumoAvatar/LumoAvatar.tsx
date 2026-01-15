@@ -85,6 +85,7 @@ const useThemeLumoAvatarAnimation = (isGenerating: boolean, isGeneratingWithTool
         return (isDarkLumoTheme ? darkMap[key] : lightMap[key]) ?? null;
     };
 
+    /* getAnimationData returns a stable function */
     return { getAnimationData: getAnimationDataToImport(), isDarkLumoTheme };
 };
 
