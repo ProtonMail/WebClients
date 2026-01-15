@@ -7,7 +7,7 @@ export interface FeaturePoint {
 }
 
 export interface WhatsNewModalFeature {
-    lottieAnimation?: any;
+    lottieAnimation?: () => Promise<{ default: object }>;
     image?: any;
     getTitle: () => string;
     getDescription?: () => string;
