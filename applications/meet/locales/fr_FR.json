@@ -457,6 +457,9 @@
       "Payments problem": [
         "Problème de paiement"
       ],
+      "Sheets problem": [
+        "Problème avec Sheets"
+      ],
       "Sign in problem": [
         "Problème de connexion"
       ],
@@ -1579,6 +1582,10 @@
       ],
       "${ participantCount } of ${ maxParticipants } participants": [
         "${ participantCount } sur ${ maxParticipants } participants"
+      ],
+      "${ participantCount } participant": [
+        "${ participantCount } participant",
+        "${ participantCount } participants"
       ],
       "${ presenterName } (you) is presenting": [
         "${ presenterName } (vous) est en train de présenter"

@@ -369,6 +369,9 @@
       "Export selection as .vcf": [
         "Auswahl im .vcf-Format exportieren"
       ],
+      "Export this version (as xlsx)": [
+        "Diese Version exportieren (als xlsx)"
+      ],
       "Forgot password?": [
         "Passwort vergessen?"
       ],
@@ -1202,6 +1205,9 @@
       ],
       "Payments problem": [
         "Zahlungsproblem"
+      ],
+      "Sheets problem": [
+        "Tabellenblatt-Problem"
       ],
       "Sign in problem": [
         "Problem bei der Anmeldung"
@@ -3854,12 +3860,6 @@
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
         "${ BRAND_NAME } kann keine Verbindung zu deinem Yahoo-Konto herstellen. Bitte stelle sicher, dass:"
       ],
-      "2-step verification is enabled in your external account.": [
-        "Die 2-Schritt-Verifizierung in deinem externen Konto aktiviert ist."
-      ],
-      "2-step verification is enabled in your external email account.": [
-        "Die 2-Schritt-Verifizierung in deinem externen Konto aktiviert ist."
-      ],
       "IMAP access is enabled in your external account.": [
         "Der IMAP-Zugang in deinem externen Konto aktiviert ist."
       ],
@@ -3868,6 +3868,12 @@
       ],
       "Too many recent requests. Please try again in a few moments.": [
         "Zu viele kürzliche Anfragen. Bitte versuche es in wenigen Augenblicken erneut."
+      ],
+      "Two-factor authentication is enabled in your external account.": [
+        "Zwei-Faktor-Authentifizierung ist in deinem externen Konto aktiviert."
+      ],
+      "Two-factor authentication is enabled in your external email account.": [
+        "Zwei-Faktor-Authentifizierung ist in deinem externen E-Mail-Konto aktiviert."
       ],
       "Use your app password if:": [
         "Verwende dein App-Passwort, wenn:"
@@ -6862,9 +6868,6 @@
       ],
       "Unlimited labels": [
         "Unbegrenzte Anzahl von Kategorien"
-      ],
-      "Unlimited logins and notes": [
-        "Unbegrenzte Logins und Notizen"
       ],
       "Unlimited logins, notes and credit cards": [
         "Unbegrenzte Logins, Notizen und Kreditkarten"

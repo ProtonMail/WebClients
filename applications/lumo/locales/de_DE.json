@@ -38,6 +38,9 @@
       "Back": [
         "Zurück"
       ],
+      "Back to search settings": [
+        "Zurück zu den Sucheinstellungen"
+      ],
       "Cancel": [
         "Abbrechen"
       ],
@@ -200,6 +203,9 @@
       "Open navigation": [
         "Navigation öffnen"
       ],
+      "Open project": [
+        "Projekt öffnen"
+      ],
       "Pay": [
         "Zahlen"
       ],
@@ -208,6 +214,9 @@
       ],
       "Previous page": [
         "Vorherige Seite"
+      ],
+      "Re-index all content - conversations and files": [
+        "Alle Inhalte neu indexieren: Unterhaltungen und Dateien"
       ],
       "Refer a friend": [
         "Wirb einen Freund"
@@ -665,6 +674,9 @@
       "Payments problem": [
         "Zahlungsproblem"
       ],
+      "Sheets problem": [
+        "Tabellenblatt-Problem"
+      ],
       "Sign in problem": [
         "Problem bei der Anmeldung"
       ],
@@ -809,6 +821,9 @@
       "Continue": [
         "Fortfahren"
       ],
+      "Create folder": [
+        "Ordner erstellen"
+      ],
       "Dark": [
         "Dunkel"
       ],
@@ -868,6 +883,9 @@
       ],
       "Upload file and add to knowledge base": [
         "Datei hochladen und zur Wissensdatenbank hinzufügen"
+      ],
+      "Upload files": [
+        "Dateien hochladen"
       ],
       "Upload from device": [
         "Vom Gerät hochladen"
@@ -940,6 +958,9 @@
       ],
       "Unlimited daily chats": [
         "Unbegrenzte tägliche Chats"
+      ],
+      "Unlimited projects": [
+        "Unbegrenzte Projekte"
       ],
       "We keep no logs of what you ask, or what ${ LUMO_SHORT_APP_NAME } replies. Your chats can’t be seen, shared, or used to profile you. ${ LUMO_SHORT_APP_NAME } saves nothing on our servers.": [
         "Wir speichern keine Protokolle darüber, was du fragst oder was ${ LUMO_SHORT_APP_NAME } antwortet. Deine Chats können weder eingesehen, geteilt noch zur Profilerstellung verwendet werden. ${ LUMO_SHORT_APP_NAME } speichert nichts auf unseren Servern."
@@ -1025,11 +1046,20 @@
       ]
     },
     "collider_2025: Description": {
+      "Always enable web search for new conversations": [
+        "Immer Websuche für neue Unterhaltungen aktivieren"
+      ],
       "Elevate your private AI experience and unlock advanced models and premium features with ${ LUMO_SHORT_APP_NAME } Plus.": [
         "Verbessere dein privates KI-Erlebnis und schalte erweiterte Modelle und Premium-Funktionen mit ${ LUMO_SHORT_APP_NAME } Plus frei."
       ],
+      "Encrypted search index for chats and Drive files.": [
+        "Verschlüsselter Suchindex für Chats und Drive-Dateien."
+      ],
       "Last updated on ${ formattedDate }": [
         "Zuletzt aktualisiert am ${ formattedDate }"
+      ],
+      "Permanently delete your project and chats. This is irreversible.": [
+        "Lösche dein Projekt und deine Chats dauerhaft. Das ist unwiderruflich."
       ],
       "Sign in to access your account and unlock more features. Don't have one? ${ createLink }": [
         "Melde dich an, um auf dein Konto zuzugreifen und weitere Funktionen freizuschalten. Hast du keins? ${ createLink }"
@@ -1058,6 +1088,9 @@
       "Failed to process ${ DRIVE_SHORT_APP_NAME } file: ${ file.name }": [
         "Fehler beim Verarbeiten der ${ DRIVE_SHORT_APP_NAME }-Datei: ${ file.name }"
       ],
+      "Failed to upload \"${ file.name }\" to ${ DRIVE_APP_NAME }": [
+        "„${ file.name }“ konnte nicht zu ${ DRIVE_APP_NAME } hochgeladen werden"
+      ],
       "File \"${ file.name }\" is too large (${ fileSizeFormatted }). Maximum allowed size is ${ maxSizeFormatted }.": [
         "Datei „${ file.name }“ ist zu groß (${ fileSizeFormatted }). Die maximal zulässige Größe beträgt ${ maxSizeFormatted }."
       ],
@@ -1075,6 +1108,9 @@
       ],
       "PowerPoint files are not supported. Please convert to PDF and upload the PDF version for better text extraction.": [
         "PowerPoint-Dateien sind nicht unterstützt. Bitte konvertiere sie in PDF und lade die PDF-Version für eine bessere Textextraktion hoch."
+      ],
+      "Search service not available": [
+        "Suche nicht verfügbar"
       ],
       "Sign up for free to continue chatting and unlock access to chat history, starred chats, and more features.": [
         "Melde dich kostenlos an, um weiter zu chatten und Zugang zu deinem Chatverlauf, markierten Chats und weiteren Funktionen freizuschalten."
@@ -1290,6 +1326,9 @@
       "Error Processing File": [
         "Fehler beim Verarbeiten der Datei"
       ],
+      "Exceeds ${ maxSize } limit": [
+        "Überschreitet das Limit von ${ maxSize }"
+      ],
       "Exclude file": [
         "Datei ausschließen"
       ],
@@ -1307,6 +1346,12 @@
       ],
       "files are not currently supported for content extraction.": [
         "Dateien werden derzeit nicht zur Inhaltsextraktion unterstützt."
+      ],
+      "Files automatically retrieved based on your question.": [
+        "Dateien automatisch basierend auf deiner Frage abgerufen."
+      ],
+      "Files automatically retrieved based on your questions:": [
+        "Dateien automatisch basierend auf deinen Fragen abgerufen:"
       ],
       "For each conversation, ${ LUMO_SHORT_APP_NAME } has the capacity to process a limited amount of information. The progress bar shows how much capacity your current files are using. ": [
         "Für jede Unterhaltung hat ${ LUMO_SHORT_APP_NAME } die Kapazität, eine begrenzte Menge an Informationen zu verarbeiten. Der Fortschrittsbalken zeigt an, wie viel Kapazität deine aktuellen Dateien nutzen. "
@@ -1344,6 +1389,9 @@
       "No files available": [
         "Keine Dateien verfügbar"
       ],
+      "No supported files in this folder": [
+        "Keine unterstützten Dateien in diesem Ordner"
+      ],
       "Note:": [
         "Hinweis:"
       ],
@@ -1371,6 +1419,9 @@
       "Processing file contents...": [
         "Dateiinhalt wird verarbeitet..."
       ],
+      "Relevant files will be automatically retrieved based on your questions.": [
+        "Relevante Dateien werden automatisch basierend auf deinen Fragen abgerufen."
+      ],
       "Remove": [
         "Entfernen"
       ],
@@ -1379,6 +1430,9 @@
       ],
       "Remove message filter": [
         "Nachrichtenfilter entfernen"
+      ],
+      "Removed from future questions": [
+        "Aus zukünftigen Fragen entfernt"
       ],
       "rows": [
         "zeilen"
@@ -1448,6 +1502,9 @@
       ],
       "Unsupported File Type": [
         "Nicht unterstützter Dateityp"
+      ],
+      "Uploading \"${ file.name }\" to ${ DRIVE_APP_NAME }...": [
+        "\"${ file.name }\" wird zu ${ DRIVE_APP_NAME } hochgeladen..."
       ],
       "Uploading ${ uploadProgress.fileName }": [
         "${ uploadProgress.fileName } wird hochgeladen"
@@ -1699,6 +1756,12 @@
       "File uploaded and added to knowledge base": [
         "Datei hochgeladen und zur Wissensdatenbank hinzugefügt"
       ],
+      "File uploaded and indexed for search": [
+        "Datei wurde hochgeladen und für die Suche indiziert"
+      ],
+      "File uploaded to Drive folder": [
+        "Datei wurde in Drive-Ordner hochgeladen"
+      ],
       "Thanks for the feedback!": [
         "Vielen Dank für das Feedback!"
       ]
@@ -1712,6 +1775,9 @@
       ],
       "About ${ LUMO_SHORT_APP_NAME }": [
         "Über ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Delete everything": [
+        "Alles löschen"
       ],
       "Don't lose the thread": [
         "Verliere nicht den Faden"
@@ -1730,6 +1796,9 @@
       ],
       "Secure your spot": [
         "Sichere dir deinen Platz"
+      ],
+      "Show project chats in history": [
+        "Projektchats im Verlauf anzeigen"
       ],
       "Theme": [
         "Farbschema"
@@ -1901,11 +1970,32 @@
       "Ask the model to be more careful and thorough": [
         "Sag dem Modell, es soll vorsichtiger und gründlicher sein."
       ],
+      "Back to project": [
+        "Zurück zum Projekt"
+      ],
       "Cancel": [
         "Abbrechen"
       ],
+      "Click to edit title": [
+        "Titel bearbeiten"
+      ],
+      "Create folder": [
+        "Ordner erstellen"
+      ],
+      "Delete conversation": [
+        "Unterhaltung löschen"
+      ],
+      "Delete project": [
+        "Projekt löschen"
+      ],
       "Describe desired changes...": [
         "Beschreibe gewünschte Änderungen..."
+      ],
+      "Edit project": [
+        "Projekt bearbeiten"
+      ],
+      "Hide sidebar": [
+        "Seitenleiste ausblenden"
       ],
       "More concise": [
         "Prägnanter"
@@ -1928,6 +2018,21 @@
       "Retry with the same prompt": [
         "Erneut versuchen mit derselben Eingabe"
       ],
+      "Select all": [
+        "Alles auswählen"
+      ],
+      "Select conversation": [
+        "Unterhaltung auswählen"
+      ],
+      "Settings": [
+        "Einstellungen"
+      ],
+      "Show settings": [
+        "Einstellungen anzeigen"
+      ],
+      "Show sidebar": [
+        "Seitenleiste anzeigen"
+      ],
       "Think longer": [
         "Länger nachdenken"
       ],
@@ -1939,6 +2044,9 @@
       ]
     },
     "collider_2025:Button": {
+      "Add instructions to tailor ${ LUMO_SHORT_APP_NAME }'s responses": [
+        "Anweisungen zum Anpassen der Antworten von ${ LUMO_SHORT_APP_NAME } hinzufügen"
+      ],
       "Cancel": [
         "Abbrechen"
       ],
@@ -1963,6 +2071,12 @@
       "Hide sidebar": [
         "Seitenleiste ausblenden"
       ],
+      "Link this folder": [
+        "Diesen Ordner verknüpfen"
+      ],
+      "Link with ${ DRIVE_APP_NAME } folder": [
+        "Mit Ordner von ${ DRIVE_APP_NAME } verknüpfen"
+      ],
       "Manage chat knowledge files (${ totalFiles })": [
         "Verwalte Chat-Wissensdateien (${ totalFiles })"
       ],
@@ -1971,6 +2085,12 @@
       ],
       "New chat": [
         "Neuer Chat"
+      ],
+      "Projects": [
+        "Projekte"
+      ],
+      "Save": [
+        "Speichern"
       ],
       "Search": [
         "Suche"
@@ -1991,15 +2111,77 @@
         "Unbenannter Chat"
       ]
     },
+    "collider_2025:Error": {
+      "Cannot link the root folder. Please select a subfolder.": [
+        "Du kannst nicht den Stammordner verknüpfen. Wähle bitte einen Unterordner aus."
+      ],
+      "Failed to create folder": [
+        "Ordner konnte nicht erstellt werden"
+      ],
+      "Failed to index Drive folder for search": [
+        "Fehler beim Indizieren des Drive-Ordners für die Suche"
+      ],
+      "Failed to link Drive folder": [
+        "Drive-Ordner konnte nicht verknüpft werden"
+      ],
+      "Failed to process file: ${ file.name }": [
+        "Fehler beim Verarbeiten der Datei: ${ file.name }"
+      ],
+      "Failed to unlink Drive folder": [
+        "Drive-Ordner konnte nicht getrennt werden"
+      ],
+      "File \"${ file.name }\" (${ fileSizeFormatted }) exceeds the ${ maxSizeFormatted } limit. Link a ${ DRIVE_APP_NAME } folder to upload larger files.": [
+        "Datei \"${ file.name }\" (${ fileSizeFormatted }) überschreitet das Limit von ${ maxSizeFormatted }. Verknüpfe einen ${ DRIVE_APP_NAME }-Ordner, um größere Dateien hochzuladen."
+      ],
+      "Project not found": [
+        "Projekt nicht gefunden"
+      ]
+    },
+    "collider_2025:Feature": {
+      "Advanced AI models": [
+        "Fortgeschrittene KI-Modelle"
+      ]
+    },
     "collider_2025:Info": {
+      " Chat in Project": [
+        " Chat im Projekt",
+        " Chats im Projekt"
+      ],
+      "${ project.fileCount } files": [
+        "${ project.fileCount } Dateien"
+      ],
       "AIs from Big Tech are built on harvesting your data. But ${ LUMO_SHORT_APP_NAME } is different. It was created by the scientists behind innovative, privacy-first services like ${ MAIL_APP_NAME } and ${ VPN_APP_NAME }. And it’s owned by a Swiss nonprofit, whose mission is to advance privacy and never make money from user data.": [
         "KIs von großen Technologieunternehmen basieren auf der Sammlung deiner Daten. ${ LUMO_SHORT_APP_NAME } ist anders. Es wurde von den Wissenschaftlern hinter innovativen, datenschutzorientierten Diensten wie ${ MAIL_APP_NAME } und ${ VPN_APP_NAME } entwickelt. Und es gehört einer Schweizer Non-Profit-Organisation, deren Mission es ist, den Datenschutz zu fördern und niemals Geld mit Nutzerdaten zu verdienen."
+      ],
+      "Are you sure you want to delete \"${ project.name }\"? This action cannot be undone.": [
+        "Möchtest du \"${ project.name }\" wirklich löschen? Diese Aktion kann nicht rückgängig gemacht werden."
+      ],
+      "Auto-retrieved": [
+        "Automatisch abgerufen"
+      ],
+      "Browse to the ${ DRIVE_SHORT_APP_NAME } folder you want to link to this project, then click \"Link this folder\".": [
+        "Navigiere zu dem ${ DRIVE_SHORT_APP_NAME }-Ordner, den du mit diesem Projekt verknüpfen möchtest, und klicke dann auf \"Diesen Ordner verknüpfen\"."
       ],
       "Conversation encrypted": [
         "Unterhaltung verschlüsselt"
       ],
       "Current chat:": [
         "Aktueller Chat:"
+      ],
+      "File \"${ file.name }\" is already in this project": [
+        "Die Datei \"${ file.name }\" ist bereits in diesem Projekt"
+      ],
+      "Initializing Drive...": [
+        "Drive wird initialisiert..."
+      ],
+      "Learn more about how project knowledge works": [
+        "Erfahre mehr darüber, wie Projektwissen funktioniert"
+      ],
+      "Link files from ${ DRIVE_APP_NAME } or upload from your computer.": [
+        "Dateien von ${ DRIVE_APP_NAME } verknüpfen oder vom Computer hochladen."
+      ],
+      "No projects yet": [
+        "Noch keine Projekte"
       ],
       "Processing file...": [
         "Datei wird verarbeitet..."
@@ -2010,13 +2192,33 @@
       "This message is empty. Sorry about that.": [
         "Diese Nachricht ist leider leer."
       ],
+      "Type @filename to ask questions about a specific file": [
+        "Gib @Dateiname ein, um Fragen zu einer bestimmten Datei zu stellen"
+      ],
+      "Upgrade to ${ LUMO_SHORT_APP_NAME } Plus to create unlimited projects, unlock advanced AI models, and more.": [
+        "Upgrade auf ${ LUMO_SHORT_APP_NAME } Plus, um unbegrenzte Projekte zu erstellen, fortgeschrittene KI-Modelle freizuschalten und mehr."
+      ],
       "Your files are large. ${ LUMO_SHORT_APP_NAME } may not be able to process all information.": [
         "Deine Dateien sind groß. ${ LUMO_SHORT_APP_NAME } kann möglicherweise nicht alle Informationen verarbeiten."
       ]
     },
     "collider_2025:Label": {
+      "chats": [
+        "Chats"
+      ],
+      "Current folder:": [
+        "Aktueller Ordner:"
+      ],
       "Edit conversation title": [
         "Titel der Unterhaltung bearbeiten"
+      ],
+      "Untitled chat": [
+        "Unbenannter Chat"
+      ]
+    },
+    "collider_2025:Navigation": {
+      "All projects": [
+        "Alle Projekte"
       ]
     },
     "collider_2025:Notification": {
@@ -2041,12 +2243,81 @@
         "Anmeldung erforderlich"
       ]
     },
+    "collider_2025:Project": {
+      "Get help understanding assignments, solving problems, and learning concepts": [
+        "Hilfe beim Verstehen von Aufgaben, beim Lösen von Problemen und beim Lernen von Konzepten bekommen"
+      ],
+      "Writing coach": [
+        "Schreibassistent"
+      ]
+    },
     "collider_2025:Prompt": {
+      "Can you explain why this answer is correct?": [
+        "Kannst du erklären, warum diese Antwort richtig ist?"
+      ],
+      "Create a packing list for a winter hiking trip in Patagonia": [
+        "Erstelle eine Packliste für eine Winterwanderung in Patagonien"
+      ],
+      "Explain this medication and its potential side effects": [
+        "Erkläre dieses Medikament und seine möglichen Nebenwirkungen"
+      ],
+      "Help me create a plan to achieve this goal": [
+        "Hilf mir, einen Plan zu erstellen, um dieses Ziel zu erreichen"
+      ],
+      "Help me prepare questions about this diagnosis for my doctor": [
+        "Hilf mir, Fragen zu dieser Diagnose für meinen Arzt vorzubereiten"
+      ],
+      "Help me prepare talking points for this presentation": [
+        "Hilf mir, Stichpunkte für diese Präsentation vorzubereiten"
+      ],
+      "Help me understand different retirement account options and their tax implications": [
+        "Hilf mir, verschiedene Altersvorsorgeoptionen und ihre steuerlichen Auswirkungen zu verstehen"
+      ],
       "How do people celebrate New Year's Eve around the world?": [
         "Wie feiern Menschen Silvester auf der ganzen Welt?"
       ],
-      "What are the origins of Christmas?": [
-        "Was sind die Ursprünge von Weihnachten?"
+      "Identify any unusual or potentially unfavorable terms": [
+        "Identifiziere alle ungewöhnlichen oder potenziell nachteiligen Begriffe"
+      ],
+      "Identify research gaps and suggest future research directions": [
+        "Identifiziere Forschungslücken und schlage zukünftige Forschungsrichtungen vor"
+      ],
+      "Suggest hidden gems and local favorites in Barcelona": [
+        "Versteckte Perlen und lokale Favoriten in Barcelona vorschlagen"
+      ],
+      "Suggest ways to optimize this for better performance": [
+        "Schlage Wege vor, um dies für eine bessere Leistung zu optimieren"
+      ],
+      "Summarize the key obligations and rights in this contract": [
+        "Fasse die wichtigsten Verpflichtungen und Rechte in diesem Vertrag zusammen"
+      ],
+      "Summarize the key points from this meeting": [
+        "Fasse die wichtigsten Punkte aus diesem Meeting zusammen"
+      ],
+      "What are the key points I should remember for this topic?": [
+        "Was sind die wichtigsten Punkte, die ich mir zu diesem Thema merken sollte?"
+      ],
+      "What metrics and research should I review for this investment?": [
+        "Welche Kennzahlen und Recherchen sollte ich für diese Investition prüfen?"
+      ]
+    },
+    "collider_2025:Status": {
+      "Indexing": [
+        "Indizieren"
+      ],
+      "Indexing error": [
+        "Indizierungsfehler"
+      ],
+      "Indexing for search": [
+        "Indizierung für Suche"
+      ]
+    },
+    "collider_2025:Success": {
+      "File removed from project": [
+        "Datei aus Projekt entfernt"
+      ],
+      "Folder created successfully": [
+        "Ordner erfolgreich erstellt"
       ]
     },
     "collider_2025:Title": {
@@ -2055,6 +2326,12 @@
       ],
       "Built by the team that knows privacy": [
         "Entwickelt vom Team, das Datenschutz versteht"
+      ],
+      "Create folder": [
+        "Ordner erstellen"
+      ],
+      "Delete conversation?": [
+        "Unterhaltung löschen?"
       ],
       "Earlier": [
         "Früher"
@@ -2077,6 +2354,12 @@
       "How does ${ LUMO_SHORT_APP_NAME } keep our conversations confidential?": [
         "Wie hält ${ LUMO_SHORT_APP_NAME } unsere Unterhaltungen vertraulich?"
       ],
+      "Inspiration": [
+        "Inspiration"
+      ],
+      "Instructions": [
+        "Anweisungen"
+      ],
       "Last 30 days": [
         "Letzte 30 Tage"
       ],
@@ -2086,11 +2369,26 @@
       "More options": [
         "Weitere Optionen"
       ],
+      "More Projects with ${ LUMO_SHORT_APP_NAME } Plus": [
+        "Mehr Projekte mit ${ LUMO_SHORT_APP_NAME } Plus"
+      ],
       "No chat history yet. Let's start chatting!": [
         "Noch kein Chatverlauf vorhanden. Lass uns chatten!"
       ],
       "No result.": [
         "Kein Ergebnis."
+      ],
+      "Nothing here yet": [
+        "Hier gibt es noch nichts"
+      ],
+      "Projects": [
+        "Projekte"
+      ],
+      "Settings": [
+        "Einstellungen"
+      ],
+      "Start a new conversation": [
+        "Neue Unterhaltung beginnen"
       ],
       "The AI that respects your privacy": [
         "Die KI, die deine Privatsphäre respektiert"
@@ -2103,6 +2401,11 @@
       ],
       "Whatever you ask me is:": [
         "Was auch immer du mich fragst:"
+      ]
+    },
+    "collider_2025:Warning": {
+      "Cannot Link Drive Folder": [
+        "Drive-Ordner kann nicht verknüpft werden"
       ]
     },
     "color": {
@@ -3582,6 +3885,9 @@
       "Address copied to clipboard": [
         "Adresse in die Zwischenablage kopiert"
       ],
+      "Advanced search:": [
+        "Erweiterte Suche"
+      ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "KI-gestützter Assistent, der dir hilft, schnell und mühelos bessere E-Mails zu verfassen."
       ],
@@ -3703,6 +4009,9 @@
       "Expired": [
         "Abgelaufen"
       ],
+      "Folder:": [
+        "Ordner:"
+      ],
       "Google Pay mark": [
         "Google Pay markieren"
       ],
@@ -3726,6 +4035,12 @@
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "Im nächsten Schritt kann eine Einzahlung mit einer Bitcoin-Adresse getätigt werden."
+      ],
+      "Indexed content (first 2000 chars):": [
+        "Indizierter Inhalt (erste 2000 Zeichen):"
+      ],
+      "Indexed files:": [
+        "Indizierte Dateien:"
       ],
       "Inherited from parent folder": [
         "Von übergeordnetem Ordner übernommen"
@@ -3751,6 +4066,9 @@
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Kalender wird geladen, bitte warte. Du wirst in einer neuen Registerkarte zu unserer Terminplanungsplattform Calendly weitergeleitet."
       ],
+      "Loading file preview...": [
+        "Datei-Vorschau wird geladen..."
+      ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode Logo"
       ],
@@ -3765,6 +4083,9 @@
       ],
       "New": [
         "Neu"
+      ],
+      "No conversations yet. Start a new chat to begin.": [
+        "Noch keine Unterhaltungen. Starte einen neuen Chat, um zu beginnen."
       ],
       "No payment is required at this time.": [
         "Zu diesem Zeitpunkt ist keine Zahlung erforderlich."
@@ -3817,6 +4138,9 @@
       "Registering your subscription…": [
         "Registrierung deines Abonnements…"
       ],
+      "Searchable chunks:": [
+        "Durchsuchbare Datenblöcke:"
+      ],
       "SEPA payments are not available at the moment. Please try again later.": [
         "SEPA-Zahlungen sind derzeit nicht verfügbar. Probiere es später erneut."
       ],
@@ -3834,6 +4158,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Da du ein treuer Benutzer bist, wurden deinem Konto zusätzliche Funktionen hinzugefügt."
+      ],
+      "Size:": [
+        "Größe:"
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Gib es an deine Kontakte weiter und nutze es für Online-Dienste."
@@ -3872,8 +4199,14 @@
       "To fight spam and abuse, please verify you are human.": [
         "Bitte beweise, dass du ein Mensch bist, um Spam und Missbrauch zu vermeiden."
       ],
+      "Total conversations:": [
+        "Gesamtanzahl Unterhaltungen:"
+      ],
       "Total email addresses": [
         "Anzahl E-Mail-Adressen"
+      ],
+      "Total messages:": [
+        "Nachrichten total:"
       ],
       "Total storage": [
         "Gesamter Speicherplatz"
@@ -3883,6 +4216,9 @@
       ],
       "Total VPN connections": [
         "Anzahl VPN‐Verbindungen"
+      ],
+      "Unknown": [
+        "Unbekannt"
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Jetzt upgraden um Premium-Funktionen, Produkte und Speicherplatz zu einem Sonderpreis zu erhalten."
@@ -4356,6 +4692,35 @@
         "Was ist das?"
       ]
     },
+    "lumo: Debug View": {
+      "Clear History": [
+        "Verlauf löschen"
+      ],
+      "Idle": [
+        "Inaktiv"
+      ],
+      "Last token": [
+        "Letzter Token"
+      ],
+      "Messages": [
+        "Nachrichten"
+      ],
+      "Search Index Debug": [
+        "Suchindex-Debug"
+      ],
+      "Spring-Mass Visualization": [
+        "Feder-Masse-Visualisierung"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "Streaming": [
+        "Streaming"
+      ],
+      "Token delays": [
+        "Token-Verzögerungen"
+      ]
+    },
     "mail_signup_2024: Info": {
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe-Schreibassistent"
@@ -4817,9 +5182,6 @@
       ],
       "Unlimited labels": [
         "Unbegrenzte Anzahl von Kategorien"
-      ],
-      "Unlimited logins and notes": [
-        "Unbegrenzte Logins und Notizen"
       ],
       "Unlimited logins, notes and credit cards": [
         "Unbegrenzte Logins, Notizen und Kreditkarten"
@@ -5718,6 +6080,9 @@
       "Search parent folder": [
         "Übergeordneten Ordner durchsuchen"
       ],
+      "Search...": [
+        "Suchen..."
+      ],
       "Select": [
         "Auswählen"
       ],
@@ -6032,6 +6397,14 @@
         "Die Kündigung deines Abonnements wird bearbeitet. Bitte warten."
       ]
     },
+    "Status": {
+      "Enabled": [
+        "Aktiviert"
+      ],
+      "Not available": [
+        "Nicht verfügbar"
+      ]
+    },
     "storage_split: action": {
       "Keep ${ currentPlanName }": [
         "${ currentPlanName } behalten"
@@ -6301,6 +6674,15 @@
       ]
     },
     "Time": {
+      "${ hours } hours ago": [
+        "Vor ${ hours } Stunden"
+      ],
+      "1 hour ago": [
+        "Vor einer Stunde"
+      ],
+      "Just now": [
+        "Gerade eben"
+      ],
       "Yesterday": [
         "Gestern"
       ]
@@ -6420,8 +6802,14 @@
       "Import emails, calendars, contacts": [
         "E-Mails, Kalender und Kontakte importieren"
       ],
+      "Indexed Drive documents": [
+        "Indizierte Drive-Dokumente"
+      ],
       "Invalid verification code": [
         "Ungültiger Verifizierungscode"
+      ],
+      "My Files": [
+        "Meine Dateien"
       ],
       "Network error": [
         "Netzwerkfehler"

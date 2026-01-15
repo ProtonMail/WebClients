@@ -1478,9 +1478,6 @@
       ]
     },
     "Billing cycle": {
-      "Renews automatically at ${ renewPrice }, for ${ renewLength } month": [
-        "将以 ${ renewPrice } 的价格自动续订，续订时长为 ${ renewLength } 个月。"
-      ],
       "Renews automatically on ${ subscriptionManagerName }": [
         "将以 ${ subscriptionManagerName } 的价格自动续期"
       ]
@@ -1656,8 +1653,14 @@
       ]
     },
     "Button": {
+      "Add users manually": [
+        "手动添加用户"
+      ],
       "Close": [
         "关闭"
+      ],
+      "Configure your network": [
+        "配置您的网络"
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "继续使用 ${ MAIL_APP_NAME }。"
@@ -1677,17 +1680,29 @@
       "Discover and set up features": [
         "发现并设置功能"
       ],
+      "Invite your team": [
+        "邀请您的团队"
+      ],
+      "Manage global VPN permissions": [
+        "管理全局 VPN 权限"
+      ],
       "Maybe later": [
         "以后再说"
       ],
       "Remind me later": [
         "稍后提醒我"
       ],
+      "Secure your organization": [
+        "保护您的组织"
+      ],
       "Send": [
         "发送"
       ],
       "Set up other features": [
         "设置其他功能"
+      ],
+      "Set up SSO": [
+        "设置SSO"
       ],
       "Take a tour": [
         "开始导览"
@@ -2905,14 +2920,23 @@
       "Connect your CRM, website, printers, and more.": [
         "连接您的 CRM、网站、打印机等。"
       ],
+      "Create a Gateway to give your users access to your IT resources through dedicated servers.": [
+        "创建网关，让用户能够通过专用服务器访问您的 IT 资源。"
+      ],
       "Create a Zoom meeting and add joining details to your event with one click.": [
         "创建 Zoom 会议并一键添加加入事件的详细信息。"
       ],
       "Create groups you can email with a single address.": [
         "创建可通过单一地址发送电子邮件的群组。"
       ],
+      "Create new user accounts or import users with SSO (single sign-on) SCIM provisioning.": [
+        "创建新用户帐户或通过 SSO（单点登录）SCIM 配置导入用户。"
+      ],
       "Create policies to decide who can connect to shared servers in each country.": [
         "创建策略，决定谁可以连接到每个国家/地区的共享服务器。"
+      ],
+      "Decide which users can connect to each of our 120+ shared server locations.": [
+        "决定哪些用户可以连接到我们 120 多个共享服务器位置中的任意服务器。"
       ],
       "Easily access your email and calendar on desktop and mobile.": [
         "在电脑和手机上轻松访问电子邮件和日历。"
@@ -2958,6 +2982,9 @@
       ],
       "Help your team securely store passwords to sensitive business and client information.": [
         "帮助您的团队安全存储敏感业务和客户信息的密码。"
+      ],
+      "If you haven’t already, enable some recovery methods to make sure you never lose access to ${ VPN_APP_NAME }.": [
+        "若尚未启用，请设置恢复方式，确保您永远不会失去对 ${ VPN_APP_NAME } 的访问权限。"
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "您正在导入的联系人列表似乎包含一些群组，请查看并选择应如何导入这些群组。"
@@ -5016,12 +5043,6 @@
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
         "${ BRAND_NAME } 无法连接您的 Yahoo 账户，请确认："
       ],
-      "2-step verification is enabled in your external account.": [
-        "该邮箱开启了两步验证."
-      ],
-      "2-step verification is enabled in your external email account.": [
-        "该邮箱开启了两步验证."
-      ],
       "IMAP access is enabled in your external account.": [
         "您的外部账户已开启 IMAP 访问。"
       ],
@@ -5978,6 +5999,9 @@
       "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
         "当您的密码等个人信息泄露时迅速得到通知。${ learnMoreLinkNoBreach }"
       ],
+      "Get started": [
+        "开始吧"
+      ],
       "Get started with the referral link above.": [
         "立即通过上方推荐链接开始使用。"
       ],
@@ -6677,6 +6701,9 @@
       "Set up your organization": [
         "设置您的组织"
       ],
+      "Set up your organization and start protecting your data in a few easy steps.": [
+        "只需几个简单步骤，即可设置您的组织并开始保护您的数据。"
+      ],
       "Setting up ${ feature }…": [
         "正在设置 ${ feature }…"
       ],
@@ -7327,6 +7354,9 @@
       ],
       "You can now return to the application to continue": [
         "您现在可以返回到应用程序以继续"
+      ],
+      "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
+        "一次只能打开一个聊天实例。开始新对话之前，请关闭前一个对话。"
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "您可以开启通知功能，以便在新邮件到达此文件夹时获得提醒。"
@@ -8162,6 +8192,12 @@
       "Numbers": [
         "数字"
       ],
+      "OpenVPN password": [
+        "OpenVPN 密码"
+      ],
+      "OpenVPN username": [
+        "OpenVPN 用户名"
+      ],
       "Operating system": [
         "操作系统"
       ],
@@ -8704,6 +8740,20 @@
       ],
       "What’s this?": [
         "这是什么？"
+      ]
+    },
+    "Live Chat Modal": {
+      "Live chat is available with ${ planName }": [
+        "${ planName } 用户可享实时客服服务"
+      ],
+      "Open support form": [
+        "打开支持表单"
+      ],
+      "Upgrade subscription": [
+        "升级订阅"
+      ],
+      "Upgrade to unlock chat support and other premium features, or use our free support form to report your issue.": [
+        "升级账户即可与客服实时交流，同时解锁其他高级功能。您也可以通过客服表单免费反馈遇到的问题。"
       ]
     },
     "Loading info": {
@@ -9464,9 +9514,6 @@
       "Unlimited labels": [
         "标签数量不限"
       ],
-      "Unlimited logins and notes": [
-        "无限登录和笔记"
-      ],
       "Unlimited logins, notes and credit cards": [
         "无限制登录、备注和信用卡"
       ],
@@ -10089,6 +10136,9 @@
       ],
       "Number of records exceeds the download limit of 10000": [
         "记录数超过 10000 的下载限制"
+      ],
+      "OpenVPN credentials regenerated": [
+        "重新生成了 OpenVPN 的账号密码"
       ],
       "Reminder has been sent": [
         "提醒已发送"
@@ -13342,6 +13392,11 @@
         "vCard 字段"
       ]
     },
+    "Themes": {
+      "Themes": [
+        "主题"
+      ]
+    },
     "Time unit": {
       "${ ceilDays } day": [
         "${ ceilDays } 天"
@@ -13365,6 +13420,9 @@
       ],
       "${ feature } is now active": [
         "${ feature } 已激活"
+      ],
+      "${ VPN_APP_NAME } clients": [
+        "${ VPN_APP_NAME } 客户端"
       ],
       "(active)": [
         "（当前）"
@@ -13392,6 +13450,9 @@
       ],
       "Access control": [
         "访问控制"
+      ],
+      "Account": [
+        "帐户"
       ],
       "Account recovery": [
         "账户恢复"
@@ -13723,6 +13784,9 @@
       "Discard changes?": [
         "放弃更改？"
       ],
+      "Dismiss setup checklist": [
+        "忽略设置检查清单"
+      ],
       "Domain names": [
         "域名"
       ],
@@ -13785,6 +13849,9 @@
       ],
       "Email": [
         "邮件"
+      ],
+      "Email subscriptions": [
+        "邮件订阅"
       ],
       "Enable advanced account protection": [
         "启用高级账户保护"
@@ -13851,6 +13918,9 @@
       ],
       "Get more from your VPN": [
         "从您的 VPN 获取更多信息"
+      ],
+      "Get started": [
+        "开始吧"
       ],
       "Get the apps": [
         "下载应用"
@@ -13957,6 +14027,9 @@
       "OpenVPN configuration files": [
         "OpenVPN 配置文件"
       ],
+      "OpenVPN username": [
+        "OpenVPN 用户名"
+      ],
       "Org setup": [
         "组织设置"
       ],
@@ -14001,6 +14074,9 @@
       ],
       "Phone": [
         "电话"
+      ],
+      "Plans": [
+        "套餐"
       ],
       "Preview": [
         "预览"
@@ -14251,6 +14327,9 @@
       "Upgrade to keep your premium benefits.": [
         "升级以保留您的高级权益。"
       ],
+      "Upgrade your network protection with dedicated servers": [
+        "使用专用服务器升级宁的网络保护"
+      ],
       "Upgrade your privacy": [
         "提升隐私保护"
       ],
@@ -14328,6 +14407,9 @@
       ],
       "Your changes are not synced yet": [
         "您的改动尚未同步"
+      ],
+      "Your current plan": [
+        "您的当前套餐"
       ],
       "Your exposed information": [
         "您的泄露信息"

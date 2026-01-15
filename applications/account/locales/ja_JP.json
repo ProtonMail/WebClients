@@ -2346,12 +2346,6 @@
       ]
     },
     "Billing cycle": {
-      "Renews automatically": [
-        "自動更新"
-      ],
-      "Renews automatically at ${ renewPrice }, for ${ renewLength } month": [
-        "${ renewLength }ヶ月間、${ renewPrice }で自動で更新されます"
-      ],
       "Renews automatically on ${ subscriptionManagerName }": [
         "${ subscriptionManagerName }に自動更新されます"
       ]
@@ -2640,20 +2634,8 @@
       ]
     },
     "BOSS": {
-      "${ migratedCount } of ${ providerUsers.length }": [
-        "${ migratedCount } / ${ providerUsers.length }"
-      ],
-      "${ n } year ago": [
-        "${ n } 年前"
-      ],
       "Add a custom domain": [
         "カスタムドメインを追加"
-      ],
-      "Add a domain": [
-        "ドメインを追加"
-      ],
-      "Add more users...": [
-        "さらにユーザーを追加..."
       ],
       "Authenticate": [
         "認証"
@@ -2676,17 +2658,8 @@
       "Domain ownership verified": [
         "ドメイン所有権は検証済みです"
       ],
-      "Domain setup": [
-        "ドメインセットアップ"
-      ],
-      "Email notifications will be sent when migration starts and when it’s completed. You will also be notified if there are errors and if migration is paused due to expired links.": [
-        "移行の開始時および完了時にメール通知が送信されます。エラーが発生した場合、および有効期限切れのリンクにより移行が一時停止された場合にも通知されます。"
-      ],
       "Estimated size": [
         "推定サイズ"
-      ],
-      "Everything": [
-        "すべて"
       ],
       "Failed to load OAuth": [
         "OAuthの読み込みに失敗しました"
@@ -2712,9 +2685,6 @@
       "Migration includes": [
         "移行に含まれるもの"
       ],
-      "Not started": [
-        "開始されていません"
-      ],
       "Required to create user accounts": [
         "ユーザーアカウントの作成のために必須です"
       ],
@@ -2736,20 +2706,11 @@
       "Start migration": [
         "移行を開始"
       ],
-      "Status": [
-        "ステータス"
-      ],
       "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Markeplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue. Learn more": [
         "組織のデータを移行するには、Google Workspace Marketplaceから${ BRAND_NAME }移行アシスタントアプリをインストールする必要があります。これにより、${ BRAND_NAME }がお客様のデータをコピーするための許可が付与されます。インストールが完了したら、ここに戻って続行してください。より詳しく"
       ],
-      "Transfer data from": [
-        "データ転送元"
-      ],
       "User": [
         "ユーザー"
-      ],
-      "Users migrated": [
-        "ユーザーが移行されました"
       ],
       "Verify your domain": [
         "ドメインの検証"
@@ -2759,9 +2720,6 @@
       ],
       "What are you migrating?": [
         "何を移行しますか？"
-      ],
-      "Who will be notified?": [
-        "誰に通知されますか？"
       ]
     },
     "breadcrumb": {
@@ -8224,12 +8182,6 @@
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
         "${ BRAND_NAME } はあなたの Yahoo アカウントに接続できません。以下を確認してください。"
       ],
-      "2-step verification is enabled in your external account.": [
-        "2 段階認証は外部アカウントで有効になっています。"
-      ],
-      "2-step verification is enabled in your external email account.": [
-        "2 段階認証は外部メールアカウントで有効になっています。"
-      ],
       "IMAP access is enabled in your external account.": [
         "IMAP アクセスは外部アカウントで有効になっています。"
       ],
@@ -12647,9 +12599,6 @@
       "Create password": [
         "パスワードを作成"
       ],
-      "Credit cards": [
-        "クレジットカード"
-      ],
       "Credits": [
         "クレジット"
       ],
@@ -15036,9 +14985,6 @@
       ],
       "Unlimited labels": [
         "ラベル制限なし"
-      ],
-      "Unlimited logins and notes": [
-        "無制限のログインとメモ"
       ],
       "Unlimited logins, notes and credit cards": [
         "無制限のログイン、メモ、そしてクレジットカード"

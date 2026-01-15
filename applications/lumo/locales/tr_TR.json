@@ -38,6 +38,9 @@
       "Back": [
         "Geri"
       ],
+      "Back to search settings": [
+        "Arama ayarlarına geri dön"
+      ],
       "Cancel": [
         "İptal"
       ],
@@ -52,6 +55,9 @@
       ],
       "Chat with us": [
         "Bizimle canlı görüşün"
+      ],
+      "Clean up orphaned documents": [
+        "Referans verilmemiş belgeleri temizle"
       ],
       "Close": [
         "Kapat"
@@ -161,6 +167,9 @@
       "Increase": [
         "Artır"
       ],
+      "Inspect indexed documents": [
+        "Dizinlenmiş belgeleri inceleyin"
+      ],
       "Keep my subscription": [
         "Aboneliğimi sürdür"
       ],
@@ -197,8 +206,17 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "${ CALENDAR_APP_NAME } ayarlarını aç"
       ],
+      "Open conversation": [
+        "Yazışmayı aç"
+      ],
+      "Open file preview": [
+        "Dosya ön izlemesini aç"
+      ],
       "Open navigation": [
         "Gezinmeyi aç"
+      ],
+      "Open project": [
+        "Proje aç"
       ],
       "Pay": [
         "Öde"
@@ -208,6 +226,9 @@
       ],
       "Previous page": [
         "Önceki sayfa"
+      ],
+      "Re-index all content - conversations and files": [
+        "Tüm içeriği yeniden indeksle - yazışmalar ve dosyalar"
       ],
       "Refer a friend": [
         "Arkadaşınıza önerin"
@@ -289,6 +310,9 @@
       ],
       "Show more benefits": [
         "Diğer faydaları görüntüle"
+      ],
+      "Show orphaned space IDs": [
+        "Referans verilmeyen alan kimliklerini göster"
       ],
       "Sign out": [
         "Oturumu kapat"
@@ -665,6 +689,9 @@
       "Payments problem": [
         "Ödeme sorunu"
       ],
+      "Sheets problem": [
+        "Hesap tablosu sorunu"
+      ],
       "Sign in problem": [
         "Oturum açma sorunu"
       ],
@@ -797,8 +824,17 @@
       ]
     },
     "collider_2025: Action": {
+      "Add file to ${ DRIVE_APP_NAME }": [
+        "Dosyayı ${ DRIVE_APP_NAME } uygulamasına ekle"
+      ],
       "Add from ${ DRIVE_APP_NAME }": [
         "${ DRIVE_APP_NAME } uygulamasından ekle"
+      ],
+      "Add to active": [
+        "Etkin olana ekle"
+      ],
+      "Already in KB": [
+        "Zaten KB'de"
       ],
       "Browse ${ DRIVE_SHORT_APP_NAME }": [
         "${ DRIVE_SHORT_APP_NAME } uygulamasına göz atın"
@@ -808,6 +844,9 @@
       ],
       "Continue": [
         "İlerle"
+      ],
+      "Create folder": [
+        "Klasör oluştur"
       ],
       "Dark": [
         "Koyu"
@@ -868,6 +907,9 @@
       ],
       "Upload file and add to knowledge base": [
         "Dosyayı yükle ve bilgi bankasına ekle"
+      ],
+      "Upload files": [
+        "Dosya yükle"
       ],
       "Upload from device": [
         "Aygıttan yükle"
@@ -940,6 +982,9 @@
       ],
       "Unlimited daily chats": [
         "Sınırsız günlük sohbet"
+      ],
+      "Unlimited projects": [
+        "Sınırsız proje"
       ],
       "We keep no logs of what you ask, or what ${ LUMO_SHORT_APP_NAME } replies. Your chats can’t be seen, shared, or used to profile you. ${ LUMO_SHORT_APP_NAME } saves nothing on our servers.": [
         "Sorduklarınızın veya ${ LUMO_SHORT_APP_NAME } yanıtlarının kaydını tutmuyoruz. Sohbetleriniz görülemez, paylaşılamaz veya profilinizi oluşturmak için kullanılamaz. ${ LUMO_SHORT_APP_NAME } sunucularımıza herhangi bir şey kaydetmez."
@@ -1025,11 +1070,23 @@
       ]
     },
     "collider_2025: Description": {
+      "Always enable web search for new conversations": [
+        "Yeni yazışmalar için web aramasını her zaman etkinleştir"
+      ],
       "Elevate your private AI experience and unlock advanced models and premium features with ${ LUMO_SHORT_APP_NAME } Plus.": [
         "Güvenli yapay zeka deneyiminizi geliştirin ve ${ LUMO_SHORT_APP_NAME } Plus tarifesi ile gelişmiş modellere ve ücretli özelliklere erişin."
       ],
+      "Encrypted search index for chats and Drive files.": [
+        "Sohbetler ve Drive dosyaları için şifrelenmiş arama dizini."
+      ],
+      "Include project conversations in the main chat history": [
+        "Ana sohbet geçmişine proje yazışmalarını dahil et"
+      ],
       "Last updated on ${ formattedDate }": [
         "Son güncelleme: ${ formattedDate }"
+      ],
+      "Permanently delete your project and chats. This is irreversible.": [
+        "Projenizi ve sohbetlerinizi kalıcı olarak silin. Bu işlem geri alınamaz."
       ],
       "Sign in to access your account and unlock more features. Don't have one? ${ createLink }": [
         "Hesabınıza erişmek ve daha fazla özelliğe erişmek için oturum açın. Bir hesabınız yok mu? ${ createLink }"
@@ -1058,6 +1115,12 @@
       "Failed to process ${ DRIVE_SHORT_APP_NAME } file: ${ file.name }": [
         "${ DRIVE_SHORT_APP_NAME } dosyası işlenemedi: ${ file.name }"
       ],
+      "Failed to upload \"${ file.name }\" to ${ DRIVE_APP_NAME }": [
+        "\"${ file.name }\" dosyası ${ DRIVE_APP_NAME } konumuna yüklenemedi"
+      ],
+      "File \"${ file.name }\" (${ fileSizeFormatted }) exceeds the ${ maxSizeFormatted } limit. Link a Drive folder to your project to work with larger files.": [
+        "“${ file.name }” dosyası (${ fileSizeFormatted }) ${ maxSizeFormatted } sınırını aşıyor. Daha büyük dosyalarla çalışmak için bir Drive klasörünü projenize bağlayın."
+      ],
       "File \"${ file.name }\" is too large (${ fileSizeFormatted }). Maximum allowed size is ${ maxSizeFormatted }.": [
         "\"${ file.name }\" dosyası çok büyük (${ fileSizeFormatted }). En fazla ${ maxSizeFormatted } boyutunda olabilir."
       ],
@@ -1075,6 +1138,12 @@
       ],
       "PowerPoint files are not supported. Please convert to PDF and upload the PDF version for better text extraction.": [
         "PowerPoint dosyaları desteklenmiyor. Yazıları daha iyi çıkarmak için lütfen sunumu PDF belgesine dönüştürün ve PDF dosyasını yükleyin."
+      ],
+      "Re-indexing failed. Please try again.": [
+        "Yeniden dizinleme başarısız oldu. Lütfen tekrar deneyin."
+      ],
+      "Search service not available": [
+        "Arama hizmeti kullanılamıyor"
       ],
       "Sign up for free to continue chatting and unlock access to chat history, starred chats, and more features.": [
         "Sohbeti sürdürmek ve sohbet geçmişine, yıldızlı sohbetlere ve daha fazla özelliğe erişmek için ücretsiz hesap açın."
@@ -1185,6 +1254,9 @@
       "Large file uploads": [
         "Büyük dosya yüklemeleri"
       ],
+      "New": [
+        "Yeni"
+      ],
       "Unlimited chat history": [
         "Sınırsız sohbet geçmişi"
       ],
@@ -1254,11 +1326,20 @@
       "Ask anything to ${ LUMO_SHORT_APP_NAME }": [
         "${ LUMO_SHORT_APP_NAME } yardımcısına istediğiniz her şeyi sorun"
       ],
+      "Attached Files": [
+        "Ekli Dosyalar"
+      ],
+      "Auto-matched": [
+        "Otomatik olarak eşleştirildi"
+      ],
       "Be cautious of unfamiliar domains or excessive subdomains": [
         "Tanıdık olmayan etki alanlarına veya abartılı alt etki alanlarına karşı dikkatli olun"
       ],
       "characters": [
         "karakter"
+      ],
+      "characters not shown": [
+        "gösterilmeyen karakterler"
       ],
       "Chat knowledge": [
         "Sohbet bilgisi"
@@ -1278,6 +1359,9 @@
       "Domain name": [
         "Etki alanı adı"
       ],
+      "Downloading (${ progressPct }%)": [
+        "İndiriliyor (%${ progressPct })"
+      ],
       "Drag and drop your files here to add them to the chat.": [
         "Dosyalarınızı sohbete eklemek için sürükleyip buraya bırakın."
       ],
@@ -1290,14 +1374,23 @@
       "Error Processing File": [
         "Dosya işlenirken sorun çıktı"
       ],
+      "Exceeds ${ maxSize } limit": [
+        "${ maxSize } sınırını aşıyor"
+      ],
       "Exclude file": [
         "Dosya katılmasın"
+      ],
+      "Excluded": [
+        "Hariç Tutulanlar"
       ],
       "File capacity": [
         "Dosya kapasitesi"
       ],
       "File capacity for this conversation": [
         "Bu sohbetin dosya kapasitesi"
+      ],
+      "File too large": [
+        "Dosya çok büyük"
       ],
       "File too large for preview (>150k tokens)": [
         "Dosya ön izleme için çok büyük (>150 bin kod)"
@@ -1307,6 +1400,15 @@
       ],
       "files are not currently supported for content extraction.": [
         "dosyalar şu anda içeriklerin çıkarılması için desteklenmiyor."
+      ],
+      "Files automatically retrieved based on your question.": [
+        "Sorunuza göre otomatik olarak alınan dosyalar."
+      ],
+      "Files automatically retrieved based on your questions:": [
+        "Sorunuza göre otomatik olarak alınan dosyalar:"
+      ],
+      "Files you've added to this conversation.": [
+        "Bu yazışmaya eklediğiniz dosyalar."
       ],
       "For each conversation, ${ LUMO_SHORT_APP_NAME } has the capacity to process a limited amount of information. The progress bar shows how much capacity your current files are using. ": [
         "${ LUMO_SHORT_APP_NAME } her sohbette sınırlı miktarda bilgiyi işleyebilir. İlerleme çubuğu, var olan dosyalarınızın ne kadar kapasite kullandığını görüntüler. "
@@ -1344,11 +1446,17 @@
       "No files available": [
         "Kullanılabilecek bir dosya yok"
       ],
+      "No supported files in this folder": [
+        "Bu klasörde desteklenen dosya yok"
+      ],
       "Note:": [
         "Not:"
       ],
       "of": [
         "/"
+      ],
+      "Partial content": [
+        "Kısmi içerik"
       ],
       "Please share what you expected": [
         "Lütfen ne beklediğinizi paylaşın"
@@ -1371,6 +1479,9 @@
       "Processing file contents...": [
         "Dosya içerikleri işleniyor..."
       ],
+      "Relevant files will be automatically retrieved based on your questions.": [
+        "İlgili dosyalar sorularınıza göre otomatik olarak alınacaktır."
+      ],
       "Remove": [
         "Kaldır"
       ],
@@ -1379,6 +1490,12 @@
       ],
       "Remove message filter": [
         "İleti süzgecini kaldır"
+      ],
+      "Removed from future questions": [
+        "Gelecekteki sorulardan kaldırıldı"
+      ],
+      "Retrieved Project Knowledge": [
+        "Alınan Proje Bilgisi"
       ],
       "rows": [
         "satır"
@@ -1425,6 +1542,9 @@
       "There was an error processing this file. The content may not be readable or the file format might not be fully supported.": [
         "Bu dosya işlenirken bir sorun çıktı. İçerik okunamayabilir veya dosya biçimi tam olarak desteklenmiyor olabilir."
       ],
+      "These files won't be used for future questions.": [
+        "Bu dosyalar gelecekteki sorular için kullanılmayacaktır."
+      ],
       "This file appears to be empty or contains no extractable text content.": [
         "Bu dosya boş görünüyor veya çıkarılabilecek bir yazı içermiyor."
       ],
@@ -1448,6 +1568,9 @@
       ],
       "Unsupported File Type": [
         "Dosya türü desteklenmiyor"
+      ],
+      "Uploading \"${ file.name }\" to ${ DRIVE_APP_NAME }...": [
+        "\"${ file.name }\" dosyası ${ DRIVE_APP_NAME } için yükleniyor..."
       ],
       "Uploading ${ uploadProgress.fileName }": [
         "Yükleniyor ${ uploadProgress.fileName }"
@@ -1693,11 +1816,20 @@
       "All chats deleted successfully": [
         "Tüm sohbetler silindi"
       ],
+      "File \"${ file.name }\" uploaded to ${ DRIVE_APP_NAME }": [
+        "\"${ file.name }\" dosyası ${ DRIVE_APP_NAME } konumuna yüklendi"
+      ],
       "File added to knowledge base: ${ result.fileName }": [
         "Dosya bilgi bankasına eklendi: ${ result.fileName }"
       ],
       "File uploaded and added to knowledge base": [
         "Dosya yüklendi ve bilgi bankasına eklendi"
+      ],
+      "File uploaded and indexed for search": [
+        "Dosya yüklendi ve arama için indekslendi"
+      ],
+      "File uploaded to Drive folder": [
+        "Dosya Drive klasörüne yüklendi"
       ],
       "Thanks for the feedback!": [
         "Geri bildiriminiz için teşekkürler!"
@@ -1712,6 +1844,12 @@
       ],
       "About ${ LUMO_SHORT_APP_NAME }": [
         "${ LUMO_SHORT_APP_NAME } hakkında"
+      ],
+      "Automatic web search": [
+        "Otomatik web araması"
+      ],
+      "Delete everything": [
+        "Her şeyi sil"
       ],
       "Don't lose the thread": [
         "Konudan uzaklaşmayın"
@@ -1728,8 +1866,14 @@
       "Save your favorites": [
         "Beğendiklerinizi kaydedin"
       ],
+      "Search Index": [
+        "Arama Dizini"
+      ],
       "Secure your spot": [
         "Yerinizi alın"
+      ],
+      "Show project chats in history": [
+        "Geçmişteki proje sohbetlerini görüntüle"
       ],
       "Theme": [
         "Tema"
@@ -1901,23 +2045,89 @@
       "Ask the model to be more careful and thorough": [
         "Modelden daha dikkatli ve kapsamlı olmasını isteyin."
       ],
+      "Back to project": [
+        "Projeye dön"
+      ],
+      "Back to projects": [
+        "Projelere dön"
+      ],
       "Cancel": [
         "İptal"
+      ],
+      "Choose project icon": [
+        "Proje simgesi seç"
+      ],
+      "Click to edit title": [
+        "Başlığı düzenlemek için tıklayın"
+      ],
+      "Create": [
+        "Oluştur"
+      ],
+      "Create folder": [
+        "Klasör oluştur"
+      ],
+      "Delete": [
+        "Sil"
+      ],
+      "Delete conversation": [
+        "Yazışmayı sil"
+      ],
+      "Delete project": [
+        "Projeyi sil"
       ],
       "Describe desired changes...": [
         "İstenilen değişiklikleri açıklayın..."
       ],
+      "Deselect all": [
+        "Tüm seçimi kaldır"
+      ],
+      "Edit instructions": [
+        "Talimatları düzenle"
+      ],
+      "Edit project": [
+        "Projeyi düzenle"
+      ],
+      "Go to project": [
+        "Projeye git"
+      ],
+      "Hide settings": [
+        "Ayarları gizle"
+      ],
+      "Hide sidebar": [
+        "Kenar çubuğunu gizle"
+      ],
+      "Manage chats": [
+        "Sohbetleri yönet"
+      ],
+      "Manage Drive folder link": [
+        "Drive klasör bağlantısını yönet"
+      ],
+      "More breadcrumbs": [
+        "Daha fazla gezinme izi"
+      ],
       "More concise": [
         "Daha özlü"
       ],
+      "More options": [
+        "Daha fazla seçenek"
+      ],
       "Next message": [
         "Sonraki ileti"
+      ],
+      "Open conversation": [
+        "Yazışmayı aç"
       ],
       "Previous message": [
         "Önceki ileti"
       ],
       "Regenerate": [
         "Yeniden üret"
+      ],
+      "Remove all": [
+        "Tümünü sil"
+      ],
+      "Remove all files": [
+        "Tüm dosyaları kaldır"
       ],
       "Remove file": [
         "Dosyayı kaldır"
@@ -1928,28 +2138,82 @@
       "Retry with the same prompt": [
         "Aynı istemle yeniden dene"
       ],
+      "Select all": [
+        "Tümünü seç"
+      ],
+      "Select conversation": [
+        "Yazışmayı seç"
+      ],
+      "Settings": [
+        "Ayarlar"
+      ],
+      "Show instructions and files": [
+        "Yönergeleri ve dosyaları göster"
+      ],
+      "Show settings": [
+        "Ayarları göster"
+      ],
+      "Show sidebar": [
+        "Kenar çubuğunu göster"
+      ],
       "Think longer": [
         "Daha uzun düşünün"
       ],
+      "Toggle selection": [
+        "Seçimi değiştir"
+      ],
       "Try again": [
         "Yeniden dene"
+      ],
+      "Unlink Folder": [
+        "Klasörün Bağlantısını Kaldır"
+      ],
+      "Upgrade to Plus": [
+        "Plus'a yükselt"
+      ],
+      "Upload file": [
+        "Dosya yükle"
+      ],
+      "Upload files": [
+        "Dosya yükle"
       ],
       "What needs changed?": [
         "Neyin değiştirilmesi gerekiyor?"
       ]
     },
     "collider_2025:Button": {
+      "Add instructions to tailor ${ LUMO_SHORT_APP_NAME }'s responses": [
+        "${ LUMO_SHORT_APP_NAME }'nun yanıtlarını özelleştirmek için talimatlar ekleyin"
+      ],
+      "Back to projects": [
+        "Projelere dön"
+      ],
       "Cancel": [
         "İptal"
       ],
       "Close sidebar": [
         "Kenar çubuğunu kapat"
       ],
+      "Collapse projects": [
+        "Projeleri daralt"
+      ],
+      "Create a free account": [
+        "Ücretsiz hesap oluştur"
+      ],
+      "Create project": [
+        "Proje oluştur"
+      ],
+      "Delete": [
+        "Sil"
+      ],
       "Edit": [
         "Düzenle"
       ],
       "Expand": [
         "Genişlet"
+      ],
+      "Expand projects": [
+        "Projeleri genişlet"
       ],
       "Favorite": [
         "Beğenilenlere ekle"
@@ -1963,6 +2227,12 @@
       "Hide sidebar": [
         "Kenar çubuğunu gizle"
       ],
+      "Link this folder": [
+        "Bu klasörü bağla"
+      ],
+      "Link with ${ DRIVE_APP_NAME } folder": [
+        "${ DRIVE_APP_NAME } klasörüyle bağlantı kurun"
+      ],
       "Manage chat knowledge files (${ totalFiles })": [
         "Sohbet bilgi dosyaları yönetimi (${ totalFiles })"
       ],
@@ -1972,8 +2242,20 @@
       "New chat": [
         "Yeni sohbet"
       ],
+      "New project": [
+        "Yeni proje"
+      ],
+      "Projects": [
+        "Projeler"
+      ],
+      "Save": [
+        "Kaydet"
+      ],
       "Search": [
         "Ara"
+      ],
+      "See all": [
+        "Tümünü gör"
       ],
       "Send": [
         "Gönder"
@@ -1984,16 +2266,119 @@
       "Show sidebar": [
         "Kenar çubuğunu görüntüle"
       ],
+      "Sign in": [
+        "Oturum aç"
+      ],
       "Unfavorite": [
         "Beğenilenlerden kaldır"
       ],
       "Untitled chat": [
         "Başlıksız sohbet"
+      ],
+      "Upload from computer": [
+        "Bilgisayardan yükle"
+      ]
+    },
+    "collider_2025:Error": {
+      "Cannot link the root folder. Please select a subfolder.": [
+        "Kök klasör bağlanamıyor. Lütfen bir alt klasör seçin."
+      ],
+      "Error processing file: ${ file.name }": [
+        "Dosya işlenirken hata oluştu: ${ file.name }"
+      ],
+      "Error uploading file: ${ file.name }": [
+        "Dosya yüklenirken hata oluştu: ${ file.name }"
+      ],
+      "Failed to create folder": [
+        "Klasör oluşturulamadı"
+      ],
+      "Failed to download \"${ file.name }\": Data integrity check failed. Please try again.": [
+        "\"${ file.name }\" dosyası indirilemedi: Veri bütünlüğü kontrolü başarısız oldu. Lütfen tekrar deneyin."
+      ],
+      "Failed to index Drive folder for search": [
+        "Arama için Drive klasörü dizine eklenemedi"
+      ],
+      "Failed to link Drive folder": [
+        "Drive klasörüne bağlanılamadı"
+      ],
+      "Failed to process file: ${ file.name }": [
+        "Dosya işlenemedi: ${ file.name }"
+      ],
+      "Failed to unlink Drive folder": [
+        "Drive klasörü bağlantısı kaldırılamadı"
+      ],
+      "File \"${ file.name }\" (${ fileSizeFormatted }) exceeds the ${ maxSizeFormatted } limit. Link a ${ DRIVE_APP_NAME } folder to upload larger files.": [
+        "“${ file.name }” dosyası (${ fileSizeFormatted }) ${ maxSizeFormatted } sınırını aşıyor. Daha büyük dosyalar yüklemek için bir ${ DRIVE_APP_NAME } klasörüne bağlantı ekleyin."
+      ],
+      "File download failed due to integrity check. Please try again.": [
+        "Dosya bütünlük kontrolü nedeniyle indirilemedi. Lütfen tekrar deneyin."
+      ],
+      "File format not supported: ${ file.name }": [
+        "Dosya formatı desteklenmiyor: ${ file.name }"
+      ],
+      "File type not supported: ${ file.name }": [
+        "Dosya türü desteklenmiyor: ${ file.name }"
+      ],
+      "Project not found": [
+        "Proje bulunamadı"
+      ]
+    },
+    "collider_2025:Feature": {
+      "Advanced AI models": [
+        "Gelişmiş yapay zeka modelleri"
+      ],
+      "Priority access & faster responses": [
+        "Öncelikli erişim ve daha hızlı yanıtlar"
+      ],
+      "Unlimited projects": [
+        "Sınırsız proje"
+      ]
+    },
+    "collider_2025:FeaturePoint": {
+      "Chats, files, and context stay together in an encrypted workspace.": [
+        "Sohbetler, dosyalar ve içerik şifrelenmiş bir çalışma alanında bir arada tutulur."
+      ],
+      "Project-specific instructions mean no repeating yourself.": [
+        "Projeye özel talimatlar sayesinde kendinizi tekrarlamanıza gerek kalmaz."
+      ],
+      "Tailored responses based on your project’s files and instructions.": [
+        "Projenizin dosyalarına ve talimatlarına göre özelleştirilmiş yanıtlar."
       ]
     },
     "collider_2025:Info": {
+      " Chat in Project": [
+        " Projedeki Sohbet",
+        " Projedeki Sohbetler"
+      ],
+      "${ project.conversationCount } conversation": [
+        "${ project.conversationCount } yazışma"
+      ],
+      "${ project.conversationCount } conversations": [
+        "${ project.conversationCount } yazışma"
+      ],
+      "${ project.fileCount } file": [
+        "${ project.fileCount } dosya"
+      ],
+      "${ project.fileCount } files": [
+        "${ project.fileCount } dosya"
+      ],
       "AIs from Big Tech are built on harvesting your data. But ${ LUMO_SHORT_APP_NAME } is different. It was created by the scientists behind innovative, privacy-first services like ${ MAIL_APP_NAME } and ${ VPN_APP_NAME }. And it’s owned by a Swiss nonprofit, whose mission is to advance privacy and never make money from user data.": [
         "Big Tech şirketlerinin yapay zekaları verilerinizi toplamak üzerine kuruludur. Ancak ${ LUMO_SHORT_APP_NAME } farklıdır. Yenilikçi, gizlilik odaklı ${ MAIL_APP_NAME } ve ${ VPN_APP_NAME } gibi hizmetlerin arkasındaki bilim insanları tarafından oluşturulmuştur. Amacı gizliliği iyileştirmek ve kullanıcı verilerinden asla para kazanmamak olan ve kar amacı gütmeyen İsviçreli bir kuruluşa aittir."
+      ],
+      "All messages and chat history": [
+        "Tüm mesajlar ve sohbet geçmişi"
+      ],
+      "Are you sure you want to delete \"${ project.name }\"? This action cannot be undone.": [
+        "“${ project.name }” dosyasını silmek istediğinizden emin misiniz? Bu işlem geri alınamaz."
+      ],
+      "Are you sure you want to delete this conversation? This action cannot be undone.": [
+        "Bu yazışmayı silmek istediğinizden emin misiniz? Bu işlem geri alınamaz."
+      ],
+      "Auto-retrieved": [
+        "Otomatik olarak alındı"
+      ],
+      "Browse to the ${ DRIVE_SHORT_APP_NAME } folder you want to link to this project, then click \"Link this folder\".": [
+        "Bu projeye bağlamak istediğiniz ${ DRIVE_SHORT_APP_NAME } klasörüne gidin ve ardından “Bu klasörü bağla” seçeneğine tıklayın."
       ],
       "Conversation encrypted": [
         "Sohbet şifrelendi"
@@ -2001,22 +2386,102 @@
       "Current chat:": [
         "Geçerli sohbet:"
       ],
+      "Drive files are not available for guest users": [
+        "Drive dosyaları misafir kullanıcılar için kullanılamaz"
+      ],
+      "File \"${ file.name }\" is already added to this conversation": [
+        "\"${ file.name }\" dosyası bu yazışmaya zaten eklenmiş"
+      ],
+      "File \"${ file.name }\" is already in this project": [
+        "“${ file.name }” dosyası zaten bu projede mevcut"
+      ],
+      "Files uploaded to this project will be saved to the linked Drive folder.": [
+        "Bu projeye yüklenen dosyalar bağlantılı Drive klasörüne kaydedilecektir."
+      ],
+      "From ${ DRIVE_APP_NAME }": [
+        "${ DRIVE_APP_NAME } uygulamasından"
+      ],
+      "Initializing Drive...": [
+        "Drive başlatılıyor..."
+      ],
+      "Learn more about how project knowledge works": [
+        "Proje bilgisinin nasıl işlediğini öğrenin"
+      ],
+      "Link files from ${ DRIVE_APP_NAME } or upload from your computer.": [
+        "${ DRIVE_APP_NAME } uygulamasından dosyaları bağlayın veya bilgisayarınızdan yükleyin."
+      ],
+      "No projects yet": [
+        "Henüz proje yok"
+      ],
       "Processing file...": [
         "Dosya işleniyor..."
       ],
       "Processing...": [
         "İşleniyor..."
       ],
+      "Projects help you organize conversations with custom instructions and files.": [
+        "Projeler, özel talimatlar ve dosyalarla yazışmaları düzenlemenize yardımcı olur"
+      ],
+      "Projects help you organize conversations with custom instructions and files. Sign in or create a free account to get started.": [
+        "Projeler, özel talimatlar ve dosyalarla konuşmaları düzenlemenize yardımcı olur. Başlamak için oturum açın veya ücretsiz bir hesap oluşturun."
+      ],
       "This message is empty. Sorry about that.": [
         "Bu ileti boş. Üzgünüz."
       ],
+      "This project already has files. Please remove all files before linking a Drive folder.": [
+        "Bu projenin zaten dosyaları var. Lütfen bir Drive klasörü bağlamadan önce tüm dosyaları kaldırın."
+      ],
+      "This will remove all ${ files.length } files from this project. This action cannot be undone.": [
+        "Bu işlem, bu projeden tüm ${ files.length } dosyayı kaldıracaktır. Bu işlem geri alınamaz."
+      ],
+      "Tips on how to write useful instructions": [
+        "Yararlı talimatlar yazmak için ipuçları"
+      ],
+      "Type @filename to ask questions about a specific file": [
+        "Belirli bir dosya hakkında soru sormak için @dosyaadı yazın"
+      ],
+      "Upgrade to ${ LUMO_SHORT_APP_NAME } Plus to create unlimited projects, unlock advanced AI models, and more.": [
+        "Sınırsız proje oluşturmak, gelişmiş AI modellerinin kilidini açmak ve daha fazlasını yapmak için ${ LUMO_SHORT_APP_NAME } Plus sürümüne yükseltin."
+      ],
+      "Using ${ DRIVE_APP_NAME } lets ${ LUMO_SHORT_APP_NAME } work with larger files.": [
+        "${ DRIVE_APP_NAME } kullanmak ${ LUMO_SHORT_APP_NAME }'nun daha büyük dosyalarla çalışmasını sağlar."
+      ],
       "Your files are large. ${ LUMO_SHORT_APP_NAME } may not be able to process all information.": [
         "Dosyalarınız büyük. ${ LUMO_SHORT_APP_NAME } tüm bilgileri işleyemeyebilir."
+      ],
+      "Your information is zero-access encrypted": [
+        "Bilgileriniz sıfır erişim şifrelemesi ile korunmaktadır."
       ]
     },
     "collider_2025:Label": {
+      "chat": [
+        "sohbet"
+      ],
+      "chats": [
+        "sohbetler"
+      ],
+      "Current folder:": [
+        "Geçerli klasör:"
+      ],
       "Edit conversation title": [
         "Sohbet başlığını düzenle"
+      ],
+      "Folder name": [
+        "Klasör adı"
+      ],
+      "Instructions": [
+        "Talimatlar"
+      ],
+      "Project Instructions (optional)": [
+        "Proje Talimatları (isteğe bağlı)"
+      ],
+      "Untitled chat": [
+        "Başlıksız sohbet"
+      ]
+    },
+    "collider_2025:Navigation": {
+      "All projects": [
+        "Tüm projeler"
       ]
     },
     "collider_2025:Notification": {
@@ -2028,8 +2493,23 @@
       ]
     },
     "collider_2025:Placeholder": {
+      "Add instructions about the tone, style, and persona you want ${ LUMO_SHORT_APP_NAME } to adopt.": [
+        "${ LUMO_SHORT_APP_NAME }'nun benimsemesini istediğiniz üslup, stil ve kişilik hakkında talimatlar ekleyin."
+      ],
+      "Add instructions about the tone, style, and persona you want ${ LUMO_SHORT_APP_NAME } to adopt. These instructions will apply to all chats in this project.": [
+        "${ LUMO_SHORT_APP_NAME }'nun benimsemesini istediğiniz üslup, stil ve kişilik hakkında talimatlar ekleyin. Bu talimatlar bu projedeki tüm sohbetler için geçerli olacaktır."
+      ],
       "Ask anything…": [
         "İstediğinizi sorun…"
+      ],
+      "Enter folder name": [
+        "Klasör adı girin"
+      ],
+      "Enter project name": [
+        "Proje adı yazın"
+      ],
+      "Holiday planner": [
+        "Tatil planlayıcı"
       ],
       "Processing files, please wait...": [
         "Dosyalar işleniyor, lütfen bekleyin..."
@@ -2041,12 +2521,191 @@
         "Oturum açmalısınız"
       ]
     },
+    "collider_2025:Project": {
+      "Develop stories, refine prose, and improve your writing craft": [
+        "Hikayeler geliştirin, düzyazınızı iyileştirin ve yazma becerinizi geliştirin"
+      ],
+      "Financial assistant": [
+        "Finansal asistan"
+      ],
+      "Get help understanding assignments, solving problems, and learning concepts": [
+        "Ödevleri anlamak, problemleri çözmek ve kavramları öğrenmek için yardım alın"
+      ],
+      "Learn a language": [
+        "Bir dil öğrenin"
+      ],
+      "Plan financial goals with personalized insights": [
+        "Kişiselleştirilmiş içgörülerle finansal hedeflerinizi planlayın"
+      ],
+      "Practice conversations, learn grammar, and build vocabulary in your target language": [
+        "Hedef dilinizde konuşma pratiği yapın, gramer öğrenin ve kelime dağarcığınızı geliştirin"
+      ],
+      "Research & Analysis Partner": [
+        "Araştırma ve Analiz Ortağı"
+      ],
+      "Study companion": [
+        "Çalışma arkadaşı"
+      ],
+      "Synthesize sources, analyze data, and develop insights for your research projects": [
+        "Kaynakları sentezleyin, verileri analiz edin ve araştırma projeleriniz için içgörüler geliştirin"
+      ],
+      "Writing coach": [
+        "Yazma koçu"
+      ]
+    },
     "collider_2025:Prompt": {
+      "Analyze my spending patterns and suggest areas to reduce expenses": [
+        "Harcama alışkanlıklarımı analiz et ve giderleri azaltabileceğim alanlar öner"
+      ],
+      "Can you explain why this answer is correct?": [
+        "Bu cevabın neden doğru olduğunu açıklayabilir misiniz?"
+      ],
+      "Compare the methodologies used across these studies": [
+        "Bu çalışmalarda kullanılan metodolojileri karşılaştırın"
+      ],
+      "Create a packing list for a winter hiking trip in Patagonia": [
+        "Patagonya'da kış yürüyüşü için bir eşya listesi oluşturun"
+      ],
+      "Explain the risks associated with this type of asset": [
+        "Bu tür varlıklarla ilişkili riskleri açıklayın"
+      ],
+      "Explain the trade-offs between paying off debt vs investing": [
+        "Borçları ödemek ile yatırım yapmak arasındaki ödünleşimleri açıklayın"
+      ],
+      "Explain this medication and its potential side effects": [
+        "Bu ilacı ve olası yan etkilerini açıklayın"
+      ],
+      "Help me create a plan to achieve this goal": [
+        "Bu hedefe ulaşmak için bir plan oluşturmama yardım edin"
+      ],
+      "Help me draft a professional response to this email": [
+        "Bu e-postaya profesyonel bir yanıt yazmama yardım et"
+      ],
+      "Help me organize my thoughts on this decision": [
+        "Bu karar hakkında düşüncelerimi düzenlememe yardım et"
+      ],
+      "Help me plan a 2-week itinerary for Japan with cultural experiences": [
+        "Japonya'da kültürel deneyimler içeren 2 haftalık bir seyahat programı planlamama yardım et"
+      ],
+      "Help me prepare questions about this diagnosis for my doctor": [
+        "Doktoruma bu teşhisle ilgili sorular hazırlamama yardım et"
+      ],
+      "Help me prepare talking points for this presentation": [
+        "Bu sunum için konuşma noktaları hazırlamama yardım et"
+      ],
+      "Help me refine this draft to be more concise and impactful": [
+        "Bu taslağı daha özlü ve etkili hale getirmeme yardım et"
+      ],
+      "Help me understand different retirement account options and their tax implications": [
+        "Farklı emeklilik hesabı seçeneklerini ve bunların vergiye ilişkin sonuçlarını anlamama yardımcı ol"
+      ],
+      "Help me understand how to read and analyze financial statements": [
+        "Finansal tabloları nasıl okuyup analiz edeceğimi anlamama yardımcı ol"
+      ],
+      "Help me understand this concept step by step": [
+        "Bu kavramı adım adım anlamama yardımcı ol"
+      ],
+      "Help me understand what this code does": [
+        "Bu kodun ne işe yaradığını anlamama yardım et"
+      ],
       "How do people celebrate New Year's Eve around the world?": [
         "Tüm dünyadan insanlar yılbaşı gecesini nasıl kutlar?"
       ],
-      "What are the origins of Christmas?": [
-        "Noel nasıl ortaya çıkmıştır?"
+      "Identify any unusual or potentially unfavorable terms": [
+        "Olağandışı veya potansiyel olarak olumsuz şartları belirleyin"
+      ],
+      "Identify research gaps and suggest future research directions": [
+        "Araştırma eksikliklerini belirleyin ve gelecekteki araştırma yönelimlerini önerin"
+      ],
+      "Review this code for bugs and potential improvements": [
+        "Hataları ve olası iyileştirmeleri belirlemek için bu kodu inceleyin"
+      ],
+      "Review this for clarity, tone, and grammatical errors": [
+        "Anlaşılırlık, üslup ve dilbilgisel hatalar açısından gözden geçir"
+      ],
+      "Suggest hidden gems and local favorites in Barcelona": [
+        "Barselona'da gizli kalmış hazineleri ve yerel halkın favori mekanlarını önerin"
+      ],
+      "Suggest ways to improve the flow and structure of this text": [
+        "Bu metnin akışını ve yapısını iyileştirmek için önerilerde bulun"
+      ],
+      "Suggest ways to optimize this for better performance": [
+        "Daha iyi performans için bunu optimize etmenin yollarını önerin"
+      ],
+      "Summarize the key obligations and rights in this contract": [
+        "Bu sözleşmedeki temel yükümlülükleri ve hakları özetleyin"
+      ],
+      "Summarize the key points from this meeting": [
+        "Bu toplantının anahtar noktalarını özetleyin"
+      ],
+      "What are the key points I should remember for this topic?": [
+        "Bu konu ile ilgili hatırlamam gereken önemli noktalar nelerdir?"
+      ],
+      "What are the main findings and how do they relate to each other?": [
+        "Ana bulgular nelerdir ve bunlar birbirleriyle nasıl ilişkilidir?"
+      ],
+      "What are the termination clauses and notice requirements?": [
+        "Fesih maddeleri ve bildirim gereklilikleri nelerdir?"
+      ],
+      "What do these lab values mean and are any outside normal ranges?": [
+        "Bu laboratuvar değerleri ne anlama geliyor ve herhangi biri normal aralıkların dışında mı?"
+      ],
+      "What metrics and research should I review for this investment?": [
+        "Bu yatırım için hangi ölçütleri ve araştırmaları incelemeliyim?"
+      ],
+      "What questions should I consider before making this choice?": [
+        "Bu seçimi yapmadan önce hangi soruları göz önünde bulundurmalıyım?"
+      ],
+      "What should I know about emergency funds and where to keep them?": [
+        "Acil durum fonları hakkında neleri bilmeliyim ve bunları nerede saklamalıyım?"
+      ]
+    },
+    "collider_2025:Status": {
+      "Complete": [
+        "Tamamlandı"
+      ],
+      "Error": [
+        "Hata"
+      ],
+      "Indexing": [
+        "Dizinleniyor"
+      ],
+      "Indexing complete": [
+        "Dizinleme tamamlandı"
+      ],
+      "Indexing error": [
+        "Dizinleme hatası"
+      ],
+      "Indexing for search": [
+        "Arama için indeksleme"
+      ]
+    },
+    "collider_2025:Subline": {
+      "Projects help you keep related chats, files, and instructions in one place. They make it easy to stay organized and reuse context across chats.": [
+        "Projeler, ilgili sohbetleri, dosyaları ve talimatları tek bir yerde tutmanıza yardımcı olur. Düzenli kalmanızı ve sohbetler arasında bağlamı yeniden kullanmanızı kolaylaştırır."
+      ]
+    },
+    "collider_2025:Success": {
+      "All files removed from project": [
+        "Tüm dosyalar projeden kaldırıldı"
+      ],
+      "Drive folder linked successfully": [
+        "Drive klasörü başarıyla bağlandı"
+      ],
+      "Drive folder unlinked": [
+        "Drive klasörü bağlantısı kaldırıldı"
+      ],
+      "File \"${ file.name }\" added to project": [
+        "\"${ file.name }\" dosyası projeye eklendi"
+      ],
+      "File removed from project": [
+        "Dosya projeden kaldırıldı"
+      ],
+      "Folder \"${ trimmedFolderName }\" created successfully": [
+        "\"${ trimmedFolderName }\" klasörü başarıyla oluşturuldu"
+      ],
+      "Folder created successfully": [
+        "Klasör başarıyla oluşturuldu"
       ]
     },
     "collider_2025:Title": {
@@ -2056,11 +2715,32 @@
       "Built by the team that knows privacy": [
         "Gizliliği bilen bir ekip tarafından geliştirildi"
       ],
+      "Create folder": [
+        "Klasör oluştur"
+      ],
+      "Create new project": [
+        "Yeni proje oluştur"
+      ],
+      "Delete conversation?": [
+        "Yazışma silinsin mi?"
+      ],
+      "Delete project?": [
+        "Proje silinsin mi?"
+      ],
       "Earlier": [
         "Daha önce"
       ],
+      "Edit Instructions": [
+        "Talimatları Düzenle"
+      ],
+      "Edit Project": [
+        "Projeyi Düzenle"
+      ],
       "Favorites": [
         "Beğenilenler"
+      ],
+      "Get started by creating a new project": [
+        "Yeni bir proje oluşturarak başlayın"
       ],
       "Ghost mode": [
         "Hayalet kipi"
@@ -2077,20 +2757,62 @@
       "How does ${ LUMO_SHORT_APP_NAME } keep our conversations confidential?": [
         "${ LUMO_SHORT_APP_NAME } sohbetlerinizi nasıl gizli tutar?"
       ],
+      "Inspiration": [
+        "İlham"
+      ],
+      "Instructions": [
+        "Talimatlar"
+      ],
+      "Introducing Projects": [
+        "Projelerle Tanışın"
+      ],
       "Last 30 days": [
         "Son 30 gün"
       ],
       "Last 7 days": [
         "Son 7 gün"
       ],
+      "Link Drive Folder": [
+        "Drive Klasörünü Bağla"
+      ],
+      "Linked Drive Folder": [
+        "Bağlı Drive Klasörü"
+      ],
       "More options": [
         "Diğer seçenekler"
+      ],
+      "More Projects with ${ LUMO_SHORT_APP_NAME } Plus": [
+        "${ LUMO_SHORT_APP_NAME } Plus ile Daha Çok Proje"
       ],
       "No chat history yet. Let's start chatting!": [
         "Henüz bir sohbet geçmişi yok. Sohbete başlayalım!"
       ],
       "No result.": [
         "Herhangi bir sonuç bulunamadı."
+      ],
+      "Nothing here yet": [
+        "Henüz burada bir şey yok"
+      ],
+      "Older": [
+        "Daha eski"
+      ],
+      "Project knowledge": [
+        "Proje bilgisi"
+      ],
+      "Projects": [
+        "Projeler"
+      ],
+      "Remove all files?": [
+        "Tüm dosyaları silinsin mi?"
+      ],
+      "Settings": [
+        "Ayarlar"
+      ],
+      "Sign in to create projects": [
+        "Proje oluşturmak için oturum açın"
+      ],
+      "Start a new conversation": [
+        "Yeni bir yazışma başlat"
       ],
       "The AI that respects your privacy": [
         "Gizliliğinize saygı duyan yapay zeka"
@@ -2103,6 +2825,22 @@
       ],
       "Whatever you ask me is:": [
         "Bana istediğinizi sorun:"
+      ]
+    },
+    "collider_2025:Tooltip": {
+      "Choose icon": [
+        "Simge seç"
+      ]
+    },
+    "collider_2025:Warning": {
+      "Cannot Link Drive Folder": [
+        "Drive Klasörüne Bağlanılamadı"
+      ],
+      "This folder contains ${ result.totalFiles } indexable files. Only the first ${ MAX_INDEXABLE_FILES } files were indexed. ${ result.skippedFiles } files were skipped.": [
+        "Bu klasör ${ result.totalFiles } dizinlenebilir dosya içeriyor. Yalnızca ilk ${ MAX_INDEXABLE_FILES } dosya dizinlendi. ${ result.skippedFiles } dosya atlandı."
+      ],
+      "This will also permanently delete:": [
+        "Bu işlem şunları da kalıcı olarak silecektir:"
       ]
     },
     "color": {
@@ -3567,6 +4305,9 @@
         "+${ organization.BonusVPN } ${ VPN_APP_NAME } bağlantısı (daha fazla aygıt için VPN bağlantısı sağlar)",
         "+${ organization.BonusVPN } ${ VPN_APP_NAME } bağlantısı (daha fazla aygıt için VPN bağlantısı sağlar)"
       ],
+      "0 MB": [
+        "0 MB"
+      ],
       "30-day money-back guarantee.": [
         "30 gün içinde ücreti geri ödeme garantisi."
       ],
@@ -3581,6 +4322,9 @@
       ],
       "Address copied to clipboard": [
         "Adres panoya kopyalandı"
+      ],
+      "Advanced search:": [
+        "Gelişmiş arama:"
       ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "Daha iyi e-postaları hızlı ve kolayca oluşturmanızı sağlayacak yapay zeka destekli yardımcı."
@@ -3614,6 +4358,15 @@
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Ücretsiz bir tarifeye geçtiğinizde, gelecekte yeniden ücretli tarifeye geçseniz bile bu ek faydaları kalıcı olarak kaybedersiniz."
+      ],
+      "Chunk": [
+        "Öbek"
+      ],
+      "chunks": [
+        "öbekler"
+      ],
+      "Chunks:": [
+        "Öbekler:"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Yeni bir doğrulama kodunun ${ strong } numarasına gönderilmesi için \"Yeni kod iste\" üzerine tıklayın. Bu telefon numarası yanlışsa düzeltmek için \"Düzenle\" üzerine tıklayın."
@@ -3703,6 +4456,9 @@
       "Expired": [
         "Geçerlilik süresi dolmuş"
       ],
+      "Folder:": [
+        "Klasör:"
+      ],
       "Google Pay mark": [
         "Google Pay işareti"
       ],
@@ -3726,6 +4482,18 @@
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "Bir sonraki adımda, bir Bitcoin adresi kullanarak ön ödemenizi yapabilirsiniz."
+      ],
+      "Index size:": [
+        "Dizin boyutu:"
+      ],
+      "Indexed content (first 2000 chars):": [
+        "Dizinlenen içerik (ilk 2000 karakter):"
+      ],
+      "Indexed files:": [
+        "Dizinlenmiş dosyalar:"
+      ],
+      "Indexed folders:": [
+        "Dizinlenen klasörler:"
       ],
       "Inherited from parent folder": [
         "Üst klasörden devralındı"
@@ -3751,6 +4519,9 @@
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Takvim yüklenirken lütfen bekleyin. Yeni bir sekmede zamanlama platformumuz Calendly açılacak."
       ],
+      "Loading file preview...": [
+        "Dosya ön izlemesi yükleniyor..."
+      ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode logosu"
       ],
@@ -3760,17 +4531,29 @@
       "Messages to all your email addresses will go to your inbox.": [
         "Tüm e-posta adreslerinize gönderilen iletiler gelen kutunuza gelir."
       ],
+      "MIME:": [
+        "MIME:"
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Yeni klasörünüzü adlandırın ve içine eklemek istediğiniz üst klasörü seçin. Herhangi bir üst klasör seçmezseniz, yeni klasör bir üst düzey klasör olur."
       ],
       "New": [
         "Yeni"
       ],
+      "No conversations yet. Start a new chat to begin.": [
+        "Henüz yazışma yok. Başlamak için yeni bir sohbet başlatın."
+      ],
+      "No Drive documents are loaded for inspection in this session.": [
+        "Bu oturumda inceleme için hiçbir Drive belgesi yüklenmemiş."
+      ],
       "No payment is required at this time.": [
         "Şu anda herhangi bir ödeme gerekmiyor."
       ],
       "No results found": [
         "Herhangi bir sonuç bulunamadı"
+      ],
+      "No results found for \"${ query }\"": [
+        "\"${ query }\" için sonuç bulunamadı"
       ],
       "Number of dedicated servers in the organization": [
         "Kuruluşunuza ayrılmış sunucu sayısı"
@@ -3817,6 +4600,15 @@
       "Registering your subscription…": [
         "Aboneliğiniz kaydediliyor…"
       ],
+      "Searchable chunks": [
+        "Aranabilir öbekler"
+      ],
+      "Searchable chunks:": [
+        "Aranabilir öbekler:"
+      ],
+      "searchable sections": [
+        "arama yapılabilir bölümler"
+      ],
       "SEPA payments are not available at the moment. Please try again later.": [
         "Şu anda SEPA ödemeleri yapılamıyor. Lütfen bir süre sonra yeniden deneyin."
       ],
@@ -3835,6 +4627,9 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Sadık bir kullanıcı olduğunuz için, hesabınızda yeni özellikler eklendi."
       ],
+      "Size:": [
+        "Boyut:"
+      ],
       "Start sharing it with contacts and use it for online services.": [
         "Bu adresi kişilerinizle paylaşmaya ve çevrim içi hizmetlerde kullanmaya başlayın."
       ],
@@ -3851,6 +4646,9 @@
       "Thank you for subscribing. Secure browsing starts now.": [
         "Abone olduğunuz için teşekkürler. Artık güvenle gezinebilirsiniz."
       ],
+      "The index reports ${ displayDriveDocs } Drive documents. Re-index or keep the session open after indexing to view details here.": [
+        "Dizin ${ displayDriveDocs } Drive belgesini raporluyor. Ayrıntıları burada görmek için dizini yeniden oluşturun veya dizin oluşturduktan sonra oturumu açık tutun."
+      ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Doğrulama işlemi için yeni bir tarayıcı sekmesi açılacak. Kullanıyorsanız lütfen açılır pencere engelleyicileri kapatın."
       ],
@@ -3863,6 +4661,9 @@
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Artık yeni iletileri göndermek için ${ defaultEmailAddress } budur."
       ],
+      "This may indicate that projects were deleted but their indexed files weren't cleaned up, or that spaces failed to load from IndexedDB.": [
+        "Bu durum projelerin silindiğini ancak dizinlenmiş dosyaların temizlenmediğini veya alanların IndexedDB'den yüklenemediğini gösterebilir."
+      ],
       "This will sign you out of all accounts currently logged in.": [
         "Bu işlem, şu anda oturum açmış olduğunuz tüm hesap oturumlarını kapatır."
       ],
@@ -3872,8 +4673,14 @@
       "To fight spam and abuse, please verify you are human.": [
         "İstenmeyen iletilere ve kötüye kullanıma karşı lütfen insan olduğunuzu doğrulayın."
       ],
+      "Total conversations:": [
+        "Toplam yazışma:"
+      ],
       "Total email addresses": [
         "Toplam e-posta adresi"
+      ],
+      "Total messages:": [
+        "Toplam mesaj:"
       ],
       "Total storage": [
         "Toplam depolama alanı"
@@ -3883,6 +4690,9 @@
       ],
       "Total VPN connections": [
         "Toplam VPN bağlantısı"
+      ],
+      "Unknown": [
+        "Bilinmeyen"
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Ücretli özellikleri, ürünleri ve depolama alanını özel bir ücret ile almak için tarifenizi şimdi yükseltin"
@@ -4356,6 +5166,86 @@
         "Bu nedir?"
       ]
     },
+    "lumo: Debug View": {
+      "Acceleration": [
+        "Hızlandırma"
+      ],
+      "Buffer size": [
+        "Arabellek boyutu"
+      ],
+      "Clear History": [
+        "Geçmişi Temizle"
+      ],
+      "Debug View": [
+        "Hata Ayıklama Görünümü"
+      ],
+      "Differential": [
+        "Fark"
+      ],
+      "FPS": [
+        "FPS"
+      ],
+      "Idle": [
+        "Boşta"
+      ],
+      "Lag": [
+        "Gecikme"
+      ],
+      "Last token": [
+        "Son token"
+      ],
+      "max": [
+        "maks"
+      ],
+      "Memory": [
+        "Bellek"
+      ],
+      "Messages": [
+        "Mesajlar"
+      ],
+      "Rate": [
+        "Oran"
+      ],
+      "Redux updates": [
+        "Redux güncellemeleri"
+      ],
+      "Redux/sec": [
+        "Redux/sn"
+      ],
+      "Render time": [
+        "Render süresi"
+      ],
+      "Search Index Debug": [
+        "Arama Dizini Hata Ayıklama"
+      ],
+      "Smoothing (Spring-Mass)": [
+        "Düzeltme (Yay-Kütle)"
+      ],
+      "Spring state": [
+        "Bahar durumu"
+      ],
+      "Spring-Mass Visualization": [
+        "Yay-Kütle Görselleştirmesi"
+      ],
+      "Status": [
+        "Durum"
+      ],
+      "Stiffness": [
+        "Katılık"
+      ],
+      "Streaming": [
+        "Yayın akışı"
+      ],
+      "to toggle": [
+        "açmak/kapatmak"
+      ],
+      "Token delays": [
+        "Token gecikmeleri"
+      ],
+      "Tokens/sec": [
+        "Token/sn"
+      ]
+    },
     "mail_signup_2024: Info": {
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe yazma yardımcısı"
@@ -4817,9 +5707,6 @@
       ],
       "Unlimited labels": [
         "Sınırsız etiket"
-      ],
-      "Unlimited logins and notes": [
-        "Sınırsız sayıda oturum açma ve not kaydı"
       ],
       "Unlimited logins, notes and credit cards": [
         "Sınırsız sayıda oturum açma, kredi kartı ve not kaydı"
@@ -5718,6 +6605,9 @@
       "Search parent folder": [
         "Üst klasörü ara"
       ],
+      "Search...": [
+        "Ara..."
+      ],
       "Select": [
         "Seçin"
       ],
@@ -6032,6 +6922,17 @@
         "Lütfen aboneliğiniz iptal edilirken bekleyin"
       ]
     },
+    "Status": {
+      "Disabled": [
+        "Devre dışı"
+      ],
+      "Enabled": [
+        "Etkin"
+      ],
+      "Not available": [
+        "Mevcut değil"
+      ]
+    },
     "storage_split: action": {
       "Keep ${ currentPlanName }": [
         "${ currentPlanName } tarifesinde kal"
@@ -6301,6 +7202,21 @@
       ]
     },
     "Time": {
+      "${ days } days ago": [
+        "${ days } gün önce"
+      ],
+      "${ hours } hours ago": [
+        "${ hours } saat önce"
+      ],
+      "${ minutes } minutes ago": [
+        "${ minutes } dakika önce"
+      ],
+      "1 hour ago": [
+        "1 saat önce"
+      ],
+      "Just now": [
+        "Şimdi"
+      ],
       "Yesterday": [
         "Dün"
       ]
@@ -6420,11 +7336,20 @@
       "Import emails, calendars, contacts": [
         "E-postaları, takvimleri, kişileri içe aktarın"
       ],
+      "Indexed Drive documents": [
+        "Dizinlenen Drive belgeleri"
+      ],
       "Invalid verification code": [
         "Doğrulama kodu geçersiz"
       ],
+      "My Files": [
+        "Dosyalarım"
+      ],
       "Network error": [
         "Ağ sorunu"
+      ],
+      "Orphaned Documents Detected": [
+        "Referans Verilmemiş Belgeler Algılandı"
       ],
       "Payment failed": [
         "Ödeme yapılamadı"
@@ -6446,6 +7371,9 @@
       ],
       "Request new code": [
         "Yeni kod iste"
+      ],
+      "Search Index Debug": [
+        "Arama Dizini Hata Ayıklama"
       ],
       "Select a plan": [
         "Bir tarife seçin"
@@ -6629,6 +7557,9 @@
       ]
     },
     "Warning": {
+      "Found ${ orphanedDocCount } documents (${ orphanedChunkCount } chunks) referencing ${ orphanedSpaceIds.length } missing space(s).": [
+        "${ orphanedDocCount } belge (${ orphanedChunkCount } öbek) ${ orphanedSpaceIds.length } eksik alan(lar)ı referans alıyor."
+      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Bildirimler uçtan uca şifrelenmez. Lütfen herhangi bir hassas bilgi göndermeyin."
       ],

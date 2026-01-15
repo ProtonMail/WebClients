@@ -457,6 +457,9 @@
       "Payments problem": [
         "Probleem met betalingen"
       ],
+      "Sheets problem": [
+        "Werkblad probleem"
+      ],
       "Sign in problem": [
         "Inlogprobleem"
       ],
@@ -1579,6 +1582,10 @@
       ],
       "${ participantCount } of ${ maxParticipants } participants": [
         "${ participantCount } van ${ maxParticipants } deelnemers"
+      ],
+      "${ participantCount } participant": [
+        "${ participantCount } deelnemer",
+        "${ participantCount } deelnemers"
       ],
       "${ presenterName } (you) is presenting": [
         "${ presenterName } (u) is aan het presenteren"

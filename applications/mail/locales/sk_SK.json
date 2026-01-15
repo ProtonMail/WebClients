@@ -1513,10 +1513,7 @@
         "Dôverovať"
       ],
       "Trust key": [
-        "Dôveryhodný kľúč",
-        "Dôveryhodné kľúče",
-        "Dôveryhodné kľúče",
-        "Dôveryhodné kľúče"
+        "Dôveryhodný kľúč"
       ],
       "Trust public key": [
         "Dôverovať verejnému kľúču"
@@ -6275,12 +6272,6 @@
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
         "${ BRAND_NAME } sa nemôže pripojiť k vášmu účtu Yahoo. Uistite sa, že:"
       ],
-      "2-step verification is enabled in your external account.": [
-        "Dvojstupňové overenie je zapnuté vo vašom vzdialenom účte."
-      ],
-      "2-step verification is enabled in your external email account.": [
-        "Dvojfázové overovanie je zapnuté vo vašom vzdialenom emailovom účte."
-      ],
       "IMAP access is enabled in your external account.": [
         "IMAP prístup je zapnutý vo vašom externom účte."
       ],
@@ -6289,6 +6280,12 @@
       ],
       "Too many recent requests. Please try again in a few moments.": [
         "Bolo zadaných príliš veľa požiadaviek. Skúste to za pár minút."
+      ],
+      "Two-factor authentication is enabled in your external account.": [
+        "Dvojfázové overovanie je zapnuté vo vašom externom účte."
+      ],
+      "Two-factor authentication is enabled in your external email account.": [
+        "Dvojfázové overovanie je zapnuté vo vašom externom emailovom účte."
       ],
       "Use your app password if:": [
         "Použite heslo aplikácie, ak:"
@@ -6543,8 +6540,8 @@
       "${ elementsCount } conversation will be marked as read.": [
         "${ elementsCount } konverzácia bude označená ako prečítaná.",
         "${ elementsCount } konverzácie budú označené ako prečítané.",
-        "${ elementsCount } konverzácií bude označené ako prečítané.",
-        "${ elementsCount } konverzácií bude označených ako prečítané."
+        "${ elementsCount } konverzácií bude označených ako prečítané",
+        "${ elementsCount } konverzácií bude označených ako prečítané"
       ],
       "${ elementsCount } conversation will be marked as unread.": [
         "${ elementsCount } konverzácia bude označená ako neprečítaná.",
@@ -7642,7 +7639,10 @@
         "Inicializácia…"
       ],
       "Insert image": [
-        "Vložiť obrázok"
+        "Vložiť obrázok",
+        "Vložiť obrázky",
+        "Vložiť obrázky",
+        "Vložiť obrázky"
       ],
       "Insert link": [
         "Vložiť odkaz"
@@ -11424,9 +11424,6 @@
       "Unlimited labels": [
         "Neobmedzený počet štítkov"
       ],
-      "Unlimited logins and notes": [
-        "Neobmedzený počet prihlásení a poznámok"
-      ],
       "Unlimited logins, notes and credit cards": [
         "Neobmedzené prihlásenia, poznámky a platobné karty"
       ],
@@ -15190,8 +15187,8 @@
       "Download ${ VPN_APP_NAME }": [
         "Stiahnuť ${ VPN_APP_NAME }"
       ],
-      "Download Desktop app": [
-        "Stiahnuť desktopovú aplikáciu"
+      "Download the desktop app": [
+        "Stiahnite si aplikáciu pre počítače"
       ],
       "Enable ${ DARK_WEB_MONITORING_NAME }": [
         "Povoliť ${ DARK_WEB_MONITORING_NAME }"

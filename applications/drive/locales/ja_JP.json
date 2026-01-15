@@ -4503,12 +4503,6 @@
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
         "${ BRAND_NAME } はあなたの Yahoo アカウントに接続できません。以下を確認してください。"
       ],
-      "2-step verification is enabled in your external account.": [
-        "2 段階認証は外部アカウントで有効になっています。"
-      ],
-      "2-step verification is enabled in your external email account.": [
-        "2 段階認証は外部メールアカウントで有効になっています。"
-      ],
       "IMAP access is enabled in your external account.": [
         "IMAP アクセスは外部アカウントで有効になっています。"
       ],
@@ -4720,9 +4714,6 @@
       ],
       "${ contactsLength } contact": [
         "${ contactsLength } 件の連絡先"
-      ],
-      "${ DOCS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
-        "${ DOCS_APP_NAME } ファイルは直接ダウンロードできず、ダウンロードに含まれません。「ダウンロードを続ける」をクリックして他のファイルをダウンロードできます。"
       ],
       "${ doneCount } finished": [
         "完了 ${ doneCount } 件"
@@ -5681,9 +5672,6 @@
       "On public WiFi networks": [
         "公共のWiFiネットワーク上にて"
       ],
-      "One of the files or folders you want to copy already exist in selected folder.": [
-        "コピーしようとしているファイルまたはフォルダの一部が、選択したフォルダ内に既に存在しています。"
-      ],
       "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
         "暗号化されたドライブの1つがロックされています。これは最近のパスワードリセットによるものです。"
       ],
@@ -6193,9 +6181,6 @@
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "お支払い手続きを完了するために、下のアドレスに ${ btcAmountBold } を送信してください。"
-      ],
-      "To download the ${ DOCS_APP_NAME } files, open them in ${ DOCS_APP_NAME } and export them.": [
-        "${ DOCS_APP_NAME } ファイルをダウンロードするには、 ${ DOCS_APP_NAME } で開いてエクスポートしてください。"
       ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
         "厳格なプライベート検索を有効にするために、${ DRIVE_APP_NAME } はローカルにファイルのインデックスを作成する必要があります。"
@@ -8302,9 +8287,6 @@
       ],
       "Unlimited labels": [
         "ラベル制限なし"
-      ],
-      "Unlimited logins and notes": [
-        "無制限のログインとメモ"
       ],
       "Unlimited logins, notes and credit cards": [
         "無制限のログイン、メモ、そしてクレジットカード"
@@ -12450,9 +12432,6 @@
       ],
       "Your changes are not synced yet": [
         "変更は同期されていません"
-      ],
-      "Your download includes a ${ DOCS_APP_NAME } file": [
-        "ダウンロードには${ DOCS_APP_NAME }ファイルが含まれています"
       ],
       "Your exposed information": [
         "あなたの公開情報"

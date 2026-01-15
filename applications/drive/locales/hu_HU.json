@@ -4366,12 +4366,6 @@
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
         "A ${ BRAND_NAME } nem tud csatlakozni a Yahoo fiókjához. Ellenőrizze a következőket:"
       ],
-      "2-step verification is enabled in your external account.": [
-        "A kétlépcsős hitelesítés engedélyezve van a külső fiókon."
-      ],
-      "2-step verification is enabled in your external email account.": [
-        "A kétlépcsős hitelesítés engedélyezve van a külső fiókon."
-      ],
       "IMAP access is enabled in your external account.": [
         "Az IMAP elérés engedélyezve van a külső fiókon."
       ],
@@ -4592,9 +4586,6 @@
       "${ contactsLength } contact": [
         "${ contactsLength } névjegy",
         "${ contactsLength } névjegy"
-      ],
-      "${ DOCS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
-        "A ${ DOCS_APP_NAME } fájlok közvetlenül nem tölthetők le, és nem lesznek belefoglalva ebbe a letöltésbe. A többi fájlt a „Folytatás a letöltéssel” gombra kattintva töltheti le."
       ],
       "${ doneCount } finished": [
         "${ doneCount } kész",
@@ -6035,9 +6026,6 @@
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "A befizetés befejezéséhez, kérjük küldjön ${ btcAmountBold }-t az alábbi címre."
-      ],
-      "To download the ${ DOCS_APP_NAME } files, open them in ${ DOCS_APP_NAME } and export them.": [
-        "A ${ DOCS_APP_NAME } fájlok letöltéséhez nyissa meg őket a ${ DOCS_APP_NAME } programban, majd exportálja őket."
       ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
         "Az igazán privát kereséshez az szükséges, hogy a ${ DRIVE_APP_NAME } helyileg indexelje a fájlokat."
@@ -8143,9 +8131,6 @@
       ],
       "Unlimited labels": [
         "Korlátlan számú címke"
-      ],
-      "Unlimited logins and notes": [
-        "Korlátlan számú bejelentkezés és jegyzet"
       ],
       "Unlimited logins, notes and credit cards": [
         "Korlátlan bejelentkezés, jegyzet és bankkártya"
@@ -12193,9 +12178,6 @@
       ],
       "Your changes are not synced yet": [
         "Módosításai még nincsenek szinkronizálva"
-      ],
-      "Your download includes a ${ DOCS_APP_NAME } file": [
-        "A letöltés tartalmaz egy ${ DOCS_APP_NAME } fájlt"
       ],
       "Your exposed information": [
         "Az ön kiszivárgott információi"

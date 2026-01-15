@@ -1655,12 +1655,6 @@
       ]
     },
     "Billing cycle": {
-      "Renews automatically": [
-        "Diperbarui secara otomatis"
-      ],
-      "Renews automatically at ${ renewPrice }, for ${ renewLength } month": [
-        "Diperbarui secara otomatis seharga ${ renewPrice }, selama ${ renewLength } bulan"
-      ],
       "Renews automatically on ${ subscriptionManagerName }": [
         "Diperbarui secara otomatis pada ${ subscriptionManagerName }"
       ]
@@ -1757,18 +1751,6 @@
       ]
     },
     "BOSS": {
-      "${ migratedCount } of ${ providerUsers.length }": [
-        "${ migratedCount } dari ${ providerUsers.length }"
-      ],
-      "${ n } year ago": [
-        "${ n } tahun yang lalu"
-      ],
-      "Add a domain": [
-        "Tambah domain"
-      ],
-      "Add more users...": [
-        "Tambah lebih banyak pengguna..."
-      ],
       "Authenticate": [
         "Autentikasi"
       ],
@@ -1784,17 +1766,8 @@
       "Domain ownership verified": [
         "Kepemilikan domain diverifikasi"
       ],
-      "Domain setup": [
-        "Pengaturan domain"
-      ],
-      "Email notifications will be sent when migration starts and when it’s completed. You will also be notified if there are errors and if migration is paused due to expired links.": [
-        "Notifikasi email akan dikirim pada saat proses migrasi dimulai dan selesai. Anda juga akan diberi tahu apabila terdapat masalah dan apabila proses migrasi ini dijeda karena tautan yang kedaluwarsa."
-      ],
       "Estimated size": [
         "Perkiraan ukuran"
-      ],
-      "Everything": [
-        "Segalanya"
       ],
       "Failed to load OAuth": [
         "OAuth gagal dimuat"
@@ -1820,9 +1793,6 @@
       "Migration includes": [
         "Migrasi meliputi"
       ],
-      "Not started": [
-        "Belum dimulai"
-      ],
       "Required to create user accounts": [
         "Dibutuhkan untuk membuat akun pengguna"
       ],
@@ -1835,29 +1805,17 @@
       "Sign in to Google Workspace": [
         "Masuk ke Google Workspace"
       ],
-      "Status": [
-        "Status"
-      ],
       "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Markeplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue. Learn more": [
         "Untuk memigrasikan data organisasi Anda, Anda perlu untuk memasang aplikasi Asisten Migrasi ${ BRAND_NAME } dari Marketplace Google Workspace. Hal ini akan memberikan izin bagi ${ BRAND_NAME } untuk menyalin data Anda. Setelah asisten ini terpasang, kembali ke halaman ini untuk melanjutkan. Pelajari lebih lanjut"
       ],
-      "Transfer data from": [
-        "Transfer data dari"
-      ],
       "User": [
         "Pengguna"
-      ],
-      "Users migrated": [
-        "Pengguna dimigrasikan"
       ],
       "Verify your domain": [
         "Verifikasi domain Anda"
       ],
       "What are you migrating?": [
         "Item apa saja yang Anda pindahkan?"
-      ],
-      "Who will be notified?": [
-        "Siapa saja yang akan diberi tahu?"
       ]
     },
     "Browser": {
@@ -5509,12 +5467,6 @@
       ],
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
         "${ BRAND_NAME } tidak dapat terhubung ke akun Yahoo Anda. Mohon pastikan bahwa:"
-      ],
-      "2-step verification is enabled in your external account.": [
-        "Verifikasi 2 langkah telah diaktifkan pada akun eksternal Anda."
-      ],
-      "2-step verification is enabled in your external email account.": [
-        "Verifikasi 2 langkah telah diaktifkan pada akun email eksternal Anda."
       ],
       "IMAP access is enabled in your external account.": [
         "Akses IMAP telah diaktifkan pada akun eksternal Anda."
@@ -10214,9 +10166,6 @@
       ],
       "Unlimited labels": [
         "Tanpa batasan jumlah label"
-      ],
-      "Unlimited logins and notes": [
-        "Tanpa batasan masuk dan catatan"
       ],
       "Unlimited logins, notes and credit cards": [
         "Tanpa batasan jumlah entri masuk, catatan, dan kartu kredit"

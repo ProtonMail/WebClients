@@ -1568,12 +1568,6 @@
       ]
     },
     "Billing cycle": {
-      "Renews automatically at ${ renewPrice }, for ${ renewLength } month": [
-        "Automatyczne odnowienie co ${ renewLength } miesiąc w kwocie ${ renewPrice }",
-        "Automatyczne odnowienie co ${ renewLength } miesiące w kwocie ${ renewPrice }",
-        "Automatyczne odnowienie co ${ renewLength } miesięcy w kwocie ${ renewPrice }",
-        "Automatyczne odnowienie co ${ renewLength } miesięcy w kwocie ${ renewPrice }"
-      ],
       "Renews automatically on ${ subscriptionManagerName }": [
         "Automatyczne odnowienie w ${ subscriptionManagerName }"
       ]
@@ -5192,12 +5186,6 @@
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
         "${ BRAND_NAME } nie może połączyć się z kontem Yahoo. Upewnij się, że:"
       ],
-      "2-step verification is enabled in your external account.": [
-        "weryfikacja dwuetapowa na koncie zewnętrznym jest włączona."
-      ],
-      "2-step verification is enabled in your external email account.": [
-        "Weryfikacja dwuetapowa na koncie zewnętrznym jest włączona."
-      ],
       "IMAP access is enabled in your external account.": [
         "dostęp IMAP jest włączony na koncie zewnętrznym."
       ],
@@ -8554,6 +8542,12 @@
       "Numbers": [
         "Cyfry"
       ],
+      "OpenVPN password": [
+        "Hasło OpenVPN"
+      ],
+      "OpenVPN username": [
+        "Nazwa użytkownika OpenVPN"
+      ],
       "Operating system": [
         "System operacyjny"
       ],
@@ -9889,9 +9883,6 @@
       "Unlimited labels": [
         "Nieograniczona liczba etykiet"
       ],
-      "Unlimited logins and notes": [
-        "Nieograniczona liczba danych logowania i notatek"
-      ],
       "Unlimited logins, notes and credit cards": [
         "Nieograniczona liczba danych logowania, notatek i kart płatniczych"
       ],
@@ -10538,6 +10529,9 @@
       ],
       "Number of records exceeds the download limit of 10000": [
         "Liczba logów przekracza limit pobierania wynoszący 10000"
+      ],
+      "OpenVPN credentials regenerated": [
+        "Odnowiono dane logowania OpenVPN"
       ],
       "Reminder has been sent": [
         "Przypomnienie zostało wysłane"

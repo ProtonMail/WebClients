@@ -342,6 +342,9 @@
       "Export selection as .vcf": [
         "导出选择为 .vcf"
       ],
+      "Export this version (as xlsx)": [
+        "导出此版本 (xlsx 格式)"
+      ],
       "Forgot password?": [
         "忘记密码?"
       ],
@@ -3605,12 +3608,6 @@
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
         "${ BRAND_NAME } 无法连接您的 Yahoo 账户，请确认："
       ],
-      "2-step verification is enabled in your external account.": [
-        "该邮箱开启了两步验证."
-      ],
-      "2-step verification is enabled in your external email account.": [
-        "该邮箱开启了两步验证."
-      ],
       "IMAP access is enabled in your external account.": [
         "您的外部账户已开启 IMAP 访问。"
       ],
@@ -6333,9 +6330,6 @@
       ],
       "Unlimited labels": [
         "标签数量不限"
-      ],
-      "Unlimited logins and notes": [
-        "无限登录和笔记"
       ],
       "Unlimited logins, notes and credit cards": [
         "无限制登录、备注和信用卡"

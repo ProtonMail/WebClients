@@ -1478,6 +1478,9 @@
       "Payments problem": [
         "Problemă plăți"
       ],
+      "Sheets problem": [
+        "Problemă foaie de calcul"
+      ],
       "Sign in problem": [
         "Problemă autentificare"
       ],
@@ -3607,6 +3610,9 @@
       "Event not found": [
         "Evenimentul nu a fost găsit."
       ],
+      "Failed to add existing ${ MEET_APP_NAME } video conference": [
+        "Nu s-a putut adăuga conferința video ${ MEET_APP_NAME } existentă."
+      ],
       "Failed to create ${ MEET_APP_NAME } video conference": [
         "Nu s-a putut crea o conferință video ${ MEET_APP_NAME }"
       ],
@@ -4832,12 +4838,6 @@
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
         "${ BRAND_NAME } nu se poate conecta la contul Yahoo. Asigurați-vă că:"
       ],
-      "2-step verification is enabled in your external account.": [
-        "Verificarea în 2 pași este activată în contul extern."
-      ],
-      "2-step verification is enabled in your external email account.": [
-        "verificarea în 2 pași este activată în contul extern de e-mail."
-      ],
       "IMAP access is enabled in your external account.": [
         "Accesul IMAP este activat în contul extern."
       ],
@@ -4846,6 +4846,12 @@
       ],
       "Too many recent requests. Please try again in a few moments.": [
         "Prea multe solicitări recente. Reîncercați mai târziu."
+      ],
+      "Two-factor authentication is enabled in your external account.": [
+        "Autentificarea cu doi factori este activată în contul extern de e-mail."
+      ],
+      "Two-factor authentication is enabled in your external email account.": [
+        "Autentificarea cu doi factori este activată în contul extern de e-mail."
       ],
       "Use your app password if:": [
         "Folosiți parola aplicației dacă:"
@@ -8303,9 +8309,6 @@
       ],
       "Unlimited labels": [
         "Etichete nelimitate"
-      ],
-      "Unlimited logins and notes": [
-        "Date de autentificare și notițe nelimitate"
       ],
       "Unlimited logins, notes and credit cards": [
         "Date de autentificare, note și carduri de plată nelimitate"

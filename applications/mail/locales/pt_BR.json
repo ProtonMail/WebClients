@@ -1505,8 +1505,7 @@
         "Confiar"
       ],
       "Trust key": [
-        "Chave de confiança",
-        "Chaves de confiança"
+        "Chave de confiança"
       ],
       "Trust public key": [
         "Confiar na chave pública"
@@ -2173,6 +2172,9 @@
       ],
       "Payments problem": [
         "Problema com pagamento"
+      ],
+      "Sheets problem": [
+        "Problema no Sheets"
       ],
       "Sign in problem": [
         "Problema no login"
@@ -6167,12 +6169,6 @@
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
         "A ${ BRAND_NAME } não pode se conectar à sua conta do Yahoo. Certifique-se de que:"
       ],
-      "2-step verification is enabled in your external account.": [
-        "A verificação em duas etapas está ativada em sua conta externa."
-      ],
-      "2-step verification is enabled in your external email account.": [
-        "A verificação em duas etapas está ativada em sua conta externa."
-      ],
       "IMAP access is enabled in your external account.": [
         "Acesso IMAP está ativado na sua conta do Yahoo."
       ],
@@ -7404,7 +7400,8 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Inserir imagem"
+        "Inserir imagem",
+        "Inserir imagens"
       ],
       "Insert link": [
         "Inserir link"
@@ -11068,9 +11065,6 @@
       "Unlimited labels": [
         "Marcadores ilimitados"
       ],
-      "Unlimited logins and notes": [
-        "Notas e inícios de sessão ilimitados"
-      ],
       "Unlimited logins, notes and credit cards": [
         "Inícios de sessão ilimitados, notas e cartões de crédito"
       ],
@@ -14642,8 +14636,8 @@
       "Download ${ VPN_APP_NAME }": [
         "Baixar ${ VPN_APP_NAME }"
       ],
-      "Download Desktop app": [
-        "Baixar aplicativo para computador"
+      "Download the desktop app": [
+        "Baixe o aplicativo para computador"
       ],
       "Enable ${ DARK_WEB_MONITORING_NAME }": [
         "Ativar ${ DARK_WEB_MONITORING_NAME }"

@@ -1667,12 +1667,9 @@
       ]
     },
     "Billing cycle": {
-      "Renews automatically": [
-        "Ανανεώνεται αυτόματα"
-      ],
-      "Renews automatically at ${ renewPrice }, for ${ renewLength } month": [
-        "Ανανεώνεται αυτόματα σε ${ renewPrice }, για ${ renewLength } μήνα",
-        "Ανανεώνεται αυτόματα σε ${ renewPrice }, για ${ renewLength } μήνες"
+      "Renews automatically at ${ renewPrice }, for ${ renewCycle } month": [
+        "Ανανεώνεται αυτόματα σε ${ renewPrice }, για ${ renewCycle } μήνα",
+        "Ανανεώνεται αυτόματα σε ${ renewPrice }, για ${ renewCycle } μήνες"
       ],
       "Renews automatically on ${ subscriptionManagerName }": [
         "Ανανεώνεται αυτόματα στο ${ subscriptionManagerName }"
@@ -1770,19 +1767,6 @@
       ]
     },
     "BOSS": {
-      "${ migratedCount } of ${ providerUsers.length }": [
-        "${ migratedCount } από ${ providerUsers.length }"
-      ],
-      "${ n } year ago": [
-        "${ n } χρόνο πριν",
-        "${ n } χρόνια πριν"
-      ],
-      "Add a domain": [
-        "Προσθήκη τομέα"
-      ],
-      "Add more users...": [
-        "Προσθήκη περισσότερων χρηστών..."
-      ],
       "Authenticate": [
         "Ταυτοποίηση"
       ],
@@ -1795,20 +1779,14 @@
       "Contacts": [
         "Επαφές"
       ],
+      "Domain connected": [
+        "Συνδεδεμένος τομέας"
+      ],
       "Domain ownership verified": [
         "Επαληθεύτηκε η ιδιοκτησία τομέα"
       ],
-      "Domain setup": [
-        "Εγκατάσταση τομέα"
-      ],
-      "Email notifications will be sent when migration starts and when it’s completed. You will also be notified if there are errors and if migration is paused due to expired links.": [
-        "Θα σας αποσταλούν ειδοποιήσεις μέσω email όταν ξεκινήσει η μετεγκατάσταση και όταν ολοκληρωθεί. Θα ειδοποιηθείτε επίσης σε περίπτωση σφαλμάτων και αν η μετεγκατάσταση διακοπεί λόγω λήξης των συνδέσμων."
-      ],
       "Estimated size": [
         "Εκτιμώμενος χρόνος"
-      ],
-      "Everything": [
-        "Όλα"
       ],
       "Failed to load OAuth": [
         "Αποτυχία φόρτωσης OAuth"
@@ -1834,11 +1812,30 @@
       "Migration includes": [
         "Η μετεγκατάσταση περιλαμβάνει"
       ],
-      "Not started": [
-        "Δεν ξεκίνησε"
+      "Migration started for ${ n } user": [
+        "Η μετεγκατάσταση ξεκίνησε για ${ n } χρήστη",
+        "Η μετεγκατάσταση ξεκίνησε για ${ n } χρήστες"
+      ],
+      "Migration status": [
+        "Κατάσταση μετεγκατάστασης"
+      ],
+      "Organization does not have enough seats available": [
+        "Ο οργανισμός δε διαθέτει αρκετές θέσεις διαθέσιμες"
+      ],
+      "Organization does not have enough storage available": [
+        "Ο οργανισμός δεν διαθέτει αρκετό χώρο αποθήκευσης"
+      ],
+      "Organization settings": [
+        "Ρυθμίσεις οργανισμού"
+      ],
+      "Required": [
+        "Απαιτείται"
       ],
       "Required to create user accounts": [
         "Απαιτείται για τη δημιουργία λογαριασμών χρηστών"
+      ],
+      "Select at least one user to start a migration": [
+        "Επιλέξτε τουλάχιστον έναν χρήστη για να ξεκινήσετε τη μετεγκατάσταση."
       ],
       "Select what you want to migrate, this will apply to all users whether they are created now or later. Migration will start after user accounts are created.": [
         "Επιλέξτε τι θέλετε να μετεγκαταστήσετε, αυτό θα εφαρμοστεί σε όλους τους χρήστες είτε δημιουργηθούν τώρα είτε αργότερα. Η μετεγκατάσταση θα ξεκινήσει αφού δημιουργηθούν οι λογαριασμοί χρηστών."
@@ -1849,29 +1846,23 @@
       "Sign in to Google Workspace": [
         "Σύνδεση στο Google Workspace"
       ],
-      "Status": [
-        "Κατάσταση"
-      ],
       "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Markeplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue. Learn more": [
         "Για να μεταφέρετε τα δεδομένα του οργανισμού σας, πρέπει να εγκαταστήσετε την εφαρμογή ${ BRAND_NAME } Migration Assistant από το Google Workspace Markeplace. Αυτό θα παραχωρήσει άδεια στο ${ BRAND_NAME } να αντιγράψει τα δεδομένα σας. Μετά την εγκατάσταση, επιστρέψτε εδώ για να συνεχίσετε. Μάθετε περισσότερα"
       ],
-      "Transfer data from": [
-        "Μεταφορά δεδομένων από"
+      "Transfer errors": [
+        "Σφάλματα μεταφοράς"
       ],
       "User": [
         "Χρήστης"
       ],
-      "Users migrated": [
-        "Οι χρήστες μεταφέρθηκαν"
-      ],
       "Verify your domain": [
         "Επαληθεύστε τον τομέα σας"
       ],
+      "Verify your domain to start a migration": [
+        "Επαληθεύστε τον τομέα σας για να ξεκινήσετε τη μετεγκατάσταση"
+      ],
       "What are you migrating?": [
         "Τι μεταφέρετε;"
-      ],
-      "Who will be notified?": [
-        "Ποιος θα ειδοποιηθεί;"
       ]
     },
     "Browser": {
@@ -1936,6 +1927,9 @@
       ],
       "Payments problem": [
         "Πρόβλημα πληρωμής"
+      ],
+      "Sheets problem": [
+        "Πρόβλημα Sheets"
       ],
       "Sign in problem": [
         "Πρόβλημα σύνδεσης"
@@ -5570,12 +5564,6 @@
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
         "Αδυναμία σύνδεσης του ${ BRAND_NAME } στον λογαριασμό σας Yahoo. Παρακαλούμε βεβαιωθείτε ότι:"
       ],
-      "2-step verification is enabled in your external account.": [
-        "Η επαλήθευση σε 2 βήματα είναι ενεργοποιημένη στον εξωτερικό λογαριασμό σας."
-      ],
-      "2-step verification is enabled in your external email account.": [
-        "Η επαλήθευση σε 2 βήματα είναι ενεργοποιημένη στον εξωτερικό λογαριασμό email σας."
-      ],
       "IMAP access is enabled in your external account.": [
         "Η πρόσβαση IMAP είναι ενεργοποιημένη στον εξωτερικό λογαριασμό σας."
       ],
@@ -5584,6 +5572,12 @@
       ],
       "Too many recent requests. Please try again in a few moments.": [
         "Πάρα πολλά πρόσφατα αιτήματα. Παρακαλούμε δοκιμάστε ξανά σε λίγα λεπτά."
+      ],
+      "Two-factor authentication is enabled in your external account.": [
+        "Η ταυτοποίηση δύο παραγόντων είναι ενεργοποιημένη στον εξωτερικό λογαριασμό σας."
+      ],
+      "Two-factor authentication is enabled in your external email account.": [
+        "Η ταυτοποίηση δύο παραγόντων είναι ενεργοποιημένη στον εξωτερικό λογαριασμό email σας."
       ],
       "Use your app password if:": [
         "Χρησιμοποιήστε τον κωδικό της εφαρμογής εάν:"
@@ -10446,9 +10440,6 @@
       ],
       "Unlimited labels": [
         "Απεριόριστες ετικέτες"
-      ],
-      "Unlimited logins and notes": [
-        "Απεριόριστες συνδέσεις και σημειώσεις"
       ],
       "Unlimited logins, notes and credit cards": [
         "Απεριόριστες συνδέσεις, σημειώσεις και πιστωτικές κάρτες."
@@ -15764,6 +15755,9 @@
       ],
       "Third-party apps and services": [
         "Εφαρμογές και υπηρεσίες τρίτων"
+      ],
+      "To preview this spreadsheet, download it.": [
+        "Για να δείτε αυτό το υπολογιστικό φύλλο, κατεβάστε το."
       ],
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "Για να κάνετε προεπισκόπηση αυτού του υπολογιστικού φύλλου, ανοίξτε το στο ${ SHEETS_APP_NAME } ή κάντε λήψη του."

@@ -1466,6 +1466,9 @@
       "Payments problem": [
         "Problema de pagos"
       ],
+      "Sheets problem": [
+        "Problema de Sheets"
+      ],
       "Sign in problem": [
         "Problema de inicio de sesión"
       ],
@@ -3578,6 +3581,9 @@
       "Event not found": [
         "Evento no encontrado"
       ],
+      "Failed to add existing ${ MEET_APP_NAME } video conference": [
+        "Error al añadir videoconferencia de ${ MEET_APP_NAME } existente"
+      ],
       "Failed to create ${ MEET_APP_NAME } video conference": [
         "Error al crear videoconferencia de ${ MEET_APP_NAME }"
       ],
@@ -4780,12 +4786,6 @@
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
         "${ BRAND_NAME } no puede conectarse a la cuenta de Yahoo. Asegúrese de que:"
       ],
-      "2-step verification is enabled in your external account.": [
-        "La verificación en dos pasos está activada en la cuenta externa."
-      ],
-      "2-step verification is enabled in your external email account.": [
-        "La verificación en dos pasos está activada en la cuenta de correo externa."
-      ],
       "IMAP access is enabled in your external account.": [
         "El acceso IMAP está activado en la cuenta externa."
       ],
@@ -4794,6 +4794,12 @@
       ],
       "Too many recent requests. Please try again in a few moments.": [
         "Demasiadas solicitudes recientes. Inténtelo de nuevo en unos momentos."
+      ],
+      "Two-factor authentication is enabled in your external account.": [
+        "La autenticación de dos factores está activada en su cuenta externa."
+      ],
+      "Two-factor authentication is enabled in your external email account.": [
+        "La autenticación de dos factores está activada en su cuenta de correo externa."
       ],
       "Use your app password if:": [
         "Use la contraseña de la aplicación si:"
@@ -8183,9 +8189,6 @@
       ],
       "Unlimited labels": [
         "Etiquetas ilimitadas"
-      ],
-      "Unlimited logins and notes": [
-        "Número ilimitado de inicios de sesión y notas"
       ],
       "Unlimited logins, notes and credit cards": [
         "Inicios de sesión, notas y tarjetas de crédito ilimitados"

@@ -369,6 +369,9 @@
       "Export selection as .vcf": [
         "Εξαγωγή επιλογής ως .vcf"
       ],
+      "Export this version (as xlsx)": [
+        "Εξαγωγή αυτής της έκδοσης (ως xlsx)"
+      ],
       "Forgot password?": [
         "Ξεχάσατε τον κωδικό πρόσβασης;"
       ],
@@ -1202,6 +1205,9 @@
       ],
       "Payments problem": [
         "Πρόβλημα πληρωμής"
+      ],
+      "Sheets problem": [
+        "Πρόβλημα Sheets"
       ],
       "Sign in problem": [
         "Πρόβλημα σύνδεσης"
@@ -3854,12 +3860,6 @@
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
         "Αδυναμία σύνδεσης του ${ BRAND_NAME } στον λογαριασμό σας Yahoo. Παρακαλούμε βεβαιωθείτε ότι:"
       ],
-      "2-step verification is enabled in your external account.": [
-        "Η επαλήθευση σε 2 βήματα είναι ενεργοποιημένη στον εξωτερικό λογαριασμό σας."
-      ],
-      "2-step verification is enabled in your external email account.": [
-        "Η επαλήθευση σε 2 βήματα είναι ενεργοποιημένη στον εξωτερικό λογαριασμό email σας."
-      ],
       "IMAP access is enabled in your external account.": [
         "Η πρόσβαση IMAP είναι ενεργοποιημένη στον εξωτερικό λογαριασμό σας."
       ],
@@ -3868,6 +3868,12 @@
       ],
       "Too many recent requests. Please try again in a few moments.": [
         "Πάρα πολλά πρόσφατα αιτήματα. Παρακαλούμε δοκιμάστε ξανά σε λίγα λεπτά."
+      ],
+      "Two-factor authentication is enabled in your external account.": [
+        "Η ταυτοποίηση δύο παραγόντων είναι ενεργοποιημένη στον εξωτερικό λογαριασμό σας."
+      ],
+      "Two-factor authentication is enabled in your external email account.": [
+        "Η ταυτοποίηση δύο παραγόντων είναι ενεργοποιημένη στον εξωτερικό λογαριασμό email σας."
       ],
       "Use your app password if:": [
         "Χρησιμοποιήστε τον κωδικό της εφαρμογής εάν:"
@@ -6805,9 +6811,6 @@
       ],
       "Unlimited labels": [
         "Απεριόριστες ετικέτες"
-      ],
-      "Unlimited logins and notes": [
-        "Απεριόριστες συνδέσεις και σημειώσεις"
       ],
       "Unlimited logins, notes and credit cards": [
         "Απεριόριστες συνδέσεις, σημειώσεις και πιστωτικές κάρτες."

@@ -1505,8 +1505,7 @@
         "Lita på"
       ],
       "Trust key": [
-        "Lita på nyckel",
-        "Lita på nycklar"
+        "Lita på nyckel"
       ],
       "Trust public key": [
         "Lita på offentlig nyckel"
@@ -2173,6 +2172,9 @@
       ],
       "Payments problem": [
         "Problem med betalning"
+      ],
+      "Sheets problem": [
+        "Problem med kalkylblad"
       ],
       "Sign in problem": [
         "Problem med inloggning"
@@ -6149,12 +6151,6 @@
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
         "${ BRAND_NAME } kan inte ansluta till ditt Yahoo-konto. Se till att:"
       ],
-      "2-step verification is enabled in your external account.": [
-        "Tvåstegsverifiering är aktiverat i ditt externa konto."
-      ],
-      "2-step verification is enabled in your external email account.": [
-        "Tvåstegsverifiering är aktiverat i ditt externa e-postkonto."
-      ],
       "IMAP access is enabled in your external account.": [
         "IMAP-åtkomst är aktiverat i ditt externa konto."
       ],
@@ -7380,7 +7376,8 @@
         "Initierar …"
       ],
       "Insert image": [
-        "Infoga bild"
+        "Infoga bild",
+        "Infoga bilder"
       ],
       "Insert link": [
         "Infoga länk"
@@ -8198,8 +8195,14 @@
       "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
         "Detta meddelande kommer att flyttas till “Utkast“ så du kan redigera det. Du måste schemalägga det igen när det ska skickas."
       ],
+      "This message will be purged on ${ value }": [
+        "Detta meddelande kommer att tömmas den ${ value }"
+      ],
       "This message will be purged today at ${ value }": [
         "Detta meddelande kommer att tömmas bort idag kl. ${ value }"
+      ],
+      "This message will be purged tomorrow at ${ value }": [
+        "Detta meddelande kommer att tömmas imorgon kl. ${ value }"
       ],
       "This message will be sent in the morning at ${ formattedTime }": [
         "Detta meddelande kommer att skickas på morgonen kl. ${ formattedTime }."
@@ -11006,9 +11009,6 @@
       ],
       "Unlimited labels": [
         "Obegränsade etiketter"
-      ],
-      "Unlimited logins and notes": [
-        "Obegränsat antal inloggningar och anteckningar"
       ],
       "Unlimited logins, notes and credit cards": [
         "Obegränsat antal inloggningar, anteckningar och kreditkort"
@@ -14570,8 +14570,8 @@
       "Download ${ VPN_APP_NAME }": [
         "Ladda ner ${ VPN_APP_NAME }"
       ],
-      "Download Desktop app": [
-        "Ladda ner app för stationär dator"
+      "Download the desktop app": [
+        "Ladda ner appen för stationär dator"
       ],
       "Enable ${ DARK_WEB_MONITORING_NAME }": [
         "Aktivera ${ DARK_WEB_MONITORING_NAME }"

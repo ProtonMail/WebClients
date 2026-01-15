@@ -1679,13 +1679,10 @@
       ]
     },
     "Billing cycle": {
-      "Renews automatically": [
-        "Se reînnoiește automat"
-      ],
-      "Renews automatically at ${ renewPrice }, for ${ renewLength } month": [
-        "Se reînnoiește automat cu ${ renewPrice }, pentru ${ renewLength } lună.",
-        "Se reînnoiește automat cu ${ renewPrice }, pentru ${ renewLength } luni.",
-        "Se reînnoiește automat cu ${ renewPrice }, pentru ${ renewLength } de luni."
+      "Renews automatically at ${ renewPrice }, for ${ renewCycle } month": [
+        "Se reînnoiește automat cu ${ renewPrice }, pentru ${ renewCycle } lună.",
+        "Se reînnoiește automat cu ${ renewPrice }, pentru ${ renewCycle } luni.",
+        "Se reînnoiește automat cu ${ renewPrice }, pentru ${ renewCycle } de luni."
       ],
       "Renews automatically on ${ subscriptionManagerName }": [
         "Reînnoire automată pe ${ subscriptionManagerName }"
@@ -1783,20 +1780,6 @@
       ]
     },
     "BOSS": {
-      "${ migratedCount } of ${ providerUsers.length }": [
-        "${ migratedCount } din ${ providerUsers.length }"
-      ],
-      "${ n } year ago": [
-        "acum ${ n } an",
-        "acum ${ n } ani",
-        "acum ${ n } de ani"
-      ],
-      "Add a domain": [
-        "Adăugare domeniu"
-      ],
-      "Add more users...": [
-        "Adăugare utilizatori..."
-      ],
       "Authenticate": [
         "Autentificare"
       ],
@@ -1809,20 +1792,14 @@
       "Contacts": [
         "Contacte"
       ],
+      "Domain connected": [
+        "Domeniu conectat"
+      ],
       "Domain ownership verified": [
         "Deținerea domeniului verificată"
       ],
-      "Domain setup": [
-        "Setare domeniu"
-      ],
-      "Email notifications will be sent when migration starts and when it’s completed. You will also be notified if there are errors and if migration is paused due to expired links.": [
-        "Notificările prin e-mail vă vor fi trimise când migrarea începe și când este finalizată. Veți primi o notificare și în cazul în care apar erori și dacă migrarea este suspendată din cauza legăturilor web expirate."
-      ],
       "Estimated size": [
         "Mărime estimată"
-      ],
-      "Everything": [
-        "Toate"
       ],
       "Failed to load OAuth": [
         "Încărcarea OAuth a eșuat"
@@ -1848,11 +1825,31 @@
       "Migration includes": [
         "Migrarea include"
       ],
-      "Not started": [
-        "Neîncepută"
+      "Migration started for ${ n } user": [
+        "Migrare începută pentru ${ n } utilizator",
+        "Migrare începută pentru ${ n } utilizatori",
+        "Migrare inițiată pentru ${ n } de utilizatori"
+      ],
+      "Migration status": [
+        "Stare migrare"
+      ],
+      "Organization does not have enough seats available": [
+        "Organizația nu dispune de suficiente licențe disponibile."
+      ],
+      "Organization does not have enough storage available": [
+        "Organizația nu are suficient spațiu de stocare disponibil."
+      ],
+      "Organization settings": [
+        "Setări organizație"
+      ],
+      "Required": [
+        "Obligatoriu"
       ],
       "Required to create user accounts": [
         "Este necesar pentru a crea conturi de utilizator"
+      ],
+      "Select at least one user to start a migration": [
+        "Selectați cel puțin un utilizator pentru a începe o migrare."
       ],
       "Select what you want to migrate, this will apply to all users whether they are created now or later. Migration will start after user accounts are created.": [
         "Selectați ce doriți să migrați. Aceasta se va aplica tuturor utilizatorilor, indiferent dacă sunt creați acum sau mai târziu. Migrarea va începe după ce conturile de utilizator sunt create."
@@ -1863,29 +1860,23 @@
       "Sign in to Google Workspace": [
         "Conectare la Google Workspace"
       ],
-      "Status": [
-        "Stare"
-      ],
       "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Markeplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue. Learn more": [
         "Pentru a migra datele organizației proprii, trebuie să instalați aplicația ${ BRAND_NAME } Migration Assistant din Google Workspace Marketplace. Aceasta va acorda permisiunea ca ${ BRAND_NAME } să vă copieze datele. După instalarea acesteia, reveniți aici pentru a continua. Detalii"
       ],
-      "Transfer data from": [
-        "Transferare date din"
+      "Transfer errors": [
+        "Erori de transfer."
       ],
       "User": [
         "Utilizator"
       ],
-      "Users migrated": [
-        "Utilizatori migrați"
-      ],
       "Verify your domain": [
         "Verificați-vă domeniul"
       ],
+      "Verify your domain to start a migration": [
+        "Verificați domeniul pentru a începe o migrare."
+      ],
       "What are you migrating?": [
         "Ce migrați?"
-      ],
-      "Who will be notified?": [
-        "Cine va fi notificat?"
       ]
     },
     "Browser": {
@@ -1950,6 +1941,9 @@
       ],
       "Payments problem": [
         "Problemă plăți"
+      ],
+      "Sheets problem": [
+        "Problemă foaie de calcul"
       ],
       "Sign in problem": [
         "Problemă autentificare"
@@ -5619,12 +5613,6 @@
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
         "${ BRAND_NAME } nu se poate conecta la contul Yahoo. Asigurați-vă că:"
       ],
-      "2-step verification is enabled in your external account.": [
-        "Verificarea în 2 pași este activată în contul extern."
-      ],
-      "2-step verification is enabled in your external email account.": [
-        "verificarea în 2 pași este activată în contul extern de e-mail."
-      ],
       "IMAP access is enabled in your external account.": [
         "Accesul IMAP este activat în contul extern."
       ],
@@ -5633,6 +5621,12 @@
       ],
       "Too many recent requests. Please try again in a few moments.": [
         "Prea multe solicitări recente. Reîncercați mai târziu."
+      ],
+      "Two-factor authentication is enabled in your external account.": [
+        "Autentificarea cu doi factori este activată în contul extern de e-mail."
+      ],
+      "Two-factor authentication is enabled in your external email account.": [
+        "Autentificarea cu doi factori este activată în contul extern de e-mail."
       ],
       "Use your app password if:": [
         "Folosiți parola aplicației dacă:"
@@ -10573,9 +10567,6 @@
       ],
       "Unlimited labels": [
         "Etichete nelimitate"
-      ],
-      "Unlimited logins and notes": [
-        "Date de autentificare și notițe nelimitate"
       ],
       "Unlimited logins, notes and credit cards": [
         "Date de autentificare, note și carduri de plată nelimitate"

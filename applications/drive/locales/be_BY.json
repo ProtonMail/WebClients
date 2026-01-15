@@ -3415,6 +3415,9 @@
       "Failed to get details, please try again later": [
         "Не ўдалося атрымаць падрабязнасці. Паспрабуйце яшчэ раз пазней"
       ],
+      "Failed to load signature details, please try again later": [
+        "Не ўдалося загрузіць падрабязнасці подпісу. Паспрабуйце яшчэ раз пазней"
+      ],
       "Failed to load the STL preview": [
         "Не ўдалося загрузіць папярэдні прагляд STL"
       ],
@@ -3834,6 +3837,9 @@
       ],
       "We were not able to load some of your shared items": [
         "Не ўдалося загрузіць некаторыя вашы абагуленыя элементы"
+      ],
+      "We were not able to load the folder contents": [
+        "Не атрымалася загрузіць змесціва папкі"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Вы не можаце адправіць ліст больш чым ${ maxContacts } атрымальніку",
@@ -4640,12 +4646,6 @@
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
         "${ BRAND_NAME } не можа падключыцца да вашага ўліковага запісу Yahoo. Пераканайцеся, што:"
       ],
-      "2-step verification is enabled in your external account.": [
-        "Двухэтапная праверка ўключана ў вашым знешнім уліковым запісе."
-      ],
-      "2-step verification is enabled in your external email account.": [
-        "Двухэтапная праверка ўключана ў вашым знешнім уліковым запісе электроннай пошты."
-      ],
       "IMAP access is enabled in your external account.": [
         "У вашым знешнім уліковым запісе ўключаны IMAP."
       ],
@@ -4654,6 +4654,12 @@
       ],
       "Too many recent requests. Please try again in a few moments.": [
         "Занадта шмат запытаў за апошні час. Паспрабуйце яшчэ раз праз некаторы час."
+      ],
+      "Two-factor authentication is enabled in your external account.": [
+        "Двухфактарная аўтэнтыфікацыя ўключана ў вашым знешнім уліковым запісе."
+      ],
+      "Two-factor authentication is enabled in your external email account.": [
+        "Двухфактарная аўтэнтыфікацыя ўключана ў вашым знешнім уліковым запісе электроннай пошты."
       ],
       "Use your app password if:": [
         "Выкарыстоўвайце свой пароль праграмы, калі:"
@@ -4893,9 +4899,6 @@
         "${ contactsLength } кантакты",
         "${ contactsLength } кантактаў",
         "${ contactsLength } кантактаў"
-      ],
-      "${ DOCS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
-        "Файлы ${ DOCS_APP_NAME } не могуць быць спампаваны наўпрост і яны не будуць уключаны ў гэта спампоўванне. Вы можаце спампаваць іншыя файлы націснуўшы \"Працягнуць спампоўванне\"."
       ],
       "${ doneCount } finished": [
         "${ doneCount } завершаны",
@@ -5944,9 +5947,6 @@
       "On public WiFi networks": [
         "У грамадскіх сетках Wi-Fi"
       ],
-      "One of the files or folders you want to copy already exist in selected folder.": [
-        "Адзін з файлаў або папак, якія вы хочаце скапіяваць, ужо існуе ў выбранай папцы."
-      ],
       "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
         "Адзін з вашых зашыфраваных дыскаў заблакіраваны. Верагодна з прычыны таго, што нядаўна было скіданне пароля."
       ],
@@ -6337,6 +6337,9 @@
       "Thank you for subscribing. Secure browsing starts now.": [
         "Дзякуй, што падпісаліся. Зараз пачнецца бяспечны прагляд."
       ],
+      "that": [
+        "што"
+      ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Магчыма, што ўліковы запіс мае новы ключ або наступныя элементы былі падроблены: ${ items }. Адкрывайце толькі калі давяраеце ім."
       ],
@@ -6465,9 +6468,6 @@
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Адпраўце ${ btcAmountBold } на ўказаны ніжэй адрас, каб завяршыць плацеж."
-      ],
-      "To download the ${ DOCS_APP_NAME } files, open them in ${ DOCS_APP_NAME } and export them.": [
-        "Для спампоўвання файлаў ${ DOCS_APP_NAME }, адкрыйце іх у ${ DOCS_APP_NAME } і экспартуйце."
       ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
         "${ DRIVE_APP_NAME } неабходна лакальна праіндэксаваць вашы файлы для таго, каб задзейнічаць сапраўды прыватны пошук."
@@ -6684,6 +6684,9 @@
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Вы атрымаеце коды аднаўлення падчас наладжвання двухфактарнай аўтэнтыфікацыі. Імі можна будзе скарыстацца для ўваходу пры страце доступу да праграмы аўтэнтыфікацыі."
+      ],
+      "who": [
+        "хто"
       ],
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
         "будзе адноўлены да версіі ад ${ formattedRevisionDate }. Усе астатнія версіі будуць захоўвацца далей."
@@ -8797,9 +8800,6 @@
       ],
       "Unlimited labels": [
         "Неабмежаваная колькасць метак"
-      ],
-      "Unlimited logins and notes": [
-        "Неабмежаваная колькасць запісаў уваходу і нататак"
       ],
       "Unlimited logins, notes and credit cards": [
         "Неабмежаваная колькасць запісаў уваходу, нататак і крэдытных картак"
@@ -13239,9 +13239,6 @@
       ],
       "Your changes are not synced yet": [
         "Пакуль вашы змены не сінхранізаваны"
-      ],
-      "Your download includes a ${ DOCS_APP_NAME } file": [
-        "Ваша спампоўванне ўключае файл ${ DOCS_APP_NAME }"
       ],
       "Your exposed information": [
         "Вашы скампраметаваныя звесткі"

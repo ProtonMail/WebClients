@@ -1667,12 +1667,9 @@
       ]
     },
     "Billing cycle": {
-      "Renews automatically": [
-        "Otomatik olarak yenilenir"
-      ],
-      "Renews automatically at ${ renewPrice }, for ${ renewLength } month": [
-        "${ renewPrice } tutar ile ${ renewLength } ay için yenilenir",
-        "${ renewPrice } tutar ile ${ renewLength } ay için yenilenir"
+      "Renews automatically at ${ renewPrice }, for ${ renewCycle } month": [
+        "${ renewPrice } karşılığında ${ renewCycle } ay boyunca otomatik olarak yenilenir",
+        "${ renewPrice } karşılığında ${ renewCycle } ay boyunca otomatik olarak yenilenir"
       ],
       "Renews automatically on ${ subscriptionManagerName }": [
         "${ subscriptionManagerName } tarihinde otomatik olarak yenilenir"
@@ -1770,19 +1767,6 @@
       ]
     },
     "BOSS": {
-      "${ migratedCount } of ${ providerUsers.length }": [
-        "${ migratedCount } / ${ providerUsers.length }"
-      ],
-      "${ n } year ago": [
-        "${ n } yıl önce",
-        "${ n } yıl önce"
-      ],
-      "Add a domain": [
-        "Bir etki alanı ekleyin"
-      ],
-      "Add more users...": [
-        "Daha fazla kullanıcı ekle..."
-      ],
       "Authenticate": [
         "Kimliği doğrulayın"
       ],
@@ -1795,20 +1779,14 @@
       "Contacts": [
         "Kişiler"
       ],
+      "Domain connected": [
+        "Etki alanı bağlandı"
+      ],
       "Domain ownership verified": [
         "Etki alanı sahipliği doğrulandı"
       ],
-      "Domain setup": [
-        "Etki alanı kurulumu"
-      ],
-      "Email notifications will be sent when migration starts and when it’s completed. You will also be notified if there are errors and if migration is paused due to expired links.": [
-        "Aktarım başladığında ve tamamlandığında e-posta bildirimleri gönderilecek. Ayrıca sorunlar çıkarsa ve aktarım, süresi geçmiş bağlantılar nedeniyle duraklatılırsa bilgilendirileceksiniz."
-      ],
       "Estimated size": [
         "Öngörülen boyut"
-      ],
-      "Everything": [
-        "Her şey"
       ],
       "Failed to load OAuth": [
         "OAuth yüklenemedi"
@@ -1834,11 +1812,30 @@
       "Migration includes": [
         "Şunlar aktarılır"
       ],
-      "Not started": [
-        "Başlatılmadı"
+      "Migration started for ${ n } user": [
+        "${ n } kullanıcı için geçiş başlatıldı",
+        "${ n } kullanıcı için geçiş başlatıldı"
+      ],
+      "Migration status": [
+        "Geçiş durumu"
+      ],
+      "Organization does not have enough seats available": [
+        "Kuruluş yeterli koltuk sayısına sahip değil"
+      ],
+      "Organization does not have enough storage available": [
+        "Kuruluş yeterli depolama alanına sahip değil"
+      ],
+      "Organization settings": [
+        "Kuruluş ayarları"
+      ],
+      "Required": [
+        "Gerekli"
       ],
       "Required to create user accounts": [
         "Kullanıcı hesaplarını açmak için gereklidir"
+      ],
+      "Select at least one user to start a migration": [
+        "Geçişi başlatmak için en az bir kullanıcı seçin"
       ],
       "Select what you want to migrate, this will apply to all users whether they are created now or later. Migration will start after user accounts are created.": [
         "Aktarmak istediğiniz ögeleri seçin. Bu ayar ister şimdi ister daha sonra oluşturulmuş olsun, tüm kullanıcılara uygulanır. Aktarım işlemi kullanıcı hesapları oluşturulduktan sonra başlayacaktır."
@@ -1849,29 +1846,23 @@
       "Sign in to Google Workspace": [
         "Google Workspace oturumu açın"
       ],
-      "Status": [
-        "Durum"
-      ],
       "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Markeplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue. Learn more": [
         "Kuruluşunuzun verilerini taşımak için Google Workspace Marketplace üzerinden ${ BRAND_NAME } Migration Assistant uygulamasını kurmanız gerekir. Bu işlem, ${ BRAND_NAME } uygulamasına verilerinizi kopyalama izni verir. Uygulamayı kurduktan sonra buraya geri dönerek ilerleyin. Ayrıntılı bilgi alın"
       ],
-      "Transfer data from": [
-        "Verileri şuradan aktarın"
+      "Transfer errors": [
+        "Aktarım hataları"
       ],
       "User": [
         "Kullanıcı"
       ],
-      "Users migrated": [
-        "Kullanıcılar aktarıldı"
-      ],
       "Verify your domain": [
         "Etki alanınızı doğrulayın"
       ],
+      "Verify your domain to start a migration": [
+        "Geçişi başlatmak için etki adınızı doğrulayın"
+      ],
       "What are you migrating?": [
         "Neyi aktarıyorsunuz?"
-      ],
-      "Who will be notified?": [
-        "Kim bilgilendirilecek?"
       ]
     },
     "Browser": {
@@ -1936,6 +1927,9 @@
       ],
       "Payments problem": [
         "Ödeme sorunu"
+      ],
+      "Sheets problem": [
+        "Hesap tablosu sorunu"
       ],
       "Sign in problem": [
         "Oturum açma sorunu"
@@ -5570,12 +5564,6 @@
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
         "${ BRAND_NAME }, Yahoo hesabınızla bağlantı kuramadı. Lütfen şundan emin olun:"
       ],
-      "2-step verification is enabled in your external account.": [
-        "Dış hesabınızda iki adımlı doğrulama açılmış."
-      ],
-      "2-step verification is enabled in your external email account.": [
-        "Dış e-posta hesabınızda iki adımlı doğrulama açılmış."
-      ],
       "IMAP access is enabled in your external account.": [
         "Dış hesabınızda IMAP erişimi açılmış."
       ],
@@ -5584,6 +5572,12 @@
       ],
       "Too many recent requests. Please try again in a few moments.": [
         "Kısa sürede çok fazla istek yapıldı. Lütfen birkaç dakika sonra yeniden deneyin."
+      ],
+      "Two-factor authentication is enabled in your external account.": [
+        "Dış hesabınızda iki adımlı doğrulama kullanıma alınmış."
+      ],
+      "Two-factor authentication is enabled in your external email account.": [
+        "Dış e-posta hesabınızda iki adımlı doğrulama kullanıma alınmış."
       ],
       "Use your app password if:": [
         "Aşağıdaki durumlarda uygulama parolanızı kullanın:"
@@ -8978,6 +8972,12 @@
       "Numbers": [
         "Rakamlar"
       ],
+      "OpenVPN password": [
+        "OpenVPN Parolası"
+      ],
+      "OpenVPN username": [
+        "OpenVPN kullanıcı adı"
+      ],
       "Operating system": [
         "İşletim sistemi"
       ],
@@ -10429,9 +10429,6 @@
       "Unlimited labels": [
         "Sınırsız etiket"
       ],
-      "Unlimited logins and notes": [
-        "Sınırsız sayıda oturum açma ve not kaydı"
-      ],
       "Unlimited logins, notes and credit cards": [
         "Sınırsız sayıda oturum açma, kredi kartı ve not kaydı"
       ],
@@ -11072,6 +11069,9 @@
       ],
       "Number of records exceeds the download limit of 10000": [
         "Kayıt sayısı 10.000 indirme sayısı sınırını aşıyor"
+      ],
+      "OpenVPN credentials regenerated": [
+        "OpenVPN kimlik bilgileri yeniden oluşturuldu"
       ],
       "Reminder has been sent": [
         "Hatırlatıcı gönderildi"
@@ -15450,6 +15450,9 @@
       "OpenVPN configuration files": [
         "OpenVPN yapılandırma dosyaları"
       ],
+      "OpenVPN username": [
+        "OpenVPN kullanıcı adı"
+      ],
       "Org setup": [
         "Kuruluş ayarları"
       ],
@@ -15732,6 +15735,9 @@
       ],
       "Third-party apps and services": [
         "Üçüncü taraf uygulamalar ve hizmetler"
+      ],
+      "To preview this spreadsheet, download it.": [
+        "Bu hesap tablosunu önizlemek için indirin."
       ],
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "Bu hesap tablosunu ön izlemek için ${ SHEETS_APP_NAME } uygulaması ile açın ya da indirin."

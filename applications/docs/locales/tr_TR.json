@@ -369,6 +369,9 @@
       "Export selection as .vcf": [
         "Seçimi .vcf olarak dışa aktar"
       ],
+      "Export this version (as xlsx)": [
+        "Bu sürümü dışa aktar (xlsx olarak)"
+      ],
       "Forgot password?": [
         "Parolanızı mı unuttunuz?"
       ],
@@ -1202,6 +1205,9 @@
       ],
       "Payments problem": [
         "Ödeme sorunu"
+      ],
+      "Sheets problem": [
+        "Hesap tablosu sorunu"
       ],
       "Sign in problem": [
         "Oturum açma sorunu"
@@ -3854,12 +3860,6 @@
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
         "${ BRAND_NAME }, Yahoo hesabınızla bağlantı kuramadı. Lütfen şundan emin olun:"
       ],
-      "2-step verification is enabled in your external account.": [
-        "Dış hesabınızda iki adımlı doğrulama açılmış."
-      ],
-      "2-step verification is enabled in your external email account.": [
-        "Dış e-posta hesabınızda iki adımlı doğrulama açılmış."
-      ],
       "IMAP access is enabled in your external account.": [
         "Dış hesabınızda IMAP erişimi açılmış."
       ],
@@ -3868,6 +3868,12 @@
       ],
       "Too many recent requests. Please try again in a few moments.": [
         "Kısa sürede çok fazla istek yapıldı. Lütfen birkaç dakika sonra yeniden deneyin."
+      ],
+      "Two-factor authentication is enabled in your external account.": [
+        "Dış hesabınızda iki adımlı doğrulama kullanıma alınmış."
+      ],
+      "Two-factor authentication is enabled in your external email account.": [
+        "Dış e-posta hesabınızda iki adımlı doğrulama kullanıma alınmış."
       ],
       "Use your app password if:": [
         "Aşağıdaki durumlarda uygulama parolanızı kullanın:"
@@ -6805,9 +6811,6 @@
       ],
       "Unlimited labels": [
         "Sınırsız etiket"
-      ],
-      "Unlimited logins and notes": [
-        "Sınırsız sayıda oturum açma ve not kaydı"
       ],
       "Unlimited logins, notes and credit cards": [
         "Sınırsız sayıda oturum açma, kredi kartı ve not kaydı"

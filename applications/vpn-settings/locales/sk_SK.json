@@ -1691,14 +1691,11 @@
       ]
     },
     "Billing cycle": {
-      "Renews automatically": [
-        "Obnovuje sa automaticky"
-      ],
-      "Renews automatically at ${ renewPrice }, for ${ renewLength } month": [
-        "Bude automaticky obnovené za ${ renewPrice } na ${ renewLength } mesiac",
-        "Bude automaticky obnovené za ${ renewPrice } na ${ renewLength } mesiace",
-        "Bude automaticky obnovené za ${ renewPrice } na ${ renewLength } mesiacov",
-        "Bude automaticky obnovené za ${ renewPrice } na ${ renewLength } mesiacov"
+      "Renews automatically at ${ renewPrice }, for ${ renewCycle } month": [
+        "Bude automaticky obnovené za ${ renewPrice } na ${ renewCycle } mesiac",
+        "Bude automaticky obnovené za ${ renewPrice } na ${ renewCycle } mesiace",
+        "Bude automaticky obnovené za ${ renewPrice } na ${ renewCycle } mesiacov",
+        "Bude automaticky obnovené za ${ renewPrice } na ${ renewCycle } mesiacov"
       ],
       "Renews automatically on ${ subscriptionManagerName }": [
         "Automaticky sa obnovuje ${ subscriptionManagerName }"
@@ -1796,21 +1793,6 @@
       ]
     },
     "BOSS": {
-      "${ migratedCount } of ${ providerUsers.length }": [
-        "${ migratedCount } z ${ providerUsers.length }"
-      ],
-      "${ n } year ago": [
-        "Pred ${ n } rokom",
-        "Pred ${ n } rokmi",
-        "Pred ${ n } rokmi",
-        "Pred ${ n } rokmi"
-      ],
-      "Add a domain": [
-        "Pridať doménu"
-      ],
-      "Add more users...": [
-        "Pridať viac používateľov..."
-      ],
       "Authenticate": [
         "Autentifikovať"
       ],
@@ -1823,20 +1805,14 @@
       "Contacts": [
         "Kontakty"
       ],
+      "Domain connected": [
+        "Doména prepojená"
+      ],
       "Domain ownership verified": [
         "Vlastníctvo domény je overené"
       ],
-      "Domain setup": [
-        "Nastavenie domény"
-      ],
-      "Email notifications will be sent when migration starts and when it’s completed. You will also be notified if there are errors and if migration is paused due to expired links.": [
-        "Emailové notifikácie Vám budú odoslané po začatí a dokončení migrácie. Budete tiež informovaní, ak sa vyskytnú chyby alebo ak sa migrácia pozastaví z dôvodu vypršaných odkazov."
-      ],
       "Estimated size": [
         "Odhadovaná veľkosť"
-      ],
-      "Everything": [
-        "Všetko"
       ],
       "Failed to load OAuth": [
         "Nepodarilo sa načítať OAuth"
@@ -1862,11 +1838,32 @@
       "Migration includes": [
         "Migrácia zahŕňa"
       ],
-      "Not started": [
-        "Nezačaté"
+      "Migration started for ${ n } user": [
+        "Bola spustená migrácia ${ n } používateľa",
+        "Bola spustená migrácia pre ${ n } používateľov",
+        "Bola spustená migrácia pre ${ n } používateľov",
+        "Bola spustená migrácia pre ${ n } používateľov"
+      ],
+      "Migration status": [
+        "Stav migrácie"
+      ],
+      "Organization does not have enough seats available": [
+        "Organizaícia nemá dostatok voľných licencií"
+      ],
+      "Organization does not have enough storage available": [
+        "Organzácia nemá dostatok úložného priestoru"
+      ],
+      "Organization settings": [
+        "Nastavenia organizácie"
+      ],
+      "Required": [
+        "Povinné"
       ],
       "Required to create user accounts": [
         "Potrebné na vytvorenie používateľských účtov"
+      ],
+      "Select at least one user to start a migration": [
+        "Pre spustenie migrácie vyberte aspoň jedného používateľa"
       ],
       "Select what you want to migrate, this will apply to all users whether they are created now or later. Migration will start after user accounts are created.": [
         "Vyberte, čo chcete migrovať. Toto sa bude vzťahovať na všetkých používateľov, bez ohľadu na to, či sú vytvorení teraz alebo neskôr. Migrácia sa spustí po vytvorení používateľských účtov."
@@ -1877,29 +1874,23 @@
       "Sign in to Google Workspace": [
         "Prihlásiť sa do Google Workspace"
       ],
-      "Status": [
-        "Stav"
-      ],
       "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Markeplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue. Learn more": [
         "Ak chcete migrovať dáta vašej organizácie, potrebujete nainštalovať aplikáciu ${ BRAND_NAME } Migration Assistant z Google Workspace Marketplace. Toto udelí povolenie pre ${ BRAND_NAME } na kopírovanie vašich dát. Po jej nainštalovaní sa vráťte sem, aby ste pokračovali. Zistiť viac"
       ],
-      "Transfer data from": [
-        "Preniesť údaje z"
+      "Transfer errors": [
+        "Chyby prenosu"
       ],
       "User": [
         "Používateľ"
       ],
-      "Users migrated": [
-        "Používatelia zmigrovaní"
-      ],
       "Verify your domain": [
         "Overte svoju doménu"
       ],
+      "Verify your domain to start a migration": [
+        "Overte vašu doménu pre spustenie migrácie"
+      ],
       "What are you migrating?": [
         "Čo migrujete?"
-      ],
-      "Who will be notified?": [
-        "Kto bude upozornený?"
       ]
     },
     "Browser": {
@@ -5668,12 +5659,6 @@
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
         "${ BRAND_NAME } sa nemôže pripojiť k vášmu účtu Yahoo. Uistite sa, že:"
       ],
-      "2-step verification is enabled in your external account.": [
-        "Dvojstupňové overenie je zapnuté vo vašom vzdialenom účte."
-      ],
-      "2-step verification is enabled in your external email account.": [
-        "Dvojfázové overovanie je zapnuté vo vašom vzdialenom emailovom účte."
-      ],
       "IMAP access is enabled in your external account.": [
         "IMAP prístup je zapnutý vo vašom externom účte."
       ],
@@ -5682,6 +5667,12 @@
       ],
       "Too many recent requests. Please try again in a few moments.": [
         "Bolo zadaných príliš veľa požiadaviek. Skúste to za pár minút."
+      ],
+      "Two-factor authentication is enabled in your external account.": [
+        "Dvojfázové overovanie je zapnuté vo vašom externom účte."
+      ],
+      "Two-factor authentication is enabled in your external email account.": [
+        "Dvojfázové overovanie je zapnuté vo vašom externom emailovom účte."
       ],
       "Use your app password if:": [
         "Použite heslo aplikácie, ak:"
@@ -9216,6 +9207,12 @@
       "Numbers": [
         "Čísla"
       ],
+      "OpenVPN password": [
+        "Heslo OpenVPN"
+      ],
+      "OpenVPN username": [
+        "Používateľské meno OpenVPN"
+      ],
       "Operating system": [
         "Operačný systém"
       ],
@@ -10723,9 +10720,6 @@
       "Unlimited labels": [
         "Neobmedzený počet štítkov"
       ],
-      "Unlimited logins and notes": [
-        "Neobmedzený počet prihlásení a poznámok"
-      ],
       "Unlimited logins, notes and credit cards": [
         "Neobmedzené prihlásenia, poznámky a platobné karty"
       ],
@@ -11378,6 +11372,9 @@
       ],
       "Number of records exceeds the download limit of 10000": [
         "Počet záznamov presahuje limit na stiahnutie 10000"
+      ],
+      "OpenVPN credentials regenerated": [
+        "Prihlasovacie údaje OpenVPN boli obnovené"
       ],
       "Reminder has been sent": [
         "Pripomienka bola odoslaná"
@@ -15919,6 +15916,9 @@
       ],
       "OpenVPN configuration files": [
         "Konfiguračné súbory OpenVPN"
+      ],
+      "OpenVPN username": [
+        "Používateľské meno OpenVPN"
       ],
       "Org setup": [
         "Nastavenie organizácie"

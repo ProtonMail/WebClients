@@ -1599,6 +1599,9 @@
       "Payments problem": [
         "Ödeme sorunu"
       ],
+      "Sheets problem": [
+        "Hesap tablosu sorunu"
+      ],
       "Sign in problem": [
         "Oturum açma sorunu"
       ],
@@ -3377,6 +3380,9 @@
       "Failed to get details, please try again later": [
         "Ayrıntılar alınamadı. Lütfen bir süre sonra yeniden deneyin"
       ],
+      "Failed to load signature details, please try again later": [
+        "İmza ayrıntıları yüklenemedi, lütfen daha sonra tekrar deneyin"
+      ],
       "Failed to load the STL preview": [
         "STL ön izlemesi yüklenemedi"
       ],
@@ -3786,6 +3792,9 @@
       ],
       "We were not able to load some of your shared items": [
         "Paylaşılan ögelerinizden bazıları yüklenemedi"
+      ],
+      "We were not able to load the folder contents": [
+        "Klasör içeriği yüklenemedi"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Bir e-postayı ${ maxContacts } taneden fazla alıcıya göndermezsiniz",
@@ -4554,12 +4563,6 @@
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
         "${ BRAND_NAME }, Yahoo hesabınızla bağlantı kuramadı. Lütfen şundan emin olun:"
       ],
-      "2-step verification is enabled in your external account.": [
-        "Dış hesabınızda iki adımlı doğrulama açılmış."
-      ],
-      "2-step verification is enabled in your external email account.": [
-        "Dış e-posta hesabınızda iki adımlı doğrulama açılmış."
-      ],
       "IMAP access is enabled in your external account.": [
         "Dış hesabınızda IMAP erişimi açılmış."
       ],
@@ -4568,6 +4571,12 @@
       ],
       "Too many recent requests. Please try again in a few moments.": [
         "Kısa sürede çok fazla istek yapıldı. Lütfen birkaç dakika sonra yeniden deneyin."
+      ],
+      "Two-factor authentication is enabled in your external account.": [
+        "Dış hesabınızda iki adımlı doğrulama kullanıma alınmış."
+      ],
+      "Two-factor authentication is enabled in your external email account.": [
+        "Dış e-posta hesabınızda iki adımlı doğrulama kullanıma alınmış."
       ],
       "Use your app password if:": [
         "Aşağıdaki durumlarda uygulama parolanızı kullanın:"
@@ -4784,8 +4793,8 @@
         "${ contactsLength } kişi",
         "${ contactsLength } kişi"
       ],
-      "${ DOCS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
-        "${ DOCS_APP_NAME } dosyaları doğrudan indirilemez ve indirilirken dosyaya katılmaz. \"İndirmeyi sürdür” üzerine tıklayarak düğer dosyaları indirebilirsiniz."
+      "${ DOCS_APP_NAME } and ${ SHEETS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
+        "${ DOCS_APP_NAME } ve ${ SHEETS_APP_NAME } dosyaları doğrudan indirilemez ve bu indirme işlemine dahil edilmeyecektir. Diğer dosyaları 'İndirmeye devam et' seçeneğine tıklayarak indirebilirsiniz."
       ],
       "${ doneCount } finished": [
         "${ doneCount } tamamlandı",
@@ -5774,9 +5783,6 @@
       "On public WiFi networks": [
         "Herkese açık Wi-Fi ağlarında"
       ],
-      "One of the files or folders you want to copy already exist in selected folder.": [
-        "Kopyalamak istediğiniz dosyalardan veya klasörlerden biri seçilmiş klasörde zaten var."
-      ],
       "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
         "Şifrelenmiş sürücülerinizden biri kilitli. Bu durum genellikle bir parola sıfırlama işleminde kaynaklanır."
       ],
@@ -6163,6 +6169,9 @@
       "Thank you for subscribing. Secure browsing starts now.": [
         "Abone olduğunuz için teşekkürler. Artık güvenle gezinebilirsiniz."
       ],
+      "that": [
+        "şu"
+      ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Hesabın yeni bir anahtarı olabilir ya da şu ögeler üzerinde oynanmış olabilir: ${ items }. Yalnızca güveniyorsanız açın."
       ],
@@ -6290,8 +6299,8 @@
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Ödemenizi tamamlamak için aşağıdaki adrese ${ btcAmountBold } gönderin."
       ],
-      "To download the ${ DOCS_APP_NAME } files, open them in ${ DOCS_APP_NAME } and export them.": [
-        "${ DOCS_APP_NAME } dosyalarını indirmek için onları ${ DOCS_APP_NAME } uygulamasında açın ve dışa aktarın."
+      "To download these files, open them in ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME } and export them.": [
+        "Bu dosyaları indirmek için ${ DOCS_APP_NAME } veya ${ SHEETS_APP_NAME } içinde açın ve dışa aktarın."
       ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
         "Gizliliği koruyarak arama yapabilmek için ${ DRIVE_APP_NAME } dosyalarınızı yerel dizine eklemeli."
@@ -6458,6 +6467,9 @@
       "We are experiencing technical issues. Any albums related actions are temporarily disabled.": [
         "Teknik sorunlar yaşıyoruz. Geçici olarak albümlerle ilgili işlemler yapılamıyor."
       ],
+      "We couldn't verify ${ nameAuthor } uploaded ${ node.name }. The following may have been tampered with: file data order. Only open if you trust it.": [
+        "${ nameAuthor } tarafından yüklenen ${ node.name } dosyasını doğrulayamadık. Aşağıdaki öğeler üzerinde oynanmış olabilir: dosya verileri sırası. Yalnızca güveniyorsanız açın."
+      ],
       "We couldn’t process your payment.": [
         "Ödemenizi işleyemedik."
       ],
@@ -6508,6 +6520,9 @@
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "İki adımlı doğrulamayı kurduğunuzda, kimlik doğrulama uygulamanızda sorun olması durumunda oturum açmak için kullanabileceğiniz kurtarma kodları vereceğiz."
+      ],
+      "who": [
+        "kim"
       ],
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
         "${ formattedRevisionDate } sürümünden geri yüklenecek. Diğer tüm sürümler bulunmayı sürdürecek."
@@ -8494,9 +8509,6 @@
       ],
       "Unlimited labels": [
         "Sınırsız etiket"
-      ],
-      "Unlimited logins and notes": [
-        "Sınırsız sayıda oturum açma ve not kaydı"
       ],
       "Unlimited logins, notes and credit cards": [
         "Sınırsız sayıda oturum açma, kredi kartı ve not kaydı"
@@ -12585,6 +12597,9 @@
       "Time": [
         "Zaman"
       ],
+      "To preview this spreadsheet, download it.": [
+        "Bu hesap tablosunu önizlemek için indirin."
+      ],
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "Bu hesap tablosunu ön izlemek için ${ SHEETS_APP_NAME } uygulaması ile açın ya da indirin."
       ],
@@ -12741,8 +12756,8 @@
       "Your changes are not synced yet": [
         "Değişiklikleriniz henüz eşitlenmedi"
       ],
-      "Your download includes a ${ DOCS_APP_NAME } file": [
-        "İndirmenizde bir ${ DOCS_APP_NAME } dosyası var"
+      "Your download includes ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME } files": [
+        "İndirmenize ${ DOCS_APP_NAME } veya ${ SHEETS_APP_NAME } dosyaları dahildir."
       ],
       "Your exposed information": [
         "Sızdırılmış bilgileriniz"

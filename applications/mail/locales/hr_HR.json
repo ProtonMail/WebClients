@@ -1130,6 +1130,9 @@
       "Trust": [
         "Vjeruj"
       ],
+      "Trust key": [
+        "Ključ povjerenja"
+      ],
       "Trust public key": [
         "Vjeruj javnom ključu"
       ],
@@ -4324,12 +4327,6 @@
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
         "${ BRAND_NAME } se ne može povezati s vašim Yahoo računom. Molimo osigurajte sljedeće:"
       ],
-      "2-step verification is enabled in your external account.": [
-        "Dvofaktorska autentikacija je omogućena na vašem vanjskom računu."
-      ],
-      "2-step verification is enabled in your external email account.": [
-        "Dvofaktorska autentikacija je omogućena na vašem računu e-pošte."
-      ],
       "IMAP access is enabled in your external account.": [
         "IMAP pristup je omogućen za vaš vanjski račun."
       ],
@@ -5067,7 +5064,9 @@
         "Inicijalizacija…"
       ],
       "Insert image": [
-        "Umetni sliku"
+        "Umetni sliku",
+        "Umetni slike",
+        "Umetni slike"
       ],
       "Insert link": [
         "Umetni poveznicu"
@@ -9323,9 +9322,6 @@
       ],
       "Download ${ VPN_APP_NAME }": [
         "Preuzmi ${ VPN_APP_NAME }"
-      ],
-      "Download Desktop app": [
-        "Preuzmi aplikaciju za računala"
       ],
       "Enable ${ DARK_WEB_MONITORING_NAME }": [
         "Omogući ${ DARK_WEB_MONITORING_NAME }"

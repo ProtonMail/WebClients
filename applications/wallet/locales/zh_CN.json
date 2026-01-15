@@ -565,6 +565,9 @@
       "${ WALLET_APP_NAME } has partnered with ${ rampLink }, ${ banxaLink } and ${ moonpayLink }, three registered crypto asset services, to facilitate the purchase of BTC. Please enter your region to see the available providers and payment methods.": [
         "${ WALLET_APP_NAME } 已与 ${ rampLink }、${ banxaLink } 和 ${ moonpayLink } 这三家注册加密资产服务公司合作，为购买 BTC 提供便利。请输入您所在的地区，查看可用的供应商和支付方式。"
       ],
+      "2% bank transfer fee": [
+        "2% 银行转账手续费"
+      ],
       "4% credit card fee": [
         "4% 的信用卡费用"
       ],
@@ -2950,6 +2953,9 @@
       "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "您的 ${ plan } 订阅将被替换为 ${ PASS_SHORT_APP_NAME } Lifetime。订阅的差价将计入您的账户。${ PASS_SHORT_APP_NAME } 终身优惠没有续订价格，只需一次性付款即可终身访问 ${ PASS_SHORT_APP_NAME }。"
       ],
+      "Your checkout has opened in a new tab. Please complete your payment there and return to this page when finished.": [
+        "您的结账页面已在新标签页中打开。请在其中完成付款，完成后返回此页面。"
+      ],
       "Your email will only be used for this one-time verification.": [
         "您的邮箱将只会用于此一次性验证。"
       ],
@@ -3719,9 +3725,6 @@
       ],
       "Unlimited labels": [
         "标签数量不限"
-      ],
-      "Unlimited logins and notes": [
-        "无限登录和笔记"
       ],
       "Unlimited logins, notes and credit cards": [
         "无限制登录、备注和信用卡"
