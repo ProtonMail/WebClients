@@ -23,8 +23,11 @@ export const getFormattedDateTime = (exif?: ExifTags) => {
 
 export const getCaptureDateTime = (file: File, exif?: ExifTags) => {
     const formattedDateTime = getFormattedDateTime(exif);
-
     const captureDateTime = new Date(formattedDateTime || file.lastModified);
+
+    if (captureDateTime.getTime() < 0) {
+        return new Date();
+    }
 
     return captureDateTime;
 };
@@ -39,8 +42,18 @@ export const getPhotoDimensions = ({ exif, png }: ExpandedTags): { width?: numbe
 export const getCaptureDateTimeString = (exif?: ExifTags) => {
     try {
         const formattedDateTime = getFormattedDateTime(exif);
+        if (!formattedDateTime) {
+            return undefined;
+        }
+
         // Treat EXIF datetime as UTC by appending 'Z'
-        return formattedDateTime ? new Date(`${formattedDateTime}Z`).toISOString() : undefined;
+        const captureDateTime = new Date(`${formattedDateTime}Z`);
+
+        if (captureDateTime.getTime() < 0) {
+            return new Date().toISOString();
+        }
+
+        return captureDateTime.toISOString();
     } catch {
         return undefined;
     }
