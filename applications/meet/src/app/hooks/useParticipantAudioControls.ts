@@ -4,7 +4,6 @@ import { useRoomContext } from '@livekit/components-react';
 import type { Participant, RemoteParticipant, RemoteTrackPublication, TrackPublication } from 'livekit-client';
 import { RoomEvent, Track } from 'livekit-client';
 
-import { AudioTrackSubscriptionCache } from '../contexts/TrackSubscriptionCache/AudioTrackSubscriptionCache';
 import { checkAudioTrackStats as checkAudioTrackStatsUtil } from '../utils/checkAudioTrackStats';
 import { useStuckTrackMonitor } from './useStuckTrackMonitor';
 
@@ -13,35 +12,42 @@ const STUCK_AUDIO_CHECK_INTERVAL_MS = 7000;
 const MIN_EXPECTED_PACKETS = 1;
 const MIN_EXPECTED_AUDIO_BYTES_WHILE_SPEAKING = 300;
 const SPEAKING_ACTIVITY_MARGIN_MS = 1000;
-const MAX_CONCEALED_SAMPLES_DELTA = 10000;
+
+interface SubscriptionItem {
+    participant: RemoteParticipant;
+    publication: RemoteTrackPublication;
+}
 
 export const useParticipantAudioControls = () => {
     const room = useRoomContext();
 
-    const audioTrackCacheRef = useRef<AudioTrackSubscriptionCache>(
-        new AudioTrackSubscriptionCache(MAX_SUBSCRIBED_MICROPHONE_TRACKS)
-    );
+    const subscribedMicrophoneTrackPublicationsRef = useRef<SubscriptionItem[]>([]);
 
     const getTracksToMonitor = useCallback(() => {
-        return audioTrackCacheRef.current.getQueueManagedTracksToMonitor();
+        return subscribedMicrophoneTrackPublicationsRef.current
+            .filter(
+                (item) =>
+                    item.publication.isSubscribed &&
+                    item.publication.isEnabled &&
+                    !!item.publication.track &&
+                    !item.publication.isMuted
+            )
+            .map((item) => item.publication);
     }, []);
 
     const checkAudioTrackStats = useCallback(async (publication: RemoteTrackPublication) => {
-        const participant = audioTrackCacheRef.current.getParticipantForTrack(publication);
+        const item = subscribedMicrophoneTrackPublicationsRef.current.find(
+            (it) => it.publication.trackSid === publication.trackSid
+        );
 
-        const context = participant ? { participant, source: publication.source } : undefined;
+        const context = item ? { participant: item.participant, source: item.publication.source } : undefined;
 
         return checkAudioTrackStatsUtil(publication, context, {
             checkIntervalMs: STUCK_AUDIO_CHECK_INTERVAL_MS,
             speakingActivityMarginMs: SPEAKING_ACTIVITY_MARGIN_MS,
             minExpectedPackets: MIN_EXPECTED_PACKETS,
             minExpectedAudioBytesWhileSpeaking: MIN_EXPECTED_AUDIO_BYTES_WHILE_SPEAKING,
-            maxConcealedSamplesDelta: MAX_CONCEALED_SAMPLES_DELTA,
         });
-    }, []);
-
-    const resetAudioTrack = useCallback(async (publication: RemoteTrackPublication) => {
-        await audioTrackCacheRef.current?.resetQueueManagedTrack(publication);
     }, []);
 
     useStuckTrackMonitor({
@@ -49,11 +55,31 @@ export const useParticipantAudioControls = () => {
         minExpectedDelta: MIN_EXPECTED_PACKETS,
         getTracksToMonitor,
         checkTrackStats: checkAudioTrackStats,
-        resetTrack: resetAudioTrack,
     });
 
     useEffect(() => {
-        const cache = audioTrackCacheRef.current;
+        const handleCacheUpdate = (pub: RemoteTrackPublication, participant: RemoteParticipant) => {
+            subscribedMicrophoneTrackPublicationsRef.current = [
+                { participant: participant, publication: pub },
+                ...subscribedMicrophoneTrackPublicationsRef.current.filter(
+                    (item) => item.publication?.trackSid !== pub.trackSid
+                ),
+            ];
+
+            const tracksToUnsubscribe = subscribedMicrophoneTrackPublicationsRef.current.slice(
+                MAX_SUBSCRIBED_MICROPHONE_TRACKS
+            );
+
+            tracksToUnsubscribe.forEach((track) => {
+                track.publication.setEnabled(false);
+                track.publication?.setSubscribed(false);
+            });
+
+            subscribedMicrophoneTrackPublicationsRef.current = subscribedMicrophoneTrackPublicationsRef.current.slice(
+                0,
+                MAX_SUBSCRIBED_MICROPHONE_TRACKS
+            );
+        };
 
         const handleRoomConnected = () => {
             for (const participant of room.remoteParticipants.values()) {
@@ -70,7 +96,14 @@ export const useParticipantAudioControls = () => {
                     }
 
                     if (pub.source === Track.Source.Microphone && !pub.isMuted) {
-                        cache.registerWithParticipant(pub, participant);
+                        if (!pub.isSubscribed) {
+                            pub.setSubscribed(true);
+                        }
+                        if (!pub.isEnabled) {
+                            pub.setEnabled(true);
+                        }
+
+                        handleCacheUpdate(pub, participant);
                     }
                 }
             }
@@ -88,7 +121,12 @@ export const useParticipantAudioControls = () => {
             }
 
             if (pub.source === Track.Source.Microphone && !pub.isMuted) {
-                cache.registerWithParticipant(pub, participant);
+                if (!pub.isSubscribed) {
+                    pub.setSubscribed(true);
+                    pub.setEnabled(true);
+
+                    handleCacheUpdate(pub, participant);
+                }
             }
         };
 
@@ -99,8 +137,13 @@ export const useParticipantAudioControls = () => {
 
             if (publication.source === Track.Source.Microphone) {
                 const pub = publication as RemoteTrackPublication;
-                // Registering brings the track forward in the cache and handles subscription/enabling
-                cache.registerWithParticipant(pub, participant as RemoteParticipant);
+                if (!pub.isSubscribed) {
+                    pub.setSubscribed(true);
+                    pub.setEnabled(true);
+                }
+
+                // We call handleCacheUpdate here when the track is unmuted to bring it forward in the cache
+                handleCacheUpdate(pub, participant as RemoteParticipant);
             }
         };
 
@@ -110,13 +153,15 @@ export const useParticipantAudioControls = () => {
             }
 
             if (publication.source === Track.Source.Microphone) {
-                cache.handleTrackUnpublished(publication);
+                subscribedMicrophoneTrackPublicationsRef.current =
+                    subscribedMicrophoneTrackPublicationsRef.current.filter(
+                        (item) => item.publication?.trackSid !== publication.trackSid
+                    );
             }
         };
 
         const handleRoomDisconnected = () => {
-            cache.destroy();
-            audioTrackCacheRef.current = new AudioTrackSubscriptionCache(MAX_SUBSCRIBED_MICROPHONE_TRACKS);
+            subscribedMicrophoneTrackPublicationsRef.current = [];
         };
 
         room.on(RoomEvent.TrackPublished, handleAudioTrackPublished);
