@@ -13,10 +13,10 @@ const parseEnvVar = <T extends unknown = string>(envVar: string, fallback: T, ma
 
 const parseBool = (x: unknown) => x === 'true' || x === '1' || x === 1;
 
+const API_ENV = parseEnvVar('API_ENV', 'proton.me', String);
 const BETA = parseEnvVar('BETA', false, Boolean);
 const BUILD_TARGET = parseEnvVar('BUILD_TARGET', 'chrome', String);
 const BUILD_STORE_TARGET = parseEnvVar('BUILD_STORE_TARGET', '', String);
-const CLEAN_MANIFEST = parseEnvVar('CLEAN_MANIFEST', false, parseBool);
 const ENV = parseEnvVar('NODE_ENV', 'development', String);
 const HTTP_DEBUGGER = parseEnvVar('HTTP_DEBUGGER', false, parseBool);
 const HTTP_DEBUGGER_PORT = parseEnvVar('HTTP_DEBUGGER_PORT', 3000, Number);
@@ -35,10 +35,10 @@ const E2E_TESTS = parseEnvVar('E2E_TESTS', false, parseBool);
 const HOT_MANIFEST_UPDATE = RUNTIME_RELOAD && parseEnvVar('HOT_MANIFEST_UPDATE', false, parseBool);
 
 export default {
+    API_ENV,
     BETA,
     BUILD_TARGET,
     BUILD_STORE_TARGET,
-    CLEAN_MANIFEST,
     E2E_TESTS,
     ENV,
     HOT_MANIFEST_UPDATE,

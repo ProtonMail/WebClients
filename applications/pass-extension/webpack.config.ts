@@ -18,10 +18,10 @@ import envVars from './tools/env';
 import { MANIFEST_PATH, getAppVersion, webpackOptions } from './webpack.options';
 
 const {
+    API_ENV,
     BETA,
     BUILD_TARGET,
     BUILD_STORE_TARGET,
-    CLEAN_MANIFEST,
     E2E_TESTS,
     ENV,
     HOT_MANIFEST_UPDATE,
@@ -59,6 +59,7 @@ const section = (title: string, content: () => void) => {
 
 section('Build configuration', () => {
     console.log(` ENV = ${ENV}`);
+    console.log(` API_ENV=${API_ENV}`);
     console.log(` RELEASE = ${RELEASE}`);
     console.log(` BUILD_TARGET = ${BUILD_TARGET}`);
     console.log(` BUILD_STORE_TARGET = ${BUILD_STORE_TARGET}`);
@@ -66,7 +67,6 @@ section('Build configuration', () => {
     console.log(` MANIFEST_KEY = ${MANIFEST_KEY || 'none'}`);
     console.log(` MANIFEST_VERSION = ${JSON.parse(getAppVersion())}`);
     console.log(` PUBLIC_KEY = ${PUBLIC_KEY || 'none'}`);
-    console.log(` CLEAN_MANIFEST = ${CLEAN_MANIFEST}`);
     console.log(` HTTP_DEBUGGER = ${HTTP_DEBUGGER}`);
 
     if (HTTP_DEBUGGER) console.log(` HTTP_DEBUGGER_PORT = ${HTTP_DEBUGGER_PORT}`);
@@ -312,39 +312,37 @@ const config: Configuration = {
 
                         if (PUBLIC_KEY) manifest.key = PUBLIC_KEY;
 
-                        /* add the appropriate CSP policies for the development build to connect
-                         * to unsecure ws:// protocols without firefox trying to upgrade it to
-                         * wss:// - currently the redux cli tools do not support https */
-                        if (ENV !== 'production' && BUILD_TARGET === 'firefox') {
-                            manifest.content_security_policy = {
-                                extension_pages:
-                                    "connect-src 'self' https: ws:; script-src 'self' 'wasm-unsafe-eval'; object-src 'self'; ",
-                            };
-                        }
-
                         /* sanitize manifest when building for production */
-                        if (CLEAN_MANIFEST) {
-                            switch (BUILD_TARGET) {
-                                case 'firefox':
-                                    manifest.content_scripts[1].matches = [
-                                        'https://account.proton.me/*',
-                                        'https://pass.proton.me/*',
-                                    ];
-                                    break;
-                                case 'chrome':
-                                    manifest.externally_connectable.matches = [
-                                        'https://account.proton.me/*',
-                                        'https://pass.proton.me/*',
-                                    ];
-                                    break;
-                                case 'safari':
-                                    manifest.content_scripts[1].matches = ['https://account.proton.me/*'];
-                                    manifest.externally_connectable.matches = [
-                                        'https://account.proton.me/*',
-                                        'https://pass.proton.me/*',
-                                    ];
-                                    break;
-                            }
+                        switch (BUILD_TARGET) {
+                            case 'firefox':
+                                /* add the appropriate CSP policies for the development build to connect
+                                 * to unsecure ws:// protocols without firefox trying to upgrade it to
+                                 * wss:// - currently the redux cli tools do not support https */
+                                if (ENV !== 'production') {
+                                    manifest.content_security_policy = {
+                                        extension_pages:
+                                            "connect-src 'self' https: ws:; script-src 'self' 'wasm-unsafe-eval'; object-src 'self'; ",
+                                    };
+                                }
+
+                                manifest.content_scripts[1].matches = [
+                                    `https://account.${API_ENV}/*`,
+                                    `https://pass.${API_ENV}/*`,
+                                ];
+                                break;
+                            case 'chrome':
+                                manifest.externally_connectable.matches = [
+                                    `https://account.${API_ENV}/*`,
+                                    `https://pass.${API_ENV}/*`,
+                                ];
+                                break;
+                            case 'safari':
+                                manifest.content_scripts[1].matches = [`https://account.${API_ENV}/*`];
+                                manifest.externally_connectable.matches = [
+                                    `https://account.${API_ENV}/*`,
+                                    `https://pass.${API_ENV}/*`,
+                                ];
+                                break;
                         }
 
                         if (BETA) {
