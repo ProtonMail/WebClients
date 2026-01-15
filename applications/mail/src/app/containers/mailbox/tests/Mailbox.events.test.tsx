@@ -175,7 +175,7 @@ describe('Mailbox elements list reacting to events', () => {
                 {
                     ID,
                     Action: EVENT_ACTIONS.DELETE,
-                    Message: { ID, ConversationID: ID } as Message,
+                    Message: { ID, ConversationID: ID, LabelIDs: [] } as unknown as Message,
                 },
             ],
         });
