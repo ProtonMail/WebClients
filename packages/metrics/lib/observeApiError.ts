@@ -1,4 +1,9 @@
-import { getApiError, getIsConnectionIssue } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import {
+    getApiError,
+    getIsNetworkError,
+    getIsOfflineError,
+    getIsTimeoutError,
+} from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { API_CODES } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 
@@ -21,13 +26,11 @@ export default function observeApiError(
 
     const { status, code } = getApiError(error);
 
-    if (
-        !status ||
-        status === -1 ||
-        error?.name === 'AbortError' ||
-        getIsConnectionIssue(error) ||
-        ignoreCodes.includes(code)
-    ) {
+    if (!status || status === -1 || error?.name === 'AbortError' || ignoreCodes.includes(code)) {
+        return;
+    }
+
+    if (getIsOfflineError(error) || getIsNetworkError(error) || getIsTimeoutError(error)) {
         return;
     }
 
