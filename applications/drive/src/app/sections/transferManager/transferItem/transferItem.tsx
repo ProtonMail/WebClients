@@ -131,6 +131,7 @@ export const TransferItem = ({ entry, onShare }: Props) => {
                 downloadName: item.name,
                 message: issue.message,
                 apply: (decision: IssueStatus, applyAll: boolean) => {
+                    applyAll = decision === IssueStatus.Rejected ? true : applyAll;
                     dm.resolveSignatureIssue(item, issue.name, decision, applyAll);
                 },
                 cancelAll: () => {

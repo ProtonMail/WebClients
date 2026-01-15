@@ -76,7 +76,8 @@ export async function initDownloadSW() {
     // wait Service Worker is registered
     await navigator.serviceWorker.register(
         /* webpackChunkName: "downloadSW" */
-        new URL('./downloadSW', import.meta.url),
+
+        new URL('../../../managers/fileSaver/downloadSW.ts', import.meta.url),
         {
             scope: `/${stripLeadingAndTrailingSlash(PUBLIC_PATH)}`,
         }
