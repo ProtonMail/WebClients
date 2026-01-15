@@ -1698,17 +1698,6 @@
       ]
     },
     "Billing cycle": {
-      "Renews automatically": [
-        "يُجدد تلقائيًا"
-      ],
-      "Renews automatically at ${ renewPrice }, for ${ renewLength } months": [
-        "يُجدد تلقائيًا بسعر ${ renewPrice }، لمدة ${ renewLength } أشهر",
-        "يُجدد تلقائيًا بسعر ${ renewPrice }، لمدة شهر واحد (${ renewLength })",
-        "يُجدد تلقائيًا بسعر ${ renewPrice }، لمدة شهرين (${ renewLength })",
-        "يُجدد تلقائيًا بسعر ${ renewPrice }، لمدة ${ renewLength } أشهر",
-        "يُجدد تلقائيًا بسعر ${ renewPrice }، لمدة ${ renewLength } شهرًا",
-        "يُجدد تلقائيًا بسعر ${ renewPrice }، لمدة ${ renewLength } شهر"
-      ],
       "Renews automatically on ${ subscriptionManagerName }": [
         "يُجدد تلقائيًا على ${ subscriptionManagerName }"
       ]
@@ -5545,12 +5534,6 @@
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
         "لا يستطيع ${ BRAND_NAME } الاتصال بحسابك على Yahoo. يرجى التأكد مما يلي:"
       ],
-      "2-step verification is enabled in your external account.": [
-        "التحقق بخطوتين مفعّل في حسابك الخارجي."
-      ],
-      "2-step verification is enabled in your external email account.": [
-        "التحقق بخطوتين مفعّل في حساب بريدك الإلكتروني الخارجي."
-      ],
       "IMAP access is enabled in your external account.": [
         "تم تفعيل الوصول عبر بروتوكول IMAP في حسابك الخارجي."
       ],
@@ -9192,6 +9175,12 @@
       "Numbers": [
         "الأرقام"
       ],
+      "OpenVPN password": [
+        "كلمة سر OpenVPN"
+      ],
+      "OpenVPN username": [
+        "اسم مستخدم OpenVPN"
+      ],
       "Operating system": [
         "نظام التشغيل"
       ],
@@ -10657,9 +10646,6 @@
       "Unlimited labels": [
         "تسميات غير محدودة"
       ],
-      "Unlimited logins and notes": [
-        "تسجيل الدخول والملاحظات غير محدودة"
-      ],
       "Unlimited logins, notes and credit cards": [
         "عمليات تسجيل دخول وملاحظات وبطاقات ائتمان غير محدودة"
       ],
@@ -11344,6 +11330,9 @@
       ],
       "Number of records exceeds the download limit of 10000": [
         "عدد السجلات يتجاوز حد التنزيل البالغ 10000"
+      ],
+      "OpenVPN credentials regenerated": [
+        "تمت إعادة إنشاء بيانات اعتماد OpenVPN"
       ],
       "Reminder has been sent": [
         "تم إرسال التذكير"

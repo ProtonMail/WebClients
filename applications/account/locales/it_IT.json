@@ -2358,13 +2358,6 @@
       ]
     },
     "Billing cycle": {
-      "Renews automatically": [
-        "Si rinnova automaticamente"
-      ],
-      "Renews automatically at ${ renewPrice }, for ${ renewLength } month": [
-        "Si rinnova automaticamente a ${ renewPrice } per ${ renewLength } mese",
-        "Si rinnova automaticamente a ${ renewPrice } per ${ renewLength } mesi"
-      ],
       "Renews automatically on ${ subscriptionManagerName }": [
         "Si rinnova automaticamente il ${ subscriptionManagerName }"
       ]
@@ -2653,21 +2646,8 @@
       ]
     },
     "BOSS": {
-      "${ migratedCount } of ${ providerUsers.length }": [
-        "${ migratedCount } di ${ providerUsers.length }"
-      ],
-      "${ n } year ago": [
-        "${ n } anno",
-        "${ n } anni"
-      ],
       "Add a custom domain": [
         "Aggiungi dominio personalizzato"
-      ],
-      "Add a domain": [
-        "Aggiungi un dominio"
-      ],
-      "Add more users...": [
-        "Aggiungi più utenti..."
       ],
       "Authenticate": [
         "Autenticati"
@@ -2690,17 +2670,8 @@
       "Domain ownership verified": [
         "Possesso del dominio verificato"
       ],
-      "Domain setup": [
-        "Configurazione del dominio"
-      ],
-      "Email notifications will be sent when migration starts and when it’s completed. You will also be notified if there are errors and if migration is paused due to expired links.": [
-        "Le notifiche email verranno inviate all’inizio e al completamento della migrazione. Riceverai inoltre avvisi in caso di errori o se la migrazione viene sospesa a causa di link scaduti."
-      ],
       "Estimated size": [
         "Dimensioni Stimate"
-      ],
-      "Everything": [
-        "Tutto"
       ],
       "Failed to load OAuth": [
         "Impossibile caricare OAuth"
@@ -2726,9 +2697,6 @@
       "Migration includes": [
         "La migrazione include"
       ],
-      "Not started": [
-        "Non iniziato"
-      ],
       "Required to create user accounts": [
         "Necessario per creare account utente"
       ],
@@ -2750,20 +2718,11 @@
       "Start migration": [
         "Start migration"
       ],
-      "Status": [
-        "Stato"
-      ],
       "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Markeplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue. Learn more": [
         "Per migrare i dati della tua organizzazione, devi installare l’app ${ BRAND_NAME } Migration Assistant dal Google Workspace Marketplace. Questo concederà a ${ BRAND_NAME } il permesso di copiare i tuoi dati. Dopo l’installazione, torna qui per continuare. Scopri di più"
       ],
-      "Transfer data from": [
-        "Trasferisci dati da"
-      ],
       "User": [
         "Utente"
-      ],
-      "Users migrated": [
-        "Utenti migrati"
       ],
       "Verify your domain": [
         "Verifica il tuo dominio"
@@ -2773,9 +2732,6 @@
       ],
       "What are you migrating?": [
         "Cosa stai migrando?"
-      ],
-      "Who will be notified?": [
-        "Chi verrà notificato?"
       ]
     },
     "breadcrumb": {
@@ -8292,12 +8248,6 @@
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
         "${ BRAND_NAME } non può connettersi al tuo account Yahoo. Assicurati che:"
       ],
-      "2-step verification is enabled in your external account.": [
-        "La verifica in 2 passaggi è abilitata nel tuo account esterno."
-      ],
-      "2-step verification is enabled in your external email account.": [
-        "La verifica in 2 passaggi è abilitata nel tuo account email esterno."
-      ],
       "IMAP access is enabled in your external account.": [
         "L'accesso IMAP è abilitato nel tuo account esterno."
       ],
@@ -12802,9 +12752,6 @@
       "Create password": [
         "Crea password"
       ],
-      "Credit cards": [
-        "Carte"
-      ],
       "Credits": [
         "Crediti"
       ],
@@ -15350,9 +15297,6 @@
       ],
       "Unlimited labels": [
         "Etichette illimitate"
-      ],
-      "Unlimited logins and notes": [
-        "Accessi e note illimitati"
       ],
       "Unlimited logins, notes and credit cards": [
         "Accessi, note e carte di credito illimitati"

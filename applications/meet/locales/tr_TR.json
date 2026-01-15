@@ -457,6 +457,9 @@
       "Payments problem": [
         "Ödeme sorunu"
       ],
+      "Sheets problem": [
+        "Hesap tablosu sorunu"
+      ],
       "Sign in problem": [
         "Oturum açma sorunu"
       ],
@@ -1579,6 +1582,10 @@
       ],
       "${ participantCount } of ${ maxParticipants } participants": [
         "${ maxParticipants } / ${ participantCount } katılımcı"
+      ],
+      "${ participantCount } participant": [
+        "${ participantCount } katılımcı",
+        "${ participantCount } katılımcı"
       ],
       "${ presenterName } (you) is presenting": [
         "${ presenterName } (siz) sunum yapıyorsunuz"

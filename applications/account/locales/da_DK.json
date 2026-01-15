@@ -2358,12 +2358,9 @@
       ]
     },
     "Billing cycle": {
-      "Renews automatically": [
-        "Fornyes automatisk"
-      ],
-      "Renews automatically at ${ renewPrice }, for ${ renewLength } month": [
-        "Fornyes automatisk til ${ renewPrice }, for ${ renewLength } måned",
-        "Fornyes automatisk til ${ renewPrice }, for ${ renewLength } måneder"
+      "Renews automatically at ${ renewPrice }, for ${ renewCycle } month": [
+        "Fornyes automatisk til ${ renewPrice }, for ${ renewCycle } måned",
+        "Fornyes automatisk til ${ renewPrice } for ${ renewCycle } måneder"
       ],
       "Renews automatically on ${ subscriptionManagerName }": [
         "Fornyes automatisk i ${ subscriptionManagerName }"
@@ -2653,21 +2650,8 @@
       ]
     },
     "BOSS": {
-      "${ migratedCount } of ${ providerUsers.length }": [
-        "${ migratedCount } af ${ providerUsers.length }"
-      ],
-      "${ n } year ago": [
-        "${ n } år siden",
-        "${ n } år siden"
-      ],
       "Add a custom domain": [
         "Tilføj et brugerdomæne"
-      ],
-      "Add a domain": [
-        "Tilføj et domæne"
-      ],
-      "Add more users...": [
-        "Tilføj flere brugere..."
       ],
       "Authenticate": [
         "Godkend"
@@ -2687,20 +2671,14 @@
       "Contacts": [
         "Kontakter"
       ],
+      "Domain connected": [
+        "Domæne forbundet"
+      ],
       "Domain ownership verified": [
         "Domæneejerskab verificeret"
       ],
-      "Domain setup": [
-        "Domænekonfiguration"
-      ],
-      "Email notifications will be sent when migration starts and when it’s completed. You will also be notified if there are errors and if migration is paused due to expired links.": [
-        "E-mail-notifikationer vil blive sendt, når migreringen starter, og når den er fuldført. Du vil også blive underrettet, hvis der opstår fejl, og hvis migreringen sættes på pause på grund af udløbne links."
-      ],
       "Estimated size": [
         "Anslået størrelse"
-      ],
-      "Everything": [
-        "Alt"
       ],
       "Failed to load OAuth": [
         "Kunne ikke indlæse OAuth"
@@ -2726,11 +2704,30 @@
       "Migration includes": [
         "Migreringen omfatter"
       ],
-      "Not started": [
-        "Ikke startet"
+      "Migration started for ${ n } user": [
+        "Migration startet for ${ n } bruger",
+        "Migration startet for ${ n } brugere"
+      ],
+      "Migration status": [
+        "Migrationsstatus"
+      ],
+      "Organization does not have enough seats available": [
+        "Organisationen har ikke nok ledige pladser"
+      ],
+      "Organization does not have enough storage available": [
+        "Organisationen har ikke tilstrækkelig ledig lagerplads"
+      ],
+      "Organization settings": [
+        "Organisationsindstillinger"
+      ],
+      "Required": [
+        "Påkrævet"
       ],
       "Required to create user accounts": [
         "Påkrævet for at oprette brugerkonti"
+      ],
+      "Select at least one user to start a migration": [
+        "Vælg mindst én bruger for at starte en migrering"
       ],
       "Select what you want to migrate, this will apply to all users whether they are created now or later. Migration will start after user accounts are created.": [
         "Vælg, hvad du ønsker at migrere. Dette vil blive anvendt på alle brugere, uanset om de oprettes nu eller senere. Migrationen starter, når brugerkonti oprettes."
@@ -2750,20 +2747,14 @@
       "Start migration": [
         "Start migrering"
       ],
-      "Status": [
-        "Status"
-      ],
       "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Markeplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue. Learn more": [
         "For at migrere dine organisations data skal du installere ${ BRAND_NAME } Migration Assistant-appen fra Google Workspace Marketplace. Dette giver ${ BRAND_NAME } tilladelse til at kopiere dine data. Når du har installeret den, skal du vende tilbage hertil for at fortsætte. Få mere at vide"
       ],
-      "Transfer data from": [
-        "Overfør data fra"
+      "Transfer errors": [
+        "Overførselsfejl"
       ],
       "User": [
         "Bruger"
-      ],
-      "Users migrated": [
-        "Brugere migreret"
       ],
       "Verify your domain": [
         "Bekræft dit domæne"
@@ -2771,11 +2762,11 @@
       "Verify your domain ownership": [
         "Bekræft dit domæneejerskab"
       ],
+      "Verify your domain to start a migration": [
+        "Bekræft dit domæne for at starte en migrering"
+      ],
       "What are you migrating?": [
         "Hvad migrerer du?"
-      ],
-      "Who will be notified?": [
-        "Hvem vil modtage besked?"
       ]
     },
     "breadcrumb": {
@@ -2850,6 +2841,9 @@
       ],
       "Payments problem": [
         "Betalingsproblem"
+      ],
+      "Sheets problem": [
+        "Regnearksproblem"
       ],
       "Sign in problem": [
         "Log ind-problem"
@@ -5023,7 +5017,7 @@
         "Download til Windows"
       ],
       "Download on Snap store": [
-        "Download i Snapbutikken"
+        "Download i Snap Store"
       ],
       "Download on the Apple App Store": [
         "Download i Apple App Store"
@@ -8301,12 +8295,6 @@
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
         "${ BRAND_NAME } kan ikke oprette forbindelse til din Yahoo-konto. Sørg for at:"
       ],
-      "2-step verification is enabled in your external account.": [
-        "Totrinsbekræftelse er aktiveret på din eksterne konto."
-      ],
-      "2-step verification is enabled in your external email account.": [
-        "Totrinsbekræftelse er aktiveret på din eksterne e-mail-konto."
-      ],
       "IMAP access is enabled in your external account.": [
         "IMAP-adgang er aktiveret på din eksterne konto."
       ],
@@ -8315,6 +8303,12 @@
       ],
       "Too many recent requests. Please try again in a few moments.": [
         "For mange nylige anmodninger. Forsøg igen lidt senere."
+      ],
+      "Two-factor authentication is enabled in your external account.": [
+        "To-faktor-godkendelse er aktiveret i din eksterne konto."
+      ],
+      "Two-factor authentication is enabled in your external email account.": [
+        "Tofaktor-godkendelse er aktiveret i din eksterne e-mail-konto."
       ],
       "Use your app password if:": [
         "Brug din app-adgangskode hvis:"
@@ -12811,9 +12805,6 @@
       "Create password": [
         "Opret adgangskode"
       ],
-      "Credit cards": [
-        "Betalingskort"
-      ],
       "Credits": [
         "Kreditter"
       ],
@@ -13284,6 +13275,12 @@
       ],
       "Only available on ${ PASS_SHORT_APP_NAME } paid plans": [
         "Kun tilgængelig i ${ PASS_SHORT_APP_NAME } betalte abonnementer"
+      ],
+      "OpenVPN password": [
+        "OpenVPN-adgangskode"
+      ],
+      "OpenVPN username": [
+        "OpenVPN-brugernavn"
       ],
       "Operating system": [
         "Operativsystem"
@@ -15354,9 +15351,6 @@
       "Unlimited labels": [
         "Ubegrænsede etiketter"
       ],
-      "Unlimited logins and notes": [
-        "Ubegrænset indlogninger og notater"
-      ],
       "Unlimited logins, notes and credit cards": [
         "Ubegrænsede logins, noter og betalingskort"
       ],
@@ -16040,6 +16034,9 @@
       ],
       "Number of records exceeds the download limit of 10000": [
         "Antallet af poster overskrider downloadgrænsen på 10000"
+      ],
+      "OpenVPN credentials regenerated": [
+        "OpenVPN-legitimationsoplysninger regenereret"
       ],
       "Reminder has been sent": [
         "En påmindelse er blevet sendt."
@@ -17483,7 +17480,7 @@
         "Vi er ikke i stand til at godkende din betalingsmetode. Vælg venligst en anden betalingsmetode, eller prøv igen."
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
-        "Dit kort blev afvist. Prøv venligst et andet kort eller kontakt din bank for at godkende betalingen."
+        "Dit kort blev afvist. Prøv et andet kort eller kontakt din bank for at godkende betalingen."
       ]
     },
     "Payments.error": {
@@ -22663,6 +22660,9 @@
       "Open pagination": [
         "Åbn sidenummerering"
       ],
+      "OpenVPN": [
+        "OpenVPN"
+      ],
       "OpenVPN configuration files": [
         "OpenVPN-konfigurationsfiler"
       ],
@@ -23077,6 +23077,9 @@
       ],
       "Time zone": [
         "Tidszone"
+      ],
+      "To preview this spreadsheet, download it.": [
+        "For at forhåndsvise dette regneark, skal du downloade det."
       ],
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "Åbn dette regneark i ${ SHEETS_APP_NAME } eller download det for at forhåndsvise det."

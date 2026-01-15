@@ -1816,9 +1816,6 @@
       ]
     },
     "Billing cycle": {
-      "Renews automatically at ${ renewPrice }, for ${ renewLength } month": [
-        "自動以 ${ renewPrice } 續訂，繳費長度為 ${ renewLength }月"
-      ],
       "Renews automatically on ${ subscriptionManagerName }": [
         "自動續期在${ subscriptionManagerName }"
       ]
@@ -6053,12 +6050,6 @@
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
         "${ BRAND_NAME } 無法連接您的 Yahoo! 帳號。請確認以下事項:"
       ],
-      "2-step verification is enabled in your external account.": [
-        "您的外部帳號已啟用兩步驟驗證。"
-      ],
-      "2-step verification is enabled in your external email account.": [
-        "您的外部電郵帳號已啟用兩步驟驗證."
-      ],
       "IMAP access is enabled in your external account.": [
         "您的外部帳號已啟用 IMAP 存取。"
       ],
@@ -9520,9 +9511,6 @@
       "Country": [
         "國家"
       ],
-      "Credit cards": [
-        "信用卡"
-      ],
       "Credits": [
         "額度"
       ],
@@ -11453,9 +11441,6 @@
       ],
       "Unlimited labels": [
         "無限制標籤"
-      ],
-      "Unlimited logins and notes": [
-        "無限登入資訊與筆記"
       ],
       "Unlimited logins, notes and credit cards": [
         "無限登入，筆記和信用卡"

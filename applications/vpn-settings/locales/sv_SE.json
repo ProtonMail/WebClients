@@ -1667,12 +1667,9 @@
       ]
     },
     "Billing cycle": {
-      "Renews automatically": [
-        "Förnyas automatiskt"
-      ],
-      "Renews automatically at ${ renewPrice }, for ${ renewLength } month": [
-        "Förnyas automatiskt med ${ renewPrice }, för ${ renewLength } månad",
-        "Förnyas automatiskt med ${ renewPrice }, för ${ renewLength } månader"
+      "Renews automatically at ${ renewPrice }, for ${ renewCycle } month": [
+        "Förnyas automatiskt med ${ renewPrice }, för ${ renewCycle } månad",
+        "Förnyas automatiskt med ${ renewPrice }, för ${ renewCycle } månader"
       ],
       "Renews automatically on ${ subscriptionManagerName }": [
         "Förnyas automatiskt med ${ subscriptionManagerName }"
@@ -1770,19 +1767,6 @@
       ]
     },
     "BOSS": {
-      "${ migratedCount } of ${ providerUsers.length }": [
-        "${ migratedCount } av ${ providerUsers.length }"
-      ],
-      "${ n } year ago": [
-        "${ n } år sedan",
-        "${ n } år sedan"
-      ],
-      "Add a domain": [
-        "Lägg till en domän"
-      ],
-      "Add more users...": [
-        "Lägg till fler användare …"
-      ],
       "Authenticate": [
         "Autentisera"
       ],
@@ -1795,17 +1779,14 @@
       "Contacts": [
         "Kontakter"
       ],
+      "Domain connected": [
+        "Domän ansluten"
+      ],
       "Domain ownership verified": [
         "Domänens äganderätt verifierad"
       ],
-      "Domain setup": [
-        "Domäninställning"
-      ],
       "Estimated size": [
         "Beräknad storlek"
-      ],
-      "Everything": [
-        "Allting"
       ],
       "Failed to load OAuth": [
         "Misslyckades att ladda OAuth"
@@ -1831,11 +1812,30 @@
       "Migration includes": [
         "Migrering inkluderar"
       ],
-      "Not started": [
-        "Inte startad"
+      "Migration started for ${ n } user": [
+        "Migrering startad för ${ n } användare",
+        "Migrering startad för ${ n } användare"
+      ],
+      "Migration status": [
+        "Migreringsstatus"
+      ],
+      "Organization does not have enough seats available": [
+        "Organisation har inte tillräckligt med licenser tillgängligt"
+      ],
+      "Organization does not have enough storage available": [
+        "Organisation har inte tillräckligt med lagringsutrymme tillgängligt"
+      ],
+      "Organization settings": [
+        "Organisationsinställningar"
+      ],
+      "Required": [
+        "Obligatoriskt"
       ],
       "Required to create user accounts": [
         "Krävs för att skapa användarkonton"
+      ],
+      "Select at least one user to start a migration": [
+        "Välj minst en användare för att starta en migrering"
       ],
       "Select what you want to migrate, this will apply to all users whether they are created now or later. Migration will start after user accounts are created.": [
         "Välj vad du vill migrera, detta kommer tillämpas på alla användare oavsett om de skapas nu eller senare. Migrering kommer starta efter användarkonton är skapade."
@@ -1846,26 +1846,20 @@
       "Sign in to Google Workspace": [
         "Logga in på Google Workspace"
       ],
-      "Status": [
-        "Status"
-      ],
-      "Transfer data from": [
-        "Överför data från"
+      "Transfer errors": [
+        "Överföringsfel"
       ],
       "User": [
         "Användare"
       ],
-      "Users migrated": [
-        "Användare migrerade"
-      ],
       "Verify your domain": [
         "Verifiera din domän"
       ],
+      "Verify your domain to start a migration": [
+        "Verifiera din domän för att starta en migrering"
+      ],
       "What are you migrating?": [
         "Vad migrerar du?"
-      ],
-      "Who will be notified?": [
-        "Vem kommer bli aviserad?"
       ]
     },
     "Browser": {
@@ -1930,6 +1924,9 @@
       ],
       "Payments problem": [
         "Problem med betalning"
+      ],
+      "Sheets problem": [
+        "Problem med kalkylblad"
       ],
       "Sign in problem": [
         "Problem med inloggning"
@@ -5545,12 +5542,6 @@
       ],
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
         "${ BRAND_NAME } kan inte ansluta till ditt Yahoo-konto. Se till att:"
-      ],
-      "2-step verification is enabled in your external account.": [
-        "Tvåstegsverifiering är aktiverat i ditt externa konto."
-      ],
-      "2-step verification is enabled in your external email account.": [
-        "Tvåstegsverifiering är aktiverat i ditt externa e-postkonto."
       ],
       "IMAP access is enabled in your external account.": [
         "IMAP-åtkomst är aktiverat i ditt externa konto."
@@ -10379,9 +10370,6 @@
       "Unlimited labels": [
         "Obegränsade etiketter"
       ],
-      "Unlimited logins and notes": [
-        "Obegränsat antal inloggningar och anteckningar"
-      ],
       "Unlimited logins, notes and credit cards": [
         "Obegränsat antal inloggningar, anteckningar och kreditkort"
       ],
@@ -11026,6 +11014,9 @@
       ],
       "Number of records exceeds the download limit of 10000": [
         "Antalet poster överskrider nedladdningsgränsen på 10 000"
+      ],
+      "OpenVPN credentials regenerated": [
+        "OpenVPN-inloggningsuppgifter återskapat"
       ],
       "Reminder has been sent": [
         "Påminnelse har skickats"

@@ -25,6 +25,12 @@
       ]
     },
     "Action": {
+      "${ PASS_SHORT_APP_NAME } for Android": [
+        "${ PASS_SHORT_APP_NAME } Android 版"
+      ],
+      "${ PASS_SHORT_APP_NAME } for iOS": [
+        "${ PASS_SHORT_APP_NAME } for iOS"
+      ],
       "Accept": [
         "接受"
       ],
@@ -87,9 +93,6 @@
       ],
       "Authenticate": [
         "身份验证"
-      ],
-      "Auto-type": [
-        "自动输入"
       ],
       "Back": [
         "上一步"
@@ -166,17 +169,38 @@
       "Copy and close": [
         "复制并关闭"
       ],
+      "Copy card number": [
+        "复制卡号"
+      ],
+      "Copy email": [
+        "复制电子邮件"
+      ],
+      "Copy expiration date": [
+        "复制到期日期"
+      ],
       "Copy forwarding address": [
         "复制转发地址"
       ],
       "Copy link": [
         "复制链接"
       ],
+      "Copy name on card": [
+        "复制卡片上的姓名"
+      ],
+      "Copy note content": [
+        "复制笔记内容"
+      ],
       "Copy password": [
         "复制密码"
       ],
+      "Copy security code": [
+        "复制安全代码"
+      ],
       "Copy to clipboard": [
         "复制到剪贴板"
+      ],
+      "Copy username": [
+        "复制用户名"
       ],
       "Create": [
         "创建"
@@ -312,6 +336,9 @@
       ],
       "Get ${ PASS_APP_NAME }": [
         "开通 ${ PASS_APP_NAME }"
+      ],
+      "Get mobile and desktop apps": [
+        "获取移动端和桌面端应用"
       ],
       "Get mobile apps": [
         "获取移动应用"
@@ -456,6 +483,9 @@
       ],
       "Open navigation": [
         "打开导航栏"
+      ],
+      "Organize vaults": [
+        "整理保险库"
       ],
       "Pass Monitor": [
         "Pass Monitor"
@@ -1161,6 +1191,9 @@
       "Secure link could not be opened.": [
         "无法打开安全链接。"
       ],
+      "Servers are unreachable. Please try unlocking ${ PASS_SHORT_APP_NAME } in a few minutes.": [
+        "服务器暂时无法访问。请在几分钟后重试解锁 ${ PASS_SHORT_APP_NAME }。"
+      ],
       "Settings update failed": [
         "设置更新失败"
       ],
@@ -1247,6 +1280,9 @@
       ],
       "Wrong second password": [
         "副密码错误"
+      ],
+      "You're currently offline. Please resume connectivity to unlock ${ PASS_SHORT_APP_NAME }.": [
+        "您目前处于离线状态。请恢复连接以解锁 ${ PASS_SHORT_APP_NAME }。"
       ],
       "Your DNS is not correctly set. The MX record we obtain is:": [
         "您的 DNS 设置不正确。我们获得的 MX 记录是："
@@ -1702,6 +1738,9 @@
       "Extra password successfully removed": [
         "成功删除额外密码"
       ],
+      "Failed updating your vault organization": [
+        "更新您的保险库组织失败"
+      ],
       "Fill in the CSV with your data": [
         "在 CSV 中填入您的数据"
       ],
@@ -2074,11 +2113,17 @@
       "Please use full path domain, for example my-domain.com or my-subdomain.my-domain.com if you are using a subdomain.": [
         "请使用全路径域名，例如 my-domain.com，如果使用的是子域，则使用 my-subdomain.my-domain.com。"
       ],
+      "Premium domain": [
+        "高级域名"
+      ],
       "Press Enter to copy": [
         "按回车键以复制"
       ],
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "受我们的高等级账户保护计划 ${ PROTON_SENTINEL_LINK } 保护"
+      ],
+      "Public domain": [
+        "公共域名"
       ],
       "Reconnect": [
         "重新连接"
@@ -2142,6 +2187,9 @@
       ],
       "Selected items successfully restored from trash": [
         "所选项目成功从回收站还原"
+      ],
+      "Servers are unreachable": [
+        "服务器无法访问"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "服务器无法访问，请过几分钟后再试"
@@ -2317,6 +2365,9 @@
       "Unverified": [
         "未验证"
       ],
+      "Updating vault organization...": [
+        "正在更新保险库组织..."
+      ],
       "Upgrade Now to Unlock Premium Features": [
         "立即升级以解锁高级功能"
       ],
@@ -2343,6 +2394,9 @@
       ],
       "Vault \"${ share.content.name }\" was removed": [
         "保险库 “${ share.content.name }” 已删除"
+      ],
+      "Vault organization successfully updated": [
+        "保险库组织已成功更新"
       ],
       "Vault sharing: ${ vaultMembersCount } member": [
         "保险库共享： ${ vaultMembersCount } 位成员"
@@ -2626,9 +2680,6 @@
       ],
       "Auto-lock after": [
         "自动锁定时间"
-      ],
-      "Auto-type in previous window": [
-        "在前一个窗口内自动输入"
       ],
       "Backup password": [
         "备用密码"
@@ -4413,6 +4464,9 @@
       "Open pagination": [
         "选择页码"
       ],
+      "Organize vaults": [
+        "整理保险库"
+      ],
       "Our welcome gift to you": [
         "我们送给您的欢迎礼物"
       ],
@@ -4598,6 +4652,11 @@
       ],
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "您将永久删除 ${ aliasCount } 个别名。"
+      ]
+    },
+    "Title_cloned_item": {
+      "copy": [
+        "复制"
       ]
     },
     "Today icon tooltip in mini calendar": {

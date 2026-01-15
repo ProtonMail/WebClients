@@ -453,6 +453,9 @@
       "Get link": [
         "生成共享链接"
       ],
+      "Get mobile and desktop apps": [
+        "获取移动端和桌面端应用"
+      ],
       "Get secure storage for ${ simplePriceString }": [
         "获取 ${ simplePriceString } 的安全存储"
       ],
@@ -3472,6 +3475,9 @@
       "Validation error": [
         "验证失败"
       ],
+      "We were not able to load the folder contents": [
+        "无法加载文件夹内容"
+      ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "邮件收件人不能超过 ${ maxContacts } 位"
       ],
@@ -4200,12 +4206,6 @@
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
         "${ BRAND_NAME } 无法连接您的 Yahoo 账户，请确认："
       ],
-      "2-step verification is enabled in your external account.": [
-        "该邮箱开启了两步验证."
-      ],
-      "2-step verification is enabled in your external email account.": [
-        "该邮箱开启了两步验证."
-      ],
       "IMAP access is enabled in your external account.": [
         "您的外部账户已开启 IMAP 访问。"
       ],
@@ -4408,9 +4408,6 @@
       ],
       "${ contactsLength } contact": [
         "${ contactsLength } 位联系人"
-      ],
-      "${ DOCS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
-        "${ DOCS_APP_NAME } 文件无法直接下载，也不会包含在此次下载中。您可以点击 “继续下载” 以下载其他文件。"
       ],
       "${ doneCount } finished": [
         "${ doneCount } 项已完成"
@@ -5788,9 +5785,6 @@
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "要完成付款，请发送 ${ btcAmountBold } 至以下地址。"
-      ],
-      "To download the ${ DOCS_APP_NAME } files, open them in ${ DOCS_APP_NAME } and export them.": [
-        "要下载 ${ DOCS_APP_NAME } 文件，请在 ${ DOCS_APP_NAME } 中打开并导出它们。"
       ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
         "为了在搜索过程中保护您的隐私，${ DRIVE_APP_NAME } 需要将文件下载至本设备后进行索引。"
@@ -7846,9 +7840,6 @@
       ],
       "Unlimited labels": [
         "标签数量不限"
-      ],
-      "Unlimited logins and notes": [
-        "无限登录和笔记"
       ],
       "Unlimited logins, notes and credit cards": [
         "无限制登录、备注和信用卡"
@@ -11591,9 +11582,6 @@
       ],
       "Your changes are not synced yet": [
         "您的改动尚未同步"
-      ],
-      "Your download includes a ${ DOCS_APP_NAME } file": [
-        "您下载的文件中包含 ${ DOCS_APP_NAME } 文件"
       ],
       "Your exposed information": [
         "您的泄露信息"

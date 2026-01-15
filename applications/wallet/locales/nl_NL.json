@@ -873,6 +873,9 @@
       "Payments problem": [
         "Probleem met betalingen"
       ],
+      "Sheets problem": [
+        "Werkblad probleem"
+      ],
       "Sign in problem": [
         "Inlogprobleem"
       ],
@@ -963,7 +966,7 @@
         "${ maxSpaceTB } opslagruimte"
       ],
       "${ numberOfUsers } user": [
-        "Tot ${ numberOfUsers } gebruiker",
+        "${ numberOfUsers } gebruiker",
         "Tot ${ numberOfUsers } gebruikers"
       ],
       "${ planMaxSpace } email storage": [
@@ -3932,9 +3935,6 @@
       ],
       "Unlimited labels": [
         "Onbeperkt aantal labels"
-      ],
-      "Unlimited logins and notes": [
-        "Onbeperkt aantal logins en notities"
       ],
       "Unlimited logins, notes and credit cards": [
         "Onbeperkt aantal logins, notities en creditcards"

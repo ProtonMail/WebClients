@@ -4386,12 +4386,6 @@
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
         "${ BRAND_NAME } nie może połączyć się z kontem Yahoo. Upewnij się, że:"
       ],
-      "2-step verification is enabled in your external account.": [
-        "weryfikacja dwuetapowa na koncie zewnętrznym jest włączona."
-      ],
-      "2-step verification is enabled in your external email account.": [
-        "Weryfikacja dwuetapowa na koncie zewnętrznym jest włączona."
-      ],
       "IMAP access is enabled in your external account.": [
         "dostęp IMAP jest włączony na koncie zewnętrznym."
       ],
@@ -4636,9 +4630,6 @@
         "${ contactsLength } kontakty",
         "${ contactsLength } kontaktów",
         "${ contactsLength } kontaktów"
-      ],
-      "${ DOCS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
-        "Pliki ${ DOCS_APP_NAME } nie mogą zostać bezpośrednio pobrane i nie zostaną uwzględnione w tym pobieraniu. Pozostałe pliki możesz pobrać, klikając przycisk 'Kontynuuj pobieranie'."
       ],
       "${ doneCount } finished": [
         "Transfer ${ doneCount } pliku został zakończony",
@@ -6151,9 +6142,6 @@
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Wyślij ${ btcAmountBold } na poniższy adres, aby zakończyć płatność."
-      ],
-      "To download the ${ DOCS_APP_NAME } files, open them in ${ DOCS_APP_NAME } and export them.": [
-        "Aby pobrać pliki ${ DOCS_APP_NAME }, otwórz je w ${ DOCS_APP_NAME } i wyeksportuj."
       ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
         "Aby włączyć prywatne wyszukiwanie, aplikacja ${ DRIVE_APP_NAME } musi lokalnie zaindeksować pliki."
@@ -8377,9 +8365,6 @@
       ],
       "Unlimited labels": [
         "Nieograniczona liczba etykiet"
-      ],
-      "Unlimited logins and notes": [
-        "Nieograniczona liczba danych logowania i notatek"
       ],
       "Unlimited logins, notes and credit cards": [
         "Nieograniczona liczba danych logowania, notatek i kart płatniczych"
@@ -12514,9 +12499,6 @@
       ],
       "Your changes are not synced yet": [
         "Zmiany nie zostały zsynchronizowane"
-      ],
-      "Your download includes a ${ DOCS_APP_NAME } file": [
-        "Zawiera plik ${ DOCS_APP_NAME }"
       ],
       "Your exposed information": [
         "Twoje ujawnione informacje:"

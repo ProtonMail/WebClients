@@ -2089,9 +2089,9 @@
       ]
     },
     "Billing cycle": {
-      "Renews automatically at ${ renewPrice }, for ${ renewLength } month": [
-        "Uusiutuu automaattisesti ${ renewLength } kuukaudeksi hintaan ${ renewPrice }",
-        "Uusiutuu automaattisesti ${ renewLength } kuukaudeksi hintaan ${ renewPrice }"
+      "Renews automatically at ${ renewPrice }, for ${ renewCycle } month": [
+        "Uusiutuu automaattisesti ${ renewCycle } kuukaudeksi hintaan ${ renewPrice }",
+        "Uusiutuu automaattisesti ${ renewCycle } kuukaudeksi hintaan ${ renewPrice }"
       ],
       "Renews automatically on ${ subscriptionManagerName }": [
         "Uudistuu automaattisesti palvelussa ${ subscriptionManagerName }"
@@ -2177,21 +2177,8 @@
       ]
     },
     "BOSS": {
-      "${ migratedCount } of ${ providerUsers.length }": [
-        "${ migratedCount } / ${ providerUsers.length }"
-      ],
-      "${ n } year ago": [
-        "${ n } vuosi sitten",
-        "${ n } vuotta sitten"
-      ],
       "Add a custom domain": [
         "Lisää oma verkkotunnus"
-      ],
-      "Add a domain": [
-        "Lisää verkkotunnus"
-      ],
-      "Add more users...": [
-        "Lisää käyttäjiä..."
       ],
       "Authenticate": [
         "Tunnistaudu"
@@ -2211,20 +2198,14 @@
       "Contacts": [
         "Yhteystiedot"
       ],
+      "Domain connected": [
+        "Verkkotunnus yhdistetty"
+      ],
       "Domain ownership verified": [
         "Verkkotunnuksen omistajuus vahvistettu"
       ],
-      "Domain setup": [
-        "Verkkotunnuksen määritys"
-      ],
-      "Email notifications will be sent when migration starts and when it’s completed. You will also be notified if there are errors and if migration is paused due to expired links.": [
-        "Sähköposti-ilmoitukset lähetetään, kun siirto alkaa ja kun se on valmis. Saat myös ilmoituksen, jos siirrossa ilmenee virheitä tai se keskeytyy vanhentuneiden linkkien vuoksi."
-      ],
       "Estimated size": [
         "Arvioitu koko"
-      ],
-      "Everything": [
-        "Kaikki"
       ],
       "Failed to load OAuth": [
         "OAuthin lataaminen epäonnistui"
@@ -2250,11 +2231,30 @@
       "Migration includes": [
         "Migraatio sisältää"
       ],
-      "Not started": [
-        "Ei aloitettu"
+      "Migration started for ${ n } user": [
+        "Siirto aloitettu ${ n } käyttäjälle",
+        "Siirto aloitettu ${ n } käyttäjälle"
+      ],
+      "Migration status": [
+        "Siirron tila"
+      ],
+      "Organization does not have enough seats available": [
+        "Organisaatiolla ei ole tarpeeksi paikkoja saatavilla"
+      ],
+      "Organization does not have enough storage available": [
+        "Organisaatiolla ei ole tarpeeksi tallennustilaa"
+      ],
+      "Organization settings": [
+        "Organisaation asetukset"
+      ],
+      "Required": [
+        "Pakollinen"
       ],
       "Required to create user accounts": [
         "Vaaditaan käyttäjätilien luomiseen"
+      ],
+      "Select at least one user to start a migration": [
+        "Valitse vähintään yksi käyttäjä siirron aloittamiseksi"
       ],
       "Select what you want to migrate, this will apply to all users whether they are created now or later. Migration will start after user accounts are created.": [
         "Valitse, mitä haluat siirtää. Tämä koskee kaikkia käyttäjiä riippumatta siitä, luodaanko heidät nyt vai myöhemmin. Siirto alkaa, kun käyttäjätilit on luotu."
@@ -2274,20 +2274,14 @@
       "Start migration": [
         "Aloita siirto"
       ],
-      "Status": [
-        "Tila"
-      ],
       "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Markeplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue. Learn more": [
         "Organisaatiosi tietojen siirtämiseksi sinun on asennettava ${ BRAND_NAME } Migration Assistant -sovellus Google Workspace Marketplacesta. Tämä antaa ${ BRAND_NAME }:lle luvan kopioida tietosi. Asennuksen jälkeen palaa takaisin tänne jatkaaksesi. Lisätietoja"
       ],
-      "Transfer data from": [
-        "Siirrä tiedot kohteesta"
+      "Transfer errors": [
+        "Siirtovirheet"
       ],
       "User": [
         "Käyttäjä"
-      ],
-      "Users migrated": [
-        "Käyttäjät siirretty"
       ],
       "Verify your domain": [
         "Vahvista verkkotunnuksesi"
@@ -2295,11 +2289,11 @@
       "Verify your domain ownership": [
         "Vahvista verkkotunnuksesi omistajuus"
       ],
+      "Verify your domain to start a migration": [
+        "Varmista verkkotunnuksesi aloittaaksesi siirron"
+      ],
       "What are you migrating?": [
         "Mitä olet siirtämässä?"
-      ],
-      "Who will be notified?": [
-        "Kenelle ilmoitetaan?"
       ]
     },
     "Browser": {
@@ -2361,6 +2355,9 @@
       ],
       "Payments problem": [
         "Maksuongelma"
+      ],
+      "Sheets problem": [
+        "Taulukko-ongelma"
       ],
       "Sign in problem": [
         "Kirjautumisongelma"
@@ -7151,12 +7148,6 @@
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
         "${ BRAND_NAME } ei saa yhteyttä Yahoo-tiliisi. Varmista, että:"
       ],
-      "2-step verification is enabled in your external account.": [
-        "Ulkoinen tilisi käyttää kaksivaiheista tunnistautumista."
-      ],
-      "2-step verification is enabled in your external email account.": [
-        "Ulkoinen sähköpostitilisi käyttää kaksivaiheista tunnistautumista."
-      ],
       "IMAP access is enabled in your external account.": [
         "IMAP on ulkoisella tililläsi käytössä."
       ],
@@ -7165,6 +7156,12 @@
       ],
       "Too many recent requests. Please try again in a few moments.": [
         "Liian monta pyyntöä lyhyen ajan sisällä. Yritä hetken kuluttua uudelleen."
+      ],
+      "Two-factor authentication is enabled in your external account.": [
+        "Kaksivaiheinen todennus on käytössä ulkoisessa tilissäsi."
+      ],
+      "Two-factor authentication is enabled in your external email account.": [
+        "Kaksivaiheinen todennus on käytössä ulkoisessa sähköpostitilissäsi."
       ],
       "Use your app password if:": [
         "Käytä sovellusalasanaa, jos:"
@@ -11051,9 +11048,6 @@
       "Country": [
         "Maa"
       ],
-      "Credit cards": [
-        "Maksukortit"
-      ],
       "Credits": [
         "Krediitit"
       ],
@@ -13253,9 +13247,6 @@
       ],
       "Unlimited labels": [
         "Rajattomasti tunnisteita"
-      ],
-      "Unlimited logins and notes": [
-        "Rajattomasti kirjautumistietoja ja muistiinpanoja"
       ],
       "Unlimited logins, notes and credit cards": [
         "Rajattomasti kirjautumistietoja, muistiinpanoja ja maksukortteja"
@@ -20068,6 +20059,9 @@
       ],
       "Time zone": [
         "Aikavyöhyke"
+      ],
+      "To preview this spreadsheet, download it.": [
+        "Voit esikatsella taulukkoa lataamalla sen."
       ],
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "Esikatsellaksesi tätä laskentataulukkoa, avaa se ${ SHEETS_APP_NAME } -sovelluksessa tai lataa se."

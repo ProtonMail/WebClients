@@ -2382,14 +2382,11 @@
       ]
     },
     "Billing cycle": {
-      "Renews automatically": [
-        "Obnovuje se automaticky"
-      ],
-      "Renews automatically at ${ renewPrice }, for ${ renewLength } month": [
-        "Automatické obnovení za ${ renewPrice }, na ${ renewLength } měsíc",
-        "Automatické obnovení za ${ renewPrice }, na ${ renewLength } měsíce",
-        "Automatické obnovení za ${ renewPrice }, na ${ renewLength } měsíců",
-        "Automatické obnovení za ${ renewPrice }, na ${ renewLength } měsíců"
+      "Renews automatically at ${ renewPrice }, for ${ renewCycle } month": [
+        "Obnovuje se automaticky za ${ renewPrice } na ${ renewCycle } měsíc",
+        "Obnovuje se automaticky za ${ renewPrice } na ${ renewCycle } měsíce",
+        "Obnovuje se automaticky za ${ renewPrice } na ${ renewCycle } měsíců",
+        "Obnovuje se automaticky za ${ renewPrice } na ${ renewCycle } měsíců"
       ],
       "Renews automatically on ${ subscriptionManagerName }": [
         "Obnoví se automaticky v ${ subscriptionManagerName }"
@@ -2679,23 +2676,8 @@
       ]
     },
     "BOSS": {
-      "${ migratedCount } of ${ providerUsers.length }": [
-        "${ migratedCount } z(e) ${ providerUsers.length }"
-      ],
-      "${ n } year ago": [
-        "před ${ n } rokem",
-        "před ${ n } lety",
-        "před ${ n } lety",
-        "před ${ n } lety"
-      ],
       "Add a custom domain": [
         "Přidat vlastní doménu"
-      ],
-      "Add a domain": [
-        "Přidat doménu"
-      ],
-      "Add more users...": [
-        "Přidejte další uživatele..."
       ],
       "Authenticate": [
         "Ověřit"
@@ -2715,20 +2697,14 @@
       "Contacts": [
         "Kontakty"
       ],
+      "Domain connected": [
+        "Doména připojena"
+      ],
       "Domain ownership verified": [
         "Vlastnictví domény ověřeno"
       ],
-      "Domain setup": [
-        "Nastavení domény"
-      ],
-      "Email notifications will be sent when migration starts and when it’s completed. You will also be notified if there are errors and if migration is paused due to expired links.": [
-        "E-mailová upozornění budou zaslána při zahájení migrace a po jejím dokončení. Budete také informováni, pokud dojde k chybám a pokud bude migrace pozastavena z důvodu vypršení platnosti odkazů."
-      ],
       "Estimated size": [
         "Odhadovaná velikost"
-      ],
-      "Everything": [
-        "Vše"
       ],
       "Failed to load OAuth": [
         "Nepodařilo se načíst OAuth"
@@ -2754,11 +2730,32 @@
       "Migration includes": [
         "Migrace zahrnuje"
       ],
-      "Not started": [
-        "Nezahájeno"
+      "Migration started for ${ n } user": [
+        "Migrace zahájena pro ${ n } uživatele",
+        "Migrace zahájena pro ${ n } uživatele",
+        "Migrace zahájena pro ${ n } uživatelů",
+        "Migrace zahájena pro ${ n } uživatelů"
+      ],
+      "Migration status": [
+        "Stav migrace"
+      ],
+      "Organization does not have enough seats available": [
+        "Organizace nemá dostatek volných licencí"
+      ],
+      "Organization does not have enough storage available": [
+        "Organizace nemá dostatečně velké úložiště"
+      ],
+      "Organization settings": [
+        "Nastavení organizace"
+      ],
+      "Required": [
+        "Vyžadováno"
       ],
       "Required to create user accounts": [
         "Nutné pro vytvoření uživatelských účtů"
+      ],
+      "Select at least one user to start a migration": [
+        "Pro zahájení migrace vyberte alespoň jednoho uživatele"
       ],
       "Select what you want to migrate, this will apply to all users whether they are created now or later. Migration will start after user accounts are created.": [
         "Vyberte, co chcete migrovat. Toto nastavení se použije pro všechny uživatele, ať už jsou vytvořeni nyní nebo později. Migrace začne po vytvoření uživatelských účtů."
@@ -2778,20 +2775,14 @@
       "Start migration": [
         "Spustit migraci"
       ],
-      "Status": [
-        "Stav"
-      ],
       "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Markeplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue. Learn more": [
         "Chcete-li migrovat data vaší organizace, musíte nainstalovat aplikaci ${ BRAND_NAME } Migration Assistant z Google Workspace Markeplace. Tím udělíte aplikaci ${ BRAND_NAME } oprávnění kopírovat vaše data. Po instalaci se vraťte sem a pokračujte. Více informací"
       ],
-      "Transfer data from": [
-        "Přenést data z"
+      "Transfer errors": [
+        "Chyby přenosu"
       ],
       "User": [
         "Uživatel"
-      ],
-      "Users migrated": [
-        "Uživatelé migrováni"
       ],
       "Verify your domain": [
         "Ověřte svou doménu"
@@ -2799,11 +2790,11 @@
       "Verify your domain ownership": [
         "Ověřte vlastnictví své domény"
       ],
+      "Verify your domain to start a migration": [
+        "Ověřte svou doménu a spusťte migraci"
+      ],
       "What are you migrating?": [
         "Co migrujete?"
-      ],
-      "Who will be notified?": [
-        "Kdo bude informován?"
       ]
     },
     "breadcrumb": {
@@ -2878,6 +2869,9 @@
       ],
       "Payments problem": [
         "Problém s platbami"
+      ],
+      "Sheets problem": [
+        "Problém s Sheets"
       ],
       "Sign in problem": [
         "Problém s přihlášením"
@@ -8424,12 +8418,6 @@
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
         "${ BRAND_NAME } se nemůže připojit k vašemu účtu Yahoo. Ujistěte se, že:"
       ],
-      "2-step verification is enabled in your external account.": [
-        "Dvoufázové ověřování je zapnuto ve vašem vzdáleném účtu."
-      ],
-      "2-step verification is enabled in your external email account.": [
-        "Dvoufázové ověřování je zapnuto ve vašem vzdáleném e-mailovém účtu."
-      ],
       "IMAP access is enabled in your external account.": [
         "IMAP přístup je zapnut ve vašem externím účtu."
       ],
@@ -8438,6 +8426,12 @@
       ],
       "Too many recent requests. Please try again in a few moments.": [
         "Bylo zadáno příliš mnoho požadavků. Zkuste to za pár minut."
+      ],
+      "Two-factor authentication is enabled in your external account.": [
+        "Ve vašem externím účtu je aktivní dvoufaktorové ověření."
+      ],
+      "Two-factor authentication is enabled in your external email account.": [
+        "Ve vašem externím e-mailovém účtu je aktivní dvoufaktorové ověření."
       ],
       "Use your app password if:": [
         "Použijte heslo aplikace, pokud:"
@@ -13078,9 +13072,6 @@
       "Create password": [
         "Vytvořit heslo"
       ],
-      "Credit cards": [
-        "Platební karty"
-      ],
       "Credits": [
         "Kredity"
       ],
@@ -15692,9 +15683,6 @@
       ],
       "Unlimited labels": [
         "Neomezeně štítků"
-      ],
-      "Unlimited logins and notes": [
-        "Neomezený počet přihlášení a poznámek"
       ],
       "Unlimited logins, notes and credit cards": [
         "Neomezený počet přihlášení, poznámek a platebních karet"
@@ -23652,6 +23640,9 @@
       ],
       "Time zone": [
         "Časové pásmo"
+      ],
+      "To preview this spreadsheet, download it.": [
+        "Pro otevření náhledu této tabulky si ji stáhněte."
       ],
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "Chcete-li si tuto tabulku prohlédnout, otevřete ji v aplikaci ${ SHEETS_APP_NAME } nebo ji stáhněte."

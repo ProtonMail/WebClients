@@ -2343,13 +2343,6 @@
       ]
     },
     "Billing cycle": {
-      "Renews automatically": [
-        "ავტომატურად განახლდება"
-      ],
-      "Renews automatically at ${ renewPrice }, for ${ renewLength } month": [
-        "განახლდება ${ renewPrice }-ით, ${ renewLength } თვის განმავლობაში",
-        "განახლდება ${ renewPrice }-ით, ${ renewLength } თვის განმავლობაში"
-      ],
       "Renews automatically on ${ subscriptionManagerName }": [
         "ავტომატური განახლების დრო ${ subscriptionManagerName }"
       ]
@@ -2590,21 +2583,8 @@
       ]
     },
     "BOSS": {
-      "${ migratedCount } of ${ providerUsers.length }": [
-        "${ migratedCount } ${ providerUsers.length }-დან"
-      ],
-      "${ n } year ago": [
-        "${ n } წლის წინ",
-        "${ n } წლის წინ"
-      ],
       "Add a custom domain": [
         "მომხმარებლის დომენის დამატება"
-      ],
-      "Add a domain": [
-        "დომენის დამატება"
-      ],
-      "Add more users...": [
-        "მეტი მომხმარებლის დამატება..."
       ],
       "Authenticate": [
         "ავთენტიკაცია"
@@ -2627,14 +2607,8 @@
       "Domain ownership verified": [
         "დომენის მფლობელობა გადამოწმებულია"
       ],
-      "Domain setup": [
-        "დომენის მორგება"
-      ],
       "Estimated size": [
         "სავარაუდო ზომა"
-      ],
-      "Everything": [
-        "ყველაფერი"
       ],
       "Failed to load OAuth": [
         "OAuth-ის ჩატვირთვა ჩავარდა"
@@ -2660,9 +2634,6 @@
       "Migration includes": [
         "მიგრაცია შეიცავს"
       ],
-      "Not started": [
-        "დაწყებული არაა"
-      ],
       "Required to create user accounts": [
         "აუცილებელია მომხმარებლის ანგარიშების შესაქმნელად"
       ],
@@ -2681,17 +2652,8 @@
       "Start migration": [
         "მიგრაციის დაწყება"
       ],
-      "Status": [
-        "სტატუსი"
-      ],
-      "Transfer data from": [
-        "მონაცემების გადმოტანა საიდან"
-      ],
       "User": [
         "მომხმარებელი"
-      ],
-      "Users migrated": [
-        "მომხმარებლები მიგრირებულია"
       ],
       "Verify your domain": [
         "თქვენი დომენის გადამოწმება"
@@ -2701,9 +2663,6 @@
       ],
       "What are you migrating?": [
         "რის მიგრაციას ახდენთ?"
-      ],
-      "Who will be notified?": [
-        "ვის გაეგზავნება გაფრთხილება?"
       ]
     },
     "breadcrumb": {
@@ -8145,12 +8104,6 @@
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
         "${ BRAND_NAME }-ს Yahoo-ის თქვენს ანგარიშთან დაკავშირება არ შეუძლია. დარწმუნდით, რომ:"
       ],
-      "2-step verification is enabled in your external account.": [
-        "თქვენს გარე ანგარიშში 2FA ჩართულია."
-      ],
-      "2-step verification is enabled in your external email account.": [
-        "ელფოსტის თქვენს გარე ანგარიშში 2FA ჩართულია."
-      ],
       "IMAP access is enabled in your external account.": [
         "თქვენს გარე ანგარიშს ჩართული აქვს IMAP წვდომა."
       ],
@@ -12472,9 +12425,6 @@
       "Create password": [
         "პაროლის შექმნა"
       ],
-      "Credit cards": [
-        "საკრედიტო ბარათები"
-      ],
       "Credits": [
         "კრედიტები"
       ],
@@ -14916,9 +14866,6 @@
       ],
       "Unlimited labels": [
         "ჭდეების ულიმიტო რაოდენობა"
-      ],
-      "Unlimited logins and notes": [
-        "მომხმარებლების და შენიშვნების უსაზღვრო რაოდენობა"
       ],
       "Unlimited logins, notes and credit cards": [
         "შეუზღუდავი შესვლის დეტალები, შენიშვნები და საკრედიტო ბარათები"

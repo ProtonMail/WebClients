@@ -1599,6 +1599,9 @@
       "Payments problem": [
         "Problema de pagament"
       ],
+      "Sheets problem": [
+        "Hi ha hagut un problema amb els fulls de càlcul"
+      ],
       "Sign in problem": [
         "Problema d'inici de sessió"
       ],
@@ -3377,6 +3380,9 @@
       "Failed to get details, please try again later": [
         "No se n'han pogut obtenir els detalls. Torneu-ho a provar més tard."
       ],
+      "Failed to load signature details, please try again later": [
+        "No s'han pogut carregar els detalls de la signatura, torneu-ho a provar més tard."
+      ],
       "Failed to load the STL preview": [
         "No s'ha pogut carregar la previsualització STL."
       ],
@@ -4557,12 +4563,6 @@
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
         "${ BRAND_NAME } no es pot connectar al vostre compte de Yahoo. Assegureu-vos que:"
       ],
-      "2-step verification is enabled in your external account.": [
-        "La verificació en dos passos està activada al vostre compte extern."
-      ],
-      "2-step verification is enabled in your external email account.": [
-        "La verificació en dos passos està activada al vostre compte de correu electrònic extern."
-      ],
       "IMAP access is enabled in your external account.": [
         "L'accés IMAP està activat al vostre compte extern."
       ],
@@ -4571,6 +4571,12 @@
       ],
       "Too many recent requests. Please try again in a few moments.": [
         "Masses peticions recents. Torneu-ho a provar d'aquí a una estona."
+      ],
+      "Two-factor authentication is enabled in your external account.": [
+        "L'autenticació de doble factor està habilitada al vostre compte extern."
+      ],
+      "Two-factor authentication is enabled in your external email account.": [
+        "L'autenticació de doble factor està habilitada al vostre compte de correu electrònic extern."
       ],
       "Use your app password if:": [
         "Utilitzeu la contrasenya de l'aplicació si:"
@@ -4787,8 +4793,8 @@
         "${ contactsLength } contacte",
         "${ contactsLength } contactes"
       ],
-      "${ DOCS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
-        "Els fitxers ${ DOCS_APP_NAME } no es poden descarregar directament i no s'inclouran en aquesta descàrrega. Podeu descarregar els altres fitxers fent clic a Continua la descàrrega."
+      "${ DOCS_APP_NAME } and ${ SHEETS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
+        "Els fitxers de ${ DOCS_APP_NAME } i ${ SHEETS_APP_NAME } no es poden descarregar directament i no s'inclouran en aquesta baixada. Podeu descarregar els altres fitxers fent clic a \"Continua la descàrrega\"."
       ],
       "${ doneCount } finished": [
         "${ doneCount } finalitzat",
@@ -5777,9 +5783,6 @@
       "On public WiFi networks": [
         "A les xarxes wifi públiques"
       ],
-      "One of the files or folders you want to copy already exist in selected folder.": [
-        "Un dels fitxers o carpetes que voleu copiar ja existeix a la carpeta seleccionada."
-      ],
       "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
         "Una de les vostres unitats xifrades està bloquejada. El més probable és que sigui a causa d'un restabliment recent de la contrasenya."
       ],
@@ -6166,6 +6169,9 @@
       "Thank you for subscribing. Secure browsing starts now.": [
         "Gràcies per la subscripció. La navegació segura comença ara."
       ],
+      "that": [
+        "que"
+      ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "És possible que el compte tingui una clau nova o que el següent hagi estat manipulat: ${ items }. Obriu-ho només si hi confieu."
       ],
@@ -6293,8 +6299,8 @@
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Per a completar el pagament, envieu ${ btcAmountBold } a l'adreça següent."
       ],
-      "To download the ${ DOCS_APP_NAME } files, open them in ${ DOCS_APP_NAME } and export them.": [
-        "Per baixar els fitxers ${ DOCS_APP_NAME }, obriu-los a ${ DOCS_APP_NAME } i exporteu-los."
+      "To download these files, open them in ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME } and export them.": [
+        "Per descarregar aquests fitxers, obriu-los a ${ DOCS_APP_NAME } o ${ SHEETS_APP_NAME } i exporteu-los."
       ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
         "Per activar una cerca realment privada, ${ DRIVE_APP_NAME } necessita indexar els vostres fitxers de manera local."
@@ -6461,6 +6467,9 @@
       "We are experiencing technical issues. Any albums related actions are temporarily disabled.": [
         "Tenim problemes tècnics. Les accions relacionades amb els àlbums estan desactivades temporalment."
       ],
+      "We couldn't verify ${ nameAuthor } uploaded ${ node.name }. The following may have been tampered with: file data order. Only open if you trust it.": [
+        "No s'ha pogut verificar que ${ nameAuthor } hagi carregat ${ node.name }. El següent podria haver estat manipulat: l'ordre de les dades del fitxer. Obriu-lo només si hi confieu."
+      ],
       "We couldn’t process your payment.": [
         "No hem pogut processar el vostre pagament."
       ],
@@ -6511,6 +6520,9 @@
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Quan configureu l’autenticació de doble factor, proporcionem codis de recuperació que podeu utilitzar per iniciar la sessió si perdeu l’accés a l’aplicació d'autenticació."
+      ],
+      "who": [
+        "qui"
       ],
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
         "es restaurarà a la versió de ${ formattedRevisionDate }. Les altres versions seguiran desades."
@@ -8557,9 +8569,6 @@
       ],
       "Unlimited labels": [
         "Etiquetes il·limitades"
-      ],
-      "Unlimited logins and notes": [
-        "Nombre il·limitat d'inicis de sessió i de notes"
       ],
       "Unlimited logins, notes and credit cards": [
         "Nombre il·limitat d'inicis de sessió, notes i targetes de crèdit"
@@ -12648,6 +12657,9 @@
       "Time": [
         "Hora"
       ],
+      "To preview this spreadsheet, download it.": [
+        "Per previsualitzar aquest full de càlcul, descarregueu-lo."
+      ],
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "Per previsualitzar aquest full de càlcul, obriu-lo a ${ SHEETS_APP_NAME } o descarregueu-lo."
       ],
@@ -12804,8 +12816,8 @@
       "Your changes are not synced yet": [
         "Els vostres canvis encara no estan sincronitzats"
       ],
-      "Your download includes a ${ DOCS_APP_NAME } file": [
-        "La vostra descàrrega inclou un fitxer ${ DOCS_APP_NAME }"
+      "Your download includes ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME } files": [
+        "La vostra descàrrega inclou fitxers de ${ DOCS_APP_NAME } o ${ SHEETS_APP_NAME }."
       ],
       "Your exposed information": [
         "La vostra informació exposada"

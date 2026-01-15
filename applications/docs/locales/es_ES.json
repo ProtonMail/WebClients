@@ -369,6 +369,9 @@
       "Export selection as .vcf": [
         "Exportar la selección en formato *.vcf"
       ],
+      "Export this version (as xlsx)": [
+        "Exportar esta versión (como xlsx)"
+      ],
       "Forgot password?": [
         "¿Contraseña olvidada?"
       ],
@@ -1205,6 +1208,9 @@
       ],
       "Payments problem": [
         "Problema con los pagos"
+      ],
+      "Sheets problem": [
+        "Problema con los menús desplegables"
       ],
       "Sign in problem": [
         "Problema con el inicio de sesión"
@@ -3857,12 +3863,6 @@
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
         "${ BRAND_NAME } no ha podido conectarse a tu cuenta de Yahoo. Asegúrate de que:"
       ],
-      "2-step verification is enabled in your external account.": [
-        "La verificación en dos pasos está activada en tu cuenta externa."
-      ],
-      "2-step verification is enabled in your external email account.": [
-        "La verificación en dos pasos está activada en tu cuenta de correo externa."
-      ],
       "IMAP access is enabled in your external account.": [
         "El acceso IMAP está activado en tu cuenta externa."
       ],
@@ -3871,6 +3871,12 @@
       ],
       "Too many recent requests. Please try again in a few moments.": [
         "Demasiadas solicitudes recientes. Inténtalo de nuevo en unos momentos."
+      ],
+      "Two-factor authentication is enabled in your external account.": [
+        "La autenticación de dos factores está activada en tu cuenta externa."
+      ],
+      "Two-factor authentication is enabled in your external email account.": [
+        "La autenticación de dos factores está activada en tu cuenta de correo externa."
       ],
       "Use your app password if:": [
         "Utiliza la contraseña de la aplicación si:"
@@ -6865,9 +6871,6 @@
       ],
       "Unlimited labels": [
         "Etiquetas ilimitadas"
-      ],
-      "Unlimited logins and notes": [
-        "Número ilimitado de inicios de sesión y de notas"
       ],
       "Unlimited logins, notes and credit cards": [
         "Inicios de sesión, notas y tarjetas de crédito ilimitados"

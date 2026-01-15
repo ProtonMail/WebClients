@@ -360,6 +360,9 @@
       "Export selection as .vcf": [
         "Vie valinta .vcf-tiedostona"
       ],
+      "Export this version (as xlsx)": [
+        "Vie tämä versio (xlsx-muodossa)"
+      ],
       "Forgot password?": [
         "Unohditko salasanasi?"
       ],
@@ -1156,6 +1159,9 @@
       ],
       "Payments problem": [
         "Maksuongelma"
+      ],
+      "Sheets problem": [
+        "Taulukko-ongelma"
       ],
       "Sign in problem": [
         "Kirjautumisongelma"
@@ -3773,12 +3779,6 @@
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
         "${ BRAND_NAME } ei saa yhteyttä Yahoo-tiliisi. Varmista, että:"
       ],
-      "2-step verification is enabled in your external account.": [
-        "Ulkoinen tilisi käyttää kaksivaiheista tunnistautumista."
-      ],
-      "2-step verification is enabled in your external email account.": [
-        "Ulkoinen sähköpostitilisi käyttää kaksivaiheista tunnistautumista."
-      ],
       "IMAP access is enabled in your external account.": [
         "IMAP on ulkoisella tililläsi käytössä."
       ],
@@ -3787,6 +3787,12 @@
       ],
       "Too many recent requests. Please try again in a few moments.": [
         "Liian monta pyyntöä lyhyen ajan sisällä. Yritä hetken kuluttua uudelleen."
+      ],
+      "Two-factor authentication is enabled in your external account.": [
+        "Kaksivaiheinen todennus on käytössä ulkoisessa tilissäsi."
+      ],
+      "Two-factor authentication is enabled in your external email account.": [
+        "Kaksivaiheinen todennus on käytössä ulkoisessa sähköpostitilissäsi."
       ],
       "Use your app password if:": [
         "Käytä sovellusalasanaa, jos:"
@@ -6635,9 +6641,6 @@
       ],
       "Unlimited labels": [
         "Rajattomasti tunnisteita"
-      ],
-      "Unlimited logins and notes": [
-        "Rajattomasti kirjautumistietoja ja muistiinpanoja"
       ],
       "Unlimited logins, notes and credit cards": [
         "Rajattomasti kirjautumistietoja, muistiinpanoja ja maksukortteja"
