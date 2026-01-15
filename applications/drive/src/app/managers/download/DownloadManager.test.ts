@@ -55,12 +55,10 @@ const hydrateAndCheckNodesMock = jest.fn();
 const hydrateAndCheckPhotosMock = jest.fn();
 const getDownloadSdkMock = jest.fn();
 
-jest.mock('../../store/_downloads/fileSaver/fileSaver', () => ({
+jest.mock('../fileSaver/fileSaver', () => ({
     __esModule: true,
-    default: {
-        instance: {
-            saveAsFile: fileSaverSaveAsFileMock,
-        },
+    fileSaver: {
+        saveAsFile: fileSaverSaveAsFileMock,
     },
 }));
 
@@ -223,7 +221,10 @@ beforeEach(() => {
     storeMockState.queue = new Map();
 
     loadCreateReadableStreamWrapperMock.mockReset();
-    loadCreateReadableStreamWrapperMock.mockImplementation(async (stream) => stream);
+    loadCreateReadableStreamWrapperMock.mockImplementation(async () => ({
+        cancel: jest.fn().mockResolvedValue(undefined),
+        locked: false,
+    }));
     fileSaverSaveAsFileMock.mockReset();
     traverseNodeStructureMock.mockReset();
     hydrateAndCheckNodesMock.mockReset();
@@ -296,7 +297,10 @@ describe('DownloadManager', () => {
 
         sdkMock.driveMock.getFileDownloader.mockResolvedValue(fileDownloader);
 
-        const readableStream = {} as ReadableStream<Uint8Array<ArrayBuffer>>;
+        const readableStream = {
+            cancel: jest.fn(),
+            locked: false,
+        } as unknown as ReadableStream<Uint8Array<ArrayBuffer>>;
         loadCreateReadableStreamWrapperMock.mockResolvedValue(readableStream);
 
         const saveDeferred = createDeferred<void>();
@@ -337,11 +341,12 @@ describe('DownloadManager', () => {
 
         await completionPromise;
 
-        expect(fileSaverSaveAsFileMock).toHaveBeenCalledWith(
-            readableStream,
-            { filename: node.name, mimeType: 'application/octet-stream', size: nodeSize },
-            expect.any(Function)
-        );
+        expect(fileSaverSaveAsFileMock).toHaveBeenCalledWith(readableStream, {
+            downloadId: 'download-1',
+            filename: node.name,
+            mimeType: 'application/octet-stream',
+            size: nodeSize,
+        });
 
         await waitForCondition(() =>
             storeMockState.updateDownloadItem.mock.calls.some(
@@ -746,6 +751,7 @@ describe('DownloadManager', () => {
 
     it('should download from buffer and add to download queue', async () => {
         const manager = DownloadManager.getInstance();
+        storeMockState.addDownloadItem.mockReturnValue('buffer-download');
 
         const node: NodeEntity = createMockNodeEntity({
             uid: 'buffer-file-1',
@@ -760,14 +766,11 @@ describe('DownloadManager', () => {
 
         await manager.downloadFromBuffer(node, buffer, mimeType);
 
-        expect(fileSaverSaveAsFileMock).toHaveBeenCalledWith(
-            expect.any(ReadableStream),
-            {
-                filename: node.name,
-                mimeType: mimeType,
-            },
-            expect.any(Function)
-        );
+        expect(fileSaverSaveAsFileMock).toHaveBeenCalledWith(expect.any(ReadableStream), {
+            downloadId: 'buffer-download',
+            filename: node.name,
+            mimeType,
+        });
 
         expect(storeMockState.addDownloadItem).toHaveBeenCalledWith({
             name: node.name,
