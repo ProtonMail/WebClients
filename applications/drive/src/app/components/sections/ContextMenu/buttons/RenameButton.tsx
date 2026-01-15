@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { isProtonDocsDocument } from '@proton/shared/lib/helpers/mimetype';
 
 import { useActions } from '../../../../store';
-import type { useRenameModal } from '../../../modals/RenameModal';
+import type { useRenameModalDeprecated } from '../../../modals/RenameModal';
 import ContextMenuButton from '../ContextMenuButton';
 
 interface Props {
@@ -15,7 +15,7 @@ interface Props {
         linkId: string;
         rootShareId: string;
     };
-    showRenameModal: ReturnType<typeof useRenameModal>[1];
+    showRenameModal: ReturnType<typeof useRenameModalDeprecated>[1];
     close: () => void;
 }
 
@@ -32,7 +32,6 @@ const RenameButton = ({ link, showRenameModal, close }: Props) => {
                     isDoc: isProtonDocsDocument(link.mimeType),
                     name: link.name,
                     volumeId: link.volumeId,
-                    mediaType: link.mimeType,
                     linkId: link.linkId,
                     onSubmit: (formattedName) =>
                         renameLink(new AbortController().signal, link.rootShareId, link.linkId, formattedName),
