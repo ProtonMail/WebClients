@@ -14,7 +14,7 @@
  * AFTER: ~0KB initial, ~500KB loaded when first code block appears
  */
 
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { PrismAsync as SyntaxHighlighter } from 'react-syntax-highlighter';
 
 /**
  * With full Prism build, all languages are available automatically.
