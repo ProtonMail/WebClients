@@ -1,4 +1,4 @@
-import { type Certificate, type GeneralName, TimeType } from 'pkijs';
+import type { Certificate, GeneralName } from 'pkijs';
 
 import { ctLogs, rootCertificates } from '../constants/certificates';
 import type { KT_CERTIFICATE_ISSUER } from '../constants/constants';
@@ -265,8 +265,9 @@ export const verifySCT = async (certificate: Certificate, issuerCert: Certificat
     }
 };
 
-export const parseCertTime = (cert: Certificate) => {
+export const parseCertTime = async (cert: Certificate) => {
     let returnedDate: number;
+    const { TimeType } = await importPkijs();
     switch (cert.notBefore.type) {
         case TimeType.UTCTime:
         case TimeType.GeneralizedTime:
