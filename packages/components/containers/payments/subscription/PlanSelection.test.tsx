@@ -594,6 +594,13 @@ describe('useAccessiblePlans', () => {
     });
 
     it('should hide Pass Plus if user has Pass Lifetime', () => {
+        mockUseFlag.mockImplementation((flag: string) => {
+            if (flag === 'PassSimpleLoginLifetimeOffer') {
+                return true;
+            }
+            return false;
+        });
+
         const plans = [...getTestPlans('USD'), ...getTestPlans('CHF'), ...getTestPlans('EUR')];
 
         const user = buildUser({
@@ -660,6 +667,15 @@ describe('useAccessiblePlans', () => {
     });
 
     describe('isPassLifetimeEligible', () => {
+        beforeEach(() => {
+            mockUseFlag.mockImplementation((flag: string) => {
+                if (flag === 'PassSimpleLoginLifetimeOffer') {
+                    return true;
+                }
+                return false;
+            });
+        });
+
         const defaultProps: AccessiblePlansHookProps = {
             selectedProductPlans: {
                 b2c: PLANS.MAIL,
@@ -682,6 +698,13 @@ describe('useAccessiblePlans', () => {
         it('should be true when all conditions are met', () => {
             const { result } = renderHook(() => useAccessiblePlans(defaultProps));
             expect(result.current.isPassLifetimeEligible).toBe(true);
+        });
+
+        it('should be false if feature flag is disabled', () => {
+            mockUseFlag.mockImplementation(() => false);
+
+            const { result } = renderHook(() => useAccessiblePlans(defaultProps));
+            expect(result.current.isPassLifetimeEligible).toBe(false);
         });
 
         it('should be false when not in Pass Settings app', () => {
