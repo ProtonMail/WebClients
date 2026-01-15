@@ -1,5 +1,4 @@
-import { useState } from 'react';
-import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
+import { Suspense, lazy, useState } from 'react';
 
 import * as bootstrap from '@proton/account/bootstrap';
 import { createAuthentication, createUnleash, init } from '@proton/account/bootstrap';
@@ -30,8 +29,6 @@ import noop from '@proton/utils/noop';
 import LumoLoader from '../../components/LumoLoader';
 import config from '../../config';
 import locales from '../../locales';
-import { ConversationProvider } from '../../providers/ConversationProvider';
-import { GuestTrackingProvider } from '../../providers/GuestTrackingProvider';
 import { IsGuestProvider } from '../../providers/IsGuestProvider';
 import { LumoPlanProvider } from '../../providers/LumoPlanProvider';
 import { LumoThemeProvider } from '../../providers/LumoThemeProvider';
@@ -42,17 +39,19 @@ import { extendStore, setupStore } from '../../redux/store';
 import { setStoreRef } from '../../redux/storeRef';
 import { extraThunkArguments } from '../../redux/thunk';
 import ProtectGuestRouteGuard from '../../ui/components/ProtectGuestRouteGuard/ProtectGuestRouteGuard';
-import { PublicHeader } from '../../ui/header/PublicHeader';
-import { InteractiveConversationComponent } from '../../ui/interactiveConversation/InteractiveConversationComponent';
-import { LumoUpsellModalProvider } from '../../ui/upsells/providers/LumoUpsellModalProvider';
 import { initializeConsoleOverride } from '../../util/logging';
 import { lumoTelemetryConfig } from '../../util/telemetryConfig';
-import { InnerApp } from '../InnerApp';
 
-export interface RouteParams {
-    sessionId: string;
-    conversationId: string;
-}
+const GuestContainerLazy = lazy(
+    () =>
+        import(
+            /* webpackChunkName: "GuestContainer" */
+            /* webpackPrefetch: true */
+            /* webpackPreload: true */
+            /* webpackFetchPriority: "high" */
+            './BasePublicApp'
+        )
+);
 
 const defaultState: {
     store?: LumoStore;
@@ -109,27 +108,6 @@ const bootstrapApp = async () => {
     };
 };
 
-const BasePublicApp = () => {
-    return (
-        <ConversationProvider>
-            <Router>
-                <Switch>
-                    <Route path="/guest">
-                        <GuestTrackingProvider>
-                            <LumoUpsellModalProvider>
-                                <InnerApp
-                                    headerComponent={PublicHeader}
-                                    conversationComponent={InteractiveConversationComponent}
-                                />
-                            </LumoUpsellModalProvider>
-                        </GuestTrackingProvider>
-                    </Route>
-                </Switch>
-            </Router>
-        </ConversationProvider>
-    );
-};
-
 const GuestApp = () => {
     const [state, setState] = useState(defaultState);
 
@@ -170,7 +148,9 @@ const GuestApp = () => {
                                                 <IsGuestProvider isGuest={true}>
                                                     <LumoPlanProvider>
                                                         <LumoThemeProvider>
-                                                            <BasePublicApp />
+                                                            <Suspense fallback={<LumoLoader />}>
+                                                                <GuestContainerLazy />
+                                                            </Suspense>
                                                         </LumoThemeProvider>
                                                     </LumoPlanProvider>
                                                 </IsGuestProvider>
