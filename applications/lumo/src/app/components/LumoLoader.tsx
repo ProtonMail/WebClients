@@ -1,7 +1,6 @@
 import type { SyntheticEvent } from 'react';
 import { useMemo } from 'react';
 
-import LottieView from 'lottie-react';
 import { c } from 'ttag';
 
 import TextLoader from '@proton/components/components/loader/TextLoader';
@@ -13,7 +12,7 @@ import { ThemeTypes } from '@proton/shared/lib/themes/constants';
 import { LUMO_FULL_APP_TITLE } from '../constants';
 import { getDefaultSettings, getLumoSettings } from '../providers/lumoThemeStorage';
 import { getLumoThemeFromSettings, getThemeConfig, matchDarkTheme } from '../providers/lumoThemeUtils';
-import loader from './Animations/loader.json';
+import { LazyLottie } from './LazyLottie';
 
 interface Props {
     documentTitle?: string;
@@ -69,7 +68,13 @@ const LumoLoader = ({ documentTitle = '', text }: Props) => {
                 onDrop={preventDefaultEvent}
             >
                 <div className="absolute inset-center text-center">
-                    <LottieView animationData={loader} loop={true} style={{ width: 180 }} />
+                    <LazyLottie
+                        getAnimationData={() =>
+                            import(/* webpackChunkName: "lumo-loader-animation" */ './Animations/loader.json')
+                        }
+                        loop={true}
+                        style={{ width: 180 }}
+                    />
                     <TextLoader className="color-weak ml-5">{textToDisplay}</TextLoader>
                 </div>
             </div>

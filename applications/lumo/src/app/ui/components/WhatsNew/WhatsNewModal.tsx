@@ -1,4 +1,3 @@
-import LottieView from 'lottie-react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
@@ -7,6 +6,7 @@ import type { ModalProps } from '@proton/components';
 import { Icon, ModalContent, ModalTwo, ModalTwoFooter } from '@proton/components';
 import lumoProjects from '@proton/styles/assets/img/lumo/lumo-projects.svg';
 
+import { LazyLottie } from '../../../components/LazyLottie';
 import type { FeaturePoint, WhatsNewModalFeature } from './types';
 
 import './WhatsNew.scss';
@@ -21,7 +21,7 @@ const WhatsNewModal = ({ feature, onCallToAction, onCancel, ...modalProps }: Wha
     return (
         <ModalTwo size="large" className="whats-new-modal p-4" enableCloseWhenClickOutside {...modalProps}>
             {feature.lottieAnimation && (
-                <LottieView animationData={feature.lottieAnimation} loop={true} className="pb-3 md:pb-4" />
+                <LazyLottie getAnimationData={feature.lottieAnimation} loop={true} className="pb-3 md:pb-4" />
             )}
             <div className="background flex items-center justify-center rounded mb-2">
                 <img src={lumoProjects} alt="Projects" className="mt-5" />

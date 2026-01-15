@@ -1,18 +1,7 @@
-import { useMemo } from 'react';
-
-import LottieView from 'lottie-react';
-
 import lumoGhostAvatarDark from '@proton/styles/assets/img/lumo/lumo-ghost-avatar-dark.svg';
 import lumoGhostAvatar from '@proton/styles/assets/img/lumo/lumo-ghost-avatar.svg';
 
-import lumoGenerating from '../../../components/Animations/lumo-generating.json';
-import lumoGhostThinking from '../../../components/Animations/lumo-ghost-avatar.json';
-import lumoGhostThinkingDark from '../../../components/Animations/lumo-ghost-thinking-dark.json';
-import lumoIdleDark from '../../../components/Animations/lumo-idle-dark.json';
-import lumoIdle from '../../../components/Animations/lumo-idle.json';
-import lumoGeneratingDark from '../../../components/Animations/lumo-thinking-dark.json';
-import lumoWebSearchDark from '../../../components/Animations/lumo-websearch-dark.json';
-import lumoWebSearch from '../../../components/Animations/lumo-websearch.json';
+import { LazyLottie } from '../../../components/LazyLottie';
 import { useGhostChat } from '../../../providers/GhostChatProvider';
 import { useLumoTheme } from '../../../providers/LumoThemeProvider';
 
@@ -23,27 +12,61 @@ interface LumoAvatarProps {
     isGeneratingWithToolCall: boolean;
 }
 
+const lightMap = {
+    idle: () =>
+        import(
+            /* webpackChunkName: "lumo-idle-animation" */
+            '../../../components/Animations/lumo-idle.json'
+        ),
+    generating: () =>
+        import(
+            /* webpackChunkName: "lumo-generating-animation" */
+            '../../../components/Animations/lumo-generating.json'
+        ),
+    ghostThinking: () =>
+        import(
+            /* webpackChunkName: "lumo-ghost-animation" */
+            '../../../components/Animations/lumo-ghost-avatar.json'
+        ),
+    webSearch: () =>
+        import(
+            /* webpackChunkName: "lumo-websearch-animation" */
+            '../../../components/Animations/lumo-websearch.json'
+        ),
+};
+
+const darkMap = {
+    idle: () =>
+        import(
+            /* webpackChunkName: "lumo-idle-dark-animation" */
+            '../../../components/Animations/lumo-idle-dark.json'
+        ),
+    generating: () =>
+        import(
+            /* webpackChunkName: "lumo-idle-dark-animation" */
+            '../../../components/Animations/lumo-thinking-dark.json'
+        ),
+    ghostThinking: () =>
+        import(
+            /* webpackChunkName: "lumo-ghost-dark-animation" */
+            '../../../components/Animations/lumo-ghost-thinking-dark.json'
+        ),
+    webSearch: () =>
+        import(
+            /* webpackChunkName: "lumo-websearch-dark-animation" */
+            '../../../components/Animations/lumo-websearch-dark.json'
+        ),
+};
+
 const useThemeLumoAvatarAnimation = (isGenerating: boolean, isGeneratingWithToolCall: boolean) => {
     const { isGhostChatMode } = useGhostChat();
     const { isDarkLumoTheme } = useLumoTheme();
 
-    const lightMap = {
-        idle: lumoIdle,
-        generating: lumoGenerating,
-        ghostThinking: lumoGhostThinking,
-        webSearch: lumoWebSearch,
-    };
-
-    const darkMap = {
-        idle: lumoIdleDark,
-        generating: lumoGeneratingDark,
-        ghostThinking: lumoGhostThinkingDark,
-        webSearch: lumoWebSearchDark,
-    };
-
-    const animationData = useMemo(() => {
+    const getAnimationDataToImport = () => {
         // Ghost‑chat mode: static avatar when not generating
-        if (isGhostChatMode && !isGenerating) return null;
+        if (isGhostChatMode && !isGenerating) {
+            return null;
+        }
 
         let key: keyof typeof lightMap;
 
@@ -60,18 +83,18 @@ const useThemeLumoAvatarAnimation = (isGenerating: boolean, isGeneratingWithTool
         }
 
         return (isDarkLumoTheme ? darkMap[key] : lightMap[key]) ?? null;
-    }, [isGhostChatMode, isGenerating, isGeneratingWithToolCall, isDarkLumoTheme]);
+    };
 
-    return { animationData, isDarkLumoTheme };
+    return { getAnimationData: getAnimationDataToImport(), isDarkLumoTheme };
 };
 
 const LumoAvatar = ({ isGenerating, isGeneratingWithToolCall }: LumoAvatarProps) => {
-    const { animationData, isDarkLumoTheme } = useThemeLumoAvatarAnimation(isGenerating, isGeneratingWithToolCall);
+    const { getAnimationData, isDarkLumoTheme } = useThemeLumoAvatarAnimation(isGenerating, isGeneratingWithToolCall);
 
     return (
         <div className="self-start shrink-0 relative no-print">
-            {animationData ? (
-                <LottieView alt="" animationData={animationData} loop={true} className="lumo-avatar" />
+            {getAnimationData ? (
+                <LazyLottie alt="" getAnimationData={getAnimationData} loop={true} className="lumo-avatar" />
             ) : (
                 <img
                     src={isDarkLumoTheme ? lumoGhostAvatarDark : lumoGhostAvatar}
