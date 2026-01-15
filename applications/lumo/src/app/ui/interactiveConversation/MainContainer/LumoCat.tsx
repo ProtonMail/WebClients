@@ -1,11 +1,20 @@
 import { clsx } from 'clsx';
-import LottieView from 'lottie-react';
 
 import lumoGhost from '@proton/styles/assets/img/lumo/lumo-sit-side-ghost.svg';
 
-import lumoCatDark from '../../../components/Animations/lumo-cat-dark.json';
-import lumoCatLight from '../../../components/Animations/lumo-cat.json';
+import { LazyLottie } from '../../../components/LazyLottie';
 import { useLumoTheme } from '../../../providers/LumoThemeProvider';
+
+const getLumoCatDark = () =>
+    import(
+        /* webpackChunkName: "lumo-cat-dark-animation" */
+        '../../../components/Animations/lumo-cat-dark.json'
+    );
+const getLumoCatLight = () =>
+    import(
+        /* webpackChunkName: "lumo-cat-light-animation" */
+        '../../../components/Animations/lumo-cat.json'
+    );
 
 interface LumoCatProps {
     isSmallScreen: boolean;
@@ -16,15 +25,15 @@ interface LumoCatProps {
 const LumoCat = ({ isSmallScreen, isGhostChatMode, isLumoSpecialThemeEnabled }: LumoCatProps) => {
     const { isDarkLumoTheme } = useLumoTheme();
 
-    const getAnimationData = () => {
+    const getAnimationData = (() => {
         if (isLumoSpecialThemeEnabled) {
             // update with themed animations
-            return isDarkLumoTheme ? lumoCatDark : lumoCatLight;
+            return isDarkLumoTheme ? getLumoCatDark : getLumoCatLight;
         }
 
         // Special theme disabled, show normal variants
-        return isDarkLumoTheme ? lumoCatDark : lumoCatLight;
-    };
+        return isDarkLumoTheme ? getLumoCatDark : getLumoCatLight;
+    })();
 
     return (
         <div
@@ -50,9 +59,9 @@ const LumoCat = ({ isSmallScreen, isGhostChatMode, isLumoSpecialThemeEnabled }: 
                 }}
             />
 
-            <LottieView
+            <LazyLottie
                 alt="Lumo assistant avatar"
-                animationData={getAnimationData()}
+                getAnimationData={getAnimationData}
                 loop={true}
                 className="absolute inset-0"
                 style={{
