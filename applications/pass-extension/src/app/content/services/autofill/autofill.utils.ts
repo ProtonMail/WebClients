@@ -19,6 +19,8 @@ export type AutofillOptions = {
     noFocus?: boolean;
     /** `FieldType` of the field being autofilled */
     type?: FieldType;
+    /** Autofilled item derived key */
+    itemKey?: string;
 };
 
 type EventDispatcher = (events: Event[]) => Promise<void>;
