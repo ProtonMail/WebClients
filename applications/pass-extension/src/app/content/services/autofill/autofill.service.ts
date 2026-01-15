@@ -10,7 +10,7 @@ import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/mes
 import type { AutofillRequest, AutofillResult } from 'proton-pass-extension/types/autofill';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
-import { FieldType } from '@proton/pass/fathom/labels';
+import { CCFieldType, FieldType } from '@proton/pass/fathom/labels';
 import { passwordSave } from '@proton/pass/store/actions/creators/password';
 import type { ItemContent } from '@proton/pass/types/data/items';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
@@ -295,7 +295,20 @@ export const createAutofillService = ({ controller }: ContentScriptContextFactor
                     refocusable?.interactivity.unlock();
                     refocusable?.focus({ preventAction: true });
 
-                    nextTick(() => (state.processing = false));
+                    nextTick(() => {
+                        state.processing = false;
+                        if (refocusable) {
+                            const { fieldSubType } = refocusable;
+                            if (fieldSubType === CCFieldType.NUMBER || fieldSubType === CCFieldType.CSC) {
+                                /** Some payment forms (e.g., Verizon) clear field values on focus.
+                                 * If the refocused field is a card number or CSC, verify it wasn't
+                                 * cleared and re-autofill without acquiring focus if necessary. */
+                                const { value, element, autofilled } = refocusable;
+                                const wasResetOnRefocus = autofilled && !element.value && value;
+                                if (wasResetOnRefocus) void refocusable.autofill(value, { noFocus: true });
+                            }
+                        }
+                    });
 
                     break;
             }
