@@ -1466,6 +1466,9 @@
       "Payments problem": [
         "Problema com pagamento"
       ],
+      "Sheets problem": [
+        "Problema no Sheets"
+      ],
       "Sign in problem": [
         "Problema no login"
       ],
@@ -3578,6 +3581,9 @@
       "Event not found": [
         "Evento não encontrado"
       ],
+      "Failed to add existing ${ MEET_APP_NAME } video conference": [
+        "Falha ao adicionar videoconferência existentes do ${ MEET_APP_NAME }"
+      ],
       "Failed to create ${ MEET_APP_NAME } video conference": [
         "Falha ao criar videoconferência do ${ MEET_APP_NAME }"
       ],
@@ -4779,12 +4785,6 @@
       ],
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
         "A ${ BRAND_NAME } não pode se conectar à sua conta do Yahoo. Certifique-se de que:"
-      ],
-      "2-step verification is enabled in your external account.": [
-        "A verificação em duas etapas está ativada em sua conta externa."
-      ],
-      "2-step verification is enabled in your external email account.": [
-        "A verificação em duas etapas está ativada em sua conta externa."
       ],
       "IMAP access is enabled in your external account.": [
         "Acesso IMAP está ativado na sua conta do Yahoo."
@@ -8183,9 +8183,6 @@
       ],
       "Unlimited labels": [
         "Marcadores ilimitados"
-      ],
-      "Unlimited logins and notes": [
-        "Notas e inícios de sessão ilimitados"
       ],
       "Unlimited logins, notes and credit cards": [
         "Inícios de sessão ilimitados, notas e cartões de crédito"

@@ -1466,6 +1466,9 @@
       "Payments problem": [
         "Probleem met betalingen"
       ],
+      "Sheets problem": [
+        "Werkblad probleem"
+      ],
       "Sign in problem": [
         "Inlogprobleem"
       ],
@@ -1720,7 +1723,7 @@
         "${ maxSpaceTB } opslagruimte"
       ],
       "${ numberOfUsers } user": [
-        "Tot ${ numberOfUsers } gebruiker",
+        "${ numberOfUsers } gebruiker",
         "Tot ${ numberOfUsers } gebruikers"
       ],
       "${ planMaxSpace } email storage": [
@@ -3578,6 +3581,9 @@
       "Event not found": [
         "Afspraak niet gevonden"
       ],
+      "Failed to add existing ${ MEET_APP_NAME } video conference": [
+        "Mislukt om bestaande ${ MEET_APP_NAME } videoconferentie toe te voegen"
+      ],
       "Failed to create ${ MEET_APP_NAME } video conference": [
         "Mislukt om ${ MEET_APP_NAME } videoconferentie aan te maken"
       ],
@@ -4780,12 +4786,6 @@
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
         "${ BRAND_NAME } kan geen verbinding maken met uw Yahoo account. Zorg ervoor dat:"
       ],
-      "2-step verification is enabled in your external account.": [
-        "2-staps-verificatie is ingeschakeld in uw externe account."
-      ],
-      "2-step verification is enabled in your external email account.": [
-        "Tweestapsverificatie is ingeschakeld in uw externe e-mailaccount."
-      ],
       "IMAP access is enabled in your external account.": [
         "IMAP-toegang is ingeschakeld in uw externe account."
       ],
@@ -4794,6 +4794,12 @@
       ],
       "Too many recent requests. Please try again in a few moments.": [
         "Te veel recente pogingen. Probeer over enkele ogenblikken opnieuw."
+      ],
+      "Two-factor authentication is enabled in your external account.": [
+        "Tweestapsverificatie is ingeschakeld in uw externe account."
+      ],
+      "Two-factor authentication is enabled in your external email account.": [
+        "Tweestapsverificatie is ingeschakeld in uw externe e-mailaccount."
       ],
       "Use your app password if:": [
         "Gebruik uw app-wachtwoord als:"
@@ -8183,9 +8189,6 @@
       ],
       "Unlimited labels": [
         "Onbeperkt aantal labels"
-      ],
-      "Unlimited logins and notes": [
-        "Onbeperkt aantal logins en notities"
       ],
       "Unlimited logins, notes and credit cards": [
         "Onbeperkt aantal logins, notities en creditcards"

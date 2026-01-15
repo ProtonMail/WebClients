@@ -4376,12 +4376,6 @@
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
         "${ BRAND_NAME } 無法連接您的 Yahoo! 帳號。請確認以下事項:"
       ],
-      "2-step verification is enabled in your external account.": [
-        "您的外部帳號已啟用兩步驟驗證。"
-      ],
-      "2-step verification is enabled in your external email account.": [
-        "您的外部電郵帳號已啟用兩步驟驗證."
-      ],
       "IMAP access is enabled in your external account.": [
         "您的外部帳號已啟用 IMAP 存取。"
       ],
@@ -5125,6 +5119,9 @@
       "Messages to all your email addresses will go to your inbox.": [
         "送至您全部電子郵件地址的訊息將傳至您的收件匣。"
       ],
+      "Min. 48 hours before": [
+        "最少提前 48 小時"
+      ],
       "Monitor accounts": [
         "監控帳號"
       ],
@@ -5167,6 +5164,9 @@
       "Not connected": [
         "未連線"
       ],
+      "Not on the same day": [
+        "不同日期"
+      ],
       "Number of dedicated servers in the organization": [
         "團隊專用的伺服器數量"
       ],
@@ -5199,6 +5199,9 @@
       ],
       "Other accounts": [
         "其他帳號"
+      ],
+      "Other location": [
+        "其他位置"
       ],
       "Other users within your organization will see your busy slots. No event details are shared.": [
         "在您的組織機構的其他用戶會看到你繁忙的時段。沒有行程的詳細資料會與他們共享。"
@@ -7272,9 +7275,6 @@
       ],
       "Unlimited labels": [
         "無限制標籤"
-      ],
-      "Unlimited logins and notes": [
-        "無限登入資訊與筆記"
       ],
       "Unlimited logins, notes and credit cards": [
         "無限登入，筆記和信用卡"
