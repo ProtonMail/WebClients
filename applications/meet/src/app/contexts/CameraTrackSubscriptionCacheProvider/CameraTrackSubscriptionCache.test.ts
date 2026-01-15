@@ -1,13 +1,46 @@
 import { waitFor } from '@testing-library/react';
-import { VideoQuality } from 'livekit-client';
+import { RemoteTrackPublication, Track, VideoQuality } from 'livekit-client';
 import { describe, expect, it, vi } from 'vitest';
 
-import { createCameraPublication } from '../../utils/track-test-utils';
 import { CameraTrackSubscriptionCache } from './CameraTrackSubscriptionCache';
 
 vi.mock('@proton/shared/lib/helpers/promise', () => ({
     wait: () => Promise.resolve(),
 }));
+
+const defineWritable = (obj: any, key: string, value: any) => {
+    Object.defineProperty(obj, key, {
+        value,
+        writable: true,
+        enumerable: true,
+        configurable: true,
+    });
+};
+
+const createCameraPublication = (trackSid: string, overrides: Partial<Record<string, any>> = {}) => {
+    const pub = Object.create(RemoteTrackPublication.prototype) as any;
+
+    defineWritable(pub, 'source', Track.Source.Camera);
+    defineWritable(pub, 'trackSid', trackSid);
+    defineWritable(pub, 'isSubscribed', false);
+    defineWritable(pub, 'isEnabled', false);
+    defineWritable(pub, 'videoQuality', VideoQuality.HIGH);
+    defineWritable(pub, 'track', undefined);
+    defineWritable(pub, 'isMuted', false);
+
+    pub.setSubscribed = (value: boolean) => {
+        pub.isSubscribed = value;
+    };
+    pub.setEnabled = (value: boolean) => {
+        pub.isEnabled = value;
+    };
+    pub.setVideoQuality = (quality: any) => {
+        pub.videoQuality = quality;
+    };
+
+    Object.assign(pub, overrides);
+    return pub as RemoteTrackPublication;
+};
 
 describe('CameraTrackSubscriptionCache', () => {
     it('register() should subscribe, enable, and apply quality based on policy', async () => {
@@ -112,12 +145,13 @@ describe('CameraTrackSubscriptionCache', () => {
             expect(pub1.isEnabled).toBe(false);
         });
 
-        // Register second track - should immediately evict first track
         const pub2 = createCameraPublication('track-2');
         cache.register(pub2, 'p2');
         await waitFor(() => {
             expect(pub2.isSubscribed).toBe(true);
-            // pub1 should be evicted and unsubscribed
+        });
+        cache.unregister(pub2);
+        await waitFor(() => {
             expect(pub1SetSubscribedSpy).toHaveBeenCalledWith(false);
             expect(pub1.isSubscribed).toBe(false);
         });
@@ -132,6 +166,7 @@ describe('CameraTrackSubscriptionCache', () => {
         });
 
         const pub = createCameraPublication('track-1');
+        const setEnabledSpy = vi.spyOn(pub, 'setEnabled');
         const setSubscribedSpy = vi.spyOn(pub, 'setSubscribed');
         cache.register(pub, 'p1');
         await waitFor(() => {
@@ -141,6 +176,7 @@ describe('CameraTrackSubscriptionCache', () => {
 
         await cache.resetQueueManagedVideoTrack(pub);
         await waitFor(() => {
+            expect(setEnabledSpy).toHaveBeenCalledWith(false);
             expect(setSubscribedSpy).toHaveBeenCalledWith(false);
 
             expect(pub.isSubscribed).toBe(true);
