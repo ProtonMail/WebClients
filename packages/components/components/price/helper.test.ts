@@ -56,6 +56,14 @@ describe('getSimplePriceString', () => {
     it('should render HKD', () => {
         expect(getSimplePriceString('HKD', 123)).toBe(`HK$1.23`);
     });
+
+    it('should render unknown currencies', () => {
+        expect(getSimplePriceString('XXX' as any, 123)).toBe(`XXX${NBSP}1.23`);
+        expect(getSimplePriceString('XXX' as any, -123)).toBe(`-XXX${NBSP}1.23`);
+
+        expect(getSimplePriceString('DKK' as any, 123)).toBe(`DKK${NBSP}1.23`);
+        expect(getSimplePriceString('DKK' as any, -123)).toBe(`-DKK${NBSP}1.23`);
+    });
 });
 
 describe('humanPrice', () => {

@@ -1,5 +1,8 @@
 import { type Currency, CurrencySymbols } from '@proton/payments';
-import { getCurrencyFormattingConfig } from '@proton/payments/core/currencies';
+import {
+    getCurrencyFormattingConfig,
+    getCurrencyFormattingConfigWithoutFallback,
+} from '@proton/payments/core/currencies';
 
 /**
  * Make amount readable
@@ -14,25 +17,28 @@ export function formatPriceWithoutCurrency(amount: number, currency: Currency) {
     return fixedValue.replace('.00', '').replace('-', '');
 }
 
-export function getSimplePriceString(currency: Currency, rawPrice: number, suffix: string = '') {
-    const { symbolPosition } = getCurrencyFormattingConfig(currency);
+export const defaultSymbolPosition = 'prefix-space' as const;
+
+export function getSimplePriceString(currency: Currency, rawPrice: number, suffix: string = ''): string {
+    const config = getCurrencyFormattingConfigWithoutFallback(currency);
+    const symbolPosition = config?.symbolPosition ?? defaultSymbolPosition;
 
     const price = formatPriceWithoutCurrency(rawPrice, currency);
     const isNegative = rawPrice < 0;
     const optionalNegative = isNegative ? '-' : '';
 
+    const currencySymbol = CurrencySymbols[currency] || currency;
+
     if (symbolPosition === 'suffix-space') {
-        return `${optionalNegative}${price}\u00A0${CurrencySymbols[currency]}${suffix}`;
+        const suffixSpaceFormatting = `${optionalNegative}${price}\u00A0${currencySymbol}${suffix}`;
+        return suffixSpaceFormatting;
     }
 
     if (symbolPosition === 'prefix-nospace') {
-        return `${optionalNegative}${CurrencySymbols[currency]}${price}${suffix}`;
+        const prefixNospaceFormatting = `${optionalNegative}${currencySymbol}${price}${suffix}`;
+        return prefixNospaceFormatting;
     }
 
-    const prefixSpaceFormatting = `${optionalNegative}${CurrencySymbols[currency]}\u00A0${price}${suffix}`;
-    if (symbolPosition === 'prefix-space') {
-        return prefixSpaceFormatting;
-    }
-
+    const prefixSpaceFormatting = `${optionalNegative}${currencySymbol}\u00A0${price}${suffix}`;
     return prefixSpaceFormatting;
 }
