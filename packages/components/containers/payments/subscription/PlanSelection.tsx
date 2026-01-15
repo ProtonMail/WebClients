@@ -244,6 +244,7 @@ export function useAccessiblePlans({
     const isMeetSettingsApp = app === APPS.PROTONMEET;
     const isNewB2BPlanEnabled = useFlag('NewProtonBusinessBundlePlans');
     const isMeetPlansEnabled = useFlag('MeetPlans');
+    const isPassSimpleLoginLifetimeEnabled = useFlag('PassSimpleLoginLifetimeOffer');
 
     const plansMap = getPlansMap(plans, currency, false);
 
@@ -394,6 +395,7 @@ export function useAccessiblePlans({
     })();
 
     const isPassLifetimeEligible =
+        isPassSimpleLoginLifetimeEnabled &&
         isPassSettingsApp &&
         !user.hasPassLifetime &&
         audience === Audience.B2C &&
