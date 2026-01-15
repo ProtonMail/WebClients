@@ -14,8 +14,7 @@ import mailFree from './logo/plan-mail-free.svg';
 import meetBusiness from './logo/plan-meet-business.svg';
 import meetFree from './logo/plan-meet-free.svg';
 import passFamily from './logo/plan-pass-family.svg';
-import passFreeDark from './logo/plan-pass-free-dark.svg';
-import passFreeLight from './logo/plan-pass-free-light.svg';
+import passFree from './logo/plan-pass-free-light.svg';
 import passLifetime from './logo/plan-pass-lifetime.svg';
 import vpnBusiness from './logo/plan-vpn-business.svg';
 import vpnFree from './logo/plan-vpn-free.svg';
@@ -89,11 +88,8 @@ const CustomLogo = ({ planName, app, size, dark, ...rest }: Props) => {
     if (app === APPS.PROTONMAIL || app === APPS.PROTONCALENDAR) {
         return <img {...rest} src={mailFree} width={size} alt="" />;
     }
-    if (app === APPS.PROTONPASS && dark) {
-        return <img {...rest} src={passFreeDark} width={size} alt="" />;
-    }
     if (app === APPS.PROTONPASS) {
-        return <img {...rest} src={passFreeLight} width={size} alt="" />;
+        return <img {...rest} src={passFree} width={size} alt="" />;
     }
     if (app === APPS.PROTONVPN_SETTINGS) {
         return <img {...rest} src={vpnFree} width={size} alt="" />;

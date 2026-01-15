@@ -193,7 +193,7 @@ export const PlanIcon = ({
     if (hasFree(subscription)) {
         return (
             <LogoIconShape size={size}>
-                <CustomLogo app={app} size={Math.ceil(size * 0.636)} />
+                <CustomLogo app={app} size={size} />
             </LogoIconShape>
         );
     }
