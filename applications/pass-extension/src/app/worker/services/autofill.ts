@@ -296,6 +296,7 @@ export const createAutoFillService = () => {
             const item = getCreditCard(payload);
             if (!(item && tabId)) throw new Error('Could not get credit card for autofill request');
 
+            const { itemId, shareId } = payload;
             const { frameOrigin, frameId, fieldId, formId } = payload;
             const refocus = { fieldId, formId, frameId };
 
@@ -318,7 +319,7 @@ export const createAutoFillService = () => {
                 if (!frame) continue;
 
                 const data = intoAutofillableCCItem(item, autofilledFields, frame.crossOrigin);
-                const request = { status: 'fill', type: 'creditCard', data, fields } as const;
+                const request = { status: 'fill', type: 'creditCard', data, fields, itemId, shareId } as const;
                 const [res] = await onAutofillSequenceUpdate(request, tabId, [frame]);
                 if (res && res.type === 'creditCard') res.autofilled.forEach((type) => autofilledFields.add(type));
             }

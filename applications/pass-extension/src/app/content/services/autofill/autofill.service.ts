@@ -212,6 +212,7 @@ export const createAutofillService = ({ controller }: ContentScriptContextFactor
                  * previously autofilled, clear the previous value. */
                 await field.autofill('');
                 field.autofilled = null;
+                field.autofilledItemKey = null;
             }
         }
 
@@ -253,7 +254,7 @@ export const createAutofillService = ({ controller }: ContentScriptContextFactor
                             ?.getFieldById<FieldType.CREDIT_CARD>(field.fieldId)
                     );
 
-                    return autofillCCFields(ccFields.filter(truthy), payload.data)
+                    return autofillCCFields(ccFields.filter(truthy), payload)
                         .then((autofilled) => ({ type: 'creditCard' as const, autofilled: autofilled.flat() }))
                         .catch(() => ({ type: 'creditCard' as const, autofilled: [] }));
             }
