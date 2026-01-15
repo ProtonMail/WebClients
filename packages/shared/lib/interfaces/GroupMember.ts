@@ -17,6 +17,7 @@ export enum GROUP_MEMBER_PERMISSIONS {
     SEND = 1 << 0, // 0001
     LEAVE = 1 << 1, // 0010
     OWNER = 1 << 2, // 0100
+    OWNER_WITH_KEYS = 1 << 3, // 1000
 }
 
 export enum GROUP_MEMBERSHIP_STATUS {
@@ -56,13 +57,14 @@ export interface GroupMembership {
 }
 
 export interface GroupMembershipReturn {
+    GroupID: string;
     Group: {
         Name: string;
         Address: string;
     };
     State: number;
     ForwardingKeys: GroupMemberAddressPendingKey;
-    AddressId: string;
+    AddressID: string;
     ID: string;
     Permissions: number;
 }
