@@ -15,7 +15,7 @@ interface CurrencyFormattingConfig {
     divisor: number;
 }
 
-export function getCurrencyFormattingConfig(currency: Currency): CurrencyFormattingConfig {
+export function getCurrencyFormattingConfigWithoutFallback(currency: Currency): CurrencyFormattingConfig | undefined {
     type CurrencyFormattingConfigWithoutDelimiter = Omit<CurrencyFormattingConfig, 'divisor'>;
 
     const currencyFormattingConfigs: Record<Currency, CurrencyFormattingConfigWithoutDelimiter> = {
@@ -39,7 +39,11 @@ export function getCurrencyFormattingConfig(currency: Currency): CurrencyFormatt
         )
     ) as Record<Currency, CurrencyFormattingConfig>;
 
-    return configsWithDelimiter?.[currency] ?? configsWithDelimiter.USD;
+    return configsWithDelimiter?.[currency];
+}
+
+export function getCurrencyFormattingConfig(currency: Currency): CurrencyFormattingConfig {
+    return getCurrencyFormattingConfigWithoutFallback(currency) ?? getCurrencyFormattingConfigWithoutFallback('USD')!;
 }
 
 const countriesWithEurFallback = new Set([

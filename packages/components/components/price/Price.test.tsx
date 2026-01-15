@@ -87,4 +87,18 @@ describe('Price component', () => {
         const { container } = render(<Price currency="SGD">{-1500}</Price>);
         expect((container.firstChild as any).textContent).toBe('-SGD 15');
     });
+
+    it('should format unkown currency', () => {
+        const { container } = render(<Price currency={'XXX' as any}>{1500}</Price>);
+        expect((container.firstChild as any).textContent).toBe('XXX 15');
+
+        const { container: container2 } = render(<Price currency={'XXX' as any}>{-1500}</Price>);
+        expect((container2.firstChild as any).textContent).toBe('-XXX 15');
+
+        const { container: container3 } = render(<Price currency={'DKK' as any}>{1500}</Price>);
+        expect((container3.firstChild as any).textContent).toBe('DKK 15');
+
+        const { container: container4 } = render(<Price currency={'DKK' as any}>{-1500}</Price>);
+        expect((container4.firstChild as any).textContent).toBe('-DKK 15');
+    });
 });
