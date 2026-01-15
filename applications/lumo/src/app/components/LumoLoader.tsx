@@ -14,6 +14,8 @@ import { getDefaultSettings, getLumoSettings } from '../providers/lumoThemeStora
 import { getLumoThemeFromSettings, getThemeConfig, matchDarkTheme } from '../providers/lumoThemeUtils';
 import { LazyLottie } from './LazyLottie';
 
+const lumoLoader = () => import(/* webpackChunkName: "lumo-loader-animation" */ './Animations/loader.json');
+
 interface Props {
     documentTitle?: string;
     text?: string;
@@ -68,13 +70,7 @@ const LumoLoader = ({ documentTitle = '', text }: Props) => {
                 onDrop={preventDefaultEvent}
             >
                 <div className="absolute inset-center text-center">
-                    <LazyLottie
-                        getAnimationData={() =>
-                            import(/* webpackChunkName: "lumo-loader-animation" */ './Animations/loader.json')
-                        }
-                        loop={true}
-                        style={{ width: 180 }}
-                    />
+                    <LazyLottie getAnimationData={lumoLoader} loop={true} style={{ width: 180 }} />
                     <TextLoader className="color-weak ml-5">{textToDisplay}</TextLoader>
                 </div>
             </div>
