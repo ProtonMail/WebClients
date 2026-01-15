@@ -1,10 +1,10 @@
 import type { ReactNode } from 'react';
 
 import { type Currency, CurrencySymbols } from '@proton/payments';
-import { getCurrencyFormattingConfig } from '@proton/payments/core/currencies';
+import { getCurrencyFormattingConfigWithoutFallback } from '@proton/payments/core/currencies';
 import clsx from '@proton/utils/clsx';
 
-import { formatPriceWithoutCurrency } from './helper';
+import { defaultSymbolPosition, formatPriceWithoutCurrency } from './helper';
 
 import './Price.scss';
 
@@ -42,7 +42,8 @@ const Price = ({
     amountClassName,
     suffixNextLine = false,
 }: Props) => {
-    const { symbolPosition } = getCurrencyFormattingConfig(currency);
+    const config = getCurrencyFormattingConfigWithoutFallback(currency);
+    const symbolPosition = config?.symbolPosition ?? defaultSymbolPosition;
 
     const value = typeof amount === 'string' ? amount : formatPriceWithoutCurrency(amount, currency);
     const [integer, decimal] = `${value}`.split('.');
