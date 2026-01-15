@@ -4,8 +4,8 @@
 @use '~@proton/styles/scss/lib/easing' as *;
 
 // overrides for mobile app settings, not meant to follow taxonomy (it's temporary)
-
-.mobile-settings {
+// Increase specificity so we make sure these overrides take priority
+.mobile-settings.mobile-settings {
 	--background-weak: rgb(244 245 248 / 1);
 	--interaction-norm: rgb(92 63 217 / 1);
 	--text-weak: rgb(152 155 162 / 1);
