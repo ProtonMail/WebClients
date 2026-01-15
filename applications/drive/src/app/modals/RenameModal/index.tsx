@@ -1,5 +1,4 @@
 import { useModalTwoStatic } from '@proton/components';
-import { generateNodeUid } from '@proton/drive/index';
 
 import { withHoc } from '../../hooks/withHoc';
 import { getActionEventManager } from '../../utils/ActionEventManager/ActionEventManager';
@@ -12,13 +11,15 @@ export const RenameModal = withHoc<UseRenameModalProps, RenameModalViewProps>(us
 export const useRenameModal = () => {
     const [renameModal, showRenameModal] = useModalTwoStatic(RenameModal);
 
-    const handleShowRenameModal = ({ onSuccess, ...rest }: RenameModalInnerProps) => {
+    const handleShowRenameModal = ({ onSuccess, nodeUid }: RenameModalInnerProps) => {
         const handleOnSuccess = async (newName: string) => {
-            const uid = generateNodeUid(rest.volumeId, rest.linkId);
-            await getActionEventManager().emit({ type: ActionEventName.RENAMED_NODES, items: [{ uid, newName }] });
+            await getActionEventManager().emit({
+                type: ActionEventName.RENAMED_NODES,
+                items: [{ uid: nodeUid, newName }],
+            });
             await onSuccess?.(newName);
         };
-        void showRenameModal({ ...rest, onSuccess: handleOnSuccess });
+        void showRenameModal({ nodeUid, onSuccess: handleOnSuccess });
     };
 
     return [renameModal, handleShowRenameModal] as const;

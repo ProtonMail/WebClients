@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import type { ModalProps } from '@proton/components';
 import {
     Field,
     InputFieldTwo,
@@ -14,36 +15,41 @@ import {
     ModalTwoHeader,
     Row,
 } from '@proton/components';
-import type { ModalProps } from '@proton/components';
+import { NodeType } from '@proton/drive/index';
 import useLoading from '@proton/hooks/useLoading';
 import noop from '@proton/utils/noop';
 
-import { validateLinkNameField } from '../../store';
+import ModalContentLoader from '../../components/modals/ModalContentLoader';
+import { validateLinkNameField } from '../../utils/validation/validation';
 
 // Props need to be exported with a proper unique name, we can't call them "Props" anymore
-export type RenameModalViewProps = {
+export type RenameModalViewProps =
+    | ({
+          loaded: true;
+      } & LoadedRenameModalViewProps)
+    | { loaded: false };
+
+type LoadedRenameModalViewProps = {
     handleSubmit: (newName: string) => Promise<void>;
-    isFile: boolean;
+    nodeType: NodeType;
     onClose?: () => void;
     name: string;
     // The name (or part of it) that will need to be highlighted at
     // focus time in the modal's input.
     nameToFocus: string;
-    isDoc?: boolean;
 };
 
-export const RenameModalView = ({
+const RenameModalViewContent = ({
     handleSubmit,
-    name: originalName,
-    isFile,
+    name,
+    nodeType,
     nameToFocus,
-    // modalProps
     onClose,
     onExit,
     open,
-}: RenameModalViewProps & ModalProps) => {
+}: LoadedRenameModalViewProps & ModalProps) => {
     const [autofocusDone, setAutofocusDone] = useState(false);
-    const [tempName, setTempName] = useState(originalName);
+    const [tempName, setTempName] = useState(name);
     const [loading, withLoading] = useLoading();
 
     const selectNamePart = (e: FocusEvent<HTMLInputElement>) => {
@@ -72,6 +78,7 @@ export const RenameModalView = ({
 
     const validationError = validateLinkNameField(tempName);
 
+    const isFile = nodeType === NodeType.File || nodeType === NodeType.Photo;
     return (
         <ModalTwo
             as="form"
@@ -115,4 +122,17 @@ export const RenameModalView = ({
             </ModalTwoFooter>
         </ModalTwo>
     );
+};
+
+export const RenameModalView: React.FC<RenameModalViewProps & ModalProps> = (props) => {
+    if (!props.loaded) {
+        return (
+            <ModalTwo as="form" open={true} size="large">
+                <ModalTwoContent>
+                    <ModalContentLoader>{c('Info').t`Loading`}</ModalContentLoader>
+                </ModalTwoContent>
+            </ModalTwo>
+        );
+    }
+    return <RenameModalViewContent {...props} />;
 };

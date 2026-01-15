@@ -4,7 +4,7 @@ import type { DecryptedLink } from '../../../store';
 import { usePublicShareStore } from '../../../zustand/public/public-share.store';
 import type { ContextMenuProps } from '../../FileBrowser/interface';
 import { usePublicDetailsModal } from '../../modals/DetailsModal';
-import { useRenameModal } from '../../modals/RenameModal';
+import { useRenameModalDeprecated } from '../../modals/RenameModal';
 import { ItemContextMenu } from '../ContextMenu/ItemContextMenu';
 import {
     DeleteButton,
@@ -36,7 +36,7 @@ export function DrivePublicContextMenu({
     openPreview: (item: DecryptedLink) => void;
     openInDocs?: (linkId: string, options?: { redirect?: boolean; download?: boolean }) => void;
 }) {
-    const [publicRenameModal, showPublicRenameModal] = useRenameModal();
+    const [publicRenameModal, showPublicRenameModal] = useRenameModalDeprecated();
     const [publicDetailsModal, showPublicDetailsModal] = usePublicDetailsModal();
     const [confirmModal, showConfirmModal] = useConfirmActionModal();
 
