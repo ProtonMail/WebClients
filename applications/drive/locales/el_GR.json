@@ -1599,6 +1599,9 @@
       "Payments problem": [
         "Πρόβλημα πληρωμής"
       ],
+      "Sheets problem": [
+        "Πρόβλημα Sheets"
+      ],
       "Sign in problem": [
         "Πρόβλημα σύνδεσης"
       ],
@@ -3377,6 +3380,9 @@
       "Failed to get details, please try again later": [
         "Αποτυχία λήψης λεπτομερειών, παρακαλούμε δοκιμάστε ξανά αργότερα"
       ],
+      "Failed to load signature details, please try again later": [
+        "Αποτυχία φόρτωσης λεπτομερειών υπογραφής, παρακαλούμε δοκιμάστε ξανά αργότερα"
+      ],
       "Failed to load the STL preview": [
         "Αποτυχία φόρτωσης της προεπισκόπησης STL"
       ],
@@ -4557,12 +4563,6 @@
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
         "Αδυναμία σύνδεσης του ${ BRAND_NAME } στον λογαριασμό σας Yahoo. Παρακαλούμε βεβαιωθείτε ότι:"
       ],
-      "2-step verification is enabled in your external account.": [
-        "Η επαλήθευση σε 2 βήματα είναι ενεργοποιημένη στον εξωτερικό λογαριασμό σας."
-      ],
-      "2-step verification is enabled in your external email account.": [
-        "Η επαλήθευση σε 2 βήματα είναι ενεργοποιημένη στον εξωτερικό λογαριασμό email σας."
-      ],
       "IMAP access is enabled in your external account.": [
         "Η πρόσβαση IMAP είναι ενεργοποιημένη στον εξωτερικό λογαριασμό σας."
       ],
@@ -4571,6 +4571,12 @@
       ],
       "Too many recent requests. Please try again in a few moments.": [
         "Πάρα πολλά πρόσφατα αιτήματα. Παρακαλούμε δοκιμάστε ξανά σε λίγα λεπτά."
+      ],
+      "Two-factor authentication is enabled in your external account.": [
+        "Η ταυτοποίηση δύο παραγόντων είναι ενεργοποιημένη στον εξωτερικό λογαριασμό σας."
+      ],
+      "Two-factor authentication is enabled in your external email account.": [
+        "Η ταυτοποίηση δύο παραγόντων είναι ενεργοποιημένη στον εξωτερικό λογαριασμό email σας."
       ],
       "Use your app password if:": [
         "Χρησιμοποιήστε τον κωδικό της εφαρμογής εάν:"
@@ -4787,8 +4793,8 @@
         "${ contactsLength } επαφή",
         "${ contactsLength } επαφές"
       ],
-      "${ DOCS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
-        "Δεν είναι δυνατή η απευθείας λήψη αρχείων ${ DOCS_APP_NAME } και δε θα συμπεριληφθούν σε αυτό το στοιχείο λήψης. Μπορείτε να κατεβάσετε τα άλλα αρχεία κάνοντας κλικ στο 'Συνέχεια λήψης'."
+      "${ DOCS_APP_NAME } and ${ SHEETS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
+        "Τα αρχεία ${ DOCS_APP_NAME } και ${ SHEETS_APP_NAME } δεν μπορούν να ληφθούν απευθείας και δε θα συμπεριληφθούν σε αυτή τη λήψη. Μπορείτε να κατεβάσετε τα άλλα αρχεία κάνοντας κλικ στο \"Συνέχεια λήψης\"."
       ],
       "${ doneCount } finished": [
         "${ doneCount } τελείωσε",
@@ -5777,9 +5783,6 @@
       "On public WiFi networks": [
         "Σε δημόσια δίκτυα WiFi"
       ],
-      "One of the files or folders you want to copy already exist in selected folder.": [
-        "Ένα από τα αρχεία ή τους φακέλους που θέλετε να αντιγράψετε υπάρχει ήδη στον επιλεγμένο φάκελο."
-      ],
       "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
         "Ένας από τους κρυπτογραφημένους δίσκους σας είναι κλειδωμένος, πιθανότατα λόγω πρόσφατης επαναφοράς κωδικού πρόσβασης."
       ],
@@ -6166,6 +6169,9 @@
       "Thank you for subscribing. Secure browsing starts now.": [
         "Σας ευχαριστούμε για την εγγραφή σας. Η ασφαλής περιήγηση ξεκινά τώρα."
       ],
+      "that": [
+        "που"
+      ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Ο λογαριασμός μπορεί να έχει ένα νέο κλειδί ή μπορεί τα εξής να έχουν αλλοιωθεί: ${ items }. Ανοίξτε τα μόνο αν το εμπιστεύεστε."
       ],
@@ -6293,8 +6299,8 @@
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Για να ολοκληρώσετε την πληρωμή σας, στείλτε ${ btcAmountBold } στην παρακάτω διεύθυνση."
       ],
-      "To download the ${ DOCS_APP_NAME } files, open them in ${ DOCS_APP_NAME } and export them.": [
-        "Για να κατεβάσετε τα αρχεία ${ DOCS_APP_NAME }, ανοίξτε τα στο ${ DOCS_APP_NAME } και εξαγάγετε τα."
+      "To download these files, open them in ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME } and export them.": [
+        "Για να κατεβάσετε αυτά τα αρχεία, ανοίξτε τα στο ${ DOCS_APP_NAME } ή στο ${ SHEETS_APP_NAME } και εξαγάγετέ τα."
       ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
         "Για την ενεργοποίηση αληθινά ιδιωτικής αναζήτησης, το ${ DRIVE_APP_NAME } χρειάζεται να δεικτοδοτήσει τα αρχεία σας τοπικά."
@@ -6461,6 +6467,9 @@
       "We are experiencing technical issues. Any albums related actions are temporarily disabled.": [
         "Αντιμετωπίζουμε τεχνικά προβλήματα. Οι ενέργειες που σχετίζονται με άλμπουμ είναι προσωρινά απενεργοποιημένες."
       ],
+      "We couldn't verify ${ nameAuthor } uploaded ${ node.name }. The following may have been tampered with: file data order. Only open if you trust it.": [
+        "Δεν μπορέσαμε να επαληθεύσουμε ότι ο/η ${ nameAuthor } ανέβασε το ${ node.name }. Το ακόλουθο ενδέχεται να έχει παραποιηθεί: σειρά δεδομένων αρχείου. Ανοίξτε το μόνο αν το εμπιστεύεστε."
+      ],
       "We couldn’t process your payment.": [
         "Δεν ήταν δυνατή η επεξεργασία της πληρωμής σας."
       ],
@@ -6511,6 +6520,9 @@
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Όταν ρυθμίσετε τον έλεγχο ταυτοποίησης δύο παραγόντων, σας παρέχουμε κωδικούς ανάκτησης τους οποίους μπορείτε να χρησιμοποιήσετε για να συνδεθείτε σε περίπτωση που χάσετε την πρόσβαση στην εφαρμογή ταυτοποίησης σας."
+      ],
+      "who": [
+        "ποιος"
       ],
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
         "θα γίνει επαναφορά στην έκδοση από ${ formattedRevisionDate }. Όλες οι άλλες εκδόσεις θα εξακολουθούν να αποθηκεύονται."
@@ -8497,9 +8509,6 @@
       ],
       "Unlimited labels": [
         "Απεριόριστες ετικέτες"
-      ],
-      "Unlimited logins and notes": [
-        "Απεριόριστες συνδέσεις και σημειώσεις"
       ],
       "Unlimited logins, notes and credit cards": [
         "Απεριόριστες συνδέσεις, σημειώσεις και πιστωτικές κάρτες."
@@ -12588,6 +12597,9 @@
       "Time": [
         "Ώρα"
       ],
+      "To preview this spreadsheet, download it.": [
+        "Για να δείτε αυτό το υπολογιστικό φύλλο, κατεβάστε το."
+      ],
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "Για να κάνετε προεπισκόπηση αυτού του υπολογιστικού φύλλου, ανοίξτε το στο ${ SHEETS_APP_NAME } ή κάντε λήψη του."
       ],
@@ -12744,8 +12756,8 @@
       "Your changes are not synced yet": [
         "Οι αλλαγές σας δεν έχουν συγχρονιστεί ακόμα"
       ],
-      "Your download includes a ${ DOCS_APP_NAME } file": [
-        "Η λήψη σας περιλαμβάνει ένα αρχείο ${ DOCS_APP_NAME }"
+      "Your download includes ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME } files": [
+        "Η λήψη σας περιλαμβάνει αρχεία ${ DOCS_APP_NAME } ή ${ SHEETS_APP_NAME }."
       ],
       "Your exposed information": [
         "Οι εκτεθειμένες πληροφορίες σας"

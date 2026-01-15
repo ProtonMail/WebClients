@@ -4554,12 +4554,6 @@
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
         "${ BRAND_NAME } kan ikke koble til Yahoo-kontoen din. Sørg for at:"
       ],
-      "2-step verification is enabled in your external account.": [
-        "Totrinnsbekreftelse er aktiveret på din eksterne konto."
-      ],
-      "2-step verification is enabled in your external email account.": [
-        "Totrinnsbekreftelse er aktiveret på din eksterne e-postkonto."
-      ],
       "IMAP access is enabled in your external account.": [
         "IMAP-adgang er aktivert på din eksterne konto."
       ],
@@ -4783,9 +4777,6 @@
       "${ contactsLength } contact": [
         "${ contactsLength } kontakt",
         "${ contactsLength } kontakter"
-      ],
-      "${ DOCS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
-        "${ DOCS_APP_NAME }-filer kan ikke lastes ned direkte og vil ikke bli inkludert i denne nedlastingen. Du kan laste ned de andre filene ved å klikke på 'Fortsett å laste ned'."
       ],
       "${ doneCount } finished": [
         "${ doneCount } fullført",
@@ -5774,9 +5765,6 @@
       "On public WiFi networks": [
         "På offentlige Wi-Fi-nettverk"
       ],
-      "One of the files or folders you want to copy already exist in selected folder.": [
-        "Én av filene eller mappene du vil kopiere finnes allerede i den valgte mappen."
-      ],
       "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
         "En av de krypterte stasjonene dine er låst. Dette skyldes mest sannsynlig en nylig tilbakestilling av passord."
       ],
@@ -6289,9 +6277,6 @@
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "For å fullføre betalingen, send ${ btcAmountBold } til adressen nedenfor."
-      ],
-      "To download the ${ DOCS_APP_NAME } files, open them in ${ DOCS_APP_NAME } and export them.": [
-        "For å laste ned ${ DOCS_APP_NAME }-filene, åpne de i ${ DOCS_APP_NAME } og eksporter dem."
       ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
         "For å muliggjøre virkelig privat søk, må ${ DRIVE_APP_NAME } indeksere filene dine lokalt."
@@ -8551,9 +8536,6 @@
       ],
       "Unlimited labels": [
         "Ubegrenset antall etiketter"
-      ],
-      "Unlimited logins and notes": [
-        "Ubegrenset antall pålogginger og notater"
       ],
       "Unlimited logins, notes and credit cards": [
         "Ubegrenset antall pålogginger, notater og kredittkort"
@@ -12797,9 +12779,6 @@
       ],
       "Your changes are not synced yet": [
         "Endringene dine er ikke synkronisert enda"
-      ],
-      "Your download includes a ${ DOCS_APP_NAME } file": [
-        "Nedlastingen inneholder en ${ DOCS_APP_NAME }-fil"
       ],
       "Your exposed information": [
         "Din eksponerte informasjon"

@@ -3415,6 +3415,9 @@
       "Failed to get details, please try again later": [
         "Nepodarilo sa načítať podrobnosti, skúste to neskôr, prosím."
       ],
+      "Failed to load signature details, please try again later": [
+        "Nepodarilo sa načítať podrobnosti podpisu, skúste to neskôr"
+      ],
       "Failed to load the STL preview": [
         "Načítanie STL náhľadu zlyhalo"
       ],
@@ -3834,6 +3837,9 @@
       ],
       "We were not able to load some of your shared items": [
         "Neboli sme schopní načítať niektoré z vašich zdieľaných položiek"
+      ],
+      "We were not able to load the folder contents": [
+        "Nepodarilo sa nám načítať obsah priečinka"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Email nemôžete odoslať viac ako ${ maxContacts } príjemcovi",
@@ -4640,12 +4646,6 @@
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
         "${ BRAND_NAME } sa nemôže pripojiť k vášmu účtu Yahoo. Uistite sa, že:"
       ],
-      "2-step verification is enabled in your external account.": [
-        "Dvojstupňové overenie je zapnuté vo vašom vzdialenom účte."
-      ],
-      "2-step verification is enabled in your external email account.": [
-        "Dvojfázové overovanie je zapnuté vo vašom vzdialenom emailovom účte."
-      ],
       "IMAP access is enabled in your external account.": [
         "IMAP prístup je zapnutý vo vašom externom účte."
       ],
@@ -4654,6 +4654,12 @@
       ],
       "Too many recent requests. Please try again in a few moments.": [
         "Bolo zadaných príliš veľa požiadaviek. Skúste to za pár minút."
+      ],
+      "Two-factor authentication is enabled in your external account.": [
+        "Dvojfázové overovanie je zapnuté vo vašom externom účte."
+      ],
+      "Two-factor authentication is enabled in your external email account.": [
+        "Dvojfázové overovanie je zapnuté vo vašom externom emailovom účte."
       ],
       "Use your app password if:": [
         "Použite heslo aplikácie, ak:"
@@ -4893,9 +4899,6 @@
         "${ contactsLength } kontakty",
         "${ contactsLength } kontaktov",
         "${ contactsLength } kontaktov"
-      ],
-      "${ DOCS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
-        "Súbory v ${ DOCS_APP_NAME } nie je možné stiahnuť priamo a nebudú zahrnuté do tohto sťahovania. Ostatné súbory si môžete stiahnuť kliknutím na tlačidlo 'Pokračovať v sťahovaní'."
       ],
       "${ doneCount } finished": [
         "${ doneCount } dokončený",
@@ -5944,9 +5947,6 @@
       "On public WiFi networks": [
         "Vo verejných WiFi sieťach"
       ],
-      "One of the files or folders you want to copy already exist in selected folder.": [
-        "Jeden zo súborov alebo priečinkov, ktoré chcete skopírovať, už existuje vo vybranom priečinku."
-      ],
       "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
         "Jeden z vašich šifrovaných diskov je zamknutý, pravdepodobne kvôli nedávnemu resetu hesla."
       ],
@@ -6337,6 +6337,9 @@
       "Thank you for subscribing. Secure browsing starts now.": [
         "Ďakujeme za prihlásenie k odberu. Bezpečné surfovanie sa začína teraz."
       ],
+      "that": [
+        "že"
+      ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Účet môže mať nový kľúč alebo mohlo dôjsť k manipulácii s nasledujúcimi údajmi: ${ items }. Otvorte len v prípade, že tomu dôverujete."
       ],
@@ -6465,9 +6468,6 @@
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Na dokončenie platby pošlite ${ btcAmountBold } na nižšie uvedenú adresu."
-      ],
-      "To download the ${ DOCS_APP_NAME } files, open them in ${ DOCS_APP_NAME } and export them.": [
-        "Pre stiahnutie súborov z ${ DOCS_APP_NAME } ich musíte otvoriť v ${ DOCS_APP_NAME } a exportovať."
       ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
         "Na povolenie skutočne súkromného vyhľadávania musí ${ DRIVE_APP_NAME } indexovať vaše súbory lokálne."
@@ -6634,6 +6634,9 @@
       "We are experiencing technical issues. Any albums related actions are temporarily disabled.": [
         "Máme technické problémy. Všetky akcie súvisiace s albumami sú dočasne nedostupné."
       ],
+      "We couldn't verify ${ nameAuthor } uploaded ${ node.name }. The following may have been tampered with: file data order. Only open if you trust it.": [
+        "Nepodarilo sa nám overiť, či ${ nameAuthor } nahral ${ node.name }. Mohlo dôjsť k manipulácii s nasledujúcimi údajmi: poradie údajov v súbore. Otvorte len v prípade, ak mu dôverujete."
+      ],
       "We couldn’t process your payment.": [
         "Vašu platbu sa nám nepodarilo spracovať."
       ],
@@ -6684,6 +6687,9 @@
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Pri nastavení dvojstupňového overenia poskytujeme kódy na obnovenie, ktoré môžete použiť na prihlásenie, ak stratíte prístup k vašej overovacej aplikácii."
+      ],
+      "who": [
+        "kto"
       ],
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
         "bude obnovený na verziu z ${ formattedRevisionDate }. Všetky ostatné verzie budú uložené."
@@ -8746,9 +8752,6 @@
       ],
       "Unlimited labels": [
         "Neobmedzený počet štítkov"
-      ],
-      "Unlimited logins and notes": [
-        "Neobmedzený počet prihlásení a poznámok"
       ],
       "Unlimited logins, notes and credit cards": [
         "Neobmedzené prihlásenia, poznámky a platobné karty"
@@ -13188,9 +13191,6 @@
       ],
       "Your changes are not synced yet": [
         "Vaše zmeny zatiaľ nie sú synchronizované"
-      ],
-      "Your download includes a ${ DOCS_APP_NAME } file": [
-        "Vaše sťahovanie obsahuje ${ DOCS_APP_NAME } súbor"
       ],
       "Your exposed information": [
         "Vaše odhalené informácie"

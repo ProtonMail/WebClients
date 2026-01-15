@@ -4171,12 +4171,6 @@
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
         "${ BRAND_NAME } não consegue ligar-se à sua conta Yahoo. Certifique-se de que:"
       ],
-      "2-step verification is enabled in your external account.": [
-        "A verificação em 2 passos está ativada na sua conta externa."
-      ],
-      "2-step verification is enabled in your external email account.": [
-        "A verificação em 2 passos está ativada na sua conta de e-mail externa."
-      ],
       "IMAP access is enabled in your external account.": [
         "O acesso IMAP está ativado na sua conta externa."
       ],
@@ -4391,9 +4385,6 @@
       "${ contactsLength } contact": [
         "${ contactsLength } contacto",
         "${ contactsLength } contactos"
-      ],
-      "${ DOCS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
-        "Os ficheiros ${ DOCS_APP_NAME } não podem ser transferidos diretamente e não serão incluídos nesta transferência. Pode descarregar os outros ficheiros ao clicar em Continuar a descarregar."
       ],
       "${ doneCount } finished": [
         "${ doneCount } terminado",
@@ -5798,9 +5789,6 @@
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Para completar o seu pagamento, envie ${ btcAmountBold } para o endereço abaixo."
-      ],
-      "To download the ${ DOCS_APP_NAME } files, open them in ${ DOCS_APP_NAME } and export them.": [
-        "Para descarregar os ficheiros ${ DOCS_APP_NAME }, abra-os no ${ DOCS_APP_NAME } e exporte-os."
       ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
         "Para permitir uma pesquisa verdadeiramente privada, ${ DRIVE_APP_NAME } precisa de indexar os seus ficheiros localmente."
@@ -7882,9 +7870,6 @@
       ],
       "Unlimited labels": [
         "Etiquetas ilimitadas"
-      ],
-      "Unlimited logins and notes": [
-        "Inícios de sessão e notas ilimitados"
       ],
       "Unlimited logins, notes and credit cards": [
         "Inícios de sessão, notas e cartões de crédito ilimitados"
@@ -11674,9 +11659,6 @@
       ],
       "Your changes are not synced yet": [
         "As suas alterações ainda não foram sincronizadas"
-      ],
-      "Your download includes a ${ DOCS_APP_NAME } file": [
-        "A sua transferência inclui um ficheiro do ${ DOCS_APP_NAME }."
       ],
       "Your exposed information": [
         "As suas informações expostas"
