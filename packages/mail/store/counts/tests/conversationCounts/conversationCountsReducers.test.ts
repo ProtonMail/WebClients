@@ -10,6 +10,17 @@ import {
     markMessagesAsUnread,
 } from '../../conversationCountsReducers';
 
+const getInitialState = (value: Draft<ModelState<LabelCount[]>>['value']) => {
+    return {
+        value,
+        error: null,
+        meta: {
+            fetchedAt: 0,
+            fetchedEphemeral: false,
+        },
+    };
+};
+
 describe('conversationCountsReducers', () => {
     const labelID1 = 'label1';
     const labelID2 = 'label2';
@@ -21,25 +32,18 @@ describe('conversationCountsReducers', () => {
 
     describe('markConversationsAsReadPending', () => {
         beforeEach(() => {
-            state = {
-                value: [
-                    {
-                        LabelID: labelID1,
-                        Unread: 2,
-                        Total: 2,
-                    },
-                    {
-                        LabelID: labelID2,
-                        Unread: 1,
-                        Total: 1,
-                    },
-                ],
-                error: null,
-                meta: {
-                    fetchedAt: 0,
-                    fetchedEphemeral: false,
+            state = getInitialState([
+                {
+                    LabelID: labelID1,
+                    Unread: 2,
+                    Total: 2,
                 },
-            };
+                {
+                    LabelID: labelID2,
+                    Unread: 1,
+                    Total: 1,
+                },
+            ]);
         });
 
         it('should mark the conversation as read in all locations associated with the conversation', () => {
@@ -90,17 +94,10 @@ describe('conversationCountsReducers', () => {
 
     describe('markConversationsAsUnreadPending', () => {
         beforeEach(() => {
-            state = {
-                value: [
-                    { LabelID: labelID1, Unread: 0, Total: 2 },
-                    { LabelID: labelID2, Unread: 0, Total: 1 },
-                ],
-                error: null,
-                meta: {
-                    fetchedAt: 0,
-                    fetchedEphemeral: false,
-                },
-            };
+            state = getInitialState([
+                { LabelID: labelID1, Unread: 0, Total: 2 },
+                { LabelID: labelID2, Unread: 0, Total: 1 },
+            ]);
         });
 
         it('should mark the conversation as unread only in the current location', () => {
@@ -133,17 +130,10 @@ describe('conversationCountsReducers', () => {
 
     describe('markMessagesAsUnread', () => {
         beforeEach(() => {
-            state = {
-                value: [
-                    { LabelID: labelID1, Unread: 0, Total: 5 },
-                    { LabelID: labelID2, Unread: 0, Total: 3 },
-                ],
-                error: null,
-                meta: {
-                    fetchedAt: 0,
-                    fetchedEphemeral: false,
-                },
-            };
+            state = getInitialState([
+                { LabelID: labelID1, Unread: 0, Total: 5 },
+                { LabelID: labelID2, Unread: 0, Total: 3 },
+            ]);
         });
 
         it('should increment unread count when conversation becomes unread', () => {
@@ -225,17 +215,10 @@ describe('conversationCountsReducers', () => {
 
     describe('markMessagesAsRead', () => {
         beforeEach(() => {
-            state = {
-                value: [
-                    { LabelID: labelID1, Unread: 2, Total: 5 },
-                    { LabelID: labelID2, Unread: 1, Total: 3 },
-                ],
-                error: null,
-                meta: {
-                    fetchedAt: 0,
-                    fetchedEphemeral: false,
-                },
-            };
+            state = getInitialState([
+                { LabelID: labelID1, Unread: 2, Total: 5 },
+                { LabelID: labelID2, Unread: 1, Total: 3 },
+            ]);
         });
 
         it('should decrement unread count when all messages in conversation are read', () => {

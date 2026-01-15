@@ -2,7 +2,9 @@ import type { PayloadAction } from '@reduxjs/toolkit';
 import type { Draft } from 'immer';
 import isDeepEqual from 'lodash/isEqual';
 
+import { isCategoryLabel } from '@proton/mail/helpers/location';
 import { safeDecreaseCount, safeIncreaseCount } from '@proton/redux-utilities';
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import type { Folder, Label } from '@proton/shared/lib/interfaces';
 import type { Message, MessageMetadata } from '@proton/shared/lib/interfaces/mail/Message';
@@ -765,6 +767,7 @@ export const markConversationsAsUnreadPending = (
     action: PayloadAction<undefined, string, { arg: { elements: Element[]; labelID: string } }>
 ) => {
     const { elements, labelID } = action.meta.arg;
+    const isCurrentLabelIDCategory = isCategoryLabel(labelID);
 
     elements.forEach((selectedElement) => {
         const selectedConversation = selectedElement as Conversation;
@@ -786,6 +789,8 @@ export const markConversationsAsUnreadPending = (
             (elementState as Conversation).NumUnread = safeIncreaseCount((elementState as Conversation).NumUnread, 1);
             (elementState as Conversation).Labels?.forEach((label) => {
                 if (label.ID === labelID) {
+                    label.ContextNumUnread = safeIncreaseCount(label.ContextNumUnread, 1);
+                } else if (isCurrentLabelIDCategory && label.ID === MAILBOX_LABEL_IDS.INBOX) {
                     label.ContextNumUnread = safeIncreaseCount(label.ContextNumUnread, 1);
                 }
             });
