@@ -159,14 +159,14 @@ function getAuthorshipDetails(node: MaybeNode): string[] {
         const claimedKeyAuthor = nodeEntity.keyAuthor.error.claimedAuthor || c('Title').t`an anonymous user`;
         details.push(
             c('Title')
-                .t`The verification of the encryption keys' signature by the original creator (${claimedKeyAuthor}) who created the node failed. The reason is: ${nodeEntity.keyAuthor.error.error}`
+                .t`We weren’t able to confirm that the node was created by ${claimedKeyAuthor}. The reason is: ${nodeEntity.keyAuthor.error.error}`
         );
     }
     if (!nodeEntity.nameAuthor.ok) {
         const claimedNameAuthor = nodeEntity.nameAuthor.error.claimedAuthor || c('Title').t`an anonymous user`;
         details.push(
             c('Title')
-                .t`The verification of the name's signature by author (${claimedNameAuthor}) who set the name the last time failed. The reason is: ${nodeEntity.nameAuthor.error.error}`
+                .t`We weren’t able to confirm that the name was created or modified by ${claimedNameAuthor}. The reason is: ${nodeEntity.nameAuthor.error.error}`
         );
     }
     if (activeRevision?.contentAuthor.ok === false) {
@@ -174,8 +174,12 @@ function getAuthorshipDetails(node: MaybeNode): string[] {
             activeRevision.contentAuthor.error.claimedAuthor || c('Title').t`an anonymous user`;
         details.push(
             c('Title')
-                .t`The verification of the file's content signature by the uploader (${claimedContentAuthor}) who uploaded the last revision failed. The reason is: ${activeRevision.contentAuthor.error.error}`
+                .t`We weren’t able to confirm that the file content was uploaded by ${claimedContentAuthor}. The reason is: ${activeRevision.contentAuthor.error.error}`
         );
+    }
+
+    if (details.length > 0) {
+        details.push(c('Title').t`This is likely due to the account or address having been deleted.`);
     }
 
     return details;

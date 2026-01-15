@@ -116,7 +116,7 @@ describe('getAuthorshipStatus', () => {
         expect(result.ok).toBe(false);
         expect(result.message).toContain('We couldn’t verify that');
         expect(result.message).toContain(expectedMessage);
-        expect(result.details).toHaveLength(expectedDetails.length);
+        expect(result.details).toHaveLength(expectedDetails.length + 1); // +1 for the general "this is likely ..."
         for (let i = 0; i < expectedDetails.length; i++) {
             expect(result.details[i]).toContain(expectedDetails[i]);
         }
