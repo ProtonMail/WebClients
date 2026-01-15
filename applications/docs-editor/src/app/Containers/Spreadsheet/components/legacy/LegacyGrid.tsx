@@ -29,12 +29,14 @@ const exposeCanvasGrid = (
           const userEnteredValue = setters.getUserEnteredValue(activeSheetId, rowIndex, columnIndex)
           const effectiveValue = setters.getEffectiveValue(activeSheetId, rowIndex, columnIndex)
           const formattedValue = setters.getFormattedValue(activeSheetId, rowIndex, columnIndex)
+          const effectiveFormat = setters.getEffectiveFormat(activeSheetId, rowIndex, columnIndex)
 
           // Return a proper CellData object structure
           const result = {
             userEnteredValue,
             effectiveValue,
             formattedValue,
+            effectiveFormat,
           }
           return result
         } catch (e) {
