@@ -41,12 +41,6 @@ import { initializeConsoleOverride } from './util/logging';
 import { type UserAndAddressKeys, initializeLumoBackground, initializeLumoCritical } from './util/lumoBootstrap';
 import { lumoTelemetryConfig } from './util/telemetryConfig';
 
-const getAppContainer = () =>
-    // @ts-ignore
-    import(/* webpackChunkName: "RouterContainer" */ './entrypoint/auth/RouterContainer').then(
-        (result) => result.default
-    );
-
 export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; signal?: AbortSignal }) => {
     // Check if there are any existing sessions on lumo.proton.me, if not redirect to lumo.proton.me/guest where user then has the option to signin
     const accountSessions = readAccountSessions();
@@ -67,7 +61,6 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
     initSafariFontFixClassnames();
 
     const run = async () => {
-        const appContainerPromise = getAppContainer();
         const sessionResult = await bootstrap.loadSession({
             authentication,
             api,
@@ -178,7 +171,7 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
         // We need to await the critical operations (for waitlist to work correctly) and dispatch background operations
         await loadLumo();
 
-        const [MainContainer, userData] = await Promise.all([appContainerPromise, userPromise]);
+        const userData = await userPromise;
 
         // Needs everything to be loaded.
         await bootstrap.postLoad({ appName, authentication, ...userData, history });
@@ -202,7 +195,6 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
             unleashClient,
             history,
             store,
-            MainContainer,
         };
     };
 

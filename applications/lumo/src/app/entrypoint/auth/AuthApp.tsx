@@ -1,5 +1,4 @@
-import type { FunctionComponent } from 'react';
-import { useState } from 'react';
+import { lazy, useState } from 'react';
 import { Router } from 'react-router-dom';
 
 import {
@@ -32,6 +31,17 @@ import { LumoThemeProvider } from '../../providers/LumoThemeProvider';
 import type { LumoStore } from '../../redux/store';
 import { extraThunkArguments } from '../../redux/thunk';
 
+const RouterContainerLazy = lazy(
+    () =>
+        import(
+            /* webpackChunkName: "RouterContainer" */
+            /* webpackPrefetch: true */
+            /* webpackPreload: true */
+            /* webpackFetchPriority: "high" */
+            './RouterContainer'
+        )
+);
+
 setTtagLocales(locales);
 newVersionUpdater(config);
 
@@ -40,7 +50,6 @@ metrics.setVersionHeaders(getClientID(config.APP_NAME), config.APP_VERSION);
 const defaultState: {
     initialUser?: UserModel;
     store?: LumoStore;
-    MainContainer?: FunctionComponent;
     error?: { message: string } | undefined;
     showDrawerSidebar?: boolean;
 } = {
@@ -63,11 +72,10 @@ const AuthApp = () => {
                     return;
                 }
 
-                const { user, userSettings, MainContainer, store } = result;
+                const { user, userSettings, store } = result;
 
                 setState({
                     store,
-                    MainContainer,
                     showDrawerSidebar: userSettings.HideSidePanel === DRAWER_VISIBILITY.SHOW,
                     initialUser: user,
                 });
@@ -89,7 +97,7 @@ const AuthApp = () => {
                 }
 
                 const loader = <LumoLoader />;
-                if (!state.MainContainer || !state.store || !state.initialUser) {
+                if (!state.store || !state.initialUser) {
                     return loader;
                 }
 
@@ -102,12 +110,9 @@ const AuthApp = () => {
                                         <Router history={extraThunkArguments.history}>
                                             <EventManagerProvider eventManager={extraThunkArguments.eventManager}>
                                                 <ErrorBoundary big component={<StandardErrorPage big />}>
-                                                    <StandardPrivateApp
-                                                        // @ts-ignore
-                                                        loader={loader}
-                                                    >
+                                                    <StandardPrivateApp>
                                                         <LumoThemeProvider>
-                                                            <state.MainContainer />
+                                                            <RouterContainerLazy />
                                                         </LumoThemeProvider>
                                                     </StandardPrivateApp>
                                                 </ErrorBoundary>
