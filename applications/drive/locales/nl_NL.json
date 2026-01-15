@@ -1599,6 +1599,9 @@
       "Payments problem": [
         "Probleem met betalingen"
       ],
+      "Sheets problem": [
+        "Werkblad probleem"
+      ],
       "Sign in problem": [
         "Inlogprobleem"
       ],
@@ -1675,7 +1678,7 @@
         "${ maxSpaceTB } opslagruimte"
       ],
       "${ numberOfUsers } user": [
-        "Tot ${ numberOfUsers } gebruiker",
+        "${ numberOfUsers } gebruiker",
         "Tot ${ numberOfUsers } gebruikers"
       ],
       "${ planMaxSpace } email storage": [
@@ -3377,6 +3380,9 @@
       "Failed to get details, please try again later": [
         "Het ophalen van gegevens is mislukt. Probeer het later opnieuw"
       ],
+      "Failed to load signature details, please try again later": [
+        "Kon details van de handtekening worden geladen, probeer het later opnieuw"
+      ],
       "Failed to load the STL preview": [
         "Fout bij het laden van de STL-preview"
       ],
@@ -4557,12 +4563,6 @@
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
         "${ BRAND_NAME } kan geen verbinding maken met uw Yahoo account. Zorg ervoor dat:"
       ],
-      "2-step verification is enabled in your external account.": [
-        "2-staps-verificatie is ingeschakeld in uw externe account."
-      ],
-      "2-step verification is enabled in your external email account.": [
-        "Tweestapsverificatie is ingeschakeld in uw externe e-mailaccount."
-      ],
       "IMAP access is enabled in your external account.": [
         "IMAP-toegang is ingeschakeld in uw externe account."
       ],
@@ -4571,6 +4571,12 @@
       ],
       "Too many recent requests. Please try again in a few moments.": [
         "Te veel recente pogingen. Probeer over enkele ogenblikken opnieuw."
+      ],
+      "Two-factor authentication is enabled in your external account.": [
+        "Tweestapsverificatie is ingeschakeld in uw externe account."
+      ],
+      "Two-factor authentication is enabled in your external email account.": [
+        "Tweestapsverificatie is ingeschakeld in uw externe e-mailaccount."
       ],
       "Use your app password if:": [
         "Gebruik uw app-wachtwoord als:"
@@ -4787,8 +4793,8 @@
         "${ contactsLength } contact",
         "${ contactsLength } contacten"
       ],
-      "${ DOCS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
-        "${ DOCS_APP_NAME } bestanden kunnen niet direct worden gedownload en zullen niet worden opgenomen in deze download. U kunt de andere bestanden downloaden door te klikken op 'Doorgaan met downloaden'."
+      "${ DOCS_APP_NAME } and ${ SHEETS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
+        "${ DOCS_APP_NAME } en ${ SHEETS_APP_NAME } bestanden kunnen niet direct worden gedownload en zullen niet worden opgenomen in deze download. U kunt de andere bestanden downloaden door te klikken op 'Doorgaan met downloaden'."
       ],
       "${ doneCount } finished": [
         "${ doneCount } voltooid",
@@ -5777,9 +5783,6 @@
       "On public WiFi networks": [
         "Op openbare wifinetwerken"
       ],
-      "One of the files or folders you want to copy already exist in selected folder.": [
-        "Eén van de bestanden of mappen die u wilt kopiëren bestaat al in de geselecteerde map."
-      ],
       "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
         "Eén van uw versleutelde drives is vergrendeld. Dit is waarschijnlijk het gevolg van een recente wachtwoordwijziging."
       ],
@@ -6166,6 +6169,9 @@
       "Thank you for subscribing. Secure browsing starts now.": [
         "Bedankt voor uw abonnement. Veilig browsen begint nu."
       ],
+      "that": [
+        "dat"
+      ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Het account heeft mogelijk een nieuwe sleutel of het volgende werd mogelijk onrechtmatig bewerkt: ${ items }. Open alleen als u het vertrouwt."
       ],
@@ -6293,8 +6299,8 @@
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Stuur ${ btcAmountBold } naar het onderstaande adres om uw betaling te voltooien."
       ],
-      "To download the ${ DOCS_APP_NAME } files, open them in ${ DOCS_APP_NAME } and export them.": [
-        "Om de ${ DOCS_APP_NAME } bestanden te downloaden, open ze in ${ DOCS_APP_NAME } en exporteer ze."
+      "To download these files, open them in ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME } and export them.": [
+        "Om deze bestanden te downloaden, open ze in ${ DOCS_APP_NAME } of ${ SHEETS_APP_NAME } en exporteer ze."
       ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
         "Om echt privé zoeken in te schakelen moet ${ DRIVE_APP_NAME } uw bestanden lokaal indexeren."
@@ -6461,6 +6467,9 @@
       "We are experiencing technical issues. Any albums related actions are temporarily disabled.": [
         "We ondervinden technische problemen. Alle albumgerelateerde acties zijn tijdelijk uitgeschakeld."
       ],
+      "We couldn't verify ${ nameAuthor } uploaded ${ node.name }. The following may have been tampered with: file data order. Only open if you trust it.": [
+        "We konden niet verifiëren dat ${ nameAuthor } ${ node.name } heeft geüpload. Het volgende kan onrechtmatig zijn bewerkt: volgorde van de bestandsgegevens. Open alleen als u het vertrouwt."
+      ],
       "We couldn’t process your payment.": [
         "We konden uw betaling niet verwerken."
       ],
@@ -6511,6 +6520,9 @@
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Als u tweestapsverificatie instelt, geven we u herstelcodes die u kunt gebruiken om in te loggen als u toegang verliest tot uw authenticatie app."
+      ],
+      "who": [
+        "wie"
       ],
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
         "wordt hersteld naar de versie van ${ formattedRevisionDate }. Alle andere versies blijven bewaard."
@@ -8497,9 +8509,6 @@
       ],
       "Unlimited labels": [
         "Onbeperkt aantal labels"
-      ],
-      "Unlimited logins and notes": [
-        "Onbeperkt aantal logins en notities"
       ],
       "Unlimited logins, notes and credit cards": [
         "Onbeperkt aantal logins, notities en creditcards"
@@ -12588,6 +12597,9 @@
       "Time": [
         "Tijd"
       ],
+      "To preview this spreadsheet, download it.": [
+        "Om een voorbeeld van dit spreadsheet te bekijken, download het."
+      ],
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "Om een voorbeeld van dit rekenblad te bekijken, opent u het in ${ SHEETS_APP_NAME } of downloadt u het."
       ],
@@ -12744,8 +12756,8 @@
       "Your changes are not synced yet": [
         "Uw wijzigingen zijn nog niet gesynchroniseerd"
       ],
-      "Your download includes a ${ DOCS_APP_NAME } file": [
-        "Uw download bevat een ${ DOCS_APP_NAME }-bestand"
+      "Your download includes ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME } files": [
+        "Uw download bevat bestanden van ${ DOCS_APP_NAME } of ${ SHEETS_APP_NAME }"
       ],
       "Your exposed information": [
         "Uw blootgestelde informatie"

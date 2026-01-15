@@ -1599,6 +1599,9 @@
       "Payments problem": [
         "Problema com pagamento"
       ],
+      "Sheets problem": [
+        "Problema no Sheets"
+      ],
       "Sign in problem": [
         "Problema no login"
       ],
@@ -3377,6 +3380,9 @@
       "Failed to get details, please try again later": [
         "Falha ao obter detalhes, tente novamente mais tarde"
       ],
+      "Failed to load signature details, please try again later": [
+        "Falha ao carregar detalhes da assinatura, tente novamente mais tarde"
+      ],
       "Failed to load the STL preview": [
         "Erro ao carregar a pré-visualização STL"
       ],
@@ -4557,12 +4563,6 @@
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
         "A ${ BRAND_NAME } não pode se conectar à sua conta do Yahoo. Certifique-se de que:"
       ],
-      "2-step verification is enabled in your external account.": [
-        "A verificação em duas etapas está ativada em sua conta externa."
-      ],
-      "2-step verification is enabled in your external email account.": [
-        "A verificação em duas etapas está ativada em sua conta externa."
-      ],
       "IMAP access is enabled in your external account.": [
         "Acesso IMAP está ativado na sua conta do Yahoo."
       ],
@@ -4786,9 +4786,6 @@
       "${ contactsLength } contact": [
         "${ contactsLength } contato",
         "${ contactsLength } contatos"
-      ],
-      "${ DOCS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
-        "Os arquivos do ${ DOCS_APP_NAME } não podem ser baixados diretamente e não serão incluídos neste download. Você pode baixar os outros arquivos clicando em 'Continuar baixando'."
       ],
       "${ doneCount } finished": [
         "${ doneCount } concluído",
@@ -5777,9 +5774,6 @@
       "On public WiFi networks": [
         "Em redes WiFi públicas"
       ],
-      "One of the files or folders you want to copy already exist in selected folder.": [
-        "Um dos arquivos ou pastas que você quer copiar já existe na pasta selecionada."
-      ],
       "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
         "Uma de suas unidades criptografadas está bloqueada. Isso provavelmente se deve a uma redefinição de senha recente."
       ],
@@ -6166,6 +6160,9 @@
       "Thank you for subscribing. Secure browsing starts now.": [
         "Obrigado por se inscrever. A navegação segura começa agora."
       ],
+      "that": [
+        "que"
+      ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "A conta pode ter uma chave nova, ou os seguintes podem ter sido adulterados: ${ items }. Abra apenas se você confiar."
       ],
@@ -6292,9 +6289,6 @@
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Para completar o seu pagamento, envie ${ btcAmountBold } para o endereço abaixo."
-      ],
-      "To download the ${ DOCS_APP_NAME } files, open them in ${ DOCS_APP_NAME } and export them.": [
-        "Para baixar os arquivos do ${ DOCS_APP_NAME }, abra-os no ${ DOCS_APP_NAME } e exporte-os."
       ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
         "Para ativar a pesquisa verdadeiramente privada, o ${ DRIVE_APP_NAME } precisa indexar seus arquivos localmente."
@@ -6511,6 +6505,9 @@
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Quando você configura a autenticação de dois fatores, fornecemos códigos de recuperação que você pode usar para fazer login se perder o acesso ao seu aplicativo de autenticação"
+      ],
+      "who": [
+        "quem"
       ],
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
         "será restaurado para a versão de ${ formattedRevisionDate }. Todas as outras versões serão salvas."
@@ -8551,9 +8548,6 @@
       ],
       "Unlimited labels": [
         "Marcadores ilimitados"
-      ],
-      "Unlimited logins and notes": [
-        "Notas e inícios de sessão ilimitados"
       ],
       "Unlimited logins, notes and credit cards": [
         "Inícios de sessão ilimitados, notas e cartões de crédito"
@@ -12803,9 +12797,6 @@
       ],
       "Your changes are not synced yet": [
         "Sua alteração não foram sintonizadas ainda"
-      ],
-      "Your download includes a ${ DOCS_APP_NAME } file": [
-        "O download inclui um arquivo do ${ DOCS_APP_NAME }."
       ],
       "Your exposed information": [
         "Sua informação exposta"

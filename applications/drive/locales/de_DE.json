@@ -1593,6 +1593,9 @@
       "Payments problem": [
         "Zahlungsproblem"
       ],
+      "Sheets problem": [
+        "Tabellenblatt-Problem"
+      ],
       "Sign in problem": [
         "Problem bei der Anmeldung"
       ],
@@ -3371,6 +3374,9 @@
       "Failed to get details, please try again later": [
         "Fehler beim Abrufen der Details, bitte versuche es später erneut"
       ],
+      "Failed to load signature details, please try again later": [
+        "Signaturdetails konnten nicht geladen werden. Bitte versuche es später erneut."
+      ],
       "Failed to load the STL preview": [
         "Das Laden der STL-Vorschau ist fehlgeschlagen"
       ],
@@ -4551,12 +4557,6 @@
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
         "${ BRAND_NAME } kann keine Verbindung zu deinem Yahoo-Konto herstellen. Bitte stelle sicher, dass:"
       ],
-      "2-step verification is enabled in your external account.": [
-        "Die 2-Schritt-Verifizierung in deinem externen Konto aktiviert ist."
-      ],
-      "2-step verification is enabled in your external email account.": [
-        "Die 2-Schritt-Verifizierung in deinem externen Konto aktiviert ist."
-      ],
       "IMAP access is enabled in your external account.": [
         "Der IMAP-Zugang in deinem externen Konto aktiviert ist."
       ],
@@ -4565,6 +4565,12 @@
       ],
       "Too many recent requests. Please try again in a few moments.": [
         "Zu viele kürzliche Anfragen. Bitte versuche es in wenigen Augenblicken erneut."
+      ],
+      "Two-factor authentication is enabled in your external account.": [
+        "Zwei-Faktor-Authentifizierung ist in deinem externen Konto aktiviert."
+      ],
+      "Two-factor authentication is enabled in your external email account.": [
+        "Zwei-Faktor-Authentifizierung ist in deinem externen E-Mail-Konto aktiviert."
       ],
       "Use your app password if:": [
         "Verwende dein App-Passwort, wenn:"
@@ -4781,8 +4787,8 @@
         "${ contactsLength } Kontakt",
         "${ contactsLength } Kontakte"
       ],
-      "${ DOCS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
-        "${ DOCS_APP_NAME }-Dateien können nicht direkt heruntergeladen werden und werden nicht in diesem Download beinhaltet. Du kannst die anderen Dateien herunterladen, indem du „Herunterladen fortsetzten“ drückst."
+      "${ DOCS_APP_NAME } and ${ SHEETS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
+        "${ DOCS_APP_NAME }- und ${ SHEETS_APP_NAME }-Dateien können nicht direkt heruntergeladen werden und werden nicht in diesem Download enthalten sein. Du kannst die anderen Dateien herunterladen, indem du auf „Download fortsetzen“ klickst."
       ],
       "${ doneCount } finished": [
         "${ doneCount } beendet",
@@ -5771,9 +5777,6 @@
       "On public WiFi networks": [
         "In öffentlichen WLAN-Netzwerken"
       ],
-      "One of the files or folders you want to copy already exist in selected folder.": [
-        "Eine der Dateien oder Ordner, die du kopieren möchtest, existiert bereits im ausgewählten Ordner."
-      ],
       "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
         "Eines deiner verschlüsselten Laufwerke ist gesperrt. Dies ist höchstwahrscheinlich auf ein kürzlich geändertes Passwort zurückzuführen."
       ],
@@ -6160,6 +6163,9 @@
       "Thank you for subscribing. Secure browsing starts now.": [
         "Danke für deine Anmeldung. Sicheres Surfen beginnt jetzt."
       ],
+      "that": [
+        "Das"
+      ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Das Konto hat möglicherweise einen neuen Schlüssel, oder die folgenden Daten wurden manipuliert: ${ items }. Öffne sie nur, wenn du sie für vertrauenswürdig hältst."
       ],
@@ -6287,8 +6293,8 @@
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Um die Zahlung abzuschließen, sende bitte ${ btcAmountBold } an die untenstehende Adresse."
       ],
-      "To download the ${ DOCS_APP_NAME } files, open them in ${ DOCS_APP_NAME } and export them.": [
-        "Um ${ DOCS_APP_NAME }-Dateien herunterladen zu können, öffne sie in ${ DOCS_APP_NAME } und exportiere sie."
+      "To download these files, open them in ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME } and export them.": [
+        "Um diese Dateien herunterzuladen, öffne sie in ${ DOCS_APP_NAME } oder ${ SHEETS_APP_NAME } und exportiere sie."
       ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
         "Um eine wirklich private Suche zu ermöglichen, muss ${ DRIVE_APP_NAME } deine Dateien lokal indexieren."
@@ -6455,6 +6461,9 @@
       "We are experiencing technical issues. Any albums related actions are temporarily disabled.": [
         "Wir haben technische Probleme. Alle Aktionen im Zusammenhang mit Alben sind temporär deaktiviert."
       ],
+      "We couldn't verify ${ nameAuthor } uploaded ${ node.name }. The following may have been tampered with: file data order. Only open if you trust it.": [
+        "Wir konnten nicht verifizieren, dass ${ nameAuthor } ${ node.name } hochgeladen hat. Möglicherweise wurden folgende Daten manipuliert: Reihenfolge der Dateidaten. Öffne die Datei nur, wenn du ihr vertraust."
+      ],
       "We couldn’t process your payment.": [
         "Wir konnten deine Zahlung nicht abschließen."
       ],
@@ -6505,6 +6514,9 @@
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Beim Einrichten der Zwei-Faktor-Authentifizierung stellen wir dir Wiederherstellungscodes zur Verfügung, mit denen du dich anmelden kannst, wenn du den Zugriff auf deine Authenticator App verlierst."
+      ],
+      "who": [
+        "Wer"
       ],
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
         "wird auf die Version vom ${ formattedRevisionDate } wiederhergestellt. Alle anderen Versionen bleiben erhalten."
@@ -8548,9 +8560,6 @@
       ],
       "Unlimited labels": [
         "Unbegrenzte Anzahl von Kategorien"
-      ],
-      "Unlimited logins and notes": [
-        "Unbegrenzte Logins und Notizen"
       ],
       "Unlimited logins, notes and credit cards": [
         "Unbegrenzte Logins, Notizen und Kreditkarten"
@@ -12639,6 +12648,9 @@
       "Time": [
         "Zeit"
       ],
+      "To preview this spreadsheet, download it.": [
+        "Um die Vorschau dieser Tabelle anzuzeigen, lade sie herunter."
+      ],
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "Um diese Tabelle in der Vorschau anzuzeigen, öffne sie in ${ SHEETS_APP_NAME } oder lade sie herunter."
       ],
@@ -12795,8 +12807,8 @@
       "Your changes are not synced yet": [
         "Deine Änderungen wurden noch nicht synchronisiert"
       ],
-      "Your download includes a ${ DOCS_APP_NAME } file": [
-        "Dein Download beinhaltet eine ${ DOCS_APP_NAME }-Datei."
+      "Your download includes ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME } files": [
+        "Dein Download beinhaltet ${ DOCS_APP_NAME } oder ${ SHEETS_APP_NAME } Dateien."
       ],
       "Your exposed information": [
         "Deine exponierten Informationen"

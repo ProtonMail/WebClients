@@ -4519,12 +4519,6 @@
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
         "${ BRAND_NAME }-ს Yahoo-ის თქვენს ანგარიშთან დაკავშირება არ შეუძლია. დარწმუნდით, რომ:"
       ],
-      "2-step verification is enabled in your external account.": [
-        "თქვენს გარე ანგარიშში 2FA ჩართულია."
-      ],
-      "2-step verification is enabled in your external email account.": [
-        "ელფოსტის თქვენს გარე ანგარიშში 2FA ჩართულია."
-      ],
       "IMAP access is enabled in your external account.": [
         "თქვენს გარე ანგარიშს ჩართული აქვს IMAP წვდომა."
       ],
@@ -5700,9 +5694,6 @@
       "On public WiFi networks": [
         "ან საჯარო WiFi ქსელები"
       ],
-      "One of the files or folders you want to copy already exist in selected folder.": [
-        "ერთ-ერთი ფაილი ან საქაღალდე, რომლის დაკოპირებასაც ცდილობთ, სამიზნე საქაღალდეში უკვე არსებობს."
-      ],
       "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
         "ერთ-ერთი თქვენი დაშიფრული დისკი დაბლოკილია. ალბათ, ახლახანს პაროლი შეცვალეთ."
       ],
@@ -6184,9 +6175,6 @@
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "გადახდის დასასრულებლად, გამოაგზავნეთ ${ btcAmountBold } ქვემორე მისამართზე."
-      ],
-      "To download the ${ DOCS_APP_NAME } files, open them in ${ DOCS_APP_NAME } and export them.": [
-        "${ DOCS_APP_NAME }-ის ფაილების გადმოსაწერად გახსენით ისინი ${ DOCS_APP_NAME }-ში და მოახდინეთ მათი გატანა."
       ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
         "ნამდვილად პირადი ძებნის ჩასართავად ${ DRIVE_APP_NAME }-ს თქვენი ფაილების ლოკალური ინდექსირება სჭირდება."
@@ -8323,9 +8311,6 @@
       ],
       "Unlimited labels": [
         "ჭდეების ულიმიტო რაოდენობა"
-      ],
-      "Unlimited logins and notes": [
-        "მომხმარებლების და შენიშვნების უსაზღვრო რაოდენობა"
       ],
       "Unlimited logins, notes and credit cards": [
         "შეუზღუდავი შესვლის დეტალები, შენიშვნები და საკრედიტო ბარათები"
@@ -12486,9 +12471,6 @@
       ],
       "Your changes are not synced yet": [
         "თქვენი ცვლილებები ჯერ სინქრონიზებული არაა"
-      ],
-      "Your download includes a ${ DOCS_APP_NAME } file": [
-        "თქვენი გადმოწერა ${ DOCS_APP_NAME } ფაილს შეიცავს"
       ],
       "Your exposed information": [
         "თქვენი გაჟონილი ინფორმაცია"

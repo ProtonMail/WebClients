@@ -1599,6 +1599,9 @@
       "Payments problem": [
         "Problem med betalning"
       ],
+      "Sheets problem": [
+        "Problem med kalkylblad"
+      ],
       "Sign in problem": [
         "Problem med inloggning"
       ],
@@ -3368,6 +3371,9 @@
       "Failed to get details, please try again later": [
         "Misslyckades att hämta detaljer, försök igen senare"
       ],
+      "Failed to load signature details, please try again later": [
+        "Misslyckades att ladda signaturdetaljer, försök igen senare"
+      ],
       "Failed to load the STL preview": [
         "Misslyckades att ladda STL-förhandsgranskningen"
       ],
@@ -3774,6 +3780,9 @@
       ],
       "We were not able to load some of your shared items": [
         "Vi kunde inte ladda några av dina delade objekt"
+      ],
+      "We were not able to load the folder contents": [
+        "Vi kunde inte ladda mappens innehåll"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Du kan inte skicka ett e-postmeddelande till mer än ${ maxContacts } mottagare",
@@ -4536,12 +4545,6 @@
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
         "${ BRAND_NAME } kan inte ansluta till ditt Yahoo-konto. Se till att:"
       ],
-      "2-step verification is enabled in your external account.": [
-        "Tvåstegsverifiering är aktiverat i ditt externa konto."
-      ],
-      "2-step verification is enabled in your external email account.": [
-        "Tvåstegsverifiering är aktiverat i ditt externa e-postkonto."
-      ],
       "IMAP access is enabled in your external account.": [
         "IMAP-åtkomst är aktiverat i ditt externa konto."
       ],
@@ -4766,8 +4769,8 @@
         "${ contactsLength } kontakt",
         "${ contactsLength } kontakter"
       ],
-      "${ DOCS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
-        "${ DOCS_APP_NAME } kan inte laddas ner direkt och kommer inte att inkluderas i denna nerladdning. Du kan ladda ner de andra filerna genom att klicka på 'Fortsätt nerladdning'."
+      "${ DOCS_APP_NAME } and ${ SHEETS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
+        "${ DOCS_APP_NAME } och ${ SHEETS_APP_NAME }-filer kan inte laddas ner direkt och kommer inte att inkluderas i denna nedladdning. Du kan ladda ner de andra filerna genom att klicka på 'Fortsätt nedladdning'."
       ],
       "${ doneCount } finished": [
         "${ doneCount } slutförd",
@@ -5750,9 +5753,6 @@
       "On public WiFi networks": [
         "På offentliga WiFi-nätverk"
       ],
-      "One of the files or folders you want to copy already exist in selected folder.": [
-        "En av filerna eller mapparna du vill kopiera finns redan i vald mapp."
-      ],
       "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
         "En av dina krypterade diskar är låst. Det mest sannolika är att det beror på att lösenordet nyligen återställts."
       ],
@@ -6266,9 +6266,6 @@
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "För att slutföra din betalning, skicka ${ btcAmountBold } till adressen nedan."
       ],
-      "To download the ${ DOCS_APP_NAME } files, open them in ${ DOCS_APP_NAME } and export them.": [
-        "För att ladda ner ${ DOCS_APP_NAME }-filerna, öppna dem i ${ DOCS_APP_NAME } och exportera dem."
-      ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
         "För att aktivera verkligt privat sökning måste ${ DRIVE_APP_NAME } indexera dina filer lokalt."
       ],
@@ -6484,6 +6481,9 @@
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "När du ställer in tvåfaktorsautentisering tillhandahåller vi återställningskoder som du kan använda för att logga in om du förlorar åtkomsten till din autentiseringsapp."
+      ],
+      "who": [
+        "vem"
       ],
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
         "kommer att återställas till versionen från ${ formattedRevisionDate }. Alla andra versioner kommer fortfarande att sparas."
@@ -8496,9 +8496,6 @@
       ],
       "Unlimited labels": [
         "Obegränsade etiketter"
-      ],
-      "Unlimited logins and notes": [
-        "Obegränsat antal inloggningar och anteckningar"
       ],
       "Unlimited logins, notes and credit cards": [
         "Obegränsat antal inloggningar, anteckningar och kreditkort"
@@ -12130,6 +12127,9 @@
         "Hittade ${ searchView.numberOfResults } resultat",
         "Hittade ${ searchView.numberOfResults } resultat"
       ],
+      "Get ${ DRIVE_SHORT_APP_NAME } on your phone": [
+        "Skaffa ${ DRIVE_SHORT_APP_NAME } på din telefon"
+      ],
       "Get **${ referralInfo.uiData.refereeRewardAmount }** in credits with ${ planTitle }": [
         "Få **${ referralInfo.uiData.refereeRewardAmount }** i krediter med ${ planTitle }"
       ],
@@ -12726,8 +12726,8 @@
       "Your changes are not synced yet": [
         "Dina ändringar är inte synkroniserade än"
       ],
-      "Your download includes a ${ DOCS_APP_NAME } file": [
-        "Din nedladdning inkluderar en ${ DOCS_APP_NAME }-fil"
+      "Your download includes ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME } files": [
+        "Din nedladdning inkluderar ${ DOCS_APP_NAME } eller ${ SHEETS_APP_NAME }-filer"
       ],
       "Your exposed information": [
         "Din exponerade information"

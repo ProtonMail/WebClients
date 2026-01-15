@@ -4085,12 +4085,6 @@
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
         "${ BRAND_NAME } 無法連接您的 Yahoo! 帳號。請確認以下事項:"
       ],
-      "2-step verification is enabled in your external account.": [
-        "您的外部帳號已啟用兩步驟驗證。"
-      ],
-      "2-step verification is enabled in your external email account.": [
-        "您的外部電郵帳號已啟用兩步驟驗證."
-      ],
       "IMAP access is enabled in your external account.": [
         "您的外部帳號已啟用 IMAP 存取。"
       ],
@@ -4293,9 +4287,6 @@
       ],
       "${ contactsLength } contact": [
         "${ contactsLength } 位聯絡人"
-      ],
-      "${ DOCS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
-        "${ DOCS_APP_NAME }檔案無法直接下載也不會包含於此次下載。您可透過點擊'繼續下載'下載其他檔案。"
       ],
       "${ doneCount } finished": [
         "${ doneCount } 項已完成"
@@ -5589,9 +5580,6 @@
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "欲完成您的繳款，請傳送 ${ btcAmountBold } 至以下位址。"
-      ],
-      "To download the ${ DOCS_APP_NAME } files, open them in ${ DOCS_APP_NAME } and export them.": [
-        "於${ DOCS_APP_NAME }開啟它們及匯出以下載${ DOCS_APP_NAME }檔案。"
       ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
         "${ DRIVE_APP_NAME } 需在您的機器上創建索引，以啟用真正的私密搜尋。"
@@ -7574,9 +7562,6 @@
       ],
       "Unlimited labels": [
         "無限制標籤"
-      ],
-      "Unlimited logins and notes": [
-        "無限登入資訊與筆記"
       ],
       "Unlimited logins, notes and credit cards": [
         "無限登入，筆記和信用卡"
@@ -11114,9 +11099,6 @@
       ],
       "Your changes are not synced yet": [
         "您的變更尚未同步"
-      ],
-      "Your download includes a ${ DOCS_APP_NAME } file": [
-        "您下載包含${ DOCS_APP_NAME }檔案"
       ],
       "Your exposed information": [
         "你的外﻿﻿﻿洩資料"

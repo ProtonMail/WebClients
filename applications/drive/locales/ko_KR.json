@@ -4511,12 +4511,6 @@
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
         "${ BRAND_NAME } 이(가) Yahoo 계정에 연결할 수 없습니다. 확인해 주세요:"
       ],
-      "2-step verification is enabled in your external account.": [
-        "2단계 인증이 사용자의 외부 계정에 활성화되어 있습니다."
-      ],
-      "2-step verification is enabled in your external email account.": [
-        "2단계 인증이 사용자의 외부 이메일 계정에 활성화 된 상태의 경우"
-      ],
       "IMAP access is enabled in your external account.": [
         "사용자 외부 계정의 IMAP 접근이 활성화되어 있는지 여부"
       ],
@@ -4728,9 +4722,6 @@
       ],
       "${ contactsLength } contact": [
         "연락처 ${ contactsLength }개"
-      ],
-      "${ DOCS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
-        "${ DOCS_APP_NAME } 파일을 바로 다운로드할 수 없으며 이 다운로드에 포함되지 않습니다. '계속 다운로드'를 클릭하여 다른 파일들도 다운로드할 수 있습니다."
       ],
       "${ doneCount } finished": [
         "${ doneCount }개 완료됨"
@@ -5689,9 +5680,6 @@
       "On public WiFi networks": [
         "공공 WiFi 네트워크에서 사용시"
       ],
-      "One of the files or folders you want to copy already exist in selected folder.": [
-        "복사하려는 파일 또는 폴더 중 하나가 선택한 폴더에 이미 존재합니다."
-      ],
       "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
         "암호화된 드라이브 중 하나가 잠겼습니다. 이는 최근의 비밀번호 재설정 때문일 가능성이 높습니다."
       ],
@@ -6201,9 +6189,6 @@
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "결제를 완료하기 위해서, 아래 주소로 ${ btcAmountBold } 를 송금해 주시기 바랍니다."
-      ],
-      "To download the ${ DOCS_APP_NAME } files, open them in ${ DOCS_APP_NAME } and export them.": [
-        "${ DOCS_APP_NAME } 파일을 다운로드하려면, ${ DOCS_APP_NAME }내에서 항목을 열어 내보내기 하세요."
       ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
         "비공개 검색을 활성화하려면, ${ DRIVE_APP_NAME }가 로컬에서 파일 인덱싱을 해야합니다."
@@ -8368,9 +8353,6 @@
       ],
       "Unlimited labels": [
         "무제한 라벨"
-      ],
-      "Unlimited logins and notes": [
-        "무제한 로그인 및 메모"
       ],
       "Unlimited logins, notes and credit cards": [
         "무제한 로그인, 메모 및 신용 카드"
@@ -12516,9 +12498,6 @@
       ],
       "Your changes are not synced yet": [
         "변경 사항이 동기화되지 않았습니다."
-      ],
-      "Your download includes a ${ DOCS_APP_NAME } file": [
-        "다운로드에 ${ DOCS_APP_NAME } 파일이 포함되어 있습니다."
       ],
       "Your exposed information": [
         "사용자의 노출된 정보"

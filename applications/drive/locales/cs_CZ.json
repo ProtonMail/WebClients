@@ -1627,6 +1627,9 @@
       "Payments problem": [
         "Problém s platbami"
       ],
+      "Sheets problem": [
+        "Problém s Sheets"
+      ],
       "Sign in problem": [
         "Problém s přihlášením"
       ],
@@ -3415,6 +3418,9 @@
       "Failed to get details, please try again later": [
         "Nepodařilo se získat detaily. Zkuste to prosím později"
       ],
+      "Failed to load signature details, please try again later": [
+        "Nepodařilo se načíst podrobnosti podpisu, zkuste to prosím později"
+      ],
       "Failed to load the STL preview": [
         "Načtení náhledu STL selhalo"
       ],
@@ -3836,7 +3842,7 @@
         "Některé z vašich sdílených položek se nám nepodařilo načíst"
       ],
       "We were not able to load the folder contents": [
-        "Nepodařilo se nám načíst obsah složky"
+        "Nepodařilo se nám načíst obsahy složky"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Nemůžete odeslat e-mail více než ${ maxContacts } příjemci najednou",
@@ -4643,12 +4649,6 @@
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
         "${ BRAND_NAME } se nemůže připojit k vašemu účtu Yahoo. Ujistěte se, že:"
       ],
-      "2-step verification is enabled in your external account.": [
-        "Dvoufázové ověřování je zapnuto ve vašem vzdáleném účtu."
-      ],
-      "2-step verification is enabled in your external email account.": [
-        "Dvoufázové ověřování je zapnuto ve vašem vzdáleném e-mailovém účtu."
-      ],
       "IMAP access is enabled in your external account.": [
         "IMAP přístup je zapnut ve vašem externím účtu."
       ],
@@ -4657,6 +4657,12 @@
       ],
       "Too many recent requests. Please try again in a few moments.": [
         "Bylo zadáno příliš mnoho požadavků. Zkuste to za pár minut."
+      ],
+      "Two-factor authentication is enabled in your external account.": [
+        "Ve vašem externím účtu je aktivní dvoufaktorové ověření."
+      ],
+      "Two-factor authentication is enabled in your external email account.": [
+        "Ve vašem externím e-mailovém účtu je aktivní dvoufaktorové ověření."
       ],
       "Use your app password if:": [
         "Použijte heslo aplikace, pokud:"
@@ -4897,8 +4903,8 @@
         "${ contactsLength } kontaktů",
         "${ contactsLength } kontaktů"
       ],
-      "${ DOCS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
-        "Soubory ${ DOCS_APP_NAME } nelze stáhnout přímo a nebudou součástí tohoto stahování. Ostatní soubory můžete stáhnout kliknutím na 'Pokračovat ve stahování'."
+      "${ DOCS_APP_NAME } and ${ SHEETS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
+        "Soubory ${ DOCS_APP_NAME } a ${ SHEETS_APP_NAME } nelze stáhnout přímo a nebudou zahrnuty do tohoto balíku dat ke stažení. Ostatní soubory si můžete stáhnout kliknutím na 'Pokračovat ve stahování'."
       ],
       "${ doneCount } finished": [
         "${ doneCount } ukončený",
@@ -5947,9 +5953,6 @@
       "On public WiFi networks": [
         "Ve veřejných sítích Wi-Fi"
       ],
-      "One of the files or folders you want to copy already exist in selected folder.": [
-        "Jeden ze souborů nebo složek, které chcete zkopírovat, již ve vybrané složce existuje."
-      ],
       "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
         "Jeden z vašich šifrovaných disků je uzamčen. Je to pravděpodobně způsobeno nedávným resetem hesla."
       ],
@@ -6340,6 +6343,9 @@
       "Thank you for subscribing. Secure browsing starts now.": [
         "Děkujeme vám za přihlášení k odběru. Bezpečné prohlížení začíná nyní."
       ],
+      "that": [
+        "tento soubor"
+      ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Účet může mít nový klíč nebo mohlo dojít k manipulaci s následujícími položkami: ${ items }. Otevřete pouze v případě, že jim důvěřujete."
       ],
@@ -6469,8 +6475,8 @@
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Pro dokončení platby zašlete ${ btcAmountBold } na níže uvedenou adresu."
       ],
-      "To download the ${ DOCS_APP_NAME } files, open them in ${ DOCS_APP_NAME } and export them.": [
-        "Chcete-li stáhnout soubory ${ DOCS_APP_NAME }, otevřete je v aplikaci ${ DOCS_APP_NAME } a exportujte je."
+      "To download these files, open them in ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME } and export them.": [
+        "Pro stažení těchto souborů je otevřete v aplikaci ${ DOCS_APP_NAME } nebo ${ SHEETS_APP_NAME } a exportujte je."
       ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
         "Aby bylo možné povolit soukromé vyhledávání, musí ${ DRIVE_APP_NAME } indexovat vaše soubory lokálně."
@@ -6637,6 +6643,9 @@
       "We are experiencing technical issues. Any albums related actions are temporarily disabled.": [
         "Máme technické problémy. Veškeré akce související s alby jsou dočasně deaktivovány."
       ],
+      "We couldn't verify ${ nameAuthor } uploaded ${ node.name }. The following may have been tampered with: file data order. Only open if you trust it.": [
+        "Nemohli jsme ověřit, zda ${ nameAuthor } nahrál(a) ${ node.name }. S následujícím mohlo být manipulováno: pořadí dat souboru. Otevřete pouze v případě, že souboru důvěřujete."
+      ],
       "We couldn’t process your payment.": [
         "Vaši platbu jsme nemohli zpracovat."
       ],
@@ -6687,6 +6696,9 @@
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Při nastavení dvoufázového ověřování poskytujeme kódy pro obnovení, které můžete použít k přihlášení, pokud ztratíte přístup k ověřovací aplikaci."
+      ],
+      "who": [
+        "kdo"
       ],
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
         "bude obnoveno na verzi z ${ formattedRevisionDate }. Všechny ostatní verze budou i nadále uloženy."
@@ -8749,9 +8761,6 @@
       ],
       "Unlimited labels": [
         "Neomezeně štítků"
-      ],
-      "Unlimited logins and notes": [
-        "Neomezený počet přihlášení a poznámek"
       ],
       "Unlimited logins, notes and credit cards": [
         "Neomezený počet přihlášení, poznámek a platebních karet"
@@ -13036,6 +13045,9 @@
       "Time": [
         "Čas"
       ],
+      "To preview this spreadsheet, download it.": [
+        "Pro otevření náhledu této tabulky si ji stáhněte."
+      ],
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "Chcete-li si tuto tabulku prohlédnout, otevřete ji v aplikaci ${ SHEETS_APP_NAME } nebo ji stáhněte."
       ],
@@ -13192,8 +13204,8 @@
       "Your changes are not synced yet": [
         "Vaše změny zatím nejsou synchronizovány"
       ],
-      "Your download includes a ${ DOCS_APP_NAME } file": [
-        "Vaše stahování obsahuje soubor ${ DOCS_APP_NAME }"
+      "Your download includes ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME } files": [
+        "Váš balík dat ke stažení zahrnuje soubory ${ DOCS_APP_NAME } nebo ${ SHEETS_APP_NAME }"
       ],
       "Your exposed information": [
         "Vaše uniklé informace"

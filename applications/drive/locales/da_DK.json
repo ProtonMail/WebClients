@@ -1599,6 +1599,9 @@
       "Payments problem": [
         "Betalingsproblem"
       ],
+      "Sheets problem": [
+        "Regnearksproblem"
+      ],
       "Sign in problem": [
         "Log ind-problem"
       ],
@@ -3377,6 +3380,9 @@
       "Failed to get details, please try again later": [
         "Det lykkedes ikke at hente detaljer, prøv igen senere"
       ],
+      "Failed to load signature details, please try again later": [
+        "Kunne ikke indlæse signaturdetaljer, prøv igen senere"
+      ],
       "Failed to load the STL preview": [
         "Indlæsning af STL-forhåndsvisningen mislykkedes"
       ],
@@ -3786,6 +3792,9 @@
       ],
       "We were not able to load some of your shared items": [
         "Vi kunne ikke indlæse nogle af dine delte elementer."
+      ],
+      "We were not able to load the folder contents": [
+        "Vi kunne ikke indlæse indholdet af mappen"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Du kan ikke sende en e-mail til flere end ${ maxContacts } modtager",
@@ -4554,12 +4563,6 @@
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
         "${ BRAND_NAME } kan ikke oprette forbindelse til din Yahoo-konto. Sørg for at:"
       ],
-      "2-step verification is enabled in your external account.": [
-        "Totrinsbekræftelse er aktiveret på din eksterne konto."
-      ],
-      "2-step verification is enabled in your external email account.": [
-        "Totrinsbekræftelse er aktiveret på din eksterne e-mail-konto."
-      ],
       "IMAP access is enabled in your external account.": [
         "IMAP-adgang er aktiveret på din eksterne konto."
       ],
@@ -4568,6 +4571,12 @@
       ],
       "Too many recent requests. Please try again in a few moments.": [
         "For mange nylige anmodninger. Forsøg igen lidt senere."
+      ],
+      "Two-factor authentication is enabled in your external account.": [
+        "To-faktor-godkendelse er aktiveret i din eksterne konto."
+      ],
+      "Two-factor authentication is enabled in your external email account.": [
+        "Tofaktor-godkendelse er aktiveret i din eksterne e-mail-konto."
       ],
       "Use your app password if:": [
         "Brug din app-adgangskode hvis:"
@@ -4784,8 +4793,8 @@
         "${ contactsLength } kontakt",
         "${ contactsLength } kontakter"
       ],
-      "${ DOCS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
-        "${ DOCS_APP_NAME } filer kan ikke downloades direkte og vil ikke blive inkluderet i dette download. Du kan downloade de andre filer ved at klikke på 'Fortsæt med at downloade'."
+      "${ DOCS_APP_NAME } and ${ SHEETS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
+        "${ DOCS_APP_NAME } og ${ SHEETS_APP_NAME }-filer kan ikke downloades direkte og vil ikke blive inkluderet i dette download. Du kan downloade de andre filer ved at klikke på 'Fortsæt med at downloade'."
       ],
       "${ doneCount } finished": [
         "${ doneCount } færdig",
@@ -5774,9 +5783,6 @@
       "On public WiFi networks": [
         "På offentlige WiFi-netværk"
       ],
-      "One of the files or folders you want to copy already exist in selected folder.": [
-        "En af de filer eller mapper, du vil kopiere, findes allerede i den valgte mappe."
-      ],
       "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
         "Et af dine krypterede drev er låst. Det skyldes sandsynligvis, at adgangskoden for nylig er blevet nulstillet."
       ],
@@ -6163,6 +6169,9 @@
       "Thank you for subscribing. Secure browsing starts now.": [
         "Tak for din tilmelding. Sikker browsing starter nu."
       ],
+      "that": [
+        "den"
+      ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Kontoen kan have fået en ny nøgle, eller følgende kan være blevet manipuleret: ${ items }. Åbn kun, hvis du har tillid til den."
       ],
@@ -6290,8 +6299,8 @@
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "For at gennemføre din betaling skal du sende ${ btcAmountBold } til nedenstående adresse."
       ],
-      "To download the ${ DOCS_APP_NAME } files, open them in ${ DOCS_APP_NAME } and export them.": [
-        "For at downloade ${ DOCS_APP_NAME }-filerne skal du åbne dem i ${ DOCS_APP_NAME } og eksportere dem."
+      "To download these files, open them in ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME } and export them.": [
+        "For at downloade disse filer, skal du åbne dem i ${ DOCS_APP_NAME } eller ${ SHEETS_APP_NAME } og eksportere dem."
       ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
         "For at aktivere ægte privat søgning skal ${ DRIVE_APP_NAME } indeksere dine filer lokalt."
@@ -6458,6 +6467,9 @@
       "We are experiencing technical issues. Any albums related actions are temporarily disabled.": [
         "Vi har tekniske problemer. Alle albumrelaterede handlinger er midlertidigt deaktiveret."
       ],
+      "We couldn't verify ${ nameAuthor } uploaded ${ node.name }. The following may have been tampered with: file data order. Only open if you trust it.": [
+        "Vi kunne ikke verificere, at ${ nameAuthor } uploadede ${ node.name }. Der kan være blevet manipuleret med fildataenes rækkefølge. Åbn kun, hvis du stoler på den."
+      ],
       "We couldn’t process your payment.": [
         "Vi kunne ikke gennemføre din betaling."
       ],
@@ -6508,6 +6520,9 @@
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Når du indstiller to-faktor-godkendelse, giver vi dig gendannelseskoder, som du kan bruge til at logge på, hvis du mister adgangen til din godkendelsesapp."
+      ],
+      "who": [
+        "hvem"
       ],
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
         "vil blive gendannet til versionen fra ${ formattedRevisionDate }. Alle andre versioner vil blive gemt."
@@ -8495,9 +8510,6 @@
       "Unlimited labels": [
         "Ubegrænsede etiketter"
       ],
-      "Unlimited logins and notes": [
-        "Ubegrænset indlogninger og notater"
-      ],
       "Unlimited logins, notes and credit cards": [
         "Ubegrænsede logins, noter og betalingskort"
       ],
@@ -9971,7 +9983,7 @@
         "Vi er ikke i stand til at godkende din betalingsmetode. Vælg venligst en anden betalingsmetode, eller prøv igen."
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
-        "Dit kort blev afvist. Prøv venligst et andet kort eller kontakt din bank for at godkende betalingen."
+        "Dit kort blev afvist. Prøv et andet kort eller kontakt din bank for at godkende betalingen."
       ]
     },
     "Payments.error": {
@@ -12585,6 +12597,9 @@
       "Time": [
         "Tid"
       ],
+      "To preview this spreadsheet, download it.": [
+        "For at forhåndsvise dette regneark, skal du downloade det."
+      ],
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "Åbn dette regneark i ${ SHEETS_APP_NAME } eller download det for at forhåndsvise det."
       ],
@@ -12741,8 +12756,8 @@
       "Your changes are not synced yet": [
         "Dine ændringer er endnu ikke synkroniseret"
       ],
-      "Your download includes a ${ DOCS_APP_NAME } file": [
-        "Dit download inkluderer en ${ DOCS_APP_NAME }-fil"
+      "Your download includes ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME } files": [
+        "Dit download inkluderer ${ DOCS_APP_NAME }- eller ${ SHEETS_APP_NAME }-filer"
       ],
       "Your exposed information": [
         "Dine blotlagte oplysninger"

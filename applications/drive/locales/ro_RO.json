@@ -1613,6 +1613,9 @@
       "Payments problem": [
         "Problemă plăți"
       ],
+      "Sheets problem": [
+        "Problemă foaie de calcul"
+      ],
       "Sign in problem": [
         "Problemă autentificare"
       ],
@@ -3396,6 +3399,9 @@
       "Failed to get details, please try again later": [
         "Nu s-au putut obține detalii. Reîncercați mai târziu."
       ],
+      "Failed to load signature details, please try again later": [
+        "Nu s-au putut încărca detaliile semnăturii, reîncercați mai târziu."
+      ],
       "Failed to load the STL preview": [
         "Nu s-a putut încărca examinarea STL."
       ],
@@ -4600,12 +4606,6 @@
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
         "${ BRAND_NAME } nu se poate conecta la contul Yahoo. Asigurați-vă că:"
       ],
-      "2-step verification is enabled in your external account.": [
-        "Verificarea în 2 pași este activată în contul extern."
-      ],
-      "2-step verification is enabled in your external email account.": [
-        "verificarea în 2 pași este activată în contul extern de e-mail."
-      ],
       "IMAP access is enabled in your external account.": [
         "Accesul IMAP este activat în contul extern."
       ],
@@ -4614,6 +4614,12 @@
       ],
       "Too many recent requests. Please try again in a few moments.": [
         "Prea multe solicitări recente. Reîncercați mai târziu."
+      ],
+      "Two-factor authentication is enabled in your external account.": [
+        "Autentificarea cu doi factori este activată în contul extern de e-mail."
+      ],
+      "Two-factor authentication is enabled in your external email account.": [
+        "Autentificarea cu doi factori este activată în contul extern de e-mail."
       ],
       "Use your app password if:": [
         "Folosiți parola aplicației dacă:"
@@ -4841,9 +4847,6 @@
         "Contacte: ${ contactsLength }",
         "Contacte: ${ contactsLength }",
         "Contacte: ${ contactsLength }"
-      ],
-      "${ DOCS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
-        "Fișierele ${ DOCS_APP_NAME } nu pot fi descărcate direct și nu vor fi incluse în această descărcare. Puteți descărca celelalte fișiere făcând clic pe „Continuare descărcare”."
       ],
       "${ doneCount } finished": [
         "S-a transferat unul",
@@ -5862,9 +5865,6 @@
       "On public WiFi networks": [
         "Pe rețele Wi-Fi publice"
       ],
-      "One of the files or folders you want to copy already exist in selected folder.": [
-        "Unul dintre fișierele sau folderele pe care doriți să le copiați există deja în folderul selectat."
-      ],
       "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
         "Una din unitățile criptate este blocată. Aceasta se datorează probabil unei resetări recente a parolei."
       ],
@@ -6253,6 +6253,9 @@
       "Thank you for subscribing. Secure browsing starts now.": [
         "Vă mulțumim pentru abonare. Navigarea sigură începe acum."
       ],
+      "that": [
+        "acela"
+      ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Contul poate avea o cheie nouă sau este posibil ca următoarele să fi fost modificate: ${ items }. Deschideți-l numai dacă aveți încredere în el."
       ],
@@ -6380,9 +6383,6 @@
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Pentru a finaliza plata, trimiteți ${ btcAmountBold } la adresa de mai jos."
-      ],
-      "To download the ${ DOCS_APP_NAME } files, open them in ${ DOCS_APP_NAME } and export them.": [
-        "Pentru a descărca fișierele ${ DOCS_APP_NAME }, deschideți-le în ${ DOCS_APP_NAME } și exportați-le."
       ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
         "Pentru a permite o căutare cu adevărat privată, ${ DRIVE_APP_NAME } trebuie să vă indexeze fișierele la nivel local."
@@ -6549,6 +6549,9 @@
       "We are experiencing technical issues. Any albums related actions are temporarily disabled.": [
         "Avem probleme tehnice. Orice acțiuni legate de albume sunt dezactivate temporar."
       ],
+      "We couldn't verify ${ nameAuthor } uploaded ${ node.name }. The following may have been tampered with: file data order. Only open if you trust it.": [
+        "Nu s-a putut verifica dacă ${ nameAuthor } a încărcat ${ node.name }. Următoarele ar fi putut fi falsificate: ordinea datelor fișierului. Deschideți doar dacă aveți încredere."
+      ],
       "We couldn’t process your payment.": [
         "Nu vi s-a putut procesa plata."
       ],
@@ -6599,6 +6602,9 @@
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Când configurați autentificarea cu doi factori, vă furnizăm coduri de recuperare pe care le puteți folosi pentru a vă conecta dacă vă pierdeți accesul la aplicația de autentificare."
+      ],
+      "who": [
+        "cine"
       ],
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
         "va fi restaurat de la versiunea din ${ formattedRevisionDate }. Toate celelalte versiuni vor fi salvate în continuare."
@@ -8623,9 +8629,6 @@
       ],
       "Unlimited labels": [
         "Etichete nelimitate"
-      ],
-      "Unlimited logins and notes": [
-        "Date de autentificare și notițe nelimitate"
       ],
       "Unlimited logins, notes and credit cards": [
         "Date de autentificare, note și carduri de plată nelimitate"
@@ -12967,9 +12970,6 @@
       ],
       "Your changes are not synced yet": [
         "Modificările nu sunt încă sincronizate"
-      ],
-      "Your download includes a ${ DOCS_APP_NAME } file": [
-        "Descărcarea include un fișier ${ DOCS_APP_NAME }"
       ],
       "Your exposed information": [
         "Informații expuse"
