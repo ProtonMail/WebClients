@@ -89,9 +89,9 @@ export const markMessagesAsUnread = (
             if (conversationCounter) {
                 conversationCounter.Unread = safeIncreaseCount(conversationCounter.Unread, 1);
             }
-        }
 
-        increaseCategoryRelatedCount(labelID, state);
+            increaseCategoryRelatedCount(labelID, state);
+        }
     });
 };
 
@@ -118,9 +118,9 @@ export const markMessagesAsRead = (
             if (conversationCounter) {
                 conversationCounter.Unread = safeDecreaseCount(conversationCounter.Unread, 1);
             }
-        }
 
-        decreaseCategoryRelatedCount(labelID, state);
+            decreaseCategoryRelatedCount(labelID, state);
+        }
     });
 };
 
