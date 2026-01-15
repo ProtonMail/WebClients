@@ -66,7 +66,13 @@ import { setTtagLocales } from '@proton/shared/lib/i18n/locales';
 import type { Api, Environment, ProtonConfig, Unwrap, UserSettings } from '@proton/shared/lib/interfaces';
 import type { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 import { telemetry } from '@proton/shared/lib/telemetry';
-import { EVENTS, UnleashClient, createCustomFetch, getUnleashConfig } from '@proton/unleash';
+import {
+    EVENTS,
+    UnleashClient,
+    createCustomFetch,
+    getUnleashConfig,
+    setStandaloneUnleashClient,
+} from '@proton/unleash';
 import noop from '@proton/utils/noop';
 
 import { getCryptoWorkerOptions } from './cryptoWorkerOptions';
@@ -325,7 +331,9 @@ export const createHistory = ({
 };
 
 export const createUnleash = ({ api }: { api: Api }) => {
-    return new UnleashClient(getUnleashConfig({ fetch: createCustomFetch(api) }));
+    const unleashClient = new UnleashClient(getUnleashConfig({ fetch: createCustomFetch(api) }));
+    setStandaloneUnleashClient(unleashClient);
+    return unleashClient;
 };
 
 export const onAbort = (signal: AbortSignal | undefined, cb: () => void) => {
