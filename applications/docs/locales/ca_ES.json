@@ -369,6 +369,9 @@
       "Export selection as .vcf": [
         "Exporta la selecció com a .vcf"
       ],
+      "Export this version (as xlsx)": [
+        "Exporta aquesta versió (en format xlsx)"
+      ],
       "Forgot password?": [
         "Heu oblidat la contrasenya?"
       ],
@@ -1205,6 +1208,9 @@
       ],
       "Payments problem": [
         "Problema de pagament"
+      ],
+      "Sheets problem": [
+        "Hi ha hagut un problema amb els fulls de càlcul"
       ],
       "Sign in problem": [
         "Problema d'inici de sessió"
@@ -3857,12 +3863,6 @@
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
         "${ BRAND_NAME } no es pot connectar al vostre compte de Yahoo. Assegureu-vos que:"
       ],
-      "2-step verification is enabled in your external account.": [
-        "La verificació en dos passos està activada al vostre compte extern."
-      ],
-      "2-step verification is enabled in your external email account.": [
-        "La verificació en dos passos està activada al vostre compte de correu electrònic extern."
-      ],
       "IMAP access is enabled in your external account.": [
         "L'accés IMAP està activat al vostre compte extern."
       ],
@@ -3871,6 +3871,12 @@
       ],
       "Too many recent requests. Please try again in a few moments.": [
         "Masses peticions recents. Torneu-ho a provar d'aquí a una estona."
+      ],
+      "Two-factor authentication is enabled in your external account.": [
+        "L'autenticació de doble factor està habilitada al vostre compte extern."
+      ],
+      "Two-factor authentication is enabled in your external email account.": [
+        "L'autenticació de doble factor està habilitada al vostre compte de correu electrònic extern."
       ],
       "Use your app password if:": [
         "Utilitzeu la contrasenya de l'aplicació si:"
@@ -6865,9 +6871,6 @@
       ],
       "Unlimited labels": [
         "Etiquetes il·limitades"
-      ],
-      "Unlimited logins and notes": [
-        "Nombre il·limitat d'inicis de sessió i de notes"
       ],
       "Unlimited logins, notes and credit cards": [
         "Nombre il·limitat d'inicis de sessió, notes i targetes de crèdit"

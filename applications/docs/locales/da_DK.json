@@ -369,6 +369,9 @@
       "Export selection as .vcf": [
         "Eksportér det valgte som .vcf"
       ],
+      "Export this version (as xlsx)": [
+        "Eksportér denne version (som xlsx)"
+      ],
       "Forgot password?": [
         "Glemt adgangskode?"
       ],
@@ -1205,6 +1208,9 @@
       ],
       "Payments problem": [
         "Betalingsproblem"
+      ],
+      "Sheets problem": [
+        "Regnearksproblem"
       ],
       "Sign in problem": [
         "Log ind-problem"
@@ -3857,12 +3863,6 @@
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
         "${ BRAND_NAME } kan ikke oprette forbindelse til din Yahoo-konto. Sørg for at:"
       ],
-      "2-step verification is enabled in your external account.": [
-        "Totrinsbekræftelse er aktiveret på din eksterne konto."
-      ],
-      "2-step verification is enabled in your external email account.": [
-        "Totrinsbekræftelse er aktiveret på din eksterne e-mail-konto."
-      ],
       "IMAP access is enabled in your external account.": [
         "IMAP-adgang er aktiveret på din eksterne konto."
       ],
@@ -3871,6 +3871,12 @@
       ],
       "Too many recent requests. Please try again in a few moments.": [
         "For mange nylige anmodninger. Forsøg igen lidt senere."
+      ],
+      "Two-factor authentication is enabled in your external account.": [
+        "To-faktor-godkendelse er aktiveret i din eksterne konto."
+      ],
+      "Two-factor authentication is enabled in your external email account.": [
+        "Tofaktor-godkendelse er aktiveret i din eksterne e-mail-konto."
       ],
       "Use your app password if:": [
         "Brug din app-adgangskode hvis:"
@@ -6808,9 +6814,6 @@
       ],
       "Unlimited labels": [
         "Ubegrænsede etiketter"
-      ],
-      "Unlimited logins and notes": [
-        "Ubegrænset indlogninger og notater"
       ],
       "Unlimited logins, notes and credit cards": [
         "Ubegrænsede logins, noter og betalingskort"

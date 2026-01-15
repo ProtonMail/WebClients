@@ -375,6 +375,9 @@
       "Export selection as .vcf": [
         "Exportovat výběr jako .vcf"
       ],
+      "Export this version (as xlsx)": [
+        "Exportovat tuto verzi (jako xlsx)"
+      ],
       "Forgot password?": [
         "Zapomenuté heslo?"
       ],
@@ -1228,6 +1231,9 @@
       ],
       "Payments problem": [
         "Problém s platbami"
+      ],
+      "Sheets problem": [
+        "Problém s Sheets"
       ],
       "Sign in problem": [
         "Problém s přihlášením"
@@ -3930,12 +3936,6 @@
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
         "${ BRAND_NAME } se nemůže připojit k vašemu účtu Yahoo. Ujistěte se, že:"
       ],
-      "2-step verification is enabled in your external account.": [
-        "Dvoufázové ověřování je zapnuto ve vašem vzdáleném účtu."
-      ],
-      "2-step verification is enabled in your external email account.": [
-        "Dvoufázové ověřování je zapnuto ve vašem vzdáleném e-mailovém účtu."
-      ],
       "IMAP access is enabled in your external account.": [
         "IMAP přístup je zapnut ve vašem externím účtu."
       ],
@@ -3944,6 +3944,12 @@
       ],
       "Too many recent requests. Please try again in a few moments.": [
         "Bylo zadáno příliš mnoho požadavků. Zkuste to za pár minut."
+      ],
+      "Two-factor authentication is enabled in your external account.": [
+        "Ve vašem externím účtu je aktivní dvoufaktorové ověření."
+      ],
+      "Two-factor authentication is enabled in your external email account.": [
+        "Ve vašem externím e-mailovém účtu je aktivní dvoufaktorové ověření."
       ],
       "Use your app password if:": [
         "Použijte heslo aplikace, pokud:"
@@ -6999,9 +7005,6 @@
       ],
       "Unlimited labels": [
         "Neomezeně štítků"
-      ],
-      "Unlimited logins and notes": [
-        "Neomezený počet přihlášení a poznámek"
       ],
       "Unlimited logins, notes and credit cards": [
         "Neomezený počet přihlášení, poznámek a platebních karet"
