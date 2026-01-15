@@ -71,6 +71,11 @@ const keyboardFill = async (input: HTMLInputElement, data: string, dispatch: Eve
         new KeyboardEvent('keyup', { bubbles: true }),
     ]);
 
+    /** Let any deferred handlers from keyboard events complete before continuing.
+     * Some sites (eg: macys.com) use `setTimeout` to defer validation/formatting,
+     * which can overwrite or reset the field if we proceed immediately. */
+    await wait(0);
+
     if (input.value !== data) input.value = data;
 
     await dispatch([new Event('input', { bubbles: true }), new Event('change', { bubbles: true })]);
