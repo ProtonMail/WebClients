@@ -1513,10 +1513,7 @@
         "Důvěřovat"
       ],
       "Trust key": [
-        "Důvěřovat klíči",
-        "Důvěřovat klíčům",
-        "Důvěřovat klíčům",
-        "Důvěřovat klíčům"
+        "Důvěřovat klíči"
       ],
       "Trust public key": [
         "Důvěřovat veřejnému klíči"
@@ -2201,6 +2198,9 @@
       ],
       "Payments problem": [
         "Problém s platbami"
+      ],
+      "Sheets problem": [
+        "Problém s Sheets"
       ],
       "Sign in problem": [
         "Problém s přihlášením"
@@ -6275,12 +6275,6 @@
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
         "${ BRAND_NAME } se nemůže připojit k vašemu účtu Yahoo. Ujistěte se, že:"
       ],
-      "2-step verification is enabled in your external account.": [
-        "Dvoufázové ověřování je zapnuto ve vašem vzdáleném účtu."
-      ],
-      "2-step verification is enabled in your external email account.": [
-        "Dvoufázové ověřování je zapnuto ve vašem vzdáleném e-mailovém účtu."
-      ],
       "IMAP access is enabled in your external account.": [
         "IMAP přístup je zapnut ve vašem externím účtu."
       ],
@@ -6289,6 +6283,12 @@
       ],
       "Too many recent requests. Please try again in a few moments.": [
         "Bylo zadáno příliš mnoho požadavků. Zkuste to za pár minut."
+      ],
+      "Two-factor authentication is enabled in your external account.": [
+        "Ve vašem externím účtu je aktivní dvoufaktorové ověření."
+      ],
+      "Two-factor authentication is enabled in your external email account.": [
+        "Ve vašem externím e-mailovém účtu je aktivní dvoufaktorové ověření."
       ],
       "Use your app password if:": [
         "Použijte heslo aplikace, pokud:"
@@ -7642,7 +7642,10 @@
         "Inicializace..."
       ],
       "Insert image": [
-        "Vložit obrázek"
+        "Vložit obrázek",
+        "Vložit obrázky",
+        "Vložit obrázky",
+        "Vložit obrázky"
       ],
       "Insert link": [
         "Vložit odkaz"
@@ -11424,9 +11427,6 @@
       "Unlimited labels": [
         "Neomezeně štítků"
       ],
-      "Unlimited logins and notes": [
-        "Neomezený počet přihlášení a poznámek"
-      ],
       "Unlimited logins, notes and credit cards": [
         "Neomezený počet přihlášení, poznámek a platebních karet"
       ],
@@ -15190,8 +15190,8 @@
       "Download ${ VPN_APP_NAME }": [
         "Stáhnout ${ VPN_APP_NAME }"
       ],
-      "Download Desktop app": [
-        "Stáhnout desktopovou aplikaci"
+      "Download the desktop app": [
+        "Stáhněte si desktopovou aplikaci"
       ],
       "Enable ${ DARK_WEB_MONITORING_NAME }": [
         "Povolit ${ DARK_WEB_MONITORING_NAME }"
@@ -16109,6 +16109,9 @@
       ],
       "To": [
         "Komu"
+      ],
+      "To preview this spreadsheet, download it.": [
+        "Pro otevření náhledu této tabulky si ji stáhněte."
       ],
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "Chcete-li si tuto tabulku prohlédnout, otevřete ji v aplikaci ${ SHEETS_APP_NAME } nebo ji stáhněte."

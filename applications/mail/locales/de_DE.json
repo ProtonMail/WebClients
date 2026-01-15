@@ -1504,10 +1504,6 @@
       "Trust": [
         "Vertrauen"
       ],
-      "Trust key": [
-        "Schlüssel vertrauen",
-        "Schlüsseln vertrauen"
-      ],
       "Trust public key": [
         "Öffentlichem Schlüssel vertrauen"
       ],
@@ -2173,6 +2169,9 @@
       ],
       "Payments problem": [
         "Zahlungsproblem"
+      ],
+      "Sheets problem": [
+        "Tabellenblatt-Problem"
       ],
       "Sign in problem": [
         "Problem bei der Anmeldung"
@@ -6167,12 +6166,6 @@
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
         "${ BRAND_NAME } kann keine Verbindung zu deinem Yahoo-Konto herstellen. Bitte stelle sicher, dass:"
       ],
-      "2-step verification is enabled in your external account.": [
-        "Die 2-Schritt-Verifizierung in deinem externen Konto aktiviert ist."
-      ],
-      "2-step verification is enabled in your external email account.": [
-        "Die 2-Schritt-Verifizierung in deinem externen Konto aktiviert ist."
-      ],
       "IMAP access is enabled in your external account.": [
         "Der IMAP-Zugang in deinem externen Konto aktiviert ist."
       ],
@@ -6181,6 +6174,12 @@
       ],
       "Too many recent requests. Please try again in a few moments.": [
         "Zu viele kürzliche Anfragen. Bitte versuche es in wenigen Augenblicken erneut."
+      ],
+      "Two-factor authentication is enabled in your external account.": [
+        "Zwei-Faktor-Authentifizierung ist in deinem externen Konto aktiviert."
+      ],
+      "Two-factor authentication is enabled in your external email account.": [
+        "Zwei-Faktor-Authentifizierung ist in deinem externen E-Mail-Konto aktiviert."
       ],
       "Use your app password if:": [
         "Verwende dein App-Passwort, wenn:"
@@ -7404,7 +7403,8 @@
         "Wird initialisiert…"
       ],
       "Insert image": [
-        "Bild einfügen"
+        "Bild einfügen",
+        "Bilder einfügen"
       ],
       "Insert link": [
         "Link einfügen"
@@ -11068,9 +11068,6 @@
       "Unlimited labels": [
         "Unbegrenzte Anzahl von Kategorien"
       ],
-      "Unlimited logins and notes": [
-        "Unbegrenzte Logins und Notizen"
-      ],
       "Unlimited logins, notes and credit cards": [
         "Unbegrenzte Logins, Notizen und Kreditkarten"
       ],
@@ -14636,8 +14633,8 @@
       "Download ${ VPN_APP_NAME }": [
         "Lade ${ VPN_APP_NAME } herunter"
       ],
-      "Download Desktop app": [
-        "Lade die Desktopanwendung herunter"
+      "Download the desktop app": [
+        "Desktop-App herunterladen"
       ],
       "Enable ${ DARK_WEB_MONITORING_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } aktivieren"
@@ -15535,6 +15532,9 @@
       ],
       "To": [
         "An"
+      ],
+      "To preview this spreadsheet, download it.": [
+        "Um die Vorschau dieser Tabelle anzuzeigen, lade sie herunter."
       ],
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "Um diese Tabelle in der Vorschau anzuzeigen, öffne sie in ${ SHEETS_APP_NAME } oder lade sie herunter."

@@ -1458,6 +1458,9 @@
       "Trust": [
         "Zaufaj"
       ],
+      "Trust key": [
+        "Zaufaj kluczowi"
+      ],
       "Trust public key": [
         "Zaufaj kluczowi publicznemu"
       ],
@@ -6000,12 +6003,6 @@
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
         "${ BRAND_NAME } nie może połączyć się z kontem Yahoo. Upewnij się, że:"
       ],
-      "2-step verification is enabled in your external account.": [
-        "weryfikacja dwuetapowa na koncie zewnętrznym jest włączona."
-      ],
-      "2-step verification is enabled in your external email account.": [
-        "Weryfikacja dwuetapowa na koncie zewnętrznym jest włączona."
-      ],
       "IMAP access is enabled in your external account.": [
         "dostęp IMAP jest włączony na koncie zewnętrznym."
       ],
@@ -7322,7 +7319,10 @@
         "Inicjowanie…"
       ],
       "Insert image": [
-        "Wstaw obraz"
+        "Wstaw obraz",
+        "Wstaw obrazy",
+        "Wstaw obrazy",
+        "Wstaw obrazy"
       ],
       "Insert link": [
         "Wstaw link"
@@ -10877,9 +10877,6 @@
       "Unlimited labels": [
         "Nieograniczona liczba etykiet"
       ],
-      "Unlimited logins and notes": [
-        "Nieograniczona liczba danych logowania i notatek"
-      ],
       "Unlimited logins, notes and credit cards": [
         "Nieograniczona liczba danych logowania, notatek i kart płatniczych"
       ],
@@ -14323,9 +14320,6 @@
       ],
       "Download ${ VPN_APP_NAME }": [
         "Pobierz ${ VPN_APP_NAME }"
-      ],
-      "Download Desktop app": [
-        "Pobierz aplikację desktopową"
       ],
       "Enable ${ DARK_WEB_MONITORING_NAME }": [
         "Włącz ${ DARK_WEB_MONITORING_NAME }"
