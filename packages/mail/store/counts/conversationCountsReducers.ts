@@ -26,25 +26,23 @@ export const markConversationsAsUnread = (
     // When we mark a conversation as unread, the latest message of this conversation is marked as unread.
     // This message must be part of the current label (labelID)
     const { elements, labelID } = action.payload;
+    const isCurrentLabelIDCategory = isCategoryLabel(labelID);
 
     elements.forEach((selectedElement) => {
         const selectedConversation = selectedElement as Conversation;
-        // The reason we apply changes only in the current label is because we cannot predict if the conversation is also marked as unread in other labels based on data received from the server.
-        // This condition depends on messages order and labels attached to this conversation.
-        const conversationLabel = selectedConversation?.Labels?.find((label) => label.ID === labelID);
 
-        if (!!conversationLabel?.ContextNumUnread) {
-            // Conversation is already unread, do nothing
-            return;
-        }
+        selectedConversation.Labels?.forEach((label) => {
+            const conversationCounter = state.value?.find((counter) => counter.LabelID === label.ID);
+            if (!conversationCounter) {
+                return;
+            }
 
-        if (conversationLabel?.ContextNumUnread === 0) {
-            const conversationCounter = state.value?.find((counter) => counter.LabelID === labelID);
-
-            if (conversationCounter) {
+            if (label.ID === labelID) {
+                conversationCounter.Unread = safeIncreaseCount(conversationCounter.Unread, 1);
+            } else if (isCurrentLabelIDCategory && label.ID === MAILBOX_LABEL_IDS.INBOX) {
                 conversationCounter.Unread = safeIncreaseCount(conversationCounter.Unread, 1);
             }
-        }
+        });
     });
 };
 
@@ -92,6 +90,8 @@ export const markMessagesAsUnread = (
                 conversationCounter.Unread = safeIncreaseCount(conversationCounter.Unread, 1);
             }
         }
+
+        increaseCategoryRelatedCount(labelID, state);
     });
 };
 
@@ -119,6 +119,8 @@ export const markMessagesAsRead = (
                 conversationCounter.Unread = safeDecreaseCount(conversationCounter.Unread, 1);
             }
         }
+
+        decreaseCategoryRelatedCount(labelID, state);
     });
 };
 
