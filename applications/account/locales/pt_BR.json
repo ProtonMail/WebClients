@@ -2358,13 +2358,6 @@
       ]
     },
     "Billing cycle": {
-      "Renews automatically": [
-        "Renovação automática"
-      ],
-      "Renews automatically at ${ renewPrice }, for ${ renewLength } month": [
-        "Renovação automática por ${ renewPrice }, durante ${ renewLength } mês",
-        "Renovação automática por ${ renewPrice }, durante ${ renewLength } meses"
-      ],
       "Renews automatically on ${ subscriptionManagerName }": [
         "Renova automaticamente em ${ subscriptionManagerName }"
       ]
@@ -2653,21 +2646,8 @@
       ]
     },
     "BOSS": {
-      "${ migratedCount } of ${ providerUsers.length }": [
-        "${ migratedCount } de ${ providerUsers.length }"
-      ],
-      "${ n } year ago": [
-        "${ n } ano atrás",
-        "${ n } anos atrás"
-      ],
       "Add a custom domain": [
         "Adicionar um domínio adicional"
-      ],
-      "Add a domain": [
-        "Adicionar um domínio"
-      ],
-      "Add more users...": [
-        "Adicionar mais usuários..."
       ],
       "Authenticate": [
         "Autenticar"
@@ -2687,20 +2667,14 @@
       "Contacts": [
         "Contatos"
       ],
+      "Domain connected": [
+        "Domínio conectado"
+      ],
       "Domain ownership verified": [
         "Propriedade do domínio verificada"
       ],
-      "Domain setup": [
-        "Configuração de domínio"
-      ],
-      "Email notifications will be sent when migration starts and when it’s completed. You will also be notified if there are errors and if migration is paused due to expired links.": [
-        "Notificações por e-mail serão enviadas quando a migração iniciar e quando for concluída. Você também será notificado se houver erros e se a migração for pausada devido a links expirados."
-      ],
       "Estimated size": [
         "Tempo estimado"
-      ],
-      "Everything": [
-        "Tudo"
       ],
       "Failed to load OAuth": [
         "Falha ao carregar o OAuth"
@@ -2726,11 +2700,17 @@
       "Migration includes": [
         "A migração foi concluída"
       ],
-      "Not started": [
-        "Não iniciado"
+      "Migration status": [
+        "Status da migração"
+      ],
+      "Organization settings": [
+        "Configurações da organização"
       ],
       "Required to create user accounts": [
         "Obrigatório para criar contas de usuário"
+      ],
+      "Select at least one user to start a migration": [
+        "Selecione pelo menos um usuário para iniciar uma migração"
       ],
       "Select what you want to migrate, this will apply to all users whether they are created now or later. Migration will start after user accounts are created.": [
         "Selecione o que você deseja migrar, isso se aplicará a todos os usuários, sejam eles criados agora ou depois. A migração começará após a criação das contas de usuário."
@@ -2750,20 +2730,14 @@
       "Start migration": [
         "Iniciar migração"
       ],
-      "Status": [
-        "Status"
-      ],
       "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Markeplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue. Learn more": [
         "Para migrar os dados da sua organização, você precisa instalar o aplicativo Assistente de Migração do ${ BRAND_NAME } na Google Workspace Marketplace. Isso concederá permissão ao ${ BRAND_NAME } para copiar seus dados. Após a instalação, volte aqui para continuar. Saiba mais"
       ],
-      "Transfer data from": [
-        "Transferir dados de"
+      "Transfer errors": [
+        "Erros de transferência"
       ],
       "User": [
         "Usuário"
-      ],
-      "Users migrated": [
-        "Usuários migrados"
       ],
       "Verify your domain": [
         "Verifique seu domínio"
@@ -2771,11 +2745,11 @@
       "Verify your domain ownership": [
         "Verifique a propriedade do seu domínio"
       ],
+      "Verify your domain to start a migration": [
+        "Verifique seu domínio para iniciar uma migração"
+      ],
       "What are you migrating?": [
         "O que você está migrando?"
-      ],
-      "Who will be notified?": [
-        "Quem será notificado?"
       ]
     },
     "breadcrumb": {
@@ -2850,6 +2824,9 @@
       ],
       "Payments problem": [
         "Problema com pagamento"
+      ],
+      "Sheets problem": [
+        "Problema no Sheets"
       ],
       "Sign in problem": [
         "Problema no login"
@@ -8301,12 +8278,6 @@
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
         "A ${ BRAND_NAME } não pode se conectar à sua conta do Yahoo. Certifique-se de que:"
       ],
-      "2-step verification is enabled in your external account.": [
-        "A verificação em duas etapas está ativada em sua conta externa."
-      ],
-      "2-step verification is enabled in your external email account.": [
-        "A verificação em duas etapas está ativada em sua conta externa."
-      ],
       "IMAP access is enabled in your external account.": [
         "Acesso IMAP está ativado na sua conta do Yahoo."
       ],
@@ -10760,7 +10731,7 @@
         "Adie as mensagens para mais tarde para que elas estejam no topo da sua caixa de entrada quando você quiser"
       ],
       "Some ${ BRAND_NAME } apps may not support security keys yet. If you turn off authenticator app 2FA, you may not be able to sign in to those apps.": [
-        "Alguns aplicativos ${ BRAND_NAME } podem ainda não ter suporte para chaves de segurança. Se você desativar a A2F do aplicativo de autenticação, talvez não consiga iniciar sessão nesses aplicativos."
+        "Alguns aplicativos da ${ BRAND_NAME } podem ainda não ter suporte para chaves de segurança. Se você desativar a A2F do aplicativo de autenticação, talvez não consiga iniciar sessão nesses aplicativos."
       ],
       "Some keys successfully reactivated": [
         "Algumas chaves foram reativadas"
@@ -12810,9 +12781,6 @@
       ],
       "Create password": [
         "Criar senha"
-      ],
-      "Credit cards": [
-        "Cartões de créditos"
       ],
       "Credits": [
         "Créditos"
@@ -15362,9 +15330,6 @@
       ],
       "Unlimited labels": [
         "Marcadores ilimitados"
-      ],
-      "Unlimited logins and notes": [
-        "Notas e inícios de sessão ilimitados"
       ],
       "Unlimited logins, notes and credit cards": [
         "Inícios de sessão ilimitados, notas e cartões de crédito"

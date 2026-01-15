@@ -1891,10 +1891,6 @@
       ]
     },
     "Billing cycle": {
-      "Renews automatically at ${ renewPrice }, for ${ renewLength } month": [
-        "Automatikusan megújul ${ renewPrice } áron ${ renewLength } hónapra",
-        "Automatikusan megújul ${ renewPrice } áron ${ renewLength } hónapra"
-      ],
       "Renews automatically on ${ subscriptionManagerName }": [
         "Automatikusan megújul: ${ subscriptionManagerName }"
       ]
@@ -6449,12 +6445,6 @@
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
         "A ${ BRAND_NAME } nem tud csatlakozni a Yahoo fiókjához. Ellenőrizze a következőket:"
       ],
-      "2-step verification is enabled in your external account.": [
-        "A kétlépcsős hitelesítés engedélyezve van a külső fiókon."
-      ],
-      "2-step verification is enabled in your external email account.": [
-        "A kétlépcsős hitelesítés engedélyezve van a külső fiókon."
-      ],
       "IMAP access is enabled in your external account.": [
         "Az IMAP elérés engedélyezve van a külső fiókon."
       ],
@@ -10196,9 +10186,6 @@
       "Country": [
         "Ország"
       ],
-      "Credit cards": [
-        "Bankkártyák"
-      ],
       "Credits": [
         "Kredit"
       ],
@@ -12266,9 +12253,6 @@
       ],
       "Unlimited labels": [
         "Korlátlan számú címke"
-      ],
-      "Unlimited logins and notes": [
-        "Korlátlan számú bejelentkezés és jegyzet"
       ],
       "Unlimited logins, notes and credit cards": [
         "Korlátlan bejelentkezés, jegyzet és bankkártya"

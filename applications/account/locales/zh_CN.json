@@ -1886,9 +1886,6 @@
       ]
     },
     "Billing cycle": {
-      "Renews automatically at ${ renewPrice }, for ${ renewLength } month": [
-        "将以 ${ renewPrice } 的价格自动续订，续订时长为 ${ renewLength } 个月。"
-      ],
       "Renews automatically on ${ subscriptionManagerName }": [
         "将以 ${ subscriptionManagerName } 的价格自动续期"
       ]
@@ -3919,6 +3916,9 @@
       "Browser": [
         "浏览器"
       ],
+      "Calendar": [
+        "Calendar"
+      ],
       "Chrome": [
         "Chrome"
       ],
@@ -4335,6 +4335,11 @@
     "email_forwarding_2023: Error message, recovery": {
       "Please try opening the link again.": [
         "请尝试重新打开链接。"
+      ]
+    },
+    "email_forwarding_2023: Header": {
+      "Actions": [
+        "操作"
       ]
     },
     "email_forwarding_2023: Info": {
@@ -6389,12 +6394,6 @@
       ],
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
         "${ BRAND_NAME } 无法连接您的 Yahoo 账户，请确认："
-      ],
-      "2-step verification is enabled in your external account.": [
-        "该邮箱开启了两步验证."
-      ],
-      "2-step verification is enabled in your external email account.": [
-        "该邮箱开启了两步验证."
       ],
       "IMAP access is enabled in your external account.": [
         "您的外部账户已开启 IMAP 访问。"
@@ -10207,9 +10206,6 @@
       "Country": [
         "国家/地区"
       ],
-      "Credit cards": [
-        "信用卡"
-      ],
       "Credits": [
         "余额"
       ],
@@ -10590,6 +10586,12 @@
       ],
       "Numbers": [
         "数字"
+      ],
+      "OpenVPN password": [
+        "OpenVPN 密码"
+      ],
+      "OpenVPN username": [
+        "OpenVPN 用户名"
       ],
       "Operating system": [
         "操作系统"
@@ -12319,9 +12321,6 @@
       "Unlimited labels": [
         "标签数量不限"
       ],
-      "Unlimited logins and notes": [
-        "无限登录和笔记"
-      ],
       "Unlimited logins, notes and credit cards": [
         "无限制登录、备注和信用卡"
       ],
@@ -12977,6 +12976,9 @@
       ],
       "Number of records exceeds the download limit of 10000": [
         "记录数超过 10000 的下载限制"
+      ],
+      "OpenVPN credentials regenerated": [
+        "重新生成了 OpenVPN 的账号密码"
       ],
       "Reminder has been sent": [
         "提醒已发送"
@@ -18415,6 +18417,9 @@
       ],
       "Open pagination": [
         "选择页码"
+      ],
+      "OpenVPN": [
+        "OpenVPN"
       ],
       "OpenVPN configuration files": [
         "OpenVPN 配置文件"

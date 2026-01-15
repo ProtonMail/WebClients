@@ -2358,12 +2358,9 @@
       ]
     },
     "Billing cycle": {
-      "Renews automatically": [
-        "Wordt automatisch vernieuwd"
-      ],
-      "Renews automatically at ${ renewPrice }, for ${ renewLength } month": [
-        "Verlengt automatisch voor ${ renewPrice }, voor ${ renewLength } maand",
-        "Verlengt automatisch voor ${ renewPrice }, voor ${ renewLength } maanden"
+      "Renews automatically at ${ renewPrice }, for ${ renewCycle } month": [
+        "Verlengt automatisch voor ${ renewPrice }, voor ${ renewCycle } maand",
+        "Verlengt automatisch voor ${ renewPrice }, voor ${ renewCycle } maanden"
       ],
       "Renews automatically on ${ subscriptionManagerName }": [
         "Vernieuwt automatisch op ${ subscriptionManagerName }"
@@ -2653,21 +2650,8 @@
       ]
     },
     "BOSS": {
-      "${ migratedCount } of ${ providerUsers.length }": [
-        "${ migratedCount } van ${ providerUsers.length }"
-      ],
-      "${ n } year ago": [
-        "${ n } jaar geleden",
-        "${ n } jaren geleden"
-      ],
       "Add a custom domain": [
         "Een aangepast domein toevoegen"
-      ],
-      "Add a domain": [
-        "Een domein toevoegen"
-      ],
-      "Add more users...": [
-        "Meer gebruikers toevoegen..."
       ],
       "Authenticate": [
         "Authenticeren"
@@ -2687,20 +2671,14 @@
       "Contacts": [
         "Contacten"
       ],
+      "Domain connected": [
+        "Domein verbonden"
+      ],
       "Domain ownership verified": [
         "Domeineigendom geverifieerd"
       ],
-      "Domain setup": [
-        "Domeinconfiguratie"
-      ],
-      "Email notifications will be sent when migration starts and when it’s completed. You will also be notified if there are errors and if migration is paused due to expired links.": [
-        "E-mailnotificaties worden verzonden wanneer de migratie start en wanneer deze is voltooid. U wordt ook op de hoogte gesteld als er fouten zijn en als de migratie wordt onderbroken vanwege verlopen links."
-      ],
       "Estimated size": [
         "Geschatte grootte."
-      ],
-      "Everything": [
-        "Alles"
       ],
       "Failed to load OAuth": [
         "Laden van OAuth mislukt"
@@ -2726,11 +2704,30 @@
       "Migration includes": [
         "Migratie omvat"
       ],
-      "Not started": [
-        "Niet begonnen"
+      "Migration started for ${ n } user": [
+        "Migratie gestart voor ${ n } gebruiker",
+        "Migratie gestart voor ${ n } gebruikers"
+      ],
+      "Migration status": [
+        "Migratiestatus"
+      ],
+      "Organization does not have enough seats available": [
+        "Organisatie heeft onvoldoende licenties beschikbaar"
+      ],
+      "Organization does not have enough storage available": [
+        "Organisatie heeft onvoldoende opslagruimte beschikbaar"
+      ],
+      "Organization settings": [
+        "Organisatie instellingen"
+      ],
+      "Required": [
+        "Vereist"
       ],
       "Required to create user accounts": [
         "Nodig om gebruikersaccounts aan te maken."
+      ],
+      "Select at least one user to start a migration": [
+        "Selecteer minimaal één gebruiker om een migratie te starten"
       ],
       "Select what you want to migrate, this will apply to all users whether they are created now or later. Migration will start after user accounts are created.": [
         "Selecteer wat u wilt migreren, dit zal van toepassing zijn op alle gebruikers, ongeacht of deze nu of later worden aangemaakt. De migratie begint nadat gebruikersaccounts zijn aangemaakt."
@@ -2750,20 +2747,14 @@
       "Start migration": [
         "Migratie starten"
       ],
-      "Status": [
-        "Status"
-      ],
       "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Markeplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue. Learn more": [
         "Om de gegevens van uw organisatie te migreren, moet u de ${ BRAND_NAME } Migration Assistant-app installeren vanuit de Google Workspace Marketplace. Dit geeft toestemming aan ${ BRAND_NAME } om uw gegevens te kopiëren. Installeer de app en ga hier terug om verder te gaan. Meer informatie."
       ],
-      "Transfer data from": [
-        "Gegevens overdragen van."
+      "Transfer errors": [
+        "Overdrachtsfout"
       ],
       "User": [
         "Gebruiker"
-      ],
-      "Users migrated": [
-        "Gebruikers gemigreerd"
       ],
       "Verify your domain": [
         "Verifieer uw domein"
@@ -2771,11 +2762,11 @@
       "Verify your domain ownership": [
         "Verifieer uw domeineigendom"
       ],
+      "Verify your domain to start a migration": [
+        "Verifieer uw domein om een migratie te starten"
+      ],
       "What are you migrating?": [
         "Wat migreert u?"
-      ],
-      "Who will be notified?": [
-        "Wie wordt er op de hoogte gebracht?"
       ]
     },
     "breadcrumb": {
@@ -2850,6 +2841,9 @@
       ],
       "Payments problem": [
         "Probleem met betalingen"
+      ],
+      "Sheets problem": [
+        "Werkblad probleem"
       ],
       "Sign in problem": [
         "Inlogprobleem"
@@ -3124,7 +3118,7 @@
         "${ maxSpaceTB } opslagruimte"
       ],
       "${ numberOfUsers } user": [
-        "Tot ${ numberOfUsers } gebruiker",
+        "${ numberOfUsers } gebruiker",
         "Tot ${ numberOfUsers } gebruikers"
       ],
       "${ planMaxSpace } email storage": [
@@ -8298,12 +8292,6 @@
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
         "${ BRAND_NAME } kan geen verbinding maken met uw Yahoo account. Zorg ervoor dat:"
       ],
-      "2-step verification is enabled in your external account.": [
-        "2-staps-verificatie is ingeschakeld in uw externe account."
-      ],
-      "2-step verification is enabled in your external email account.": [
-        "Tweestapsverificatie is ingeschakeld in uw externe e-mailaccount."
-      ],
       "IMAP access is enabled in your external account.": [
         "IMAP-toegang is ingeschakeld in uw externe account."
       ],
@@ -8312,6 +8300,12 @@
       ],
       "Too many recent requests. Please try again in a few moments.": [
         "Te veel recente pogingen. Probeer over enkele ogenblikken opnieuw."
+      ],
+      "Two-factor authentication is enabled in your external account.": [
+        "Tweestapsverificatie is ingeschakeld in uw externe account."
+      ],
+      "Two-factor authentication is enabled in your external email account.": [
+        "Tweestapsverificatie is ingeschakeld in uw externe e-mailaccount."
       ],
       "Use your app password if:": [
         "Gebruik uw app-wachtwoord als:"
@@ -12808,9 +12802,6 @@
       "Create password": [
         "Wachtwoord aanmaken"
       ],
-      "Credit cards": [
-        "Kredietkaarten"
-      ],
       "Credits": [
         "Tegoed"
       ],
@@ -15356,9 +15347,6 @@
       ],
       "Unlimited labels": [
         "Onbeperkt aantal labels"
-      ],
-      "Unlimited logins and notes": [
-        "Onbeperkt aantal logins en notities"
       ],
       "Unlimited logins, notes and credit cards": [
         "Onbeperkt aantal logins, notities en creditcards"
@@ -23086,6 +23074,9 @@
       ],
       "Time zone": [
         "Tijdzone"
+      ],
+      "To preview this spreadsheet, download it.": [
+        "Om een voorbeeld van dit spreadsheet te bekijken, download het."
       ],
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "Om een voorbeeld van dit rekenblad te bekijken, opent u het in ${ SHEETS_APP_NAME } of downloadt u het."

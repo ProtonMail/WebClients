@@ -514,6 +514,9 @@
       "Download for macOS": [
         "Descargar para macOS"
       ],
+      "Download for Windows": [
+        "Descargar para Windows"
+      ],
       "Download logs": [
         "Descargar los registros"
       ],
@@ -2213,12 +2216,9 @@
       ]
     },
     "Billing cycle": {
-      "Renews automatically": [
-        "Se renueva automáticamente"
-      ],
-      "Renews automatically at ${ renewPrice }, for ${ renewLength } month": [
-        "Se renueva automáticamente por ${ renewPrice } durante ${ renewLength } mes.",
-        "Se renueva automáticamente por ${ renewPrice } durante ${ renewLength } meses."
+      "Renews automatically at ${ renewPrice }, for ${ renewCycle } month": [
+        "Se renueva automáticamente por ${ renewPrice } durante ${ renewCycle } mes",
+        "Se renueva automáticamente por ${ renewPrice } durante ${ renewCycle } meses"
       ],
       "Renews automatically on ${ subscriptionManagerName }": [
         "Se renueva automáticamente el ${ subscriptionManagerName }."
@@ -2496,21 +2496,8 @@
       ]
     },
     "BOSS": {
-      "${ migratedCount } of ${ providerUsers.length }": [
-        "${ migratedCount } de ${ providerUsers.length }"
-      ],
-      "${ n } year ago": [
-        "hace ${ n } año",
-        "hace ${ n } años"
-      ],
       "Add a custom domain": [
         "Añadir un dominio personalizado"
-      ],
-      "Add a domain": [
-        "Añadir un dominio"
-      ],
-      "Add more users...": [
-        "Añadir más usuarios..."
       ],
       "Authenticate": [
         "Autentificar"
@@ -2530,20 +2517,14 @@
       "Contacts": [
         "Contactos"
       ],
+      "Domain connected": [
+        "Dominio conectado"
+      ],
       "Domain ownership verified": [
         "Se ha verificado la propiedad del dominio"
       ],
-      "Domain setup": [
-        "Configuración de dominio"
-      ],
-      "Email notifications will be sent when migration starts and when it’s completed. You will also be notified if there are errors and if migration is paused due to expired links.": [
-        "Se enviarán notificaciones por correo al iniciar y finalizar la migración. También te avisaremos si hay errores o si la migración se pausa debido a enlaces caducados."
-      ],
       "Estimated size": [
         "Tamaño estimado"
-      ],
-      "Everything": [
-        "Todo"
       ],
       "Failed to load OAuth": [
         "Error al cargar OAuth"
@@ -2566,11 +2547,30 @@
       "Migration includes": [
         "La migración incluye"
       ],
-      "Not started": [
-        "No iniciado"
+      "Migration started for ${ n } user": [
+        "Migración iniciada para ${ n } usuario",
+        "Migración iniciada para ${ n } usuarios"
+      ],
+      "Migration status": [
+        "Estado de la migración"
+      ],
+      "Organization does not have enough seats available": [
+        "La organización no tiene suficientes licencias disponibles"
+      ],
+      "Organization does not have enough storage available": [
+        "La organización no tiene suficiente espacio de almacenamiento disponible"
+      ],
+      "Organization settings": [
+        "Ajustes de la organización"
+      ],
+      "Required": [
+        "Requerido"
       ],
       "Required to create user accounts": [
         "Necesario para crear cuentas de usuario"
+      ],
+      "Select at least one user to start a migration": [
+        "Selecciona al menos un usuario para iniciar una migración"
       ],
       "Select what you want to migrate, this will apply to all users whether they are created now or later. Migration will start after user accounts are created.": [
         "Selecciona qué quieres migrar. Esto se aplicará a todos los usuarios, tanto actuales como futuros. La migración comenzará una vez creadas las cuentas de usuario."
@@ -2590,20 +2590,14 @@
       "Start migration": [
         "Iniciar la migración"
       ],
-      "Status": [
-        "Estado"
-      ],
       "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Markeplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue. Learn more": [
         "Para migrar los datos de tu organización, debes instalar la aplicación Asistente de migración de ${ BRAND_NAME } desde Google Workspace Marketplace. Esto concederá permiso a ${ BRAND_NAME } para copiar tus datos. Una vez instalada, vuelve aquí para continuar. Más información"
       ],
-      "Transfer data from": [
-        "Transferir datos desde"
+      "Transfer errors": [
+        "Errores de transferencia"
       ],
       "User": [
         "Usuario"
-      ],
-      "Users migrated": [
-        "Usuarios migrados"
       ],
       "Verify your domain": [
         "Verifica tu dominio"
@@ -2611,11 +2605,11 @@
       "Verify your domain ownership": [
         "Verifica la propiedad de tu dominio"
       ],
+      "Verify your domain to start a migration": [
+        "Verifica tu dominio para iniciar una migración"
+      ],
       "What are you migrating?": [
         "¿Qué estás migrando?"
-      ],
-      "Who will be notified?": [
-        "¿A quién se notificará?"
       ]
     },
     "Browser": {
@@ -2680,6 +2674,9 @@
       ],
       "Payments problem": [
         "Problema con los pagos"
+      ],
+      "Sheets problem": [
+        "Problema con los menús desplegables"
       ],
       "Sign in problem": [
         "Problema con el inicio de sesión"
@@ -5316,6 +5313,11 @@
         "Más información"
       ]
     },
+    "email_forwarding_2023: Outgoing forwarding tab name": {
+      "To me": [
+        "Para mí"
+      ]
+    },
     "email_forwarding_2023: Prompt": {
       "Forwarding to the destination address will end.": [
         "El reenvío a la dirección de destino finalizará."
@@ -7769,12 +7771,6 @@
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
         "${ BRAND_NAME } no ha podido conectarse a tu cuenta de Yahoo. Asegúrate de que:"
       ],
-      "2-step verification is enabled in your external account.": [
-        "La verificación en dos pasos está activada en tu cuenta externa."
-      ],
-      "2-step verification is enabled in your external email account.": [
-        "La verificación en dos pasos está activada en tu cuenta de correo externa."
-      ],
       "IMAP access is enabled in your external account.": [
         "El acceso IMAP está activado en tu cuenta externa."
       ],
@@ -7783,6 +7779,12 @@
       ],
       "Too many recent requests. Please try again in a few moments.": [
         "Demasiadas solicitudes recientes. Inténtalo de nuevo en unos momentos."
+      ],
+      "Two-factor authentication is enabled in your external account.": [
+        "La autenticación de dos factores está activada en tu cuenta externa."
+      ],
+      "Two-factor authentication is enabled in your external email account.": [
+        "La autenticación de dos factores está activada en tu cuenta de correo externa."
       ],
       "Use your app password if:": [
         "Utiliza la contraseña de la aplicación si:"
@@ -11941,9 +11943,6 @@
       "Create password": [
         "Crear contraseña"
       ],
-      "Credit cards": [
-        "Tarjetas de crédito"
-      ],
       "Credits": [
         "Créditos"
       ],
@@ -14354,9 +14353,6 @@
       ],
       "Unlimited labels": [
         "Etiquetas ilimitadas"
-      ],
-      "Unlimited logins and notes": [
-        "Número ilimitado de inicios de sesión y de notas"
       ],
       "Unlimited logins, notes and credit cards": [
         "Inicios de sesión, notas y tarjetas de crédito ilimitados"
@@ -21775,6 +21771,9 @@
       ],
       "Time zone": [
         "Zona horaria"
+      ],
+      "To preview this spreadsheet, download it.": [
+        "Descarga esta hoja de cálculo para previsualizarla."
       ],
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "Para previsualizar esta hoja de cálculo, ábrela en ${ SHEETS_APP_NAME } o descárgala."

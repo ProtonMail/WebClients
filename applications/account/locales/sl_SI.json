@@ -1862,12 +1862,6 @@
       ]
     },
     "Billing cycle": {
-      "Renews automatically at ${ renewPrice }, for ${ renewLength } month": [
-        "Se podaljša samodejno za ${ renewPrice } za ${ renewLength } mesec",
-        "Se podaljša samodejno za ${ renewPrice } za ${ renewLength } meseca",
-        "Se podaljša samodejno za ${ renewPrice } za ${ renewLength } mesece",
-        "Se podaljša samodejno za ${ renewPrice } za ${ renewLength } mesecev"
-      ],
       "Renews automatically on ${ subscriptionManagerName }": [
         "Se podaljša samodejno na ${ subscriptionManagerName }"
       ]
@@ -6242,12 +6236,6 @@
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
         "${ BRAND_NAME } ne more vzpostaviti povezave z vašim računom Yahoo. Prepričajte se, da:"
       ],
-      "2-step verification is enabled in your external account.": [
-        "Preverjanje v dveh korakih je omogočeno v zunanjem računu."
-      ],
-      "2-step verification is enabled in your external email account.": [
-        "je v vašem zunanjem računu omogočeno dvojno preverjanje pristnosti,"
-      ],
       "IMAP access is enabled in your external account.": [
         "je v zunanjem računu omogočen dostop IMAP,"
       ],
@@ -9641,9 +9629,6 @@
       "Create password": [
         "Ustvari geslo"
       ],
-      "Credit cards": [
-        "Plačilne kartice"
-      ],
       "Credits": [
         "Dobroimetje"
       ],
@@ -11734,9 +11719,6 @@
       ],
       "Unlimited labels": [
         "Neomejeno število oznak"
-      ],
-      "Unlimited logins and notes": [
-        "Neomejeno število prijav in beležk"
       ],
       "Unlimited logins, notes and credit cards": [
         "Neomejeno število prijav, beležk in bančnih kartic"
