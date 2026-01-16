@@ -2,7 +2,8 @@ import { seconds_to_ms } from '../Util/time-utils'
 
 const MinimumJitterFactor = 1
 const MaximumJitterFactor = 1.5
-const MaxBackoffInMilliseconds = seconds_to_ms(32)
+const MaxBackoffInMilliseconds = seconds_to_ms(300)
+const MaxRetryAttempts = 10
 
 /**
  * If the connection is still connected after this time, reset backoff attempts. This is to avoid cases where a conneciton open then quickly shutters, which would bypass increasing exponentinal backoff. Instead, we wait this interval before deciding to reset connection attempts
@@ -13,6 +14,7 @@ export class WebsocketState {
   private attempts = 0
   private connected: boolean = false
   private resetTimeout: ReturnType<typeof setTimeout> | null = null
+  didReachMaxRetryAttempts = false
 
   didOpen() {
     this.connected = true
@@ -72,10 +74,15 @@ export class WebsocketState {
   }
 
   incrementAttempts() {
+    if (this.attempts >= MaxRetryAttempts) {
+      this.didReachMaxRetryAttempts = true
+      return
+    }
     this.attempts++
   }
 
   resetAttempts() {
     this.attempts = 0
+    this.didReachMaxRetryAttempts = false
   }
 }
