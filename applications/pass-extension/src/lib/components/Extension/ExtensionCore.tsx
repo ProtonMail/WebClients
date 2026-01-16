@@ -142,6 +142,10 @@ const getPassCoreProviderProps = (
                 ? browser.tabs.update({ url }).catch(noop)
                 : browser.tabs
                       .create({ url })
+                      /** Force focus on the opened tab because the popup, if expanded, remains over it */
+                      .then((tab) =>
+                          tab.windowId ? browser.windows.update(tab.windowId, { focused: true }) : undefined
+                      )
                       /** Popup may not auto-close on firefox  */
                       .then(() => endpoint === 'popup' && BUILD_TARGET === 'firefox' && window.close())
                       .catch(noop);

@@ -9,7 +9,15 @@ const LazySidebar = () => {
 
     return (
         <Sidebar>
-            <MenuSidebar onLock={lock} onLogout={logout} userPanel={<MenuUserPanel />} />
+            <MenuSidebar
+                onLock={lock}
+                onLogout={logout}
+                userPanel={
+                    <div className="px-2 py-1.5">
+                        <MenuUserPanel />
+                    </div>
+                }
+            />
         </Sidebar>
     );
 };

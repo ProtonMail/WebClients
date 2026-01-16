@@ -104,7 +104,7 @@ export const MenuSidebar: FC<Props> = ({ onLock, onLogout, userPanel }) => {
 
                     <hr className="my-2 mx-4" aria-hidden="true" />
 
-                    <div className="flex justify-space-between items-center flex-nowrap gap-1 pl-3 ">
+                    <div className="flex justify-space-between items-center flex-nowrap gap-1 pl-3 pr-5">
                         {userPanel}
                         {!EXTENSION_BUILD && <MenuActions onLogout={onLogout} />}
                     </div>
