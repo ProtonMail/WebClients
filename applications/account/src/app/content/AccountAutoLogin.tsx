@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 import { useEffect, useState } from 'react';
 
-import { StandardLoadErrorPage } from '@proton/components';
+import StandardLoadErrorPage from '@proton/components/containers/app/StandardLoadErrorPage';
 import { wrapUnloadError } from '@proton/components/containers/app/errorRefresh';
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
 
