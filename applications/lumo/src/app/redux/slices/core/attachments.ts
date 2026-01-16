@@ -2,7 +2,12 @@ import { createAction, createReducer } from '@reduxjs/toolkit';
 import { v4 as uuidv4 } from 'uuid';
 
 import type { Priority } from '../../../remote/scheduler';
-import type { IdMapEntry, RemoteAttachment } from '../../../remote/types';
+import type {
+    IdMapEntry,
+    RemoteDeletedAttachment,
+    RemoteFilledAttachment,
+    RemoteShallowAttachment,
+} from '../../../remote/types';
 import type { Attachment, AttachmentId, SerializedAttachment, SpaceId } from '../../../types';
 
 export type PushAttachmentRequest = {
@@ -21,6 +26,14 @@ export type PushAttachmentFailure = PushAttachmentRequest & {
 };
 export type PullAttachmentRequest = {
     id: AttachmentId;
+    spaceId: SpaceId;
+};
+export type IndexAttachmentRequest = PushAttachmentSuccess;
+export type UnindexAttachmentRequest = {
+    id: AttachmentId;
+};
+export type RemoteShallowAttachmentRequest = RemoteShallowAttachment & {
+    requestFull: boolean;
 };
 
 // Low-level Redux store operations without side-effects.
@@ -43,15 +56,19 @@ export const locallyDeleteAttachmentFromLocalRequest = createAction<AttachmentId
 export const locallyDeleteAttachmentFromRemoteRequest = createAction<AttachmentId>(
     'lumo/attachment/locallyDeleteFromRemoteRequest'
 );
-export const locallyRefreshAttachmentFromRemoteRequest = createAction<RemoteAttachment>(
-    'lumo/attachment/refreshFromRemoteRequest'
+export const locallyRefreshFilledAttachmentFromRemoteRequest = createAction<RemoteFilledAttachment>(
+    'lumo/attachment/refreshFilledFromRemoteRequest'
 );
-// export const locallyRefreshAttachmentFromRemoteMessageRequest = createAction<ShallowAttachment>(
-//     'lumo/attachment/refreshFromRemoteMessageRequest'
-// );
+export const locallyRefreshShallowAttachmentFromRemoteRequest = createAction<RemoteShallowAttachmentRequest>(
+    'lumo/attachment/refreshShallowFromRemoteRequest'
+);
 export const pullAttachmentRequest = createAction<PullAttachmentRequest>('lumo/attachment/pullRequest');
-export const pullAttachmentSuccess = createAction<RemoteAttachment>('lumo/attachment/pullSuccess');
+export const pullAttachmentSuccess = createAction<RemoteFilledAttachment | RemoteDeletedAttachment>(
+    'lumo/attachment/pullSuccess'
+);
 export const pullAttachmentFailure = createAction<AttachmentId>('lumo/attachment/pullFailure');
+export const indexAttachmentRequest = createAction<IndexAttachmentRequest>('lumo/attachment/indexRequest');
+export const unindexAttachmentRequest = createAction<UnindexAttachmentRequest>('lumo/attachment/unindexRequest');
 
 export type AttachmentMap = Record<AttachmentId, Attachment>;
 export const EMPTY_ATTACHMENT_MAP: AttachmentMap = {};
@@ -125,7 +142,7 @@ const attachmentsReducer = createReducer<AttachmentMap>(initialState, (builder) 
             console.log('Action triggered: locallyDeleteAttachmentFromRemoteRequest', action.payload);
             return state;
         })
-        .addCase(locallyRefreshAttachmentFromRemoteRequest, (state, action) => {
+        .addCase(locallyRefreshFilledAttachmentFromRemoteRequest, (state, action) => {
             console.log('Action triggered: locallyRefreshAttachmentFromRemoteRequest', action.payload);
             return state;
         })
@@ -139,6 +156,14 @@ const attachmentsReducer = createReducer<AttachmentMap>(initialState, (builder) 
         })
         .addCase(pullAttachmentFailure, (state, action) => {
             console.log('Action triggered: pullAttachmentFailure', action.payload);
+            return state;
+        })
+        .addCase(indexAttachmentRequest, (state, action) => {
+            console.log('Action triggered: indexAttachmentRequest', action.payload);
+            return state;
+        })
+        .addCase(unindexAttachmentRequest, (state, action) => {
+            console.log('Action triggered: unindexAttachmentRequest', action.payload);
             return state;
         });
 });

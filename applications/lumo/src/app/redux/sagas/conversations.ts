@@ -41,6 +41,7 @@ import {
     pushConversationFailure,
     pushConversationNeedsRetry,
     pushConversationNoop,
+    pushConversationRequest,
     pushConversationSuccess,
 } from '../slices/core/conversations';
 import { addIdMapEntry } from '../slices/core/idmap';
@@ -185,6 +186,10 @@ export function* softDeleteConversationFromLocal({ payload: localId }: { payload
     const dbApi: DbApi = yield getContext('dbApi');
     yield put(deleteConversation(localId)); // Redux
     yield call([dbApi, dbApi.softDeleteConversation], localId, { dirty: true }); // IDB
+
+    // Trigger push to sync deletion to server
+    console.log(`softDeleteConversationFromLocal: triggering push for deleted conversation ${localId}`);
+    yield put(pushConversationRequest({ id: localId, priority: 'urgent' }));
 }
 
 /*** loggers ***/
@@ -297,11 +302,7 @@ export function* pushConversation({ payload }: { payload: PushConversationReques
                     const updated: boolean = yield call(clearDirtyIfUnchanged, idbConversation);
                     // Delete from redux, and if it was done before, it's a noop
                     yield put(deleteConversation(localId));
-                    if (updated) {
-                        yield put(pushConversationSuccess(payload));
-                    } else {
-                        yield put(pushConversationNeedsRetry(payload));
-                    }
+                    yield put(updated ? pushConversationSuccess(payload) : pushConversationNeedsRetry(payload));
                     return;
                 } else {
                     // deletion was already synced, noop
@@ -331,11 +332,7 @@ export function* pushConversation({ payload }: { payload: PushConversationReques
 
         // Finish
         const updated: boolean = yield call(clearDirtyIfUnchanged, serializedConversation);
-        if (updated) {
-            yield put(pushConversationSuccess({ ...payload, entry }));
-        } else {
-            yield put(pushConversationNeedsRetry(payload));
-        }
+        yield put(updated ? pushConversationSuccess({ ...payload, entry }) : pushConversationNeedsRetry(payload));
     } catch (e) {
         // Retry unless it's a 4xx client error (in which case we expect retrying to fail again)
         console.error(e);
@@ -433,6 +430,7 @@ export function* pullConversation({
         const result: GetConversationRemote = yield call([lumoApi, lumoApi.getConversation], remoteId, localSpaceId);
         yield put(pullConversationSuccess(result));
     } catch (e) {
+        console.error('Error pulling conversation:', e);
         yield put(pullConversationFailure(localId));
     }
 }

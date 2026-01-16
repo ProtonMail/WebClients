@@ -19,6 +19,7 @@ import {
 import type { AesGcmCryptoKey, AesKwCryptoKey } from './crypto/types';
 import type { LumoUserSettings } from './redux/slices/lumoUserSettings';
 import type { SerializedUserSettings, UserSettingsToApi } from './remote/types';
+import type { Encrypted } from './types';
 import {
     type AdString,
     type Attachment,
@@ -335,6 +336,14 @@ export async function serializeAttachment(
         safeLogger.warn(`Cannot serialize attachment ${attachment.id}:`, e);
         return null;
     }
+}
+
+export async function deserializeFilledAttachment(
+    serializedAttachment: SerializedAttachment & Encrypted,
+    spaceDek: AesGcmCryptoKey
+): Promise<Attachment | null> {
+    // the wrapper guarantees you meant to pass an attachment whose "encrypted" is set.
+    return deserializeAttachment(serializedAttachment, spaceDek);
 }
 
 export async function deserializeAttachment(
