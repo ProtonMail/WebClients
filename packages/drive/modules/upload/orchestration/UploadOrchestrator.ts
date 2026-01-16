@@ -1,9 +1,6 @@
-import {
-    NodeType,
-    type ProtonDriveClient,
-    type ProtonDrivePhotosClient,
-    type ProtonDrivePublicLinkClient,
-} from '../../../index';
+import { NodeType } from '@protontech/drive-sdk';
+
+import { UploadDriveClientRegistry } from '../UploadDriveClientRegistry';
 import { MAX_FOLDERS_CREATED_IN_PARALLEL, MAX_UPLOAD_JOBS } from '../constants';
 import { FileUploadExecutor } from '../execution/FileUploadExecutor';
 import { FolderCreationExecutor } from '../execution/FolderCreationExecutor';
@@ -33,11 +30,16 @@ export class UploadOrchestrator {
     private photosExecutor = new PhotosUploadExecutor();
 
     private sdkTransferActivity = new SDKTransferActivity();
-    private conflictManager = new ConflictManager(() => this.sdkTransferActivity.checkAndUnsubscribeIfQueueEmpty());
+    private sdkPhotosTransferActivity = new SDKTransferActivity();
+    private conflictManager = new ConflictManager(() => {
+        this.sdkTransferActivity.checkAndUnsubscribeIfQueueEmpty();
+        this.sdkPhotosTransferActivity.checkAndUnsubscribeIfQueueEmpty();
+    });
     private eventHandler = new UploadEventHandler(
         this.capacityManager,
         this.conflictManager,
         this.sdkTransferActivity,
+        this.sdkPhotosTransferActivity,
         (uploadId) => this.cancelFolderChildren(uploadId)
     );
 
@@ -53,15 +55,6 @@ export class UploadOrchestrator {
 
     hasSubscriptions(): boolean {
         return this.eventHandler.hasSubscriptions();
-    }
-
-    setDriveClient(driveClientInstance: ProtonDriveClient | ProtonDrivePublicLinkClient) {
-        this.fileExecutor.driveClient = driveClientInstance;
-        this.folderExecutor.driveClient = driveClientInstance;
-    }
-
-    setDrivePhotosClient(drivePhotosClientInstance: ProtonDrivePhotosClient) {
-        this.photosExecutor.drivePhotosClient = drivePhotosClientInstance;
     }
 
     setConflictResolver(
@@ -95,8 +88,22 @@ export class UploadOrchestrator {
         }
 
         const queueStore = useUploadQueueStore.getState();
-        if (queueStore.getQueue().length > 0 && !this.sdkTransferActivity.isSubscribed()) {
-            this.sdkTransferActivity.subscribe();
+        const haveQueuedItems = queueStore.getQueue().length > 0;
+
+        const needDriveClientSubscribe =
+            haveQueuedItems &&
+            queueStore.getQueue().some((queue) => queue.type === NodeType.File || queue.type === NodeType.Folder) &&
+            !this.sdkTransferActivity.isSubscribed();
+        if (needDriveClientSubscribe) {
+            this.sdkTransferActivity.subscribe(UploadDriveClientRegistry.getDriveClient());
+        }
+
+        const needDrivePhotosClientSubscribe =
+            haveQueuedItems &&
+            queueStore.getQueue().some((queue) => queue.type === NodeType.Photo) &&
+            !this.sdkPhotosTransferActivity.isSubscribed();
+        if (needDrivePhotosClientSubscribe) {
+            this.sdkPhotosTransferActivity.subscribe(UploadDriveClientRegistry.getDrivePhotosClient());
         }
 
         this.isRunning = true;
@@ -121,6 +128,7 @@ export class UploadOrchestrator {
                     await this.waitForCapacity();
                     continue;
                 } else {
+                    this.sdkPhotosTransferActivity.unsubscribe();
                     this.sdkTransferActivity.unsubscribe();
                     break;
                 }
@@ -254,5 +262,6 @@ export class UploadOrchestrator {
     reset(): void {
         this.capacityManager.reset();
         this.sdkTransferActivity.unsubscribe();
+        this.sdkPhotosTransferActivity.unsubscribe();
     }
 }

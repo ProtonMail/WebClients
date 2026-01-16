@@ -3,6 +3,7 @@ import type { ProtonDrivePublicLinkClient } from '@protontech/drive-sdk/dist/pro
 
 import generateUID from '@proton/utils/generateUID';
 
+import { UploadDriveClientRegistry } from './UploadDriveClientRegistry';
 import { UploadOrchestrator } from './orchestration/UploadOrchestrator';
 import { useUploadControllerStore } from './store/uploadController.store';
 import { useUploadQueueStore } from './store/uploadQueue.store';
@@ -21,10 +22,15 @@ export class UploadManager {
     private activeContexts = new Set<string>();
     private contextUnsubscribers = new Map<string, () => void>();
 
-    setDriveClient(driveClientInstance?: ProtonDriveClient | ProtonDrivePublicLinkClient) {
-        if (driveClientInstance) {
-            this.orchestrator.setDriveClient(driveClientInstance);
-        }
+    /**
+     *
+     * @deprecated: This is temporary solution to be able to initiate custon client on public page
+     * TODO: Implement client per upload.
+     * The idea will be to keep the registry but storing client with unique id per upload batch
+     * That way we will be able to retrieve the right client during the upload.
+     */
+    setDriveClient(driveClientInstance: ProtonDriveClient | ProtonDrivePublicLinkClient) {
+        UploadDriveClientRegistry.setDriveClient(driveClientInstance);
     }
 
     /**
