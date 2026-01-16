@@ -1,5 +1,4 @@
 import { generateNodeUid, useDrive } from '@proton/drive';
-import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 
 import { useCreateFileModal } from '../../../components/modals/CreateFileModal';
 import { useFilesDetailsModal } from '../../../components/modals/FilesDetailsModal';
@@ -15,6 +14,7 @@ import { useRenameModal } from '../../../modals/RenameModal';
 import { useSharingModal } from '../../../modals/SharingModal/SharingModal';
 import { usePreviewModal } from '../../../modals/preview';
 import { useDocumentActions, useFileUploadInput, useFolderUploadInput } from '../../../store';
+import { isPreviewOrFallbackAvailable } from '../../../utils/isPreviewOrFallbackAvailable';
 import { getPublicLinkIsExpired } from '../../../utils/sdk/getPublicLinkIsExpired';
 import type { LegacyItem } from '../../../utils/sdk/mapNodeToLegacyItem';
 
@@ -72,7 +72,7 @@ export const useFolderActions = ({ allSortedItems, selectedItems, shareId, linkI
 
         if (isSDKPreviewEnabled) {
             const previewableNodeUids = allSortedItems
-                .filter((item) => item.mimeType && isPreviewAvailable(item.mimeType, item.storageSize))
+                .filter((item) => item.mimeType && isPreviewOrFallbackAvailable(item.mimeType, item.storageSize))
                 .map((item) => item.nodeUid);
 
             showPreviewModal({

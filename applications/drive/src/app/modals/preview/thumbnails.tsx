@@ -7,9 +7,14 @@ import { ThumbnailType, splitNodeRevisionUid } from '@proton/drive';
 
 import { useBatchThumbnailLoader } from '../../hooks/drive/useBatchThumbnailLoader';
 import { useThumbnailStore } from '../../zustand/thumbnails/thumbnails.store';
+import type { Drive } from './interface';
 
-export function useThumbnailLoader() {
-    const { loadThumbnail } = useBatchThumbnailLoader();
+interface UseThumbnailLoaderProps {
+    drive: Drive;
+}
+
+export function useThumbnailLoader({ drive }: UseThumbnailLoaderProps) {
+    const { loadThumbnail } = useBatchThumbnailLoader({ drive });
     const { getThumbnail } = useThumbnailStore(
         useShallow((state) => ({
             getThumbnail: state.getThumbnail,

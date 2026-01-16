@@ -3,9 +3,8 @@ import { useCallback, useEffect, useMemo, useRef } from 'react';
 import { useShallow } from 'zustand/react/shallow';
 
 import { useActiveBreakpoint } from '@proton/components';
-import { MemberRole, NodeType, getDrive, splitNodeUid } from '@proton/drive/index';
+import { MemberRole, NodeType, getDrive, splitNodeUid } from '@proton/drive';
 import { isProtonDocsDocument, isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype';
-import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 import type { LayoutSetting } from '@proton/shared/lib/interfaces/drive/userSettings';
 
 import type { SortParams } from '../../../components/FileBrowser';
@@ -37,6 +36,7 @@ import type { EncryptedLink, LinkShareUrl, SignatureIssues } from '../../../stor
 import { useDocumentActions } from '../../../store';
 import { useDriveDocsFeatureFlag } from '../../../store/_documents';
 import { SortField } from '../../../store/_views/utils/useSorting';
+import { isPreviewOrFallbackAvailable } from '../../../utils/isPreviewOrFallbackAvailable';
 import type { LegacyItem } from '../../../utils/sdk/mapNodeToLegacyItem';
 import { useThumbnailStore } from '../../../zustand/thumbnails/thumbnails.store';
 import { EmptyDeviceRoot } from '../EmptyFolder/EmptyDeviceRoot';
@@ -135,7 +135,7 @@ export function FolderBrowser({ activeFolder, layout, sortParams, setSorting, so
             getThumbnail: state.getThumbnail,
         }))
     );
-    const { loadThumbnail } = useBatchThumbnailLoader();
+    const { loadThumbnail } = useBatchThumbnailLoader({ drive: getDrive() });
 
     const isSDKPreviewEnabled = useFlagsDriveSDKPreview();
     const openLegacyPreview = useOpenPreview();
@@ -243,7 +243,7 @@ export function FolderBrowser({ activeFolder, layout, sortParams, setSorting, so
             if (item.isFile) {
                 if (isSDKPreviewEnabled) {
                     const previewableNodeUids = sortedList
-                        .filter((item) => item.mimeType && isPreviewAvailable(item.mimeType, item.size))
+                        .filter((item) => item.mimeType && isPreviewOrFallbackAvailable(item.mimeType, item.size))
                         .map((item) => item.uid);
 
                     showPreviewModal({
