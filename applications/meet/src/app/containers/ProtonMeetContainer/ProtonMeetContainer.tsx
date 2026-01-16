@@ -17,6 +17,7 @@ import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { isFirefox, isMobile } from '@proton/shared/lib/helpers/browser';
 import { isWebRtcSupported } from '@proton/shared/lib/helpers/isWebRtcSupported';
 import { wait } from '@proton/shared/lib/helpers/promise';
+import { getItem } from '@proton/shared/lib/helpers/storage';
 import { CustomPasswordState } from '@proton/shared/lib/interfaces/Meet';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
 import { message as sanitizeMessage } from '@proton/shared/lib/sanitize/purify';
@@ -53,6 +54,7 @@ import { LoadingState, PopUpControls, UpsellModalTypes } from '../../types';
 import type { ProtonMeetKeyProvider } from '../../utils/ProtonMeetKeyProvider';
 import { KeyRotationScheduler } from '../../utils/SeamlessKeyRotationScheduler';
 import { isLocalParticipantAdmin } from '../../utils/isLocalParticipantAdmin';
+import { getDisplayNameStorageKey } from '../../utils/storage';
 import { setupLiveKitAdminChangeEvent, setupWasmDependencies } from '../../utils/wasmUtils';
 import { MeetContainer } from '../MeetContainer';
 import { PrejoinContainer } from '../PrejoinContainer/PrejoinContainer';
@@ -133,9 +135,11 @@ export const ProtonMeetContainer = ({
     const useDefaultDisplayName = guestMode
         ? defaultDisplayNameHooks.unauthenticated
         : defaultDisplayNameHooks.authenticated;
+    const storedDisplayName = getItem(getDisplayNameStorageKey(guestMode, user?.ID));
+
     const defaultDisplayName = useDefaultDisplayName();
 
-    const [displayName, setDisplayName] = useState(defaultDisplayName);
+    const [displayName, setDisplayName] = useState(storedDisplayName || defaultDisplayName);
 
     const [joiningInProgress, setJoiningInProgress] = useState(false);
     const [joinedRoom, setJoinedRoom] = useState(false);

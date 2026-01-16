@@ -1,5 +1,6 @@
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 
+import { getItem, removeItem, setItem } from '@proton/shared/lib/helpers/storage';
 import useFlag from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
@@ -9,6 +10,7 @@ import { PageHeader } from '../../components/PageHeader/PageHeader';
 import { PreJoinDetails } from '../../components/PreJoinDetails/PreJoinDetails';
 import { useMediaManagementContext } from '../../contexts/MediaManagementContext';
 import { LoadingState } from '../../types';
+import { getDisplayNameStorageKey } from '../../utils/storage';
 
 import './PrejoinContainer.scss';
 
@@ -25,6 +27,7 @@ interface PrejoinContainerProps {
     displayName: string;
     setDisplayName: (displayName: string) => void;
     isInstantJoin: boolean;
+    userId?: string;
 }
 
 export const PrejoinContainer = ({
@@ -40,8 +43,11 @@ export const PrejoinContainer = ({
     displayName,
     setDisplayName,
     isInstantJoin,
+    userId,
 }: PrejoinContainerProps) => {
     const isScheduleInAdvanceEnabled = useFlag('ScheduleInAdvance');
+    // check if a custom display name is already stored for the user
+    const hasStoredDisplayName = getItem(getDisplayNameStorageKey(guestMode, userId)) != null;
 
     const {
         cameras,
@@ -66,7 +72,15 @@ export const PrejoinContainer = ({
     const currentSelectedMicrophone = activeMicrophoneDeviceId ?? defaultMicrophone?.deviceId;
     const currentSelectedAudioOutputDevice = activeAudioOutputDeviceId ?? defaultSpeaker?.deviceId;
 
-    const handleJoinMeeting = (displayName: string) => {
+    const handleJoinMeeting = (displayName: string, keepOnDevice: boolean) => {
+        const storageKey = getDisplayNameStorageKey(guestMode, userId);
+
+        if (keepOnDevice && displayName.trim()) {
+            setItem(storageKey, displayName);
+        } else {
+            removeItem(storageKey);
+        }
+
         handleJoin(displayName);
     };
 
@@ -145,6 +159,7 @@ export const PrejoinContainer = ({
                             roomName={roomName}
                             roomId={roomId}
                             displayName={displayName}
+                            keepDisplayName={hasStoredDisplayName}
                             onDisplayNameChange={setDisplayName}
                             onJoinMeeting={handleJoinMeeting}
                             shareLink={shareLink}
