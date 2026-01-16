@@ -67,7 +67,7 @@ export const useListSelection = ({
         onCheck,
         (draggedIDs: string[]) => {
             const isMessage = elements.length && isElementMessage(elements[0]);
-            const selectionCount = selectAll ? locationCount : draggedIDs.length;
+            const selectionCount = selectAll ? locationCount() : draggedIDs.length;
             return isMessage
                 ? c('Success').ngettext(
                       msgid`Move ${selectionCount} message`,
