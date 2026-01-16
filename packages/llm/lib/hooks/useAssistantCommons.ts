@@ -64,6 +64,7 @@ const useAssistantCommons = (): AssistantCommonProps => {
             setHasCompatibleBrowser(true);
             setHasCompatibleHardware(true);
         }
+        cleanGlobalErrors();
     }, [canShowAssistant, AIAssistantFlags]);
 
     return {
