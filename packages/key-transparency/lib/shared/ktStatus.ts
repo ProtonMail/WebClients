@@ -1,9 +1,14 @@
 import { serverTime } from '@proton/crypto';
 import { HOUR } from '@proton/shared/lib/constants';
 
-import { KT_DATA_VALIDITY_PERIOD, ctLogs } from '../constants/certificates';
 import { KT_DOMAINS } from '../constants/constants';
 import { getBaseDomain } from '../helpers/utils';
+
+const importCertificates = () =>
+    import(
+        /* webpackChunkName: "kt-certificates" */
+        '../constants/certificates'
+    );
 
 export enum KtFeatureEnum {
     DISABLE,
@@ -13,7 +18,9 @@ export enum KtFeatureEnum {
 
 export type KT_FF = KtFeatureEnum | undefined;
 
-export const isKTActive = (feature: KT_FF) => {
+export const isKTActive = async (feature: KT_FF) => {
+    const { KT_DATA_VALIDITY_PERIOD, ctLogs } = await importCertificates();
+
     // Do not activate KT if
     //  - feature flag is off;
     //  - the api is not prod's or proton.black's
