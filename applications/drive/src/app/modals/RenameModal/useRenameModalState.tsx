@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { type ModalStateProps, useNotifications } from '@proton/components';
-import { type NodeEntity, NodeType, splitNodeUid, useDrive } from '@proton/drive';
+import { type NodeEntity, NodeType, getDrive, splitNodeUid } from '@proton/drive';
 import { splitExtension } from '@proton/shared/lib/helpers/file';
 import { isProtonDocsDocument, isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype';
 
@@ -11,9 +11,11 @@ import { useDriveEventManager } from '../../store';
 import { useSdkErrorHandler } from '../../utils/errorHandling/useSdkErrorHandler';
 import { getNodeEntity } from '../../utils/sdk/getNodeEntity';
 import type { RenameModalViewProps } from './RenameModalView';
+import type { Drive } from './interface';
 
 export type RenameModalInnerProps = {
     nodeUid: string;
+    drive?: Drive;
     onSuccess?: (newName: string) => Promise<void>;
 };
 
@@ -47,11 +49,11 @@ const computeFilenameToFocus = (name: string, nodeType: NodeType, mediaType: str
 
 export const useRenameModalState = ({
     nodeUid,
+    drive = getDrive(),
     onClose,
     onSuccess,
     ...modalProps
 }: UseRenameModalProps): RenameModalViewProps => {
-    const { drive } = useDrive();
     const events = useDriveEventManager();
     const { createNotification } = useNotifications();
     const { handleError } = useSdkErrorHandler();

@@ -1,9 +1,10 @@
-import { useCallback, useEffect } from 'react';
+import { useCallback, useEffect, useRef } from 'react';
 
 import { useShallow } from 'zustand/react/shallow';
 
 import { useActiveBreakpoint, useAuthentication } from '@proton/components';
-import { NodeType } from '@proton/drive';
+import { MemberRole, NodeType } from '@proton/drive';
+import { uploadManager } from '@proton/drive/modules/upload';
 import type { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import { isProtonDocsDocument, isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype';
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
@@ -14,6 +15,7 @@ import { useBatchThumbnailLoader } from '../../hooks/drive/useBatchThumbnailLoad
 import usePublicToken from '../../hooks/drive/usePublicToken';
 import { downloadManager } from '../../managers/download/DownloadManager';
 import { useDrivePublicPreviewModal } from '../../modals/preview';
+import { useContextMenuStore } from '../../modules/contextMenu';
 import { useSelectionStore } from '../../modules/selection';
 import type { SortConfig, SortField } from '../../modules/sorting';
 import { DriveExplorer } from '../../statelessComponents/DriveExplorer/DriveExplorer';
@@ -23,10 +25,14 @@ import type {
     DriveExplorerSelection,
     DriveExplorerSort,
 } from '../../statelessComponents/DriveExplorer/types';
+import { UploadDragDrop } from '../../statelessComponents/UploadDragDrop/UploadDragDrop';
 import { useDriveDocsFeatureFlag, useIsSheetsEnabled } from '../../store/_documents';
 import { getPublicFolderCells } from './PublicFolderDriveExplorerCells';
+import { PublicFolderItemContextMenu } from './PublicFolderItemContextMenu';
 import { PublicFolderPageEmptyView } from './PublicFolderPageEmptyView';
 import { getPublicLinkClient } from './publicLinkClient';
+import { subscribeToPublicFolderEvents } from './subscribeToPublicFolderEvents';
+import { usePublicAuthStore } from './usePublicAuth.store';
 import { usePublicFolderStore } from './usePublicFolder.store';
 import { usePublicFolderLoader } from './usePublicFolderLoader';
 
@@ -38,52 +44,47 @@ export interface PublicFolderViewProps {
 export const PublicFolderView = ({ nodeUid, folderName }: PublicFolderViewProps) => {
     const { loadPublicFolderChildren } = usePublicFolderLoader();
     const [previewModal, showPreviewModal] = useDrivePublicPreviewModal();
-
+    const contextMenuControls = useContextMenuStore();
+    const contextMenuAnchorRef = useRef<HTMLDivElement>(null);
     const publicDriveClient = getPublicLinkClient();
     const { loadThumbnail } = useBatchThumbnailLoader({ drive: publicDriveClient });
     const { isDocsEnabled } = useDriveDocsFeatureFlag();
     const isSheetsEnabled = useIsSheetsEnabled();
     const { openDocument } = useDocumentActions();
     const authentication = useAuthentication();
-    const {
-        selectedItemIds,
-        selectItem,
-        toggleSelectItem,
-        toggleAllSelected,
-        toggleRange,
-        clearSelections,
-        isSelected,
-        getSelectionState,
-    } = useSelectionStore(
+    const { selectedItemIds } = useSelectionStore(
         useShallow((state) => ({
             selectedItemIds: state.selectedItemIds,
-            selectItem: state.selectItem,
-            toggleSelectItem: state.toggleSelectItem,
-            toggleAllSelected: state.toggleAllSelected,
-            toggleRange: state.toggleRange,
-            clearSelections: state.clearSelections,
-            isSelected: state.isSelected,
-            getSelectionState: state.getSelectionState,
         }))
     );
 
-    const { isLoading, getFolderItem, hasEverLoaded, sortField, direction, setSorting, itemUids } =
-        usePublicFolderStore(
-            useShallow((state) => ({
-                getFolderItem: state.getFolderItem,
-                isLoading: state.isLoading,
-                hasEverLoaded: state.hasEverLoaded,
-                sortField: state.sortField,
-                direction: state.direction,
-                setSorting: state.setSorting,
-                itemUids: state.itemUids,
-            }))
-        );
+    const { publicRole } = usePublicAuthStore();
+
+    const { isLoading, hasEverLoaded, sortField, direction, itemUids, folder } = usePublicFolderStore(
+        useShallow((state) => ({
+            folder: state.folder,
+            isLoading: state.isLoading,
+            hasEverLoaded: state.hasEverLoaded,
+            sortField: state.sortField,
+            direction: state.direction,
+            itemUids: state.itemUids,
+        }))
+    );
 
     // TODO: Probably moving it to the store of public folder
     useEffect(() => {
         useSelectionStore.getState().setAllItemIds(itemUids);
     }, [itemUids]);
+
+    useEffect(() => {
+        if (folder) {
+            const unsub = subscribeToPublicFolderEvents();
+
+            return () => {
+                unsub();
+            };
+        }
+    }, [folder]);
 
     const handleSorting = useCallback(
         ({
@@ -95,9 +96,9 @@ export const PublicFolderView = ({ nodeUid, folderName }: PublicFolderViewProps)
             direction: SORT_DIRECTION;
             sortConfig: SortConfig;
         }) => {
-            setSorting({ sortField, direction, sortConfig });
+            usePublicFolderStore.getState().setSorting({ sortField, direction, sortConfig });
         },
-        [setSorting]
+        []
     );
 
     const isEmpty = hasEverLoaded && !isLoading && itemUids.size === 0;
@@ -159,7 +160,7 @@ export const PublicFolderView = ({ nodeUid, folderName }: PublicFolderViewProps)
 
     const handleRenderItem = useCallback(
         (uid: string) => {
-            const storeItem = getFolderItem(uid);
+            const storeItem = usePublicFolderStore.getState().getFolderItem(uid);
             if (!storeItem) {
                 return;
             }
@@ -171,7 +172,7 @@ export const PublicFolderView = ({ nodeUid, folderName }: PublicFolderViewProps)
                 cachedThumbnailUrl: undefined,
             });
         },
-        [getFolderItem, loadThumbnail]
+        [loadThumbnail]
     );
 
     useEffect(() => {
@@ -198,24 +199,33 @@ export const PublicFolderView = ({ nodeUid, folderName }: PublicFolderViewProps)
     };
 
     const events: DriveExplorerEvents = {
+        onItemClick: () => {
+            if (contextMenuControls.isOpen) {
+                contextMenuControls.close();
+            }
+        },
         onItemDoubleClick: (uid) => {
             void handleOpenItem(uid);
+        },
+        onItemContextMenu: (uid, event) => {
+            contextMenuControls.handleContextMenu(event);
         },
         onItemRender: (uid) => {
             handleRenderItem(uid);
         },
     };
 
+    const selectionStore = useSelectionStore.getState();
     const selection: DriveExplorerSelection = {
         selectedItems: new Set(selectedItemIds),
         selectionMethods: {
-            selectionState: getSelectionState(),
-            selectItem,
-            toggleSelectItem,
-            toggleRange,
-            toggleAllSelected,
-            clearSelections,
-            isSelected,
+            selectionState: selectionStore.getSelectionState(),
+            selectItem: selectionStore.selectItem,
+            toggleSelectItem: selectionStore.toggleSelectItem,
+            toggleRange: selectionStore.toggleRange,
+            toggleAllSelected: selectionStore.toggleAllSelected,
+            clearSelections: selectionStore.clearSelections,
+            isSelected: selectionStore.isSelected,
         },
     };
 
@@ -229,8 +239,19 @@ export const PublicFolderView = ({ nodeUid, folderName }: PublicFolderViewProps)
         isDoubleClickable: () => true,
     };
 
+    const handleDrop = (dataTransfer: DataTransfer) => {
+        void uploadManager.upload(dataTransfer, nodeUid);
+    };
+
     return (
-        <div className="h-full">
+        <UploadDragDrop className="h-full" disabled={publicRole === MemberRole.Viewer} onDrop={handleDrop}>
+            <PublicFolderItemContextMenu
+                anchorRef={contextMenuAnchorRef}
+                close={contextMenuControls.close}
+                isOpen={contextMenuControls.isOpen}
+                open={contextMenuControls.open}
+                position={contextMenuControls.position}
+            />
             {isEmpty ? (
                 <PublicFolderPageEmptyView nodeUid={nodeUid} token={token} />
             ) : (
@@ -245,9 +266,14 @@ export const PublicFolderView = ({ nodeUid, folderName }: PublicFolderViewProps)
                     loading={isLoading}
                     caption={folderName}
                     config={{ itemHeight: 52 }}
+                    contextMenuControls={{
+                        isOpen: contextMenuControls.isOpen,
+                        showContextMenu: contextMenuControls.handleContextMenu,
+                        close: contextMenuControls.close,
+                    }}
                 />
             )}
             {previewModal}
-        </div>
+        </UploadDragDrop>
     );
 };

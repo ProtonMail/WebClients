@@ -286,7 +286,7 @@ describe('mapNodeToLegacyItem', () => {
 
         const result = await mapNodeToLegacyItem(maybeNode, mockShare.shareId, mockDrive);
 
-        expect(result.size).toBe(0);
+        expect(result.size).toBe(2048);
     });
 
     it('should handle node with only totalStorageSize', async () => {

@@ -8516,7 +8516,7 @@ __metadata:
     "@proton/crypto": "workspace:^"
     "@proton/jest-env": "workspace:^"
     "@proton/shared": "workspace:^"
-    "@protontech/drive-sdk": "npm:^0.9.1"
+    "@protontech/drive-sdk": "npm:^0.9.2"
     "@types/jest": "npm:^30.0.0"
     "@types/node": "npm:^24.10.4"
     eslint: "npm:^9.39.2"
@@ -9359,14 +9359,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@protontech/drive-sdk@npm:^0.9.1":
-  version: 0.9.1
-  resolution: "@protontech/drive-sdk@npm:0.9.1"
+"@protontech/drive-sdk@npm:^0.9.2":
+  version: 0.9.2
+  resolution: "@protontech/drive-sdk@npm:0.9.2"
   dependencies:
     "@noble/hashes": "npm:^1.8.0"
     bcryptjs: "npm:^2.4.3"
     ttag: "npm:^1.8.7"
-  checksum: 10/bfd4fa05b8131c6e11bf09b93922f66107af42346756838350344e2ee432e6d849a660fa150200e4b65fe5a6472247180fc5bddb7a97014dc1c4fd5a9cd1c703
+  checksum: 10/4c2397f79e22ccdf083d61ae5c69c9fd383f24e5806d3cc155bed1a69c9157ef6109c61f2015dc8f59878dfb8d2c0bc121b7ebd63d33b8995154a98efcff260c
   languageName: node
   linkType: hard
 

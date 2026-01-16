@@ -6,17 +6,12 @@ import type { MaybeNode } from '@proton/drive';
 import { AbortError, MemberRole, ProtonDriveError } from '@proton/drive';
 import useLoading from '@proton/hooks/useLoading';
 
+import { getNodeDisplaySize } from '../../utils/sdk/getNodeDisplaySize';
 import { ContentPreviewMethod, downloadContent, getContentPreviewMethod } from './content';
 import type { Drive } from './interface';
 import { logger } from './logger';
 import { getNavigation } from './navigation';
-import {
-    getNodeActiveRevisionUid,
-    getNodeDisplaySize,
-    getNodeMimeType,
-    getNodeName,
-    getSharedStatus,
-} from './nodeUtils';
+import { getNodeActiveRevisionUid, getNodeMimeType, getNodeName, getSharedStatus } from './nodeUtils';
 import { getContentSignatureIssue } from './signatures';
 import { useVideoStreaming } from './streaming';
 import { getLargeThumbnail, useThumbnailLoader } from './thumbnails';
@@ -184,7 +179,7 @@ export function usePreviewState({
             name: node ? getNodeName(node) : undefined,
             mediaType: mimeType,
             sharedStatus: getSharedStatus(node),
-            displaySize: getNodeDisplaySize(node),
+            displaySize: node ? getNodeDisplaySize(node) : undefined,
             contentSignatureIssue: verifySignatures ? getContentSignatureIssue(node) : undefined,
         },
         content: {

@@ -9,6 +9,7 @@ import { DriveExplorerGridBody } from './DriveExplorerGridBody';
 import { DriveExplorerHeader } from './DriveExplorerHeader';
 import type {
     CellDefinition,
+    ContextMenuControls,
     DragMoveControls,
     DriveExplorerConditions,
     DriveExplorerConfig,
@@ -190,19 +191,18 @@ export interface DriveExplorerProps {
     showCheckboxColumn?: boolean;
 
     /**
-     * Function that renders context menu button for each item.
+     * Context menu controls for showing/hiding context menu.
      *
      * @example
      * ```tsx
-     * (uid) => (
-     *   <ContextMenuCell
-     *     isActive={isMenuOpen && isSelected(uid)}
-     *     onClick={(e) => showMenu(uid, e)}
-     *   />
-     * )
+     * {
+     *   isOpen: contextMenuStore.isOpen,
+     *   showContextMenu: contextMenuStore.handleContextMenu,
+     *   close: contextMenuStore.close
+     * }
      * ```
      */
-    contextMenu?: (uid: string) => React.ReactNode;
+    contextMenuControls?: ContextMenuControls;
 }
 
 /**
@@ -251,7 +251,7 @@ const DriveExplorer = ({
     dragMoveControls,
     isMultiSelectionDisabled,
     showCheckboxColumn = true,
-    contextMenu,
+    contextMenuControls,
 }: DriveExplorerProps) => {
     const containerRef = useRef<HTMLDivElement>(null);
     const driveExplorerRef = useRef<HTMLDivElement>(null);
@@ -303,7 +303,7 @@ const DriveExplorer = ({
                 layout={layout}
                 loading={loading}
                 showCheckboxColumn={showCheckboxColumn}
-                showContextMenuButton={Boolean(contextMenu)}
+                showContextMenuButton={Boolean(contextMenuControls)}
             />
             {grid && layout === LayoutSetting.Grid ? (
                 <DriveExplorerGridBody
@@ -318,7 +318,7 @@ const DriveExplorer = ({
                     isMultiSelectionDisabled={isMultiSelectionDisabled}
                     dragMoveControls={dragMoveControls}
                     showCheckboxColumn={showCheckboxColumn}
-                    contextMenu={contextMenu}
+                    contextMenuControls={contextMenuControls}
                 />
             ) : (
                 <DriveExplorerBody
@@ -333,7 +333,7 @@ const DriveExplorer = ({
                     dragMoveControls={dragMoveControls}
                     isMultiSelectionDisabled={isMultiSelectionDisabled}
                     showCheckboxColumn={showCheckboxColumn}
-                    contextMenu={contextMenu}
+                    contextMenuControls={contextMenuControls}
                 />
             )}
         </div>
