@@ -71,7 +71,7 @@ describe('WebsocketState', () => {
       expect(state.getReconnectDelayWithoutJitter(false)).toBe(32000)
 
       state.didClose()
-      expect(state.getReconnectDelayWithoutJitter(false)).toBe(32000)
+      expect(state.getReconnectDelayWithoutJitter(false)).toBe(64000)
     })
 
     it('should reset attempts', () => {

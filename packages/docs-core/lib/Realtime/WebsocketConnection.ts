@@ -399,6 +399,11 @@ export class WebsocketConnection implements WebsocketConnectionInterface {
       return
     }
 
+    if (this.state.didReachMaxRetryAttempts) {
+      this.logger.info('Not queueing reconnection because max retry attempts reached')
+      return
+    }
+
     const reconnectDelay = this.state.getReconnectDelay(options.skipDelay)
     this.logger.info(`Reconnecting in ${reconnectDelay}ms`)
     clearTimeout(this.reconnectTimeout)
