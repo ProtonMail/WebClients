@@ -78,6 +78,11 @@ export const MenuDropdown: FC<Props> = ({ onLock, onLogout, interactive }) => {
         []
     );
 
+    const handleMonitor = async () => {
+        if (EXTENSION_BUILD && popup?.expanded !== true) return popup?.expand?.('monitor');
+        return navigate(getLocalPath('monitor'));
+    };
+
     return (
         <nav className="flex gap-2">
             <div className="flex gap-2 md:hidden">
@@ -100,9 +105,7 @@ export const MenuDropdown: FC<Props> = ({ onLock, onLogout, interactive }) => {
                     <hr className="mb-2 mx-4" aria-hidden="true" />
 
                     <DropdownMenuButton
-                        onClick={withAppMenuClose(
-                            EXTENSION_BUILD ? () => popup?.expand?.('monitor') : () => navigate(getLocalPath('monitor'))
-                        )}
+                        onClick={withAppMenuClose(handleMonitor)}
                         label={c('Label').t`${PASS_SHORT_APP_NAME} Monitor`}
                         icon={'pass-shield-warning'}
                         className="pt-1.5 pb-1.5"

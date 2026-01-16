@@ -16,7 +16,7 @@ export const UserStorage = WithPaidUser(() => {
     const available = humanSize({ bytes: maxStorage, unit: 'GB', fraction: 0 });
 
     return (
-        <div className="flex pl-5 pr-7 mt-1">
+        <div className="flex pl-4 pr-4 mt-1">
             <Progress className="progress-bar--norm is-thin" value={usedStorage} max={maxStorage} />
             <div className="mt-1 text-xs color-weak">
                 <b>{used}</b> / {available}
