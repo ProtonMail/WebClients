@@ -5,27 +5,35 @@ import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
 
 import bundle from './logo/plan-bundle.svg';
 import driveFree from './logo/plan-drive-free.svg';
+import drive from './logo/plan-drive.svg';
 import duo from './logo/plan-duo.svg';
 import family from './logo/plan-family.svg';
 import lumoBusiness from './logo/plan-lumo-business.svg';
 import lumoFree from './logo/plan-lumo-free.svg';
 import lumoPlus from './logo/plan-lumo-plus.svg';
 import mailFree from './logo/plan-mail-free.svg';
+import mail from './logo/plan-mail.svg';
 import meetBusiness from './logo/plan-meet-business.svg';
 import meetFree from './logo/plan-meet-free.svg';
 import passFamily from './logo/plan-pass-family.svg';
 import passFree from './logo/plan-pass-free-light.svg';
 import passLifetime from './logo/plan-pass-lifetime.svg';
+import pass from './logo/plan-pass.svg';
 import vpnBusiness from './logo/plan-vpn-business.svg';
 import vpnFree from './logo/plan-vpn-free.svg';
 import vpnPassBundleDark from './logo/plan-vpn-pass-bundle-dark.svg';
 import vpnPassBundle from './logo/plan-vpn-pass-bundle.svg';
+import vpn from './logo/plan-vpn.svg';
 import workspacePremium from './logo/plan-workspace-premium.svg';
 import workspace from './logo/plan-workspace.svg';
 
 interface Props extends ComponentPropsWithoutRef<'img'> {
     app?: APP_NAMES;
     planName?:
+        | PLANS.VPN2024
+        | PLANS.MAIL
+        | PLANS.PASS
+        | PLANS.DRIVE
         | PLANS.BUNDLE
         | PLANS.BUNDLE_PRO
         | PLANS.DUO
@@ -45,6 +53,18 @@ interface Props extends ComponentPropsWithoutRef<'img'> {
 }
 
 const CustomLogo = ({ planName, app, size, dark, ...rest }: Props) => {
+    if (planName === PLANS.VPN2024) {
+        return <img {...rest} src={vpn} width={size} alt="" />;
+    }
+    if (planName === PLANS.MAIL) {
+        return <img {...rest} src={mail} width={size} alt="" />;
+    }
+    if (planName === PLANS.DRIVE) {
+        return <img {...rest} src={drive} width={size} alt="" />;
+    }
+    if (planName === PLANS.PASS) {
+        return <img {...rest} src={pass} width={size} alt="" />;
+    }
     if (planName === PLANS.BUNDLE) {
         return <img {...rest} src={bundle} width={size} alt="" />;
     }
