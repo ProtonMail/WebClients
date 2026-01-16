@@ -72,10 +72,10 @@ describe('ModalEditCategories', () => {
         render(<ModalEditCategories onDisableAll={mockOnDisableAll} open={true} />);
 
         const notifyButton = screen.getByTestId(`${MAILBOX_LABEL_IDS.CATEGORY_SOCIAL}-notify`);
-        expect(notifyButton).toHaveAttribute('aria-pressed', 'true');
+        expect(notifyButton).toBeChecked();
 
         fireEvent.click(notifyButton);
-        expect(notifyButton).toHaveAttribute('aria-pressed', 'false');
+        expect(notifyButton).not.toBeChecked();
     });
 
     describe('reload behavior', () => {
