@@ -1,11 +1,13 @@
 import { useOrganization } from '@proton/account/organization/hooks';
-import { selectCategoriesLabel, selectDisabledCategoriesIDs } from '@proton/mail/store/labels/selector';
+import {
+    selectActiveCategoriesTabs,
+    selectCategoriesLabel,
+    selectCategoriesTabs,
+    selectDisabledCategoriesIDs,
+} from '@proton/mail/store/labels/selector';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { useSelector } from '@proton/redux-shared-store/sharedProvider';
 import { useFlag } from '@proton/unleash';
-
-import type { CategoryTab } from './categoriesConstants';
-import { getCategoryData } from './categoriesHelpers';
 
 export const useCategoriesData = () => {
     const [mailSettings] = useMailSettings();
@@ -14,24 +16,9 @@ export const useCategoriesData = () => {
     const categoryViewFlag = useFlag('CategoryView');
 
     const categoriesStore = useSelector(selectCategoriesLabel);
+    const categoriesTabs = useSelector(selectCategoriesTabs);
+    const activeCategoriesTabs = useSelector(selectActiveCategoriesTabs);
     const disabledCategoriesIDs = useSelector(selectDisabledCategoriesIDs);
-
-    const activeCategoriesTabs: CategoryTab[] = [];
-    const categoriesTabs =
-        categoriesStore?.map((category): CategoryTab => {
-            const data = getCategoryData(category.ID);
-            const tmpCategory: CategoryTab = {
-                ...data,
-                display: !!category.Display,
-                notify: !!category.Notify,
-            };
-
-            if (tmpCategory.display) {
-                activeCategoriesTabs.push(tmpCategory);
-            }
-
-            return tmpCategory;
-        }) || [];
 
     const settingAccess = organization?.Settings?.MailCategoryViewEnabled ? !!mailSettings.MailCategoryView : false;
     const categoryViewAccess = categoryViewFlag && settingAccess;
