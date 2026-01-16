@@ -17,6 +17,7 @@ import { useMicrophoneVolumeAnalysis } from '../hooks/useMicrophoneVolumeAnalysi
 import { useVideoToggle } from '../hooks/useVideoToggle';
 import type { SwitchActiveDevice } from '../types';
 import { supportsSetSinkId } from '../utils/browser';
+import { setAudioSessionType } from '../utils/ios-audio-session';
 import { MediaManagementContext } from './MediaManagementContext';
 
 export const MediaManagementProvider = ({ children }: { children: React.ReactNode }) => {
@@ -130,6 +131,19 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
 
     const initializeMicrophone = async (initialAudioState: boolean) => {
         try {
+            setAudioSessionType('auto');
+
+            // Always create and publish the track for faster unmuting
+            const audioConstraints = {
+                autoGainControl: true,
+                echoCancellation: true,
+                noiseSuppression: true,
+            };
+
+            await room.localParticipant.setMicrophoneEnabled(true, audioConstraints);
+
+            setAudioSessionType('play-and-record');
+
             // If starting muted, mute the track (keeps it published but silent)
             if (!initialAudioState) {
                 const audioPublication = [...room.localParticipant.audioTrackPublications.values()].find(
