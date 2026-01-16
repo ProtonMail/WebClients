@@ -2,9 +2,10 @@ import type { MaybeNode } from '@proton/drive';
 import { isIWAD, isVideo } from '@proton/shared/lib/helpers/mimetype';
 import { isPreviewAvailable, isPreviewTooLarge } from '@proton/shared/lib/helpers/preview';
 
+import { getNodeDisplaySize } from '../../utils/sdk/getNodeDisplaySize';
 import { streamToBuffer } from '../../utils/stream';
 import { loadCreateReadableStreamWrapper } from '../../utils/webStreamsPolyfill';
-import { getNodeDisplaySize, getNodeMimeType, getNodeStorageSize } from './nodeUtils';
+import { getNodeMimeType, getNodeStorageSize } from './nodeUtils';
 
 export enum ContentPreviewMethod {
     Buffer = 'buffer',

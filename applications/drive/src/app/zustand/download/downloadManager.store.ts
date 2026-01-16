@@ -1,7 +1,7 @@
 import { create } from 'zustand';
 import { devtools } from 'zustand/middleware';
 
-import type { NodeType } from '@proton/drive/index';
+import type { NodeType, ProtonDriveClient, ProtonDrivePhotosClient, ProtonDrivePublicLinkClient } from '@proton/drive';
 import generateUID from '@proton/utils/generateUID';
 
 // TODO: Maybe find a new home for this const since it's shared between download/upload
@@ -48,6 +48,7 @@ export type SignatureIssue = {
 };
 
 export type DownloadItem = {
+    driveClient?: ProtonDriveClient | ProtonDrivePhotosClient | ProtonDrivePublicLinkClient;
     downloadId: string;
     name: string;
     storageSize: number | undefined;

@@ -2,7 +2,7 @@ import { waitFor } from '@testing-library/react';
 import { renderHook } from '@testing-library/react-hooks';
 
 import type { InvalidNameError } from '@proton/drive/index';
-import { type NodeEntity, NodeType, useDrive } from '@proton/drive/index';
+import { type NodeEntity, NodeType } from '@proton/drive/index';
 import { PROTON_DOCS_DOCUMENT_MIMETYPE, PROTON_DOCS_SPREADSHEET_MIMETYPE } from '@proton/shared/lib/helpers/mimetype';
 
 import type { RenameModalViewProps } from './RenameModalView';
@@ -14,16 +14,11 @@ jest.mock('@proton/components', () => ({
     })),
 }));
 
-jest.mock('@proton/drive/index', () => {
-    const actual = jest.requireActual('@proton/drive/index');
-    return {
-        ...actual,
-        useDrive: jest.fn(),
-    };
-});
-
-const mockedUseDrive = jest.mocked(useDrive);
 const mockedGetNode = jest.fn();
+const mockDrive = {
+    getNode: mockedGetNode,
+    renameNode: jest.fn(),
+};
 
 const createMockNode = (param: { uid: string; name: string; type: NodeType; mediaType: string }): NodeEntity =>
     ({
@@ -37,6 +32,7 @@ const DEFAULT_UID = 'uid';
 
 const defaultProps = {
     nodeUid: DEFAULT_UID,
+    drive: mockDrive as any,
     onClose: () => {},
     onExit: () => {},
     open: true,
@@ -80,12 +76,6 @@ const baseError = {
 describe('useRenameModalState', () => {
     beforeEach(() => {
         jest.clearAllMocks();
-
-        mockedUseDrive.mockReturnValue({
-            drive: {
-                getNode: mockedGetNode,
-            },
-        } as any);
     });
 
     afterEach(() => {

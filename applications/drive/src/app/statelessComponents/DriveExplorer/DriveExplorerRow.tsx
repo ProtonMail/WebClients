@@ -7,9 +7,11 @@ import noop from '@proton/utils/noop';
 
 import { DriveExplorerCell } from './DriveExplorerCell';
 import { CheckboxCell } from './cells/CheckboxCell';
+import { ContextMenuCellWithControls } from './cells/ContextMenuCell';
 import { EmptyCell } from './cells/EmptyCell';
 import type {
     CellDefinition,
+    ContextMenuControls,
     DragMoveControls,
     DriveExplorerConditions,
     DriveExplorerEvents,
@@ -29,7 +31,7 @@ interface DriveExplorerRowProps {
     isMultiSelectionDisabled?: boolean;
     className?: string;
     showCheckboxColumn?: boolean;
-    contextMenu?: (uid: string) => React.ReactNode;
+    contextMenuControls?: ContextMenuControls;
 }
 
 export const DriveExplorerRow = ({
@@ -44,7 +46,7 @@ export const DriveExplorerRow = ({
     dragMoveControls,
     isMultiSelectionDisabled,
     showCheckboxColumn = true,
-    contextMenu,
+    contextMenuControls,
 }: DriveExplorerRowProps) => {
     const isSelected = selection?.selectedItems.has(itemId) ?? false;
     const rowRef = useRef<HTMLTableRowElement>(null);
@@ -155,7 +157,16 @@ export const DriveExplorerRow = ({
 
                         return <DriveExplorerCell key={cell.id} itemId={itemId} cell={cell} />;
                     })}
-                {contextMenu && <TableCell className="m-0 flex items-center relative">{contextMenu(itemId)}</TableCell>}
+                {contextMenuControls && (
+                    <TableCell className="m-0 flex items-center relative">
+                        <ContextMenuCellWithControls
+                            uid={itemId}
+                            isSelected={isSelected}
+                            contextMenuControls={contextMenuControls}
+                            selectionMethods={selection.selectionMethods}
+                        />
+                    </TableCell>
+                )}
             </TableRow>
         </>
     );

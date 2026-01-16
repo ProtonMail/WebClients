@@ -1,4 +1,4 @@
-import type { NodeEntity } from '@proton/drive/index';
+import type { NodeEntity, ProtonDrivePhotosClient } from '@proton/drive/index';
 import { NodeType } from '@proton/drive/index';
 
 import { TransferCancel } from '../../components/TransferManager/transfer';
@@ -106,7 +106,7 @@ jest.mock('./utils/traverseNodeStructure', () => ({
 
 jest.mock('./utils/hydrateAndCheckNodes', () => ({
     hydrateAndCheckNodes: hydrateAndCheckNodesMock,
-    hydrateAndCheckPhotos: hydrateAndCheckPhotosMock,
+    hydratePhotos: hydrateAndCheckPhotosMock,
 }));
 
 jest.mock('./utils/getDownloadSdk', () => ({
@@ -153,14 +153,42 @@ jest.mock('@proton/drive/index', () => {
     };
 });
 
-const { DownloadManager } = require('./DownloadManager');
+jest.mock('./DownloadDriveClientRegistry', () => {
+    let customDriveClient: unknown;
+    let customDrivePhotosClient: unknown;
+    return {
+        DownloadDriveClientRegistry: {
+            getDriveClient: jest.fn(() => {
+                const sdkMock = require('@proton/drive');
+                return customDriveClient || sdkMock.driveMock;
+            }),
+            getDrivePhotosClient: jest.fn(() => {
+                const sdkMock = require('@proton/drive');
+                return customDrivePhotosClient || sdkMock.driveMock;
+            }),
+            setDriveClient: jest.fn((client) => {
+                customDriveClient = client;
+            }),
+            setDrivePhotosClient: jest.fn((client) => {
+                customDrivePhotosClient = client;
+            }),
+            reset: jest.fn(() => {
+                customDriveClient = undefined;
+                customDrivePhotosClient = undefined;
+            }),
+        },
+    };
+});
+
+const { DownloadManager } = jest.requireActual('./DownloadManager');
+const { DownloadStatus, MalawareDownloadResolution } = jest.requireActual(
+    '../../zustand/download/downloadManager.store'
+);
 const {
-    DownloadStatus,
-    MalawareDownloadResolution,
     useDownloadManagerStore,
     mockStoreState: storeMockState,
 } = require('../../zustand/download/downloadManager.store');
-const sdkMock = require('@proton/drive/index') as {
+const sdkMock = require('@proton/drive') as {
     AbortError: typeof Error;
     SDKEvent: { TransfersPaused: string; TransfersResumed: string };
     getDrive: jest.Mock;
@@ -208,7 +236,7 @@ beforeEach(() => {
     jest.clearAllMocks();
     consoleWarnSpy = jest.spyOn(console, 'warn').mockImplementation(() => {});
 
-    const getStateMock = useDownloadManagerStore.getState as jest.Mock;
+    const getStateMock = jest.mocked(useDownloadManagerStore.getState);
     getStateMock.mockReset();
     getStateMock.mockReturnValue(storeMockState);
 
@@ -241,6 +269,9 @@ beforeEach(() => {
     sdkMock.driveMock.getFileDownloader.mockReset();
     sdkMock.driveMock.onMessage.mockClear();
     sdkMock.resetSDKListeners();
+
+    const { DownloadDriveClientRegistry } = require('./DownloadDriveClientRegistry');
+    DownloadDriveClientRegistry.reset();
 
     resetSingleton();
 });
@@ -317,6 +348,8 @@ describe('DownloadManager', () => {
             unsupportedFileDetected: undefined,
             isPhoto: false,
         });
+
+        expect(sdkMock.driveMock.onMessage).toHaveBeenCalledTimes(2);
 
         expect(schedulerInstance.scheduleDownload).toHaveBeenCalledTimes(1);
         const scheduledTask = schedulerInstance.scheduleDownload.mock.calls[0][0];
@@ -795,7 +828,7 @@ describe('DownloadManager', () => {
 
         manager.addListeners();
 
-        expect(sdkMock.driveMock.onMessage).toHaveBeenCalledTimes(4);
+        expect(sdkMock.driveMock.onMessage).toHaveBeenCalledTimes(2);
 
         sdkMock.emitSDKEvent(sdkMock.SDKEvent.TransfersPaused);
         expect(storeMockState.updateDownloadItem).toHaveBeenCalledWith('job-7', {
@@ -809,5 +842,73 @@ describe('DownloadManager', () => {
         expect(storeMockState.updateDownloadItem).toHaveBeenCalledWith('job-7', {
             status: DownloadStatus.InProgress,
         });
+    });
+
+    it('should use drivePhotosClient when downloading photos', async () => {
+        const manager = DownloadManager.getInstance();
+        const schedulerInstance = getSchedulerInstance();
+
+        storeMockState.addDownloadItem.mockReturnValue('photo-download-1');
+        storeMockState.getQueueItem.mockReturnValue({ isPhoto: true });
+
+        const node: NodeEntity = createMockNodeEntity({
+            uid: 'photo-1',
+            name: 'photo.jpg',
+            type: NodeType.Photo,
+        });
+        const nodeSize = node.activeRevision?.storageSize ?? 0;
+        hydrateAndCheckPhotosMock.mockResolvedValue({ nodes: [node] });
+
+        const controllerCompletion = createDeferred<void>();
+        const controller = {
+            pause: jest.fn(),
+            resume: jest.fn(),
+            completion: jest.fn(() => controllerCompletion.promise),
+            isDownloadCompleteWithSignatureIssues: jest.fn(() => false),
+        };
+        const fileDownloader = {
+            getClaimedSizeInBytes: jest.fn(() => nodeSize),
+            downloadToStream: jest.fn(() => controller),
+        };
+
+        const mockDrivePhotosClient = {
+            ...sdkMock.driveMock,
+            getFileDownloader: jest.fn().mockResolvedValue(fileDownloader),
+            onMessage: jest.fn(),
+        };
+        const { DownloadDriveClientRegistry } = require('./DownloadDriveClientRegistry');
+        DownloadDriveClientRegistry.setDrivePhotosClient(mockDrivePhotosClient as unknown as ProtonDrivePhotosClient);
+
+        getDownloadSdkMock.mockReturnValue(mockDrivePhotosClient);
+
+        const readableStream = {} as ReadableStream<Uint8Array<ArrayBuffer>>;
+        loadCreateReadableStreamWrapperMock.mockResolvedValue(readableStream);
+        fileSaverSaveAsFileMock.mockResolvedValue(undefined);
+
+        await manager.downloadPhotos([node.uid]);
+
+        expect(hydrateAndCheckPhotosMock).toHaveBeenCalledWith([node.uid]);
+        expect(mockDrivePhotosClient.onMessage).toHaveBeenCalledTimes(2);
+        expect(sdkMock.driveMock.onMessage).not.toHaveBeenCalled();
+        expect(storeMockState.addDownloadItem).toHaveBeenCalledWith({
+            name: node.name,
+            storageSize: nodeSize,
+            downloadedBytes: 0,
+            status: DownloadStatus.Pending,
+            nodeUids: [node.uid],
+            isPhoto: true,
+        });
+
+        expect(schedulerInstance.scheduleDownload).toHaveBeenCalledTimes(1);
+        const scheduledTask = schedulerInstance.scheduleDownload.mock.calls[0][0];
+
+        const completionPromise = scheduledTask.start();
+        await flushAsync();
+
+        expect(getDownloadSdkMock).toHaveBeenCalledWith('photo-download-1');
+        expect(mockDrivePhotosClient.getFileDownloader).toHaveBeenCalledWith(node.uid, expect.any(Object));
+
+        controllerCompletion.resolve();
+        await completionPromise;
     });
 });

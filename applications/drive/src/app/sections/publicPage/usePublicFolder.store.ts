@@ -5,8 +5,15 @@ import type { NodeType } from '@proton/drive';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 
 import { sortItems } from '../../modules/sorting';
+import { nodeTypeComparator, stringComparator } from '../../modules/sorting/comparators';
 import { type SortConfig, SortField } from '../../modules/sorting/types';
 import { getPublicFolderSortValue } from './publicFolder.sorting';
+
+export type PublicFolderViewData = {
+    uid: string;
+    name: string;
+    parentUid: string | undefined;
+};
 
 export type PublicFolderItem = {
     uid: string;
@@ -23,35 +30,27 @@ export type PublicFolderItem = {
     uploadedBy: string | undefined;
 };
 
-export interface PublicFolderPermissions {
-    canEdit: boolean;
-    canDownload: boolean;
-    canUpload: boolean;
-    canDelete: boolean;
-    canRename: boolean;
-    canOpenInDocs: boolean;
-    canShowPreview: boolean;
-}
-
 interface PublicFolderStore {
+    folder: PublicFolderViewData | undefined;
     folderItems: Map<string, PublicFolderItem>;
     itemUids: Set<string>;
 
     isLoading: boolean;
     hasEverLoaded: boolean;
-    permissions: PublicFolderPermissions;
 
     sortField: SortField;
     direction: SORT_DIRECTION;
+    sortConfig: SortConfig | undefined;
+
+    setFolder: (folderData: PublicFolderViewData) => void;
 
     setLoading: (loading: boolean) => void;
     setHasEverLoaded: () => void;
-    setPermissions: (permissions: PublicFolderPermissions) => void;
     setSorting: (params: { sortField: SortField; direction: SORT_DIRECTION; sortConfig: SortConfig }) => void;
 
-    setFolderItem: (item: PublicFolderItem) => void;
-    updateFolderItem: (uid: string, updates: Partial<PublicFolderItem>) => void;
-    removeFolderItem: (uid: string) => void;
+    setItem: (item: PublicFolderItem) => void;
+    updateItem: (uid: string, updates: Partial<PublicFolderItem>) => void;
+    removeItem: (uid: string) => void;
     clearAll: () => void;
 
     getFolderItem: (uid: string) => PublicFolderItem | undefined;
@@ -59,30 +58,23 @@ interface PublicFolderStore {
     getItemUids: () => string[];
 }
 
+const defaultSortConfig: SortConfig = [
+    { field: SortField.nodeType, comparator: nodeTypeComparator, direction: SORT_DIRECTION.ASC },
+    { field: SortField.name, comparator: stringComparator },
+];
+
 export const usePublicFolderStore = create<PublicFolderStore>()(
     devtools(
         (set, get) => ({
             folderItems: new Map(),
             itemUids: new Set(),
-
+            folder: undefined,
             isLoading: false,
             hasEverLoaded: false,
-            permissions: {
-                canEdit: false,
-                canDownload: true,
-                canUpload: false,
-                canDelete: false,
-                canRename: false,
-                canOpenInDocs: false,
-                canShowPreview: false,
-            },
 
             sortField: SortField.name,
             direction: SORT_DIRECTION.ASC,
-
-            setPermissions: (permissions: PublicFolderPermissions) => {
-                set({ permissions });
-            },
+            sortConfig: defaultSortConfig,
 
             setSorting: ({ sortField, direction, sortConfig }) => {
                 const state = get();
@@ -94,16 +86,45 @@ export const usePublicFolderStore = create<PublicFolderStore>()(
                     (item) => item.uid
                 );
 
-                set({ sortField, direction, itemUids: new Set(sortedUids) });
+                set({ sortField, direction, sortConfig, itemUids: new Set(sortedUids) });
             },
 
-            setFolderItem: (item: PublicFolderItem) => {
+            setItem: (item: PublicFolderItem) => {
                 set((state) => {
-                    const newItemUids = new Set(state.itemUids);
-                    newItemUids.add(item.uid);
-
                     const newFolderItems = new Map(state.folderItems);
                     newFolderItems.set(item.uid, item);
+
+                    if (state.sortConfig) {
+                        const allItems = Array.from(newFolderItems.values());
+                        const sortedUids = sortItems(
+                            allItems,
+                            state.sortConfig,
+                            state.direction,
+                            getPublicFolderSortValue,
+                            (item) => item.uid
+                        );
+
+                        const currentUids = Array.from(state.itemUids);
+                        const orderChanged =
+                            sortedUids.length !== currentUids.length ||
+                            sortedUids.some((uid, index) => {
+                                return uid !== currentUids[index];
+                            });
+
+                        if (orderChanged) {
+                            return {
+                                folderItems: newFolderItems,
+                                itemUids: new Set(sortedUids),
+                            };
+                        }
+
+                        return {
+                            folderItems: newFolderItems,
+                        };
+                    }
+
+                    const newItemUids = new Set(state.itemUids);
+                    newItemUids.add(item.uid);
                     return {
                         folderItems: newFolderItems,
                         itemUids: newItemUids,
@@ -111,7 +132,7 @@ export const usePublicFolderStore = create<PublicFolderStore>()(
                 });
             },
 
-            updateFolderItem: (uid: string, updates: Partial<PublicFolderItem>) => {
+            updateItem: (uid: string, updates: Partial<PublicFolderItem>) => {
                 set((state) => {
                     const existingItem = state.folderItems.get(uid);
                     if (!existingItem) {
@@ -129,7 +150,7 @@ export const usePublicFolderStore = create<PublicFolderStore>()(
                 });
             },
 
-            removeFolderItem: (uid: string) => {
+            removeItem: (uid: string) => {
                 set((state) => {
                     const newFolderItems = new Map(state.folderItems);
                     newFolderItems.delete(uid);
@@ -162,6 +183,7 @@ export const usePublicFolderStore = create<PublicFolderStore>()(
             },
 
             setHasEverLoaded: () => set({ hasEverLoaded: true }),
+            setFolder: (folder) => set({ folder }),
         }),
         {
             name: 'public-folder-store',

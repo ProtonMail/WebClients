@@ -3,13 +3,12 @@ import { useCallback } from 'react';
 import { c } from 'ttag';
 
 import { useAuthentication, useNotifications } from '@proton/components';
-import { MemberRole } from '@proton/drive';
 
 import { useSdkErrorHandler } from '../../utils/errorHandling/useSdkErrorHandler';
+import { getNodeDisplaySize } from '../../utils/sdk/getNodeDisplaySize';
 import { getNodeEntity } from '../../utils/sdk/getNodeEntity';
 import { getSignatureIssues } from '../../utils/sdk/getSignatureIssues';
 import { getPublicLinkClient } from './publicLinkClient';
-import type { PublicFolderPermissions } from './usePublicFolder.store';
 import { usePublicFolderStore } from './usePublicFolder.store';
 
 export const usePublicFolderLoader = () => {
@@ -19,7 +18,7 @@ export const usePublicFolderLoader = () => {
 
     const loadPublicFolderChildren = useCallback(
         async (nodeUid: string, abortSignal: AbortSignal) => {
-            const { isLoading, setLoading, setFolderItem, clearAll, setPermissions } = usePublicFolderStore.getState();
+            const { isLoading, setLoading, setItem, clearAll } = usePublicFolderStore.getState();
             if (isLoading) {
                 return;
             }
@@ -29,22 +28,14 @@ export const usePublicFolderLoader = () => {
 
             try {
                 const driveClient = getPublicLinkClient();
-                const maybeRootNode = await driveClient.getRootNode();
-                const { node: rootNode } = getNodeEntity(maybeRootNode);
-                // TODO: Add that back once API is fixed, which means owner of the share will have admin permissions
-                // const role = await getNodeEffectiveRole(rootNode, driveClient);
-                const viewOnly = rootNode.directRole === MemberRole.Viewer;
-                const permissions: PublicFolderPermissions = {
-                    canEdit: !viewOnly,
-                    canDownload: true,
-                    canUpload: !viewOnly,
-                    canDelete: !viewOnly,
-                    canRename: !viewOnly,
-                    canShowPreview: true,
-                    canOpenInDocs: true,
-                };
+                const maybeFolderNode = await driveClient.getNode(nodeUid);
+                const { node: folderNode } = getNodeEntity(maybeFolderNode);
+                usePublicFolderStore.getState().setFolder({
+                    uid: folderNode.uid,
+                    parentUid: folderNode.parentUid,
+                    name: folderNode.name,
+                });
 
-                setPermissions(permissions);
                 let showErrorNotification = false;
 
                 for await (const maybeNode of driveClient.iterateFolderChildren(nodeUid, undefined, abortSignal)) {
@@ -54,13 +45,14 @@ export const usePublicFolderLoader = () => {
                         const modificationTime = node.activeRevision?.claimedModificationTime
                             ? node.activeRevision.claimedModificationTime
                             : node.creationTime;
-                        setFolderItem({
+                        const size = getNodeDisplaySize(maybeNode);
+                        setItem({
                             uid: node.uid,
                             name: node.name,
                             type: node.type,
                             mediaType: node.mediaType,
                             thumbnailId: node.activeRevision?.uid || node.uid,
-                            size: node.activeRevision?.storageSize || node.totalStorageSize,
+                            size,
                             parentUid: node.parentUid,
                             creationTime: node.creationTime,
                             modificationTime,

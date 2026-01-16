@@ -8,7 +8,6 @@ import type { ConfirmActionModalProps } from '@proton/components/components/conf
 import { NodeType } from '@proton/drive';
 
 import { NameCell, defaultNameCellConfig } from '../../sections/commonDriveExplorerCells/NameCell';
-import { ContextMenuCell } from '../../statelessComponents/DriveExplorer/cells/ContextMenuCell';
 import { GridItemContent } from '../../statelessComponents/DriveExplorer/cells/gridComponents/GridItemContent';
 import { GridItemName } from '../../statelessComponents/DriveExplorer/cells/gridComponents/GridItemName';
 import type { CellDefinition, GridDefinition } from '../../statelessComponents/DriveExplorer/types';
@@ -28,14 +27,6 @@ export const getSharedWithMeCells = ({
     viewportWidth: Breakpoints['viewportWidth'];
     onRenderItem: (uid: string) => void;
     showConfirmModal: (props: ConfirmActionModalProps) => void;
-    selectionControls: {
-        selectItem: (uid: string) => void;
-        isSelected: (uid: string) => boolean;
-    };
-    contextMenuControls: {
-        isOpen: boolean;
-        handleContextMenu: (e: MouseEvent<Element>) => void;
-    };
 }): CellDefinition[] => [
     {
         ...defaultNameCellConfig,
@@ -143,34 +134,6 @@ export const getSharedWithMeCells = ({
         },
     },
 ];
-
-export const getSharedWithMeContextMenu = ({
-    selectionControls,
-    contextMenuControls,
-}: {
-    selectionControls: {
-        selectItem: (uid: string) => void;
-        isSelected: (uid: string) => boolean;
-    };
-    contextMenuControls: {
-        isOpen: boolean;
-        handleContextMenu: (e: MouseEvent<Element>) => void;
-    };
-}) => {
-    const ContextMenuRenderer = (uid: string) => {
-        const isContextMenuButtonActive = contextMenuControls.isOpen && selectionControls.isSelected(uid);
-        return (
-            <ContextMenuCell
-                isActive={isContextMenuButtonActive}
-                onClick={(e) => {
-                    selectionControls.selectItem(uid);
-                    contextMenuControls.handleContextMenu(e);
-                }}
-            />
-        );
-    };
-    return ContextMenuRenderer;
-};
 
 export const getSharedWithMeGrid = ({
     selectionControls,

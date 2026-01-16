@@ -6,7 +6,9 @@ import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
 import { CheckboxCell } from './cells/CheckboxCell';
+import { ContextMenuCellWithControls } from './cells/ContextMenuCell';
 import type {
+    ContextMenuControls,
     DragMoveControls,
     DriveExplorerConditions,
     DriveExplorerEvents,
@@ -26,7 +28,7 @@ interface DriveExplorerGridBoxProps {
     isMultiSelectionDisabled?: boolean;
     dragMoveControls?: DragMoveControls;
     showCheckboxColumn?: boolean;
-    contextMenu?: (uid: string) => React.ReactNode;
+    contextMenuControls?: ContextMenuControls;
 }
 
 export const DriveExplorerGridBox = ({
@@ -39,7 +41,7 @@ export const DriveExplorerGridBox = ({
     isMultiSelectionDisabled,
     dragMoveControls,
     showCheckboxColumn = true,
-    contextMenu,
+    contextMenuControls,
 }: DriveExplorerGridBoxProps) => {
     const rowRef = useRef<HTMLDivElement>(null);
     const isSelected = selection?.selectedItems.has(itemId) ?? false;
@@ -151,7 +153,16 @@ export const DriveExplorerGridBox = ({
                     }}
                 >
                     {grid.name(itemId)}
-                    {contextMenu && <div className="absolute right-0 mr-1">{contextMenu(itemId)}</div>}
+                    {contextMenuControls && (
+                        <div className="absolute right-0 mr-1">
+                            <ContextMenuCellWithControls
+                                uid={itemId}
+                                isSelected={isSelected}
+                                contextMenuControls={contextMenuControls}
+                                selectionMethods={selection.selectionMethods}
+                            />
+                        </div>
+                    )}
                 </div>
             </div>
         </>

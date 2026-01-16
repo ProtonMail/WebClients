@@ -1,7 +1,8 @@
 import type { ProtonDriveClient } from '@protontech/drive-sdk';
+import type { ProtonDrivePhotosClient } from '@protontech/drive-sdk/dist/protonDrivePhotosClient';
 import type { ProtonDrivePublicLinkClient } from '@protontech/drive-sdk/dist/protonDrivePublicLinkClient';
 
-import { getDrive } from '../../../index';
+import { getDrive, getDriveForPhotos } from '../../../index';
 import type { EventCallback, UploadTask } from '../types';
 
 /**
@@ -10,12 +11,20 @@ import type { EventCallback, UploadTask } from '../types';
  */
 export abstract class TaskExecutor<T extends UploadTask = UploadTask> {
     #driveClient: ProtonDriveClient | ProtonDrivePublicLinkClient | undefined;
+    #drivePhotosClient: ProtonDrivePhotosClient | undefined;
 
     get driveClient() {
         return this.#driveClient || getDrive();
     }
     set driveClient(driveClientInstance: ProtonDriveClient | ProtonDrivePublicLinkClient) {
         this.#driveClient = driveClientInstance;
+    }
+
+    get drivePhotosClient() {
+        return this.#drivePhotosClient || getDriveForPhotos();
+    }
+    set drivePhotosClient(drivePhotosClientInstance: ProtonDrivePhotosClient) {
+        this.#drivePhotosClient = drivePhotosClientInstance;
     }
 
     protected eventCallback?: EventCallback;

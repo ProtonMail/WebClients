@@ -1,4 +1,4 @@
-import { type NodeEntity, NodeType } from '@proton/drive/index';
+import { type NodeEntity, NodeType } from '@proton/drive';
 
 import { type DownloadItemInput, DownloadStatus, IssueStatus } from '../../../zustand/download/downloadManager.store';
 import { getNodeStorageSize } from './getNodeStorageSize';
