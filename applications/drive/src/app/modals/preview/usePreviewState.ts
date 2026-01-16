@@ -44,7 +44,7 @@ export function usePreviewState({
     const [largeThumbnail, setLargeThumbnail] = useState<{ url: string; data: Uint8Array<ArrayBuffer>[] } | undefined>(
         undefined
     );
-    const { getSmallThumbnailUrl } = useThumbnailLoader();
+    const { getSmallThumbnailUrl } = useThumbnailLoader({ drive });
 
     const previewMethod = node ? getContentPreviewMethod(node) : undefined;
     const [isLargeThumbnailLoading, withIsLargeThumbnailLoading] = useLoading(false);

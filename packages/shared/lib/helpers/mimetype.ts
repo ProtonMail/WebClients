@@ -64,7 +64,7 @@ const isAVIFSupported = () => {
     return isSupported;
 };
 
-const isHEICSupported = () => {
+export const isHEICSupported = () => {
     const os = getOS();
     const { name, version } = getBrowser();
     return Boolean(
