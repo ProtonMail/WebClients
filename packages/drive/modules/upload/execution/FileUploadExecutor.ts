@@ -7,6 +7,7 @@ import {
 } from '../../../index';
 import { type ExtendedAttributesMetadata, generateExtendedAttributes } from '../../extendedAttributes';
 import { generateThumbnail } from '../../thumbnails';
+import { UploadDriveClientRegistry } from '../UploadDriveClientRegistry';
 import type { FileUploadTask } from '../types';
 import { createFileStream } from '../utils/createFileStream';
 import { TaskExecutor } from './TaskExecutor';
@@ -29,7 +30,7 @@ export class FileUploadExecutor extends TaskExecutor<FileUploadTask> {
                 task.isUnfinishedUpload
             );
 
-            const drive = this.driveClient;
+            const drive = UploadDriveClientRegistry.getDriveClient();
             const uploader = await this.getUploader(drive, task, metadata, abortController.signal);
 
             const stream = createFileStream(task.file);

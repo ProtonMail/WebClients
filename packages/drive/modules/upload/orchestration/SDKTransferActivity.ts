@@ -1,4 +1,7 @@
-import { SDKEvent, getDrive } from '../../../index';
+import { type ProtonDriveClient, SDKEvent } from '@protontech/drive-sdk';
+import type { ProtonDrivePhotosClient } from '@protontech/drive-sdk/dist/protonDrivePhotosClient';
+import type { ProtonDrivePublicLinkClient } from '@protontech/drive-sdk/dist/protonDrivePublicLinkClient';
+
 import { useUploadQueueStore } from '../store/uploadQueue.store';
 import { UploadStatus } from '../types';
 
@@ -15,14 +18,8 @@ export class SDKTransferActivity {
     /**
      * Subscribe to SDK TransfersPaused and TransfersResumed events
      */
-    subscribe(): void {
+    subscribe(drive: ProtonDriveClient | ProtonDrivePhotosClient | ProtonDrivePublicLinkClient): void {
         if (this.sdkEventsDisposer) {
-            return;
-        }
-
-        const drive = getDrive();
-        // TODO: Update when public client will support onMessage
-        if (!drive) {
             return;
         }
 

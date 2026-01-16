@@ -1,4 +1,5 @@
 import { NodeType } from '../../../index';
+import { UploadDriveClientRegistry } from '../UploadDriveClientRegistry';
 import { FileUploadExecutor } from '../execution/FileUploadExecutor';
 import { FolderCreationExecutor } from '../execution/FolderCreationExecutor';
 import { CapacityManager } from '../scheduling/CapacityManager';
@@ -18,6 +19,7 @@ jest.mock('./SDKTransferActivity');
 jest.mock('./UploadEventHandler');
 jest.mock('../utils/schedulerHelpers');
 jest.mock('../scheduling/CapacityManager');
+jest.mock('../UploadDriveClientRegistry');
 
 describe('UploadOrchestrator', () => {
     let orchestrator: UploadOrchestrator;
@@ -42,6 +44,9 @@ describe('UploadOrchestrator', () => {
     beforeEach(() => {
         jest.clearAllMocks();
         jest.useFakeTimers();
+
+        jest.mocked(UploadDriveClientRegistry.getDriveClient).mockReturnValue({} as any);
+        jest.mocked(UploadDriveClientRegistry.getDrivePhotosClient).mockReturnValue({} as any);
 
         mockGetQueue = jest.fn().mockReturnValue([]);
         mockGetItem = jest.fn();
@@ -168,7 +173,7 @@ describe('UploadOrchestrator', () => {
     describe('start', () => {
         it('should not start if already running', async () => {
             mockGetNextTasks.mockReturnValue([]);
-            mockGetQueue.mockReturnValue([{ uploadId: 'file1', status: UploadStatus.Pending }]);
+            mockGetQueue.mockReturnValue([{ uploadId: 'file1', type: NodeType.File, status: UploadStatus.Pending }]);
 
             const startPromise1 = orchestrator.start();
             const startPromise2 = orchestrator.start();
@@ -183,7 +188,7 @@ describe('UploadOrchestrator', () => {
         });
 
         it('should subscribe to SDK events if queue has items', async () => {
-            mockGetQueue.mockReturnValue([{ uploadId: 'file1', status: UploadStatus.Pending }]);
+            mockGetQueue.mockReturnValue([{ uploadId: 'file1', type: NodeType.File, status: UploadStatus.Pending }]);
             mockGetNextTasks.mockReturnValue([]);
 
             const startPromise = orchestrator.start();
@@ -198,7 +203,7 @@ describe('UploadOrchestrator', () => {
 
         it('should not subscribe if already subscribed', async () => {
             mockIsSubscribed.mockReturnValue(true);
-            mockGetQueue.mockReturnValue([{ uploadId: 'file1', status: UploadStatus.Pending }]);
+            mockGetQueue.mockReturnValue([{ uploadId: 'file1', type: NodeType.File, status: UploadStatus.Pending }]);
             mockGetNextTasks.mockReturnValue([]);
 
             const startPromise = orchestrator.start();
@@ -376,70 +381,6 @@ describe('UploadOrchestrator', () => {
 
             const eventHandlerInstance = jest.mocked(UploadEventHandler).mock.results[0].value;
             expect(eventHandlerInstance.handleEvent).not.toHaveBeenCalled();
-        });
-    });
-
-    describe('setDriveClient', () => {
-        let mockFileExecutorDriveClient: any;
-        let mockFolderExecutorDriveClient: any;
-
-        beforeEach(() => {
-            mockFileExecutorDriveClient = undefined;
-            mockFolderExecutorDriveClient = undefined;
-
-            jest.mocked(FileUploadExecutor).mockImplementation(
-                () =>
-                    ({
-                        setEventCallback: mockSetEventCallback,
-                        execute: mockFileExecutorExecute,
-                        set driveClient(client: any) {
-                            mockFileExecutorDriveClient = client;
-                        },
-                    }) as any
-            );
-
-            jest.mocked(FolderCreationExecutor).mockImplementation(
-                () =>
-                    ({
-                        setEventCallback: mockSetEventCallback,
-                        execute: mockFolderExecutorExecute,
-                        set driveClient(client: any) {
-                            mockFolderExecutorDriveClient = client;
-                        },
-                    }) as any
-            );
-
-            orchestrator = new UploadOrchestrator();
-        });
-
-        it('should set drive client on all executors', () => {
-            const customDriveClient = {
-                getFileUploader: jest.fn(),
-                createFolder: jest.fn(),
-            } as any;
-
-            orchestrator.setDriveClient(customDriveClient);
-
-            expect(mockFileExecutorDriveClient).toBe(customDriveClient);
-            expect(mockFolderExecutorDriveClient).toBe(customDriveClient);
-        });
-
-        it('should allow different drive clients to be set', () => {
-            const publicLinkClient = {
-                getFileUploader: jest.fn(),
-                createFolder: jest.fn(),
-            } as any;
-
-            const mainDriveClient = {
-                getFileUploader: jest.fn(),
-                createFolder: jest.fn(),
-            } as any;
-
-            orchestrator.setDriveClient(publicLinkClient);
-            expect(mockFileExecutorDriveClient).toBe(publicLinkClient);
-
-            orchestrator.setDriveClient(mainDriveClient);
-            expect(mockFileExecutorDriveClient).toBe(mainDriveClient);
         });
     });
 

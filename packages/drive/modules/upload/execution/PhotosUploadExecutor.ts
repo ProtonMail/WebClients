@@ -5,6 +5,7 @@ import { CryptoProxy } from '@proton/crypto';
 import { NodeWithSameNameExistsValidationError } from '../../../index';
 import { type ExtendedAttributesMetadata, generatePhotosExtendedAttributes } from '../../extendedAttributes';
 import { generateThumbnail } from '../../thumbnails';
+import { UploadDriveClientRegistry } from '../UploadDriveClientRegistry';
 import type { PhotosUploadTask } from '../types';
 import { createFileStream } from '../utils/createFileStream';
 import { TaskExecutor } from './TaskExecutor';
@@ -18,7 +19,7 @@ export class PhotosUploadExecutor extends TaskExecutor<PhotosUploadTask> {
         const abortController = new AbortController();
 
         try {
-            const drivePhotos = this.drivePhotosClient;
+            const drivePhotos = UploadDriveClientRegistry.getDrivePhotosClient();
             const duplicateUids = await drivePhotos.findPhotoDuplicates(
                 task.file.name,
                 async () => {

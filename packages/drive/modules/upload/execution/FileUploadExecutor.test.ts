@@ -1,18 +1,12 @@
-import { NodeType } from '@protontech/drive-sdk';
+import { NodeType, NodeWithSameNameExistsValidationError } from '@protontech/drive-sdk';
 
-import { NodeWithSameNameExistsValidationError, getDrive } from '../../../index';
 import { generateExtendedAttributes } from '../../extendedAttributes';
 import { generateThumbnail } from '../../thumbnails';
+import { UploadDriveClientRegistry } from '../UploadDriveClientRegistry';
 import type { EventCallback, FileUploadTask } from '../types';
 import { FileUploadExecutor } from './FileUploadExecutor';
 
-jest.mock('../../../index', () => {
-    const actual = jest.requireActual('../../../index');
-    return {
-        ...actual,
-        getDrive: jest.fn(),
-    };
-});
+jest.mock('../UploadDriveClientRegistry');
 jest.mock('../../thumbnails');
 jest.mock('../../extendedAttributes');
 jest.mock('../utils/createFileStream', () => ({
@@ -80,7 +74,7 @@ describe('FileUploadExecutor', () => {
             uploadFromStream: mockUploadFromStream,
         });
 
-        jest.mocked(getDrive).mockReturnValue({
+        jest.mocked(UploadDriveClientRegistry.getDriveClient).mockReturnValue({
             getFileUploader: mockGetFileUploader,
             getFileRevisionUploader: mockGetFileRevisionUploader,
         } as any);
@@ -110,54 +104,6 @@ describe('FileUploadExecutor', () => {
             newExecutor.setEventCallback(callback);
 
             expect(callback).toBeDefined();
-        });
-    });
-
-    describe('driveClient', () => {
-        it('should use getDrive by default', async () => {
-            const task = createFileTask();
-
-            await executor.execute(task);
-
-            expect(getDrive).toHaveBeenCalled();
-            expect(mockGetFileUploader).toHaveBeenCalled();
-        });
-
-        it('should use custom drive client when set', async () => {
-            const customMockGetFileUploader = jest.fn().mockResolvedValue({
-                uploadFromStream: mockUploadFromStream,
-            });
-            const customDriveClient = {
-                getFileUploader: customMockGetFileUploader,
-            } as any;
-
-            executor.driveClient = customDriveClient;
-
-            const task = createFileTask();
-            await executor.execute(task);
-
-            expect(customMockGetFileUploader).toHaveBeenCalled();
-            expect(mockGetFileUploader).not.toHaveBeenCalled();
-        });
-
-        it('should persist custom drive client across multiple executions', async () => {
-            const customMockGetFileUploader = jest.fn().mockResolvedValue({
-                uploadFromStream: mockUploadFromStream,
-            });
-            const customDriveClient = {
-                getFileUploader: customMockGetFileUploader,
-            } as any;
-
-            executor.driveClient = customDriveClient;
-
-            const task1 = createFileTask({ uploadId: 'task1' });
-            const task2 = createFileTask({ uploadId: 'task2' });
-
-            await executor.execute(task1);
-            await executor.execute(task2);
-
-            expect(customMockGetFileUploader).toHaveBeenCalledTimes(2);
-            expect(mockGetFileUploader).not.toHaveBeenCalled();
         });
     });
 
