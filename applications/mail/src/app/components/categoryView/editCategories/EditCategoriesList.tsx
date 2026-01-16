@@ -1,8 +1,9 @@
 import { clsx } from 'clsx';
-import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button/Button';
-import { Checkbox, Icon, Label } from '@proton/components';
+import Icon from '@proton/components/components/icon/Icon';
+import Checkbox from '@proton/components/components/input/Checkbox';
+import Label from '@proton/components/components/label/Label';
+import Toggle from '@proton/components/components/toggle/Toggle';
 import type { CategoryTab } from '@proton/mail';
 
 import { getDescriptionFromCategoryId, getLabelFromCategoryId } from '../categoriesStringHelpers';
@@ -21,41 +22,37 @@ export const EditCategoriesList = ({
     return (
         <>
             {categoriesToDisplay.map((category) => (
-                <div className="flex gap-3 items-start align-center mb-5" key={category.id}>
-                    <Checkbox
-                        checked={category.display}
-                        onChange={() => handleCategoryCheckChange(category)}
-                        id={category.id}
-                        data-testid={`${category.id}-display`}
-                    />
-                    <Label htmlFor={category.id} className={clsx('p-0 flex-1 flex gap-3')}>
-                        <Icon
-                            name={category.icon}
-                            className="mt-0.5 mail-category-color"
-                            data-color={category.colorShade}
+                <>
+                    <div key={category.id} className="flex gap-3 mb-5">
+                        <Toggle
+                            className="self-center"
+                            checked={category.display}
+                            onChange={() => handleCategoryCheckChange(category)}
+                            id={category.id}
+                            data-testid={`${category.id}-display`}
                         />
-                        <div className="flex flex-column gap-1">
-                            <span>{getLabelFromCategoryId(category.id)}</span>
-                            <span className="color-weak text-sm">{getDescriptionFromCategoryId(category.id)}</span>
-                        </div>
-                    </Label>
+                        <Label htmlFor={category.id} className={clsx('p-0 flex-1 flex gap-3')}>
+                            <Icon
+                                name={category.icon}
+                                className="mt-0.5 mail-category-color self-center"
+                                data-color={category.colorShade}
+                            />
+                            <div className="flex flex-column gap-1">
+                                <span className="text-lg">{getLabelFromCategoryId(category.id)}</span>
+                                <span className="color-weak text-sm">{getDescriptionFromCategoryId(category.id)}</span>
+                            </div>
+                        </Label>
 
-                    {category.display && (
-                        <Button
-                            icon
-                            shape="ghost"
-                            aria-pressed={category.notify}
+                        <Checkbox
+                            id={category.id}
+                            checked={category.notify}
                             onClick={() => handleCategoryNotifyChange(category)}
                             data-testid={`${category.id}-notify`}
-                        >
-                            <Icon
-                                name={category.notify ? 'bell-filled-2' : 'bell'}
-                                className="color-weak"
-                                alt={c('Action').t`Toggle notifications`}
-                            />
-                        </Button>
-                    )}
-                </div>
+                        />
+                    </div>
+
+                    <hr className="bg-weak" />
+                </>
             ))}
         </>
     );

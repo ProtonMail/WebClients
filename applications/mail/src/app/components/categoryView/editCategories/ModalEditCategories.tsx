@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import type { ModalProps } from '@proton/components';
-import { ModalContent, ModalTwo, ModalTwoFooter, useApi } from '@proton/components';
+import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, useApi } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
 import { type CategoryTab, categoriesActions } from '@proton/mail';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
@@ -92,11 +92,19 @@ export const ModalEditCategories = ({ onDisableAll, ...rest }: Props) => {
     };
 
     return (
-        <ModalTwo {...rest} data-testid="edit-categories-modal" size="small">
-            <ModalContent>
-                <p className="m-0 mb-4 pt-8 text-semibold">{c('Title').t`Customize categories`}</p>
-                <p className="m-0 mb-6 color-weak">{c('Label')
-                    .t`Select the categories to include, and enable notifications to be alerted about new emails in a category.`}</p>
+        <ModalTwo {...rest} data-testid="edit-categories-modal">
+            <ModalTwoHeader />
+            <ModalTwoContent className="my-0 mx-12 mb-4">
+                <p className="m-0 mb-4 text-2xl text-bold">{c('Title').t`Customize categories`}</p>
+                <p className="m-0 mb-4 text-lg color-weak">{c('Label')
+                    .t`Select the categories to include and manage notifications for new emails.`}</p>
+
+                <div className="flex justify-space-between">
+                    <p className="my-4 text-semibold text-sm">{c('Label').t`Categories`}</p>
+                    <p className="my-4 text-semibold text-sm">{c('Label').t`Notifications`}</p>
+                </div>
+                <hr className="bg-weak" />
+
                 <EditCategoriesList
                     categoriesToDisplay={categoriesListState}
                     handleCategoryCheckChange={(category) =>
@@ -106,18 +114,18 @@ export const ModalEditCategories = ({ onDisableAll, ...rest }: Props) => {
                         handleCategoryUpdate({ ...category, notify: !category.notify })
                     }
                 />
-            </ModalContent>
-            <ModalTwoFooter>
-                <span className="w-full">
-                    <Button
-                        fullWidth
-                        onClick={handleSaveCategories}
-                        loading={loading}
-                        data-testid="save-categories-button"
-                    >
-                        {c('Action').t`Done`}
-                    </Button>
-                </span>
+            </ModalTwoContent>
+            <ModalTwoFooter className="flex justify-end gap-4">
+                <Button size="large" onClick={() => rest.onClose?.()}>{c('Action').t`Cancel`}</Button>
+                <Button
+                    color="norm"
+                    size="large"
+                    onClick={handleSaveCategories}
+                    loading={loading}
+                    data-testid="save-categories-button"
+                >
+                    {c('Action').t`Save preferences`}
+                </Button>
             </ModalTwoFooter>
         </ModalTwo>
     );
