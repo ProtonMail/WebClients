@@ -18,7 +18,7 @@ interface Props {
 const useAssistantSticky = ({ openedAssistants }: Props) => {
     const [user] = useUser();
     const [{ AIAssistantFlags }] = useUserSettings();
-    const [stickyAssistant, setStickyAssistant] = useLocalState(false, `${user.ID}-open-assistant`);
+    const [stickyAssistant, setStickyAssistant] = useLocalState(true, `${user.ID}-open-assistant`);
 
     const setAssistantStickyOn = () => {
         setStickyAssistant(true);
@@ -28,19 +28,19 @@ const useAssistantSticky = ({ openedAssistants }: Props) => {
         setStickyAssistant(false);
     };
 
-    const getIsStickyAssistant = (assistantID: string, canShowAssistant: boolean, canRunAssistant: boolean) => {
+    const getIsStickyAssistant = (assistantID: string, canShowAssistant: boolean) => {
         // Assistant can be opened if:
         // - value in localStorage is true
         // - Feature flag is ON
         // - user can run the assistant (if user has local mode in settings, but cannot run it, then we don't open it)
         // - There is no other assistant opened (as long as we don't have a queue mechanism)
-        if (stickyAssistant && !user.isFree) {
+        if (stickyAssistant) {
             const isAssistantOpenedInComposer = getIsAssistantOpened(openedAssistants, assistantID);
 
             if (AIAssistantFlags === AI_ASSISTANT_ACCESS.SERVER_ONLY) {
-                return canShowAssistant && canRunAssistant && !isAssistantOpenedInComposer;
+                return canShowAssistant && !isAssistantOpenedInComposer;
             }
-            return canShowAssistant && canRunAssistant && openedAssistants.length === 0 && !isAssistantOpenedInComposer;
+            return canShowAssistant && openedAssistants.length === 0 && !isAssistantOpenedInComposer;
         }
         return false;
     };
