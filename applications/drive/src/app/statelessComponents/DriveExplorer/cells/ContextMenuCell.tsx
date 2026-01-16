@@ -4,7 +4,7 @@ import { Button } from '@proton/atoms/Button/Button';
 import { Icon } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
-import type { CellDefinition } from '../types';
+import type { CellDefinition, ContextMenuControls, SelectionMethods } from '../types';
 
 export interface ContextMenuCellProps {
     isActive?: boolean;
@@ -34,3 +34,26 @@ export const ContextMenuCellConfig: Omit<CellDefinition, 'render'> = {
     id: 'contextMenuButton',
     width: '3rem',
 };
+
+interface ContextMenuCellWithControlsProps {
+    uid: string;
+    isSelected: boolean;
+    contextMenuControls: ContextMenuControls;
+    selectionMethods: SelectionMethods;
+}
+
+export function ContextMenuCellWithControls({
+    uid,
+    isSelected,
+    contextMenuControls,
+    selectionMethods,
+}: ContextMenuCellWithControlsProps) {
+    const isActive = contextMenuControls.isOpen && isSelected;
+
+    const handleClick = (e: React.MouseEvent) => {
+        selectionMethods.selectItem(uid);
+        contextMenuControls.showContextMenu(e);
+    };
+
+    return <ContextMenuCell isActive={isActive} onClick={handleClick} />;
+}

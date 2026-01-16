@@ -1,8 +1,8 @@
 import type { NodeEntity } from '@proton/drive/index';
-import { getDrive, getDriveForPhotos } from '@proton/drive/index';
 import { isProtonDocsDocument, isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype';
 
 import { getNodeEntity } from '../../../utils/sdk/getNodeEntity';
+import { DownloadDriveClientRegistry } from '../DownloadDriveClientRegistry';
 
 export const checkUnsupportedNode = (node: NodeEntity) => {
     const mediaType = node.mediaType ?? '';
@@ -10,10 +10,10 @@ export const checkUnsupportedNode = (node: NodeEntity) => {
 };
 
 export const hydrateAndCheckNodes = async (uids: string[]) => {
-    const drive = getDrive();
+    const driveClient = DownloadDriveClientRegistry.getDriveClient();
     const nodes: NodeEntity[] = [];
     let containsUnsupportedFile;
-    for await (const maybeNode of drive.iterateNodes(uids)) {
+    for await (const maybeNode of driveClient.iterateNodes(uids)) {
         if (!maybeNode.ok) {
             continue;
         }
@@ -28,9 +28,9 @@ export const hydrateAndCheckNodes = async (uids: string[]) => {
 };
 
 export const hydratePhotos = async (uids: string[]) => {
-    const drive = getDriveForPhotos();
+    const drivePhotosClient = DownloadDriveClientRegistry.getDrivePhotosClient();
     const nodes: NodeEntity[] = [];
-    for await (const maybeNode of drive.iterateNodes(uids)) {
+    for await (const maybeNode of drivePhotosClient.iterateNodes(uids)) {
         if (!maybeNode.ok) {
             continue;
         }
@@ -38,7 +38,7 @@ export const hydratePhotos = async (uids: string[]) => {
         nodes.push(node);
         if (photoAttributes?.relatedPhotoNodeUids) {
             for (const relatedUid of photoAttributes.relatedPhotoNodeUids) {
-                const relatedMaybeNode = await drive.getNode(relatedUid);
+                const relatedMaybeNode = await drivePhotosClient.getNode(relatedUid);
                 const { node: relatedNode } = getNodeEntity(relatedMaybeNode);
                 nodes.push(relatedNode);
             }

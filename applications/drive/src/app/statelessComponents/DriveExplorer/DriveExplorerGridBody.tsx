@@ -5,6 +5,7 @@ import { rootFontSize } from '@proton/shared/lib/helpers/dom';
 
 import { VirtualGridRow } from './VirtualGridRow';
 import type {
+    ContextMenuControls,
     DragMoveControls,
     DriveExplorerConditions,
     DriveExplorerConfig,
@@ -27,7 +28,7 @@ interface DriveExplorerGridBodyProps {
     isMultiSelectionDisabled?: boolean;
     dragMoveControls?: DragMoveControls;
     showCheckboxColumn?: boolean;
-    contextMenu?: (uid: string) => React.ReactNode;
+    contextMenuControls?: ContextMenuControls;
 }
 
 const calculateCellDimensions = (areaWidth: number) => {
@@ -67,7 +68,7 @@ export const DriveExplorerGridBody = ({
     isMultiSelectionDisabled,
     dragMoveControls,
     showCheckboxColumn = true,
-    contextMenu,
+    contextMenuControls,
 }: DriveExplorerGridBodyProps) => {
     const gridContainerRef = useRef<HTMLDivElement>(null);
     const rect = useElementRect(gridContainerRef);
@@ -125,7 +126,7 @@ export const DriveExplorerGridBody = ({
                                     isMultiSelectionDisabled={isMultiSelectionDisabled}
                                     dragMoveControls={dragMoveControls}
                                     showCheckboxColumn={showCheckboxColumn}
-                                    contextMenu={contextMenu}
+                                    contextMenuControls={contextMenuControls}
                                     onObserve={observeElement}
                                 />
                             );

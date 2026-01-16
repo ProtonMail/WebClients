@@ -1,5 +1,5 @@
-import type { NodeEntity, ProtonDriveClient } from '@proton/drive/index';
-import { NodeType, SDKEvent, getDrive, getDriveForPhotos } from '@proton/drive/index';
+import type { NodeEntity, ProtonDriveClient, ProtonDrivePublicLinkClient } from '@proton/drive';
+import { NodeType, SDKEvent } from '@proton/drive';
 
 import { bufferToStream } from '../../utils/stream';
 import { TransferCancel } from '../../utils/transfer';
@@ -14,6 +14,7 @@ import {
 import { fileSaver } from '../fileSaver/fileSaver';
 import ArchiveGenerator from './ArchiveGenerator';
 import { ArchiveStreamGenerator } from './ArchiveStreamGenerator';
+import { DownloadDriveClientRegistry } from './DownloadDriveClientRegistry';
 import { DownloadScheduler } from './DownloadScheduler';
 import { downloadLogDebug } from './utils/downloadLogger';
 import { getDownloadSdk } from './utils/getDownloadSdk';
@@ -47,12 +48,14 @@ type ActiveDownload = {
 export class DownloadManager {
     private static instance: DownloadManager | undefined;
     private hasListeners;
+    private hasPhotosListeners;
     private scheduler: DownloadScheduler;
     private readonly activeDownloads = new Map<string, ActiveDownload>();
     private requestedDownloads = new Map<string, NodeEntity[]>();
 
     constructor() {
         this.hasListeners = false;
+        this.hasPhotosListeners = false;
         this.scheduler = new DownloadScheduler((error, task) =>
             handleDownloadError(task.downloadId, [task.node], error)
         );
@@ -64,6 +67,17 @@ export class DownloadManager {
         }
 
         return DownloadManager.instance;
+    }
+
+    /**
+     *
+     * @deprecated: This is temporary solution to be able to initiate custon client on public page
+     * TODO: Implement client per download.
+     * The idea will be to keep the registry but storing client with unique id per download batch
+     * That way we will be able to retrieve the right client during the download.
+     */
+    setDriveClient(driveClientInstance: ProtonDriveClient | ProtonDrivePublicLinkClient) {
+        DownloadDriveClientRegistry.setDriveClient(driveClientInstance);
     }
 
     resolveSignatureIssue(item: DownloadItem, issueName: string, decision: IssueStatus, applyAll?: boolean) {
@@ -80,11 +94,8 @@ export class DownloadManager {
             return;
         }
         this.hasListeners = true;
-        const drive = getDrive();
-        const drivePhotos = getDriveForPhotos();
-
         const { getQueueItem } = useDownloadManagerStore.getState();
-
+        const drive = DownloadDriveClientRegistry.getDriveClient();
         drive.onMessage(SDKEvent.TransfersPaused, () => {
             this.activeDownloads.forEach((_, downloadId) => {
                 if (getQueueItem(downloadId)?.status === DownloadStatus.InProgress) {
@@ -99,6 +110,16 @@ export class DownloadManager {
                 }
             });
         });
+    }
+
+    addPhotosListeners() {
+        if (this.hasPhotosListeners) {
+            return;
+        }
+        this.hasPhotosListeners = true;
+        const { getQueueItem } = useDownloadManagerStore.getState();
+        const drivePhotos = DownloadDriveClientRegistry.getDrivePhotosClient();
+
         drivePhotos.onMessage(SDKEvent.TransfersPaused, () => {
             this.activeDownloads.forEach((_, downloadId) => {
                 if (getQueueItem(downloadId)?.status === DownloadStatus.InProgress) {
@@ -124,7 +145,7 @@ export class DownloadManager {
             return;
         }
         const { addDownloadItem } = useDownloadManagerStore.getState();
-        this.addListeners();
+        this.addPhotosListeners();
 
         const downloadId = queueDownloadRequest({
             nodes,
@@ -213,7 +234,6 @@ export class DownloadManager {
     private async startSingleFileDownload(node: NodeEntity, downloadId: string): Promise<void> {
         const { updateDownloadItem } = useDownloadManagerStore.getState();
         const drive = getDownloadSdk(downloadId);
-
         const abortController = new AbortController();
         let fileDownloader: FileDownloader;
         let completionPromise: Promise<void>;

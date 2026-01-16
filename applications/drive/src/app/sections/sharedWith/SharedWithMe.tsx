@@ -15,7 +15,7 @@ import type {
 } from '../../statelessComponents/DriveExplorer/types';
 import { ItemType, useSharedWithMeListingStore } from '../../zustand/sections/sharedWithMeListing.store';
 import EmptySharedWithMe from './EmptySharedWithMe';
-import { getSharedWithMeCells, getSharedWithMeContextMenu, getSharedWithMeGrid } from './SharedWithMeCells';
+import { getSharedWithMeCells, getSharedWithMeGrid } from './SharedWithMeCells';
 import { SharedWithMeContextMenu } from './SharedWithMeItemContextMenu';
 import SharedWithMeOld from './SharedWithMeOld';
 import { useSharedWithMeItems } from './hooks/useSharedWithMeItems';
@@ -75,19 +75,12 @@ const SharedWithMe = () => {
     const cells = getSharedWithMeCells({
         viewportWidth,
         showConfirmModal,
-        contextMenuControls,
-        selectionControls,
         onRenderItem: (uid) => {
             handleRenderItem({ id: uid });
         },
     });
 
     const grid = getSharedWithMeGrid({
-        contextMenuControls,
-        selectionControls,
-    });
-
-    const contextMenu = getSharedWithMeContextMenu({
         contextMenuControls,
         selectionControls,
     });
@@ -130,7 +123,11 @@ const SharedWithMe = () => {
                     sort={sort}
                     loading={isLoading}
                     caption={c('Title').t`Shared with me`}
-                    contextMenu={contextMenu}
+                    contextMenuControls={{
+                        isOpen: contextMenuControls.isOpen,
+                        showContextMenu: contextMenuControls.handleContextMenu,
+                        close: contextMenuControls.close,
+                    }}
                 />
             </div>
             {confirmModal}

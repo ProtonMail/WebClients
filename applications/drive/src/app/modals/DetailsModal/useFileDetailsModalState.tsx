@@ -56,6 +56,8 @@ export type UseFileDetailsModalProps = ModalStateProps & {
     linkId: string;
     drive: Drive;
     verifySignatures?: boolean;
+    /** @deprecated This is temporay helper until we figure out on how to fix it on public page **/
+    showLocation?: boolean;
 
     // Only required for the legacy modal.
     shareId: string;
@@ -65,6 +67,7 @@ export function useFileDetailsModalState({
     volumeId,
     linkId,
     drive,
+    showLocation = true,
     verifySignatures = true,
     open,
     onClose,
@@ -86,7 +89,7 @@ export function useFileDetailsModalState({
                 setTitle(getTitle(node));
 
                 const fileType = node.ok ? node.value.type : node.error.type;
-                const location = await getNodeLocation(drive, node);
+                const location = showLocation ? await getNodeLocation(drive, node) : '';
                 const nodeEntity = node.ok ? node.value : node.error;
                 // eslint-disable-next-line no-nested-ternary
                 const activeRevision = node.ok

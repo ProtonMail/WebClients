@@ -6,6 +6,7 @@ import clsx from '@proton/utils/clsx';
 import { VirtualListItem } from './VirtualListItem';
 import type {
     CellDefinition,
+    ContextMenuControls,
     DragMoveControls,
     DriveExplorerConditions,
     DriveExplorerConfig,
@@ -27,7 +28,7 @@ interface DriveExplorerBodyProps {
     dragMoveControls?: DragMoveControls;
     isMultiSelectionDisabled?: boolean;
     showCheckboxColumn?: boolean;
-    contextMenu?: (uid: string) => React.ReactNode;
+    contextMenuControls?: ContextMenuControls;
 }
 
 export const DriveExplorerBody = ({
@@ -42,7 +43,7 @@ export const DriveExplorerBody = ({
     dragMoveControls,
     isMultiSelectionDisabled,
     showCheckboxColumn = true,
-    contextMenu,
+    contextMenuControls,
 }: DriveExplorerBodyProps) => {
     const itemCount = loading ? itemIds.length + 1 : itemIds.length;
 
@@ -101,7 +102,7 @@ export const DriveExplorerBody = ({
                                         dragMoveControls={dragMoveControls}
                                         isMultiSelectionDisabled={isMultiSelectionDisabled}
                                         showCheckboxColumn={showCheckboxColumn}
-                                        contextMenu={contextMenu}
+                                        contextMenuControls={contextMenuControls}
                                     />
                                 );
                             })}

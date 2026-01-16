@@ -4,6 +4,7 @@ import { Loader } from '@proton/components';
 
 import { DriveExplorerGridBox } from './DriveExplorerGridBox';
 import type {
+    ContextMenuControls,
     DragMoveControls,
     DriveExplorerConditions,
     DriveExplorerEvents,
@@ -25,7 +26,7 @@ interface VirtualGridRowProps {
     isMultiSelectionDisabled?: boolean;
     dragMoveControls?: DragMoveControls;
     showCheckboxColumn?: boolean;
-    contextMenu?: (uid: string) => React.ReactNode;
+    contextMenuControls?: ContextMenuControls;
     onObserve: (element: HTMLElement | null, uid: string) => void;
 }
 
@@ -43,7 +44,7 @@ export function VirtualGridRow({
     isMultiSelectionDisabled,
     dragMoveControls,
     showCheckboxColumn,
-    contextMenu,
+    contextMenuControls,
     onObserve,
 }: VirtualGridRowProps) {
     const startIndex = virtualRow.index * itemsPerRow;
@@ -83,7 +84,7 @@ export function VirtualGridRow({
                             isMultiSelectionDisabled={isMultiSelectionDisabled}
                             dragMoveControls={dragMoveControls}
                             showCheckboxColumn={showCheckboxColumn}
-                            contextMenu={contextMenu}
+                            contextMenuControls={contextMenuControls}
                         />
                     );
                 })}
