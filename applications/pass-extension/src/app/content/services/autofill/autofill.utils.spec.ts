@@ -1,4 +1,4 @@
-import { createAutofill } from './autofill.utils';
+import { createAutofill, validateInputAutofill } from './autofill.utils';
 
 const DTSetData = jest.fn();
 
@@ -108,5 +108,41 @@ describe('Autofill utils', () => {
             await expect(autofill('test-value')).resolves.toBeUndefined();
             await expect(autofill('paste-data', { paste: true })).resolves.toBeUndefined();
         });
+    });
+
+    describe('Input autofill validation', () => {
+        test('Should block non-numeric values being autofilled on type="number"', () => {
+            const input = document.createElement('input');
+            input.type = 'number';
+
+            expect(validateInputAutofill(input, 'abc')).toBe(false);
+            expect(validateInputAutofill(input, 'abc3')).toBe(false);
+            expect(validateInputAutofill(input, '')).toBe(true);
+            expect(validateInputAutofill(input, '123')).toBe(true);
+            expect(validateInputAutofill(input, '123.45')).toBe(true);
+            expect(validateInputAutofill(input, '-10')).toBe(true);
+            expect(validateInputAutofill(input, '!@#$%')).toBe(false);
+            expect(validateInputAutofill(input, 'user@domain.com')).toBe(false);
+            expect(validateInputAutofill(input, 'パスワード')).toBe(false);
+            expect(validateInputAutofill(input, '用户名')).toBe(false);
+            expect(validateInputAutofill(input, 'Пароль123')).toBe(false);
+            expect(validateInputAutofill(input, '🔒password')).toBe(false);
+        });
+
+        test.each([['text'], ['password'], ['email'], ['tel']])(
+            'Should allow all values for type="%s" inputs',
+            (inputType) => {
+                const input = document.createElement('input');
+                input.type = inputType;
+
+                expect(validateInputAutofill(input, 'abc')).toBe(true);
+                expect(validateInputAutofill(input, '123')).toBe(true);
+                expect(validateInputAutofill(input, '')).toBe(true);
+                expect(validateInputAutofill(input, '!@#$%')).toBe(true);
+                expect(validateInputAutofill(input, 'パスワード')).toBe(true);
+                expect(validateInputAutofill(input, '用户名')).toBe(true);
+                expect(validateInputAutofill(input, '🔒password')).toBe(true);
+            }
+        );
     });
 });
