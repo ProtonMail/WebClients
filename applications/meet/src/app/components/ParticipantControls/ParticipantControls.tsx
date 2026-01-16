@@ -25,6 +25,7 @@ import { useIsNarrowHeight } from '../../hooks/useIsNarrowHeight';
 import { useMeetSelector } from '../../store/hooks';
 import { selectMeetSettings } from '../../store/slices/settings';
 import { MeetingSideBars, PermissionPromptStatus, PopUpControls } from '../../types';
+import { AudioPlaybackPrompt } from '../AudioPlaybackPrompt/AudioPlaybackPrompt';
 import { AudioSettings } from '../AudioSettings/AudioSettings';
 import { ChatButton } from '../ChatButton';
 import { LeaveMeetingPopup } from '../LeaveMeetingPopup/LeaveMeetingPopup';
@@ -151,7 +152,8 @@ export const ParticipantControls = () => {
     );
 
     return (
-        <div className="w-full flex flex-nowrap flex-column">
+        <div className="w-full flex flex-nowrap flex-column relative">
+            <AudioPlaybackPrompt />
             {!isLargerThanMd && !isNarrowHeight && pageCount > 1 && !isScreenShare && (
                 <div className="w-full flex justify-center">
                     <Pagination totalPages={pageCount} currentPage={page} onPageChange={setPage} />
