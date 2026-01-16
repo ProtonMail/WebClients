@@ -22,6 +22,8 @@ import onboardingVPNWelcome from '@proton/styles/assets/img/onboarding/vpn-welco
 import DownloadClientCard from '../../../components/downloadClientCard/DownloadClientCard';
 import { getDownloadAppText } from '../../account/dashboard/shared/DashboardMoreInfoSection/helpers';
 import OnboardingContent from '../../onboarding/OnboardingContent';
+import { androidMarketplaceUrl, iosMarketplaceUrl } from './downloadLinks';
+import { getOsDownloadUrl } from './getOsDownloadUrl';
 
 interface DownloadModalProps extends ModalProps {
     downloadUrl: string;
@@ -41,7 +43,7 @@ const DownloadModal = ({ downloadUrl, ...rest }: DownloadModalProps) => {
                     color="norm"
                     size="large"
                     target="_blank"
-                    href={downloadUrl}
+                    href={getOsDownloadUrl()}
                     fullWidth
                     onClick={() => {
                         rest.onClose?.();
@@ -111,24 +113,10 @@ const ProtonVPNClientsSection = () => {
                 <DownloadClientCard
                     title={c('VPNClient').t`Android`}
                     icon="brand-android"
-                    link={appendUrlSearchParams(VPN_MOBILE_APP_LINKS.playStore, {
-                        utm_campaign: 'ww-all-2a-vpn-int_webapp-g_eng-apps_links_dashboard',
-                        utm_source: 'account.protonvpn.com',
-                        utm_medium: 'link',
-                        utm_content: 'dashboard',
-                        utm_term: 'android',
-                    })}
+                    link={androidMarketplaceUrl}
                     items={androidLinks}
                 />
-                <DownloadClientCard
-                    title={c('VPNClient').t`iOS`}
-                    icon="brand-apple"
-                    link={appendUrlSearchParams(VPN_MOBILE_APP_LINKS.appStore, {
-                        pt: '106513916',
-                        ct: 'protonvpn.com-dashboard',
-                        mt: '8',
-                    })}
-                />
+                <DownloadClientCard title={c('VPNClient').t`iOS`} icon="brand-apple" link={iosMarketplaceUrl} />
                 <DownloadClientCard
                     title={c('VPNClient').t`Windows`}
                     icon="brand-windows"
