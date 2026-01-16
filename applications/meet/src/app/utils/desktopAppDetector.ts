@@ -3,15 +3,14 @@ export const tryOpenInDesktopApp = (meetingUrl: string): void => {
         const url = new URL(meetingUrl);
         const protocolUrl = `proton-meet://${url.host}${url.pathname}${url.search}${url.hash}`;
 
-        const iframe = document.createElement('iframe');
-        iframe.style.display = 'none';
-        iframe.src = protocolUrl;
-        document.body.appendChild(iframe);
+        const anchor = document.createElement('a');
+        anchor.href = protocolUrl;
+        anchor.style.display = 'none';
+        document.body.appendChild(anchor);
+        anchor.click();
 
         setTimeout(() => {
-            document.body.removeChild(iframe);
+            document.body.removeChild(anchor);
         }, 100);
-    } catch {
-        // Invalid URL - silently fail
-    }
+    } catch {}
 };
