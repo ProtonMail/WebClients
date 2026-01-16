@@ -39,6 +39,7 @@ module.exports = ({
     analyze,
     defineWebpackConfig,
     benchmarkBuild,
+    prependAsyncCss,
 }) => {
     let WebpackCollectMetricsPlugin;
 
@@ -133,6 +134,19 @@ module.exports = ({
         new MiniCssExtractPlugin({
             filename: cssName,
             chunkFilename: cssName,
+            ...(prependAsyncCss
+                ? {
+                      ignoreOrder: true,
+                      insert: function (linkTag) {
+                          const firstStylesheet = document.head.querySelector('link[rel="stylesheet"]');
+                          if (firstStylesheet) {
+                              firstStylesheet.parentNode.insertBefore(linkTag, firstStylesheet);
+                          } else {
+                              document.head.appendChild(linkTag);
+                          }
+                      },
+                  }
+                : undefined),
         }),
 
         new HtmlWebpackPlugin({

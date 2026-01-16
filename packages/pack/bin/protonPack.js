@@ -35,6 +35,10 @@ const addGlobalOptions = (program) => {
         .option('--logical', '', false)
         .option('--benchmarkBuild', '', false)
         .option(
+            '--prependAsyncCss',
+            'prepend css chunks that are loaded asynchronously so that the initial css file gets priority'
+        )
+        .option(
             '--publicPath <publicPath>',
             '',
             (publicPath) => {
