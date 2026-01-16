@@ -15,6 +15,7 @@ import { PASSWORD_SEPARATOR } from '@proton/meet/utils/cryptoUtils';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
 import type { Meeting } from '@proton/shared/lib/interfaces/Meet';
+import useFlag from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import { getNextOccurrence } from '../../utils/getNextOccurrence';
@@ -34,6 +35,8 @@ export const MeetingRow = ({ meeting, index }: MeetingRowProps) => {
     const goToApp = useAppLink();
 
     const [user] = useUser();
+
+    const isScheduleEnabled = useFlag('NewScheduleOption');
 
     const colorIndex = (index % 6) + 1;
 
@@ -142,6 +145,22 @@ export const MeetingRow = ({ meeting, index }: MeetingRowProps) => {
             </div>
 
             <div className="flex items-center gap-2 shrink-0 w-full md:w-auto">
+                {isScheduleEnabled && meeting.CalendarEventID && meeting.CalendarID && (
+                    <Button
+                        className="color-disabled rounded-full w-custom h-custom absolute top-custom right-custom md:static"
+                        size="small"
+                        shape="ghost"
+                        onClick={() => handleEditMeeting()}
+                        style={{
+                            '--w-custom': '2.75rem',
+                            '--h-custom': '2.75rem',
+                            '--top-custom': '0.75rem',
+                            '--right-custom': '0.75rem',
+                        }}
+                    >
+                        <IcPenSquare size={5} />
+                    </Button>
+                )}
                 <Button
                     className="border-none rounded-full copy-link-button min-w-custom flex-1 md:flex-none py-3"
                     style={{ '--min-w-custom': '7.125rem' }}
@@ -157,20 +176,6 @@ export const MeetingRow = ({ meeting, index }: MeetingRowProps) => {
                     onClick={handleJoin}
                 >
                     {c('Action').t`Join`}
-                </Button>
-                <Button
-                    className="color-disabled rounded-full w-custom h-custom absolute top-custom right-custom md:static"
-                    size="small"
-                    shape="ghost"
-                    onClick={() => handleEditMeeting()}
-                    style={{
-                        '--w-custom': '2.75rem',
-                        '--h-custom': '2.75rem',
-                        '--top-custom': '0.75rem',
-                        '--right-custom': '0.75rem',
-                    }}
-                >
-                    <IcPenSquare size={5} />
                 </Button>
             </div>
         </div>

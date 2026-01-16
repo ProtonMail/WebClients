@@ -38,6 +38,7 @@ export const DashboardContainer = () => {
     const goToApp = useAppLink();
 
     const isScheduleEnabled = useFlag('NewScheduleOption');
+    const isScheduleInAdvanceEnabled = useFlag('MeetScheduleInAdvance');
 
     const [user] = useUser();
 
@@ -52,11 +53,15 @@ export const DashboardContainer = () => {
             return;
         }
 
-        goToApp(
-            `/?action=create&videoConferenceProvider=2&email=${encodeURIComponent(user.Email)}`,
-            APPS.PROTONCALENDAR,
-            true
-        );
+        if (!isScheduleInAdvanceEnabled) {
+            goToApp(
+                `/?action=create&videoConferenceProvider=2&email=${encodeURIComponent(user.Email)}`,
+                APPS.PROTONCALENDAR,
+                true
+            );
+        }
+
+        history.push('/schedule/create');
     };
 
     const handleStartMeeting = () => {
