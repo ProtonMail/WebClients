@@ -271,6 +271,7 @@ enum MeetFeatureFlag {
     MeetHigherBitrate = 'MeetHigherBitrate',
     MeetScheduleInAdvance = 'MeetScheduleInAdvance',
     MeetProtonCalendarDeepLink = 'MeetProtonCalendarDeepLink',
+    MeetUnblockAudioButton = 'MeetUnblockAudioButton',
 }
 
 enum LumoFeatureFlag {
