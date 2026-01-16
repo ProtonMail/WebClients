@@ -3,15 +3,18 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 
 import throttle from 'lodash/throttle';
 
+import { useUserSettings } from '@proton/account/userSettings/hooks';
 import type { EditorMetadata } from '@proton/components';
 import { useModalStateObject } from '@proton/components';
 import ComposerAssistantUpsellModal from '@proton/components/components/upsell/modals/ComposerAssistantUpsellModal';
+import useAssistantSubscriptionStatus from '@proton/components/hooks/assistant/useAssistantSubscriptionStatus';
 import { ASSISTANT_SERVER_THROTTLE_TIMEOUT, getHasAssistantStatus, useAssistant } from '@proton/llm/lib';
 import { OpenedAssistantStatus } from '@proton/llm/lib/types';
 import { removeLineBreaks } from '@proton/mail/helpers/string';
 import { ERROR_TYPE } from '@proton/shared/lib/assistant';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import type { Recipient } from '@proton/shared/lib/interfaces';
+import { AI_ASSISTANT_ACCESS } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
 import ComposerAssistantExpanded from 'proton-mail/components/assistant/ComposerAssistantExpanded';
@@ -22,6 +25,8 @@ import useComposerAssistantGenerate from 'proton-mail/hooks/assistant/useCompose
 import useComposerAssistantScrollButton from 'proton-mail/hooks/assistant/useComposerAssistantScrollButton';
 import useComposerAssistantSelectedText from 'proton-mail/hooks/assistant/useComposerAssistantSelectedText';
 import { ComposerInnerModalStates } from 'proton-mail/hooks/composer/useComposerInnerModals';
+
+import { useComposerAssistantProvider } from './provider/ComposerAssistantProvider';
 
 import './ComposerAssistant.scss';
 
@@ -81,12 +86,65 @@ const ComposerAssistant = ({
     const assistantUpsellModal = useModalStateObject();
     const resumeDownloadModal = useModalStateObject();
 
-    const { openedAssistants, setAssistantStatus, resumeDownloadModel, error, cleanSpecificErrors } =
-        useAssistant(assistantID);
+    const [{ AIAssistantFlags }] = useUserSettings();
+
+    const { trialStatus } = useAssistantSubscriptionStatus();
+
+    const {
+        openedAssistants,
+        hasCompatibleHardware,
+        hasCompatibleBrowser,
+        downloadPaused,
+        setAssistantStatus,
+        resumeDownloadModel,
+        error,
+        cleanSpecificErrors,
+    } = useAssistant(assistantID);
+
+    const { displayAssistantModal } = useComposerAssistantProvider();
 
     const isAssistantExpanded = useMemo(() => {
         return getHasAssistantStatus(openedAssistants, assistantID, OpenedAssistantStatus.EXPANDED);
     }, [assistantID, openedAssistants]);
+
+    /**
+     * Checks if the assistant can be used and shows appropriate modals if not.
+     * Returns true if the assistant can proceed, false if a modal was shown.
+     */
+    const checkAssistantCompatibility = (skipTrialCheck = false): boolean => {
+        // If user hasn't set the assistant yet, invite him to do so
+        if (AIAssistantFlags === AI_ASSISTANT_ACCESS.UNSET) {
+            setInnerModal(ComposerInnerModalStates.AssistantSettings);
+            return false;
+        }
+
+        // if user chose client then check their setup is compatible
+        if (AIAssistantFlags === AI_ASSISTANT_ACCESS.CLIENT_ONLY) {
+            if (!hasCompatibleBrowser) {
+                displayAssistantModal('incompatibleBrowser');
+                return false;
+            }
+
+            if (!hasCompatibleHardware) {
+                displayAssistantModal('incompatibleHardware');
+                return false;
+            }
+        }
+
+        // Stop if trial ended or if user has no trial (free users)
+        if (!skipTrialCheck && (trialStatus === 'trial-ended' || trialStatus === 'no-trial')) {
+            assistantUpsellModal.openModal(true);
+            return false;
+        }
+
+        // Warn the user that we need the download to be completed before generating a result
+        if (downloadPaused) {
+            resumeDownloadModal.openModal(true);
+            return false;
+        }
+
+        return true;
+    };
 
     const expandAssistant = () => {
         if (!isAssistantExpanded) {
@@ -202,6 +260,7 @@ const ComposerAssistant = ({
                 previousPrompt={previousPrompt}
                 selection={selection}
                 isAssistantExpanded={isAssistantExpanded}
+                checkAssistantCompatibility={checkAssistantCompatibility}
                 onExpandAssistant={expandAssistant}
                 onGenerate={generate}
                 canUseRefineButtons={canUseRefineButtons}
