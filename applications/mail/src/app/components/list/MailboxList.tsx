@@ -64,9 +64,8 @@ export default function MailboxList({
 
     const { isColumnModeActive, isColumnLayoutPreferred, listContainerRef } = useMailboxLayoutProvider();
 
-    const elementsLength = loading ? placeholderCount : elementsData.elements.length;
     const showList = overrideColumnMode || isColumnModeActive || !elementID;
-    const showContentPanel = overrideColumnMode || (isColumnModeActive && !!elementsLength) || !!elementID;
+    const showContentPanel = overrideColumnMode || isColumnModeActive;
 
     const currentPage = pageFromUrl(location);
 
