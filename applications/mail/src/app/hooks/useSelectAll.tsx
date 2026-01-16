@@ -42,17 +42,23 @@ export const useSelectAll = ({ labelID }: Props) => {
     }, [isConversation, locationCount, mailPageSize, selectAll]);
 
     const getBannerTextWithLocation = useCallback(() => {
-        return getSelectAllBannerTextWithLocation(
-            isConversation,
-            selectAll ? locationCount : mailPageSize,
+        return getSelectAllBannerTextWithLocation({
+            conversationMode: isConversation,
+            elementsCount: selectAll ? locationCount : mailPageSize,
             labelID,
-            labels,
-            folders
-        );
+            customLabels: labels,
+            customFolders: folders,
+        });
     }, [isConversation, locationCount, mailPageSize, selectAll, labelID, labels, folders]);
 
     const getButtonText = useCallback(() => {
-        return getSelectAllButtonText(selectAll, locationCount, labelID, labels, folders);
+        return getSelectAllButtonText({
+            selectAll,
+            elementsCount: locationCount,
+            labelID,
+            customLabels: labels,
+            customFolders: folders,
+        });
     }, [selectAll, locationCount, labelID, labels, folders]);
 
     const setSelectAll = (value: boolean) => {
