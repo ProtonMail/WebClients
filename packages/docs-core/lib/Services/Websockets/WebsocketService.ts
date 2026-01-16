@@ -230,13 +230,17 @@ export class WebsocketService implements WebsocketServiceInterface {
             Math.pow(2, this.attemptsAfterFailingToReceiveReadyMessage) * 1000,
             seconds_to_ms(32),
           )
-          this.logger.info(`Retrying connection in ${reconnectDelay}ms`)
+          const MinimumJitterFactor = 1
+          const MaximumJitterFactor = 1.5
+          const jitterFactor = Math.random() * (MaximumJitterFactor - MinimumJitterFactor) + MinimumJitterFactor
+          const reconnectDelayWithJitterFactor = reconnectDelay * jitterFactor
+          this.logger.info(`Retrying connection in ${reconnectDelayWithJitterFactor}ms`)
           this.connectionNotReadyRetryTimeout = setTimeout(() => {
             void this.connectToDocument(nodeMeta, {
               invalidateTokenCache: false,
               connectionType: ConnectionType.RetryDueToNotReceivingReadyMessage,
             })
-          }, reconnectDelay)
+          }, reconnectDelayWithJitterFactor)
         }, MAX_MS_TO_WAIT_FOR_RTS_READY_MESSAGE)
       },
 
