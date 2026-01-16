@@ -2,11 +2,15 @@ import type {
     AttachmentId,
     Base64,
     ConversationId,
+    Deleted,
+    Encrypted,
     MessageId,
+    NonDeleted,
     SerializedAttachment,
     SerializedConversation,
     SerializedMessage,
     SerializedSpace,
+    Shallow,
     SpaceId,
 } from '../types';
 
@@ -89,14 +93,14 @@ export type AssetTag = LocalId;
 export type RemoteSpaceBase = SerializedSpace & {
     remoteId: RemoteId;
 };
-export type RemoteSpace = RemoteSpaceBase & { deleted: false };
-export type RemoteDeletedSpace = Omit<RemoteSpaceBase, 'encrypted'> & { deleted: true };
+export type RemoteSpace = RemoteSpaceBase & NonDeleted;
+export type RemoteDeletedSpace = Omit<RemoteSpaceBase, 'encrypted'> & Deleted;
 export type RemoteConversationBase = SerializedConversation & {
     remoteId: RemoteId;
     remoteSpaceId: RemoteId;
 };
-export type RemoteDeletedConversation = Omit<RemoteConversationBase, 'encrypted'> & { deleted: true };
-export type RemoteConversation = RemoteConversationBase & { deleted: false };
+export type RemoteDeletedConversation = Omit<RemoteConversationBase, 'encrypted'> & Deleted;
+export type RemoteConversation = RemoteConversationBase & NonDeleted;
 export type RemoteMessage = SerializedMessage & {
     remoteId: RemoteId;
     remoteConversationId: RemoteId;
@@ -106,11 +110,15 @@ export type RemoteAssetBase = SerializedAttachment & {
     remoteId: RemoteId;
     remoteSpaceId: RemoteId;
 };
-export type RemoteAsset = RemoteAssetBase & { deleted: false };
-export type RemoteDeletedAsset = Omit<RemoteAssetBase, 'encrypted'> & { deleted: true };
+export type RemoteAsset = RemoteAssetBase & NonDeleted;
+export type RemoteShallowAsset = Omit<RemoteAssetBase, 'encrypted'> & NonDeleted & Shallow;
+export type RemoteFilledAsset = Omit<RemoteAssetBase, 'encrypted'> & NonDeleted & Encrypted;
+export type RemoteDeletedAsset = Omit<RemoteAssetBase, 'encrypted'> & Deleted;
 
 // Aliases for consistent naming with other resources
 export type RemoteAttachment = RemoteAsset;
+export type RemoteShallowAttachment = RemoteShallowAsset;
+export type RemoteFilledAttachment = RemoteFilledAsset;
 export type RemoteDeletedAttachment = RemoteDeletedAsset;
 
 export enum RoleInt {
@@ -178,16 +186,19 @@ export type GetSpaceRemote = {
     space: RemoteSpace | RemoteDeletedSpace;
     conversations: RemoteConversation[];
     deletedConversations: RemoteDeletedConversation[];
-    assets: RemoteAsset[];
+    assets: RemoteShallowAsset[];
     deletedAssets: RemoteDeletedAsset[];
 };
 export type ListSpacesRemote = {
     spaces: Record<SpaceId, RemoteSpace>;
     conversations: Record<ConversationId, RemoteConversation>;
+    assets: Record<AssetId, RemoteShallowAsset>;
     deletedSpaces: Record<SpaceId, RemoteDeletedSpace>;
     deletedConversations: Record<ConversationId, RemoteDeletedConversation>;
-    assets: Record<AssetId, RemoteAsset>;
     deletedAssets: Record<AssetId, RemoteDeletedAsset>;
+};
+export type PullSpacesRemote = ListSpacesRemote & {
+    requestFull: boolean;
 };
 
 export type GetConversationRemote = {
@@ -281,8 +292,6 @@ export type WorkerResponse =
     | ListSpacesResponse
     | GetConversationResponse
     ;
-
-
 
 export type UserSettingsFromApi = {
     UserSettingsTag?: string;

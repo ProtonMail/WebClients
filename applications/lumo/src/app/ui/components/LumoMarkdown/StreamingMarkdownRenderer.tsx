@@ -22,7 +22,7 @@ import { ProgressiveMarkdownRenderer } from './ProgressiveMarkdownRenderer';
  * - Optional: Show a "rendering..." state for code-heavy content
  */
 
-const STREAMING_UPDATE_INTERVAL = 50; // Update every 50ms during streaming (smoother)
+const STREAMING_UPDATE_INTERVAL_MS = 20; // Update every X ms during streaming (smoother)
 
 interface StreamingMarkdownProps {
     message: Message;
@@ -66,14 +66,14 @@ const StreamingMarkdownRenderer: React.FC<StreamingMarkdownProps> = React.memo(
             const now = Date.now();
             const timeSinceLastUpdate = now - lastUpdateRef.current;
 
-            if (timeSinceLastUpdate < STREAMING_UPDATE_INTERVAL) {
+            if (timeSinceLastUpdate < STREAMING_UPDATE_INTERVAL_MS) {
                 // Too soon, schedule for later
                 if (frameRef.current) {
                     cancelAnimationFrame(frameRef.current);
                 }
 
                 frameRef.current = requestAnimationFrame(() => {
-                    const remaining = STREAMING_UPDATE_INTERVAL - (Date.now() - lastUpdateRef.current);
+                    const remaining = STREAMING_UPDATE_INTERVAL_MS - (Date.now() - lastUpdateRef.current);
                     if (remaining > 0) {
                         setTimeout(() => {
                             setDisplayContent(contentRef.current || '');

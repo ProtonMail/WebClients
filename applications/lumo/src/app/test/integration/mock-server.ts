@@ -1,6 +1,7 @@
 import { HttpResponse, http } from 'msw';
 
 import { computeSha256AsBase64 } from '../../crypto';
+import type { Base64 } from '../../types';
 
 // Mock database types and state
 export type MockDbSpace = {
@@ -202,6 +203,14 @@ export class MockDatabase {
 
         // Apply page size limit
         return spaces.slice(0, pageSize);
+    }
+
+    updateSpace(space: MockDbSpace): void {
+        const existing = this.spaces.get(space.ID);
+        if (!existing) {
+            throw new Error(`Space ${space.ID} not found`);
+        }
+        this.spaces.set(space.ID, space);
     }
 
     deleteSpace(id: string): boolean {
@@ -576,6 +585,43 @@ export function createHandlers(mockDb: MockDatabase, errorHandler?: MockErrorHan
             return HttpResponse.json({
                 Code: 1000,
             });
+        }),
+
+        http.put('/api/lumo/v1/spaces/:spaceId', async ({ request, params }) => {
+            const spaceId = params.spaceId as string;
+
+            // Check for injected error
+            const errorResponse = checkForError(`/api/lumo/v1/spaces/${spaceId}`, 'PUT');
+            if (errorResponse) return errorResponse;
+
+            // Check for "undefined" parameter values
+            checkForUndefinedParams(request, params);
+
+            const body = (await request.json()) as {
+                SpaceKey?: string;
+                Encrypted?: string;
+            };
+            console.log(`mock server: http put /api/lumo/v1/spaces/${spaceId} <-`, body);
+
+            // Verify the space exists
+            const space = mockDb.getSpace(spaceId);
+            if (!space) {
+                console.log(`mock server: http put /api/lumo/v1/spaces/${spaceId} -> 404 Not Found`);
+                return new HttpResponse(null, { status: 404 });
+            }
+
+            // Update the space
+            if (body.SpaceKey !== undefined) {
+                space.SpaceKey = body.SpaceKey;
+            }
+            if (body.Encrypted !== undefined) {
+                space.Encrypted = body.Encrypted as Base64;
+            }
+
+            mockDb.updateSpace(space);
+            const response = { Code: 1000 };
+            console.log(`mock server: http put /api/lumo/v1/spaces/${spaceId} ->`, response);
+            return HttpResponse.json(response);
         }),
 
         http.post('/api/lumo/v1/spaces/:spaceId/conversations', async ({ request, params }) => {

@@ -1,4 +1,4 @@
-/* eslint-disable prefer-const */
+/* eslint-disable prefer-const,no-nested-ternary */
 import { sleep } from '../../../../util/date';
 import type { GenerationToFrontendMessageDecrypted as M } from '../types';
 
@@ -108,7 +108,6 @@ const makeSmoothingTransformer = (): Transformer<M, M> => {
             target: 'message',
             count,
         };
-        // console.log('[smoothing] emitString: emitting ', value);
         controller.enqueue(value);
     }
 
@@ -119,8 +118,6 @@ const makeSmoothingTransformer = (): Transformer<M, M> => {
 
     async function flush(controller: TransformStreamDefaultController<M>) {
         if (DISABLE_SMOOTHING) return;
-
-        // console.log('[smoothing] flush');
 
         // Clear scheduled invocation
         disableTimeout();
@@ -144,13 +141,8 @@ const makeSmoothingTransformer = (): Transformer<M, M> => {
     }
 
     function progress(controller: TransformStreamDefaultController<any>, restart: boolean = true) {
-        // console.log(`[smoothing] ------------`);
-        // console.log(`[smoothing] progress`);
-
         // Clear scheduled invocation
         disableTimeout();
-
-        console.log(`[smoothing] lag = ${lag}, buffer = `, buffer.toString());
 
         // Calculate time advance
         const now = Date.now(); // ms
@@ -159,45 +151,31 @@ const makeSmoothingTransformer = (): Transformer<M, M> => {
         dt = Math.min(dt, 1);
         started = true;
         lastTime = now;
-        // console.log(`[smoothing] dt = ${dt} sec`);
 
         // Update rate based on lag:
         // Integrate first derivative with Newton first law applied to a spring mass:
         // F=ma --> dr/dt = a = F/m = F/1 = k(x-x0) = stiffness(lag - lag0)
-        // console.log(`[smoothing] lag = ${lag} chars`);
         let differential = !ending ? lag - lag0 : lag + lag0; // diff between the spring's rest length and the mass's actual position
-        console.log(`[smoothing] differential = ${differential} chars`);
         const isPulling = differential > 0; // whether the mass is behind or ahead of the spring's rest length (lag0)
-        console.log(`[smoothing] isPulling: ${isPulling}`);
         const stiffness = isPulling ? (!ending ? stiffnessPull : stiffnessPullEnding) : stiffnessPush; // selective spring pressure depending on direction
-        console.log(`[smoothing] stiffness: ${stiffness}`);
         const drate = (stiffness * differential - dampen * rate) * dt;
-        console.log(`[smoothing] drate: ${drate}`);
         rate += drate; // integrate dr/dt
-        console.log(`[smoothing] rate (pre clamp): ${rate}`);
         rate = Math.max(rate, 0); // no negative rate
         if (ending) rate = Math.max(rate, 10); // force a tiny rate to always advance
-        // console.log(`[smoothing] rate: ${rate}`);
 
         // Integrate the mass's position, i.e. calculate how many chars to emit
         const dlag = rate * dt;
-        // console.log(`[smoothing] dlag: ${dlag}`);
         const advance = Math.max(0, Math.min(dlag, lag));
         const clamped = dlag < 0 || dlag > lag;
-        // console.log(`[smoothing] advance: ${advance}`);
         const newLag = lag - advance;
 
         const nCharsToEmit = Math.floor(buffer.length - newLag);
 
         const charsToEmit = buffer.popFrontMany(nCharsToEmit);
         if (nCharsToEmit > 0) {
-            // console.log(`[smoothing] emitting: "${charsToEmit}"`);
             emitString(charsToEmit, controller);
         }
-        // const nCharsEmitted = charsToEmit.length;
-        // lag -= nCharsEmitted;
         lag = newLag;
-        // console.log(`[smoothing] lag := ${lag} chars`);
 
         if (clamped && advance > 0) {
             rate = Math.max(0, Math.min(rate, advance / dt));
@@ -218,7 +196,6 @@ const makeSmoothingTransformer = (): Transformer<M, M> => {
 
         // Call again soon even if the input stream doesn't yield new data
         if (restart) {
-            // console.log(`[smoothing] setting timeout`);
             disableTimeout();
             timeoutHandle = setTimeout(() => progress(controller), REFRESH_MS) as unknown as number;
         }
@@ -232,15 +209,11 @@ const makeSmoothingTransformer = (): Transformer<M, M> => {
 
         // console.log('transform: value = ', value);
         if (value.type !== 'token_data' || value.target !== 'message') {
-            // console.log('[smoothing] transform: flushing');
             await flush(controller);
-            // console.log('[smoothing] transform: emitting value ', value);
             emit(value, controller);
-            // console.log('[smoothing] transform: returning');
             return;
         }
 
-        // console.log(`[smoothing] transform: appending "${value.content}", new value: "${buffer}"`);
         buffer.pushBack(value.content);
         lag += value.content.length;
         progress(controller);
@@ -256,6 +229,4 @@ const strategy = {
     highWaterMark: 99999999,
 };
 export const makeSmoothingTransformStream = (enabled: boolean = true): TransformStream<M, M> =>
-    enabled
-        ? new TransformStream(makeSmoothingTransformer(), strategy, strategy)
-        : new TransformStream(); // passthrough if disabled
+    enabled ? new TransformStream(makeSmoothingTransformer(), strategy, strategy) : new TransformStream(); // passthrough if disabled

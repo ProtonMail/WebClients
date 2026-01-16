@@ -1,9 +1,6 @@
 import isNil from 'lodash/isNil';
 
 import type { SerializedAttachment } from '../types';
-
-// Type alias for backwards compatibility (assets are now attachments)
-type SerializedAsset = SerializedAttachment;
 import {
     type Base64,
     type EncryptedData,
@@ -33,8 +30,8 @@ import type {
     RemoteDeletedAsset,
     RemoteDeletedConversation,
     SerializedUserSettings,
-    UserSettingsFromApi,
     SpaceTag,
+    UserSettingsFromApi,
 } from './types';
 import {
     type ConversationFromApi,
@@ -57,6 +54,9 @@ import {
     isRoleInt,
     isStatusInt,
 } from './types';
+
+// Type alias for backwards compatibility (assets are now attachments)
+type SerializedAsset = SerializedAttachment;
 
 const isValidBoolean = (b: unknown): b is boolean => typeof b === 'boolean';
 const isValidString = (str: unknown): str is string => typeof str === 'string' && str !== '';
@@ -87,6 +87,8 @@ export function convertSpaceFromApi(input: unknown): GetSpaceRemote {
     if (!isValidString(SpaceTag)) throw new Error('Invalid SpaceTag: expected string');
     const { conversations, deletedConversations } = convertConversationsFromApi(Conversations, SpaceTag);
     const { assets, deletedAssets } = convertAssetsFromApi(Assets, SpaceTag);
+    // We already expect encrypted to be undefined, but force it here to please the type system
+    const shallowAssets = assets.map(({ encrypted, ...a }) => a);
     const deleted = !!DeleteTime;
     const space = {
         remoteId: ID as SpaceId,
@@ -117,7 +119,7 @@ export function convertSpaceFromApi(input: unknown): GetSpaceRemote {
             space: { ...space, deleted: false, encrypted: validateEncryptedField(Encrypted) },
             conversations,
             deletedConversations,
-            assets,
+            assets: shallowAssets,
             deletedAssets,
         };
     }
@@ -517,13 +519,12 @@ export function convertMasterKeyToApi(encryptedMasterKeyBase64: Base64): MasterK
     };
 }
 
-
 // Convert user settings data from API format to serialized format
 export function convertUserSettingsFromApi(userSettingsFromApi: UserSettingsFromApi): SerializedUserSettings {
     if (!userSettingsFromApi.UserSettingsTag || !userSettingsFromApi.Encrypted) {
         throw new Error('Invalid UserSettingsFromApi: missing UserSettingsTag or Encrypted field');
     }
-    
+
     return {
         userSettingsTag: userSettingsFromApi.UserSettingsTag,
         encrypted: userSettingsFromApi.Encrypted,
