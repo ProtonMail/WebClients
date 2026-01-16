@@ -1,6 +1,7 @@
 import { Fragment } from 'react';
 
 import { clsx } from 'clsx';
+import { c } from 'ttag';
 
 import Icon from '@proton/components/components/icon/Icon';
 import Checkbox from '@proton/components/components/input/Checkbox';
@@ -23,39 +24,48 @@ export const EditCategoriesList = ({
 }: Props) => {
     return (
         <>
-            {categoriesToDisplay.map((category) => (
-                <Fragment key={category.id}>
-                    <div className="flex gap-3 mb-5">
-                        <Toggle
-                            className="self-center"
-                            checked={category.display}
-                            onChange={() => handleCategoryCheckChange(category)}
-                            id={category.id}
-                            data-testid={`${category.id}-display`}
-                        />
-                        <Label htmlFor={category.id} className={clsx('p-0 flex-1 flex gap-3')}>
-                            <Icon
-                                name={category.icon}
-                                className="mt-0.5 mail-category-color self-center"
-                                data-color={category.colorShade}
+            {categoriesToDisplay.map((category) => {
+                const categoryLabel = getLabelFromCategoryId(category.id);
+
+                return (
+                    <Fragment key={category.id}>
+                        <div className="flex gap-3 mb-5">
+                            <Toggle
+                                id={`enable-${category.id}`}
+                                className="self-center"
+                                checked={category.display}
+                                onClick={() => handleCategoryCheckChange(category)}
+                                data-testid={`${category.id}-display`}
                             />
-                            <div className="flex flex-column gap-1">
-                                <span className="text-lg">{getLabelFromCategoryId(category.id)}</span>
-                                <span className="color-weak text-sm">{getDescriptionFromCategoryId(category.id)}</span>
-                            </div>
-                        </Label>
 
-                        <Checkbox
-                            id={category.id}
-                            checked={category.notify}
-                            onChange={() => handleCategoryNotifyChange(category)}
-                            data-testid={`${category.id}-notify`}
-                        />
-                    </div>
+                            <Label htmlFor={`enable-${category.id}`} className={clsx('p-0 flex-1 flex gap-3')}>
+                                <Icon
+                                    name={category.icon}
+                                    className="mt-0.5 mail-category-color self-center"
+                                    data-color={category.colorShade}
+                                />
+                                <div className="flex flex-column gap-1">
+                                    <span className="text-lg">{categoryLabel}</span>
+                                    <span className="color-weak text-sm">
+                                        {getDescriptionFromCategoryId(category.id)}
+                                    </span>
+                                </div>
+                            </Label>
 
-                    <hr className="bg-weak" />
-                </Fragment>
-            ))}
+                            <label className="sr-only" htmlFor={`notification-${category.id}`}>{c('Info')
+                                .t`Receive notifications for ${categoryLabel}`}</label>
+                            <Checkbox
+                                id={`notification-${category.id}`}
+                                checked={category.notify}
+                                onChange={() => handleCategoryNotifyChange(category)}
+                                data-testid={`${category.id}-notify`}
+                            />
+                        </div>
+
+                        <hr className="bg-weak" />
+                    </Fragment>
+                );
+            })}
         </>
     );
 };
