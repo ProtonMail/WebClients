@@ -16,7 +16,6 @@ import {
     useFormErrors,
     useModalTwoPromise,
 } from '@proton/components';
-import type { AuthSession } from '@proton/components/containers/login/interface';
 import { handleReAuthKeyPassword } from '@proton/components/containers/login/loginActions';
 import SSOAuthModal from '@proton/components/containers/password/SSOAuthModal';
 import useApi from '@proton/components/hooks/useApi';
@@ -30,7 +29,6 @@ import { getKeySalts } from '@proton/shared/lib/api/keys';
 import { getSettings } from '@proton/shared/lib/api/settings';
 import { queryUnlock } from '@proton/shared/lib/api/user';
 import { SessionSource } from '@proton/shared/lib/authentication/SessionInterface';
-import type { ProduceForkParameters } from '@proton/shared/lib/authentication/fork';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
@@ -51,33 +49,7 @@ import Layout from './Layout';
 import Main from './Main';
 import PublicUserItem from './PublicUserItem';
 import SupportDropdown from './SupportDropdown';
-
-export type ReAuthState = {
-    session: AuthSession;
-    reAuthType: ProduceForkParameters['promptType'];
-};
-
-export const getReAuthState = (
-    forkParameters: Pick<ProduceForkParameters, 'prompt' | 'promptType' | 'promptBypass'> | undefined,
-    session: AuthSession
-): ReAuthState => {
-    let reAuthType = forkParameters?.promptType ?? 'default';
-
-    // Normalize the reauth type to 'default' (auth with IdP - instead of auth with backup password) for SSO accounts
-    // ignoring if the offline key exists or not and 'sso' bypass is requested
-    if (
-        forkParameters?.promptBypass === 'sso' &&
-        getIsGlobalSSOAccount(session.data.User) &&
-        reAuthType !== 'default'
-    ) {
-        reAuthType = 'default';
-    }
-
-    return {
-        session,
-        reAuthType,
-    };
-};
+import type { ReAuthState } from './reauthContainerState';
 
 interface SrpFormProps {
     onSubmit: (keyPassword: string) => Promise<void>;
