@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import { getHostname } from '@proton/components/helpers/url';
 import { PROTON_DOMAINS } from '@proton/shared/lib/constants';
+import { openNewTab } from '@proton/shared/lib/helpers/browser';
 import { isSubDomain } from '@proton/shared/lib/helpers/url';
 
 import { OpenLinkModal } from './OpenLinkModal/OpenLinkModal';
@@ -38,10 +39,7 @@ export const ChatMessageContent = ({ message }: ChatMessageContentProps) => {
     const handleLinkClick = (link: string) => {
         const hostName = getHostname(link);
         if (PROTON_DOMAINS.some((domain) => isSubDomain(hostName, domain))) {
-            const otherWindow = window.open();
-            if (otherWindow) {
-                otherWindow.location.href = link;
-            }
+            openNewTab(link);
 
             return;
         }
