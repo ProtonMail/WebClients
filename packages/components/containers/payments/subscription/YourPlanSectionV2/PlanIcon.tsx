@@ -1,9 +1,5 @@
 import type { ReactNode } from 'react';
 
-import DriveLogo from '@proton/components/components/logo/DriveLogo';
-import MailLogo from '@proton/components/components/logo/MailLogo';
-import PassLogo from '@proton/components/components/logo/PassLogo';
-import VpnLogo from '@proton/components/components/logo/VpnLogo';
 import {
     type FreeSubscription,
     PLANS,
@@ -80,35 +76,35 @@ export const PlanIcon = ({
     if (getHasConsumerVpnPlan(subscription) || planName === PLANS.VPN2024) {
         return (
             <LogoIconShape size={size}>
-                <VpnLogo variant="glyph-only" scale={size / 44} />
+                <CustomLogo planName={PLANS.VPN2024} app={app} size={size} />
             </LogoIconShape>
         );
     }
     if (hasMail(subscription) || planName === PLANS.MAIL) {
         return (
             <LogoIconShape size={size}>
-                <MailLogo variant="glyph-only" scale={size / 44} />
+                <CustomLogo planName={PLANS.MAIL} app={app} size={size} />
             </LogoIconShape>
         );
     }
     if (hasLumo(subscription) || planName === PLANS.LUMO) {
         return (
             <LogoIconShape size={size}>
-                <CustomLogo planName={PLANS.LUMO} app={app} />
+                <CustomLogo planName={PLANS.LUMO} app={app} size={size} />
             </LogoIconShape>
         );
     }
     if (hasPass(subscription) || planName === PLANS.PASS) {
         return (
             <LogoIconShape size={size}>
-                <PassLogo variant="glyph-only" scale={size / 44} />
+                <CustomLogo planName={PLANS.PASS} app={app} size={size} />
             </LogoIconShape>
         );
     }
     if (hasMeetBusiness(subscription) || planName === PLANS.MEET_BUSINESS) {
         return (
-            <LogoIconShape size={size}>
-                <CustomLogo planName={PLANS.MEET_BUSINESS} app={app} />
+            <LogoIconShape border={false} size={size}>
+                <CustomLogo planName={PLANS.MEET_BUSINESS} app={app} size={size} />
             </LogoIconShape>
         );
     }
@@ -120,7 +116,7 @@ export const PlanIcon = ({
     ) {
         return (
             <LogoIconShape size={size}>
-                <DriveLogo variant="glyph-only" scale={size / 44} />
+                <CustomLogo planName={PLANS.DRIVE} app={app} size={size} />
             </LogoIconShape>
         );
     }
@@ -132,42 +128,42 @@ export const PlanIcon = ({
     ) {
         return (
             <LogoIconShape border={false} size={size}>
-                <CustomLogo planName={PLANS.BUNDLE} app={app} />
+                <CustomLogo planName={PLANS.BUNDLE} app={app} size={size} />
             </LogoIconShape>
         );
     }
     if (hasDuo(subscription) || planName === PLANS.DUO) {
         return (
             <LogoIconShape border={false} size={size}>
-                <CustomLogo planName={PLANS.DUO} app={app} />
+                <CustomLogo planName={PLANS.DUO} app={app} size={size} />
             </LogoIconShape>
         );
     }
     if (hasFamily(subscription) || planName === PLANS.FAMILY) {
         return (
             <LogoIconShape border={false} size={size}>
-                <CustomLogo planName={PLANS.FAMILY} app={app} />
+                <CustomLogo planName={PLANS.FAMILY} app={app} size={size} />
             </LogoIconShape>
         );
     }
     if (hasPassFamily(subscription) || planName === PLANS.PASS_FAMILY) {
         return (
             <LogoIconShape border={false} size={size}>
-                <CustomLogo planName={PLANS.PASS_FAMILY} app={app} />
+                <CustomLogo planName={PLANS.PASS_FAMILY} app={app} size={size} />
             </LogoIconShape>
         );
     }
     if ((user && hasPassLifetime(user)) || planName === PLANS.PASS_LIFETIME) {
         return (
             <LogoIconShape border={false} size={size}>
-                <CustomLogo planName={PLANS.PASS_LIFETIME} app={app} />
+                <CustomLogo planName={PLANS.PASS_LIFETIME} app={app} size={size} />
             </LogoIconShape>
         );
     }
     if (hasVpnBusiness(subscription) || planName === PLANS.VPN_BUSINESS) {
         return (
             <LogoIconShape border={false} size={size}>
-                <CustomLogo planName={PLANS.VPN_BUSINESS} app={app} />
+                <CustomLogo planName={PLANS.VPN_BUSINESS} app={app} size={size} />
             </LogoIconShape>
         );
     }
