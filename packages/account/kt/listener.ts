@@ -13,13 +13,13 @@ const getMailSettingsValue = (state: KtState) => {
 };
 
 const updateKtStateThunk = (): ThunkAction<void, KtState, ProtonThunkArguments, UnknownAction> => {
-    return (dispatch, getState, extra) => {
+    return async (dispatch, getState, extra) => {
         const unleashClient = extra.unleashClient;
         const logOnly = unleashClient?.isEnabled('KeyTransparencyLogOnly') ?? false;
         const showUI = unleashClient?.isEnabled('KeyTransparencyShowUI') ?? false;
         const featureFlag = getKTFlag({ logOnly, showUI });
         const mailSettings = getMailSettingsValue(getState());
-        const nextValue = getKTActivationValue({
+        const nextValue = await getKTActivationValue({
             featureFlag,
             appName: extra.config?.APP_NAME,
             mailSettings,

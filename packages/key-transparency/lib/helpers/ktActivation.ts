@@ -15,18 +15,18 @@ export const getKTFlag = ({ logOnly, showUI }: { logOnly: boolean; showUI: boole
     return KtFeatureEnum.DISABLE;
 };
 
-export const getKTActivationValue = ({
+export const getKTActivationValue = async ({
     featureFlag,
     mailSettings,
 }: {
     featureFlag: KtFeatureEnum;
     appName: APP_NAMES;
     mailSettings?: MailSettings;
-}): KeyTransparencyActivation => {
+}): Promise<KeyTransparencyActivation> => {
     if (!featureFlag) {
         return KeyTransparencyActivation.DISABLED;
     }
-    if (!isKTActive(featureFlag)) {
+    if (!(await isKTActive(featureFlag))) {
         return KeyTransparencyActivation.DISABLED;
     }
     if (featureFlag == KtFeatureEnum.ENABLE_CORE) {

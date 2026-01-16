@@ -1,9 +1,14 @@
 import type { Certificate, GeneralName } from 'pkijs';
 
-import { ctLogs, rootCertificates } from '../constants/certificates';
 import type { KT_CERTIFICATE_ISSUER } from '../constants/constants';
 import { SCT_THRESHOLD, epochChainVersion } from '../constants/constants';
 import { getBaseDomain, ktSentryReport, throwKTError } from '../helpers/utils';
+
+const importCertificates = () =>
+    import(
+        /* webpackChunkName: "kt-certificates" */
+        '../constants/certificates'
+    );
 
 const importPkijs = () =>
     import(
@@ -146,6 +151,7 @@ export const verifyCertChain = async (
     CertificateIssuer: KT_CERTIFICATE_ISSUER,
     now: Date
 ): Promise<void> => {
+    const { rootCertificates } = await importCertificates();
     const list = rootCertificates.get(CertificateIssuer) || [];
     const rootCerts = await Promise.all(list.map((cert) => parseCertificate(cert)));
     if (!rootCerts?.length) {
@@ -201,6 +207,7 @@ export const extractSCTs = (certificate: Certificate): string[] => {
  * of the issuer, which we assume was already verified as part of the certificate chain verification
  */
 export const verifySCT = async (certificate: Certificate, issuerCert: Certificate) => {
+    const { ctLogs } = await importCertificates();
     const scts = extractSCTs(certificate);
 
     const logs = ctLogs.operators.flatMap(({ logs, tiled_logs }) =>
