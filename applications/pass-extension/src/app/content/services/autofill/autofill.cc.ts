@@ -1,5 +1,6 @@
 import { splitFullName } from 'proton-pass-extension/app/content/services/autofill/autofill.identity';
 import type { FieldElement, FieldHandle } from 'proton-pass-extension/app/content/services/form/field';
+import type { AutofillRequest } from 'proton-pass-extension/types/autofill';
 
 import {
     formatExpirationDate,
@@ -10,6 +11,7 @@ import {
     getSelectExpirationYearFormat,
 } from '@proton/pass/fathom';
 import { CCFieldType, FieldType } from '@proton/pass/fathom/labels';
+import { getItemKey } from '@proton/pass/lib/items/item.utils';
 import type { Maybe } from '@proton/pass/types/utils/index';
 import type { CCItemData } from '@proton/pass/types/worker/data';
 import { isInputElement } from '@proton/pass/utils/dom/predicates';
@@ -19,6 +21,7 @@ import { truthy } from '@proton/pass/utils/fp/predicates';
 import { seq } from '@proton/pass/utils/fp/promises';
 
 type CCFieldValueExtract = (data: Partial<CCItemData>, el: FieldElement) => Maybe<string>;
+type CCAutofillRequest = AutofillRequest<'fill'> & { type: 'creditCard' };
 
 const getExpirationDate: CCFieldValueExtract = ({ expirationDate }, el) => {
     if (expirationDate && isInputElement(el)) {
@@ -64,9 +67,30 @@ export const CC_FIELDS_CONFIG: Record<CCFieldType, CCFieldValueExtract> = {
     [CCFieldType.NUMBER]: prop('number'),
 };
 
+const sanitizeCCNumber = (value: string) => value.replace(/[\s-]/g, '');
+
+/** Detects whether a credit card number field is being autofilled with the same
+ * value it already contains. This prevents a problematic cycle on certain forms
+ * (eg: payment pages where focusing the CC number field clears the CVC field):
+ * 1. User autofills CC number and CVC
+ * 2. Form clears CVC when CC number is re-focused
+ * 3. User attempts to re-autofill just the CVC
+ * 4. Without this check, the CC number would be re-autofilled, triggering step 2 again
+ * By detecting this, we skip the unnecessary re-fill and break the cycle. */
+const isDuplicateCCNumberAutofill = (value: string, field: FieldHandle, payload: CCAutofillRequest): boolean => {
+    if (field.fieldSubType !== CCFieldType.NUMBER) return false;
+    if (!field.autofilledItemKey) return false;
+    if (field.autofilledItemKey !== getItemKey(payload)) return false;
+
+    /** Secure forms may obfuscate the CC number as `******1234`, so compare
+     * only the last 4 digits to determine if the value is unchanged. */
+    const last4Digits = sanitizeCCNumber(field.element.value).slice(-4);
+    return last4Digits === value.slice(-4);
+};
+
 export const autofillCCFields = async (
     fields: FieldHandle<FieldType.CREDIT_CARD>[],
-    data: Partial<CCItemData>
+    payload: CCAutofillRequest
 ): Promise<CCFieldType[]> => {
     const result = await seq(fields, async (field, autofilled): Promise<Maybe<CCFieldType>> => {
         const ccType = field.fieldSubType;
@@ -74,11 +98,12 @@ export const autofillCCFields = async (
         /** No match or `CCFieldType` has already been autofilled */
         if (!ccType || autofilled.includes(ccType)) return;
 
-        const value = CC_FIELDS_CONFIG[ccType](data, field.element);
+        const value = CC_FIELDS_CONFIG[ccType](payload.data, field.element);
         const next = value || (field.autofilled === FieldType.CREDIT_CARD ? '' : undefined);
 
         if (next !== undefined) {
-            await field.autofill(next);
+            const duplicate = isDuplicateCCNumberAutofill(next, field, payload);
+            if (!duplicate) await field.autofill(next, { itemKey: getItemKey(payload) });
             return ccType;
         }
     });
