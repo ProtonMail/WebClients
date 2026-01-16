@@ -102,8 +102,13 @@ export const autofillCCFields = async (
         const next = value || (field.autofilled === FieldType.CREDIT_CARD ? '' : undefined);
 
         if (next !== undefined) {
+            /** cc-number fields are likely to have auto-formatting on
+             * keyboard/input events - adapt the autofill accordingly */
+            const maskedInput = ccType === CCFieldType.NUMBER;
+
             const duplicate = isDuplicateCCNumberAutofill(next, field, payload);
-            if (!duplicate) await field.autofill(next, { itemKey: getItemKey(payload) });
+            if (!duplicate) await field.autofill(next, { itemKey: getItemKey(payload), maskedInput });
+
             return ccType;
         }
     });
