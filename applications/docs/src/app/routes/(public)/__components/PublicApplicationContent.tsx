@@ -42,6 +42,7 @@ export function PublicApplicationContent({
       publicDriveCompat.getPublicAuthHeaders(),
       undefined,
       new DriveCompatWrapper({ publicCompat: publicDriveCompat }),
+      config.APP_NAME,
       config.APP_VERSION,
       unleashClient,
     )

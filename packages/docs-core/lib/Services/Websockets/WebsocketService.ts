@@ -73,6 +73,7 @@ import type { DocSizeTracker } from '../../SizeTracker/SizeTracker'
 import { tmpConvertOldDocTypeToNew } from '../../utils/convert-doc-type'
 import { traceError } from '@proton/shared/lib/helpers/sentry'
 import { seconds_to_ms } from '../../Util/time-utils'
+import type { APP_NAMES } from '@proton/shared/lib/constants'
 
 type LinkID = string
 
@@ -104,6 +105,7 @@ export class WebsocketService implements WebsocketServiceInterface {
     private logger: LoggerInterface,
     private eventBus: InternalEventBusInterface,
     private metricService: MetricService,
+    private appName: APP_NAMES,
     private appVersion: string,
     private unleashClient: UnleashClient,
     readonly sizeTracker: DocSizeTracker,
@@ -298,6 +300,7 @@ export class WebsocketService implements WebsocketServiceInterface {
       this._createRealtimeValetToken,
       this.metricService,
       this.logger,
+      this.appName,
       this.appVersion,
     )
 

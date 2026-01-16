@@ -50,6 +50,7 @@ describe('WebsocketConnection', () => {
         info: jest.fn(),
         warn: jest.fn(),
       } as unknown as LoggerInterface,
+      'proton-docs',
       '0.0.0.0',
     )
 
@@ -299,7 +300,7 @@ describe('WebsocketConnection', () => {
   })
 
   it('should correctly format url', () => {
-    const expectedResult = 'wss://docs-rts.darwin.proton.black/websockets/?token=123'
+    const expectedResult = 'wss://docs-rts.darwin.proton.black/websockets/?token=123&appversion=web-docs@0.0.0.0-dev'
 
     const result = connection.buildConnectionUrl({
       serverUrl: 'wss://docs-rts.darwin.proton.black/websockets',
@@ -371,6 +372,7 @@ describe('WebsocketConnection', () => {
           error: jest.fn(),
           info: jest.fn(),
         } as unknown as LoggerInterface,
+        'proton-docs',
         '0.0.0.0',
       )
 

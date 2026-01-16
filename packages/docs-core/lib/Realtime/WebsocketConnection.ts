@@ -16,6 +16,9 @@ import type { PublicDocumentState, DocumentState } from '../State/DocumentState'
 import type { FetchRealtimeToken } from '../UseCase/FetchRealtimeToken'
 import { DocsApiErrorCode } from '@proton/shared/lib/api/docs'
 import { hours_to_ms, seconds_to_ms } from '../Util/time-utils'
+import { getAppVersionStr } from '@proton/shared/lib/fetch/headers'
+import { getClientID } from '@proton/shared/lib/apps/helper'
+import type { APP_NAMES } from '@proton/shared/lib/constants'
 
 /**
  * The heartbeat mechanism is temporarily disabled due to the fact that we cannot renew our heartbeat when receiving
@@ -59,6 +62,7 @@ export class WebsocketConnection implements WebsocketConnectionInterface {
     private _fetchRealtimeToken: FetchRealtimeToken,
     readonly metricService: MetricService,
     private logger: LoggerInterface,
+    private appName: APP_NAMES,
     private appVersion: string,
   ) {
     window.addEventListener('offline', this.handleWindowWentOfflineEvent)
@@ -187,7 +191,8 @@ export class WebsocketConnection implements WebsocketConnectionInterface {
   }
 
   buildConnectionUrl(params: { serverUrl: string; token: string }): string {
-    const url = `${DebugConnection.enabled ? DebugConnection.url : params.serverUrl}/?token=${params.token}`
+    const appVersion = getAppVersionStr(getClientID(this.appName), this.appVersion)
+    const url = `${DebugConnection.enabled ? DebugConnection.url : params.serverUrl}/?token=${params.token}&appversion=${appVersion}`
 
     return url
   }
