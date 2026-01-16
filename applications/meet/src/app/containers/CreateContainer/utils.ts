@@ -1,4 +1,5 @@
 import { set } from 'date-fns';
+import { zonedTimeToUtc } from 'date-fns-tz';
 
 import { MINUTE } from '@proton/shared/lib/constants';
 import { getTimeZoneOptions } from '@proton/shared/lib/date/timezone';
@@ -7,9 +8,10 @@ import type { FormValues } from './types';
 
 export const timeZoneOptions = getTimeZoneOptions();
 
-export const combineDateAndTime = (date: Date, time: string) => {
+export const combineDateAndTime = (date: Date, time: string, timezone: string) => {
     const [hours, minutes] = time.split(':').map(Number);
-    return set(date, { hours, minutes, seconds: 0, milliseconds: 0 });
+    const localDate = set(date, { hours, minutes, seconds: 0, milliseconds: 0 });
+    return zonedTimeToUtc(localDate, timezone);
 };
 
 export const validateTimeZone = (timeZone: string | undefined | null) => {
@@ -73,7 +75,10 @@ export const validate = (values: FormValues) => {
         errors.endTime = true;
     }
 
-    if (combineDateAndTime(values.startDate, values.startTime) > combineDateAndTime(values.endDate, values.endTime)) {
+    if (
+        combineDateAndTime(values.startDate, values.startTime, values.timeZone) >
+        combineDateAndTime(values.endDate, values.endTime, values.timeZone)
+    ) {
         errors.endTime = true;
         errors.startTime = true;
         errors.endDate = true;

@@ -18,18 +18,12 @@ import { UpgradeButton } from '../UpgradeButton/UpgradeButton';
 import './PageHeader.scss';
 
 interface PageHeaderProps {
-    isScheduleInAdvanceEnabled: boolean;
     guestMode: boolean;
     showAppSwitcher?: boolean;
     isInstantJoin?: boolean;
 }
 
-export const PageHeader = ({
-    isScheduleInAdvanceEnabled,
-    guestMode,
-    showAppSwitcher = true,
-    isInstantJoin = false,
-}: PageHeaderProps) => {
+export const PageHeader = ({ guestMode, showAppSwitcher = true, isInstantJoin = false }: PageHeaderProps) => {
     const location = useLocation();
     const history = useHistory();
 
@@ -53,6 +47,7 @@ export const PageHeader = ({
     };
 
     const isJoinPage = window.location.pathname.includes('join');
+    const isSchedulePage = window.location.pathname.includes('schedule');
 
     const buttons = (
         <div className="flex flex-nowrap gap-2 items-center w-custom" style={{ '--w-custom': 'fit-content' }}>
@@ -94,17 +89,6 @@ export const PageHeader = ({
 
             {!isInstantJoin && (
                 <div className="flex flex-nowrap gap-2 items-center">
-                    {isScheduleInAdvanceEnabled && (
-                        <Button
-                            className="action-button rounded-full hidden md:block"
-                            onClick={() =>
-                                guestMode ? handleSignIn('admin/create') : history.replace('/admin/create')
-                            }
-                            size="large"
-                        >
-                            {c('Action').t`Schedule meeting`}
-                        </Button>
-                    )}
                     <div className="md:hidden w-custom" style={{ '--w-custom': 'fit-content' }}>
                         {buttons}
                     </div>
@@ -127,7 +111,7 @@ export const PageHeader = ({
                                     />
                                 </>
                             )}
-                            {isJoinPage && (
+                            {(isJoinPage || isSchedulePage) && (
                                 <Button
                                     className="action-button w-custom h-custom rounded-full shrink-0 flex items-center justify-center p-0"
                                     onClick={() =>

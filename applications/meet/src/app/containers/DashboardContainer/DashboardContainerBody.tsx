@@ -36,7 +36,7 @@ export const DashboardContainerBody = ({
 }: DashboardContainerBodyProps) => {
     return (
         <div className="w-full h-full meet-container-padding-x overflow-y-auto lg:overflow-y-hidden flex flex-column flex-nowrap bg-weak">
-            <PageHeader isScheduleInAdvanceEnabled={false} guestMode={isGuest} showAppSwitcher={!isElectronApp} />
+            <PageHeader guestMode={isGuest} showAppSwitcher={!isElectronApp} />
             <div className="flex gap-4 py-4 flex-nowrap w-full shrink-0">
                 <div className="flex flex-column md:flex-row flex-nowrap gap-1 md:gap-3 xl:gap-4 w-full">
                     <CardButton

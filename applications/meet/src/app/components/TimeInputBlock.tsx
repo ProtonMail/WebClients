@@ -2,6 +2,7 @@ import Option from '@proton/components/components/option/Option';
 import SearchableSelect from '@proton/components/components/selectTwo/SearchableSelect';
 import DateInputTwo from '@proton/components/components/v2/input/DateInputTwo';
 import { IcClock } from '@proton/icons/icons/IcClock';
+import type { SETTINGS_TIME_FORMAT } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
 import type { FormValues } from '../containers/CreateContainer/types';
@@ -14,6 +15,7 @@ export const TimeInputBlock = ({
     showTimezones,
     timeOptions,
     timeZoneOptions,
+    timeFormat,
     showIcon = true,
     editableTimeZone = true,
     timeError,
@@ -24,6 +26,7 @@ export const TimeInputBlock = ({
     showTimezones: boolean;
     timeOptions: { value: string; label: string }[];
     timeZoneOptions: { value: string; label: string }[];
+    timeFormat: SETTINGS_TIME_FORMAT;
     showIcon?: boolean;
     editableTimeZone?: boolean;
     timeError?: boolean;
@@ -60,6 +63,7 @@ export const TimeInputBlock = ({
                     setValues({ ...values, [`${name}Time`]: value });
                 }}
                 options={timeOptions}
+                timeFormat={timeFormat}
                 error={timeError}
             />
             {showTimezones && (
