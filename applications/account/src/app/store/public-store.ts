@@ -1,6 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit';
 
-import { apiStatusReducer, paymentStatusReducer, plansReducer, referralInfoReducer } from '@proton/account';
+import { apiStatusReducer } from '@proton/account/apiStatus';
+import { paymentStatusReducer } from '@proton/account/paymentStatus';
+import { plansReducer } from '@proton/account/plans';
+import { referralInfoReducer } from '@proton/account/referralInfo';
 import { ignoredActions, ignoredPaths } from '@proton/redux-shared-store/sharedSerializable';
 
 import { type AccountThunkPublicArguments, extraThunkArguments } from './public-thunk';
