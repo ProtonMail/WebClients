@@ -1,6 +1,9 @@
+import { useState } from 'react';
+
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import Checkbox from '@proton/components/components/input/Checkbox';
 import InputFieldStacked from '@proton/components/components/inputFieldStacked/InputFieldStacked';
 import InputFieldStackedGroup from '@proton/components/components/inputFieldStacked/InputFieldStackedGroup';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
@@ -13,8 +16,9 @@ interface PreJoinDetailsProps {
     roomName: string;
     roomId: string;
     displayName: string;
+    keepDisplayName: boolean;
     onDisplayNameChange: (displayName: string) => void;
-    onJoinMeeting: (displayName: string) => void;
+    onJoinMeeting: (displayName: string, keepOnDevice: boolean) => void;
     shareLink: string;
     instantMeeting: boolean;
 }
@@ -23,11 +27,13 @@ export const PreJoinDetails = ({
     roomId,
     displayName,
     onDisplayNameChange,
+    keepDisplayName,
     onJoinMeeting,
     shareLink,
     instantMeeting,
 }: PreJoinDetailsProps) => {
     const notificationManager = useNotifications();
+    const [keepDisplayNameOnDevice, setKeepDisplayNameOnDevice] = useState(keepDisplayName);
 
     const actionLabel = instantMeeting ? c('Action').t`Start meeting` : c('Action').t`Join meeting`;
 
@@ -100,13 +106,22 @@ export const PreJoinDetails = ({
                     />
                 </InputFieldStacked>
             </InputFieldStackedGroup>
+            <div className="w-full">
+                <Checkbox
+                    checked={keepDisplayNameOnDevice}
+                    onChange={(e) => setKeepDisplayNameOnDevice(e.target.checked)}
+                    id="keep-display-name-on-device"
+                >
+                    {c('Label').t`Remember my name on this device for future meetings`}
+                </Checkbox>
+            </div>
             <Button
                 className="join-button py-4 px-5 md:py-5 rounded-full color-invert"
                 color="norm"
                 size="large"
                 fullWidth
-                onClick={() => onJoinMeeting(displayName)}
-                disabled={!displayName}
+                onClick={() => onJoinMeeting(displayName, keepDisplayNameOnDevice)}
+                disabled={displayName.trim() === ''}
             >
                 {actionLabel}
             </Button>
