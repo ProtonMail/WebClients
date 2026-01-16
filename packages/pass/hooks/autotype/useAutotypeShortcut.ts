@@ -6,7 +6,7 @@ import { useSpotlightFor } from '@proton/pass/components/Spotlight/WithSpotlight
 import { useAutotypeActions } from '@proton/pass/hooks/autotype/useAutotypeActions';
 import { useAutotypeExecute } from '@proton/pass/hooks/autotype/useAutotypeExecute';
 import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
-import { selectPassPlan } from '@proton/pass/store/selectors';
+import { selectPassPlan, selectUserPlan } from '@proton/pass/store/selectors';
 import { type Item, SpotlightMessage } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
@@ -16,6 +16,7 @@ export const useAutotypeShortcut = DESKTOP_BUILD
     ? (data: Item<'login'>) => {
           const autotypeEnabled = useFeatureFlag(PassFeature.PassDesktopAutotype);
           const isFreePlan = useSelector(selectPassPlan) === UserPassPlan.FREE;
+          const isPassEssentials = useSelector(selectUserPlan)?.InternalName === 'passpro2024';
           const { actions } = useAutotypeActions(data);
           const executeAutotype = useAutotypeExecute();
           const { autotypeConfirmShortcut } = useItemsActions();
@@ -27,6 +28,7 @@ export const useAutotypeShortcut = DESKTOP_BUILD
                   if (
                       autotypeEnabled &&
                       !isFreePlan &&
+                      !isPassEssentials &&
                       action &&
                       (evt.ctrlKey || evt.metaKey) &&
                       evt.shiftKey &&
@@ -44,7 +46,7 @@ export const useAutotypeShortcut = DESKTOP_BUILD
                       void executeAutotype?.(autotypeProps);
                   }
               },
-              [action, confirmationSpotlight, autotypeEnabled, isFreePlan]
+              [action, confirmationSpotlight, autotypeEnabled, isFreePlan, isPassEssentials]
           );
       }
     : noop;
