@@ -18,12 +18,14 @@ describe('UploadEventHandler', () => {
     let mockCapacityManager: jest.Mocked<CapacityManager>;
     let mockConflictManager: jest.Mocked<ConflictManager>;
     let mockSDKTransferActivity: jest.Mocked<SDKTransferActivity>;
+    let mockSDKPhotosTransferActivity: jest.Mocked<SDKTransferActivity>;
     let mockCancelFolderChildren: jest.Mock;
     let mockUpdateQueueItems: jest.Mock;
     let mockSetController: jest.Mock;
     let mockRemoveController: jest.Mock;
     let mockGetController: jest.Mock;
     let mockCheckAndUnsubscribeIfQueueEmpty: jest.Mock;
+    let mockPhotosCheckAndUnsubscribeIfQueueEmpty: jest.Mock;
     let mockGetItem: jest.Mock;
 
     beforeEach(() => {
@@ -34,6 +36,7 @@ describe('UploadEventHandler', () => {
         mockRemoveController = jest.fn();
         mockGetController = jest.fn();
         mockCheckAndUnsubscribeIfQueueEmpty = jest.fn();
+        mockPhotosCheckAndUnsubscribeIfQueueEmpty = jest.fn();
         mockCancelFolderChildren = jest.fn();
         mockGetItem = jest.fn();
 
@@ -64,10 +67,16 @@ describe('UploadEventHandler', () => {
             checkAndUnsubscribeIfQueueEmpty: mockCheckAndUnsubscribeIfQueueEmpty,
         } as any;
 
+        mockSDKPhotosTransferActivity = {
+            isPaused: jest.fn().mockReturnValue(false),
+            checkAndUnsubscribeIfQueueEmpty: mockPhotosCheckAndUnsubscribeIfQueueEmpty,
+        } as any;
+
         handler = new UploadEventHandler(
             mockCapacityManager,
             mockConflictManager,
             mockSDKTransferActivity,
+            mockSDKPhotosTransferActivity,
             mockCancelFolderChildren
         );
     });

@@ -1,11 +1,11 @@
 import { NodeType, NodeWithSameNameExistsValidationError } from '@protontech/drive-sdk';
 
-import { getDrive } from '../../../index';
+import { UploadDriveClientRegistry } from '../UploadDriveClientRegistry';
 import type { EventCallback, UploadTask } from '../types';
 import { getNodeEntityFromMaybeNode } from '../utils/getNodeEntityFromMaybeNode';
 import { FolderCreationExecutor } from './FolderCreationExecutor';
 
-jest.mock('../../../index');
+jest.mock('../UploadDriveClientRegistry');
 jest.mock('../utils/getNodeEntityFromMaybeNode');
 
 describe('FolderCreationExecutor', () => {
@@ -19,7 +19,7 @@ describe('FolderCreationExecutor', () => {
         mockEventCallback = jest.fn();
         mockCreateFolder = jest.fn();
 
-        jest.mocked(getDrive).mockReturnValue({
+        jest.mocked(UploadDriveClientRegistry.getDriveClient).mockReturnValue({
             createFolder: mockCreateFolder,
         } as any);
 
@@ -56,51 +56,6 @@ describe('FolderCreationExecutor', () => {
             newExecutor.setEventCallback(callback);
 
             expect(callback).toBeDefined();
-        });
-    });
-
-    describe('driveClient', () => {
-        it('should use getDrive by default', async () => {
-            const task = createFolderTask();
-            mockCreateFolder.mockResolvedValue({});
-
-            await executor.execute(task);
-
-            expect(getDrive).toHaveBeenCalled();
-            expect(mockCreateFolder).toHaveBeenCalled();
-        });
-
-        it('should use custom drive client when set', async () => {
-            const customMockCreateFolder = jest.fn().mockResolvedValue({});
-            const customDriveClient = {
-                createFolder: customMockCreateFolder,
-            } as any;
-
-            executor.driveClient = customDriveClient;
-
-            const task = createFolderTask();
-            await executor.execute(task);
-
-            expect(customMockCreateFolder).toHaveBeenCalledWith('parent123', 'MyFolder', new Date('2024-01-01'));
-            expect(mockCreateFolder).not.toHaveBeenCalled();
-        });
-
-        it('should persist custom drive client across multiple executions', async () => {
-            const customMockCreateFolder = jest.fn().mockResolvedValue({});
-            const customDriveClient = {
-                createFolder: customMockCreateFolder,
-            } as any;
-
-            executor.driveClient = customDriveClient;
-
-            const task1 = createFolderTask({ uploadId: 'task1' });
-            const task2 = createFolderTask({ uploadId: 'task2' });
-
-            await executor.execute(task1);
-            await executor.execute(task2);
-
-            expect(customMockCreateFolder).toHaveBeenCalledTimes(2);
-            expect(mockCreateFolder).not.toHaveBeenCalled();
         });
     });
 

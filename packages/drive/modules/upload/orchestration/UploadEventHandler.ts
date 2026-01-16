@@ -22,6 +22,7 @@ export class UploadEventHandler {
         private capacityManager: CapacityManager,
         private conflictManager: ConflictManager,
         private sdkTransferActivity: SDKTransferActivity,
+        private sdkPhotosTransferActivity: SDKTransferActivity,
         private cancelFolderChildren: (uploadId: string) => void
     ) {
         this.eventHandlers = {
@@ -79,10 +80,10 @@ export class UploadEventHandler {
 
     private handleFileProgress(event: FileUploadEvent & { type: 'file:progress' }): void {
         const queueStore = useUploadQueueStore.getState();
-        if (
-            this.sdkTransferActivity.isPaused() ||
-            queueStore.getItem(event.uploadId)?.status === UploadStatus.Cancelled
-        ) {
+        const isPaused = event.isForPhotos
+            ? this.sdkPhotosTransferActivity.isPaused()
+            : this.sdkTransferActivity.isPaused();
+        if (isPaused || queueStore.getItem(event.uploadId)?.status === UploadStatus.Cancelled) {
             return;
         }
 
@@ -101,7 +102,11 @@ export class UploadEventHandler {
             nodeUid: event.nodeUid,
         });
         controllerStore.removeController(event.uploadId);
-        this.sdkTransferActivity.checkAndUnsubscribeIfQueueEmpty();
+        if (event.isForPhotos) {
+            this.sdkPhotosTransferActivity.checkAndUnsubscribeIfQueueEmpty();
+        } else {
+            this.sdkTransferActivity.checkAndUnsubscribeIfQueueEmpty();
+        }
     }
 
     private async handleFileError(event: FileUploadEvent & { type: 'file:error' }): Promise<void> {
@@ -122,7 +127,11 @@ export class UploadEventHandler {
             error: event.error,
         });
         controllerStore.removeController(event.uploadId);
-        this.sdkTransferActivity.checkAndUnsubscribeIfQueueEmpty();
+        if (event.isForPhotos) {
+            this.sdkPhotosTransferActivity.checkAndUnsubscribeIfQueueEmpty();
+        } else {
+            this.sdkTransferActivity.checkAndUnsubscribeIfQueueEmpty();
+        }
     }
 
     private async handleFolderComplete(event: FolderCreationEvent & { type: 'folder:complete' }): Promise<void> {
@@ -182,7 +191,11 @@ export class UploadEventHandler {
             status: UploadStatus.Cancelled,
         });
         controllerStore.removeController(event.uploadId);
-        this.sdkTransferActivity.checkAndUnsubscribeIfQueueEmpty();
+        if (event.isForPhotos) {
+            this.sdkPhotosTransferActivity.checkAndUnsubscribeIfQueueEmpty();
+        } else {
+            this.sdkTransferActivity.checkAndUnsubscribeIfQueueEmpty();
+        }
     }
 
     private handleFolderCancelled(event: FolderCreationEvent & { type: 'folder:cancelled' }): void {
