@@ -10,12 +10,12 @@ import { isCCField } from 'proton-pass-extension/lib/utils/field';
 import { resolveFieldSections } from 'proton-pass-extension/lib/utils/field.sections';
 
 import {
-    buttonSelector,
     getCCFieldType,
     getIdentityFieldType,
     isIFrameField,
     isIgnored,
     isVisibleForm,
+    kButtonSelector,
     removeClassifierFlags,
     shadowPiercingContains,
 } from '@proton/pass/fathom';
@@ -106,7 +106,7 @@ export const createFormHandles = (options: DetectedForm): FormHandle => {
         },
 
         get busy() {
-            const btns = Array.from(form.querySelectorAll<HTMLElement>(buttonSelector));
+            const btns = Array.from(form.querySelectorAll<HTMLElement>(kButtonSelector));
             const busyFields = formHandle.getFields(({ element }) => isElementBusy(element));
             return isElementBusy(form) || btns.some(isElementBusy) || busyFields.length > 0 || isParentBusy(form);
         },

@@ -41,9 +41,11 @@ interface FieldHandleBase extends FrameField {
     action: MaybeNull<FieldAction>;
     actionPrevented: boolean;
     /** Indicates the autofill status of the field. A value of `null`
-     * means the current field value was a user input. Otherwise, it
+     * means the current field value was user generated. Otherwise, it
      * stores the FieldType that triggered the autofilled value */
     autofilled: MaybeNull<FieldType>;
+    /** Autofilled item key */
+    autofilledItemKey: MaybeNull<string>;
     /** underlying input element */
     element: FieldElement;
     /** optional `IconHandle` if attached */
@@ -99,6 +101,7 @@ export const createFieldHandles = ({
         action: null,
         value: element.value,
         autofilled: null,
+        autofilledItemKey: null,
         tracked: false,
         tracker: null,
         interactivity,
@@ -123,7 +126,11 @@ export const createFieldHandles = ({
              * autofill request (via the `onInput` handler), avoid resetting
              * the `autofilled` flag. This should only be reset from actual
              * user interaction with the field to allow autofill overriding. */
-            if (!ctx?.service.autofill.processing) field.autofilled = null;
+            if (!ctx?.service.autofill.processing) {
+                field.autofilled = null;
+                field.autofilledItemKey = null;
+            }
+
             return (field.value = value);
         }),
 
@@ -167,8 +174,8 @@ export const createFieldHandles = ({
                 .then(async (visible) => {
                     if (visible) {
                         await createAutofill(element)(value, options);
-                        if (value) field.autofilled = options?.type ?? field.fieldType;
-                        else field.autofilled = null;
+                        field.autofilled = value ? (options?.type ?? field.fieldType) : null;
+                        field.autofilledItemKey = options?.itemKey ?? null;
                     }
                 })
                 .catch(noop)

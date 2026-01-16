@@ -26,14 +26,16 @@ export type AutofillStatus = AutofillSequence['status'];
  * when supporting cross-frame support for all forms.
  * We use a "sequence" here for UX purposes. */
 export type AutofillRequest<T extends AutofillStatus = AutofillStatus> = Extract<
-    AutofillSequence<{
-        type: 'creditCard';
-        /** Credit card autofill request payload. The data field is partial to support
-         * cross-origin autofill scenarios where sensitive fields (number, CVV) must be
-         * stripped when autofilling across origin boundaries. */
-        data: Partial<CCItemData>;
-        fields: FrameField[];
-    }>,
+    AutofillSequence<
+        SelectedItem & {
+            type: 'creditCard';
+            /** Credit card autofill request payload. The data field is partial to support
+             * cross-origin autofill scenarios where sensitive fields (number, CVV) must be
+             * stripped when autofilling across origin boundaries. */
+            data: Partial<CCItemData>;
+            fields: FrameField[];
+        }
+    >,
     { status: T }
 >;
 
