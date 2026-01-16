@@ -128,7 +128,7 @@ export const getPermissions = ({
         canEditInternalAddress,
         canEditExternalAddress,
         canDisable,
-        canEnable: Status === ADDRESS_STATUS.STATUS_DISABLED && isAdmin && !isSpecialAddress,
+        canEnable: Status === ADDRESS_STATUS.STATUS_DISABLED && isAdmin && Type !== TYPE_ORIGINAL,
         canDeleteAddress: adminCanDeleteCustom,
         canDeleteAddressOncePerYear: !adminCanDeleteCustom && isAdmin && !isSpecialAddress && !isExternal && !isDefault,
         canEdit: isSelf,
