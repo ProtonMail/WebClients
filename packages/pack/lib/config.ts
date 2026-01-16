@@ -143,5 +143,6 @@ export const getWebpackOptions = (envArguments: WebpackEnvArguments, extra: Extr
         warningLogs: protonPackOptions.warningLogs ?? false,
         writeSRI: protonPackOptions.sri !== false,
         benchmarkBuild: protonPackOptions.benchmarkBuild ?? false,
+        prependAsyncCss: protonPackOptions.prependAsyncCss ?? false
     };
 };
