@@ -42,54 +42,158 @@ describe('selectAll', () => {
     });
 
     describe('getSelectAllBannerTextWithLocation', () => {
-        it('should return the expected text', () => {
-            expect(
-                getSelectAllBannerTextWithLocation(
+        describe('conversation mode off', () => {
+            it('should return inbox folder name', () => {
+                const res = getSelectAllBannerTextWithLocation(
                     false,
                     numberOfElements,
                     MAILBOX_LABEL_IDS.INBOX,
                     customLabels,
                     customFolders
-                )
-            ).toEqual(`You selected **${numberOfElements} messages** in Inbox`);
-            expect(
-                getSelectAllBannerTextWithLocation(false, numberOfElements, customFolderID, customLabels, customFolders)
-            ).toEqual(`You selected **${numberOfElements} messages** in Custom Folder`);
-            expect(
-                getSelectAllBannerTextWithLocation(false, numberOfElements, customLabelID, customLabels, customFolders)
-            ).toEqual(`You selected **${numberOfElements} messages** in Custom Label`);
-            expect(
-                getSelectAllBannerTextWithLocation(
+                );
+
+                expect(res).toEqual(`You selected **${numberOfElements} messages** in Inbox`);
+            });
+
+            it('should return the category name', () => {
+                const res = getSelectAllBannerTextWithLocation(
+                    false,
+                    numberOfElements,
+                    MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS,
+                    customLabels,
+                    customFolders
+                );
+
+                expect(res).toEqual(`You selected **${numberOfElements} messages** in Newsletters`);
+            });
+
+            it('should return the custom folder name', () => {
+                const res = getSelectAllBannerTextWithLocation(
+                    false,
+                    numberOfElements,
+                    customFolderID,
+                    customLabels,
+                    customFolders
+                );
+
+                expect(res).toEqual(`You selected **${numberOfElements} messages** in Custom Folder`);
+            });
+
+            it('should return the custom label name', () => {
+                const res = getSelectAllBannerTextWithLocation(
+                    false,
+                    numberOfElements,
+                    customLabelID,
+                    customLabels,
+                    customFolders
+                );
+
+                expect(res).toEqual(`You selected **${numberOfElements} messages** in Custom Label`);
+            });
+        });
+
+        describe('conversation mode on', () => {
+            it('should return inbox folder name', () => {
+                const res = getSelectAllBannerTextWithLocation(
                     true,
                     numberOfElements,
                     MAILBOX_LABEL_IDS.INBOX,
                     customLabels,
                     customFolders
-                )
-            ).toEqual(`You selected **${numberOfElements} conversations** in Inbox`);
-            expect(
-                getSelectAllBannerTextWithLocation(true, numberOfElements, customFolderID, customLabels, customFolders)
-            ).toEqual(`You selected **${numberOfElements} conversations** in Custom Folder`);
-            expect(
-                getSelectAllBannerTextWithLocation(true, numberOfElements, customLabelID, customLabels, customFolders)
-            ).toEqual(`You selected **${numberOfElements} conversations** in Custom Label`);
+                );
+
+                expect(res).toEqual(`You selected **${numberOfElements} conversations** in Inbox`);
+            });
+
+            it('should return the category name', () => {
+                const res = getSelectAllBannerTextWithLocation(
+                    true,
+                    numberOfElements,
+                    MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS,
+                    customLabels,
+                    customFolders
+                );
+
+                expect(res).toEqual(`You selected **${numberOfElements} conversations** in Newsletters`);
+            });
+
+            it('should return the custom folder name', () => {
+                const res = getSelectAllBannerTextWithLocation(
+                    true,
+                    numberOfElements,
+                    customFolderID,
+                    customLabels,
+                    customFolders
+                );
+
+                expect(res).toEqual(`You selected **${numberOfElements} conversations** in Custom Folder`);
+            });
+
+            it('should return the custom label name', () => {
+                const res = getSelectAllBannerTextWithLocation(
+                    true,
+                    numberOfElements,
+                    customLabelID,
+                    customLabels,
+                    customFolders
+                );
+
+                expect(res).toEqual(`You selected **${numberOfElements} conversations** in Custom Label`);
+            });
         });
     });
 
     describe('getSelectAllButtonText', () => {
-        it('should return the expected text', () => {
-            expect(getSelectAllButtonText(true, numberOfElements, customLabelID, customLabels, customFolders)).toEqual(
-                'Clear selection'
-            );
-            expect(
-                getSelectAllButtonText(false, numberOfElements, MAILBOX_LABEL_IDS.INBOX, customLabels, customFolders)
-            ).toEqual(`Select all ${numberOfElements} in Inbox`);
-            expect(getSelectAllButtonText(false, numberOfElements, customLabelID, customLabels, customFolders)).toEqual(
-                `Select all ${numberOfElements} in Custom Label`
-            );
-            expect(
-                getSelectAllButtonText(false, numberOfElements, customFolderID, customLabels, customFolders)
-            ).toEqual(`Select all ${numberOfElements} in Custom Folder`);
+        describe('select all on', () => {
+            it('should return inbox button text', () => {
+                const res = getSelectAllButtonText(
+                    false,
+                    numberOfElements,
+                    MAILBOX_LABEL_IDS.INBOX,
+                    customLabels,
+                    customFolders
+                );
+
+                expect(res).toEqual(`Select all ${numberOfElements} in Inbox`);
+            });
+
+            it('should return newsletters button text', () => {
+                const res = getSelectAllButtonText(
+                    false,
+                    numberOfElements,
+                    MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS,
+                    customLabels,
+                    customFolders
+                );
+
+                expect(res).toEqual(`Select all ${numberOfElements} in Newsletters`);
+            });
+
+            it('should return custom label button text', () => {
+                const res = getSelectAllButtonText(false, numberOfElements, customLabelID, customLabels, customFolders);
+
+                expect(res).toEqual(`Select all ${numberOfElements} in Custom Label`);
+            });
+
+            it('should return custom folder button text', () => {
+                const res = getSelectAllButtonText(
+                    false,
+                    numberOfElements,
+                    customFolderID,
+                    customLabels,
+                    customFolders
+                );
+
+                expect(res).toEqual(`Select all ${numberOfElements} in Custom Folder`);
+            });
+        });
+
+        describe('select all off', () => {
+            it('should return clear selection copy', () => {
+                const res = getSelectAllButtonText(true, numberOfElements, customLabelID, customLabels, customFolders);
+
+                expect(res).toEqual('Clear selection');
+            });
         });
     });
 
