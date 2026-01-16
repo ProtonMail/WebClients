@@ -83,6 +83,7 @@ function useApplication({ driveCompat }: ApplicationOptions) {
         uid: UID,
       },
       new DriveCompatWrapper({ userCompat: driveCompat }),
+      config.APP_NAME,
       config.APP_VERSION,
       unleashClient,
     )

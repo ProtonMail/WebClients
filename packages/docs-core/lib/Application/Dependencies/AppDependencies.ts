@@ -53,6 +53,7 @@ import { IndexedDatabase } from '../../Database/IndexedDB'
 import type { DatabaseSchema } from '../../Database/Schema'
 import { CURRENT_DB_VERSION, DATABASE_NAME, migrations } from '../../Database/Schema'
 import { DocSizeTracker } from '../../SizeTracker/SizeTracker'
+import type { APP_NAMES } from '@proton/shared/lib/constants'
 
 export class AppDependencies extends DependencyContainer {
   constructor(
@@ -60,6 +61,7 @@ export class AppDependencies extends DependencyContainer {
     imageProxyParams: ImageProxyParams | undefined,
     publicContextHeaders: HttpHeaders | undefined,
     compatWrapper: DriveCompatWrapper,
+    appName: APP_NAMES,
     appVersion: string,
     unleashClient: UnleashClient,
     syncedEditorState: SyncedEditorState,
@@ -362,6 +364,7 @@ export class AppDependencies extends DependencyContainer {
         this.get<LoggerInterface>(App_TYPES.Logger),
         this.get<InternalEventBusInterface>(App_TYPES.EventBus),
         this.get<MetricService>(App_TYPES.MetricService),
+        appName,
         appVersion,
         unleashClient,
         this.get<DocSizeTracker>(App_TYPES.SizeTracker),

@@ -20,6 +20,7 @@ import type { UnleashClient } from '@proton/unleash'
 import { UserState } from '../State/UserState'
 import type { DocumentState, PublicDocumentState } from '../State/DocumentState'
 import type { DriveCompat, PublicDriveCompat } from '@proton/drive-store/lib'
+import type { APP_NAMES } from '@proton/shared/lib/constants'
 
 declare const window: CustomWindow
 
@@ -32,6 +33,7 @@ export class Application implements ApplicationInterface {
     this.imageProxyParams,
     this.publicContextHeaders,
     this.compatWrapper,
+    this.appName,
     this.appVersion,
     this.unleashClient,
     this.syncedEditorState,
@@ -42,6 +44,7 @@ export class Application implements ApplicationInterface {
     private publicContextHeaders: HttpHeaders | undefined,
     private imageProxyParams: ImageProxyParams | undefined,
     public compatWrapper: DriveCompatWrapper,
+    private appName: APP_NAMES,
     private appVersion: string,
     private unleashClient: UnleashClient,
   ) {
