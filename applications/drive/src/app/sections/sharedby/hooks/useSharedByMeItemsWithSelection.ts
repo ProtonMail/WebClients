@@ -2,7 +2,7 @@ import { useCallback, useMemo } from 'react';
 
 import { useShallow } from 'zustand/react/shallow';
 
-import { NodeType, getDrivePerNodeType, splitNodeUid } from '@proton/drive/index';
+import { NodeType, getDrive, getDriveForPhotos, getDrivePerNodeType, splitNodeUid } from '@proton/drive';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import { isProtonDocsDocument, isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype';
 import isTruthy from '@proton/utils/isTruthy';
@@ -33,7 +33,9 @@ export const useSharedByMeItemsWithSelection = () => {
     const { layout } = useUserSettings();
     const { openDocument } = useDocumentActions();
     const { navigateToAlbum, navigateToLink } = useDriveNavigation();
-    const { loadThumbnail } = useBatchThumbnailLoader();
+    // TODO: We should refactor the useBatchThumbnailLoader to support passing instance per item
+    const { loadThumbnail } = useBatchThumbnailLoader({ drive: getDrive() });
+    const { loadThumbnail: loadPhotosThumbnail } = useBatchThumbnailLoader({ drive: getDriveForPhotos() });
     const selectionControls = useSelection();
     const { sharedByMeItems, isLoading, getSharedByMeItem, hasEverLoaded } = useSharedByMeStore(
         useShallow((state) => ({
@@ -153,12 +155,21 @@ export const useSharedByMeItemsWithSelection = () => {
 
             incrementItemRenderedCounter();
 
-            loadThumbnail({
-                uid: storeItem.nodeUid,
-                thumbnailId: storeItem.thumbnailId || storeItem.nodeUid,
-                hasThumbnail: !!storeItem.thumbnailId,
-                cachedThumbnailUrl: undefined,
-            });
+            if (storeItem.type === NodeType.Photo) {
+                loadPhotosThumbnail({
+                    uid: storeItem.nodeUid,
+                    thumbnailId: storeItem.thumbnailId || storeItem.nodeUid,
+                    hasThumbnail: !!storeItem.thumbnailId,
+                    cachedThumbnailUrl: undefined,
+                });
+            } else {
+                loadThumbnail({
+                    uid: storeItem.nodeUid,
+                    thumbnailId: storeItem.thumbnailId || storeItem.nodeUid,
+                    hasThumbnail: !!storeItem.thumbnailId,
+                    cachedThumbnailUrl: undefined,
+                });
+            }
 
             // Load sharing info if needed
             if (!skipSharingInfoLoading(storeItem.nodeUid)) {

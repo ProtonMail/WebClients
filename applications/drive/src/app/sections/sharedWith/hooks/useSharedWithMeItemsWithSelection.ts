@@ -2,7 +2,7 @@ import { useCallback, useEffect, useMemo } from 'react';
 
 import { useShallow } from 'zustand/react/shallow';
 
-import { NodeType, getDrivePerNodeType, splitNodeUid } from '@proton/drive/index';
+import { NodeType, getDrive, getDriveForPhotos, getDrivePerNodeType, splitNodeUid } from '@proton/drive';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import { isProtonDocsDocument, isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype';
 import isTruthy from '@proton/utils/isTruthy';
@@ -42,7 +42,9 @@ export const useSharedWithMeItemsWithSelection = () => {
     const { isDocsEnabled } = useDriveDocsFeatureFlag();
     const { openBookmark } = useBookmarksActions();
     const { layout } = useUserSettings();
-    const { loadThumbnail } = useBatchThumbnailLoader();
+    // TODO: We should refactor the useBatchThumbnailLoader to support passing instance per item
+    const { loadThumbnail } = useBatchThumbnailLoader({ drive: getDrive() });
+    const { loadThumbnail: loadPhotosThumbnail } = useBatchThumbnailLoader({ drive: getDriveForPhotos() });
 
     const {
         getSharedWithMeStoreItem,
@@ -80,15 +82,24 @@ export const useSharedWithMeItemsWithSelection = () => {
             incrementItemRenderedCounter();
             const renderedItem = getSharedWithMeStoreItem(id);
             if (renderedItem?.thumbnailId && renderedItem.itemType !== ItemType.BOOKMARK) {
-                loadThumbnail({
-                    uid: renderedItem.nodeUid,
-                    thumbnailId: renderedItem.thumbnailId,
-                    hasThumbnail: true,
-                    cachedThumbnailUrl: '',
-                });
+                if (renderedItem.type === NodeType.Photo) {
+                    loadPhotosThumbnail({
+                        uid: renderedItem.nodeUid,
+                        thumbnailId: renderedItem.thumbnailId,
+                        hasThumbnail: true,
+                        cachedThumbnailUrl: '',
+                    });
+                } else {
+                    loadThumbnail({
+                        uid: renderedItem.nodeUid,
+                        thumbnailId: renderedItem.thumbnailId,
+                        hasThumbnail: true,
+                        cachedThumbnailUrl: '',
+                    });
+                }
             }
         },
-        [getSharedWithMeStoreItem, incrementItemRenderedCounter, loadThumbnail]
+        [getSharedWithMeStoreItem, incrementItemRenderedCounter, loadThumbnail, loadPhotosThumbnail]
     );
 
     // Map regular items for sorting
@@ -229,7 +240,16 @@ export const useSharedWithMeItemsWithSelection = () => {
 
             navigateToLink(item.shareId, nodeId, item.type === NodeType.File || item.type === NodeType.Photo);
         },
-        [navigateToLink, openBookmark, isDocsEnabled, openDocument, navigateToAlbum, getSharedWithMeStoreItem]
+        [
+            getSharedWithMeStoreItem,
+            isSDKPreviewEnabled,
+            navigateToLink,
+            openBookmark,
+            isDocsEnabled,
+            openDocument,
+            navigateToAlbum,
+            showPreviewModal,
+        ]
     );
 
     return {
