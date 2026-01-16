@@ -96,6 +96,7 @@ describe('WebsocketService', () => {
       logger,
       eventBus,
       metricService,
+      'proton-docs',
       '0.0.0.0',
       {
         isReady: jest.fn().mockReturnValue(true),
