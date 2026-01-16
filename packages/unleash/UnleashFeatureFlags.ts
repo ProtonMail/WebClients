@@ -258,6 +258,7 @@ enum MeetFeatureFlag {
     MeetPromptOnTabClose = 'MeetPromptOnTabClose',
     MeetSoundNotificationsEnabled = 'MeetSoundNotificationsEnabled',
     MeetNewJoinType = 'MeetNewJoinType',
+    MeetSwitchJoinType = 'MeetSwitchJoinType',
     MeetSeamlessKeyRotationEnabled = 'MeetSeamlessKeyRotationEnabled',
     MeetShowUpsellModalAfterMeeting = 'MeetShowUpsellModalAfterMeeting',
     MeetShowMLSLogs = 'MeetShowMLSLogs',
