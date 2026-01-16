@@ -1,8 +1,11 @@
 import { c, msgid } from 'ttag';
 
+import { isCategoryLabel } from '@proton/mail/helpers/location';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Label } from '@proton/shared/lib/interfaces';
 import type { Folder } from '@proton/shared/lib/interfaces/Folder';
+
+import { getLabelFromCategoryId } from 'proton-mail/components/categoryView/categoriesStringHelpers';
 
 import { getLabelName } from './labels';
 
@@ -32,7 +35,9 @@ export const getSelectAllBannerTextWithLocation = (
     customLabels: Label[],
     customFolders: Folder[]
 ) => {
-    const location = getLabelName(labelID, customLabels, customFolders);
+    const location = isCategoryLabel(labelID)
+        ? getLabelFromCategoryId(labelID)
+        : getLabelName(labelID, customLabels, customFolders);
 
     /* translator: To have plural forms AND a part in bold, we need to surround the bold part with "**" so that we can replace it by a <strong> tag in the code.
      * Here, "{elementsCount} conversations" or "{elementsCount} messages" will be bold. You need to put them in your translation too.
@@ -63,7 +68,10 @@ export const getSelectAllButtonText = (
     if (selectAll) {
         return c('Info').t`Clear selection`;
     }
-    const location = getLabelName(labelID, customLabels, customFolders);
+    const location = isCategoryLabel(labelID)
+        ? getLabelFromCategoryId(labelID)
+        : getLabelName(labelID, customLabels, customFolders);
+
     /* translator:
      * ${elementsCount} is the number of elements in the location
      * ${labelName} is the name of the current label/folder
