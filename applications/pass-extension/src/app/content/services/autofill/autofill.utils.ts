@@ -21,6 +21,9 @@ export type AutofillOptions = {
     type?: FieldType;
     /** Autofilled item derived key */
     itemKey?: string;
+    /** Indicates field likely applies formatting/masking
+     * on keyboard events (eg: CC number fields) */
+    maskedInput?: boolean;
 };
 
 type EventDispatcher = (events: Event[]) => Promise<void>;
@@ -62,7 +65,12 @@ const releaseFocus = async (element: HTMLFieldElement, dispatch: EventDispatcher
     await release;
 };
 
-const keyboardFill = async (input: HTMLInputElement, data: string, dispatch: EventDispatcher) => {
+const keyboardFill = async (
+    input: HTMLInputElement,
+    data: string,
+    options: AutofillOptions,
+    dispatch: EventDispatcher
+) => {
     input.value = data;
 
     await dispatch([
@@ -74,7 +82,7 @@ const keyboardFill = async (input: HTMLInputElement, data: string, dispatch: Eve
     /** Let any deferred handlers from keyboard events complete before continuing.
      * Some sites (eg: macys.com) use `setTimeout` to defer validation/formatting,
      * which can overwrite or reset the field if we proceed immediately. */
-    await wait(0);
+    if (options.maskedInput) await wait(0);
 
     if (input.value !== data) input.value = data;
 
@@ -108,14 +116,14 @@ const selectFill = async (select: HTMLSelectElement, match: HTMLOptionElement, d
  * Dispatched events need to bubble up as certain websites
  * attach their event listeners not directly on the input
  * elements (ie: account.google.com) */
-const autofillInputElement = async (input: HTMLInputElement, data: string, options?: AutofillOptions) => {
+const autofillInputElement = async (input: HTMLInputElement, data: string, options: AutofillOptions = {}) => {
     const dispatch = dispatchEvents(input);
     /** 1. acquire */
     if (typeof input?.click === 'function') input.click();
     if (!options?.noFocus) await acquireFocus(input, dispatch);
     /** 2. autofill */
     if (options?.paste) await pasteFill(data, dispatch);
-    else await keyboardFill(input, data, dispatch);
+    else await keyboardFill(input, data, options, dispatch);
     /** 3. release */
     if (!options?.noFocus) await releaseFocus(input, dispatch);
 };
