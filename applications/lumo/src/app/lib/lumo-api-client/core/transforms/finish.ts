@@ -9,15 +9,8 @@ export const makeFinishSink = (
     chunkCallback: ChunkCallback | undefined,
     responseContext: ResponseContext
 ): WritableStream<GenerationToFrontendMessageDecrypted> => {
-    const start = Date.now();
     return new WritableStream({
         async write(value: GenerationToFrontendMessageDecrypted) {
-            const elapsed = Date.now() - start;
-            if (value.type === 'token_data') {
-                console.log(`[sink] [${elapsed} ms] token_data (${value.target}): `, value.content);
-            } else {
-                console.log(`[sink] [${elapsed} ms] ${value.type}`);
-            }
             const processedValue = await notifyResponse(value, responseContext);
             if (!chunkCallback) return;
             const result = await chunkCallback(processedValue);

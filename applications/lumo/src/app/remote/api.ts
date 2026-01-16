@@ -33,21 +33,29 @@ import type {
     NewConversationToApi,
     NewMessageToApi,
     NewSpaceToApi,
-    RemoteAsset,
-    RemoteAttachment,
     RemoteDeletedAsset,
+    RemoteDeletedAttachment,
+    RemoteFilledAsset,
+    RemoteFilledAttachment,
     RemoteId,
     RemoteMessage,
     SerializedUserSettings,
-    UserSettingsFromApi,
-    UserSettingsToApi,
     SpaceTag,
     SpaceToApi,
+    UserSettingsFromApi,
+    UserSettingsToApi,
 } from './types';
 import { objectToPascalCaseKeys, oldestDateReducer } from './util';
 
 export type RemoteStatus = 'ok' | 'deleted';
-export type ResourceName = 'masterkeys' | 'spaces' | 'conversations' | 'messages' | 'assets' | 'personalization' | 'settings';
+export type ResourceName =
+    | 'masterkeys'
+    | 'spaces'
+    | 'conversations'
+    | 'messages'
+    | 'assets'
+    | 'personalization'
+    | 'settings';
 
 // prettier-ignore
 type PostableResource =
@@ -102,11 +110,14 @@ export interface LumoApi {
 
     postAttachment(attachmentArgs: NewAssetToApi, priority: Priority): Promise<RemoteId | null>;
     deleteAttachment(attachmentId: RemoteId, priority: Priority): Promise<RemoteStatus>;
-    getAttachment(attachmentId: RemoteId, spaceId: LocalId): Promise<RemoteAttachment | null>;
+    getAttachment(
+        attachmentId: RemoteId,
+        spaceId: LocalId
+    ): Promise<RemoteFilledAttachment | RemoteDeletedAttachment | null>;
 
     postAsset(assetArgs: NewAssetToApi, priority: Priority): Promise<RemoteId | null>;
     deleteAsset(assetId: RemoteId, priority: Priority): Promise<RemoteStatus>;
-    getAsset(assetId: RemoteId, spaceId: LocalId): Promise<RemoteAsset | null>;
+    getAsset(assetId: RemoteId, spaceId: LocalId): Promise<RemoteFilledAsset | RemoteDeletedAsset | null>;
 
     // User settings methods
     getUserSettings(): Promise<SerializedUserSettings | null>;
@@ -413,13 +424,12 @@ export class LumoApi {
         }
     }
 
-
     // User settings methods
     public async getUserSettings(): Promise<SerializedUserSettings | null> {
         try {
             const data = await this.callListJson('settings');
             const userSettingsFromApi = data?.UserSettings as UserSettingsFromApi;
-            
+
             if (!userSettingsFromApi) {
                 return null;
             }
@@ -568,13 +578,25 @@ export class LumoApi {
         return convertMessageFromApi(data.Message, conversationTag, parentId, remoteConversationId);
     }
 
-    public async getAsset(id: RemoteId, spaceTag: SpaceTag): Promise<RemoteAsset | RemoteDeletedAsset | null> {
+    public async getAsset(id: RemoteId, spaceTag: SpaceTag): Promise<RemoteFilledAsset | RemoteDeletedAsset | null> {
         const data = await this.callGetJson('assets', id);
         if (data === null) return null;
-        return convertAssetFromApi(data.Asset, spaceTag);
+        const asset = convertAssetFromApi(data.Asset, spaceTag);
+        if (asset.deleted) return asset;
+        if (!asset.encrypted) {
+            console.log('getAsset: remote asset does not have the `Encrypted` field set');
+            return null;
+        }
+        // Sorry for the weird juggling below; if I do `return asset`, TypeScript complains that `asset.encrypted`
+        // can be undefined, which clearly it cannot because of the `if (!asset.encrypted) return` above.
+        // Anyway, this is type safe: it guarantees the return type is cleanly satisfied.
+        return { ...asset, encrypted: asset.encrypted };
     }
 
-    public getAttachment(attachmentId: RemoteId, spaceId: LocalId): Promise<RemoteAttachment | null> {
-        return this.getAsset(attachmentId, spaceId) as Promise<RemoteAttachment | null>;
+    public getAttachment(
+        attachmentId: RemoteId,
+        spaceId: LocalId
+    ): Promise<RemoteFilledAttachment | RemoteDeletedAttachment | null> {
+        return this.getAsset(attachmentId, spaceId);
     }
 }

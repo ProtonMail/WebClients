@@ -511,6 +511,49 @@ describe('Mock Server Tests', () => {
                 expect(responseData.Space.SpaceKey).toBe('test-key');
             });
 
+            it('should update spaces via PUT', async () => {
+                const spaceId = await mockDb.getNextSpaceId();
+                mockDb.addSpace({
+                    ID: spaceId,
+                    CreateTime: new Date().toISOString(),
+                    SpaceKey: 'original-key',
+                    SpaceTag: 'test-tag',
+                    Encrypted: 'original-data' as Base64,
+                });
+
+                const updateBody = {
+                    SpaceKey: 'updated-key',
+                    Encrypted: 'updated-data',
+                };
+
+                const response = await fetch(`${baseUrl}/api/lumo/v1/spaces/${spaceId}`, {
+                    method: 'PUT',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(updateBody),
+                });
+
+                expect(response.status).toBe(200);
+                const responseData = await response.json();
+                expect(responseData.Code).toBe(1000);
+
+                // Verify space was updated in mock database
+                const updatedSpace = mockDb.getSpace(spaceId);
+                expect(updatedSpace).toBeDefined();
+                expect(updatedSpace!.SpaceKey).toBe('updated-key');
+                expect(updatedSpace!.Encrypted).toBe('updated-data');
+                expect(updatedSpace!.SpaceTag).toBe('test-tag'); // Should remain unchanged
+            });
+
+            it('should return 404 for PUT on non-existent space', async () => {
+                const response = await fetch(`${baseUrl}/api/lumo/v1/spaces/non-existent-id`, {
+                    method: 'PUT',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ SpaceKey: 'key', Encrypted: 'data' }),
+                });
+
+                expect(response.status).toBe(404);
+            });
+
             it('should delete spaces via DELETE', async () => {
                 const spaceId = await mockDb.getNextSpaceId();
                 mockDb.addSpace({

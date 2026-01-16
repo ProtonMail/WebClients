@@ -37,7 +37,7 @@ import {
     locallyDeleteConversationFromLocalRequest,
     pushConversationRequest,
 } from '../../redux/slices/core/conversations';
-import { addSpace, pushSpaceRequest } from '../../redux/slices/core/spaces';
+import { addSpace, pullSpaceRequest, pushSpaceRequest } from '../../redux/slices/core/spaces';
 import { getProjectInfo } from '../../types';
 import { type ConversationGroup, SelectableConversationList } from '../components/Conversations';
 import { FilesManagementView } from '../components/Files/KnowledgeBase/FilesManagementView';
@@ -167,6 +167,15 @@ const ProjectDetailViewInner = () => {
     const provisionalAttachments = useLumoSelector(selectProvisionalAttachments);
 
     const { createConversationInProject, deleteProject } = useProjectActions();
+
+    // Sync space data when navigating to a project to ensure we have the latest state
+    // This ensures project-level data (files, settings, linked folders) stays in sync across browsers
+    useEffect(() => {
+        if (!projectId) return;
+        
+        console.log(`Project navigation: pulling specific space to sync project ${projectId}`);
+        dispatch(pullSpaceRequest({ id: projectId }));
+    }, [dispatch, projectId]);
 
     const handleShowDriveBrowser = useCallback(() => {
         // Show Drive browser in a modal

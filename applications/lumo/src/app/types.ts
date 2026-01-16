@@ -44,7 +44,10 @@ export function isOldEncryptedData(obj: any): obj is OldEncryptedData {
 }
 
 export type Encrypted = {
-    encrypted: EncryptedData; // JSON-encoded "priv" part of Message/Conversation/Space, encrypted with spaceKey
+    encrypted: EncryptedData; // JSON-encoded "priv" part of Message/Conversation/Space/Attachment, encrypted with spaceKey
+};
+export type Shallow = {
+    encrypted?: undefined; // means the `encrypted` field is NOT present (or set to undefined)
 };
 
 // *** Role ***
@@ -602,12 +605,18 @@ export function isAttachmentPub(value: any): value is AttachmentPub {
         (value.rawBytes === undefined || value.rawBytes === null || typeof value.rawBytes === 'number') &&
         (value.processing === undefined || value.processing === null || typeof value.processing === 'boolean') &&
         (value.error === undefined || value.error === null || typeof value.error === 'boolean') &&
-        (value.autoRetrieved === undefined || value.autoRetrieved === null || typeof value.autoRetrieved === 'boolean') &&
+        (value.autoRetrieved === undefined ||
+            value.autoRetrieved === null ||
+            typeof value.autoRetrieved === 'boolean') &&
         (value.driveNodeId === undefined || value.driveNodeId === null || typeof value.driveNodeId === 'string') &&
-        (value.relevanceScore === undefined || value.relevanceScore === null || typeof value.relevanceScore === 'number') &&
+        (value.relevanceScore === undefined ||
+            value.relevanceScore === null ||
+            typeof value.relevanceScore === 'number') &&
         (value.isChunk === undefined || value.isChunk === null || typeof value.isChunk === 'boolean') &&
         (value.chunkTitle === undefined || value.chunkTitle === null || typeof value.chunkTitle === 'string') &&
-        (value.isUploadedProjectFile === undefined || value.isUploadedProjectFile === null || typeof value.isUploadedProjectFile === 'boolean')
+        (value.isUploadedProjectFile === undefined ||
+            value.isUploadedProjectFile === null ||
+            typeof value.isUploadedProjectFile === 'boolean')
     );
 }
 
@@ -620,8 +629,12 @@ export function isAttachmentPriv(value: any): value is AttachmentPriv {
         (value.markdown === undefined || value.markdown === null || typeof value.markdown === 'string') &&
         (value.errorMessage === undefined || value.errorMessage === null || typeof value.errorMessage === 'string') &&
         (value.truncated === undefined || value.truncated === null || typeof value.truncated === 'boolean') &&
-        (value.originalRowCount === undefined || value.originalRowCount === null || typeof value.originalRowCount === 'number') &&
-        (value.processedRowCount === undefined || value.processedRowCount === null || typeof value.processedRowCount === 'number') &&
+        (value.originalRowCount === undefined ||
+            value.originalRowCount === null ||
+            typeof value.originalRowCount === 'number') &&
+        (value.processedRowCount === undefined ||
+            value.processedRowCount === null ||
+            typeof value.processedRowCount === 'number') &&
         (value.tokenCount === undefined || value.tokenCount === null || typeof value.tokenCount === 'number')
     );
 }

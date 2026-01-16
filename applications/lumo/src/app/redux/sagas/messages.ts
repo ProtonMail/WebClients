@@ -7,7 +7,7 @@ import type { DbApi } from '../../indexedDb/db';
 import type { LumoApi } from '../../remote/api';
 import { convertNewMessageToApi } from '../../remote/conversion';
 import type { Priority } from '../../remote/scheduler';
-import type { IdMapEntry, LocalId, RemoteAttachment, RemoteId, RemoteMessage, ResourceType } from '../../remote/types';
+import type { IdMapEntry, LocalId, RemoteId, RemoteMessage, ResourceType } from '../../remote/types';
 import { deserializeMessage, serializeMessage } from '../../serialization';
 import {
     type Conversation,
@@ -19,8 +19,8 @@ import {
     cleanSerializedMessage,
     getSpaceDek,
 } from '../../types';
-import { selectConversationById, selectMessageById, selectRemoteIdFromLocal, selectSpaceById } from '../selectors';
-import { locallyRefreshAttachmentFromRemoteRequest } from '../slices/core/attachments';
+import { selectConversationById, selectMessageById, selectSpaceById } from '../selectors';
+import type { PullAttachmentRequest } from '../slices/core/attachments';
 import { pullConversationRequest } from '../slices/core/conversations';
 import { addIdMapEntry } from '../slices/core/idmap';
 import {
@@ -38,6 +38,7 @@ import {
     pushMessageSuccess,
 } from '../slices/core/messages';
 import type { LumoState } from '../store';
+import { considerRequestingFullAttachment } from './attachments';
 import { waitForConversation } from './conversations';
 import { waitForMapping } from './idmap';
 import { RETRY_PUSH_EVERY_MS, callWithRetry, isClientError, isConflictClientError } from './index';
@@ -374,42 +375,15 @@ export function* refreshMessageFromRemote({ payload: remoteMessage }: { payload:
         }
     }
 
-    // Process shallow attachments if they exist
-    if (cleanRemote.attachments && cleanRemote.attachments.length > 0) {
-        console.log(
-            `refreshMessageFromRemote: processing ${cleanRemote.attachments.length} shallow attachments for message ${localId}`
-        );
-        for (const shallowAttachment of cleanRemote.attachments) {
-            // Look up the remote IDs from the idmap (should already be populated by processPullSpacesPage)
-            const attachmentRemoteId: RemoteId | undefined = yield select(
-                selectRemoteIdFromLocal('attachment', shallowAttachment.id)
-            );
-            const spaceRemoteId: RemoteId | undefined = yield select(selectRemoteIdFromLocal('space', localSpaceId));
-
-            if (!attachmentRemoteId) {
-                console.warn(
-                    `refreshMessageFromRemote: attachment ${shallowAttachment.id} has no remote ID in idmap, skipping`
-                );
-                continue;
-            }
-            if (!spaceRemoteId) {
-                console.warn(`refreshMessageFromRemote: space ${localSpaceId} has no remote ID in idmap, skipping`);
-                continue;
-            }
-
-            // Convert shallow attachment to RemoteAttachment format for locallyRefreshAttachmentFromRemoteRequest
-            const remoteAttachment: RemoteAttachment = {
-                ...shallowAttachment,
-                id: shallowAttachment.id,
-                spaceId: shallowAttachment.spaceId,
-                uploadedAt: shallowAttachment.uploadedAt,
-                mimeType: shallowAttachment.mimeType,
-                rawBytes: shallowAttachment.rawBytes,
-                remoteId: attachmentRemoteId,
-                remoteSpaceId: spaceRemoteId,
-                deleted: false as const,
-            };
-            yield put(locallyRefreshAttachmentFromRemoteRequest(remoteAttachment));
+    // Fetch shallow attachments if they exist
+    const attachments = cleanRemote.attachments ?? [];
+    for (const shallowAttachment of attachments) {
+        const { id, spaceId } = shallowAttachment;
+        if (spaceId) {
+            const request: PullAttachmentRequest = { id, spaceId };
+            yield fork(considerRequestingFullAttachment, { payload: request });
+        } else {
+            console.log('refreshShallowAttachmentFromRemote: attachment has no space id, cannot pull full attachment');
         }
     }
 
@@ -442,6 +416,7 @@ export function* pullMessage({ payload: shallowRemoteMessage }: { payload: Remot
         }
         yield put(pullMessageSuccess(fullRemoteMessage));
     } catch (e) {
+        console.error('Error pulling message:', e);
         yield put(pullMessageFailure(shallowRemoteMessage));
     }
 }
@@ -450,7 +425,8 @@ export function* processPullMessageResult({ payload: remoteMessage }: { payload:
     console.log('Saga triggered: processGetMessage', remoteMessage);
     console.log('get message success' /* , payload */);
     if (remoteMessage.deleted) {
-        // yield put(remoteDeleteMessage(message));
+        // Messages are deleted with the space that contains it using a cascade deletion
+        // No need to delete it here
     } else {
         yield put(locallyRefreshMessageFromRemoteRequest(remoteMessage));
         if (!remoteMessage.encrypted) {
