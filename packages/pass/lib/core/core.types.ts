@@ -9,7 +9,9 @@ export type PassCoreParams<T extends PassCoreMethod> = Parameters<PassCore[T]>;
 export type PassCoreResult<T extends PassCoreMethod> = ReturnType<PassCore[T]>;
 export type PassCoreMessageEvent<T extends PassCoreMethod> = Result<{ value: PassCoreResult<T> }>;
 export type PassCoreRPC<T extends PassCoreMethod> = { method: T; args: PassCoreParams<T> };
-export type PassCoreProxy = { [K in PassCoreMethod]: (...params: PassCoreParams<K>) => Promise<PassCoreResult<K>> };
+export type PassCoreProxy = {
+    [K in PassCoreMethod]: (...params: PassCoreParams<K>) => Promise<Awaited<PassCoreResult<K>>>;
+};
 
 export type PassCoreMethodMap = {
     [K in PassCoreMethod]: {
