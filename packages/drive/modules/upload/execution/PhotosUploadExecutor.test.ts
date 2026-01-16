@@ -1,20 +1,14 @@
-import { NodeType } from '@protontech/drive-sdk';
+import { NodeType, NodeWithSameNameExistsValidationError } from '@protontech/drive-sdk';
 
 import { CryptoProxy } from '@proton/crypto';
 
-import { NodeWithSameNameExistsValidationError, getDriveForPhotos } from '../../../index';
 import { generatePhotosExtendedAttributes } from '../../extendedAttributes';
 import { generateThumbnail } from '../../thumbnails';
+import { UploadDriveClientRegistry } from '../UploadDriveClientRegistry';
 import type { EventCallback, PhotosUploadTask } from '../types';
 import { PhotosUploadExecutor } from './PhotosUploadExecutor';
 
-jest.mock('../../../index', () => {
-    const actual = jest.requireActual('../../../index');
-    return {
-        ...actual,
-        getDriveForPhotos: jest.fn(),
-    };
-});
+jest.mock('../UploadDriveClientRegistry');
 jest.mock('../../thumbnails');
 jest.mock('../../extendedAttributes');
 jest.mock('@proton/crypto', () => {
@@ -102,7 +96,7 @@ describe('PhotosUploadExecutor', () => {
             uploadFromStream: mockUploadFromStream,
         });
 
-        jest.mocked(getDriveForPhotos).mockReturnValue({
+        jest.mocked(UploadDriveClientRegistry.getDrivePhotosClient).mockReturnValue({
             getFileUploader: mockGetFileUploader,
             findPhotoDuplicates: mockFindPhotoDuplicates,
         } as any);
@@ -150,7 +144,7 @@ describe('PhotosUploadExecutor', () => {
     describe('execute', () => {
         it('should check for duplicate photo before upload', async () => {
             const task = createFileTask();
-            const driveForPhotos = jest.mocked(getDriveForPhotos)();
+            const driveForPhotos = jest.mocked(UploadDriveClientRegistry.getDrivePhotosClient)();
 
             await executor.execute(task);
 
@@ -162,7 +156,7 @@ describe('PhotosUploadExecutor', () => {
         });
 
         it('should emit photo:exist event when photo is duplicate', async () => {
-            const driveForPhotos = jest.mocked(getDriveForPhotos)();
+            const driveForPhotos = jest.mocked(UploadDriveClientRegistry.getDrivePhotosClient)();
             jest.mocked(driveForPhotos.findPhotoDuplicates).mockResolvedValue(['duplicate-uid-123']);
             const task = createFileTask();
 
@@ -178,7 +172,7 @@ describe('PhotosUploadExecutor', () => {
         });
 
         it('should emit photo:exist event with multiple duplicates', async () => {
-            const driveForPhotos = jest.mocked(getDriveForPhotos)();
+            const driveForPhotos = jest.mocked(UploadDriveClientRegistry.getDrivePhotosClient)();
             jest.mocked(driveForPhotos.findPhotoDuplicates).mockResolvedValue([
                 'duplicate-uid-1',
                 'duplicate-uid-2',
@@ -547,7 +541,7 @@ describe('PhotosUploadExecutor', () => {
 
         it('should compute SHA1 hash for duplicate detection', async () => {
             const task = createFileTask();
-            const driveForPhotos = jest.mocked(getDriveForPhotos)();
+            const driveForPhotos = jest.mocked(UploadDriveClientRegistry.getDrivePhotosClient)();
 
             await executor.execute(task);
 

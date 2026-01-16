@@ -1,5 +1,6 @@
 import { NodeWithSameNameExistsValidationError } from '@protontech/drive-sdk';
 
+import { UploadDriveClientRegistry } from '../UploadDriveClientRegistry';
 import type { FolderCreationTask } from '../types';
 import { getNodeEntityFromMaybeNode } from '../utils/getNodeEntityFromMaybeNode';
 import { TaskExecutor } from './TaskExecutor';
@@ -10,7 +11,7 @@ import { TaskExecutor } from './TaskExecutor';
  */
 export class FolderCreationExecutor extends TaskExecutor<FolderCreationTask> {
     async execute(task: FolderCreationTask): Promise<void> {
-        const drive = this.driveClient;
+        const drive = UploadDriveClientRegistry.getDriveClient();
 
         try {
             const folder = await drive.createFolder(task.parentUid, task.name, task.modificationTime);

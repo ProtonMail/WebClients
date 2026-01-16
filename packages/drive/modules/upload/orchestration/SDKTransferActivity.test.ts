@@ -8,6 +8,7 @@ jest.mock('../store/uploadQueue.store');
 
 describe('SDKTransferActivity', () => {
     let manager: SDKTransferActivity;
+    let mockDrive: any;
     let mockOnMessage: jest.Mock;
     let mockUnsubscribePaused: jest.Mock;
     let mockUnsubscribeResumed: jest.Mock;
@@ -25,9 +26,11 @@ describe('SDKTransferActivity', () => {
 
         mockOnMessage.mockReturnValueOnce(mockUnsubscribePaused).mockReturnValueOnce(mockUnsubscribeResumed);
 
-        jest.mocked(getDrive).mockReturnValue({
+        mockDrive = {
             onMessage: mockOnMessage,
-        } as any);
+        };
+
+        jest.mocked(getDrive).mockReturnValue(mockDrive);
 
         jest.mocked(useUploadQueueStore.getState).mockReturnValue({
             getQueue: mockGetQueue,
@@ -39,7 +42,7 @@ describe('SDKTransferActivity', () => {
 
     describe('subscribe', () => {
         it('should subscribe to TransfersPaused and TransfersResumed events', () => {
-            manager.subscribe();
+            manager.subscribe(mockDrive);
 
             expect(mockOnMessage).toHaveBeenCalledTimes(2);
             expect(mockOnMessage).toHaveBeenCalledWith(SDKEvent.TransfersPaused, expect.any(Function));
@@ -47,8 +50,8 @@ describe('SDKTransferActivity', () => {
         });
 
         it('should not subscribe twice', () => {
-            manager.subscribe();
-            manager.subscribe();
+            manager.subscribe(mockDrive);
+            manager.subscribe(mockDrive);
 
             expect(mockOnMessage).toHaveBeenCalledTimes(2);
         });
@@ -56,7 +59,7 @@ describe('SDKTransferActivity', () => {
         it('should mark as subscribed after subscribing', () => {
             expect(manager.isSubscribed()).toBe(false);
 
-            manager.subscribe();
+            manager.subscribe(mockDrive);
 
             expect(manager.isSubscribed()).toBe(true);
         });
@@ -64,7 +67,7 @@ describe('SDKTransferActivity', () => {
 
     describe('unsubscribe', () => {
         it('should unsubscribe from events', () => {
-            manager.subscribe();
+            manager.subscribe(mockDrive);
             manager.unsubscribe();
 
             expect(mockUnsubscribePaused).toHaveBeenCalled();
@@ -72,7 +75,7 @@ describe('SDKTransferActivity', () => {
         });
 
         it('should mark as not subscribed after unsubscribing', () => {
-            manager.subscribe();
+            manager.subscribe(mockDrive);
             expect(manager.isSubscribed()).toBe(true);
 
             manager.unsubscribe();
@@ -94,13 +97,13 @@ describe('SDKTransferActivity', () => {
         });
 
         it('should return true after subscribing', () => {
-            manager.subscribe();
+            manager.subscribe(mockDrive);
 
             expect(manager.isSubscribed()).toBe(true);
         });
 
         it('should return false after unsubscribing', () => {
-            manager.subscribe();
+            manager.subscribe(mockDrive);
             manager.unsubscribe();
 
             expect(manager.isSubscribed()).toBe(false);
@@ -113,7 +116,7 @@ describe('SDKTransferActivity', () => {
         });
 
         it('should return true after TransfersPaused event', () => {
-            manager.subscribe();
+            manager.subscribe(mockDrive);
 
             const pausedHandler = mockOnMessage.mock.calls[0][1];
             pausedHandler();
@@ -122,7 +125,7 @@ describe('SDKTransferActivity', () => {
         });
 
         it('should return false after TransfersResumed event', () => {
-            manager.subscribe();
+            manager.subscribe(mockDrive);
 
             const pausedHandler = mockOnMessage.mock.calls[0][1];
             const resumedHandler = mockOnMessage.mock.calls[1][1];
@@ -138,7 +141,7 @@ describe('SDKTransferActivity', () => {
     describe('checkAndUnsubscribeIfQueueEmpty', () => {
         it('should unsubscribe when queue is empty', () => {
             mockGetQueue.mockReturnValue([]);
-            manager.subscribe();
+            manager.subscribe(mockDrive);
 
             manager.checkAndUnsubscribeIfQueueEmpty();
 
@@ -148,7 +151,7 @@ describe('SDKTransferActivity', () => {
 
         it('should not unsubscribe when queue has pending items', () => {
             mockGetQueue.mockReturnValue([{ uploadId: 'file1', status: UploadStatus.Pending }]);
-            manager.subscribe();
+            manager.subscribe(mockDrive);
 
             manager.checkAndUnsubscribeIfQueueEmpty();
 
@@ -157,7 +160,7 @@ describe('SDKTransferActivity', () => {
 
         it('should not unsubscribe when queue has in-progress items', () => {
             mockGetQueue.mockReturnValue([{ uploadId: 'file1', status: UploadStatus.InProgress }]);
-            manager.subscribe();
+            manager.subscribe(mockDrive);
 
             manager.checkAndUnsubscribeIfQueueEmpty();
 
@@ -171,7 +174,7 @@ describe('SDKTransferActivity', () => {
                 { uploadId: 'file3', status: UploadStatus.Cancelled },
                 { uploadId: 'file4', status: UploadStatus.Skipped },
             ]);
-            manager.subscribe();
+            manager.subscribe(mockDrive);
 
             manager.checkAndUnsubscribeIfQueueEmpty();
 
@@ -195,7 +198,7 @@ describe('SDKTransferActivity', () => {
                 { uploadId: 'file3', status: UploadStatus.Pending },
             ]);
 
-            manager.subscribe();
+            manager.subscribe(mockDrive);
             const pausedHandler = mockOnMessage.mock.calls[0][1];
             pausedHandler();
 
@@ -211,7 +214,7 @@ describe('SDKTransferActivity', () => {
                 { uploadId: 'file3', status: UploadStatus.Failed },
             ]);
 
-            manager.subscribe();
+            manager.subscribe(mockDrive);
             const pausedHandler = mockOnMessage.mock.calls[0][1];
             pausedHandler();
 
@@ -219,7 +222,7 @@ describe('SDKTransferActivity', () => {
         });
 
         it('should set isPaused flag', () => {
-            manager.subscribe();
+            manager.subscribe(mockDrive);
             const pausedHandler = mockOnMessage.mock.calls[0][1];
 
             expect(manager.isPaused()).toBe(false);
@@ -236,7 +239,7 @@ describe('SDKTransferActivity', () => {
                 { uploadId: 'file3', status: UploadStatus.Pending },
             ]);
 
-            manager.subscribe();
+            manager.subscribe(mockDrive);
             const resumedHandler = mockOnMessage.mock.calls[1][1];
             resumedHandler();
 
@@ -252,7 +255,7 @@ describe('SDKTransferActivity', () => {
                 { uploadId: 'file3', status: UploadStatus.Finished },
             ]);
 
-            manager.subscribe();
+            manager.subscribe(mockDrive);
             const resumedHandler = mockOnMessage.mock.calls[1][1];
             resumedHandler();
 
@@ -260,7 +263,7 @@ describe('SDKTransferActivity', () => {
         });
 
         it('should clear isPaused flag', () => {
-            manager.subscribe();
+            manager.subscribe(mockDrive);
             const pausedHandler = mockOnMessage.mock.calls[0][1];
             const resumedHandler = mockOnMessage.mock.calls[1][1];
 
@@ -276,7 +279,7 @@ describe('SDKTransferActivity', () => {
         it('should handle multiple pause/resume cycles', () => {
             mockGetQueue.mockReturnValue([{ uploadId: 'file1', status: UploadStatus.InProgress }]);
 
-            manager.subscribe();
+            manager.subscribe(mockDrive);
             const pausedHandler = mockOnMessage.mock.calls[0][1];
             const resumedHandler = mockOnMessage.mock.calls[1][1];
 
