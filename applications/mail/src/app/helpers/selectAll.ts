@@ -28,13 +28,19 @@ export const getSelectAllBannerText = (conversationMode: boolean, elementsCount:
           );
 };
 
-export const getSelectAllBannerTextWithLocation = (
-    conversationMode: boolean,
-    elementsCount: number,
-    labelID: string,
-    customLabels: Label[],
-    customFolders: Folder[]
-) => {
+export const getSelectAllBannerTextWithLocation = ({
+    conversationMode,
+    elementsCount,
+    labelID,
+    customLabels,
+    customFolders,
+}: {
+    conversationMode: boolean;
+    elementsCount: number;
+    labelID: string;
+    customLabels: Label[];
+    customFolders: Folder[];
+}) => {
     const location = isCategoryLabel(labelID)
         ? getLabelFromCategoryId(labelID)
         : getLabelName(labelID, customLabels, customFolders);
@@ -58,13 +64,19 @@ export const getSelectAllBannerTextWithLocation = (
           );
 };
 
-export const getSelectAllButtonText = (
-    selectAll: boolean,
-    elementsCount: number,
-    labelID: string,
-    customLabels: Label[],
-    customFolders: Folder[]
-) => {
+export const getSelectAllButtonText = ({
+    selectAll,
+    elementsCount,
+    labelID,
+    customLabels,
+    customFolders,
+}: {
+    selectAll: boolean;
+    elementsCount: number;
+    labelID: string;
+    customLabels: Label[];
+    customFolders: Folder[];
+}) => {
     if (selectAll) {
         return c('Info').t`Clear selection`;
     }
