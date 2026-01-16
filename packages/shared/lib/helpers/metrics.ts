@@ -1,6 +1,8 @@
 import { type Subscription, getIsB2BAudienceFromSubscription, getPlanName, isFreeSubscription } from '@proton/payments';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import type { UserModel, UserSettings } from '@proton/shared/lib/interfaces';
+import { CommonFeatureFlag } from '@proton/unleash/UnleashFeatureFlags';
+import { getStandaloneUnleashClient } from '@proton/unleash/standaloneClient';
 
 import { metrics } from '../api/metrics';
 import type { TelemetryReport } from '../api/telemetry';
@@ -8,6 +10,7 @@ import { sendMultipleTelemetryData, sendTelemetryData } from '../api/telemetry';
 import type { METRICS_LOG } from '../constants';
 import { SECOND } from '../constants';
 import type { Api } from '../interfaces';
+import { BatchQueue } from './batchQueue';
 import { getAccountAgeForDimension } from './metrics.helpers';
 import { wait } from './promise';
 
@@ -51,8 +54,13 @@ interface SendTelemetryReportArgs extends TelemetryReport {
 }
 
 /**
- * Send a telemetry report (/data/v1/stats endpoint)
+ * Send a telemetry reports (/data/v1/stats/multiple endpoint)
  */
+export const telemetryReportsBatchQueue = new BatchQueue<TelemetryReport>({
+    batchSize: 100,
+    flushIntervalMs: 10 * 1000,
+});
+
 export const sendTelemetryReport = async ({
     api,
     measurementGroup,
@@ -62,11 +70,11 @@ export const sendTelemetryReport = async ({
     silence = true,
     delay,
 }: SendTelemetryReportArgs) => {
-    const possiblySilentApi = silence ? getSilentApi(api) : api;
-
     if (!metricsEnabled) {
         return;
     }
+
+    const possiblySilentApi = silence ? getSilentApi(api) : api;
 
     try {
         if (delay) {
@@ -77,14 +85,32 @@ export const sendTelemetryReport = async ({
             await randomDelay();
         }
 
-        void (await possiblySilentApi(
-            sendTelemetryData({
-                MeasurementGroup: measurementGroup,
-                Event: event,
-                Values: values,
-                Dimensions: dimensions,
-            })
-        ));
+        const telemetryReport: TelemetryReport = { measurementGroup, event, values, dimensions };
+
+        if (getStandaloneUnleashClient()?.isEnabled(CommonFeatureFlag.WebBatchTelemetryReports)) {
+            if (!telemetryReportsBatchQueue.hasFlushCallback()) {
+                telemetryReportsBatchQueue.setFlushCallback(async (reports: TelemetryReport[]) => {
+                    await possiblySilentApi(
+                        sendMultipleTelemetryData({
+                            reports,
+                        })
+                    );
+                });
+            }
+
+            telemetryReportsBatchQueue.add(telemetryReport);
+        } else {
+            void (await possiblySilentApi(
+                sendTelemetryData({
+                    MeasurementGroup: measurementGroup,
+                    Event: event,
+                    Values: values,
+                    Dimensions: dimensions,
+                })
+            ));
+        }
+
+        telemetryReportsBatchQueue.add(telemetryReport);
     } catch {
         // fail silently
     }
