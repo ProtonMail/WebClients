@@ -29,7 +29,19 @@ const mockIFrameAppState = (domain?: string): IFrameAppState => ({
     visible: true,
 });
 
-const mockIFrameAppController = (): IFrameAppController => new Proxy({} as IFrameAppController, { get: () => noop });
+const mockIFrameAppController = (): IFrameAppController => ({
+    close: noop,
+    connect: noop,
+    disconnect: noop,
+    forwardMessage: noop,
+    getPort: () => ({ name: 'test-port' }) as any,
+    init: () => noop,
+    injectPorts: noop,
+    postMessage: noop,
+    registerHandler: () => noop,
+    resize: noop,
+    subscribe: () => noop,
+});
 
 export const MockIFrameApp: FC<{
     children: ReactNode;
