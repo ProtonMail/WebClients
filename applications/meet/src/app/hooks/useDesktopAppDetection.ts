@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
+import useFlag from '@proton/unleash/useFlag';
 
 import { tryOpenInDesktopApp } from '../utils/desktopAppDetector';
 
@@ -11,16 +12,17 @@ interface UseDesktopAppDetectionProps {
 }
 
 export const useDesktopAppDetection = ({ token, isInstantMeeting, isInstantJoin }: UseDesktopAppDetectionProps) => {
+    const openLinksInDesktopApp = useFlag('MeetOpenLinksInDesktopApp');
     useEffect(() => {
         const checkDesktopApp = async () => {
             // Skip if: already in electron, no token (instant meeting), or instant join mode
-            if (isElectronApp || !token || isInstantMeeting || isInstantJoin) {
+            if (isElectronApp || !token || isInstantMeeting || isInstantJoin || !openLinksInDesktopApp) {
                 return;
             }
 
-            await tryOpenInDesktopApp(window.location.href);
+            tryOpenInDesktopApp(window.location.href);
         };
 
         void checkDesktopApp();
-    }, [token, isInstantMeeting, isInstantJoin]);
+    }, []);
 };
