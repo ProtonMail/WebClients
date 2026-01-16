@@ -189,7 +189,7 @@ const SidebarStorageUpsell = ({ app, storageRef }: Props) => {
             const dayOfMonth = new Date().getDate();
 
             // Suggest business account for a week each month
-            if (usedSpaceRatio < 0.5 && dayOfMonth >= 15 && dayOfMonth <= 22) {
+            if (!user.isPaid && usedSpaceRatio < 0.5 && dayOfMonth >= 15 && dayOfMonth <= 22) {
                 return suggestBusinessButton;
             }
 
