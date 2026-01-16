@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 
-import { type GroupKeyInfo, MeetCoreErrorEnum } from '@proton-meet/proton-meet-core';
+import { type GroupKeyInfo, JoinTypeInfo, MeetCoreErrorEnum } from '@proton-meet/proton-meet-core';
 import { DisconnectReason, type Room, Track } from 'livekit-client';
 import { c } from 'ttag';
 
@@ -215,6 +215,7 @@ export const ProtonMeetContainer = ({
     const isGuestAdminRef = useRef(false);
 
     const isMeetNewJoinTypeEnabled = useFlag('MeetNewJoinType');
+    const isMeetSwitchJoinTypeEnabled = useFlag('MeetSwitchJoinType');
     const isMeetSeamlessKeyRotationEnabled = useFlag('MeetSeamlessKeyRotationEnabled');
     const isMeetClientMetricsLogEnabled = useFlag('MeetClientMetricsLog');
 
@@ -345,11 +346,14 @@ export const ProtonMeetContainer = ({
         if (!wasmApp) {
             return;
         }
-
         try {
             const sessionId = authentication.hasSession() ? authentication.getUID() : null;
-
-            if (isMeetNewJoinTypeEnabled) {
+            const joinType = wasmApp.getJoinType(
+                isMeetNewJoinTypeEnabled,
+                isMeetSwitchJoinTypeEnabled,
+                participantsCount ?? 0
+            );
+            if (joinType === JoinTypeInfo.ExternalProposal) {
                 // eslint-disable-next-line no-console
                 console.log('Joining room with proposal');
                 try {

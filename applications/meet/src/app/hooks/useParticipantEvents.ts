@@ -85,9 +85,15 @@ export const useParticipantEvents = (participantNameMap: Record<string, string>)
         room.on('participantConnected', handleParticipantConnected);
         room.on('participantDisconnected', handleParticipantDisconnected);
 
+        // refresh active uuids every 10 seconds
+        const intervalId = setInterval(() => {
+            void updateActiveUuids();
+        }, 10_000);
+
         return () => {
             room.off('participantConnected', handleParticipantConnected);
             room.off('participantDisconnected', handleParticipantDisconnected);
+            clearInterval(intervalId);
         };
     }, [room, participantNameMap, playAudio]);
 
