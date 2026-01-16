@@ -77,6 +77,7 @@ import { seconds_to_ms } from '../../Util/time-utils'
 type LinkID = string
 
 const MAX_MS_TO_WAIT_FOR_RTS_READY_MESSAGE = 5_000
+const MAX_ATTEMPTS_TO_RECEIVE_RTS_READY_MESSAGE = 3
 
 export class WebsocketService implements WebsocketServiceInterface {
   private connections: Record<LinkID, DocumentConnectionRecord> = {}
@@ -93,6 +94,7 @@ export class WebsocketService implements WebsocketServiceInterface {
   destroyed = false
 
   connectionReadyTimeout: ReturnType<typeof setTimeout> | undefined = undefined
+  connectionNotReadyRetryTimeout: ReturnType<typeof setTimeout> | undefined = undefined
   attemptsAfterFailingToReceiveReadyMessage = 0
 
   constructor(
@@ -214,7 +216,14 @@ export class WebsocketService implements WebsocketServiceInterface {
             },
           })
 
+          if (this.attemptsAfterFailingToReceiveReadyMessage >= MAX_ATTEMPTS_TO_RECEIVE_RTS_READY_MESSAGE) {
+            this.logger.error('Max attempts to receive RTS ready message reached, closing connection')
+            this.closeConnection(nodeMeta, undefined, true)
+            return
+          }
+
           this.attemptsAfterFailingToReceiveReadyMessage++
+          clearTimeout(this.connectionNotReadyRetryTimeout)
 
           this.closeConnection(nodeMeta, undefined, true)
           const reconnectDelay = Math.min(
@@ -222,7 +231,7 @@ export class WebsocketService implements WebsocketServiceInterface {
             seconds_to_ms(32),
           )
           this.logger.info(`Retrying connection in ${reconnectDelay}ms`)
-          setTimeout(() => {
+          this.connectionNotReadyRetryTimeout = setTimeout(() => {
             void this.connectToDocument(nodeMeta, {
               invalidateTokenCache: false,
               connectionType: ConnectionType.RetryDueToNotReceivingReadyMessage,
@@ -323,6 +332,10 @@ export class WebsocketService implements WebsocketServiceInterface {
     if (this.connectionReadyTimeout) {
       clearTimeout(this.connectionReadyTimeout)
       this.connectionReadyTimeout = undefined
+    }
+    if (this.connectionNotReadyRetryTimeout) {
+      clearTimeout(this.connectionNotReadyRetryTimeout)
+      this.connectionNotReadyRetryTimeout = undefined
     }
 
     record.connection.markAsReadyToAcceptMessages()
