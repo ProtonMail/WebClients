@@ -3,6 +3,13 @@ import { MemberRole, NodeType, RevisionState } from '@proton/drive';
 
 import { ContentPreviewMethod, getContentPreviewMethod } from './content';
 
+jest.mock('@proton/shared/lib/helpers/mimetype', () => ({
+    ...jest.requireActual('@proton/shared/lib/helpers/mimetype'),
+    isHEICSupported: jest.fn(),
+}));
+
+const { isHEICSupported } = jest.requireMock('@proton/shared/lib/helpers/mimetype');
+
 describe('getContentPreviewMethod', () => {
     const baseDate = new Date();
     const baseNodeProps = {
@@ -373,6 +380,50 @@ describe('getContentPreviewMethod', () => {
             const result = getContentPreviewMethod(node);
 
             expect(result).toBe(ContentPreviewMethod.Buffer);
+        });
+    });
+
+    describe('when mimeType is HEIC', () => {
+        beforeEach(() => {
+            jest.clearAllMocks();
+        });
+
+        it('should return Buffer for image/heic on Safari 17+', () => {
+            (isHEICSupported as jest.Mock).mockReturnValue(true);
+
+            const node: MaybeNode = {
+                ok: true,
+                value: {
+                    ...baseValidNodeProps,
+                    mediaType: 'image/heic',
+                    activeRevision: {
+                        ...baseRevision,
+                    },
+                },
+            };
+
+            const result = getContentPreviewMethod(node);
+
+            expect(result).toBe(ContentPreviewMethod.Buffer);
+        });
+
+        it('should return Thumbnail for image/heic on non-Safari browsers', () => {
+            (isHEICSupported as jest.Mock).mockReturnValue(false);
+
+            const node: MaybeNode = {
+                ok: true,
+                value: {
+                    ...baseValidNodeProps,
+                    mediaType: 'image/heic',
+                    activeRevision: {
+                        ...baseRevision,
+                    },
+                },
+            };
+
+            const result = getContentPreviewMethod(node);
+
+            expect(result).toBe(ContentPreviewMethod.Thumbnail);
         });
     });
 });

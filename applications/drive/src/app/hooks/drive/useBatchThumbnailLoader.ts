@@ -1,12 +1,6 @@
 import { useCallback, useEffect, useRef } from 'react';
 
-import {
-    type ProtonDriveClient,
-    type ProtonDrivePhotosClient,
-    type ProtonDrivePublicLinkClient,
-    ThumbnailType,
-    getDrive,
-} from '@proton/drive';
+import { type ProtonDriveClient, ThumbnailType } from '@proton/drive';
 
 import { useSdkErrorHandler } from '../../utils/errorHandling/useSdkErrorHandler';
 import { useThumbnailStore } from '../../zustand/thumbnails/thumbnails.store';
@@ -19,9 +13,9 @@ interface ThumbnailItem {
 }
 
 interface UseBatchThumbnailLoaderOptions {
+    drive: Pick<ProtonDriveClient, 'iterateThumbnails'>;
     intervalMs?: number;
     thumbnailType?: ThumbnailType;
-    drive?: ProtonDriveClient | ProtonDrivePhotosClient | ProtonDrivePublicLinkClient;
 }
 
 /*
@@ -30,10 +24,10 @@ interface UseBatchThumbnailLoaderOptions {
  * This allow you to ask for the load of thumbnail one by one but using the iterating loop of sdk.
  */
 export const useBatchThumbnailLoader = ({
-    drive = getDrive(),
+    drive,
     intervalMs = 100,
     thumbnailType = ThumbnailType.Type1,
-}: UseBatchThumbnailLoaderOptions = {}) => {
+}: UseBatchThumbnailLoaderOptions) => {
     const { handleError } = useSdkErrorHandler();
 
     const pendingItems = useRef<Map<string, ThumbnailItem>>(new Map());

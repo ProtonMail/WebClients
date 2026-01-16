@@ -5,17 +5,15 @@
  */
 import { renderHook, waitFor } from '@testing-library/react';
 
-import { ThumbnailType, getDrive } from '@proton/drive';
+import { ThumbnailType } from '@proton/drive';
 
 import { useSdkErrorHandler } from '../../utils/errorHandling/useSdkErrorHandler';
 import { useThumbnailStore } from '../../zustand/thumbnails/thumbnails.store';
 import { useBatchThumbnailLoader } from './useBatchThumbnailLoader';
 
-jest.mock('@proton/drive');
 jest.mock('../../utils/errorHandling/useSdkErrorHandler');
 jest.mock('../../zustand/thumbnails/thumbnails.store');
 
-const mockGetDrive = jest.mocked(getDrive);
 const mockUseSdkErrorHandler = jest.mocked(useSdkErrorHandler);
 const mockUseThumbnailStore = jest.mocked(useThumbnailStore);
 
@@ -51,7 +49,6 @@ describe('useBatchThumbnailLoader', () => {
         jest.useFakeTimers();
         mockGetThumbnail.mockReturnValue(undefined);
 
-        mockGetDrive.mockReturnValue(mockDriveClient as any);
         mockUseSdkErrorHandler.mockReturnValue({ handleError: mockHandleError });
         mockUseThumbnailStore.mockReturnValue({
             setThumbnail: mockSetThumbnail,
@@ -74,7 +71,7 @@ describe('useBatchThumbnailLoader', () => {
 
     describe('loadThumbnail', () => {
         it('should not load thumbnail if item does not have thumbnail', () => {
-            const { result } = renderHook(() => useBatchThumbnailLoader());
+            const { result } = renderHook(() => useBatchThumbnailLoader({ drive: mockDriveClient as any }));
 
             const itemWithoutThumbnail = {
                 ...mockThumbnailItem,
@@ -89,7 +86,7 @@ describe('useBatchThumbnailLoader', () => {
         });
 
         it('should not load thumbnail if already cached', () => {
-            const { result } = renderHook(() => useBatchThumbnailLoader());
+            const { result } = renderHook(() => useBatchThumbnailLoader({ drive: mockDriveClient as any }));
 
             const cachedItem = {
                 ...mockThumbnailItem,
@@ -111,7 +108,7 @@ describe('useBatchThumbnailLoader', () => {
                 getThumbnail: mockGetThumbnail,
             });
 
-            const { result } = renderHook(() => useBatchThumbnailLoader());
+            const { result } = renderHook(() => useBatchThumbnailLoader({ drive: mockDriveClient as any }));
 
             result.current.loadThumbnail(mockThumbnailItem);
             jest.advanceTimersByTime(100);
@@ -126,7 +123,7 @@ describe('useBatchThumbnailLoader', () => {
                 }
             });
 
-            const { result } = renderHook(() => useBatchThumbnailLoader());
+            const { result } = renderHook(() => useBatchThumbnailLoader({ drive: mockDriveClient as any }));
 
             const item1 = { ...mockThumbnailItem, uid: 'uid-1', thumbnailId: 'thumb-1' };
             const item2 = { ...mockThumbnailItem, uid: 'uid-2', thumbnailId: 'thumb-2' };
@@ -152,7 +149,9 @@ describe('useBatchThumbnailLoader', () => {
                 yield mockThumbnailResult;
             });
 
-            const { result } = renderHook(() => useBatchThumbnailLoader({ intervalMs: 150 }));
+            const { result } = renderHook(() =>
+                useBatchThumbnailLoader({ drive: mockDriveClient as any, intervalMs: 150 })
+            );
 
             result.current.loadThumbnail(mockThumbnailItem);
 
@@ -183,7 +182,7 @@ describe('useBatchThumbnailLoader', () => {
                 yield mockThumbnailResult;
             });
 
-            const { result } = renderHook(() => useBatchThumbnailLoader());
+            const { result } = renderHook(() => useBatchThumbnailLoader({ drive: mockDriveClient as any }));
 
             result.current.loadThumbnail(mockThumbnailItem);
 
@@ -202,7 +201,7 @@ describe('useBatchThumbnailLoader', () => {
                 yield mockFailedThumbnailResult;
             });
 
-            const { result } = renderHook(() => useBatchThumbnailLoader());
+            const { result } = renderHook(() => useBatchThumbnailLoader({ drive: mockDriveClient as any }));
 
             const failedItem = {
                 ...mockThumbnailItem,
@@ -222,7 +221,7 @@ describe('useBatchThumbnailLoader', () => {
                 throw testError;
             });
 
-            const { result } = renderHook(() => useBatchThumbnailLoader());
+            const { result } = renderHook(() => useBatchThumbnailLoader({ drive: mockDriveClient as any }));
 
             result.current.loadThumbnail(mockThumbnailItem);
 
@@ -241,7 +240,9 @@ describe('useBatchThumbnailLoader', () => {
                 yield mockThumbnailResult;
             });
 
-            const { result } = renderHook(() => useBatchThumbnailLoader({ thumbnailType: ThumbnailType.Type2 }));
+            const { result } = renderHook(() =>
+                useBatchThumbnailLoader({ drive: mockDriveClient as any, thumbnailType: ThumbnailType.Type2 })
+            );
 
             result.current.loadThumbnail(mockThumbnailItem);
 
@@ -256,7 +257,7 @@ describe('useBatchThumbnailLoader', () => {
                 yield { ...mockThumbnailResult, nodeUid: 'unknown-uid' };
             });
 
-            const { result } = renderHook(() => useBatchThumbnailLoader());
+            const { result } = renderHook(() => useBatchThumbnailLoader({ drive: mockDriveClient as any }));
 
             result.current.loadThumbnail(mockThumbnailItem);
 
@@ -271,7 +272,7 @@ describe('useBatchThumbnailLoader', () => {
         it('should clear interval on unmount', () => {
             const clearIntervalSpy = jest.spyOn(global, 'clearInterval');
 
-            const { result, unmount } = renderHook(() => useBatchThumbnailLoader());
+            const { result, unmount } = renderHook(() => useBatchThumbnailLoader({ drive: mockDriveClient as any }));
 
             result.current.loadThumbnail(mockThumbnailItem);
 
@@ -281,7 +282,7 @@ describe('useBatchThumbnailLoader', () => {
         });
 
         it('should clear items map on unmount', () => {
-            const { result, unmount } = renderHook(() => useBatchThumbnailLoader());
+            const { result, unmount } = renderHook(() => useBatchThumbnailLoader({ drive: mockDriveClient as any }));
 
             result.current.loadThumbnail(mockThumbnailItem);
 
@@ -297,7 +298,7 @@ describe('useBatchThumbnailLoader', () => {
                 yield mockThumbnailResult;
             });
 
-            const { result } = renderHook(() => useBatchThumbnailLoader());
+            const { result } = renderHook(() => useBatchThumbnailLoader({ drive: mockDriveClient as any }));
 
             result.current.loadThumbnail(mockThumbnailItem);
             result.current.loadThumbnail(mockThumbnailItem);
@@ -324,7 +325,7 @@ describe('useBatchThumbnailLoader', () => {
                     yield mockThumbnailResult;
                 });
 
-            const { result } = renderHook(() => useBatchThumbnailLoader());
+            const { result } = renderHook(() => useBatchThumbnailLoader({ drive: mockDriveClient as any }));
 
             result.current.loadThumbnail(mockThumbnailItem);
 

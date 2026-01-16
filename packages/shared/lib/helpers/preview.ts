@@ -4,6 +4,7 @@ import {
     isAudio,
     isComicBook,
     isHEIC,
+    isHEICSupported,
     isPDF,
     isSTLFile,
     isSupportedImage,
@@ -37,7 +38,7 @@ export const isPreviewAvailable = (mimeType: string, fileSize?: number) => {
     return (
         ((!fileSize || !isPreviewTooLarge(mimeType, fileSize)) &&
             (isSupportedImage(mimeType) ||
-                isHEIC(mimeType) || // For this one the preview might or might be not available depending on the thumbnail
+                (isHEIC(mimeType) && isHEICSupported()) ||
                 isVideo(mimeType) ||
                 isAudio(mimeType) ||
                 isSupportedText(mimeType) ||

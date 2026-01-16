@@ -1,9 +1,9 @@
 import { useEffect } from 'react';
 
 import { useLoading } from '@proton/hooks';
-import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 
 import { logError } from '../../utils/errorHandling';
+import { isPreviewOrFallbackAvailable } from '../../utils/isPreviewOrFallbackAvailable';
 import { useLinksListing } from '../_links';
 import { usePublicLinksListingProvider } from '../_links/useLinksListing/usePublicLinksListing';
 import { useUserSettings } from '../_settings';
@@ -51,7 +51,9 @@ function useFileViewNavigationBase(
         : { links: [], isDecrypting: false };
     const cachedChildren = useMemoArrayNoMatterTheOrder(children);
     const { sortedList } = useControlledSorting(useNavigation ? cachedChildren : [], sort, async () => {});
-    const linksAvailableForPreview = sortedList.filter(({ mimeType, size }) => isPreviewAvailable(mimeType, size));
+    const linksAvailableForPreview = sortedList.filter(({ mimeType, size }) =>
+        isPreviewOrFallbackAvailable(mimeType, size)
+    );
 
     useEffect(() => {
         if (!useNavigation || !parentLinkId) {

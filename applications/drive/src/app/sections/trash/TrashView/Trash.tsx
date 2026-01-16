@@ -4,7 +4,7 @@ import { c } from 'ttag';
 import { useShallow } from 'zustand/react/shallow';
 
 import { useActiveBreakpoint } from '@proton/components';
-import { NodeType, getDrive } from '@proton/drive';
+import { NodeType, getDrive, getDriveForPhotos } from '@proton/drive';
 import { isProtonDocsDocument, isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -114,7 +114,9 @@ export function Trash({ shareId, trashView }: Props) {
             hasEverLoaded: state.hasEverLoaded,
         }))
     );
-    const { loadThumbnail } = useBatchThumbnailLoader();
+    // TODO: We should refactor the useBatchThumbnailLoader to support passing instance per item
+    const { loadThumbnail } = useBatchThumbnailLoader({ drive: getDrive() });
+    const { loadThumbnail: loadPhotosThumbnail } = useBatchThumbnailLoader({ drive: getDriveForPhotos() });
     const { layout } = useUserSettings();
     const selectedItems = getSelectedItemsId(trashNodes, selectionControls?.selectedItemIds || []);
     const { incrementItemRenderedCounter } = useOnItemRenderedMetrics(layout, !hasEverLoaded);
@@ -122,12 +124,21 @@ export function Trash({ shareId, trashView }: Props) {
     const handleItemRender = async (item: LegacyItem) => {
         incrementItemRenderedCounter();
 
-        loadThumbnail({
-            uid: item.uid,
-            thumbnailId: item.thumbnailId || item.uid,
-            hasThumbnail: !!item.thumbnailId,
-            cachedThumbnailUrl: undefined,
-        });
+        if (item.type === NodeType.Photo) {
+            loadPhotosThumbnail({
+                uid: item.uid,
+                thumbnailId: item.thumbnailId || item.uid,
+                hasThumbnail: !!item.thumbnailId,
+                cachedThumbnailUrl: undefined,
+            });
+        } else {
+            loadThumbnail({
+                uid: item.uid,
+                thumbnailId: item.thumbnailId || item.uid,
+                hasThumbnail: !!item.thumbnailId,
+                cachedThumbnailUrl: undefined,
+            });
+        }
     };
 
     const isSDKPreviewEnabled = useFlagsDriveSDKPreview();
