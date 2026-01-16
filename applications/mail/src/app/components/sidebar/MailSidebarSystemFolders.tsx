@@ -14,6 +14,7 @@ import { getLocationCount } from 'proton-mail/hooks/useMailboxCounter.helpers';
 
 import type { MoveParams } from '../../hooks/actions/move/useMoveToFolder';
 import useMoveSystemFolders, { SYSTEM_FOLDER_SECTION } from '../../hooks/useMoveSystemFolders';
+import { useCategoriesView } from '../categoryView/useCategoriesView';
 import SidebarItem from './SidebarItem';
 
 interface Props {
@@ -66,6 +67,8 @@ const MailSidebarSystemFolders = ({
         showSnoozed,
         showSoftDeletedFolder,
     });
+
+    const { categoryViewAccess } = useCategoriesView();
 
     const lastDragTimeRef = useRef<number>();
     const isDragging = useRef<boolean>();
@@ -217,7 +220,13 @@ const MailSidebarSystemFolders = ({
             {sidebarElements
                 .filter((element) => element.display === SYSTEM_FOLDER_SECTION.MAIN)
                 .map((element) => {
-                    const locationCount = getLocationCount(counterMap, element.labelID);
+                    // When categories are enabled we show the unread count of the default category not the whole inbox
+                    const labelID =
+                        categoryViewAccess && element.labelID === MAILBOX_LABEL_IDS.INBOX
+                            ? MAILBOX_LABEL_IDS.CATEGORY_DEFAULT
+                            : element.labelID;
+
+                    const locationCount = getLocationCount(counterMap, labelID);
 
                     return (
                         <DnDElementWrapper
