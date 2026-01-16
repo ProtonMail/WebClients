@@ -115,7 +115,8 @@ const isSuitableParent = (
      * input dimensions. Both scenarios make the parent unsuitable. */
     if (!isInput) {
         const parentInnerHeight = getComputedHeight(parentStyles, 'inner');
-        if (parentInnerHeight.value > offsetHeight * BOUNDING_ELEMENT_MAX_RATIO) return false;
+        const childHeight = element.offsetHeight;
+        if (parentInnerHeight.value > childHeight * BOUNDING_ELEMENT_MAX_RATIO) return false;
     }
 
     return true;
