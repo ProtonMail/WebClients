@@ -1,3 +1,5 @@
+import { Fragment } from 'react';
+
 import { clsx } from 'clsx';
 
 import Icon from '@proton/components/components/icon/Icon';
@@ -22,8 +24,8 @@ export const EditCategoriesList = ({
     return (
         <>
             {categoriesToDisplay.map((category) => (
-                <>
-                    <div key={category.id} className="flex gap-3 mb-5">
+                <Fragment key={category.id}>
+                    <div className="flex gap-3 mb-5">
                         <Toggle
                             className="self-center"
                             checked={category.display}
@@ -46,13 +48,13 @@ export const EditCategoriesList = ({
                         <Checkbox
                             id={category.id}
                             checked={category.notify}
-                            onClick={() => handleCategoryNotifyChange(category)}
+                            onChange={() => handleCategoryNotifyChange(category)}
                             data-testid={`${category.id}-notify`}
                         />
                     </div>
 
                     <hr className="bg-weak" />
-                </>
+                </Fragment>
             ))}
         </>
     );
