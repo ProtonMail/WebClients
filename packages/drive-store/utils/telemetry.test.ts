@@ -1,10 +1,6 @@
 import { useApi } from '@proton/components';
-import {
-    TelemetryDriveWebFeature,
-    TelemetryMeasurementGroups,
-    sendTelemetryData,
-} from '@proton/shared/lib/api/telemetry';
-import { setMetricsEnabled } from '@proton/shared/lib/helpers/metrics';
+import { TelemetryDriveWebFeature, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
+import { sendTelemetryReport, setMetricsEnabled } from '@proton/shared/lib/helpers/metrics';
 
 import {
     Actions,
@@ -19,6 +15,7 @@ import { releaseCryptoProxy, setupCryptoProxyForTesting } from './test/crypto';
 
 jest.mock('@proton/shared/lib/api/telemetry');
 jest.mock('@proton/components/hooks/useApi');
+jest.mock('@proton/shared/lib/helpers/metrics');
 
 describe('Performance Telemetry', () => {
     beforeEach(() => {
@@ -39,25 +36,28 @@ describe('Performance Telemetry', () => {
         const flag = false;
         const controlFunction = jest.fn(() => Promise.resolve('control result'));
         const treatmentFunction = jest.fn(() => Promise.resolve('treatment result'));
+        const api = useApi();
 
-        await measureExperimentalPerformance(useApi(), feature, flag, controlFunction, treatmentFunction);
+        await measureExperimentalPerformance(api, feature, flag, controlFunction, treatmentFunction);
 
         expect(controlFunction).toHaveBeenCalledTimes(1);
         expect(performance.mark).toHaveBeenCalledTimes(2);
         expect(performance.measure).toHaveBeenCalledTimes(1);
         expect(performance.clearMarks).toHaveBeenCalledTimes(2);
         expect(performance.clearMeasures).toHaveBeenCalledTimes(1);
-        expect(sendTelemetryData).toHaveBeenCalledTimes(1);
-        expect(sendTelemetryData).toHaveBeenCalledWith({
-            MeasurementGroup: TelemetryMeasurementGroups.driveWebFeaturePerformance,
-            Event: TelemetryDriveWebFeature.performance,
-            Values: {
+        expect(sendTelemetryReport).toHaveBeenCalledTimes(1);
+        expect(sendTelemetryReport).toHaveBeenCalledWith({
+            api,
+            measurementGroup: TelemetryMeasurementGroups.driveWebFeaturePerformance,
+            event: TelemetryDriveWebFeature.performance,
+            values: {
                 milliseconds: 100,
             },
-            Dimensions: {
+            dimensions: {
                 experimentGroup: ExperimentGroup.control,
                 featureName: feature,
             },
+            delay: false,
         });
     });
 
@@ -66,47 +66,53 @@ describe('Performance Telemetry', () => {
         const flag = true;
         const controlFunction = jest.fn(() => Promise.resolve('control result'));
         const treatmentFunction = jest.fn(() => Promise.resolve('treatment result'));
+        const api = useApi();
 
-        await measureExperimentalPerformance(useApi(), feature, flag, controlFunction, treatmentFunction);
+        await measureExperimentalPerformance(api, feature, flag, controlFunction, treatmentFunction);
 
         expect(treatmentFunction).toHaveBeenCalledTimes(1);
         expect(performance.mark).toHaveBeenCalledTimes(2);
         expect(performance.measure).toHaveBeenCalledTimes(1);
         expect(performance.clearMarks).toHaveBeenCalledTimes(2);
         expect(performance.clearMeasures).toHaveBeenCalledTimes(1);
-        expect(sendTelemetryData).toHaveBeenCalledTimes(1);
-        expect(sendTelemetryData).toHaveBeenCalledWith({
-            MeasurementGroup: TelemetryMeasurementGroups.driveWebFeaturePerformance,
-            Event: TelemetryDriveWebFeature.performance,
-            Values: {
+        expect(sendTelemetryReport).toHaveBeenCalledTimes(1);
+        expect(sendTelemetryReport).toHaveBeenCalledWith({
+            api,
+            measurementGroup: TelemetryMeasurementGroups.driveWebFeaturePerformance,
+            event: TelemetryDriveWebFeature.performance,
+            values: {
                 milliseconds: 100,
             },
-            Dimensions: {
+            dimensions: {
                 experimentGroup: ExperimentGroup.treatment,
                 featureName: feature,
             },
+            delay: false,
         });
     });
 
     it('measureFeaturePerformance: measure duration between a start and end', () => {
-        const measure = measureFeaturePerformance(useApi(), Features.mountToFirstItemRendered);
+        const api = useApi();
+        const measure = measureFeaturePerformance(api, Features.mountToFirstItemRendered);
         measure.start();
         measure.end();
         expect(performance.mark).toHaveBeenCalledTimes(2);
         expect(performance.measure).toHaveBeenCalledTimes(1);
         expect(performance.clearMarks).toHaveBeenCalledTimes(2);
         expect(performance.clearMeasures).toHaveBeenCalledTimes(1);
-        expect(sendTelemetryData).toHaveBeenCalledTimes(1);
-        expect(sendTelemetryData).toHaveBeenCalledWith({
-            MeasurementGroup: TelemetryMeasurementGroups.driveWebFeaturePerformance,
-            Event: TelemetryDriveWebFeature.performance,
-            Values: {
+        expect(sendTelemetryReport).toHaveBeenCalledTimes(1);
+        expect(sendTelemetryReport).toHaveBeenCalledWith({
+            api,
+            measurementGroup: TelemetryMeasurementGroups.driveWebFeaturePerformance,
+            event: TelemetryDriveWebFeature.performance,
+            values: {
                 milliseconds: 100,
             },
-            Dimensions: {
+            dimensions: {
                 experimentGroup: ExperimentGroup.control,
                 featureName: Features.mountToFirstItemRendered,
             },
+            delay: false,
         });
     });
 });
@@ -120,33 +126,37 @@ describe('countActionWithTelemetry', () => {
         jest.resetAllMocks();
     });
 
-    it('countActionWithTelemetry: should send telemetry report with a count', () => {
-        countActionWithTelemetry(Actions.PublicDownload);
-        expect(sendTelemetryData).toHaveBeenCalledTimes(1);
-        expect(sendTelemetryData).toHaveBeenCalledWith({
-            MeasurementGroup: TelemetryMeasurementGroups.driveWebActions,
-            Event: TelemetryDriveWebFeature.actions,
-            Values: {
+    it('countActionWithTelemetry: should send telemetry report with a count', async () => {
+        await countActionWithTelemetry(Actions.PublicDownload);
+        expect(sendTelemetryReport).toHaveBeenCalledTimes(1);
+        expect(sendTelemetryReport).toHaveBeenCalledWith({
+            api: expect.any(Function),
+            measurementGroup: TelemetryMeasurementGroups.driveWebActions,
+            event: TelemetryDriveWebFeature.actions,
+            values: {
                 count: 1,
             },
-            Dimensions: {
+            dimensions: {
                 name: Actions.PublicDownload,
             },
+            delay: false,
         });
     });
 
-    it('countActionWithTelemetry: should send telemetry report with custom count', () => {
-        countActionWithTelemetry(Actions.PublicDownload, 15);
-        expect(sendTelemetryData).toHaveBeenCalledTimes(1);
-        expect(sendTelemetryData).toHaveBeenCalledWith({
-            MeasurementGroup: TelemetryMeasurementGroups.driveWebActions,
-            Event: TelemetryDriveWebFeature.actions,
-            Values: {
+    it('countActionWithTelemetry: should send telemetry report with custom count', async () => {
+        await countActionWithTelemetry(Actions.PublicDownload, 15);
+        expect(sendTelemetryReport).toHaveBeenCalledTimes(1);
+        expect(sendTelemetryReport).toHaveBeenCalledWith({
+            api: expect.any(Function),
+            measurementGroup: TelemetryMeasurementGroups.driveWebActions,
+            event: TelemetryDriveWebFeature.actions,
+            values: {
                 count: 15,
             },
-            Dimensions: {
+            dimensions: {
                 name: Actions.PublicDownload,
             },
+            delay: false,
         });
     });
 });
@@ -155,13 +165,13 @@ describe('getTimeBasedHash', () => {
     let originalDateNow: () => number;
     const now = 1625097600000;
 
-    beforeAll(() => {
-        setupCryptoProxyForTesting();
+    beforeAll(async () => {
+        await setupCryptoProxyForTesting();
         originalDateNow = Date.now;
     });
 
-    afterAll(() => {
-        releaseCryptoProxy();
+    afterAll(async () => {
+        await releaseCryptoProxy();
         Date.now = originalDateNow;
     });
 
