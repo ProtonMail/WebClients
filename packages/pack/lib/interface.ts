@@ -22,6 +22,7 @@ export interface ProtonPackOptions {
     optimizeAssets: boolean;
     handleSupportAndErrors: boolean;
     benchmarkBuild: boolean;
+    prependAsyncCss: boolean;
 }
 
 interface Locales {
@@ -71,6 +72,8 @@ export interface WebpackOptions {
     buildData: BuildData;
     defineWebpackConfig: ProtonConfig;
     benchmarkBuild: boolean;
+    /* prepend instead of append async css chunks so that the global css order can be respected (i.e. that the initial css file takes priority) */
+    prependAsyncCss: boolean;
 }
 
 export interface AppConfig {
