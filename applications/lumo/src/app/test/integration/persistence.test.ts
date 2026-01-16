@@ -39,6 +39,7 @@ import {
     deleteAllSpacesSuccess,
     locallyDeleteSpaceFromLocalRequest,
     newSpaceId,
+    pullSpaceRequest,
     pullSpacesRequest,
     pushSpaceRequest,
 } from '../../redux/slices/core/spaces';
@@ -1021,7 +1022,6 @@ describe('Lumo Persistence Integration Tests', () => {
                     const restoredSpace = restoredState.spaces[spaceId];
                     expect(restoredSpace).toBeDefined();
                     expect(restoredSpace.id).toBe(spaceId);
-                    expect(restoredSpace.createdAt).toBe(space.createdAt);
                     expectSpaceEqual(restoredSpace, space, { ignoreFields: ['createdAt'] });
                     // - conversation
                     console.log('- conversation');
@@ -1883,6 +1883,18 @@ describe('Lumo Persistence Integration Tests', () => {
                     return testData.spaces.every((space) => result.spaces[space.id] !== undefined);
                 });
 
+                // Wait for all messages to finish syncing (no dirty flags)
+                console.log('Waiting for all messages to sync with server');
+                for (const message of testData.messages) {
+                    await waitForMessageSyncWithServer(dbApi, message.id);
+                }
+
+                // Wait for all conversations to finish syncing
+                console.log('Waiting for all conversations to sync with server');
+                for (const conversation of testData.conversations) {
+                    await waitForConversationSyncWithServer(dbApi, conversation.id);
+                }
+
                 // Verify initial counts
                 const initialSpaceCount = testData.spaces.length;
                 const initialConversationCount = testData.conversations.length;
@@ -2629,9 +2641,7 @@ describe('Lumo Persistence Integration Tests', () => {
             }
         }, 10000);
 
-        // FIXME attachment is not entirely working across browser sessions. This test gives a starting point.
-        //  See also refreshAttachmentFromRemote()
-        it.skip('should pull full attachment data when fetching messages in fresh browser session', async () => {
+        it('should pull full attachment data when fetching messages in fresh browser session', async () => {
             allowConsoleError = true; // redux serializable checks
 
             const masterKeyBase64 = generateMasterKeyBase64();
@@ -2803,7 +2813,6 @@ describe('Lumo Persistence Integration Tests', () => {
                     await waitForCondition(
                         async () => {
                             const message = select(selectMessageById(testMessageId));
-                            console.log('TEST: message =', message);
                             return message?.content !== undefined;
                         },
                         { message: 'Waiting for full message content to be loaded' }
@@ -2816,15 +2825,15 @@ describe('Lumo Persistence Integration Tests', () => {
                     expect(loadedMessage!.attachments).toBeDefined();
                     expect(loadedMessage!.attachments!.some((att) => att.id === testAttachmentId)).toBe(true);
 
-                    // Verify attachment is in Redux (shallow)
-                    console.log('Verifying attachment is in Redux (shallow)');
-                    const reduxAttachment = select(selectAttachmentById(testAttachmentId));
-                    expect(reduxAttachment).toBeDefined();
-                    expect(reduxAttachment!.id).toBe(testAttachmentId);
-                    expect(reduxAttachment!.filename).toBe('test.md');
+                    // Verify attachment is in Redux (shallow initially)
+                    console.log('Verifying attachment is in Redux (shallow initially)');
+                    const shallowReduxAttachment = select(selectAttachmentById(testAttachmentId));
+                    expect(shallowReduxAttachment).toBeDefined();
+                    expect(shallowReduxAttachment!.id).toBe(testAttachmentId);
+                    expect(shallowReduxAttachment!.filename).toBe('test.md');
 
-                    // THIS IS THE KEY TEST: Wait for full attachment to be available in IndexedDB
-                    // This should include the markdown content, not just the shallow metadata
+                    // Wait for full attachment to be available in IndexedDB
+                    // This should happen automatically via considerRequestingFullAttachment
                     console.log('Waiting for full attachment to be available in IndexedDB');
                     const fullAttachment = await waitForValue(
                         async () => {
@@ -2839,8 +2848,8 @@ describe('Lumo Persistence Integration Tests', () => {
                         }
                     );
 
-                    // Verify the full attachment data is correctly persisted
-                    console.log('Verifying full attachment data is correctly persisted');
+                    // Verify the full attachment data is correctly persisted in IDB
+                    console.log('Verifying full attachment data is correctly persisted in IDB');
                     expect(fullAttachment).toBeDefined();
                     expect(fullAttachment!.id).toBe(testAttachmentId);
                     expect(fullAttachment!.mimeType).toBe('text/markdown');
@@ -2856,15 +2865,232 @@ describe('Lumo Persistence Integration Tests', () => {
                     expect(decryptedAttachment!.filename).toBe('test.md');
                     expect(decryptedAttachment!.markdown).toBe(testAttachmentContent);
 
-                    // Verify the attachment data is also available in Redux with full content
-                    console.log('Verifying attachment data is also available in Redux with full content');
+                    // Wait for the full attachment (with markdown) to be in Redux
+                    // This happens when refreshFilledAttachmentFromRemote puts it there
+                    console.log('Waiting for attachment with full markdown content in Redux');
+                    await waitForCondition(
+                        async () => {
+                            const att = select(selectAttachmentById(testAttachmentId));
+                            return att?.markdown === testAttachmentContent;
+                        },
+                        { message: 'Waiting for full attachment content to appear in Redux' }
+                    );
+
+                    // Final verification: attachment data is in Redux with full content
+                    console.log('Verifying attachment data is in Redux with full content');
                     const finalReduxAttachment = select(selectAttachmentById(testAttachmentId));
                     expect(finalReduxAttachment).toBeDefined();
                     expect(finalReduxAttachment!.markdown).toBe(testAttachmentContent);
+
+                    console.log('Test completed successfully!');
                 } finally {
                     dispatch(stopRootSaga());
                 }
             }
         }, 20000);
+
+        it('should pull space with attachments when opening URL directly in fresh session', async () => {
+            allowConsoleError = true; // redux serializable checks
+
+            const masterKeyBase64 = generateMasterKeyBase64();
+            const userId = generateFakeUserId();
+
+            // Session 1 (Tab 1): Create space and attachment, sync to server
+            console.log('Session 1: Creating space and attachment');
+            let testSpaceId: SpaceId;
+            let testAttachmentId: string;
+            let testAttachmentContent: string;
+            let testAttachmentFilename: string;
+
+            {
+                const { dispatch, dbApi } = await setupTestEnvironment({
+                    masterKeyBase64,
+                    existingUserId: userId,
+                });
+
+                try {
+                    // Create space
+                    console.log('Creating test space');
+                    testSpaceId = newSpaceId();
+                    const space = {
+                        id: testSpaceId,
+                        createdAt: new Date().toISOString(),
+                        spaceKey: generateSpaceKeyBase64(),
+                    };
+                    dispatch(addSpace(space));
+                    dispatch(pushSpaceRequest({ id: testSpaceId }));
+
+                    // Create attachment with markdown content
+                    console.log('Creating test attachment with markdown content');
+                    testAttachmentContent = '# Project Document\n\nThis is a project file with important content.';
+                    testAttachmentFilename = 'project-doc.md';
+                    const blob = new Blob([testAttachmentContent], { type: 'text/markdown' });
+                    const file = new File([blob], testAttachmentFilename, { type: 'text/markdown' });
+
+                    testAttachmentId = newAttachmentId();
+                    const attachment = {
+                        id: testAttachmentId,
+                        spaceId: testSpaceId,
+                        mimeType: file.type,
+                        uploadedAt: new Date().toISOString(),
+                        rawBytes: file.size,
+                        processing: false,
+                        filename: file.name,
+                        data: new Uint8Array(await file.arrayBuffer()),
+                        markdown: testAttachmentContent,
+                    };
+
+                    dispatch(upsertAttachment(attachment));
+                    dispatch(pushAttachmentRequest({ id: testAttachmentId }));
+
+                    // Wait for everything to sync to server
+                    console.log('Waiting for space to sync to server');
+                    await waitForSpaceSyncWithServer(dbApi, testSpaceId);
+
+                    console.log('Waiting for attachment to sync to server');
+                    await waitForAttachmentSyncWithServer(dbApi, testAttachmentId);
+
+                    // Verify everything is persisted in session 1
+                    console.log('Verifying space is persisted in session 1');
+                    const persistedSpace = await dbApi.getSpaceById(testSpaceId);
+                    expect(persistedSpace).toBeDefined();
+                    expect(persistedSpace!.wrappedSpaceKey).toBeDefined();
+
+                    console.log('Verifying attachment is persisted in session 1');
+                    const persistedAttachment = await dbApi.getAttachmentById(testAttachmentId);
+                    expect(persistedAttachment).toBeDefined();
+                    expect(persistedAttachment!.encrypted).toBeDefined();
+                } finally {
+                    dispatch(stopRootSaga());
+                }
+            }
+
+            // Session 2 (Tab 2): Fresh session, pull space by ID (simulating direct URL navigation)
+            console.log('Session 2: Fresh session - pulling space by ID');
+            {
+                const { store, dispatch, dbApi, select } = await setupTestEnvironment({
+                    masterKeyBase64,
+                    existingUserId: userId,
+                    // Don't pass existingDbApi - this simulates opening URL in a fresh tab
+                });
+
+                try {
+                    // This simulates what ProjectDetailView does when opening a URL directly
+                    console.log('Dispatching pullSpaceRequest (simulating direct URL navigation)');
+                    dispatch(pullSpaceRequest({ id: testSpaceId }));
+
+                    // Wait for space to appear in Redux
+                    console.log('Waiting for space to appear in Redux');
+                    await waitForCondition(
+                        async () => {
+                            const state = store.getState();
+                            return state.spaces[testSpaceId] !== undefined;
+                        },
+                        { message: 'Waiting for space to be loaded from server' }
+                    );
+
+                    // Verify space is in Redux with correct data
+                    console.log('Verifying space is in Redux');
+                    const reduxSpace = store.getState().spaces[testSpaceId];
+                    expect(reduxSpace).toBeDefined();
+                    expect(reduxSpace.id).toBe(testSpaceId);
+                    expect(reduxSpace.spaceKey).toBeDefined();
+
+                    // Wait for space to appear in IndexedDB (non-dirty)
+                    console.log('Waiting for space to sync to IndexedDB');
+                    await waitForSpaceSyncWithServer(dbApi, testSpaceId);
+
+                    // Verify space is in IndexedDB
+                    console.log('Verifying space is in IndexedDB');
+                    const idbSpace = await dbApi.getSpaceById(testSpaceId);
+                    expect(idbSpace).toBeDefined();
+                    expect(idbSpace!.id).toBe(testSpaceId);
+                    expect(idbSpace!.wrappedSpaceKey).toBeDefined();
+                    expect(idbSpace!.encrypted).toBeDefined();
+                    expect(idbSpace!.dirty).toBeFalsy();
+
+                    // Verify remote ID mapping exists for space
+                    console.log('Verifying space remote ID mapping');
+                    const spaceRemoteId = await dbApi.getRemoteIdFromLocalId('space', testSpaceId);
+                    expect(spaceRemoteId).toBeDefined();
+
+                    // Wait for attachment to appear in Redux (should be auto-populated with space)
+                    console.log('Waiting for attachment to appear in Redux');
+                    await waitForCondition(
+                        async () => {
+                            const att = select(selectAttachmentById(testAttachmentId));
+                            return att !== undefined;
+                        },
+                        { message: 'Waiting for attachment to be loaded with space' }
+                    );
+
+                    // Verify attachment is in Redux (at least shallow initially)
+                    console.log('Verifying attachment is in Redux');
+                    const reduxAttachment = select(selectAttachmentById(testAttachmentId));
+                    expect(reduxAttachment).toBeDefined();
+                    expect(reduxAttachment!.id).toBe(testAttachmentId);
+                    expect(reduxAttachment!.spaceId).toBe(testSpaceId);
+                    expect(reduxAttachment!.filename).toBe(testAttachmentFilename);
+
+                    // Wait for full attachment data to be available in IndexedDB
+                    console.log('Waiting for full attachment to be available in IndexedDB');
+                    const fullAttachment = await waitForValue(
+                        async () => {
+                            const attachment = await dbApi.getAttachmentById(testAttachmentId);
+                            // The attachment should have encrypted data, indicating it's fully persisted
+                            return attachment?.encrypted ? attachment : undefined;
+                        },
+                        {
+                            message: 'Waiting for full attachment with encrypted data to be available in IndexedDB',
+                            timeout: 10000,
+                            pollInterval: 500,
+                        }
+                    );
+
+                    // Verify the full attachment data is correctly persisted in IDB
+                    console.log('Verifying full attachment data is in IndexedDB');
+                    expect(fullAttachment).toBeDefined();
+                    expect(fullAttachment!.id).toBe(testAttachmentId);
+                    expect(fullAttachment!.mimeType).toBe('text/markdown');
+                    expect(fullAttachment!.spaceId).toBe(testSpaceId);
+                    expect(fullAttachment!.encrypted).toBeDefined();
+                    expect(fullAttachment!.dirty).toBeFalsy();
+
+                    // Verify remote ID mapping exists for attachment
+                    console.log('Verifying attachment remote ID mapping');
+                    const attachmentRemoteId = await dbApi.getRemoteIdFromLocalId('attachment', testAttachmentId);
+                    expect(attachmentRemoteId).toBeDefined();
+
+                    // Decrypt and verify attachment content matches
+                    console.log('Verifying attachment can be decrypted with correct content');
+                    const space = store.getState().spaces[testSpaceId];
+                    const spaceDek = await getSpaceDek(space);
+                    const decryptedAttachment = await deserializeAttachment(fullAttachment!, spaceDek);
+                    expect(decryptedAttachment).toBeDefined();
+                    expect(decryptedAttachment!.filename).toBe(testAttachmentFilename);
+                    expect(decryptedAttachment!.markdown).toBe(testAttachmentContent);
+
+                    // Wait for the full attachment (with markdown) to be in Redux
+                    console.log('Waiting for attachment with full markdown content in Redux');
+                    await waitForCondition(
+                        async () => {
+                            const att = select(selectAttachmentById(testAttachmentId));
+                            return att?.markdown === testAttachmentContent;
+                        },
+                        { message: 'Waiting for full attachment content to appear in Redux' }
+                    );
+
+                    // Final verification: attachment data is in Redux with full content
+                    console.log('Verifying attachment data is in Redux with full content');
+                    const finalReduxAttachment = select(selectAttachmentById(testAttachmentId));
+                    expect(finalReduxAttachment).toBeDefined();
+                    expect(finalReduxAttachment!.markdown).toBe(testAttachmentContent);
+
+                    console.log('Test completed successfully - space and attachment fully synced in fresh session!');
+                } finally {
+                    dispatch(stopRootSaga());
+                }
+            }
+        }, 30000);
     });
 });

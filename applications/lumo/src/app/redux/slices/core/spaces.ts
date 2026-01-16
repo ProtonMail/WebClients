@@ -2,7 +2,7 @@ import { createAction, createReducer, createSelector } from '@reduxjs/toolkit';
 import { v4 as uuidv4 } from 'uuid';
 
 import type { Priority } from '../../../remote/scheduler';
-import type { IdMapEntry, ListSpacesRemote, RemoteSpace } from '../../../remote/types';
+import type { GetSpaceRemote, IdMapEntry, ListSpacesRemote, RemoteSpace } from '../../../remote/types';
 import type { SerializedSpace, Space, SpaceId } from '../../../types';
 import type { LumoState } from '../../store';
 
@@ -17,6 +17,9 @@ export type PushSpaceSuccess = PushSpaceRequest & {
 };
 export type PushSpaceFailure = PushSpaceRequest & {
     error: string;
+};
+export type PullSpaceRequest = {
+    id: SpaceId;
 };
 export type DeleteAllSpacesFailure = {
     error: string;
@@ -36,6 +39,9 @@ export const pushSpaceFailure = createAction<PushSpaceFailure>('lumo/space/push/
 export const locallyDeleteSpaceFromLocalRequest = createAction<SpaceId>('lumo/space/localDelete');
 export const locallyDeleteSpaceFromRemoteRequest = createAction<SpaceId>('lumo/space/remoteDelete');
 export const locallyRefreshSpaceFromRemoteRequest = createAction<RemoteSpace>('lumo/space/remoteRefresh');
+export const pullSpaceRequest = createAction<PullSpaceRequest>('lumo/space/pull/request');
+export const pullSpaceSuccess = createAction<GetSpaceRemote>('lumo/space/pull/success');
+export const pullSpaceFailure = createAction<SpaceId>('lumo/space/pull/failure');
 export const pullSpacesRequest = createAction('lumo/space/list/request');
 export const pullSpacesPageResponse = createAction<ListSpacesRemote>('lumo/space/list/pageResponse');
 export const pullSpacesSuccess = createAction('lumo/space/list/success');
@@ -55,7 +61,7 @@ const spacesReducer = createReducer<SpaceMap>(initialState, (builder) => {
             const existing = state[space.id];
             const existingLinkedFolder = existing?.isProject ? (existing as any).linkedDriveFolder : undefined;
             const newLinkedFolder = space.isProject ? (space as any).linkedDriveFolder : undefined;
-            
+
             // Warn if we're losing linkedDriveFolder data
             if (existingLinkedFolder && !newLinkedFolder) {
                 console.warn(`[addSpace] WARNING: Overwriting space ${space.id} and LOSING linkedDriveFolder!`, {
@@ -64,13 +70,13 @@ const spacesReducer = createReducer<SpaceMap>(initialState, (builder) => {
                     stack: new Error().stack
                 });
             } else {
-                console.log('Action triggered: addSpace', { 
-                    id: space.id, 
+                console.log('Action triggered: addSpace', {
+                    id: space.id,
                     isProject: space.isProject,
-                    hasLinkedFolder: !!newLinkedFolder 
+                    hasLinkedFolder: !!newLinkedFolder
                 });
             }
-            
+
             state[space.id] = space;
         })
         .addCase(deleteSpace, (state, action) => {
@@ -81,6 +87,18 @@ const spacesReducer = createReducer<SpaceMap>(initialState, (builder) => {
         .addCase(deleteAllSpaces, () => {
             console.log('Action triggered: deleteAllSpaces');
             return EMPTY_SPACE_MAP;
+        })
+        .addCase(pullSpaceRequest, (state, action) => {
+            console.log('Action triggered: pullSpaceRequest', action.payload);
+            return state;
+        })
+        .addCase(pullSpaceSuccess, (state, action) => {
+            console.log('Action triggered: pullSpaceSuccess', action.payload);
+            return state;
+        })
+        .addCase(pullSpaceFailure, (state, action) => {
+            console.log('Action triggered: pullSpaceFailure', action.payload);
+            return state;
         })
         .addCase(pullSpacesPageResponse, (state) => {
             console.log('Action triggered: pullSpacesPageResponse');
@@ -142,7 +160,7 @@ const spacesReducer = createReducer<SpaceMap>(initialState, (builder) => {
             console.log('Action triggered: deleteAllSpacesFailure', action.payload);
             return state;
         })
-        ; // prettier-ignore
+    ; // prettier-ignore
 });
 
 export function newSpaceId(): SpaceId {
