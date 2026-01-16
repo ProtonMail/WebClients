@@ -5,6 +5,7 @@ import { TableCellBusy } from '@proton/components';
 import { DriveExplorerRow } from './DriveExplorerRow';
 import type {
     CellDefinition,
+    ContextMenuControls,
     DragMoveControls,
     DriveExplorerConditions,
     DriveExplorerEvents,
@@ -24,7 +25,7 @@ interface VirtualListItemProps {
     dragMoveControls?: DragMoveControls;
     isMultiSelectionDisabled?: boolean;
     showCheckboxColumn?: boolean;
-    contextMenu?: (uid: string) => React.ReactNode;
+    contextMenuControls?: ContextMenuControls;
 }
 
 export function VirtualListItem({
@@ -40,7 +41,7 @@ export function VirtualListItem({
     dragMoveControls,
     isMultiSelectionDisabled,
     showCheckboxColumn,
-    contextMenu,
+    contextMenuControls,
 }: VirtualListItemProps) {
     const isLoadingRow = loading && virtualItem.index === totalItemCount;
 
@@ -83,7 +84,7 @@ export function VirtualListItem({
             dragMoveControls={dragMoveControls}
             isMultiSelectionDisabled={isMultiSelectionDisabled}
             showCheckboxColumn={showCheckboxColumn}
-            contextMenu={contextMenu}
+            contextMenuControls={contextMenuControls}
         />
     );
 }

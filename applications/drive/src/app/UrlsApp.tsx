@@ -27,11 +27,11 @@ import { FlagProvider } from '@proton/unleash';
 import noop from '@proton/utils/noop';
 
 import config from './config';
-import { PublicSharedLinkContainer } from './containers/PublicSharedLinkContainer';
 import locales from './locales';
 import type { DriveStore } from './redux-store/store';
 import { extendStore, setupStore } from './redux-store/store';
 import { extraThunkArguments } from './redux-store/thunk';
+import { PublicPage } from './sections/publicPage/PublicPage';
 import { userSuccessMetrics } from './utils/metrics/userSuccessMetrics';
 import { logPerformanceMarker } from './utils/performance';
 import { Features, measureFeaturePerformance } from './utils/telemetry';
@@ -108,7 +108,7 @@ const UrlsApp = () => {
                                                 <div className="h-full">
                                                     <NotificationsChildren />
                                                     <ModalsChildren />
-                                                    <PublicSharedLinkContainer />
+                                                    <PublicPage />
                                                 </div>
                                             </ErrorBoundary>
                                         </ApiProvider>

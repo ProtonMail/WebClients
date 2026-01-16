@@ -101,6 +101,15 @@ export interface SelectionMethods {
 }
 
 /**
+ * Context menu controls interface
+ */
+export interface ContextMenuControls {
+    isOpen: boolean;
+    showContextMenu: (e: React.MouseEvent<Element>) => void;
+    close: () => void;
+}
+
+/**
  * Selection state and methods
  */
 export interface DriveExplorerSelection {

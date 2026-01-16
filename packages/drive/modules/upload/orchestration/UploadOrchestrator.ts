@@ -1,4 +1,9 @@
-import { NodeType, type ProtonDriveClient, type ProtonDrivePublicLinkClient } from '../../../index';
+import {
+    NodeType,
+    type ProtonDriveClient,
+    type ProtonDrivePhotosClient,
+    type ProtonDrivePublicLinkClient,
+} from '../../../index';
 import { MAX_FOLDERS_CREATED_IN_PARALLEL, MAX_UPLOAD_JOBS } from '../constants';
 import { FileUploadExecutor } from '../execution/FileUploadExecutor';
 import { FolderCreationExecutor } from '../execution/FolderCreationExecutor';
@@ -53,7 +58,10 @@ export class UploadOrchestrator {
     setDriveClient(driveClientInstance: ProtonDriveClient | ProtonDrivePublicLinkClient) {
         this.fileExecutor.driveClient = driveClientInstance;
         this.folderExecutor.driveClient = driveClientInstance;
-        this.photosExecutor.driveClient = driveClientInstance;
+    }
+
+    setDrivePhotosClient(drivePhotosClientInstance: ProtonDrivePhotosClient) {
+        this.photosExecutor.drivePhotosClient = drivePhotosClientInstance;
     }
 
     setConflictResolver(
