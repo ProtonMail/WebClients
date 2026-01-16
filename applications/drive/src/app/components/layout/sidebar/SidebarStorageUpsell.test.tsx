@@ -59,8 +59,8 @@ describe('SidebarStorageUpsell', () => {
         mockedGetSpace.mockReturnValue({ splitStorage: true } as ReturnType<typeof getSpace>);
     });
 
-    const mockUser = (subscribed: number) => {
-        mockedUseUser.mockReturnValue([{ ID: 'test-user', Subscribed: subscribed } as any, false]);
+    const mockUser = (subscribed: number, isPaid: boolean = subscribed !== 0) => {
+        mockedUseUser.mockReturnValue([{ ID: 'test-user', Subscribed: subscribed, isPaid } as any, false]);
     };
 
     const mockDate = (day: number) => {
@@ -86,10 +86,10 @@ describe('SidebarStorageUpsell', () => {
                 expect(screen.getByText('Get Drive for Business')).toBeInTheDocument();
             });
 
-            it('should render suggestBusinessButton for Drive plan subscriber in Proton Drive', () => {
+            it('should not render suggestBusinessButton for Drive plan subscriber in Proton Drive', () => {
                 mockUser(PRODUCT_BIT.DRIVE);
                 render(<SidebarStorageUpsell app={APPS.PROTONDRIVE} storageRef={mockStorageRef} />);
-                expect(screen.getByText('Get Drive for Business')).toBeInTheDocument();
+                expect(screen.queryByText('Get Drive for Business')).not.toBeInTheDocument();
             });
 
             it('should render the modal element', () => {
@@ -161,6 +161,28 @@ describe('SidebarStorageUpsell', () => {
             });
 
             it('should render upsellButton instead when ratio is exactly 50%', () => {
+                mockedGetAppSpace.mockReturnValue({ usedSpace: 50, maxSpace: 100 });
+                render(<SidebarStorageUpsell app={APPS.PROTONDRIVE} storageRef={mockStorageRef} />);
+                expect(screen.queryByText('Get Drive for Business')).not.toBeInTheDocument();
+                expect(screen.getByText('Get more storage')).toBeInTheDocument();
+            });
+
+            it('should render upsellButton instead when ratio is above 50%', () => {
+                mockedGetAppSpace.mockReturnValue({ usedSpace: 75, maxSpace: 100 });
+                render(<SidebarStorageUpsell app={APPS.PROTONDRIVE} storageRef={mockStorageRef} />);
+                expect(screen.queryByText('Get Drive for Business')).not.toBeInTheDocument();
+                expect(screen.getByText('Get more storage')).toBeInTheDocument();
+            });
+        });
+
+        describe('when user is a paid user', () => {
+            beforeEach(() => {
+                mockUser(0);
+                mockDate(15);
+                mockedGetCanAddStorage.mockReturnValue(true);
+            });
+
+            it('should render upsellButton instead for free user', () => {
                 mockedGetAppSpace.mockReturnValue({ usedSpace: 50, maxSpace: 100 });
                 render(<SidebarStorageUpsell app={APPS.PROTONDRIVE} storageRef={mockStorageRef} />);
                 expect(screen.queryByText('Get Drive for Business')).not.toBeInTheDocument();
