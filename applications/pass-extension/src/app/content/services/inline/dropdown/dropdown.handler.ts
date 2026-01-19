@@ -60,7 +60,7 @@ export const createDropdownHandler = (registry: InlineRegistry): DropdownHandler
                 const onFocusChange = onFocusChangeFactory(dropdown, request);
                 const onKeyDown = (evt: KeyboardEvent) => evt.key === 'Escape' && close();
 
-                const parent = form?.scrollParent;
+                const parent = form?.scrollParent(field?.element);
 
                 /** Auto-close listeners for dropdown lifecycle:
                  * - resize/scroll: immediate close on layout changes
