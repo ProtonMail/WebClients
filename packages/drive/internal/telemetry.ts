@@ -203,6 +203,7 @@ export class MetricHandler {
                 },
                 extra: {
                     volumeType: metric.volumeType || 'unknown',
+                    uid: metric.uid,
                     field: metric.field,
                     fromBefore2024: metric.fromBefore2024,
                     error: metric.error,
