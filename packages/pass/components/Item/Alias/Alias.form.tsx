@@ -13,6 +13,7 @@ import { SpotlightGradient } from '@proton/pass/components/Spotlight/SpotlightGr
 import { useSpotlight } from '@proton/pass/components/Spotlight/SpotlightProvider';
 import { WithSpotlight } from '@proton/pass/components/Spotlight/WithSpotlight';
 import type { SanitizedAliasOptions } from '@proton/pass/hooks/useAliasOptions';
+import { getDomainLabel } from '@proton/pass/lib/alias/alias.utils';
 import { type AliasFormValues, type AliasMailbox, type MaybeNull, SpotlightMessage } from '@proton/pass/types';
 import noop from '@proton/utils/noop';
 
@@ -128,9 +129,11 @@ export const AliasForm = <V extends AliasFormValues>({
                         >
                             {(aliasOptions?.suffixes ?? []).map((suffix) => (
                                 <Option key={suffix.value} value={suffix} title={suffix.value}>
-                                    {suffix.value}
-                                    {' (' /* ensure a space before opening parenthesis */}
-                                    {suffix.isPremium ? c('Info').t`Premium domain` : c('Info').t`Public domain`})
+                                    {getDomainLabel({
+                                        name: suffix.value,
+                                        isPremium: suffix.isPremium,
+                                        isCustom: suffix.isCustom,
+                                    })}
                                 </Option>
                             ))}
                         </Field>
