@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import { openNewTab } from '@proton/shared/lib/helpers/browser';
 import linkImg from '@proton/styles/assets/img/meet/link.png';
 
 import './OpenLinkModal.scss';
@@ -14,10 +15,7 @@ interface OpenLinkModalProps {
 export const OpenLinkModal = ({ link, onClose }: OpenLinkModalProps) => {
     const handleClick = () => {
         onClose();
-        const otherWindow = window.open();
-        if (otherWindow) {
-            otherWindow.location.href = link;
-        }
+        openNewTab(link);
     };
 
     return (
