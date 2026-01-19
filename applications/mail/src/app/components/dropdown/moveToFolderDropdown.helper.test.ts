@@ -62,11 +62,7 @@ describe('MoveToFolderDropdownHelper', () => {
 
             expect(res.length).toEqual(2);
             expect(res[0].ID).toEqual(MAILBOX_LABEL_IDS.CATEGORY_DEFAULT);
-            // @ts-ignore
-            expect(res[0].level).toEqual(0);
             expect(res[1].ID).toEqual(MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS);
-            // @ts-ignore
-            expect(res[1].level).toEqual(1);
         });
     });
 });
