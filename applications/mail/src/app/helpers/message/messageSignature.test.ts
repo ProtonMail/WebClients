@@ -1,5 +1,5 @@
 import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
-import type { MailSettings, UserModel, UserSettings } from '@proton/shared/lib/interfaces';
+import type { MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
 import { PM_SIGNATURE as PM_SIGNATURE_ENUM } from '@proton/shared/lib/mail/mailSettings';
 import { getProtonMailSignature } from '@proton/shared/lib/mail/signature';
 import { message } from '@proton/shared/lib/sanitize';
@@ -16,7 +16,6 @@ const signature = `
 <strong>>signature</strong>`;
 const mailSettings = { PMSignature: PM_SIGNATURE_ENUM.DISABLED } as MailSettings;
 const userSettings = {} as UserSettings;
-const fakePaidUser = { isFree: false } as UserModel;
 
 const PM_SIGNATURE = getProtonMailSignature();
 
@@ -36,7 +35,6 @@ describe('signature', () => {
                         MESSAGE_ACTIONS.NEW,
                         { PMSignature: PM_SIGNATURE_ENUM.DISABLED } as MailSettings,
                         userSettings,
-                        { isFree: true } as UserModel,
                         undefined,
                         false
                     );
@@ -52,7 +50,6 @@ describe('signature', () => {
                         MESSAGE_ACTIONS.NEW,
                         { PMSignature: PM_SIGNATURE_ENUM.LOCKED } as MailSettings,
                         userSettings,
-                        { isFree: true } as UserModel,
                         undefined,
                         false
                     );
@@ -67,7 +64,6 @@ describe('signature', () => {
                         MESSAGE_ACTIONS.NEW,
                         { PMSignature: PM_SIGNATURE_ENUM.ENABLED } as MailSettings,
                         userSettings,
-                        { isFree: true } as UserModel,
                         undefined,
                         false
                     );
@@ -85,7 +81,6 @@ describe('signature', () => {
                         MESSAGE_ACTIONS.NEW,
                         { PMSignature: PM_SIGNATURE_ENUM.DISABLED } as MailSettings,
                         userSettings,
-                        fakePaidUser,
                         undefined,
                         false
                     );
@@ -100,7 +95,6 @@ describe('signature', () => {
                         MESSAGE_ACTIONS.NEW,
                         { PMSignature: PM_SIGNATURE_ENUM.LOCKED } as MailSettings,
                         userSettings,
-                        fakePaidUser,
                         undefined,
                         false
                     );
@@ -114,7 +108,6 @@ describe('signature', () => {
                         MESSAGE_ACTIONS.NEW,
                         { PMSignature: PM_SIGNATURE_ENUM.ENABLED } as MailSettings,
                         userSettings,
-                        fakePaidUser,
                         undefined,
                         false
                     );
@@ -132,7 +125,6 @@ describe('signature', () => {
                     MESSAGE_ACTIONS.NEW,
                     mailSettings,
                     userSettings,
-                    fakePaidUser,
                     undefined,
                     false
                 );
@@ -146,7 +138,6 @@ describe('signature', () => {
                     MESSAGE_ACTIONS.NEW,
                     mailSettings,
                     userSettings,
-                    fakePaidUser,
                     undefined,
                     false
                 );
@@ -160,7 +151,6 @@ describe('signature', () => {
                     MESSAGE_ACTIONS.NEW,
                     mailSettings,
                     userSettings,
-                    fakePaidUser,
                     undefined,
                     false
                 );
@@ -174,7 +164,6 @@ describe('signature', () => {
                     MESSAGE_ACTIONS.NEW,
                     mailSettings,
                     userSettings,
-                    fakePaidUser,
                     undefined,
                     false
                 );
@@ -188,7 +177,6 @@ describe('signature', () => {
                     MESSAGE_ACTIONS.NEW,
                     mailSettings,
                     userSettings,
-                    fakePaidUser,
                     undefined,
                     false
                 );
@@ -199,7 +187,6 @@ describe('signature', () => {
                     MESSAGE_ACTIONS.REPLY,
                     mailSettings,
                     userSettings,
-                    fakePaidUser,
                     undefined,
                     false
                 );
@@ -210,7 +197,6 @@ describe('signature', () => {
                     MESSAGE_ACTIONS.REPLY,
                     { ...mailSettings, PMSignature: PM_SIGNATURE_ENUM.ENABLED },
                     userSettings,
-                    fakePaidUser,
                     undefined,
                     false
                 );
@@ -221,7 +207,6 @@ describe('signature', () => {
                     MESSAGE_ACTIONS.REPLY,
                     mailSettings,
                     userSettings,
-                    fakePaidUser,
                     undefined,
                     false
                 );
@@ -232,7 +217,6 @@ describe('signature', () => {
                     MESSAGE_ACTIONS.REPLY,
                     { ...mailSettings, PMSignature: PM_SIGNATURE_ENUM.ENABLED },
                     userSettings,
-                    fakePaidUser,
                     undefined,
                     false
                 );
@@ -240,16 +224,7 @@ describe('signature', () => {
             });
 
             it('should append PM signature depending mailsettings', () => {
-                let result = insertSignature(
-                    content,
-                    '',
-                    MESSAGE_ACTIONS.NEW,
-                    mailSettings,
-                    {},
-                    fakePaidUser,
-                    undefined,
-                    false
-                );
+                let result = insertSignature(content, '', MESSAGE_ACTIONS.NEW, mailSettings, {}, undefined, false);
                 expect(result).not.toContain(PM_SIGNATURE);
                 result = insertSignature(
                     content,
@@ -257,7 +232,6 @@ describe('signature', () => {
                     MESSAGE_ACTIONS.NEW,
                     { ...mailSettings, PMSignature: PM_SIGNATURE_ENUM.ENABLED },
                     userSettings,
-                    fakePaidUser,
                     undefined,
                     false
                 );
@@ -272,7 +246,6 @@ describe('signature', () => {
                     MESSAGE_ACTIONS.NEW,
                     { ...mailSettings, PMSignature: PM_SIGNATURE_ENUM.ENABLED },
                     userSettings,
-                    fakePaidUser,
                     undefined,
                     true
                 );
@@ -288,7 +261,6 @@ describe('signature', () => {
                     MESSAGE_ACTIONS.NEW,
                     mailSettings,
                     userSettings,
-                    fakePaidUser,
                     undefined,
                     false
                 );
@@ -299,7 +271,6 @@ describe('signature', () => {
                     MESSAGE_ACTIONS.NEW,
                     mailSettings,
                     userSettings,
-                    fakePaidUser,
                     undefined,
                     false
                 );
@@ -313,7 +284,6 @@ describe('signature', () => {
                     MESSAGE_ACTIONS.NEW,
                     mailSettings,
                     userSettings,
-                    fakePaidUser,
                     undefined,
                     true
                 );
@@ -350,7 +320,6 @@ describe('signature', () => {
                                             : PM_SIGNATURE_ENUM.DISABLED,
                                     } as MailSettings,
                                     userSettings,
-                                    fakePaidUser,
                                     undefined,
                                     isAfter
                                 );

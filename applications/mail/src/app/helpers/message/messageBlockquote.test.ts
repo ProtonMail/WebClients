@@ -1,7 +1,7 @@
 import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
 import type { PartialMessageState } from '@proton/mail/store/messages/messagesTypes';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
-import type { Address, MailSettings, Recipient, UserModel, UserSettings } from '@proton/shared/lib/interfaces';
+import type { Address, MailSettings, Recipient, UserSettings } from '@proton/shared/lib/interfaces';
 import { PM_SIGNATURE } from '@proton/shared/lib/mail/mailSettings';
 import { FORWARDED_MESSAGE } from '@proton/shared/lib/mail/messages';
 import { getProtonMailSignature } from '@proton/shared/lib/mail/signature';
@@ -17,8 +17,6 @@ import {
     removeSignatureFromPlainTextMessage,
 } from './messageBlockquote';
 import { exportPlainText } from './messageContent';
-
-const fakePaidUser = { isFree: true } as UserModel;
 
 /**
  * Creating a whole document each time is needed because locate blockquote is using xpath request
@@ -211,7 +209,6 @@ ${exportPlainText(getProtonMailSignature())}
             referenceMessage,
             { PMSignature: PM_SIGNATURE.ENABLED } as MailSettings,
             {} as UserSettings,
-            fakePaidUser,
             [] as Address[],
             jest.fn()
         );
@@ -232,7 +229,6 @@ ${exportPlainText(getProtonMailSignature())}
             referenceMessage,
             { PMSignature: PM_SIGNATURE.ENABLED } as MailSettings,
             {} as UserSettings,
-            { isFree: true } as UserModel,
             [] as Address[],
             jest.fn()
         );
@@ -315,8 +311,8 @@ describe('removeSignatureFromHTMLMessage', () => {
                     <p>Let me know if you'd like to schedule a call to discuss these points further.</p>
                     <p>Best regards,</p>
                 </div>
-                
-            
+
+
         </body>`;
 
         const contentWithoutSignature = removeSignatureFromHTMLMessage(content);
@@ -346,7 +342,7 @@ describe('removeSignatureFromHTMLMessage', () => {
 
         const expectedContent = `<body><div style=\"font-family: verdana; font-size: 20px;\">
             <div style=\"font-family: verdana; font-size: 20px;\">This is the content before the blockquote and signature<br></div>
-            
+
             </div></body>`;
 
         const [contentWithoutBlockQuotes] = locateBlockquote(createDocument(content));

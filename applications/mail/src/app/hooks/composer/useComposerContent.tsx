@@ -4,7 +4,6 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
-import { useUser } from '@proton/account/user/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import type { EditorMetadata } from '@proton/components';
 import { useHandler, useNotifications } from '@proton/components';
@@ -89,7 +88,6 @@ export const useComposerContent = (args: EditorArgs) => {
     const [mailSettings] = useMailSettings();
     const isRemoveReplyStyleEnabled = useFlag('RemoveReplyStyles');
     const [userSettings] = useUserSettings();
-    const [user] = useUser();
     const { createNotification } = useNotifications();
     const getMessage = useGetMessage();
     const dispatch = useMailDispatch();
@@ -409,7 +407,6 @@ export const useComposerContent = (args: EditorArgs) => {
                 modelMessage.draftFlags?.action || MESSAGE_ACTIONS.NEW,
                 mailSettings,
                 userSettings,
-                user,
                 undefined,
                 false
             );
@@ -437,7 +434,6 @@ export const useComposerContent = (args: EditorArgs) => {
                 modelMessage.draftFlags?.action || MESSAGE_ACTIONS.NEW,
                 mailSettings,
                 userSettings,
-                user,
                 undefined,
                 false
             );
