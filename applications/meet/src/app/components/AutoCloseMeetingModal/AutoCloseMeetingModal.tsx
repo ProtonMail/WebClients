@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
 
-import { useParticipants } from '@livekit/components-react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
@@ -10,21 +9,20 @@ import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent
 import './AutoCloseMeetingModal.scss';
 
 interface AutoCloseMeetingModalProps {
+    participantCount: number;
     onLeave: () => void;
 }
 
-export const AutoCloseMeetingModal = ({ onLeave }: AutoCloseMeetingModalProps) => {
+export const AutoCloseMeetingModal = ({ participantCount, onLeave }: AutoCloseMeetingModalProps) => {
     const [timeAlone, setTimeAlone] = useState(0);
     const timeAloneRef = useRef(0);
     timeAloneRef.current = timeAlone;
     const autoCloseTimeInSeconds = 420; // 7 minutes
     const showAutoCloseAfterSeconds = 300; // 5 minutes
 
-    const participants = useParticipants();
-
     useEffect(() => {
         setTimeAlone(0);
-        if (participants.length === 1) {
+        if (participantCount === 1) {
             const intervalId = setInterval(async () => {
                 if (timeAloneRef.current >= autoCloseTimeInSeconds) {
                     clearInterval(intervalId);
@@ -36,7 +34,7 @@ export const AutoCloseMeetingModal = ({ onLeave }: AutoCloseMeetingModalProps) =
 
             return () => clearInterval(intervalId);
         }
-    }, [participants.length]);
+    }, [participantCount]);
 
     function formatCountDown(seconds: number): string {
         const mins = Math.floor(seconds / 60);
