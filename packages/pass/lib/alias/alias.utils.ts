@@ -1,3 +1,5 @@
+import { c } from 'ttag';
+
 import type { UserMailboxOutput } from '@proton/pass/types';
 import { normalize } from '@proton/shared/lib/helpers/string';
 
@@ -16,3 +18,19 @@ export const deriveAliasPrefix = (name: string) => {
 /** Mailbox is unverified or the new changed email requires verification */
 export const mailboxVerificationRequired = (mailbox: UserMailboxOutput) =>
     Boolean(!mailbox.Verified || mailbox.PendingEmail);
+
+/** Get a domain label to use in a select
+ * The point of this helper is to display alias types in a consistent way */
+export const getDomainLabel = ({
+    name,
+    isCustom,
+    isPremium,
+}: {
+    name: string;
+    isCustom: boolean;
+    isPremium: boolean;
+}) => {
+    if (isCustom) return `${name} (${c('Label').t`Your domain`})`;
+    else if (isPremium) return `${name} (${c('Label').t`Premium domain`})`;
+    else return `${name} (${c('Label').t`Public domain`})`;
+};
