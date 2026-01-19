@@ -11,7 +11,7 @@ import { ENABLE_U2L_ENCRYPTION, getFilteredTurns } from '../../llm';
 import { SearchService } from '../../services/search/searchService';
 import { flattenAttachmentsForLlm } from '../../llm/attachments';
 import { newAttachmentId, pushAttachmentRequest, upsertAttachment } from '../../redux/slices/core/attachments';
-import { resolveFileReferences } from '../../util/fileReferences';
+import { parseFileReferences } from '../../util/fileReferences';
 import {
     addConversation,
     newConversationId,
@@ -476,27 +476,29 @@ export function sendMessage({
             }
         });
 
-        const fileResolver = async (fileName: string): Promise<{ content: string; fileName: string } | null> => {
+        // Parse file references from the message content
+        const fileReferences = parseFileReferences(newMessageContent);
+        const referencedFileNames = new Set(fileReferences.map(ref => ref.fileName.toLowerCase()));
 
+        // Find attachments that match the referenced files
+        const referencedAttachments: Attachment[] = [];
+        fileReferences.forEach(ref => {
             const foundFile = allMessageAttachments.find(
-                (att) => att.filename.toLowerCase() === fileName.toLowerCase()
+                (att) => att.filename.toLowerCase() === ref.fileName.toLowerCase()
             );
-
-            if (foundFile && foundFile.markdown) {
-                return { content: foundFile.markdown, fileName: foundFile.filename };
+            if (foundFile && !referencedAttachments.some(a => a.id === foundFile.id)) {
+                referencedAttachments.push(foundFile);
             }
+        });
 
-            return null;
-        };
-
-        const { content: resolvedContent, referencedFiles } = await resolveFileReferences(
-            newMessageContent,
-            fileResolver
-        );
-        const processedContent: string = resolvedContent;
-
-        // Identify which attachments came from @ file references
-        const referencedFileNames = new Set(referencedFiles.map(f => f.fileName.toLowerCase()));
+        // Combine explicitly uploaded attachments with referenced attachments
+        // Remove duplicates (in case a file was both uploaded and @mentioned)
+        const allAttachmentsForMessage = [...attachments];
+        referencedAttachments.forEach(refAtt => {
+            if (!allAttachmentsForMessage.some(a => a.id === refAtt.id)) {
+                allAttachmentsForMessage.push(refAtt);
+            }
+        });
 
         // For space assignment, only consider provisional attachments (those without spaceId)
         // Referenced files should not be assigned to space regardless of their source
@@ -509,12 +511,12 @@ export function sendMessage({
             referencedFileNames.has(att.filename.toLowerCase())
         );
 
-        // Only attach provisional files from the composer (files explicitly uploaded to this message)
-        // Project files (spaceAssets) should NOT be attached to messages even if @referenced:
-        // - Their content is already resolved into the message via resolveFileReferences
-        // - They're tracked in the project's knowledge base
-        // - RAG will retrieve them if relevant (with isUploadedProjectFile flag)
-        const messageAttachments = attachments;
+        // Use the original message content for display (keep @file references visible)
+        // The file content will be added to context via flattenAttachmentsForLlm
+        const processedContent: string = newMessageContent;
+
+        // Use all attachments (uploaded + referenced) for the message
+        const messageAttachments = allAttachmentsForMessage;
 
         const { userMessage, assistantMessage } = createMessagePair(
             processedContent,
