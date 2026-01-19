@@ -4,7 +4,7 @@ import { MESSAGE_IFRAME_ROOT_ID } from '@proton/mail-renderer/constants';
 import { toText } from '@proton/mail/helpers/parserHtml';
 import type { MessageState, PartialMessageState } from '@proton/mail/store/messages/messagesTypes';
 import { checkContrast, parseStringToDOM } from '@proton/shared/lib/helpers/dom';
-import type { Address, MailSettings, UserModel, UserSettings } from '@proton/shared/lib/interfaces';
+import type { Address, MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { isPlainText, isPlainText as testIsPlainText } from '@proton/shared/lib/mail/messages';
 import { unescape } from '@proton/shared/lib/sanitize/escape';
@@ -101,11 +101,10 @@ export const plainTextToHTML = (
     plainTextContent: string | undefined,
     mailSettings: MailSettings | undefined,
     userSettings: UserSettings | undefined,
-    user: UserModel,
     addresses: Address[]
 ) => {
     const sender = findSender(addresses, message);
-    return textToHtml(plainTextContent, sender?.Signature || '', mailSettings, userSettings, user);
+    return textToHtml(plainTextContent, sender?.Signature || '', mailSettings, userSettings);
 };
 
 export const querySelectorAll = (message: Partial<MessageState> | undefined, selector: string) => [

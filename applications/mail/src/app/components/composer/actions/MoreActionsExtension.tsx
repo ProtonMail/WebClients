@@ -4,7 +4,6 @@ import { memo, useCallback } from 'react';
 import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
-import { useUser } from '@proton/account/user/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import type { EditorMetadata } from '@proton/components';
 import { DropdownMenuButton } from '@proton/components';
@@ -38,7 +37,6 @@ const MoreActionsExtension = ({ message, onChangeFlag, editorActionsRef, editorM
     const [mailSettings] = useMailSettings();
     const [addresses] = useAddresses();
     const [userSettings] = useUserSettings();
-    const [user] = useUser();
 
     const isAttachPublicKey = testIsAttachPublicKey(message?.data);
     const isReceiptRequest = testIsRequestReadReceipt(message?.data);
@@ -67,7 +65,6 @@ const MoreActionsExtension = ({ message, onChangeFlag, editorActionsRef, editorM
                     message?.messageDocument?.plainText,
                     mailSettings,
                     userSettings,
-                    user,
                     addresses || []
                 );
 
