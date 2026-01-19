@@ -1,10 +1,21 @@
 import { useParticipants } from '@livekit/components-react';
-import { VideoQuality } from 'livekit-client';
+import { RoomEvent, VideoQuality } from 'livekit-client';
 
 import { useMeetContext } from '../contexts/MeetContext';
 
+const updateOnlyOn = [
+    RoomEvent.Connected,
+    RoomEvent.Disconnected,
+    RoomEvent.Reconnected,
+    RoomEvent.ParticipantConnected,
+    RoomEvent.ParticipantDisconnected,
+    RoomEvent.ConnectionStateChanged,
+];
+
 export const useParticipantQuality = () => {
-    const participants = useParticipants();
+    const participants = useParticipants({
+        updateOnlyOn,
+    });
 
     const { isScreenShare } = useMeetContext();
 

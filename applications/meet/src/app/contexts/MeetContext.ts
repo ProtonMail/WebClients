@@ -37,6 +37,7 @@ export interface MeetContextValues {
     participantNameMap: Record<string, string>;
     getParticipants: () => Promise<void>;
     displayName: string;
+    participants: (RemoteParticipant | LocalParticipant)[];
     sortedParticipants: (RemoteParticipant | LocalParticipant)[];
     pagedParticipants: (RemoteParticipant | LocalParticipant)[];
     pageCount: number;
@@ -90,6 +91,7 @@ export const MeetContext = createContext<MeetContextValues>({
     participantNameMap: {},
     getParticipants: () => Promise.resolve(),
     displayName: '',
+    participants: [],
     sortedParticipants: [],
     pagedParticipants: [],
     pageCount: 0,

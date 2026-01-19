@@ -64,10 +64,14 @@ export const CameraTrackSubscriptionCacheProvider = ({ children }: { children: R
         await cacheRef.current?.resetQueueManagedVideoTrack(publication);
     }, []);
 
+    const getTracksToMonitor = useCallback(() => {
+        return cacheRef.current?.getQueueManagedTracksToMonitor() ?? [];
+    }, []);
+
     useStuckTrackMonitor({
         checkIntervalMs: STUCK_CAMERA_CHECK_INTERVAL_MS,
         minExpectedDelta: MIN_EXPECTED_FRAMES,
-        getTracksToMonitor: () => cacheRef.current?.getQueueManagedTracksToMonitor() ?? [],
+        getTracksToMonitor,
         checkTrackStats: checkVideoTrackStats,
         resetTrack: resetVideoTrack,
     });

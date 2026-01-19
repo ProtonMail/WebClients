@@ -12,6 +12,46 @@ export function usePiPRenderer() {
     const animationFrameRef = useRef<number>();
     const videoElementsRef = useRef<Map<string, HTMLVideoElement>>(new Map());
 
+    const cleanupVideoElement = useCallback((videoElement: HTMLVideoElement) => {
+        try {
+            videoElement.pause();
+            videoElement.srcObject = null;
+            videoElement.load();
+
+            if (videoElement.parentNode) {
+                videoElement.parentNode.removeChild(videoElement);
+            }
+        } catch (error) {
+            // eslint-disable-next-line no-console
+            console.error('Error cleaning up video element:', error);
+        }
+    }, []);
+
+    const cleanupAllVideoElements = useCallback(() => {
+        for (const videoElement of videoElementsRef.current.values()) {
+            cleanupVideoElement(videoElement);
+        }
+        videoElementsRef.current.clear();
+    }, [cleanupVideoElement]);
+
+    const cleanupStaleVideoElements = useCallback(
+        (activeTrackIds: Set<string>) => {
+            const elementsToRemove: string[] = [];
+
+            for (const [trackId, videoElement] of videoElementsRef.current.entries()) {
+                if (!activeTrackIds.has(trackId)) {
+                    cleanupVideoElement(videoElement);
+                    elementsToRemove.push(trackId);
+                }
+            }
+
+            elementsToRemove.forEach((trackId) => {
+                videoElementsRef.current.delete(trackId);
+            });
+        },
+        [cleanupVideoElement]
+    );
+
     // Create and manage video elements
     const createVideoElement = useCallback((track: LiveKitTrack, trackId: string) => {
         let videoElement = videoElementsRef.current.get(trackId);
@@ -86,6 +126,11 @@ export function usePiPRenderer() {
                 return;
             }
 
+            const activeTrackIds = new Set(
+                tracksToDisplay.map((trackInfo, index) => trackInfo.track.sid || `track-${index}`)
+            );
+            cleanupStaleVideoElements(activeTrackIds);
+
             // Adjust canvas size when tracks count changes; ensure minimum height to avoid 0x0 streams
             const desiredHeight = PIP_PREVIEW_ITEM_HEIGHT * Math.max(1, Math.min(tracksToDisplay.length, 3));
             if (canvas.height !== desiredHeight) {
@@ -153,7 +198,7 @@ export function usePiPRenderer() {
             // Draw message overlay on top of everything (highest z-index)
             drawMessageOverlay({ ctx, canvasWidth: canvas.width, canvasHeight: canvas.height, messages });
         },
-        [createVideoElement, ensureVideoPlaying]
+        [createVideoElement, ensureVideoPlaying, cleanupStaleVideoElements]
     );
 
     // Start rendering loop
@@ -183,16 +228,19 @@ export function usePiPRenderer() {
         [drawPiP]
     );
 
-    // Stop rendering loop
+    // Stop rendering loop and clean up all resources
     const stopRendering = useCallback(() => {
         if (animationFrameRef.current) {
             cancelAnimationFrame(animationFrameRef.current);
             animationFrameRef.current = undefined;
         }
-    }, []);
+
+        cleanupAllVideoElements();
+    }, [cleanupAllVideoElements]);
 
     return {
         startRendering,
         stopRendering,
+        cleanupAllVideoElements,
     };
 }

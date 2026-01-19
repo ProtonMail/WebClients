@@ -57,9 +57,11 @@ interface MeetContainerProps {
     pageSize: number;
     expirationTime: number | null;
     isGuestAdmin: boolean;
+    participants: (RemoteParticipant | LocalParticipant)[];
 }
 
 export const MeetContainer = ({
+    participants,
     sortedParticipants,
     sortedParticipantsMap,
     pagedParticipants,
@@ -147,6 +149,7 @@ export const MeetContainer = ({
             >
                 <MeetContext.Provider
                     value={{
+                        participants,
                         sortedParticipants,
                         pagedParticipants,
                         pageCount,
@@ -206,7 +209,7 @@ export const MeetContainer = ({
                         screenShareParticipant={screenShareParticipant}
                     />
                 </MeetContext.Provider>
-                <AutoCloseMeetingModal onLeave={() => handleLeave()} />
+                <AutoCloseMeetingModal participantCount={participants.length} onLeave={handleLeave} />
             </MeetingRecorderContext.Provider>
         </div>
     );
