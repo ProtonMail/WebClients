@@ -8,7 +8,7 @@ import { getCanWrite } from '@proton/shared/lib/drive/permissions';
 import { useActiveShare } from '../../../hooks/drive/useActiveShare';
 import useDriveNavigation from '../../../hooks/drive/useNavigate';
 import { useFolderView } from '../../../store';
-import DriveBreadcrumbs from '../../DriveBreadcrumbs';
+import DriveBreadcrumbsDeprecated from '../../DriveBreadcrumbsDeprecated';
 import { FileBrowserStateProvider } from '../../FileBrowser';
 import { useAlbumOnboardingModal } from '../../modals/AlbumOnboardingModal';
 import UploadDragDrop from '../../uploads/UploadDragDrop/UploadDragDrop';
@@ -42,7 +42,7 @@ export function DriveViewDeprecated() {
         }
     }, [folderView.error]);
 
-    const breadcrumbs = activeFolder && <DriveBreadcrumbs activeFolder={activeFolder} />;
+    const breadcrumbs = activeFolder && <DriveBreadcrumbsDeprecated activeFolder={activeFolder} />;
 
     const toolbar = activeFolder ? (
         <DriveToolbar
