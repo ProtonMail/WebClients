@@ -42,9 +42,10 @@ import { useMoveToFolder } from '../../hooks/actions/move/useMoveToFolder';
 import { useCreateFilters } from '../../hooks/actions/useCreateFilters';
 import { useGetElementsFromIDs, useGetMessagesOrElementsFromIDs } from '../../hooks/mailbox/useElements';
 import { useScrollToItem } from '../../hooks/useScrollToItem';
+import { useCategoriesView } from '../categoryView/useCategoriesView';
 import { folderLocation } from '../list/list-telemetry/listTelemetryHelper';
 import { SOURCE_ACTION } from '../list/list-telemetry/useListTelemetry';
-import { toFolderItem } from './moveToFolderDropdown.helper';
+import { getInboxCategoriesItems, toFolderItem } from './moveToFolderDropdown.helper';
 
 import './MoveDropdown.scss';
 
@@ -97,6 +98,7 @@ const MoveDropdown = ({
     useEffect(() => onLock(!containFocus), [containFocus]);
 
     const { list: treeview } = useMailFolderTreeView();
+    const { shouldShowTabs, activeCategoriesTabs } = useCategoriesView();
 
     /*
      * When moving an element to SPAM, we want to open an "Unsubscribe modal" when items in the selections can be unsubscribed.
@@ -129,11 +131,11 @@ const MoveDropdown = ({
 
     const list = treeview
         .concat([
-            canMoveToInbox && {
-                ID: MAILBOX_LABEL_IDS.INBOX,
-                Name: c('Mailbox').t`Inbox`,
-                icon: 'inbox',
-            },
+            ...getInboxCategoriesItems({
+                canMoveToInbox,
+                shouldShowTabs,
+                activeCategoriesTabs,
+            }),
             { ID: MAILBOX_LABEL_IDS.ARCHIVE, Name: c('Mailbox').t`Archive`, icon: 'archive-box' },
             canMoveToSpam && {
                 ID: MAILBOX_LABEL_IDS.SPAM,
@@ -263,6 +265,7 @@ const MoveDropdown = ({
                                     onChange={() => setSelectedFolder(folder)}
                                     data-testid={`label-dropdown:folder-radio-${folder.Name}`}
                                 />
+                                {/* eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions, jsx-a11y/click-events-have-key-events */}
                                 <label
                                     htmlFor={folderButtonID(folder.ID)}
                                     data-level={folder.level}
@@ -270,7 +273,12 @@ const MoveDropdown = ({
                                     data-testid={`folder-dropdown:folder-${folder.Name}`}
                                     onClick={() => handleApplyDirectly(folder.ID, folder.Name)}
                                 >
-                                    <FolderIcon folder={folder} name={folder.icon} className="shrink-0 mr-2" />
+                                    <FolderIcon
+                                        folder={folder}
+                                        name={folder.icon}
+                                        dataColor={folder.folderIconProps?.color}
+                                        className={clsx('shrink-0 mr-2', folder?.folderIconProps?.className)}
+                                    />
                                     <span className="text-ellipsis" title={folder.Name}>
                                         <Mark value={search}>{folder.Name}</Mark>
                                     </span>
