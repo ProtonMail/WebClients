@@ -19,12 +19,12 @@ jest.mock('../useCategoriesView', () => ({
 describe('CategoriesTabs', () => {
     it.each([
         { label: MAILBOX_LABEL_IDS.CATEGORY_DEFAULT, colorShade: 'iris' },
-        { label: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL, colorShade: 'sky' },
+        { label: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL, colorShade: 'cyan' },
         { label: MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS, colorShade: 'teal' },
-        { label: MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS, colorShade: 'pink' },
-        { label: MAILBOX_LABEL_IDS.CATEGORY_TRANSACTIONS, colorShade: 'blue' },
-        { label: MAILBOX_LABEL_IDS.CATEGORY_UPDATES, colorShade: 'purple' },
-        { label: MAILBOX_LABEL_IDS.CATEGORY_FORUMS, colorShade: 'amber' },
+        { label: MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS, colorShade: 'orange' },
+        { label: MAILBOX_LABEL_IDS.CATEGORY_TRANSACTIONS, colorShade: 'red' },
+        { label: MAILBOX_LABEL_IDS.CATEGORY_UPDATES, colorShade: 'pink' },
+        { label: MAILBOX_LABEL_IDS.CATEGORY_FORUMS, colorShade: 'blue' },
     ])('should render the categories with the proper border class', async ({ label, colorShade }) => {
         await mailTestRender(<CategoriesTabs categoryLabelID={label} />);
         const categoryTab = screen.getByTestId(`category-tab-${label}`);

@@ -11,7 +11,7 @@ const RAW_TO_CATEGORY = {
     },
     '20': {
         id: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
-        colorShade: CATEGORIES_COLOR_SHADES.SKY,
+        colorShade: CATEGORIES_COLOR_SHADES.CYAN,
         icon: 'person-filled-2',
     },
     '21': {
@@ -21,22 +21,22 @@ const RAW_TO_CATEGORY = {
     },
     '25': {
         id: MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS,
-        colorShade: CATEGORIES_COLOR_SHADES.PINK,
+        colorShade: CATEGORIES_COLOR_SHADES.ORANGE,
         icon: 'news',
     },
     '26': {
         id: MAILBOX_LABEL_IDS.CATEGORY_TRANSACTIONS,
-        colorShade: CATEGORIES_COLOR_SHADES.BLUE,
+        colorShade: CATEGORIES_COLOR_SHADES.RED,
         icon: 'credit-cards',
     },
     '22': {
         id: MAILBOX_LABEL_IDS.CATEGORY_UPDATES,
-        colorShade: CATEGORIES_COLOR_SHADES.PURPLE,
+        colorShade: CATEGORIES_COLOR_SHADES.PINK,
         icon: 'bell-filled-2',
     },
     '23': {
         id: MAILBOX_LABEL_IDS.CATEGORY_FORUMS,
-        colorShade: CATEGORIES_COLOR_SHADES.AMBER,
+        colorShade: CATEGORIES_COLOR_SHADES.BLUE,
         icon: 'speech-bubbles-filled',
     },
 } as const;

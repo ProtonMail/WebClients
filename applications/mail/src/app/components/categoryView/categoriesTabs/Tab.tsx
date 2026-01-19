@@ -25,7 +25,7 @@ export const Tab = ({ category, count, tabState }: Props) => {
         <NavLink
             to={LABEL_IDS_TO_HUMAN[category.id] || LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.CATEGORY_DEFAULT]}
             className={clsx(
-                'tab-container flex flex-nowrap items-center text-no-decoration color-hint hover:mail-category-color',
+                'tab-container h-full flex flex-nowrap items-center text-no-decoration color-hint hover:mail-category-color',
                 tabState === TabState.ACTIVE &&
                     'active color-norm border-bottom border-top text-semibold mail-category-border',
                 tabState === TabState.DRAGGING_OVER && 'hovered border mail-category-border',
