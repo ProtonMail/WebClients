@@ -8,12 +8,13 @@ import {
 import type { BridgeRequest } from 'proton-pass-extension/app/content/bridge/types';
 import { NotificationAction } from 'proton-pass-extension/app/content/constants.runtime';
 import { withContext } from 'proton-pass-extension/app/content/context/context';
+import { PasskeyServiceError } from 'proton-pass-extension/app/content/services/webauthn/passkey.errors';
 import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import { clientHasSession, clientNeedsSession } from '@proton/pass/lib/client';
 import type { SanitizedPublicKeyRequest } from '@proton/pass/lib/passkeys/types';
-import type { MaybeNull } from '@proton/pass/types/utils/index';
+import type { MaybeNull, MaybePromise } from '@proton/pass/types/utils/index';
 import type { PasskeySettings } from '@proton/pass/types/worker/settings';
 import { createEventLimiter } from '@proton/pass/utils/event/limiter';
 import { prop } from '@proton/pass/utils/fp/lens';
@@ -22,64 +23,82 @@ import { waitUntil } from '@proton/pass/utils/fp/wait-until';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
 import { objectHandler } from '@proton/pass/utils/object/handler';
 
-type PasskeyServiceState = { requestToken: MaybeNull<string> };
+type PasskeyServiceState = {
+    /** current WebAuthn request token */
+    requestToken: MaybeNull<string>;
+};
 
 export const createPasskeyService = () => {
     const listeners = createListenerStore();
     const state = objectHandler<PasskeyServiceState>({ requestToken: null });
 
-    /** Rate limiter to prevent DoS attacks: allows max 1 WebAuthn message per second.
+    /** Rate limiter to prevent DoS attacks: allows max 1 WebAuthn message every 500ms.
      * Mitigates resource exhaustion from malicious pages flooding the extension. */
-    const limiter = createEventLimiter(1, 1_000);
+    const limiter = createEventLimiter(1, 500);
 
-    /** Verifies that a given token matches the current stateful
-     * value. This is useful to cancel any async side-effects upon
-     * approval of a passkey message */
+    /** Verifies that a given token matches the current request token in state.
+     * This prevents race conditions and ensures only the current request proceeds. */
     const matchesRequestToken = (token: string) => state.get('requestToken') === token;
 
-    const abort = (browserFallback: boolean) => {
-        const token = state.get('requestToken');
-        state.set('requestToken', null);
-
+    /** Aborts the current WebAuthn request and optionally allows native API fallback.
+     * Clears the request token state and sends appropriate response message. */
+    const abort = (token: MaybeNull<string>, allowNativeWebAuthn: boolean) => {
         if (token) {
             window.postMessage(
-                browserFallback
+                allowNativeWebAuthn
                     ? createBridgeResponse({ type: 'success', intercept: false }, token)
                     : createBridgeAbortSignal(token)
             );
         }
     };
 
-    const approveRequest = async (token: string, allow: () => boolean): Promise<boolean> => {
-        /** Abort any pending requests. Incoming requests supersede existing ones
-         * to prevent resource accumulation and ensure latest intent is honored. */
-        abort(false);
+    const abortPending = withContext<() => void>((ctx) => {
+        const token = state.get('requestToken');
+        if (token) {
+            abort(token, false);
+            state.set('requestToken', null);
+            ctx?.service.inline.notification.close();
+        }
+    });
 
-        /** Set active request token for state tracking. Subsequent requests
-         * that bypass the rate limiter will be cancelled via token mismatch
-         * validation in the waitUntil cancel predicate. */
+    /** Handles errors during passkey operations by aborting the request.
+     * PasskeyServiceErrors contain fallback preference. */
+    const onPasskeyError = (token: string, err: unknown) => {
+        if (err instanceof PasskeyServiceError) abort(token, err.allowNativeWebAuthn);
+        else abort(token, true);
+    };
+
+    /**
+     * Approves a WebAuthn request after validation and state management :
+     * 1. Abort any pending requests (new requests supersede existing ones)
+     * 2. Set active request token for state tracking and race condition prevention
+     * 3. Wait for extension context to be ready and validate permissions
+     * 4. Ensure request token still matches (guards against concurrent requests)
+     */
+    const approve = async (token: string, allow: () => boolean): Promise<void> => {
+        abortPending();
         state.set('requestToken', token);
 
         await waitUntil(
-            {
-                check: withContext<Predicate>((ctx) =>
-                    ctx && ctx.getState().ready ? clientHasSession(ctx.getState().status) : false
-                ),
-                cancel: withContext<Predicate>((ctx) => {
-                    if (!ctx) return true;
-                    if (!ctx.getState().ready) return false;
-                    if (ctx.getState().stale) return true;
-                    if (!allow()) return true;
-                    /** abort early if we have no session to resume from */
-                    if (clientNeedsSession(ctx.getState().status)) return true;
-                    /** cancel if request token has mutated or if the content-script is stale */
-                    return !matchesRequestToken(token);
-                }),
-            },
+            withContext<Predicate>((ctx) => {
+                if (!ctx) throw new PasskeyServiceError({ allowNativeWebAuthn: true });
+                const { ready, status, stale } = ctx.getState();
+                const hasSession = clientHasSession(status);
+                const noSession = clientNeedsSession(status);
+
+                if (stale) throw new PasskeyServiceError({ allowNativeWebAuthn: true });
+                if (!matchesRequestToken(token)) throw new PasskeyServiceError({ allowNativeWebAuthn: false });
+
+                if (ready) {
+                    if (noSession) throw new PasskeyServiceError({ allowNativeWebAuthn: true });
+                    if (hasSession && !allow()) throw new PasskeyServiceError({ allowNativeWebAuthn: true });
+                    return hasSession;
+                }
+
+                return false;
+            }),
             50
         );
-
-        return matchesRequestToken(token);
     };
 
     const withPasskeySettings = (fn: (settings: PasskeySettings) => boolean) =>
@@ -94,71 +113,78 @@ export const createPasskeyService = () => {
             });
         });
 
+    /** Check if passkey retrieval (authentication) is enabled in user settings */
     const approvePasskeyGet = withPasskeySettings(({ get }) => get);
+    /** Check if passkey creation (registration) is enabled in user settings */
     const approvePasskeyCreate = withPasskeySettings(({ create }) => create);
+    /** Check if any passkey operation (get or create) is enabled for request interception */
     const approveIntercept = withPasskeySettings(({ get, create }) => get || create);
 
-    const onBridgeRequest = withContext<(data: BridgeRequest) => void>((ctx, data) => {
-        if (!ctx) return;
-
+    /** Handles incoming WebAuthn bridge requests from the injected content script.
+     * Processes different request types (create, get, intercept) with rate limiting. */
+    const onBridgeRequest = withContext<(data: BridgeRequest) => MaybePromise<void>>((ctx, data) => {
         switch (data.request.type) {
             case WorkerMessageType.PASSKEY_CREATE: {
-                if (!limiter.allowMessage(data.request.type)) return abort(false);
-
                 const { token } = data;
                 const { request } = data.request.payload;
                 const domain = location.hostname;
 
-                return approveRequest(token, approvePasskeyCreate)
-                    .then((approved) => {
-                        if (approved) {
-                            ctx.service.inline.notification.open({
-                                action: NotificationAction.PASSKEY_CREATE,
-                                domain,
-                                request,
-                                token,
-                            });
-                        }
+                if (!limiter.allowMessage(data.request.type)) {
+                    abortPending();
+                    abort(token, false);
+                    return;
+                }
+
+                return approve(token, approvePasskeyCreate)
+                    .then(() => {
+                        ctx?.service.inline.notification.open({
+                            action: NotificationAction.PASSKEY_CREATE,
+                            domain,
+                            request,
+                            token,
+                        });
                     })
-                    .catch(() => abort(true));
+                    .catch((err) => onPasskeyError(token, err));
             }
 
             case WorkerMessageType.PASSKEY_GET: {
-                if (!limiter.allowMessage(data.request.type)) return abort(false);
-
                 const { token } = data;
                 const { request } = data.request.payload;
                 const domain = location.hostname;
 
-                return approveRequest(token, approvePasskeyGet)
-                    .then(async (approved) => {
-                        if (approved) {
-                            const publicKey = JSON.parse(request) as SanitizedPublicKeyRequest;
-                            const credentialIds = (publicKey.allowCredentials ?? []).map(prop('id'));
+                if (!limiter.allowMessage(data.request.type)) {
+                    abortPending();
+                    abort(token, false);
+                    return;
+                }
 
-                            await sendMessage.on(
-                                contentScriptMessage({
-                                    type: WorkerMessageType.PASSKEY_QUERY,
-                                    payload: { domain, credentialIds },
-                                }),
-                                (response) => {
-                                    if (matchesRequestToken(token)) {
-                                        const passkeys = response.type === 'success' ? response.passkeys : [];
-                                        if (!passkeys.length) return abort(true);
+                return approve(token, approvePasskeyGet)
+                    .then(async () => {
+                        const publicKey = JSON.parse(request) as SanitizedPublicKeyRequest;
+                        const credentialIds = (publicKey.allowCredentials ?? []).map(prop('id'));
 
-                                        return ctx?.service.inline.notification.open({
-                                            action: NotificationAction.PASSKEY_GET,
-                                            domain,
-                                            passkeys,
-                                            request,
-                                            token,
-                                        });
-                                    }
-                                }
-                            );
-                        }
+                        await sendMessage.on(
+                            contentScriptMessage({
+                                type: WorkerMessageType.PASSKEY_QUERY,
+                                payload: { domain, credentialIds },
+                            }),
+                            (response) => {
+                                if (!matchesRequestToken(token)) return abort(token, false);
+
+                                const passkeys = response.type === 'success' ? response.passkeys : [];
+                                if (!passkeys.length) return abort(token, true);
+
+                                return ctx?.service.inline.notification.open({
+                                    action: NotificationAction.PASSKEY_GET,
+                                    domain,
+                                    passkeys,
+                                    request,
+                                    token,
+                                });
+                            }
+                        );
                     })
-                    .catch(() => abort(true));
+                    .catch((err) => onPasskeyError(token, err));
             }
 
             case WorkerMessageType.PASSKEY_INTERCEPT: {
@@ -177,6 +203,8 @@ export const createPasskeyService = () => {
         }
     });
 
+    /** Initializes the passkey service by setting up message listeners.
+     * Attaches inline notification early if WebAuthn fields are detected. */
     const init = withContext((ctx) => {
         listeners.addListener(
             window,
@@ -184,22 +212,32 @@ export const createPasskeyService = () => {
             withContext(async (ctx, { data }) => {
                 const token = state.get('requestToken');
                 if (token && isBridgeAbortSignal(token)(data)) ctx?.service.inline.notification.close();
-                else if (isBridgeRequest(data)) onBridgeRequest(data);
+                else if (isBridgeRequest(data)) return onBridgeRequest(data);
             })
         );
 
-        /** Attach injected notification early if a webauthn input is detected */
         const webAuthFields = document.querySelectorAll('input[autocomplete*="webauthn"]').length > 0;
         if (webAuthFields) ctx?.service.inline.notification.attach();
     });
 
+    /** Cleans up the passkey service by aborting active requests,
+     * signaling disconnection, and removing all event listeners. */
     const destroy = () => {
-        abort(false);
+        abort(state.get('requestToken'), false);
+        state.set('requestToken', null);
         window.postMessage(createBridgeDisconnectSignal());
         listeners.removeAll();
     };
 
-    return { init, destroy };
+    return {
+        abort,
+        approve,
+        destroy,
+        handler: onBridgeRequest,
+        init,
+        limiter,
+        state,
+    };
 };
 
 export type PasskeyService = ReturnType<typeof createPasskeyService>;
