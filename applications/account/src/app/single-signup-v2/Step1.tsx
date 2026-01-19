@@ -739,7 +739,10 @@ const Step1 = ({
         if (mode === SignupMode.PassSimpleLogin) {
             return (
                 <>
-                    <Vr className="h-custom mr-6 lg:mr-8 opacity-50 hidden md:flex" style={{ '--h-custom': '2rem' }} />
+                    <Vr
+                        className="min-h-custom mr-6 lg:mr-8 opacity-50 hidden md:flex"
+                        style={{ '--min-h-custom': '2rem' }}
+                    />
                     <img className="mb-0.5" src={simpleLoginLogo} alt="SimpleLogin" />
                 </>
             );
