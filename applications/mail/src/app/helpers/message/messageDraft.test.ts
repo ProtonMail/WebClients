@@ -3,7 +3,7 @@ import { addDays, differenceInDays, getUnixTime, isSameDay } from 'date-fns';
 import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
 import type { MessageState, MessageStateWithData } from '@proton/mail/store/messages/messagesTypes';
 import { addPlusAlias } from '@proton/shared/lib/helpers/email';
-import type { Address, MailSettings, Recipient, UserModel, UserSettings } from '@proton/shared/lib/interfaces';
+import type { Address, MailSettings, Recipient, UserSettings } from '@proton/shared/lib/interfaces';
 import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
 import { FORWARDED_MESSAGE, FW_PREFIX, RE_PREFIX, formatSubject } from '@proton/shared/lib/mail/messages';
 
@@ -42,7 +42,6 @@ const notNewActions = [MESSAGE_ACTIONS.REPLY, MESSAGE_ACTIONS.REPLY_ALL, MESSAGE
 const action = MESSAGE_ACTIONS.NEW;
 const mailSettings = {} as MailSettings;
 const userSettings = {} as UserSettings;
-const fakePaidUser = { isFree: false } as UserModel;
 const address = {
     ID: 'addressid',
     DisplayName: 'name',
@@ -267,7 +266,6 @@ describe('messageDraft', () => {
                 { data: message } as MessageStateWithData,
                 mailSettings,
                 userSettings,
-                fakePaidUser,
                 addresses,
                 jest.fn()
             );
@@ -290,7 +288,6 @@ describe('messageDraft', () => {
                 { data: message } as MessageStateWithData,
                 mailSettings,
                 userSettings,
-                fakePaidUser,
                 addresses,
                 jest.fn()
             );
@@ -304,7 +301,6 @@ describe('messageDraft', () => {
                     { data: message } as MessageStateWithData,
                     mailSettings,
                     userSettings,
-                    fakePaidUser,
                     addresses,
                     jest.fn()
                 );
@@ -319,7 +315,6 @@ describe('messageDraft', () => {
                     { data: message } as MessageStateWithData,
                     mailSettings,
                     userSettings,
-                    fakePaidUser,
                     addresses,
                     jest.fn()
                 );
@@ -340,7 +335,6 @@ describe('messageDraft', () => {
                 { data: { ...message, Flags: MESSAGE_FLAGS.FLAG_RECEIVED } } as MessageStateWithData,
                 mailSettings,
                 userSettings,
-                fakePaidUser,
                 addresses,
                 jest.fn()
             );
@@ -356,7 +350,6 @@ describe('messageDraft', () => {
                 { data: message } as MessageStateWithData,
                 mailSettings,
                 userSettings,
-                fakePaidUser,
                 addresses,
                 jest.fn()
             );
@@ -374,7 +367,6 @@ describe('messageDraft', () => {
                 { data: { ...message, ExpirationTime: expirationTime } } as MessageStateWithData,
                 mailSettings,
                 userSettings,
-                fakePaidUser,
                 addresses,
                 jest.fn()
             );
