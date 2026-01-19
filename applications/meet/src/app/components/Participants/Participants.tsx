@@ -1,6 +1,5 @@
 import { useState } from 'react';
 
-import { useParticipants } from '@livekit/components-react';
 import type { Participant } from 'livekit-client';
 import { Track } from 'livekit-client';
 import { c } from 'ttag';
@@ -37,7 +36,7 @@ export const Participants = () => {
 
     const [isScrolled, setIsScrolled] = useState(false);
 
-    const participants = useParticipants();
+    const { participants } = useMeetContext();
 
     const activeSpeakers = useDebouncedActiveSpeakers();
 

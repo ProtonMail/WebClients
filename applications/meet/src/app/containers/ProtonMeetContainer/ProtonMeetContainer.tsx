@@ -176,6 +176,7 @@ export const ProtonMeetContainer = ({
     const [pageSize, setPageSize] = useState(isLargerThanMd && !isNarrowHeight ? PAGE_SIZE : SMALL_SCREEN_PAGE_SIZE);
 
     const {
+        participants,
         sortedParticipants,
         pagedParticipants,
         sortedParticipantsMap,
@@ -209,7 +210,7 @@ export const ProtonMeetContainer = ({
     const wasmApp = useWasmApp();
 
     const mlsSetupDone = useRef(false);
-    const startHealthCheck = useRef(false);
+
     const meetingLinkRef = useRef<string | null>(null);
 
     const notifications = useNotifications();
@@ -223,12 +224,10 @@ export const ProtonMeetContainer = ({
     const isMeetSeamlessKeyRotationEnabled = useFlag('MeetSeamlessKeyRotationEnabled');
     const isMeetClientMetricsLogEnabled = useFlag('MeetClientMetricsLog');
 
-    useConnectionHealthCheck({
+    const { allowHealthCheck, disallowHealthCheck } = useConnectionHealthCheck({
         wasmApp,
         mlsGroupStateRef,
-        startHealthCheck,
         setConnectionLost,
-        reportMeetError,
     });
 
     const treatedAsPaidUser = hasSubscription || !!user?.hasPaidMeet;
@@ -385,7 +384,7 @@ export const ProtonMeetContainer = ({
             setMlsGroupState(nextMlsGroupState);
             mlsGroupStateRef.current = nextMlsGroupState;
 
-            startHealthCheck.current = true;
+            allowHealthCheck();
 
             return groupKeyData;
         } catch (error) {
@@ -547,7 +546,7 @@ export const ProtonMeetContainer = ({
                     reportMeetError('Failed to leave MLS group after LiveKit connection failure', leaveError);
                 }
                 mlsSetupDone.current = false;
-                startHealthCheck.current = false;
+                disallowHealthCheck();
                 if (isMeetSeamlessKeyRotationEnabled) {
                     keyRotationSchedulerRef.current.clean();
                 } else {
@@ -577,7 +576,7 @@ export const ProtonMeetContainer = ({
             room.on('disconnected', (reason?: DisconnectReason) => {
                 instantMeetingRef.current = false;
                 mlsSetupDone.current = false;
-                startHealthCheck.current = false;
+                disallowHealthCheck();
 
                 setJoinedRoom(false);
                 joinedRoomLoggedRef.current = false;
@@ -828,7 +827,7 @@ export const ProtonMeetContainer = ({
         void wasmApp?.leaveMeeting();
         void stopPiP();
         mlsSetupDone.current = false; // need to set mls again after leave meeting
-        startHealthCheck.current = false;
+        disallowHealthCheck();
 
         if (isMeetSeamlessKeyRotationEnabled) {
             // clean the current key and epoch to avoid use them in next meeting
@@ -856,7 +855,7 @@ export const ProtonMeetContainer = ({
         }
 
         mlsSetupDone.current = false; // need to set mls again after leave meeting
-        startHealthCheck.current = false;
+        disallowHealthCheck();
 
         if (isMeetSeamlessKeyRotationEnabled) {
             // clean the current key and epoch to avoid use them in next meeting
@@ -1047,6 +1046,7 @@ export const ProtonMeetContainer = ({
                         isRecordingInProgress={isRecordingInProgress}
                         getKeychainIndexInformation={() => keyProvider.getKeychainIndexInformation() ?? []}
                         decryptionErrorLogs={decryptionErrorLogs}
+                        participants={participants}
                         sortedParticipants={sortedParticipants}
                         pagedParticipants={pagedParticipants}
                         pageCount={pageCount}

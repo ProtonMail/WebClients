@@ -33,6 +33,10 @@ export class KeyRotationScheduler {
     }
 
     clean() {
+        if (this.timer !== null) {
+            clearTimeout(this.timer);
+        }
+
         this.keyProvider.cleanCurrent();
     }
 
