@@ -73,11 +73,6 @@ export const transformRemote = (
     const skipProxy = hasToSkipProxy(remoteImages);
 
     matchedElements.forEach((match) => {
-        // Avoid duplicating images
-        if (remoteImages.find(({ original }) => original === match)) {
-            return;
-        }
-
         const id = generateUID('remote');
         if (match.tagName === 'IMG') {
             if (!draft) {
@@ -114,8 +109,8 @@ export const transformRemote = (
                     type: 'remote',
                     // We want to remove line breaks from the URL, whether the URL is encoded or not
                     url: removeEncodedAndUnencodedLineBreaks(url),
-                    original: match,
                     id,
+                    original: match,
                     tracker: undefined,
                     status: 'not-loaded',
                 });
@@ -123,8 +118,8 @@ export const transformRemote = (
                 remoteImages.push({
                     type: 'remote',
                     url,
-                    original: match,
                     id,
+                    original: match,
                     tracker: undefined,
                     status: 'not-loaded',
                 });
