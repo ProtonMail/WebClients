@@ -40,6 +40,7 @@ module.exports = ({
     defineWebpackConfig,
     benchmarkBuild,
     prependAsyncCss,
+    ignoreCssOrderWarning,
 }) => {
     let WebpackCollectMetricsPlugin;
 
@@ -134,9 +135,13 @@ module.exports = ({
         new MiniCssExtractPlugin({
             filename: cssName,
             chunkFilename: cssName,
-            ...(prependAsyncCss
+            ...(ignoreCssOrderWarning
                 ? {
                       ignoreOrder: true,
+                  }
+                : undefined),
+            ...(prependAsyncCss
+                ? {
                       insert: function (linkTag) {
                           const firstStylesheet = document.head.querySelector('link[rel="stylesheet"]');
                           if (firstStylesheet) {

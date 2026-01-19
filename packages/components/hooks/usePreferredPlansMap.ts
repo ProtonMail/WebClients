@@ -36,7 +36,7 @@ export const getPreferredPlansMap = ({
     currencyFallback?: boolean;
     currencyOverrides?: GetPreferredCurrencyParamsHook;
     getPreferredCurrency: ReturnType<typeof useCurrencies>['getPreferredCurrency'];
-    user: UserModel;
+    user: UserModel | undefined;
     subscription?: Subscription | FreeSubscription;
     plans: Plan[];
     paymentStatus: ReturnType<typeof usePaymentStatus>[0];

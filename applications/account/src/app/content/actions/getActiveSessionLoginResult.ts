@@ -9,7 +9,7 @@ import { type APP_NAMES, SSO_PATHS } from '@proton/shared/lib/constants';
 import type { Api } from '@proton/shared/lib/interfaces';
 
 import type { OAuthPartnersInitiateState } from '../../public/OAuthPartnersContainer';
-import { getReAuthState } from '../../public/ReAuthContainer';
+import { getReAuthState } from '../../public/reauthContainerState';
 import type { Paths } from '../helper';
 import type { LocalRedirect } from '../localRedirect';
 import { type ProduceForkData, SSOType } from './forkInterface';

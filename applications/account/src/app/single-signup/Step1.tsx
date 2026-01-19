@@ -1149,7 +1149,7 @@ const Step1 = ({
                                 <Fragment key={typeof text === 'string' ? text : i}>
                                     <FeatureItem left={left} text={text} />
                                     {i !== arr.length - 1 && (
-                                        <Vr className="h-custom" style={{ '--h-custom': '2.25rem' }} />
+                                        <Vr className="min-h-custom" style={{ '--min-h-custom': '2.25rem' }} />
                                     )}
                                 </Fragment>
                             );

@@ -74,6 +74,7 @@ export interface WebpackOptions {
     benchmarkBuild: boolean;
     /* prepend instead of append async css chunks so that the global css order can be respected (i.e. that the initial css file takes priority) */
     prependAsyncCss: boolean;
+    ignoreCssOrderWarning: boolean;
 }
 
 export interface AppConfig {

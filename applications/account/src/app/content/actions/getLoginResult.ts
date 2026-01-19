@@ -15,8 +15,8 @@ import { getEncryptedSetupBlob, getRequiresAddressSetup } from '@proton/shared/l
 import noop from '@proton/utils/noop';
 
 import type { AppSwitcherState } from '../../public/AppSwitcherContainer';
-import { getReAuthState } from '../../public/ReAuthContainer';
 import { getOrganization } from '../../public/organization';
+import { getReAuthState } from '../../public/reauthContainerState';
 import type { Paths } from '../helper';
 import type { LocalRedirect } from '../localRedirect';
 import { type ProduceForkData, SSOType } from './forkInterface';
