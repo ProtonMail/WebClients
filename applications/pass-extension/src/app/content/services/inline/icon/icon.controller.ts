@@ -81,7 +81,7 @@ export const createIconController = (options: IconControllerOptions): MaybeNull<
     const container = noAnchor ? input.parentElement! : anchor.element;
     const checkParentFrame = !mainFrame && formHandle.fields.size === 1;
 
-    if (shouldCreateContainingBlock(container, form, formHandle.scrollParent)) {
+    if (shouldCreateContainingBlock(container, form, formHandle.scrollParent(field.element))) {
         logger.debug(`[IconController] injection requires containing block`);
         container.setAttribute(OVERRIDE_STYLES_ATTR, JSON.stringify({ position: container.style.position }));
         container.style.position = 'relative';
