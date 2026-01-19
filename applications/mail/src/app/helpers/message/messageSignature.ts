@@ -26,9 +26,10 @@ export const CLASSNAME_SIGNATURE_EMPTY = 'protonmail_signature_block-empty';
 const getProtonSignature = (mailSettings: Partial<MailSettings> = {}, userSettings: Partial<UserSettings> = {}) => {
     const enabled = hasBit(mailSettings?.PMSignature, PM_SIGNATURE.ENABLED);
     const locked = hasBit(mailSettings?.PMSignature, PM_SIGNATURE.LOCKED);
+    const enabledAndLocked = enabled && locked;
 
     // Users who can toggle the signature and have enabled it should see it
-    if (enabled && !locked) {
+    if ((enabled && !locked) || enabledAndLocked) {
         return getProtonMailSignature(
             !!mailSettings.PMSignatureReferralLink,
             userSettings.Referral?.Link,
