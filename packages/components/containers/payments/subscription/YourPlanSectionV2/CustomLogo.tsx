@@ -4,25 +4,32 @@ import { PLANS } from '@proton/payments';
 import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
 
 import bundle from './logo/plan-bundle.svg';
+import driveBusiness from './logo/plan-drive-business.svg';
 import driveFree from './logo/plan-drive-free.svg';
+import drivePro from './logo/plan-drive-pro.svg';
 import drive from './logo/plan-drive.svg';
 import duo from './logo/plan-duo.svg';
 import family from './logo/plan-family.svg';
 import lumoBusiness from './logo/plan-lumo-business.svg';
 import lumoFree from './logo/plan-lumo-free.svg';
 import lumoPlus from './logo/plan-lumo-plus.svg';
+import mailBusiness from './logo/plan-mail-business.svg';
 import mailFree from './logo/plan-mail-free.svg';
+import mailPro from './logo/plan-mail-pro.svg';
 import mail from './logo/plan-mail.svg';
 import meetBusiness from './logo/plan-meet-business.svg';
 import meetFree from './logo/plan-meet-free.svg';
+import passBusiness from './logo/plan-pass-business.svg';
 import passFamily from './logo/plan-pass-family.svg';
 import passFree from './logo/plan-pass-free-light.svg';
 import passLifetime from './logo/plan-pass-lifetime.svg';
+import passPro from './logo/plan-pass-pro.svg';
 import pass from './logo/plan-pass.svg';
 import vpnBusiness from './logo/plan-vpn-business.svg';
 import vpnFree from './logo/plan-vpn-free.svg';
 import vpnPassBundleDark from './logo/plan-vpn-pass-bundle-dark.svg';
 import vpnPassBundle from './logo/plan-vpn-pass-bundle.svg';
+import vpnPro from './logo/plan-vpn-pro.svg';
 import vpn from './logo/plan-vpn.svg';
 import workspacePremium from './logo/plan-workspace-premium.svg';
 import workspace from './logo/plan-workspace.svg';
@@ -32,6 +39,8 @@ interface Props extends ComponentPropsWithoutRef<'img'> {
     planName?:
         | PLANS.VPN2024
         | PLANS.MAIL
+        | PLANS.MAIL_PRO
+        | PLANS.MAIL_BUSINESS
         | PLANS.PASS
         | PLANS.DRIVE
         | PLANS.BUNDLE
@@ -45,9 +54,14 @@ interface Props extends ComponentPropsWithoutRef<'img'> {
         | PLANS.VPN_PASS_BUNDLE
         | PLANS.PASS_FAMILY
         | PLANS.PASS_LIFETIME
+        | PLANS.PASS_PRO
+        | PLANS.PASS_BUSINESS
         | PLANS.VPN_PASS_BUNDLE_BUSINESS
         | PLANS.LUMO
-        | PLANS.LUMO_BUSINESS;
+        | PLANS.LUMO_BUSINESS
+        | PLANS.VPN_PRO
+        | PLANS.DRIVE_PRO
+        | PLANS.DRIVE_BUSINESS;
     size?: number;
     dark?: boolean;
 }
@@ -104,6 +118,28 @@ const CustomLogo = ({ planName, app, size, dark, ...rest }: Props) => {
     if (planName === PLANS.LUMO_BUSINESS) {
         return <img {...rest} src={lumoBusiness} width={size} alt="" />;
     }
+    if (planName === PLANS.VPN_PRO) {
+        return <img {...rest} src={vpnPro} width={size} alt="" />;
+    }
+    if (planName === PLANS.DRIVE_PRO) {
+        return <img {...rest} src={drivePro} width={size} alt="" />;
+    }
+    if (planName === PLANS.DRIVE_BUSINESS) {
+        return <img {...rest} src={driveBusiness} width={size} alt="" />;
+    }
+    if (planName === PLANS.MAIL_PRO) {
+        return <img {...rest} src={mailPro} width={size} alt="" />;
+    }
+    if (planName === PLANS.MAIL_BUSINESS) {
+        return <img {...rest} src={mailBusiness} width={size} alt="" />;
+    }
+    if (planName === PLANS.PASS_PRO) {
+        return <img {...rest} src={passPro} width={size} alt="" />;
+    }
+    if (planName === PLANS.PASS_BUSINESS) {
+        return <img {...rest} src={passBusiness} width={size} alt="" />;
+    }
+
     // Temporary fix to use Mail's logo for calendar until design creates one.
     if (app === APPS.PROTONMAIL || app === APPS.PROTONCALENDAR) {
         return <img {...rest} src={mailFree} width={size} alt="" />;
