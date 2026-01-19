@@ -24,6 +24,13 @@ interface Props {
     count: number;
 }
 
+const navClasses: Record<TabState, string> = {
+    [TabState.ACTIVE]: 'active color-norm border-bottom border-top text-semibold mail-category-border',
+    [TabState.DRAGGING_OVER]: 'hovered border mail-category-border',
+    [TabState.DRAGGING_NEIGHBOR]: 'neighbor border border-transparent',
+    [TabState.INACTIVE]: 'border border-transparent',
+};
+
 export const Tab = ({ category, count, tabState }: Props) => {
     const [mailSettings] = useMailSettings();
 
@@ -46,11 +53,7 @@ export const Tab = ({ category, count, tabState }: Props) => {
             to={to}
             className={clsx(
                 'tab-container h-full flex flex-nowrap items-center text-no-decoration color-hint hover:mail-category-color',
-                tabState === TabState.ACTIVE &&
-                    'active color-norm border-bottom border-top text-semibold mail-category-border',
-                tabState === TabState.DRAGGING_OVER && 'hovered border mail-category-border',
-                tabState === TabState.DRAGGING_NEIGHBOR && 'neighbor border border-transparent',
-                tabState === TabState.INACTIVE && 'border border-transparent'
+                navClasses[tabState]
             )}
             role="tab"
             aria-selected={tabState === TabState.ACTIVE}
