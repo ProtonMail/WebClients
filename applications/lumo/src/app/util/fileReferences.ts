@@ -40,7 +40,7 @@ export function parseFileReferences(content: string): FileReference[] {
     }
 
     const extensions = 'pdf|doc|docx|txt|md|csv|xls|xlsx|json|html|xml|rtf|ppt|pptx|png|jpg|jpeg|gif|webp|svg';
-    const directPattern = new RegExp(`@([^@]+?\\.(${extensions}))(?=\\s|$|[,.!?;:)])`, 'gi');
+    const directPattern = new RegExp(`@([^@/]+?\\.(${extensions}))(?=\\s|$|[,.!?;:)])`, 'gi');
 
     while ((match = directPattern.exec(content)) !== null) {
         const fileName = match[1].trim(); // Filename without @, trimmed

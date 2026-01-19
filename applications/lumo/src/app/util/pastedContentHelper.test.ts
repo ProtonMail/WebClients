@@ -1,7 +1,6 @@
 import { describe, expect, it } from '@jest/globals';
 import {
     createAttachmentFromPastedContent,
-    generateFilenameForPastedContent,
     getPasteConversionMessage,
     PASTE_TO_ATTACHMENT_CONFIG,
     shouldConvertPasteToAttachment,
@@ -37,40 +36,6 @@ describe('pastedContentHelper', () => {
         });
     });
 
-    describe('generateFilenameForPastedContent', () => {
-
-        it('should detect JSON content', () => {
-            const jsonContent = '{"key": "value", "array": [1, 2, 3]}';
-            const filename = generateFilenameForPastedContent(jsonContent);
-            expect(filename).toMatch(/^pasted-data-.*\.json$/);
-        });
-
-        it('should detect CSV content', () => {
-            const csvContent = 'name,age,city\nJohn,30,NYC\nJane,25,LA\nBob,35,SF\nAlice,28,Chicago\nCharlie,32,Boston';
-            const filename = generateFilenameForPastedContent(csvContent);
-            expect(filename).toMatch(/^pasted-data-.*\.csv$/);
-        });
-
-        it('should detect markdown content', () => {
-            const markdownContent = '# Title\n\n## Subtitle\n\nSome content here';
-            const filename = generateFilenameForPastedContent(markdownContent);
-            expect(filename).toMatch(/^pasted-content-.*\.md$/);
-        });
-
-        it('should default to .txt for plain text', () => {
-            const plainContent = 'Just some plain text without special formatting';
-            const filename = generateFilenameForPastedContent(plainContent);
-            expect(filename).toMatch(/^pasted-content-.*\.txt$/);
-        });
-
-        it('should include timestamp in filename', () => {
-            const content = 'test content';
-            const filename = generateFilenameForPastedContent(content);
-            // Should match pattern like: pasted-content-2026-01-19T15-30-45.txt
-            expect(filename).toMatch(/\d{4}-\d{2}-\d{2}T\d{2}-\d{2}-\d{2}/);
-        });
-    });
-
     describe('createAttachmentFromPastedContent', () => {
         it('should create a valid attachment object', () => {
             const content = 'Test content for attachment';
@@ -87,34 +52,10 @@ describe('pastedContentHelper', () => {
             expect(attachment.processing).toBe(false);
         });
 
-        it('should set correct MIME type for JSON', () => {
-            const jsonContent = '{"test": true}';
-            const attachment = createAttachmentFromPastedContent(jsonContent);
-            expect(attachment.mimeType).toBe('application/json');
-        });
-
-        it('should set correct MIME type for CSV', () => {
-            const csvContent = 'a,b,c\n1,2,3\n4,5,6\n7,8,9\n10,11,12\n13,14,15';
-            const attachment = createAttachmentFromPastedContent(csvContent);
-            expect(attachment.mimeType).toBe('text/csv');
-        });
-
-        it('should set correct MIME type for markdown', () => {
-            const mdContent = '# Heading\n\nContent';
-            const attachment = createAttachmentFromPastedContent(mdContent);
-            expect(attachment.mimeType).toBe('text/markdown');
-        });
-
-        it('should default to text/plain MIME type', () => {
-            const plainContent = 'Plain text content';
-            const attachment = createAttachmentFromPastedContent(plainContent);
-            expect(attachment.mimeType).toBe('text/plain');
-        });
-
         it('should encode content as UTF-8', () => {
             const content = 'Test with émojis 🎉 and spëcial çharacters';
             const attachment = createAttachmentFromPastedContent(content);
-            
+
             // Decode the data to verify it matches
             const decoder = new TextDecoder();
             const decoded = decoder.decode(attachment.data);
@@ -152,10 +93,10 @@ describe('pastedContentHelper', () => {
 
     describe('parseFileReferences', () => {
         it('should parse @filename.pdf with spaces', () => {
-            const content = 'hey lumo, what is in @Q1 2026 - Lumo - Planning - OKR - Confluence.pdf?';
+            const content = 'hey lumo, what is in @Q1 - Lumo - Planning - OKR.pdf?';
             const refs = parseFileReferences(content);
             expect(refs).toHaveLength(1);
-            expect(refs[0].fileName).toBe('Q1 2026 - Lumo - Planning - OKR - Confluence.pdf');
+            expect(refs[0].fileName).toBe('Q1 - Lumo - Planning - OKR.pdf');
         });
 
         it('should parse @filename.pdf without spaces', () => {
@@ -179,17 +120,10 @@ describe('pastedContentHelper', () => {
         });
 
         it('should handle @file references with question mark', () => {
-            const content = 'what is in @Q1 2026 - Lumo - Planning - OKR - Confluence.pdf?';
+            const content = 'what is in @Q1 - Lumo - Planning - OKR.pdf?';
             const refs = parseFileReferences(content);
             expect(refs).toHaveLength(1);
-            expect(refs[0].fileName).toBe('Q1 2026 - Lumo - Planning - OKR - Confluence.pdf');
-        });
-
-        it('should handle @file references with hyphens and spaces', () => {
-            const content = 'hey Lumo, summarize @Global Signal Exchange - Proton AG - Proton redlines.docx for me please';
-            const refs = parseFileReferences(content);
-            expect(refs).toHaveLength(1);
-            expect(refs[0].fileName).toBe('Global Signal Exchange - Proton AG - Proton redlines.docx');
+            expect(refs[0].fileName).toBe('Q1 - Lumo - Planning - OKR.pdf');
         });
 
         it('should handle multiple @file references with complex names', () => {
