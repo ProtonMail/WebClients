@@ -1046,7 +1046,7 @@ const Step1 = ({
 
                 {hasPlanSelector && (
                     <>
-                        <Box className="mt-8 w-full max-w-custom" style={boxWidth}>
+                        <Box className="mt-8" style={boxWidth}>
                             <BoxHeader
                                 step={step++}
                                 title={c('pass_signup_2023: Header').t`Select your plan`}
@@ -1100,7 +1100,7 @@ const Step1 = ({
                     </>
                 )}
                 {hasUserSelector && (
-                    <Box className="mt-12 w-full max-w-custom" style={boxWidth}>
+                    <Box className="mt-12" style={boxWidth}>
                         {(() => {
                             const user = model?.session?.resumedSessionResult.User;
                             const hasUserStepOptimistic = model.loadingDependencies && initialSessionsLength;
@@ -1506,7 +1506,7 @@ const Step1 = ({
                     </Box>
                 )}
                 {!hasSelectedFree && (
-                    <Box className="mt-12 w-full max-w-custom" style={boxWidth}>
+                    <Box className="mt-12" style={boxWidth}>
                         <BoxHeader
                             step={step++}
                             title={

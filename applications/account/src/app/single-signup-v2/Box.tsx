@@ -2,13 +2,11 @@ import type { ComponentPropsWithoutRef } from 'react';
 
 import clsx from '@proton/utils/clsx';
 
-import './Box.scss';
-
 interface Props extends ComponentPropsWithoutRef<'div'> {}
 
 const Box = ({ children, className, ...rest }: Props) => {
     return (
-        <div className={clsx('single-box relative', className)} {...rest}>
+        <div className={clsx('single-box relative w-full max-w-custom', className)} style={{ '--max-w-custom': '57rem' }} {...rest}>
             {children}
         </div>
     );
