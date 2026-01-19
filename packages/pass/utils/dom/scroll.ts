@@ -8,7 +8,7 @@ import { getParent } from '@proton/pass/utils/dom/tree';
  * element: if no stacking contexts were found, this means that any absolutely
  * positioned child would not properly follow the scroll */
 export const scrollableParent = (el: MaybeNull<HTMLElement>): HTMLElement => {
-    if (el === document.body || el === null) return document.body;
+    if (el === document.body || !el) return document.body;
 
     const styles = getComputedStyle(el);
     const scrollable = styles.overflowY === 'auto' || styles.overflowY === 'scroll';
