@@ -19,6 +19,15 @@ const useIframeDispatchEvents = (
         }
 
         if (isKeyboardEvent(event)) {
+            // prevent activating shortcuts in inputs, textareas and contenteditable elements
+            const target = event.target as { tagName?: string; isContentEditable?: boolean } | null;
+            if (target?.tagName) {
+                const tagName = target.tagName.toUpperCase();
+                if (tagName === 'INPUT' || tagName === 'TEXTAREA' || target.isContentEditable) {
+                    return false;
+                }
+            }
+
             // In order to prevent focus we need to not bubble tab key
             if (event.key.toLowerCase() === 'tab') {
                 return false;
