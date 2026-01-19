@@ -129,6 +129,8 @@ export const loadRemoteProxyFromURL = (state: Draft<MessagesState>, action: Payl
     const messageState = getMessage(state, ID);
 
     if (messageState) {
+        const loadedImages: MessageRemoteImage[] = [];
+
         imagesToLoad.forEach((imageToLoad) => {
             if (messageState.messageImages) {
                 const imageToLoadState = getStateImage({ image: imageToLoad }, messageState);
@@ -150,6 +152,7 @@ export const loadRemoteProxyFromURL = (state: Draft<MessagesState>, action: Payl
                         image.originalURL = image.url;
                         image.error = undefined;
                         image.url = loadingURL;
+                        loadedImages.push(image);
                     } else if (Array.isArray(messageState.messageImages.images)) {
                         // Image not found in the state, we need to add it
                         newImage = {
@@ -159,16 +162,10 @@ export const loadRemoteProxyFromURL = (state: Draft<MessagesState>, action: Payl
                             url: loadingURL,
                         };
                         messageState.messageImages.images.push(newImage);
+                        loadedImages.push(newImage);
                     }
 
                     messageState.messageImages.showRemoteImages = true;
-
-                    loadImages([image ? image : newImage], messageState.messageDocument?.document);
-
-                    loadBackgroundImages({
-                        document: messageState.messageDocument?.document,
-                        images: [image ? image : newImage],
-                    });
                 } else {
                     if (image) {
                         image.error = 'No URL';
@@ -182,6 +179,15 @@ export const loadRemoteProxyFromURL = (state: Draft<MessagesState>, action: Payl
                 }
             }
         });
+
+        // Some images have the same URLs, so we want to load them all at the same time, to speed up the process
+        if (loadedImages.length > 0) {
+            loadImages(loadedImages, messageState.messageDocument?.document);
+            loadBackgroundImages({
+                document: messageState.messageDocument?.document,
+                images: loadedImages,
+            });
+        }
     }
 };
 
@@ -255,6 +261,8 @@ export const loadRemoteDirectFromURL = (
     const messageState = getMessage(state, ID);
 
     if (messageState) {
+        const loadedImages: MessageRemoteImage[] = [];
+
         imagesToLoad.forEach((imageToLoad) => {
             if (messageState.messageImages) {
                 const imageToLoadState = getStateImage({ image: imageToLoad }, messageState);
@@ -273,6 +281,7 @@ export const loadRemoteDirectFromURL = (
                             image.url = imageToLoad.originalURL;
                             image.originalURL = imageToLoad.url;
                         }
+                        loadedImages.push(image);
                     } else if (Array.isArray(messageState.messageImages.images)) {
                         // Image not found in the state, we need to add it
                         newImage = {
@@ -282,16 +291,10 @@ export const loadRemoteDirectFromURL = (
                             url: inputImage.url,
                         };
                         messageState.messageImages.images.push(newImage);
+                        loadedImages.push(newImage);
                     }
 
                     messageState.messageImages.showRemoteImages = true;
-
-                    loadImages([image ? image : newImage], messageState.messageDocument?.document);
-
-                    loadBackgroundImages({
-                        document: messageState.messageDocument?.document,
-                        images: [image ? image : newImage],
-                    });
                 } else {
                     if (image) {
                         image.error = 'No URL';
@@ -305,6 +308,15 @@ export const loadRemoteDirectFromURL = (
                 }
             }
         });
+
+        // Batch DOM updates - call once with all loaded images instead of hundreds of times
+        if (loadedImages.length > 0) {
+            loadImages(loadedImages, messageState.messageDocument?.document);
+            loadBackgroundImages({
+                document: messageState.messageDocument?.document,
+                images: loadedImages,
+            });
+        }
     }
 };
 
