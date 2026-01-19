@@ -8,6 +8,8 @@ import {
     bringWindowToFront,
     getMainWindow,
     getWebContentsViewName,
+    loadURL,
+    showView,
     viewCreationAppStartup,
 } from "./utils/view/viewManagement";
 import { handleSquirrelEvents } from "./windows/squirrel";
@@ -19,6 +21,12 @@ import { initializeSentry } from "./utils/sentry";
 import { setRequestPermission, extendAppVersionHeader } from "./utils/session";
 import { captureTopLevelRejection, captureUncaughtErrors } from "./utils/log/captureUncaughtErrors";
 import { logInitialAppInfo } from "./utils/log/logInitialAppInfo";
+import {
+    checkDeepLinks,
+    handleDeepLink,
+    handleSecondInstanceDeepLink,
+    handleStartupDeepLink,
+} from "./utils/protocol/deep_links";
 
 (async function () {
     initializeLog();
@@ -30,6 +38,9 @@ import { logInitialAppInfo } from "./utils/log/logInitialAppInfo";
     // WARN: We need to wait for this promise because we do not want any code to be executed
     // during the uninstall process (or any other procees that implies application restart).
     await handleSquirrelEvents();
+
+    // Check for startup deep link URL
+    const startupUrl = handleStartupDeepLink();
 
     // Security addition
     app.enableSandbox();
@@ -86,6 +97,13 @@ import { logInitialAppInfo } from "./utils/log/logInitialAppInfo";
 
     app.on("second-instance", (_ev, argv) => {
         mainLogger.info("Second instance called", argv);
+
+        // Check for deep link in second instance
+        const deepLinkUrl = handleSecondInstanceDeepLink(argv);
+        if (deepLinkUrl) {
+            showView("meet", deepLinkUrl);
+        }
+
         // Bring window to focus
         bringWindowToFront();
     });
@@ -99,12 +117,21 @@ import { logInitialAppInfo } from "./utils/log/logInitialAppInfo";
     // After this point we should be able to use all electron APIs safely.
     await app.whenReady();
 
+    // Register protocol handler
+    checkDeepLinks();
+    handleDeepLink();
+
     connectNetLogger(getWebContentsViewName);
     initializeUpdateChecks();
     new Notification();
 
     // After this point the main window and views have been created
     viewCreationAppStartup();
+
+    // Navigate to startup URL if provided via protocol
+    if (startupUrl) {
+        loadURL("meet", startupUrl);
+    }
 
     const settings = getSettings();
 
@@ -126,7 +153,9 @@ import { logInitialAppInfo } from "./utils/log/logInitialAppInfo";
         }
     });
 
-    app.on("open-url", (_e: Event) => {
+    app.on("open-url", (_e: Event, url: string) => {
+        mainLogger.info("Open URL event", url);
+        // Deep link handling is set up in handleDeepLink()
         // Bring window to focus
         bringWindowToFront();
     });
