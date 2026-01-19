@@ -43,6 +43,12 @@ const config: ForgeConfig = {
         },
         extendInfo: {
             ...getAppTransportSecuity(),
+            CFBundleURLTypes: [
+                {
+                    CFBundleURLName: "Proton Meet Protocol",
+                    CFBundleURLSchemes: ["proton-meet"],
+                },
+            ],
         },
     },
     rebuildConfig: {},

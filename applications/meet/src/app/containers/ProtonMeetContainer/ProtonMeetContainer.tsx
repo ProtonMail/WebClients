@@ -39,6 +39,7 @@ import { useAssignHost } from '../../hooks/useAssignHost';
 import { useConnectionHealthCheck } from '../../hooks/useConnectionHealthCheck';
 import { defaultDisplayNameHooks } from '../../hooks/useDefaultDisplayName';
 import { useDependencySetup } from '../../hooks/useDependencySetup';
+import { useDesktopAppDetection } from '../../hooks/useDesktopAppDetection';
 import { useIsLargerThanMd } from '../../hooks/useIsLargerThanMd';
 import { useIsNarrowHeight } from '../../hooks/useIsNarrowHeight';
 import { useIsRecordingInProgress } from '../../hooks/useMeetingRecorder/useIsRecordingInProgress';
@@ -790,6 +791,12 @@ export const ProtonMeetContainer = ({
     useEffect(() => {
         void setup();
     }, []);
+
+    useDesktopAppDetection({
+        token,
+        isInstantMeeting: instantMeetingRef.current,
+        isInstantJoin,
+    });
 
     const prepareUpsell = () => {
         if (!showUpsellModalAfterMeeting || !meetUpsellEnabled) {
