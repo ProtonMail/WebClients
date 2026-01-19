@@ -31,15 +31,6 @@ const getProtonSignature = (
     const enabled = hasBit(mailSettings?.PMSignature, PM_SIGNATURE.ENABLED);
     const locked = hasBit(mailSettings?.PMSignature, PM_SIGNATURE.LOCKED);
 
-    // Free users always see the signature
-    if (user.isFree) {
-        return getProtonMailSignature(
-            !!mailSettings.PMSignatureReferralLink,
-            userSettings.Referral?.Link,
-            mailSettings.PMSignatureContent
-        );
-    }
-
     // Users who can toggle the signature and have enabled it should see it
     if (enabled && !locked) {
         return getProtonMailSignature(
