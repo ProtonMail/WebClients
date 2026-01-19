@@ -35,27 +35,6 @@ export function shouldConvertPasteToAttachment(content: string): boolean {
  */
 export function generateFilenameForPastedContent(content: string): string {
     const timestamp = new Date().toISOString().replace(/[:.]/g, '-').slice(0, 19);
-    
-    // Try to detect content type from first few lines
-    const firstLines = content.split('\n').slice(0, 5).join('\n').toLowerCase();
-    
-    if (content.trim().startsWith('{') || content.trim().startsWith('[')) {
-        try {
-            JSON.parse(content.trim());
-            return `pasted-data-${timestamp}.json`;
-        } catch {
-            // Not valid JSON, continue
-        }
-    }
-    
-    if (firstLines.includes(',') && content.split('\n').filter(line => line.includes(',')).length > 5) {
-        return `pasted-data-${timestamp}.csv`;
-    }
-    
-    if (firstLines.includes('#') || firstLines.includes('##') || firstLines.includes('```')) {
-        return `pasted-content-${timestamp}.md`;
-    }
-    
     return `pasted-content-${timestamp}.txt`;
 }
 
@@ -67,14 +46,7 @@ export function createAttachmentFromPastedContent(content: string): Attachment {
     const encoder = new TextEncoder();
     const data = encoder.encode(content);
     
-    let mimeType = 'text/plain';
-    if (filename.endsWith('.json')) {
-        mimeType = 'application/json';
-    } else if (filename.endsWith('.csv')) {
-        mimeType = 'text/csv';
-    } else if (filename.endsWith('.md')) {
-        mimeType = 'text/markdown';
-    }
+    const mimeType = 'text/plain';
     
     const filenameHeader = `Filename: ${filename}`;
     const header = 'File contents:';
@@ -94,16 +66,6 @@ export function createAttachmentFromPastedContent(content: string): Attachment {
         markdown: content,
         tokenCount,
     };
-    
-    console.log('[PastedContent] Created attachment:', {
-        id: attachment.id,
-        filename: attachment.filename,
-        hasMarkdown: !!attachment.markdown,
-        markdownLength: attachment.markdown?.length,
-        hasData: !!attachment.data,
-        dataLength: attachment.data?.length,
-        mimeType: attachment.mimeType,
-    });
     
     return attachment;
 }

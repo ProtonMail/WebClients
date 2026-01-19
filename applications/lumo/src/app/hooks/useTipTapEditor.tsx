@@ -105,30 +105,21 @@ const useTipTapEditor = ({
                     }
                 },
                 paste: (view, event) => {
-                    // Only handle if we have the callback
                     if (!onPasteLargeContent) {
                         return false;
                     }
 
-                    // Get pasted content as plain text
                     const pastedText = event.clipboardData?.getData('text/plain');
                     
                     if (!pastedText) {
                         return false;
                     }
 
-                    // Check if content should be converted to attachment
                     if (shouldConvertPasteToAttachment(pastedText)) {
-                        // Prevent default paste behavior
                         event.preventDefault();
-                        
-                        // Notify parent component to handle the large paste
                         onPasteLargeContent(pastedText);
-                        
-                        return true; // Handled
+                        return true;
                     }
-
-                    // Let default paste behavior happen for small content
                     return false;
                 },
             },
