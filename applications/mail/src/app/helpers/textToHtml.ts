@@ -140,7 +140,6 @@ const attachSignature = (
     return input.replace(SIGNATURE_PLACEHOLDER, signatureTemplate);
 };
 
-// TODO CHECK
 export const textToHtml = (
     input = '',
     signature: string,
