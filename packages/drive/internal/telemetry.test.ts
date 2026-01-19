@@ -568,6 +568,7 @@ describe('MetricHandler', () => {
                     field: 'nodeKey',
                     fromBefore2024: false,
                     error: 'Invalid key',
+                    uid: 'uid',
                 },
             });
         });
