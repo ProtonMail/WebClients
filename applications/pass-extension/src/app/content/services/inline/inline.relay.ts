@@ -53,7 +53,7 @@ export const createInlineRelay = ({
             /** Sub-frame scroll handling: close dropdown immediately instead of
              * expensive cross-frame repositioning. Top-frame UI elements cannot
              * be efficiently repositioned via messaging. */
-            const parent = form.scrollParent;
+            const parent = form.scrollParent();
 
             dropdown.listeners.addListener(window, 'scroll', onActualScroll(window, close), SCROLL_OPTIONS);
             dropdown.listeners.addListener(window, 'blur', onFocusChange);
