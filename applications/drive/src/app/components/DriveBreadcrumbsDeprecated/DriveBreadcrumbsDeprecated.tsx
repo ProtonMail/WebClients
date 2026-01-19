@@ -24,7 +24,7 @@ interface Props {
     activeFolder: DriveFolder;
 }
 
-const DriveBreadcrumbs = ({ activeFolder }: Props) => {
+const DriveBreadcrumbsDeprecated = ({ activeFolder }: Props) => {
     const { navigateToLink, navigateToDevices } = useDriveNavigation();
     const { createNotification } = useNotifications();
     const { getHandleItemDrop } = useDriveDragMoveTarget(activeFolder.shareId);
@@ -181,4 +181,4 @@ const DriveBreadcrumbs = ({ activeFolder }: Props) => {
     );
 };
 
-export default DriveBreadcrumbs;
+export default DriveBreadcrumbsDeprecated;

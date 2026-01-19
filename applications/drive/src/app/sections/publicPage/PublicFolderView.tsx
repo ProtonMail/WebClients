@@ -1,8 +1,9 @@
-import { useCallback, useEffect, useRef } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 
 import { useShallow } from 'zustand/react/shallow';
 
 import { useActiveBreakpoint, useAuthentication } from '@proton/components';
+import type { ProtonDrivePublicLinkClient } from '@proton/drive';
 import { MemberRole, NodeType } from '@proton/drive';
 import { uploadManager } from '@proton/drive/modules/upload';
 import type { SORT_DIRECTION } from '@proton/shared/lib/constants';
@@ -18,6 +19,9 @@ import { useDrivePublicPreviewModal } from '../../modals/preview';
 import { useContextMenuStore } from '../../modules/contextMenu';
 import { useSelectionStore } from '../../modules/selection';
 import type { SortConfig, SortField } from '../../modules/sorting';
+import { Breadcrumbs } from '../../statelessComponents/Breadcrumbs/Breadcrumbs';
+import type { CrumbDefinition } from '../../statelessComponents/Breadcrumbs/types';
+import { BreadcrumbRenderingMode } from '../../statelessComponents/Breadcrumbs/types';
 import { DriveExplorer } from '../../statelessComponents/DriveExplorer/DriveExplorer';
 import type {
     DriveExplorerConditions,
@@ -27,6 +31,9 @@ import type {
 } from '../../statelessComponents/DriveExplorer/types';
 import { UploadDragDrop } from '../../statelessComponents/UploadDragDrop/UploadDragDrop';
 import { useDriveDocsFeatureFlag, useIsSheetsEnabled } from '../../store/_documents';
+import { useSdkErrorHandler } from '../../utils/errorHandling/useSdkErrorHandler';
+import { getNodeAncestry } from '../../utils/sdk/getNodeAncestry';
+import { getNodeEntity } from '../../utils/sdk/getNodeEntity';
 import { getPublicFolderCells } from './PublicFolderDriveExplorerCells';
 import { PublicFolderItemContextMenu } from './PublicFolderItemContextMenu';
 import { PublicFolderPageEmptyView } from './PublicFolderPageEmptyView';
@@ -41,12 +48,48 @@ export interface PublicFolderViewProps {
     folderName: string;
 }
 
+const usePublicBreadcrumb = (driveClient: ProtonDrivePublicLinkClient) => {
+    const [loading, setLoading] = useState(true);
+    const [data, setData] = useState<CrumbDefinition[]>([]);
+    const { handleError } = useSdkErrorHandler();
+
+    const load = async (nodeUid: string) => {
+        setLoading(true);
+        const result = await getNodeAncestry(nodeUid, driveClient);
+        if (result.ok) {
+            const data = result.value.map((maybeNode) => {
+                const nodeEntity = getNodeEntity(maybeNode).node;
+                return {
+                    uid: nodeEntity.uid,
+                    name: nodeEntity.name,
+                    // Do not render signature issues for breadcrumb items on public page.
+                    haveSignatureIssues: false,
+                };
+            });
+            setData(data);
+        } else {
+            handleError(result.error);
+            setData([]);
+        }
+        setLoading(false);
+    };
+
+    return {
+        loading,
+        data,
+        load,
+    };
+};
+
 export const PublicFolderView = ({ nodeUid, folderName }: PublicFolderViewProps) => {
+    const publicDriveClient = getPublicLinkClient();
     const { loadPublicFolderChildren } = usePublicFolderLoader();
+    const { loading: breadcrumbLoading, data: crumbs, load: loadBreadcrumbs } = usePublicBreadcrumb(publicDriveClient);
+
     const [previewModal, showPreviewModal] = useDrivePublicPreviewModal();
     const contextMenuControls = useContextMenuStore();
     const contextMenuAnchorRef = useRef<HTMLDivElement>(null);
-    const publicDriveClient = getPublicLinkClient();
+
     const { loadThumbnail } = useBatchThumbnailLoader({ drive: publicDriveClient });
     const { isDocsEnabled } = useDriveDocsFeatureFlag();
     const isSheetsEnabled = useIsSheetsEnabled();
@@ -103,6 +146,13 @@ export const PublicFolderView = ({ nodeUid, folderName }: PublicFolderViewProps)
 
     const isEmpty = hasEverLoaded && !isLoading && itemUids.size === 0;
 
+    const loadView = (nodeUid: string) => {
+        const abortController = new AbortController();
+        void loadPublicFolderChildren(nodeUid, abortController.signal);
+        void loadBreadcrumbs(nodeUid);
+        return abortController;
+    };
+
     const handleOpenItem = (uid: string) => {
         const item = usePublicFolderStore.getState().getFolderItem(uid);
 
@@ -155,7 +205,8 @@ export const PublicFolderView = ({ nodeUid, folderName }: PublicFolderViewProps)
 
             return;
         }
-        void loadPublicFolderChildren(item.uid, new AbortController().signal);
+
+        loadView(item.uid);
     };
 
     const handleRenderItem = useCallback(
@@ -176,10 +227,7 @@ export const PublicFolderView = ({ nodeUid, folderName }: PublicFolderViewProps)
     );
 
     useEffect(() => {
-        const abortController = new AbortController();
-
-        void loadPublicFolderChildren(nodeUid, abortController.signal);
-
+        const abortController = loadView(nodeUid);
         return () => {
             abortController.abort();
         };
@@ -238,7 +286,6 @@ export const PublicFolderView = ({ nodeUid, folderName }: PublicFolderViewProps)
         isDraggable: () => false,
         isDoubleClickable: () => true,
     };
-
     const handleDrop = (dataTransfer: DataTransfer) => {
         void uploadManager.upload(dataTransfer, nodeUid);
     };
@@ -255,23 +302,35 @@ export const PublicFolderView = ({ nodeUid, folderName }: PublicFolderViewProps)
             {isEmpty ? (
                 <PublicFolderPageEmptyView nodeUid={nodeUid} token={token} />
             ) : (
-                <DriveExplorer
-                    itemIds={Array.from(itemUids.values())}
-                    layout={LayoutSetting.List}
-                    cells={cells}
-                    selection={selection}
-                    events={events}
-                    conditions={conditions}
-                    sort={sort}
-                    loading={isLoading}
-                    caption={folderName}
-                    config={{ itemHeight: 52 }}
-                    contextMenuControls={{
-                        isOpen: contextMenuControls.isOpen,
-                        showContextMenu: contextMenuControls.handleContextMenu,
-                        close: contextMenuControls.close,
-                    }}
-                />
+                <>
+                    <Breadcrumbs
+                        renderingMode={BreadcrumbRenderingMode.Prominent}
+                        loading={breadcrumbLoading}
+                        crumbs={crumbs}
+                        events={{
+                            onBreadcrumbItemClick: (nodeUid: string) => {
+                                loadView(nodeUid);
+                            },
+                        }}
+                    />
+                    <DriveExplorer
+                        itemIds={Array.from(itemUids.values())}
+                        layout={LayoutSetting.List}
+                        cells={cells}
+                        selection={selection}
+                        events={events}
+                        conditions={conditions}
+                        sort={sort}
+                        loading={isLoading}
+                        caption={folderName}
+                        config={{ itemHeight: 52 }}
+                        contextMenuControls={{
+                            isOpen: contextMenuControls.isOpen,
+                            showContextMenu: contextMenuControls.handleContextMenu,
+                            close: contextMenuControls.close,
+                        }}
+                    />
+                </>
             )}
             {previewModal}
         </UploadDragDrop>
