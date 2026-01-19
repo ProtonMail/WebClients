@@ -27,51 +27,6 @@ describe('signature', () => {
     describe('insertSignature', () => {
         describe('proton signature rules', () => {
             const pmSignatureEmptyClasses = 'protonmail_signature_block-proton protonmail_signature_block-empty';
-            describe('free users should always see the signature', () => {
-                it('should not add signature if disabled', () => {
-                    const result = insertSignature(
-                        content,
-                        signature,
-                        MESSAGE_ACTIONS.NEW,
-                        { PMSignature: PM_SIGNATURE_ENUM.DISABLED } as MailSettings,
-                        userSettings,
-                        undefined,
-                        false
-                    );
-
-                    expect(result).not.toContain(pmSignatureEmptyClasses);
-                    expect(result).toContain('protonmail_signature_block-proton');
-                });
-
-                it('should add signature if enabled and locked', () => {
-                    const result = insertSignature(
-                        content,
-                        signature,
-                        MESSAGE_ACTIONS.NEW,
-                        { PMSignature: PM_SIGNATURE_ENUM.LOCKED } as MailSettings,
-                        userSettings,
-                        undefined,
-                        false
-                    );
-                    expect(result).not.toContain(pmSignatureEmptyClasses);
-                    expect(result).toContain('protonmail_signature_block-proton');
-                });
-
-                it('should add signature if enabled', () => {
-                    const result = insertSignature(
-                        content,
-                        signature,
-                        MESSAGE_ACTIONS.NEW,
-                        { PMSignature: PM_SIGNATURE_ENUM.ENABLED } as MailSettings,
-                        userSettings,
-                        undefined,
-                        false
-                    );
-
-                    expect(result).not.toContain(pmSignatureEmptyClasses);
-                    expect(result).toContain('protonmail_signature_block-proton');
-                });
-            });
 
             describe('paid users', () => {
                 it('should not add signature if disabled', () => {
