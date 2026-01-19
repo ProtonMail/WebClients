@@ -34,7 +34,6 @@ export const getInboxCategoriesItems = ({
                   ID: category.id,
                   Name: getLabelFromCategoryId(category.id),
                   icon: category.icon,
-                  level: category.id === MAILBOX_LABEL_IDS.CATEGORY_DEFAULT ? 0 : 1,
                   folderIconProps: {
                       className: categoryColorClassName,
                       color: category.colorShade,
