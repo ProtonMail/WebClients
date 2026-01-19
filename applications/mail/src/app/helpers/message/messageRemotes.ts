@@ -25,6 +25,15 @@ export const loadBackgroundImages = ({ images, document }: LoadBackgroundImagesP
     if (!document || !images) {
         return;
     }
+
+    // Some images have the same URL, so we want to group them to speed up the replace operations
+    const urlByOriginalURL = new Map<string, string>();
+    images.forEach((img) => {
+        if (img.originalURL && img.url && !urlByOriginalURL.has(img.originalURL)) {
+            urlByOriginalURL.set(img.originalURL, img.url);
+        }
+    });
+
     const elementWithStyleTag = document?.querySelectorAll('[style]');
 
     elementWithStyleTag?.forEach((element) => {
@@ -34,15 +43,17 @@ export const loadBackgroundImages = ({ images, document }: LoadBackgroundImagesP
             const rawUrlMatch = styleAttribute.match(/proton-url\((.*?)\)/)?.[1];
             const cleanUrlMatch = rawUrlMatch?.replace(/('|")/g, '');
 
-            // Find the corresponding image to get its url (same url if loading without proxy, or blob if loading through proxy)
-            const preLoadedImage = images.find((img) => cleanUrlMatch === img.originalURL);
+            if (cleanUrlMatch) {
+                // Find the corresponding image to get its url (same url if loading without proxy, or blob if loading through proxy)
+                const loadedUrl = urlByOriginalURL.get(cleanUrlMatch);
 
-            // Set attribute with the right URL (normal or blob depending on the setting)
-            if (preLoadedImage && preLoadedImage.url && rawUrlMatch) {
-                element.setAttribute(
-                    'style',
-                    styleAttribute.replace(rawUrlMatch, preLoadedImage.url).replace('proton-url', 'url')
-                );
+                // Set attribute with the right URL (normal or blob depending on the setting)
+                if (loadedUrl && rawUrlMatch) {
+                    element.setAttribute(
+                        'style',
+                        styleAttribute.replace(rawUrlMatch, loadedUrl).replace('proton-url', 'url')
+                    );
+                }
             }
         }
     });
@@ -60,6 +71,14 @@ export const loadImages = (images: MessageRemoteImage[], messageDocument?: Eleme
     // Get all elements in the mail which have a proton attribute
     const foundElements = messageDocument ? messageDocument.querySelectorAll(selector) : [];
 
+    // Some images have the same URL, so we want to group them to speed up the replace operations
+    const urlByOriginalURL = new Map<string, string>();
+    images.forEach((img) => {
+        if (img.originalURL && img.url && !urlByOriginalURL.has(img.originalURL)) {
+            urlByOriginalURL.set(img.originalURL, img.url);
+        }
+    });
+
     foundElements.forEach((element) => {
         MESSAGE_IMAGE_ATTRIBUTES_TO_LOAD.forEach((attr) => {
             const protonAttr = `proton-${attr}`;
@@ -68,12 +87,11 @@ export const loadImages = (images: MessageRemoteImage[], messageDocument?: Eleme
 
                 // Find the corresponding image to get its url (same url if loading without proxy, or blob if loading through proxy)
                 // Check its originalUrl because url field can be a blob at this point
-                images.forEach((el) => {
-                    if (elementValue === el.originalURL && el.url) {
-                        // Set attribute with the right URL (normal or blob depending on the setting)
-                        element.setAttribute(attr, el.url);
-                    }
-                });
+                const loadedUrl = urlByOriginalURL.get(elementValue);
+                if (loadedUrl) {
+                    // Set attribute with the right URL (normal or blob depending on the setting)
+                    element.setAttribute(attr, loadedUrl);
+                }
             }
         });
     });

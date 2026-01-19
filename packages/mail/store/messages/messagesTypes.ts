@@ -106,6 +106,7 @@ export interface MessageVerification {
 
 export interface AbstractMessageImage {
     type: 'remote' | 'embedded';
+    // We use this field to apply the image styles on load (see MessageBodyImage.tsx)
     original?: HTMLElement;
     url?: string;
     id: string;
