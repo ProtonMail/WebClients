@@ -43,7 +43,6 @@ im.$media-expressions: $media-expressions;
 
 	&-name {
 		transition: all 0.3s ease;
-		color: var(--name-color);
 		background-color: var(--name-background);
 		transform: scale(1);
 	}
