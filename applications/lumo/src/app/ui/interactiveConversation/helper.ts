@@ -42,7 +42,8 @@ import {
 import type { GenerationToFrontendMessage } from '../../types-api';
 import { calculateSingleAttachmentContextSize } from '../../llm/utils';
 
-const SMALL_FILE_SET_TOKEN_THRESHOLD = 45000; // ~45k tokens threshold to include all uploaded files in the first message
+const SMALL_FILE_SET_TOKEN_THRESHOLD = 30000; // ~45k tokens threshold to include all uploaded files in the first message
+const MAX_SINGLE_FILE_TOKENS = 15000; // Max tokens for a single file when including all files (prevents one large file from dominating context)
 
 function getContextFilesForMessage(
     messageChain: Message[],
@@ -95,10 +96,12 @@ function getUploadedProjectFiles(
     spaceId: string,
     allAttachments: Record<string, Attachment>,
     alreadyRetrievedDocIds: Set<string>,
-    referencedFileNames: Set<string>
-): { files: Attachment[], totalTokens: number } {
+    referencedFileNames: Set<string>,
+    maxSingleFileTokens?: number
+): { files: Attachment[], totalTokens: number, hasOversizedFile: boolean } {
     const uploadedFiles: Attachment[] = [];
     let totalTokens = 0;
+    let hasOversizedFile = false;
 
     for (const attachment of Object.values(allAttachments)) {
         // Only include files that:
@@ -114,12 +117,21 @@ function getUploadedProjectFiles(
             !referencedFileNames.has(attachment.filename.toLowerCase()) &&
             attachment.markdown
         ) {
+            const fileTokens = calculateSingleAttachmentContextSize(attachment);
+            
+            // Check if this file exceeds the per-file limit
+            if (maxSingleFileTokens && fileTokens > maxSingleFileTokens) {
+                console.log(`[RAG] File ${attachment.filename} exceeds per-file limit: ${fileTokens} > ${maxSingleFileTokens} tokens`);
+                hasOversizedFile = true;
+                continue; // Skip this file
+            }
+            
             uploadedFiles.push(attachment);
-            totalTokens += calculateSingleAttachmentContextSize(attachment);
+            totalTokens += fileTokens;
         }
     }
 
-    return { files: uploadedFiles, totalTokens };
+    return { files: uploadedFiles, totalTokens, hasOversizedFile };
 }
 
 /**
@@ -185,17 +197,19 @@ async function retrieveDocumentContextForProject(
     const isFirstMessage = userMessageCount === 1;
 
     if (isFirstMessage) {
-        const { files: uploadedFiles, totalTokens } = getUploadedProjectFiles(
+        const { files: uploadedFiles, totalTokens, hasOversizedFile } = getUploadedProjectFiles(
             spaceId,
             allAttachments,
             alreadyRetrievedDocIds,
-            referencedFileNames
+            referencedFileNames,
+            MAX_SINGLE_FILE_TOKENS
         );
 
-        console.log(`[RAG] First message - found ${uploadedFiles.length} uploaded files with ${totalTokens} total tokens`);
+        console.log(`[RAG] First message - found ${uploadedFiles.length} uploaded files with ${totalTokens} total tokens${hasOversizedFile ? ' (some files excluded due to size)' : ''}`);
 
-        // If total tokens are under threshold, include all uploaded files directly
-        if (uploadedFiles.length > 0 && totalTokens <= SMALL_FILE_SET_TOKEN_THRESHOLD) {
+        // If total tokens are under threshold AND no files were excluded due to size, include all uploaded files directly
+        // If we had to exclude oversized files, fall back to search-based retrieval to ensure fair selection
+        if (uploadedFiles.length > 0 && totalTokens <= SMALL_FILE_SET_TOKEN_THRESHOLD && !hasOversizedFile) {
             console.log(`[RAG] Including all ${uploadedFiles.length} uploaded files (${totalTokens} tokens < ${SMALL_FILE_SET_TOKEN_THRESHOLD} threshold)`);
             
             // Mark files as auto-retrieved for consistent handling
@@ -219,15 +233,22 @@ async function retrieveDocumentContextForProject(
                 context: searchService.formatRAGContext(formattedDocs),
                 attachments,
             };
-        } else if (uploadedFiles.length > 0) {
-            console.log(`[RAG] Uploaded files exceed threshold (${totalTokens} > ${SMALL_FILE_SET_TOKEN_THRESHOLD}), falling back to search-based retrieval`);
+        } else if (uploadedFiles.length > 0 || hasOversizedFile) {
+            const reason = hasOversizedFile 
+                ? 'some files exceed per-file limit'
+                : `total tokens (${totalTokens}) > ${SMALL_FILE_SET_TOKEN_THRESHOLD}`;
+            console.log(`[RAG] Falling back to search-based retrieval: ${reason}`);
         }
     }
 
     try {
         const searchService = SearchService.get(userId);
+        console.log(`[RAG] Calling retrieveForRAG with query="${query.slice(0, 100)}", spaceId=${spaceId}`);
+        
         // Get candidates for intelligent filtering (use higher limit to allow more relevant docs through)
         const candidateDocs = await searchService.retrieveForRAG(query, spaceId, 50, 0);
+        
+        console.log(`[RAG] retrieveForRAG returned ${candidateDocs.length} candidates:`, candidateDocs.map(d => ({ name: d.name, score: d.score })));
 
         // Filter out zero-score documents, already-retrieved documents, and @mentioned files
         const nonZeroDocs = candidateDocs.filter(doc => {
@@ -491,8 +512,6 @@ export function sendMessage({
             }
         });
 
-        // Combine explicitly uploaded attachments with referenced attachments
-        // Remove duplicates (in case a file was both uploaded and @mentioned)
         const allAttachmentsForMessage = [...attachments];
         referencedAttachments.forEach(refAtt => {
             if (!allAttachmentsForMessage.some(a => a.id === refAtt.id)) {
@@ -511,11 +530,7 @@ export function sendMessage({
             referencedFileNames.has(att.filename.toLowerCase())
         );
 
-        // Use the original message content for display (keep @file references visible)
-        // The file content will be added to context via flattenAttachmentsForLlm
         const processedContent: string = newMessageContent;
-
-        // Use all attachments (uploaded + referenced) for the message
         const messageAttachments = allAttachmentsForMessage;
 
         const { userMessage, assistantMessage } = createMessagePair(
@@ -959,6 +974,13 @@ function stripDataFromAttachments(attachments: Attachment[]): ShallowAttachment[
 function assignProvisionalAttachmentsToSpace(attachments: Attachment[], spaceId: SpaceId) {
     return (dispatch: AppDispatch) => {
         attachments.forEach((a) => {
+            console.log('[AssignToSpace] Assigning attachment to space:', {
+                id: a.id,
+                filename: a.filename,
+                spaceId,
+                hasMarkdown: !!a.markdown,
+                markdownLength: a.markdown?.length,
+            });
             dispatch(upsertAttachment({ ...a, spaceId }));
             // Now that the attachment has a spaceId, push it to the server
             dispatch(pushAttachmentRequest({ id: a.id }));

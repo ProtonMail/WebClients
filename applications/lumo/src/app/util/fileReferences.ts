@@ -39,25 +39,26 @@ export function parseFileReferences(content: string): FileReference[] {
         });
     }
 
-    const directPattern = /@([^\s@"]+\.(?:pdf|doc|docx|txt|md|csv|xls|xlsx|json|html|xml|rtf|ppt|pptx|png|jpg|jpeg|gif|webp|svg))/gi;
+    const extensions = 'pdf|doc|docx|txt|md|csv|xls|xlsx|json|html|xml|rtf|ppt|pptx|png|jpg|jpeg|gif|webp|svg';
+    const directPattern = new RegExp(`@([^@]+?\\.(${extensions}))(?=\\s|$|[,.!?;:)])`, 'gi');
 
     while ((match = directPattern.exec(content)) !== null) {
-        const fileName = match[1]; // Filename without @
-        const matchText = match[0];
+        const fileName = match[1].trim(); // Filename without @, trimmed
+        const matchText = match[0].trim(); // The full match including @
         const matchIndex = match.index;
         const overlaps = references.some(
             (ref) => matchIndex >= ref.startIndex && matchIndex < ref.endIndex
         );
+
         if (!overlaps) {
             references.push({
                 match: matchText,
-                fileName: fileName.trim(),
+                fileName: fileName,
                 startIndex: matchIndex,
                 endIndex: matchIndex + matchText.length,
             });
         }
     }
-
     return references;
 }
 

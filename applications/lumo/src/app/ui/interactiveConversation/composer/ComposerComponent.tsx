@@ -5,6 +5,7 @@ import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
+import useNotifications from '@proton/components/hooks/useNotifications';
 
 import type { HandleSendMessage } from '../../../hooks/useLumoActions';
 import { useDriveSDK } from '../../../hooks/useDriveSDK';
@@ -14,11 +15,13 @@ import { useDragArea } from '../../../providers/DragAreaProvider';
 import { useGhostChat } from '../../../providers/GhostChatProvider';
 import { useIsGuest } from '../../../providers/IsGuestProvider';
 import { useWebSearch } from '../../../providers/WebSearchProvider';
-import { useLumoSelector } from '../../../redux/hooks';
+import { useLumoDispatch, useLumoSelector } from '../../../redux/hooks';
 import { selectProvisionalAttachments, selectSpaceByIdOptional } from '../../../redux/selectors';
+import { upsertAttachment } from '../../../redux/slices/core/attachments';
 import type { ProjectSpace } from '../../../types';
 import type { Attachment, Message } from '../../../types';
 import { sendVoiceEntryClickEvent } from '../../../util/telemetry';
+import { createAttachmentFromPastedContent, getPasteConversionMessage } from '../../../util/pastedContentHelper';
 import { AttachmentArea, FileContentModal } from '../../components/Files';
 import GuestDisclaimer from '../../components/GuestDisclaimer';
 import { ComposerAttachmentArea } from './ComposerAttachmentArea';
@@ -106,6 +109,8 @@ const ComposerComponentInner = ({
     const [fileToView, setFileToView] = useState<Attachment | null>(null);
     const [showUploadMenu, setShowUploadMenu] = useState(false);
     const { isGhostChatMode } = useGhostChat();
+    const dispatch = useLumoDispatch();
+    const { createNotification } = useNotifications();
 
     // Get space to check for linked Drive folder (hides "Add from Drive" option when folder is linked)
     const space = useLumoSelector(selectSpaceByIdOptional(spaceId));
@@ -178,6 +183,27 @@ const ComposerComponentInner = ({
         setIsEditorFocused?.(false);
     }, [setIsEditorFocused]);
     
+    const handlePasteLargeContent = useCallback((pastedContent: string) => {
+        // Create attachment from pasted content
+        const attachment = createAttachmentFromPastedContent(pastedContent);
+        
+        // Add to Redux as provisional attachment
+        dispatch(upsertAttachment(attachment));
+        
+        // Show notification to user
+        const lineCount = pastedContent.split('\n').length;
+        const charCount = pastedContent.length;
+        const message = getPasteConversionMessage(lineCount, charCount);
+        
+        createNotification({
+            text: message,
+            type: 'info',
+        });
+        
+        // Don't insert anything in the editor - let the user type their own message
+        // The attachment will be included automatically as a provisional attachment
+    }, [dispatch, createNotification]);
+    
     const { editor, handleSubmit } = useTipTapEditor({
         onSubmitCallback: sendGenerateMessage,
         hasTierErrors,
@@ -186,6 +212,7 @@ const ComposerComponentInner = ({
         isAutocompleteActiveRef: isAutocompleteActiveRef,
         onFocus: handleFocus,
         onBlur: handleBlur,
+        onPasteLargeContent: handlePasteLargeContent,
     });
     const isEditorEmpty = editor?.isEmpty;
     const sendIsDisabled = !(isGenerating ?? false) && (isEditorEmpty || isProcessingAttachment);
