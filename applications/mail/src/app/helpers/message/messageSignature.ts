@@ -4,7 +4,7 @@ import { containsHTMLTag, replaceLineBreaks } from '@proton/mail/helpers/string'
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { parseStringToDOM } from '@proton/shared/lib/helpers/dom';
-import type { MailSettings, UserModel, UserSettings } from '@proton/shared/lib/interfaces';
+import type { MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
 import { PM_SIGNATURE } from '@proton/shared/lib/mail/mailSettings';
 import { isPlainText } from '@proton/shared/lib/mail/messages';
 import { getProtonMailSignature } from '@proton/shared/lib/mail/signature';
@@ -23,25 +23,13 @@ export const CLASSNAME_SIGNATURE_EMPTY = 'protonmail_signature_block-empty';
 /**
  * Preformat the protonMail signature
  */
-const getProtonSignature = (
-    mailSettings: Partial<MailSettings> = {},
-    userSettings: Partial<UserSettings> = {},
-    user: UserModel
-) => {
+const getProtonSignature = (mailSettings: Partial<MailSettings> = {}, userSettings: Partial<UserSettings> = {}) => {
     const enabled = hasBit(mailSettings?.PMSignature, PM_SIGNATURE.ENABLED);
     const locked = hasBit(mailSettings?.PMSignature, PM_SIGNATURE.LOCKED);
-
-    // Free users always see the signature
-    if (user.isFree) {
-        return getProtonMailSignature(
-            !!mailSettings.PMSignatureReferralLink,
-            userSettings.Referral?.Link,
-            mailSettings.PMSignatureContent
-        );
-    }
+    const enabledAndLocked = enabled && locked;
 
     // Users who can toggle the signature and have enabled it should see it
-    if (enabled && !locked) {
+    if ((enabled && !locked) || enabledAndLocked) {
         return getProtonMailSignature(
             !!mailSettings.PMSignatureReferralLink,
             userSettings.Referral?.Link,
@@ -103,12 +91,11 @@ export const templateBuilder = (
     signature = '',
     mailSettings: Partial<MailSettings> | undefined = {},
     userSettings: Partial<UserSettings> | undefined = {},
-    user: UserModel,
     fontStyle: string | undefined,
     isReply = false,
     noSpace = false
 ) => {
-    const protonSignature = getProtonSignature(mailSettings, userSettings, user);
+    const protonSignature = getProtonSignature(mailSettings, userSettings);
     const { userClass, protonClass, containerClass } = getClassNamesSignature(signature, protonSignature);
     const space = getSpaces(signature, protonSignature, fontStyle, isReply);
 
@@ -158,19 +145,11 @@ export const insertSignature = (
     action: MESSAGE_ACTIONS,
     mailSettings: MailSettings,
     userSettings: Partial<UserSettings>,
-    user: UserModel,
     fontStyle: string | undefined,
     isAfter = false
 ) => {
     const position = isAfter ? 'beforeend' : 'afterbegin';
-    const template = templateBuilder(
-        signature,
-        mailSettings,
-        userSettings,
-        user,
-        fontStyle,
-        action !== MESSAGE_ACTIONS.NEW
-    );
+    const template = templateBuilder(signature, mailSettings, userSettings, fontStyle, action !== MESSAGE_ACTIONS.NEW);
 
     // Parse the current message and append before it the signature
     const element = parseStringToDOM(content);
@@ -186,14 +165,13 @@ export const changeSignature = (
     message: MessageState,
     mailSettings: Partial<MailSettings> | undefined,
     userSettings: Partial<UserSettings> | undefined,
-    user: UserModel,
     fontStyle: string | undefined,
     oldSignature: string,
     newSignature: string
 ) => {
     if (isPlainText(message.data)) {
-        const oldTemplate = templateBuilder(oldSignature, mailSettings, userSettings, user, fontStyle, false, true);
-        const newTemplate = templateBuilder(newSignature, mailSettings, userSettings, user, fontStyle, false, true);
+        const oldTemplate = templateBuilder(oldSignature, mailSettings, userSettings, fontStyle, false, true);
+        const newTemplate = templateBuilder(newSignature, mailSettings, userSettings, fontStyle, false, true);
         const content = getPlainTextContent(message);
         const oldSignatureText = exportPlainText(oldTemplate).trim();
         const newSignatureText = exportPlainText(newTemplate).trim();
@@ -221,7 +199,7 @@ export const changeSignature = (
     );
 
     if (userSignature) {
-        const protonSignature = getProtonSignature(mailSettings, userSettings, user);
+        const protonSignature = getProtonSignature(mailSettings, userSettings);
         const { userClass, containerClass } = getClassNamesSignature(newSignature, protonSignature);
 
         userSignature.innerHTML = replaceLineBreaks(newSignature);
