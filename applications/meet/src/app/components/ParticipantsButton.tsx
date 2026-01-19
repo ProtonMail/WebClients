@@ -1,4 +1,3 @@
-import { useParticipants } from '@livekit/components-react';
 import { c, msgid } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
@@ -16,8 +15,7 @@ export const ParticipantsButton = ({
     hasAdminPermission: boolean;
     isPaid: boolean;
 }) => {
-    const { maxParticipants, guestMode, instantMeeting } = useMeetContext();
-    const participants = useParticipants();
+    const { maxParticipants, guestMode, instantMeeting, participants } = useMeetContext();
 
     const participantCount = participants.length;
 

@@ -145,7 +145,7 @@ export const useParticipantNameMap = (meetingLinkName: string) => {
                 const { [participant.identity]: removed, ...rest } = prev;
                 return rest;
             });
-            setParticipantsCount(Object(participantsMap).length);
+            setParticipantsCount((prev) => (prev ? prev - 1 : null));
         };
 
         room.on('participantDisconnected', handleParticipantDisconnected);

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { useLocalParticipant, useParticipants } from '@livekit/components-react';
+import { useLocalParticipant } from '@livekit/components-react';
 import type { Participant } from 'livekit-client';
 import { c } from 'ttag';
 
@@ -24,9 +24,8 @@ export const AssignHostSidebar = () => {
     const [searchExpression, setSearchExpression] = useState('');
 
     const { localParticipant } = useLocalParticipant();
-    const participants = useParticipants();
 
-    const { participantNameMap, assignHost, participantsMap } = useMeetContext();
+    const { participantNameMap, assignHost, participantsMap, participants } = useMeetContext();
 
     const [isScrolled, setIsScrolled] = useState(false);
 

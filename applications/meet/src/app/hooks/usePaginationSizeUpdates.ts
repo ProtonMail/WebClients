@@ -21,7 +21,7 @@ export const usePaginationSizeUpdates = () => {
 
     useEffect(() => {
         if (pageCount - 1 < page) {
-            setPage(pageCount - 1);
+            setPage(Math.max(0, pageCount - 1));
         }
     }, [pageCount, page, setPage]);
 
@@ -31,5 +31,5 @@ export const usePaginationSizeUpdates = () => {
         const newPageSize = isScreenShare ? SCREEN_SHARE_PAGE_SIZE : sizeBasedPageSize;
 
         setPageSize(newPageSize);
-    }, [isScreenShare, isSideBarOpen, setPageSize, setPage, sortedParticipants.length, isLargerThanMd, isNarrowHeight]);
+    }, [isScreenShare, isSideBarOpen, setPageSize, sortedParticipants.length, isLargerThanMd, isNarrowHeight]);
 };

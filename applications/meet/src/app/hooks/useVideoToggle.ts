@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 
 import { useLocalParticipant, useRoomContext } from '@livekit/components-react';
 import type { LocalParticipant, LocalTrackPublication, LocalVideoTrack } from 'livekit-client';
-import { ConnectionState, Track } from 'livekit-client';
+import { ConnectionState, RoomEvent, Track } from 'livekit-client';
 import debounce from 'lodash/debounce';
 
 import { isMobile } from '@proton/shared/lib/helpers/browser';
@@ -190,16 +190,16 @@ export const useVideoToggle = (
             }
         };
 
-        room.on(ConnectionState.Connected, preventApplyingBlur);
-        room.on(ConnectionState.Disconnected, () => {
+        const handleDisconnected = () => {
             preventAutoApplyingBlur.current = false;
-        });
+        };
+
+        room.on(ConnectionState.Connected, preventApplyingBlur);
+        room.on(ConnectionState.Disconnected, handleDisconnected);
 
         return () => {
             room.off(ConnectionState.Connected, preventApplyingBlur);
-            room.off(ConnectionState.Disconnected, () => {
-                preventAutoApplyingBlur.current = false;
-            });
+            room.off(ConnectionState.Disconnected, handleDisconnected);
         };
     }, [initialCameraState]);
 
@@ -216,10 +216,10 @@ export const useVideoToggle = (
             }
         };
 
-        localParticipant.on('localTrackPublished', handleTrackPublished);
+        localParticipant.on(RoomEvent.LocalTrackPublished, handleTrackPublished);
 
         return () => {
-            localParticipant.off('localTrackPublished', handleTrackPublished);
+            localParticipant.off(RoomEvent.LocalTrackPublished, handleTrackPublished);
         };
     }, [localParticipant, backgroundBlur]);
 

@@ -126,6 +126,10 @@ export default class MulticlassBackgroundProcessor extends VideoTransformer<Back
     private fallbackConfidenceTextures: (WebGLTexture | null)[] = [];
     private useWebGLTexturePath = true;
 
+    private fallbackPixelBufferObjects: (WebGLBuffer | null)[] = [];
+    private pixelBufferWidth = 0;
+    private pixelBufferHeight = 0;
+
     constructor(opts: BackgroundOptions) {
         super();
         this.options = opts;
@@ -231,12 +235,21 @@ export default class MulticlassBackgroundProcessor extends VideoTransformer<Back
             }
         });
 
+        this.fallbackPixelBufferObjects.forEach((pixelBuffer) => {
+            if (pixelBuffer) {
+                this.maskGl!.deleteBuffer(pixelBuffer);
+            }
+        });
+
         this.maskTexture = null;
         this.maskShaderProgram = null;
         this.maskVertexBuffer = null;
         this.maskFramebuffer = null;
         this.maskOutputTexture = null;
         this.fallbackConfidenceTextures = [];
+        this.fallbackPixelBufferObjects = [];
+        this.pixelBufferWidth = 0;
+        this.pixelBufferHeight = 0;
         this.maskGl = null;
     }
 
@@ -251,7 +264,7 @@ export default class MulticlassBackgroundProcessor extends VideoTransformer<Back
     }
 
     async transform(frame: VideoFrame, controller: TransformStreamDefaultController<VideoFrame>) {
-        let enqueuedFrame = false;
+        let originalFrameTransferred = false;
         try {
             if (!(frame instanceof VideoFrame) || frame.codedWidth === 0 || frame.codedHeight === 0) {
                 // Empty frame detected, ignoring
@@ -260,7 +273,7 @@ export default class MulticlassBackgroundProcessor extends VideoTransformer<Back
 
             if (this.isDisabled) {
                 controller.enqueue(frame);
-                enqueuedFrame = true;
+                originalFrameTransferred = true;
                 return;
             }
 
@@ -276,7 +289,10 @@ export default class MulticlassBackgroundProcessor extends VideoTransformer<Back
             }
 
             if (this.isFirstFrame) {
+                this.isFirstFrame = false;
+                // Enqueue a clone for immediate display
                 controller.enqueue(frame.clone());
+                // Original frame is NOT transferred - we still own it and must close it
 
                 if (this.inputVideo) {
                     await new Promise((resolve) => {
@@ -286,14 +302,30 @@ export default class MulticlassBackgroundProcessor extends VideoTransformer<Back
                         });
                     });
                 }
+
+                if (this.imageSegmenter) {
+                    try {
+                        this.imageSegmenter.segmentForVideo(frame, performance.now(), (result) => {
+                            this.updateMaskFromConfidences(result.confidenceMasks).catch(() => {
+                                // Ignore errors during warmup
+                            });
+                            result.close();
+                        });
+                    } catch {
+                        // Ignore
+                    }
+                }
+
+                return;
             }
-            this.isFirstFrame = false;
 
             const segmentationPromise = this.imageSegmenter
                 ? new Promise<void>((resolve, reject) => {
                       try {
                           this.imageSegmenter!.segmentForVideo(frame, performance.now(), (result) => {
-                              void this.updateMaskFromConfidences(result.confidenceMasks);
+                              this.updateMaskFromConfidences(result.confidenceMasks).catch(() => {
+                                  // Ignore mask update errors
+                              });
                               result.close();
                               resolve();
                           });
@@ -303,7 +335,7 @@ export default class MulticlassBackgroundProcessor extends VideoTransformer<Back
                   })
                 : Promise.resolve();
 
-            void this.drawFrame(frame);
+            await this.drawFrame(frame);
             const canRender = this.canvas && this.canvas.width > 0 && this.canvas.height > 0;
 
             if (canRender) {
@@ -313,12 +345,13 @@ export default class MulticlassBackgroundProcessor extends VideoTransformer<Back
                 controller.enqueue(newFrame);
             } else {
                 controller.enqueue(frame);
+                originalFrameTransferred = true;
             }
             await segmentationPromise;
-        } catch (e) {
-            // Error processing frame
+        } catch {
+            // Ignore
         } finally {
-            if (!enqueuedFrame) {
+            if (!originalFrameTransferred) {
                 frame.close();
             }
         }
@@ -481,29 +514,49 @@ export default class MulticlassBackgroundProcessor extends VideoTransformer<Back
     ): (WebGLTexture | null)[] {
         const confidenceMasks = masks.map((mask) => mask.getAsFloat32Array());
         const numMasks = masks.length;
+        const sizeChanged = this.pixelBufferWidth !== width || this.pixelBufferHeight !== height;
 
         while (this.fallbackConfidenceTextures.length < numMasks) {
             this.fallbackConfidenceTextures.push(gl.createTexture());
         }
+        while (this.fallbackPixelBufferObjects.length < numMasks) {
+            this.fallbackPixelBufferObjects.push(gl.createBuffer());
+        }
 
         for (let i = 0; i < confidenceMasks.length; i++) {
             const texture = this.fallbackConfidenceTextures[i];
-            if (!texture) {
+            const pixelBuffer = this.fallbackPixelBufferObjects[i];
+            if (!texture || !pixelBuffer) {
                 continue;
             }
+
+            const data = confidenceMasks[i];
+
+            gl.bindBuffer(gl.PIXEL_UNPACK_BUFFER, pixelBuffer);
+            if (sizeChanged) {
+                gl.bufferData(gl.PIXEL_UNPACK_BUFFER, data.byteLength, gl.STREAM_DRAW);
+            }
+            gl.bufferSubData(gl.PIXEL_UNPACK_BUFFER, 0, data);
 
             gl.activeTexture(gl.TEXTURE0 + i);
             gl.bindTexture(gl.TEXTURE_2D, texture);
 
-            if (this.maskTextureWidth === width && this.maskTextureHeight === height) {
-                gl.texSubImage2D(gl.TEXTURE_2D, 0, 0, 0, width, height, gl.RED, gl.FLOAT, confidenceMasks[i]);
-            } else {
-                gl.texImage2D(gl.TEXTURE_2D, 0, gl.R32F, width, height, 0, gl.RED, gl.FLOAT, confidenceMasks[i]);
+            if (sizeChanged || this.maskTextureWidth !== width || this.maskTextureHeight !== height) {
+                gl.texImage2D(gl.TEXTURE_2D, 0, gl.R32F, width, height, 0, gl.RED, gl.FLOAT, 0);
                 gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
                 gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
                 gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.NEAREST);
                 gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.NEAREST);
+            } else {
+                gl.texSubImage2D(gl.TEXTURE_2D, 0, 0, 0, width, height, gl.RED, gl.FLOAT, 0);
             }
+
+            gl.bindBuffer(gl.PIXEL_UNPACK_BUFFER, null);
+        }
+
+        if (sizeChanged) {
+            this.pixelBufferWidth = width;
+            this.pixelBufferHeight = height;
         }
 
         return this.fallbackConfidenceTextures;
