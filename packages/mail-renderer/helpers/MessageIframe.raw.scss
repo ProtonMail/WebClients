@@ -162,6 +162,32 @@ a:not([href]) {
 	block-size: 14px;
 }
 
+/* we had a shortcut issue on fields, so we make fields looking like disabled, but leaving possibility to copy stuff from inside. 
+   So the shortcuts issue will be less likely to happen. */
+input[type='text'],
+input[type='email'],
+input[type='password'],
+input[type='number'],
+input[type='search'],
+input[type='tel'],
+input[type='url'],
+input[type='date'],
+input[type='datetime-local'],
+input[type='month'],
+input[type='week'],
+input[type='time'],
+input[type='color'],
+input[type='range'],
+textarea {
+	outline: none;
+	cursor: default;
+	caret-color: transparent;
+}
+
+input[type='submit'] {
+	cursor: default !important;
+}
+
 /*
  * 1. do not handle responsivess if there is a width attribute / inline width style
  * 2. do not set auto height as long as it's not need to handle our embedded images (no height attribute)
