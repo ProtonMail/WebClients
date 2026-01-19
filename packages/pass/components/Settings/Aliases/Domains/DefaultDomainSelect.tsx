@@ -8,17 +8,12 @@ import { PassPlusPromotionButton } from '@proton/pass/components/Upsell/PassPlus
 import { useUpselling } from '@proton/pass/components/Upsell/UpsellingProvider';
 import { UpsellRef } from '@proton/pass/constants';
 import { useRequest } from '@proton/pass/hooks/useRequest';
+import { getDomainLabel } from '@proton/pass/lib/alias/alias.utils';
 import { setDefaultAliasDomain } from '@proton/pass/store/actions';
-import type { MaybeNull, UserAliasDomainOutput } from '@proton/pass/types';
+import type { MaybeNull } from '@proton/pass/types';
 import { truthy } from '@proton/pass/utils/fp/predicates';
 
 import { useAliasDomains } from './DomainsProvider';
-
-const getDomainLabel = (domain: UserAliasDomainOutput) => {
-    if (domain.IsCustom) return `(${c('Label').t`Your domain`})`;
-    else if (domain.IsPremium) return `(${c('Label').t`Premium domain`})`;
-    else return `(${c('Label').t`Public domain`})`;
-};
 
 type Props = { className?: string };
 
@@ -52,17 +47,15 @@ export const DefaultDomainSelect: FC<Props> = ({ className }) => {
             className={className}
         >
             {[
-                ...aliasDomains.map((domain) => (
+                ...aliasDomains.map(({ Domain, IsCustom, IsPremium }) => (
                     <Option
-                        value={domain.Domain}
-                        title={domain.Domain}
-                        key={domain.Domain}
+                        value={Domain}
+                        title={Domain}
+                        key={Domain}
                         className="flex justify-space-between items-center flex-nowrap"
                     >
-                        <span>
-                            {domain.Domain} {getDomainLabel(domain)}
-                        </span>
-                        {!canManage && domain.IsPremium && domain.Domain !== defaultAliasDomain && (
+                        <span>{getDomainLabel({ name: Domain, isCustom: IsCustom, isPremium: IsPremium })}</span>
+                        {!canManage && IsPremium && Domain !== defaultAliasDomain && (
                             <span className="">
                                 <PassPlusPromotionButton />
                             </span>
