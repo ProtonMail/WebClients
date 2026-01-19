@@ -311,8 +311,8 @@ describe('removeSignatureFromHTMLMessage', () => {
                     <p>Let me know if you'd like to schedule a call to discuss these points further.</p>
                     <p>Best regards,</p>
                 </div>
-
-
+                
+            
         </body>`;
 
         const contentWithoutSignature = removeSignatureFromHTMLMessage(content);
@@ -342,7 +342,7 @@ describe('removeSignatureFromHTMLMessage', () => {
 
         const expectedContent = `<body><div style=\"font-family: verdana; font-size: 20px;\">
             <div style=\"font-family: verdana; font-size: 20px;\">This is the content before the blockquote and signature<br></div>
-
+            
             </div></body>`;
 
         const [contentWithoutBlockQuotes] = locateBlockquote(createDocument(content));

@@ -1,10 +1,29 @@
 import type { MailSettings } from '@proton/shared/lib/interfaces';
+import { PM_SIGNATURE } from '@proton/shared/lib/mail/mailSettings';
 
 import { textToHtml } from './textToHtml';
 
+const mailSettings = {
+    PMSignature: PM_SIGNATURE.LOCKED,
+} as unknown as MailSettings;
+
+const emptySignature = `<div style="font-family: Arial, sans-serif; font-size: 14px;"><br /></div>
+<div style="font-family: Arial, sans-serif; font-size: 14px;" class="protonmail_signature_block protonmail_signature_block-empty">
+    <div class="protonmail_signature_block-user protonmail_signature_block-empty">
+        
+            </div>
+    
+            <div class="protonmail_signature_block-proton protonmail_signature_block-empty">
+        
+            </div>
+</div>`;
+
 describe('textToHtml', () => {
     it('should convert simple string from plain text to html', () => {
-        expect(textToHtml('This a simple string', '', undefined, undefined)).toEqual('This a simple string');
+        const res = textToHtml('This a simple string', '', mailSettings, undefined);
+        console.log({ res });
+        expect(res).toEqual(`${emptySignature}
+This a simple string`);
     });
 
     it('should convert multiline string too', () => {
@@ -16,7 +35,8 @@ this is a multiline string`,
             undefined
         );
 
-        expect(html).toEqual(`Hello<br>
+        expect(html).toEqual(`${emptySignature}
+Hello<br>
 this is a multiline string`);
     });
 
@@ -53,7 +73,8 @@ this is a multiline string`,
             undefined
         );
 
-        expect(html).toEqual(`a title<br>
+        expect(html).toEqual(`${emptySignature}
+a title<br>
 --<br>
 this is a multiline string`);
     });
