@@ -1,10 +1,11 @@
 import { type ReactNode, createContext, useContext, useEffect, useRef, useState } from 'react';
 
-import { useGetPaymentStatus, usePaymentStatus } from '@proton/account/paymentStatus/hooks';
-import { useGetPlans, usePlans } from '@proton/account/plans/hooks';
-import { selectSubscription } from '@proton/account/subscription';
-import { useGetSubscription } from '@proton/account/subscription/hooks';
-import { useUser } from '@proton/account/user/hooks';
+import { createSelector } from '@reduxjs/toolkit';
+
+import { paymentStatusThunk, selectPaymentStatus } from '@proton/account/paymentStatus';
+import { plansThunk, selectPlans } from '@proton/account/plans';
+import { selectSubscription, subscriptionThunk } from '@proton/account/subscription';
+import { selectUser } from '@proton/account/user';
 import useApi from '@proton/components/hooks/useApi';
 import useConfig from '@proton/components/hooks/useConfig';
 import { getPreferredPlansMap } from '@proton/components/hooks/usePreferredPlansMap';
@@ -12,7 +13,7 @@ import type { GetPreferredCurrencyParamsHook, OnChargeable } from '@proton/compo
 import { useCurrencies } from '@proton/components/payments/client-extensions/useCurrencies';
 import { InvalidZipCodeError } from '@proton/components/payments/react-extensions/errors';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
-import { useStore } from '@proton/redux-shared-store/sharedProvider';
+import { useDispatch, useSelector } from '@proton/redux-shared-store/sharedProvider';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import type { Api } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
@@ -384,6 +385,19 @@ interface PaymentsContextProviderState {
     billingAddress: BillingAddress;
 }
 
+export const selectData = createSelector(
+    [selectUser, selectSubscription, selectPlans, selectPaymentStatus],
+    (user, subscription, plans, paymentStatus) => {
+        return {
+            // NOTE: with optionals due to user, subscription not being initialized in account's public app
+            user: user?.value,
+            subscription: subscription?.value,
+            plans: plans?.value,
+            paymentStatus: paymentStatus?.value,
+        };
+    }
+);
+
 export const PaymentsContextProvider = ({
     children,
     preload = true,
@@ -391,23 +405,24 @@ export const PaymentsContextProvider = ({
     cachedPlans,
 }: PaymentsContextProviderProps) => {
     const { APP_NAME } = useConfig();
-    const store = useStore();
 
     const defaultApi = useApi();
 
-    const [user] = useUser();
-    const [plansDataInitial] = usePlans();
-    const [paymentStatusInitial] = usePaymentStatus();
+    const {
+        user,
+        paymentStatus: paymentStatusInitial,
+        subscription: subscriptionInitial,
+        plans: plansInitial,
+        // Avoid using model hooks to avoid fetching data
+    } = useSelector(selectData);
+    const dispatch = useDispatch();
 
-    const getPlans = useGetPlans();
-    const getPaymentStatus = useGetPaymentStatus();
-    const getSubscription = useGetSubscription();
     const [plansData, setPlansData] = useState<{ plans: Plan[]; freePlan: FreePlanDefault }>(
-        plansDataInitial ?? { plans: cachedPlans ?? [], freePlan: FREE_PLAN }
+        plansInitial ?? { plans: cachedPlans ?? [], freePlan: FREE_PLAN }
     );
     const [paymentStatus, setPaymentStatus] = useState<PaymentStatus | undefined>(paymentStatusInitial);
     const [subscription, setSubscription] = useState<Subscription | FreeSubscription>(
-        selectSubscription(store.getState())?.value || FREE_SUBSCRIPTION
+        subscriptionInitial || FREE_SUBSCRIPTION
     );
 
     const [, rerender] = useState<{}>({});
@@ -598,16 +613,16 @@ export const PaymentsContextProvider = ({
         const api = apiOverride ?? defaultApi;
 
         const [plansData, status, subscription] = await Promise.all([
-            getPlans({ api }).then((data) => {
+            dispatch(plansThunk({ api })).then((data) => {
                 setPlansData(data);
                 return data;
             }),
-            getPaymentStatus({ api }).then((data) => {
+            dispatch(paymentStatusThunk({ api })).then((data) => {
                 setPaymentStatus(data);
                 return data;
             }),
             authenticated
-                ? getSubscription().then((data) => {
+                ? dispatch(subscriptionThunk()).then((data) => {
                       setSubscription(data);
                       return data;
                   })
