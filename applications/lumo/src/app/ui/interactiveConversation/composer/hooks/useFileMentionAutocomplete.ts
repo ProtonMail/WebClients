@@ -60,12 +60,18 @@ function computeFileList(
     allAttachments: Record<string, Attachment>,
     provisionalAttachments: Attachment[]
 ): FileItem[] {
-    // Get local files from space attachments (project knowledge base only)
-    // We don't include spaceAttachments because those are files used in conversations
-    // that may not be in the project's knowledge base
-    // Exclude auto-retrieved files - they're shown via driveFiles from Drive indexing
-    const localFiles: FileItem[] = Object.values(spaceAttachments)
-        // todo write a selector on the attachments slide instead
+    const provisionalFiles: FileItem[] = provisionalAttachments
+        .filter((attachment) => attachment && !attachment.error && !attachment.processing)
+        .map((attachment) => ({
+            id: attachment.id,
+            name: attachment.filename,
+            source: 'local' as const,
+            attachment,
+            mimeType: attachment.mimeType,
+        }));
+
+    
+    const spaceFiles: FileItem[] = Object.values(spaceAttachments)
         .filter((attachment) => attachment && !attachment.error && !attachment.processing && !attachment.autoRetrieved)
         .map((file) => {
             const attachment = allAttachments[file.id];
@@ -74,7 +80,6 @@ function computeFileList(
                 name: file.filename,
                 source: 'local' as const,
                 attachment,
-                // Use mimeType from the file (attachment) directly, fallback to attachment
                 mimeType: file.mimeType || attachment?.mimeType,
             };
         });
@@ -87,14 +92,12 @@ function computeFileList(
         mimeType: undefined,
     }));
 
-    // Combine and deduplicate
-    const allFilesCombined = [...localFiles, ...driveFilesList];
+    const allFilesCombined = [...provisionalFiles, ...spaceFiles, ...driveFilesList];
+    
     const seen = new Set<string>();
-    const provisionalFilenames = new Set(provisionalAttachments.map((att) => att.filename.toLowerCase()));
-
     const uniqueFiles = allFilesCombined.filter((file) => {
         const key = file.name.toLowerCase();
-        if (seen.has(key) || provisionalFilenames.has(key)) {
+        if (seen.has(key)) {
             return false;
         }
         seen.add(key);
