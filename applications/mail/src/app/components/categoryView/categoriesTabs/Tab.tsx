@@ -46,11 +46,11 @@ export const Tab = ({ category, count, tabState }: Props) => {
         }
     };
 
-    const to = `/${LABEL_IDS_TO_HUMAN[category.id] || LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.CATEGORY_DEFAULT]}`;
+    const navigateTo = `/${LABEL_IDS_TO_HUMAN[category.id] || LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.CATEGORY_DEFAULT]}`;
 
     return (
         <NavLink
-            to={to}
+            to={navigateTo}
             className={clsx(
                 'tab-container h-full flex flex-nowrap items-center text-no-decoration color-hint hover:mail-category-color',
                 navClasses[tabState]
