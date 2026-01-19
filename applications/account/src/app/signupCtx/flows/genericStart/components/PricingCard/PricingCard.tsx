@@ -60,7 +60,7 @@ const PricingHeader = () => {
     return (
         <>
             <header className="flex flex-column gap-4 px-4 lg:px-8">
-                <h2 className="font-arizona text-2xl font-bold">{c('Signup').t`Every free account comes with:`}</h2>
+                <h2 className="font-arizona text-2xl">{c('Signup').t`Every free account comes with:`}</h2>
                 <div className="block lg:hidden">
                     <AppsLogos
                         fullWidth
