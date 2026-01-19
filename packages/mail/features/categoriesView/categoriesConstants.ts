@@ -11,10 +11,10 @@ export interface CategoryTab {
 
 export enum CATEGORIES_COLOR_SHADES {
     IRIS = 'iris',
-    SKY = 'sky',
+    CYAN = 'cyan',
     TEAL = 'teal',
+    ORANGE = 'orange',
+    RED = 'red',
     PINK = 'pink',
     BLUE = 'blue',
-    PURPLE = 'purple',
-    AMBER = 'amber',
 }
