@@ -14,15 +14,16 @@ type Props = { className?: string; onUpsell: () => void };
 
 export const BreachUpsellCard: FC<Props> = ({ className, onUpsell }) => (
     <Card type="primary" className={clsx('relative', className)}>
-        <PassPlusPromotionButton
+        <div
             className="absolute right-custom top-custom"
-            onClick={onUpsell}
             style={{
                 '--top-custom': '8px',
                 '--right-custom': '8px',
                 '--background-norm': 'var(--pass-card-background)',
             }}
-        />
+        >
+            <PassPlusPromotionButton onClick={onUpsell} />
+        </div>
         <CardContent
             title={DARK_WEB_MONITORING_NAME}
             titleClassname="text-lg text-bold"
