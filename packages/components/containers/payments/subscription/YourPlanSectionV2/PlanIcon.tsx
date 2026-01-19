@@ -10,19 +10,27 @@ import {
     hasBundlePro2024,
     hasDrive,
     hasDrive1TB,
+    hasDriveBusiness,
+    hasDrivePro,
     hasDuo,
     hasFamily,
     hasFree,
     hasLumo,
+    hasLumoBusiness,
     hasMail,
+    hasMailBusiness,
+    hasMailPro,
     hasPass,
+    hasPassBusiness,
     hasPassFamily,
+    hasPassPro,
     hasVPNPassBundle,
     hasVPNPassProfessional,
     hasVisionary,
     hasVpnBusiness,
+    hasVpnPro,
 } from '@proton/payments';
-import { hasBundlePro, hasMeetBusiness } from '@proton/payments/core/subscription/helpers';
+import { hasBundlePro, hasDriveLite, hasMeetBusiness } from '@proton/payments/core/subscription/helpers';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
 import { hasPassLifetime } from '@proton/shared/lib/user/helpers';
@@ -73,7 +81,7 @@ export const PlanIcon = ({
             </LogoIconShape>
         );
     }
-    if (getHasConsumerVpnPlan(subscription) || planName === PLANS.VPN2024) {
+    if (getHasConsumerVpnPlan(subscription) || planName === PLANS.VPN2024 || planName === PLANS.VPN) {
         return (
             <LogoIconShape size={size}>
                 <CustomLogo planName={PLANS.VPN2024} app={app} size={size} />
@@ -94,6 +102,13 @@ export const PlanIcon = ({
             </LogoIconShape>
         );
     }
+    if (hasLumoBusiness(subscription) || planName === PLANS.LUMO_BUSINESS) {
+        return (
+            <LogoIconShape size={size}>
+                <CustomLogo planName={PLANS.LUMO_BUSINESS} app={app} size={size} />
+            </LogoIconShape>
+        );
+    }
     if (hasPass(subscription) || planName === PLANS.PASS) {
         return (
             <LogoIconShape size={size}>
@@ -111,8 +126,10 @@ export const PlanIcon = ({
     if (
         hasDrive(subscription) ||
         hasDrive1TB(subscription) ||
+        hasDriveLite(subscription) ||
         planName === PLANS.DRIVE ||
-        planName === PLANS.DRIVE_1TB
+        planName === PLANS.DRIVE_1TB ||
+        planName === PLANS.DRIVE_LITE
     ) {
         return (
             <LogoIconShape size={size}>
@@ -186,6 +203,62 @@ export const PlanIcon = ({
             </LogoIconShape>
         );
     }
+
+    if (hasDrivePro(subscription) || planName === PLANS.DRIVE_PRO) {
+        return (
+            <LogoIconShape size={size}>
+                <CustomLogo planName={PLANS.DRIVE_PRO} app={app} size={size} />
+            </LogoIconShape>
+        );
+    }
+
+    if (hasDriveBusiness(subscription) || planName === PLANS.DRIVE_BUSINESS) {
+        return (
+            <LogoIconShape size={size}>
+                <CustomLogo planName={PLANS.DRIVE_BUSINESS} app={app} size={size} />
+            </LogoIconShape>
+        );
+    }
+
+    if (hasVpnPro(subscription) || planName === PLANS.VPN_PRO) {
+        return (
+            <LogoIconShape size={size}>
+                <CustomLogo planName={PLANS.VPN_PRO} app={app} size={size} />
+            </LogoIconShape>
+        );
+    }
+
+    if (hasMailPro(subscription) || planName === PLANS.MAIL_PRO) {
+        return (
+            <LogoIconShape size={size}>
+                <CustomLogo planName={PLANS.MAIL_PRO} app={app} size={size} />
+            </LogoIconShape>
+        );
+    }
+
+    if (hasMailBusiness(subscription) || planName === PLANS.MAIL_BUSINESS) {
+        return (
+            <LogoIconShape size={size}>
+                <CustomLogo planName={PLANS.MAIL_BUSINESS} app={app} size={size} />
+            </LogoIconShape>
+        );
+    }
+
+    if (hasPassPro(subscription) || planName === PLANS.PASS_PRO) {
+        return (
+            <LogoIconShape size={size}>
+                <CustomLogo planName={PLANS.PASS_PRO} app={app} size={size} />
+            </LogoIconShape>
+        );
+    }
+    if (hasPassBusiness(subscription) || planName === PLANS.PASS_BUSINESS) {
+        return (
+            <LogoIconShape size={size}>
+                <CustomLogo planName={PLANS.PASS_BUSINESS} app={app} size={size} />
+            </LogoIconShape>
+        );
+    }
+
     if (hasFree(subscription)) {
         return (
             <LogoIconShape size={size}>

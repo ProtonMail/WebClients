@@ -199,6 +199,7 @@ export const hasMailPro = (subscription: MaybeFreeSubscription) => hasSomePlan(s
 export const hasMailBusiness = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, PLANS.MAIL_BUSINESS);
 export const hasDrive = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, PLANS.DRIVE);
 export const hasDrive1TB = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, PLANS.DRIVE_1TB);
+export const hasDriveLite = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, PLANS.DRIVE_LITE);
 export const hasDrivePro = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, PLANS.DRIVE_PRO);
 export const hasDriveBusiness = (subscription: MaybeFreeSubscription) =>
     hasSomePlan(subscription, PLANS.DRIVE_BUSINESS);
