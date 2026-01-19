@@ -529,7 +529,7 @@ export function* considerRequestingFullAttachment({
 }): SagaIterator<any> {
     console.log('Saga triggered: considerRequestingFullAttachment', shallowAttachment);
     const dbApi: DbApi = yield getContext('dbApi');
-    const { id: localId } = shallowAttachment;
+    const { id: localId, spaceId } = shallowAttachment;
 
     // Compare with object in IDB
     const idbAttachment: SerializedAttachment | undefined = yield call([dbApi, dbApi.getAttachmentById], localId);
@@ -537,6 +537,25 @@ export function* considerRequestingFullAttachment({
         console.log(
             `considerRequestingFullAttachment: Attachment ${localId} is already filled locally, not requesting`
         );
+
+        // Load the attachment from IDB into Redux if it's not already there
+        const existingInRedux: Attachment | undefined = yield select(selectAttachmentById(localId));
+        if (!existingInRedux) {
+            try {
+                const space: Space | undefined = yield select(selectSpaceById(spaceId));
+                if (!space) {
+                    console.warn(
+                        `considerRequestingFullAttachment: Cannot load attachment ${localId} - space ${spaceId} not found`
+                    );
+                    return;
+                }
+                const spaceDek: AesGcmCryptoKey = yield call(getSpaceDek, space);
+                const attachment: Attachment = yield call(deserializeAttachmentSaga, idbAttachment, spaceDek);
+                yield put(addAttachment(attachment));
+            } catch (e) {
+                console.error(`considerRequestingFullAttachment: Failed to load attachment ${localId} from IDB:`, e);
+            }
+        }
         return;
     }
     console.log(`considerRequestingFullAttachment: Attachment ${localId} will be requested`);
