@@ -7,7 +7,7 @@ import { Toolbar } from '@proton/components';
 import { generateNodeUid } from '@proton/drive/index';
 import type { LinkURLType } from '@proton/shared/lib/drive/constants';
 
-import DriveBreadcrumbs from '../../components/DriveBreadcrumbs';
+import DriveBreadcrumbsDeprecated from '../../components/DriveBreadcrumbsDeprecated';
 import { FileBrowserStateProvider } from '../../components/FileBrowser';
 import { useAlbumOnboardingModal } from '../../components/modals/AlbumOnboardingModal';
 import ToolbarRow from '../../components/sections/ToolbarRow/ToolbarRow';
@@ -62,7 +62,8 @@ export function FolderView() {
         };
     }, [parentUid, activeFolderLinkId, load, isLoadingDevices, activeFolderShareId, shareId, linkId]);
 
-    const breadcrumbs = activeFolder && <DriveBreadcrumbs activeFolder={activeFolder} />;
+    // TODO: Migrate to new DriveBreadcrumbs when ready.
+    const breadcrumbs = activeFolder && <DriveBreadcrumbsDeprecated activeFolder={activeFolder} />;
 
     const toolbar = activeFolder ? (
         <FolderToolbar
