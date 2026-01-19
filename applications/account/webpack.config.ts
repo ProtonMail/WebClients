@@ -40,7 +40,11 @@ const getTemplateParameters = (
 
 const result = async (opts: WebpackEnvArguments): Promise<webpack.Configuration> => {
     const webpackOptions = getWebpackOptions(opts, { appConfig });
-    const config = getConfig(webpackOptions);
+    const config = getConfig({
+        ...webpackOptions,
+        /* Ignore CSS order warning since we are managing it manually */
+        ignoreCssOrderWarning: true,
+    });
     const pagePromise = getPages();
 
     const plugins = config.plugins || [];

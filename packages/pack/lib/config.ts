@@ -119,6 +119,9 @@ export const getWebpackOptions = (envArguments: WebpackEnvArguments, extra: Extr
         VERSION_PATH: `${appData.publicPath}assets/version.json`,
     };
 
+
+    const prependAsyncCss = protonPackOptions.prependAsyncCss ?? false;
+
     return {
         analyze: protonPackOptions.analyze ?? false,
         api: appData.api,
@@ -143,6 +146,7 @@ export const getWebpackOptions = (envArguments: WebpackEnvArguments, extra: Extr
         warningLogs: protonPackOptions.warningLogs ?? false,
         writeSRI: protonPackOptions.sri !== false,
         benchmarkBuild: protonPackOptions.benchmarkBuild ?? false,
-        prependAsyncCss: protonPackOptions.prependAsyncCss ?? false
+        prependAsyncCss,
+        ignoreCssOrderWarning: prependAsyncCss // Default to same value as `prependAsyncCss`
     };
 };

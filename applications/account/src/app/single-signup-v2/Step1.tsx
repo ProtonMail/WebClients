@@ -739,7 +739,10 @@ const Step1 = ({
         if (mode === SignupMode.PassSimpleLogin) {
             return (
                 <>
-                    <Vr className="h-custom mr-6 lg:mr-8 opacity-50 hidden md:flex" style={{ '--h-custom': '2rem' }} />
+                    <Vr
+                        className="min-h-custom mr-6 lg:mr-8 opacity-50 hidden md:flex"
+                        style={{ '--min-h-custom': '2rem' }}
+                    />
                     <img className="mb-0.5" src={simpleLoginLogo} alt="SimpleLogin" />
                 </>
             );
@@ -1046,7 +1049,7 @@ const Step1 = ({
 
                 {hasPlanSelector && (
                     <>
-                        <Box className="mt-8 w-full max-w-custom" style={boxWidth}>
+                        <Box className="mt-8" style={boxWidth}>
                             <BoxHeader
                                 step={step++}
                                 title={c('pass_signup_2023: Header').t`Select your plan`}
@@ -1100,7 +1103,7 @@ const Step1 = ({
                     </>
                 )}
                 {hasUserSelector && (
-                    <Box className="mt-12 w-full max-w-custom" style={boxWidth}>
+                    <Box className="mt-12" style={boxWidth}>
                         {(() => {
                             const user = model?.session?.resumedSessionResult.User;
                             const hasUserStepOptimistic = model.loadingDependencies && initialSessionsLength;
@@ -1506,7 +1509,7 @@ const Step1 = ({
                     </Box>
                 )}
                 {!hasSelectedFree && (
-                    <Box className="mt-12 w-full max-w-custom" style={boxWidth}>
+                    <Box className="mt-12" style={boxWidth}>
                         <BoxHeader
                             step={step++}
                             title={

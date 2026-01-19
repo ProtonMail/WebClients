@@ -112,7 +112,7 @@ const Layout = ({
                 {children}
                 {hasDecoration && (
                     <div className="flex items-center flex-column">
-                        <Box className="w-full">
+                        <Box>
                             <footer
                                 className="w-full min-h-custom pb-8 flex flex-column justify-space-between gap-4"
                                 style={{ '--min-h-custom': '12rem' }}

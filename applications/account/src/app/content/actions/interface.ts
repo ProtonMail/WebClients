@@ -6,7 +6,7 @@ import type { AppSwitcherState } from '../../public/AppSwitcherContainer';
 import type { AuthDesktopState } from '../../public/AuthDesktop';
 import type { AuthExtensionState } from '../../public/AuthExtension';
 import type { OAuthPartnersCallbackState, OAuthPartnersInitiateState } from '../../public/OAuthPartnersContainer';
-import type { ReAuthState } from '../../public/ReAuthContainer';
+import type { ReAuthState } from '../../public/reauthContainerState';
 import type { ProduceForkData, SSOType } from './forkInterface';
 
 type LoginLocationStateData<Type, State> = {

@@ -35,9 +35,6 @@ import locales from '../locales';
 import type { AccountState } from '../store/store';
 import { extendStore, setupStore } from '../store/store';
 
-const getAppContainer = () =>
-    import(/* webpackChunkName: "MainContainer" */ './SetupMainContainer').then((result) => result.default);
-
 export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; signal?: AbortSignal }) => {
     const pathname = window.location.pathname;
     const searchParams = new URLSearchParams(window.location.search);
@@ -58,7 +55,6 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
     }
 
     const run = async () => {
-        const appContainerPromise = getAppContainer();
         const sessionResult = await bootstrap.loadSession({ api, authentication, pathname, searchParams });
 
         const history = bootstrap.createHistory({ sessionResult, pathname });
@@ -108,8 +104,7 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
 
         const userPromise = loadUser();
 
-        const [MainContainer, userData] = await Promise.all([
-            appContainerPromise,
+        const [userData] = await Promise.all([
             userPromise,
             bootstrap.loadCrypto({ appName, unleashClient }),
             unleashPromise,
@@ -240,7 +235,6 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
             eventManager,
             unleashClient,
             history,
-            MainContainer,
         };
     };
 

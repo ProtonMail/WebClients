@@ -1,5 +1,4 @@
-import type { FunctionComponent } from 'react';
-import { useState } from 'react';
+import { type FunctionComponent, Suspense, lazy, useState } from 'react';
 import { Router } from 'react-router-dom';
 
 import {
@@ -24,6 +23,17 @@ import { extraThunkArguments } from '../store/thunk';
 import AccountLoaderPage from './AccountLoaderPage';
 import { bootstrapApp } from './bootstrap';
 
+const LazyMainContainer = lazy(
+    () =>
+        import(
+            /* webpackChunkName: "SetupMainContainer" */
+            /* webpackPrefetch: true */
+            /* webpackPreload: true */
+            /* webpackFetchPriority: "high" */
+            './SetupMainContainer'
+        )
+);
+
 const defaultState: {
     error?: { message: string } | undefined;
     MainContainer?: FunctionComponent;
@@ -34,10 +44,10 @@ const PrivateApp = () => {
     const [state, setState] = useState(defaultState);
 
     useEffectOnce(() => {
-        (async () => {
+        void (async () => {
             try {
                 const result = await bootstrapApp({ config });
-                setState({ store: result.store, MainContainer: result.MainContainer, error: undefined });
+                setState({ store: result.store, error: undefined });
             } catch (error: any) {
                 setState({
                     error: {
@@ -55,7 +65,7 @@ const PrivateApp = () => {
                     return <StandardLoadErrorPage errorMessage={state.error.message} />;
                 }
                 const loader = <AccountLoaderPage />;
-                if (!state.MainContainer || !state.store) {
+                if (!state.store) {
                     return loader;
                 }
 
@@ -78,7 +88,9 @@ const PrivateApp = () => {
                                             >
                                                 <ApiProvider api={extraThunkArguments.api}>
                                                     <ErrorBoundary big component={<StandardErrorPage big />}>
-                                                        <state.MainContainer />
+                                                        <Suspense fallback={loader}>
+                                                            <LazyMainContainer />
+                                                        </Suspense>
                                                     </ErrorBoundary>
                                                 </ApiProvider>
                                             </CalendarModelEventManagerProvider>
