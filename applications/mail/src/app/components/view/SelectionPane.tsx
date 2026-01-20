@@ -154,7 +154,7 @@ const SelectionPane = ({ labelID, mailSettings, location, checkedIDs = [], onChe
 
     const getSelectionPaneText = () => {
         if (total === 0) {
-            return c('Info').t`Seems like you are all caught up for now`;
+            return undefined;
         }
 
         if (isSearch && !checkeds) {
