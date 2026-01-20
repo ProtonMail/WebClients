@@ -135,7 +135,7 @@ export interface AssistantCommonProps {
     /**
      * Checks if the assistant can be opened by default in the composer
      */
-    getIsStickyAssistant: (assistantID: string, canShowAssistant: boolean) => boolean;
+    getIsStickyAssistant: (assistantID: string, canShowAssistant: boolean, canRunAssistant: boolean) => boolean;
     /**
      * Potential error that occurred while using the assistant
      */
