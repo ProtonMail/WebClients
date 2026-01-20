@@ -12,6 +12,7 @@ import type { LogHandler, MetricRecord } from '@protontech/drive-sdk/dist/teleme
 import { LogFilter, LogLevel, Telemetry } from '@protontech/drive-sdk/dist/telemetry';
 
 import metrics from '@proton/metrics';
+import { getIs401Error } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 
 export type UserPlan = 'free' | 'paid' | 'anonymous' | 'unknown';
@@ -96,6 +97,19 @@ export class MetricHandler {
     }
 
     private onUpload(metric: MetricUploadEvent) {
+        if (metric.originalError) {
+            // NotReadableError throws some browsers when trying to read a file
+            // which is not available anymore. This is purely user side issue
+            // and thus ignored from metrics.
+            if (metric.originalError instanceof Error && metric.originalError.name === 'NotReadableError') {
+                return;
+            }
+            // useApi wraps auth errors which SDK doesn't know about.
+            if (getIs401Error(metric.originalError)) {
+                metric.error = '4xx';
+            }
+        }
+
         metrics.drive_sdk_upload_success_rate_total.increment({
             volumeType: metric.volumeType || 'unknown',
             status: !metric.error ? 'success' : 'failure',
@@ -140,6 +154,13 @@ export class MetricHandler {
     }
 
     private onDownload(metric: MetricDownloadEvent) {
+        if (metric.originalError) {
+            // useApi wraps auth errors which SDK doesn't know about.
+            if (getIs401Error(metric.originalError)) {
+                metric.error = '4xx';
+            }
+        }
+
         metrics.drive_sdk_download_success_rate_total.increment({
             volumeType: metric.volumeType || 'unknown',
             status: !metric.error ? 'success' : 'failure',
