@@ -10800,6 +10800,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@rowsncolumns/calculator@workspace:vendor/rowsncolumns/calculator"
   dependencies:
+    "@rowsncolumns/common-types": "workspace:^"
     "@rowsncolumns/dag": "workspace:^"
     "@rowsncolumns/fast-formula-parser": "workspace:^"
     "@rowsncolumns/utils": "workspace:^"
@@ -11051,6 +11052,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@rowsncolumns/toolkit@workspace:vendor/rowsncolumns/toolkit"
   dependencies:
+    "@rowsncolumns/calculator": "workspace:^"
     "@rowsncolumns/utils": "workspace:^"
     "@types/uzip": "npm:^0.20201231.2"
     "@zip.js/zip.js": "npm:^2.7.57"
