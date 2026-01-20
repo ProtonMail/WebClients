@@ -205,6 +205,7 @@ export function LegacyGrid() {
       getFormattedValue={useUI((ui) => ui.legacy.getFormattedValue)}
       getEffectiveExtendedValue={useUI((ui) => ui.legacy.getEffectiveExtendedValue)}
       getUserEnteredExtendedValue={useUI((ui) => ui.legacy.getUserEnteredExtendedValue)}
+      showCalculatedColumnIcon={false}
     />
   )
 }
