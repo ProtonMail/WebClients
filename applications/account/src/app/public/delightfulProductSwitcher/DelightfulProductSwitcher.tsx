@@ -53,7 +53,7 @@ const DelightfulProductSwitcher = ({ onLogin, onSwitch, state }: Props) => {
             <div>
                 <header className="mt-6 mb-8 md:mb-10 lg:mb-20 text-center fade-in">
                     <h1 className="text-2xl md:text-6xl text-semibold mb-2">{c('Action').t`Welcome`}</h1>
-                    <p className="m-0 md:text-lg color-weak">{c('Info').t`Select a service to continue`}</p>
+                    <p className="m-0 md:text-lg color-weak">{c('Info').t`Privacy and security starts here`}</p>
                     {error?.type === 'unsupported-app' && (
                         <div className="mt-6 max-w-custom mx-auto" style={{ '--max-w-custom': '30rem' }}>
                             <UnsupportedAppError organization={Organization} app={error.app} />
