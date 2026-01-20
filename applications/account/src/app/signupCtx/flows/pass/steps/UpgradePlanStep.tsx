@@ -1,4 +1,6 @@
-import { type FC, useEffect } from 'react';
+import type { ReactNode } from 'react';
+import { type FC, isValidElement, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
@@ -22,6 +24,7 @@ type Props = {
 
 export const UpgradePlanStep: FC<Props> = ({ onContinue }) => {
     const payments = usePaymentOptimistic();
+    const location = useLocation();
 
     const offerModal = useAsyncModalHandles<boolean, object>({ getInitialModalState: () => ({}) });
 
@@ -67,6 +70,9 @@ export const UpgradePlanStep: FC<Props> = ({ onContinue }) => {
             },
         });
 
+    const searchParams = new URLSearchParams(location.search);
+    const highlightUnlimitedFlag = searchParams.has('unlimited');
+
     // Using same variable name in translations as a duplicate key in OAuthConfirmForkContainer
     const name = PASS_APP_NAME;
 
@@ -86,17 +92,19 @@ export const UpgradePlanStep: FC<Props> = ({ onContinue }) => {
         },
         {
             title: (
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-2" key="plus-title">
                     {PLAN_NAMES[PLANS.PASS]}
-                    <IcCheckmarkCircleFilled size={5} color="var(--optional-promotion-text-weak)" />
+                    {!highlightUnlimitedFlag && (
+                        <IcCheckmarkCircleFilled size={5} color="var(--optional-promotion-text-weak)" />
+                    )}
                 </div>
             ),
             price: getPrice(passPlus.planIDs),
             priceSubtitle: c('Subtitle').t`per month, billed annually`,
             buttonText: c('Action').t`Get Pass Plus`,
-            buttonShape: 'solid',
+            buttonShape: highlightUnlimitedFlag ? 'outline' : 'solid',
             buttonAction: () => handlePayPlan(PLANS.PASS),
-            recommended: true,
+            recommended: !highlightUnlimitedFlag,
             featuresTitle: c('Label').t`Get everything in Free, plus:`,
             features: [
                 c('Label').t`Unlimited hide-my-email aliases`,
@@ -117,11 +125,20 @@ export const UpgradePlanStep: FC<Props> = ({ onContinue }) => {
             features: [c('Label').t`6 Pass Plus accounts`, c('Label').t`Admin panel for your family`],
         },
         {
-            title: PLAN_NAMES[PLANS.BUNDLE],
+            title: (
+                <div className="flex items-center gap-2" key="unlimited-title">
+                    {PLAN_NAMES[PLANS.BUNDLE]}
+                    {highlightUnlimitedFlag && (
+                        <IcCheckmarkCircleFilled size={5} color="var(--optional-promotion-text-weak)" />
+                    )}
+                </div>
+            ),
             price: getPrice(unlimited.planIDs),
             priceSubtitle: c('Subtitle').t`per month, billed annually`,
             buttonText: c('Action').t`Get the full suite`,
+            buttonShape: highlightUnlimitedFlag ? 'solid' : 'outline',
             buttonAction: () => handlePayPlan(PLANS.BUNDLE),
+            recommended: highlightUnlimitedFlag,
             showProducts: true,
             featuresTitle: c('Label').t`The best of ${BRAND_NAME} with one subscription`,
             features: [
@@ -133,12 +150,14 @@ export const UpgradePlanStep: FC<Props> = ({ onContinue }) => {
         },
     ];
 
+    const getKey = (node: ReactNode) => (isValidElement(node) ? node.key : String(node));
+
     return (
         <Layout>
             <div className="flex flex-column items-center w-full mt-3">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-y-8">
                     {plans.map((plan) => (
-                        <PlanCard key={String(plan.title)} {...plan} />
+                        <PlanCard key={getKey(plan.title)} {...plan} />
                     ))}
                 </div>
             </div>
