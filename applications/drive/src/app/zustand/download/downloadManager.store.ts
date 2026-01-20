@@ -57,6 +57,7 @@ export type DownloadItem = {
     speedBytesPerSecond?: number;
     status: DownloadStatusKeys;
     nodeUids: string[];
+    revisionUid?: string;
     downloadedBytes: number;
     malwareDetected?: Map<string, IssueStatus>;
     unsupportedFileDetected?: IssueStatus;

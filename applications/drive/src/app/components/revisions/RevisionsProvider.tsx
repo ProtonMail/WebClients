@@ -101,7 +101,7 @@ export const RevisionsProvider = ({
         const { revisionId } = splitNodeRevisionUid(revision.uid);
 
         if (isSDKTransferEnabled) {
-            return dm.download([generateNodeUid(link.volumeId, link.linkId)]);
+            return dm.downloadRevision(generateNodeUid(link.volumeId, link.linkId), revision.uid);
         }
 
         void download([{ ...link, shareId: link.rootShareId, revisionId }]);
@@ -185,7 +185,9 @@ export const RevisionsProvider = ({
                     // Optimistically update the local state.
                     // In most cases it will be applied on the backend in few seconds.
                     // We are missing feedback from the backend when restoring fails - that will be handled later.
-                    setOlderRevisions((olderRevisions) => [currentRevision!, ...olderRevisions]);
+                    setOlderRevisions((olderRevisions) =>
+                        currentRevision ? [currentRevision, ...olderRevisions] : olderRevisions
+                    );
                     setCurrentRevision(revision);
                 }),
         });

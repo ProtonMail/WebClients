@@ -911,4 +911,170 @@ describe('DownloadManager', () => {
         controllerCompletion.resolve();
         await completionPromise;
     });
+
+    it('should download a file revision using getFileRevisionDownloader', async () => {
+        const manager = DownloadManager.getInstance();
+        const schedulerInstance = getSchedulerInstance();
+
+        storeMockState.addDownloadItem.mockReturnValue('revision-download-1');
+
+        const node: NodeEntity = createMockNodeEntity({
+            uid: 'file-1',
+            name: 'file.txt',
+        });
+        const nodeSize = node.activeRevision?.storageSize ?? 0;
+        const revisionUid = 'revision-123';
+        hydrateAndCheckNodesMock.mockResolvedValue({ nodes: [node], containsSheetOrDoc: false });
+
+        const controllerCompletion = createDeferred<void>();
+        const controller = {
+            pause: jest.fn(),
+            resume: jest.fn(),
+            completion: jest.fn(() => controllerCompletion.promise),
+            isDownloadCompleteWithSignatureIssues: jest.fn(() => false),
+        };
+        const fileDownloader = {
+            getClaimedSizeInBytes: jest.fn(() => nodeSize),
+            downloadToStream: jest.fn((_writable: unknown, onProgress: (bytes: number) => void) => {
+                onProgress(64);
+                return controller;
+            }),
+        };
+
+        const mockDriveClient = {
+            ...sdkMock.driveMock,
+            getFileRevisionDownloader: jest.fn().mockResolvedValue(fileDownloader),
+        };
+        getDownloadSdkMock.mockReturnValue(mockDriveClient);
+
+        storeMockState.getQueueItem.mockReturnValue({ revisionUid });
+
+        const readableStream = {
+            cancel: jest.fn(),
+            locked: false,
+        } as unknown as ReadableStream<Uint8Array<ArrayBuffer>>;
+        loadCreateReadableStreamWrapperMock.mockResolvedValue(readableStream);
+
+        const saveDeferred = createDeferred<void>();
+        fileSaverSaveAsFileMock.mockReturnValue(saveDeferred.promise);
+
+        await manager.downloadRevision(node.uid, revisionUid);
+
+        expect(storeMockState.addDownloadItem).toHaveBeenCalledWith({
+            name: node.name,
+            storageSize: nodeSize,
+            downloadedBytes: 0,
+            status: DownloadStatus.Pending,
+            nodeUids: [node.uid],
+            revisionUid,
+            unsupportedFileDetected: undefined,
+            isPhoto: false,
+        });
+
+        expect(schedulerInstance.scheduleDownload).toHaveBeenCalledTimes(1);
+        const scheduledTask = schedulerInstance.scheduleDownload.mock.calls[0][0];
+
+        const completionPromise = scheduledTask.start();
+        await flushAsync();
+
+        expect(mockDriveClient.getFileRevisionDownloader).toHaveBeenCalledWith(revisionUid, expect.any(Object));
+        expect(mockDriveClient.getFileDownloader).not.toHaveBeenCalled();
+
+        controllerCompletion.resolve();
+        saveDeferred.resolve();
+
+        await completionPromise;
+    });
+
+    it('should fallback to getFileDownloader when client does not support revision downloads', async () => {
+        const manager = DownloadManager.getInstance();
+        const schedulerInstance = getSchedulerInstance();
+
+        storeMockState.addDownloadItem.mockReturnValue('fallback-download-1');
+
+        const node: NodeEntity = createMockNodeEntity({
+            uid: 'file-1',
+            name: 'file.txt',
+        });
+        const nodeSize = node.activeRevision?.storageSize ?? 0;
+        const revisionUid = 'revision-456';
+        hydrateAndCheckNodesMock.mockResolvedValue({ nodes: [node], containsSheetOrDoc: false });
+
+        const controllerCompletion = createDeferred<void>();
+        const controller = {
+            pause: jest.fn(),
+            resume: jest.fn(),
+            completion: jest.fn(() => controllerCompletion.promise),
+            isDownloadCompleteWithSignatureIssues: jest.fn(() => false),
+        };
+        const fileDownloader = {
+            getClaimedSizeInBytes: jest.fn(() => nodeSize),
+            downloadToStream: jest.fn(() => controller),
+        };
+
+        const mockPublicClient = {
+            ...sdkMock.driveMock,
+            getFileDownloader: jest.fn().mockResolvedValue(fileDownloader),
+        };
+        getDownloadSdkMock.mockReturnValue(mockPublicClient);
+
+        storeMockState.getQueueItem.mockReturnValue({ revisionUid });
+
+        const readableStream = {
+            cancel: jest.fn(),
+            locked: false,
+        } as unknown as ReadableStream<Uint8Array<ArrayBuffer>>;
+        loadCreateReadableStreamWrapperMock.mockResolvedValue(readableStream);
+
+        const saveDeferred = createDeferred<void>();
+        fileSaverSaveAsFileMock.mockReturnValue(saveDeferred.promise);
+
+        await manager.downloadRevision(node.uid, revisionUid);
+
+        const scheduledTask = schedulerInstance.scheduleDownload.mock.calls[0][0];
+        const completionPromise = scheduledTask.start();
+        await flushAsync();
+
+        expect(mockPublicClient.getFileDownloader).toHaveBeenCalledWith(node.uid, expect.any(Object));
+
+        controllerCompletion.resolve();
+        saveDeferred.resolve();
+
+        await completionPromise;
+    });
+
+    it('should retry a revision download with revisionUid preserved', async () => {
+        const manager = DownloadManager.getInstance();
+        const schedulerInstance = getSchedulerInstance();
+
+        const node: NodeEntity = createMockNodeEntity({
+            uid: 'file-retry-revision',
+            name: 'retry-revision.txt',
+        });
+        const revisionUid = 'revision-789';
+        hydrateAndCheckNodesMock.mockResolvedValue({ nodes: [node], containsSheetOrDoc: false });
+
+        storeMockState.addDownloadItem.mockReturnValue('download-retry-revision');
+
+        await manager.downloadRevision(node.uid, revisionUid);
+
+        expect(storeMockState.addDownloadItem).toHaveBeenCalledTimes(1);
+        expect(storeMockState.addDownloadItem).toHaveBeenCalledWith(
+            expect.objectContaining({
+                revisionUid,
+            })
+        );
+        expect(schedulerInstance.scheduleDownload).toHaveBeenCalledTimes(1);
+
+        schedulerInstance.scheduleDownload.mockClear();
+        storeMockState.addDownloadItem.mockClear();
+        storeMockState.getQueueItem.mockReturnValue({ status: DownloadStatus.Failed, revisionUid });
+
+        manager.retry(['download-retry-revision']);
+
+        expect(storeMockState.addDownloadItem).not.toHaveBeenCalled();
+        expect(schedulerInstance.scheduleDownload).toHaveBeenCalledTimes(1);
+        const retriedTask = schedulerInstance.scheduleDownload.mock.calls[0][0];
+        expect(retriedTask.node).toEqual(node);
+    });
 });
