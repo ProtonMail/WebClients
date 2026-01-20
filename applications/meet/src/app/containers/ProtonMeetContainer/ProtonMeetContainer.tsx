@@ -589,6 +589,9 @@ export const ProtonMeetContainer = ({
                         type: 'info',
                         text: c('Info').t`The host has ended the meeting`,
                     });
+                } else if (reason !== undefined) {
+                    // Log abnormal error to sentry
+                    reportMeetError('Room disconnected unexpectedly', DisconnectReason[reason]);
                 }
             });
 
