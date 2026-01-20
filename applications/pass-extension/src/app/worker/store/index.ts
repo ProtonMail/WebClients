@@ -14,6 +14,7 @@ import createSagaMiddleware from 'redux-saga';
 
 import { authStore } from '@proton/pass/lib/auth/store';
 import { ACTIVE_POLLING_TIMEOUT, INACTIVE_POLLING_TIMEOUT } from '@proton/pass/lib/events/constants';
+import browser from '@proton/pass/lib/globals/browser';
 import { createMonitorReport } from '@proton/pass/lib/monitor/monitor.report';
 import { isActionWithSender } from '@proton/pass/store/actions/enhancers/endpoint';
 import { sagaEvents } from '@proton/pass/store/events';
@@ -63,6 +64,7 @@ const store = configureStore({
 
 export const options: RootSagaOptions = {
     endpoint: 'background',
+    extensionId: browser.runtime?.id?.split(' ')[0],
     publish: sagaEvents.publish,
 
     getAuthStore: withContext((ctx) => ctx.authStore),
