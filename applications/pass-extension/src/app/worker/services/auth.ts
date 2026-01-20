@@ -123,6 +123,7 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
              * the `stateDestroy` action : we might have active
              * clients currently consuming the store data */
             ctx.setStatus(AppStatus.UNAUTHORIZED);
+            ctx.setBooted(false);
 
             ctx.service.store.dispatch(cacheCancel());
             ctx.service.store.dispatch(stopEventPolling());
@@ -197,13 +198,13 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
 
                 const { ttl, mode } = lock;
                 await browser.alarms.clear(SESSION_LOCK_ALARM);
-                const ready = clientReady(ctx.getState().status);
+                const booted = clientBooted(ctx.getState().status);
 
                 /* To avoid potential issues during the boot sequence, refrain from
                  * setting the `SESSION_LOCK_ALARM` immediately if the session is locked.
                  * This precaution is taken because the boot process might exceed the lock
                  * TTL duration, leading to an unsuccessful boot for the user */
-                if (ready && mode !== LockMode.NONE && ttl) {
+                if (booted && mode !== LockMode.NONE && ttl) {
                     const when = epochToMs(getEpoch() + ttl);
                     void browser.alarms.create(SESSION_LOCK_ALARM, { when });
                 }
@@ -211,6 +212,7 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
         }),
 
         onLocked: withContext((ctx, mode, _localID, _broadcast) => {
+            ctx.setBooted(false);
             ctx.setStatus(AppStatusFromLockMode[mode]);
             ctx.service.autofill.clear();
 
@@ -373,7 +375,7 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
                     const registeredLock = lockMode !== LockMode.NONE;
                     const ttl = authStore.getLockTTL();
 
-                    if (clientReady(ctx.status) && registeredLock && ttl) {
+                    if (clientBooted(ctx.status) && registeredLock && ttl) {
                         const now = getEpoch();
                         const diff = now - (authStore.getLockLastExtendTime() ?? 0);
                         if (diff > ttl * 0.5) return (await authService.checkLock()).locked;

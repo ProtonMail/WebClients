@@ -30,12 +30,15 @@ import type { MaybeNull } from '@proton/pass/types/utils/index';
 import type { AppState, AppStatus } from '@proton/pass/types/worker/state';
 
 export type WorkerInitOptions = {
-    sync?: boolean /* will clear local storage */;
-    force?: boolean /* will bypass busy state */;
+    /** will clear local storage */
+    sync?: boolean;
+    /** will bypass busy state */
+    force?: boolean;
 };
 
 export interface WorkerContextInterface {
     status: AppStatus;
+    booted: boolean;
     authStore: AuthStore;
     service: {
         activation: ActivationService;
@@ -65,10 +68,12 @@ export interface WorkerContextInterface {
         telemetry: MaybeNull<TelemetryService>;
         vaults: VaultsService;
     };
-    /* status update : side-effects will be triggered */
+    /** `status` update : side-effects will be triggered */
     setStatus: (status: AppStatus) => void;
-    /* returns the current worker state */
+    /** `booted` flag update  */
+    setBooted: (booted: boolean) => void;
+    /** Returns the current worker state */
     getState: () => AppState;
-    /* Returned promise will resolve when worker "ready" */
+    /** Returned promise will resolve when worker "ready" */
     ensureReady: () => Promise<WorkerContextInterface>;
 }
