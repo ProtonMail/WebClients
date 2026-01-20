@@ -1,19 +1,14 @@
-import { c } from 'ttag';
-
 import { defaultFontStyle } from '@proton/components/components/editor/helpers';
 import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
 import type { MessageStateWithData, PartialMessageState } from '@proton/mail/store/messages/messagesTypes';
 import type { MIME_TYPES } from '@proton/shared/lib/constants';
 import { setBit } from '@proton/shared/lib/helpers/bitset';
-import { parseStringToDOM } from '@proton/shared/lib/helpers/dom';
 import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import type { Address, MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
 import type { Recipient } from '@proton/shared/lib/interfaces/Address';
-import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
 import {
     DRAFT_ID_PREFIX,
-    FORWARDED_MESSAGE,
     FW_PREFIX,
     RE_PREFIX,
     formatSubject,
@@ -25,22 +20,21 @@ import {
 import generateUID from '@proton/utils/generateUID';
 import unique from '@proton/utils/unique';
 
+import { createHTMLDraftContent } from 'proton-mail/helpers/message/draftContent/html';
+import { createPlaintextDraftContent } from 'proton-mail/helpers/message/draftContent/plaintext';
+
 import type { DecryptedAttachment } from '../../store/attachments/attachmentsTypes';
 import { getFromAddress } from '../addresses';
 import { convertToFile } from '../attachment/attachmentConverter';
-import { formatFullDate } from '../date';
-import { getDate } from '../elements';
 import { getExpiresIn } from '../expiration';
-import { exportPlainText, getDocumentContent, plainTextToHTML } from './messageContent';
-import { getEmbeddedImages, getRemoteImages, restoreImages, updateImages } from './messageImages';
-import { insertSignature } from './messageSignature';
+import { getEmbeddedImages, getRemoteImages, updateImages } from './messageImages';
 
 // Reference: Angular/src/app/message/services/messageBuilder.js
 
 export const CLASSNAME_BLOCKQUOTE = 'protonmail_quote';
 
 /**
- * Copy embeddeds images from the reference message
+ * Copy embedded images from the reference message
  */
 export const keepImages = (message: PartialMessageState) => {
     const embeddedImages = getEmbeddedImages(message);
@@ -157,114 +151,41 @@ export const handleActions = (
     }
 };
 
-export const getBlockquoteRecipientsString = (recipients: Recipient[] = []) => {
-    return recipients
+/**
+ * Format a recipient to the string that is displayed at the beginning of blockquotes
+ * For HTML content, useHtmlEntities should be true
+ */
+
+export const formatRecipientsString = (recipient: Recipient[] = [], format: 'html' | 'plaintext') => {
+    return recipient
         .map((recipient) => {
-            return `${recipient?.Name || recipient?.Address} &lt;${recipient?.Address}&gt;`;
+            const name = recipient?.Name || recipient?.Address;
+            const address = recipient?.Address;
+            const [open, close] = format === 'html' ? ['&lt;', '&gt;'] : ['<', '>'];
+            return `${name} ${open}${address}${close}`;
         })
         .join(', ');
 };
 
-export const generatePreviousMessageInfos = (referenceMessage: PartialMessageState, action: MESSAGE_ACTIONS) => {
-    /**
-     * Warning, if this logic is being updated, the plaintext blockquote detection needs to be updated as well.
-     * See "locatePlaintextInternalBlockquotes" function
-     */
-    const senderString = getBlockquoteRecipientsString([referenceMessage.data?.Sender] as Recipient[]);
-    const date = formatFullDate(getDate(referenceMessage?.data as Message, ''));
+interface CreateNewDraftParams {
+    action: MESSAGE_ACTIONS;
+    referenceMessage: PartialMessageState | undefined;
+    mailSettings: MailSettings;
+    userSettings: UserSettings;
+    addresses: Address[];
+    getAttachment: (ID: string) => DecryptedAttachment | undefined;
+    isOutside?: boolean;
+}
 
-    if (action === MESSAGE_ACTIONS.FORWARD) {
-        const ccString = getBlockquoteRecipientsString(referenceMessage.data?.CCList as Recipient[]);
-        const toString = getBlockquoteRecipientsString(referenceMessage.data?.ToList as Recipient[]);
-        const ccRecipients = (referenceMessage.data?.CCList?.length || 0) > 0 ? `CC: ${ccString}<br>` : '';
-        const subject = referenceMessage.data?.Subject;
-
-        /*
-         * translator: String inserted in draft blockquotes when forwarding a message
-         * ${senderString} is a string containing the sender of the message you're forwarding
-         * Full sentence for reference: "From: Display Name <address@protonmail.com>"
-         */
-        const fromString = c('forwardmessage').t`From: ${senderString}`;
-        /*
-         * translator: String inserted in draft blockquotes when forwarding a message
-         * ${date} is the localized date "Thursday, October 27th, 2022 at 12:31", for example
-         * Full sentence for reference: "Date: On Thursday, October 27th, 2022 at 12:31"
-         */
-        const dateString = c('forwardmessage').t`Date: On ${date}`;
-        /*
-         * translator: String inserted in draft blockquotes when forwarding a message
-         * ${subject} is a string containing the subject of the message you're forwarding
-         */
-        const subjectString = c('forwardmessage').t`Subject: ${subject}`;
-        /*
-         * translator: String inserted in draft blockquotes when forwarding a message
-         * ${toString} is a string containing the recipients of the message you're forwarding
-         * Full sentence for reference: "To: Display Name <address@protonmail.com>"
-         */
-        const recipientString = c('forwardmessage').t`To: ${toString}`;
-
-        return `${FORWARDED_MESSAGE}<br>
-        ${fromString}<br>
-        ${dateString}<br>
-        ${subjectString}<br>
-        ${recipientString}<br>
-        ${ccRecipients}<br>`;
-    } else {
-        /*
-         * translator: String inserted in draft blockquotes when replying to a message
-         * ${date} is the localized date "Thursday, October 27th, 2022 at 12:31", for example
-         * ${senderString} is a string containing the sender of the message you're replying to
-         * Full sentence for reference: "On Thursday, October 27th, 2022 at 12:31, Display Name <address@protonmail.com> wrote:"
-         */
-        const previously = c('Message').t`On ${date}, ${senderString} wrote:`;
-
-        return `${previously}<br>`;
-    }
-};
-
-/**
- * Generate blockquote of the referenced message to the content of the new mail
- */
-export const generateBlockquote = (
-    referenceMessage: PartialMessageState,
-    mailSettings: MailSettings,
-    userSettings: UserSettings,
-    addresses: Address[],
-    action: MESSAGE_ACTIONS
-) => {
-    const previousContent = referenceMessage.errors?.decryption
-        ? referenceMessage.data?.Body
-        : isPlainText(referenceMessage.data)
-          ? plainTextToHTML(
-                referenceMessage.data as Message,
-                referenceMessage.decryption?.decryptedBody,
-                mailSettings,
-                userSettings,
-                addresses
-            )
-          : getDocumentContent(
-                restoreImages(referenceMessage.messageDocument?.document, referenceMessage.messageImages)
-            );
-
-    const previousMessageInfos = generatePreviousMessageInfos(referenceMessage, action);
-
-    return `<div class="${CLASSNAME_BLOCKQUOTE}">
-        ${previousMessageInfos}
-        <blockquote class="${CLASSNAME_BLOCKQUOTE}" type="cite">
-            ${previousContent}
-        </blockquote><br>
-    </div>`;
-};
-
-export const createNewDraft = (
-    action: MESSAGE_ACTIONS,
-    referenceMessage: PartialMessageState | undefined,
-    mailSettings: MailSettings,
-    userSettings: UserSettings,
-    addresses: Address[],
-    getAttachment: (ID: string) => DecryptedAttachment | undefined,
-    isOutside = false
-): PartialMessageState => {
+export const createNewDraft = ({
+    action,
+    referenceMessage,
+    addresses,
+    userSettings,
+    mailSettings,
+    isOutside,
+    getAttachment,
+}: CreateNewDraftParams): PartialMessageState => {
     const MIMEType = isOutside
         ? (mailSettings.DraftMIMEType as unknown as MIME_TYPES)
         : referenceMessage?.data?.MIMEType || (mailSettings.DraftMIMEType as unknown as MIME_TYPES);
@@ -303,30 +224,9 @@ export const createNewDraft = (
 
     const ParentID = action === MESSAGE_ACTIONS.NEW ? undefined : referenceMessage?.data?.ID;
 
-    let content =
-        action === MESSAGE_ACTIONS.NEW
-            ? referenceMessage?.decryption?.decryptedBody
-                ? referenceMessage?.decryption?.decryptedBody
-                : ''
-            : generateBlockquote(referenceMessage || {}, mailSettings, userSettings, addresses, action);
-
     const fontStyle = defaultFontStyle(mailSettings);
-
-    content =
-        action === MESSAGE_ACTIONS.NEW && referenceMessage?.decryption?.decryptedBody
-            ? insertSignature(content, senderAddress?.Signature, action, mailSettings, userSettings, fontStyle, true)
-            : insertSignature(content, senderAddress?.Signature, action, mailSettings, userSettings, fontStyle);
-
     const plain = isPlainText({ MIMEType });
-    const document = plain ? undefined : parseStringToDOM(content).body;
 
-    // Prevent nested ternary
-    const getPlainTextContent = (content: string) => {
-        const exported = exportPlainText(content);
-        return exported === '' ? '' : `\n\n${exported}`;
-    };
-
-    const plainText = plain ? getPlainTextContent(content) : undefined;
     let expiresIn: Date | undefined;
 
     if (action === MESSAGE_ACTIONS.REPLY || action === MESSAGE_ACTIONS.REPLY_ALL) {
@@ -352,8 +252,24 @@ export const createNewDraft = (
         },
         messageDocument: {
             initialized: true,
-            document,
-            plainText,
+            ...(plain
+                ? createPlaintextDraftContent({
+                      action,
+                      referenceMessage,
+                      mailSettings,
+                      userSettings,
+                      fontStyle,
+                      senderAddress,
+                  })
+                : createHTMLDraftContent({
+                      action,
+                      referenceMessage,
+                      addresses,
+                      senderAddress,
+                      fontStyle,
+                      userSettings,
+                      mailSettings,
+                  })),
         },
         draftFlags: {
             ParentID,

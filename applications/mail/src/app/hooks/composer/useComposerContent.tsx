@@ -407,8 +407,7 @@ export const useComposerContent = (args: EditorArgs) => {
                 modelMessage.draftFlags?.action || MESSAGE_ACTIONS.NEW,
                 mailSettings,
                 userSettings,
-                undefined,
-                false
+                undefined
             );
 
             return exportPlainText(content);
@@ -434,8 +433,7 @@ export const useComposerContent = (args: EditorArgs) => {
                 modelMessage.draftFlags?.action || MESSAGE_ACTIONS.NEW,
                 mailSettings,
                 userSettings,
-                undefined,
-                false
+                undefined
             );
             return exportPlainText(content);
         })();

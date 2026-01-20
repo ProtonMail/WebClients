@@ -145,15 +145,19 @@ export const insertSignature = (
     action: MESSAGE_ACTIONS,
     mailSettings: MailSettings,
     userSettings: Partial<UserSettings>,
-    fontStyle: string | undefined,
-    isAfter = false
+    fontStyle: string | undefined
 ) => {
-    const position = isAfter ? 'beforeend' : 'afterbegin';
-    const template = templateBuilder(signature, mailSettings, userSettings, fontStyle, action !== MESSAGE_ACTIONS.NEW);
+    const template = templateBuilder(
+        signature,
+        mailSettings,
+        userSettings,
+        fontStyle,
+        action !== MESSAGE_ACTIONS.NEW
+    );
 
     // Parse the current message and append before it the signature
     const element = parseStringToDOM(content);
-    element.body.insertAdjacentHTML(position, template);
+    element.body.insertAdjacentHTML('afterbegin', template);
 
     return element.body.innerHTML;
 };

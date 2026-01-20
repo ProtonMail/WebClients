@@ -18,6 +18,13 @@ import {
 } from './messageBlockquote';
 import { exportPlainText } from './messageContent';
 
+// Normalize whitespace for comparison (editors often strip trailing spaces)
+const normalize = (str: string) =>
+    str
+        .split('\n')
+        .map((line) => line.trimEnd())
+        .join('\n');
+
 /**
  * Creating a whole document each time is needed because locate blockquote is using xpath request
  * which will fail if the content is not actually in the document
@@ -196,7 +203,6 @@ describe('locatePlaintextInternalBlockquotes', () => {
 
 
 
-
 ${exportPlainText(getProtonMailSignature())}
 
 `;
@@ -204,14 +210,14 @@ ${exportPlainText(getProtonMailSignature())}
     const formattedDate = formatFullDate(messageDate);
 
     it(`should locate reply internal plaintext blockquotes`, () => {
-        const newMessage = createNewDraft(
-            MESSAGE_ACTIONS.REPLY,
+        const newMessage = createNewDraft({
+            action: MESSAGE_ACTIONS.REPLY,
             referenceMessage,
-            { PMSignature: PM_SIGNATURE.ENABLED } as MailSettings,
-            {} as UserSettings,
-            [] as Address[],
-            jest.fn()
-        );
+            mailSettings: { PMSignature: PM_SIGNATURE.ENABLED } as MailSettings,
+            userSettings: {} as UserSettings,
+            addresses: [] as Address[],
+            getAttachment: jest.fn(),
+        });
 
         const expectedBlockquotes = `On ${formattedDate}, ${referenceMessageSender.Name} <${referenceMessageSender.Address}> wrote:
 
@@ -224,14 +230,14 @@ ${exportPlainText(getProtonMailSignature())}
     });
 
     it(`should locate forward internal plaintext blockquotes`, () => {
-        const newMessage = createNewDraft(
-            MESSAGE_ACTIONS.FORWARD,
+        const newMessage = createNewDraft({
+            action: MESSAGE_ACTIONS.FORWARD,
             referenceMessage,
-            { PMSignature: PM_SIGNATURE.ENABLED } as MailSettings,
-            {} as UserSettings,
-            [] as Address[],
-            jest.fn()
-        );
+            mailSettings: { PMSignature: PM_SIGNATURE.ENABLED } as MailSettings,
+            userSettings: {} as UserSettings,
+            addresses: [] as Address[],
+            getAttachment: jest.fn(),
+        });
 
         const expectedBlockquotes = `${FORWARDED_MESSAGE}
 From: ${referenceMessageSender.Name} <${referenceMessageSender.Address}>
@@ -311,12 +317,12 @@ describe('removeSignatureFromHTMLMessage', () => {
                     <p>Let me know if you'd like to schedule a call to discuss these points further.</p>
                     <p>Best regards,</p>
                 </div>
-                
-            
+
+
         </body>`;
 
         const contentWithoutSignature = removeSignatureFromHTMLMessage(content);
-        expect(contentWithoutSignature).toEqual(expectedContent);
+        expect(normalize(contentWithoutSignature)).toEqual(normalize(expectedContent));
     });
     it('should locate content before blockquote and remove the signature', () => {
         const content = `
@@ -342,12 +348,12 @@ describe('removeSignatureFromHTMLMessage', () => {
 
         const expectedContent = `<body><div style=\"font-family: verdana; font-size: 20px;\">
             <div style=\"font-family: verdana; font-size: 20px;\">This is the content before the blockquote and signature<br></div>
-            
+
             </div></body>`;
 
         const [contentWithoutBlockQuotes] = locateBlockquote(createDocument(content));
         const contentWithoutSignature = removeSignatureFromHTMLMessage(contentWithoutBlockQuotes);
-        expect(contentWithoutSignature).toEqual(expectedContent);
+        expect(normalize(contentWithoutSignature)).toEqual(normalize(expectedContent));
     });
 });
 
