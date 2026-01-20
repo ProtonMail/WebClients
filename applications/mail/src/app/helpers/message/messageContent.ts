@@ -12,8 +12,8 @@ import { unescape } from '@proton/shared/lib/sanitize/escape';
 import { parseModelResult } from '../assistant/result';
 import { findSender } from '../message/messageRecipients';
 import { textToHtml } from '../textToHtml';
+import { generateBlockquote } from './draftContent/html';
 import { locateBlockquote } from './messageBlockquote';
-import { generateBlockquote } from './messageDraft';
 
 export const getPlainTextContent = (message: PartialMessageState) => {
     return message.messageDocument?.plainText || '';

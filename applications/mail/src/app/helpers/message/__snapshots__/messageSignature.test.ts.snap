@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
-exports[`signature insertSignature snapshots should match with protonSignature false, userSignature false, action -1, isAfter false 1`] = `
+exports[`signature insertSignature snapshots should match with protonSignature false, userSignature false, action -1 1`] = `
 "<div><br></div>
 <div class="protonmail_signature_block protonmail_signature_block-empty">
     <div class="protonmail_signature_block-user protonmail_signature_block-empty">
@@ -14,21 +14,7 @@ exports[`signature insertSignature snapshots should match with protonSignature f
 <p>test</p>"
 `;
 
-exports[`signature insertSignature snapshots should match with protonSignature false, userSignature false, action -1, isAfter true 1`] = `
-"<p>test</p><div><br></div>
-<div class="protonmail_signature_block protonmail_signature_block-empty">
-    <div class="protonmail_signature_block-user protonmail_signature_block-empty">
-        
-            </div>
-    
-            <div class="protonmail_signature_block-proton protonmail_signature_block-empty">
-        
-            </div>
-</div>
-"
-`;
-
-exports[`signature insertSignature snapshots should match with protonSignature false, userSignature false, action 0, isAfter false 1`] = `
+exports[`signature insertSignature snapshots should match with protonSignature false, userSignature false, action 0 1`] = `
 "<div><br></div>
 <div class="protonmail_signature_block protonmail_signature_block-empty">
     <div class="protonmail_signature_block-user protonmail_signature_block-empty">
@@ -42,21 +28,7 @@ exports[`signature insertSignature snapshots should match with protonSignature f
 <div><br></div><p>test</p>"
 `;
 
-exports[`signature insertSignature snapshots should match with protonSignature false, userSignature false, action 0, isAfter true 1`] = `
-"<p>test</p><div><br></div>
-<div class="protonmail_signature_block protonmail_signature_block-empty">
-    <div class="protonmail_signature_block-user protonmail_signature_block-empty">
-        
-            </div>
-    
-            <div class="protonmail_signature_block-proton protonmail_signature_block-empty">
-        
-            </div>
-</div>
-<div><br></div>"
-`;
-
-exports[`signature insertSignature snapshots should match with protonSignature false, userSignature false, action 1, isAfter false 1`] = `
+exports[`signature insertSignature snapshots should match with protonSignature false, userSignature false, action 1 1`] = `
 "<div><br></div>
 <div class="protonmail_signature_block protonmail_signature_block-empty">
     <div class="protonmail_signature_block-user protonmail_signature_block-empty">
@@ -70,21 +42,7 @@ exports[`signature insertSignature snapshots should match with protonSignature f
 <div><br></div><p>test</p>"
 `;
 
-exports[`signature insertSignature snapshots should match with protonSignature false, userSignature false, action 1, isAfter true 1`] = `
-"<p>test</p><div><br></div>
-<div class="protonmail_signature_block protonmail_signature_block-empty">
-    <div class="protonmail_signature_block-user protonmail_signature_block-empty">
-        
-            </div>
-    
-            <div class="protonmail_signature_block-proton protonmail_signature_block-empty">
-        
-            </div>
-</div>
-<div><br></div>"
-`;
-
-exports[`signature insertSignature snapshots should match with protonSignature false, userSignature false, action 2, isAfter false 1`] = `
+exports[`signature insertSignature snapshots should match with protonSignature false, userSignature false, action 2 1`] = `
 "<div><br></div>
 <div class="protonmail_signature_block protonmail_signature_block-empty">
     <div class="protonmail_signature_block-user protonmail_signature_block-empty">
@@ -98,21 +56,7 @@ exports[`signature insertSignature snapshots should match with protonSignature f
 <div><br></div><p>test</p>"
 `;
 
-exports[`signature insertSignature snapshots should match with protonSignature false, userSignature false, action 2, isAfter true 1`] = `
-"<p>test</p><div><br></div>
-<div class="protonmail_signature_block protonmail_signature_block-empty">
-    <div class="protonmail_signature_block-user protonmail_signature_block-empty">
-        
-            </div>
-    
-            <div class="protonmail_signature_block-proton protonmail_signature_block-empty">
-        
-            </div>
-</div>
-<div><br></div>"
-`;
-
-exports[`signature insertSignature snapshots should match with protonSignature false, userSignature true, action -1, isAfter false 1`] = `
+exports[`signature insertSignature snapshots should match with protonSignature false, userSignature true, action -1 1`] = `
 "<div><br></div><div><br></div>
 <div class="protonmail_signature_block">
     <div class="protonmail_signature_block-user">
@@ -127,22 +71,7 @@ exports[`signature insertSignature snapshots should match with protonSignature f
 <p>test</p>"
 `;
 
-exports[`signature insertSignature snapshots should match with protonSignature false, userSignature true, action -1, isAfter true 1`] = `
-"<p>test</p><div><br></div><div><br></div>
-<div class="protonmail_signature_block">
-    <div class="protonmail_signature_block-user">
-        
-<strong>&gt;signature</strong>
-    </div>
-    
-            <div class="protonmail_signature_block-proton protonmail_signature_block-empty">
-        
-            </div>
-</div>
-"
-`;
-
-exports[`signature insertSignature snapshots should match with protonSignature false, userSignature true, action 0, isAfter false 1`] = `
+exports[`signature insertSignature snapshots should match with protonSignature false, userSignature true, action 0 1`] = `
 "<div><br></div><div><br></div>
 <div class="protonmail_signature_block">
     <div class="protonmail_signature_block-user">
@@ -157,22 +86,7 @@ exports[`signature insertSignature snapshots should match with protonSignature f
 <div><br></div><p>test</p>"
 `;
 
-exports[`signature insertSignature snapshots should match with protonSignature false, userSignature true, action 0, isAfter true 1`] = `
-"<p>test</p><div><br></div><div><br></div>
-<div class="protonmail_signature_block">
-    <div class="protonmail_signature_block-user">
-        
-<strong>&gt;signature</strong>
-    </div>
-    
-            <div class="protonmail_signature_block-proton protonmail_signature_block-empty">
-        
-            </div>
-</div>
-<div><br></div>"
-`;
-
-exports[`signature insertSignature snapshots should match with protonSignature false, userSignature true, action 1, isAfter false 1`] = `
+exports[`signature insertSignature snapshots should match with protonSignature false, userSignature true, action 1 1`] = `
 "<div><br></div><div><br></div>
 <div class="protonmail_signature_block">
     <div class="protonmail_signature_block-user">
@@ -187,22 +101,7 @@ exports[`signature insertSignature snapshots should match with protonSignature f
 <div><br></div><p>test</p>"
 `;
 
-exports[`signature insertSignature snapshots should match with protonSignature false, userSignature true, action 1, isAfter true 1`] = `
-"<p>test</p><div><br></div><div><br></div>
-<div class="protonmail_signature_block">
-    <div class="protonmail_signature_block-user">
-        
-<strong>&gt;signature</strong>
-    </div>
-    
-            <div class="protonmail_signature_block-proton protonmail_signature_block-empty">
-        
-            </div>
-</div>
-<div><br></div>"
-`;
-
-exports[`signature insertSignature snapshots should match with protonSignature false, userSignature true, action 2, isAfter false 1`] = `
+exports[`signature insertSignature snapshots should match with protonSignature false, userSignature true, action 2 1`] = `
 "<div><br></div><div><br></div>
 <div class="protonmail_signature_block">
     <div class="protonmail_signature_block-user">
@@ -217,22 +116,7 @@ exports[`signature insertSignature snapshots should match with protonSignature f
 <div><br></div><p>test</p>"
 `;
 
-exports[`signature insertSignature snapshots should match with protonSignature false, userSignature true, action 2, isAfter true 1`] = `
-"<p>test</p><div><br></div><div><br></div>
-<div class="protonmail_signature_block">
-    <div class="protonmail_signature_block-user">
-        
-<strong>&gt;signature</strong>
-    </div>
-    
-            <div class="protonmail_signature_block-proton protonmail_signature_block-empty">
-        
-            </div>
-</div>
-<div><br></div>"
-`;
-
-exports[`signature insertSignature snapshots should match with protonSignature true, userSignature false, action -1, isAfter false 1`] = `
+exports[`signature insertSignature snapshots should match with protonSignature true, userSignature false, action -1 1`] = `
 "<div><br></div><div><br></div>
 <div class="protonmail_signature_block">
     <div class="protonmail_signature_block-user protonmail_signature_block-empty">
@@ -246,21 +130,7 @@ exports[`signature insertSignature snapshots should match with protonSignature t
 <p>test</p>"
 `;
 
-exports[`signature insertSignature snapshots should match with protonSignature true, userSignature false, action -1, isAfter true 1`] = `
-"<p>test</p><div><br></div><div><br></div>
-<div class="protonmail_signature_block">
-    <div class="protonmail_signature_block-user protonmail_signature_block-empty">
-        
-            </div>
-    
-            <div class="protonmail_signature_block-proton">
-        Sent with <a href="https://proton.me/mail/home" target="_blank">Proton Mail</a> secure email.
-    </div>
-</div>
-"
-`;
-
-exports[`signature insertSignature snapshots should match with protonSignature true, userSignature false, action 0, isAfter false 1`] = `
+exports[`signature insertSignature snapshots should match with protonSignature true, userSignature false, action 0 1`] = `
 "<div><br></div><div><br></div>
 <div class="protonmail_signature_block">
     <div class="protonmail_signature_block-user protonmail_signature_block-empty">
@@ -274,21 +144,7 @@ exports[`signature insertSignature snapshots should match with protonSignature t
 <div><br></div><p>test</p>"
 `;
 
-exports[`signature insertSignature snapshots should match with protonSignature true, userSignature false, action 0, isAfter true 1`] = `
-"<p>test</p><div><br></div><div><br></div>
-<div class="protonmail_signature_block">
-    <div class="protonmail_signature_block-user protonmail_signature_block-empty">
-        
-            </div>
-    
-            <div class="protonmail_signature_block-proton">
-        Sent with <a href="https://proton.me/mail/home" target="_blank">Proton Mail</a> secure email.
-    </div>
-</div>
-<div><br></div>"
-`;
-
-exports[`signature insertSignature snapshots should match with protonSignature true, userSignature false, action 1, isAfter false 1`] = `
+exports[`signature insertSignature snapshots should match with protonSignature true, userSignature false, action 1 1`] = `
 "<div><br></div><div><br></div>
 <div class="protonmail_signature_block">
     <div class="protonmail_signature_block-user protonmail_signature_block-empty">
@@ -302,21 +158,7 @@ exports[`signature insertSignature snapshots should match with protonSignature t
 <div><br></div><p>test</p>"
 `;
 
-exports[`signature insertSignature snapshots should match with protonSignature true, userSignature false, action 1, isAfter true 1`] = `
-"<p>test</p><div><br></div><div><br></div>
-<div class="protonmail_signature_block">
-    <div class="protonmail_signature_block-user protonmail_signature_block-empty">
-        
-            </div>
-    
-            <div class="protonmail_signature_block-proton">
-        Sent with <a href="https://proton.me/mail/home" target="_blank">Proton Mail</a> secure email.
-    </div>
-</div>
-<div><br></div>"
-`;
-
-exports[`signature insertSignature snapshots should match with protonSignature true, userSignature false, action 2, isAfter false 1`] = `
+exports[`signature insertSignature snapshots should match with protonSignature true, userSignature false, action 2 1`] = `
 "<div><br></div><div><br></div>
 <div class="protonmail_signature_block">
     <div class="protonmail_signature_block-user protonmail_signature_block-empty">
@@ -330,21 +172,7 @@ exports[`signature insertSignature snapshots should match with protonSignature t
 <div><br></div><p>test</p>"
 `;
 
-exports[`signature insertSignature snapshots should match with protonSignature true, userSignature false, action 2, isAfter true 1`] = `
-"<p>test</p><div><br></div><div><br></div>
-<div class="protonmail_signature_block">
-    <div class="protonmail_signature_block-user protonmail_signature_block-empty">
-        
-            </div>
-    
-            <div class="protonmail_signature_block-proton">
-        Sent with <a href="https://proton.me/mail/home" target="_blank">Proton Mail</a> secure email.
-    </div>
-</div>
-<div><br></div>"
-`;
-
-exports[`signature insertSignature snapshots should match with protonSignature true, userSignature true, action -1, isAfter false 1`] = `
+exports[`signature insertSignature snapshots should match with protonSignature true, userSignature true, action -1 1`] = `
 "<div><br></div><div><br></div>
 <div class="protonmail_signature_block">
     <div class="protonmail_signature_block-user">
@@ -359,22 +187,7 @@ exports[`signature insertSignature snapshots should match with protonSignature t
 <p>test</p>"
 `;
 
-exports[`signature insertSignature snapshots should match with protonSignature true, userSignature true, action -1, isAfter true 1`] = `
-"<p>test</p><div><br></div><div><br></div>
-<div class="protonmail_signature_block">
-    <div class="protonmail_signature_block-user">
-        
-<strong>&gt;signature</strong>
-    </div>
-    <div><br></div>
-    <div class="protonmail_signature_block-proton">
-        Sent with <a href="https://proton.me/mail/home" target="_blank">Proton Mail</a> secure email.
-    </div>
-</div>
-"
-`;
-
-exports[`signature insertSignature snapshots should match with protonSignature true, userSignature true, action 0, isAfter false 1`] = `
+exports[`signature insertSignature snapshots should match with protonSignature true, userSignature true, action 0 1`] = `
 "<div><br></div><div><br></div>
 <div class="protonmail_signature_block">
     <div class="protonmail_signature_block-user">
@@ -389,22 +202,7 @@ exports[`signature insertSignature snapshots should match with protonSignature t
 <div><br></div><p>test</p>"
 `;
 
-exports[`signature insertSignature snapshots should match with protonSignature true, userSignature true, action 0, isAfter true 1`] = `
-"<p>test</p><div><br></div><div><br></div>
-<div class="protonmail_signature_block">
-    <div class="protonmail_signature_block-user">
-        
-<strong>&gt;signature</strong>
-    </div>
-    <div><br></div>
-    <div class="protonmail_signature_block-proton">
-        Sent with <a href="https://proton.me/mail/home" target="_blank">Proton Mail</a> secure email.
-    </div>
-</div>
-<div><br></div>"
-`;
-
-exports[`signature insertSignature snapshots should match with protonSignature true, userSignature true, action 1, isAfter false 1`] = `
+exports[`signature insertSignature snapshots should match with protonSignature true, userSignature true, action 1 1`] = `
 "<div><br></div><div><br></div>
 <div class="protonmail_signature_block">
     <div class="protonmail_signature_block-user">
@@ -419,22 +217,7 @@ exports[`signature insertSignature snapshots should match with protonSignature t
 <div><br></div><p>test</p>"
 `;
 
-exports[`signature insertSignature snapshots should match with protonSignature true, userSignature true, action 1, isAfter true 1`] = `
-"<p>test</p><div><br></div><div><br></div>
-<div class="protonmail_signature_block">
-    <div class="protonmail_signature_block-user">
-        
-<strong>&gt;signature</strong>
-    </div>
-    <div><br></div>
-    <div class="protonmail_signature_block-proton">
-        Sent with <a href="https://proton.me/mail/home" target="_blank">Proton Mail</a> secure email.
-    </div>
-</div>
-<div><br></div>"
-`;
-
-exports[`signature insertSignature snapshots should match with protonSignature true, userSignature true, action 2, isAfter false 1`] = `
+exports[`signature insertSignature snapshots should match with protonSignature true, userSignature true, action 2 1`] = `
 "<div><br></div><div><br></div>
 <div class="protonmail_signature_block">
     <div class="protonmail_signature_block-user">
@@ -447,19 +230,4 @@ exports[`signature insertSignature snapshots should match with protonSignature t
     </div>
 </div>
 <div><br></div><p>test</p>"
-`;
-
-exports[`signature insertSignature snapshots should match with protonSignature true, userSignature true, action 2, isAfter true 1`] = `
-"<p>test</p><div><br></div><div><br></div>
-<div class="protonmail_signature_block">
-    <div class="protonmail_signature_block-user">
-        
-<strong>&gt;signature</strong>
-    </div>
-    <div><br></div>
-    <div class="protonmail_signature_block-proton">
-        Sent with <a href="https://proton.me/mail/home" target="_blank">Proton Mail</a> secure email.
-    </div>
-</div>
-<div><br></div>"
 `;

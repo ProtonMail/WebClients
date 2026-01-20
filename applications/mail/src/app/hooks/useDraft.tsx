@@ -68,14 +68,14 @@ export const useDraft = () => {
             if (!mailSettings || !addresses) {
                 return;
             }
-            const message = createNewDraft(
-                MESSAGE_ACTIONS.NEW,
-                undefined,
+            const message = createNewDraft({
+                action: MESSAGE_ACTIONS.NEW,
+                referenceMessage: undefined,
                 mailSettings,
                 userSettings,
                 addresses,
-                getAttachment
-            );
+                getAttachment,
+            });
             cache.set(CACHE_KEY, message);
         };
         void run();
@@ -93,15 +93,14 @@ export const useDraft = () => {
                 message = cloneDraft(cache.get(CACHE_KEY) as MessageStateWithData);
             } else {
                 // This cast is quite dangerous but hard to remove
-                message = createNewDraft(
+                message = createNewDraft({
                     action,
                     referenceMessage,
                     mailSettings,
                     userSettings,
                     addresses,
                     getAttachment,
-                    false
-                ) as MessageState;
+                }) as MessageState;
             }
 
             message.localID = generateUID('draft');
