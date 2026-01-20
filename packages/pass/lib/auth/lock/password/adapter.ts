@@ -39,10 +39,7 @@ export const passwordLockAdapterFactory = (auth: AuthService): LockAdapter => {
 
         check: async () => {
             logger.info(`[PasswordLock] checking password lock`);
-
-            const offlineConfig = authStore.getOfflineConfig();
-            const offlineVerifier = authStore.getOfflineVerifier();
-            if (!(offlineConfig && offlineVerifier)) return { mode: LockMode.NONE, locked: false };
+            if (!authStore.hasOfflineComponents()) return { mode: LockMode.NONE, locked: false };
 
             authStore.setLockLastExtendTime(getEpoch());
             return { mode: adapter.type, locked: false, ttl: authStore.getLockTTL() };
