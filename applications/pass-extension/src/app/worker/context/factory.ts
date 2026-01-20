@@ -38,7 +38,7 @@ import { desktopLockAdapterFactory } from '@proton/pass/lib/auth/lock/desktop/ad
 import { sessionLockAdapterFactory } from '@proton/pass/lib/auth/lock/session/adapter';
 import { LockMode } from '@proton/pass/lib/auth/lock/types';
 import { createAuthStore, exposeAuthStore } from '@proton/pass/lib/auth/store';
-import { clientBooted, clientDisabled, clientLocked, clientReady, clientStatusResolved } from '@proton/pass/lib/client';
+import { clientBooted, clientDisabled, clientLocked, clientStatusResolved } from '@proton/pass/lib/client';
 import { exposePassCrypto } from '@proton/pass/lib/crypto';
 import { createPassCrypto } from '@proton/pass/lib/crypto/pass-crypto';
 import { registerStoreEffect } from '@proton/pass/store/connect/effect';
@@ -77,6 +77,7 @@ export const createWorkerContext = (config: ProtonConfig) => {
 
     const context = WorkerContext.set({
         status: AppStatus.IDLE,
+        booted: false,
         authStore,
         service: {
             activation: createActivationService(),
@@ -119,8 +120,8 @@ export const createWorkerContext = (config: ProtonConfig) => {
             const lockSetup = selectLockSetupRequired(store.getState());
 
             return {
-                authorized: authStore.hasSession() && clientReady(context.status) && !lockSetup,
-                booted: clientBooted(context.status),
+                authorized: authStore.hasSession() && clientBooted(context.status) && !lockSetup,
+                booted: context.booted,
                 localID: authStore.getLocalID(),
                 lockSetup,
                 status: context.status,
@@ -129,10 +130,19 @@ export const createWorkerContext = (config: ProtonConfig) => {
         },
 
         setStatus(status: AppStatus) {
-            logger.info(`[Worker::Context] Status update : ${context.status} -> ${status}`);
-            context.status = status;
-            setPopupIcon({ disabled: clientDisabled(status), locked: clientLocked(status) });
-            onStateUpdate(context.getState());
+            if (context.status !== status) {
+                logger.info(`[Worker::Context] Status update : ${context.status} -> ${status}`);
+                context.status = status;
+                setPopupIcon({ disabled: clientDisabled(status), locked: clientLocked(status) });
+                onStateUpdate(context.getState());
+            }
+        },
+
+        setBooted(booted) {
+            if (context.booted !== booted) {
+                context.booted = booted;
+                onStateUpdate(context.getState());
+            }
         },
     });
 
