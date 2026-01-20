@@ -59,6 +59,7 @@ export const useSharingModalState = ({
     linkId,
     onClose,
     onPublicLinkToggle,
+    // TODO: Remove this in favor of getting the album type from the loaded node.
     isAlbum,
     open,
     onExit,
