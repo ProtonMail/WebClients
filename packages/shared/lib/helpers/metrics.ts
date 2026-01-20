@@ -85,9 +85,9 @@ export const sendTelemetryReport = async ({
             await randomDelay();
         }
 
-        const telemetryReport: TelemetryReport = { measurementGroup, event, values, dimensions };
-
         if (getStandaloneUnleashClient()?.isEnabled(CommonFeatureFlag.WebBatchTelemetryReports)) {
+            const telemetryReport: TelemetryReport = { measurementGroup, event, values, dimensions };
+
             if (!telemetryReportsBatchQueue.hasFlushCallback()) {
                 telemetryReportsBatchQueue.setFlushCallback(async (reports: TelemetryReport[]) => {
                     await possiblySilentApi(
@@ -109,8 +109,6 @@ export const sendTelemetryReport = async ({
                 })
             ));
         }
-
-        telemetryReportsBatchQueue.add(telemetryReport);
     } catch {
         // fail silently
     }
