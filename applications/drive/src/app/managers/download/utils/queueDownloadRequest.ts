@@ -8,6 +8,7 @@ type QueueDownloadRequestParams = {
     isPhoto: boolean;
     containsUnsupportedFile?: boolean;
     albumName?: string;
+    revisionUid?: string;
     addDownloadItem: (item: DownloadItemInput) => string;
     requestedDownloads: Map<string, NodeEntity[]>;
     scheduleSingleFile: (downloadId: string, node: NodeEntity) => void;
@@ -20,6 +21,7 @@ export function queueDownloadRequest({
     isPhoto,
     containsUnsupportedFile,
     albumName,
+    revisionUid,
     addDownloadItem,
     requestedDownloads,
     scheduleSingleFile,
@@ -45,6 +47,7 @@ export function queueDownloadRequest({
             downloadedBytes: 0,
             status: DownloadStatus.Pending,
             nodeUids: [node.uid],
+            revisionUid,
             unsupportedFileDetected: unsupportedStatus,
             isPhoto,
         });
