@@ -1,4 +1,5 @@
 import { ErrorBoundary } from '@proton/components';
+import clsx from '@proton/utils/clsx';
 
 import { useMailboxCounter } from 'proton-mail/hooks/useMailboxCounter';
 import { getLocationCount } from 'proton-mail/hooks/useMailboxCounter.helpers';
@@ -41,7 +42,10 @@ export const CategoriesTabsList = ({ categoryLabelID }: Props) => {
     return (
         <>
             <div
-                className="categories-tabs flex flex-row flex-nowrap px-4 h-fit-content border-bottom border-weak"
+                className={clsx(
+                    'categories-tabs flex flex-row flex-nowrap px-4 h-fit-content border-bottom border-weak',
+                    activeCategoriesTabs.length <= 4 && 'low-active-categories'
+                )}
                 data-testid="categories-tabs"
                 onDragEnter={handleDragEnter}
                 onDragLeave={handleDragLeave}
@@ -59,6 +63,7 @@ export const CategoriesTabsList = ({ categoryLabelID }: Props) => {
                     return (
                         <div
                             key={category.id}
+                            className={'tab-wrapper'}
                             onDragOver={handleDragOver(category.id)}
                             onDrop={handleDrop(category.id)}
                         >

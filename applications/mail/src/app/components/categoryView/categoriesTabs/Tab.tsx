@@ -73,7 +73,7 @@ export const Tab = ({ category, count, tabState }: Props) => {
                 {getLabelFromCategoryId(category.id)}
             </span>
 
-            {category.notify && count > 0 && tabState === TabState.ACTIVE ? (
+            {count > 0 && (
                 <span
                     aria-label={
                         mailSettings.ViewMode === VIEW_MODE.GROUP
@@ -84,11 +84,14 @@ export const Tab = ({ category, count, tabState }: Props) => {
                               )
                             : c('Label').ngettext(msgid`${count} unread message`, `${count} unread messages`, count)
                     }
-                    className="tag-count px-1.5 py-0.5 text-sm mail-category-color mail-category-count-bg"
+                    className={clsx(
+                        'tag-count px-1.5 py-0.5 text-sm mail-category-color mail-category-count-bg',
+                        tabState !== TabState.ACTIVE && 'opacity-0'
+                    )}
                 >
                     {count}
                 </span>
-            ) : null}
+            )}
         </NavLink>
     );
 };
