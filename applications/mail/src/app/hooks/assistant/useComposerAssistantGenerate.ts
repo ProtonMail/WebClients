@@ -63,6 +63,9 @@ interface Props {
 const useComposerAssistantGenerate = ({
     assistantID,
     isComposerPlainText,
+    showAssistantSettingsModal,
+    showResumeDownloadModal,
+    showUpsellModal,
     onResetFeedbackSubmitted,
     expanded,
     recipients,
@@ -89,7 +92,7 @@ const useComposerAssistantGenerate = ({
 
     const [{ AIAssistantFlags, Locale: locale }] = useUserSettings();
     const { trialStatus, start: startTrial } = useAssistantSubscriptionStatus();
-    const { generateResult, setAssistantStatus, addSpecificError } = useAssistant(assistantID);
+    const { downloadPaused, generateResult, setAssistantStatus, addSpecificError } = useAssistant(assistantID);
     const { sendUseAnswerAssistantReport } = useAssistantTelemetry();
 
     const authentication = useAuthentication();
@@ -302,6 +305,25 @@ const useComposerAssistantGenerate = ({
 
     const generate = async ({ actionType }: GenerateResultProps) => {
         const hasSelection = !!selection.composerSelectedText || !!selection.generationSelectedText;
+
+        // If user hasn't set the assistant yet, invite him to do so
+        if (AIAssistantFlags === AI_ASSISTANT_ACCESS.UNSET) {
+            showAssistantSettingsModal();
+            return;
+        }
+
+        // Warn the user that we need the download to be completed before generating a result
+        if (downloadPaused) {
+            showResumeDownloadModal();
+            return;
+        }
+
+        // Stop if trial ended or if user has no trial (free users)
+        if (trialStatus === 'trial-ended' || trialStatus === 'no-trial') {
+            showUpsellModal();
+            setAssistantStatus(assistantID, OpenedAssistantStatus.COLLAPSED);
+            return;
+        }
 
         // Store previous generation in case the user cancels the current one (we'll have to revert it)
         if (generationResult) {
