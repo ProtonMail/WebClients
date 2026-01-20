@@ -4,8 +4,8 @@ import { useLocation } from 'react-router-dom';
 import type { Location } from 'history';
 import { c, msgid } from 'ttag';
 
-import { Href } from '@proton/atoms/Href/Href';
 import { Button } from '@proton/atoms/Button/Button';
+import { Href } from '@proton/atoms/Href/Href';
 import { useModalState, useTheme } from '@proton/components';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import { useFolders, useLabels } from '@proton/mail';
@@ -57,9 +57,14 @@ const SelectionPane = ({ labelID, mailSettings, location, checkedIDs = [], onChe
     const total = useMailSelector(contextTotal) || 0;
     const checkeds = checkedIDs.length;
 
-    const labelName = useMemo(() => getLabelName(labelID, labels, folders), [labelID, labels, folders]);
-
     const count = checkeds || total;
+    const labelName = useMemo(() => {
+        if (count === 0) {
+            return c('Info').t`No messages found`;
+        }
+
+        return getLabelName(labelID, labels, folders);
+    }, [labelID, labels, folders, count]);
 
     const searchParameters = useDeepMemo<SearchParameters>(() => extractSearchParameters(appLocation), [appLocation]);
     const isSearch = testIsSearch(searchParameters);
@@ -148,6 +153,10 @@ const SelectionPane = ({ labelID, mailSettings, location, checkedIDs = [], onChe
     };
 
     const getSelectionPaneText = () => {
+        if (total === 0) {
+            return c('Info').t`Seems like you are all caught up for now`;
+        }
+
         if (isSearch && !checkeds) {
             /* translator: To have plural forms AND a part in bold, we need to surround the bold part with "**" so that we can replace it by a <strong> tag in the code. Here, "{numberOfElements} result/s" will be bold. You need to put them in your translation too.
              * ${total} is the number of elements found during search
@@ -179,8 +188,6 @@ const SelectionPane = ({ labelID, mailSettings, location, checkedIDs = [], onChe
 
     const text = getSelectionPaneText();
 
-    const showText = checkeds || total;
-
     const showSimpleLoginPlaceholder = checkeds === 0 && labelID === MAILBOX_LABEL_IDS.SPAM;
 
     return (
@@ -193,26 +200,21 @@ const SelectionPane = ({ labelID, mailSettings, location, checkedIDs = [], onChe
                 <ProtonPassPlaceholder />
             ) : (
                 <>
-                    <div className="mb-8">
-                        {isSearch && !encryptedSearchEnabled && (
-                            <>
-                                <p>
-                                    {c('Info')
-                                        .t`For more search results, try searching for this keyword in the content of your email messages.`}
-                                    <br />
-                                    <Href href={getKnowledgeBaseUrl('/search-message-content')}>
-                                        {c('Info').t`Learn more`}
-                                    </Href>
-                                </p>
-                                <Button
-                                    onClick={() => setEnableESModalOpen(true)}
-                                    data-testid="encrypted-search:activate"
-                                >
-                                    {c('Action').t`Enable`}
-                                </Button>
-                            </>
-                        )}
-                    </div>
+                    {isSearch && !encryptedSearchEnabled && (
+                        <div className="mb-8">
+                            <p>
+                                {c('Info')
+                                    .t`For more search results, try searching for this keyword in the content of your email messages.`}
+                                <br />
+                                <Href href={getKnowledgeBaseUrl('/search-message-content')}>
+                                    {c('Info').t`Learn more`}
+                                </Href>
+                            </p>
+                            <Button onClick={() => setEnableESModalOpen(true)} data-testid="encrypted-search:activate">
+                                {c('Action').t`Enable`}
+                            </Button>
+                        </div>
+                    )}
                     <div className="mb-2">
                         <img
                             src={getInboxEmptyPlaceholder({ size: count, theme: theme.information.theme })}
@@ -222,11 +224,11 @@ const SelectionPane = ({ labelID, mailSettings, location, checkedIDs = [], onChe
                         />
                     </div>
                     {checkeds === 0 && labelName && (
-                        <h1 className="h3 lh-rg text-ellipsis" title={labelName}>
+                        <h1 className="text-lg text-semibold color-weak text-ellipsis" title={labelName}>
                             {labelName}
                         </h1>
                     )}
-                    <p className="my-2 text-keep-space">{showText ? text : null}</p>
+                    {text && <p className="my-2 color-weak text-keep-space">{text}</p>}
                     {checkeds > 0 && <Button onClick={handleClearSelection}>{c('Action').t`Clear selection`}</Button>}
                 </>
             )}

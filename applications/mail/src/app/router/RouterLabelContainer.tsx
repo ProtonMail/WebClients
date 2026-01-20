@@ -100,7 +100,8 @@ export const RouterLabelContainer = ({
     const isComposerOpened = composersCount > 0;
     const showPlaceholder =
         (!breakpoints.viewportWidth['<=small'] && !elementID && elements.length) ||
-        (!!checkedIDs.length && isColumnModeActive);
+        (!!checkedIDs.length && isColumnModeActive) ||
+        (!elements.length && isColumnModeActive);
 
     const { commanderList } = useMailCommander();
     const { applyOptimisticLocationEnabled, applyLocation } = useApplyLocation();

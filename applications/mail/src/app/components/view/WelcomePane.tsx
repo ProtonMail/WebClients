@@ -84,10 +84,10 @@ const WelcomePane = ({ mailSettings, location }: Props) => {
                         alt=""
                     />
                 </div>
-                <h1 className="h3" id="welcome-header">
+                <h1 className="text-lg text-semibold color-weak" id="welcome-header">
                     {user.DisplayName ? c('Title').jt`Welcome ${userName}` : c('Title').t`Welcome`}
                 </h1>
-                {total ? <p className="my-2 p-0 text-keep-space">{counterMessage}</p> : null}
+                {total ? <p className="my-2 p-0 color-weak text-keep-space">{counterMessage}</p> : null}
             </Container>
         </>
     );

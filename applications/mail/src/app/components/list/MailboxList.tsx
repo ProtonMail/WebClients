@@ -29,7 +29,6 @@ interface MailboxListProps {
     listRef?: RefObject<HTMLDivElement>;
     scrollContainerRef?: RefObject<HTMLDivElement>;
     noBorder?: boolean;
-    noPlaceholder?: boolean;
     setFocusID?: Dispatch<SetStateAction<string | undefined>>;
 }
 
@@ -41,7 +40,6 @@ export default function MailboxList({
     scrollContainerRef,
     noBorder = false,
     overrideColumnMode = false,
-    noPlaceholder = false,
     setFocusID,
 }: MailboxListProps) {
     const [labels = []] = useLabels();
@@ -115,7 +113,6 @@ export default function MailboxList({
                     columnLayout={overrideColumnMode || isColumnLayoutPreferred}
                     onBack={navigation.handleBack}
                     labels={labels}
-                    noPlaceholder={noPlaceholder}
                 />
             </MailboxListContainer>
         </MailboxListProvider>
