@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 
+import { isMobile } from '@proton/shared/lib/helpers/browser';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import useFlag from '@proton/unleash/useFlag';
 
@@ -16,7 +17,7 @@ export const useDesktopAppDetection = ({ token, isInstantMeeting, isInstantJoin 
     useEffect(() => {
         const checkDesktopApp = async () => {
             // Skip if: already in electron, no token (instant meeting), or instant join mode
-            if (isElectronApp || !token || isInstantMeeting || isInstantJoin || !openLinksInDesktopApp) {
+            if (isElectronApp || !token || isInstantMeeting || isInstantJoin || !openLinksInDesktopApp || isMobile()) {
                 return;
             }
 
