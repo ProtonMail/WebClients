@@ -4,7 +4,7 @@ import { withContext } from 'proton-pass-extension/app/worker/context/inject';
 import { backgroundMessage } from 'proton-pass-extension/lib/message/send-message';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
-import { clientReady } from '@proton/pass/lib/client';
+import { clientBooted } from '@proton/pass/lib/client';
 import { createI18nService as createCoreI18nService } from '@proton/pass/lib/i18n/service';
 import noop from '@proton/utils/noop';
 
@@ -24,7 +24,7 @@ export const createI18nService = () => {
                 })
             );
 
-            if (clientReady(getState().status)) {
+            if (clientBooted(getState().status)) {
                 service.settings
                     .resolve()
                     .then((settings) => service.settings.sync({ ...settings, locale }))

@@ -107,6 +107,8 @@ export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
                     const state = store.getState();
 
                     if (res.ok) {
+                        /** Wait for i18n/spotlight init to avoid re-render
+                         * if i18n locale has to change on boot */
                         await spotlight.init().catch(noop);
                         await core.i18n
                             .setLocale(selectLocale(state), selectUserSettings(state)?.DateFormatOptions)
@@ -121,8 +123,6 @@ export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
                             spotlight.acknowledge(SpotlightMessage.WELCOME);
                         }
 
-                        /** Wait for i18n/spotlight init to avoid re-render
-                         * if i18n locale has to change on boot */
                         AppStateManager.setBooted(true);
 
                         if (isDocumentVisible() && !res.offline) store.dispatch(startEventPolling());

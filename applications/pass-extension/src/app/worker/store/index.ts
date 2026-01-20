@@ -125,6 +125,7 @@ export const options: RootSagaOptions = {
     onBoot: withContext(async (ctx, res) => {
         if (res.ok) {
             const state = store.getState();
+            ctx.setBooted(true);
 
             ctx.service.telemetry?.start().catch(noop);
             ctx.service.b2bEvents?.start().catch(noop);
@@ -144,7 +145,10 @@ export const options: RootSagaOptions = {
                     false
                 );
             }
-        } else if (res.clearCache) await ctx.service.storage.local.removeItems(['salt', 'state', 'snapshot']);
+        } else {
+            ctx.setBooted(false);
+            if (res.clearCache) await ctx.service.storage.local.removeItems(['salt', 'state', 'snapshot']);
+        }
     }),
 
     onFeatureFlags: withContext((ctx, features) => ctx.service.featureFlags.sync(features)),
