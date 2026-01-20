@@ -58,11 +58,8 @@ export const biometricsLockAdapterFactory = (auth: AuthService, core: PassCoreCo
         type: LockMode.BIOMETRICS,
 
         check: async () => {
-            logger.info(`[BiometricLock] checking password lock`);
-
-            const offlineConfig = authStore.getOfflineConfig();
-            const offlineVerifier = authStore.getOfflineVerifier();
-            if (!(offlineConfig && offlineVerifier)) return { mode: LockMode.NONE, locked: false };
+            logger.info(`[BiometricLock] checking lock`);
+            if (!authStore.hasOfflineComponents()) return { mode: LockMode.NONE, locked: false };
 
             authStore.setLockLastExtendTime(getEpoch());
             return { mode: adapter.type, locked: false, ttl: authStore.getLockTTL() };
