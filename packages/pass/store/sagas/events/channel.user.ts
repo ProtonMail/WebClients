@@ -52,7 +52,7 @@ function* onUserRefreshed(user: User, keyPassword?: string) {
 function* onUserEvent(
     event: EventManagerEvent<UserEvent>,
     _: EventChannel<UserEvent>,
-    { getAuthStore, getTelemetry, onLocaleUpdated }: RootSagaOptions
+    { getAuthStore, getTelemetry, onLocaleUpdated, extensionId }: RootSagaOptions
 ) {
     const telemetry = getTelemetry();
     if ('error' in event) throw event.error;
@@ -73,7 +73,7 @@ function* onUserEvent(
     const keyPassword = getAuthStore().getPassword();
 
     if (event.Refresh) {
-        const data: HydratedUserState = yield getUserData();
+        const data: HydratedUserState = yield getUserData(extensionId);
         yield put(userRefresh(data));
         yield call(onUserRefreshed, data.user, keyPassword);
         return;
