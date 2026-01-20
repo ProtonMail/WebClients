@@ -8,14 +8,12 @@ import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import { Pill } from '@proton/atoms/Pill/Pill';
-import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import ButtonGroup from '@proton/components/components/button/ButtonGroup';
 import Icon from '@proton/components/components/icon/Icon';
 import Info from '@proton/components/components/link/Info';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import useConfig from '@proton/components/hooks/useConfig';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { getHasFIDO2Support } from '@proton/shared/lib/authentication/twoFactor';
 import { APPS } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
@@ -24,8 +22,6 @@ import { getHasFIDO2SettingEnabled, getHasTOTPSettingEnabled } from '@proton/sha
 import { getHasWebAuthnSupport } from '@proton/shared/lib/webauthn/helper';
 import { getId } from '@proton/shared/lib/webauthn/id';
 import { Fido2CredentialFlags } from '@proton/shared/lib/webauthn/interface';
-import useFlag from '@proton/unleash/useFlag';
-import clsx from '@proton/utils/clsx';
 
 import { useAvailableRecoveryMethods } from '../../hooks/useSessionRecovery';
 import LostTwoFAModal from './LostTwoFAModal';
@@ -48,7 +44,6 @@ const defaultTmpRemove = { keys: [], type: 'all' as const };
 const TwoFactorSection = () => {
     const { APP_NAME } = useConfig();
     const [userSettings] = useUserSettings();
-    const { createNotification } = useNotifications();
     const [enableTOTPModal, setEnableTOTPModalOpen, renderEnableTOTPModal] = useModalState();
     const [disableTOTPModal, setDisableTOTPModalOpen, renderDisableTOTPModal] = useModalState();
     const [lostTwoFAPModal, setLostTwoFAModal, renderLostTwoFAModal] = useModalState();
@@ -62,25 +57,14 @@ const TwoFactorSection = () => {
 
     const hasTOTPEnabled = getHasTOTPSettingEnabled(userSettings);
     const hasFIDO2Enabled = getHasFIDO2SettingEnabled(userSettings);
-    const fido2WithoutTotp = useFlag('Fido2WithoutTotp');
 
     const registeredKeys = userSettings['2FA']?.RegisteredKeys || [];
-    const canEnableFido2 = hasTOTPEnabled || fido2WithoutTotp;
-
-    const canDisableTOTP = (hasTOTPEnabled && !registeredKeys.length) || fido2WithoutTotp;
 
     const [availableRecoveryMethods] = useAvailableRecoveryMethods();
     const hasRecoveryMethod = availableRecoveryMethods.length > 0;
 
     const handleChangeTOTP = () => {
         if (hasTOTPEnabled) {
-            if (!canDisableTOTP) {
-                createNotification({
-                    text: c('fido2: Error').t`Please disable 2FA via security key before disabling TOTP`,
-                    type: 'error',
-                });
-                return;
-            }
             setDisableTOTPModalOpen(true);
         } else {
             setEnableTOTPModalOpen(true);
@@ -173,9 +157,7 @@ const TwoFactorSection = () => {
                     <SettingsLayout>
                         <SettingsLayoutLeft>
                             <label htmlFor="twoFactorKeyToggle" className="text-semibold">
-                                <span className={clsx(['mr-2', !canEnableFido2 && 'color-weak'])}>
-                                    {c('fido2: Info').t`Security key`}
-                                </span>
+                                <span className="mr-2">{c('fido2: Info').t`Security key`}</span>
                                 <Info
                                     url={twoFactorAuthLink}
                                     title={c('fido2: Info')
@@ -184,23 +166,7 @@ const TwoFactorSection = () => {
                             </label>
                         </SettingsLayoutLeft>
                         <SettingsLayoutRight isToggleContainer>
-                            <Tooltip
-                                title={
-                                    !canEnableFido2
-                                        ? c('fido2: Info')
-                                              .t`To turn on 2FA via security key, you'll need to activate 2FA via authenticator app`
-                                        : ''
-                                }
-                            >
-                                <span className="inline-flex">
-                                    <Toggle
-                                        checked={hasFIDO2Enabled}
-                                        id="twoFactorKeyToggle"
-                                        onChange={handleChangeKey}
-                                        disabled={!canEnableFido2}
-                                    />
-                                </span>
-                            </Tooltip>
+                            <Toggle checked={hasFIDO2Enabled} id="twoFactorKeyToggle" onChange={handleChangeKey} />
                         </SettingsLayoutRight>
                     </SettingsLayout>
                     {registeredKeys.length > 0 && (
