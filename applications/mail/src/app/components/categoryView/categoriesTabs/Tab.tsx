@@ -48,6 +48,8 @@ export const Tab = ({ category, count, tabState }: Props) => {
 
     const navigateTo = `/${LABEL_IDS_TO_HUMAN[category.id] || LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.CATEGORY_DEFAULT]}`;
 
+    const unreadCount = count > 999 ? '999+' : count;
+
     return (
         <NavLink
             to={navigateTo}
@@ -89,7 +91,7 @@ export const Tab = ({ category, count, tabState }: Props) => {
                         tabState !== TabState.ACTIVE && 'opacity-0'
                     )}
                 >
-                    {count}
+                    {unreadCount}
                 </span>
             )}
         </NavLink>
