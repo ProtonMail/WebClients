@@ -47,6 +47,8 @@ export function useFolder() {
     );
 
     const load = useCallback(
+        // TODO: after FileBrowser migration, this params can be passed in the hook main function
+        // and immediately added to the store in order to listen for events right away
         async (folderNodeUid: string, folderShareId: string, ac: AbortController) => {
             const { setIsLoading, reset, setItems, setFolder, setRole, setPermissions } = useFolderStore.getState();
             const { getByRootFolderUid } = useDeviceStore.getState();
