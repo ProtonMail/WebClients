@@ -11,8 +11,8 @@ import { fromFields, protonSignature, recipients } from 'proton-mail/components/
 import { addressID, messageID, subject } from '../../components/message/tests/Message.test.helpers';
 import { generateKeys, releaseCryptoProxy, setupCryptoProxyForTesting } from '../test/crypto';
 import { clearAll, removeLineBreaks } from '../test/helper';
+import { generateBlockquote } from './draftContent/html';
 import { getContentWithBlockquotes, getContentWithoutBlockquotes } from './messageContent';
-import { generateBlockquote } from './messageDraft';
 
 const getMessage = (isPlainText: boolean, isReferenceMessage: boolean, content: string) => {
     return {

@@ -39,18 +39,18 @@ const EOComposer = ({ referenceMessage, id, encryptionKey, outsideKey, numberOfR
     const [editorReady, setEditorReady] = useState(false);
 
     const [modelMessage, setModelMessage] = useState<MessageState>(
-        createNewDraft(
-            MESSAGE_ACTIONS.REPLY,
+        createNewDraft({
+            action: MESSAGE_ACTIONS.REPLY,
             referenceMessage,
-            EO_DEFAULT_MAILSETTINGS,
-            EO_DEFAULT_USER_SETTINGS,
-            [],
+            mailSettings: EO_DEFAULT_MAILSETTINGS,
+            userSettings: EO_DEFAULT_USER_SETTINGS,
+            addresses: [],
             // eslint-disable-next-line @typescript-eslint/no-unused-vars
-            (ID) => {
+            getAttachment: (ID) => {
                 return undefined;
             },
-            true
-        ) as MessageState
+            isOutside: true,
+        }) as MessageState
     );
 
     // Get a ref on the editor to trigger insertion of embedded images
