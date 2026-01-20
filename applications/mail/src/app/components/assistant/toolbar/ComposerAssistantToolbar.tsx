@@ -34,7 +34,6 @@ interface Props {
     onGenerate: (props: GenerateResultProps) => Promise<void>;
     canUseRefineButtons: boolean;
     onCancelGeneration: () => void;
-    checkAssistantCompatibility: (skipTrialCheck?: boolean) => boolean;
 }
 
 const ComposerAssistantToolbar = ({
@@ -48,7 +47,6 @@ const ComposerAssistantToolbar = ({
     onGenerate,
     canUseRefineButtons,
     onCancelGeneration,
-    checkAssistantCompatibility,
 }: Props) => {
     const containerRef = useRef<HTMLDivElement>(null);
     const { assistantRefManager } = useComposerAssistantProvider();
@@ -61,17 +59,14 @@ const ComposerAssistantToolbar = ({
         useAssistant(assistantID);
 
     const handleGenerate = async (actionType?: ActionType) => {
-        const compatibleToRunAssistant = checkAssistantCompatibility();
-        if (compatibleToRunAssistant) {
-            onExpandAssistant();
-            void onGenerate({
-                actionType,
-                assistantRequest: prompt,
-                setAssistantRequest: setPrompt,
-            });
-            // We want to have focus inside assistant when popover is closed (so that user can close assistant using Esc)
-            containerRef.current?.focus();
-        }
+        onExpandAssistant();
+        void onGenerate({
+            actionType,
+            assistantRequest: prompt,
+            setAssistantRequest: setPrompt,
+        });
+        // We want to have focus inside assistant when popover is closed (so that user can close assistant using Esc)
+        containerRef.current?.focus();
     };
 
     const hasSelectedText = useMemo(() => {
@@ -140,7 +135,6 @@ const ComposerAssistantToolbar = ({
                             onSubmit={() => handleGenerate(isAssistantExpanded ? 'customRefine' : undefined)}
                             disabled={disableActions}
                             onCloseSpotlight={() => composerAssistantInitialSetupSpotlightRef.current?.hideSpotlight()}
-                            checkAssistantCompatibility={checkAssistantCompatibility}
                         />
                         <Vr className="h-custom" style={{ '--h-custom': '2em' }} />
                         {!isAssistantExpanded && !viewportWidth.xsmall && (
