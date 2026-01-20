@@ -30,7 +30,8 @@ const PlanUnavailableModal = ({ app, onClose, onContinue, onSignOut, user, ...re
         if (app === APPS.PROTONWALLET) {
             return { appName: WALLET_APP_NAME };
         }
-        throw new Error('unknown app');
+
+        return { appName: undefined };
     })();
 
     return (
@@ -62,7 +63,9 @@ const PlanUnavailableModal = ({ app, onClose, onContinue, onSignOut, user, ...re
                     }}
                     fullWidth
                 >
-                    {c('pass_signup_2023: Action - open web app').t`Continue to ${appName}`}
+                    {appName
+                        ? c('pass_signup_2023: Action - open web app').t`Continue to ${appName}`
+                        : c('Action').t`Continue`}
                 </Button>
             </ModalTwoFooter>
         </ModalTwo>
