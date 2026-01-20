@@ -70,8 +70,12 @@ export const createAuthStore = (store: Store) => {
         hasSession: (localID?: number) =>
             Boolean(authStore.getUID() && (localID === undefined || authStore.getLocalID() === localID)),
 
-        hasOfflinePassword: () =>
-            Boolean(authStore.getOfflineConfig() && authStore.getOfflineKD() && authStore.getOfflineVerifier()),
+        /** Checks if the session has both the offline components and the derived offlineKD.
+         * This should only be `true` after a successful local password verification */
+        hasOfflinePassword: () => Boolean(authStore.hasOfflineComponents() && authStore.getOfflineKD()),
+
+        /** Checks wether the session can verify a password locally */
+        hasOfflineComponents: () => Boolean(authStore.getOfflineConfig() && authStore.getOfflineVerifier()),
 
         getSession: (): AuthSession => ({
             AccessToken: authStore.getAccessToken() ?? '',
@@ -110,6 +114,11 @@ export const createAuthStore = (store: Store) => {
                 (!data.offlineConfig || data.offlineKD) &&
                 (data.cookies || (data.AccessToken && data.RefreshToken))
             ),
+
+        /** Checks wether an in-memory session is sufficient for offline
+         * booting. `offlineKD` should only be hydrated after unlocking. */
+        validOfflineSession: (data: Partial<AuthSession>): boolean =>
+            Boolean(data.UID && data.UserID && data.offlineKD),
 
         /** Checks wether a parsed persisted session object is
          * a valid `EncryptedAuthSession` in order to resume */
