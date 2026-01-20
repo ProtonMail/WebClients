@@ -2,12 +2,44 @@
 @use '~@proton/styles/scss/lib/em' as *;
 @use '~@proton/styles/scss/lib/rem' as *;
 
+// Makes the tabs the full available width for a easier navigation
+@mixin extended-tab-styles {
+	.tab-wrapper {
+		flex-grow: 1;
+	}
+
+	.tab-container {
+		justify-content: center;
+
+		.tag-label,
+		.tag-count {
+			text-align: center;
+			display: block;
+		}
+
+		.tag-label-text {
+			font-size: rem(12);
+		}
+
+		padding-block: rem(12);
+		padding-inline: rem(16);
+		gap: rem(6);
+	}
+}
+
 .categories-tabs {
 	background-color: var(--toolbar-background-color);
 	container-type: inline-size;
 
 	.tab-container {
 		border-width: rem(3);
+		padding-block: rem(12);
+		padding-inline: rem(8);
+		gap: rem(6);
+
+		.tag-label-text {
+			font-size: rem(12);
+		}
 
 		// The top border is needed to reserve the space but should be transparent when the tab is active
 		&.active {
@@ -52,9 +84,13 @@
 				display: none;
 			}
 
-			padding-block: rem(12);
-			padding-inline: rem(8);
-			gap: 0;
+			// Show label only for active tab
+			&[aria-selected='true'] {
+				.tag-label,
+				.tag-count {
+					display: block;
+				}
+			}
 		}
 	}
 
@@ -66,14 +102,6 @@
 				display: none;
 			}
 
-			.tag-label-text {
-				font-size: rem(12);
-			}
-
-			padding-block: rem(12);
-			padding-inline: rem(8);
-			gap: rem(6);
-
 			// Show label only for active tab
 			&[aria-selected='true'] {
 				.tag-label,
@@ -84,22 +112,17 @@
 		}
 	}
 
+	// The low-active-categories class is added only if the user has >= 4 categories enabled
+	// In this case, we expand them. This is made to avoid overflows.
+	@container (min-width: #{rem(550)}) and (max-width: #{rem(910)}) {
+		&.low-active-categories {
+			@include extended-tab-styles;
+		}
+	}
+
 	// Fully extended view (medium to large)
 	@container (min-width: #{rem(910)}) {
-		.tab-container {
-			.tag-label,
-			.tag-count {
-				display: block;
-			}
-
-			.tag-label-text {
-				font-size: rem(12);
-			}
-
-			padding-block: rem(12);
-			padding-inline: rem(16);
-			gap: rem(6);
-		}
+		@include extended-tab-styles;
 	}
 
 	// Large screen fully extended view (large)
