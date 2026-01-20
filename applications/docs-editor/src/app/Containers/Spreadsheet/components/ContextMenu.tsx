@@ -265,6 +265,12 @@ export function ContextMenu({
           <UI.MenuItem onClick={() => onPaste?.('Formatting')} disabled={readonly}>
             {s('Formatting only')}
           </UI.MenuItem>
+          <UI.MenuItem onClick={() => onPaste?.('Formula')} disabled={readonly}>
+            {s('Formula only')}
+          </UI.MenuItem>
+          <UI.MenuItem onClick={() => onPaste?.('Link')} disabled={readonly}>
+            {s('Link only')}
+          </UI.MenuItem>
           <UI.MenuSeparator />
           <UI.MenuItem onClick={() => onPaste?.('Transposed')} disabled={readonly}>
             {s('Transposed')}
@@ -898,6 +904,8 @@ function strings() {
     'Paste special': c('sheets_2025:Spreadsheet context menu').t`Paste special`,
     'Values only': c('sheets_2025:Spreadsheet context menu').t`Values only`,
     'Formatting only': c('sheets_2025:Spreadsheet context menu').t`Formatting only`,
+    'Formula only': c('sheets_2025:Spreadsheet context menu').t`Formula only`,
+    'Link only': c('sheets_2025:Spreadsheet context menu').t`Link only`,
     Transposed: c('sheets_2025:Spreadsheet context menu').t`Transposed`,
     Comma: c('sheets_2025:Spreadsheet context menu').t`Comma`,
     Semicolon: c('sheets_2025:Spreadsheet context menu').t`Semicolon`,
