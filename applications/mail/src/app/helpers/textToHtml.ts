@@ -95,7 +95,19 @@ const prepareConversionToHTML = (content: string) => {
 };
 
 export const extractContentFromPtag = (content: string) => {
-    return /^<p>(((?!<p>)[\s\S])*)<\/p>$/.exec(content)?.[1];
+    // Check if wrapped in a single <p> tag
+    if (!content.startsWith('<p>') || !content.endsWith('</p>')) {
+        return undefined;
+    }
+
+    const inner = content.slice(3, -4); // Remove '<p>' and '</p>'
+
+    // Check if there's another <p> tag inside (which would mean multiple paragraphs)
+    if (inner.includes('<p>')) {
+        return undefined;
+    }
+
+    return inner;
 };
 
 /**
@@ -147,9 +159,7 @@ export const textToHtml = (
     userSettings: UserSettings | undefined
 ) => {
     const text = replaceSignature(input, signature, mailSettings, userSettings);
-
     const html = prepareConversionToHTML(text);
-
     const withSignature = attachSignature(html, signature, text, mailSettings, userSettings).trim();
 
     /**

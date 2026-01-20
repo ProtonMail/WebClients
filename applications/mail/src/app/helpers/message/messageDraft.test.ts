@@ -1,19 +1,13 @@
 import { addDays, differenceInDays, getUnixTime, isSameDay } from 'date-fns';
 
 import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
-import type { MessageState, MessageStateWithData } from '@proton/mail/store/messages/messagesTypes';
+import type { MessageStateWithData } from '@proton/mail/store/messages/messagesTypes';
 import { addPlusAlias } from '@proton/shared/lib/helpers/email';
 import type { Address, MailSettings, Recipient, UserSettings } from '@proton/shared/lib/interfaces';
 import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
 import { FORWARDED_MESSAGE, FW_PREFIX, RE_PREFIX, formatSubject } from '@proton/shared/lib/mail/messages';
 
-import { formatFullDate } from '../date';
-import {
-    createNewDraft,
-    generatePreviousMessageInfos,
-    getBlockquoteRecipientsString,
-    handleActions,
-} from './messageDraft';
+import { createNewDraft, formatRecipientsString, handleActions } from './messageDraft';
 
 const ID = 'ID';
 const now = new Date();
@@ -260,203 +254,326 @@ describe('messageDraft', () => {
     });
 
     describe('createNewDraft', () => {
-        it('should use insertSignature', () => {
-            const result = createNewDraft(
-                action,
-                { data: message } as MessageStateWithData,
-                mailSettings,
-                userSettings,
-                addresses,
-                jest.fn()
-            );
-            expect(result.messageDocument?.document?.innerHTML).toContain(address.Signature);
-        });
-
-        // TODO: Feature to implement
-        // it('should parse text', () => {
-        //     expect(textToHtmlMail.parse).toHaveBeenCalledTimes(1);
-        //     expect(textToHtmlMail.parse).toHaveBeenCalledWith(MESSAGE_BODY_PLAIN);
-        // });
-
-        // it('should not parse text', () => {
-        //     expect(textToHtmlMail.parse).not.toHaveBeenCalled();
-        // });
-
-        it('should load the sender', () => {
-            const result = createNewDraft(
-                action,
-                { data: message } as MessageStateWithData,
-                mailSettings,
-                userSettings,
-                addresses,
-                jest.fn()
-            );
-            expect(result.data?.AddressID).toBe(address.ID);
-        });
-
-        it('should add ParentID when not a copy', () => {
-            notNewActions.forEach((action) => {
-                const result = createNewDraft(
+        describe('general behaviour', () => {
+            it('should load the sender', () => {
+                const result = createNewDraft({
                     action,
-                    { data: message } as MessageStateWithData,
+                    referenceMessage: { data: message } as MessageStateWithData,
                     mailSettings,
                     userSettings,
                     addresses,
-                    jest.fn()
-                );
-                expect(result.draftFlags?.ParentID).toBe(ID);
+                    getAttachment: jest.fn(),
+                });
+                expect(result.data?.AddressID).toBe(address.ID);
             });
-        });
 
-        it('should set a value to recipient lists', () => {
-            allActions.forEach((action) => {
-                const result = createNewDraft(
-                    action,
-                    { data: message } as MessageStateWithData,
+            it('should add ParentID when not a copy', () => {
+                notNewActions.forEach((action) => {
+                    const result = createNewDraft({
+                        action,
+                        referenceMessage: { data: message } as MessageStateWithData,
+                        mailSettings,
+                        userSettings,
+                        addresses,
+                        getAttachment: jest.fn(),
+                    });
+                    expect(result.draftFlags?.ParentID).toBe(ID);
+                });
+            });
+
+            it('should set a value to recipient lists', () => {
+                allActions.forEach((action) => {
+                    const result = createNewDraft({
+                        action,
+                        referenceMessage: { data: message } as MessageStateWithData,
+                        mailSettings,
+                        userSettings,
+                        addresses,
+                        getAttachment: jest.fn(),
+                    });
+                    expect(result.data?.ToList?.length).toBeDefined();
+                    expect(result.data?.CCList?.length).toBeDefined();
+                    expect(result.data?.BCCList?.length).toBeDefined();
+                });
+            });
+
+            it('should use values from handleActions', () => {
+                const result = createNewDraft({
+                    action: MESSAGE_ACTIONS.REPLY_ALL,
+                    referenceMessage: {
+                        data: {
+                            ...message,
+                            Flags: MESSAGE_FLAGS.FLAG_RECEIVED,
+                        },
+                    } as MessageStateWithData,
                     mailSettings,
                     userSettings,
                     addresses,
-                    jest.fn()
-                );
-                expect(result.data?.ToList?.length).toBeDefined();
-                expect(result.data?.CCList?.length).toBeDefined();
-                expect(result.data?.BCCList?.length).toBeDefined();
+                    getAttachment: jest.fn(),
+                });
+                expect(result.data?.Subject).toBe(`${RE_PREFIX} ${Subject}`);
+                expect(result.data?.ToList).toEqual([recipient4]);
+                expect(result.data?.CCList).toEqual([recipient1, recipient2]);
+                expect(result.data?.BCCList).toEqual([]);
+            });
+
+            it("should preset expiration date it's set on the original message", () => {
+                // Expiration time is a Unix timestamp
+                const expirationDate = addDays(now, 5);
+                const expirationTime = getUnixTime(expirationDate);
+                const result = createNewDraft({
+                    action: MESSAGE_ACTIONS.REPLY,
+                    referenceMessage: { data: { ...message, ExpirationTime: expirationTime } } as MessageStateWithData,
+                    mailSettings,
+                    userSettings,
+                    addresses,
+                    getAttachment: jest.fn(),
+                });
+                const { expiresIn } = result.draftFlags || {};
+                expect(expiresIn).toBeDefined();
+                expect(expiresIn).toBeInstanceOf(Date);
+                const delta = differenceInDays(expirationDate, receiveDate);
+
+                if (expiresIn) {
+                    expect(isSameDay(expiresIn, addDays(now, delta))).toBeTruthy();
+                }
+            });
+
+            it('should use values from findSender', () => {
+                const result = createNewDraft({
+                    action,
+                    referenceMessage: { data: message } as MessageStateWithData,
+                    mailSettings,
+                    userSettings,
+                    addresses,
+                    getAttachment: jest.fn(),
+                });
+                expect(result.data?.AddressID).toBe(address.ID);
+                expect(result.data?.Sender?.Address).toBe(address.Email);
+                expect(result.data?.Sender?.Name).toBe(address.DisplayName);
+            });
+
+            it('should handle attachments in forward action', () => {
+                const messageWithAttachments = {
+                    ...message,
+                    Attachments: [
+                        { ID: 'att1', Name: 'file.pdf' },
+                        { ID: 'att2', Name: 'image.jpg' },
+                    ],
+                };
+
+                const getAttachment = jest.fn((id: string) => ({
+                    attachment: { ID: id, Name: id === 'att1' ? 'file.pdf' : 'image.jpg' },
+                }));
+
+                const result = createNewDraft({
+                    action: MESSAGE_ACTIONS.FORWARD,
+                    referenceMessage: { data: messageWithAttachments } as MessageStateWithData,
+                    mailSettings,
+                    userSettings,
+                    addresses,
+                    getAttachment: getAttachment as any,
+                });
+
+                expect(result.data?.Attachments?.length).toBeGreaterThan(0);
             });
         });
 
-        // TODO: Feature to be implemented
-        // it('should set a value to Attachments', () => {
-        //     expect(item.Attachments).toEqual(DEFAULT_MESSAGE_COPY.Attachments);
-        // });
+        describe('HTML draft', () => {
+            it('should create HTML document with signature', () => {
+                const result = createNewDraft({
+                    action,
+                    referenceMessage: { data: message } as MessageStateWithData,
+                    mailSettings,
+                    userSettings,
+                    addresses,
+                    getAttachment: jest.fn(),
+                });
+                expect(result.messageDocument?.document).toBeDefined();
+                expect(result.messageDocument?.document?.innerHTML).toContain(address.Signature);
+                expect(result.messageDocument?.plainText).toBeUndefined();
+            });
 
-        it('should use values from handleActions', () => {
-            const result = createNewDraft(
-                MESSAGE_ACTIONS.REPLY_ALL,
-                { data: { ...message, Flags: MESSAGE_FLAGS.FLAG_RECEIVED } } as MessageStateWithData,
-                mailSettings,
-                userSettings,
-                addresses,
-                jest.fn()
-            );
-            expect(result.data?.Subject).toBe(`${RE_PREFIX} ${Subject}`);
-            expect(result.data?.ToList).toEqual([recipient4]);
-            expect(result.data?.CCList).toEqual([recipient1, recipient2]);
-            expect(result.data?.BCCList).toEqual([]);
+            it('should generate HTML blockquote when replying', () => {
+                const result = createNewDraft({
+                    action: MESSAGE_ACTIONS.REPLY,
+                    referenceMessage: {
+                        data: { ...message, Flags: MESSAGE_FLAGS.FLAG_RECEIVED },
+                        decryption: { decryptedBody: '<p>Original HTML message</p>' },
+                    } as MessageStateWithData,
+                    mailSettings,
+                    userSettings,
+                    addresses,
+                    getAttachment: jest.fn(),
+                });
+                expect(result.messageDocument?.document).toBeDefined();
+                expect(result.messageDocument?.document?.innerHTML).toContain('blockquote');
+            });
         });
 
-        it('should use values from findSender', () => {
-            const result = createNewDraft(
-                action,
-                { data: message } as MessageStateWithData,
-                mailSettings,
-                userSettings,
-                addresses,
-                jest.fn()
-            );
-            expect(result.data?.AddressID).toBe(address.ID);
-            expect(result.data?.Sender?.Address).toBe(address.Email);
-            expect(result.data?.Sender?.Name).toBe(address.DisplayName);
-        });
+        describe('plaintext draft', () => {
+            const plaintextMailSettings = { DraftMIMEType: 'text/plain' } as MailSettings;
 
-        it("should preset expiration date it's set on the original message", () => {
-            // Expiration time is a Unix timestamp
-            const expirationDate = addDays(now, 5);
-            const expirationTime = getUnixTime(expirationDate);
-            const result = createNewDraft(
-                MESSAGE_ACTIONS.REPLY,
-                { data: { ...message, ExpirationTime: expirationTime } } as MessageStateWithData,
-                mailSettings,
-                userSettings,
-                addresses,
-                jest.fn()
-            );
-            const { expiresIn } = result.draftFlags || {};
-            expect(expiresIn).toBeDefined();
-            expect(expiresIn).toBeInstanceOf(Date);
-            const delta = differenceInDays(expirationDate, receiveDate);
-
-            if (expiresIn) {
-                expect(isSameDay(expiresIn, addDays(now, delta))).toBeTruthy();
-            }
-        });
-    });
-
-    describe('getBlockquoteRecipientsString', () => {
-        it('should return the expected recipient string for blockquotes', () => {
-            const recipientList = [
-                { Name: 'Display Name', Address: 'address@protonmail.com' },
-                { Name: '', Address: 'address2@protonmail.com' },
-                { Address: 'address3@protonmail.com' },
-            ] as Recipient[];
-
-            const expectedString = `Display Name &lt;address@protonmail.com&gt;, address2@protonmail.com &lt;address2@protonmail.com&gt;, address3@protonmail.com &lt;address3@protonmail.com&gt;`;
-
-            expect(getBlockquoteRecipientsString(recipientList)).toEqual(expectedString);
-        });
-    });
-
-    describe('generatePreviousMessageInfos', () => {
-        const messageSubject = 'Subject';
-        const meRecipient = { Name: 'me', Address: 'me@protonmail.com' };
-        const toRecipient = { Name: 'toRecipient', Address: 'toRecipient@protonmail.com' };
-        const ccRecipient = { Address: 'ccRecipient@protonmail.com' };
-        const sender = { Name: 'sender', Address: 'sender@protonmail.com' } as Recipient;
-        const toList = [meRecipient, toRecipient] as Recipient[];
-        const ccList = [ccRecipient] as Recipient[];
-
-        const generateMessage = (hasCCList = true) => {
-            return {
-                localID: ID,
-                data: {
+            it('should create plaintext new draft', () => {
+                const plaintextMessage = {
                     ID,
-                    Subject: messageSubject,
-                    Sender: sender,
-                    ToList: toList,
-                    CCList: hasCCList ? ccList : undefined,
-                },
-            } as MessageState;
-        };
+                    Time,
+                    Subject,
+                    MIMEType: 'text/plain',
+                };
 
-        it('should return the correct message blockquotes info for a reply', () => {
-            const referenceMessage = generateMessage();
+                const result = createNewDraft({
+                    action: MESSAGE_ACTIONS.NEW,
+                    referenceMessage: {
+                        data: plaintextMessage,
+                        decryption: { decryptedBody: 'This is plain text content' },
+                    } as MessageStateWithData,
+                    mailSettings: plaintextMailSettings,
+                    userSettings,
+                    addresses,
+                    getAttachment: jest.fn(),
+                });
 
-            const messageBlockquotesInfos = generatePreviousMessageInfos(referenceMessage, MESSAGE_ACTIONS.REPLY);
+                expect(result.messageDocument?.plainText).toBeDefined();
+                expect(result.messageDocument?.document).toBeUndefined();
+            });
 
-            const expectedString = `On ${formatFullDate(new Date(0))}, ${
-                referenceMessage.data?.Sender.Name
-            } &lt;${referenceMessage.data?.Sender.Address}&gt; wrote:<br>`;
+            it('should handle plaintext reply blockquotes', () => {
+                const plaintextMessage = {
+                    ID,
+                    Time,
+                    Subject,
+                    Sender: { Name: 'sender', Address: 'sender@protonmail.com' },
+                    MIMEType: 'text/plain',
+                    Flags: MESSAGE_FLAGS.FLAG_RECEIVED,
+                };
 
-            expect(messageBlockquotesInfos).toEqual(expectedString);
+                const result = createNewDraft({
+                    action: MESSAGE_ACTIONS.REPLY,
+                    referenceMessage: {
+                        data: plaintextMessage,
+                        decryption: { decryptedBody: 'Original message content' },
+                    } as MessageStateWithData,
+                    mailSettings: plaintextMailSettings,
+                    userSettings,
+                    addresses,
+                    getAttachment: jest.fn(),
+                });
+
+                expect(result.messageDocument?.plainText).toBeDefined();
+                expect(result.messageDocument?.plainText).toContain('> Original message content');
+                expect(result.messageDocument?.document).toBeUndefined();
+            });
+
+            it('should format plaintext forward blockquotes', () => {
+                const plaintextMessage = {
+                    ID,
+                    Time,
+                    Subject,
+                    Sender: { Name: 'sender', Address: 'sender@protonmail.com' },
+                    ToList: [recipient1],
+                    MIMEType: 'text/plain',
+                    Flags: MESSAGE_FLAGS.FLAG_RECEIVED,
+                };
+
+                const result = createNewDraft({
+                    action: MESSAGE_ACTIONS.FORWARD,
+                    referenceMessage: {
+                        data: plaintextMessage,
+                        decryption: { decryptedBody: 'Message to forward' },
+                    } as MessageStateWithData,
+                    mailSettings: plaintextMailSettings,
+                    userSettings,
+                    addresses,
+                    getAttachment: jest.fn(),
+                });
+
+                expect(result.messageDocument?.plainText).toBeDefined();
+                expect(result.messageDocument?.plainText).toContain('> Message to forward');
+                expect(result.messageDocument?.plainText).toContain(FORWARDED_MESSAGE);
+            });
+
+            it('should include signature in plaintext draft', () => {
+                const plaintextMessage = {
+                    ID,
+                    Time,
+                    Subject,
+                    MIMEType: 'text/plain',
+                };
+
+                const result = createNewDraft({
+                    action: MESSAGE_ACTIONS.NEW,
+                    referenceMessage: {
+                        data: plaintextMessage,
+                        decryption: { decryptedBody: 'Content' },
+                    } as MessageStateWithData,
+                    mailSettings: plaintextMailSettings,
+                    userSettings,
+                    addresses,
+                    getAttachment: jest.fn(),
+                });
+
+                expect(result.messageDocument?.plainText).toBeDefined();
+                // The signature should be converted from HTML to plaintext
+                expect(result.messageDocument?.plainText).toContain(address.Signature);
+            });
+        });
+    });
+
+    describe('formatRecipientsString', () => {
+        describe('HTML draft', () => {
+            it('should return the expected recipient string for HTML blockquotes', () => {
+                const recipientList = [
+                    { Name: 'Display Name', Address: 'address@protonmail.com' },
+                    { Name: '', Address: 'address2@protonmail.com' },
+                    { Address: 'address3@protonmail.com' },
+                ] as Recipient[];
+
+                const expectedString = `Display Name &lt;address@protonmail.com&gt;, address2@protonmail.com &lt;address2@protonmail.com&gt;, address3@protonmail.com &lt;address3@protonmail.com&gt;`;
+
+                expect(formatRecipientsString(recipientList, 'html')).toEqual(expectedString);
+            });
+
+            it('should generate html blockquote recipient string with multiple recipients', () => {
+                const recipientList = [
+                    { Name: 'Display Name', Address: 'address@protonmail.com' },
+                    { Name: '', Address: 'address2@protonmail.com' },
+                    { Address: 'address3@protonmail.com' },
+                ] as Recipient[];
+
+                const expectedString = `Display Name &lt;address@protonmail.com&gt;, address2@protonmail.com &lt;address2@protonmail.com&gt;, address3@protonmail.com &lt;address3@protonmail.com&gt;`;
+
+                expect(formatRecipientsString(recipientList, 'html')).toEqual(expectedString);
+            });
+
+            it('should generate empty html blockquote recipient string if no recipient', () => {
+                expect(formatRecipientsString([], 'html')).toEqual('');
+            });
         });
 
-        it('should return the correct message blockquotes info for a forward', () => {
-            const referenceMessage = generateMessage();
+        describe('plaintext draft', () => {
+            it('should generate plaintext blockquote recipient string', () => {
+                const recipientList = [{ Address: 'test@protonmail.com' }] as Recipient[];
+                const expectedString = 'test@protonmail.com <test@protonmail.com>';
 
-            const messageBlockquotesInfos = generatePreviousMessageInfos(referenceMessage, MESSAGE_ACTIONS.FORWARD);
+                expect(formatRecipientsString(recipientList, 'plaintext')).toEqual(expectedString);
+            });
 
-            const expectedString = `${FORWARDED_MESSAGE}<br>
-        From: ${referenceMessage.data?.Sender.Name} &lt;${referenceMessage.data?.Sender.Address}&gt;<br>
-        Date: On ${formatFullDate(new Date(0))}<br>
-        Subject: ${messageSubject}<br>
-        To: ${meRecipient.Name} &lt;${meRecipient.Address}&gt;, ${toRecipient.Name} &lt;${toRecipient.Address}&gt;<br>
-        CC: ${ccRecipient.Address} &lt;${ccRecipient.Address}&gt;<br><br>`;
+            it('should generate plaintext blockquote recipient string with multiple recipients', () => {
+                const recipientList = [
+                    { Name: 'Display Name', Address: 'address@protonmail.com' },
+                    { Name: '', Address: 'address2@protonmail.com' },
+                    { Address: 'address3@protonmail.com' },
+                ] as Recipient[];
 
-            expect(messageBlockquotesInfos).toEqual(expectedString);
-        });
+                const expectedString = `Display Name <address@protonmail.com>, address2@protonmail.com <address2@protonmail.com>, address3@protonmail.com <address3@protonmail.com>`;
 
-        it('should return the correct message blockquotes info for a forward with no CC', () => {
-            const referenceMessage = generateMessage(false);
+                expect(formatRecipientsString(recipientList, 'plaintext')).toEqual(expectedString);
+            });
 
-            const messageBlockquotesInfos = generatePreviousMessageInfos(referenceMessage, MESSAGE_ACTIONS.FORWARD);
-
-            const expectedString = `${FORWARDED_MESSAGE}<br>
-        From: ${referenceMessage.data?.Sender.Name} &lt;${referenceMessage.data?.Sender.Address}&gt;<br>
-        Date: On ${formatFullDate(new Date(0))}<br>
-        Subject: ${messageSubject}<br>
-        To: ${meRecipient.Name} &lt;${meRecipient.Address}&gt;, ${toRecipient.Name} &lt;${toRecipient.Address}&gt;<br>
-        <br>`;
-
-            expect(messageBlockquotesInfos).toEqual(expectedString);
+            it('should generate empty plaintext blockquote recipient string if no recipient', () => {
+                expect(formatRecipientsString([], 'plaintext')).toEqual('');
+            });
         });
     });
 });
