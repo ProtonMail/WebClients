@@ -37,6 +37,7 @@ const DEFAULT_MIME_TYPE = 'application/octet-stream';
  */
 
 export type FileDownloader = Awaited<ReturnType<ProtonDriveClient['getFileDownloader']>>;
+export type FileRevisionDownloader = Awaited<ReturnType<ProtonDriveClient['getFileRevisionDownloader']>>;
 export type DownloadController = ReturnType<FileDownloader['downloadToStream']>;
 
 type ActiveDownload = {
@@ -221,6 +222,38 @@ export class DownloadManager {
         });
     }
 
+    async downloadRevision(nodeUid: string, revisionUid: string) {
+        // TODO: Probably we can more specific and check the revision compatibility instead of the node
+        const { nodes, containsUnsupportedFile } = await hydrateAndCheckNodes([nodeUid]);
+        if (!nodes.length) {
+            return;
+        }
+        const { addDownloadItem } = useDownloadManagerStore.getState();
+        this.addListeners();
+
+        const downloadId = queueDownloadRequest({
+            nodes,
+            isPhoto: false,
+            containsUnsupportedFile,
+            revisionUid,
+            addDownloadItem,
+            requestedDownloads: this.requestedDownloads,
+            scheduleSingleFile: (id, node) => this.scheduleSingleFileDownload(id, node),
+            scheduleArchive: (id, queuedNodes) => this.scheduleArchiveDownload(id, queuedNodes),
+            getArchiveName: (items) => this.getArchiveName(items),
+        });
+        if (!downloadId) {
+            return;
+        }
+
+        downloadLogDebug('Queue revision download', {
+            downloadId,
+            nodeUid,
+            revisionUid,
+            containsUnsupportedFile,
+        });
+    }
+
     private async scheduleSingleFileDownload(downloadId: string, node: NodeEntity) {
         this.scheduler.scheduleDownload({
             taskId: downloadId,
@@ -232,15 +265,22 @@ export class DownloadManager {
     }
 
     private async startSingleFileDownload(node: NodeEntity, downloadId: string): Promise<void> {
-        const { updateDownloadItem } = useDownloadManagerStore.getState();
+        const { updateDownloadItem, getQueueItem } = useDownloadManagerStore.getState();
         const drive = getDownloadSdk(downloadId);
         const abortController = new AbortController();
-        let fileDownloader: FileDownloader;
+        let fileDownloader: FileDownloader | FileRevisionDownloader;
         let completionPromise: Promise<void>;
         let currentDownloadedBytes = 0;
 
         try {
-            fileDownloader = await drive.getFileDownloader(node.uid, abortController.signal);
+            const queueItem = getQueueItem(downloadId);
+            const revisionUid = queueItem?.revisionUid;
+
+            // ProtonDrivePublicLinkClient does not allow revision download
+            fileDownloader =
+                revisionUid && 'getFileRevisionDownloader' in drive
+                    ? await drive.getFileRevisionDownloader(revisionUid, abortController.signal)
+                    : await drive.getFileDownloader(node.uid, abortController.signal);
             const storageSize = getNodeStorageSize(node);
             updateDownloadItem(downloadId, { storageSize: storageSize, status: DownloadStatus.InProgress });
 
