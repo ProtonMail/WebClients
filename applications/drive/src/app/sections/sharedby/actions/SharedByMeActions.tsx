@@ -1,6 +1,6 @@
 import { Vr } from '@proton/atoms/Vr/Vr';
 import { ContextSeparator, type useConfirmActionModal } from '@proton/components';
-import { splitNodeUid } from '@proton/drive/index';
+import { NodeType, splitNodeUid } from '@proton/drive';
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 
 import type { useLinkSharingModal } from '../../../components/modals/ShareLinkModal/ShareLinkModal';
@@ -152,6 +152,7 @@ export const SharedByMeActions = ({
                     shareId={singleItem.rootShareId}
                     linkId={splitedSingleItemUid.nodeId}
                     showLinkSharingModal={showLinkSharingModal}
+                    isAlbum={singleItem.type === NodeType.Album}
                     close={close}
                 />
             )}
