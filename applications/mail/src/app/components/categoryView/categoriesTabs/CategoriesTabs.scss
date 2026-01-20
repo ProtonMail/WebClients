@@ -30,6 +30,10 @@
 	background-color: var(--toolbar-background-color);
 	container-type: inline-size;
 
+	.tab-wrapper {
+		max-inline-size: rem(1600);
+	}
+
 	.tab-container {
 		border-width: rem(3);
 		padding-block: rem(10);
