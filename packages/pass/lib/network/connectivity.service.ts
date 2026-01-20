@@ -15,6 +15,8 @@ import { wait } from '@proton/shared/lib/helpers/promise';
 import noop from '@proton/utils/noop';
 
 export interface ConnectivityService {
+    /** getter resolving online state from current status */
+    online: boolean;
     /** Triggers connectivity check against server ping endpoint */
     check: () => Promise<ConnectivityStatus>;
     /** Initializes navigator online/offline and API connectivity event listeners */
@@ -159,6 +161,10 @@ export const createConnectivityService = ({ api }: ConnectivityServiceOptions): 
     };
 
     return {
+        get online() {
+            return state.status === ConnectivityStatus.ONLINE;
+        },
+
         getStatus: () => state.status,
         check,
         setStatus,

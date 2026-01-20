@@ -17,6 +17,10 @@ export const createConnectivityProxy = (): ConnectivityService => {
     };
 
     return {
+        get online() {
+            return status === ConnectivityStatus.ONLINE;
+        },
+
         check: notImplemented,
         init: notImplemented,
         destroy: notImplemented,
