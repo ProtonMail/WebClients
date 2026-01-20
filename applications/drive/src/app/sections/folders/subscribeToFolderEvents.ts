@@ -1,14 +1,15 @@
 import { getDrive } from '@proton/drive/index';
 
+import { logging } from '../../modules/logging';
 import type { LinkShareUrl } from '../../store';
 import { getActionEventManager } from '../../utils/ActionEventManager/ActionEventManager';
 import { ActionEventName } from '../../utils/ActionEventManager/ActionEventManagerTypes';
-import { sendErrorReport } from '../../utils/errorHandling';
-import { ComponentTag, EnrichedError } from '../../utils/errorHandling/EnrichedError';
 import { handleSdkError } from '../../utils/errorHandling/useSdkErrorHandler';
 import { mapNodeToLegacyItem } from '../../utils/sdk/mapNodeToLegacyItem';
 import type { FolderStore, FolderViewData } from './useFolder.store';
 import { useFolderStore } from './useFolder.store';
+
+export const folderLogger = logging.getLogger('folder');
 
 const getLegacyItemFromUid = async (uid: string, folder: FolderViewData) => {
     let legacyItem;
@@ -36,14 +37,11 @@ export const subscribeToFolderEvents = () => {
     const unsubscribeFromEvents = getActionEventManager().subscribe(ActionEventName.ALL, async (event) => {
         const store = useFolderStore.getState();
         const { folder } = store;
+
+        // TODO: delete this condition and any requirement to have the full legacy folder
+        // once the FileBrowser is migrated to the new version not needing LegacyItems
         if (!folder) {
-            const errorMessage = 'Event emitted before folder has been loaded';
-            const error = new EnrichedError(errorMessage, {
-                tags: { component: ComponentTag.driveSdk },
-                extra: { eventType: event.type },
-            });
-            sendErrorReport(error);
-            console.error(errorMessage, event);
+            folderLogger.warn(`Event received before folder was loaded ${JSON.stringify(event)}`);
             return;
         }
         switch (event.type) {

@@ -2,8 +2,6 @@ import { getDrive } from '@proton/drive/index';
 
 import { getActionEventManager } from '../../utils/ActionEventManager/ActionEventManager';
 import { ActionEventName } from '../../utils/ActionEventManager/ActionEventManagerTypes';
-import { sendErrorReport } from '../../utils/errorHandling';
-import { ComponentTag, EnrichedError } from '../../utils/errorHandling/EnrichedError';
 import { handleSdkError } from '../../utils/errorHandling/useSdkErrorHandler';
 import { getNodeEntity, isPhotoNode } from '../../utils/sdk/getNodeEntity';
 import { trashLogDebug } from './trashLogger';
@@ -29,16 +27,6 @@ export const subscribeToTrashEvents = () => {
         const trashPhotoStore = useTrashStore.getState();
         const trashFilesStore = useTrashPhotosStore.getState();
         trashLogDebug('trash event', { event });
-        if (!trashFilesStore) {
-            const errorMessage = 'Event emitted before folder has been loaded';
-            const error = new EnrichedError(errorMessage, {
-                tags: { component: ComponentTag.driveSdk },
-                extra: { eventType: event.type },
-            });
-            sendErrorReport(error);
-            trashLogDebug(errorMessage, { event });
-            return;
-        }
         switch (event.type) {
             case ActionEventName.RESTORED_NODES:
                 const uids = event.items.map((t) => t.uid);
