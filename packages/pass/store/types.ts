@@ -34,6 +34,8 @@ export type PassBootResult =
 export interface RootSagaOptions {
     /** defines the current client type */
     endpoint: ClientEndpoint;
+    /** extension id when running as a web extension, undefined otherwise */
+    extensionId?: Maybe<string>;
 
     getConfig: () => PassConfig;
     getAppState: () => AppState;

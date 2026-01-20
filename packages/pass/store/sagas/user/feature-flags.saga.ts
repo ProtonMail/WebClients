@@ -8,16 +8,13 @@ import type { RootSagaOptions } from '@proton/pass/store/types';
 /* Try to sync the user feature flags on each wakeup success :
 /* `getUserFeatures` will only request pass feature flags from the api
  * if the `requestedAt` timestamp is more than a day old */
-function* syncFeatures(
-    { getAuthStore, onFeatureFlags }: RootSagaOptions,
-    { meta }: ReturnType<typeof getUserFeaturesIntent>
-) {
+function* syncFeatures({ getAuthStore, onFeatureFlags, extensionId }: RootSagaOptions, { meta }: ReturnType<typeof getUserFeaturesIntent>) {
     try {
         const loggedIn = getAuthStore().hasSession();
         const locked = getAuthStore().getLocked();
         if (!loggedIn || locked) throw new Error('Cannot fetch user features');
 
-        const incoming: FeatureFlagState = yield getFeatureFlags();
+        const incoming: FeatureFlagState = yield getFeatureFlags(extensionId);
         yield put(getUserFeaturesSuccess(meta.request.id, incoming));
 
         onFeatureFlags?.(incoming);
