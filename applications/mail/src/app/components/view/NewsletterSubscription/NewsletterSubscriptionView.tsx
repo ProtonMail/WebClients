@@ -171,7 +171,6 @@ export const NewsletterSubscriptionView = ({
                                     onMessageReady={overrideActions.onMessageReady}
                                 />
                             ) : (
-                                // TODO why do we need noPlaceholder
                                 <MailboxList
                                     overrideColumnMode
                                     elementsData={selectedSubscriptionId ? elementsData : emptyElementsData}
