@@ -1,6 +1,7 @@
 import { DEFAULT_PASS_FEATURES } from '@proton/pass/constants';
 import { api } from '@proton/pass/lib/api/api';
 import type { FeatureFlagState, HydratedAccessState, HydratedUserState } from '@proton/pass/store/reducers';
+import type { Maybe } from '@proton/pass/types';
 import type { FeatureFlagsResponse } from '@proton/pass/types/api/features';
 import { PassFeaturesValues } from '@proton/pass/types/api/features';
 import { prop } from '@proton/pass/utils/fp/lens';
@@ -12,12 +13,13 @@ import { getUser } from '@proton/shared/lib/api/user';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import type { Address, User, UserSettings } from '@proton/shared/lib/interfaces';
 
-export const getFeatureFlags = async (): Promise<FeatureFlagState> => {
+export const getFeatureFlags = async (webExtensionId: Maybe<string>): Promise<FeatureFlagState> => {
     logger.info(`[User] syncing feature flags`);
+
     const { toggles } = await api<FeatureFlagsResponse>({
         url: `feature/v2/frontend`,
         method: 'get',
-        ...(EXTENSION_BUILD ? { params: { browserFamily: BUILD_TARGET } } : {}),
+        ...(EXTENSION_BUILD ? { params: { browserFamily: BUILD_TARGET, webExtensionId } } : {}),
     });
 
     return PassFeaturesValues.reduce<FeatureFlagState>((features, feat) => {
@@ -62,14 +64,14 @@ export type UserData = {
 };
 
 /** Resolves all necessary user data to build up the user state */
-export const getUserData = async (): Promise<HydratedUserState> => {
+export const getUserData = async (webExtensionId: Maybe<string>): Promise<HydratedUserState> => {
     const [user, eventId, userSettings, addresses, access, features] = await Promise.all([
         getUserModel(),
         getUserLatestEventID(),
         getUserSettings(),
         getAllAddresses(api).then((addresses) => toMap(addresses, 'ID')),
         getUserAccess(),
-        getFeatureFlags().catch(() => DEFAULT_PASS_FEATURES),
+        getFeatureFlags(webExtensionId).catch(() => DEFAULT_PASS_FEATURES),
     ]);
 
     return {

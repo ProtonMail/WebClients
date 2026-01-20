@@ -39,7 +39,7 @@ export type HydrationResult = { fromCache: boolean; version?: string };
  * boolean flag indicating wether hydration happened from cache or not. */
 export function* hydrate(
     config: HydrateCacheOptions,
-    { getCache, getAuthService, getAuthStore, getSettings, getConfig, onBeforeHydrate, onSettingsUpdated }: RootSagaOptions
+    { getCache, getAuthService, getAuthStore, getSettings, getConfig, onBeforeHydrate, onSettingsUpdated, extensionId }: RootSagaOptions
 ): Generator<any, HydrationResult> {
     try {
         const authStore = getAuthStore();
@@ -59,7 +59,7 @@ export function* hydrate(
         const snapshot = cache?.snapshot;
         const fromCache = cache?.state !== undefined && cache?.snapshot !== undefined;
 
-        const userState: HydratedUserState = userStateHydrated(cachedUser) ? cachedUser : yield getUserData();
+        const userState: HydratedUserState = userStateHydrated(cachedUser) ? cachedUser : yield getUserData(extensionId);
 
         const user = userState.user;
         const addresses = Object.values(userState.addresses);
