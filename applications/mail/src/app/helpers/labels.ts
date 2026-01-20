@@ -11,6 +11,8 @@ import type { Folder } from '@proton/shared/lib/interfaces/Folder';
 import { CUSTOM_VIEWS, CUSTOM_VIEWS_LABELS, LABEL_IDS_TO_HUMAN } from '@proton/shared/lib/mail/constants';
 import { SHOW_MOVED } from '@proton/shared/lib/mail/mailSettings';
 
+import { getLabelFromCategoryId } from 'proton-mail/components/categoryView/categoriesStringHelpers';
+
 import type { Conversation } from '../models/conversation';
 import type { Element } from '../models/element';
 import { getLabelIDs } from './elements';
@@ -371,9 +373,12 @@ export const getCustomViewFromLabel = (label: string) => {
 
 export const getLabelName = (labelID: string, labels: Label[] = [], folders: Folder[] = []): string => {
     if (labelID in LABEL_IDS_TO_HUMAN) {
+        if (isCategoryLabel(labelID)) {
+            return getLabelFromCategoryId(labelID);
+        }
+
         const folders = getStandardFolders();
-        const labelIDToUse = isCategoryLabel(labelID) ? MAILBOX_LABEL_IDS.INBOX : labelID;
-        return folders[labelIDToUse]?.name || folders[MAILBOX_LABEL_IDS.INBOX].name;
+        return folders[labelID]?.name || folders[MAILBOX_LABEL_IDS.INBOX].name;
     }
 
     const labelsMap = toMap(labels, 'ID');

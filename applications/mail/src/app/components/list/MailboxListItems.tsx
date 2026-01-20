@@ -1,5 +1,7 @@
 import { type ChangeEvent, Fragment, type RefObject, useEffect } from 'react';
 
+import { c } from 'ttag';
+
 import { useUserSettings } from '@proton/account';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { DENSITY } from '@proton/shared/lib/constants';
@@ -7,6 +9,7 @@ import type { Label } from '@proton/shared/lib/interfaces';
 import { CHECKLIST_DISPLAY_TYPE } from '@proton/shared/lib/interfaces';
 
 import { useGetStartedChecklist } from 'proton-mail/containers/onboardingChecklist/provider/GetStartedChecklistProvider';
+import { useMailboxLayoutProvider } from 'proton-mail/router/components/MailboxLayoutContext';
 
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { PLACEHOLDER_ID_PREFIX } from '../../hooks/usePlaceholders';
@@ -38,7 +41,6 @@ const MailboxListItems = ({
     columnLayout = true,
     listRef,
     scrollContainerRef,
-    noPlaceholder = false,
 }: MailboxListItemsProps) => {
     const [userSettings] = useUserSettings();
     const {
@@ -64,6 +66,8 @@ const MailboxListItems = ({
     const shouldOverrideCompactness = shouldHighlight() && contentIndexingDone && esEnabled;
     const isCompactView = userSettings.Density === DENSITY.COMPACT && !shouldOverrideCompactness;
 
+    const { isColumnModeActive } = useMailboxLayoutProvider();
+
     useEffect(() => {
         if (elements.length >= 5 && displayState === CHECKLIST_DISPLAY_TYPE.FULL) {
             changeChecklistDisplay(CHECKLIST_DISPLAY_TYPE.REDUCED);
@@ -72,7 +76,12 @@ const MailboxListItems = ({
     }, [elements]);
 
     if (elements.length === 0) {
-        return noPlaceholder ? null : <EmptyListPlaceholder labelID={labelID} isSearch={isSearch} isUnread={false} />;
+        // Small message in column view to inform user that no messages are available
+        if (isColumnModeActive) {
+            return <p className="text-center text-sm color-weak">{c('Info').t`No messages`}</p>;
+        }
+
+        return <EmptyListPlaceholder labelID={labelID} isSearch={isSearch} isUnread={false} />;
     }
 
     const showUserOnboarding =
