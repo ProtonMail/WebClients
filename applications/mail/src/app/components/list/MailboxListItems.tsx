@@ -3,6 +3,7 @@ import { type ChangeEvent, Fragment, type RefObject, useEffect } from 'react';
 import { c } from 'ttag';
 
 import { useUserSettings } from '@proton/account';
+import { isCategoryLabel } from '@proton/mail/helpers/location';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { DENSITY } from '@proton/shared/lib/constants';
 import type { Label } from '@proton/shared/lib/interfaces';
@@ -41,6 +42,7 @@ const MailboxListItems = ({
     columnLayout = true,
     listRef,
     scrollContainerRef,
+    noPlaceholder = false,
 }: MailboxListItemsProps) => {
     const [userSettings] = useUserSettings();
     const {
@@ -76,8 +78,12 @@ const MailboxListItems = ({
     }, [elements]);
 
     if (elements.length === 0) {
+        if (noPlaceholder) {
+            return null;
+        }
+
         // Small message in column view to inform user that no messages are available
-        if (isColumnModeActive) {
+        if (isColumnModeActive && isCategoryLabel(labelID)) {
             return <p className="text-center text-sm color-weak">{c('Info').t`No messages`}</p>;
         }
 
