@@ -1,3 +1,4 @@
+import type { PropsWithChildren } from 'react';
 import { useMemo } from 'react';
 import { useLocation } from 'react-router-dom';
 
@@ -5,31 +6,40 @@ import type { Location } from 'history';
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { Href } from '@proton/atoms/Href/Href';
-import { useModalState, useTheme } from '@proton/components';
+import { useTheme } from '@proton/components';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import { useFolders, useLabels } from '@proton/mail';
 import { getInboxEmptyPlaceholder } from '@proton/mail/helpers/getPlaceholderSrc';
 import { isCustomLabel as testIsCustomLabel } from '@proton/mail/helpers/location';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 import type { SearchParameters } from '@proton/shared/lib/mail/search';
 
 import { useSelectAll } from 'proton-mail/hooks/useSelectAll';
 import { useMailSelector } from 'proton-mail/store/hooks';
 
-import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { isSearch as testIsSearch } from '../../helpers/elements';
 import { getLabelName } from '../../helpers/labels';
 import { isConversationMode } from '../../helpers/mailSettings';
 import { extractSearchParameters } from '../../helpers/mailboxUrl';
 import { useDeepMemo } from '../../hooks/useDeepMemo';
 import { contextTotal } from '../../store/elements/elementsSelectors';
-import EnableEncryptedSearchModal from '../header/search/AdvancedSearchFields/EnableEncryptedSearchModal';
+import EmptyView from './EmptyView/EmptyView';
 import ProtonPassPlaceholder from './ProtonPassPlaceholder';
 
 import './SelectionPane.scss';
+
+const SelectionPaneWrapper = ({ children }: PropsWithChildren) => {
+    return (
+        <section
+            className="m-auto text-center p-7 max-w-full"
+            data-testid="section-pane--wrapper"
+            aria-label={c('Info').t`Selection pane`}
+        >
+            {children}
+        </section>
+    );
+};
 
 interface Props {
     labelID: string;
@@ -48,11 +58,6 @@ const SelectionPane = ({ labelID, mailSettings, location, checkedIDs = [], onChe
     const [labels] = useLabels();
     const [folders] = useFolders();
 
-    const { esStatus } = useEncryptedSearchContext();
-    const { isEnablingContentSearch, isContentIndexingPaused, contentIndexingDone, isEnablingEncryptedSearch } =
-        esStatus;
-    const [enableESModalProps, setEnableESModalOpen, renderEnableESModal] = useModalState();
-
     const isCustomLabel = testIsCustomLabel(labelID, labels);
     const total = useMailSelector(contextTotal) || 0;
     const checkeds = checkedIDs.length;
@@ -68,10 +73,6 @@ const SelectionPane = ({ labelID, mailSettings, location, checkedIDs = [], onChe
 
     const searchParameters = useDeepMemo<SearchParameters>(() => extractSearchParameters(appLocation), [appLocation]);
     const isSearch = testIsSearch(searchParameters);
-
-    // We want to hide the "enable ES" part from the point when the user enables it. We do not want to see the downloading part from here
-    const encryptedSearchEnabled =
-        isEnablingContentSearch || isContentIndexingPaused || contentIndexingDone || isEnablingEncryptedSearch;
 
     const handleClearSelection = () => {
         if (selectAll) {
@@ -186,54 +187,39 @@ const SelectionPane = ({ labelID, mailSettings, location, checkedIDs = [], onChe
         }
     };
 
-    const text = getSelectionPaneText();
+    if (isSearch && total === 0) {
+        return <EmptyView isSearch isUnread={false} labelID={labelID} />;
+    }
 
     const showSimpleLoginPlaceholder = checkeds === 0 && labelID === MAILBOX_LABEL_IDS.SPAM;
-
-    return (
-        <section
-            className="m-auto text-center p-7 max-w-full"
-            data-testid="section-pane--wrapper"
-            aria-label={c('Info').t`Selection pane`}
-        >
-            {showSimpleLoginPlaceholder ? (
+    if (showSimpleLoginPlaceholder) {
+        return (
+            <SelectionPaneWrapper>
                 <ProtonPassPlaceholder />
-            ) : (
-                <>
-                    {isSearch && !encryptedSearchEnabled && (
-                        <div className="mb-8">
-                            <p>
-                                {c('Info')
-                                    .t`For more search results, try searching for this keyword in the content of your email messages.`}
-                                <br />
-                                <Href href={getKnowledgeBaseUrl('/search-message-content')}>
-                                    {c('Info').t`Learn more`}
-                                </Href>
-                            </p>
-                            <Button onClick={() => setEnableESModalOpen(true)} data-testid="encrypted-search:activate">
-                                {c('Action').t`Enable`}
-                            </Button>
-                        </div>
-                    )}
-                    <div className="mb-2">
-                        <img
-                            src={getInboxEmptyPlaceholder({ size: count, theme: theme.information.theme })}
-                            className="w-auto"
-                            height={128}
-                            alt=""
-                        />
-                    </div>
-                    {checkeds === 0 && labelName && (
-                        <h1 className="text-lg text-semibold color-weak text-ellipsis" title={labelName}>
-                            {labelName}
-                        </h1>
-                    )}
-                    {text && <p className="my-2 color-weak text-keep-space">{text}</p>}
-                    {checkeds > 0 && <Button onClick={handleClearSelection}>{c('Action').t`Clear selection`}</Button>}
-                </>
+            </SelectionPaneWrapper>
+        );
+    }
+
+    const text = getSelectionPaneText();
+    return (
+        <SelectionPaneWrapper>
+            <div className="mb-2">
+                <img
+                    src={getInboxEmptyPlaceholder({ size: count, theme: theme.information.theme })}
+                    className="w-auto"
+                    height={128}
+                    alt=""
+                />
+            </div>
+
+            {checkeds === 0 && labelName && (
+                <h1 className="text-lg text-semibold color-weak text-ellipsis" title={labelName}>
+                    {labelName}
+                </h1>
             )}
-            {renderEnableESModal && <EnableEncryptedSearchModal openSearchAfterEnabling {...enableESModalProps} />}
-        </section>
+            {text && <p className="my-2 color-weak text-keep-space">{text}</p>}
+            {checkeds > 0 && <Button onClick={handleClearSelection}>{c('Action').t`Clear selection`}</Button>}
+        </SelectionPaneWrapper>
     );
 };
 
