@@ -43,7 +43,7 @@ export const CategoriesTabsList = ({ categoryLabelID }: Props) => {
         <>
             <div
                 className={clsx(
-                    'categories-tabs flex flex-row flex-nowrap px-4 h-fit-content border-bottom border-weak',
+                    'categories-tabs flex flex-row flex-nowrap justify-space-between px-4 h-fit-content border-bottom border-weak',
                     activeCategoriesTabs.length <= 4 && 'low-active-categories'
                 )}
                 data-testid="categories-tabs"
@@ -51,32 +51,34 @@ export const CategoriesTabsList = ({ categoryLabelID }: Props) => {
                 onDragLeave={handleDragLeave}
                 onDragEnd={handleDragEnd}
             >
-                {activeCategoriesTabs.map((category, index) => {
-                    const tabState = getTabState({
-                        index,
-                        category,
-                        categoriesList: activeCategoriesTabs || [],
-                        categoryLabelID,
-                        draggedOverCategoryId,
-                    });
+                <div className="flex flex-row flex-nowrap">
+                    {activeCategoriesTabs.map((category, index) => {
+                        const tabState = getTabState({
+                            index,
+                            category,
+                            categoriesList: activeCategoriesTabs || [],
+                            categoryLabelID,
+                            draggedOverCategoryId,
+                        });
 
-                    return (
-                        <div
-                            key={category.id}
-                            className={'tab-wrapper'}
-                            onDragOver={handleDragOver(category.id)}
-                            onDrop={handleDrop(category.id)}
-                        >
-                            <ErrorBoundary component={<CategoryTabError />}>
-                                <Tab
-                                    category={category}
-                                    tabState={tabState}
-                                    count={getLocationCount(counterMap, category.id).Unread}
-                                />
-                            </ErrorBoundary>
-                        </div>
-                    );
-                })}
+                        return (
+                            <div
+                                key={category.id}
+                                className={'tab-wrapper'}
+                                onDragOver={handleDragOver(category.id)}
+                                onDrop={handleDrop(category.id)}
+                            >
+                                <ErrorBoundary component={<CategoryTabError />}>
+                                    <Tab
+                                        category={category}
+                                        tabState={tabState}
+                                        count={getLocationCount(counterMap, category.id).Unread}
+                                    />
+                                </ErrorBoundary>
+                            </div>
+                        );
+                    })}
+                </div>
                 <ButtonEditCategories />
             </div>
 
