@@ -1,4 +1,5 @@
 import { ErrorBoundary } from '@proton/components';
+import clsx from '@proton/utils/clsx';
 
 import { useMailboxCounter } from 'proton-mail/hooks/useMailboxCounter';
 import { getLocationCount } from 'proton-mail/hooks/useMailboxCounter.helpers';
@@ -41,37 +42,43 @@ export const CategoriesTabsList = ({ categoryLabelID }: Props) => {
     return (
         <>
             <div
-                className="categories-tabs flex flex-row flex-nowrap px-4 h-fit-content border-bottom border-weak"
+                className={clsx(
+                    'categories-tabs flex flex-row flex-nowrap justify-space-between px-4 h-fit-content border-bottom border-weak',
+                    activeCategoriesTabs.length <= 4 && 'low-active-categories'
+                )}
                 data-testid="categories-tabs"
                 onDragEnter={handleDragEnter}
                 onDragLeave={handleDragLeave}
                 onDragEnd={handleDragEnd}
             >
-                {activeCategoriesTabs.map((category, index) => {
-                    const tabState = getTabState({
-                        index,
-                        category,
-                        categoriesList: activeCategoriesTabs || [],
-                        categoryLabelID,
-                        draggedOverCategoryId,
-                    });
+                <div className="flex flex-row flex-nowrap flex-1">
+                    {activeCategoriesTabs.map((category, index) => {
+                        const tabState = getTabState({
+                            index,
+                            category,
+                            categoriesList: activeCategoriesTabs || [],
+                            categoryLabelID,
+                            draggedOverCategoryId,
+                        });
 
-                    return (
-                        <div
-                            key={category.id}
-                            onDragOver={handleDragOver(category.id)}
-                            onDrop={handleDrop(category.id)}
-                        >
-                            <ErrorBoundary component={<CategoryTabError />}>
-                                <Tab
-                                    category={category}
-                                    tabState={tabState}
-                                    count={getLocationCount(counterMap, category.id).Unread}
-                                />
-                            </ErrorBoundary>
-                        </div>
-                    );
-                })}
+                        return (
+                            <div
+                                key={category.id}
+                                className="tab-wrapper"
+                                onDragOver={handleDragOver(category.id)}
+                                onDrop={handleDrop(category.id)}
+                            >
+                                <ErrorBoundary component={<CategoryTabError />}>
+                                    <Tab
+                                        category={category}
+                                        tabState={tabState}
+                                        count={getLocationCount(counterMap, category.id).Unread}
+                                    />
+                                </ErrorBoundary>
+                            </div>
+                        );
+                    })}
+                </div>
                 <ButtonEditCategories />
             </div>
 
