@@ -51,7 +51,7 @@ export const CategoriesTabsList = ({ categoryLabelID }: Props) => {
                 onDragLeave={handleDragLeave}
                 onDragEnd={handleDragEnd}
             >
-                <div className="flex flex-row flex-nowrap">
+                <div className="flex flex-row flex-nowrap flex-1">
                     {activeCategoriesTabs.map((category, index) => {
                         const tabState = getTabState({
                             index,
