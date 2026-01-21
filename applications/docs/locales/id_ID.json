@@ -366,6 +366,9 @@
       "Export selection as .vcf": [
         "Ekspor pilihan sebagai .vcf"
       ],
+      "Export this version (as xlsx)": [
+        "Ekspor versi ini (sebagai xslx)"
+      ],
       "Forgot password?": [
         "Lupa kata sandi?"
       ],
@@ -1190,6 +1193,9 @@
       "Payments problem": [
         "Masalah pembayaran"
       ],
+      "Sheets problem": [
+        "Masalah lembar kerja"
+      ],
       "Sign in problem": [
         "Masalah masuk"
       ],
@@ -1235,6 +1241,9 @@
     "Cancellation upsell": {
       "${ maxSpaceTB } storage": [
         "Ruang penyimpanan ${ maxSpaceTB }"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } pengguna"
       ],
       "${ planMaxSpace } email storage": [
         "Ruang penyimpanan email ${ planMaxSpace }"
@@ -1345,6 +1354,9 @@
       ],
       "High-speed chats and advanced AI features.": [
         "Percakapan berkecepatan tinggi dan berbagai fitur AI mutakhir."
+      ],
+      "Private video calls for the conversations that matter.": [
+        "Panggilan video pribadi untuk percakapan yang penting."
       ]
     },
     "color": {
@@ -2329,6 +2341,11 @@
     "customer_support.feature.mail": {
       "For ${ MAIL_APP_NAME }": [
         "Untuk ${ MAIL_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.meet": {
+      "For ${ MEET_APP_NAME }": [
+        "Untuk ${ MEET_APP_NAME }"
       ]
     },
     "customer_support.feature.pass": {
@@ -3814,6 +3831,12 @@
       "Too many recent requests. Please try again in a few moments.": [
         "Terlalu banyak permintaan baru-baru ini. Silakan coba lagi dalam beberapa saat."
       ],
+      "Two-factor authentication is enabled in your external account.": [
+        "Autentikasi dua-faktor diaktifkan pada akun eksternal Anda."
+      ],
+      "Two-factor authentication is enabled in your external email account.": [
+        "Autentikasi dua-faktor diaktifkan pada akun email eksternal Anda."
+      ],
       "Use your app password if:": [
         "Gunakan kata sandi aplikasi Anda apabila:"
       ],
@@ -4475,6 +4498,9 @@
       ],
       "Important note": [
         "Catatan penting"
+      ],
+      "Importing ODS files is currently in beta": [
+        "Pengimporan berkas ODS saat ini berada dalam tahap beta"
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Mengimpor data Anda dari ${ fromEmail } ke ${ toEmail }."
@@ -5657,6 +5683,12 @@
       "Postal code": [
         "Kode pos"
       ],
+      "Premium domain": [
+        "Domain premium"
+      ],
+      "Public domain": [
+        "Domain publik"
+      ],
       "Public keys": [
         "Kunci publik"
       ],
@@ -5755,6 +5787,9 @@
       ],
       "Your alias": [
         "Alias Anda"
+      ],
+      "Your domain": [
+        "Domain Anda"
       ],
       "Your IP": [
         "IP Anda"
@@ -5982,6 +6017,50 @@
       ],
       "Add-on with free trial": [
         "Tambahan dengan uji coba gratis"
+      ]
+    },
+    "meet_2025: Feature": {
+      "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
+        "${ MEET_APP_NAME }: Pertemuan video rahasia untuk percakapan yang penting"
+      ],
+      "${ n } active meeting at a time": [
+        "${ n } pertemuan yang aktif secara bersamaan"
+      ],
+      "24 hours per meeting": [
+        "24 jam per pertemuan"
+      ],
+      "60 minutes per meeting": [
+        "50 menit per pertemuan"
+      ],
+      "Appointment scheduling": [
+        "Penjadwalan janji temu"
+      ],
+      "Browser, mobile, and desktop apps": [
+        "Aplikasi browser, seluler, dan desktop"
+      ],
+      "Built-in chat": [
+        "Obrolan yang terintegrasi"
+      ],
+      "End-to-end encrypted screen sharing and ephemeral in-call chat": [
+        "Pembagian layar yang terenkripsi end-to-end dan percakapan dalam panggilan yang bersifat sementara"
+      ],
+      "Meeting recording (coming soon)": [
+        "Rekaman pertemuan (segera hadir)"
+      ],
+      "One active meeting at a time": [
+        "Satu pertemuan yang aktif dalam satu waktu"
+      ],
+      "Screen-sharing": [
+        "Pembagian layar"
+      ],
+      "Unlimited meetings per day": [
+        "Tanpa batasan jumlah pertemuan per harinya"
+      ],
+      "Up to ${ n } meeting per day": [
+        "Hingga ${ n } pertemuan per hari"
+      ],
+      "Up to ${ n } participant": [
+        "Hinnga ${ n } peserta"
       ]
     },
     "Message": {

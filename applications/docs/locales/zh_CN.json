@@ -1104,6 +1104,9 @@
       "Payments problem": [
         "支付问题"
       ],
+      "Sheets problem": [
+        "表格问题"
+      ],
       "Sign in problem": [
         "登录问题"
       ],
@@ -5047,6 +5050,9 @@
       "Expired": [
         "已过期"
       ],
+      "KOO": [
+        "KOO"
+      ],
       "Obsolete": [
         "已作废"
       ],
@@ -5361,6 +5367,12 @@
       "Postal code": [
         "邮编"
       ],
+      "Premium domain": [
+        "高级域名"
+      ],
+      "Public domain": [
+        "公共域名"
+      ],
       "Public keys": [
         "公钥"
       ],
@@ -5459,6 +5471,9 @@
       ],
       "Your alias": [
         "您的别名"
+      ],
+      "Your domain": [
+        "您的域名"
       ],
       "Your IP": [
         "您的 IP 地址"
@@ -7252,6 +7267,9 @@
       "Advanced account protection": [
         "高级账户保护"
       ],
+      "File attachments (up to 10GB)": [
+        "文件附件（最高 10GB）"
+      ],
       "Team policies": [
         "团队政策"
       ]
@@ -7323,6 +7341,9 @@
       ],
       "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
         "专享折扣价仅限首月有效。本优惠券适用于 ${ couponRedemptions } 次续费周期。之后将自动以 1 个月 ${ renewPriceStr } 的价格续费，您可以随时取消。"
+      ],
+      "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
+        "特别优惠价仅在首月有效。之后将每月自动以${ renewPriceStr }的价格续订。您可以随时取消。"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "Proton 用户的专属优惠：${ priceWithDiscount }特惠价格仅限订阅前${ subscriptionLength }个月有效。"
