@@ -208,6 +208,10 @@ export interface UserSettings {
          * 1 => user has High Security enabled, 0 => disabled
          */
         Value: SETTINGS_PROTON_SENTINEL_STATE;
+        /**
+         * 1 => user will receive High Security notification emails, 0 => disabled
+         */
+        SummaryEmail: 1 | 0;
     };
     Referral?: {
         /**
