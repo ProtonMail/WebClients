@@ -16,6 +16,7 @@ import { useProjects } from '../projects';
 import { getProjectCategory } from '../projects/constants';
 import { NewProjectModal } from '../projects/modals/NewProjectModal';
 import { ProjectLimitModal } from '../projects/modals/ProjectLimitModal';
+import { ProjectActionsDropdown } from '../projects/ProjectActionsDropdown';
 
 interface ProjectsSidebarSectionProps {
     showText: boolean;
@@ -87,6 +88,8 @@ export const ProjectsSidebarSection = ({ showText, onItemClick }: ProjectsSideba
     };
 
     const handleCreateProject = () => {
+
+        console.log('handleCreateProject')
         if (isGuest) {
             if (onItemClick) {
                 onItemClick();
@@ -196,7 +199,7 @@ export const ProjectsSidebarSection = ({ showText, onItemClick }: ProjectsSideba
                                         </span>
                                     </div>
 
-                                    {showText && (
+                                    {!isSmallScreen && showText && (
                                         <button
                                             className="projects-create-button"
                                             onClick={handleCreateProject}
@@ -216,31 +219,41 @@ export const ProjectsSidebarSection = ({ showText, onItemClick }: ProjectsSideba
             {/* Projects List - shown when expanded (only for authenticated users) */}
             {!isGuest && isExpanded && showText && (
                 <div className="projects-list">
-                    {projects.length > 0 &&
-                        projects.slice(0, 5).map((project) => {
+                    {projects.length > 0 && (
+                        <div className="flex flex-column flex-nowrap gap-0 shrink-0">
+                            {projects.slice(0, 5).map((project) => {
                             const category = getProjectCategory(project.icon);
                             const isSelected = currentProjectId === project.id;
 
                             return (
-                                <LumoLink
+                                <li
                                     key={project.id}
-                                    to={`/projects/${project.id}`}
                                     className={clsx(
-                                        'project-sidebar-item navigation-link',
-                                        isSelected && 'is-active',
-                                        'flex items-center gap-2 px-3 py-2 rounded-md transition-colors'
+                                        'relative group-hover-hide-container group-hover-opacity-container flex items-center shrink-0 navigation-link w-full',
+                                        'hover:bg-weak rounded-md transition-colors',
+                                        isSelected && 'is-active bg-norm-weak'
                                     )}
-                                    onClick={onItemClick}
                                 >
-                                    <div className="project-icon-small color-norm">
-                                        <Icon name={category.icon as any} size={4} className="color-white" />
+                                    <LumoLink
+                                        to={`/projects/${project.id}`}
+                                        className="flex items-center flex-1 px-3 py-2 text-sm text-ellipsis hover:text-primary"
+                                        onClick={onItemClick}
+                                    >
+                                        <div className="project-icon-small color-norm mr-2 flex-shrink-0">
+                                            <Icon name={category.icon as any} size={4} className="color-white" />
+                                        </div>
+                                        <span className="text-ellipsis flex-1" title={project.name}>
+                                            {project.name}
+                                        </span>
+                                    </LumoLink>
+                                    <div className="flex-shrink-0">
+                                        <ProjectActionsDropdown project={project} />
                                     </div>
-                                    <span className="flex-1 text-ellipsis text-sm" title={project.name}>
-                                        {project.name}
-                                    </span>
-                                </LumoLink>
+                                </li>
                             );
                         })}
+                        </div>
+                    )}
                     {projects.length > 5 && (
                         <button
                             className="project-sidebar-item-see-all flex items-center justify-center px-3 py-2 text-sm color-weak hover:color-norm transition-colors"
