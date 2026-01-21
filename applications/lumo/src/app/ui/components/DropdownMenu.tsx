@@ -9,6 +9,8 @@ import type { IconName } from '@proton/icons/types';
 
 import { useSidebar } from '../../providers/SidebarProvider';
 
+import './DropdownMenu.scss';
+
 export type DropdownOptions = {
     label: string;
     value?: string;
@@ -42,6 +44,7 @@ const DropdownMenu = ({ options, onToggle, isOpen }: Props) => {
                 size="small"
                 content={<Icon name="three-dots-horizontal" alt={c('collider_2025:Title').t`More options`} />}
                 onToggle={onToggle}
+                dropdownClassName="chat-dropdown-menu"
             >
                 {options.map((option, index) => {
                     return (

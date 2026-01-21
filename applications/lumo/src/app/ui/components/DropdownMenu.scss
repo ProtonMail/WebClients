@@ -1,0 +1,50 @@
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
+
+// Override the adaptive-for-touch-screens centering behavior for the chat dropdown menu
+// to position it at the bottom of the screen like a native bottom sheet
+.chat-dropdown-menu {
+	// Ensure proper z-index and visibility
+	z-index: 9999;
+
+	@include im.media('touch', '<=small') {
+		&.adaptive-for-touch-screens {
+			// Override centering - align to bottom instead
+			padding-block-start: auto;
+			padding-block-end: 0;
+			padding-inline: 0;
+			justify-content: flex-end;
+
+			// iOS WebView fix: Force display and visibility
+			// iOS WebView sometimes incorrectly applies display: none
+			display: flex !important;
+			visibility: visible !important;
+			opacity: 1 !important;
+
+			// iOS WebView fix: Ensure proper positioning
+			position: fixed !important;
+			inset: 0 !important;
+
+			// iOS WebView fix: Force hardware acceleration
+			transform: translateZ(0);
+			-webkit-transform: translateZ(0);
+			will-change: transform;
+		}
+
+		&.adaptive-for-touch-screens .dropdown-content {
+			// Make it full width at bottom
+			inline-size: 100%;
+			max-inline-size: 100%;
+			border-end-start-radius: 0;
+			border-end-end-radius: 0;
+			border-start-start-radius: var(--border-radius-lg);
+			border-start-end-radius: var(--border-radius-lg);
+
+			// iOS WebView fix: Ensure content is visible
+			position: relative;
+			z-index: 1;
+		}
+	}
+}

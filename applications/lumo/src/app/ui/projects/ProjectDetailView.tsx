@@ -86,7 +86,7 @@ const ConversationDropdown = ({ onDelete }: ConversationDropdownProps) => {
             >
                 <Icon name="three-dots-vertical" size={4} />
             </button>
-            <Dropdown isOpen={isOpen} anchorRef={anchorRef} onClose={close}>
+            <Dropdown isOpen={isOpen} anchorRef={anchorRef} onClose={close} className="chat-dropdown-menu">
                 <DropdownMenu>
                     <DropdownMenuButton className="text-left color-danger" onClick={handleDelete}>
                         <Icon name="trash" className="mr-2" />
@@ -412,7 +412,7 @@ const ProjectDetailViewInner = () => {
                         >
                             <Icon name="three-dots-horizontal" />
                         </Button>
-                        <Dropdown isOpen={isOpen} anchorRef={anchorRef} onClose={close}>
+                        <Dropdown isOpen={isOpen} anchorRef={anchorRef} onClose={close} className="chat-dropdown-menu">
                             <DropdownMenu>
                                 <DropdownMenuButton
                                     className="text-left color-danger"

@@ -25,7 +25,7 @@ const RecentChatsList = ({ conversations, selectedConversationId, onItemClick }:
                             'relative group-hover-hide-container group-hover-opacity-container flex items-center shrink-0',
                             'flex navigation-link w-full items-center flex-nowrap justify-space-between',
                             'py-0 w-full pl-2 text-sm',
-                            'max-w-full w-custom',
+                            'max-w-full',
                             isSelected && 'is-active'
                         )}
                         style={{ '--w-custom': '95%' }}
@@ -44,7 +44,7 @@ const RecentChatsList = ({ conversations, selectedConversationId, onItemClick }:
                                 {title}
                             </span>
                         </LumoLink>
-                        <div className="relative z-1 ml-auto">
+                        <div className="relative pl-1 z-1 ml-auto">
                             <ChatDropdownMenu conversation={conversation} />
                         </div>
                     </li>
