@@ -9,6 +9,7 @@ describe('getNodeAncestry', () => {
     let consoleWarnSpy: jest.SpyInstance;
 
     beforeEach(() => {
+        jest.clearAllMocks();
         mockDrive = {
             getNode: jest.fn(),
         } as any;
