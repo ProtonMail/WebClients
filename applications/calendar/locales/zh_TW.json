@@ -836,6 +836,9 @@
       "Update recovery phrase": [
         "更新還原短語"
       ],
+      "Update secret passphrase": [
+        "更新秘密助記詞"
+      ],
       "Upgrade": [
         "升級"
       ],
@@ -1083,6 +1086,9 @@
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "您可在鑑賞體驗期內盡情享用多達 ${ TRIAL_MAX_SCRIBE_SEATS } 組 Scribe 帳號。"
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "您可在使用期內盡情享用多達 ${ TRIAL_MAX_USERS } 個使用者。"
       ],
       "You have reached the trial limit.": [
         "您已達到試用限制。"
@@ -1617,6 +1623,12 @@
       "Basic chat history": [
         "基本聊天記錄"
       ],
+      "Compliance with data protection regulations": [
+        "遵循資料保護法"
+      ],
+      "Data never used for AI training": [
+        "永遠不會使用於訓練 AI"
+      ],
       "Full chat history with search": [
         "具備搜尋功能的完整聊天記錄"
       ],
@@ -1636,6 +1648,9 @@
     "collider_2025: Info": {
       "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
         "${ LUMO_APP_NAME } 是一款隱私優先的人工智慧，可協助您提高效率，同時確保您的資料安全。釋放其全部潛力，並搶先體驗隨著它們推出而帶來的新功能。"
+      ],
+      "Add ${ LUMO_APP_NAME }": [
+        "新增 ${ LUMO_APP_NAME }"
       ],
       "High-speed chats and advanced AI features.": [
         "高速聊天和先進的人工智慧功能。"
@@ -2975,6 +2990,9 @@
       "/month": [
         "/月"
       ],
+      "2 TB of storage to share": [
+        "共享 2 TB 儲存空間"
+      ],
       "2 user accounts": [
         "2 位使用者帳號"
       ],
@@ -3976,6 +3994,9 @@
       "The subscription will be billed to the primary admin of this plan.": [
         "此訂購授權將向主要管理員收取方案費用。"
       ],
+      "View the invitation": [
+        "檢視邀請"
+      ],
       "You are invited to join ${ invite.OrganizationName }": [
         "謹邀請閣下加入 ${ invite.OrganizationName }"
       ],
@@ -4051,6 +4072,9 @@
       ]
     },
     "Feature": {
+      "More premium features": [
+        "多項的頂級功能"
+      ],
       "Unlimited hide-my-email aliases": [
         "無限制的 hide-my-email 別名"
       ]
@@ -4618,8 +4642,14 @@
       "(${ serverPrice }/month)": [
         "(${ serverPrice } /月)"
       ],
+      "**Auto-connect**: Opens and connects to VPN as soon as you turn on your device.": [
+        "**自動連線**：在您開啟裝置時，即可開啟並連線至 VPN。"
+      ],
       "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
         "**第一步：**使用您的推薦連結邀請您的朋友加入 ${ BRAND_NAME }。"
+      ],
+      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
+        "**步驟 2 ** 您的朋友取計畫外的 2 週免費。"
       ],
       "**Step 3:** Get ${ referrerRewardAmount } credits for every friend that subscribes to a plan.": [
         "**第三步：**每當有朋友訂閱方案時，您將獲得 ${ referrerRewardAmount } 額度。"
@@ -6116,6 +6146,9 @@
       "Extended address": [
         "詳細位址"
       ],
+      "Extremely Satisfied": [
+        "非常滿意"
+      ],
       "First name": [
         "名"
       ],
@@ -6266,11 +6299,17 @@
       "Postal code": [
         "郵遞區號"
       ],
+      "Premium domain": [
+        "頂級質子版網域"
+      ],
       "Primary": [
         "主要"
       ],
       "Proration": [
         "按比例分配後"
+      ],
+      "Public domain": [
+        "公開網域"
       ],
       "Public keys": [
         "公開金鑰"
@@ -6385,6 +6424,9 @@
       ],
       "Your calendar URL": [
         "您的行事曆網址"
+      ],
+      "Your domain": [
+        "您的網域"
       ],
       "Your IP": [
         "您的 IP"
@@ -6629,6 +6671,23 @@
       ],
       "for ${ price }": [
         "${ price } 版"
+      ]
+    },
+    "meet_2025: Feature": {
+      "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
+        "${ MEET_APP_NAME }: 給重要對話保密的視訊"
+      ],
+      "${ n } active meeting at a time": [
+        "${ n } 個會議同時進行中"
+      ],
+      "Meeting recording (coming soon)": [
+        "會議錄製(即將到來)"
+      ],
+      "Up to ${ n } meeting per day": [
+        "每日至多 ${ n } 個會議"
+      ],
+      "Up to ${ n } participant": [
+        "至多 ${ n } 位參與者"
       ]
     },
     "Message": {
@@ -7429,6 +7488,11 @@
         "你正在當前的方案中享受促銷價格。若你將帳號降級，你將會永遠失去此促銷價，即使你決定重新訂閱也是。"
       ]
     },
+    "new_plans: label": {
+      "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
+        "我們隨時致力於讓 ${ config.appName } 更好。您如何滿意於您的體驗?"
+      ]
+    },
     "new_plans: Subtext": {
       "Starting from ${ priceLine }": [
         "從${ priceLine }起"
@@ -7745,6 +7809,9 @@
       ],
       "Passcode copied to clipboard": [
         "密碼數字已複製至剪貼簿"
+      ],
+      "Passphrase copied to clipboard": [
+        "助記詞已複製至剪貼簿"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -9285,6 +9352,9 @@
       "For all ${ BRAND_NAME } services": [
         "所有 ${ BRAND_NAME } 服務"
       ],
+      "Storage used": [
+        "已使用的儲存空間"
+      ],
       "To send or receive emails, free up space or ${ upgrade }": [
         "您的儲存已滿，要傳送或接收電郵，請釋放儲存空間或${ upgrade }"
       ],
@@ -10157,6 +10227,9 @@
       "Choose how often this event repeats": [
         "請選擇此事件多久會重複一遍"
       ],
+      "Claim your ${ MAIL_APP_NAME } address": [
+        "取得 ${ MAIL_APP_NAME } 電郵位址"
+      ],
       "Clearing data": [
         "清除資料中"
       ],
@@ -10565,6 +10638,9 @@
       "Share your calendar with your team": [
         "與團隊共享行事曆"
       ],
+      "Share your link": [
+        "共享您的連結"
+      ],
       "Show time zones for event start and end times": [
         "顯示事件的開始和結束時間以何時區作準"
       ],
@@ -10654,6 +10730,9 @@
       ],
       "What would you like to import?": [
         "您打算要匯入什麼資料呢？"
+      ],
+      "When is it most important to use a VPN?": [
+        "何時最適合使用 VPN？"
       ],
       "You can now create unlimited folders and labels": [
         "您現在可創建無上限標籤和資料夾"

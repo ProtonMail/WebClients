@@ -1225,6 +1225,9 @@
       "Save": [
         "Tallenna"
       ],
+      "Save preferences": [
+        "Tallenna asetukset"
+      ],
       "Saving${ ellipsis }": [
         "Tallennetaan${ ellipsis }"
       ],
@@ -1480,9 +1483,6 @@
       "Toggle Contacts app": [
         "Kytke Yhteystiedot-sovellus"
       ],
-      "Toggle notifications": [
-        "Näytä tai piilota ilmoitukset"
-      ],
       "Toggle referral": [
         "Kytke suositus päälle tai pois"
       ],
@@ -1503,6 +1503,10 @@
       ],
       "Trust": [
         "Luota"
+      ],
+      "Trust key": [
+        "Luota avaimeen",
+        "Luota avaimiin"
       ],
       "Trust public key": [
         "Luota julkiseen avaimeen"
@@ -7325,8 +7329,7 @@
         "Valmistellaan…"
       ],
       "Insert image": [
-        "Lisää kuva",
-        "Lisää kuvia"
+        "Lisää kuva"
       ],
       "Insert link": [
         "Lisää linkki"
@@ -7760,6 +7763,9 @@
       ],
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Ota meihin yhteyttä saadaksesi apua mihin tahansa ${ BRAND_NAME }."
+      ],
+      "Receive notifications for ${ categoryLabel }": [
+        "Vastaanota ilmoituksia kategoriasta ${ categoryLabel }"
       ],
       "Recipient: ": [
         "Vastaanottaja: "
@@ -9172,6 +9178,9 @@
       "Cash": [
         "Käteinen"
       ],
+      "Categories": [
+        "Kategoriat"
+      ],
       "Categories badge": [
         "Luokat-merkki"
       ],
@@ -9532,6 +9541,9 @@
       "Notification": [
         "Ilmoitus"
       ],
+      "Notifications": [
+        "Ilmoitukset"
+      ],
       "Notifications are disabled, to enable them change the browser settings.": [
         "Ilmoitukset on poistettu käytöstä. Voit ottaa ne käyttöön selaimen asetuksissa."
       ],
@@ -9598,6 +9610,9 @@
       "Postal code": [
         "Postinumero"
       ],
+      "Premium domain": [
+        "Premium-verkkotunnus"
+      ],
       "Primary": [
         "Ensisijainen"
       ],
@@ -9606,6 +9621,9 @@
       ],
       "Proration": [
         "Hyvitys"
+      ],
+      "Public domain": [
+        "Julkinen verkkotunnus"
       ],
       "Public keys": [
         "Julkiset avaimet"
@@ -9640,8 +9658,8 @@
       "Search in": [
         "Etsi kohteesta"
       ],
-      "Select the categories to include, and enable notifications to be alerted about new emails in a category.": [
-        "Valitse sisällytettävät kategoriat ja salli ilmoitukset jotta sinulle voidaan ilmoittaa kategorian uusista viesteistä."
+      "Select the categories to include and manage notifications for new emails.": [
+        "Valitse sisällytettävät kategoriat ja hallitse uusien sähköpostien ilmoituksia."
       ],
       "Send auto-reply": [
         "Lähetä automaattivastaus"
@@ -9792,6 +9810,9 @@
       ],
       "Your alias": [
         "Sinun aliaksesi"
+      ],
+      "Your domain": [
+        "Sinun verkkotunnuksesi"
       ],
       "Your IP": [
         "IP-osoitteesi"

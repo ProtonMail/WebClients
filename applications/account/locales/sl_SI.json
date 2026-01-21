@@ -5476,9 +5476,6 @@
       ]
     },
     "fido2: Error": {
-      "Please disable 2FA via security key before disabling TOTP": [
-        "Onemogočite 2FA prek varnostnega ključa, preden onemogočite TOTP"
-      ],
       "Something went wrong authenticating with your security key. Please try again.": [
         "Pri preverjanju vašega varnostnega ključa je prišlo do napake. Prosimo, poskusite znova."
       ],
@@ -5519,9 +5516,6 @@
       ],
       "This will delete all security keys linked to your account.": [
         "To bo izbrisalo vse varnostne ključe, povezane z vašim računom."
-      ],
-      "To turn on 2FA via security key, you'll need to activate 2FA via authenticator app": [
-        "Če želite vklopiti 2FA prek varnostnega ključa, morate aktivirati 2FA prek aplikacije za preverjanje pristnosti"
       ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "Potrdite vašo identiteto s fizičnim varnostnim ključem U2F ali FIDO2"

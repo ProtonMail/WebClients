@@ -5511,7 +5511,7 @@
         "بيانات تسجيل الدخول غير صحيحة. الرجاء المحاولة مرة أخرى."
       ],
       "Incorrect password": [
-        "كلمة المرور غير صحيحة"
+        "كلمة السر غير صحيحة"
       ],
       "Incorrect second password. Please try again.": [
         "كلمة المرور الثانية غير صحيحة. يُرجى المحاولة مرة أخرى."
@@ -6692,9 +6692,6 @@
       ]
     },
     "fido2: Error": {
-      "Please disable 2FA via security key before disabling TOTP": [
-        "يُرجى تعطيل المصادقة الثنائية (2FA) عبر مفتاح الأمان قبل تعطيل TOTP"
-      ],
       "Something went wrong authenticating with your security key. Please try again.": [
         "حدث خطأ ما أثناء المصادقة باستخدام مفتاح الأمان الخاص بك. يُرجى المحاولة مرة أخرى."
       ],
@@ -6735,9 +6732,6 @@
       ],
       "This will delete all security keys linked to your account.": [
         "سيؤدي هذا إلى حذف جميع مفاتيح الأمان المرتبطة بحسابك."
-      ],
-      "To turn on 2FA via security key, you'll need to activate 2FA via authenticator app": [
-        "لتشغيل المصادقة الثنائية (2FA) عبر مفتاح الأمان، ستحتاج إلى تنشيط المصادقة الثنائية (2FA) عبر تطبيق المصادقة"
       ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "تحقق من هويتك باستخدام مفتاح أمان مادي U2F أو FIDO2"
@@ -9322,7 +9316,7 @@
         "التحميل جارٍ"
       ],
       "Loading ${ appName }": [
-        "جاري التحميل ${ appName }"
+        "جاري تحميل ${ appName }"
       ],
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "جارٍ تحميل التقويم، يُرجى الانتظار. ستتم إعادة توجيهك إلى منصة الجدولة الخاصة بنا Calendly في علامة تبويب جديدة."
@@ -11612,7 +11606,7 @@
         "أرفق صور للشاشة"
       ],
       "Authenticator app": [
-        "تطبيق الاستيثاق"
+        "تطبيق المصادقة"
       ],
       "Auto show embedded images": [
         "إظهار الصور المضمنة تلقائيا"
@@ -11891,7 +11885,7 @@
         "تفعيل"
       ],
       "Enter password": [
-        "أدخل كلمة المرور"
+        "أدخل كلمة السر"
       ],
       "Enter the code displayed on your TV": [
         "ادخل الرمز الظاهر على تلفازك"
@@ -12218,7 +12212,7 @@
         "مفاتيح المرور"
       ],
       "Password": [
-        "الكلمة السرية"
+        "كلمة السر"
       ],
       "Password strength": [
         "قوة كلمة المرور"
@@ -12317,7 +12311,7 @@
         "طلب المصادقة الثنائية (2FA) للجميع"
       ],
       "Reveal password": [
-        "كشف الكلمة السرية"
+        "إظهار كلمة السر"
       ],
       "Reward": [
         "مكافأة"
@@ -14790,7 +14784,7 @@
         "عدد السجلات يتجاوز حد التنزيل البالغ 10000"
       ],
       "OpenVPN credentials regenerated": [
-        "تمت إعادة إنشاء بيانات اعتماد OpenVPN"
+        "تم تجديد بيانات اعتماد OpenVPN"
       ],
       "Reminder has been sent": [
         "تم إرسال التذكير"
@@ -19976,7 +19970,7 @@
         "تم نسخ كلمة المرور إلى الحافظة"
       ],
       "Password updated": [
-        "تم تحديث كلمة المرور"
+        "تم تحديث كلمة السر"
       ],
       "Payment method added": [
         "تم إضافة طريقة الدفع"

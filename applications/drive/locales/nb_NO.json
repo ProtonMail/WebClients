@@ -1599,6 +1599,9 @@
       "Payments problem": [
         "Betalingsproblemer"
       ],
+      "Sheets problem": [
+        "Regneark-problem"
+      ],
       "Sign in problem": [
         "Påloggingsproblem"
       ],
@@ -3377,6 +3380,9 @@
       "Failed to get details, please try again later": [
         "Kunne ikke hente detaljer. Prøv igjen senere."
       ],
+      "Failed to load signature details, please try again later": [
+        "Kunne ikke laste inn signaturdetaljer, prøv igjen senere"
+      ],
       "Failed to load the STL preview": [
         "Kan ikke laste inn STL-forhåndsvisningen"
       ],
@@ -3786,6 +3792,9 @@
       ],
       "We were not able to load some of your shared items": [
         "Noen av dine delte elementer kunne ikke lastes inn"
+      ],
+      "We were not able to load the folder contents": [
+        "Vi klarte ikke å laste innholdet i mappen"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Du kan ikke sende e-post til flere enn ${ maxContacts } mottaker.",
@@ -4563,6 +4572,12 @@
       "Too many recent requests. Please try again in a few moments.": [
         "For mange nylige forespørsler. Prøv igjen om noen få øyeblikk."
       ],
+      "Two-factor authentication is enabled in your external account.": [
+        "Tofaktorautentisering er aktivert i den eksterne kontoen din."
+      ],
+      "Two-factor authentication is enabled in your external email account.": [
+        "Tofaktorautentisering er aktivert i den eksterne e-postkontoen din."
+      ],
       "Use your app password if:": [
         "Bruk app-passordet ditt hvis:"
       ],
@@ -4777,6 +4792,9 @@
       "${ contactsLength } contact": [
         "${ contactsLength } kontakt",
         "${ contactsLength } kontakter"
+      ],
+      "${ DOCS_APP_NAME } and ${ SHEETS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
+        "${ DOCS_APP_NAME } og ${ SHEETS_APP_NAME }-filer kan ikke lastes ned direkte og vil ikke bli inkludert i denne nedlastingen. Du kan laste ned de andre filene ved å klikke på 'Fortsett å laste ned'."
       ],
       "${ doneCount } finished": [
         "${ doneCount } fullført",
@@ -6151,6 +6169,9 @@
       "Thank you for subscribing. Secure browsing starts now.": [
         "Takk for at du abonnerer. Sikker surfing starter nå."
       ],
+      "that": [
+        "den"
+      ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Kontoen kan ha en ny nøkkel, eller følgende kan ha blitt tuklet med: ${ items }. Bare åpne hvis du klarérer de."
       ],
@@ -6277,6 +6298,9 @@
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "For å fullføre betalingen, send ${ btcAmountBold } til adressen nedenfor."
+      ],
+      "To download these files, open them in ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME } and export them.": [
+        "For å laste ned disse filene, åpne dem i ${ DOCS_APP_NAME } eller ${ SHEETS_APP_NAME } og eksporter dem."
       ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
         "For å muliggjøre virkelig privat søk, må ${ DRIVE_APP_NAME } indeksere filene dine lokalt."
@@ -6443,6 +6467,9 @@
       "We are experiencing technical issues. Any albums related actions are temporarily disabled.": [
         "Vi opplever tekniske problem. Alle albumrelaterte handlinger er midlertidig deaktivert."
       ],
+      "We couldn't verify ${ nameAuthor } uploaded ${ node.name }. The following may have been tampered with: file data order. Only open if you trust it.": [
+        "Vi kunne ikke bekrefte at ${ nameAuthor } lastet opp ${ node.name }. Følgende kan ha blitt tuklet med: fildatarekkefølge. Åpne bare hvis du stoler på den."
+      ],
       "We couldn’t process your payment.": [
         "Vi kunne ikke behandle betalingen din."
       ],
@@ -6493,6 +6520,9 @@
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Når du setter opp tofaktorautentisering, gir vi deg gjenopprettingskoder som du kan bruke til å logge på hvis du mister tilgangen til autentiseringsappen din."
+      ],
+      "who": [
+        "hvem"
       ],
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
         "vil bli gjenopprettet til versjonen fra ${ formattedRevisionDate }. Alle andre versjoner lagres fortsatt."
@@ -7302,8 +7332,14 @@
       "Postal code": [
         "Postnummer"
       ],
+      "Premium domain": [
+        "Premium-domene"
+      ],
       "Proration": [
         "Proporsjonal fakturering"
+      ],
+      "Public domain": [
+        "Offentlig domene"
       ],
       "Public keys": [
         "Offentlige nøkler"
@@ -7475,6 +7511,9 @@
       ],
       "Your alias": [
         "Aliaset ditt"
+      ],
+      "Your domain": [
+        "Ditt domene"
       ],
       "Your IP": [
         "IP-en din"
@@ -9015,6 +9054,9 @@
       "\"${ name }\" deleted": [
         "\"${ name }\" slettet"
       ],
+      "\"${ name }\" deleted permanently": [
+        "\"${ name }\" slettet permanent"
+      ],
       "\"${ name }\" deleted permanently from trash": [
         "\"${ name }\" slettet permanent fra papirkurven"
       ],
@@ -9095,6 +9137,10 @@
       "${ numberOfItems } item deleted": [
         "${ numberOfItems } element slettet",
         "${ numberOfItems } elementer slettet"
+      ],
+      "${ numberOfItems } item deleted permanently": [
+        "${ numberOfItems } element slettet permanent",
+        "${ numberOfItems } elementer slettet permanent"
       ],
       "${ numberOfItems } item deleted permanently from trash": [
         "${ numberOfItems } element slettet permanent fra papirkurven",
@@ -12603,26 +12649,23 @@
       "The link expired": [
         "Koblingen er utløpt"
       ],
-      "The verification of the encryption keys' signature by the original creator (${ claimedKeyAuthor }) who created the node failed. The reason is: ${ nodeEntity.keyAuthor.error.error }": [
-        "Verifiseringen av krypteringsnøklenes signatur av den opprinnelige skaperen (${ claimedKeyAuthor }) som opprettet noden, mislyktes. Årsaken er:${ nodeEntity.keyAuthor.error.error }"
-      ],
-      "The verification of the file's content signature by the uploader (${ claimedContentAuthor }) who uploaded the last revision failed. The reason is: ${ activeRevision.contentAuthor.error.error }": [
-        "Verifiseringen av filens innholdssignatur av opplasteren (${ claimedContentAuthor }) som lastet opp den siste revisjonen, mislyktes. Årsaken er: ${ activeRevision.contentAuthor.error.error }"
-      ],
-      "The verification of the name's signature by author (${ claimedNameAuthor }) who set the name the last time failed. The reason is: ${ nodeEntity.nameAuthor.error.error }": [
-        "Verifiseringen av navnets signatur av forfatteren (${ claimedNameAuthor }) som satte navnet sist, mislyktes. Årsaken er: ${ nodeEntity.nameAuthor.error.error }"
-      ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "Denne filen har en manglende eller ugyldig signatur. Gå til meny (⋮) → detaljer for info."
       ],
       "This folder has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "Denne mappen har en manglende eller ugyldig signatur. Gå til meny (⋮) → detaljer for info."
       ],
+      "This is likely due to the account or address having been deleted.": [
+        "Dette skyldes sannsynligvis at kontoen eller adressen er slettet."
+      ],
       "This link is password protected": [
         "Denne koblingen er passordbeskyttet"
       ],
       "Time": [
         "Tid"
+      ],
+      "To preview this spreadsheet, download it.": [
+        "For å forhåndsvise dette regnearket, last det ned."
       ],
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "For å forhåndsvise dette regnearket, åpne det i ${ SHEETS_APP_NAME } eller last det ned."
@@ -12732,6 +12775,15 @@
       "We couldn’t verify that an anonymous user uploaded this folder.": [
         "Vi kunne ikke bekrefte at en anonym bruker lastet opp denne mappen."
       ],
+      "We weren’t able to confirm that the file content was uploaded by ${ claimedContentAuthor }. The reason is: ${ activeRevision.contentAuthor.error.error }": [
+        "Vi klarte ikke å bekrefte at filinnholdet ble lastet opp av ${ claimedContentAuthor }. Årsaken er: ${ activeRevision.contentAuthor.error.error }"
+      ],
+      "We weren’t able to confirm that the name was created or modified by ${ claimedNameAuthor }. The reason is: ${ nodeEntity.nameAuthor.error.error }": [
+        "Vi klarte ikke å bekrefte at navnet ble opprettet eller endret av ${ claimedNameAuthor }. Årsaken er: ${ nodeEntity.nameAuthor.error.error }"
+      ],
+      "We weren’t able to confirm that the node was created by ${ claimedKeyAuthor }. The reason is: ${ nodeEntity.keyAuthor.error.error }": [
+        "Vi klarte ikke å bekrefte at noden ble opprettet av ${ claimedKeyAuthor }. Årsaken er: ${ nodeEntity.keyAuthor.error.error }"
+      ],
       "Welcome offer": [
         "Velkomsttilbud"
       ],
@@ -12779,6 +12831,9 @@
       ],
       "Your changes are not synced yet": [
         "Endringene dine er ikke synkronisert enda"
+      ],
+      "Your download includes ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME } files": [
+        "Nedlastingen din inneholder ${ DOCS_APP_NAME }- eller ${ SHEETS_APP_NAME }-filer"
       ],
       "Your exposed information": [
         "Din eksponerte informasjon"

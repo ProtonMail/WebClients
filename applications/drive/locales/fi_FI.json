@@ -7131,8 +7131,14 @@
       "Postal code": [
         "Postinumero"
       ],
+      "Premium domain": [
+        "Premium-verkkotunnus"
+      ],
       "Proration": [
         "Hyvitys"
+      ],
+      "Public domain": [
+        "Julkinen verkkotunnus"
       ],
       "Public keys": [
         "Julkiset avaimet"
@@ -7301,6 +7307,9 @@
       ],
       "Your alias": [
         "Sinun aliaksesi"
+      ],
+      "Your domain": [
+        "Sinun verkkotunnuksesi"
       ],
       "Your IP": [
         "IP-osoitteesi"
@@ -8722,6 +8731,9 @@
       "\"${ name }\" deleted": [
         "\"${ name }\" poistettiin"
       ],
+      "\"${ name }\" deleted permanently": [
+        "\"${ name }\" poistettu pysyvästi"
+      ],
       "\"${ name }\" deleted permanently from trash": [
         "\"${ name }\" poistettiin roskakorista pysyvästi"
       ],
@@ -8787,6 +8799,10 @@
       "${ numberOfItems } item deleted": [
         "${ numberOfItems } kohde poistettu",
         "${ numberOfItems } kohdetta poistettu"
+      ],
+      "${ numberOfItems } item deleted permanently": [
+        "${ numberOfItems } kohde poistettiin pysyvästi",
+        "${ numberOfItems } kohdetta poistettiin pysyvästi"
       ],
       "${ numberOfItems } item deleted permanently from trash": [
         "${ numberOfItems } kohde poistettiin roskakorista pysyvästi",
@@ -12096,14 +12112,14 @@
       "The link expired": [
         "Linkki on erääntynyt"
       ],
-      "The verification of the file's content signature by the uploader (${ claimedContentAuthor }) who uploaded the last revision failed. The reason is: ${ activeRevision.contentAuthor.error.error }": [
-        "Viimeisimmän version ladanneen lataajan (${ claimedContentAuthor }) tiedoston sisällön allekirjoituksen varmennus epäonnistui. Syy on: ${ activeRevision.contentAuthor.error.error }"
-      ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "Tiedoston allekirjoitus puuttuu tai se on virheellinen. Näytä tiedot valitsemalla Valikko (⋮) → Tietoja."
       ],
       "This folder has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "Kansion allekirjoitus puuttuu tai se on virheellinen. Näytä tiedot valitsemalla Valikko (⋮) → Tietoja."
+      ],
+      "This is likely due to the account or address having been deleted.": [
+        "Tämä johtuu todennäköisesti siitä, että tili tai osoite on poistettu."
       ],
       "This link is password protected": [
         "Linkki on suojattu salasanalla"
@@ -12200,6 +12216,15 @@
       ],
       "We couldn’t verify that an anonymous user uploaded this file.": [
         "Emme pystyneet vahvistamaan, että anonyymi käyttäjä lähetti tämän tiedoston."
+      ],
+      "We weren’t able to confirm that the file content was uploaded by ${ claimedContentAuthor }. The reason is: ${ activeRevision.contentAuthor.error.error }": [
+        "Emme pystyneet vahvistamaan, että ${ claimedContentAuthor } latasi tiedoston sisällön. Syy on: ${ activeRevision.contentAuthor.error.error }"
+      ],
+      "We weren’t able to confirm that the name was created or modified by ${ claimedNameAuthor }. The reason is: ${ nodeEntity.nameAuthor.error.error }": [
+        "Emme pystyneet vahvistamaan, että ${ claimedNameAuthor } loi tai muokkasi nimeä. Syy on: ${ nodeEntity.nameAuthor.error.error }"
+      ],
+      "We weren’t able to confirm that the node was created by ${ claimedKeyAuthor }. The reason is: ${ nodeEntity.keyAuthor.error.error }": [
+        "Emme pystyneet vahvistamaan, että ${ claimedKeyAuthor } loi solmun. Syy on: ${ nodeEntity.keyAuthor.error.error }"
       ],
       "Welcome offer": [
         "Tervetuliaistarjous"

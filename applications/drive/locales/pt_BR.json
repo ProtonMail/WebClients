@@ -4787,6 +4787,9 @@
         "${ contactsLength } contato",
         "${ contactsLength } contatos"
       ],
+      "${ DOCS_APP_NAME } and ${ SHEETS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
+        "Os arquivos do ${ DOCS_APP_NAME } e ${ SHEETS_APP_NAME } não podem ser baixados diretamente e não serão incluídos neste download. Você pode baixar os outros arquivos clicando em 'Continuar baixando'."
+      ],
       "${ doneCount } finished": [
         "${ doneCount } concluído",
         "${ doneCount } concluídos"
@@ -7320,8 +7323,14 @@
       "Postal code": [
         "Código postal"
       ],
+      "Premium domain": [
+        "Domínio premium"
+      ],
       "Proration": [
         "Cálculo proporcional"
+      ],
+      "Public domain": [
+        "Domínio público"
       ],
       "Public keys": [
         "Chaves públicas"
@@ -7493,6 +7502,9 @@
       ],
       "Your alias": [
         "Seu alias"
+      ],
+      "Your domain": [
+        "Seu domínio"
       ],
       "Your IP": [
         "Seu IP"
@@ -9027,6 +9039,9 @@
       "\"${ name }\" deleted": [
         "\"${ name }\" excluído"
       ],
+      "\"${ name }\" deleted permanently": [
+        "\"${ name } excluído permanentemente"
+      ],
       "\"${ name }\" deleted permanently from trash": [
         "\"${ name }\" excluído permanentemente da lixeira"
       ],
@@ -9107,6 +9122,10 @@
       "${ numberOfItems } item deleted": [
         "${ numberOfItems } item excluído",
         "${ numberOfItems } itens excluídos"
+      ],
+      "${ numberOfItems } item deleted permanently": [
+        "${ numberOfItems } item excluído permanentemente",
+        "${ numberOfItems } itens excluídos permanentemente"
       ],
       "${ numberOfItems } item deleted permanently from trash": [
         "${ numberOfItems } item excluído permanentemente da lixeira",
@@ -12621,15 +12640,6 @@
       "The link expired": [
         "O link expirou"
       ],
-      "The verification of the encryption keys' signature by the original creator (${ claimedKeyAuthor }) who created the node failed. The reason is: ${ nodeEntity.keyAuthor.error.error }": [
-        "A verificação da assinatura das chaves de criptografia pelo criador original (${ claimedKeyAuthor }) que criou o nó falhou. O motivo é: ${ nodeEntity.keyAuthor.error.error }"
-      ],
-      "The verification of the file's content signature by the uploader (${ claimedContentAuthor }) who uploaded the last revision failed. The reason is: ${ activeRevision.contentAuthor.error.error }": [
-        "A verificação da assinatura do conteúdo do arquivo pelo usuário (${ claimedContentAuthor }) que enviou a última revisão falhou. O motivo é: ${ activeRevision.contentAuthor.error.error }"
-      ],
-      "The verification of the name's signature by author (${ claimedNameAuthor }) who set the name the last time failed. The reason is: ${ nodeEntity.nameAuthor.error.error }": [
-        "A verificação da assinatura do nome pelo autor (${ claimedNameAuthor }) que definiu o nome pela última vez falhou. A razão é: ${ nodeEntity.nameAuthor.error.error }"
-      ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "O arquivo tem uma assinatura ausente ou incorreta. Vá em Menu (⋮) → Detalhes para informações."
       ],
@@ -12641,6 +12651,9 @@
       ],
       "Time": [
         "Hora"
+      ],
+      "To preview this spreadsheet, download it.": [
+        "Para pré-visualizar esta planilha, baixe-a."
       ],
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "Para pré-visualizar esta planilha, abra-a no ${ SHEETS_APP_NAME } ou faça o download."

@@ -1266,6 +1266,9 @@
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "您可在鑑賞體驗期內盡情享用多達 ${ TRIAL_MAX_SCRIBE_SEATS } 組 Scribe 帳號。"
       ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "您可在使用期內盡情享用多達 ${ TRIAL_MAX_USERS } 個使用者。"
+      ],
       "You have reached the trial limit.": [
         "您已達到試用限制。"
       ]
@@ -1686,6 +1689,12 @@
       "Basic chat history": [
         "基本聊天記錄"
       ],
+      "Compliance with data protection regulations": [
+        "遵循資料保護法"
+      ],
+      "Data never used for AI training": [
+        "永遠不會使用於訓練 AI"
+      ],
       "Full chat history with search": [
         "具備搜尋功能的完整聊天記錄"
       ],
@@ -1705,6 +1714,9 @@
     "collider_2025: Info": {
       "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
         "${ LUMO_APP_NAME } 是一款隱私優先的人工智慧，可協助您提高效率，同時確保您的資料安全。釋放其全部潛力，並搶先體驗隨著它們推出而帶來的新功能。"
+      ],
+      "Add ${ LUMO_APP_NAME }": [
+        "新增 ${ LUMO_APP_NAME }"
       ],
       "High-speed chats and advanced AI features.": [
         "高速聊天和先進的人工智慧功能。"
@@ -3084,6 +3096,9 @@
       "/month": [
         "/月"
       ],
+      "2 TB of storage to share": [
+        "共享 2 TB 儲存空間"
+      ],
       "2 user accounts": [
         "2 位使用者帳號"
       ],
@@ -4031,6 +4046,9 @@
       "The subscription will be billed to the primary admin of this plan.": [
         "此訂購授權將向主要管理員收取方案費用。"
       ],
+      "View the invitation": [
+        "檢視邀請"
+      ],
       "You are invited to join ${ invite.OrganizationName }": [
         "謹邀請閣下加入 ${ invite.OrganizationName }"
       ],
@@ -4196,6 +4214,9 @@
       "Fastest VPN servers": [
         "最快速的 VPN 伺服器"
       ],
+      "More premium features": [
+        "多項的頂級功能"
+      ],
       "Remove": [
         "移除"
       ],
@@ -4247,9 +4268,6 @@
       ]
     },
     "fido2: Error": {
-      "Please disable 2FA via security key before disabling TOTP": [
-        "請先停用安全金鑰再停用 TOTP"
-      ],
       "Something went wrong authenticating with your security key. Please try again.": [
         "使用您的安全金鑰進行身份驗證時出現問題。請再試一次。"
       ],
@@ -4290,9 +4308,6 @@
       ],
       "This will delete all security keys linked to your account.": [
         "此將刪除所有與帳戶關連的安全金鑰。"
-      ],
-      "To turn on 2FA via security key, you'll need to activate 2FA via authenticator app": [
-        "要啟用安全金鑰作為 2FA 的話，你需要先使用驗證APP啟用2FA"
       ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "使用實體 U2F 或 FIDO2 金鑰來確保您的身份"
@@ -5092,6 +5107,9 @@
       ],
       "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
         "**第一步：**使用您的推薦連結邀請您的朋友加入 ${ BRAND_NAME }。"
+      ],
+      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
+        "**步驟 2 ** 您的朋友取計畫外的 2 週免費。"
       ],
       "**Sync codes** to all your devices": [
         "**同步代碼**到您的所有裝置"
@@ -8325,6 +8343,23 @@
       ],
       "for ${ price }": [
         "${ price } 版"
+      ]
+    },
+    "meet_2025: Feature": {
+      "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
+        "${ MEET_APP_NAME }: 給重要對話保密的視訊"
+      ],
+      "${ n } active meeting at a time": [
+        "${ n } 個會議同時進行中"
+      ],
+      "Meeting recording (coming soon)": [
+        "會議錄製(即將到來)"
+      ],
+      "Up to ${ n } meeting per day": [
+        "每日至多 ${ n } 個會議"
+      ],
+      "Up to ${ n } participant": [
+        "至多 ${ n } 位參與者"
       ]
     },
     "Member action": {
@@ -11599,6 +11634,9 @@
       "For all ${ BRAND_NAME } services": [
         "所有 ${ BRAND_NAME } 服務"
       ],
+      "Storage used": [
+        "已使用的儲存空間"
+      ],
       "To send or receive emails, free up space or ${ upgrade }": [
         "您的儲存已滿，要傳送或接收電郵，請釋放儲存空間或${ upgrade }"
       ],
@@ -12611,6 +12649,9 @@
       ],
       "Change second password": [
         "變更第二密碼"
+      ],
+      "Claim your ${ MAIL_APP_NAME } address": [
+        "取得 ${ MAIL_APP_NAME } 電郵位址"
       ],
       "Close": [
         "關閉"

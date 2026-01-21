@@ -7201,8 +7201,14 @@
       "Postal code": [
         "우편번호"
       ],
+      "Premium domain": [
+        "프리미엄 도메인"
+      ],
       "Proration": [
         "할당"
+      ],
+      "Public domain": [
+        "공개 도메인"
       ],
       "Public keys": [
         "공개 키"
@@ -7374,6 +7380,9 @@
       ],
       "Your alias": [
         "내 별칭"
+      ],
+      "Your domain": [
+        "나의 도메인"
       ],
       "Your IP": [
         "나의 IP"
@@ -12321,15 +12330,6 @@
       ],
       "The link expired": [
         "링크 만료됨"
-      ],
-      "The verification of the encryption keys' signature by the original creator (${ claimedKeyAuthor }) who created the node failed. The reason is: ${ nodeEntity.keyAuthor.error.error }": [
-        "노드를 생성한 원본 작성자(${ claimedKeyAuthor })에 의한 암호화 키의 서명 확인에 실패했습니다. 이유는 다음과 같습니다: ${ nodeEntity.keyAuthor.error.error }"
-      ],
-      "The verification of the file's content signature by the uploader (${ claimedContentAuthor }) who uploaded the last revision failed. The reason is: ${ activeRevision.contentAuthor.error.error }": [
-        "최근 수정사항을 업로드한 사용자(${ claimedContentAuthor })에 의한 파일 내용물 서명 확인에 실패했습니다. 이유는 다음과 같습니다: ${ activeRevision.contentAuthor.error.error }"
-      ],
-      "The verification of the name's signature by author (${ claimedNameAuthor }) who set the name the last time failed. The reason is: ${ nodeEntity.nameAuthor.error.error }": [
-        "마지막으로 이름을 지정한 사람(${ claimedNameAuthor })에 의한 이름의 서명 확인에 실패했습니다. 이유는 다음과 같습니다: ${ nodeEntity.nameAuthor.error.error }"
       ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "이 파일이 유효하지 않거나 서명이 존재하지 않습니다. 매뉴(⋮) → 상세 정보에서 자세한 정보를 확인하세요"

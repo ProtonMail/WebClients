@@ -1233,6 +1233,9 @@
       "Save": [
         "Uložit"
       ],
+      "Save preferences": [
+        "Uložit předvolby"
+      ],
       "Saving${ ellipsis }": [
         "Ukládání${ ellipsis }"
       ],
@@ -1488,9 +1491,6 @@
       "Toggle Contacts app": [
         "Přepnout aplikaci Kontakty"
       ],
-      "Toggle notifications": [
-        "Přepnout upozornění"
-      ],
       "Toggle referral": [
         "Přepnout doporučení"
       ],
@@ -1513,7 +1513,10 @@
         "Důvěřovat"
       ],
       "Trust key": [
-        "Důvěřovat klíči"
+        "Důvěřovat klíči",
+        "Důvěřovat klíčům",
+        "Důvěřovat klíčům",
+        "Důvěřovat klíčům"
       ],
       "Trust public key": [
         "Důvěřovat veřejnému klíči"
@@ -6285,10 +6288,10 @@
         "Bylo zadáno příliš mnoho požadavků. Zkuste to za pár minut."
       ],
       "Two-factor authentication is enabled in your external account.": [
-        "Ve vašem externím účtu je aktivní dvoufaktorové ověření."
+        "Ve vašem externím účtu je povoleno dvoufázové ověřování."
       ],
       "Two-factor authentication is enabled in your external email account.": [
-        "Ve vašem externím e-mailovém účtu je aktivní dvoufaktorové ověření."
+        "Ve vašem externím e-mailovém účtu je povoleno dvoufázové ověřování."
       ],
       "Use your app password if:": [
         "Použijte heslo aplikace, pokud:"
@@ -7642,10 +7645,7 @@
         "Inicializace..."
       ],
       "Insert image": [
-        "Vložit obrázek",
-        "Vložit obrázky",
-        "Vložit obrázky",
-        "Vložit obrázky"
+        "Vložit obrázek"
       ],
       "Insert link": [
         "Vložit odkaz"
@@ -8084,6 +8084,9 @@
       ],
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Obraťte se na nás pro pomoc s čímkoli od ${ BRAND_NAME }"
+      ],
+      "Receive notifications for ${ categoryLabel }": [
+        "Přijímat oznámení ohledně ${ categoryLabel }"
       ],
       "Recipient: ": [
         "Příjemce: "
@@ -9571,6 +9574,9 @@
       "Cash": [
         "Hotovost"
       ],
+      "Categories": [
+        "Kategorie"
+      ],
       "Categories badge": [
         "Štítek kategorií"
       ],
@@ -9934,6 +9940,9 @@
       "Notification": [
         "Oznámení"
       ],
+      "Notifications": [
+        "Upozornění"
+      ],
       "Notifications are disabled, to enable them change the browser settings.": [
         "Upozornění jsou deaktivována, chcete-li je povolit, změňte nastavení prohlížeče."
       ],
@@ -10000,6 +10009,9 @@
       "Postal code": [
         "PSČ"
       ],
+      "Premium domain": [
+        "Prémiová doména"
+      ],
       "Primary": [
         "Primární"
       ],
@@ -10008,6 +10020,9 @@
       ],
       "Proration": [
         "Prorace"
+      ],
+      "Public domain": [
+        "Veřejná doména"
       ],
       "Public keys": [
         "Veřejné klíče"
@@ -10042,8 +10057,8 @@
       "Search in": [
         "Hledat v"
       ],
-      "Select the categories to include, and enable notifications to be alerted about new emails in a category.": [
-        "Vyberte kategorie, které chcete zahrnout, a povolte upozornění, abyste byli upozorněni na nové e-maily v dané kategorii."
+      "Select the categories to include and manage notifications for new emails.": [
+        "Vyberte kategorie, které chcete zahrnout, a spravujte oznámení o nových e-mailech."
       ],
       "Send auto-reply": [
         "Poslat automatickou odpověď"
@@ -10194,6 +10209,9 @@
       ],
       "Your alias": [
         "Váš alias"
+      ],
+      "Your domain": [
+        "Vaše doména"
       ],
       "Your IP": [
         "Vaše IP"
@@ -16111,7 +16129,7 @@
         "Komu"
       ],
       "To preview this spreadsheet, download it.": [
-        "Pro otevření náhledu této tabulky si ji stáhněte."
+        "Chcete-li si tuto tabulku prohlédnout, stáhněte si ji."
       ],
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "Chcete-li si tuto tabulku prohlédnout, otevřete ji v aplikaci ${ SHEETS_APP_NAME } nebo ji stáhněte."

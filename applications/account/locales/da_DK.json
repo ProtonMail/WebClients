@@ -7483,9 +7483,6 @@
       ]
     },
     "fido2: Error": {
-      "Please disable 2FA via security key before disabling TOTP": [
-        "Deaktivér 2FA via sikkerhedsnøgle, før du deaktiverer TOTP."
-      ],
       "Something went wrong authenticating with your security key. Please try again.": [
         "Noget gik galt ved godkendelsen med din sikkerhedsnøgle. Prøv venligst igen."
       ],
@@ -7526,9 +7523,6 @@
       ],
       "This will delete all security keys linked to your account.": [
         "Dette vil slette alle sikkerhedsnøgler forbundet til din konto."
-      ],
-      "To turn on 2FA via security key, you'll need to activate 2FA via authenticator app": [
-        "For at slå 2FA til via sikkerhedsnøgle skal du aktivere 2FA via godkendelsesappen"
       ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "Bekræft din identitet med en fysisk U2F- eller FIDO2-sikkerhedsnøgle"
@@ -9736,7 +9730,7 @@
         "Oprettelse af en ny gendannelsessætning vil deaktivere din gamle."
       ],
       "Get ${ AUTHENTICATOR_APP_NAME } for all your devices.": [
-        "Hent ${ AUTHENTICATOR_APP_NAME } til alle dine enheder."
+        "Få ${ AUTHENTICATOR_APP_NAME } til alle dine enheder."
       ],
       "Get ${ upsellPlanName }": [
         "Få ${ upsellPlanName }"
@@ -10918,7 +10912,7 @@
         "Linket til rapportering, om at du ikke oprettede en ${ BRAND_NAME }-konto, er udløbet. Kontakt vores supportteam for at få løst dette problem."
       ],
       "The most recent data update, excluding breaches.": [
-        "Den seneste dataopdatering, eksklusiv databrud."
+        "Den seneste dataopdatering, eksklusive databrud."
       ],
       "The most secure and private two-factor authentication app, that's free and open-source.": [
         "Den mest sikre og private to-faktor-godkendelsesapp, som er gratis og open source."
@@ -14183,7 +14177,7 @@
         "Ændring af postkasseadgangskode"
       ],
       "Password reset": [
-        "Adgangskodenulstilling"
+        "Nulstilling af adgangskode"
       ],
       "Second factor disabled (authenticator app)": [
         "Anden faktor deaktiveret (autentificerings-app)"
@@ -14321,7 +14315,7 @@
         "til ${ price }"
       ],
       "Limited time offer: **Get up to 35% off** yearly plans": [
-        "Tidsbegrænset tilbud: **Få op til 35% rabat** på års-abonnementer"
+        "Tidsbegrænset tilbud: **Få op til 35% rabat** på årsabonnementer"
       ],
       "Set up your account with your Porkbun domain.": [
         "Konfigurer din konto med dit Porkbun-domæne."
@@ -14660,7 +14654,7 @@
         "Singapore-dollar"
       ],
       "South Korean won": [
-        "Sydkoreansk won"
+        "Sydkoreanske won"
       ],
       "Swiss franc": [
         "Schweizer franc"
@@ -18753,7 +18747,7 @@
         "Din konto og dine data kan gendannes. Du har anbefalede handlinger."
       ],
       "Your account is fully secure.": [
-        "Din konto er yderst sikker."
+        "Din konto er fuldt ud sikker."
       ],
       "Your account is secure.": [
         "Din konto er sikker."
@@ -20445,7 +20439,7 @@
         "For at sikre at det virkelig er dig, der forsøger at logge på, bedes du indtaste din backupadgangskode."
       ],
       "To make sure it's really you trying to sign-in, share the confirmation code with your administrator **${ adminEmail }** so that they can approve the request for **${ email }**.": [
-        "For at sikre, at det virkelig er dig, der forsøger at logge ind, bedes du dele bekræftelseskoden med din administrator **,${ adminEmail }** som dermed kan godkende anmodningen for **${ email }**."
+        "For at sikre, at det virkelig er dig, der forsøger at logge ind, bedes du dele bekræftelseskoden med din administrator **${ adminEmail }**, som dermed kan godkende anmodningen for **${ email }**."
       ],
       "Tried to sign in at": [
         "Forsøgte at logge ind på"
@@ -21066,7 +21060,7 @@
         "Dit ${ planName }-abonnement beskytter ikke bare din virksomheds data og kommunikation. Den understøtter dine overholdelsesmål, får din virksomhed til at skille sig ud og holder dit team forbundet."
       ],
       "Your own short @pm.me email alias": [
-        "Dit eget korte @pm.me e-mail-alias"
+        "Dit eget korte @pm.me e-mailalias"
       ]
     },
     "subscription reminder": {
@@ -21672,7 +21666,7 @@
         "${ friendsSubscribed } venner har abonneret"
       ],
       "${ MAIL_APP_NAME } Export Tool": [
-        "${ MAIL_APP_NAME } Export Tool"
+        "Eksportværktøj til ${ MAIL_APP_NAME }"
       ],
       "${ PASS_SHORT_APP_NAME } Monitor Report": [
         "${ PASS_SHORT_APP_NAME } Monitor-rapport"
@@ -22898,7 +22892,7 @@
         "Vælg når du ønsker, at denne notifikation skal sendes"
       ],
       "Send email reminders?": [
-        "Send e-mail-påmindelser?"
+        "Send e-mailpåmindelser?"
       ],
       "Send new invite?": [
         "Send ny invitation?"
@@ -23514,7 +23508,7 @@
         "Delte serverpolitikker kan anvendes på individuelle brugere eller grupper"
       ],
       "Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.": [
-        "Viser hver afsenders billede i beskedlisten. Afsenderens initialer vises når der ikke er et billede til rådighed."
+        "Vis hver afsenders billede i beskedlisten. Afsenderens initialer vises, når der ikke er et billede til rådighed."
       ],
       "Signatures produced by this key are treated as invalid and this key cannot be used for encryption": [
         "Signaturer produceret af denne nøgle behandles som ugyldige, og denne nøgle kan ikke bruges til kryptering"
@@ -24374,7 +24368,7 @@
         "Ved at slette denne adresse vil du ikke længere kunne modtage daglige e-mailnotifikationer."
       ],
       "By deleting this address, you will no longer be able to recover your account or receive daily email notifications.": [
-        "Ved at slette denne adresse vil du ikke længere kunne gendanne din konto eller modtage daglige e-mailnotifikationer."
+        "Slettes denne adresse, vil du ikke længere kunne gendanne din konto eller modtage daglige e-mailnotifikationer."
       ],
       "By deleting this address, you will no longer be able to recover your account.": [
         "Ved at slette denne adresse vil du ikke længere kunne gendanne din konto."

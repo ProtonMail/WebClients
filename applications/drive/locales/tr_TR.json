@@ -3381,7 +3381,7 @@
         "Ayrıntılar alınamadı. Lütfen bir süre sonra yeniden deneyin"
       ],
       "Failed to load signature details, please try again later": [
-        "İmza ayrıntıları yüklenemedi, lütfen daha sonra tekrar deneyin"
+        "İmza ayrıntıları yüklenemedi. Lütfen bir süre sonra yeniden deneyin"
       ],
       "Failed to load the STL preview": [
         "STL ön izlemesi yüklenemedi"
@@ -4794,7 +4794,7 @@
         "${ contactsLength } kişi"
       ],
       "${ DOCS_APP_NAME } and ${ SHEETS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
-        "${ DOCS_APP_NAME } ve ${ SHEETS_APP_NAME } dosyaları doğrudan indirilemez ve bu indirme işlemine dahil edilmeyecektir. Diğer dosyaları 'İndirmeye devam et' seçeneğine tıklayarak indirebilirsiniz."
+        "${ DOCS_APP_NAME } ve ${ SHEETS_APP_NAME } dosyaları doğrudan indirilemez ve bu indirme işlemine katılmayacaklar. Diğer dosyaları 'İndirmeyi sürdür' seçeneğine tıklayarak indirebilirsiniz."
       ],
       "${ doneCount } finished": [
         "${ doneCount } tamamlandı",
@@ -6468,7 +6468,7 @@
         "Teknik sorunlar yaşıyoruz. Geçici olarak albümlerle ilgili işlemler yapılamıyor."
       ],
       "We couldn't verify ${ nameAuthor } uploaded ${ node.name }. The following may have been tampered with: file data order. Only open if you trust it.": [
-        "${ nameAuthor } tarafından yüklenen ${ node.name } dosyasını doğrulayamadık. Aşağıdaki öğeler üzerinde oynanmış olabilir: dosya verileri sırası. Yalnızca güveniyorsanız açın."
+        "${ nameAuthor } tarafından yüklenen ${ node.name } dosyası doğrulanamadı. Şu ögeler üzerinde oynanmış olabilir: Dosya verileri sıralaması. Yalnızca güveniyorsanız açın."
       ],
       "We couldn’t process your payment.": [
         "Ödemenizi işleyemedik."
@@ -7332,8 +7332,14 @@
       "Postal code": [
         "Posta kodu"
       ],
+      "Premium domain": [
+        "Ücretli etki alanı"
+      ],
       "Proration": [
         "Hesap bakiyesi"
+      ],
+      "Public domain": [
+        "Herkese açık etki alanı"
       ],
       "Public keys": [
         "Herkese açık anahtarlar"
@@ -7505,6 +7511,9 @@
       ],
       "Your alias": [
         "Takma adınız"
+      ],
+      "Your domain": [
+        "Etki alanınız"
       ],
       "Your IP": [
         "IP adresiniz"
@@ -8988,6 +8997,9 @@
       "\"${ name }\" deleted": [
         "\"${ name }\" silindi"
       ],
+      "\"${ name }\" deleted permanently": [
+        "“${ name }” kalıcı olarak silindi"
+      ],
       "\"${ name }\" deleted permanently from trash": [
         "\"${ name }\" çöp kutusundan kalıcı olarak silindi"
       ],
@@ -9068,6 +9080,10 @@
       "${ numberOfItems } item deleted": [
         "${ numberOfItems } öge silindi",
         "${ numberOfItems } öge silindi"
+      ],
+      "${ numberOfItems } item deleted permanently": [
+        "${ numberOfItems } öge kalıcı olarak silindi",
+        "${ numberOfItems } öge kalıcı olarak silindi"
       ],
       "${ numberOfItems } item deleted permanently from trash": [
         "${ numberOfItems } öge çöp kutusundan kalıcı olarak silindi",
@@ -12576,20 +12592,14 @@
       "The link expired": [
         "Bağlantının geçerlilik süresi dolmuş"
       ],
-      "The verification of the encryption keys' signature by the original creator (${ claimedKeyAuthor }) who created the node failed. The reason is: ${ nodeEntity.keyAuthor.error.error }": [
-        "Düğümü oluşturan özgün içerik oluşturucunun (${ claimedKeyAuthor }) şifreleme anahtarlarının imzası doğrulanamadı. Nedeni: ${ nodeEntity.keyAuthor.error.error }"
-      ],
-      "The verification of the file's content signature by the uploader (${ claimedContentAuthor }) who uploaded the last revision failed. The reason is: ${ activeRevision.contentAuthor.error.error }": [
-        "Dosyanın son sürümünü yükleyen kullanıcının (${ claimedContentAuthor }) içerik imzası doğrulanamadı. Nedeni: ${ activeRevision.contentAuthor.error.error }"
-      ],
-      "The verification of the name's signature by author (${ claimedNameAuthor }) who set the name the last time failed. The reason is: ${ nodeEntity.nameAuthor.error.error }": [
-        "Adı son ayarlayan yazar (${ claimedNameAuthor }) tarafından ad imzası doğrulanamadı. Nedeni: ${ nodeEntity.nameAuthor.error.error }"
-      ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "Bu dosyanın imzası eksik ya da geçersiz. Bilgi almak için Menü (⋮) → Bilgiler bölümüne gidin."
       ],
       "This folder has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "Bu klasörün imzası eksik ya da geçersiz. Bilgi almak için Menü (⋮) → Bilgiler bölümüne gidin."
+      ],
+      "This is likely due to the account or address having been deleted.": [
+        "Bu durum büyük olasılıkla hesabın veya adresin silinmiş olmasından kaynaklanıyor olabilir."
       ],
       "This link is password protected": [
         "Bu bağlantı parola ile korunmuş"
@@ -12598,7 +12608,7 @@
         "Zaman"
       ],
       "To preview this spreadsheet, download it.": [
-        "Bu hesap tablosunu önizlemek için indirin."
+        "Bu hesap tablosunu ön izlemek için indirin."
       ],
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "Bu hesap tablosunu ön izlemek için ${ SHEETS_APP_NAME } uygulaması ile açın ya da indirin."
@@ -12708,6 +12718,15 @@
       "We couldn’t verify that an anonymous user uploaded this folder.": [
         "Bu klasörü anonim bir kullanıcının yüklediği doğrulanamadı."
       ],
+      "We weren’t able to confirm that the file content was uploaded by ${ claimedContentAuthor }. The reason is: ${ activeRevision.contentAuthor.error.error }": [
+        "Dosya içeriğinin ${ claimedContentAuthor } tarafından yüklendiği doğrulanamadı. Nedeni: ${ activeRevision.contentAuthor.error.error }"
+      ],
+      "We weren’t able to confirm that the name was created or modified by ${ claimedNameAuthor }. The reason is: ${ nodeEntity.nameAuthor.error.error }": [
+        "Adın ${ claimedNameAuthor } tarafından oluşturulduğu veya değiştirildiği doğrulanamadı. Nedeni: ${ nodeEntity.nameAuthor.error.error }"
+      ],
+      "We weren’t able to confirm that the node was created by ${ claimedKeyAuthor }. The reason is: ${ nodeEntity.keyAuthor.error.error }": [
+        "Düğümün ${ claimedKeyAuthor } tarafından oluşturulduğu doğrulanamadı. Nedeni: ${ nodeEntity.keyAuthor.error.error }"
+      ],
       "Welcome offer": [
         "Karşılama teklifi"
       ],
@@ -12757,7 +12776,7 @@
         "Değişiklikleriniz henüz eşitlenmedi"
       ],
       "Your download includes ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME } files": [
-        "İndirmenize ${ DOCS_APP_NAME } veya ${ SHEETS_APP_NAME } dosyaları dahildir."
+        "İndirmenizde ${ DOCS_APP_NAME } veya ${ SHEETS_APP_NAME } dosyaları bulunur."
       ],
       "Your exposed information": [
         "Sızdırılmış bilgileriniz"

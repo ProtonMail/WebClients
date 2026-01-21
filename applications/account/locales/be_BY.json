@@ -2870,6 +2870,9 @@
       "Payments problem": [
         "Праблема з плацяжамі"
       ],
+      "Sheets problem": [
+        "Праблема з электроннай табліцай"
+      ],
       "Sign in problem": [
         "Праблема з уваходам"
       ],
@@ -7573,9 +7576,6 @@
       ]
     },
     "fido2: Error": {
-      "Please disable 2FA via security key before disabling TOTP": [
-        "Адключыце 2ФА праз ключ бяспекі перад тым, як адключыць TOTP"
-      ],
       "Something went wrong authenticating with your security key. Please try again.": [
         "Нешта пайшло не так з аўтэнтыфікацыяй ключа бяспекі. Паспрабуйце яшчэ раз."
       ],
@@ -7616,9 +7616,6 @@
       ],
       "This will delete all security keys linked to your account.": [
         "Гэта выдаліць усе ключы, якія звязаны з вашым уліковым запісам."
-      ],
-      "To turn on 2FA via security key, you'll need to activate 2FA via authenticator app": [
-        "Для ўключэння 2ФА праз ключ бяспекі, вы павінны актываваць 2ФА праз праграму аўтэнтыфікацыі"
       ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "Спраўдзіце сваю ідэнтычнасць пры дапамозе фізічнага ключа бяспекі U2F або FIDO2"
@@ -23637,6 +23634,9 @@
       ],
       "Time zone": [
         "Часавы пояс"
+      ],
+      "To preview this spreadsheet, download it.": [
+        "Спампуйце гэту электронную табліцу, каб папярэдне прагледзець яе."
       ],
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "Адкрыйце гэту электронную табліцу ў ${ SHEETS_APP_NAME } або спампуйце яе для папярэдняга прагляду."

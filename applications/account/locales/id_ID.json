@@ -1056,6 +1056,9 @@
       "Open in ${ SHEETS_APP_NAME }": [
         "Buka di ${ SHEETS_APP_NAME }"
       ],
+      "Open in new tab": [
+        "Buka di tab baru"
+      ],
       "Open navigation": [
         "Buka navigasi"
       ],
@@ -2343,6 +2346,9 @@
       ]
     },
     "Billing cycle": {
+      "Renews automatically at ${ renewPrice }, for ${ renewCycle } month": [
+        "Diperbarui secara otomatis pada harga ${ renewPrice }, untuk ${ renewCycle } bulan"
+      ],
       "Renews automatically on ${ subscriptionManagerName }": [
         "Diperbarui secara otomatis pada ${ subscriptionManagerName }"
       ]
@@ -2652,6 +2658,9 @@
       "Contacts": [
         "Kontak"
       ],
+      "Domain connected": [
+        "Domain terhubung"
+      ],
       "Domain ownership verified": [
         "Kepemilikan domain diverifikasi"
       ],
@@ -2682,8 +2691,29 @@
       "Migration includes": [
         "Migrasi meliputi"
       ],
+      "Migration started for ${ n } user": [
+        "Migrasi dimulai untuk ${ n } pengguna"
+      ],
+      "Migration status": [
+        "Status migrasi"
+      ],
+      "Organization does not have enough seats available": [
+        "Organisasi tidak memiliki jumlah kuota yang memadai"
+      ],
+      "Organization does not have enough storage available": [
+        "Organisasi tidak memiliki cukup ruang penyimpanan yang tersedia"
+      ],
+      "Organization settings": [
+        "Pengaturan organisasi"
+      ],
+      "Required": [
+        "Wajib diisi"
+      ],
       "Required to create user accounts": [
         "Dibutuhkan untuk membuat akun pengguna"
+      ],
+      "Select at least one user to start a migration": [
+        "Pilih setidaknya satu pengguna untuk memulai migrasi"
       ],
       "Select what you want to migrate, this will apply to all users whether they are created now or later. Migration will start after user accounts are created.": [
         "Pilih item apa saja yang ingin Anda migrasikan. Proses ini akan berlaku bagi seluruh pengguna terlepas dari apakah akun pengguna ini dibuat sekarang atau nanti. Migrasi akan dimulai setelah akun pengguna selesai dibuat."
@@ -2706,6 +2736,9 @@
       "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Markeplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue. Learn more": [
         "Untuk memigrasikan data organisasi Anda, Anda perlu untuk memasang aplikasi Asisten Migrasi ${ BRAND_NAME } dari Marketplace Google Workspace. Hal ini akan memberikan izin bagi ${ BRAND_NAME } untuk menyalin data Anda. Setelah asisten ini terpasang, kembali ke halaman ini untuk melanjutkan. Pelajari lebih lanjut"
       ],
+      "Transfer errors": [
+        "Kesalahan transfer"
+      ],
       "User": [
         "Pengguna"
       ],
@@ -2714,6 +2747,9 @@
       ],
       "Verify your domain ownership": [
         "Verifikasi kepemilikan domain Anda"
+      ],
+      "Verify your domain to start a migration": [
+        "Verifikasi domain Anda untuk memulai migrasi"
       ],
       "What are you migrating?": [
         "Item apa saja yang Anda pindahkan?"
@@ -2791,6 +2827,9 @@
       ],
       "Payments problem": [
         "Masalah pembayaran"
+      ],
+      "Sheets problem": [
+        "Masalah lembar kerja"
       ],
       "Sign in problem": [
         "Masalah masuk"
@@ -3063,6 +3102,9 @@
       "${ maxSpaceTB } storage": [
         "Ruang penyimpanan ${ maxSpaceTB }"
       ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } pengguna"
+      ],
       "${ planMaxSpace } email storage": [
         "Ruang penyimpanan email ${ planMaxSpace }"
       ],
@@ -3217,6 +3259,9 @@
       ],
       "Open source": [
         "Open source"
+      ],
+      "Private video calls for the conversations that matter.": [
+        "Panggilan video pribadi untuk percakapan yang penting."
       ]
     },
     "collider_2025: Navigation": {
@@ -4411,6 +4456,11 @@
     "customer_support.feature.mail": {
       "For ${ MAIL_APP_NAME }": [
         "Untuk ${ MAIL_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.meet": {
+      "For ${ MEET_APP_NAME }": [
+        "Untuk ${ MEET_APP_NAME }"
       ]
     },
     "customer_support.feature.pass": {
@@ -7382,9 +7432,6 @@
       ]
     },
     "fido2: Error": {
-      "Please disable 2FA via security key before disabling TOTP": [
-        "Silakan nonaktifkan 2FA via kunci keamanan sebelum menonaktifkan TOTP"
-      ],
       "Something went wrong authenticating with your security key. Please try again.": [
         "Terdapat kesalahan dalam mengautentikasi kunci keamanan Anda. Silakan coba lagi."
       ],
@@ -7425,9 +7472,6 @@
       ],
       "This will delete all security keys linked to your account.": [
         "Tindakan ini akan menghapus seluruh kunci keamanan yang terhubung dengan akun Anda."
-      ],
-      "To turn on 2FA via security key, you'll need to activate 2FA via authenticator app": [
-        "Untuk mengaktifkan 2FA via kunci keamanan, Anda perlu untuk mengaktifkan 2FA via aplikasi autentikator"
       ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "Verifikasi identitas Anda dengan kunci keamanan fisik U2F atau FIDO2"
@@ -8187,6 +8231,12 @@
       ],
       "Too many recent requests. Please try again in a few moments.": [
         "Terlalu banyak permintaan baru-baru ini. Silakan coba lagi dalam beberapa saat."
+      ],
+      "Two-factor authentication is enabled in your external account.": [
+        "Autentikasi dua-faktor diaktifkan pada akun eksternal Anda."
+      ],
+      "Two-factor authentication is enabled in your external email account.": [
+        "Autentikasi dua-faktor diaktifkan pada akun email eksternal Anda."
       ],
       "Use your app password if:": [
         "Gunakan kata sandi aplikasi Anda apabila:"
@@ -8961,6 +9011,9 @@
       "Auto-reply is always active on the days of the week you select, between the selected hours.": [
         "Pesan balasan otomatis akan selalu aktif pada setiap hari yang Anda pilih, di antara rentang jam yang Anda tentukan."
       ],
+      "Automatically add Meet links to your calendar invitations when there is at least one invitee.": [
+        "Tambahkan tautan Meet ke undangan kalender Anda secara otomatis pada saat terdapat setidaknya satu orang yang diundang."
+      ],
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
         "Hapus email yang telah dipindahkan ke Sampah dan Spam lebih dari 30 hari yang lalu secara otomatis."
       ],
@@ -9072,6 +9125,9 @@
       "CNET editors choice award with a rating of 8.4 out of 10": [
         "Penghargaan pilihan editor CNET dengan rating 8.4 dari 10"
       ],
+      "Compromised": [
+        "Bocor"
+      ],
       "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
         "Atur autentikasi SAML untuk organisasi Anda melalui layanan penyedia identitas (IdP). Pengaturan ini akan mengaktifkan SAML untuk seluruh organisasi."
       ],
@@ -9098,6 +9154,9 @@
       ],
       "Continuing will connect your ${ BRAND_NAME } Account to ${ name }.": [
         "Dengan melanjutkan, Akun ${ BRAND_NAME } Anda akan terhubung ke ${ name }."
+      ],
+      "Control whether organization members can create vaults or require an administrator to create and share a vault with them.": [
+        "Tentukan apakah anggota organisasi dapat membuat brankas secara mandiri atau memerlukan administrator untuk dapat membuat dan membagikan brankas."
       ],
       "Copied to clipboard": [
         "Disalin ke papan klip"
@@ -10574,6 +10633,9 @@
       ],
       "Snooze messages for later so they are top of your inbox when you want": [
         "Tunda pesan ke kemudian waktu sehingga pesan ini dapat muncul pada kotak masuk di waktu yang Anda inginkan"
+      ],
+      "Some ${ BRAND_NAME } apps may not support security keys yet. If you turn off authenticator app 2FA, you may not be able to sign in to those apps.": [
+        "Sebagian aplikasi ${ BRAND_NAME } dapat belum mendukung kunci keamanan. Apabila Anda menonaktifkan 2FA milik aplikasi autentikator, Anda mungkin tidak akan dapat masuk ke aplikasi ini."
       ],
       "Some keys successfully reactivated": [
         "Sebagian kunci berhasil diaktifkan ulang"
@@ -12395,6 +12457,9 @@
       "Auto show remote images": [
         "Tampilkan gambar jarak jauh secara otomatis"
       ],
+      "Auto-add Meet links": [
+        "Tambah tautan Meet secara otomatis"
+      ],
       "Auto-advance": [
         "Lanjut otomatis"
       ],
@@ -13031,6 +13096,9 @@
       "New second password": [
         "Kata sandi kedua baru"
       ],
+      "No (users cannot use the app until a vault is shared with them)": [
+        "Tidak (pengguna tidak dapat menggunakan aplikasi hingga terdapat brankas yang dibagikan dengan mereka)"
+      ],
       "No filter": [
         "Tidak ada filter"
       ],
@@ -13058,8 +13126,17 @@
       "Online privacy for your whole family": [
         "Privasi online untuk seluruh keluarga Anda"
       ],
+      "Only a single personal vault can be created": [
+        "Hanya satu brankas pribadi yang dapat dibuat"
+      ],
       "Only available on ${ PASS_SHORT_APP_NAME } paid plans": [
         "Hanya tersedia pada paket ${ PASS_SHORT_APP_NAME } berbayar"
+      ],
+      "OpenVPN password": [
+        "Kata sandi OpenVPN"
+      ],
+      "OpenVPN username": [
+        "Nama pengguna OpenVPN"
       ],
       "Operating system": [
         "Sistem operasi"
@@ -13477,6 +13554,9 @@
       ],
       "Without attachment": [
         "Tanpa lampiran"
+      ],
+      "Yes": [
+        "Ya"
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Ya, saya ingin menghapus akun ini beserta seluruh data yang terkandung di dalamnya secara permanen."
@@ -14143,6 +14223,108 @@
         "Anda telah mencapai batas jumlah maksimum ${ MAX_CALENDAR_MEMBERS } pengguna."
       ]
     },
+    "meet_2025: Feature": {
+      "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
+        "${ MEET_APP_NAME }: Pertemuan video rahasia untuk percakapan yang penting"
+      ],
+      "${ n } active meeting at a time": [
+        "${ n } pertemuan yang aktif secara bersamaan"
+      ],
+      "24 hours per meeting": [
+        "24 jam per pertemuan"
+      ],
+      "60 minutes per meeting": [
+        "50 menit per pertemuan"
+      ],
+      "Appointment scheduling": [
+        "Penjadwalan janji temu"
+      ],
+      "Browser, mobile, and desktop apps": [
+        "Aplikasi browser, seluler, dan desktop"
+      ],
+      "Built-in chat": [
+        "Obrolan yang terintegrasi"
+      ],
+      "End-to-end encrypted screen sharing and ephemeral in-call chat": [
+        "Pembagian layar yang terenkripsi end-to-end dan percakapan dalam panggilan yang bersifat sementara"
+      ],
+      "Meeting recording (coming soon)": [
+        "Rekaman pertemuan (segera hadir)"
+      ],
+      "One active meeting at a time": [
+        "Satu pertemuan yang aktif dalam satu waktu"
+      ],
+      "Screen-sharing": [
+        "Pembagian layar"
+      ],
+      "Unlimited meetings per day": [
+        "Tanpa batasan jumlah pertemuan per harinya"
+      ],
+      "Up to ${ n } meeting per day": [
+        "Hingga ${ n } pertemuan per hari"
+      ],
+      "Up to ${ n } participant": [
+        "Hinnga ${ n } peserta"
+      ]
+    },
+    "meet_2025: Info": {
+      "100 ${ BRAND_NAME } email addresses": [
+        "100 alamat email ${ BRAND_NAME }"
+      ],
+      "Cloud storage and file sharing": [
+        "Ruang penyimpanan dan pembagian berkas berbasis cloud"
+      ],
+      "Data never used for AI training": [
+        "Data yang ada tidak pernah digunakan untuk melatih AI"
+      ],
+      "Data retention policies": [
+        "Kebijakan penyimpanan data"
+      ],
+      "Document & spreadsheet editor": [
+        "Penyunting dokumen & lembar kerja"
+      ],
+      "Email writing assistant": [
+        "Asisten penulisan email"
+      ],
+      "Everything from ${ title }, plus...": [
+        "Segalanya dari ${ title }, ditambah..."
+      ],
+      "Everything in Meet Professional, plus:": [
+        "Semua yang ada di Meet Professional, ditambah:"
+      ],
+      "Open source": [
+        "Open source"
+      ],
+      "Password manager with team vaults": [
+        "Pengelola kata sandi dengan brankas tim"
+      ],
+      "Private AI Chat (${ LUMO_SHORT_APP_NAME })": [
+        "Obrolan AI Pribadi (${ LUMO_SHORT_APP_NAME })"
+      ],
+      "Private and unlimited AI chat (${ LUMO_SHORT_APP_NAME })": [
+        "Percakapan AI pribadi dan tanpa batas (${ LUMO_SHORT_APP_NAME })"
+      ],
+      "Private video calls for the conversations that matter": [
+        "Panggilan video pribadi untuk percakapan yang penting"
+      ],
+      "Secure calendar": [
+        "Kalender aman"
+      ],
+      "Strict no-logs policy": [
+        "Kebijakan tanpa log yang ketat"
+      ],
+      "Video meetings, ${ PAID_MAX_PARTICIPANTS } participants": [
+        "Pertemuan video, dengan ${ PAID_MAX_PARTICIPANTS } peserta"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN dengan penangkal iklan dan perlindungan malware"
+      ]
+    },
+    "meet_signup_2025: title": {
+      "For businesses": [
+        "Untuk bisnis"
+      ]
+    },
     "Member action": {
       "Activate user": [
         "Aktifkan pengguna"
@@ -14308,6 +14490,21 @@
       ],
       "Euro": [
         "Euro"
+      ],
+      "Hong Kong dollar": [
+        "Dolar Hong Kong"
+      ],
+      "Japanese yen": [
+        "Yen Jepang"
+      ],
+      "Polish złoty": [
+        "Zloty Polandia"
+      ],
+      "Singapore dollar": [
+        "Dolar Singapura"
+      ],
+      "South Korean won": [
+        "Won Korea Selatan"
       ],
       "Swiss franc": [
         "Franc Swiss"
@@ -15650,6 +15847,9 @@
       ],
       "Number of records exceeds the download limit of 10000": [
         "Jumlah rekaman melebihi batas maksimal 10000 unduhan"
+      ],
+      "OpenVPN credentials regenerated": [
+        "Kredensial OpenVPN dihasilkan ulang"
       ],
       "Reminder has been sent": [
         "Pengingat telah dikirim"
@@ -17912,6 +18112,9 @@
       ]
     },
     "retention_policy_2025_Error": {
+      "Invalid value": [
+        "Nilai tidak valid"
+      ],
       "Lifetime must be greater than ${ MIN_LIFETIME } day": [
         "Durasi Lifetime harus lebih dari ${ MIN_LIFETIME } hari"
       ],
@@ -19507,6 +19710,26 @@
       ],
       "Works on all devices": [
         "Dapat digunakan pada seluruh perangkat"
+      ]
+    },
+    "Signup: Meet": {
+      "**Trusted by over 100 million** users and organizations": [
+        "**Dipercaya oleh lebih dari 100 juta** pengguna dan organisasi"
+      ],
+      "Get ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
+        "Dapatkan ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
+      ],
+      "Own a business?": [
+        "Memiliki bisnis?"
+      ],
+      "Sign up, meet privately": [
+        "Daftar dan temui orang lain secara pribadi"
+      ],
+      "Start using ${ MEET_APP_NAME } now": [
+        "Mulai gunakan ${ MEET_APP_NAME } sekarang"
+      ],
+      "Your account also includes access to ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME } free features.": [
+        "Akun Anda turut meliputi akses ke seluruh fitur gratis milik ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, dan ${ PASS_SHORT_APP_NAME }."
       ]
     },
     "signup_2024: Feature": {
@@ -22146,6 +22369,9 @@
       "Open pagination": [
         "Buka paginasi"
       ],
+      "OpenVPN": [
+        "OpenVPN"
+      ],
       "OpenVPN configuration files": [
         "Berkas konfigurasi OpenVPN"
       ],
@@ -22559,6 +22785,9 @@
       ],
       "Time zone": [
         "Zona waktu"
+      ],
+      "To preview this spreadsheet, download it.": [
+        "Untuk mempratinjau, unduh lembar kerja ini."
       ],
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "Untuk mempratinjau lembar kerja ini, buka di ${ SHEETS_APP_NAME } atau unduh."

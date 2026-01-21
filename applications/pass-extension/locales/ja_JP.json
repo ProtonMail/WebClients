@@ -1542,6 +1542,9 @@
       "Admin": [
         "管理者"
       ],
+      "After confirming, you will need to accept a permission prompt for ${ PASS_APP_NAME }.": [
+        "確認後、${ PASS_APP_NAME } のアクセス許可プロンプトを承認する必要があります。"
+      ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "データが正常にインポートされた後、セキュリティのためにパスワードを含む CSV ファイルを削除できます。"
       ],
@@ -1733,6 +1736,9 @@
       ],
       "Disabling offline mode...": [
         "オフラインモードを無効にしています..."
+      ],
+      "Discover ${ PASS_APP_NAME } video": [
+        "${ PASS_APP_NAME } のビデオを見る"
       ],
       "DNS changes could take up to 24 hours to update.": [
         "DNSの変更が更新されるまでに最大 24 時間かかることがあります。"
@@ -2405,6 +2411,9 @@
       ],
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "このエクスポートは暗号化されていないため、エクスポートしたファイルにアクセスできる人は誰でもパスワードを見ることができます。セキュリティのため、使い終わったら削除してください。"
+      ],
+      "This feature is currently experimental on Linux. Please ensure your system is up-to-date.": [
+        "この機能は現在Linux上で実験中です。システムが最新の状態であることを確認してください。"
       ],
       "This item is not currently shared with anyone. Invite people to share it with others.": [
         "このアイテムは現在誰とも共有されていません。他の人と共有するために人々を招待してください。"
