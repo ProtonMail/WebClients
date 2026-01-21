@@ -1492,6 +1492,9 @@
       ],
       "Website access problem": [
         "Πρόβλημα πρόσβασης ιστοσελίδας"
+      ],
+      "Sheets problem": [
+        "Πρόβλημα Sheets"
       ]
     },
     "Button": {
@@ -3960,6 +3963,9 @@
       ],
       "Unable to load VPN dashboard. Please check your connection and try again.": [
         "Δεν είναι δυνατή η φόρτωση του πίνακα ελέγχου VPN. Παρακαλούμε ελέγξτε τη σύνδεσή σας και προσπαθήστε ξανά."
+      ],
+      "Failed to add existing ${ MEET_APP_NAME } video conference": [
+        "Αποτυχία προσθήκης υπάρχουσας τηλεδιάσκεψης ${ MEET_APP_NAME }"
       ]
     },
     "error": {
@@ -4802,6 +4808,12 @@
       ],
       "Your password is correct.": [
         "Ο κωδικός πρόσβασής σας είναι σωστός."
+      ],
+      "Two-factor authentication is enabled in your external account.": [
+        "Η ταυτοποίηση δύο παραγόντων είναι ενεργοποιημένη στον εξωτερικό λογαριασμό σας."
+      ],
+      "Two-factor authentication is enabled in your external email account.": [
+        "Η ταυτοποίηση δύο παραγόντων είναι ενεργοποιημένη στον εξωτερικό λογαριασμό email σας."
       ]
     },
     "Import instructions": {
@@ -7161,6 +7173,15 @@
       ],
       "Your location": [
         "Η τοποθεσία σας"
+      ],
+      "Premium domain": [
+        "Premium τομέας"
+      ],
+      "Public domain": [
+        "Δημόσιος τομέας"
+      ],
+      "Your domain": [
+        "Ο τομέας σας"
       ]
     },
     "label": {

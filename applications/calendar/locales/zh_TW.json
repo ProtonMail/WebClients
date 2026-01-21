@@ -913,6 +913,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "桌面應用程式免費試用期將會在${ formattedEndDate }.${ upgradeButton }完結"
+      ],
+      "Update secret passphrase": [
+        "更新秘密助記詞"
       ]
     },
     "action": {
@@ -1086,6 +1089,9 @@
       ],
       "You have reached the trial limit.": [
         "您已達到試用限制。"
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "您可在使用期內盡情享用多達 ${ TRIAL_MAX_USERS } 個使用者。"
       ]
     },
     "b2b_trials_Action": {
@@ -1327,6 +1333,9 @@
       ],
       "Website access problem": [
         "網站存取問題"
+      ],
+      "Meet problem": [
+        "遇到問題"
       ]
     },
     "Button": {
@@ -1631,6 +1640,12 @@
       ],
       "Web search access": [
         "網頁搜尋存取"
+      ],
+      "Compliance with data protection regulations": [
+        "遵循資料保護法"
+      ],
+      "Data never used for AI training": [
+        "永遠不會使用於訓練 AI"
       ]
     },
     "collider_2025: Info": {
@@ -1639,6 +1654,9 @@
       ],
       "High-speed chats and advanced AI features.": [
         "高速聊天和先進的人工智慧功能。"
+      ],
+      "Add ${ LUMO_APP_NAME }": [
+        "新增 ${ LUMO_APP_NAME }"
       ]
     },
     "colon": {
@@ -2969,6 +2987,9 @@
       ],
       "Only": [
         "僅"
+      ],
+      "2 TB of storage to share": [
+        "共享 2 TB 儲存空間"
       ]
     },
     "Duo offer: Link": {
@@ -3991,6 +4012,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "您的帳號已使用 ${ usedSpace } 的儲存空間，這超過了為您分配的 ${ inviteSpace }。刪除一些資料或要求方案管理員增加您的儲存空間。"
+      ],
+      "View the invitation": [
+        "檢視邀請"
       ]
     },
     "familyOffer_2023:Label": {
@@ -4042,6 +4066,9 @@
     "Feature": {
       "Unlimited hide-my-email aliases": [
         "無限制的 hide-my-email 別名"
+      ],
+      "More premium features": [
+        "多項的頂級功能"
       ]
     },
     "fido2: Error": {
@@ -5743,6 +5770,21 @@
       ],
       "Your physical location is visible and can be used to restrict your access to the internet.": [
         "您的實體位置可見，並可用於限制您對網際網路的存取。"
+      ],
+      "**Auto-connect**: Opens and connects to VPN as soon as you turn on your device.": [
+        "**自動連線**：在您開啟裝置時，即可開啟並連線至 VPN。"
+      ],
+      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
+        "**步驟 2 ** 您的朋友取計畫外的 2 週免費。"
+      ],
+      "Min. 48 hours before": [
+        "最少提前 48 小時"
+      ],
+      "Not on the same day": [
+        "不同日期"
+      ],
+      "Other location": [
+        "其他位置"
       ]
     },
     "info": {
@@ -6389,6 +6431,18 @@
       ],
       "Your location": [
         "您的位置"
+      ],
+      "Extremely Satisfied": [
+        "非常滿意"
+      ],
+      "Premium domain": [
+        "頂級質子版網域"
+      ],
+      "Public domain": [
+        "公開網域"
+      ],
+      "Your domain": [
+        "您的網域"
       ]
     },
     "Label for contact group color": {
@@ -7734,6 +7788,9 @@
       ],
       "Passcode copied to clipboard": [
         "密碼數字已複製至剪貼簿"
+      ],
+      "Passphrase copied to clipboard": [
+        "助記詞已複製至剪貼簿"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -9323,6 +9380,9 @@
       ],
       "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
         "您將不能使用我們的無限密碼記錄、無限的 hide-my-email 別名、高達20個密碼保險箱與我們的全力支援。"
+      ],
+      "Storage used": [
+        "已使用的儲存空間"
       ]
     },
     "Subscribe to calendar modal": {
@@ -10675,6 +10735,15 @@
       ],
       "What is a VPN?": [
         "甚麼是 VPN?"
+      ],
+      "Claim your ${ MAIL_APP_NAME } address": [
+        "取得 ${ MAIL_APP_NAME } 電郵位址"
+      ],
+      "Share your link": [
+        "共享您的連結"
+      ],
+      "When is it most important to use a VPN?": [
+        "何時最適合使用 VPN？"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -11204,6 +11273,28 @@
       ],
       "Download for Windows": [
         "適用於 Windows 的下載"
+      ]
+    },
+    "meet_2025: Feature": {
+      "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
+        "${ MEET_APP_NAME }: 給重要對話保密的視訊"
+      ],
+      "${ n } active meeting at a time": [
+        "${ n } 個會議同時進行中"
+      ],
+      "Meeting recording (coming soon)": [
+        "會議錄製(即將到來)"
+      ],
+      "Up to ${ n } meeting per day": [
+        "每日至多 ${ n } 個會議"
+      ],
+      "Up to ${ n } participant": [
+        "至多 ${ n } 位參與者"
+      ]
+    },
+    "new_plans: label": {
+      "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
+        "我們隨時致力於讓 ${ config.appName } 更好。您如何滿意於您的體驗?"
       ]
     }
   }

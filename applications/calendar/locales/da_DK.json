@@ -1492,6 +1492,9 @@
       ],
       "Website access problem": [
         "Adgangsproblem på websted"
+      ],
+      "Sheets problem": [
+        "Regnearksproblem"
       ]
     },
     "Button": {
@@ -3960,6 +3963,9 @@
       ],
       "Unable to load VPN dashboard. Please check your connection and try again.": [
         "Kunne ikke indlæse VPN-kontrolpanel. Kontrollér din forbindelse, og forsøg igen."
+      ],
+      "Failed to add existing ${ MEET_APP_NAME } video conference": [
+        "Kunne ikke tilføje eksisterende ${ MEET_APP_NAME } videokonference"
       ]
     },
     "error": {
@@ -4802,6 +4808,12 @@
       ],
       "Your password is correct.": [
         "Din adgangskode er korrekt."
+      ],
+      "Two-factor authentication is enabled in your external account.": [
+        "To-faktor-godkendelse er aktiveret i din eksterne konto."
+      ],
+      "Two-factor authentication is enabled in your external email account.": [
+        "Tofaktor-godkendelse er aktiveret i din eksterne e-mail-konto."
       ]
     },
     "Import instructions": {
@@ -7161,6 +7173,15 @@
       ],
       "Your location": [
         "Din placering"
+      ],
+      "Premium domain": [
+        "Premium domæne"
+      ],
+      "Public domain": [
+        "Offentligt domæne"
+      ],
+      "Your domain": [
+        "Dit domæne"
       ]
     },
     "label": {
@@ -10872,7 +10893,7 @@
         "Dit ${ planName }-abonnement beskytter ikke bare din virksomheds data og kommunikation. Den understøtter dine overholdelsesmål, får din virksomhed til at skille sig ud og holder dit team forbundet."
       ],
       "Your own short @pm.me email alias": [
-        "Dit eget korte @pm.me e-mail-alias"
+        "Dit eget korte @pm.me e-mailalias"
       ]
     },
     "subscription reminder": {

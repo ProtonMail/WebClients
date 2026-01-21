@@ -1451,6 +1451,9 @@
       ],
       "Website access problem": [
         "Verkkosivuston avautumisongelma"
+      ],
+      "Sheets problem": [
+        "Taulukko-ongelma"
       ]
     },
     "Button": {
@@ -3869,6 +3872,9 @@
       ],
       "Unable to load VPN dashboard. Please check your connection and try again.": [
         "VPN-hallintapaneelia ei voi ladata. Tarkista yhteytesi ja yritä uudelleen."
+      ],
+      "Failed to add existing ${ MEET_APP_NAME } video conference": [
+        "Olemassa olevan ${ MEET_APP_NAME } -videoneuvottelun lisääminen epäonnistui"
       ]
     },
     "error": {
@@ -4706,6 +4712,12 @@
       ],
       "Your password is correct.": [
         "Salasanasi on oikein."
+      ],
+      "Two-factor authentication is enabled in your external account.": [
+        "Kaksivaiheinen todennus on käytössä ulkoisessa tilissäsi."
+      ],
+      "Two-factor authentication is enabled in your external email account.": [
+        "Kaksivaiheinen todennus on käytössä ulkoisessa sähköpostitilissäsi."
       ]
     },
     "Import instructions": {
@@ -6975,6 +6987,15 @@
       ],
       "Your location": [
         "Sijaintisi"
+      ],
+      "Premium domain": [
+        "Premium-verkkotunnus"
+      ],
+      "Public domain": [
+        "Julkinen verkkotunnus"
+      ],
+      "Your domain": [
+        "Sinun verkkotunnuksesi"
       ]
     },
     "label": {

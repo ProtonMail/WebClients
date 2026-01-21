@@ -1492,6 +1492,9 @@
       ],
       "Website access problem": [
         "Probleem met toegang tot website"
+      ],
+      "Sheets problem": [
+        "Werkblad probleem"
       ]
     },
     "Button": {
@@ -1720,7 +1723,7 @@
         "${ maxSpaceTB } opslagruimte"
       ],
       "${ numberOfUsers } user": [
-        "Tot ${ numberOfUsers } gebruiker",
+        "${ numberOfUsers } gebruiker",
         "Tot ${ numberOfUsers } gebruikers"
       ],
       "${ planMaxSpace } email storage": [
@@ -1851,7 +1854,7 @@
         "Chats op hoge snelheid en geavanceerde AI-functies."
       ],
       "Private video calls for the conversations that matter.": [
-        "Privé videogesprekken voor de gesprekken die ertoe doen."
+        "Privé-videogesprekken voor de gesprekken die ertoe doen."
       ]
     },
     "colon": {
@@ -3960,6 +3963,9 @@
       ],
       "Unable to load VPN dashboard. Please check your connection and try again.": [
         "Kan VPN-dashboard niet laden. Controleer uw verbinding en probeer het opnieuw."
+      ],
+      "Failed to add existing ${ MEET_APP_NAME } video conference": [
+        "Mislukt om bestaande ${ MEET_APP_NAME } videoconferentie toe te voegen"
       ]
     },
     "error": {
@@ -4802,6 +4808,12 @@
       ],
       "Your password is correct.": [
         "Uw wachtwoord is juist."
+      ],
+      "Two-factor authentication is enabled in your external account.": [
+        "Tweestapsverificatie is ingeschakeld in uw externe account."
+      ],
+      "Two-factor authentication is enabled in your external email account.": [
+        "Tweestapsverificatie is ingeschakeld in uw externe e-mailaccount."
       ]
     },
     "Import instructions": {
@@ -7161,6 +7173,15 @@
       ],
       "Your location": [
         "Uw locatie"
+      ],
+      "Premium domain": [
+        "Premium domein"
+      ],
+      "Public domain": [
+        "Publiek domein"
+      ],
+      "Your domain": [
+        "Uw domein"
       ]
     },
     "label": {
