@@ -2346,6 +2346,9 @@
       ]
     },
     "Billing cycle": {
+      "Renews automatically at ${ renewPrice }, for ${ renewCycle } month": [
+        "${ renewCycle }ヶ月間、${ renewPrice }で自動で更新されます"
+      ],
       "Renews automatically on ${ subscriptionManagerName }": [
         "${ subscriptionManagerName }に自動更新されます"
       ]
@@ -2655,6 +2658,9 @@
       "Contacts": [
         "連絡先"
       ],
+      "Domain connected": [
+        "ドメインを接続しました"
+      ],
       "Domain ownership verified": [
         "ドメイン所有権は検証済みです"
       ],
@@ -2685,8 +2691,29 @@
       "Migration includes": [
         "移行に含まれるもの"
       ],
+      "Migration started for ${ n } user": [
+        "${ n }ユーザーの移行を開始しました"
+      ],
+      "Migration status": [
+        "移行ステータス"
+      ],
+      "Organization does not have enough seats available": [
+        "組織には十分なシートがありません"
+      ],
+      "Organization does not have enough storage available": [
+        "組織には十分なストレージがありません"
+      ],
+      "Organization settings": [
+        "組織設定"
+      ],
+      "Required": [
+        "必須"
+      ],
       "Required to create user accounts": [
         "ユーザーアカウントの作成のために必須です"
+      ],
+      "Select at least one user to start a migration": [
+        "移行を開始するには少なくとも1人のユーザーを選択してください"
       ],
       "Select what you want to migrate, this will apply to all users whether they are created now or later. Migration will start after user accounts are created.": [
         "移行したいものを選択してください。これは、今後作成されるものも含め、すべてのユーザーに適用されます。ユーザーアカウントが作成された後、移行が開始されます。"
@@ -2709,6 +2736,9 @@
       "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Markeplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue. Learn more": [
         "組織のデータを移行するには、Google Workspace Marketplaceから${ BRAND_NAME }移行アシスタントアプリをインストールする必要があります。これにより、${ BRAND_NAME }がお客様のデータをコピーするための許可が付与されます。インストールが完了したら、ここに戻って続行してください。より詳しく"
       ],
+      "Transfer errors": [
+        "転送エラー"
+      ],
       "User": [
         "ユーザー"
       ],
@@ -2717,6 +2747,9 @@
       ],
       "Verify your domain ownership": [
         "ドメイン所有権の検証"
+      ],
+      "Verify your domain to start a migration": [
+        "移行を開始するにはドメインを確認してください"
       ],
       "What are you migrating?": [
         "何を移行しますか？"
@@ -2794,6 +2827,9 @@
       ],
       "Payments problem": [
         "支払いに関する問題"
+      ],
+      "Sheets problem": [
+        "シートの問題"
       ],
       "Sign in problem": [
         "サインインに関する問題"
@@ -3066,6 +3102,9 @@
       "${ maxSpaceTB } storage": [
         "${ maxSpaceTB } ストレージ"
       ],
+      "${ numberOfUsers } user": [
+        "最大${ numberOfUsers }人のユーザー"
+      ],
       "${ planMaxSpace } email storage": [
         "${ planMaxSpace }メール容量"
       ],
@@ -3220,6 +3259,9 @@
       ],
       "Open source": [
         "オープンソース"
+      ],
+      "Private video calls for the conversations that matter.": [
+        "プライベートなビデオ通話で、大切な会話を。"
       ]
     },
     "collider_2025: Navigation": {
@@ -4414,6 +4456,11 @@
     "customer_support.feature.mail": {
       "For ${ MAIL_APP_NAME }": [
         "${ MAIL_APP_NAME } 向け"
+      ]
+    },
+    "customer_support.feature.meet": {
+      "For ${ MEET_APP_NAME }": [
+        "${ MEET_APP_NAME } 向け"
       ]
     },
     "customer_support.feature.pass": {
@@ -7385,9 +7432,6 @@
       ]
     },
     "fido2: Error": {
-      "Please disable 2FA via security key before disabling TOTP": [
-        "TOTP を無効にする前に、セキュリティキーによる 2 要素認証を無効にしてください"
-      ],
       "Something went wrong authenticating with your security key. Please try again.": [
         "セキュリティキーの認証に失敗しました。もう一度お試しください。"
       ],
@@ -7428,9 +7472,6 @@
       ],
       "This will delete all security keys linked to your account.": [
         "この操作により、アカウントに紐づけられたセキュリティキーがすべて削除されます。"
-      ],
-      "To turn on 2FA via security key, you'll need to activate 2FA via authenticator app": [
-        "セキュリティキーによる 2 要素認証をオンにするには、認証アプリによる 2 要素認証を有効にする必要があります。"
       ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "物理的な U2F または FIDO2 セキュリティキーで認証します"
@@ -8191,6 +8232,12 @@
       "Too many recent requests. Please try again in a few moments.": [
         "最近のリクエストが多すぎます。しばらくしてから再度お試しください。"
       ],
+      "Two-factor authentication is enabled in your external account.": [
+        "外部アカウントで2要素認証が有効になっています。"
+      ],
+      "Two-factor authentication is enabled in your external email account.": [
+        "外部メールアカウントで2要素認証が有効になっています。"
+      ],
       "Use your app password if:": [
         "次の場合にアプリのパスワードを使用してください。"
       ],
@@ -8659,7 +8706,7 @@
         "**ステップ2：** あなたの友達は、プランを**2週間無料**でご利用いただけます。"
       ],
       "**Step 2:** Your friends get 2 weeks for free on their plan.": [
-        "**ステップ2：** あなたの友達は、プランを2週間無料でご利用いただけます。"
+        "**ステップ2：** あなたの友人に、2週間分のプランが無料で提供されます。"
       ],
       "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
         "**ステップ3：**プランに登録する人ごとに、${ referrerRewardAmount } クレジットを獲得できます。"
@@ -8964,6 +9011,9 @@
       "Auto-reply is always active on the days of the week you select, between the selected hours.": [
         "自動返信は、選択した曜日、選択した時間帯に常にアクティブになります。"
       ],
+      "Automatically add Meet links to your calendar invitations when there is at least one invitee.": [
+        "少なくとも1人の招待者がいる場合、ミーティングリンクをカレンダーの招待状に自動的に追加します。"
+      ],
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
         "30 日以上前にゴミ箱やスパムに移動されたメールを自動的に削除します。"
       ],
@@ -9075,6 +9125,9 @@
       "CNET editors choice award with a rating of 8.4 out of 10": [
         "CNET editors choice賞で 10 段階中 8.4 の評価"
       ],
+      "Compromised": [
+        "侵害された"
+      ],
       "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
         "アイデンティティ プロバイダー (IdP) を通じて組織の SAML 認証を構成します。これにより、組織全体で SAML が有効になります。"
       ],
@@ -9101,6 +9154,9 @@
       ],
       "Continuing will connect your ${ BRAND_NAME } Account to ${ name }.": [
         "続行すると、${ BRAND_NAME } アカウントが ${ name } に接続されます。"
+      ],
+      "Control whether organization members can create vaults or require an administrator to create and share a vault with them.": [
+        "組織のメンバーが保管庫を作成できるか、それとも管理者が作成してメンバーと共有する必要があるかを制御します。"
       ],
       "Copied to clipboard": [
         "クリップボードにコピーされました"
@@ -9703,7 +9759,7 @@
         "画像の URL"
       ],
       "Images have been removed because they are not allowed in auto-reply": [
-        "自動返信では許可されていないため画像は削除されました"
+        "自動返信内では許可されていないため、画像は削除されました"
       ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "${ totalCalendarsCount } 件中 ${ calendarCount } 件のカレンダーをインポート"
@@ -10577,6 +10633,9 @@
       ],
       "Snooze messages for later so they are top of your inbox when you want": [
         "メッセージを後で再表示するようにスヌーズして、必要なときに受信箱のトップに表示されるようにします"
+      ],
+      "Some ${ BRAND_NAME } apps may not support security keys yet. If you turn off authenticator app 2FA, you may not be able to sign in to those apps.": [
+        "一部の${ BRAND_NAME }アプリは、まだセキュリティキーをサポートしていない場合があります。認証アプリの2段階認証をオフにすると、それらのアプリにサインインできなくなる可能性があります。"
       ],
       "Some keys successfully reactivated": [
         "いくつかの鍵は正常に再度アクティブになりました"
@@ -12398,6 +12457,9 @@
       "Auto show remote images": [
         "外部画像の自動表示"
       ],
+      "Auto-add Meet links": [
+        "Meetリンクの自動追加"
+      ],
       "Auto-advance": [
         "自動進行"
       ],
@@ -13034,6 +13096,9 @@
       "New second password": [
         "新しいセカンドパスワード"
       ],
+      "No (users cannot use the app until a vault is shared with them)": [
+        "いいえ (保管庫が共有されない限り、ユーザーはアプリを使用できません)"
+      ],
       "No filter": [
         "フィルターなし"
       ],
@@ -13060,6 +13125,9 @@
       ],
       "Online privacy for your whole family": [
         "家族全員のためのオンラインプライバシー"
+      ],
+      "Only a single personal vault can be created": [
+        "個人用保管庫は1つしか作成できません"
       ],
       "Only available on ${ PASS_SHORT_APP_NAME } paid plans": [
         "${ PASS_SHORT_APP_NAME }有料プランでのみご利用いただけます"
@@ -13486,6 +13554,9 @@
       ],
       "Without attachment": [
         "添付ファイルなし"
+      ],
+      "Yes": [
+        "はい"
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "このアカウントとすべてのデータを完全に削除することに同意します。"
@@ -14152,6 +14223,108 @@
         "カレンダーの最大人数（${ MAX_CALENDAR_MEMBERS }人）に達しました。"
       ]
     },
+    "meet_2025: Feature": {
+      "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
+        "${ MEET_APP_NAME }: 最も重要な会話のための機密性の高いビデオ会議"
+      ],
+      "${ n } active meeting at a time": [
+        "一度に${ n }件のミーティングを同時に開催"
+      ],
+      "24 hours per meeting": [
+        "ミーティング1回あたり24時間"
+      ],
+      "60 minutes per meeting": [
+        "ミーティング1回あたり60分"
+      ],
+      "Appointment scheduling": [
+        "日程調整ツール"
+      ],
+      "Browser, mobile, and desktop apps": [
+        "ブラウザ、モバイル、デスクトップアプリ"
+      ],
+      "Built-in chat": [
+        "組み込みチャット"
+      ],
+      "End-to-end encrypted screen sharing and ephemeral in-call chat": [
+        "エンドツーエンドで暗号化された画面共有と通話中の一時的なチャット"
+      ],
+      "Meeting recording (coming soon)": [
+        "ミーティング録画（近日公開）"
+      ],
+      "One active meeting at a time": [
+        "一度に1つのミーティングを開催"
+      ],
+      "Screen-sharing": [
+        "画面共有"
+      ],
+      "Unlimited meetings per day": [
+        "1日あたり無制限のミーティング"
+      ],
+      "Up to ${ n } meeting per day": [
+        "1日あたり最大${ n }件のミーティング"
+      ],
+      "Up to ${ n } participant": [
+        "最大${ n }人の参加者"
+      ]
+    },
+    "meet_2025: Info": {
+      "100 ${ BRAND_NAME } email addresses": [
+        "100 ${ BRAND_NAME }のメールアドレス"
+      ],
+      "Cloud storage and file sharing": [
+        "クラウドストレージとファイル共有"
+      ],
+      "Data never used for AI training": [
+        "データはAI学習には決して使用されません"
+      ],
+      "Data retention policies": [
+        "データ保持ポリシー"
+      ],
+      "Document & spreadsheet editor": [
+        "ドキュメント & スプレッドシートエディター"
+      ],
+      "Email writing assistant": [
+        "メール作成アシスタント"
+      ],
+      "Everything from ${ title }, plus...": [
+        "${ title } のすべてに加えて..."
+      ],
+      "Everything in Meet Professional, plus:": [
+        "Meet Professional の全機能に加え、さらに以下の機能をご利用いただけます:"
+      ],
+      "Open source": [
+        "オープンソース"
+      ],
+      "Password manager with team vaults": [
+        "チーム保管庫を備えたパスワードマネージャー"
+      ],
+      "Private AI Chat (${ LUMO_SHORT_APP_NAME })": [
+        "プライベートAIチャット（${ LUMO_SHORT_APP_NAME }）"
+      ],
+      "Private and unlimited AI chat (${ LUMO_SHORT_APP_NAME })": [
+        "プライベートかつ無制限のAIチャット（${ LUMO_SHORT_APP_NAME }）"
+      ],
+      "Private video calls for the conversations that matter": [
+        "大切な会話のためのプライベートなビデオ通話"
+      ],
+      "Secure calendar": [
+        "セキュアなカレンダー"
+      ],
+      "Strict no-logs policy": [
+        "厳格なノーログポリシー"
+      ],
+      "Video meetings, ${ PAID_MAX_PARTICIPANTS } participants": [
+        "ビデオ会議、${ PAID_MAX_PARTICIPANTS }名まで参加可能"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "広告ブロックとマルウェア保護機能を備えたVPN"
+      ]
+    },
+    "meet_signup_2025: title": {
+      "For businesses": [
+        "ビジネス向け"
+      ]
+    },
     "Member action": {
       "Activate user": [
         "ユーザーをアクティブ化する"
@@ -14317,6 +14490,21 @@
       ],
       "Euro": [
         "ユーロ"
+      ],
+      "Hong Kong dollar": [
+        "香港ドル"
+      ],
+      "Japanese yen": [
+        "日本円"
+      ],
+      "Polish złoty": [
+        "ポーランドズウォティ"
+      ],
+      "Singapore dollar": [
+        "シンガポールドル"
+      ],
+      "South Korean won": [
+        "韓国ウォン"
       ],
       "Swiss franc": [
         "スイス・フラン"
@@ -17069,7 +17257,7 @@
         "お支払いが現在処理中です"
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
-        "お客様のサブスクリプションには現在、既存の割引が適用されています。この新しいプロモーションに移行すると、既存の割引は適用されなくなります。"
+        "あなたのサブスクリプションは現在、割引が適用されています。この新しいプロモーションに移行すると、既存の割引は適用されなくなります。"
       ]
     },
     "Payments.Error": {
@@ -19522,6 +19710,26 @@
       ],
       "Works on all devices": [
         "全てのデバイスで動作"
+      ]
+    },
+    "Signup: Meet": {
+      "**Trusted by over 100 million** users and organizations": [
+        "**1億人以上**のユーザーと組織から信頼されています"
+      ],
+      "Get ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
+        "${ PLAN_NAMES[PLANS.MEET_BUSINESS] } を入手"
+      ],
+      "Own a business?": [
+        "ビジネスを経営されていますか？"
+      ],
+      "Sign up, meet privately": [
+        "サインアップして、プライベートにお会いしましょう"
+      ],
+      "Start using ${ MEET_APP_NAME } now": [
+        "今すぐ ${ MEET_APP_NAME } を使い始める"
+      ],
+      "Your account also includes access to ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME } free features.": [
+        "お客様のアカウントには、${ MAIL_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }が含まれ、${ PASS_SHORT_APP_NAME } の無料機能へのアクセスも含まれています。"
       ]
     },
     "signup_2024: Feature": {
@@ -22578,6 +22786,9 @@
       "Time zone": [
         "タイムゾーン"
       ],
+      "To preview this spreadsheet, download it.": [
+        "このスプレッドシートをプレビューするには、ダウンロードしてください。"
+      ],
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "このスプレッドシートを表示するには、 ${ SHEETS_APP_NAME } で開くか、ダウンロードしてください。"
       ],
@@ -23130,7 +23341,7 @@
     },
     "tooltip": {
       "${ LUMO_APP_NAME }: AI assistant that respects your privacy": [
-        "${ LUMO_APP_NAME }: お客様のプライバシーを尊重するAIアシスタント"
+        "プライバシー重視のAIアシスタント、${ LUMO_APP_NAME }"
       ],
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: すべてのデバイスで安全なログインを実現します。 無制限のエイリアス、共有、統合 2要素認証 などが含まれます。"

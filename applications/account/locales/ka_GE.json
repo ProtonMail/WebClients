@@ -2634,6 +2634,9 @@
       "Migration includes": [
         "მიგრაცია შეიცავს"
       ],
+      "Required": [
+        "აუცილებელია"
+      ],
       "Required to create user accounts": [
         "აუცილებელია მომხმარებლის ანგარიშების შესაქმნელად"
       ],
@@ -7292,9 +7295,6 @@
       ]
     },
     "fido2: Error": {
-      "Please disable 2FA via security key before disabling TOTP": [
-        "TOTP-ის გათიშვამდე 2FA-ის გათიშვაა საჭირო"
-      ],
       "Something went wrong authenticating with your security key. Please try again.": [
         "თქვენი უსაფრთხოების გასაღებით ავთენტიკაციისას რაღაც არასწორად წავიდა. კიდევ სცადეთ."
       ],
@@ -7335,9 +7335,6 @@
       ],
       "This will delete all security keys linked to your account.": [
         "ეს თქვენს ანგარიშზე მიბმულ ყველა უსაფრთხოების გასაღებს წაშლის."
-      ],
-      "To turn on 2FA via security key, you'll need to activate 2FA via authenticator app": [
-        "2FA-ის უსაფრთხოების გასაღებით ჩასართავად 2FA-ის ავთენტიკატორი აპით აქტივაციაა საჭირო"
       ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "გადაამოწმეთ თქვენი იდენტიფიკაცია ფიზიკური U2F ან FIDO2 უსაფრთხოების გასაღებით"
@@ -13301,6 +13298,9 @@
       ],
       "Without attachment": [
         "მიმაგრების გარეშე"
+      ],
+      "Yes": [
+        "დიახ"
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "დიახ, მე მინდა ამ ანგარიშის და მისი მონაცემების სამუდამოდ წაშლა."
@@ -22037,6 +22037,9 @@
       ],
       "Open pagination": [
         "გვერდების დანომრვა"
+      ],
+      "OpenVPN": [
+        "OpenVPN"
       ],
       "OpenVPN configuration files": [
         "OpenVPN-ის კონფიგურაციის ფაილები"

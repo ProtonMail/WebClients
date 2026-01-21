@@ -7284,9 +7284,6 @@
       ]
     },
     "fido2: Error": {
-      "Please disable 2FA via security key before disabling TOTP": [
-        "TOTP를 비활성화 하기 전에 보안 키를 통한 2단계 인증을 먼저 비활성화 해주세요."
-      ],
       "Something went wrong authenticating with your security key. Please try again.": [
         "사용자의 보안 키 인증에 문제가 발생했습니다. 나중에 다시 시도하세요."
       ],
@@ -7327,9 +7324,6 @@
       ],
       "This will delete all security keys linked to your account.": [
         "이 작업은 사용자의 계정에 연결된 모든 보안 키를 삭제합니다."
-      ],
-      "To turn on 2FA via security key, you'll need to activate 2FA via authenticator app": [
-        "보안 키를 통해 2단계 인증을 켜려면 먼저 인증기 앱을 통한 2단계 인증을 활성화해야 합니다."
       ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "물리적 U2F 또는 FIDO2 보안 키로 신원 확인"

@@ -110,6 +110,9 @@
       "Add external address": [
         "添加外部地址"
       ],
+      "Add filter": [
+        "创建筛选规则"
+      ],
       "Add folder": [
         "添加文件夹"
       ],
@@ -1886,6 +1889,9 @@
       ]
     },
     "Billing cycle": {
+      "Renews automatically at ${ renewPrice }, for ${ renewCycle } month": [
+        "将以 ${ renewPrice } 的价格自动续订，续订时长为 ${ renewCycle } 个月"
+      ],
       "Renews automatically on ${ subscriptionManagerName }": [
         "将以 ${ subscriptionManagerName } 的价格自动续期"
       ]
@@ -2034,6 +2040,9 @@
       ],
       "Payments problem": [
         "支付问题"
+      ],
+      "Sheets problem": [
+        "表格问题"
       ],
       "Sign in problem": [
         "登录问题"
@@ -5669,9 +5678,6 @@
       ]
     },
     "fido2: Error": {
-      "Please disable 2FA via security key before disabling TOTP": [
-        "在禁用 TOTP 之前，请通过安全密钥禁用 2FA"
-      ],
       "Something went wrong authenticating with your security key. Please try again.": [
         "使用安全密钥进行身份验证时出错，请重试。"
       ],
@@ -5712,9 +5718,6 @@
       ],
       "This will delete all security keys linked to your account.": [
         "此操作将删除您的账户关联的所有安全密钥。"
-      ],
-      "To turn on 2FA via security key, you'll need to activate 2FA via authenticator app": [
-        "要通过安全密钥打开 2FA，您需要通过验证器应用程序激活 2FA。"
       ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "使用 U2F 或 FIDO2 物理安全密钥验证身份"
@@ -9852,6 +9855,44 @@
         "查看选项"
       ]
     },
+    "Keys actions": {
+      "Delete": [
+        "删除"
+      ],
+      "Disables encryption with this key": [
+        "停止使用此密钥加密"
+      ],
+      "Disables signature verification and encryption with this key": [
+        "停止使用此密钥加密及验证数字签名"
+      ],
+      "Enable encryption with this key": [
+        "允许使用此密钥加密"
+      ],
+      "Enable signature verification and encryption with this key": [
+        "允许使用此密钥加密及验证数字签名"
+      ],
+      "Export private key": [
+        "导出私钥"
+      ],
+      "Export public key": [
+        "导出公钥"
+      ],
+      "Mark compromised": [
+        "标为已泄露"
+      ],
+      "Mark not compromised": [
+        "标为未泄露"
+      ],
+      "Mark not obsolete": [
+        "取消作废"
+      ],
+      "Mark obsolete": [
+        "作废"
+      ],
+      "Use for encryption and signing": [
+        "用于加密和数字签名"
+      ]
+    },
     "Knowledge base link label": {
       "Here's how": [
         "了解如何操作"
@@ -9894,11 +9935,17 @@
       "(Temporarily unavailable. Please check back later.)": [
         "（暂时不可用。请稍后再试。）"
       ],
+      "0 of 1 email address available": [
+        "0 个电子邮件地址可用"
+      ],
       "1 hour": [
         "1 小时"
       ],
       "1 minute": [
         "1 分钟"
+      ],
+      "1 of 1 email address available": [
+        "1 个电子邮件地址可用"
       ],
       "10 minutes": [
         "10 分钟"
@@ -10188,6 +10235,9 @@
       "Copy": [
         "复制"
       ],
+      "Copy fingerprint": [
+        "复制指纹"
+      ],
       "Copy IP address to clipboard": [
         "复制 IP 地址到剪贴板"
       ],
@@ -10370,6 +10420,9 @@
       ],
       "Gateway name": [
         "网关名称"
+      ],
+      "Get the deal": [
+        "获取优惠"
       ],
       "Gift code": [
         "礼品码"
@@ -13844,6 +13897,9 @@
       "Advanced alias features (powered by SimpleLogin)": [
         "高级别名功能（由 SimpleLogin 提供）"
       ],
+      "File attachments (up to 10GB)": [
+        "文件附件（最高 10GB）"
+      ],
       "One-time payment, lifetime deal": [
         "一次性付款，终身有效"
       ],
@@ -13994,6 +14050,9 @@
       ]
     },
     "Payments": {
+      "${ planTitle } + ${ LUMO_SHORT_APP_NAME }": [
+        "${ planTitle } + ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Billing Country": [
         "计费国家/地区"
       ],
@@ -14050,6 +14109,9 @@
       ],
       "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
         "专享折扣价仅限首月有效。本优惠券适用于 ${ couponRedemptions } 次续费周期。之后将自动以 1 个月 ${ renewPriceStr } 的价格续费，您可以随时取消。"
+      ],
+      "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
+        "特别优惠价仅在首月有效。之后将每月自动以${ renewPriceStr }的价格续订。您可以随时取消。"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "Proton 用户的专属优惠：${ priceWithDiscount }特惠价格仅限订阅前${ subscriptionLength }个月有效。"
@@ -15982,6 +16044,9 @@
       "Advanced security features": [
         "高级安全功能"
       ],
+      "Advanced security features by ${ BRAND_NAME }": [
+        "${ BRAND_NAME }的高级安全功能"
+      ],
       "Advanced sharing security": [
         "先进的共享安全"
       ],
@@ -16021,6 +16086,9 @@
       "ISO 27001 certified": [
         "ISO 27001 认证"
       ],
+      "Mail, calendar, file storage, and VPN included": [
+        "包含邮件、日历、文件存储和 VPN"
+      ],
       "Open source and audited": [
         "开放源代码并经过审计"
       ],
@@ -16041,6 +16109,9 @@
       ],
       "The only email service with:": [
         "唯一具有以下功能的电子邮件服务："
+      ],
+      "The only password manager with:": [
+        "唯一具有以下功能的密码管理器："
       ],
       "Unlimited passwords": [
         "无限制密码"
@@ -18991,6 +19062,26 @@
       ],
       "Status": [
         "状态"
+      ]
+    },
+    "Title header for keys table": {
+      "Actions": [
+        "操作"
+      ],
+      "Creation date": [
+        "创建日期"
+      ],
+      "Fingerprint": [
+        "指纹"
+      ],
+      "Function": [
+        "功能"
+      ],
+      "Status": [
+        "状态"
+      ],
+      "Type": [
+        "类型"
       ]
     },
     "Title header for members table": {
