@@ -62,20 +62,11 @@
       "Copy address": [
         "Copiar la dirección"
       ],
-      "Copy invitation text": [
-        "Copiar texto de invitación"
-      ],
       "Copy link": [
         "Copiar enlace"
       ],
       "Create a free account": [
         "Crear una cuenta gratuita"
-      ],
-      "Create meeting": [
-        "Crear reunión"
-      ],
-      "Delete": [
-        "Eliminar"
       ],
       "Disable ${ participantName }'s video": [
         "Desactivar el vídeo de ${ participantName }"
@@ -85,6 +76,9 @@
       ],
       "Dismiss": [
         "Descartar"
+      ],
+      "Done": [
+        "Hecho"
       ],
       "Download logs": [
         "Descargar los registros"
@@ -121,9 +115,6 @@
       ],
       "Help and resources": [
         "Ayuda y recursos"
-      ],
-      "Hide advanced options": [
-        "Ocultar las opciones avanzadas"
       ],
       "Hide participants": [
         "Ocultar participantes"
@@ -215,11 +206,11 @@
       "Resend code": [
         "Reenviar código"
       ],
+      "Save meeting": [
+        "Guardar reunión"
+      ],
       "Schedule": [
         "Planificación"
-      ],
-      "Schedule meeting": [
-        "Programar reunión"
       ],
       "Search countries": [
         "Buscar países"
@@ -229,12 +220,6 @@
       ],
       "Settings": [
         "Ajustes"
-      ],
-      "Share": [
-        "Compartir"
-      ],
-      "Show advanced options": [
-        "Mostrar las opciones avanzadas"
       ],
       "Show participants": [
         "Mostrar participantes"
@@ -277,6 +262,9 @@
       ],
       "Switch or add account": [
         "Cambiar o añadir cuenta"
+      ],
+      "Tap to unblock audio playback": [
+        "Toca para permitir la reproducción de audio"
       ],
       "Try another method": [
         "Intenta con otro método"
@@ -1593,12 +1581,6 @@
       "${ presenterName } is presenting": [
         "${ presenterName } está presentando"
       ],
-      "${ user.DisplayName } has invited you to a ${ BRAND_NAME } ${ MEET_SHORT_APP_NAME } meeting:": [
-        "${ user.DisplayName } te ha invitado a una reunión de ${ BRAND_NAME } ${ MEET_SHORT_APP_NAME }:"
-      ],
-      "${ user.DisplayName } has invited you to a ${ BRAND_NAME } ${ MEET_SHORT_APP_NAME } meeting:\n\n${ time }\n\n${ meetingLink }\n\nMeeting ID: ${ id }": [
-        "${ user.DisplayName } te ha invitado a una reunión de ${ BRAND_NAME } ${ MEET_SHORT_APP_NAME }:\n\n${ time }\n\n${ meetingLink }\n\nID de la reunión: ${ id }"
-      ],
       "${ user.DisplayName }'s Meeting": [
         "Reunión de ${ user.DisplayName }"
       ],
@@ -1707,9 +1689,6 @@
       "Every call, screen share, and chat is end-to-end encrypted to protect your most important connections.": [
         "Cada llamada, pantalla compartida y chat está cifrado de extremo a extremo para proteger tus conexiones más importantes."
       ],
-      "For extra security, you can set a passphrase. It won’t be included in the calendar invite—remember to share it with your guests separately.": [
-        "Para mayor seguridad, puedes establecer una frase de contraseña (passphrase). No se incluirá en la invitación del calendario, recuerda compartirla con tus invitados por separado."
-      ],
       "Free meeting": [
         "Reunión gratuita"
       ],
@@ -1733,9 +1712,6 @@
       ],
       "Internet connection lost": [
         "Se ha perdido la conexión a internet."
-      ],
-      "Invitation preview": [
-        "Vista previa de la invitación"
       ],
       "Joined": [
         "Se ha unido"
@@ -1772,9 +1748,6 @@
       ],
       "Meeting full (${ maxParticipants } participants)": [
         "Reunión completa (${ maxParticipants } participantes)"
-      ],
-      "Meeting ID: ${ id }": [
-        "ID de la reunión: ${ id }"
       ],
       "Meeting link": [
         "Enlace de la reunión"
@@ -1887,9 +1860,6 @@
       "Share screen": [
         "Compartir pantalla"
       ],
-      "Share the meeting invitation with others": [
-        "Compartir la invitación de la reunión con otros"
-      ],
       "Share this link to invite others. You can also find it anytime by clicking the info icon in the toolbar.": [
         "Comparte este enlace para invitar a otros. También puedes encontrarlo en cualquier momento haciendo clic en el icono de información en la barra de herramientas."
       ],
@@ -1898,6 +1868,9 @@
       ],
       "Stop sharing your screen": [
         "Dejar de compartir tu pantalla"
+      ],
+      "The host has ended the meeting": [
+        "El anfitrión ha finalizado la reunión"
       ],
       "This is an end-to-end encrypted chat with ephemeral messages. After you leave the call, you will not be able to access this chat.": [
         "Esto es un chat cifrado de extremo a extremo con mensajes efímeros. Después de que salgas de la llamada, no podrás acceder a este chat."
@@ -1994,6 +1967,9 @@
       "${ BRAND_NAME } username": [
         "Nombre de usuario de ${ BRAND_NAME }"
       ],
+      "Add to calendar": [
+        "Añadir al calendario"
+      ],
       "Attach screenshot(s)": [
         "Adjuntar captura(s) de pantalla"
       ],
@@ -2021,8 +1997,26 @@
       "Delete recovery-related information.": [
         "Eliminar la información de recuperación."
       ],
+      "Download .ics": [
+        "Descargar .ics"
+      ],
       "Email address": [
         "Dirección de correo electrónico"
+      ],
+      "Every day": [
+        "Diariamente"
+      ],
+      "Every month": [
+        "Mensualmente"
+      ],
+      "Every weekday": [
+        "Todos los días laborables"
+      ],
+      "Every year": [
+        "Anualmente"
+      ],
+      "Google calendar": [
+        "Calendario de Google"
       ],
       "Hide password": [
         "Ocultar contraseña"
@@ -2033,11 +2027,20 @@
       "Meeting ID": [
         "Identificador de la reunión"
       ],
+      "Monday to Friday": [
+        "De lunes a viernes"
+      ],
+      "No repeat": [
+        "No se repite"
+      ],
       "Operating system": [
         "Sistema operativo"
       ],
       "Operating system version": [
         "Versión del sistema operativo"
+      ],
+      "Outlook calendar": [
+        "Calendario de Outlook"
       ],
       "Passphrase": [
         "Frase de contraseña"
@@ -2047,6 +2050,9 @@
       ],
       "Phone number": [
         "Número de teléfono"
+      ],
+      "Remember my name on this device for future meetings": [
+        "Recuerda mi nombre en este dispositivo para futuras reuniones"
       ],
       "Reveal password": [
         "Mostrar contraseña"
@@ -2145,9 +2151,6 @@
       "Enter passphrase": [
         "Introducir la frase de contraseña"
       ],
-      "Enter secret passphrase": [
-        "Ingresar frase de contraseña secreta"
-      ],
       "Enter time": [
         "Ingresar hora"
       ],
@@ -2165,6 +2168,9 @@
       ],
       "Please describe the problem and include any error messages": [
         "Describe el problema e incluye cualquier mensaje de error."
+      ],
+      "Schedule in ${ CALENDAR_APP_NAME }": [
+        "Programar en ${ CALENDAR_APP_NAME }"
       ],
       "Select": [
         "Seleccionar"
@@ -2377,9 +2383,6 @@
       ],
       "Schedule meeting": [
         "Programar reunión"
-      ],
-      "Secret Passphrase": [
-        "Frase de contraseña secreta"
       ],
       "Secure meeting": [
         "Reunión segura"

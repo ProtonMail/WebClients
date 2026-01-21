@@ -1452,9 +1452,6 @@
       "Trust": [
         "信任"
       ],
-      "Trust key": [
-        "信任密钥"
-      ],
       "Trust public key": [
         "信任公钥"
       ],
@@ -2057,6 +2054,9 @@
       ],
       "Payments problem": [
         "支付问题"
+      ],
+      "Sheets problem": [
+        "表格问题"
       ],
       "Sign in problem": [
         "登录问题"
@@ -6977,7 +6977,7 @@
         "初始化中..."
       ],
       "Insert image": [
-        "插入图像"
+        "插入图片"
       ],
       "Insert link": [
         "插入链接"
@@ -7404,6 +7404,9 @@
       ],
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "如需任何帮助，请联系我们 ${ BRAND_NAME }"
+      ],
+      "Receive notifications for ${ categoryLabel }": [
+        "接收关于 ${ categoryLabel } 的通知"
       ],
       "Recipient: ": [
         "收件人："
@@ -8386,6 +8389,9 @@
       "Expired": [
         "已过期"
       ],
+      "KOO": [
+        "KOO"
+      ],
       "Obsolete": [
         "已作废"
       ],
@@ -8756,6 +8762,9 @@
       "Cash": [
         "现金"
       ],
+      "Categories": [
+        "分类"
+      ],
       "Category": [
         "类别"
       ],
@@ -8927,6 +8936,9 @@
       "From: ${ fromEmail }": [
         "发件人：${ fromEmail }"
       ],
+      "Get the deal": [
+        "获取优惠"
+      ],
       "Go to Forums": [
         "转到论坛"
       ],
@@ -9095,6 +9107,9 @@
       "Notification": [
         "通知"
       ],
+      "Notifications": [
+        "通知"
+      ],
       "Notifications are disabled, to enable them change the browser settings.": [
         "通知功能已被禁用，如需启用请调整浏览器设置。"
       ],
@@ -9161,6 +9176,9 @@
       "Postal code": [
         "邮编"
       ],
+      "Premium domain": [
+        "高级域名"
+      ],
       "Primary": [
         "基本的"
       ],
@@ -9169,6 +9187,9 @@
       ],
       "Proration": [
         "当前等级结余"
+      ],
+      "Public domain": [
+        "公共域名"
       ],
       "Public keys": [
         "公钥"
@@ -9197,8 +9218,8 @@
       "Search in": [
         "搜索范围"
       ],
-      "Select the categories to include, and enable notifications to be alerted about new emails in a category.": [
-        "选择包含的类别，并开启通知已收到关于此类别新邮件的提醒。"
+      "Select the categories to include and manage notifications for new emails.": [
+        "选择要包含的分类，并管理新电子邮件的通知。"
       ],
       "Send auto-reply": [
         "自动回复"
@@ -9328,6 +9349,9 @@
       ],
       "Your alias": [
         "您的别名"
+      ],
+      "Your domain": [
+        "您的域名"
       ],
       "Your IP": [
         "您的 IP 地址"
@@ -11364,6 +11388,9 @@
       "Advanced account protection": [
         "高级账户保护"
       ],
+      "File attachments (up to 10GB)": [
+        "文件附件（最高 10GB）"
+      ],
       "Team policies": [
         "团队政策"
       ]
@@ -11487,6 +11514,9 @@
       ],
       "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
         "专享折扣价仅限首月有效。本优惠券适用于 ${ couponRedemptions } 次续费周期。之后将自动以 1 个月 ${ renewPriceStr } 的价格续费，您可以随时取消。"
+      ],
+      "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
+        "特别优惠价仅在首月有效。之后将每月自动以${ renewPriceStr }的价格续订。您可以随时取消。"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "Proton 用户的专属优惠：${ priceWithDiscount }特惠价格仅限订阅前${ subscriptionLength }个月有效。"

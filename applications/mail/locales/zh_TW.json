@@ -1416,9 +1416,6 @@
       "Toggle Contacts app": [
         "切換聯絡人應用程式"
       ],
-      "Toggle notifications": [
-        "顯示/隱藏通知"
-      ],
       "Toggle security center app": [
         "切換安全中心應用程式"
       ],
@@ -1433,6 +1430,9 @@
       ],
       "Trust": [
         "信任"
+      ],
+      "Trust key": [
+        "信任金鑰"
       ],
       "Trust public key": [
         "信任公開金鑰"
@@ -1496,6 +1496,9 @@
       ],
       "Update recovery phrase": [
         "更新還原短語"
+      ],
+      "Update secret passphrase": [
+        "更新秘密助記詞"
       ],
       "Upgrade": [
         "升級"
@@ -1827,6 +1830,9 @@
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "您可在鑑賞體驗期內盡情享用多達 ${ TRIAL_MAX_SCRIBE_SEATS } 組 Scribe 帳號。"
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "您可在使用期內盡情享用多達 ${ TRIAL_MAX_USERS } 個使用者。"
       ],
       "You have reached the trial limit.": [
         "您已達到試用限制。"
@@ -2458,6 +2464,12 @@
       "Basic chat history": [
         "基本聊天記錄"
       ],
+      "Compliance with data protection regulations": [
+        "遵循資料保護法"
+      ],
+      "Data never used for AI training": [
+        "永遠不會使用於訓練 AI"
+      ],
       "Full chat history with search": [
         "具備搜尋功能的完整聊天記錄"
       ],
@@ -2477,6 +2489,9 @@
     "collider_2025: Info": {
       "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
         "${ LUMO_APP_NAME } 是一款隱私優先的人工智慧，可協助您提高效率，同時確保您的資料安全。釋放其全部潛力，並搶先體驗隨著它們推出而帶來的新功能。"
+      ],
+      "Add ${ LUMO_APP_NAME }": [
+        "新增 ${ LUMO_APP_NAME }"
       ],
       "High-speed chats and advanced AI features.": [
         "高速聊天和先進的人工智慧功能。"
@@ -4025,6 +4040,9 @@
       "/month": [
         "/月"
       ],
+      "2 TB of storage to share": [
+        "共享 2 TB 儲存空間"
+      ],
       "2 user accounts": [
         "2 位使用者帳號"
       ],
@@ -4232,6 +4250,9 @@
       "An error occurred while saving your alias": [
         "儲存別名時發生錯誤。"
       ],
+      "Attachments are limited to ${ readableAttachmentMaxSize }": [
+        "附件被限制至 ${ readableAttachmentMaxSize }"
+      ],
       "Authentication canceled.": [
         "驗證已取消。"
       ],
@@ -4243,6 +4264,9 @@
       ],
       "Cannot export this contact": [
         "無法匯出通訊名片"
+      ],
+      "Cannot set expiration longer than retention policy allows.": [
+        "無法設置長於保留政策允許的過期時間。"
       ],
       "Checkout expired, please try again": [
         "結帳已逾時，請重試"
@@ -4568,6 +4592,9 @@
       "re-activate the previous key": [
         "重新啟用上一組金鑰"
       ],
+      "re-importing": [
+        "正在重新匯入"
+      ],
       "Removed duplicate recipient: ${ recipents }": [
         "已移除重複的收件者：${ recipents }"
       ],
@@ -4673,6 +4700,9 @@
       "There has been an issue with content search. Default search has been used instead.": [
         "內容搜尋發生問題。已改為使用預設搜尋。"
       ],
+      "There was a problem decrypting your message. If the issue persists, contact our customer support.": [
+        "解密您的訊息時發生問題。如果問題持續存在，請聯絡我們的客戶支援服務。"
+      ],
       "There was an error when exporting the contacts vCards": [
         "匯出聯絡人 vCard 時發生錯誤"
       ],
@@ -4759,6 +4789,9 @@
       ],
       "Your import will not be processed.": [
         "將不會處理您的匯入。"
+      ],
+      "Your message cannot be decrypted. If you deleted any of your address keys, try ${ reimportKeyLink } them. ${ learnMoreLink }": [
+        "您的訊息無法解密。如果您刪除了任何您的位址金鑰，請嘗試 ${ reimportKeyLink }。 ${ learnMoreLink }"
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "搜尋結果過多。請縮小您的搜尋範圍並重新試試。"
@@ -5100,6 +5133,9 @@
       "The subscription will be billed to the primary admin of this plan.": [
         "此訂購授權將向主要管理員收取方案費用。"
       ],
+      "View the invitation": [
+        "檢視邀請"
+      ],
       "You are invited to join ${ invite.OrganizationName }": [
         "謹邀請閣下加入 ${ invite.OrganizationName }"
       ],
@@ -5178,6 +5214,9 @@
       ]
     },
     "Feature": {
+      "More premium features": [
+        "多項的頂級功能"
+      ],
       "Unlimited hide-my-email aliases": [
         "無限制的 hide-my-email 別名"
       ]
@@ -6198,8 +6237,14 @@
       "**${ total }** result found in ${ labelName }": [
         "**${ total }** 筆總數出現在 ${ labelName }"
       ],
+      "**Auto-connect**: Opens and connects to VPN as soon as you turn on your device.": [
+        "**自動連線**：在您開啟裝置時，即可開啟並連線至 VPN。"
+      ],
       "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
         "**第一步：**使用您的推薦連結邀請您的朋友加入 ${ BRAND_NAME }。"
+      ],
+      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
+        "**步驟 2 ** 您的朋友取計畫外的 2 週免費。"
       ],
       "**Step 3:** Get ${ referrerRewardAmount } credits for every friend that subscribes to a plan.": [
         "**第三步：**每當有朋友訂閱方案時，您將獲得 ${ referrerRewardAmount } 額度。"
@@ -6648,6 +6693,9 @@
       "Due to your recipient's configuration, this message can't be sent with an expiration date to ${ firstRecipients }.": [
         "由於您的收件者組態，此訊息無法帶有過期日期傳送給 ${ firstRecipients }。"
       ],
+      "Due to your recipient's configuration, this message can't be sent with an expiration date.": [
+        "由於您的收件者組態，此訊息無法帶有過期日期傳送。"
+      ],
       "Duplicate key updated": [
         "重複金鑰已更新"
       ],
@@ -6894,6 +6942,9 @@
       "Include your prompt and the response to help us improve accuracy.": [
         "包含您的提示詞與回應將使我們變的更好"
       ],
+      "Included for free with your plan": [
+        "包含於您的免費方案"
+      ],
       "Includes marketing emails like offers and product announcements.": [
         "包含行銷電子郵件，例如優惠和產品公告。"
       ],
@@ -6904,7 +6955,7 @@
         "正在初始化 ..."
       ],
       "Insert image": [
-        "插入影像"
+        "插入圖像"
       ],
       "Insert link": [
         "插入連結"
@@ -8755,8 +8806,14 @@
       "Extended address": [
         "詳細位址"
       ],
+      "Extremely Satisfied": [
+        "非常滿意"
+      ],
       "Filter Name": [
         "篩選器名稱"
+      ],
+      "Filters": [
+        "過濾器"
       ],
       "First name": [
         "名"
@@ -8935,6 +8992,9 @@
       "Notification": [
         "通知"
       ],
+      "Notifications": [
+        "通知"
+      ],
       "Open in a new tab": [
         "於新分頁開啟"
       ],
@@ -8995,6 +9055,9 @@
       "Postal code": [
         "郵遞區號"
       ],
+      "Premium domain": [
+        "頂級質子版網域"
+      ],
       "Primary": [
         "主要"
       ],
@@ -9003,6 +9066,9 @@
       ],
       "Proration": [
         "按比例分配後"
+      ],
+      "Public domain": [
+        "公開網域"
       ],
       "Public keys": [
         "公開金鑰"
@@ -9174,6 +9240,9 @@
       ],
       "Your alias": [
         "你的別名"
+      ],
+      "Your domain": [
+        "您的網域"
       ],
       "Your IP": [
         "您的 IP"
@@ -9597,6 +9666,23 @@
       ],
       "Trash": [
         "垃圾"
+      ]
+    },
+    "meet_2025: Feature": {
+      "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
+        "${ MEET_APP_NAME }: 給重要對話保密的視訊"
+      ],
+      "${ n } active meeting at a time": [
+        "${ n } 個會議同時進行中"
+      ],
+      "Meeting recording (coming soon)": [
+        "會議錄製(即將到來)"
+      ],
+      "Up to ${ n } meeting per day": [
+        "每日至多 ${ n } 個會議"
+      ],
+      "Up to ${ n } participant": [
+        "至多 ${ n } 位參與者"
       ]
     },
     "Message": {
@@ -10378,6 +10464,11 @@
         "你正在當前的方案中享受促銷價格。若你將帳號降級，你將會永遠失去此促銷價，即使你決定重新訂閱也是。"
       ]
     },
+    "new_plans: label": {
+      "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
+        "我們隨時致力於讓 ${ config.appName } 更好。您如何滿意於您的體驗?"
+      ]
+    },
     "new_plans: Subtext": {
       "Starting from ${ priceLine }": [
         "從${ priceLine }起"
@@ -10696,6 +10787,9 @@
       "Passcode copied to clipboard": [
         "密碼數字已複製至剪貼簿"
       ],
+      "Passphrase copied to clipboard": [
+        "助記詞已複製至剪貼簿"
+      ],
       "Password has been set successfully": [
         "密碼已設定成功"
       ],
@@ -10832,6 +10926,9 @@
       "Finance": [
         "金融"
       ],
+      "Maybe later": [
+        "稍後再說"
+      ],
       "Privacy for all your online accounts": [
         "給予您的所有在線帳號隱私"
       ],
@@ -10866,6 +10963,9 @@
       ],
       "Activate selected": [
         "啟用已選取"
+      ],
+      "Ad-free promise": [
+        "無廣告保證"
       ],
       "Advanced encryption": [
         "進階加密"
@@ -12499,6 +12599,9 @@
       "For all ${ BRAND_NAME } services": [
         "所有 ${ BRAND_NAME } 服務"
       ],
+      "Storage used": [
+        "已使用的儲存空間"
+      ],
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
         "要繼續上傳或同步檔案，需要釋放一些空間或生即已取得更多空間。"
       ],
@@ -13230,6 +13333,12 @@
       ],
       "${ label.Name } removed": [
         "已移除 ${ label.Name }"
+      ],
+      "The filter has been disabled": [
+        "此過濾器已被停用"
+      ],
+      "The filter is active again": [
+        "此過濾器再次被啟動。"
       ]
     },
     "Suffix": {
@@ -13548,6 +13657,9 @@
       "Change password": [
         "更改密碼"
       ],
+      "Claim your ${ MAIL_APP_NAME } address": [
+        "取得 ${ MAIL_APP_NAME } 電郵位址"
+      ],
       "Clearing data": [
         "清除資料中"
       ],
@@ -13844,6 +13956,9 @@
       ],
       "Load remote content": [
         "載入遠端內容"
+      ],
+      "Mark all messages as read": [
+        "標記所有訊息為已讀"
       ],
       "Mark as read": [
         "標記為已讀取"
@@ -14169,6 +14284,9 @@
       "Share your calendar with your team": [
         "與團隊共享行事曆"
       ],
+      "Share your link": [
+        "共享您的連結"
+      ],
       "Sign in and grant access": [
         "登入並授予存取權"
       ],
@@ -14303,6 +14421,9 @@
       ],
       "What would you like to import?": [
         "您打算要匯入什麼資料呢？"
+      ],
+      "When is it most important to use a VPN?": [
+        "何時最適合使用 VPN？"
       ],
       "You can now create unlimited folders and labels": [
         "您現在可創建無上限標籤和資料夾"

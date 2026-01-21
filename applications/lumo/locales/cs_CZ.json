@@ -56,6 +56,9 @@
       "Chat with us": [
         "Chatujte s námi"
       ],
+      "Clean up orphaned documents": [
+        "Vyčistit opuštěné dokumenty"
+      ],
       "Close": [
         "Zavřít"
       ],
@@ -224,6 +227,9 @@
       "Previous page": [
         "Předchozí stránka"
       ],
+      "Re-index all content - conversations and files": [
+        "Znovu indexovat veškerý obsah – konverzace a soubory"
+      ],
       "Refer a friend": [
         "Doporučit přátelům"
       ],
@@ -304,6 +310,9 @@
       ],
       "Show more benefits": [
         "Zobrazit další výhody"
+      ],
+      "Show orphaned space IDs": [
+        "Zobrazit ID osamoceného prostoru"
       ],
       "Sign out": [
         "Odhlásit se"
@@ -835,8 +844,17 @@
       ]
     },
     "collider_2025: Action": {
+      "Add file to ${ DRIVE_APP_NAME }": [
+        "Přidat soubor do ${ DRIVE_APP_NAME }"
+      ],
       "Add from ${ DRIVE_APP_NAME }": [
         "Přidat z ${ DRIVE_APP_NAME }"
+      ],
+      "Add to active": [
+        "Přidat k aktivním"
+      ],
+      "Already in KB": [
+        "Již je v databázi znalostí"
       ],
       "Browse ${ DRIVE_SHORT_APP_NAME }": [
         "Procházet ${ DRIVE_SHORT_APP_NAME }"
@@ -986,7 +1004,7 @@
         "Neomezený denní limit konverzací"
       ],
       "Unlimited projects": [
-        "Neomezené projekty"
+        "Neomezený počet projektů"
       ],
       "We keep no logs of what you ask, or what ${ LUMO_SHORT_APP_NAME } replies. Your chats can’t be seen, shared, or used to profile you. ${ LUMO_SHORT_APP_NAME } saves nothing on our servers.": [
         "Nezaznamenáváme, na co se ptáte ani co odpovídá ${ LUMO_SHORT_APP_NAME }. Vaše konverzace nelze prohlížet, sdílet ani používat k profilování. ${ LUMO_SHORT_APP_NAME } nic neukládá na našich serverech."
@@ -1072,11 +1090,23 @@
       ]
     },
     "collider_2025: Description": {
+      "Always enable web search for new conversations": [
+        "Vždy povolit vyhledávání na webu u nových konverzací"
+      ],
       "Elevate your private AI experience and unlock advanced models and premium features with ${ LUMO_SHORT_APP_NAME } Plus.": [
         "Vylepšete si soukromý zážitek s umělou inteligencí a odemkněte si pokročilé modely a prémiové funkce s aplikací ${ LUMO_SHORT_APP_NAME } Plus."
       ],
+      "Encrypted search index for chats and Drive files.": [
+        "Šifrovaný vyhledávací index chatů a souborů Drive."
+      ],
+      "Include project conversations in the main chat history": [
+        "Zahrnout konverzace projektu do hlavního chatu"
+      ],
       "Last updated on ${ formattedDate }": [
         "Poslední aktualizace: ${ formattedDate }"
+      ],
+      "Permanently delete your project and chats. This is irreversible.": [
+        "Trvale smažte svůj projekt a chaty. Tento úkon nelze vrátit zpět."
       ],
       "Sign in to access your account and unlock more features. Don't have one? ${ createLink }": [
         "Přihlaste se pro přístup k účtu a odemknutí dalších funkcí. Nemáte účet? ${ createLink }"
@@ -1105,6 +1135,9 @@
       "Failed to process ${ DRIVE_SHORT_APP_NAME } file: ${ file.name }": [
         "Nepodařilo se zpracovat soubor ${ DRIVE_SHORT_APP_NAME }: ${ file.name }"
       ],
+      "Failed to upload \"${ file.name }\" to ${ DRIVE_APP_NAME }": [
+        "Nepodařilo se nahrát \"${ file.name }\" do ${ DRIVE_APP_NAME }"
+      ],
       "File \"${ file.name }\" (${ fileSizeFormatted }) exceeds the ${ maxSizeFormatted } limit. Link a Drive folder to your project to work with larger files.": [
         "Soubor \"${ file.name }\" (${ fileSizeFormatted }) přesahuje limit ${ maxSizeFormatted }. Pro práci s většími soubory připojte složku z Drive k vašemu projektu."
       ],
@@ -1127,7 +1160,7 @@
         "Soubory PowerPoint nejsou podporovány. Převeďte je prosím do formátu PDF a nahrajte verzi PDF pro lepší extrakci textu."
       ],
       "Re-indexing failed. Please try again.": [
-        "Přeindexování selhalo. Zkuste to prosím znovu."
+        "Opětovné indexování selhalo. Zkuste to prosím znovu."
       ],
       "Search service not available": [
         "Vyhledávací služba není dostupná"
@@ -1242,7 +1275,7 @@
         "Nahrávání velkých souborů"
       ],
       "New": [
-        "Nový"
+        "Nové"
       ],
       "Unlimited chat history": [
         "Neomezená historie konverzací"
@@ -1313,11 +1346,20 @@
       "Ask anything to ${ LUMO_SHORT_APP_NAME }": [
         "Zeptejte se na cokoli ${ LUMO_SHORT_APP_NAME }"
       ],
+      "Attached Files": [
+        "Připojené soubory"
+      ],
+      "Auto-matched": [
+        "Automaticky shodné"
+      ],
       "Be cautious of unfamiliar domains or excessive subdomains": [
         "Dávejte si pozor na neznámé domény nebo nezvykle dlouhé subdomény"
       ],
       "characters": [
         "znaků"
+      ],
+      "characters not shown": [
+        "znaků se nezobrazuje"
       ],
       "Chat knowledge": [
         "Znalosti chatu"
@@ -1358,6 +1400,9 @@
       "Exclude file": [
         "Vyloučit soubor"
       ],
+      "Excluded": [
+        "Vyloučeno"
+      ],
       "File capacity": [
         "Kapacita souboru"
       ],
@@ -1375,6 +1420,12 @@
       ],
       "files are not currently supported for content extraction.": [
         "soubory nejsou v současné době podporovány pro extrakci obsahu."
+      ],
+      "Files automatically retrieved based on your question.": [
+        "Soubory automaticky načteny na základě vašeho dotazu."
+      ],
+      "Files automatically retrieved based on your questions:": [
+        "Soubory automaticky načtené na základě vašich dotazů:"
       ],
       "Files you've added to this conversation.": [
         "Soubory, které jste přidali do této konverzace."
@@ -1424,6 +1475,9 @@
       "of": [
         "z"
       ],
+      "Partial content": [
+        "Částečný obsah"
+      ],
       "Please share what you expected": [
         "Prosím, uveďte to, co jste očekávali"
       ],
@@ -1445,6 +1499,9 @@
       "Processing file contents...": [
         "Zpracování obsahu souboru..."
       ],
+      "Relevant files will be automatically retrieved based on your questions.": [
+        "Relevantní soubory budou automaticky načteny na základě vašich dotazů."
+      ],
       "Remove": [
         "Odebrat"
       ],
@@ -1456,6 +1513,9 @@
       ],
       "Removed from future questions": [
         "Odebráno z budoucích otázek"
+      ],
+      "Retrieved Project Knowledge": [
+        "Načteny znalosti projektu"
       ],
       "rows": [
         "řádky"
@@ -1528,6 +1588,9 @@
       ],
       "Unsupported File Type": [
         "Nepodporovaný typ souboru"
+      ],
+      "Uploading \"${ file.name }\" to ${ DRIVE_APP_NAME }...": [
+        "Nahrávání \"${ file.name }\" do ${ DRIVE_APP_NAME }..."
       ],
       "Uploading ${ uploadProgress.fileName }": [
         "Nahrávání ${ uploadProgress.fileName }"
@@ -1774,13 +1837,19 @@
         "Všechny konverzace úspěšně smazány."
       ],
       "File \"${ file.name }\" uploaded to ${ DRIVE_APP_NAME }": [
-        "Soubor \"${ file.name }\" nahrán do aplikace ${ DRIVE_APP_NAME }"
+        "Soubor \"${ file.name }\" nahrán do ${ DRIVE_APP_NAME }"
       ],
       "File added to knowledge base: ${ result.fileName }": [
         "Soubor přidán do databáze znalostí: ${ result.fileName }"
       ],
       "File uploaded and added to knowledge base": [
         "Soubor nahrán a přidán do databáze znalostí"
+      ],
+      "File uploaded and indexed for search": [
+        "Soubor nahrán a zaindexován pro vyhledávání"
+      ],
+      "File uploaded to Drive folder": [
+        "Soubor byl nahrán do složky Drive"
       ],
       "Thanks for the feedback!": [
         "Děkujeme za zpětnou vazbu!"
@@ -1822,6 +1891,9 @@
       ],
       "Secure your spot": [
         "Zajistěte si své místo"
+      ],
+      "Show project chats in history": [
+        "Zobrazit historii chatů projektu"
       ],
       "Theme": [
         "Motiv"
@@ -2007,6 +2079,9 @@
       "Choose project icon": [
         "Zvolit ikonu projektu"
       ],
+      "Click to edit title": [
+        "Klikněte pro úpravu názvu"
+      ],
       "Create": [
         "Vytvořit"
       ],
@@ -2024,6 +2099,9 @@
       ],
       "Describe desired changes...": [
         "Popište požadované změny..."
+      ],
+      "Deselect all": [
+        "Zrušit výběr všeho"
       ],
       "Edit instructions": [
         "Upravit instrukce"
@@ -2043,8 +2121,11 @@
       "Manage chats": [
         "Spravovat chaty"
       ],
+      "Manage Drive folder link": [
+        "Spravovat odkaz na složku Drive"
+      ],
       "More breadcrumbs": [
-        "Více drobečků"
+        "Další navigační prvky"
       ],
       "More concise": [
         "Stručnější"
@@ -2064,8 +2145,11 @@
       "Regenerate": [
         "Znovu vygenerovat"
       ],
+      "Remove all": [
+        "Odebrat vše"
+      ],
       "Remove all files": [
-        "Odstranit všechny soubory"
+        "Odebrat všechny soubory"
       ],
       "Remove file": [
         "Odebrat soubor"
@@ -2075,6 +2159,9 @@
       ],
       "Retry with the same prompt": [
         "Zkusit znovu stejný dotaz"
+      ],
+      "Select all": [
+        "Vybrat vše"
       ],
       "Select conversation": [
         "Vybrat konverzaci"
@@ -2103,6 +2190,9 @@
       "Unlink Folder": [
         "Odpojit složku"
       ],
+      "Upgrade to Plus": [
+        "Přejít na tarif Plus"
+      ],
       "Upload file": [
         "Nahrát soubor"
       ],
@@ -2114,6 +2204,9 @@
       ]
     },
     "collider_2025:Button": {
+      "Add instructions to tailor ${ LUMO_SHORT_APP_NAME }'s responses": [
+        "Přidat pokyny pro přizpůsobení odpovědí ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Back to projects": [
         "Zpět na projekty"
       ],
@@ -2127,7 +2220,7 @@
         "Sbalit projekty"
       ],
       "Create a free account": [
-        "Vytvořit účet zdarma"
+        "Vytvořit bezplatný účet"
       ],
       "Create project": [
         "Vytvořit projekt"
@@ -2154,7 +2247,10 @@
         "Pomoc a podpora"
       ],
       "Hide sidebar": [
-        "Skrýt boční panel"
+        "Skrýt postranní panel"
+      ],
+      "Link this folder": [
+        "Propojit tuto složku"
       ],
       "Link with ${ DRIVE_APP_NAME } folder": [
         "Propojit se složkou ${ DRIVE_APP_NAME }"
@@ -2206,6 +2302,9 @@
       ]
     },
     "collider_2025:Error": {
+      "Cannot link the root folder. Please select a subfolder.": [
+        "Nelze propojit kořenovou složku. Vyberte podsložku."
+      ],
       "Error processing file: ${ file.name }": [
         "Chyba při zpracování souboru: ${ file.name }"
       ],
@@ -2215,8 +2314,26 @@
       "Failed to create folder": [
         "Vytvoření složky selhalo"
       ],
+      "Failed to download \"${ file.name }\": Data integrity check failed. Please try again.": [
+        "Selhalo stahování souboru \"${ file.name }\": Kontrola integrity dat selhala. Zkuste to prosím znovu."
+      ],
+      "Failed to index Drive folder for search": [
+        "Nepodařilo se indexovat složku Drive pro vyhledávání"
+      ],
+      "Failed to link Drive folder": [
+        "Nepodařilo se propojit složku Drive"
+      ],
       "Failed to process file: ${ file.name }": [
         "Zpracování souboru selhalo: ${ file.name }"
+      ],
+      "Failed to unlink Drive folder": [
+        "Nepodařilo se odpojit složku Drive"
+      ],
+      "File \"${ file.name }\" (${ fileSizeFormatted }) exceeds the ${ maxSizeFormatted } limit. Link a ${ DRIVE_APP_NAME } folder to upload larger files.": [
+        "Soubor \"${ file.name }\" (${ fileSizeFormatted }) přesahuje limit ${ maxSizeFormatted }. Pro nahrání větších souborů propojte složku ${ DRIVE_APP_NAME }."
+      ],
+      "File download failed due to integrity check. Please try again.": [
+        "Stahování souboru selhalo kvůli kontrole integrity. Zkuste to znovu."
       ],
       "File format not supported: ${ file.name }": [
         "Formát souboru není podporován: ${ file.name }"
@@ -2236,10 +2353,27 @@
         "Prioritní přístup a rychlejší odpovědi"
       ],
       "Unlimited projects": [
-        "Neomezené projekty"
+        "Neomezený počet projektů"
+      ]
+    },
+    "collider_2025:FeaturePoint": {
+      "Chats, files, and context stay together in an encrypted workspace.": [
+        "Chaty, soubory a kontext zůstávají pohromadě v šifrovaném pracovním prostoru."
+      ],
+      "Project-specific instructions mean no repeating yourself.": [
+        "Pokyny na míru danému projektu omezí nutnost se opakovat."
+      ],
+      "Tailored responses based on your project’s files and instructions.": [
+        "Odpovědi přizpůsobené instrukcím a souborům vašeho projektu."
       ]
     },
     "collider_2025:Info": {
+      " Chat in Project": [
+        " Chat v projektu",
+        " Chaty v projektu",
+        " Chaty v projektu",
+        " Chaty v projektu"
+      ],
       "${ project.conversationCount } conversation": [
         "${ project.conversationCount } konverzace"
       ],
@@ -2258,8 +2392,17 @@
       "All messages and chat history": [
         "Všechny zprávy a historie chatu"
       ],
+      "Are you sure you want to delete \"${ project.name }\"? This action cannot be undone.": [
+        "Opravdu chcete smazat \"${ project.name }\"? Tuto akci nelze vrátit zpět."
+      ],
       "Are you sure you want to delete this conversation? This action cannot be undone.": [
         "Opravdu chcete smazat tuto konverzaci? Tuto akci nelze vzít zpět."
+      ],
+      "Auto-retrieved": [
+        "Automaticky načteno"
+      ],
+      "Browse to the ${ DRIVE_SHORT_APP_NAME } folder you want to link to this project, then click \"Link this folder\".": [
+        "Přejděte do složky ${ DRIVE_SHORT_APP_NAME }, kterou chcete propojit s tímto projektem, a poté klikněte na \"Propojit tuto složku\"."
       ],
       "Conversation encrypted": [
         "Konverzace šifrována"
@@ -2267,11 +2410,29 @@
       "Current chat:": [
         "Aktuální konverzace:"
       ],
+      "Drive files are not available for guest users": [
+        "Soubory Drive nejsou k dispozici pro uživatele, kteří jsou hosté"
+      ],
+      "File \"${ file.name }\" is already added to this conversation": [
+        "Soubor \"${ file.name }\" je již přidán do této konverzace"
+      ],
+      "File \"${ file.name }\" is already in this project": [
+        "Soubor \"${ file.name }\" je již v tomto projektu"
+      ],
       "Files uploaded to this project will be saved to the linked Drive folder.": [
         "Soubory nahrané do tohoto projektu budou uloženy do připojené složky v Drive."
       ],
+      "From ${ DRIVE_APP_NAME }": [
+        "Z ${ DRIVE_APP_NAME }"
+      ],
+      "Initializing Drive...": [
+        "Příprava Drive..."
+      ],
+      "Learn more about how project knowledge works": [
+        "Další informace o tom, jak fungují znalosti projektu"
+      ],
       "Link files from ${ DRIVE_APP_NAME } or upload from your computer.": [
-        "Připojte soubory z ${ DRIVE_APP_NAME } nebo je nahrejte ze svého počítače."
+        "Připojte soubory z ${ DRIVE_APP_NAME } nebo je nahrajte ze svého počítače."
       ],
       "No projects yet": [
         "Zatím žádné projekty"
@@ -2282,11 +2443,32 @@
       "Processing...": [
         "Zpracování..."
       ],
+      "Projects help you organize conversations with custom instructions and files.": [
+        "Projekty vám pomáhají organizovat konverzace pomocí vlastních pokynů a souborů."
+      ],
+      "Projects help you organize conversations with custom instructions and files. Sign in or create a free account to get started.": [
+        "Projekty vám pomohou organizovat konverzace podle vašich pokynů a souborů. Začněte přihlášením nebo vytvořením bezplatného účtu."
+      ],
       "This message is empty. Sorry about that.": [
         "Tato zpráva je prázdná. Omlouváme se."
       ],
+      "This project already has files. Please remove all files before linking a Drive folder.": [
+        "Tento projekt již obsahuje soubory. Před propojením složky Drive odeberte všechny soubory."
+      ],
       "This will remove all ${ files.length } files from this project. This action cannot be undone.": [
-        "Toto odstraní všech ${ files.length } souborů z tohoto projektu. Tuto akci nelze vzít zpět."
+        "Toto odebere všech ${ files.length } souborů z tohoto projektu. Tuto akci nelze vzít zpět."
+      ],
+      "Tips on how to write useful instructions": [
+        "Tipy, jak psát užitečné instrukce"
+      ],
+      "Type @filename to ask questions about a specific file": [
+        "Zadejte @filename pro dotaz ke konkrétnímu souboru"
+      ],
+      "Upgrade to ${ LUMO_SHORT_APP_NAME } Plus to create unlimited projects, unlock advanced AI models, and more.": [
+        "Navyšte na ${ LUMO_SHORT_APP_NAME } Plus a vytvořte neomezený počet projektů, odemkněte pokročilé modely AI a další."
+      ],
+      "Using ${ DRIVE_APP_NAME } lets ${ LUMO_SHORT_APP_NAME } work with larger files.": [
+        "Používání ${ DRIVE_APP_NAME } umožňuje ${ LUMO_SHORT_APP_NAME } pracovat s většími soubory."
       ],
       "Your files are large. ${ LUMO_SHORT_APP_NAME } may not be able to process all information.": [
         "Vaše soubory jsou velké. ${ LUMO_SHORT_APP_NAME } nemusí zpracovat všechny informace."
@@ -2309,10 +2491,13 @@
         "Upravit název konverzace"
       ],
       "Folder name": [
-        "Název adresáře"
+        "Název složky"
       ],
       "Instructions": [
         "Instrukce"
+      ],
+      "Project Instructions (optional)": [
+        "Pokyny k projektu (nepovinné)"
       ],
       "Untitled chat": [
         "Nepojmenovaný chat"
@@ -2335,6 +2520,9 @@
       "Add instructions about the tone, style, and persona you want ${ LUMO_SHORT_APP_NAME } to adopt.": [
         "Přidejte instrukce týkající se tónu, stylu a osobnosti, které si má ${ LUMO_SHORT_APP_NAME } osvojit."
       ],
+      "Add instructions about the tone, style, and persona you want ${ LUMO_SHORT_APP_NAME } to adopt. These instructions will apply to all chats in this project.": [
+        "Přidej pokyny ohledně tónu, stylu a osobnosti, které má ${ LUMO_SHORT_APP_NAME } přijmout. Tyto pokyny se budou vztahovat na všechny chaty v tomto projektu."
+      ],
       "Ask anything…": [
         "Zeptejte se na cokoli…"
       ],
@@ -2343,6 +2531,9 @@
       ],
       "Enter project name": [
         "Zadejte název projektu"
+      ],
+      "Holiday planner": [
+        "Plánovač dovolené"
       ],
       "Processing files, please wait...": [
         "Zpracovávám soubory, čekejte prosím..."
@@ -2360,35 +2551,143 @@
       ],
       "Financial assistant": [
         "Finanční asistent"
+      ],
+      "Get help understanding assignments, solving problems, and learning concepts": [
+        "Získejte pomoc s porozuměním úkolům, řešením problémů a osvojováním si pojmů"
+      ],
+      "Learn a language": [
+        "Naučte se jazyk"
+      ],
+      "Plan financial goals with personalized insights": [
+        "Naplánuj finanční cíle s personalizovanými postřehy"
+      ],
+      "Practice conversations, learn grammar, and build vocabulary in your target language": [
+        "Cvičte konverzace, učte se gramatiku a rozšiřujte slovní zásobu ve svém cílovém jazyce"
+      ],
+      "Research & Analysis Partner": [
+        "Partner pro výzkum a analýzu"
+      ],
+      "Study companion": [
+        "Studijní průvodce"
+      ],
+      "Synthesize sources, analyze data, and develop insights for your research projects": [
+        "Syntetizujte zdroje, analyzujte data a rozvíjejte poznatky pro své výzkumné projekty"
+      ],
+      "Writing coach": [
+        "Trenér psaní"
       ]
     },
     "collider_2025:Prompt": {
+      "Analyze my spending patterns and suggest areas to reduce expenses": [
+        "Analyzuj mé výdajové zvyky a navrhni oblasti pro snížení nákladů"
+      ],
       "Can you explain why this answer is correct?": [
         "Můžete vysvětlit, proč je tato odpověď správná?"
       ],
+      "Compare the methodologies used across these studies": [
+        "Porovnej metodiky použité v těchto studiích"
+      ],
+      "Create a packing list for a winter hiking trip in Patagonia": [
+        "Vytvoř seznam vybavení pro zimní turistický výlet v Patagonii"
+      ],
+      "Explain the risks associated with this type of asset": [
+        "Vysvětli rizika spojená s tímto typem aktiva"
+      ],
+      "Explain the trade-offs between paying off debt vs investing": [
+        "Vysvětli rozdíly mezi splácením dluhu a investováním"
+      ],
+      "Explain this medication and its potential side effects": [
+        "Vysvětli tento lék a jeho možné vedlejší účinky"
+      ],
+      "Help me create a plan to achieve this goal": [
+        "Pomoz mi vytvořit plán k dosažení tohoto cíle"
+      ],
       "Help me draft a professional response to this email": [
-        "Pomozte mi napsat profesionální odpověď na tento e-mail"
+        "Pomoz mi napsat profesionální odpověď na tento e-mail"
+      ],
+      "Help me organize my thoughts on this decision": [
+        "Pomoz mi zorganizovat si myšlenky k tomuto rozhodnutí"
+      ],
+      "Help me plan a 2-week itinerary for Japan with cultural experiences": [
+        "Pomoz mi naplánovat 2týdenní itinerář pro Japonsko s kulturními zážitky"
+      ],
+      "Help me prepare questions about this diagnosis for my doctor": [
+        "Pomoz mi připravit otázky k této diagnóze pro mého lékaře"
+      ],
+      "Help me prepare talking points for this presentation": [
+        "Pomoz mi připravit podklady pro tuto prezentaci"
+      ],
+      "Help me refine this draft to be more concise and impactful": [
+        "Pomoz mi tento koncept upravit, aby byl stručnější a výstižnější"
+      ],
+      "Help me understand different retirement account options and their tax implications": [
+        "Pomoz mi porozumět různým možnostem důchodových účtů a jejich daňovým dopadům"
       ],
       "Help me understand how to read and analyze financial statements": [
-        "Pomozte mi pochopit, jak číst a analyzovat finanční výkazy"
+        "Pomoz mi pochopit, jak číst a analyzovat finanční výkazy"
       ],
       "Help me understand this concept step by step": [
-        "Pomozte mi krok za krokem pochopit tento koncept"
+        "Pomoz mi porozumět tomuto konceptu krok za krokem"
       ],
       "Help me understand what this code does": [
-        "Pomozte mi pochopit, co dělá tento kód"
+        "Pomoz mi pochopit, co dělá tento kód"
       ],
       "How do people celebrate New Year's Eve around the world?": [
         "Jak lidé ve světě slaví Silvestra?"
       ],
+      "Identify any unusual or potentially unfavorable terms": [
+        "Identifikuj podmínky, které jsou neobvyklé nebo potenciálně nevýhodné"
+      ],
+      "Identify research gaps and suggest future research directions": [
+        "Rozpoznej mezery ve výzkumu a navrhni budoucí směry výzkumu"
+      ],
+      "Review this code for bugs and potential improvements": [
+        "Zkontroluj tento kód na chyby a potenciální vylepšení"
+      ],
+      "Review this for clarity, tone, and grammatical errors": [
+        "Zkontroluj to z hlediska srozumitelnosti, tónu a gramatických chyb"
+      ],
+      "Suggest hidden gems and local favorites in Barcelona": [
+        "Navrhni skryté zajímavosti a místní oblíbená místa v Barceloně"
+      ],
+      "Suggest ways to improve the flow and structure of this text": [
+        "Navrhni způsoby, jak zlepšit slovosled a strukturu tohoto textu"
+      ],
+      "Suggest ways to optimize this for better performance": [
+        "Navrhni způsoby, jak to optimalizovat pro lepší výkon"
+      ],
+      "Summarize the key obligations and rights in this contract": [
+        "Shrň klíčové povinnosti a práva obsažená v této smlouvě"
+      ],
       "Summarize the key points from this meeting": [
         "Shrnout klíčové body z této schůzky"
       ],
+      "What are the key points I should remember for this topic?": [
+        "Jaké jsou klíčové body, které bych si měl k tomuto tématu pamatovat?"
+      ],
+      "What are the main findings and how do they relate to each other?": [
+        "Jaké jsou hlavní zjištění a jak spolu souvisí?"
+      ],
+      "What are the termination clauses and notice requirements?": [
+        "Jaké jsou smluvní doložky ohledně ukončení a požadavky na oznamování?"
+      ],
       "What do these lab values mean and are any outside normal ranges?": [
         "Co znamenají tyto laboratorní hodnoty a jsou některé mimo normální rozmezí?"
+      ],
+      "What metrics and research should I review for this investment?": [
+        "Na které ukazatele a výzkum je vhodné se zaměřit v souvislosti s touto investicí?"
+      ],
+      "What questions should I consider before making this choice?": [
+        "Jaké otázky mám zvážit před tímto rozhodnutím?"
+      ],
+      "What should I know about emergency funds and where to keep them?": [
+        "Co bych měl vědět o nouzových finančních prostředcích a jejich uchovávání?"
       ]
     },
     "collider_2025:Status": {
+      "Complete": [
+        "Dokončeno"
+      ],
       "Error": [
         "Chyba"
       ],
@@ -2400,17 +2699,37 @@
       ],
       "Indexing error": [
         "Chyba indexování"
+      ],
+      "Indexing for search": [
+        "Indexování pro vyhledávání"
+      ]
+    },
+    "collider_2025:Subline": {
+      "Projects help you keep related chats, files, and instructions in one place. They make it easy to stay organized and reuse context across chats.": [
+        "Projekty vám pomohou udržet související chaty, soubory a pokyny na jednom místě. Usnadňují organizaci a opětovné použití kontextu napříč chaty."
       ]
     },
     "collider_2025:Success": {
       "All files removed from project": [
-        "Všechny soubory odstraněny z projektu"
+        "Všechny soubory odebrány z projektu"
+      ],
+      "Drive folder linked successfully": [
+        "Složka Drive byla úspěšně propojena"
+      ],
+      "Drive folder unlinked": [
+        "Složka Drive odpojena"
       ],
       "File \"${ file.name }\" added to project": [
         "Soubor \"${ file.name }\" přidán do projektu"
       ],
       "File removed from project": [
         "Soubor odebrán z projektu"
+      ],
+      "Folder \"${ trimmedFolderName }\" created successfully": [
+        "Složka \"${ trimmedFolderName }\" byla úspěšně vytvořena"
+      ],
+      "Folder created successfully": [
+        "Složka úspěšně vytvořena"
       ]
     },
     "collider_2025:Title": {
@@ -2468,11 +2787,17 @@
       "Instructions": [
         "Pokyny"
       ],
+      "Introducing Projects": [
+        "Představujeme projekty"
+      ],
       "Last 30 days": [
         "Posledních 30 dnů"
       ],
       "Last 7 days": [
         "Posledních 7 dnů"
+      ],
+      "Link Drive Folder": [
+        "Propojit složku Drive"
       ],
       "Linked Drive Folder": [
         "Připojená složka v Drive"
@@ -2480,23 +2805,35 @@
       "More options": [
         "Více možností"
       ],
+      "More Projects with ${ LUMO_SHORT_APP_NAME } Plus": [
+        "Více projektů s ${ LUMO_SHORT_APP_NAME } Plus"
+      ],
       "No chat history yet. Let's start chatting!": [
         "Zatím žádná historie chatu. Začněme chatovat!"
       ],
       "No result.": [
         "Žádný výsledek."
       ],
+      "Nothing here yet": [
+        "Zatím tady nic není"
+      ],
       "Older": [
         "Starší"
+      ],
+      "Project knowledge": [
+        "Znalosti projektu"
       ],
       "Projects": [
         "Projekty"
       ],
       "Remove all files?": [
-        "Odstranit všechny soubory?"
+        "Odebrat všechny soubory?"
       ],
       "Settings": [
         "Nastavení"
+      ],
+      "Sign in to create projects": [
+        "Pro vytváření projektů se přihlaste"
       ],
       "Start a new conversation": [
         "Začít novou konverzaci"
@@ -2520,6 +2857,12 @@
       ]
     },
     "collider_2025:Warning": {
+      "Cannot Link Drive Folder": [
+        "Nelze propojit složku Drive"
+      ],
+      "This folder contains ${ result.totalFiles } indexable files. Only the first ${ MAX_INDEXABLE_FILES } files were indexed. ${ result.skippedFiles } files were skipped.": [
+        "Tato složka obsahuje ${ result.totalFiles } indexovatelných souborů. Bylo zaindexováno pouze prvních ${ MAX_INDEXABLE_FILES }. ${ result.skippedFiles } souborů bylo přeskočeno."
+      ],
       "This will also permanently delete:": [
         "Toto také trvale smaže:"
       ]
@@ -4054,6 +4397,15 @@
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Pokud svůj aktuální tarif snížíte na bezplatnou verzi, navždy ztratíte současné výhody, i když v budoucnu svůj účet znovu povýšíte."
       ],
+      "Chunk": [
+        "Segment"
+      ],
+      "chunks": [
+        "segmenty"
+      ],
+      "Chunks:": [
+        "Segmenty:"
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klikněte na \"Požádat o nový kód\" pro zaslání nového ověřovacího kódu na ${ strong }. Pokud je toto telefonní číslo nesprávné, klepněte na tlačítko \"Upravit\" pro jeho opravu."
       ],
@@ -4228,11 +4580,20 @@
       "New": [
         "Nově"
       ],
+      "No conversations yet. Start a new chat to begin.": [
+        "Zatím žádné konverzace. Můžete začít nový chat."
+      ],
+      "No Drive documents are loaded for inspection in this session.": [
+        "V této relaci nejsou načteny ke kontrole žádné dokumenty Drive."
+      ],
       "No payment is required at this time.": [
         "V tuto chvíli není nutná žádná platba."
       ],
       "No results found": [
         "Nebyly nalezeny žádné výsledky"
+      ],
+      "No results found for \"${ query }\"": [
+        "Nenalezeny žádné výsledky pro \"${ query }\""
       ],
       "Number of dedicated servers in the organization": [
         "Počet dedikovaných serverů v organizaci"
@@ -4279,6 +4640,15 @@
       "Registering your subscription…": [
         "Registrace vašeho předplatného…"
       ],
+      "Searchable chunks": [
+        "Prohledávatelné segmenty"
+      ],
+      "Searchable chunks:": [
+        "Prohledávatelné segmenty:"
+      ],
+      "searchable sections": [
+        "prohledávatelné sekce"
+      ],
       "SEPA payments are not available at the moment. Please try again later.": [
         "Platby přes SEPA nejsou v tuto chvíli k dispozici. Zkuste to znovu později."
       ],
@@ -4318,6 +4688,9 @@
       "Thank you for subscribing. Secure browsing starts now.": [
         "Děkujeme vám za přihlášení k odběru. Bezpečné prohlížení začíná nyní."
       ],
+      "The index reports ${ displayDriveDocs } Drive documents. Re-index or keep the session open after indexing to view details here.": [
+        "Index hlásí ${ displayDriveDocs } dokumentů Drive. Buď proveďte znovu indexování a nebo po indexování nechte relaci otevřenou pro zobrazení detailů zde."
+      ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Proces ověření otevře novou kartu prohlížeče. Vypněte prosím blokování vyskakovacích oken."
       ],
@@ -4330,6 +4703,9 @@
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Toto je nyní vaše ${ defaultEmailAddress } pro odesílání nových zpráv."
       ],
+      "This may indicate that projects were deleted but their indexed files weren't cleaned up, or that spaces failed to load from IndexedDB.": [
+        "To může naznačovat, že byly projekty smazány, ale jejich indexované soubory nebyly vyčištěny, nebo že se prostory nepodařilo načíst z IndexedDB."
+      ],
       "This will sign you out of all accounts currently logged in.": [
         "Toto vás odhlásí od všech aktuálně přihlášených účtů."
       ],
@@ -4338,6 +4714,9 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Abyste zamezili spamu a obtěžování, potvrďte, že jste člověk."
+      ],
+      "Total conversations:": [
+        "Celkový počet konverzací:"
       ],
       "Total email addresses": [
         "Celkem e-mailových adres"
@@ -4353,6 +4732,9 @@
       ],
       "Total VPN connections": [
         "Celkem VPN připojení"
+      ],
+      "Unknown": [
+        "Neznámé"
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Navyšte tarif nyní a získejte tím prémiové funkce, produkty a úložiště za speciální cenu"
@@ -4837,11 +5219,20 @@
       ]
     },
     "lumo: Debug View": {
+      "Acceleration": [
+        "Zrychlení"
+      ],
       "Buffer size": [
         "Velikost vyrovnávací paměti"
       ],
       "Clear History": [
         "Vyčistit historii"
+      ],
+      "Debug View": [
+        "Zobrazení pro ladění"
+      ],
+      "Differential": [
+        "Rozdíly"
       ],
       "FPS": [
         "FPS"
@@ -4850,7 +5241,7 @@
         "Nečinný"
       ],
       "Lag": [
-        "Prodleva"
+        "Zpoždění"
       ],
       "Last token": [
         "Poslední token"
@@ -4864,8 +5255,44 @@
       "Messages": [
         "Zprávy"
       ],
+      "Rate": [
+        "Hodnotit"
+      ],
+      "Redux updates": [
+        "Aktualizace Reduxu"
+      ],
+      "Redux/sec": [
+        "Redux/sek"
+      ],
+      "Render time": [
+        "Doba vykreslení"
+      ],
+      "Search Index Debug": [
+        "Ladění indexu vyhledávání"
+      ],
+      "Smoothing (Spring-Mass)": [
+        "Vyhlazování (pružina-hmota)"
+      ],
+      "Spring state": [
+        "Spring stav"
+      ],
+      "Spring-Mass Visualization": [
+        "Vizualizace pružiny a hmotnosti"
+      ],
       "Status": [
         "Stav"
+      ],
+      "Stiffness": [
+        "Tuhost"
+      ],
+      "Streaming": [
+        "Streamování"
+      ],
+      "to toggle": [
+        "přepnout"
+      ],
+      "Token delays": [
+        "Zpoždění tokenů"
       ],
       "Tokens/sec": [
         "Tokenů/s"
@@ -6634,6 +7061,12 @@
       ]
     },
     "Status": {
+      "Disabled": [
+        "Zakázáno"
+      ],
+      "Enabled": [
+        "Povoleno"
+      ],
       "Not available": [
         "Nedostupné"
       ]
@@ -7059,11 +7492,20 @@
       "Import emails, calendars, contacts": [
         "Importovat e-maily, kalendáře a kontakty"
       ],
+      "Indexed Drive documents": [
+        "Indexované dokumenty Drive"
+      ],
       "Invalid verification code": [
         "Neplatný ověřovací kód"
       ],
+      "My Files": [
+        "Moje soubory"
+      ],
       "Network error": [
         "Chyba sítě"
+      ],
+      "Orphaned Documents Detected": [
+        "Detekovány nezařazené dokumenty"
       ],
       "Payment failed": [
         "Platba selhala"
@@ -7085,6 +7527,9 @@
       ],
       "Request new code": [
         "Poslat nový kód"
+      ],
+      "Search Index Debug": [
+        "Ladění indexu vyhledávání"
       ],
       "Select a plan": [
         "Vyberte tarif"
@@ -7294,6 +7739,9 @@
       ]
     },
     "Warning": {
+      "Found ${ orphanedDocCount } documents (${ orphanedChunkCount } chunks) referencing ${ orphanedSpaceIds.length } missing space(s).": [
+        "Nalezeno ${ orphanedDocCount } dokumentů (${ orphanedChunkCount } segmentů) odkazujících na ${ orphanedSpaceIds.length } chybějícího prostoru."
+      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Hlášení nejsou zabezpečena koncovým šifrováním, neposílejte žádné citlivé informace."
       ],

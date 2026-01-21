@@ -41,11 +41,11 @@
       "Copy link": [
         "Kopiuj link"
       ],
-      "Delete": [
-        "Usuń"
-      ],
       "Dismiss": [
         "Odrzuć"
+      ],
+      "Done": [
+        "Gotowe"
       ],
       "Download logs": [
         "Pobierz logi"
@@ -118,12 +118,6 @@
       ],
       "Settings": [
         "Ustawienia"
-      ],
-      "Share": [
-        "Udostępnij"
-      ],
-      "Show advanced options": [
-        "Pokaż opcje zaawansowane"
       ],
       "Sign in": [
         "Zaloguj się"
@@ -223,6 +217,9 @@
       ],
       "Payments problem": [
         "Problem z płatnościami"
+      ],
+      "Sheets problem": [
+        "Problem z arkuszem"
       ],
       "Sign in problem": [
         "Problem z logowaniem"
@@ -1264,6 +1261,12 @@
       ]
     },
     "Info": {
+      "${ participantCount } participant": [
+        "${ participantCount } uczestnik",
+        "${ participantCount } uczestników",
+        "${ participantCount } uczestników",
+        "${ participantCount } uczestników"
+      ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Numer telefonu może zostać użyty do weryfikacji tylko jednego konta ${ BRAND_NAME }"
       ],

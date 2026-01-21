@@ -7010,8 +7010,14 @@
       "Postal code": [
         "Irányítószám"
       ],
+      "Premium domain": [
+        "Prémium domain név"
+      ],
       "Proration": [
         "Arányosítás"
+      ],
+      "Public domain": [
+        "Nyilvános domain név"
       ],
       "Public keys": [
         "Nyilvános kulcsok"
@@ -7180,6 +7186,9 @@
       ],
       "Your alias": [
         "Az e-mail álneve"
+      ],
+      "Your domain": [
+        "Az Ön domain neve"
       ],
       "Your IP": [
         "Az Ön IP-címe"
@@ -12013,15 +12022,6 @@
       ],
       "The link expired": [
         "A hivatkozás lejárt"
-      ],
-      "The verification of the encryption keys' signature by the original creator (${ claimedKeyAuthor }) who created the node failed. The reason is: ${ nodeEntity.keyAuthor.error.error }": [
-        "A titkosítási kulcsok aláírásának ellenőrzése az eredeti készítő (${ claimedKeyAuthor }) által, aki létrehozta a csomópontot, sikertelen volt. Az ok: ${ nodeEntity.keyAuthor.error.error }"
-      ],
-      "The verification of the file's content signature by the uploader (${ claimedContentAuthor }) who uploaded the last revision failed. The reason is: ${ activeRevision.contentAuthor.error.error }": [
-        "A fájl tartalom aláírásának ellenőrzése a feltöltő (${ claimedContentAuthor }) által, aki az utolsó revíziót feltöltötte, sikertelen volt. Az ok: ${ activeRevision.contentAuthor.error.error }"
-      ],
-      "The verification of the name's signature by author (${ claimedNameAuthor }) who set the name the last time failed. The reason is: ${ nodeEntity.nameAuthor.error.error }": [
-        "A név aláírásának ellenőrzése a szerző (${ claimedNameAuthor }) által, aki utoljára állította be a nevet, sikertelen volt. Az ok: ${ nodeEntity.nameAuthor.error.error }"
       ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "A fájl aláírása hiányzik vagy hibás. Nyissa meg a Menü (⋮) → Részletek pontot a további információért."

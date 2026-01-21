@@ -1225,6 +1225,9 @@
       "Save": [
         "Salva"
       ],
+      "Save preferences": [
+        "Salva le preferenze"
+      ],
       "Saving${ ellipsis }": [
         "Salvataggio${ ellipsis }"
       ],
@@ -1480,9 +1483,6 @@
       "Toggle Contacts app": [
         "Pulsante app Contatti"
       ],
-      "Toggle notifications": [
-        "Attiva/disattiva notifiche"
-      ],
       "Toggle referral": [
         "Attiva/disattiva referral"
       ],
@@ -1503,6 +1503,10 @@
       ],
       "Trust": [
         "Considera attendibile"
+      ],
+      "Trust key": [
+        "chiave attendibile",
+        "chiavi attendibili"
       ],
       "Trust public key": [
         "Chiave pubblica attendibile"
@@ -2169,6 +2173,9 @@
       ],
       "Payments problem": [
         "Problema con i pagamenti"
+      ],
+      "Sheets problem": [
+        "Problema fogli"
       ],
       "Sign in problem": [
         "Problema di accesso"
@@ -6172,6 +6179,12 @@
       "Too many recent requests. Please try again in a few moments.": [
         "Troppe richieste recenti. Per favore riprova tra qualche istante."
       ],
+      "Two-factor authentication is enabled in your external account.": [
+        "L'autenticazione a due fattori è abilitata nel tuo account esterno."
+      ],
+      "Two-factor authentication is enabled in your external email account.": [
+        "L'autenticazione a due fattori è abilitata nel tuo account email esterno."
+      ],
       "Use your app password if:": [
         "Usa la password dell'app se:"
       ],
@@ -7394,8 +7407,7 @@
         "Inizializzazione…"
       ],
       "Insert image": [
-        "Inserisci immagine",
-        "Inserisci immagini"
+        "Inserisci immagine"
       ],
       "Insert link": [
         "Inserisci link"
@@ -7832,6 +7844,9 @@
       ],
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Contattaci per ricevere aiuto su qualsiasi cosa ${ BRAND_NAME }."
+      ],
+      "Receive notifications for ${ categoryLabel }": [
+        "Ricevi notifiche per ${ categoryLabel }"
       ],
       "Recipient: ": [
         "Destinatario: "
@@ -9259,6 +9274,9 @@
       "Cash": [
         "Contanti"
       ],
+      "Categories": [
+        "Categorie"
+      ],
       "Categories badge": [
         "Badge categorie"
       ],
@@ -9622,6 +9640,9 @@
       "Notification": [
         "Notifica"
       ],
+      "Notifications": [
+        "Notifiche"
+      ],
       "Notifications are disabled, to enable them change the browser settings.": [
         "Le notifiche sono disabilitate, per abilitarle modificare le impostazioni del browser."
       ],
@@ -9688,6 +9709,9 @@
       "Postal code": [
         "Codice postale"
       ],
+      "Premium domain": [
+        "Dominio Premium"
+      ],
       "Primary": [
         "Primario"
       ],
@@ -9696,6 +9720,9 @@
       ],
       "Proration": [
         "Calcolo proporzionale"
+      ],
+      "Public domain": [
+        "Dominio pubblico"
       ],
       "Public keys": [
         "Chiavi pubbliche"
@@ -9730,8 +9757,8 @@
       "Search in": [
         "Cerca in"
       ],
-      "Select the categories to include, and enable notifications to be alerted about new emails in a category.": [
-        "Seleziona le categorie da includere e attiva le notifiche per ricevere avvisi sulle nuove email in una categoria."
+      "Select the categories to include and manage notifications for new emails.": [
+        "Seleziona le categorie da includere e gestisci le notifiche per le nuove email."
       ],
       "Send auto-reply": [
         "Invia risposta automatica"
@@ -9882,6 +9909,9 @@
       ],
       "Your alias": [
         "Il tuo alias"
+      ],
+      "Your domain": [
+        "Il tuo dominio"
       ],
       "Your IP": [
         "Il tuo IP"
@@ -14624,6 +14654,9 @@
       "Download ${ VPN_APP_NAME }": [
         "Scarica ${ VPN_APP_NAME }"
       ],
+      "Download the desktop app": [
+        "Scarica l'app desktop"
+      ],
       "Enable ${ DARK_WEB_MONITORING_NAME }": [
         "Attiva ${ DARK_WEB_MONITORING_NAME }"
       ],
@@ -15520,6 +15553,9 @@
       ],
       "To": [
         "A"
+      ],
+      "To preview this spreadsheet, download it.": [
+        "Per visualizzare l'anteprima di questo foglio di calcolo, scaricalo."
       ],
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "Per visualizzare l'anteprima di questo foglio di calcolo, aprilo in ${ SHEETS_APP_NAME } o scaricalo."

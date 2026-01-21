@@ -7332,8 +7332,14 @@
       "Postal code": [
         "Ταχυδρομικός κώδικας"
       ],
+      "Premium domain": [
+        "Premium τομέας"
+      ],
       "Proration": [
         "Προμήθεια"
+      ],
+      "Public domain": [
+        "Δημόσιος τομέας"
       ],
       "Public keys": [
         "Δημόσια κλειδιά"
@@ -7505,6 +7511,9 @@
       ],
       "Your alias": [
         "Το ψευδώνυμο σας"
+      ],
+      "Your domain": [
+        "Ο τομέας σας"
       ],
       "Your IP": [
         "Η διεύθυνση IP σας"
@@ -8988,6 +8997,9 @@
       "\"${ name }\" deleted": [
         "\"${ name }\" διαγράφηκε"
       ],
+      "\"${ name }\" deleted permanently": [
+        "\"${ name }\" διαγράφηκε οριστικά"
+      ],
       "\"${ name }\" deleted permanently from trash": [
         "Το \"${ name }\" διαγράφηκε οριστικά από τα Διαγραμμένα"
       ],
@@ -9068,6 +9080,10 @@
       "${ numberOfItems } item deleted": [
         "${ numberOfItems } στοιχείο διαγράφηκε",
         "${ numberOfItems } στοιχεία διαγράφηκαν"
+      ],
+      "${ numberOfItems } item deleted permanently": [
+        "${ numberOfItems } στοιχείο διαγράφηκε οριστικά",
+        "${ numberOfItems } στοιχεία διαγράφηκαν οριστικά"
       ],
       "${ numberOfItems } item deleted permanently from trash": [
         "${ numberOfItems } στοιχείο εξαλείφθηκε οριστικά από τα Διαγραμμένα",
@@ -12576,20 +12592,14 @@
       "The link expired": [
         "Ο σύνδεσμος έληξε"
       ],
-      "The verification of the encryption keys' signature by the original creator (${ claimedKeyAuthor }) who created the node failed. The reason is: ${ nodeEntity.keyAuthor.error.error }": [
-        "Η επαλήθευση της υπογραφής των κλειδιών κρυπτογράφησης από τον αρχικό δημιουργό (${ claimedKeyAuthor }) ο οποίος δημιούργησε τον κόμβο, απέτυχε. Ο λόγος είναι: ${ nodeEntity.keyAuthor.error.error }"
-      ],
-      "The verification of the file's content signature by the uploader (${ claimedContentAuthor }) who uploaded the last revision failed. The reason is: ${ activeRevision.contentAuthor.error.error }": [
-        "Η επαλήθευση της υπογραφής περιεχομένου αυτού του αρχείου από τον χρήστη (${ claimedContentAuthor }) που μεταφόρτωσε την τελευταία έκδοση, απέτυχε. Ο λόγος είναι: ${ activeRevision.contentAuthor.error.error }"
-      ],
-      "The verification of the name's signature by author (${ claimedNameAuthor }) who set the name the last time failed. The reason is: ${ nodeEntity.nameAuthor.error.error }": [
-        "Η επαλήθευση της υπογραφής του ονόματος από τον συντάκτη (${ claimedNameAuthor }) που όρισε το όνομα την τελευταία φορά απέτυχε. Ο λόγος είναι: ${ nodeEntity.nameAuthor.error.error }"
-      ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "Αυτό το αρχείο έχει απούσα ή μη έγκυρη υπογραφή. Για πληροφορίες, μεταβείτε στο Μενού (⋮) → Λεπτομέρειες."
       ],
       "This folder has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "Αυτός ο φάκελος έχει απούσα ή μη έγκυρη υπογραφή. Για πληροφορίες, μεταβείτε στο Μενού (⋮) → Λεπτομέρειες."
+      ],
+      "This is likely due to the account or address having been deleted.": [
+        "Αυτό πιθανόν οφείλεται στο γεγονός ότι ο λογαριασμός ή η διεύθυνση έχουν διαγραφεί."
       ],
       "This link is password protected": [
         "Αυτός ο σύνδεσμος προστατεύεται με κωδικό πρόσβασης"
@@ -12707,6 +12717,15 @@
       ],
       "We couldn’t verify that an anonymous user uploaded this folder.": [
         "Δεν μπορέσαμε να επαληθεύσουμε ότι κάποιος ανώνυμος χρήστης μεταφόρτωσε αυτόν τον φάκελο."
+      ],
+      "We weren’t able to confirm that the file content was uploaded by ${ claimedContentAuthor }. The reason is: ${ activeRevision.contentAuthor.error.error }": [
+        "Δεν μπορέσαμε να επιβεβαιώσουμε ότι το περιεχόμενο του αρχείου μεταφορτώθηκε από τον ${ claimedContentAuthor }. Ο λόγος είναι: ${ activeRevision.contentAuthor.error.error }"
+      ],
+      "We weren’t able to confirm that the name was created or modified by ${ claimedNameAuthor }. The reason is: ${ nodeEntity.nameAuthor.error.error }": [
+        "Δεν μπορέσαμε να επιβεβαιώσουμε ότι το όνομα δημιουργήθηκε ή τροποποιήθηκε από τον ${ claimedNameAuthor }. Ο λόγος είναι: ${ nodeEntity.nameAuthor.error.error }"
+      ],
+      "We weren’t able to confirm that the node was created by ${ claimedKeyAuthor }. The reason is: ${ nodeEntity.keyAuthor.error.error }": [
+        "Δεν μπορέσαμε να επιβεβαιώσουμε ότι ο κόμβος δημιουργήθηκε από τον ${ claimedKeyAuthor }. Ο λόγος είναι: ${ nodeEntity.keyAuthor.error.error }"
       ],
       "Welcome offer": [
         "Προσφορά καλωσορίσματος"

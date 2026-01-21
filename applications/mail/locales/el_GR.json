@@ -1225,6 +1225,9 @@
       "Save": [
         "Αποθήκευση"
       ],
+      "Save preferences": [
+        "Αποθήκευση προτιμήσεων"
+      ],
       "Saving${ ellipsis }": [
         "Γίνεται αποθήκευση${ ellipsis }"
       ],
@@ -1480,9 +1483,6 @@
       "Toggle Contacts app": [
         "Εναλλαγή στο πρόγραμμα Επαφών"
       ],
-      "Toggle notifications": [
-        "Εναλλαγή ειδοποιήσεων"
-      ],
       "Toggle referral": [
         "Εναλλαγή παραπομπής"
       ],
@@ -1505,7 +1505,8 @@
         "Αξιόπιστο"
       ],
       "Trust key": [
-        "Εμπιστοσύνη στο κλειδί"
+        "Κλειδί Εμπιστοσύνης",
+        "Κλειδιά Εμπιστοσύνης"
       ],
       "Trust public key": [
         "Εμπιστοσύνη στο δημόσιο κλειδί"
@@ -7406,8 +7407,7 @@
         "Προετοιμασία…"
       ],
       "Insert image": [
-        "Εισαγωγή εικόνας",
-        "Εισαγωγή εικόνων"
+        "Εισαγωγή εικόνας"
       ],
       "Insert link": [
         "Εισαγωγή συνδέσμου"
@@ -7844,6 +7844,9 @@
       ],
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Επικοινωνήστε μαζί μας για βοήθεια σε οτιδήποτε ${ BRAND_NAME }."
+      ],
+      "Receive notifications for ${ categoryLabel }": [
+        "Λάβετε ειδοποιήσεις για ${ categoryLabel }"
       ],
       "Recipient: ": [
         "Παραλήπτης: "
@@ -9271,6 +9274,9 @@
       "Cash": [
         "Μετρητά"
       ],
+      "Categories": [
+        "Κατηγορίες"
+      ],
       "Categories badge": [
         "Ετικέτα κατηγοριών"
       ],
@@ -9634,6 +9640,9 @@
       "Notification": [
         "Ειδοποίηση"
       ],
+      "Notifications": [
+        "Ειδοποιήσεις"
+      ],
       "Notifications are disabled, to enable them change the browser settings.": [
         "Οι ειδοποιήσεις είναι απενεργοποιημένες, για να τις ενεργοποιήσετε αλλάξτε τις ρυθμίσεις του προγράμματος περιήγησης."
       ],
@@ -9700,6 +9709,9 @@
       "Postal code": [
         "Ταχυδρομικός κώδικας"
       ],
+      "Premium domain": [
+        "Premium τομέας"
+      ],
       "Primary": [
         "Κύριο"
       ],
@@ -9708,6 +9720,9 @@
       ],
       "Proration": [
         "Προμήθεια"
+      ],
+      "Public domain": [
+        "Δημόσιος τομέας"
       ],
       "Public keys": [
         "Δημόσια κλειδιά"
@@ -9742,8 +9757,8 @@
       "Search in": [
         "Αναζήτηση σε"
       ],
-      "Select the categories to include, and enable notifications to be alerted about new emails in a category.": [
-        "Επιλέξτε τις κατηγορίες που θέλετε να συμπεριλάβετε και ενεργοποιήστε τις ειδοποιήσεις για να ειδοποιείστε για νέα μηνύματα σε μια κατηγορία."
+      "Select the categories to include and manage notifications for new emails.": [
+        "Επιλέξτε τις κατηγορίες που θέλετε να συμπεριλάβετε και διαχειριστείτε τις ειδοποιήσεις για νέα μηνύματα ηλεκτρονικού ταχυδρομείου."
       ],
       "Send auto-reply": [
         "Αποστολή αυτόματης απάντησης"
@@ -9894,6 +9909,9 @@
       ],
       "Your alias": [
         "Το ψευδώνυμο σας"
+      ],
+      "Your domain": [
+        "Ο τομέας σας"
       ],
       "Your IP": [
         "Η διεύθυνση IP σας"

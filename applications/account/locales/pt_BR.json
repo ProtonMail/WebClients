@@ -7466,9 +7466,6 @@
       ]
     },
     "fido2: Error": {
-      "Please disable 2FA via security key before disabling TOTP": [
-        "Desative A2F através da chave de segurança antes de desativar TOTP"
-      ],
       "Something went wrong authenticating with your security key. Please try again.": [
         "Ocorreu um erro ao autenticar com sua chave de segurança. Tente novamente."
       ],
@@ -7509,9 +7506,6 @@
       ],
       "This will delete all security keys linked to your account.": [
         "Isso excluirá todas as chaves de seguranças vinculadas a sua conta."
-      ],
-      "To turn on 2FA via security key, you'll need to activate 2FA via authenticator app": [
-        "Parar ativar A2F através da chave de segurança, você precisa ativar A2F via aplicativo autenticador"
       ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "Verifique a sua identidade com chave de segurança física U2F ou FIDO2"
@@ -23069,6 +23063,9 @@
       ],
       "Time zone": [
         "Fuso horário"
+      ],
+      "To preview this spreadsheet, download it.": [
+        "Para pré-visualizar esta planilha, baixe-a."
       ],
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "Para pré-visualizar esta planilha, abra-a no ${ SHEETS_APP_NAME } ou faça o download."

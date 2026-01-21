@@ -1585,6 +1585,9 @@
       "Payments problem": [
         "支払いに関する問題"
       ],
+      "Sheets problem": [
+        "シートの問題"
+      ],
       "Sign in problem": [
         "サインインに関する問題"
       ],
@@ -1659,6 +1662,9 @@
     "Cancellation upsell": {
       "${ maxSpaceTB } storage": [
         "${ maxSpaceTB } ストレージ"
+      ],
+      "${ numberOfUsers } user": [
+        "最大${ numberOfUsers }人のユーザー"
       ],
       "${ planMaxSpace } email storage": [
         "${ planMaxSpace }メール容量"
@@ -1784,6 +1790,9 @@
       ],
       "High-speed chats and advanced AI features.": [
         "高速チャットと高度なAI機能。"
+      ],
+      "Private video calls for the conversations that matter.": [
+        "プライベートなビデオ通話で、大切な会話を。"
       ]
     },
     "color": {
@@ -2770,6 +2779,11 @@
         "${ MAIL_APP_NAME } 向け"
       ]
     },
+    "customer_support.feature.meet": {
+      "For ${ MEET_APP_NAME }": [
+        "${ MEET_APP_NAME } 向け"
+      ]
+    },
     "customer_support.feature.pass": {
       "For ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } 向け"
@@ -3346,6 +3360,9 @@
       ],
       "Failed to get details, please try again later": [
         "詳細の取得に失敗しました。後ほど再度お試しください。"
+      ],
+      "Failed to load signature details, please try again later": [
+        "署名の詳細の読み込みに失敗しました。後ほどもう一度お試しください。"
       ],
       "Failed to load the STL preview": [
         "STLプレビューの読み込みに失敗しました"
@@ -4512,6 +4529,12 @@
       "Too many recent requests. Please try again in a few moments.": [
         "最近のリクエストが多すぎます。しばらくしてから再度お試しください。"
       ],
+      "Two-factor authentication is enabled in your external account.": [
+        "外部アカウントで2要素認証が有効になっています。"
+      ],
+      "Two-factor authentication is enabled in your external email account.": [
+        "外部メールアカウントで2要素認証が有効になっています。"
+      ],
       "Use your app password if:": [
         "次の場合にアプリのパスワードを使用してください。"
       ],
@@ -4715,6 +4738,9 @@
       "${ contactsLength } contact": [
         "${ contactsLength } 件の連絡先"
       ],
+      "${ DOCS_APP_NAME } and ${ SHEETS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
+        "${ DOCS_APP_NAME }および${ SHEETS_APP_NAME }のファイルは直接ダウンロードできず、このダウンロードには含まれません。「ダウンロードを続行」をクリックして、他のファイルをダウンロードできます。"
+      ],
       "${ doneCount } finished": [
         "完了 ${ doneCount } 件"
       ],
@@ -4839,7 +4865,7 @@
         "**ステップ2：** あなたの友達は、選択した${ BRAND_NAME }プランを2週間無料で利用できます。"
       ],
       "**Step 2:** Your friends get 2 weeks for free on their plan.": [
-        "**ステップ2：** あなたの友達は、プランを2週間無料でご利用いただけます。"
+        "**ステップ2：** あなたの友人に、2週間分のプランが無料で提供されます。"
       ],
       "**Step 3:** Get ${ referrerRewardAmount } credits for every friend that subscribes to a plan.": [
         "**ステップ3：**友達がプランに登録するたびに、${ referrerRewardAmount } クレジットを獲得できます。"
@@ -6182,6 +6208,9 @@
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "お支払い手続きを完了するために、下のアドレスに ${ btcAmountBold } を送信してください。"
       ],
+      "To download these files, open them in ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME } and export them.": [
+        "これらのファイルをダウンロードするには、${ DOCS_APP_NAME } または ${ SHEETS_APP_NAME } で開き、エクスポートしてください。"
+      ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
         "厳格なプライベート検索を有効にするために、${ DRIVE_APP_NAME } はローカルにファイルのインデックスを作成する必要があります。"
       ],
@@ -6346,6 +6375,9 @@
       ],
       "We are experiencing technical issues. Any albums related actions are temporarily disabled.": [
         "技術的な問題が発生しています。アルバムに関連する操作は一時的に無効になっています。"
+      ],
+      "We couldn't verify ${ nameAuthor } uploaded ${ node.name }. The following may have been tampered with: file data order. Only open if you trust it.": [
+        "${ nameAuthor }様が${ node.name }をアップロードしたことを確認できませんでした。ファイルデータの順序が改ざんされた可能性があります。信頼できる場合のみ開いてください。"
       ],
       "We couldn’t process your payment.": [
         "お支払いを処理できませんでした。"
@@ -6676,6 +6708,17 @@
         "閲覧のみ"
       ]
     },
+    "Into": {
+      "Can edit and manage access": [
+        "編集とアクセス管理が可能"
+      ],
+      "Can view and edit": [
+        "表示と編集が可能"
+      ],
+      "Can view only": [
+        "閲覧のみ"
+      ]
+    },
     "Item": {
       "file attributes": [
         "ファイル属性"
@@ -6770,6 +6813,9 @@
       ],
       "Address": [
         "メールアドレス"
+      ],
+      "Admin": [
+        "管理者"
       ],
       "Alias title": [
         "エイリアスのタイトル"
@@ -7179,8 +7225,14 @@
       "Postal code": [
         "郵便番号"
       ],
+      "Premium domain": [
+        "プレミアムドメイン"
+      ],
       "Proration": [
         "日割り計算"
+      ],
+      "Public domain": [
+        "公開ドメイン"
       ],
       "Public keys": [
         "公開鍵"
@@ -7352,6 +7404,9 @@
       ],
       "Your alias": [
         "あなたのエイリアス"
+      ],
+      "Your domain": [
+        "あなたのドメイン"
       ],
       "Your IP": [
         "お客様のIP"
@@ -7625,6 +7680,50 @@
       ],
       "for ${ price }": [
         "${ price } の場合"
+      ]
+    },
+    "meet_2025: Feature": {
+      "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
+        "${ MEET_APP_NAME }: 最も重要な会話のための機密性の高いビデオ会議"
+      ],
+      "${ n } active meeting at a time": [
+        "一度に${ n }件のミーティングを同時に開催"
+      ],
+      "24 hours per meeting": [
+        "ミーティング1回あたり24時間"
+      ],
+      "60 minutes per meeting": [
+        "ミーティング1回あたり60分"
+      ],
+      "Appointment scheduling": [
+        "日程調整ツール"
+      ],
+      "Browser, mobile, and desktop apps": [
+        "ブラウザ、モバイル、デスクトップアプリ"
+      ],
+      "Built-in chat": [
+        "組み込みチャット"
+      ],
+      "End-to-end encrypted screen sharing and ephemeral in-call chat": [
+        "エンドツーエンドで暗号化された画面共有と通話中の一時的なチャット"
+      ],
+      "Meeting recording (coming soon)": [
+        "ミーティング録画（近日公開）"
+      ],
+      "One active meeting at a time": [
+        "一度に1つのミーティングを開催"
+      ],
+      "Screen-sharing": [
+        "画面共有"
+      ],
+      "Unlimited meetings per day": [
+        "1日あたり無制限のミーティング"
+      ],
+      "Up to ${ n } meeting per day": [
+        "1日あたり最大${ n }件のミーティング"
+      ],
+      "Up to ${ n } participant": [
+        "最大${ n }人の参加者"
       ]
     },
     "Message": {
@@ -8756,6 +8855,9 @@
       "\"${ name }\" deleted": [
         "「${ name }」が削除されました"
       ],
+      "\"${ name }\" deleted permanently": [
+        "「${ name }」が完全に削除されました"
+      ],
       "\"${ name }\" deleted permanently from trash": [
         "「${ name }」がごみ箱から完全に削除されました"
       ],
@@ -8827,6 +8929,9 @@
       ],
       "${ numberOfItems } item deleted": [
         "${ numberOfItems }個のアイテムが削除されました"
+      ],
+      "${ numberOfItems } item deleted permanently": [
+        "${ numberOfItems } 個のアイテムが完全に削除されました"
       ],
       "${ numberOfItems } item deleted permanently from trash": [
         "${ numberOfItems }件のアイテムをごみ箱から完全に削除しました"
@@ -9698,7 +9803,7 @@
         "お支払いが現在処理中です"
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
-        "お客様のサブスクリプションには現在、既存の割引が適用されています。この新しいプロモーションに移行すると、既存の割引は適用されなくなります。"
+        "あなたのサブスクリプションは現在、割引が適用されています。この新しいプロモーションに移行すると、既存の割引は適用されなくなります。"
       ]
     },
     "Payments.Error": {
@@ -12256,26 +12361,23 @@
       "The link expired": [
         "リンクは期限切れです"
       ],
-      "The verification of the encryption keys' signature by the original creator (${ claimedKeyAuthor }) who created the node failed. The reason is: ${ nodeEntity.keyAuthor.error.error }": [
-        "ノードを作成した元の作成者 (${ claimedKeyAuthor }) による暗号鍵の署名の検証に失敗しました。理由は次のとおりです: ${ nodeEntity.keyAuthor.error.error }"
-      ],
-      "The verification of the file's content signature by the uploader (${ claimedContentAuthor }) who uploaded the last revision failed. The reason is: ${ activeRevision.contentAuthor.error.error }": [
-        "最終リビジョンをアップロードしたアップローダー (${ claimedContentAuthor }) によるファイルのコンテンツ署名の検証に失敗しました。理由は次のとおりです: ${ activeRevision.contentAuthor.error.error }"
-      ],
-      "The verification of the name's signature by author (${ claimedNameAuthor }) who set the name the last time failed. The reason is: ${ nodeEntity.nameAuthor.error.error }": [
-        "最後にその名前を設定した著者 (${ claimedNameAuthor }) による名前の署名の検証に失敗しました。理由は次のとおりです: ${ nodeEntity.nameAuthor.error.error }"
-      ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "このファイルには、署名が存在しないか無効です。メニュー (⋮) → 詳細で、情報を確認できます。"
       ],
       "This folder has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "このフォルダーには、署名が存在しないか無効です。メニュー (⋮) → 詳細で、情報を確認できます。"
       ],
+      "This is likely due to the account or address having been deleted.": [
+        "アカウントまたはアドレスの削除が原因だと思われます。"
+      ],
       "This link is password protected": [
         "このリンクはパスワード保護されています"
       ],
       "Time": [
         "時間"
+      ],
+      "To preview this spreadsheet, download it.": [
+        "このスプレッドシートをプレビューするには、ダウンロードしてください。"
       ],
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "このスプレッドシートを表示するには、 ${ SHEETS_APP_NAME } で開くか、ダウンロードしてください。"
@@ -12385,6 +12487,15 @@
       "We couldn’t verify that an anonymous user uploaded this folder.": [
         "匿名ユーザーがこのフォルダーをアップロードしたことを検証できませんでした。"
       ],
+      "We weren’t able to confirm that the file content was uploaded by ${ claimedContentAuthor }. The reason is: ${ activeRevision.contentAuthor.error.error }": [
+        "${ claimedContentAuthor } によるファイルのアップロードが確認できませんでした。エラー内容：${ activeRevision.contentAuthor.error.error }"
+      ],
+      "We weren’t able to confirm that the name was created or modified by ${ claimedNameAuthor }. The reason is: ${ nodeEntity.nameAuthor.error.error }": [
+        "${ claimedNameAuthor } による名称の作成・更新が確認できませんでした。エラー内容：${ nodeEntity.nameAuthor.error.error }"
+      ],
+      "We weren’t able to confirm that the node was created by ${ claimedKeyAuthor }. The reason is: ${ nodeEntity.keyAuthor.error.error }": [
+        "${ claimedKeyAuthor } によるノード作成が確認できませんでした。エラー内容：${ nodeEntity.keyAuthor.error.error }"
+      ],
       "Welcome offer": [
         "ウェルカム特典"
       ],
@@ -12432,6 +12543,9 @@
       ],
       "Your changes are not synced yet": [
         "変更は同期されていません"
+      ],
+      "Your download includes ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME } files": [
+        "ダウンロードには ${ DOCS_APP_NAME } または ${ SHEETS_APP_NAME } ファイルが含まれています"
       ],
       "Your exposed information": [
         "あなたの公開情報"
@@ -12548,7 +12662,7 @@
     },
     "tooltip": {
       "${ LUMO_APP_NAME }: AI assistant that respects your privacy": [
-        "${ LUMO_APP_NAME }: お客様のプライバシーを尊重するAIアシスタント"
+        "プライバシー重視のAIアシスタント、${ LUMO_APP_NAME }"
       ],
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: すべてのデバイスで安全なログインを実現します。 無制限のエイリアス、共有、統合 2要素認証 などが含まれます。"

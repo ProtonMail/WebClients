@@ -5707,9 +5707,6 @@
       ]
     },
     "fido2: Error": {
-      "Please disable 2FA via security key before disabling TOTP": [
-        "Kapcsolja ki a hitelesítési kulccsal való kétlépcsős hitelesítést a TOTP kikapcsolása előtt"
-      ],
       "Something went wrong authenticating with your security key. Please try again.": [
         "Hiba történt a hitelesítési kulccsal való azonosítás közben. Próbálja meg újra."
       ],
@@ -5750,9 +5747,6 @@
       ],
       "This will delete all security keys linked to your account.": [
         "Ez minden hitelesítési kulcsot töröl a fiókjából."
-      ],
-      "To turn on 2FA via security key, you'll need to activate 2FA via authenticator app": [
-        "A hitelesítési kulccsal való kétlépcsős hitelesítést, hitelesítő alkalmazáson keresztül kell aktiválnia"
       ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "Azonosítsa magát egy fizikai U2F vagy FIDO2 hitelesítési kulccsal"

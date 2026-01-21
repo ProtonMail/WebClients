@@ -1627,6 +1627,9 @@
       "Payments problem": [
         "Problém s platbami"
       ],
+      "Sheets problem": [
+        "Problém s hárkom"
+      ],
       "Sign in problem": [
         "Problém s prihlásením"
       ],
@@ -4900,6 +4903,9 @@
         "${ contactsLength } kontaktov",
         "${ contactsLength } kontaktov"
       ],
+      "${ DOCS_APP_NAME } and ${ SHEETS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
+        "Súbory v ${ DOCS_APP_NAME } a ${ SHEETS_APP_NAME } nie je možné stiahnuť priamo a nebudú zahrnuté do tohto sťahovania. Ostatné súbory si môžete stiahnuť kliknutím na tlačidlo 'Pokračovať v sťahovaní'."
+      ],
       "${ doneCount } finished": [
         "${ doneCount } dokončený",
         "${ doneCount } dokončené",
@@ -6469,6 +6475,9 @@
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Na dokončenie platby pošlite ${ btcAmountBold } na nižšie uvedenú adresu."
       ],
+      "To download these files, open them in ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME } and export them.": [
+        "Ak chcete tieto súbory stiahnuť, otvorte ich v aplikácii ${ DOCS_APP_NAME } alebo ${ SHEETS_APP_NAME } a exportujte ich."
+      ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
         "Na povolenie skutočne súkromného vyhľadávania musí ${ DRIVE_APP_NAME } indexovať vaše súbory lokálne."
       ],
@@ -7525,8 +7534,14 @@
       "Postal code": [
         "PSČ"
       ],
+      "Premium domain": [
+        "Prémiová doména"
+      ],
       "Proration": [
         "Pomerná časť"
+      ],
+      "Public domain": [
+        "Verejná doména"
       ],
       "Public keys": [
         "Verejné kľúče"
@@ -7698,6 +7713,9 @@
       ],
       "Your alias": [
         "Váš alias"
+      ],
+      "Your domain": [
+        "Vaša doména"
       ],
       "Your IP": [
         "Vaša IP"
@@ -9251,6 +9269,9 @@
       "\"${ name }\" deleted": [
         "\"${ name } bol vymazaný"
       ],
+      "\"${ name }\" deleted permanently": [
+        "\"${ name }\" natrvalo vymazaná"
+      ],
       "\"${ name }\" deleted permanently from trash": [
         "„${ name }“ trvalo zmazané z koša"
       ],
@@ -9349,6 +9370,12 @@
         "${ numberOfItems } položky vymazané",
         "${ numberOfItems } položiek vymazaných",
         "${ numberOfItems } položiek vymazaných"
+      ],
+      "${ numberOfItems } item deleted permanently": [
+        "${ numberOfItems } položka natrvalo vymazaná",
+        "${ numberOfItems } položky natrvalo zmazané",
+        "${ numberOfItems } položiek natrvalo zmazaných",
+        "${ numberOfItems } položiek natrvalo zmazaných"
       ],
       "${ numberOfItems } item deleted permanently from trash": [
         "${ numberOfItems } položka natrvalo odstránená z koša",
@@ -13015,26 +13042,23 @@
       "The link expired": [
         "Platnosť odkazu vypršala"
       ],
-      "The verification of the encryption keys' signature by the original creator (${ claimedKeyAuthor }) who created the node failed. The reason is: ${ nodeEntity.keyAuthor.error.error }": [
-        "Overenie podpisu šifrovacích kľúčov pôvodným tvorcom (${ claimedKeyAuthor }), ktorý vytvoril uzol zlyhalo. Dôvodom je: ${ nodeEntity.keyAuthor.error.error }"
-      ],
-      "The verification of the file's content signature by the uploader (${ claimedContentAuthor }) who uploaded the last revision failed. The reason is: ${ activeRevision.contentAuthor.error.error }": [
-        "Overenie podpisu obsahu súboru nahraného používateľom (${ claimedContentAuthor }), ktorý nahral poslednú revíziu zlyhalo. Dôvod: ${ activeRevision.contentAuthor.error.error }"
-      ],
-      "The verification of the name's signature by author (${ claimedNameAuthor }) who set the name the last time failed. The reason is: ${ nodeEntity.nameAuthor.error.error }": [
-        "Overenie podpisu mena autorom (${ claimedNameAuthor }), ktorý meno naposledy nastavil zlyhalo. Dôvod: ${ nodeEntity.nameAuthor.error.error }"
-      ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "Tento súbor má chýbajúci alebo neplatný podpis. Pre informácie prejdite do Menu (⋮) → Podrobnosti."
       ],
       "This folder has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "Tento priečinok má chýbajúci alebo neplatný podpis. Pre viac informácií prejdite do Menu (⋮) → Podrobnosti."
       ],
+      "This is likely due to the account or address having been deleted.": [
+        "Je to pravdepodobne spôsobené tým, že účet alebo adresa boli vymazané."
+      ],
       "This link is password protected": [
         "Tento odkaz je chránený heslom"
       ],
       "Time": [
         "Čas"
+      ],
+      "To preview this spreadsheet, download it.": [
+        "Pre zobrazenie ukážky tejto tabuľky si ju stiahnite."
       ],
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "Ak chcete zobraziť náhľad tejto tabuľky, otvorte ju v aplikácii ${ SHEETS_APP_NAME } alebo si ju stiahnite."
@@ -13144,6 +13168,15 @@
       "We couldn’t verify that an anonymous user uploaded this folder.": [
         "Nemohli sme overiť, že anonymný používateľ nahral tento priečinok."
       ],
+      "We weren’t able to confirm that the file content was uploaded by ${ claimedContentAuthor }. The reason is: ${ activeRevision.contentAuthor.error.error }": [
+        "Nepodarilo sa nám potvrdiť, že obsah súboru nahral používateľ ${ claimedContentAuthor }. Dôvod: ${ activeRevision.contentAuthor.error.error }"
+      ],
+      "We weren’t able to confirm that the name was created or modified by ${ claimedNameAuthor }. The reason is: ${ nodeEntity.nameAuthor.error.error }": [
+        "Nepodarilo sa nám potvrdiť, že názov vytvoril alebo upravil používateľ ${ claimedNameAuthor }. Dôvod: ${ nodeEntity.nameAuthor.error.error }"
+      ],
+      "We weren’t able to confirm that the node was created by ${ claimedKeyAuthor }. The reason is: ${ nodeEntity.keyAuthor.error.error }": [
+        "Nepodarilo sa nám potvrdiť, že uzol vytvoril používateľ ${ claimedKeyAuthor }. Dôvod: ${ nodeEntity.keyAuthor.error.error }"
+      ],
       "Welcome offer": [
         "Uvítacia ponuka"
       ],
@@ -13191,6 +13224,9 @@
       ],
       "Your changes are not synced yet": [
         "Vaše zmeny zatiaľ nie sú synchronizované"
+      ],
+      "Your download includes ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME } files": [
+        "Vaše stiahnutie obsahuje súbory ${ DOCS_APP_NAME } alebo ${ SHEETS_APP_NAME }."
       ],
       "Your exposed information": [
         "Vaše odhalené informácie"

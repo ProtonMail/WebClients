@@ -1225,6 +1225,9 @@
       "Save": [
         "Gem"
       ],
+      "Save preferences": [
+        "Gem præferencer"
+      ],
       "Saving${ ellipsis }": [
         "Gemmer${ ellipsis }"
       ],
@@ -1480,9 +1483,6 @@
       "Toggle Contacts app": [
         "Skift Kontakt-app"
       ],
-      "Toggle notifications": [
-        "Slå notifikationer til/fra"
-      ],
       "Toggle referral": [
         "Slå henvisning til/fra"
       ],
@@ -1505,7 +1505,8 @@
         "Hav tillid til"
       ],
       "Trust key": [
-        "Stol på nøgle"
+        "Betroet nøgle",
+        "Betroede nøgler"
       ],
       "Trust public key": [
         "Hav tillid til offentlig nøgle"
@@ -7406,8 +7407,7 @@
         "Igangsætter..."
       ],
       "Insert image": [
-        "Indsæt billede",
-        "Indsæt billeder"
+        "Indsæt billede"
       ],
       "Insert link": [
         "Indsæt link"
@@ -7844,6 +7844,9 @@
       ],
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Kontakt os for at få hjælp til hvad som helst ${ BRAND_NAME }."
+      ],
+      "Receive notifications for ${ categoryLabel }": [
+        "Modtag notifikationer for ${ categoryLabel }"
       ],
       "Recipient: ": [
         "Modtager: "
@@ -9271,6 +9274,9 @@
       "Cash": [
         "Kontant"
       ],
+      "Categories": [
+        "Kategorier"
+      ],
       "Categories badge": [
         "Kategorimærke"
       ],
@@ -9634,6 +9640,9 @@
       "Notification": [
         "Notifikation"
       ],
+      "Notifications": [
+        "Notifikationer"
+      ],
       "Notifications are disabled, to enable them change the browser settings.": [
         "Noter er deaktiverede, for at aktivere dem skal browserens indstillinger ændres."
       ],
@@ -9700,6 +9709,9 @@
       "Postal code": [
         "Postnummer"
       ],
+      "Premium domain": [
+        "Premium domæne"
+      ],
       "Primary": [
         "Primær"
       ],
@@ -9708,6 +9720,9 @@
       ],
       "Proration": [
         "Proration"
+      ],
+      "Public domain": [
+        "Offentligt domæne"
       ],
       "Public keys": [
         "Offentlige nøgler"
@@ -9742,8 +9757,8 @@
       "Search in": [
         "Søg i"
       ],
-      "Select the categories to include, and enable notifications to be alerted about new emails in a category.": [
-        "Vælg de kategorier, der skal inkluderes, og aktivér notifikationer for at blive orienteret om nye e-mails i en kategori."
+      "Select the categories to include and manage notifications for new emails.": [
+        "Vælg de kategorier, der skal inkluderes, og administrer notifikationer for nye e-mails."
       ],
       "Send auto-reply": [
         "Send auto-svar"
@@ -9894,6 +9909,9 @@
       ],
       "Your alias": [
         "Dit alias"
+      ],
+      "Your domain": [
+        "Dit domæne"
       ],
       "Your IP": [
         "Din IP"
@@ -14040,7 +14058,7 @@
         "Dit ${ planName }-abonnement beskytter ikke bare din virksomheds data og kommunikation. Den understøtter dine overholdelsesmål, får din virksomhed til at skille sig ud og holder dit team forbundet."
       ],
       "Your own short @pm.me email alias": [
-        "Dit eget korte @pm.me e-mail-alias"
+        "Dit eget korte @pm.me e-mailalias"
       ]
     },
     "subscription reminder": {

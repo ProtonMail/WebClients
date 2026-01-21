@@ -1441,7 +1441,7 @@
         "creeu un compte gratuïtament"
       ],
       "Signing in": [
-        "Iniciant sessió"
+        "S'està iniciant la sessió"
       ],
       "Size": [
         "Mida"
@@ -7480,9 +7480,6 @@
       ]
     },
     "fido2: Error": {
-      "Please disable 2FA via security key before disabling TOTP": [
-        "Desactiveu l'A2F amb la clau de seguretat abans de desactivar TOTP."
-      ],
       "Something went wrong authenticating with your security key. Please try again.": [
         "Alguna cosa ha anat malament en autenticar-se amb la vostra clau de seguretat. Torneu-ho a provar."
       ],
@@ -7523,9 +7520,6 @@
       ],
       "This will delete all security keys linked to your account.": [
         "Això eliminarà totes les claus de seguretat vinculades al vostre compte."
-      ],
-      "To turn on 2FA via security key, you'll need to activate 2FA via authenticator app": [
-        "Per activar l'A2F amb una clau de seguretat, haureu d'activar primer l'A2F mitjançant l'aplicació d'autenticació."
       ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "Confirmeu la vostra identitat amb una clau de seguretat física U2F o FIDO2."

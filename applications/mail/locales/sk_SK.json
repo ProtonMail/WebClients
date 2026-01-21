@@ -1233,6 +1233,9 @@
       "Save": [
         "Uložiť"
       ],
+      "Save preferences": [
+        "Uložiť preferencie"
+      ],
       "Saving${ ellipsis }": [
         "Ukladanie${ ellipsis }"
       ],
@@ -1488,9 +1491,6 @@
       "Toggle Contacts app": [
         "Prepnúť na aplikáciu Kontakty"
       ],
-      "Toggle notifications": [
-        "Prepnúť notifikácie"
-      ],
       "Toggle referral": [
         "Prepnúť odporúčanie"
       ],
@@ -1513,7 +1513,10 @@
         "Dôverovať"
       ],
       "Trust key": [
-        "Dôveryhodný kľúč"
+        "Dôveryhodný kľúč",
+        "Dôveryhodné kľúče",
+        "Dôveryhodné kľúče",
+        "Dôveryhodné kľúče"
       ],
       "Trust public key": [
         "Dôverovať verejnému kľúču"
@@ -2198,6 +2201,9 @@
       ],
       "Payments problem": [
         "Problém s platbami"
+      ],
+      "Sheets problem": [
+        "Problém s hárkom"
       ],
       "Sign in problem": [
         "Problém s prihlásením"
@@ -7639,10 +7645,7 @@
         "Inicializácia…"
       ],
       "Insert image": [
-        "Vložiť obrázok",
-        "Vložiť obrázky",
-        "Vložiť obrázky",
-        "Vložiť obrázky"
+        "Vložiť obrázok"
       ],
       "Insert link": [
         "Vložiť odkaz"
@@ -8081,6 +8084,9 @@
       ],
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Obráťte sa na nás, ak potrebujete pomoc s čímkoľvek od ${ BRAND_NAME }."
+      ],
+      "Receive notifications for ${ categoryLabel }": [
+        "Prijímať upozornenia pre kategóriu ${ categoryLabel }"
       ],
       "Recipient: ": [
         "Príjemca: "
@@ -9568,6 +9574,9 @@
       "Cash": [
         "Hotovosť"
       ],
+      "Categories": [
+        "Kategórie"
+      ],
       "Categories badge": [
         "Odznak kategórií"
       ],
@@ -9931,6 +9940,9 @@
       "Notification": [
         "Notifikácia"
       ],
+      "Notifications": [
+        "Notifikácie"
+      ],
       "Notifications are disabled, to enable them change the browser settings.": [
         "Notifikácie sú deaktivované. Ak ich chcete povoliť, zmeňte nastavenia prehliadača."
       ],
@@ -9997,6 +10009,9 @@
       "Postal code": [
         "PSČ"
       ],
+      "Premium domain": [
+        "Prémiová doména"
+      ],
       "Primary": [
         "Primárne"
       ],
@@ -10005,6 +10020,9 @@
       ],
       "Proration": [
         "Pomerná časť"
+      ],
+      "Public domain": [
+        "Verejná doména"
       ],
       "Public keys": [
         "Verejné kľúče"
@@ -10039,8 +10057,8 @@
       "Search in": [
         "Hľadať v"
       ],
-      "Select the categories to include, and enable notifications to be alerted about new emails in a category.": [
-        "Vyberte kategórie, ktoré chcete zahrnúť, a povoľte notifikácie, aby ste boli upozornení na nové emaily v kategórii."
+      "Select the categories to include and manage notifications for new emails.": [
+        "Vyberte kategórie, ktoré chcete zahrnúť, a spravujte notifikácie na nové emaily."
       ],
       "Send auto-reply": [
         "Poslať automatickú odpoveď"
@@ -10191,6 +10209,9 @@
       ],
       "Your alias": [
         "Váš alias"
+      ],
+      "Your domain": [
+        "Vaša doména"
       ],
       "Your IP": [
         "Vaša IP"
@@ -16106,6 +16127,9 @@
       ],
       "To": [
         "Pre"
+      ],
+      "To preview this spreadsheet, download it.": [
+        "Pre zobrazenie ukážky tejto tabuľky si ju stiahnite."
       ],
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "Ak chcete zobraziť náhľad tejto tabuľky, otvorte ju v aplikácii ${ SHEETS_APP_NAME } alebo si ju stiahnite."

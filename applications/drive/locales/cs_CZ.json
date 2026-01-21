@@ -3842,7 +3842,7 @@
         "Některé z vašich sdílených položek se nám nepodařilo načíst"
       ],
       "We were not able to load the folder contents": [
-        "Nepodařilo se nám načíst obsahy složky"
+        "Nepodařilo se nám načíst obsah složky"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Nemůžete odeslat e-mail více než ${ maxContacts } příjemci najednou",
@@ -4659,10 +4659,10 @@
         "Bylo zadáno příliš mnoho požadavků. Zkuste to za pár minut."
       ],
       "Two-factor authentication is enabled in your external account.": [
-        "Ve vašem externím účtu je aktivní dvoufaktorové ověření."
+        "Ve vašem externím účtu je povoleno dvoufázové ověřování."
       ],
       "Two-factor authentication is enabled in your external email account.": [
-        "Ve vašem externím e-mailovém účtu je aktivní dvoufaktorové ověření."
+        "Ve vašem externím e-mailovém účtu je povoleno dvoufázové ověřování."
       ],
       "Use your app password if:": [
         "Použijte heslo aplikace, pokud:"
@@ -7534,8 +7534,14 @@
       "Postal code": [
         "PSČ"
       ],
+      "Premium domain": [
+        "Prémiová doména"
+      ],
       "Proration": [
         "Prorace"
+      ],
+      "Public domain": [
+        "Veřejná doména"
       ],
       "Public keys": [
         "Veřejné klíče"
@@ -7707,6 +7713,9 @@
       ],
       "Your alias": [
         "Váš alias"
+      ],
+      "Your domain": [
+        "Vaše doména"
       ],
       "Your IP": [
         "Vaše IP"
@@ -9260,6 +9269,9 @@
       "\"${ name }\" deleted": [
         "\"${ name }\" smazáno"
       ],
+      "\"${ name }\" deleted permanently": [
+        "\"${ name }\" trvale smazán"
+      ],
       "\"${ name }\" deleted permanently from trash": [
         "\"${ name }\" trvale odstraněno z koše"
       ],
@@ -9358,6 +9370,12 @@
         "${ numberOfItems } položky smazány",
         "${ numberOfItems } položek smazáno",
         "${ numberOfItems } položek smazáno"
+      ],
+      "${ numberOfItems } item deleted permanently": [
+        "${ numberOfItems } položka trvale smazána",
+        "${ numberOfItems } položky trvale smazány",
+        "${ numberOfItems } položek trvale smazáno",
+        "${ numberOfItems } položek trvale smazáno"
       ],
       "${ numberOfItems } item deleted permanently from trash": [
         "${ numberOfItems } položka trvale odstraněna z koše",
@@ -13024,20 +13042,14 @@
       "The link expired": [
         "Platnost odkazu vypršela"
       ],
-      "The verification of the encryption keys' signature by the original creator (${ claimedKeyAuthor }) who created the node failed. The reason is: ${ nodeEntity.keyAuthor.error.error }": [
-        "Ověření podpisu šifrovacích klíčů původním tvůrcem (${ claimedKeyAuthor }), který vytvořil uzel, selhalo. Důvodem je: ${ nodeEntity.keyAuthor.error.error }"
-      ],
-      "The verification of the file's content signature by the uploader (${ claimedContentAuthor }) who uploaded the last revision failed. The reason is: ${ activeRevision.contentAuthor.error.error }": [
-        "Ověření podpisu obsahu souboru nahrávajícím (${ claimedContentAuthor }), který nahrál poslední revizi, selhalo. Důvodem je: ${ activeRevision.contentAuthor.error.error }"
-      ],
-      "The verification of the name's signature by author (${ claimedNameAuthor }) who set the name the last time failed. The reason is: ${ nodeEntity.nameAuthor.error.error }": [
-        "Ověření podpisu názvu autorem (${ claimedNameAuthor }), který název nastavil naposledy, selhalo. Důvodem je: ${ nodeEntity.nameAuthor.error.error }"
-      ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "Tento soubor má chybějící nebo neplatný podpis. Běžte do Menu (⋮) → Detaily pro info."
       ],
       "This folder has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "Tato složka má chybějící nebo neplatný podpis. Běžte do Menu (⋮) → Detaily pro info."
+      ],
+      "This is likely due to the account or address having been deleted.": [
+        "Je to pravděpodobně proto, že účet nebo adresa byly smazány."
       ],
       "This link is password protected": [
         "Odkaz je chráněn heslem"
@@ -13046,7 +13058,7 @@
         "Čas"
       ],
       "To preview this spreadsheet, download it.": [
-        "Pro otevření náhledu této tabulky si ji stáhněte."
+        "Chcete-li si tuto tabulku prohlédnout, stáhněte si ji."
       ],
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "Chcete-li si tuto tabulku prohlédnout, otevřete ji v aplikaci ${ SHEETS_APP_NAME } nebo ji stáhněte."
@@ -13155,6 +13167,15 @@
       ],
       "We couldn’t verify that an anonymous user uploaded this folder.": [
         "Nepodařilo se nám ověřit, že anonymní uživatel nahrál tuto složku."
+      ],
+      "We weren’t able to confirm that the file content was uploaded by ${ claimedContentAuthor }. The reason is: ${ activeRevision.contentAuthor.error.error }": [
+        "Nepodařilo se nám potvrdit, že obsah souboru nahrál uživatel ${ claimedContentAuthor }. Důvod: ${ activeRevision.contentAuthor.error.error }"
+      ],
+      "We weren’t able to confirm that the name was created or modified by ${ claimedNameAuthor }. The reason is: ${ nodeEntity.nameAuthor.error.error }": [
+        "Nepodařilo se nám potvrdit, že název byl vytvořen nebo upraven uživatelem ${ claimedNameAuthor }. Důvod: ${ nodeEntity.nameAuthor.error.error }"
+      ],
+      "We weren’t able to confirm that the node was created by ${ claimedKeyAuthor }. The reason is: ${ nodeEntity.keyAuthor.error.error }": [
+        "Nepodařilo se nám potvrdit, že objekt byl vytvořen uživatelem ${ claimedKeyAuthor }. Důvod: ${ nodeEntity.keyAuthor.error.error }"
       ],
       "Welcome offer": [
         "Uvítací nabídka"

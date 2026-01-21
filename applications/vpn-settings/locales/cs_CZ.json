@@ -5064,9 +5064,6 @@
       ]
     },
     "fido2: Error": {
-      "Please disable 2FA via security key before disabling TOTP": [
-        "Před deaktivací TOTP deaktivujte 2FA pomocí bezpečnostního klíče"
-      ],
       "Something went wrong authenticating with your security key. Please try again.": [
         "Při ověřování pomocí bezpečnostního klíče se něco pokazilo. Zkuste to prosím znovu."
       ],
@@ -5107,9 +5104,6 @@
       ],
       "This will delete all security keys linked to your account.": [
         "Tím odstraníte všechny bezpečnostní klíče spojené s vaším účtem."
-      ],
-      "To turn on 2FA via security key, you'll need to activate 2FA via authenticator app": [
-        "Chcete-li zapnout 2FA prostřednictvím bezpečnostního klíče, musíte aktivovat 2FA prostřednictvím autentizační aplikace"
       ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "Ověřte svou identitu pomocí fyzického bezpečnostního klíče U2F nebo FIDO2"
@@ -5672,10 +5666,10 @@
         "Bylo zadáno příliš mnoho požadavků. Zkuste to za pár minut."
       ],
       "Two-factor authentication is enabled in your external account.": [
-        "Ve vašem externím účtu je aktivní dvoufaktorové ověření."
+        "Ve vašem externím účtu je povoleno dvoufázové ověřování."
       ],
       "Two-factor authentication is enabled in your external email account.": [
-        "Ve vašem externím e-mailovém účtu je aktivní dvoufaktorové ověření."
+        "Ve vašem externím e-mailovém účtu je povoleno dvoufázové ověřování."
       ],
       "Use your app password if:": [
         "Použijte heslo aplikace, pokud:"
@@ -16200,7 +16194,7 @@
         "Aplikace a služby třetí strany"
       ],
       "To preview this spreadsheet, download it.": [
-        "Pro otevření náhledu této tabulky si ji stáhněte."
+        "Chcete-li si tuto tabulku prohlédnout, stáhněte si ji."
       ],
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "Chcete-li si tuto tabulku prohlédnout, otevřete ji v aplikaci ${ SHEETS_APP_NAME } nebo ji stáhněte."

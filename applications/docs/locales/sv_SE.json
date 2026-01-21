@@ -1363,6 +1363,9 @@
       ],
       "High-speed chats and advanced AI features.": [
         "Chattar med hög hastighet och avancerade AI-funktioner."
+      ],
+      "Private video calls for the conversations that matter.": [
+        "Privata videosamtal för de konversationer som är viktiga."
       ]
     },
     "color": {
@@ -3860,6 +3863,12 @@
       "Too many recent requests. Please try again in a few moments.": [
         "För många förfrågningar. Försök igen lite senare."
       ],
+      "Two-factor authentication is enabled in your external account.": [
+        "Tvåfaktorsautentisering är aktiverat i ditt externa konto."
+      ],
+      "Two-factor authentication is enabled in your external email account.": [
+        "Tvåfaktorsautentisering är aktiverat i ditt externa e-postkonto."
+      ],
       "Use your app password if:": [
         "Använd ditt applösenord om:"
       ],
@@ -5237,6 +5246,12 @@
         "Du kommer sedan att faktureras varje ${ renewCycle } månad med ${ renewAmountStr }.",
         "Du kommer sedan att faktureras var ${ renewCycle }:e månad med ${ renewAmountStr }."
       ],
+      "You're about to decline the invitation to join the ${ invitationName } folder. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+        "Du är på väg att avböja inbjudan att gå med i mappen ${ invitationName }. Om du fortsätter kommer du inte att kunna komma åt den om inte ägaren bjuder in dig igen. Är du säker på att du vill fortsätta?"
+      ],
+      "You're about to decline the invitation to join the ${ invitationName } item. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+        "Du är på väg att avböja inbjudan att gå med i objektet ${ invitationName }. Om du fortsätter kommer du inte att kunna komma åt det om inte ägaren bjuder in dig igen. Är du säker på att du vill fortsätta?"
+      ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "Du har nått det maximala antalet adresser i kontaktgruppen/kontaktgrupperna:"
       ],
@@ -5728,6 +5743,12 @@
       "Postal code": [
         "Postnummer"
       ],
+      "Premium domain": [
+        "Premiumdomän"
+      ],
+      "Public domain": [
+        "Offentlig domän"
+      ],
       "Public keys": [
         "Offentliga nycklar"
       ],
@@ -5826,6 +5847,9 @@
       ],
       "Your alias": [
         "Ditt alias"
+      ],
+      "Your domain": [
+        "Din domän"
       ],
       "Your IP": [
         "Din IP"
@@ -6061,6 +6085,13 @@
       ]
     },
     "meet_2025: Feature": {
+      "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
+        "${ MEET_APP_NAME }: Konfidentiella videokonferenser för de konversationer som är viktiga"
+      ],
+      "${ n } active meeting at a time": [
+        "${ n } aktivt möte åt gången",
+        "${ n } aktiva möten åt gången"
+      ],
       "24 hours per meeting": [
         "24 timmar per möte"
       ],
@@ -6075,6 +6106,9 @@
       ],
       "Meeting recording (coming soon)": [
         "Mötesinspelning (kommer snart)"
+      ],
+      "One active meeting at a time": [
+        "Ett aktivt möte åt gången"
       ],
       "Screen-sharing": [
         "Skärmdelning"

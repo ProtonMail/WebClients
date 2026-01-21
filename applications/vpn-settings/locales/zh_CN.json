@@ -1478,6 +1478,9 @@
       ]
     },
     "Billing cycle": {
+      "Renews automatically at ${ renewPrice }, for ${ renewCycle } month": [
+        "将以 ${ renewPrice } 的价格自动续订，续订时长为 ${ renewCycle } 个月"
+      ],
       "Renews automatically on ${ subscriptionManagerName }": [
         "将以 ${ subscriptionManagerName } 的价格自动续期"
       ]
@@ -1623,6 +1626,9 @@
       ],
       "Payments problem": [
         "支付问题"
+      ],
+      "Sheets problem": [
+        "表格问题"
       ],
       "Sign in problem": [
         "登录问题"
@@ -4499,9 +4505,6 @@
       ]
     },
     "fido2: Error": {
-      "Please disable 2FA via security key before disabling TOTP": [
-        "在禁用 TOTP 之前，请通过安全密钥禁用 2FA"
-      ],
       "Something went wrong authenticating with your security key. Please try again.": [
         "使用安全密钥进行身份验证时出错。请重试。"
       ],
@@ -4542,9 +4545,6 @@
       ],
       "This will delete all security keys linked to your account.": [
         "此操作将删除您的账户关联的所有安全密钥。"
-      ],
-      "To turn on 2FA via security key, you'll need to activate 2FA via authenticator app": [
-        "要通过安全密钥打开 2FA，您需要通过验证器应用程序激活 2FA。"
       ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "使用 U2F 或 FIDO2 物理安全密钥验证身份"
@@ -7712,6 +7712,12 @@
       "(Temporarily unavailable. Please check back later.)": [
         "（暂时不可用。请稍后再试。）"
       ],
+      "0 of 1 email address available": [
+        "0 个电子邮件地址可用"
+      ],
+      "1 of 1 email address available": [
+        "1 个电子邮件地址可用"
+      ],
       "Account holder": [
         "账户持有人"
       ],
@@ -8026,6 +8032,9 @@
       ],
       "Gateway name": [
         "网关名称"
+      ],
+      "Get the deal": [
+        "获取优惠"
       ],
       "Gift code": [
         "礼品码"
@@ -10627,6 +10636,9 @@
       "Advanced account protection": [
         "高级账户保护"
       ],
+      "File attachments (up to 10GB)": [
+        "文件附件（最高 10GB）"
+      ],
       "Team policies": [
         "团队政策"
       ]
@@ -10830,6 +10842,9 @@
       ],
       "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
         "专享折扣价仅限首月有效。本优惠券适用于 ${ couponRedemptions } 次续费周期。之后将自动以 1 个月 ${ renewPriceStr } 的价格续费，您可以随时取消。"
+      ],
+      "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
+        "特别优惠价仅在首月有效。之后将每月自动以${ renewPriceStr }的价格续订。您可以随时取消。"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "Proton 用户的专属优惠：${ priceWithDiscount }特惠价格仅限订阅前${ subscriptionLength }个月有效。"
@@ -14328,7 +14343,7 @@
         "升级以保留您的高级权益。"
       ],
       "Upgrade your network protection with dedicated servers": [
-        "使用专用服务器升级宁的网络保护"
+        "使用专用服务器进一步提升您的网络防护等级"
       ],
       "Upgrade your privacy": [
         "提升隐私保护"

@@ -7483,9 +7483,6 @@
       ]
     },
     "fido2: Error": {
-      "Please disable 2FA via security key before disabling TOTP": [
-        "Veuillez désactiver l'authentification A2F via la clé de sécurité avant de désactiver TOTP."
-      ],
       "Something went wrong authenticating with your security key. Please try again.": [
         "Une erreur s'est produite lors de l'authentification avec votre clé de sécurité. Nous vous invitons à réessayer."
       ],
@@ -7526,9 +7523,6 @@
       ],
       "This will delete all security keys linked to your account.": [
         "Cela supprimera toutes les clés de sécurité liées à votre compte."
-      ],
-      "To turn on 2FA via security key, you'll need to activate 2FA via authenticator app": [
-        "Pour activer l'authentification A2F par clé de sécurité, vous devrez l'activer via votre application d'authentification."
       ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "Confirmez votre identité avec une clé de sécurité physique U2F ou FIDO2."

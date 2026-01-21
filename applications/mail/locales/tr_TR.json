@@ -1225,6 +1225,9 @@
       "Save": [
         "Kaydet"
       ],
+      "Save preferences": [
+        "Ayarları kaydet"
+      ],
       "Saving${ ellipsis }": [
         "Kaydediliyor${ ellipsis }"
       ],
@@ -1480,9 +1483,6 @@
       "Toggle Contacts app": [
         "Kişiler uygulamasına geç"
       ],
-      "Toggle notifications": [
-        "Bildirimleri aç/kapat"
-      ],
       "Toggle referral": [
         "Öneriyi aç/kapat"
       ],
@@ -1505,7 +1505,8 @@
         "Güven"
       ],
       "Trust key": [
-        "Anahtara güven"
+        "Güvenilen anahtar",
+        "Güvenilen anahtarlar"
       ],
       "Trust public key": [
         "Herkese açık anahtara güven"
@@ -7406,8 +7407,7 @@
         "Hazırlanıyor…"
       ],
       "Insert image": [
-        "Görsel ekle",
-        "Görseller ekle"
+        "Görsel ekle"
       ],
       "Insert link": [
         "Bağlantı ekle"
@@ -7844,6 +7844,9 @@
       ],
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "${ BRAND_NAME } ile ilgili her konuda yardım almak için bizimle görüşün."
+      ],
+      "Receive notifications for ${ categoryLabel }": [
+        "${ categoryLabel } için bildirimler al"
       ],
       "Recipient: ": [
         "Alıcı: "
@@ -9271,6 +9274,9 @@
       "Cash": [
         "Nakit"
       ],
+      "Categories": [
+        "Kategoriler"
+      ],
       "Categories badge": [
         "Kategoriler etiketi"
       ],
@@ -9634,6 +9640,9 @@
       "Notification": [
         "Bildirim"
       ],
+      "Notifications": [
+        "Bildirimler"
+      ],
       "Notifications are disabled, to enable them change the browser settings.": [
         "Bildirimler kapatılmış. Bunları açmak için tarayıcı ayarlarını değiştirin."
       ],
@@ -9700,6 +9709,9 @@
       "Postal code": [
         "Posta kodu"
       ],
+      "Premium domain": [
+        "Ücretli etki alanı"
+      ],
       "Primary": [
         "Birincil saat dilimi"
       ],
@@ -9708,6 +9720,9 @@
       ],
       "Proration": [
         "Hesap bakiyesi"
+      ],
+      "Public domain": [
+        "Herkese açık etki alanı"
       ],
       "Public keys": [
         "Herkese açık anahtarlar"
@@ -9742,8 +9757,8 @@
       "Search in": [
         "Şurada ara"
       ],
-      "Select the categories to include, and enable notifications to be alerted about new emails in a category.": [
-        "Katılacak kategorileri seçin ve bir kategorideki yeni e-postaların bildirilmesi için bildirimleri açın."
+      "Select the categories to include and manage notifications for new emails.": [
+        "Yeni e-postalar için dahil edilecek kategorileri seçin ve bildirimleri yönetin."
       ],
       "Send auto-reply": [
         "Otomatik yanıtlansın"
@@ -9894,6 +9909,9 @@
       ],
       "Your alias": [
         "Takma adınız"
+      ],
+      "Your domain": [
+        "Etki alanınız"
       ],
       "Your IP": [
         "IP adresiniz"
@@ -14637,7 +14655,7 @@
         "${ VPN_APP_NAME } indir"
       ],
       "Download the desktop app": [
-        "Masaüstü uygulamasını indirin"
+        "Bilgisayar uygulamasını indirin"
       ],
       "Enable ${ DARK_WEB_MONITORING_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } özelliğini aç"
@@ -15537,7 +15555,7 @@
         "Kime"
       ],
       "To preview this spreadsheet, download it.": [
-        "Bu hesap tablosunu önizlemek için indirin."
+        "Bu hesap tablosunu ön izlemek için indirin."
       ],
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "Bu hesap tablosunu ön izlemek için ${ SHEETS_APP_NAME } uygulaması ile açın ya da indirin."

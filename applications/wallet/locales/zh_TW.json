@@ -446,6 +446,9 @@
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "您可在鑑賞體驗期內盡情享用多達 ${ TRIAL_MAX_SCRIBE_SEATS } 組 Scribe 帳號。"
       ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "您可在使用期內盡情享用多達 ${ TRIAL_MAX_USERS } 個使用者。"
+      ],
       "You have reached the trial limit.": [
         "您已達到試用限制。"
       ]
@@ -791,6 +794,12 @@
       "Basic chat history": [
         "基本聊天記錄"
       ],
+      "Compliance with data protection regulations": [
+        "遵循資料保護法"
+      ],
+      "Data never used for AI training": [
+        "永遠不會使用於訓練 AI"
+      ],
       "Full chat history with search": [
         "具備搜尋功能的完整聊天記錄"
       ],
@@ -810,6 +819,9 @@
     "collider_2025: Info": {
       "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
         "${ LUMO_APP_NAME } 是一款隱私優先的人工智慧，可協助您提高效率，同時確保您的資料安全。釋放其全部潛力，並搶先體驗隨著它們推出而帶來的新功能。"
+      ],
+      "Add ${ LUMO_APP_NAME }": [
+        "新增 ${ LUMO_APP_NAME }"
       ],
       "High-speed chats and advanced AI features.": [
         "高速聊天和先進的人工智慧功能。"
@@ -2976,6 +2988,23 @@
         "${ price } 版"
       ]
     },
+    "meet_2025: Feature": {
+      "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
+        "${ MEET_APP_NAME }: 給重要對話保密的視訊"
+      ],
+      "${ n } active meeting at a time": [
+        "${ n } 個會議同時進行中"
+      ],
+      "Meeting recording (coming soon)": [
+        "會議錄製(即將到來)"
+      ],
+      "Up to ${ n } meeting per day": [
+        "每日至多 ${ n } 個會議"
+      ],
+      "Up to ${ n } participant": [
+        "至多 ${ n } 位參與者"
+      ]
+    },
     "New Label form": {
       "Color": [
         "顏色"
@@ -4303,6 +4332,9 @@
       ],
       "For all ${ BRAND_NAME } services": [
         "所有 ${ BRAND_NAME } 服務"
+      ],
+      "Storage used": [
+        "已使用的儲存空間"
       ],
       "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
         "您的**${ currentPlanName }** 方案尚餘 **${ daysRemaining }** 天。"

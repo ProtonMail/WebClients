@@ -1840,6 +1840,9 @@
       ],
       "High-speed chats and advanced AI features.": [
         "Chattar med hög hastighet och avancerade AI-funktioner."
+      ],
+      "Private video calls for the conversations that matter.": [
+        "Privata videosamtal för de konversationer som är viktiga."
       ]
     },
     "colon": {
@@ -4777,6 +4780,12 @@
       "Too many recent requests. Please try again in a few moments.": [
         "För många förfrågningar. Försök igen lite senare."
       ],
+      "Two-factor authentication is enabled in your external account.": [
+        "Tvåfaktorsautentisering är aktiverat i ditt externa konto."
+      ],
+      "Two-factor authentication is enabled in your external email account.": [
+        "Tvåfaktorsautentisering är aktiverat i ditt externa e-postkonto."
+      ],
       "Use your app password if:": [
         "Använd ditt applösenord om:"
       ],
@@ -6977,11 +6986,17 @@
       "Postal code": [
         "Postnummer"
       ],
+      "Premium domain": [
+        "Premiumdomän"
+      ],
       "Primary": [
         "Primär"
       ],
       "Proration": [
         "Proportionell beräkning"
+      ],
+      "Public domain": [
+        "Offentlig domän"
       ],
       "Public keys": [
         "Offentliga nycklar"
@@ -7108,6 +7123,9 @@
       ],
       "Your calendar URL": [
         "Din kalender-URL"
+      ],
+      "Your domain": [
+        "Din domän"
       ],
       "Your IP": [
         "Din IP"
@@ -7410,6 +7428,13 @@
       ]
     },
     "meet_2025: Feature": {
+      "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
+        "${ MEET_APP_NAME }: Konfidentiella videokonferenser för de konversationer som är viktiga"
+      ],
+      "${ n } active meeting at a time": [
+        "${ n } aktivt möte åt gången",
+        "${ n } aktiva möten åt gången"
+      ],
       "24 hours per meeting": [
         "24 timmar per möte"
       ],
@@ -7424,6 +7449,9 @@
       ],
       "Meeting recording (coming soon)": [
         "Mötesinspelning (kommer snart)"
+      ],
+      "One active meeting at a time": [
+        "Ett aktivt möte åt gången"
       ],
       "Screen-sharing": [
         "Skärmdelning"

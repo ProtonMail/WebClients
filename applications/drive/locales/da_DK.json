@@ -7332,8 +7332,14 @@
       "Postal code": [
         "Postnummer"
       ],
+      "Premium domain": [
+        "Premium domæne"
+      ],
       "Proration": [
         "Proration"
+      ],
+      "Public domain": [
+        "Offentligt domæne"
       ],
       "Public keys": [
         "Offentlige nøgler"
@@ -7505,6 +7511,9 @@
       ],
       "Your alias": [
         "Dit alias"
+      ],
+      "Your domain": [
+        "Dit domæne"
       ],
       "Your IP": [
         "Din IP"
@@ -8988,6 +8997,9 @@
       "\"${ name }\" deleted": [
         "\"${ name }\" slettet"
       ],
+      "\"${ name }\" deleted permanently": [
+        "\"${ name }\" slettet permanent"
+      ],
       "\"${ name }\" deleted permanently from trash": [
         "\"${ name }\" permanent slettet fra papirkurven"
       ],
@@ -9068,6 +9080,10 @@
       "${ numberOfItems } item deleted": [
         "${ numberOfItems } element slettet",
         "${ numberOfItems } elementer slettet"
+      ],
+      "${ numberOfItems } item deleted permanently": [
+        "${ numberOfItems } element slettet permanent",
+        "${ numberOfItems } elementer slettet permanent"
       ],
       "${ numberOfItems } item deleted permanently from trash": [
         "${ numberOfItems } element permanent slettet fra papirkurven",
@@ -11395,7 +11411,7 @@
         "Dit ${ planName }-abonnement beskytter ikke bare din virksomheds data og kommunikation. Den understøtter dine overholdelsesmål, får din virksomhed til at skille sig ud og holder dit team forbundet."
       ],
       "Your own short @pm.me email alias": [
-        "Dit eget korte @pm.me e-mail-alias"
+        "Dit eget korte @pm.me e-mailalias"
       ]
     },
     "subscription reminder": {
@@ -12576,20 +12592,14 @@
       "The link expired": [
         "Linket er udløbet"
       ],
-      "The verification of the encryption keys' signature by the original creator (${ claimedKeyAuthor }) who created the node failed. The reason is: ${ nodeEntity.keyAuthor.error.error }": [
-        "Verificeringen af krypteringsnøglernes signatur af den oprindelige skaber (${ claimedKeyAuthor }), som oprettede knuden, mislykkedes. Årsagen er: ${ nodeEntity.keyAuthor.error.error }"
-      ],
-      "The verification of the file's content signature by the uploader (${ claimedContentAuthor }) who uploaded the last revision failed. The reason is: ${ activeRevision.contentAuthor.error.error }": [
-        "Verificeringen af filens indholdssignatur af den, der uploadede (${ claimedContentAuthor }), som uploadede den seneste revision, mislykkedes. Årsagen er: ${ activeRevision.contentAuthor.error.error }"
-      ],
-      "The verification of the name's signature by author (${ claimedNameAuthor }) who set the name the last time failed. The reason is: ${ nodeEntity.nameAuthor.error.error }": [
-        "Verificeringen af navnets signatur af forfatteren (${ claimedNameAuthor }), som angav navnet sidste gang, mislykkedes. Årsagen er: ${ nodeEntity.nameAuthor.error.error }"
-      ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "Denne fil har en manglende eller ugyldig signatur. Gå til Menu (⋮) → Detaljer for info."
       ],
       "This folder has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "Denne mappe har en manglende eller ugyldig signatur. Gå til Menu (⋮) → Detaljer for info."
+      ],
+      "This is likely due to the account or address having been deleted.": [
+        "Dette skyldes sandsynligvis, at kontoen eller adressen er blevet slettet."
       ],
       "This link is password protected": [
         "Dette link er adgangskodebeskyttet"
@@ -12707,6 +12717,15 @@
       ],
       "We couldn’t verify that an anonymous user uploaded this folder.": [
         "Vi kunne ikke bekræfte, at en anonym bruger uploadede denne mappe."
+      ],
+      "We weren’t able to confirm that the file content was uploaded by ${ claimedContentAuthor }. The reason is: ${ activeRevision.contentAuthor.error.error }": [
+        "Vi kunne ikke bekræfte, at filens indhold blev uploadet af ${ claimedContentAuthor }. Årsagen er: ${ activeRevision.contentAuthor.error.error }"
+      ],
+      "We weren’t able to confirm that the name was created or modified by ${ claimedNameAuthor }. The reason is: ${ nodeEntity.nameAuthor.error.error }": [
+        "Vi kunne ikke bekræfte, at navnet blev oprettet eller ændret af ${ claimedNameAuthor }. Årsagen er: ${ nodeEntity.nameAuthor.error.error }"
+      ],
+      "We weren’t able to confirm that the node was created by ${ claimedKeyAuthor }. The reason is: ${ nodeEntity.keyAuthor.error.error }": [
+        "Vi kunne ikke bekræfte, at noden blev oprettet af ${ claimedKeyAuthor }. Årsagen er: ${ nodeEntity.keyAuthor.error.error }"
       ],
       "Welcome offer": [
         "Velkomsttilbud"
