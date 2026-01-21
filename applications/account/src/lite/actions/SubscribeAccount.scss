@@ -2,14 +2,17 @@
 @use '~@proton/styles/scss/lib/include-media' as im;
 im.$breakpoints: $breakpoints-product;
 im.$media-expressions: $media-expressions;
-@use '~@proton/styles/scss/specifics/bf-background' as *;
 
 @include im.media('>xsmall') {
 	.subscribe-account {
-		@include bf-bgs;
+		&--bf-bg {
+			background:
+				radial-gradient(69.05% 69.05% at 50% 0%, #5a3ecf 0%, #1b1340 100%), linear-gradient(0deg, #191927, #191927);
+		}
 
 		&-logo {
 			--logo-text-proton-color: var(--text-invert);
+			--logo-text-product-color: white;
 		}
 	}
 }
