@@ -20,7 +20,7 @@ const defaultUserSettings: UserSettings = {
     News: 0,
     Password: { Mode: 1, ExpirationTime: 0 },
     Phone: { Value: '', Status: 0, Notify: 0, Reset: 0 },
-    HighSecurity: { Eligible: 0, Value: 0 },
+    HighSecurity: { Eligible: 0, Value: 0, SummaryEmail: 0 },
     Referral: { Eligible: true, Link: 'https://referral-link' },
     SessionAccountRecovery: 0,
     Telemetry: 0,

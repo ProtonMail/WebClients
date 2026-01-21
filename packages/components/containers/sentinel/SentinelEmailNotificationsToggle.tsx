@@ -1,12 +1,13 @@
 import { useRef } from 'react';
+
+import { c } from 'ttag';
+
 import Toggle from '@proton/components/components/toggle/Toggle';
 import SettingsLayout from '@proton/components/containers/account/SettingsLayout';
 import SettingsLayoutLeft from '@proton/components/containers/account/SettingsLayoutLeft';
 import SettingsLayoutRight from '@proton/components/containers/account/SettingsLayoutRight';
-import { PROTON_SENTINEL_NAME } from '@proton/shared/lib/constants';
 
-import useSearchParamsEffect from '@proton/components/hooks/useSearchParamsEffect';
-import { getEnableString } from '@proton/components/containers/credentialLeak/helpers';
+import useSearchParamsEffect from '../../hooks/useSearchParamsEffect';
 import { EnforcedByOrganization } from "@proton/components/containers/sentinel/EnforcedByOrganization";
 
 interface Props {
@@ -16,29 +17,21 @@ interface Props {
     onChange: (checked: boolean) => void;
 }
 
-const SentinelToggle = ({ checked, isInherited, loading, onChange }: Props) => {
-    const sentinelToggleRef = useRef<HTMLInputElement | null>(null);
+const SentinelEmailNotificationsToggle = ({ checked, isInherited, loading, onChange }: Props) => {
+    const sentinelNotificationsToggleRef = useRef<HTMLInputElement | null>(null);
 
-    const checkedRef = useRef(checked);
-    checkedRef.current = checked;
+    const onChangeRef = useRef(onChange);
+    onChangeRef.current = onChange;
 
     useSearchParamsEffect(
         (params) => {
-            if (!sentinelToggleRef.current) {
-                return;
-            }
+            const unsubscribeParam = 'sentinel-unsubscribe';
+            const unsubscribe = params.get(unsubscribeParam) === 'true';
+            params.delete(unsubscribeParam);
 
-            const enableSentinelParam = params.get('enable-sentinel');
-            params.delete('enable-sentinel');
-            if (!enableSentinelParam) {
-                return params;
+            if (unsubscribe) {
+                onChangeRef.current(false);
             }
-
-            if (checkedRef.current) {
-                return params;
-            }
-
-            sentinelToggleRef.current.click();
 
             return params;
         },
@@ -48,15 +41,15 @@ const SentinelToggle = ({ checked, isInherited, loading, onChange }: Props) => {
     return (
         <SettingsLayout>
             <SettingsLayoutLeft>
-                <label className="text-semibold" htmlFor="high-security-toggle">
-                    <span className="mr-2">{getEnableString(PROTON_SENTINEL_NAME)}</span>
+                <label className="text-semibold" htmlFor="high-security-notifications-toggle">
+                    <span className="mr-2">{c('Info').t`Enable email notifications`}</span>
                 </label>
             </SettingsLayoutLeft>
             <SettingsLayoutRight isToggleContainer>
                 <EnforcedByOrganization enforced={isInherited}>
                     <Toggle
-                        ref={sentinelToggleRef}
-                        id="high-security-toggle"
+                        ref={sentinelNotificationsToggleRef}
+                        id="high-security-notifications-toggle"
                         disabled={isInherited}
                         loading={loading}
                         checked={checked}
@@ -68,4 +61,4 @@ const SentinelToggle = ({ checked, isInherited, loading, onChange }: Props) => {
     );
 };
 
-export default SentinelToggle;
+export default SentinelEmailNotificationsToggle;
