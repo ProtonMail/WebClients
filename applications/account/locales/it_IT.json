@@ -2358,6 +2358,10 @@
       ]
     },
     "Billing cycle": {
+      "Renews automatically at ${ renewPrice }, for ${ renewCycle } month": [
+        "Si rinnova automaticamente a ${ renewPrice }, per ${ renewCycle } mese",
+        "Si rinnova automaticamente a ${ renewPrice } per ${ renewCycle } mesi"
+      ],
       "Renews automatically on ${ subscriptionManagerName }": [
         "Si rinnova automaticamente il ${ subscriptionManagerName }"
       ]
@@ -2667,6 +2671,9 @@
       "Contacts": [
         "Contatti"
       ],
+      "Domain connected": [
+        "Dominio connesso"
+      ],
       "Domain ownership verified": [
         "Possesso del dominio verificato"
       ],
@@ -2697,8 +2704,30 @@
       "Migration includes": [
         "La migrazione include"
       ],
+      "Migration started for ${ n } user": [
+        "Migrazione avviata per ${ n } utente",
+        "Migrazione iniziata per ${ n } utenti"
+      ],
+      "Migration status": [
+        "Stato della migrazione"
+      ],
+      "Organization does not have enough seats available": [
+        "L'organizzazione non dispone di licenze sufficienti"
+      ],
+      "Organization does not have enough storage available": [
+        "L'organizzazione non dispone di spazio di archiviazione sufficiente"
+      ],
+      "Organization settings": [
+        "Impostazioni dell'organizzazione"
+      ],
+      "Required": [
+        "Obbligatorio"
+      ],
       "Required to create user accounts": [
         "Necessario per creare account utente"
+      ],
+      "Select at least one user to start a migration": [
+        "Seleziona almeno un utente per avviare una migrazione"
       ],
       "Select what you want to migrate, this will apply to all users whether they are created now or later. Migration will start after user accounts are created.": [
         "Seleziona cosa vuoi migrare; questa scelta si applicherà a tutti gli utenti, sia quelli già esistenti sia quelli creati in futuro. La migrazione inizierà dopo la creazione degli account utente."
@@ -2721,6 +2750,9 @@
       "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Markeplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue. Learn more": [
         "Per migrare i dati della tua organizzazione, devi installare l’app ${ BRAND_NAME } Migration Assistant dal Google Workspace Marketplace. Questo concederà a ${ BRAND_NAME } il permesso di copiare i tuoi dati. Dopo l’installazione, torna qui per continuare. Scopri di più"
       ],
+      "Transfer errors": [
+        "Errori di trasferimento"
+      ],
       "User": [
         "Utente"
       ],
@@ -2729,6 +2761,9 @@
       ],
       "Verify your domain ownership": [
         "Verifica la proprietà del tuo dominio"
+      ],
+      "Verify your domain to start a migration": [
+        "Verifica il tuo dominio per avviare una migrazione"
       ],
       "What are you migrating?": [
         "Cosa stai migrando?"
@@ -2806,6 +2841,9 @@
       ],
       "Payments problem": [
         "Problema con i pagamenti"
+      ],
+      "Sheets problem": [
+        "Problema fogli"
       ],
       "Sign in problem": [
         "Problema di accesso"
@@ -7436,9 +7474,6 @@
       ]
     },
     "fido2: Error": {
-      "Please disable 2FA via security key before disabling TOTP": [
-        "Disabilita 2FA tramite la chiave di sicurezza prima di disabilitare TOTP"
-      ],
       "Something went wrong authenticating with your security key. Please try again.": [
         "Si è verificato un errore durante l'autenticazione con la tua chiave di sicurezza. Per favore riprova."
       ],
@@ -7479,9 +7514,6 @@
       ],
       "This will delete all security keys linked to your account.": [
         "Questo cancellerà tutte le chiavi di sicurezza collegate al tuo account."
-      ],
-      "To turn on 2FA via security key, you'll need to activate 2FA via authenticator app": [
-        "Per attivare 2FA tramite la chiave di sicurezza, dovrai attivare 2FA tramite l'app di autenticazione"
       ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "Verifica la tua identità con una U2F fisica o una chiave di sicurezza FIDO2"
@@ -8256,6 +8288,12 @@
       ],
       "Too many recent requests. Please try again in a few moments.": [
         "Troppe richieste recenti. Per favore riprova tra qualche istante."
+      ],
+      "Two-factor authentication is enabled in your external account.": [
+        "L'autenticazione a due fattori è abilitata nel tuo account esterno."
+      ],
+      "Two-factor authentication is enabled in your external email account.": [
+        "L'autenticazione a due fattori è abilitata nel tuo account email esterno."
       ],
       "Use your app password if:": [
         "Usa la password dell'app se:"
@@ -23024,6 +23062,9 @@
       ],
       "Time zone": [
         "Fuso orario"
+      ],
+      "To preview this spreadsheet, download it.": [
+        "Per visualizzare l'anteprima di questo foglio di calcolo, scaricalo."
       ],
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "Per visualizzare l'anteprima di questo foglio di calcolo, aprilo in ${ SHEETS_APP_NAME } o scaricalo."

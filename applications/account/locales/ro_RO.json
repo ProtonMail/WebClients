@@ -7528,9 +7528,6 @@
       ]
     },
     "fido2: Error": {
-      "Please disable 2FA via security key before disabling TOTP": [
-        "Dezactivați A2F prin cheie de securitate înainte de a dezactiva TOTP."
-      ],
       "Something went wrong authenticating with your security key. Please try again.": [
         "Ceva a funcționat greșit la autentificarea cu cheia de securitate. Reîncercați."
       ],
@@ -7571,9 +7568,6 @@
       ],
       "This will delete all security keys linked to your account.": [
         "Se vor șterge toate cheile de securitate asociate contului."
-      ],
-      "To turn on 2FA via security key, you'll need to activate 2FA via authenticator app": [
-        "Pentru a activa A2F cu o cheie de securitate, trebuie să activați A2F prin aplicația Authenticator."
       ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "Vă verificați identitatea cu o cheie fizică U2F sau FIDO2."
@@ -23357,6 +23351,9 @@
       ],
       "Time zone": [
         "Fus orar"
+      ],
+      "To preview this spreadsheet, download it.": [
+        "Pentru a examina această foaie de calcul, descărcați-o."
       ],
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "Pentru a examina această foaie de calcul, deschideți-o în ${ SHEETS_APP_NAME } sau descărcați-o."
