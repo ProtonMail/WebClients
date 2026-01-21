@@ -380,7 +380,7 @@ const EmailReminderWidget = ({ message, errors }: EmailReminderWidgetProps) => {
                 className={!isOutdated ? 'mb-2' : undefined}
             />
             {!isOutdated && (
-                <div className="rounded border bg-norm overflow-auto">
+                <div className="rounded border border-weak bg-norm overflow-auto">
                     <div className="p-5">
                         <h2 className="h3 mb-1 text-bold">{getDisplayTitle(summary?.value)}</h2>
                         <CalendarEventDateHeader
@@ -396,7 +396,7 @@ const EmailReminderWidget = ({ message, errors }: EmailReminderWidgetProps) => {
                             recurrenceID={parseInt(occurrenceHeader, 10)}
                         />
                     </div>
-                    <hr className="m-0" />
+                    <hr className="m-0 weak" />
                     <div className="p-5">
                         <IconRow title={c('Label').t`Calendar`} icon="calendar-grid" labelClassName={labelClassName}>
                             <span className="text-break">{Name}</span>
