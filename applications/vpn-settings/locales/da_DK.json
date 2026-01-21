@@ -4996,9 +4996,6 @@
       ]
     },
     "fido2: Error": {
-      "Please disable 2FA via security key before disabling TOTP": [
-        "Deaktivér 2FA via sikkerhedsnøgle, før du deaktiverer TOTP."
-      ],
       "Something went wrong authenticating with your security key. Please try again.": [
         "Noget gik galt ved godkendelsen med din sikkerhedsnøgle. Prøv venligst igen."
       ],
@@ -5039,9 +5036,6 @@
       ],
       "This will delete all security keys linked to your account.": [
         "Dette vil slette alle sikkerhedsnøgler forbundet til din konto."
-      ],
-      "To turn on 2FA via security key, you'll need to activate 2FA via authenticator app": [
-        "For at slå 2FA til via sikkerhedsnøgle skal du aktivere 2FA via godkendelsesappen"
       ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "Bekræft din identitet med en fysisk U2F- eller FIDO2-sikkerhedsnøgle"
@@ -6624,7 +6618,7 @@
         "Oprettelse af en ny gendannelsessætning vil deaktivere din gamle."
       ],
       "Get ${ AUTHENTICATOR_APP_NAME } for all your devices.": [
-        "Hent ${ AUTHENTICATOR_APP_NAME } til alle dine enheder."
+        "Få ${ AUTHENTICATOR_APP_NAME } til alle dine enheder."
       ],
       "Get ${ upsellPlanName }": [
         "Få ${ upsellPlanName }"
@@ -9633,7 +9627,7 @@
         "Ændring af postkasseadgangskode"
       ],
       "Password reset": [
-        "Adgangskodenulstilling"
+        "Nulstilling af adgangskode"
       ],
       "Second factor disabled (authenticator app)": [
         "Anden faktor deaktiveret (autentificerings-app)"
@@ -9929,7 +9923,7 @@
         "Singapore-dollar"
       ],
       "South Korean won": [
-        "Sydkoreansk won"
+        "Sydkoreanske won"
       ],
       "Swiss franc": [
         "Schweizer franc"
@@ -12727,7 +12721,7 @@
         "Din konto og dine data kan gendannes. Du har anbefalede handlinger for at beskytte din konto yderligere."
       ],
       "Your account is fully secure.": [
-        "Din konto er yderst sikker."
+        "Din konto er fuldt ud sikker."
       ]
     },
     "saml: Action": {
@@ -14333,7 +14327,7 @@
         "Dit ${ planName }-abonnement beskytter ikke bare din virksomheds data og kommunikation. Den understøtter dine overholdelsesmål, får din virksomhed til at skille sig ud og holder dit team forbundet."
       ],
       "Your own short @pm.me email alias": [
-        "Dit eget korte @pm.me e-mail-alias"
+        "Dit eget korte @pm.me e-mailalias"
       ]
     },
     "subscription reminder": {
@@ -15632,7 +15626,7 @@
         "Vælg kontaktgruppe"
       ],
       "Send email reminders?": [
-        "Send e-mail-påmindelser?"
+        "Send e-mailpåmindelser?"
       ],
       "Send new invite?": [
         "Send ny invitation?"
@@ -16712,7 +16706,7 @@
         "Ved at slette denne adresse vil du ikke længere kunne modtage daglige e-mailnotifikationer."
       ],
       "By deleting this address, you will no longer be able to recover your account or receive daily email notifications.": [
-        "Ved at slette denne adresse vil du ikke længere kunne gendanne din konto eller modtage daglige e-mailnotifikationer."
+        "Slettes denne adresse, vil du ikke længere kunne gendanne din konto eller modtage daglige e-mailnotifikationer."
       ],
       "By deleting this address, you will no longer be able to recover your account.": [
         "Ved at slette denne adresse vil du ikke længere kunne gendanne din konto."

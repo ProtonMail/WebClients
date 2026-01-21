@@ -1667,6 +1667,10 @@
       ]
     },
     "Billing cycle": {
+      "Renews automatically at ${ renewPrice }, for ${ renewCycle } month": [
+        "Fornyes automatisk til ${ renewPrice }, for ${ renewCycle } måned",
+        "Fornyes automatisk til ${ renewPrice }, for ${ renewCycle } måneder"
+      ],
       "Renews automatically on ${ subscriptionManagerName }": [
         "Fornyes automatisk på ${ subscriptionManagerName }"
       ]
@@ -1775,6 +1779,9 @@
       "Contacts": [
         "Kontakter"
       ],
+      "Domain connected": [
+        "Domene tilkoblet"
+      ],
       "Domain ownership verified": [
         "Domeneeierskap er verifisert"
       ],
@@ -1805,8 +1812,30 @@
       "Migration includes": [
         "Migrering inkluderer"
       ],
+      "Migration started for ${ n } user": [
+        "Migrering startet for ${ n } bruker",
+        "Migrering startet for ${ n } brukere"
+      ],
+      "Migration status": [
+        "Migreringsstatus"
+      ],
+      "Organization does not have enough seats available": [
+        "Organisasjonen har ikke nok ledige lisenser"
+      ],
+      "Organization does not have enough storage available": [
+        "Organisasjonen har ikke nok lagringsplass tilgjengelig"
+      ],
+      "Organization settings": [
+        "Organisasjonsinnstillinger"
+      ],
+      "Required": [
+        "Obligatorisk"
+      ],
       "Required to create user accounts": [
         "Kreves for å opprette brukerkontoer"
+      ],
+      "Select at least one user to start a migration": [
+        "Velg minst én bruker for å starte en migrering"
       ],
       "Select what you want to migrate, this will apply to all users whether they are created now or later. Migration will start after user accounts are created.": [
         "Velg hva du vil migrere, dette vil anvendes på alle brukere enten de opprettes nå eller senere. Migreringen starter etter at brukerkontoer er opprettet."
@@ -1820,11 +1849,17 @@
       "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Markeplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue. Learn more": [
         "For å migrere organisasjonens data, må du installere ${ BRAND_NAME } Migration Assistant-appen fra Google Workspace Marketplace. Dette vil gi ${ BRAND_NAME } tillatelse til å kopiere dataene dine. Etter å ha installert den, kom tilbake hit for å fortsette. Lær mer"
       ],
+      "Transfer errors": [
+        "Overføringsfeil"
+      ],
       "User": [
         "Bruker"
       ],
       "Verify your domain": [
         "Verifiser domenet ditt"
+      ],
+      "Verify your domain to start a migration": [
+        "Verifiser domenet ditt for å starte en migrering"
       ],
       "What are you migrating?": [
         "Hva migrerer du?"
@@ -1892,6 +1927,9 @@
       ],
       "Payments problem": [
         "Betalingsproblemer"
+      ],
+      "Sheets problem": [
+        "Regneark-problem"
       ],
       "Sign in problem": [
         "Påloggingsproblem"
@@ -4958,9 +4996,6 @@
       ]
     },
     "fido2: Error": {
-      "Please disable 2FA via security key before disabling TOTP": [
-        "Deaktiver 2FA via sikkerhetsnøkkelen før deaktivering av TOTP"
-      ],
       "Something went wrong authenticating with your security key. Please try again.": [
         "Noe gikk galt under godkjenning med sikkerhetsnøkkelen din. Prøv på nytt."
       ],
@@ -5001,9 +5036,6 @@
       ],
       "This will delete all security keys linked to your account.": [
         "Dette vil slette alle sikkerhetsnøkler tilknyttet kontoen din."
-      ],
-      "To turn on 2FA via security key, you'll need to activate 2FA via authenticator app": [
-        "For å slå på 2FA via sikkerhetsnøkkel, må du aktivere 2FA via autentiseringsappen."
       ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "Bekreft din identitet med en fysisk U2F eller FIDO2-sikkerhetsnøkkel"
@@ -5534,6 +5566,12 @@
       ],
       "Too many recent requests. Please try again in a few moments.": [
         "For mange nylige forespørsler. Prøv igjen om noen få øyeblikk."
+      ],
+      "Two-factor authentication is enabled in your external account.": [
+        "Tofaktorautentisering er aktivert i den eksterne kontoen din."
+      ],
+      "Two-factor authentication is enabled in your external email account.": [
+        "Tofaktorautentisering er aktivert i den eksterne e-postkontoen din."
       ],
       "Use your app password if:": [
         "Bruk app-passordet ditt hvis:"
@@ -8928,6 +8966,12 @@
       "Numbers": [
         "Tall"
       ],
+      "OpenVPN password": [
+        "OpenVPN-passord"
+      ],
+      "OpenVPN username": [
+        "OpenVPN-brukernavn"
+      ],
       "Operating system": [
         "Operativsystem"
       ],
@@ -11023,6 +11067,9 @@
       ],
       "Number of records exceeds the download limit of 10000": [
         "Antall poster overskrider nedlastingsgrensen på 10000"
+      ],
+      "OpenVPN credentials regenerated": [
+        "OpenVPN-legitimasjon generert på nytt"
       ],
       "Reminder has been sent": [
         "Påminnelse er sendt"
@@ -15405,6 +15452,9 @@
       "OpenVPN configuration files": [
         "OpenVPN-konfigurasjonsfiler"
       ],
+      "OpenVPN username": [
+        "OpenVPN-brukernavn"
+      ],
       "Org setup": [
         "Organisasjonskonfigurasjon"
       ],
@@ -15687,6 +15737,9 @@
       ],
       "Third-party apps and services": [
         "Tredjeparts apper og tjenester"
+      ],
+      "To preview this spreadsheet, download it.": [
+        "For å forhåndsvise dette regnearket, last det ned."
       ],
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "For å forhåndsvise dette regnearket, åpne det i ${ SHEETS_APP_NAME } eller last det ned."

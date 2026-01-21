@@ -1651,6 +1651,41 @@
         "Pracujesz z poufnymi danymi?"
       ]
     },
+    "BOSS": {
+      "Domain connected": [
+        "Domena połączona"
+      ],
+      "Migration started for ${ n } user": [
+        "Migracja rozpoczęta dla ${ n } użytkownika",
+        "Migracja rozpoczęta dla ${ n } użytkowników",
+        "Migracja rozpoczęta dla ${ n } użytkowników",
+        "Migracja rozpoczęta dla ${ n } użytkowników"
+      ],
+      "Migration status": [
+        "Status migracji"
+      ],
+      "Organization does not have enough seats available": [
+        "Organizacja nie dysponuje wystarczającą ilością dostępnych licencji"
+      ],
+      "Organization does not have enough storage available": [
+        "Organizacja nie ma wystarczającej ilości przestrzeni dyskowej"
+      ],
+      "Organization settings": [
+        "Ustawienia organizacji"
+      ],
+      "Required": [
+        "Wymagane"
+      ],
+      "Select at least one user to start a migration": [
+        "Zaznacz co najmniej jednego użytkownika, aby rozpocząć migrację"
+      ],
+      "Transfer errors": [
+        "Błędy transferu"
+      ],
+      "Verify your domain to start a migration": [
+        "Zweryfikuj swoją domenę, aby rozpocząć migrację"
+      ]
+    },
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
         "Aplikacja desktopowa ${ MAIL_APP_NAME }"
@@ -1707,6 +1742,9 @@
       ],
       "Payments problem": [
         "Problem z płatnościami"
+      ],
+      "Sheets problem": [
+        "Problem z arkuszem"
       ],
       "Sign in problem": [
         "Problem z logowaniem"
@@ -4606,9 +4644,6 @@
       ]
     },
     "fido2: Error": {
-      "Please disable 2FA via security key before disabling TOTP": [
-        "Przed wyłączeniem aplikacji uwierzytelniającej, wyłącz uwierzytelnianie dwustopniowe za pomocą klucza bezpieczeństwa"
-      ],
       "Something went wrong authenticating with your security key. Please try again.": [
         "Coś poszło nie tak z uwierzytelnianiem za pomocą klucza bezpieczeństwa. Spróbuj ponownie później."
       ],
@@ -4649,9 +4684,6 @@
       ],
       "This will delete all security keys linked to your account.": [
         "Spowoduje to usunięcie wszystkich kluczy bezpieczeństwa powiązanych z kontem."
-      ],
-      "To turn on 2FA via security key, you'll need to activate 2FA via authenticator app": [
-        "Aby włączyć uwierzytelnianie dwustopniowe za pomocą klucza bezpieczeństwa, musisz skonfigurować aplikację uwierzytelniającą"
       ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "Zweryfikuj swoją tożsamość za pomocą fizycznego klucza bezpieczeństwa U2F lub FIDO2"
@@ -5194,6 +5226,12 @@
       ],
       "Too many recent requests. Please try again in a few moments.": [
         "Zbyt wiele żądań w ostatnim czasie. Spróbuj ponownie za kilka chwil."
+      ],
+      "Two-factor authentication is enabled in your external account.": [
+        "Uwierzytelnianie dwuskładnikowe jest włączone na Twoim zewnętrznym koncie."
+      ],
+      "Two-factor authentication is enabled in your external email account.": [
+        "Uwierzytelnianie dwuskładnikowe jest włączone na Twoim zewnętrznym koncie e-mail."
       ],
       "Use your app password if:": [
         "Użyj hasła aplikacji, jeśli:"
@@ -9390,6 +9428,21 @@
       ],
       "Euro": [
         "Euro"
+      ],
+      "Hong Kong dollar": [
+        "Dolar hongkoński"
+      ],
+      "Japanese yen": [
+        "Yen japoński"
+      ],
+      "Polish złoty": [
+        "Polski złoty"
+      ],
+      "Singapore dollar": [
+        "Dolar singapurski"
+      ],
+      "South Korean won": [
+        "Won południowokoreański"
       ],
       "Swiss franc": [
         "Frank szwajcarski"
@@ -14714,6 +14767,9 @@
       "OpenVPN configuration files": [
         "Pliki konfiguracyjne OpenVPN"
       ],
+      "OpenVPN username": [
+        "Nazwa użytkownika OpenVPN"
+      ],
       "Org setup": [
         "Konfiguracja organizacji"
       ],
@@ -14974,6 +15030,9 @@
       ],
       "Third-party apps and services": [
         "Aplikacje i usługi stron trzecich"
+      ],
+      "To preview this spreadsheet, download it.": [
+        "Aby wyświetlić podgląd tego arkusza kalkulacyjnego, pobierz go."
       ],
       "Try ${ AUTHENTICATOR_APP_NAME }": [
         "Wypróbuj ${ AUTHENTICATOR_APP_NAME }"

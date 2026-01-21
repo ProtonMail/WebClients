@@ -4798,9 +4798,6 @@
       ]
     },
     "fido2: Error": {
-      "Please disable 2FA via security key before disabling TOTP": [
-        "Poista kaksivaiheinen tunnistautuminen suojausavaimella käytöstä ennen TOTP:n käytöstäpoistoa"
-      ],
       "Something went wrong authenticating with your security key. Please try again.": [
         "Jotain meni pieleen suojausavaimellasi tunnistauduttaessa. Yritä uudelleen."
       ],
@@ -4841,9 +4838,6 @@
       ],
       "This will delete all security keys linked to your account.": [
         "Tämä poistaa kaikki tiliisi liitetyt suojausavaimet."
-      ],
-      "To turn on 2FA via security key, you'll need to activate 2FA via authenticator app": [
-        "Käyttääksesi kaksivaiheista tunnistautumista suojausavaimella, on kaksivaiheinen tunnistautuminen todennussovelluksella otettava käyttöön"
       ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "Vahvista henkilöllisyytesi fyysisellä U2F- tai FIDO2-suojausavaimella"
