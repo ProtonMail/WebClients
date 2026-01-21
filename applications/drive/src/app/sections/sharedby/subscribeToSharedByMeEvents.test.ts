@@ -4,7 +4,7 @@ import { getActionEventManager } from '../../utils/ActionEventManager/ActionEven
 import { ActionEventName } from '../../utils/ActionEventManager/ActionEventManagerTypes';
 import { handleSdkError } from '../../utils/errorHandling/useSdkErrorHandler';
 import { getNodeEntity } from '../../utils/sdk/getNodeEntity';
-import { getNodeLocation } from '../../utils/sdk/getNodeLocation';
+import { getFormattedNodeLocation } from '../../utils/sdk/getNodeLocation';
 import { getSignatureIssues } from '../../utils/sdk/getSignatureIssues';
 import { getRootNode } from '../../utils/sdk/mapNodeToLegacyItem';
 import { subscribeToSharedByMeEvents } from './subscribeToSharedByMeEvents';
@@ -25,7 +25,7 @@ const mockGetDrive = jest.mocked(getDrive);
 const mockGetActionEventManager = jest.mocked(getActionEventManager);
 const mockHandleSdkError = jest.mocked(handleSdkError);
 const mockGetNodeEntity = jest.mocked(getNodeEntity);
-const mockGetNodeLocation = jest.mocked(getNodeLocation);
+const mockGetNodeLocation = jest.mocked(getFormattedNodeLocation);
 const mockGetSignatureIssues = jest.mocked(getSignatureIssues);
 const mockGetRootNode = jest.mocked(getRootNode);
 const mockUseSharedByMeStore = jest.mocked(useSharedByMeStore);

@@ -8,7 +8,7 @@ import { useDrive } from '@proton/drive';
 import { EnrichedError } from '../../../utils/errorHandling/EnrichedError';
 import { useSdkErrorHandler } from '../../../utils/errorHandling/useSdkErrorHandler';
 import { getNodeEntity } from '../../../utils/sdk/getNodeEntity';
-import { getNodeLocation } from '../../../utils/sdk/getNodeLocation';
+import { getFormattedNodeLocation } from '../../../utils/sdk/getNodeLocation';
 import { getSignatureIssues } from '../../../utils/sdk/getSignatureIssues';
 import { getRootNode } from '../../../utils/sdk/mapNodeToLegacyItem';
 import { useSharedByMeStore } from '../useSharedByMe.store';
@@ -48,7 +48,7 @@ export const useSharedByMeNodesLoader = () => {
 
                         loadedUids.add(node.uid);
 
-                        void getNodeLocation(drive, sharedByMeMaybeNode).then((location) => {
+                        void getFormattedNodeLocation(drive, sharedByMeMaybeNode).then((location) => {
                             const { updateSharedByMeItem } = useSharedByMeStore.getState();
                             updateSharedByMeItem(node.uid, {
                                 nodeUid: node.uid,
