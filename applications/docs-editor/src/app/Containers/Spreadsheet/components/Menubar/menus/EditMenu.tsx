@@ -114,9 +114,12 @@ function PasteSpecialSubmenu() {
         >
           {s('Formatting only')}
         </UI.MenuItem>
-        {/* <UI.MenuItem onClick={useUI.$.operation.paste.formula} disabled={useUI((ui) => ui.info.isReadonly)}>
+        <UI.MenuItem onClick={useUI.$.operation.paste.formula} disabled={useUI((ui) => ui.info.isReadonly)}>
           {s('Formula only')}
-        </UI.MenuItem> */}
+        </UI.MenuItem>
+        <UI.MenuItem onClick={useUI.$.operation.paste.link} disabled={useUI((ui) => ui.info.isReadonly)}>
+          {s('Link only')}
+        </UI.MenuItem>
         <UI.MenuSeparator />
         <UI.MenuItem onClick={useUI.$.operation.paste.transposed} disabled={useUI((ui) => ui.info.isReadonly)}>
           {s('Transposed')}
@@ -145,6 +148,7 @@ function strings() {
     'Values only': c('sheets_2025:Spreadsheet editor menubar edit menu').t`Values only`,
     'Formatting only': c('sheets_2025:Spreadsheet editor menubar edit menu').t`Formatting only`,
     'Formula only': c('sheets_2025:Spreadsheet editor menubar edit menu').t`Formula only`,
+    'Link only': c('sheets_2025:Spreadsheet editor menubar edit menu').t`Link only`,
     Transposed: c('sheets_2025:Spreadsheet editor menubar edit menu').t`Transposed`,
     Find: c('sheets_2025:Spreadsheet editor menubar edit menu').t`Find`,
   }
