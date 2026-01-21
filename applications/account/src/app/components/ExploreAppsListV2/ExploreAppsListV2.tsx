@@ -1,5 +1,5 @@
 import type { CSSProperties, ReactNode } from 'react';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -30,6 +30,7 @@ import {
 import clsx from '@proton/utils/clsx';
 
 import LumoLogoAnimated from './LumoLogoAnimated';
+import { sendExploreAppsListAppClick, sendExploreAppsListTimeSpent } from './exploreAppsListTelemetry';
 import { useExploreAppContextMenu } from './useExploreAppContextMenu';
 
 import './ExploreAppsListV2.scss';
@@ -322,8 +323,27 @@ const AppIcon = ({ children, appName }: { children: ReactNode; appName: APP_NAME
 const ExploreAppsListV2 = ({ onExplore, apps, subscription, localID }: Props) => {
     const [loading, withLoading] = useLoading();
     const [type, setType] = useState<APP_NAMES | null>(null);
+    const mountTimeRef = useRef<number | null>(null);
 
-    const { contextMenu, onContextMenu } = useExploreAppContextMenu();
+    // Helper function to send time spent
+    const sendTimeSpent = () => {
+        if (mountTimeRef.current !== null) {
+            const timeSpentMs = Date.now() - mountTimeRef.current;
+            const timeSpentSec = Math.round((timeSpentMs / 1000) * 10) / 10;
+            sendExploreAppsListTimeSpent({ timeSpentSec });
+            mountTimeRef.current = null;
+        }
+    };
+
+    const handleContextMenuClick = () => {
+        sendTimeSpent();
+    };
+
+    const { contextMenu, onContextMenu } = useExploreAppContextMenu({ onClick: handleContextMenuClick });
+
+    useEffect(() => {
+        mountTimeRef.current = Date.now();
+    }, []);
 
     let planName = getNameFromPlan(subscription.plan);
     if (hasBit(subscription.subscribed, allBits)) {
@@ -360,13 +380,15 @@ const ExploreAppsListV2 = ({ onExplore, apps, subscription, localID }: Props) =>
                                     const target = event.currentTarget?.getAttribute('target') || '';
                                     if (getShouldProcessLinkClick(event.nativeEvent, target)) {
                                         event.preventDefault();
+                                        sendTimeSpent();
+                                        sendExploreAppsListAppClick({ appName });
                                         setType(appName);
                                         void withLoading(onExplore(appName));
                                         return;
                                     }
                                     // Otherwise let link (e.g. new tab) clicks fall through
                                 }}
-                                onContextMenu={(e) => onContextMenu(e, href, settingsHref)}
+                                onContextMenu={(e) => onContextMenu(e, href, settingsHref, appName)}
                                 aria-label={goToPlanOrAppNameText(getAppName(appName))}
                                 className={clsx(
                                     `explore-app explore-app-${appName}`,
