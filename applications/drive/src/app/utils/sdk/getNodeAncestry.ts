@@ -1,13 +1,15 @@
-import type { MaybeNode, ProtonDriveClient, ProtonDrivePublicLinkClient, Result } from '@proton/drive/index';
+import type { MaybeNode, Result } from '@proton/drive/index';
+
+type DriveClient = {
+    getNode: (uid: string) => Promise<MaybeNode>;
+    getMyFilesRootFolder?: () => Promise<MaybeNode>;
+};
 
 const getParentUid = (node: MaybeNode): string | undefined => {
     return node.ok ? node.value.parentUid : node.error.parentUid;
 };
 
-const getNodeParent = async (
-    maybeNode: MaybeNode,
-    drive: ProtonDriveClient | ProtonDrivePublicLinkClient
-): Promise<MaybeNode | null> => {
+const getNodeParent = async (maybeNode: MaybeNode, drive: DriveClient): Promise<MaybeNode | null> => {
     const parentUid = getParentUid(maybeNode);
     if (!parentUid) {
         return null;
@@ -17,13 +19,16 @@ const getNodeParent = async (
 
 export const getNodeAncestry = async (
     nodeUid: string,
-    drive: ProtonDriveClient | ProtonDrivePublicLinkClient
+    drive: DriveClient,
+    includeSelf: boolean = true
 ): Promise<Result<MaybeNode[], Error>> => {
     const ancestors: MaybeNode[] = [];
     try {
         const maybeNode = await drive.getNode(nodeUid);
         let currentNode = maybeNode;
-        ancestors.push(maybeNode);
+        if (includeSelf) {
+            ancestors.push(maybeNode);
+        }
         while (getParentUid(currentNode)) {
             const parent = await getNodeParent(currentNode, drive);
             if (parent !== null) {

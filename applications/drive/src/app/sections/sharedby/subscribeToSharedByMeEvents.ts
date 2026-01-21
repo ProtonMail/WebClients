@@ -5,7 +5,7 @@ import { ActionEventName } from '../../utils/ActionEventManager/ActionEventManag
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
 import { handleSdkError } from '../../utils/errorHandling/useSdkErrorHandler';
 import { getNodeEntity } from '../../utils/sdk/getNodeEntity';
-import { getNodeLocation } from '../../utils/sdk/getNodeLocation';
+import { getFormattedNodeLocation } from '../../utils/sdk/getNodeLocation';
 import { getSignatureIssues } from '../../utils/sdk/getSignatureIssues';
 import { getRootNode } from '../../utils/sdk/mapNodeToLegacyItem';
 import type { SharedByMeItem } from './useSharedByMe.store';
@@ -29,7 +29,7 @@ const createSharedByMeItemFromNode = async (nodeUid: string): Promise<SharedByMe
             return null;
         }
 
-        const location = await getNodeLocation(drive, sharedByMeMaybeNode);
+        const location = await getFormattedNodeLocation(drive, sharedByMeMaybeNode);
         const shareResult = await drive.getSharingInfo(node.uid);
         const oldestCreationTime = shareResult ? getOldestShareCreationTime(shareResult) : undefined;
         const rootNode = await getRootNode(node, drive);

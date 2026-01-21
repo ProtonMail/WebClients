@@ -9,7 +9,7 @@ import { useLoading } from '@proton/hooks';
 
 import { getMimeTypeDescription } from '../../components/sections/helpers';
 import { useSdkErrorHandler } from '../../utils/errorHandling/useSdkErrorHandler';
-import { getNodeLocation } from '../../utils/sdk/getNodeLocation';
+import { getFormattedNodeLocation } from '../../utils/sdk/getNodeLocation';
 import { getNodeName } from '../../utils/sdk/getNodeName';
 import { isOwnFile } from '../../utils/sdk/isOwnFile';
 import { getAuthorshipStatus } from './authorship';
@@ -89,7 +89,7 @@ export function useFileDetailsModalState({
                 setTitle(getTitle(node));
 
                 const fileType = node.ok ? node.value.type : node.error.type;
-                const location = showLocation ? await getNodeLocation(drive, node) : '';
+                const location = showLocation ? await getFormattedNodeLocation(drive, node) : '';
                 const nodeEntity = node.ok ? node.value : node.error;
                 // eslint-disable-next-line no-nested-ternary
                 const activeRevision = node.ok
