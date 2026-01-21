@@ -1668,8 +1668,8 @@
     },
     "Billing cycle": {
       "Renews automatically at ${ renewPrice }, for ${ renewCycle } month": [
-        "${ renewPrice } karşılığında ${ renewCycle } ay boyunca otomatik olarak yenilenir",
-        "${ renewPrice } karşılığında ${ renewCycle } ay boyunca otomatik olarak yenilenir"
+        "${ renewPrice } tutar ile ${ renewCycle } ay için otomatik olarak yenilenir",
+        "${ renewPrice } tutar ile ${ renewCycle } ay için otomatik olarak yenilenir"
       ],
       "Renews automatically on ${ subscriptionManagerName }": [
         "${ subscriptionManagerName } tarihinde otomatik olarak yenilenir"
@@ -1813,29 +1813,29 @@
         "Şunlar aktarılır"
       ],
       "Migration started for ${ n } user": [
-        "${ n } kullanıcı için geçiş başlatıldı",
-        "${ n } kullanıcı için geçiş başlatıldı"
+        "${ n } kullanıcı için aktarım başlatıldı",
+        "${ n } kullanıcı için aktarım başlatıldı"
       ],
       "Migration status": [
-        "Geçiş durumu"
+        "Aktarım durumu"
       ],
       "Organization does not have enough seats available": [
-        "Kuruluş yeterli koltuk sayısına sahip değil"
+        "Kuruluşun yeterli koltuk sayısı yok"
       ],
       "Organization does not have enough storage available": [
-        "Kuruluş yeterli depolama alanına sahip değil"
+        "Kuruluşun yeterli depolama alanı yok"
       ],
       "Organization settings": [
         "Kuruluş ayarları"
       ],
       "Required": [
-        "Gerekli"
+        "Zorunlu"
       ],
       "Required to create user accounts": [
         "Kullanıcı hesaplarını açmak için gereklidir"
       ],
       "Select at least one user to start a migration": [
-        "Geçişi başlatmak için en az bir kullanıcı seçin"
+        "Bir aktarım başlatmak için en az bir kullanıcı seçin"
       ],
       "Select what you want to migrate, this will apply to all users whether they are created now or later. Migration will start after user accounts are created.": [
         "Aktarmak istediğiniz ögeleri seçin. Bu ayar ister şimdi ister daha sonra oluşturulmuş olsun, tüm kullanıcılara uygulanır. Aktarım işlemi kullanıcı hesapları oluşturulduktan sonra başlayacaktır."
@@ -1859,7 +1859,7 @@
         "Etki alanınızı doğrulayın"
       ],
       "Verify your domain to start a migration": [
-        "Geçişi başlatmak için etki adınızı doğrulayın"
+        "Bir aktarım başlatmak için etki alanınızı doğrulayın"
       ],
       "What are you migrating?": [
         "Neyi aktarıyorsunuz?"
@@ -4996,9 +4996,6 @@
       ]
     },
     "fido2: Error": {
-      "Please disable 2FA via security key before disabling TOTP": [
-        "Tek kullanımlık zamana dayalı parolayı kapatmadan önce lütfen güvenlik anahtarı ile iki adımlı doğrulamayı kapatın"
-      ],
       "Something went wrong authenticating with your security key. Please try again.": [
         "Güvenlik anahtarı ile kimlik doğrulaması yapılırken bir sorun çıktı. Lütfen yeniden deneyin."
       ],
@@ -5039,9 +5036,6 @@
       ],
       "This will delete all security keys linked to your account.": [
         "Bu işlem, hesabınızla bağlantılı tüm güvenlik anahtarlarını siler."
-      ],
-      "To turn on 2FA via security key, you'll need to activate 2FA via authenticator app": [
-        "Güvenlik anahtarı ile iki adımlı doğrulama yapmak için, kimlik doğrulama uygulaması üzerinden iki adımlı doğrulamayı açmanız gerekir"
       ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "Kimliğinizi fiziksel bir U2F ya da FIDO2 güvenlik anahtarıyla doğrulayın"
@@ -8973,7 +8967,7 @@
         "Rakamlar"
       ],
       "OpenVPN password": [
-        "OpenVPN Parolası"
+        "OpenVPN parolası"
       ],
       "OpenVPN username": [
         "OpenVPN kullanıcı adı"
@@ -11071,7 +11065,7 @@
         "Kayıt sayısı 10.000 indirme sayısı sınırını aşıyor"
       ],
       "OpenVPN credentials regenerated": [
-        "OpenVPN kimlik bilgileri yeniden oluşturuldu"
+        "OpenVPN kimlik doğrulama bilgileri yeniden oluşturuldu"
       ],
       "Reminder has been sent": [
         "Hatırlatıcı gönderildi"
@@ -15737,7 +15731,7 @@
         "Üçüncü taraf uygulamalar ve hizmetler"
       ],
       "To preview this spreadsheet, download it.": [
-        "Bu hesap tablosunu önizlemek için indirin."
+        "Bu hesap tablosunu ön izlemek için indirin."
       ],
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "Bu hesap tablosunu ön izlemek için ${ SHEETS_APP_NAME } uygulaması ile açın ya da indirin."

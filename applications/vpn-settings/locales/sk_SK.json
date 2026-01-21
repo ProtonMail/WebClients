@@ -1956,6 +1956,9 @@
       "Payments problem": [
         "Problém s platbami"
       ],
+      "Sheets problem": [
+        "Problém s hárkom"
+      ],
       "Sign in problem": [
         "Problém s prihlásením"
       ],
@@ -5061,9 +5064,6 @@
       ]
     },
     "fido2: Error": {
-      "Please disable 2FA via security key before disabling TOTP": [
-        "Pred vypnutím TOTP deaktivujte 2FA prostredníctvom bezpečnostného kľúča"
-      ],
       "Something went wrong authenticating with your security key. Please try again.": [
         "Pri overovaní pomocou vášho bezpečnostného kľúča sa vyskytla chyba. Prosím skúste znova."
       ],
@@ -5104,9 +5104,6 @@
       ],
       "This will delete all security keys linked to your account.": [
         "Týmto odstránite všetky bezpečnostné kľúče prepojené s vaším účtom."
-      ],
-      "To turn on 2FA via security key, you'll need to activate 2FA via authenticator app": [
-        "Ak chcete zapnúť 2FA prostredníctvom bezpečnostného kľúča, budete musieť aktivovať 2FA cez aplikáciu na overenie totožnosti"
       ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "Overte svoju identitu fyzickým bezpečnostným kľúčom U2F alebo FIDO2"
@@ -16204,6 +16201,9 @@
       ],
       "Third-party apps and services": [
         "Aplikácie a služby tretích strán"
+      ],
+      "To preview this spreadsheet, download it.": [
+        "Pre zobrazenie ukážky tejto tabuľky si ju stiahnite."
       ],
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "Ak chcete zobraziť náhľad tejto tabuľky, otvorte ju v aplikácii ${ SHEETS_APP_NAME } alebo si ju stiahnite."
