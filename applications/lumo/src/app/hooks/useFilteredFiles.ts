@@ -53,7 +53,16 @@ export const useFilteredFiles = (
 
     // Helper to get full attachment from shallow attachment reference
     const getFullAttachmentFromShallow = (shallowAttachment: any) => {
-        return combinedAttachments[shallowAttachment.id];
+        const fullAtt = combinedAttachments[shallowAttachment.id];
+
+        // Skip deleted Drive files (unlinked folders)
+        // If it's a Drive file (has driveNodeId) and not in the attachment store, it was deleted
+        if (!fullAtt && shallowAttachment.driveNodeId) {
+            console.log('[useFilteredFiles] Skipping deleted Drive attachment:', shallowAttachment.id, shallowAttachment.filename);
+            return null;
+        }
+
+        return fullAtt;
     };
 
     // Get files to display based on filtering
