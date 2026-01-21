@@ -72,7 +72,14 @@ function computeFileList(
 
     
     const spaceFiles: FileItem[] = Object.values(spaceAttachments)
-        .filter((attachment) => attachment && !attachment.error && !attachment.processing && !attachment.autoRetrieved)
+        .filter((attachment) => {
+            // Only include attachments that:
+            // 1. Exist in the attachments map (not deleted)
+            // 2. Don't have errors or are processing
+            // 3. Are not auto-retrieved
+            const existsInStore = attachment && allAttachments[attachment.id];
+            return existsInStore && !attachment.error && !attachment.processing && !attachment.autoRetrieved;
+        })
         .map((file) => {
             const attachment = allAttachments[file.id];
             return {
@@ -126,9 +133,12 @@ function filterFiles(files: FileItem[], query: string, limit: number = 10): File
 function createFileCacheKey(
     spaceAttachments: Record<string, any>,
     driveFiles: { id: string; name: string }[],
-    provisionalAttachments: Attachment[]
+    provisionalAttachments: Attachment[],
+    allAttachments: Record<string, Attachment>
 ): string {
     const attachmentIds = Object.keys(spaceAttachments).sort().join(',');
+    // Include allAttachments keys to detect deletions
+    const allAttachmentIds = Object.keys(allAttachments).sort().join(',');
     const driveIds = driveFiles
         .map((f) => `${f.id}:${f.name}`)
         .sort()
@@ -137,7 +147,7 @@ function createFileCacheKey(
         .map((att) => att.filename.toLowerCase())
         .sort()
         .join(',');
-    return `${attachmentIds}|${driveIds}|${provisionalNames}`;
+    return `${attachmentIds}|${allAttachmentIds}|${driveIds}|${provisionalNames}`;
 }
 
 export const useFileMentionAutocomplete = (
@@ -245,7 +255,7 @@ export const useFileMentionAutocomplete = (
 
     // Compute files with manual caching
     const getAllFiles = useCallback((): FileItem[] => {
-        const cacheKey = createFileCacheKey(spaceAttachments, driveFiles, provisionalAttachments);
+        const cacheKey = createFileCacheKey(spaceAttachments, driveFiles, provisionalAttachments, allAttachments);
 
         if (cacheKey === filesCacheRef.current.key) {
             return filesCacheRef.current.files;
