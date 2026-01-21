@@ -193,6 +193,10 @@ hr {
 	padding: 0;
 }
 
+hr.weak {
+	background-color: var(--border-weak);
+}
+
 table {
 	margin-block-end: 1.5em;
 	table-layout: fixed;
