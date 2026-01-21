@@ -101,6 +101,7 @@ export const ProjectDriveFolderInfo: React.FC<ProjectDriveFolderInfoProps> = ({
                                             isOpen={breadcrumbDropdownOpen}
                                             anchorRef={breadcrumbDropdownAnchorRef}
                                             onClose={() => setBreadcrumbDropdownOpen(false)}
+                                            className="chat-dropdown-menu"
                                         >
                                             <DropdownMenu>
                                                 {breadcrumbs.slice(1, -1).map((breadcrumb) => (
