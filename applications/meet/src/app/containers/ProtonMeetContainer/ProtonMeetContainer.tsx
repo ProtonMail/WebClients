@@ -12,7 +12,7 @@ import useNotifications from '@proton/components/hooks/useNotifications';
 import { useMeetErrorReporting } from '@proton/meet';
 import { useCreateInstantMeeting } from '@proton/meet/hooks/useCreateInstantMeeting';
 import { getMeetingLink } from '@proton/meet/utils/getMeetingLink';
-import { hasVisionary } from '@proton/payments';
+import { hasBundleBiz2025, hasBundlePro2024, hasVisionary } from '@proton/payments/core/subscription/helpers';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { isFirefox, isMobile } from '@proton/shared/lib/helpers/browser';
 import { isWebRtcSupported } from '@proton/shared/lib/helpers/isWebRtcSupported';
@@ -1121,7 +1121,11 @@ export const ProtonMeetContainerWithUser = (props: Omit<ProtonMeetContainerProps
     const [user] = useUser();
     const [subscription] = useSubscription();
 
-    const hasSubscription = hasVisionary(subscription);
+    const treatedAsPaidUser =
+        hasVisionary(subscription) ||
+        hasBundlePro2024(subscription) ||
+        hasBundleBiz2025(subscription) ||
+        !!user?.hasPaidMeet;
 
-    return <ProtonMeetContainer {...props} user={user} hasSubscription={hasSubscription} />;
+    return <ProtonMeetContainer {...props} user={user} hasSubscription={treatedAsPaidUser} />;
 };
