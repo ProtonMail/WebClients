@@ -62,20 +62,11 @@
       "Copy address": [
         "Adres kopiëren"
       ],
-      "Copy invitation text": [
-        "Uitnodigingstekst kopiëren"
-      ],
       "Copy link": [
         "Link kopiëren"
       ],
       "Create a free account": [
         "Maak een gratis account aan"
-      ],
-      "Create meeting": [
-        "Vergadering aanmaken"
-      ],
-      "Delete": [
-        "Verwijderen"
       ],
       "Disable ${ participantName }'s video": [
         "Video van ${ participantName } uitschakelen"
@@ -85,6 +76,9 @@
       ],
       "Dismiss": [
         "Negeren"
+      ],
+      "Done": [
+        "Klaar"
       ],
       "Download logs": [
         "Logboeken downloaden"
@@ -121,9 +115,6 @@
       ],
       "Help and resources": [
         "Hulp en bronnen"
-      ],
-      "Hide advanced options": [
-        "Geavanceerde opties verbergen"
       ],
       "Hide participants": [
         "Deelnemers verbergen"
@@ -215,11 +206,11 @@
       "Resend code": [
         "Verstuur code opnieuw"
       ],
+      "Save meeting": [
+        "Vergadering opslaan"
+      ],
       "Schedule": [
         "Planning"
-      ],
-      "Schedule meeting": [
-        "Vergadering plannen"
       ],
       "Search countries": [
         "Zoek landen"
@@ -229,12 +220,6 @@
       ],
       "Settings": [
         "Instellingen"
-      ],
-      "Share": [
-        "Delen"
-      ],
-      "Show advanced options": [
-        "Geavanceerde opties weergeven"
       ],
       "Show participants": [
         "Deelnemers tonen"
@@ -1593,12 +1578,6 @@
       "${ presenterName } is presenting": [
         "${ presenterName } is aan het presenteren"
       ],
-      "${ user.DisplayName } has invited you to a ${ BRAND_NAME } ${ MEET_SHORT_APP_NAME } meeting:": [
-        "U bent uitgenodigd door ${ user.DisplayName } voor een ${ BRAND_NAME } ${ MEET_SHORT_APP_NAME } vergadering:"
-      ],
-      "${ user.DisplayName } has invited you to a ${ BRAND_NAME } ${ MEET_SHORT_APP_NAME } meeting:\n\n${ time }\n\n${ meetingLink }\n\nMeeting ID: ${ id }": [
-        "U bent uitgenodigd door ${ user.DisplayName } voor een ${ BRAND_NAME } ${ MEET_SHORT_APP_NAME } vergadering:\n\n${ time }\n\n${ meetingLink }\n\nVergadering ID: ${ id }"
-      ],
       "${ user.DisplayName }'s Meeting": [
         "Vergadering van ${ user.DisplayName }"
       ],
@@ -1710,9 +1689,6 @@
       "Every call, screen share, and chat is end-to-end encrypted to protect your most important connections.": [
         "Elk gesprek, schermdeling en chat is end-to-end versleuteld om uw belangrijkste verbindingen te beschermen."
       ],
-      "For extra security, you can set a passphrase. It won’t be included in the calendar invite—remember to share it with your guests separately.": [
-        "Voor extra veiligheid kunt u een wachtwoordzin instellen. Deze zal niet worden opgenomen in de agenda-uitnodiging; vergeet niet om deze apart met uw gasten te delen."
-      ],
       "Free meeting": [
         "Gratis vergadering"
       ],
@@ -1739,9 +1715,6 @@
       ],
       "Internet connection lost": [
         "Internetverbinding verbroken"
-      ],
-      "Invitation preview": [
-        "Voorbeeld uitnodiging"
       ],
       "Joined": [
         "Aangesloten"
@@ -1778,9 +1751,6 @@
       ],
       "Meeting full (${ maxParticipants } participants)": [
         "Vergadering vol (${ maxParticipants } deelnemers)"
-      ],
-      "Meeting ID: ${ id }": [
-        "Vergadering ID: ${ id }"
       ],
       "Meeting link": [
         "Vergadering link"
@@ -1896,9 +1866,6 @@
       "Share screen": [
         "Scherm delen"
       ],
-      "Share the meeting invitation with others": [
-        "Deel de uitnodiging voor de vergadering met anderen."
-      ],
       "Share this link to invite others. You can also find it anytime by clicking the info icon in the toolbar.": [
         "Deel deze link om andere uit te nodigen. U kunt deze ook altijd vinden door op het informatiepictogram in de werkbalk te klikken."
       ],
@@ -2006,6 +1973,9 @@
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } gebruikersnaam"
       ],
+      "Add to calendar": [
+        "Voeg toe aan de agenda"
+      ],
       "Attach screenshot(s)": [
         "Schermafbeelding(en) toevoegen"
       ],
@@ -2033,8 +2003,26 @@
       "Delete recovery-related information.": [
         "Verwijder herstel-gerelateerde informatie."
       ],
+      "Download .ics": [
+        "Download .ics"
+      ],
       "Email address": [
         "E-mailadres"
+      ],
+      "Every day": [
+        "Elke dag"
+      ],
+      "Every month": [
+        "Elke maand"
+      ],
+      "Every weekday": [
+        "Elke werkdag"
+      ],
+      "Every year": [
+        "Elk jaar"
+      ],
+      "Google calendar": [
+        "Google agenda"
       ],
       "Hide password": [
         "Wachtwoord verbergen"
@@ -2045,11 +2033,20 @@
       "Meeting ID": [
         "Vergaderingsnummer"
       ],
+      "Monday to Friday": [
+        "Maandag t/m vrijdag"
+      ],
+      "No repeat": [
+        "Niet herhalen"
+      ],
       "Operating system": [
         "Besturingssysteem"
       ],
       "Operating system version": [
         "Versie van besturingssysteem"
+      ],
+      "Outlook calendar": [
+        "Outlook agenda"
       ],
       "Passphrase": [
         "Wachtzin"
@@ -2157,9 +2154,6 @@
       "Enter passphrase": [
         "Voer wachtwoordzin in"
       ],
-      "Enter secret passphrase": [
-        "Voer geheime wachtwoordzin in"
-      ],
       "Enter time": [
         "Voer tijd in"
       ],
@@ -2177,6 +2171,9 @@
       ],
       "Please describe the problem and include any error messages": [
         "Beschrijf het probleem alstublieft en vermeld ook eventuele foutmeldingen"
+      ],
+      "Schedule in ${ CALENDAR_APP_NAME }": [
+        "Inplannen in ${ CALENDAR_APP_NAME }"
       ],
       "Select": [
         "Selecteer"
@@ -2389,9 +2386,6 @@
       ],
       "Schedule meeting": [
         "Vergadering plannen"
-      ],
-      "Secret Passphrase": [
-        "Geheime wachtwoordzin"
       ],
       "Secure meeting": [
         "Veilige vergadering"
