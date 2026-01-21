@@ -335,6 +335,8 @@ export const filterElementsInState = ({
         }
 
         // We don't want to show elements that are in a category but not in the inbox when present in a category
+        // Elements always have the category label.
+        // When we're in a category, we want to see ONLY elements that are in the category and in INBOX
         const isCurrentLabelCategory = CATEGORY_LABEL_IDS_SET.has(labelID as CategoryLabelID);
         let isElementInCategoryButNotInbox = false;
         if (isCurrentLabelCategory) {
@@ -342,10 +344,9 @@ export const filterElementsInState = ({
         }
 
         if (
-            (!hasLabel(element, labelID) &&
-                !elementContainsDisabledCategoryLabel &&
-                labelID !== CUSTOM_VIEWS_LABELS.NEWSLETTER_SUBSCRIPTIONS) ||
-            isElementInCategoryButNotInbox
+            (!hasLabel(element, labelID) || isElementInCategoryButNotInbox) &&
+            !elementContainsDisabledCategoryLabel &&
+            labelID !== CUSTOM_VIEWS_LABELS.NEWSLETTER_SUBSCRIPTIONS
         ) {
             return false;
         }
