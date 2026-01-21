@@ -2177,7 +2177,7 @@
         "${ participantName } tinha aceitado o seu convite e proposto um novo horário para uma ocorrência deste evento. A resposta e a proposta estão desactualizadas."
       ],
       "${ participantName } had accepted your invitation and proposed a new time for this event. Answer and proposal are out of date.": [
-        "${ participantName } tinha aceitado o seu convite e proposto um novo horário para este evento. A resposta e a proposta estão desactualizadas."
+        "${ participantName } tinha aceitado o seu convite e proposto um novo horário para este evento. A resposta e a proposta estão desatualizadas."
       ],
       "${ participantName } had declined an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
         "${ participantName } tinha declinado um convite e proposto um novo horário para uma ocorrência deste evento. A resposta e a proposta estão desactualizadas."
@@ -6990,7 +6990,8 @@
         "A inicializar…"
       ],
       "Insert image": [
-        "Inserir uma imagem"
+        "Inserir imagem",
+        "Inserir imagens"
       ],
       "Insert link": [
         "Inserir uma ligação"
@@ -7968,7 +7969,7 @@
         "Melhore para desbloquear recursos premium."
       ],
       "Upgrade to use ${ MAIL_APP_NAME } with Apple Mail, Outlook or Thunderbird.": [
-        "Melhore para poder utilizar ${ MAIL_APP_NAME } com Apple Mail, Outlook ou Thunderbird."
+        "Atualize para poder utilizar ${ MAIL_APP_NAME } com Apple Mail, Outlook ou Thunderbird."
       ],
       "Upgrade to use auto-reply when you're away.": [
         "Actualize para utilizar a resposta automática quando estiver ausente."
@@ -9325,6 +9326,18 @@
       ],
       "ZIP code": [
         "Código postal"
+      ],
+      "Notifications": [
+        "Notificações"
+      ],
+      "Premium domain": [
+        "Domínio premium"
+      ],
+      "Public domain": [
+        "Domínio público"
+      ],
+      "Your domain": [
+        "O seu domínio"
       ]
     },
     "Label (begin date/advanced search)": {

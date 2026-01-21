@@ -1703,6 +1703,9 @@
       ],
       "Zoom out": [
         "Micșorare"
+      ],
+      "Save preferences": [
+        "Salvare preferințe"
       ]
     },
     "action": {
@@ -2214,6 +2217,9 @@
       ],
       "Website access problem": [
         "Problemă accesare site web"
+      ],
+      "Sheets problem": [
+        "Problemă foaie de calcul"
       ]
     },
     "Button": {
@@ -6257,6 +6263,12 @@
       ],
       "Your password is correct.": [
         "Parola este corectă."
+      ],
+      "Two-factor authentication is enabled in your external account.": [
+        "Autentificarea cu doi factori este activată în contul extern de e-mail."
+      ],
+      "Two-factor authentication is enabled in your external email account.": [
+        "Autentificarea cu doi factori este activată în contul extern de e-mail."
       ]
     },
     "Import ICS file from Mail": {
@@ -7521,7 +7533,9 @@
         "Se inițializează…"
       ],
       "Insert image": [
-        "Inserare imagine"
+        "Inserare imagine",
+        "Inserare imagini",
+        "Inserare imagini"
       ],
       "Insert link": [
         "Inserare legătură web"
@@ -8975,6 +8989,9 @@
       ],
       "This message will be purged tomorrow at ${ value }": [
         "Acest mesaj va fi șters mâine la ${ value }"
+      ],
+      "Receive notifications for ${ categoryLabel }": [
+        "Primire notificări pentru ${ categoryLabel }"
       ]
     },
     "info": {
@@ -10057,6 +10074,24 @@
       ],
       "Has attachments": [
         "Cu atașamente"
+      ],
+      "Categories": [
+        "Categorii"
+      ],
+      "Notifications": [
+        "Notificări"
+      ],
+      "Premium domain": [
+        "Domeniu premium"
+      ],
+      "Public domain": [
+        "Domeniu public"
+      ],
+      "Select the categories to include and manage notifications for new emails.": [
+        "Selectați categoriile de inclus și gestionați notificările pentru mesajele noi."
+      ],
+      "Your domain": [
+        "Domeniul personal"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -14880,6 +14915,9 @@
       ],
       "Show me how": [
         "Arată-mi cum"
+      ],
+      "Download the desktop app": [
+        "Descărcați aplicația pentru desktop"
       ]
     },
     "Title": {
@@ -15917,6 +15955,9 @@
       ],
       "✨ Categories are coming!": [
         "✨ Sosesc categoriile!"
+      ],
+      "To preview this spreadsheet, download it.": [
+        "Pentru a examina această foaie de calcul, descărcați-o."
       ]
     },
     "Today icon tooltip in mini calendar": {

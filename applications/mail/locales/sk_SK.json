@@ -1706,6 +1706,9 @@
       ],
       "Zoom out": [
         "Oddialiť"
+      ],
+      "Save preferences": [
+        "Uložiť preferencie"
       ]
     },
     "action": {
@@ -2225,6 +2228,9 @@
       ],
       "Website access problem": [
         "Problém s prístupom k stránke"
+      ],
+      "Sheets problem": [
+        "Problém s hárkom"
       ]
     },
     "Button": {
@@ -6308,6 +6314,12 @@
       ],
       "Your password is correct.": [
         "Vaše heslo je správne."
+      ],
+      "Two-factor authentication is enabled in your external account.": [
+        "Dvojfázové overovanie je zapnuté vo vašom externom účte."
+      ],
+      "Two-factor authentication is enabled in your external email account.": [
+        "Dvojfázové overovanie je zapnuté vo vašom externom emailovom účte."
       ]
     },
     "Import ICS file from Mail": {
@@ -7637,7 +7649,10 @@
         "Inicializácia…"
       ],
       "Insert image": [
-        "Vložiť obrázok"
+        "Vložiť obrázok",
+        "Vložiť obrázky",
+        "Vložiť obrázky",
+        "Vložiť obrázky"
       ],
       "Insert link": [
         "Vložiť odkaz"
@@ -9114,6 +9129,9 @@
       ],
       "This message will be purged tomorrow at ${ value }": [
         "Táto správa bude vymazaná zajtra o ${ value }"
+      ],
+      "Receive notifications for ${ categoryLabel }": [
+        "Prijímať upozornenia pre kategóriu ${ categoryLabel }"
       ]
     },
     "info": {
@@ -10204,6 +10222,24 @@
       ],
       "Has attachments": [
         "Má prílohy"
+      ],
+      "Categories": [
+        "Kategórie"
+      ],
+      "Notifications": [
+        "Notifikácie"
+      ],
+      "Premium domain": [
+        "Prémiová doména"
+      ],
+      "Public domain": [
+        "Verejná doména"
+      ],
+      "Select the categories to include and manage notifications for new emails.": [
+        "Vyberte kategórie, ktoré chcete zahrnúť, a spravujte notifikácie na nové emaily."
+      ],
+      "Your domain": [
+        "Vaša doména"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -15151,6 +15187,9 @@
       ],
       "Show me how": [
         "Ukážte mi ako"
+      ],
+      "Download the desktop app": [
+        "Stiahnite si aplikáciu pre počítače"
       ]
     },
     "Title": {
@@ -16200,6 +16239,9 @@
       ],
       "✨ Categories are coming!": [
         "✨ Prichádzajú kategórie!"
+      ],
+      "To preview this spreadsheet, download it.": [
+        "Pre zobrazenie ukážky tejto tabuľky si ju stiahnite."
       ]
     },
     "Today icon tooltip in mini calendar": {

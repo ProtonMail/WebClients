@@ -1696,6 +1696,9 @@
       ],
       "Zoom out": [
         "Zoom ud"
+      ],
+      "Save preferences": [
+        "Gem præferencer"
       ]
     },
     "action": {
@@ -2199,6 +2202,9 @@
       ],
       "Website access problem": [
         "Adgangsproblem på websted"
+      ],
+      "Sheets problem": [
+        "Regnearksproblem"
       ]
     },
     "Button": {
@@ -6202,6 +6208,12 @@
       ],
       "Your password is correct.": [
         "Din adgangskode er korrekt."
+      ],
+      "Two-factor authentication is enabled in your external account.": [
+        "To-faktor-godkendelse er aktiveret i din eksterne konto."
+      ],
+      "Two-factor authentication is enabled in your external email account.": [
+        "Tofaktor-godkendelse er aktiveret i din eksterne e-mail-konto."
       ]
     },
     "Import ICS file from Mail": {
@@ -7401,7 +7413,8 @@
         "Igangsætter..."
       ],
       "Insert image": [
-        "Indsæt billede"
+        "Indsæt billede",
+        "Indsæt billeder"
       ],
       "Insert link": [
         "Indsæt link"
@@ -8832,6 +8845,9 @@
       ],
       "This message will be purged tomorrow at ${ value }": [
         "Denne besked vil blive slettet i morgen kl. ${ value }"
+      ],
+      "Receive notifications for ${ categoryLabel }": [
+        "Modtag notifikationer for ${ categoryLabel }"
       ]
     },
     "info": {
@@ -9906,6 +9922,24 @@
       ],
       "Has attachments": [
         "Har vedhæftninger"
+      ],
+      "Categories": [
+        "Kategorier"
+      ],
+      "Notifications": [
+        "Notifikationer"
+      ],
+      "Premium domain": [
+        "Premium domæne"
+      ],
+      "Public domain": [
+        "Offentligt domæne"
+      ],
+      "Select the categories to include and manage notifications for new emails.": [
+        "Vælg de kategorier, der skal inkluderes, og administrer notifikationer for nye e-mails."
+      ],
+      "Your domain": [
+        "Dit domæne"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -13995,7 +14029,7 @@
         "Dit ${ planName }-abonnement beskytter ikke bare din virksomheds data og kommunikation. Den understøtter dine overholdelsesmål, får din virksomhed til at skille sig ud og holder dit team forbundet."
       ],
       "Your own short @pm.me email alias": [
-        "Dit eget korte @pm.me e-mail-alias"
+        "Dit eget korte @pm.me e-mailalias"
       ]
     },
     "subscription reminder": {
@@ -15633,6 +15667,9 @@
       ],
       "✨ Categories are coming!": [
         "✨ Kategorier er på vej!"
+      ],
+      "To preview this spreadsheet, download it.": [
+        "For at forhåndsvise dette regneark, skal du downloade det."
       ]
     },
     "Today icon tooltip in mini calendar": {

@@ -1696,6 +1696,9 @@
       ],
       "Zoom out": [
         "Uzaklaştır"
+      ],
+      "Save preferences": [
+        "Ayarları kaydet"
       ]
     },
     "action": {
@@ -2199,6 +2202,9 @@
       ],
       "Website access problem": [
         "Site erişim sorunu"
+      ],
+      "Sheets problem": [
+        "Hesap tablosu sorunu"
       ]
     },
     "Button": {
@@ -6202,6 +6208,12 @@
       ],
       "Your password is correct.": [
         "Parolanız doğru."
+      ],
+      "Two-factor authentication is enabled in your external account.": [
+        "Dış hesabınızda iki adımlı doğrulama kullanıma alınmış."
+      ],
+      "Two-factor authentication is enabled in your external email account.": [
+        "Dış e-posta hesabınızda iki adımlı doğrulama kullanıma alınmış."
       ]
     },
     "Import ICS file from Mail": {
@@ -7401,7 +7413,8 @@
         "Hazırlanıyor…"
       ],
       "Insert image": [
-        "Görsel ekle"
+        "Görsel ekle",
+        "Görseller ekle"
       ],
       "Insert link": [
         "Bağlantı ekle"
@@ -8832,6 +8845,9 @@
       ],
       "This message will be purged tomorrow at ${ value }": [
         "Bu ileti yarın ${ value } saatinde silinecek"
+      ],
+      "Receive notifications for ${ categoryLabel }": [
+        "${ categoryLabel } için bildirimler al"
       ]
     },
     "info": {
@@ -9906,6 +9922,24 @@
       ],
       "Has attachments": [
         "Ek dosyaları olan"
+      ],
+      "Categories": [
+        "Kategoriler"
+      ],
+      "Notifications": [
+        "Bildirimler"
+      ],
+      "Premium domain": [
+        "Ücretli etki alanı"
+      ],
+      "Public domain": [
+        "Herkese açık etki alanı"
+      ],
+      "Select the categories to include and manage notifications for new emails.": [
+        "Yeni e-postalar için dahil edilecek kategorileri seçin ve bildirimleri yönetin."
+      ],
+      "Your domain": [
+        "Etki alanınız"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -14607,7 +14641,7 @@
         "Nasıl yapılacağını göster"
       ],
       "Download the desktop app": [
-        "Masaüstü uygulamasını indirin"
+        "Bilgisayar uygulamasını indirin"
       ]
     },
     "Title": {
@@ -15633,6 +15667,9 @@
       ],
       "✨ Categories are coming!": [
         "✨ Kategoriler özelliği geliyor!"
+      ],
+      "To preview this spreadsheet, download it.": [
+        "Bu hesap tablosunu ön izlemek için indirin."
       ]
     },
     "Today icon tooltip in mini calendar": {

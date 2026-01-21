@@ -1696,6 +1696,9 @@
       ],
       "Zoom out": [
         "Allunyar"
+      ],
+      "Save preferences": [
+        "Deseu les preferències"
       ]
     },
     "action": {
@@ -2199,6 +2202,9 @@
       ],
       "Website access problem": [
         "Problema d'acces a la web"
+      ],
+      "Sheets problem": [
+        "Hi ha hagut un problema amb els fulls de càlcul"
       ]
     },
     "Button": {
@@ -6202,6 +6208,12 @@
       ],
       "Your password is correct.": [
         "La seva contrasenya és correcta."
+      ],
+      "Two-factor authentication is enabled in your external account.": [
+        "L'autenticació de doble factor està habilitada al vostre compte extern."
+      ],
+      "Two-factor authentication is enabled in your external email account.": [
+        "L'autenticació de doble factor està habilitada al vostre compte de correu electrònic extern."
       ]
     },
     "Import ICS file from Mail": {
@@ -7401,7 +7413,8 @@
         "S'està inicialitzant…"
       ],
       "Insert image": [
-        "Insereix una imatge"
+        "Insereix una imatge",
+        "Insereix imatges"
       ],
       "Insert link": [
         "Insereix un enllaç"
@@ -8832,6 +8845,9 @@
       ],
       "This message will be purged tomorrow at ${ value }": [
         "Aquest missatge s'eliminarà demà a les ${ value }"
+      ],
+      "Receive notifications for ${ categoryLabel }": [
+        "Rebeu notificacions de ${ categoryLabel }"
       ]
     },
     "info": {
@@ -9906,6 +9922,24 @@
       ],
       "Has attachments": [
         "Té adjunts"
+      ],
+      "Categories": [
+        "Categories"
+      ],
+      "Notifications": [
+        "Notificacions"
+      ],
+      "Premium domain": [
+        "Domini prèmium"
+      ],
+      "Public domain": [
+        "Domini públic"
+      ],
+      "Select the categories to include and manage notifications for new emails.": [
+        "Seleccioneu les categories per incloure i gestionar les notificacions de nous correus electrònics."
+      ],
+      "Your domain": [
+        "El vostre domini"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -15633,6 +15667,9 @@
       ],
       "✨ Categories are coming!": [
         "✨ Arriben les categories!"
+      ],
+      "To preview this spreadsheet, download it.": [
+        "Per previsualitzar aquest full de càlcul, descarregueu-lo."
       ]
     },
     "Today icon tooltip in mini calendar": {

@@ -1696,6 +1696,9 @@
       ],
       "Zoom out": [
         "Zoom uit"
+      ],
+      "Save preferences": [
+        "Voorkeuren opslaan"
       ]
     },
     "action": {
@@ -2199,6 +2202,9 @@
       ],
       "Website access problem": [
         "Probleem met toegang tot website"
+      ],
+      "Sheets problem": [
+        "Werkblad probleem"
       ]
     },
     "Button": {
@@ -2526,7 +2532,7 @@
         "${ maxSpaceTB } opslagruimte"
       ],
       "${ numberOfUsers } user": [
-        "Tot ${ numberOfUsers } gebruiker",
+        "${ numberOfUsers } gebruiker",
         "Tot ${ numberOfUsers } gebruikers"
       ],
       "${ planMaxSpace } email storage": [
@@ -2657,7 +2663,7 @@
         "Chats op hoge snelheid en geavanceerde AI-functies."
       ],
       "Private video calls for the conversations that matter.": [
-        "Privé videogesprekken voor de gesprekken die ertoe doen."
+        "Privé-videogesprekken voor de gesprekken die ertoe doen."
       ]
     },
     "color": {
@@ -5052,7 +5058,7 @@
         "Er was een probleem met het ontsleutelen van uw bericht. Als het probleem zich blijft voordoen, neem dan contact op met onze klantenondersteuning."
       ],
       "Your message cannot be decrypted. If you deleted any of your address keys, try ${ reimportKeyLink } them. ${ learnMoreLink }": [
-        "Uw bericht kan niet worden ontsleuteld. Als u een van uw adres-sleutels hebt verwijderd, probeer deze dan ${ reimportKeyLink } opnieuw te importeren. ${ learnMoreLink }"
+        "Uw bericht kan niet worden ontsleuteld. Als u een van uw adressleutels hebt verwijderd, probeer deze dan ${ reimportKeyLink } opnieuw te importeren. ${ learnMoreLink }"
       ],
       "Your message cannot be decrypted. The key used to encrypt this message does not match any of the keys associated with your address. If you deleted any of your address keys, try ${ reimportKeyLink } them. ${ learnMoreLink }": [
         "Uw bericht kan niet worden ontsleuteld. De sleutel die is gebruikt om dit bericht te versleutelen, komt niet overeen met een van de sleutels die aan uw adres zijn gekoppeld. Als u een van uw adres-sleutels hebt verwijderd, probeer dan ${ reimportKeyLink } opnieuw te importeren. ${ learnMoreLink }"
@@ -6202,6 +6208,12 @@
       ],
       "Your password is correct.": [
         "Uw wachtwoord is juist."
+      ],
+      "Two-factor authentication is enabled in your external account.": [
+        "Tweestapsverificatie is ingeschakeld in uw externe account."
+      ],
+      "Two-factor authentication is enabled in your external email account.": [
+        "Tweestapsverificatie is ingeschakeld in uw externe e-mailaccount."
       ]
     },
     "Import ICS file from Mail": {
@@ -7401,7 +7413,8 @@
         "Initialiseren..."
       ],
       "Insert image": [
-        "Afbeelding invoegen"
+        "Afbeelding toevoegen",
+        "Afbeeldingen toevoegen"
       ],
       "Insert link": [
         "Koppeling invoegen"
@@ -9906,6 +9919,18 @@
       ],
       "Has attachments": [
         "Heeft bijlagen"
+      ],
+      "Notifications": [
+        "Meldingen"
+      ],
+      "Premium domain": [
+        "Premium domein"
+      ],
+      "Public domain": [
+        "Publiek domein"
+      ],
+      "Your domain": [
+        "Uw domein"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -14605,6 +14630,9 @@
       ],
       "Show me how": [
         "Ik wil meer weten"
+      ],
+      "Download the desktop app": [
+        "Download de desktop app"
       ]
     },
     "Title": {
@@ -15630,6 +15658,9 @@
       ],
       "✨ Categories are coming!": [
         "✨ Categorieën komen eraan!"
+      ],
+      "To preview this spreadsheet, download it.": [
+        "Om een voorbeeld van dit spreadsheet te bekijken, download het."
       ]
     },
     "Today icon tooltip in mini calendar": {
