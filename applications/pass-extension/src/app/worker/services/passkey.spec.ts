@@ -1,78 +1,81 @@
-import { assertValidPasskeyRequest, isSecureLocalhost } from './passkey';
+import { assertValidPasskeyRequest } from './passkey';
 
 describe('assertValidPasskeyRequest', () => {
     test('should throw error when domain is not defined', () => {
-        const domain = undefined;
+        const hostname = undefined;
         const tabUrl = 'https://example.com/path';
-        expect(() => assertValidPasskeyRequest(domain, tabUrl)).toThrow('Invalid passkey request: no domain');
+        expect(() => assertValidPasskeyRequest(hostname, tabUrl)).toThrow('Invalid request: no domain');
     });
 
     test('should throw error when sender URL is missing', () => {
-        const domain = 'example.com';
+        const hostname = 'example.com';
         const tabUrl = undefined;
-        expect(() => assertValidPasskeyRequest(domain, tabUrl)).toThrow('Invalid passkey request: unknown sender');
+        expect(() => assertValidPasskeyRequest(hostname, tabUrl)).toThrow('Invalid request: unknown sender');
     });
 
     test('should throw error when domain does not match sender hostname', () => {
-        const domain = 'example.com';
+        const hostname = 'example.com';
         const tabUrl = 'https://malicious.com/path';
-        expect(() => assertValidPasskeyRequest(domain, tabUrl)).toThrow('Invalid passkey request: domain mistmatch');
+        expect(() => assertValidPasskeyRequest(hostname, tabUrl)).toThrow('Invalid request: domain mistmatch');
     });
 
     test('should throw error for subdomain mismatch', () => {
-        const domain = 'example.com';
+        const hostname = 'example.com';
         const tabUrl = 'https://sub.example.com/path';
-        expect(() => assertValidPasskeyRequest(domain, tabUrl)).toThrow('Invalid passkey request: domain mistmatch');
+        expect(() => assertValidPasskeyRequest(hostname, tabUrl)).toThrow('Invalid request: domain mistmatch');
     });
 
     test('should pass for valid domain and matching sender URL', () => {
-        const domain = 'example.com';
+        const hostname = 'example.com';
         const tabUrl = 'https://example.com/path';
-        expect(() => assertValidPasskeyRequest(domain, tabUrl)).not.toThrow();
+        expect(() => assertValidPasskeyRequest(hostname, tabUrl)).not.toThrow();
     });
 
     test('should pass for subdomains when they match exactly', () => {
-        const domain = 'sub.example.com';
+        const hostname = 'sub.example.com';
         const tabUrl = 'https://sub.example.com/path';
-        expect(() => assertValidPasskeyRequest(domain, tabUrl)).not.toThrow();
+        expect(() => assertValidPasskeyRequest(hostname, tabUrl)).not.toThrow();
     });
 
-    test('should pass for different protocols', () => {
-        const domain = 'example.com';
+    test('should throw for http protocol on non-localhost', () => {
+        const hostname = 'example.com';
         const tabUrl = 'http://example.com/path';
-        expect(() => assertValidPasskeyRequest(domain, tabUrl)).not.toThrow();
+        expect(() => assertValidPasskeyRequest(hostname, tabUrl)).toThrow('Invalid request: insecure protocol');
     });
 
     test('should pass if port in URL correctly', () => {
-        const domain = 'example.com';
+        const hostname = 'example.com';
         const tabUrl = 'https://example.com:8080/path';
-        expect(() => assertValidPasskeyRequest(domain, tabUrl)).not.toThrow();
-    });
-});
-
-describe('isSecureLocalhost', () => {
-    test('should return true for secure localhost URL', () => {
-        expect(isSecureLocalhost('https://localhost')).toBe(true);
-        expect(isSecureLocalhost('https://localhost/')).toBe(true);
-        expect(isSecureLocalhost('https://localhost/path')).toBe(true);
-        expect(isSecureLocalhost('https://localhost:8080')).toBe(true);
-        expect(isSecureLocalhost('https://localhost:3000/path')).toBe(true);
+        expect(() => assertValidPasskeyRequest(hostname, tabUrl)).not.toThrow();
     });
 
-    test('should return false for insecure localhost URL', () => {
-        expect(isSecureLocalhost('http://localhost')).toBe(false);
-        expect(isSecureLocalhost('http://localhost/')).toBe(false);
-        expect(isSecureLocalhost('http://localhost:8080')).toBe(false);
+    test('should allow http for localhost', () => {
+        const hostname = 'localhost';
+        const tabUrl = 'http://localhost/path';
+        expect(() => assertValidPasskeyRequest(hostname, tabUrl)).not.toThrow();
     });
 
-    test('should return false for non-localhost hostnames', () => {
-        expect(isSecureLocalhost('https://example.com')).toBe(false);
-        expect(isSecureLocalhost('https://127.0.0.1')).toBe(false);
-        expect(isSecureLocalhost('https://sub.localhost')).toBe(false);
+    test('should allow http for localhost with port', () => {
+        const hostname = 'localhost';
+        const tabUrl = 'http://localhost:8000/path';
+        expect(() => assertValidPasskeyRequest(hostname, tabUrl)).not.toThrow();
     });
 
-    test('should return false for invalid or missing URLs', () => {
-        expect(isSecureLocalhost(undefined)).toBe(false);
-        expect(isSecureLocalhost('')).toBe(false);
+    test('should allow https for localhost', () => {
+        const hostname = 'localhost';
+        const tabUrl = 'https://localhost/path';
+        expect(() => assertValidPasskeyRequest(hostname, tabUrl)).not.toThrow();
+    });
+
+    test('should reject http for 127.0.0.1 (not localhost hostname)', () => {
+        const hostname = '127.0.0.1';
+        const tabUrl = 'http://127.0.0.1/path';
+        expect(() => assertValidPasskeyRequest(hostname, tabUrl)).toThrow('Invalid request: insecure protocol');
+    });
+
+    test('should reject other protocols', () => {
+        const hostname = 'example.com';
+        const tabUrl = 'data:text/html,<html>test</html>';
+        expect(() => assertValidPasskeyRequest(hostname, tabUrl)).toThrow();
     });
 });
