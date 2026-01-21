@@ -2,17 +2,15 @@ import type { ReactNode } from 'react';
 import { createContext, useCallback, useContext, useEffect, useMemo, useRef } from 'react';
 
 import { useRoomContext } from '@livekit/components-react';
-import type { Participant, RemoteTrackPublication, TrackPublication } from 'livekit-client';
+import type { Participant, TrackPublication } from 'livekit-client';
 import { RoomEvent } from 'livekit-client';
 
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 
 import { PAGE_SIZE, SMALL_SCREEN_PAGE_SIZE } from '../../constants';
 import { useParticipantQuality } from '../../hooks/useParticipantQuality';
-import { useStuckTrackMonitor } from '../../hooks/useStuckTrackMonitor';
 import { useMeetSelector } from '../../store/hooks';
 import { selectMeetSettings, selectParticipantsWithDisabledVideos } from '../../store/slices/settings';
-import { checkVideoTrackStats } from '../../utils/checkVideoTrackStats';
 import type { RegisterCameraTrackFn } from './CameraTrackSubscriptionCache';
 import { CameraTrackSubscriptionCache } from './CameraTrackSubscriptionCache';
 
@@ -24,8 +22,6 @@ interface CameraTrackSubscriptionCacheApi {
 const CameraTrackSubscriptionCacheContext = createContext<CameraTrackSubscriptionCacheApi | null>(null);
 
 const DEFAULT_CAPACITY = 4 * (isMobile() ? SMALL_SCREEN_PAGE_SIZE : PAGE_SIZE);
-const STUCK_CAMERA_CHECK_INTERVAL_MS = 7000;
-const MIN_EXPECTED_FRAMES = 1;
 
 export const CameraTrackSubscriptionCacheProvider = ({ children }: { children: ReactNode }) => {
     const room = useRoomContext();
@@ -59,22 +55,6 @@ export const CameraTrackSubscriptionCacheProvider = ({ children }: { children: R
             cacheRef.current?.destroy();
         };
     }, []);
-
-    const resetVideoTrack = useCallback(async (publication: RemoteTrackPublication) => {
-        await cacheRef.current?.resetQueueManagedVideoTrack(publication);
-    }, []);
-
-    const getTracksToMonitor = useCallback(() => {
-        return cacheRef.current?.getQueueManagedTracksToMonitor() ?? [];
-    }, []);
-
-    useStuckTrackMonitor({
-        checkIntervalMs: STUCK_CAMERA_CHECK_INTERVAL_MS,
-        minExpectedDelta: MIN_EXPECTED_FRAMES,
-        getTracksToMonitor,
-        checkTrackStats: checkVideoTrackStats,
-        resetTrack: resetVideoTrack,
-    });
 
     useEffect(() => {
         const handleTrackUnpublished = (publication: TrackPublication, _participant: Participant) => {
