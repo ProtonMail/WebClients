@@ -1486,6 +1486,9 @@
       ],
       "Website access problem": [
         "Problem med åtkomst till webbplats"
+      ],
+      "Sheets problem": [
+        "Problem med kalkylblad"
       ]
     },
     "Button": {
@@ -1837,6 +1840,9 @@
       ],
       "High-speed chats and advanced AI features.": [
         "Chattar med hög hastighet och avancerade AI-funktioner."
+      ],
+      "Private video calls for the conversations that matter.": [
+        "Privata videosamtal för de konversationer som är viktiga."
       ]
     },
     "colon": {
@@ -3942,6 +3948,9 @@
       ],
       "Unable to load VPN dashboard. Please check your connection and try again.": [
         "Kan inte ladda VPN-adminpanel. Kontrollera din anslutning och försök igen."
+      ],
+      "Failed to add existing ${ MEET_APP_NAME } video conference": [
+        "Misslyckades att lägga till befintlig ${ MEET_APP_NAME }-videokonferens"
       ]
     },
     "error": {
@@ -4784,6 +4793,12 @@
       ],
       "Your password is correct.": [
         "Ditt lösenord är korrekt."
+      ],
+      "Two-factor authentication is enabled in your external account.": [
+        "Tvåfaktorsautentisering är aktiverat i ditt externa konto."
+      ],
+      "Two-factor authentication is enabled in your external email account.": [
+        "Tvåfaktorsautentisering är aktiverat i ditt externa e-postkonto."
       ]
     },
     "Import instructions": {
@@ -7113,6 +7128,15 @@
       ],
       "Your location": [
         "Din plats"
+      ],
+      "Premium domain": [
+        "Premiumdomän"
+      ],
+      "Public domain": [
+        "Offentlig domän"
+      ],
+      "Your domain": [
+        "Din domän"
       ]
     },
     "label": {
@@ -12608,6 +12632,16 @@
       "Up to ${ n } participant": [
         "Upp till ${ n } deltagare",
         "Upp till ${ n } deltagare"
+      ],
+      "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
+        "${ MEET_APP_NAME }: Konfidentiella videokonferenser för de konversationer som är viktiga"
+      ],
+      "${ n } active meeting at a time": [
+        "${ n } aktivt möte åt gången",
+        "${ n } aktiva möten åt gången"
+      ],
+      "One active meeting at a time": [
+        "Ett aktivt möte åt gången"
       ]
     }
   }

@@ -1492,6 +1492,9 @@
       ],
       "Website access problem": [
         "Zugriffsproblem auf eine Website"
+      ],
+      "Sheets problem": [
+        "Tabellenblatt-Problem"
       ]
     },
     "Button": {
@@ -3960,6 +3963,9 @@
       ],
       "Unable to load VPN dashboard. Please check your connection and try again.": [
         "Das VPN-Dashboard kann nicht geladen werden. Bitte überprüfe deine Verbindung und versuche es erneut."
+      ],
+      "Failed to add existing ${ MEET_APP_NAME } video conference": [
+        "Das Hinzufügen der vorhandenen ${ MEET_APP_NAME }-Videokonferenz ist fehlgeschlagen"
       ]
     },
     "error": {
@@ -4802,6 +4808,12 @@
       ],
       "Your password is correct.": [
         "Dein Passwort ist korrekt."
+      ],
+      "Two-factor authentication is enabled in your external account.": [
+        "Zwei-Faktor-Authentifizierung ist in deinem externen Konto aktiviert."
+      ],
+      "Two-factor authentication is enabled in your external email account.": [
+        "Zwei-Faktor-Authentifizierung ist in deinem externen E-Mail-Konto aktiviert."
       ]
     },
     "Import instructions": {
@@ -7161,6 +7173,15 @@
       ],
       "Your location": [
         "Dein Standort"
+      ],
+      "Premium domain": [
+        "Premium-Domain"
+      ],
+      "Public domain": [
+        "Öffentliche Domain"
+      ],
+      "Your domain": [
+        "Deine Domain"
       ]
     },
     "label": {

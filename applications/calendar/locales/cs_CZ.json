@@ -1516,6 +1516,9 @@
       ],
       "Website access problem": [
         "Problém s přístupem k webové stránce"
+      ],
+      "Sheets problem": [
+        "Problém s Sheets"
       ]
     },
     "Button": {
@@ -4030,6 +4033,9 @@
       ],
       "Unable to load VPN dashboard. Please check your connection and try again.": [
         "Nelze načíst ovládací panel VPN. Zkontrolujte prosím své připojení a zkuste to znovu."
+      ],
+      "Failed to add existing ${ MEET_APP_NAME } video conference": [
+        "Nepodařilo se přidat existující videokonferenci ${ MEET_APP_NAME }"
       ]
     },
     "error": {
@@ -4906,6 +4912,12 @@
       ],
       "Your password is correct.": [
         "Vaše heslo je správné."
+      ],
+      "Two-factor authentication is enabled in your external account.": [
+        "Ve vašem externím účtu je povoleno dvoufázové ověřování."
+      ],
+      "Two-factor authentication is enabled in your external email account.": [
+        "Ve vašem externím e-mailovém účtu je povoleno dvoufázové ověřování."
       ]
     },
     "Import instructions": {
@@ -6146,7 +6158,7 @@
         "Pro přidání nové rezervační stránky požádejte svého správce o navýšení vašeho tarifu."
       ],
       "To add a new booking page, remove an existing one from the Booking pages sidebar.": [
-        "Pro přidání nové rezervační stránky odeberte některou z těch stávajících z bočního panelu rezervačních stránek."
+        "Pro přidání nové rezervační stránky odeberte některou z těch stávajících z postranního panelu rezervačních stránek."
       ],
       "To add a new booking page, upgrade your plan.": [
         "Pro přidání nové rezervační stránky navyšte svůj tarif."
@@ -7345,6 +7357,15 @@
       ],
       "Your location": [
         "Vaše poloha"
+      ],
+      "Premium domain": [
+        "Prémiová doména"
+      ],
+      "Public domain": [
+        "Veřejná doména"
+      ],
+      "Your domain": [
+        "Vaše doména"
       ]
     },
     "label": {

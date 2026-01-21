@@ -1015,6 +1015,12 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "デスクトップアプリの無料トライアルは ${ formattedEndDate } で終了します。${ upgradeButton }"
+      ],
+      "Disable auto-add ${ MEET_APP_NAME } links feature": [
+        "${ MEET_APP_NAME }リンクの自動追加機能を無効にする"
+      ],
+      "Turn off auto-add": [
+        "自動追加をオフにする"
       ]
     },
     "action": {
@@ -1474,6 +1480,9 @@
       ],
       "Website access problem": [
         "ウェブサイトへのアクセスに関する問題"
+      ],
+      "Sheets problem": [
+        "シートの問題"
       ]
     },
     "Button": {
@@ -1739,6 +1748,9 @@
       ],
       "Ultra fast and private VPN": [
         "超高速でプライベートなVPN"
+      ],
+      "${ numberOfUsers } user": [
+        "最大${ numberOfUsers }人のユーザー"
       ]
     },
     "Checkout row": {
@@ -1822,6 +1834,9 @@
       ],
       "High-speed chats and advanced AI features.": [
         "高速チャットと高度なAI機能。"
+      ],
+      "Private video calls for the conversations that matter.": [
+        "プライベートなビデオ通話で、大切な会話を。"
       ]
     },
     "colon": {
@@ -3910,6 +3925,12 @@
       ],
       "Unable to load VPN dashboard. Please check your connection and try again.": [
         "VPNのダッシュボードの読み込みに失敗しました。接続状況を確認してもう一度お試しください。"
+      ],
+      "Failed to add existing ${ MEET_APP_NAME } video conference": [
+        "${ MEET_APP_NAME } ビデオ会議の追加に失敗しました"
+      ],
+      "Failed to update settings": [
+        "設定の更新に失敗しました"
       ]
     },
     "error": {
@@ -4735,6 +4756,12 @@
       ],
       "Your password is correct.": [
         "パスワードは正しいです。"
+      ],
+      "Two-factor authentication is enabled in your external account.": [
+        "外部アカウントで2要素認証が有効になっています。"
+      ],
+      "Two-factor authentication is enabled in your external email account.": [
+        "外部メールアカウントで2要素認証が有効になっています。"
       ]
     },
     "Import instructions": {
@@ -4964,7 +4991,7 @@
         "**ステップ2：** あなたの友達は、選択した${ BRAND_NAME }プランを2週間無料で利用できます。"
       ],
       "**Step 2:** Your friends get 2 weeks for free on their plan.": [
-        "**ステップ2：** あなたの友達は、プランを2週間無料でご利用いただけます。"
+        "**ステップ2：** あなたの友人に、2週間分のプランが無料で提供されます。"
       ],
       "**Step 3:** Get ${ referrerRewardAmount } credits for every friend that subscribes to a plan.": [
         "**ステップ3：**友達がプランに登録するたびに、${ referrerRewardAmount } クレジットを獲得できます。"
@@ -6336,6 +6363,9 @@
       ],
       "Your physical location is visible and can be used to restrict your access to the internet.": [
         "お客様の位置情報は公開状態にあり、インターネットへのアクセスを制限するのに悪用されうります。"
+      ],
+      "We automatically added a ${ MEET_APP_NAME } link": [
+        "${ MEET_APP_NAME } リンクを自動的に追加しました"
       ]
     },
     "info": {
@@ -7051,6 +7081,15 @@
       ],
       "Your location": [
         "お客様の現在地"
+      ],
+      "Premium domain": [
+        "プレミアムドメイン"
+      ],
+      "Public domain": [
+        "公開ドメイン"
+      ],
+      "Your domain": [
+        "あなたのドメイン"
       ]
     },
     "label": {
@@ -9159,7 +9198,7 @@
         "お支払いが現在処理中です"
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
-        "お客様のサブスクリプションには現在、既存の割引が適用されています。この新しいプロモーションに移行すると、既存の割引は適用されなくなります。"
+        "あなたのサブスクリプションは現在、割引が適用されています。この新しいプロモーションに移行すると、既存の割引は適用されなくなります。"
       ]
     },
     "Payments.Error": {
@@ -10923,6 +10962,9 @@
       ],
       "You have successfully unsubscribed": [
         "サブスクリプションをキャンセルしました"
+      ],
+      "Auto-add ${ MEET_APP_NAME } links disabled": [
+        "${ MEET_APP_NAME }リンクの自動追加を無効にしました"
       ]
     },
     "Suffix": {
@@ -11923,7 +11965,7 @@
     },
     "tooltip": {
       "${ LUMO_APP_NAME }: AI assistant that respects your privacy": [
-        "${ LUMO_APP_NAME }: お客様のプライバシーを尊重するAIアシスタント"
+        "プライバシー重視のAIアシスタント、${ LUMO_APP_NAME }"
       ],
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: すべてのデバイスで安全なログインを実現します。 無制限のエイリアス、共有、統合 2要素認証 などが含まれます。"
@@ -12359,6 +12401,55 @@
       ],
       "Download for Windows": [
         "Windows版をダウンロード"
+      ]
+    },
+    "customer_support.feature.meet": {
+      "For ${ MEET_APP_NAME }": [
+        "${ MEET_APP_NAME } 向け"
+      ]
+    },
+    "meet_2025: Feature": {
+      "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
+        "${ MEET_APP_NAME }: 最も重要な会話のための機密性の高いビデオ会議"
+      ],
+      "${ n } active meeting at a time": [
+        "一度に${ n }件のミーティングを同時に開催"
+      ],
+      "24 hours per meeting": [
+        "ミーティング1回あたり24時間"
+      ],
+      "60 minutes per meeting": [
+        "ミーティング1回あたり60分"
+      ],
+      "Appointment scheduling": [
+        "日程調整ツール"
+      ],
+      "Browser, mobile, and desktop apps": [
+        "ブラウザ、モバイル、デスクトップアプリ"
+      ],
+      "Built-in chat": [
+        "組み込みチャット"
+      ],
+      "End-to-end encrypted screen sharing and ephemeral in-call chat": [
+        "エンドツーエンドで暗号化された画面共有と通話中の一時的なチャット"
+      ],
+      "Meeting recording (coming soon)": [
+        "ミーティング録画（近日公開）"
+      ],
+      "One active meeting at a time": [
+        "一度に1つのミーティングを開催"
+      ],
+      "Screen-sharing": [
+        "画面共有"
+      ],
+      "Unlimited meetings per day": [
+        "1日あたり無制限のミーティング"
+      ],
+      "Up to ${ n } meeting per day": [
+        "1日あたり最大${ n }件のミーティング"
+      ],
+      "Up to ${ n } participant": [
+        "最大${ n }人の参加者"
       ]
     }
   }
