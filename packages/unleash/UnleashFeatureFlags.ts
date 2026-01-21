@@ -272,6 +272,7 @@ enum MeetFeatureFlag {
     MeetProtonCalendarDeepLink = 'MeetProtonCalendarDeepLink',
     MeetUnblockAudioButton = 'MeetUnblockAudioButton',
     MeetOpenLinksInDesktopApp = 'MeetOpenLinksInDesktopApp',
+    MeetDebugMode = 'MeetDebugMode',
 }
 
 enum LumoFeatureFlag {
