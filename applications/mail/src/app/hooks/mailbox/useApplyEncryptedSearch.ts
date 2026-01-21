@@ -30,7 +30,6 @@ import {
 import type { MailState } from '../../store/store';
 
 export interface EncryptedSearchParams {
-    conversationMode: boolean;
     labelID: string;
     page: number;
     pageSize: number;
@@ -43,7 +42,6 @@ export interface EncryptedSearchParams {
 const MAX_TOTAL_RESULTS = 10000;
 
 export const useApplyEncryptedSearch = ({
-    conversationMode,
     labelID,
     search,
     page,
@@ -62,7 +60,8 @@ export const useApplyEncryptedSearch = ({
     const { sendPerformSearchReport } = useSearchTelemetry();
     const categoriesView = useCategoriesView();
 
-    const params = { conversationMode, sort, filter, search, esEnabled, isSearching: isSearch(search) };
+    // Force conversation mode to false in a search context
+    const params = { conversationMode: false, sort, filter, search, esEnabled, isSearching: isSearch(search) };
 
     const isES = useMailSelector((state: MailState) => isESSelector(state, { search, esStatus }));
     const shouldLoadElements = useMailSelector((state: MailState) => shouldSendRequestSelector(state, { page }));
