@@ -1389,6 +1389,9 @@
       "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
         "${ PASS_APP_NAME } hanya akan mengimpor entri masuk, catatan, kartu kredit, dan identitas."
       ],
+      "${ PASS_SHORT_APP_NAME } offline mode enabled.": [
+        "Mode offline ${ PASS_SHORT_APP_NAME } diaktifkan."
+      ],
       "${ payload.count } invite successfully sent": [
         "${ payload.count } undangan berhasil dikirim"
       ],
@@ -1439,6 +1442,9 @@
       ],
       "Admin": [
         "Admin"
+      ],
+      "After confirming, you will need to accept a permission prompt for ${ PASS_APP_NAME }.": [
+        "Setelah mengonfirmasi, Anda akan perlu untuk menerima permintaan izin untuk ${ PASS_APP_NAME }."
       ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Setelah data Anda berhasil diimpor, Anda dapat menghapus berkas CSV yang mengandung kata sandi ini demi keamanan Anda."
@@ -1652,6 +1658,9 @@
       ],
       "Enable auto-locking to secure your data": [
         "Aktifkan pengucian otomatis untuk mengamankan data Anda"
+      ],
+      "Enable offline mode to access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
+        "Aktifkan mode offline untuk mengakses data ${ PASS_SHORT_APP_NAME } apabila koneksi internet Anda terputus atau apabila server ${ BRAND_NAME } tidak dapat dijangkau."
       ],
       "Enabling biometrics auto-lock": [
         "Mengaktifkan penguncian otomatis biometrik"
@@ -2241,6 +2250,9 @@
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Ekspor ini tidak akan terenkripsi, dan semua orang yang memiliki akses ke berkas ekspor yang dihasilkan akan dapat melihat kata sandi Anda. Demi keamanan Anda, mohon hapus berkas ekspor ini setelah tidak lagi digunakan."
       ],
+      "This feature is currently experimental on Linux. Please ensure your system is up-to-date.": [
+        "Fitur ini saat ini berstatus eksperimental pada sistem Linux. Pastikan sistem Anda telah terbarukan."
+      ],
       "This item is not currently shared with anyone. Invite people to share it with others.": [
         "Item ini tidak sedang dibagikan dengan siapa pun. Undang pengguna lain ke item ini untuk saling berbagi item bersama."
       ],
@@ -2381,6 +2393,9 @@
       ],
       "When creating/editing a Login on ${ PASS_APP_NAME } the 'username' input will always be visible.": [
         "Pada saat Anda membuat/menyunting informasi entri masuk pada ${ PASS_APP_NAME }, kolom masukan 'nama pengguna' akan selalu ditampilkan."
+      ],
+      "When enabled, you can still access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
+        "Pada saat diaktifkan, Anda akan tetap dapat mengakses data ${ PASS_SHORT_APP_NAME } milik Anda apabila koneksi internet Anda terputus atau apabila server ${ BRAND_NAME } tidak dapat dijangkau."
       ],
       "When sending an email from this alias, the email will display ${ emailSender } as sender.": [
         "Pada saat mengirim email dari alias ini, email yang bersangkutan akan menampilkan ${ emailSender } sebagai nama pengirimnya."
@@ -4481,6 +4496,9 @@
       "Settings": [
         "Pengaturan"
       ],
+      "Setup offline mode": [
+        "Atur mode offline"
+      ],
       "Share vaults with your team": [
         "Bagikan brankas dengan tim Anda"
       ],
@@ -4630,6 +4648,9 @@
     "Warning": {
       "${ BRAND_NAME } password is required": [
         "Kata sandi ${ BRAND_NAME } diperlukan"
+      ],
+      "${ PASS_SHORT_APP_NAME } offline mode disabled.": [
+        "Mode offline ${ PASS_SHORT_APP_NAME } dinonaktifkan."
       ],
       "2 consecutive dots are not allowed": [
         "Alias tidak dapat mengandung 2 titik secara berurutan"
