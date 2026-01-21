@@ -56,6 +56,9 @@
       "Chat with us": [
         "Chatte mit uns"
       ],
+      "Clean up orphaned documents": [
+        "Verwaiste Dokumente bereinigen"
+      ],
       "Close": [
         "Schließen"
       ],
@@ -164,6 +167,9 @@
       "Increase": [
         "Vergrößern"
       ],
+      "Inspect indexed documents": [
+        "Indizierte Dokumente inspizieren"
+      ],
       "Keep my subscription": [
         "Behalte mein Abonnement"
       ],
@@ -199,6 +205,12 @@
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "${ CALENDAR_APP_NAME }-Einstellungen öffnen"
+      ],
+      "Open conversation": [
+        "Unterhaltung öffnen"
+      ],
+      "Open file preview": [
+        "Datei-Vorschau öffnen"
       ],
       "Open navigation": [
         "Navigation öffnen"
@@ -298,6 +310,9 @@
       ],
       "Show more benefits": [
         "Mehr Vorteile anzeigen"
+      ],
+      "Show orphaned space IDs": [
+        "Verwaiste Space-IDs anzeigen"
       ],
       "Sign out": [
         "Abmelden"
@@ -809,8 +824,17 @@
       ]
     },
     "collider_2025: Action": {
+      "Add file to ${ DRIVE_APP_NAME }": [
+        "Datei zu ${ DRIVE_APP_NAME } hinzufügen"
+      ],
       "Add from ${ DRIVE_APP_NAME }": [
         "Aus ${ DRIVE_APP_NAME } hinzufügen"
+      ],
+      "Add to active": [
+        "Zu Aktiven hinzufügen"
+      ],
+      "Already in KB": [
+        "Bereits in der Wissensdatenbank"
       ],
       "Browse ${ DRIVE_SHORT_APP_NAME }": [
         "${ DRIVE_SHORT_APP_NAME } durchsuchen"
@@ -1055,6 +1079,9 @@
       "Encrypted search index for chats and Drive files.": [
         "Verschlüsselter Suchindex für Chats und Drive-Dateien."
       ],
+      "Include project conversations in the main chat history": [
+        "Projektunterhaltungen im Haupt-Chatverlauf einschließen"
+      ],
       "Last updated on ${ formattedDate }": [
         "Zuletzt aktualisiert am ${ formattedDate }"
       ],
@@ -1091,6 +1118,9 @@
       "Failed to upload \"${ file.name }\" to ${ DRIVE_APP_NAME }": [
         "„${ file.name }“ konnte nicht zu ${ DRIVE_APP_NAME } hochgeladen werden"
       ],
+      "File \"${ file.name }\" (${ fileSizeFormatted }) exceeds the ${ maxSizeFormatted } limit. Link a Drive folder to your project to work with larger files.": [
+        "Die Datei \"${ file.name }\" (${ fileSizeFormatted }) überschreitet das Limit von ${ maxSizeFormatted }. Verknüpfe einen Drive-Ordner mit deinem Projekt, um mit größeren Dateien zu arbeiten."
+      ],
       "File \"${ file.name }\" is too large (${ fileSizeFormatted }). Maximum allowed size is ${ maxSizeFormatted }.": [
         "Datei „${ file.name }“ ist zu groß (${ fileSizeFormatted }). Die maximal zulässige Größe beträgt ${ maxSizeFormatted }."
       ],
@@ -1108,6 +1138,9 @@
       ],
       "PowerPoint files are not supported. Please convert to PDF and upload the PDF version for better text extraction.": [
         "PowerPoint-Dateien sind nicht unterstützt. Bitte konvertiere sie in PDF und lade die PDF-Version für eine bessere Textextraktion hoch."
+      ],
+      "Re-indexing failed. Please try again.": [
+        "Neuindizierung fehlgeschlagen. Bitte versuche es erneut."
       ],
       "Search service not available": [
         "Suche nicht verfügbar"
@@ -1221,6 +1254,9 @@
       "Large file uploads": [
         "Große Dateiuploads"
       ],
+      "New": [
+        "Neu"
+      ],
       "Unlimited chat history": [
         "Unbegrenzter Chatverlauf"
       ],
@@ -1290,11 +1326,20 @@
       "Ask anything to ${ LUMO_SHORT_APP_NAME }": [
         "Frage ${ LUMO_SHORT_APP_NAME } alles"
       ],
+      "Attached Files": [
+        "Angehängte Dateien"
+      ],
+      "Auto-matched": [
+        "Automatisch zugeordnet"
+      ],
       "Be cautious of unfamiliar domains or excessive subdomains": [
         "Sei vorsichtig bei unbekannten Domains oder übermäßigen Subdomains"
       ],
       "characters": [
         "Zeichen"
+      ],
+      "characters not shown": [
+        "Zeichen werden nicht angezeigt"
       ],
       "Chat knowledge": [
         "Chat-Wissen"
@@ -1314,6 +1359,9 @@
       "Domain name": [
         "Domainname"
       ],
+      "Downloading (${ progressPct }%)": [
+        "Herunterladen (${ progressPct }%)"
+      ],
       "Drag and drop your files here to add them to the chat.": [
         "Ziehe deine Dateien hierher, um sie dem Chat hinzuzufügen."
       ],
@@ -1332,11 +1380,17 @@
       "Exclude file": [
         "Datei ausschließen"
       ],
+      "Excluded": [
+        "Ausgeschlossen"
+      ],
       "File capacity": [
         "Dateikapazität"
       ],
       "File capacity for this conversation": [
         "Dateikapazität für diese Unterhaltung"
+      ],
+      "File too large": [
+        "Datei zu groß"
       ],
       "File too large for preview (>150k tokens)": [
         "Datei zu groß für die Vorschau (>150.000 Token)"
@@ -1352,6 +1406,9 @@
       ],
       "Files automatically retrieved based on your questions:": [
         "Dateien automatisch basierend auf deinen Fragen abgerufen:"
+      ],
+      "Files you've added to this conversation.": [
+        "Dateien, die du zu dieser Unterhaltung hinzugefügt hast."
       ],
       "For each conversation, ${ LUMO_SHORT_APP_NAME } has the capacity to process a limited amount of information. The progress bar shows how much capacity your current files are using. ": [
         "Für jede Unterhaltung hat ${ LUMO_SHORT_APP_NAME } die Kapazität, eine begrenzte Menge an Informationen zu verarbeiten. Der Fortschrittsbalken zeigt an, wie viel Kapazität deine aktuellen Dateien nutzen. "
@@ -1398,6 +1455,9 @@
       "of": [
         "von"
       ],
+      "Partial content": [
+        "Teilinhalt"
+      ],
       "Please share what you expected": [
         "Bitte teile deine Erwartungen"
       ],
@@ -1433,6 +1493,9 @@
       ],
       "Removed from future questions": [
         "Aus zukünftigen Fragen entfernt"
+      ],
+      "Retrieved Project Knowledge": [
+        "Abgerufenes Projektwissen"
       ],
       "rows": [
         "zeilen"
@@ -1478,6 +1541,9 @@
       ],
       "There was an error processing this file. The content may not be readable or the file format might not be fully supported.": [
         "Bei der Verarbeitung dieser Datei ist ein Fehler aufgetreten. Der Inhalt ist möglicherweise nicht lesbar oder das Dateiformat wird nicht vollständig unterstützt."
+      ],
+      "These files won't be used for future questions.": [
+        "Diese Dateien werden für zukünftige Fragen nicht verwendet."
       ],
       "This file appears to be empty or contains no extractable text content.": [
         "Diese Datei scheint leer zu sein oder enthält keinen extrahierbaren Textinhalt."
@@ -1750,6 +1816,9 @@
       "All chats deleted successfully": [
         "Alle Chats erfolgreich gelöscht"
       ],
+      "File \"${ file.name }\" uploaded to ${ DRIVE_APP_NAME }": [
+        "Datei \"${ file.name }\" wurde zu ${ DRIVE_APP_NAME } hochgeladen"
+      ],
       "File added to knowledge base: ${ result.fileName }": [
         "Datei zur Wissensdatenbank hinzugefügt: ${ result.fileName }"
       ],
@@ -1776,6 +1845,9 @@
       "About ${ LUMO_SHORT_APP_NAME }": [
         "Über ${ LUMO_SHORT_APP_NAME }"
       ],
+      "Automatic web search": [
+        "Automatische Websuche"
+      ],
       "Delete everything": [
         "Alles löschen"
       ],
@@ -1793,6 +1865,9 @@
       ],
       "Save your favorites": [
         "Deine Favoriten speichern"
+      ],
+      "Search Index": [
+        "Suchindex"
       ],
       "Secure your spot": [
         "Sichere dir deinen Platz"
@@ -1973,14 +2048,26 @@
       "Back to project": [
         "Zurück zum Projekt"
       ],
+      "Back to projects": [
+        "Zurück zu Projekten"
+      ],
       "Cancel": [
         "Abbrechen"
+      ],
+      "Choose project icon": [
+        "Projektsymbol auswählen"
       ],
       "Click to edit title": [
         "Titel bearbeiten"
       ],
+      "Create": [
+        "Erstellen"
+      ],
       "Create folder": [
         "Ordner erstellen"
+      ],
+      "Delete": [
+        "Löschen"
       ],
       "Delete conversation": [
         "Unterhaltung löschen"
@@ -1991,23 +2078,56 @@
       "Describe desired changes...": [
         "Beschreibe gewünschte Änderungen..."
       ],
+      "Deselect all": [
+        "Alle abwählen"
+      ],
+      "Edit instructions": [
+        "Anweisungen bearbeiten"
+      ],
       "Edit project": [
         "Projekt bearbeiten"
+      ],
+      "Go to project": [
+        "Zum Projekt"
+      ],
+      "Hide settings": [
+        "Einstellungen ausblenden"
       ],
       "Hide sidebar": [
         "Seitenleiste ausblenden"
       ],
+      "Manage chats": [
+        "Chats verwalten"
+      ],
+      "Manage Drive folder link": [
+        "Drive-Ordnerlink verwalten"
+      ],
+      "More breadcrumbs": [
+        "Weitere Navigationspfade"
+      ],
       "More concise": [
         "Prägnanter"
       ],
+      "More options": [
+        "Weitere Optionen"
+      ],
       "Next message": [
         "Nächste Nachricht"
+      ],
+      "Open conversation": [
+        "Unterhaltung öffnen"
       ],
       "Previous message": [
         "Vorherige Nachricht"
       ],
       "Regenerate": [
         "Neu generieren"
+      ],
+      "Remove all": [
+        "Alle entfernen"
+      ],
+      "Remove all files": [
+        "Alle Dateien entfernen"
       ],
       "Remove file": [
         "Datei entfernen"
@@ -2027,6 +2147,9 @@
       "Settings": [
         "Einstellungen"
       ],
+      "Show instructions and files": [
+        "Anweisungen und Dateien anzeigen"
+      ],
       "Show settings": [
         "Einstellungen anzeigen"
       ],
@@ -2036,8 +2159,23 @@
       "Think longer": [
         "Länger nachdenken"
       ],
+      "Toggle selection": [
+        "Auswahl umschalten"
+      ],
       "Try again": [
         "Erneut versuchen"
+      ],
+      "Unlink Folder": [
+        "Ordner trennen"
+      ],
+      "Upgrade to Plus": [
+        "Auf Plus upgraden"
+      ],
+      "Upload file": [
+        "Datei hochladen"
+      ],
+      "Upload files": [
+        "Dateien hochladen"
       ],
       "What needs changed?": [
         "Was muss geändert werden?"
@@ -2047,17 +2185,35 @@
       "Add instructions to tailor ${ LUMO_SHORT_APP_NAME }'s responses": [
         "Anweisungen zum Anpassen der Antworten von ${ LUMO_SHORT_APP_NAME } hinzufügen"
       ],
+      "Back to projects": [
+        "Zurück zu Projekten"
+      ],
       "Cancel": [
         "Abbrechen"
       ],
       "Close sidebar": [
         "Seitenleiste schließen"
       ],
+      "Collapse projects": [
+        "Projekte einklappen"
+      ],
+      "Create a free account": [
+        "Kostenloses Konto erstellen"
+      ],
+      "Create project": [
+        "Projekt erstellen"
+      ],
+      "Delete": [
+        "Löschen"
+      ],
       "Edit": [
         "Bearbeiten"
       ],
       "Expand": [
         "Einblenden"
+      ],
+      "Expand projects": [
+        "Projekte aufklappen"
       ],
       "Favorite": [
         "Favorit"
@@ -2086,6 +2242,9 @@
       "New chat": [
         "Neuer Chat"
       ],
+      "New project": [
+        "Neues Projekt"
+      ],
       "Projects": [
         "Projekte"
       ],
@@ -2094,6 +2253,9 @@
       ],
       "Search": [
         "Suche"
+      ],
+      "See all": [
+        "Alle anzeigen"
       ],
       "Send": [
         "Senden"
@@ -2104,19 +2266,34 @@
       "Show sidebar": [
         "Seitenleiste anzeigen"
       ],
+      "Sign in": [
+        "Anmelden"
+      ],
       "Unfavorite": [
         "Favorit entfernen"
       ],
       "Untitled chat": [
         "Unbenannter Chat"
+      ],
+      "Upload from computer": [
+        "Vom Computer hochladen"
       ]
     },
     "collider_2025:Error": {
       "Cannot link the root folder. Please select a subfolder.": [
         "Du kannst nicht den Stammordner verknüpfen. Wähle bitte einen Unterordner aus."
       ],
+      "Error processing file: ${ file.name }": [
+        "Fehler beim Verarbeiten der Datei: ${ file.name }"
+      ],
+      "Error uploading file: ${ file.name }": [
+        "Fehler beim Hochladen der Datei: ${ file.name }"
+      ],
       "Failed to create folder": [
         "Ordner konnte nicht erstellt werden"
+      ],
+      "Failed to download \"${ file.name }\": Data integrity check failed. Please try again.": [
+        "Fehler beim Herunterladen von „${ file.name }“: Datenintegritätsprüfung fehlgeschlagen. Bitte versuche es erneut."
       ],
       "Failed to index Drive folder for search": [
         "Fehler beim Indizieren des Drive-Ordners für die Suche"
@@ -2133,6 +2310,15 @@
       "File \"${ file.name }\" (${ fileSizeFormatted }) exceeds the ${ maxSizeFormatted } limit. Link a ${ DRIVE_APP_NAME } folder to upload larger files.": [
         "Datei \"${ file.name }\" (${ fileSizeFormatted }) überschreitet das Limit von ${ maxSizeFormatted }. Verknüpfe einen ${ DRIVE_APP_NAME }-Ordner, um größere Dateien hochzuladen."
       ],
+      "File download failed due to integrity check. Please try again.": [
+        "Der Dateidownload ist aufgrund einer Integritätsprüfung fehlgeschlagen. Bitte versuche es erneut."
+      ],
+      "File format not supported: ${ file.name }": [
+        "Dateiformat nicht unterstützt: ${ file.name }"
+      ],
+      "File type not supported: ${ file.name }": [
+        "Dateiformat nicht unterstützt: ${ file.name }"
+      ],
       "Project not found": [
         "Projekt nicht gefunden"
       ]
@@ -2140,6 +2326,23 @@
     "collider_2025:Feature": {
       "Advanced AI models": [
         "Fortgeschrittene KI-Modelle"
+      ],
+      "Priority access & faster responses": [
+        "Prioritätszugriff und schnellere Antworten"
+      ],
+      "Unlimited projects": [
+        "Unbegrenzte Projekte"
+      ]
+    },
+    "collider_2025:FeaturePoint": {
+      "Chats, files, and context stay together in an encrypted workspace.": [
+        "Chats, Dateien und Kontext bleiben in einem verschlüsselten Arbeitsplatz zusammen."
+      ],
+      "Project-specific instructions mean no repeating yourself.": [
+        "Projektspezifische Anweisungen bedeuten, dass du dich nicht wiederholen musst."
+      ],
+      "Tailored responses based on your project’s files and instructions.": [
+        "Maßgeschneiderte Antworten basierend auf den Dateien und Anweisungen deines Projekts."
       ]
     },
     "collider_2025:Info": {
@@ -2147,14 +2350,29 @@
         " Chat im Projekt",
         " Chats im Projekt"
       ],
+      "${ project.conversationCount } conversation": [
+        "${ project.conversationCount } Unterhaltung"
+      ],
+      "${ project.conversationCount } conversations": [
+        "${ project.conversationCount } Unterhaltungen"
+      ],
+      "${ project.fileCount } file": [
+        "${ project.fileCount } Datei"
+      ],
       "${ project.fileCount } files": [
         "${ project.fileCount } Dateien"
       ],
       "AIs from Big Tech are built on harvesting your data. But ${ LUMO_SHORT_APP_NAME } is different. It was created by the scientists behind innovative, privacy-first services like ${ MAIL_APP_NAME } and ${ VPN_APP_NAME }. And it’s owned by a Swiss nonprofit, whose mission is to advance privacy and never make money from user data.": [
         "KIs von großen Technologieunternehmen basieren auf der Sammlung deiner Daten. ${ LUMO_SHORT_APP_NAME } ist anders. Es wurde von den Wissenschaftlern hinter innovativen, datenschutzorientierten Diensten wie ${ MAIL_APP_NAME } und ${ VPN_APP_NAME } entwickelt. Und es gehört einer Schweizer Non-Profit-Organisation, deren Mission es ist, den Datenschutz zu fördern und niemals Geld mit Nutzerdaten zu verdienen."
       ],
+      "All messages and chat history": [
+        "Alle Nachrichten und Chatverläufe"
+      ],
       "Are you sure you want to delete \"${ project.name }\"? This action cannot be undone.": [
         "Möchtest du \"${ project.name }\" wirklich löschen? Diese Aktion kann nicht rückgängig gemacht werden."
+      ],
+      "Are you sure you want to delete this conversation? This action cannot be undone.": [
+        "Möchtest du diese Unterhaltung wirklich löschen? Dies kann nicht rückgängig gemacht werden."
       ],
       "Auto-retrieved": [
         "Automatisch abgerufen"
@@ -2168,8 +2386,20 @@
       "Current chat:": [
         "Aktueller Chat:"
       ],
+      "Drive files are not available for guest users": [
+        "Drive-Dateien sind für Gastbenutzer nicht verfügbar"
+      ],
+      "File \"${ file.name }\" is already added to this conversation": [
+        "Datei „${ file.name }“ ist bereits zu dieser Unterhaltung hinzugefügt worden"
+      ],
       "File \"${ file.name }\" is already in this project": [
         "Die Datei \"${ file.name }\" ist bereits in diesem Projekt"
+      ],
+      "Files uploaded to this project will be saved to the linked Drive folder.": [
+        "Dateien, die in dieses Projekt hochgeladen werden, werden im verknüpften Drive-Ordner gespeichert."
+      ],
+      "From ${ DRIVE_APP_NAME }": [
+        "Von ${ DRIVE_APP_NAME }"
       ],
       "Initializing Drive...": [
         "Drive wird initialisiert..."
@@ -2189,8 +2419,23 @@
       "Processing...": [
         "Wird verarbeitet..."
       ],
+      "Projects help you organize conversations with custom instructions and files.": [
+        "Projekte helfen dir, Unterhaltungen mit benutzerdefinierten Anweisungen und Dateien zu organisieren."
+      ],
+      "Projects help you organize conversations with custom instructions and files. Sign in or create a free account to get started.": [
+        "Projekte helfen dir, Unterhaltungen mit benutzerdefinierten Anweisungen und Dateien zu organisieren. Anmelden oder ein kostenloses Konto erstellen, um loszulegen."
+      ],
       "This message is empty. Sorry about that.": [
         "Diese Nachricht ist leider leer."
+      ],
+      "This project already has files. Please remove all files before linking a Drive folder.": [
+        "Dieses Projekt hat bereits Dateien. Bitte entferne alle Dateien, bevor du einen Drive-Ordner verknüpfst."
+      ],
+      "This will remove all ${ files.length } files from this project. This action cannot be undone.": [
+        "Das wird alle ${ files.length } Dateien aus diesem Projekt entfernen. Dies kann nicht rückgängig gemacht werden."
+      ],
+      "Tips on how to write useful instructions": [
+        "Tipps, wie man nützliche Anweisungen schreibt"
       ],
       "Type @filename to ask questions about a specific file": [
         "Gib @Dateiname ein, um Fragen zu einer bestimmten Datei zu stellen"
@@ -2198,11 +2443,20 @@
       "Upgrade to ${ LUMO_SHORT_APP_NAME } Plus to create unlimited projects, unlock advanced AI models, and more.": [
         "Upgrade auf ${ LUMO_SHORT_APP_NAME } Plus, um unbegrenzte Projekte zu erstellen, fortgeschrittene KI-Modelle freizuschalten und mehr."
       ],
+      "Using ${ DRIVE_APP_NAME } lets ${ LUMO_SHORT_APP_NAME } work with larger files.": [
+        "Die Verwendung von ${ DRIVE_APP_NAME } ermöglicht ${ LUMO_SHORT_APP_NAME }, mit größeren Dateien zu arbeiten."
+      ],
       "Your files are large. ${ LUMO_SHORT_APP_NAME } may not be able to process all information.": [
         "Deine Dateien sind groß. ${ LUMO_SHORT_APP_NAME } kann möglicherweise nicht alle Informationen verarbeiten."
+      ],
+      "Your information is zero-access encrypted": [
+        "Deine Informationen sind Zero-Access-verschlüsselt."
       ]
     },
     "collider_2025:Label": {
+      "chat": [
+        "Chat"
+      ],
       "chats": [
         "Chats"
       ],
@@ -2211,6 +2465,15 @@
       ],
       "Edit conversation title": [
         "Titel der Unterhaltung bearbeiten"
+      ],
+      "Folder name": [
+        "Ordnername"
+      ],
+      "Instructions": [
+        "Anweisungen"
+      ],
+      "Project Instructions (optional)": [
+        "Projektanweisungen (optional)"
       ],
       "Untitled chat": [
         "Unbenannter Chat"
@@ -2230,8 +2493,23 @@
       ]
     },
     "collider_2025:Placeholder": {
+      "Add instructions about the tone, style, and persona you want ${ LUMO_SHORT_APP_NAME } to adopt.": [
+        "Füge Anweisungen zum Ton, Stil und zur Persona hinzu, die ${ LUMO_SHORT_APP_NAME } annehmen soll."
+      ],
+      "Add instructions about the tone, style, and persona you want ${ LUMO_SHORT_APP_NAME } to adopt. These instructions will apply to all chats in this project.": [
+        "Füge Anweisungen zum Ton, Stil und zur Persona hinzu, die ${ LUMO_SHORT_APP_NAME } annehmen soll. Diese Anweisungen gelten für alle Chats in diesem Projekt."
+      ],
       "Ask anything…": [
         "Frag alles…"
+      ],
+      "Enter folder name": [
+        "Ordnernamen eingeben"
+      ],
+      "Enter project name": [
+        "Projektname eingeben"
+      ],
+      "Holiday planner": [
+        "Urlaubsplaner"
       ],
       "Processing files, please wait...": [
         "Dateien werden verarbeitet, bitte warten..."
@@ -2244,19 +2522,55 @@
       ]
     },
     "collider_2025:Project": {
+      "Develop stories, refine prose, and improve your writing craft": [
+        "Entwickle Geschichten, verfeinere Prosa und verbessere dein Schreibhandwerk"
+      ],
+      "Financial assistant": [
+        "Finanzassistent"
+      ],
       "Get help understanding assignments, solving problems, and learning concepts": [
         "Hilfe beim Verstehen von Aufgaben, beim Lösen von Problemen und beim Lernen von Konzepten bekommen"
+      ],
+      "Learn a language": [
+        "Eine Sprache lernen"
+      ],
+      "Plan financial goals with personalized insights": [
+        "Finanzielle Ziele mit personalisierten Einblicken planen"
+      ],
+      "Practice conversations, learn grammar, and build vocabulary in your target language": [
+        "Übe Unterhaltungen, lerne Grammatik und baue Vokabeln in deiner Zielsprache auf"
+      ],
+      "Research & Analysis Partner": [
+        "Forschungs- und Analysepartner"
+      ],
+      "Study companion": [
+        "Lernbegleiter"
+      ],
+      "Synthesize sources, analyze data, and develop insights for your research projects": [
+        "Quellen synthetisieren, Daten analysieren und Erkenntnisse für deine Forschungsprojekte entwickeln"
       ],
       "Writing coach": [
         "Schreibassistent"
       ]
     },
     "collider_2025:Prompt": {
+      "Analyze my spending patterns and suggest areas to reduce expenses": [
+        "Analysiere meine Ausgabenmuster und schlage Bereiche zur Ausgabenreduzierung vor"
+      ],
       "Can you explain why this answer is correct?": [
         "Kannst du erklären, warum diese Antwort richtig ist?"
       ],
+      "Compare the methodologies used across these studies": [
+        "Vergleiche die in diesen Studien verwendeten Methoden"
+      ],
       "Create a packing list for a winter hiking trip in Patagonia": [
         "Erstelle eine Packliste für eine Winterwanderung in Patagonien"
+      ],
+      "Explain the risks associated with this type of asset": [
+        "Erkläre die Risiken, die mit dieser Art von Vermögenswert verbunden sind"
+      ],
+      "Explain the trade-offs between paying off debt vs investing": [
+        "Erkläre die Vor- und Nachteile zwischen der Schuldentilgung und von Investitionen"
       ],
       "Explain this medication and its potential side effects": [
         "Erkläre dieses Medikament und seine möglichen Nebenwirkungen"
@@ -2264,14 +2578,35 @@
       "Help me create a plan to achieve this goal": [
         "Hilf mir, einen Plan zu erstellen, um dieses Ziel zu erreichen"
       ],
+      "Help me draft a professional response to this email": [
+        "Hilf mir, eine professionelle Antwort auf diese E-Mail zu entwerfen"
+      ],
+      "Help me organize my thoughts on this decision": [
+        "Hilf mir, meine Gedanken zu dieser Entscheidung zu ordnen"
+      ],
+      "Help me plan a 2-week itinerary for Japan with cultural experiences": [
+        "Hilf mir, einen 2-wöchigen Reiseplan für Japan mit kulturellen Erlebnissen zu erstellen"
+      ],
       "Help me prepare questions about this diagnosis for my doctor": [
         "Hilf mir, Fragen zu dieser Diagnose für meinen Arzt vorzubereiten"
       ],
       "Help me prepare talking points for this presentation": [
         "Hilf mir, Stichpunkte für diese Präsentation vorzubereiten"
       ],
+      "Help me refine this draft to be more concise and impactful": [
+        "Hilf mir, diesen Entwurf prägnanter und wirkungsvoller zu gestalten"
+      ],
       "Help me understand different retirement account options and their tax implications": [
         "Hilf mir, verschiedene Altersvorsorgeoptionen und ihre steuerlichen Auswirkungen zu verstehen"
+      ],
+      "Help me understand how to read and analyze financial statements": [
+        "Hilf mir zu verstehen, wie man Finanzberichte liest und analysiert"
+      ],
+      "Help me understand this concept step by step": [
+        "Hilf mir, dieses Konzept Schritt für Schritt zu verstehen"
+      ],
+      "Help me understand what this code does": [
+        "Hilf mir zu verstehen, was dieser Code tut"
       ],
       "How do people celebrate New Year's Eve around the world?": [
         "Wie feiern Menschen Silvester auf der ganzen Welt?"
@@ -2282,8 +2617,17 @@
       "Identify research gaps and suggest future research directions": [
         "Identifiziere Forschungslücken und schlage zukünftige Forschungsrichtungen vor"
       ],
+      "Review this code for bugs and potential improvements": [
+        "Überprüfe diesen Code auf Fehler und mögliche Verbesserungen"
+      ],
+      "Review this for clarity, tone, and grammatical errors": [
+        "Überprüfe das auf Klarheit, Tonfall und Grammatikfehler"
+      ],
       "Suggest hidden gems and local favorites in Barcelona": [
         "Versteckte Perlen und lokale Favoriten in Barcelona vorschlagen"
+      ],
+      "Suggest ways to improve the flow and structure of this text": [
+        "Schlage Wege vor, um den Fluss und die Struktur dieses Textes zu verbessern"
       ],
       "Suggest ways to optimize this for better performance": [
         "Schlage Wege vor, um dies für eine bessere Leistung zu optimieren"
@@ -2297,13 +2641,37 @@
       "What are the key points I should remember for this topic?": [
         "Was sind die wichtigsten Punkte, die ich mir zu diesem Thema merken sollte?"
       ],
+      "What are the main findings and how do they relate to each other?": [
+        "Was sind die Hauptergebnisse und wie hängen sie zusammen?"
+      ],
+      "What are the termination clauses and notice requirements?": [
+        "Was sind die Kündigungsklauseln und Kündigungsfristen?"
+      ],
+      "What do these lab values mean and are any outside normal ranges?": [
+        "Was bedeuten diese Laborwerte und liegen sie außerhalb des Normalbereichs?"
+      ],
       "What metrics and research should I review for this investment?": [
         "Welche Kennzahlen und Recherchen sollte ich für diese Investition prüfen?"
+      ],
+      "What questions should I consider before making this choice?": [
+        "Welche Fragen sollte ich mir stellen, bevor ich diese Wahl treffe?"
+      ],
+      "What should I know about emergency funds and where to keep them?": [
+        "Was sollte ich über Notfallguthaben wissen und wo bewahre ich es am besten auf?"
       ]
     },
     "collider_2025:Status": {
+      "Complete": [
+        "Abgeschlossen"
+      ],
+      "Error": [
+        "Fehler"
+      ],
       "Indexing": [
         "Indizieren"
+      ],
+      "Indexing complete": [
+        "Indizieren abgeschlossen"
       ],
       "Indexing error": [
         "Indizierungsfehler"
@@ -2312,9 +2680,29 @@
         "Indizierung für Suche"
       ]
     },
+    "collider_2025:Subline": {
+      "Projects help you keep related chats, files, and instructions in one place. They make it easy to stay organized and reuse context across chats.": [
+        "Projekte helfen dir, zugehörige Chats, Dateien und Anweisungen an einem Ort zu halten. Sie erleichtern die Organisation und die Wiederverwendung von Kontext über Chats hinweg."
+      ]
+    },
     "collider_2025:Success": {
+      "All files removed from project": [
+        "Alle Dateien aus dem Projekt entfernt"
+      ],
+      "Drive folder linked successfully": [
+        "Drive-Ordner erfolgreich verknüpft"
+      ],
+      "Drive folder unlinked": [
+        "Drive-Ordner getrennt"
+      ],
+      "File \"${ file.name }\" added to project": [
+        "Datei \"${ file.name }\" zum Projekt hinzugefügt"
+      ],
       "File removed from project": [
         "Datei aus Projekt entfernt"
+      ],
+      "Folder \"${ trimmedFolderName }\" created successfully": [
+        "Ordner „${ trimmedFolderName }“ erfolgreich erstellt"
       ],
       "Folder created successfully": [
         "Ordner erfolgreich erstellt"
@@ -2330,14 +2718,29 @@
       "Create folder": [
         "Ordner erstellen"
       ],
+      "Create new project": [
+        "Neues Projekt erstellen"
+      ],
       "Delete conversation?": [
         "Unterhaltung löschen?"
+      ],
+      "Delete project?": [
+        "Projekt löschen?"
       ],
       "Earlier": [
         "Früher"
       ],
+      "Edit Instructions": [
+        "Anweisungen bearbeiten"
+      ],
+      "Edit Project": [
+        "Projekt bearbeiten"
+      ],
       "Favorites": [
         "Favoriten"
+      ],
+      "Get started by creating a new project": [
+        "Beginne mit dem Erstellen eines neuen Projekts"
       ],
       "Ghost mode": [
         "Ghost-Modus"
@@ -2360,11 +2763,20 @@
       "Instructions": [
         "Anweisungen"
       ],
+      "Introducing Projects": [
+        "Wir stellen vor: Projekte"
+      ],
       "Last 30 days": [
         "Letzte 30 Tage"
       ],
       "Last 7 days": [
         "Letzte 7 Tage"
+      ],
+      "Link Drive Folder": [
+        "Drive-Ordner verknüpfen"
+      ],
+      "Linked Drive Folder": [
+        "Verknüpfte Drive-Ordner"
       ],
       "More options": [
         "Weitere Optionen"
@@ -2381,11 +2793,23 @@
       "Nothing here yet": [
         "Hier gibt es noch nichts"
       ],
+      "Older": [
+        "Älter"
+      ],
+      "Project knowledge": [
+        "Projektwissen"
+      ],
       "Projects": [
         "Projekte"
       ],
+      "Remove all files?": [
+        "Alle Dateien entfernen?"
+      ],
       "Settings": [
         "Einstellungen"
+      ],
+      "Sign in to create projects": [
+        "Anmelden, um mehr Projekte zu erstellen"
       ],
       "Start a new conversation": [
         "Neue Unterhaltung beginnen"
@@ -2403,9 +2827,20 @@
         "Was auch immer du mich fragst:"
       ]
     },
+    "collider_2025:Tooltip": {
+      "Choose icon": [
+        "Symbol auswählen"
+      ]
+    },
     "collider_2025:Warning": {
       "Cannot Link Drive Folder": [
         "Drive-Ordner kann nicht verknüpft werden"
+      ],
+      "This folder contains ${ result.totalFiles } indexable files. Only the first ${ MAX_INDEXABLE_FILES } files were indexed. ${ result.skippedFiles } files were skipped.": [
+        "Dieser Ordner beinhaltet ${ result.totalFiles } indizierbare Dateien. Nur die ersten ${ MAX_INDEXABLE_FILES } Dateien wurden indiziert. ${ result.skippedFiles } Dateien wurden übersprungen."
+      ],
+      "This will also permanently delete:": [
+        "Dies wird auch dauerhaft gelöscht:"
       ]
     },
     "color": {
@@ -3870,6 +4305,9 @@
         "${ organization.BonusVPN } zusätzliche Verbindung für ${ VPN_APP_NAME } (ermöglicht es dir, weitere Geräte mit VPN zu verbinden)",
         "${ organization.BonusVPN } zusätzliche Verbindungen für ${ VPN_APP_NAME } (ermöglicht es dir, weitere Geräte mit VPN zu verbinden)"
       ],
+      "0 MB": [
+        "0 MB"
+      ],
       "30-day money-back guarantee.": [
         "30 Tage Geld-zurück-Garantie."
       ],
@@ -3920,6 +4358,15 @@
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Durch den Wechsel auf das kostenlose Abonnement verlierst du diese Leistungen dauerhaft, auch wenn du in Zukunft wieder auf ein kostenpflichtiges Abonnement umsteigst."
+      ],
+      "Chunk": [
+        "Datenblock"
+      ],
+      "chunks": [
+        "Blöcke"
+      ],
+      "Chunks:": [
+        "Blöcke:"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klicke auf „Neuen Code anfordern“, um einen neuen Verifizierungscode an ${ strong } senden zu lassen. Wenn diese Telefonnummer nicht stimmt, klicke auf „Bearbeiten“, um sie zu korrigieren."
@@ -4036,11 +4483,17 @@
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "Im nächsten Schritt kann eine Einzahlung mit einer Bitcoin-Adresse getätigt werden."
       ],
+      "Index size:": [
+        "Indexgröße:"
+      ],
       "Indexed content (first 2000 chars):": [
         "Indizierter Inhalt (erste 2000 Zeichen):"
       ],
       "Indexed files:": [
         "Indizierte Dateien:"
+      ],
+      "Indexed folders:": [
+        "Indizierte Ordner:"
       ],
       "Inherited from parent folder": [
         "Von übergeordnetem Ordner übernommen"
@@ -4078,6 +4531,9 @@
       "Messages to all your email addresses will go to your inbox.": [
         "Nachrichten an all deine E-Mail-Adressen werden an deinen Posteingang gehen."
       ],
+      "MIME:": [
+        "MIME:"
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Benenne deinen neuen Ordner und wähle den übergeordneten Ordner, in den du ihn einfügen möchtest. Wenn du keinen übergeordneten Ordner auswählst, wird dieser neue Ordner auf der obersten Ebene erstellt."
       ],
@@ -4087,11 +4543,17 @@
       "No conversations yet. Start a new chat to begin.": [
         "Noch keine Unterhaltungen. Starte einen neuen Chat, um zu beginnen."
       ],
+      "No Drive documents are loaded for inspection in this session.": [
+        "In dieser Sitzung sind keine Drive-Dokumente zur Überprüfung geladen."
+      ],
       "No payment is required at this time.": [
         "Zu diesem Zeitpunkt ist keine Zahlung erforderlich."
       ],
       "No results found": [
         "Keine Ergebnisse gefunden"
+      ],
+      "No results found for \"${ query }\"": [
+        "Keine Ergebnisse für \"${ query }\" gefunden"
       ],
       "Number of dedicated servers in the organization": [
         "Anzahl der dedizierten Server in der Organisation"
@@ -4138,8 +4600,14 @@
       "Registering your subscription…": [
         "Registrierung deines Abonnements…"
       ],
+      "Searchable chunks": [
+        "Durchsuchbare Datenblöcke"
+      ],
       "Searchable chunks:": [
         "Durchsuchbare Datenblöcke:"
+      ],
+      "searchable sections": [
+        "Durchsuchbare Abschnitte"
       ],
       "SEPA payments are not available at the moment. Please try again later.": [
         "SEPA-Zahlungen sind derzeit nicht verfügbar. Probiere es später erneut."
@@ -4178,6 +4646,9 @@
       "Thank you for subscribing. Secure browsing starts now.": [
         "Danke für deine Anmeldung. Sicheres Surfen beginnt jetzt."
       ],
+      "The index reports ${ displayDriveDocs } Drive documents. Re-index or keep the session open after indexing to view details here.": [
+        "Der Index meldet ${ displayDriveDocs } Drive-Dokumente. Indiziere erneut oder lasse die Sitzung nach der Indizierung geöffnet, um hier Details anzuzeigen."
+      ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Der Verifikationsvorgang wird einen neuen Browser-Tab öffnen. Bitte deaktiviere jegliche Pop-up-Blocker."
       ],
@@ -4189,6 +4660,9 @@
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Das ist nun deine ${ defaultEmailAddress } für das Senden von Nachrichten."
+      ],
+      "This may indicate that projects were deleted but their indexed files weren't cleaned up, or that spaces failed to load from IndexedDB.": [
+        "Das könnte darauf hindeuten, dass Projekte gelöscht wurden, ihre indizierten Daten aber nicht bereinigt wurden, oder dass die Spaces nicht aus IndexedDB geladen werden konnten."
       ],
       "This will sign you out of all accounts currently logged in.": [
         "Dadurch wirst du auf allen derzeit angemeldeten Geräten abgemeldet."
@@ -4693,20 +5167,62 @@
       ]
     },
     "lumo: Debug View": {
+      "Acceleration": [
+        "Beschleunigung"
+      ],
+      "Buffer size": [
+        "Puffergröße"
+      ],
       "Clear History": [
         "Verlauf löschen"
+      ],
+      "Debug View": [
+        "Debug-Ansicht"
+      ],
+      "Differential": [
+        "Differenzial"
+      ],
+      "FPS": [
+        "FPS"
       ],
       "Idle": [
         "Inaktiv"
       ],
+      "Lag": [
+        "Verzögerung"
+      ],
       "Last token": [
         "Letzter Token"
+      ],
+      "max": [
+        "max."
+      ],
+      "Memory": [
+        "Arbeitsspeicher"
       ],
       "Messages": [
         "Nachrichten"
       ],
+      "Rate": [
+        "Rate"
+      ],
+      "Redux updates": [
+        "Redux-Updates"
+      ],
+      "Redux/sec": [
+        "Redux/Sek."
+      ],
+      "Render time": [
+        "Renderzeit"
+      ],
       "Search Index Debug": [
         "Suchindex-Debug"
+      ],
+      "Smoothing (Spring-Mass)": [
+        "Glättung (Feder-Masse)"
+      ],
+      "Spring state": [
+        "Federzustand"
       ],
       "Spring-Mass Visualization": [
         "Feder-Masse-Visualisierung"
@@ -4714,11 +5230,20 @@
       "Status": [
         "Status"
       ],
+      "Stiffness": [
+        "Steifheit"
+      ],
       "Streaming": [
         "Streaming"
       ],
+      "to toggle": [
+        "zum Umschalten"
+      ],
       "Token delays": [
         "Token-Verzögerungen"
+      ],
+      "Tokens/sec": [
+        "Tokens/Sek."
       ]
     },
     "mail_signup_2024: Info": {
@@ -6398,6 +6923,9 @@
       ]
     },
     "Status": {
+      "Disabled": [
+        "Deaktiviert"
+      ],
       "Enabled": [
         "Aktiviert"
       ],
@@ -6674,8 +7202,14 @@
       ]
     },
     "Time": {
+      "${ days } days ago": [
+        "Vor ${ days } Tagen"
+      ],
       "${ hours } hours ago": [
         "Vor ${ hours } Stunden"
+      ],
+      "${ minutes } minutes ago": [
+        "Vor ${ minutes } Minuten"
       ],
       "1 hour ago": [
         "Vor einer Stunde"
@@ -6814,6 +7348,9 @@
       "Network error": [
         "Netzwerkfehler"
       ],
+      "Orphaned Documents Detected": [
+        "Verwaiste Dokumente erkannt"
+      ],
       "Payment failed": [
         "Zahlung fehlgeschlagen"
       ],
@@ -6834,6 +7371,9 @@
       ],
       "Request new code": [
         "Neuen Code anfordern"
+      ],
+      "Search Index Debug": [
+        "Suchindex-Debug"
       ],
       "Select a plan": [
         "Abonnement auswählen"
@@ -7017,6 +7557,9 @@
       ]
     },
     "Warning": {
+      "Found ${ orphanedDocCount } documents (${ orphanedChunkCount } chunks) referencing ${ orphanedSpaceIds.length } missing space(s).": [
+        "${ orphanedDocCount } Dokumente (${ orphanedChunkCount } Blöcke) gefunden, die auf ${ orphanedSpaceIds.length } fehlende(n) Bereich(e) verweisen."
+      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Berichte sind nicht Ende-zu-Ende-verschlüsselt. Bitte sende daher keine sensiblen Informationen."
       ],

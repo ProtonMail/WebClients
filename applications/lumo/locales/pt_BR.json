@@ -809,8 +809,14 @@
       ]
     },
     "collider_2025: Action": {
+      "Add file to ${ DRIVE_APP_NAME }": [
+        "Adicionar arquivo para o ${ DRIVE_APP_NAME }"
+      ],
       "Add from ${ DRIVE_APP_NAME }": [
         "Adicionar do ${ DRIVE_APP_NAME }"
+      ],
+      "Add to active": [
+        "Adicionar a ativos"
       ],
       "Browse ${ DRIVE_SHORT_APP_NAME }": [
         "Navegar para ${ DRIVE_SHORT_APP_NAME }"
@@ -1046,8 +1052,17 @@
       ]
     },
     "collider_2025: Description": {
+      "Always enable web search for new conversations": [
+        "Sempre ativar a pesquisa na web para novas conversas"
+      ],
       "Elevate your private AI experience and unlock advanced models and premium features with ${ LUMO_SHORT_APP_NAME } Plus.": [
         "Eleve sua experiência de IA privada e desbloqueie modelos avançados e recursos premium com ${ LUMO_SHORT_APP_NAME } Plus."
+      ],
+      "Encrypted search index for chats and Drive files.": [
+        "Índice de pesquisa criptografado para bate-papos e arquivos do Drive."
+      ],
+      "Include project conversations in the main chat history": [
+        "Inclua conversas sobre projetos no histórico principal do chat"
       ],
       "Last updated on ${ formattedDate }": [
         "Última atualização em ${ formattedDate }"
@@ -2003,6 +2018,9 @@
       "Manage chats": [
         "Gerenciar bate-papos"
       ],
+      "Manage Drive folder link": [
+        "Gerenciar link de pasta do Drive"
+      ],
       "More concise": [
         "Mais conciso"
       ],
@@ -2227,6 +2245,12 @@
       "Initializing Drive...": [
         "Inicializando Drive..."
       ],
+      "Learn more about how project knowledge works": [
+        "Saiba mais sobre como funciona o conhecimento do projeto"
+      ],
+      "Link files from ${ DRIVE_APP_NAME } or upload from your computer.": [
+        "Vincule arquivos do ${ DRIVE_APP_NAME } ou envie do seu computador."
+      ],
       "No projects yet": [
         "Nenhum projeto ainda"
       ],
@@ -2235,6 +2259,9 @@
       ],
       "Processing...": [
         "Processando..."
+      ],
+      "Projects help you organize conversations with custom instructions and files.": [
+        "Os projetos ajudam você a organizar conversas com instruções e arquivos personalizados."
       ],
       "Projects help you organize conversations with custom instructions and files. Sign in or create a free account to get started.": [
         "Os projetos ajudam você a organizar conversas com instruções e arquivos personalizados. Inicie sessão ou crie uma conta gratuita para começar.iniciar sessão"
@@ -2250,6 +2277,9 @@
       ],
       "Upgrade to ${ LUMO_SHORT_APP_NAME } Plus to create unlimited projects, unlock advanced AI models, and more.": [
         "Faça upgrade para o ${ LUMO_SHORT_APP_NAME } Plus para criar projetos ilimitados, desbloquear modelos avançados de IA e muito mais."
+      ],
+      "Using ${ DRIVE_APP_NAME } lets ${ LUMO_SHORT_APP_NAME } work with larger files.": [
+        "Usar o ${ DRIVE_APP_NAME } permite que o ${ LUMO_SHORT_APP_NAME } funcione com arquivos maiores."
       ],
       "Your files are large. ${ LUMO_SHORT_APP_NAME } may not be able to process all information.": [
         "Seus arquivos são grandes. ${ LUMO_SHORT_APP_NAME } talvez não consiga processar todas as informações."
@@ -2295,6 +2325,9 @@
       ]
     },
     "collider_2025:Placeholder": {
+      "Add instructions about the tone, style, and persona you want ${ LUMO_SHORT_APP_NAME } to adopt.": [
+        "Adicione instruções sobre o tom, estilo e personalidade que você deseja que o ${ LUMO_SHORT_APP_NAME } adote."
+      ],
       "Ask anything…": [
         "Pergunte qualquer coisa…"
       ],
@@ -2327,6 +2360,9 @@
       "Learn a language": [
         "Aprenda um idioma"
       ],
+      "Plan financial goals with personalized insights": [
+        "Planeje metas financeiras com insights personalizados"
+      ],
       "Practice conversations, learn grammar, and build vocabulary in your target language": [
         "Pratique conversas, aprenda gramática e amplie seu vocabulário no idioma que deseja aprender."
       ],
@@ -2357,6 +2393,9 @@
       ],
       "Indexing error": [
         "Erro ao indexar"
+      ],
+      "Indexing for search": [
+        "Indexando para pesquisa"
       ]
     },
     "collider_2025:Subline": {
@@ -6910,6 +6949,9 @@
       ],
       "Import emails, calendars, contacts": [
         "Importar e-mails, calendários e contatos"
+      ],
+      "Indexed Drive documents": [
+        "Documentos indexados do Drive"
       ],
       "Invalid verification code": [
         "O código de verificação não é válido."
