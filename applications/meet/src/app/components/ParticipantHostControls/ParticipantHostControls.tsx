@@ -8,6 +8,7 @@ import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
 import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
 import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
+import useLoading from '@proton/hooks/useLoading';
 import { IcCrossCircle } from '@proton/icons/icons/IcCrossCircle';
 import { IcMeetCameraOff } from '@proton/icons/icons/IcMeetCameraOff';
 import { IcMeetMicrophoneOff } from '@proton/icons/icons/IcMeetMicrophoneOff';
@@ -35,6 +36,8 @@ export const ParticipantHostControls = ({
     isLocalParticipantAdmin,
     isLocalParticipantHost,
 }: ParticipantHostControlsProps) => {
+    const [loading, withLoading] = useLoading();
+
     const { localParticipant } = useLocalParticipant();
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
 
@@ -85,13 +88,16 @@ export const ParticipantHostControls = ({
                         liClassName="w-full"
                         onClick={() =>
                             isVideoEnabled &&
-                            mls.updateParticipantTrackSettings(
-                                participant.identity,
-                                null,
-                                ParticipantCapabilityPermission.NotAllowed
+                            withLoading(
+                                mls.updateParticipantTrackSettings(
+                                    participant.identity,
+                                    null,
+                                    ParticipantCapabilityPermission.NotAllowed
+                                )
                             )
                         }
-                        disabled={!isVideoEnabled}
+                        loading={loading}
+                        disabled={!isVideoEnabled || loading}
                     >
                         <IcMeetCameraOff size={5} className="shrink-0" />
                         <span
@@ -104,13 +110,16 @@ export const ParticipantHostControls = ({
                         liClassName="w-full"
                         onClick={() =>
                             isAudioEnabled &&
-                            mls?.updateParticipantTrackSettings(
-                                participant.identity,
-                                ParticipantCapabilityPermission.NotAllowed,
-                                null
+                            withLoading(
+                                mls.updateParticipantTrackSettings(
+                                    participant.identity,
+                                    ParticipantCapabilityPermission.NotAllowed,
+                                    null
+                                )
                             )
                         }
-                        disabled={!isAudioEnabled}
+                        loading={loading}
+                        disabled={!isAudioEnabled || loading}
                     >
                         <IcMeetMicrophoneOff size={5} className="shrink-0" />
                         <span className="flex-1 text-ellipsis" title={c('Action').t`Mute ${participantName}`}>{c(
@@ -120,7 +129,9 @@ export const ParticipantHostControls = ({
                     <DropdownMenuButton
                         className="participant-host-controls-dropdown-item rounded text-left participant-host-controls-kick-button flex flex-nowrap items-center gap-2 border-none shrink-0"
                         liClassName="w-full"
-                        onClick={() => mls?.removeParticipant(participant.identity)}
+                        loading={loading}
+                        disabled={loading}
+                        onClick={() => withLoading(mls.removeParticipant(participant.identity))}
                     >
                         <IcCrossCircle size={5} className="shrink-0" />
                         <span className="flex-1 text-ellipsis" title={c('Action').t`Kick out`}>{c('Action')
