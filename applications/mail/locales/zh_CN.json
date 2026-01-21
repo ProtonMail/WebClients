@@ -2084,6 +2084,9 @@
       ],
       "Website access problem": [
         "网站连接问题"
+      ],
+      "Sheets problem": [
+        "表格问题"
       ]
     },
     "Button": {
@@ -8340,6 +8343,9 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "只需点击几下，您的收件箱就不会杂乱无章了"
+      ],
+      "Receive notifications for ${ categoryLabel }": [
+        "接收关于 ${ categoryLabel } 的通知"
       ]
     },
     "info": {
@@ -8400,6 +8406,9 @@
       ],
       "WKD": [
         "WKD"
+      ],
+      "KOO": [
+        "KOO"
       ]
     },
     "Key pinning": {
@@ -9343,6 +9352,27 @@
       ],
       "ZIP code": [
         "邮政编码"
+      ],
+      "Categories": [
+        "分类"
+      ],
+      "Get the deal": [
+        "获取优惠"
+      ],
+      "Notifications": [
+        "通知"
+      ],
+      "Premium domain": [
+        "高级域名"
+      ],
+      "Public domain": [
+        "公共域名"
+      ],
+      "Select the categories to include and manage notifications for new emails.": [
+        "选择要包含的分类，并管理新电子邮件的通知。"
+      ],
+      "Your domain": [
+        "您的域名"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11366,6 +11396,9 @@
       ],
       "Team policies": [
         "团队政策"
+      ],
+      "File attachments (up to 10GB)": [
+        "文件附件（最高 10GB）"
       ]
     },
     "PassFamilyPlan2024": {
@@ -11514,6 +11547,9 @@
       ],
       "Your payment is still being processed": [
         "您的付款正在处理中"
+      ],
+      "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
+        "特别优惠价仅在首月有效。之后将每月自动以${ renewPriceStr }的价格续订。您可以随时取消。"
       ]
     },
     "Payments.Error": {

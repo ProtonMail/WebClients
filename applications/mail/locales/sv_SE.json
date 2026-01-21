@@ -1696,6 +1696,9 @@
       ],
       "Zoom out": [
         "Zooma ut"
+      ],
+      "Save preferences": [
+        "Spara preferenser"
       ]
     },
     "action": {
@@ -2652,6 +2655,9 @@
       ],
       "High-speed chats and advanced AI features.": [
         "Chattar med hög hastighet och avancerade AI-funktioner."
+      ],
+      "Private video calls for the conversations that matter.": [
+        "Privata videosamtal för de konversationer som är viktiga."
       ]
     },
     "color": {
@@ -5043,6 +5049,15 @@
       ],
       "ZIP code is required": [
         "Postnummer är obligatoriskt"
+      ],
+      "Cannot set expiration longer than retention policy allows.": [
+        "Kan inte ställa in utgång längre än vad lagringspolicy tillåter."
+      ],
+      "There was a problem decrypting your message. If the issue persists, contact our customer support.": [
+        "Det var ett problem att dekryptera ditt meddelande. Om problemet kvarstår, kontakta vår kundsupport."
+      ],
+      "Your message cannot be decrypted. The key used to encrypt this message does not match any of the keys associated with your address. If you deleted any of your address keys, try ${ reimportKeyLink } them. ${ learnMoreLink }": [
+        "Ditt meddelande kan inte dekrypteras. Nyckeln som används för att kryptera detta meddelande matchar inte någon av nycklarna associerade med din adress. Om du tagit bort någon av dina adressnycklar, prova ${ reimportKeyLink } dem. ${ learnMoreLink }"
       ]
     },
     "error": {
@@ -6183,6 +6198,12 @@
       ],
       "Your password is correct.": [
         "Ditt lösenord är korrekt."
+      ],
+      "Two-factor authentication is enabled in your external account.": [
+        "Tvåfaktorsautentisering är aktiverat i ditt externa konto."
+      ],
+      "Two-factor authentication is enabled in your external email account.": [
+        "Tvåfaktorsautentisering är aktiverat i ditt externa e-postkonto."
       ]
     },
     "Import ICS file from Mail": {
@@ -9867,6 +9888,24 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Categories": [
+        "Kategorier"
+      ],
+      "Notifications": [
+        "Aviseringar"
+      ],
+      "Premium domain": [
+        "Premiumdomän"
+      ],
+      "Public domain": [
+        "Offentlig domän"
+      ],
+      "Select the categories to include and manage notifications for new emails.": [
+        "Välj de kategorier som ska inkluderas och hantera aviseringar för ny e-post."
+      ],
+      "Your domain": [
+        "Din domän"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10353,6 +10392,16 @@
       "Up to ${ n } participant": [
         "Upp till ${ n } deltagare",
         "Upp till ${ n } deltagare"
+      ],
+      "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
+        "${ MEET_APP_NAME }: Konfidentiella videokonferenser för de konversationer som är viktiga"
+      ],
+      "${ n } active meeting at a time": [
+        "${ n } aktivt möte åt gången",
+        "${ n } aktiva möten åt gången"
+      ],
+      "One active meeting at a time": [
+        "Ett aktivt möte åt gången"
       ]
     },
     "Message": {
@@ -15609,6 +15658,9 @@
       ],
       "✨ Categories are coming!": [
         "✨ Kategorier kommer!"
+      ],
+      "To preview this spreadsheet, download it.": [
+        "För att förhandsgranska detta kalkylblad, ladda ner det."
       ]
     },
     "Today icon tooltip in mini calendar": {

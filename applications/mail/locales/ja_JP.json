@@ -1150,7 +1150,7 @@
         "ギフトコードを削除"
       ],
       "Remove self-destruction": [
-        "有効期限を削除"
+        "自己破棄機能を取り除く"
       ],
       "Remove this label": [
         "このラベルを削除"
@@ -1279,7 +1279,7 @@
         "有効期限を 7 日後に設定"
       ],
       "Self-destruct message": [
-        "有効期限付きメッセージ"
+        "メッセージの自己破棄"
       ],
       "Self-destruct on ...": [
         "有効期限を設定..."
@@ -1546,7 +1546,7 @@
         "登録解除"
       ],
       "Unsubscribed": [
-        "登録解除されました"
+        "登録解除済み"
       ],
       "Unsubscribing": [
         "登録を解除しています"
@@ -1688,6 +1688,9 @@
       ],
       "Zoom out": [
         "縮小"
+      ],
+      "Save preferences": [
+        "設定を保存"
       ]
     },
     "action": {
@@ -2183,6 +2186,9 @@
       ],
       "Website access problem": [
         "ウェブサイトへのアクセスに関する問題"
+      ],
+      "Sheets problem": [
+        "シートの問題"
       ]
     },
     "Button": {
@@ -2358,7 +2364,7 @@
         "${ participantName } はいずれかの予定の新しい時間を提案しました。この提案は古くなっています。カレンダーがありません。"
       ],
       "${ participantName } had proposed a new time for this event. This proposal is out of date.": [
-        "${ participantName } はこの予定の新しい時間を提案しました。この提案は古くなっています。"
+        "${ participantName } はこの予定の新しい時間を提案していました。この提案は古くなっています。"
       ],
       "${ participantName } had proposed a new time for this event. This proposal is out of date. The event does not exist in your calendar anymore.": [
         "${ participantName } はこの予定の新しい時間を提案しました。この提案は古くなっています。この予定はお客様のカレンダーに存在しません。"
@@ -2376,7 +2382,7 @@
         "${ participantName } はいずれかの予定への招待を仮承諾しました。"
       ],
       "${ participantName } had tentatively accepted an invitation to this event.": [
-        "${ participantName } はこの予定への招待を仮承諾しました。"
+        "${ participantName } はこの予定への招待を仮承諾していました。"
       ],
       "${ participantName } had tentatively accepted your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
         "${ participantName } は招待を仮承諾し、いずれかの予定の新しい時間を提案しました。回答と提案は古くなっています。"
@@ -2550,6 +2556,9 @@
       ],
       "Ultra fast and private VPN": [
         "超高速でプライベートなVPN"
+      ],
+      "${ numberOfUsers } user": [
+        "最大${ numberOfUsers }人のユーザー"
       ]
     },
     "Checkout row": {
@@ -2633,6 +2642,9 @@
       ],
       "High-speed chats and advanced AI features.": [
         "高速チャットと高度なAI機能。"
+      ],
+      "Private video calls for the conversations that matter.": [
+        "プライベートなビデオ通話で、大切な会話を。"
       ]
     },
     "color": {
@@ -4811,7 +4823,7 @@
         "添付ファイルの送信は、ご利用中のプランの制限を満たすか、プランをアップグレードするまで制限されています。"
       ],
       "Sending attachments is restricted while you exceed your plan limits or until you upgrade your plan.": [
-        "添付ファイルの送信は、プランの制限を超えている場合や、プランをアップグレードするまで制限されています。"
+        "添付ファイルの送信は、プランの制限を超えている間は制限されます。プランをアップグレードすれば、制限を解除できます。"
       ],
       "Signature not verified": [
         "署名が検証されていません"
@@ -4998,6 +5010,18 @@
       ],
       "ZIP code is required": [
         "郵便番号は必須です"
+      ],
+      "re-importing": [
+        "再インポート"
+      ],
+      "There was a problem decrypting your message. If the issue persists, contact our customer support.": [
+        "メッセージの復号化中に問題が発生しました。問題が解決しない場合は、カスタマーサポートまでお問い合わせください。"
+      ],
+      "Your message cannot be decrypted. If you deleted any of your address keys, try ${ reimportKeyLink } them. ${ learnMoreLink }": [
+        "メッセージの復号化ができませんでした。アドレスキーを削除した場合は、${ reimportKeyLink }して再インポートしてください。${ learnMoreLink }"
+      ],
+      "Your message cannot be decrypted. The key used to encrypt this message does not match any of the keys associated with your address. If you deleted any of your address keys, try ${ reimportKeyLink } them. ${ learnMoreLink }": [
+        "このメッセージは復号化できません。このメッセージを暗号化するために使用されたキーは、お客様のアドレスに関連付けられたキーのいずれとも一致しません。アドレスキーを削除した場合は、${ reimportKeyLink }してください。${ learnMoreLink }"
       ]
     },
     "error": {
@@ -5742,7 +5766,7 @@
         "強力な暗号化により、お客様と意図した宛先の受信者のみがメールを閲覧できます。"
       ],
       "Finish setup": [
-        "セットアップを終了"
+        "セットアップを完了"
       ],
       "For your eyes only": [
         "あなたの目だけに"
@@ -5844,7 +5868,7 @@
         "アプリ"
       ],
       "Custom folders": [
-        "カスタムフォルダ"
+        "カスタムフォルダー"
       ],
       "Default folders": [
         "既定のフォルダ"
@@ -6119,6 +6143,12 @@
       ],
       "Your password is correct.": [
         "パスワードは正しいです。"
+      ],
+      "Two-factor authentication is enabled in your external account.": [
+        "外部アカウントで2要素認証が有効になっています。"
+      ],
+      "Two-factor authentication is enabled in your external email account.": [
+        "外部メールアカウントで2要素認証が有効になっています。"
       ]
     },
     "Import ICS file from Mail": {
@@ -6260,7 +6290,7 @@
         "${ boldBulkDelete }、アーカイブ、古いメールをフォルダーに移動します。"
       ],
       "${ boldQuicklySpot } which subscriptions are no longer relevant.": [
-        "サブスクリプションに関連がなくなった${ boldQuicklySpot }"
+        "いらなくなった登録を${ boldQuicklySpot }"
       ],
       "${ boldUnsubscribe } from them with one click.": [
         "ワンクリックで${ boldUnsubscribe }できます。"
@@ -6485,7 +6515,7 @@
         "**ステップ2：** あなたの友達は、選択した${ BRAND_NAME }プランを2週間無料で利用できます。"
       ],
       "**Step 2:** Your friends get 2 weeks for free on their plan.": [
-        "**ステップ2：** あなたの友達は、プランを2週間無料でご利用いただけます。"
+        "**ステップ2：** あなたの友人に、2週間分のプランが無料で提供されます。"
       ],
       "**Step 3:** Get ${ referrerRewardAmount } credits for every friend that subscribes to a plan.": [
         "**ステップ3：**友達がプランに登録するたびに、${ referrerRewardAmount } クレジットを獲得できます。"
@@ -6617,7 +6647,7 @@
         "次回メールを開いた際に、別のヒントが表示されます"
       ],
       "Any scheduled or snoozed messages will be canceled.": [
-        "スケジュールまたはスヌーズされたメッセージはすべてキャンセルされます。"
+        "送信予約やスヌーズされたメールはすべて取り消されます。"
       ],
       "Any subfolders will also be deleted. However, emails stored in the folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "「${ nameDeleted }」フォルダ内のサブフォルダはすべて削除されますが、フォルダ内に保存されているメールは削除されずに「すべてのメール」フォルダに残ります。"
@@ -6626,10 +6656,10 @@
         "今後のメッセージに適用する"
       ],
       "Applying actions to conversations": [
-        "会話に適用する操作"
+        "会話を操作中"
       ],
       "Applying actions to messages": [
-        "メッセージに適用する操作"
+        "メッセージを操作中"
       ],
       "Archive existing messages": [
         "既存のメッセージをアーカイブする"
@@ -6746,10 +6776,10 @@
         "パスワードが思い出せませんか? この鍵で暗号化されたすべての連絡先の暗号化されたデータを消去し、アラートを消去する手助けをします。"
       ],
       "Categories work just like spam filters. ${ MAIL_APP_NAME } never reads your emails or shares your data.": [
-        "カテゴリは迷惑メールフィルターと同様に機能します。${ MAIL_APP_NAME } はお客様のメールを既読することはありませんし、お客様のデータを共有することはありません。"
+        "カテゴリは、迷惑メールフィルターと同様に機能します。${ MAIL_APP_NAME } がメールを読んだり、データを共有したりすることはありません。"
       ],
       "Categories work like spam filters. We only look for patterns in unencrypted header and technical data. We do not read email content, share your data, or infringe on your privacy.": [
-        "カテゴリは迷惑メールフィルターのように機能します。当社は暗号化なしのヘッダーおよび技術データのみのパターンを検索します。当社はメールコンテンツを閲覧したり、お客様のデータを共有したり、お客様のプライバシーを侵害することはありません。"
+        "カテゴリは迷惑メールフィルターのように機能します。暗号化なしのヘッダー・技術的なデータ内でのみパターンを検索するので、当社がメールを閲覧したり、お客様のデータを共有したり、プライバシーを侵害することはありません。"
       ],
       "Center": [
         "中央揃え"
@@ -6797,7 +6827,7 @@
         "秘匿ブラウジングの前に${ VPN_APP_NAME }に接続してください"
       ],
       "Consider when's the best time for your recipient to receive your email, and schedule it to be sent then.": [
-        "宛先がメールを受信するのに最適なタイミングを検討し、送信を予約できます。"
+        "受信者がメールを受信するのに最適なタイミングを検討し、送信を予約できます。"
       ],
       "Contact assigned to group ${ contactGroupName }": [
         "グループ ${ contactGroupName } に連絡先を追加しました"
@@ -7007,7 +7037,7 @@
         "本来のメールアドレスを隠したまま、メールボックスにメールを転送します。"
       ],
       "Email tracker protection is disabled": [
-        "メールトラッカー防止は無効です"
+        "メールトラッカー保護は無効になっています"
       ],
       "Emails are automatically signed": [
         "メールは自動的に署名されます"
@@ -7193,7 +7223,7 @@
         "画像の URL"
       ],
       "Images have been removed because they are not allowed in auto-reply": [
-        "自動返信では許可されていないため画像は削除されました"
+        "自動返信内では許可されていないため、画像は削除されました"
       ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "${ totalCalendarsCount } 件中 ${ calendarCount } 件のカレンダーをインポート"
@@ -7541,7 +7571,7 @@
         "当社のアラートは安全性を優先しています。侵害された情報を認識できない場合は、このレポートを無視してください。"
       ],
       "Our system flagged this as suspicious. If it is not a phishing or scam email, mark as legitimate.": [
-        "システムはこれを疑わしいとしています。フィッシングメールや詐欺メールでない場合は、正当なものとしてマークしてください。"
+        "このメールは怪しいと判断されました。フィッシングや詐欺メールでない場合は、正当なものとしてマークしてください。"
       ],
       "Our system flagged this message as a phishing attempt. Please check to ensure that it is legitimate.": [
         "このメッセージはフィッシング詐欺の可能性があることが検知されました。正当性を確認してください。"
@@ -7877,7 +7907,7 @@
         "件名"
       ],
       "Subject is end-to-end encrypted": [
-        "エンドツーエンド暗号化された件名"
+        "件名はエンドツーエンド暗号化済みです"
       ],
       "Subject:": [
         "件名:"
@@ -8024,7 +8054,7 @@
         "これは組織の名称またはニックネームであり、ユーザーに表示されます。いつでも変更できます。"
       ],
       "This is intended as a writing aid. Check suggested text for accuracy. ${ learnMoreResult }": [
-        "これは文書作成の補助として意図されています。正確性は提案されたテキストを確認してください。${ learnMoreResult }"
+        "これは文書作成の補助として意図されています。念のため、生成されたテキストをご確認ください。${ learnMoreResult }"
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "これは新しいメッセージを送信するための${ defaultEmailAddress }です。"
@@ -8309,7 +8339,7 @@
         "申し訳ございません。スパム判定を誤ってしまった可能性があります。このメールを迷惑メールから除外しますか？"
       ],
       "We blocked the following advertisers and organizations from seeing when you open this email, what device you’re using, and where you’re located.": [
-        "次の広告主および組織が、お客様がこのメールを開いたとき、使用しているデバイス、現在地を確認できないようにブロックしました。"
+        "次の広告主および組織が、このメールを開いた時間、使用されているデバイス、位置情報などを確認できないようにブロックしました。"
       ],
       "We cannot enable message content search in this browser.": [
         "このブラウザではメッセージ内容の検索はできません。"
@@ -8435,7 +8465,7 @@
         "検索クエリを更新するか、 ${ button }"
       ],
       "You can either update your search query or clear it": [
-        "検索クエリを更新するか、クリアすることができます"
+        "検索内容を変更、または消去できます"
       ],
       "You can import one data type at a time.": [
         "1 回にインポートできるのは 1 種類のみです。"
@@ -8649,6 +8679,21 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "不要なものが整理された受信トレイまで、あと数クリックです。"
+      ],
+      "Make ${ MAIL_APP_NAME } your default email application.": [
+        "${ MAIL_APP_NAME }をデフォルトのメールアプリに設定。"
+      ],
+      "Receive notifications for ${ categoryLabel }": [
+        "${ categoryLabel }の通知を受け取る"
+      ],
+      "This message will be purged on ${ value }": [
+        "このメッセージは ${ value } に削除されます"
+      ],
+      "This message will be purged today at ${ value }": [
+        "このメッセージは本日 ${ value } に削除されます"
+      ],
+      "This message will be purged tomorrow at ${ value }": [
+        "このメッセージは明日の ${ value } に削除されます"
       ]
     },
     "info": {
@@ -9156,7 +9201,7 @@
         "密度"
       ],
       "Did not follow instructions": [
-        "指示に従っていません"
+        "指示に従っていない"
       ],
       "Discussion board posts and threads": [
         "掲示板の投稿とスレッド"
@@ -9225,7 +9270,7 @@
         "非常に満足"
       ],
       "Failed to create folder ${ newFolderName }": [
-        "「${ newFolderName }」フォルダの作成に失敗しました"
+        "「${ newFolderName }」フォルダを作成できませんでした"
       ],
       "Filter Name": [
         "フィルター名"
@@ -9372,7 +9417,7 @@
         "メッセージ:"
       ],
       "Move ${ sidebarElementName }": [
-        "${ sidebarElementName } へ移動"
+        "${ sidebarElementName } を移動"
       ],
       "Move messages to": [
         "メッセージを移動"
@@ -9423,7 +9468,7 @@
         "プロモーション以外のコンテンツおよびニュース"
       ],
       "Not factually correct": [
-        "正しくない"
+        "事実と異なる"
       ],
       "Note": [
         "メモ"
@@ -9630,7 +9675,7 @@
         "非公開の宛先"
       ],
       "Unsafe or problematic": [
-        "安全でない、または問題がある"
+        "安全でない・問題を引き起こす可能性"
       ],
       "Unsubscribed from ${ truncatedName }.": [
         "${ truncatedName }の登録を解除しました。"
@@ -9709,6 +9754,30 @@
       ],
       "ZIP code": [
         "郵便番号"
+      ],
+      "Categories": [
+        "カテゴリ"
+      ],
+      "Filters": [
+        "フィルター"
+      ],
+      "Has attachments": [
+        "添付ファイルあり"
+      ],
+      "Notifications": [
+        "通知"
+      ],
+      "Premium domain": [
+        "プレミアムドメイン"
+      ],
+      "Public domain": [
+        "公開ドメイン"
+      ],
+      "Select the categories to include and manage notifications for new emails.": [
+        "含めるカテゴリを選択し、新しいメールの通知を管理してください。"
+      ],
+      "Your domain": [
+        "あなたのドメイン"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9842,10 +9911,10 @@
         "この予定を追加するための新しいカレンダーを作成しましょう"
       ],
       "Create a new calendar to answer this invitation": [
-        "招待に回答するために新しいカレンダーを作成します"
+        "招待に回答するには新しいカレンダーを作成しましょう"
       ],
       "Create a new calendar to manage your invitations": [
-        "招待を管理するために新しいカレンダーを作成します"
+        "招待を管理するには新しいカレンダーを作成しましょう"
       ],
       "Deleted": [
         "削除しました"
@@ -9863,10 +9932,10 @@
         "回答を変更するには、無効化されている当該カレンダーのメールアドレスを有効化してください。"
       ],
       "Enable your address again to modify your answer.": [
-        "再度アドレスを有効にして回答を変更します。"
+        "回答を変更するにはアドレスを再有効化してください。"
       ],
       "Enable your address to answer this invitation.": [
-        "お客様のアドレスを有効にして、この招待に回答できるようにします。"
+        "この招待に回答するには、アドレスを有効にしましょう。"
       ],
       "Enforcing 2FA for organizations": [
         "組織に2要素認証を適用"
@@ -10188,7 +10257,7 @@
         "画像が読み込めませんでした。"
       ],
       "Image has not been loaded in order to protect your privacy.": [
-        "プライバシーを保護するために画像は読み込まれませんでした。"
+        "プライバシー保護のため、画像は読み込まれませんでした。"
       ]
     },
     "Message notification": {
@@ -11463,7 +11532,7 @@
         "ファイナンス"
       ],
       "Maybe later": [
-        "たぶんあとで"
+        "今度やる"
       ],
       "Privacy for all your online accounts": [
         "すべてのオンラインのアカウントのためのプライバシー"
@@ -11986,7 +12055,7 @@
         "お支払いが現在処理中です"
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
-        "お客様のサブスクリプションには現在、既存の割引が適用されています。この新しいプロモーションに移行すると、既存の割引は適用されなくなります。"
+        "あなたのサブスクリプションは現在、割引が適用されています。この新しいプロモーションに移行すると、既存の割引は適用されなくなります。"
       ]
     },
     "Payments.Error": {
@@ -12685,7 +12754,7 @@
         "PGP 宛先へ、${ MAIL_APP_NAME } によって送信された、暗号化されたメッセージ"
       ],
       "Encrypted by ${ MAIL_APP_NAME } to verified PGP recipient": [
-        "検証済みの PGP 宛先へ、${ MAIL_APP_NAME } によって送信された、暗号化されたメッセージ"
+        "${ MAIL_APP_NAME } によって暗号化・宛先はPGP検証済み"
       ],
       "Encrypted by ${ MAIL_APP_NAME } to verified recipient": [
         "検証済みの宛先へ、${ MAIL_APP_NAME } によって送信された、暗号化されたメッセージ"
@@ -13973,7 +14042,7 @@
         "メッセージの有効期限がキャンセルされました"
       ],
       "Message marked as legitimate": [
-        "メッセージを正当なもとしてマークする"
+        "メッセージを正当なもとしてマークしました"
       ],
       "Message marked as read.": [
         "メッセージを既読にしました。"
@@ -13991,7 +14060,7 @@
         "メッセージが ${ labelName } に移動されました。"
       ],
       "Message moved to spam and sender added to your spam list.": [
-        "メールを迷惑メールに移動しました。送信元のアドレスは迷惑メールリストに登録済みです。"
+        "メールを迷惑メールに移動し、送信元のアドレスを迷惑メールリストに追加しました。"
       ],
       "Message removed from ${ labelName }.": [
         "メッセージを ${ labelName } から削除しました。"
@@ -14251,7 +14320,7 @@
         "エイリアスを作成"
       ],
       "Create label “${ suggestedLabelName }“": [
-        "「${ suggestedLabelName }」ラベルを作成します"
+        "「${ suggestedLabelName }」ラベルを作成"
       ],
       "Create new email address": [
         "新しいメールアドレスを作成"
@@ -14273,6 +14342,9 @@
       ],
       "Show me how": [
         "方法を表示"
+      ],
+      "Download the desktop app": [
+        "デスクトップアプリをダウンロード"
       ]
     },
     "Title": {
@@ -14646,7 +14718,7 @@
         "絞り込み"
       ],
       "Folder options": [
-        "フォルダ オプション"
+        "フォルダー設定"
       ],
       "Forward": [
         "転送"
@@ -14793,7 +14865,7 @@
         "メッセージリスト"
       ],
       "Message will expire": [
-        "メッセージは期限切れです"
+        "メッセージは期限切れになります"
       ],
       "Minicalendar": [
         "ミニカレンダー"
@@ -14976,7 +15048,7 @@
         "連絡先を再署名する"
       ],
       "Recipient missing": [
-        "宛先が見つかりません"
+        "宛先がありません"
       ],
       "Recipients": [
         "宛先"
@@ -15045,7 +15117,7 @@
         "メール送信"
       ],
       "Send with changed preferences?": [
-        "変更した設定を送信しますか?"
+        "設定を変更したうえで送信しますか?"
       ],
       "Send with encryption disabled?": [
         "暗号化を無効で送信しますか？"
@@ -15111,7 +15183,7 @@
         "スヌーズ"
       ],
       "Snooze message": [
-        "メッセージのスヌーズ"
+        "メッセージをスヌーズ"
       ],
       "Snooze:": [
         "スヌーズ:"
@@ -15286,6 +15358,9 @@
       ],
       "✨ Categories are coming!": [
         "✨ カテゴリがまもなく登場します！"
+      ],
+      "To preview this spreadsheet, download it.": [
+        "このスプレッドシートをプレビューするには、ダウンロードしてください。"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15384,7 +15459,7 @@
     },
     "tooltip": {
       "${ LUMO_APP_NAME }: AI assistant that respects your privacy": [
-        "${ LUMO_APP_NAME }: お客様のプライバシーを尊重するAIアシスタント"
+        "プライバシー重視のAIアシスタント、${ LUMO_APP_NAME }"
       ],
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: すべてのデバイスで安全なログインを実現します。 無制限のエイリアス、共有、統合 2要素認証 などが含まれます。"
@@ -15583,7 +15658,7 @@
     },
     "WeekDay": {
       "Mon, ${ formatTime }": [
-        "${ formatTime }月曜日"
+        "月曜日の${ formatTime }"
       ],
       "Sat, ${ formatTime }": [
         "${ formatTime }土曜日"
@@ -15818,6 +15893,55 @@
       ],
       "Passcode:": [
         "パスコード："
+      ]
+    },
+    "customer_support.feature.meet": {
+      "For ${ MEET_APP_NAME }": [
+        "${ MEET_APP_NAME } 向け"
+      ]
+    },
+    "meet_2025: Feature": {
+      "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
+        "${ MEET_APP_NAME }: 最も重要な会話のための機密性の高いビデオ会議"
+      ],
+      "${ n } active meeting at a time": [
+        "一度に${ n }件のミーティングを同時に開催"
+      ],
+      "24 hours per meeting": [
+        "ミーティング1回あたり24時間"
+      ],
+      "60 minutes per meeting": [
+        "ミーティング1回あたり60分"
+      ],
+      "Appointment scheduling": [
+        "日程調整ツール"
+      ],
+      "Browser, mobile, and desktop apps": [
+        "ブラウザ、モバイル、デスクトップアプリ"
+      ],
+      "Built-in chat": [
+        "組み込みチャット"
+      ],
+      "End-to-end encrypted screen sharing and ephemeral in-call chat": [
+        "エンドツーエンドで暗号化された画面共有と通話中の一時的なチャット"
+      ],
+      "Meeting recording (coming soon)": [
+        "ミーティング録画（近日公開）"
+      ],
+      "One active meeting at a time": [
+        "一度に1つのミーティングを開催"
+      ],
+      "Screen-sharing": [
+        "画面共有"
+      ],
+      "Unlimited meetings per day": [
+        "1日あたり無制限のミーティング"
+      ],
+      "Up to ${ n } meeting per day": [
+        "1日あたり最大${ n }件のミーティング"
+      ],
+      "Up to ${ n } participant": [
+        "最大${ n }人の参加者"
       ]
     }
   }
