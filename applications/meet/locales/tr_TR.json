@@ -62,20 +62,11 @@
       "Copy address": [
         "Adresi kopyala"
       ],
-      "Copy invitation text": [
-        "Davet yazısını kopyala"
-      ],
       "Copy link": [
         "Bağlantıyı kopyala"
       ],
       "Create a free account": [
         "Ücretsiz hesap açın"
-      ],
-      "Create meeting": [
-        "Görüşme oluştur"
-      ],
-      "Delete": [
-        "Sil"
       ],
       "Disable ${ participantName }'s video": [
         "${ participantName } kişisinin görüntüsünü kapat"
@@ -85,6 +76,9 @@
       ],
       "Dismiss": [
         "Yok say"
+      ],
+      "Done": [
+        "Tamam"
       ],
       "Download logs": [
         "Günlüğü indir"
@@ -121,9 +115,6 @@
       ],
       "Help and resources": [
         "Yardım ve kaynaklar"
-      ],
-      "Hide advanced options": [
-        "Gelişmiş seçenekleri gizle"
       ],
       "Hide participants": [
         "Katılımcıları gizle"
@@ -215,11 +206,11 @@
       "Resend code": [
         "Kodu yeniden gönder"
       ],
+      "Save meeting": [
+        "Görüşmeyi kaydet"
+      ],
       "Schedule": [
         "Planlama"
-      ],
-      "Schedule meeting": [
-        "Görüşme planla"
       ],
       "Search countries": [
         "Ülke ara"
@@ -229,12 +220,6 @@
       ],
       "Settings": [
         "Ayarlar"
-      ],
-      "Share": [
-        "Paylaş"
-      ],
-      "Show advanced options": [
-        "Gelişmiş seçenekleri görüntüle"
       ],
       "Show participants": [
         "Katılımcıları görüntüle"
@@ -277,6 +262,9 @@
       ],
       "Switch or add account": [
         "Hesap değiştirin ya da ekleyin"
+      ],
+      "Tap to unblock audio playback": [
+        "Ses oynatma engellemesini kaldırmak için dokunun"
       ],
       "Try another method": [
         "Başka bir yöntem deneyin"
@@ -1593,12 +1581,6 @@
       "${ presenterName } is presenting": [
         "${ presenterName } sunum yapıyor"
       ],
-      "${ user.DisplayName } has invited you to a ${ BRAND_NAME } ${ MEET_SHORT_APP_NAME } meeting:": [
-        "${ user.DisplayName } sizi bir ${ BRAND_NAME } ${ MEET_SHORT_APP_NAME } görüşmesine davet etti:"
-      ],
-      "${ user.DisplayName } has invited you to a ${ BRAND_NAME } ${ MEET_SHORT_APP_NAME } meeting:\n\n${ time }\n\n${ meetingLink }\n\nMeeting ID: ${ id }": [
-        "${ user.DisplayName } sizi bir ${ BRAND_NAME } ${ MEET_SHORT_APP_NAME } görüşmesine davet etti:\n\n${ time }\n\n${ meetingLink }\n\nGörüşme kimliği: ${ id }"
-      ],
       "${ user.DisplayName }'s Meeting": [
         "${ user.DisplayName } görüşmesi"
       ],
@@ -1710,9 +1692,6 @@
       "Every call, screen share, and chat is end-to-end encrypted to protect your most important connections.": [
         "Önemli bağlantılarınızı korumak için her arama, ekran paylaşımı ve sohbet, uçtan uca şifrelenir."
       ],
-      "For extra security, you can set a passphrase. It won’t be included in the calendar invite—remember to share it with your guests separately.": [
-        "Ek güvenlik sağlamak için bir parola belirleyebilirsiniz. Bu parola takvim davetine eklenmez. Konuklarınızla başka bir yolla paylaşmayı unutmayın."
-      ],
       "Free meeting": [
         "Serbest görüşme"
       ],
@@ -1739,9 +1718,6 @@
       ],
       "Internet connection lost": [
         "İnternet bağlantısı kesildi"
-      ],
-      "Invitation preview": [
-        "Davet ön izlemesi"
       ],
       "Joined": [
         "Katıldı"
@@ -1778,9 +1754,6 @@
       ],
       "Meeting full (${ maxParticipants } participants)": [
         "Görüşme dolu (${ maxParticipants } katılımcı)"
-      ],
-      "Meeting ID: ${ id }": [
-        "Görüşme kimliği: ${ id }"
       ],
       "Meeting link": [
         "Görüşme bağlantısı"
@@ -1896,9 +1869,6 @@
       "Share screen": [
         "Ekran paylaşımı"
       ],
-      "Share the meeting invitation with others": [
-        "Görüşme davetini başkalarıyla paylaşın"
-      ],
       "Share this link to invite others. You can also find it anytime by clicking the info icon in the toolbar.": [
         "Başkalarını davet etmek için bu bağlantıyı paylaşın. Bağlantıyı istediğiniz zaman araç çubuğundaki bilgiler simgesine tıklayarak görebilirsiniz."
       ],
@@ -1907,6 +1877,9 @@
       ],
       "Stop sharing your screen": [
         "Ekran paylaşımını durdur"
+      ],
+      "The host has ended the meeting": [
+        "Görüşme, sahibi tarafından sonlandırıldı"
       ],
       "This is an end-to-end encrypted chat with ephemeral messages. After you leave the call, you will not be able to access this chat.": [
         "Bu sohbet uçtan uca şifrelenmiştir ve iletiler geçicidir. Görüşmeden ayrıldıktan sonra bu sohbete yeniden erişemezsiniz."
@@ -2006,6 +1979,9 @@
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } kullanıcı adı"
       ],
+      "Add to calendar": [
+        "Takvime ekle"
+      ],
       "Attach screenshot(s)": [
         "Ekran görüntüsü ekle"
       ],
@@ -2033,8 +2009,26 @@
       "Delete recovery-related information.": [
         "Kurtarma ile ilgili bilgileri sil."
       ],
+      "Download .ics": [
+        ".ics dosyasını indir"
+      ],
       "Email address": [
         "E-posta adresi"
+      ],
+      "Every day": [
+        "Her gün"
+      ],
+      "Every month": [
+        "Her ay"
+      ],
+      "Every weekday": [
+        "Hafta içi her gün"
+      ],
+      "Every year": [
+        "Her yıl"
+      ],
+      "Google calendar": [
+        "Google takvim"
       ],
       "Hide password": [
         "Parolayı gizle"
@@ -2045,11 +2039,20 @@
       "Meeting ID": [
         "Görüşme kimliği"
       ],
+      "Monday to Friday": [
+        "Pazartesi ile Cuma arasında"
+      ],
+      "No repeat": [
+        "Yinelenmiyor"
+      ],
       "Operating system": [
         "İşletim sistemi"
       ],
       "Operating system version": [
         "İşletim sistemi sürümü"
+      ],
+      "Outlook calendar": [
+        "Outlook takvimi"
       ],
       "Passphrase": [
         "Parola ifadesi"
@@ -2059,6 +2062,9 @@
       ],
       "Phone number": [
         "Telefon numarası"
+      ],
+      "Remember my name on this device for future meetings": [
+        "Gelecekteki görüşmeler için bu aygıtta adımı hatırla"
       ],
       "Reveal password": [
         "Parolayı görüntüle"
@@ -2157,9 +2163,6 @@
       "Enter passphrase": [
         "Parola ifadesini yazın"
       ],
-      "Enter secret passphrase": [
-        "Gizli parola ifadesini yazın"
-      ],
       "Enter time": [
         "Zamanı yazın"
       ],
@@ -2177,6 +2180,9 @@
       ],
       "Please describe the problem and include any error messages": [
         "Lütfen sorunu açıklayın ve varsa hata iletisini ekleyin"
+      ],
+      "Schedule in ${ CALENDAR_APP_NAME }": [
+        "${ CALENDAR_APP_NAME } uygulamasında zamanla"
       ],
       "Select": [
         "Seçin"
@@ -2389,9 +2395,6 @@
       ],
       "Schedule meeting": [
         "Görüşme planla"
-      ],
-      "Secret Passphrase": [
-        "Gizli parola ifadesi"
       ],
       "Secure meeting": [
         "Güvenli görüşme"
