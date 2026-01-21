@@ -104,6 +104,12 @@ jest.mock('@proton/shared/lib/helpers/browser');
 jest.mock('../../flags/useFlagsDriveDocsPublicSharing');
 jest.mock('../../store');
 jest.mock('../../utils/errorHandling/useSdkErrorHandler');
+jest.mock('@proton/mail/store/contactEmails/hooks', () => ({
+    useContactEmails: jest.fn(() => [[]]),
+}));
+
+const { useContactEmails } = require('@proton/mail/store/contactEmails/hooks');
+const mockedUseContactEmails = jest.mocked(useContactEmails);
 
 const expectedDirectMembers: DirectMember[] = [
     {
@@ -616,6 +622,88 @@ describe('useSharingModalState', () => {
 
         await waitFor(() => {
             expect(result.current.ownerEmail).toBeUndefined();
+        });
+    });
+
+    it('should set owner display name from contacts when owner email is found in contacts', async () => {
+        const contactEmails = [
+            { Email: 'owner@proton.me', Name: 'Owner Contact Name' },
+            { Email: 'other@proton.me', Name: 'Other User' },
+        ];
+
+        const nodeInfoWithDifferentOwner = {
+            ok: true,
+            value: {
+                name: 'Test File',
+                type: 1,
+                keyAuthor: {
+                    ok: true,
+                    value: 'owner@proton.me',
+                },
+            },
+        };
+
+        mockedUseContactEmails.mockReturnValue([contactEmails]);
+        mockedUseUser.mockReturnValue([mockUser, false]);
+        when(mockDrive.getNode).calledWith(mockNodeUid).mockResolvedValue(nodeInfoWithDifferentOwner);
+
+        const { result } = renderHook(() => useSharingModalState(mockProps));
+
+        await waitFor(() => {
+            expect(result.current.ownerDisplayName).toBe('Owner Contact Name');
+            expect(result.current.ownerEmail).toBe('owner@proton.me');
+        });
+    });
+
+    it('should not set owner display name when owner email is not found in contacts', async () => {
+        const contactEmails = [{ Email: 'other@proton.me', Name: 'Other User' }];
+
+        const nodeInfoWithDifferentOwner = {
+            ok: true,
+            value: {
+                name: 'Test File',
+                type: 1,
+                keyAuthor: {
+                    ok: true,
+                    value: 'unknown@proton.me',
+                },
+            },
+        };
+
+        mockedUseContactEmails.mockReturnValue([contactEmails]);
+        mockedUseUser.mockReturnValue([mockUser, false]);
+        when(mockDrive.getNode).calledWith(mockNodeUid).mockResolvedValue(nodeInfoWithDifferentOwner);
+
+        const { result } = renderHook(() => useSharingModalState(mockProps));
+
+        await waitFor(() => {
+            expect(result.current.ownerDisplayName).toBeUndefined();
+            expect(result.current.ownerEmail).toBe('unknown@proton.me');
+        });
+    });
+
+    it('should not set owner display name when contactEmails is empty', async () => {
+        const nodeInfoWithDifferentOwner = {
+            ok: true,
+            value: {
+                name: 'Test File',
+                type: 1,
+                keyAuthor: {
+                    ok: true,
+                    value: 'unknown@proton.me',
+                },
+            },
+        };
+
+        mockedUseContactEmails.mockReturnValue([[]]);
+        mockedUseUser.mockReturnValue([mockUser, false]);
+        when(mockDrive.getNode).calledWith(mockNodeUid).mockResolvedValue(nodeInfoWithDifferentOwner);
+
+        const { result } = renderHook(() => useSharingModalState(mockProps));
+
+        await waitFor(() => {
+            expect(result.current.ownerDisplayName).toBeUndefined();
+            expect(result.current.ownerEmail).toBe('unknown@proton.me');
         });
     });
 
