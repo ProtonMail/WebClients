@@ -6,6 +6,7 @@ import { useModalStateObject } from '@proton/components';
 
 import { useLumoSelector } from '../../redux/hooks';
 import { selectSpaceById } from '../../redux/selectors';
+import type { ProjectSpace } from '../../types';
 import DropdownMenu from '../components/DropdownMenu';
 import type { DropdownOptions } from '../components/DropdownMenu';
 import { DeleteProjectModal } from './modals/DeleteProjectModal';
@@ -20,6 +21,7 @@ interface ProjectActionsDropdownProps {
 export const ProjectActionsDropdown = ({ project }: ProjectActionsDropdownProps) => {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
     const space = useLumoSelector(selectSpaceById(project.spaceId || ''));
+    const projectSpace = space?.isProject ? (space satisfies ProjectSpace) : undefined;
     const { deleteProject } = useProjectActions();
 
     const editModal = useModalStateObject();
@@ -59,14 +61,14 @@ export const ProjectActionsDropdown = ({ project }: ProjectActionsDropdownProps)
     return (
         <>
             <DropdownMenu options={options} onToggle={toggleDropdown} isOpen={isDropdownOpen} />
-            {editModal.render && space && (
+            {editModal.render && projectSpace && (
                 <ProjectEditModal
                     {...editModal.modalProps}
                     projectId={project.id}
                     currentName={project.name}
-                    currentInstructions={space.projectInstructions}
-                    currentIcon={space.projectIcon}
-                    space={space}
+                    currentInstructions={projectSpace.projectInstructions}
+                    currentIcon={projectSpace.projectIcon}
+                    space={projectSpace}
                 />
             )}
             {deleteModal.render && (
