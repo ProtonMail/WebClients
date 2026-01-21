@@ -11,8 +11,8 @@ import { dateLocale } from '@proton/shared/lib/i18n';
 import folderImages from '@proton/styles/assets/img/drive/folder-images.svg';
 import useFlag from '@proton/unleash/useFlag';
 
-import { getContactNameAndEmail } from '../../../components/modals/ShareLinkModal/DirectSharing/DirectSharingListing';
 import type { DecryptedAlbum } from '../../PhotosStore/PhotosWithAlbumsProvider';
+import { getContactNameAndEmail } from '../getContactNameAndEmail';
 import { PhotosAddAlbumPhotosButton } from '../toolbar/PhotosAddAlbumPhotosButton';
 import { AlbumMembers } from './AlbumMembers';
 

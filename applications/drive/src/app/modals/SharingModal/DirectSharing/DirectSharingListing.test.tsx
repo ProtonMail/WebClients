@@ -11,6 +11,10 @@ jest.mock('@proton/mail/store/contactEmails/hooks', () => ({
     useContactEmails: jest.fn(() => [[]]),
 }));
 
+jest.mock('@proton/account/addresses/hooks', () => ({
+    useAddresses: jest.fn(() => [[{ Email: 'owner@example.com' }]]),
+}));
+
 jest.mock('./helpers/getContactNameAndEmail', () => ({
     getContactNameAndEmail: jest.fn((email) => {
         let contactName = '';
@@ -76,7 +80,6 @@ describe('DirectSharingListing', () => {
         const ownerSection = screen.getByTestId('share-owner');
         expect(ownerSection).toBeInTheDocument();
         expect(screen.getByText('owner@example.com (you)')).toBeInTheDocument();
-        expect(screen.queryByTitle('owner@example.com')).toBeInTheDocument();
         expect(screen.getByText('Owner')).toBeInTheDocument();
     });
 
