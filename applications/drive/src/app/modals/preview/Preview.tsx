@@ -69,7 +69,13 @@ export function Preview({
     const rootRef = useRef<HTMLDivElement>(null);
 
     const onDetails = () => {
-        showDetailsModal({ drive, volumeId, shareId: deprecatedContextShareId, linkId: nodeId, verifySignatures });
+        showDetailsModal({
+            drive,
+            volumeId,
+            shareId: deprecatedContextShareId,
+            linkId: nodeId,
+            verifySignatures,
+        });
     };
 
     const onShare = preview.canShare
