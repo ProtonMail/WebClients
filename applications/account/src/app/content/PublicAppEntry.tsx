@@ -8,6 +8,7 @@ import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
 import ProtonApp from '@proton/components/containers/app/ProtonApp';
 import StandardErrorPage from '@proton/components/containers/app/StandardErrorPage';
 import AuthenticationProvider from '@proton/components/containers/authentication/Provider';
+import ModalsChildren from '@proton/components/containers/modals/Children';
 import NotificationsChildren from '@proton/components/containers/notifications/Children';
 import { initMainHost } from '@proton/cross-storage/lib';
 import useInstance from '@proton/hooks/useInstance';
@@ -62,6 +63,7 @@ const PublicApp = () => {
                     <ProtonStoreProvider store={store}>
                         <ApiProvider api={api}>
                             <ErrorBoundary big component={<StandardErrorPage big />}>
+                                <ModalsChildren />
                                 <NotificationsChildren />
                                 <PublicAppInitial sessions={sessions} />
                             </ErrorBoundary>
