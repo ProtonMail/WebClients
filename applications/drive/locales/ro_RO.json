@@ -4848,6 +4848,9 @@
         "Contacte: ${ contactsLength }",
         "Contacte: ${ contactsLength }"
       ],
+      "${ DOCS_APP_NAME } and ${ SHEETS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
+        "Fișierele ${ DOCS_APP_NAME } și ${ SHEETS_APP_NAME } nu pot fi descărcate direct și nu vor fi incluse în această descărcare. Puteți descărca celelalte fișiere făcând clic pe „Continuare descărcare”."
+      ],
       "${ doneCount } finished": [
         "S-a transferat unul",
         "S-au transferat ${ doneCount }",
@@ -6384,6 +6387,9 @@
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Pentru a finaliza plata, trimiteți ${ btcAmountBold } la adresa de mai jos."
       ],
+      "To download these files, open them in ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME } and export them.": [
+        "Pentru a descărca aceste fișiere, deschideți-le în ${ DOCS_APP_NAME } sau ${ SHEETS_APP_NAME } și exportați-le."
+      ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
         "Pentru a permite o căutare cu adevărat privată, ${ DRIVE_APP_NAME } trebuie să vă indexeze fișierele la nivel local."
       ],
@@ -7427,8 +7433,14 @@
       "Postal code": [
         "Cod poștal"
       ],
+      "Premium domain": [
+        "Domeniu premium"
+      ],
       "Proration": [
         "Taxe zilnice"
+      ],
+      "Public domain": [
+        "Domeniu public"
       ],
       "Public keys": [
         "Chei publice"
@@ -7600,6 +7612,9 @@
       ],
       "Your alias": [
         "Aliasuri personale"
+      ],
+      "Your domain": [
+        "Domeniul personal"
       ],
       "Your IP": [
         "IP dispozitiv"
@@ -9118,6 +9133,9 @@
       "\"${ name }\" deleted": [
         "S-a șters „${ name }”"
       ],
+      "\"${ name }\" deleted permanently": [
+        "„${ name }” s-a șters permanent."
+      ],
       "\"${ name }\" deleted permanently from trash": [
         "„${ name }” a fost eliminat permanent din «Gunoi»."
       ],
@@ -9207,6 +9225,11 @@
         "Articole șterse: ${ numberOfItems }",
         "Articole șterse: ${ numberOfItems }",
         "Articole șterse: ${ numberOfItems }"
+      ],
+      "${ numberOfItems } item deleted permanently": [
+        "Articole șterse permanent: ${ numberOfItems }",
+        "Articole șterse permanent: ${ numberOfItems }",
+        "Articole șterse permanent: ${ numberOfItems }"
       ],
       "${ numberOfItems } item deleted permanently from trash": [
         "S-a eliminat permanent un element din «Gunoi».",
@@ -12794,26 +12817,23 @@
       "The link expired": [
         "Legătura a expirat"
       ],
-      "The verification of the encryption keys' signature by the original creator (${ claimedKeyAuthor }) who created the node failed. The reason is: ${ nodeEntity.keyAuthor.error.error }": [
-        "Verificarea semnăturii cheilor de criptare de către creatorul original (${ claimedKeyAuthor }) care a creat nodul a eșuat. Motivul este: ${ nodeEntity.keyAuthor.error.error }"
-      ],
-      "The verification of the file's content signature by the uploader (${ claimedContentAuthor }) who uploaded the last revision failed. The reason is: ${ activeRevision.contentAuthor.error.error }": [
-        "Verificarea semnăturii conținutului fișierului de către cel care a încărcat (${ claimedContentAuthor }), care a încărcat ultima revizie, a eșuat. Motivul este: ${ activeRevision.contentAuthor.error.error }"
-      ],
-      "The verification of the name's signature by author (${ claimedNameAuthor }) who set the name the last time failed. The reason is: ${ nodeEntity.nameAuthor.error.error }": [
-        "Verificarea semnăturii numelui de către autorul (${ claimedNameAuthor }) care a stabilit numele ultima dată a eșuat. Motivul este: ${ nodeEntity.nameAuthor.error.error }"
-      ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "Acest fișier are o semnătură lipsă sau nevalidă. Accesați Meniu (⋮) → Detalii pentru informații."
       ],
       "This folder has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "Acest folder are o semnătură lipsă sau nevalidă. Accesați Meniu (⋮) → Detalii pentru informații."
       ],
+      "This is likely due to the account or address having been deleted.": [
+        "Probabil fiindcă s-a șters contul sau adresa."
+      ],
       "This link is password protected": [
         "Legătura este protejată cu parolă"
       ],
       "Time": [
         "Ora"
+      ],
+      "To preview this spreadsheet, download it.": [
+        "Pentru a examina această foaie de calcul, descărcați-o."
       ],
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "Pentru a examina această foaie de calcul, deschideți-o în ${ SHEETS_APP_NAME } sau descărcați-o."
@@ -12923,6 +12943,15 @@
       "We couldn’t verify that an anonymous user uploaded this folder.": [
         "Nu s-a putut verifica dacă un utilizator anonim a încărcat acest folder."
       ],
+      "We weren’t able to confirm that the file content was uploaded by ${ claimedContentAuthor }. The reason is: ${ activeRevision.contentAuthor.error.error }": [
+        "Nu s-a putut confirma că fișierul a fost încărcat de către ${ claimedContentAuthor }. Motiv: ${ activeRevision.contentAuthor.error.error }"
+      ],
+      "We weren’t able to confirm that the name was created or modified by ${ claimedNameAuthor }. The reason is: ${ nodeEntity.nameAuthor.error.error }": [
+        "Nu s-a putut confirma că numele a fost creat sau modificat de către ${ claimedNameAuthor }. Motiv: ${ nodeEntity.nameAuthor.error.error }"
+      ],
+      "We weren’t able to confirm that the node was created by ${ claimedKeyAuthor }. The reason is: ${ nodeEntity.keyAuthor.error.error }": [
+        "Nu s-a putut confirma că nodul a fost creat de către ${ claimedKeyAuthor }. Motiv: ${ nodeEntity.keyAuthor.error.error }"
+      ],
       "Welcome offer": [
         "Ofertă de bun venit"
       ],
@@ -12970,6 +12999,9 @@
       ],
       "Your changes are not synced yet": [
         "Modificările nu sunt încă sincronizate"
+      ],
+      "Your download includes ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME } files": [
+        "Descărcarea include fișiere ${ DOCS_APP_NAME } sau ${ SHEETS_APP_NAME }."
       ],
       "Your exposed information": [
         "Informații expuse"

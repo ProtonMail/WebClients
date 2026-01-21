@@ -1599,6 +1599,9 @@
       "Payments problem": [
         "Problema con i pagamenti"
       ],
+      "Sheets problem": [
+        "Problema fogli"
+      ],
       "Sign in problem": [
         "Problema di accesso"
       ],
@@ -3377,6 +3380,9 @@
       "Failed to get details, please try again later": [
         "Impossibile ottenere i dettagli, per favore riprova più tardi"
       ],
+      "Failed to load signature details, please try again later": [
+        "Impossibile caricare i dettagli della firma, riprova più tardi"
+      ],
       "Failed to load the STL preview": [
         "Impossibile caricare l'anteprima STL"
       ],
@@ -4566,6 +4572,12 @@
       "Too many recent requests. Please try again in a few moments.": [
         "Troppe richieste recenti. Per favore riprova tra qualche istante."
       ],
+      "Two-factor authentication is enabled in your external account.": [
+        "L'autenticazione a due fattori è abilitata nel tuo account esterno."
+      ],
+      "Two-factor authentication is enabled in your external email account.": [
+        "L'autenticazione a due fattori è abilitata nel tuo account email esterno."
+      ],
       "Use your app password if:": [
         "Usa la password dell'app se:"
       ],
@@ -4780,6 +4792,9 @@
       "${ contactsLength } contact": [
         "${ contactsLength } contatto",
         "${ contactsLength } contatti"
+      ],
+      "${ DOCS_APP_NAME } and ${ SHEETS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
+        "I file ${ DOCS_APP_NAME } e ${ SHEETS_APP_NAME } non possono essere scaricati direttamente e non verranno inclusi in questo download. Puoi scaricare gli altri file cliccando su \"Continua il download\"."
       ],
       "${ doneCount } finished": [
         "${ doneCount } completato",
@@ -6154,6 +6169,9 @@
       "Thank you for subscribing. Secure browsing starts now.": [
         "Grazie per esserti abbonato. La navigazione sicura inizia ora."
       ],
+      "that": [
+        "Quello"
+      ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "L'account potrebbe avere una nuova chiave o quanto segue potrebbe essere stato manomesso: ${ items }. Aprilo solo se ti fidi."
       ],
@@ -6280,6 +6298,9 @@
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Per completare il pagamento, per favore invia ${ btcAmountBold } all'indirizzo sottostante."
+      ],
+      "To download these files, open them in ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME } and export them.": [
+        "Per scaricare questi file, aprilili in ${ DOCS_APP_NAME } o ${ SHEETS_APP_NAME } ed esportali."
       ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
         "Per abilitare la ricerca davvero privata, ${ DRIVE_APP_NAME } deve indicizzare i tuoi file localmente."
@@ -6446,6 +6467,9 @@
       "We are experiencing technical issues. Any albums related actions are temporarily disabled.": [
         "Stiamo riscontrando problemi tecnici. Tutte le azioni relative agli album sono temporaneamente disabilitate."
       ],
+      "We couldn't verify ${ nameAuthor } uploaded ${ node.name }. The following may have been tampered with: file data order. Only open if you trust it.": [
+        "Non siamo riusciti a verificare che ${ nameAuthor } abbia caricato ${ node.name }. Potrebbero essere stati manomessi i seguenti elementi: ordine dei dati del file. Apri solo se ti fidi."
+      ],
       "We couldn’t process your payment.": [
         "Il pagamento non può essere completato."
       ],
@@ -6496,6 +6520,9 @@
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Quando imposti l'autenticazione a due fattori, forniamo codici di ripristino che puoi utilizzare per accedere se perdi l'accesso alla tua app di autenticazione."
+      ],
+      "who": [
+        "chi"
       ],
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
         "verrà ripristinato alla versione del ${ formattedRevisionDate }. Tutte le altre versioni saranno salvate."
@@ -7305,8 +7332,14 @@
       "Postal code": [
         "Codice postale"
       ],
+      "Premium domain": [
+        "Dominio Premium"
+      ],
       "Proration": [
         "Calcolo proporzionale"
+      ],
+      "Public domain": [
+        "Dominio pubblico"
       ],
       "Public keys": [
         "Chiavi pubbliche"
@@ -7478,6 +7511,9 @@
       ],
       "Your alias": [
         "Il tuo alias"
+      ],
+      "Your domain": [
+        "Il tuo dominio"
       ],
       "Your IP": [
         "Il tuo IP"
@@ -9009,6 +9045,9 @@
       "\"${ name }\" deleted": [
         "\"${ name }\" eliminato"
       ],
+      "\"${ name }\" deleted permanently": [
+        "\"${ name }\" eliminato definitivamente"
+      ],
       "\"${ name }\" deleted permanently from trash": [
         "\"${ name }\" eliminato definitivamente dal cestino"
       ],
@@ -9089,6 +9128,10 @@
       "${ numberOfItems } item deleted": [
         "${ numberOfItems } elemento eliminato",
         "${ numberOfItems } elementi eliminati"
+      ],
+      "${ numberOfItems } item deleted permanently": [
+        "${ numberOfItems } elementi eliminati definitivamente",
+        "${ numberOfItems } elementi eliminati definitivamente"
       ],
       "${ numberOfItems } item deleted permanently from trash": [
         "${ numberOfItems } elemento eliminato definitivamente dal cestino",
@@ -12597,26 +12640,23 @@
       "The link expired": [
         "Il link è scaduto"
       ],
-      "The verification of the encryption keys' signature by the original creator (${ claimedKeyAuthor }) who created the node failed. The reason is: ${ nodeEntity.keyAuthor.error.error }": [
-        "La verifica della firma delle chiavi crittografiche da parte del creatore originale (${ claimedKeyAuthor }) che ha creato il nodo non è riuscita. Il motivo è: ${ nodeEntity.keyAuthor.error.error }"
-      ],
-      "The verification of the file's content signature by the uploader (${ claimedContentAuthor }) who uploaded the last revision failed. The reason is: ${ activeRevision.contentAuthor.error.error }": [
-        "La verifica della firma del contenuto del file da parte dell'uploader (${ claimedContentAuthor }), che ha caricato l'ultima revisione, non è riuscita. Il motivo è: ${ activeRevision.contentAuthor.error.error }"
-      ],
-      "The verification of the name's signature by author (${ claimedNameAuthor }) who set the name the last time failed. The reason is: ${ nodeEntity.nameAuthor.error.error }": [
-        "La verifica della firma del nome da parte dell'autore (${ claimedNameAuthor }), che ha impostato il nome l'ultima volta, non è riuscita. Il motivo è: ${ nodeEntity.nameAuthor.error.error }"
-      ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "Questo file ha una firma mancante o non valida. Vai a Menu (⋮) → Dettagli per info."
       ],
       "This folder has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "Questa cartella ha una firma mancante o non valida. Vai a Menu (⋮) → Dettagli per info."
       ],
+      "This is likely due to the account or address having been deleted.": [
+        "Questo è probabilmente dovuto all'eliminazione dell'account o dell'indirizzo."
+      ],
       "This link is password protected": [
         "Questo link è protetto con password"
       ],
       "Time": [
         "Ora"
+      ],
+      "To preview this spreadsheet, download it.": [
+        "Per visualizzare l'anteprima di questo foglio di calcolo, scaricalo."
       ],
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "Per visualizzare l'anteprima di questo foglio di calcolo, aprilo in ${ SHEETS_APP_NAME } o scaricalo."
@@ -12726,6 +12766,15 @@
       "We couldn’t verify that an anonymous user uploaded this folder.": [
         "Non abbiamo potuto verificare che un utente anonimo abbia creato questa cartella."
       ],
+      "We weren’t able to confirm that the file content was uploaded by ${ claimedContentAuthor }. The reason is: ${ activeRevision.contentAuthor.error.error }": [
+        "Non siamo riusciti a confermare che il contenuto del file sia stato caricato da ${ claimedContentAuthor }. Il motivo è: ${ activeRevision.contentAuthor.error.error }"
+      ],
+      "We weren’t able to confirm that the name was created or modified by ${ claimedNameAuthor }. The reason is: ${ nodeEntity.nameAuthor.error.error }": [
+        "Non siamo riusciti a confermare che il nome sia stato creato o modificato da ${ claimedNameAuthor }. Il motivo è: ${ nodeEntity.nameAuthor.error.error }"
+      ],
+      "We weren’t able to confirm that the node was created by ${ claimedKeyAuthor }. The reason is: ${ nodeEntity.keyAuthor.error.error }": [
+        "Non siamo riusciti a confermare che il nodo sia stato creato da ${ claimedKeyAuthor }. Il motivo è: ${ nodeEntity.keyAuthor.error.error }"
+      ],
       "Welcome offer": [
         "Offerta di benvenuto"
       ],
@@ -12773,6 +12822,9 @@
       ],
       "Your changes are not synced yet": [
         "Le tue modifiche non sono ancora sincronizzate"
+      ],
+      "Your download includes ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME } files": [
+        "Il download include file ${ DOCS_APP_NAME } o ${ SHEETS_APP_NAME }"
       ],
       "Your exposed information": [
         "Le tue informazioni rese pubbliche"

@@ -7335,8 +7335,14 @@
       "Postal code": [
         "Codi postal"
       ],
+      "Premium domain": [
+        "Domini prèmium"
+      ],
       "Proration": [
         "Prorrateig"
+      ],
+      "Public domain": [
+        "Domini públic"
       ],
       "Public keys": [
         "Claus públiques"
@@ -7508,6 +7514,9 @@
       ],
       "Your alias": [
         "El vostre àlies"
+      ],
+      "Your domain": [
+        "El vostre domini"
       ],
       "Your IP": [
         "La vostra IP"
@@ -9048,6 +9057,9 @@
       "\"${ name }\" deleted": [
         "S'ha eliminat «${ name }»."
       ],
+      "\"${ name }\" deleted permanently": [
+        "S'ha eliminat \"${ name }\" permanentment"
+      ],
       "\"${ name }\" deleted permanently from trash": [
         "S'ha eliminat \"${ name }\" de manera permanent de la paperera"
       ],
@@ -9128,6 +9140,10 @@
       "${ numberOfItems } item deleted": [
         "S'ha eliminat ${ numberOfItems } element",
         "S'han eliminat ${ numberOfItems } elements"
+      ],
+      "${ numberOfItems } item deleted permanently": [
+        "S'ha eliminat permanentment ${ numberOfItems } element",
+        "S'han eliminat permanentment ${ numberOfItems } elements"
       ],
       "${ numberOfItems } item deleted permanently from trash": [
         "S'ha eliminat ${ numberOfItems } element permanentment de la paperera",
@@ -12636,20 +12652,14 @@
       "The link expired": [
         "L'enllaç ha caducat"
       ],
-      "The verification of the encryption keys' signature by the original creator (${ claimedKeyAuthor }) who created the node failed. The reason is: ${ nodeEntity.keyAuthor.error.error }": [
-        "Ha fallat la verificació de la signatura de les claus de xifratge per part del creador original (${ claimedKeyAuthor }) que va crear el node. El motiu és: ${ nodeEntity.keyAuthor.error.error }"
-      ],
-      "The verification of the file's content signature by the uploader (${ claimedContentAuthor }) who uploaded the last revision failed. The reason is: ${ activeRevision.contentAuthor.error.error }": [
-        "Ha fallat la verificació de la signatura del contingut del fitxer per part de la persona que el va carregar (${ claimedContentAuthor }), responsable de l'última revisió. El motiu és: ${ activeRevision.contentAuthor.error.error }"
-      ],
-      "The verification of the name's signature by author (${ claimedNameAuthor }) who set the name the last time failed. The reason is: ${ nodeEntity.nameAuthor.error.error }": [
-        "Ha fallat la verificació de la signatura del nom per part de l'autor (${ claimedNameAuthor }) que va establir el nom l'última vegada. El motiu és: ${ nodeEntity.nameAuthor.error.error }"
-      ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "A aquest fitxer li manca signatura o té una signatura no valida. Ves a (⋮) → Detalls per a més informació."
       ],
       "This folder has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "A aquesta carpeta li manca signatura o té una signatura no valida. Ves a (⋮) → Detalls per a més informació."
+      ],
+      "This is likely due to the account or address having been deleted.": [
+        "És probable que això sigui perquè s'ha eliminat el compte o l'adreça."
       ],
       "This link is password protected": [
         "Aquest enllaç està protegit amb contrasenya"
@@ -12767,6 +12777,15 @@
       ],
       "We couldn’t verify that an anonymous user uploaded this folder.": [
         "No hem pogut verificar que un usuari anònim hagi carregat aquesta carpeta."
+      ],
+      "We weren’t able to confirm that the file content was uploaded by ${ claimedContentAuthor }. The reason is: ${ activeRevision.contentAuthor.error.error }": [
+        "No hem pogut confirmar que el contingut del fitxer hagi estat carregat per ${ claimedContentAuthor }. El motiu és: ${ activeRevision.contentAuthor.error.error }"
+      ],
+      "We weren’t able to confirm that the name was created or modified by ${ claimedNameAuthor }. The reason is: ${ nodeEntity.nameAuthor.error.error }": [
+        "No hem pogut confirmar que el nom hagi estat creat o modificat per ${ claimedNameAuthor }. El motiu és: ${ nodeEntity.nameAuthor.error.error }"
+      ],
+      "We weren’t able to confirm that the node was created by ${ claimedKeyAuthor }. The reason is: ${ nodeEntity.keyAuthor.error.error }": [
+        "No hem pogut confirmar que el node hagi estat creat per ${ claimedKeyAuthor }. El motiu és: ${ nodeEntity.keyAuthor.error.error }"
       ],
       "Welcome offer": [
         "Oferta de benvinguda"

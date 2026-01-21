@@ -7326,8 +7326,14 @@
       "Postal code": [
         "Postleitzahl"
       ],
+      "Premium domain": [
+        "Premium-Domain"
+      ],
       "Proration": [
         "Anteilsmäßige Verrechnung"
+      ],
+      "Public domain": [
+        "Öffentliche Domain"
       ],
       "Public keys": [
         "Öffentliche Schlüssel"
@@ -7499,6 +7505,9 @@
       ],
       "Your alias": [
         "Dein Alias"
+      ],
+      "Your domain": [
+        "Deine Domain"
       ],
       "Your IP": [
         "Deine IP"
@@ -9039,6 +9048,9 @@
       "\"${ name }\" deleted": [
         "\"${ name }\" gelöscht"
       ],
+      "\"${ name }\" deleted permanently": [
+        "\"${ name }\" dauerhaft gelöscht"
+      ],
       "\"${ name }\" deleted permanently from trash": [
         "„${ name }“ dauerhaft aus dem Papierkorb gelöscht"
       ],
@@ -9119,6 +9131,10 @@
       "${ numberOfItems } item deleted": [
         "${ numberOfItems } Eintrag gelöscht",
         "${ numberOfItems } Einträge gelöscht"
+      ],
+      "${ numberOfItems } item deleted permanently": [
+        "${ numberOfItems } Element dauerhaft gelöscht",
+        "${ numberOfItems } Elemente dauerhaft gelöscht"
       ],
       "${ numberOfItems } item deleted permanently from trash": [
         "${ numberOfItems } Element dauerhaft aus dem Papierkorb gelöscht",
@@ -12627,20 +12643,14 @@
       "The link expired": [
         "Der Link ist abgelaufen"
       ],
-      "The verification of the encryption keys' signature by the original creator (${ claimedKeyAuthor }) who created the node failed. The reason is: ${ nodeEntity.keyAuthor.error.error }": [
-        "Die Überprüfung der Signatur der Verschlüsselungsschlüssel durch den ursprünglichen Ersteller (${ claimedKeyAuthor }), der den Knoten erstellt hat, ist fehlgeschlagen. Der Grund ist: ${ nodeEntity.keyAuthor.error.error }"
-      ],
-      "The verification of the file's content signature by the uploader (${ claimedContentAuthor }) who uploaded the last revision failed. The reason is: ${ activeRevision.contentAuthor.error.error }": [
-        "Die Überprüfung der Inhaltssignatur der Datei durch den Uploader (${ claimedContentAuthor }), der die letzte Revision hochgeladen hat, ist fehlgeschlagen. Der Grund ist: ${ activeRevision.contentAuthor.error.error }"
-      ],
-      "The verification of the name's signature by author (${ claimedNameAuthor }) who set the name the last time failed. The reason is: ${ nodeEntity.nameAuthor.error.error }": [
-        "Die Überprüfung der Signatur des Namens durch den Autor (${ claimedNameAuthor }), der den Namen zuletzt festgelegt hat, ist fehlgeschlagen. Der Grund ist: ${ nodeEntity.nameAuthor.error.error }"
-      ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "Diese Datei hat eine fehlende oder ungültige Signatur. Gehe zu Menü (⋮) → Details für weitere Informationen."
       ],
       "This folder has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "Dieser Ordner hat eine fehlende oder ungültige Signatur. Gehe zu Menü (⋮) → Details für weitere Informationen."
+      ],
+      "This is likely due to the account or address having been deleted.": [
+        "Das liegt wahrscheinlich daran, dass das Konto oder die Adresse gelöscht wurde."
       ],
       "This link is password protected": [
         "Dieser Link ist passwortgeschützt"
@@ -12758,6 +12768,15 @@
       ],
       "We couldn’t verify that an anonymous user uploaded this folder.": [
         "Wir konnten nicht verifizieren, dass ein anonymer Benutzer diesen Ordner hochgeladen hat."
+      ],
+      "We weren’t able to confirm that the file content was uploaded by ${ claimedContentAuthor }. The reason is: ${ activeRevision.contentAuthor.error.error }": [
+        "Wir konnten nicht bestätigen, dass der Dateiinhalt von ${ claimedContentAuthor } hochgeladen wurde. Der Grund dafür ist: ${ activeRevision.contentAuthor.error.error }"
+      ],
+      "We weren’t able to confirm that the name was created or modified by ${ claimedNameAuthor }. The reason is: ${ nodeEntity.nameAuthor.error.error }": [
+        "Wir konnten nicht bestätigen, dass der Name von ${ claimedNameAuthor } erstellt oder geändert wurde. Der Grund dafür ist: ${ nodeEntity.nameAuthor.error.error }"
+      ],
+      "We weren’t able to confirm that the node was created by ${ claimedKeyAuthor }. The reason is: ${ nodeEntity.keyAuthor.error.error }": [
+        "Wir konnten nicht bestätigen, dass der Knoten von ${ claimedKeyAuthor } erstellt wurde. Der Grund dafür ist: ${ nodeEntity.keyAuthor.error.error }"
       ],
       "Welcome offer": [
         "Willkommensangebot"

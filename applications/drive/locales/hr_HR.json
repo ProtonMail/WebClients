@@ -7286,9 +7286,6 @@
       "The link expired": [
         "Poveznica je istekla"
       ],
-      "The verification of the file's content signature by the uploader (${ claimedContentAuthor }) who uploaded the last revision failed. The reason is: ${ activeRevision.contentAuthor.error.error }": [
-        "Nije uspjelo potvrđivanje potpisa sadržaja datoteke koju je prenio autor (${ claimedContentAuthor }) posljednje njene verzije. Razlog: ${ activeRevision.contentAuthor.error.error }"
-      ],
       "Time": [
         "Vrijeme"
       ],

@@ -1585,6 +1585,9 @@
       "Payments problem": [
         "Masalah pembayaran"
       ],
+      "Sheets problem": [
+        "Masalah lembar kerja"
+      ],
       "Sign in problem": [
         "Masalah masuk"
       ],
@@ -1659,6 +1662,9 @@
     "Cancellation upsell": {
       "${ maxSpaceTB } storage": [
         "Ruang penyimpanan ${ maxSpaceTB }"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } pengguna"
       ],
       "${ planMaxSpace } email storage": [
         "Ruang penyimpanan email ${ planMaxSpace }"
@@ -1784,6 +1790,9 @@
       ],
       "High-speed chats and advanced AI features.": [
         "Percakapan berkecepatan tinggi dan berbagai fitur AI mutakhir."
+      ],
+      "Private video calls for the conversations that matter.": [
+        "Panggilan video pribadi untuk percakapan yang penting."
       ]
     },
     "color": {
@@ -2770,6 +2779,11 @@
         "Untuk ${ MAIL_APP_NAME }"
       ]
     },
+    "customer_support.feature.meet": {
+      "For ${ MEET_APP_NAME }": [
+        "Untuk ${ MEET_APP_NAME }"
+      ]
+    },
     "customer_support.feature.pass": {
       "For ${ PASS_APP_NAME }": [
         "Untuk ${ PASS_APP_NAME }"
@@ -3347,6 +3361,9 @@
       "Failed to get details, please try again later": [
         "Rincian gagal diperoleh. Silakan coba lagi nanti"
       ],
+      "Failed to load signature details, please try again later": [
+        "Rincian tanda tangan gagal dimuat. Silakan coba lagi nanti"
+      ],
       "Failed to load the STL preview": [
         "Pratinjau STL gagal dimuat"
       ],
@@ -3751,6 +3768,9 @@
       ],
       "We were not able to load some of your shared items": [
         "Kami tidak dapat memuat sebagian item yang Anda bagikan"
+      ],
+      "We were not able to load the folder contents": [
+        "Kami tidak dapat memuat isi folder"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Anda tidak dapat mengirim email ke lebih dari ${ maxContacts } penerima"
@@ -4509,6 +4529,12 @@
       "Too many recent requests. Please try again in a few moments.": [
         "Terlalu banyak permintaan baru-baru ini. Silakan coba lagi dalam beberapa saat."
       ],
+      "Two-factor authentication is enabled in your external account.": [
+        "Autentikasi dua-faktor diaktifkan pada akun eksternal Anda."
+      ],
+      "Two-factor authentication is enabled in your external email account.": [
+        "Autentikasi dua-faktor diaktifkan pada akun email eksternal Anda."
+      ],
       "Use your app password if:": [
         "Gunakan kata sandi aplikasi Anda apabila:"
       ],
@@ -4711,6 +4737,9 @@
       ],
       "${ contactsLength } contact": [
         "${ contactsLength } kontak"
+      ],
+      "${ DOCS_APP_NAME } and ${ SHEETS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
+        "Berkas ${ DOCS_APP_NAME } dan ${ SHEETS_APP_NAME } tidak dapat diunduh secara langsung dan tidak akan disertakan pada unduhan ini. Anda dapat mengunduh berkas lainnya dengan mengeklik 'Lanjut unduh'."
       ],
       "${ doneCount } finished": [
         "${ doneCount } selesai diproses"
@@ -4990,6 +5019,9 @@
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Sebelum meminta kode verifikasi baru, periksa folder spam Anda dan pastikan ${ strong } merupakan alamat email yang benar."
+      ],
+      "Better in the app": [
+        "Lebih baik di aplikasi"
       ],
       "Billing cycle: ${ text }": [
         "Siklus tagihan: ${ text }"
@@ -6050,6 +6082,9 @@
       "Thank you for subscribing. Secure browsing starts now.": [
         "Terima kasih telah berlangganan. Penjelajahan yang aman dimulai dari sekarang."
       ],
+      "that": [
+        "yang"
+      ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Akun ini mungkin memiliki kunci baru, atau berkas/folder berikut mungkin telah dimodifikasi: ${ items }. Mohon buka berkas/folder ini hanya apabila Anda memercayai sumbernya."
       ],
@@ -6175,6 +6210,9 @@
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Untuk menyelesaikan pembayaran Anda, silakan kirim ${ btcAmountBold } ke alamat di bawah ini."
+      ],
+      "To download these files, open them in ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME } and export them.": [
+        "Untuk mengunduh, buka berkas ini di ${ DOCS_APP_NAME } atau ${ SHEETS_APP_NAME } dan ekspor berkas."
       ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
         "Untuk mengaktifkan mode pencarian yang sepenuhnya privat, ${ DRIVE_APP_NAME } perlu untuk terlebih dahulu mengindeks berkas Anda secara lokal."
@@ -6341,6 +6379,9 @@
       "We are experiencing technical issues. Any albums related actions are temporarily disabled.": [
         "Kami sedang mengalami masalah teknis. Semua tindakan terkait album untuk sementara dinonaktifkan."
       ],
+      "We couldn't verify ${ nameAuthor } uploaded ${ node.name }. The following may have been tampered with: file data order. Only open if you trust it.": [
+        "Kami tidak dapat memverifikasi bahwa ${ nameAuthor } merupakan pengunggah dari node ${ node.name }. Informasi berikut mungkin telah dimodifikasi: urutan data berkas. Mohon untuk hanya membuka berkas ini apabila Anda memercayai isi berkas ini."
+      ],
       "We couldn’t process your payment.": [
         "Kami tidak dapat memproses pembayaran Anda."
       ],
@@ -6391,6 +6432,9 @@
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Pada saat Anda menyiapkan autentikasi dua faktor, kami akan menyediakan beberapa kode pemulihan yang dapat Anda gunakan untuk masuk apabila Anda kehilangan akses ke aplikasi otentikator Anda."
+      ],
+      "who": [
+        "siapa"
       ],
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
         "akan dipulihkan ke versi dari ${ formattedRevisionDate }. Semua versi lainnya masih akan disimpan."
@@ -6670,6 +6714,17 @@
         "Hanya melihat"
       ]
     },
+    "Into": {
+      "Can edit and manage access": [
+        "Dapat menyunting dan mengelola akses"
+      ],
+      "Can view and edit": [
+        "Dapat melihat dan menyunting"
+      ],
+      "Can view only": [
+        "Hanya dapat melihat"
+      ]
+    },
     "Item": {
       "file attributes": [
         "atribut berkas"
@@ -6764,6 +6819,9 @@
       ],
       "Address": [
         "Alamat"
+      ],
+      "Admin": [
+        "Admin"
       ],
       "Alias title": [
         "Judul alias"
@@ -7173,8 +7231,14 @@
       "Postal code": [
         "Kode pos"
       ],
+      "Premium domain": [
+        "Domain premium"
+      ],
       "Proration": [
         "Prorasi"
+      ],
+      "Public domain": [
+        "Domain publik"
       ],
       "Public keys": [
         "Kunci publik"
@@ -7346,6 +7410,9 @@
       ],
       "Your alias": [
         "Alias Anda"
+      ],
+      "Your domain": [
+        "Domain Anda"
       ],
       "Your IP": [
         "IP Anda"
@@ -7619,6 +7686,50 @@
       ],
       "for ${ price }": [
         "untuk ${ price }"
+      ]
+    },
+    "meet_2025: Feature": {
+      "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
+        "${ MEET_APP_NAME }: Pertemuan video rahasia untuk percakapan yang penting"
+      ],
+      "${ n } active meeting at a time": [
+        "${ n } pertemuan yang aktif secara bersamaan"
+      ],
+      "24 hours per meeting": [
+        "24 jam per pertemuan"
+      ],
+      "60 minutes per meeting": [
+        "50 menit per pertemuan"
+      ],
+      "Appointment scheduling": [
+        "Penjadwalan janji temu"
+      ],
+      "Browser, mobile, and desktop apps": [
+        "Aplikasi browser, seluler, dan desktop"
+      ],
+      "Built-in chat": [
+        "Obrolan yang terintegrasi"
+      ],
+      "End-to-end encrypted screen sharing and ephemeral in-call chat": [
+        "Pembagian layar yang terenkripsi end-to-end dan percakapan dalam panggilan yang bersifat sementara"
+      ],
+      "Meeting recording (coming soon)": [
+        "Rekaman pertemuan (segera hadir)"
+      ],
+      "One active meeting at a time": [
+        "Satu pertemuan yang aktif dalam satu waktu"
+      ],
+      "Screen-sharing": [
+        "Pembagian layar"
+      ],
+      "Unlimited meetings per day": [
+        "Tanpa batasan jumlah pertemuan per harinya"
+      ],
+      "Up to ${ n } meeting per day": [
+        "Hingga ${ n } pertemuan per hari"
+      ],
+      "Up to ${ n } participant": [
+        "Hinnga ${ n } peserta"
       ]
     },
     "Message": {
@@ -8807,6 +8918,9 @@
       "\"${ name }\" deleted": [
         "\"${ name }\" dihapus"
       ],
+      "\"${ name }\" deleted permanently": [
+        "\"${ name }\" dihapus secara permanen"
+      ],
       "\"${ name }\" deleted permanently from trash": [
         "\"${ name }\" dihapus secara permanen dari sampah"
       ],
@@ -8878,6 +8992,9 @@
       ],
       "${ numberOfItems } item deleted": [
         "${ numberOfItems } item dihapus"
+      ],
+      "${ numberOfItems } item deleted permanently": [
+        "${ numberOfItems } item dihapus secara permanen"
       ],
       "${ numberOfItems } item deleted permanently from trash": [
         "${ numberOfItems } item dihapus secara permanen dari sampah"
@@ -11884,6 +12001,9 @@
       "Found ${ searchView.numberOfResults } result": [
         "${ searchView.numberOfResults } hasil pencarian ditemukan"
       ],
+      "Get ${ DRIVE_SHORT_APP_NAME } on your phone": [
+        "Dapatkan ${ DRIVE_SHORT_APP_NAME } pada ponsel Anda"
+      ],
       "Get **${ referralInfo.uiData.refereeRewardAmount }** in credits with ${ planTitle }": [
         "Dapatkan **saldo senilai ${ referralInfo.uiData.refereeRewardAmount }** dengan ${ planTitle }"
       ],
@@ -12304,26 +12424,23 @@
       "The link expired": [
         "Tautan telah kedaluwarsa"
       ],
-      "The verification of the encryption keys' signature by the original creator (${ claimedKeyAuthor }) who created the node failed. The reason is: ${ nodeEntity.keyAuthor.error.error }": [
-        "Verifikasi tanda tangan kunci enkripsi oleh pembuat kunci asli (${ claimedKeyAuthor }) yang menghasilkan node gagal. Alasan kegagalan verifikasi: ${ nodeEntity.keyAuthor.error.error }"
-      ],
-      "The verification of the file's content signature by the uploader (${ claimedContentAuthor }) who uploaded the last revision failed. The reason is: ${ activeRevision.contentAuthor.error.error }": [
-        "Verifikasi tanda tangan konten berkas oleh pengunggah (${ claimedContentAuthor }) yang mengunggah revisi terakhir gagal. Alasan kegagalan verifikasi: ${ activeRevision.contentAuthor.error.error }"
-      ],
-      "The verification of the name's signature by author (${ claimedNameAuthor }) who set the name the last time failed. The reason is: ${ nodeEntity.nameAuthor.error.error }": [
-        "Verifikasi tanda tangan nama oleh pemilik (${ claimedNameAuthor }) yang terakhir mengatur nama pada item ini gagal. Alasan kegagalan verifikasi: ${ nodeEntity.nameAuthor.error.error }"
-      ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "Berkas ini tidak ditandatangani atau memiliki tanda tangan yang tidak valid. Kunjungi Menu (⋮) → Details untuk informasi lebih lanjut."
       ],
       "This folder has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "Folder ini tidak ditandatangani atau memiliki tanda tangan yang tidak valid. Kunjungi Menu (⋮) → Details untuk informasi lebih lanjut."
       ],
+      "This is likely due to the account or address having been deleted.": [
+        "Hal ini kemungkinan diakibatkan oleh akun atau alamat yang telah dihapus."
+      ],
       "This link is password protected": [
         "Tautan ini dilindungi oleh kata sandi"
       ],
       "Time": [
         "Waktu"
+      ],
+      "To preview this spreadsheet, download it.": [
+        "Untuk mempratinjau, unduh lembar kerja ini."
       ],
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "Untuk mempratinjau lembar kerja ini, buka di ${ SHEETS_APP_NAME } atau unduh."
@@ -12433,6 +12550,15 @@
       "We couldn’t verify that an anonymous user uploaded this folder.": [
         "Kami tidak dapat memverifikasi bahwa folder ini diunggah oleh pengguna anonim."
       ],
+      "We weren’t able to confirm that the file content was uploaded by ${ claimedContentAuthor }. The reason is: ${ activeRevision.contentAuthor.error.error }": [
+        "Kami tidak dapat mengonfirmasi bahwa isi berkas ini diunggah oleh ${ claimedContentAuthor }. Alasan: ${ activeRevision.contentAuthor.error.error }"
+      ],
+      "We weren’t able to confirm that the name was created or modified by ${ claimedNameAuthor }. The reason is: ${ nodeEntity.nameAuthor.error.error }": [
+        "Kami tidak dapat mengonfirmasi bahwa nama ini dibuat atau diubah oleh ${ claimedNameAuthor }. Alasan: ${ nodeEntity.nameAuthor.error.error }"
+      ],
+      "We weren’t able to confirm that the node was created by ${ claimedKeyAuthor }. The reason is: ${ nodeEntity.keyAuthor.error.error }": [
+        "Kami tidak dapat mengonfirmasi bahwa node ini dibuat oleh ${ claimedKeyAuthor }. Alasan: ${ nodeEntity.keyAuthor.error.error }"
+      ],
       "Welcome offer": [
         "Penawaran selamat datang"
       ],
@@ -12480,6 +12606,9 @@
       ],
       "Your changes are not synced yet": [
         "Perubahan Anda belum disinkronkan"
+      ],
+      "Your download includes ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME } files": [
+        "Unduhan Anda meliputi berkas ${ DOCS_APP_NAME } atau ${ SHEETS_APP_NAME }"
       ],
       "Your exposed information": [
         "Informasi Anda yang terpapar"
