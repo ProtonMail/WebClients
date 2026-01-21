@@ -20,6 +20,7 @@ export const parseShareResponse = async <T extends ShareType = ShareType>(
 
         if (share) {
             return {
+                addressId: share.addressId,
                 content: (share.content ? decodeVaultContent(share.content) : {}) as ShareContent<T>,
                 createTime: share.createTime,
                 eventId,
