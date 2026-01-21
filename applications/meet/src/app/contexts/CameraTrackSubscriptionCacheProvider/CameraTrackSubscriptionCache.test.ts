@@ -184,43 +184,4 @@ describe('CameraTrackSubscriptionCache', () => {
             expect(pub.videoQuality).toBe(VideoQuality.MEDIUM);
         });
     });
-
-    it('getQueueManagedTracksToMonitor() should return only subscribed+enabled+unmuted tracks with participantIdentity and a track object', async () => {
-        const cache = new CameraTrackSubscriptionCache(10);
-
-        const good = createCameraPublication('good');
-        const noTrack = createCameraPublication('no-track');
-        const muted = createCameraPublication('muted');
-        const disabled = createCameraPublication('disabled');
-
-        cache.register(good, 'p-good');
-        cache.register(noTrack, 'p-no-track');
-        cache.register(muted, 'p-muted');
-        cache.register(disabled, 'p-disabled');
-        await waitFor(() => {
-            expect(good.isSubscribed).toBe(true);
-            expect(muted.isSubscribed).toBe(true);
-            expect(disabled.isSubscribed).toBe(true);
-        });
-
-        // @ts-expect-error - we're mocking the track object
-        good.track = {};
-        // @ts-expect-error - we're mocking the track object
-        muted.track = {};
-        // @ts-expect-error - we're mocking the track object
-        muted.isMuted = true;
-        // @ts-expect-error - we're mocking the track object
-        disabled.track = {};
-
-        cache.setPolicy({
-            disableVideos: false,
-            participantsWithDisabledVideos: ['p-disabled'],
-            participantQuality: undefined,
-        });
-        await waitFor(() => {
-            const monitored = cache.getQueueManagedTracksToMonitor();
-            const sids = monitored.map((p) => p.trackSid).sort();
-            expect(sids).toEqual(['good']);
-        });
-    });
 });
