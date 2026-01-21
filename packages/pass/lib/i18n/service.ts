@@ -4,6 +4,7 @@ import type { Subscriber } from '@proton/pass/utils/pubsub/factory';
 import { createPubSub } from '@proton/pass/utils/pubsub/factory';
 import { DEFAULT_LOCALE } from '@proton/shared/lib/constants';
 import { localeCode } from '@proton/shared/lib/i18n';
+import dateFnLocales from '@proton/shared/lib/i18n/dateFnLocales';
 import { getBrowserLocale, getClosestLocaleCode, getLanguageCode } from '@proton/shared/lib/i18n/helper';
 import { loadDateLocale, loadLocale } from '@proton/shared/lib/i18n/loadLocale';
 import { setTtagLocales } from '@proton/shared/lib/i18n/locales';
@@ -41,7 +42,7 @@ export const createI18nService = (options: I18nServiceOptions) => {
             const nextLocale = getClosestLocaleCode(locale ?? (await getLocale()), options.locales);
 
             if (options.loadDateLocale) {
-                const closestBrowserLocaleCode = getClosestLocaleCode(getBrowserLocale(), options.locales);
+                const closestBrowserLocaleCode = getClosestLocaleCode(getBrowserLocale(), dateFnLocales);
                 await loadDateLocale(nextLocale, closestBrowserLocaleCode, dateFormatOptions).catch(noop);
             }
 
