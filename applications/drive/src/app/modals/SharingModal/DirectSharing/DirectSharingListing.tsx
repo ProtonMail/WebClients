@@ -1,11 +1,13 @@
 import { c } from 'ttag';
 
+import { useAddresses } from '@proton/account/addresses/hooks';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { UserAvatar } from '@proton/atoms/UserAvatar/UserAvatar';
 import { useSortedList } from '@proton/components';
 import { NonProtonInvitationState } from '@proton/drive';
 import { useContactEmails } from '@proton/mail/store/contactEmails/hooks';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
+import { findUserAddress } from '@proton/shared/lib/helpers/address';
 
 import type { DirectSharingRole } from '../interfaces';
 import { type DirectMember, MemberType } from '../interfaces';
@@ -38,6 +40,9 @@ export const DirectSharingListing = ({
 }: Props) => {
     const [contactEmails] = useContactEmails();
 
+    const [addresses] = useAddresses();
+    const ownerIsCurrentUser = !!findUserAddress(ownerEmail, addresses);
+
     const membersWithName = members.map((member) => {
         const { contactName, contactEmail } = getContactNameAndEmail(member.inviteeEmail, contactEmails);
         return { member, displayName: contactName, displayEmail: contactEmail };
@@ -48,17 +53,20 @@ export const DirectSharingListing = ({
         direction: SORT_DIRECTION.ASC,
     });
 
+    const ownerName = ownerDisplayName || ownerEmail || c('Label').t`Anonymous`;
+
     if (isLoading) {
         return <CircleLoader size="medium" className="mx-auto my-6 w-full" />;
     }
+
     return (
         <>
             <div className="flex flex-nowrap my-4 items-center" data-testid="share-owner">
                 <div className="flex-1 flex flex-nowrap items-center gap-2">
-                    <UserAvatar name={ownerDisplayName || ownerEmail} className="shrink-0" />
+                    <UserAvatar name={ownerName} className="shrink-0" />
                     <p className="flex-1 flex flex-column flex-nowrap p-0 m-0">
-                        <span className="text-semibold" title={ownerDisplayName ? undefined : ownerEmail}>
-                            {ownerDisplayName ? ownerDisplayName : ownerEmail} ({c('Info').t`you`})
+                        <span className="text-semibold">
+                            {ownerName} {ownerIsCurrentUser && <>({c('Info').t`you`})</>}
                         </span>
                         {ownerDisplayName ? (
                             <span className="color-weak block max-w-full text-ellipsis" title={ownerEmail}>
@@ -69,6 +77,7 @@ export const DirectSharingListing = ({
                 </div>
                 <div className="mx-2 shrink-0">{c('Info').t`Owner`}</div>
             </div>
+
             {sortedMembersWithName.map(({ member, displayName, displayEmail }) => {
                 return (
                     <div
