@@ -66,7 +66,7 @@ const ExtraEventDetails = ({ model, weekStartsOn }: Props) => {
 
     return (
         <>
-            <hr className="m-0" />
+            <hr className="m-0 weak" />
 
             <div className="p-5" ref={eventDetailsRef}>
                 {!!frequencyString && (
