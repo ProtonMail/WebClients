@@ -6,6 +6,8 @@ import { IcArrowUpLine } from '@proton/icons/icons/IcArrowUpLine';
 import { IcBrandProtonDriveFilled } from '@proton/icons/icons/IcBrandProtonDriveFilled';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 
+import './UploadMenuDropdown.scss';
+
 interface UploadMenuDropdownProps {
     isOpen: boolean;
     anchorRef: React.RefObject<HTMLElement>;
@@ -36,6 +38,7 @@ export const UploadMenuDropdown = ({
             size={{
                 width: '200px',
             }}
+            className="upload-menu-dropdown"
         >
             {!hideDriveOption && (
                 <DropdownMenuButton

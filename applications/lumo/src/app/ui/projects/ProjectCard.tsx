@@ -2,24 +2,13 @@ import { useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import {
-    Dropdown,
-    DropdownMenu,
-    DropdownMenuButton,
-    Icon,
-    useModalStateObject,
-    usePopperAnchor,
-} from '@proton/components';
+import { Icon, useModalStateObject } from '@proton/components';
 
 import { useIsGuest } from '../../providers/IsGuestProvider';
 import { useLumoPlan } from '../../providers/LumoPlanProvider';
-import { useLumoSelector } from '../../redux/hooks';
-import { selectSpaceById } from '../../redux/selectors';
 import { getProjectCategory } from './constants';
-import { useProjectActions } from './hooks/useProjectActions';
 import { useProjects } from './hooks/useProjects';
-import { DeleteProjectModal } from './modals/DeleteProjectModal';
-import { ProjectEditModal } from './modals/ProjectEditModal';
+import { ProjectActionsDropdown } from './ProjectActionsDropdown';
 import { ProjectLimitModal } from './modals/ProjectLimitModal';
 import type { Project } from './types';
 
@@ -36,12 +25,7 @@ export const ProjectCard = ({ project, onSignInRequired, onOpenNewProjectModal }
     const isGuest = useIsGuest();
     const { hasLumoPlus } = useLumoPlan();
     const myProjects = useProjects();
-    const { deleteProject } = useProjectActions();
-    const space = useLumoSelector(selectSpaceById(project.spaceId || ''));
-    const deleteModal = useModalStateObject();
-    const editModal = useModalStateObject();
     const projectLimitModal = useModalStateObject();
-    const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
 
     const handleClick = () => {
         if (project.isExample) {
@@ -65,21 +49,10 @@ export const ProjectCard = ({ project, onSignInRequired, onOpenNewProjectModal }
 
     const category = getProjectCategory(project.icon);
 
-    const handleDelete = () => {
-        if (project.spaceId) {
-            void deleteProject(project.spaceId);
-        }
-    };
-
-    const handleMenuClick = (e: React.MouseEvent) => {
-        e.stopPropagation();
-        toggle();
-    };
-
     return (
         // eslint-disable-next-line jsx-a11y/prefer-tag-over-role
         <div
-            className="project-card p-6 border border-weak rounded-lg"
+            className="project-card group-hover-opacity-container p-6 border border-weak rounded-lg"
             onClick={handleClick}
             role="button"
             tabIndex={0}
@@ -96,42 +69,9 @@ export const ProjectCard = ({ project, onSignInRequired, onOpenNewProjectModal }
                     <h3 className="project-card-title">{project.name}</h3>
                 </div>
                 {!project.isExample && (
-                    <>
-                        <button
-                            ref={anchorRef}
-                            className="project-card-menu-button"
-                            aria-label={c('collider_2025:Action').t`More options`}
-                            onClick={handleMenuClick}
-                        >
-                            <Icon name="three-dots-vertical" size={4} />
-                        </button>
-                        <Dropdown isOpen={isOpen} anchorRef={anchorRef} onClose={close}>
-                            <DropdownMenu>
-                                <DropdownMenuButton
-                                    className="text-left"
-                                    onClick={(e) => {
-                                        e.stopPropagation();
-                                        close();
-                                        editModal.openModal(true);
-                                    }}
-                                >
-                                    <Icon name="pen" className="mr-2" />
-                                    {c('collider_2025:Action').t`Edit project`}
-                                </DropdownMenuButton>
-                                <DropdownMenuButton
-                                    className="text-left color-danger"
-                                    onClick={(e) => {
-                                        e.stopPropagation();
-                                        close();
-                                        deleteModal.openModal(true);
-                                    }}
-                                >
-                                    <Icon name="trash" className="mr-2" />
-                                    {c('collider_2025:Action').t`Delete project`}
-                                </DropdownMenuButton>
-                            </DropdownMenu>
-                        </Dropdown>
-                    </>
+                    <div onClick={(e) => e.stopPropagation()}>
+                        <ProjectActionsDropdown project={project} />
+                    </div>
                 )}
             </div>
 
@@ -157,19 +97,6 @@ export const ProjectCard = ({ project, onSignInRequired, onOpenNewProjectModal }
                 )}
             </div>
 
-            {editModal.render && space && (
-                <ProjectEditModal
-                    {...editModal.modalProps}
-                    projectId={project.id}
-                    currentName={project.name}
-                    currentInstructions={project.description}
-                    currentIcon={project.icon}
-                    space={space}
-                />
-            )}
-            {deleteModal.render && (
-                <DeleteProjectModal {...deleteModal.modalProps} project={project} onConfirmDelete={handleDelete} />
-            )}
             {projectLimitModal.render && <ProjectLimitModal {...projectLimitModal.modalProps} />}
         </div>
     );
