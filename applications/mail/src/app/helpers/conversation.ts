@@ -53,6 +53,7 @@ export const getSize = (conversation: Conversation | undefined, labelID: string 
 /**
  * Returns a map of boolean with all labels on the conversation and for each true if all messages have the label and false if not
  */
+// TODO this method is broken and only works if we have a contextLabelID
 export const getLabelIDs = (conversation: Conversation | undefined, contextLabelID: string | undefined) => {
     const contextNumMessages = getNumMessages(conversation, contextLabelID);
 
@@ -62,6 +63,17 @@ export const getLabelIDs = (conversation: Conversation | undefined, contextLabel
             return acc;
         }, {}) || {}
     );
+};
+
+export const getLabelsSetForConversation = (conversation: Conversation | undefined): Set<string> => {
+    if (!conversation?.Labels) {
+        return new Set();
+    }
+
+    const result = new Set<string>();
+    conversation.Labels.forEach((label) => result.add(label.ID));
+
+    return result;
 };
 
 export const mergeConversations = (

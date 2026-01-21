@@ -30,8 +30,10 @@ import {
     hasAttachments as conversationHasAttachments,
     isUnread as conversationIsUnread,
     getNumAttachments as conversationNumAttachments,
+    getLabelsSetForConversation,
 } from './conversation';
 import { isConversationMode } from './mailSettings';
+import { getLabelsSetForMessage } from './message';
 import { getSnoozeDate } from './snooze';
 
 export interface TypeParams {
@@ -112,6 +114,20 @@ export const getLabelIDs = (element: Element | undefined, contextLabelID: string
           }, {}) || {}
         : conversationGetLabelIDs(element, contextLabelID);
 
+export const getLabelsSetForElement = (element: Element | undefined): Set<string> => {
+    if (!element) {
+        return new Set();
+    }
+
+    if (isElementMessage(element)) {
+        return getLabelsSetForMessage(element);
+    }
+
+    return getLabelsSetForConversation(element);
+};
+
+// TODO this method should be improved, we test if the value is present in an object even if it's false
+// getLabelIDs({ 'inbox': false }, 'inbox') would return true with the current logic. It's hacky.
 export const hasLabel = (element: Element | undefined, labelID: string) =>
     getLabelIDs(element, undefined)[labelID] !== undefined;
 
@@ -322,22 +338,22 @@ export const filterElementsInState = ({
         }
 
         // Creates the map of label IDs only once instead of using `hasLabel` that would create multiple maps
-        const labelIDsMap = getLabelIDs(element, labelID);
+        const labelIDsSet = getLabelsSetForElement(element);
 
         // Exclude SOFT_DELETED elements from all folders except the Deleted folder itself
-        if (labelID !== MAILBOX_LABEL_IDS.SOFT_DELETED && labelIDsMap[MAILBOX_LABEL_IDS.SOFT_DELETED]) {
+        if (labelID !== MAILBOX_LABEL_IDS.SOFT_DELETED && labelIDsSet.has(MAILBOX_LABEL_IDS.SOFT_DELETED)) {
             return false;
         }
 
         // Check if element has a disabled category label (only relevant for default category view)
         const elementContainsDisabledCategoryLabel =
-            isCurrentLabelDefaultCategory && disabledCategoriesIDs?.some((id) => labelIDsMap[id]);
+            isCurrentLabelDefaultCategory && disabledCategoriesIDs?.some((id) => labelIDsSet.has(id));
 
         // Elements in a category but not in inbox should be filtered when viewing a category
-        const isElementInCategoryButNotInbox = isCurrentLabelCategory && !labelIDsMap[MAILBOX_LABEL_IDS.INBOX];
+        const isElementInCategoryButNotInbox = isCurrentLabelCategory && !labelIDsSet.has(MAILBOX_LABEL_IDS.INBOX);
 
         if (
-            (!labelIDsMap[labelID] || isElementInCategoryButNotInbox) &&
+            (!labelIDsSet.has(labelID) || isElementInCategoryButNotInbox) &&
             !elementContainsDisabledCategoryLabel &&
             labelID !== CUSTOM_VIEWS_LABELS.NEWSLETTER_SUBSCRIPTIONS
         ) {
@@ -355,7 +371,7 @@ export const filterElementsInState = ({
             // would not be filtered by subscription ID here.
             (newsletterSubscriptionID !== (element as Message).NewsletterSubscriptionID ||
                 //we need to filter out elements that are in newsletter subscriptions but not in almost all mail
-                !labelIDsMap[MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL])
+                !labelIDsSet.has(MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL))
         ) {
             return false;
         }
