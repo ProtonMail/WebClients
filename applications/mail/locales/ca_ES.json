@@ -1225,6 +1225,9 @@
       "Save": [
         "Desa"
       ],
+      "Save preferences": [
+        "Deseu les preferències"
+      ],
       "Saving${ ellipsis }": [
         "S'està desant ${ ellipsis }"
       ],
@@ -1480,9 +1483,6 @@
       "Toggle Contacts app": [
         "Alterna l'aplicació Contactes"
       ],
-      "Toggle notifications": [
-        "Activa/desactiva les notificacions"
-      ],
       "Toggle referral": [
         "Activa/desactiva la referència"
       ],
@@ -1505,7 +1505,8 @@
         "De confiança"
       ],
       "Trust key": [
-        "Marca com a clau de confiança"
+        "Clau de confiança",
+        "Claus de confiança"
       ],
       "Trust public key": [
         "Confia en la clau pública"
@@ -7406,8 +7407,7 @@
         "S'està inicialitzant…"
       ],
       "Insert image": [
-        "Insereix una imatge",
-        "Insereix imatges"
+        "Insereix una imatge"
       ],
       "Insert link": [
         "Insereix un enllaç"
@@ -7844,6 +7844,9 @@
       ],
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Poseu-vos en contacte amb nosaltres per a qualsevol ajuda relacionada amb ${ BRAND_NAME }."
+      ],
+      "Receive notifications for ${ categoryLabel }": [
+        "Rebeu notificacions de ${ categoryLabel }"
       ],
       "Recipient: ": [
         "Destinatari: "
@@ -9271,6 +9274,9 @@
       "Cash": [
         "Efectiu"
       ],
+      "Categories": [
+        "Categories"
+      ],
       "Categories badge": [
         "Insígnia de categories"
       ],
@@ -9634,6 +9640,9 @@
       "Notification": [
         "Notificació"
       ],
+      "Notifications": [
+        "Notificacions"
+      ],
       "Notifications are disabled, to enable them change the browser settings.": [
         "Les notificacions estan desactivades. Per activar-les, canvieu les preferències del navegador."
       ],
@@ -9700,6 +9709,9 @@
       "Postal code": [
         "Codi postal"
       ],
+      "Premium domain": [
+        "Domini prèmium"
+      ],
       "Primary": [
         "Principal"
       ],
@@ -9708,6 +9720,9 @@
       ],
       "Proration": [
         "Prorrateig"
+      ],
+      "Public domain": [
+        "Domini públic"
       ],
       "Public keys": [
         "Claus públiques"
@@ -9742,8 +9757,8 @@
       "Search in": [
         "Cerca a"
       ],
-      "Select the categories to include, and enable notifications to be alerted about new emails in a category.": [
-        "Seleccioneu les categories a incloure i habiliteu-ne les notificacions per a rebre alertes sobre correus electrònics nous en aquestes."
+      "Select the categories to include and manage notifications for new emails.": [
+        "Seleccioneu les categories per incloure i gestionar les notificacions de nous correus electrònics."
       ],
       "Send auto-reply": [
         "Envia una resposta automàtica"
@@ -9894,6 +9909,9 @@
       ],
       "Your alias": [
         "El vostre àlies"
+      ],
+      "Your domain": [
+        "El vostre domini"
       ],
       "Your IP": [
         "La vostra IP"

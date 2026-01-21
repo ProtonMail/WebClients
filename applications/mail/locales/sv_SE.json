@@ -1225,6 +1225,9 @@
       "Save": [
         "Spara"
       ],
+      "Save preferences": [
+        "Spara preferenser"
+      ],
       "Saving${ ellipsis }": [
         "Sparar${ ellipsis }"
       ],
@@ -1480,9 +1483,6 @@
       "Toggle Contacts app": [
         "Växla kontaktapp"
       ],
-      "Toggle notifications": [
-        "Slå på/av aviseringar"
-      ],
       "Toggle referral": [
         "Slå på/av hänvisning"
       ],
@@ -1505,7 +1505,8 @@
         "Lita på"
       ],
       "Trust key": [
-        "Lita på nyckel"
+        "Lita på nyckel",
+        "Lita på nycklar"
       ],
       "Trust public key": [
         "Lita på offentlig nyckel"
@@ -2652,6 +2653,9 @@
       ],
       "High-speed chats and advanced AI features.": [
         "Chattar med hög hastighet och avancerade AI-funktioner."
+      ],
+      "Private video calls for the conversations that matter.": [
+        "Privata videosamtal för de konversationer som är viktiga."
       ]
     },
     "color": {
@@ -4493,6 +4497,9 @@
       "Cannot export this contact": [
         "Kan inte exportera denna kontakt"
       ],
+      "Cannot set expiration longer than retention policy allows.": [
+        "Kan inte ställa in utgång längre än vad lagringspolicy tillåter."
+      ],
       "Checkout expired, please try again": [
         "Kassan löpt ut, försök igen"
       ],
@@ -4946,6 +4953,9 @@
       "There has been an issue with content search. Default search has been used instead.": [
         "Det har uppstått ett problem med innehållssökning. Standardsökningen har använts istället."
       ],
+      "There was a problem decrypting your message. If the issue persists, contact our customer support.": [
+        "Det var ett problem att dekryptera ditt meddelande. Om problemet kvarstår, kontakta vår kundsupport."
+      ],
       "There was an error when exporting the contacts vCards": [
         "Det uppstod ett fel vid export av vCards-kontakterna"
       ],
@@ -5037,6 +5047,9 @@
       ],
       "Your message cannot be decrypted. If you deleted any of your address keys, try ${ reimportKeyLink } them. ${ learnMoreLink }": [
         "Ditt meddelande kan inte dekrypteras. Om du tog bort några av dina adressnycklar, försök att ${ reimportKeyLink } dem. ${ learnMoreLink }"
+      ],
+      "Your message cannot be decrypted. The key used to encrypt this message does not match any of the keys associated with your address. If you deleted any of your address keys, try ${ reimportKeyLink } them. ${ learnMoreLink }": [
+        "Ditt meddelande kan inte dekrypteras. Nyckeln som används för att kryptera detta meddelande matchar inte någon av nycklarna associerade med din adress. Om du tagit bort någon av dina adressnycklar, prova ${ reimportKeyLink } dem. ${ learnMoreLink }"
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Din sökning matchade för många resultat. Begränsa din sökning och försök igen."
@@ -6159,6 +6172,12 @@
       ],
       "Too many recent requests. Please try again in a few moments.": [
         "För många förfrågningar. Försök igen lite senare."
+      ],
+      "Two-factor authentication is enabled in your external account.": [
+        "Tvåfaktorsautentisering är aktiverat i ditt externa konto."
+      ],
+      "Two-factor authentication is enabled in your external email account.": [
+        "Tvåfaktorsautentisering är aktiverat i ditt externa e-postkonto."
       ],
       "Use your app password if:": [
         "Använd ditt applösenord om:"
@@ -7376,8 +7395,7 @@
         "Initierar …"
       ],
       "Insert image": [
-        "Infoga bild",
-        "Infoga bilder"
+        "Infoga bild"
       ],
       "Insert link": [
         "Infoga länk"
@@ -9229,6 +9247,9 @@
       "Cash": [
         "Kontant"
       ],
+      "Categories": [
+        "Kategorier"
+      ],
       "Categories badge": [
         "Kategorimärke"
       ],
@@ -9589,6 +9610,9 @@
       "Notification": [
         "Avisering"
       ],
+      "Notifications": [
+        "Aviseringar"
+      ],
       "Notifications are disabled, to enable them change the browser settings.": [
         "Meddelanden är inaktiverade, för att aktivera dem ändrar du webbläsarinställningarna."
       ],
@@ -9655,6 +9679,9 @@
       "Postal code": [
         "Postnummer"
       ],
+      "Premium domain": [
+        "Premiumdomän"
+      ],
       "Primary": [
         "Primär"
       ],
@@ -9663,6 +9690,9 @@
       ],
       "Proration": [
         "Proportionell beräkning"
+      ],
+      "Public domain": [
+        "Offentlig domän"
       ],
       "Public keys": [
         "Offentliga nycklar"
@@ -9697,8 +9727,8 @@
       "Search in": [
         "Sök i"
       ],
-      "Select the categories to include, and enable notifications to be alerted about new emails in a category.": [
-        "Välj de kategorier som ska inkluderas och aktivera aviseringar för att bli uppmärksammad om ny e-post i en kategori."
+      "Select the categories to include and manage notifications for new emails.": [
+        "Välj de kategorier som ska inkluderas och hantera aviseringar för ny e-post."
       ],
       "Send auto-reply": [
         "Skicka autosvar"
@@ -9849,6 +9879,9 @@
       ],
       "Your alias": [
         "Ditt alias"
+      ],
+      "Your domain": [
+        "Din domän"
       ],
       "Your IP": [
         "Din IP"
@@ -10325,6 +10358,13 @@
       ]
     },
     "meet_2025: Feature": {
+      "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
+        "${ MEET_APP_NAME }: Konfidentiella videokonferenser för de konversationer som är viktiga"
+      ],
+      "${ n } active meeting at a time": [
+        "${ n } aktivt möte åt gången",
+        "${ n } aktiva möten åt gången"
+      ],
       "24 hours per meeting": [
         "24 timmar per möte"
       ],
@@ -10339,6 +10379,9 @@
       ],
       "Meeting recording (coming soon)": [
         "Mötesinspelning (kommer snart)"
+      ],
+      "One active meeting at a time": [
+        "Ett aktivt möte åt gången"
       ],
       "Screen-sharing": [
         "Skärmdelning"
@@ -15469,6 +15512,9 @@
       ],
       "To": [
         "Till"
+      ],
+      "To preview this spreadsheet, download it.": [
+        "För att förhandsgranska detta kalkylblad, ladda ner det."
       ],
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "För att förhandsgranska detta kalkylblad, öppna det i ${ SHEETS_APP_NAME } eller ladda ner det."

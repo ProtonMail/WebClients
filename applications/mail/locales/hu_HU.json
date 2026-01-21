@@ -1462,9 +1462,6 @@
       "Toggle Contacts app": [
         "Névjegyek alkalmazás be-/kikapcsolása"
       ],
-      "Toggle notifications": [
-        "Értesítések kapcsolása"
-      ],
       "Toggle referral": [
         "Ajánlás kapcsolása"
       ],
@@ -1487,7 +1484,8 @@
         "Megbízható"
       ],
       "Trust key": [
-        "Megbízható kulcs"
+        "Kulcs megjelölése megbízhatóként",
+        "Kulcsok megjelölése megbízhatóként"
       ],
       "Trust public key": [
         "Nyilvános kulcs megjelölése megbízhatóként"
@@ -7248,7 +7246,6 @@
         "Inicializálás…"
       ],
       "Insert image": [
-        "Kép beillesztése",
         "Kép beillesztése"
       ],
       "Insert link": [
@@ -9434,6 +9431,9 @@
       "Notification": [
         "Értesítés"
       ],
+      "Notifications": [
+        "Emlékeztetők"
+      ],
       "Notifications are disabled, to enable them change the browser settings.": [
         "Az értesítések le vannak tiltva. Az engedélyezéshez módosítsa a böngésző beállításait."
       ],
@@ -9500,6 +9500,9 @@
       "Postal code": [
         "Irányítószám"
       ],
+      "Premium domain": [
+        "Prémium domain név"
+      ],
       "Primary": [
         "Elsődleges"
       ],
@@ -9508,6 +9511,9 @@
       ],
       "Proration": [
         "Arányosítás"
+      ],
+      "Public domain": [
+        "Nyilvános domain név"
       ],
       "Public keys": [
         "Nyilvános kulcsok"
@@ -9541,9 +9547,6 @@
       ],
       "Search in": [
         "Keresés:"
-      ],
-      "Select the categories to include, and enable notifications to be alerted about new emails in a category.": [
-        "Válassza ki a belefoglalandó kategóriákat, és engedélyezze az értesítéseket, hogy értesítést kapjon az adott kategóriában lévő új e-mailekről."
       ],
       "Send auto-reply": [
         "Automatikus válasz küldése"
@@ -9688,6 +9691,9 @@
       ],
       "Your alias": [
         "Az e-mail álneve"
+      ],
+      "Your domain": [
+        "Az Ön domain neve"
       ],
       "Your IP": [
         "Az Ön IP-címe"

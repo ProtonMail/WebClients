@@ -1225,6 +1225,9 @@
       "Save": [
         "Enregistrer"
       ],
+      "Save preferences": [
+        "Enregistrer les préférences"
+      ],
       "Saving${ ellipsis }": [
         "Enregistrement${ ellipsis }"
       ],
@@ -1480,9 +1483,6 @@
       "Toggle Contacts app": [
         "Afficher/Masquer l'application Contacts"
       ],
-      "Toggle notifications": [
-        "Activer/désactiver les notifications"
-      ],
       "Toggle referral": [
         "Activer/désactiver le parrainage"
       ],
@@ -1505,7 +1505,8 @@
         "Faire confiance"
       ],
       "Trust key": [
-        "Clé de confiance"
+        "Clé de confiance",
+        "Clés de confiance"
       ],
       "Trust public key": [
         "Approuver la clé publique"
@@ -7406,8 +7407,7 @@
         "Initialisation…"
       ],
       "Insert image": [
-        "Insérer une image",
-        "Insérer des images"
+        "Insérer une image"
       ],
       "Insert link": [
         "Insérer un lien"
@@ -7844,6 +7844,9 @@
       ],
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Contactez-nous pour toute aide concernant ${ BRAND_NAME }."
+      ],
+      "Receive notifications for ${ categoryLabel }": [
+        "Recevoir des notifications pour ${ categoryLabel }"
       ],
       "Recipient: ": [
         "Destinataire : "
@@ -9271,6 +9274,9 @@
       "Cash": [
         "Espèces"
       ],
+      "Categories": [
+        "Catégories"
+      ],
       "Categories badge": [
         "Étiquette des catégories"
       ],
@@ -9634,6 +9640,9 @@
       "Notification": [
         "Notification"
       ],
+      "Notifications": [
+        "Notifications"
+      ],
       "Notifications are disabled, to enable them change the browser settings.": [
         "Les notifications sont désactivées. Pour les activer, modifiez les paramètres du navigateur."
       ],
@@ -9700,6 +9709,9 @@
       "Postal code": [
         "Code postal"
       ],
+      "Premium domain": [
+        "Domaines premium"
+      ],
       "Primary": [
         "Principale"
       ],
@@ -9708,6 +9720,9 @@
       ],
       "Proration": [
         "Au prorata"
+      ],
+      "Public domain": [
+        "Domaine public"
       ],
       "Public keys": [
         "Clés publiques"
@@ -9742,8 +9757,8 @@
       "Search in": [
         "Rechercher dans"
       ],
-      "Select the categories to include, and enable notifications to be alerted about new emails in a category.": [
-        "Sélectionnez les catégories à inclure, et activez les notifications pour être alerté des nouveaux messages dans une catégorie."
+      "Select the categories to include and manage notifications for new emails.": [
+        "Sélectionnez les catégories à inclure et gérez les notifications pour les nouveaux messages."
       ],
       "Send auto-reply": [
         "Envoyer une réponse automatique"
@@ -9894,6 +9909,9 @@
       ],
       "Your alias": [
         "Vos alias"
+      ],
+      "Your domain": [
+        "Votre domaine"
       ],
       "Your IP": [
         "Votre IP"

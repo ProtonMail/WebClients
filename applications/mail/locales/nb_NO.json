@@ -1225,6 +1225,9 @@
       "Save": [
         "Lagre"
       ],
+      "Save preferences": [
+        "Lagre preferanser"
+      ],
       "Saving${ ellipsis }": [
         "Lagrer${ ellipsis }"
       ],
@@ -1480,9 +1483,6 @@
       "Toggle Contacts app": [
         "Slå av/på Kontakter-appen"
       ],
-      "Toggle notifications": [
-        "Slå varslinger av/på"
-      ],
       "Toggle referral": [
         "Slå verving av/på"
       ],
@@ -1503,6 +1503,10 @@
       ],
       "Trust": [
         "Klarér"
+      ],
+      "Trust key": [
+        "Klarér nøkkel",
+        "Klarér nøkler"
       ],
       "Trust public key": [
         "Klarér offentlig nøkkel"
@@ -2169,6 +2173,9 @@
       ],
       "Payments problem": [
         "Betalingsproblemer"
+      ],
+      "Sheets problem": [
+        "Regneark-problem"
       ],
       "Sign in problem": [
         "Påloggingsproblem"
@@ -6172,6 +6179,12 @@
       "Too many recent requests. Please try again in a few moments.": [
         "For mange nylige forespørsler. Prøv igjen om noen få øyeblikk."
       ],
+      "Two-factor authentication is enabled in your external account.": [
+        "Tofaktorautentisering er aktivert i den eksterne kontoen din."
+      ],
+      "Two-factor authentication is enabled in your external email account.": [
+        "Tofaktorautentisering er aktivert i den eksterne e-postkontoen din."
+      ],
       "Use your app password if:": [
         "Bruk app-passordet ditt hvis:"
       ],
@@ -7394,8 +7407,7 @@
         "Initialiserer…"
       ],
       "Insert image": [
-        "Sett inn bilde",
-        "Sett inn bilder"
+        "Sett inn bilde"
       ],
       "Insert link": [
         "Sett inn kobling"
@@ -7832,6 +7844,9 @@
       ],
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Ta kontakt med oss for å få hjelp med hva som helst ${ BRAND_NAME }."
+      ],
+      "Receive notifications for ${ categoryLabel }": [
+        "Motta varsler for ${ categoryLabel }"
       ],
       "Recipient: ": [
         "Mottaker: "
@@ -9259,6 +9274,9 @@
       "Cash": [
         "Kontant"
       ],
+      "Categories": [
+        "Kategorier"
+      ],
       "Categories badge": [
         "Kategorietikett"
       ],
@@ -9622,6 +9640,9 @@
       "Notification": [
         "Varsel"
       ],
+      "Notifications": [
+        "Varsler"
+      ],
       "Notifications are disabled, to enable them change the browser settings.": [
         "Varsler er deaktivert, for å aktivere dem, endre nettleserinnstillingene."
       ],
@@ -9688,6 +9709,9 @@
       "Postal code": [
         "Postnummer"
       ],
+      "Premium domain": [
+        "Premium-domene"
+      ],
       "Primary": [
         "Primær"
       ],
@@ -9696,6 +9720,9 @@
       ],
       "Proration": [
         "Proporsjonal fakturering"
+      ],
+      "Public domain": [
+        "Offentlig domene"
       ],
       "Public keys": [
         "Offentlige nøkler"
@@ -9730,8 +9757,8 @@
       "Search in": [
         "Søk i"
       ],
-      "Select the categories to include, and enable notifications to be alerted about new emails in a category.": [
-        "Velg kategoriene som skal inkluderes, og aktiver varsler for å bli varslet om nye e-poster i en kategori."
+      "Select the categories to include and manage notifications for new emails.": [
+        "Velg kategoriene som skal inkluderes og administrer varsler for nye e-poster."
       ],
       "Send auto-reply": [
         "Send autosvar"
@@ -9882,6 +9909,9 @@
       ],
       "Your alias": [
         "Aliaset ditt"
+      ],
+      "Your domain": [
+        "Ditt domene"
       ],
       "Your IP": [
         "IP-en din"
@@ -14624,6 +14654,9 @@
       "Download ${ VPN_APP_NAME }": [
         "Last ned ${ VPN_APP_NAME }"
       ],
+      "Download the desktop app": [
+        "Last ned skrivebordsappen"
+      ],
       "Enable ${ DARK_WEB_MONITORING_NAME }": [
         "Aktiver ${ DARK_WEB_MONITORING_NAME }"
       ],
@@ -15520,6 +15553,9 @@
       ],
       "To": [
         "Til"
+      ],
+      "To preview this spreadsheet, download it.": [
+        "For å forhåndsvise dette regnearket, last det ned."
       ],
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "For å forhåndsvise dette regnearket, åpne det i ${ SHEETS_APP_NAME } eller last det ned."
