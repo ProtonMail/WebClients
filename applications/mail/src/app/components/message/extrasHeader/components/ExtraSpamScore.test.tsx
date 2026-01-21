@@ -1,4 +1,4 @@
-import { fireEvent, screen } from '@testing-library/react';
+import { act, fireEvent, screen } from '@testing-library/react';
 
 import type { MessageStateWithData } from '@proton/mail/store/messages/messagesTypes';
 import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
@@ -47,7 +47,9 @@ describe('ExtraSpamScore', () => {
 
         await mailTestRender(<ExtraSpamScore message={message} />);
 
-        fireEvent.click(screen.getByTestId('spam-banner:mark-legitimate'));
+        act(() => {
+            fireEvent.click(screen.getByTestId('spam-banner:mark-legitimate'));
+        });
         expect(screen.getByTestId('spam-banner:mark-legitimate-prompt')).toBeInTheDocument();
     });
 
@@ -61,10 +63,14 @@ describe('ExtraSpamScore', () => {
 
         await mailTestRender(<ExtraSpamScore message={message} />);
 
-        fireEvent.click(screen.getByTestId('spam-banner:mark-legitimate'));
+        act(() => {
+            fireEvent.click(screen.getByTestId('spam-banner:mark-legitimate'));
+        });
         expect(screen.getByTestId('spam-banner:mark-legitimate-prompt')).toBeInTheDocument();
 
-        fireEvent.click(screen.getByTestId('spam-banner:mark-legitimate-prompt-btn'));
+        await act(async () => {
+            fireEvent.click(screen.getByTestId('spam-banner:mark-legitimate-prompt-btn'));
+        });
 
         expect(mockDispatch).toHaveBeenCalledWith(
             optimisticUpdateFlag({
