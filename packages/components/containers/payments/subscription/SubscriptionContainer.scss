@@ -4,16 +4,8 @@
 im.$breakpoints: $breakpoints-product;
 im.$media-expressions: $media-expressions;
 
-@use '~@proton/styles/scss/specifics/bf-background' as *;
-
 .subscription-container-plan-customizer:has(*) {
 	margin-block-end: var(--space-8);
-}
-
-@include im.media('>xsmall') {
-	.subscription-modal {
-		@include bf-bgs;
-	}
 }
 
 @include im.media('<=xsmall') {
