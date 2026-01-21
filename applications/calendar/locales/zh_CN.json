@@ -1348,6 +1348,9 @@
       ],
       "Website access problem": [
         "网站连接问题"
+      ],
+      "Sheets problem": [
+        "表格问题"
       ]
     },
     "Button": {
@@ -3654,6 +3657,9 @@
       ],
       "ZIP code is required": [
         "必须填写邮政编码"
+      ],
+      "Failed to add existing ${ MEET_APP_NAME } video conference": [
+        "无法添加现有的 ${ MEET_APP_NAME } 视频会议"
       ]
     },
     "Error accepting calendar invitation": {
@@ -6012,6 +6018,9 @@
       ],
       "WKD": [
         "WKD"
+      ],
+      "KOO": [
+        "KOO"
       ]
     },
     "Keyboard shortcut name": {
@@ -6554,6 +6563,18 @@
       ],
       "ZIP code": [
         "邮政编码"
+      ],
+      "Get the deal": [
+        "获取优惠"
+      ],
+      "Premium domain": [
+        "高级域名"
+      ],
+      "Public domain": [
+        "公共域名"
+      ],
+      "Your domain": [
+        "您的域名"
       ]
     },
     "Label for contact group color": {
@@ -8397,6 +8418,9 @@
       ],
       "Team policies": [
         "团队政策"
+      ],
+      "File attachments (up to 10GB)": [
+        "文件附件（最高 10GB）"
       ]
     },
     "PassFamilyPlan2024": {
@@ -8545,6 +8569,9 @@
       ],
       "Your payment is still being processed": [
         "您的付款正在处理中"
+      ],
+      "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
+        "特别优惠价仅在首月有效。之后将每月自动以${ renewPriceStr }的价格续订。您可以随时取消。"
       ]
     },
     "Payments.Error": {

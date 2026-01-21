@@ -1015,6 +1015,12 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Masa uji coba aplikasi desktop Anda akan berakhir pada ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Disable auto-add ${ MEET_APP_NAME } links feature": [
+        "Nonaktifkan fitur penambahan otomatis tautan ${ MEET_APP_NAME }"
+      ],
+      "Turn off auto-add": [
+        "Nonaktifkan penambahan otomatis"
       ]
     },
     "action": {
@@ -1474,6 +1480,9 @@
       ],
       "Website access problem": [
         "Masalah akses situs"
+      ],
+      "Sheets problem": [
+        "Masalah lembar kerja"
       ]
     },
     "Button": {
@@ -1739,6 +1748,9 @@
       ],
       "Ultra fast and private VPN": [
         "VPN ultra cepat dan privat"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } pengguna"
       ]
     },
     "Checkout row": {
@@ -1822,6 +1834,9 @@
       ],
       "High-speed chats and advanced AI features.": [
         "Percakapan berkecepatan tinggi dan berbagai fitur AI mutakhir."
+      ],
+      "Private video calls for the conversations that matter.": [
+        "Panggilan video pribadi untuk percakapan yang penting."
       ]
     },
     "colon": {
@@ -3921,6 +3936,12 @@
       ],
       "ZIP code is required": [
         "Kode pos diperlukan"
+      ],
+      "Failed to add existing ${ MEET_APP_NAME } video conference": [
+        "Konferensi video ${ MEET_APP_NAME } yang sudah ada gagal ditambahkan"
+      ],
+      "Failed to update settings": [
+        "Pengaturan gagal diperbarui"
       ]
     },
     "error": {
@@ -4740,6 +4761,12 @@
       ],
       "Your password is correct.": [
         "Kata sandi Anda benar."
+      ],
+      "Two-factor authentication is enabled in your external account.": [
+        "Autentikasi dua-faktor diaktifkan pada akun eksternal Anda."
+      ],
+      "Two-factor authentication is enabled in your external email account.": [
+        "Autentikasi dua-faktor diaktifkan pada akun email eksternal Anda."
       ]
     },
     "Import instructions": {
@@ -6341,6 +6368,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Anda telah mencapai batas slot pemesanan (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "We automatically added a ${ MEET_APP_NAME } link": [
+        "Kami telah menambahkan tautan ${ MEET_APP_NAME } secara otomatis"
       ]
     },
     "info": {
@@ -7056,6 +7086,15 @@
       ],
       "Zoom meeting": [
         "Pertemuan Zoom"
+      ],
+      "Premium domain": [
+        "Domain premium"
+      ],
+      "Public domain": [
+        "Domain publik"
+      ],
+      "Your domain": [
+        "Domain Anda"
       ]
     },
     "label": {
@@ -10920,6 +10959,9 @@
       ],
       "You have successfully unsubscribed": [
         "Anda telah berhasil membatalkan langganan"
+      ],
+      "Auto-add ${ MEET_APP_NAME } links disabled": [
+        "Penambahan otomatis tautan ${ MEET_APP_NAME } dinonaktifkan"
       ]
     },
     "Suffix": {
@@ -12345,6 +12387,55 @@
       ],
       "Passcode:": [
         "Kode sandi:"
+      ]
+    },
+    "customer_support.feature.meet": {
+      "For ${ MEET_APP_NAME }": [
+        "Untuk ${ MEET_APP_NAME }"
+      ]
+    },
+    "meet_2025: Feature": {
+      "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
+        "${ MEET_APP_NAME }: Pertemuan video rahasia untuk percakapan yang penting"
+      ],
+      "${ n } active meeting at a time": [
+        "${ n } pertemuan yang aktif secara bersamaan"
+      ],
+      "24 hours per meeting": [
+        "24 jam per pertemuan"
+      ],
+      "60 minutes per meeting": [
+        "50 menit per pertemuan"
+      ],
+      "Appointment scheduling": [
+        "Penjadwalan janji temu"
+      ],
+      "Browser, mobile, and desktop apps": [
+        "Aplikasi browser, seluler, dan desktop"
+      ],
+      "Built-in chat": [
+        "Obrolan yang terintegrasi"
+      ],
+      "End-to-end encrypted screen sharing and ephemeral in-call chat": [
+        "Pembagian layar yang terenkripsi end-to-end dan percakapan dalam panggilan yang bersifat sementara"
+      ],
+      "Meeting recording (coming soon)": [
+        "Rekaman pertemuan (segera hadir)"
+      ],
+      "One active meeting at a time": [
+        "Satu pertemuan yang aktif dalam satu waktu"
+      ],
+      "Screen-sharing": [
+        "Pembagian layar"
+      ],
+      "Unlimited meetings per day": [
+        "Tanpa batasan jumlah pertemuan per harinya"
+      ],
+      "Up to ${ n } meeting per day": [
+        "Hingga ${ n } pertemuan per hari"
+      ],
+      "Up to ${ n } participant": [
+        "Hinnga ${ n } peserta"
       ]
     }
   }
