@@ -148,20 +148,6 @@ export class CameraTrackSubscriptionCache {
         this.removeTrackSidEverywhere(publication.trackSid);
     }
 
-    getQueueManagedTracksToMonitor(): RemoteTrackPublication[] {
-        const tracks: RemoteTrackPublication[] = [];
-        for (const entry of this.entriesByTrackSid.values()) {
-            const pub = entry.publication;
-            if (!entry.participantIdentity) {
-                continue;
-            }
-            if (pub.isSubscribed && pub.isEnabled && !!pub.track && !pub.isMuted) {
-                tracks.push(pub);
-            }
-        }
-        return tracks;
-    }
-
     async resetQueueManagedVideoTrack(publication: RemoteTrackPublication) {
         await this.runSerialized(async () => {
             const entry = this.entriesByTrackSid.get(publication.trackSid);

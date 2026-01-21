@@ -1,17 +1,10 @@
-import { useCallback, useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 
 import { useRoomContext } from '@livekit/components-react';
 import type { Participant, RemoteParticipant, RemoteTrackPublication, TrackPublication } from 'livekit-client';
 import { RoomEvent, Track } from 'livekit-client';
 
-import { checkAudioTrackStats as checkAudioTrackStatsUtil } from '../../utils/checkAudioTrackStats';
-import { useStuckTrackMonitor } from '../useStuckTrackMonitor';
-
 const MAX_SUBSCRIBED_MICROPHONE_TRACKS = 80;
-const STUCK_AUDIO_CHECK_INTERVAL_MS = 7000;
-const MIN_EXPECTED_PACKETS = 1;
-const MIN_EXPECTED_AUDIO_BYTES_WHILE_SPEAKING = 300;
-const SPEAKING_ACTIVITY_MARGIN_MS = 1000;
 
 interface SubscriptionItem {
     participant: RemoteParticipant;
@@ -41,38 +34,6 @@ export const useParticipantAudioControls = () => {
 
     const subscribedMicrophoneTrackPublicationsRef = useRef<Map<string, SubscriptionItem>>(new Map());
     const lastSortingResultRef = useRef<SubscriptionItem[]>([]);
-
-    const getTracksToMonitor = useCallback(() => {
-        return Array.from(subscribedMicrophoneTrackPublicationsRef.current.values())
-            .filter(
-                (item) =>
-                    item.publication.isSubscribed &&
-                    item.publication.isEnabled &&
-                    !!item.publication.track &&
-                    !item.publication.isMuted
-            )
-            .map((item) => item.publication);
-    }, []);
-
-    const checkAudioTrackStats = useCallback(async (publication: RemoteTrackPublication) => {
-        const item = subscribedMicrophoneTrackPublicationsRef.current.get(publication.trackSid);
-
-        const context = item ? { participant: item.participant, source: item.publication.source } : undefined;
-
-        return checkAudioTrackStatsUtil(publication, context, {
-            checkIntervalMs: STUCK_AUDIO_CHECK_INTERVAL_MS,
-            speakingActivityMarginMs: SPEAKING_ACTIVITY_MARGIN_MS,
-            minExpectedPackets: MIN_EXPECTED_PACKETS,
-            minExpectedAudioBytesWhileSpeaking: MIN_EXPECTED_AUDIO_BYTES_WHILE_SPEAKING,
-        });
-    }, []);
-
-    useStuckTrackMonitor({
-        checkIntervalMs: STUCK_AUDIO_CHECK_INTERVAL_MS,
-        minExpectedDelta: MIN_EXPECTED_PACKETS,
-        getTracksToMonitor,
-        checkTrackStats: checkAudioTrackStats,
-    });
 
     useEffect(() => {
         const addToCache = (publication: RemoteTrackPublication, participant: RemoteParticipant) => {
