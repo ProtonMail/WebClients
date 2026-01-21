@@ -52,7 +52,7 @@ export const ProjectCard = ({ project, onSignInRequired, onOpenNewProjectModal }
     return (
         // eslint-disable-next-line jsx-a11y/prefer-tag-over-role
         <div
-            className="project-card p-6 border border-weak rounded-lg"
+            className="project-card group-hover-opacity-container p-6 border border-weak rounded-lg"
             onClick={handleClick}
             role="button"
             tabIndex={0}
@@ -69,7 +69,9 @@ export const ProjectCard = ({ project, onSignInRequired, onOpenNewProjectModal }
                     <h3 className="project-card-title">{project.name}</h3>
                 </div>
                 {!project.isExample && (
-                    <ProjectActionsDropdown project={project} />
+                    <div onClick={(e) => e.stopPropagation()}>
+                        <ProjectActionsDropdown project={project} />
+                    </div>
                 )}
             </div>
 

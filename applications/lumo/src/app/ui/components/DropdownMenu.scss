@@ -1,0 +1,28 @@
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
+
+// Override the adaptive-for-touch-screens centering behavior for the chat dropdown menu
+// to position it at the bottom of the screen like a native bottom sheet
+.chat-dropdown-menu {
+	@include im.media('touch', '<=small') {
+		&.adaptive-for-touch-screens {
+			// Override centering - align to bottom instead
+			padding-block-start: auto;
+			padding-block-end: 0;
+			padding-inline: 0;
+			justify-content: flex-end;
+		}
+
+		&.adaptive-for-touch-screens .dropdown-content {
+			// Make it full width at bottom
+			inline-size: 100%;
+			max-inline-size: 100%;
+			border-end-start-radius: 0;
+			border-end-end-radius: 0;
+			border-start-start-radius: var(--border-radius-lg);
+			border-start-end-radius: var(--border-radius-lg);
+		}
+	}
+}
