@@ -14,6 +14,7 @@ import { usePartialPublicView } from '../../hooks/util/usePartialPublicView';
 import { logging } from '../../modules/logging';
 import { TransferManager } from '../../sections/transferManager/TransferManager';
 import { deleteStoredUrlPassword } from '../../utils/url/password';
+import { PublicFileView } from './PublicFileView';
 import { PublicFolderView } from './PublicFolderView';
 import { usePublicAuthSession } from './usePublicAuthSession';
 import { usePublicLink } from './usePublicLink';
@@ -71,14 +72,14 @@ const PublicPageContent = () => {
     }
 
     return (
-        <>
+        <div className="h-full px-10 pt-3">
             {rootNode.type === NodeType.File ? (
-                <div>Not implemented yet</div>
+                <PublicFileView rootNode={rootNode} />
             ) : (
                 <PublicFolderView nodeUid={rootNode.uid} folderName={rootNode.name} />
             )}
             <TransferManager deprecatedRootShareId={undefined} />
-        </>
+        </div>
     );
 };
 

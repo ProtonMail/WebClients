@@ -186,6 +186,7 @@ export function usePreviewState({
             thumbnailUrl: largeThumbnail?.url || smallThumbnailUrl,
             data: previewMethod === ContentPreviewMethod.Buffer ? nodeData : largeThumbnail?.data,
             videoStreaming: previewMethod === ContentPreviewMethod.Streaming ? videoStreaming : undefined,
+            previewMethod,
         },
         canShare,
         isLoading,
