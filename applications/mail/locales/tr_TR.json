@@ -1696,6 +1696,9 @@
       ],
       "Zoom out": [
         "Uzaklaştır"
+      ],
+      "Save preferences": [
+        "Ayarları kaydet"
       ]
     },
     "action": {
@@ -8838,6 +8841,9 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Dağınıklıktan arındırılmış bir gelen kutusundan yalnızca birkaç tık uzaktasınız."
+      ],
+      "Receive notifications for ${ categoryLabel }": [
+        "${ categoryLabel } için bildirimler al"
       ]
     },
     "info": {
@@ -9912,6 +9918,24 @@
       ],
       "ZIP code": [
         "Posta kodu"
+      ],
+      "Categories": [
+        "Kategoriler"
+      ],
+      "Notifications": [
+        "Bildirimler"
+      ],
+      "Premium domain": [
+        "Ücretli etki alanı"
+      ],
+      "Public domain": [
+        "Herkese açık etki alanı"
+      ],
+      "Select the categories to include and manage notifications for new emails.": [
+        "Yeni e-postalar için dahil edilecek kategorileri seçin ve bildirimleri yönetin."
+      ],
+      "Your domain": [
+        "Etki alanınız"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -14637,7 +14661,7 @@
         "${ VPN_APP_NAME } indir"
       ],
       "Download the desktop app": [
-        "Masaüstü uygulamasını indirin"
+        "Bilgisayar uygulamasını indirin"
       ],
       "Enable ${ DARK_WEB_MONITORING_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } özelliğini aç"
@@ -15537,7 +15561,7 @@
         "Kime"
       ],
       "To preview this spreadsheet, download it.": [
-        "Bu hesap tablosunu önizlemek için indirin."
+        "Bu hesap tablosunu ön izlemek için indirin."
       ],
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "Bu hesap tablosunu ön izlemek için ${ SHEETS_APP_NAME } uygulaması ile açın ya da indirin."

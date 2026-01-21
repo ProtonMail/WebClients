@@ -1706,6 +1706,9 @@
       ],
       "Zoom out": [
         "Oddálit"
+      ],
+      "Save preferences": [
+        "Uložit předvolby"
       ]
     },
     "action": {
@@ -6285,10 +6288,10 @@
         "Bylo zadáno příliš mnoho požadavků. Zkuste to za pár minut."
       ],
       "Two-factor authentication is enabled in your external account.": [
-        "Ve vašem externím účtu je aktivní dvoufaktorové ověření."
+        "Ve vašem externím účtu je povoleno dvoufázové ověřování."
       ],
       "Two-factor authentication is enabled in your external email account.": [
-        "Ve vašem externím e-mailovém účtu je aktivní dvoufaktorové ověření."
+        "Ve vašem externím e-mailovém účtu je povoleno dvoufázové ověřování."
       ],
       "Use your app password if:": [
         "Použijte heslo aplikace, pokud:"
@@ -9122,6 +9125,9 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Od doručené pošty bez nepořádku vás dělí jen několik kliknutí"
+      ],
+      "Receive notifications for ${ categoryLabel }": [
+        "Přijímat oznámení ohledně ${ categoryLabel }"
       ]
     },
     "info": {
@@ -10212,6 +10218,24 @@
       ],
       "ZIP code": [
         "PSČ"
+      ],
+      "Categories": [
+        "Kategorie"
+      ],
+      "Notifications": [
+        "Upozornění"
+      ],
+      "Premium domain": [
+        "Prémiová doména"
+      ],
+      "Public domain": [
+        "Veřejná doména"
+      ],
+      "Select the categories to include and manage notifications for new emails.": [
+        "Vyberte kategorie, které chcete zahrnout, a spravujte oznámení o nových e-mailech."
+      ],
+      "Your domain": [
+        "Vaše doména"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -16111,7 +16135,7 @@
         "Komu"
       ],
       "To preview this spreadsheet, download it.": [
-        "Pro otevření náhledu této tabulky si ji stáhněte."
+        "Chcete-li si tuto tabulku prohlédnout, stáhněte si ji."
       ],
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "Chcete-li si tuto tabulku prohlédnout, otevřete ji v aplikaci ${ SHEETS_APP_NAME } nebo ji stáhněte."
