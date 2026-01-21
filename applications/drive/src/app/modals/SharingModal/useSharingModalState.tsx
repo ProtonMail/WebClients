@@ -6,14 +6,17 @@ import { useUser } from '@proton/account/user/hooks';
 import type { ModalStateProps } from '@proton/components';
 import { useNotifications } from '@proton/components';
 import {
+    type DegradedNode,
     MemberRole,
+    type NodeEntity,
     type ShareNodeSettings,
     type ShareResult,
     generateNodeUid,
     splitInvitationUid,
     useDrive,
-} from '@proton/drive/index';
+} from '@proton/drive';
 import useLoading from '@proton/hooks/useLoading';
+import { useContactEmails } from '@proton/mail/store/contactEmails/hooks';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
@@ -25,6 +28,8 @@ import { useDriveEventManager } from '../../store';
 import { getActionEventManager } from '../../utils/ActionEventManager/ActionEventManager';
 import { ActionEventName } from '../../utils/ActionEventManager/ActionEventManagerTypes';
 import { useSdkErrorHandler } from '../../utils/errorHandling/useSdkErrorHandler';
+import { getNodeName } from '../../utils/sdk/getNodeName';
+import { getContactNameAndEmail } from './DirectSharing/helpers/getContactNameAndEmail';
 import type { SharingModalViewProps } from './SharingModalView';
 import { type DirectMember, MemberType } from './interfaces';
 
@@ -65,6 +70,7 @@ export const useSharingModalState = ({
     onExit,
 }: UseSharingModalProps): SharingModalViewProps => {
     const events = useDriveEventManager();
+    const [contactEmails] = useContactEmails();
 
     const { isDocsPublicSharingEnabled } = useFlagsDriveDocsPublicSharing();
 
@@ -242,19 +248,28 @@ export const useSharingModalState = ({
         };
         const fetchNodeInfo = async () => {
             try {
-                const nodeInfo = await drive.getNode(nodeUid);
-                if (nodeInfo.ok && nodeInfo.value.keyAuthor.ok && nodeInfo.value.keyAuthor.value) {
-                    setOwnerEmail(nodeInfo.value.keyAuthor.value);
-                    if (nodeInfo.value.directRole === MemberRole.Admin) {
-                        setOwnerDisplayName(user.DisplayName);
+                const node = await drive.getNode(nodeUid);
+                const nodeInfo = node.ok ? node.value : node.error;
+
+                setName(getNodeName(node));
+                setParentUid(nodeInfo.parentUid);
+
+                const ownerEmail = getOwnerEmail(nodeInfo);
+                if (ownerEmail) {
+                    setOwnerEmail(ownerEmail);
+                }
+                // Use current user's name or find it in the contacts
+                if (ownerEmail === user.Email) {
+                    setOwnerDisplayName(user.DisplayName);
+                } else if (ownerEmail) {
+                    const { contactName } = getContactNameAndEmail(ownerEmail, contactEmails);
+                    if (contactName.length) {
+                        setOwnerDisplayName(contactName);
                     }
                 }
-                if (nodeInfo.ok) {
-                    setName(nodeInfo.value.name);
-                    setParentUid(nodeInfo.value.parentUid);
-                    if (nodeInfo.value.mediaType && isProtonDocsDocument(nodeInfo.value.mediaType)) {
-                        setIsPublicLinkEnabled(isDocsPublicSharingEnabled);
-                    }
+
+                if (nodeInfo.mediaType && isProtonDocsDocument(nodeInfo.mediaType)) {
+                    setIsPublicLinkEnabled(isDocsPublicSharingEnabled);
                 }
             } catch (e) {
                 handleError(e, { fallbackMessage: c('Error').t`Failed to fetch node`, extra: { nodeUid } });
@@ -295,6 +310,7 @@ export const useSharingModalState = ({
                 type: MemberType.ProtonInvitation,
             }))
         ) as DirectMember[]; // FIXME "Feel free to just throw if that happens on client side with comment it is not expected and that SDK will improve typing and then it can be deleted."
+    // TODO ^^ (up)
 
     return {
         open,
@@ -329,3 +345,11 @@ export const useSharingModalState = ({
         },
     };
 };
+
+function getOwnerEmail(nodeInfo: NodeEntity | DegradedNode) {
+    if (nodeInfo.keyAuthor.ok) {
+        return nodeInfo.keyAuthor.value;
+    } else if (!nodeInfo.keyAuthor.ok) {
+        return nodeInfo.keyAuthor.error.claimedAuthor;
+    }
+}
