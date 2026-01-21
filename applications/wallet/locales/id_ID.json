@@ -583,6 +583,9 @@
       "${ WALLET_APP_NAME } has partnered with ${ rampLink }, ${ banxaLink } and ${ moonpayLink }, three registered crypto asset services, to facilitate the purchase of BTC. Please enter your region to see the available providers and payment methods.": [
         "${ WALLET_APP_NAME } telah bermitra dengan ${ rampLink }, ${ banxaLink }, dan ${ moonpayLink }, tiga layanan aset kripto terdaftar, untuk memfasilitasi pembelian BTC. Silakan masukkan wilayah Anda untuk melihat daftar penyedia layanan dan metode pembayaran yang tersedia."
       ],
+      "2% bank transfer fee": [
+        "Biaya transfer bank 2%"
+      ],
       "4% credit card fee": [
         "Biaya kartu kredit 4%"
       ],
@@ -865,6 +868,9 @@
       "Payments problem": [
         "Masalah pembayaran"
       ],
+      "Sheets problem": [
+        "Masalah lembar kerja"
+      ],
       "Sign in problem": [
         "Masalah masuk"
       ],
@@ -953,6 +959,9 @@
     "Cancellation upsell": {
       "${ maxSpaceTB } storage": [
         "Ruang penyimpanan ${ maxSpaceTB }"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } pengguna"
       ],
       "${ planMaxSpace } email storage": [
         "Ruang penyimpanan email ${ planMaxSpace }"
@@ -1078,6 +1087,9 @@
       ],
       "High-speed chats and advanced AI features.": [
         "Percakapan berkecepatan tinggi dan berbagai fitur AI mutakhir."
+      ],
+      "Private video calls for the conversations that matter.": [
+        "Panggilan video pribadi untuk percakapan yang penting."
       ]
     },
     "color": {
@@ -1971,6 +1983,11 @@
     "customer_support.feature.mail": {
       "For ${ MAIL_APP_NAME }": [
         "Untuk ${ MAIL_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.meet": {
+      "For ${ MEET_APP_NAME }": [
+        "Untuk ${ MEET_APP_NAME }"
       ]
     },
     "customer_support.feature.pass": {
@@ -3446,6 +3463,50 @@
       ],
       "for ${ price }": [
         "untuk ${ price }"
+      ]
+    },
+    "meet_2025: Feature": {
+      "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
+        "${ MEET_APP_NAME }: Pertemuan video rahasia untuk percakapan yang penting"
+      ],
+      "${ n } active meeting at a time": [
+        "${ n } pertemuan yang aktif secara bersamaan"
+      ],
+      "24 hours per meeting": [
+        "24 jam per pertemuan"
+      ],
+      "60 minutes per meeting": [
+        "50 menit per pertemuan"
+      ],
+      "Appointment scheduling": [
+        "Penjadwalan janji temu"
+      ],
+      "Browser, mobile, and desktop apps": [
+        "Aplikasi browser, seluler, dan desktop"
+      ],
+      "Built-in chat": [
+        "Obrolan yang terintegrasi"
+      ],
+      "End-to-end encrypted screen sharing and ephemeral in-call chat": [
+        "Pembagian layar yang terenkripsi end-to-end dan percakapan dalam panggilan yang bersifat sementara"
+      ],
+      "Meeting recording (coming soon)": [
+        "Rekaman pertemuan (segera hadir)"
+      ],
+      "One active meeting at a time": [
+        "Satu pertemuan yang aktif dalam satu waktu"
+      ],
+      "Screen-sharing": [
+        "Pembagian layar"
+      ],
+      "Unlimited meetings per day": [
+        "Tanpa batasan jumlah pertemuan per harinya"
+      ],
+      "Up to ${ n } meeting per day": [
+        "Hingga ${ n } pertemuan per hari"
+      ],
+      "Up to ${ n } participant": [
+        "Hinnga ${ n } peserta"
       ]
     },
     "New Label form": {
