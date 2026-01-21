@@ -100,6 +100,14 @@ export const FilesPanel = ({
                     const isAutoRetrieved = shallowAtt.autoRetrieved || fullAtt?.autoRetrieved;
 
                     if (isAutoRetrieved) {
+                        // Skip if the attachment was deleted (e.g., Drive folder unlinked, file deleted)
+                        // For Drive files (driveNodeId present), we require fullAtt to exist
+                        // This prevents showing files from unlinked Drive folders
+                        if (shallowAtt.driveNodeId && !fullAtt) {
+                            console.log('[FilesPanel] Skipping deleted Drive attachment:', shallowAtt.id, shallowAtt.filename);
+                            return;
+                        }
+
                         // Use the fullAtt data if available, otherwise construct from shallow
                         const attachment =
                             fullAtt ||
