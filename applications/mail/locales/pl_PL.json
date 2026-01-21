@@ -1458,9 +1458,6 @@
       "Trust": [
         "Zaufaj"
       ],
-      "Trust key": [
-        "Zaufaj kluczowi"
-      ],
       "Trust public key": [
         "Zaufaj kluczowi publicznemu"
       ],
@@ -2109,6 +2106,9 @@
       ],
       "Payments problem": [
         "Problem z płatnościami"
+      ],
+      "Sheets problem": [
+        "Problem z arkuszem"
       ],
       "Sign in problem": [
         "Problem z logowaniem"
@@ -6012,6 +6012,12 @@
       "Too many recent requests. Please try again in a few moments.": [
         "Zbyt wiele żądań w ostatnim czasie. Spróbuj ponownie za kilka chwil."
       ],
+      "Two-factor authentication is enabled in your external account.": [
+        "Uwierzytelnianie dwuskładnikowe jest włączone na Twoim zewnętrznym koncie."
+      ],
+      "Two-factor authentication is enabled in your external email account.": [
+        "Uwierzytelnianie dwuskładnikowe jest włączone na Twoim zewnętrznym koncie e-mail."
+      ],
       "Use your app password if:": [
         "Użyj hasła aplikacji, jeśli:"
       ],
@@ -7319,10 +7325,7 @@
         "Inicjowanie…"
       ],
       "Insert image": [
-        "Wstaw obraz",
-        "Wstaw obrazy",
-        "Wstaw obrazy",
-        "Wstaw obrazy"
+        "Wstaw obraz"
       ],
       "Insert link": [
         "Wstaw link"
@@ -8148,6 +8151,15 @@
       ],
       "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
         "Wiadomość zostanie przeniesiona do Szkiców i będzie możliwa do edycji. Musisz zaplanować ponownie wysłanie wiadomości."
+      ],
+      "This message will be purged on ${ value }": [
+        "Ta wiadomość zostanie usunięta ${ value }"
+      ],
+      "This message will be purged today at ${ value }": [
+        "Ta wiadomość zostanie usunięta dzisiaj o ${ value }"
+      ],
+      "This message will be purged tomorrow at ${ value }": [
+        "Ta wiadomość zostanie usunięta jutro o ${ value }"
       ],
       "This message will be sent in the morning at ${ formattedTime }": [
         "Wiadomość zostanie wysłana rano o godzinie ${ formattedTime }"
@@ -9326,6 +9338,9 @@
       "Filter Name": [
         "Nazwa filtra"
       ],
+      "Filters": [
+        "Filtry"
+      ],
       "First name": [
         "Imię"
       ],
@@ -9349,6 +9364,9 @@
       ],
       "From: ${ fromEmail }": [
         "Od: ${ fromEmail }"
+      ],
+      "Has attachments": [
+        "Zawiera załącznik"
       ],
       "Hide password": [
         "Ukryj hasło"
@@ -9488,6 +9506,9 @@
       "Notification": [
         "Powiadomienie"
       ],
+      "Notifications": [
+        "Powiadomienia"
+      ],
       "Notifications are disabled, to enable them change the browser settings.": [
         "Powiadomienia są wyłączone. Zmień ustawienia przeglądarki, aby je włączyć."
       ],
@@ -9551,6 +9572,9 @@
       "Postal code": [
         "Kod pocztowy"
       ],
+      "Premium domain": [
+        "Domena premium"
+      ],
       "Primary": [
         "Główna"
       ],
@@ -9559,6 +9583,9 @@
       ],
       "Proration": [
         "Dzielenie proporcjonalne"
+      ],
+      "Public domain": [
+        "Domena publiczna"
       ],
       "Public keys": [
         "Klucze publiczne"
@@ -9712,6 +9739,9 @@
       ],
       "Your alias": [
         "Twój alias"
+      ],
+      "Your domain": [
+        "Twoja domena"
       ],
       "Your IP": [
         "Twój adres IP"
@@ -14321,6 +14351,9 @@
       "Download ${ VPN_APP_NAME }": [
         "Pobierz ${ VPN_APP_NAME }"
       ],
+      "Download the desktop app": [
+        "Pobierz aplikację na komputer"
+      ],
       "Enable ${ DARK_WEB_MONITORING_NAME }": [
         "Włącz ${ DARK_WEB_MONITORING_NAME }"
       ],
@@ -15204,6 +15237,9 @@
       ],
       "To": [
         "Do"
+      ],
+      "To preview this spreadsheet, download it.": [
+        "Aby wyświetlić podgląd tego arkusza kalkulacyjnego, pobierz go."
       ],
       "Trash": [
         "Kosz"

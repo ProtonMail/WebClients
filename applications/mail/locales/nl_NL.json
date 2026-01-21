@@ -1225,6 +1225,9 @@
       "Save": [
         "Opslaan"
       ],
+      "Save preferences": [
+        "Voorkeuren opslaan"
+      ],
       "Saving${ ellipsis }": [
         "Opslaan${ ellipsis }"
       ],
@@ -1480,9 +1483,6 @@
       "Toggle Contacts app": [
         "Contact app kiezen"
       ],
-      "Toggle notifications": [
-        "Meldingen in- of uitschakelen"
-      ],
       "Toggle referral": [
         "Verwijzing in- of uitschakelen"
       ],
@@ -1505,7 +1505,8 @@
         "Vertrouwen"
       ],
       "Trust key": [
-        "Vertrouwde sleutel"
+        "Sleutel vertrouwen",
+        "Sleutels vertrouwen"
       ],
       "Trust public key": [
         "Publieke sleutel vertrouwen"
@@ -2660,7 +2661,7 @@
         "Chats op hoge snelheid en geavanceerde AI-functies."
       ],
       "Private video calls for the conversations that matter.": [
-        "Privé videogesprekken voor de gesprekken die ertoe doen."
+        "Privé-videogesprekken voor de gesprekken die ertoe doen."
       ]
     },
     "color": {
@@ -5051,7 +5052,7 @@
         "Uw import zal niet worden verwerkt."
       ],
       "Your message cannot be decrypted. If you deleted any of your address keys, try ${ reimportKeyLink } them. ${ learnMoreLink }": [
-        "Uw bericht kan niet worden ontsleuteld. Als u een van uw adres-sleutels hebt verwijderd, probeer deze dan ${ reimportKeyLink } opnieuw te importeren. ${ learnMoreLink }"
+        "Uw bericht kan niet worden ontsleuteld. Als u een van uw adressleutels hebt verwijderd, probeer deze dan ${ reimportKeyLink } opnieuw te importeren. ${ learnMoreLink }"
       ],
       "Your message cannot be decrypted. The key used to encrypt this message does not match any of the keys associated with your address. If you deleted any of your address keys, try ${ reimportKeyLink } them. ${ learnMoreLink }": [
         "Uw bericht kan niet worden ontsleuteld. De sleutel die is gebruikt om dit bericht te versleutelen, komt niet overeen met een van de sleutels die aan uw adres zijn gekoppeld. Als u een van uw adres-sleutels hebt verwijderd, probeer dan ${ reimportKeyLink } opnieuw te importeren. ${ learnMoreLink }"
@@ -7406,8 +7407,7 @@
         "Initialiseren..."
       ],
       "Insert image": [
-        "Afbeelding toevoegen",
-        "Afbeeldingen toevoegen"
+        "Afbeelding invoegen"
       ],
       "Insert link": [
         "Koppeling invoegen"
@@ -9634,6 +9634,9 @@
       "Notification": [
         "Notificatie"
       ],
+      "Notifications": [
+        "Meldingen"
+      ],
       "Notifications are disabled, to enable them change the browser settings.": [
         "Notificaties zijn uitgeschakeld, wijzig de browserinstellingen om ze in te schakelen."
       ],
@@ -9700,6 +9703,9 @@
       "Postal code": [
         "Postcode"
       ],
+      "Premium domain": [
+        "Premium domein"
+      ],
       "Primary": [
         "Primair"
       ],
@@ -9708,6 +9714,9 @@
       ],
       "Proration": [
         "Verrekening"
+      ],
+      "Public domain": [
+        "Publiek domein"
       ],
       "Public keys": [
         "Openbare sleutels"
@@ -9741,9 +9750,6 @@
       ],
       "Search in": [
         "Zoeken in"
-      ],
-      "Select the categories to include, and enable notifications to be alerted about new emails in a category.": [
-        "Selecteer de categorieën die u wilt opnemen, en schakel meldingen in om op de hoogte te worden gesteld van nieuwe e-mails in een categorie."
       ],
       "Send auto-reply": [
         "Automatisch antwoord versturen"
@@ -9894,6 +9900,9 @@
       ],
       "Your alias": [
         "Uw alias"
+      ],
+      "Your domain": [
+        "Uw domein"
       ],
       "Your IP": [
         "Uw IP-adres"

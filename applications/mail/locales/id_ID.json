@@ -1221,6 +1221,9 @@
       "Save": [
         "Simpan"
       ],
+      "Save preferences": [
+        "Simpan preferensi"
+      ],
       "Saving${ ellipsis }": [
         "Menyimpan${ ellipsis }"
       ],
@@ -1476,9 +1479,6 @@
       "Toggle Contacts app": [
         "Tampilkan/sembunyikan aplikasi Kontak"
       ],
-      "Toggle notifications": [
-        "Tampilkan notifikasi"
-      ],
       "Toggle referral": [
         "Aktifkan rujukan"
       ],
@@ -1499,6 +1499,9 @@
       ],
       "Trust": [
         "Percayai"
+      ],
+      "Trust key": [
+        "Percayai kunci"
       ],
       "Trust public key": [
         "Percayai kunci publik"
@@ -2157,6 +2160,9 @@
       "Payments problem": [
         "Masalah pembayaran"
       ],
+      "Sheets problem": [
+        "Masalah lembar kerja"
+      ],
       "Sign in problem": [
         "Masalah masuk"
       ],
@@ -2509,6 +2515,9 @@
       "${ maxSpaceTB } storage": [
         "Ruang penyimpanan ${ maxSpaceTB }"
       ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } pengguna"
+      ],
       "${ planMaxSpace } email storage": [
         "Ruang penyimpanan email ${ planMaxSpace }"
       ],
@@ -2633,6 +2642,9 @@
       ],
       "High-speed chats and advanced AI features.": [
         "Percakapan berkecepatan tinggi dan berbagai fitur AI mutakhir."
+      ],
+      "Private video calls for the conversations that matter.": [
+        "Panggilan video pribadi untuk percakapan yang penting."
       ]
     },
     "color": {
@@ -3831,6 +3843,11 @@
         "Untuk ${ MAIL_APP_NAME }"
       ]
     },
+    "customer_support.feature.meet": {
+      "For ${ MEET_APP_NAME }": [
+        "Untuk ${ MEET_APP_NAME }"
+      ]
+    },
     "customer_support.feature.pass": {
       "For ${ PASS_APP_NAME }": [
         "Untuk ${ PASS_APP_NAME }"
@@ -4801,6 +4818,9 @@
       "re-activate the previous key": [
         "mengaktifkan kembali kunci terdahulu"
       ],
+      "re-importing": [
+        "mengimpor ulang"
+      ],
       "Removed duplicate recipient: ${ recipents }": [
         "Penerima duplikat dihapus: ${ recipents }"
       ],
@@ -4906,6 +4926,9 @@
       "There has been an issue with content search. Default search has been used instead.": [
         "Terjadi kesalahan dengan pencarian konten. Pencarian standar telah digunakan sebagai gantinya."
       ],
+      "There was a problem decrypting your message. If the issue persists, contact our customer support.": [
+        "Terjadi kesalahan dalam mendekripsi pesan Anda. Apabila masalah ini terus berlanjut, hubungi layanan dukungan kami."
+      ],
       "There was an error when exporting the contacts vCards": [
         "Terdapat kesalahan pada saat mengekspor kontak vCard"
       ],
@@ -4992,6 +5015,12 @@
       ],
       "Your import will not be processed.": [
         "Impor Anda tidak akan diproses."
+      ],
+      "Your message cannot be decrypted. If you deleted any of your address keys, try ${ reimportKeyLink } them. ${ learnMoreLink }": [
+        "Pesan Anda tidak dapat didekripsi. Apabila Anda telah menghapus sebagian kunci alamat Anda, cobalah untuk ${ reimportKeyLink } kunci ini. ${ learnMoreLink }"
+      ],
+      "Your message cannot be decrypted. The key used to encrypt this message does not match any of the keys associated with your address. If you deleted any of your address keys, try ${ reimportKeyLink } them. ${ learnMoreLink }": [
+        "Pesan Anda tidak dapat didekripsi. Kunci yang digunakan untuk mengenkripsi pesan ini tidak sesuai dengan kunci mana pun yang terhubung dengan alamat Anda. Apabila Anda telah menghapus kunci alamat Anda, cobalah untuk ${ reimportKeyLink } kunci ini. ${ learnMoreLink }"
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Pencarian Anda membuahkan terlalu banyak hasil. Silakan persempit kriteria pencarian Anda dan coba lagi."
@@ -6095,6 +6124,12 @@
       ],
       "Too many recent requests. Please try again in a few moments.": [
         "Terlalu banyak permintaan baru-baru ini. Silakan coba lagi dalam beberapa saat."
+      ],
+      "Two-factor authentication is enabled in your external account.": [
+        "Autentikasi dua-faktor diaktifkan pada akun eksternal Anda."
+      ],
+      "Two-factor authentication is enabled in your external email account.": [
+        "Autentikasi dua-faktor diaktifkan pada akun email eksternal Anda."
       ],
       "Use your app password if:": [
         "Gunakan kata sandi aplikasi Anda apabila:"
@@ -7348,6 +7383,9 @@
       "Low Priority": [
         "Prioritas Rendah"
       ],
+      "Make ${ MAIL_APP_NAME } your default email application.": [
+        "Jadikan ${ MAIL_APP_NAME } aplikasi email bawaan Anda."
+      ],
       "Manage your folders": [
         "Kelola folder Anda"
       ],
@@ -7686,6 +7724,9 @@
       ],
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Hubungi kami untuk bantuan seputar segala sesuatunya yang berhubungan dengan ${ BRAND_NAME }."
+      ],
+      "Receive notifications for ${ categoryLabel }": [
+        "Terima notifikasi untuk ${ categoryLabel }"
       ],
       "Recipient: ": [
         "Penerima: "
@@ -8067,6 +8108,15 @@
       ],
       "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
         "Pesan ini akan dipindahkan ke Draf agar Anda dapat menyunting kembali isi pesan ini. Anda akan perlu untuk mengatur ulang kapan pesan ini akan dikirimkan."
+      ],
+      "This message will be purged on ${ value }": [
+        "Pesan ini akan dihapus pada ${ value }"
+      ],
+      "This message will be purged today at ${ value }": [
+        "Pesan ini akan dihapus hari ini pada pukul ${ value }"
+      ],
+      "This message will be purged tomorrow at ${ value }": [
+        "Pesan ini akan dihapus besok pada pukul ${ value }"
       ],
       "This message will be sent in the morning at ${ formattedTime }": [
         "Pesan ini akan terkirim di pagi hari pada pukul ${ formattedTime }"
@@ -9074,6 +9124,9 @@
       "Cash": [
         "Tunai"
       ],
+      "Categories": [
+        "Kategori"
+      ],
       "Categories badge": [
         "Lencana kategori"
       ],
@@ -9230,6 +9283,9 @@
       "Filter Name": [
         "Nama Filter"
       ],
+      "Filters": [
+        "Filter"
+      ],
       "First name": [
         "Nama depan"
       ],
@@ -9277,6 +9333,9 @@
       ],
       "Go to Updates": [
         "Ke Pembaruan"
+      ],
+      "Has attachments": [
+        "Memiliki lampiran"
       ],
       "Help us improve categories by choosing the one that best fits this email. Thanks for your help!": [
         "Bantu kami meningkatkan kategori dengan memilih salah satu kategori yang paling sesuai dengan email ini. Terima kasih atas bantuan Anda."
@@ -9431,6 +9490,9 @@
       "Notification": [
         "Pemberitahuan"
       ],
+      "Notifications": [
+        "Notifikasi"
+      ],
       "Notifications are disabled, to enable them change the browser settings.": [
         "Notifikasi sedang dinonaktifkan. Untuk mengaktifkan notifikasi, ubah pengaturan browser."
       ],
@@ -9497,6 +9559,9 @@
       "Postal code": [
         "Kode pos"
       ],
+      "Premium domain": [
+        "Domain premium"
+      ],
       "Primary": [
         "Utama"
       ],
@@ -9505,6 +9570,9 @@
       ],
       "Proration": [
         "Prorasi"
+      ],
+      "Public domain": [
+        "Domain publik"
       ],
       "Public keys": [
         "Kunci publik"
@@ -9539,8 +9607,8 @@
       "Search in": [
         "Cari di"
       ],
-      "Select the categories to include, and enable notifications to be alerted about new emails in a category.": [
-        "Pilih kategori untuk diikutsertakan dan aktifkan notifikasi untuk memperoleh peringatan pada saat terdapat email baru di kategori ini."
+      "Select the categories to include and manage notifications for new emails.": [
+        "Pilih kategori untuk disertakan dan kelola notifikasi untuk email baru."
       ],
       "Send auto-reply": [
         "Kirim pesan balasan otomatis"
@@ -9691,6 +9759,9 @@
       ],
       "Your alias": [
         "Alias Anda"
+      ],
+      "Your domain": [
+        "Domain Anda"
       ],
       "Your IP": [
         "IP Anda"
@@ -10159,6 +10230,50 @@
       ],
       "Trash": [
         "Sampah"
+      ]
+    },
+    "meet_2025: Feature": {
+      "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
+        "${ MEET_APP_NAME }: Pertemuan video rahasia untuk percakapan yang penting"
+      ],
+      "${ n } active meeting at a time": [
+        "${ n } pertemuan yang aktif secara bersamaan"
+      ],
+      "24 hours per meeting": [
+        "24 jam per pertemuan"
+      ],
+      "60 minutes per meeting": [
+        "50 menit per pertemuan"
+      ],
+      "Appointment scheduling": [
+        "Penjadwalan janji temu"
+      ],
+      "Browser, mobile, and desktop apps": [
+        "Aplikasi browser, seluler, dan desktop"
+      ],
+      "Built-in chat": [
+        "Obrolan yang terintegrasi"
+      ],
+      "End-to-end encrypted screen sharing and ephemeral in-call chat": [
+        "Pembagian layar yang terenkripsi end-to-end dan percakapan dalam panggilan yang bersifat sementara"
+      ],
+      "Meeting recording (coming soon)": [
+        "Rekaman pertemuan (segera hadir)"
+      ],
+      "One active meeting at a time": [
+        "Satu pertemuan yang aktif dalam satu waktu"
+      ],
+      "Screen-sharing": [
+        "Pembagian layar"
+      ],
+      "Unlimited meetings per day": [
+        "Tanpa batasan jumlah pertemuan per harinya"
+      ],
+      "Up to ${ n } meeting per day": [
+        "Hingga ${ n } pertemuan per hari"
+      ],
+      "Up to ${ n } participant": [
+        "Hinnga ${ n } peserta"
       ]
     },
     "Message": {
@@ -14262,6 +14377,9 @@
       "Download ${ VPN_APP_NAME }": [
         "Unduh ${ VPN_APP_NAME }"
       ],
+      "Download the desktop app": [
+        "Unduh aplikasi desktop kami"
+      ],
       "Enable ${ DARK_WEB_MONITORING_NAME }": [
         "Aktifkan ${ DARK_WEB_MONITORING_NAME }"
       ],
@@ -15149,6 +15267,9 @@
       "To": [
         "Kepada"
       ],
+      "To preview this spreadsheet, download it.": [
+        "Untuk mempratinjau, unduh lembar kerja ini."
+      ],
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "Untuk mempratinjau lembar kerja ini, buka di ${ SHEETS_APP_NAME } atau unduh."
       ],
@@ -15274,6 +15395,9 @@
       ],
       "Your free trial has ended": [
         "Masa uji coba gratis Anda telah berakhir"
+      ],
+      "Your newsletters in one place": [
+        "Seluruh buletin Anda dalam satu tempat"
       ],
       "Your plan": [
         "Paket Anda"
