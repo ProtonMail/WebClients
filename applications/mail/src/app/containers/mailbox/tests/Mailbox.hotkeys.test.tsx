@@ -1,4 +1,4 @@
-import { fireEvent } from '@testing-library/react';
+import { act, fireEvent, waitFor } from '@testing-library/react';
 
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
@@ -101,15 +101,23 @@ describe('Mailbox hotkeys', () => {
         const { down, enter, escape, history } = await setup();
 
         down();
-        enter();
-        await tick();
+        await act(async () => {
+            enter();
+            await tick();
+        });
 
-        expect(history.location.pathname).toBe(`/${props.labelID}/${conversations[3].ID}`);
+        await waitFor(() => {
+            expect(history.location.pathname).toBe(`/${props.labelID}/${conversations[3].ID}`);
+        });
 
-        escape();
-        await tick();
+        await act(async () => {
+            escape();
+            await tick();
+        });
 
-        expect(history.location.pathname).toBe(`/${props.labelID}`);
+        await waitFor(() => {
+            expect(history.location.pathname).toBe(`/${props.labelID}`);
+        });
     });
 
     it('should navigate to next message with J', async () => {
@@ -122,9 +130,13 @@ describe('Mailbox hotkeys', () => {
 
         const { j, history } = await setup({ conversations, elementID: conversation.ID });
 
-        j();
+        act(() => {
+            j();
+        });
 
-        expect(history.location.pathname).toBe(`/${props.labelID}/${conversations[1].ID}`);
+        await waitFor(() => {
+            expect(history.location.pathname).toBe(`/${props.labelID}/${conversations[1].ID}`);
+        });
     });
 
     it('should navigate to previous message with K', async () => {
@@ -137,9 +149,13 @@ describe('Mailbox hotkeys', () => {
 
         const { k, history } = await setup({ conversations, elementID: conversation.ID });
 
-        k();
+        act(() => {
+            k();
+        });
 
-        expect(history.location.pathname).toBe(`/${props.labelID}/${conversations[3].ID}`);
+        await waitFor(() => {
+            expect(history.location.pathname).toBe(`/${props.labelID}/${conversations[3].ID}`);
+        });
     });
 
     it('should allow to select elements with keyboard', async () => {

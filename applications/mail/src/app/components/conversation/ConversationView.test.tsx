@@ -95,7 +95,9 @@ describe('ConversationView', () => {
             result.store.dispatch(initializeMessage(messageState));
         }
 
-        await rerender();
+        await act(async () => {
+            await rerender();
+        });
 
         const messageElements = result.container.querySelectorAll<HTMLElement>(
             '[data-shortcut-target="message-container"]'
@@ -148,7 +150,9 @@ describe('ConversationView', () => {
                 );
             });
 
-            await rerender();
+            await act(async () => {
+                await rerender();
+            });
             screen.getByText(newSubject);
         });
 
@@ -173,7 +177,9 @@ describe('ConversationView', () => {
             });
             screen.getByText(conversation.Subject as string);
 
-            await rerender({ conversationID: conversation2.ID });
+            await act(async () => {
+                await rerender({ conversationID: conversation2.ID });
+            });
             screen.getByText(conversation2.Subject as string);
         });
 
@@ -248,7 +254,9 @@ describe('ConversationView', () => {
             await waitFor(() => {
                 expect(getSpy).toHaveBeenCalledTimes(2);
             });
-            await rerender();
+            await act(async () => {
+                await rerender();
+            });
 
             expect(header.getAttribute('class')).not.toContain('is-loading');
             screen.getByText(conversation.Subject as string);
@@ -304,7 +312,9 @@ describe('ConversationView', () => {
             const tryAgain = screen.getByText('Try again');
             fireEvent.click(tryAgain);
 
-            await rerender();
+            await act(async () => {
+                await rerender();
+            });
 
             screen.getByText(conversation.Subject as string);
         });
@@ -325,7 +335,9 @@ describe('ConversationView', () => {
 
             const { store, rerender, container } = await mailTestRender(<></>);
             store.dispatch(initializeConversation(conversationState));
-            await rerender(<TestComponent {...props} />);
+            await act(async () => {
+                await rerender(<TestComponent {...props} />);
+            });
 
             const itemContainer = container.querySelector('[data-shortcut-target="item-container"]');
             const firstMessage = container.querySelector('[data-shortcut-target="message-container"]') as HTMLElement;
