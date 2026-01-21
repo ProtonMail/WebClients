@@ -305,6 +305,9 @@ export const filterElementsInState = ({
     disabledCategoriesIDs?: string[];
 }) => {
     const bypassFilterSet = new Set(bypassFilter);
+    const isCurrentLabelDefaultCategory = labelID === MAILBOX_LABEL_IDS.CATEGORY_DEFAULT;
+    const isCurrentLabelCategory = CATEGORY_LABEL_IDS_SET.has(labelID as CategoryLabelID);
+
     return elements.filter((element) => {
         // Check ID and label first (cheapest operations)
 
@@ -325,9 +328,6 @@ export const filterElementsInState = ({
         if (labelID !== MAILBOX_LABEL_IDS.SOFT_DELETED && labelIDsMap[MAILBOX_LABEL_IDS.SOFT_DELETED]) {
             return false;
         }
-
-        const isCurrentLabelDefaultCategory = labelID === MAILBOX_LABEL_IDS.CATEGORY_DEFAULT;
-        const isCurrentLabelCategory = CATEGORY_LABEL_IDS_SET.has(labelID as CategoryLabelID);
 
         // Check if element has a disabled category label (only relevant for default category view)
         const elementContainsDisabledCategoryLabel =
