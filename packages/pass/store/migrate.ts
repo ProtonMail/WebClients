@@ -1,7 +1,8 @@
 import { isB2BAdmin } from '@proton/pass/lib/organization/helpers';
 import type { FiltersState } from '@proton/pass/store/reducers';
-import type { MaybeNull } from '@proton/pass/types';
+import type { MaybeNull, PassCryptoSnapshot, SerializedCryptoContext } from '@proton/pass/types';
 import type { EncryptedPassCache } from '@proton/pass/types/worker/cache';
+import { logId, logger } from '@proton/pass/utils/logger';
 import { type XorObfuscation, obfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { objectFilter } from '@proton/pass/utils/object/filter';
 import { objectMap } from '@proton/pass/utils/object/map';
@@ -24,7 +25,7 @@ export const cacheGuard = (encryptedCache: Partial<EncryptedPassCache>, appVersi
     return {};
 };
 
-export const migrate = (state: State, versions: { from?: string; to: string }) => {
+export const migrate = (state: State, snapshot: SerializedCryptoContext<PassCryptoSnapshot>, versions: { from?: string; to: string }) => {
     const user = selectUser(state);
     const plan = selectPassPlan(state);
 
@@ -103,12 +104,23 @@ export const migrate = (state: State, versions: { from?: string; to: string }) =
     /** Clear request cache on update */
     if (!versions.from || semver(versions.from) < semver(versions.to)) state.request = {};
 
-    /** v1.28.0 migration */
     for (const shareId in state.shares) {
         const share = state.shares[shareId];
+
+        /** v1.28.0 migration */
         if ('invites' in share) delete share.invites;
         if ('newUserInvites' in share) delete share.newUserInvites;
         if ('members' in share) delete share.members;
+
+        /** v1.34.x AddressID migration */
+        if (!share.addressId) {
+            const shares = Object.fromEntries(snapshot.shareManagers);
+            const match = shares[shareId]?.share;
+            if (match) {
+                logger.debug(`[Migration] Auto-hydrated addressID from crypto snapshot for share ${logId(shareId)}`);
+                share.addressId = match.addressId;
+            }
+        }
     }
 
     return state;

@@ -53,7 +53,9 @@ export function* hydrate(
             ? yield decryptCache(cacheKey, encryptedCache).catch((err) => (allowFailure ? undefined : throwError(err)))
             : undefined;
 
-        const cachedState = cache?.state ? migrate(cache.state, { from: encryptedCache.version, to: getConfig().APP_VERSION }) : undefined;
+        const cachedState = cache?.state
+            ? migrate(cache.state, cache.snapshot, { from: encryptedCache.version, to: getConfig().APP_VERSION })
+            : undefined;
 
         const cachedUser = cachedState?.user;
         const snapshot = cache?.snapshot;
