@@ -1694,6 +1694,9 @@
       ],
       "Zoom out": [
         "Loitonna"
+      ],
+      "Save preferences": [
+        "Tallenna asetukset"
       ]
     },
     "action": {
@@ -2180,6 +2183,9 @@
       ],
       "Website access problem": [
         "Verkkosivuston avautumisongelma"
+      ],
+      "Sheets problem": [
+        "Taulukko-ongelma"
       ]
     },
     "Button": {
@@ -6136,6 +6142,12 @@
       ],
       "Your password is correct.": [
         "Salasanasi on oikein."
+      ],
+      "Two-factor authentication is enabled in your external account.": [
+        "Kaksivaiheinen todennus on käytössä ulkoisessa tilissäsi."
+      ],
+      "Two-factor authentication is enabled in your external email account.": [
+        "Kaksivaiheinen todennus on käytössä ulkoisessa sähköpostitilissäsi."
       ]
     },
     "Import ICS file from Mail": {
@@ -7329,7 +7341,8 @@
         "Valmistellaan…"
       ],
       "Insert image": [
-        "Lisää kuva"
+        "Lisää kuva",
+        "Lisää kuvia"
       ],
       "Insert link": [
         "Lisää linkki"
@@ -8742,6 +8755,9 @@
       ],
       "This message will be purged tomorrow at ${ value }": [
         "Tämä viesti poistetaan huomenna klo ${ value }."
+      ],
+      "Receive notifications for ${ categoryLabel }": [
+        "Vastaanota ilmoituksia kategoriasta ${ categoryLabel }"
       ]
     },
     "info": {
@@ -9810,6 +9826,24 @@
       ],
       "Has attachments": [
         "Sisältää liitteitä"
+      ],
+      "Categories": [
+        "Kategoriat"
+      ],
+      "Notifications": [
+        "Ilmoitukset"
+      ],
+      "Premium domain": [
+        "Premium-verkkotunnus"
+      ],
+      "Public domain": [
+        "Julkinen verkkotunnus"
+      ],
+      "Select the categories to include and manage notifications for new emails.": [
+        "Valitse sisällytettävät kategoriat ja hallitse uusien sähköpostien ilmoituksia."
+      ],
+      "Your domain": [
+        "Sinun verkkotunnuksesi"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -15390,6 +15424,9 @@
       ],
       "✨ Categories are coming!": [
         "✨ Luokat ovat tulossa!"
+      ],
+      "To preview this spreadsheet, download it.": [
+        "Voit esikatsella taulukkoa lataamalla sen."
       ]
     },
     "Today icon tooltip in mini calendar": {

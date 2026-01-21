@@ -1697,6 +1697,9 @@
       ],
       "Zoom out": [
         "Zoom ut"
+      ],
+      "Save preferences": [
+        "Lagre preferanser"
       ]
     },
     "action": {
@@ -2200,6 +2203,9 @@
       ],
       "Website access problem": [
         "Problem med tilgang til nettsted"
+      ],
+      "Sheets problem": [
+        "Regneark-problem"
       ]
     },
     "Button": {
@@ -6203,6 +6209,12 @@
       ],
       "Your password is correct.": [
         "Passordet ditt er riktig."
+      ],
+      "Two-factor authentication is enabled in your external account.": [
+        "Tofaktorautentisering er aktivert i den eksterne kontoen din."
+      ],
+      "Two-factor authentication is enabled in your external email account.": [
+        "Tofaktorautentisering er aktivert i den eksterne e-postkontoen din."
       ]
     },
     "Import ICS file from Mail": {
@@ -7402,7 +7414,8 @@
         "Initialiserer…"
       ],
       "Insert image": [
-        "Sett inn bilde"
+        "Sett inn bilde",
+        "Sett inn bilder"
       ],
       "Insert link": [
         "Sett inn kobling"
@@ -8833,6 +8846,9 @@
       ],
       "This message will be purged tomorrow at ${ value }": [
         "Denne meldingen vil bli slettet i morgen kl. ${ value }."
+      ],
+      "Receive notifications for ${ categoryLabel }": [
+        "Motta varsler for ${ categoryLabel }"
       ]
     },
     "info": {
@@ -9907,6 +9923,24 @@
       ],
       "Has attachments": [
         "Har vedlegg"
+      ],
+      "Categories": [
+        "Kategorier"
+      ],
+      "Notifications": [
+        "Varsler"
+      ],
+      "Premium domain": [
+        "Premium-domene"
+      ],
+      "Public domain": [
+        "Offentlig domene"
+      ],
+      "Select the categories to include and manage notifications for new emails.": [
+        "Velg kategoriene som skal inkluderes og administrer varsler for nye e-poster."
+      ],
+      "Your domain": [
+        "Ditt domene"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -14606,6 +14640,9 @@
       ],
       "Show me how": [
         "Vis meg hvordan"
+      ],
+      "Download the desktop app": [
+        "Last ned skrivebordsappen"
       ]
     },
     "Title": {
@@ -15631,6 +15668,9 @@
       ],
       "✨ Categories are coming!": [
         "✨ Kategorier kommer!"
+      ],
+      "To preview this spreadsheet, download it.": [
+        "For å forhåndsvise dette regnearket, last det ned."
       ]
     },
     "Today icon tooltip in mini calendar": {

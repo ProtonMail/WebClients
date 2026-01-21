@@ -1696,6 +1696,9 @@
       ],
       "Zoom out": [
         "Σμίκρυνση"
+      ],
+      "Save preferences": [
+        "Αποθήκευση προτιμήσεων"
       ]
     },
     "action": {
@@ -2199,6 +2202,9 @@
       ],
       "Website access problem": [
         "Πρόβλημα πρόσβασης ιστοσελίδας"
+      ],
+      "Sheets problem": [
+        "Πρόβλημα Sheets"
       ]
     },
     "Button": {
@@ -6202,6 +6208,12 @@
       ],
       "Your password is correct.": [
         "Ο κωδικός πρόσβασής σας είναι σωστός."
+      ],
+      "Two-factor authentication is enabled in your external account.": [
+        "Η ταυτοποίηση δύο παραγόντων είναι ενεργοποιημένη στον εξωτερικό λογαριασμό σας."
+      ],
+      "Two-factor authentication is enabled in your external email account.": [
+        "Η ταυτοποίηση δύο παραγόντων είναι ενεργοποιημένη στον εξωτερικό λογαριασμό email σας."
       ]
     },
     "Import ICS file from Mail": {
@@ -7401,7 +7413,8 @@
         "Προετοιμασία…"
       ],
       "Insert image": [
-        "Εισαγωγή εικόνας"
+        "Εισαγωγή εικόνας",
+        "Εισαγωγή εικόνων"
       ],
       "Insert link": [
         "Εισαγωγή συνδέσμου"
@@ -8832,6 +8845,9 @@
       ],
       "This message will be purged tomorrow at ${ value }": [
         "Αυτό το μήνυμα θα εκκαθαριστεί αύριο στις ${ value }"
+      ],
+      "Receive notifications for ${ categoryLabel }": [
+        "Λάβετε ειδοποιήσεις για ${ categoryLabel }"
       ]
     },
     "info": {
@@ -9906,6 +9922,24 @@
       ],
       "Has attachments": [
         "Έχει συνημμένα"
+      ],
+      "Categories": [
+        "Κατηγορίες"
+      ],
+      "Notifications": [
+        "Ειδοποιήσεις"
+      ],
+      "Premium domain": [
+        "Premium τομέας"
+      ],
+      "Public domain": [
+        "Δημόσιος τομέας"
+      ],
+      "Select the categories to include and manage notifications for new emails.": [
+        "Επιλέξτε τις κατηγορίες που θέλετε να συμπεριλάβετε και διαχειριστείτε τις ειδοποιήσεις για νέα μηνύματα ηλεκτρονικού ταχυδρομείου."
+      ],
+      "Your domain": [
+        "Ο τομέας σας"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -15633,6 +15667,9 @@
       ],
       "✨ Categories are coming!": [
         "✨ Οι κατηγορίες έρχονται!"
+      ],
+      "To preview this spreadsheet, download it.": [
+        "Για να δείτε αυτό το υπολογιστικό φύλλο, κατεβάστε το."
       ]
     },
     "Today icon tooltip in mini calendar": {

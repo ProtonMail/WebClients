@@ -2136,6 +2136,9 @@
       ],
       "Website access problem": [
         "Problem z dostępem do strony"
+      ],
+      "Sheets problem": [
+        "Problem z arkuszem"
       ]
     },
     "Button": {
@@ -6044,6 +6047,12 @@
       ],
       "Your password is correct.": [
         "Hasło jest prawidłowe."
+      ],
+      "Two-factor authentication is enabled in your external account.": [
+        "Uwierzytelnianie dwuskładnikowe jest włączone na Twoim zewnętrznym koncie."
+      ],
+      "Two-factor authentication is enabled in your external email account.": [
+        "Uwierzytelnianie dwuskładnikowe jest włączone na Twoim zewnętrznym koncie e-mail."
       ]
     },
     "Import ICS file from Mail": {
@@ -7328,7 +7337,10 @@
         "Inicjowanie…"
       ],
       "Insert image": [
-        "Wstaw obraz"
+        "Wstaw obraz",
+        "Wstaw obrazy",
+        "Wstaw obrazy",
+        "Wstaw obrazy"
       ],
       "Insert link": [
         "Wstaw link"
@@ -8772,6 +8784,15 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Od uporządkowanej skrzynki odbiorczej dzieli Cię kilka kliknięć"
+      ],
+      "This message will be purged on ${ value }": [
+        "Ta wiadomość zostanie usunięta ${ value }"
+      ],
+      "This message will be purged today at ${ value }": [
+        "Ta wiadomość zostanie usunięta dzisiaj o ${ value }"
+      ],
+      "This message will be purged tomorrow at ${ value }": [
+        "Ta wiadomość zostanie usunięta jutro o ${ value }"
       ]
     },
     "info": {
@@ -9736,6 +9757,24 @@
       ],
       "ZIP code": [
         "Kod pocztowy"
+      ],
+      "Filters": [
+        "Filtry"
+      ],
+      "Has attachments": [
+        "Zawiera załącznik"
+      ],
+      "Notifications": [
+        "Powiadomienia"
+      ],
+      "Premium domain": [
+        "Domena premium"
+      ],
+      "Public domain": [
+        "Domena publiczna"
+      ],
+      "Your domain": [
+        "Twoja domena"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -14349,6 +14388,9 @@
       ],
       "Show me how": [
         "Pokaż jak"
+      ],
+      "Download the desktop app": [
+        "Pobierz aplikację na komputer"
       ]
     },
     "Title": {
@@ -15350,6 +15392,9 @@
       ],
       "Your shorter address is now ready": [
         "Krótszy adres jest już gotowy"
+      ],
+      "To preview this spreadsheet, download it.": [
+        "Aby wyświetlić podgląd tego arkusza kalkulacyjnego, pobierz go."
       ]
     },
     "Today icon tooltip in mini calendar": {

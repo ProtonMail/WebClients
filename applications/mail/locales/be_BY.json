@@ -1706,6 +1706,9 @@
       ],
       "Zoom out": [
         "Паменшыць"
+      ],
+      "Save preferences": [
+        "Захаваць параметры"
       ]
     },
     "action": {
@@ -2225,6 +2228,9 @@
       ],
       "Website access problem": [
         "Праблема з доступам да вэб-сайта"
+      ],
+      "Sheets problem": [
+        "Праблема з электроннай табліцай"
       ]
     },
     "Button": {
@@ -6308,6 +6314,12 @@
       ],
       "Your password is correct.": [
         "Ваш пароль правільны."
+      ],
+      "Two-factor authentication is enabled in your external account.": [
+        "Двухфактарная аўтэнтыфікацыя ўключана ў вашым знешнім уліковым запісе."
+      ],
+      "Two-factor authentication is enabled in your external email account.": [
+        "Двухфактарная аўтэнтыфікацыя ўключана ў вашым знешнім уліковым запісе электроннай пошты."
       ]
     },
     "Import ICS file from Mail": {
@@ -7637,7 +7649,10 @@
         "Ініцыялізацыя…"
       ],
       "Insert image": [
-        "Уставіць відарыс"
+        "Уставіць відарыс",
+        "Уставіць відарысы",
+        "Уставіць відарысы",
+        "Уставіць відарысы"
       ],
       "Insert link": [
         "Уставіць спасылку"
@@ -9114,6 +9129,9 @@
       ],
       "This message will be purged tomorrow at ${ value }": [
         "Гэтае паведамленне будзе ачышчана заўтра ў ${ value }"
+      ],
+      "Receive notifications for ${ categoryLabel }": [
+        "Атрымліваць апавяшчэнні для ${ categoryLabel }"
       ]
     },
     "info": {
@@ -10204,6 +10222,24 @@
       ],
       "Has attachments": [
         "Змяшчаюць далучэнні"
+      ],
+      "Categories": [
+        "Катэгорыі"
+      ],
+      "Notifications": [
+        "Апавяшчэнні"
+      ],
+      "Premium domain": [
+        "Прэміяльны дамен"
+      ],
+      "Public domain": [
+        "публічны дамен"
+      ],
+      "Select the categories to include and manage notifications for new emails.": [
+        "Выберыце катэгорыі для ўключэння і кіруйце апавяшчэннямі для новых лістоў."
+      ],
+      "Your domain": [
+        "Ваш дамен"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -16203,6 +16239,9 @@
       ],
       "✨ Categories are coming!": [
         "✨ Неўзабаве чакайце катэгорыі!"
+      ],
+      "To preview this spreadsheet, download it.": [
+        "Спампуйце гэту электронную табліцу, каб папярэдне прагледзець яе."
       ]
     },
     "Today icon tooltip in mini calendar": {

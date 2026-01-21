@@ -1691,6 +1691,9 @@
       ],
       "Zoom out": [
         "Perkecil"
+      ],
+      "Save preferences": [
+        "Simpan preferensi"
       ]
     },
     "action": {
@@ -2186,6 +2189,9 @@
       ],
       "Website access problem": [
         "Masalah akses situs"
+      ],
+      "Sheets problem": [
+        "Masalah lembar kerja"
       ]
     },
     "Button": {
@@ -2553,6 +2559,9 @@
       ],
       "Ultra fast and private VPN": [
         "VPN ultra cepat dan privat"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } pengguna"
       ]
     },
     "Checkout row": {
@@ -2636,6 +2645,9 @@
       ],
       "High-speed chats and advanced AI features.": [
         "Percakapan berkecepatan tinggi dan berbagai fitur AI mutakhir."
+      ],
+      "Private video calls for the conversations that matter.": [
+        "Panggilan video pribadi untuk percakapan yang penting."
       ]
     },
     "color": {
@@ -5004,6 +5016,18 @@
       ],
       "ZIP code is required": [
         "Kode pos diperlukan"
+      ],
+      "re-importing": [
+        "mengimpor ulang"
+      ],
+      "There was a problem decrypting your message. If the issue persists, contact our customer support.": [
+        "Terjadi kesalahan dalam mendekripsi pesan Anda. Apabila masalah ini terus berlanjut, hubungi layanan dukungan kami."
+      ],
+      "Your message cannot be decrypted. If you deleted any of your address keys, try ${ reimportKeyLink } them. ${ learnMoreLink }": [
+        "Pesan Anda tidak dapat didekripsi. Apabila Anda telah menghapus sebagian kunci alamat Anda, cobalah untuk ${ reimportKeyLink } kunci ini. ${ learnMoreLink }"
+      ],
+      "Your message cannot be decrypted. The key used to encrypt this message does not match any of the keys associated with your address. If you deleted any of your address keys, try ${ reimportKeyLink } them. ${ learnMoreLink }": [
+        "Pesan Anda tidak dapat didekripsi. Kunci yang digunakan untuk mengenkripsi pesan ini tidak sesuai dengan kunci mana pun yang terhubung dengan alamat Anda. Apabila Anda telah menghapus kunci alamat Anda, cobalah untuk ${ reimportKeyLink } kunci ini. ${ learnMoreLink }"
       ]
     },
     "error": {
@@ -6131,6 +6155,12 @@
       ],
       "Your password is correct.": [
         "Kata sandi Anda benar."
+      ],
+      "Two-factor authentication is enabled in your external account.": [
+        "Autentikasi dua-faktor diaktifkan pada akun eksternal Anda."
+      ],
+      "Two-factor authentication is enabled in your external email account.": [
+        "Autentikasi dua-faktor diaktifkan pada akun email eksternal Anda."
       ]
     },
     "Import ICS file from Mail": {
@@ -8661,6 +8691,21 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Anda hanya berjarak beberapa klik dari kotak masuk yang rapi"
+      ],
+      "Make ${ MAIL_APP_NAME } your default email application.": [
+        "Jadikan ${ MAIL_APP_NAME } aplikasi email bawaan Anda."
+      ],
+      "Receive notifications for ${ categoryLabel }": [
+        "Terima notifikasi untuk ${ categoryLabel }"
+      ],
+      "This message will be purged on ${ value }": [
+        "Pesan ini akan dihapus pada ${ value }"
+      ],
+      "This message will be purged today at ${ value }": [
+        "Pesan ini akan dihapus hari ini pada pukul ${ value }"
+      ],
+      "This message will be purged tomorrow at ${ value }": [
+        "Pesan ini akan dihapus besok pada pukul ${ value }"
       ]
     },
     "info": {
@@ -9721,6 +9766,30 @@
       ],
       "ZIP code": [
         "Kode pos"
+      ],
+      "Categories": [
+        "Kategori"
+      ],
+      "Filters": [
+        "Filter"
+      ],
+      "Has attachments": [
+        "Memiliki lampiran"
+      ],
+      "Notifications": [
+        "Notifikasi"
+      ],
+      "Premium domain": [
+        "Domain premium"
+      ],
+      "Public domain": [
+        "Domain publik"
+      ],
+      "Select the categories to include and manage notifications for new emails.": [
+        "Pilih kategori untuk disertakan dan kelola notifikasi untuk email baru."
+      ],
+      "Your domain": [
+        "Domain Anda"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -14296,6 +14365,9 @@
       ],
       "Show me how": [
         "Tunjukkan caranya kepada saya"
+      ],
+      "Download the desktop app": [
+        "Unduh aplikasi desktop kami"
       ]
     },
     "Title": {
@@ -15306,6 +15378,12 @@
       ],
       "✨ Categories are coming!": [
         "✨ Kategori akan segera hadir!"
+      ],
+      "To preview this spreadsheet, download it.": [
+        "Untuk mempratinjau, unduh lembar kerja ini."
+      ],
+      "Your newsletters in one place": [
+        "Seluruh buletin Anda dalam satu tempat"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15838,6 +15916,55 @@
       ],
       "Passcode:": [
         "Kode sandi:"
+      ]
+    },
+    "customer_support.feature.meet": {
+      "For ${ MEET_APP_NAME }": [
+        "Untuk ${ MEET_APP_NAME }"
+      ]
+    },
+    "meet_2025: Feature": {
+      "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
+        "${ MEET_APP_NAME }: Pertemuan video rahasia untuk percakapan yang penting"
+      ],
+      "${ n } active meeting at a time": [
+        "${ n } pertemuan yang aktif secara bersamaan"
+      ],
+      "24 hours per meeting": [
+        "24 jam per pertemuan"
+      ],
+      "60 minutes per meeting": [
+        "50 menit per pertemuan"
+      ],
+      "Appointment scheduling": [
+        "Penjadwalan janji temu"
+      ],
+      "Browser, mobile, and desktop apps": [
+        "Aplikasi browser, seluler, dan desktop"
+      ],
+      "Built-in chat": [
+        "Obrolan yang terintegrasi"
+      ],
+      "End-to-end encrypted screen sharing and ephemeral in-call chat": [
+        "Pembagian layar yang terenkripsi end-to-end dan percakapan dalam panggilan yang bersifat sementara"
+      ],
+      "Meeting recording (coming soon)": [
+        "Rekaman pertemuan (segera hadir)"
+      ],
+      "One active meeting at a time": [
+        "Satu pertemuan yang aktif dalam satu waktu"
+      ],
+      "Screen-sharing": [
+        "Pembagian layar"
+      ],
+      "Unlimited meetings per day": [
+        "Tanpa batasan jumlah pertemuan per harinya"
+      ],
+      "Up to ${ n } meeting per day": [
+        "Hingga ${ n } pertemuan per hari"
+      ],
+      "Up to ${ n } participant": [
+        "Hinnga ${ n } peserta"
       ]
     }
   }

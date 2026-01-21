@@ -1697,6 +1697,9 @@
       ],
       "Zoom out": [
         "Zoom indietro"
+      ],
+      "Save preferences": [
+        "Salva le preferenze"
       ]
     },
     "action": {
@@ -2200,6 +2203,9 @@
       ],
       "Website access problem": [
         "Problema di accesso al sito web"
+      ],
+      "Sheets problem": [
+        "Problema fogli"
       ]
     },
     "Button": {
@@ -6203,6 +6209,12 @@
       ],
       "Your password is correct.": [
         "La tua password sia corretta."
+      ],
+      "Two-factor authentication is enabled in your external account.": [
+        "L'autenticazione a due fattori è abilitata nel tuo account esterno."
+      ],
+      "Two-factor authentication is enabled in your external email account.": [
+        "L'autenticazione a due fattori è abilitata nel tuo account email esterno."
       ]
     },
     "Import ICS file from Mail": {
@@ -7402,7 +7414,8 @@
         "Inizializzazione…"
       ],
       "Insert image": [
-        "Inserisci immagine"
+        "Inserisci immagine",
+        "Inserisci immagini"
       ],
       "Insert link": [
         "Inserisci link"
@@ -8833,6 +8846,9 @@
       ],
       "This message will be purged tomorrow at ${ value }": [
         "Questo messaggio verrà eliminato domani alle ${ value }"
+      ],
+      "Receive notifications for ${ categoryLabel }": [
+        "Ricevi notifiche per ${ categoryLabel }"
       ]
     },
     "info": {
@@ -9907,6 +9923,24 @@
       ],
       "Has attachments": [
         "Ha allegati"
+      ],
+      "Categories": [
+        "Categorie"
+      ],
+      "Notifications": [
+        "Notifiche"
+      ],
+      "Premium domain": [
+        "Dominio Premium"
+      ],
+      "Public domain": [
+        "Dominio pubblico"
+      ],
+      "Select the categories to include and manage notifications for new emails.": [
+        "Seleziona le categorie da includere e gestisci le notifiche per le nuove email."
+      ],
+      "Your domain": [
+        "Il tuo dominio"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -14606,6 +14640,9 @@
       ],
       "Show me how": [
         "Mostrami come"
+      ],
+      "Download the desktop app": [
+        "Scarica l'app desktop"
       ]
     },
     "Title": {
@@ -15631,6 +15668,9 @@
       ],
       "✨ Categories are coming!": [
         "✨ Le categorie stanno arrivando!"
+      ],
+      "To preview this spreadsheet, download it.": [
+        "Per visualizzare l'anteprima di questo foglio di calcolo, scaricalo."
       ]
     },
     "Today icon tooltip in mini calendar": {
