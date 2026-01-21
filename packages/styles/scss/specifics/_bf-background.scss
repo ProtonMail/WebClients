@@ -1,9 +1,0 @@
-@mixin bf-bgs {
-	&--bf-bg {
-		--logo-text-proton-color: white;
-		--logo-text-product-color: white;
-
-		background: radial-gradient(69.05% 69.05% at 50% 0%, #5a3ecf 0%, #1b1340 100%),
-			linear-gradient(0deg, #191927, #191927);
-	}
-}
