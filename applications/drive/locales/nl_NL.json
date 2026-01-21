@@ -1809,7 +1809,7 @@
         "Chats op hoge snelheid en geavanceerde AI-functies."
       ],
       "Private video calls for the conversations that matter.": [
-        "Privé videogesprekken voor de gesprekken die ertoe doen."
+        "Privé-videogesprekken voor de gesprekken die ertoe doen."
       ]
     },
     "color": {
@@ -7332,8 +7332,14 @@
       "Postal code": [
         "Postcode"
       ],
+      "Premium domain": [
+        "Premium domein"
+      ],
       "Proration": [
         "Verrekening"
+      ],
+      "Public domain": [
+        "Publiek domein"
       ],
       "Public keys": [
         "Openbare sleutels"
@@ -7505,6 +7511,9 @@
       ],
       "Your alias": [
         "Uw alias"
+      ],
+      "Your domain": [
+        "Uw domein"
       ],
       "Your IP": [
         "Uw IP-adres"
@@ -12575,15 +12584,6 @@
       ],
       "The link expired": [
         "De koppeling is verlopen"
-      ],
-      "The verification of the encryption keys' signature by the original creator (${ claimedKeyAuthor }) who created the node failed. The reason is: ${ nodeEntity.keyAuthor.error.error }": [
-        "De verificatie van de handtekening van de encryptiesleutels door de oorspronkelijke maker (${ claimedKeyAuthor }) die de node heeft gemaakt, is mislukt. De reden is: ${ nodeEntity.keyAuthor.error.error }"
-      ],
-      "The verification of the file's content signature by the uploader (${ claimedContentAuthor }) who uploaded the last revision failed. The reason is: ${ activeRevision.contentAuthor.error.error }": [
-        "De verificatie van inhoudssignatuur van het bestand door de uploader (${ claimedContentAuthor }) die de laatste revisie heeft opgeladen, is mislukt. De reden is: ${ activeRevision.contentAuthor.error.error }"
-      ],
-      "The verification of the name's signature by author (${ claimedNameAuthor }) who set the name the last time failed. The reason is: ${ nodeEntity.nameAuthor.error.error }": [
-        "De verificatie van de handtekening van de naam door auteur (${ claimedNameAuthor }) die de naam de laatste keer heeft ingesteld, is mislukt. De reden is: ${ nodeEntity.nameAuthor.error.error }"
       ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "Het bestand heeft een ontbrekende of ongeldige handtekening. Ga naar Menu (⋮) → Details voor info."

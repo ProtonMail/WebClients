@@ -6065,6 +6065,9 @@
       "Thank you for subscribing. Secure browsing starts now.": [
         "მადლობა გამოწერისთვის. ინტერნეტში დაცულად მუშაობა ახლა იწყება."
       ],
+      "that": [
+        "ის"
+      ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "ამ ანგარიშს შეიძლება, ახალი გასაღები ჰქონდეს, ან შეიცვალა: ${ items } არ გახსნათ, თუ არ ენდობით."
       ],
@@ -6388,6 +6391,9 @@
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "2FA-ის მორგებისას ჩვენ მოგაწოდებთ აღდგენის კოდებს, რომელიც შეგიძლიათ, გამოიყენოთ ანგარიშში შესასვლელად იმ შემთხვევაშიც კი, თუ თქვენს ავთენტიკატორ აპთან წვდომას დაკარგავთ."
+      ],
+      "who": [
+        "ვინ"
       ],
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
         "${ formattedRevisionDate }-დან ამ ვერსიამდე აღდგება. ყველა დანარჩენი ვერსია ჯერ კიდევ დაგრჩებათ."
@@ -7167,8 +7173,14 @@
       "Postal code": [
         "საფოსტო კოდი"
       ],
+      "Premium domain": [
+        "ფასიანი დომენი"
+      ],
       "Proration": [
         "პროპორცია"
+      ],
+      "Public domain": [
+        "საჯარო დომენი"
       ],
       "Public keys": [
         "საჯარო გასაღებები"
@@ -7340,6 +7352,9 @@
       ],
       "Your alias": [
         "თქვენი ფსევდონიმი"
+      ],
+      "Your domain": [
+        "თქვენი დომენი"
       ],
       "Your IP": [
         "თქვენი IP"

@@ -1559,6 +1559,9 @@
       "Payments problem": [
         "Problem z płatnościami"
       ],
+      "Sheets problem": [
+        "Problem z arkuszem"
+      ],
       "Sign in problem": [
         "Problem z logowaniem"
       ],
@@ -3214,6 +3217,9 @@
       "Failed to get details, please try again later": [
         "Nie udało się pobrać szczegółów. Spróbuj ponownie później"
       ],
+      "Failed to load signature details, please try again later": [
+        "Nie udało się załadować szczegółów podpisu, spróbuj ponownie później"
+      ],
       "Failed to load the STL preview": [
         "Nie udało się załadować podglądu STL"
       ],
@@ -3615,6 +3621,9 @@
       ],
       "We were not able to load some of your shared items": [
         "Nie mogliśmy załadować niektórych udostępnionych elementów"
+      ],
+      "We were not able to load the folder contents": [
+        "Nie udało nam się załadować zawartości folderu"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Nie możesz wysłać wiadomości do ponad ${ maxContacts } odbiorcy",
@@ -4395,6 +4404,12 @@
       "Too many recent requests. Please try again in a few moments.": [
         "Zbyt wiele żądań w ostatnim czasie. Spróbuj ponownie za kilka chwil."
       ],
+      "Two-factor authentication is enabled in your external account.": [
+        "Uwierzytelnianie dwuskładnikowe jest włączone na Twoim zewnętrznym koncie."
+      ],
+      "Two-factor authentication is enabled in your external email account.": [
+        "Uwierzytelnianie dwuskładnikowe jest włączone na Twoim zewnętrznym koncie e-mail."
+      ],
       "Use your app password if:": [
         "Użyj hasła aplikacji, jeśli:"
       ],
@@ -4630,6 +4645,9 @@
         "${ contactsLength } kontakty",
         "${ contactsLength } kontaktów",
         "${ contactsLength } kontaktów"
+      ],
+      "${ DOCS_APP_NAME } and ${ SHEETS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
+        "Pliki ${ DOCS_APP_NAME } i ${ SHEETS_APP_NAME } nie mogą zostać pobrane bezpośrednio i nie zostaną uwzględnione w tym pobieraniu. Możesz pobrać pozostałe pliki, klikając „Kontynuuj pobieranie”."
       ],
       "${ doneCount } finished": [
         "Transfer ${ doneCount } pliku został zakończony",
@@ -6023,6 +6041,9 @@
       "Thank you for subscribing. Secure browsing starts now.": [
         "Dziękujemy za subskrypcję. Bezpieczne przeglądanie zaczyna się teraz."
       ],
+      "that": [
+        "ten"
+      ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Konto może mieć nowy klucz lub poniższe elementy mogły zostać naruszone: ${ items }. Otwórz te elementy tylko wtedy, kiedy masz do nich zaufanie."
       ],
@@ -6142,6 +6163,9 @@
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Wyślij ${ btcAmountBold } na poniższy adres, aby zakończyć płatność."
+      ],
+      "To download these files, open them in ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME } and export them.": [
+        "Aby pobrać te pliki, otwórz je w ${ DOCS_APP_NAME } lub ${ SHEETS_APP_NAME } i wyeksportuj."
       ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
         "Aby włączyć prywatne wyszukiwanie, aplikacja ${ DRIVE_APP_NAME } musi lokalnie zaindeksować pliki."
@@ -6299,6 +6323,9 @@
       "We are experiencing technical issues. Any albums related actions are temporarily disabled.": [
         "Mamy problemy techniczne. Akcje związane z albumami są tymczasowo wyłączone."
       ],
+      "We couldn't verify ${ nameAuthor } uploaded ${ node.name }. The following may have been tampered with: file data order. Only open if you trust it.": [
+        "Nie udało się zweryfikować, czy ${ nameAuthor } przesłał ${ node.name }. Następujące elementy mogły zostać naruszone: kolejność danych w pliku. Otwórz tylko jeśli im ufasz."
+      ],
       "We couldn’t process your payment.": [
         "Nie mogliśmy przetworzyć płatności."
       ],
@@ -6349,6 +6376,9 @@
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Po skonfigurowaniu uwierzytelniania dwustopniowego otrzymasz kody odzyskiwania, których możesz użyć do zalogowania się w przypadku utraty dostępu do aplikacji uwierzytelniającej."
+      ],
+      "who": [
+        "kto"
       ],
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
         "zostanie przywrócony do wersji z ${ formattedRevisionDate }. Wszystkie pozostałe wersje zostaną nadal zachowane."
@@ -7149,8 +7179,14 @@
       "Postal code": [
         "Kod pocztowy"
       ],
+      "Premium domain": [
+        "Domena premium"
+      ],
       "Proration": [
         "Dzielenie proporcjonalne"
+      ],
+      "Public domain": [
+        "Domena publiczna"
       ],
       "Public keys": [
         "Klucze publiczne"
@@ -7319,6 +7355,9 @@
       ],
       "Your alias": [
         "Twój alias"
+      ],
+      "Your domain": [
+        "Twoja domena"
       ],
       "Your IP": [
         "Twój adres IP"
@@ -12335,15 +12374,6 @@
       "The link expired": [
         "Link wygasł"
       ],
-      "The verification of the encryption keys' signature by the original creator (${ claimedKeyAuthor }) who created the node failed. The reason is: ${ nodeEntity.keyAuthor.error.error }": [
-        "Weryfikacja podpisu kluczy szyfrowania oryginalnego autora (${ claimedKeyAuthor }), który utworzył węzeł, nie powiodła się. ${ nodeEntity.keyAuthor.error.error }"
-      ],
-      "The verification of the file's content signature by the uploader (${ claimedContentAuthor }) who uploaded the last revision failed. The reason is: ${ activeRevision.contentAuthor.error.error }": [
-        "Weryfikacja podpisu zawartości pliku przesłanego przez ${ claimedContentAuthor }, który przesłał ostatnią wersję, nie powiodła się. ${ activeRevision.contentAuthor.error.error }"
-      ],
-      "The verification of the name's signature by author (${ claimedNameAuthor }) who set the name the last time failed. The reason is: ${ nodeEntity.nameAuthor.error.error }": [
-        "Weryfikacja podpisu nazwy autora (${ claimedNameAuthor }), który ustawił nazwę ostatnim razem, nie powiodła się. ${ nodeEntity.nameAuthor.error.error }"
-      ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "Brak podpisu lub podpis jest nieprawidłowy. Przejdź do Menu (⋮) → Szczegóły, aby dowiedzieć się więcej."
       ],
@@ -12355,6 +12385,9 @@
       ],
       "Time": [
         "Czas"
+      ],
+      "To preview this spreadsheet, download it.": [
+        "Aby wyświetlić podgląd tego arkusza kalkulacyjnego, pobierz go."
       ],
       "Total size": [
         "Łączny rozmiar"
@@ -12499,6 +12532,9 @@
       ],
       "Your changes are not synced yet": [
         "Zmiany nie zostały zsynchronizowane"
+      ],
+      "Your download includes ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME } files": [
+        "Twój plik do pobrania zawiera pliki ${ DOCS_APP_NAME } lub ${ SHEETS_APP_NAME }"
       ],
       "Your exposed information": [
         "Twoje ujawnione informacje:"
