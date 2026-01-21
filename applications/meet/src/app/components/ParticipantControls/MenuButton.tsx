@@ -3,6 +3,7 @@ import { useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import { IcBug } from '@proton/icons/icons/IcBug';
 import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 import { IcMeetChat } from '@proton/icons/icons/IcMeetChat';
 import { IcMeetParticipants } from '@proton/icons/icons/IcMeetParticipants';
@@ -10,6 +11,7 @@ import { IcMeetSettings } from '@proton/icons/icons/IcMeetSettings';
 import { IcThreeDotsVertical } from '@proton/icons/icons/IcThreeDotsVertical';
 
 import { CircleButton } from '../../atoms/CircleButton/CircleButton';
+import { useDebugOverlayContext } from '../../containers/MeetContainer';
 import { useUIStateContext } from '../../contexts/UIStateContext';
 import { MeetingSideBars } from '../../types';
 
@@ -20,6 +22,7 @@ const MAX_DRAG = 300;
 
 export const MenuButton = () => {
     const { toggleSideBarState } = useUIStateContext();
+    const { isEnabled: isDebugEnabled, open: openDebugOverlay } = useDebugOverlayContext();
 
     const [isOpen, setIsOpen] = useState(false);
     const [dragY, setDragY] = useState(0);
@@ -86,6 +89,18 @@ export const MenuButton = () => {
             label: c('Alt').t`Meeting details`,
             onClick: () => handleClick(MeetingSideBars.MeetingDetails),
         },
+        ...(isDebugEnabled
+            ? [
+                  {
+                      icon: IcBug,
+                      label: c('Alt').t`Debug overlay`,
+                      onClick: () => {
+                          openDebugOverlay();
+                          setIsOpen(false);
+                      },
+                  },
+              ]
+            : []),
     ];
 
     return (

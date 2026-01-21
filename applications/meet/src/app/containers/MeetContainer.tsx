@@ -1,10 +1,11 @@
-import { useEffect, useState } from 'react';
+import { createContext, useContext, useEffect, useState } from 'react';
 
 import type { LocalParticipant, RemoteParticipant } from 'livekit-client';
 
 import { isSafari } from '@proton/shared/lib/helpers/browser';
 
 import { AutoCloseMeetingModal } from '../components/AutoCloseMeetingModal/AutoCloseMeetingModal';
+import { DebugOverlay, useDebugOverlay } from '../components/DebugOverlay/DebugOverlay';
 import { MeetingBody } from '../components/MeetingBody/MeetingBody';
 import { MeetContext } from '../contexts/MeetContext';
 import { MeetingRecorderContext } from '../contexts/MeetingRecorderContext';
@@ -12,6 +13,19 @@ import { useCurrentScreenShare } from '../hooks/useCurrentScreenShare';
 import { useMeetingRecorder } from '../hooks/useMeetingRecorder/useMeetingRecorder';
 import { useParticipantEvents } from '../hooks/useParticipantEvents';
 import type { DecryptionErrorLog, KeyRotationLog, MLSGroupState, MeetChatMessage, ParticipantEntity } from '../types';
+
+// Debug overlay context for mobile menu access
+interface DebugOverlayContextType {
+    isEnabled: boolean;
+    open: () => void;
+}
+
+const DebugOverlayContext = createContext<DebugOverlayContextType>({
+    isEnabled: false,
+    open: () => {},
+});
+
+export const useDebugOverlayContext = () => useContext(DebugOverlayContext);
 
 interface MeetContainerProps {
     locked: boolean;
@@ -107,6 +121,7 @@ export const MeetContainer = ({
     decryptionErrorLogs,
 }: MeetContainerProps) => {
     const [resolution, setResolution] = useState<string | null>(null);
+    const debugOverlay = useDebugOverlay();
 
     const participantEvents = useParticipantEvents(participantNameMap);
 
@@ -143,74 +158,79 @@ export const MeetContainer = ({
     }, []);
 
     return (
-        <div className="w-full h-full flex flex-col flex-nowrap items-center justify-center">
-            <MeetingRecorderContext.Provider
-                value={{ recordingState, startRecording, stopRecording, downloadRecording }}
-            >
-                <MeetContext.Provider
-                    value={{
-                        participants,
-                        sortedParticipants,
-                        pagedParticipants,
-                        pageCount,
-                        pagedParticipantsWithoutSelfView,
-                        pageCountWithoutSelfView,
-                        setPage,
-                        setPageSize,
-                        roomName,
-                        resolution,
-                        setResolution,
-                        meetingLink: shareLink,
-                        chatMessages,
-                        setChatMessages,
-                        participantEvents,
-                        handleLeave: leaveWithStopRecording,
-                        handleUngracefulLeave: handleUngracefulLeave,
-                        handleEndMeeting: endMeetingWithStopRecording,
-                        participantsMap,
-                        participantNameMap,
-                        getParticipants,
-                        displayName,
-                        page,
-                        pageSize,
-                        passphrase,
-                        guestMode,
-                        mlsGroupState,
-                        startScreenShare,
-                        stopScreenShare,
-                        isLocalScreenShare,
-                        isScreenShare,
-                        screenShareParticipant,
-                        screenShareTrack,
-                        handleMeetingLockToggle,
-                        isDisconnected,
-                        startPiP,
-                        stopPiP,
-                        preparePictureInPicture,
-                        locked,
-                        maxDuration,
-                        maxParticipants,
-                        instantMeeting,
-                        assignHost,
-                        paidUser,
-                        keyRotationLogs,
-                        expirationTime,
-                        isGuestAdmin,
-                        isRecordingInProgress,
-                        getKeychainIndexInformation,
-                        decryptionErrorLogs,
-                        sortedParticipantsMap,
-                    }}
+        <DebugOverlayContext.Provider value={{ isEnabled: debugOverlay.isEnabled, open: debugOverlay.open }}>
+            <div className="w-full h-full flex flex-col flex-nowrap items-center justify-center">
+                <MeetingRecorderContext.Provider
+                    value={{ recordingState, startRecording, stopRecording, downloadRecording }}
                 >
-                    <MeetingBody
-                        isScreenShare={isScreenShare}
-                        isLocalScreenShare={isLocalScreenShare}
-                        screenShareTrack={screenShareTrack}
-                        screenShareParticipant={screenShareParticipant}
-                    />
-                </MeetContext.Provider>
-                <AutoCloseMeetingModal participantCount={participants.length} onLeave={handleLeave} />
-            </MeetingRecorderContext.Provider>
-        </div>
+                    <MeetContext.Provider
+                        value={{
+                            participants,
+                            sortedParticipants,
+                            pagedParticipants,
+                            pageCount,
+                            pagedParticipantsWithoutSelfView,
+                            pageCountWithoutSelfView,
+                            setPage,
+                            setPageSize,
+                            roomName,
+                            resolution,
+                            setResolution,
+                            meetingLink: shareLink,
+                            chatMessages,
+                            setChatMessages,
+                            participantEvents,
+                            handleLeave: leaveWithStopRecording,
+                            handleUngracefulLeave: handleUngracefulLeave,
+                            handleEndMeeting: endMeetingWithStopRecording,
+                            participantsMap,
+                            participantNameMap,
+                            getParticipants,
+                            displayName,
+                            page,
+                            pageSize,
+                            passphrase,
+                            guestMode,
+                            mlsGroupState,
+                            startScreenShare,
+                            stopScreenShare,
+                            isLocalScreenShare,
+                            isScreenShare,
+                            screenShareParticipant,
+                            screenShareTrack,
+                            handleMeetingLockToggle,
+                            isDisconnected,
+                            startPiP,
+                            stopPiP,
+                            preparePictureInPicture,
+                            locked,
+                            maxDuration,
+                            maxParticipants,
+                            instantMeeting,
+                            assignHost,
+                            paidUser,
+                            keyRotationLogs,
+                            expirationTime,
+                            isGuestAdmin,
+                            isRecordingInProgress,
+                            getKeychainIndexInformation,
+                            decryptionErrorLogs,
+                            sortedParticipantsMap,
+                        }}
+                    >
+                        {debugOverlay.isOpen && (
+                            <DebugOverlay isOpen={debugOverlay.isOpen} onClose={debugOverlay.close} />
+                        )}
+                        <MeetingBody
+                            isScreenShare={isScreenShare}
+                            isLocalScreenShare={isLocalScreenShare}
+                            screenShareTrack={screenShareTrack}
+                            screenShareParticipant={screenShareParticipant}
+                        />
+                    </MeetContext.Provider>
+                    <AutoCloseMeetingModal participantCount={participants.length} onLeave={handleLeave} />
+                </MeetingRecorderContext.Provider>
+            </div>
+        </DebugOverlayContext.Provider>
     );
 };
