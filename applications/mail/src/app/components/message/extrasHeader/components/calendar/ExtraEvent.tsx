@@ -33,7 +33,7 @@ import {
     getIsReinvite,
 } from '../../../../../helpers/calendar/invite';
 import { fetchEventInvitation, updateEventInvitation } from '../../../../../helpers/calendar/inviteApi';
-import EmailReminderWidgetSkeleton from './EmailReminderWidgetSkeleton';
+import { EmailReminderWidgetSkeleton } from './EmailReminderWidgetSkeleton';
 import ExtraEventButtons from './ExtraEventButtons';
 import ExtraEventDetails from './ExtraEventDetails';
 import { ExtraEventErrorBanner } from './ExtraEventErrorBanner';
@@ -328,7 +328,7 @@ const ExtraEvent = ({
     return (
         <div data-testid="calendar-widget" className="calendar-widget mb-2">
             <ExtraEventTimeStatus model={model} />
-            <div className="rounded border bg-norm overflow-auto">
+            <div className="rounded border border-weak bg-norm overflow-auto">
                 <div className="p-5">
                     <ExtraEventSummary model={model} />
                     <ExtraEventHeader model={model} />
