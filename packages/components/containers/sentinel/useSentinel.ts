@@ -1,6 +1,5 @@
-import { useCallback } from 'react';
-
 import { createSelector } from '@reduxjs/toolkit';
+import { c } from 'ttag';
 
 import { organizationThunk, selectOrganization } from '@proton/account/organization';
 import { selectUserSettings, userSettingsThunk } from '@proton/account/userSettings';
@@ -13,7 +12,12 @@ import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
 import { useDispatch, useSelector } from '@proton/redux-shared-store/sharedProvider';
 import { CacheType } from '@proton/redux-utilities';
-import { disableHighSecurity, enableHighSecurity } from '@proton/shared/lib/api/settings';
+import {
+    deleteSummaryEmailForHighSecurity,
+    disableHighSecurity,
+    enableHighSecurity,
+    updateSummaryEmailForHighSecurity,
+} from '@proton/shared/lib/api/settings';
 import {
     ORGANIZATION_POLICY_ENFORCED,
     PROTON_SENTINEL_NAME,
@@ -56,6 +60,7 @@ export const selectUserSentinel = createSelector(
             value,
             checked: value === SETTINGS_PROTON_SENTINEL_STATE.ENABLED,
             enforcedByOrganization: orgSentinelEnforced && orgSentinelEnabled,
+            notificationEmails: userSettings?.HighSecurity?.SummaryEmail,
         };
     }
 );
@@ -63,9 +68,11 @@ export const selectUserSentinel = createSelector(
 export const useSentinel = (
     variant: 'user' | 'organization'
 ): {
-    state: ReturnType<typeof selectUserSentinel>;
+    state: ReturnType<typeof selectUserSentinel> | ReturnType<typeof selectOrganizationSentinel>;
     setSentinel: (enabled: boolean) => any;
     loadingSentinel: boolean;
+    setNotificationEmails: (enabled: boolean) => any;
+    loadingNotifications: boolean;
 } => {
     const api = useApi();
     const dispatch = useDispatch();
@@ -73,8 +80,9 @@ export const useSentinel = (
     const { createNotification } = useNotifications();
 
     const [loadingSentinel, withLoadingSentinel] = useLoading();
+    const [loadingNotifications, withLoadingNotifications] = useLoading();
 
-    const setSentinel = useCallback(async (enabled: boolean) => {
+    const setSentinel = async (enabled: boolean) => {
         withLoadingSentinel(
             (async () => {
                 const enableEndpoint = variant === 'user' ? enableHighSecurity : enableHighSecurityOrganization;
@@ -91,11 +99,31 @@ export const useSentinel = (
                 createNotification({ text: notificationTextGetter(PROTON_SENTINEL_NAME) });
             })()
         ).catch(noop);
-    }, []);
+    };
+
+    const setNotificationEmails = async (enabled: boolean) => {
+        withLoadingNotifications(
+            (async () => {
+                if (enabled) {
+                    await api(updateSummaryEmailForHighSecurity());
+                    createNotification({ text: c('Notification').t`Email notifications have been enabled` });
+                } else {
+                    await api(deleteSummaryEmailForHighSecurity());
+                    createNotification({ text: c('Notification').t`Email notifications have been disabled` });
+                }
+                await dispatch(userSettingsThunk({ cache: CacheType.None }));
+                if (variant === 'organization') {
+                    await dispatch(organizationThunk({ cache: CacheType.None, type: 'settings' }));
+                }
+            })()
+        ).catch(noop);
+    };
 
     return {
         state,
         setSentinel,
         loadingSentinel,
+        setNotificationEmails,
+        loadingNotifications,
     };
 };

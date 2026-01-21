@@ -1,16 +1,13 @@
-import { type ReactNode, useRef } from 'react';
-
-import { c } from 'ttag';
-
-import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
+import { useRef } from 'react';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import SettingsLayout from '@proton/components/containers/account/SettingsLayout';
 import SettingsLayoutLeft from '@proton/components/containers/account/SettingsLayoutLeft';
 import SettingsLayoutRight from '@proton/components/containers/account/SettingsLayoutRight';
 import { PROTON_SENTINEL_NAME } from '@proton/shared/lib/constants';
 
-import useSearchParamsEffect from '../../hooks/useSearchParamsEffect';
-import { getEnableString } from '../credentialLeak/helpers';
+import useSearchParamsEffect from '@proton/components/hooks/useSearchParamsEffect';
+import { getEnableString } from '@proton/components/containers/credentialLeak/helpers';
+import { EnforcedByOrganization } from "@proton/components/containers/sentinel/EnforcedByOrganization";
 
 interface Props {
     checked: boolean;
@@ -19,20 +16,11 @@ interface Props {
     onChange: (checked: boolean) => void;
 }
 
-const EnforcedByOrganization = ({ enforced, children }: { enforced: boolean; children: ReactNode }) => {
-    if (!enforced) {
-        return children;
-    }
-
-    return (
-        <Tooltip title={c('Tooltip').t`This setting is managed by your organization`} openDelay={0}>
-            <span>{children}</span>
-        </Tooltip>
-    );
-};
-
 const SentinelToggle = ({ checked, isInherited, loading, onChange }: Props) => {
     const sentinelToggleRef = useRef<HTMLInputElement | null>(null);
+
+    const checkedRef = useRef(checked);
+    checkedRef.current = checked;
 
     useSearchParamsEffect(
         (params) => {
@@ -46,7 +34,7 @@ const SentinelToggle = ({ checked, isInherited, loading, onChange }: Props) => {
                 return params;
             }
 
-            if (checked) {
+            if (checkedRef.current) {
                 return params;
             }
 
@@ -54,7 +42,7 @@ const SentinelToggle = ({ checked, isInherited, loading, onChange }: Props) => {
 
             return params;
         },
-        [sentinelToggleRef.current]
+        []
     );
 
     return (
