@@ -6,6 +6,8 @@ import { ToolbarButton, useActiveBreakpoint, useElementBreakpoints } from '@prot
 import { IcArrowLeft } from '@proton/icons/icons/IcArrowLeft';
 import clsx from '@proton/utils/clsx';
 
+import { useSelectAll } from 'proton-mail/hooks/useSelectAll';
+
 import { getToolbarResponsiveSizes } from '../../helpers/toolbar/getToolbarResponsiveSizes';
 import SnoozeToolbarDropdown from '../list/snooze/containers/SnoozeToolbarDropdown';
 import LabelsAndFolders from './LabelsAndFolders';
@@ -16,11 +18,10 @@ import NavigationControls from './NavigationControls';
 import ReadUnreadButtons from './ReadUnreadButtons';
 import type { Props as ToolbarProps } from './Toolbar';
 
-interface Props
-    extends Omit<
-        ToolbarProps,
-        'onCheck' | 'columnMode' | 'sort' | 'onSort' | 'filter' | 'onFilter' | 'mailSettings' | 'breakpoints'
-    > {
+interface Props extends Omit<
+    ToolbarProps,
+    'onCheck' | 'columnMode' | 'sort' | 'onSort' | 'filter' | 'onFilter' | 'mailSettings' | 'breakpoints'
+> {
     classname: string;
 }
 
@@ -55,6 +56,7 @@ const ToolbarHeaderMessageNarrow = ({
     const toolbarRef = useRef<HTMLDivElement>(null);
     const breakpoint = useElementBreakpoints(toolbarRef, BREAKPOINTS);
     const { localIsExtraTiny, localIsNarrow } = getToolbarResponsiveSizes(breakpoint);
+    const { selectAll: isSelectAll } = useSelectAll({ labelID });
 
     // We override this value because the "more" dropdown is not displayed in the toolbar otherwise
     const isTiny = localIsNarrow;
@@ -88,7 +90,7 @@ const ToolbarHeaderMessageNarrow = ({
                                 onDelete={onDelete}
                             />
 
-                            {!isTiny ? (
+                            {!isTiny && (
                                 <LabelsAndFolders
                                     labelID={labelID}
                                     selectedIDs={selectedIDs}
@@ -96,8 +98,10 @@ const ToolbarHeaderMessageNarrow = ({
                                     moveDropdownToggleRef={moveDropdownToggleRef}
                                     onCheckAll={onCheckAll}
                                 />
-                            ) : null}
-                            {!isTiny ? <SnoozeToolbarDropdown labelID={labelID} selectedIDs={selectedIDs} /> : null}
+                            )}
+                            {!isTiny && !isSelectAll && (
+                                <SnoozeToolbarDropdown labelID={labelID} selectedIDs={selectedIDs} />
+                            )}
                             <MoreDropdown
                                 labelID={labelID}
                                 elementIDs={elementIDs}
