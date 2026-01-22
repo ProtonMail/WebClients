@@ -40,6 +40,17 @@ const filterAlbums = (albums: DecryptedAlbum[], tag: AlbumTag): DecryptedAlbum[]
     return albums;
 };
 
+export const stableSortAlbums = (albums: DecryptedAlbum[]): DecryptedAlbum[] => {
+    return albums.sort((a, b) => {
+        const timeCompare = a.createTime - b.createTime;
+        if (timeCompare !== 0) {
+            return timeCompare;
+        }
+        // Use asset id as a tiebreaker for equal create time (might happen for mass uploads)
+        return a.linkId.localeCompare(b.linkId);
+    });
+};
+
 export const AlbumsView: FC = () => {
     useAppTitle(c('Title').t`Albums`);
     const {
@@ -193,7 +204,7 @@ export const AlbumsView: FC = () => {
 
     const isAlbumsEmpty = albums.length === 0;
     // the sorting is just so we maintain some ordering
-    const filteredAlbums = filterAlbums(albums, selectedTags[0]).sort((a, b) => (a.createTime < b.createTime ? -1 : 1));
+    const filteredAlbums = stableSortAlbums(filterAlbums(albums, selectedTags[0]));
 
     if (!volumeId || !shareId || !linkId || (isAlbumsLoading && !albums) || (isAlbumsLoading && albums.length === 0)) {
         return <Loader />;
