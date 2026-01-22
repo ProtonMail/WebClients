@@ -85,7 +85,7 @@ export const MenuDropdown: FC<Props> = ({ onLock, onLogout, interactive }) => {
 
     return (
         <nav className="flex gap-2">
-            <div className="flex gap-2 md:hidden">
+            <div className="flex gap-2 lg:hidden">
                 <AppMenuButton ref={appMenu.anchorRef} toggle={appMenu.toggle} isOpen={appMenu.isOpen} />
                 <VaultMenuButton ref={vaultMenu.anchorRef} toggle={vaultMenu.toggle} isOpen={vaultMenu.isOpen} />
             </div>
