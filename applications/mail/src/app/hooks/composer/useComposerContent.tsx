@@ -1,6 +1,7 @@
 import type { MutableRefObject, RefObject } from 'react';
 import { useEffect, useMemo, useRef, useState } from 'react';
 
+import debounce from 'lodash/debounce';
 import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
@@ -27,7 +28,7 @@ import {
     getMessageContentBeforeBlockquote,
     setMessageContentBeforeBlockquote,
 } from 'proton-mail/helpers/composer/contentFromComposerMessage';
-import { insertSignature } from 'proton-mail/helpers/message/messageSignature';
+import { exportPlainTextSignature, insertSignature } from 'proton-mail/helpers/message/messageSignature';
 import { MOVE_BACK_ACTION_TYPES } from 'proton-mail/hooks/actions/moveBackAction/interfaces';
 import { useMoveBackAction } from 'proton-mail/hooks/actions/moveBackAction/useMoveBackAction';
 import { useLoadEmbeddedImages, useLoadRemoteImages } from 'proton-mail/hooks/message/useLoadImages';
@@ -40,12 +41,7 @@ import type { MessageChange } from '../../components/composer/Composer';
 import type { ExternalEditorActions } from '../../components/composer/editor/EditorWrapper';
 import { updateKeyPackets } from '../../helpers/attachment/attachment';
 import { getDate } from '../../helpers/elements';
-import {
-    exportPlainText,
-    getComposerDefaultFontStyles,
-    getContent,
-    setContent,
-} from '../../helpers/message/messageContent';
+import { getComposerDefaultFontStyles, getContent, setContent } from '../../helpers/message/messageContent';
 import { isNewDraft } from '../../helpers/message/messageDraft';
 import { replaceEmbeddedAttachments } from '../../helpers/message/messageEmbeddeds';
 import { mergeMessages } from '../../helpers/message/messages';
@@ -367,6 +363,15 @@ export const useComposerContent = (args: EditorArgs) => {
         });
     });
 
+    // Reduce message updates in redux. Add debounce instead of doing in on every key stroke.
+    const debouncedDispatch = useMemo(
+        () =>
+            debounce((ID: string, content: string) => {
+                dispatch(updateDraftContent({ ID, content }));
+            }, 300),
+        [dispatch]
+    );
+
     const handleChangeContent = useHandler(
         (content: string, refreshEditor: boolean = false, silent: boolean = false) => {
             const { editorRef } = args;
@@ -374,12 +379,7 @@ export const useComposerContent = (args: EditorArgs) => {
                 setContent(modelMessage, content);
                 const newModelMessage = { ...modelMessage };
 
-                dispatch(
-                    updateDraftContent({
-                        ID: newModelMessage.localID,
-                        content: content,
-                    })
-                );
+                debouncedDispatch(newModelMessage.localID, content);
 
                 if (!silent) {
                     void autoSave(newModelMessage);
@@ -392,26 +392,30 @@ export const useComposerContent = (args: EditorArgs) => {
         }
     );
 
+    const addressSignature = useMemo(() => {
+        const content = insertSignature(
+            '',
+            addresses.find((address) => address.Email === modelMessage.data?.Sender?.Address)?.Signature || '',
+            modelMessage.draftFlags?.action || MESSAGE_ACTIONS.NEW,
+            mailSettings,
+            userSettings,
+            undefined
+        );
+        return exportPlainTextSignature(content);
+    }, [
+        modelMessage.data?.Sender?.Address,
+        modelMessage.draftFlags?.action,
+        mailSettings,
+        userSettings,
+        addresses,
+    ]);
+
     /**
      * Returns plain text content before the blockquote and signature in the editor
      */
     const getContentBeforeBlockquote = (returnType: ComposerReturnType = 'plaintext') => {
         const editorType = isPlainText ? 'plaintext' : 'html';
         const editorContent = args.editorRef.current?.getContent() || '';
-
-        // Plain text only
-        const addressSignature = (() => {
-            const content = insertSignature(
-                '',
-                addresses.find((address) => address.Email === modelMessage.data?.Sender?.Address)?.Signature || '',
-                modelMessage.draftFlags?.action || MESSAGE_ACTIONS.NEW,
-                mailSettings,
-                userSettings,
-                undefined
-            );
-
-            return exportPlainText(content);
-        })();
 
         return getMessageContentBeforeBlockquote({
             editorType,
@@ -424,19 +428,6 @@ export const useComposerContent = (args: EditorArgs) => {
     const setContentBeforeBlockquote = (content: string) => {
         const editorType = isPlainText ? 'plaintext' : 'html';
         const editorContent = args.editorRef.current?.getContent() || '';
-
-        // Plain text only
-        const addressSignature = (() => {
-            const content = insertSignature(
-                '',
-                addresses.find((address) => address.Email === modelMessage.data?.Sender?.Address)?.Signature || '',
-                modelMessage.draftFlags?.action || MESSAGE_ACTIONS.NEW,
-                mailSettings,
-                userSettings,
-                undefined
-            );
-            return exportPlainText(content);
-        })();
 
         const nextContent = setMessageContentBeforeBlockquote({
             editorType,

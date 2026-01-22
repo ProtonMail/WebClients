@@ -16,7 +16,7 @@ import {
     removeSignatureFromHTMLMessage,
     removeSignatureFromPlainTextMessage,
 } from './messageBlockquote';
-import { exportPlainText } from './messageContent';
+import { exportPlainTextSignature } from './messageSignature';
 
 // Normalize whitespace for comparison (editors often strip trailing spaces)
 const normalize = (str: string) =>
@@ -203,7 +203,7 @@ describe('locatePlaintextInternalBlockquotes', () => {
 
 
 
-${exportPlainText(getProtonMailSignature())}
+${exportPlainTextSignature(getProtonMailSignature())}
 
 `;
 
@@ -485,7 +485,7 @@ describe('removeSignatureFromPlainTextMessage', () => {
 
             ${signature}
 
-            ${exportPlainText(getProtonMailSignature())}
+            ${exportPlainTextSignature(getProtonMailSignature())}
         `;
 
         const expectedContent = `Hi Sarah Mitchell,
