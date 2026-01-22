@@ -1,18 +1,8 @@
-import { useRoomContext } from '@livekit/components-react';
-import { renderHook } from '@testing-library/react';
 import { RoomEvent, Track } from 'livekit-client';
 import type { Mock } from 'vitest';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
-import { sortAudioPublications, useParticipantAudioControls } from './useParticipantAudioControls';
-
-vi.mock('@livekit/components-react', () => ({
-    useRoomContext: vi.fn(),
-}));
-
-vi.mock('../useStuckTrackMonitor', () => ({
-    useStuckTrackMonitor: vi.fn(),
-}));
+import { AudioTrackSubscriptionManager, sortAudioPublications } from './AudioTrackSubscriptionManager';
 
 type EventCallback = (...args: unknown[]) => void;
 
@@ -37,6 +27,7 @@ interface MockParticipant {
 interface MockRoom {
     localParticipant: { identity: string };
     remoteParticipants: Map<string, MockParticipant>;
+    state?: string;
     on: Mock;
     off: Mock;
     emit: (event: RoomEvent, ...args: unknown[]) => void;
@@ -84,6 +75,7 @@ const createMockRoom = (): MockRoom => {
     const room: MockRoom = {
         localParticipant: { identity: 'local-participant' },
         remoteParticipants: new Map(),
+        state: 'connected',
         on: vi.fn((event: RoomEvent, callback: EventCallback) => {
             eventHandlers.set(event, callback);
             return room;
@@ -254,13 +246,15 @@ describe('sortAudioPublications', () => {
     });
 });
 
-describe('useParticipantAudioControls', () => {
+describe('AudioTrackSubscriptionManager', () => {
     let mockRoom: MockRoom;
+    let cache: AudioTrackSubscriptionManager;
 
     beforeEach(() => {
         vi.clearAllMocks();
         mockRoom = createMockRoom();
-        (useRoomContext as Mock).mockReturnValue(mockRoom);
+        cache = new AudioTrackSubscriptionManager(80, mockRoom as any);
+        cache.listenToRoomEvents();
     });
 
     afterEach(() => {
@@ -284,8 +278,6 @@ describe('useParticipantAudioControls', () => {
             mockRoom.remoteParticipants.set('participant-1', participant1);
             mockRoom.remoteParticipants.set('participant-2', participant2);
 
-            renderHook(() => useParticipantAudioControls());
-
             mockRoom.emit(RoomEvent.Connected);
 
             expect(screenSharePub1.setSubscribed).toHaveBeenCalledWith(true);
@@ -297,8 +289,6 @@ describe('useParticipantAudioControls', () => {
         it('should subscribe to screen share audio when published', () => {
             const participant = createMockParticipant('participant-1', []);
             mockRoom.remoteParticipants.set('participant-1', participant);
-
-            renderHook(() => useParticipantAudioControls());
 
             const screenSharePub = createMockPublication({
                 source: Track.Source.ScreenShareAudio,
@@ -326,8 +316,6 @@ describe('useParticipantAudioControls', () => {
             mockRoom.remoteParticipants.set('participant-2', participant2);
             mockRoom.remoteParticipants.set('participant-3', participant3);
 
-            renderHook(() => useParticipantAudioControls());
-
             mockRoom.emit(RoomEvent.Connected);
 
             expect(micPub1.setSubscribed).toHaveBeenCalledWith(true);
@@ -341,8 +329,6 @@ describe('useParticipantAudioControls', () => {
         it('should subscribe to newly published microphone tracks', () => {
             const participant = createMockParticipant('participant-1', []);
             mockRoom.remoteParticipants.set('participant-1', participant);
-
-            renderHook(() => useParticipantAudioControls());
 
             const micPub = createMockPublication({ trackSid: 'mic-new' });
 
@@ -371,8 +357,6 @@ describe('useParticipantAudioControls', () => {
 
                 mockRoom.remoteParticipants.set(`participant-${i}`, participant);
             }
-
-            renderHook(() => useParticipantAudioControls());
 
             mockRoom.emit(RoomEvent.Connected);
 
@@ -403,8 +387,6 @@ describe('useParticipantAudioControls', () => {
 
                 mockRoom.remoteParticipants.set(`participant-${i}`, participant);
             }
-
-            renderHook(() => useParticipantAudioControls());
 
             mockRoom.emit(RoomEvent.Connected);
 
@@ -443,8 +425,6 @@ describe('useParticipantAudioControls', () => {
 
                 mockRoom.remoteParticipants.set(`participant-${i}`, participant);
             }
-
-            renderHook(() => useParticipantAudioControls());
 
             mockRoom.emit(RoomEvent.Connected);
 
@@ -502,8 +482,6 @@ describe('useParticipantAudioControls', () => {
 
                 mockRoom.remoteParticipants.set(`participant-${i}`, participant);
             }
-
-            renderHook(() => useParticipantAudioControls());
 
             mockRoom.emit(RoomEvent.Connected);
 
@@ -570,8 +548,6 @@ describe('useParticipantAudioControls', () => {
                 participants.push(participant);
             }
 
-            renderHook(() => useParticipantAudioControls());
-
             mockRoom.emit(RoomEvent.Connected);
 
             // Initially: participants 5-84 are subscribed (80 tracks, most recent speakers)
@@ -622,7 +598,6 @@ describe('useParticipantAudioControls', () => {
                 mockRoom.remoteParticipants.set(`participant-${i}`, participant);
             }
 
-            renderHook(() => useParticipantAudioControls());
             mockRoom.emit(RoomEvent.Connected);
 
             // Get the muted participant (participant 80) - should not be subscribed
@@ -658,8 +633,6 @@ describe('useParticipantAudioControls', () => {
 
                 mockRoom.remoteParticipants.set(`participant-${i}`, participant);
             }
-
-            renderHook(() => useParticipantAudioControls());
 
             mockRoom.emit(RoomEvent.Connected);
 
@@ -705,8 +678,6 @@ describe('useParticipantAudioControls', () => {
 
             mockRoom.remoteParticipants.set('local-participant', localParticipant);
 
-            renderHook(() => useParticipantAudioControls());
-
             mockRoom.emit(RoomEvent.Connected);
 
             expect(localMicPub.setSubscribed).not.toHaveBeenCalled();
@@ -716,8 +687,6 @@ describe('useParticipantAudioControls', () => {
             const localMicPub = createMockPublication({ trackSid: 'local-mic' });
             const localParticipant = createMockParticipant('local-participant', [localMicPub]);
 
-            renderHook(() => useParticipantAudioControls());
-
             mockRoom.emit(RoomEvent.TrackPublished, localMicPub, localParticipant);
 
             expect(localMicPub.setSubscribed).not.toHaveBeenCalled();
@@ -725,9 +694,7 @@ describe('useParticipantAudioControls', () => {
     });
 
     describe('cleanup', () => {
-        it('should unregister event handlers on unmount', () => {
-            const { unmount } = renderHook(() => useParticipantAudioControls());
-
+        it('should unregister event handlers on cleanup', () => {
             expect(mockRoom.on).toHaveBeenCalledWith(RoomEvent.TrackPublished, expect.any(Function));
             expect(mockRoom.on).toHaveBeenCalledWith(RoomEvent.TrackUnmuted, expect.any(Function));
             expect(mockRoom.on).toHaveBeenCalledWith(RoomEvent.TrackUnpublished, expect.any(Function));
@@ -735,13 +702,152 @@ describe('useParticipantAudioControls', () => {
             expect(mockRoom.on).toHaveBeenCalledWith(RoomEvent.Disconnected, expect.any(Function));
             expect(mockRoom.on).toHaveBeenCalledWith(RoomEvent.ActiveSpeakersChanged, expect.any(Function));
 
-            unmount();
+            cache.cleanupEventListeners();
 
             expect(mockRoom.off).toHaveBeenCalledWith(RoomEvent.TrackPublished, expect.any(Function));
             expect(mockRoom.off).toHaveBeenCalledWith(RoomEvent.TrackUnmuted, expect.any(Function));
             expect(mockRoom.off).toHaveBeenCalledWith(RoomEvent.TrackUnpublished, expect.any(Function));
             expect(mockRoom.off).toHaveBeenCalledWith(RoomEvent.Connected, expect.any(Function));
             expect(mockRoom.off).toHaveBeenCalledWith(RoomEvent.Disconnected, expect.any(Function));
+        });
+    });
+
+    describe('reconcile', () => {
+        it('should reconcile audio tracks when the limit is not reached and track subscriptions were missed', () => {
+            // Create 50 participants with microphone tracks first
+            for (let i = 0; i < 50; i++) {
+                const micPub = createMockPublication({
+                    trackSid: `mic-${i}`,
+                    isMuted: false,
+                    isSubscribed: false,
+                });
+
+                const participant = createMockParticipant(`participant-${i}`, [micPub]);
+                participant.lastSpokeAt = new Date(Date.now() - i * 1000);
+
+                mockRoom.remoteParticipants.set(`participant-${i}`, participant);
+            }
+
+            // Emit Connected event to properly handle the first 50 tracks
+            mockRoom.emit(RoomEvent.Connected);
+
+            // Verify the first 50 were subscribed through the normal flow
+            for (let i = 0; i < 50; i++) {
+                const participant = mockRoom.remoteParticipants.get(`participant-${i}`);
+                const pub = participant?.trackPublications.get(`mic-${i}`);
+                expect(pub?.setSubscribed).toHaveBeenCalledWith(true);
+            }
+
+            // Now add 20 more participants WITHOUT firing events (simulating missed track publications)
+            for (let i = 50; i < 70; i++) {
+                const micPub = createMockPublication({
+                    trackSid: `mic-${i}`,
+                    isMuted: false,
+                    isSubscribed: false,
+                });
+
+                const participant = createMockParticipant(`participant-${i}`, [micPub]);
+                participant.lastSpokeAt = new Date(Date.now() - i * 1000);
+
+                mockRoom.remoteParticipants.set(`participant-${i}`, participant);
+            }
+
+            // Now call reconcile - it should detect and subscribe to the 20 missing tracks
+            cache.reconcileAudioTracks();
+
+            // The 20 missed tracks (50-69) should now be subscribed
+            for (let i = 50; i < 70; i++) {
+                const participant = mockRoom.remoteParticipants.get(`participant-${i}`);
+                const pub = participant?.trackPublications.get(`mic-${i}`);
+
+                // Check that setSubscribed was called with true for the missed tracks
+                expect(pub?.setSubscribed).toHaveBeenCalledWith(true);
+                expect(pub?.setEnabled).toHaveBeenCalledWith(true);
+            }
+
+            // Verify no tracks were unsubscribed (we're under the limit of 80)
+            for (let i = 0; i < 70; i++) {
+                const participant = mockRoom.remoteParticipants.get(`participant-${i}`);
+                const pub = participant?.trackPublications.get(`mic-${i}`);
+
+                // setSubscribed should never have been called with false
+                expect(pub?.setSubscribed).not.toHaveBeenCalledWith(false);
+            }
+        });
+
+        it('should reconcile audio tracks when the limit is reached and evict the lowest priority items', () => {
+            // Create 80 participants with microphone tracks (at the limit)
+            for (let i = 0; i < 80; i++) {
+                const micPub = createMockPublication({
+                    trackSid: `mic-${i}`,
+                    isMuted: false,
+                    isSubscribed: false,
+                });
+
+                const participant = createMockParticipant(`participant-${i}`, [micPub]);
+                // Lower indices have older lastSpokeAt (lower priority)
+                participant.lastSpokeAt = new Date(Date.now() - (80 - i) * 1000);
+
+                mockRoom.remoteParticipants.set(`participant-${i}`, participant);
+            }
+
+            // Emit Connected event to properly subscribe the first 80 tracks through the normal flow
+            mockRoom.emit(RoomEvent.Connected);
+
+            // Verify the first 80 were subscribed
+            for (let i = 0; i < 80; i++) {
+                const participant = mockRoom.remoteParticipants.get(`participant-${i}`);
+                const pub = participant?.trackPublications.get(`mic-${i}`);
+                expect(pub?.setSubscribed).toHaveBeenCalledWith(true);
+            }
+
+            // Now add 5 new high-priority participants to the room WITHOUT firing events
+            // (simulating missed track publications for recent speakers)
+            for (let i = 80; i < 85; i++) {
+                const micPub = createMockPublication({
+                    trackSid: `mic-${i}`,
+                    isMuted: false,
+                    isSubscribed: false,
+                });
+
+                const participant = createMockParticipant(`participant-${i}`, [micPub]);
+                // These are the most recent speakers (highest priority)
+                participant.lastSpokeAt = new Date(Date.now() + (i - 79) * 1000);
+
+                mockRoom.remoteParticipants.set(`participant-${i}`, participant);
+            }
+
+            // Call reconcile - it should subscribe to the 5 new high-priority tracks
+            // and evict the 5 lowest priority tracks
+            cache.reconcileAudioTracks();
+
+            // The 5 new high-priority tracks should be subscribed
+            for (let i = 80; i < 85; i++) {
+                const participant = mockRoom.remoteParticipants.get(`participant-${i}`);
+                const pub = participant?.trackPublications.get(`mic-${i}`);
+
+                expect(pub?.setSubscribed).toHaveBeenCalledWith(true);
+                expect(pub?.setEnabled).toHaveBeenCalledWith(true);
+            }
+
+            // The 5 lowest priority tracks (oldest speakers, indices 0-4) should be unsubscribed
+            for (let i = 0; i < 5; i++) {
+                const participant = mockRoom.remoteParticipants.get(`participant-${i}`);
+                const pub = participant?.trackPublications.get(`mic-${i}`);
+                const calls = pub?.setSubscribed.mock.calls ?? [];
+
+                // Should have been called with false (unsubscribed)
+                expect(calls.some((call) => call[0] === false)).toBe(true);
+            }
+
+            // The middle participants (indices 5-79) should remain subscribed and not be unsubscribed
+            for (let i = 5; i < 80; i++) {
+                const participant = mockRoom.remoteParticipants.get(`participant-${i}`);
+                const pub = participant?.trackPublications.get(`mic-${i}`);
+
+                // Should not have been unsubscribed
+                expect(pub?.setSubscribed).not.toHaveBeenCalledWith(false);
+            }
         });
     });
 });
