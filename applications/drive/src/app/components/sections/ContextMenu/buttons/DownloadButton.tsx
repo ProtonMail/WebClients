@@ -21,7 +21,7 @@ interface Props {
 
 const DownloadButton = ({ selectedBrowserItems, close }: Props) => {
     const { download } = useDownload();
-    const { downloadDocument } = useDocumentActions();
+    const { downloadDocumentWithNodeUid } = useDocumentActions();
     const dm = DownloadManager.getInstance();
     const isSDKTransferEnabled = useFlagsDriveSDKTransfer({ isForPhotos: false });
     const onClick = async () => {
@@ -31,17 +31,15 @@ const DownloadButton = ({ selectedBrowserItems, close }: Props) => {
         if (selectedBrowserItems.length === 1) {
             const item = selectedBrowserItems[0];
             if (isProtonDocsDocument(item.mimeType)) {
-                void downloadDocument({
+                void downloadDocumentWithNodeUid({
+                    nodeUid: generateNodeUid(item.volumeId, item.linkId),
                     type: 'doc',
-                    shareId: item.rootShareId,
-                    linkId: item.linkId,
                 });
                 return;
             } else if (isProtonDocsSpreadsheet(item.mimeType)) {
-                void downloadDocument({
+                void downloadDocumentWithNodeUid({
+                    nodeUid: generateNodeUid(item.volumeId, item.linkId),
                     type: 'sheet',
-                    shareId: item.rootShareId,
-                    linkId: item.linkId,
                 });
                 return;
             }

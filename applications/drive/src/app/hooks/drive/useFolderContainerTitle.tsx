@@ -1,9 +1,8 @@
 import { useAppTitle } from '@proton/components';
 
-import type { DriveSectionRouteProps } from '../../components/sections/Drive/DriveView';
 import { useLinkName } from '../../store/_views/utils';
 
-export const useFolderContainerTitle = (params: DriveSectionRouteProps) => {
+export const useFolderContainerTitle = (params: { shareId?: string; linkId?: string }) => {
     const name = useLinkName(params.shareId || '', params.linkId || '');
     useAppTitle(name);
 };

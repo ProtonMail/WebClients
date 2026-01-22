@@ -5,7 +5,6 @@ import { c } from 'ttag';
 
 import { type BreadcrumbInfo, CollapsingBreadcrumbs, Icon, Loader, useNotifications } from '@proton/components';
 import { generateNodeUid, getDrive } from '@proton/drive/index';
-import useFlag from '@proton/unleash/useFlag';
 import noop from '@proton/utils/noop';
 
 import type { DriveFolder } from '../../hooks/drive/useActiveShare';
@@ -38,7 +37,6 @@ const DriveBreadcrumbsDeprecated = ({ activeFolder }: Props) => {
 
     const [breadcrumbs, setBreadcrumbs] = useState<BreadcrumbInfo[]>([]);
     const [isSharedWithMeFolder, setIsSharedWithMeFolder] = useState(false);
-    const useSDKFolders = useFlag('DriveWebSDKFolders');
 
     useEffect(() => {
         const abortController = new AbortController();
@@ -47,7 +45,7 @@ const DriveBreadcrumbsDeprecated = ({ activeFolder }: Props) => {
             .then((pathItems) => {
                 const breadcrumbs = pathItems.map(({ linkId, name, isRoot, link, isReadOnly }) => {
                     const destinationUid = generateNodeUid(link.volumeId, linkId);
-                    const handleDrop = getHandleItemDrop(useSDKFolders ? destinationUid : linkId);
+                    const handleDrop = getHandleItemDrop(destinationUid);
 
                     let onClick;
                     if (linkId === activeFolder.linkId) {

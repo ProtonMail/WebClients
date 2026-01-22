@@ -5,7 +5,6 @@ import { useShallow } from 'zustand/react/shallow';
 
 import { Toolbar } from '@proton/components';
 import { generateNodeUid } from '@proton/drive/index';
-import type { LinkURLType } from '@proton/shared/lib/drive/constants';
 
 import DriveBreadcrumbsDeprecated from '../../components/DriveBreadcrumbsDeprecated';
 import { FileBrowserStateProvider } from '../../components/FileBrowser';
@@ -20,8 +19,6 @@ import { FolderBrowser } from './FolderBrowser/FolderBrowser';
 import { FolderToolbar } from './FolderBrowser/FolderToolbar';
 import { useFolder } from './useFolder';
 import { useFolderStore } from './useFolder.store';
-
-export type DriveSectionRouteProps = { shareId?: string; type?: LinkURLType; linkId?: string };
 
 // SDK-ready counterpart of DriveViewDeprecated
 export function FolderView() {
