@@ -17,6 +17,7 @@ import getAvailablePlansWithCycles from '../../helpers/getAvailablePlansWithCycl
 import { AccessModal } from './components/AccessModal/AccessModal';
 import { family, getPassPlusOfferPlan, passLifetime, passPlus, unlimited } from './plans';
 import { AccountDetailsStep } from './steps/AccountDetailsStep';
+import { CycleSelectorStep } from './steps/CycleSelectorStep';
 import { InstallExtensionStep } from './steps/InstallExtensionStep';
 import { PaymentStep } from './steps/PaymentStep';
 import { RecoveryKitStep } from './steps/RecoveryKitStep';
@@ -26,6 +27,7 @@ enum Step {
     Signup = 'signup',
     RecoveryKit = 'recovery-kit',
     UpgradePlan = 'upgrade-plan',
+    CycleSelector = 'cycle-selector',
     Payment = 'payment',
     InstallExtension = 'install-extension',
 }
@@ -33,8 +35,10 @@ enum Step {
 const PassSignup = () => {
     const signup = useSignup();
     const payments = usePaymentOptimistic();
+    const location = useLocation();
 
     const [step, setStep] = useState<Step>(Step.Signup);
+    const [skippedCycle, setSkippedCycle] = useState(false);
 
     useEffect(() => {
         /**
@@ -43,6 +47,9 @@ const PassSignup = () => {
          */
         void payments.checkMultiplePlans([getPassPlusOfferPlan(payments.selectedPlan.currency)]);
     }, []);
+
+    const searchParams = new URLSearchParams(location.search);
+    const cycleSelectorFlag = searchParams.has('cycle');
 
     return (
         <main className="pass-signup flex h-full overflow-auto">
@@ -58,13 +65,20 @@ const PassSignup = () => {
             {step === Step.RecoveryKit && <RecoveryKitStep onContinue={async () => setStep(Step.UpgradePlan)} />}
             {step === Step.UpgradePlan && (
                 <UpgradePlanStep
-                    onContinue={async (payment: boolean) => {
+                    onContinue={async (payment: boolean, skipCycle = false) => {
+                        setSkippedCycle(skipCycle);
                         if (payment) {
+                            if (cycleSelectorFlag && !skipCycle) {
+                                return setStep(Step.CycleSelector);
+                            }
                             return setStep(Step.Payment);
                         }
                         setStep(Step.InstallExtension);
                     }}
                 />
+            )}
+            {step === Step.CycleSelector && (
+                <CycleSelectorStep onContinue={() => setStep(Step.Payment)} onBack={() => setStep(Step.UpgradePlan)} />
             )}
             {step === Step.Payment && (
                 <PaymentStep
@@ -72,7 +86,12 @@ const PassSignup = () => {
                         await signup.setupSubscription();
                         setStep(Step.InstallExtension);
                     }}
-                    onBack={() => setStep(Step.UpgradePlan)}
+                    onBack={() => {
+                        if (cycleSelectorFlag && !skippedCycle) {
+                            return setStep(Step.CycleSelector);
+                        }
+                        setStep(Step.UpgradePlan);
+                    }}
                 />
             )}
             {step === Step.InstallExtension && (
