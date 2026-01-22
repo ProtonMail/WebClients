@@ -19,6 +19,7 @@ import { getSentryError } from '@proton/shared/lib/keys';
 
 import { useSignup } from '../../../context/SignupContext';
 import { Layout } from '../components/Layout/Layout';
+import { passPlus } from '../plans';
 
 type Props = {
     onContinue: () => Promise<void>;
@@ -116,6 +117,20 @@ export const PaymentStep: FC<Props> = ({ onContinue, onBack }) => {
         }
     };
 
+    const handleBack = () => {
+        // Pass lifetime is shown as plass plus with a cycle being lifetime
+        // But it's technically a different plan
+        // So if we go back, we need to restore current plan to be pass plus
+        if (payments.selectedPlan.planIDs.passlifetime2024) {
+            payments.selectPlan({
+                planIDs: passPlus.planIDs,
+                currency: payments.selectedPlan.currency,
+            });
+        }
+
+        onBack();
+    };
+
     const methodsAllowed: string[] = [PAYMENT_METHOD_TYPES.CARD, PAYMENT_METHOD_TYPES.CHARGEBEE_CARD];
     const showAlert3ds = methodsAllowed.includes(paymentFacade.selectedMethodType ?? '');
 
@@ -124,7 +139,7 @@ export const PaymentStep: FC<Props> = ({ onContinue, onBack }) => {
         <Layout>
             <section className="max-w-custom" style={{ '--max-w-custom': '25rem' }}>
                 <div className="flex items-center justify-space-between mb-12">
-                    <Button shape="ghost" icon pill onClick={onBack}>
+                    <Button shape="ghost" icon pill onClick={handleBack}>
                         <IcArrowLeft size={6} />
                     </Button>
                     <div className="text-center">

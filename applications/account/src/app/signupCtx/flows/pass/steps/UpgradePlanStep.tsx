@@ -1,5 +1,5 @@
-import type { ReactNode } from 'react';
-import { type FC, isValidElement, useEffect } from 'react';
+import type { FC, ReactNode } from 'react';
+import { isValidElement } from 'react';
 import { useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
@@ -19,7 +19,7 @@ import { PlanCard, type PlanCardProps } from '../components/PlansTable/PlanCard'
 import { family, getPassPlusOfferPlan, passPlus, unlimited } from '../plans';
 
 type Props = {
-    onContinue: (payment: boolean) => Promise<void>;
+    onContinue: (payment: boolean, skipCycle?: boolean) => Promise<void>;
 };
 
 export const UpgradePlanStep: FC<Props> = ({ onContinue }) => {
@@ -48,22 +48,12 @@ export const UpgradePlanStep: FC<Props> = ({ onContinue }) => {
         void onContinue(true);
     };
 
-    useEffect(() => {
-        if (!payments.initialized) {
-            return;
-        }
-
-        /** A limitation of the payments context initialisation means we need to
-         * check the pricing with the coupon to ensure the UI data is available */
-        void payments.checkMultiplePlans([getPassPlusOfferPlan(payments.selectedPlan.currency)]);
-    }, [payments.initialized]);
-
     const openOfferModal = () =>
         offerModal.handler({
             onSubmit: async (upgradeTo) => {
                 if (upgradeTo) {
                     payments.selectPlan(getPassPlusOfferPlan(payments.selectedPlan.currency));
-                    return onContinue(true);
+                    return onContinue(true, true);
                 }
 
                 await onContinue(false);

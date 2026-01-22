@@ -58,7 +58,7 @@ export const PlanCard: FC<PlanCardProps> = ({
             </Button>
             {showProducts && (
                 <AppsLogos
-                    fullWidth
+                    wrap
                     className="mt-6"
                     apps={[
                         APPS.PROTONMAIL,
