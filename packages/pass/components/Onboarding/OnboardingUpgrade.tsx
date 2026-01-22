@@ -98,7 +98,10 @@ export const Content: FC = () => {
     const passLifetimeFlag = useFeatureFlag(PassFeature.PassWebDesktopLifetimeBanner);
     const includesFeatures = useMemo(() => getTableContent(freeCcFlag), [freeCcFlag]);
     const protonProducts = useMemo(getProtonProducts, []);
-    const navigateToUpgrade = useNavigateToUpgrade({ upsellRef: UpsellRef.LIFETIME_PLAN_ONBOARDING });
+    const navigateToLifetimeUpgrade = useNavigateToUpgrade({
+        plan: PLANS.PASS_LIFETIME,
+        upsellRef: UpsellRef.LIFETIME_PLAN_ONBOARDING,
+    });
     const user = useSelector(selectUser);
     const plusLifetimePrice = getSimplePriceString(getUserCurrency(user?.Currency), PASS_PLUS_LIFETIME_PRICE);
     const displayLifetimeCard = passLifetimeFlag && supportedCurrencies.includes(user?.Currency ?? '');
@@ -124,7 +127,7 @@ export const Content: FC = () => {
                                 pill
                                 shape="solid"
                                 color="norm"
-                                onClick={navigateToUpgrade}
+                                onClick={navigateToLifetimeUpgrade}
                                 disabled={!online}
                             >
                                 {c('Action').t`Pay once`}
