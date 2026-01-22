@@ -11,7 +11,7 @@ import clsx from '@proton/utils/clsx';
 
 import { SecurityShield } from '../../atoms/SecurityShield/SecurityShield';
 import { SpeakingIndicator } from '../../atoms/SpeakingIndicator';
-import { useCameraTrackSubscriptionCache } from '../../contexts/CameraTrackSubscriptionCacheProvider/CameraTrackSubscriptionCacheProvider';
+import { useCameraTrackSubscriptionManager } from '../../contexts/CameraTrackSubscriptionCacheProvider/CameraTrackSubscriptionManagerProvider';
 import { useMediaManagementContext } from '../../contexts/MediaManagementContext';
 import { useMeetContext } from '../../contexts/MeetContext';
 import { useDebouncedSpeakingStatus } from '../../hooks/useDebouncedSpeakingStatus';
@@ -49,7 +49,7 @@ const indicatorSizeBySize = {
 export const ParticipantTile = ({ participant, viewSize = 'large' }: ParticipantTileProps) => {
     const { participantNameMap, displayName } = useMeetContext();
     const participantsWithDisabledVideos = useMeetSelector(selectParticipantsWithDisabledVideos);
-    const { register, unregister } = useCameraTrackSubscriptionCache();
+    const { register, unregister } = useCameraTrackSubscriptionManager();
 
     const { localParticipant } = useLocalParticipant();
 

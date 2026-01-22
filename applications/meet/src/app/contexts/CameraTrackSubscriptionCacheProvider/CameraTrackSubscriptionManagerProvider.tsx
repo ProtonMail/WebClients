@@ -11,36 +11,36 @@ import { PAGE_SIZE, SMALL_SCREEN_PAGE_SIZE } from '../../constants';
 import { useParticipantQuality } from '../../hooks/useParticipantQuality';
 import { useMeetSelector } from '../../store/hooks';
 import { selectMeetSettings, selectParticipantsWithDisabledVideos } from '../../store/slices/settings';
-import type { RegisterCameraTrackFn } from './CameraTrackSubscriptionCache';
-import { CameraTrackSubscriptionCache } from './CameraTrackSubscriptionCache';
+import type { RegisterCameraTrackFn } from '../../utils/subscriptionManagers/CameraTrackSubscriptionManager';
+import { CameraTrackSubscriptionManager } from '../../utils/subscriptionManagers/CameraTrackSubscriptionManager';
 
-interface CameraTrackSubscriptionCacheApi {
+interface CameraTrackSubscriptionManagerApi {
     register: RegisterCameraTrackFn;
     unregister(publication: TrackPublication | undefined): void;
 }
 
-const CameraTrackSubscriptionCacheContext = createContext<CameraTrackSubscriptionCacheApi | null>(null);
+const CameraTrackSubscriptionManagerContext = createContext<CameraTrackSubscriptionManagerApi | null>(null);
 
 const DEFAULT_CAPACITY = 4 * (isMobile() ? SMALL_SCREEN_PAGE_SIZE : PAGE_SIZE);
 
-export const CameraTrackSubscriptionCacheProvider = ({ children }: { children: ReactNode }) => {
+export const CameraTrackSubscriptionManagerProvider = ({ children }: { children: ReactNode }) => {
     const room = useRoomContext();
     const { disableVideos } = useMeetSelector(selectMeetSettings);
     const participantsWithDisabledVideos = useMeetSelector(selectParticipantsWithDisabledVideos);
     const participantQuality = useParticipantQuality();
 
-    const cacheRef = useRef<CameraTrackSubscriptionCache>(new CameraTrackSubscriptionCache(DEFAULT_CAPACITY));
+    const managerRef = useRef(new CameraTrackSubscriptionManager(DEFAULT_CAPACITY, room));
 
     useEffect(() => {
-        cacheRef.current.setPolicy({ disableVideos, participantsWithDisabledVideos, participantQuality });
+        managerRef.current.setPolicy({ disableVideos, participantsWithDisabledVideos, participantQuality });
     }, [disableVideos, participantsWithDisabledVideos, participantQuality]);
 
     // Handle room disconnection - destroy cache and create a new one
     useEffect(() => {
         const handleDisconnected = () => {
-            cacheRef.current?.destroy();
-            cacheRef.current = new CameraTrackSubscriptionCache(DEFAULT_CAPACITY);
-            cacheRef.current.setPolicy({ disableVideos, participantsWithDisabledVideos, participantQuality });
+            managerRef.current?.destroy();
+            managerRef.current = new CameraTrackSubscriptionManager(DEFAULT_CAPACITY, room);
+            managerRef.current.setPolicy({ disableVideos, participantsWithDisabledVideos, participantQuality });
         };
 
         room.on(RoomEvent.Disconnected, handleDisconnected);
@@ -51,14 +51,15 @@ export const CameraTrackSubscriptionCacheProvider = ({ children }: { children: R
 
     // Cleanup on unmount
     useEffect(() => {
+        managerRef.current?.setupReconcileLoop();
         return () => {
-            cacheRef.current?.destroy();
+            managerRef.current?.destroy();
         };
     }, []);
 
     useEffect(() => {
         const handleTrackUnpublished = (publication: TrackPublication, _participant: Participant) => {
-            cacheRef.current?.handleTrackUnpublished(publication);
+            managerRef.current?.handleTrackUnpublished(publication);
         };
 
         room.on(RoomEvent.TrackUnpublished, handleTrackUnpublished);
@@ -68,26 +69,26 @@ export const CameraTrackSubscriptionCacheProvider = ({ children }: { children: R
     }, [room]);
 
     const register = useCallback<RegisterCameraTrackFn>((publication, participantIdentity) => {
-        cacheRef.current.register(publication, participantIdentity);
+        managerRef.current.register(publication, participantIdentity);
     }, []);
 
     const unregister = useCallback((publication: TrackPublication | undefined) => {
-        cacheRef.current?.unregister(publication);
+        managerRef.current?.unregister(publication);
     }, []);
 
-    const value = useMemo<CameraTrackSubscriptionCacheApi>(() => ({ register, unregister }), [register, unregister]);
+    const value = useMemo<CameraTrackSubscriptionManagerApi>(() => ({ register, unregister }), [register, unregister]);
 
     return (
-        <CameraTrackSubscriptionCacheContext.Provider value={value}>
+        <CameraTrackSubscriptionManagerContext.Provider value={value}>
             {children}
-        </CameraTrackSubscriptionCacheContext.Provider>
+        </CameraTrackSubscriptionManagerContext.Provider>
     );
 };
 
-export const useCameraTrackSubscriptionCache = () => {
-    const ctx = useContext(CameraTrackSubscriptionCacheContext);
+export const useCameraTrackSubscriptionManager = () => {
+    const ctx = useContext(CameraTrackSubscriptionManagerContext);
     if (!ctx) {
-        throw new Error('useCameraTrackSubscriptionCache must be used within CameraTrackSubscriptionCacheProvider');
+        throw new Error('useCameraTrackSubscriptionManager must be used within CameraTrackSubscriptionManagerProvider');
     }
     return ctx;
 };
