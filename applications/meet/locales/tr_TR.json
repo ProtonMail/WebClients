@@ -80,8 +80,17 @@
       "Done": [
         "Tamam"
       ],
+      "Download local participant report": [
+        "Yerel katılımcı raporunu indir"
+      ],
       "Download logs": [
         "Günlüğü indir"
+      ],
+      "Download participant report": [
+        "Katılımcı raporunu indir"
+      ],
+      "Download room level report": [
+        "Oda seviyesi raporunu indir"
       ],
       "Edit email address": [
         "E-posta adresini düzenle"
@@ -313,6 +322,9 @@
       "Copy meeting link": [
         "Görüşme bağlantısını kopyala"
       ],
+      "Debug overlay": [
+        "Hata ayıklama katmanı"
+      ],
       "Go to dashboard": [
         "Panoya git"
       ],
@@ -380,6 +392,11 @@
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "${ BRAND_NAME } uygulamaları"
+      ]
+    },
+    "Badge": {
+      "Active": [
+        "Etkin"
       ]
     },
     "Browser": {
@@ -1797,6 +1814,12 @@
       "No microphone detected.": [
         "Bir mikrofon bulunamadı."
       ],
+      "No publications": [
+        "Yayın yok"
+      ],
+      "No remote participants": [
+        "Uzak katılımcı yok"
+      ],
       "No results found": [
         "Herhangi bir sonuç bulunamadı"
       ],
@@ -1997,11 +2020,17 @@
       "Browser version": [
         "Tarayıcı sürümü"
       ],
+      "Camera Active": [
+        "Kamera Etkin"
+      ],
       "Category": [
         "Kategori"
       ],
       "Code is 6 digits without spaces": [
         "Doğrulama kodu boşluk içermeyen 6 rakamdan oluşur"
+      ],
+      "Connection Quality": [
+        "Bağlantı Kalitesi"
       ],
       "Delete": [
         "Sil"
@@ -2014,6 +2043,9 @@
       ],
       "Email address": [
         "E-posta adresi"
+      ],
+      "Enabled": [
+        "Kullanılıyor"
       ],
       "Every day": [
         "Her gün"
@@ -2033,14 +2065,26 @@
       "Hide password": [
         "Parolayı gizle"
       ],
+      "Identity": [
+        "Kimlik"
+      ],
       "Include application logs in bug report": [
         "Uygulama günlükleri sorun bildirimine eklensin"
       ],
       "Meeting ID": [
         "Görüşme kimliği"
       ],
+      "Microphone Active": [
+        "Mikrofon Etkin"
+      ],
       "Monday to Friday": [
         "Pazartesi ile Cuma arasında"
+      ],
+      "Muted": [
+        "Sessiz"
+      ],
+      "Name": [
+        "Ad"
       ],
       "No repeat": [
         "Yinelenmiyor"
@@ -2069,8 +2113,20 @@
       "Reveal password": [
         "Parolayı görüntüle"
       ],
+      "Selected Camera": [
+        "Seçili Kamera"
+      ],
+      "Selected Microphone": [
+        "Seçilen Mikrofon"
+      ],
+      "Subscribed": [
+        "Abone olundu"
+      ],
       "System information": [
         "Sistem bilgileri"
+      ],
+      "Track SID": [
+        "SID'yi izle"
       ],
       "Verification code": [
         "Doğrulama kodu"
@@ -2264,6 +2320,14 @@
         "Tek oturum açma hizmeti sağlayıcınıza yönlendirileceksiniz."
       ]
     },
+    "Status": {
+      "No": [
+        "Hayır"
+      ],
+      "Yes": [
+        "Evet"
+      ]
+    },
     "Success": {
       "Assigned new host": [
         "Yeni görüşme sahibi atandı"
@@ -2303,11 +2367,20 @@
       "Authenticator": [
         "Kimlik doğrulayıcı"
       ],
+      "Available Cameras": [
+        "Kullanılabilir Kameralar"
+      ],
+      "Available Microphones": [
+        "Kullanılabilir Mikrofonlar"
+      ],
       "Chat": [
         "Sohbet"
       ],
       "Date": [
         "Tarih"
+      ],
+      "Debug Overlay": [
+        "Hata Ayıklama Katmanı"
       ],
       "Enter your password": [
         "Parolanızı yazın"
@@ -2354,6 +2427,9 @@
       "Joining meeting with ${ participantCount } other participants…": [
         "${ participantCount } diğer kişiyle görüşmeye katılınıyor…"
       ],
+      "Local Participant": [
+        "Yerel Katılımcı"
+      ],
       "Meeting details": [
         "Görüşme ayrıntıları"
       ],
@@ -2383,6 +2459,12 @@
       ],
       "Protecting meeting with end-to-end encryption...": [
         "Görüşme uçtan uca şifrelemeyle korunuyor..."
+      ],
+      "Publications": [
+        "Yayınlar"
+      ],
+      "Remote Participants": [
+        "Uzaktan Katılımcılar"
       ],
       "Report a problem": [
         "Sorun bildirin"

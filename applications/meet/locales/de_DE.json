@@ -80,8 +80,17 @@
       "Done": [
         "Fertig"
       ],
+      "Download local participant report": [
+        "Lokaler Teilnehmerbericht herunterladen"
+      ],
       "Download logs": [
         "Protokolle herunterladen"
+      ],
+      "Download participant report": [
+        "Teilnehmerbericht herunterladen"
+      ],
+      "Download room level report": [
+        "Raum-Level-Bericht herunterladen"
       ],
       "Edit email address": [
         "E-Mail-Adresse bearbeiten"
@@ -313,6 +322,9 @@
       "Copy meeting link": [
         "Meeting-Link kopieren"
       ],
+      "Debug overlay": [
+        "Debug-Overlay"
+      ],
       "Go to dashboard": [
         "Zum Dashboard gehen"
       ],
@@ -380,6 +392,11 @@
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "${ BRAND_NAME }-Anwendungen"
+      ]
+    },
+    "Badge": {
+      "Active": [
+        "Aktiv"
       ]
     },
     "Browser": {
@@ -1794,6 +1811,12 @@
       "No microphone detected.": [
         "Kein Mikrofon erkannt."
       ],
+      "No publications": [
+        "Keine Veröffentlichungen"
+      ],
+      "No remote participants": [
+        "Keine Fernteilnehmer"
+      ],
       "No results found": [
         "Keine Ergebnisse gefunden"
       ],
@@ -1994,11 +2017,17 @@
       "Browser version": [
         "Browserversion"
       ],
+      "Camera Active": [
+        "Kamera aktiv"
+      ],
       "Category": [
         "Kategorie"
       ],
       "Code is 6 digits without spaces": [
         "Der Code ist 6-stellig ohne Leerzeichen"
+      ],
+      "Connection Quality": [
+        "Verbindungsqualität"
       ],
       "Delete": [
         "Löschen"
@@ -2011,6 +2040,9 @@
       ],
       "Email address": [
         "E-Mail-Adresse"
+      ],
+      "Enabled": [
+        "Aktiviert"
       ],
       "Every day": [
         "Jeden Tag"
@@ -2030,14 +2062,26 @@
       "Hide password": [
         "Passwort ausblenden"
       ],
+      "Identity": [
+        "Identität"
+      ],
       "Include application logs in bug report": [
         "Anwendungsprotokolle im Fehlerbericht einschließen"
       ],
       "Meeting ID": [
         "Meeting-ID"
       ],
+      "Microphone Active": [
+        "Mikrofon aktiv"
+      ],
       "Monday to Friday": [
         "Montag bis Freitag"
+      ],
+      "Muted": [
+        "Stummgeschaltet"
+      ],
+      "Name": [
+        "Name"
       ],
       "No repeat": [
         "Keine Wiederholung"
@@ -2066,8 +2110,20 @@
       "Reveal password": [
         "Passwort anzeigen"
       ],
+      "Selected Camera": [
+        "Ausgewählte Kamera"
+      ],
+      "Selected Microphone": [
+        "Ausgewähltes Mikrofon"
+      ],
+      "Subscribed": [
+        "Abonniert"
+      ],
       "System information": [
         "Systeminformationen"
+      ],
+      "Track SID": [
+        "SID nachverfolgen"
       ],
       "Verification code": [
         "Verifizierungscode"
@@ -2261,6 +2317,14 @@
         "Du wirst zu deinem SSO-Anbieter weitergeleitet."
       ]
     },
+    "Status": {
+      "No": [
+        "Nein"
+      ],
+      "Yes": [
+        "Ja"
+      ]
+    },
     "Success": {
       "Assigned new host": [
         "Neuer Organisator zugewiesen"
@@ -2300,11 +2364,20 @@
       "Authenticator": [
         "Authenticator"
       ],
+      "Available Cameras": [
+        "Verfügbare Kameras"
+      ],
+      "Available Microphones": [
+        "Verfügbare Mikrofone"
+      ],
       "Chat": [
         "Chat"
       ],
       "Date": [
         "Datum"
+      ],
+      "Debug Overlay": [
+        "Debug-Overlay"
       ],
       "Enter your password": [
         "Passwort eingeben"
@@ -2351,6 +2424,9 @@
       "Joining meeting with ${ participantCount } other participants…": [
         "Teilnahme an Besprechung mit ${ participantCount } weiteren Teilnehmern …"
       ],
+      "Local Participant": [
+        "Lokaler Teilnehmer"
+      ],
       "Meeting details": [
         "Besprechungsdetails"
       ],
@@ -2380,6 +2456,12 @@
       ],
       "Protecting meeting with end-to-end encryption...": [
         "Meeting wird Ende-zu-Ende-verschlüsselt..."
+      ],
+      "Publications": [
+        "Veröffentlichungen"
+      ],
+      "Remote Participants": [
+        "Fernteilnehmer"
       ],
       "Report a problem": [
         "Ein Problem melden"

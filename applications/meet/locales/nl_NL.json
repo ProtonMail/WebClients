@@ -80,8 +80,17 @@
       "Done": [
         "Klaar"
       ],
+      "Download local participant report": [
+        "Lokale deelnemersrapport downloaden"
+      ],
       "Download logs": [
         "Logboeken downloaden"
+      ],
+      "Download participant report": [
+        "Deelnemersrapport downloaden"
+      ],
+      "Download room level report": [
+        "Rapport van deze ruimte downloaden"
       ],
       "Edit email address": [
         "Wijzig e-mailadres"
@@ -263,6 +272,9 @@
       "Switch or add account": [
         "Account toevoegen of wisselen"
       ],
+      "Tap to unblock audio playback": [
+        "Tik om audio te deblokkeren"
+      ],
       "Try another method": [
         "Andere methode proberen"
       ],
@@ -309,6 +321,9 @@
       ],
       "Copy meeting link": [
         "Vergadering link kopiëren"
+      ],
+      "Debug overlay": [
+        "Foutopsporing overlay"
       ],
       "Go to dashboard": [
         "Ga naar dashboard"
@@ -377,6 +392,11 @@
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "${ BRAND_NAME }-applicaties"
+      ]
+    },
+    "Badge": {
+      "Active": [
+        "Actief"
       ]
     },
     "Browser": {
@@ -1794,6 +1814,12 @@
       "No microphone detected.": [
         "Geen microfoon gedetecteerd."
       ],
+      "No publications": [
+        "Geen publicaties"
+      ],
+      "No remote participants": [
+        "Geen deelnemers op afstand"
+      ],
       "No results found": [
         "Geen resultaten gevonden"
       ],
@@ -1874,6 +1900,9 @@
       ],
       "Stop sharing your screen": [
         "Stop met het delen van uw scherm"
+      ],
+      "The host has ended the meeting": [
+        "De organisator heeft de vergadering beëindigd"
       ],
       "This is an end-to-end encrypted chat with ephemeral messages. After you leave the call, you will not be able to access this chat.": [
         "Dit is een end-to-end versleuteld gesprek met kortstondige berichten. Nadat u het gesprek verlaat, kunt u dit gesprek niet meer openen."
@@ -1991,11 +2020,17 @@
       "Browser version": [
         "Browserversie"
       ],
+      "Camera Active": [
+        "Camera actief"
+      ],
       "Category": [
         "Categorie"
       ],
       "Code is 6 digits without spaces": [
         "Code is 6 cijfers zonder spaties"
+      ],
+      "Connection Quality": [
+        "Verbindingskwaliteit"
       ],
       "Delete": [
         "Verwijderen"
@@ -2008,6 +2043,9 @@
       ],
       "Email address": [
         "E-mailadres"
+      ],
+      "Enabled": [
+        "Ingeschakeld"
       ],
       "Every day": [
         "Elke dag"
@@ -2027,14 +2065,26 @@
       "Hide password": [
         "Wachtwoord verbergen"
       ],
+      "Identity": [
+        "Identiteit"
+      ],
       "Include application logs in bug report": [
         "Applicatie logs toevoegen aan het foutenrapport"
       ],
       "Meeting ID": [
         "Vergaderingsnummer"
       ],
+      "Microphone Active": [
+        "Microfoon actief"
+      ],
       "Monday to Friday": [
         "Maandag t/m vrijdag"
+      ],
+      "Muted": [
+        "Gedempt"
+      ],
+      "Name": [
+        "Naam"
       ],
       "No repeat": [
         "Niet herhalen"
@@ -2057,11 +2107,26 @@
       "Phone number": [
         "Telefoonnummer"
       ],
+      "Remember my name on this device for future meetings": [
+        "Onthoud mijn naam op dit apparaat voor toekomstige vergaderingen"
+      ],
       "Reveal password": [
         "Wachtwoord tonen"
       ],
+      "Selected Camera": [
+        "Selecteer camera"
+      ],
+      "Selected Microphone": [
+        "Geselecteerde microfoon"
+      ],
+      "Subscribed": [
+        "Geabonneerd"
+      ],
       "System information": [
         "Systeeminformatie"
+      ],
+      "Track SID": [
+        "Track SID"
       ],
       "Verification code": [
         "Verificatiecode"
@@ -2255,6 +2320,14 @@
         "U wordt doorgestuurd naar uw derde partij SSO-provider."
       ]
     },
+    "Status": {
+      "No": [
+        "Nee"
+      ],
+      "Yes": [
+        "Ja"
+      ]
+    },
     "Success": {
       "Assigned new host": [
         "Een nieuwe host is toegewezen"
@@ -2294,11 +2367,20 @@
       "Authenticator": [
         "Authenticator"
       ],
+      "Available Cameras": [
+        "Beschikbare camera's"
+      ],
+      "Available Microphones": [
+        "Beschikbare microfoons"
+      ],
       "Chat": [
         "Chat"
       ],
       "Date": [
         "Datum"
+      ],
+      "Debug Overlay": [
+        "Foutopsporing overlay"
       ],
       "Enter your password": [
         "Voer uw wachtwoord in"
@@ -2345,6 +2427,9 @@
       "Joining meeting with ${ participantCount } other participants…": [
         "U neemt deel aan de vergadering met ${ participantCount } andere deelnemers..."
       ],
+      "Local Participant": [
+        "Lokale deelnemer"
+      ],
       "Meeting details": [
         "Vergaderingsgegevens"
       ],
@@ -2374,6 +2459,12 @@
       ],
       "Protecting meeting with end-to-end encryption...": [
         "Vergadering wordt beveiligd met end-to-end-versleuteling..."
+      ],
+      "Publications": [
+        "Publicaties"
+      ],
+      "Remote Participants": [
+        "Deelnemers op afstand"
       ],
       "Report a problem": [
         "Meld een probleem"
