@@ -13,7 +13,7 @@ import { formatFullDate } from '../../date';
 import { getDate } from '../../elements';
 import { exportPlainText, getDocumentContent } from '../messageContent';
 import { restoreImages } from '../messageImages';
-import { templateBuilder } from '../messageSignature';
+import { exportPlainTextSignature, templateBuilder } from '../messageSignature';
 
 export const generatePlaintextPreviousMessageInfos = (
     referenceMessage: PartialMessageState,
@@ -95,7 +95,7 @@ export const createPlaintextDraftContent = ({
         action !== MESSAGE_ACTIONS.NEW,
         true
     );
-    const plaintextSignature = exportPlainText(signatureTemplate).trim();
+    const plaintextSignature = exportPlainTextSignature(signatureTemplate);
 
     // Plaintext drafts are starting with 4 empty lines
     const plainText = plaintextSignature ? `\n\n\n\n${plaintextSignature}\n\n${messageBody}` : `\n\n\n\n${messageBody}`;

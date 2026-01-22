@@ -20,6 +20,20 @@ export const CLASSNAME_SIGNATURE_USER = 'protonmail_signature_block-user';
 export const CLASSNAME_SIGNATURE_PROTON = 'protonmail_signature_block-proton';
 export const CLASSNAME_SIGNATURE_EMPTY = 'protonmail_signature_block-empty';
 
+// Cache signatures to make composing and signature change faster
+const signatureCache = new Map<string, string>();
+
+export const exportPlainTextSignature = (htmlSignature: string): string => {
+    if (signatureCache.has(htmlSignature)) {
+        return signatureCache.get(htmlSignature)!;
+    }
+
+    const plaintext = exportPlainText(htmlSignature);
+
+    signatureCache.set(htmlSignature, plaintext);
+    return plaintext;
+};
+
 /**
  * Preformat the protonMail signature
  */
@@ -177,8 +191,8 @@ export const changeSignature = (
         const oldTemplate = templateBuilder(oldSignature, mailSettings, userSettings, fontStyle, false, true);
         const newTemplate = templateBuilder(newSignature, mailSettings, userSettings, fontStyle, false, true);
         const content = getPlainTextContent(message);
-        const oldSignatureText = exportPlainText(oldTemplate).trim();
-        const newSignatureText = exportPlainText(newTemplate).trim();
+        const oldSignatureText = exportPlainTextSignature(oldTemplate).trim();
+        const newSignatureText = exportPlainTextSignature(newTemplate).trim();
 
         // Special case when there was no signature before
         if (oldSignatureText === '') {
