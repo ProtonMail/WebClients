@@ -1,14 +1,16 @@
 import { toText } from '@proton/mail/helpers/parserHtml';
 import { PROXY_IMG_URL } from '@proton/shared/lib/api/images';
 import { parseStringToDOM } from '@proton/shared/lib/helpers/dom';
-import { removeProxyUrlsFromContent } from '@proton/shared/lib/mail/images';
+import { removeEmbeddedImagesFromContent, removeProxyUrlsFromContent } from '@proton/shared/lib/mail/images';
 
 /**
  * When the user has the setting "Block email tracking" enabled, we are loading images through the Proton proxy.
  * However, when the user is copying content from an email (including images) and pasting them somewhere else, they
  * won't be loaded. Additionally, we don't want to leak the UID.
+ * Additionally, embedded images can be copy-pasted from the message to the composer. The image is shown because it is cached.
+ * But it won't be sent. Instead of confusing users by showing an image that won't be sent, we should remove it directly on copy.
  */
-export const cleanProxyImagesFromClipboardContent = (
+export const cleanProblematicImagesFromClipboardContent = (
     type: 'copy' | 'drag',
     event: Event,
     selection: Selection | null | undefined
@@ -30,6 +32,9 @@ export const cleanProxyImagesFromClipboardContent = (
 
         // Replace all proxy images with their original URL
         const updatedContent = removeProxyUrlsFromContent(selectionContent);
+
+        // Remove all embedded images from the content
+        removeEmbeddedImagesFromContent(updatedContent);
 
         // Update clipboard data / data transfer with the updated HTML and plaintext
         if (type === 'copy') {
