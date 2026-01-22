@@ -2,14 +2,8 @@ import type { NodeEntity, ProtonDrivePhotosClient } from '@proton/drive/index';
 import { NodeType } from '@proton/drive/index';
 
 import { TransferCancel } from '../../components/TransferManager/transfer';
-import {
-    createDeferred,
-    createEmptyAsyncGenerator,
-    createMockNodeEntity,
-    flushAsync,
-    trackInstances,
-    waitForCondition,
-} from './testUtils';
+import { createMockNodeEntity } from '../../utils/test/nodeEntity';
+import { createDeferred, createEmptyAsyncGenerator, flushAsync, trackInstances, waitForCondition } from './testUtils';
 
 const schedulerTracker = trackInstances((...args: unknown[]) => {
     let counter = 0;

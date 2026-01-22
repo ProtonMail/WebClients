@@ -1,7 +1,7 @@
 import { NodeType } from '@proton/drive/index';
 import { PROTON_DOCS_DOCUMENT_MIMETYPE } from '@proton/shared/lib/helpers/mimetype';
 
-import { createMockNodeEntity } from '../testUtils';
+import { createMockNodeEntity } from '../../../utils/test/nodeEntity';
 import { traverseNodeStructure } from './traverseNodeStructure';
 
 jest.mock('@proton/drive/index', () => {
