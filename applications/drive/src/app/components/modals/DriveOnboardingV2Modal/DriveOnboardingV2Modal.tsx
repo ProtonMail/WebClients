@@ -1,12 +1,16 @@
 import type { ReactNode } from 'react';
 import { type FC, useEffect, useMemo, useState } from 'react';
 
+import { c } from 'ttag';
+
 import { useWelcomeFlags } from '@proton/account';
 import type { ModalStateProps } from '@proton/components';
 import { Loader, ModalTwo, ModalTwoContent, ModalTwoFooter, useDrivePlan } from '@proton/components';
+import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 import isTruthy from '@proton/utils/isTruthy';
 
+import { useFreeUploadApi } from '../../../hooks/drive/freeUpload/useFreeUploadApi';
 import { useInitializeFreeUploadTimer } from '../../../hooks/drive/freeUpload/useInitializeFreeUploadTimer';
 import { useDesktopDownloads } from '../../../hooks/drive/useDesktopDownloads';
 import { Actions, countActionWithTelemetry } from '../../../utils/telemetry';
@@ -44,6 +48,9 @@ export const DriveOnboardingV2Modal: FC<ModalStateProps> = (props) => {
     const showPendingInvitationsStep = !showB2BInviteStep && hasPendingExternalInvitations;
 
     const { eligibleForFreeUpload, initializeTimer } = useInitializeFreeUploadTimer();
+    const { checkOnboardingStatus } = useFreeUploadApi();
+
+    const showErrorNotification = useErrorHandler();
 
     // Only show upload step on desktop
     const showUploadStep = !eligibleForFreeUpload && !isMobile();
@@ -86,14 +93,21 @@ export const DriveOnboardingV2Modal: FC<ModalStateProps> = (props) => {
 
     const [Container, Buttons, extraProps] = steps[step] || [];
 
-    const onNext = () => {
+    const onNext = async () => {
         if (step < steps.length - 1) {
             setStep((step) => step + 1);
         } else {
             setWelcomeFlagsDone();
 
+            // Re-validate eligibility before starting timer to avoid stale state
             if (eligibleForFreeUpload) {
-                initializeTimer();
+                const { IsFreshAccount } = await checkOnboardingStatus();
+                if (IsFreshAccount) {
+                    await initializeTimer();
+                } else {
+                    const error = new Error(c('Error').t`We're sorry, but free upload is not available right now.`);
+                    showErrorNotification(error);
+                }
             }
 
             props.onClose?.();
