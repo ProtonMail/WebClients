@@ -3,24 +3,25 @@ import React from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import {
     Alert,
-    Icon,
+    ButtonWithTextAndIcon,
     ModalTwo,
     ModalTwoContent,
     ModalTwoFooter,
     ModalTwoHeader,
-    useActiveBreakpoint,
 } from '@proton/components';
+import { generateNodeUid, useDrive } from '@proton/drive/index';
 import { useLoading } from '@proton/hooks';
 
 import FolderTree from '../../components/FolderTree/FolderTree';
 import ModalContentLoader from '../../components/modals/ModalContentLoader';
 import { selectMessageForItemList } from '../../components/sections/helpers';
-import type { TreeItem } from '../../store';
-import type { DecryptedLink } from '../../store';
+import type { DecryptedLink, TreeItem } from '../../store';
 import { getMovedFiles } from '../../utils/moveTexts';
 import { EmptyFileTreePlaceholder } from './EmptyFileTreePlaceholder';
+import { useMoveEligibility } from './useMoveEligibility';
 import type { MoveItemsModalStateItem } from './useMoveItemsModalState';
 
 export type MoveItemsModalViewProps = {
@@ -52,21 +53,17 @@ export const MoveItemsModalView = ({
     ...modalProps
 }: MoveItemsModalViewProps) => {
     const [loading, withLoading] = useLoading();
-    const { viewportWidth } = useActiveBreakpoint();
-    const isSmallViewport = viewportWidth['<=small'];
 
     const itemsToMove = selectedItems.map((item) => item.linkId);
     const itemsToMoveCount = itemsToMove.length;
     const messages = getMovedFiles(itemsToMoveCount);
 
-    const isMoveDisabled =
-        !targetFolderUid ||
-        selectedItems.some((item) =>
-            [
-                item.linkId, // Moving folder to its own folder is not possible.
-                item.parentLinkId, // Moving item to the same location is no-op.
-            ].includes(targetFolderUid)
-        );
+    const selectedItemConfigs = selectedItems.map((item) => ({
+        nodeUid: generateNodeUid(item.volumeId, item.linkId),
+        parentNodeUid: generateNodeUid(item.volumeId, item.parentLinkId),
+    }));
+    const { drive } = useDrive();
+    const { isInvalidMove, invalidMoveMessage } = useMoveEligibility(selectedItemConfigs, targetFolderUid, drive);
 
     const title = selectMessageForItemList(
         selectedItems.map((item) => item.isFile),
@@ -112,38 +109,29 @@ export const MoveItemsModalView = ({
                                 </ModalTwoContent>
                                 <ModalTwoFooter>
                                     <div className="flex justify-space-between w-full flex-nowrap">
-                                        {isSmallViewport ? (
-                                            <Button
-                                                icon
-                                                disabled={loading || !targetFolderUid}
-                                                onClick={createFolder}
-                                                title={c('Action').t`Create new folder`}
-                                            >
-                                                <Icon name="folder-plus" />
-                                            </Button>
-                                        ) : (
-                                            <Button
-                                                shape="underline"
-                                                color="norm"
-                                                disabled={loading || !targetFolderUid}
-                                                onClick={createFolder}
-                                            >
-                                                {c('Action').t`Create new folder`}
-                                            </Button>
-                                        )}
-                                        <div>
+                                        <ButtonWithTextAndIcon
+                                            onClick={createFolder}
+                                            disabled={loading || !targetFolderUid}
+                                            iconName="folder-plus"
+                                            buttonText={c('Action').t`New folder`}
+                                        />
+                                        <div className="flex justify-space-between flex-nowrap">
                                             <Button type="reset" disabled={loading} autoFocus>
                                                 {c('Action').t`Close`}
                                             </Button>
-                                            <Button
-                                                color="norm"
-                                                className="ml-4"
-                                                loading={loading}
-                                                type="submit"
-                                                disabled={isMoveDisabled}
-                                            >
-                                                {c('Action').t`Move`}
-                                            </Button>
+                                            <Tooltip title={invalidMoveMessage}>
+                                                <span>
+                                                    <Button
+                                                        color="norm"
+                                                        className="ml-4"
+                                                        loading={loading}
+                                                        type="submit"
+                                                        disabled={loading || isInvalidMove}
+                                                    >
+                                                        {c('Action').t`Move`}
+                                                    </Button>
+                                                </span>
+                                            </Tooltip>
                                         </div>
                                     </div>
                                 </ModalTwoFooter>

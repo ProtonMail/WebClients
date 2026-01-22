@@ -2,10 +2,11 @@ import { jest } from '@jest/globals';
 
 import { NodeType } from '@proton/drive/index';
 
+import { createMockNodeEntity } from '../../utils/test/nodeEntity';
 import { DownloadStatus, useDownloadManagerStore } from '../../zustand/download/downloadManager.store';
 import type { ArchiveStreamGenerator as ArchiveStreamGeneratorClass } from './ArchiveStreamGenerator';
 import type { DownloadQueueTask } from './downloadTypes';
-import { createDeferred, createMockNodeEntity, flushAsync, trackInstances } from './testUtils';
+import { createDeferred, flushAsync, trackInstances } from './testUtils';
 
 const getDownloadSdkMock = jest.fn();
 const handleDownloadErrorMock = jest.fn();
