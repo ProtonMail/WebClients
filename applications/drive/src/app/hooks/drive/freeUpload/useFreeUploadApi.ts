@@ -13,7 +13,7 @@ export function useFreeUploadApi() {
     // Memoized to be used in useEffect hook
     const checkOnboardingStatus = useCallback(() => api<{ IsFreshAccount: boolean }>(queryOnboardingStatus()), [api]);
     const checkFreeUploadTimer = useCallback(() => api<{ EndTime: null | number }>(queryFreshAccountStatus()), [api]);
-    const startFreeUploadTimer = () => api<{ EndTime: null | number }>(queryUpdateFreshAccount());
+    const startFreeUploadTimer = useCallback(() => api<{ EndTime: null | number }>(queryUpdateFreshAccount()), [api]);
 
     return { checkOnboardingStatus, checkFreeUploadTimer, startFreeUploadTimer };
 }
