@@ -45,7 +45,8 @@ const MainSwitch: FC = () => {
     const { viewportWidth } = useActiveBreakpoint();
     useSpotlightListener();
 
-    const showSidebar = viewportWidth.medium || viewportWidth['>=large'];
+    // Doing this responsive adaptation programatically so the sidebar can be lazyly loaded
+    const showSidebar = viewportWidth['>=large'];
 
     return (
         <Route path="*">
