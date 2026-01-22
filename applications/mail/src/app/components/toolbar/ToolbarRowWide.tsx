@@ -6,6 +6,7 @@ import { useElementBreakpoints } from '@proton/components';
 import { useFolders, useLabels } from '@proton/mail';
 import clsx from '@proton/utils/clsx';
 
+import { useSelectAll } from 'proton-mail/hooks/useSelectAll';
 import { useMailSelector } from 'proton-mail/store/hooks';
 
 import { getLabelName, isLabelIDNewsletterSubscription } from '../../helpers/labels';
@@ -22,8 +23,10 @@ import PagingControls from './PagingControls';
 import ReadUnreadButtons from './ReadUnreadButtons';
 import type { Props as ToolbarProps } from './Toolbar';
 
-interface Props
-    extends Omit<ToolbarProps, 'onCheck' | 'checkedIDs' | 'columnMode' | 'onBack' | 'onElement' | 'breakpoints'> {
+interface Props extends Omit<
+    ToolbarProps,
+    'onCheck' | 'checkedIDs' | 'columnMode' | 'onBack' | 'onElement' | 'breakpoints'
+> {
     classname: string;
 }
 
@@ -65,6 +68,7 @@ const ToolbarRowWide = ({
     const breakpoint = useElementBreakpoints(toolbarRef, BREAKPOINTS);
     const { localIsTiny, localIsExtraTiny, localIsNarrow } = getToolbarResponsiveSizes(breakpoint);
     const localIsNarrowAndMedium = localIsNarrow || breakpoint === 'medium';
+    const { selectAll: isSelectAll } = useSelectAll({ labelID });
 
     const [labels] = useLabels();
     const [folders] = useFolders();
@@ -104,7 +108,9 @@ const ToolbarRowWide = ({
                                     onCheckAll={onCheckAll}
                                 />
                             )}
-                            {!localIsTiny && <SnoozeToolbarDropdown selectedIDs={selectedIDs} labelID={labelID} />}
+                            {!localIsTiny && !isSelectAll && (
+                                <SnoozeToolbarDropdown selectedIDs={selectedIDs} labelID={labelID} />
+                            )}
                             <MoreDropdown
                                 labelID={labelID}
                                 elementIDs={elementIDs}

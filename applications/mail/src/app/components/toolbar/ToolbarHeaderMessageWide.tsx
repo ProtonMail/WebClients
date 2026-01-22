@@ -7,6 +7,8 @@ import { ToolbarButton, useElementBreakpoints } from '@proton/components';
 import { IcArrowLeft } from '@proton/icons/icons/IcArrowLeft';
 import clsx from '@proton/utils/clsx';
 
+import { useSelectAll } from 'proton-mail/hooks/useSelectAll';
+
 import { getToolbarResponsiveSizes } from '../../helpers/toolbar/getToolbarResponsiveSizes';
 import SnoozeToolbarDropdown from '../list/snooze/containers/SnoozeToolbarDropdown';
 import LabelsAndFolders from './LabelsAndFolders';
@@ -15,20 +17,19 @@ import NavigationControls from './NavigationControls';
 import ReadUnreadButtons from './ReadUnreadButtons';
 import type { Props as ToolbarProps } from './Toolbar';
 
-interface Props
-    extends Omit<
-        ToolbarProps,
-        | 'onCheck'
-        | 'columnMode'
-        | 'total'
-        | 'isSearch'
-        | 'sort'
-        | 'onSort'
-        | 'onFilter'
-        | 'filter'
-        | 'mailSettings'
-        | 'breakpoints'
-    > {
+interface Props extends Omit<
+    ToolbarProps,
+    | 'onCheck'
+    | 'columnMode'
+    | 'total'
+    | 'isSearch'
+    | 'sort'
+    | 'onSort'
+    | 'onFilter'
+    | 'filter'
+    | 'mailSettings'
+    | 'breakpoints'
+> {
     classname: string;
 }
 
@@ -62,6 +63,7 @@ const ToolbarHeaderMessageWide = ({
     const toolbarRef = useRef<HTMLDivElement>(null);
     const breakpoint = useElementBreakpoints(toolbarRef, BREAKPOINTS);
     const { localIsTiny } = getToolbarResponsiveSizes(breakpoint);
+    const { selectAll: isSelectAll } = useSelectAll({ labelID });
 
     return (
         <div className="w-full">
@@ -95,7 +97,7 @@ const ToolbarHeaderMessageWide = ({
                                 moveDropdownToggleRef={moveDropdownToggleRef}
                                 onCheckAll={onCheckAll}
                             />
-                            <SnoozeToolbarDropdown labelID={labelID} selectedIDs={selectedIDs} />
+                            {!isSelectAll && <SnoozeToolbarDropdown labelID={labelID} selectedIDs={selectedIDs} />}
                         </>
                     )}
 

@@ -6,6 +6,7 @@ import { useElementBreakpoints } from '@proton/components';
 import { useFolders, useLabels } from '@proton/mail';
 import clsx from '@proton/utils/clsx';
 
+import { useSelectAll } from 'proton-mail/hooks/useSelectAll';
 import { useMailSelector } from 'proton-mail/store/hooks';
 
 import { getLabelName, isLabelIDNewsletterSubscription } from '../../helpers/labels';
@@ -63,7 +64,7 @@ const ToolbarColumnWide = ({
     const toolbarRef = useRef<HTMLDivElement>(null);
     const breakpoint = useElementBreakpoints(toolbarRef, BREAKPOINTS);
     const { localIsTiny, localIsExtraTiny, localIsNarrow } = getToolbarResponsiveSizes(breakpoint);
-
+    const { selectAll: isSelectAll } = useSelectAll({ labelID });
     const [labels] = useLabels();
     const [folders] = useFolders();
     const labelName = useMemo(() => getLabelName(labelID, labels, folders), [labelID, labels, folders]);
@@ -105,7 +106,9 @@ const ToolbarColumnWide = ({
                                     onCheckAll={onCheckAll}
                                 />
                             )}
-                            {!localIsExtraTiny && <SnoozeToolbarDropdown labelID={labelID} selectedIDs={selectedIDs} />}
+                            {!localIsExtraTiny && !isSelectAll && (
+                                <SnoozeToolbarDropdown labelID={labelID} selectedIDs={selectedIDs} />
+                            )}
                             <MoreDropdown
                                 labelID={labelID}
                                 elementIDs={elementIDs}
