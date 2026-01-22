@@ -1,6 +1,11 @@
 import { useEffect, useRef } from 'react';
 
+import addMinutes from 'date-fns/addMinutes';
+import isAfter from 'date-fns/isAfter';
+import { c } from 'ttag';
 import { useShallow } from 'zustand/react/shallow';
+
+import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 
 import { useFreeUploadOverModal } from '../../../modals/FreeUploadOverModal/useFreeUploadOverModal';
 import { sendErrorReport } from '../../../utils/errorHandling';
@@ -32,31 +37,44 @@ export function useRunningFreeUploadTimer(createTime?: number) {
     // It will cause the clock to stop
     const isFreeUploadInProgress = useIsFreeUploadInProgress();
 
+    const showErrorNotification = useErrorHandler();
+
     // Check if free upload was started recently
     const { checkFreeUploadTimer } = useFreeUploadApi();
-    useEffect(() => {
-        if (!canUseFreeUpload) {
-            return;
-        }
+    useEffect(
+        function resumeTimer() {
+            if (!canUseFreeUpload) {
+                return;
+            }
 
-        // Available only for users who opened drive for the first time recently
-        if (!createTime) {
-            return;
-        }
-        const createTimeMilliseconds = createTime * 1000;
-        const hourAndHalfAfterCreation = 90 * 60 * 1000 + createTimeMilliseconds;
-        if (Date.now() > hourAndHalfAfterCreation) {
-            return;
-        }
+            // Available only for users who opened drive for the first time recently
+            if (createTime === undefined) {
+                return;
+            }
+            const createTimeMilliseconds = createTime * 1000;
+            const hourAndHalfAfterCreation = createTimeMilliseconds + 90 * 60 * 1000;
+            if (Date.now() >= hourAndHalfAfterCreation) {
+                return;
+            }
 
-        checkFreeUploadTimer()
-            .then(({ EndTime }) => {
-                if (EndTime !== null) {
-                    beginCountdown(EndTime * 1000); // convert seconds to milliseconds
-                }
-            })
-            .catch(sendErrorReport);
-    }, [beginCountdown, canUseFreeUpload, checkFreeUploadTimer, createTime]);
+            checkFreeUploadTimer()
+                .then(({ EndTime }) => {
+                    if (EndTime !== null) {
+                        const endTimeMs = EndTime * 1000;
+                        if (isAfter(endTimeMs, addMinutes(new Date(), 10))) {
+                            const error = new Error(
+                                c('Error').t`We're sorry, but free upload is not available right now.`
+                            );
+                            showErrorNotification(error);
+                            throw error;
+                        }
+                        beginCountdown(endTimeMs);
+                    }
+                })
+                .catch(sendErrorReport);
+        },
+        [beginCountdown, canUseFreeUpload, checkFreeUploadTimer, createTime, showErrorNotification]
+    );
 
     const [freeUploadOverModal, showFreeUploadOverModal] = useFreeUploadOverModal();
 
