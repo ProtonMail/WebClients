@@ -9,9 +9,10 @@ import { IcEnvelopeOpen } from '@proton/icons/icons/IcEnvelopeOpen';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 
+import { useSelectAll } from 'proton-mail/hooks/useSelectAll';
 import { useMailSelector } from 'proton-mail/store/hooks';
 
-import { elementsAreUnread as elementsAreUnreadSelector } from '../../store/elements/elementsSelectors';
+import { elementsAreUnread as elementsAreUnreadSelector, params } from '../../store/elements/elementsSelectors';
 import { SOURCE_ACTION } from '../list/list-telemetry/useListTelemetry';
 
 interface Props {
@@ -21,6 +22,8 @@ interface Props {
 
 const ReadUnreadButtons = ({ selectedIDs, onMarkAs }: Props) => {
     const [{ Shortcuts }] = useMailSettings();
+    const { labelID } = useMailSelector(params);
+    const { selectAll } = useSelectAll({ labelID });
 
     const elementsAreUnread = useMailSelector(elementsAreUnreadSelector);
 
@@ -53,29 +56,39 @@ const ReadUnreadButtons = ({ selectedIDs, onMarkAs }: Props) => {
         c('Action').t`Mark as unread`
     );
 
-    return (
-        <>
-            {buttonMarkAsRead ? (
-                <ToolbarButton
-                    key="read"
-                    title={titleRead}
-                    disabled={!selectedIDs.length}
-                    onClick={() => onMarkAs(MARK_AS_STATUS.READ, SOURCE_ACTION.TOOLBAR)}
-                    data-testid="toolbar:read"
-                    icon={<IcEnvelopeOpen alt={c('Action').t`Mark as read`} />}
-                />
-            ) : (
-                <ToolbarButton
-                    key="unread"
-                    title={titleUnread}
-                    disabled={!selectedIDs.length}
-                    onClick={() => onMarkAs(MARK_AS_STATUS.UNREAD, SOURCE_ACTION.TOOLBAR)}
-                    data-testid="toolbar:unread"
-                    icon={<IcEnvelopeDot alt={c('Action').t`Mark as unread`} />}
-                />
-            )}
-        </>
+    const readButton = (
+        <ToolbarButton
+            key="read"
+            title={titleRead}
+            disabled={!selectedIDs.length}
+            onClick={() => onMarkAs(MARK_AS_STATUS.READ, SOURCE_ACTION.TOOLBAR)}
+            data-testid="toolbar:read"
+            icon={<IcEnvelopeOpen alt={c('Action').t`Mark as read`} />}
+        />
     );
+
+    const unreadButton = (
+        <ToolbarButton
+            key="unread"
+            title={titleUnread}
+            disabled={!selectedIDs.length}
+            onClick={() => onMarkAs(MARK_AS_STATUS.UNREAD, SOURCE_ACTION.TOOLBAR)}
+            data-testid="toolbar:unread"
+            icon={<IcEnvelopeDot alt={c('Action').t`Mark as unread`} />}
+        />
+    );
+
+    // When doing a "Select all", show both actions so that the user can perform any action
+    if (selectAll) {
+        return (
+            <>
+                {readButton}
+                {unreadButton}
+            </>
+        );
+    }
+
+    return <>{buttonMarkAsRead ? readButton : unreadButton}</>;
 };
 
 export default ReadUnreadButtons;
