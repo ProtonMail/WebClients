@@ -3,7 +3,7 @@ import type { Address } from '@proton/shared/lib/interfaces';
 import { FORWARDED_MESSAGE, ORIGINAL_MESSAGE } from '@proton/shared/lib/mail/messages';
 import { getProtonMailSignature } from '@proton/shared/lib/mail/signature';
 
-import { exportPlainText } from './messageContent';
+import { exportPlainTextSignature } from './messageSignature';
 
 export const BLOCKQUOTE_SELECTORS = [
     '.protonmail_quote', // Proton Mail
@@ -257,14 +257,15 @@ export const removeSignatureFromPlainTextMessage = (
     addresses: Address[] | undefined
 ): string => {
     const address = addresses?.find((a) => a.ID === addressID);
-    const addressSignature = exportPlainText(address?.Signature ?? '');
-    const protonSignaturePlainText = exportPlainText(getProtonMailSignature());
+    const addressSignature = exportPlainTextSignature(address?.Signature ?? '');
 
     const signatureIndex = addressSignature === '' ? -1 : contentBeforeBlockquote.lastIndexOf(addressSignature);
 
     if (signatureIndex === -1) {
         return contentBeforeBlockquote;
     }
+
+    const protonSignaturePlainText = exportPlainTextSignature(getProtonMailSignature());
 
     const beforeSignature = contentBeforeBlockquote.slice(0, signatureIndex);
     const afterSignature = contentBeforeBlockquote.slice(signatureIndex + addressSignature.length);
