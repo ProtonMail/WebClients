@@ -26,3 +26,15 @@ export const removeProxyUrlsFromContent = (content: Document) => {
 
     return content;
 };
+
+export const removeEmbeddedImagesFromContent = (content: Document) => {
+    const contentImages = content.querySelectorAll('img');
+    contentImages.forEach((img) => {
+        // We need to remove "blob:" and "cid:" URLs, that won't work properly on pasted content
+        const isProblematicImage = img.src.startsWith('blob:') || img.src.startsWith('cid:');
+        if (isProblematicImage) {
+            img.remove();
+        }
+    });
+    return content;
+};
