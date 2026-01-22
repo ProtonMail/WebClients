@@ -4,11 +4,8 @@ import { useParams } from 'react-router-dom-v5-compat';
 import { generateNodeUid } from '@proton/drive/index';
 import { LinkURLType } from '@proton/shared/lib/drive/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
-import useFlag from '@proton/unleash/useFlag';
-import noop from '@proton/utils/noop';
 
 import { DriveStartupModals } from '../components/modals/DriveStartupModals';
-import type { DriveSectionRouteProps } from '../components/sections/Drive/DriveView';
 import { DriveViewDeprecated } from '../components/sections/Drive/DriveView';
 import type { DriveFolder } from '../hooks/drive/useActiveShare';
 import { useActiveShare } from '../hooks/drive/useActiveShare';
@@ -16,8 +13,7 @@ import { useFolderContainerTitle } from '../hooks/drive/useFolderContainerTitle'
 import useDriveNavigation from '../hooks/drive/useNavigate';
 import { FolderView } from '../sections/folders/FolderView';
 import { subscribeToFolderEvents } from '../sections/folders/subscribeToFolderEvents';
-import { useDefaultShare, useDriveEventManager } from '../store';
-import { VolumeTypeForEvents, useVolumesState } from '../store/_volumes';
+import { useDefaultShare } from '../store';
 import { getIsPublicContext } from '../utils/getIsPublicContext';
 import PreviewContainer from './PreviewContainer';
 
@@ -29,19 +25,18 @@ type DriveFolderWithUid = DriveFolder & {
     uid: string;
 };
 
+type DriveSectionRouteProps = { shareId?: string; type?: LinkURLType; linkId?: string };
+
 export function FolderContainer({ type }: { type: LinkURLType }) {
     const params = useParams<DriveSectionRouteProps>();
     const { shareId, linkId } = params;
     const { navigateToRoot, navigateToNoAccess } = useDriveNavigation();
     const { activeFolder, setFolder } = useActiveShare();
-    const volumesState = useVolumesState();
     const lastFolderPromise = useRef<Promise<DriveFolderWithUid | undefined>>();
     const [, setError] = useState();
     const { getDefaultShare, isShareAvailable } = useDefaultShare();
-    const driveEventManager = useDriveEventManager();
-    const useSDK = useFlag('DriveWebSDKFolders');
     const isPublic = getIsPublicContext();
-    const DriveViewComponent = useSDK && !isPublic ? FolderView : DriveViewDeprecated;
+    const DriveViewComponent = !isPublic ? FolderView : DriveViewDeprecated;
     useFolderContainerTitle(
         useMemo(
             () => ({
@@ -107,40 +102,11 @@ export function FolderContainer({ type }: { type: LinkURLType }) {
     }, [folderPromise]);
 
     useEffect(() => {
-        if (useSDK) {
-            const unsubscribe = subscribeToFolderEvents();
-            return () => {
-                unsubscribe();
-            };
-        }
-    }, []);
-
-    // With sharing we need to subscribe to events from different volumes.
-    // This will happen during Shared with me navigation
-    useEffect(() => {
-        const volumeId = volumesState.findVolumeId(activeFolder.shareId);
-        if (!volumeId || useSDK) {
-            return;
-        }
-        getDefaultShare()
-            .then((defaultShare) => {
-                // We exclude subscribing to volumes event of main share (Already done in MainContainer)
-                if (defaultShare.volumeId !== volumeId) {
-                    driveEventManager.volumes.startSubscription(volumeId, VolumeTypeForEvents.shared).catch(noop);
-                }
-            })
-            .catch(noop);
-
+        const unsubscribe = subscribeToFolderEvents();
         return () => {
-            // This is memoized so should not make another call
-            void getDefaultShare().then((defaultShare) => {
-                // We exclude pausing subscription to volumes event of main share
-                if (defaultShare.volumeId !== volumeId) {
-                    driveEventManager.volumes.pauseSubscription(volumeId);
-                }
-            });
+            unsubscribe();
         };
-    }, [activeFolder.shareId]);
+    }, []);
 
     const shouldRenderDriveView = Boolean(activeFolder.shareId && activeFolder.linkId);
 

@@ -10,7 +10,6 @@ import { MAX_SAFE_UPLOADING_FILE_COUNT, MAX_SAFE_UPLOADING_FILE_SIZE } from '@pr
 import { HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { getAppSpace, getSpace } from '@proton/shared/lib/user/storage';
-import useFlag from '@proton/unleash/useFlag';
 
 import { TransferCancel, TransferSkipped, TransferState } from '../../../components/TransferManager/transfer';
 import type { FileThresholdModalType } from '../../../components/modals/FileThresholdModal';
@@ -86,8 +85,7 @@ function useBaseUpload(
     const { createNotification } = useNotifications();
     const { preventLeave } = usePreventLeave();
     const { isSharedWithMe: getIsSharedWithMe } = useDirectSharingInfo();
-    const useSDK = useFlag('DriveWebSDKFolders');
-    const shouldUseSdk = useSDK && !isPublicContext;
+    const shouldUseSdk = !isPublicContext;
     const { handleError } = useSdkErrorHandler();
 
     const { drive, unsafeRemoveNodeFromCache } = useDrive();

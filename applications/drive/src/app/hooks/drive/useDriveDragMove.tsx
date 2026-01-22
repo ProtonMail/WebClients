@@ -6,14 +6,12 @@ import { c } from 'ttag';
 import { useGlobalLoader } from '@proton/components';
 import { generateNodeUid } from '@proton/drive';
 import { CUSTOM_DATA_FORMAT } from '@proton/shared/lib/drive/constants';
-import useFlag from '@proton/unleash/useFlag';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
 import { useSelection } from '../../components/FileBrowser';
 import type { DragMoveControls } from '../../components/FileBrowser/interface';
 import type { DriveItem } from '../../components/sections/interface';
-import { useActions } from '../../store';
 import type { LinkInfo } from '../../store/_actions/interface';
 import { getActionEventManager } from '../../utils/ActionEventManager/ActionEventManager';
 import { ActionEventName } from '../../utils/ActionEventManager/ActionEventManagerTypes';
@@ -22,13 +20,11 @@ import { type MoveNodesItemMap, useMoveNodes } from '../sdk/useMoveNodes';
 type DragAndDropItem = DriveItem;
 
 export default function useDriveDragMove(shareId: string, contents: DragAndDropItem[], clearSelections: () => void) {
-    const { moveLinks } = useActions();
     const withGlobalLoader = useGlobalLoader({ text: c('Info').t`Moving files` });
     const [allDragging, setAllDragging] = useState<DragAndDropItem[]>([]);
     const [activeDropTarget, setActiveDropTarget] = useState<DragAndDropItem>();
     const dragEnterCounter = useRef(0);
     const selectionControls = useSelection();
-    const useSDKFolders = useFlag('DriveWebSDKFolders');
     const { moveNodes } = useMoveNodes({ onSuccess });
 
     function onSuccess(items: { uid: string; parentUid: string | undefined }[]) {
@@ -69,21 +65,15 @@ export default function useDriveDragMove(shareId: string, contents: DragAndDropI
             rootShareId: shareId,
         }));
 
-        if (useSDKFolders) {
-            // When dropping from the breadcrumb we don't have selectedItems so we have to use the drag start payload
-            const itemMap: MoveNodesItemMap = toMoveInfo.reduce((acc, item) => {
-                const uid = generateNodeUid(item.volumeId, item.linkId);
-                const parentUid = generateNodeUid(item.volumeId, item.parentLinkId);
-                return { ...acc, [uid]: { name: item.name, parentUid } };
-            }, {});
+        // When dropping from the breadcrumb we don't have selectedItems so we have to use the drag start payload
+        const itemMap: MoveNodesItemMap = toMoveInfo.reduce((acc, item) => {
+            const uid = generateNodeUid(item.volumeId, item.linkId);
+            const parentUid = generateNodeUid(item.volumeId, item.parentLinkId);
+            return { ...acc, [uid]: { name: item.name, parentUid } };
+        }, {});
 
-            // newParentLinkId will be a uid when passed from sdk folders
-            await withGlobalLoader(moveNodes(itemMap, newParentLinkId));
-        } else {
-            await withGlobalLoader(
-                moveLinks(new AbortController().signal, { shareId, linksToMove: toMoveInfo, newParentLinkId })
-            );
-        }
+        // newParentLinkId will be a uid when passed from sdk folders
+        await withGlobalLoader(moveNodes(itemMap, newParentLinkId));
     };
 
     const getDragMoveControls = (item: DragAndDropItem): DragMoveControls => {
