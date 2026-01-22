@@ -1,4 +1,3 @@
-import type { RunSagaOptions } from 'redux-saga';
 import { channel, eventChannel, runSaga } from 'redux-saga';
 
 import { ACTIVE_POLLING_TIMEOUT } from '@proton/pass/lib/events/constants';
@@ -6,10 +5,10 @@ import * as itemRequests from '@proton/pass/lib/items/item.requests';
 import * as shareParser from '@proton/pass/lib/shares/share.parser';
 import { sharesEventNew } from '@proton/pass/store/actions';
 import type { EventChannel } from '@proton/pass/store/sagas/events/types';
+import { sagaSetup } from '@proton/pass/store/sagas/testing';
 import type { RootSagaOptions } from '@proton/pass/store/types';
 import type { Api, IndexedByShareIdAndItemId, ItemRevision, Share, ShareGetResponse, SharesGetResponse } from '@proton/pass/types';
 import { toMap } from '@proton/shared/lib/helpers/object';
-import { wait } from '@proton/shared/lib/helpers/promise';
 import noop from '@proton/utils/noop';
 
 import * as channelShare from './channel.share';
@@ -20,19 +19,6 @@ jest.mock('./channel.worker', () => ({
     ...jest.requireActual('./channel.worker'),
     channelInitalize: jest.fn(),
 }));
-
-const nextTick = () => wait(0);
-
-const sagaSetup = () => {
-    const dispatched: unknown[] = [];
-    return {
-        dispatched,
-        options: {
-            dispatch: (action: unknown) => dispatched.push(action),
-            getState: () => ({}) as unknown,
-        } satisfies RunSagaOptions<unknown, unknown>,
-    };
-};
 
 const parseShareResponse = jest.spyOn(shareParser, 'parseShareResponse').mockImplementation();
 const requestItemsForShareId = jest.spyOn(itemRequests, 'requestItemsForShareId').mockImplementation();
@@ -69,19 +55,13 @@ describe('channel.shares saga', () => {
             const { onNewRemoteShares } = SharesChannel;
 
             const newSharesChannel = channel<ShareGetResponse[]>();
-            const setup = sagaSetup();
-            const task = runSaga(setup.options, onNewRemoteShares, newSharesChannel, api, options);
+            const saga = sagaSetup();
+            const task = runSaga(saga.options, onNewRemoteShares, newSharesChannel, api, options);
 
             newSharesChannel.put(response);
-            await nextTick();
+            await saga.nextTick();
 
-            expect(setup.dispatched).toContainEqual(
-                sharesEventNew({
-                    shares: toMap(shares, 'shareId'),
-                    items,
-                })
-            );
-
+            expect(saga.dispatched).toContainEqual(sharesEventNew({ shares: toMap(shares, 'shareId'), items }));
             expect(getShareChannelForks).toHaveBeenCalledWith(api, options);
             expect(getShareChannelForks).toHaveBeenCalledTimes(2);
 
@@ -94,11 +74,11 @@ describe('channel.shares saga', () => {
             const newSharesChannel = channel<ShareGetResponse[]>();
             jest.spyOn(newSharesChannel, 'close');
 
-            const setup = sagaSetup();
-            const task = runSaga(setup.options, onNewRemoteShares, newSharesChannel, api, options);
+            const saga = sagaSetup();
+            const task = runSaga(saga.options, onNewRemoteShares, newSharesChannel, api, options);
 
             task.cancel();
-            await nextTick();
+            await saga.nextTick();
 
             expect(newSharesChannel.close).toHaveBeenCalled();
         });
@@ -122,13 +102,10 @@ describe('channel.shares saga', () => {
             jest.spyOn(eventsChannel.channel, 'close');
 
             try {
-                const setup = sagaSetup();
-                const task = runSaga(setup.options, SharesChannel.sharesChannel, api, options, {
-                    eventsChannel,
-                    newSharesChannel,
-                });
+                const saga = sagaSetup();
+                const task = runSaga(saga.options, SharesChannel.sharesChannel, api, options, { eventsChannel, newSharesChannel });
 
-                await nextTick();
+                await saga.nextTick();
                 task.cancel();
 
                 expect(newSharesChannel.close).toHaveBeenCalled();
