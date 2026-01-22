@@ -110,6 +110,7 @@ interface AppsLogosProps {
     /** When true, shows all supported apps but greys out the ones not in the apps array */
     showDisabledApps?: boolean;
     fullWidth?: boolean;
+    wrap?: boolean;
 }
 
 const AppsLogos = ({
@@ -120,6 +121,7 @@ const AppsLogos = ({
     showDisabledApps = false,
     iconShape = 'glyph',
     fullWidth = false,
+    wrap = false,
 }: AppsLogosProps) => {
     if (apps.length === 0) {
         return null;
@@ -140,8 +142,9 @@ const AppsLogos = ({
     return (
         <ul
             className={clsx(
-                'unstyled m-0 flex flex-nowrap gap-2',
+                'unstyled m-0 flex gap-2',
                 fullWidth ? 'w-full justify-space-between' : 'justify-start',
+                !wrap && 'flex-nowrap',
                 className
             )}
         >
