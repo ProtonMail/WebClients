@@ -7,6 +7,8 @@ import { useFolders, useLabels } from '@proton/mail';
 import useFlag from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
+import { useSelectAll } from 'proton-mail/hooks/useSelectAll';
+
 import { isInDeletedFolder } from '../../helpers/elements';
 import { getLabelName } from '../../helpers/labels';
 import { getToolbarResponsiveSizes } from '../../helpers/toolbar/getToolbarResponsiveSizes';
@@ -48,6 +50,7 @@ const ToolbarHeaderNarrow = ({
     const breakpoint = useElementBreakpoints(toolbarRef, BREAKPOINTS);
     const { localIsTiny, localIsExtraTiny, localIsNarrow } = getToolbarResponsiveSizes(breakpoint);
     const isRetentionPoliciesEnabled = useFlag('DataRetentionPolicy');
+    const { selectAll: isSelectAll } = useSelectAll({ labelID });
 
     const [labels] = useLabels();
     const [folders] = useFolders();
@@ -77,7 +80,7 @@ const ToolbarHeaderNarrow = ({
                                 onMove={onMove}
                                 onDelete={onDelete}
                             />
-                            {!localIsTiny ? (
+                            {!localIsTiny && (
                                 <LabelsAndFolders
                                     labelID={labelID}
                                     selectedIDs={selectedIDs}
@@ -85,10 +88,10 @@ const ToolbarHeaderNarrow = ({
                                     moveDropdownToggleRef={moveDropdownToggleRef}
                                     onCheckAll={onCheckAll}
                                 />
-                            ) : null}
-                            {!localIsTiny ? (
+                            )}
+                            {!localIsTiny && !isSelectAll && (
                                 <SnoozeToolbarDropdown labelID={labelID} selectedIDs={selectedIDs} />
-                            ) : null}
+                            )}
                             <MoreDropdown
                                 labelID={labelID}
                                 elementIDs={elementIDs}
