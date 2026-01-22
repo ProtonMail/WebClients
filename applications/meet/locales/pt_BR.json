@@ -80,8 +80,14 @@
       "Done": [
         "Concluído"
       ],
+      "Download local participant report": [
+        "Baixar relatório de participantes locais"
+      ],
       "Download logs": [
         "Registros de downloads"
+      ],
+      "Download participant report": [
+        "Baixar relatório de participantes"
       ],
       "Edit email address": [
         "Editar endereço de e-mail"
@@ -313,6 +319,9 @@
       "Copy meeting link": [
         "Copiar link da reunião"
       ],
+      "Debug overlay": [
+        "Sobreposição de depuração"
+      ],
       "Go to dashboard": [
         "Ir para painel de controle"
       ],
@@ -380,6 +389,11 @@
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "Aplicativos da ${ BRAND_NAME }"
+      ]
+    },
+    "Badge": {
+      "Active": [
+        "Ativo"
       ]
     },
     "Browser": {
@@ -1797,6 +1811,12 @@
       "No microphone detected.": [
         "Nenhum microfone detectado."
       ],
+      "No publications": [
+        "Nenhuma publicação"
+      ],
+      "No remote participants": [
+        "Nenhum participante remoto"
+      ],
       "No results found": [
         "Nenhum resultado encontrado"
       ],
@@ -1997,11 +2017,17 @@
       "Browser version": [
         "Versão do navegador"
       ],
+      "Camera Active": [
+        "Câmera ativa"
+      ],
       "Category": [
         "Categoria"
       ],
       "Code is 6 digits without spaces": [
         "O código é de 6 dígitos sem espaços"
+      ],
+      "Connection Quality": [
+        "Qualidade da conexão"
       ],
       "Delete": [
         "Excluir"
@@ -2014,6 +2040,9 @@
       ],
       "Email address": [
         "Endereço de e-mail"
+      ],
+      "Enabled": [
+        "Ativado"
       ],
       "Every day": [
         "Todos os dias"
@@ -2033,14 +2062,26 @@
       "Hide password": [
         "Ocultar senha"
       ],
+      "Identity": [
+        "Identidade"
+      ],
       "Include application logs in bug report": [
         "Incluir os registros do aplicativo no relatório de erro"
       ],
       "Meeting ID": [
         "ID da reunião"
       ],
+      "Microphone Active": [
+        "Microfone ativo"
+      ],
       "Monday to Friday": [
         "De segunda a sexta"
+      ],
+      "Muted": [
+        "Silenciado"
+      ],
+      "Name": [
+        "Nome"
       ],
       "No repeat": [
         "Não repetir"
@@ -2069,8 +2110,20 @@
       "Reveal password": [
         "Mostrar senha"
       ],
+      "Selected Camera": [
+        "Câmera selecionada"
+      ],
+      "Selected Microphone": [
+        "Microfone selecionado"
+      ],
+      "Subscribed": [
+        "Inscrito"
+      ],
       "System information": [
         "Informações do sistema"
+      ],
+      "Track SID": [
+        "Rastrear SID"
       ],
       "Verification code": [
         "Código de verificação"
@@ -2264,6 +2317,14 @@
         "Você será redirecionado para o seu provedor de SSO de terceiros."
       ]
     },
+    "Status": {
+      "No": [
+        "Não"
+      ],
+      "Yes": [
+        "Sim"
+      ]
+    },
     "Success": {
       "Assigned new host": [
         "Novo anfitrião atribuído"
@@ -2303,11 +2364,20 @@
       "Authenticator": [
         "Autenticador"
       ],
+      "Available Cameras": [
+        "Câmeras disponíveis"
+      ],
+      "Available Microphones": [
+        "Microfones disponíveis"
+      ],
       "Chat": [
         "Bate-papo"
       ],
       "Date": [
         "Data"
+      ],
+      "Debug Overlay": [
+        "Depurar sobreposição"
       ],
       "Enter your password": [
         "Digite sua senha"
@@ -2354,6 +2424,9 @@
       "Joining meeting with ${ participantCount } other participants…": [
         "Entrando na reunião com ${ participantCount } outros participantes…"
       ],
+      "Local Participant": [
+        "Participante local"
+      ],
       "Meeting details": [
         "Detalhes da reunião"
       ],
@@ -2383,6 +2456,12 @@
       ],
       "Protecting meeting with end-to-end encryption...": [
         "Protegendo reunião com criptografia de ponta a ponta..."
+      ],
+      "Publications": [
+        "Publicações"
+      ],
+      "Remote Participants": [
+        "Participantes remotos"
       ],
       "Report a problem": [
         "Relatar um problema"

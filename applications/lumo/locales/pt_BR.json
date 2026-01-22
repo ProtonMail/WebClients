@@ -1062,10 +1062,13 @@
         "Índice de pesquisa criptografado para bate-papos e arquivos do Drive."
       ],
       "Include project conversations in the main chat history": [
-        "Inclua conversas sobre projetos no histórico principal do chat"
+        "Inclua conversas sobre projetos no histórico principal do bate-papo"
       ],
       "Last updated on ${ formattedDate }": [
         "Última atualização em ${ formattedDate }"
+      ],
+      "Permanently delete your project and chats. This is irreversible.": [
+        "Exclua permanentemente seu projeto e bate-papos. Isso é irreversível."
       ],
       "Sign in to access your account and unlock more features. Don't have one? ${ createLink }": [
         "Inicie uma sessão para acessar sua conta e desbloquear mais recursos. Ainda não tem uma conta? ${ createLink }"
@@ -2190,6 +2193,9 @@
       ]
     },
     "collider_2025:Error": {
+      "Error processing file: ${ file.name }": [
+        "Erro ao processar arquivo: ${ file.name }"
+      ],
       "Project not found": [
         "Projeto não encontrado"
       ]
@@ -2272,6 +2278,9 @@
       "This project already has files. Please remove all files before linking a Drive folder.": [
         "Esse projeto já tem arquivos. Remova todos os arquivos antes de vincular uma pasta do Drive."
       ],
+      "Tips on how to write useful instructions": [
+        "Dicas de como escrever instruções úteis"
+      ],
       "Type @filename to ask questions about a specific file": [
         "Digite @nomedoarquivo para fazer perguntas sobre um arquivo específico"
       ],
@@ -2328,6 +2337,9 @@
       "Add instructions about the tone, style, and persona you want ${ LUMO_SHORT_APP_NAME } to adopt.": [
         "Adicione instruções sobre o tom, estilo e personalidade que você deseja que o ${ LUMO_SHORT_APP_NAME } adote."
       ],
+      "Add instructions about the tone, style, and persona you want ${ LUMO_SHORT_APP_NAME } to adopt. These instructions will apply to all chats in this project.": [
+        "Adicione instruções sobre o tom, estilo e persona que você deseja que o ${ LUMO_SHORT_APP_NAME } adote. Estas instruções se aplicarão a todos os bate-papos neste projeto."
+      ],
       "Ask anything…": [
         "Pergunte qualquer coisa…"
       ],
@@ -2351,6 +2363,9 @@
       ]
     },
     "collider_2025:Project": {
+      "Develop stories, refine prose, and improve your writing craft": [
+        "Desenvolva histórias, refine a prosa e aprimore sua arte de escrever"
+      ],
       "Financial assistant": [
         "Assistente financeiro"
       ],
@@ -2371,6 +2386,9 @@
       ],
       "Synthesize sources, analyze data, and develop insights for your research projects": [
         "Sintetize fontes, analise dados e desenvolva insights para seus projetos de pesquisa."
+      ],
+      "Writing coach": [
+        "Assistente de escrita"
       ]
     },
     "collider_2025:Prompt": {
@@ -2524,7 +2542,7 @@
         "A IA que respeita sua privacidade"
       ],
       "This chat disappears when you close it and is never saved.": [
-        "Este chat desaparece quando você o fecha e nunca é salvo."
+        "Este bate-papo desaparece quando você o fecha e nunca é salvo."
       ],
       "Today": [
         "Hoje"
@@ -4822,6 +4840,9 @@
       ],
       "Clear History": [
         "Limpar histórico"
+      ],
+      "Debug View": [
+        "Visualizar depuração"
       ],
       "Differential": [
         "Diferencial"
