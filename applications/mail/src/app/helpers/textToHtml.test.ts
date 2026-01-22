@@ -21,7 +21,6 @@ const emptySignature = `<div style="font-family: Arial, sans-serif; font-size: 1
 describe('textToHtml', () => {
     it('should convert simple string from plain text to html', () => {
         const res = textToHtml('This a simple string', '', mailSettings, undefined);
-        console.log({ res });
         expect(res).toEqual(`${emptySignature}
 This a simple string`);
     });

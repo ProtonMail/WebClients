@@ -68,12 +68,25 @@ export const useConversation: UseConversation = (inputConversationID, messageID)
     const conversationState = useMailSelector((state) => conversationByID(state, { ID: inputConversationID }));
     const currentLabelID = useMailSelector((state) => state.elements.params.labelID);
 
-    const init = (conversationID: string): ConversationStateOptional | undefined => {
+    const initStateOnly = (): ConversationStateOptional | undefined => {
         if (conversationState) {
             // Conversation updated from elements can be desynchronized with messages in store
             if (conversationState.Conversation.NumMessages !== conversationState.Messages?.length) {
                 void call();
             }
+            return conversationState;
+        }
+
+        return {
+            Conversation: undefined,
+            Messages: undefined,
+            loadRetry: 0,
+            errors: {},
+        };
+    };
+
+    const initDispatch = (conversationID: string) => {
+        if (conversationState) {
             return conversationState;
         }
 
@@ -91,18 +104,11 @@ export const useConversation: UseConversation = (inputConversationID, messageID)
         }
 
         dispatch(initialize(newConversationState));
-
-        return {
-            Conversation: undefined,
-            Messages: undefined,
-            loadRetry: 0,
-            errors: {},
-        };
     };
 
     const [conversationID, setConversationID] = useState(inputConversationID);
     const [pendingRequest, setPendingRequest] = useState(false);
-    const [conversation, setConversation] = useState<ConversationStateOptional | undefined>(() => init(conversationID));
+    const [conversation, setConversation] = useState<ConversationStateOptional | undefined>(() => initStateOnly());
 
     const load = async (conversationID: string, messageID: string | undefined) => {
         if (currentLabelID === MAILBOX_LABEL_IDS.SOFT_DELETED) {
@@ -143,7 +149,7 @@ export const useConversation: UseConversation = (inputConversationID, messageID)
             return;
         }
 
-        const conversationInState = init(inputConversationID);
+        const conversationInState = initDispatch(inputConversationID);
         setConversationID(inputConversationID);
         setConversation(conversationInState);
 
