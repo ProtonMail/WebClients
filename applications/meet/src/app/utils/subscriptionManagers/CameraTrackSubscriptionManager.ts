@@ -1,5 +1,5 @@
-import type { TrackPublication, VideoQuality } from 'livekit-client';
-import { RemoteTrackPublication, Track } from 'livekit-client';
+import type { Room, TrackPublication, VideoQuality } from 'livekit-client';
+import { ConnectionState, RemoteTrackPublication, Track } from 'livekit-client';
 
 import { wait } from '@proton/shared/lib/helpers/promise';
 
@@ -19,12 +19,13 @@ const removeValueInPlace = (arr: string[], value: string) => {
     }
 };
 
-export class CameraTrackSubscriptionCache {
+export class CameraTrackSubscriptionManager {
     private capacity: number = 0;
+    private room: Room;
     private cacheOrderByRecencyTrackSids: string[] = [];
     private entriesByTrackSid = new Map<string, CacheEntry>();
     private pendingSubscriptionWorkTrackSids: string[] = [];
-
+    private reconcileInterval: NodeJS.Timeout | null = null;
     // Serializes all operations that touch LiveKit publications (subscribe/enable/quality/reset).
     private operationChain: Promise<void> = Promise.resolve();
 
@@ -32,12 +33,18 @@ export class CameraTrackSubscriptionCache {
     private participantsWithDisabledVideos: string[] = [];
     private participantQuality: VideoQuality | undefined;
 
-    constructor(capacity: number) {
+    constructor(capacity: number, room: Room) {
         this.capacity = capacity;
+        this.room = room;
     }
 
     private runSerialized(op: () => Promise<void> | void) {
-        this.operationChain = this.operationChain.then(() => Promise.resolve(op())).catch(() => {});
+        this.operationChain = this.operationChain
+            .then(() => Promise.resolve(op()))
+            .catch((error) => {
+                // eslint-disable-next-line no-console
+                console.error('Error running serialized operation', error);
+            });
         return this.operationChain;
     }
 
@@ -166,25 +173,6 @@ export class CameraTrackSubscriptionCache {
         });
     }
 
-    destroy() {
-        for (const entry of this.entriesByTrackSid.values()) {
-            try {
-                entry.publication.setEnabled(false);
-                entry.publication.setSubscribed(false);
-            } catch {
-                // Ignore errors during cleanup
-            }
-        }
-
-        this.entriesByTrackSid.clear();
-        this.cacheOrderByRecencyTrackSids = [];
-        this.pendingSubscriptionWorkTrackSids = [];
-
-        this.disableVideos = false;
-        this.participantsWithDisabledVideos = [];
-        this.participantQuality = undefined;
-    }
-
     private markMostRecentlyUsed(trackSid: string) {
         removeValueInPlace(this.cacheOrderByRecencyTrackSids, trackSid);
         this.cacheOrderByRecencyTrackSids.unshift(trackSid);
@@ -196,7 +184,6 @@ export class CameraTrackSubscriptionCache {
             removeValueInPlace(this.pendingSubscriptionWorkTrackSids, trackSid);
         }
         this.entriesByTrackSid.delete(trackSid);
-        removeValueInPlace(this.pendingSubscriptionWorkTrackSids, trackSid);
         removeValueInPlace(this.cacheOrderByRecencyTrackSids, trackSid);
     }
 
@@ -300,9 +287,74 @@ export class CameraTrackSubscriptionCache {
                             publication.setEnabled(false);
                             publication.setSubscribed(false);
                         }
-                    } catch {}
+                    } catch (error) {
+                        // eslint-disable-next-line no-console
+                        console.error('Error disabling publication', publication.trackSid, error);
+                    }
                 }
             });
         }
+    }
+
+    reconcileCameraTracks = () => {
+        if (this.room.state !== ConnectionState.Connected) {
+            return;
+        }
+
+        const pinnedCameraTrackPublications = Array.from(this.entriesByTrackSid.values()).filter(
+            (entry) => entry.pinned
+        );
+
+        const publicationsToSubscribe = pinnedCameraTrackPublications.filter(
+            (publication) => !publication.publication.isSubscribed
+        );
+
+        if (publicationsToSubscribe.length > 0) {
+            for (const publication of publicationsToSubscribe) {
+                this.enqueueSubscriptionWork(publication.publication.trackSid);
+            }
+
+            void this.runSerialized(() => this.processSubscriptionQueue());
+        }
+    };
+
+    setupReconcileLoop = () => {
+        this.reconcileInterval = setInterval(() => {
+            this.reconcileCameraTracks();
+        }, 5000);
+    };
+
+    cleanupReconcileLoop = () => {
+        if (this.reconcileInterval) {
+            clearInterval(this.reconcileInterval);
+        }
+    };
+
+    destroy() {
+        this.cleanupReconcileLoop();
+
+        // Capture entries before clearing to avoid race conditions
+        const entriesToCleanup = Array.from(this.entriesByTrackSid.values());
+
+        // Clear state immediately to prevent new operations from being queued
+        this.entriesByTrackSid.clear();
+        this.cacheOrderByRecencyTrackSids = [];
+        this.pendingSubscriptionWorkTrackSids = [];
+        this.disableVideos = false;
+        this.participantsWithDisabledVideos = [];
+        this.participantQuality = undefined;
+
+        // Run cleanup through serialization to ensure pending operations complete first
+        void this.runSerialized(() => {
+            for (const entry of entriesToCleanup) {
+                try {
+                    entry.publication.setEnabled(false);
+                    entry.publication.setSubscribed(false);
+                } catch (error) {
+                    // eslint-disable-next-line no-console
+                    console.error('Error disabling publication', entry.publication.trackSid, error);
+                }
+            }
+        });
     }
 }
