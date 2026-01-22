@@ -97,9 +97,13 @@ export const WrappedProtonMeetContainer = ({ guestMode }: { guestMode?: boolean 
             publishDefaults: {
                 simulcast: true,
                 backupCodec: isMeetVp9Allowed,
-                videoEncoding: isMeetHigherBitrate
-                    ? qualityConstants[QualityScenarios.PortraitView].encoding
-                    : legacyQualityConstants[QualityScenarios.PortraitView].encoding,
+                degradationPreference: 'maintain-framerate',
+                videoEncoding: {
+                    ...(isMeetHigherBitrate
+                        ? qualityConstants[QualityScenarios.PortraitView].encoding
+                        : legacyQualityConstants[QualityScenarios.PortraitView].encoding),
+                    priority: 'medium',
+                },
                 videoSimulcastLayers: [
                     isMeetHigherBitrate
                         ? qualityConstants[QualityScenarios.SmallView]
@@ -108,7 +112,7 @@ export const WrappedProtonMeetContainer = ({ guestMode }: { guestMode?: boolean 
                         ? qualityConstants[QualityScenarios.MediumView]
                         : legacyQualityConstants[QualityScenarios.MediumView],
                 ],
-                audioPreset: { maxBitrate: audioQuality },
+                audioPreset: { maxBitrate: audioQuality, priority: 'high' },
                 screenShareEncoding: screenShareQuality.encoding,
                 screenShareSimulcastLayers: [],
                 videoCodec: isMeetVp9Allowed ? 'vp9' : 'vp8',

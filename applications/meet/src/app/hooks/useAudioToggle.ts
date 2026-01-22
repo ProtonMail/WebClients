@@ -150,6 +150,7 @@ export const useAudioToggle = (
                     await localParticipant.setMicrophoneEnabled(true, audio, {
                         audioPreset: {
                             maxBitrate: audioQuality,
+                            priority: 'high',
                         },
                     });
 
