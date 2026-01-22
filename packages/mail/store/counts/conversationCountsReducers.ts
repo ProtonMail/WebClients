@@ -352,10 +352,7 @@ export const labelConversationsPending = (
             if (isCategoryLabel(labelID) && isCategoryLabel(destinationLabelID) && destinationLabelID !== labelID) {
                 messageCountState.Total = safeDecreaseCount(messageCountState?.Total, 1);
                 if (hasUnreadInLabel) {
-                    messageCountState.Unread = safeDecreaseCount(
-                        messageCountState?.Unread,
-                        getContextNumUnread(conversation, labelID)
-                    );
+                    messageCountState.Unread = safeDecreaseCount(messageCountState?.Unread, 1);
                 }
                 return;
             }
@@ -373,10 +370,7 @@ export const labelConversationsPending = (
             if (destinationLabelID !== labelID) {
                 messageCountState.Total = safeDecreaseCount(messageCountState?.Total, 1);
                 if (hasUnreadInLabel) {
-                    messageCountState.Unread = safeDecreaseCount(
-                        messageCountState?.Unread,
-                        getContextNumUnread(conversation, labelID)
-                    );
+                    messageCountState.Unread = safeDecreaseCount(messageCountState?.Unread, 1);
                 }
 
                 // If items are moving out from TRASH or SPAM, we need to add them to ALMOST_ALL_MAIL count
