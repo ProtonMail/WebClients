@@ -95,12 +95,13 @@ export const Content: FC = () => {
     const { selected = PLANS.PASS } = useOnboarding<AvailablePlans>();
     const online = useOnline();
     const freeCcFlag = useFeatureFlag(PassFeature.PassAllowCreditCardFreeUsers);
+    const passLifetimeFlag = useFeatureFlag(PassFeature.PassWebDesktopLifetimeBanner);
     const includesFeatures = useMemo(() => getTableContent(freeCcFlag), [freeCcFlag]);
     const protonProducts = useMemo(getProtonProducts, []);
     const navigateToUpgrade = useNavigateToUpgrade({ upsellRef: UpsellRef.LIFETIME_PLAN_ONBOARDING });
     const user = useSelector(selectUser);
     const plusLifetimePrice = getSimplePriceString(getUserCurrency(user?.Currency), PASS_PLUS_LIFETIME_PRICE);
-    const displayLifetimeCard = supportedCurrencies.includes(user?.Currency ?? '');
+    const displayLifetimeCard = passLifetimeFlag && supportedCurrencies.includes(user?.Currency ?? '');
     const plusTitle = PLAN_NAMES[PLANS.PASS];
 
     return (
