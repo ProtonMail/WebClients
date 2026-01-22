@@ -1,7 +1,7 @@
 import type { RefObject } from 'react';
 import { useCallback, useEffect } from 'react';
 
-import { cleanProxyImagesFromClipboardContent } from '@proton/mail/helpers/message/cleanProxyImagesFromClipboardContent';
+import { cleanProblematicImagesFromClipboardContent } from '@proton/mail/helpers/message/cleanProblematicImagesFromClipboardContent';
 import { cloneEvent, isKeyboardEvent } from '@proton/shared/lib/helpers/events';
 
 const IFRAME_EVENTS_LIST: Event['type'][] = ['focus', 'keydown', 'click', 'copy', 'dragstart'];
@@ -50,12 +50,12 @@ const useIframeDispatchEvents = (
         if (event.type === 'copy' && !isPlainText) {
             // Get user selection in iframe
             const selection = iframeRef.current?.contentWindow?.getSelection();
-            cleanProxyImagesFromClipboardContent('copy', event, selection);
+            cleanProblematicImagesFromClipboardContent('copy', event, selection);
         }
 
         if (event.type === 'dragstart') {
             const selection = iframeRef.current?.contentWindow?.getSelection();
-            cleanProxyImagesFromClipboardContent('drag', event, selection);
+            cleanProblematicImagesFromClipboardContent('drag', event, selection);
         }
     }, []);
 

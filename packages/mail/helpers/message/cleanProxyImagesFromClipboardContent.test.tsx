@@ -1,4 +1,4 @@
-import { cleanProxyImagesFromClipboardContent } from '@proton/mail/helpers/message/cleanProxyImagesFromClipboardContent';
+import { cleanProblematicImagesFromClipboardContent } from '@proton/mail/helpers/message/cleanProblematicImagesFromClipboardContent';
 import { PROXY_IMG_URL } from '@proton/shared/lib/api/images';
 
 describe('cleanProxyImagesFromClipboardContent', () => {
@@ -46,7 +46,7 @@ describe('cleanProxyImagesFromClipboardContent', () => {
 <p>Text after images</p>
 </div>`;
         const selection = setup(content);
-        cleanProxyImagesFromClipboardContent('copy', mockClipboardEvent, selection);
+        cleanProblematicImagesFromClipboardContent('copy', mockClipboardEvent, selection);
 
         const expectedHTMLSelection = `<div xmlns="http://www.w3.org/1999/xhtml">
 <p>Text before images</p>
@@ -66,7 +66,7 @@ describe('cleanProxyImagesFromClipboardContent', () => {
     });
 
     it('should do nothing if no range is found [copy event]', () => {
-        cleanProxyImagesFromClipboardContent('copy', mockClipboardEvent, null);
+        cleanProblematicImagesFromClipboardContent('copy', mockClipboardEvent, null);
 
         expect(mockSetData).not.toHaveBeenCalled();
     });
@@ -78,7 +78,7 @@ describe('cleanProxyImagesFromClipboardContent', () => {
 <a href="https://example.com">Link below</a>
 </div>`;
         const selection = setup(content);
-        cleanProxyImagesFromClipboardContent('copy', mockClipboardEvent, selection);
+        cleanProblematicImagesFromClipboardContent('copy', mockClipboardEvent, selection);
 
         // A bit strange, but turndown is inserting a space between the line breaks
         const expectedPlainSelection = `First paragraph\n\nSecond paragraph\n\nLink below`;
@@ -99,7 +99,7 @@ describe('cleanProxyImagesFromClipboardContent', () => {
 <p>Text after images</p>
 </div>`;
         const selection = setup(content);
-        cleanProxyImagesFromClipboardContent('drag', mockDragEvent, selection);
+        cleanProblematicImagesFromClipboardContent('drag', mockDragEvent, selection);
 
         const expectedHTMLSelection = `<div xmlns="http://www.w3.org/1999/xhtml">
 <p>Text before images</p>
@@ -130,7 +130,7 @@ describe('cleanProxyImagesFromClipboardContent', () => {
             },
         } as any;
         const selection = { rangeCount: 0 } as Selection;
-        cleanProxyImagesFromClipboardContent('drag', mockDragEvent, selection);
+        cleanProblematicImagesFromClipboardContent('drag', mockDragEvent, selection);
 
         const expectedHTMLSelection = `<img src="https://image.com/image.png" alt="${imgAlt}">`;
 
@@ -142,7 +142,7 @@ describe('cleanProxyImagesFromClipboardContent', () => {
     });
 
     it('should do nothing if no range is found [drag event]', () => {
-        cleanProxyImagesFromClipboardContent('drag', mockDragEvent, null);
+        cleanProblematicImagesFromClipboardContent('drag', mockDragEvent, null);
 
         expect(mockSetData).not.toHaveBeenCalled();
     });
@@ -154,10 +154,150 @@ describe('cleanProxyImagesFromClipboardContent', () => {
 <a href="https://example.com">Link below</a>
 </div>`;
         const selection = setup(content);
-        cleanProxyImagesFromClipboardContent('drag', mockDragEvent, selection);
+        cleanProblematicImagesFromClipboardContent('drag', mockDragEvent, selection);
 
         // A bit strange, but turndown is inserting a space between the line breaks
         const expectedPlainSelection = `First paragraph\n\nSecond paragraph\n\nLink below`;
+
+        expect(mockSetData.mock.calls[0][0]).toEqual('text/html');
+        expect(mockSetData.mock.calls[0][1]).toEqual(content);
+
+        expect(mockSetData.mock.calls[1][0]).toEqual('text/plain');
+        expect(mockSetData.mock.calls[1][1]).toEqual(expectedPlainSelection);
+    });
+
+    it('should remove blob: embedded images from copied content [copy event]', () => {
+        const content = `<div xmlns="http://www.w3.org/1999/xhtml">
+<p>Text before image</p>
+<img src="blob:https://mail.proton.dev/whatever" alt="Screenshot" class="proton-embedded">
+<p>Text after image</p>
+</div>`;
+        const selection = setup(content);
+        cleanProblematicImagesFromClipboardContent('copy', mockClipboardEvent, selection);
+
+        const expectedHTMLSelection = `<div xmlns="http://www.w3.org/1999/xhtml">
+<p>Text before image</p>
+
+<p>Text after image</p>
+</div>`;
+
+        const expectedPlainSelection = `Text before image\n\nText after image`;
+
+        expect(mockSetData.mock.calls[0][0]).toEqual('text/html');
+        expect(mockSetData.mock.calls[0][1]).toEqual(expectedHTMLSelection);
+
+        expect(mockSetData.mock.calls[1][0]).toEqual('text/plain');
+        expect(mockSetData.mock.calls[1][1]).toEqual(expectedPlainSelection);
+    });
+
+    it('should remove cid: embedded images from copied content [copy event]', () => {
+        const content = `<div xmlns="http://www.w3.org/1999/xhtml">
+<p>Text before image</p>
+<img src="cid:image123@mail.proton.me" alt="Embedded">
+<p>Text after image</p>
+</div>`;
+        const selection = setup(content);
+        cleanProblematicImagesFromClipboardContent('copy', mockClipboardEvent, selection);
+
+        const expectedHTMLSelection = `<div xmlns="http://www.w3.org/1999/xhtml">
+<p>Text before image</p>
+
+<p>Text after image</p>
+</div>`;
+
+        const expectedPlainSelection = `Text before image\n\nText after image`;
+
+        expect(mockSetData.mock.calls[0][0]).toEqual('text/html');
+        expect(mockSetData.mock.calls[0][1]).toEqual(expectedHTMLSelection);
+
+        expect(mockSetData.mock.calls[1][0]).toEqual('text/plain');
+        expect(mockSetData.mock.calls[1][1]).toEqual(expectedPlainSelection);
+    });
+
+    it('should keep data: URLs (base64 images) in copied content [copy event]', () => {
+        const dataURL = 'data:image/png;base64,whatever';
+        const content = `<div xmlns="http://www.w3.org/1999/xhtml">
+<p>Text before image</p>
+<img src="${dataURL}" alt="Base64 image">
+<p>Text after image</p>
+</div>`;
+        const selection = setup(content);
+        cleanProblematicImagesFromClipboardContent('copy', mockClipboardEvent, selection);
+
+        const expectedPlainSelection = `Text before image\n\nText after image`;
+
+        expect(mockSetData.mock.calls[0][0]).toEqual('text/html');
+        expect(mockSetData.mock.calls[0][1]).toEqual(content);
+
+        expect(mockSetData.mock.calls[1][0]).toEqual('text/plain');
+        expect(mockSetData.mock.calls[1][1]).toEqual(expectedPlainSelection);
+    });
+
+    it('should handle mixed image types correctly [copy event]', () => {
+        const dataURL = 'data:image/png;base64,whatever';
+        const httpURL = 'https://image.com/image.png';
+        const proxyURL = `https://mail.proton.me/api/${PROXY_IMG_URL}?Url=https://external.com/image.png&DryRun=1`;
+        const blobURL = 'blob:https://mail.proton.dev/whatever';
+        const cidURL = 'cid:image123@mail.proton.me';
+
+        const content = `<div xmlns="http://www.w3.org/1999/xhtml">
+<img src="${dataURL}" alt="base64">
+<img src="${httpURL}" alt="external">
+<img src="${proxyURL}" alt="proxy">
+<img src="${blobURL}" alt="blob">
+<img src="${cidURL}" alt="cid">
+</div>`;
+
+        const selection = setup(content);
+        cleanProblematicImagesFromClipboardContent('copy', mockClipboardEvent, selection);
+
+        const expectedHTMLSelection = `<div xmlns="http://www.w3.org/1999/xhtml">
+<img src="${dataURL}" alt="base64">
+<img src="${httpURL}" alt="external">
+<img src="https://external.com/image.png" alt="proxy">
+
+
+</div>`;
+
+        expect(mockSetData.mock.calls[0][0]).toEqual('text/html');
+        expect(mockSetData.mock.calls[0][1]).toEqual(expectedHTMLSelection);
+    });
+
+    it('should remove blob: embedded images from copied content [drag event]', () => {
+        const content = `<div xmlns="http://www.w3.org/1999/xhtml">
+<p>Text before image</p>
+<img src="blob:https://mail.proton.dev/whatever" alt="Screenshot" class="proton-embedded">
+<p>Text after image</p>
+</div>`;
+        const selection = setup(content);
+        cleanProblematicImagesFromClipboardContent('drag', mockDragEvent, selection);
+
+        const expectedHTMLSelection = `<div xmlns="http://www.w3.org/1999/xhtml">
+<p>Text before image</p>
+
+<p>Text after image</p>
+</div>`;
+
+        const expectedPlainSelection = `Text before image\n\nText after image`;
+
+        expect(mockSetData.mock.calls[0][0]).toEqual('text/html');
+        expect(mockSetData.mock.calls[0][1]).toEqual(expectedHTMLSelection);
+
+        expect(mockSetData.mock.calls[1][0]).toEqual('text/plain');
+        expect(mockSetData.mock.calls[1][1]).toEqual(expectedPlainSelection);
+    });
+
+    it('should keep data: URLs (base64 images) in copied content [drag event]', () => {
+        const dataURL = 'data:image/png;base64,whatever';
+        const content = `<div xmlns="http://www.w3.org/1999/xhtml">
+<p>Text before image</p>
+<img src="${dataURL}" alt="Base64 image">
+<p>Text after image</p>
+</div>`;
+        const selection = setup(content);
+        cleanProblematicImagesFromClipboardContent('drag', mockDragEvent, selection);
+
+        const expectedPlainSelection = `Text before image\n\nText after image`;
 
         expect(mockSetData.mock.calls[0][0]).toEqual('text/html');
         expect(mockSetData.mock.calls[0][1]).toEqual(content);
