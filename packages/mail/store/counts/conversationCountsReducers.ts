@@ -352,10 +352,7 @@ export const labelConversationsPending = (
             if (isCategoryLabel(labelID) && isCategoryLabel(destinationLabelID) && destinationLabelID !== labelID) {
                 messageCountState.Total = safeDecreaseCount(messageCountState?.Total, 1);
                 if (hasUnreadInLabel) {
-                    messageCountState.Unread = safeDecreaseCount(
-                        messageCountState?.Unread,
-                        getContextNumUnread(conversation, labelID)
-                    );
+                    messageCountState.Unread = safeDecreaseCount(messageCountState?.Unread, 1);
                 }
                 return;
             }
