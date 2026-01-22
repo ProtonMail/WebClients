@@ -6,7 +6,6 @@ import useLoading from '@proton/hooks/useLoading';
 import { LinkURLType } from '@proton/shared/lib/drive/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 
-import type { DriveSectionRouteProps } from '../components/sections/Drive/DriveView';
 import useDriveNavigation from '../hooks/drive/useNavigate';
 import { useContextShareHandler, useDefaultShare } from '../store';
 import { FolderContainer, hasValidLinkType } from './FolderContainer';
@@ -16,7 +15,7 @@ export const FolderContainerWrapper = ({ type }: { type: LinkURLType }) => {
     const [isLoading, withLoading] = useLoading(true);
     const { navigateToRoot } = useDriveNavigation();
     const { handleContextShare } = useContextShareHandler();
-    const { shareId, linkId } = useParams<DriveSectionRouteProps>();
+    const { shareId, linkId } = useParams<{ shareId?: string; linkId?: string }>();
 
     useEffect(() => {
         const abortController = new AbortController();
