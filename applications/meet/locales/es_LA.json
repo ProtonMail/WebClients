@@ -80,8 +80,14 @@
       "Done": [
         "Hecho"
       ],
+      "Download local participant report": [
+        "Descargar informe de participante local"
+      ],
       "Download logs": [
         "Descargar los registros"
+      ],
+      "Download participant report": [
+        "Descargar informe de participante"
       ],
       "Edit email address": [
         "Editar dirección de correo"
@@ -380,6 +386,11 @@
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "Aplicaciones de ${ BRAND_NAME }"
+      ]
+    },
+    "Badge": {
+      "Active": [
+        "Activo"
       ]
     },
     "Browser": {
@@ -1797,6 +1808,12 @@
       "No microphone detected.": [
         "Ningún micrófono detectado."
       ],
+      "No publications": [
+        "Sin publicaciones"
+      ],
+      "No remote participants": [
+        "No hay participantes remotos"
+      ],
       "No results found": [
         "No se encontraron resultados"
       ],
@@ -1997,11 +2014,17 @@
       "Browser version": [
         "Versión del navegador"
       ],
+      "Camera Active": [
+        "Cámara activa"
+      ],
       "Category": [
         "Categoría"
       ],
       "Code is 6 digits without spaces": [
         "El código es de 6 dígitos sin espacios"
+      ],
+      "Connection Quality": [
+        "Calidad de la conexión"
       ],
       "Delete": [
         "Eliminar"
@@ -2014,6 +2037,9 @@
       ],
       "Email address": [
         "Dirección de correo"
+      ],
+      "Enabled": [
+        "Activada"
       ],
       "Every day": [
         "Diariamente"
@@ -2033,14 +2059,26 @@
       "Hide password": [
         "Ocultar contraseña"
       ],
+      "Identity": [
+        "Identidad"
+      ],
       "Include application logs in bug report": [
         "Incluir registros de la aplicación en el informe de errores"
       ],
       "Meeting ID": [
         "ID de la reunión"
       ],
+      "Microphone Active": [
+        "Micrófono activo"
+      ],
       "Monday to Friday": [
         "De lunes a viernes"
+      ],
+      "Muted": [
+        "Silenciado"
+      ],
+      "Name": [
+        "Nombre"
       ],
       "No repeat": [
         "No se repite"
@@ -2068,6 +2106,15 @@
       ],
       "Reveal password": [
         "Mostrar contraseña"
+      ],
+      "Selected Camera": [
+        "Cámara seleccionada"
+      ],
+      "Selected Microphone": [
+        "Micrófono seleccionado"
+      ],
+      "Subscribed": [
+        "Suscrito"
       ],
       "System information": [
         "Información del sistema"
@@ -2264,6 +2311,14 @@
         "Se le redirigirá a su proveedor de SSO de terceros."
       ]
     },
+    "Status": {
+      "No": [
+        "No"
+      ],
+      "Yes": [
+        "Sí"
+      ]
+    },
     "Success": {
       "Assigned new host": [
         "Se asignó un nuevo anfitrión"
@@ -2302,6 +2357,12 @@
       ],
       "Authenticator": [
         "Autenticador"
+      ],
+      "Available Cameras": [
+        "Cámaras disponibles"
+      ],
+      "Available Microphones": [
+        "Micrófonos disponibles"
       ],
       "Chat": [
         "Chat"
@@ -2354,6 +2415,9 @@
       "Joining meeting with ${ participantCount } other participants…": [
         "Uniéndose a la reunión con ${ participantCount } participante(s)…"
       ],
+      "Local Participant": [
+        "Participante local"
+      ],
       "Meeting details": [
         "Detalles de la reunión"
       ],
@@ -2383,6 +2447,12 @@
       ],
       "Protecting meeting with end-to-end encryption...": [
         "Protegiendo la reunión con cifrado de extremo a extremo..."
+      ],
+      "Publications": [
+        "Publicaciones"
+      ],
+      "Remote Participants": [
+        "Participantes remotos"
       ],
       "Report a problem": [
         "Reportar un problema"
