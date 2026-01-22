@@ -8163,7 +8163,7 @@ __metadata:
     "@vercel/ncc": "npm:^0.38.4"
     eslint: "npm:^9.39.2"
     jest: "npm:^30.2.0"
-    lodash: "npm:^4.17.21"
+    lodash: "npm:^4.17.23"
     prom-client: "npm:^15.1.3"
     ts-jest: "npm:^29.4.6"
     ts-node: "npm:^10.9.2"
@@ -9313,7 +9313,7 @@ __metadata:
     "@types/jest": "npm:^30.0.0"
     eslint: "npm:^9.39.2"
     jest: "npm:^30.2.0"
-    lodash: "npm:^4.17.21"
+    lodash: "npm:^4.17.23"
     ts-jest: "npm:^29.4.6"
     typescript: "npm:^5.9.3"
   languageName: unknown
@@ -10807,7 +10807,7 @@ __metadata:
     "@rowsncolumns/spreadsheet": "workspace:^"
     "@rowsncolumns/utils": "workspace:^"
     "@types/lodash": "npm:^4.17.17"
-    lodash: "npm:^4.17.21"
+    lodash: "npm:^4.17.23"
     rxjs: "npm:^7.8.2"
   peerDependencies:
     "@rowsncolumns/spreadsheet": "workspace:^"
@@ -11042,7 +11042,7 @@ __metadata:
     "@types/scheduler": "npm:^0.26.0"
     jotai: "npm:^2.12.4"
     jotai-effect: "npm:^2.0.2"
-    lodash: "npm:^4.17.21"
+    lodash: "npm:^4.17.23"
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
     react-draggable: "npm:^4.4.6"
@@ -11148,7 +11148,7 @@ __metadata:
     "@rowsncolumns/spreadsheet": "workspace:^"
     "@rowsncolumns/spreadsheet-state": "workspace:^"
     "@types/lodash": "npm:^4.17.17"
-    lodash: "npm:^4.17.21"
+    lodash: "npm:^4.17.23"
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
     rxjs: "npm:^7.8.2"
@@ -31734,10 +31734,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lodash@npm:4.17.21, lodash@npm:^4.17.12, lodash@npm:^4.17.15, lodash@npm:^4.17.20, lodash@npm:^4.17.21, lodash@npm:^4.17.4":
+"lodash@npm:4.17.21":
   version: 4.17.21
   resolution: "lodash@npm:4.17.21"
   checksum: 10/c08619c038846ea6ac754abd6dd29d2568aa705feb69339e836dfa8d8b09abbb2f859371e86863eda41848221f9af43714491467b5b0299122431e202bb0c532
+  languageName: node
+  linkType: hard
+
+"lodash@npm:^4.17.12, lodash@npm:^4.17.15, lodash@npm:^4.17.20, lodash@npm:^4.17.21, lodash@npm:^4.17.23, lodash@npm:^4.17.4":
+  version: 4.17.23
+  resolution: "lodash@npm:4.17.23"
+  checksum: 10/82504c88250f58da7a5a4289f57a4f759c44946c005dd232821c7688b5fcfbf4a6268f6a6cdde4b792c91edd2f3b5398c1d2a0998274432cff76def48735e233
   languageName: node
   linkType: hard
 
@@ -37213,7 +37220,7 @@ __metadata:
     html-webpack-plugin: "npm:^5.6.5"
     jest: "npm:^30.2.0"
     jest-junit: "npm:^16.0.0"
-    lodash: "npm:^4.17.21"
+    lodash: "npm:^4.17.23"
     prettier: "npm:^3.7.4"
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
@@ -37385,7 +37392,7 @@ __metadata:
     html-webpack-plugin: "npm:^5.6.5"
     jest: "npm:^30.2.0"
     jest-junit: "npm:^16.0.0"
-    lodash: "npm:^4.17.21"
+    lodash: "npm:^4.17.23"
     prettier: "npm:^3.7.4"
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
@@ -37625,7 +37632,7 @@ __metadata:
     jest: "npm:^30.2.0"
     jest-junit: "npm:^16.0.0"
     jest-when: "npm:3.7.0"
-    lodash: "npm:^4.17.21"
+    lodash: "npm:^4.17.23"
     mime-types: "npm:^2.1.35"
     path-browserify: "npm:^1.0.1"
     prettier: "npm:^3.7.4"
@@ -37732,7 +37739,7 @@ __metadata:
     execa: "npm:^8.0.1"
     fork-ts-checker-webpack-plugin: "npm:^9.1.0"
     jest: "npm:^30.2.0"
-    lodash: "npm:^4.17.21"
+    lodash: "npm:^4.17.23"
     mac-appify: "npm:^2019.4.13"
     minimist: "npm:^1.2.8"
     node-loader: "npm:^2.1.0"
@@ -37793,7 +37800,7 @@ __metadata:
     jest: "npm:^30.2.0"
     jest-environment-jsdom: "npm:^30.2.0"
     json-stable-stringify: "npm:^1.3.0"
-    lodash: "npm:^4.17.21"
+    lodash: "npm:^4.17.23"
     lottie-react: "npm:^2.4.1"
     msw: "npm:^2.12.4"
     p-limit: "npm:^6.2.0"
@@ -37925,7 +37932,7 @@ __metadata:
     jest-junit: "npm:^16.0.0"
     jest-mock: "npm:^30.2.0"
     jszip: "npm:^3.10.1"
-    lodash: "npm:^4.17.21"
+    lodash: "npm:^4.17.23"
     loud-rejection: "npm:^2.2.0"
     markdown-it: "npm:^14.1.0"
     msw: "npm:^2.12.4"
@@ -37980,7 +37987,7 @@ __metadata:
     execa: "npm:^8.0.1"
     fork-ts-checker-webpack-plugin: "npm:^9.1.0"
     jest: "npm:^30.2.0"
-    lodash: "npm:^4.17.21"
+    lodash: "npm:^4.17.23"
     minimist: "npm:^1.2.8"
     node-loader: "npm:^2.1.0"
     prettier: "npm:3.7.4"
@@ -38257,7 +38264,7 @@ __metadata:
     "@types/react-router-dom": "npm:^5.3.3"
     cross-env: "npm:^10.1.0"
     eslint: "npm:^9.39.2"
-    lodash: "npm:^4.17.21"
+    lodash: "npm:^4.17.23"
     prettier: "npm:^3.7.4"
     proton-account: "workspace:^"
     react: "npm:^18.3.1"
@@ -38296,7 +38303,7 @@ __metadata:
     eslint: "npm:^9.39.2"
     happy-dom: "npm:^20.0.11"
     jsqr: "npm:^1.4.0"
-    lodash: "npm:^4.17.21"
+    lodash: "npm:^4.17.23"
     path-browserify: "npm:^1.0.1"
     prettier: "npm:^3.7.4"
     react: "npm:^18.3.1"
