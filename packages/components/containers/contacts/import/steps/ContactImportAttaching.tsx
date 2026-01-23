@@ -15,11 +15,7 @@ import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import { FeatureCode, useFeature } from '@proton/features';
 import { APPS } from '@proton/shared/lib/constants';
-import {
-    MAX_CONTACTS_PER_USER,
-    MAX_IMPORT_FILE_SIZE,
-    MAX_IMPORT_FILE_SIZE_STRING,
-} from '@proton/shared/lib/contacts/constants';
+import { MAX_IMPORT_FILE_SIZE, MAX_IMPORT_FILE_SIZE_STRING } from '@proton/shared/lib/contacts/constants';
 import { ImportFatalError } from '@proton/shared/lib/contacts/errors/ImportFatalError';
 import { IMPORT_ERROR_TYPE, ImportFileError } from '@proton/shared/lib/contacts/errors/ImportFileError';
 import { prepare, readCsv } from '@proton/shared/lib/contacts/helpers/csv';
@@ -29,7 +25,7 @@ import { splitExtension } from '@proton/shared/lib/helpers/file';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { ImportContactsModel } from '@proton/shared/lib/interfaces/contacts/Import';
 import { EXTENSION, IMPORT_STEPS } from '@proton/shared/lib/interfaces/contacts/Import';
-import { useVariant } from '@proton/unleash';
+import { getMaxContactsImportConfig } from '@proton/unleash';
 
 import { getInitialState } from '../initialstate';
 
@@ -41,8 +37,7 @@ interface Props {
     onClose?: () => void;
 }
 const ContactImportAttaching = ({ model, setModel, onClose }: Props) => {
-    const maxContactsImport = useVariant('MaxContactsImport');
-    const config = maxContactsImport.payload?.value;
+    const maxContacts = getMaxContactsImportConfig();
 
     const { feature: featureUsedContactsImport, update: updateUsedContactsImport } = useFeature(
         FeatureCode.UsedContactsImport
@@ -106,17 +101,15 @@ const ContactImportAttaching = ({ model, setModel, onClose }: Props) => {
             if (extension === CSV) {
                 const parsedCsvContacts = await readCsv(fileAttached);
                 const preVcardsContacts = prepare(parsedCsvContacts);
+
                 if (!preVcardsContacts.length) {
                     throw new ImportFileError(IMPORT_ERROR_TYPE.NO_CONTACTS, fileAttached.name);
                 }
-                if (config) {
-                    const maxContacts = JSON.parse(config).maxContactsImport;
-                    if (preVcardsContacts.length > maxContacts) {
-                        throw new ImportFileError(IMPORT_ERROR_TYPE.TOO_MANY_CONTACTS, fileAttached.name);
-                    }
-                } else if (preVcardsContacts.length > MAX_CONTACTS_PER_USER) {
+
+                if (preVcardsContacts.length > maxContacts) {
                     throw new ImportFileError(IMPORT_ERROR_TYPE.TOO_MANY_CONTACTS, fileAttached.name);
                 }
+
                 setModel({
                     ...model,
                     step: IMPORT_STEPS.IMPORT_CSV,
@@ -127,14 +120,10 @@ const ContactImportAttaching = ({ model, setModel, onClose }: Props) => {
             } else if (extension === VCF) {
                 const vcards = extractVcards(await readVcf(fileAttached));
 
-                if (config) {
-                    const maxContacts = JSON.parse(config).maxContactsImport;
-                    if (vcards.length > maxContacts) {
-                        throw new ImportFileError(IMPORT_ERROR_TYPE.TOO_MANY_CONTACTS, fileAttached.name);
-                    }
-                } else if (vcards.length > MAX_CONTACTS_PER_USER) {
+                if (vcards.length > maxContacts) {
                     throw new ImportFileError(IMPORT_ERROR_TYPE.TOO_MANY_CONTACTS, fileAttached.name);
                 }
+
                 const { errors, rest: parsedVcardContacts } = splitErrors(getSupportedContacts(vcards));
                 const step =
                     errors.length || !parsedVcardContacts.length ? IMPORT_STEPS.WARNING : IMPORT_STEPS.IMPORTING;
@@ -174,9 +163,7 @@ const ContactImportAttaching = ({ model, setModel, onClose }: Props) => {
         <Href href={getKnowledgeBaseUrl('/adding-contacts')} key="learn-more-link">{c('Link').t`Learn more`}</Href>
     );
 
-    const maxContactString = config
-        ? `${(JSON.parse(config).maxContactsImport as number).toLocaleString()}`
-        : MAX_CONTACTS_PER_USER.toLocaleString();
+    const maxContactString = maxContacts.toLocaleString();
 
     return (
         <form className="modal-two-dialog-container h-full" onSubmit={handleSubmit}>
