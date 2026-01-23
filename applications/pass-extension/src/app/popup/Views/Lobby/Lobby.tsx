@@ -58,7 +58,7 @@ export const Lobby: FC = () => {
                 onFork={requestFork}
                 onLogin={(options) => sendMessage(popupMessage({ type: WorkerMessageType.AUTH_INIT, options }))}
                 onLogout={logout}
-                onOffline={noop}
+                onOffline={() => sendMessage(popupMessage({ type: WorkerMessageType.AUTH_OFFLINE_SWITCH }))}
                 onRegister={() => requestFork(ForkType.SIGNUP)}
                 renderError={(message) => <PromptForReload message={message} autoReload={autoReload} browserError />}
                 renderFooter={() =>
