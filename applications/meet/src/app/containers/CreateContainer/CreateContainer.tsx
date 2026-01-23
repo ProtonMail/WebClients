@@ -98,7 +98,7 @@ export const CreateContainer = ({}: CreateContainerProps) => {
 
         const endTime = combineDateAndTime(values.endDate, values.endTime, values.timeZone);
 
-        const type = recurrence ? MeetingType.RECURRING : MeetingType.SCHEDULED;
+        const type = recurrence && recurrence !== 'NO_REPEAT' ? MeetingType.RECURRING : MeetingType.SCHEDULED;
 
         const rrule = recurrence === 'NO_REPEAT' ? null : recurrence;
 
