@@ -14,6 +14,7 @@ export const mockShareId = uniqueId();
 export const mockItemId = uniqueId();
 
 export const mockShare: ShareItem = {
+    addressId: uniqueId(),
     content: '',
     createTime: 0,
     eventId: uniqueId(),
