@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import { Fragment, useMemo, useState } from 'react';
+import { Fragment, Suspense, lazy, useMemo, useState } from 'react';
 import { BrowserRouter, useLocation } from 'react-router-dom';
 
 import * as bootstrap from '@proton/account/bootstrap';
@@ -32,7 +32,6 @@ import noop from '@proton/utils/noop';
 import defaultConfig from '../app/config';
 import locales from '../app/locales';
 import { extendStore, setupStore } from '../app/store/store';
-import MainContainer from './MainContainer';
 import Setup from './Setup';
 import broadcast, { MessageType } from './broadcast';
 import LiteLayout from './components/LiteLayout';
@@ -73,6 +72,17 @@ const bootstrapApp = ({ appVersion, app }: { appVersion: string | null; app: Pro
         authentication,
     };
 };
+
+const LazyMainContainer = lazy(
+    () =>
+        import(
+            /* webpackChunkName: "MainContainer" */
+            /* webpackPrefetch: true */
+            /* webpackPreload: true */
+            /* webpackFetchPriority: "high" */
+            './MainContainer'
+        )
+);
 
 const App = () => {
     const location = useLocation();
@@ -160,14 +170,16 @@ const App = () => {
                                                             onLogin={handleLogin}
                                                             loader={loader}
                                                         >
-                                                            <MainContainer
-                                                                layout={layout}
-                                                                loader={loader}
-                                                                action={action}
-                                                                redirect={redirect}
-                                                                app={app}
-                                                                searchParams={searchParams}
-                                                            />
+                                                            <Suspense fallback={loader}>
+                                                                <LazyMainContainer
+                                                                    layout={layout}
+                                                                    loader={loader}
+                                                                    action={action}
+                                                                    redirect={redirect}
+                                                                    app={app}
+                                                                    searchParams={searchParams}
+                                                                />
+                                                            </Suspense>
                                                         </Setup>
                                                     )}
                                                 </ErrorBoundary>
