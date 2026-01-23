@@ -49,6 +49,7 @@ import {
 import { exposePassCrypto } from '@proton/pass/lib/crypto';
 import { createPassCrypto } from '@proton/pass/lib/crypto/pass-crypto';
 import { ConnectivityStatus } from '@proton/pass/lib/network/connectivity.utils';
+import { QA_SERVICE } from '@proton/pass/lib/qa/service';
 import { offlineResume } from '@proton/pass/store/actions';
 import { registerStoreEffect } from '@proton/pass/store/connect/effect';
 import { selectLockSetupRequired } from '@proton/pass/store/selectors/settings';
@@ -71,6 +72,8 @@ export const createWorkerContext = (config: ProtonConfig) => {
     const auth = createAuthService(api, authStore);
     const store = createStoreService();
     const nativeMessaging = createNativeMessagingService(authStore);
+
+    if (ENV === 'development') QA_SERVICE?.init(storage.local);
 
     auth.registerLockAdapter(LockMode.SESSION, sessionLockAdapterFactory(auth));
     auth.registerLockAdapter(LockMode.DESKTOP, desktopLockAdapterFactory(auth, nativeMessaging));
