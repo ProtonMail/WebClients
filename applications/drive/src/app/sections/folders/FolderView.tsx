@@ -6,17 +6,18 @@ import { useShallow } from 'zustand/react/shallow';
 import { Toolbar } from '@proton/components';
 import { generateNodeUid } from '@proton/drive/index';
 
-import DriveBreadcrumbsDeprecated from '../../components/DriveBreadcrumbsDeprecated';
 import { FileBrowserStateProvider } from '../../components/FileBrowser';
 import { useAlbumOnboardingModal } from '../../components/modals/AlbumOnboardingModal';
 import ToolbarRow from '../../components/sections/ToolbarRow/ToolbarRow';
 import UploadDragDrop from '../../components/uploads/UploadDragDrop/UploadDragDrop';
 import { useActiveShare } from '../../hooks/drive/useActiveShare';
+import { useDriveDragMoveTarget } from '../../hooks/drive/useDriveDragMove';
 import { useUserSettings } from '../../store';
 import { useControlledSorting } from '../../store/_views/utils';
 import { useDeviceStore } from '../devices/devices.store';
 import { FolderBrowser } from './FolderBrowser/FolderBrowser';
 import { FolderToolbar } from './FolderBrowser/FolderToolbar';
+import { FolderViewBreadcrumbs } from './FolderViewBreadcrumbs';
 import { useFolder } from './useFolder';
 import { useFolderStore } from './useFolder.store';
 
@@ -59,8 +60,10 @@ export function FolderView() {
         };
     }, [parentUid, activeFolderLinkId, load, isLoadingDevices, activeFolderShareId, shareId, linkId]);
 
-    // TODO: Migrate to new DriveBreadcrumbs when ready.
-    const breadcrumbs = activeFolder && <DriveBreadcrumbsDeprecated activeFolder={activeFolder} />;
+    const { getHandleItemDrop } = useDriveDragMoveTarget(activeFolder.shareId);
+    const breadcrumbs = activeFolder && (
+        <FolderViewBreadcrumbs createHandleItemDrop={getHandleItemDrop} nodeUid={parentUid} />
+    );
 
     const toolbar = activeFolder ? (
         <FolderToolbar
