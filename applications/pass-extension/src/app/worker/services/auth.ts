@@ -106,13 +106,14 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
 
         onLoginStart: withContext((ctx) => {
             browser.alarms.clear(SESSION_RESUME_ALARM).catch(noop);
-            ctx.setStatus(AppStatus.AUTHORIZING);
+            if (!ctx.booted) ctx.setStatus(AppStatus.AUTHORIZING);
         }),
 
         onLoginComplete: withContext((ctx, _) => {
             ctx.setStatus(AppStatus.AUTHORIZED);
             ctx.service.activation.boot();
             void ctx.service.storage.local.removeItem('forceLock');
+            void ctx.service.storage.session.setItems(authStore.getSession());
             setSentryUID(authStore.getUID());
 
             if (BUILD_TARGET === 'safari') void sendSafariMessage({ credentials: authStore.getSession() });
