@@ -102,6 +102,7 @@ const config: Configuration = {
             ['process.env.QA_BUILD']: JSON.stringify(
                 process.env.QA_BUILD !== undefined ? process.env.QA_BUILD === 'true' : true
             ),
+            ENV: JSON.stringify(process.env.NODE_ENV ?? 'development'),
         }),
         ...(isDevServer ? [new ReactRefreshWebpackPlugin({ overlay: false })] : []),
     ],
