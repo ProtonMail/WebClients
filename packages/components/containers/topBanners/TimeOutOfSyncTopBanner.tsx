@@ -8,6 +8,7 @@ import { ping } from '@proton/shared/lib/api/tests';
 import { HOUR, SECOND } from '@proton/shared/lib/constants';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
 import useApiServerTime from '../../hooks/useApiServerTime';
@@ -30,7 +31,9 @@ const isStaleServerTimeUpdate = (previousUpdateLocalTime: Date, localTime: Date)
     return timeDifference > 35 * SECOND;
 };
 
-const TimeOutOfSyncTopBanner = () => {
+type Props = { className?: string };
+
+const TimeOutOfSyncTopBanner = ({ className }: Props) => {
     const [ignore, setIgnore] = useState(false);
     // This is only used to keep track of the time past since the previous re-render, aka server time update.
     const previousUpdateLocalTime = useRef(new Date());
@@ -85,12 +88,11 @@ const TimeOutOfSyncTopBanner = () => {
     }
 
     const learnMore = (
-        <Href href={getKnowledgeBaseUrl('/device-time-warning')} key="eslint-autofix-DCC4C8">{c('Link')
-            .t`Learn more`}</Href>
+        <Href href={getKnowledgeBaseUrl('/device-time-warning')} key="device-time-link">{c('Link').t`Learn more`}</Href>
     );
 
     return (
-        <TopBanner onClose={() => setIgnore(true)} className="bg-warning">
+        <TopBanner onClose={() => setIgnore(true)} className={clsx('bg-warning', className)}>
             {c('Warning').jt`The date and time settings on your device are out of sync. ${learnMore}`}
         </TopBanner>
     );

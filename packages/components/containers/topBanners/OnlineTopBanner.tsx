@@ -16,7 +16,9 @@ import UnreachableTopBanner from './UnreachableTopBanner';
 
 const OFFLINE_TIMEOUT = 5000;
 
-const OnlineTopBanner = () => {
+type Props = { className?: string };
+
+const OnlineTopBanner = ({ className }: Props) => {
     const { apiUnreachable, offline } = useApiStatus();
     const onlineStatus = useOnline();
     const safeOnlineStatusValue = onlineStatus && !offline;
@@ -57,7 +59,7 @@ const OnlineTopBanner = () => {
 
     if (safeOnlineStatus && backOnline) {
         return (
-            <TopBanner className="bg-success" data-testid="top-banner-connection-restored">{c('Info')
+            <TopBanner className={clsx('bg-success', className)} data-testid="top-banner-connection-restored">{c('Info')
                 .t`Internet connection restored.`}</TopBanner>
         );
     }
@@ -73,7 +75,7 @@ const OnlineTopBanner = () => {
     // If the device is known to be offline, the API unreachable is not displayed.
     return (
         <TopBanner
-            className={clsx(isElectronApp ? 'bg-info' : 'bg-danger')}
+            className={clsx(isElectronApp ? 'bg-info' : 'bg-danger', className)}
             data-testid="top-banner-connection-lost"
         >{c('Info').t`Internet connection lost. Please check your device's connectivity.`}</TopBanner>
     );
