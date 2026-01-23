@@ -3,8 +3,9 @@ import { useEffect } from 'react';
 import { c } from 'ttag';
 import { useShallow } from 'zustand/react/shallow';
 
-import { ButtonWithTextAndIcon, Icon, ListItemGreenTick, useActiveBreakpoint } from '@proton/components';
+import { ButtonWithTextAndIcon, Icon, useActiveBreakpoint } from '@proton/components';
 import { VintageClock } from '@proton/components/components/vintageClock/VintageClock';
+import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 import { toMinutesAndSeconds } from '@proton/shared/lib/helpers/time';
 import clsx from '@proton/utils/clsx';
 
@@ -55,18 +56,15 @@ export function DriveEmptyViewFreeUpload() {
                     )}
                 >
                     <VintageClock coarseValue={minutes} coarseUnit="mins" fineValue={seconds} fineUnit="secs" />
-                    <h2 className="text-bold">
+                    <h2 className="text-center text-bold">
                         {c('Title').t`Ready, set, upload.`}
                         <br />
-                        {c('Title').jt`Your ${freeUploadLength} has started.`}
+                        {c('Title').jt`${freeUploadLength} of free uploads.`}
                     </h2>
-                    <ul className="unstyled text-lg m-0">
-                        <ListItemGreenTick>{c('Onboarding Info').t`Upload files, folders, photos`}</ListItemGreenTick>
-                        <ListItemGreenTick>{c('Onboarding Info')
-                            .t`Your storage limit won’t be affected`}</ListItemGreenTick>
-                        <ListItemGreenTick>{c('Onboarding Info')
-                            .t`Encryption happens automatically`}</ListItemGreenTick>
-                    </ul>
+                    <div className="max-w-custom text-center" style={{ '--max-w-custom': '25rem' }}>
+                        {c('Info')
+                            .t`Welcome to ${DRIVE_APP_NAME}, for the first 10 minutes, any files you upload don't count toward your storage quota.`}
+                    </div>
                     <div className="flex gap-3 w-full justify-center">
                         <ButtonWithTextAndIcon
                             color="norm"
