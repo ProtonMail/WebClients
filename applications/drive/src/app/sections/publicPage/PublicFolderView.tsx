@@ -64,6 +64,7 @@ const usePublicBreadcrumb = (driveClient: ProtonDrivePublicLinkClient) => {
                     name: nodeEntity.name,
                     // Do not render signature issues for breadcrumb items on public page.
                     haveSignatureIssues: false,
+                    supportDropOperations: false,
                 };
             });
             setData(data);
