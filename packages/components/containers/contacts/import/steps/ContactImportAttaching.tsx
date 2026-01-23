@@ -152,13 +152,12 @@ const ContactImportAttaching = ({ model, setModel, onClose }: Props) => {
             app={APPS.PROTONMAIL}
             path={`/easy-switch?source=${EASY_SWITCH_SEARCH_SOURCES.CONTACT_IMPORT}`}
             target="_blank"
-            key="eslint-autofix-CCA05E"
+            key="easy-switch-link"
         >{c('description').t`use the Easy Switch import assistant`}</SettingsLink>
     );
 
     const learnMoreLink = (
-        <Href href={getKnowledgeBaseUrl('/adding-contacts')} key="eslint-autofix-92F589">{c('Link')
-            .t`Learn more`}</Href>
+        <Href href={getKnowledgeBaseUrl('/adding-contacts')} key="learn-more-link">{c('Link').t`Learn more`}</Href>
     );
 
     return (
