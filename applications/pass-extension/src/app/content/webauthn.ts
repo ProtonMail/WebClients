@@ -25,16 +25,15 @@ type BridgeErrorOptions = { data: MessageFailure; onReject: (error: Error) => vo
     const self = (window.wrappedJSObject ?? window) as Window & typeof globalThis;
     const credentials = self.navigator.credentials;
     const pk = self.PublicKeyCredential;
-    const webauthnSupported = typeof credentials?.get === 'function' && typeof credentials?.create === 'function';
+    const Exception = window.DOMException;
 
+    const webauthnSupported = typeof credentials?.get === 'function' && typeof credentials?.create === 'function';
     if (!webauthnSupported) return;
 
     const create = credentials.create.bind(navigator.credentials);
     const get = credentials.get.bind(navigator.credentials);
     const conditionalMediationAvailable = pk?.isConditionalMediationAvailable?.bind(pk);
     const verifyingPlatformAuthenticatorAvailable = pk?.isUserVerifyingPlatformAuthenticatorAvailable?.bind(pk);
-
-    const Exception = window.DOMException;
 
     const bridge = createMessageBridge();
     bridge.init();
