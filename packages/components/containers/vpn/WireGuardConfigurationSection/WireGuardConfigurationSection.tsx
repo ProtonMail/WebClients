@@ -15,7 +15,6 @@ import Row from '@proton/components/components/container/Row';
 import Summary from '@proton/components/components/container/Summary';
 import Icon from '@proton/components/components/icon/Icon';
 import Radio from '@proton/components/components/input/Radio';
-import TextArea from '@proton/components/components/input/TextArea';
 import Info from '@proton/components/components/link/Info';
 import { useModalTwoPromise, useModalTwoStatic } from '@proton/components/components/modalTwo/useModalTwo';
 import Option from '@proton/components/components/option/Option';
@@ -29,10 +28,12 @@ import useApi from '@proton/components/hooks/useApi';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import useUserVPN from '@proton/components/hooks/useUserVPN';
 import useVPNLogicals from '@proton/components/hooks/useVPNLogicals';
+import { TextAreaTwo } from '@proton/components/index';
 import { getCountryOptions, getLocalizedCountryByAbbr } from '@proton/payments';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { readableTime } from '@proton/shared/lib/helpers/time';
 import type { Logical } from '@proton/shared/lib/vpn/Logical';
+import useFlag from '@proton/unleash/useFlag';
 
 import Prompt from '../../../components/prompt/Prompt';
 import getBoldFormattedText from '../../../helpers/getBoldFormattedText';
@@ -46,43 +47,13 @@ import type { KeyPair } from './KeyPair';
 import WireGuardCreationModal from './WireGuardCreationModal';
 import { deleteCertificates, generateCertificate, getKey, queryVPNClientConfig } from './api';
 import { CURVE } from './curve';
-import type { FeatureFlagsConfig, FeatureOption, FeatureSelection, FeaturesConfig, FeaturesValues } from './feature';
-import {
-    clientConfigKeys,
-    formatFeatureShortName,
-    formatFeatureValue,
-    getKeyOfCheck,
-    initialFeaturesConfig,
-    isFeatureSelection,
-} from './feature';
+import type { FeatureFlagsConfig, FeatureOption, FeatureSelection, FeaturesConfig } from './feature';
+import { clientConfigKeys, initialFeaturesConfig, isFeatureSelection } from './feature';
+import { PLATFORM } from './features';
+import { getConfigTemplate } from './getConfigTemplate';
 import { normalize } from './normalize';
+import type { Peer } from './peer';
 import useCertificates from './useCertificates';
-
-export enum PLATFORM {
-    MACOS = 'macOS',
-    LINUX = 'Linux',
-    WINDOWS = 'Windows',
-    ANDROID = 'Android',
-    IOS = 'iOS',
-    ROUTER = 'Router',
-}
-
-export interface Peer {
-    name: string;
-    publicKey: string;
-    ip: string;
-    label: string;
-}
-
-export interface ExtraCertificateFeatures {
-    peerName: Peer['name'];
-    peerPublicKey: Peer['publicKey'];
-    peerIp: Peer['ip'];
-    label: Peer['label'];
-    platform: PLATFORM;
-}
-
-const isExtraFeatureKey = getKeyOfCheck<ExtraCertificateFeatures>(['peerIp', 'peerName', 'peerPublicKey', 'platform']);
 
 // From https://github.com/paulmillr/noble-ed25519/blob/d87d6e953304c9d4dbfb275e8e67a0c975d3262b/index.js
 const bytesToNumberLE = (uint8a: Uint8Array<ArrayBuffer>) => {
@@ -132,33 +103,14 @@ const getFeatureLink = (feature: FeatureOption<any>) =>
         ''
     );
 
-export const getConfigTemplate = (
-    interfacePrivateKey: string,
-    name: string | undefined,
-    features: Partial<FeaturesValues & ExtraCertificateFeatures> | undefined,
-    peer: Peer
-) => `[Interface]${name ? `\n# Key for ${name}` : ''}${getObjectKeys(features)
-    .map((key) =>
-        isExtraFeatureKey(key) ? '' : `\n# ${formatFeatureShortName(key)} = ${formatFeatureValue(features, key)}`
-    )
-    .join('')}
-PrivateKey = ${interfacePrivateKey}
-Address = 10.2.0.2/32
-DNS = 10.2.0.1
-
-[Peer]
-# ${features?.peerName || peer.name}
-PublicKey = ${features?.peerPublicKey || peer.publicKey}
-AllowedIPs = 0.0.0.0/0, ::/0
-Endpoint = ${features?.peerIp || peer.ip}:51820`;
-
 const privateKeyPlaceholder = '*****';
 
 const getCertificateModel = (
     certificateDto: CertificateDTO & { id?: string },
     peer: Peer,
     privateKey?: string,
-    id?: string
+    id?: string,
+    isIPv6Enabled?: boolean
 ): Certificate => {
     if (!id && !certificateDto.id) {
         certificateDto.id = `c${Date.now()}-${Math.random()}`;
@@ -176,7 +128,7 @@ const getCertificateModel = (
         publicKey: certificateDto.ClientKey,
         publicKeyFingerprint: certificateDto.ClientKeyFingerprint,
         expirationTime: certificateDto.ExpirationTime,
-        config: getConfigTemplate(privateKey || privateKeyPlaceholder, name, features, peer),
+        config: getConfigTemplate(privateKey || privateKeyPlaceholder, name, features, peer, isIPv6Enabled),
     };
 };
 
@@ -211,6 +163,7 @@ const WireGuardConfigurationSection = () => {
         publicKey: '',
         ip: '',
         label: '',
+        ipv6: '',
     });
     const certificateCacheRef = useRef<Record<string, Certificate>>({});
     const certificateCache = certificateCacheRef.current;
@@ -241,7 +194,7 @@ const WireGuardConfigurationSection = () => {
     const { loading: certificatesLoading, result: certificatesResult, moreToLoad } = useCertificates(limit);
 
     const countryOptions = getCountryOptions(userSettings);
-
+    const isIpv6ForWgConfig = useFlag('Ipv6ForWgConfig');
     const logicalInfoLoading = logicalsLoading || vpnLoading;
     const maxTier = userVPN?.MaxTier || 0;
     const logicals = useMemo(
@@ -273,7 +226,13 @@ const WireGuardConfigurationSection = () => {
                 return;
             }
 
-            certificateCache[certificateDto.ClientKeyFingerprint] = getCertificateModel(certificateDto, peer);
+            certificateCache[certificateDto.ClientKeyFingerprint] = getCertificateModel(
+                certificateDto,
+                peer,
+                undefined,
+                undefined,
+                isIpv6ForWgConfig
+            );
         });
 
         certificates.forEach((certificate) => {
@@ -421,7 +380,13 @@ const WireGuardConfigurationSection = () => {
                     certificate.DeviceName = deviceName;
                 }
 
-                const newCertificate = getCertificateModel(certificate, peer, x25519PrivateKey);
+                const newCertificate = getCertificateModel(
+                    certificate,
+                    addedPeer || peer,
+                    x25519PrivateKey,
+                    undefined,
+                    isIpv6ForWgConfig
+                );
                 const id = newCertificate.id;
                 let name = newCertificate.name || newCertificate.publicKeyFingerprint || newCertificate.publicKey;
 
@@ -480,11 +445,12 @@ const WireGuardConfigurationSection = () => {
             let addPromise: Promise<void> | undefined = undefined;
 
             if (server) {
-                const newPeer = {
+                const newPeer: Peer = {
                     name: serverName,
                     publicKey: `${server.X25519PublicKey}`,
                     ip: server.EntryIP,
                     label: server.Label || '',
+                    ipv6: server.EntryIPv6,
                 };
 
                 if (doAdd) {
@@ -600,7 +566,13 @@ const WireGuardConfigurationSection = () => {
                 renewedCertificate.DeviceName = nameInputRef?.current?.value || '';
             }
 
-            const newCertificate = getCertificateModel(renewedCertificate, peer, certificate.privateKey);
+            const newCertificate = getCertificateModel(
+                renewedCertificate,
+                peer,
+                certificate.privateKey,
+                undefined,
+                isIpv6ForWgConfig
+            );
             setCertificates([...(certificates || []), newCertificate]);
             setCurrentCertificate(newCertificate.id);
             const formattedExpirationDate = readableTime(newCertificate.expirationTime, {
@@ -725,7 +697,7 @@ const WireGuardConfigurationSection = () => {
                                     )}
                                     <label className="block my-2">
                                         {c('Label').t`Config to connect to ${serverName}`}
-                                        <TextArea
+                                        <TextAreaTwo
                                             className="block mt-2"
                                             value={certificate?.config}
                                             readOnly

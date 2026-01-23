@@ -12,7 +12,7 @@ export const queryVPNCountriesCount = () => ({
 
 export const queryVPNLogicalServerInfo = () => ({
     method: 'get',
-    url: 'vpn/v1/logicals',
+    url: 'vpn/v1/logicals?WithIpV6=1',
 });
 
 export const queryVPNLogicalServerInfoCount = () => ({
