@@ -68,7 +68,7 @@ describe('Extension AuthService', () => {
 
         test('should proceed when permissions are available', async () => {
             permissions.hasHostPermissions.mockResolvedValueOnce(true);
-            const result = await auth.config.onResumeStart?.({ hasSession: true });
+            const result = await auth.config.onResumeStart?.({ hasSession: true, memorySession: {} });
 
             expect(result).toBe(true);
             expect(auth.config.onSessionEmpty).not.toHaveBeenCalled();
@@ -77,7 +77,7 @@ describe('Extension AuthService', () => {
 
         test('should handle missing permissions with no session', async () => {
             permissions.hasHostPermissions.mockResolvedValueOnce(false);
-            const result = await auth.config.onResumeStart?.({ hasSession: false });
+            const result = await auth.config.onResumeStart?.({ hasSession: false, memorySession: {} });
 
             expect(result).toBe(false);
             expect(auth.config.onSessionEmpty).toHaveBeenCalled();
@@ -90,7 +90,7 @@ describe('Extension AuthService', () => {
 
         test('should handle missing permissions with existing session', async () => {
             permissions.hasHostPermissions.mockResolvedValueOnce(false);
-            const result = await auth.config.onResumeStart?.({ hasSession: true });
+            const result = await auth.config.onResumeStart?.({ hasSession: true, memorySession: {} });
 
             expect(result).toBe(false);
             expect(auth.config.onSessionFailure).toHaveBeenCalledWith({ retryable: false });

@@ -118,7 +118,7 @@ export const createAuthStore = (store: Store) => {
         /** Checks wether an in-memory session is sufficient for offline
          * booting. `offlineKD` should only be hydrated after unlocking. */
         validOfflineSession: (data: Partial<AuthSession>): boolean =>
-            Boolean(data.UID && data.UserID && data.offlineKD),
+            Boolean(data?.UID && data?.UserID && data?.offlineKD),
 
         /** Checks wether a parsed persisted session object is
          * a valid `EncryptedAuthSession` in order to resume */

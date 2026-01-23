@@ -141,7 +141,7 @@ export interface AuthServiceConfig {
     onForkRequest?: (result: RequestForkResult, data?: RequestForkData) => void;
     /** Optional hook when session resuming starts. Returning `false` from this
      * function will halt the session resume sequence. */
-    onResumeStart?: (data: { hasSession: boolean }) => MaybePromise<boolean>;
+    onResumeStart?: (data: { hasSession: boolean; memorySession: Partial<AuthSession> }) => MaybePromise<boolean>;
     /** Called when an invalid persistent session error is thrown during a
      * session resuming sequence. It will get called with the invalid session
      * and the localID being resumed for retry mechanisms */
@@ -543,12 +543,12 @@ export const createAuthService = (config: AuthServiceConfig) => {
             pipe(
                 async (localID: Maybe<number>, options: AuthOptions): Promise<boolean> => {
                     try {
-                        const memorySession = await config.getMemorySession?.(localID);
+                        const memorySession = (await config.getMemorySession?.(localID)) ?? {};
                         const persistedSession = await config.getPersistedSession(localID);
                         const validMemorySession = memorySession && authStore.validSession(memorySession);
                         const hasSession = Boolean(validMemorySession || persistedSession);
 
-                        const proceed = (await config.onResumeStart?.({ hasSession })) ?? true;
+                        const proceed = (await config.onResumeStart?.({ hasSession, memorySession })) ?? true;
                         if (!proceed) return false;
 
                         if (validMemorySession) {
