@@ -43,7 +43,7 @@ describe('Core AuthService', () => {
             const result = await auth.resumeSession(0, {});
 
             expect(result).toBe(false);
-            expect(auth.config.onResumeStart).toHaveBeenCalledWith({ hasSession: false });
+            expect(auth.config.onResumeStart).toHaveBeenCalledWith({ hasSession: false, memorySession: {} });
         });
 
         test('should proceed when `onResumeStart` returns `true`', async () => {
@@ -62,7 +62,7 @@ describe('Core AuthService', () => {
             const result = await auth.resumeSession(0, {});
 
             expect(result).toBe(true);
-            expect(auth.config.onResumeStart).toHaveBeenCalledWith({ hasSession: true });
+            expect(auth.config.onResumeStart).toHaveBeenCalledWith({ hasSession: true, memorySession: { LocalID: 0 } });
         });
     });
 });
