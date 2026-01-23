@@ -15,6 +15,7 @@ import {
 } from '@proton/pass/lib/auth/fork';
 import { AppStatusFromLockMode, LockMode } from '@proton/pass/lib/auth/lock/types';
 import { ReauthAction } from '@proton/pass/lib/auth/reauth';
+import type { AuthServiceConfig } from '@proton/pass/lib/auth/service';
 import { createAuthService as createCoreAuthService } from '@proton/pass/lib/auth/service';
 import { SESSION_KEYS } from '@proton/pass/lib/auth/session';
 import type { AuthStore } from '@proton/pass/lib/auth/store';
@@ -22,15 +23,16 @@ import { getOfflineVerifier } from '@proton/pass/lib/cache/crypto';
 import {
     clientAuthorized,
     clientBooted,
-    clientReady,
+    clientOffline,
     clientSessionLocked,
     clientUnauthorized,
 } from '@proton/pass/lib/client';
 import { fileStorage } from '@proton/pass/lib/file-storage/fs';
 import browser from '@proton/pass/lib/globals/browser';
+import { ConnectivityStatus } from '@proton/pass/lib/network/connectivity.utils';
 import { settingsEditIntent } from '@proton/pass/store/actions';
 import { lockSync, unlock } from '@proton/pass/store/actions/creators/auth';
-import { cacheCancel, stateDestroy, stopEventPolling } from '@proton/pass/store/actions/creators/client';
+import { bootIntent, cacheCancel, stateDestroy, stopEventPolling } from '@proton/pass/store/actions/creators/client';
 import { notification } from '@proton/pass/store/actions/creators/notification';
 import type { Api } from '@proton/pass/types/api/api';
 import type { MaybeNull, RequiredProps } from '@proton/pass/types/utils/index';
@@ -229,7 +231,7 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
             browser.alarms.clear(SESSION_LOCK_ALARM).catch(noop);
         }),
 
-        onResumeStart: async ({ hasSession }) => {
+        onResumeStart: withContext<AuthServiceConfig['onResumeStart']>(async (ctx, { hasSession, memorySession }) => {
             /** Early permission check on session resume - this avoids failing
              * with an `Internet connection lost` error if the extension
              * permissions are too strict for session resuming */
@@ -241,18 +243,44 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
                 return false;
             }
 
+            /** Handle service-worker wake-up after offline boot. When the service worker
+             * gets killed and restarted, we check if we still have a valid offline session
+             * in memory. If network is still unavailable and we're not already booted,
+             * restore the offline session and boot directly without attempting online auth.
+             * This prevents unnecessary auth failures when waking up in offline mode. */
+            await ctx.service.connectivity.check().catch(noop);
+            const hasOfflineSession = authStore.validOfflineSession(memorySession);
+            const offline = !ctx.service.connectivity.online;
+            const booted = ctx.booted;
+
+            if (hasOfflineSession && offline && !booted) {
+                authStore.setSession(memorySession);
+                ctx.service.store.dispatch(bootIntent({ offline: true }));
+                return false;
+            }
+
             return true;
-        },
+        }),
 
         onUnlocked: withContext(async (ctx, mode, _, localID) => {
             if (clientBooted(ctx.getState().status)) return;
 
-            if (mode === LockMode.SESSION || mode === LockMode.DESKTOP) {
-                /** If the unlock request was triggered before the authentication
-                 * store session was fully hydrated, trigger a session resume. */
-                const validSession = authStore.validSession(authStore.getSession());
-                if (!validSession) await authService.resumeSession(localID, { retryable: false, unlocked: true });
-                else await authService.login(authStore.getSession(), { unlocked: true });
+            switch (mode) {
+                case LockMode.SESSION:
+                case LockMode.DESKTOP:
+                    /** If the unlock request was triggered before the authentication
+                     * store session was fully hydrated, trigger a session resume. */
+                    const validSession = authStore.validSession(authStore.getSession());
+                    if (!validSession) await authService.resumeSession(localID, { retryable: false, unlocked: true });
+                    else await authService.login(authStore.getSession(), { unlocked: true });
+                    break;
+
+                case LockMode.PASSWORD:
+                    /** NOTE: can only happen during offline unlocking for now */
+                    const online = ctx.service.connectivity.getStatus() === ConnectivityStatus.ONLINE;
+                    if (online) await authService.resumeSession(localID, { retryable: false, unlocked: true });
+                    else ctx.service.store.dispatch(bootIntent({ offline: true }));
+                    break;
             }
         }),
 
@@ -262,7 +290,19 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
         }),
 
         onSessionFailure: withContext(async (ctx, options) => {
-            ctx.setStatus(AppStatus.ERROR);
+            logger.info('[AuthService] Session resume failure');
+            const offline = !ctx.service.connectivity.online;
+            const offlineBooted = clientOffline(ctx.getState().status);
+
+            if (!offlineBooted) {
+                const status = (() => {
+                    if (offline && authStore.hasOfflineComponents()) return AppStatus.PASSWORD_LOCKED;
+                    else return AppStatus.ERROR;
+                })();
+
+                ctx.setStatus(status);
+                ctx.setBooted(false);
+            }
 
             if (options.retryable) {
                 const retryCount = authService.resumeSession.callCount;
@@ -397,11 +437,22 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
         return { ok: confirmed };
     };
 
+    /** Force password-lock when user explicitly switches to offline mode */
+    const handleOfflineSwitch: MessageHandlerCallback<WorkerMessageType.AUTH_OFFLINE_SWITCH> = withContext((ctx) => {
+        if (!ctx.service.connectivity.online) {
+            ctx.setBooted(false);
+            ctx.setStatus(AppStatus.PASSWORD_LOCKED);
+        }
+
+        return true;
+    });
+
     WorkerMessageBroker.registerMessage(WorkerMessageType.ACCOUNT_PROBE, () => true);
     WorkerMessageBroker.registerMessage(WorkerMessageType.ACCOUNT_FORK, handleAccountFork);
     WorkerMessageBroker.registerMessage(WorkerMessageType.AUTH_CHECK, handleAuthCheck);
     WorkerMessageBroker.registerMessage(WorkerMessageType.AUTH_CONFIRM_PASSWORD, handlePasswordConfirm);
     WorkerMessageBroker.registerMessage(WorkerMessageType.AUTH_INIT, handleInit);
+    WorkerMessageBroker.registerMessage(WorkerMessageType.AUTH_OFFLINE_SWITCH, handleOfflineSwitch);
     WorkerMessageBroker.registerMessage(WorkerMessageType.AUTH_UNLOCK, handleUnlock);
 
     /** These alarms may be triggered while the service worker was idle,
@@ -411,15 +462,19 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
         withContext(async (ctx, { name }) => {
             switch (name) {
                 case SESSION_LOCK_ALARM: {
-                    const ready = clientReady(ctx.getState().status);
-                    logger.info(`[AuthService] session lock alarm detected [ready=${ready}]`);
+                    const booted = clientBooted(ctx.getState().status);
+                    logger.info(`[AuthService] session lock alarm detected [booted=${booted}]`);
                     await ctx.service.storage.local.setItem('forceLock', true);
-                    if (ready) return authService.lock(LockMode.SESSION, { soft: false });
+                    if (booted) return authService.lock(LockMode.SESSION, { soft: false });
                     else return authService.init({ forceLock: true, retryable: false });
                 }
                 case SESSION_RESUME_ALARM: {
                     logger.info(`[AuthService] session resume alarm detected`);
-                    return authService.init({ forceLock: await shouldForceLock(), retryable: true });
+                    const appStatus = ctx.getState().status;
+                    const offline = !ctx.service.connectivity.online;
+                    const offlineResume = clientOffline(appStatus) && offline;
+
+                    if (offlineResume) return authService.init({ forceLock: await shouldForceLock(), retryable: true });
                 }
             }
         })

@@ -95,6 +95,7 @@ export enum WorkerMessageType {
     AUTH_CHECK = 'AUTH_CHECK',
     AUTH_CONFIRM_PASSWORD = 'AUTH_CONFIRM_PASSWORD',
     AUTH_INIT = 'AUTH_INIT',
+    AUTH_OFFLINE_SWITCH = 'AUTH_OFFLINE_SWITCH',
     AUTH_PULL_FORK = 'AUTH_PULL_FORK',
     AUTH_UNLOCK = 'AUTH_UNLOCK',
 
@@ -199,6 +200,7 @@ export type AuthCheckMessage = WithPayload<WorkerMessageType.AUTH_CHECK, { immed
 export type AuthConfirmPasswordMessage = WithPayload<WorkerMessageType.AUTH_CONFIRM_PASSWORD, { password: string }>;
 export type AuthInitMessage = { type: WorkerMessageType.AUTH_INIT; options: AuthOptions };
 export type AuthPullForkMessage = WithPayload<WorkerMessageType.AUTH_PULL_FORK, { selector: string }>;
+export type AuthOfflineSwitchMessage = { type: WorkerMessageType.AUTH_OFFLINE_SWITCH };
 export type AuthUnlockMessage = WithPayload<WorkerMessageType.AUTH_UNLOCK, UnlockDTO>;
 export type AutofillCCMessage = WithPayload<WorkerMessageType.AUTOFILL_CC, AutofillActionDTO>;
 
@@ -299,6 +301,7 @@ export type WorkerMessage =
     | AuthCheckMessage
     | AuthConfirmPasswordMessage
     | AuthInitMessage
+    | AuthOfflineSwitchMessage
     | AuthPullForkMessage
     | AuthUnlockMessage
     | AutofillCCMessage
