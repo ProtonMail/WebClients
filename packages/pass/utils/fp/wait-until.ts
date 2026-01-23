@@ -23,21 +23,27 @@ export const waitUntil = (cb: WaitUntilCallback, refresh: number, timeout: numbe
             res();
         };
 
-        const reject = () => {
+        const reject = (err?: unknown) => {
             if (fulfilled) return;
             fulfilled = true;
             clear();
-            rej();
+            rej(err);
         };
 
-        if (cancel?.()) return reject();
-        if (await check()) return resolve();
+        const run = async () => {
+            try {
+                if (cancel?.()) return reject();
+                else if (await check()) return resolve();
+            } catch (err) {
+                reject(err);
+            }
+        };
 
-        timer = setTimeout(reject, timeout);
+        await run();
 
-        interval = setInterval(async () => {
-            if (cancel?.()) reject();
-            else if (await check()) resolve();
-        }, refresh);
+        if (!fulfilled) {
+            timer = setTimeout(reject, timeout);
+            interval = setInterval(run, refresh);
+        }
     });
 };

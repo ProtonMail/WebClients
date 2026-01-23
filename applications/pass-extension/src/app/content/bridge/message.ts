@@ -7,7 +7,7 @@ import { uniqueId } from '@proton/pass/utils/string/unique-id';
 
 import { CLIENT_SCRIPT_READY_EVENT } from '../constants.static';
 import { ALLOWED_MESSAGES, BRIDGE_ABORT, BRIDGE_DISCONNECT, BRIDGE_REQUEST, BRIDGE_RESPONSE } from './constants';
-import type { BridgeMessage, BridgeMessageType, BridgeRequest, BridgeResponse } from './types';
+import type { AbstractBridgeMessage, BridgeMessage, BridgeMessageType, BridgeRequest, BridgeResponse } from './types';
 
 type BridgeState = { connected: boolean; ready: Awaiter<void> };
 export const BRIDGE_INIT_TIMEOUT = 5_000;
@@ -20,14 +20,15 @@ export const createBridgeResponse = <T extends BridgeMessageType>(
 ): BridgeResponse<T> => ({ response, token, type: BRIDGE_RESPONSE });
 
 export const messageValidator =
-    (type: string) =>
-    <T extends any>(token?: string) =>
-    (data: any): data is T =>
+    <T extends string>(type: T) =>
+    <R extends AbstractBridgeMessage<T>>(token?: string) =>
+    (data: any): data is R =>
         typeof data === 'object' && data?.token === token && data?.type === type;
 
 export const isBridgeAbortSignal = messageValidator(BRIDGE_ABORT);
 export const isBridgeDisconnectSignal = messageValidator(BRIDGE_DISCONNECT);
 export const isBridgeResponse = messageValidator(BRIDGE_RESPONSE);
+
 export const isBridgeRequest = (data: any): data is BridgeRequest =>
     typeof data === 'object' &&
     typeof data?.token === 'string' &&
