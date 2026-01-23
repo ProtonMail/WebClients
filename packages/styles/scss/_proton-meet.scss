@@ -19,6 +19,11 @@ im.$media-expressions: $media-expressions;
 // Components
 @use 'components/' as *;
 
+// Re-set meet breakpoints before utilities to override any $breakpoints-product
+// settings from base/layout/components
+im.$breakpoints: $breakpoints;
+im.$media-expressions: $media-expressions;
+
 // Helpers
 @use 'utilities/' as *;
 
