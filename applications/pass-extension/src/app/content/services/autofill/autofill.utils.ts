@@ -109,6 +109,15 @@ const selectFill = async (select: HTMLSelectElement, match: HTMLOptionElement, d
     await dispatch([new Event('change', { bubbles: true })]);
 };
 
+export const validateInputAutofill = (input: HTMLInputElement, value: string): boolean => {
+    if (input.type === 'number') {
+        const trimmed = value.trim();
+        return trimmed === '' || isFinite(Number(trimmed));
+    }
+
+    return true;
+};
+
 /* Autofilling is based on chromium's autofill service
  * strategy - references can be found here :
  * https://source.chromium.org/chromium/chromium/src/+/main:third_party/blink/renderer/core/exported/web_form_control_element.cc;l=181-202;drc=64b271ee7f3527374c718fe24383e087405ce520
@@ -117,6 +126,8 @@ const selectFill = async (select: HTMLSelectElement, match: HTMLOptionElement, d
  * attach their event listeners not directly on the input
  * elements (ie: account.google.com) */
 const autofillInputElement = async (input: HTMLInputElement, data: string, options: AutofillOptions = {}) => {
+    if (!validateInputAutofill(input, data)) return;
+
     const dispatch = dispatchEvents(input);
     /** 1. acquire */
     if (typeof input?.click === 'function') input.click();
