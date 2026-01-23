@@ -32,6 +32,7 @@ describe('Login.view', () => {
     const mockShareId = uniqueId();
 
     const mockShare: ShareItem = {
+        addressId: uniqueId(),
         content: '',
         createTime: 0,
         eventId: uniqueId(),

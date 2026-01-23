@@ -32,6 +32,7 @@ export type ShareContent<T extends ShareType = ShareType> =
     : never;
 
 export type ShareBase<T extends ShareType = ShareType> = {
+    addressId: Maybe<string>;
     content: ShareContent<T>;
     createTime: number;
     canAutofill: Maybe<boolean>;

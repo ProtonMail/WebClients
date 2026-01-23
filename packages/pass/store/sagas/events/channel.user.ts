@@ -29,23 +29,29 @@ import { eventChannelFactory } from './channel.factory';
 import { channelEvents, channelInitalize } from './channel.worker';
 import type { EventChannel } from './types';
 
-/* If we get the user model from the event or triggered or full user refresh,
- * check if any new active user keys are available. We might be dealing with a
- * user re-activating a disabled user key in which case we want to trigger a full
- * data sync in order to access any previously inactive shares */
-function* onUserRefreshed(user: User, keyPassword?: string) {
-    if (!keyPassword) return;
+/** Hydrates crypto context on user refresh to capture key or address changes.
+ * If user keys changed, triggers a full sync to update share accessibility. */
+export function* onUserRefreshed(user: User, keyPassword?: string) {
+    try {
+        if (!keyPassword) throw new Error('User refresh without `keyPassword`');
 
-    const localUserKeyIds = (PassCrypto.getContext().userKeys ?? []).map(prop('ID'));
-    const activeUserKeys = user.Keys.filter(({ Active }) => Active === 1);
+        const localUserKeyIds = (PassCrypto.getContext().userKeys ?? []).map(prop('ID'));
+        const activeUserKeys = user.Keys.filter(({ Active }) => Active === 1);
+        const keysUpdated = activeUserKeys.length !== localUserKeyIds.length || activeUserKeys.some(({ ID }) => notIn(localUserKeyIds)(ID));
 
-    const keysUpdated = activeUserKeys.length !== localUserKeyIds.length || activeUserKeys.some(({ ID }) => notIn(localUserKeyIds)(ID));
-
-    if (keysUpdated && keyPassword) {
-        logger.info(`[ServerEvents::User] Detected user keys update`);
+        /** NOTE: by the time this is executed, addresses are synced via the
+         * `userEvent` action (see: packages/pass/store/reducers/user.ts) */
         const addresses: Address[] = yield select(selectAllAddresses);
         yield PassCrypto.hydrate({ user, keyPassword, addresses, clear: false });
-        yield put(syncIntent(SyncType.FULL)); /* trigger a full data sync */
+
+        if (keysUpdated) {
+            /** Full sync removes shares we can no longer decrypt
+             * and/or recovers newly accessible ones */
+            logger.info(`[ServerEvents::User] Detected user keys update`);
+            yield put(syncIntent(SyncType.FULL));
+        }
+    } catch (err) {
+        logger.warn(`[ServerEvents::User] user refresh failed`, err);
     }
 }
 

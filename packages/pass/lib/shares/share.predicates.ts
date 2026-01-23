@@ -38,4 +38,5 @@ export const hasShareChanged = (current: Share, incoming: ShareGetResponse) =>
     current.newUserInvitesReady !== incoming.NewUserInvitesReady ||
     current.targetMaxMembers !== incoming.TargetMaxMembers ||
     current.canAutofill !== incoming.CanAutoFill ||
-    current.flags !== incoming.Flags;
+    current.flags !== incoming.Flags ||
+    current.addressId !== incoming.AddressID;
