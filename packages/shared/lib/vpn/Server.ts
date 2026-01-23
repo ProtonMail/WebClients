@@ -3,6 +3,7 @@ export interface Server {
     Domain: string;
     EntryIP: string;
     ExitIP: string;
+    EntryIPv6?: string;
     Label?: string | null;
     MaxSpeed: number;
     Generation: number;

@@ -1,5 +1,6 @@
-import type { Peer } from './WireGuardConfigurationSection';
-import { PLATFORM, getConfigTemplate } from './WireGuardConfigurationSection';
+import { PLATFORM } from './features';
+import { getConfigTemplate } from './getConfigTemplate';
+import type { Peer } from './peer';
 
 describe('WireGuardConfigurationSection getConfigTemplate', () => {
     const mockPeer: Peer = {
