@@ -1,10 +1,9 @@
 import { c } from 'ttag';
 
-import { getStandaloneUnleashClient } from '@proton/unleash';
-import { CommonFeatureFlag } from '@proton/unleash/UnleashFeatureFlags';
+import { getMaxContactsImportConfig } from '@proton/unleash';
 import truncate from '@proton/utils/truncate';
 
-import { MAX_CONTACTS_PER_USER, MAX_FILENAME_CHARS_DISPLAY, MAX_IMPORT_FILE_SIZE_STRING } from '../constants';
+import { MAX_FILENAME_CHARS_DISPLAY, MAX_IMPORT_FILE_SIZE_STRING } from '../constants';
 
 export enum IMPORT_ERROR_TYPE {
     NO_FILE_SELECTED,
@@ -17,18 +16,8 @@ export enum IMPORT_ERROR_TYPE {
 }
 
 const getErrorMessage = (errorType: IMPORT_ERROR_TYPE, filename = '') => {
-    const unleashClient = getStandaloneUnleashClient();
-
-    let maxContactString = MAX_CONTACTS_PER_USER.toLocaleString();
-
-    if (unleashClient && unleashClient.isEnabled(CommonFeatureFlag.MaxContactsImport)) {
-        const config = unleashClient.getVariant(CommonFeatureFlag.MaxContactsImport).payload?.value;
-
-        if (config) {
-            const configParsed = JSON.parse(config);
-            maxContactString = configParsed.maxContactsImport.toLocaleString();
-        }
-    }
+    const maxContacts = getMaxContactsImportConfig();
+    const maxContactString = maxContacts.toLocaleString();
 
     const formattedFilename = `"${truncate(filename, MAX_FILENAME_CHARS_DISPLAY)}"`;
     if (errorType === IMPORT_ERROR_TYPE.NO_FILE_SELECTED) {
