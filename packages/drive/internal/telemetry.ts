@@ -101,7 +101,10 @@ export class MetricHandler {
             // NotReadableError throws some browsers when trying to read a file
             // which is not available anymore. This is purely user side issue
             // and thus ignored from metrics.
-            if (metric.originalError instanceof Error && metric.originalError.name === 'NotReadableError') {
+            if (
+                metric.originalError instanceof Error &&
+                (metric.originalError.name === 'NotReadableError' || metric.originalError.name === 'NotFoundError')
+            ) {
                 return;
             }
             // useApi wraps auth errors which SDK doesn't know about.
