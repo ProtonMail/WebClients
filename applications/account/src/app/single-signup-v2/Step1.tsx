@@ -87,6 +87,7 @@ import { getSubscriptionPrices } from '../signup/helper';
 import type { SignupCacheResult, SubscriptionData } from '../signup/interfaces';
 import { SignupType } from '../signup/interfaces';
 import { AccountFormDataContextProvider } from '../signupCtx/context/accountData/AccountFormDataContext';
+import { getStartUsingAppNameText } from '../signupCtx/helpers/getStartUsingAppNameText';
 import type { AccountStepDetailsRef } from './AccountStepDetails';
 import AccountStepDetails from './AccountStepDetails';
 import type { AccountStepPaymentRef } from './AccountStepPayment';
@@ -616,7 +617,7 @@ const Step1 = ({
             return c('mail_cro_experiment').t`Get Deal`;
         }
 
-        return c('pass_signup_2023: Action').t`Start using ${appName} now`;
+        return getStartUsingAppNameText(appName);
     })();
 
     const hasSelectedFree = selectedPlan.Name === PLANS.FREE || mode === SignupMode.MailReferral;

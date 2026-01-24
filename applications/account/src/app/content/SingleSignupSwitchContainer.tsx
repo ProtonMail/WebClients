@@ -59,6 +59,7 @@ const SingleSignupSwitchContainer = ({
         location.pathname === SSO_PATHS.START ||
         location.pathname === SSO_PATHS.FIRST_EMAIL ||
         location.pathname === SSO_PATHS.MEET_SIGNUP ||
+        location.pathname === SSO_PATHS.GREENLAND_SIGNUP ||
         isReferral;
 
     if (renderContextSignup) {
