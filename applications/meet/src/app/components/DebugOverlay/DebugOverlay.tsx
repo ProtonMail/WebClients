@@ -12,6 +12,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { IcCross } from '@proton/icons/icons/IcCross';
+import { getBrowser, getOS } from '@proton/shared/lib/helpers/browser';
 import useFlag from '@proton/unleash/useFlag';
 
 import { useMediaManagementContext } from '../../contexts/MediaManagementContext';
@@ -30,6 +31,16 @@ const downloadJson = (data: object, filename: string) => {
     link.click();
     document.body.removeChild(link);
     URL.revokeObjectURL(url);
+};
+
+const getBrowserInfo = (): string => {
+    const browser = getBrowser();
+    return `${browser.name || 'Unknown'} ${browser.version || ''}`.trim();
+};
+
+const getOSInfo = (): string => {
+    const os = getOS();
+    return `${os.name || 'Unknown'} ${os.version || ''}`.trim();
 };
 
 interface WebRTCStats {
@@ -96,6 +107,7 @@ interface WebRTCStats {
     // Connection stats (candidate-pair)
     roundTripTime?: number;
     totalRoundTripTime?: number;
+    roundTripTimeMeasurements?: number;
     availableOutgoingBitrate?: number;
     availableIncomingBitrate?: number;
     candidatePairState?: string;
@@ -147,10 +159,12 @@ interface ParticipantReportInfo {
 interface LocalParticipantDebugInfo extends ParticipantDebugInfo {
     selectedCamera: string;
     selectedMicrophone: string;
+    selectedSpeaker: string;
     isCameraActive: boolean;
     isMicrophoneActive: boolean;
     availableCameras: { deviceId: string; label: string }[];
     availableMicrophones: { deviceId: string; label: string }[];
+    availableSpeakers: { deviceId: string; label: string }[];
 }
 
 interface LocalParticipantReportInfo extends ParticipantReportInfo {
@@ -158,10 +172,15 @@ interface LocalParticipantReportInfo extends ParticipantReportInfo {
     selectedCameraLabel: string;
     selectedMicrophoneId: string;
     selectedMicrophoneLabel: string;
+    selectedSpeakerId: string;
+    selectedSpeakerLabel: string;
     isCameraActive: boolean;
     isMicrophoneActive: boolean;
     availableCameras: { deviceId: string; label: string }[];
     availableMicrophones: { deviceId: string; label: string }[];
+    availableSpeakers: { deviceId: string; label: string }[];
+    browser: string;
+    os: string;
 }
 
 const getBasicPublicationInfo = (pub: LocalTrackPublication | RemoteTrackPublication): PublicationInfo => {
@@ -259,6 +278,7 @@ const getWebRTCStats = async (pub: LocalTrackPublication | RemoteTrackPublicatio
                     stats.candidatePairState = report.state;
                     stats.roundTripTime = report.currentRoundTripTime;
                     stats.totalRoundTripTime = report.totalRoundTripTime;
+                    stats.roundTripTimeMeasurements = report.roundTripTimeMeasurements;
                     stats.availableOutgoingBitrate = report.availableOutgoingBitrate;
                     stats.availableIncomingBitrate = report.availableIncomingBitrate;
                     stats.candidatePairBytesReceived = report.bytesReceived;
@@ -309,10 +329,12 @@ const getLocalParticipantDebugInfo = (
     localParticipant: LocalParticipant,
     selectedCameraId: string,
     selectedMicrophoneId: string,
+    selectedSpeakerId: string,
     isCameraActive: boolean,
     isMicrophoneActive: boolean,
     cameras: MediaDeviceInfo[],
-    microphones: MediaDeviceInfo[]
+    microphones: MediaDeviceInfo[],
+    speakers: MediaDeviceInfo[]
 ): LocalParticipantDebugInfo => {
     const publications: PublicationInfo[] = [];
 
@@ -326,10 +348,12 @@ const getLocalParticipantDebugInfo = (
         isLocal: true,
         selectedCamera: cameras.find((c) => c.deviceId === selectedCameraId)?.label || selectedCameraId,
         selectedMicrophone: microphones.find((m) => m.deviceId === selectedMicrophoneId)?.label || selectedMicrophoneId,
+        selectedSpeaker: speakers.find((s) => s.deviceId === selectedSpeakerId)?.label || selectedSpeakerId,
         isCameraActive,
         isMicrophoneActive,
         availableCameras: cameras.map((c) => ({ deviceId: c.deviceId, label: c.label })),
         availableMicrophones: microphones.map((m) => ({ deviceId: m.deviceId, label: m.label })),
+        availableSpeakers: speakers.map((s) => ({ deviceId: s.deviceId, label: s.label })),
         publications,
         connectionQuality: localParticipant.connectionQuality,
     };
@@ -357,10 +381,12 @@ const getLocalParticipantReportInfo = async (
     localParticipant: LocalParticipant,
     selectedCameraId: string,
     selectedMicrophoneId: string,
+    selectedSpeakerId: string,
     isCameraActive: boolean,
     isMicrophoneActive: boolean,
     cameras: MediaDeviceInfo[],
-    microphones: MediaDeviceInfo[]
+    microphones: MediaDeviceInfo[],
+    speakers: MediaDeviceInfo[]
 ): Promise<LocalParticipantReportInfo> => {
     const publications: PublicationWithStats[] = [];
 
@@ -375,12 +401,17 @@ const getLocalParticipantReportInfo = async (
         selectedCameraLabel: cameras.find((c) => c.deviceId === selectedCameraId)?.label || '',
         selectedMicrophoneId,
         selectedMicrophoneLabel: microphones.find((m) => m.deviceId === selectedMicrophoneId)?.label || '',
+        selectedSpeakerId,
+        selectedSpeakerLabel: speakers.find((s) => s.deviceId === selectedSpeakerId)?.label || '',
         isCameraActive,
         isMicrophoneActive,
         availableCameras: cameras.map((c) => ({ deviceId: c.deviceId, label: c.label })),
         availableMicrophones: microphones.map((m) => ({ deviceId: m.deviceId, label: m.label })),
+        availableSpeakers: speakers.map((s) => ({ deviceId: s.deviceId, label: s.label })),
         publications,
         connectionQuality: localParticipant.connectionQuality,
+        browser: getBrowserInfo(),
+        os: getOSInfo(),
     };
 };
 
@@ -404,15 +435,31 @@ interface DebugOverlayProps {
     onClose: () => void;
 }
 
+interface TrackStatsSnapshot {
+    timestamp: string;
+    stats: WebRTCStats;
+}
+
+interface TrackRecording {
+    trackSid: string;
+    trackName: string;
+    kind: string;
+    source: string;
+    snapshots: TrackStatsSnapshot[];
+}
+
 export const DebugOverlay = ({ isOpen, onClose }: DebugOverlayProps) => {
     const room = useRoomContext();
     const { localParticipant, isMicrophoneEnabled, isCameraEnabled } = useLocalParticipant();
     const remoteParticipants = useRemoteParticipants();
     const { roomName, participantNameMap } = useMeetContext();
-    const { cameras, microphones, selectedCameraId, selectedMicrophoneId } = useMediaManagementContext();
+    const { cameras, microphones, speakers, selectedCameraId, selectedMicrophoneId, selectedAudioOutputDeviceId } =
+        useMediaManagementContext();
 
     const [localInfo, setLocalInfo] = useState<LocalParticipantDebugInfo | null>(null);
     const [remoteInfos, setRemoteInfos] = useState<ParticipantDebugInfo[]>([]);
+    const [recordingParticipantIdentity, setRecordingParticipantIdentity] = useState<string | null>(null);
+    const [trackRecordings, setTrackRecordings] = useState<Map<string, TrackRecording>>(new Map());
 
     // Update debug info periodically
     useEffect(() => {
@@ -426,10 +473,12 @@ export const DebugOverlay = ({ isOpen, onClose }: DebugOverlayProps) => {
                     localParticipant,
                     selectedCameraId,
                     selectedMicrophoneId,
+                    selectedAudioOutputDeviceId,
                     isCameraEnabled,
                     isMicrophoneEnabled,
                     cameras,
-                    microphones
+                    microphones,
+                    speakers
                 );
                 setLocalInfo(info);
             }
@@ -467,21 +516,129 @@ export const DebugOverlay = ({ isOpen, onClose }: DebugOverlayProps) => {
         remoteParticipants,
         cameras,
         microphones,
+        speakers,
         selectedCameraId,
         selectedMicrophoneId,
+        selectedAudioOutputDeviceId,
         isCameraEnabled,
         isMicrophoneEnabled,
     ]);
+
+    // Record stats snapshots for each track separately
+    useEffect(() => {
+        if (!isOpen || !recordingParticipantIdentity) {
+            return;
+        }
+
+        const captureSnapshots = async () => {
+            const timestamp = new Date().toISOString();
+            const participant = remoteParticipants.find((p) => p.identity === recordingParticipantIdentity);
+
+            if (participant) {
+                // Capture stats for each track
+                for (const pub of participant.trackPublications.values()) {
+                    const webrtcStats = await getWebRTCStats(pub);
+
+                    if (webrtcStats) {
+                        const trackSnapshot: TrackStatsSnapshot = {
+                            timestamp,
+                            stats: webrtcStats,
+                        };
+
+                        setTrackRecordings((prev) => {
+                            const updated = new Map(prev);
+                            let trackRecording = updated.get(pub.trackSid);
+
+                            if (!trackRecording) {
+                                // Initialize new track recording
+                                trackRecording = {
+                                    trackSid: pub.trackSid || 'N/A',
+                                    trackName: pub.trackName || 'N/A',
+                                    kind: pub.kind || 'N/A',
+                                    source: pub.source || 'N/A',
+                                    snapshots: [],
+                                };
+                            }
+
+                            trackRecording.snapshots.push(trackSnapshot);
+                            updated.set(pub.trackSid, trackRecording);
+                            return updated;
+                        });
+                    }
+                }
+            }
+        };
+
+        void captureSnapshots();
+        const interval = setInterval(() => {
+            void captureSnapshots();
+        }, 1000);
+
+        return () => clearInterval(interval);
+    }, [isOpen, recordingParticipantIdentity, remoteParticipants]);
+
+    // Clean up recording if participant left
+    useEffect(() => {
+        if (recordingParticipantIdentity) {
+            const participantStillPresent = remoteParticipants.some((p) => p.identity === recordingParticipantIdentity);
+
+            if (!participantStillPresent) {
+                setRecordingParticipantIdentity(null);
+                setTrackRecordings(new Map());
+            }
+        }
+    }, [remoteParticipants, recordingParticipantIdentity]);
+
+    const stopAndDownloadRecording = useCallback(
+        async (participantIdentity: string, recordings: Map<string, TrackRecording>) => {
+            const participant = remoteParticipants.find((p) => p.identity === participantIdentity);
+            if (participant && recordings.size > 0) {
+                const participantReportInfo = await getRemoteParticipantReportInfo(participant);
+
+                const report = {
+                    roomName: room.name,
+                    timestamp: new Date().toISOString(),
+                    participantIdentity: participant.identity,
+                    participantInfo: participantReportInfo,
+                    trackRecordings: Array.from(recordings.values()),
+                };
+
+                const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
+                downloadJson(report, `remote-participant-recording-${timestamp}.json`);
+            }
+        },
+        [remoteParticipants, room.name]
+    );
+
+    // Auto-stop recording after 15 seconds
+    useEffect(() => {
+        if (recordingParticipantIdentity && trackRecordings.size > 0) {
+            // Check if any track has reached 15 snapshots
+            const maxSnapshots = Math.max(...Array.from(trackRecordings.values()).map((tr) => tr.snapshots.length));
+            if (maxSnapshots >= 15) {
+                // Immediately clear the recording state to prevent double download
+                const recordingsToSave = new Map(trackRecordings);
+                const participantToSave = recordingParticipantIdentity;
+                setRecordingParticipantIdentity(null);
+                setTrackRecordings(new Map());
+
+                // Then download asynchronously
+                void stopAndDownloadRecording(participantToSave, recordingsToSave);
+            }
+        }
+    }, [trackRecordings, recordingParticipantIdentity, stopAndDownloadRecording]);
 
     const handleReportMeetingIssue = useCallback(async () => {
         const localReportInfo = await getLocalParticipantReportInfo(
             localParticipant,
             selectedCameraId,
             selectedMicrophoneId,
+            selectedAudioOutputDeviceId,
             isCameraEnabled,
             isMicrophoneEnabled,
             cameras,
-            microphones
+            microphones,
+            speakers
         );
 
         const remoteReportInfos: ParticipantReportInfo[] = [];
@@ -505,10 +662,12 @@ export const DebugOverlay = ({ isOpen, onClose }: DebugOverlayProps) => {
         room.name,
         selectedCameraId,
         selectedMicrophoneId,
+        selectedAudioOutputDeviceId,
         isCameraEnabled,
         isMicrophoneEnabled,
         cameras,
         microphones,
+        speakers,
     ]);
 
     const handleReportLocalIssue = useCallback(async () => {
@@ -516,10 +675,12 @@ export const DebugOverlay = ({ isOpen, onClose }: DebugOverlayProps) => {
             localParticipant,
             selectedCameraId,
             selectedMicrophoneId,
+            selectedAudioOutputDeviceId,
             isCameraEnabled,
             isMicrophoneEnabled,
             cameras,
-            microphones
+            microphones,
+            speakers
         );
 
         const report = {
@@ -535,10 +696,12 @@ export const DebugOverlay = ({ isOpen, onClose }: DebugOverlayProps) => {
         room.name,
         selectedCameraId,
         selectedMicrophoneId,
+        selectedAudioOutputDeviceId,
         isCameraEnabled,
         isMicrophoneEnabled,
         cameras,
         microphones,
+        speakers,
     ]);
 
     const handleReportParticipantIssue = useCallback(
@@ -555,6 +718,23 @@ export const DebugOverlay = ({ isOpen, onClose }: DebugOverlayProps) => {
             downloadJson(report, `remote-participant-report-${timestamp}.json`);
         },
         [room.name]
+    );
+
+    const handleToggleRecording = useCallback(
+        async (participantIdentity: string) => {
+            if (recordingParticipantIdentity === participantIdentity) {
+                // Stop recording and download
+                const recordingsToSave = new Map(trackRecordings);
+                setRecordingParticipantIdentity(null);
+                setTrackRecordings(new Map());
+                await stopAndDownloadRecording(participantIdentity, recordingsToSave);
+            } else {
+                // Start recording this participant (stop any other recording)
+                setRecordingParticipantIdentity(participantIdentity);
+                setTrackRecordings(new Map());
+            }
+        },
+        [recordingParticipantIdentity, trackRecordings, stopAndDownloadRecording]
     );
 
     if (!isOpen) {
@@ -630,6 +810,10 @@ export const DebugOverlay = ({ isOpen, onClose }: DebugOverlayProps) => {
                                     <span className="debug-label">{c('Label').t`Selected Microphone`}:</span>
                                     <span>{localInfo.selectedMicrophone}</span>
                                 </div>
+                                <div className="debug-info-row">
+                                    <span className="debug-label">{c('Label').t`Selected Speaker`}:</span>
+                                    <span>{localInfo.selectedSpeaker}</span>
+                                </div>
 
                                 <div className="debug-subsection">
                                     <h4>{c('Title').t`Available Cameras`}</h4>
@@ -645,6 +829,15 @@ export const DebugOverlay = ({ isOpen, onClose }: DebugOverlayProps) => {
                                     <ul className="debug-device-list">
                                         {localInfo.availableMicrophones.map((mic) => (
                                             <li key={mic.deviceId}>{mic.label || mic.deviceId}</li>
+                                        ))}
+                                    </ul>
+                                </div>
+
+                                <div className="debug-subsection">
+                                    <h4>{c('Title').t`Available Speakers`}</h4>
+                                    <ul className="debug-device-list">
+                                        {localInfo.availableSpeakers.map((speaker) => (
+                                            <li key={speaker.deviceId}>{speaker.label || speaker.deviceId}</li>
                                         ))}
                                     </ul>
                                 </div>
@@ -714,13 +907,43 @@ export const DebugOverlay = ({ isOpen, onClose }: DebugOverlayProps) => {
                                                     )}
                                                 </span>
                                                 {participant && (
-                                                    <Button
-                                                        size="small"
-                                                        shape="outline"
-                                                        onClick={() => handleReportParticipantIssue(participant)}
-                                                    >
-                                                        {c('Action').t`Download participant report`}
-                                                    </Button>
+                                                    <div style={{ display: 'flex', gap: '8px' }}>
+                                                        <Button
+                                                            size="small"
+                                                            shape="outline"
+                                                            color={
+                                                                recordingParticipantIdentity === info.identity
+                                                                    ? 'danger'
+                                                                    : 'norm'
+                                                            }
+                                                            onClick={() => handleToggleRecording(info.identity)}
+                                                        >
+                                                            {recordingParticipantIdentity === info.identity
+                                                                ? c('Action').t`Stop Recording Track Stats`
+                                                                : c('Action').t`Start Recording Track Stats`}
+                                                            {recordingParticipantIdentity === info.identity &&
+                                                                trackRecordings.size > 0 &&
+                                                                (() => {
+                                                                    const maxSnapshots = Math.max(
+                                                                        ...Array.from(trackRecordings.values()).map(
+                                                                            (tr) => tr.snapshots.length
+                                                                        )
+                                                                    );
+                                                                    return (
+                                                                        <span style={{ marginLeft: '4px' }}>
+                                                                            ({maxSnapshots}/15s)
+                                                                        </span>
+                                                                    );
+                                                                })()}
+                                                        </Button>
+                                                        <Button
+                                                            size="small"
+                                                            shape="outline"
+                                                            onClick={() => handleReportParticipantIssue(participant)}
+                                                        >
+                                                            {c('Action').t`Download participant report`}
+                                                        </Button>
+                                                    </div>
                                                 )}
                                             </div>
                                             <div className="debug-info-row">
