@@ -85,6 +85,9 @@ const countriesWithEurFallback = new Set([
     'MC',
     'SM',
     'VA',
+
+    // Requested as part of P2-1793 - Greenland and Iceland promotion. It is a permanent addition to the list.
+    'GL',
 ]);
 
 export function getDefaultMainCurrencyByCountryCode(countryCode: string | undefined): Currency {
