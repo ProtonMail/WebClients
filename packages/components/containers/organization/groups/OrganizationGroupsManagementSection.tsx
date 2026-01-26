@@ -17,6 +17,7 @@ import { useFlag } from '@proton/unleash';
 
 import GroupForm from './GroupForm';
 import GroupList from './GroupList';
+import shouldShowMail from './shouldShowMail';
 import useGroupsManagement from './useGroupsManagement';
 
 import './OrganizationGroupsManagementSection.scss';
@@ -51,11 +52,16 @@ const OrganizationGroupsManagementSection = ({ organization }: Props) => {
             usingGroupsDomainButNotActive) &&
         (groups?.length ?? 0) > 0;
 
+    const showMail = shouldShowMail(organization?.PlanName);
+    const mailDescription = c('Info')
+        .t`With groups, you can quickly and easily send emails to all the people in a specified group.`;
+    const genericDescription = c('Info')
+        .t`With groups, you can implement the company security policies for access control and reduce the risk of accessing unauthorised data.`;
+
     return (
         <SettingsSectionWide className="h-full groups-management">
             <SettingsParagraph className="flex flex-column flex-nowrap" learnMoreUrl={getKnowledgeBaseUrl('/groups')}>
-                {c('Info')
-                    .t`With groups, you can quickly and easily send emails to all the people in a specified group.`}
+                {showMail ? mailDescription : genericDescription}
             </SettingsParagraph>
             {!hasUsableDomain && (
                 <SettingsParagraph>
