@@ -115,6 +115,7 @@ const AccountDetailsForm = ({ onSuccess }: { onSuccess: () => Promise<void> }) =
         previousValidZipCode: payments.options.billingAddress.ZipCode,
         paymentFacade,
         telemetryContext: payments.telemetryContext,
+        allowedCountries: ['GL', 'IS'],
     });
 
     const vatNumber = useVatNumber({

@@ -104,6 +104,7 @@ export const InnerPaymentsContextOptimisticProvider = ({ children }: PaymentsCon
             },
             vatNumber: undefined,
             trial: planToCheckParam?.trial,
+            coupon: planToCheckParam?.coupon,
         };
         const checkResult = paymentsContext.getOptimisticCheckResult(optimistic);
         setOptimistic({ ...optimistic, checkResult });
