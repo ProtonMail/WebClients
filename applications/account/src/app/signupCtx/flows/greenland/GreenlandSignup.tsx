@@ -3,7 +3,7 @@ import { useLocation } from 'react-router-dom';
 
 import { LoaderPage } from '@proton/components';
 import { useNotifyErrorHandler } from '@proton/components/hooks/useErrorHandler';
-import { CYCLE, PLANS, type PlanIDs } from '@proton/payments';
+import { COUPON_CODES, CYCLE, PLANS, type PlanIDs } from '@proton/payments';
 import { usePaymentOptimistic } from '@proton/payments/ui';
 import { APPS } from '@proton/shared/lib/constants';
 
@@ -19,7 +19,7 @@ const mailPlus: { planIDs: PlanIDs } = {
     planIDs: { [PLANS.MAIL]: 1 },
 };
 
-export const availablePlans = getAvailablePlansWithCycles([mailPlus], [CYCLE.MONTHLY, CYCLE.YEARLY]);
+export const availablePlans = getAvailablePlansWithCycles([mailPlus], [CYCLE.YEARLY]);
 
 type Step = 'account-details' | 'recovery' | 'display-name' | 'creating-account';
 
@@ -104,7 +104,7 @@ const GreenlandSignup = (props: BaseSignupContextProps) => {
                     planIDs: { [PLANS.MAIL]: 1 }, // Auto-select Mail Plus
                     currency: 'EUR',
                     cycle: CYCLE.YEARLY,
-                    coupon: 'GREENLAND', // TODO: Add coupon code
+                    coupon: COUPON_CODES.PLUS12FOR1,
                 },
                 telemetryContext: 'ctx-signup-greenland',
             }}
