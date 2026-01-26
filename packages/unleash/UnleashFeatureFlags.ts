@@ -119,6 +119,7 @@ enum PaymentsFlag {
     RegionalCurrenciesBatch3 = 'RegionalCurrenciesBatch3',
     PaypalRegionalCurrenciesBatch3 = 'PaypalRegionalCurrenciesBatch3',
     PaypalKrw = 'PaypalKrw',
+    GreenlandOfferRegionalPaymentBlock = 'GreenlandOfferRegionalPaymentBlock',
 }
 
 export enum CalendarFeatureFlag {

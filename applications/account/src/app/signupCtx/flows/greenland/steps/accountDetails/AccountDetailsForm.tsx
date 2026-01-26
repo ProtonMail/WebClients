@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import { Alert3ds, LoaderPage } from '@proton/components';
 import PaymentWrapper from '@proton/components/containers/payments/PaymentWrapper';
+import { greenlandOfferCountryCodes } from '@proton/components/containers/payments/subscription/coupon-config/greenlandIceland';
 import { usePaymentFacade } from '@proton/components/payments/client-extensions';
 import useLoading from '@proton/hooks/useLoading';
 import { IcShield } from '@proton/icons/icons/IcShield';
@@ -115,7 +116,7 @@ const AccountDetailsForm = ({ onSuccess }: { onSuccess: () => Promise<void> }) =
         previousValidZipCode: payments.options.billingAddress.ZipCode,
         paymentFacade,
         telemetryContext: payments.telemetryContext,
-        allowedCountries: ['GL', 'IS'],
+        allowedCountries: greenlandOfferCountryCodes,
     });
 
     const vatNumber = useVatNumber({
