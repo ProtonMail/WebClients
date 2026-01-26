@@ -1246,7 +1246,10 @@ const SubscriptionContainerInner = ({
         }
 
         const uppercaseCoupon = gift.trim().toUpperCase();
-        if (getHas2025OfferCoupon(uppercaseCoupon) && !isCSCoupon(uppercaseCoupon)) {
+        if (
+            (getHas2025OfferCoupon(uppercaseCoupon) && !isCSCoupon(uppercaseCoupon)) ||
+            couponConfig?.blockManualEntryOfCoupon
+        ) {
             createNotification({ text: c('Error').t`Invalid code`, type: 'error' });
             return;
         }

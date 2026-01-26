@@ -2,6 +2,7 @@ import type { ReactNode } from 'react';
 
 import { getPlanNameFromIDs } from '@proton/payments';
 
+import { greenlandIcelandConfig } from './greenlandIceland';
 import { hasAlikeCoupon } from './helpers';
 import {
     type CouponConfig,
@@ -15,7 +16,7 @@ import {
 import { monthlyNudgeConfig } from './monthlyNudge';
 import { vpn15mConfig } from './vpn15m';
 
-const defaultCouponConfigs: CouponConfig[] = [monthlyNudgeConfig, vpn15mConfig];
+const defaultCouponConfigs: CouponConfig[] = [monthlyNudgeConfig, vpn15mConfig, greenlandIcelandConfig];
 
 export type CouponConfigRendered = Omit<CouponConfig, 'amountDueMessage' | 'cyclePriceCompare' | 'cycleTitle'> & {
     renderAmountDueMessage?: () => ReactNode;
