@@ -8,19 +8,20 @@ import clsx from '@proton/utils/clsx';
 
 import { getStateName, isCountryWithRequiredPostalCode, isCountryWithStates } from '../../core/countries';
 import type { TaxCountryHook } from '../hooks/useTaxCountry';
-import { CountriesDropdown, useCountries } from './CountriesDropdown';
+import { CountriesDropdown, type CountriesHookProps, useCountries } from './CountriesDropdown';
 import { InputWithSelectorPrefix, WarningIcon } from './InputWithSelectorPrefix';
 import { StateSelector } from './StateSelector';
 
 import './TaxCountrySelector.scss';
 
-export type TaxCountrySelectorProps = TaxCountryHook & {
-    className?: string;
-    labelClassName?: string;
-    buttonClassName?: string;
-    spacingClassName?: string;
-    forceExpand?: boolean;
-};
+export type TaxCountrySelectorProps = TaxCountryHook &
+    CountriesHookProps & {
+        className?: string;
+        labelClassName?: string;
+        buttonClassName?: string;
+        spacingClassName?: string;
+        forceExpand?: boolean;
+    };
 
 export const TaxCountrySelector = ({
     selectedCountryCode,
@@ -36,6 +37,8 @@ export const TaxCountrySelector = ({
     billingAddressStatus,
     billingAddressErrorMessage,
     zipCodeBackendValid,
+    allowedCountries,
+    disabledCountries,
 }: TaxCountrySelectorProps) => {
     const showStateCode = isCountryWithStates(selectedCountryCode);
     const showZipCode = isCountryWithRequiredPostalCode(selectedCountryCode);
@@ -60,7 +63,7 @@ export const TaxCountrySelector = ({
         );
     }, [selectedCountryCode, showStateCode, federalStateCode, showZipCode, zipCode, billingAddressStatus.valid]);
 
-    const { getCountryByCode } = useCountries();
+    const { getCountryByCode } = useCountries({ allowedCountries, disabledCountries });
     const selectedCountry = getCountryByCode(selectedCountryCode);
     const [isCountriesDropdownOpen, setIsCountriesDropdownOpen] = useState(false);
     const [isStatesDropdownOpen, setIsStatesDropdownOpen] = useState(false);
@@ -151,6 +154,8 @@ export const TaxCountrySelector = ({
                         onClose={() => setIsCountriesDropdownOpen(false)}
                         data-testid="tax-country-dropdown"
                         className={clsx('country-selector', showBoth && 'country-selector--triplet')}
+                        allowedCountries={allowedCountries}
+                        disabledCountries={disabledCountries}
                     />
                     {showStateCode && !showBoth ? <StateSelector {...commonStateProps} className="mt-1" /> : null}
                     {showZipCode && !showBoth ? <Input {...commonZipProps} /> : null}

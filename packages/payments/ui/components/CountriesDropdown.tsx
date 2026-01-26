@@ -10,12 +10,33 @@ import type { SelectChangeEvent } from '@proton/components/components/selectTwo/
 
 import { type CountryItem, DEFAULT_COUNTRIES_SEPARATOR, getFullList } from '../helpers/countries-sorted';
 
-export const useCountries = () => {
-    const countries = useMemo(() => getFullList(), []);
+export type CountriesHookProps = {
+    // List of countries that will be shown in the dropdown. It takes precedence over disabledCountries.
+    allowedCountries?: string[];
+    // List of countries that will be disabled in the dropdown.
+    disabledCountries?: string[];
+};
 
-    const [country, innerSetCountry] = useState(countries[0]);
+export const useCountries = ({ allowedCountries, disabledCountries }: CountriesHookProps) => {
+    const countries = useMemo(() => {
+        const fullList = getFullList();
 
-    const getCountryByValue = (value: string) => countries.find((country) => country.value === value) ?? countries[0];
+        if (disabledCountries) {
+            return fullList.filter((country) => !disabledCountries.includes(country.value));
+        }
+
+        if (allowedCountries) {
+            return fullList.filter((country) => allowedCountries.includes(country.value));
+        }
+
+        return fullList;
+    }, [allowedCountries, disabledCountries]);
+
+    const defaultCountry = allowedCountries?.[0] ?? countries[0];
+
+    const [country, innerSetCountry] = useState(defaultCountry);
+
+    const getCountryByValue = (value: string) => countries.find((country) => country.value === value) ?? defaultCountry;
 
     const setCountry = (value: string) => {
         if (value === DEFAULT_COUNTRIES_SEPARATOR.value) {
@@ -34,10 +55,17 @@ type Props = {
     onChange?: (countryCode: string) => void;
     selectedCountryCode: string;
     autoComplete?: string;
-} & Omit<SearcheableSelectProps<CountryItem>, 'children' | 'value' | 'search' | 'onChange'>;
+} & CountriesHookProps &
+    Omit<SearcheableSelectProps<CountryItem>, 'children' | 'value' | 'search' | 'onChange'>;
 
-export const CountriesDropdown = ({ onChange, selectedCountryCode, ...rest }: Props) => {
-    const { countries, getCountryByCode } = useCountries();
+export const CountriesDropdown = ({
+    onChange,
+    selectedCountryCode,
+    allowedCountries,
+    disabledCountries,
+    ...rest
+}: Props) => {
+    const { countries, getCountryByCode } = useCountries({ allowedCountries, disabledCountries });
     const selectedCountryItem = getCountryByCode(selectedCountryCode);
 
     const searchableSelectProps: SearcheableSelectProps<CountryItem> = {
