@@ -15,7 +15,7 @@ import type { Runtime } from 'webextension-polyfill';
 import { MIN_CACHE_VERSION, RUNTIME_RELOAD_THROTTLE } from '@proton/pass/constants';
 import { api } from '@proton/pass/lib/api/api';
 import { requestFork } from '@proton/pass/lib/auth/fork';
-import { clientCanBoot, clientErrored, clientStale } from '@proton/pass/lib/client';
+import { clientCanBoot, clientErrored, clientPasswordLocked, clientStale } from '@proton/pass/lib/client';
 import browser from '@proton/pass/lib/globals/browser';
 import { sanitizeSettings } from '@proton/pass/lib/settings/utils';
 import { bootIntent, clientInit } from '@proton/pass/store/actions/creators/client';
@@ -208,6 +208,12 @@ export const createActivationService = () => {
              * alarm exists or if we haven't reached the next session resume delay, take no action */
             const shouldResume = await (async (): Promise<boolean> => {
                 if (clientStale(status)) return true;
+
+                if (clientPasswordLocked(status)) {
+                    if (endpoint === 'popup') {
+                        return ctx.service.connectivity.online;
+                    }
+                }
 
                 if (clientErrored(status)) {
                     if (endpoint === 'popup') return true;
