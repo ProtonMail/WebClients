@@ -12,14 +12,14 @@ const AppVersionCell = ({ appVersion }: Props) => {
     const appVersionList = appVersion.split('@', 2);
     if (appVersionList.length > 1) {
         return (
-            <span className="mt-2 color-weak">
+            <span className="mt-2 color-weak app-version-info">
                 {appVersionList[0]}
                 <br />
                 {appVersionList[1]}
             </span>
         );
     }
-    return <span className="mt-2 color-weak">{appVersion}</span>;
+    return <span className="mt-2 color-weak app-version-info">{appVersion}</span>;
 };
 
 export default AppVersionCell;
