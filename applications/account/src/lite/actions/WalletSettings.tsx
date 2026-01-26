@@ -44,13 +44,17 @@ const WalletSettings = ({
                         <MobileSectionLabel small htmlFor="email">
                             {c('Label').t`Email address`}
                         </MobileSectionLabel>
-                        <div className="text-lg mt-0.5">{Email}</div>
+                        <div className="text-lg mt-0.5" data-testid="email-address">
+                            {Email}
+                        </div>
                     </MobileSectionRow>
                     <MobileSectionRow stackContent>
                         <MobileSectionLabel small htmlFor="displayName">
                             {c('Label').t`Display name`}
                         </MobileSectionLabel>
-                        <div className="text-lg mt-0.5">{DisplayName}</div>
+                        <div className="text-lg mt-0.5" data-testid="display-name">
+                            {DisplayName}
+                        </div>
                     </MobileSectionRow>
                 </MobileSection>
                 <MobileSection title={PROTON_SENTINEL_NAME}>
