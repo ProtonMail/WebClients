@@ -1,13 +1,15 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
-import { type NodeEntity, splitNodeUid } from '@proton/drive';
+import { MemberRole, type NodeEntity } from '@proton/drive';
 
 import { downloadManager } from '../../managers/download/DownloadManager';
-import { useDetailsModal } from '../../modals/DetailsModal';
 import { ContentPreviewMethod, PartialPreview } from '../../modals/preview';
+import { getOpenInDocsInfo } from '../../utils/docs/openInDocs';
 import { getNodeEntity } from '../../utils/sdk/getNodeEntity';
 import { PublicHeader } from './PublicHeader';
+import { usePublicActions } from './actions/usePublicActions';
 import { getPublicLinkClient } from './publicLinkClient';
+import { usePublicAuthStore } from './usePublicAuth.store';
 
 interface PublicFileViewProps {
     rootNode: NodeEntity;
@@ -15,7 +17,17 @@ interface PublicFileViewProps {
 
 export const PublicFileView = ({ rootNode }: PublicFileViewProps) => {
     const [contentData, setContentData] = useState<Uint8Array<ArrayBuffer>[] | undefined>(undefined);
-    const [detailsModal, showDetailsModal] = useDetailsModal();
+    const { modals, handleDetails, handleOpenDocsOrSheets } = usePublicActions();
+
+    useEffect(() => {
+        const openInDocsInfo = rootNode.mediaType ? getOpenInDocsInfo(rootNode.mediaType) : undefined;
+
+        // Do not open/convert in case of viewer for non-native docs/sheets files
+        if (openInDocsInfo && usePublicAuthStore.getState().publicRole !== MemberRole.Viewer) {
+            handleOpenDocsOrSheets(rootNode.uid, openInDocsInfo);
+        }
+    }, [rootNode.uid, rootNode.mediaType, rootNode.parentUid, handleOpenDocsOrSheets]);
+
     const handleContentLoaded = (data: Uint8Array<ArrayBuffer>[], previewMethod?: ContentPreviewMethod) => {
         if (previewMethod === ContentPreviewMethod.Buffer) {
             setContentData(data);
@@ -30,18 +42,6 @@ export const PublicFileView = ({ rootNode }: PublicFileViewProps) => {
         }
     };
 
-    const handleDetails = async () => {
-        const { volumeId, nodeId } = splitNodeUid(rootNode.uid);
-        showDetailsModal({
-            //shareId is required for legacy compatibility reasons, it's safe to pass empty string here as we will use sdk logic
-            shareId: '',
-            volumeId,
-            linkId: nodeId,
-            verifySignatures: false,
-            drive: getPublicLinkClient(),
-        });
-    };
-
     return (
         <div className="h-full flex flex-column">
             <PublicHeader
@@ -50,7 +50,7 @@ export const PublicFileView = ({ rootNode }: PublicFileViewProps) => {
                     (rootNode.keyAuthor.ok ? rootNode.keyAuthor.value : rootNode.keyAuthor.error.claimedAuthor) ||
                     undefined
                 }
-                onDetails={handleDetails}
+                onDetails={() => handleDetails(rootNode.uid)}
                 onDownload={handleDownload}
             />
             <PartialPreview
@@ -61,7 +61,7 @@ export const PublicFileView = ({ rootNode }: PublicFileViewProps) => {
                 onContentLoaded={handleContentLoaded}
                 onDownload={handleDownload}
             />
-            {detailsModal}
+            {modals.detailsModal}
         </div>
     );
 };

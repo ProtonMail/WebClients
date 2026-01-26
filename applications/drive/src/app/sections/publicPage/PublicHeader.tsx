@@ -8,7 +8,7 @@ export interface PublicHeaderProps {
     name: string;
     sharedBy: string | undefined;
     onDownload: () => Promise<void>;
-    onDetails?: () => Promise<void>;
+    onDetails?: () => void;
     onCopyLink?: () => Promise<void>;
 }
 
