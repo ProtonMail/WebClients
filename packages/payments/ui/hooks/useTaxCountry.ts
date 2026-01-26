@@ -18,6 +18,7 @@ import { getDefaultPostalCodeByStateCode } from '../../postal-codes/default-post
 import { isPostalCodeValid } from '../../postal-codes/postal-codes-validation';
 import type { PaymentTelemetryContext } from '../../telemetry/helpers';
 import { checkoutTelemetry } from '../../telemetry/telemetry';
+import { type OfferUnavailableErrorMessage, useOfferUnavailableErrorMessage } from '../components/PayButton';
 import { getFullList } from '../helpers/countries-sorted';
 
 export type OnBillingAddressChange = (billingAddress: BillingAddress) => void;
@@ -46,6 +47,7 @@ export interface TaxCountryHook {
     zipCodeBackendValid: boolean;
     allowedCountries?: string[];
     disabledCountries?: string[];
+    offerUnavailableErrorMessage?: OfferUnavailableErrorMessage;
 }
 
 function getBillingAddressFromProps(props: HookProps): BillingAddress {
@@ -88,6 +90,8 @@ function getBillingAddressFromProps(props: HookProps): BillingAddress {
 
 export const useTaxCountry = (props: HookProps): TaxCountryHook => {
     const zipCodeValidation = useFlag('PaymentsZipCodeValidation');
+
+    const offerUnavailableErrorMessage = useOfferUnavailableErrorMessage(props.paymentFacade);
 
     const currentFromProps: BillingAddress = getBillingAddressFromProps(props);
 
@@ -286,5 +290,6 @@ export const useTaxCountry = (props: HookProps): TaxCountryHook => {
         zipCodeBackendValid: props.zipCodeBackendValid,
         allowedCountries: props.allowedCountries,
         disabledCountries: props.disabledCountries,
+        offerUnavailableErrorMessage,
     };
 };

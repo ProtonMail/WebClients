@@ -39,6 +39,7 @@ export const TaxCountrySelector = ({
     zipCodeBackendValid,
     allowedCountries,
     disabledCountries,
+    offerUnavailableErrorMessage,
 }: TaxCountrySelectorProps) => {
     const showStateCode = isCountryWithStates(selectedCountryCode);
     const showZipCode = isCountryWithRequiredPostalCode(selectedCountryCode);
@@ -120,6 +121,10 @@ export const TaxCountrySelector = ({
         onOpen: () => setIsStatesDropdownOpen(true),
         onClose: () => setIsStatesDropdownOpen(false),
     };
+
+    if (offerUnavailableErrorMessage?.hideBillingCountry) {
+        return null;
+    }
 
     return (
         <div className={clsx('field-two-container tax-country-selector', className)}>

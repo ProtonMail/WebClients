@@ -8,3 +8,5 @@ export const greenlandIcelandConfig: CouponConfig = {
     blockManualEntryOfCoupon: true,
     disableCurrencySelector: true,
 };
+
+export const greenlandOfferCountryCodes = ['GL', 'IS'];
