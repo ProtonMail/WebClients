@@ -273,6 +273,7 @@ enum MeetFeatureFlag {
     MeetUnblockAudioButton = 'MeetUnblockAudioButton',
     MeetOpenLinksInDesktopApp = 'MeetOpenLinksInDesktopApp',
     MeetDebugMode = 'MeetDebugMode',
+    MeetSinglePeerConnection = 'MeetSinglePeerConnection',
 }
 
 enum LumoFeatureFlag {
