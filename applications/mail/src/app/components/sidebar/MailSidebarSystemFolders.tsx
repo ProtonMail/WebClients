@@ -1,5 +1,5 @@
 import type { DragEvent, DragEventHandler } from 'react';
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -15,6 +15,7 @@ import { getLocationCount } from 'proton-mail/hooks/useMailboxCounter.helpers';
 import type { MoveParams } from '../../hooks/actions/move/useMoveToFolder';
 import type { SystemFolder } from '../../hooks/useMoveSystemFolders';
 import useMoveSystemFolders, { SYSTEM_FOLDER_SECTION } from '../../hooks/useMoveSystemFolders';
+import { getCategorySystemFolder } from '../categoryView/categoriesHelpers';
 import { useCategoriesView } from '../categoryView/useCategoriesView';
 import SidebarItem from './SidebarItem';
 
@@ -69,7 +70,7 @@ const MailSidebarSystemFolders = ({
         showSoftDeletedFolder,
     });
 
-    const { categoryViewAccess } = useCategoriesView();
+    const { categoryViewAccess, activeCategoriesTabs } = useCategoriesView();
 
     const lastDragTimeRef = useRef<number>();
     const isDragging = useRef<boolean>();
@@ -77,21 +78,6 @@ const MailSidebarSystemFolders = ({
     const [draggedElementId, setDraggedElementId] = useState<MAILBOX_LABEL_IDS | undefined>();
     const [dragOveredElementId, setDragOveredElementId] = useState<string | undefined>();
     const [isOverMoreFolder, setIsOverMoreFolder] = useState<boolean>();
-
-    const [mainElements, moreElements] = useMemo(() => {
-        const mainElements: SystemFolder[] = [];
-        const moreElements: SystemFolder[] = [];
-
-        sidebarElements.forEach((item) => {
-            if (item.display === SYSTEM_FOLDER_SECTION.MAIN) {
-                mainElements.push(item);
-            } else {
-                moreElements.push(item);
-            }
-        });
-
-        return [mainElements, moreElements];
-    }, [sidebarElements]);
 
     const handleDragOver: HandleDragOver = (elementId) => (event) => {
         if (!isDragging.current) {
@@ -230,6 +216,29 @@ const MailSidebarSystemFolders = ({
         };
         // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-1DDB20
     }, [isOverMoreFolder]);
+
+    const mainElements: SystemFolder[] = [];
+    const moreElements: SystemFolder[] = [];
+
+    sidebarElements.forEach((item) => {
+        if (!item.visible) {
+            return;
+        }
+
+        if (item.display === SYSTEM_FOLDER_SECTION.MAIN) {
+            mainElements.push(item);
+        } else {
+            moreElements.push(item);
+        }
+    });
+
+    activeCategoriesTabs.forEach((category) => {
+        if (category.id === MAILBOX_LABEL_IDS.CATEGORY_DEFAULT) {
+            return;
+        }
+
+        moreElements.push(getCategorySystemFolder(category));
+    });
 
     return (
         <>
