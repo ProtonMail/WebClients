@@ -31,6 +31,7 @@ export const WrappedProtonMeetContainer = ({ guestMode }: { guestMode?: boolean 
     const isMeetAllowDecryptionErrorReportingEnabled = useFlag('MeetAllowDecryptionErrorReporting');
     const isMeetVp9Allowed = useFlag('MeetVp9');
     const isMeetHigherBitrate = useFlag('MeetHigherBitrate');
+    const isMeetSinglePeerConnectionEnabled = useFlag('MeetSinglePeerConnection');
 
     useEffect(() => {
         if (!isLogExtensionSetup.current && isMeetAllowDecryptionErrorReportingEnabled) {
@@ -118,6 +119,7 @@ export const WrappedProtonMeetContainer = ({ guestMode }: { guestMode?: boolean 
                 videoCodec: isMeetVp9Allowed ? 'vp9' : 'vp8',
             },
             disconnectOnPageLeave: false,
+            singlePeerConnection: isMeetSinglePeerConnectionEnabled,
         });
     }
 
