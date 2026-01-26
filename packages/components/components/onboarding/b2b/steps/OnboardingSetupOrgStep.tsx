@@ -133,7 +133,8 @@ const OnboardingSetupOrgStep = ({ onNextStep, onChangeModalSize }: Props) => {
                             <InputFieldStacked icon="buildings" classname="mb-2">
                                 <InputFieldTwo
                                     id="organization-name"
-                                    inputClassName="rounded-none unstyled"
+                                    unstyled
+                                    inputClassName="rounded-none"
                                     autoFocus
                                     label={c('Placeholder').t`Organization name`}
                                     placeholder={c('Placeholder').t`Your organization name`}
