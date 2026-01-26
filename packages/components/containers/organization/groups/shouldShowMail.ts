@@ -1,6 +1,12 @@
 import { PLANS } from '@proton/payments';
 
-const mailPlans = new Set([PLANS.MAIL_BUSINESS, PLANS.BUNDLE_PRO, PLANS.BUNDLE_PRO_2024, PLANS.VISIONARY]);
+const mailPlans = new Set([
+    PLANS.MAIL_BUSINESS,
+    PLANS.BUNDLE_PRO,
+    PLANS.BUNDLE_PRO_2024,
+    PLANS.BUNDLE_BIZ_2025,
+    PLANS.VISIONARY,
+]);
 
 const shouldShowMail = (plan: PLANS | undefined) => {
     if (plan === undefined) {
