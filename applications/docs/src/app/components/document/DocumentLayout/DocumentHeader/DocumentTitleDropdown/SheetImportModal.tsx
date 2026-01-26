@@ -172,6 +172,12 @@ function SheetImportModal({ handleImport, onClose, open, ...modalProps }: SheetI
             <span>{c('Info').t`Importing ODS files is currently in beta`}</span>
           </div>
         )}
+        {destination === SheetImportDestination.ReplaceSpreadsheet && (
+          <div className="mt-2 flex items-center gap-2 bg-[--signal-warning-minor-2] px-8 py-2 text-sm">
+            <Icon name="info-circle" className="text-[--signal-warning]" />
+            <span>{c('Warning').t`This will replace all the data in the spreadsheet`}</span>
+          </div>
+        )}
         <div className="flex gap-4 px-8 pt-4">
           <Button className="ml-auto" onClick={closeModal}>{c('Action').t`Cancel`}</Button>
           <Button
