@@ -283,7 +283,11 @@ const EditGroup = ({ groupsManagement, groupData }: Props) => {
                                     unstyled
                                     autoGrow
                                     name="description"
-                                    placeholder={c('placeholder').t`e.g. distribution list for marketing team`}
+                                    placeholder={
+                                        hideMail
+                                            ? undefined
+                                            : c('placeholder').t`e.g. distribution list for marketing team`
+                                    }
                                     value={formValues.description}
                                     onValue={(description: string) => setFieldValue('description', description)}
                                 />
