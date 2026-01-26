@@ -4,6 +4,9 @@ extern crate napi_derive;
 mod autotypes;
 mod clipboards;
 
+#[cfg(windows)]
+mod updater;
+
 use autotypes::Autotype as AutotypeCore;
 use napi::tokio;
 
@@ -97,5 +100,25 @@ impl Autotype {
     #[napi]
     pub fn perform_autotype(&mut self, fields: Vec<String>, enter_at_the_end: Option<bool>) -> napi::Result<()> {
         napi_res!(self.autotype.perform_autotype(fields, enter_at_the_end))
+    }
+}
+
+#[cfg(windows)]
+#[napi]
+pub mod msix_updater {
+    use super::updater;
+    use napi::tokio;
+
+    #[napi]
+    pub async fn install_update(package_uri: String) -> napi::Result<()> {
+        // Register for restart before updating
+        updater::register_for_restart().map_err(|e| napi::Error::from_reason(e.to_string()))?;
+
+        // Install the update (spawn blocking since Windows APIs are synchronous)
+        tokio::task::spawn_blocking(move || {
+            updater::install_update(package_uri).map_err(|e| napi::Error::from_reason(e.to_string()))
+        })
+        .await
+        .map_err(|e| napi::Error::from_reason(e.to_string()))?
     }
 }

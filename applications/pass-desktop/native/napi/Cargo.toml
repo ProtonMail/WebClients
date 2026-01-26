@@ -14,5 +14,11 @@ napi = { version = "3.4", features = ["async"] }
 napi-derive = "3.3"
 shared = { path = "../shared" }
 
+[target.'cfg(windows)'.dependencies]
+windows = { version = "=0.54.0", features = [
+  "Foundation",
+  "Management_Deployment",
+] }
+
 [build-dependencies]
 napi-build = "2.2"
