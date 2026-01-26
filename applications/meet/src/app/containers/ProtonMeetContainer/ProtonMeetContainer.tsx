@@ -589,6 +589,11 @@ export const ProtonMeetContainer = ({
                         type: 'info',
                         text: c('Info').t`The host has ended the meeting`,
                     });
+                } else if (reason === DisconnectReason.PARTICIPANT_REMOVED) {
+                    createNotification({
+                        type: 'warning',
+                        text: c('Warning').t`The host has removed you from the meeting`,
+                    });
                 } else if (reason !== undefined) {
                     // Log abnormal error to sentry
                     reportMeetError('Room disconnected unexpectedly', DisconnectReason[reason]);
