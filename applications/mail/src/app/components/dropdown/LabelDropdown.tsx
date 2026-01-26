@@ -23,6 +23,7 @@ import { isCustomLabel } from '@proton/mail/helpers/location';
 import { getRandomAccentColor } from '@proton/shared/lib/colors';
 import { LABEL_TYPE, MAILBOX_LABEL_IDS, MAIL_UPSELL_PATHS } from '@proton/shared/lib/constants';
 import { hasReachedLabelLimit } from '@proton/shared/lib/helpers/folder';
+import { traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 import { normalize } from '@proton/shared/lib/helpers/string';
 import type { Label } from '@proton/shared/lib/interfaces/Label';
 import clsx from '@proton/utils/clsx';
@@ -251,44 +252,53 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, selectAll, onChe
         const elements = getElementsFromIDs(selectedIDs);
         const promises = [];
 
-        if (applyOptimisticLocationEnabled) {
-            promises.push(applyMultipleLocations({ elements, changes, createFilters: always }));
-        } else {
-            promises.push(
-                applyLabels({
-                    elements,
-                    changes,
-                    createFilters: always,
-                    selectedLabelIDs: checkedIDs,
-                    labelID,
-                    selectAll,
-                    onCheckAll,
-                })
-            );
-        }
-
-        if (alsoArchive) {
+        try {
             if (applyOptimisticLocationEnabled) {
-                promises.push(
-                    applyLocation({
-                        elements,
-                        destinationLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
-                        type: APPLY_LOCATION_TYPES.MOVE,
-                    })
-                );
+                if (Object.keys(changes).length > 0 && elements.length > 0) {
+                    promises.push(applyMultipleLocations({ elements, changes, createFilters: always }));
+                }
             } else {
-                const folderName = getStandardFolders()[MAILBOX_LABEL_IDS.ARCHIVE].name;
                 promises.push(
-                    moveToFolder({
+                    applyLabels({
                         elements,
-                        sourceLabelID: labelID,
-                        destinationLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
-                        folderName,
-                        sourceAction: SOURCE_ACTION.LABEL_DROPDOWN,
-                        currentFolder: folderLocation(labelID, labels, folders),
+                        changes,
+                        createFilters: always,
+                        selectedLabelIDs: checkedIDs,
+                        labelID,
+                        selectAll,
+                        onCheckAll,
                     })
                 );
             }
+
+            if (alsoArchive) {
+                if (applyOptimisticLocationEnabled) {
+                    promises.push(
+                        applyLocation({
+                            elements,
+                            destinationLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
+                            type: APPLY_LOCATION_TYPES.MOVE,
+                        })
+                    );
+                } else {
+                    const folderName = getStandardFolders()[MAILBOX_LABEL_IDS.ARCHIVE].name;
+                    promises.push(
+                        moveToFolder({
+                            elements,
+                            sourceLabelID: labelID,
+                            destinationLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
+                            folderName,
+                            sourceAction: SOURCE_ACTION.LABEL_DROPDOWN,
+                            currentFolder: folderLocation(labelID, labels, folders),
+                        })
+                    );
+                }
+            }
+        } catch (error) {
+            traceInitiativeError('move-actions', {
+                type: 'labelDropdown',
+                error,
+            });
         }
 
         await Promise.all(promises);
