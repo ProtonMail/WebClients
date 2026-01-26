@@ -269,6 +269,12 @@ enum MeetFeatureFlag {
     MeetClientMetricsLog = 'MeetClientMetricsLog',
     MeetVp9 = 'MeetVp9',
     MeetHigherBitrate = 'MeetHigherBitrate',
+    MeetScheduleInAdvance = 'MeetScheduleInAdvance',
+    MeetProtonCalendarDeepLink = 'MeetProtonCalendarDeepLink',
+    MeetUnblockAudioButton = 'MeetUnblockAudioButton',
+    MeetOpenLinksInDesktopApp = 'MeetOpenLinksInDesktopApp',
+    MeetDebugMode = 'MeetDebugMode',
+    MeetSinglePeerConnection = 'MeetSinglePeerConnection',
 }
 
 enum LumoFeatureFlag {
