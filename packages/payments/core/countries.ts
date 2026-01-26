@@ -168,6 +168,7 @@ export const getCountries = () => [
     { value: 'OM', label: c('Country name').t`Oman` },
     { value: 'PK', label: c('Country name').t`Pakistan` },
     { value: 'PW', label: c('Country name').t`Palau` },
+    { value: 'PS', label: c('Country name').t`Palestine` },
     { value: 'PA', label: c('Country name').t`Panama` },
     { value: 'PG', label: c('Country name').t`Papua New Guinea` },
     { value: 'PY', label: c('Country name').t`Paraguay` },
