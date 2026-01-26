@@ -44,7 +44,7 @@ import { c } from 'ttag'
 
 export type SpreadsheetRef = {
   exportData: (format: DataTypesThatDocumentCanBeExportedAs) => Promise<Uint8Array<ArrayBuffer>>
-  replaceLocalSpreadsheetState: (state: unknown) => void
+  replaceLocalSpreadsheetState: (state: object) => void
   focusSheet: (() => void) | undefined
 }
 
@@ -150,15 +150,7 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
         enabledSharedStrings: true,
       })
       const patches = await generateStatePatches()
-      for (const key of Object.keys(patches)) {
-        state.yjsState.onBroadcastPatch([
-          [
-            {
-              [key]: patches[key as keyof typeof patches],
-            },
-          ],
-        ])
-      }
+      state.yjsState.onBroadcastPatch([[patches]])
       docState.endSheetsExcelImport()
       await docState.waitForImportSuccess()
       setImportType(undefined)

@@ -362,7 +362,7 @@ export class EditorController implements EditorControllerInterface {
     await this.editorInvoker.replaceEditorState(lexicalState)
   }
 
-  async restoreRevisionByReplacingSpreadsheetState(spreadsheetState: unknown): Promise<void> {
+  async restoreRevisionByReplacingSpreadsheetState(spreadsheetState: object): Promise<void> {
     if (!this.editorInvoker) {
       throw new Error(
         'Attempting to restore revision by replacing spreadsheet state before editor invoker is initialized',
