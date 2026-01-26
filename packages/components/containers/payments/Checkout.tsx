@@ -8,6 +8,7 @@ import { type Currency, PAYMENT_METHOD_TYPES, type PlanIDs, isLifetimePlanSelect
 import type { UserModel } from '@proton/shared/lib/interfaces';
 
 import CurrencySelector from './CurrencySelector';
+import type { CouponConfigRendered } from './subscription/coupon-config/useCouponConfig';
 
 export interface Props {
     currencies: readonly Currency[];
@@ -21,6 +22,7 @@ export interface Props {
     paymentMethods: MethodsHook;
     user: UserModel;
     planIDs: PlanIDs;
+    couponConfig?: CouponConfigRendered;
 }
 
 const Checkout = ({
@@ -35,11 +37,13 @@ const Checkout = ({
     paymentMethods,
     user,
     planIDs,
+    couponConfig,
 }: Props) => {
     const isSepaDirectDebit = paymentMethods.selectedMethod?.type === PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT;
     const isLifetimeWithCredits = user.Credit > 0 && isLifetimePlanSelected(planIDs);
 
-    const disableCurrencySelector = isSepaDirectDebit || isLifetimeWithCredits || loading;
+    const disableCurrencySelector =
+        isSepaDirectDebit || isLifetimeWithCredits || couponConfig?.disableCurrencySelector || loading;
 
     return (
         <div className="p-6">
