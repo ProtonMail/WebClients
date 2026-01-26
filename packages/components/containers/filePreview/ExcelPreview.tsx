@@ -31,7 +31,7 @@ export function ExcelPreview({ onOpenInDocs, onDownload }: { onOpenInDocs?: () =
                             shape="solid"
                             color="weak"
                             mimeIconName="proton-sheet"
-                            buttonText={c('Action').t`Open in ${SHEETS_APP_NAME}`}
+                            buttonText={c('Action: Sheets').t`Open in ${SHEETS_APP_NAME}`}
                             onClick={onOpenInDocs}
                         />
                     )}

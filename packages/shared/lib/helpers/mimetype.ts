@@ -193,6 +193,9 @@ export const PROTON_DOCS_DOCUMENT_MIMETYPE = 'application/vnd.proton.doc';
 export const isProtonDocsDocument = (mimeType: string) => mimeType === PROTON_DOCS_DOCUMENT_MIMETYPE;
 export const PROTON_DOCS_SPREADSHEET_MIMETYPE = 'application/vnd.proton.sheet';
 export const isProtonDocsSpreadsheet = (mimeType: string) => mimeType === PROTON_DOCS_SPREADSHEET_MIMETYPE;
+export const isNativeProtonDocsAppFile = (mimeType: string): boolean => {
+    return isProtonDocsDocument(mimeType) || isProtonDocsSpreadsheet(mimeType);
+};
 
 export type ProtonDocumentType = 'document' | 'spreadsheet';
 

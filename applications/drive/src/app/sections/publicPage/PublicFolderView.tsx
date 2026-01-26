@@ -13,7 +13,6 @@ import { LayoutSetting } from '@proton/shared/lib/interfaces/drive/userSettings'
 
 import { useDocumentActions } from '../../hooks/docs/useDocumentActions';
 import { useBatchThumbnailLoader } from '../../hooks/drive/useBatchThumbnailLoader';
-import usePublicToken from '../../hooks/drive/usePublicToken';
 import { downloadManager } from '../../managers/download/DownloadManager';
 import { useDrivePublicPreviewModal } from '../../modals/preview';
 import { useContextMenuStore } from '../../modules/contextMenu';
@@ -35,8 +34,8 @@ import { useSdkErrorHandler } from '../../utils/errorHandling/useSdkErrorHandler
 import { getNodeAncestry } from '../../utils/sdk/getNodeAncestry';
 import { getNodeEntity } from '../../utils/sdk/getNodeEntity';
 import { getPublicFolderCells } from './PublicFolderDriveExplorerCells';
+import { PublicFolderEmptyView } from './PublicFolderEmptyView';
 import { PublicFolderItemContextMenu } from './PublicFolderItemContextMenu';
-import { PublicFolderPageEmptyView } from './PublicFolderPageEmptyView';
 import { getPublicLinkClient } from './publicLinkClient';
 import { subscribeToPublicFolderEvents } from './subscribeToPublicFolderEvents';
 import { usePublicAuthStore } from './usePublicAuth.store';
@@ -53,27 +52,30 @@ const usePublicBreadcrumb = (driveClient: ProtonDrivePublicLinkClient) => {
     const [data, setData] = useState<CrumbDefinition[]>([]);
     const { handleError } = useSdkErrorHandler();
 
-    const load = async (nodeUid: string) => {
-        setLoading(true);
-        const result = await getNodeAncestry(nodeUid, driveClient);
-        if (result.ok) {
-            const data = result.value.map((maybeNode) => {
-                const nodeEntity = getNodeEntity(maybeNode).node;
-                return {
-                    uid: nodeEntity.uid,
-                    name: nodeEntity.name,
-                    // Do not render signature issues for breadcrumb items on public page.
-                    haveSignatureIssues: false,
-                    supportDropOperations: false,
-                };
-            });
-            setData(data);
-        } else {
-            handleError(result.error);
-            setData([]);
-        }
-        setLoading(false);
-    };
+    const load = useCallback(
+        async (nodeUid: string) => {
+            setLoading(true);
+            const result = await getNodeAncestry(nodeUid, driveClient);
+            if (result.ok) {
+                const data = result.value.map((maybeNode) => {
+                    const nodeEntity = getNodeEntity(maybeNode).node;
+                    return {
+                        uid: nodeEntity.uid,
+                        name: nodeEntity.name,
+                        // Do not render signature issues for breadcrumb items on public page.
+                        haveSignatureIssues: false,
+                        supportDropOperations: false,
+                    };
+                });
+                setData(data);
+            } else {
+                handleError(result.error);
+                setData([]);
+            }
+            setLoading(false);
+        },
+        [driveClient, handleError]
+    );
 
     return {
         loading,
@@ -147,12 +149,15 @@ export const PublicFolderView = ({ nodeUid, folderName }: PublicFolderViewProps)
 
     const isEmpty = hasEverLoaded && !isLoading && itemUids.size === 0;
 
-    const loadView = (nodeUid: string) => {
-        const abortController = new AbortController();
-        void loadPublicFolderChildren(nodeUid, abortController.signal);
-        void loadBreadcrumbs(nodeUid);
-        return abortController;
-    };
+    const loadView = useCallback(
+        (nodeUid: string) => {
+            const abortController = new AbortController();
+            void loadPublicFolderChildren(nodeUid, abortController.signal);
+            void loadBreadcrumbs(nodeUid);
+            return abortController;
+        },
+        [loadBreadcrumbs, loadPublicFolderChildren]
+    );
 
     const handleOpenItem = (uid: string) => {
         const item = usePublicFolderStore.getState().getFolderItem(uid);
@@ -232,9 +237,8 @@ export const PublicFolderView = ({ nodeUid, folderName }: PublicFolderViewProps)
         return () => {
             abortController.abort();
         };
-    }, [loadPublicFolderChildren, nodeUid]);
+    }, [loadView, nodeUid]);
 
-    const { token } = usePublicToken();
     const { viewportWidth } = useActiveBreakpoint();
 
     const sort: DriveExplorerSort = {
@@ -301,7 +305,7 @@ export const PublicFolderView = ({ nodeUid, folderName }: PublicFolderViewProps)
                 position={contextMenuControls.position}
             />
             {isEmpty ? (
-                <PublicFolderPageEmptyView nodeUid={nodeUid} token={token} />
+                <PublicFolderEmptyView />
             ) : (
                 <>
                     <Breadcrumbs
