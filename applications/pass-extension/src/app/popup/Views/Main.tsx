@@ -1,4 +1,4 @@
-import { type FC, Suspense, lazy, useEffect } from 'react';
+import { type FC, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { Route } from 'react-router-dom';
 
@@ -9,7 +9,6 @@ import { useExtensionContext } from 'proton-pass-extension/lib/components/Extens
 import { useSaveTabState } from 'proton-pass-extension/lib/hooks/useSaveTabState';
 import { useSpotlightListener } from 'proton-pass-extension/lib/hooks/useSpotlightListener';
 
-import Loader from '@proton/components/components/loader/Loader';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { AuthDeviceTopBanner } from '@proton/pass/components/Auth/AuthDeviceTopBanner';
@@ -33,9 +32,7 @@ import { selectIsSSO } from '@proton/pass/store/selectors/user';
 import { SpotlightMessage } from '@proton/pass/types/worker/spotlight';
 import { resolveSubdomain } from '@proton/pass/utils/url/utils';
 
-const Sidebar = lazy(
-    () => import(/* webpackChunkName: "sidebar" */ 'proton-pass-extension/app/popup/Views/LazySidebar')
-);
+import { Sidebar } from './Sidebar';
 
 const MainSwitch: FC = () => {
     const isSSO = useSelector(selectIsSSO);
@@ -52,11 +49,7 @@ const MainSwitch: FC = () => {
         <Route path="*">
             {({ match, ...rest }) => (
                 <div className="flex flex-row flex-nowrap overflow-hidden flex-1 relative w-full h-full anime-fade-in">
-                    {showSidebar && (
-                        <Suspense fallback={<Loader />}>
-                            <Sidebar />
-                        </Suspense>
-                    )}
+                    {showSidebar && <Sidebar />}
 
                     <main
                         key="main"

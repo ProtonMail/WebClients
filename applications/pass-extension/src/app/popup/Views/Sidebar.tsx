@@ -1,14 +1,14 @@
 import { useExtensionClient } from 'proton-pass-extension/lib/components/Extension/ExtensionClient';
 
-import { Sidebar } from '@proton/pass/components/Layout/Section/Sidebar';
+import { Sidebar as CoreSideBar } from '@proton/pass/components/Layout/Section/Sidebar';
 import { MenuSidebar } from '@proton/pass/components/Menu/Sidebar/MenuSidebar';
 import { MenuUserPanel } from '@proton/pass/components/Menu/Sidebar/MenuUserPanel';
 
-const LazySidebar = () => {
+export const Sidebar = () => {
     const { lock, logout } = useExtensionClient();
 
     return (
-        <Sidebar>
+        <CoreSideBar>
             <MenuSidebar
                 onLock={lock}
                 onLogout={logout}
@@ -18,8 +18,6 @@ const LazySidebar = () => {
                     </div>
                 }
             />
-        </Sidebar>
+        </CoreSideBar>
     );
 };
-
-export default LazySidebar;
