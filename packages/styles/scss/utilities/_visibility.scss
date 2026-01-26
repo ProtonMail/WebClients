@@ -32,3 +32,7 @@
 		appearance: textfield;
 	}
 }
+
+.one-of:not(:empty) ~ .one-of {
+	display: none;
+}

@@ -25,8 +25,8 @@ const TopBanners = ({ children, app }: Props) => {
         <ErrorBoundary component={null}>
             <UnpaidInvoiceTopBanner />
             <TrialTopBanner app={app} />
-            <OnlineTopBanner />
-            <TimeOutOfSyncTopBanner />
+            <OnlineTopBanner className="one-of" />
+            <TimeOutOfSyncTopBanner className="one-of" />
             <StorageLimitTopBanner app={app} />
             <BadAppVersionBanner />
             <AccessTypeTopBanner />
