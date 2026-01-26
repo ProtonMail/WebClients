@@ -1,7 +1,7 @@
 import type { FC, PropsWithChildren } from 'react';
 
-import Logo from '@proton/components/components/logo/Logo';
 import PassForBusinessLogo from '@proton/components/components/logo/PassForBusinessLogo';
+import PassLogo from '@proton/components/components/logo/PassLogo';
 import { useOrganization } from '@proton/pass/components/Organization/OrganizationProvider';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
@@ -15,7 +15,7 @@ export const Sidebar: FC<PropsWithChildren> = ({ children }) => {
         <div id="pass-sidebar" className="sidebar hidden lg:flex flex-nowrap flex-column outline-none bg-strong">
             <h1 className="sr-only">{getAppName(APPS.PROTONPASS)}</h1>
             <div className="w-full logo-container hidden md:flex shrink-0 justify-space-between items-center flex-nowrap">
-                {organization ? <PassForBusinessLogo /> : <Logo appName={APPS.PROTONPASS} />}
+                {organization ? <PassForBusinessLogo /> : <PassLogo />}
             </div>
 
             <div className="mt-1 md:mt-0" aria-hidden="true" />
