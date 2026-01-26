@@ -107,6 +107,7 @@ const AccountDetailsForm = ({ onSuccess }: { onSuccess: () => Promise<void> }) =
         flow: 'signup',
         product: APPS.PROTONMAIL,
         telemetryContext: payments.telemetryContext,
+        coupon: options.checkResult.Coupon?.Code,
     });
 
     const taxCountry = useTaxCountry({
