@@ -1,62 +1,84 @@
 import { c, msgid } from 'ttag';
 
-import type { useConfirmActionModal } from '@proton/components';
+import { useConfirmActionModal } from '@proton/components';
 import { NodeType, splitNodeUid } from '@proton/drive';
+import { type OpenInDocsType, isNativeProtonDocsAppFile } from '@proton/shared/lib/helpers/mimetype';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { downloadManager } from '../../../managers/download/DownloadManager';
-import type { useDetailsModal } from '../../../modals/DetailsModal';
-import type { useRenameModal } from '../../../modals/RenameModal';
-import type { usePreviewModal } from '../../../modals/preview';
+import { useDetailsModal } from '../../../modals/DetailsModal';
+import { useRenameModal } from '../../../modals/RenameModal';
+import { usePreviewModal } from '../../../modals/preview';
 import { getActionEventManager } from '../../../utils/ActionEventManager/ActionEventManager';
 import { ActionEventName } from '../../../utils/ActionEventManager/ActionEventManagerTypes';
+import {
+    downloadPublicDocument,
+    getOpenInDocsInfo,
+    openPublicDocsOrSheetsDocument,
+} from '../../../utils/docs/openInDocs';
+import { isPreviewOrFallbackAvailable } from '../../../utils/isPreviewOrFallbackAvailable';
 import { getPublicLinkClient } from '../publicLinkClient';
 import { usePublicFolderStore } from '../usePublicFolder.store';
 import { usePublicPageNotifications } from '../usePublicPageNotifications';
+import { getPublicTokenAndPassword } from '../utils/getPublicTokenAndPassword';
 
-interface UsePublicActionsProps {
-    showPreviewModal: ReturnType<typeof usePreviewModal>[1];
-    showDetailsModal: ReturnType<typeof useDetailsModal>[1];
-    showRenameModal?: ReturnType<typeof useRenameModal>[1];
-    showConfirmModal?: ReturnType<typeof useConfirmActionModal>[1];
-}
-
-export const usePublicActions = ({
-    showPreviewModal,
-    showDetailsModal,
-    showRenameModal,
-    showConfirmModal,
-}: UsePublicActionsProps) => {
+export const usePublicActions = () => {
+    const [previewModal, showPreviewModal] = usePreviewModal();
+    const [detailsModal, showDetailsModal] = useDetailsModal();
+    const [renameModal, showRenameModal] = useRenameModal();
+    const [confirmModal, showConfirmModal] = useConfirmActionModal();
     const { createDeleteNotification } = usePublicPageNotifications();
 
     const handlePreview = (uid: string) => {
-        const { getFolderItem, getItemUids } = usePublicFolderStore.getState();
-        const item = getFolderItem(uid);
+        const { getAllFolderItems } = usePublicFolderStore.getState();
 
-        if (!item) {
-            return;
-        }
         showPreviewModal({
             drive: getPublicLinkClient(),
-            nodeUid: item.uid,
+            nodeUid: uid,
             verifySignatures: false,
-            previewableNodeUids: getItemUids(),
+            previewableNodeUids: getAllFolderItems()
+                .filter((item) => item.mediaType && isPreviewOrFallbackAvailable(item.mediaType, item.size))
+                .map((item) => item.uid),
             deprecatedContextShareId: '',
         });
     };
 
-    const handleDownload = (uids: string[]) => {
-        void downloadManager.download(uids);
+    const handleOpenDocsOrSheets = (uid: string, openInDocs: OpenInDocsType) => {
+        const { token, urlPassword } = getPublicTokenAndPassword(window.location.pathname);
+
+        void openPublicDocsOrSheetsDocument({
+            uid,
+            type: openInDocs.type,
+            isNative: openInDocs.isNative,
+            openBehavior: 'tab',
+            token,
+            urlPassword,
+        });
     };
 
-    const handleDetails = (uid: string) => {
+    const handleDownload = async (uids: string[]) => {
         const { getFolderItem } = usePublicFolderStore.getState();
-        const item = getFolderItem(uid);
+        const items = uids.map(getFolderItem).filter(isTruthy);
 
-        if (!item) {
+        if (items.length === 0) {
             return;
         }
 
+        const isSingleItem = items.length === 1;
+        const singleItem = items.at(0);
+
+        if (isSingleItem && singleItem?.mediaType && isNativeProtonDocsAppFile(singleItem.mediaType)) {
+            const { token, urlPassword } = getPublicTokenAndPassword(window.location.pathname);
+            const openInDocsInfo = getOpenInDocsInfo(singleItem.mediaType);
+            if (openInDocsInfo) {
+                await downloadPublicDocument({ uid: singleItem.uid, type: openInDocsInfo.type, token, urlPassword });
+            }
+        }
+
+        await downloadManager.download(uids);
+    };
+
+    const handleDetails = (uid: string) => {
         const { volumeId, nodeId } = splitNodeUid(uid);
         showDetailsModal({
             drive: getPublicLinkClient(),
@@ -68,16 +90,6 @@ export const usePublicActions = ({
     };
 
     const handleRename = (uid: string) => {
-        if (!showRenameModal) {
-            return;
-        }
-
-        const { getFolderItem } = usePublicFolderStore.getState();
-        const item = getFolderItem(uid);
-
-        if (!item) {
-            return;
-        }
         showRenameModal({
             nodeUid: uid,
             drive: getPublicLinkClient(),
@@ -85,10 +97,6 @@ export const usePublicActions = ({
     };
 
     const handleDelete = (uids: string[]) => {
-        if (!showConfirmModal) {
-            return;
-        }
-
         const items = uids.map((uid) => usePublicFolderStore.getState().getFolderItem(uid)).filter(isTruthy);
 
         if (items.length === 0) {
@@ -146,10 +154,17 @@ export const usePublicActions = ({
     };
 
     return {
+        modals: {
+            previewModal,
+            detailsModal,
+            renameModal,
+            confirmModal,
+        },
         handlePreview,
         handleDownload,
         handleDetails,
         handleRename,
         handleDelete,
+        handleOpenDocsOrSheets,
     };
 };

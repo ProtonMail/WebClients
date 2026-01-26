@@ -1,8 +1,10 @@
 import { ContextSeparator } from '@proton/components';
+import type { OpenInDocsType } from '@proton/shared/lib/helpers/mimetype';
 
 import { DeleteButton } from '../../commonButtons/DeleteButton';
 import { DetailsButton } from '../../commonButtons/DetailsButton';
 import { DownloadButton } from '../../commonButtons/DownloadButton';
+import { OpenInDocsOrSheetsButton } from '../../commonButtons/OpenInDocsOrSheetsButton';
 import { PreviewButton } from '../../commonButtons/PreviewButton';
 import { RenameButton } from '../../commonButtons/RenameButton';
 import type { PublicItemChecker } from './actionsItemsChecker';
@@ -15,6 +17,7 @@ interface BaseEditActionsProps {
     onDetails: (uid: string) => void;
     onRename: (uid: string) => void;
     onDelete: (uids: string[]) => void;
+    onOpenDocsOrSheets: (uid: string, openInDocs: OpenInDocsType) => void;
 }
 
 interface ContextMenuEditActionsProps extends BaseEditActionsProps {
@@ -37,11 +40,12 @@ export function EditActions({
     onDetails,
     onRename,
     onDelete,
+    onOpenDocsOrSheets,
     close,
     buttonType,
 }: EditActionsProps) {
     const firstItemUid = selectedUids.at(0);
-
+    const openInDocsInfo = itemChecker.openInDocsInfo;
     return (
         <>
             {itemChecker.isSingleSelection && itemChecker.hasPreviewAvailable && firstItemUid && (
@@ -52,6 +56,14 @@ export function EditActions({
                     />
                     <ContextSeparator />
                 </>
+            )}
+            {itemChecker.isSingleSelection && openInDocsInfo && firstItemUid && (
+                <OpenInDocsOrSheetsButton
+                    isNative={openInDocsInfo.isNative}
+                    type={openInDocsInfo.type}
+                    onClick={() => onOpenDocsOrSheets(firstItemUid, openInDocsInfo)}
+                    {...(buttonType === 'contextMenu' ? { close, buttonType } : { buttonType })}
+                />
             )}
 
             <DownloadButton
