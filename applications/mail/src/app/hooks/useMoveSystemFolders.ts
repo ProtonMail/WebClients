@@ -67,7 +67,6 @@ const useMoveSystemFolders = ({
     const [systemFoldersFromApi, loading] = useSystemFolders();
     const [systemFolders, setSystemFolders] = useState<SystemFolder[]>([]);
     const [unexpectedSystemFolderIDs, setUnexpectedSystemFolderIDs] = useState<MAILBOX_LABEL_IDS[]>([]);
-    const visibleSystemFolders = systemFolders.filter((element) => element.visible);
 
     const moveItem = (draggedID: MAILBOX_LABEL_IDS, droppedID: MAILBOX_LABEL_IDS | 'MORE_FOLDER_ITEM') => {
         if (draggedID === droppedID) {
@@ -139,7 +138,7 @@ const useMoveSystemFolders = ({
         }
     }, [systemFoldersFromApi, ShowMoved, showSnoozed, showScheduled, AlmostAllMail, showSoftDeletedFolder]);
 
-    return [visibleSystemFolders, moveItem, loading];
+    return [systemFolders, moveItem, loading];
 };
 
 export default useMoveSystemFolders;
