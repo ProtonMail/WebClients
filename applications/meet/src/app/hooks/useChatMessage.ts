@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
 import { uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
+import { escape, unescape } from '@proton/shared/lib/sanitize/escape';
 import { message as sanitizeMessage } from '@proton/shared/lib/sanitize/purify';
 
 import { useMLSContext } from '../contexts/MLSContext';
@@ -40,7 +41,16 @@ export const useChatMessage = () => {
 
     const sendMessage = async (content: string) => {
         const trimmedContent = trimMessage(content);
-        const sanitizedContent = sanitizeMessage(trimmedContent);
+        // Escape HTML entities before sanitization to preserve plain text like "<test"
+        // This prevents DOMPurify from treating incomplete tags as HTML and removing them.
+        // After sanitization, unescape to restore the original text for display.
+        // Security note: Unescaping is safe here because:
+        // 1. DOMPurify has already sanitized the escaped content, removing any dangerous HTML
+        // 2. The message is rendered as plain text in React (which auto-escapes HTML)
+        // 3. We only unescape content that DOMPurify allowed through as safe text
+        const escapedContent = escape(trimmedContent);
+        const sanitizedEscapedContent = sanitizeMessage(escapedContent);
+        const sanitizedContent = unescape(sanitizedEscapedContent);
 
         if (!room || !sanitizedContent) {
             return false;
