@@ -10,6 +10,8 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Sort } from '@proton/shared/lib/mail/search';
 import clsx from '@proton/utils/clsx';
 
+import { useListSettingsTelemetry } from '../list/useListSettingsTelemetry';
+
 const TIME = 'Time';
 const SIZE = 'Size';
 
@@ -24,6 +26,9 @@ interface Props {
 
 const SortDropdown = ({ labelID, conversationMode, hasCaret, sort: { sort, desc }, onSort, className }: Props) => {
     const isScheduledLabel = labelID === MAILBOX_LABEL_IDS.SCHEDULED;
+
+    const { sendNewestFirstReport, sendOldestFirstReport, sendLargestFirstReport, sendSmallestFirstReport } =
+        useListSettingsTelemetry();
 
     const SORT_OPTIONS = {
         SMALL_TO_LARGE: c('Sort option').t`Smallest first`,
@@ -74,7 +79,10 @@ const SortDropdown = ({ labelID, conversationMode, hasCaret, sort: { sort, desc 
                     data-testid="toolbar:sort-new-to-old"
                     isSelected={!isScheduledLabel ? sort === TIME && desc : sort === TIME && !desc}
                     className="text-left flex gap-2"
-                    onClick={() => onSort({ sort: TIME, desc: true })}
+                    onClick={() => {
+                        onSort({ sort: TIME, desc: true });
+                        sendNewestFirstReport();
+                    }}
                 >
                     <IcListArrowDown className="toolbar-icon" />
                     <span>{SORT_OPTIONS.NEW_TO_OLD}</span>
@@ -83,7 +91,10 @@ const SortDropdown = ({ labelID, conversationMode, hasCaret, sort: { sort, desc 
                     data-testid="toolbar:sort-old-to-new"
                     isSelected={!isScheduledLabel ? sort === TIME && !desc : sort === TIME && desc}
                     className="text-left flex gap-2"
-                    onClick={() => onSort({ sort: TIME, desc: false })}
+                    onClick={() => {
+                        onSort({ sort: TIME, desc: false });
+                        sendOldestFirstReport();
+                    }}
                 >
                     <IcListArrowUp className="toolbar-icon" />
                     <span>{SORT_OPTIONS.OLD_TO_NEW}</span>
@@ -92,7 +103,10 @@ const SortDropdown = ({ labelID, conversationMode, hasCaret, sort: { sort, desc 
                     data-testid="toolbar:sort-desc"
                     isSelected={sort === SIZE && desc}
                     className="text-left flex gap-2"
-                    onClick={() => onSort({ sort: SIZE, desc: true })}
+                    onClick={() => {
+                        onSort({ sort: SIZE, desc: true });
+                        sendLargestFirstReport();
+                    }}
                 >
                     <IcSizeArrowDown className="toolbar-icon" />
                     <span>{SORT_OPTIONS.LARGE_TO_SMALL}</span>
@@ -101,7 +115,10 @@ const SortDropdown = ({ labelID, conversationMode, hasCaret, sort: { sort, desc 
                     data-testid="toolbar:sort-asc"
                     isSelected={sort === SIZE && !desc}
                     className="text-left flex gap-2"
-                    onClick={() => onSort({ sort: SIZE, desc: false })}
+                    onClick={() => {
+                        onSort({ sort: SIZE, desc: false });
+                        sendSmallestFirstReport();
+                    }}
                 >
                     <IcSizeArrowUp className="toolbar-icon" />
                     <span>{SORT_OPTIONS.SMALL_TO_LARGE}</span>
