@@ -8,7 +8,7 @@ import { getLocaleTermsURL } from '../../../../content/helper';
 
 const Terms = () => {
     const termsAndConditionsLink = (
-        <Href className="color-weak" key="terms" href={getLocaleTermsURL(APPS.PROTONDRIVE)}>
+        <Href className="color-weak" key="terms" href={getLocaleTermsURL(APPS.PROTONMAIL)}>
             {
                 // translator: Full sentence "By continuing, you agree to our terms and conditions and privacy policy."
                 c('new_plans: signup').t`terms and conditions`
@@ -17,7 +17,7 @@ const Terms = () => {
     );
 
     const privacyPolicyLink = (
-        <Href className="color-weak" key="privacy" href={getPrivacyPolicyURL(APPS.PROTONDRIVE)}>
+        <Href className="color-weak" key="privacy" href={getPrivacyPolicyURL(APPS.PROTONMAIL)}>
             {
                 // translator: Full sentence "By continuing, you agree to our terms and conditions and privacy policy."
                 c('Link').t`privacy policy`

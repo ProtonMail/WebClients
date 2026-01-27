@@ -203,7 +203,7 @@ export const PricingCard = () => {
                 checkResult: payments.checkResult,
                 plansMap: payments.plansMap,
                 planIDs: checkout.planIDs,
-                app: APPS.PROTONDRIVE,
+                app: APPS.PROTONMAIL,
             })}
         </div>
     );
