@@ -54,6 +54,17 @@ export const SESSION_RESUME_ALARM = 'alarm::session-resume';
 
 export const getSessionResumeAlarm = () => browser.alarms.get(SESSION_RESUME_ALARM).catch(noop);
 
+export const createLockAlarm = async (ttl: number) => {
+    const when = epochToMs(getEpoch() + ttl);
+    logger.debug(`[AuthService] Creating session-lock alarm  [${ttl}s]`);
+    await browser.alarms.create(SESSION_LOCK_ALARM, { when }).catch(noop);
+};
+
+export const clearLockAlarm = async () => {
+    logger.debug(`[AuthService] Clearing session-lock alarm`);
+    await browser.alarms.clear(SESSION_LOCK_ALARM).catch(noop);
+};
+
 export const getSessionResumeDelay = (retryCount: number) => {
     const retryIdx = Math.min(retryCount, FIBONACCI_LIST.length - 1);
     return SESSION_RESUME_RETRY_TIMEOUT * FIBONACCI_LIST[retryIdx];
@@ -78,7 +89,12 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
         authStore,
         onInit: withContext(async (ctx, options) => {
             browser.alarms.clear(SESSION_RESUME_ALARM).catch(noop);
-            browser.alarms.clear(SESSION_LOCK_ALARM).catch(noop);
+
+            /** If the client has managed to boot offline we should
+             * not clear the lock alarm in order to preserve the auto-locking
+             * capabilities. The `AuthService::init` sequence may be triggered
+             * when trying to auto-resume in the background */
+            if (!ctx.getState().booted) void clearLockAlarm();
 
             if (BUILD_TARGET === 'safari') {
                 const environment = getSecondLevelDomain(config.SSO_URL);
@@ -145,8 +161,8 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
             void ctx.service.storage.session.clear();
             void ctx.service.storage.local.clear({ preserve: ['features', 'pass::qa'] });
             void fileStorage.clearAll();
+            void clearLockAlarm();
 
-            browser.alarms.clear(SESSION_LOCK_ALARM).catch(noop);
             if (BUILD_TARGET === 'safari') void sendSafariMessage({ credentials: null });
         }),
 
@@ -200,17 +216,14 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
                 ctx.service.store.dispatch(lockSync(lock));
 
                 const { ttl, mode } = lock;
-                await browser.alarms.clear(SESSION_LOCK_ALARM);
+                await clearLockAlarm();
                 const booted = clientBooted(ctx.getState().status);
 
                 /* To avoid potential issues during the boot sequence, refrain from
                  * setting the `SESSION_LOCK_ALARM` immediately if the session is locked.
                  * This precaution is taken because the boot process might exceed the lock
                  * TTL duration, leading to an unsuccessful boot for the user */
-                if (booted && mode !== LockMode.NONE && ttl) {
-                    const when = epochToMs(getEpoch() + ttl);
-                    void browser.alarms.create(SESSION_LOCK_ALARM, { when });
-                }
+                if (booted && mode !== LockMode.NONE && ttl) void createLockAlarm(ttl);
             } catch {}
         }),
 
@@ -227,8 +240,7 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
              * clear the in-memory session storage */
             void ctx.service.storage.local.setItem('forceLock', true);
             void ctx.service.storage.session.removeItems(SESSION_KEYS);
-
-            browser.alarms.clear(SESSION_LOCK_ALARM).catch(noop);
+            void clearLockAlarm();
         }),
 
         onResumeStart: withContext<AuthServiceConfig['onResumeStart']>(async (ctx, { hasSession, memorySession }) => {
