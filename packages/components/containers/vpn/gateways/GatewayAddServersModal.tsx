@@ -32,6 +32,7 @@ interface Props extends ModalStateProps {
     usedCount: number;
     users: readonly GatewayUser[];
     countryOptions: CountryOptions;
+    citiesAlreadyInUse: string[];
     singleServer?: boolean;
     showCancelButton?: boolean;
     onSubmitDone: (quantities: Record<string, number>) => void;
@@ -47,6 +48,7 @@ const GatewayAddServersModal = ({
     countryOptions,
     onSubmitDone,
     onUpsell,
+    citiesAlreadyInUse,
     singleServer = false,
     showCancelButton = false,
     ...rest
@@ -123,6 +125,7 @@ const GatewayAddServersModal = ({
                                 addedCount={addedCount}
                                 deletedDedicatedIPs={deletedDedicatedIPs}
                                 countryOptions={countryOptions}
+                                citiesAlreadyInUse={citiesAlreadyInUse}
                                 model={model}
                                 onUpdateCheckedLocations={handleUpdateCheckedLocations}
                                 changeModel={changeModel}
