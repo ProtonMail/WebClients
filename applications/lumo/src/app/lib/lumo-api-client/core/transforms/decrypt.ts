@@ -1,28 +1,25 @@
-import { decryptUint8Array } from 'applications/lumo/src/app/crypto';
-import { consider } from 'applications/lumo/src/app/util/nullable';
-
+import { decryptUint8Array } from '../../../../crypto';
+import { consider } from '../../../../util/nullable';
 import { decryptString } from '../encryption';
 import type { RequestEncryptionParams } from '../encryptionParams';
 import type { GenerationResponseMessage, GenerationResponseMessageDecrypted } from '../types';
 
 export type DecryptionTransformerParams = {
-    encryption: RequestEncryptionParams | null
+    encryption: RequestEncryptionParams | null;
 };
 
 function makeResponseAd(requestId: string) {
     return `lumo.response.${requestId}.chunk`;
 }
 
-const makeDecryptionTransformer = (encryption: RequestEncryptionParams | null): Transformer<GenerationResponseMessage, GenerationResponseMessageDecrypted> => {
+const makeDecryptionTransformer = (
+    encryption: RequestEncryptionParams | null
+): Transformer<GenerationResponseMessage, GenerationResponseMessageDecrypted> => {
     const responseAd = consider(makeResponseAd)(encryption?.requestId);
     return {
         async transform(value: GenerationResponseMessage, controller: TransformStreamDefaultController) {
             // Decrypt token_data (text chunks)
-            const shouldDecryptText =
-                value.type === 'token_data' &&
-                value.encrypted &&
-                encryption &&
-                responseAd;
+            const shouldDecryptText = value.type === 'token_data' && value.encrypted && encryption && responseAd;
 
             if (shouldDecryptText) {
                 try {
@@ -43,11 +40,7 @@ const makeDecryptionTransformer = (encryption: RequestEncryptionParams | null): 
 
             // Decrypt image_data (binary chunks)
             const shouldDecryptImage =
-                value.type === 'image_data' &&
-                value.encrypted &&
-                value.data &&
-                encryption &&
-                responseAd;
+                value.type === 'image_data' && value.encrypted && value.data && encryption && responseAd;
 
             if (shouldDecryptImage) {
                 try {
