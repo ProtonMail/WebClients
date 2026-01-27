@@ -19,6 +19,7 @@ interface InlineImageComponentProps {
 export const InlineImageComponent: React.FC<InlineImageComponentProps> = ({ attachmentId, alt }) => {
     const dispatch = useLumoDispatch();
     const { data: attachment, isLoading, error } = useLazyAttachment(attachmentId);
+    const spaceId = attachment?.spaceId;
     const [showModal, setShowModal] = useState(false);
     const [showDownload, setShowDownload] = useState(false);
     const [showModalButtons, setShowModalButtons] = useState(false);
@@ -36,8 +37,35 @@ export const InlineImageComponent: React.FC<InlineImageComponentProps> = ({ atta
     // Handle retry on error
     const handleRetry = () => {
         dispatch(clearAttachmentLoading(attachmentId));
-        dispatch(pullAttachmentRequest({ id: attachmentId }));
+        if (spaceId) dispatch(pullAttachmentRequest({ id: attachmentId, spaceId }));
     };
+
+    const handleDownload = () => {
+        if (!attachment) return;
+        if (!imageDataUrl) return;
+        const link = document.createElement('a');
+        link.href = imageDataUrl;
+        link.download = attachment.filename;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    };
+
+    // Handle ESC key to close modal
+    useEffect(() => {
+        if (!showModal) return;
+
+        const handleKeyDown = (e: KeyboardEvent) => {
+            if (e.key === 'Escape') {
+                setShowModal(false);
+            }
+        };
+
+        window.addEventListener('keydown', handleKeyDown);
+        return () => {
+            window.removeEventListener('keydown', handleKeyDown);
+        };
+    }, [showModal]);
 
     // Show error UI with retry button
     if (error || !attachment) {
@@ -84,32 +112,6 @@ export const InlineImageComponent: React.FC<InlineImageComponentProps> = ({ atta
             </div>
         );
     }
-
-    const handleDownload = () => {
-        if (!attachment) return;
-        const link = document.createElement('a');
-        link.href = imageDataUrl;
-        link.download = attachment.filename;
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-    };
-
-    // Handle ESC key to close modal
-    useEffect(() => {
-        if (!showModal) return;
-
-        const handleKeyDown = (e: KeyboardEvent) => {
-            if (e.key === 'Escape') {
-                setShowModal(false);
-            }
-        };
-
-        window.addEventListener('keydown', handleKeyDown);
-        return () => {
-            window.removeEventListener('keydown', handleKeyDown);
-        };
-    }, [showModal]);
 
     return (
         <>
