@@ -21,8 +21,8 @@
         "test:watch": "yarn test --watch"
     },
     "dependencies": {
-        "@livekit/components-react": "^2.9.17",
-        "@livekit/krisp-noise-filter": "^0.4.0",
+        "@livekit/components-react": "^2.9.19",
+        "@livekit/krisp-noise-filter": "^0.4.1",
         "@livekit/track-processors": "^0.7.0",
         "@proton-meet/proton-meet-core": "1.0.1-2",
         "@proton/atoms": "workspace:packages/atoms",
@@ -58,8 +58,8 @@
         "@vitest/coverage-v8": "3.2.4",
         "@vitest/ui": "3.2.4",
         "eslint": "^9.39.2",
-        "happy-dom": "^20.0.11",
-        "prettier": "^3.7.4",
+        "happy-dom": "^20.3.7",
+        "prettier": "^3.8.1",
         "typescript": "^5.9.3",
         "vitest": "^3.2.4"
     }

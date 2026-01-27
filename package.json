@@ -26,14 +26,14 @@
         "@pdf-lib/standard-fonts@^1.0.0": "patch:@pdf-lib/standard-fonts@npm%3A1.0.0#./.yarn/patches/@pdf-lib-standard-fonts-npm-1.0.0-963255903e.patch",
         "@storybook/react-docgen-typescript-plugin": "1.0.6--canary.9.f9c48c0.0",
         "electron-winstaller": "^5.4.0",
-        "immer": "^11.1.0",
+        "immer": "^11.1.3",
         "jsdom@npm:^26.1.0": "patch:jsdom@npm%3A26.1.0#~/.yarn/patches/jsdom-npm-26.1.0-3857255f02.patch",
         "json5": "^2.2.3",
         "merge": "^2.1.1",
         "node-gyp": "^11.5.0",
         "rfc2047@^2.0.1": "patch:rfc2047@npm%3A2.0.1#./.yarn/patches/rfc2047-npm-2.0.1-60a2a07c99.patch",
         "safe-buffer": "^5.2.1",
-        "terser": "^5.44.1",
+        "terser": "^5.46.0",
         "whatwg-url": "^14.2.0"
     },
     "dependencies": {
@@ -46,15 +46,15 @@
         "typescript": "^5.9.3"
     },
     "devDependencies": {
-        "@trivago/prettier-plugin-sort-imports": "^6.0.0",
+        "@trivago/prettier-plugin-sort-imports": "^6.0.2",
         "@types/global-types-monorepo": "workspace:^",
         "@types/jest-when": "^3.5.5",
         "husky": "^9.1.7",
         "lint-staged": "^16.2.7",
         "nyc": "^17.1.0",
-        "prettier": "^3.7.4",
+        "prettier": "^3.8.1",
         "sort-package-json": "^3.6.0",
-        "turbo": "^2.7.1"
+        "turbo": "^2.7.5"
     },
     "packageManager": "yarn@4.12.0",
     "engines": {

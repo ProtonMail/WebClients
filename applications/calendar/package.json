@@ -62,7 +62,7 @@
         "react-router-dom": "^5.3.4",
         "tinycolor2": "^1.6.0",
         "ttag": "^1.8.12",
-        "zustand": "^5.0.9"
+        "zustand": "^5.0.10"
     },
     "devDependencies": {
         "@babel/preset-typescript": "^7.28.5",
@@ -77,13 +77,13 @@
         "@types/jest": "^30.0.0",
         "babel-jest": "^30.2.0",
         "babel-plugin-transform-require-context": "^0.1.1",
-        "core-js": "^3.47.0",
+        "core-js": "^3.48.0",
         "cross-env": "^10.1.0",
         "eslint": "^9.39.2",
-        "html-webpack-plugin": "^5.6.5",
+        "html-webpack-plugin": "^5.6.6",
         "jest": "^30.2.0",
         "jest-junit": "^16.0.0",
-        "prettier": "^3.7.4",
+        "prettier": "^3.8.1",
         "typescript": "^5.9.3"
     }
 }
