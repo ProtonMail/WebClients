@@ -38,11 +38,11 @@
         "eslint-plugin-no-only-tests": "^3.3.0",
         "eslint-plugin-react": "^7.37.5",
         "eslint-plugin-react-hooks": "^7.0.1",
-        "eslint-plugin-testing-library": "^7.15.1",
-        "typescript-eslint": "^8.50.0"
+        "eslint-plugin-testing-library": "^7.15.4",
+        "typescript-eslint": "^8.53.1"
     },
     "peerDependencies": {
-        "prettier": "3.7.4",
+        "prettier": "3.8.1",
         "typescript": "^5.9.3"
     }
 }

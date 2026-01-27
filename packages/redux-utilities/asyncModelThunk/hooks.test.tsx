@@ -64,7 +64,7 @@ describe('hooks', () => {
             initialState,
             reducers: {
                 reset: (state) => {
-                    state.value = undefined;
+                    state.value = undefined as any;
                     state.error = undefined;
                 },
             },
