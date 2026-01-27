@@ -1,3 +1,5 @@
+import cloneDeep from 'lodash/cloneDeep';
+
 import { type ProxiedSettings, getInitialSettings } from '@proton/pass/store/reducers/settings';
 import type { MaybeNull, MaybePromise } from '@proton/pass/types';
 import { merge } from '@proton/pass/utils/object/merge';
@@ -22,8 +24,8 @@ export const createSettingsService = (options: SettingsServiceOptions): Settings
             state.settings = null;
             await options.clear(localID);
         },
-        resolve: async (localID) =>
-            (state.settings =
+        resolve: async (localID) => {
+            state.settings =
                 state.settings ??
                 (await (async () => {
                     try {
@@ -32,10 +34,13 @@ export const createSettingsService = (options: SettingsServiceOptions): Settings
                     } catch {
                         return getInitialSettings();
                     }
-                })())),
+                })());
+
+            return cloneDeep(state.settings);
+        },
 
         sync: async (settings, localID) => {
-            state.settings = settings;
+            state.settings = cloneDeep(settings);
             await options.sync(settings, localID);
         },
     };
