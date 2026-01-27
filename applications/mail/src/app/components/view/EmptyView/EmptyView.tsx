@@ -39,9 +39,10 @@ interface Props {
     labelID: string;
     isSearch: boolean;
     isUnread: boolean;
+    isTaskRunningInLabel: boolean;
 }
 
-const EmptyView = ({ labelID, isSearch, isUnread }: Props) => {
+const EmptyView = ({ labelID, isSearch, isUnread, isTaskRunningInLabel }: Props) => {
     const theme = useTheme();
 
     const { esStatus } = useEncryptedSearchContext();
@@ -69,6 +70,14 @@ const EmptyView = ({ labelID, isSearch, isUnread }: Props) => {
             coolLight: noResultFolderSvgCool,
             coolDark: noResultFolderSvgDark,
         });
+
+        if (isTaskRunningInLabel) {
+            // TODO maybe we should display another illustration here
+            return {
+                src: folderPicture,
+                alt: c('Search - no results').t`No messages found`,
+            };
+        }
 
         if (isSpam) {
             return {
@@ -148,7 +157,7 @@ const EmptyView = ({ labelID, isSearch, isUnread }: Props) => {
         <EmptyViewWrapper
             imgProps={imageProps()}
             height={128}
-            title={getEmptyViewTitle({ isSearch, isFolder, isScheduled, labelID })}
+            title={getEmptyViewTitle({ isSearch, isFolder, isScheduled, labelID, isTaskRunningInLabel })}
             description={getEmptyViewDescription({
                 isSearch,
                 isEncryptedSearchEnabled,
@@ -156,6 +165,7 @@ const EmptyView = ({ labelID, isSearch, isUnread }: Props) => {
                 labelID,
                 isScheduled,
                 scheduleButtonOnClick: () => onCompose({ type: ComposeTypes.newMessage, action: MESSAGE_ACTIONS.NEW }),
+                isTaskRunningInLabel,
             })}
         >
             {isSearch && !isEncryptedSearchEnabled && (

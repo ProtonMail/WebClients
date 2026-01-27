@@ -129,7 +129,9 @@ export const loadFulfilled = (
         taskRunning,
     });
 
-    state.total[contextFilter] = Total;
+    if (!state.taskRunning.labelIDs.includes(params.labelID)) {
+        state.total[contextFilter] = Total;
+    }
 };
 
 /**
@@ -146,6 +148,10 @@ export const showSerializedElements = (
         result: { Total, Elements },
         page,
     } = action.payload;
+
+    if (state.taskRunning.labelIDs.includes(params.labelID)) {
+        return;
+    }
 
     const contextFilter = getElementContextIdentifier({
         labelID: params.labelID,
@@ -373,12 +379,14 @@ export const backendActionFinished = (state: Draft<ElementsState>) => {
 
 export const selectAllFulfilled = (
     state: Draft<ElementsState>,
-    { payload: { LabelID, timeoutID } }: PayloadAction<{ LabelID: string; timeoutID: NodeJS.Timeout }>
+    { payload: { LabelID, timeoutID } }: PayloadAction<{ LabelID?: string; timeoutID?: NodeJS.Timeout }>
 ) => {
-    if (!state.taskRunning.labelIDs.includes(LabelID)) {
+    if (LabelID && !state.taskRunning.labelIDs.includes(LabelID)) {
         state.taskRunning.labelIDs.push(LabelID);
     }
-    state.taskRunning.timeoutID = timeoutID;
+    if (timeoutID) {
+        state.taskRunning.timeoutID = timeoutID;
+    }
 };
 
 export const pollTaskRunningFulfilled = (state: Draft<ElementsState>, { payload }: PayloadAction<TaskRunningInfo>) => {

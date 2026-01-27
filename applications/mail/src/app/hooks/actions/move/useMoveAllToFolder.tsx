@@ -1,12 +1,9 @@
 import type { Dispatch, SetStateAction } from 'react';
-import { useCallback } from 'react';
 
 import { useApi, useModalTwo, useNotifications } from '@proton/components';
-import { useFolders, useGetLabels, useLabels } from '@proton/mail';
-import { isCustomLabel } from '@proton/mail/helpers/location';
+import { useFolders, useLabels } from '@proton/mail';
+import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { TelemetryMailSelectAllEvents } from '@proton/shared/lib/api/telemetry';
-import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import { useFlag } from '@proton/unleash';
 
 import { folderLocation } from 'proton-mail/components/list/list-telemetry/listTelemetryHelper';
 import useListTelemetry, {
@@ -17,18 +14,16 @@ import useListTelemetry, {
 } from 'proton-mail/components/list/list-telemetry/useListTelemetry';
 import MoveAllModal from 'proton-mail/components/list/select-all/modals/MoveAllModal';
 import SelectAllMoveModal from 'proton-mail/components/list/select-all/modals/SelectAllMoveModal';
-import { isElementMessage } from 'proton-mail/helpers/elements';
+import { isConversationMode } from 'proton-mail/helpers/mailSettings';
 import {
     getCleanedFolderID,
     getNotificationTextUnauthorized,
     sendSelectAllTelemetryReport,
 } from 'proton-mail/helpers/moveToFolder';
 import { getSelectAllNotificationText } from 'proton-mail/helpers/selectAll';
-import { useOptimisticApplyLabels } from 'proton-mail/hooks/optimistic/useOptimisticApplyLabels';
 import type { Element } from 'proton-mail/models/element';
 import { backendActionStarted, moveAll } from 'proton-mail/store/elements/elementsActions';
-import { elementsMap as elementsMapSelector } from 'proton-mail/store/elements/elementsSelectors';
-import { useMailDispatch, useMailStore } from 'proton-mail/store/hooks';
+import { useMailDispatch } from 'proton-mail/store/hooks';
 import { layoutActions } from 'proton-mail/store/layout/layoutSlice';
 
 export enum MoveAllType {
@@ -60,14 +55,11 @@ type MoveAllToFolderArgs = MoveAllParams | SelectAllParams;
  */
 export const useMoveAllToFolder = (setContainFocus?: Dispatch<SetStateAction<boolean>>) => {
     const api = useApi();
+    const [mailSettings] = useMailSettings();
     const [folders = []] = useFolders();
     const [labels = []] = useLabels();
     const { createNotification } = useNotifications();
     const dispatch = useMailDispatch();
-    const store = useMailStore();
-    const optimisticApplyLabels = useOptimisticApplyLabels();
-    const canUseOptimistic = useFlag('SelectAllOptimistic');
-    const getLabels = useGetLabels();
     const { sendSimpleActionReport } = useListTelemetry();
 
     const [selectAllMoveModal, handleShowSelectAllMoveModal] = useModalTwo(SelectAllMoveModal);
@@ -90,112 +82,97 @@ export const useMoveAllToFolder = (setContainFocus?: Dispatch<SetStateAction<boo
             event: telemetryEvent,
         });
 
-        const state = store.getState();
-        const elements = Object.values(elementsMapSelector(state));
-        const isMessage = isElementMessage(elements[0]);
-
-        const labels = (await getLabels()) || [];
-
         // We are applying the select all updates optimistically. However, new load request would cancel the optimistic updates.
         // Here we are adding a new pending action to the store to prevent loading elements from useElement hook.
         // Once the request is done, we do know what are the Task running in the labelID
         // We then can remove the pending action, and block new load requests for the time we have Task running inside a label
         dispatch(backendActionStarted());
-        let rollback;
-        if (canUseOptimistic) {
-            rollback = optimisticApplyLabels({
-                elements,
-                inputChanges: { [destinationLabelID]: true },
-                isMove: true,
-                unreadStatuses: [],
-                // We need to pass a "real" folder to perform optimistic on custom labels
-                currentLabelID: isCustomLabel(sourceLabelID, labels) ? MAILBOX_LABEL_IDS.INBOX : sourceLabelID,
-            });
-        }
 
-        void dispatch(moveAll({ SourceLabelID: sourceLabelID, DestinationLabelID: destinationLabelID, rollback }));
+        void dispatch(moveAll({ SourceLabelID: sourceLabelID, DestinationLabelID: destinationLabelID }));
+
+        const isMessageMode = !isConversationMode(sourceLabelID, mailSettings);
 
         createNotification({
-            text: getSelectAllNotificationText(isMessage),
+            text: getSelectAllNotificationText(isMessageMode),
         });
     };
 
-    const selectAllCallback = useCallback(
-        async ({ sourceLabelID, destinationLabelID, authorizedToMove, isMessage, onCheckAll }: SelectAllParams) => {
-            if (!authorizedToMove.length) {
-                createNotification({
-                    text: getNotificationTextUnauthorized(destinationLabelID, sourceLabelID),
-                    type: 'error',
-                });
-                return;
-            }
-
-            setContainFocus?.(false);
-            await handleShowSelectAllMoveModal({
-                labelID: sourceLabelID,
-                isMessage: isMessage,
-                destinationID: destinationLabelID,
-                onCloseCustomAction: () => setContainFocus?.(true),
+    const selectAllCallback = async ({
+        sourceLabelID,
+        destinationLabelID,
+        authorizedToMove,
+        isMessage,
+        onCheckAll,
+    }: SelectAllParams) => {
+        if (!authorizedToMove.length) {
+            createNotification({
+                text: getNotificationTextUnauthorized(destinationLabelID, sourceLabelID),
+                type: 'error',
             });
+            return;
+        }
 
-            void handleMoveAllToFolder({
-                sourceLabelID,
-                destinationLabelID,
-                telemetryEvent: TelemetryMailSelectAllEvents.banner_move_to,
-            });
+        setContainFocus?.(false);
+        await handleShowSelectAllMoveModal({
+            labelID: sourceLabelID,
+            isMessage: isMessage,
+            destinationID: destinationLabelID,
+            onCloseCustomAction: () => setContainFocus?.(true),
+        });
 
-            // Clear elements selection
-            onCheckAll?.(false);
+        void handleMoveAllToFolder({
+            sourceLabelID,
+            destinationLabelID,
+            telemetryEvent: TelemetryMailSelectAllEvents.banner_move_to,
+        });
 
-            dispatch(layoutActions.setSelectAll(false));
-        },
-        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-5F94FC
-        [canUseOptimistic]
-    );
+        // Clear elements selection
+        onCheckAll?.(false);
 
-    const moveAllCallback = useCallback(
-        async ({ sourceLabelID, destinationLabelID, telemetryEvent, sourceAction }: MoveAllParams) => {
-            await handleMoveAllMoveModal({
-                destinationLabelID,
-            });
+        dispatch(layoutActions.setSelectAll(false));
+    };
 
-            const destinationFolder = folderLocation(destinationLabelID, labels, folders);
+    const moveAllCallback = async ({
+        sourceLabelID,
+        destinationLabelID,
+        telemetryEvent,
+        sourceAction,
+    }: MoveAllParams) => {
+        await handleMoveAllMoveModal({
+            destinationLabelID,
+        });
 
-            sendSimpleActionReport({
-                actionType:
-                    destinationFolder === 'CUSTOM_FOLDER'
-                        ? ACTION_TYPE.MOVE_TO_CUSTOM_FOLDER
-                        : getActionFromLabel(destinationLabelID),
-                actionLocation: sourceAction,
-                numberMessage: SELECTED_RANGE.ALL,
-                destination: destinationFolder,
-            });
+        const destinationFolder = folderLocation(destinationLabelID, labels, folders);
 
-            void handleMoveAllToFolder({
-                sourceLabelID,
-                destinationLabelID,
-                telemetryEvent,
-            });
-        },
-        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-469BDA
-        [canUseOptimistic, folders, labels]
-    );
+        sendSimpleActionReport({
+            actionType:
+                destinationFolder === 'CUSTOM_FOLDER'
+                    ? ACTION_TYPE.MOVE_TO_CUSTOM_FOLDER
+                    : getActionFromLabel(destinationLabelID),
+            actionLocation: sourceAction,
+            numberMessage: SELECTED_RANGE.ALL,
+            destination: destinationFolder,
+        });
+
+        void handleMoveAllToFolder({
+            sourceLabelID,
+            destinationLabelID,
+            telemetryEvent,
+        });
+    };
 
     // Depending on the case, we want to launch a select all or a move all
     // Both actions have the same result, however, we do not have the same data and
     // there are some additional actions to perform with the select all (e.g. unselect all items)
-    const moveAllToFolder = useCallback(
-        async (args: MoveAllToFolderArgs) => {
-            const { type } = args;
+    const moveAllToFolder = async (args: MoveAllToFolderArgs) => {
+        const { type } = args;
 
-            if (type === MoveAllType.selectAll) {
-                await selectAllCallback(args as SelectAllParams);
-            } else if (type === MoveAllType.moveAll) {
-                await moveAllCallback(args as MoveAllParams);
-            }
-        },
-        [moveAllCallback, selectAllCallback]
-    );
+        if (type === MoveAllType.selectAll) {
+            await selectAllCallback(args as SelectAllParams);
+        } else if (type === MoveAllType.moveAll) {
+            await moveAllCallback(args as MoveAllParams);
+        }
+    };
 
     return { moveAllToFolder, selectAllMoveModal, moveAllModal };
 };

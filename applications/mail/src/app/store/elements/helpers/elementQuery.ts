@@ -83,7 +83,7 @@ export const queryElementsInBatch = async (
         params: ElementsStateParams;
         abortController?: AbortController;
     },
-    onSerializedResponse?: (param: { index: number; result: QueryResults; page: number }) => void
+    onSerializedResponse?: (param: { result: QueryResults; page: number }) => void
 ) => {
     const { conversationMode } = params;
 
@@ -152,7 +152,7 @@ export const queryElementsInBatch = async (
                     ...pick(result, ['Stale', 'TasksRunning']),
                 };
 
-                onSerializedResponse?.({ index, result: queryResult, page: page + index });
+                onSerializedResponse?.({ result: queryResult, page: page + index });
                 return queryResult;
             });
         },

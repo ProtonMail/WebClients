@@ -36,6 +36,7 @@ const SelectAllBanner = ({ labelID, onCheckAll }: Props) => {
                     color="norm"
                     title={buttonText}
                     ref={anchorRef}
+                    data-testid="select-all:banner-button"
                 >
                     {buttonText}
                 </InlineLinkButton>
