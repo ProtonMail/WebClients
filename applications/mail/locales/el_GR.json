@@ -1036,9 +1036,6 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Ανοίξτε τις ρυθμίσεις του ${ CALENDAR_APP_NAME }"
       ],
-      "Open in ${ SHEETS_APP_NAME }": [
-        "Άνοιγμα με ${ SHEETS_APP_NAME }"
-      ],
       "Open navigation": [
         "Άνοιγμα μενού πλοήγησης"
       ],
@@ -1702,6 +1699,11 @@
     "action": {
       "Search messages": [
         "Αναζήτηση μηνυμάτων"
+      ]
+    },
+    "Action: Sheets": {
+      "Open in ${ SHEETS_APP_NAME }": [
+        "Άνοιγμα με ${ SHEETS_APP_NAME }"
       ]
     },
     "Actions message": {

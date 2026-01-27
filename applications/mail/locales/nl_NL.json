@@ -1036,9 +1036,6 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Open ${ CALENDAR_APP_NAME }-instellingen"
       ],
-      "Open in ${ SHEETS_APP_NAME }": [
-        "Openen in ${ SHEETS_APP_NAME }"
-      ],
       "Open navigation": [
         "Navigatie openen"
       ],
@@ -1702,6 +1699,11 @@
     "action": {
       "Search messages": [
         "Doorzoek berichten"
+      ]
+    },
+    "Action: Sheets": {
+      "Open in ${ SHEETS_APP_NAME }": [
+        "Openen in ${ SHEETS_APP_NAME }"
       ]
     },
     "Actions message": {
@@ -7845,6 +7847,9 @@
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Contacteer ons voor hulp met ${ BRAND_NAME }."
       ],
+      "Receive notifications for ${ categoryLabel }": [
+        "Ontvang meldingen voor ${ categoryLabel }"
+      ],
       "Recipient: ": [
         "Ontvanger: "
       ],
@@ -9271,6 +9276,9 @@
       "Cash": [
         "Contant"
       ],
+      "Categories": [
+        "Categorieën"
+      ],
       "Categories badge": [
         "Categorieën badge"
       ],
@@ -9750,6 +9758,9 @@
       ],
       "Search in": [
         "Zoeken in"
+      ],
+      "Select the categories to include and manage notifications for new emails.": [
+        "Selecteer de categorieën die u wilt opnemen en beheer meldingen voor nieuwe e-mails."
       ],
       "Send auto-reply": [
         "Automatisch antwoord versturen"

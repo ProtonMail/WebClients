@@ -1036,9 +1036,6 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "${ CALENDAR_APP_NAME }-ის მორგება"
       ],
-      "Open in ${ SHEETS_APP_NAME }": [
-        "${ SHEETS_APP_NAME }-ში გახსნა"
-      ],
       "Open navigation": [
         "ნავიგაციის გახსნა"
       ],
@@ -1704,6 +1701,11 @@
         "შეტყობინებების ძებნა"
       ]
     },
+    "Action: Sheets": {
+      "Open in ${ SHEETS_APP_NAME }": [
+        "${ SHEETS_APP_NAME }-ში გახსნა"
+      ]
+    },
     "Actions message": {
       "${ addContact } or ${ importContact }.": [
         "${ addContact } ან ${ importContact }."
@@ -2167,6 +2169,9 @@
       ],
       "Payments problem": [
         "გადახდის პრობლემა"
+      ],
+      "Sheets problem": [
+        "Sheets-ის პრობლემა"
       ],
       "Sign in problem": [
         "შესვლის პრობლემა"
@@ -7744,6 +7749,9 @@
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "გამოაღწიეთ ჩვენამდე, თუ ${ BRAND_NAME }-ის შესახებ ნებისმიერი კითხვა გაგიჩნდათ."
       ],
+      "Receive notifications for ${ categoryLabel }": [
+        "შეტყობინებების მიღება ${ categoryLabel }-ისთვის"
+      ],
       "Recipient: ": [
         "მიმღები: "
       ],
@@ -8111,6 +8119,15 @@
       ],
       "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
         "ეს შეტყობინება გადატანილი იქნება მონახაზებში და თქვენ მომავალშიც შეძლებთ მის ჩასწორებას. ასევე შეგიძლიათ, განსაზღვროთ, როდის გაიგზავნება ის."
+      ],
+      "This message will be purged on ${ value }": [
+        "ეს შეტყობინება წაიშლება ${ value }"
+      ],
+      "This message will be purged today at ${ value }": [
+        "ამ შეტყობინების ვადა იწურება დღეს, ${ value }-ზე"
+      ],
+      "This message will be purged tomorrow at ${ value }": [
+        "ეს შეტყობინება ხვალ, ${ value }-ზე წაიშლება"
       ],
       "This message will be sent in the morning at ${ formattedTime }": [
         "ეს შეტყობინება დილით, ${ formattedTime }-ზე გაიგზავნება"
@@ -10221,6 +10238,10 @@
       ]
     },
     "meet_2025: Feature": {
+      "${ n } active meeting at a time": [
+        "${ n } ერთდროული აქტიური შეხვედრა",
+        "${ n } ერთდროული აქტიური შეხვედრა"
+      ],
       "24 hours per meeting": [
         "24 საათი თითო შეხვედრისთვის"
       ],
@@ -10230,11 +10251,31 @@
       "Appointment scheduling": [
         "შეხვედრის დაგეგმვა"
       ],
+      "Browser, mobile, and desktop apps": [
+        "ბრაუზერის, მობილურის და კომპიუტეირს აპები"
+      ],
       "Built-in chat": [
         "ჩაშენებული ჩატი"
       ],
+      "Meeting recording (coming soon)": [
+        "შეხვედრის ჩანაწერი (მალე)"
+      ],
+      "One active meeting at a time": [
+        "ერთი აქტიური შეხვედრა ერთდროულად"
+      ],
       "Screen-sharing": [
         "ეკრანის გაზიარება"
+      ],
+      "Unlimited meetings per day": [
+        "შეუზღუდავი შეხვედრები დღეში"
+      ],
+      "Up to ${ n } meeting per day": [
+        "${ n } შეხვედრამდე დღეში",
+        "${ n } შეხვედრამდე დღეში"
+      ],
+      "Up to ${ n } participant": [
+        "${ n }-მდე მონაწილე",
+        "${ n }-მდე მონაწილე"
       ]
     },
     "Message": {
@@ -14395,6 +14436,9 @@
       "Download ${ VPN_APP_NAME }": [
         "${ VPN_APP_NAME }-ის გადმოწერა"
       ],
+      "Download the desktop app": [
+        "გადმოწერეთ კომპიუტერის აპი"
+      ],
       "Enable ${ DARK_WEB_MONITORING_NAME }": [
         "${ DARK_WEB_MONITORING_NAME }-ის ჩართვა"
       ],
@@ -15291,6 +15335,9 @@
       ],
       "To": [
         "ვის"
+      ],
+      "To preview this spreadsheet, download it.": [
+        "ამ ელცხრილის მინიატურისთვის გადმოწერეთ ის."
       ],
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "ამ ელცხრილის გადასახედად გახსენით ${ SHEETS_APP_NAME }-ში, ან გადმოწერეთ ის."

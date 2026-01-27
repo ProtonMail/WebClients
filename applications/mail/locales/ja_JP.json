@@ -1032,9 +1032,6 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "${ CALENDAR_APP_NAME } の設定を開く"
       ],
-      "Open in ${ SHEETS_APP_NAME }": [
-        "${ SHEETS_APP_NAME } で開く"
-      ],
       "Open navigation": [
         "ナビゲーションを開く"
       ],
@@ -1696,6 +1693,11 @@
     "action": {
       "Search messages": [
         "メッセージを検索"
+      ]
+    },
+    "Action: Sheets": {
+      "Open in ${ SHEETS_APP_NAME }": [
+        "${ SHEETS_APP_NAME } で開く"
       ]
     },
     "Actions message": {
