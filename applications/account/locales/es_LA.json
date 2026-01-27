@@ -1053,11 +1053,8 @@
       "Open ${ PASS_APP_NAME } in your browser": [
         "Abra ${ PASS_APP_NAME } en su navegador"
       ],
-      "Open in ${ SHEETS_APP_NAME }": [
-        "Abrir en ${ SHEETS_APP_NAME }"
-      ],
       "Open in new tab": [
-        "Abrir en una nueva pestaña"
+        "Abrir en una pestaña nueva"
       ],
       "Open navigation": [
         "Abrir navegación"
@@ -1088,6 +1085,9 @@
       ],
       "Pay ${ price } now": [
         "Pagar ${ price } ahora"
+      ],
+      "Pay once": [
+        "Pagar una vez"
       ],
       "Preview": [
         "Vista previa"
@@ -1295,6 +1295,9 @@
       ],
       "See plan features": [
         "Ver funcionalidades del plan"
+      ],
+      "Select": [
+        "Seleccionar"
       ],
       "Select ${ planOrAppName }": [
         "Seleccionar ${ planOrAppName }"
@@ -1719,6 +1722,11 @@
     "Action subscription": {
       "Reactivate": [
         "Reactivar"
+      ]
+    },
+    "Action: Sheets": {
+      "Open in ${ SHEETS_APP_NAME }": [
+        "Abrir en ${ SHEETS_APP_NAME }"
       ]
     },
     "Action; accept invitation to share calendar": {
@@ -10500,6 +10508,9 @@
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "El precio incluye todos los descuentos aplicables basados en ciclos y los cupones vigentes guardados en la cuenta."
       ],
+      "Privacy and security starts here": [
+        "La privacidad y la seguridad comienzan aquí"
+      ],
       "Private AI assistant": [
         "Asistente de IA privado"
       ],
@@ -11466,6 +11477,9 @@
       "With email categories, important messages land in a primary inbox. Everything else is organized into categories.": [
         "Con las categorías de correo electrónico, los mensajes importantes llegan a su bandeja de entrada principal. Todo lo demás se organiza en categorías."
       ],
+      "With groups, you can implement the company security policies for access control and reduce the risk of accessing unauthorised data.": [
+        "Con los grupos, puede implementar las políticas de seguridad de la empresa para el control de acceso y reducir el riesgo de acceso a datos no autorizados."
+      ],
       "With groups, you can quickly and easily send emails to all the people in a specified group.": [
         "Con los grupos podrá enviar correos a todos los miembros de un grupo específico de manera rápida y sencilla."
       ],
@@ -12406,6 +12420,9 @@
         "${ nbYear } año",
         "${ nbYear } años"
       ],
+      "${ pricePerMonthWithCurrency } / month": [
+        "${ pricePerMonthWithCurrency }/mes"
+      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(No disponible temporalmente. Compruebe más tarde.)"
       ],
@@ -12636,6 +12653,12 @@
       ],
       "Beta": [
         "Beta"
+      ],
+      "Billed at ${ priceYearly } every 12 months.": [
+        "Con un costo de ${ priceYearly } cada 12 meses."
+      ],
+      "Billed monthly.": [
+        "Facturado mensualmente."
       ],
       "Billing cycle": [
         "Ciclo de facturación"
@@ -13129,6 +13152,9 @@
       "Level for NetShield blocker filtering": [
         "Nivel de filtrado del bloqueador NetShield"
       ],
+      "Limited time": [
+        "Por tiempo limitado"
+      ],
       "Link label (optional)": [
         "Etiqueta de enlace (opcional)"
       ],
@@ -13195,6 +13221,9 @@
       "Moderate NAT": [
         "NAT moderada"
       ],
+      "Most popular": [
+        "Más popular"
+      ],
       "Move to": [
         "Mover a"
       ],
@@ -13235,7 +13264,7 @@
         "Nueva segunda contraseña"
       ],
       "No (users cannot use the app until a vault is shared with them)": [
-        "No (los usuarios no podrán usar la aplicación hasta que se comparta una caja fuerte con ellos)"
+        "No (los usuarios no podrán usar la aplicación hasta que se comparta una bóveda con ellos)"
       ],
       "No filter": [
         "Sin filtro"
@@ -13265,7 +13294,7 @@
         "Privacidad en línea para toda la familia"
       ],
       "Only a single personal vault can be created": [
-        "Solo se puede crear una caja fuerte personal"
+        "Solo se puede crear una bóveda personal"
       ],
       "Only available on ${ PASS_SHORT_APP_NAME } paid plans": [
         "Solo disponible en los planes de pago de ${ PASS_SHORT_APP_NAME }"
@@ -13314,6 +13343,9 @@
       ],
       "Password strength": [
         "Nivel de seguridad de la contraseña"
+      ],
+      "Pay once, access forever.": [
+        "Pago único, acceso para siempre"
       ],
       "Payer": [
         "Pagador"
@@ -21837,6 +21869,9 @@
       "An address for each role": [
         "Una dirección para cada rol"
       ],
+      "Annual": [
+        "Anual"
+      ],
       "Anytime, anywhere access": [
         "Acceso en cualquier momento y en cualquier lugar"
       ],
@@ -22576,6 +22611,9 @@
       "Leave group?": [
         "¿Desea salir del grupo?"
       ],
+      "Lifetime": [
+        "De por vida"
+      ],
       "Limit reached": [
         "Límite alcanzado"
       ],
@@ -22602,6 +22640,9 @@
       ],
       "Mobile": [
         "Móvil"
+      ],
+      "Monthly": [
+        "Mensual"
       ],
       "Multi-user support": [
         "Soporte multi usuario"

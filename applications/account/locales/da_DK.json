@@ -1053,9 +1053,6 @@
       "Open ${ PASS_APP_NAME } in your browser": [
         "Åbn ${ PASS_APP_NAME } i din browser"
       ],
-      "Open in ${ SHEETS_APP_NAME }": [
-        "Åbn i ${ SHEETS_APP_NAME }"
-      ],
       "Open in new tab": [
         "Åbn i en ny fane"
       ],
@@ -1088,6 +1085,9 @@
       ],
       "Pay ${ price } now": [
         "Betal ${ price } nu"
+      ],
+      "Pay once": [
+        "Betal én gang"
       ],
       "Preview": [
         "Forhåndsvisning"
@@ -1295,6 +1295,9 @@
       ],
       "See plan features": [
         "Se abonnementfunktioner"
+      ],
+      "Select": [
+        "Vælg"
       ],
       "Select ${ planOrAppName }": [
         "Vælg ${ planOrAppName }"
@@ -1719,6 +1722,11 @@
     "Action subscription": {
       "Reactivate": [
         "Genaktiver"
+      ]
+    },
+    "Action: Sheets": {
+      "Open in ${ SHEETS_APP_NAME }": [
+        "Åbn i ${ SHEETS_APP_NAME }"
       ]
     },
     "Action; accept invitation to share calendar": {
@@ -10500,6 +10508,9 @@
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Prisen inkluderer alle gældende cyklusbaserede rabatter og kuponer, der ikke er udløbet, og som er gemt på din konto."
       ],
+      "Privacy and security starts here": [
+        "Privatlivsbeskyttelse og sikkerhed starter her"
+      ],
       "Private AI assistant": [
         "Privat AI-assistent"
       ],
@@ -11466,6 +11477,9 @@
       "With email categories, important messages land in a primary inbox. Everything else is organized into categories.": [
         "Med e-mail-kategorier lander vigtige beskeder i en primær indbakke. Alt andet organiseres i kategorier."
       ],
+      "With groups, you can implement the company security policies for access control and reduce the risk of accessing unauthorised data.": [
+        "Med grupper kan du implementere virksomhedens sikkerhedspolitikker for adgangskontrol og reducere risikoen for tilgang til uautoriserede data."
+      ],
       "With groups, you can quickly and easily send emails to all the people in a specified group.": [
         "Med grupper kan du hurtigt og nemt sende mails til alle personer i en bestemt gruppe."
       ],
@@ -12406,6 +12420,9 @@
         "${ nbYear } år",
         "${ nbYear } år"
       ],
+      "${ pricePerMonthWithCurrency } / month": [
+        "${ pricePerMonthWithCurrency } /måned"
+      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Midlertidigt utilgængelig. Tjek igen senere.)"
       ],
@@ -12636,6 +12653,12 @@
       ],
       "Beta": [
         "Beta"
+      ],
+      "Billed at ${ priceYearly } every 12 months.": [
+        "Faktureres med ${ priceYearly } hver 12. måned."
+      ],
+      "Billed monthly.": [
+        "Faktureres månedligt."
       ],
       "Billing cycle": [
         "Faktureringsperiode"
@@ -13129,6 +13152,9 @@
       "Level for NetShield blocker filtering": [
         "Niveau for NetShield-blokkerfiltrering"
       ],
+      "Limited time": [
+        "Begrænset tid"
+      ],
       "Link label (optional)": [
         "Link-etiket (valgfrit)"
       ],
@@ -13194,6 +13220,9 @@
       ],
       "Moderate NAT": [
         "Moderat NAT"
+      ],
+      "Most popular": [
+        "Mest populære"
       ],
       "Move to": [
         "Flyt til"
@@ -13314,6 +13343,9 @@
       ],
       "Password strength": [
         "Adgangskodestyrke"
+      ],
+      "Pay once, access forever.": [
+        "Betal én gang, få adgang for evigt."
       ],
       "Payer": [
         "Betaler"
@@ -21837,6 +21869,9 @@
       "An address for each role": [
         "En adresse for hver rolle"
       ],
+      "Annual": [
+        "Årlig"
+      ],
       "Anytime, anywhere access": [
         "Altid, overalt adgang"
       ],
@@ -22576,6 +22611,9 @@
       "Leave group?": [
         "Forlad gruppe?"
       ],
+      "Lifetime": [
+        "Livstid"
+      ],
       "Limit reached": [
         "Grænse nået"
       ],
@@ -22602,6 +22640,9 @@
       ],
       "Mobile": [
         "Mobil"
+      ],
+      "Monthly": [
+        "Månedlig"
       ],
       "Multi-user support": [
         "Flerbrugerunderstøttelse"

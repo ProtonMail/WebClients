@@ -1053,8 +1053,8 @@
       "Open ${ PASS_APP_NAME } in your browser": [
         "გახსენით ${ PASS_APP_NAME } ბრაუზერში"
       ],
-      "Open in ${ SHEETS_APP_NAME }": [
-        "${ SHEETS_APP_NAME }-ში გახსნა"
+      "Open in new tab": [
+        "ახალ ჩანართში გახსნა"
       ],
       "Open navigation": [
         "ნავიგაციის გახსნა"
@@ -1085,6 +1085,9 @@
       ],
       "Pay ${ price } now": [
         "${ price }-ის გადახდა"
+      ],
+      "Pay once": [
+        "ერთმაგი გადახდა"
       ],
       "Preview": [
         "გადახედვა"
@@ -1292,6 +1295,9 @@
       ],
       "See plan features": [
         "ტარიფის თვისებების ნახვა"
+      ],
+      "Select": [
+        "მონიშვნა"
       ],
       "Select ${ planOrAppName }": [
         "აირჩიეთ ${ planOrAppName }"
@@ -1716,6 +1722,11 @@
     "Action subscription": {
       "Reactivate": [
         "რეაქტივაცია"
+      ]
+    },
+    "Action: Sheets": {
+      "Open in ${ SHEETS_APP_NAME }": [
+        "${ SHEETS_APP_NAME }-ში გახსნა"
       ]
     },
     "Action; accept invitation to share calendar": {
@@ -2604,6 +2615,9 @@
       "Contacts": [
         "კონტაქტები"
       ],
+      "Domain connected": [
+        "დომენი დაკავშირებულია"
+      ],
       "Domain ownership verified": [
         "დომენის მფლობელობა გადამოწმებულია"
       ],
@@ -2634,11 +2648,30 @@
       "Migration includes": [
         "მიგრაცია შეიცავს"
       ],
+      "Migration started for ${ n } user": [
+        "მიგრაცია დაიწყო ${ n } მომხმარებლისთვის",
+        "მიგრაცია დაიწყო ${ n } მომხმარებლისთვის"
+      ],
+      "Migration status": [
+        "მიგრაციის სტატუსი"
+      ],
+      "Organization does not have enough seats available": [
+        "ორგანიზაციას საკმარისი თავისუფალი ადგილი არ აქვს"
+      ],
+      "Organization does not have enough storage available": [
+        "ორგანიზაციას საკმარისი თავისუფალი ადგილი არ აქვს"
+      ],
+      "Organization settings": [
+        "ორგანიზაციის მორგება"
+      ],
       "Required": [
         "აუცილებელია"
       ],
       "Required to create user accounts": [
         "აუცილებელია მომხმარებლის ანგარიშების შესაქმნელად"
+      ],
+      "Select at least one user to start a migration": [
+        "მიგრაციის დასაწყებად აირჩიეთ, სულ ცოტა, ერთი მომხმარებელი"
       ],
       "Set up": [
         "მორგება"
@@ -2655,6 +2688,9 @@
       "Start migration": [
         "მიგრაციის დაწყება"
       ],
+      "Transfer errors": [
+        "გადაცემის შეცდომები"
+      ],
       "User": [
         "მომხმარებელი"
       ],
@@ -2663,6 +2699,9 @@
       ],
       "Verify your domain ownership": [
         "თქვენი დომენის მფლობელობის გადამოწმება"
+      ],
+      "Verify your domain to start a migration": [
+        "დაადასტურეთ თქვენი დომენი მიგრაციის დასაწყებად"
       ],
       "What are you migrating?": [
         "რის მიგრაციას ახდენთ?"
@@ -2740,6 +2779,9 @@
       ],
       "Payments problem": [
         "გადახდის პრობლემა"
+      ],
+      "Sheets problem": [
+        "Sheets-ის პრობლემა"
       ],
       "Sign in problem": [
         "შესვლის პრობლემა"
@@ -10233,6 +10275,9 @@
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "ფასი შეიცავს ყველა შესაბამის ციკლზე-ბაზირებულ ფასდაკლებებს და ვადაგაუსვლელ კუპონებს, რომლებიც თქვენს ანგარიშზე გაქვთ შენახული."
       ],
+      "Privacy and security starts here": [
+        "კონფიდენციალობა და უსაფრთხოება აქ იწყება"
+      ],
       "Private AI assistant": [
         "პირადი ხი დამხმარე"
       ],
@@ -12032,6 +12077,9 @@
         "${ nbYear } წელი",
         "${ nbYear } წელი"
       ],
+      "${ pricePerMonthWithCurrency } / month": [
+        "${ pricePerMonthWithCurrency } / თვეში"
+      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(დრობით მიუწვდომელია. მოგვიანებით სცადეთ)"
       ],
@@ -12259,6 +12307,12 @@
       ],
       "Beta": [
         "ბეტა"
+      ],
+      "Billed at ${ priceYearly } every 12 months.": [
+        "გადაიხდით ${ priceYearly } ყოველ 12 თვეში."
+      ],
+      "Billed monthly.": [
+        "თვიური გადახდა."
       ],
       "Billing cycle": [
         "გადახდის პერიოდი"
@@ -12749,6 +12803,9 @@
       "Level for NetShield blocker filtering": [
         "Netshield blocker-ის ფილტრის დონე"
       ],
+      "Limited time": [
+        "შეზღუდული დრო"
+      ],
       "Link label (optional)": [
         "ბმულის ჭდე (არასავალდებულო)"
       ],
@@ -12814,6 +12871,9 @@
       ],
       "Moderate NAT": [
         "საშუალო NAT-ი"
+      ],
+      "Most popular": [
+        "ყველაზე პოპულარული"
       ],
       "Move to": [
         "გადატანა სად"
@@ -12881,8 +12941,17 @@
       "Online privacy for your whole family": [
         "ონლაინ კონფიდენციალობა მთელი თქვენი ოჯახისთვის"
       ],
+      "Only a single personal vault can be created": [
+        "შეგიძლიათ შექმნათ, მხოლოდ, ერთი პირადი საცავი"
+      ],
       "Only available on ${ PASS_SHORT_APP_NAME } paid plans": [
         "ხელმისაწვდომია, მხოლოდ, ${ PASS_SHORT_APP_NAME }-ის ფასიან სატარიფო გეგმებზე"
+      ],
+      "OpenVPN password": [
+        "OpenVPN-ის პაროლი"
+      ],
+      "OpenVPN username": [
+        "OpenVPN-ის მომხმარებლის სახელი"
       ],
       "Operating system": [
         "ოპერაციული სისტემა"
@@ -12922,6 +12991,9 @@
       ],
       "Password strength": [
         "პაროლის სიძლიერე"
+      ],
+      "Pay once, access forever.": [
+        "გადაიხადეთ ერთხელ და იქონიეთ სამუდამო წვდომა"
       ],
       "Payer": [
         "გადამხდელი"
@@ -13962,6 +14034,10 @@
       ]
     },
     "meet_2025: Feature": {
+      "${ n } active meeting at a time": [
+        "${ n } ერთდროული აქტიური შეხვედრა",
+        "${ n } ერთდროული აქტიური შეხვედრა"
+      ],
       "24 hours per meeting": [
         "24 საათი თითო შეხვედრისთვის"
       ],
@@ -13971,28 +14047,78 @@
       "Appointment scheduling": [
         "შეხვედრის დაგეგმვა"
       ],
+      "Browser, mobile, and desktop apps": [
+        "ბრაუზერის, მობილურის და კომპიუტეირს აპები"
+      ],
       "Built-in chat": [
         "ჩაშენებული ჩატი"
       ],
+      "Meeting recording (coming soon)": [
+        "შეხვედრის ჩანაწერი (მალე)"
+      ],
+      "One active meeting at a time": [
+        "ერთი აქტიური შეხვედრა ერთდროულად"
+      ],
       "Screen-sharing": [
         "ეკრანის გაზიარება"
+      ],
+      "Unlimited meetings per day": [
+        "შეუზღუდავი შეხვედრები დღეში"
+      ],
+      "Up to ${ n } meeting per day": [
+        "${ n } შეხვედრამდე დღეში",
+        "${ n } შეხვედრამდე დღეში"
+      ],
+      "Up to ${ n } participant": [
+        "${ n }-მდე მონაწილე",
+        "${ n }-მდე მონაწილე"
       ]
     },
     "meet_2025: Info": {
+      "100 ${ BRAND_NAME } email addresses": [
+        "100 ${ BRAND_NAME } ელფოსტის მისამართი"
+      ],
+      "Cloud storage and file sharing": [
+        "ღრუბლოვანი საცავი და ფაილის გაზიარება"
+      ],
+      "Data never used for AI training": [
+        "მონაცემები არასდროს იქნება გამოყენებული ხი-ის სავარჯიშოდ"
+      ],
       "Data retention policies": [
         "მონაცემთა შენახვის პოლიტიკა"
+      ],
+      "Document & spreadsheet editor": [
+        "დოკუმენტებისა და ელექტრონული ცხრილების რედაქტორი"
       ],
       "Email writing assistant": [
         "ელფოსტის წერის დამხმარე"
       ],
+      "Everything from ${ title }, plus...": [
+        "${ title }-ის ყველაფერი, პლუს..."
+      ],
+      "Everything in Meet Professional, plus:": [
+        "ყველაფერი Meet Professional-ში, ასევე:"
+      ],
       "Open source": [
         "ღია კოდი"
+      ],
+      "Password manager with team vaults": [
+        "პაროლების მმართველი გუნდური სეიფებით"
+      ],
+      "Private AI Chat (${ LUMO_SHORT_APP_NAME })": [
+        "პირადი ხი ჩეთი (${ LUMO_SHORT_APP_NAME })"
+      ],
+      "Private video calls for the conversations that matter": [
+        "პირადი ვიდეო ზარები მნიშვნელოვანი საუბრებისთვის"
       ],
       "Secure calendar": [
         "უსაფრთხო კალენდარი"
       ],
       "Strict no-logs policy": [
         "ჩვენ არ ვინახავთ ჟურნალს"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN რეკლამების ბლოკერით და მავნე პროგრამებისგან დაცვით"
       ]
     },
     "meet_signup_2025: title": {
@@ -15547,6 +15673,9 @@
       ],
       "Number of records exceeds the download limit of 10000": [
         "ჩანაწერების რაოდენობა გადმოწერის ლიმიტს (1000) სცდება"
+      ],
+      "OpenVPN credentials regenerated": [
+        "OpenVPN-ის ავტორიზაციის დეტალები ხელახლა შეიქმნა"
       ],
       "Reminder has been sent": [
         "შეხსენება გაგზავნილია"
@@ -19359,11 +19488,17 @@
       ]
     },
     "Signup: Meet": {
+      "Get ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
+        "${ PLAN_NAMES[PLANS.MEET_BUSINESS] }-ის მიღება"
+      ],
       "Own a business?": [
         "გაქვთ ბიზნესი?"
       ],
       "Sign up, meet privately": [
         "დარეგისტრირდით, შეხვდით კონფიდენციალურად"
+      ],
+      "Start using ${ MEET_APP_NAME } now": [
+        "${ MEET_APP_NAME }-ის გამოყენების დაწყება"
       ]
     },
     "signup_2024: Feature": {
@@ -21221,6 +21356,9 @@
       "An address for each role": [
         "მისამართი თითოეული როლისთვის"
       ],
+      "Annual": [
+        "წელიწადში ერთხელ"
+      ],
       "Anytime, anywhere access": [
         "წვდომა ნებისმიერ დროს და ადგილიდან"
       ],
@@ -21960,6 +22098,9 @@
       "Leave group?": [
         "ჯგუფის დატოვება?"
       ],
+      "Lifetime": [
+        "სამუდამოდ"
+      ],
       "Limit reached": [
         "მიაღწიეთ ლიმიტს"
       ],
@@ -21986,6 +22127,9 @@
       ],
       "Mobile": [
         "მობილური"
+      ],
+      "Monthly": [
+        "თვეში ერთხელ"
       ],
       "Multi-user support": [
         "მრავალმომხმარებლიანობის მხარდაჭერა"
@@ -22455,6 +22599,9 @@
       ],
       "Time zone": [
         "დროის სარტყელი"
+      ],
+      "To preview this spreadsheet, download it.": [
+        "ამ ელცხრილის მინიატურისთვის გადმოწერეთ ის."
       ],
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "ამ ელცხრილის გადასახედად გახსენით ${ SHEETS_APP_NAME }-ში, ან გადმოწერეთ ის."
