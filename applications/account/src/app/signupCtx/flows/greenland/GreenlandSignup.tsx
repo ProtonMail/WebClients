@@ -1,11 +1,14 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
 import { LoaderPage } from '@proton/components';
 import { useNotifyErrorHandler } from '@proton/components/hooks/useErrorHandler';
 import { COUPON_CODES, CYCLE, PLANS, type PlanIDs } from '@proton/payments';
 import { usePaymentOptimistic } from '@proton/payments/ui';
+import { getAppHref } from '@proton/shared/lib/apps/helper';
+import { getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
 import { APPS } from '@proton/shared/lib/constants';
+import { isFree } from '@proton/shared/lib/user/helpers';
 
 import { usePrefetchGenerateRecoveryKit } from '../../../containers/recoveryPhrase/useRecoveryKitDownload';
 import { SignupType } from '../../../signup/interfaces';
@@ -89,6 +92,28 @@ const GreenlandSignupInner = () => {
 const GreenlandSignup = (props: BaseSignupContextProps) => {
     const location = useLocation();
     const searchParams = new URLSearchParams(location.search);
+
+    // Redirect to automatic subscription modal if user has a free account
+    useEffect(() => {
+        void (async () => {
+            const activeSessions = await props.onGetActiveSessions?.();
+
+            if (!activeSessions?.session?.User) {
+                return;
+            }
+
+            const isFreeUser = isFree(activeSessions.session.User);
+
+            if (isFreeUser) {
+                window.location.replace(
+                    getAppHref(
+                        `${getSlugFromApp(APPS.PROTONMAIL)}/dasboard?plan=${PLANS.MAIL}&coupon=${COUPON_CODES.PLUS12FOR1}&currency=EUR&cycle=12&type=offer`,
+                        APPS.PROTONACCOUNT
+                    )
+                );
+            }
+        })();
+    }, []);
 
     return (
         <SignupContextProvider
