@@ -91,7 +91,7 @@
         "Übernehmen"
       ],
       "Ask me next time": [
-        "Frage mich das nächste Mal"
+        "Frag mich beim nächsten Mal"
       ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "Pro Kontaktgruppe ist maximal ${ maxContacts } Kontakt erlaubt.",
@@ -5651,7 +5651,7 @@
         "Anwendungsprotokolle im Fehlerbericht einschließen"
       ],
       "Include document name in notification": [
-        "Dokumentname in der Benachrichtigung einbeziehen"
+        "Dokumentname in der Benachrichtigung anzeigen"
       ],
       "Include message and file name in invite email": [
         "Nachricht und Dateiname in die Einladungs-E-Mail einfügen"
@@ -10097,6 +10097,9 @@
       ],
       "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
         "Dieser Import kann die derzeit verfügbare Speicherkapazität deines ${ BRAND_NAME }-Kontos überschreiten. Bitte ziehe in Erwägung, den Import anzupassen."
+      ],
+      "This will replace all the data in the spreadsheet": [
+        "Dies ersetzt alle Daten in der Tabelle"
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Leider sind wir derzeit nicht verfügbar. Bitte fülle das nachstehende Formular aus, um dein Problem zu beschreiben. Wir werden es prüfen und uns melden, sobald wir wieder verfügbar sind."

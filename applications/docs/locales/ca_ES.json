@@ -4352,7 +4352,7 @@
         "S'està creant l'enllaç a la carpeta"
       ],
       "Creating new document...": [
-        "S'està creant un document nou..."
+        "S'està creant un nou document..."
       ],
       "Current plan": [
         "Pla actual"
@@ -4448,10 +4448,10 @@
         "Introduïu la vostra contrasenya (com a contacte de confiança)."
       ],
       "Error converting document: ${ errorMessage }": [
-        "Hi ha hagut un error en convertir el document: ${ errorMessage }"
+        "S'ha produït un error en convertir el document: ${ errorMessage }"
       ],
       "Error loading document: ${ errorDetail }": [
-        "Hi ha hagut un error en carregar el document: ${ errorDetail }"
+        "S'ha produït un error en carregar el document: ${ errorDetail }"
       ],
       "Error Syncing": [
         "Error de sincronització"
@@ -4517,7 +4517,7 @@
         "Rebeu actualitzacions per correu electrònic dels comentaris i suggeriments afegits als vostres documents."
       ],
       "Get Notified About Comments": [
-        "Rebeu notificacions sobre els comentaris"
+        "Rebeu notificacions dels comentaris"
       ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Els governs i els ISP poden controlar la vostra activitat en línia. En amagar la vostra IP real i xifrar la vostra activitat, la vostra navegació esdevé privada."
@@ -4693,7 +4693,7 @@
         "Encara no s'han afegit contactes"
       ],
       "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
-        "No s'ha proporcionat cap document a l'URL. Torneu a ${ DRIVE_APP_NAME } i seleccioneu-ne un."
+        "L'adreça URL no ha proporcionat cap document. Torneu a ${ DRIVE_APP_NAME } i seleccioneu un document."
       ],
       "No email address": [
         "Sense adreça de correu electrònic"
@@ -4980,7 +4980,7 @@
         "El propietari d'aquesta adreça ha desactivat el xifratge d'extrem a extrem. Per a poder enviar-hi correus electrònics xifrats, el propietari ha de tornar a activar el xifratge d’extrem a extrem."
       ],
       "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
-        "Sembla que l'URL que heu introduït s'ha copiat incorrectament de l'Slack. Quan copieu enllaços llargs de l'Slack, feu clic amb el botó dret a l'enllaç i seleccioneu \"Copia l'enllaç\" en lloc de copiar directament el text truncat de l'URL."
+        "Sembla que l'adreça URL que heu introduït s'ha copiat d'Slack incorrectament. Quan copieu enllaços llargs d'Slack, feu clic amb el botó dret sobre l'enllaç i trieu \"Copia l'enllaç\" en lloc de copiar directament el text truncat de l'adreça."
       ],
       "There are no documents in the trash.": [
         "No hi ha documents a la paperera."
@@ -5603,7 +5603,7 @@
         "Correus electrònics (el mes passat)"
       ],
       "Enable email notifications": [
-        "Habiliteu les notificacions per correu"
+        "Habiliteu les notificacions per correu electrònic"
       ],
       "Encrypt emails": [
         "Xifrar correus electrònics"
@@ -10100,6 +10100,9 @@
       ],
       "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
         "Aquesta importació pot superar la capacitat d'emmagatzematge disponible actualment al vostre compte de ${ BRAND_NAME }. Considereu personalitzar la importació."
+      ],
+      "This will replace all the data in the spreadsheet": [
+        "Això reemplaçarà totes les dades del full de càlcul"
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Lamentablement no estem en línia en aquest moment. Completeu el formulari de sota per descriure el vostre problema, i ho mirarem i ens posarem en contacte quan tornem a estar en línia."
