@@ -6,6 +6,7 @@ import { createMockNodeEntity } from '../../utils/test/nodeEntity';
 import { DownloadStatus, useDownloadManagerStore } from '../../zustand/download/downloadManager.store';
 import type { ArchiveStreamGenerator as ArchiveStreamGeneratorClass } from './ArchiveStreamGenerator';
 import type { DownloadQueueTask } from './downloadTypes';
+import type { MalwareDetection } from './malwareDetection/malwareDetection';
 import { createDeferred, flushAsync, trackInstances } from './testUtils';
 
 const getDownloadSdkMock = jest.fn();
@@ -65,6 +66,12 @@ const schedulerTracker = trackInstances(() => {
     };
 });
 
+const createMalwareDetectionMock = () =>
+    ({
+        checkMalware: jest.fn(() => Promise.resolve(undefined)),
+        getPendingDecisionPromise: jest.fn(() => Promise.resolve(undefined)),
+    }) as unknown as MalwareDetection;
+
 describe('ArchiveStreamGenerator', () => {
     beforeAll(() => {
         ensureTransformStream();
@@ -123,6 +130,7 @@ describe('ArchiveStreamGenerator', () => {
             abortController,
             parentPathByUid: parentPaths,
             downloadId: 'download-id',
+            malwareDetection: createMalwareDetectionMock(),
         });
 
         await flushAsync();
@@ -187,6 +195,7 @@ describe('ArchiveStreamGenerator', () => {
             abortController: folderAbortController,
             parentPathByUid: new Map<string, string[]>([['folder-1', [] as string[]]]),
             downloadId: 'download-id',
+            malwareDetection: createMalwareDetectionMock(),
         });
 
         await flushAsync();
@@ -237,6 +246,7 @@ describe('ArchiveStreamGenerator', () => {
             abortController,
             parentPathByUid: new Map<string, string[]>([['file-wait', [] as string[]]]),
             downloadId: 'download-id',
+            malwareDetection: createMalwareDetectionMock(),
         });
 
         await flushAsync();
@@ -283,6 +293,7 @@ describe('ArchiveStreamGenerator', () => {
             abortController,
             parentPathByUid: new Map<string, string[]>([['file-error', [] as string[]]]),
             downloadId: 'download-id',
+            malwareDetection: createMalwareDetectionMock(),
         });
 
         await flushAsync();

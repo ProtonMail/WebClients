@@ -21,7 +21,7 @@ const createDownloadItem = (overrides: Partial<DownloadItem> = {}): DownloadItem
     status: overrides.status ?? DownloadStatus.Pending,
     nodeUids: overrides.nodeUids ?? [],
     downloadedBytes: overrides.downloadedBytes ?? 0,
-    malwareDetected: overrides.malwareDetected,
+    malwareDetectionStatus: overrides.malwareDetectionStatus,
     unsupportedFileDetected: overrides.unsupportedFileDetected,
     signatureIssues: overrides.signatureIssues,
     signatureIssueAllDecision: overrides.signatureIssueAllDecision,

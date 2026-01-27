@@ -248,7 +248,7 @@ export const PublicFolderView = ({ nodeUid, folderName }: PublicFolderViewProps)
     };
 
     const handleDownload = (uid: string) => {
-        void downloadManager.download([uid]);
+        void downloadManager.downloadAndScan([uid], { skipSignatureCheck: true });
     };
 
     const events: DriveExplorerEvents = {

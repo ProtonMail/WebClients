@@ -7,11 +7,12 @@ import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { Icon } from '@proton/components/index';
-import { NodeType } from '@proton/drive/index';
+import { NodeType, splitNodeUid } from '@proton/drive/index';
 import { UploadStatus } from '@proton/drive/modules/upload';
 import { shortHumanSize } from '@proton/shared/lib/helpers/humanSize';
 
 import { useDownloadContainsDocumentsModal } from '../../../components/modals/DownloadContainsDocumentsModal';
+import { useReportAbuseModal } from '../../../components/modals/ReportAbuseModal/ReportAbuseModal';
 import { DownloadManager } from '../../../managers/download/DownloadManager';
 import { useSignatureIssueModal } from '../../../modals/SignatureIssueModal/SignatureIssueModal';
 import {
@@ -19,6 +20,7 @@ import {
     IssueStatus,
     useDownloadManagerStore,
 } from '../../../zustand/download/downloadManager.store';
+import { getMalwareReportComment, useMalwareReport } from '../useMalwareReport/useMalwareReport';
 import { useTransferManagerActions } from '../useTransferManagerActions';
 import type { TransferManagerEntry } from '../useTransferManagerState';
 
@@ -34,6 +36,7 @@ const getStatusLabel = (entry: TransferManagerEntry): string | undefined => {
         [BaseTransferStatus.Cancelled]: c('Info').t`Canceled`,
         [BaseTransferStatus.Failed]:
             entry.type === 'download' ? c('Info').t`Download Failed` : c('Info').t`Upload Failed`,
+        [BaseTransferStatus.MalwareDetected]: c('Info').t`Malware detected`,
         [BaseTransferStatus.Finished]: entry.type === 'download' ? c('Info').t`Downloaded` : c('Info').t`Uploaded`,
         [BaseTransferStatus.Paused]: c('Info').t`Paused`,
         [BaseTransferStatus.PausedServer]: c('Info').t`Paused`,
@@ -65,6 +68,9 @@ const getItemIconByStatus = (entry: TransferManagerEntry) => {
     if (entry.status === BaseTransferStatus.Failed) {
         return <Icon size={5} className="color-danger" name="cross-circle-filled" />;
     }
+    if (entry.status === BaseTransferStatus.MalwareDetected) {
+        return <Icon size={5} className="color-danger" name="cross-circle-filled" />;
+    }
     if (entry.status === UploadStatus.ConflictFound) {
         return <Icon size={5} className="color-weak" name="clock" />;
     }
@@ -77,6 +83,8 @@ export const TransferItem = ({ entry, onShare }: Props) => {
     const { cancelTransfer, retryTransfer } = useTransferManagerActions();
     const [containsDocumentModal, showDocumentsModal] = useDownloadContainsDocumentsModal();
     const [signatureIssueModal, showSignatureIssueModal] = useSignatureIssueModal();
+    const [reportAbuseModal, showReportAbuseModal] = useReportAbuseModal();
+    const { submitMalwareReport } = useMalwareReport();
     const onlyShowTransferredBytes = !totalSize;
     // Encrypted size is larger from file clear text size, we prevent showing larger transferred size to the user during upload
     const transferredBytes = Math.min(totalSize, entry.transferredBytes);
@@ -88,6 +96,7 @@ export const TransferItem = ({ entry, onShare }: Props) => {
         BaseTransferStatus.Finished,
         BaseTransferStatus.Cancelled,
         BaseTransferStatus.Failed,
+        BaseTransferStatus.MalwareDetected,
         UploadStatus.Skipped,
         UploadStatus.PhotosDuplicate,
     ].includes(entry.status as BaseTransferStatus);
@@ -142,6 +151,32 @@ export const TransferItem = ({ entry, onShare }: Props) => {
         }
         // showModal not in deps because is not stable
     }, [item, entry.id, cancelTransfer]);
+
+    const downloadAnyway = () => {
+        dm.setMalawareDecision(entry.id, IssueStatus.Approved);
+    };
+
+    const reportMalware = async () => {
+        if (!item?.malwareInfo) {
+            return;
+        }
+        return showReportAbuseModal({
+            linkInfo: {
+                name: item.malwareInfo.name,
+                mimeType: item.malwareInfo.mediaType,
+                size: item.malwareInfo.size,
+                linkId: splitNodeUid(item.malwareInfo.uid).nodeId,
+            },
+            onSubmit: (params) => {
+                alert('Feature not yet implemented');
+                return submitMalwareReport(params);
+            },
+            prefilled: {
+                Category: 'malware',
+                Comment: getMalwareReportComment(item.name, item.malwareInfo.message),
+            },
+        });
+    };
 
     return (
         <div
@@ -214,6 +249,35 @@ export const TransferItem = ({ entry, onShare }: Props) => {
                         </Button>
                     </Tooltip>
                 )}
+                {entry.status === BaseTransferStatus.MalwareDetected && (
+                    <div className="flex gap-1">
+                        <Tooltip title={c('Action').t`Report`}>
+                            <Button
+                                icon
+                                className="group-hover:opacity-100"
+                                color="weak"
+                                shape="outline"
+                                onClick={() => reportMalware()}
+                                data-testid="drive-transfers-manager:item-controls-cancel"
+                            >
+                                <Icon name="exclamation-circle" size={4} />
+                            </Button>
+                        </Tooltip>
+
+                        <Tooltip title={c('Action').t`Download anyway`}>
+                            <Button
+                                icon
+                                className="group-hover:opacity-100"
+                                color="weak"
+                                shape="outline"
+                                onClick={() => downloadAnyway()}
+                                data-testid="drive-transfers-manager:item-controls-cancel"
+                            >
+                                {c('Action').t`Download anyway`}
+                            </Button>
+                        </Tooltip>
+                    </div>
+                )}
                 {(entry.status === BaseTransferStatus.Failed || entry.status === BaseTransferStatus.Cancelled) && (
                     <Button
                         color="weak"
@@ -227,6 +291,7 @@ export const TransferItem = ({ entry, onShare }: Props) => {
             </div>
             {containsDocumentModal}
             {signatureIssueModal}
+            {reportAbuseModal}
         </div>
     );
 };

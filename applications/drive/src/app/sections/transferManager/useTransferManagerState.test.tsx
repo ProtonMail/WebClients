@@ -43,7 +43,7 @@ const createDownloadItem = (overrides: Partial<DownloadItem> = {}): DownloadItem
     error: undefined,
     speedBytesPerSecond: 0,
     nodeUids: [],
-    malwareDetected: undefined,
+    malwareDetectionStatus: undefined,
     lastStatusUpdateTime: overrides.lastStatusUpdateTime ?? createFutureStatusDate(),
     ...overrides,
 });
@@ -316,7 +316,7 @@ describe('useTransferManagerState', () => {
                 error: undefined,
                 speedBytesPerSecond: 0,
                 nodeUids: [],
-                malwareDetected: undefined,
+                malwareDetectionStatus: undefined,
                 lastStatusUpdateTime: createFutureStatusDate(),
             });
             queueIds.add(id);
