@@ -62,7 +62,6 @@ export enum CommonFeatureFlag {
     MeetPlans = 'MeetPlans',
     WebApiRateLimiter = 'WebApiRateLimiter',
     PassSimpleLoginLifetimeOffer = 'PassSimpleLoginLifetimeOffer',
-    WebBatchTelemetryReports = 'WebBatchTelemetryReports',
 }
 
 enum AccountFlag {
