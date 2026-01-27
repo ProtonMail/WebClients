@@ -1,6 +1,5 @@
 import { useCallback, useRef } from 'react';
 
-import { useFileProcessing } from 'applications/lumo/src/app/hooks/useFileProcessing';
 import { c } from 'ttag';
 
 import { useNotifications } from '@proton/components';
@@ -8,6 +7,7 @@ import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 
 import { MAX_FILE_SIZE } from '../../../../constants';
+import { useFileProcessing } from '../../../../hooks';
 import { useIsGuest } from '../../../../providers/IsGuestProvider';
 import { useLumoDispatch, useLumoSelector } from '../../../../redux/hooks';
 import { deleteAttachment } from '../../../../redux/slices/core/attachments';
