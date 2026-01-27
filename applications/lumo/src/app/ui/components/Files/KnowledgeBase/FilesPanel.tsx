@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 
-import { useFileProcessing } from 'applications/lumo/src/app/hooks/useFileProcessing';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
@@ -13,7 +12,7 @@ import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 import { DRIVE_APP_NAME, DRIVE_SHORT_APP_NAME, LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import lumoDrive from '@proton/styles/assets/img/lumo/lumo-drive.svg';
 
-import { useFilteredFiles } from '../../../../hooks';
+import { useFileProcessing, useFilteredFiles } from '../../../../hooks';
 import type { DriveNode } from '../../../../hooks/useDriveSDK';
 import { useIsGuest } from '../../../../providers/IsGuestProvider';
 import { useLumoDispatch, useLumoSelector } from '../../../../redux/hooks';
@@ -106,7 +105,11 @@ export const FilesPanel = ({
                         // For Drive files (driveNodeId present), we require fullAtt to exist
                         // This prevents showing files from unlinked Drive folders
                         if (shallowAtt.driveNodeId && !fullAtt) {
-                            console.log('[FilesPanel] Skipping deleted Drive attachment:', shallowAtt.id, shallowAtt.filename);
+                            console.log(
+                                '[FilesPanel] Skipping deleted Drive attachment:',
+                                shallowAtt.id,
+                                shallowAtt.filename
+                            );
                             return;
                         }
 
