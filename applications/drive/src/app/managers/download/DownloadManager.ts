@@ -8,7 +8,7 @@ import type { DownloadItem } from '../../zustand/download/downloadManager.store'
 import {
     DownloadStatus,
     IssueStatus,
-    MalawareDownloadResolution,
+    MalwareDownloadResolution,
     useDownloadManagerStore,
 } from '../../zustand/download/downloadManager.store';
 import { fileSaver } from '../fileSaver/fileSaver';
@@ -16,6 +16,8 @@ import ArchiveGenerator from './ArchiveGenerator';
 import { ArchiveStreamGenerator } from './ArchiveStreamGenerator';
 import { DownloadDriveClientRegistry } from './DownloadDriveClientRegistry';
 import { DownloadScheduler } from './DownloadScheduler';
+import type { DownloadOptions } from './downloadTypes';
+import { MalwareDetection } from './malwareDetection/malwareDetection';
 import { downloadLogDebug } from './utils/downloadLogger';
 import { getDownloadSdk } from './utils/getDownloadSdk';
 import { getNodeStorageSize } from './utils/getNodeStorageSize';
@@ -53,6 +55,7 @@ export class DownloadManager {
     private scheduler: DownloadScheduler;
     private readonly activeDownloads = new Map<string, ActiveDownload>();
     private requestedDownloads = new Map<string, NodeEntity[]>();
+    private readonly malwareDetection: MalwareDetection;
 
     constructor() {
         this.hasListeners = false;
@@ -60,6 +63,7 @@ export class DownloadManager {
         this.scheduler = new DownloadScheduler((error, task) =>
             handleDownloadError(task.downloadId, [task.node], error)
         );
+        this.malwareDetection = new MalwareDetection();
     }
 
     static getInstance(): DownloadManager {
@@ -137,35 +141,20 @@ export class DownloadManager {
         });
     }
 
+    async downloadRevision(nodeUid: string, revisionUid: string) {
+        return this.processDownload([nodeUid], { revisionUid });
+    }
+
+    async download(nodeUids: string[], options: DownloadOptions = {}) {
+        return this.processDownload(nodeUids, options);
+    }
+
+    async downloadAndScan(nodeUids: string[], options: DownloadOptions = {}) {
+        return this.processDownload(nodeUids, { shouldScanForMalware: true, ...options });
+    }
+
     async downloadPhotos(nodeUids: string[], albumName?: string) {
-        if (!nodeUids.length) {
-            return;
-        }
-        const { nodes } = await hydratePhotos(nodeUids);
-        if (!nodes.length) {
-            return;
-        }
-        const { addDownloadItem } = useDownloadManagerStore.getState();
-        this.addPhotosListeners();
-
-        const downloadId = queueDownloadRequest({
-            nodes,
-            isPhoto: true,
-            albumName,
-            addDownloadItem,
-            requestedDownloads: this.requestedDownloads,
-            scheduleSingleFile: (id, node) => this.scheduleSingleFileDownload(id, node),
-            scheduleArchive: (id, queuedNodes) => this.scheduleArchiveDownload(id, queuedNodes),
-            getArchiveName: (items) => this.getArchiveName(items),
-        });
-        if (!downloadId) {
-            return;
-        }
-
-        downloadLogDebug('Queue photo download', {
-            downloadId,
-            fileMediaTypes: nodes.map((f) => f.mediaType),
-        });
+        return this.processDownload(nodeUids, { isPhoto: true, albumName });
     }
 
     // TODO: Add possibility to just pass the uid instead of whole node
@@ -190,26 +179,38 @@ export class DownloadManager {
         });
     }
 
-    async download(nodeUids: string[]) {
+    private async processDownload(nodeUids: string[], options: DownloadOptions = {}) {
         if (!nodeUids.length) {
             return;
         }
-        const { nodes, containsUnsupportedFile } = await hydrateAndCheckNodes(nodeUids);
+
+        const isPhotoDownload = !!options.isPhoto;
+        let nodes: NodeEntity[] = [];
+        let containsUnsupportedFile: boolean | undefined;
+
+        if (isPhotoDownload) {
+            ({ nodes, containsUnsupportedFile } = await hydratePhotos(nodeUids));
+            this.addPhotosListeners();
+        } else {
+            ({ nodes, containsUnsupportedFile } = await hydrateAndCheckNodes(nodeUids));
+            this.addListeners();
+        }
+
         if (!nodes.length) {
             return;
         }
         const { addDownloadItem } = useDownloadManagerStore.getState();
-        this.addListeners();
 
         const downloadId = queueDownloadRequest({
             nodes,
-            isPhoto: false,
+            isPhoto: isPhotoDownload,
             containsUnsupportedFile,
             addDownloadItem,
             requestedDownloads: this.requestedDownloads,
             scheduleSingleFile: (id, node) => this.scheduleSingleFileDownload(id, node),
             scheduleArchive: (id, queuedNodes) => this.scheduleArchiveDownload(id, queuedNodes),
             getArchiveName: (items) => this.getArchiveName(items),
+            ...options,
         });
         if (!downloadId) {
             return;
@@ -219,38 +220,6 @@ export class DownloadManager {
             downloadId,
             containsUnsupportedFile,
             fileMediaTypes: nodes.map((f) => f.mediaType),
-        });
-    }
-
-    async downloadRevision(nodeUid: string, revisionUid: string) {
-        // TODO: Probably we can more specific and check the revision compatibility instead of the node
-        const { nodes, containsUnsupportedFile } = await hydrateAndCheckNodes([nodeUid]);
-        if (!nodes.length) {
-            return;
-        }
-        const { addDownloadItem } = useDownloadManagerStore.getState();
-        this.addListeners();
-
-        const downloadId = queueDownloadRequest({
-            nodes,
-            isPhoto: false,
-            containsUnsupportedFile,
-            revisionUid,
-            addDownloadItem,
-            requestedDownloads: this.requestedDownloads,
-            scheduleSingleFile: (id, node) => this.scheduleSingleFileDownload(id, node),
-            scheduleArchive: (id, queuedNodes) => this.scheduleArchiveDownload(id, queuedNodes),
-            getArchiveName: (items) => this.getArchiveName(items),
-        });
-        if (!downloadId) {
-            return;
-        }
-
-        downloadLogDebug('Queue revision download', {
-            downloadId,
-            nodeUid,
-            revisionUid,
-            containsUnsupportedFile,
         });
     }
 
@@ -264,8 +233,17 @@ export class DownloadManager {
         });
     }
 
+    /**
+     * Called from the consumer to resolve the Malaware decision with user choice from the UI
+     */
+    setMalawareDecision(downloadId: string, decision: IssueStatus) {
+        this.malwareDetection.resolveDecision(downloadId, decision);
+        downloadLogDebug('Malware decision', { downloadId, decision });
+    }
+
     private async startSingleFileDownload(node: NodeEntity, downloadId: string): Promise<void> {
         const { updateDownloadItem, getQueueItem } = useDownloadManagerStore.getState();
+
         const drive = getDownloadSdk(downloadId);
         const abortController = new AbortController();
         let fileDownloader: FileDownloader | FileRevisionDownloader;
@@ -281,6 +259,7 @@ export class DownloadManager {
                 revisionUid && 'getFileRevisionDownloader' in drive
                     ? await drive.getFileRevisionDownloader(revisionUid, abortController.signal)
                     : await drive.getFileDownloader(node.uid, abortController.signal);
+            const storeItem = getQueueItem(downloadId);
             const storageSize = getNodeStorageSize(node);
             updateDownloadItem(downloadId, { storageSize: storageSize, status: DownloadStatus.InProgress });
 
@@ -326,6 +305,12 @@ export class DownloadManager {
                 updateDownloadItem(downloadId, { downloadedBytes });
                 this.scheduler.updateDownloadProgress(downloadId, downloadedBytes);
             });
+
+            if (storeItem?.shouldScanForMalware) {
+                // Right now this can only be Approved or ignored, so no need to handle the decision
+                await this.malwareDetection.checkMalware(downloadId, node);
+                await this.malwareDetection.getPendingDecisionPromise(downloadId);
+            }
 
             try {
                 const metadataIssueLocation = detectMetadataSignatureIssue(node);
@@ -429,6 +414,7 @@ export class DownloadManager {
                 abortController,
                 parentPathByUid,
                 downloadId,
+                malwareDetection: this.malwareDetection,
             });
             const generator = archiveStreamGenerator.generator;
             const trackerController = archiveStreamGenerator.controller;
@@ -519,11 +505,9 @@ export class DownloadManager {
         abortController: AbortController;
         onCompleted: () => Promise<void>;
         onError: (error: unknown) => Promise<void> | void;
+        malwareDecision?: Promise<IssueStatus>;
     }): Promise<void> {
-        const activeDownload: ActiveDownload = {
-            controller,
-            abortController,
-        };
+        const activeDownload: ActiveDownload = { controller, abortController };
         this.activeDownloads.set(downloadId, activeDownload);
 
         const completionPromise = controller
@@ -548,11 +532,11 @@ export class DownloadManager {
         return `Download ${timestamp}.zip`;
     }
 
-    resolveMalwareDetection(downloadId: string, resolution: MalawareDownloadResolution) {
-        if (resolution === MalawareDownloadResolution.CancelDownload) {
+    resolveMalwareDetection(downloadId: string, resolution: MalwareDownloadResolution) {
+        if (resolution === MalwareDownloadResolution.CancelDownload) {
             this.cancel([downloadId]);
         }
-        if (resolution === MalawareDownloadResolution.ContinueDownload) {
+        if (resolution === MalwareDownloadResolution.ContinueDownload) {
             this.resume([downloadId]);
         }
     }

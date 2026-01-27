@@ -1,14 +1,13 @@
 import { type NodeEntity, NodeType } from '@proton/drive';
 
 import { type DownloadItemInput, DownloadStatus, IssueStatus } from '../../../zustand/download/downloadManager.store';
+import type { DownloadOptions } from '../downloadTypes';
 import { getNodeStorageSize } from './getNodeStorageSize';
 
-type QueueDownloadRequestParams = {
+type QueueDownloadRequestParams = DownloadOptions & {
     nodes: NodeEntity[];
     isPhoto: boolean;
     containsUnsupportedFile?: boolean;
-    albumName?: string;
-    revisionUid?: string;
     addDownloadItem: (item: DownloadItemInput) => string;
     requestedDownloads: Map<string, NodeEntity[]>;
     scheduleSingleFile: (downloadId: string, node: NodeEntity) => void;
@@ -27,6 +26,8 @@ export function queueDownloadRequest({
     scheduleSingleFile,
     scheduleArchive,
     getArchiveName,
+    shouldScanForMalware,
+    skipSignatureCheck,
 }: QueueDownloadRequestParams): string | undefined {
     if (!nodes.length) {
         return undefined;
@@ -35,6 +36,7 @@ export function queueDownloadRequest({
     const targetType = isPhoto ? NodeType.Photo : NodeType.File;
     const isSingleFileDownload = nodes.length === 1 && nodes[0].type === targetType;
     const unsupportedStatus = containsUnsupportedFile ? IssueStatus.Detected : undefined;
+    const signatureIssueAllDecision = skipSignatureCheck ? IssueStatus.Approved : undefined;
 
     if (isSingleFileDownload) {
         if (unsupportedStatus) {
@@ -50,6 +52,8 @@ export function queueDownloadRequest({
             revisionUid,
             unsupportedFileDetected: unsupportedStatus,
             isPhoto,
+            shouldScanForMalware,
+            signatureIssueAllDecision,
         });
         requestedDownloads.set(downloadId, nodes);
         void scheduleSingleFile(downloadId, node);
@@ -65,6 +69,8 @@ export function queueDownloadRequest({
         nodeUids: nodes.map(({ uid }) => uid),
         unsupportedFileDetected: unsupportedStatus,
         isPhoto,
+        shouldScanForMalware,
+        signatureIssueAllDecision,
     });
     requestedDownloads.set(downloadId, nodes);
     void scheduleArchive(downloadId, nodes);

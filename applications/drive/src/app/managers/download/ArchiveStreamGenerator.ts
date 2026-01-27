@@ -5,6 +5,7 @@ import { TransferCancel } from '../../utils/transfer';
 import { IssueStatus, useDownloadManagerStore } from '../../zustand/download/downloadManager.store';
 import type { DownloadController } from './DownloadManager';
 import type { ArchiveItem, ArchiveTracker, DownloadQueueTask, DownloadScheduler } from './downloadTypes';
+import type { MalwareDetection } from './malwareDetection/malwareDetection';
 import { createAsyncQueue } from './utils/asyncQueue';
 import { downloadLogDebug } from './utils/downloadLogger';
 import { getDownloadSdk } from './utils/getDownloadSdk';
@@ -121,6 +122,7 @@ type ArchiveStreamGeneratorParams = {
     abortController: AbortController;
     parentPathByUid: Map<string, string[]>;
     downloadId: string;
+    malwareDetection: MalwareDetection;
 };
 
 export class ArchiveStreamGenerator {
@@ -137,6 +139,7 @@ export class ArchiveStreamGenerator {
     private hasProducedItem = false;
     private totalClaimedSize = 0;
     private hasSignatureIssues = false;
+    private malwareDetection: MalwareDetection;
 
     readonly tracker: ArchiveTracker;
     readonly generator: AsyncGenerator<ArchiveItem>;
@@ -153,12 +156,14 @@ export class ArchiveStreamGenerator {
         abortController,
         parentPathByUid,
         downloadId,
+        malwareDetection,
     }: ArchiveStreamGeneratorParams) {
         this.entries = entries;
         this.scheduler = scheduler;
         this.abortController = abortController;
         this.parentPathByUid = parentPathByUid;
         this.downloadId = downloadId;
+        this.malwareDetection = malwareDetection;
         this.tracker = createArchiveTracker(onProgress);
         this.generator = this.createGenerator();
         this.controller = {
@@ -230,6 +235,11 @@ export class ArchiveStreamGenerator {
 
         const completeIndividualFile = async () => {
             try {
+                if (queueItem?.shouldScanForMalware) {
+                    await this.malwareDetection.checkMalware(this.downloadId, node);
+                    await this.malwareDetection.getPendingDecisionPromise(this.downloadId);
+                }
+
                 await controller.completion();
             } catch (error) {
                 // Manifest issues cannot be inferred by metadata, can only be thrown when completing the download

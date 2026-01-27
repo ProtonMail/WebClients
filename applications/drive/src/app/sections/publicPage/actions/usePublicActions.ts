@@ -75,7 +75,7 @@ export const usePublicActions = () => {
             }
         }
 
-        await downloadManager.download(uids);
+        void downloadManager.downloadAndScan(uids, { skipSignatureCheck: true });
     };
 
     const handleDetails = (uid: string) => {

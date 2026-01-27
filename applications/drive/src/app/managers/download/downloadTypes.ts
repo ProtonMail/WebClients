@@ -53,3 +53,11 @@ export type DownloadScheduler = {
     generateTaskId(): string;
     updateDownloadProgress(taskId: string, downloadedBytes: number): void;
 };
+
+export type DownloadOptions = {
+    isPhoto?: boolean;
+    albumName?: string;
+    shouldScanForMalware?: boolean;
+    skipSignatureCheck?: boolean;
+    revisionUid?: string;
+};
