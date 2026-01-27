@@ -175,7 +175,7 @@ jest.mock('./DownloadDriveClientRegistry', () => {
 });
 
 const { DownloadManager } = jest.requireActual('./DownloadManager');
-const { DownloadStatus, MalawareDownloadResolution } = jest.requireActual(
+const { DownloadStatus, MalwareDownloadResolution } = jest.requireActual(
     '../../zustand/download/downloadManager.store'
 );
 const {
@@ -769,10 +769,10 @@ describe('DownloadManager', () => {
         const cancelSpy = jest.spyOn(manager, 'cancel').mockImplementation(() => undefined);
         const resumeSpy = jest.spyOn(manager, 'resume').mockImplementation(() => undefined);
 
-        manager.resolveMalwareDetection('job-6', MalawareDownloadResolution.CancelDownload);
+        manager.resolveMalwareDetection('job-6', MalwareDownloadResolution.CancelDownload);
         expect(cancelSpy).toHaveBeenCalledWith(['job-6']);
 
-        manager.resolveMalwareDetection('job-6', MalawareDownloadResolution.ContinueDownload);
+        manager.resolveMalwareDetection('job-6', MalwareDownloadResolution.ContinueDownload);
         expect(resumeSpy).toHaveBeenCalledWith(['job-6']);
     });
 

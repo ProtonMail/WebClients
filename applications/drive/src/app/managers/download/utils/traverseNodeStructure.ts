@@ -1,7 +1,8 @@
 import type { NodeEntity } from '@proton/drive';
-import { NodeType, getDrive } from '@proton/drive/index';
+import { NodeType } from '@proton/drive/index';
 
 import { getNodeEntity } from '../../../utils/sdk/getNodeEntity';
+import { DownloadDriveClientRegistry } from '../DownloadDriveClientRegistry';
 import type { AsyncQueue } from './asyncQueue';
 import { createAsyncQueue } from './asyncQueue';
 import { getNodeStorageSize } from './getNodeStorageSize';
@@ -20,7 +21,7 @@ export function traverseNodeStructure(nodes: NodeEntity[], signal: AbortSignal):
     const fetchQueue = createAsyncQueue<NodeEntity>();
     const nodesQueue = createAsyncQueue<NodeEntity>();
     const parentPathByUid = new Map<string, string[]>();
-    const drive = getDrive();
+    const drive = DownloadDriveClientRegistry.getDriveClient();
 
     let pendingFetchTasks = 0;
     let totalEncryptedSize = 0;

@@ -13,6 +13,7 @@ export enum BaseTransferStatus {
     Finished = 'finished',
     Pending = 'pending',
     Cancelled = 'cancelled',
+    MalwareDetected = 'malwareDetectionStatus',
 }
 
 export enum DownloadStatus {
@@ -25,11 +26,12 @@ export enum DownloadStatus {
     // Download waiting to start in queue
     Pending = BaseTransferStatus.Pending,
     Cancelled = BaseTransferStatus.Cancelled,
+    MalwareDetected = BaseTransferStatus.MalwareDetected,
 }
 
 type DownloadStatusKeys = (typeof DownloadStatus)[keyof typeof DownloadStatus];
 
-export enum MalawareDownloadResolution {
+export enum MalwareDownloadResolution {
     CancelDownload = 'CancelDownload',
     ContinueDownload = 'ContinueDownload',
 }
@@ -47,6 +49,14 @@ export type SignatureIssue = {
     message: string;
 };
 
+type MalwareInfo = {
+    uid: string;
+    name: string;
+    mediaType: string;
+    size: number;
+    message?: string;
+};
+
 export type DownloadItem = {
     driveClient?: ProtonDriveClient | ProtonDrivePhotosClient | ProtonDrivePublicLinkClient;
     downloadId: string;
@@ -59,7 +69,9 @@ export type DownloadItem = {
     nodeUids: string[];
     revisionUid?: string;
     downloadedBytes: number;
-    malwareDetected?: Map<string, IssueStatus>;
+    malwareDetectionStatus?: IssueStatus;
+    malwareInfo?: MalwareInfo;
+    shouldScanForMalware?: boolean;
     unsupportedFileDetected?: IssueStatus;
     signatureIssues?: Record<string, SignatureIssue>;
     // Decision set with applyAll, will override individual choices
@@ -100,7 +112,7 @@ export const useDownloadManagerStore = create<DownloadManagerStore>()(
                 const downloadId = generateUID();
                 const downloadItem: DownloadItem = {
                     ...item,
-                    malwareDetected: undefined,
+                    malwareDetectionStatus: undefined,
                     downloadId,
                     lastStatusUpdateTime: new Date(),
                 };

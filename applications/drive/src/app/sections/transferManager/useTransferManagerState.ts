@@ -32,6 +32,7 @@ type TransferManagerDownloadEntry = TransferManagerBaseEntry & {
     type: 'download';
     status: DownloadItem['status'] | BaseTransferStatus;
     storageSize: number;
+    malwareDetectionStatus: DownloadItem['malwareDetectionStatus'];
 };
 
 type TransferManagerUploadEntry = TransferManagerBaseEntry & {
@@ -43,21 +44,15 @@ type TransferManagerUploadEntry = TransferManagerBaseEntry & {
 // TODO: we need to add the transfer speed in bytes from the stores
 export type TransferManagerEntry = TransferManagerDownloadEntry | TransferManagerUploadEntry;
 
-const mapDownload = ({
-    downloadId,
-    name,
-    status,
-    downloadedBytes,
-    storageSize,
-    lastStatusUpdateTime,
-}: DownloadItem): TransferManagerDownloadEntry => ({
+const mapDownload = (item: DownloadItem): TransferManagerDownloadEntry => ({
     type: 'download',
-    id: downloadId,
-    name,
-    status,
-    transferredBytes: downloadedBytes,
-    storageSize: storageSize ?? 0,
-    lastStatusUpdateTime,
+    id: item.downloadId,
+    name: item.name,
+    status: item.status,
+    transferredBytes: item.downloadedBytes,
+    storageSize: item.storageSize ?? 0,
+    lastStatusUpdateTime: item.lastStatusUpdateTime,
+    malwareDetectionStatus: item.malwareDetectionStatus,
 });
 
 const getUploadTransferredBytes = (item: UploadItem): number => {
@@ -83,6 +78,7 @@ const getShouldIgnoreTransferProgress = (
     return (
         status === BaseTransferStatus.Cancelled ||
         status === BaseTransferStatus.Failed ||
+        status === BaseTransferStatus.MalwareDetected ||
         status === UploadStatus.Skipped ||
         status === UploadStatus.PhotosDuplicate
     );
@@ -135,7 +131,7 @@ export const useTransferManagerState = () => {
             status = TransferManagerStatus.Empty;
         } else if (statesMap.get(BaseTransferStatus.InProgress) || statesMap.get(BaseTransferStatus.Pending)) {
             status = TransferManagerStatus.InProgress;
-        } else if (statesMap.get(BaseTransferStatus.Failed)) {
+        } else if (statesMap.get(BaseTransferStatus.Failed) || statesMap.get(BaseTransferStatus.MalwareDetected)) {
             status = TransferManagerStatus.Failed;
         } else if (statesMap.get(BaseTransferStatus.Cancelled)) {
             status = TransferManagerStatus.Cancelled;
@@ -166,6 +162,7 @@ export const useTransferManagerState = () => {
                 case BaseTransferStatus.InProgress:
                     return 3;
                 case BaseTransferStatus.Failed:
+                case BaseTransferStatus.MalwareDetected:
                     return 2;
                 case BaseTransferStatus.Pending:
                     return 1;
