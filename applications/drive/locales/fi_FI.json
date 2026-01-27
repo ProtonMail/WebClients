@@ -752,9 +752,6 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Avaa ${ CALENDAR_APP_NAME }in asetukset"
       ],
-      "Open in ${ SHEETS_APP_NAME }": [
-        "Avaa ${ SHEETS_APP_NAME } -sovelluksessa"
-      ],
       "Open navigation": [
         "Avaa navigaatio"
       ],
@@ -1220,6 +1217,16 @@
       ],
       "Zoom out": [
         "Loitonna"
+      ]
+    },
+    "Action: Docs": {
+      "Open in ${ DOCS_APP_NAME }": [
+        "Avaa ${ DOCS_APP_NAME } -sovelluksessa"
+      ]
+    },
+    "Action: Sheets": {
+      "Open in ${ SHEETS_APP_NAME }": [
+        "Avaa ${ SHEETS_APP_NAME } -sovelluksessa"
       ]
     },
     "Actions": {
@@ -4898,6 +4905,9 @@
         "Kaikki yhteystiedot tuodaan ${ MAX_CONTACTS_PER_USER } yhteystiedon rajoitukseen saakka",
         "Kaikki yhteystiedot tuodaan ${ MAX_CONTACTS_PER_USER } yhteystiedon rajoitukseen saakka"
       ],
+      "Already in this folder": [
+        "Jo tässä kansiossa"
+      ],
       "Already in your library": [
         "On jo kirjastossasi"
       ],
@@ -4996,6 +5006,9 @@
       ],
       "Calendar side panel": [
         "Calendar-sivupaneeli"
+      ],
+      "Can't move a folder into itself": [
+        "Kansiota ei voi siirtää itseensä"
       ],
       "Canceled": [
         "Peruttu"
@@ -5868,6 +5881,9 @@
       "Search Enabled": [
         "Haku otettiin käyttöön"
       ],
+      "Select a destination folder": [
+        "Valitse kohdekansio"
+      ],
       "Select a folder to move to.": [
         "Valitse kohdekansio."
       ],
@@ -6325,6 +6341,9 @@
       ],
       "Week": [
         "Viikko"
+      ],
+      "Welcome to ${ DRIVE_APP_NAME }, for the first 10 minutes, any files you upload don't count toward your storage quota.": [
+        "Tervetuloa ${ DRIVE_APP_NAME } -palveluun. Ensimmäisten 10 minuutin aikana lataamasi tiedostot eivät vaikuta tallennustilan kiintiöön."
       ],
       "What do you want to do?": [
         "Mitä haluat tehdä?"
@@ -11338,6 +11357,9 @@
       ],
       "${ feature } is now active": [
         "${ feature } on nyt käytössä"
+      ],
+      "${ freeUploadLength } of free uploads.": [
+        "${ freeUploadLength } ilmaisia latauksia."
       ],
       "${ numberOfFailedTransfer.total } failed download": [
         "${ numberOfFailedTransfer.total } epäonnistunut lataus",

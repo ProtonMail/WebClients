@@ -753,9 +753,6 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "${ CALENDAR_APP_NAME } の設定を開く"
       ],
-      "Open in ${ SHEETS_APP_NAME }": [
-        "${ SHEETS_APP_NAME } で開く"
-      ],
       "Open navigation": [
         "ナビゲーションを開く"
       ],
@@ -923,6 +920,9 @@
       ],
       "Save changes": [
         "変更を保存"
+      ],
+      "Save for later": [
+        "あとで保存"
       ],
       "Save photos and remove": [
         "写真を保存して削除"
@@ -1220,6 +1220,16 @@
       ],
       "Zoom out": [
         "縮小"
+      ]
+    },
+    "Action: Docs": {
+      "Open in ${ DOCS_APP_NAME }": [
+        "${ DOCS_APP_NAME } で開く"
+      ]
+    },
+    "Action: Sheets": {
+      "Open in ${ SHEETS_APP_NAME }": [
+        "${ SHEETS_APP_NAME } で開く"
       ]
     },
     "Actions": {
@@ -3775,6 +3785,9 @@
       "We were not able to load the folder contents": [
         "フォルダーの内容を読み込めませんでした"
       ],
+      "We're sorry, but free upload is not available right now.": [
+        "申し訳ありませんが、現在無料アップロードは利用できません。"
+      ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "${ maxContacts }件以上の宛先へメールを送信することはできません"
       ],
@@ -4939,6 +4952,9 @@
       "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
         "${ MAX_CONTACTS_PER_USER } の制限まで、すべての連絡先がインポートされます"
       ],
+      "Already in this folder": [
+        "このフォルダに既にあります"
+      ],
       "Already in your library": [
         "ライブラリに追加済み"
       ],
@@ -5040,6 +5056,9 @@
       ],
       "Calendar side panel": [
         "カレンダーサイドパネル"
+      ],
+      "Can't move a folder into itself": [
+        "同じフォルダに移動することはできません"
       ],
       "Canceled": [
         "キャンセル"
@@ -5932,6 +5951,9 @@
       "Search Enabled": [
         "検索機能が有効です"
       ],
+      "Select a destination folder": [
+        "移動先のフォルダを選択"
+      ],
       "Select a folder to make the copy in": [
         "コピー先のフォルダーを選択"
       ],
@@ -6415,6 +6437,9 @@
       "Week": [
         "週"
       ],
+      "Welcome to ${ DRIVE_APP_NAME }, for the first 10 minutes, any files you upload don't count toward your storage quota.": [
+        "${ DRIVE_APP_NAME }へようこそ。最初の10分間は、アップロードしたファイルはストレージ容量にカウントされません。"
+      ],
       "What do you want to do?": [
         "何をしますか?"
       ],
@@ -6828,6 +6853,9 @@
       ],
       "Anderson": [
         "アンダーソン"
+      ],
+      "Anonymous": [
+        "匿名"
       ],
       "Anyone on the Internet with the link can edit": [
         "このリンクを知っていれば、インターネット上の誰でも編集できます"
@@ -9373,9 +9401,6 @@
       "Edit documents online": [
         "オンラインでドキュメントを編集"
       ],
-      "Encryption happens automatically": [
-        "暗号化は自動的に行われます。"
-      ],
       "End-to-end encrypted storage for your files": [
         "ファイルのエンドツーエンド暗号化ストレージ"
       ],
@@ -9451,9 +9476,6 @@
       "The owner needs to confirm sharing access. You'll get an email once it's done.": [
         "オーナーが共有アクセスを確認する必要があります。完了したらメールが届きます。"
       ],
-      "Upload files, folders, photos": [
-        "ファイル、フォルダ、写真をアップロード"
-      ],
       "Upload your first file": [
         "最初のファイルをアップロード"
       ],
@@ -9465,9 +9487,6 @@
       ],
       "You just snagged some free data and secured your files with end-to-end encryption － in record time!": [
         "無料のデータを獲得し、お客様のファイルはエンドツーエンド暗号化で記録的な速さで保護されました。"
-      ],
-      "Your storage limit won’t be affected": [
-        "お客様のストレージ制限には影響がありません"
       ]
     },
     "Onboarding Trial": {
@@ -11282,6 +11301,9 @@
       "Securely share your favorite moments with friends and family using Albums.": [
         "アルバムを使用して友達や家族と安全にお気に入りの瞬間を共有。"
       ],
+      "Shared by ${ sharedBy }": [
+        "${ sharedBy }が共有"
+      ],
       "Your favorited photos will appear here": [
         "お気に入りの写真はここに表示されます"
       ],
@@ -11556,6 +11578,9 @@
       ],
       "${ feature } is now active": [
         "${ feature } は現在アクティブです"
+      ],
+      "${ freeUploadLength } of free uploads.": [
+        "${ freeUploadLength } 件の無料アップロード"
       ],
       "${ numberOfFailedTransfer.total } failed download": [
         "${ numberOfFailedTransfer.total }件のダウンロードに失敗"
@@ -12522,9 +12547,6 @@
       ],
       "You have no folders yet": [
         "まだフォルダがありません"
-      ],
-      "Your ${ freeUploadLength } has started.": [
-        "お客様の ${ freeUploadLength } が開始されました。"
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "${ planName }の無料トライアルは${ textDate }に終了します"

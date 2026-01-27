@@ -758,9 +758,6 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Abrir configurações do ${ CALENDAR_APP_NAME }"
       ],
-      "Open in ${ SHEETS_APP_NAME }": [
-        "Abrir no ${ SHEETS_APP_NAME }"
-      ],
       "Open navigation": [
         "Abrir navegação"
       ],
@@ -1229,6 +1226,16 @@
       ],
       "Zoom out": [
         "Diminuir zoom"
+      ]
+    },
+    "Action: Docs": {
+      "Open in ${ DOCS_APP_NAME }": [
+        "Abrir no ${ DOCS_APP_NAME }"
+      ]
+    },
+    "Action: Sheets": {
+      "Open in ${ SHEETS_APP_NAME }": [
+        "Abrir no ${ SHEETS_APP_NAME }"
       ]
     },
     "Actions": {
@@ -5015,6 +5022,9 @@
         "Todos os seus contatos serão importados, até o limite de ${ MAX_CONTACTS_PER_USER }",
         "Todos os seus contatos serão importados, até o limite de ${ MAX_CONTACTS_PER_USER }"
       ],
+      "Already in this folder": [
+        "Já nesta pasta"
+      ],
       "Already in your library": [
         "Já está na sua biblioteca"
       ],
@@ -5116,6 +5126,9 @@
       ],
       "Calendar side panel": [
         "Painel lateral de calendário"
+      ],
+      "Can't move a folder into itself": [
+        "Não é possível mover uma pasta para si mesma"
       ],
       "Canceled": [
         "Cancelado"
@@ -6015,6 +6028,9 @@
       "Search Enabled": [
         "Busca habilitada"
       ],
+      "Select a destination folder": [
+        "Selecione uma pasta de destino"
+      ],
       "Select a folder to make the copy in": [
         "Selecione uma pasta para fazer a cópia"
       ],
@@ -6496,6 +6512,9 @@
       ],
       "Week": [
         "Semana"
+      ],
+      "Welcome to ${ DRIVE_APP_NAME }, for the first 10 minutes, any files you upload don't count toward your storage quota.": [
+        "Bem-vindo ao ${ DRIVE_APP_NAME }. Nos primeiros 10 minutos, quaisquer arquivos que você enviar não contarão para sua cota de armazenamento."
       ],
       "What do you want to do?": [
         "O que você deseja fazer?"
@@ -9590,9 +9609,6 @@
       "Edit documents online": [
         "Editar documentos on-line"
       ],
-      "Encryption happens automatically": [
-        "A criptografia ocorre automaticamente"
-      ],
       "End-to-end encrypted storage for your files": [
         "Armazenamento criptografado de ponta a ponta para seus arquivos"
       ],
@@ -9668,9 +9684,6 @@
       "The owner needs to confirm sharing access. You'll get an email once it's done.": [
         "O proprietário precisa confirmar o acesso de compartilhamento. Você receberá um e-mail quando isso for feito."
       ],
-      "Upload files, folders, photos": [
-        "Enviar arquivos, pastas, fotos"
-      ],
       "Upload your first file": [
         "Faça upload de seu primeiro arquivo"
       ],
@@ -9682,9 +9695,6 @@
       ],
       "You just snagged some free data and secured your files with end-to-end encryption － in record time!": [
         "Você acabou de obter dados gratuitos e protegeu seus arquivos com criptografia de ponta a ponta － em tempo recorde!"
-      ],
-      "Your storage limit won’t be affected": [
-        "Seu limite de armazenamento não será afetado"
       ]
     },
     "Onboarding Trial": {
@@ -11547,6 +11557,9 @@
       "Securely share your favorite moments with friends and family using Albums.": [
         "Compartilhe com segurança seus momentos favoritos com amigos e famílias usando Álbuns."
       ],
+      "Shared by ${ sharedBy }": [
+        "Compartilhado por ${ sharedBy }"
+      ],
       "Your favorited photos will appear here": [
         "Suas fotos favoritas aparecerão aqui."
       ],
@@ -11830,6 +11843,9 @@
       ],
       "${ feature } is now active": [
         "O recurso ${ feature } agora está ativo."
+      ],
+      "${ freeUploadLength } of free uploads.": [
+        "${ freeUploadLength } de envios gratuitos."
       ],
       "${ numberOfFailedTransfer.total } failed download": [
         "${ numberOfFailedTransfer.total } erro de download",
@@ -12796,9 +12812,6 @@
       "You have no folders yet": [
         "Você ainda não tem pastas"
       ],
-      "Your ${ freeUploadLength } has started.": [
-        "Seu ${ freeUploadLength } começou."
-      ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Sua avaliação gratuita do ${ planName } termina em ${ textDate }"
       ],
@@ -12813,6 +12826,9 @@
       ],
       "Your changes are not synced yet": [
         "Sua alteração não foram sintonizadas ainda"
+      ],
+      "Your download includes ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME } files": [
+        "Seu download inclui arquivos do ${ DOCS_APP_NAME } ou ${ SHEETS_APP_NAME }."
       ],
       "Your exposed information": [
         "Sua informação exposta"

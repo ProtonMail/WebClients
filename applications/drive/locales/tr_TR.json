@@ -758,9 +758,6 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "${ CALENDAR_APP_NAME } ayarlarını aç"
       ],
-      "Open in ${ SHEETS_APP_NAME }": [
-        "${ SHEETS_APP_NAME } ile aç"
-      ],
       "Open navigation": [
         "Gezinmeyi aç"
       ],
@@ -1229,6 +1226,16 @@
       ],
       "Zoom out": [
         "Uzaklaştır"
+      ]
+    },
+    "Action: Docs": {
+      "Open in ${ DOCS_APP_NAME }": [
+        "${ DOCS_APP_NAME } uygulamasında aç"
+      ]
+    },
+    "Action: Sheets": {
+      "Open in ${ SHEETS_APP_NAME }": [
+        "${ SHEETS_APP_NAME } uygulamasında aç"
       ]
     },
     "Actions": {
@@ -3802,6 +3809,9 @@
       "We were not able to load the folder contents": [
         "Klasör içeriği yüklenemedi"
       ],
+      "We're sorry, but free upload is not available right now.": [
+        "Üzgünüz, ancak şu anda ücretsiz yükleme hizmeti sunulmamaktadır."
+      ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Bir e-postayı ${ maxContacts } taneden fazla alıcıya göndermezsiniz",
         "Bir e-postayı ${ maxContacts } taneden fazla alıcıya göndermezsiniz"
@@ -5021,6 +5031,9 @@
         "${ MAX_CONTACTS_PER_USER } kişiye kadar tüm kişileriniz içe aktarılacak",
         "${ MAX_CONTACTS_PER_USER } kişiye kadar tüm kişileriniz içe aktarılacak"
       ],
+      "Already in this folder": [
+        "Zaten bu klasörde mevcut"
+      ],
       "Already in your library": [
         "Zaten kitaplığınızda"
       ],
@@ -5122,6 +5135,9 @@
       ],
       "Calendar side panel": [
         "Takvim yan panosu"
+      ],
+      "Can't move a folder into itself": [
+        "Klasör kendi içine taşınamaz"
       ],
       "Canceled": [
         "İptal edildi"
@@ -6021,6 +6037,9 @@
       "Search Enabled": [
         "Arama özelliği açıldı"
       ],
+      "Select a destination folder": [
+        "Hedef klasörü seçin"
+      ],
       "Select a folder to make the copy in": [
         "İçine kopyalanacak bir klasör seçin"
       ],
@@ -6508,6 +6527,9 @@
       ],
       "Week": [
         "Hafta"
+      ],
+      "Welcome to ${ DRIVE_APP_NAME }, for the first 10 minutes, any files you upload don't count toward your storage quota.": [
+        "${ DRIVE_APP_NAME }'a hoş geldiniz. İlk 10 dakika boyunca yüklediğiniz dosyalar depolama kotanızdan düşülmez."
       ],
       "What do you want to do?": [
         "Ne yapmak istersiniz?"
@@ -9548,9 +9570,6 @@
       "Edit documents online": [
         "Belgeleri çevrim içi düzenleyin"
       ],
-      "Encryption happens automatically": [
-        "Şifreleme otomatik olarak yapılır"
-      ],
       "End-to-end encrypted storage for your files": [
         "Dosyalarınız için uçtan uca şifrelenmiş depolama alanı"
       ],
@@ -9626,9 +9645,6 @@
       "The owner needs to confirm sharing access. You'll get an email once it's done.": [
         "Sahibi paylaşım erişimi iznini onaylamalıdır. İşlem tamamlandığında bir e-posta alacaksınız."
       ],
-      "Upload files, folders, photos": [
-        "Dosyaları, klasörleri, fotoğrafları yükleyin"
-      ],
       "Upload your first file": [
         "İlk dosyanızı yükleyin"
       ],
@@ -9640,9 +9656,6 @@
       ],
       "You just snagged some free data and secured your files with end-to-end encryption － in record time!": [
         "Az önce ücretsiz veri hakkı kazandınız ve dosyalarınızı uçtan uca şifrelemeyle rekor sürede korudunuz!"
-      ],
-      "Your storage limit won’t be affected": [
-        "Depolama alanı sınırınız etkilenmeyecek"
       ]
     },
     "Onboarding Trial": {
@@ -11786,6 +11799,9 @@
       "${ feature } is now active": [
         "${ feature } etkinleştirildi"
       ],
+      "${ freeUploadLength } of free uploads.": [
+        "${ freeUploadLength } ücretsiz yükleme."
+      ],
       "${ numberOfFailedTransfer.total } failed download": [
         "${ numberOfFailedTransfer.total } indirme tamamlanamadı",
         "${ numberOfFailedTransfer.total } indirme tamamlanamadı"
@@ -12762,9 +12778,6 @@
       ],
       "You have no folders yet": [
         "Henüz bir klasörünüz yok"
-      ],
-      "Your ${ freeUploadLength } has started.": [
-        "${ freeUploadLength } süreniz başladı."
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "${ planName } ücretsiz deneme süreniz ${ textDate } tarihinde sonra erecek"
