@@ -105,6 +105,18 @@ export const isGoogleOAuthAuthorizationURL = (urlString: string) => {
     }
 };
 
+export const isZoomAuthURL = (urlString: string) => {
+    try {
+        const url = new URL(urlString);
+
+        if (!url.hostname.includes("zoom") || !url.pathname.startsWith("/oauth/")) return false;
+
+        return true;
+    } catch (error) {
+        return false;
+    }
+};
+
 export const isAccountAuthorize = (urlString: string) => {
     try {
         const url = new URL(urlString);
