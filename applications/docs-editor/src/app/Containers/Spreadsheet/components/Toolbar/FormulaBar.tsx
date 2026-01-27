@@ -7,7 +7,7 @@ import {
   FormulaBarInput,
   selectionToRxC,
 } from '@rowsncolumns/spreadsheet'
-import { addressToCell, cellToAddress, convertCellToRange, sortSheetsByIndex } from '@rowsncolumns/utils'
+import { addressToCell, cellToAddress, convertCellToRange } from '@rowsncolumns/utils'
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { useUI } from '../../ui-store'
 import { FUNCTION_DESCRIPTIONS } from '../../constants'
@@ -16,6 +16,7 @@ import * as UI from '../ui'
 import * as Icons from '../icons'
 import { c } from 'ttag'
 import { createStringifier } from '../../stringifier'
+import { sortSheetsByIndex } from '../../state'
 
 const { s } = createStringifier(strings)
 
