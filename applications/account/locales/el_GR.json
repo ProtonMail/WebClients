@@ -1053,9 +1053,6 @@
       "Open ${ PASS_APP_NAME } in your browser": [
         "Ανοίξτε το ${ PASS_APP_NAME } στο πρόγραμμα περιήγησής σας"
       ],
-      "Open in ${ SHEETS_APP_NAME }": [
-        "Άνοιγμα με ${ SHEETS_APP_NAME }"
-      ],
       "Open in new tab": [
         "Άνοιγμα σε νέα καρτέλα"
       ],
@@ -1088,6 +1085,9 @@
       ],
       "Pay ${ price } now": [
         "Πληρωμή ${ price } τώρα"
+      ],
+      "Pay once": [
+        "Πληρώστε μία φορά"
       ],
       "Preview": [
         "Προεπισκόπηση"
@@ -1295,6 +1295,9 @@
       ],
       "See plan features": [
         "Προβολή δυνατοτήτων προγράμματος"
+      ],
+      "Select": [
+        "Επιλέξτε"
       ],
       "Select ${ planOrAppName }": [
         "Επιλογή ${ planOrAppName }"
@@ -1719,6 +1722,11 @@
     "Action subscription": {
       "Reactivate": [
         "Επανενεργοποίηση"
+      ]
+    },
+    "Action: Sheets": {
+      "Open in ${ SHEETS_APP_NAME }": [
+        "Άνοιγμα με ${ SHEETS_APP_NAME }"
       ]
     },
     "Action; accept invitation to share calendar": {
@@ -10497,6 +10505,9 @@
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Η τιμή περιλαμβάνει όλες τις ισχύουσες εκπτώσεις βάσει κύκλου καθώς και τα κουπόνια που δεν έχουν λήξει και είναι αποθηκευμένα στον λογαριασμό σας."
       ],
+      "Privacy and security starts here": [
+        "Η ιδιωτικότητα και η ασφάλεια ξεκινούν εδώ"
+      ],
       "Private AI assistant": [
         "Ιδιωτικός βοηθός AI"
       ],
@@ -11463,6 +11474,9 @@
       "With email categories, important messages land in a primary inbox. Everything else is organized into categories.": [
         "Με τις κατηγορίες email, τα σημαντικά μηνύματα καταλήγουν στον κύριο φάκελο εισερχομένων. Όλα τα άλλα οργανώνονται σε κατηγορίες."
       ],
+      "With groups, you can implement the company security policies for access control and reduce the risk of accessing unauthorised data.": [
+        "Με τις ομάδες, μπορείτε να εφαρμόσετε τις πολιτικές ασφαλείας της εταιρείας για τον έλεγχο πρόσβασης και να μειώσετε τον κίνδυνο πρόσβασης σε μη εξουσιοδοτημένα δεδομένα."
+      ],
       "With groups, you can quickly and easily send emails to all the people in a specified group.": [
         "Με τις ομάδες, μπορείτε γρήγορα και εύκολα να στείλετε μηνύματα ηλεκτρονικού ταχυδρομείου σε όλα τα άτομα μιας συγκεκριμένης ομάδας."
       ],
@@ -12403,6 +12417,9 @@
         "${ nbYear } έτος",
         "${ nbYear } έτη"
       ],
+      "${ pricePerMonthWithCurrency } / month": [
+        "${ pricePerMonthWithCurrency } / μήνα"
+      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Προσωρινά μη διαθέσιμο. Παρακαλούμε ελέγξτε ξανά αργότερα.)"
       ],
@@ -12633,6 +12650,12 @@
       ],
       "Beta": [
         "Beta (Δοκιμαστική)"
+      ],
+      "Billed at ${ priceYearly } every 12 months.": [
+        "Χρεώνεται σε ${ priceYearly } κάθε 12 μήνες."
+      ],
+      "Billed monthly.": [
+        "Μηνιαία χρέωση."
       ],
       "Billing cycle": [
         "Κύκλος χρέωσης"
@@ -13126,6 +13149,9 @@
       "Level for NetShield blocker filtering": [
         "Επίπεδο φίλτρου φραγής NetShield"
       ],
+      "Limited time": [
+        "Περιορισμένος χρόνος"
+      ],
       "Link label (optional)": [
         "Ετικέτα συνδέσμου (προαιρετικό)"
       ],
@@ -13191,6 +13217,9 @@
       ],
       "Moderate NAT": [
         "Μέτριο NAT"
+      ],
+      "Most popular": [
+        "Πιο δημοφιλή"
       ],
       "Move to": [
         "Μεταφορά σε"
@@ -13311,6 +13340,9 @@
       ],
       "Password strength": [
         "Ισχύς Κωδικού Πρόσβασης"
+      ],
+      "Pay once, access forever.": [
+        "Πληρώστε μία φορά, αποκτήστε πρόσβαση για πάντα."
       ],
       "Payer": [
         "Πληρωτής"
@@ -21834,6 +21866,9 @@
       "An address for each role": [
         "Μια διεύθυνση για κάθε ρόλο"
       ],
+      "Annual": [
+        "Ετήσια"
+      ],
       "Anytime, anywhere access": [
         "Πρόσβαση ανά πάσα στιγμή, από οπουδήποτε"
       ],
@@ -22573,6 +22608,9 @@
       "Leave group?": [
         "Αποχώρηση από την ομάδα;"
       ],
+      "Lifetime": [
+        "Εφ' όρου ζωής"
+      ],
       "Limit reached": [
         "Υπέρβαση ορίου"
       ],
@@ -22599,6 +22637,9 @@
       ],
       "Mobile": [
         "Κινητό"
+      ],
+      "Monthly": [
+        "Μηνιαία"
       ],
       "Multi-user support": [
         "Υποστήριξη Πολλαπλών Χρηστών"

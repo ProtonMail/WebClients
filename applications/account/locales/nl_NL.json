@@ -1053,9 +1053,6 @@
       "Open ${ PASS_APP_NAME } in your browser": [
         "Open ${ PASS_APP_NAME } in uw browser"
       ],
-      "Open in ${ SHEETS_APP_NAME }": [
-        "Openen in ${ SHEETS_APP_NAME }"
-      ],
       "Open in new tab": [
         "Open in een nieuwe tabblad"
       ],
@@ -1088,6 +1085,9 @@
       ],
       "Pay ${ price } now": [
         "Betaal nu ${ price }"
+      ],
+      "Pay once": [
+        "Eenmalig betalen"
       ],
       "Preview": [
         "Voorbeeld"
@@ -1295,6 +1295,9 @@
       ],
       "See plan features": [
         "Bekijk de abonnementskenmerken"
+      ],
+      "Select": [
+        "Selecteer"
       ],
       "Select ${ planOrAppName }": [
         "Selecteer ${ planOrAppName }"
@@ -1719,6 +1722,11 @@
     "Action subscription": {
       "Reactivate": [
         "Opnieuw activeren"
+      ]
+    },
+    "Action: Sheets": {
+      "Open in ${ SHEETS_APP_NAME }": [
+        "Openen in ${ SHEETS_APP_NAME }"
       ]
     },
     "Action; accept invitation to share calendar": {
@@ -10497,6 +10505,9 @@
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "De prijs is inclusief alle toepasselijke cyclusgebonden kortingen en geldige coupons die in uw account zijn opgeslagen."
       ],
+      "Privacy and security starts here": [
+        "Privacy en beveiliging begint hier"
+      ],
       "Private AI assistant": [
         "Privé AI-assistent"
       ],
@@ -11463,6 +11474,9 @@
       "With email categories, important messages land in a primary inbox. Everything else is organized into categories.": [
         "Met e-mailcategorieën komen belangrijke berichten in een primaire inbox terecht. Al het andere wordt in categorieën geordend."
       ],
+      "With groups, you can implement the company security policies for access control and reduce the risk of accessing unauthorised data.": [
+        "Met groepen kunt u het beveiligingsbeleid van het beleid voor toegangsbeheer implementeren en het risico op toegang tot ongeautoriseerde gegevens verminderen."
+      ],
       "With groups, you can quickly and easily send emails to all the people in a specified group.": [
         "Met groepen kunt u snel en gemakkelijk e-mails versturen naar alle mensen in een specifieke groep."
       ],
@@ -12403,6 +12417,9 @@
         "${ nbYear } jaar",
         "${ nbYear } jaren"
       ],
+      "${ pricePerMonthWithCurrency } / month": [
+        "${ pricePerMonthWithCurrency } / maand"
+      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Tijdelijk onbeschikbaar. Probeer later opnieuw.)"
       ],
@@ -12633,6 +12650,12 @@
       ],
       "Beta": [
         "Bèta"
+      ],
+      "Billed at ${ priceYearly } every 12 months.": [
+        "U betaalt ${ priceYearly } per 12 maanden."
+      ],
+      "Billed monthly.": [
+        "Maandelijks gefactureerd."
       ],
       "Billing cycle": [
         "Facturatieperiode"
@@ -13126,6 +13149,9 @@
       "Level for NetShield blocker filtering": [
         "Niveau voor NetShield blokkeerfiltering"
       ],
+      "Limited time": [
+        "Beperkte tijd"
+      ],
       "Link label (optional)": [
         "Link label (optioneel)"
       ],
@@ -13191,6 +13217,9 @@
       ],
       "Moderate NAT": [
         "Gemiddelde NAT"
+      ],
+      "Most popular": [
+        "Meest populair"
       ],
       "Move to": [
         "Verplaatsen naar"
@@ -13311,6 +13340,9 @@
       ],
       "Password strength": [
         "Wachtwoordsterkte"
+      ],
+      "Pay once, access forever.": [
+        "Betaal één keer, toegang voor altijd."
       ],
       "Payer": [
         "Betaler"
@@ -21834,6 +21866,9 @@
       "An address for each role": [
         "Een adres voor elke rol"
       ],
+      "Annual": [
+        "Jaarlijks"
+      ],
       "Anytime, anywhere access": [
         "Altijd en overal toegang"
       ],
@@ -22573,6 +22608,9 @@
       "Leave group?": [
         "Groep verlaten?"
       ],
+      "Lifetime": [
+        "Levenslang"
+      ],
       "Limit reached": [
         "Limiet bereikt"
       ],
@@ -22599,6 +22637,9 @@
       ],
       "Mobile": [
         "Mobiel"
+      ],
+      "Monthly": [
+        "Maandelijks"
       ],
       "Multi-user support": [
         "Ondersteuning voor meerdere gebruikers"

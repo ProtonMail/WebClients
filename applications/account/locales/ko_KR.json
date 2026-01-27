@@ -1036,9 +1036,6 @@
       "Open ${ PASS_APP_NAME } in your browser": [
         "브라우저에서 ${ PASS_APP_NAME }를 실행하세요"
       ],
-      "Open in ${ SHEETS_APP_NAME }": [
-        "${ SHEETS_APP_NAME }에서 열기"
-      ],
       "Open navigation": [
         "탐색 열기"
       ],
@@ -1068,6 +1065,9 @@
       ],
       "Pay ${ price } now": [
         "${ price } 결제"
+      ],
+      "Pay once": [
+        "일회성 결제"
       ],
       "Preview": [
         "미리보기"
@@ -12741,6 +12741,9 @@
       ],
       "Level for NetShield blocker filtering": [
         "NetShield 차단 필터링 수준"
+      ],
+      "Limited time": [
+        "기간 한정"
       ],
       "Link label (optional)": [
         "링크 라벨 (선택 사항)"

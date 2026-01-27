@@ -547,6 +547,9 @@
       "Edit email address": [
         "Editar dirección de correo electrónico"
       ],
+      "Edit filter “${ Name }”": [
+        "Editar el filtro \"${ Name }\""
+      ],
       "Edit Gateway": [
         "Editar la puerta de enlace"
       ],
@@ -961,9 +964,6 @@
       "Open ${ PASS_APP_NAME } in your browser": [
         "Abre ${ PASS_APP_NAME } en tu navegador"
       ],
-      "Open in ${ SHEETS_APP_NAME }": [
-        "Abrir en ${ SHEETS_APP_NAME }"
-      ],
       "Open in new tab": [
         "Abrir en una pestaña nueva"
       ],
@@ -996,6 +996,9 @@
       ],
       "Pay ${ price } now": [
         "Pagar ${ price } ahora"
+      ],
+      "Pay once": [
+        "Pago único"
       ],
       "Preview": [
         "Vista previa"
@@ -1194,6 +1197,9 @@
       ],
       "See plan features": [
         "Ver las funciones del plan"
+      ],
+      "Select": [
+        "Seleccionar"
       ],
       "Select ${ planOrAppName }": [
         "Selecciona ${ planOrAppName }"
@@ -1603,6 +1609,11 @@
     "Action subscription": {
       "Reactivate": [
         "Reactivar"
+      ]
+    },
+    "Action: Sheets": {
+      "Open in ${ SHEETS_APP_NAME }": [
+        "Abrir en ${ SHEETS_APP_NAME }"
       ]
     },
     "Addon": {
@@ -2612,6 +2623,11 @@
         "¿Qué estás migrando?"
       ]
     },
+    "Bridge version load failed": {
+      "Failed to find latest version": [
+        "Error al buscar la última versión"
+      ]
+    },
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
         "Aplicación de escritorio de ${ MAIL_APP_NAME }"
@@ -3258,6 +3274,11 @@
       ],
       "matches": [
         "coincide con"
+      ]
+    },
+    "Condition label": {
+      "If": [
+        "Si"
       ]
     },
     "Confirm modal title": {
@@ -5229,6 +5250,9 @@
       ]
     },
     "email_forwarding_2023: Action": {
+      "Add forwarding rule": [
+        "Añadir regla de reenvío"
+      ],
       "Delete": [
         "Eliminar"
       ],
@@ -5349,6 +5373,9 @@
       ]
     },
     "email_forwarding_2023: Title": {
+      "Delete forwarding?": [
+        "¿Eliminar reenvío?"
+      ],
       "Email forwarding deactivated": [
         "Se ha desactivado el reenvío de correo electrónico."
       ],
@@ -9840,6 +9867,9 @@
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "El precio incluye todos los descuentos aplicables según el ciclo de facturación y cupones sin expirar guardados en tu cuenta."
       ],
+      "Privacy and security starts here": [
+        "La privacidad y la seguridad comienzan aquí"
+      ],
       "Private AI assistant": [
         "Asistente de IA privado"
       ],
@@ -10749,6 +10779,9 @@
       "With email categories, important messages land in a primary inbox. Everything else is organized into categories.": [
         "Con categorías de correo electrónico, los mensajes importantes llegan a tu bandeja de entrada principal. Todo lo demás se organiza en categorías."
       ],
+      "With groups, you can implement the company security policies for access control and reduce the risk of accessing unauthorised data.": [
+        "Con los grupos, puedes implementar las políticas de seguridad de la empresa para el control de acceso y reducir el riesgo de acceso a datos no autorizados."
+      ],
       "With groups, you can quickly and easily send emails to all the people in a specified group.": [
         "Con grupos puedes enviar correos electrónicos a todos sus miembros de manera rápida y sencilla"
       ],
@@ -11291,6 +11324,9 @@
       ]
     },
     "Key generation": {
+      "Generate key": [
+        "Generar clave"
+      ],
       "New key generated": [
         "Clave nueva generada"
       ],
@@ -11583,6 +11619,9 @@
         "${ nbYear } año",
         "${ nbYear } años"
       ],
+      "${ pricePerMonthWithCurrency } / month": [
+        "${ pricePerMonthWithCurrency } / mes"
+      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(No disponible temporalmente. Vuelve a comprobarlo más tarde.)"
       ],
@@ -11789,6 +11828,12 @@
       ],
       "Backup password": [
         "Contraseña de respaldo"
+      ],
+      "Billed at ${ priceYearly } every 12 months.": [
+        "Facturación de ${ priceYearly } cada 12 meses."
+      ],
+      "Billed monthly.": [
+        "Facturación mensual."
       ],
       "Billing cycle": [
         "Ciclo de facturación"
@@ -12240,6 +12285,9 @@
       "Level for NetShield blocker filtering": [
         "Nivel de filtrado del bloqueador NetShield"
       ],
+      "Limited time": [
+        "Por tiempo limitado"
+      ],
       "Lock app after inactivity": [
         "Bloquear la aplicación después de inactividad"
       ],
@@ -12290,6 +12338,9 @@
       ],
       "Moderate NAT": [
         "NAT moderada"
+      ],
+      "Most popular": [
+        "Más popular"
       ],
       "Move to": [
         "Mover a"
@@ -12410,6 +12461,9 @@
       ],
       "Password strength": [
         "Nivel de seguridad de la contraseña"
+      ],
+      "Pay once, access forever.": [
+        "Paga una vez, accede para siempre."
       ],
       "Payer": [
         "Emisor del pago"
@@ -12561,6 +12615,9 @@
       ],
       "Show week numbers": [
         "Mostrar los números de la semana"
+      ],
+      "Sign external messages": [
+        "Firmar mensajes externos"
       ],
       "Signature": [
         "Firma"
@@ -12791,6 +12848,9 @@
       ]
     },
     "Label for default event notifications": {
+      "All-day event notifications": [
+        "Notificaciones de eventos que duran todo el día"
+      ],
       "Notifications": [
         "Notificaciones"
       ]
@@ -15332,14 +15392,29 @@
       "19th of the month": [
         "19º del mes"
       ],
+      "1st of the month": [
+        "1º del mes"
+      ],
       "23rd of the month": [
         "23º del mes"
+      ],
+      "24th of the month": [
+        "24º del mes"
+      ],
+      "25th of the month": [
+        "25º del mes"
       ],
       "26th of the month": [
         "26º del mes"
       ],
+      "2nd of the month": [
+        "2º del mes"
+      ],
       "30th of the month": [
         "30º del mes"
+      ],
+      "7th of the month": [
+        "7º del mes"
       ],
       "Add to existing group": [
         "Añadir al grupo existente"
@@ -20585,6 +20660,9 @@
       "An address for each role": [
         "Una dirección para cada rol"
       ],
+      "Annual": [
+        "Anual"
+      ],
       "Anytime, anywhere access": [
         "Acceso en cualquier momento y en cualquier lugar"
       ],
@@ -21285,6 +21363,9 @@
       "Leave group?": [
         "¿Deseas salir del grupo?"
       ],
+      "Lifetime": [
+        "De por vida"
+      ],
       "Limit reached": [
         "Límite alcanzado"
       ],
@@ -21311,6 +21392,9 @@
       ],
       "Mobile": [
         "Móvil"
+      ],
+      "Monthly": [
+        "Mensualmente"
       ],
       "Multi-user support": [
         "Soporte multiusuario"
@@ -21401,6 +21485,9 @@
       ],
       "Password": [
         "Contraseña"
+      ],
+      "Password generator rules": [
+        "Reglas del generador de contraseñas"
       ],
       "Password reset settings": [
         "Ajustes de restablecimiento de contraseña"

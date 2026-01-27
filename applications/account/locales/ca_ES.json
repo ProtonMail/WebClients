@@ -1053,9 +1053,6 @@
       "Open ${ PASS_APP_NAME } in your browser": [
         "Obriu ${ PASS_APP_NAME } al vostre navegador"
       ],
-      "Open in ${ SHEETS_APP_NAME }": [
-        "Obriu-ho a ${ SHEETS_APP_NAME }"
-      ],
       "Open in new tab": [
         "Obriu en una pestanya nova"
       ],
@@ -1088,6 +1085,9 @@
       ],
       "Pay ${ price } now": [
         "Paga ${ price } ara"
+      ],
+      "Pay once": [
+        "Pagament únic"
       ],
       "Preview": [
         "Vista prèvia"
@@ -1295,6 +1295,9 @@
       ],
       "See plan features": [
         "Mostra les característiques del pla"
+      ],
+      "Select": [
+        "Seleccionar"
       ],
       "Select ${ planOrAppName }": [
         "Selecciona ${ planOrAppName }"
@@ -1719,6 +1722,11 @@
     "Action subscription": {
       "Reactivate": [
         "Reactiva"
+      ]
+    },
+    "Action: Sheets": {
+      "Open in ${ SHEETS_APP_NAME }": [
+        "Obriu-ho a ${ SHEETS_APP_NAME }"
       ]
     },
     "Action; accept invitation to share calendar": {
@@ -10497,6 +10505,9 @@
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "El preu inclou tots els descomptes basats en cicles aplicables i els cupons no caducats desats al vostre compte."
       ],
+      "Privacy and security starts here": [
+        "La privacitat i la seguretat comencen aquí"
+      ],
       "Private AI assistant": [
         "Assistent d'IA privat"
       ],
@@ -11463,6 +11474,9 @@
       "With email categories, important messages land in a primary inbox. Everything else is organized into categories.": [
         "Amb les categories de correu electrònic, els missatges importants arriben a una safata d'entrada principal. La resta s'organitza en categories."
       ],
+      "With groups, you can implement the company security policies for access control and reduce the risk of accessing unauthorised data.": [
+        "Amb els grups, podreu implementar les polítiques de seguretat de l'empresa per al control d'accés i reduir el risc d'accedir a dades no autoritzades."
+      ],
       "With groups, you can quickly and easily send emails to all the people in a specified group.": [
         "Amb els grups, podeu enviar correus electrònics de manera ràpida i senzilla a totes les persones d'un grup determinat."
       ],
@@ -12403,6 +12417,9 @@
         "${ nbYear } any",
         "${ nbYear } anys"
       ],
+      "${ pricePerMonthWithCurrency } / month": [
+        "${ pricePerMonthWithCurrency } / mes"
+      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(No disponible temporalment. Comproveu-ho de nou més tard.)"
       ],
@@ -12633,6 +12650,12 @@
       ],
       "Beta": [
         "Versió beta"
+      ],
+      "Billed at ${ priceYearly } every 12 months.": [
+        "Es facturarà ${ priceYearly } cada dotze mesos."
+      ],
+      "Billed monthly.": [
+        "Facturat mensualment."
       ],
       "Billing cycle": [
         "Cicle de facturació"
@@ -13126,6 +13149,9 @@
       "Level for NetShield blocker filtering": [
         "Nivell de filtratge del bloquejador NetShield"
       ],
+      "Limited time": [
+        "Oferta per temps limitat"
+      ],
       "Link label (optional)": [
         "Etiqueta de l'enllaç (opcional)"
       ],
@@ -13191,6 +13217,9 @@
       ],
       "Moderate NAT": [
         "NAT moderat"
+      ],
+      "Most popular": [
+        "El més popular"
       ],
       "Move to": [
         "Mou a"
@@ -13311,6 +13340,9 @@
       ],
       "Password strength": [
         "Nivell de seguretat de la contrasenya"
+      ],
+      "Pay once, access forever.": [
+        "Pagueu un cop i accediu-hi per sempre."
       ],
       "Payer": [
         "Pagador"
@@ -21837,6 +21869,9 @@
       "An address for each role": [
         "Una adreça per a cada rol"
       ],
+      "Annual": [
+        "Cada any"
+      ],
       "Anytime, anywhere access": [
         "Accés en qualsevol moment i des de qualsevol lloc"
       ],
@@ -22576,6 +22611,9 @@
       "Leave group?": [
         "Voleu abandonar el grup?"
       ],
+      "Lifetime": [
+        "Per sempre"
+      ],
       "Limit reached": [
         "S'ha assolit el límit."
       ],
@@ -22602,6 +22640,9 @@
       ],
       "Mobile": [
         "Mòbil"
+      ],
+      "Monthly": [
+        "Mensual"
       ],
       "Multi-user support": [
         "Suport multi-usuari"

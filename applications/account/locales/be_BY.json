@@ -1053,9 +1053,6 @@
       "Open ${ PASS_APP_NAME } in your browser": [
         "Адкрыць ${ PASS_APP_NAME } у вашым браўзеры"
       ],
-      "Open in ${ SHEETS_APP_NAME }": [
-        "Адкрыць у ${ SHEETS_APP_NAME }"
-      ],
       "Open in new tab": [
         "Адкрыць у новай укладцы"
       ],
@@ -1088,6 +1085,9 @@
       ],
       "Pay ${ price } now": [
         "Аплаціць ${ price }"
+      ],
+      "Pay once": [
+        "Заплаціць аднаразова"
       ],
       "Preview": [
         "Папярэдні прагляд"
@@ -1295,6 +1295,9 @@
       ],
       "See plan features": [
         "Паглядзець функцыі тарыфнага плана"
+      ],
+      "Select": [
+        "Выбраць"
       ],
       "Select ${ planOrAppName }": [
         "Выбраць ${ planOrAppName }"
@@ -1719,6 +1722,11 @@
     "Action subscription": {
       "Reactivate": [
         "Актываваць паўторна"
+      ]
+    },
+    "Action: Sheets": {
+      "Open in ${ SHEETS_APP_NAME }": [
+        "Адкрыць у ${ SHEETS_APP_NAME }"
       ]
     },
     "Action; accept invitation to share calendar": {
@@ -10715,6 +10723,9 @@
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Кошт уключае ўсе падыходзячыя (не пратэрмінаваныя) купоны, якія захаваны ў вашым уліковым запісе."
       ],
+      "Privacy and security starts here": [
+        "Прыватнасць і бяспека пачынаюцца тут"
+      ],
       "Private AI assistant": [
         "Прыватны памочнік ШІ"
       ],
@@ -12673,6 +12684,9 @@
         "${ nbYear } гадоў",
         "${ nbYear } гадоў"
       ],
+      "${ pricePerMonthWithCurrency } / month": [
+        "${ pricePerMonthWithCurrency }/месяц"
+      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Часова недаступна. Паспрабуйце яшчэ раз пазней.)"
       ],
@@ -12903,6 +12917,12 @@
       ],
       "Beta": [
         "Бэта"
+      ],
+      "Billed at ${ priceYearly } every 12 months.": [
+        "Аплачваецца ${ priceYearly } кожныя 12 месяцаў."
+      ],
+      "Billed monthly.": [
+        "Аплачваецца штомесяц."
       ],
       "Billing cycle": [
         "Перыяд аплаты"
@@ -13396,6 +13416,9 @@
       "Level for NetShield blocker filtering": [
         "Узровень фільтрацыі блакіроўшчыка NetShield"
       ],
+      "Limited time": [
+        "Абмежаваны час"
+      ],
       "Link label (optional)": [
         "Метка спасылкі (неабавязкова)"
       ],
@@ -13461,6 +13484,9 @@
       ],
       "Moderate NAT": [
         "Умераны NAT"
+      ],
+      "Most popular": [
+        "Самыя папулярныя"
       ],
       "Move to": [
         "Перамясціць у"
@@ -13581,6 +13607,9 @@
       ],
       "Password strength": [
         "Надзейнасць пароля"
+      ],
+      "Pay once, access forever.": [
+        "Аплаціце адзін раз і атрымайце пажыццёвы доступ."
       ],
       "Payer": [
         "Плацельшчык"
@@ -22390,6 +22419,9 @@
       "An address for each role": [
         "Адрас для кожнай ролі"
       ],
+      "Annual": [
+        "Штогодовая"
+      ],
       "Anytime, anywhere access": [
         "Доступ у любы час і ў любым месцы"
       ],
@@ -23137,6 +23169,9 @@
       "Leave group?": [
         "Выйсці з групы?"
       ],
+      "Lifetime": [
+        "Пажыццёвая"
+      ],
       "Limit reached": [
         "Дасягнута абмежаванне"
       ],
@@ -23163,6 +23198,9 @@
       ],
       "Mobile": [
         "Для смартфона"
+      ],
+      "Monthly": [
+        "Штомесячная"
       ],
       "Multi-user support": [
         "Падтрымка шматкарыстальніцкага рэжыму"
