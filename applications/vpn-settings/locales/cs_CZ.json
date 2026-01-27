@@ -668,9 +668,6 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Otevřít nastavení ${ CALENDAR_APP_NAME }"
       ],
-      "Open in ${ SHEETS_APP_NAME }": [
-        "Otevřít v ${ SHEETS_APP_NAME }"
-      ],
       "Open navigation": [
         "Otevřít menu"
       ],
@@ -1173,6 +1170,11 @@
     "Action subscription": {
       "Reactivate": [
         "Opětovně aktivovat"
+      ]
+    },
+    "Action: Sheets": {
+      "Open in ${ SHEETS_APP_NAME }": [
+        "Otevřít v ${ SHEETS_APP_NAME }"
       ]
     },
     "Addon": {
@@ -8183,6 +8185,9 @@
       ],
       "With email categories, important messages land in a primary inbox. Everything else is organized into categories.": [
         "Díky kategoriím e-mailů se důležité zprávy dostanou do primární doručené pošty. Všechno ostatní je uspořádáno do kategorií."
+      ],
+      "With groups, you can implement the company security policies for access control and reduce the risk of accessing unauthorised data.": [
+        "Skupiny umožňují zavést firemní bezpečnostní politiky správy přístupu a snížit riziko neoprávněného přístupu k datům."
       ],
       "With groups, you can quickly and easily send emails to all the people in a specified group.": [
         "Pomocí skupin můžete snadno a rychle odesílat e-maily všem lidem v určité skupině."

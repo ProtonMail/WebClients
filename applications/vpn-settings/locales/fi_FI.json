@@ -656,9 +656,6 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Avaa ${ CALENDAR_APP_NAME }in asetukset"
       ],
-      "Open in ${ SHEETS_APP_NAME }": [
-        "Avaa ${ SHEETS_APP_NAME } -sovelluksessa"
-      ],
       "Open navigation": [
         "Avaa navigaatio"
       ],
@@ -1152,6 +1149,11 @@
     "Action subscription": {
       "Reactivate": [
         "Uudelleenaktivoi"
+      ]
+    },
+    "Action: Sheets": {
+      "Open in ${ SHEETS_APP_NAME }": [
+        "Avaa ${ SHEETS_APP_NAME } -sovelluksessa"
       ]
     },
     "Addon": {
@@ -7648,6 +7650,9 @@
       ],
       "With email categories, important messages land in a primary inbox. Everything else is organized into categories.": [
         "Sähköpostiluokkien avulla tärkeät viestit saapuvat ensisijaiseen saapuneet-kansioon. Kaikki muu lajitellaan luokkiin."
+      ],
+      "With groups, you can implement the company security policies for access control and reduce the risk of accessing unauthorised data.": [
+        "Ryhmien avulla voit ottaa käyttöön yrityksen tietoturvakäytännöt käyttöoikeuksien hallintaan ja vähentää luvattoman tiedon käytön riskiä."
       ],
       "With groups, you can quickly and easily send emails to all the people in a specified group.": [
         "Ryhmien avulla voit helposti ja nopeasti lähettää sähköposteja kaikille tiettyyn ryhmään kuuluville henkilöille."
