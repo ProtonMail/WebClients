@@ -985,10 +985,10 @@
         "Erro ao editar o acesso do utilizador."
       ],
       "Failed to load breaches for this address": [
-        "Erro ao carregar as violações de dados para este endereço"
+        "Erro ao carregar os incidentes de dados para este endereço"
       ],
       "Failed to load breaches for this email alias": [
-        "Erro ao carregar as violações de dados para este alias de endereço."
+        "Erro ao carregar os incidentes de dados para este alias de endereço."
       ],
       "Failed to load domain settings.": [
         "Erro ao carregar as definições do domínio."
@@ -1018,7 +1018,7 @@
         "Erro ao reenviar a verificação do e-mail personalizado"
       ],
       "Failed to resolve breaches for this address": [
-        "Erro ao resolver as violações de dados para este endereço"
+        "Erro ao resolver os incidentes de dados para este endereço"
       ],
       "Failed to restore items from trash": [
         "Erro ao restaurar os itens no lixo"
@@ -1358,8 +1358,8 @@
         "${ repliedEmailsCount } enviados"
       ],
       "${ row.breachCount } breach detected": [
-        "${ row.breachCount } violação detetada",
-        "${ row.breachCount } violações detetadas"
+        "${ row.breachCount } incidente detetado",
+        "${ row.breachCount } incidentes detetados"
       ],
       "(Empty)": [
         "(Vazio)"
@@ -1422,10 +1422,10 @@
         "Todos os aliases que utilizam a caixa de correio ${ emailJSX } também serão eliminados."
       ],
       "All breaches for this address were resolved": [
-        "Todas as violações de dados para este endereço foram resolvidas."
+        "Todos os incidentes de dados para este endereço foram resolvidos."
       ],
       "All current breaches will be marked as resolved. In case of future data breaches, you'll be notified.": [
-        "Todas as violações de dados atuais serão marcadas como resolvidas. Em caso de futuras violações de dados, será notificado."
+        "Todos os incidentes de dados atuais serão marcados como resolvidos. Em caso de futuros incidentes de dados, será notificado."
       ],
       "All inactive secure links were removed": [
         "Todas as ligações seguras inativas foram removidas."
@@ -1470,7 +1470,7 @@
         "Os dados biométricos serão desativados e terão de ser novamente ativados."
       ],
       "Breaches detected": [
-        "Violações detetadas"
+        "Incidentes detetados"
       ],
       "Bring your existing passwords into ${ BRAND_NAME }.": [
         "Traga as suas palavras-passe existentes para o ${ BRAND_NAME }."
@@ -1823,10 +1823,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Movendo todos os itens de \"${ payload.content.name }\""
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Mover um item para outro cofre apagará as suas ligações seguras.",
-        "Mover itens para outro cofre apagará as suas ligações seguras."
       ],
       "Moving items": [
         "A mover itens"
@@ -2378,16 +2374,16 @@
         "Será desconectado e terá de iniciar sessão novamente em todos os seus outros dispositivos."
       ],
       "You will be notified of data breaches for these email addresses.": [
-        "Será notificado sobre violações de dados destes endereços de e-mail."
+        "Será notificado sobre incidentes de dados destes endereços de e-mail."
       ],
       "You will be notified of data breaches for this email address.": [
-        "Será notificado sobre violações de dados para este endereço de email."
+        "Será notificado sobre incidentes de dados para este endereço de email."
       ],
       "You will no longer be notified of data breaches for these email addresses.": [
-        "Deixará de ser notificado sobre violações de dados para estes endereços de email."
+        "Deixará de ser notificado sobre incidentes de dados para estes endereços de email."
       ],
       "You will no longer be notified of data breaches for this email address.": [
-        "Deixará de ser notificado sobre violações de dados para este endereço de email."
+        "Deixará de ser notificado sobre incidentes de dados para este endereço de email."
       ],
       "You will no longer have access to sharing, 2FA, credit card and other advanced features in ${ PASS_APP_NAME }": [
         "Deixará de ter acesso à partilha, autenticação de dois fatores (A2F), cartão de crédito e outras funcionalidades avançadas no ${ PASS_APP_NAME }."
@@ -4081,10 +4077,10 @@
         "Violação detetada"
       ],
       "Breaches": [
-        "Violações de dados"
+        "Incidentes de dados"
       ],
       "Breaches detected for": [
-        "Violações detetadas para"
+        "Incidentes detetados para"
       ],
       "Cancel changing your email?": [
         "Cancelar a alteração do seu e-mail?"
@@ -4250,7 +4246,7 @@
         "Deixar o cofre?"
       ],
       "Loading breaches...": [
-        "A carregar violações..."
+        "A carregar incidentes..."
       ],
       "Low disk space": [
         "Pouco espaço em disco"
@@ -4373,7 +4369,7 @@
         "Redefinir o histórico deste item?"
       ],
       "Resolved breaches": [
-        "Violações resolvidas"
+        "Incidentes resolvidos"
       ],
       "Restore this version?": [
         "Restaurar esta versão?"
@@ -4651,7 +4647,7 @@
         "A palavra-passe adicional deve ter pelo menos 8 caracteres."
       ],
       "Failed to load breaches.": [
-        "Erro ao carregar as violações"
+        "Erro ao carregar os incidentes"
       ],
       "Identity could not be confirmed": [
         "A identidade não pode ser confirmada."
@@ -4760,7 +4756,7 @@
         "Este alias «${ aliasEmail }» é atualmente utilizado no início de sessão «${ relatedLoginName }»."
       ],
       "This email address will no longer be monitored for data breaches.": [
-        "Este endereço de e-mail deixará de ser monitorizado para violações de dados."
+        "Este endereço de e-mail deixará de ser monitorizado para incidentes de dados."
       ],
       "This item is currently shared. Deleting it will remove access for all other users.": [
         "Este item está atualmente partilhado. Eliminá-lo removerá o acesso de todos os outros utilizadores."
