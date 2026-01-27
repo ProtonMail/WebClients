@@ -10,6 +10,7 @@ import DrivePricing from './flows/drive/DrivePricing';
 import DriveSignup from './flows/drive/DriveSignup';
 import FirstEmailReservationFlowSignup from './flows/firstEmailReservation/FirstEmailReservationFlow';
 import GenericStartSignup from './flows/genericStart/GenericStartSignup';
+import GreenlandSignup from './flows/greenland/GreenlandSignup';
 import MeetB2CSignup from './flows/meet/MeetB2CSignup';
 import PassSignup from './flows/pass/PassSignup';
 import ReferralSignup from './flows/referral/ReferralSignup';
@@ -51,6 +52,10 @@ const FirstEmailReservationController = (props: BaseSignupContextProps) => (
 
 const ReferralSignupController = (props: BaseSignupContextProps) => {
     return <ReferralSignup {...props} />;
+};
+
+const GreenlandSignupController = (props: BaseSignupContextProps) => {
+    return <GreenlandSignup {...props} />;
 };
 
 const GenericSignupController = (props: BaseSignupContextProps) => {
@@ -95,6 +100,9 @@ const SignupCtxRouter = (props: BaseSignupContextProps) => {
                         <FirstEmailReservationController {...props} />
                     </Route>
                 )}
+                <Route path={SSO_PATHS.GREENLAND_SIGNUP}>
+                    <GreenlandSignupController {...props} />
+                </Route>
                 <Route>
                     <GenericSignupController {...props} />
                 </Route>

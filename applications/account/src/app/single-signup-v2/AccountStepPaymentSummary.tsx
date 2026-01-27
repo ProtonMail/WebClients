@@ -5,7 +5,7 @@ import { Info, Price, Time } from '@proton/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import SkeletonLoader from '@proton/components/components/skeletonLoader/SkeletonLoader';
 import { getCheckoutRenewNoticeTextFromCheckResult } from '@proton/components/containers/payments/RenewalNotice';
-import { useCouponConfig } from '@proton/components/containers/payments/subscription/coupon-config/useCouponConfig';
+import type { CouponConfigRendered } from '@proton/components/containers/payments/subscription/coupon-config/useCouponConfig';
 import { getTotalBillingText } from '@proton/components/containers/payments/subscription/helpers';
 import {
     COUPON_CODES,
@@ -85,6 +85,7 @@ interface Props {
     loadingPaymentDetails: boolean;
     showRenewalNotice: boolean;
     app: APP_NAMES;
+    couponConfig: CouponConfigRendered | undefined;
 }
 
 const AccountStepPaymentSummary = ({
@@ -95,6 +96,7 @@ const AccountStepPaymentSummary = ({
     loadingPaymentDetails,
     showRenewalNotice,
     app,
+    couponConfig,
 }: Props) => {
     const summaryPlan = getSummaryPlan({
         plan: selectedPlan,
@@ -109,12 +111,6 @@ const AccountStepPaymentSummary = ({
         planIDs: hasCouponCode ? model.subscriptionData.planIDs : options.planIDs,
         plansMap: model.plansMap,
         checkResult: hasCouponCode ? model.subscriptionData.checkResult : options.checkResult,
-    });
-
-    const couponConfig = useCouponConfig({
-        checkResult: model.subscriptionData.checkResult,
-        planIDs: model.subscriptionData.planIDs,
-        plansMap: model.plansMap,
     });
 
     if (!summaryPlan) {
