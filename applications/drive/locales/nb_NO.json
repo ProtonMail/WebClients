@@ -758,9 +758,6 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Åpne innstillingene for ${ CALENDAR_APP_NAME }"
       ],
-      "Open in ${ SHEETS_APP_NAME }": [
-        "Åpne i ${ SHEETS_APP_NAME }"
-      ],
       "Open navigation": [
         "Åpne navigasjonsmeny"
       ],
@@ -928,6 +925,9 @@
       ],
       "Save changes": [
         "Lagre endringer"
+      ],
+      "Save for later": [
+        "Lagre til senere"
       ],
       "Save photos and remove": [
         "Lagre bildene og fjern"
@@ -1226,6 +1226,16 @@
       ],
       "Zoom out": [
         "Zoom ut"
+      ]
+    },
+    "Action: Docs": {
+      "Open in ${ DOCS_APP_NAME }": [
+        "Åpne i ${ DOCS_APP_NAME }"
+      ]
+    },
+    "Action: Sheets": {
+      "Open in ${ SHEETS_APP_NAME }": [
+        "Åpne i ${ SHEETS_APP_NAME }"
       ]
     },
     "Actions": {
@@ -3799,6 +3809,9 @@
       "We were not able to load the folder contents": [
         "Vi klarte ikke å laste innholdet i mappen"
       ],
+      "We're sorry, but free upload is not available right now.": [
+        "Vi beklager, men gratis opplasting er ikke tilgjengelig akkurat nå."
+      ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Du kan ikke sende e-post til flere enn ${ maxContacts } mottaker.",
         "Du kan ikke sende e-post til flere enn ${ maxContacts } mottakere."
@@ -5018,6 +5031,9 @@
         "Alle kontaktene dine blir importert, opptil en grense på ${ MAX_CONTACTS_PER_USER }.",
         "Alle kontaktene dine blir importert, opptil en grense på ${ MAX_CONTACTS_PER_USER }."
       ],
+      "Already in this folder": [
+        "Allerede i denne mappen"
+      ],
       "Already in your library": [
         "Allerede i biblioteket ditt"
       ],
@@ -5119,6 +5135,9 @@
       ],
       "Calendar side panel": [
         "Kalender-sidepanel"
+      ],
+      "Can't move a folder into itself": [
+        "Kan ikke flytte en mappe inn i seg selv"
       ],
       "Canceled": [
         "Avbrutt"
@@ -6018,6 +6037,9 @@
       "Search Enabled": [
         "Søk aktivert"
       ],
+      "Select a destination folder": [
+        "Velg en målmappe"
+      ],
       "Select a folder to make the copy in": [
         "Velg en målmappe for kopien"
       ],
@@ -6506,6 +6528,9 @@
       "Week": [
         "Uke"
       ],
+      "Welcome to ${ DRIVE_APP_NAME }, for the first 10 minutes, any files you upload don't count toward your storage quota.": [
+        "Velkommen til ${ DRIVE_APP_NAME }. De første 10 minuttene teller ikke filer du laster opp mot lagringskvoten din."
+      ],
       "What do you want to do?": [
         "Hva ønsker du å gjøre?"
       ],
@@ -6934,6 +6959,9 @@
       ],
       "Anderson": [
         "Andersen"
+      ],
+      "Anonymous": [
+        "Anonym"
       ],
       "Anyone on the Internet with the link can edit": [
         "Alle på Internett med koblingen kan redigere"
@@ -9599,9 +9627,6 @@
       "Edit documents online": [
         "Rediger dokumenter på nettet"
       ],
-      "Encryption happens automatically": [
-        "Kryptering skjer automatisk"
-      ],
       "End-to-end encrypted storage for your files": [
         "Ende-til-ende-kryptert lagring for filene dine"
       ],
@@ -9677,9 +9702,6 @@
       "The owner needs to confirm sharing access. You'll get an email once it's done.": [
         "Eieren må bekrefte delingstilgang. Du får en e-post når det er gjort."
       ],
-      "Upload files, folders, photos": [
-        "Last opp filer, mapper, bilder"
-      ],
       "Upload your first file": [
         "Last opp din første fil"
       ],
@@ -9691,9 +9713,6 @@
       ],
       "You just snagged some free data and secured your files with end-to-end encryption － in record time!": [
         "Du har nettopp sikret deg litt gratis data og sikret filene dine med ende-til-ende-kryptering – på rekordtid!"
-      ],
-      "Your storage limit won’t be affected": [
-        "Lagringsgrensen din vil ikke bli påvirket"
       ]
     },
     "Onboarding Trial": {
@@ -11550,6 +11569,9 @@
       "Securely share your favorite moments with friends and family using Albums.": [
         "Del trygt dine favorittøyeblikk med venner og familie ved å bruke Album."
       ],
+      "Shared by ${ sharedBy }": [
+        "Delt av ${ sharedBy }"
+      ],
       "Your favorited photos will appear here": [
         "Dine favorittbilder vises her"
       ],
@@ -11833,6 +11855,9 @@
       ],
       "${ feature } is now active": [
         "${ feature } er nå aktiv"
+      ],
+      "${ freeUploadLength } of free uploads.": [
+        "${ freeUploadLength } med gratis opplastinger."
       ],
       "${ numberOfFailedTransfer.total } failed download": [
         "${ numberOfFailedTransfer.total } mislykket nedlasting",
@@ -12810,9 +12835,6 @@
       ],
       "You have no folders yet": [
         "Du har ingen mapper enda"
-      ],
-      "Your ${ freeUploadLength } has started.": [
-        "Din ${ freeUploadLength } har startet."
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Din gratis prøveperiode av ${ planName } slutter på ${ textDate }."

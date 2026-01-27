@@ -758,9 +758,6 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "${ CALENDAR_APP_NAME }-Einstellungen öffnen"
       ],
-      "Open in ${ SHEETS_APP_NAME }": [
-        "In ${ SHEETS_APP_NAME } öffnen"
-      ],
       "Open navigation": [
         "Navigation öffnen"
       ],
@@ -1223,6 +1220,16 @@
       ],
       "Zoom out": [
         "Verkleinern"
+      ]
+    },
+    "Action: Docs": {
+      "Open in ${ DOCS_APP_NAME }": [
+        "In ${ DOCS_APP_NAME } öffnen"
+      ]
+    },
+    "Action: Sheets": {
+      "Open in ${ SHEETS_APP_NAME }": [
+        "In ${ SHEETS_APP_NAME } öffnen"
       ]
     },
     "Actions": {
@@ -3796,6 +3803,9 @@
       "We were not able to load the folder contents": [
         "Der Ordnerinhalt konnte nicht geladen werden"
       ],
+      "We're sorry, but free upload is not available right now.": [
+        "Es tut uns leid, aber der kostenlose Upload ist derzeit nicht verfügbar."
+      ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Es können keine Mails an mehr als ${ maxContacts } Empfänger gesendet werden.",
         "Es können keine Mails an mehr als ${ maxContacts } Empfänger gesendet werden."
@@ -5015,6 +5025,9 @@
         "Alle deine Kontakte werden importiert, bis zu einer Grenze von ${ MAX_CONTACTS_PER_USER }.",
         "Alle deine Kontakte werden importiert, bis zu einer Grenze von ${ MAX_CONTACTS_PER_USER }."
       ],
+      "Already in this folder": [
+        "Bereits in diesem Ordner"
+      ],
       "Already in your library": [
         "Bereits in deiner Bibliothek"
       ],
@@ -5116,6 +5129,9 @@
       ],
       "Calendar side panel": [
         "Kalender-Seitenleiste"
+      ],
+      "Can't move a folder into itself": [
+        "Ein Ordner kann nicht in sich selbst verschoben werden."
       ],
       "Canceled": [
         "Abgebrochen"
@@ -6015,6 +6031,9 @@
       "Search Enabled": [
         "Suche aktiviert"
       ],
+      "Select a destination folder": [
+        "Zielordner auswählen"
+      ],
       "Select a folder to make the copy in": [
         "Einen Ordner für die Kopie auswählen"
       ],
@@ -6502,6 +6521,9 @@
       ],
       "Week": [
         "Woche"
+      ],
+      "Welcome to ${ DRIVE_APP_NAME }, for the first 10 minutes, any files you upload don't count toward your storage quota.": [
+        "Willkommen bei ${ DRIVE_APP_NAME }. In den ersten 10 Minuten zählen die von dir hochgeladenen Dateien nicht zu deinem Speicherplatzkontingent."
       ],
       "What do you want to do?": [
         "Was möchtest du tun?"
@@ -9599,9 +9621,6 @@
       "Edit documents online": [
         "Bearbeite Dokumente online"
       ],
-      "Encryption happens automatically": [
-        "Verschlüsselung erfolgt automatisch"
-      ],
       "End-to-end encrypted storage for your files": [
         "Ende-zu-Ende verschlüsselter Speicher für deine Dateien"
       ],
@@ -9677,9 +9696,6 @@
       "The owner needs to confirm sharing access. You'll get an email once it's done.": [
         "Der Besitzer muss den geteilten Zugang bestätigen. Sobald dies erledigt wurde, wirst du eine E-Mail erhalten."
       ],
-      "Upload files, folders, photos": [
-        "Lade Dateien, Ordner, Fotos hoch"
-      ],
       "Upload your first file": [
         "Lade deine erste Datei hoch"
       ],
@@ -9691,9 +9707,6 @@
       ],
       "You just snagged some free data and secured your files with end-to-end encryption － in record time!": [
         "Du hast dir gerade kostenlosen Speicherplatz gesichert und deine Dateien mit Ende-zu-Ende-Verschlüsselung geschützt – in Rekordzeit."
-      ],
-      "Your storage limit won’t be affected": [
-        "Dein Speicherlimit wird nicht beeinflusst."
       ]
     },
     "Onboarding Trial": {
@@ -11837,6 +11850,9 @@
       "${ feature } is now active": [
         "${ feature } ist jetzt aktiv"
       ],
+      "${ freeUploadLength } of free uploads.": [
+        "${ freeUploadLength } kostenlose Uploads."
+      ],
       "${ numberOfFailedTransfer.total } failed download": [
         "${ numberOfFailedTransfer.total } fehlgeschlagener Download",
         "${ numberOfFailedTransfer.total } fehlgeschlagene Downloads"
@@ -12813,9 +12829,6 @@
       ],
       "You have no folders yet": [
         "Du hast noch keine Ordner"
-      ],
-      "Your ${ freeUploadLength } has started.": [
-        "Dein ${ freeUploadLength } hat begonnen."
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Deine kostenlose Testversion von ${ planName } endet am ${ textDate }."

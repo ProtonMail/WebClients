@@ -758,9 +758,6 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Open ${ CALENDAR_APP_NAME }-instellingen"
       ],
-      "Open in ${ SHEETS_APP_NAME }": [
-        "Openen in ${ SHEETS_APP_NAME }"
-      ],
       "Open navigation": [
         "Navigatie openen"
       ],
@@ -1229,6 +1226,16 @@
       ],
       "Zoom out": [
         "Zoom uit"
+      ]
+    },
+    "Action: Docs": {
+      "Open in ${ DOCS_APP_NAME }": [
+        "Openen in ${ DOCS_APP_NAME }"
+      ]
+    },
+    "Action: Sheets": {
+      "Open in ${ SHEETS_APP_NAME }": [
+        "Openen in ${ SHEETS_APP_NAME }"
       ]
     },
     "Actions": {
@@ -3802,6 +3809,9 @@
       "We were not able to load the folder contents": [
         "De mapinhoud kon niet worden geladen"
       ],
+      "We're sorry, but free upload is not available right now.": [
+        "Het is momenteel niet mogelijk om gratis te uploaden."
+      ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "U kunt geen e-mail verzenden naar meer dan${ maxContacts } ontvanger",
         "U kunt geen e-mail verzenden naar meer dan ${ maxContacts } ontvangers"
@@ -5021,6 +5031,9 @@
         "Al uw contacten worden geïmporteerd, met een limiet van ${ MAX_CONTACTS_PER_USER }",
         "Al uw contacten worden geïmporteerd, met een limiet van ${ MAX_CONTACTS_PER_USER }"
       ],
+      "Already in this folder": [
+        "Bestaat al in deze map"
+      ],
       "Already in your library": [
         "Al aanwezig in uw bibliotheek"
       ],
@@ -5122,6 +5135,9 @@
       ],
       "Calendar side panel": [
         "Agenda zijpaneel"
+      ],
+      "Can't move a folder into itself": [
+        "Een map kan niet naar zichzelf worden verplaatst"
       ],
       "Canceled": [
         "Geannuleerd"
@@ -6021,6 +6037,9 @@
       "Search Enabled": [
         "Zoeken Ingeschakeld"
       ],
+      "Select a destination folder": [
+        "Selecteer een doelmap"
+      ],
       "Select a folder to make the copy in": [
         "Kies een map om de kopie in te plaatsen"
       ],
@@ -6508,6 +6527,9 @@
       ],
       "Week": [
         "Week"
+      ],
+      "Welcome to ${ DRIVE_APP_NAME }, for the first 10 minutes, any files you upload don't count toward your storage quota.": [
+        "Welkom bij ${ DRIVE_APP_NAME }, de eerste 10 minuten tellen de bestanden die u uploadt niet mee voor uw opslagquotum."
       ],
       "What do you want to do?": [
         "Wat wilt u doen?"
@@ -9000,6 +9022,9 @@
       "\"${ name }\" deleted": [
         "\"${ name }\" verwijderd"
       ],
+      "\"${ name }\" deleted permanently": [
+        "\"${ name }\" permanent verwijderd"
+      ],
       "\"${ name }\" deleted permanently from trash": [
         "\"${ name }\" permanent verwijderd uit de prullenbak"
       ],
@@ -9080,6 +9105,10 @@
       "${ numberOfItems } item deleted": [
         "${ numberOfItems } item verwijderd",
         "${ numberOfItems } items verwijderd"
+      ],
+      "${ numberOfItems } item deleted permanently": [
+        "${ numberOfItems } item permanent verwijderd",
+        "${ numberOfItems } items permanent verwijderd"
       ],
       "${ numberOfItems } item deleted permanently from trash": [
         "${ numberOfItems } item permanent verwijderd uit de prullenbak",
@@ -9541,9 +9570,6 @@
       "Edit documents online": [
         "Documenten online bewerken"
       ],
-      "Encryption happens automatically": [
-        "Versleuteling vindt automatisch plaats."
-      ],
       "End-to-end encrypted storage for your files": [
         "End-to-end versleutelde opslag voor uw bestanden"
       ],
@@ -9619,9 +9645,6 @@
       "The owner needs to confirm sharing access. You'll get an email once it's done.": [
         "De eigenaar moet de toegang tot delen goedkeuren. U ontvangt een e-mail zodra dit is gedaan."
       ],
-      "Upload files, folders, photos": [
-        "Upload bestanden, mappen, foto's"
-      ],
       "Upload your first file": [
         "Upload uw eerste bestand"
       ],
@@ -9633,9 +9656,6 @@
       ],
       "You just snagged some free data and secured your files with end-to-end encryption － in record time!": [
         "U heeft zojuist gratis data bemachtigd en uw bestanden beveiligd met end-to-end versleuteling — in recordtijd!"
-      ],
-      "Your storage limit won’t be affected": [
-        "Uw opslaglimiet wordt niet beïnvloed."
       ]
     },
     "Onboarding Trial": {
@@ -11779,6 +11799,9 @@
       "${ feature } is now active": [
         "${ feature } is nu actief"
       ],
+      "${ freeUploadLength } of free uploads.": [
+        "${ freeUploadLength } van gratis uploads."
+      ],
       "${ numberOfFailedTransfer.total } failed download": [
         "${ numberOfFailedTransfer.total } download mislukt",
         "${ numberOfFailedTransfer.total } downloads mislukt"
@@ -12597,6 +12620,9 @@
       "This folder has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "De map heeft een ontbrekende of ongeldige handtekening. Ga naar Menu (⋮) → Details voor info."
       ],
+      "This is likely due to the account or address having been deleted.": [
+        "Dit is waarschijnlijk omdat het account of het adres is verwijderd."
+      ],
       "This link is password protected": [
         "Deze koppeling is beveiligd met een wachtwoord"
       ],
@@ -12714,6 +12740,15 @@
       "We couldn’t verify that an anonymous user uploaded this folder.": [
         "We konden niet verifiëren dat een anonieme gebruiker deze map heeft opgeladen."
       ],
+      "We weren’t able to confirm that the file content was uploaded by ${ claimedContentAuthor }. The reason is: ${ activeRevision.contentAuthor.error.error }": [
+        "We konden niet bevestigen dat het bestand is geüpload door ${ claimedContentAuthor }. De reden is: ${ activeRevision.contentAuthor.error.error }"
+      ],
+      "We weren’t able to confirm that the name was created or modified by ${ claimedNameAuthor }. The reason is: ${ nodeEntity.nameAuthor.error.error }": [
+        "We konden niet bevestigen dat de naam is aangemaakt of gewijzigd door ${ claimedNameAuthor }. De reden is: ${ nodeEntity.nameAuthor.error.error }"
+      ],
+      "We weren’t able to confirm that the node was created by ${ claimedKeyAuthor }. The reason is: ${ nodeEntity.keyAuthor.error.error }": [
+        "We konden niet bevestigen dat de node is aangemaakt door ${ claimedKeyAuthor }. De reden is: ${ nodeEntity.keyAuthor.error.error }"
+      ],
       "Welcome offer": [
         "Welkomstaanbieding"
       ],
@@ -12743,9 +12778,6 @@
       ],
       "You have no folders yet": [
         "U hebt nog geen mappen"
-      ],
-      "Your ${ freeUploadLength } has started.": [
-        "Uw ${ freeUploadLength } is gestart."
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Uw ${ planName } gratis proefperiode eindigt op ${ textDate }"
