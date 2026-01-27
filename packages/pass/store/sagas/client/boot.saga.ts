@@ -1,5 +1,5 @@
 import type { Action } from 'redux';
-import { call, put, race, take, takeLeading } from 'redux-saga/effects';
+import { call, put, race, select, take, takeLeading } from 'redux-saga/effects';
 import { c } from 'ttag';
 
 import { PassCrypto } from '@proton/pass/lib/crypto';
@@ -29,8 +29,11 @@ import { getAuthDevices } from '@proton/pass/store/actions/creators/sso';
 import { isCachingAction } from '@proton/pass/store/actions/enhancers/cache';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import { withRevalidate } from '@proton/pass/store/request/enhancers';
+import type { SynchronizationResult } from '@proton/pass/store/sagas/client/sync';
 import { SyncType, synchronize } from '@proton/pass/store/sagas/client/sync';
+import { selectProxiedSettings } from '@proton/pass/store/selectors';
 import type { RootSagaOptions, State } from '@proton/pass/store/types';
+import type { Maybe } from '@proton/pass/types';
 import { AppStatus } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
 import { merge } from '@proton/pass/utils/object/merge';
@@ -67,7 +70,15 @@ function* bootWorker({ payload }: ReturnType<typeof bootIntent>, options: RootSa
          * after state hydration, abort the boot sequence early */
         if (online && !PassCrypto.ready) throw new PassCryptoError();
 
-        yield put(bootSuccess(fromCache ? undefined : yield synchronize(SyncType.FULL)));
+        const result = (fromCache ? undefined : yield synchronize(SyncType.FULL)) as Maybe<SynchronizationResult>;
+
+        /** Sync settings after successful hydration and synchronization.
+         * This prevents offline mode from being enabled if the boot
+         * sequence fails (eg: during first login) */
+        const hydratedSettings = (yield select(selectProxiedSettings)) as ProxiedSettings;
+        yield options.onSettingsUpdated?.(hydratedSettings);
+
+        yield put(bootSuccess(result));
         yield put(draftsGarbageCollect());
         yield put(passwordHistoryGarbageCollect());
 
