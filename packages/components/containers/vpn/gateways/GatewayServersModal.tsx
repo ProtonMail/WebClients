@@ -11,13 +11,12 @@ import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import { useModalTwoStatic } from '@proton/components/components/modalTwo/useModalTwo';
-import Cell from '@proton/components/components/table/Cell';
+import { Cell } from '@proton/components/components/table/Cell';
 import Table from '@proton/components/components/table/Table';
 import TableBody from '@proton/components/components/table/TableBody';
 import TableCell from '@proton/components/components/table/TableCell';
 import TableRow from '@proton/components/components/table/TableRow';
-import { MAX_IPS_ADDON } from '@proton/payments';
-import { type CountryOptions, getLocalizedCountryByAbbr } from '@proton/payments';
+import { type CountryOptions, MAX_IPS_ADDON, getLocalizedCountryByAbbr } from '@proton/payments';
 import range from '@proton/utils/range';
 
 import { CountryFlagAndName } from './CountryFlagAndName';
@@ -81,6 +80,7 @@ const GatewayServersModal = ({
     const availableAddedCount = remainingCount + deletedServerCount - addedServerCount;
     const newNumberOfServers = previousNumberOfServers + addedServerCount - deletedServerCount;
     const showIP = showIPv4 || showIPv6;
+    const logicalsAlreadyInUse = gateway.Logicals.filter((l) => l.Servers?.length && l.Visible);
 
     const decreaseQuantities = (quantities: Record<string, number>) => {
         const newAdded = { ...added };
@@ -147,6 +147,7 @@ const GatewayServersModal = ({
             countryOptions,
             singleServer,
             showCancelButton,
+            citiesAlreadyInUse: logicalsAlreadyInUse.map((logical) => logical.City),
             onSubmitDone: addQuantities,
             onUpsell,
         });
@@ -222,7 +223,7 @@ const GatewayServersModal = ({
                             </tr>
                         </thead>
                         <TableBody colSpan={4 + Number(showIP) + Number(showLoad)} loading={loading}>
-                            {gateway.Logicals.filter((l) => l.Servers?.length && l.Visible).map((logical) => (
+                            {logicalsAlreadyInUse.map((logical) => (
                                 <TableRow
                                     key={'logical-' + logical.ID}
                                     className={deleted[logical.ID] ? 'opacity-50' : undefined}
@@ -239,12 +240,10 @@ const GatewayServersModal = ({
                                         getSuffix(logical.Name),
                                         deleted[logical.ID] ? (
                                             new Cell(
-                                                (
-                                                    <span className="py-1 px-2 rounded text-uppercase bg-danger">{
-                                                        /** translator: status of the server: will be deleted when user click "Save" */
-                                                        c('Server-Info').t`to be deleted`
-                                                    }</span>
-                                                ),
+                                                <span className="py-1 px-2 rounded text-uppercase bg-danger">{
+                                                    /** translator: status of the server: will be deleted when user click "Save" */
+                                                    c('Server-Info').t`to be deleted`
+                                                }</span>,
                                                 1
                                             )
                                         ) : (
@@ -333,12 +332,10 @@ const GatewayServersModal = ({
                                         getSuffix(logical.Name),
                                         deleted[logical.ID] ? (
                                             new Cell(
-                                                (
-                                                    <span className="py-1 px-2 rounded text-uppercase bg-danger">{
-                                                        /** translator: status of the server: will be deleted when user click "Save" */
-                                                        c('Server-Info').t`to be deleted`
-                                                    }</span>
-                                                ),
+                                                <span className="py-1 px-2 rounded text-uppercase bg-danger">{
+                                                    /** translator: status of the server: will be deleted when user click "Save" */
+                                                    c('Server-Info').t`to be deleted`
+                                                }</span>,
                                                 1
                                             )
                                         ) : (
@@ -373,12 +370,10 @@ const GatewayServersModal = ({
                                                 />,
                                                 '',
                                                 new Cell(
-                                                    (
-                                                        <span className="py-1 px-2 rounded text-uppercase bg-weak">{
-                                                            /** translator: status of the server: will be created when user click "Save" */
-                                                            c('Server-Info').t`to be created`
-                                                        }</span>
-                                                    ),
+                                                    <span className="py-1 px-2 rounded text-uppercase bg-weak">{
+                                                        /** translator: status of the server: will be created when user click "Save" */
+                                                        c('Server-Info').t`to be created`
+                                                    }</span>,
                                                     1 + Number(showIP) + Number(showLoad)
                                                 ),
                                                 <Button

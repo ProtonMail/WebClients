@@ -34,6 +34,7 @@ interface Props {
     addedCount: number;
     deletedDedicatedIPs?: DeletedDedicatedIp[];
     countryOptions: CountryOptions;
+    citiesAlreadyInUse?: string[];
     loading?: boolean;
     model: GatewayDto;
     onUpdateCheckedLocations: (checkedLocations: GatewayLocation[]) => void;
@@ -50,6 +51,7 @@ export const GatewayCountrySelection = ({
     countryOptions,
     loading = false,
     model,
+    citiesAlreadyInUse = [],
     onUpdateCheckedLocations,
     changeModel,
 }: Props) => {
@@ -122,15 +124,11 @@ export const GatewayCountrySelection = ({
             )
         );
 
-        if (mainLocation !== model.location) {
-            changeModel({ location: mainLocation });
-        }
-
         if (newQuantity === 0) {
             delete quantities[locationId];
         }
 
-        changeModel({ quantities });
+        changeModel({ quantities, location: mainLocation !== model.location ? mainLocation : model.location });
     };
 
     // Helper function to check if a location from recently used servers is already checked
@@ -146,6 +144,7 @@ export const GatewayCountrySelection = ({
                     {locations.map((location) => {
                         const country = getLocalizedCountryByAbbr(location.Country, countryOptions) || location.Country;
                         const title = getLocationDisplayName(location, countryOptions);
+
                         return (
                             <Option key={getLocationId(location)} value={title} title={title}>
                                 <CountryFlagAndName countryCode={location.Country} countryName={country} />
@@ -239,26 +238,27 @@ export const GatewayCountrySelection = ({
                         <Icon name="info-circle" className="shrink-0" />
                         <div className="ml-2">
                             {c('Info')
-                                .t`We recommend having multiple servers in different locations to provide redundancy.`}
+                                .t`We recommend adding servers in different locations (one per city) to maximize redundancy.`}
                         </div>
                     </div>
                 )}
                 <p></p>
                 {locations.map((location) => {
                     const locationId = getLocationId(location);
+                    const isCityAlreadySelected = citiesAlreadyInUse.some((logical) => logical === location.City);
+                    const isDisabled =
+                        isCityAlreadySelected ||
+                        loading ||
+                        (totalCountExceeded && model.quantities !== undefined && !(locationId in model.quantities));
                     return (
                         <div key={locationId} className="flex *:min-size-auto md:flex-nowrap items-center mb-1">
                             <ButtonNumberInput
                                 id={locationId}
-                                value={model.quantities?.[locationId]}
+                                value={isCityAlreadySelected ? 1 : model.quantities?.[locationId]}
                                 min={0}
-                                max={99}
-                                disabled={
-                                    loading ||
-                                    (totalCountExceeded &&
-                                        model.quantities !== undefined &&
-                                        !(locationId in model.quantities))
-                                }
+                                // TODO: Change the max number to 99 when selecting more than one city is available.
+                                max={1}
+                                disabled={isDisabled}
                                 onChange={(newQuantity: number) => handleQuantityChange(newQuantity, locationId)}
                                 step={1}
                                 location={location}
