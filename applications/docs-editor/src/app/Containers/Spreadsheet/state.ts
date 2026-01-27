@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo } from 'react'
+import { useCallback, useEffect, useMemo, useRef } from 'react'
 
 import type { CellXfs, SheetData, UseSpreadsheetProps } from '@rowsncolumns/spreadsheet-state'
 import { Align, type CellInterface } from '@rowsncolumns/grid'
@@ -21,7 +21,7 @@ import { defaultSpreadsheetTheme, useSpreadsheet } from '@rowsncolumns/spreadshe
 import { useCharts } from '@rowsncolumns/charts'
 import { useYSpreadsheetV2 } from '@rowsncolumns/y-spreadsheet'
 import type { DocStateInterface } from '@proton/docs-shared'
-import { DocProvider } from '@proton/docs-shared'
+import { DocProvider, DocUpdateOrigin } from '@proton/docs-shared'
 import { useSyncedState } from '../../Hooks/useSyncedState'
 import { create } from 'zustand'
 import { useEvent } from './components/utils'
@@ -209,6 +209,37 @@ function useYjsState({ localState, spreadsheetState, docState }: YjsStateDepende
     return provider
   }, [docState])
   const yDoc = useMemo(() => docState.getDoc(), [docState])
+
+  const ySheets = useMemo(() => yDoc.getArray<Sheet>('sheets'), [yDoc])
+  const updatedActiveSheetIdAfterInitialLoad = useRef(false)
+  useEffect(
+    function updateActiveSheetIdAfterInitialLoad() {
+      if (updatedActiveSheetIdAfterInitialLoad.current) {
+        return
+      }
+
+      const handler = (_: any, origin: any) => {
+        if (origin === DocUpdateOrigin.InitialLoad) {
+          // After receiving base commit, change the active sheet to the first sheet.
+          // RnC does try to do this, but it doesn't work with our setup as when it tries
+          // to do this, it will not have received the initial update yet.
+          const sheets = ySheets.toJSON()
+          if (sheets.length) {
+            spreadsheetState.onChangeActiveSheet(sortSheetsByIndex(sheets)[0].sheetId)
+            yDoc.off('update', handler)
+            updatedActiveSheetIdAfterInitialLoad.current = true
+          }
+        }
+      }
+
+      yDoc.on('update', handler)
+
+      return () => {
+        yDoc.off('update', handler)
+      }
+    },
+    [spreadsheetState, yDoc, ySheets],
+  )
 
   const yjsState = useYSpreadsheetV2({
     ...localState,
@@ -542,4 +573,53 @@ export function useLocalState(
   }, [getLocalStateWithoutActions, updateLocalStateToLog])
 
   return { getLocalStateWithoutActions, replaceLocalSpreadsheetState }
+}
+
+export type BaseSheet = {
+  index?: number | null
+  title: string
+  hidden?: boolean | null
+  sheetId: number
+} & Record<string, any>
+
+/**
+ * Sort sheets by index
+ * @param sheets
+ * @returns
+ */
+export function sortSheetsByIndex<S extends BaseSheet>(sheets: S[], includeHidden?: boolean) {
+  const seen = new Set<number>()
+  const deduplicated: S[] = []
+
+  for (let i = 0; i < sheets.length; i++) {
+    const sheet = sheets[i]
+    if (!sheet) {
+      continue
+    }
+    if (!includeHidden && sheet.hidden) {
+      continue
+    }
+    if (seen.has(sheet.sheetId)) {
+      continue
+    }
+    seen.add(sheet.sheetId)
+    deduplicated.push(sheet)
+  }
+
+  // Find the maximum index among sheets that have an index defined
+  const maxDefinedIndex = deduplicated.reduce((max, sheet) => {
+    return sheet.index !== undefined && sheet.index !== null ? Math.max(max, sheet.index) : max
+  }, -1)
+
+  // Assign indices to sheets without one, starting after the max defined index
+  let nextIndex = maxDefinedIndex + 1
+
+  return deduplicated
+    .map((sheet) => {
+      return {
+        ...sheet,
+        index: sheet.index ?? nextIndex++,
+      }
+    })
+    .sort((a, b) => (a.index ?? 0) - (b.index ?? 0))
 }
