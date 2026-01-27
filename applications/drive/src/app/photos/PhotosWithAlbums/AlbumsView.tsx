@@ -42,7 +42,7 @@ const filterAlbums = (albums: DecryptedAlbum[], tag: AlbumTag): DecryptedAlbum[]
 
 export const stableSortAlbums = (albums: DecryptedAlbum[]): DecryptedAlbum[] => {
     return albums.sort((a, b) => {
-        const timeCompare = a.createTime - b.createTime;
+        const timeCompare = b.createTime - a.createTime;
         if (timeCompare !== 0) {
             return timeCompare;
         }
