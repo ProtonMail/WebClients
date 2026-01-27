@@ -1,6 +1,7 @@
 // File and context management hooks
 export { useConversationFiles } from './useConversationFiles';
 export { useFilteredFiles } from './useFilteredFiles';
+export { useFileProcessing } from './useFileProcessing';
 export { useLazyAttachment } from './useLazyAttachment';
 
 // Personalization hooks
