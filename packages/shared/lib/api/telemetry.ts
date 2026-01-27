@@ -31,6 +31,7 @@ export enum TelemetryMeasurementGroups {
     mailDesktopDefaultMailto = 'mail.desktop.default_mailto',
     mailDesktopDailyStats = 'mail.desktop.daily_stats',
     mailActions = 'mail.web.clicks_mail_actions',
+    mailListSettings = 'mail.web.list_settings',
     mailPostSignupOneDollar = 'mail.web.post_signup_one_dollar',
     mailPagingControls = 'mail.web.paging_controls',
     passNudge = 'mail.web.pass_nudge',
@@ -90,6 +91,17 @@ export enum TelemetryMailPagingControlsEvents {
     move_to_next_page = 'move_to_next_page',
     clicked_load_more_search_results = 'clicked_load_more_search_results',
     move_to_custom_page = 'move_to_custom_page',
+}
+
+export enum TelemetryListSetting {
+    list_filter_all = 'list_filter_all',
+    list_filter_read = 'list_filter_read',
+    list_filter_unread = 'list_filter_unread',
+    list_filter_file = 'list_filter_file',
+    list_order_new_first = 'list_order_new_first',
+    list_order_old_first = 'list_order_old_first',
+    list_order_large_first = 'list_order_large_first',
+    list_order_small_first = 'list_order_small_first',
 }
 
 export enum TelemetryCalendarEvents {
@@ -426,7 +438,8 @@ export type TelemetryEvents =
     | TelemetryMailNewsletterSubscriptions
     | TelemetryUnlimitedOffer2025
     | TelemetryAlwaysOnUpsellEvents
-    | TelemetryUnlimitedToDuoOffer;
+    | TelemetryUnlimitedToDuoOffer
+    | TelemetryListSetting;
 
 export interface TelemetryReport {
     measurementGroup: TelemetryMeasurementGroups;
