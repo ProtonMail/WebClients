@@ -1,4 +1,4 @@
-import type { ActionReducerMapBuilder, Draft, ThunkDispatch } from '@reduxjs/toolkit';
+import type { ActionReducerMapBuilder, ThunkDispatch } from '@reduxjs/toolkit';
 import { type Action, createAction, miniSerializeError } from '@reduxjs/toolkit';
 import type { ThunkAction } from 'redux-thunk';
 
@@ -91,7 +91,8 @@ export const handleAsyncModel = <Returned, State, Extra, Options>(
             state.error = undefined;
         })
         .addCase(cases.fulfilled, (state, action) => {
-            state.value = action.payload as Draft<Returned> | undefined;
+            // TODO: Improve these types
+            state.value = action.payload as typeof state.value;
             state.error = undefined;
             state.meta.fetchedAt = getFetchedAt();
             state.meta.fetchedEphemeral = getFetchedEphemeral();
