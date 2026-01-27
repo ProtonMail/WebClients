@@ -1,4 +1,4 @@
-import { type RefObject, useMemo, useState } from 'react';
+import { type RefObject, useEffect, useMemo, useState } from 'react';
 import { Redirect, Route, Switch, useLocation } from 'react-router-dom';
 
 import { useRetentionPolicies } from '@proton/account/retentionPolicies/hooks';
@@ -27,7 +27,8 @@ import { MailboxContainerContextProvider } from 'proton-mail/containers/mailbox/
 import { filterFromUrl, pageFromUrl, sortFromUrl } from 'proton-mail/helpers/mailboxUrl';
 import useMailDrawer from 'proton-mail/hooks/drawer/useMailDrawer';
 import { useElements } from 'proton-mail/hooks/mailbox/useElements';
-import { useMailSelector } from 'proton-mail/store/hooks';
+import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
+import { layoutActions } from 'proton-mail/store/layout/layoutSlice';
 
 import { RouterLabelContainer } from './RouterLabelContainer';
 import { useMailboxLayoutProvider } from './components/MailboxLayoutContext';
@@ -72,6 +73,8 @@ export const RouterMailboxContainer = () => {
         labelID,
     });
 
+    const dispatch = useMailDispatch(); // You're already using useMailSelector, so this is consistent
+
     // TODO this will need to be improved to avoid depending on the URL, fix the test for the moment
     const location = useLocation();
     const urlPage = pageFromUrl(location);
@@ -88,6 +91,11 @@ export const RouterMailboxContainer = () => {
         elementsParams.search,
     ]);
     const breakpoints = useActiveBreakpoint();
+
+    // When the labelID is updated, reset the select all value
+    useEffect(() => {
+        dispatch(layoutActions.setSelectAll(false));
+    }, [labelID, dispatch]);
 
     if (!labelID) {
         const destination = categoryViewControl.categoryViewAccess

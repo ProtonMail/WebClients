@@ -1,4 +1,5 @@
 import { createAction, createAsyncThunk } from '@reduxjs/toolkit';
+import { c } from 'ttag';
 
 import {
     labelAll as labelAllRequest,
@@ -43,7 +44,6 @@ export const retry = createAction<{
 }>('elements/retry');
 
 export const showSerializedElements = createAction<{
-    queryIndex: number;
     result: QueryResults;
     page: number;
     params: ElementsStateParams;
@@ -60,18 +60,9 @@ export const load = createAsyncThunk<
         { dispatch, getState, extra }
     ) => {
         const params = (getState() as MailState).elements.params;
-        const onSerializedResponse = ({
-            index,
-            result,
-            page,
-        }: {
-            index: number;
-            result: QueryResults;
-            page: number;
-        }) => {
+        const onSerializedResponse = ({ result, page }: { result: QueryResults; page: number }) => {
             dispatch(
                 showSerializedElements({
-                    queryIndex: index,
                     result,
                     page,
                     params,
@@ -181,8 +172,6 @@ export const backendActionFinished = createAction<void>('elements/action/finishe
 export const pollTaskRunning = createAsyncThunk<TaskRunningInfo, undefined, MailThunkExtra>(
     'elements/pollTaskRunning',
     async (_, { dispatch, getState, extra }) => {
-        await extra.eventManager.call();
-
         const currentLabels = (getState() as MailState).elements.taskRunning.labelIDs;
         const finishedLabels = [];
 
@@ -208,11 +197,16 @@ export const pollTaskRunning = createAsyncThunk<TaskRunningInfo, undefined, Mail
 );
 
 export const moveAll = createAsyncThunk<
-    { LabelID: string; timeoutID: NodeJS.Timeout },
-    { SourceLabelID: string; DestinationLabelID: string; rollback?: (() => void) | undefined },
+    { LabelID?: string; timeoutID?: NodeJS.Timeout },
+    { SourceLabelID: string; DestinationLabelID: string },
     MailThunkExtra
->('elements/moveAll', async ({ SourceLabelID, DestinationLabelID, rollback }, { dispatch, getState, extra }) => {
+>('elements/moveAll', async ({ SourceLabelID, DestinationLabelID }, { dispatch, getState, extra }) => {
     try {
+        // Reset element state when doing a select all so that the user can see the task running banner when going
+        // to cached locations, and starts with a clean Redux state.
+        const state = (getState() as MailState).elements;
+        dispatch(reset({ params: state.params }));
+
         await extra.api(
             moveAllBatch({
                 SearchContext: {
@@ -222,12 +216,25 @@ export const moveAll = createAsyncThunk<
             })
         );
     } catch {
-        rollback?.();
-    } finally {
         // Once the action is done, we can remove the pending action, and since we know what are the task running,
         // there should be no elements loaded in the location for the time a task is running
         dispatch(backendActionFinished());
+
+        extra.notificationManager.clearNotifications();
+        extra.notificationManager.createNotification({
+            type: 'error',
+            text: c('Error').t`Something went wrong. Please try again.`,
+        });
+
+        return {
+            LabelID: undefined,
+            timeoutID: undefined,
+        };
     }
+
+    // Once the action is done, we can remove the pending action, and since we know what are the task running,
+    // there should be no elements loaded in the location for the time a task is running
+    dispatch(backendActionFinished());
 
     const timeoutID = refreshTaskRunningTimeout([SourceLabelID], {
         getState,
@@ -241,13 +248,18 @@ export const moveAll = createAsyncThunk<
 });
 
 export const markAll = createAsyncThunk<
-    { LabelID: string; timeoutID: NodeJS.Timeout },
-    { SourceLabelID: string; status: MARK_AS_STATUS; rollback?: () => void },
+    { LabelID?: string; timeoutID?: NodeJS.Timeout },
+    { SourceLabelID: string; status: MARK_AS_STATUS },
     MailThunkExtra
->('elements/markAll', async ({ SourceLabelID, status, rollback }, { dispatch, getState, extra }) => {
+>('elements/markAll', async ({ SourceLabelID, status }, { dispatch, getState, extra }) => {
     const action = status === MARK_AS_STATUS.READ ? markAllMessagesAsRead : markAllMessagesAsUnread;
 
     try {
+        // Reset element state when doing a select all so that the user can see the task running banner when going
+        // to cached locations, and starts with a clean Redux state.
+        const state = (getState() as MailState).elements;
+        dispatch(reset({ params: state.params }));
+
         await extra.api(
             action({
                 SearchContext: {
@@ -256,12 +268,25 @@ export const markAll = createAsyncThunk<
             })
         );
     } catch {
-        rollback?.();
-    } finally {
         // Once the action is done, we can remove the pending action, and since we know what are the task running,
         // there should be no elements loaded in the location for the time a task is running
         dispatch(backendActionFinished());
+
+        extra.notificationManager.clearNotifications();
+        extra.notificationManager.createNotification({
+            type: 'error',
+            text: c('Error').t`Something went wrong. Please try again.`,
+        });
+
+        return {
+            LabelID: undefined,
+            timeoutID: undefined,
+        };
     }
+
+    // Once the action is done, we can remove the pending action, and since we know what are the task running,
+    // there should be no elements loaded in the location for the time a task is running
+    dispatch(backendActionFinished());
 
     const timeoutID = refreshTaskRunningTimeout([SourceLabelID], {
         getState,
@@ -275,11 +300,16 @@ export const markAll = createAsyncThunk<
 });
 
 export const labelAll = createAsyncThunk<
-    { LabelID: string; timeoutID: NodeJS.Timeout },
-    { SourceLabelID: string; toLabel: string[]; toUnlabel: string[]; rollback?: () => void },
+    { LabelID?: string; timeoutID?: NodeJS.Timeout },
+    { SourceLabelID: string; toLabel: string[]; toUnlabel: string[] },
     MailThunkExtra
->('elements/markAll', async ({ SourceLabelID, toLabel, toUnlabel, rollback }, { dispatch, getState, extra }) => {
+>('elements/markAll', async ({ SourceLabelID, toLabel, toUnlabel }, { dispatch, getState, extra }) => {
     try {
+        // Reset element state when doing a select all so that the user can see the task running banner when going
+        // to cached locations, and starts with a clean Redux state.
+        const state = (getState() as MailState).elements;
+        dispatch(reset({ params: state.params }));
+
         await extra.api(
             labelAllRequest({
                 SearchContext: {
@@ -290,12 +320,25 @@ export const labelAll = createAsyncThunk<
             })
         );
     } catch {
-        rollback?.();
-    } finally {
         // Once the action is done, we can remove the pending action, and since we know what are the task running,
         // there should be no elements loaded in the location for the time a task is running
         dispatch(backendActionFinished());
+
+        extra.notificationManager.clearNotifications();
+        extra.notificationManager.createNotification({
+            type: 'error',
+            text: c('Error').t`Something went wrong. Please try again.`,
+        });
+
+        return {
+            LabelID: undefined,
+            timeoutID: undefined,
+        };
     }
+
+    // Once the action is done, we can remove the pending action, and since we know what are the task running,
+    // there should be no elements loaded in the location for the time a task is running
+    dispatch(backendActionFinished());
 
     const timeoutID = refreshTaskRunningTimeout([SourceLabelID], {
         getState,

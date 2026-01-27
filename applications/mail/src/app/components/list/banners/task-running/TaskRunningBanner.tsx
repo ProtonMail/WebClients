@@ -9,7 +9,7 @@ interface Props {
 
 const TaskRunningBanner = ({ className }: Props) => {
     return (
-        <div className="w-full text-center">
+        <div className="w-full text-center" data-testid="select-all:task-running-banner">
             <div className={clsx(['px-4 py-2 inline-flex mx-auto flex-wrap justify-start items-center', className])}>
                 <div className="shrink-0 flex">
                     <Loader className="mr-2 flex" />

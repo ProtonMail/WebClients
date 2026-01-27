@@ -116,7 +116,8 @@ const SelectAllMoveModal = ({
         <Prompt
             title={getModalTitle()}
             buttons={[
-                <Button color="norm" onClick={handleSubmit}>{c('Action').t`Move`}</Button>,
+                <Button color="norm" onClick={handleSubmit} data-testid="select-all:move-modal-button">{c('Action')
+                    .t`Move`}</Button>,
                 <Button onClick={handleClose}>{c('Action').t`Cancel`}</Button>,
             ]}
             {...rest}
