@@ -7,6 +7,8 @@ import { MESSAGE_BUTTONS } from '@proton/shared/lib/mail/mailSettings';
 import type { Filter } from '@proton/shared/lib/mail/search';
 import clsx from '@proton/utils/clsx';
 
+import { useListSettingsTelemetry } from '../list/useListSettingsTelemetry';
+
 interface Props {
     filter: Filter;
     onFilter: (filter: Filter) => void;
@@ -16,6 +18,8 @@ interface Props {
 
 const FilterActions = ({ filter = {}, mailSettings, onFilter, dropdown }: Props) => {
     const noFilterApply = !Object.values(filter).length;
+
+    const { sendAllReport, sendFileReport, sendReadReport, sendUnreadReport } = useListSettingsTelemetry();
 
     const FILTER_OPTIONS = {
         SHOW_ALL: c('Filter option').t`All`,
@@ -34,6 +38,7 @@ const FilterActions = ({ filter = {}, mailSettings, onFilter, dropdown }: Props)
             onClick() {
                 if (filter.Unread !== 0) {
                     onFilter({ Unread: 0 });
+                    sendReadReport();
                 }
             },
         },
@@ -44,6 +49,7 @@ const FilterActions = ({ filter = {}, mailSettings, onFilter, dropdown }: Props)
             onClick() {
                 if (filter.Unread !== 1) {
                     onFilter({ Unread: 1 });
+                    sendUnreadReport();
                 }
             },
         },
@@ -57,6 +63,7 @@ const FilterActions = ({ filter = {}, mailSettings, onFilter, dropdown }: Props)
             onClick() {
                 if (!noFilterApply) {
                     onFilter({});
+                    sendAllReport();
                 }
             },
         },
@@ -69,6 +76,7 @@ const FilterActions = ({ filter = {}, mailSettings, onFilter, dropdown }: Props)
             isActive: filter.Attachments === 1,
             onClick() {
                 onFilter({ Attachments: 1 });
+                sendFileReport();
             },
         },
     ];
