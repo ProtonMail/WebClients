@@ -3,7 +3,10 @@ export type ToolCallData =
     | DescribeImageToolCallData
     | GenerateImageToolCallData
     | EditImageToolCallData
-    | ProtonInfoToolCallData;
+    | ProtonInfoToolCallData
+    | WeatherToolCallData
+    | StockToolCallData
+    | CryptocurrencyToolCallData;
 export type ToolCallName = ToolCallData['name'];
 
 export function isToolCallData(data: unknown): data is ToolCallData {
@@ -12,7 +15,10 @@ export function isToolCallData(data: unknown): data is ToolCallData {
         isDescribeImageToolCallData(data) ||
         isGenerateImageToolCallData(data) ||
         isEditImageToolCallData(data) ||
-        isProtonInfoToolCallData(data)
+        isProtonInfoToolCallData(data) ||
+        isWeatherToolCallData(data) ||
+        isStockToolCallData(data) ||
+        isCryptocurrencyToolCallData(data)
     );
 }
 
@@ -138,6 +144,110 @@ export function isProtonInfoToolCallData(data: unknown): data is ProtonInfoToolC
         typeof data === 'object' &&
         data !== null &&
         ('name' in data && data.name === 'proton_info')
+    );
+}
+
+export type WeatherToolCallData = { name: 'weather'; arguments: WeatherArguments };
+
+export function isWeatherToolCallData(data: unknown): data is WeatherToolCallData {
+    // prettier-ignore
+    return (
+        typeof data === 'object' &&
+        data !== null &&
+        ('name' in data && data.name === 'weather') &&
+        ('arguments' in data && isWeatherArguments(data.arguments))
+    );
+}
+
+export type WeatherLocation = { city: string; country_code?: string | null } | { lat: number; lon: number };
+
+export type WeatherArguments = {
+    location: WeatherLocation;
+};
+
+export function isWeatherArguments(args: unknown): args is WeatherArguments {
+    // prettier-ignore
+    return (
+        typeof args === 'object' &&
+        args !== null &&
+        ('location' in args && isWeatherLocation(args.location))
+    );
+}
+
+export function isWeatherLocation(location: unknown): location is WeatherLocation {
+    if (typeof location !== 'object' || location === null) {
+        return false;
+    }
+
+    // Check if it's the city variant
+    if ('city' in location && typeof location.city === 'string') {
+        return (
+            !('country_code' in location) ||
+            location.country_code === null ||
+            location.country_code === undefined ||
+            typeof location.country_code === 'string'
+        );
+    }
+
+    // Check if it's the coordinates variant
+    if ('lat' in location && 'lon' in location) {
+        return typeof location.lat === 'number' && typeof location.lon === 'number';
+    }
+
+    return false;
+}
+
+export type StockToolCallData = { name: 'stock'; arguments: StockArguments };
+
+export function isStockToolCallData(data: unknown): data is StockToolCallData {
+    // prettier-ignore
+    return (
+        typeof data === 'object' &&
+        data !== null &&
+        ('name' in data && data.name === 'stock') &&
+        ('arguments' in data && isStockArguments(data.arguments))
+    );
+}
+
+export type StockArguments = {
+    symbol: string;
+    days?: number | null;
+};
+
+export function isStockArguments(args: unknown): args is StockArguments {
+    // prettier-ignore
+    return (
+        typeof args === 'object' &&
+        args !== null &&
+        ('symbol' in args && typeof args.symbol === 'string') &&
+        (!('days' in args) || args.days === null || args.days === undefined || typeof args.days === 'number')
+    );
+}
+
+export type CryptocurrencyToolCallData = { name: 'cryptocurrency'; arguments: CryptocurrencyArguments };
+
+export function isCryptocurrencyToolCallData(data: unknown): data is CryptocurrencyToolCallData {
+    // prettier-ignore
+    return (
+        typeof data === 'object' &&
+        data !== null &&
+        ('name' in data && data.name === 'cryptocurrency') &&
+        ('arguments' in data && isCryptocurrencyArguments(data.arguments))
+    );
+}
+
+export type CryptocurrencyArguments = {
+    symbol: string;
+    currency: string;
+};
+
+export function isCryptocurrencyArguments(args: unknown): args is CryptocurrencyArguments {
+    // prettier-ignore
+    return (
+        typeof args === 'object' &&
+        args !== null &&
+        ('symbol' in args && typeof args.symbol === 'string') &&
+        ('currency' in args && typeof args.currency === 'string')
     );
 }
 

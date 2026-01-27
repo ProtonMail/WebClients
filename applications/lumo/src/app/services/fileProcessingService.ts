@@ -249,6 +249,9 @@ export class FileProcessingService {
         const category = getProcessingCategory(file.type, file.name);
         switch (category) {
             case 'image':
+                if (!this.enableImageTools) {
+                    throw new Error('Unsupported file type');
+                }
                 const result = await processImageFile(file);
                 const extResult: ImageProcessingResult = { id: request.id, ...result };
                 this.onMessage({ data: extResult } as MessageEvent<ImageProcessingResult>);

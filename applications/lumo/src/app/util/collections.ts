@@ -1,3 +1,5 @@
+/* eslint-disable no-nested-ternary */
+
 export const mapify = <T extends { id: string }>(xs: T[]): Record<string, T> => {
     return Object.fromEntries(xs.map((x) => [x.id, x]));
 };
@@ -52,5 +54,5 @@ export const dedup = <T>(xs: Iterable<T>): T[] => {
 };
 
 export const when = <T, U extends T[] | Record<string, T>>(condition: boolean, data: U): U => {
-    return condition ? data : (Array.isArray(data) ? [] : {});
-}
+    return condition ? data : Array.isArray(data) ? ([] as unknown as U) : ({} as unknown as U);
+};
