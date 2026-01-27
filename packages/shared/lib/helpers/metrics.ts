@@ -1,12 +1,10 @@
 import { type Subscription, getIsB2BAudienceFromSubscription, getPlanName, isFreeSubscription } from '@proton/payments';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import type { UserModel, UserSettings } from '@proton/shared/lib/interfaces';
-import { CommonFeatureFlag } from '@proton/unleash/UnleashFeatureFlags';
-import { getStandaloneUnleashClient } from '@proton/unleash/standaloneClient';
 
 import { metrics } from '../api/metrics';
 import type { TelemetryReport } from '../api/telemetry';
-import { sendMultipleTelemetryData, sendTelemetryData } from '../api/telemetry';
+import { sendMultipleTelemetryData } from '../api/telemetry';
 import type { METRICS_LOG } from '../constants';
 import { SECOND } from '../constants';
 import type { Api } from '../interfaces';
@@ -85,30 +83,19 @@ export const sendTelemetryReport = async ({
             await randomDelay();
         }
 
-        if (getStandaloneUnleashClient()?.isEnabled(CommonFeatureFlag.WebBatchTelemetryReports)) {
-            const telemetryReport: TelemetryReport = { measurementGroup, event, values, dimensions };
+        const telemetryReport: TelemetryReport = { measurementGroup, event, values, dimensions };
 
-            if (!telemetryReportsBatchQueue.hasFlushCallback()) {
-                telemetryReportsBatchQueue.setFlushCallback(async (reports: TelemetryReport[]) => {
-                    await possiblySilentApi(
-                        sendMultipleTelemetryData({
-                            reports,
-                        })
-                    );
-                });
-            }
-
-            telemetryReportsBatchQueue.add(telemetryReport);
-        } else {
-            void (await possiblySilentApi(
-                sendTelemetryData({
-                    MeasurementGroup: measurementGroup,
-                    Event: event,
-                    Values: values,
-                    Dimensions: dimensions,
-                })
-            ));
+        if (!telemetryReportsBatchQueue.hasFlushCallback()) {
+            telemetryReportsBatchQueue.setFlushCallback(async (reports: TelemetryReport[]) => {
+                await possiblySilentApi(
+                    sendMultipleTelemetryData({
+                        reports,
+                    })
+                );
+            });
         }
+
+        telemetryReportsBatchQueue.add(telemetryReport);
     } catch {
         // fail silently
     }
