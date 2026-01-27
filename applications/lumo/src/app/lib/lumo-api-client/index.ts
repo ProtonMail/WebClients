@@ -7,27 +7,27 @@ export { LumoApiClient } from './core/client';
 export { RequestBuilder } from './core/request-builder';
 
 // Type exports
-export type {
+export {
     Role,
-    Turn,
-    EncryptedTurn,
-    Base64,
-    RequestId,
-    AesGcmCryptoKey,
-    ToolName,
-    RequestableGenerationTarget,
-    GenerationTarget,
-    LumoApiGenerationRequest,
-    GenerationResponseMessage,
-    Status,
-    LumoApiClientConfig,
-    ChunkCallback,
-    FinishCallback,
-    AssistantCallOptions,
-    RequestInterceptor,
-    ResponseInterceptor,
-    RequestContext,
-    ResponseContext,
+    type Turn,
+    type EncryptedTurn,
+    type Base64,
+    type RequestId,
+    type AesGcmCryptoKey,
+    type ToolName,
+    type RequestableGenerationTarget,
+    type GenerationTarget,
+    type LumoApiGenerationRequest,
+    type GenerationResponseMessage,
+    type Status,
+    type LumoApiClientConfig,
+    type ChunkCallback,
+    type FinishCallback,
+    type AssistantCallOptions,
+    type RequestInterceptor,
+    type ResponseInterceptor,
+    type RequestContext,
+    type ResponseContext,
 } from './core/types';
 
 // Interceptor exports

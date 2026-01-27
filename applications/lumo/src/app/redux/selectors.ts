@@ -3,7 +3,7 @@ import type { Selector } from 'react-redux';
 import type { UserState } from '@proton/account';
 
 import type { LocalId, RemoteId, ResourceType } from '../remote/types';
-import type { Attachment, Conversation, Message, Space } from '../types';
+import type { Attachment, AttachmentId, Conversation, Message, Space } from '../types';
 import { type ConversationId, type MessageId, Role, type SpaceId } from '../types';
 import { listify, mapIds, setify } from '../util/collections';
 import { sortByDate } from '../util/date';
@@ -63,6 +63,8 @@ export const selectAttachmentById =
     (state: RootState) =>
         state.attachments[id];
 
+export const selectAttachmentByIdOptional = makeOptional(selectAttachmentById, undefined);
+
 export const selectMessagesByConversationId =
     (conversationId: ConversationId | null | undefined) => (state: LumoState) =>
         objectFilterV(state.messages, (m: Message) => m.conversationId === conversationId, EMPTY_MESSAGE_MAP);
@@ -77,6 +79,11 @@ export const selectMessagesBySpaceId = (spaceId: SpaceId | null | undefined) => 
 
 export const selectAttachmentsBySpaceId = (spaceId: SpaceId | null | undefined) => (state: LumoState) =>
     objectFilterV(state.attachments, (c: Attachment) => c.spaceId === spaceId, EMPTY_ATTACHMENT_MAP);
+
+export const selectAttachmentLoadingState = (attachmentId: AttachmentId) => (state: LumoState) =>
+    state.attachmentLoadingState[attachmentId];
+
+export const selectAttachmentLoadingStateOptional = makeOptional(selectAttachmentLoadingState, undefined);
 
 export const selectSpaceByIdOptional = makeOptional(selectSpaceById, undefined);
 

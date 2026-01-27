@@ -93,6 +93,7 @@ import {
     locallyDeleteSpaceFromLocalRequest,
     locallyDeleteSpaceFromRemoteRequest,
     locallyRefreshSpaceFromRemoteRequest,
+    pullSpaceFailure,
     pullSpaceRequest,
     pullSpaceSuccess,
     pullSpacesFailure,
