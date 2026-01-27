@@ -83,7 +83,7 @@ export const PiPPreviewVideo = ({ canvas, onClose, tracksLength }: PiPPreviewVid
     return (
         <div
             className={clsx(
-                'fixed z-50 bottom-custom right-custom overflow-hidden w-custom h-custom',
+                'fixed z-up bottom-custom right-custom overflow-hidden w-custom h-custom',
                 isInPipMode ? 'opacity-0 pointer-events-none' : 'opacity-100 pointer-events-auto'
             )}
             style={{
