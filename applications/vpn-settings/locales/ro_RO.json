@@ -668,9 +668,6 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Deschidere setări ${ CALENDAR_APP_NAME }"
       ],
-      "Open in ${ SHEETS_APP_NAME }": [
-        "Deschidere în ${ SHEETS_APP_NAME }"
-      ],
       "Open navigation": [
         "Deschidere navigare"
       ],
@@ -900,7 +897,7 @@
         "Configurați un domeniu personal"
       ],
       "Set up auto-forwarding from Gmail": [
-        "Setați redirecționarea automată din Gmail"
+        "Setare transferare automată din Gmail"
       ],
       "Set up email forwarding": [
         "Setare transferare mesaje"
@@ -1173,6 +1170,11 @@
     "Action subscription": {
       "Reactivate": [
         "Reactivare"
+      ]
+    },
+    "Action: Sheets": {
+      "Open in ${ SHEETS_APP_NAME }": [
+        "Deschidere în ${ SHEETS_APP_NAME }"
       ]
     },
     "Addon": {
@@ -4378,7 +4380,7 @@
         "Contul sau organizația are o factură restantă. Vă rugăm să plătiți toate facturile neplătite."
       ],
       "Your forward will not be processed.": [
-        "Redirecționarea nu va fi procesată."
+        "Transferarea nu va fi procesată."
       ],
       "Your import will not be processed.": [
         "Importarea nu va fi procesată."
@@ -6277,7 +6279,7 @@
         "Ciclu facturare: ${ text }"
       ],
       "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
-        "Importați-vă mesajele, contactele și calendarele în ${ BRAND_NAME }."
+        "Aduceți-vă mesajele, contactele și calendarele în ${ BRAND_NAME }."
       ],
       "By disabling security events monitoring, you will also clear your entire history. Are you sure you want to disable this?": [
         "Prin dezactivarea monitorizării evenimentelor de securitate, vă veți șterge și întregul istoric. O dezactivați?"
@@ -8083,6 +8085,9 @@
       "With email categories, important messages land in a primary inbox. Everything else is organized into categories.": [
         "Cu categoriile de e-mail, mesajele importante ajung în folderul de mesaje primite. Restul sunt organizate pe categorii."
       ],
+      "With groups, you can implement the company security policies for access control and reduce the risk of accessing unauthorised data.": [
+        "Cu grupuri, puteți implementa politicile de securitate ale companiei pentru controlul accesului și puteți reduce riscul accesării neautorizate a datelor."
+      ],
       "With groups, you can quickly and easily send emails to all the people in a specified group.": [
         "Cu grupuri, puteți trimite rapid și ușor mesaje tuturor persoanelor dintr-un anumit grup."
       ],
@@ -8225,7 +8230,7 @@
         "Aveți modificări nemodificate"
       ],
       "You may be redirected to your bank’s website.": [
-        "Ar putea fi necesară redirecționarea spre pagina web a băncii."
+        "Probabil va trebui să accesați pagina web a băncii."
       ],
       "You must activate your organization private key with the backup organization key password provided to you by your organization administrator.": [
         "Trebuie să activați cheia privată a organizației cu parola de rezervă a cheii organizației primită de la administratorul organizației."
@@ -15768,7 +15773,7 @@
         "Eliminare domeniu"
       ],
       "Remove forwarding address": [
-        "Eliminare adresă de redirecționare"
+        "Eliminare adresă de transferare"
       ],
       "Remove server?": [
         "Eliminați serverul?"

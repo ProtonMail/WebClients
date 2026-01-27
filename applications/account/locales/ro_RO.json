@@ -1053,9 +1053,6 @@
       "Open ${ PASS_APP_NAME } in your browser": [
         "Deschideți ${ PASS_APP_NAME } în navigatorul web"
       ],
-      "Open in ${ SHEETS_APP_NAME }": [
-        "Deschidere în ${ SHEETS_APP_NAME }"
-      ],
       "Open in new tab": [
         "Deschidere în filă nouă"
       ],
@@ -1088,6 +1085,9 @@
       ],
       "Pay ${ price } now": [
         "Plătire ${ price } acum"
+      ],
+      "Pay once": [
+        "Plată o dată"
       ],
       "Preview": [
         "Examinare"
@@ -1296,6 +1296,9 @@
       "See plan features": [
         "Afișare caracteristici plan"
       ],
+      "Select": [
+        "Selectare"
+      ],
       "Select ${ planOrAppName }": [
         "Selectare ${ planOrAppName }"
       ],
@@ -1381,7 +1384,7 @@
         "Configurați un domeniu personal"
       ],
       "Set up auto-forwarding from Gmail": [
-        "Setați redirecționarea automată din Gmail"
+        "Setare transferare automată din Gmail"
       ],
       "Set up email forwarding": [
         "Setare transferare mesaje"
@@ -1719,6 +1722,11 @@
     "Action subscription": {
       "Reactivate": [
         "Reactivare"
+      ]
+    },
+    "Action: Sheets": {
+      "Open in ${ SHEETS_APP_NAME }": [
+        "Deschidere în ${ SHEETS_APP_NAME }"
       ]
     },
     "Action; accept invitation to share calendar": {
@@ -2533,7 +2541,7 @@
         "Aflați cum să vă conservați fișierele în cloud sau pe o unitate externă, menținându-le în același în siguranță."
       ],
       "Learn how to beat annoying and potentially harmful junk mail. Spam emails, also known as junk mail, can be more than just irritating clutter in your inbox. Cybercriminals can use these unsolicited and unwanted messages to launch phishing attacks and spread malware.": [
-        "Învățași cum să scăpași de mesajele de pe e-mail nedorite, enervante și potențial dăunătoare. Mesajele abuzive, cunoscute și sub denumirea de corespondență nedorită, pot fi mai mult decât o simplă aglomerație iritantă în căsuța poștală. Infractorii cibernetici pot folosi aceste mesaje nesolicitate și nedorite pentru a lansa atacuri de tip înșelătorie și a răspândi programe malițioase."
+        "Învățați cum să scăpați de mesajele nedorite, enervante și potențial dăunătoare. Mesajele abuzive, cunoscute și sub denumirea de corespondență nedorită, pot fi mai mult decât o simplă aglomerație iritantă în contul de e-mail. Infractorii cibernetici pot folosi aceste mesaje nesolicitate și nedorite pentru a lansa atacuri de tip înșelătorie și a răspândi programe malițioase."
       ],
       "Learn how to enable ${ VPN_APP_NAME } on your router.": [
         "Aflați cum să activați ${ VPN_APP_NAME } pe ruterul personal."
@@ -5669,7 +5677,7 @@
         "Nu există reguli de intrare pentru transferare mesaje."
       ],
       "No outgoing forwarding rules": [
-        "Nu există reguli de ieșire pentru redirecționare."
+        "Nu există reguli de ieșire pentru transferare."
       ],
       "Please update your forwarding keys": [
         "Actualizați-vă cheile de transferare."
@@ -6727,7 +6735,7 @@
         "Contul sau organizația are o factură restantă. Vă rugăm să plătiți toate facturile neplătite."
       ],
       "Your forward will not be processed.": [
-        "Redirecționarea nu va fi procesată."
+        "Transferarea nu va fi procesată."
       ],
       "Your import will not be processed.": [
         "Importarea nu va fi procesată."
@@ -9268,7 +9276,7 @@
         "Îmbunătățiți-vă identitatea de brand a organizației proprii și creați o experiență online mai consistentă pentru utilizatorii acesteia."
       ],
       "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
-        "Importați-vă mesajele, contactele și calendarele în ${ BRAND_NAME }."
+        "Aduceți-vă mesajele, contactele și calendarele în ${ BRAND_NAME }."
       ],
       "By creating a ${ PASS_APP_NAME } account with your SimpleLogin email, you can manage your aliases directly from ${ PASS_APP_NAME }.": [
         "Prin crearea unui cont ${ PASS_APP_NAME } cu adresa de e-mail SimpleLogin, vă puteți gestiona aliasurile direct din ${ PASS_APP_NAME }."
@@ -9301,7 +9309,7 @@
         "Schimbare parolă"
       ],
       "Check the status of imports and forwarding.": [
-        "Verificați starea importărilor și redirecționărilor."
+        "Consultați starea importărilor și transferărilor."
       ],
       "Choose a plan that works best for you.": [
         "Alegeți un plan care vi se potrivește cel mai bine."
@@ -9806,7 +9814,7 @@
         "Pentru utilizatorii care trec la ${ MAIL_APP_NAME } de la un alt serviciu de e-mail, selectați fila ${ boldAddresses } și adăugați toate adresele de e-mail active înainte de a schimba înregistrarea MX pentru a asigura o tranziție ușoară."
       ],
       "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Redirecționați mesajele primite pe e-mail de la un alt cont în contul securizat al ${ MAIL_APP_NAME }."
+        "Transferați mesajele primite pe e-mail de la un alt cont în contul securizat al ${ MAIL_APP_NAME }."
       ],
       "Free forever": [
         "Gratuit pentru totdeauna"
@@ -10606,6 +10614,9 @@
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Prețul include toate reducerile ciclice aplicabile și cupoanele neexpirate salvate în cont."
       ],
+      "Privacy and security starts here": [
+        "Confidențialitatea și securitatea încep aici"
+      ],
       "Private AI assistant": [
         "Asistent de IA privat"
       ],
@@ -10784,7 +10795,7 @@
         "Setare parolă"
       ],
       "Set up forwarding": [
-        "Setare redirecționare"
+        "Setare transferare"
       ],
       "Set up your organization": [
         "Setați organizația"
@@ -11578,6 +11589,9 @@
       "With email categories, important messages land in a primary inbox. Everything else is organized into categories.": [
         "Cu categoriile de e-mail, mesajele importante ajung în folderul de mesaje primite. Restul sunt organizate pe categorii."
       ],
+      "With groups, you can implement the company security policies for access control and reduce the risk of accessing unauthorised data.": [
+        "Cu grupuri, puteți implementa politicile de securitate ale companiei pentru controlul accesului și puteți reduce riscul accesării neautorizate a datelor."
+      ],
       "With groups, you can quickly and easily send emails to all the people in a specified group.": [
         "Cu grupuri, puteți trimite rapid și ușor mesaje tuturor persoanelor dintr-un anumit grup."
       ],
@@ -11762,7 +11776,7 @@
         "Aveți modificări nemodificate"
       ],
       "You may be redirected to your bank’s website.": [
-        "Ar putea fi necesară redirecționarea spre pagina web a băncii."
+        "Probabil va trebui să accesați pagina web a băncii."
       ],
       "You may now start using **${ applicationName }**": [
         "Acum puteți începe utilizarea **${ applicationName }**"
@@ -12269,7 +12283,7 @@
         "Filtru"
       ],
       "Forward": [
-        "Redirecționare"
+        "Transferare"
       ],
       "Go to All Mail": [
         "Accesare „Toate mesajele”"
@@ -12538,6 +12552,9 @@
         "${ nbYear } ani",
         "${ nbYear } de ani"
       ],
+      "${ pricePerMonthWithCurrency } / month": [
+        "${ pricePerMonthWithCurrency }/lună"
+      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Temporar indisponibil. Reveniți mai târziu.)"
       ],
@@ -12768,6 +12785,12 @@
       ],
       "Beta": [
         "Beta"
+      ],
+      "Billed at ${ priceYearly } every 12 months.": [
+        "Facturat cu ${ priceYearly } la fiecare 12 luni."
+      ],
+      "Billed monthly.": [
+        "Facturat lunar."
       ],
       "Billing cycle": [
         "Ciclu de facturare"
@@ -13261,6 +13284,9 @@
       "Level for NetShield blocker filtering": [
         "Nivelul pentru filtrarea blocatorului NetShield"
       ],
+      "Limited time": [
+        "Timp limitat"
+      ],
       "Link label (optional)": [
         "Etichetă legătură web (opțional)"
       ],
@@ -13326,6 +13352,9 @@
       ],
       "Moderate NAT": [
         "NAT moderat"
+      ],
+      "Most popular": [
+        "Cel mai popular"
       ],
       "Move to": [
         "Mutare în"
@@ -13446,6 +13475,9 @@
       ],
       "Password strength": [
         "Dificultate parolă"
+      ],
+      "Pay once, access forever.": [
+        "Plătiți o dată, accesați pe viață."
       ],
       "Payer": [
         "Plătitor"
@@ -15816,7 +15848,7 @@
         "Ștergeți automat mesajele mai vechi de 30 de zile din gunoi și cele nedorite."
       ],
       "Automatically forward emails sent to your ${ MAIL_APP_NAME } account to any other email address.": [
-        "Redirecționați automat mesajele trimise spre contul ${ MAIL_APP_NAME } către orice altă adresă de e-mail."
+        "Transferați automat mesajele trimise spre contul ${ MAIL_APP_NAME } către orice altă adresă de e-mail."
       ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
         "În prezent, trimiterea mesajelor promoționale sau programate grupate nu este acceptată. Vă recomandăm să utilizați un furnizor dedicat de servicii de e-mail pentru acest caz de utilizare."
@@ -22112,6 +22144,9 @@
       "An address for each role": [
         "O adresă pentru fiecare rol"
       ],
+      "Annual": [
+        "Anual"
+      ],
       "Anytime, anywhere access": [
         "Acces oricând, oriunde"
       ],
@@ -22358,7 +22393,7 @@
         "Personalizare importare mesaje"
       ],
       "Dashboard": [
-        "Panou general"
+        "Panou de control"
       ],
       "Data locked": [
         "Date blocate"
@@ -22855,6 +22890,9 @@
       "Leave group?": [
         "Părăsiți grupul?"
       ],
+      "Lifetime": [
+        "Pe viață"
+      ],
       "Limit reached": [
         "Limită atinsă"
       ],
@@ -22881,6 +22919,9 @@
       ],
       "Mobile": [
         "Dispozitive mobile"
+      ],
+      "Monthly": [
+        "Lunar"
       ],
       "Multi-user support": [
         "Suport utilizatori multipli"
@@ -23078,7 +23119,7 @@
         "Eliminare domeniu"
       ],
       "Remove forwarding address": [
-        "Eliminare adresă de redirecționare"
+        "Eliminare adresă de transferare"
       ],
       "Remove server?": [
         "Eliminați serverul?"

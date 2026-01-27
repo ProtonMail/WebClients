@@ -768,9 +768,6 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Otevřít nastavení ${ CALENDAR_APP_NAME }"
       ],
-      "Open in ${ SHEETS_APP_NAME }": [
-        "Otevřít v ${ SHEETS_APP_NAME }"
-      ],
       "Open navigation": [
         "Otevřít menu"
       ],
@@ -1241,6 +1238,16 @@
       ],
       "Zoom out": [
         "Oddálit"
+      ]
+    },
+    "Action: Docs": {
+      "Open in ${ DOCS_APP_NAME }": [
+        "Otevřít v ${ DOCS_APP_NAME }"
+      ]
+    },
+    "Action: Sheets": {
+      "Open in ${ SHEETS_APP_NAME }": [
+        "Otevřít v ${ SHEETS_APP_NAME }"
       ]
     },
     "Actions": {
@@ -3850,6 +3857,9 @@
       "We were not able to load the folder contents": [
         "Nepodařilo se nám načíst obsah složky"
       ],
+      "We're sorry, but free upload is not available right now.": [
+        "Je nám líto, ale bezplatné nahrávání není momentálně k dispozici."
+      ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Nemůžete odeslat e-mail více než ${ maxContacts } příjemci najednou",
         "Nemůžete odeslat e-mail více než ${ maxContacts } příjemcům najednou",
@@ -5179,6 +5189,9 @@
         "Budou importovány všechny vaše kontakty až do limitu ${ MAX_CONTACTS_PER_USER }",
         "Budou importovány všechny vaše kontakty až do limitu ${ MAX_CONTACTS_PER_USER }"
       ],
+      "Already in this folder": [
+        "Již v této složce"
+      ],
       "Already in your library": [
         "Již ve vaší knihovně"
       ],
@@ -5280,6 +5293,9 @@
       ],
       "Calendar side panel": [
         "Postranní panel kalendáře"
+      ],
+      "Can't move a folder into itself": [
+        "Složku nelze přesunout do sebe"
       ],
       "Canceled": [
         "Zrušeno"
@@ -6193,6 +6209,9 @@
       "Search Enabled": [
         "Vyhledávání Zapnuto"
       ],
+      "Select a destination folder": [
+        "Vyberte cílovou složku"
+      ],
       "Select a folder to make the copy in": [
         "Vyberte složku, do které chcete uložit kopii"
       ],
@@ -6684,6 +6703,9 @@
       ],
       "Week": [
         "Týden"
+      ],
+      "Welcome to ${ DRIVE_APP_NAME }, for the first 10 minutes, any files you upload don't count toward your storage quota.": [
+        "Vítejte v ${ DRIVE_APP_NAME }. Prvních 10 minut se žádné soubory, které nahrajete, nezapočítávají do vaší úložné kvóty."
       ],
       "What do you want to do?": [
         "Co chcete udělat?"
@@ -9874,9 +9896,6 @@
       "Edit documents online": [
         "Úprava dokumentů online"
       ],
-      "Encryption happens automatically": [
-        "Šifrování probíhá automaticky"
-      ],
       "End-to-end encrypted storage for your files": [
         "Koncově šifrované úložiště pro vaše soubory"
       ],
@@ -9952,9 +9971,6 @@
       "The owner needs to confirm sharing access. You'll get an email once it's done.": [
         "Vlastník musí potvrdit sdílení přístupu. Jakmile se tak stane, obdržíte e-mail."
       ],
-      "Upload files, folders, photos": [
-        "Nahrejte soubory, složky, fotky"
-      ],
       "Upload your first file": [
         "Nahrajte svůj první soubor"
       ],
@@ -9966,9 +9982,6 @@
       ],
       "You just snagged some free data and secured your files with end-to-end encryption － in record time!": [
         "Právě jste získali bezplatná data a zabezpečili své soubory pomocí koncového šifrování – a to v rekordním čase!"
-      ],
-      "Your storage limit won’t be affected": [
-        "Váš limit velikosti úložiště nebude ovlivněn"
       ]
     },
     "Onboarding Trial": {
@@ -12214,6 +12227,9 @@
       "${ feature } is now active": [
         "${ feature } je nyní aktivní"
       ],
+      "${ freeUploadLength } of free uploads.": [
+        "${ freeUploadLength } z bezplatných nahrání."
+      ],
       "${ numberOfFailedTransfer.total } failed download": [
         "${ numberOfFailedTransfer.total } nebyl stažen",
         "${ numberOfFailedTransfer.total } nebyly staženy",
@@ -13212,9 +13228,6 @@
       ],
       "You have no folders yet": [
         "Zatím nemáte žádné složky"
-      ],
-      "Your ${ freeUploadLength } has started.": [
-        "Vaše ${ freeUploadLength } začalo."
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Vaše bezplatná zkušební verze ${ planName } skončí ${ textDate }"

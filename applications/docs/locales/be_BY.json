@@ -90,9 +90,6 @@
       "Apply": [
         "Ужыць"
       ],
-      "Ask me next time": [
-        "Спытайце мяне наступны раз"
-      ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "У групе кантактаў можа быць не больш за ${ maxContacts } кантакт",
         "У групе кантактаў можа быць не больш за ${ maxContacts } кантакты",
@@ -4424,9 +4421,6 @@
       "Continue": [
         "Працягнуць"
       ],
-      "Converting document...": [
-        "Пераўтварэнне дакумента..."
-      ],
       "Copy the link to clipboard": [
         "Скапіяваць спасылку ў буфер абмену"
       ],
@@ -4474,9 +4468,6 @@
       ],
       "Creating link to folder": [
         "Стварэнне спасылкі на папку"
-      ],
-      "Creating new document...": [
-        "Стварэнне новага дакумента..."
       ],
       "Current plan": [
         "Бягучы тарыфны план"
@@ -4571,12 +4562,6 @@
       "Enter your own password (as trusted contact).": [
         "Увядзіце свой пароль (як давераны кантакт)."
       ],
-      "Error converting document: ${ errorMessage }": [
-        "Памылка пераўтварэння дакумента: ${ errorMessage }"
-      ],
-      "Error loading document: ${ errorDetail }": [
-        "Памылка загрузкі дакумента: ${ errorDetail }"
-      ],
       "Error Syncing": [
         "Памылка сінхранізацыі"
       ],
@@ -4636,12 +4621,6 @@
       ],
       "Geoblocking": [
         "Геаблакіроўка"
-      ],
-      "Get email updates for comments and suggestions added to your documents.": [
-        "Атрымлівайце лісты на электронную пошту аб каментарыях і прапановах, якія дадаюцца ў вашы дакументы."
-      ],
-      "Get Notified About Comments": [
-        "Атрымлівайце апавяшчэнні аб каментарыях"
       ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Урады і пастаўшчыкі паслуг інтэрнэту могуць сачыць за тым, якія сайты вы наведваеце. Ваш прагляд вэб-старонак у інтэрнэце становіцца прыватным дзякуючы хаванню вашага рэальнага IP-адраса і шыфраванню."
@@ -4784,9 +4763,6 @@
       "Low Priority": [
         "Нізкі прыярытэт"
       ],
-      "Making a copy...": [
-        "Стварэнне копіі..."
-      ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "Максімум ${ MAX_SHARED_URL_PASSWORD_LENGTH } сімвал",
         "Максімум ${ MAX_SHARED_URL_PASSWORD_LENGTH } сімвалы",
@@ -4819,9 +4795,6 @@
       ],
       "No contacts added yet": [
         "Кантакты пакуль не дададзены"
-      ],
-      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
-        "У URL-адрасе адсутнічае дакумент. Вярніцеся ў ${ DRIVE_APP_NAME } і выберыце дакумент."
       ],
       "No email address": [
         "Няма адраса электроннай пошты"
@@ -5110,9 +5083,6 @@
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Уладальнік гэтага адраса адключыў скразное шыфраванне. Яму неабходна паўторна ўключыць яго, каб мець магчымасць адпраўляць зашыфраваныя лісты на гэты адрас."
-      ],
-      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
-        "Здаецца, што ўведзены вамі URL-адрас быў няправільна скапіяваны з платформы Slack. Пры капіяванні доўгіх спасылак з дадзенай платформы, націсніце на спасылку правай кнопкай мышы і выберыце \"Капіяваць спасылку\", а не капіюйце скарочаны тэкст URL-адраса наўпрост."
       ],
       "There are no documents in the trash.": [
         "Дакументы ў сметніцы адсутнічаюць."
@@ -5746,9 +5716,6 @@
       "Emails (last month)": [
         "Лісты (за апошні месяц)"
       ],
-      "Enable email notifications": [
-        "Уключыць апавяшчэнні па электроннай пошце"
-      ],
       "Encrypt emails": [
         "Шыфраваць лісты"
       ],
@@ -5796,9 +5763,6 @@
       ],
       "Include application logs in bug report": [
         "Уключыць журналы праграмы ў справаздачу аб памылцы"
-      ],
-      "Include document name in notification": [
-        "Уключыць назву дакумента ў апавяшчэнне"
       ],
       "Include message and file name in invite email": [
         "Уключаць паведамленне і назву файла ў запрашальны ліст"
@@ -10482,6 +10446,9 @@
       ],
       "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
         "Гэта імпартаванне можа перавысіць ёмістасць сховішча, якое цяпер даступна для вашага ўліковага запісу ${ BRAND_NAME }. Змяніце налады імпартавання."
+      ],
+      "This will replace all the data in the spreadsheet": [
+        "Гэта дзеянне прывядзе да замены ўсіх даных у электроннай табліцы"
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "На жаль, у дадзены момант наша каманда падтрымкі знаходзіцца па-за сеткай. Запоўніце форму ніжэй з апісаннем вашай праблемы і мы абавязкова разгледзім яе пасля таго, як станем зноў даступнымі."

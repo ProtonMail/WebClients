@@ -2196,6 +2196,9 @@
       "Error processing file: ${ file.name }": [
         "Erro ao processar arquivo: ${ file.name }"
       ],
+      "File type not supported: ${ file.name }": [
+        "Tipo de arquivo não suportado: ${ file.name }"
+      ],
       "Project not found": [
         "Projeto não encontrado"
       ]
@@ -2212,11 +2215,18 @@
       ]
     },
     "collider_2025:Info": {
+      " Chat in Project": [
+        " Bate-papo no projeto",
+        " Bate-papos no projeto"
+      ],
       "${ project.conversationCount } conversation": [
         "${ project.conversationCount } conversa"
       ],
       "${ project.conversationCount } conversations": [
         "${ project.conversationCount } conversas"
+      ],
+      "${ project.fileCount } file": [
+        "${ project.fileCount } arquivo"
       ],
       "${ project.fileCount } files": [
         "${ project.fileCount } arquivos"

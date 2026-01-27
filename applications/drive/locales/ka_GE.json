@@ -758,9 +758,6 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "${ CALENDAR_APP_NAME }-ის მორგება"
       ],
-      "Open in ${ SHEETS_APP_NAME }": [
-        "${ SHEETS_APP_NAME }-ში გახსნა"
-      ],
       "Open navigation": [
         "ნავიგაციის გახსნა"
       ],
@@ -928,6 +925,9 @@
       ],
       "Save changes": [
         "ცვლილებების შენახვა"
+      ],
+      "Save for later": [
+        "შენახვა შემდგომისთვის"
       ],
       "Save photos and remove": [
         "სურათების შენახვა და წაშლა"
@@ -1226,6 +1226,11 @@
       ],
       "Zoom out": [
         "დაპატარავება"
+      ]
+    },
+    "Action: Sheets": {
+      "Open in ${ SHEETS_APP_NAME }": [
+        "${ SHEETS_APP_NAME }-ში გახსნა"
       ]
     },
     "Actions": {
@@ -1595,6 +1600,9 @@
       ],
       "Payments problem": [
         "გადახდის პრობლემა"
+      ],
+      "Sheets problem": [
+        "Sheets-ის პრობლემა"
       ],
       "Sign in problem": [
         "შესვლის პრობლემა"
@@ -3758,6 +3766,9 @@
       "We were not able to load some of your shared items": [
         "ჩვენ ვერ ჩავტვირთეთ რამდენიმე თქვენი გაზიარებული ელემენტებიდან"
       ],
+      "We were not able to load the folder contents": [
+        "ჩვენ ვერ ჩავტვირთეთ საქაღალდის შემცველობა"
+      ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "თქვენ არ შეგიძლიათ გაგზავნოთ ელფოსტა ${ maxContacts }-ზე მეტი მიმღებით",
         "თქვენ არ შეგიძლიათ გაგზავნოთ ელფოსტა ${ maxContacts }-ზე მეტი მიმღებით"
@@ -4941,6 +4952,9 @@
         "შემოტანილი იქნება ყველა თქვენი კონტაქტი. ლიმიტია ${ MAX_CONTACTS_PER_USER }",
         "შემოტანილი იქნება ყველა თქვენი კონტაქტი. ლიმიტია ${ MAX_CONTACTS_PER_USER }"
       ],
+      "Already in this folder": [
+        "უკვე ამ საქაღალდეშია"
+      ],
       "Already in your library": [
         "უკვე თქვენს ბიბლიოთეკაშია"
       ],
@@ -5039,6 +5053,9 @@
       ],
       "Calendar side panel": [
         "კალენდრის გვერდითი პანელი"
+      ],
+      "Can't move a folder into itself": [
+        "საქაღალდეს თავის თავში ვერ გადაიტანთ"
       ],
       "Canceled": [
         "გაუქმებულია"
@@ -5929,6 +5946,9 @@
       "Search Enabled": [
         "ძებნა ჩართულია"
       ],
+      "Select a destination folder": [
+        "აირჩიეთ სამიზნე საქაღალდე"
+      ],
       "Select a folder to make the copy in": [
         "აირჩეთ საქაღალდე, სადაც ასლი შეიქმნება"
       ],
@@ -6662,6 +6682,9 @@
       ]
     },
     "Into": {
+      "Can edit and manage access": [
+        "შეუძლია წვდომების ჩასწორება და მართვა"
+      ],
       "Can view and edit": [
         "შეუძლია ნახვა და ჩასწორება"
       ],
@@ -6775,6 +6798,9 @@
       ],
       "Anderson": [
         "ღობეგლეჯიაშვილი"
+      ],
+      "Anonymous": [
+        "ანონიმური"
       ],
       "Anyone on the Internet with the link can edit": [
         "ჩასწორება შეუძლია ყველას, ვისაც ინტერნეტი და ეს ბმული აქვს"
@@ -7630,6 +7656,10 @@
       ]
     },
     "meet_2025: Feature": {
+      "${ n } active meeting at a time": [
+        "${ n } ერთდროული აქტიური შეხვედრა",
+        "${ n } ერთდროული აქტიური შეხვედრა"
+      ],
       "24 hours per meeting": [
         "24 საათი თითო შეხვედრისთვის"
       ],
@@ -7639,11 +7669,31 @@
       "Appointment scheduling": [
         "შეხვედრის დაგეგმვა"
       ],
+      "Browser, mobile, and desktop apps": [
+        "ბრაუზერის, მობილურის და კომპიუტეირს აპები"
+      ],
       "Built-in chat": [
         "ჩაშენებული ჩატი"
       ],
+      "Meeting recording (coming soon)": [
+        "შეხვედრის ჩანაწერი (მალე)"
+      ],
+      "One active meeting at a time": [
+        "ერთი აქტიური შეხვედრა ერთდროულად"
+      ],
       "Screen-sharing": [
         "ეკრანის გაზიარება"
+      ],
+      "Unlimited meetings per day": [
+        "შეუზღუდავი შეხვედრები დღეში"
+      ],
+      "Up to ${ n } meeting per day": [
+        "${ n } შეხვედრამდე დღეში",
+        "${ n } შეხვედრამდე დღეში"
+      ],
+      "Up to ${ n } participant": [
+        "${ n }-მდე მონაწილე",
+        "${ n }-მდე მონაწილე"
       ]
     },
     "Message": {
@@ -8799,6 +8849,9 @@
       "\"${ name }\" deleted": [
         "\"${ name }\" წაიშალა"
       ],
+      "\"${ name }\" deleted permanently": [
+        "\"${ name }\" სამუდამოდ წაიშალა"
+      ],
       "\"${ name }\" deleted permanently from trash": [
         "\"${ name }\" ნაგვის ყუთიდან წარმატებით წაიშალა"
       ],
@@ -8879,6 +8932,10 @@
       "${ numberOfItems } item deleted": [
         "${ numberOfItems } ელემენტის წაიშალა",
         "${ numberOfItems } ელემენტის წაიშალა"
+      ],
+      "${ numberOfItems } item deleted permanently": [
+        "${ numberOfItems } ელემენტი სამუდამოდ წაიშალა",
+        "${ numberOfItems } ელემენტი სამუდამოდ წაიშალა"
       ],
       "${ numberOfItems } item deleted permanently from trash": [
         "${ numberOfItems } ელემენტი წარმატებულად წაიშალა ნაგვის ყუთიდან",
@@ -9340,9 +9397,6 @@
       "Edit documents online": [
         "ჩაასწორეთ დოკუმენტები ინტერნეტში"
       ],
-      "Encryption happens automatically": [
-        "დაშიფვრა ავტომატურად ხდება"
-      ],
       "End-to-end encrypted storage for your files": [
         "გამჭოლად დაშიფრული საცავი თქვენი ფაილებისთვის"
       ],
@@ -9418,9 +9472,6 @@
       "The owner needs to confirm sharing access. You'll get an email once it's done.": [
         "საჭიროა, მფლობელმა დაადასტუროს გაზიარებულზე წვდომა. როცა ეს მოხდება, ელფოსტას მიიღებთ."
       ],
-      "Upload files, folders, photos": [
-        "ატვირთეთ ფაილები, საქაღალდეები, სურათები"
-      ],
       "Upload your first file": [
         "ატვირთეთ თქვენი პირველი ფაილი"
       ],
@@ -9432,9 +9483,6 @@
       ],
       "You just snagged some free data and secured your files with end-to-end encryption － in record time!": [
         "თქვენ ახლახან მიიღეთ უფასო მონაცემები და დაიცავით თქვენი ფაილები ბოლოდან ბოლომდე დაშიფვრით — რეკორდულ დროში!"
-      ],
-      "Your storage limit won’t be affected": [
-        "თქვენი საცავის ლიმიტს ეს არ შეეხება"
       ]
     },
     "Onboarding Trial": {
@@ -11232,6 +11280,9 @@
       "Securely share your favorite moments with friends and family using Albums.": [
         "გააზიარეთ დაცულად თქვენი რჩეული მომენტები მეგობრებთან და ოჯახთან ალბომების გამოყენებით."
       ],
+      "Shared by ${ sharedBy }": [
+        "გაზიარებულია ${ sharedBy }-ის მიერ"
+      ],
       "Your favorited photos will appear here": [
         "თქვენი რჩეული სურათები აქ გამოჩნდება"
       ],
@@ -11515,6 +11566,9 @@
       ],
       "${ feature } is now active": [
         "${ feature } ახლა აქტიურია"
+      ],
+      "${ freeUploadLength } of free uploads.": [
+        "${ freeUploadLength } უფასო ატვირთვა."
       ],
       "${ numberOfFailedTransfer.total } failed download": [
         "${ numberOfFailedTransfer.total } გადმოწერის შეცდომა",
@@ -12328,6 +12382,9 @@
       "Time": [
         "დრო"
       ],
+      "To preview this spreadsheet, download it.": [
+        "ამ ელცხრილის მინიატურისთვის გადმოწერეთ ის."
+      ],
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "ამ ელცხრილის გადასახედად გახსენით ${ SHEETS_APP_NAME }-ში, ან გადმოწერეთ ის."
       ],
@@ -12465,9 +12522,6 @@
       ],
       "You have no folders yet": [
         "საქაღალდეები ჯერ არ გაქვთ"
-      ],
-      "Your ${ freeUploadLength } has started.": [
-        "თქვენი ${ freeUploadLength } დაიწყო."
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "თქვენი ${ planName }-ის უფასო სატესტო პერიოდი ${ textDate }-ზე სრულდება"

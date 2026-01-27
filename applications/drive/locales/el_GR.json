@@ -758,9 +758,6 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Ανοίξτε τις ρυθμίσεις του ${ CALENDAR_APP_NAME }"
       ],
-      "Open in ${ SHEETS_APP_NAME }": [
-        "Άνοιγμα με ${ SHEETS_APP_NAME }"
-      ],
       "Open navigation": [
         "Άνοιγμα μενού πλοήγησης"
       ],
@@ -1229,6 +1226,16 @@
       ],
       "Zoom out": [
         "Σμίκρυνση"
+      ]
+    },
+    "Action: Docs": {
+      "Open in ${ DOCS_APP_NAME }": [
+        "Άνοιγμα με ${ DOCS_APP_NAME }"
+      ]
+    },
+    "Action: Sheets": {
+      "Open in ${ SHEETS_APP_NAME }": [
+        "Άνοιγμα με ${ SHEETS_APP_NAME }"
       ]
     },
     "Actions": {
@@ -3802,6 +3809,9 @@
       "We were not able to load the folder contents": [
         "Δεν ήταν δυνατή η φόρτωση του περιεχομένου του φακέλου."
       ],
+      "We're sorry, but free upload is not available right now.": [
+        "Λυπούμαστε, αλλά η δωρεάν μεταφόρτωση δεν είναι διαθέσιμη αυτή τη στιγμή."
+      ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Δεν μπορείτε να στείλετε μήνυμα σε περισσότερους από ${ maxContacts } παραλήπτη",
         "Δεν μπορείτε να στείλετε μήνυμα σε περισσότερους από ${ maxContacts } παραλήπτες"
@@ -5021,6 +5031,9 @@
         "Όλες οι επαφές σας θα εισαχθούν, μέχρι το όριο της ${ MAX_CONTACTS_PER_USER }",
         "Όλες οι επαφές σας θα εισαχθούν, μέχρι το όριο των ${ MAX_CONTACTS_PER_USER }"
       ],
+      "Already in this folder": [
+        "Ήδη σε αυτόν το φάκελο"
+      ],
       "Already in your library": [
         "Ήδη στη βιβλιοθήκη σας"
       ],
@@ -5122,6 +5135,9 @@
       ],
       "Calendar side panel": [
         "Πλαϊνό πλαίσιο ημερολογίου"
+      ],
+      "Can't move a folder into itself": [
+        "Δεν είναι δυνατή η μετακίνηση ενός φακέλου μέσα στον ίδιο τον φάκελο"
       ],
       "Canceled": [
         "Ακυρωμένες"
@@ -6021,6 +6037,9 @@
       "Search Enabled": [
         "Αναζήτηση Ενεργοποιημένη"
       ],
+      "Select a destination folder": [
+        "Επιλέξτε φάκελο προορισμού"
+      ],
       "Select a folder to make the copy in": [
         "Επιλέξτε έναν φάκελο για την αντιγραφή"
       ],
@@ -6508,6 +6527,9 @@
       ],
       "Week": [
         "Εβδομάδα"
+      ],
+      "Welcome to ${ DRIVE_APP_NAME }, for the first 10 minutes, any files you upload don't count toward your storage quota.": [
+        "Καλώς ήρθατε στο ${ DRIVE_APP_NAME }. Για τα πρώτα 10 λεπτά, τα αρχεία που ανεβάζετε δεν υπολογίζονται στο όριο αποθήκευσης σας."
       ],
       "What do you want to do?": [
         "Τι θέλετε να κάνετε;"
@@ -9548,9 +9570,6 @@
       "Edit documents online": [
         "Επεξεργασία εγγράφων online"
       ],
-      "Encryption happens automatically": [
-        "Η κρυπτογράφηση γίνεται αυτόματα"
-      ],
       "End-to-end encrypted storage for your files": [
         "Διατερματικά κρυπτογραφημένος χώρος αποθήκευσης για τα αρχεία σας"
       ],
@@ -9626,9 +9645,6 @@
       "The owner needs to confirm sharing access. You'll get an email once it's done.": [
         "Ο κάτοχος πρέπει να επιβεβαιώσει την πρόσβαση κοινής χρήσης. Θα λάβετε μήνυμα ηλεκτρονικού ταχυδρομείου μόλις ολοκληρωθεί."
       ],
-      "Upload files, folders, photos": [
-        "Μεταμορφώστε αρχεία, φακέλους, φωτογραφίες"
-      ],
       "Upload your first file": [
         "Ανεβάστε το πρώτο σας αρχείο"
       ],
@@ -9640,9 +9656,6 @@
       ],
       "You just snagged some free data and secured your files with end-to-end encryption － in record time!": [
         "Μόλις αποκτήσατε δωρεάν δεδομένα και ασφαλίσατε τα αρχεία σας με διατερματική κρυπτογράφηση－ σε χρόνο ρεκόρ!"
-      ],
-      "Your storage limit won’t be affected": [
-        "Το όριο αποθήκευσης σας δε θα επηρεαστεί."
       ]
     },
     "Onboarding Trial": {
@@ -11786,6 +11799,9 @@
       "${ feature } is now active": [
         "Το ${ feature } είναι πλέον ενεργό"
       ],
+      "${ freeUploadLength } of free uploads.": [
+        "${ freeUploadLength } δωρεάν μεταφορτώσεις."
+      ],
       "${ numberOfFailedTransfer.total } failed download": [
         "${ numberOfFailedTransfer.total } αποτυχημένη λήψη",
         "${ numberOfFailedTransfer.total } αποτυχημένες λήψεις"
@@ -12762,9 +12778,6 @@
       ],
       "You have no folders yet": [
         "Δεν έχετε ακόμη φακέλους"
-      ],
-      "Your ${ freeUploadLength } has started.": [
-        "Το ${ freeUploadLength } σας έχει ξεκινήσει."
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Η δωρεάν δοκιμή του ${ planName } λήγει στις ${ textDate }"

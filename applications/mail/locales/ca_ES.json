@@ -1036,9 +1036,6 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Obrir ajustos de ${ CALENDAR_APP_NAME }"
       ],
-      "Open in ${ SHEETS_APP_NAME }": [
-        "Obriu-ho a ${ SHEETS_APP_NAME }"
-      ],
       "Open navigation": [
         "Obre la navegació"
       ],
@@ -1702,6 +1699,11 @@
     "action": {
       "Search messages": [
         "Cerca missatges"
+      ]
+    },
+    "Action: Sheets": {
+      "Open in ${ SHEETS_APP_NAME }": [
+        "Obriu-ho a ${ SHEETS_APP_NAME }"
       ]
     },
     "Actions message": {

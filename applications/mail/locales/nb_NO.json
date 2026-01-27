@@ -1036,9 +1036,6 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Åpne innstillingene for ${ CALENDAR_APP_NAME }"
       ],
-      "Open in ${ SHEETS_APP_NAME }": [
-        "Åpne i ${ SHEETS_APP_NAME }"
-      ],
       "Open navigation": [
         "Åpne navigasjonsmeny"
       ],
@@ -1702,6 +1699,11 @@
     "action": {
       "Search messages": [
         "Søk i meldinger"
+      ]
+    },
+    "Action: Sheets": {
+      "Open in ${ SHEETS_APP_NAME }": [
+        "Åpne i ${ SHEETS_APP_NAME }"
       ]
     },
     "Actions message": {

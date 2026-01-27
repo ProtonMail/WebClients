@@ -1036,9 +1036,6 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "${ CALENDAR_APP_NAME }-Einstellungen öffnen"
       ],
-      "Open in ${ SHEETS_APP_NAME }": [
-        "In ${ SHEETS_APP_NAME } öffnen"
-      ],
       "Open navigation": [
         "Navigation öffnen"
       ],
@@ -1702,6 +1699,11 @@
     "action": {
       "Search messages": [
         "Nachrichten durchsuchen"
+      ]
+    },
+    "Action: Sheets": {
+      "Open in ${ SHEETS_APP_NAME }": [
+        "In ${ SHEETS_APP_NAME } öffnen"
       ]
     },
     "Actions message": {

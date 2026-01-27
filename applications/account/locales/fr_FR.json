@@ -1053,9 +1053,6 @@
       "Open ${ PASS_APP_NAME } in your browser": [
         "Ouvrez ${ PASS_APP_NAME } dans votre navigateur"
       ],
-      "Open in ${ SHEETS_APP_NAME }": [
-        "Ouvrir dans ${ SHEETS_APP_NAME }"
-      ],
       "Open in new tab": [
         "Ouvrir dans un nouvel onglet"
       ],
@@ -1088,6 +1085,9 @@
       ],
       "Pay ${ price } now": [
         "Payer ${ price } maintenant"
+      ],
+      "Pay once": [
+        "Paiement unique"
       ],
       "Preview": [
         "Aperçu"
@@ -1295,6 +1295,9 @@
       ],
       "See plan features": [
         "Voir les fonctionnalités de l'abonnement"
+      ],
+      "Select": [
+        "Sélectionner"
       ],
       "Select ${ planOrAppName }": [
         "Sélectionner ${ planOrAppName }"
@@ -1719,6 +1722,11 @@
     "Action subscription": {
       "Reactivate": [
         "Réactiver"
+      ]
+    },
+    "Action: Sheets": {
+      "Open in ${ SHEETS_APP_NAME }": [
+        "Ouvrir dans ${ SHEETS_APP_NAME }"
       ]
     },
     "Action; accept invitation to share calendar": {
@@ -10500,6 +10508,9 @@
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Le prix comprend toutes les réductions applicables et les codes promotionnels non expirés qui sont enregistrés sur votre compte."
       ],
+      "Privacy and security starts here": [
+        "La confidentialité et la sécurité commencent ici"
+      ],
       "Private AI assistant": [
         "Assistant IA privé"
       ],
@@ -11466,6 +11477,9 @@
       "With email categories, important messages land in a primary inbox. Everything else is organized into categories.": [
         "Avec les catégories de messages, les messages importants arrivent dans une boite de réception principale. Tout le reste est organisé en catégories."
       ],
+      "With groups, you can implement the company security policies for access control and reduce the risk of accessing unauthorised data.": [
+        "Avec les groupes, vous pouvez mettre en œuvre les politiques de sécurité de l'entreprise en matière de contrôle d'accès et réduire le risque d'accès à des données non autorisées."
+      ],
       "With groups, you can quickly and easily send emails to all the people in a specified group.": [
         "Grâce aux groupes, vous pouvez envoyer rapidement et facilement des messages à toutes les personnes d'un groupe spécifique."
       ],
@@ -12406,6 +12420,9 @@
         "${ nbYear } an",
         "${ nbYear } ans"
       ],
+      "${ pricePerMonthWithCurrency } / month": [
+        "${ pricePerMonthWithCurrency } / mois"
+      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(temporairement indisponible, nous vous invitons à vérifier plus tard)"
       ],
@@ -12636,6 +12653,12 @@
       ],
       "Beta": [
         "Bêta"
+      ],
+      "Billed at ${ priceYearly } every 12 months.": [
+        "Facturé ${ priceYearly } tous les 12 mois."
+      ],
+      "Billed monthly.": [
+        "Facturé mensuellement."
       ],
       "Billing cycle": [
         "Cycle de facturation"
@@ -13129,6 +13152,9 @@
       "Level for NetShield blocker filtering": [
         "Niveau pour le blocage par filtrage NetShield"
       ],
+      "Limited time": [
+        "Offre à durée limitée"
+      ],
       "Link label (optional)": [
         "Label du lien (facultatif)"
       ],
@@ -13194,6 +13220,9 @@
       ],
       "Moderate NAT": [
         "NAT modéré"
+      ],
+      "Most popular": [
+        "Le plus populaire"
       ],
       "Move to": [
         "Déplacer vers"
@@ -13314,6 +13343,9 @@
       ],
       "Password strength": [
         "Niveau de sécurité du mot de passe"
+      ],
+      "Pay once, access forever.": [
+        "Un seul paiement, un accès à vie."
       ],
       "Payer": [
         "Payeur"
@@ -21840,6 +21872,9 @@
       "An address for each role": [
         "Une adresse pour chaque rôle"
       ],
+      "Annual": [
+        "Annuel"
+      ],
       "Anytime, anywhere access": [
         "Accès à tout moment et depuis n'importe où"
       ],
@@ -22579,6 +22614,9 @@
       "Leave group?": [
         "Voulez-vous quitter le groupe ?"
       ],
+      "Lifetime": [
+        "À vie"
+      ],
       "Limit reached": [
         "La limite est atteinte."
       ],
@@ -22605,6 +22643,9 @@
       ],
       "Mobile": [
         "Mobile"
+      ],
+      "Monthly": [
+        "Mensuel"
       ],
       "Multi-user support": [
         "Prise en charge du multi-utilisateur"

@@ -1053,9 +1053,6 @@
       "Open ${ PASS_APP_NAME } in your browser": [
         "Abra o ${ PASS_APP_NAME } no seu navegador"
       ],
-      "Open in ${ SHEETS_APP_NAME }": [
-        "Abrir no ${ SHEETS_APP_NAME }"
-      ],
       "Open in new tab": [
         "Abrir em nova aba"
       ],
@@ -1088,6 +1085,9 @@
       ],
       "Pay ${ price } now": [
         "Pagar ${ price } agora"
+      ],
+      "Pay once": [
+        "Pague uma vez"
       ],
       "Preview": [
         "Pré-visualização"
@@ -1295,6 +1295,9 @@
       ],
       "See plan features": [
         "Veja recursos do plano"
+      ],
+      "Select": [
+        "Selecionar"
       ],
       "Select ${ planOrAppName }": [
         "Selecionar ${ planOrAppName }"
@@ -1719,6 +1722,11 @@
     "Action subscription": {
       "Reactivate": [
         "Reativar"
+      ]
+    },
+    "Action: Sheets": {
+      "Open in ${ SHEETS_APP_NAME }": [
+        "Abrir no ${ SHEETS_APP_NAME }"
       ]
     },
     "Action; accept invitation to share calendar": {
@@ -2358,6 +2366,10 @@
       ]
     },
     "Billing cycle": {
+      "Renews automatically at ${ renewPrice }, for ${ renewCycle } month": [
+        "Renovação automática por ${ renewPrice }, durante ${ renewCycle } mês",
+        "Renovação automática por ${ renewPrice }, durante ${ renewCycle } meses"
+      ],
       "Renews automatically on ${ subscriptionManagerName }": [
         "Renova automaticamente em ${ subscriptionManagerName }"
       ]
@@ -2703,8 +2715,17 @@
       "Migration status": [
         "Status da migração"
       ],
+      "Organization does not have enough seats available": [
+        "A organização não tem licenças suficientes disponíveis"
+      ],
+      "Organization does not have enough storage available": [
+        "A organização não tem armazenamento suficientes disponíveis"
+      ],
       "Organization settings": [
         "Configurações da organização"
+      ],
+      "Required": [
+        "Obrigatório"
       ],
       "Required to create user accounts": [
         "Obrigatório para criar contas de usuário"
@@ -10477,6 +10498,9 @@
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "O preço inclui todos os descontos baseados em ciclos aplicáveis ​​e cupons não expirados salvos em sua conta."
       ],
+      "Privacy and security starts here": [
+        "A privacidade e segurança começam aqui"
+      ],
       "Private AI assistant": [
         "Assistente de IA privado"
       ],
@@ -12383,6 +12407,9 @@
         "${ nbYear } ano",
         "${ nbYear } anos"
       ],
+      "${ pricePerMonthWithCurrency } / month": [
+        "${ pricePerMonthWithCurrency } / mês"
+      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Temporariamente indisponível. Retorne mais tarde.)"
       ],
@@ -12613,6 +12640,12 @@
       ],
       "Beta": [
         "Versão beta"
+      ],
+      "Billed at ${ priceYearly } every 12 months.": [
+        "Com o preço de ${ priceYearly } a cada 12 meses."
+      ],
+      "Billed monthly.": [
+        "Cobrado mensalmente."
       ],
       "Billing cycle": [
         "Ciclo de faturamento"
@@ -13106,6 +13139,9 @@
       "Level for NetShield blocker filtering": [
         "Nível de filtragem de bloqueio NetShield"
       ],
+      "Limited time": [
+        "Tempo limitado"
+      ],
       "Link label (optional)": [
         "Link do marcador (opcional)"
       ],
@@ -13171,6 +13207,9 @@
       ],
       "Moderate NAT": [
         "NAT moderado"
+      ],
+      "Most popular": [
+        "Mais popular"
       ],
       "Move to": [
         "Mover para"
@@ -13291,6 +13330,9 @@
       ],
       "Password strength": [
         "Força da senha"
+      ],
+      "Pay once, access forever.": [
+        "Pague uma vez e acesse para sempre."
       ],
       "Payer": [
         "Pagador"
@@ -21826,6 +21868,9 @@
       "An address for each role": [
         "Um endereço para cada função"
       ],
+      "Annual": [
+        "Anual"
+      ],
       "Anytime, anywhere access": [
         "Acesso a qualquer hora, em qualquer lugar"
       ],
@@ -22568,6 +22613,9 @@
       "Leave group?": [
         "Sair do grupo?"
       ],
+      "Lifetime": [
+        "Acesso vitalício"
+      ],
       "Limit reached": [
         "Limite atingido"
       ],
@@ -22594,6 +22642,9 @@
       ],
       "Mobile": [
         "Celular"
+      ],
+      "Monthly": [
+        "Mensalmente"
       ],
       "Multi-user support": [
         "Suporte para múltiplos usuários"

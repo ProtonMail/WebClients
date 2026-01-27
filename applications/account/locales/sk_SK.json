@@ -1053,9 +1053,6 @@
       "Open ${ PASS_APP_NAME } in your browser": [
         "Otvorte ${ PASS_APP_NAME } vo svojom prehliadači"
       ],
-      "Open in ${ SHEETS_APP_NAME }": [
-        "Otvoriť v ${ SHEETS_APP_NAME }"
-      ],
       "Open in new tab": [
         "Otvoriť na novej karte"
       ],
@@ -1088,6 +1085,9 @@
       ],
       "Pay ${ price } now": [
         "Zaplatiť teraz ${ price }"
+      ],
+      "Pay once": [
+        "Zaplaťte raz"
       ],
       "Preview": [
         "Náhľad"
@@ -1295,6 +1295,9 @@
       ],
       "See plan features": [
         "Pozrite si funkcie plánu"
+      ],
+      "Select": [
+        "Vybrať"
       ],
       "Select ${ planOrAppName }": [
         "Vybrať ${ planOrAppName }"
@@ -1719,6 +1722,11 @@
     "Action subscription": {
       "Reactivate": [
         "Znovu aktivovať"
+      ]
+    },
+    "Action: Sheets": {
+      "Open in ${ SHEETS_APP_NAME }": [
+        "Otvoriť v ${ SHEETS_APP_NAME }"
       ]
     },
     "Action; accept invitation to share calendar": {
@@ -10715,6 +10723,9 @@
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Cena zahŕňa všetky príslušné zľavy na základe cyklu a kupóny, ktorých platnosť nie je ukončená, uložené vo vašom účte."
       ],
+      "Privacy and security starts here": [
+        "Súkromie a bezpečnosť začínajú tu"
+      ],
       "Private AI assistant": [
         "Súkromný AI asistent"
       ],
@@ -11692,6 +11703,9 @@
       ],
       "With email categories, important messages land in a primary inbox. Everything else is organized into categories.": [
         "Vďaka kategóriám emailov sa dôležité správy dostanú do primárnej doručenej pošty. Všetko ostatné je usporiadané do kategórií."
+      ],
+      "With groups, you can implement the company security policies for access control and reduce the risk of accessing unauthorised data.": [
+        "Pomocou skupín môžete implementovať bezpečnostné politiky spoločnosti pre kontrolu prístupu a znížiť riziko prístupu k neautorizovaným údajom."
       ],
       "With groups, you can quickly and easily send emails to all the people in a specified group.": [
         "Pomocou skupín môžete rýchlo a jednoducho posielať emaily všetkým ľuďom v určitej skupine."
@@ -12673,6 +12687,9 @@
         "${ nbYear } rokov",
         "${ nbYear } rokov"
       ],
+      "${ pricePerMonthWithCurrency } / month": [
+        "${ pricePerMonthWithCurrency } / mesiac"
+      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Dočasne nedostupné. Skúste to neskôr.)"
       ],
@@ -12903,6 +12920,12 @@
       ],
       "Beta": [
         "Beta"
+      ],
+      "Billed at ${ priceYearly } every 12 months.": [
+        "Účtované ${ priceYearly } každých 12 mesiacov."
+      ],
+      "Billed monthly.": [
+        "Účtované mesačne."
       ],
       "Billing cycle": [
         "Fakturačné obdobie"
@@ -13396,6 +13419,9 @@
       "Level for NetShield blocker filtering": [
         "Úroveň pre filtrovanie blokovania NetShield"
       ],
+      "Limited time": [
+        "Časovo obmedzené"
+      ],
       "Link label (optional)": [
         "Štítok odkazu (voliteľné)"
       ],
@@ -13461,6 +13487,9 @@
       ],
       "Moderate NAT": [
         "Moderate NAT"
+      ],
+      "Most popular": [
+        "Najobľúbenejšie"
       ],
       "Move to": [
         "Presunúť do"
@@ -13581,6 +13610,9 @@
       ],
       "Password strength": [
         "Sila hesla"
+      ],
+      "Pay once, access forever.": [
+        "Zaplaťte raz, prístup navždy."
       ],
       "Payer": [
         "Platca"
@@ -22390,6 +22422,9 @@
       "An address for each role": [
         "Adresa pre každú rolu"
       ],
+      "Annual": [
+        "Ročne"
+      ],
       "Anytime, anywhere access": [
         "Prístup kedykoľvek a odkiaľkoľvek"
       ],
@@ -23137,6 +23172,9 @@
       "Leave group?": [
         "Opustiť skupinu?"
       ],
+      "Lifetime": [
+        "Doživotne"
+      ],
       "Limit reached": [
         "Limit dosiahnutý"
       ],
@@ -23163,6 +23201,9 @@
       ],
       "Mobile": [
         "Mobil"
+      ],
+      "Monthly": [
+        "Mesačne"
       ],
       "Multi-user support": [
         "Podpora viacerých používateľov"

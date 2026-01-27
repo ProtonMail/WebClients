@@ -668,9 +668,6 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Apri impostazioni ${ CALENDAR_APP_NAME }"
       ],
-      "Open in ${ SHEETS_APP_NAME }": [
-        "Apri in ${ SHEETS_APP_NAME }"
-      ],
       "Open navigation": [
         "Apri navigazione"
       ],
@@ -1173,6 +1170,11 @@
     "Action subscription": {
       "Reactivate": [
         "Riattiva"
+      ]
+    },
+    "Action: Sheets": {
+      "Open in ${ SHEETS_APP_NAME }": [
+        "Apri in ${ SHEETS_APP_NAME }"
       ]
     },
     "Addon": {
@@ -7981,6 +7983,9 @@
       ],
       "With email categories, important messages land in a primary inbox. Everything else is organized into categories.": [
         "Con le categorie email, i messaggi importanti arrivano nella posta in arrivo principale. Tutto il resto è organizzato in categorie."
+      ],
+      "With groups, you can implement the company security policies for access control and reduce the risk of accessing unauthorised data.": [
+        "Con i gruppi puoi implementare le policy di sicurezza aziendale per il controllo degli accessi e ridurre il rischio di accedere a dati non autorizzati."
       ],
       "With groups, you can quickly and easily send emails to all the people in a specified group.": [
         "Con i gruppi puoi inviare email in modo rapido e semplice a tutte le persone di un gruppo specifico."
