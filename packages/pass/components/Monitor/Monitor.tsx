@@ -41,5 +41,3 @@ export const Monitor: FC<RouteChildrenProps> = ({ match }) => (
         </Switch>
     </MonitorProvider>
 );
-
-export default Monitor;
