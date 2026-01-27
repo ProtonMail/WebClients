@@ -33,7 +33,7 @@ export function handleDownloadError(downloadId: string, nodes: NodeEntity[], err
     if (isCancelled) {
         updateDownloadItem(downloadId, { status: DownloadStatus.Cancelled, error: undefined });
     } else {
-        downloadLogDebug('Download error', { downloadId });
+        downloadLogDebug('Download error', { downloadId, error });
         trackError(error, downloadId, nodes);
     }
 }

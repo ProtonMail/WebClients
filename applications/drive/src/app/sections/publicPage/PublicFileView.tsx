@@ -38,7 +38,7 @@ export const PublicFileView = ({ rootNode }: PublicFileViewProps) => {
             const { node } = getNodeEntity(await getPublicLinkClient().getNode(rootNode.uid));
             await downloadManager.downloadFromBuffer(node, contentData);
         } else {
-            await downloadManager.download([rootNode.uid]);
+            await downloadManager.downloadAndScan([rootNode.uid], { skipSignatureCheck: true });
         }
     };
 
