@@ -975,7 +975,7 @@ export const unlabelMessagesPending = (
         const conversationElementState = state.elements[element.ConversationID] as Conversation;
 
         if (conversationElementState) {
-            removeLabelToConversationMessage(element, { ...conversationElementState }, destinationLabelID, labels);
+            removeLabelToConversationMessage(element, conversationElementState, destinationLabelID, labels);
         }
 
         const elementState = state.elements[element.ID] as MessageMetadata;

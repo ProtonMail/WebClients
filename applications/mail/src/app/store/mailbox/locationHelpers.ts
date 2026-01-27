@@ -713,18 +713,18 @@ export const removeLabelToConversationMessage = (
 
     const destinationLabel = conversation.Labels.find((label) => label.ID === destinationLabelID);
 
-    const isMessageUnread = message.Unread;
-    const messageNumAttachments = message.NumAttachments;
-
     if (destinationLabel) {
-        destinationLabel.ContextNumMessages = safeDecreaseCount(destinationLabel?.ContextNumMessages, 1);
+        const isMessageUnread = message.Unread;
+        const messageNumAttachments = message.NumAttachments;
+
+        destinationLabel.ContextNumMessages = safeDecreaseCount(destinationLabel.ContextNumMessages, 1);
         destinationLabel.ContextNumAttachments = safeDecreaseCount(
             destinationLabel?.ContextNumAttachments,
             messageNumAttachments
         );
 
         if (isMessageUnread) {
-            destinationLabel.ContextNumUnread = safeDecreaseCount(destinationLabel?.ContextNumUnread, 1);
+            destinationLabel.ContextNumUnread = safeDecreaseCount(destinationLabel.ContextNumUnread, 1);
         }
     }
 
