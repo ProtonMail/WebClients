@@ -618,6 +618,11 @@ export const unlabelMessagesPending = (
 
         if (conversationState) {
             removeLabelToConversationMessage(element, conversationState.Conversation, destinationLabelID, labels);
+
+            const messageState = conversationState.Messages?.find((message) => message.ID === element.ID);
+            if (messageState) {
+                removeLabelFromMessage(messageState, destinationLabelID, labels);
+            }
         }
     });
 };
