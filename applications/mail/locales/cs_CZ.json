@@ -1044,9 +1044,6 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Otevřít nastavení ${ CALENDAR_APP_NAME }"
       ],
-      "Open in ${ SHEETS_APP_NAME }": [
-        "Otevřít v ${ SHEETS_APP_NAME }"
-      ],
       "Open navigation": [
         "Otevřít menu"
       ],
@@ -1714,6 +1711,11 @@
     "action": {
       "Search messages": [
         "Prohledat zprávy"
+      ]
+    },
+    "Action: Sheets": {
+      "Open in ${ SHEETS_APP_NAME }": [
+        "Otevřít v ${ SHEETS_APP_NAME }"
       ]
     },
     "Actions message": {
