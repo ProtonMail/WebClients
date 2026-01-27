@@ -20,7 +20,9 @@ import {
 import useApi from '@proton/components/hooks/useApi';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import lumoProjects from '@proton/styles/assets/img/lumo/lumo-projects.svg';
+import useFlag from '@proton/unleash/useFlag';
 
+import { usePersonalization } from '../../hooks';
 import { useIsLumoSmallScreen } from '../../hooks/useIsLumoSmallScreen';
 import { DragAreaProvider } from '../../providers/DragAreaProvider';
 import { PandocProvider } from '../../providers/PandocProvider';
@@ -116,6 +118,10 @@ const ProjectDetailViewInner = () => {
     const driveBrowserModal = useModalStateObject();
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     const { isSmallScreen: isMobileViewport } = useIsLumoSmallScreen();
+    const { personalization } = usePersonalization();
+    const ffSmoothRendering = useFlag('LumoSmoothedRendering');
+    const ffExternalTools = useFlag('LumoTooling');
+    const ffImageTools = useFlag('LumoImageTools');
 
     // Editable title state
     const [isEditingTitle, setIsEditingTitle] = useState(false);
@@ -172,7 +178,7 @@ const ProjectDetailViewInner = () => {
     // This ensures project-level data (files, settings, linked folders) stays in sync across browsers
     useEffect(() => {
         if (!projectId) return;
-        
+
         console.log(`Project navigation: pulling specific space to sync project ${projectId}`);
         dispatch(pullSpaceRequest({ id: projectId }));
     }, [dispatch, projectId]);
@@ -209,23 +215,38 @@ const ProjectDetailViewInner = () => {
                 // Navigate to the conversation first
                 history.push(`/c/${conversationId}`);
 
+                const isWebSearchButtonToggled = false; // todo wire the web search button
+
                 // Send the message using the helper function
                 // sendMessage returns a thunk, so we need to dispatch it
                 console.log('Sending message...');
                 await dispatch(
                     sendMessage({
-                        api,
-                        newMessageContent: content,
-                        attachments: provisionalAttachments,
-                        messageChain: [],
-                        conversationId,
-                        spaceId: projectId,
-                        signal: new AbortController().signal,
-                        navigateCallback: (newConvId) => {
-                            console.log('Navigate callback:', newConvId);
-                            history.push(`/c/${newConvId}`);
+                        applicationContext: {
+                            api,
+                            signal: new AbortController().signal,
                         },
-                        enableExternalToolsToggled: false,
+                        newMessageData: {
+                            content,
+                            attachments: provisionalAttachments,
+                        },
+                        conversationContext: {
+                            spaceId: projectId,
+                            conversationId,
+                            allConversationAttachments: [],
+                            messageChain: [],
+                            contextFilters: [],
+                        },
+                        uiContext: {
+                            navigateCallback: (newConvId: string) => {
+                                console.log('Navigate callback:', newConvId);
+                                history.push(`/c/${newConvId}`);
+                            },
+                            enableExternalTools: isWebSearchButtonToggled && ffExternalTools,
+                            enableImageTools: ffImageTools,
+                            enableSmoothing: ffSmoothRendering,
+                        },
+                        personalizationSettings: personalization,
                     })
                 );
                 console.log('Message sent successfully');
