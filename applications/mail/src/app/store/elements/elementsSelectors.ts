@@ -225,9 +225,13 @@ export const pageIsConsecutive = createSelector([contextPages, currentPage], (pa
  * It should be true either when `shouldResetElementsState` or
  */
 export const shouldLoadElements = createSelector(
-    [pendingRequest, retry, needsMoreElements, invalidated, pageCached],
-    (pendingRequest, retry, needsMoreElements, invalidated, pageCached) => {
+    [pendingRequest, retry, needsMoreElements, invalidated, pageCached, params, taskRunning],
+    (pendingRequest, retry, needsMoreElements, invalidated, pageCached, params, taskRunning) => {
+        // Prevent elements from loading in locations where a task is running
+        const taskRunningInLabel = taskRunning.labelIDs.includes(params.labelID);
+
         return (
+            !taskRunningInLabel &&
             !pendingRequest &&
             retry.count < MAX_ELEMENT_LIST_LOAD_RETRIES &&
             (needsMoreElements || invalidated || !pageCached)
@@ -294,14 +298,22 @@ export const messagesToLoadMoreES = createSelector(
  * labelID - string | undefined - This label ID is the one we use in useElement which is based on the URL value
  * We prefer using this value when present because store one is not immediately up to date when switching labels
  */
-export const dynamicTotal = createSelector([params, currentCounts, bypassFilter], (params, props, bypassFilter) => {
-    const { counts, loading } = props;
-    if (isSearch(params.search) || hasAttachmentsFilter(params.filter) || loading) {
-        return undefined;
-    }
+export const dynamicTotal = createSelector(
+    [params, currentCounts, bypassFilter, taskRunning],
+    (params, props, bypassFilter, taskRunning) => {
+        const { counts, loading } = props;
+        if (
+            isSearch(params.search) ||
+            hasAttachmentsFilter(params.filter) ||
+            loading ||
+            taskRunning.labelIDs.includes(params.labelID)
+        ) {
+            return undefined;
+        }
 
-    return getTotal(counts, params.labelID, params.filter, bypassFilter.length);
-});
+        return getTotal(counts, params.labelID, params.filter, bypassFilter.length);
+    }
+);
 
 /**
  * Computed up-to-date number of elements on the current page for custom views
@@ -380,6 +392,6 @@ export const stateInconsistency = createSelector(
         !beforeFirstLoad && !pendingRequest && retry.error === undefined && retry.count === 3 && !useES
 );
 
-export const showLabelTaskRunningBanner = createSelector([taskRunning, currentLabelID], (taskRunning, labelID) => {
-    return taskRunning.labelIDs.includes(labelID);
+export const taskRunningInLabel = createSelector([taskRunning, currentLabelID], (taskRunning, labelID) => {
+    return taskRunning.labelIDs.find((id) => id === labelID);
 });

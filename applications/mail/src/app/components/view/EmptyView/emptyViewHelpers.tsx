@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
-import { Href } from '@proton/atoms/Href/Href';
 import { Button } from '@proton/atoms/Button/Button';
+import { Href } from '@proton/atoms/Href/Href';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { CUSTOM_VIEWS_LABELS } from '@proton/shared/lib/mail/constants';
 
@@ -10,11 +10,13 @@ export const getEmptyViewTitle = ({
     isFolder,
     isScheduled,
     labelID,
+    isTaskRunningInLabel,
 }: {
     isSearch: boolean;
     isFolder: boolean;
     isScheduled: boolean;
     labelID: string;
+    isTaskRunningInLabel: boolean;
 }) => {
     if (labelID === CUSTOM_VIEWS_LABELS.NEWSLETTER_SUBSCRIPTIONS) {
         return c('Info').t`No messages to show`;
@@ -22,6 +24,11 @@ export const getEmptyViewTitle = ({
 
     if (isSearch) {
         return c('Search - no results').t`No results found`;
+    }
+
+    if (isTaskRunningInLabel) {
+        // TODO check text
+        return c('Search - no results').t`An action is being processed`;
     }
 
     if (isFolder) {
@@ -42,6 +49,7 @@ export const getEmptyViewDescription = ({
     isScheduled,
     labelID,
     scheduleButtonOnClick,
+    isTaskRunningInLabel,
 }: {
     isSearch: boolean;
     isEncryptedSearchEnabled: boolean;
@@ -49,6 +57,7 @@ export const getEmptyViewDescription = ({
     isScheduled: boolean;
     labelID: string;
     scheduleButtonOnClick: () => void;
+    isTaskRunningInLabel: boolean;
 }) => {
     if (labelID === CUSTOM_VIEWS_LABELS.NEWSLETTER_SUBSCRIPTIONS) {
         return c('Info').t`There are no messages from this sender in your inbox.`;
@@ -67,6 +76,11 @@ export const getEmptyViewDescription = ({
                 <Href href={getKnowledgeBaseUrl('/search-message-content')}>{c('Info').t`Learn more`}</Href>
             </>
         );
+    }
+
+    // TODO check text
+    if (isTaskRunningInLabel) {
+        return c('Info').t`Please wait for the action to be completed`;
     }
 
     if (isFolder) {
