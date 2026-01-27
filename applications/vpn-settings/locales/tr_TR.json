@@ -668,9 +668,6 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "${ CALENDAR_APP_NAME } ayarlarını aç"
       ],
-      "Open in ${ SHEETS_APP_NAME }": [
-        "${ SHEETS_APP_NAME } ile aç"
-      ],
       "Open navigation": [
         "Gezinmeyi aç"
       ],
@@ -1173,6 +1170,11 @@
     "Action subscription": {
       "Reactivate": [
         "Yenile"
+      ]
+    },
+    "Action: Sheets": {
+      "Open in ${ SHEETS_APP_NAME }": [
+        "${ SHEETS_APP_NAME } uygulamasında aç"
       ]
     },
     "Addon": {
@@ -7981,6 +7983,9 @@
       ],
       "With email categories, important messages land in a primary inbox. Everything else is organized into categories.": [
         "E-posta kategorileri ile önemli iletiler birincil gelen kutusuna gelir. Diğer her şey kategoriler halinde düzenlenir."
+      ],
+      "With groups, you can implement the company security policies for access control and reduce the risk of accessing unauthorised data.": [
+        "Gruplarla birlikte erişim kontrolü için şirket güvenlik ilkelerini uygulayabilir ve yetkisiz verilere erişim riskini azaltabilirsiniz."
       ],
       "With groups, you can quickly and easily send emails to all the people in a specified group.": [
         "Grupları kullanarak, belirli bir gruptaki kullanıcılara kolayca e-postalar gönderebilirsiniz."

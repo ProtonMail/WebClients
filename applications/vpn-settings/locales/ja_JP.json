@@ -668,9 +668,6 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "${ CALENDAR_APP_NAME } の設定を開く"
       ],
-      "Open in ${ SHEETS_APP_NAME }": [
-        "${ SHEETS_APP_NAME } で開く"
-      ],
       "Open navigation": [
         "ナビゲーションを開く"
       ],
@@ -1173,6 +1170,11 @@
     "Action subscription": {
       "Reactivate": [
         "再アクティブ化"
+      ]
+    },
+    "Action: Sheets": {
+      "Open in ${ SHEETS_APP_NAME }": [
+        "${ SHEETS_APP_NAME } で開く"
       ]
     },
     "Addon": {
@@ -7880,6 +7882,9 @@
       ],
       "With email categories, important messages land in a primary inbox. Everything else is organized into categories.": [
         "メールカテゴリを使用すると、重要なメッセージはプライマリー受信トレイに届きます。それ以外のすべてはカテゴリに整理されます。"
+      ],
+      "With groups, you can implement the company security policies for access control and reduce the risk of accessing unauthorised data.": [
+        "グループを使うことで、アクセス制御のための企業のセキュリティポリシーを実施し、不正なデータアクセスのリスクを減らすことができます。"
       ],
       "With groups, you can quickly and easily send emails to all the people in a specified group.": [
         "グループでは、指定されたグループの全ての人に迅速かつ簡単にメールを送ることができます。"

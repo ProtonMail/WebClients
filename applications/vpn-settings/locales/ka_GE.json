@@ -668,9 +668,6 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "${ CALENDAR_APP_NAME }-ის მორგება"
       ],
-      "Open in ${ SHEETS_APP_NAME }": [
-        "${ SHEETS_APP_NAME }-ში გახსნა"
-      ],
       "Open navigation": [
         "ნავიგაციის გახსნა"
       ],
@@ -1173,6 +1170,11 @@
     "Action subscription": {
       "Reactivate": [
         "რეაქტივაცია"
+      ]
+    },
+    "Action: Sheets": {
+      "Open in ${ SHEETS_APP_NAME }": [
+        "${ SHEETS_APP_NAME }-ში გახსნა"
       ]
     },
     "Addon": {
@@ -1757,6 +1759,9 @@
       "Contacts": [
         "კონტაქტები"
       ],
+      "Domain connected": [
+        "დომენი დაკავშირებულია"
+      ],
       "Domain ownership verified": [
         "დომენის მფლობელობა გადამოწმებულია"
       ],
@@ -1787,11 +1792,30 @@
       "Migration includes": [
         "მიგრაცია შეიცავს"
       ],
+      "Migration started for ${ n } user": [
+        "მიგრაცია დაიწყო ${ n } მომხმარებლისთვის",
+        "მიგრაცია დაიწყო ${ n } მომხმარებლისთვის"
+      ],
+      "Migration status": [
+        "მიგრაციის სტატუსი"
+      ],
+      "Organization does not have enough seats available": [
+        "ორგანიზაციას საკმარისი თავისუფალი ადგილი არ აქვს"
+      ],
+      "Organization does not have enough storage available": [
+        "ორგანიზაციას საკმარისი თავისუფალი ადგილი არ აქვს"
+      ],
+      "Organization settings": [
+        "ორგანიზაციის მორგება"
+      ],
       "Required": [
         "აუცილებელია"
       ],
       "Required to create user accounts": [
         "აუცილებელია მომხმარებლის ანგარიშების შესაქმნელად"
+      ],
+      "Select at least one user to start a migration": [
+        "მიგრაციის დასაწყებად აირჩიეთ, სულ ცოტა, ერთი მომხმარებელი"
       ],
       "Set up": [
         "მორგება"
@@ -1799,11 +1823,17 @@
       "Sign in to Google Workspace": [
         "შესვლა Google Workspace-ში"
       ],
+      "Transfer errors": [
+        "გადაცემის შეცდომები"
+      ],
       "User": [
         "მომხმარებელი"
       ],
       "Verify your domain": [
         "თქვენი დომენის გადამოწმება"
+      ],
+      "Verify your domain to start a migration": [
+        "დაადასტურეთ თქვენი დომენი მიგრაციის დასაწყებად"
       ],
       "What are you migrating?": [
         "რის მიგრაციას ახდენთ?"
@@ -1871,6 +1901,9 @@
       ],
       "Payments problem": [
         "გადახდის პრობლემა"
+      ],
+      "Sheets problem": [
+        "Sheets-ის პრობლემა"
       ],
       "Sign in problem": [
         "შესვლის პრობლემა"
@@ -8770,6 +8803,12 @@
       "Numbers": [
         "რიცხვები"
       ],
+      "OpenVPN password": [
+        "OpenVPN-ის პაროლი"
+      ],
+      "OpenVPN username": [
+        "OpenVPN-ის მომხმარებლის სახელი"
+      ],
       "Operating system": [
         "ოპერაციული სისტემა"
       ],
@@ -9517,6 +9556,10 @@
       ]
     },
     "meet_2025: Feature": {
+      "${ n } active meeting at a time": [
+        "${ n } ერთდროული აქტიური შეხვედრა",
+        "${ n } ერთდროული აქტიური შეხვედრა"
+      ],
       "24 hours per meeting": [
         "24 საათი თითო შეხვედრისთვის"
       ],
@@ -9526,11 +9569,31 @@
       "Appointment scheduling": [
         "შეხვედრის დაგეგმვა"
       ],
+      "Browser, mobile, and desktop apps": [
+        "ბრაუზერის, მობილურის და კომპიუტეირს აპები"
+      ],
       "Built-in chat": [
         "ჩაშენებული ჩატი"
       ],
+      "Meeting recording (coming soon)": [
+        "შეხვედრის ჩანაწერი (მალე)"
+      ],
+      "One active meeting at a time": [
+        "ერთი აქტიური შეხვედრა ერთდროულად"
+      ],
       "Screen-sharing": [
         "ეკრანის გაზიარება"
+      ],
+      "Unlimited meetings per day": [
+        "შეუზღუდავი შეხვედრები დღეში"
+      ],
+      "Up to ${ n } meeting per day": [
+        "${ n } შეხვედრამდე დღეში",
+        "${ n } შეხვედრამდე დღეში"
+      ],
+      "Up to ${ n } participant": [
+        "${ n }-მდე მონაწილე",
+        "${ n }-მდე მონაწილე"
       ]
     },
     "Member action": {
@@ -10818,6 +10881,9 @@
       ],
       "Number of records exceeds the download limit of 10000": [
         "ჩანაწერების რაოდენობა გადმოწერის ლიმიტს (1000) სცდება"
+      ],
+      "OpenVPN credentials regenerated": [
+        "OpenVPN-ის ავტორიზაციის დეტალები ხელახლა შეიქმნა"
       ],
       "Reminder has been sent": [
         "შეხსენება გაგზავნილია"
@@ -15124,6 +15190,9 @@
       "OpenVPN configuration files": [
         "OpenVPN-ის კონფიგურაციის ფაილები"
       ],
+      "OpenVPN username": [
+        "OpenVPN-ის მომხმარებლის სახელი"
+      ],
       "Org setup": [
         "ორგ.-ის მორგება"
       ],
@@ -15406,6 +15475,9 @@
       ],
       "Third-party apps and services": [
         "მესამე პირების აპები და სერვისები"
+      ],
+      "To preview this spreadsheet, download it.": [
+        "ამ ელცხრილის მინიატურისთვის გადმოწერეთ ის."
       ],
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "ამ ელცხრილის გადასახედად გახსენით ${ SHEETS_APP_NAME }-ში, ან გადმოწერეთ ის."

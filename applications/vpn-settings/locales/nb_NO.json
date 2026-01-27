@@ -668,9 +668,6 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Åpne innstillingene for ${ CALENDAR_APP_NAME }"
       ],
-      "Open in ${ SHEETS_APP_NAME }": [
-        "Åpne i ${ SHEETS_APP_NAME }"
-      ],
       "Open navigation": [
         "Åpne navigasjonsmeny"
       ],
@@ -1173,6 +1170,11 @@
     "Action subscription": {
       "Reactivate": [
         "Aktiver på nytt"
+      ]
+    },
+    "Action: Sheets": {
+      "Open in ${ SHEETS_APP_NAME }": [
+        "Åpne i ${ SHEETS_APP_NAME }"
       ]
     },
     "Addon": {
@@ -7981,6 +7983,9 @@
       ],
       "With email categories, important messages land in a primary inbox. Everything else is organized into categories.": [
         "Med e-postkategorier havner viktige meldinger i en primær innboks. Alt annet organiseres i kategorier."
+      ],
+      "With groups, you can implement the company security policies for access control and reduce the risk of accessing unauthorised data.": [
+        "Med grupper kan du implementere bedriftens sikkerhetsretningslinjer for tilgangskontroll og redusere risikoen for tilgang til uautoriserte data."
       ],
       "With groups, you can quickly and easily send emails to all the people in a specified group.": [
         "Med grupper kan du raskt og enkelt sende e-post til alle personene i en bestemt gruppe."
