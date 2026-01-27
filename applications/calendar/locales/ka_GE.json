@@ -1460,6 +1460,9 @@
       "Payments problem": [
         "გადახდის პრობლემა"
       ],
+      "Sheets problem": [
+        "Sheets-ის პრობლემა"
+      ],
       "Sign in problem": [
         "შესვლის პრობლემა"
       ],
@@ -7354,6 +7357,10 @@
       ]
     },
     "meet_2025: Feature": {
+      "${ n } active meeting at a time": [
+        "${ n } ერთდროული აქტიური შეხვედრა",
+        "${ n } ერთდროული აქტიური შეხვედრა"
+      ],
       "24 hours per meeting": [
         "24 საათი თითო შეხვედრისთვის"
       ],
@@ -7363,11 +7370,31 @@
       "Appointment scheduling": [
         "შეხვედრის დაგეგმვა"
       ],
+      "Browser, mobile, and desktop apps": [
+        "ბრაუზერის, მობილურის და კომპიუტეირს აპები"
+      ],
       "Built-in chat": [
         "ჩაშენებული ჩატი"
       ],
+      "Meeting recording (coming soon)": [
+        "შეხვედრის ჩანაწერი (მალე)"
+      ],
+      "One active meeting at a time": [
+        "ერთი აქტიური შეხვედრა ერთდროულად"
+      ],
       "Screen-sharing": [
         "ეკრანის გაზიარება"
+      ],
+      "Unlimited meetings per day": [
+        "შეუზღუდავი შეხვედრები დღეში"
+      ],
+      "Up to ${ n } meeting per day": [
+        "${ n } შეხვედრამდე დღეში",
+        "${ n } შეხვედრამდე დღეში"
+      ],
+      "Up to ${ n } participant": [
+        "${ n }-მდე მონაწილე",
+        "${ n }-მდე მონაწილე"
       ]
     },
     "Message": {

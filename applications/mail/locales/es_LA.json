@@ -1036,9 +1036,6 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Abrir ajustes de ${ CALENDAR_APP_NAME }"
       ],
-      "Open in ${ SHEETS_APP_NAME }": [
-        "Abrir en ${ SHEETS_APP_NAME }"
-      ],
       "Open navigation": [
         "Abrir navegación"
       ],
@@ -1702,6 +1699,11 @@
     "action": {
       "Search messages": [
         "Buscar mensajes"
+      ]
+    },
+    "Action: Sheets": {
+      "Open in ${ SHEETS_APP_NAME }": [
+        "Abrir en ${ SHEETS_APP_NAME }"
       ]
     },
     "Actions message": {
@@ -14655,7 +14657,7 @@
         "Descargar ${ VPN_APP_NAME }"
       ],
       "Download the desktop app": [
-        "Descargue la aplicación de escritorio"
+        "Descargar la aplicación de escritorio"
       ],
       "Enable ${ DARK_WEB_MONITORING_NAME }": [
         "Activar ${ DARK_WEB_MONITORING_NAME }"

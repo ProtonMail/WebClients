@@ -1036,9 +1036,6 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Avaa ${ CALENDAR_APP_NAME }in asetukset"
       ],
-      "Open in ${ SHEETS_APP_NAME }": [
-        "Avaa ${ SHEETS_APP_NAME } -sovelluksessa"
-      ],
       "Open navigation": [
         "Avaa navigaatio"
       ],
@@ -1699,6 +1696,11 @@
     "action": {
       "Search messages": [
         "Etsi viestejä"
+      ]
+    },
+    "Action: Sheets": {
+      "Open in ${ SHEETS_APP_NAME }": [
+        "Avaa ${ SHEETS_APP_NAME } -sovelluksessa"
       ]
     },
     "Actions message": {

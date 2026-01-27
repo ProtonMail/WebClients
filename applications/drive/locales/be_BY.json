@@ -768,9 +768,6 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Адкрыць налады ${ CALENDAR_APP_NAME }"
       ],
-      "Open in ${ SHEETS_APP_NAME }": [
-        "Адкрыць у ${ SHEETS_APP_NAME }"
-      ],
       "Open navigation": [
         "Адкрыць панэль навігацыі"
       ],
@@ -938,6 +935,9 @@
       ],
       "Save changes": [
         "Захаваць змены"
+      ],
+      "Save for later": [
+        "Захаваць на потым"
       ],
       "Save photos and remove": [
         "Захаваць фатаграфіі і выдаліць"
@@ -1238,6 +1238,16 @@
       ],
       "Zoom out": [
         "Паменшыць"
+      ]
+    },
+    "Action: Docs": {
+      "Open in ${ DOCS_APP_NAME }": [
+        "Адкрыць у ${ DOCS_APP_NAME }"
+      ]
+    },
+    "Action: Sheets": {
+      "Open in ${ SHEETS_APP_NAME }": [
+        "Адкрыць у ${ SHEETS_APP_NAME }"
       ]
     },
     "Actions": {
@@ -3847,6 +3857,9 @@
       "We were not able to load the folder contents": [
         "Не атрымалася загрузіць змесціва папкі"
       ],
+      "We're sorry, but free upload is not available right now.": [
+        "Прабачце, але бясплатная запампоўка ў цяперашні час недаступна."
+      ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Вы не можаце адправіць ліст больш чым ${ maxContacts } атрымальніку",
         "Вы не можаце адправіць ліст больш чым ${ maxContacts } атрымальнікам",
@@ -5176,6 +5189,9 @@
         "Усе вашы кантакты будуць імпартаваны. Абмежаванне імпартавання складае ${ MAX_CONTACTS_PER_USER }",
         "Усе вашы кантакты будуць імпартаваны. Абмежаванне імпартавання складае ${ MAX_CONTACTS_PER_USER }"
       ],
+      "Already in this folder": [
+        "Ужо ў гэтай папцы"
+      ],
       "Already in your library": [
         "Ужо ў вашай бібліятэцы"
       ],
@@ -5277,6 +5293,9 @@
       ],
       "Calendar side panel": [
         "Бакавая панэль календара"
+      ],
+      "Can't move a folder into itself": [
+        "Немагчыма перамясціць папку ў саму сябе"
       ],
       "Canceled": [
         "Скасавана"
@@ -6190,6 +6209,9 @@
       "Search Enabled": [
         "Пошук уключаны"
       ],
+      "Select a destination folder": [
+        "Выберыце папку прызначэння"
+      ],
       "Select a folder to make the copy in": [
         "Выберыце папку для капіявання"
       ],
@@ -6679,6 +6701,9 @@
       "Week": [
         "Тыдзень"
       ],
+      "Welcome to ${ DRIVE_APP_NAME }, for the first 10 minutes, any files you upload don't count toward your storage quota.": [
+        "Запрашаем у ${ DRIVE_APP_NAME }. На працягу першых 10 хвілін любыя файлы, якія вы запампуеце, не будуць улічвацца пры падліку вашай квоты сховішча."
+      ],
       "What do you want to do?": [
         "Што вы хочаце зрабіць?"
       ],
@@ -7131,6 +7156,9 @@
       ],
       "Anderson": [
         "Маўр"
+      ],
+      "Anonymous": [
+        "Ананімны"
       ],
       "Anyone on the Internet with the link can edit": [
         "Любы карыстальнік у інтэрнэце з гэтай спасылкай можа рэдагаваць"
@@ -9916,9 +9944,6 @@
       "Edit documents online": [
         "Рэдагуйце дакументы ў інтэрнэце"
       ],
-      "Encryption happens automatically": [
-        "Шыфраванне адбываецца аўтаматычна"
-      ],
       "End-to-end encrypted storage for your files": [
         "Зашыфраванае скразным метадам сховішча для вашых файлаў"
       ],
@@ -9994,9 +10019,6 @@
       "The owner needs to confirm sharing access. You'll get an email once it's done.": [
         "Уладальніку патрэбна пацвердзіць абагульванне доступу. Вы атрымаеце ліст, як толькі гэта будзе зроблена."
       ],
-      "Upload files, folders, photos": [
-        "Запампаваць файлы, папкі, фатаграфіі"
-      ],
       "Upload your first file": [
         "Запампуйце свой першы файл"
       ],
@@ -10008,9 +10030,6 @@
       ],
       "You just snagged some free data and secured your files with end-to-end encryption － in record time!": [
         "Вы толькі што атрымалі бясплатныя даныя і абаранілі свае файлы з дапамогай скразнога шыфравання. І ўсё гэта зроблена за рэкордны час!"
-      ],
-      "Your storage limit won’t be affected": [
-        "Гэта не паўплывае на вашы абмежаванні сховішча"
       ]
     },
     "Onboarding Trial": {
@@ -11951,6 +11970,9 @@
       "Securely share your favorite moments with friends and family using Albums.": [
         "Бяспечна абагульвайце свае абраныя моманты з сябрамі і сям'ёй з дапамогай Альбомаў."
       ],
+      "Shared by ${ sharedBy }": [
+        "Абагулена ${ sharedBy }"
+      ],
       "Your favorited photos will appear here": [
         "Вашы абраныя фатаграфіі з'явяцца тут"
       ],
@@ -12252,6 +12274,9 @@
       ],
       "${ feature } is now active": [
         "${ feature } цяпер у актыўным стане"
+      ],
+      "${ freeUploadLength } of free uploads.": [
+        "${ freeUploadLength } бясплатных запамповак."
       ],
       "${ numberOfFailedTransfer.total } failed download": [
         "Не ўдалося здзейсніць ${ numberOfFailedTransfer.total } спампоўванне",
@@ -13251,9 +13276,6 @@
       ],
       "You have no folders yet": [
         "У вас пакуль няма папак"
-      ],
-      "Your ${ freeUploadLength } has started.": [
-        "Пачаўся ваш ${ freeUploadLength }."
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Ваш бясплатны пробны перыяд для тарыфнага плана ${ planName } завершыцца ${ textDate }"

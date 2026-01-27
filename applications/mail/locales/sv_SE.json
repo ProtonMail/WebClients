@@ -1036,9 +1036,6 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Öppna inställningar för ${ CALENDAR_APP_NAME }"
       ],
-      "Open in ${ SHEETS_APP_NAME }": [
-        "Öppna i ${ SHEETS_APP_NAME }"
-      ],
       "Open navigation": [
         "Öppna navigering"
       ],
@@ -1702,6 +1699,11 @@
     "action": {
       "Search messages": [
         "Sök meddelanden"
+      ]
+    },
+    "Action: Sheets": {
+      "Open in ${ SHEETS_APP_NAME }": [
+        "Öppna i ${ SHEETS_APP_NAME }"
       ]
     },
     "Actions message": {
@@ -7829,6 +7831,9 @@
       ],
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Kontakta oss för att få hjälp med allt om ${ BRAND_NAME }."
+      ],
+      "Receive notifications for ${ categoryLabel }": [
+        "Ta emot aviseringar för ${ categoryLabel }"
       ],
       "Recipient: ": [
         "Mottagare: "

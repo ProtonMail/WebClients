@@ -758,9 +758,6 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Öppna inställningar för ${ CALENDAR_APP_NAME }"
       ],
-      "Open in ${ SHEETS_APP_NAME }": [
-        "Öppna i ${ SHEETS_APP_NAME }"
-      ],
       "Open navigation": [
         "Öppna navigering"
       ],
@@ -1229,6 +1226,16 @@
       ],
       "Zoom out": [
         "Zooma ut"
+      ]
+    },
+    "Action: Docs": {
+      "Open in ${ DOCS_APP_NAME }": [
+        "Öppna i ${ DOCS_APP_NAME }"
+      ]
+    },
+    "Action: Sheets": {
+      "Open in ${ SHEETS_APP_NAME }": [
+        "Öppna i ${ SHEETS_APP_NAME }"
       ]
     },
     "Actions": {
@@ -3793,6 +3800,9 @@
       "We were not able to load the folder contents": [
         "Vi kunde inte ladda mappens innehåll"
       ],
+      "We're sorry, but free upload is not available right now.": [
+        "Vi beklagar, men gratis uppladdning är inte tillgänglig just nu."
+      ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Du kan inte skicka ett e-postmeddelande till mer än ${ maxContacts } mottagare",
         "Du kan inte skicka ett e-postmeddelande till fler än ${ maxContacts } mottagare"
@@ -5006,6 +5016,9 @@
         "Alla dina kontakter kommer att importeras, upp till en gräns på ${ MAX_CONTACTS_PER_USER }",
         "Alla dina kontakter kommer att importeras, upp till en gräns på ${ MAX_CONTACTS_PER_USER }"
       ],
+      "Already in this folder": [
+        "Redan i denna mapp"
+      ],
       "Already in your library": [
         "Redan i ditt bibliotek"
       ],
@@ -5107,6 +5120,9 @@
       ],
       "Calendar side panel": [
         "Kalenderns sidopanel"
+      ],
+      "Can't move a folder into itself": [
+        "Kan inte flytta en mapp in i sig själv"
       ],
       "Canceled": [
         "Avbruten"
@@ -5999,6 +6015,9 @@
       ],
       "Search Enabled": [
         "Sökning aktiverad"
+      ],
+      "Select a destination folder": [
+        "Välj en målmapp"
       ],
       "Select a folder to make the copy in": [
         "Välj en mapp att göra en kopia i"
@@ -9563,9 +9582,6 @@
       "Edit documents online": [
         "Redigera dokument online"
       ],
-      "Encryption happens automatically": [
-        "Kryptering sker automatiskt"
-      ],
       "End-to-end encrypted storage for your files": [
         "End-to-end krypterat lagringsutrymme för dina filer"
       ],
@@ -9635,9 +9651,6 @@
       "The owner needs to confirm sharing access. You'll get an email once it's done.": [
         "Ägaren måste bekräfta delningsåtkomst. Du kommer få ett e-postmeddelande när det är klart."
       ],
-      "Upload files, folders, photos": [
-        "Ladda upp filer, mappar, foton"
-      ],
       "Upload your first file": [
         "Ladda upp din första fil"
       ],
@@ -9649,9 +9662,6 @@
       ],
       "You just snagged some free data and secured your files with end-to-end encryption － in record time!": [
         "Du har precis fått lite gratis data och säkrat dina filer med end-to-end-kryptering – på rekordtid!"
-      ],
-      "Your storage limit won’t be affected": [
-        "Din lagringsutrymmesgräns kommer inte att påverkas."
       ]
     },
     "Onboarding Trial": {
@@ -11790,6 +11800,9 @@
       "${ feature } is now active": [
         "${ feature } är nu aktivt"
       ],
+      "${ freeUploadLength } of free uploads.": [
+        "${ freeUploadLength } av gratis uppladdningar."
+      ],
       "${ numberOfFailedTransfer.total } failed download": [
         "${ numberOfFailedTransfer.total } misslyckad nedladdning",
         "${ numberOfFailedTransfer.total } misslyckade nedladdningar"
@@ -12734,6 +12747,9 @@
       "We weren’t able to confirm that the name was created or modified by ${ claimedNameAuthor }. The reason is: ${ nodeEntity.nameAuthor.error.error }": [
         "Vi kunde inte bekräfta att namnet skapades eller modifierades av ${ claimedNameAuthor }. Orsaken är: ${ nodeEntity.nameAuthor.error.error }"
       ],
+      "We weren’t able to confirm that the node was created by ${ claimedKeyAuthor }. The reason is: ${ nodeEntity.keyAuthor.error.error }": [
+        "Vi kunde inte bekräfta att noden skapades av ${ claimedKeyAuthor }. Orsaken är: ${ nodeEntity.keyAuthor.error.error }"
+      ],
       "Welcome offer": [
         "Välkomsterbjudande"
       ],
@@ -12763,9 +12779,6 @@
       ],
       "You have no folders yet": [
         "Du har inga mappar ännu"
-      ],
-      "Your ${ freeUploadLength } has started.": [
-        "Din ${ freeUploadLength } har startat."
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Din gratis provperiod för ${ planName } slutar den ${ textDate }"

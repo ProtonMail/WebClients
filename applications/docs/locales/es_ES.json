@@ -4352,7 +4352,7 @@
         "Creando enlace a la carpeta"
       ],
       "Creating new document...": [
-        "Creando el documento..."
+        "Creando nuevo documento..."
       ],
       "Current plan": [
         "Plan actual"
@@ -4693,7 +4693,7 @@
         "Todavía no se han añadido contactos."
       ],
       "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
-        "No se ha proporcionado ningún documento en la URL. Regresa a ${ DRIVE_APP_NAME } y selecciona un documento."
+        "No se ha especificado ningún documento en la URL. Vuelve a ${ DRIVE_APP_NAME } y selecciona uno."
       ],
       "No email address": [
         "No hay dirección de correo electrónico."
@@ -4980,7 +4980,7 @@
         "El propietario de esta dirección ha desactivado el cifrado de extremo a extremo. Para poder enviar correos electrónicos cifrados a esta dirección, el propietario deberá volver a activar el cifrado de extremo a extremo."
       ],
       "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
-        "La URL introducida parece haber sido copiada de Slack incorrectamente. Al copiar enlaces largos de Slack, haz clic derecho en el enlace, luego selecciona «Copiar el enlace» en lugar de copiar directamente el texto de URL truncado."
+        "Parece que la URL que has introducido se ha copiado de Slack de forma incorrecta. Al copiar enlaces largos de Slack, haz clic derecho en el enlace y elige «Copiar enlace» en lugar de copiar directamente el texto truncado de la URL."
       ],
       "There are no documents in the trash.": [
         "No hay documentos en la papelera."
@@ -10100,6 +10100,9 @@
       ],
       "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
         "Esta importación podría exceder la capacidad de almacenamiento disponible en tu cuenta de ${ BRAND_NAME }. Considera la posibilidad de personalizar tu importación."
+      ],
+      "This will replace all the data in the spreadsheet": [
+        "Esto reemplazará todos los datos de la hoja de cálculo"
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Desafortunadamente, no estamos conectados en este momento. Completa el siguiente formulario para describir tu problema, y lo analizaremos y nos pondremos en contacto cuando volvamos a estar online."

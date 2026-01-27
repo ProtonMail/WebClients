@@ -1053,9 +1053,6 @@
       "Open ${ PASS_APP_NAME } in your browser": [
         "Otevřete ${ PASS_APP_NAME } ve svém prohlížeči"
       ],
-      "Open in ${ SHEETS_APP_NAME }": [
-        "Otevřít v ${ SHEETS_APP_NAME }"
-      ],
       "Open in new tab": [
         "Otevřít na nové kartě"
       ],
@@ -1088,6 +1085,9 @@
       ],
       "Pay ${ price } now": [
         "Nyní zaplatit ${ price }"
+      ],
+      "Pay once": [
+        "Zaplatit jednorázově"
       ],
       "Preview": [
         "Náhled"
@@ -1295,6 +1295,9 @@
       ],
       "See plan features": [
         "Zobrazit funkce tarifu"
+      ],
+      "Select": [
+        "Vybrat"
       ],
       "Select ${ planOrAppName }": [
         "Vybrat ${ planOrAppName }"
@@ -1719,6 +1722,11 @@
     "Action subscription": {
       "Reactivate": [
         "Opětovně aktivovat"
+      ]
+    },
+    "Action: Sheets": {
+      "Open in ${ SHEETS_APP_NAME }": [
+        "Otevřít v ${ SHEETS_APP_NAME }"
       ]
     },
     "Action; accept invitation to share calendar": {
@@ -10715,6 +10723,9 @@
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Cena zahrnuje všechny příslušné slevy na základě cyklu a kupóny, které nevypršely a jsou uložené na vašem účtu."
       ],
+      "Privacy and security starts here": [
+        "Soukromí a bezpečnost začínají zde"
+      ],
       "Private AI assistant": [
         "Soukromý AI asistent"
       ],
@@ -11692,6 +11703,9 @@
       ],
       "With email categories, important messages land in a primary inbox. Everything else is organized into categories.": [
         "Díky kategoriím e-mailů se důležité zprávy dostanou do primární doručené pošty. Všechno ostatní je uspořádáno do kategorií."
+      ],
+      "With groups, you can implement the company security policies for access control and reduce the risk of accessing unauthorised data.": [
+        "Skupiny umožňují zavést firemní bezpečnostní politiky správy přístupu a snížit riziko neoprávněného přístupu k datům."
       ],
       "With groups, you can quickly and easily send emails to all the people in a specified group.": [
         "Pomocí skupin můžete snadno a rychle odesílat e-maily všem lidem v určité skupině."
@@ -12673,6 +12687,9 @@
         "${ nbYear } let",
         "${ nbYear } let"
       ],
+      "${ pricePerMonthWithCurrency } / month": [
+        "${ pricePerMonthWithCurrency } / měsíc"
+      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Dočasně nedostupné. Zkontrolujte to prosím později.)"
       ],
@@ -12903,6 +12920,12 @@
       ],
       "Beta": [
         "Beta"
+      ],
+      "Billed at ${ priceYearly } every 12 months.": [
+        "Účtováno ${ priceYearly } každých 12 měsíců."
+      ],
+      "Billed monthly.": [
+        "Účtováno měsíčně."
       ],
       "Billing cycle": [
         "Fakturační období"
@@ -13396,6 +13419,9 @@
       "Level for NetShield blocker filtering": [
         "Úroveň filtrování NetShield"
       ],
+      "Limited time": [
+        "Omezený čas"
+      ],
       "Link label (optional)": [
         "Štítek odkazu (volitelné)"
       ],
@@ -13461,6 +13487,9 @@
       ],
       "Moderate NAT": [
         "Moderate NAT"
+      ],
+      "Most popular": [
+        "Nejoblíbenější"
       ],
       "Move to": [
         "Přesunout do"
@@ -13581,6 +13610,9 @@
       ],
       "Password strength": [
         "Síla hesla"
+      ],
+      "Pay once, access forever.": [
+        "Zaplaťte jednou a přistupujte navždy."
       ],
       "Payer": [
         "Plátce"
@@ -22390,6 +22422,9 @@
       "An address for each role": [
         "Adresa pro každou roli"
       ],
+      "Annual": [
+        "Roční"
+      ],
       "Anytime, anywhere access": [
         "Přístup kdykoli a odkudkoli"
       ],
@@ -23137,6 +23172,9 @@
       "Leave group?": [
         "Opustit skupinu?"
       ],
+      "Lifetime": [
+        "Doživotní"
+      ],
       "Limit reached": [
         "Limit dosažen"
       ],
@@ -23163,6 +23201,9 @@
       ],
       "Mobile": [
         "Mobil"
+      ],
+      "Monthly": [
+        "Měsíční"
       ],
       "Multi-user support": [
         "Podpora pro více uživatelů"

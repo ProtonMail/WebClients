@@ -90,9 +90,6 @@
       "Apply": [
         "Aplicare"
       ],
-      "Ask me next time": [
-        "Întreabă-mă data viitoare"
-      ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "Contacte permise per grup de contacte: ${ maxContacts }",
         "Contacte permise per grup de contacte: ${ maxContacts }",
@@ -3150,7 +3147,7 @@
         "Fișierul nu se poate importa."
       ],
       "Unable to load VPN dashboard. Please check your connection and try again.": [
-        "Nu se poate încărca panoul general VPN. Verificați conexiunea și reîncercați."
+        "Nu se poate încărca panoul de control VPN. Verificați conexiunea și reîncercați."
       ],
       "Unexpected error, we can't import the contacts": [
         "Eroare neașteptată. Nu se pot importa contactele."
@@ -4313,7 +4310,7 @@
         "Înainte de a solicita un cod nou de verificare, verificați-vă folderul de mesaje nedorite și verificați dacă ${ strong } este adresa corectă."
       ],
       "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
-        "Importați-vă mesajele, contactele și calendarele în ${ BRAND_NAME }."
+        "Aduceți-vă mesajele, contactele și calendarele în ${ BRAND_NAME }."
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Revenind la planul gratuit, veți pierde permanent aceste avantaje, chiar dacă ulterior veți trece la unul cu plată."
@@ -4359,9 +4356,6 @@
       ],
       "Continue": [
         "Continuare"
-      ],
-      "Converting document...": [
-        "Se convertește documentul..."
       ],
       "Copy the link to clipboard": [
         "Copiați legătura în memorie"
@@ -4409,9 +4403,6 @@
       ],
       "Creating link to folder": [
         "Se creează legătura către folder"
-      ],
-      "Creating new document...": [
-        "Se creează un document..."
       ],
       "Current plan": [
         "Plan actual"
@@ -4506,12 +4497,6 @@
       "Enter your own password (as trusted contact).": [
         "Introduceți parola (ca și contact aprobat)."
       ],
-      "Error converting document: ${ errorMessage }": [
-        "Eroare la convertirea documentului: ${ errorMessage }"
-      ],
-      "Error loading document: ${ errorDetail }": [
-        "Eroare la încărcarea documentului: ${ errorDetail }"
-      ],
       "Error Syncing": [
         "Eroare la sincronizare."
       ],
@@ -4571,12 +4556,6 @@
       ],
       "Geoblocking": [
         "Blocare geografică"
-      ],
-      "Get email updates for comments and suggestions added to your documents.": [
-        "Primiți actualizări prin e-mail pentru comentariile și sugestiile adăugate la documentele personale."
-      ],
-      "Get Notified About Comments": [
-        "Primire notificări despre comentarii"
       ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Guvernele și ISP-urile vă pot monitoriza activitatea online. Ascunzându-vă adresa IP reală și criptându-vă activitatea, navigarea devine privată."
@@ -4718,9 +4697,6 @@
       "Low Priority": [
         "Prioritate scăzută"
       ],
-      "Making a copy...": [
-        "Se creează o copie..."
-      ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "Maxim ${ MAX_SHARED_URL_PASSWORD_LENGTH } caracter",
         "Maxim ${ MAX_SHARED_URL_PASSWORD_LENGTH } caractere",
@@ -4752,9 +4728,6 @@
       ],
       "No contacts added yet": [
         "Încă nu s-au adăugat contacte"
-      ],
-      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
-        "Nu s-a furnizat un document la URL. Reveniți în ${ DRIVE_APP_NAME } și selectați un document."
       ],
       "No email address": [
         "Lipsă adresă de e-mail"
@@ -5041,9 +5014,6 @@
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Proprietarul acestei adrese a dezactivat criptarea bilaterală. Pentru a putea trimite mesaje criptate la această adresă, proprietarul trebuie să reactiveze criptarea bilaterală."
-      ],
-      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
-        "Se pare că adresa URL pe care ați introdus-o a fost copiată incorect din Slack. Când copiați legături web lungi din Slack, faceți clic dreapta pe legătura web, apoi alegeți „Copiere legătură” în loc să copiați direct textul URL trunchiat."
       ],
       "There are no documents in the trash.": [
         "Nu există documente în gunoi."
@@ -5671,9 +5641,6 @@
       "Emails (last month)": [
         "Mesaje (ultima lună)"
       ],
-      "Enable email notifications": [
-        "Activare notificări pe e-mail"
-      ],
       "Encrypt emails": [
         "Criptare mesaje"
       ],
@@ -5721,9 +5688,6 @@
       ],
       "Include application logs in bug report": [
         "Includere jurnale aplicație în raportul de eroare"
-      ],
-      "Include document name in notification": [
-        "Includere nume document în notificări"
       ],
       "Include message and file name in invite email": [
         "Includere mesaj și nume fișier în e-mailul de invitație"
@@ -7148,7 +7112,7 @@
         "Ștergeți automat mesajele mai vechi de 30 de zile din gunoi și cele nedorite."
       ],
       "Automatically forward emails sent to your ${ MAIL_APP_NAME } account to any other email address.": [
-        "Redirecționați automat mesajele trimise spre contul ${ MAIL_APP_NAME } către orice altă adresă de e-mail."
+        "Transferați automat mesajele trimise spre contul ${ MAIL_APP_NAME } către orice altă adresă de e-mail."
       ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
         "În prezent, trimiterea mesajelor promoționale sau programate grupate nu este acceptată. Vă recomandăm să utilizați un furnizor dedicat de servicii de e-mail pentru acest caz de utilizare."
@@ -10234,6 +10198,9 @@
       ],
       "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
         "Această importare poate depăși capacitatea de stocare disponibilă în prezent în acest cont ${ BRAND_NAME }. Luați în considerare modificarea opțiunilor de importare."
+      ],
+      "This will replace all the data in the spreadsheet": [
+        "Aceasta va înlocui toate datele din foaia de calcul"
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Din păcate, nu suntem online în acest moment. Completați formularul de mai jos pentru a descrie problema, iar noi o vom analiza și vă vom contacta când vom fi din nou online."

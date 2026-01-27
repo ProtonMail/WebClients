@@ -90,9 +90,6 @@
       "Apply": [
         "გადატარება"
       ],
-      "Ask me next time": [
-        "მკითხე შემდეგ ჯერზე"
-      ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "კონტაქტების თითოეულ ჯგუფში ${ maxContacts }-მდე კონტაქტი შეგიძლიათ, იქონიოთ",
         "კონტაქტების თითოეულ ჯგუფში ${ maxContacts }-მდე კონტაქტი შეგიძლიათ, იქონიოთ"
@@ -368,6 +365,9 @@
       ],
       "Export selection as .vcf": [
         "მონიშნულის გატანა .vcf ფაილში"
+      ],
+      "Export this version (as xlsx)": [
+        "ამ ვერსიის გატანა (xlsx ფაილში)"
       ],
       "Forgot password?": [
         "დაგავიწყდათ პაროლი?"
@@ -1194,6 +1194,9 @@
       ],
       "Payments problem": [
         "გადახდის პრობლემა"
+      ],
+      "Sheets problem": [
+        "Sheets-ის პრობლემა"
       ],
       "Sign in problem": [
         "შესვლის პრობლემა"
@@ -4231,9 +4234,6 @@
       "Continue": [
         "გაგრძელება"
       ],
-      "Converting document...": [
-        "დოკუმენტის გადაყვანა..."
-      ],
       "Copy the link to clipboard": [
         "ბმულის ბაფერში კოპირება"
       ],
@@ -4279,9 +4279,6 @@
       ],
       "Creating link to folder": [
         "საქაღალდემდე ბმულის შექმნა"
-      ],
-      "Creating new document...": [
-        "ახალი დოკუმენტის შექმნა..."
       ],
       "Current plan": [
         "მიმდინარე ტარიფი"
@@ -4376,12 +4373,6 @@
       "Enter your own password (as trusted contact).": [
         "შეიყვანეთ თქვენი საკუთარი პაროლი (როგორც სანდო კონტაქტმა)."
       ],
-      "Error converting document: ${ errorMessage }": [
-        "დოკუმენტის გადაყვანის შეცდომა: ${ errorMessage }"
-      ],
-      "Error loading document: ${ errorDetail }": [
-        "დოკუმენტის ჩატვირთვის შეცდომა. ${ errorDetail }"
-      ],
       "Error Syncing": [
         "სინქრონიზაციის შეცდომა"
       ],
@@ -4441,12 +4432,6 @@
       ],
       "Geoblocking": [
         "გეოდაბლოკვა"
-      ],
-      "Get email updates for comments and suggestions added to your documents.": [
-        "მიიღეთ ელფოსტის განახლებები კომენტარებისა და მინიშნებებისთვის, რომლებიც თქვენ დოკუმენტებს დაემატება."
-      ],
-      "Get Notified About Comments": [
-        "გაფრთხილებების მიღება კომენტარების შესახებ"
       ],
       "here": [
         "აქ"
@@ -4584,9 +4569,6 @@
       "Low Priority": [
         "დაბალი პრიორიტეტი"
       ],
-      "Making a copy...": [
-        "ასლის შექმნა..."
-      ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "მაქს ${ MAX_SHARED_URL_PASSWORD_LENGTH } სიმბოლო",
         "მაქს ${ MAX_SHARED_URL_PASSWORD_LENGTH } სიმბოლო"
@@ -4614,9 +4596,6 @@
       ],
       "No contacts added yet": [
         "კონტაქტები ჯერ არ დამატებულა"
-      ],
-      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
-        "URL-ში დოკუმენტი მითითებული არაა. დაბრუნდით ${ DRIVE_APP_NAME }-ზე და აირჩიეთ დოკუმენტი."
       ],
       "No email address": [
         "ელ-ფოსტის მისამართის გარეშე"
@@ -5474,9 +5453,6 @@
       "Emails (last month)": [
         "ელფოსტა (გასული თვე)"
       ],
-      "Enable email notifications": [
-        "ელფოსტის გაფრთხილებების ჩართვა"
-      ],
       "Encrypt emails": [
         "ელფოსტების დაშიფრვა"
       ],
@@ -5524,9 +5500,6 @@
       ],
       "Include application logs in bug report": [
         "აპლიკაციის ჟურნალის ჩასმა შეცდომის ანგარიშში"
-      ],
-      "Include document name in notification": [
-        "დოკუმენტის სახელის ჩასმა გაფრთხილებებში"
       ],
       "Include message and file name in invite email": [
         "მოსაწვევის ფაილში შეტყობინებისა და ფაილის სახელის დართვა"
@@ -5969,6 +5942,10 @@
       ]
     },
     "meet_2025: Feature": {
+      "${ n } active meeting at a time": [
+        "${ n } ერთდროული აქტიური შეხვედრა",
+        "${ n } ერთდროული აქტიური შეხვედრა"
+      ],
       "24 hours per meeting": [
         "24 საათი თითო შეხვედრისთვის"
       ],
@@ -5978,11 +5955,31 @@
       "Appointment scheduling": [
         "შეხვედრის დაგეგმვა"
       ],
+      "Browser, mobile, and desktop apps": [
+        "ბრაუზერის, მობილურის და კომპიუტეირს აპები"
+      ],
       "Built-in chat": [
         "ჩაშენებული ჩატი"
       ],
+      "Meeting recording (coming soon)": [
+        "შეხვედრის ჩანაწერი (მალე)"
+      ],
+      "One active meeting at a time": [
+        "ერთი აქტიური შეხვედრა ერთდროულად"
+      ],
       "Screen-sharing": [
         "ეკრანის გაზიარება"
+      ],
+      "Unlimited meetings per day": [
+        "შეუზღუდავი შეხვედრები დღეში"
+      ],
+      "Up to ${ n } meeting per day": [
+        "${ n } შეხვედრამდე დღეში",
+        "${ n } შეხვედრამდე დღეში"
+      ],
+      "Up to ${ n } participant": [
+        "${ n }-მდე მონაწილე",
+        "${ n }-მდე მონაწილე"
       ]
     },
     "Message": {

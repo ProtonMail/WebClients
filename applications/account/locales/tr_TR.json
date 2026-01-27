@@ -1053,9 +1053,6 @@
       "Open ${ PASS_APP_NAME } in your browser": [
         "${ PASS_APP_NAME } uygulamasını tarayıcınızda açın"
       ],
-      "Open in ${ SHEETS_APP_NAME }": [
-        "${ SHEETS_APP_NAME } ile aç"
-      ],
       "Open in new tab": [
         "Yeni sekmede aç"
       ],
@@ -1088,6 +1085,9 @@
       ],
       "Pay ${ price } now": [
         "Şimdi ${ price } öde"
+      ],
+      "Pay once": [
+        "Bir kez ödeyin"
       ],
       "Preview": [
         "Ön izle"
@@ -1295,6 +1295,9 @@
       ],
       "See plan features": [
         "Tarife özelliklerini görün"
+      ],
+      "Select": [
+        "Seç"
       ],
       "Select ${ planOrAppName }": [
         "${ planOrAppName } tarifesini seç"
@@ -1719,6 +1722,11 @@
     "Action subscription": {
       "Reactivate": [
         "Yenile"
+      ]
+    },
+    "Action: Sheets": {
+      "Open in ${ SHEETS_APP_NAME }": [
+        "${ SHEETS_APP_NAME } uygulamasında aç"
       ]
     },
     "Action; accept invitation to share calendar": {
@@ -10497,6 +10505,9 @@
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Ücrete, hesabınızda kayıtlı tüm geçerli dönemsel indirimler ve geçerlilik süresi dolmamış kuponlar katılmıştır."
       ],
+      "Privacy and security starts here": [
+        "Gizlilik ve güvenlik burada başlar"
+      ],
       "Private AI assistant": [
         "Kişisel Yapay Zeka yardımcısı"
       ],
@@ -11463,6 +11474,9 @@
       "With email categories, important messages land in a primary inbox. Everything else is organized into categories.": [
         "E-posta kategorileri ile önemli iletiler birincil gelen kutusuna gelir. Diğer her şey kategoriler halinde düzenlenir."
       ],
+      "With groups, you can implement the company security policies for access control and reduce the risk of accessing unauthorised data.": [
+        "Gruplarla birlikte erişim kontrolü için şirket güvenlik ilkelerini uygulayabilir ve yetkisiz verilere erişim riskini azaltabilirsiniz."
+      ],
       "With groups, you can quickly and easily send emails to all the people in a specified group.": [
         "Grupları kullanarak, belirli bir gruptaki kullanıcılara kolayca e-postalar gönderebilirsiniz."
       ],
@@ -12403,6 +12417,9 @@
         "${ nbYear } yıl",
         "${ nbYear } yıl"
       ],
+      "${ pricePerMonthWithCurrency } / month": [
+        "${ pricePerMonthWithCurrency } / ay"
+      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Geçici olarak kullanılamıyor. Lütfen bir süre sonra yeniden bakın.)"
       ],
@@ -12633,6 +12650,12 @@
       ],
       "Beta": [
         "Beta"
+      ],
+      "Billed at ${ priceYearly } every 12 months.": [
+        "Her 12 ayda bir ${ priceYearly } olarak faturalandırılır."
+      ],
+      "Billed monthly.": [
+        "Aylık faturalandırılır."
       ],
       "Billing cycle": [
         "Fatura dönemi"
@@ -13126,6 +13149,9 @@
       "Level for NetShield blocker filtering": [
         "NetShield engelleme süzgeci düzeyi"
       ],
+      "Limited time": [
+        "Sınırlı süreli"
+      ],
       "Link label (optional)": [
         "Bağlantı etiketi (isteğe bağlı)"
       ],
@@ -13191,6 +13217,9 @@
       ],
       "Moderate NAT": [
         "Ilımlı NAT"
+      ],
+      "Most popular": [
+        "En popüler"
       ],
       "Move to": [
         "Şuraya taşı"
@@ -13311,6 +13340,9 @@
       ],
       "Password strength": [
         "Parola zorluğu"
+      ],
+      "Pay once, access forever.": [
+        "Bir kez ödeyin, sonsuza kadar erişin."
       ],
       "Payer": [
         "Ödeyen"
@@ -21834,6 +21866,9 @@
       "An address for each role": [
         "Her rol için ayrı adres"
       ],
+      "Annual": [
+        "Yıllık"
+      ],
       "Anytime, anywhere access": [
         "Her zaman, her yerden erişim"
       ],
@@ -22573,6 +22608,9 @@
       "Leave group?": [
         "Gruptan ayrılmak istiyor musunuz?"
       ],
+      "Lifetime": [
+        "Ömür boyu"
+      ],
       "Limit reached": [
         "Sınıra ulaşıldı"
       ],
@@ -22599,6 +22637,9 @@
       ],
       "Mobile": [
         "Mobil"
+      ],
+      "Monthly": [
+        "Aylık"
       ],
       "Multi-user support": [
         "Çok kullanıcı desteği"

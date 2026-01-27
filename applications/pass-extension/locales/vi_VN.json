@@ -269,7 +269,7 @@
         "Xóa tất"
       ],
       "Delete it, I will never need it": [
-        "Xoá nó, tôi sẽ không cần nó"
+        "Xóa, tôi sẽ không bao giờ cần đến"
       ],
       "Delete mailbox": [
         "Xóa hộp thư"
@@ -873,7 +873,7 @@
         "Một số công ty đăng ký tên miền (Namecheap, Cloudflare, v.v.) cũng có thể sử dụng @ cho miền gốc."
       ],
       "SPF ${ WIKIPEDIA_LINK_SPF } is an email authentication method designed to detect forging sender addresses during the delivery of the email. Setting up SPF is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
-        "SPF ${ WIKIPEDIA_LINK_SPF } là phương thức xác thực email được thiết kế để phát hiện giả mạo địa chỉ người gửi trong quá trình gửi email. Rất khuyến khích thiết lập SPF để giảm khả năng email của bạn rơi vào thư mục Thư rác của người nhận."
+        "SPF ${ WIKIPEDIA_LINK_SPF } là phương thức xác thực email được thiết kế để phát hiện giả mạo địa chỉ người gửi trong quá trình gửi email. Bạn nên thiết lập SPF để giảm khả năng email của bạn rơi vào thư mục Thư rác của người nhận."
       ],
       "Start monitoring for data breaches related to accounts created with your email address and your hide-my-email aliases.": [
         "Bắt đầu giám sát các vi phạm dữ liệu liên quan đến tài khoản được tạo bằng địa chỉ email và các biệt danh hide-my-email của bạn."
@@ -1282,16 +1282,16 @@
         "Không thể đồng bộ"
       ],
       "Unknown error": [
-        "Không rõ lỗi"
+        "Lỗi không xác định"
       ],
       "Unknown invite": [
         "Lời mời không xác định"
       ],
       "Unknown item": [
-        "Nội dung không xác định"
+        "Mục không xác định"
       ],
       "Unknown passkey": [
-        "Khóa truy cập không xác định"
+        "Mã khóa không xác định"
       ],
       "Unlock failure": [
         "Mở khóa thất bại"
@@ -2006,6 +2006,9 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Đang chuyển tất cả nội dung từ \"${ payload.content.name }\""
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Việc chuyển một mục sang kho khác sẽ xóa các liên kết bảo mật của mục đó."
       ],
       "Moving items": [
         "Đang chuyển nội dung"
@@ -3191,7 +3194,7 @@
         "Chức vụ"
       ],
       "Key": [
-        "Chìa khóa"
+        "Khóa"
       ],
       "Key fingerprint": [
         "Khoá Vân tay"
@@ -3539,7 +3542,7 @@
         "Chọn một địa chỉ email"
       ],
       "Select preferred language": [
-        "Chọn ngôn ngữ ưa thích"
+        "Chọn ngôn ngữ yêu thích"
       ],
       "Select the vault where SimpleLogin aliases will be imported into": [
         "Chọn kho lưu trữ để nhập bí danh SimpleLogin"
@@ -3668,7 +3671,7 @@
         "Dạng"
       ],
       "Unknown": [
-        "Không biết"
+        "Không xác định"
       ],
       "Unlock ${ PASS_APP_NAME }": [
         "Mở khóa ${ PASS_APP_NAME }"
@@ -3879,7 +3882,7 @@
         "${ filesCount } tệp"
       ],
       "Attachments": [
-        "Tệp đính kèm"
+        "Tập tin đính kèm"
       ],
       "Choose a file or drag it here": [
         "Chọn một tệp hoặc kéo vào đây"
@@ -4084,7 +4087,7 @@
         "Chọn tùy chọn"
       ],
       "Unknown origin": [
-        "Không rõ nguồn"
+        "Nguồn không xác định"
       ],
       "Untitled": [
         "Không có tiêu đề"
@@ -4165,7 +4168,7 @@
         "Đã đăng xuất"
       ],
       "Unknown": [
-        "Không biết"
+        "Không xác định"
       ]
     },
     "Success": {
@@ -4750,7 +4753,7 @@
         "Gói đăng ký ${ planName } sẽ kết thúc vào ${ endDate }"
       ],
       "Your exposed information": [
-        "Các thông tin đã bị lộ"
+        "Thông tin bị lộ"
       ],
       "Your vault is empty": [
         "Kho lưu trữ của bạn trống"
@@ -4876,7 +4879,7 @@
         "Không thể áp dụng phiếu mua hàng."
       ],
       "Delete alias": [
-        "Xoá bí danh"
+        "Xóa biệt danh"
       ],
       "Domain cannot be empty": [
         "Miền không được để trống"

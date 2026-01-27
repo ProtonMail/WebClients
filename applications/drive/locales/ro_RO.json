@@ -763,9 +763,6 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Deschidere setări ${ CALENDAR_APP_NAME }"
       ],
-      "Open in ${ SHEETS_APP_NAME }": [
-        "Deschidere în ${ SHEETS_APP_NAME }"
-      ],
       "Open navigation": [
         "Deschidere navigare"
       ],
@@ -933,6 +930,9 @@
       ],
       "Save changes": [
         "Salvare modificări"
+      ],
+      "Save for later": [
+        "Salvare pentru mai târziu"
       ],
       "Save photos and remove": [
         "Salvare și eliminare fotografii"
@@ -1232,6 +1232,16 @@
       ],
       "Zoom out": [
         "Micșorare"
+      ]
+    },
+    "Action: Docs": {
+      "Open in ${ DOCS_APP_NAME }": [
+        "Deschidere în ${ DOCS_APP_NAME }"
+      ]
+    },
+    "Action: Sheets": {
+      "Open in ${ SHEETS_APP_NAME }": [
+        "Deschidere în ${ SHEETS_APP_NAME }"
       ]
     },
     "Actions": {
@@ -3761,7 +3771,7 @@
         "Folosiți doar litere, cifre și _ . -"
       ],
       "Unable to load VPN dashboard. Please check your connection and try again.": [
-        "Nu se poate încărca panoul general VPN. Verificați conexiunea și reîncercați."
+        "Nu se poate încărca panoul de control VPN. Verificați conexiunea și reîncercați."
       ],
       "Unable to set photo as cover": [
         "Fotografia nu poate fi stabilită ca și copertă."
@@ -3822,6 +3832,9 @@
       ],
       "We were not able to load the folder contents": [
         "Conținutul folderului nu s-a putut încărca."
+      ],
+      "We're sorry, but free upload is not available right now.": [
+        "Ne pare rău, dar încărcarea gratuită nu este disponibilă momentan."
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Număr maxim de destinatari la care puteți trimite mesaje: ${ maxContacts }",
@@ -5097,6 +5110,9 @@
         "Vor fi importate toate contactele, până la limita de ${ MAX_CONTACTS_PER_USER }.",
         "Vor fi importate toate contactele, până la limita de ${ MAX_CONTACTS_PER_USER }."
       ],
+      "Already in this folder": [
+        "Deja în acest folder"
+      ],
       "Already in your library": [
         "Există deja în librărie"
       ],
@@ -5191,13 +5207,16 @@
         "Îmbunătățiți-vă identitatea de brand a organizației proprii și creați o experiență online mai consistentă pentru utilizatorii acesteia."
       ],
       "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
-        "Importați-vă mesajele, contactele și calendarele în ${ BRAND_NAME }."
+        "Aduceți-vă mesajele, contactele și calendarele în ${ BRAND_NAME }."
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Revenind la planul gratuit, veți pierde permanent aceste avantaje, chiar dacă ulterior veți trece la unul cu plată."
       ],
       "Calendar side panel": [
         "Panou lateral calendar"
+      ],
+      "Can't move a folder into itself": [
+        "Nu se poate muta un folder în el însuși."
       ],
       "Canceled": [
         "Anulat"
@@ -6104,6 +6123,9 @@
       "Search Enabled": [
         "Căutare actvată."
       ],
+      "Select a destination folder": [
+        "Selectați un folder de destinație"
+      ],
       "Select a folder to make the copy in": [
         "Selectați un folder în care să se creeze copia."
       ],
@@ -6594,6 +6616,9 @@
       "Week": [
         "Săptămâna"
       ],
+      "Welcome to ${ DRIVE_APP_NAME }, for the first 10 minutes, any files you upload don't count toward your storage quota.": [
+        "Bun venit la ${ DRIVE_APP_NAME }, pentru primele 10 minute, orice fișier pe care îl încărcați nu se ia în calcul pentru cota de stocare."
+      ],
       "What do you want to do?": [
         "Ce doriți să faceți?"
       ],
@@ -6720,7 +6745,7 @@
         "Aveți un abonament ${ planTitle } de probare. Nu este necesară nici o plată în acest moment. Abonamentul se va reînnoi automat la sfârșitul perioadei de probare."
       ],
       "You may be redirected to your bank’s website.": [
-        "Ar putea fi necesară redirecționarea spre pagina web a băncii."
+        "Probabil va trebui să accesați pagina web a băncii."
       ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "Trebuie să dezactivați sau să eliminați utilizatorii ${ MAIL_APP_NAME } adiționali, adresele și domeniile personale înainte de a putea retrograda."
@@ -7034,6 +7059,9 @@
       ],
       "Anderson": [
         "Andrei"
+      ],
+      "Anonymous": [
+        "Anonim"
       ],
       "Anyone on the Internet with the link can edit": [
         "Poate edita oricine de pe internet care are legătura web"
@@ -8881,7 +8909,7 @@
         "Ștergeți automat mesajele mai vechi de 30 de zile din gunoi și cele nedorite."
       ],
       "Automatically forward emails sent to your ${ MAIL_APP_NAME } account to any other email address.": [
-        "Redirecționați automat mesajele trimise spre contul ${ MAIL_APP_NAME } către orice altă adresă de e-mail."
+        "Transferați automat mesajele trimise spre contul ${ MAIL_APP_NAME } către orice altă adresă de e-mail."
       ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
         "În prezent, trimiterea mesajelor promoționale sau programate grupate nu este acceptată. Vă recomandăm să utilizați un furnizor dedicat de servicii de e-mail pentru acest caz de utilizare."
@@ -9705,9 +9733,6 @@
       "Edit documents online": [
         "Editați documentele online"
       ],
-      "Encryption happens automatically": [
-        "Criptarea se face automat"
-      ],
       "End-to-end encrypted storage for your files": [
         "Stocare cu criptare bilaterală pentru fișiere"
       ],
@@ -9783,9 +9808,6 @@
       "The owner needs to confirm sharing access. You'll get an email once it's done.": [
         "Proprietarul trebuie să confirme accesul la partajare. Veți primi un e-mail după confirmare."
       ],
-      "Upload files, folders, photos": [
-        "Încărcați fișiere, foldere, fotografii"
-      ],
       "Upload your first file": [
         "Încărcați primul fișier"
       ],
@@ -9797,9 +9819,6 @@
       ],
       "You just snagged some free data and secured your files with end-to-end encryption － in record time!": [
         "Ați obținut date gratuite și v-ați securizat fișierele cu criptare bilaterală — într-un timp record!"
-      ],
-      "Your storage limit won’t be affected": [
-        "Limita de stocare nu va fi afectată"
       ]
     },
     "Onboarding Trial": {
@@ -11698,6 +11717,9 @@
       "Securely share your favorite moments with friends and family using Albums.": [
         "Partajați-vă în siguranță momentele preferate cu prietenii și familia folosind albumele."
       ],
+      "Shared by ${ sharedBy }": [
+        "Partajat de ${ sharedBy }"
+      ],
       "Your favorited photos will appear here": [
         "Fotografiile favorite vor apărea aici"
       ],
@@ -11990,6 +12012,9 @@
       ],
       "${ feature } is now active": [
         "${ feature } este acum activă"
+      ],
+      "${ freeUploadLength } of free uploads.": [
+        "${ freeUploadLength } încărcări gratuite."
       ],
       "${ numberOfFailedTransfer.total } failed download": [
         "O descărcare a eșuat",
@@ -12978,9 +13003,6 @@
       ],
       "You have no folders yet": [
         "Încă nu aveți foldere"
-      ],
-      "Your ${ freeUploadLength } has started.": [
-        "A început ${ freeUploadLength }."
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Probarea gratuită pentru ${ planName } se încheie ${ textDate }"

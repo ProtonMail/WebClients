@@ -768,9 +768,6 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Otvoriť nastavenia ${ CALENDAR_APP_NAME }"
       ],
-      "Open in ${ SHEETS_APP_NAME }": [
-        "Otvoriť v ${ SHEETS_APP_NAME }"
-      ],
       "Open navigation": [
         "Otvoriť menu"
       ],
@@ -938,6 +935,9 @@
       ],
       "Save changes": [
         "Uložiť zmeny"
+      ],
+      "Save for later": [
+        "Uložiť na neskôr"
       ],
       "Save photos and remove": [
         "Uložiť fotografie a odstrániť"
@@ -1238,6 +1238,16 @@
       ],
       "Zoom out": [
         "Oddialiť"
+      ]
+    },
+    "Action: Docs": {
+      "Open in ${ DOCS_APP_NAME }": [
+        "Otvoriť v ${ DOCS_APP_NAME }"
+      ]
+    },
+    "Action: Sheets": {
+      "Open in ${ SHEETS_APP_NAME }": [
+        "Otvoriť v ${ SHEETS_APP_NAME }"
       ]
     },
     "Actions": {
@@ -3847,6 +3857,9 @@
       "We were not able to load the folder contents": [
         "Nepodarilo sa nám načítať obsah priečinka"
       ],
+      "We're sorry, but free upload is not available right now.": [
+        "Je nám ľúto, ale bezplatné nahratie momentálne nie je k dispozícii."
+      ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Email nemôžete odoslať viac ako ${ maxContacts } príjemcovi",
         "Email nemôžete odoslať viac ako ${ maxContacts } príjemcom",
@@ -5176,6 +5189,9 @@
         "Všetky vaše kontakty budú importované až do limitu ${ MAX_CONTACTS_PER_USER }",
         "Všetky vaše kontakty budú importované až do limitu ${ MAX_CONTACTS_PER_USER }"
       ],
+      "Already in this folder": [
+        "Už sa nachádza v priečinku"
+      ],
       "Already in your library": [
         "Už máte vo svojej knižnici"
       ],
@@ -5277,6 +5293,9 @@
       ],
       "Calendar side panel": [
         "Bočný panel kalendára"
+      ],
+      "Can't move a folder into itself": [
+        "Priečinok nie je možné presunúť sám do seba"
       ],
       "Canceled": [
         "Zrušené"
@@ -6190,6 +6209,9 @@
       "Search Enabled": [
         "Vyhľadávanie povolené"
       ],
+      "Select a destination folder": [
+        "Vyberte cieľový priečinok"
+      ],
       "Select a folder to make the copy in": [
         "Vyberte priečinok na vytvorenie kópie."
       ],
@@ -6682,6 +6704,9 @@
       "Week": [
         "Týždeň"
       ],
+      "Welcome to ${ DRIVE_APP_NAME }, for the first 10 minutes, any files you upload don't count toward your storage quota.": [
+        "Vitajte v ${ DRIVE_APP_NAME }, počas prvých 10 minút sa žiadne vami nahrané súbory nepočítajú do vášho úložiska."
+      ],
       "What do you want to do?": [
         "Čo si prajete urobiť?"
       ],
@@ -7134,6 +7159,9 @@
       ],
       "Anderson": [
         "Anderson"
+      ],
+      "Anonymous": [
+        "Anonymne"
       ],
       "Anyone on the Internet with the link can edit": [
         "Ktokoľvek na internete s odkazom môže upravovať"
@@ -9868,9 +9896,6 @@
       "Edit documents online": [
         "Upravujte dokumenty online"
       ],
-      "Encryption happens automatically": [
-        "Šifrovanie prebieha automaticky"
-      ],
       "End-to-end encrypted storage for your files": [
         "End-to-end šifrované úložisko pre vaše súbory"
       ],
@@ -9946,9 +9971,6 @@
       "The owner needs to confirm sharing access. You'll get an email once it's done.": [
         "Majiteľ musí potvrdiť zdieľanie prístupu. Po jeho dokončení dostanete email."
       ],
-      "Upload files, folders, photos": [
-        "Nahrať súbory, priečinky, fotografie"
-      ],
       "Upload your first file": [
         "Nahrajte váš prvý súbor"
       ],
@@ -9960,9 +9982,6 @@
       ],
       "You just snagged some free data and secured your files with end-to-end encryption － in record time!": [
         "Práve ste získali bezplatné dáta a zabezpečili svoje súbory pomocou komplexného šifrovania – a to v rekordnom čase!"
-      ],
-      "Your storage limit won’t be affected": [
-        "Limit vášho úložného priestoru nebude ovplyvnený."
       ]
     },
     "Onboarding Trial": {
@@ -11903,6 +11922,9 @@
       "Securely share your favorite moments with friends and family using Albums.": [
         "Bezpečne zdieľajte vaše obľúbené okamihy s priateľmi a rodinou pomocou Albumov."
       ],
+      "Shared by ${ sharedBy }": [
+        "Zdieľané vlastníkom ${ sharedBy }"
+      ],
       "Your favorited photos will appear here": [
         "Tu sa zobrazia vaše obľúbené fotografie"
       ],
@@ -12204,6 +12226,9 @@
       ],
       "${ feature } is now active": [
         "${ feature } je teraz aktívna"
+      ],
+      "${ freeUploadLength } of free uploads.": [
+        "${ freeUploadLength } z bezplatných nahratí."
       ],
       "${ numberOfFailedTransfer.total } failed download": [
         "${ numberOfFailedTransfer.total } neúspešné stiahnutie",
@@ -13203,9 +13228,6 @@
       ],
       "You have no folders yet": [
         "Zatiaľ nemáte žiadne priečinky"
-      ],
-      "Your ${ freeUploadLength } has started.": [
-        "Vaše ${ freeUploadLength } sa začalo."
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Vaša bezplatná skúšobná verzia služby ${ planName } končí ${ textDate }"

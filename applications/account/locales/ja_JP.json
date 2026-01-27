@@ -1053,9 +1053,6 @@
       "Open ${ PASS_APP_NAME } in your browser": [
         "${ PASS_APP_NAME } をブラウザで開く"
       ],
-      "Open in ${ SHEETS_APP_NAME }": [
-        "${ SHEETS_APP_NAME } で開く"
-      ],
       "Open in new tab": [
         "新しいタブで開く"
       ],
@@ -1088,6 +1085,9 @@
       ],
       "Pay ${ price } now": [
         "${ price } を支払う"
+      ],
+      "Pay once": [
+        "一度だけの支払い"
       ],
       "Preview": [
         "プレビュー"
@@ -1295,6 +1295,9 @@
       ],
       "See plan features": [
         "プランの機能を見る"
+      ],
+      "Select": [
+        "選択"
       ],
       "Select ${ planOrAppName }": [
         "${ planOrAppName } を選択"
@@ -1719,6 +1722,11 @@
     "Action subscription": {
       "Reactivate": [
         "再アクティブ化"
+      ]
+    },
+    "Action: Sheets": {
+      "Open in ${ SHEETS_APP_NAME }": [
+        "${ SHEETS_APP_NAME } で開く"
       ]
     },
     "Action; accept invitation to share calendar": {
@@ -10388,6 +10396,9 @@
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "価格には、適用されるすべてのサイクルベースの割引と、お客様のアカウントに保存されている有効期限内のクーポンが含まれています。"
       ],
+      "Privacy and security starts here": [
+        "プライバシーとセキュリティーはここから始まります"
+      ],
       "Private AI assistant": [
         "プライベート AI アシスタント"
       ],
@@ -11348,6 +11359,9 @@
       "With email categories, important messages land in a primary inbox. Everything else is organized into categories.": [
         "メールカテゴリを使用すると、重要なメッセージはプライマリー受信トレイに届きます。それ以外のすべてはカテゴリに整理されます。"
       ],
+      "With groups, you can implement the company security policies for access control and reduce the risk of accessing unauthorised data.": [
+        "グループを使うことで、アクセス制御のための企業のセキュリティポリシーを実施し、不正なデータアクセスのリスクを減らすことができます。"
+      ],
       "With groups, you can quickly and easily send emails to all the people in a specified group.": [
         "グループでは、指定されたグループの全ての人に迅速かつ簡単にメールを送ることができます。"
       ],
@@ -12268,6 +12282,9 @@
       "${ nbYear } year": [
         "${ nbYear } 年"
       ],
+      "${ pricePerMonthWithCurrency } / month": [
+        "${ pricePerMonthWithCurrency } /月"
+      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(一時的に利用できません。あとでお試しください。)"
       ],
@@ -12498,6 +12515,12 @@
       ],
       "Beta": [
         "ベータ"
+      ],
+      "Billed at ${ priceYearly } every 12 months.": [
+        "12 ヶ月ごとに ${ priceYearly } で請求されます。"
+      ],
+      "Billed monthly.": [
+        "毎月請求"
       ],
       "Billing cycle": [
         "支払い間隔"
@@ -12991,6 +13014,9 @@
       "Level for NetShield blocker filtering": [
         "NetShield ブロッカーのフィルタリング強度"
       ],
+      "Limited time": [
+        "期間限定"
+      ],
       "Link label (optional)": [
         "リンクラベル(オプション)"
       ],
@@ -13056,6 +13082,9 @@
       ],
       "Moderate NAT": [
         "モデレート NAT"
+      ],
+      "Most popular": [
+        "一番人気"
       ],
       "Move to": [
         "移動先"
@@ -13176,6 +13205,9 @@
       ],
       "Password strength": [
         "パスワードの強度"
+      ],
+      "Pay once, access forever.": [
+        "一度のお支払いで、ずっとご利用いただけます。"
       ],
       "Payer": [
         "支払人"
@@ -21556,6 +21588,9 @@
       "An address for each role": [
         "それぞれの役割のアドレス"
       ],
+      "Annual": [
+        "年間"
+      ],
       "Anytime, anywhere access": [
         "いつでもどこでもアクセス"
       ],
@@ -22291,6 +22326,9 @@
       "Leave group?": [
         "グループを離れますか？"
       ],
+      "Lifetime": [
+        "生涯"
+      ],
       "Limit reached": [
         "上限に達しました"
       ],
@@ -22317,6 +22355,9 @@
       ],
       "Mobile": [
         "モバイル"
+      ],
+      "Monthly": [
+        "毎月"
       ],
       "Multi-user support": [
         "複数ユーザー対応"
