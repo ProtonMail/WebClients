@@ -1,5 +1,6 @@
 import Price from '@proton/components/components/price/Price';
-import { COUPON_CODES, CYCLE, getCheckout } from '@proton/payments';
+import { CYCLE, getCheckout } from '@proton/payments';
+import { COUPON_CODES } from '@proton/payments/core/constants';
 
 import type { CouponConfig } from './interface';
 

@@ -82,6 +82,16 @@ export type CouponConfig = {
      * If set to true then the Lumo addon banner will not be displayed.
      */
     hideLumoAddonBanner?: boolean;
+
+    /**
+     * If set to true then the currency selector will be disabled or hidden.
+     */
+    disableCurrencySelector?: boolean;
+
+    /**
+     * If set to true then the manual entry of the coupon will be blocked.
+     */
+    blockManualEntryOfCoupon?: boolean;
 };
 
 export type CyclePriceCompareFirstParam = Parameters<NonNullable<CouponConfig['cyclePriceCompare']>>[0];

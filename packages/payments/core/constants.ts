@@ -547,6 +547,9 @@ export enum COUPON_CODES {
     /** PassFamily Promo */
     PASSEARLYSUPPORTER = 'PASSEARLYSUPPORTER',
     PASSFAMILYLAUNCH = 'PASSFAMILYLAUNCH',
+
+    // Greenland and Iceland offers
+    PLUS12FOR1 = 'PLUS12FOR1',
 }
 
 export const VPN_PASS_PROMOTION_COUPONS = [

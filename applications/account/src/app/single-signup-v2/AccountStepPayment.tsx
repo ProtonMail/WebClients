@@ -7,6 +7,7 @@ import { Alert3ds } from '@proton/components';
 import { changeDefaultPaymentMethodBeforePayment } from '@proton/components/containers/payments/DefaultPaymentMethodMessage';
 import PaymentWrapper from '@proton/components/containers/payments/PaymentWrapper';
 import { ProtonPlanCustomizer, getHasPlanCustomizer } from '@proton/components/containers/payments/planCustomizer';
+import type { CouponConfigRendered } from '@proton/components/containers/payments/subscription/coupon-config/useCouponConfig';
 import { usePaymentFacade } from '@proton/components/payments/client-extensions';
 import { BilledUserInlineMessage } from '@proton/components/payments/client-extensions/billed-user';
 import type { WithLoading } from '@proton/hooks/useLoading';
@@ -80,6 +81,7 @@ interface Props {
     offerBanner: ReactElement | undefined | false;
     telemetryContext: PaymentTelemetryContext;
     onMethodChanged: (method: AvailablePaymentMethod) => void;
+    couponConfig: CouponConfigRendered | undefined;
 }
 
 const AccountStepPayment = ({
@@ -110,6 +112,7 @@ const AccountStepPayment = ({
     offerBanner, // temporary for A/B test,
     telemetryContext,
     onMethodChanged,
+    couponConfig,
 }: Props) => {
     const publicTheme = usePublicTheme();
     const formRef = useRef<HTMLFormElement>(null);
@@ -522,6 +525,7 @@ const AccountStepPayment = ({
                 loadingPaymentDetails={loadingPaymentDetails}
                 showRenewalNotice={showRenewalNotice}
                 app={app}
+                couponConfig={couponConfig}
             />
         </div>
     );

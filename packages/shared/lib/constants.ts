@@ -421,6 +421,7 @@ export const SSO_PATHS = {
     PORKBUN_SIGN_IN: '/partner/porkbun/login',
     SIGN_IN_WITH_ANOTHER_DEVICE: '/sign-in-with-another-device',
     FIRST_EMAIL: '/first-email',
+    GREENLAND_SIGNUP: '/greenland',
 } as const;
 export const SETUP_ADDRESS_PATH = '/setup-address';
 

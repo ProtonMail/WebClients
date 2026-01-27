@@ -23,6 +23,7 @@ import {
 } from '@proton/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import { forceAddonsMinMaxConstraints } from '@proton/components/containers/payments/planCustomizer';
+import { useCouponConfig } from '@proton/components/containers/payments/subscription/coupon-config/useCouponConfig';
 import { getShortBillingText } from '@proton/components/containers/payments/subscription/helpers';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import { useCurrencies } from '@proton/components/payments/client-extensions/useCurrencies';
@@ -87,6 +88,7 @@ import { getSubscriptionPrices } from '../signup/helper';
 import type { SignupCacheResult, SubscriptionData } from '../signup/interfaces';
 import { SignupType } from '../signup/interfaces';
 import { AccountFormDataContextProvider } from '../signupCtx/context/accountData/AccountFormDataContext';
+import { getStartUsingAppNameText } from '../signupCtx/helpers/getStartUsingAppNameText';
 import type { AccountStepDetailsRef } from './AccountStepDetails';
 import AccountStepDetails from './AccountStepDetails';
 import type { AccountStepPaymentRef } from './AccountStepPayment';
@@ -244,6 +246,12 @@ const Step1 = ({
     const isMailVariantB = signupParameters.isMailVariantB;
 
     const history = useHistory();
+
+    const couponConfig = useCouponConfig({
+        checkResult: model.subscriptionData.checkResult,
+        planIDs: model.subscriptionData.planIDs,
+        plansMap: model.plansMap,
+    });
 
     const subscriptionCheckOptions = {
         planIDs: model.subscriptionData.planIDs,
@@ -616,7 +624,7 @@ const Step1 = ({
             return c('mail_cro_experiment').t`Get Deal`;
         }
 
-        return c('pass_signup_2023: Action').t`Start using ${appName} now`;
+        return getStartUsingAppNameText(appName);
     })();
 
     const hasSelectedFree = selectedPlan.Name === PLANS.FREE || mode === SignupMode.MailReferral;
@@ -776,7 +784,8 @@ const Step1 = ({
 
     const currencySelector =
         // Paid users can't change the currency. Only new and free existing users can change it.
-        !model.session?.resumedSessionResult.User || isFree(model.session.resumedSessionResult.User) ? (
+        (!model.session?.resumedSessionResult.User || isFree(model.session.resumedSessionResult.User)) &&
+        !couponConfig?.disableCurrencySelector ? (
             <CurrencySelector
                 currencies={availableCurrencies}
                 mode="select-two"
@@ -1579,6 +1588,7 @@ const Step1 = ({
                                 onMethodChanged={(method) => {
                                     selectedMethodRef.current = method;
                                 }}
+                                couponConfig={couponConfig}
                             />
                         </BoxContent>
                     </Box>
