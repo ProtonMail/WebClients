@@ -152,7 +152,8 @@ const SelectAllLabelModal = ({
         <Prompt
             title={getModalTitle()}
             buttons={[
-                <Button color="norm" onClick={handleSubmit}>{c('Action').t`OK`}</Button>,
+                <Button color="norm" onClick={handleSubmit} data-testid="select-all:label-modal-button">{c('Action')
+                    .t`OK`}</Button>,
                 <Button onClick={handleClose}>{c('Action').t`Cancel`}</Button>,
             ]}
             {...rest}

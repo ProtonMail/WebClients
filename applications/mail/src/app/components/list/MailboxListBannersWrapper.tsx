@@ -2,7 +2,7 @@ import SelectAllBanner from 'proton-mail/components/list/select-all/SelectAllBan
 import { getCanDisplaySelectAllBanner } from 'proton-mail/helpers/selectAll';
 import { useSelectAll } from 'proton-mail/hooks/useSelectAll';
 
-import { showLabelTaskRunningBanner } from '../../store/elements/elementsSelectors';
+import { taskRunningInLabel } from '../../store/elements/elementsSelectors';
 import { useMailSelector } from '../../store/hooks';
 import ListBanners from './MailboxListBanners';
 import { useMailboxListContext } from './MailboxListProvider';
@@ -17,7 +17,7 @@ const MailboxListBannersWrapper = ({ columnLayout, checkedIDs, onCheckAll }: Mai
     const { labelID = '', isESLoading, isSearch, showESSlowToolbar, pageSize, filter } = useMailboxListContext();
     const { selectAllAvailable } = useSelectAll({ labelID });
 
-    const canDisplayTaskRunningBanner = useMailSelector((state) => showLabelTaskRunningBanner(state, { labelID }));
+    const taskIsRunningInLabel = useMailSelector((state) => taskRunningInLabel(state, { labelID }));
 
     const hasFilter = Object.keys(filter).length > 0;
 
@@ -42,7 +42,7 @@ const MailboxListBannersWrapper = ({ columnLayout, checkedIDs, onCheckAll }: Mai
                 labelID={labelID}
                 columnLayout={columnLayout}
                 esState={{ isESLoading, isSearch, showESSlowToolbar }}
-                canDisplayTaskRunningBanner={canDisplayTaskRunningBanner}
+                canDisplayTaskRunningBanner={!!taskIsRunningInLabel}
             />
         </>
     );
