@@ -40,9 +40,9 @@ describe('stableSortAlbums', () => {
 
         const sorted = stableSortAlbums(albums);
 
-        expect(sorted[0].linkId).toBe('album-1');
+        expect(sorted[0].linkId).toBe('album-3');
         expect(sorted[1].linkId).toBe('album-2');
-        expect(sorted[2].linkId).toBe('album-3');
+        expect(sorted[2].linkId).toBe('album-1');
     });
 
     it('should use linkId as tiebreaker when createTime is equal', () => {
@@ -54,6 +54,7 @@ describe('stableSortAlbums', () => {
 
         const sorted = stableSortAlbums(albums);
 
+        // lexicographical sort  on ids
         expect(sorted[0].linkId).toBe('album-a');
         expect(sorted[1].linkId).toBe('album-b');
         expect(sorted[2].linkId).toBe('album-c');
@@ -70,18 +71,21 @@ describe('stableSortAlbums', () => {
 
         const sorted = stableSortAlbums(albums);
 
-        expect(sorted[0].linkId).toBe('album-a'); // 1000
-        expect(sorted[1].linkId).toBe('album-b'); // 1000
-        expect(sorted[2].linkId).toBe('album-c'); // 2000
-        expect(sorted[3].linkId).toBe('album-d'); // 2000
-        expect(sorted[4].linkId).toBe('album-e'); // 3000
+        expect(sorted[0].linkId).toBe('album-e'); // 3000
+
+        // lexicographical sort on ids for 2000's:
+        expect(sorted[1].linkId).toBe('album-c'); // 2000
+        expect(sorted[2].linkId).toBe('album-d'); // 2000
+        // lexicographical sort  on ids for 1000's:
+        expect(sorted[3].linkId).toBe('album-a'); // 1000
+        expect(sorted[4].linkId).toBe('album-b'); // 1000
     });
 
     it('should maintain stable sort order across multiple calls', () => {
         const albums: DecryptedAlbum[] = [
-            createMockAlbum('album-2', 1000),
+            createMockAlbum('album-2', 2000),
             createMockAlbum('album-1', 1000),
-            createMockAlbum('album-3', 1000),
+            createMockAlbum('album-3', 3000),
         ];
 
         const sorted1 = stableSortAlbums([...albums]);
@@ -89,8 +93,8 @@ describe('stableSortAlbums', () => {
 
         // Both sorts should produce the same order
         expect(sorted1.map((a) => a.linkId)).toEqual(sorted2.map((a) => a.linkId));
-        expect(sorted1[0].linkId).toBe('album-1');
+        expect(sorted1[0].linkId).toBe('album-3');
         expect(sorted1[1].linkId).toBe('album-2');
-        expect(sorted1[2].linkId).toBe('album-3');
+        expect(sorted1[2].linkId).toBe('album-1');
     });
 });

@@ -58,6 +58,7 @@ export interface DecryptedAlbum extends DecryptedLink {
 
 export const MAX_ADD_ALBUM_PHOTOS_BATCH = 10;
 export const MAX_REMOVE_ALBUM_PHOTOS_BATCH = 10;
+export const ALBUM_DECRYPT_BATCH_SIZE = 10;
 
 /**
  *
@@ -333,44 +334,47 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                     abortSignal
                 );
                 if (Code === 1000) {
-                    const newDecryptedAlbums = await Promise.all(
-                        Albums.map(async (album) => {
-                            try {
-                                const [link, cover] = await Promise.all([
-                                    getLink(abortSignal, shareId, album.LinkID),
-                                    album.CoverLinkID
-                                        ? getLink(abortSignal, shareId, album.CoverLinkID).catch((e) => {
-                                              sendErrorReport(e);
-                                              return undefined;
-                                          })
-                                        : Promise.resolve(undefined),
-                                ]);
-                                return {
-                                    ...link,
-                                    cover: cover,
-                                    photoCount: album.PhotoCount,
-                                    permissions: {
-                                        isOwner: true,
-                                        isAdmin: true,
-                                        isEditor: true,
-                                    },
-                                };
-                            } catch (e) {
-                                sendErrorReport(e);
-                            }
-                        })
-                    );
+                    for (let i = 0; i < Albums.length; i += ALBUM_DECRYPT_BATCH_SIZE) {
+                        const batch = Albums.slice(i, i + ALBUM_DECRYPT_BATCH_SIZE);
+                        const batchResults = await Promise.all(
+                            batch.map(async (album) => {
+                                try {
+                                    const [link, cover] = await Promise.all([
+                                        getLink(abortSignal, shareId, album.LinkID),
+                                        album.CoverLinkID
+                                            ? getLink(abortSignal, shareId, album.CoverLinkID).catch((e) => {
+                                                  sendErrorReport(e);
+                                                  return undefined;
+                                              })
+                                            : Promise.resolve(undefined),
+                                    ]);
+                                    return {
+                                        ...link,
+                                        cover: cover,
+                                        photoCount: album.PhotoCount,
+                                        permissions: {
+                                            isOwner: true,
+                                            isAdmin: true,
+                                            isEditor: true,
+                                        },
+                                    };
+                                } catch (e) {
+                                    sendErrorReport(e);
+                                }
+                            })
+                        );
 
-                    setAlbums((prevAlbums) => {
-                        const newAlbums = new Map(prevAlbums);
-                        newDecryptedAlbums.forEach((album) => {
-                            if (album !== undefined) {
-                                newAlbums.set(album.linkId, album);
-                                newAlbumsLinkIds.add(album.linkId);
-                            }
+                        setAlbums((prevAlbums) => {
+                            const newAlbums = new Map(prevAlbums);
+                            batchResults.forEach((album) => {
+                                if (album !== undefined) {
+                                    newAlbums.set(album.linkId, album);
+                                    newAlbumsLinkIds.add(album.linkId);
+                                }
+                            });
+                            return newAlbums;
                         });
-                        return newAlbums;
-                    });
+                    }
 
                     // there is a limit of 500 albums so should actually never happen technically
                     if (More) {
@@ -403,60 +407,66 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                     abortSignal
                 );
                 if (Code === 1000) {
-                    const newDecryptedAlbums = await Promise.all(
-                        Albums.map(async (album) => {
-                            try {
-                                if (album.ShareID === null) {
-                                    return;
+                    for (let i = 0; i < Albums.length; i += ALBUM_DECRYPT_BATCH_SIZE) {
+                        const batch = Albums.slice(i, i + ALBUM_DECRYPT_BATCH_SIZE);
+                        const batchResults = await Promise.all(
+                            batch.map(async (album) => {
+                                try {
+                                    if (album.ShareID === null) {
+                                        return;
+                                    }
+                                    // Update share cache
+                                    if (refresh) {
+                                        await getShare(abortSignal, album.ShareID, refresh);
+                                    }
+                                    const [link, cover] = await Promise.all([
+                                        getLink(abortSignal, album.ShareID, album.LinkID),
+                                        album.CoverLinkID
+                                            ? getLink(abortSignal, album.ShareID, album.CoverLinkID).catch((e) => {
+                                                  sendErrorReport(e);
+                                                  return undefined;
+                                              })
+                                            : Promise.resolve(undefined),
+                                    ]);
+                                    const permissions = await getSharePermissions(abortSignal, link.rootShareId);
+                                    setVolumeShareIds(album.VolumeID, [album.ShareID]);
+                                    return {
+                                        ...link,
+                                        cover: cover,
+                                        photoCount: album.PhotoCount,
+                                        permissions: {
+                                            isOwner: getIsOwner(permissions),
+                                            isAdmin: getCanAdmin(permissions),
+                                            isEditor: getCanWrite(permissions),
+                                        },
+                                    };
+                                } catch (e) {
+                                    sendErrorReport(e);
                                 }
-                                // Update share cache
-                                if (refresh) {
-                                    await getShare(abortSignal, album.ShareID, refresh);
-                                }
-                                const [link, cover] = await Promise.all([
-                                    getLink(abortSignal, album.ShareID, album.LinkID),
-                                    album.CoverLinkID
-                                        ? getLink(abortSignal, album.ShareID, album.CoverLinkID).catch((e) => {
-                                              sendErrorReport(e);
-                                              return undefined;
-                                          })
-                                        : Promise.resolve(undefined),
-                                ]);
-                                const permissions = await getSharePermissions(abortSignal, link.rootShareId);
-                                setVolumeShareIds(album.VolumeID, [album.ShareID]);
-                                return {
-                                    ...link,
-                                    cover: cover,
-                                    photoCount: album.PhotoCount,
-                                    permissions: {
-                                        isOwner: getIsOwner(permissions),
-                                        isAdmin: getCanAdmin(permissions),
-                                        isEditor: getCanWrite(permissions),
-                                    },
-                                };
-                            } catch (e) {
-                                sendErrorReport(e);
-                            }
-                        })
-                    );
-                    setAlbums((prevAlbums) => {
-                        const newAlbums = new Map(
-                            // We need Array.from as filter on map iterator is very new and not supported in all browsers yet
-                            Array.from(prevAlbums.entries()).filter(([, album]) => {
-                                // Filter out albums that are not in the current volume,
-                                // that is only own albums. All new shared albums will be
-                                // set via newDecryptedAlbums.
-                                return album.volumeId === volumeId;
                             })
                         );
-                        newDecryptedAlbums.forEach((album) => {
-                            if (album !== undefined) {
-                                newAlbums.set(album.linkId, album);
-                                newAlbumsLinkIds.add(album.linkId);
-                            }
+
+                        setAlbums((prevAlbums) => {
+                            const newAlbums = new Map(
+                                i === 0
+                                    ? Array.from(prevAlbums.entries()).filter(([, album]) => {
+                                          // For the first batch:
+                                          // Filter out albums that are not in the current volume,
+                                          // that is only own albums. All new shared albums will be
+                                          // set via newDecryptedAlbums.
+                                          return album.volumeId === volumeId;
+                                      })
+                                    : prevAlbums
+                            );
+                            batchResults.forEach((album) => {
+                                if (album !== undefined) {
+                                    newAlbums.set(album.linkId, album);
+                                    newAlbumsLinkIds.add(album.linkId);
+                                }
+                            });
+                            return newAlbums;
                         });
-                        return newAlbums;
-                    });
+                    }
                     if (More) {
                         void sharedWithMeCall(AnchorID);
                     }
