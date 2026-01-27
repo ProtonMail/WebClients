@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 
 import { useLumoDispatch, useLumoSelector } from '../redux/hooks';
-import { selectAttachmentById } from '../redux/selectors';
+import { selectAttachmentByIdOptional, selectAttachmentLoadingStateOptional } from '../redux/selectors';
 import { pullAttachmentRequest } from '../redux/slices/core/attachments';
 import type { Attachment, AttachmentId } from '../types';
 
@@ -18,8 +18,8 @@ export function useLazyAttachment(attachmentId: AttachmentId | undefined): {
     error?: string;
 } {
     const dispatch = useLumoDispatch();
-    const attachment = useLumoSelector((state) => (attachmentId ? selectAttachmentById(attachmentId)(state) : undefined));
-    const loadingState = useLumoSelector((state) => (attachmentId ? state.attachmentLoadingState[attachmentId] : undefined));
+    const attachment = useLumoSelector(selectAttachmentByIdOptional(attachmentId));
+    const loadingState = useLumoSelector(selectAttachmentLoadingStateOptional(attachmentId));
 
     useEffect(() => {
         // Trigger download if:
@@ -28,8 +28,15 @@ export function useLazyAttachment(attachmentId: AttachmentId | undefined): {
         // 3. Attachment has no data yet
         // 4. Not currently loading
         // 5. No error state
-        if (attachmentId && attachment && !attachment.data && !loadingState?.loading && !loadingState?.error) {
-            dispatch(pullAttachmentRequest({ id: attachmentId }));
+        if (
+            attachmentId &&
+            attachment &&
+            !attachment.data &&
+            attachment.spaceId &&
+            !loadingState?.loading &&
+            !loadingState?.error
+        ) {
+            dispatch(pullAttachmentRequest({ id: attachmentId, spaceId: attachment.spaceId }));
         }
     }, [attachmentId, attachment, attachment?.data, loadingState?.loading, loadingState?.error, dispatch]);
 
