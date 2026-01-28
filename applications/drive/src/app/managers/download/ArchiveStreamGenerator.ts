@@ -196,7 +196,9 @@ export class ArchiveStreamGenerator {
                     return { isFile: false, name: node.name, parentPath };
                 } else {
                     // This is user cancellation
-                    this.abortController.abort();
+                    const error = new TransferCancel({ id: this.downloadId });
+                    this.abortController.abort(error);
+                    throw error;
                 }
             } else {
                 return { isFile: false, name: node.name, parentPath };
@@ -282,7 +284,9 @@ export class ArchiveStreamGenerator {
                 void completeIndividualFile();
             } else {
                 // This is user cancellation
-                void streamWriter.abort(new TransferCancel({ id: this.downloadId }));
+                const error = new TransferCancel({ id: this.downloadId });
+                this.abortController.abort(error);
+                throw error;
             }
         } else {
             void completeIndividualFile();
