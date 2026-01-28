@@ -31,11 +31,11 @@ export const getMeetingMaxLengthText = (type: 'free' | 'paid') => {
     return c('meet_2025: Feature').t`24 hours per meeting`;
 };
 
-const getMeetingMaxLength = (type: 'free' | 'paid'): PlanCardFeatureDefinition => {
+export const getMeetingMaxLength = (type: 'free' | 'paid'): PlanCardFeatureDefinition => {
     return {
         text: getMeetingMaxLengthText(type),
         included: true,
-        icon: 'clock',
+        icon: 'hourglass',
     };
 };
 
@@ -43,7 +43,11 @@ export const getMaxParticipantsText = (n: number) => {
     return c('meet_2025: Feature').ngettext(msgid`Up to ${n} participant`, `Up to ${n} participants`, n);
 };
 
-const getMaxParticipants = (n: number): PlanCardFeatureDefinition => {
+export const getMaxParticipantsShortText = (n: number) => {
+    return c('meet_2025: Feature').ngettext(msgid`${n} participant`, `${n} participants`, n);
+};
+
+export const getMaxParticipants = (n: number): PlanCardFeatureDefinition => {
     return {
         text: getMaxParticipantsText(n),
         included: true,
@@ -58,11 +62,11 @@ export const getMaxMeetingsText = (n: number) => {
     return c('meet_2025: Feature').ngettext(msgid`${n} active meeting at a time`, `${n} active meetings at a time`, n);
 };
 
-const getMaxActiveMeetings = (n: number): PlanCardFeatureDefinition => {
+export const getMaxActiveMeetings = (n: number): PlanCardFeatureDefinition => {
     return {
         text: getMaxMeetingsText(n),
         included: true,
-        icon: 'user',
+        icon: 'video-camera',
     };
 };
 
@@ -73,11 +77,11 @@ export const getMaxMeetingsPerDayText = (n: number | 'unlimited') => {
     return c('meet_2025: Feature').ngettext(msgid`Up to ${n} meeting per day`, `Up to ${n} meetings per day`, n);
 };
 
-const getMaxMeetingsPerDay = (n: number | 'unlimited'): PlanCardFeatureDefinition => {
+export const getMaxMeetingsPerDay = (n: number | 'unlimited'): PlanCardFeatureDefinition => {
     return {
         text: getMaxMeetingsPerDayText(n),
         included: true,
-        icon: 'calendar-list',
+        icon: 'mobile',
     };
 };
 
@@ -117,15 +121,28 @@ const getMeetAppointmentScheduling = (included: boolean): PlanCardFeatureDefinit
     };
 };
 
-export const getMeetMeetingRecordingText = () => {
-    return c('meet_2025: Feature').t`Meeting recording (coming soon)`;
+export const getMeetBookingPagesText = () => {
+    return c('meet_2025: Feature').t`Booking pages`;
 };
 
-const getMeetMeetingRecording = (included: boolean): PlanCardFeatureDefinition => {
+export const getMeetBookingPages = (included: boolean): PlanCardFeatureDefinition => {
+    return {
+        text: getMeetBookingPagesText(),
+        included: included,
+        icon: 'calendar-grid',
+    };
+};
+
+export const getMeetMeetingRecordingText = () => {
+    return c('meet_2025: Feature').t`Meeting recording`;
+};
+
+export const getMeetMeetingRecording = (included: boolean): PlanCardFeatureDefinition => {
     return {
         text: getMeetMeetingRecordingText(),
         included: included,
-        icon: 'video-camera',
+        icon: 'pass-laptop',
+        status: 'coming-soon',
     };
 };
 

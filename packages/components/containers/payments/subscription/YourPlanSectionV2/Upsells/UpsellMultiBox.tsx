@@ -58,7 +58,7 @@ const UpsellMultiBox = <E extends ElementType = typeof defaultElement>({
             >
                 <div className="flex flex-column lg:flex-row lg:justify-space-between lg:items-center gap-4 flex-nowrap">
                     <div>{header}</div>
-                    <div className="flex flex-column gap-2 lg:flex-row lg:flex-nowrap lg:justify-end max-w-fit-content">
+                    <div className="flex flex-column gap-2 lg:flex-row lg:flex-nowrap lg:justify-end max-w-fit-content shrink-0">
                         {headerActionArea}
                     </div>
                 </div>
