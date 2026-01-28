@@ -226,6 +226,11 @@ const MainContainer = () => {
         'DriveDashboard'
     );
 
+    const { showDashboard: showMeetDashboard, variant: showMeetDashboardVariant } = useShowDashboard(
+        app,
+        'MeetDashboard'
+    );
+
     const { isB2B: isB2BDrive } = useDrivePlan();
 
     const isB2BTrial = useIsB2BTrial(subscription, organization);
@@ -277,6 +282,8 @@ const MainContainer = () => {
         showPassDashboardVariant: showPassDashboardVariant.name,
         showDriveDashboard,
         showDriveDashboardVariant: showDriveDashboardVariant.name,
+        showMeetDashboard,
+        showMeetDashboardVariant: showMeetDashboardVariant.name,
         isAuthenticatorAvailable,
         hasPendingInvitations,
         isOLESEnabled,

@@ -14,6 +14,7 @@ import {
 } from '@proton/components/containers/payments/features/pass';
 import { IcAlias } from '@proton/icons/icons/IcAlias';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
+import { IcClock } from '@proton/icons/icons/IcClock';
 import { IcClockCircleFilled } from '@proton/icons/icons/IcClockCircleFilled';
 import { IcGlobe } from '@proton/icons/icons/IcGlobe';
 import { IcMobile } from '@proton/icons/icons/IcMobile';
@@ -21,12 +22,21 @@ import { IcServers } from '@proton/icons/icons/IcServers';
 import { IcUserFilled } from '@proton/icons/icons/IcUserFilled';
 import { IcUsers } from '@proton/icons/icons/IcUsers';
 import { IcVault } from '@proton/icons/icons/IcVault';
+import { IcVideoCamera } from '@proton/icons/icons/IcVideoCamera';
 import { type Subscription, getRenewalTime, subscriptionExpires } from '@proton/payments';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, FREE_VPN_CONNECTIONS } from '@proton/shared/lib/constants';
 import type { Organization, UserModel, VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { hasPassLifetime } from '@proton/shared/lib/user/helpers';
 import { getAutoSelectFromCountries, getCountriesWithoutPlus, getVpnDevices } from '@proton/shared/lib/vpn/features';
+
+import {
+    FREE_MAX_ACTIVE_MEETINGS,
+    FREE_MAX_PARTICIPANTS,
+    getMaxMeetingsText,
+    getMaxParticipantsShortText,
+    getMeetingMaxLengthText,
+} from '../../features/meet';
 
 const FeatureElement = ({
     icon,
@@ -164,17 +174,44 @@ export const FreeVaultFeatures = ({
 
     return (
         <ul className="m-0 unstyled flex gap-4">
-            <li className="flex flex-nowrap gap-1 items-center">
+            <li className="flex flex-nowrap gap-2 items-center">
                 <IcVault size={5} className="shrink-0 color-primary" />
                 {vaultText}
             </li>
-            <li className="flex flex-nowrap gap-1 items-center">
+            <li className="flex flex-nowrap gap-2 items-center">
                 <IcUsers size={5} className="shrink-0 color-primary" />
                 {vaultSharingText}
             </li>
-            <li className="flex flex-nowrap gap-1 items-center">
+            <li className="flex flex-nowrap gap-2 items-center">
                 <IcAlias size={5} className="shrink-0 color-primary" />
                 {emailAliasText}
+            </li>
+        </ul>
+    );
+};
+
+export const FreeMeetFeatures = ({ app, isFreeUser }: { app: APP_NAMES; isFreeUser: boolean }) => {
+    if (app !== APPS.PROTONMEET || !isFreeUser) {
+        return null;
+    }
+
+    const meetingText = getMeetingMaxLengthText('free');
+    const participantsText = getMaxParticipantsShortText(FREE_MAX_PARTICIPANTS);
+    const activeMeetingsText = getMaxMeetingsText(FREE_MAX_ACTIVE_MEETINGS);
+
+    return (
+        <ul className="m-0 unstyled flex gap-4">
+            <li className="flex flex-nowrap gap-2 items-center">
+                <IcClock size={5} className="shrink-0 color-success" />
+                {meetingText}
+            </li>
+            <li className="flex flex-nowrap gap-2 items-center">
+                <IcUsers size={5} className="shrink-0 color-success" />
+                {participantsText}
+            </li>
+            <li className="flex flex-nowrap gap-2 items-center">
+                <IcVideoCamera size={5} className="shrink-0 color-success" />
+                {activeMeetingsText}
             </li>
         </ul>
     );
