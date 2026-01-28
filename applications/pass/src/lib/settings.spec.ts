@@ -62,7 +62,7 @@ describe('settings', () => {
             });
 
             const result = resolveSettings(0);
-            expect(result).toEqual(legacySettings);
+            expect(result).toStrictEqual(legacySettings);
             expect(removeItem).toHaveBeenCalledWith(SETTINGS_STORAGE_KEY);
         });
 
@@ -75,7 +75,7 @@ describe('settings', () => {
             });
 
             const result = resolveSettings(0);
-            expect(result).toEqual(storedSettings);
+            expect(result).toStrictEqual(storedSettings);
         });
     });
 });
