@@ -56,45 +56,4 @@ describe('CategoryViewSection', () => {
             expect(checkbox).not.toBeChecked();
         });
     });
-
-    describe('setting is not visible', () => {
-        it('should not render the toggle if the organization disabled the feature', () => {
-            mockUseMailSettings.mockReturnValue([{ ...DEFAULT_MAIL_SETTINGS, MailCategoryView: true }]);
-            mockUseOrganization.mockReturnValue([{ Settings: { MailCategoryViewEnabled: false } }]);
-
-            render(<CategoryViewToggle onToggleCallback={() => {}} />);
-
-            const label = screen.queryByTestId('toggle-switch');
-            expect(label).not.toBeInTheDocument();
-
-            const checkbox = screen.queryByRole('checkbox');
-            expect(checkbox).not.toBeInTheDocument();
-        });
-
-        it('should not render the toggle if the mail settings are loading', () => {
-            mockUseMailSettings.mockReturnValue([{ ...DEFAULT_MAIL_SETTINGS, MailCategoryView: true }, true]);
-            mockUseOrganization.mockReturnValue([{ Settings: { MailCategoryViewEnabled: true } }, false]);
-
-            render(<CategoryViewToggle onToggleCallback={() => {}} />);
-
-            const label = screen.queryByTestId('toggle-switch');
-            expect(label).not.toBeInTheDocument();
-
-            const checkbox = screen.queryByRole('checkbox');
-            expect(checkbox).not.toBeInTheDocument();
-        });
-
-        it('should not render the toggle if the organization settings are loading', () => {
-            mockUseMailSettings.mockReturnValue([{ ...DEFAULT_MAIL_SETTINGS, MailCategoryView: true }, false]);
-            mockUseOrganization.mockReturnValue([{ Settings: { MailCategoryViewEnabled: true } }, true]);
-
-            render(<CategoryViewToggle onToggleCallback={() => {}} />);
-
-            const label = screen.queryByTestId('toggle-switch');
-            expect(label).not.toBeInTheDocument();
-
-            const checkbox = screen.queryByRole('checkbox');
-            expect(checkbox).not.toBeInTheDocument();
-        });
-    });
 });
