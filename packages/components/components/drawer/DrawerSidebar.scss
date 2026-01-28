@@ -55,8 +55,7 @@ im.$media-expressions: $media-expressions;
 		}
 	}
 
-	&--hide-on-tablet,
-	&--drawer-app-opened {
+	&--hide-on-tablet {
 		@include im.media('<=#{em($breakpoint-for-drawer, 16)}') {
 			display: none;
 		}
