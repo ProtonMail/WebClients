@@ -51,7 +51,8 @@ const validateAddUser = ({
         return c('Error').t`You have used all users in your plan. Please upgrade your plan to add a new user.`;
     }
     if (!disableAddressValidation && MaxAddresses - UsedAddresses < 1) {
-        return c('Error').t`You have used all addresses in your plan. Please upgrade your plan to add a new address.`;
+        return c('Error')
+            .t`You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.`;
     }
     if (!disableStorageValidation && MaxSpace - AssignedSpace < 1) {
         return c('Error').t`All storage space has been allocated. Please reduce storage allocated to other users.`;
