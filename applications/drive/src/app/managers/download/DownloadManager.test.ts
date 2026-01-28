@@ -418,8 +418,12 @@ describe('DownloadManager', () => {
 
         sdkMock.driveMock.getFileDownloader.mockResolvedValue(fileDownloader);
 
+        const cancelDeferred = createDeferred<void>();
         const readableStream = {
-            cancel: jest.fn(),
+            cancel: jest.fn(() => {
+                cancelDeferred.resolve();
+                return Promise.resolve();
+            }),
             locked: false,
         } as unknown as ReadableStream<Uint8Array<ArrayBuffer>>;
         loadCreateReadableStreamWrapperMock.mockResolvedValue(readableStream);
@@ -434,7 +438,8 @@ describe('DownloadManager', () => {
 
         controllerCompletion.reject(new TransferCancel({ message: 'cancelled' }));
         await flushAsync();
-        await completionPromise;
+        await expect(completionPromise).rejects.toBeInstanceOf(TransferCancel);
+        await cancelDeferred.promise;
 
         expect(storeMockState.updateDownloadItem.mock.calls).toContainEqual([
             'download-cancel',
