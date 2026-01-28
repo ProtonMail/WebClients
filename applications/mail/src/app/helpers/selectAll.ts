@@ -1,11 +1,10 @@
 import { c, msgid } from 'ttag';
 
+import { getLabelFromCategoryId } from '@proton/mail/features/categoriesView/categoriesStringHelpers';
 import { isCategoryLabel } from '@proton/mail/helpers/location';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Label } from '@proton/shared/lib/interfaces';
 import type { Folder } from '@proton/shared/lib/interfaces/Folder';
-
-import { getLabelFromCategoryId } from 'proton-mail/components/categoryView/categoriesStringHelpers';
 
 import { getLabelName } from './labels';
 
