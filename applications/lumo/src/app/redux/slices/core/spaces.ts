@@ -120,18 +120,6 @@ const spacesReducer = createReducer<SpaceMap>(initialState, (builder) => {
             console.log('Action triggered: pullSpacesFailure');
             return state;
         })
-        .addCase(pullSpaceRequest, (state, action) => {
-            console.log('Action triggered: pullSpaceRequest', action.payload);
-            return state;
-        })
-        .addCase(pullSpaceSuccess, (state, action) => {
-            console.log('Action triggered: pullSpaceSuccess', action.payload);
-            return state;
-        })
-        .addCase(pullSpaceFailure, (state, action) => {
-            console.log('Action triggered: pullSpaceFailure', action.payload);
-            return state;
-        })
         .addCase(pushSpaceRequest, (state, action) => {
             console.log('Action triggered: pushSpaceRequest', action.payload);
             return state;
