@@ -2,7 +2,7 @@ export const PAGE_SIZE = 15;
 
 export const SCREEN_SHARE_PAGE_SIZE = 6;
 
-export const SMALL_SCREEN_PAGE_SIZE = 6;
+export const SMALL_SCREEN_PAGE_SIZE = 4;
 
 export const JOIN_TITLE_TIMEOUT = 2000;
 
