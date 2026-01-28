@@ -53,7 +53,6 @@ describe('GatewayCountrySelection', () => {
     const defaultModel: GatewayDto = getInitialModel(mockLocations);
 
     const defaultProps = {
-        singleServer: false,
         locations: mockLocations,
         ownedCount: 10,
         usedCount: 3,

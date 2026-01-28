@@ -41,7 +41,6 @@ interface Props extends ModalProps<typeof Form> {
     groups: GatewayGroup[];
     countryOptions: CountryOptions;
     isEditing?: boolean;
-    singleServer?: boolean;
     showCancelButton?: boolean;
     onSubmitDone: (server: GatewayModel) => Promise<void>;
 }
@@ -62,7 +61,6 @@ const GatewayModal = ({
     countryOptions,
     onSubmitDone,
     isEditing = false,
-    singleServer = false,
     showCancelButton = false,
     ...rest
 }: Props) => {
@@ -93,8 +91,8 @@ const GatewayModal = ({
         [totalCountExceeded, specificCountryCount]
     );
     const canContinue = useMemo(
-        () => step !== STEP.COUNTRIES || !(needUpsell || (!singleServer && totalAddedCount < 1)),
-        [step, needUpsell, singleServer, totalAddedCount]
+        () => step !== STEP.COUNTRIES || !(needUpsell || totalAddedCount < 1),
+        [step, needUpsell, totalAddedCount]
     );
 
     const changeModel = (diff: Partial<GatewayDto>) => setModel((model: GatewayDto) => ({ ...model, ...diff }));
@@ -159,7 +157,7 @@ const GatewayModal = ({
         }
 
         const dtoBody: GatewayModel =
-            singleServer || total === 1
+            total === 1
                 ? {
                       Name: model.name,
                       Location: model.location,
@@ -229,7 +227,6 @@ const GatewayModal = ({
                             )}
                             {step === STEP.COUNTRIES && (
                                 <GatewayCountrySelection
-                                    singleServer={singleServer}
                                     locations={locations}
                                     ownedCount={ownedCount}
                                     usedCount={usedCount}

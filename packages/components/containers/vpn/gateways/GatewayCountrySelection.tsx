@@ -5,17 +5,12 @@ import { c, msgid } from 'ttag';
 
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
-import Field from '@proton/components/components/container/Field';
-import Row from '@proton/components/components/container/Row';
 import Icon from '@proton/components/components/icon/Icon';
 import Checkbox from '@proton/components/components/input/Checkbox';
 import Label from '@proton/components/components/label/Label';
 import Info from '@proton/components/components/link/Info';
-import Option from '@proton/components/components/option/Option';
-import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
-import type { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
 import { useNow } from '@proton/components/hooks/useNow';
-import { type CountryOptions, getLocalizedCountryByAbbr } from '@proton/payments';
+import type { CountryOptions } from '@proton/payments';
 import { useIsB2BTrial } from '@proton/payments/ui';
 import { SECOND } from '@proton/shared/lib/constants';
 
@@ -27,7 +22,6 @@ import type { GatewayLocation } from './GatewayLocation';
 import { getLocationDisplayName, getLocationFromId, getLocationId } from './helpers';
 
 interface Props {
-    singleServer: boolean;
     locations: readonly GatewayLocation[];
     ownedCount: number;
     usedCount: number;
@@ -42,7 +36,6 @@ interface Props {
 }
 
 export const GatewayCountrySelection = ({
-    singleServer,
     locations,
     ownedCount,
     usedCount,
@@ -65,9 +58,6 @@ export const GatewayCountrySelection = ({
     const unassignedAvailableCount = deletedDedicatedIPs?.length || 0;
     const totalCountExceeded = addedCount >= remainingCount - (deletedDedicatedIPs?.length || 0);
     const now = useNow(10 * SECOND);
-
-    const handleUnassigningLocationChange = ({ value }: SelectChangeEvent<string>) =>
-        changeModel({ location: getLocationFromId(value) });
 
     const handleUnassigningLocationChecked = (event: ChangeEvent<HTMLInputElement>, location: GatewayLocation) => {
         const unassignedIpQuantities = {
@@ -136,25 +126,7 @@ export const GatewayCountrySelection = ({
         return model?.checkedLocations?.some((ip) => JSON.stringify(ip) === JSON.stringify(location));
     };
 
-    return singleServer ? (
-        <Row>
-            <Label htmlFor="domain">{c('Label').t`Country`}</Label>
-            <Field>
-                <SelectTwo value={getLocationId(model.location)} onChange={handleUnassigningLocationChange}>
-                    {locations.map((location) => {
-                        const country = getLocalizedCountryByAbbr(location.Country, countryOptions) || location.Country;
-                        const title = getLocationDisplayName(location, countryOptions);
-
-                        return (
-                            <Option key={getLocationId(location)} value={title} title={title}>
-                                <CountryFlagAndName countryCode={location.Country} countryName={country} />
-                            </Option>
-                        );
-                    })}
-                </SelectTwo>
-            </Field>
-        </Row>
-    ) : (
+    return (
         <>
             {unassignedAvailableCount !== 0 && (
                 <div>
