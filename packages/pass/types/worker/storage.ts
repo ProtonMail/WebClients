@@ -15,6 +15,7 @@ export interface Store<T = StorageData, K extends keyof T = keyof T> {
     set: (key: K, value: T[K]) => void;
     get: (key: K) => MaybeNull<T[K]>;
     reset: () => void;
+    flush?: () => void;
 }
 
 export interface Storage<T = StorageData> {
