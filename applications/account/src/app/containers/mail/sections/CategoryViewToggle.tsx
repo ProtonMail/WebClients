@@ -3,6 +3,9 @@ import { c } from 'ttag';
 import { useOrganization } from '@proton/account/organization/hooks';
 import Info from '@proton/components/components/link/Info';
 import Toggle from '@proton/components/components/toggle/Toggle';
+import SettingsLayout from '@proton/components/containers/account/SettingsLayout';
+import SettingsLayoutLeft from '@proton/components/containers/account/SettingsLayoutLeft';
+import SettingsLayoutRight from '@proton/components/containers/account/SettingsLayoutRight';
 import useApi from '@proton/components/hooks/useApi';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import useToggle from '@proton/components/hooks/useToggle';
@@ -14,11 +17,11 @@ import { updateMailCategoryView } from '@proton/shared/lib/api/mailSettings';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 import useFlag from '@proton/unleash/useFlag';
 
-import SettingsLayout from '../account/SettingsLayout';
-import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
-import SettingsLayoutRight from '../account/SettingsLayoutRight';
+interface Props {
+    onToggleCallback: (state: boolean) => void;
+}
 
-export const CategoryViewSection = () => {
+export const CategoryViewToggle = ({ onToggleCallback }: Props) => {
     const api = useApi();
 
     const [mailSettings, loadingMailSettings] = useMailSettings();
@@ -38,6 +41,7 @@ export const CategoryViewSection = () => {
     }
 
     const handleChange = async (checked: boolean) => {
+        onToggleCallback(checked);
         const response = await api<{ MailSettings: MailSettings }>(updateMailCategoryView(checked));
         dispatch(mailSettingsActions.updateMailSettings(response.MailSettings));
 
@@ -49,7 +53,7 @@ export const CategoryViewSection = () => {
         <SettingsLayout className="w-full">
             <SettingsLayoutLeft>
                 <label htmlFor="toggleCategoryView" className="text-semibold">
-                    <span className="mr-2">{c('Label').t`Email categories`}</span>
+                    <span className="mr-2">{c('Label').t`Use email categories`}</span>
                     <Info title={c('Tooltip').t`Emails in your inbox are shown organized into categories`} />
                 </label>
             </SettingsLayoutLeft>

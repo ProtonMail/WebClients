@@ -1,7 +1,7 @@
 import { createSelector } from '@reduxjs/toolkit';
 
 import type { CategoryTab } from '@proton/mail/features/categoriesView/categoriesConstants';
-import { getCategoryData } from '@proton/mail/features/categoriesView/categoriesHelpers';
+import { getCategoryTabFromLabel } from '@proton/mail/features/categoriesView/categoriesHelpers';
 import { isCategoryLabel } from '@proton/mail/helpers/location';
 import type { Label } from '@proton/shared/lib/interfaces';
 
@@ -22,12 +22,7 @@ export const selectDisabledCategoriesIDs = createSelector([selectCategoriesLabel
 export const selectCategoriesTabs = createSelector([selectCategoriesLabel], (categoriesStore) => {
     return (
         categoriesStore?.map((category): CategoryTab => {
-            const data = getCategoryData(category.ID);
-            return {
-                ...data,
-                display: !!category.Display,
-                notify: !!category.Notify,
-            };
+            return getCategoryTabFromLabel(category);
         }) || []
     );
 });

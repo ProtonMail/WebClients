@@ -1,10 +1,9 @@
 import type { CategoryTab } from '@proton/mail';
+import { getLabelFromCategoryId } from '@proton/mail/features/categoriesView/categoriesStringHelpers';
 import { ACCENT_COLORS } from '@proton/shared/lib/colors';
 
 import type { SystemFolder } from 'proton-mail/hooks/useMoveSystemFolders';
 import { SYSTEM_FOLDER_SECTION } from 'proton-mail/hooks/useMoveSystemFolders';
-
-import { getLabelFromCategoryId } from './categoriesStringHelpers';
 
 export const getCategorySystemFolder = (category: CategoryTab): SystemFolder => {
     const label = getLabelFromCategoryId(category.id);
