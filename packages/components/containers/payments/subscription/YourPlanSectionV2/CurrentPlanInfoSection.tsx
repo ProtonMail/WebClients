@@ -42,6 +42,7 @@ import { getReactivateSubscriptionAction } from '../helpers/subscriptionExpires'
 import { getSubscriptionPanelText } from '../helpers/subscriptionPanelHelpers';
 import {
     BillingDateSection,
+    FreeMeetFeatures,
     FreeVPNFeatures,
     FreeVaultFeatures,
     ServersSection,
@@ -297,6 +298,7 @@ export const CurrentPlanInfoSection = ({
                 <ServersSection app={app} organization={organization} />
                 <FreeVPNFeatures app={app} serversCount={serversCount} isFreeUser={isFree} />
                 <FreeVaultFeatures app={app} isFreeUser={isFree} user={user} />
+                <FreeMeetFeatures app={app} isFreeUser={isFree} />
             </div>
             {cta && <div className="flex items-center w-full xl:w-auto">{cta}</div>}
         </div>

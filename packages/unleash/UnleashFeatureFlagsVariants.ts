@@ -11,6 +11,7 @@ export const FLAGS_WITH_VARIANT = [
     'MailDashboard',
     'PassDashboard',
     'DriveDashboard',
+    'MeetDashboard',
     'InboxBringYourOwnEmailSignup',
     'WebApiRateLimiter',
 ] satisfies FeatureFlag[];
@@ -26,6 +27,7 @@ export type VPNDashboardVariant = 'Control' | 'A' | 'B';
 export type MailDashboardVariant = 'A' | 'B';
 export type PassDashboardVariant = 'A' | 'B';
 export type DriveDashboardVariant = 'A' | 'B';
+export type MeetDashboardVariant = 'A' | 'B';
 export type InboxBringYourOwnEmailSignupVariant = 'Control' | 'Bold' | 'Light';
 export type WebApiRateLimiterVariant = 'Config';
 
@@ -51,6 +53,7 @@ type FeatureFlagVariantMap = {
     MailDashboard: VariantReturnType<MailDashboardVariant>;
     PassDashboard: VariantReturnType<PassDashboardVariant>;
     DriveDashboard: VariantReturnType<DriveDashboardVariant>;
+    MeetDashboard: VariantReturnType<MeetDashboardVariant>;
     InboxBringYourOwnEmailSignup: VariantReturnType<InboxBringYourOwnEmailSignupVariant>;
     WebApiRateLimiter: VariantReturnType<WebApiRateLimiterVariant>;
 };
