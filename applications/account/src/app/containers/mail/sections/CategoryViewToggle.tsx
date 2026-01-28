@@ -1,6 +1,5 @@
 import { c } from 'ttag';
 
-import { useOrganization } from '@proton/account/organization/hooks';
 import Info from '@proton/components/components/link/Info';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import SettingsLayout from '@proton/components/containers/account/SettingsLayout';
@@ -15,7 +14,6 @@ import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { updateMailCategoryView } from '@proton/shared/lib/api/mailSettings';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
-import useFlag from '@proton/unleash/useFlag';
 
 interface Props {
     onToggleCallback: (state: boolean) => void;
@@ -24,21 +22,12 @@ interface Props {
 export const CategoryViewToggle = ({ onToggleCallback }: Props) => {
     const api = useApi();
 
-    const [mailSettings, loadingMailSettings] = useMailSettings();
-    const [organization, loadingOrganization] = useOrganization();
+    const [mailSettings] = useMailSettings();
 
     const [loading, withLoading] = useLoading();
     const { state, toggle } = useToggle(mailSettings.MailCategoryView);
     const { createNotification } = useNotifications();
     const dispatch = useDispatch();
-
-    const isCategoryViewEnabled = useFlag('CategoryView');
-
-    const loadingData = loadingMailSettings || loadingOrganization;
-
-    if (!isCategoryViewEnabled || (organization && !organization?.Settings.MailCategoryViewEnabled) || loadingData) {
-        return null;
-    }
 
     const handleChange = async (checked: boolean) => {
         onToggleCallback(checked);

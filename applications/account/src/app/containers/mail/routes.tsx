@@ -8,8 +8,10 @@ import { ADDRESS_TYPE, APPS, MAIL_APP_NAME } from '@proton/shared/lib/constants'
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import type { Address, Organization, UserModel } from '@proton/shared/lib/interfaces';
+import type { Address, OrganizationExtended, UserModel } from '@proton/shared/lib/interfaces';
 import { getIsExternalAccount } from '@proton/shared/lib/keys';
+import { MailFeatureFlag } from '@proton/unleash/UnleashFeatureFlags';
+import { getStandaloneUnleashClient } from '@proton/unleash/standaloneClient';
 
 export const getHasPmMeAddress = (addresses?: Address[]) => {
     return !!addresses?.some(({ Type }) => Type === ADDRESS_TYPE.TYPE_PREMIUM);
@@ -37,7 +39,7 @@ export const getMailAppRoutes = ({
     app: APP_NAMES;
     user: UserModel;
     addresses?: Address[];
-    organization?: Organization;
+    organization?: OrganizationExtended;
     isCryptoPostQuantumOptInEnabled?: boolean;
 }): SidebarConfig => {
     const hasOrganizationKey = hasOrganizationSetupWithKeys(organization);
@@ -45,6 +47,10 @@ export const getMailAppRoutes = ({
         <Href key="learn" href={getKnowledgeBaseUrl('/using-folders-labels')}>{c('Link').t`Learn more`}</Href>
     );
     const mailRouteTitles = getMailRouteTitles();
+
+    const unleashClient = getStandaloneUnleashClient();
+    const categoryEnabled = unleashClient?.isEnabled(MailFeatureFlag.CategoryView);
+
     return {
         available: app === APPS.PROTONMAIL,
         header: MAIL_APP_NAME,
@@ -73,6 +79,7 @@ export const getMailAppRoutes = ({
                     {
                         text: c('Title').t`Email categories`,
                         id: 'categories',
+                        available: categoryEnabled || (organization && !organization?.Settings.MailCategoryViewEnabled),
                     },
                     {
                         text: c('Title').t`Layout`,

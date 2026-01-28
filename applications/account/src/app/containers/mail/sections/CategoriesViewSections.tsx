@@ -15,7 +15,6 @@ import { updateLabel } from '@proton/mail/store/labels/actions';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import useFlag from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import { CategoryViewToggle } from './CategoryViewToggle';
@@ -28,14 +27,9 @@ export const CategoriesViewSections = () => {
     const dispatch = useDispatch();
 
     const [mailSettings] = useMailSettings();
-    const isCategoryViewEnabled = useFlag('CategoryView');
     const { categoriesStore } = useCategoriesData();
 
     const [expandState, setExpandState] = useState(mailSettings.MailCategoryView);
-
-    if (!isCategoryViewEnabled) {
-        return null;
-    }
 
     const handleCategoryUpdate = async (category: CategoryTab) => {
         if (!expandState) {
