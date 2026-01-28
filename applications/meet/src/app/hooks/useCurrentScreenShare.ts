@@ -80,12 +80,18 @@ export function useCurrentScreenShare({
 
             if (
                 err.message === 'Permission denied by user' ||
+                err.message ===
+                    'The request is not allowed by the user agent or the platform in the current context.' ||
                 (err.message === 'Could not start video source' && isElectronApp)
             ) {
                 return;
             }
 
-            if (err.message === 'The object can not be found here.') {
+            if (
+                err.message === 'The object can not be found here.' ||
+                err.message ===
+                    'The request is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.'
+            ) {
                 notifications.createNotification({
                     type: 'error',
                     text: c('Error').t`Please allow screen sharing in your system permissions, then try again`,
