@@ -25,20 +25,21 @@ export const createFeatureFlagService = (): FeatureFlagService => {
     const state: FeatureFlagServiceState = { features: null };
 
     return {
-        resolve: withContext(
-            async ({ service }) =>
-                (state.features =
-                    state.features ??
-                    (await (async () => {
-                        try {
-                            const data = await service.storage.local.getItem('features');
-                            return data ? JSON.parse(data) : DEFAULT_PASS_FEATURES;
-                        } catch {
-                            logger.error('[FeatureFlagService] Failed parsing local feature flags');
-                            return DEFAULT_PASS_FEATURES;
-                        }
-                    })()))
-        ),
+        resolve: withContext(async ({ service }) => {
+            state.features =
+                state.features ??
+                (await (async () => {
+                    try {
+                        const data = await service.storage.local.getItem('features');
+                        return data ? JSON.parse(data) : DEFAULT_PASS_FEATURES;
+                    } catch {
+                        logger.error('[FeatureFlagService] Failed parsing local feature flags');
+                        return DEFAULT_PASS_FEATURES;
+                    }
+                })());
+
+            return { ...state.features };
+        }),
 
         clear: withContext(async ({ service }) => {
             state.features = null;
@@ -46,7 +47,7 @@ export const createFeatureFlagService = (): FeatureFlagService => {
         }),
 
         sync: withContext(({ service }, features) => {
-            state.features = features;
+            state.features = { ...features };
 
             WorkerMessageBroker.ports.broadcast(
                 backgroundMessage({
