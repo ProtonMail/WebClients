@@ -15,14 +15,10 @@ import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { updateMailCategoryView } from '@proton/shared/lib/api/mailSettings';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 
-interface Props {
-    onToggleCallback: (state: boolean) => void;
-}
-
-export const CategoryViewToggle = ({ onToggleCallback }: Props) => {
+export const CategoryViewToggle = () => {
     const api = useApi();
 
-    const [mailSettings] = useMailSettings();
+    const [mailSettings, mailSettingsLoading] = useMailSettings();
 
     const [loading, withLoading] = useLoading();
     const { state, toggle } = useToggle(mailSettings.MailCategoryView);
@@ -30,7 +26,6 @@ export const CategoryViewToggle = ({ onToggleCallback }: Props) => {
     const dispatch = useDispatch();
 
     const handleChange = async (checked: boolean) => {
-        onToggleCallback(checked);
         const response = await api<{ MailSettings: MailSettings }>(updateMailCategoryView(checked));
         dispatch(mailSettingsActions.updateMailSettings(response.MailSettings));
 
@@ -51,7 +46,7 @@ export const CategoryViewToggle = ({ onToggleCallback }: Props) => {
                     id="toggleCategoryView"
                     checked={state}
                     onChange={({ target }) => withLoading(handleChange(target.checked))}
-                    loading={loading}
+                    loading={loading || mailSettingsLoading}
                 />
             </SettingsLayoutRight>
         </SettingsLayout>

@@ -32,7 +32,7 @@ describe('CategoryViewSection', () => {
             mockUseMailSettings.mockReturnValue([{ ...DEFAULT_MAIL_SETTINGS, MailCategoryView: true }]);
             mockUseOrganization.mockReturnValue([{ Settings: { MailCategoryViewEnabled: true } }]);
 
-            render(<CategoryViewToggle onToggleCallback={() => {}} />);
+            render(<CategoryViewToggle />);
 
             const label = screen.getByTestId('toggle-switch');
             expect(label).toBeInTheDocument();
@@ -46,7 +46,7 @@ describe('CategoryViewSection', () => {
             mockUseMailSettings.mockReturnValue([{ ...DEFAULT_MAIL_SETTINGS, MailCategoryView: false }]);
             mockUseOrganization.mockReturnValue([{ Settings: { MailCategoryViewEnabled: true } }]);
 
-            render(<CategoryViewToggle onToggleCallback={() => {}} />);
+            render(<CategoryViewToggle />);
 
             const label = screen.getByTestId('toggle-switch');
             expect(label).toBeInTheDocument();
