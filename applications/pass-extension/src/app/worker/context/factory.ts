@@ -44,6 +44,7 @@ import {
     clientDisabled,
     clientLocked,
     clientOffline,
+    clientPasswordLocked,
     clientStatusResolved,
 } from '@proton/pass/lib/client';
 import { exposePassCrypto } from '@proton/pass/lib/crypto';
@@ -171,10 +172,10 @@ export const createWorkerContext = (config: ProtonConfig) => {
         const localID = authStore.getLocalID();
         const online = status === ConnectivityStatus.ONLINE;
         const appStatus = context.getState().status;
-        const bootedOffline = clientOffline(appStatus);
-        const shouldAutoResume = online && bootedOffline;
 
-        if (shouldAutoResume) context.service.store.dispatch(offlineResume.intent({ localID }));
+        if (!online) return;
+        else if (clientOffline(appStatus)) context.service.store.dispatch(offlineResume.intent({ localID }));
+        else if (clientPasswordLocked(appStatus)) context.service.auth.init({ forceLock: true }).catch(noop);
     });
 
     /* Watch for `lockSetup` state changes. Notify all extension
