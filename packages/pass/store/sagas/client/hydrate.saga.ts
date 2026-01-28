@@ -13,7 +13,6 @@ import { migrate } from '@proton/pass/store/migrate';
 import type { HydratedUserState } from '@proton/pass/store/reducers';
 import type { OrganizationState } from '@proton/pass/store/reducers/organization';
 import type { SettingsState } from '@proton/pass/store/reducers/settings';
-import { selectProxiedSettings } from '@proton/pass/store/selectors';
 import type { RootSagaOptions, State } from '@proton/pass/store/types';
 import { type Maybe, PlanType } from '@proton/pass/types';
 import type { EncryptedPassCache, PassCache } from '@proton/pass/types/worker/cache';
@@ -39,7 +38,7 @@ export type HydrationResult = { fromCache: boolean; version?: string };
  * boolean flag indicating wether hydration happened from cache or not. */
 export function* hydrate(
     config: HydrateCacheOptions,
-    { getCache, getAuthService, getAuthStore, getSettings, getConfig, onBeforeHydrate, onSettingsUpdated, extensionId }: RootSagaOptions
+    { getCache, getAuthService, getAuthStore, getSettings, getConfig, onBeforeHydrate, extensionId }: RootSagaOptions
 ): Generator<any, HydrationResult> {
     try {
         const authStore = getAuthStore();
@@ -115,11 +114,7 @@ export function* hydrate(
         const currentState: State = yield select();
 
         const prev = cachedState ? config.merge(currentState, partialMerge(cachedState, incoming)) : partialMerge(currentState, incoming);
-
         const next: State = yield (onBeforeHydrate ?? identity)(prev, fromCache);
-
-        /** Sync the local settings */
-        yield onSettingsUpdated?.(selectProxiedSettings(next));
 
         /** If `keyPassword` is not defined then we may be dealing with an offline
          * state hydration in which case hydrating PassCrypto would throw. In such

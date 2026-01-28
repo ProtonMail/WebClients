@@ -61,8 +61,7 @@ describe('createSettingsService', () => {
 
         const cachedResult = await service.resolve();
         expect(read).toHaveBeenCalledTimes(1);
-        expect(cachedResult).toEqual(result);
-        expect(cachedResult).toBe(result);
+        expect(cachedResult).toStrictEqual(result);
     });
 
     test('clear should reset cache and force next resolve to read from storage', async () => {
@@ -92,7 +91,7 @@ describe('createSettingsService', () => {
 
         expect(result).toEqual({ ...getInitialSettings(), ...initialSettings });
         expect(read).toHaveBeenCalledTimes(1);
-        expect(syncedResult).toBe(updatedSettings);
+        expect(syncedResult).toStrictEqual(updatedSettings);
     });
 
     test('resolve should work correctly with localID parameter', async () => {
