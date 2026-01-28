@@ -1,22 +1,17 @@
-import { useState } from 'react';
-
 import { c } from 'ttag';
 
-import { Checkbox, Icon, Info, Label, Toggle } from '@proton/components';
+import { Info } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
 import type { CategoryTab } from '@proton/mail';
 import { useCategoriesData } from '@proton/mail';
 import { getCategoryTabFromLabel } from '@proton/mail/features/categoriesView/categoriesHelpers';
-import {
-    getDescriptionFromCategoryId,
-    getLabelFromCategoryId,
-} from '@proton/mail/features/categoriesView/categoriesStringHelpers';
 import { updateLabel } from '@proton/mail/store/labels/actions';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
+import { CategorySettingsItem } from './CategorySettingsItem';
 import { CategoryViewToggle } from './CategoryViewToggle';
 
 import './CategoriesViewSections.scss';
@@ -29,10 +24,8 @@ export const CategoriesViewSections = () => {
     const [mailSettings] = useMailSettings();
     const { categoriesStore } = useCategoriesData();
 
-    const [expandState, setExpandState] = useState(mailSettings.MailCategoryView);
-
     const handleCategoryUpdate = async (category: CategoryTab) => {
-        if (!expandState) {
+        if (!mailSettings.MailCategoryView) {
             return;
         }
 
@@ -48,13 +41,13 @@ export const CategoriesViewSections = () => {
             Notify: category.notify ? 1 : 0,
         };
 
-        void withLoading(dispatch(updateLabel({ labelID: category.id, label: newCategory })));
+        await withLoading(dispatch(updateLabel({ labelID: category.id, label: newCategory })));
     };
 
     return (
         <div className="categories-section">
-            <CategoryViewToggle onToggleCallback={(value) => setExpandState(value)} />
-            <div className={clsx('wrapper', expandState && 'is-open')}>
+            <CategoryViewToggle />
+            <div className={clsx('wrapper', mailSettings.MailCategoryView && 'is-open')}>
                 <div className="inner">
                     <div className="categories-header flex justify-space-between items-center border border-weak p-4">
                         <p className="m-0 text-semibold text-sm">{c('Label').t`Categories`}</p>
@@ -67,52 +60,16 @@ export const CategoriesViewSections = () => {
                         .filter((category) => category.ID !== MAILBOX_LABEL_IDS.CATEGORY_DEFAULT)
                         .map((tmp, index, arr) => {
                             const category = getCategoryTabFromLabel(tmp);
-                            const categoryLabel = getLabelFromCategoryId(category.id);
                             const isLast = index === arr.length - 1;
 
                             return (
-                                <div
+                                <CategorySettingsItem
                                     key={category.id}
-                                    className={clsx(
-                                        'flex border-bottom border-left border-right border-weak px-4 py-2',
-                                        isLast && 'category-last'
-                                    )}
-                                >
-                                    <Toggle
-                                        id={`enable-${category.id}`}
-                                        className="self-center mr-3"
-                                        checked={category.display}
-                                        onClick={() =>
-                                            handleCategoryUpdate({ ...category, display: !category.display })
-                                        }
-                                        data-testid={`${category.id}-display`}
-                                        disabled={loading}
-                                    />
-
-                                    <Label htmlFor={`enable-${category.id}`} className="p-0 flex-1 flex gap-3">
-                                        <Icon
-                                            name={category.icon}
-                                            className="mt-0.5 mail-category-color self-center"
-                                            data-color={category.colorShade}
-                                        />
-                                        <div className="flex flex-column">
-                                            <span>{categoryLabel}</span>
-                                            <span className="color-weak text-sm">
-                                                {getDescriptionFromCategoryId(category.id)}
-                                            </span>
-                                        </div>
-                                    </Label>
-
-                                    <label className="sr-only" htmlFor={`notification-${category.id}`}>{c('Info')
-                                        .t`Receive notifications for ${categoryLabel}`}</label>
-                                    <Checkbox
-                                        id={`notification-${category.id}`}
-                                        checked={category.notify}
-                                        onChange={() => handleCategoryUpdate({ ...category, notify: !category.notify })}
-                                        data-testid={`${category.id}-notify`}
-                                        disabled={loading}
-                                    />
-                                </div>
+                                    onUpdate={handleCategoryUpdate}
+                                    category={category}
+                                    loading={loading}
+                                    isLast={isLast}
+                                />
                             );
                         })}
                 </div>
