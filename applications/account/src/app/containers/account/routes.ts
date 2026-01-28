@@ -43,6 +43,7 @@ import { getHasStorageSplit } from '@proton/shared/lib/user/storage';
 import type {
     DriveDashboardVariant,
     MailDashboardVariant,
+    MeetDashboardVariant,
     PassDashboardVariant,
     VPNDashboardVariant,
 } from '@proton/unleash/UnleashFeatureFlagsVariants';
@@ -98,7 +99,7 @@ function getV1DashboardSections(
     subscription: Subscription | undefined,
     cancellableOnlyViaSupport: boolean,
     hasExternalMemberCapableB2BPlan: boolean,
-    showBusinessActivation: boolean,
+    showBusinessActivation: boolean
 ) {
     return [
         {
@@ -199,6 +200,7 @@ export const getAccountAppRoutes = ({
     showMailDashboard,
     showPassDashboard,
     showDriveDashboard,
+    showMeetDashboard,
     hasPendingInvitations,
     isOLESEnabled,
 }: {
@@ -233,6 +235,8 @@ export const getAccountAppRoutes = ({
     showPassDashboardVariant: PassDashboardVariant | 'disabled' | undefined;
     showDriveDashboard: boolean;
     showDriveDashboardVariant: DriveDashboardVariant | 'disabled' | undefined;
+    showMeetDashboard: boolean;
+    showMeetDashboardVariant: MeetDashboardVariant | 'disabled' | undefined;
     hasPendingInvitations: boolean;
     isOLESEnabled: boolean;
 }) => {
@@ -272,7 +276,9 @@ export const getAccountAppRoutes = ({
         getHasStorageSplit(user) && !getHasVpnB2BPlan(subscription) && app !== APPS.PROTONVPN_SETTINGS;
 
     const showEasySwitchSection =
-        (!isExternalUser || isBYOEUser) && !(app === APPS.PROTONPASS || app === APPS.PROTONAUTHENTICATOR || app === APPS.PROTONMEET) && !isSSOUser;
+        (!isExternalUser || isBYOEUser) &&
+        !(app === APPS.PROTONPASS || app === APPS.PROTONAUTHENTICATOR || app === APPS.PROTONMEET) &&
+        !isSSOUser;
 
     const showVideoConferenceSection =
         (isZoomIntegrationEnabled || isProtonMeetIntegrationEnabled) &&
@@ -291,7 +297,8 @@ export const getAccountAppRoutes = ({
 
     const shouldShowDashboard = isFree || canPay || !isMember || (isPaid && canPay);
     // We do not have to check app names here as the hook responsible to populate these values will do it for us.
-    const shouldShowV2Dashboard = showVPNDashboard || showMailDashboard || showPassDashboard || showDriveDashboard;
+    const shouldShowV2Dashboard =
+        showVPNDashboard || showMailDashboard || showPassDashboard || showDriveDashboard || showMeetDashboard;
 
     // As VPN dashboard has its own route for v2 dashboard, we need to check for APP and Feature flag to decide between v1 vs v2 dashboard
     const isVPNDashboardEnabled = app === APPS.PROTONVPN_SETTINGS && showVPNDashboard;

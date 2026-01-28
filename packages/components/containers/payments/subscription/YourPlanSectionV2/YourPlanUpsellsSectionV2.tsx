@@ -20,12 +20,14 @@ import {
     type Subscription,
     getCanAccessFamilyPlans,
     getHasConsumerVpnPlan,
+    hasAllProductsB2CPlan,
     hasBundle,
     hasDeprecatedVPN,
     hasDrive,
     hasDrive1TB,
     hasDuo,
     hasFamily,
+    hasFreeOrPlus,
     hasLumo,
     hasMail,
     hasPass,
@@ -71,6 +73,8 @@ import DrivePlusFromFreeBanner from './Upsells/drive/DrivePlusFromFreeBanner';
 import { useSubscriptionPriceComparison } from './Upsells/helper';
 import MailPlusExtendSubscription, { useMailPlusExtendSubscription } from './Upsells/mail/MailPlusExtendSubscription';
 import MailPlusFromFree, { useMailPlusFromFreeUpsells } from './Upsells/mail/MailPlusFromFree';
+import MeetProfessionalFromFree, { useMeetProfessionalFromFreeUpsells } from './Upsells/meet/MeetProfessionalFromFree';
+import WorkspaceBanner from './Upsells/meet/WorkspaceBanner';
 import PassFamilyBannerExtendSubscription, {
     usePassFamilyBannerExtendSubscription,
 } from './Upsells/pass/PassFamilyBannerExtendSubscription';
@@ -122,10 +126,11 @@ const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, fre
     const hasDriveFree = isFree && app === APPS.PROTONDRIVE;
     const hasPassFree = isFree && app === APPS.PROTONPASS && !user.hasPassLifetime;
     const hasVPNFree = isFree && app === APPS.PROTONVPN_SETTINGS;
+    const hasMeetFree = isFree && app === APPS.PROTONMEET;
     const hasLumoPlus = hasLumo(subscription);
 
     // We want to show the VPN upsells to users with Lumo plan since they migrate from the Lumo plan to having a Lumo addon
-    const isFreeUser = hasMailFree || hasDriveFree || hasPassFree || hasVPNFree || hasLumoPlus;
+    const isFreeUser = hasMailFree || hasDriveFree || hasPassFree || hasVPNFree || hasLumoPlus || hasMeetFree;
 
     // Allow 24-month plan for VPN app and VPN plans. Update the condition based on requirements
     const userCanHave24MonthPlan = app === APPS.PROTONVPN_SETTINGS || getHasConsumerVpnPlan(subscription);
@@ -142,6 +147,7 @@ const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, fre
 
     const mailPlusFromFreeUpsells = useMailPlusFromFreeUpsells(upsellParams);
     const vpnPlusFromFreeUpsells = useVpnPlusFromFreeUpsells(upsellParams);
+    const meetProfessionalFromFreeUpsells = useMeetProfessionalFromFreeUpsells(upsellParams);
     const unlimitedBannerGradientUpsells = useUnlimitedBannerGradientUpsells(upsellParams);
     const vpnPlusExtendSubscriptionUpsells = useVpnPlusExtendSubscription(upsellParams);
     const mailPlusExtendSubscriptionUpsells = useMailPlusExtendSubscription(upsellParams);
@@ -495,6 +501,31 @@ const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, fre
                     subscription={subscription as Subscription}
                     {...unlimitedBannerGradientUpsells}
                 />
+            ),
+        },
+        {
+            enabled: isFreeUser && app === APPS.PROTONMEET,
+            upsells: meetProfessionalFromFreeUpsells.upsells,
+            element: (
+                <>
+                    <MeetProfessionalFromFree
+                        subscription={subscription as Subscription}
+                        {...meetProfessionalFromFreeUpsells}
+                    />
+                    <WorkspaceBanner app={app} />
+                </>
+            ),
+        },
+        {
+            enabled:
+                !isFreeUser &&
+                (hasFreeOrPlus(subscription) || hasAllProductsB2CPlan(subscription)) &&
+                app === APPS.PROTONMEET,
+            upsells: meetProfessionalFromFreeUpsells.upsells,
+            element: (
+                <>
+                    <WorkspaceBanner app={app} />
+                </>
             ),
         },
         {

@@ -1,6 +1,8 @@
 import type { PropsWithChildren } from 'react';
 
 import PendingInvitations from '@proton/components/containers/payments/subscription/YourPlanSectionV2/PendingInvitations';
+import BundleUpsellBanner from '@proton/components/containers/payments/subscription/YourPlanSectionV2/Upsells/BundleUpsellBanner';
+import WorkspaceFromFreeBanner2 from '@proton/components/containers/payments/subscription/YourPlanSectionV2/Upsells/meet/WorkspaceFromFreeBanner2';
 import { PrivateMainSettingsArea, type SettingsAreaConfig } from '@proton/components/index';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
@@ -11,6 +13,7 @@ import DriveBlogSection from './drive/DriveBlogSection/DriveBlogSection';
 import DriveDownloadAndInfoSection from './drive/DriveDownloadAndInfoSection/DriveDownloadAndInfoSection';
 import MailBlogSection from './mail/MailBlogSection/MailBlogSection';
 import { MailDownloadAndInfoSection } from './mail/MailDownloadAndInfoSection/MailDownloadAndInfoSection';
+import MeetDownloadAndInfoSection from './meet/MeetDownloadAndInfoSection/MeetDownloadAndInfoSection';
 import PassBlogSection from './pass/PassBlogSection/PassBlogSection';
 import PassDownloadAndInfoSection from './pass/PassDownloadAndInfoSection/PassDownloadAndInfoSection';
 import AlsoInYourPlanSection from './shared/AlsoInYourPlanSection/AlsoInYourPlanSection';
@@ -44,7 +47,7 @@ const AccountMailDashboard = ({ app, config }: Props) => {
             <YourPlanSectionV2 app={app} />
             <YourPlanUpsellsSectionV2 app={app} />
             <MailDownloadAndInfoSection app={app} />
-            <AlsoInYourPlanSection app={app}>
+            <AlsoInYourPlanSection app={app} upsellBanner={<BundleUpsellBanner app={app} />}>
                 <AlsoInYourPlanProtonPass />
                 <AlsoInYourPlanProtonDrive />
                 <AlsoInYourPlanProtonVPN />
@@ -61,7 +64,7 @@ const AccountPassDashboard = ({ app, config }: Props) => {
             <YourPlanSectionV2 app={app} />
             <YourPlanUpsellsSectionV2 app={app} />
             <PassDownloadAndInfoSection app={app} />
-            <AlsoInYourPlanSection app={app}>
+            <AlsoInYourPlanSection app={app} upsellBanner={<BundleUpsellBanner app={app} />}>
                 <AlsoInYourPlanProtonMail />
                 <AlsoInYourPlanProtonVPN />
                 <AlsoInYourPlanProtonDrive />
@@ -78,12 +81,28 @@ const AccountDriveDashboard = ({ app, config }: Props) => {
             <YourPlanSectionV2 app={app} />
             <YourPlanUpsellsSectionV2 app={app} />
             <DriveDownloadAndInfoSection app={app} />
-            <AlsoInYourPlanSection app={app}>
+            <AlsoInYourPlanSection app={app} upsellBanner={<BundleUpsellBanner app={app} />}>
                 <AlsoInYourPlanProtonPass />
                 <AlsoInYourPlanProtonMail />
                 <AlsoInYourPlanProtonVPN />
             </AlsoInYourPlanSection>
             <DriveBlogSection />
+        </DashboardWrapper>
+    );
+};
+
+const AccountMeetDashboard = ({ app, config }: Props) => {
+    return (
+        <DashboardWrapper config={config} app={app}>
+            <PendingInvitations />
+            <YourPlanSectionV2 app={app} />
+            <YourPlanUpsellsSectionV2 app={app} />
+            <MeetDownloadAndInfoSection app={app} />
+            <AlsoInYourPlanSection app={app} upsellBanner={<WorkspaceFromFreeBanner2 app={app} />}>
+                <AlsoInYourPlanProtonDrive />
+                <AlsoInYourPlanProtonPass />
+                <AlsoInYourPlanProtonMail />
+            </AlsoInYourPlanSection>
         </DashboardWrapper>
     );
 };
@@ -97,6 +116,8 @@ const AccountDashboard = ({ app, config }: Props) => {
             return <AccountPassDashboard app={app} config={config} />;
         case APPS.PROTONDRIVE:
             return <AccountDriveDashboard app={app} config={config} />;
+        case APPS.PROTONMEET:
+            return <AccountMeetDashboard app={app} config={config} />;
     }
 };
 
