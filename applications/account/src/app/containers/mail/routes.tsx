@@ -79,7 +79,7 @@ export const getMailAppRoutes = ({
                     {
                         text: c('Title').t`Email categories`,
                         id: 'categories',
-                        available: categoryEnabled || (organization && !organization?.Settings.MailCategoryViewEnabled),
+                        available: categoryEnabled && organization && organization?.Settings.MailCategoryViewEnabled,
                     },
                     {
                         text: c('Title').t`Layout`,
