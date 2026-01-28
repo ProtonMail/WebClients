@@ -10,7 +10,7 @@ export function getNodeName(node: MaybeNode): string {
     if (maybeName.ok) {
         return maybeName.value;
     }
-    if (maybeName.error instanceof Error) {
+    if (maybeName.error instanceof Error || !maybeName.error.name) {
         return c('Error').t`⚠️ Undecryptable name`;
     }
     // Invalid name can still be used to display the node.

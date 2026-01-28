@@ -292,6 +292,8 @@ export class DownloadManager {
             );
 
             const abortSaving = async (reason?: unknown) => {
+                writerClosed = true;
+                await writableForDownloader.abort();
                 await streamWriter.abort(reason);
                 const streamForSaver = await streamWrapperPromise;
                 if (!streamForSaver.locked) {
@@ -319,8 +321,7 @@ export class DownloadManager {
                     if (decision === IssueStatus.Approved) {
                         await controller.completion();
                     } else {
-                        // This is user cancellation
-                        void streamWriter.abort(new TransferCancel({ id: downloadId }));
+                        throw new TransferCancel({ id: downloadId }); // user cancellation
                     }
                 } else {
                     await controller.completion();
@@ -328,15 +329,15 @@ export class DownloadManager {
             } catch (error) {
                 if (controller.isDownloadCompleteWithSignatureIssues()) {
                     const decision = await addAndWaitForManifestIssueDecision(downloadId, node);
-                    writerClosed = true;
                     if (decision === IssueStatus.Approved) {
                         void streamWriter.close();
                     } else {
-                        // This is user cancellation
-                        void streamWriter.abort(new TransferCancel({ id: downloadId }));
+                        throw new TransferCancel({ id: downloadId }); // user cancellation
                     }
                 } else {
-                    await writableForDownloader.abort(error);
+                    // Catches error or user cancellation
+                    void abortSaving(error);
+                    throw error;
                 }
             } finally {
                 if (!writerClosed) {
