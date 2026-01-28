@@ -1,10 +1,10 @@
 import { screen } from '@testing-library/react';
 
+import * as helpers from '@proton/mail/features/categoriesView/categoriesStringHelpers';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
 import { mailTestRender } from 'proton-mail/helpers/test/helper';
 
-import * as helpers from '../categoriesStringHelpers';
 import { mockActiveCategoriesData } from '../testUtils/helpers';
 import { CategoriesTabs } from './CategoriesTabs';
 

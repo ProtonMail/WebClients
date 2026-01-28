@@ -2,11 +2,11 @@ import { c } from 'ttag';
 
 import type { LabelModel } from '@proton/components';
 import type { CategoryTab } from '@proton/mail';
+import { getLabelFromCategoryId } from '@proton/mail/features/categoriesView/categoriesStringHelpers';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
 import type { FolderItem } from 'proton-mail/hooks/useMailTreeView/interface';
 
-import { getLabelFromCategoryId } from '../categoryView/categoriesStringHelpers';
 import { categoryColorClassName } from '../categoryView/categoriesTabs/tabsInterface';
 
 export const getInboxCategoriesItems = ({

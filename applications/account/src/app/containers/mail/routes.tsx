@@ -71,6 +71,10 @@ export const getMailAppRoutes = ({
                         id: 'general',
                     },
                     {
+                        text: c('Title').t`Email categories`,
+                        id: 'categories',
+                    },
+                    {
                         text: c('Title').t`Layout`,
                         id: 'layout',
                     },

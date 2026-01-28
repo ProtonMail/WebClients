@@ -38,10 +38,12 @@ import {
 } from '@proton/components';
 import ForwardSection from '@proton/components/containers/forward/ForwardSection';
 import { getIsSectionAvailable, getSectionPath } from '@proton/components/containers/layout/helper';
+import { useFolders } from '@proton/mail';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 
 import type { getMailAppRoutes } from './routes';
 import { getHasPmMeAddress } from './routes';
+import { CategoriesViewSections } from './sections/CategoriesViewSections';
 
 const MailSettingsRouter = ({
     mailAppRoutes,
@@ -51,11 +53,13 @@ const MailSettingsRouter = ({
     redirect: ReactNode;
 }) => {
     const { path } = useRouteMatch();
-    useMailSettings(); // Preload mail settings
     const [addresses, loadingAddresses] = useAddresses();
     const onceRef = useRef<boolean>(false);
     const { isElectronEnabled } = useIsInboxElectronApp();
     useLoadAllowedTimeZones();
+
+    useMailSettings(); // Preload mail settings
+    useFolders(); // Preload folders
 
     const {
         routes: { general, identity, folder, filter, autoReply, domainNames, keys, imap, desktop, backup, privacy },
@@ -69,6 +73,7 @@ const MailSettingsRouter = ({
                 ) : (
                     <PrivateMainSettingsArea config={general}>
                         <MessagesGeneralSection />
+                        <CategoriesViewSections />
                         <LayoutsSection />
                         <MessagesSection />
                         <MessagesOtherSection />

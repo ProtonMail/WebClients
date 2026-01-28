@@ -1,4 +1,5 @@
 import { type CategoryLabelID, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import type { Label } from '@proton/shared/lib/interfaces';
 
 import type { CategoryTab } from './categoriesConstants';
 import { CATEGORIES_COLOR_SHADES } from './categoriesConstants';
@@ -49,6 +50,14 @@ export const getCategoryData = (id: string): CategoryTab => {
         throw new Error(`Invalid category ID: ${id}`);
     }
     return data;
+};
+
+export const getCategoryTabFromLabel = (data: Label): CategoryTab => {
+    return {
+        ...getCategoryData(data.ID),
+        display: !!data.Display,
+        notify: !!data.Notify,
+    };
 };
 
 const CATEGORIES_SHORTCUTS_MAPPING: Record<CategoryLabelID, string[]> = {

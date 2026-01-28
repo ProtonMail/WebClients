@@ -1,10 +1,9 @@
-import { type CategoryLabelID, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-
 import {
     getDescriptionFromCategoryId,
     getLabelFromCategoryId,
     getLabelFromCategoryIdInCommander,
-} from './categoriesStringHelpers';
+} from '@proton/mail/features/categoriesView/categoriesStringHelpers';
+import { type CategoryLabelID, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
 describe('categoriesStringHelpers', () => {
     describe('getLabelFromCategoryId', () => {
