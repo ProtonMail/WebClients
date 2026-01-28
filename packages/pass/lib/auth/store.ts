@@ -1,4 +1,4 @@
-import { utf8StringToUint8Array, uint8ArrayToUtf8String } from '@proton/crypto/lib/utils';
+import { uint8ArrayToUtf8String, utf8StringToUint8Array } from '@proton/crypto/lib/utils';
 import type { OfflineConfig } from '@proton/pass/lib/cache/crypto';
 import { AuthMode, type Maybe, type Store } from '@proton/pass/types';
 import { deobfuscate, obfuscate } from '@proton/pass/utils/obfuscate/xor';
@@ -61,7 +61,10 @@ export const decodeUserData = (userData: string): { PrimaryEmail?: string; Displ
 
 export const createAuthStore = (store: Store) => {
     const authStore = {
-        clear: () => store.reset(),
+        clear: () => {
+            store.reset();
+            store.flush?.();
+        },
 
         hasSession: (localID?: number) =>
             Boolean(authStore.getUID() && (localID === undefined || authStore.getLocalID() === localID)),
@@ -100,10 +103,10 @@ export const createAuthStore = (store: Store) => {
         validSession: (data: Partial<AuthSession>): data is AuthSession =>
             Boolean(
                 data.UID &&
-                    data.UserID &&
-                    data.keyPassword &&
-                    (!data.offlineConfig || data.offlineKD) &&
-                    (data.cookies || (data.AccessToken && data.RefreshToken))
+                data.UserID &&
+                data.keyPassword &&
+                (!data.offlineConfig || data.offlineKD) &&
+                (data.cookies || (data.AccessToken && data.RefreshToken))
             ),
 
         /** Checks wether a parsed persisted session object is
