@@ -216,6 +216,7 @@ const SubscriptionCheckout = ({
                       })
                     : undefined
             }
+            couponConfig={couponConfig}
         >
             <div className="mb-4 flex flex-column">
                 <div className="min-h-custom" style={{ '--min-h-custom': '1.5rem' }}>

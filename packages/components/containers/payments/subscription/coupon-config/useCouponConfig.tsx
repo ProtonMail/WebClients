@@ -86,3 +86,17 @@ export const useCouponConfig = (
         renderPayCTA: payCTA ? () => payCTA(checkoutProps) : undefined,
     } satisfies CouponConfigRendered;
 };
+
+/**
+ * This function is helpful when you need a certain coupon config before the coupon is actually applied.
+ */
+export const getStaticCouponConfig = (coupon: string): CouponConfig | undefined => {
+    const config = defaultCouponConfigs.find((it) => {
+        if (Array.isArray(it.coupons)) {
+            return it.coupons.includes(coupon);
+        }
+        return it.coupons === coupon;
+    });
+
+    return config;
+};

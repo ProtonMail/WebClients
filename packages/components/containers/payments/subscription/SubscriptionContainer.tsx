@@ -120,7 +120,7 @@ import { useCancelSubscriptionFlow } from './cancelSubscription/useCancelSubscri
 import { SubscriptionConfirmButton } from './confirm-button/SubscriptionConfirmButton';
 import { SUBSCRIPTION_STEPS } from './constants';
 import { isCSCoupon } from './coupon-config/helpers';
-import { useCouponConfig } from './coupon-config/useCouponConfig';
+import { getStaticCouponConfig, useCouponConfig } from './coupon-config/useCouponConfig';
 import SubscriptionCheckoutCycleItem from './cycle-selector/SubscriptionCheckoutCycleItem';
 import SubscriptionCycleSelector from './cycle-selector/SubscriptionCycleSelector';
 import { type SelectedProductPlans, getDefaultSelectedProductPlans } from './helpers';
@@ -1246,9 +1246,10 @@ const SubscriptionContainerInner = ({
         }
 
         const uppercaseCoupon = gift.trim().toUpperCase();
+        const staticCouponConfig = getStaticCouponConfig(uppercaseCoupon);
         if (
             (getHas2025OfferCoupon(uppercaseCoupon) && !isCSCoupon(uppercaseCoupon)) ||
-            couponConfig?.blockManualEntryOfCoupon
+            staticCouponConfig?.blockManualEntryOfCoupon
         ) {
             createNotification({ text: c('Error').t`Invalid code`, type: 'error' });
             return;
