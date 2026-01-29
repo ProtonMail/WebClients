@@ -1228,6 +1228,11 @@
         "დაპატარავება"
       ]
     },
+    "Action: Docs": {
+      "Open in ${ DOCS_APP_NAME }": [
+        "${ DOCS_APP_NAME }-ში გახსნა"
+      ]
+    },
     "Action: Sheets": {
       "Open in ${ SHEETS_APP_NAME }": [
         "${ SHEETS_APP_NAME }-ში გახსნა"
@@ -1803,6 +1808,9 @@
       ],
       "High-speed chats and advanced AI features.": [
         "სწრაფი ჩატები და დამატებითი ხი-ის ფუნქციები"
+      ],
+      "Private video calls for the conversations that matter.": [
+        "პირადი ვიდეოზარები მნიშვნელოვანი საუბრებისთვის."
       ]
     },
     "color": {
@@ -3356,6 +3364,9 @@
       "Failed to get details, please try again later": [
         "დეტალების მიღება ჩავარდა. მოგვიანებით სცადეთ"
       ],
+      "Failed to load signature details, please try again later": [
+        "ხელმოწერის დეტალების ჩატვირთვა ვერ მოხერხდა. მოგვიანებით სცადეთ"
+      ],
       "Failed to load the STL preview": [
         "STL მინიატურის ჩატვირთვა ჩავარდა"
       ],
@@ -3703,6 +3714,9 @@
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "ეს შეტყობინება შეიძლება, შეიცავდეს ბმულებს, რომლებიც თქვენს მიმდინარე ბრაუზერში არასწორად გაიხსნება."
       ],
+      "This offer is not available in your country": [
+        "ეს შემოთავაზება თქვენს ქვეყანაში ხელმისაწვდომი არაა"
+      ],
       "Try using only letters, numerals, and _.-": [
         "სცადეთ გამოიყენოთ, მხოლოდ, ანბანის სიმბოლოები, ციფრები და _.-"
       ],
@@ -3768,6 +3782,9 @@
       ],
       "We were not able to load the folder contents": [
         "ჩვენ ვერ ჩავტვირთეთ საქაღალდის შემცველობა"
+      ],
+      "We're sorry, but free upload is not available right now.": [
+        "ბოდიშს ვიხდით, მაგრამ უფასო ატვირთვა ამჟამად ხელმისაწვდომი არაა."
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "თქვენ არ შეგიძლიათ გაგზავნოთ ელფოსტა ${ maxContacts }-ზე მეტი მიმღებით",
@@ -4541,6 +4558,9 @@
       ],
       "Too many recent requests. Please try again in a few moments.": [
         "ახლახან გაგზავნილი იყო ძალიან ბევრი მოთხოვნა. მოგვიანებით სცადეთ."
+      ],
+      "Two-factor authentication is enabled in your external account.": [
+        "თქვენს გარე ანგარიშში ჩართულია 2FA."
       ],
       "Use your app password if:": [
         "გამოვიყენოთ აპის პაროლი, თუ:"
@@ -5604,6 +5624,9 @@
       ],
       "Makes your account safer": [
         "თქვენს ანგარიშს უფრო უსაფრთხოს გახდის"
+      ],
+      "Malware detected": [
+        "აღმოჩენილია მავნე პროგრამა"
       ],
       "Mar": [
         "მარ"
@@ -7675,8 +7698,8 @@
       "Built-in chat": [
         "ჩაშენებული ჩატი"
       ],
-      "Meeting recording (coming soon)": [
-        "შეხვედრის ჩანაწერი (მალე)"
+      "End-to-end encrypted screen sharing and ephemeral in-call chat": [
+        "გამჭოლად დაშიფრული ეკრანის გაზიარება და ეფერემული ჩატი ზარის დროს"
       ],
       "One active meeting at a time": [
         "ერთი აქტიური შეხვედრა ერთდროულად"

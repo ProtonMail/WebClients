@@ -4285,6 +4285,9 @@
       "This label name is not available. Please choose a different name.": [
         "Μη διαθέσιμο όνομα ετικέτας. Παρακαλούμε δοκιμάστε ένα διαφορετικό."
       ],
+      "This offer is not available in your country": [
+        "Αυτή η προσφορά δεν είναι διαθέσιμη στη χώρα σας"
+      ],
       "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
         "Για να δημιουργήσετε μη ιδιωτικούς λογαριασμούς χρηστών και να αποκτήσετε πρόσβαση στους λογαριασμούς τους, θα πρέπει να επαναφέρετε τα δικαιώματα διαχειριστή."
       ],
@@ -4342,8 +4345,8 @@
       "You have reached the number of contacts limit for your account": [
         "Έχετε συμπληρώσει το νούμερο ορίου επαφών για τον λογαριασμό σας"
       ],
-      "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
-        "Έχετε χρησιμοποιήσει όλες τις διευθύνσεις στο πρόγραμμά σας. Για προσθήκη νέας διεύθυνσης, παρακαλούμε αναβαθμίστε το πρόγραμμά σας."
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "Έχετε χρησιμοποιήσει όλες τις διευθύνσεις του πλάνου σας. Αναβαθμίστε το πλάνο σας για να προσθέσετε μια νέα διεύθυνση ή απενεργοποιήστε μια διεύθυνση από τον λογαριασμό σας."
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Έχετε χρησιμοποιήσει όλους τους χρήστες στο πρόγραμμά σας. Για προσθήκη νέου χρήστη, παρακαλούμε αναβαθμίστε το πρόγραμμά σας."
@@ -7891,11 +7894,11 @@
       "We need to authenticate your payment with your bank.": [
         "Πρέπει να επαληθεύσουμε την πληρωμή σας με την τράπεζά σας."
       ],
+      "We recommend adding servers in different locations (one per city) to maximize redundancy.": [
+        "Συνιστούμε την προσθήκη διακομιστών σε διαφορετικές τοποθεσίες (έναν ανά πόλη) για μεγιστοποίηση της εφεδρείας."
+      ],
       "We recommend having at least 2 servers in order to provide redundancy.": [
         "Συνιστούμε να έχετε τουλάχιστον 2 διακομιστές για να υπάρχει εφεδρεία."
-      ],
-      "We recommend having multiple servers in different locations to provide redundancy.": [
-        "Συνιστούμε να έχετε πολλούς διακομιστές σε διαφορετικές τοποθεσίες για να παρέχετε πλεονασμό."
       ],
       "We recommend notifying the family members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
         "Συνιστούμε να ειδοποιήσετε τα μέλη της οικογένειάς σας και να τους ζητήσετε να ρυθμίσουν το 2FA για τους λογαριασμούς τους πριν επιβάλετε τη χρήση του 2FA."
@@ -9745,6 +9748,10 @@
         "${ n } ενεργή σύσκεψη τη φορά",
         "${ n } ενεργή συσκέψεις τη φορά"
       ],
+      "${ n } participant": [
+        "${ n } συμμετέχων",
+        "${ n } συμμετέχοντες"
+      ],
       "24 hours per meeting": [
         "24 ώρες ανά σύσκεψη"
       ],
@@ -9753,6 +9760,9 @@
       ],
       "Appointment scheduling": [
         "Προγραμματισμός ραντεβού"
+      ],
+      "Booking pages": [
+        "Σελίδες κρατήσεων"
       ],
       "Browser, mobile, and desktop apps": [
         "Εφαρμογές για προγράμματα περιήγησης, κινητά και επιτραπέζιους υπολογιστές"
@@ -9763,8 +9773,8 @@
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "Κρυπτογραφημένη κοινή χρήση οθόνης διατερματικά και εφήμερη συνομιλία κατά τη διάρκεια της κλήσης"
       ],
-      "Meeting recording (coming soon)": [
-        "Ηχογράφηση συσκέψεων (σύντομα διαθέσιμη)"
+      "Meeting recording": [
+        "Ηχογράφηση σύσκεψης"
       ],
       "One active meeting at a time": [
         "Μία ενεργή σύσκεψη τη φορά"
@@ -16300,6 +16310,9 @@
       ]
     },
     "Upsell": {
+      "${ BRAND_NAME } for Business": [
+        "${ BRAND_NAME } για Business"
+      ],
       "**Save up to ${ priceString }** with a longer subscription. Same premium features, lower price.": [
         "**Εξοικονομήστε έως ${ priceString }** με μια μεγαλύτερη συνδρομή. ΄Ιδιες προηγμένες δυνατότητες, χαμηλότερη τιμή."
       ],
@@ -16311,6 +16324,9 @@
       ],
       "Did you know?": [
         "Το γνωρίζατε;"
+      ],
+      "Everything you need to collaborate securely in a single subscription. Get access to ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, ${ SHEETS_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } and ${ LUMO_SHORT_APP_NAME } AI Assistant.": [
+        "Όλα όσα χρειάζεστε για ασφαλή συνεργασία σε μία μόνο συνδρομή. Αποκτήστε πρόσβαση σε ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, ${ SHEETS_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } και ${ LUMO_SHORT_APP_NAME } Βοηθό Τεχνητής Νοημοσύνης."
       ],
       "Get ${ drivePlusPlanMaxSpace } storage for your files, photos and documents, and recover file versions with 10-year file recovery.": [
         "Αποκτήστε ${ drivePlusPlanMaxSpace } χώρο αποθήκευσης για τα αρχεία, τις φωτογραφίες και τα έγγραφά σας και ανακτήστε εκδόσεις αρχείων με ιστορικό 10 ετών."

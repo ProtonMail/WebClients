@@ -5039,6 +5039,9 @@
       "Edge": [
         "Edge"
       ],
+      "Fedora": [
+        "Fedora"
+      ],
       "Fire TV": [
         "Fire TV"
       ],
@@ -5056,6 +5059,9 @@
       ],
       "Installation guide": [
         "Installationsvejledning"
+      ],
+      "iOS": [
+        "iOS"
       ],
       "iPhone/iPad": [
         "iPhone/iPad"
@@ -5098,6 +5104,9 @@
       ],
       "TV": [
         "TV"
+      ],
+      "Ubuntu/Debian": [
+        "Ubuntu/Debian"
       ],
       "Windows": [
         "Windows"
@@ -6609,6 +6618,9 @@
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Denne besked kan indeholde link-adresser, som ikke kan åbnes korrekt af din aktuelle browser."
       ],
+      "This offer is not available in your country": [
+        "Dette tilbud er ikke tilgængeligt i dit land"
+      ],
       "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
         "Du skal aktivere dine organisationsnøgler. Uden aktivering vil du ikke kunne oprette eller få adgang til ikke-private brugere."
       ],
@@ -6678,8 +6690,8 @@
       "You have reached the number of contacts limit for your account": [
         "Du har nået grænsen for antallet af kontakter på din konto"
       ],
-      "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
-        "Du har brugt alle adresser i dit abonnement. Opgradér abonnementet for at tilføje en ny adresse."
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "Du har opbrugt alle adresser i dit abonnement. Opgradér dit abonnement for at tilføje en ny adresse, eller deaktivér en adresse på din konto."
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Du har brugt alle brugere i dit abonnement. Opgradér abonnementet for at tilføje en ny bruger."
@@ -8560,7 +8572,7 @@
         "${ BRAND_NAME } vil forsøge at genoptage importen, så snart din e-mail-udbyder nulstiller din kontos ${ bandwidthLimitLink }. Du behøver ikke selv at gøre noget. Hvis du annullerer din import, vil du ikke kunne genoptage den, og du bliver nødt til at starte forfra."
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
-        "${ BRAND_NAME }'s krypteringsteknologi betyder, at ingen kan få adgang til din adgangskode - ikke engang os."
+        "${ BRAND_NAME }s krypteringsteknologi betyder, at ingen kan få adgang til din adgangskode - ikke engang os."
       ],
       "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
         "${ CALENDAR_APP_NAME } kræver en ${ BRAND_NAME } adresse til sikker begivenhedssynkronisering og kryptering. ${ claimAddressButton }."
@@ -9370,7 +9382,7 @@
         "Dedikerede servere"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
-        "Dedikerede servere med dedikerede IP adresser kan tilføjes til private gateways for at finjustere adgangen."
+        "Dedikerede servere med dedikerede IP-adresser kan tilføjes til private gateways for at finjustere adgangskontrollen."
       ],
       "Dedicated VPN servers": [
         "Dedikerede VPN-servere"
@@ -11363,11 +11375,11 @@
       "We need to authenticate your payment with your bank.": [
         "Vi skal have bekræftet din betaling hos din bank."
       ],
+      "We recommend adding servers in different locations (one per city) to maximize redundancy.": [
+        "Vi anbefaler at tilføje servere i forskellige lokationer (én pr. by) for at maksimere redundansen."
+      ],
       "We recommend having at least 2 servers in order to provide redundancy.": [
         "Vi anbefaler at have mindst 2 servere, for at sikre redundans."
-      ],
-      "We recommend having multiple servers in different locations to provide redundancy.": [
-        "Vi anbefaler at have flere servere på forskellige steder for at sikre redundans."
       ],
       "We recommend notifying the family members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
         "Vi anbefaler, at man underretter familiemedlemmerne og beder dem om at konfigurere 2FA til deres konti, før man gennemtvinger brugen af 2FA."
@@ -11567,6 +11579,9 @@
       ],
       "You can enforce the password rules members of your organization will use when they create or reset the password to their ${ BRAND_NAME } Account.": [
         "Du kan gennemtvinge de adgangskoderegler, som medlemmer af din organisation bruger, når de opretter eller nulstiller adgangskoden til deres ${ BRAND_NAME }- konto."
+      ],
+      "You can get our premium privacy services in one bundle—and it's just **${ priceString }/month**.": [
+        "Du kan få vores premium privatlivstjenester i én pakke – og til blot **${ priceString }/måned**."
       ],
       "You can get our premium privacy services in one bundle—and it’s just **${ priceString }/month**.": [
         "Du kan få vores premium privatlivstjenester i én pakke – og til kun **${ priceString }/måned**."
@@ -12688,7 +12703,7 @@
         "BTC-beløb"
       ],
       "Built-in 2FA authenticator": [
-        "Indbygget 2FA-godkendelse"
+        "Indbygget tofaktorgodkendelse"
       ],
       "Calendar": [
         "Kalender"
@@ -14123,7 +14138,7 @@
         "besøg vores blog"
       ],
       "What is the difference between UDP and TCP protocols?": [
-        "Hvad er forskellen mellem UDP og TCP-protokoller?"
+        "Hvad er forskellen mellem UDP- og TCP-protokollerne?"
       ],
       "What’s this?": [
         "Hvad er dette?"
@@ -14410,6 +14425,10 @@
         "${ n } aktivt møde ad gangen",
         "${ n } aktive møder ad gangen"
       ],
+      "${ n } participant": [
+        "${ n } deltager",
+        "${ n } deltagere"
+      ],
       "24 hours per meeting": [
         "24 timer pr. møde"
       ],
@@ -14418,6 +14437,9 @@
       ],
       "Appointment scheduling": [
         "Aftaleplanlægning"
+      ],
+      "Booking pages": [
+        "Reservationssider"
       ],
       "Browser, mobile, and desktop apps": [
         "Browser-, mobil- og desktop-apps"
@@ -14428,8 +14450,8 @@
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "End-to-end-krypteret skærmdeling og midlertidig chat under opkald"
       ],
-      "Meeting recording (coming soon)": [
-        "Møde-optagelse (kommer snart)"
+      "Meeting recording": [
+        "Møde-optagelse"
       ],
       "One active meeting at a time": [
         "Ét aktivt møde ad gangen"
@@ -15531,7 +15553,7 @@
         "Beskyt din familie med alle premium funktioner i ${ plusTitle } for 6 brugere."
       ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
-        "Beskyt din families privatliv med alle ${ BRAND_NAME } tjenester kombineret."
+        "Beskyt din families privatliv med alle ${ BRAND_NAME }-tjenester kombineret."
       ],
       "Safely access internet from anywhere with essential network monitoring": [
         "Sikker adgang til internettet overalt med vigtig netværksovervågning"
@@ -16742,7 +16764,7 @@
         "Slip billedfilen her for at uploade eller"
       ],
       "File in PNG or JPEG format": [
-        "Fil i PNG eller JPEG format"
+        "Fil i PNG- eller JPEG-format"
       ],
       "File not larger than 30 KB": [
         "Filen er ikke større end 30 KB"
@@ -16942,7 +16964,7 @@
         "Baseret i Schweiz og overholder GDPR"
       ],
       "But you can get ${ discountPercentString } off by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
-        "Men du kan få ${ discountPercentString } i rabat ved at opgradere til **${ upsellPlanTitle }** - det koster kun ${ relativePrice } ekstra pr. måned."
+        "Men du kan få ${ discountPercentString } i rabat ved at opgradere til **${ upsellPlanTitle }** — det koster kun ${ relativePrice } ekstra pr. måned."
       ],
       "But you can get ${ discountPercentString } off by upgrading to **${ upsellPlanTitle }**.": [
         "Men du kan få ${ discountPercentString } i rabat ved at opgradere til **${ upsellPlanTitle }**."
@@ -17400,6 +17422,9 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Fornyes til ${ renewPriceStr }, annuller når som helst."
+      ],
+      "Sorry, this offer is not available for your account.": [
+        "Beklager, dette tilbud er ikke tilgængeligt for din konto."
       ],
       "Sorry, this offer is not available with your current plan.": [
         "Beklager, dette tilbud er ikke tilgængeligt med dit nuværende abonnement."
@@ -19946,7 +19971,7 @@
         "E-mail, kalender, fillagerplads og VPN inkluderet"
       ],
       "Open source and audited": [
-        "Open source og revideret"
+        "Open source og kontrolleret"
       ],
       "Open source and verified": [
         "Open source og verificeret"
@@ -22490,6 +22515,9 @@
       "Get the apps": [
         "Hent appsene"
       ],
+      "Get unlimited meetings on all your devices with ${ planName }. ${ upgradeButton }": [
+        "Få ubegrænsede møder på alle dine enheder med ${ planName }. ${ upgradeButton }"
+      ],
       "Gift": [
         "Gave"
       ],
@@ -23939,6 +23967,9 @@
       ]
     },
     "Upsell": {
+      "${ BRAND_NAME } for Business": [
+        "Velkommen til ${ BRAND_NAME } for Business"
+      ],
       "**Save up to ${ priceString }** with a longer subscription. Same premium features, lower price.": [
         "**Gem op til ${ priceString }** med et længere abonnement. Samme premium funktioner, lavere pris."
       ],
@@ -23950,6 +23981,9 @@
       ],
       "Did you know?": [
         "Vidste du det?"
+      ],
+      "Everything you need to collaborate securely in a single subscription. Get access to ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, ${ SHEETS_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } and ${ LUMO_SHORT_APP_NAME } AI Assistant.": [
+        "Alt du behøver for at samarbejde sikkert i et enkelt abonnement. Få adgang til ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, ${ SHEETS_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } og ${ LUMO_SHORT_APP_NAME } AI Assistant."
       ],
       "Get ${ drivePlusPlanMaxSpace } storage for your files, photos and documents, and recover file versions with 10-year file recovery.": [
         "Få ${ drivePlusPlanMaxSpace } lagerplads til dine filer, fotos og dokumenter, og gendan filversioner med 10-års filgendannelse."
@@ -24267,7 +24301,7 @@
         "Prøv ${ upsellPlanName } risikofrit"
       ],
       "Your ${ a } and ${ b } bundle": [
-        "Din ${ a } og ${ b }-pakke"
+        "Din ${ a }- og ${ b }-pakke"
       ],
       "Your ${ selected } plan": [
         "Dit ${ selected }-abonnement"

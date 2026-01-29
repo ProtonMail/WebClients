@@ -2712,6 +2712,10 @@
       "Migration includes": [
         "A migração foi concluída"
       ],
+      "Migration started for ${ n } user": [
+        "Migração iniciada para ${ n } usuário",
+        "Migração iniciada para ${ n } usuários"
+      ],
       "Migration status": [
         "Status da migração"
       ],
@@ -5035,6 +5039,9 @@
       "Edge": [
         "Edge"
       ],
+      "Fedora": [
+        "Fedora"
+      ],
       "Fire TV": [
         "Fire TV"
       ],
@@ -5052,6 +5059,9 @@
       ],
       "Installation guide": [
         "Guia de instalação"
+      ],
+      "iOS": [
+        "iOS"
       ],
       "iPhone/iPad": [
         "iPhone/iPad"
@@ -5094,6 +5104,9 @@
       ],
       "TV": [
         "TV"
+      ],
+      "Ubuntu/Debian": [
+        "Ubuntu/Debian"
       ],
       "Windows": [
         "Windows"
@@ -6605,6 +6618,9 @@
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Essa mensagem pode conter alguns links de URL que podem não serem abertos corretamente pelo seu navegador."
       ],
+      "This offer is not available in your country": [
+        "Esta oferta não está disponível no seu país"
+      ],
       "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
         "Para criar e acessar contas de usuário não privadas, será necessário restaurar seus privilégios de administrador."
       ],
@@ -6673,9 +6689,6 @@
       ],
       "You have reached the number of contacts limit for your account": [
         "Você atingiu o limite de contatos para sua conta"
-      ],
-      "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
-        "Você usou todos os endereços do seu plano. Faça o upgrade do seu plano para adicionar um novo endereço."
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Você usou todos os usuários do seu plano. Faça o upgrade do seu plano para adicionar um novo usuário."
@@ -8301,6 +8314,12 @@
       ],
       "Too many recent requests. Please try again in a few moments.": [
         "Muitos pedidos recentes. Tente novamente em alguns instantes."
+      ],
+      "Two-factor authentication is enabled in your external account.": [
+        "A autenticação de dois fatores está ativada em sua conta externa."
+      ],
+      "Two-factor authentication is enabled in your external email account.": [
+        "A autenticação de dois fatores está ativada em sua conta de e-mail externa."
       ],
       "Use your app password if:": [
         "Use a senha de aplicativo se:"
@@ -11356,9 +11375,6 @@
       "We recommend having at least 2 servers in order to provide redundancy.": [
         "Recomendamos no mínimo 2 servidores para obter redundância."
       ],
-      "We recommend having multiple servers in different locations to provide redundancy.": [
-        "Recomendamos ter vários servidores em diferentes localidades para fornecer redundância."
-      ],
       "We recommend notifying the family members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
         "Recomendamos notificar os membros da família e pedir que eles configurem a A2F para suas contas antes de impor o uso da A2F."
       ],
@@ -14397,6 +14413,10 @@
         "${ n } reunião ativa por vez",
         "${ n } reuniões ativas por vez"
       ],
+      "${ n } participant": [
+        "${ n } participante",
+        "${ n } participantes"
+      ],
       "24 hours per meeting": [
         "24 horas por reunião"
       ],
@@ -14405,6 +14425,9 @@
       ],
       "Appointment scheduling": [
         "Agendamento de compromissos"
+      ],
+      "Booking pages": [
+        "Páginas de agendamentos"
       ],
       "Browser, mobile, and desktop apps": [
         "Aplicativos para navegadores, dispositivos móveis e computadores"
@@ -14415,8 +14438,8 @@
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "Compartilhamento de tela com criptografia de ponta a ponta e chat efêmero durante a chamada"
       ],
-      "Meeting recording (coming soon)": [
-        "Gravação da reunião (em breve)"
+      "Meeting recording": [
+        "Gravação da reunião"
       ],
       "One active meeting at a time": [
         "Uma reunião ativa por vez"
@@ -17396,6 +17419,9 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Renova por ${ renewPriceStr }, cancele a qualquer momento."
+      ],
+      "Sorry, this offer is not available for your account.": [
+        "Desculpe, esta oferta não está disponível para a sua conta."
       ],
       "Sorry, this offer is not available with your current plan.": [
         "Desculpe, mas essa oferta não está disponível com seu plano atual."
@@ -23944,6 +23970,9 @@
       ]
     },
     "Upsell": {
+      "${ BRAND_NAME } for Business": [
+        "${ BRAND_NAME } for Business"
+      ],
       "**Save up to ${ priceString }** with a longer subscription. Same premium features, lower price.": [
         "**Economize até ${ priceString }** com uma assinatura mais longa. Os mesmos recursos premium, preço mais baixo."
       ],

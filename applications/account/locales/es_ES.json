@@ -6182,6 +6182,9 @@
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Este mensaje podría contener enlaces a un URL que no se pueden abrir correctamente en tu navegador actual."
       ],
+      "This offer is not available in your country": [
+        "Esta oferta no está disponible en tu país"
+      ],
       "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
         "Necesitas restaurar tus privilegios de administración para crear cuentas no privadas y acceder a las mismas."
       ],
@@ -6250,9 +6253,6 @@
       ],
       "You have reached the number of contacts limit for your account": [
         "Has alcanzado el límite de contactos para tu cuenta."
-      ],
-      "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
-        "Has utilizado todas las direcciones de tu plan. Pasa a un plan superior para añadir una dirección."
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Has utilizado todos los usuarios de tu plan. Mejora tu plan para añadir un nuevo usuario."
@@ -10671,11 +10671,11 @@
       "We need to authenticate your payment with your bank.": [
         "Necesitamos autenticar el pago con tu banco."
       ],
+      "We recommend adding servers in different locations (one per city) to maximize redundancy.": [
+        "Recomendamos añadir servidores en diferentes ubicaciones (uno por ciudad) para maximizar la redundancia."
+      ],
       "We recommend having at least 2 servers in order to provide redundancy.": [
         "Recomendamos tener al menos 2 servidores para garantir redundancia."
-      ],
-      "We recommend having multiple servers in different locations to provide redundancy.": [
-        "Recomendamos tener varios servidores en diferentes ubicaciones para garantizar la redundancia."
       ],
       "We recommend notifying the family members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
         "Recomendamos notificar a los miembros de la familia y pedirles que configuren 2FA para sus cuentas antes de requerir la utilización de 2FA."
@@ -13464,9 +13464,6 @@
       ],
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "Pantalla compartida con cifrado de extremo a extremo y chat efímero en la llamada"
-      ],
-      "Meeting recording (coming soon)": [
-        "Grabación de la reunión (próximamente)"
       ],
       "One active meeting at a time": [
         "Una reunión activa a la vez"

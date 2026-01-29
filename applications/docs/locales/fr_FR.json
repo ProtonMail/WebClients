@@ -4659,7 +4659,7 @@
         "Priorité basse"
       ],
       "Making a copy...": [
-        "Création d'une copie en cours..."
+        "En cours de copie..."
       ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "${ MAX_SHARED_URL_PASSWORD_LENGTH } caractère maximum",
@@ -6107,6 +6107,10 @@
         "${ n } réunion active à la fois",
         "${ n } réunions actives simultanément"
       ],
+      "${ n } participant": [
+        "${ n } participant",
+        "${ n } participants"
+      ],
       "24 hours per meeting": [
         "24 heures par réunion"
       ],
@@ -6115,6 +6119,9 @@
       ],
       "Appointment scheduling": [
         "Planification de rendez-vous"
+      ],
+      "Booking pages": [
+        "Pages de réservation"
       ],
       "Browser, mobile, and desktop apps": [
         "Navigateur, l'application mobile et l'application de bureau"
@@ -6125,8 +6132,8 @@
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "Partage d'écran chiffré de bout en bout et chat éphémère pendant les appels"
       ],
-      "Meeting recording (coming soon)": [
-        "Enregistrement de réunion (à venir)"
+      "Meeting recording": [
+        "Enregistrement des réunions"
       ],
       "One active meeting at a time": [
         "Une réunion active à la fois"

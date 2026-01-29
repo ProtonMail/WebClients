@@ -4285,6 +4285,9 @@
       "This label name is not available. Please choose a different name.": [
         "Aquest nom d'etiqueta no està disponible. Trieu-ne un altre."
       ],
+      "This offer is not available in your country": [
+        "Aquesta oferta no està disponible al vostre país"
+      ],
       "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
         "Per a crear comptes d'usuari no privats i accedir als seus comptes, necessitareu restaurar els vostres privilegis d'administrador."
       ],
@@ -4342,8 +4345,8 @@
       "You have reached the number of contacts limit for your account": [
         "Heu arribat al nombre límit de contactes per al vostre compte."
       ],
-      "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
-        "Heu utilitzat totes les adreces del vostre pla. Milloreu-lo per a afegir adreces."
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "Heu utilitzat totes les adreces del vostre pla. Actualitzeu-lo per afegir-ne una de nova o desactiveu una adreça al vostre compte."
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Heu utilitzat tots els usuaris del vostre pla. Milloreu-lo per a afegir un usuari."
@@ -7891,11 +7894,11 @@
       "We need to authenticate your payment with your bank.": [
         "Hem d'autenticar el vostre pagament amb el banc."
       ],
+      "We recommend adding servers in different locations (one per city) to maximize redundancy.": [
+        "Us recomanem que afegiu servidors en ubicacions diferents (un per ciutat) per maximitzar la redundància."
+      ],
       "We recommend having at least 2 servers in order to provide redundancy.": [
         "Recomanem tenir com a mínim 2 servidors per assegurar redundància."
-      ],
-      "We recommend having multiple servers in different locations to provide redundancy.": [
-        "Recomanem tenir múltiples servidors en diferents ubicacions per a proporcionar redundància."
       ],
       "We recommend notifying the family members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
         "Recomanem que notifiqueu als membres de la família i els demaneu que estableixin l'autenticació de doble factor (2FA) per als seus comptes abans de fer-ne complir l'ús."
@@ -9745,6 +9748,10 @@
         "${ n } reunió activa alhora",
         "${ n } reunions actives alhora"
       ],
+      "${ n } participant": [
+        "${ n } participant",
+        "${ n } participants"
+      ],
       "24 hours per meeting": [
         "24 hores per reunió"
       ],
@@ -9753,6 +9760,9 @@
       ],
       "Appointment scheduling": [
         "Programació de cites"
+      ],
+      "Booking pages": [
+        "Pàgines de reserves"
       ],
       "Browser, mobile, and desktop apps": [
         "Aplicacions de navegador, de mòbil i d'escriptori"
@@ -9763,8 +9773,8 @@
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "Compartició de pantalla xifrada d’extrem a extrem i xat efímer durant la trucada"
       ],
-      "Meeting recording (coming soon)": [
-        "Gravació de la reunió (pròximament)"
+      "Meeting recording": [
+        "Enregistrament de la reunió"
       ],
       "One active meeting at a time": [
         "Una reunió activa alhora"
@@ -16310,6 +16320,9 @@
       ]
     },
     "Upsell": {
+      "${ BRAND_NAME } for Business": [
+        "${ BRAND_NAME } per empreses"
+      ],
       "**Save up to ${ priceString }** with a longer subscription. Same premium features, lower price.": [
         "**Estalvieu fins a ${ priceString }** amb una subscripció més llarga. Mateixes funcionalitats prèmium per un preu més baix."
       ],
@@ -16321,6 +16334,9 @@
       ],
       "Did you know?": [
         "Ho sabíeu?"
+      ],
+      "Everything you need to collaborate securely in a single subscription. Get access to ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, ${ SHEETS_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } and ${ LUMO_SHORT_APP_NAME } AI Assistant.": [
+        "Tot el que necessiteu per col·laborar de manera segura en una sola subscripció. Obtingueu accés a ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, ${ SHEETS_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } i a l'assistent d'IA ${ LUMO_SHORT_APP_NAME }."
       ],
       "Get ${ drivePlusPlanMaxSpace } storage for your files, photos and documents, and recover file versions with 10-year file recovery.": [
         "Obtingueu ${ drivePlusPlanMaxSpace } d'emmagatzematge per als vostres fitxers, fotos i documents, i recupereu versions de fitxers amb la recuperació de fitxers de 10 anys."

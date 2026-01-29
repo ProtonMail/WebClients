@@ -3925,6 +3925,9 @@
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Ce message contient peut-être des liens URL qui pourraient ne pas s'ouvrir correctement avec votre navigateur."
       ],
+      "This offer is not available in your country": [
+        "Cette offre n'est pas disponible dans votre pays."
+      ],
       "Trusted keys are not valid for sending": [
         "Les clés approuvées ne sont pas valides pour l'envoi."
       ],
@@ -7486,6 +7489,10 @@
         "${ n } réunion active à la fois",
         "${ n } réunions actives simultanément"
       ],
+      "${ n } participant": [
+        "${ n } participant",
+        "${ n } participants"
+      ],
       "24 hours per meeting": [
         "24 heures par réunion"
       ],
@@ -7494,6 +7501,9 @@
       ],
       "Appointment scheduling": [
         "Planification de rendez-vous"
+      ],
+      "Booking pages": [
+        "Pages de réservation"
       ],
       "Browser, mobile, and desktop apps": [
         "Navigateur, l'application mobile et l'application de bureau"
@@ -7504,8 +7514,8 @@
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "Partage d'écran chiffré de bout en bout et chat éphémère pendant les appels"
       ],
-      "Meeting recording (coming soon)": [
-        "Enregistrement de réunion (à venir)"
+      "Meeting recording": [
+        "Enregistrement des réunions"
       ],
       "One active meeting at a time": [
         "Une réunion active à la fois"
