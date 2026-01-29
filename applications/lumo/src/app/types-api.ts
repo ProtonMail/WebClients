@@ -289,10 +289,10 @@ function isRequestableGenerationTarget(value: any): value is RequestableGenerati
     return ['message', 'title'].includes(value);
 }
 
-export type GenerationTarget = 'message' | 'title' | 'tool_call' | 'tool_result';
+export type GenerationTarget = 'message' | 'title' | 'tool_call' | 'tool_result' | 'reasoning';
 
 export function isGenerationTarget(value: any): value is GenerationTarget {
-    return ['message', 'title', 'tool_call', 'tool_result'].includes(value);
+    return ['message', 'title', 'tool_call', 'tool_result', 'reasoning'].includes(value);
 }
 
 /*
