@@ -88,10 +88,10 @@ export const isActiveMonitored = and(isActive, isMonitored);
 export const isExcluded = and(isActive, not(isMonitored));
 
 export const hasEmail = (email: string) => (item: LoginItem) =>
-    Boolean(item.data.content.itemEmail.v && deobfuscate(item.data.content.itemEmail) === email);
+    Boolean(item.data.content.itemEmail.v.length && deobfuscate(item.data.content.itemEmail) === email);
 
 export const hasUsername = (username: string) => (item: LoginItem) =>
-    Boolean(item.data.content.itemUsername.v && deobfuscate(item.data.content.itemUsername) === username);
+    Boolean(item.data.content.itemUsername.v.length && deobfuscate(item.data.content.itemUsername) === username);
 
 export const hasUserIdentifier = (userIdentifier: string) => (item: LoginItem) =>
     or(hasEmail(userIdentifier), hasUsername(userIdentifier))(item);
@@ -99,7 +99,9 @@ export const hasUserIdentifier = (userIdentifier: string) => (item: LoginItem) =
 export const hasDomain = (item: LoginItem) => item.data.content.urls.length > 0;
 
 export const hasOTP = ({ data: { content, extraFields } }: LoginItem) =>
-    Boolean(content.totpUri.v || extraFields.some((field) => field.type === 'totp' && field.data.totpUri.v));
+    Boolean(
+        content.totpUri.v.length || extraFields.some((field) => field.type === 'totp' && field.data.totpUri.v.length)
+    );
 
 export const hasPasskeys = ({ data: { content } }: LoginItem) => (content.passkeys ?? []).length > 0;
 

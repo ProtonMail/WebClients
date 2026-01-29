@@ -13,9 +13,9 @@ import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 export const useAutotypeActions = (data: Item<'login'>) =>
     useMemo(() => {
-        const hasPassword = Boolean(data.content.password.v);
-        const hasUsername = Boolean(data.content.itemUsername.v);
-        const hasEmail = Boolean(data.content.itemEmail.v);
+        const hasPassword = Boolean(data.content.password.v.length);
+        const hasUsername = Boolean(data.content.itemUsername.v.length);
+        const hasEmail = Boolean(data.content.itemEmail.v.length);
 
         const tabKey = <Kbd shortcut={c('Keyboard key').t`TAB`} />;
         const enterKey = <Kbd shortcut={c('Keyboard key').t`ENTER`} />;
