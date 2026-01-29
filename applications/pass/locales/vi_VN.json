@@ -1735,7 +1735,7 @@
         "Đã sao chép địa chỉ chuyển tiếp vào bảng tạm. Gửi email đến địa chỉ này và ${ Email } sẽ nhận được."
       ],
       "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
-        "Các mật khẩu sẽ được lưu trữ trong ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } tuần."
+        "Các mật khẩu đã tạo sẽ được lưu trữ trong ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } tuần."
       ],
       "Get the most out of Pass by creating a vault for each team or project.": [
         "Tận dụng tối đa Pass bằng cách tạo một kho cho mỗi nhóm hoặc dự án."
@@ -2416,7 +2416,7 @@
         "Bạn có ${ aliasCount } alias có trong SimpleLogin nhưng lại thiếu trong ${ PASS_APP_NAME }. Bạn có muốn đồng bộ hóa nó không?"
       ],
       "You have ${ daysRemaining } day left to try these and other premium features.": [
-        "Bạn còn ${ daysRemaining } ngày để thử nó và những tính năng cao cấp khác."
+        "Còn ${ daysRemaining } ngày để thử tính năng này và những tính năng cao cấp khác."
       ],
       "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
         "Bạn đã vượt quá số lượng kho lưu trữ trong gói của bạn. Các nội dung chỉ có thể được chuyển đến hai kho lưu trữ đầu tiên của bạn. Để chuyển nội dung giữa tất cả các kho lưu trữ, vui lòng nâng cấp gói đăng ký của bạn."
@@ -2546,7 +2546,7 @@
         "${ secureLinksCount } liên kết bảo mật"
       ],
       "${ usageCount } login": [
-        "${ usageCount } đăng nhập"
+        "${ usageCount } lần đăng nhập"
       ],
       "${ years } year": [
         "${ years } năm"

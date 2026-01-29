@@ -2355,6 +2355,9 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Bu alana en az ${ minimumLength } karakter yazılmalıdır."
       ],
+      "This offer is not available in your country": [
+        "Bu teklif ülkeniz için geçerli değil"
+      ],
       "Try using only letters, numerals, and _.-": [
         "Yalnızca harfleri, rakamları ve _.- karakterlerini kullanmayı deneyin"
       ],
@@ -3496,6 +3499,10 @@
         "Aynı anda ${ n } etkin görüşme",
         "Aynı anda ${ n } etkin görüşme"
       ],
+      "${ n } participant": [
+        "${ n } katılımcı",
+        "${ n } katılımcı"
+      ],
       "24 hours per meeting": [
         "Görüşme başına 24 saat"
       ],
@@ -3504,6 +3511,9 @@
       ],
       "Appointment scheduling": [
         "Randevu planlama"
+      ],
+      "Booking pages": [
+        "Rezervasyon sayfaları"
       ],
       "Browser, mobile, and desktop apps": [
         "Tarayıcı, mobil ve bilgisayar uygulamaları"
@@ -3514,8 +3524,8 @@
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "Uçtan uca şifrelenmiş ekran paylaşımı ve geçici çağrı içi sohbet"
       ],
-      "Meeting recording (coming soon)": [
-        "Görüşme kaydı (yakında)"
+      "Meeting recording": [
+        "Toplantı kaydı"
       ],
       "One active meeting at a time": [
         "Aynı anda bir etkin görüşme"

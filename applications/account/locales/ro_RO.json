@@ -6647,6 +6647,9 @@
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Acest mesaj poate conține unele legături web care nu pot fi deschise corect de către navigatorul actual."
       ],
+      "This offer is not available in your country": [
+        "Această ofertă nu este disponibilă țara actuală."
+      ],
       "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
         "Pentru a crea conturi de utilizator neprivate și pentru a le accesa, va trebui să vă restabiliți privilegiile de administrator."
       ],
@@ -6715,9 +6718,6 @@
       ],
       "You have reached the number of contacts limit for your account": [
         "Ați atins limita numărului de contacte disponibil pentru acest cont."
-      ],
-      "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
-        "Ați folosit toate adresele din plan. Treceți la un plan cu plată superior pentru a adăuga o adresă nouă."
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Ați folosit toate numele de utilizator din plan. Treceți la un plan cu plată superior pentru a adăuga un utilizator nou."
@@ -11475,11 +11475,11 @@
       "We need to authenticate your payment with your bank.": [
         "Trebuie să autentificăm plata cu banca dvs."
       ],
+      "We recommend adding servers in different locations (one per city) to maximize redundancy.": [
+        "Se recomandă adăugarea de servere în locuri diferite (unul pe oraș) pentru a maximiza redundanța."
+      ],
       "We recommend having at least 2 servers in order to provide redundancy.": [
         "Vă recomandăm să aveți cel puțin două servere pentru a beneficia de redundanță."
-      ],
-      "We recommend having multiple servers in different locations to provide redundancy.": [
-        "Vă recomandăm să aveți mai multe servere în locuri diferite pentru a oferi redundanță."
       ],
       "We recommend notifying the family members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
         "Se recomandă notificarea membrilor familiei și solicitați-le să-și activeze autentificarea cu doi factori înainte de activarea utilizării acesteia."
@@ -14569,9 +14569,6 @@
       ],
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "Partajare ecran cu criptare bilaterală și conversații temporare pe durata apelului"
-      ],
-      "Meeting recording (coming soon)": [
-        "Înregistrare conferințe (în curând)"
       ],
       "One active meeting at a time": [
         "O conferință activă simultan"

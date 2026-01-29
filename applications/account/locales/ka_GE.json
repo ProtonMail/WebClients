@@ -3194,6 +3194,9 @@
       ],
       "Open source": [
         "ღია კოდი"
+      ],
+      "Private video calls for the conversations that matter.": [
+        "პირადი ვიდეოზარები მნიშვნელოვანი საუბრებისთვის."
       ]
     },
     "collider_2025: Navigation": {
@@ -6461,6 +6464,9 @@
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "ეს შეტყობინება შეიძლება, შეიცავდეს ბმულებს, რომლებიც თქვენს მიმდინარე ბრაუზერში არასწორად გაიხსნება."
       ],
+      "This offer is not available in your country": [
+        "ეს შემოთავაზება თქვენს ქვეყანაში ხელმისაწვდომი არაა"
+      ],
       "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
         "იმისათვის, რომ არაკონფიდენციალური მომხმარებლის ანგარიშები შექმნათ და მათ ანგარიშებთან წვდომა გქონდეთ, თქვენი ადმინისტრატორის უფლებების აღდგენა დაგჭირდებათ."
       ],
@@ -6529,9 +6535,6 @@
       ],
       "You have reached the number of contacts limit for your account": [
         "თქვენ მიაღწიეთ კონტაქტების რაოდენობის ზღვარს თქვენი ანგარიშისთვის"
-      ],
-      "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
-        "თქვენს სატარიფო გეგმაში შემავალ ყველა მისამართს უკვე იყენებთ. ახალი მისამართის დასამატებლად სატარიფო გეგმის განახლებაა საჭირო."
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "იყენებთ თქვენს სატარიფო გეგმაში შემავალ ყველა მომხმარებელს. ახალი მომხმარებლის დასამატებლად სატარიფო გეგმის განახლებაა საჭირო."
@@ -8151,6 +8154,9 @@
       ],
       "Too many recent requests. Please try again in a few moments.": [
         "ახლახან გაგზავნილი იყო ძალიან ბევრი მოთხოვნა. მოგვიანებით სცადეთ."
+      ],
+      "Two-factor authentication is enabled in your external account.": [
+        "თქვენს გარე ანგარიშში ჩართულია 2FA."
       ],
       "Use your app password if:": [
         "გამოვიყენოთ აპის პაროლი, თუ:"
@@ -11097,9 +11103,6 @@
       "We recommend having at least 2 servers in order to provide redundancy.": [
         "დამატებითი რეზერვის საქონლად მინიმუმ 2 სერვერს გირჩევთ."
       ],
-      "We recommend having multiple servers in different locations to provide redundancy.": [
-        "დამატებითი რეზერვისთვის ჩვენ გირჩევთ, სხვადასხვა ადგილას ერთზე მეტი სერვერი იქონიოთ."
-      ],
       "We recommend notifying the family members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
         "ჩვენი რეკომენდაციაა, ოჯახის წევრები გააფრთხილოთ და სთხოვოთ, თვითონ ჩართონ 2FA მანამდე, სანამ ამას ძალით გააკეთებთ."
       ],
@@ -12914,6 +12917,9 @@
       "New second password": [
         "ახალი მეორე პაროლი"
       ],
+      "No (users cannot use the app until a vault is shared with them)": [
+        "არა (მომხმარებლები ვერ გამოიყენებენ აპს, სანამ მათ საცავს არ გაუზიარებენ)"
+      ],
       "No filter": [
         "ფილტრის გარეშე"
       ],
@@ -14053,8 +14059,8 @@
       "Built-in chat": [
         "ჩაშენებული ჩატი"
       ],
-      "Meeting recording (coming soon)": [
-        "შეხვედრის ჩანაწერი (მალე)"
+      "End-to-end encrypted screen sharing and ephemeral in-call chat": [
+        "გამჭოლად დაშიფრული ეკრანის გაზიარება და ეფერემული ჩატი ზარის დროს"
       ],
       "One active meeting at a time": [
         "ერთი აქტიური შეხვედრა ერთდროულად"
@@ -14108,6 +14114,9 @@
       "Private AI Chat (${ LUMO_SHORT_APP_NAME })": [
         "პირადი ხი ჩეთი (${ LUMO_SHORT_APP_NAME })"
       ],
+      "Private and unlimited AI chat (${ LUMO_SHORT_APP_NAME })": [
+        "პირადი და შეუზღუდავი AI ჩეთი (${ LUMO_SHORT_APP_NAME })"
+      ],
       "Private video calls for the conversations that matter": [
         "პირადი ვიდეო ზარები მნიშვნელოვანი საუბრებისთვის"
       ],
@@ -14116,6 +14125,9 @@
       ],
       "Strict no-logs policy": [
         "ჩვენ არ ვინახავთ ჟურნალს"
+      ],
+      "Video meetings, ${ PAID_MAX_PARTICIPANTS } participants": [
+        "ვიდეოშეხვედრები, ${ PAID_MAX_PARTICIPANTS } მონაწილე"
       ],
       "VPN with ad-blocker and malware protection": [
         "VPN რეკლამების ბლოკერით და მავნე პროგრამებისგან დაცვით"
@@ -19488,6 +19500,9 @@
       ]
     },
     "Signup: Meet": {
+      "**Trusted by over 100 million** users and organizations": [
+        "**100 მილიონზე მეტი** მომხმარებლისა და ორგანიზაციის ნდობა"
+      ],
       "Get ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "${ PLAN_NAMES[PLANS.MEET_BUSINESS] }-ის მიღება"
       ],

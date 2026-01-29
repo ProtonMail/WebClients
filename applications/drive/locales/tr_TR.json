@@ -3743,6 +3743,9 @@
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Bu iletide, geçerli tarayıcınızda açılamayacak bazı bağlantı adresleri bulunuyor olabilir."
       ],
+      "This offer is not available in your country": [
+        "Bu teklif ülkeniz için geçerli değil"
+      ],
       "Try using only letters, numerals, and _.-": [
         "Yalnızca harfleri, rakamları ve _.- karakterlerini kullanmayı deneyin"
       ],
@@ -3810,7 +3813,7 @@
         "Klasör içeriği yüklenemedi"
       ],
       "We're sorry, but free upload is not available right now.": [
-        "Üzgünüz, ancak şu anda ücretsiz yükleme hizmeti sunulmamaktadır."
+        "Ne yazık ki, şu anda ücretsiz yükleme hizmeti sunulmuyor."
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Bir e-postayı ${ maxContacts } taneden fazla alıcıya göndermezsiniz",
@@ -5032,7 +5035,7 @@
         "${ MAX_CONTACTS_PER_USER } kişiye kadar tüm kişileriniz içe aktarılacak"
       ],
       "Already in this folder": [
-        "Zaten bu klasörde mevcut"
+        "Zaten bu klasörde var"
       ],
       "Already in your library": [
         "Zaten kitaplığınızda"
@@ -5692,6 +5695,9 @@
       ],
       "Makes your account safer": [
         "Hesabınızı daha güvenli kılar"
+      ],
+      "Malware detected": [
+        "Kötü amaçlı yazılım algılandı"
       ],
       "Mar": [
         "Mar"
@@ -6529,7 +6535,7 @@
         "Hafta"
       ],
       "Welcome to ${ DRIVE_APP_NAME }, for the first 10 minutes, any files you upload don't count toward your storage quota.": [
-        "${ DRIVE_APP_NAME }'a hoş geldiniz. İlk 10 dakika boyunca yüklediğiniz dosyalar depolama kotanızdan düşülmez."
+        "${ DRIVE_APP_NAME } uygulamasına hoş geldiniz. İlk 10 dakika içinde yüklediğiniz dosyalar depolama kotanızdan düşülmez."
       ],
       "What do you want to do?": [
         "Ne yapmak istersiniz?"
@@ -6961,7 +6967,7 @@
         "Kaya"
       ],
       "Anonymous": [
-        "Anonim"
+        "İsimsiz"
       ],
       "Anyone on the Internet with the link can edit": [
         "Bağlantıya sahip olan herkes düzenleyebilir"
@@ -7827,6 +7833,10 @@
         "Aynı anda ${ n } etkin görüşme",
         "Aynı anda ${ n } etkin görüşme"
       ],
+      "${ n } participant": [
+        "${ n } katılımcı",
+        "${ n } katılımcı"
+      ],
       "24 hours per meeting": [
         "Görüşme başına 24 saat"
       ],
@@ -7835,6 +7845,9 @@
       ],
       "Appointment scheduling": [
         "Randevu planlama"
+      ],
+      "Booking pages": [
+        "Rezervasyon sayfaları"
       ],
       "Browser, mobile, and desktop apps": [
         "Tarayıcı, mobil ve bilgisayar uygulamaları"
@@ -7845,8 +7858,8 @@
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "Uçtan uca şifrelenmiş ekran paylaşımı ve geçici çağrı içi sohbet"
       ],
-      "Meeting recording (coming soon)": [
-        "Görüşme kaydı (yakında)"
+      "Meeting recording": [
+        "Toplantı kaydı"
       ],
       "One active meeting at a time": [
         "Aynı anda bir etkin görüşme"

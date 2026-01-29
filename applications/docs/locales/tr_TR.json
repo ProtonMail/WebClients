@@ -91,7 +91,7 @@
         "Uygula"
       ],
       "Ask me next time": [
-        "Gelecek sefere sor"
+        "Gelecek sefer yeniden sor"
       ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "Bir kişi grubunda en fazla ${ maxContacts } kişi bulunabilir",
@@ -4445,10 +4445,10 @@
         "Kendi parolanızı yazın (güvenilen kişi olarak)."
       ],
       "Error converting document: ${ errorMessage }": [
-        "Belge dönüştürülürken hata oluştu: ${ errorMessage }"
+        "Belge dönüştürülürken sorun çıktı: ${ errorMessage }"
       ],
       "Error loading document: ${ errorDetail }": [
-        "Belge yüklenirken hata oluştu: ${ errorDetail }"
+        "Belge yüklenirken sorun çıktı: ${ errorDetail }"
       ],
       "Error Syncing": [
         "Eşitleme sorunu"
@@ -4511,10 +4511,10 @@
         "Coğrafi engelleme"
       ],
       "Get email updates for comments and suggestions added to your documents.": [
-        "Belgelerinize eklenen yorumlar ve öneriler için e-posta güncellemeleri alın."
+        "Belgelerinize eklenen yorumlar ve öneriler için e-posta bildirimleri alın."
       ],
       "Get Notified About Comments": [
-        "Yorumlar Hakkında Bildirim Alın"
+        "Yorumlar ile ilgili bildirim alın"
       ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Hükümetler ve internet hizmeti sağlayıcılar çevrim içi etkinliğinizi izleyebilir. Gezinme gizliliğinizi korumak için gerçek IP adresiniz gizlenir ve etkinliğiniz şifrelenir."
@@ -4656,7 +4656,7 @@
         "Düşük Öncelik"
       ],
       "Making a copy...": [
-        "Kopya oluşturuluyor..."
+        "Bir kopya oluşturuluyor..."
       ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "En fazla ${ MAX_SHARED_URL_PASSWORD_LENGTH } karakter",
@@ -4690,7 +4690,7 @@
         "Henüz bir kişi eklenmemiş"
       ],
       "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
-        "Adreste belge bulunmuyor. ${ DRIVE_APP_NAME } uygulamasına dönün ve bir belge seçin."
+        "Adreste belge belirtilmemiş. ${ DRIVE_APP_NAME } uygulamasına dönün ve bir belge seçin."
       ],
       "No email address": [
         "E-posta adresi yok"
@@ -6104,6 +6104,10 @@
         "Aynı anda ${ n } etkin görüşme",
         "Aynı anda ${ n } etkin görüşme"
       ],
+      "${ n } participant": [
+        "${ n } katılımcı",
+        "${ n } katılımcı"
+      ],
       "24 hours per meeting": [
         "Görüşme başına 24 saat"
       ],
@@ -6112,6 +6116,9 @@
       ],
       "Appointment scheduling": [
         "Randevu planlama"
+      ],
+      "Booking pages": [
+        "Rezervasyon sayfaları"
       ],
       "Browser, mobile, and desktop apps": [
         "Tarayıcı, mobil ve bilgisayar uygulamaları"
@@ -6122,8 +6129,8 @@
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "Uçtan uca şifrelenmiş ekran paylaşımı ve geçici çağrı içi sohbet"
       ],
-      "Meeting recording (coming soon)": [
-        "Görüşme kaydı (yakında)"
+      "Meeting recording": [
+        "Toplantı kaydı"
       ],
       "One active meeting at a time": [
         "Aynı anda bir etkin görüşme"
@@ -10042,7 +10049,7 @@
         "Bu içe aktarma işlemi, ${ BRAND_NAME } hesabınızla kullanılabilecek depolama alanını aşabilir. Lütfen içe aktarmanızı özelleştirmeyi değerlendirin."
       ],
       "This will replace all the data in the spreadsheet": [
-        "Bu durum hesap tablosundaki tüm verileri değiştirecek"
+        "Bu işlem hesap tablosundaki tüm verileri değiştirecek"
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Ne yazık ki, şu anca çevrim içi değiliz. Lütfen sorununuzu aktarmak için aşağıdaki formu doldurun. Yeniden çevrim içi olduğumuzda inceleyip size geri döneceğiz."

@@ -1497,9 +1497,6 @@
       "Trust": [
         "信頼する"
       ],
-      "Trust key": [
-        "鍵を信頼する"
-      ],
       "Trust public key": [
         "公開鍵を信頼"
       ],
@@ -4219,17 +4216,6 @@
         "${ PLAN_NAMES[PLANS.PASS] } のサブスクリプションは、年間 ${ price } の特別価格でご利用いただけます。無料プランにダウングレードすると、将来再度アップグレードした場合でも、割引は永久に失われます。"
       ]
     },
-    "Drawer tab, Action": {
-      "Download for Linux": [
-        "Linux版をダウンロード"
-      ],
-      "Download for macOS": [
-        "macOS版をダウンロード"
-      ],
-      "Download for Windows": [
-        "Windows版をダウンロード"
-      ]
-    },
     "driveplus2024: Deal details": {
       "Extended version history": [
         "拡張バージョン履歴"
@@ -4966,9 +4952,6 @@
       ],
       "Try using only letters, numerals, and _.-": [
         "文字、数字、_.- のみを使用してみてください。"
-      ],
-      "Unable to load VPN dashboard. Please check your connection and try again.": [
-        "VPNのダッシュボードの読み込みに失敗しました。接続状況を確認してもう一度お試しください。"
       ],
       "Unexpected error, we can't import the contacts": [
         "予期しないエラーにより、連絡先をインポートできません"
@@ -6488,9 +6471,6 @@
       "${ updated } contact updated successfully.": [
         "${ updated } 連絡先が正常に更新されました。"
       ],
-      "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
-        "${ VPN_APP_NAME } はIPアドレスのマスキングにより、ウェブサイトからの特定を防ぎます。"
-      ],
       "(${ memberCount } member)": [
         "(${ memberCount } 人のメンバー)"
       ],
@@ -6508,12 +6488,6 @@
       ],
       "**${ total }** result found in ${ labelName }": [
         "${ labelName } 内で **${ total }** 件の結果が見つかりました"
-      ],
-      "**Auto-connect**: Opens and connects to VPN as soon as you turn on your device.": [
-        "**自動接続機能**: デバイスを立ち上げると同時に起動し、VPNに接続します。"
-      ],
-      "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
-        "**緊急停止装置**: VPNに予期せぬ問題が起きた際には、インターネット接続を切ることによりデータ漏洩を防ぎます。"
       ],
       "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
         "ステップ1：招待リンクで${ BRAND_NAME }に**友達を招待してください**"
@@ -6545,20 +6519,8 @@
       "A request to unsubscribe from this mailing list will be sent to the sender of the newsletter and automatically processed.": [
         "メーリングリストの購読解除のリクエストがニュースレターの差出人に送信され、自動で処理されます"
       ],
-      "A secure connection is essential when working remotely. A VPN protects company data from cyber threats and keeps your work private.": [
-        "リモートワークには、安全な接続が欠かせません。VPNは、企業のデータをサイバーの脅威から保護し、業務内容を秘匿いたします。"
-      ],
       "A user is an account associated with a single username, mailbox, and person": [
         "ユーザーとは、1つのユーザー名、メールボックス、人物に関連するアカウントのことです"
-      ],
-      "A VPN encrypts your connection and hides your IP address, making it much harder for anyone to track or monitor your browsing.": [
-        "VPNは接続の暗号化とIPアドレスの秘匿により、あなたのブラウジングの追跡及び監視を困難にします。"
-      ],
-      "A VPN hides your IP address and encrypts your browsing activity, making it harder for websites, advertisers, and ISPs to track you over time.": [
-        "VPNは、お客様のIPアドレスを秘匿し、ブラウジング内容を暗号化することで、ウェブサイトや広告主、ISPがお客様を継続的に追跡することを困難にします。"
-      ],
-      "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
-        "VPNは、あなたのデバイスとインターネットを繋ぐ安全なトンネルのようなものです。インターネットサービスプロバイダ(ISP)及び利用したウェブサイトから、位置情報と活動情報を隠します。"
       ],
       "Access 6,500+ high-speed servers on up to 10 devices to keep your browsing data safe. Available on ${ ios }, ${ android }, ${ appleTV }, and ${ desktop }.": [
         "最大 10 台のデバイスで 6,500 台以上の高速サーバーにアクセスし、ブラウジングデータを安全に保ちます。 ${ ios }、 ${ android }、 ${ appleTV }、 ${ desktop }で利用できます。"
@@ -6572,9 +6534,6 @@
       "Active": [
         "アクティブ"
       ],
-      "Ad targeting": [
-        "広告ターゲティング"
-      ],
       "Add image URL": [
         "画像 URL を追加"
       ],
@@ -6586,9 +6545,6 @@
       ],
       "Addresses settings": [
         "アドレス設定"
-      ],
-      "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
-        "広告主はあなたのブラウジングを追跡してターゲティング広告を表示します。${ VPN_APP_NAME }はトラッカーと広告をブロックすることで、接続を高速化し、オンライン上の体験を向上させます。"
       ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "AI を活用したアシスタントにより、より良いメールを迅速かつ簡単に作成できるようになります。"
@@ -6829,9 +6785,6 @@
       ],
       "Confirm phishing report": [
         "フィッシング報告の確認"
-      ],
-      "Connect to ${ VPN_APP_NAME } to browse privately": [
-        "秘匿ブラウジングの前に${ VPN_APP_NAME }に接続してください"
       ],
       "Consider when's the best time for your recipient to receive your email, and schedule it to be sent then.": [
         "受信者がメールを受信するのに最適なタイミングを検討し、送信を予約できます。"
@@ -7157,9 +7110,6 @@
       "Generate text": [
         "テキストを生成"
       ],
-      "Geoblocking": [
-        "地域制限"
-      ],
       "Get it on Google Play": [
         "Google Playで入手する"
       ],
@@ -7171,9 +7121,6 @@
       ],
       "Google Pay mark": [
         "Google Pay マーク"
-      ],
-      "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
-        "政府とISPも、あなたのオンライン上の活動を監視することができます。IPアドレスを隠し、活動内容を暗号化することで、お客様のブラウジングはプライベートになります。"
       ],
       "Has ${ numAttachments } attachment (${ numAttachmentsSize })": [
         "${ numAttachments } 件の添付ファイル (${ numAttachmentsSize })"
@@ -7250,9 +7197,6 @@
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "データを ${ fromEmail } から ${ toEmail } にインポートしています。"
       ],
-      "In restrictive countries": [
-        "規制が厳しい国"
-      ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "次のステップでは、Bitcoin アドレスを使用してデポジットを送信することができます。"
       ],
@@ -7290,7 +7234,7 @@
         "初期化中…"
       ],
       "Insert image": [
-        "画像の挿入"
+        "画像を挿入"
       ],
       "Insert link": [
         "リンクを挿入"
@@ -7312,9 +7256,6 @@
       ],
       "It's better to have:": [
         "以下の方が良いでしょう:"
-      ],
-      "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
-        "基本的にVPNを使用することをお勧めしますが、もしサイバーセキュリティの脅威が迫っている場合では、以下の通りです："
       ],
       "JCB logo": [
         "JCB ロゴ"
@@ -7466,9 +7407,6 @@
       "More refine actions": [
         "その他の修正操作"
       ],
-      "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
-        "ほとんどの公共のWiFiネットワークは安全ですが、一部はセキュリティ対策が不十分であり、あなたをサイバー攻撃の危険に晒してしまいます。VPNはトラフィックを暗号化することにより、あなたを保護します。"
-      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "新しいフォルダーの名前と、親フォルダーを選択してください。最上位のフォルダーを作成したい場合は、親フォルダーを選択しないでください。"
       ],
@@ -7535,9 +7473,6 @@
       "Not a valid URL": [
         "有効な URL ではありません"
       ],
-      "Not connected": [
-        "接続されていません"
-      ],
       "Number of dedicated servers in the organization": [
         "組織内の専用サーバー数"
       ],
@@ -7549,9 +7484,6 @@
       ],
       "of": [
         " / "
-      ],
-      "On public WiFi networks": [
-        "公共のWiFiネットワーク上にて"
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "相手から「漏洩」と判断された鍵があります。対象の鍵の信頼を解除することを推奨します。"
@@ -7706,9 +7638,6 @@
       "Print email": [
         "メールを印刷"
       ],
-      "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
-        "プライベートブラウジング (「シークレット」モードとも言います)は、お客様の活動をデバイス上で非表示することにおいてのみ有効です。履歴やCookieの保存をすることを防ぎますが、お客様を不可視にするものではありません。依然として、お客様のISPとネットワーク管理者、及びお客様が利用するウェブサイトは、お客様のオンライン上での活動を監視できます。"
-      ],
       "Proofread selection": [
         "選択範囲を校正する"
       ],
@@ -7780,9 +7709,6 @@
       ],
       "Saving draft": [
         "下書きを保存中"
-      ],
-      "Scan the QR code with your mobile device": [
-        "携帯デバイスでQRコードを読み込んでください。"
       ],
       "Scheduled send of this message will be canceled.": [
         "このメッセージの送信予約はキャンセルされます。"
@@ -7895,12 +7821,6 @@
       "Snoozing this conversation will be canceled.": [
         "この会話のスヌーズが取り消されます。"
       ],
-      "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
-        "一部の政府は、特定のウェブサイトへの利用をブロックまたは制限します。VPNは、お客様の活動と個人情報を秘匿し、検閲を回避するのに役立ちます。"
-      ],
-      "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
-        "一部のウェブサイトや配信サービスは、地域毎にコンテンツをブロックします。VPNを通じると、制限を乗り越え、自由にインターネットを利用できるようになります。"
-      ],
       "Sorry, this message does not exist or has already expired.": [
         "申し訳ありません、このメッセージは存在しないか有効期限切れです。"
       ],
@@ -7909,9 +7829,6 @@
       ],
       "Start using the shorter, catchier version of your email address.": [
         "より短く、覚えやすいメールアドレスを使い始めましょう。"
-      ],
-      "Stay connected effortlessly by enabling the following VPN settings:": [
-        "こちらのVPNの設定を有効にすることで、簡単に接続を維持します。"
       ],
       "Storage capabilities are not supported in this browser, we need this support to enable message content search.": [
         "ストレージ機能はこのブラウザではサポートされていません。コンテンツの検索を有効にするためには、このサポートが必要です。"
@@ -7945,9 +7862,6 @@
       ],
       "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
         "サブスクリプションの終了: ${ planName } の特典を維持するには、${ byDate } までに Google Play ストアでサブスクリプションを再開してください。${ reactivateLink }"
-      ],
-      "Surveillance": [
-        "監視について"
       ],
       "Symbols (#$&)": [
         "記号 (#$&)"
@@ -8078,9 +7992,6 @@
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "このリンクはホモグラフ攻撃の可能性があります。 これがあなたのアクセスしたいリンクであることを確認するか、開かないようにしてください。"
       ],
-      "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
-        "これは、お客様のISPと利用したウェブサイトが、お客様のオンライン上の活動と個人情報を紐づけられないことを意味します。"
-      ],
       "This message has been adjusted to comply with a dark background.": [
         "このメッセージは暗い背景に合わせるために調整されました。"
       ],
@@ -8156,9 +8067,6 @@
       "This sender's public key has not been trusted yet.": [
         "この差出人の公開鍵はまだ信頼されていません。"
       ],
-      "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
-        "この固有のコードは、ウェブサイトやプロバイダ(ISP)が、位置情報や閲覧履歴をお客様のデバイスと紐づけるのに利用します。"
-      ],
       "This was shown to you because your email subject line contains password reset keywords.": [
         "これは、メールの件名にパスワードリセットキーワードが含まれているため表示されました。"
       ],
@@ -8221,9 +8129,6 @@
       ],
       "Trackers blocked:": [
         "ブロックしたトラッカー:"
-      ],
-      "Tracking": [
-        "追跡"
       ],
       "Trash existing messages": [
         "既存のメッセージを破棄する"
@@ -8351,9 +8256,6 @@
       "Visa Secure logo": [
         "Visa Secure ロゴ"
       ],
-      "VPN IP": [
-        "VPN IP"
-      ],
       "Warning": [
         "警告"
       ],
@@ -8413,12 +8315,6 @@
       ],
       "When giving out your email, use a unique, disposable hide-my-email alias instead of your real email address.": [
         "メールアドレスを伝える際には、本来のメールアドレスではなく専用の使い捨てhide-my-emailエイリアスを使用しましょう。"
-      ],
-      "When working remotely": [
-        "リモートワーク時には"
-      ],
-      "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
-        "VPNに接続することで、暗号化技術により、お客様のIPアドレス(デバイス毎に割り振られる一意のコード)は秘匿されます。"
       ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "${ senderName } の信頼された鍵を有効にすると、公開鍵は連絡先の詳細に追加されます。"
@@ -8636,15 +8532,6 @@
       "Your information was found on ${ displayedDate }": [
         "あなたの情報は ${ displayedDate }で見つかりました。"
       ],
-      "Your internet service provider can monitor and sometimes sell your data, or even restrict what websites you can access.": [
-        "プロバイダは、お客様を監視し、時に情報を売るだけでなく、利用するウェブサイトを制限することができます。"
-      ],
-      "Your IP": [
-        "お客様のIP"
-      ],
-      "Your IP address is visible and can be used to track your online activity.": [
-        "あなたのIPアドレスは公開されており、あなたのオンライン上での活動を追跡されるのに使用されてしまいます。"
-      ],
       "Your login information will not be saved after the import is completed.": [
         "インポート完了後、ログイン情報は保存されません。"
       ],
@@ -8663,17 +8550,11 @@
       "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
         "次回の請求日は ${ renewalTime }です。すぐにプランの変更が必要な場合は、サポートにお問い合わせください。"
       ],
-      "Your online activity is protected": [
-        "オンラインアクティビティは保護されています"
-      ],
       "Your password was leaked:": [
         "パスワードが漏洩しました:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "電話番号は、この一度限りの認証にのみ使用されます。"
-      ],
-      "Your physical location is visible and can be used to restrict your access to the internet.": [
-        "お客様の位置情報は公開状態にあり、インターネットへのアクセスを制限するのに悪用されうります。"
       ],
       "Your private writing assistant": [
         "プライベート執筆アシスタント"
@@ -9765,15 +9646,6 @@
       "Your domain": [
         "あなたのドメイン"
       ],
-      "Your IP": [
-        "お客様のIP"
-      ],
-      "Your ISP": [
-        "お客様のISP"
-      ],
-      "Your location": [
-        "お客様の現在地"
-      ],
       "Your password (admin)": [
         "あなたのパスワード (管理者)"
       ],
@@ -10258,9 +10130,6 @@
       ],
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "エンドツーエンドで暗号化された画面共有と通話中の一時的なチャット"
-      ],
-      "Meeting recording (coming soon)": [
-        "ミーティング録画（近日公開）"
       ],
       "One active meeting at a time": [
         "一度に1つのミーティングを開催"
@@ -14669,9 +14538,6 @@
       "Deleting contacts": [
         "連絡先を削除しています"
       ],
-      "Desktop": [
-        "デスクトップ"
-      ],
       "Disable categories?": [
         "カテゴリーを無効化しますか？"
       ],
@@ -14692,9 +14558,6 @@
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "${ DRIVE_APP_NAME } アプリをダウンロード"
-      ],
-      "Download the app": [
-        "アプリをダウンロード"
       ],
       "Edit billing address": [
         "請求先住所を編集"
@@ -14777,9 +14640,6 @@
       "Get full access to ${ CALENDAR_APP_NAME }": [
         "${ CALENDAR_APP_NAME }へのフルアクセスを入手"
       ],
-      "Get more from your VPN": [
-        "VPNからさらに入手する"
-      ],
       "Get the ${ appName[APP_NAME] } apps": [
         "${ appName[APP_NAME] } アプリを入手"
       ],
@@ -14803,9 +14663,6 @@
       ],
       "High security for your account": [
         "アカウントの高度なセキュリティ"
-      ],
-      "How does it all work?": [
-        "そもそもどんな仕組みでこんなことが？"
       ],
       "How does it work?": [
         "どのように動作しますか?"
@@ -14873,9 +14730,6 @@
       "Load remote content": [
         "外部コンテンツの読み込み"
       ],
-      "Make a secure connection your default": [
-        "安全な接続を標準設定にする"
-      ],
       "Mark all messages as read": [
         "すべてのメッセージを既読にする"
       ],
@@ -14917,9 +14771,6 @@
       ],
       "Minicalendar": [
         "ミニカレンダー"
-      ],
-      "Mobile": [
-        "モバイル"
       ],
       "More": [
         "もっと見る"
@@ -15076,9 +14927,6 @@
       ],
       "Priority support:": [
         "優先サポート:"
-      ],
-      "Private browsing vs VPN": [
-        "プライベートブラウジング vs VPN"
       ],
       "Processing...": [
         "処理中..."
@@ -15341,9 +15189,6 @@
       "Verifying your payment...": [
         "支払いを検証中..."
       ],
-      "VPN explained": [
-        "VPNのご説明"
-      ],
       "Warning": [
         "警告"
       ],
@@ -15365,17 +15210,8 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "${ BRAND_NAME } for Businessへようこそ"
       ],
-      "What can a VPN protect you from?": [
-        "VPNは何からお客様を保護できるのでしょうか？"
-      ],
-      "What is a VPN?": [
-        "VPNとは？"
-      ],
       "What would you like to import?": [
         "何をインポートしたいですか?"
-      ],
-      "When is it most important to use a VPN?": [
-        "最もVPNの利用が重要になるのはいつでしょうか？"
       ],
       "You can now create unlimited folders and labels": [
         "無制限のフォルダとラベルを作成できるようになりました"

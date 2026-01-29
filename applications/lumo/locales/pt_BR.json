@@ -2391,6 +2391,9 @@
       "Practice conversations, learn grammar, and build vocabulary in your target language": [
         "Pratique conversas, aprenda gramática e amplie seu vocabulário no idioma que deseja aprender."
       ],
+      "Research & Analysis Partner": [
+        "Parceiro de pesquisa e análise"
+      ],
       "Study companion": [
         "Companheiro de estudo"
       ],
@@ -2402,8 +2405,29 @@
       ]
     },
     "collider_2025:Prompt": {
+      "Can you explain why this answer is correct?": [
+        "Você pode explicar por que essa resposta está correta?"
+      ],
+      "Explain this medication and its potential side effects": [
+        "Explique este medicamento e seus possíveis efeitos colaterais."
+      ],
+      "Help me draft a professional response to this email": [
+        "Ajude-me a redigir uma resposta profissional a este e-mail."
+      ],
+      "Help me organize my thoughts on this decision": [
+        "Ajude-me a organizar meus pensamentos sobre essa decisão."
+      ],
+      "Help me prepare talking points for this presentation": [
+        "Ajude-me a preparar os pontos a serem abordados nesta apresentação."
+      ],
       "How do people celebrate New Year's Eve around the world?": [
         "Como as pessoas celebram a véspera de Ano Novo ao redor do mundo?"
+      ],
+      "Identify any unusual or potentially unfavorable terms": [
+        "Identifique quaisquer termos incomuns ou potencialmente desfavoráveis."
+      ],
+      "Summarize the key points from this meeting": [
+        "Resuma os pontos principais desta reunião."
       ]
     },
     "collider_2025:Status": {
@@ -2524,6 +2548,9 @@
       "More options": [
         "Mais opções"
       ],
+      "More Projects with ${ LUMO_SHORT_APP_NAME } Plus": [
+        "Mais Projetos no ${ LUMO_SHORT_APP_NAME } Plus"
+      ],
       "No chat history yet. Let's start chatting!": [
         "Nenhum histórico de bate-papo ainda. Vamos começar a conversar!"
       ],
@@ -2545,6 +2572,9 @@
       "Settings": [
         "Configurações"
       ],
+      "Sign in to create projects": [
+        "Inicie a sessão para criar projetos"
+      ],
       "Start a new conversation": [
         "Iniciar uma nova conversa"
       ],
@@ -2564,6 +2594,11 @@
     "collider_2025:Tooltip": {
       "Choose icon": [
         "Escolher ícone"
+      ]
+    },
+    "collider_2025:Warning": {
+      "This will also permanently delete:": [
+        "Isso também excluirá permanentemente:"
       ]
     },
     "color": {
@@ -3753,6 +3788,9 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Este campo exige um mínimo de ${ minimumLength } caracteres."
       ],
+      "This offer is not available in your country": [
+        "Esta oferta não está disponível no seu país"
+      ],
       "Try using only letters, numerals, and _.-": [
         "Tente usar apenas letras, números e _.-"
       ],
@@ -4907,6 +4945,10 @@
         "${ n } reunião ativa por vez",
         "${ n } reuniões ativas por vez"
       ],
+      "${ n } participant": [
+        "${ n } participante",
+        "${ n } participantes"
+      ],
       "24 hours per meeting": [
         "24 horas por reunião"
       ],
@@ -4915,6 +4957,9 @@
       ],
       "Appointment scheduling": [
         "Agendamento de compromissos"
+      ],
+      "Booking pages": [
+        "Páginas de agendamentos"
       ],
       "Browser, mobile, and desktop apps": [
         "Aplicativos para navegadores, dispositivos móveis e computadores"
@@ -4925,8 +4970,8 @@
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "Compartilhamento de tela com criptografia de ponta a ponta e chat efêmero durante a chamada"
       ],
-      "Meeting recording (coming soon)": [
-        "Gravação da reunião (em breve)"
+      "Meeting recording": [
+        "Gravação da reunião"
       ],
       "One active meeting at a time": [
         "Uma reunião ativa por vez"

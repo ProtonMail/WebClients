@@ -4335,6 +4335,9 @@
       "This label name is not available. Please choose a different name.": [
         "Tento názov štítku nie je k dispozícii. Zvoľte prosím iný názov."
       ],
+      "This offer is not available in your country": [
+        "Táto ponuka nie je vo vašej krajine dostupná."
+      ],
       "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
         "Na vytvorenie nesúkromných ​​používateľských účtov a získanie prístupu k ich účtom, budete musieť obnoviť svoje oprávnenia správcu."
       ],
@@ -4392,8 +4395,8 @@
       "You have reached the number of contacts limit for your account": [
         "Dosiahli ste limit počtu kontaktov pre svoj účet"
       ],
-      "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
-        "Limit počtu adries vo vašom pláne bol vyčerpaný. Prejdite na vyšší plán, ak chcete pridať novú adresu."
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "Využili ste všetky adresy vo vašom pláne. Navýšte, prosím, svoj plán, aby ste mohli pridať novú adresu alebo deaktivujte nejakú adresu vo vašom účte."
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Limit počtu používateľov vo vašom pláne bol vyčerpaný. Prejdite na vyšší plán, ak chcete pridať ďalšieho používateľa."
@@ -8093,11 +8096,11 @@
       "We need to authenticate your payment with your bank.": [
         "Potrebujeme overiť platbu vo vašej banke."
       ],
+      "We recommend adding servers in different locations (one per city) to maximize redundancy.": [
+        "Odporúčame pridať servery na rôznych miestach (jeden na mesto), aby sa maximalizovala redundancia."
+      ],
       "We recommend having at least 2 servers in order to provide redundancy.": [
         "Odporúčame mať aspoň 2 servery, aby sa zabezpečila redundancia."
-      ],
-      "We recommend having multiple servers in different locations to provide redundancy.": [
-        "Odporúčame mať viacero serverov na rôznych miestach, aby sa zabezpečila redundancia."
       ],
       "We recommend notifying the family members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
         "Odporúčame upozorniť členov rodiny a požiadať ich, aby si nastavili 2FA pre svoje kontá skôr, ako začne vynútené používanie 2FA."
@@ -10016,9 +10019,6 @@
       ],
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "End-to-end šifrované zdieľanie obrazovky a dočasný chat počas hovoru"
-      ],
-      "Meeting recording (coming soon)": [
-        "Nahrávanie stretnutia (čoskoro)"
       ],
       "One active meeting at a time": [
         "Jeden aktívny hovor naraz"

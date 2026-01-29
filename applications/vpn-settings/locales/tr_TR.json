@@ -4285,6 +4285,9 @@
       "This label name is not available. Please choose a different name.": [
         "Bu etiket adı kullanılamaz. Lütfen farklı bir ad seçin."
       ],
+      "This offer is not available in your country": [
+        "Bu teklif ülkeniz için geçerli değil"
+      ],
       "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
         "Korunmayan kullanıcı hesapları oluşturmak ve bu hesaplara erişmek için yönetici yetkilerinizi geri yüklemelisiniz."
       ],
@@ -4342,8 +4345,8 @@
       "You have reached the number of contacts limit for your account": [
         "Hesabınızın kişi sayısı sınırına ulaştınız"
       ],
-      "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
-        "Tarifenizdeki tüm adresleri kullandınız. Yeni bir adres eklemek için lütfen tarifenizi yükseltin."
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "Planınızdaki tüm adresleri kullandınız. Yeni bir adres eklemek veya hesabınızdaki bir adresi devre dışı bırakmak için lütfen tarifenizi yükseltin."
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Tarifenizin kullanıcı sayısı sınırına ulaştınız. Yeni bir kullanıcı eklemek için lütfen tarifenizi yükseltin."
@@ -7891,11 +7894,11 @@
       "We need to authenticate your payment with your bank.": [
         "Ödemenizi bankanızla doğrulamamız gerekiyor."
       ],
+      "We recommend adding servers in different locations (one per city) to maximize redundancy.": [
+        "Yedekliliği en üst düzeye çıkarmak için farklı konumlardaki (her ilde bir tane) sunucuları eklemenizi öneririz."
+      ],
       "We recommend having at least 2 servers in order to provide redundancy.": [
         "Yedeklilik sağlamak için en az 2 sunucunuz olması önerilir."
-      ],
-      "We recommend having multiple servers in different locations to provide redundancy.": [
-        "Yedeklilik sağlamak için farklı konumlarda birden fazla sunucu bulundurmanızı öneririz."
       ],
       "We recommend notifying the family members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
         "İki adımlı doğrulama kullanımını zorunlu kılmadan önce aile üyelerini bilgilendirmenizi ve hesapları için iki adımlı doğrulamayı kurmalarını istemenizi öneririz."
@@ -7985,7 +7988,7 @@
         "E-posta kategorileri ile önemli iletiler birincil gelen kutusuna gelir. Diğer her şey kategoriler halinde düzenlenir."
       ],
       "With groups, you can implement the company security policies for access control and reduce the risk of accessing unauthorised data.": [
-        "Gruplarla birlikte erişim kontrolü için şirket güvenlik ilkelerini uygulayabilir ve yetkisiz verilere erişim riskini azaltabilirsiniz."
+        "Grupları kullanarak erişim denetimi için şirket güvenlik ilkelerini uygulayabilir ve verilere yetkisiz erişilmesi riskini azaltabilirsiniz."
       ],
       "With groups, you can quickly and easily send emails to all the people in a specified group.": [
         "Grupları kullanarak, belirli bir gruptaki kullanıcılara kolayca e-postalar gönderebilirsiniz."
@@ -9745,6 +9748,10 @@
         "Aynı anda ${ n } etkin görüşme",
         "Aynı anda ${ n } etkin görüşme"
       ],
+      "${ n } participant": [
+        "${ n } katılımcı",
+        "${ n } katılımcı"
+      ],
       "24 hours per meeting": [
         "Görüşme başına 24 saat"
       ],
@@ -9753,6 +9760,9 @@
       ],
       "Appointment scheduling": [
         "Randevu planlama"
+      ],
+      "Booking pages": [
+        "Rezervasyon sayfaları"
       ],
       "Browser, mobile, and desktop apps": [
         "Tarayıcı, mobil ve bilgisayar uygulamaları"
@@ -9763,8 +9773,8 @@
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "Uçtan uca şifrelenmiş ekran paylaşımı ve geçici çağrı içi sohbet"
       ],
-      "Meeting recording (coming soon)": [
-        "Görüşme kaydı (yakında)"
+      "Meeting recording": [
+        "Toplantı kaydı"
       ],
       "One active meeting at a time": [
         "Aynı anda bir etkin görüşme"
@@ -16280,6 +16290,9 @@
       ]
     },
     "Upsell": {
+      "${ BRAND_NAME } for Business": [
+        "İşletmeler için ${ BRAND_NAME }"
+      ],
       "**Save up to ${ priceString }** with a longer subscription. Same premium features, lower price.": [
         "**Daha uzun süre abone olarak ${ priceString }** kadar kazanç sağlayın. Aynı ücretli özellikler, daha düşük fiyat."
       ],
@@ -16291,6 +16304,9 @@
       ],
       "Did you know?": [
         "Biliyor muydunuz?"
+      ],
+      "Everything you need to collaborate securely in a single subscription. Get access to ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, ${ SHEETS_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } and ${ LUMO_SHORT_APP_NAME } AI Assistant.": [
+        "Tek bir abonelikle güvenli bir şekilde işbirliği yapmak için ihtiyacınız olan her şey. ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, ${ SHEETS_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } ve ${ LUMO_SHORT_APP_NAME } Yapay Zeka Asistanına erişin."
       ],
       "Get ${ drivePlusPlanMaxSpace } storage for your files, photos and documents, and recover file versions with 10-year file recovery.": [
         "Dosyalarınız, fotoğraflarınız ve belgeleriniz için ${ drivePlusPlanMaxSpace } depolama alanı edinin ve 10 yıl geriye dönük dosya kurtarma özelliği ile dosya sürümlerini geri yükleyin."
