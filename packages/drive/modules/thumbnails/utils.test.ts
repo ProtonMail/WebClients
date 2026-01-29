@@ -3,17 +3,12 @@ import { ThumbnailType } from '@protontech/drive-sdk';
 import {
     HD_THUMBNAIL_MAX_SIDE,
     HD_THUMBNAIL_MAX_SIZE,
+    SupportedMimeTypes,
     THUMBNAIL_MAX_SIDE,
     THUMBNAIL_MAX_SIZE,
 } from '@proton/shared/lib/drive/constants';
 
-import {
-    calculateThumbnailSize,
-    getLongestEdge,
-    getMaxThumbnailSize,
-    getThumbnailTypesToGenerate,
-    shouldGenerateHDPreview,
-} from './utils';
+import { calculateThumbnailSize, getLongestEdge, getMaxThumbnailSize, shouldGenerateHDPreview } from './utils';
 
 describe('calculateThumbnailSize', () => {
     it('should scale down large images', () => {
@@ -55,40 +50,44 @@ describe('getLongestEdge', () => {
 });
 
 describe('shouldGenerateHDPreview', () => {
-    it('should return true for large files with high resolution', () => {
+    it('should return true for large JPEG images (>1920px)', () => {
         const result = shouldGenerateHDPreview(
             HD_THUMBNAIL_MAX_SIZE * 2,
             HD_THUMBNAIL_MAX_SIDE * 2,
-            HD_THUMBNAIL_MAX_SIDE * 2
+            HD_THUMBNAIL_MAX_SIDE * 2,
+            SupportedMimeTypes.jpg
         );
         expect(result).toBe(true);
     });
 
-    it('should return false for small files', () => {
-        const result = shouldGenerateHDPreview(100000, 1000, 1000);
+    it('should return false for small JPEG images', () => {
+        const result = shouldGenerateHDPreview(100000, 1000, 1000, SupportedMimeTypes.jpg);
         expect(result).toBe(false);
     });
 
-    it('should return false for low resolution files', () => {
-        const result = shouldGenerateHDPreview(HD_THUMBNAIL_MAX_SIZE * 2, 500, 500);
+    it('should return false for small WebP images', () => {
+        const result = shouldGenerateHDPreview(100000, 1000, 1000, SupportedMimeTypes.webp);
         expect(result).toBe(false);
     });
-});
 
-describe('getThumbnailTypesToGenerate', () => {
-    it('should return only Type1 for small files', () => {
-        const fileSize = 1;
-        const types = getThumbnailTypesToGenerate(fileSize, 500, 500);
-
-        expect(types).toEqual([ThumbnailType.Type1]);
+    it('should return true for small PNG images (not JPEG/WebP)', () => {
+        const result = shouldGenerateHDPreview(100000, 1000, 1000, SupportedMimeTypes.png);
+        expect(result).toBe(true);
     });
 
-    it('should return both types for large HD files', () => {
-        const fileSize = HD_THUMBNAIL_MAX_SIZE * 2;
-        const types = getThumbnailTypesToGenerate(fileSize, HD_THUMBNAIL_MAX_SIDE * 2, HD_THUMBNAIL_MAX_SIDE * 2);
+    it('should return true for small HEIC images (not JPEG/WebP)', () => {
+        const result = shouldGenerateHDPreview(100000, 1000, 1000, SupportedMimeTypes.heic);
+        expect(result).toBe(true);
+    });
 
-        expect(types).toContain(ThumbnailType.Type1);
-        expect(types).toContain(ThumbnailType.Type2);
+    it('should return true for large PNG images (both conditions)', () => {
+        const result = shouldGenerateHDPreview(
+            HD_THUMBNAIL_MAX_SIZE * 2,
+            HD_THUMBNAIL_MAX_SIDE * 2,
+            HD_THUMBNAIL_MAX_SIDE * 2,
+            SupportedMimeTypes.png
+        );
+        expect(result).toBe(true);
     });
 });
 

@@ -32,6 +32,7 @@ export class RawImageHandler extends BaseHandler {
         fileSize: number,
         mimeType: SupportedMimeTypes.webp | SupportedMimeTypes.jpg,
         thumbnailTypes: ThumbnailType[],
+        originalMimeType: string,
         debug: boolean = false
     ): Promise<ThumbnailGenerationResult> {
         if (isIosDevice && fileSize > MAX_MEDIA_SIZE_FOR_THUMBNAIL_IOS) {
@@ -76,9 +77,12 @@ export class RawImageHandler extends BaseHandler {
             const img = await getImageFromFile(blob);
             perf.end('imageDecoding');
 
-            const thumbnails = await this.generateThumbnailsFromImage(fileSize, img, {
+            const thumbnails = await this.generateThumbnailsFromImage({
+                fileSize,
+                img,
                 mimeType,
                 thumbnailTypes,
+                originalMimeType,
                 perf,
             });
 
