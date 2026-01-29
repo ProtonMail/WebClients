@@ -5,6 +5,7 @@ import { type Middleware, isAction } from 'redux';
 import { isSynchronousAction } from '@proton/pass/store/actions/enhancers/client';
 import { isActionFrom, withSender } from '@proton/pass/store/actions/enhancers/endpoint';
 import type { ClientEndpoint, TabId } from '@proton/pass/types/worker/runtime';
+import { serialize } from '@proton/pass/utils/object/serialize';
 import noop from '@proton/utils/noop';
 
 type ProxyActionsMiddlewareOptions = {
@@ -34,10 +35,9 @@ export const relayMiddleware = ({ endpoint, tabId }: ProxyActionsMiddlewareOptio
             /* hydrate the action with the current client's sender data */
             const message = messageFactory({
                 type: WorkerMessageType.STORE_DISPATCH,
-                payload: { action },
+                payload: { action: serialize(withSender({ endpoint, tabId })(action)) },
             });
 
-            message.payload.action = withSender({ endpoint: message.sender, tabId })(message.payload.action);
             sendMessage(message).catch(noop);
         }
     };
