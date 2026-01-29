@@ -61,5 +61,6 @@ export const getLargeThumbnail = async (
                 data,
             };
         }
+        throw new Error(thumbnailResult.error);
     }
 };

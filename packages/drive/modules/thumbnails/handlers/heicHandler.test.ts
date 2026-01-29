@@ -38,7 +38,14 @@ describe('HeicHandler', () => {
             const blob = new Blob(['heic content'], { type: 'image/heic' });
 
             await expect(
-                handler.generate(blob, 'photo.heic', blob.size, SupportedMimeTypes.webp, [ThumbnailType.Type1])
+                handler.generate(
+                    blob,
+                    'photo.heic',
+                    blob.size,
+                    SupportedMimeTypes.webp,
+                    [ThumbnailType.Type1],
+                    'image/heic'
+                )
             ).rejects.toThrow(UnsupportedFormatError);
         });
 
@@ -49,7 +56,14 @@ describe('HeicHandler', () => {
             const blob = new Blob(['heic content'], { type: 'image/heic' });
 
             try {
-                await handler.generate(blob, 'photo.heic', blob.size, SupportedMimeTypes.webp, [ThumbnailType.Type1]);
+                await handler.generate(
+                    blob,
+                    'photo.heic',
+                    blob.size,
+                    SupportedMimeTypes.webp,
+                    [ThumbnailType.Type1],
+                    'image/heic'
+                );
                 fail('Should have thrown UnsupportedFormatError');
             } catch (error) {
                 expect(error).toBeInstanceOf(UnsupportedFormatError);

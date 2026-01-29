@@ -97,6 +97,7 @@ export class ThumbnailProcessor {
                 fileSize,
                 thumbnailMimeType,
                 thumbnailTypes,
+                detectedMimeType,
                 debug
             );
 

@@ -25,6 +25,7 @@ export interface GenericHandler {
         fileSize: number,
         mimeType: SupportedMimeTypes.webp | SupportedMimeTypes.jpg,
         thumbnailTypes: ThumbnailType[],
+        originalMimeType: string,
         debug?: boolean,
         options?: HandlerOptions
     ): Promise<ThumbnailGenerationResult>;

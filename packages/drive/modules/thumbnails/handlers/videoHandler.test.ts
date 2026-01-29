@@ -42,7 +42,14 @@ describe('VideoHandler', () => {
             const blob = new Blob(['video content'], { type: 'video/mp4' });
 
             await expect(
-                handler.generate(blob, 'large.mp4', largeSize, SupportedMimeTypes.webp, [ThumbnailType.Type1])
+                handler.generate(
+                    blob,
+                    'large.mp4',
+                    largeSize,
+                    SupportedMimeTypes.webp,
+                    [ThumbnailType.Type1],
+                    'video/mp4'
+                )
             ).rejects.toThrow(UnsupportedFormatError);
 
             Object.defineProperty(constants, 'isIosDevice', { value: false, writable: true });
@@ -52,7 +59,14 @@ describe('VideoHandler', () => {
             const blob = new Blob(['video content'], { type: 'video/mp4' });
 
             await expect(
-                handler.generate(blob, 'corrupted.mp4', blob.size, SupportedMimeTypes.webp, [ThumbnailType.Type1])
+                handler.generate(
+                    blob,
+                    'corrupted.mp4',
+                    blob.size,
+                    SupportedMimeTypes.webp,
+                    [ThumbnailType.Type1],
+                    'video/mp4'
+                )
             ).rejects.toThrow(UnsupportedFormatError);
         });
 
@@ -60,7 +74,14 @@ describe('VideoHandler', () => {
             const blob = new Blob(['video content'], { type: 'video/mp4' });
 
             try {
-                await handler.generate(blob, 'test.mp4', blob.size, SupportedMimeTypes.webp, [ThumbnailType.Type1]);
+                await handler.generate(
+                    blob,
+                    'test.mp4',
+                    blob.size,
+                    SupportedMimeTypes.webp,
+                    [ThumbnailType.Type1],
+                    'video/mp4'
+                );
                 fail('Should have thrown UnsupportedFormatError');
             } catch (error) {
                 expect(error).toBeInstanceOf(UnsupportedFormatError);
