@@ -5039,6 +5039,9 @@
       "Edge": [
         "Edge"
       ],
+      "Fedora": [
+        "Fedora"
+      ],
       "Fire TV": [
         "Fire TV"
       ],
@@ -5056,6 +5059,9 @@
       ],
       "Installation guide": [
         "Installationsanleitung"
+      ],
+      "iOS": [
+        "iOS"
       ],
       "iPhone/iPad": [
         "iPhone/iPad"
@@ -5098,6 +5104,9 @@
       ],
       "TV": [
         "TV"
+      ],
+      "Ubuntu/Debian": [
+        "Ubuntu/Debian"
       ],
       "Windows": [
         "Windows"
@@ -6609,6 +6618,9 @@
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Diese Nachricht enthält möglicherweise Internetadressen, die von deinem aktuellen Browser nicht ordnungsgemäß geöffnet werden können."
       ],
+      "This offer is not available in your country": [
+        "Dieses Angebot ist in deinem Land nicht verfügbar"
+      ],
       "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
         "Um nicht-private Benutzerkonten zu erstellen und auf ihre Konten zuzugreifen, musst du deine Administratorrechte wiederherstellen."
       ],
@@ -6678,8 +6690,8 @@
       "You have reached the number of contacts limit for your account": [
         "Du hast die maximale Anzahl von Kontakten für dein Konto erreicht"
       ],
-      "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
-        "Alle Adressen in deinem Abonnement werden bereits verwendet. Bitte wechseln dein Abonnement, um eine neue Adresse hinzuzufügen."
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "Alle E-Mail-Adressen in deinem Abonnement wurden bereits verwendet. Bitte upgrade dein Abonnement, um eine neue E-Mail-Adresse hinzuzufügen, oder deaktiviere eine E-Mail-Adresse in deinem Konto."
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Du hast die max. Anzahl von Benutzern in deinem Abonnement ausgeschöpft. Bitte upgrade dein Abonnement, um weitere Benutzer hinzuzufügen."
@@ -11360,11 +11372,11 @@
       "We need to authenticate your payment with your bank.": [
         "Wir müssen deine Zahlung bei deiner Bank authentifizieren."
       ],
+      "We recommend adding servers in different locations (one per city) to maximize redundancy.": [
+        "Wir empfehlen, Server an verschiedenen Standorten (einen pro Stadt) hinzuzufügen, um die Redundanz zu maximieren."
+      ],
       "We recommend having at least 2 servers in order to provide redundancy.": [
         "Wir empfehlen, mindestens 2 Server zu betreiben, um Redundanz zu gewährleisten."
-      ],
-      "We recommend having multiple servers in different locations to provide redundancy.": [
-        "Wir empfehlen, mehrere Server an verschiedenen Standorten zu betreiben, um Redundanz zu gewährleisten."
       ],
       "We recommend notifying the family members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
         "Wir empfehlen, die Familienmitglieder zu benachrichtigen und sie zu bitten, 2FA für ihre Konten einzurichten, bevor du die Verwendung von 2FA erzwingst."
@@ -11564,6 +11576,9 @@
       ],
       "You can enforce the password rules members of your organization will use when they create or reset the password to their ${ BRAND_NAME } Account.": [
         "Du kannst die Passwortregeln erzwingen, die Mitglieder deiner Organisation verwenden, wenn sie das Passwort für ihr ${ BRAND_NAME }-Konto erstellen oder zurücksetzen."
+      ],
+      "You can get our premium privacy services in one bundle—and it's just **${ priceString }/month**.": [
+        "Du kannst unsere Premium-Privatsphäre-Dienste in einem Paket bekommen – und das für nur **${ priceString }/Monat**."
       ],
       "You can get our premium privacy services in one bundle—and it’s just **${ priceString }/month**.": [
         "Du kannst unsere Premium-Privatsphäre-Dienste in einem Paket bekommen – und es kostet nur **${ priceString } pro Monat**."
@@ -14407,6 +14422,10 @@
         "${ n } aktives Meeting gleichzeitig",
         "${ n } aktive Meetings gleichzeitig"
       ],
+      "${ n } participant": [
+        "${ n } Teilnehmer",
+        "${ n } Teilnehmer"
+      ],
       "24 hours per meeting": [
         "24 Stunden pro Meeting"
       ],
@@ -14415,6 +14434,9 @@
       ],
       "Appointment scheduling": [
         "Terminplanung"
+      ],
+      "Booking pages": [
+        "Buchungsseiten"
       ],
       "Browser, mobile, and desktop apps": [
         "Browser-, Mobile- und Desktop-Apps"
@@ -14425,8 +14447,8 @@
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "Ende-zu-Ende-verschlüsselte Bildschirmfreigabe und temporärer Chat während des Anrufs"
       ],
-      "Meeting recording (coming soon)": [
-        "Aufnahme des Meetings (Demnächst verfügbar)"
+      "Meeting recording": [
+        "Besprechung aufzeichnen"
       ],
       "One active meeting at a time": [
         "Ein aktives Meeting gleichzeitig"
@@ -17397,6 +17419,9 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Verlängert sich zu ${ renewPriceStr }, jederzeit kündbar."
+      ],
+      "Sorry, this offer is not available for your account.": [
+        "Entschuldigung, dieses Angebot ist für dein Konto nicht verfügbar."
       ],
       "Sorry, this offer is not available with your current plan.": [
         "Dieses Angebot ist mit deinem aktuellen Abonnement leider nicht verfügbar."
@@ -22487,6 +22512,9 @@
       "Get the apps": [
         "Apps herunterladen"
       ],
+      "Get unlimited meetings on all your devices with ${ planName }. ${ upgradeButton }": [
+        "Erhalte unbegrenzte Meetings auf all deinen Geräten mit ${ planName }. ${ upgradeButton }"
+      ],
       "Gift": [
         "Geschenk"
       ],
@@ -23936,6 +23964,9 @@
       ]
     },
     "Upsell": {
+      "${ BRAND_NAME } for Business": [
+        "${ BRAND_NAME } für Unternehmen"
+      ],
       "**Save up to ${ priceString }** with a longer subscription. Same premium features, lower price.": [
         "**Spare bis zu ${ priceString }** mit einem längeren Abonnement. Gleiche Premium-Funktionen, niedrigerer Preis."
       ],
@@ -23947,6 +23978,9 @@
       ],
       "Did you know?": [
         "Wusstest du das?"
+      ],
+      "Everything you need to collaborate securely in a single subscription. Get access to ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, ${ SHEETS_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } and ${ LUMO_SHORT_APP_NAME } AI Assistant.": [
+        "Alles, was du brauchst, um sicher zusammenzuarbeiten in einem einzigen Abonnement. Erhalte Zugriff auf ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, ${ SHEETS_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } und den ${ LUMO_SHORT_APP_NAME } KI-Assistenten."
       ],
       "Get ${ drivePlusPlanMaxSpace } storage for your files, photos and documents, and recover file versions with 10-year file recovery.": [
         "${ drivePlusPlanMaxSpace } Speicherplatz für deine Dateien, Fotos und Dokumente erhalten und Dateiversionen mit 10-jähriger Dateiwiederherstellung wiederherstellen."

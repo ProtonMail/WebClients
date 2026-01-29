@@ -6640,8 +6640,8 @@
       "You have reached the number of contacts limit for your account": [
         "このアカウントの連絡先の数が上限に達しています"
       ],
-      "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
-        "現在のプランでのメールアドレス数の上限に達しました。新規アドレスを追加するにはアップグレードしてください。"
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "現在のプランで使用可能なアドレス数の上限に達しました。アドレスを追加するにはプランをアップグレードするか、アカウントに登録済みのアドレスを無効にしてください。"
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "現在のプランでのユーザー数の上限に達しました。新規ユーザーを追加するにはアップグレードしてください。"
@@ -11248,9 +11248,6 @@
       "We recommend having at least 2 servers in order to provide redundancy.": [
         "冗長性を確保するため、少なくとも2台のサーバーを設置することをお勧めします。"
       ],
-      "We recommend having multiple servers in different locations to provide redundancy.": [
-        "冗長性を確保するため、異なる場所に複数のサーバーを設置することをお勧めします。"
-      ],
       "We recommend notifying the family members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
         "家族に通知し、2要素認証の使用を強制する前に、アカウントに2要素認証を設定するよう依頼することをおすすめします。"
       ],
@@ -14279,9 +14276,6 @@
       ],
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "エンドツーエンドで暗号化された画面共有と通話中の一時的なチャット"
-      ],
-      "Meeting recording (coming soon)": [
-        "ミーティング録画（近日公開）"
       ],
       "One active meeting at a time": [
         "一度に1つのミーティングを開催"
