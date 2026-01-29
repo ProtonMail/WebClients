@@ -1,9 +1,9 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { useLocation, useParams } from 'react-router-dom-v5-compat';
+import { useLocation, useNavigate, useParams } from 'react-router-dom-v5-compat';
 
 import { c } from 'ttag';
 
-import { FilePreview, NavigationControl } from '@proton/components';
+import { FilePreview, Loader, NavigationControl } from '@proton/components';
 import { getDrive, splitNodeUid } from '@proton/drive';
 import { HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
 import { getCanAdmin } from '@proton/shared/lib/drive/permissions';
@@ -25,36 +25,44 @@ import { useOpenInDocs } from '../store/_documents';
 import useSearchResults from '../store/_search/useSearchResults';
 import { getSharedStatus } from '../utils/share';
 
-export default function PreviewContainer() {
-    const useSDK = useFlagsDriveSDKPreview();
-    return useSDK ? <PreviewContainerSDK /> : <PreviewContainerDeprecated />;
+interface PreviewContainerProps {
+    shareId: string;
+    nodeUid: string | undefined;
 }
 
-function PreviewContainerSDK() {
-    const [nodeUid, setNodeUid] = useState<string | undefined>();
+export default function PreviewContainer(props: PreviewContainerProps | undefined) {
+    const useSDK = useFlagsDriveSDKPreview();
+    return useSDK && props ? (
+        <PreviewContainerSDK shareId={props.shareId} nodeUid={props.nodeUid} />
+    ) : (
+        <PreviewContainerDeprecated />
+    );
+}
+
+function PreviewContainerSDK({ shareId, nodeUid }: PreviewContainerProps) {
     const [parentFolderId, setParentFolderId] = useState<string | undefined>();
-    const { shareId, linkId } = useParams<{ shareId: string; linkId: string }>() as { shareId: string; linkId: string };
 
     const { navigateToLink, navigateToRoot } = useDriveNavigation();
+    const navigate = useNavigate();
 
     // Using Drive client as a context as only normal files have a file URL.
     const drive = getDrive();
 
     useEffect(() => {
-        void drive.getNodeUid(shareId, linkId).then((nodeUid) => {
-            setNodeUid(nodeUid);
-            void drive.getNode(nodeUid).then((node) => {
-                const parentFolderUid = node.ok ? node.value.parentUid : node.error.parentUid;
-                if (parentFolderUid) {
-                    const { nodeId } = splitNodeUid(parentFolderUid);
-                    setParentFolderId(nodeId);
-                }
-            });
+        if (!nodeUid) {
+            return;
+        }
+        void drive.getNode(nodeUid).then((node) => {
+            const parentFolderUid = node.ok ? node.value.parentUid : node.error.parentUid;
+            if (parentFolderUid) {
+                const { nodeId } = splitNodeUid(parentFolderUid);
+                setParentFolderId(nodeId);
+            }
         });
-    }, [shareId, linkId]);
+    }, [drive, nodeUid]);
 
-    if (!window.location.href.includes('/file/') || !nodeUid) {
-        return null;
+    if (!nodeUid) {
+        return <Loader size="medium" className="absolute inset-center" />;
     }
 
     return (
@@ -63,7 +71,10 @@ function PreviewContainerSDK() {
             deprecatedContextShareId={shareId}
             nodeUid={nodeUid}
             onClose={() => {
-                if (parentFolderId) {
+                const referer = new URLSearchParams(window.location.search).get('r');
+                if (referer) {
+                    navigate(referer);
+                } else if (parentFolderId) {
                     navigateToLink(shareId, parentFolderId, false);
                 } else {
                     navigateToRoot();

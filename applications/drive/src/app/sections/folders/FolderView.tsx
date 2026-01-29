@@ -1,16 +1,14 @@
 import { useEffect } from 'react';
-import { useParams } from 'react-router-dom-v5-compat';
 
 import { useShallow } from 'zustand/react/shallow';
 
-import { Toolbar } from '@proton/components';
-import { generateNodeUid } from '@proton/drive/index';
+import { Loader, Toolbar, useAppTitle } from '@proton/components';
+import { splitNodeUid } from '@proton/drive/index';
 
 import { FileBrowserStateProvider } from '../../components/FileBrowser';
 import { useAlbumOnboardingModal } from '../../components/modals/AlbumOnboardingModal';
 import ToolbarRow from '../../components/sections/ToolbarRow/ToolbarRow';
 import UploadDragDrop from '../../components/uploads/UploadDragDrop/UploadDragDrop';
-import { useActiveShare } from '../../hooks/drive/useActiveShare';
 import { useDriveDragMoveTarget } from '../../hooks/drive/useDriveDragMove';
 import { useUserSettings } from '../../store';
 import { useControlledSorting } from '../../store/_views/utils';
@@ -21,20 +19,30 @@ import { FolderViewBreadcrumbs } from './FolderViewBreadcrumbs';
 import { useFolder } from './useFolder';
 import { useFolderStore } from './useFolder.store';
 
-// SDK-ready counterpart of DriveViewDeprecated
-export function FolderView() {
-    const [renderAlbumOnboardingModal] = useAlbumOnboardingModal();
+interface FolderViewProps {
+    shareId: string;
+    nodeUid: string | undefined;
+}
 
-    const { activeFolder } = useActiveShare();
-    const parentUid = generateNodeUid(activeFolder.volumeId, activeFolder.linkId);
+export function FolderView({ shareId, nodeUid }: FolderViewProps) {
+    const [renderAlbumOnboardingModal] = useAlbumOnboardingModal();
     const { load } = useFolder();
 
-    const { permissions, items: folderItems } = useFolderStore(
+    const {
+        isRootFolder,
+        folderName,
+        permissions,
+        items: folderItems,
+    } = useFolderStore(
         useShallow((state) => ({
+            isRootFolder: state.folder?.isRoot,
+            folderName: state.folder?.name,
             permissions: state.permissions,
             items: state.getFolderItems(),
         }))
     );
+
+    useAppTitle(!isRootFolder ? folderName : undefined);
     const { isLoadingDevices } = useDeviceStore(
         useShallow((state) => ({
             isLoadingDevices: state.isLoading,
@@ -45,31 +53,27 @@ export function FolderView() {
     const { sortedList, sortParams, setSorting } = useControlledSorting(folderItems, sort, changeSort);
     const sortedUids = sortedList.map((item) => item.uid);
     const browserViewProps = { layout, sortParams, setSorting, sortedList };
-    const { shareId: activeFolderShareId, linkId: activeFolderLinkId } = activeFolder;
-    const { linkId, shareId } = useParams();
 
     useEffect(() => {
         const ac = new AbortController();
-
-        // Temporary fix while we have to use activeFolder instead of relying on params as the only source of truth
-        if (shareId === activeFolderShareId && linkId === activeFolderLinkId && !isLoadingDevices) {
-            void load(parentUid, activeFolderShareId, ac);
+        if (!isLoadingDevices && nodeUid) {
+            void load(nodeUid, shareId, ac);
         }
         return () => {
             ac.abort();
         };
-    }, [parentUid, activeFolderLinkId, load, isLoadingDevices, activeFolderShareId, shareId, linkId]);
+    }, [shareId, nodeUid, load, isLoadingDevices]);
 
-    const { getHandleItemDrop } = useDriveDragMoveTarget(activeFolder.shareId);
-    const breadcrumbs = activeFolder && (
-        <FolderViewBreadcrumbs createHandleItemDrop={getHandleItemDrop} nodeUid={parentUid} />
-    );
+    const { getHandleItemDrop } = useDriveDragMoveTarget(shareId);
+    const breadcrumbs = nodeUid && <FolderViewBreadcrumbs createHandleItemDrop={getHandleItemDrop} nodeUid={nodeUid} />;
 
-    const toolbar = activeFolder ? (
+    const splitedNodeUid = nodeUid ? splitNodeUid(nodeUid) : undefined;
+
+    const toolbar = splitedNodeUid ? (
         <FolderToolbar
-            volumeId={activeFolder.volumeId}
-            shareId={activeFolder.shareId}
-            linkId={activeFolder.linkId}
+            volumeId={splitedNodeUid.volumeId}
+            shareId={shareId}
+            linkId={splitedNodeUid.nodeId}
             allSortedItems={sortedList.map((item) => ({
                 nodeUid: item.uid,
                 mimeType: item.mimeType,
@@ -80,25 +84,34 @@ export function FolderView() {
         <Toolbar className="toolbar--in-container" />
     );
 
+    if (!splitedNodeUid) {
+        return <Loader size="medium" className="absolute inset-center" />;
+    }
+
     return (
         <FileBrowserStateProvider itemIds={sortedUids}>
             {renderAlbumOnboardingModal}
             {permissions.canEdit ? (
                 <UploadDragDrop
-                    shareId={activeFolder.shareId}
-                    parentLinkId={activeFolder.linkId}
-                    volumeId={activeFolder.volumeId}
+                    shareId={shareId}
+                    parentLinkId={splitedNodeUid.nodeId}
+                    volumeId={splitedNodeUid.volumeId}
                     className="flex flex-column flex-nowrap flex-1"
                     disabled={!permissions.canEdit}
                 >
                     <ToolbarRow titleArea={breadcrumbs} toolbar={toolbar} />
-
-                    {activeFolder && <FolderBrowser activeFolder={activeFolder} {...browserViewProps} />}
+                    <FolderBrowser
+                        activeFolder={{ volumeId: splitedNodeUid.volumeId, shareId, linkId: splitedNodeUid.nodeId }}
+                        {...browserViewProps}
+                    />
                 </UploadDragDrop>
             ) : (
                 <>
                     <ToolbarRow titleArea={breadcrumbs} toolbar={toolbar} />
-                    {activeFolder && <FolderBrowser activeFolder={activeFolder} {...browserViewProps} />}
+                    <FolderBrowser
+                        activeFolder={{ volumeId: splitedNodeUid.volumeId, shareId, linkId: splitedNodeUid.nodeId }}
+                        {...browserViewProps}
+                    />
                 </>
             )}
         </FileBrowserStateProvider>
