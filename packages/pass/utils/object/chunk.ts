@@ -1,4 +1,5 @@
 import { sortOn } from '@proton/pass/utils/fp/sort';
+import { deserialize, serialize } from '@proton/pass/utils/object/serialize';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 
 export type Chunk = {
@@ -22,7 +23,7 @@ const MAX_CHUNK_SIZE = 1024 * 1024;
  * As such, resort to base64 encoding of the chunks */
 export function* toChunks(state: object, chunkSize: number = MAX_CHUNK_SIZE): Generator<Chunk> {
     const streamID = uniqueId();
-    const str = JSON.stringify(state);
+    const str = serialize(state);
     const encoder = new TextEncoder();
     const data = encoder.encode(str);
     const { byteLength } = data;
@@ -63,5 +64,5 @@ export const fromChunks = <T = object>(chunks: Chunk[]): T => {
     const decoder = new TextDecoder('utf-8');
     const str = decoder.decode(data);
 
-    return JSON.parse(str) as T;
+    return deserialize<T>(str);
 };
