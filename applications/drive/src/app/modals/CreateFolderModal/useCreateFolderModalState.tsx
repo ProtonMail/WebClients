@@ -5,13 +5,16 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { type ModalStateProps, useFormErrors, useNotifications } from '@proton/components';
-import { splitNodeUid, useDrive } from '@proton/drive';
+import { type ProtonDriveClient, getDrive, splitNodeUid } from '@proton/drive';
 
 import { formatLinkName, useDriveEventManager, validateLinkNameField } from '../../store';
 import { useSdkErrorHandler } from '../../utils/errorHandling/useSdkErrorHandler';
 import { getNodeEntity } from '../../utils/sdk/getNodeEntity';
 
+type Drive = Pick<ProtonDriveClient, 'createFolder' | 'getNode'>;
+
 export type CreateFolderModalInnerProps = {
+    drive?: Drive;
     parentFolderUid?: string;
     onSuccess?: ({ uid, nodeId, name }: { uid?: string; nodeId: string; name: string }) => void;
 };
@@ -29,6 +32,7 @@ export type UseCreateFolderModalStateProps = ModalStateProps &
     };
 
 export const useCreateFolderModalState = ({
+    drive = getDrive(),
     parentFolderUid,
     onSuccess,
     onClose,
@@ -39,7 +43,6 @@ export const useCreateFolderModalState = ({
 }: UseCreateFolderModalStateProps) => {
     const [folderName, setFolderName] = useState('');
     const { validator, onFormSubmit } = useFormErrors();
-    const { drive } = useDrive();
     const events = useDriveEventManager();
     const { createNotification } = useNotifications();
     const { handleError } = useSdkErrorHandler();

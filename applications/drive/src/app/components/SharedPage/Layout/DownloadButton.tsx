@@ -75,8 +75,10 @@ export function DownloadButton({ items, rootLink, openInDocs, disabled }: Downlo
 
     const isDownloading = !!downloads.find((transfer) => isTransferActive(transfer) || isTransferPaused(transfer));
 
-    const buttonTextWithoutScan = count > 1 ? c('Action').t`Download (${count})` : c('Action').t`Download`;
-    const buttonTextWithScan = count > 1 ? c('Action').t`Scan & Download (${count})` : c('Action').t`Scan & Download`;
+    const nbSelected = count;
+    const buttonTextWithoutScan = nbSelected > 1 ? c('Action').t`Download (${nbSelected})` : c('Action').t`Download`;
+    const buttonTextWithScan =
+        nbSelected > 1 ? c('Action').t`Scan & Download (${nbSelected})` : c('Action').t`Scan & Download`;
 
     if (!isDownloadScanEnabled) {
         return (

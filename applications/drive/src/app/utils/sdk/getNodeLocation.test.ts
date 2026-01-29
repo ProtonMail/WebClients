@@ -3,7 +3,12 @@ import { MemberRole, NodeType } from '@proton/drive/index';
 
 import { NodeLocation, formatNodeLocation, getFormattedNodeLocation, getNodeLocation } from './getNodeLocation';
 
-const createMockNode = (uid: string, parentUid?: string, role: MemberRole = MemberRole.Admin): NodeEntity => ({
+const createMockNode = (
+    uid: string,
+    parentUid?: string,
+    role: MemberRole = MemberRole.Admin,
+    includeMembership: boolean = false
+): NodeEntity => ({
     uid,
     parentUid,
     directRole: role,
@@ -21,6 +26,13 @@ const createMockNode = (uid: string, parentUid?: string, role: MemberRole = Memb
     activeRevision: undefined,
     folder: undefined,
     treeEventScopeId: 'treeEventScopeId',
+    ...(includeMembership && {
+        membership: {
+            role,
+            inviteTime: new Date(),
+            sharedBy: { ok: true, value: 'sharer@proton.me' },
+        },
+    }),
 });
 
 const NO_PARENT_UID = undefined;
@@ -83,10 +95,10 @@ describe('getNodeLocation', () => {
         expect(result.value).toBe(NodeLocation.MY_FILES);
     });
 
-    it('should return SHARED_WITH_ME', async () => {
-        const rootNode = createMockNode('uid1', NO_PARENT_UID, MemberRole.Viewer);
-        const childNode1 = createMockNode('uid2', 'uid1', MemberRole.Viewer);
-        const lastNode = createMockNode('uid3', 'uid2', MemberRole.Viewer);
+    it('should return SHARED_WITH_ME when root node has membership', async () => {
+        const rootNode = createMockNode('uid1', NO_PARENT_UID, MemberRole.Viewer, true);
+        const childNode1 = createMockNode('uid2', 'uid1', MemberRole.Viewer, true);
+        const lastNode = createMockNode('uid3', 'uid2', MemberRole.Viewer, true);
 
         const drive = createDriveStub(true /* isPrivateDefaultClient */, rootNode);
         drive.getNode
@@ -100,6 +112,63 @@ describe('getNodeLocation', () => {
         assertOk(result); // Narrow TS type for rest of the test.
 
         expect(result.value).toBe(NodeLocation.SHARED_WITH_ME);
+    });
+
+    it('should not return SHARED_WITH_ME when root node has no membership', async () => {
+        const rootNode = createMockNode('uid1', NO_PARENT_UID, MemberRole.Viewer, false);
+        const childNode1 = createMockNode('uid2', 'uid1', MemberRole.Viewer, false);
+        const lastNode = createMockNode('uid3', 'uid2', MemberRole.Viewer, false);
+
+        const drive = createDriveStub(true /* isPrivateDefaultClient */, rootNode);
+        drive.getNode
+            .mockResolvedValueOnce({ ok: true, value: lastNode })
+            .mockResolvedValueOnce({ ok: true, value: childNode1 })
+            .mockResolvedValueOnce({ ok: true, value: rootNode });
+
+        const result = await getNodeLocation(drive, { ok: true, value: lastNode });
+
+        expect(result.ok).toBe(true);
+        assertOk(result); // Narrow TS type for rest of the test.
+
+        expect(result.value).not.toBe(NodeLocation.SHARED_WITH_ME);
+    });
+
+    it('should return SHARED_WITH_ME based on root node membership, not child node membership', async () => {
+        const rootNode = createMockNode('uid1', NO_PARENT_UID, MemberRole.Viewer, true);
+        const childNode1 = createMockNode('uid2', 'uid1', MemberRole.Viewer, false);
+        const lastNode = createMockNode('uid3', 'uid2', MemberRole.Viewer, false);
+
+        const drive = createDriveStub(true /* isPrivateDefaultClient */, rootNode);
+        drive.getNode
+            .mockResolvedValueOnce({ ok: true, value: lastNode })
+            .mockResolvedValueOnce({ ok: true, value: childNode1 })
+            .mockResolvedValueOnce({ ok: true, value: rootNode });
+
+        const result = await getNodeLocation(drive, { ok: true, value: lastNode });
+
+        expect(result.ok).toBe(true);
+        assertOk(result); // Narrow TS type for rest of the test.
+
+        expect(result.value).toBe(NodeLocation.SHARED_WITH_ME);
+    });
+
+    it('should not return SHARED_WITH_ME when node is owned by user even if root has membership', async () => {
+        const rootNode = createMockNode('uid1', NO_PARENT_UID, MemberRole.Admin, true);
+        const childNode1 = createMockNode('uid2', 'uid1', MemberRole.Admin, true);
+        const lastNode = createMockNode('uid3', 'uid2', MemberRole.Admin, true);
+
+        const drive = createDriveStub(true /* isPrivateDefaultClient */, rootNode);
+        drive.getNode
+            .mockResolvedValueOnce({ ok: true, value: lastNode })
+            .mockResolvedValueOnce({ ok: true, value: childNode1 })
+            .mockResolvedValueOnce({ ok: true, value: rootNode });
+
+        const result = await getNodeLocation(drive, { ok: true, value: lastNode });
+
+        expect(result.ok).toBe(true);
+        assertOk(result); // Narrow TS type for rest of the test.
+
+        expect(result.value).toBe(NodeLocation.MY_FILES);
     });
 
     it('should return PHOTOS for an album', async () => {

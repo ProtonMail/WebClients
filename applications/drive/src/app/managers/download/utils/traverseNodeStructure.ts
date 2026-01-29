@@ -1,5 +1,5 @@
 import type { NodeEntity } from '@proton/drive';
-import { NodeType } from '@proton/drive/index';
+import { NodeType } from '@proton/drive';
 
 import { getNodeEntity } from '../../../utils/sdk/getNodeEntity';
 import { DownloadDriveClientRegistry } from '../DownloadDriveClientRegistry';
@@ -21,7 +21,7 @@ export function traverseNodeStructure(nodes: NodeEntity[], signal: AbortSignal):
     const fetchQueue = createAsyncQueue<NodeEntity>();
     const nodesQueue = createAsyncQueue<NodeEntity>();
     const parentPathByUid = new Map<string, string[]>();
-    const drive = DownloadDriveClientRegistry.getDriveClient();
+    const driveClient = DownloadDriveClientRegistry.getDriveClient();
 
     let pendingFetchTasks = 0;
     let totalEncryptedSize = 0;
@@ -58,7 +58,7 @@ export function traverseNodeStructure(nodes: NodeEntity[], signal: AbortSignal):
                     totalEncryptedSize += getNodeStorageSize(node);
                 } else {
                     const childrenParentPath = [...(parentPathByUid.get(node.uid) ?? []), node.name];
-                    for await (const maybeNode of drive.iterateFolderChildren(node.uid, undefined, signal)) {
+                    for await (const maybeNode of driveClient.iterateFolderChildren(node.uid, undefined, signal)) {
                         const { node: child } = getNodeEntity(maybeNode);
                         enqueueForFetch(child, childrenParentPath);
                     }
