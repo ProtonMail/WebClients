@@ -32,7 +32,7 @@ import { withRevalidate } from '@proton/pass/store/request/enhancers';
 import type { SynchronizationResult } from '@proton/pass/store/sagas/client/sync';
 import { SyncType, synchronize } from '@proton/pass/store/sagas/client/sync';
 import { selectProxiedSettings } from '@proton/pass/store/selectors';
-import type { RootSagaOptions, State } from '@proton/pass/store/types';
+import type { RootSagaOptions } from '@proton/pass/store/types';
 import type { Maybe } from '@proton/pass/types';
 import { AppStatus } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
@@ -59,15 +59,12 @@ function* bootWorker({ payload }: ReturnType<typeof bootIntent>, options: RootSa
         /* merge the existing cache to preserve any state that may have been
          * mutated before the boot sequence (session lock data) */
         const { fromCache, version }: HydrationResult = yield hydrate(
-            {
-                allowFailure: online,
-                merge: (existing: State, incoming: State) => merge(existing, incoming, { excludeEmpty: true }),
-            },
+            { online, merge: (existing, incoming) => merge(existing, incoming, { excludeEmpty: true }) },
             options
         );
 
-        /* if we're booting online and `PassCrypto` has not been hydrated
-         * after state hydration, abort the boot sequence early */
+        /** PassCrypto must be successfully hydrated during online boot. This validates
+         * that crypto operations can be performed with the current session state. */
         if (online && !PassCrypto.ready) throw new PassCryptoError();
 
         const result = (fromCache ? undefined : yield synchronize(SyncType.FULL)) as Maybe<SynchronizationResult>;
