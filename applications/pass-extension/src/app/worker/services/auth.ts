@@ -15,7 +15,7 @@ import {
 } from '@proton/pass/lib/auth/fork';
 import { AppStatusFromLockMode, LockMode } from '@proton/pass/lib/auth/lock/types';
 import { ReauthAction } from '@proton/pass/lib/auth/reauth';
-import type { AuthServiceConfig } from '@proton/pass/lib/auth/service';
+import type { AuthService, AuthServiceConfig } from '@proton/pass/lib/auth/service';
 import { createAuthService as createCoreAuthService } from '@proton/pass/lib/auth/service';
 import { SESSION_KEYS } from '@proton/pass/lib/auth/session';
 import type { AuthStore } from '@proton/pass/lib/auth/store';
@@ -24,6 +24,7 @@ import {
     clientAuthorized,
     clientBooted,
     clientOffline,
+    clientPasswordLocked,
     clientSessionLocked,
     clientUnauthorized,
 } from '@proton/pass/lib/client';
@@ -32,7 +33,13 @@ import browser from '@proton/pass/lib/globals/browser';
 import { ConnectivityStatus } from '@proton/pass/lib/network/connectivity.utils';
 import { settingsEditIntent } from '@proton/pass/store/actions';
 import { lockSync, unlock } from '@proton/pass/store/actions/creators/auth';
-import { bootIntent, cacheCancel, stateDestroy, stopEventPolling } from '@proton/pass/store/actions/creators/client';
+import {
+    bootIntent,
+    cacheCancel,
+    offlineResume,
+    stateDestroy,
+    stopEventPolling,
+} from '@proton/pass/store/actions/creators/client';
 import { notification } from '@proton/pass/store/actions/creators/notification';
 import type { Api } from '@proton/pass/types/api/api';
 import type { MaybeNull, RequiredProps } from '@proton/pass/types/utils/index';
@@ -82,6 +89,13 @@ type ValidExtensionForkPayload = RequiredProps<ExtensionForkPayload, 'keyPasswor
 
 export const validateExtensionForkPayload = (payload: ExtensionForkPayload): payload is ValidExtensionForkPayload =>
     Boolean(payload.keyPassword);
+
+export interface ExtensionAuthService extends AuthService {
+    /** Starts extension specific listeners. Moved outside
+     * the extension's AuthService factory to ensure it is
+     * called once the `WorkerContext` has been set up. */
+    listen: () => void;
+}
 
 export const createAuthService = (api: Api, authStore: AuthStore) => {
     const authService = createCoreAuthService({
@@ -364,7 +378,7 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
                 void ctx.service.storage.session.setItems({ AccessToken, RefreshToken, RefreshTime });
             }
         }),
-    });
+    }) as ExtensionAuthService;
 
     const handleInit = withContext<MessageHandlerCallback<WorkerMessageType.AUTH_INIT>>(async (ctx, { options }) => {
         options.forceLock = await shouldForceLock();
@@ -459,38 +473,57 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
         return true;
     });
 
-    WorkerMessageBroker.registerMessage(WorkerMessageType.ACCOUNT_PROBE, () => true);
-    WorkerMessageBroker.registerMessage(WorkerMessageType.ACCOUNT_FORK, handleAccountFork);
-    WorkerMessageBroker.registerMessage(WorkerMessageType.AUTH_CHECK, handleAuthCheck);
-    WorkerMessageBroker.registerMessage(WorkerMessageType.AUTH_CONFIRM_PASSWORD, handlePasswordConfirm);
-    WorkerMessageBroker.registerMessage(WorkerMessageType.AUTH_INIT, handleInit);
-    WorkerMessageBroker.registerMessage(WorkerMessageType.AUTH_OFFLINE_SWITCH, handleOfflineSwitch);
-    WorkerMessageBroker.registerMessage(WorkerMessageType.AUTH_UNLOCK, handleUnlock);
+    authService.listen = withContext<() => void>((ctx) => {
+        WorkerMessageBroker.registerMessage(WorkerMessageType.ACCOUNT_PROBE, () => true);
+        WorkerMessageBroker.registerMessage(WorkerMessageType.ACCOUNT_FORK, handleAccountFork);
+        WorkerMessageBroker.registerMessage(WorkerMessageType.AUTH_CHECK, handleAuthCheck);
+        WorkerMessageBroker.registerMessage(WorkerMessageType.AUTH_CONFIRM_PASSWORD, handlePasswordConfirm);
+        WorkerMessageBroker.registerMessage(WorkerMessageType.AUTH_INIT, handleInit);
+        WorkerMessageBroker.registerMessage(WorkerMessageType.AUTH_OFFLINE_SWITCH, handleOfflineSwitch);
+        WorkerMessageBroker.registerMessage(WorkerMessageType.AUTH_UNLOCK, handleUnlock);
 
-    /** These alarms may be triggered while the service worker was idle,
-     * as such, we should check for the app status before triggering any effects
-     * that would make API calls to avoid unauthenticated requests being sent out */
-    browser.alarms.onAlarm.addListener(
-        withContext(async (ctx, { name }) => {
-            switch (name) {
-                case SESSION_LOCK_ALARM: {
-                    const booted = clientBooted(ctx.getState().status);
-                    logger.info(`[AuthService] session lock alarm detected [booted=${booted}]`);
-                    await ctx.service.storage.local.setItem('forceLock', true);
-                    if (booted) return authService.lock(LockMode.SESSION, { soft: false });
-                    else return authService.init({ forceLock: true, retryable: false });
-                }
-                case SESSION_RESUME_ALARM: {
-                    logger.info(`[AuthService] session resume alarm detected`);
-                    const appStatus = ctx.getState().status;
-                    const offline = !ctx.service.connectivity.online;
-                    const offlineResume = clientOffline(appStatus) && offline;
+        /** These alarms may be triggered while the service worker was idle,
+         * as such, we should check for the app status before triggering any effects
+         * that would make API calls to avoid unauthenticated requests being sent out */
+        browser.alarms.onAlarm.addListener(
+            withContext(async (ctx, { name }) => {
+                switch (name) {
+                    case SESSION_LOCK_ALARM: {
+                        const booted = clientBooted(ctx.getState().status);
+                        logger.info(`[AuthService] session lock alarm detected [booted=${booted}]`);
+                        await ctx.service.storage.local.setItem('forceLock', true);
+                        if (booted) return authService.lock(LockMode.SESSION, { soft: false });
+                        else return authService.init({ forceLock: true, retryable: false });
+                    }
+                    case SESSION_RESUME_ALARM: {
+                        logger.info(`[AuthService] session resume alarm detected`);
+                        const appStatus = ctx.getState().status;
+                        const offline = !ctx.service.connectivity.online;
+                        const offlineResume = clientOffline(appStatus) && offline;
 
-                    if (offlineResume) return authService.init({ forceLock: await shouldForceLock(), retryable: true });
+                        if (offlineResume) {
+                            return authService.init({
+                                forceLock: await shouldForceLock(),
+                                retryable: true,
+                            });
+                        }
+                    }
                 }
-            }
-        })
-    );
+            })
+        );
+
+        /** For UX: on connectivity restored, resume session if app is offline,
+         * or re-initialize auth if password-locked from offline boot. */
+        ctx.service.connectivity.subscribe((status) => {
+            const localID = authStore.getLocalID();
+            const online = status === ConnectivityStatus.ONLINE;
+            const appStatus = ctx.getState().status;
+
+            if (!online) return;
+            else if (clientOffline(appStatus)) ctx.service.store.dispatch(offlineResume.intent({ localID }));
+            else if (clientPasswordLocked(appStatus)) authService.init({ forceLock: true }).catch(noop);
+        });
+    });
 
     return authService;
 };
