@@ -39,7 +39,8 @@
             ],
             "js": ["webauthn.js"],
             "all_frames": false,
-            "run_at": "document_start"
+            "run_at": "document_start",
+            "world": "MAIN"
         }
     ],
     "permissions": [
