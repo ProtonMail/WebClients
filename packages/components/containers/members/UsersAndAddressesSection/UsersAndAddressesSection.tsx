@@ -505,7 +505,7 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
                         showMultipleUserUploadButton={showMultipleUserUploadButton}
                         disableStorageValidation={!allowStorageConfiguration}
                         disableDomainValidation={useEmail}
-                        disableAddressValidation={hasPassB2BPlan}
+                        disableAddressValidation={hasExternalMemberCapableB2BPlan}
                         {...subUserCreateModalProps}
                     />
                 )}
