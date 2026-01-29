@@ -3,11 +3,16 @@ import { ConnectionState, RemoteTrackPublication, Track } from 'livekit-client';
 
 import { wait } from '@proton/shared/lib/helpers/promise';
 
-export type RegisterCameraTrackFn = (publication: TrackPublication | undefined, participantIdentity?: string) => void;
+export type RegisterCameraTrackFn = (
+    publication: TrackPublication | undefined,
+    participantIdentity?: string,
+    forcePin?: boolean
+) => void;
 
 interface CacheEntry {
     publication: RemoteTrackPublication;
     pinned: boolean;
+    forcePinned: boolean;
     participantIdentity?: string;
     isEnqueued: boolean;
 }
@@ -69,7 +74,7 @@ export class CameraTrackSubscriptionManager {
         void this.runSerialized(() => this.processSubscriptionQueue());
     }
 
-    register(publication: TrackPublication | undefined, participantIdentity?: string) {
+    register(publication: TrackPublication | undefined, participantIdentity?: string, forcePin: boolean = false) {
         if (!(publication instanceof RemoteTrackPublication)) {
             return;
         }
@@ -86,6 +91,7 @@ export class CameraTrackSubscriptionManager {
         if (existing) {
             existing.publication = publication;
             existing.pinned = true;
+            existing.forcePinned = forcePin ? forcePin : existing.forcePinned;
             if (participantIdentity) {
                 existing.participantIdentity = participantIdentity;
             }
@@ -95,6 +101,7 @@ export class CameraTrackSubscriptionManager {
                 pinned: true,
                 participantIdentity,
                 isEnqueued: false,
+                forcePinned: forcePin,
             });
         }
 
@@ -120,6 +127,11 @@ export class CameraTrackSubscriptionManager {
         }
 
         const entry = this.entriesByTrackSid.get(trackSid);
+
+        if (entry?.forcePinned) {
+            return;
+        }
+
         if (entry) {
             entry.pinned = false;
             entry.participantIdentity = undefined;
@@ -143,6 +155,13 @@ export class CameraTrackSubscriptionManager {
         }
 
         this.maybeEvict();
+    }
+
+    removeForcePin(publication: TrackPublication) {
+        const entry = this.entriesByTrackSid.get(publication.trackSid);
+        if (entry?.forcePinned) {
+            entry.forcePinned = false;
+        }
     }
 
     handleTrackUnpublished(publication: TrackPublication) {

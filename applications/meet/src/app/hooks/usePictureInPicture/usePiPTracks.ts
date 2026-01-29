@@ -16,36 +16,42 @@ const TRACK_UPDATE_EVENTS = [
     RoomEvent.ParticipantDisconnected,
     RoomEvent.LocalTrackPublished,
     RoomEvent.LocalTrackUnpublished,
+    RoomEvent.TrackStreamStateChanged,
 ];
 
 export function usePiPTracks(sortedParticipants: (RemoteParticipant | LocalParticipant)[]) {
     const currentScreenShareTrack = useTracks([Track.Source.ScreenShare], {
         updateOnlyOn: TRACK_UPDATE_EVENTS,
     })[0];
-    const cameraTracks = useTracks([Track.Source.Camera], {
-        updateOnlyOn: TRACK_UPDATE_EVENTS,
-    });
 
-    const currentCameraTracks = sortedParticipants
+    const currentCameraPublications = sortedParticipants
         .map((participant) => {
-            const cameraTrack = cameraTracks.find((track) => track.participant?.identity === participant.identity);
+            const cameraPublication = [...participant.videoTrackPublications.values()].find(
+                (track) => track.source === Track.Source.Camera
+            );
 
-            return cameraTrack;
+            if (!cameraPublication) {
+                return null;
+            }
+
+            return { publication: cameraPublication, participant };
         })
         .filter(isTruthy);
 
-    const displayableCameraTracks = currentCameraTracks
-        .filter((track) => !track.publication?.isMuted)
+    const displayableCameraTracks = currentCameraPublications
+        .filter((publication) => !publication?.publication?.isMuted)
         .slice(0, MAX_CAMERA_TRACKS);
 
     const tracksForDisplay = [currentScreenShareTrack, ...displayableCameraTracks]
         .map((trackRef) => {
-            if (!trackRef?.publication?.track) {
+            if (!trackRef) {
                 return null;
             }
+
             return {
                 track: trackRef.publication.track,
                 participant: trackRef.participant!,
+                publication: trackRef.publication,
                 isScreenShare: trackRef.publication?.source === Track.Source.ScreenShare,
             };
         })
