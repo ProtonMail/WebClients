@@ -14,7 +14,7 @@ import { MockIFrameApp } from './MockIFrameApp';
 
 export const NotificationDebug: FC = () => {
     const loginItems = useSelector(selectAllLoginItems);
-    const otpItem = loginItems.find((item) => Boolean(item.data.content.totpUri.v));
+    const otpItem = loginItems.find((item) => Boolean(item.data.content.totpUri.v.length));
 
     return (
         <SettingsPanel title="Notification">

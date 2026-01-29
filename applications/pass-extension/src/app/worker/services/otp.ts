@@ -32,7 +32,7 @@ export const createOTPService = () => {
                         const item = selectItem<'login'>(shareId, itemId)(state);
 
                         /** First check if we have a top-level totp URI */
-                        if (item?.data.content.totpUri.v) return deobfuscate(item.data.content.totpUri);
+                        if (item?.data.content.totpUri.v.length) return deobfuscate(item.data.content.totpUri);
 
                         /** Check if any extra fields are of type TOTP */
                         const extraOTPs = item?.data.extraFields.filter(isExtraOTPField);
