@@ -8,6 +8,7 @@ import { IcArrowLeft } from '@proton/icons/icons/IcArrowLeft';
 import type { MaybeNull } from '@proton/pass/types';
 import { CYCLE, PLANS } from '@proton/payments/index';
 import { usePaymentOptimistic } from '@proton/payments/ui';
+import useFlag from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import { Layout } from '../components/Layout/Layout';
@@ -52,9 +53,11 @@ type Props = {
 };
 
 export const CycleSelectorStep: FC<Props> = ({ onContinue, onBack }) => {
+    const lifetimeFlag = useFlag('PassSimpleLoginLifetimeOffer');
     const payments = usePaymentOptimistic();
 
     const showLifetime =
+        lifetimeFlag &&
         !!payments.selectedPlan.planIDs.pass2023 && // Only show when Pass Plus is selected
         !!payments.plansMap[PLANS.PASS_LIFETIME]; // Lifetime is not available on regional pricing (and will not be in plansMap)
 
