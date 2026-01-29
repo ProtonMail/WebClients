@@ -2355,6 +2355,9 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Este campo exige um mínimo de ${ minimumLength } caracteres."
       ],
+      "This offer is not available in your country": [
+        "Esta oferta não está disponível no seu país"
+      ],
       "Try using only letters, numerals, and _.-": [
         "Tente usar apenas letras, números e _.-"
       ],
@@ -3496,6 +3499,10 @@
         "${ n } reunião ativa por vez",
         "${ n } reuniões ativas por vez"
       ],
+      "${ n } participant": [
+        "${ n } participante",
+        "${ n } participantes"
+      ],
       "24 hours per meeting": [
         "24 horas por reunião"
       ],
@@ -3504,6 +3511,9 @@
       ],
       "Appointment scheduling": [
         "Agendamento de compromissos"
+      ],
+      "Booking pages": [
+        "Páginas de agendamentos"
       ],
       "Browser, mobile, and desktop apps": [
         "Aplicativos para navegadores, dispositivos móveis e computadores"
@@ -3514,8 +3524,8 @@
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "Compartilhamento de tela com criptografia de ponta a ponta e chat efêmero durante a chamada"
       ],
-      "Meeting recording (coming soon)": [
-        "Gravação da reunião (em breve)"
+      "Meeting recording": [
+        "Gravação da reunião"
       ],
       "One active meeting at a time": [
         "Uma reunião ativa por vez"
