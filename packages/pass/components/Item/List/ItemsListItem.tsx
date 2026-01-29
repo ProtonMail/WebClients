@@ -18,7 +18,6 @@ import { isVaultShare } from '@proton/pass/lib/shares/share.predicates';
 import { isWritableVault } from '@proton/pass/lib/vaults/vault.predicates';
 import { selectShare } from '@proton/pass/store/selectors';
 import type { ItemRevision } from '@proton/pass/types';
-import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
 import clsx from '@proton/utils/clsx';
 
 import { presentListItem } from './utils';
@@ -159,7 +158,7 @@ export const ItemsListItem = memo(
                                 className={clsx([
                                     'pass-item-list--subtitle block color-weak text-sm text-ellipsis',
                                     item.data.type === 'note' &&
-                                        isEmptyString(item.data.metadata.note.v) &&
+                                        item.data.metadata.note.v.length === 0 &&
                                         'text-italic',
                                 ])}
                             >
