@@ -15,12 +15,25 @@ export let localeCode = 'en_US';
 export let languageCode = 'en';
 export let dateFormatOptions: DateFormatOptions | undefined;
 
+export type LocaleChangeSubscriber = (locale: { localeCode: string; languageCode: string }) => void;
+const localeChangeSubscribers = new Set<LocaleChangeSubscriber>();
+
+export function subscribeToLocaleChange(subscriber: LocaleChangeSubscriber) {
+    localeChangeSubscribers.add(subscriber);
+    return function unsubscribe() {
+        localeChangeSubscribers.delete(subscriber);
+    };
+}
+
 export const setLocales = ({
     localeCode: newLocaleCode = localeCode,
     languageCode: newLanguageCode = languageCode,
 }) => {
     localeCode = newLocaleCode;
     languageCode = newLanguageCode;
+    for (const subscriber of localeChangeSubscribers) {
+        subscriber({ localeCode, languageCode });
+    }
 };
 
 export const setDateLocales = ({
