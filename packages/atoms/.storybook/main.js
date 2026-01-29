@@ -1,8 +1,16 @@
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import { createRequire } from 'node:module';
+import { dirname, join } from 'node:path';
 
 import getAssetsLoaders from '@proton/pack/webpack/assets.loader';
 import getCssLoaders from '@proton/pack/webpack/css.loader';
 import { getJsLoaders } from '@proton/pack/webpack/js.loader.swc';
+
+const require = createRequire(import.meta.url);
+
+function getAbsolutePath(value) {
+    return dirname(require.resolve(join(value, 'package.json')));
+}
 
 /** @type { import('@storybook/react-webpack5').StorybookConfig } */
 const config = {
@@ -11,8 +19,11 @@ const config = {
     },
     stories: ['../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
     staticDirs: [],
-    addons: ['@storybook/addon-webpack5-compiler-swc', '@storybook/addon-links', '@storybook/addon-essentials'],
-    framework: '@storybook/react-webpack5',
+    addons: [getAbsolutePath('@storybook/addon-links'), getAbsolutePath('@storybook/addon-docs')],
+    framework: {
+        name: getAbsolutePath('@storybook/react-webpack5'),
+        options: {},
+    },
     typescript: {
         check: false,
         checkOptions: {},
@@ -52,6 +63,13 @@ const config = {
 
         return {
             ...config,
+            resolve: {
+                ...config.resolve,
+                fallback: {
+                    ...config.resolve?.fallback,
+                    stream: false,
+                },
+            },
             experiments: {
                 asyncWebAssembly: true,
             },

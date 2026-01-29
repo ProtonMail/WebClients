@@ -19,7 +19,7 @@ import '../src/app/index.scss';
 const colorSchemes = ['default', 'ui-alias', 'ui-note', 'ui-password', 'ui-login'];
 const themes = getThemes(true);
 
-/** @type { import('@storybook/react').Preview } */
+/** @type { import('@storybook/react-webpack5').Preview } */
 const preview = {
     globalTypes: {
         theme: {
@@ -82,7 +82,10 @@ const preview = {
         viewMode: 'docs',
         actions: { argTypesRegex: '^on[A-Z].*' },
         controls: { expanded: true },
-        docs: { theme: storybookTheme },
+        docs: {
+            theme: storybookTheme,
+            codePanel: true,
+        },
         previewTabs: {
             canvas: { hidden: true },
         },
