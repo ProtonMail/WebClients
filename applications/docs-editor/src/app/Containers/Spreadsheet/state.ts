@@ -31,6 +31,7 @@ import { LoadedFontFamilies, loadFont } from './font-state'
 import debounce from 'lodash/debounce'
 import { getAccentColorForUsername } from '@proton/atoms/UserAvatar/getAccentColorForUsername'
 import type { Transaction } from 'yjs'
+import { getCurrencyFromLocale, useAccountLocale, useLocaleAuto } from './locale'
 
 // local state
 // -----------
@@ -298,6 +299,19 @@ type ProtonSheetsStateDependencies = Omit<SpreadsheetStateDependencies, OmitDeps
   Omit<YjsStateDependencies, OmitDepsKey> & { isReadonly: boolean }
 
 export function useProtonSheetsState(deps: ProtonSheetsStateDependencies) {
+  const kv = useKeyValueState()
+
+  const localeAccount = useAccountLocale()
+  const localeAuto = useLocaleAuto()
+  const localeResolved = kv.locale ?? localeAuto
+  const localeCurrency = getCurrencyFromLocale(localeResolved)
+  const locale = {
+    account: localeAccount,
+    auto: localeAuto,
+    resolved: localeResolved,
+    currency: localeCurrency,
+  }
+
   const onChangeHistory: UseSpreadsheetProps['onChangeHistory'] = (patches) => {
     if (deps.isReadonly) {
       console.error('Attempted to modify readonly spreadsheet')
@@ -314,7 +328,7 @@ export function useProtonSheetsState(deps: ProtonSheetsStateDependencies) {
   })
 
   const depsWithLocalState = { localState, onChangeHistory, onRequestFonts, ...deps }
-  const spreadsheetState = useSpreadsheetState(depsWithLocalState)
+  const spreadsheetState = useSpreadsheetState({ ...depsWithLocalState, locale: localeResolved })
   const canvasGridMethods = useSpreadsheet()
 
   const { scrollToCell, getCellOffsetFromCoords: _getCellOffsetFromCoords, getGridRef } = canvasGridMethods
@@ -490,8 +504,6 @@ export function useProtonSheetsState(deps: ProtonSheetsStateDependencies) {
     localState.onChangeUserDefinedColors((userDefinedColors) => [...userDefinedColors, color])
   })
 
-  const kv = useKeyValueState()
-
   return {
     ...baseState,
     chartsState,
@@ -512,6 +524,7 @@ export function useProtonSheetsState(deps: ProtonSheetsStateDependencies) {
     goToCell,
     onAddUserDefinedColor,
     kv,
+    locale,
   }
 }
 export type ProtonSheetsState = ReturnType<typeof useProtonSheetsState>
