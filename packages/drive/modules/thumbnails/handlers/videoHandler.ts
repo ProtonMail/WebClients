@@ -1,4 +1,4 @@
-import type { ThumbnailType } from '@protontech/drive-sdk';
+import { ThumbnailType } from '@protontech/drive-sdk';
 
 import { type SupportedMimeTypes, VIDEO_THUMBNAIL_MAX_TIME_LOCATION } from '@proton/shared/lib/drive/constants';
 import { isVideo } from '@proton/shared/lib/helpers/mimetype';
@@ -22,6 +22,7 @@ export class VideoHandler extends BaseHandler {
         fileSize: number,
         mimeType: SupportedMimeTypes.webp | SupportedMimeTypes.jpg,
         thumbnailTypes: ThumbnailType[],
+        originalMimeType: string,
         debug: boolean = false
     ): Promise<ThumbnailGenerationResult> {
         if (isIosDevice && fileSize > MAX_VIDEO_SIZE_FOR_THUMBNAIL_IOS) {
@@ -57,9 +58,13 @@ export class VideoHandler extends BaseHandler {
         const { img, videoDimensions, duration } = videoInfo;
 
         try {
-            const thumbnails = await this.generateThumbnailsFromImage(fileSize, img, {
+            const thumbnails = await this.generateThumbnailsFromImage({
+                fileSize,
+                img,
                 mimeType,
-                thumbnailTypes,
+                // Videos should not have HD Thumbnail: https://drive.gitlab-pages.protontech.ch/documentation/specifications/data/thumbnails/#type-2-hd-photo
+                thumbnailTypes: [ThumbnailType.Type1],
+                originalMimeType,
                 customDimensions: videoDimensions,
                 duration,
                 perf,

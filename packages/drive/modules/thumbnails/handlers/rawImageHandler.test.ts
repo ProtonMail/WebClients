@@ -57,7 +57,14 @@ describe('RawImageHandler', () => {
             const blob = new Blob(['raw content'], { type: 'image/x-nikon-nef' });
 
             await expect(
-                handler.generate(blob, 'large.nef', largeSize, SupportedMimeTypes.webp, [ThumbnailType.Type1])
+                handler.generate(
+                    blob,
+                    'large.nef',
+                    largeSize,
+                    SupportedMimeTypes.webp,
+                    [ThumbnailType.Type1],
+                    'image/x-nikon-nef'
+                )
             ).rejects.toThrow(UnsupportedFormatError);
 
             Object.defineProperty(constants, 'isIosDevice', { value: false, writable: true });
@@ -78,7 +85,14 @@ describe('RawImageHandler', () => {
             blob.arrayBuffer = jest.fn().mockResolvedValue(new ArrayBuffer(8));
 
             await expect(
-                handler.generate(blob, 'photo.nef', blob.size, SupportedMimeTypes.webp, [ThumbnailType.Type1])
+                handler.generate(
+                    blob,
+                    'photo.nef',
+                    blob.size,
+                    SupportedMimeTypes.webp,
+                    [ThumbnailType.Type1],
+                    'image/x-nikon-nef'
+                )
             ).rejects.toThrow(MissingDataError);
 
             expect(mockTerminate).toHaveBeenCalled();
@@ -99,7 +113,14 @@ describe('RawImageHandler', () => {
             blob.arrayBuffer = jest.fn().mockResolvedValue(new ArrayBuffer(8));
 
             try {
-                await handler.generate(blob, 'photo.nef', blob.size, SupportedMimeTypes.webp, [ThumbnailType.Type1]);
+                await handler.generate(
+                    blob,
+                    'photo.nef',
+                    blob.size,
+                    SupportedMimeTypes.webp,
+                    [ThumbnailType.Type1],
+                    'image/x-nikon-nef'
+                );
                 fail('Should have thrown MissingDataError');
             } catch (error) {
                 expect(error).toBeInstanceOf(MissingDataError);
@@ -127,7 +148,14 @@ describe('RawImageHandler', () => {
             blob.arrayBuffer = jest.fn().mockResolvedValue(new ArrayBuffer(8));
 
             await expect(
-                handler.generate(blob, 'corrupted.nef', blob.size, SupportedMimeTypes.webp, [ThumbnailType.Type1])
+                handler.generate(
+                    blob,
+                    'corrupted.nef',
+                    blob.size,
+                    SupportedMimeTypes.webp,
+                    [ThumbnailType.Type1],
+                    'image/x-nikon-nef'
+                )
             ).rejects.toThrow(UnsupportedFormatError);
 
             expect(mockTerminate).toHaveBeenCalled();
@@ -148,9 +176,14 @@ describe('RawImageHandler', () => {
             blob.arrayBuffer = jest.fn().mockResolvedValue(new ArrayBuffer(8));
 
             try {
-                await handler.generate(blob, 'corrupted.nef', blob.size, SupportedMimeTypes.webp, [
-                    ThumbnailType.Type1,
-                ]);
+                await handler.generate(
+                    blob,
+                    'corrupted.nef',
+                    blob.size,
+                    SupportedMimeTypes.webp,
+                    [ThumbnailType.Type1],
+                    'image/x-nikon-nef'
+                );
                 fail('Should have thrown UnsupportedFormatError');
             } catch (error) {
                 expect(error).toBeInstanceOf(UnsupportedFormatError);
@@ -178,7 +211,14 @@ describe('RawImageHandler', () => {
             blob.arrayBuffer = jest.fn().mockResolvedValue(new ArrayBuffer(8));
 
             try {
-                await handler.generate(blob, 'photo.nef', blob.size, SupportedMimeTypes.webp, [ThumbnailType.Type1]);
+                await handler.generate(
+                    blob,
+                    'photo.nef',
+                    blob.size,
+                    SupportedMimeTypes.webp,
+                    [ThumbnailType.Type1],
+                    'image/x-nikon-nef'
+                );
             } catch {
                 // Expected to fail on image loading
             }
