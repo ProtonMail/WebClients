@@ -13,7 +13,7 @@ import StandardPrivateApp from '@proton/components/containers/app/StandardPrivat
 import AuthenticationProvider from '@proton/components/containers/authentication/Provider';
 import EventManagerProvider from '@proton/components/containers/eventManager/EventManagerProvider';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import type { MeetStore } from '@proton/meet/store/store';
+import type { MeetExtraThunkArguments, MeetStore } from '@proton/meet/store/store';
 import { ProtonStoreProvider } from '@proton/redux-shared-store';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
@@ -24,7 +24,7 @@ import { bootstrapApp } from '../bootstrap';
 import config from '../config';
 import { WasmContext } from '../contexts/WasmContext';
 
-type ExtraThunkArguments = Omit<ProtonThunkArguments, 'config'>;
+type ExtraThunkArguments = Omit<MeetExtraThunkArguments, 'config' | 'notificationsManager'>;
 
 export const ProviderContainer = ({ children }: { children: ReactNode }) => {
     const [initialised, setInitialised] = useState(false);
@@ -40,10 +40,11 @@ export const ProviderContainer = ({ children }: { children: ReactNode }) => {
 
     const initialiseServicesAndStore = async () => {
         try {
-            const { store, authentication, unleashClient, eventManager, api, history, wasmApp } = await bootstrapApp({
-                notificationsManager,
-                config,
-            });
+            const { store, authentication, unleashClient, eventManager, api, history, wasmApp, meetEventManager } =
+                await bootstrapApp({
+                    notificationsManager,
+                    config,
+                });
 
             storeRef.current = store;
 
@@ -53,6 +54,7 @@ export const ProviderContainer = ({ children }: { children: ReactNode }) => {
                 eventManager,
                 api,
                 history,
+                meetEventManager,
             };
 
             wasmAppRef.current = wasmApp;

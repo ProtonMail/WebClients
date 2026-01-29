@@ -11,9 +11,9 @@ import { getDecryptedPersistedState } from '@proton/account/persist/helper';
 import type { NotificationsManager } from '@proton/components/containers/notifications/manager';
 import { setupGuestCrossStorage } from '@proton/cross-storage/account-impl/guestInstance';
 import { FeatureCode, fetchFeatures } from '@proton/features/index';
-import type { MeetDispatch, MeetState, MeetStore } from '@proton/meet/store/store';
+import { meetEventLoop } from '@proton/meet/store/meetEventLoop';
+import type { MeetDispatch, MeetExtraThunkArguments, MeetState, MeetStore } from '@proton/meet/store/store';
 import { setupStore } from '@proton/meet/store/store';
-import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import type { ApiWithListener } from '@proton/shared/lib/api/createApi';
 import createApi from '@proton/shared/lib/api/createApi';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
@@ -39,7 +39,7 @@ import { clearStoredDevices } from './utils/deviceStorage';
 import { clearDisabledRotatePersonalMeeting } from './utils/disableRotatePersonalMeeting';
 
 const initializeWasmApp = async (
-    authentication: ProtonThunkArguments['authentication'],
+    authentication: MeetExtraThunkArguments['authentication'],
     appVersion: string
 ): Promise<App> => {
     await init();
@@ -65,7 +65,7 @@ const getApis = (config: ProtonConfig) => {
     return { api, silentApi };
 };
 
-const getSession = async ({ authentication, api }: Pick<ProtonThunkArguments, 'authentication' | 'api'>) => {
+const getSession = async ({ authentication, api }: Pick<MeetExtraThunkArguments, 'authentication' | 'api'>) => {
     const guestUrl = '/guest' + window.location.pathname + window.location.search + window.location.hash;
 
     const sessionResult = await bootstrap.loadSession({
@@ -104,21 +104,32 @@ const eventManagerSetup = ({
     store,
     signal,
     unleashClient,
+    meetEventManager,
 }: {
-    eventManager: ProtonThunkArguments['eventManager'];
-    unleashClient: ProtonThunkArguments['unleashClient'];
+    eventManager: MeetExtraThunkArguments['eventManager'];
+    unleashClient: MeetExtraThunkArguments['unleashClient'];
     signal?: AbortSignal;
     store: MeetStore;
+    meetEventManager: MeetExtraThunkArguments['meetEventManager'];
 }) => {
     const unsubscribeEventManager = eventManager.subscribe((event) => {
         store.dispatch(serverEvent(event));
     });
 
+    const unsubscribeMeetEventManager = meetEventManager?.subscribe(async (event) => {
+        const promises: Promise<void>[] = [];
+        store.dispatch(meetEventLoop({ event, promises }));
+        await Promise.all(promises);
+    });
+
     eventManager.start();
+    meetEventManager.start();
 
     bootstrap.onAbort(signal, () => {
         unsubscribeEventManager();
+        unsubscribeMeetEventManager();
         eventManager.reset();
+        meetEventManager.reset();
         unleashClient.stop();
         store.unsubscribe();
     });
@@ -126,9 +137,9 @@ const eventManagerSetup = ({
 
 export const initAppDependencies = async (
     config: ProtonConfig,
-    authentication: ProtonThunkArguments['authentication']
+    authentication: MeetExtraThunkArguments['authentication']
 ): Promise<
-    Omit<ProtonThunkArguments, 'config'> & {
+    Omit<MeetExtraThunkArguments, 'config'> & {
         sessionResult: Unwrap<ReturnType<typeof bootstrap.loadSession<false>>>;
         appVersion: string;
     }
@@ -139,12 +150,13 @@ export const initAppDependencies = async (
     const sessionResult = await getSession({ authentication, api });
 
     const eventManager = bootstrap.eventManager({ api: silentApi });
+    const meetEventManager = bootstrap.meetEventManager({ api: silentApi });
 
     const history = bootstrap.createHistory({ sessionResult, pathname: window.location.pathname });
 
     const appVersion = getAppVersionStr(getClientID(config.APP_NAME), config.APP_VERSION);
 
-    return { api, authentication, unleashClient, eventManager, history, sessionResult, appVersion };
+    return { api, authentication, unleashClient, eventManager, history, sessionResult, appVersion, meetEventManager };
 };
 
 const completeAppBootstrap = async ({
@@ -157,7 +169,8 @@ const completeAppBootstrap = async ({
     sessionResult,
     history,
     appVersion,
-}: ProtonThunkArguments & {
+    meetEventManager,
+}: MeetExtraThunkArguments & {
     signal?: AbortSignal;
     store: MeetStore;
     sessionResult: Unwrap<ReturnType<typeof bootstrap.loadSession<false>>>;
@@ -188,7 +201,7 @@ const completeAppBootstrap = async ({
     await bootstrap.postLoad({ appName: config.APP_NAME, authentication, ...userData, history });
     await dispatch(addressesThunk());
 
-    eventManagerSetup({ store, signal, eventManager, unleashClient });
+    eventManagerSetup({ store, signal, eventManager, unleashClient, meetEventManager });
 
     dispatch(bootstrapEvent({ type: 'complete' }));
 
@@ -212,7 +225,7 @@ export const executeBootstrapSteps = async ({
     signal,
     notificationsManager,
     authentication,
-}: BootstrapParameters & Pick<ProtonThunkArguments, 'authentication'>) => {
+}: BootstrapParameters & Pick<MeetExtraThunkArguments, 'authentication'>) => {
     setupGuestCrossStorage({ appMode, appName: config.APP_NAME });
 
     const { sessionResult, appVersion, ...restServices } = await initAppDependencies(config, authentication);
@@ -340,6 +353,7 @@ export const bootstrapGuestApp = async (config: ProtonConfig, notificationsManag
             history,
             eventManager: undefined as any,
             notificationsManager,
+            meetEventManager: undefined as any,
         },
     });
 

@@ -2,15 +2,10 @@ import type { PayloadAction } from '@reduxjs/toolkit';
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
-import type { NotificationsManager } from '@proton/components/containers/notifications/manager';
-import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { lockMeetingCall, unlockMeetingCall } from '@proton/shared/lib/api/meet';
 
-import type { MeetState } from '../store';
-
-interface MeetExtraThunkArguments extends ProtonThunkArguments {
-    notificationsManager?: NotificationsManager;
-}
+import type { MeetState } from '../rootReducer';
+import type { MeetExtraThunkArguments } from '../store';
 
 export interface MeetSettingsState {
     disableVideos: boolean;
