@@ -1,9 +1,11 @@
 import { useEffect, useRef } from 'react';
 
+import { useRoomContext } from '@livekit/components-react';
 import { createLocalVideoTrack } from 'livekit-client';
 import type { LocalVideoTrack } from 'livekit-client';
 
 import { isChrome, isMobile, isSafari } from '@proton/shared/lib/helpers/browser';
+import { wait } from '@proton/shared/lib/helpers/promise';
 
 import { useMediaManagementContext } from '../../contexts/MediaManagementContext';
 import {
@@ -26,6 +28,8 @@ export const VideoPreview = ({ selectedCameraId, facingMode }: VideoPreviewProps
     const processorAttachInProgress = useRef(false);
 
     const { isBackgroundBlurSupported, backgroundBlur } = useMediaManagementContext();
+
+    const room = useRoomContext();
 
     const applyBackgroundBlurPreference = async (enable: boolean) => {
         const videoTrack = trackRef.current;
@@ -71,9 +75,11 @@ export const VideoPreview = ({ selectedCameraId, facingMode }: VideoPreviewProps
         const handleCameraToggle = async () => {
             await cleanupTrack();
 
-            try {
+            const deviceIdToUse = isMobile() ? undefined : selectedCameraId;
+
+            const executeToggle = async (deviceId?: string) => {
                 const videoTrack = await createLocalVideoTrack({
-                    deviceId: isMobile() ? undefined : selectedCameraId || undefined,
+                    deviceId,
                     facingMode,
                     ...(isChrome() &&
                         !isMobile() && {
@@ -95,9 +101,23 @@ export const VideoPreview = ({ selectedCameraId, facingMode }: VideoPreviewProps
                         backgroundBlurProcessorInstance?.disable?.();
                     }
                 }
+            };
+
+            try {
+                await executeToggle(deviceIdToUse);
             } catch (e) {
-                if (videoRef.current) {
-                    videoRef.current.srcObject = null;
+                const fallbackDeviceId = room.localParticipant.activeDeviceMap.get('videoinput');
+
+                try {
+                    await wait(100);
+                    await executeToggle(fallbackDeviceId);
+                } catch (e) {
+                    // eslint-disable-next-line no-console
+                    console.error(fallbackDeviceId, e);
+
+                    if (videoRef.current) {
+                        videoRef.current.srcObject = null;
+                    }
                 }
             }
         };

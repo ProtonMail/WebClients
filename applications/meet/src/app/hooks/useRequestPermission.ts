@@ -1,17 +1,28 @@
-import { useRef } from 'react';
+import { c } from 'ttag';
 
-import { useMediaManagementContext } from '../contexts/MediaManagementContext';
+import useNotifications from '@proton/components/hooks/useNotifications';
+import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
+
 import { isAudioSessionAvailable, setAudioSessionType } from '../utils/ios-audio-session';
 
 export const useRequestPermission = () => {
-    const { devicePermissions } = useMediaManagementContext();
+    const notifications = useNotifications();
 
-    const devicePermissionsRef = useRef(devicePermissions);
-
-    devicePermissionsRef.current = devicePermissions;
+    const reportError = useMeetErrorReporting();
 
     const requestDevicePermission = async (deviceType: 'camera' | 'microphone', deviceId?: string) => {
-        const deviceState = devicePermissionsRef.current[deviceType];
+        let deviceState = 'prompt';
+        try {
+            deviceState = (await navigator.permissions.query({ name: deviceType }))?.state;
+        } catch (err) {
+            reportError(`Failed to query permission for ${deviceType}`, {
+                level: 'error',
+                context: {
+                    deviceType,
+                    error: err,
+                },
+            });
+        }
 
         if (deviceState !== 'granted') {
             try {
@@ -33,7 +44,24 @@ export const useRequestPermission = () => {
 
                 return 'granted';
             } catch (err) {
-                return 'denied';
+                if (err instanceof Error && (err.name === 'NotAllowedError' || err.name === 'SecurityError')) {
+                    return 'denied';
+                }
+
+                const notificationText =
+                    deviceType === 'camera'
+                        ? c('Error')
+                              .t`Failed to request permission for the camera. Please check your system permissions and try again. You might have to enable permissions manually, please refresh the page afterwards`
+                        : c('Error')
+                              .t`Failed to request permission for the microphone. Please check your system permissions and try again. You might have to enable permissions manually, please refresh the page afterwards`;
+
+                notifications.createNotification({
+                    type: 'error',
+                    text: notificationText,
+                    expiration: 10000,
+                });
+
+                return 'prompt';
             }
         }
 
