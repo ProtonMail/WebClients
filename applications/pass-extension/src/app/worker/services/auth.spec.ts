@@ -2,6 +2,7 @@ import WorkerMessageBroker from 'proton-pass-extension/__mocks__/app/worker/chan
 import { clearBrowserMocks } from 'proton-pass-extension/__mocks__/webextension-polyfill';
 import { WorkerContext } from 'proton-pass-extension/app/worker/context/inject';
 import type { WorkerContextInterface } from 'proton-pass-extension/app/worker/context/types';
+import type { ExtensionAuthService } from 'proton-pass-extension/app/worker/services/auth';
 import { createAuthService } from 'proton-pass-extension/app/worker/services/auth';
 import * as permissionUtils from 'proton-pass-extension/lib/utils/permissions';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
@@ -12,7 +13,7 @@ import type { AuthStore } from '@proton/pass/lib/auth/store';
 import { createAuthStore } from '@proton/pass/lib/auth/store';
 import type { ConnectivityService } from '@proton/pass/lib/network/connectivity.service';
 import { ConnectivityStatus } from '@proton/pass/lib/network/connectivity.utils';
-import { bootIntent } from '@proton/pass/store/actions';
+import { bootIntent, offlineResume } from '@proton/pass/store/actions';
 import type { Api } from '@proton/pass/types';
 import { NotificationKey } from '@proton/pass/types/worker/notification';
 import { AppStatus } from '@proton/pass/types/worker/state';
@@ -40,6 +41,7 @@ describe('Extension AuthService', () => {
         connectivity = {
             check: jest.fn().mockResolvedValue(undefined),
             getStatus: jest.fn().mockReturnValue(ConnectivityStatus.ONLINE),
+            subscribe: jest.fn(),
             online: true,
         } as any;
 
@@ -68,32 +70,7 @@ describe('Extension AuthService', () => {
         WorkerContext.clear();
     });
 
-    describe('AuthService factory', () => {
-        let auth: AuthService;
-
-        beforeEach(() => {
-            auth = createAuthService(api, authStore);
-        });
-
-        test('should setup service', () => {
-            expect(auth).toBeDefined();
-            expect(api.subscribe).toHaveBeenCalled();
-        });
-
-        test.each([
-            WorkerMessageType.ACCOUNT_PROBE,
-            WorkerMessageType.ACCOUNT_FORK,
-            WorkerMessageType.AUTH_CHECK,
-            WorkerMessageType.AUTH_CONFIRM_PASSWORD,
-            WorkerMessageType.AUTH_INIT,
-            WorkerMessageType.AUTH_OFFLINE_SWITCH,
-            WorkerMessageType.AUTH_UNLOCK,
-        ])('should register `%s` handler', (message) => {
-            expect(WorkerMessageBroker.registerMessage).toHaveBeenCalledWith(message, expect.any(Function));
-        });
-    });
-
-    describe('AuthService hooks', () => {
+    describe('Lifecycle hooks', () => {
         let auth: AuthService;
 
         beforeEach(() => {
@@ -290,9 +267,31 @@ describe('Extension AuthService', () => {
         });
     });
 
-    describe('AuthService message handlers', () => {
+    describe('Listeners', () => {
+        let auth: ExtensionAuthService;
+
         beforeEach(() => {
-            createAuthService(api, authStore);
+            auth = createAuthService(api, authStore);
+            auth.listen();
+        });
+
+        describe('`listen()`', () => {
+            test('should setups listeners', () => {
+                expect(auth).toBeDefined();
+                expect(api.subscribe).toHaveBeenCalled();
+            });
+
+            test.each([
+                WorkerMessageType.ACCOUNT_PROBE,
+                WorkerMessageType.ACCOUNT_FORK,
+                WorkerMessageType.AUTH_CHECK,
+                WorkerMessageType.AUTH_CONFIRM_PASSWORD,
+                WorkerMessageType.AUTH_INIT,
+                WorkerMessageType.AUTH_OFFLINE_SWITCH,
+                WorkerMessageType.AUTH_UNLOCK,
+            ])('should register `%s` handler', (message) => {
+                expect(WorkerMessageBroker.registerMessage).toHaveBeenCalledWith(message, expect.any(Function));
+            });
         });
 
         describe('`AUTH_OFFLINE_SWITCH`', () => {
@@ -320,6 +319,59 @@ describe('Extension AuthService', () => {
                 expect(result).toBe(true);
                 expect(ctx.setBooted).not.toHaveBeenCalled();
                 expect(ctx.setStatus).not.toHaveBeenCalled();
+            });
+        });
+
+        describe('Connectivity events', () => {
+            let subscriber: (status: ConnectivityStatus) => void;
+
+            beforeEach(() => {
+                auth.init = jest.fn().mockResolvedValue(true);
+                authStore.setLocalID(123);
+                subscriber = (connectivity.subscribe as jest.Mock).mock.calls[0][0];
+            });
+
+            test('should dispatch `offlineResume` when coming online from offline status', () => {
+                ctx.status = AppStatus.OFFLINE;
+                ctx.booted = true;
+
+                subscriber(ConnectivityStatus.ONLINE);
+                expect(ctx.service.store.dispatch).toHaveBeenCalledWith(offlineResume.intent({ localID: 123 }));
+            });
+
+            test('should call `auth.init` when coming online from password-locked status', () => {
+                ctx.status = AppStatus.PASSWORD_LOCKED;
+                ctx.booted = false;
+
+                subscriber(ConnectivityStatus.ONLINE);
+                expect(auth.init).toHaveBeenCalledWith({ forceLock: true });
+            });
+
+            test('should noop when network is offline', () => {
+                ctx.status = AppStatus.OFFLINE;
+                ctx.booted = true;
+
+                subscriber(ConnectivityStatus.OFFLINE);
+                expect(ctx.service.store.dispatch).not.toHaveBeenCalled();
+                expect(auth.init).not.toHaveBeenCalled();
+            });
+
+            test('should noop when online but app has booted online', () => {
+                ctx.status = AppStatus.READY;
+                ctx.booted = true;
+
+                subscriber(ConnectivityStatus.ONLINE);
+                expect(ctx.service.store.dispatch).not.toHaveBeenCalled();
+                expect(auth.init).not.toHaveBeenCalled();
+            });
+
+            test('should noop when online but status is idle', () => {
+                ctx.status = AppStatus.IDLE;
+                ctx.booted = false;
+
+                subscriber(ConnectivityStatus.ONLINE);
+                expect(ctx.service.store.dispatch).not.toHaveBeenCalled();
+                expect(auth.init).not.toHaveBeenCalled();
             });
         });
     });
