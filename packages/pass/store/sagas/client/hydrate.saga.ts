@@ -3,6 +3,7 @@ import { put, select } from 'redux-saga/effects';
 import { decryptCache } from '@proton/pass/lib/cache/decrypt';
 import { getCacheKey } from '@proton/pass/lib/cache/keys';
 import { PassCrypto } from '@proton/pass/lib/crypto';
+import { PassCryptoHydrationError } from '@proton/pass/lib/crypto/utils/errors';
 import { getOrganization } from '@proton/pass/lib/organization/organization.requests';
 import { sanitizeBetaSetting } from '@proton/pass/lib/settings/beta';
 import { enableLoginAutofill } from '@proton/pass/lib/settings/utils';
@@ -14,6 +15,7 @@ import type { HydratedUserState } from '@proton/pass/store/reducers';
 import type { OrganizationState } from '@proton/pass/store/reducers/organization';
 import type { SettingsState } from '@proton/pass/store/reducers/settings';
 import type { RootSagaOptions, State } from '@proton/pass/store/types';
+import type { MaybeNull } from '@proton/pass/types';
 import { type Maybe, PlanType } from '@proton/pass/types';
 import type { EncryptedPassCache, PassCache } from '@proton/pass/types/worker/cache';
 import { throwError } from '@proton/pass/utils/fp/throw';
@@ -27,7 +29,7 @@ import noop from '@proton/utils/noop';
  * If `true` they will be by-passed - else you can pass a custom error
  * generator function that will be triggered */
 type HydrateCacheOptions = {
-    allowFailure: boolean;
+    online: boolean;
     merge: (existing: State, incoming: State) => State;
     onError?: () => Generator;
 };
@@ -43,31 +45,49 @@ export function* hydrate(
     try {
         const authStore = getAuthStore();
         const keyPassword = authStore.getPassword();
-        const { allowFailure } = config;
-
         const encryptedCache: Partial<EncryptedPassCache> = yield getCache();
         const cacheKey: Maybe<CryptoKey> = yield getCacheKey(encryptedCache, authStore);
 
         const cache: Maybe<PassCache> = cacheKey
-            ? yield decryptCache(cacheKey, encryptedCache).catch((err) => (allowFailure ? undefined : throwError(err)))
+            ? yield decryptCache(cacheKey, encryptedCache).catch((err) => (config.online ? undefined : throwError(err)))
             : undefined;
+
+        /** Offline boot requires valid cache */
+        if (!config.online && !cache) throw new PassCryptoHydrationError('Missing or invalid offline cache');
+        /** Online hydration requires keyPassword for PassCrypto */
+        if (config.online && !keyPassword) throw new PassCryptoHydrationError('Missing `keyPassword`');
 
         const cachedState = cache?.state
             ? migrate(cache.state, cache.snapshot, { from: encryptedCache.version, to: getConfig().APP_VERSION })
             : undefined;
-
         const cachedUser = cachedState?.user;
         const snapshot = cache?.snapshot;
         const fromCache = cache?.state !== undefined && cache?.snapshot !== undefined;
 
-        const userState: HydratedUserState = userStateHydrated(cachedUser) ? cachedUser : yield getUserData(extensionId);
+        /** Request #1: Fetch user data only when online and not fully hydrated.
+         * May be triggered on initial boot or when we detect a non-hydrated user
+         * state on subsequent boots. Graceful fallback to possibly stale cached
+         * user on network failure to avoid blocking the hydration sequence. */
+        const userState: Maybe<HydratedUserState> = yield userStateHydrated(cachedUser) || !config.online
+            ? cachedUser
+            : getUserData(extensionId).catch((err) => {
+                  /** Terminate on network errors if no
+                   * cached user state is available */
+                  if (!cachedUser) throw err;
+                  return cachedUser;
+              });
+
+        /** Hydration error: User state must be resolvable from cache or network */
+        if (!userState) throw new PassCryptoHydrationError('User not resolved');
 
         const user = userState.user;
         const addresses = Object.values(userState.addresses);
-        const organization =
-            userState.plan.Type === PlanType.BUSINESS
-                ? (cachedState?.organization ?? ((yield getOrganization()) as OrganizationState))
-                : null;
+
+        /** Request #2: Fetch organization data for business users if not cached.
+         * Graceful fallback to null on network failure to avoid blocking hydration. */
+        const organization: MaybeNull<OrganizationState> = yield userState.plan.Type === PlanType.BUSINESS
+            ? (cachedState?.organization ?? getOrganization().catch(() => null))
+            : null;
 
         const twoPasswordMode = userState.userSettings.Password.Mode === SETTINGS_PASSWORD_MODE.TWO_PASSWORD_MODE;
 
@@ -104,7 +124,7 @@ export function* hydrate(
         }
 
         /** Activate offline mode by default if user
-         *  has an offline password available */
+         * has an offline password available */
         if (BUILD_TARGET === 'web' || DESKTOP_BUILD) {
             const hasOfflinePassword = authStore.hasOfflinePassword();
             settings.offlineEnabled = hasOfflinePassword;
