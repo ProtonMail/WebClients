@@ -50,7 +50,7 @@ import { dateToLegacyTimestamp } from '../utils/sdk/legacyTime';
 import { Features, measureFeaturePerformance } from '../utils/telemetry';
 import { getTokenFromSearchParams } from '../utils/url/token';
 import DevicesContainer from './DevicesContainer';
-import { FolderContainerWrapper } from './FolderContainerWrapper';
+import { FolderContainer } from './FolderContainer';
 import LocationErrorBoundary from './LocationErrorBoundary';
 import NoAccessContainer from './NoAccessContainer';
 import { SearchContainer } from './SearchContainer';
@@ -211,8 +211,8 @@ function InitContainer() {
             {photosEnabled && <Route path="photos/*" element={<PhotosWithAlbumsContainer />} />}
             {searchEnabled && <Route path="search/*" element={<SearchContainer />} />}
             <Route path=":volumeId/:linkId/*" element={<VolumeLinkContainer />} />
-            <Route path=":shareId/file/:linkId/*" element={<FolderContainerWrapper type={LinkURLType.FILE} />} />
-            <Route path=":shareId/folder/:linkId/*" element={<FolderContainerWrapper type={LinkURLType.FOLDER} />} />
+            <Route path=":shareId/file/:linkId/*" element={<FolderContainer type={LinkURLType.FILE} />} />
+            <Route path=":shareId/folder/:linkId/*" element={<FolderContainer type={LinkURLType.FOLDER} />} />
             <Route
                 path="*"
                 element={
