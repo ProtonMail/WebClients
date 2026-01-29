@@ -91,10 +91,12 @@ export const ParticipantTile = ({ participant, viewSize = 'large' }: Participant
     // Queue-based subscription: ParticipantTile enqueues work by registering the remote publication.
     // Provider is responsible for subscribing/enabling/quality selection & stuck resets.
     useEffect(() => {
-        register(cameraVideoPublication, participant.identity);
-        return () => {
-            unregister(cameraVideoPublication);
-        };
+        if (cameraVideoPublication?.trackSid && participant.identity) {
+            register(cameraVideoPublication, participant.identity);
+            return () => {
+                unregister(cameraVideoPublication);
+            };
+        }
         // Intentionally track sid so we cleanup/re-register on publication changes.
     }, [cameraVideoPublication?.trackSid, participant.identity, register, unregister]);
 
