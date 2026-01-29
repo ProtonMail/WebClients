@@ -14,6 +14,7 @@ import type { Message } from '../../../types';
 import { parseInteger } from '../../../util/number';
 import { convertRefTokensToSpans } from '../../../util/tokens';
 import { getDomain } from '../../interactiveConversation/messageChain/message/toolCall/helpers';
+import { InlineImageComponent } from './InlineImageComponent';
 // Import syntax highlighter (full Prism build with all languages)
 import { SyntaxHighlighter } from './syntaxHighlighterConfig';
 
@@ -192,8 +193,16 @@ const LumoMarkdown = React.memo(
 
                     return <CodeBlock language={match?.[1] ?? 'plaintext'} value={childrenString} onCopy={onCopy} />;
                 },
-                img() {
-                    // For security, don't render images in user messages
+                img(props: any) {
+                    const { src, alt } = props;
+
+                    // Handle attachment: URLs (for generated images)
+                    if (src?.startsWith('attachment:')) {
+                        const attachmentId = src.substring('attachment:'.length);
+                        return <InlineImageComponent attachmentId={attachmentId} alt={alt} />;
+                    }
+
+                    // For security, don't render external images
                     return null;
                 },
                 table(props: any) {
