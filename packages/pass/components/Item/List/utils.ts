@@ -4,7 +4,6 @@ import { cardNumberHiddenValue } from '@proton/pass/components/Form/Field/masks/
 import { intoUserIdentifier } from '@proton/pass/lib/items/item.utils';
 import type { ItemRevision, ItemType } from '@proton/pass/types';
 import { deobfuscate, deobfuscateCCField } from '@proton/pass/utils/obfuscate/xor';
-import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
 
 type PresentedListItem = { heading: string; subheading: string };
 type ItemListPresenterMap = { [T in ItemType]: (revision: ItemRevision<T>) => PresentedListItem };
@@ -12,9 +11,10 @@ type ItemListPresenterMap = { [T in ItemType]: (revision: ItemRevision<T>) => Pr
 const itemListPresenter: ItemListPresenterMap = {
     note: ({ data }) => ({
         heading: data.metadata.name,
-        subheading: isEmptyString(data.metadata.note.v)
-            ? c('Warning').t`Empty note`
-            : deobfuscate(data.metadata.note).split('\n')[0],
+        subheading:
+            data.metadata.note.v.length === 0
+                ? c('Warning').t`Empty note`
+                : deobfuscate(data.metadata.note).split('\n')[0],
     }),
     login: (item) => ({
         heading: item.data.metadata.name,
