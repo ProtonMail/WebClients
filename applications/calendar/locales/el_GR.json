@@ -3925,6 +3925,9 @@
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Αυτό το μήνυμα μπορεί να περιέχει κάποιους συνδέσμους URL που δεν μπορούν να ανοίξουν σωστά από το τρέχον πρόγραμμα περιήγησης."
       ],
+      "This offer is not available in your country": [
+        "Αυτή η προσφορά δεν είναι διαθέσιμη στη χώρα σας"
+      ],
       "Trusted keys are not valid for sending": [
         "Τα αξιόπιστα κλειδιά δεν είναι έγκυρα για την αποστολή"
       ],
@@ -7486,6 +7489,10 @@
         "${ n } ενεργή σύσκεψη τη φορά",
         "${ n } ενεργή συσκέψεις τη φορά"
       ],
+      "${ n } participant": [
+        "${ n } συμμετέχων",
+        "${ n } συμμετέχοντες"
+      ],
       "24 hours per meeting": [
         "24 ώρες ανά σύσκεψη"
       ],
@@ -7494,6 +7501,9 @@
       ],
       "Appointment scheduling": [
         "Προγραμματισμός ραντεβού"
+      ],
+      "Booking pages": [
+        "Σελίδες κρατήσεων"
       ],
       "Browser, mobile, and desktop apps": [
         "Εφαρμογές για προγράμματα περιήγησης, κινητά και επιτραπέζιους υπολογιστές"
@@ -7504,8 +7514,8 @@
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "Κρυπτογραφημένη κοινή χρήση οθόνης διατερματικά και εφήμερη συνομιλία κατά τη διάρκεια της κλήσης"
       ],
-      "Meeting recording (coming soon)": [
-        "Ηχογράφηση συσκέψεων (σύντομα διαθέσιμη)"
+      "Meeting recording": [
+        "Ηχογράφηση σύσκεψης"
       ],
       "One active meeting at a time": [
         "Μία ενεργή σύσκεψη τη φορά"
