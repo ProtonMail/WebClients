@@ -133,7 +133,8 @@ export const MeetingRow = ({ meeting, index }: MeetingRowProps) => {
                         {meeting.RRule && (
                             <Tooltip
                                 title={c('Tooltip').t`Recurring meeting`}
-                                tooltipClassName="meeting-row-tooltip bg-strong color-norm"
+                                tooltipClassName="meet-tooltip bg-strong color-norm"
+                                tooltipStyle={{ '--meet-tooltip-bg': 'var(--background-strong)' }}
                             >
                                 <div>
                                     <IcArrowsRotate className="color-hint" size={4} />

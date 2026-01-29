@@ -47,7 +47,3 @@
 .warning-indicator {
 	background: var(--signal-warning-major-1);
 }
-
-.toggle-button-tooltip::before {
-	border-block-start-color: var(--background-strong) !important;
-}

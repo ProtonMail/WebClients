@@ -2,7 +2,9 @@ import { useEffect, useState } from 'react';
 
 import { useRoomContext } from '@livekit/components-react';
 import { ConnectionQuality, type Participant } from 'livekit-client';
+import { c } from 'ttag';
 
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { IcMeetConnectionIndicator } from '@proton/icons/icons/IcMeetConnectionIndicator';
 import clsx from '@proton/utils/clsx';
 
@@ -56,15 +58,25 @@ export const NetworkQualityIndicator = ({ size, participant, indicatorSize = 24 
     }
 
     return (
-        <div
-            className={clsx(
-                'user-select-none flex items-center justify-center w-custom h-custom rounded-full',
-                pathVisibilityClasses,
-                isDanger ? 'connection-lost-background-color-danger' : 'bg-weak'
-            )}
-            style={{ width: size, height: size, opacity: 0.8 }}
-        >
-            <IcMeetConnectionIndicator width={indicatorSize} height={indicatorSize} />
+        <div className="flex items-center justify-center">
+            <Tooltip
+                tooltipClassName="meet-tooltip text-semibold p-4 "
+                title={c('Info').t`Poor connection`}
+                openDelay={0}
+                closeDelay={0}
+                originalPlacement="top"
+            >
+                <div
+                    className={clsx(
+                        'user-select-none flex items-center justify-center w-custom h-custom rounded-full',
+                        pathVisibilityClasses,
+                        isDanger ? 'connection-lost-background-color-danger' : 'bg-weak'
+                    )}
+                    style={{ width: size, height: size, opacity: 0.8 }}
+                >
+                    <IcMeetConnectionIndicator width={indicatorSize} height={indicatorSize} />
+                </div>
+            </Tooltip>
         </div>
     );
 };
