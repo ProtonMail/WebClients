@@ -1,105 +1,106 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom-v5-compat';
 
-import { generateNodeUid } from '@proton/drive/index';
+import { c } from 'ttag';
+
+import { Loader, useNotifications } from '@proton/components';
+import { NodeType, ValidationError, getDrive, splitNodeUid } from '@proton/drive/index';
+import useLoading from '@proton/hooks/useLoading';
 import { LinkURLType } from '@proton/shared/lib/drive/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 
 import { DriveStartupModals } from '../components/modals/DriveStartupModals';
-import { DriveViewDeprecated } from '../components/sections/Drive/DriveView';
-import type { DriveFolder } from '../hooks/drive/useActiveShare';
+import type { DriveSectionRouteProps } from '../components/sections/Drive/DriveView';
 import { useActiveShare } from '../hooks/drive/useActiveShare';
-import { useFolderContainerTitle } from '../hooks/drive/useFolderContainerTitle';
+import { useLegacyContextShareHandler } from '../hooks/drive/useLegacyContextShareHandler';
 import useDriveNavigation from '../hooks/drive/useNavigate';
 import { FolderView } from '../sections/folders/FolderView';
 import { subscribeToFolderEvents } from '../sections/folders/subscribeToFolderEvents';
-import { useDefaultShare } from '../store';
-import { getIsPublicContext } from '../utils/getIsPublicContext';
+import { useFolderStore } from '../sections/folders/useFolder.store';
+import { EnrichedError } from '../utils/errorHandling/EnrichedError';
+import { useSdkErrorHandler } from '../utils/errorHandling/useSdkErrorHandler';
 import PreviewContainer from './PreviewContainer';
 
 export const hasValidLinkType = (type: string) => {
     return type === LinkURLType.FILE || type === LinkURLType.FOLDER;
 };
 
-type DriveFolderWithUid = DriveFolder & {
-    uid: string;
-};
-
-type DriveSectionRouteProps = { shareId?: string; type?: LinkURLType; linkId?: string };
-
 export function FolderContainer({ type }: { type: LinkURLType }) {
-    const params = useParams<DriveSectionRouteProps>();
-    const { shareId, linkId } = params;
-    const { navigateToRoot, navigateToNoAccess } = useDriveNavigation();
-    const { activeFolder, setFolder } = useActiveShare();
-    const lastFolderPromise = useRef<Promise<DriveFolderWithUid | undefined>>();
-    const [, setError] = useState();
-    const { getDefaultShare, isShareAvailable } = useDefaultShare();
-    const isPublic = getIsPublicContext();
-    const DriveViewComponent = !isPublic ? FolderView : DriveViewDeprecated;
-    useFolderContainerTitle(
-        useMemo(
-            () => ({
-                shareId: params.shareId || '',
-                linkId: params.linkId || '',
-                type: params.type,
-            }),
-            [params.shareId, params.linkId, params.type]
-        )
-    );
+    const [isLoading, withLoading] = useLoading(true);
+    const { navigateToRoot } = useDriveNavigation();
+    const { handleContextShare } = useLegacyContextShareHandler();
+    const { shareId, linkId } = useParams<DriveSectionRouteProps>();
+    const { handleError } = useSdkErrorHandler();
+    const { setFolder } = useActiveShare();
+    const [nodeUid, setNodeUid] = useState<string | undefined>();
+    const { createNotification } = useNotifications();
 
-    const folderPromise = useMemo(async () => {
-        if (!shareId && !type && !linkId) {
-            const defaultShare = await getDefaultShare();
-            if (defaultShare) {
-                return {
-                    volumeId: defaultShare.volumeId,
-                    shareId: defaultShare.shareId,
-                    linkId: defaultShare.rootLinkId,
-                    uid: generateNodeUid(defaultShare.volumeId, defaultShare.rootLinkId),
-                };
-            }
-            setError(() => {
-                // Throwing error in async function does not propagate it to
-                // the view. Therefore we need to use this setError hack.
-                throw new Error('Drive is not initilized, cache has been cleared unexpectedly');
-            });
-        } else if (!shareId || !hasValidLinkType(type as string) || !linkId) {
-            console.warn('Missing parameters, should be none or shareId/type/linkId', { params });
-            navigateToRoot();
-        } else if (type === LinkURLType.FOLDER) {
-            const ac = new AbortController();
-            const share = await isShareAvailable(ac.signal, shareId);
+    useEffect(() => {
+        const abortController = new AbortController();
 
-            if (!share) {
-                console.warn('Provided share is not available, probably locked or soft deleted');
+        const { folder, setIsLoading, reset } = useFolderStore.getState();
+
+        const isNavigatingToNewFolder = !Boolean(
+            folder && folder.shareId === shareId && splitNodeUid(folder.uid).nodeId === linkId
+        );
+
+        if (isNavigatingToNewFolder && type === LinkURLType.FOLDER) {
+            // TODO: Remove this one we have volumeId/linkId in the URL
+            // This is to say to the folder that a new node is loading
+            reset();
+            setIsLoading(true);
+        }
+        void withLoading(async () => {
+            if (!shareId || !linkId) {
+                handleError(
+                    new EnrichedError('Drive is not initilized, cache has been cleared unexpectedly', {
+                        extra: {
+                            reason: 'Missing URL parameters',
+                        },
+                    })
+                );
                 navigateToRoot();
                 return;
             }
 
-            return { volumeId: share.volumeId, shareId, linkId, uid: generateNodeUid(share.volumeId, linkId) };
-        }
-        return lastFolderPromise.current;
-    }, [shareId, linkId, type]);
+            try {
+                const uid = await getDrive().getNodeUid(shareId, linkId);
+                const { volumeId } = splitNodeUid(uid);
+                setFolder({ volumeId, linkId, shareId });
+                setNodeUid(uid);
+            } catch (err: unknown) {
+                if (err instanceof ValidationError && err.code === API_CUSTOM_ERROR_CODES.NOT_ALLOWED) {
+                    await handleContextShare(abortController.signal, {
+                        shareId,
+                        linkId,
+                        // LinkURLType only support File/Folder, so we can exclude Album, Photo,...
+                        type: type === LinkURLType.FILE ? NodeType.File : NodeType.Folder,
+                    });
+                    return;
+                }
+                console.error(Error.isError(err) ? err.message : 'Unknwon issue while retrieving the node');
+                createNotification({
+                    type: 'error',
+                    text: c('Error').t`We cannot retrieve this item`,
+                });
+                navigateToRoot();
+            }
+        });
 
-    useEffect(() => {
-        folderPromise
-            .then((folder) => {
-                lastFolderPromise.current = folderPromise;
-                const activeFolderUid = generateNodeUid(activeFolder.volumeId, activeFolder.linkId);
-                if (folder && folder.uid !== activeFolderUid) {
-                    setFolder(folder);
-                }
-            })
-            .catch((err) => {
-                console.warn(err);
-                if (err.data?.Code === API_CUSTOM_ERROR_CODES.NOT_FOUND) {
-                    navigateToNoAccess();
-                } else {
-                    navigateToRoot();
-                }
-            });
-    }, [folderPromise]);
+        return () => {
+            abortController.abort();
+        };
+    }, [
+        shareId,
+        type,
+        linkId,
+        withLoading,
+        handleError,
+        navigateToRoot,
+        setFolder,
+        handleContextShare,
+        createNotification,
+    ]);
 
     useEffect(() => {
         const unsubscribe = subscribeToFolderEvents();
@@ -108,13 +109,20 @@ export function FolderContainer({ type }: { type: LinkURLType }) {
         };
     }, []);
 
-    const shouldRenderDriveView = Boolean(activeFolder.shareId && activeFolder.linkId);
+    // Should never happened as the routing are asking for them explicitely
+    if (!shareId || !linkId) {
+        return null;
+    }
+
+    if (isLoading && !nodeUid) {
+        return <Loader size="medium" className="absolute inset-center" />;
+    }
 
     return (
         <>
-            {shouldRenderDriveView ? <DriveViewComponent /> : null}
+            {type === LinkURLType.FOLDER && <FolderView shareId={shareId} nodeUid={nodeUid} />}
             <DriveStartupModals />
-            {shareId && linkId && <>{type === LinkURLType.FILE && <PreviewContainer />}</>}
+            {type === LinkURLType.FILE && <PreviewContainer shareId={shareId} nodeUid={nodeUid} />}
         </>
     );
 }

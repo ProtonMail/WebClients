@@ -259,7 +259,17 @@ export function FolderBrowser({ activeFolder, layout, sortParams, setSorting, so
             }
             navigateToLink(shareId, nodeId, item.isFile);
         },
-        [browserItems, sortedList, navigateToLink, shareId, isDocsEnabled, openDocument, openLegacyPreview]
+        [
+            browserItems,
+            navigateToLink,
+            shareId,
+            isDocsEnabled,
+            openDocument,
+            isSDKPreviewEnabled,
+            sortedList,
+            showPreviewModal,
+            openLegacyPreview,
+        ]
     );
 
     const handleScroll = () => {

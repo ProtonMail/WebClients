@@ -31,6 +31,8 @@ export {
     splitNodeUid,
     /** @deprecated only for transition to sdk */
     splitPublicLinkUid,
+    /** @deprecated only for transition to sdk */
+    makeInvitationUid as generateInvitationUid,
 } from '@protontech/drive-sdk/dist/internal/uids';
 
 export { generateNodeUid } from '@protontech/drive-sdk';

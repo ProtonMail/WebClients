@@ -30,13 +30,13 @@ export const useContextShareHandler = () => {
             }[];
         }>(queryUserLinkAccess({ shareId, linkId }), abortSignal);
         if (!!response.ContextShare) {
-            countActionWithTelemetry(Actions.RedirectToCorrectContextShare);
+            void countActionWithTelemetry(Actions.RedirectToCorrectContextShare);
             await getLink(abortSignal, response.ContextShare.ShareID, response.ContextShare.LinkID);
             navigateToLink(response.ContextShare.ShareID, response.ContextShare.LinkID, isFile, '/shared-with-me');
             return;
         }
         if (!!response.Invitations?.length) {
-            countActionWithTelemetry(Actions.RedirectToCorrectAcceptInvitation);
+            void countActionWithTelemetry(Actions.RedirectToCorrectAcceptInvitation);
             const invitation = response.Invitations[0];
             const acceptedInvitation = await acceptInvitation(abortSignal, invitation.InvitationID);
             // No invitation found, this should not happend as we get it from context

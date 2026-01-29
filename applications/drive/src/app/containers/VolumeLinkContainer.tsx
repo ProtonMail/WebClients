@@ -86,6 +86,13 @@ export const VolumeLinkContainer: FC = () => {
         });
         // No cleanup/abort function, allowing the action to continue in the background
     }, [externalInvitationId, volumeId]);
+
+    useEffect(() => {
+        if (!invitationId && !externalInvitationId && volumeId && linkId) {
+            navigateToNoAccess();
+        }
+    }, [invitationId, externalInvitationId, volumeId, linkId, navigateToNoAccess]);
+
     // This is a temporary solution until we have proper view to accept/decline screens
     return <Loader size="medium" className="absolute inset-center" />;
 };

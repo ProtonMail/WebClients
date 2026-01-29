@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react';
+import { type ReactNode, useCallback } from 'react';
 
 import { c } from 'ttag';
 
@@ -20,38 +20,42 @@ export const useInvitationsActions = ({ setVolumeShareIds }: UseInvitationsActio
     const { createNotification } = useNotifications();
     const { handleError } = useSdkErrorHandler();
 
-    const handleAcceptInvitation = async (uid: string, invitationUid: string, type: NodeType) => {
-        const drive = getDrivePerNodeType(type);
-        try {
-            await drive.acceptInvitation(invitationUid);
-            const maybeNode = await drive.getNode(uid);
-            const { node } = getNodeEntity(maybeNode);
-            const shareId = node.deprecatedShareId;
-            if (!shareId) {
-                throw new EnrichedError('The shared with me node entity is missing deprecatedShareId', {
-                    extra: { uid: node.uid },
+    // useCallback is needed as this can be called inside useEffect, like accepting an invite on page load
+    const handleAcceptInvitation = useCallback(
+        async (uid: string, invitationUid: string, type: NodeType) => {
+            const drive = getDrivePerNodeType(type);
+            try {
+                await drive.acceptInvitation(invitationUid);
+                const maybeNode = await drive.getNode(uid);
+                const { node } = getNodeEntity(maybeNode);
+                const shareId = node.deprecatedShareId;
+                if (!shareId) {
+                    throw new EnrichedError('The shared with me node entity is missing deprecatedShareId', {
+                        extra: { uid: node.uid },
+                    });
+                }
+                const { volumeId } = splitNodeUid(uid);
+
+                // TODO: Remove setVolumeShareIds when we will have sdk for upload
+                if (setVolumeShareIds) {
+                    setVolumeShareIds(volumeId, [shareId]);
+                }
+
+                await getActionEventManager().emit({
+                    type: ActionEventName.ACCEPT_INVITATIONS,
+                    uids: [node.uid],
                 });
+
+                createNotification({
+                    type: 'success',
+                    text: c('Notification').t`Share invitation accepted successfully`,
+                });
+            } catch (e) {
+                handleError(e, { fallbackMessage: c('Notification').t`Failed to accept share invitation` });
             }
-            const { volumeId } = splitNodeUid(uid);
-
-            // TODO: Remove setVolumeShareIds when we will have sdk for upload
-            if (setVolumeShareIds) {
-                setVolumeShareIds(volumeId, [shareId]);
-            }
-
-            await getActionEventManager().emit({
-                type: ActionEventName.ACCEPT_INVITATIONS,
-                uids: [node.uid],
-            });
-
-            createNotification({
-                type: 'success',
-                text: c('Notification').t`Share invitation accepted successfully`,
-            });
-        } catch (e) {
-            handleError(e, { fallbackMessage: c('Notification').t`Failed to accept share invitation` });
-        }
-    };
+        },
+        [createNotification, handleError, setVolumeShareIds]
+    );
 
     const rejectInvitationInternal = async (uid: string, invitationUid: string, type: NodeType) => {
         const drive = getDrivePerNodeType(type);
