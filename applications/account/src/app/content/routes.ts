@@ -66,6 +66,7 @@ export const getRoutes = ({
     isAuthenticatorAvailable,
     hasPendingInvitations,
     isOLESEnabled,
+    isCategoryViewEnabled,
 }: Arguments) => {
     return {
         account: getAccountAppRoutes({
@@ -107,6 +108,7 @@ export const getRoutes = ({
             addresses,
             organization,
             isCryptoPostQuantumOptInEnabled,
+            isCategoryViewEnabled,
         }),
         calendar: getCalendarAppRoutes({
             app,

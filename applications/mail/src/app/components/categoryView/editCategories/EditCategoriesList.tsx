@@ -8,8 +8,10 @@ import Checkbox from '@proton/components/components/input/Checkbox';
 import Label from '@proton/components/components/label/Label';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import type { CategoryTab } from '@proton/mail';
-
-import { getDescriptionFromCategoryId, getLabelFromCategoryId } from '../categoriesStringHelpers';
+import {
+    getDescriptionFromCategoryId,
+    getLabelFromCategoryId,
+} from '@proton/mail/features/categoriesView/categoriesStringHelpers';
 
 interface Props {
     categoriesToDisplay: CategoryTab[];

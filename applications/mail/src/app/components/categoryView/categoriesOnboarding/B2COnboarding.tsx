@@ -5,12 +5,12 @@ import { useApi } from '@proton/components';
 import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
 import useLoading from '@proton/hooks/useLoading';
+import { getLabelFromCategoryId } from '@proton/mail/features/categoriesView/categoriesStringHelpers';
 import { updateMailCategoryView } from '@proton/shared/lib/api/mailSettings';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { setBit } from '@proton/shared/lib/helpers/bitset';
 import { LABEL_IDS_TO_HUMAN } from '@proton/shared/lib/mail/constants';
 
-import { getLabelFromCategoryId } from '../categoriesStringHelpers';
 import { ButtonOnboardingPrivate } from './B2COnboardingPromptPrivate';
 import { CategoriesOnboardingFlags } from './onboardingInterface';
 
