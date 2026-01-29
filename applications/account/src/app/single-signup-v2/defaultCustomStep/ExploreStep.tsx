@@ -2,14 +2,10 @@ import { c } from 'ttag';
 
 import type { PLANS } from '@proton/payments';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
-import { BRAND_NAME } from '@proton/shared/lib/constants';
 import type { OrganizationExtended, User } from '@proton/shared/lib/interfaces';
 import { useFlag } from '@proton/unleash';
 
-import ExploreAppsList, { getExploreApps } from '../../components/ExploreAppsList';
-import Content from '../../public/Content';
-import Header from '../../public/Header';
-import Main from '../../public/Main';
+import ExploreAppsListV2, { getExploreApps } from '../../components/ExploreAppsListV2/ExploreAppsListV2';
 
 interface Props {
     onExplore: (app: APP_NAMES) => Promise<void>;
@@ -27,24 +23,27 @@ const ExploreStep = ({ onExplore, user, organization, plan }: Props) => {
     const subscribed = user?.Subscribed || 0;
 
     return (
-        <Main>
-            <Header title={c('new_plans: title').t`Start exploring the ${BRAND_NAME} universe`} />
-            <Content>
-                <ExploreAppsList
+        <div>
+            <header className="mt-6 mb-8 md:mb-10 lg:mb-20 text-center fade-in">
+                <h1 className="text-2xl md:text-6xl text-semibold mb-2">{c('Action').t`Welcome`}</h1>
+                <p className="m-0 md:text-lg color-weak">{c('Info').t`Privacy and security starts here`}</p>
+            </header>
+            <div>
+                <ExploreAppsListV2
                     subscription={{ subscribed, plan }}
                     apps={getExploreApps({
-                        subscribed,
                         user,
                         organization,
                         isDocsHomepageAvailable,
                         isSheetsAvailable,
+                        oauth: false,
                         isMeetAvailable,
                         isAuthenticatorAvailable,
                     })}
                     onExplore={onExplore}
                 />
-            </Content>
-        </Main>
+            </div>
+        </div>
     );
 };
 
