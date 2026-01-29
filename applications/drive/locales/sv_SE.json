@@ -3734,6 +3734,9 @@
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Detta meddelande kan innehålla några URL-länkar som inte kan öppnas korrekt av din nuvarande webbläsare."
       ],
+      "This offer is not available in your country": [
+        "Detta erbjudande är inte tillgängligt i ditt land"
+      ],
       "Try using only letters, numerals, and _.-": [
         "Prova använda endast bokstäver, siffror och _.-"
       ],
@@ -5671,6 +5674,9 @@
       ],
       "Makes your account safer": [
         "Gör ditt konto säkrare"
+      ],
+      "Malware detected": [
+        "Skadlig kod upptäckt"
       ],
       "Mar": [
         "Mar"
@@ -7788,6 +7794,10 @@
         "${ n } aktivt möte åt gången",
         "${ n } aktiva möten åt gången"
       ],
+      "${ n } participant": [
+        "${ n } deltagare",
+        "${ n } deltagare"
+      ],
       "24 hours per meeting": [
         "24 timmar per möte"
       ],
@@ -7800,8 +7810,8 @@
       "Built-in chat": [
         "Inbyggd chatt"
       ],
-      "Meeting recording (coming soon)": [
-        "Mötesinspelning (kommer snart)"
+      "End-to-end encrypted screen sharing and ephemeral in-call chat": [
+        "End-to-end-krypterad skärmdelning och kortvarig chatt i samtal"
       ],
       "One active meeting at a time": [
         "Ett aktivt möte åt gången"
