@@ -260,7 +260,8 @@ const AssistantMessage = ({
                                 </div>
                             ) : (
                                 <div className="w-full" style={{ minHeight: '2em' }}>
-                                    {hasContent || doNotShowEmptyMessage ? (
+                                    {/* Always show RenderBlocks if there's reasoning, content, or tool calls */}
+                                    {hasContent || doNotShowEmptyMessage || message.reasoning || hasToolCall ? (
                                         <div className="w-full">
                                             <RenderBlocks
                                                 blocks={blocks}
@@ -269,6 +270,7 @@ const AssistantMessage = ({
                                                 isLastMessage={isLastMessage}
                                                 handleLinkClick={handleLinkClick}
                                                 sourcesContainerRef={sourcesContainerRef}
+                                                reasoning={message.reasoning}
                                             />
                                         </div>
                                     ) : (

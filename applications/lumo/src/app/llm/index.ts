@@ -3,6 +3,7 @@ import type { AesGcmCryptoKey } from '../crypto/types';
 import { createImageAttachment, generateImageMarkdown } from '../lib/imageAttachment';
 import { getMessageBlocks } from '../messageHelpers';
 import { addAttachment, pushAttachmentRequest } from '../redux/slices/core/attachments';
+import { attachmentDataCache } from '../services/attachmentDataCache';
 import {
     changeConversationTitle,
     pushConversationRequest,
@@ -11,6 +12,7 @@ import {
 import {
     addImageAttachment,
     appendChunk,
+    appendReasoning,
     finishMessage,
     pushMessageRequest,
     setToolCall,
@@ -46,7 +48,7 @@ export const EMPTY_ASSISTANT_TURN: Turn = {
     content: '',
 };
 
-export const ENABLE_U2L_ENCRYPTION = true;
+export const ENABLE_U2L_ENCRYPTION = false;
 
 // Internal type for turns during processing (before final cleanup)
 type TurnInProgress = Turn & {
@@ -72,13 +74,15 @@ function uint8ArrayToBase64(buffer: Uint8Array<ArrayBuffer>): string {
  * Convert image attachment to WireImage format
  */
 function attachmentToWireImage(attachment: Attachment): WireImage {
-    if (!attachment.data) {
-        throw new Error(`Attachment ${attachment.id} has no data`);
+    // Get data from cache since it's not stored in Redux
+    const data = attachmentDataCache.getData(attachment.id);
+    if (!data) {
+        throw new Error(`Attachment ${attachment.id} has no data in cache`);
     }
     return {
         encrypted: false, // Will be set during encryption phase
         image_id: attachment.id,
-        data: uint8ArrayToBase64(attachment.data),
+        data: uint8ArrayToBase64(data),
     };
 }
 
@@ -242,14 +246,12 @@ function formatTextAttachmentContent(attachment: Attachment): string {
     return [filename, header, beginMarker, content, endMarker].join('\n');
 }
 
+
 /**
  * Create a turn for an attachment (either text or image)
  */
 function createAttachmentTurn(shallowAttachment: ShallowAttachment, allAttachments: Attachment[]): Turn | null {
-    console.log(`createAttachmentTurn: shallowAttachment ${shallowAttachment.id} = `, shallowAttachment);
-    console.log(`createAttachmentTurn: allAttachments = `, allAttachments);
     const fullAttachment = allAttachments.find((a) => a.id === shallowAttachment.id);
-    console.log(`createAttachmentTurn: fullAttachment = `, fullAttachment);
     if (!fullAttachment) return null;
 
     const { imageAttachments, textAttachments } = separateAttachmentsByType([fullAttachment]);
@@ -261,7 +263,7 @@ function createAttachmentTurn(shallowAttachment: ShallowAttachment, allAttachmen
 
         return {
             role: Role.User,
-            content: `[Image: ${shallowAttachment.filename}]`,
+            content: `[Image: ${shallowAttachment.filename} (ID: ${wireImage.image_id})]`,
             images: [wireImage],
         };
     } else if (textAttachments.length > 0) {
@@ -414,6 +416,16 @@ export function _getCallbacks(
                             })
                         );
                         break;
+
+                    case 'reasoning':
+                        dispatch(
+                            appendReasoning({
+                                messageId: assistantMessageId,
+                                content: substring,
+                                sequence: m.count,
+                            })
+                        );
+                        break;
                 }
                 break;
 
@@ -428,7 +440,10 @@ export function _getCallbacks(
                 if (m.image_id && m.data) {
                     const { attachment, data: imageData } = createImageAttachment(m.image_id, m.data, spaceId);
 
-                    dispatch(addAttachment({ ...attachment, data: imageData }));
+                    // Store image data in cache instead of Redux
+                    attachmentDataCache.setData(attachment.id, imageData);
+
+                    dispatch(addAttachment(attachment));
                     dispatch(addImageAttachment({ messageId: assistantMessageId, attachment }));
                     dispatch(
                         appendChunk({ messageId: assistantMessageId, content: generateImageMarkdown(m.image_id) })
