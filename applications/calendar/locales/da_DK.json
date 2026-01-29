@@ -3925,6 +3925,9 @@
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Denne besked kan indeholde link-adresser, som ikke kan åbnes korrekt af din aktuelle browser."
       ],
+      "This offer is not available in your country": [
+        "Dette tilbud er ikke tilgængeligt i dit land"
+      ],
       "Trusted keys are not valid for sending": [
         "Betroede nøgler er ikke gyldige til afsendelse"
       ],
@@ -4962,7 +4965,7 @@
         "${ BRAND_NAME } Scribe-skriveassistent"
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
-        "${ BRAND_NAME }'s krypteringsteknologi betyder, at ingen kan få adgang til din adgangskode - ikke engang os."
+        "${ BRAND_NAME }s krypteringsteknologi betyder, at ingen kan få adgang til din adgangskode - ikke engang os."
       ],
       "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
         "${ CALENDAR_APP_NAME } kræver en ${ BRAND_NAME } adresse til sikker begivenhedssynkronisering og kryptering. ${ claimAddressButton }."
@@ -7486,6 +7489,10 @@
         "${ n } aktivt møde ad gangen",
         "${ n } aktive møder ad gangen"
       ],
+      "${ n } participant": [
+        "${ n } deltager",
+        "${ n } deltagere"
+      ],
       "24 hours per meeting": [
         "24 timer pr. møde"
       ],
@@ -7494,6 +7501,9 @@
       ],
       "Appointment scheduling": [
         "Aftaleplanlægning"
+      ],
+      "Booking pages": [
+        "Reservationssider"
       ],
       "Browser, mobile, and desktop apps": [
         "Browser-, mobil- og desktop-apps"
@@ -7504,8 +7514,8 @@
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "End-to-end-krypteret skærmdeling og midlertidig chat under opkald"
       ],
-      "Meeting recording (coming soon)": [
-        "Møde-optagelse (kommer snart)"
+      "Meeting recording": [
+        "Møde-optagelse"
       ],
       "One active meeting at a time": [
         "Ét aktivt møde ad gangen"
@@ -8347,7 +8357,7 @@
         "Beskyt din familie med alle premium funktioner i ${ plusTitle } for 6 brugere."
       ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
-        "Beskyt din families privatliv med alle ${ BRAND_NAME } tjenester kombineret."
+        "Beskyt din families privatliv med alle ${ BRAND_NAME }-tjenester kombineret."
       ],
       "Safely access internet from anywhere with essential network monitoring": [
         "Sikker adgang til internettet overalt med vigtig netværksovervågning"
