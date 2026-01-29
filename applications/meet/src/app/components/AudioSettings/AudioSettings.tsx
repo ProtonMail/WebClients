@@ -53,10 +53,6 @@ export const AudioSettings = ({ anchorRef, onClose, anchorPosition }: AudioSetti
                 deviceId: sinkId,
                 isSystemDefaultDevice: isDefaultDevice(value),
             });
-
-            const audioElements = document.querySelectorAll('audio');
-
-            await Promise.all([...audioElements].map((el) => el.setSinkId(sinkId)));
         } catch (e) {
             // eslint-disable-next-line no-console
             console.error('Error setting audio output device:', e);

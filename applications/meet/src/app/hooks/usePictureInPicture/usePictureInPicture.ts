@@ -11,8 +11,8 @@ import { useMediaManagementContext } from '../../contexts/MediaManagementContext
 import { useMeetSelector } from '../../store/hooks';
 import { selectMeetSettings } from '../../store/slices/settings';
 import type { MeetChatMessage } from '../../types';
+import { useLatest } from '../useLatest';
 import { PiPSessionManager } from './PiPSessionManager';
-import { useLatest } from './useLatest';
 import { usePiPMediaSession } from './usePiPMediaSession';
 import { usePiPMessages } from './usePiPMessages';
 import { usePiPRenderer } from './usePiPRenderer';

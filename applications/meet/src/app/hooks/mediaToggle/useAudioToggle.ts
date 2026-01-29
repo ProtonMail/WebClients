@@ -1,15 +1,19 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 
-import { useLocalParticipant } from '@livekit/components-react';
+import { useLocalParticipant, useRoomContext } from '@livekit/components-react';
 import type { KrispNoiseFilterProcessor } from '@livekit/krisp-noise-filter';
 import { KrispNoiseFilter, isKrispNoiseFilterSupported } from '@livekit/krisp-noise-filter';
 import { Track } from 'livekit-client';
 import throttle from 'lodash/throttle';
 
-import { DEFAULT_DEVICE_ID } from '../constants';
-import { audioQuality } from '../qualityConstants';
-import type { SwitchActiveDevice } from '../types';
-import { isAudioSessionAvailable, setAudioSessionType } from '../utils/ios-audio-session';
+import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
+
+import { DEFAULT_DEVICE_ID } from '../../constants';
+import { audioQuality } from '../../qualityConstants';
+import type { SwitchActiveDevice } from '../../types';
+import { isAudioSessionAvailable, setAudioSessionType } from '../../utils/ios-audio-session';
+import { useStableCallback } from '../useStableCallback';
+import { ERRORS_SIGNALING_POTENTIAL_STALE_DEVICE_STATE } from './constants';
 
 const isAdvancedNoiseFilterSupported = isKrispNoiseFilterSupported();
 
@@ -17,8 +21,10 @@ export const useAudioToggle = (
     activeMicrophoneDeviceId: string,
     switchActiveDevice: SwitchActiveDevice,
     initialAudioState: boolean,
-    systemDefaultMicrophone: MediaDeviceInfo
+    systemDefaultMicrophone: MediaDeviceInfo,
+    microphones: MediaDeviceInfo[]
 ) => {
+    const reportError = useMeetErrorReporting();
     const [noiseFilter, setNoiseFilter] = useState(isAdvancedNoiseFilterSupported);
     const { isMicrophoneEnabled, localParticipant } = useLocalParticipant();
 
@@ -29,17 +35,19 @@ export const useAudioToggle = (
     const toggleInProgress = useRef(false);
     const currentDeviceId = useRef<string | null>(null);
 
-    const getCurrentPublication = useCallback(() => {
-        return [...localParticipant.audioTrackPublications.values()].find(
+    const room = useRoomContext();
+
+    const getCurrentPublication = () => {
+        return [...room.localParticipant.audioTrackPublications.values()].find(
             (item) =>
                 item.kind === Track.Kind.Audio &&
                 item.source !== Track.Source.ScreenShare &&
                 item.source !== Track.Source.ScreenShareAudio &&
                 item.audioTrack
         );
-    }, [localParticipant]);
+    };
 
-    const tearDownNoiseFilter = useCallback(async () => {
+    const tearDownNoiseFilter = async () => {
         const publication = getCurrentPublication();
         const audioTrack = publication?.audioTrack;
 
@@ -55,9 +63,9 @@ export const useAudioToggle = (
         }
         trackId.current = null;
         noiseFilterProcessor.current = null;
-    }, [getCurrentPublication]);
+    };
 
-    const setupNoiseFilter = useCallback(async () => {
+    const setupNoiseFilter = async () => {
         const publication = getCurrentPublication();
         const currentAudioTrack = publication?.audioTrack;
 
@@ -73,9 +81,18 @@ export const useAudioToggle = (
         // @ts-ignore - webkitAudioContext is not available in all browsers
         audioContext.current = new (window.AudioContext || window.webkitAudioContext)();
 
-        await currentAudioTrack?.setAudioContext(audioContext.current);
-        await currentAudioTrack?.setProcessor(noiseFilterProcessor.current);
-    }, [getCurrentPublication, tearDownNoiseFilter]);
+        try {
+            await currentAudioTrack?.setAudioContext(audioContext.current);
+            await currentAudioTrack?.setProcessor(noiseFilterProcessor.current);
+        } catch (error) {
+            // Clean up on failure to prevent AudioContext leak
+            await audioContext.current?.close().catch(() => {});
+            audioContext.current = null;
+            noiseFilterProcessor.current = null;
+            trackId.current = null;
+            throw error;
+        }
+    };
 
     useEffect(() => {
         return () => {
@@ -83,14 +100,17 @@ export const useAudioToggle = (
         };
     }, []);
 
-    const toggleAudio = useCallback(
+    const toggleAudio = useStableCallback(
         async (
             params: {
                 isEnabled?: boolean;
                 audioDeviceId?: string | null;
                 preserveCache?: boolean;
+                recoveringFromError?: boolean;
             } = {}
         ) => {
+            let toggleResult = false;
+
             // Get current mute state from the actual track (more reliable than a ref)
             const currentAudioPublication = getCurrentPublication();
             const currentMuteState = currentAudioPublication?.isMuted ?? !initialAudioState;
@@ -99,6 +119,7 @@ export const useAudioToggle = (
                 isEnabled = !currentMuteState, // Use actual track state, fallback to initialAudioState if no track exists yet
                 audioDeviceId = activeMicrophoneDeviceId,
                 preserveCache,
+                recoveringFromError = false,
             } = params;
 
             const deviceId = audioDeviceId === DEFAULT_DEVICE_ID ? systemDefaultMicrophone.deviceId : audioDeviceId;
@@ -200,21 +221,40 @@ export const useAudioToggle = (
                         await noiseFilterProcessor.current.setEnabled(true);
                     }
                 }
+
+                toggleResult = true;
             } catch (error) {
-                throw error;
+                reportError('Failed to toggle audio', error);
+                // eslint-disable-next-line no-console
+                console.error(error);
+
+                const isPotentialStaleDeviceState = ERRORS_SIGNALING_POTENTIAL_STALE_DEVICE_STATE.includes(
+                    (error as Error)?.name
+                );
+
+                // Recovering from potential stale device state
+                if (
+                    !recoveringFromError &&
+                    isPotentialStaleDeviceState &&
+                    microphones.length > 0 &&
+                    microphones[0].deviceId !== deviceId
+                ) {
+                    toggleInProgress.current = false;
+
+                    const recoveryResult = (await toggleAudio({
+                        isEnabled,
+                        audioDeviceId: microphones[0].deviceId,
+                        recoveringFromError: true,
+                        preserveCache: false,
+                    })) as boolean;
+                    toggleResult = recoveryResult ?? false;
+                }
             } finally {
                 toggleInProgress.current = false;
             }
-        },
-        [
-            activeMicrophoneDeviceId,
-            initialAudioState,
-            localParticipant,
-            noiseFilter,
-            setupNoiseFilter,
-            switchActiveDevice,
-            getCurrentPublication,
-        ]
+
+            return toggleResult;
+        }
     );
 
     const toggleNoiseFilter = async () => {
