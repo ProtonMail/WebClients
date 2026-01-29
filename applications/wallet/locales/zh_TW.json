@@ -1789,6 +1789,12 @@
       ]
     },
     "Description": {
+      "Automatically forward incoming email to another email address.": [
+        "自動轉寄傳入的電子郵件到其它電子郵件地址。"
+      ],
+      "Configure this first to activate your organization and customize your email address.": [
+        "設置此以先啟動您的組織和自訂您的電子郵件地址。"
+      ],
       "Connect your CRM, website, printers, and more.": [
         "連線至您的 CRM、網站、影印機、和其它。"
       ],
@@ -1806,6 +1812,9 @@
       ],
       "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
         "設定所有使用者的帳號，並邀請他們加入 ${ BRAND_NAME }。"
+      ],
+      "Simplify syncing and scheduling with shared calendars.": [
+        "透過共享行事曆以簡化同步和排程"
       ],
       "To start, give your organization a name.": [
         "若要開始，為貴組織取個名稱。"
@@ -2031,6 +2040,9 @@
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "此欄位至少須有 ${ minimumLength } 個字元。"
+      ],
+      "This offer is not available in your country": [
+        "此優惠在您的國家/地區無法使用"
       ],
       "Try using only letters, numerals, and _.-": [
         "嘗試僅使用字母、數字與 _.-"
@@ -2708,6 +2720,9 @@
       ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "您的訂購授權將於 ${ renewalTime } 自動更新。"
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "您將失去存取至 ${ boldPlanTitle } 功能:"
       ]
     },
     "info": {
@@ -2986,6 +3001,9 @@
       "How to pay with Bitcoin?": [
         "如何以比特幣繳款？"
       ],
+      "How to set up SMTP": [
+        "如何設置 SMTP"
+      ],
       "How to share via email": [
         "如何透過電子郵件共享"
       ],
@@ -3065,9 +3083,6 @@
       ],
       "Built-in chat": [
         "內建聊天"
-      ],
-      "Meeting recording (coming soon)": [
-        "會議錄製(即將到來)"
       ],
       "One active meeting at a time": [
         "單次單個會議進行"
@@ -3917,6 +3932,12 @@
       "Once your full subscription starts...": [
         "您的正式訂購授權一旦開始..."
       ],
+      "You can still cancel within 30 days and get a pro-rata refund.": [
+        "您仍然可以在 30 天內取消並獲得按比例的退款。"
+      ],
+      "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
+        "您可使用 ${ planTitle } 直到試用結束，您將不會被收費。"
+      ],
       "Your free trial has started": [
         "您的免費試用已開始"
       ]
@@ -4315,6 +4336,11 @@
     "Safety review": {
       "Review account safety": [
         "查看帳號安全"
+      ]
+    },
+    "Section": {
+      "Org setup and account security": [
+        "組織設定和帳號安全"
       ]
     },
     "Select search results": {
@@ -4721,6 +4747,9 @@
       "Confirm loss of ${ BRAND_NAME } bonuses": [
         "確認失去 ${ BRAND_NAME } 獎勵"
       ],
+      "Connect apps and devices": [
+        "連線應用程式和裝置"
+      ],
       "Connect to video conferencing": [
         "連接視訊會議"
       ],
@@ -4771,6 +4800,9 @@
       ],
       "Human verification": [
         "真人身分驗證"
+      ],
+      "Import emails, calendars, contacts": [
+        "匯入電子郵件、行事曆、聯絡人"
       ],
       "Invalid verification code": [
         "驗證碼無效"

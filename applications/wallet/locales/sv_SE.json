@@ -2349,6 +2349,9 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Detta fält kräver minst ${ minimumLength } tecken."
       ],
+      "This offer is not available in your country": [
+        "Detta erbjudande är inte tillgängligt i ditt land"
+      ],
       "Try using only letters, numerals, and _.-": [
         "Prova använda endast bokstäver, siffror och _.-"
       ],
@@ -3481,6 +3484,10 @@
         "${ n } aktivt möte åt gången",
         "${ n } aktiva möten åt gången"
       ],
+      "${ n } participant": [
+        "${ n } deltagare",
+        "${ n } deltagare"
+      ],
       "24 hours per meeting": [
         "24 timmar per möte"
       ],
@@ -3493,8 +3500,8 @@
       "Built-in chat": [
         "Inbyggd chatt"
       ],
-      "Meeting recording (coming soon)": [
-        "Mötesinspelning (kommer snart)"
+      "End-to-end encrypted screen sharing and ephemeral in-call chat": [
+        "End-to-end-krypterad skärmdelning och kortvarig chatt i samtal"
       ],
       "One active meeting at a time": [
         "Ett aktivt möte åt gången"
