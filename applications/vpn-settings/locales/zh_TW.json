@@ -1400,6 +1400,9 @@
       ],
       "Unlimited folders, labels and filters": [
         "資料夾、標籤與篩選器無上限"
+      ],
+      "Unlimited logins, credit cards, hide-my-email aliases and more": [
+        "無上限登入、信用卡、 hide-my-email 別名和更多"
       ]
     },
     "BF2024: Offers": {
@@ -1422,6 +1425,9 @@
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "透過端對端加密保護電子郵件及行事曆。包含15個電子郵件地址,支援自訂電子郵件網域,${ BRAND_NAME }Scribe 撰寫工具，無限hide-my-email別名及更多"
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "透過端對端加密保護電子郵件及行事曆。包含 15 電子郵件地址、支援自訂電子郵件網域、無限hide-my-email別名及更多"
       ]
     },
     "BF2025: Deal details": {
@@ -2864,6 +2870,12 @@
       "Also included": [
         "並包含"
       ],
+      "Automatically forward incoming email to another email address.": [
+        "自動轉寄傳入的電子郵件到其它電子郵件地址。"
+      ],
+      "Configure this first to activate your organization and customize your email address.": [
+        "設置此以先啟動您的組織和自訂您的電子郵件地址。"
+      ],
       "Connect your CRM, website, printers, and more.": [
         "連線至您的 CRM、網站、影印機、和其它。"
       ],
@@ -2914,6 +2926,9 @@
       ],
       "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
         "設定所有使用者的帳號，並邀請他們加入 ${ BRAND_NAME }。"
+      ],
+      "Simplify syncing and scheduling with shared calendars.": [
+        "透過共享行事曆以簡化同步和排程"
       ],
       "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
         "匯入 CSV 或 VCF 檔，請確保檔案大小不超過 ${ MAX_IMPORT_FILE_SIZE_STRING }，且聯絡人數不超過 ${ MAX_IMPORT_CONTACTS_STRING }。如果檔案超過此限制，請將其分成比較小的檔案。 ${ learnMoreLink }"
@@ -3688,6 +3703,9 @@
       "This label name is not available. Please choose a different name.": [
         "此標籤名稱無法使用。請選擇其它名稱。"
       ],
+      "This offer is not available in your country": [
+        "此優惠在您的國家/地區無法使用"
+      ],
       "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
         "您需還原啟用您的管理員權限以建立或存取非私人帳號。"
       ],
@@ -3738,9 +3756,6 @@
       ],
       "You have reached the number of contacts limit for your account": [
         "您的帳號已達聯絡人數量限制"
-      ],
-      "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
-        "您已使用您的方案中所有電郵位址。請升級您的方案以加入電郵位址。"
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "您已使用您的方案中所有使用者。請升級您的方案以加入使用者。"
@@ -6862,9 +6877,6 @@
       "We recommend having at least 2 servers in order to provide redundancy.": [
         "我們建議至少需有兩臺伺服器以供復原用。"
       ],
-      "We recommend having multiple servers in different locations to provide redundancy.": [
-        "我們建議在不同的地點擁有多臺伺服器以供復原用。"
-      ],
       "We recommend notifying the family members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
         "我們建議於強制啟用雙重驗證前通知家庭成員為帳號設定雙重驗證"
       ],
@@ -7170,6 +7182,9 @@
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "您的試用將於 ${ timeRemaining } 結束."
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "您將失去存取至 ${ boldPlanTitle } 功能:"
       ],
       "You’ll be able to add these servers to another Gateway immediately.": [
         "您可立即添加此伺服器至其他閘道器。"
@@ -8223,6 +8238,9 @@
       "How to pay with Bitcoin?": [
         "如何以比特幣繳款？"
       ],
+      "How to set up SMTP": [
+        "如何設置 SMTP"
+      ],
       "How to share via email": [
         "如何透過電子郵件共享"
       ],
@@ -8467,9 +8485,6 @@
       ],
       "Built-in chat": [
         "內建聊天"
-      ],
-      "Meeting recording (coming soon)": [
-        "會議錄製(即將到來)"
       ],
       "One active meeting at a time": [
         "單次單個會議進行"
@@ -9783,6 +9798,9 @@
       "500 GB secure storage": [
         "500 GB 安全儲存"
       ],
+      "Advanced threat protection": [
+        "進階的威脅保護"
+      ],
       "Custom email domain": [
         "自訂電子郵件網域名稱電郵網域名稱"
       ],
@@ -9829,8 +9847,14 @@
       "Once your full subscription starts...": [
         "您的正式訂購授權一旦開始..."
       ],
+      "You can still cancel within 30 days and get a pro-rata refund.": [
+        "您仍然可以在 30 天內取消並獲得按比例的退款。"
+      ],
       "You can still cancel within 30 days and get a prorated refund.": [
         "您仍然可以在 30 天內取消並獲得按比例的退款。"
+      ],
+      "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
+        "您可使用 ${ planTitle } 直到試用結束，您將不會被收費。"
       ],
       "Your free trial has started": [
         "您的免費試用已開始"
@@ -10938,6 +10962,11 @@
         "停用SCIM整合?"
       ]
     },
+    "Section": {
+      "Org setup and account security": [
+        "組織設定和帳號安全"
+      ]
+    },
     "Security Center - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "偵測到 ${ name } 與 ${ remainingCount } 筆外洩的資料。開啟 ${ DARK_WEB_MONITORING_NAME } 檢視詳細資料。 ${ link }"
@@ -11504,6 +11533,9 @@
     "specialoffer: Title": {
       "Access content on streaming services worldwide": [
         "存取全球影音串流服務內容"
+      ],
+      "Get one plan that includes it all, get ${ BRAND_NAME } Unlimited": [
+        "取得包含全部的單一方案，取得 ${ BRAND_NAME } Unlimited"
       ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "使用兩年的 ${ planName } 升級並節省更多"
@@ -12864,6 +12896,9 @@
       "Confirm phone number": [
         "確認手機號碼"
       ],
+      "Connect apps and devices": [
+        "連線應用程式和裝置"
+      ],
       "Connect organization": [
         "連結組織"
       ],
@@ -13163,6 +13198,9 @@
       ],
       "Import contacts": [
         "匯入聯絡人"
+      ],
+      "Import emails, calendars, contacts": [
+        "匯入電子郵件、行事曆、聯絡人"
       ],
       "Import events": [
         "匯入事件"

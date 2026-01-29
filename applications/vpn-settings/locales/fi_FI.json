@@ -4112,6 +4112,9 @@
       "This label name is not available. Please choose a different name.": [
         "Tunnisteen nimi ei ole käytettävissä. Valitse eri nimi."
       ],
+      "This offer is not available in your country": [
+        "Tämä tarjous ei ole saatavilla maassasi"
+      ],
       "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
         "Luodaksesi ei-yksityisiä käyttäjätilejä sinun on palautettava hallintaoikeutesi."
       ],
@@ -4169,8 +4172,8 @@
       "You have reached the number of contacts limit for your account": [
         "Olet saavuttanut tilisi yhteystietojen enimmäismäärän"
       ],
-      "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
-        "Olet kuluttanut tilaukseesi sisältyvän osoitekiintiön. Lisää uusia osoitteita päivittämällä tilauksesi."
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "Olet käyttänyt kaikki tilauksesi osoitteet. Päivitä tilauksesi lisätäksesi uuden osoitteen tai ota osoite pois käytöstä tililtäsi."
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Olet kuluttanut tilaukseesi sisältyvän käyttäjäkiintiön. Lisää uusia käyttäjiä päivittämällä tilauksesi."
@@ -7561,11 +7564,11 @@
       "We need to authenticate your payment with your bank.": [
         "Meidän on vahvistettava maksusi pankissasi."
       ],
+      "We recommend adding servers in different locations (one per city) to maximize redundancy.": [
+        "Suosittelemme palvelimien lisäämistä eri sijainteihin (yksi kaupunkia kohden) redundanssin maksimoimiseksi."
+      ],
       "We recommend having at least 2 servers in order to provide redundancy.": [
         "Suosittelemme ainakin kahta palvelinta parempaa vikasietoisuutta varten."
-      ],
-      "We recommend having multiple servers in different locations to provide redundancy.": [
-        "Suosittelemme vikasietoisuutta varten useita palvelimia eri sijainneista."
       ],
       "We recommend notifying the family members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
         "Suosittelemme, että ilmoitat asiasta perheenjäsenille ja pyydät heitä ottamaan 2FA:n käyttöön omilla tileillään ennen 2FA:n käytön pakottamista."

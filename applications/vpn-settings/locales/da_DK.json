@@ -4285,6 +4285,9 @@
       "This label name is not available. Please choose a different name.": [
         "Dette etikettenavn er ikke tilgængeligt. Vælg venligst et andet navn."
       ],
+      "This offer is not available in your country": [
+        "Dette tilbud er ikke tilgængeligt i dit land"
+      ],
       "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
         "Du skal aktivere dine organisationsnøgler. Uden aktivering vil du ikke kunne oprette eller få adgang til ikke-private brugere."
       ],
@@ -4342,8 +4345,8 @@
       "You have reached the number of contacts limit for your account": [
         "Du har nået grænsen for antallet af kontakter på din konto"
       ],
-      "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
-        "Du har brugt alle adresser i dit abonnement. Opgradér abonnementet for at tilføje en ny adresse."
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "Du har opbrugt alle adresser i dit abonnement. Opgradér dit abonnement for at tilføje en ny adresse, eller deaktivér en adresse på din konto."
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Du har brugt alle brugere i dit abonnement. Opgradér abonnementet for at tilføje en ny bruger."
@@ -5742,7 +5745,7 @@
         "${ BRAND_NAME } Scribe-skriveassistent"
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
-        "${ BRAND_NAME }'s krypteringsteknologi betyder, at ingen kan få adgang til din adgangskode - ikke engang os."
+        "${ BRAND_NAME }s krypteringsteknologi betyder, at ingen kan få adgang til din adgangskode - ikke engang os."
       ],
       "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
         "${ CALENDAR_APP_NAME } kræver en ${ BRAND_NAME } adresse til sikker begivenhedssynkronisering og kryptering. ${ claimAddressButton }."
@@ -7891,11 +7894,11 @@
       "We need to authenticate your payment with your bank.": [
         "Vi skal have bekræftet din betaling hos din bank."
       ],
+      "We recommend adding servers in different locations (one per city) to maximize redundancy.": [
+        "Vi anbefaler at tilføje servere i forskellige lokationer (én pr. by) for at maksimere redundansen."
+      ],
       "We recommend having at least 2 servers in order to provide redundancy.": [
         "Vi anbefaler at have mindst 2 servere, for at sikre redundans."
-      ],
-      "We recommend having multiple servers in different locations to provide redundancy.": [
-        "Vi anbefaler at have flere servere på forskellige steder for at sikre redundans."
       ],
       "We recommend notifying the family members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
         "Vi anbefaler, at man underretter familiemedlemmerne og beder dem om at konfigurere 2FA til deres konti, før man gennemtvinger brugen af 2FA."
@@ -9537,7 +9540,7 @@
         "besøg vores blog"
       ],
       "What is the difference between UDP and TCP protocols?": [
-        "Hvad er forskellen mellem UDP og TCP-protokoller?"
+        "Hvad er forskellen mellem UDP- og TCP-protokollerne?"
       ],
       "What’s this?": [
         "Hvad er dette?"
@@ -9745,6 +9748,10 @@
         "${ n } aktivt møde ad gangen",
         "${ n } aktive møder ad gangen"
       ],
+      "${ n } participant": [
+        "${ n } deltager",
+        "${ n } deltagere"
+      ],
       "24 hours per meeting": [
         "24 timer pr. møde"
       ],
@@ -9753,6 +9760,9 @@
       ],
       "Appointment scheduling": [
         "Aftaleplanlægning"
+      ],
+      "Booking pages": [
+        "Reservationssider"
       ],
       "Browser, mobile, and desktop apps": [
         "Browser-, mobil- og desktop-apps"
@@ -9763,8 +9773,8 @@
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "End-to-end-krypteret skærmdeling og midlertidig chat under opkald"
       ],
-      "Meeting recording (coming soon)": [
-        "Møde-optagelse (kommer snart)"
+      "Meeting recording": [
+        "Møde-optagelse"
       ],
       "One active meeting at a time": [
         "Ét aktivt møde ad gangen"
@@ -11473,7 +11483,7 @@
         "Slip billedfilen her for at uploade eller"
       ],
       "File in PNG or JPEG format": [
-        "Fil i PNG eller JPEG format"
+        "Fil i PNG- eller JPEG-format"
       ],
       "File not larger than 30 KB": [
         "Filen er ikke større end 30 KB"
@@ -16296,6 +16306,9 @@
       ]
     },
     "Upsell": {
+      "${ BRAND_NAME } for Business": [
+        "Velkommen til ${ BRAND_NAME } for Business"
+      ],
       "**Save up to ${ priceString }** with a longer subscription. Same premium features, lower price.": [
         "**Gem op til ${ priceString }** med et længere abonnement. Samme premium funktioner, lavere pris."
       ],
@@ -16307,6 +16320,9 @@
       ],
       "Did you know?": [
         "Vidste du det?"
+      ],
+      "Everything you need to collaborate securely in a single subscription. Get access to ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, ${ SHEETS_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } and ${ LUMO_SHORT_APP_NAME } AI Assistant.": [
+        "Alt du behøver for at samarbejde sikkert i et enkelt abonnement. Få adgang til ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, ${ SHEETS_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } og ${ LUMO_SHORT_APP_NAME } AI Assistant."
       ],
       "Get ${ drivePlusPlanMaxSpace } storage for your files, photos and documents, and recover file versions with 10-year file recovery.": [
         "Få ${ drivePlusPlanMaxSpace } lagerplads til dine filer, fotos og dokumenter, og gendan filversioner med 10-års filgendannelse."

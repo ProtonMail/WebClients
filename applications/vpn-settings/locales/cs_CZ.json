@@ -4335,6 +4335,9 @@
       "This label name is not available. Please choose a different name.": [
         "Tento název štítku není k dispozici. Zvolte prosím jiný název."
       ],
+      "This offer is not available in your country": [
+        "Tato nabídka není ve vaší zemi dostupná"
+      ],
       "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
         "Chcete-li vytvořit nesoukromé uživatelské účty a získat přístup k jejich účtům, budete muset obnovit svá oprávnění správce."
       ],
@@ -4392,8 +4395,8 @@
       "You have reached the number of contacts limit for your account": [
         "Dosáhli jste limitu počtu kontaktů vašeho účtu"
       ],
-      "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
-        "Všechny adresy ve vašem tarifu jsou vyčerpány. Přejděte na vyšší tarif, abyste mohli přidat další adresu."
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "Využili jste všechny adresy ve vašem tarifu. Prosím navyšte svůj tarif, abyste mohli přidat novou adresu, nebo deaktivujte adresu ve svém účtu."
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Limit počtu uživatelů ve vašem tarifu byl vyčerpán. Přejděte na vyšší tarif, abyste mohli přidat dalšího uživatele."
@@ -8093,11 +8096,11 @@
       "We need to authenticate your payment with your bank.": [
         "Potřebujeme ověřit vaši platbu u vaší banky."
       ],
+      "We recommend adding servers in different locations (one per city) to maximize redundancy.": [
+        "Doporučujeme přidat servery na různých místech (jeden na město), aby se maximalizovala redundance."
+      ],
       "We recommend having at least 2 servers in order to provide redundancy.": [
         "Doporučujeme mít alespoň dva servery, aby byla zajištěna redundance."
-      ],
-      "We recommend having multiple servers in different locations to provide redundancy.": [
-        "Doporučujeme mít více serverů na různých místech, aby byla zajištěna redundance."
       ],
       "We recommend notifying the family members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
         "Před vynucením používání 2FA doporučujeme informovat členy rodiny a požádat je, aby si v účtech nastavili 2FA."
@@ -9999,6 +10002,12 @@
         "${ n } aktivních schůzek ve stejný čas",
         "${ n } aktivních schůzek ve stejný čas"
       ],
+      "${ n } participant": [
+        "${ n } účastník",
+        "${ n } účastníci",
+        "${ n } účastníků",
+        "${ n } účastníků"
+      ],
       "24 hours per meeting": [
         "Schůzka o délce 24 hodin"
       ],
@@ -10007,6 +10016,9 @@
       ],
       "Appointment scheduling": [
         "Plánování schůzek"
+      ],
+      "Booking pages": [
+        "Rezervační stránky"
       ],
       "Browser, mobile, and desktop apps": [
         "Aplikace pro prohlížeče, mobilní telefony a desktopy"
@@ -10017,8 +10029,8 @@
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "Sdílení obrazovky s koncovým šifrováním a dočasný chat během hovoru"
       ],
-      "Meeting recording (coming soon)": [
-        "Nahrávání schůzky (již brzy)"
+      "Meeting recording": [
+        "Nahrávání schůzky"
       ],
       "One active meeting at a time": [
         "Jedna aktivní schůzka ve stejný čas"
@@ -16745,6 +16757,9 @@
       ]
     },
     "Upsell": {
+      "${ BRAND_NAME } for Business": [
+        "${ BRAND_NAME } for Business"
+      ],
       "**Save up to ${ priceString }** with a longer subscription. Same premium features, lower price.": [
         "**Ušetřete až ${ priceString }** při předplatném na delší dobu. Stejné prémiové funkce, nižší cena."
       ],
@@ -16756,6 +16771,9 @@
       ],
       "Did you know?": [
         "Věděli jste?"
+      ],
+      "Everything you need to collaborate securely in a single subscription. Get access to ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, ${ SHEETS_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } and ${ LUMO_SHORT_APP_NAME } AI Assistant.": [
+        "Vše, co potřebujete pro bezpečnou spolupráci, v jediném předplatném. Získejte přístup k ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, ${ SHEETS_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } a AI asistenta ${ LUMO_SHORT_APP_NAME }."
       ],
       "Get ${ drivePlusPlanMaxSpace } storage for your files, photos and documents, and recover file versions with 10-year file recovery.": [
         "Získejte úložiště o velikosti ${ drivePlusPlanMaxSpace } pro své soubory, fotky a dokumenty a obnovujte až 10 let staré verze souborů."

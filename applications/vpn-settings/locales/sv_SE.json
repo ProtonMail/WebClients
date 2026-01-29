@@ -4273,6 +4273,9 @@
       "This label name is not available. Please choose a different name.": [
         "Detta etikettnamn är inte tillgängligt. Välj ett annat namn."
       ],
+      "This offer is not available in your country": [
+        "Detta erbjudande är inte tillgängligt i ditt land"
+      ],
       "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
         "För att skapa icke-privata användarkonton och komma åt deras konton måste du återställa dina administratörsrättigheter."
       ],
@@ -4329,9 +4332,6 @@
       ],
       "You have reached the number of contacts limit for your account": [
         "Du har nått gränsen för antalet kontakter för ditt konto"
-      ],
-      "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
-        "Du har använt alla adresser i ditt paket. Uppgradera ditt paket för att lägga till en ny adress."
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Du har använt alla användare i ditt paket. Uppgradera ditt paket för att lägga till en ny användare."
@@ -7867,11 +7867,11 @@
       "We need to authenticate your payment with your bank.": [
         "Vi måste autentisera din betalning med din bank."
       ],
+      "We recommend adding servers in different locations (one per city) to maximize redundancy.": [
+        "Vi rekommenderar att lägga till servrar på olika platser (en per ort) för att maximera redundans."
+      ],
       "We recommend having at least 2 servers in order to provide redundancy.": [
         "Vi rekommenderar att du har minst 2 servrar för att ge redundans."
-      ],
-      "We recommend having multiple servers in different locations to provide redundancy.": [
-        "Vi rekommenderar att du har flera servrar på olika platser för att ge redundans."
       ],
       "We recommend notifying the family members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
         "Vi rekommenderar att du aviserar familjemedlemmarna och ber dem att ställa in 2FA för sina konton innan tillämpning med användningen av 2FA."
@@ -9703,6 +9703,10 @@
         "${ n } aktivt möte åt gången",
         "${ n } aktiva möten åt gången"
       ],
+      "${ n } participant": [
+        "${ n } deltagare",
+        "${ n } deltagare"
+      ],
       "24 hours per meeting": [
         "24 timmar per möte"
       ],
@@ -9715,8 +9719,8 @@
       "Built-in chat": [
         "Inbyggd chatt"
       ],
-      "Meeting recording (coming soon)": [
-        "Mötesinspelning (kommer snart)"
+      "End-to-end encrypted screen sharing and ephemeral in-call chat": [
+        "End-to-end-krypterad skärmdelning och kortvarig chatt i samtal"
       ],
       "One active meeting at a time": [
         "Ett aktivt möte åt gången"
