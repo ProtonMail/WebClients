@@ -16,6 +16,7 @@ import type {
     ResourceType,
 } from '../../remote/types';
 import { deserializeAttachment, deserializeFilledAttachment, serializeAttachment } from '../../serialization';
+import { attachmentDataCache } from '../../services/attachmentDataCache';
 import {
     type Attachment,
     type AttachmentId,
@@ -157,9 +158,16 @@ export function* serializeAttachmentSaga(
         spaceDek_ = yield call(getSpaceDek, space);
     }
 
+    // Restore binary data from cache for serialization
+    const attachmentWithData: Attachment = {
+        ...attachment,
+        data: attachmentDataCache.getData(localId),
+        imagePreview: attachmentDataCache.getImagePreview(localId),
+    };
+
     const serializedAttachment: SerializedAttachment | undefined = yield call(
         serializeAttachment,
-        attachment,
+        attachmentWithData,
         spaceDek_
     );
     if (!serializedAttachment) {
@@ -204,6 +212,16 @@ export function* deserializeAttachmentSaga(
     if (!deserializedRemoteAttachment) {
         throw new Error(`deserializeAttachmentSaga ${localId}: cannot deserialize attachment ${localId} from remote`);
     }
+    
+    // Store binary data in cache before cleaning
+    // This ensures the cache is populated when loading from IndexedDB
+    if (deserializedRemoteAttachment.data) {
+        attachmentDataCache.setData(localId, deserializedRemoteAttachment.data);
+    }
+    if (deserializedRemoteAttachment.imagePreview) {
+        attachmentDataCache.setImagePreview(localId, deserializedRemoteAttachment.imagePreview);
+    }
+    
     const cleanRemote = cleanAttachment(deserializedRemoteAttachment);
     return cleanRemote;
 }
@@ -383,6 +401,7 @@ export function* pushAttachment({ payload }: { payload: PushAttachmentRequest })
                 yield call(clearDirtyUnconditionally, localId);
             }
             yield put(pushAttachmentFailure({ ...payload, error: `${e}` }));
+            yield put(setAttachmentError({ id: localId, error: `${e}` }));
         } else {
             yield put(pushAttachmentNeedsRetry(payload));
         }
@@ -591,6 +610,7 @@ export function* considerRequestingFullAttachment({
                 }
                 const spaceDek: AesGcmCryptoKey = yield call(getSpaceDek, space);
                 const attachment: Attachment = yield call(deserializeAttachmentSaga, idbAttachment, spaceDek);
+                // Cache is populated inside deserializeAttachmentSaga
                 yield put(addAttachment(attachment));
             } catch (e) {
                 console.error(`considerRequestingFullAttachment: Failed to load attachment ${localId} from IDB:`, e);

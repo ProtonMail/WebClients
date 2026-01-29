@@ -401,6 +401,7 @@ export function* loadReduxFromIdb(): SagaIterator {
                 continue;
             }
             const attachment: Attachment = yield call(deserializeAttachmentSaga, serializedAttachment, spaceDek);
+            // Cache is populated inside deserializeAttachmentSaga
             yield put(addAttachment(attachment));
         } catch (e) {
             console.warn('Error while loading attachment from IndexedDB:', e);

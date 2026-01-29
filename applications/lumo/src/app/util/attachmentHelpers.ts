@@ -5,6 +5,7 @@
 import { getApproximateTokenCount } from '../llm/tokenizer';
 import { upsertAttachment } from '../redux/slices/core/attachments';
 import type { LumoDispatch } from '../redux/store';
+import { attachmentDataCache } from '../services/attachmentDataCache';
 import type { Attachment } from '../types';
 
 /**
@@ -46,16 +47,19 @@ export function calculateAttachmentTokenCount(attachment: Attachment): number {
 
 /**
  * Store attachment in Redux with proper data field handling
- * Images keep their data field (needed for WireImage conversion)
- * Text files have data removed to avoid serialization issues
+ * Both data and imagePreview are stored in the cache to avoid serialization issues
+ * The attachment is cleaned before being dispatched to Redux
  */
 export function storeAttachmentInRedux(dispatch: LumoDispatch, attachment: Attachment, isImage: boolean): void {
-    if (isImage) {
-        // For images, keep the data field - it's needed for WireImage conversion
-        dispatch(upsertAttachment(attachment));
-    } else {
-        // For text files, remove data to avoid serialization issues
-        const { data, ...attachmentForRedux } = attachment;
-        dispatch(upsertAttachment(attachmentForRedux));
+    // Store binary data in cache before dispatching to Redux
+    if (attachment.data) {
+        attachmentDataCache.setData(attachment.id, attachment.data);
     }
+    if (attachment.imagePreview) {
+        attachmentDataCache.setImagePreview(attachment.id, attachment.imagePreview);
+    }
+
+    // Remove data and imagePreview fields to avoid Redux serialization issues
+    const { data, imagePreview, ...attachmentForRedux } = attachment;
+    dispatch(upsertAttachment(attachmentForRedux));
 }
