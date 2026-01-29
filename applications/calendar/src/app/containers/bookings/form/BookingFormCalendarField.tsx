@@ -115,7 +115,7 @@ export const BookingFormCalendarField = () => {
                                 disabled={isSelectedCalendar}
                                 onChange={({ target }) => handleToggleConflictingCalendar(calendarID, target.checked)}
                             >
-                                {calendar?.Name}
+                                <span className="text-break">{calendar?.Name}</span>
                             </Checkbox>
                         );
                     })}
