@@ -362,7 +362,6 @@ blockquote.protonmail_quote
 	background-color: white;
 	text-rendering: geometricprecision;
 	-webkit-font-smoothing: antialiased;
-	padding-block-end: 1em;
 	overflow: auto;
 
 	@include flex-full-import;
@@ -560,9 +559,16 @@ blockquote.protonmail_quote
 	}
 
 	.proton-print .message-print-header,
-	.proton-print .message-print-subject {
+	.proton-print .message-print-subject,
+	.proton-print .proton-print-footer,
+	.proton-print,
+	.proton-plain-text {
 		background-color: white;
 		color: black;
+	}
+
+	.proton-print-footer-items {
+		padding-block-end: 1em;
 	}
 
 	html {
@@ -583,12 +589,6 @@ blockquote.protonmail_quote
 	h3,
 	caption {
 		page-break-after: avoid;
-	}
-
-	.proton-print,
-	.proton-plain-text {
-		color: black;
-		background-color: white;
 	}
 
 	.proton-search-highlight {
