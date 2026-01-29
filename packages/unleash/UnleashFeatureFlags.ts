@@ -105,7 +105,6 @@ enum AccountFlag {
     DriveDashboard = 'DriveDashboard',
     MeetDashboard = 'MeetDashboard',
     FirstEmail = 'FirstEmail',
-    DelightfulProductSwitcher = 'DelightfulProductSwitcher',
     Ipv6ForWgConfig = 'Ipv6ForWgConfig',
 }
 

@@ -20,13 +20,9 @@ import type { APP_NAMES } from '@proton/shared/lib/constants';
 import type { OrganizationExtended } from '@proton/shared/lib/interfaces';
 import { useFlag } from '@proton/unleash';
 
-import ExploreAppsList, { getExploreApps } from '../components/ExploreAppsList';
-import Content from './Content';
-import Header from './Header';
+import ExploreAppsListV2, { getExploreApps } from '../components/ExploreAppsListV2/ExploreAppsListV2';
 import Layout from './Layout';
-import Main from './Main';
 import PublicUserItem from './PublicUserItem';
-import DelightfulProductSwitcher from './delightfulProductSwitcher/DelightfulProductSwitcher';
 
 interface EnhancedAuthSession extends OnLoginCallbackArguments {
     data: OnLoginCallbackArguments['data'] & {
@@ -93,7 +89,7 @@ interface Props {
     state: AppSwitcherState;
 }
 
-const ProductSwitcher = ({ onLogin, onSwitch, state }: Props) => {
+const AppSwitcherContainer = ({ onLogin, onSwitch, state }: Props) => {
     const session = state.session;
     const error = state.error;
     const { User, Organization, persistedSession } = session.data;
@@ -127,21 +123,20 @@ const ProductSwitcher = ({ onLogin, onSwitch, state }: Props) => {
                 </SimpleDropdown>
             }
         >
-            <Main>
-                <Header
-                    title={c('Action').t`Welcome`}
-                    belowTitle={
-                        error?.type === 'unsupported-app' && (
+            <div>
+                <header className="mt-6 mb-8 md:mb-10 lg:mb-20 text-center fade-in">
+                    <h1 className="text-2xl md:text-6xl text-semibold mb-2">{c('Action').t`Welcome`}</h1>
+                    <p className="m-0 md:text-lg color-weak">{c('Info').t`Privacy and security starts here`}</p>
+                    {error?.type === 'unsupported-app' && (
+                        <div className="mt-6 max-w-custom mx-auto" style={{ '--max-w-custom': '30rem' }}>
                             <UnsupportedAppError organization={Organization} app={error.app} />
-                        )
-                    }
-                    subTitle={c('Info').t`Select a service to continue`}
-                />
-                <Content>
-                    <ExploreAppsList
+                        </div>
+                    )}
+                </header>
+                <div>
+                    <ExploreAppsListV2
                         subscription={{ subscribed, plan: Organization?.PlanName }}
                         apps={getExploreApps({
-                            subscribed,
                             user: User,
                             organization: Organization,
                             isDocsHomepageAvailable,
@@ -150,6 +145,7 @@ const ProductSwitcher = ({ onLogin, onSwitch, state }: Props) => {
                             isMeetAvailable,
                             isAuthenticatorAvailable,
                         })}
+                        localID={persistedSession.localID}
                         onExplore={async (app) => {
                             await onLogin({
                                 ...session,
@@ -160,20 +156,10 @@ const ProductSwitcher = ({ onLogin, onSwitch, state }: Props) => {
                             });
                         }}
                     />
-                </Content>
-            </Main>
+                </div>
+            </div>
         </Layout>
     );
-};
-
-const AppSwitcherContainer = ({ onLogin, onSwitch, state }: Props) => {
-    const isDelightfulProductSwitcherEnabled = useFlag('DelightfulProductSwitcher');
-
-    if (isDelightfulProductSwitcherEnabled) {
-        return <DelightfulProductSwitcher onLogin={onLogin} onSwitch={onSwitch} state={state} />;
-    }
-
-    return <ProductSwitcher onLogin={onLogin} onSwitch={onSwitch} state={state} />;
 };
 
 export default AppSwitcherContainer;
