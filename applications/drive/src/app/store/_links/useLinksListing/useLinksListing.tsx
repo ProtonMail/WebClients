@@ -189,6 +189,11 @@ export function useLinksListingProvider() {
         };
     };
 
+    const clearCacheForQuery = (shareId: string, query: string) => {
+        const shareState = getShareFetchState(shareId);
+        delete shareState.links[query];
+    };
+
     const loadLinksMeta: FetchLoadLinksMeta = async (abortSignal, query, shareId, linkIds, options = {}) => {
         const shareState = getShareFetchState(shareId);
         // Shared links use own state for fetch meta.
@@ -446,6 +451,7 @@ export function useLinksListingProvider() {
             return bookmarksLinksListing.loadLinksBookmarks(signal, shareId);
         },
         loadLinksMeta,
+        clearCacheForQuery,
         getCachedChildren,
         getCachedChildrenCount,
         getCachedTrashed: trashedLinksListing.getCachedTrashed,

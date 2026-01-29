@@ -104,6 +104,8 @@ export default function useSearchView(shareId: string, query: string) {
 
         return () => {
             ac.abort();
+            // Make sure the cache is in a clean state after being interrupted.
+            linksListing.clearCacheForQuery(shareId, query);
         };
     }, [shareId, query, sortedSearchResultIds]);
 
