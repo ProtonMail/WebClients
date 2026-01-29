@@ -6260,6 +6260,12 @@
         "${ n } aktivních schůzek ve stejný čas",
         "${ n } aktivních schůzek ve stejný čas"
       ],
+      "${ n } participant": [
+        "${ n } účastník",
+        "${ n } účastníci",
+        "${ n } účastníků",
+        "${ n } účastníků"
+      ],
       "24 hours per meeting": [
         "Schůzka o délce 24 hodin"
       ],
@@ -6268,6 +6274,9 @@
       ],
       "Appointment scheduling": [
         "Plánování schůzek"
+      ],
+      "Booking pages": [
+        "Rezervační stránky"
       ],
       "Browser, mobile, and desktop apps": [
         "Aplikace pro prohlížeče, mobilní telefony a desktopy"
@@ -6278,8 +6287,8 @@
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "Sdílení obrazovky s koncovým šifrováním a dočasný chat během hovoru"
       ],
-      "Meeting recording (coming soon)": [
-        "Nahrávání schůzky (již brzy)"
+      "Meeting recording": [
+        "Nahrávání schůzky"
       ],
       "One active meeting at a time": [
         "Jedna aktivní schůzka ve stejný čas"

@@ -90,6 +90,9 @@
       "Apply": [
         "გადატარება"
       ],
+      "Ask me next time": [
+        "მკითხე შემდეგ ჯერზე"
+      ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "კონტაქტების თითოეულ ჯგუფში ${ maxContacts }-მდე კონტაქტი შეგიძლიათ, იქონიოთ",
         "კონტაქტების თითოეულ ჯგუფში ${ maxContacts }-მდე კონტაქტი შეგიძლიათ, იქონიოთ"
@@ -1355,6 +1358,9 @@
       ],
       "High-speed chats and advanced AI features.": [
         "სწრაფი ჩატები და დამატებითი ხი-ის ფუნქციები"
+      ],
+      "Private video calls for the conversations that matter.": [
+        "პირადი ვიდეოზარები მნიშვნელოვანი საუბრებისთვის."
       ]
     },
     "color": {
@@ -3837,6 +3843,9 @@
       "Too many recent requests. Please try again in a few moments.": [
         "ახლახან გაგზავნილი იყო ძალიან ბევრი მოთხოვნა. მოგვიანებით სცადეთ."
       ],
+      "Two-factor authentication is enabled in your external account.": [
+        "თქვენს გარე ანგარიშში ჩართულია 2FA."
+      ],
       "Use your app password if:": [
         "გამოვიყენოთ აპის პაროლი, თუ:"
       ],
@@ -4234,6 +4243,9 @@
       "Continue": [
         "გაგრძელება"
       ],
+      "Converting document...": [
+        "დოკუმენტის გადაყვანა..."
+      ],
       "Copy the link to clipboard": [
         "ბმულის ბაფერში კოპირება"
       ],
@@ -4279,6 +4291,9 @@
       ],
       "Creating link to folder": [
         "საქაღალდემდე ბმულის შექმნა"
+      ],
+      "Creating new document...": [
+        "ახალი დოკუმენტის შექმნა..."
       ],
       "Current plan": [
         "მიმდინარე ტარიფი"
@@ -4373,6 +4388,12 @@
       "Enter your own password (as trusted contact).": [
         "შეიყვანეთ თქვენი საკუთარი პაროლი (როგორც სანდო კონტაქტმა)."
       ],
+      "Error converting document: ${ errorMessage }": [
+        "დოკუმენტის გადაყვანის შეცდომა: ${ errorMessage }"
+      ],
+      "Error loading document: ${ errorDetail }": [
+        "დოკუმენტის ჩატვირთვის შეცდომა. ${ errorDetail }"
+      ],
       "Error Syncing": [
         "სინქრონიზაციის შეცდომა"
       ],
@@ -4432,6 +4453,9 @@
       ],
       "Geoblocking": [
         "გეოდაბლოკვა"
+      ],
+      "Get Notified About Comments": [
+        "გაფრთხილებების მიღება კომენტარების შესახებ"
       ],
       "here": [
         "აქ"
@@ -4568,6 +4592,9 @@
       ],
       "Low Priority": [
         "დაბალი პრიორიტეტი"
+      ],
+      "Making a copy...": [
+        "ასლის შექმნა..."
       ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "მაქს ${ MAX_SHARED_URL_PASSWORD_LENGTH } სიმბოლო",
@@ -5453,6 +5480,9 @@
       "Emails (last month)": [
         "ელფოსტა (გასული თვე)"
       ],
+      "Enable email notifications": [
+        "ელფოსტის გაფრთხილებების ჩართვა"
+      ],
       "Encrypt emails": [
         "ელფოსტების დაშიფრვა"
       ],
@@ -5500,6 +5530,9 @@
       ],
       "Include application logs in bug report": [
         "აპლიკაციის ჟურნალის ჩასმა შეცდომის ანგარიშში"
+      ],
+      "Include document name in notification": [
+        "დოკუმენტის სახელის ჩასმა გაფრთხილებებში"
       ],
       "Include message and file name in invite email": [
         "მოსაწვევის ფაილში შეტყობინებისა და ფაილის სახელის დართვა"
@@ -5961,8 +5994,8 @@
       "Built-in chat": [
         "ჩაშენებული ჩატი"
       ],
-      "Meeting recording (coming soon)": [
-        "შეხვედრის ჩანაწერი (მალე)"
+      "End-to-end encrypted screen sharing and ephemeral in-call chat": [
+        "გამჭოლად დაშიფრული ეკრანის გაზიარება და ეფერემული ჩატი ზარის დროს"
       ],
       "One active meeting at a time": [
         "ერთი აქტიური შეხვედრა ერთდროულად"
@@ -9835,6 +9868,9 @@
       ],
       "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
         "ამ შემოტანით თქვენ შეიძლება, თქვენი ანგარიშისთვის ${ BRAND_NAME }-ში გამოყოფილ სივრცეს გადააჭარბოთ. შეეცადეთ ყველაფერი არ შემოიტანოთ."
+      ],
+      "This will replace all the data in the spreadsheet": [
+        "ეს ჩაანაცვლებს ყველა მონაცემს ელექტრონულ ცხრილში"
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "სამწუხაროდ, ამჟამად, ონლაინ არ ვართ. შეავსეთ ქვედა ფორმა, აღწერეთ თქვენი პრობლემა და ჩვენ მალევე დაგიკავშირდებით."
