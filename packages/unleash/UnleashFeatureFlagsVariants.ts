@@ -14,6 +14,7 @@ export const FLAGS_WITH_VARIANT = [
     'MeetDashboard',
     'InboxBringYourOwnEmailSignup',
     'WebApiRateLimiter',
+    'MaxContactsImport',
 ] satisfies FeatureFlag[];
 
 /**
@@ -30,6 +31,7 @@ export type DriveDashboardVariant = 'A' | 'B';
 export type MeetDashboardVariant = 'A' | 'B';
 export type InboxBringYourOwnEmailSignupVariant = 'Control' | 'Bold' | 'Light';
 export type WebApiRateLimiterVariant = 'Config';
+export type MaxContactsImportVariant = 'Config';
 
 /**
  * @description Union type of the list of feature flags with a variant.
@@ -56,6 +58,7 @@ type FeatureFlagVariantMap = {
     MeetDashboard: VariantReturnType<MeetDashboardVariant>;
     InboxBringYourOwnEmailSignup: VariantReturnType<InboxBringYourOwnEmailSignupVariant>;
     WebApiRateLimiter: VariantReturnType<WebApiRateLimiterVariant>;
+    MaxContactsImport: VariantReturnType<MaxContactsImportVariant>;
 };
 
 /**

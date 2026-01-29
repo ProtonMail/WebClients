@@ -1,8 +1,10 @@
 import { c } from 'ttag';
 
+import { getStandaloneUnleashClient } from '@proton/unleash';
+import { CommonFeatureFlag } from '@proton/unleash/UnleashFeatureFlags';
 import truncate from '@proton/utils/truncate';
 
-import { MAX_FILENAME_CHARS_DISPLAY, MAX_IMPORT_CONTACTS_STRING, MAX_IMPORT_FILE_SIZE_STRING } from '../constants';
+import { MAX_CONTACTS_PER_USER, MAX_FILENAME_CHARS_DISPLAY, MAX_IMPORT_FILE_SIZE_STRING } from '../constants';
 
 export enum IMPORT_ERROR_TYPE {
     NO_FILE_SELECTED,
@@ -15,6 +17,19 @@ export enum IMPORT_ERROR_TYPE {
 }
 
 const getErrorMessage = (errorType: IMPORT_ERROR_TYPE, filename = '') => {
+    const unleashClient = getStandaloneUnleashClient();
+
+    let maxContactString = MAX_CONTACTS_PER_USER.toLocaleString();
+
+    if (unleashClient && unleashClient.isEnabled(CommonFeatureFlag.MaxContactsImport)) {
+        const config = unleashClient.getVariant(CommonFeatureFlag.MaxContactsImport).payload?.value;
+
+        if (config) {
+            const configParsed = JSON.parse(config);
+            maxContactString = configParsed.maxContactsImport.toLocaleString();
+        }
+    }
+
     const formattedFilename = `"${truncate(filename, MAX_FILENAME_CHARS_DISPLAY)}"`;
     if (errorType === IMPORT_ERROR_TYPE.NO_FILE_SELECTED) {
         return c('Error importing contacts').t`An error occurred uploading your file. No file has been selected.`;
@@ -35,11 +50,11 @@ const getErrorMessage = (errorType: IMPORT_ERROR_TYPE, filename = '') => {
     }
     if (errorType === IMPORT_ERROR_TYPE.TOO_MANY_CONTACTS) {
         return c('Error importing contacts')
-            .t`Your file ${formattedFilename} contains more than ${MAX_IMPORT_CONTACTS_STRING} contacts.`;
+            .t`Your file ${formattedFilename} contains more than ${maxContactString} contacts.`;
     }
     if (errorType === IMPORT_ERROR_TYPE.FILE_CORRUPTED) {
         return c('Error importing contacts')
-            .t`An error occurred reading your file ${ formattedFilename }. Incorrect file format.`;
+            .t`An error occurred reading your file ${formattedFilename}. Incorrect file format.`;
     }
 };
 

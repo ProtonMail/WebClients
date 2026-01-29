@@ -17,7 +17,6 @@ import { FeatureCode, useFeature } from '@proton/features';
 import { APPS } from '@proton/shared/lib/constants';
 import {
     MAX_CONTACTS_PER_USER,
-    MAX_IMPORT_CONTACTS_STRING,
     MAX_IMPORT_FILE_SIZE,
     MAX_IMPORT_FILE_SIZE_STRING,
 } from '@proton/shared/lib/contacts/constants';
@@ -30,6 +29,7 @@ import { splitExtension } from '@proton/shared/lib/helpers/file';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { ImportContactsModel } from '@proton/shared/lib/interfaces/contacts/Import';
 import { EXTENSION, IMPORT_STEPS } from '@proton/shared/lib/interfaces/contacts/Import';
+import { useVariant } from '@proton/unleash';
 
 import { getInitialState } from '../initialstate';
 
@@ -41,6 +41,9 @@ interface Props {
     onClose?: () => void;
 }
 const ContactImportAttaching = ({ model, setModel, onClose }: Props) => {
+    const maxContactsImport = useVariant('MaxContactsImport');
+    const config = maxContactsImport.payload?.value;
+
     const { feature: featureUsedContactsImport, update: updateUsedContactsImport } = useFeature(
         FeatureCode.UsedContactsImport
     );
@@ -106,7 +109,12 @@ const ContactImportAttaching = ({ model, setModel, onClose }: Props) => {
                 if (!preVcardsContacts.length) {
                     throw new ImportFileError(IMPORT_ERROR_TYPE.NO_CONTACTS, fileAttached.name);
                 }
-                if (preVcardsContacts.length > MAX_CONTACTS_PER_USER) {
+                if (config) {
+                    const maxContacts = JSON.parse(config).maxContactsImport;
+                    if (preVcardsContacts.length > maxContacts) {
+                        throw new ImportFileError(IMPORT_ERROR_TYPE.TOO_MANY_CONTACTS, fileAttached.name);
+                    }
+                } else if (preVcardsContacts.length > MAX_CONTACTS_PER_USER) {
                     throw new ImportFileError(IMPORT_ERROR_TYPE.TOO_MANY_CONTACTS, fileAttached.name);
                 }
                 setModel({
@@ -118,7 +126,13 @@ const ContactImportAttaching = ({ model, setModel, onClose }: Props) => {
                 });
             } else if (extension === VCF) {
                 const vcards = extractVcards(await readVcf(fileAttached));
-                if (vcards.length > MAX_CONTACTS_PER_USER) {
+
+                if (config) {
+                    const maxContacts = JSON.parse(config).maxContactsImport;
+                    if (vcards.length > maxContacts) {
+                        throw new ImportFileError(IMPORT_ERROR_TYPE.TOO_MANY_CONTACTS, fileAttached.name);
+                    }
+                } else if (vcards.length > MAX_CONTACTS_PER_USER) {
                     throw new ImportFileError(IMPORT_ERROR_TYPE.TOO_MANY_CONTACTS, fileAttached.name);
                 }
                 const { errors, rest: parsedVcardContacts } = splitErrors(getSupportedContacts(vcards));
@@ -160,6 +174,10 @@ const ContactImportAttaching = ({ model, setModel, onClose }: Props) => {
         <Href href={getKnowledgeBaseUrl('/adding-contacts')} key="learn-more-link">{c('Link').t`Learn more`}</Href>
     );
 
+    const maxContactString = config
+        ? `${(JSON.parse(config).maxContactsImport as number).toLocaleString()}`
+        : MAX_CONTACTS_PER_USER.toLocaleString();
+
     return (
         <form className="modal-two-dialog-container h-full" onSubmit={handleSubmit}>
             <ModalTwoHeader title={c('Title').t`Import contacts`} />
@@ -173,7 +191,7 @@ const ContactImportAttaching = ({ model, setModel, onClose }: Props) => {
                         <p className="mb-2">{c('Description')
                             .jt`To import your contacts from Google or Outlook, ${easySwitchLink}.`}</p>
                         <p className="mt-0">{c('Description')
-                            .jt`To import via a CSV and VCF file, ensure the file does not exceed ${MAX_IMPORT_FILE_SIZE_STRING} or ${MAX_IMPORT_CONTACTS_STRING} contacts. If your file is bigger, please split it into smaller files. ${learnMoreLink}.`}</p>
+                            .jt`To import via a CSV and VCF file, ensure the file does not exceed ${MAX_IMPORT_FILE_SIZE_STRING} or ${maxContactString} contacts. If your file is bigger, please split it into smaller files. ${learnMoreLink}.`}</p>
                     </>
                 )}
                 <Dropzone onDrop={onAddFiles} size="small" shape="flashy">
