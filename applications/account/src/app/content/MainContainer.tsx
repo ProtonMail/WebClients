@@ -189,6 +189,7 @@ const MainContainer = () => {
     const isMeetAvailable = useFlag('PMVC2025');
     const isAuthenticatorAvailable = useFlag('AuthenticatorSettingsEnabled');
     const isOLESEnabled = useFlag('OlesM1');
+    const isCategoryViewEnabled = useFlag('CategoryView');
 
     const [referralInfo] = useReferralInfo();
 
@@ -287,6 +288,7 @@ const MainContainer = () => {
         isAuthenticatorAvailable,
         hasPendingInvitations,
         isOLESEnabled,
+        isCategoryViewEnabled,
     });
 
     useEffect(() => {

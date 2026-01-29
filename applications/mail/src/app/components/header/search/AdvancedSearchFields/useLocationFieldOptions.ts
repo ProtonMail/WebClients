@@ -2,7 +2,8 @@ import { c } from 'ttag';
 
 import { useRetentionPolicies } from '@proton/account/retentionPolicies/hooks';
 import type { IconName } from '@proton/icons/types';
-import { useFolders, useLabels } from '@proton/mail';
+import { getLabelFromCategoryId } from '@proton/mail/features/categoriesView/categoriesStringHelpers';
+import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
@@ -11,7 +12,6 @@ import type { FolderWithSubFolders } from '@proton/shared/lib/interfaces/Folder'
 import { LABEL_IDS_TO_HUMAN } from '@proton/shared/lib/mail/constants';
 import { SHOW_MOVED } from '@proton/shared/lib/mail/mailSettings';
 
-import { getLabelFromCategoryId } from 'proton-mail/components/categoryView/categoriesStringHelpers';
 import { categoryColorClassName } from 'proton-mail/components/categoryView/categoriesTabs/tabsInterface';
 import { useCategoriesView } from 'proton-mail/components/categoryView/useCategoriesView';
 

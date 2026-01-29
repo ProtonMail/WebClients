@@ -6,6 +6,7 @@ import { c, msgid } from 'ttag';
 import { Icon, useEventManager } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
 import type { CategoryTab } from '@proton/mail';
+import { getLabelFromCategoryId } from '@proton/mail/features/categoriesView/categoriesStringHelpers';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
@@ -15,7 +16,6 @@ import { VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 import { params } from 'proton-mail/store/elements/elementsSelectors';
 import { useMailSelector } from 'proton-mail/store/hooks';
 
-import { getLabelFromCategoryId } from '../categoriesStringHelpers';
 import { TabState, categoryColorClassName } from './tabsInterface';
 
 interface Props {

@@ -5,11 +5,11 @@ import { c } from 'ttag';
 import type { CommanderItemInterface, HotkeyTuple } from '@proton/components';
 import type { Hotkey } from '@proton/components/hooks/useHotkeys';
 import { getCategoryCommanderKeyboardShortcut } from '@proton/mail';
+import { getLabelFromCategoryIdInCommander } from '@proton/mail/features/categoriesView/categoriesStringHelpers';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { LABEL_IDS_TO_HUMAN } from '@proton/shared/lib/mail/constants';
 import { isBusy } from '@proton/shared/lib/shortcuts/helpers';
 
-import { getLabelFromCategoryIdInCommander } from './categoriesStringHelpers';
 import { categoryColorClassName } from './categoriesTabs/tabsInterface';
 import { useCategoriesView } from './useCategoriesView';
 

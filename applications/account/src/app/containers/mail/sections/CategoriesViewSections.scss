@@ -1,0 +1,89 @@
+@use '~@proton/styles/scss/lib/em' as *;
+
+.categories-section {
+	--color-iris-400: #7562ff;
+	--color-iris-500: #6d4aff;
+	--color-cyan-400: #36bbd9;
+	--color-cyan-500: #12b3d4;
+	--color-teal-400: #3bbeac;
+	--color-teal-500: #19b6a4;
+	--color-orange-400: #f48e43;
+	--color-orange-500: #f77c29;
+	--color-red-400: #ee5b5e;
+	--color-red-500: #ec4148;
+	--color-pink-400: #ed4ca5;
+	--color-pink-500: #e92c9a;
+	--color-blue-400: #5094fb;
+	--color-blue-500: #3e87fb;
+
+	.wrapper {
+		display: grid;
+		grid-template-rows: minmax(192px, 0fr);
+		opacity: 0.5;
+		transition:
+			grid-template-rows 0.5s ease-out,
+			opacity 0.5s ease-out;
+
+		.inner {
+			overflow: hidden;
+		}
+
+		&.is-open {
+			grid-template-rows: minmax(192px, 1fr);
+			opacity: 1;
+		}
+	}
+
+	.categories-header {
+		border-start-start-radius: 1rem;
+		border-start-end-radius: 1rem;
+	}
+
+	.category-last {
+		border-end-start-radius: 1rem;
+		border-end-end-radius: 1rem;
+	}
+
+	.mail-category-color {
+		color: var(--cat-foreground);
+
+		[data-theme-mode='dark'] & {
+			color: var(--cat-foreground-dark);
+		}
+	}
+}
+
+[data-color='iris'] {
+	--cat-foreground: var(--color-iris-500);
+	--cat-foreground-dark: var(--color-iris-400);
+}
+
+[data-color='cyan'] {
+	--cat-foreground: var(--color-cyan-500);
+	--cat-foreground-dark: var(--color-cyan-400);
+}
+
+[data-color='teal'] {
+	--cat-foreground: var(--color-teal-500);
+	--cat-foreground-dark: var(--color-teal-400);
+}
+
+[data-color='orange'] {
+	--cat-foreground: var(--color-orange-500);
+	--cat-foreground-dark: var(--color-orange-400);
+}
+
+[data-color='red'] {
+	--cat-foreground: var(--color-red-500);
+	--cat-foreground-dark: var(--color-red-400);
+}
+
+[data-color='pink'] {
+	--cat-foreground: var(--color-pink-500);
+	--cat-foreground-dark: var(--color-pink-400);
+}
+
+[data-color='blue'] {
+	--cat-foreground: var(--color-blue-500);
+	--cat-foreground-dark: var(--color-blue-400);
+}

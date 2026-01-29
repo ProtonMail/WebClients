@@ -8,7 +8,7 @@ import { ADDRESS_TYPE, APPS, MAIL_APP_NAME } from '@proton/shared/lib/constants'
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import type { Address, Organization, UserModel } from '@proton/shared/lib/interfaces';
+import type { Address, OrganizationExtended, UserModel } from '@proton/shared/lib/interfaces';
 import { getIsExternalAccount } from '@proton/shared/lib/keys';
 
 export const getHasPmMeAddress = (addresses?: Address[]) => {
@@ -33,18 +33,21 @@ export const getMailAppRoutes = ({
     addresses,
     organization,
     isCryptoPostQuantumOptInEnabled,
+    isCategoryViewEnabled,
 }: {
     app: APP_NAMES;
     user: UserModel;
     addresses?: Address[];
-    organization?: Organization;
+    organization?: OrganizationExtended;
     isCryptoPostQuantumOptInEnabled?: boolean;
+    isCategoryViewEnabled?: boolean;
 }): SidebarConfig => {
     const hasOrganizationKey = hasOrganizationSetupWithKeys(organization);
     const learnMoreLink = (
         <Href key="learn" href={getKnowledgeBaseUrl('/using-folders-labels')}>{c('Link').t`Learn more`}</Href>
     );
     const mailRouteTitles = getMailRouteTitles();
+
     return {
         available: app === APPS.PROTONMAIL,
         header: MAIL_APP_NAME,
@@ -69,6 +72,12 @@ export const getMailAppRoutes = ({
                     {
                         text: c('Title').t`General`,
                         id: 'general',
+                    },
+                    {
+                        text: c('Title').t`Email categories`,
+                        id: 'categories',
+                        available:
+                            isCategoryViewEnabled && organization && organization?.Settings.MailCategoryViewEnabled,
                     },
                     {
                         text: c('Title').t`Layout`,

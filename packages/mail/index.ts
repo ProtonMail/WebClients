@@ -32,3 +32,7 @@ export { selectCategoriesLabel } from './store/labels/selector';
 export { useCategoriesData } from './features/categoriesView/useCategoriesData';
 export { type CategoryTab, CATEGORIES_COLOR_SHADES } from './features/categoriesView/categoriesConstants';
 export { getCategoryData, getCategoryCommanderKeyboardShortcut } from './features/categoriesView/categoriesHelpers';
+export {
+    getDescriptionFromCategoryId,
+    getLabelFromCategoryId,
+} from './features/categoriesView/categoriesStringHelpers';
