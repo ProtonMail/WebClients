@@ -1,8 +1,6 @@
-import { createContext, useContext, useEffect, useState } from 'react';
+import { createContext, useContext, useState } from 'react';
 
 import type { LocalParticipant, RemoteParticipant } from 'livekit-client';
-
-import { isSafari } from '@proton/shared/lib/helpers/browser';
 
 import { AutoCloseMeetingModal } from '../components/AutoCloseMeetingModal/AutoCloseMeetingModal';
 import { DebugOverlay, useDebugOverlay } from '../components/DebugOverlay/DebugOverlay';
@@ -50,8 +48,6 @@ interface MeetContainerProps {
     stopPiP: () => void;
     chatMessages: MeetChatMessage[];
     setChatMessages: React.Dispatch<React.SetStateAction<MeetChatMessage[]>>;
-    pipSetup: (throttle: boolean) => void;
-    pipCleanup: () => void;
     preparePictureInPicture: () => void;
     instantMeeting: boolean;
     assignHost: (participantUuid: string) => Promise<void>;
@@ -109,8 +105,6 @@ export const MeetContainer = ({
     stopPiP,
     chatMessages,
     setChatMessages,
-    pipSetup,
-    pipCleanup,
     preparePictureInPicture,
     instantMeeting,
     assignHost,
@@ -148,14 +142,6 @@ export const MeetContainer = ({
         await downloadRecording();
         await handleEndMeeting();
     };
-
-    useEffect(() => {
-        if (isSafari()) {
-            void pipSetup(true);
-
-            return pipCleanup;
-        }
-    }, []);
 
     return (
         <DebugOverlayContext.Provider value={{ isEnabled: debugOverlay.isEnabled, open: debugOverlay.open }}>

@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 
 import { isFirefox, isSafari } from '@proton/shared/lib/helpers/browser';
 
-import { useLatest } from './useLatest';
+import { useLatest } from '../useLatest';
 
 interface UsePiPMediaSessionProps {
     isVideoEnabled: boolean;
