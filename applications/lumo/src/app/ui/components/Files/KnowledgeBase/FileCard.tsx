@@ -8,6 +8,7 @@ import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { CircularProgress, FileIcon, Icon } from '@proton/components';
 import { IcCross } from '@proton/icons/icons/IcCross';
 
+import { attachmentDataCache } from '../../../../services/attachmentDataCache';
 import type { Attachment } from '../../../../types';
 import { mimeToHuman } from '../../../../util/filetypes';
 
@@ -22,15 +23,12 @@ interface FileCardProps {
 }
 
 const createPreviewUrl = (imagePreview: Uint8Array<ArrayBuffer> | undefined): string | null => {
-    console.log('createPreviewUrl: imagePreview = ', imagePreview);
     if (!imagePreview || !(imagePreview instanceof Uint8Array)) {
         return null;
     }
     try {
         const blob = new Blob([imagePreview], { type: 'image/jpg' });
-        console.log('createPreviewUrl: output blob = ', blob);
         const url = URL.createObjectURL(blob);
-        console.log('createPreviewUrl: created object url = ', url);
         return url;
     } catch (e) {
         console.error('Failed to create preview URL:', e);
@@ -39,24 +37,26 @@ const createPreviewUrl = (imagePreview: Uint8Array<ArrayBuffer> | undefined): st
 };
 
 export const FileCard = ({ attachment, onRemove, onView, className, readonly = false }: FileCardProps) => {
-    const { error, processing, filename, errorMessage, imagePreview } = attachment;
+    const { error, processing, filename, errorMessage } = attachment;
     const [previewUrl, setPreviewUrl] = useState<string | null>(null);
     const mimeTypeIcon = attachment.mimeType ?? 'unknown';
     const prettyType = mimeToHuman(attachment);
     const hasError = error;
 
     // Cleanup blob URL on unmount or when it changes
+    // Re-run when processing state changes (when image finishes processing, preview becomes available)
     useEffect(() => {
+        // Get imagePreview from cache instead of Redux
+        const imagePreview = attachmentDataCache.getImagePreview(attachment.id);
         const url = createPreviewUrl(imagePreview);
         setPreviewUrl(url);
         return () => {
             if (url) {
-                console.log('revoking object url = ', url);
                 URL.revokeObjectURL(url);
             }
             setPreviewUrl(null);
         };
-    }, [imagePreview]);
+    }, [attachment.id, processing]);
 
     // const hasContent = attachment.markdown && attachment.markdown.trim() !== '';
 
