@@ -1,6 +1,6 @@
 import type { FunctionComponent, ReactNode } from 'react';
 
-import { ColorItem, ColorPalette } from '@storybook/addon-docs';
+import { ColorItem, ColorPalette } from '@storybook/addon-docs/blocks';
 
 import mdx from './Colors.mdx';
 
