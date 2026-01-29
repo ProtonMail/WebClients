@@ -1,11 +1,13 @@
 import { c, msgid } from 'ttag';
 
-import { useConfirmActionModal } from '@proton/components';
+import { useConfirmActionModal, useNotifications } from '@proton/components';
 import { NodeType, splitNodeUid } from '@proton/drive';
+import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import { type OpenInDocsType, isNativeProtonDocsAppFile } from '@proton/shared/lib/helpers/mimetype';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { downloadManager } from '../../../managers/download/DownloadManager';
+import { useCreateFolderModal } from '../../../modals/CreateFolderModal';
 import { useDetailsModal } from '../../../modals/DetailsModal';
 import { useRenameModal } from '../../../modals/RenameModal';
 import { usePreviewModal } from '../../../modals/preview';
@@ -26,8 +28,10 @@ export const usePublicActions = () => {
     const [previewModal, showPreviewModal] = usePreviewModal();
     const [detailsModal, showDetailsModal] = useDetailsModal();
     const [renameModal, showRenameModal] = useRenameModal();
+    const [createFolderModal, showCreateFolderModal] = useCreateFolderModal();
     const [confirmModal, showConfirmModal] = useConfirmActionModal();
     const { createDeleteNotification } = usePublicPageNotifications();
+    const { createNotification } = useNotifications();
 
     const handlePreview = (uid: string) => {
         const { getAllFolderItems } = usePublicFolderStore.getState();
@@ -125,31 +129,43 @@ export const usePublicActions = () => {
             submitText: c('Title').t`Delete`,
             message,
             onSubmit: () =>
-                Array.fromAsync(getPublicLinkClient().deleteNodes(items.map(({ uid }) => uid))).then(
-                    async (deleted) => {
-                        const successItems: { name: string; uid: string }[] = [];
-                        const failureItems: { uid: string; error: string }[] = [];
+                Array.fromAsync(getPublicLinkClient().deleteNodes(items.map(({ uid }) => uid))).then((deleted) => {
+                    const successItems: { name: string; uid: string }[] = [];
+                    const failureItems: { uid: string; error: string }[] = [];
 
-                        deleted.forEach((result) => {
-                            const item = items.find((i) => i.uid === result.uid);
-                            if (result.ok && item) {
-                                successItems.push({ name: item.name, uid: result.uid });
-                            } else if (!result.ok && item) {
-                                failureItems.push({
-                                    uid: result.uid,
-                                    error: result.error || c('Error').t`Unknown error`,
-                                });
-                            }
-                        });
+                    deleted.forEach((result) => {
+                        const item = items.find((i) => i.uid === result.uid);
+                        if (result.ok && item) {
+                            successItems.push({ name: item.name, uid: result.uid });
+                        } else if (!result.ok && item) {
+                            failureItems.push({
+                                uid: result.uid,
+                                error: result.error || c('Error').t`Unknown error`,
+                            });
+                        }
+                    });
 
-                        createDeleteNotification(successItems, failureItems);
+                    createDeleteNotification(successItems, failureItems);
 
-                        await getActionEventManager().emit({
-                            type: ActionEventName.DELETED_NODES,
-                            uids: successItems.map((item) => item.uid),
-                        });
-                    }
-                ),
+                    void getActionEventManager().emit({
+                        type: ActionEventName.DELETED_NODES,
+                        uids: successItems.map((item) => item.uid),
+                    });
+                }),
+        });
+    };
+
+    const handleCopyLink = () => {
+        textToClipboard(window.location.href);
+        createNotification({
+            text: c('Info').t`Link copied to clipboard`,
+        });
+    };
+
+    const handleCreateFolder = (parentUid: string) => {
+        return showCreateFolderModal({
+            drive: getPublicLinkClient(),
+            parentFolderUid: parentUid,
         });
     };
 
@@ -158,6 +174,7 @@ export const usePublicActions = () => {
             previewModal,
             detailsModal,
             renameModal,
+            createFolderModal,
             confirmModal,
         },
         handlePreview,
@@ -166,5 +183,7 @@ export const usePublicActions = () => {
         handleRename,
         handleDelete,
         handleOpenDocsOrSheets,
+        handleCopyLink,
+        handleCreateFolder,
     };
 };

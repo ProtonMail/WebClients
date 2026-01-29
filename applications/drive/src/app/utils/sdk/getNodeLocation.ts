@@ -26,14 +26,8 @@ export async function getNodeLocation(
     drive: ProtonDriveClientOrPublicDriveClient,
     node: MaybeNode
 ): Promise<Result<NodeLocation, Error>> {
-    if (!isOwnFile(node)) {
-        return {
-            ok: true,
-            value: NodeLocation.SHARED_WITH_ME,
-        };
-    }
-
     const currentNodeEntity = getNodeEntity(node).node;
+
     if (currentNodeEntity.type === NodeType.Album || currentNodeEntity.type === NodeType.Photo) {
         return {
             ok: true,
@@ -50,6 +44,14 @@ export async function getNodeLocation(
     }
     const nodes = nodesResult.value;
     const rootNodeEntity = getNodeEntity(nodes[0]).node;
+
+    // In case there is no membership it is a public shared node
+    if (!isOwnFile(node) && !!rootNodeEntity.membership) {
+        return {
+            ok: true,
+            value: NodeLocation.SHARED_WITH_ME,
+        };
+    }
 
     let myFilesRootFolderUid: string | undefined;
     if (drive.getMyFilesRootFolder) {

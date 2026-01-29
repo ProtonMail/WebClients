@@ -5,6 +5,11 @@ import { DropdownMenuButton, Icon } from '@proton/components';
 interface Props {
     onClick: () => void;
 }
+
+/**
+ * TODO: Migrate to use reusable create folder component
+ * See: applications/drive/src/app/statelessComponents/UploadCreateDropdown/UploadCreateDropdown.tsx
+ */
 export const CreateNewFolderButton = ({ onClick }: Props) => {
     return (
         <DropdownMenuButton className="text-left flex items-center" onClick={onClick} data-testid="dropdown-new-folder">
