@@ -21,7 +21,7 @@ import { bootstrapGuestApp } from '../bootstrap';
 import config from '../config';
 import { WasmContext } from '../contexts/WasmContext';
 
-type ExtraThunkArguments = Omit<ProtonThunkArguments, 'config' | 'api' | 'eventManager' | 'notificationsManager'> & {
+type ExtraThunkArguments = Omit<ProtonThunkArguments, 'config' | 'api' | 'eventManager'> & {
     unauthenticatedApi: UnauthenticatedApi;
 };
 
