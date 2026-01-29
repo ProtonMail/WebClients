@@ -233,7 +233,7 @@ const ProjectDetailViewInner = () => {
                         conversationContext: {
                             spaceId: projectId,
                             conversationId,
-                            allConversationAttachments: [],
+                            allConversationAttachments: provisionalAttachments,
                             messageChain: [],
                             contextFilters: [],
                         },
@@ -246,7 +246,9 @@ const ProjectDetailViewInner = () => {
                             enableImageTools: ffImageTools,
                             enableSmoothing: ffSmoothRendering,
                         },
-                        personalizationSettings: personalization,
+                        settingsContext: {
+                            personalization,
+                        },
                     })
                 );
                 console.log('Message sent successfully');

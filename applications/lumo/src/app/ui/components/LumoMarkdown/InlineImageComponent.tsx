@@ -9,6 +9,7 @@ import { useLazyAttachment } from '../../../hooks';
 import { useLumoDispatch } from '../../../redux/hooks';
 import { clearAttachmentLoading } from '../../../redux/slices/attachmentLoadingState';
 import { pullAttachmentRequest } from '../../../redux/slices/core/attachments';
+import { attachmentDataCache } from '../../../services/attachmentDataCache';
 import type { AttachmentId } from '../../../types';
 
 interface InlineImageComponentProps {
@@ -25,14 +26,20 @@ export const InlineImageComponent: React.FC<InlineImageComponentProps> = ({ atta
     const [showModalButtons, setShowModalButtons] = useState(false);
 
     const imageDataUrl = useMemo(() => {
-        if (!attachment?.data) {
+        if (!attachment) {
+            return null;
+        }
+
+        // Try to get data from attachment first, then from cache
+        const imageData = attachment.data || attachmentDataCache.getData(attachment.id);
+        if (!imageData) {
             return null;
         }
 
         const mimeType = attachment.mimeType || 'image/png';
-        const blob = new Blob([attachment.data], { type: mimeType });
+        const blob = new Blob([imageData], { type: mimeType });
         return URL.createObjectURL(blob);
-    }, [attachment?.data, attachment?.mimeType]);
+    }, [attachmentId, attachment, attachment?.data, attachment?.mimeType, attachment?.id]);
 
     // Handle retry on error
     const handleRetry = () => {

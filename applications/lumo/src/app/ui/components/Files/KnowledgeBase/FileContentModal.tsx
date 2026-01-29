@@ -7,6 +7,7 @@ import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@prot
 import type { ModalProps } from '@proton/components';
 import { IcFileSlash } from '@proton/icons/icons/IcFileSlash';
 
+import { attachmentDataCache } from '../../../../services/attachmentDataCache';
 import type { Attachment } from '../../../../types';
 import { Role } from '../../../../types';
 import { isFileTypeSupported, mimeToHuman } from '../../../../util/filetypes';
@@ -45,25 +46,28 @@ export const FileContentModal = ({ attachment, onClose, ...modalProps }: FileCon
     }, [attachment?.markdown]);
 
     // Check if this is an image
-    const attachmentData = attachment?.data;
-    const attachmentImagePreview = attachment?.imagePreview;
     const attachmentMimeType = attachment?.mimeType;
     const isImage = attachmentMimeType?.startsWith('image/');
-    const hasImageData = isImage && (attachmentData || attachmentImagePreview);
 
     // Create and cleanup image URL
     useEffect(() => {
-        if (hasImageData) {
+        if (isImage && attachment) {
+            // Get image data from cache instead of Redux
+            const attachmentData = attachmentDataCache.getData(attachment.id);
+            const attachmentImagePreview = attachmentDataCache.getImagePreview(attachment.id);
             const imageData = attachmentData || attachmentImagePreview;
-            const blob = new Blob([imageData!], { type: attachmentMimeType });
-            const url = URL.createObjectURL(blob);
-            setImageUrl(url);
+            
+            if (imageData) {
+                const blob = new Blob([imageData], { type: attachmentMimeType });
+                const url = URL.createObjectURL(blob);
+                setImageUrl(url);
 
-            return () => {
-                URL.revokeObjectURL(url);
-            };
+                return () => {
+                    URL.revokeObjectURL(url);
+                };
+            }
         }
-    }, [hasImageData, attachmentData, attachmentImagePreview, attachmentMimeType]);
+    }, [isImage, attachment, attachmentMimeType]);
 
     if (!attachment) return null;
 
@@ -284,7 +288,10 @@ export const FileContentModal = ({ attachment, onClose, ...modalProps }: FileCon
         }
 
         // Show image if available
-        if (hasImageData && imageUrl) {
+        if (imageUrl) {
+            const hasFullResolution = attachmentDataCache.hasData(attachment.id);
+            const hasPreviewOnly = !hasFullResolution && attachmentDataCache.hasImagePreview(attachment.id);
+            
             return (
                 <div className="flex flex-column items-center justify-center p-4">
                     <img
@@ -293,7 +300,7 @@ export const FileContentModal = ({ attachment, onClose, ...modalProps }: FileCon
                         className="max-w-full max-h-custom rounded"
                         style={{ '--max-h-custom': '70vh', objectFit: 'contain' }}
                     />
-                    {attachment.imagePreview && !attachment.data && (
+                    {hasPreviewOnly && (
                         <p className="text-xs color-weak mt-2">
                             {c('collider_2025: Info').t`Preview quality - full resolution not loaded`}
                         </p>
@@ -417,7 +424,7 @@ export const FileContentModal = ({ attachment, onClose, ...modalProps }: FileCon
                 />
 
                 <ModalTwoContent>
-                    {hasContent && !hasImageData && (
+                    {hasContent && !imageUrl && (
                         <div className="flex flex-row justify-space-between items-center mb-4 p-2 bg-weak rounded">
                             <span className="text-sm color-weak">
                                 {isCSVOrExcel && !showRaw
