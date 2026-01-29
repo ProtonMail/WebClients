@@ -1502,8 +1502,7 @@
         "Αξιόπιστο"
       ],
       "Trust key": [
-        "Κλειδί Εμπιστοσύνης",
-        "Κλειδιά Εμπιστοσύνης"
+        "Εμπιστοσύνη στο κλειδί"
       ],
       "Trust public key": [
         "Εμπιστοσύνη στο δημόσιο κλειδί"
@@ -4242,17 +4241,6 @@
         "Η ${ PLAN_NAMES[PLANS.PASS] } συνδρομή είναι σε ειδική τιμή ${ price } ανά έτος. Με την υποβάθμιση στο Free πλάνο, θα χάσετε οριστικά την έκπτωση, ακόμα και αν κάνετε αναβάθμιση ξανά στο μέλλον."
       ]
     },
-    "Drawer tab, Action": {
-      "Download for Linux": [
-        "Λήψη για Linux"
-      ],
-      "Download for macOS": [
-        "Λήψη για MacOS"
-      ],
-      "Download for Windows": [
-        "Λήψη για Windows"
-      ]
-    },
     "driveplus2024: Deal details": {
       "Extended version history": [
         "Εκτεταμένο ιστορικό εκδόσεων"
@@ -4994,14 +4982,14 @@
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Αυτό το μήνυμα μπορεί να περιέχει κάποιους συνδέσμους URL που δεν μπορούν να ανοίξουν σωστά από το τρέχον πρόγραμμα περιήγησης."
       ],
+      "This offer is not available in your country": [
+        "Αυτή η προσφορά δεν είναι διαθέσιμη στη χώρα σας"
+      ],
       "Trusted keys are not valid for sending": [
         "Τα αξιόπιστα κλειδιά δεν είναι έγκυρα για την αποστολή"
       ],
       "Try using only letters, numerals, and _.-": [
         "Δοκιμάστε να χρησιμοποιήσετε μόνο γράμματα, αριθμούς και _.-"
-      ],
-      "Unable to load VPN dashboard. Please check your connection and try again.": [
-        "Δεν είναι δυνατή η φόρτωση του πίνακα ελέγχου VPN. Παρακαλούμε ελέγξτε τη σύνδεσή σας και προσπαθήστε ξανά."
       ],
       "Unexpected error, we can't import the contacts": [
         "Μη αναμενόμενο σφάλμα, δεν είναι δυνατή η εισαγωγή των επαφών"
@@ -6587,9 +6575,6 @@
         "${ updated } επαφή ενημερώθηκε επιτυχώς.",
         "${ updated } επαφές ενημερώθηκαν επιτυχώς."
       ],
-      "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
-        "Το ${ VPN_APP_NAME } καλύπτει τη διεύθυνση IP σας, επομένως οι ιστότοποι δεν μπορούν να σας αναγνωρίσουν."
-      ],
       "(${ memberCount } member)": [
         "(${ memberCount } μέλος)",
         "(${ memberCount } μέλη)"
@@ -6609,12 +6594,6 @@
       "**${ total }** result found in ${ labelName }": [
         "**${ total }** αποτέλεσμα βρέθηκε στη ${ labelName }",
         "**${ total }** αποτελέσματα βρέθηκαν στη ${ labelName }"
-      ],
-      "**Auto-connect**: Opens and connects to VPN as soon as you turn on your device.": [
-        "**Αυτόματη σύνδεση**: Ανοίγει και συνδέεται στο VPN μόλις ενεργοποιήσετε τη συσκευή σας."
-      ],
-      "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
-        "**Λειτουργία kill switch**: Σταματά τις διαρροές δεδομένων μπλοκάροντας το διαδίκτυο αν το VPN αποσυνδεθεί απροσδόκητα."
       ],
       "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
         "**Βήμα 1:** Προσκαλέστε τους φίλους σας στο ${ BRAND_NAME } με τον σύνδεσμο παραπομπής σας."
@@ -6647,20 +6626,8 @@
       "A request to unsubscribe from this mailing list will be sent to the sender of the newsletter and automatically processed.": [
         "Μια αίτηση διαγραφής από αυτή τη λίστα θα σταλεί στον αποστολέα του ενημερωτικού δελτίου και θα επεξεργαστεί αυτόματα."
       ],
-      "A secure connection is essential when working remotely. A VPN protects company data from cyber threats and keeps your work private.": [
-        "Μια ασφαλής σύνδεση είναι απαραίτητη όταν εργάζεστε εξ αποστάσεως. Ένα VPN προστατεύει εταιρικά δεδομένα από απειλές στον κυβερνοχώρο και διατηρεί την εργασία σας ιδιωτική."
-      ],
       "A user is an account associated with a single username, mailbox, and person": [
         "Χρήστης νοείται ένας λογαριασμός συσχετισμένος με μοναδικό όνομα χρήστη, θυρίδα και πρόσωπο"
-      ],
-      "A VPN encrypts your connection and hides your IP address, making it much harder for anyone to track or monitor your browsing.": [
-        "Ένα VPN κρυπτογραφεί τη σύνδεσή σας και κρύβει την ΙΡ διεύθυνσή σας, καθιστώντας πολύ πιο δύσκολο για οποιονδήποτε να παρακολουθεί ή να παρακολουθεί την περιήγησή σας."
-      ],
-      "A VPN hides your IP address and encrypts your browsing activity, making it harder for websites, advertisers, and ISPs to track you over time.": [
-        "Ένα VPN κρύβει τη διεύθυνσή ΙΡ σας και κρυπτογραφεί τη δραστηριότητα περιήγησής σας, καθιστώντας πιο δύσκολο για τους ιστότοπους, τους διαφημιστές και τους ISP να σας παρακολουθούν με την πάροδο του χρόνου."
-      ],
-      "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
-        "Ένα VPN είναι μια ασφαλής σήραγγα μεταξύ της συσκευής σας και του διαδικτύου. Αποκρύπτει την τοποθεσία και τη δραστηριότητά σας από τον πάροχο υπηρεσιών διαδικτύου (ISP) και τους ιστότοπους που επισκέπτεστε."
       ],
       "Access 6,500+ high-speed servers on up to 10 devices to keep your browsing data safe. Available on ${ ios }, ${ android }, ${ appleTV }, and ${ desktop }.": [
         "Αποκτήστε πρόσβαση σε 6.500+ διακομιστές υψηλής ταχύτητας σε έως και 10 συσκευές για να διατηρήσετε ασφαλή τα δεδομένα περιήγησής σας. Διατίθεται σε ${ ios }, ${ android }, ${ appleTV } και ${ desktop }."
@@ -6674,9 +6641,6 @@
       "Active": [
         "Ενεργό"
       ],
-      "Ad targeting": [
-        "Στόχευση διαφημίσεων"
-      ],
       "Add image URL": [
         "Προσθήκη εικόνας με URL"
       ],
@@ -6688,9 +6652,6 @@
       ],
       "Addresses settings": [
         "Ρυθμίσεις διευθύνσεων"
-      ],
-      "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
-        "Οι διαφημιζόμενοι παρακολουθούν την περιήγησή σας για να εμφανίζουν στοχευμένες διαφημίσεις. Το ${ VPN_APP_NAME } αποκλείει ιχνηλάτες και διαφημίσεις, κάνοντας τη σύνδεσή σας ταχύτερη και βελτιώνοντας την εμπειρία σας στο διαδίκτυο."
       ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "Βοηθός με τεχνητή νοημοσύνη που σας βοηθά να δημιουργείτε καλύτερα μηνύματα ηλεκτρονικού ταχυδρομείου, γρήγορα και αβίαστα."
@@ -6937,9 +6898,6 @@
       ],
       "Confirm phishing report": [
         "Επιβεβαίωση αναφοράς ηλεκτρονικού ψαρέματος"
-      ],
-      "Connect to ${ VPN_APP_NAME } to browse privately": [
-        "Συνδεθείτε στο ${ VPN_APP_NAME } για ιδιωτική περιήγηση"
       ],
       "Consider when's the best time for your recipient to receive your email, and schedule it to be sent then.": [
         "Σκεφτείτε πότε είναι η καλύτερη στιγμή ώστε ο παραλήπτης σας να λάβει το μήνυμά σας και προγραμματίστε το να σταλεί τότε."
@@ -7274,9 +7232,6 @@
       "Generate text": [
         "Αυτόματη δημιουργία κειμένου"
       ],
-      "Geoblocking": [
-        "Γεωγραφικός αποκλεισμός"
-      ],
       "Get it on Google Play": [
         "Αποκτήστε το στο Google Play"
       ],
@@ -7288,9 +7243,6 @@
       ],
       "Google Pay mark": [
         "Σήμα Google Pay"
-      ],
-      "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
-        "Οι κυβερνήσεις και οι ISP μπορούν να παρακολουθούν τη δραστηριότητά σας στο διαδίκτυο. Κρύβοντας την πραγματική σας IP και κρυπτογραφώντας τη δραστηριότητά σας, η περιήγησή σας γίνεται ιδιωτική."
       ],
       "Has ${ numAttachments } attachment (${ numAttachmentsSize })": [
         "Έχει ${ numAttachments } συνημμένο (${ numAttachmentsSize })",
@@ -7369,9 +7321,6 @@
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Γίνεται εισαγωγή δεδομένων από ${ fromEmail } προς ${ toEmail }."
       ],
-      "In restrictive countries": [
-        "Σε περιοριστικές χώρες"
-      ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "Στο επόμενο βήμα, θα μπορείτε να υποβάλετε μια κατάθεση χρησιμοποιώντας μια διεύθυνση Bitcoin."
       ],
@@ -7409,7 +7358,8 @@
         "Προετοιμασία…"
       ],
       "Insert image": [
-        "Εισαγωγή εικόνας"
+        "Εισαγωγή εικόνας",
+        "Εισαγωγή εικόνων"
       ],
       "Insert link": [
         "Εισαγωγή συνδέσμου"
@@ -7431,9 +7381,6 @@
       ],
       "It's better to have:": [
         "Είναι καλύτερα να έχετε:"
-      ],
-      "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
-        "Είναι καλύτερο να χρησιμοποιείτε ένα VPN ανά πάσα στιγμή. Αλλά εδώ είναι όπου οι απειλές στον κυβερνοχώρο μπορεί να είναι οι υψηλότερες:"
       ],
       "JCB logo": [
         "Λογότυπο JCB"
@@ -7585,9 +7532,6 @@
       "More refine actions": [
         "Περισσότερες ενέργειες βελτίωσης"
       ],
-      "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
-        "Τα περισσότερα δημόσια δίκτυα WiFi είναι ασφαλή, αλλά ορισμένα στερούνται ασφάλειας, εκθέτοντάς σας σε απειλές στον κυβερνοχώρο. Ένα VPN κρυπτογραφεί την κίνησή σας, διατηρώντας σας προστατευμένους."
-      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Ονομάστε το νέο σας φάκελο και επιλέξτε τον γονικό φάκελο στον οποίο θέλετε να τον τοποθετήσετε. Εάν δεν επιλέξετε γονικό φάκελο, αυτός ο νέος φάκελος θα δημιουργηθεί ως φάκελος ανώτατου επιπέδου."
       ],
@@ -7654,9 +7598,6 @@
       "Not a valid URL": [
         "Μη έγκυρο URL"
       ],
-      "Not connected": [
-        "Μη συνδεδεμένο"
-      ],
       "Number of dedicated servers in the organization": [
         "Αριθμός αποκλειστικών διακομιστών στον οργανισμό"
       ],
@@ -7668,9 +7609,6 @@
       ],
       "of": [
         "από"
-      ],
-      "On public WiFi networks": [
-        "Σε δημόσια δίκτυα WiFi"
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Ένα η περισσότερα από τα αξιόπιστα κλειδιά σας έχουν επισημανθεί ως \"παραβιασμένα\" από τον κάτοχό τους. Σας συνιστούμε να τα επισημάνετε ως \"μη αξιόπιστα\"."
@@ -7793,6 +7731,9 @@
       "Please use another browser or download the file.": [
         "Χρησιμοποιήστε άλλο πρόγραμμα περιήγησης ή κατεβάστε το αρχείο."
       ],
+      "Please wait for the action to be completed": [
+        "Παρακαλούμε περιμένετε μέχρι να ολοκληρωθεί η ενέργεια."
+      ],
       "Please wait till your changes are synced with the server.": [
         "Παρακαλούμε περιμένετε έως ότου οι αλλαγές σας συγχρονιστούν με τον διακομιστή."
       ],
@@ -7825,9 +7766,6 @@
       ],
       "Print email": [
         "Εκτύπωση email"
-      ],
-      "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
-        "Η ιδιωτική περιήγηση (ή η κατάσταση ανώνυμης περιήγησης) είναι χρήσιμη μόνο για να διατηρείτε τη δραστηριότητά σας κρυφή στη συσκευή σας. Εμποδίζει το πρόγραμμα περιήγησής σας να αποθηκεύει ιστορικό και cookies, αλλά δεν σας κάνει αόρατους. Η υπηρεσία παροχής Internet, ο διαχειριστής δικτύου και οι τοποθεσίες Web που επισκέπτεστε εξακολουθούν να μπορούν να δουν τι κάνετε στο Internet."
       ],
       "Proofread selection": [
         "Διόρθωση επιλογής"
@@ -7900,9 +7838,6 @@
       ],
       "Saving draft": [
         "Αποθήκευση προχείρου"
-      ],
-      "Scan the QR code with your mobile device": [
-        "Σαρώστε τον κωδικό QR με την κινητή συσκευή σας"
       ],
       "Scheduled send of this message will be canceled.": [
         "Η προγραμματισμένη αποστολή αυτού του μηνύματος θα ακυρωθεί."
@@ -8016,12 +7951,6 @@
       "Snoozing this conversation will be canceled.": [
         "Η αναβολή αυτής της συνομιλίας θα ακυρωθεί."
       ],
-      "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
-        "Ορισμένες κυβερνήσεις αποκλείουν ή περιορίζουν την πρόσβαση σε ορισμένους ιστότοπους. Ένα VPN βοηθά στην παράκαμψη της λογοκρισίας, διατηρώντας παράλληλα τη δραστηριότητα και την ταυτότητά σας ιδιωτικές."
-      ],
-      "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
-        "Ορισμένοι ιστότοποι και υπηρεσίες ροής αποκλείουν περιεχόμενο ανά περιοχή. Ένα VPN σάς επιτρέπει να παρακάμψετε αυτούς τους περιορισμούς και να έχετε ελεύθερη πρόσβαση στο διαδίκτυο."
-      ],
       "Sorry, this message does not exist or has already expired.": [
         "Λυπούμαστε, αυτό το μήνυμα δεν υπάρχει ή έχει ήδη λήξει."
       ],
@@ -8030,9 +7959,6 @@
       ],
       "Start using the shorter, catchier version of your email address.": [
         "Ξεκινήστε να χρησιμοποιείτε τη συντομότερη, πιο πιασάρικη έκδοση της διεύθυνσης ηλεκτρονικού ταχυδρομείου σας."
-      ],
-      "Stay connected effortlessly by enabling the following VPN settings:": [
-        "Μείνετε συνδεδεμένοι χωρίς κόπο ενεργοποιώντας τις ακόλουθες ρυθμίσεις VPN:"
       ],
       "Storage capabilities are not supported in this browser, we need this support to enable message content search.": [
         "Ο περιηγητής σας δεν υποστηρίζει δυνατότητες αποθήκευσης. Χρειαζόμαστε αυτήν την υποστήριξη για να ενεργοποιήσουμε την αναζήτηση εντός του περιεχομένου μηνυμάτων."
@@ -8067,9 +7993,6 @@
       ],
       "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
         "Η συνδρομή λήγει: Για να διατηρήσετε τα οφέλη του ${ planName }, επανεκκινήστε τη συνδρομή σας στο Google Play Store έως ${ byDate }. ${ reactivateLink }"
-      ],
-      "Surveillance": [
-        "Παρακολούθηση"
       ],
       "Symbols (#$&)": [
         "Σύμβολα (#$&)"
@@ -8202,9 +8125,6 @@
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Αυτός ο σύνδεσμος μπορεί να είναι επίθεση ομογραφίας. Βεβαιωθείτε ότι πρόκειται για το σύνδεσμο που θέλετε να επισκεφθείτε, ή μην το ανοίξετε."
       ],
-      "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
-        "Αυτό σημαίνει ότι ο ISP σας και οι ιστότοποι που επισκέπτεστε δεν μπορούν να συνδέσουν τα προσωπικά σας στοιχεία με τη δραστηριότητά σας στο Internet."
-      ],
       "This message has been adjusted to comply with a dark background.": [
         "Αυτό το μήνυμα έχει ρυθμιστεί για εμφάνιση σε σκούρο φόντο."
       ],
@@ -8281,9 +8201,6 @@
       "This sender's public key has not been trusted yet.": [
         "Το δημόσιο κλειδί αυτού του αποστολέα δεν έχει γίνει αξιόπιστο ακόμα."
       ],
-      "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
-        "Αυτός ο μοναδικός κωδικός μπορεί να χρησιμοποιηθεί από ιστότοπους και ISP (internet service providers) για τη σύνδεση της τοποθεσίας και του ιστορικού περιήγησής σας με τη συσκευή σας."
-      ],
       "This was shown to you because your email subject line contains password reset keywords.": [
         "Αυτό εμφανίστηκε σε εσάς επειδή η γραμμή θέματος του email σας περιέχει λέξεις-κλειδιά επαναφοράς κωδικού πρόσβασης."
       ],
@@ -8346,9 +8263,6 @@
       ],
       "Trackers blocked:": [
         "Αποκλεισμένοι ιχνηλάτες:"
-      ],
-      "Tracking": [
-        "Παρακολούθηση"
       ],
       "Trash existing messages": [
         "Διαγράψτε υπάρχοντα μηνύματα"
@@ -8476,9 +8390,6 @@
       "Visa Secure logo": [
         "λογότυπο Visa Secure"
       ],
-      "VPN IP": [
-        "VPN IP"
-      ],
       "Warning": [
         "Προειδοποίηση"
       ],
@@ -8538,12 +8449,6 @@
       ],
       "When giving out your email, use a unique, disposable hide-my-email alias instead of your real email address.": [
         "΄Οταν δίνετε τη διεύθυνσή σας σε άλλους, χρησιμοποιήστε ένα μοναδικό και αναλώσιμο hide-my-email ψευδώνυμο, παρά την πραγματική σας διεύθυνση ηλεκτρονικού ταχυδρομείου."
-      ],
-      "When working remotely": [
-        "Όταν εργάζεστε εξ αποστάσεως"
-      ],
-      "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
-        "Όταν συνδέεστε στο VPN, χρησιμοποιεί τεχνολογία κρυπτογράφησης για να κρύψει τη διεύθυνση IP σας (ένας μοναδικός κωδικός που έχει εκχωρηθεί στη συσκευή σας)."
       ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Όταν ενεργοποιήσατε τα αξιόπιστα κλειδιά για ${ senderName }, τα δημόσια κλειδιά προστέθηκαν στα στοιχεία της επαφής."
@@ -8776,15 +8681,6 @@
       "Your information was found on ${ displayedDate }": [
         "Οι πληροφορίες σας βρέθηκαν στις ${ displayedDate }"
       ],
-      "Your internet service provider can monitor and sometimes sell your data, or even restrict what websites you can access.": [
-        "Ο πάροχος υπηρεσιών διαδικτύου σας μπορεί να παρακολουθεί και μερικές φορές να πουλά τα δεδομένα σας ή ακόμα και να περιορίζει τους ιστότοπους στους οποίους μπορείτε να έχετε πρόσβαση."
-      ],
-      "Your IP": [
-        "Η διεύθυνση IP σας"
-      ],
-      "Your IP address is visible and can be used to track your online activity.": [
-        "Η διεύθυνση IP σας είναι ορατή και μπορεί να χρησιμοποιηθεί για την παρακολούθηση της δραστηριότητάς σας στο διαδίκτυο."
-      ],
       "Your login information will not be saved after the import is completed.": [
         "Τα στοιχεία σύνδεσής σας δεν θα αποθηκευτούν μετά την ολοκλήρωση της εισαγωγής."
       ],
@@ -8804,17 +8700,11 @@
       "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
         "Η επόμενη ημερομηνία χρέωσης είναι ${ renewalTime }. Παρακαλούμε επικοινωνήστε με την υποστήριξη εάν χρειάζεστε άμεση αλλαγή πλάνου."
       ],
-      "Your online activity is protected": [
-        "Η δραστηριότητά σας στο διαδίκτυο προστατεύεται"
-      ],
       "Your password was leaked:": [
         "Ο κωδικός πρόσβασής σας διέρρευσε:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Ο αριθμός τηλεφώνου σας θα χρησιμοποιηθεί μόνο για αυτή την εφάπαξ επαλήθευση."
-      ],
-      "Your physical location is visible and can be used to restrict your access to the internet.": [
-        "Η φυσική σας τοποθεσία είναι ορατή και μπορεί να χρησιμοποιηθεί για να περιορίσει την πρόσβασή σας στο διαδίκτυο."
       ],
       "Your private writing assistant": [
         "Ο προσωπικός σας βοηθός γραφής"
@@ -9915,15 +9805,6 @@
       "Your domain": [
         "Ο τομέας σας"
       ],
-      "Your IP": [
-        "Η διεύθυνση IP σας"
-      ],
-      "Your ISP": [
-        "Ο ISP σας"
-      ],
-      "Your location": [
-        "Η τοποθεσία σας"
-      ],
       "Your password (admin)": [
         "Ο κωδικός σας (διαχειριστής)"
       ],
@@ -10397,6 +10278,10 @@
         "${ n } ενεργή σύσκεψη τη φορά",
         "${ n } ενεργή συσκέψεις τη φορά"
       ],
+      "${ n } participant": [
+        "${ n } συμμετέχων",
+        "${ n } συμμετέχοντες"
+      ],
       "24 hours per meeting": [
         "24 ώρες ανά σύσκεψη"
       ],
@@ -10405,6 +10290,9 @@
       ],
       "Appointment scheduling": [
         "Προγραμματισμός ραντεβού"
+      ],
+      "Booking pages": [
+        "Σελίδες κρατήσεων"
       ],
       "Browser, mobile, and desktop apps": [
         "Εφαρμογές για προγράμματα περιήγησης, κινητά και επιτραπέζιους υπολογιστές"
@@ -10415,8 +10303,8 @@
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "Κρυπτογραφημένη κοινή χρήση οθόνης διατερματικά και εφήμερη συνομιλία κατά τη διάρκεια της κλήσης"
       ],
-      "Meeting recording (coming soon)": [
-        "Ηχογράφηση συσκέψεων (σύντομα διαθέσιμη)"
+      "Meeting recording": [
+        "Ηχογράφηση σύσκεψης"
       ],
       "One active meeting at a time": [
         "Μία ενεργή σύσκεψη τη φορά"
@@ -12857,6 +12745,9 @@
       ]
     },
     "Search - no results": {
+      "An action is being processed": [
+        "Μια ενέργεια είναι υπό επεξεργασία"
+      ],
       "No messages found": [
         "Δεν βρέθηκαν μηνύματα"
       ],
@@ -14955,9 +14846,6 @@
       "Deleting contacts": [
         "Διαγραφή επαφών"
       ],
-      "Desktop": [
-        "Υπολογιστής"
-      ],
       "Disable categories?": [
         "Απενεργοποίηση κατηγοριών;"
       ],
@@ -14978,9 +14866,6 @@
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Λήψη εφαρμογών ${ DRIVE_APP_NAME }"
-      ],
-      "Download the app": [
-        "Λήψη της εφαρμογής"
       ],
       "Edit billing address": [
         "Επεξεργασία διεύθυνσης χρέωσης"
@@ -15063,9 +14948,6 @@
       "Get full access to ${ CALENDAR_APP_NAME }": [
         "Αποκτήστε πλήρη πρόσβαση στο ${ CALENDAR_APP_NAME }"
       ],
-      "Get more from your VPN": [
-        "Αποκτήστε περισσότερα από το VPN σας."
-      ],
       "Get the ${ appName[APP_NAME] } apps": [
         "Λήψη των ${ appName[APP_NAME] } εφαρμογών"
       ],
@@ -15089,9 +14971,6 @@
       ],
       "High security for your account": [
         "Υψηλή ασφάλεια για τον λογαριασμό σας"
-      ],
-      "How does it all work?": [
-        "Πώς λειτουργούν όλα;"
       ],
       "How does it work?": [
         "Πώς λειτουργεί;"
@@ -15160,9 +15039,6 @@
       "Load remote content": [
         "Φόρτωση απομακρυσμένου περιεχομένου"
       ],
-      "Make a secure connection your default": [
-        "Ορισμός ασφαλούς σύνδεσης ως προεπιλογής"
-      ],
       "Mark all messages as read": [
         "Επισήμανση όλων των μηνυμάτων ως αναγνωσμένα"
       ],
@@ -15204,9 +15080,6 @@
       ],
       "Minicalendar": [
         "Μίνι ημερολόγιο"
-      ],
-      "Mobile": [
-        "Κινητό"
       ],
       "More": [
         "Περισσότερα"
@@ -15363,9 +15236,6 @@
       ],
       "Priority support:": [
         "Υποστήριξη με προτεραιότητα:"
-      ],
-      "Private browsing vs VPN": [
-        "Ιδιωτική περιήγηση έναντι VPN"
       ],
       "Processing...": [
         "Γίνεται επεξεργασία..."
@@ -15629,9 +15499,6 @@
       "Verifying your payment...": [
         "Γίνεται επαλήθευση της πληρωμής σας..."
       ],
-      "VPN explained": [
-        "Επεξήγηση VPN"
-      ],
       "Warning": [
         "Προειδοποίηση"
       ],
@@ -15654,17 +15521,8 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "Καλώς ορίσατε στο ${ BRAND_NAME } για Business"
       ],
-      "What can a VPN protect you from?": [
-        "Από τι μπορεί να σας προστατεύσει ένα VPN;"
-      ],
-      "What is a VPN?": [
-        "Τι είναι το VPN;"
-      ],
       "What would you like to import?": [
         "Τι θα θέλατε να εισάγετε;"
-      ],
-      "When is it most important to use a VPN?": [
-        "Πότε είναι πιο σημαντικό να χρησιμοποιήσετε ένα VPN;"
       ],
       "You can now create unlimited folders and labels": [
         "Τώρα μπορείτε να δημιουργήσετε απεριόριστους φακέλους και ετικέτες"

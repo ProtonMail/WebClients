@@ -1502,8 +1502,7 @@
         "De confiança"
       ],
       "Trust key": [
-        "Clau de confiança",
-        "Claus de confiança"
+        "Marca com a clau de confiança"
       ],
       "Trust public key": [
         "Confia en la clau pública"
@@ -4242,17 +4241,6 @@
         "La vostra subscripció de ${ PLAN_NAMES[PLANS.PASS] } té un preu especial de ${ price } per any. En passar a un pla gratuït, perdreu el descompte permanentment, fins i tot si torneu a millorar el pla en el futur."
       ]
     },
-    "Drawer tab, Action": {
-      "Download for Linux": [
-        "Descarrega per a Linux"
-      ],
-      "Download for macOS": [
-        "Descarrega per al macOS"
-      ],
-      "Download for Windows": [
-        "Descarrega per a Windows"
-      ]
-    },
     "driveplus2024: Deal details": {
       "Extended version history": [
         "Historial de versions ampliat"
@@ -4994,14 +4982,14 @@
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Aquest missatge pot contenir adreces URL que no es puguin obrir amb el navegador actual."
       ],
+      "This offer is not available in your country": [
+        "Aquesta oferta no està disponible al vostre país"
+      ],
       "Trusted keys are not valid for sending": [
         "Les claus de confiança no són vàlides per enviar-les"
       ],
       "Try using only letters, numerals, and _.-": [
         "Intenteu utilitzar només lletres, numerals i _.-"
-      ],
-      "Unable to load VPN dashboard. Please check your connection and try again.": [
-        "No es pot carregar el tauler de control de VPN. Comproveu la vostra connexió i torneu-ho a provar."
       ],
       "Unexpected error, we can't import the contacts": [
         "S'ha produït un error inesperat. No es poden importar els contactes"
@@ -6587,9 +6575,6 @@
         "${ updated } contacte actualitzat amb èxit.",
         "${ updated } contactes actualitzats amb èxit."
       ],
-      "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
-        "${ VPN_APP_NAME } està emmascarant la vostra adreça IP, de manera que els llocs web no us poden identificar."
-      ],
       "(${ memberCount } member)": [
         "(${ memberCount } membre)",
         "(${ memberCount } membres)"
@@ -6609,12 +6594,6 @@
       "**${ total }** result found in ${ labelName }": [
         "S'ha trobat **${ total }** resultat a ${ labelName }",
         "S'han trobat **${ total }** resultats a ${ labelName }"
-      ],
-      "**Auto-connect**: Opens and connects to VPN as soon as you turn on your device.": [
-        "**Connexió automàtica**: s'obre i es connecta a la VPN tan bon punt encengueu el dispositiu."
-      ],
-      "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
-        "**Interruptor de bloqueig (kill switch)**: atura les filtracions de dades en bloquejar la connexió a Internet si la VPN es desconnecta sobtadament."
       ],
       "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
         "**Pas 1:** Convideu amistats a ${ BRAND_NAME } amb el vostre enllaç de recomanació."
@@ -6647,20 +6626,8 @@
       "A request to unsubscribe from this mailing list will be sent to the sender of the newsletter and automatically processed.": [
         "S'enviarà una sol·licitud per cancel·lar la subscripció al remitent de la llista de correu i es processarà automàticament."
       ],
-      "A secure connection is essential when working remotely. A VPN protects company data from cyber threats and keeps your work private.": [
-        "Una connexió segura és essencial quan es treballa a distància. Una VPN protegeix les dades de l'empresa de les amenaces cibernètiques i manté la vostra feina privada."
-      ],
       "A user is an account associated with a single username, mailbox, and person": [
         "Un usuari és un compte associat amb un sol nom d'usuari, una bústia de correu i una persona"
-      ],
-      "A VPN encrypts your connection and hides your IP address, making it much harder for anyone to track or monitor your browsing.": [
-        "Una VPN xifra la vostra connexió i amaga la vostra adreça IP, cosa que fa molt més difícil per a qualsevol rastrejar o supervisar la vostra navegació."
-      ],
-      "A VPN hides your IP address and encrypts your browsing activity, making it harder for websites, advertisers, and ISPs to track you over time.": [
-        "Una VPN amaga la vostra adreça IP i xifra la vostra activitat de navegació, cosa que dificulta que els llocs web, els anunciants i els ISP us facin un seguiment al llarg del temps."
-      ],
-      "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
-        "Una VPN és un túnel segur entre el vostre dispositiu i internet. Oculta la vostra ubicació i activitat al vostre proveïdor de serveis d'internet (ISP) i als llocs web que visiteu."
       ],
       "Access 6,500+ high-speed servers on up to 10 devices to keep your browsing data safe. Available on ${ ios }, ${ android }, ${ appleTV }, and ${ desktop }.": [
         "Accediu a més de 6,500 servidors d'alta velocitat en fins a 10 dispositius per mantenir les vostres dades de navegació segures. Disponible a ${ ios }, ${ android }, ${ appleTV } i ${ desktop }."
@@ -6674,9 +6641,6 @@
       "Active": [
         "Actiu"
       ],
-      "Ad targeting": [
-        "Orientació d'anuncis"
-      ],
       "Add image URL": [
         "Afegeix l'URL de la imatge"
       ],
@@ -6688,9 +6652,6 @@
       ],
       "Addresses settings": [
         "Preferències d'adreces"
-      ],
-      "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
-        "Els anunciants fan un seguiment de la vostra navegació per mostrar anuncis orientats. ${ VPN_APP_NAME } bloqueja els rastrejadors i els anuncis, cosa que fa la connexió més ràpida i millora l'experiència en línia."
       ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "Assistent amb intel·ligència artificial per ajudar-vos a crear millors correus electrònics, de manera ràpida i sense esforç."
@@ -6937,9 +6898,6 @@
       ],
       "Confirm phishing report": [
         "Confirmeu l'informe de suplantació d'identitat"
-      ],
-      "Connect to ${ VPN_APP_NAME } to browse privately": [
-        "Connecteu-vos a ${ VPN_APP_NAME } per navegar en privat."
       ],
       "Consider when's the best time for your recipient to receive your email, and schedule it to be sent then.": [
         "Tingueu en compte quan serà el millor moment perquè el destinatari rebi el correu electrònic i programeu-ne l'enviament."
@@ -7274,9 +7232,6 @@
       "Generate text": [
         "Genera text"
       ],
-      "Geoblocking": [
-        "Geobloqueig"
-      ],
       "Get it on Google Play": [
         "Obteniu-la a Google Play"
       ],
@@ -7288,9 +7243,6 @@
       ],
       "Google Pay mark": [
         "Marca de Google Pay"
-      ],
-      "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
-        "Els governs i els ISP poden controlar la vostra activitat en línia. En amagar la vostra IP real i xifrar la vostra activitat, la vostra navegació esdevé privada."
       ],
       "Has ${ numAttachments } attachment (${ numAttachmentsSize })": [
         "Té ${ numAttachments } fitxer adjunt (${ numAttachmentsSize })",
@@ -7369,9 +7321,6 @@
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "S'estan important les vostres dades des de ${ fromEmail } a ${ toEmail }."
       ],
-      "In restrictive countries": [
-        "En països amb restriccions"
-      ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "Al següent pas, podreu enviar un dipòsit utilitzant una adreça de Bitcoin."
       ],
@@ -7409,7 +7358,8 @@
         "S'està inicialitzant…"
       ],
       "Insert image": [
-        "Insereix una imatge"
+        "Insereix una imatge",
+        "Insereix imatges"
       ],
       "Insert link": [
         "Insereix un enllaç"
@@ -7431,9 +7381,6 @@
       ],
       "It's better to have:": [
         "És millor tenir:"
-      ],
-      "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
-        "El millor és utilitzar una VPN en tot moment. Però aquí és quan les amenaces de ciberseguretat poden ser majors:"
       ],
       "JCB logo": [
         "Logotip de JCB"
@@ -7585,9 +7532,6 @@
       "More refine actions": [
         "Accions més optimitzades"
       ],
-      "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
-        "La majoria de les xarxes wifi públiques són segures, però algunes no tenen seguretat, la qual cosa us exposa a amenaces cibernètiques. Una VPN xifra el vostre trànsit, mantenint-vos protegit."
-      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Poseu un nom a la vostra nova carpeta i seleccioneu la carpeta principal a la qual vulgueu introduir-la. Si no seleccioneu una carpeta principal, aquesta nova carpeta es crearà com a carpeta de primer nivell."
       ],
@@ -7654,9 +7598,6 @@
       "Not a valid URL": [
         "No és un URL vàlid."
       ],
-      "Not connected": [
-        "Sense connexió"
-      ],
       "Number of dedicated servers in the organization": [
         "Nombre de servidors dedicats a l'organització"
       ],
@@ -7668,9 +7609,6 @@
       ],
       "of": [
         "de"
-      ],
-      "On public WiFi networks": [
-        "A les xarxes wifi públiques"
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Una o més de les vostres claus de confiança han estat marcades com a \"compromeses\" pel seu propietari. Us recomanem que marqueu aquestes claus com a \"no confiables\"."
@@ -7793,6 +7731,9 @@
       "Please use another browser or download the file.": [
         "Utilitzeu un altre navegador o descarregueu el fitxer."
       ],
+      "Please wait for the action to be completed": [
+        "Espereu que finalitzi l'acció"
+      ],
       "Please wait till your changes are synced with the server.": [
         "Espereu fins que els canvis s'hagin sincronitzat amb el servidor."
       ],
@@ -7825,9 +7766,6 @@
       ],
       "Print email": [
         "Imprimeix el correu electrònic"
-      ],
-      "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
-        "La navegació privada (o mode «incògnit») només és útil per mantenir la vostra activitat amagada al dispositiu. Impedeix que el vostre navegador desi l'historial i les galetes, però no us fa invisible. El vostre ISP, l'administrador de xarxa i els llocs web que visiteu encara poden veure el que feu en línia."
       ],
       "Proofread selection": [
         "Reviseu la selecció"
@@ -7900,9 +7838,6 @@
       ],
       "Saving draft": [
         "S'està desant l'esborrany"
-      ],
-      "Scan the QR code with your mobile device": [
-        "Escanegeu el codi QR amb el vostre dispositiu mòbil"
       ],
       "Scheduled send of this message will be canceled.": [
         "L'enviament programat d'aquest missatge es cancel·larà."
@@ -8016,12 +7951,6 @@
       "Snoozing this conversation will be canceled.": [
         "Es cancel·larà l'ajornament d'aquesta conversa."
       ],
-      "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
-        "Alguns governs bloquegen o restringeixen l'accés a determinats llocs web. Una VPN ajuda a evitar la censura mentre manté la vostra activitat i identitat privades."
-      ],
-      "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
-        "Alguns llocs web i serveis d'estríming bloquegen els continguts per regió. Una VPN us permet evitar aquestes restriccions i accedir a internet lliurement."
-      ],
       "Sorry, this message does not exist or has already expired.": [
         "Aquest missatge no existeix o ja ha caducat."
       ],
@@ -8030,9 +7959,6 @@
       ],
       "Start using the shorter, catchier version of your email address.": [
         "Comenceu a usar la versió més curta i fàcil de recordar de la vostra adreça."
-      ],
-      "Stay connected effortlessly by enabling the following VPN settings:": [
-        "Mantingueu-vos connectat fàcilment activant la configuració següent de la VPN:"
       ],
       "Storage capabilities are not supported in this browser, we need this support to enable message content search.": [
         "Les capacitats d'emmagatzematge no són compatibles amb aquest navegador. Necessitem aquest suport per activar la cerca de contingut dels missatges."
@@ -8067,9 +7993,6 @@
       ],
       "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
         "La vostra subscripció és a punt de finalitzar: per mantenir els avantatges del pla ${ planName }, reinicieu-la a Google Play Store abans del ${ byDate }. ${ reactivateLink }"
-      ],
-      "Surveillance": [
-        "Vigilància"
       ],
       "Symbols (#$&)": [
         "Símbols (#$&)"
@@ -8202,9 +8125,6 @@
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Aquest enllaç pot ser un atac de homògraf. Si esteu segurs que l’enllaç és el que vols, o no l'obriu."
       ],
-      "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
-        "Això vol dir que el vostre proveïdor d'accés a internet i els llocs web que visiteu no poden connectar la vostra informació personal amb la vostra activitat en línia."
-      ],
       "This message has been adjusted to comply with a dark background.": [
         "Aquest missatge s'ha modificat perquè s'ajusti a un fons fosc."
       ],
@@ -8281,9 +8201,6 @@
       "This sender's public key has not been trusted yet.": [
         "La clau pública d'aquest remitent encara no és de confiança."
       ],
-      "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
-        "Aquest codi únic el poden utilitzar els llocs web i els ISP (proveïdors de serveis d'internet) per a enllaçar la vostra ubicació i l'historial de navegació al vostre dispositiu."
-      ],
       "This was shown to you because your email subject line contains password reset keywords.": [
         "Se us ha mostrat això perquè la línia d'assumpte del vostre correu electrònic conté paraules clau de restabliment de la contrasenya."
       ],
@@ -8346,9 +8263,6 @@
       ],
       "Trackers blocked:": [
         "S'han bloquejat els rastrejadors:"
-      ],
-      "Tracking": [
-        "Seguiment"
       ],
       "Trash existing messages": [
         "Envia els missatges existents a la paperera"
@@ -8476,9 +8390,6 @@
       "Visa Secure logo": [
         "Logo de Visa Secure"
       ],
-      "VPN IP": [
-        "IP de VPN"
-      ],
       "Warning": [
         "Advertència"
       ],
@@ -8538,12 +8449,6 @@
       ],
       "When giving out your email, use a unique, disposable hide-my-email alias instead of your real email address.": [
         "Quan doneu l'adreça de correu electrònic, utilitzeu un àlies hide-my-email únic d'un sol ús en lloc de la vostra adreça real."
-      ],
-      "When working remotely": [
-        "Quan es treballa a distància"
-      ],
-      "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
-        "Quan us connecteu a la VPN, aquesta utilitza tecnologia de xifratge per ocultar la vostra adreça IP (un codi únic assignat al vostre dispositiu)."
       ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Quan vau activar les claus de confiança per a ${ senderName }, es van afegir les claus públiques a les dades del contacte."
@@ -8776,15 +8681,6 @@
       "Your information was found on ${ displayedDate }": [
         "La vostra informació es va trobar el ${ displayedDate }"
       ],
-      "Your internet service provider can monitor and sometimes sell your data, or even restrict what websites you can access.": [
-        "El vostre proveïdor de serveis d'internet pot supervisar i, de vegades, vendre les vostres dades o, fins i tot, restringir els llocs web als quals podeu accedir."
-      ],
-      "Your IP": [
-        "La vostra IP"
-      ],
-      "Your IP address is visible and can be used to track your online activity.": [
-        "La vostra adreça IP és visible i es pot utilitzar per fer un seguiment de la vostra activitat en línia."
-      ],
       "Your login information will not be saved after the import is completed.": [
         "La vostra informació d'inici de sessió no es desarà quan s'hagi completat la importació."
       ],
@@ -8804,17 +8700,11 @@
       "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
         "La pròxima data de facturació és el ${ renewalTime }. Poseu-vos en contacte amb el servei d'assistència si necessiteu un canvi de pla immediat."
       ],
-      "Your online activity is protected": [
-        "La vostra activitat en línia està protegida."
-      ],
       "Your password was leaked:": [
         "S'ha filtrat la vostra contrasenya:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "El vostre número de telèfon només s’utilitzarà per a aquesta única verificació."
-      ],
-      "Your physical location is visible and can be used to restrict your access to the internet.": [
-        "La vostra ubicació física és visible i es pot utilitzar per restringir l'accés a internet."
       ],
       "Your private writing assistant": [
         "El vostre assistent d'escriptura privat"
@@ -9915,15 +9805,6 @@
       "Your domain": [
         "El vostre domini"
       ],
-      "Your IP": [
-        "La vostra IP"
-      ],
-      "Your ISP": [
-        "El vostre proveïdor d'accés a internet"
-      ],
-      "Your location": [
-        "La vostra ubicació"
-      ],
       "Your password (admin)": [
         "La vostra contrasenya (administrador)"
       ],
@@ -10397,6 +10278,10 @@
         "${ n } reunió activa alhora",
         "${ n } reunions actives alhora"
       ],
+      "${ n } participant": [
+        "${ n } participant",
+        "${ n } participants"
+      ],
       "24 hours per meeting": [
         "24 hores per reunió"
       ],
@@ -10405,6 +10290,9 @@
       ],
       "Appointment scheduling": [
         "Programació de cites"
+      ],
+      "Booking pages": [
+        "Pàgines de reserves"
       ],
       "Browser, mobile, and desktop apps": [
         "Aplicacions de navegador, de mòbil i d'escriptori"
@@ -10415,8 +10303,8 @@
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "Compartició de pantalla xifrada d’extrem a extrem i xat efímer durant la trucada"
       ],
-      "Meeting recording (coming soon)": [
-        "Gravació de la reunió (pròximament)"
+      "Meeting recording": [
+        "Enregistrament de la reunió"
       ],
       "One active meeting at a time": [
         "Una reunió activa alhora"
@@ -12857,6 +12745,9 @@
       ]
     },
     "Search - no results": {
+      "An action is being processed": [
+        "S'està processant una acció"
+      ],
       "No messages found": [
         "No s'ha trobat cap missatge."
       ],
@@ -14955,9 +14846,6 @@
       "Deleting contacts": [
         "Eliminant contactes"
       ],
-      "Desktop": [
-        "Escriptori"
-      ],
       "Disable categories?": [
         "Voleu deshabilitar les categories?"
       ],
@@ -14978,9 +14866,6 @@
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Descarregueu aplicacions de ${ DRIVE_APP_NAME }"
-      ],
-      "Download the app": [
-        "Descarrega l'aplicació"
       ],
       "Edit billing address": [
         "Edita l'adreça de la factura"
@@ -15063,9 +14948,6 @@
       "Get full access to ${ CALENDAR_APP_NAME }": [
         "Obtingueu accés complet a ${ CALENDAR_APP_NAME }"
       ],
-      "Get more from your VPN": [
-        "Obteniu més de la vostra VPN"
-      ],
       "Get the ${ appName[APP_NAME] } apps": [
         "Obteniu les aplicacions ${ appName[APP_NAME] }"
       ],
@@ -15089,9 +14971,6 @@
       ],
       "High security for your account": [
         "Seguretat alta per al vostre compte"
-      ],
-      "How does it all work?": [
-        "Com funciona tot?"
       ],
       "How does it work?": [
         "Com funciona?"
@@ -15160,9 +15039,6 @@
       "Load remote content": [
         "Carrega el contingut remot"
       ],
-      "Make a secure connection your default": [
-        "Feu d'una connexió segura l'opció predeterminada"
-      ],
       "Mark all messages as read": [
         "Marca tots els missatges com a llegits"
       ],
@@ -15204,9 +15080,6 @@
       ],
       "Minicalendar": [
         "Minicalendari"
-      ],
-      "Mobile": [
-        "Mòbil"
       ],
       "More": [
         "Més"
@@ -15363,9 +15236,6 @@
       ],
       "Priority support:": [
         "Suport prioritari:"
-      ],
-      "Private browsing vs VPN": [
-        "Navegació privada i VPN"
       ],
       "Processing...": [
         "Processant..."
@@ -15629,9 +15499,6 @@
       "Verifying your payment...": [
         "S'està verificant el pagament..."
       ],
-      "VPN explained": [
-        "Explicacions sobre la VPN"
-      ],
       "Warning": [
         "Advertència"
       ],
@@ -15654,17 +15521,8 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "Us donem la benvinguda a ${ BRAND_NAME } for Business"
       ],
-      "What can a VPN protect you from?": [
-        "De què us pot protegir una VPN?"
-      ],
-      "What is a VPN?": [
-        "Què és una VPN?"
-      ],
       "What would you like to import?": [
         "Què li agradaria importar?"
-      ],
-      "When is it most important to use a VPN?": [
-        "Quan és més important utilitzar una VPN?"
       ],
       "You can now create unlimited folders and labels": [
         "Ara podeu crear carpetes i etiquetes il·limitades."

@@ -1501,10 +1501,6 @@
       "Trust": [
         "Klarér"
       ],
-      "Trust key": [
-        "Klarér nøkkel",
-        "Klarér nøkler"
-      ],
       "Trust public key": [
         "Klarér offentlig nøkkel"
       ],
@@ -4242,17 +4238,6 @@
         "Abonnementet ditt på ${ PLAN_NAMES[PLANS.PASS] } har en spesiell pris på ${ price } i året. Hvis du nedgraderer til Free, mister du rabatten for godt, selv om du oppgraderer på nytt i fremtiden."
       ]
     },
-    "Drawer tab, Action": {
-      "Download for Linux": [
-        "Last ned for Linux"
-      ],
-      "Download for macOS": [
-        "Last ned for macOS"
-      ],
-      "Download for Windows": [
-        "Last ned for Windows"
-      ]
-    },
     "driveplus2024: Deal details": {
       "Extended version history": [
         "Utvidet versjonshistorikk"
@@ -4999,9 +4984,6 @@
       ],
       "Try using only letters, numerals, and _.-": [
         "Prøv å bruke bare bokstaver, tall og _.-"
-      ],
-      "Unable to load VPN dashboard. Please check your connection and try again.": [
-        "Kan ikke laste VPN-kontrollpanelet. Kontroller tilkoblingen og prøv på nytt."
       ],
       "Unexpected error, we can't import the contacts": [
         "Uventet feil, vi kan ikke importere kontaktene"
@@ -6587,9 +6569,6 @@
         "${ updated } kontakt oppdatert",
         "${ updated } kontakter oppdatert"
       ],
-      "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
-        "${ VPN_APP_NAME } maskerer IP-adressen din, slik at nettsteder ikke kan identifisere deg."
-      ],
       "(${ memberCount } member)": [
         "(${ memberCount } medlem)",
         "(${ memberCount } medlemmer)"
@@ -6609,12 +6588,6 @@
       "**${ total }** result found in ${ labelName }": [
         "**${ total }** resultat funnet i ${ labelName }",
         "**${ total }** resultater funnet i ${ labelName }"
-      ],
-      "**Auto-connect**: Opens and connects to VPN as soon as you turn on your device.": [
-        "**Automatisk tilkobling**: åpnes og kobles til VPN så snart du slår på enheten."
-      ],
-      "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
-        "**Nødstopp**: stopper datalekkasjer ved å blokkere internett hvis VPN-en dropper ut uventet."
       ],
       "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
         "**Trinn 1:** Inviter vennene dine til ${ BRAND_NAME } med vervekoblingen."
@@ -6647,20 +6620,8 @@
       "A request to unsubscribe from this mailing list will be sent to the sender of the newsletter and automatically processed.": [
         "En forespørsel om å melde deg av denne e-postlisten vil bli sendt til avsenderen av nyhetsbrevet og automatisk behandlet."
       ],
-      "A secure connection is essential when working remotely. A VPN protects company data from cyber threats and keeps your work private.": [
-        "En sikker tilkobling er avgjørende når du jobber eksternt. Et VPN beskytter bedriftsdata mot cybertrusler og holder arbeidet ditt privat."
-      ],
       "A user is an account associated with a single username, mailbox, and person": [
         "En bruker er en konto assosiert med et enkelt brukernavn, postboks og person"
-      ],
-      "A VPN encrypts your connection and hides your IP address, making it much harder for anyone to track or monitor your browsing.": [
-        "Et VPN krypterer tilkoblingen din og skjuler IP-adressen, noe som gjør det mye vanskeligere for noen å spore eller overvåke surfingen din."
-      ],
-      "A VPN hides your IP address and encrypts your browsing activity, making it harder for websites, advertisers, and ISPs to track you over time.": [
-        "Et VPN skjuler IP-adressen din og krypterer nettleseraktiviteten, noe som gjør det vanskeligere for nettsteder, annonsører og Internett-leverandører å spore deg over tid."
-      ],
-      "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
-        "Et VPN er en sikker tunnel mellom enheten din og internett. Den skjuler posisjonen og aktiviteten din for internettleverandøren din (ISP) og nettstedene du besøker."
       ],
       "Access 6,500+ high-speed servers on up to 10 devices to keep your browsing data safe. Available on ${ ios }, ${ android }, ${ appleTV }, and ${ desktop }.": [
         "Få tilgang til 6,500+ høyhastighetstjenere på opptil 10 enheter for å holde nettleserdataene dine trygge. Tilgjengelig på ${ ios }, ${ android }, ${ appleTV } og ${ desktop }."
@@ -6674,9 +6635,6 @@
       "Active": [
         "Aktiv"
       ],
-      "Ad targeting": [
-        "Annonsemålretting"
-      ],
       "Add image URL": [
         "Legg til bildenettadresse"
       ],
@@ -6688,9 +6646,6 @@
       ],
       "Addresses settings": [
         "Adresseinnstillinger"
-      ],
-      "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
-        "Annonsører sporer surfingen din for å vise målrettede annonser. ${ VPN_APP_NAME } blokkerer sporere og annonser, noe som gjør tilkoblingen din raskere og forbedrer nettopplevelsen din."
       ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "KI-drevet assistent for å hjelpe deg med å lage bedre e-poster, raskt og enkelt."
@@ -6937,9 +6892,6 @@
       ],
       "Confirm phishing report": [
         "Bekreft rapporten om nettfisking"
-      ],
-      "Connect to ${ VPN_APP_NAME } to browse privately": [
-        "Koble til ${ VPN_APP_NAME } for å surfe privat"
       ],
       "Consider when's the best time for your recipient to receive your email, and schedule it to be sent then.": [
         "Vurder når det er best for mottakeren å motta e-posten din, og planlegg at den skal sendes da."
@@ -7274,9 +7226,6 @@
       "Generate text": [
         "Generer tekst"
       ],
-      "Geoblocking": [
-        "Geoblokkering"
-      ],
       "Get it on Google Play": [
         "Hent den på Google Play"
       ],
@@ -7288,9 +7237,6 @@
       ],
       "Google Pay mark": [
         "Merk Google Pay"
-      ],
-      "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
-        "Myndigheter og Internett-leverandører kan overvåke nettaktiviteten din. Ved å skjule din virkelige IP og kryptere aktiviteten din blir surfingen privat."
       ],
       "Has ${ numAttachments } attachment (${ numAttachmentsSize })": [
         "Har ${ numAttachments } vedlegg (${ numAttachmentsSize })",
@@ -7369,9 +7315,6 @@
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Importerer dine data fra ${ fromEmail } til ${ toEmail }."
       ],
-      "In restrictive countries": [
-        "I restriktive land"
-      ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "I neste trinn, vil du kunne sende inn et innskudd ved å bruke en Bitcoin-adresse."
       ],
@@ -7409,7 +7352,8 @@
         "Initialiserer…"
       ],
       "Insert image": [
-        "Sett inn bilde"
+        "Sett inn bilde",
+        "Sett inn bilder"
       ],
       "Insert link": [
         "Sett inn kobling"
@@ -7431,9 +7375,6 @@
       ],
       "It's better to have:": [
         "Det er bedre å ha:"
-      ],
-      "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
-        "Det er best å bruke et VPN til enhver tid. Men her er når cybersikkerhetstrusler kan være høyest:"
       ],
       "JCB logo": [
         "JCB-logo"
@@ -7585,9 +7526,6 @@
       "More refine actions": [
         "Flere finjusteringshandlinger"
       ],
-      "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
-        "De fleste offentlige WiFi-nettverk er trygge, men noen mangler sikkerhet, noe som utsetter deg for cybertrusler. Et VPN krypterer trafikken din og holder deg beskyttet."
-      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Gi den nye mappen et navn, og velg den overordnede mappen du vil legge den i. Hvis du ikke velger en overordnet mappe, opprettes denne nye mappen som en mappe på øverste nivå."
       ],
@@ -7654,9 +7592,6 @@
       "Not a valid URL": [
         "Ikke en gyldig nettadresse"
       ],
-      "Not connected": [
-        "Ikke tilkoblet"
-      ],
       "Number of dedicated servers in the organization": [
         "Antall dedikerte tjenere i organisasjonen"
       ],
@@ -7668,9 +7603,6 @@
       ],
       "of": [
         "av"
-      ],
-      "On public WiFi networks": [
-        "På offentlige Wi-Fi-nettverk"
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "En eller flere av de betrodde nøklene dine ble merket \"kompromittert\" av eieren. Vi anbefaler at du \"ikke stoler på\" disse nøklene."
@@ -7826,9 +7758,6 @@
       "Print email": [
         "Skriv ut e-post"
       ],
-      "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
-        "Privat surfing (eller \"inkognitomodus\") er bare nyttig for å holde aktiviteten din skjult på enheten din. Det hindrer nettleseren din i å lagre historikk og informasjonskapsler, men det gjør deg ikke usynlig. Internett-leverandøren, nettverksadministratoren og nettstedene du besøker, kan fortsatt se hva du gjør på nettet."
-      ],
       "Proofread selection": [
         "Korrekturles utvalg"
       ],
@@ -7900,9 +7829,6 @@
       ],
       "Saving draft": [
         "Lagrer utkast"
-      ],
-      "Scan the QR code with your mobile device": [
-        "Skann QR-koden med mobilenheten din"
       ],
       "Scheduled send of this message will be canceled.": [
         "Planlagt sending av denne meldingen avbrytes."
@@ -8016,12 +7942,6 @@
       "Snoozing this conversation will be canceled.": [
         "Slumring av denne samtalen vil bli kansellert."
       ],
-      "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
-        "Noen myndigheter blokkerer eller begrenser tilgangen til visse nettsteder. Et VPN hjelper til med å omgå sensur samtidig som aktiviteten og identiteten din holdes privat."
-      ],
-      "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
-        "Noen nettsteder og strømmetjenester blokkerer innhold etter region. Et VPN lar deg omgå disse begrensningene og gir fri tilgang til internett."
-      ],
       "Sorry, this message does not exist or has already expired.": [
         "Beklager, denne meldingen finnes ikke eller har løpt ut."
       ],
@@ -8030,9 +7950,6 @@
       ],
       "Start using the shorter, catchier version of your email address.": [
         "Bruk en kortere og mer fengende versjon av e-postadressen din."
-      ],
-      "Stay connected effortlessly by enabling the following VPN settings:": [
-        "Hold deg tilkoblet uten problemer ved å aktivere følgende VPN-innstillinger:"
       ],
       "Storage capabilities are not supported in this browser, we need this support to enable message content search.": [
         "Lagringsfunksjoner støttes ikke i denne nettleseren, vi trenger denne støtten for å aktivere søk etter meldingsinnhold."
@@ -8067,9 +7984,6 @@
       ],
       "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
         "Abonnementet avsluttes: For å beholde fordelene med ${ planName }, start abonnementet på nytt i Google Play Store innen ${ byDate }. ${ reactivateLink }"
-      ],
-      "Surveillance": [
-        "Overvåking"
       ],
       "Symbols (#$&)": [
         "Symboler (#$&)"
@@ -8202,9 +8116,6 @@
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Denne koblingen kan være et homografangrep. Kontroller at dette er koblingen du ønsker å besøke, eller la være å åpne den."
       ],
-      "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
-        "Dette betyr at Internett-leverandøren din og nettstedene du besøker, ikke kan koble personopplysningene dine til nettaktiviteten din."
-      ],
       "This message has been adjusted to comply with a dark background.": [
         "Denne meldingen er justert for å overholde en mørk bakgrunn."
       ],
@@ -8281,9 +8192,6 @@
       "This sender's public key has not been trusted yet.": [
         "Denne avsenderens offentlige nøkkel er ikke klarert enda."
       ],
-      "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
-        "Denne unike koden kan brukes av nettsteder og Internett-leverandører for å koble posisjonen og nettleserloggen din til enheten din."
-      ],
       "This was shown to you because your email subject line contains password reset keywords.": [
         "Dette ble vist til deg fordi emnelinjen i e-posten inneholder nøkkelord for tilbakestilling av passord."
       ],
@@ -8346,9 +8254,6 @@
       ],
       "Trackers blocked:": [
         "Sporere blokkert:"
-      ],
-      "Tracking": [
-        "Sporing"
       ],
       "Trash existing messages": [
         "Slett eksisterende meldinger"
@@ -8476,9 +8381,6 @@
       "Visa Secure logo": [
         "Visa Secure logo"
       ],
-      "VPN IP": [
-        "VPN-IP"
-      ],
       "Warning": [
         "Advarsel"
       ],
@@ -8538,12 +8440,6 @@
       ],
       "When giving out your email, use a unique, disposable hide-my-email alias instead of your real email address.": [
         "Når du gir ut e-posten din, bruk et unikt, engangs hide-my-email-alias i stedet for din virkelige e-postadresse."
-      ],
-      "When working remotely": [
-        "Når du jobber eksternt"
-      ],
-      "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
-        "Når du kobler til VPN, bruker det krypteringsteknologi for å skjule IP-adressen din (en unik kode som er tildelt enheten din)."
       ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Når du aktiverte klarerte nøkler for ${ senderName }, ble de offentlige nøklene lagt til i kontaktdetaljene."
@@ -8776,15 +8672,6 @@
       "Your information was found on ${ displayedDate }": [
         "Informasjonen din ble funnet den ${ displayedDate }."
       ],
-      "Your internet service provider can monitor and sometimes sell your data, or even restrict what websites you can access.": [
-        "Internett-leverandøren din kan overvåke og noen ganger selge dataene dine, eller til og med begrense hvilke nettsteder du har tilgang til."
-      ],
-      "Your IP": [
-        "IP-en din"
-      ],
-      "Your IP address is visible and can be used to track your online activity.": [
-        "IP-adressen din er synlig og kan brukes til å spore nettaktiviteten din."
-      ],
       "Your login information will not be saved after the import is completed.": [
         "Påloggingsinformasjonen lagres ikke etter at importen er fullført."
       ],
@@ -8804,17 +8691,11 @@
       "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
         "Neste faktureringsdato er ${ renewalTime }. Ta kontakt med kundestøtte hvis du trenger en umiddelbar planendring."
       ],
-      "Your online activity is protected": [
-        "Nettaktiviteten din er beskyttet"
-      ],
       "Your password was leaked:": [
         "Passordet ditt ble lekket:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Telefonnummeret ditt vil kun bli brukt til denne engangsbekreftelsen."
-      ],
-      "Your physical location is visible and can be used to restrict your access to the internet.": [
-        "Din fysiske plassering er synlig og kan brukes til å begrense tilgangen din til internett."
       ],
       "Your private writing assistant": [
         "Din private skriveassistent"
@@ -9915,15 +9796,6 @@
       "Your domain": [
         "Ditt domene"
       ],
-      "Your IP": [
-        "IP-en din"
-      ],
-      "Your ISP": [
-        "Internettleverandøren din"
-      ],
-      "Your location": [
-        "Plasseringen din"
-      ],
       "Your password (admin)": [
         "Ditt passord (admin)"
       ],
@@ -10414,9 +10286,6 @@
       ],
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "Ende-til-ende-kryptert skjermdeling og kortvarig chat under samtaler"
-      ],
-      "Meeting recording (coming soon)": [
-        "Møteopptak (kommer snart)"
       ],
       "One active meeting at a time": [
         "Ett aktivt møte om gangen"
@@ -14955,9 +14824,6 @@
       "Deleting contacts": [
         "Sletter kontakter"
       ],
-      "Desktop": [
-        "Skrivebord"
-      ],
       "Disable categories?": [
         "Deaktivere kategorier?"
       ],
@@ -14978,9 +14844,6 @@
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Last ned ${ DRIVE_APP_NAME }-appen"
-      ],
-      "Download the app": [
-        "Last ned appen"
       ],
       "Edit billing address": [
         "Rediger faktureringsadresse"
@@ -15063,9 +14926,6 @@
       "Get full access to ${ CALENDAR_APP_NAME }": [
         "Få full tilgang til ${ CALENDAR_APP_NAME }"
       ],
-      "Get more from your VPN": [
-        "Får mer ut av ditt VPN"
-      ],
       "Get the ${ appName[APP_NAME] } apps": [
         "Skaff deg ${ appName[APP_NAME] }-appene"
       ],
@@ -15089,9 +14949,6 @@
       ],
       "High security for your account": [
         "Høy sikkerhet for kontoen din"
-      ],
-      "How does it all work?": [
-        "Hvordan fungerer alt?"
       ],
       "How does it work?": [
         "Hvordan fungerer det?"
@@ -15160,9 +15017,6 @@
       "Load remote content": [
         "Last eksternt innhold"
       ],
-      "Make a secure connection your default": [
-        "Gjør en sikker tilkobling til standard"
-      ],
       "Mark all messages as read": [
         "Merk alle meldinger som lest"
       ],
@@ -15204,9 +15058,6 @@
       ],
       "Minicalendar": [
         "Minikalender"
-      ],
-      "Mobile": [
-        "Mobil"
       ],
       "More": [
         "Mer"
@@ -15363,9 +15214,6 @@
       ],
       "Priority support:": [
         "Prioritert brukerstøtte:"
-      ],
-      "Private browsing vs VPN": [
-        "Privat surfing kontra VPN"
       ],
       "Processing...": [
         "Behandler..."
@@ -15629,9 +15477,6 @@
       "Verifying your payment...": [
         "Verifiserer betalingen din..."
       ],
-      "VPN explained": [
-        "VPN forklart"
-      ],
       "Warning": [
         "Advarsel"
       ],
@@ -15654,17 +15499,8 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "Velkommen til ${ BRAND_NAME } for Business"
       ],
-      "What can a VPN protect you from?": [
-        "Hva kan et VPN beskytte deg mot?"
-      ],
-      "What is a VPN?": [
-        "Hva er et VPN?"
-      ],
       "What would you like to import?": [
         "Hva ønsker du å importere?"
-      ],
-      "When is it most important to use a VPN?": [
-        "Når er det viktigst å bruke et VPN?"
       ],
       "You can now create unlimited folders and labels": [
         "Du kan nå opprette ubegrenset antall mapper og etiketter"
