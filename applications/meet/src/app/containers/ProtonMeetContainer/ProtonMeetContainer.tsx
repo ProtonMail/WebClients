@@ -593,7 +593,7 @@ export const ProtonMeetContainer = ({
                         type: 'warning',
                         text: c('Warning').t`The host has removed you from the meeting`,
                     });
-                } else if (reason !== undefined) {
+                } else if (reason !== undefined && reason !== DisconnectReason.CLIENT_INITIATED) {
                     // Log abnormal error to sentry
                     reportMeetError('Room disconnected unexpectedly', DisconnectReason[reason]);
                 }
