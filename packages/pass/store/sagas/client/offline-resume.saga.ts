@@ -13,9 +13,12 @@ function* offlineResumeWorker(options: RootSagaOptions, { payload, meta }: Retur
 
     try {
         if ((yield auth.resumeSession(localID, { retryable: false })) as boolean) {
+            /** Network errors during hydration (getUserData, getOrganization) are handled
+             * gracefully with cached fallbacks. Any errors escaping from hydration are true
+             * terminal failures which should soft logout to clear the corrupted state. */
             yield hydrate(
                 {
-                    allowFailure: false,
+                    online: true,
                     merge: identity,
                     onError: function* () {
                         yield auth.logout({ soft: true });
