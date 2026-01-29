@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { useLumoDispatch, useLumoSelector } from '../redux/hooks';
 import { selectAttachmentByIdOptional, selectAttachmentLoadingStateOptional } from '../redux/selectors';
 import { pullAttachmentRequest } from '../redux/slices/core/attachments';
+import { attachmentDataCache } from '../services/attachmentDataCache';
 import type { Attachment, AttachmentId } from '../types';
 
 /**
@@ -25,13 +26,14 @@ export function useLazyAttachment(attachmentId: AttachmentId | undefined): {
         // Trigger download if:
         // 1. We have an attachment ID
         // 2. Attachment exists in Redux (shallow reference from message)
-        // 3. Attachment has no data yet
+        // 3. Attachment has no data in Redux AND no data in cache
         // 4. Not currently loading
         // 5. No error state
         if (
             attachmentId &&
             attachment &&
             !attachment.data &&
+            !attachmentDataCache.getData(attachmentId) &&
             attachment.spaceId &&
             !loadingState?.loading &&
             !loadingState?.error

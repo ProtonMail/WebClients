@@ -1,6 +1,7 @@
 import type { Api } from '@proton/shared/lib/interfaces';
 
 import { addAttachment, pushAttachmentRequest } from '../../../redux/slices/core/attachments';
+import { attachmentDataCache } from '../../../services/attachmentDataCache';
 import {
     changeConversationTitle,
     pushConversationRequest,
@@ -10,6 +11,7 @@ import {
 import {
     addImageAttachment,
     appendChunk,
+    appendReasoning,
     deleteMessage,
     finishMessage,
     pushMessageRequest,
@@ -146,6 +148,18 @@ export function sendMessageWithRedux(
                                     );
                                 }
                                 break;
+
+                            case 'reasoning':
+                                if (messageId) {
+                                    dispatch(
+                                        appendReasoning({
+                                            messageId,
+                                            content: message.content,
+                                            sequence: message.count,
+                                        })
+                                    );
+                                }
+                                break;
                         }
                         break;
 
@@ -166,7 +180,10 @@ export function sendMessageWithRedux(
                                 spaceId
                             );
 
-                            dispatch(addAttachment({ ...attachment, data: imageData }));
+                            // Store image data in cache instead of Redux
+                            attachmentDataCache.setData(attachment.id, imageData);
+                            
+                            dispatch(addAttachment(attachment));
                             dispatch(addImageAttachment({ messageId, attachment }));
                             dispatch(appendChunk({ messageId, content: generateImageMarkdown(message.image_id) }));
                             // Push attachment to server now that it has spaceId
@@ -182,20 +199,20 @@ export function sendMessageWithRedux(
             },
             finishCallback: async (status) => {
                 if (messageId && conversationId && spaceId) {
-                    // If generation failed, delete the message instead of keeping it
-                    if (status === 'failed') {
-                        dispatch(deleteMessage(messageId));
-                    } else {
-                        dispatch(
-                            finishMessage({
-                                messageId,
-                                conversationId,
-                                spaceId,
-                                content: accumulatedContent,
-                                status,
-                                role,
-                            })
-                        );
+                    // Always finish the message (even if failed) to preserve any content that was streamed
+                    // This includes reasoning tokens, partial message content, or tool calls
+                    dispatch(
+                        finishMessage({
+                            messageId,
+                            conversationId,
+                            spaceId,
+                            content: accumulatedContent,
+                            status: status === 'failed' ? 'failed' : status,
+                            role,
+                        })
+                    );
+                    // Only push to server if generation succeeded
+                    if (status !== 'failed') {
                         dispatch(pushMessageRequest({ id: messageId }));
                     }
 

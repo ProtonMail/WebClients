@@ -376,6 +376,7 @@ export function sendMessage({
                     spaceId,
                     signal: a.signal,
                     enableExternalTools: noAttachment && ui.enableExternalTools,
+                    enableImageTools: ui.enableImageTools,
                     generateTitle,
                     config: {
                         enableU2LEncryption: ENABLE_U2L_ENCRYPTION,
@@ -722,6 +723,7 @@ export function retrySendMessage({
                     spaceId: c.spaceId!,
                     signal: a.signal,
                     enableExternalTools: ui.enableExternalTools,
+                    enableImageTools: ui.enableImageTools,
                     generateTitle: requestTitle,
                     config: {
                         enableU2LEncryption: ENABLE_U2L_ENCRYPTION,

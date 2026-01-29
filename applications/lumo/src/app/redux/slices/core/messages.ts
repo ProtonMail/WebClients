@@ -32,6 +32,7 @@ export type AddImageAttachmentAction = {
 // Low-level Redux store operations without side-effects.
 export const addMessage = createAction<MessagePub>('lumo/message/add');
 export const appendChunk = createAction<ChunkAction>('lumo/message/appendChunk');
+export const appendReasoning = createAction<ChunkAction>('lumo/message/appendReasoning');
 export const setToolCall = createAction<ChunkAction>('lumo/message/setToolCall');
 export const setToolResult = createAction<ChunkAction>('lumo/message/setToolResult');
 export const addImageAttachment = createAction<AddImageAttachmentAction>('lumo/message/addImageAttachment');
@@ -81,6 +82,38 @@ const messagesReducer = createReducer<MessageMap>(initialState, (builder) => {
             message.blocks ??= [];
             message.blocks = appendTextToBlocks(message.blocks, chunk.content);
         })
+        .addCase(appendReasoning, (state, action) => {
+            const chunk = action.payload;
+            const message = state[chunk.messageId];
+            if (!message) {
+                console.warn(`appendReasoning: message ${chunk.messageId} not found`);
+                return;
+            }
+            
+            message.thinkingTimeline ??= [];
+            message.reasoningChunks ??= [];
+            
+            const lastEvent = message.thinkingTimeline[message.thinkingTimeline.length - 1];
+            const isNewReasoningBlock = !lastEvent || lastEvent.type !== 'reasoning';
+            
+            if (isNewReasoningBlock) {
+                message.thinkingTimeline.push({
+                    type: 'reasoning',
+                    timestamp: Date.now(),
+                    content: chunk.content,
+                });
+            } else {
+                lastEvent.content += chunk.content;
+            }
+            
+            message.reasoning ??= '';
+            message.reasoning += chunk.content;
+            
+            message.reasoningChunks.push({
+                content: chunk.content,
+                sequence: chunk.sequence ?? message.reasoningChunks.length,
+            });
+        })
         .addCase(setToolCall, (state, action) => {
             const chunk = action.payload;
             const message = state[chunk.messageId];
@@ -88,11 +121,16 @@ const messagesReducer = createReducer<MessageMap>(initialState, (builder) => {
                 console.warn(`setToolCall: message ${chunk.messageId} not found`);
                 return;
             }
+            
+            message.thinkingTimeline ??= [];
+            const toolCallIndex = (message.blocks?.filter(b => b.type === 'tool_call').length ?? 0);
+            message.thinkingTimeline.push({
+                type: 'tool_call',
+                timestamp: Date.now(),
+                toolCallIndex,
+            });
 
-            // Update legacy field (backward compat)
             message.toolCall = chunk.content;
-
-            // Update blocks (replace if streaming, else append)
             message.blocks ??= [];
             message.blocks = setToolCallInBlocks(message.blocks, chunk.content);
         })
@@ -119,7 +157,9 @@ const messagesReducer = createReducer<MessageMap>(initialState, (builder) => {
                 return;
             }
             message.attachments ??= [];
-            message.attachments.push(attachment);
+            // Remove non-serializable fields before storing in Redux
+            const { imagePreview, data, ...serializableAttachment } = attachment as any;
+            message.attachments.push(serializableAttachment);
         })
         .addCase(finishMessage, (state, action) => {
             const finishAction = action.payload;

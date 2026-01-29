@@ -305,18 +305,21 @@ export function getProjectInfo(space: Space | undefined): Partial<ProjectInfo> {
 export type TextBlock = {
     type: 'text';
     content: string; // Markdown
+    sequence?: number; // Optional sequence number for ordering
 };
 
 export type ToolCallBlock = {
     type: 'tool_call';
     content: string; // JSON string (for serialization/prepareTurns)
     toolCall?: unknown; // Parsed JSON (for easy access, may be invalid/unknown)
+    sequence?: number; // Optional sequence number for ordering
 };
 
 export type ToolResultBlock = {
     type: 'tool_result';
     content: string; // JSON string (for serialization/prepareTurns)
     toolResult?: unknown; // Parsed JSON (for easy access, may be invalid/unknown)
+    sequence?: number; // Optional sequence number for ordering
 };
 
 export type ContentBlock = TextBlock | ToolCallBlock | ToolResultBlock;
@@ -329,6 +332,15 @@ export type MessagePub = {
     conversationId: ConversationId;
     placeholder?: boolean;
     status?: Status;
+};
+
+export type ThinkingTimelineEvent =
+    | { type: 'reasoning'; timestamp: number; content: string }
+    | { type: 'tool_call'; timestamp: number; toolCallIndex: number };
+
+export type ReasoningChunk = {
+    content: string;
+    sequence: number; // The count from token_data message
 };
 
 export type MessagePriv = {
@@ -345,6 +357,13 @@ export type MessagePriv = {
     // Content v2: message content and tool calls are now interleaved in a clear sequence `blocks`,
     // making other fields (`content`, `toolCall`, `toolResult`) legacy.
     blocks?: ContentBlock[];
+
+    // Reasoning: Model's internal thinking process (extended thinking models)
+    reasoning?: string; // Legacy: concatenated reasoning
+    reasoningChunks?: ReasoningChunk[]; // New: reasoning with sequence numbers for proper interleaving
+    
+    // Thinking timeline: events showing when reasoning/tool calls happened
+    thinkingTimeline?: ThinkingTimelineEvent[];
 };
 
 export type Message = MessagePub & MessagePriv;
@@ -397,7 +416,10 @@ export function isMessagePriv(value: any): value is MessagePriv {
         (value.toolCall === undefined || typeof value.toolCall === 'string') &&
         (value.toolResult === undefined || typeof value.toolResult === 'string') &&
         (value.contextFiles === undefined || (Array.isArray(value.contextFiles) && value.contextFiles.every((id: unknown) => typeof id === 'string'))) &&
-        (value.blocks === undefined || (Array.isArray(value.blocks) && value.blocks.every(isContentBlock)))
+        (value.blocks === undefined || (Array.isArray(value.blocks) && value.blocks.every(isContentBlock))) &&
+        (value.reasoning === undefined || typeof value.reasoning === 'string') &&
+        (value.reasoningChunks === undefined || Array.isArray(value.reasoningChunks)) &&
+        (value.thinkingTimeline === undefined || Array.isArray(value.thinkingTimeline))
     );
 }
 
@@ -407,8 +429,8 @@ export function getMessagePub(message: MessagePub): MessagePub {
 }
 
 export function getMessagePriv(m: MessagePriv): MessagePriv {
-    const { content, context, attachments, toolCall, toolResult, contextFiles, blocks } = m;
-    return { content, context, attachments, toolCall, toolResult, contextFiles, blocks };
+    const { content, context, attachments, toolCall, toolResult, contextFiles, blocks, reasoning, reasoningChunks, thinkingTimeline } = m;
+    return { content, context, attachments, toolCall, toolResult, contextFiles, blocks, reasoning, reasoningChunks, thinkingTimeline };
 }
 
 export function splitMessage(m: Message): { messagePriv: MessagePriv; messagePub: MessagePub } {
@@ -434,6 +456,9 @@ export function cleanMessage(message: Message): Message {
         toolResult,
         contextFiles,
         blocks,
+        reasoning,
+        reasoningChunks,
+        thinkingTimeline,
     } = message;
     return {
         id,
@@ -445,11 +470,14 @@ export function cleanMessage(message: Message): Message {
         ...(status !== undefined && { status }),
         ...(content !== undefined && { content }),
         ...(context !== undefined && { context }),
-        ...(attachments !== undefined && { attachments }),
+        ...(attachments !== undefined && { attachments: attachments.map(cleanAttachment) }),
         ...(toolCall !== undefined && { toolCall }),
         ...(toolResult !== undefined && { toolResult }),
         ...(contextFiles !== undefined && { contextFiles }),
         ...(blocks !== undefined && { blocks }),
+        ...(reasoning !== undefined && { reasoning }),
+        ...(reasoningChunks !== undefined && { reasoningChunks }),
+        ...(thinkingTimeline !== undefined && { thinkingTimeline }),
     };
 }
 
@@ -493,7 +521,10 @@ export function isEmptyMessagePriv(value: MessagePriv): boolean {
         value.toolCall === undefined &&
         value.toolResult === undefined &&
         value.contextFiles === undefined &&
-        (value.blocks === undefined || value.blocks.length === 0)
+        (value.blocks === undefined || value.blocks.length === 0) &&
+        value.reasoning === undefined &&
+        value.reasoningChunks === undefined &&
+        value.thinkingTimeline === undefined
     );
 }
 
@@ -779,16 +810,15 @@ export function cleanAttachment(attachment: Attachment): Attachment {
         isChunk,
         chunkTitle,
         filename,
-        // Note: `data` (raw Uint8Array) is intentionally excluded from cleaned attachments
-        // to prevent large binary blobs from being stored in Redux state.
-        // The data is only needed temporarily during file processing and serialization.
+        // Note: `data` and `imagePreview` (Uint8Array) are intentionally excluded from cleaned attachments
+        // to prevent non-serializable binary blobs from being stored in Redux state.
+        // These are stored in the attachmentDataCache instead and retrieved when needed.
         markdown,
         errorMessage,
         truncated,
         originalRowCount,
         processedRowCount,
         tokenCount,
-        imagePreview,
         role,
     } = attachment;
     return {
@@ -805,14 +835,13 @@ export function cleanAttachment(attachment: Attachment): Attachment {
         ...(isChunk !== undefined && { isChunk }),
         ...(chunkTitle !== undefined && { chunkTitle }),
         filename,
-        // data is intentionally NOT included - see comment above
+        // data and imagePreview are intentionally NOT included - see comment above
         ...(markdown !== undefined && { markdown }),
         ...(errorMessage !== undefined && { errorMessage }),
         ...(truncated !== undefined && { truncated }),
         ...(originalRowCount !== undefined && { originalRowCount }),
         ...(processedRowCount !== undefined && { processedRowCount }),
         ...(tokenCount !== undefined && { tokenCount }),
-        ...(imagePreview !== undefined && { imagePreview }),
         ...(role !== undefined && { role }),
     };
 }
@@ -839,6 +868,7 @@ export type UpdateConversationStatusAction = {
 export type ChunkAction = {
     messageId: MessageId;
     content: string;
+    sequence?: number; // Optional sequence number for ordering (used for reasoning)
 };
 
 export type FinishMessageAction = {
