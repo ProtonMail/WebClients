@@ -205,7 +205,9 @@ export function usePictureInPicture({
         const canvas = sessionManager.current.getCanvas();
         if (canvas) {
             const tracksToUnregister = prevTracksForDisplayRef.current.filter(
-                (track) => !tracksForDisplay.find((t) => t.publication.trackSid === track.publication.trackSid)
+                (track) =>
+                    !tracksForDisplay.find((t) => t.publication.trackSid === track.publication.trackSid) &&
+                    !track.isScreenShare
             );
 
             tracksToUnregister.forEach((track) => {
