@@ -4335,6 +4335,9 @@
       "This label name is not available. Please choose a different name.": [
         "Гэта назва для меткі недаступна. Выберыце іншую назву."
       ],
+      "This offer is not available in your country": [
+        "Гэта прапанова недаступна ў вашай краіне"
+      ],
       "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
         "Вам неабходна аднавіць прывілеі адміністратара, каб ствараць уліковыя запісы непрыватных карыстальнікаў і атрымліваць доступ да іх."
       ],
@@ -4391,9 +4394,6 @@
       ],
       "You have reached the number of contacts limit for your account": [
         "Вы дасягнулі абмежавання па колькасці кантактаў для вашага ўліковага запісу"
-      ],
-      "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
-        "Вы дасягнулі максімальнай колькасці адрасоў на вашым тарыфным плане. Палепшыце свой тарыфны план, каб дадаць новы адрас."
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Вы дасягнулі максімальнай колькасці карыстальнікаў на вашым тарыфным плане. Палепшыце свой тарыфны план, каб дадаць новага карыстальніка."
@@ -8093,11 +8093,11 @@
       "We need to authenticate your payment with your bank.": [
         "Нам неабходна аўтэнтыфікаваць плацеж з дапамогай вашага банка."
       ],
+      "We recommend adding servers in different locations (one per city) to maximize redundancy.": [
+        "Рэкамендуецца дадаваць серверы ў розных месцазнаходжаннях (па адным на горад), каб разгрануць лішкавасць."
+      ],
       "We recommend having at least 2 servers in order to provide redundancy.": [
         "Мы рэкамендуем мець прынамсі 2 серверы, каб забяспечыць лішкавасць."
-      ],
-      "We recommend having multiple servers in different locations to provide redundancy.": [
-        "Мы рэкамендуем мець некалькі сервераў, якія размешчаны ў розных месцах для забеспячэння лішкавасці."
       ],
       "We recommend notifying the family members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
         "Мы рэкамендуем апавясціць удзельнікаў сям'і і папрасіць іх наладзіць 2ФА для сваіх уліковых запісаў перад прымусовым ужываннем гэтай тэхналогіі."
@@ -8185,6 +8185,9 @@
       ],
       "With email categories, important messages land in a primary inbox. Everything else is organized into categories.": [
         "З катэгорыямі электроннай пошты важныя паведамленні трапляюць у асноўную паштовую скрыню. Усё астатняе размяркоўваецца па катэгорыях."
+      ],
+      "With groups, you can implement the company security policies for access control and reduce the risk of accessing unauthorised data.": [
+        "З групамі вы можаце ўкараняць палітыкі бяспекі кампаніі для кантролю доступу і знізіць рызыку несанкцыяванага доступу да даных."
       ],
       "With groups, you can quickly and easily send emails to all the people in a specified group.": [
         "Пры дапамозе груп, вы можаце хутка і лёгка адпраўляць лісты ўсім людзям у канкрэтнай групе."
@@ -10013,9 +10016,6 @@
       ],
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "Дэманстрацыя экрана са скразным шыфраваннем і эфемерны чат пры званках"
-      ],
-      "Meeting recording (coming soon)": [
-        "Запісы сустрэч (неўзабаве з'явяцца)"
       ],
       "One active meeting at a time": [
         "Адна актыўная сустрэча адначасова"

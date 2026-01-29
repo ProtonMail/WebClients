@@ -4285,6 +4285,9 @@
       "This label name is not available. Please choose a different name.": [
         "Este nombre de etiqueta no está disponible. Elija un nombre diferente."
       ],
+      "This offer is not available in your country": [
+        "Esta oferta no está disponible en su país"
+      ],
       "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
         "Necesita restaurar sus privilegios de administración para crear cuentas no privadas y acceder a las mismas."
       ],
@@ -4342,8 +4345,8 @@
       "You have reached the number of contacts limit for your account": [
         "Ha alcanzado el número límite de contactos para su cuenta."
       ],
-      "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
-        "Ha utilizado todas las direcciones del plan. Mejore el plan para agregar una dirección nueva."
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "Ha utilizado todas las direcciones de su plan. Actualice su plan para agregar una dirección nueva o desactive una dirección en su cuenta."
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Ha utilizado todos los usuarios en el plan. Mejore el plan para agregar un usuario nuevo."
@@ -7891,11 +7894,11 @@
       "We need to authenticate your payment with your bank.": [
         "Necesitamos autenticar el pago con el banco."
       ],
+      "We recommend adding servers in different locations (one per city) to maximize redundancy.": [
+        "Recomendamos añadir servidores en diferentes ubicaciones (uno por ciudad) para maximizar la redundancia."
+      ],
       "We recommend having at least 2 servers in order to provide redundancy.": [
         "Recomendamos tener al menos 2 servidores para ofrecer redundancia."
-      ],
-      "We recommend having multiple servers in different locations to provide redundancy.": [
-        "Recomendamos tener múltiples servidores en diferentes ubicaciones para ofrecer redundancia."
       ],
       "We recommend notifying the family members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
         "Recomendamos notificar a los miembros de la familia y pedirles que configuren 2FA para sus cuentas antes de requerir el uso de 2FA."
@@ -9745,6 +9748,10 @@
         "${ n } reunión activa a la vez",
         "${ n } reuniones activas a la vez"
       ],
+      "${ n } participant": [
+        "${ n } participante",
+        "${ n } participantes"
+      ],
       "24 hours per meeting": [
         "24 horas por reunión"
       ],
@@ -9753,6 +9760,9 @@
       ],
       "Appointment scheduling": [
         "Programación de citas"
+      ],
+      "Booking pages": [
+        "Páginas de reservas"
       ],
       "Browser, mobile, and desktop apps": [
         "Aplicaciones para navegador, móvil y escritorio"
@@ -9763,8 +9773,8 @@
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "Pantalla compartida con cifrado de extremo a extremo y chat efímero en la llamada"
       ],
-      "Meeting recording (coming soon)": [
-        "Grabación de la reunión (próximamente)"
+      "Meeting recording": [
+        "Grabación de la reunión"
       ],
       "One active meeting at a time": [
         "Una reunión activa a la vez"
@@ -16307,6 +16317,9 @@
       ]
     },
     "Upsell": {
+      "${ BRAND_NAME } for Business": [
+        "${ BRAND_NAME } for Business"
+      ],
       "**Save up to ${ priceString }** with a longer subscription. Same premium features, lower price.": [
         "**Ahorre hasta ${ priceString }** con una suscripción más larga. Mismas funciones premium, menor precio."
       ],
@@ -16318,6 +16331,9 @@
       ],
       "Did you know?": [
         "¿Lo sabía?"
+      ],
+      "Everything you need to collaborate securely in a single subscription. Get access to ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, ${ SHEETS_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } and ${ LUMO_SHORT_APP_NAME } AI Assistant.": [
+        "Todo lo que necesita para colaborar de forma segura en una sola suscripción. Obtenga acceso a ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, ${ SHEETS_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } y el Asistente de IA de ${ LUMO_SHORT_APP_NAME }."
       ],
       "Get ${ drivePlusPlanMaxSpace } storage for your files, photos and documents, and recover file versions with 10-year file recovery.": [
         "Obtenga ${ drivePlusPlanMaxSpace } de almacenamiento para sus archivos, fotos y documentos, y recupere versiones con una recuperación de archivos de 10 años."
