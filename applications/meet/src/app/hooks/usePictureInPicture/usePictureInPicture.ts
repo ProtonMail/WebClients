@@ -7,12 +7,14 @@ import { c } from 'ttag';
 import { useNotifications } from '@proton/components';
 import { isChromiumBased, isFirefox, isMobile, isSafari } from '@proton/shared/lib/helpers/browser';
 
+import { useCameraTrackSubscriptionManager } from '../../contexts/CameraTrackSubscriptionCacheProvider/CameraTrackSubscriptionManagerProvider';
 import { useMediaManagementContext } from '../../contexts/MediaManagementContext';
 import { useMeetSelector } from '../../store/hooks';
 import { selectMeetSettings } from '../../store/slices/settings';
 import type { MeetChatMessage } from '../../types';
 import { useLatest } from '../useLatest';
 import { PiPSessionManager } from './PiPSessionManager';
+import type { TrackInfo } from './types';
 import { usePiPMediaSession } from './usePiPMediaSession';
 import { usePiPMessages } from './usePiPMessages';
 import { usePiPRenderer } from './usePiPRenderer';
@@ -68,6 +70,10 @@ export function usePictureInPicture({
     const { tracksForDisplay, tracksKey } = usePiPTracks(sortedParticipants);
     const { startRendering, stopRendering } = usePiPRenderer();
 
+    const displayableWithAvailableTracks = tracksForDisplay.filter((track) => track.track !== undefined) as TrackInfo[];
+
+    const { register, removeForcePin } = useCameraTrackSubscriptionManager();
+
     // PiP session manager for resource management
     const sessionManager = useRef(new PiPSessionManager());
     const preventBlur = useRef(false);
@@ -75,6 +81,8 @@ export function usePictureInPicture({
     const isPipActiveRef = useRef(isPipActive);
 
     isPipActiveRef.current = isPipActive;
+
+    const prevTracksForDisplayRef = useRef(tracksForDisplay);
 
     // Use specialized hooks
     const { setupMediaSession } = usePiPMediaSession({
@@ -99,7 +107,7 @@ export function usePictureInPicture({
         } else {
             startRendering(
                 sessionManager.current.getCanvas() as HTMLCanvasElement,
-                tracksForDisplay,
+                displayableWithAvailableTracks,
                 messages,
                 participantNameMapRef.current,
                 true
@@ -116,10 +124,10 @@ export function usePictureInPicture({
         }
 
         // Initialize session with canvas and video elements
-        const { canvas } = sessionManager.current.init(tracksForDisplay);
+        const { canvas } = sessionManager.current.init(displayableWithAvailableTracks);
 
         // Start rendering (only when PiP is active)
-        startRendering(canvas, tracksForDisplay, messages, participantNameMapRef.current, throttle);
+        startRendering(canvas, displayableWithAvailableTracks, messages, participantNameMapRef.current, throttle);
 
         // Setup video stream and request PiP
         await sessionManager.current.setupVideoStream();
@@ -196,11 +204,27 @@ export function usePictureInPicture({
         }
         const canvas = sessionManager.current.getCanvas();
         if (canvas) {
+            const tracksToUnregister = prevTracksForDisplayRef.current.filter(
+                (track) => !tracksForDisplay.find((t) => t.publication.trackSid === track.publication.trackSid)
+            );
+
+            tracksToUnregister.forEach((track) => {
+                removeForcePin(track.publication);
+            });
+
+            tracksForDisplay.forEach((track) => {
+                if (!track.isScreenShare) {
+                    register(track.publication, track.participant.identity, true);
+                }
+            });
+
+            prevTracksForDisplayRef.current = tracksForDisplay;
+
             // Restart rendering loop with the latest tracks to avoid stale closures
             stopRendering();
-            startRendering(canvas, tracksForDisplay, messages, participantNameMapRef.current, false);
+            startRendering(canvas, displayableWithAvailableTracks, messages, participantNameMapRef.current, false);
         }
-    }, [isPipActive, tracksKey, messages, startRendering, stopRendering, tracksForDisplay]);
+    }, [isPipActive, tracksKey, messages, startRendering, stopRendering]);
 
     useEffect(() => {
         if (!isChromiumBased() || isMobile() || !pipEnabled) {
