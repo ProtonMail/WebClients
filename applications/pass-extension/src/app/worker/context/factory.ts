@@ -39,19 +39,10 @@ import { passwordLockAdapterFactory } from '@proton/pass/lib/auth/lock/password/
 import { sessionLockAdapterFactory } from '@proton/pass/lib/auth/lock/session/adapter';
 import { LockMode } from '@proton/pass/lib/auth/lock/types';
 import { createAuthStore, exposeAuthStore } from '@proton/pass/lib/auth/store';
-import {
-    clientBooted,
-    clientDisabled,
-    clientLocked,
-    clientOffline,
-    clientPasswordLocked,
-    clientStatusResolved,
-} from '@proton/pass/lib/client';
+import { clientBooted, clientDisabled, clientLocked, clientStatusResolved } from '@proton/pass/lib/client';
 import { exposePassCrypto } from '@proton/pass/lib/crypto';
 import { createPassCrypto } from '@proton/pass/lib/crypto/pass-crypto';
-import { ConnectivityStatus } from '@proton/pass/lib/network/connectivity.utils';
 import { QA_SERVICE } from '@proton/pass/lib/qa/service';
-import { offlineResume } from '@proton/pass/store/actions';
 import { registerStoreEffect } from '@proton/pass/store/connect/effect';
 import { selectLockSetupRequired } from '@proton/pass/store/selectors/settings';
 import type { AppState } from '@proton/pass/types/worker/state';
@@ -69,13 +60,11 @@ export const createWorkerContext = (config: ProtonConfig) => {
     const authStore = exposeAuthStore(createAuthStore(createStore()));
     const storage = createStorageService();
     const core = createPassCoreProxyService();
-    const connectivity = createConnectivityService();
     const auth = createAuthService(api, authStore);
     const store = createStoreService();
     const nativeMessaging = createNativeMessagingService(authStore);
 
     if (ENV === 'development') QA_SERVICE?.init(storage.local);
-
     auth.registerLockAdapter(LockMode.SESSION, sessionLockAdapterFactory(auth));
     auth.registerLockAdapter(LockMode.DESKTOP, desktopLockAdapterFactory(auth, nativeMessaging));
     auth.registerLockAdapter(LockMode.PASSWORD, passwordLockAdapterFactory(auth));
@@ -105,7 +94,7 @@ export const createWorkerContext = (config: ProtonConfig) => {
             b2bEvents: createB2BEventsService(storage.local, store),
             clipboard: createClipboardService(),
             core,
-            connectivity,
+            connectivity: createConnectivityService(),
             featureFlags: createFeatureFlagService(),
             formTracker: createFormTrackerService(),
             inline: createInlineService(),
@@ -165,18 +154,7 @@ export const createWorkerContext = (config: ProtonConfig) => {
     context.service.spotlight.init().catch(noop);
     context.service.apiProxy.clean?.().catch(noop);
     context.service.i18n.init().catch(noop);
-
-    /** Monitor connectivity changes to automatically resume online session
-     * when network becomes available after booting in offline mode. */
-    context.service.connectivity.subscribe((status) => {
-        const localID = authStore.getLocalID();
-        const online = status === ConnectivityStatus.ONLINE;
-        const appStatus = context.getState().status;
-
-        if (!online) return;
-        else if (clientOffline(appStatus)) context.service.store.dispatch(offlineResume.intent({ localID }));
-        else if (clientPasswordLocked(appStatus)) context.service.auth.init({ forceLock: true }).catch(noop);
-    });
+    context.service.auth.listen();
 
     /* Watch for `lockSetup` state changes. Notify all extension
      * components on update in order for clients' states to sync. */
