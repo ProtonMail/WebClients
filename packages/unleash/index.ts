@@ -14,3 +14,4 @@ export { default as useGetFlag } from './useGetFlag';
 export { default as useVariant } from './useVariant';
 export { default as UnleashClient } from './UnleashClient';
 export { setStandaloneUnleashClient, getStandaloneUnleashClient } from './standaloneClient';
+export { getMaxContactsImportConfig } from './helpers/getMaxContactsImportConfig';
