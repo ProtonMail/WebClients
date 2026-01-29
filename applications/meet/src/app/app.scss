@@ -221,3 +221,42 @@ $profile-colors:
 .draggable-mac-electron-header {
 	-webkit-app-region: drag;
 }
+
+.meet-tooltip {
+	--meet-tooltip-bg: var(--interaction-weak-minor-3);
+
+	color: var(--color-norm);
+	background-color: var(--meet-tooltip-bg);
+}
+
+.tooltip--top.meet-tooltip,
+.tooltip--top-start.meet-tooltip,
+.tooltip--top-end.meet-tooltip {
+	&::before {
+		border-block-start-color: var(--meet-tooltip-bg);
+	}
+}
+
+.tooltip--bottom.meet-tooltip,
+.tooltip--bottom-start.meet-tooltip,
+.tooltip--bottom-end.meet-tooltip {
+	&::before {
+		border-block-end-color: var(--meet-tooltip-bg);
+	}
+}
+
+.tooltip--top-start.meet-tooltip {
+	border-end-start-radius: 0 !important;
+}
+
+.tooltip--top-end.meet-tooltip {
+	border-end-end-radius: 0 !important;
+}
+
+.tooltip--bottom-start.meet-tooltip {
+	border-start-start-radius: 0 !important;
+}
+
+.tooltip--bottom-end.meet-tooltip {
+	border-start-end-radius: 0 !important;
+}

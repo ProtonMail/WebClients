@@ -26,29 +26,33 @@ export const SecurityShield = ({
     smallIcon = false,
 }: SecurityShieldProps) => {
     return (
-        <Tooltip
-            className={clsx('flex items-center justify-center security-shield', smallIcon ? 'mr-1' : 'mr-2')}
-            tooltipClassName="security-shield-tooltip text-semibold p-4 "
-            title={title}
-            openDelay={0}
-            closeDelay={0}
-            originalPlacement={tooltipPlacement}
-        >
-            <div
-                className={clsx('security-shield flex items-center justify-center', smallIcon && 'w-custom h-custom')}
-                style={{ display: 'inline-block', ...(smallIcon ? smallIconStyle : undefined) }}
+        <div className={clsx('flex items-center justify-center', smallIcon ? 'mr-1' : 'mr-2')}>
+            <Tooltip
+                tooltipClassName="meet-tooltip text-semibold p-4 "
+                title={title}
+                openDelay={0}
+                closeDelay={0}
+                originalPlacement={tooltipPlacement}
             >
-                <IcMeetShieldFull
-                    className={clsx('shield-full', smallIcon && 'w-custom h-custom')}
-                    size={size}
-                    style={smallIcon ? smallIconStyle : undefined}
-                />
-                <IcMeetShield
-                    className={clsx('shield', smallIcon && 'w-custom h-custom')}
-                    size={size}
-                    style={smallIcon ? smallIconStyle : undefined}
-                />
-            </div>
-        </Tooltip>
+                <div
+                    className={clsx(
+                        'security-shield flex items-center justify-center',
+                        smallIcon && 'w-custom h-custom'
+                    )}
+                    style={{ display: 'inline-block', ...(smallIcon ? smallIconStyle : undefined) }}
+                >
+                    <IcMeetShieldFull
+                        className={clsx('shield-full', smallIcon && 'w-custom h-custom')}
+                        size={size}
+                        style={smallIcon ? smallIconStyle : undefined}
+                    />
+                    <IcMeetShield
+                        className={clsx('shield', smallIcon && 'w-custom h-custom')}
+                        size={size}
+                        style={smallIcon ? smallIconStyle : undefined}
+                    />
+                </div>
+            </Tooltip>
+        </div>
     );
 };

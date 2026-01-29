@@ -55,7 +55,8 @@ export const ToggleButton = ({
             <Tooltip
                 title={tooltipTitle}
                 isOpen={!tooltipTitle ? false : undefined}
-                tooltipClassName="toggle-button-tooltip bg-strong color-norm"
+                tooltipClassName="meet-tooltip bg-strong color-norm"
+                tooltipStyle={{ '--meet-tooltip-bg': 'var(--background-strong)' }}
                 openDelay={750}
                 closeDelay={0}
             >
