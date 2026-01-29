@@ -6,6 +6,11 @@ interface Props {
     onClick: () => void;
 }
 
+/**
+ * TODO: Migrate to use reusable upload components
+ * See: applications/drive/src/app/statelessComponents/UploadCreateDropdown/UploadCreateDropdown.tsx
+ * and applications/drive/src/app/hooks/drive/useUploadInput.ts
+ */
 export const UploadFolderButton = ({ onClick }: Props) => {
     return (
         <>

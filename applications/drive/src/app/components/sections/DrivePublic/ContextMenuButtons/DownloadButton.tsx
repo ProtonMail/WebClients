@@ -29,8 +29,10 @@ export const DownloadButton = ({ selectedBrowserItems, close, virusScan }: Props
         );
     };
 
-    const buttonTextWithScan = count > 1 ? c('Action').t`Scan & Download (${count})` : c('Action').t`Scan & Download`;
-    const buttonTextWithoutScan = count > 1 ? c('Action').t`Download (${count})` : c('Action').t`Download`;
+    const nbSelected = count;
+    const buttonTextWithScan =
+        nbSelected > 1 ? c('Action').t`Scan & Download (${nbSelected})` : c('Action').t`Scan & Download`;
+    const buttonTextWithoutScan = nbSelected > 1 ? c('Action').t`Download (${nbSelected})` : c('Action').t`Download`;
 
     return (
         <ContextMenuButton

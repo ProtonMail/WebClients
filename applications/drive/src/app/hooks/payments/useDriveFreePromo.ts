@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { usePaymentStatus } from '@proton/account/paymentStatus/hooks';
 import { usePlans } from '@proton/account/plans/hooks';
@@ -6,14 +6,11 @@ import { useCurrencies } from '@proton/components/payments/client-extensions';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { CYCLE, type CheckSubscriptionData, type EnrichedCheckResponse, PLANS } from '@proton/payments';
 
-import { usePublicSessionUser } from '../../store';
-
 interface UseDriveFreePromoProps {
     codes: string[] | undefined;
 }
 
 export function useDriveFreePromo({ codes }: UseDriveFreePromoProps) {
-    const { user } = usePublicSessionUser();
     const { getPreferredCurrency } = useCurrencies();
     const { paymentsApi } = usePaymentsApi();
     const [plansResult] = usePlans();
@@ -21,9 +18,8 @@ export function useDriveFreePromo({ codes }: UseDriveFreePromoProps) {
 
     const [result, setResult] = useState<EnrichedCheckResponse | null>(null);
     const [hasError, setHasError] = useState(false);
-    const codesKey = useMemo(() => codes?.join(',') ?? '', [codes]);
+    const codesKey = codes?.join(',') ?? '';
     const currency = getPreferredCurrency({
-        user,
         paymentStatus,
         plans: plansResult?.plans,
         paramPlanName: PLANS.DRIVE,
@@ -31,13 +27,13 @@ export function useDriveFreePromo({ codes }: UseDriveFreePromoProps) {
 
     useEffect(() => {
         const fetchData = async () => {
-            if (plansResult?.plans && paymentStatus && currency) {
+            if (currency) {
                 setHasError(false);
                 const subscriptionData: CheckSubscriptionData = {
                     Plans: { [PLANS.DRIVE]: 1 },
                     Currency: currency,
                     Cycle: CYCLE.MONTHLY,
-                    Codes: codes,
+                    Codes: codesKey.split(','),
                 };
                 try {
                     const res = await paymentsApi.checkSubscription(subscriptionData);
@@ -50,6 +46,8 @@ export function useDriveFreePromo({ codes }: UseDriveFreePromoProps) {
         };
 
         void fetchData();
+        // paymentsApi is not stable
+        // TODO: update the usePaymentsApi with useCallback
     }, [currency, codesKey]);
 
     return { promoData: result, hasError };

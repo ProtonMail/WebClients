@@ -1,5 +1,5 @@
 import { useModalTwoStatic } from '@proton/components';
-import { useDrive } from '@proton/drive/index';
+import { getDrive } from '@proton/drive';
 
 import { withHoc } from '../../hooks/withHoc';
 import { getActionEventManager } from '../../utils/ActionEventManager/ActionEventManager';
@@ -16,8 +16,7 @@ export const CreateFolderModal = withHoc<UseCreateFolderModalStateProps, CreateF
 
 export const useCreateFolderModal = () => {
     const [modal, showModal] = useModalTwoStatic(CreateFolderModal);
-    const { drive } = useDrive();
-    const handleShowModal = async ({ onSuccess, ...rest }: CreateFolderModalInnerProps) => {
+    const handleShowModal = async ({ onSuccess, drive = getDrive(), ...rest }: CreateFolderModalInnerProps) => {
         const handleSuccess = async ({ uid, nodeId, name }: { uid?: string; nodeId: string; name: string }) => {
             // TODO: Remove this once we can remove legacy CreatFolderModalDeprecated
             // This should never happen as we pass the uid in CreateFolderModal onSuccess action.
@@ -31,7 +30,7 @@ export const useCreateFolderModal = () => {
             });
             onSuccess?.({ uid, nodeId, name });
         };
-        return showModal({ onSuccess: handleSuccess, ...rest });
+        return showModal({ onSuccess: handleSuccess, drive, ...rest });
     };
 
     return [modal, handleShowModal] as const;

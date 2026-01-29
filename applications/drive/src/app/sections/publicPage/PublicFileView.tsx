@@ -17,7 +17,7 @@ interface PublicFileViewProps {
 
 export const PublicFileView = ({ rootNode }: PublicFileViewProps) => {
     const [contentData, setContentData] = useState<Uint8Array<ArrayBuffer>[] | undefined>(undefined);
-    const { modals, handleDetails, handleOpenDocsOrSheets } = usePublicActions();
+    const { modals, handleDetails, handleOpenDocsOrSheets, handleCopyLink } = usePublicActions();
 
     useEffect(() => {
         const openInDocsInfo = rootNode.mediaType ? getOpenInDocsInfo(rootNode.mediaType) : undefined;
@@ -45,13 +45,25 @@ export const PublicFileView = ({ rootNode }: PublicFileViewProps) => {
     return (
         <div className="h-full flex flex-column">
             <PublicHeader
-                name={rootNode.name}
+                breadcrumbOrName={
+                    <h1
+                        // Custom padding to match breadcrumb style
+                        className="text-4xl text-semibold pl-custom py-custom"
+                        style={{
+                            '--pl-custom': '0.315rem',
+                            '--py-custom': '0.5625rem',
+                        }}
+                    >
+                        {rootNode.name}
+                    </h1>
+                }
                 sharedBy={
                     (rootNode.keyAuthor.ok ? rootNode.keyAuthor.value : rootNode.keyAuthor.error.claimedAuthor) ||
                     undefined
                 }
                 onDetails={() => handleDetails(rootNode.uid)}
                 onDownload={handleDownload}
+                onCopyLink={handleCopyLink}
             />
             <PartialPreview
                 className="flex-1"
