@@ -17,7 +17,6 @@ import type {
     IconShiftRequest,
     IconShiftResult,
 } from 'proton-pass-extension/types/inline';
-import type { Action } from 'redux';
 
 import type { UnlockDTO } from '@proton/pass/lib/auth/lock/types';
 import type { AuthOptions } from '@proton/pass/lib/auth/service';
@@ -288,7 +287,7 @@ export type SettingsUpdateMessage = WithPayload<WorkerMessageType.SETTINGS_UPDAT
 export type SpotlightAckMessage = WithPayload<WorkerMessageType.SPOTLIGHT_ACK, { message: SpotlightMessage }>;
 export type SpotlightCheckMessage = WithPayload<WorkerMessageType.SPOTLIGHT_CHECK, { message: SpotlightMessage }>;
 export type SpotlightRequestMessage = { type: WorkerMessageType.SPOTLIGHT_REQUEST };
-export type StoreActionMessage = WithPayload<WorkerMessageType.STORE_DISPATCH, { action: Action }>;
+export type StoreActionMessage = WithPayload<WorkerMessageType.STORE_DISPATCH, { action: string }>;
 export type TelemetryEventMessage = WithPayload<WorkerMessageType.TELEMETRY_EVENT, TelemetryEventDTO>;
 export type UnloadContentScriptMessage = { type: WorkerMessageType.UNLOAD_CONTENT_SCRIPT };
 export type UpdateAvailableMessage = { type: WorkerMessageType.UPDATE_AVAILABLE };
