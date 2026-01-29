@@ -23,7 +23,7 @@ import { getLabelName } from '../../helpers/labels';
 import { isConversationMode } from '../../helpers/mailSettings';
 import { extractSearchParameters } from '../../helpers/mailboxUrl';
 import { useDeepMemo } from '../../hooks/useDeepMemo';
-import { contextTotal } from '../../store/elements/elementsSelectors';
+import { contextTotal, taskRunningInLabel } from '../../store/elements/elementsSelectors';
 import EmptyView from './EmptyView/EmptyView';
 import ProtonPassPlaceholder from './ProtonPassPlaceholder';
 
@@ -57,6 +57,8 @@ const SelectionPane = ({ labelID, mailSettings, location, checkedIDs = [], onChe
     const { selectAll, setSelectAll, getBannerTextWithLocation } = useSelectAll({ labelID });
     const [labels] = useLabels();
     const [folders] = useFolders();
+
+    const taskIsRunningInLabel = useMailSelector((state) => taskRunningInLabel(state, { labelID }));
 
     const isCustomLabel = testIsCustomLabel(labelID, labels);
     const total = useMailSelector(contextTotal) || 0;
@@ -188,7 +190,7 @@ const SelectionPane = ({ labelID, mailSettings, location, checkedIDs = [], onChe
     };
 
     if (isSearch && total === 0) {
-        return <EmptyView isSearch isUnread={false} labelID={labelID} />;
+        return <EmptyView isSearch isUnread={false} labelID={labelID} isTaskRunningInLabel={!!taskIsRunningInLabel} />;
     }
 
     const showSimpleLoginPlaceholder = checkeds === 0 && labelID === MAILBOX_LABEL_IDS.SPAM;
