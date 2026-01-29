@@ -1,17 +1,22 @@
+const { dirname, join } = require('node:path');
+
+function getAbsolutePath(value) {
+    return dirname(require.resolve(join(value, 'package.json')));
+}
+
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { getJsLoader } = require('@proton/pack/webpack/js.loader.swc');
 const getCssLoaders = require('@proton/pack/webpack/css.loader');
 const getAssetsLoaders = require('@proton/pack/webpack/assets.loader');
-const getOptimization = require('@proton/pack/webpack/optimization');
 
 /** @type { import('@storybook/react-webpack5').StorybookConfig } */
 module.exports = {
-    addons: ['@storybook/addon-essentials', '@storybook/addon-links', '@storybook/addon-storysource'],
+    addons: [getAbsolutePath('@storybook/addon-links'), getAbsolutePath('@storybook/addon-docs')],
     core: {
         disableTelemetry: true,
     },
     framework: {
-        name: '@storybook/react-webpack5',
+        name: getAbsolutePath('@storybook/react-webpack5'),
         options: {},
     },
     staticDirs: ['../src/assets', '../src/assets/favicons'],
@@ -59,8 +64,6 @@ module.exports = {
             inlineIcons: true,
         };
 
-        const optimization = getOptimization(options);
-
         return {
             ...config,
             experiments: { ...config.experiments, asyncWebAssembly: true },
@@ -91,7 +94,8 @@ module.exports = {
             },
             optimization: {
                 ...config.optimization,
-                minimizer: optimization.minimizer,
+                // Use Storybook's default minimizer so mocker-runtime-injected.js (ESM) is minified correctly
+                minimizer: config.optimization.minimizer,
             },
             plugins: [
                 ...config.plugins,
