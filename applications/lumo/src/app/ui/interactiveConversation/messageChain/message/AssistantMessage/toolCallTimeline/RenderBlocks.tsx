@@ -3,6 +3,7 @@ import type { ContentBlock, Message, ToolCallBlock } from '../../../../../../typ
 import { isToolCallBlock, isToolResultBlock } from '../../../../../../types';
 import StreamingMarkdownRenderer from '../../../../../components/LumoMarkdown/StreamingMarkdownRenderer';
 import { parseToolCallBlock } from '../../toolCall/toolCallUtils';
+import { ThinkingPath, type ThinkingStep } from './ThinkingPath';
 import { ToolCallTimeline } from './ToolCallTimeline';
 
 interface RenderBlocksProps {
@@ -12,6 +13,7 @@ interface RenderBlocksProps {
     isLastMessage: boolean;
     handleLinkClick: (e: React.MouseEvent<HTMLAnchorElement>, href: string) => void;
     sourcesContainerRef: React.MutableRefObject<HTMLDivElement | null>;
+    reasoning?: string;
 }
 
 /**
@@ -65,12 +67,18 @@ function toTimelineItem(
     groupBlocks: ContentBlock[],
     isGenerating: boolean,
     isLastMessage: boolean
-): { toolCall: ToolCallData; isInProgress: boolean } | null {
+): { toolCall: ToolCallData; result?: string; isInProgress: boolean } | null {
     const toolCall = parseToolCallBlock(block);
     if (!toolCall) return null;
 
     const isInProgress = isToolCallInProgress(block, groupBlocks, isGenerating, isLastMessage);
-    return { toolCall, isInProgress };
+    
+    // Find the corresponding tool result
+    const blockIndex = groupBlocks.indexOf(block);
+    const resultBlock = groupBlocks.find((b, idx) => idx > blockIndex && isToolResultBlock(b));
+    const result = resultBlock?.type === 'tool_result' ? resultBlock.content : undefined;
+    
+    return { toolCall, result, isInProgress };
 }
 
 type SingleTextBlock = { type: 'text'; block: ContentBlock };
@@ -123,11 +131,98 @@ export const RenderBlocks = ({
     isLastMessage,
     handleLinkClick,
     sourcesContainerRef,
+    reasoning,
 }: RenderBlocksProps) => {
     const groups = groupBlocks(blocks);
 
+    // Check if we need to show the thinking path (reasoning + tool calls)
+    const hasReasoning = reasoning && reasoning.trim().length > 0;
+    const hasToolCalls = blocks.some((block) => isToolCallBlock(block));
+    const showThinkingPath = hasReasoning || hasToolCalls;
+
+    // Build thinking path steps based on the thinking timeline if available
+    const thinkingSteps: ThinkingStep[] = [];
+    const timeline = message.thinkingTimeline;
+    
+    if (timeline && timeline.length > 0) {
+        const toolCalls = blocks.filter(isToolCallBlock);
+        
+        console.log('[THINKING PATH DEBUG]', {
+            timelineLength: timeline.length,
+            timeline: timeline.map((e, idx) => ({
+                index: idx,
+                type: e.type,
+                ...(e.type === 'tool_call' && { toolCallIndex: e.toolCallIndex }),
+            })),
+            totalToolCallBlocks: toolCalls.length,
+        });
+        
+        for (let i = 0; i < timeline.length; i++) {
+            const event = timeline[i];
+            
+            if (event.type === 'reasoning') {
+                const isLastReasoningSegment = i === timeline.length - 1 || 
+                    !timeline.slice(i + 1).some(e => e.type === 'reasoning');
+                const toolCallsInProgress = toolCalls.some((block) => 
+                    toTimelineItem(block, blocks, isGenerating, isLastMessage)?.isInProgress
+                );
+                
+                thinkingSteps.push({
+                    type: 'reasoning',
+                    content: event.content,
+                    isActive: isGenerating && isLastMessage && isLastReasoningSegment && !toolCallsInProgress,
+                });
+            } else if (event.type === 'tool_call') {
+                const toolCallBlock = toolCalls[event.toolCallIndex];
+                if (toolCallBlock) {
+                    const item = toTimelineItem(toolCallBlock, blocks, isGenerating, isLastMessage);
+                    if (item) {
+                        thinkingSteps.push({
+                            type: 'tool_call',
+                            toolCall: item.toolCall,
+                            result: item.result,
+                            isActive: item.isInProgress,
+                        });
+                    }
+                }
+            }
+        }
+    } else if (hasReasoning || hasToolCalls) {
+        if (hasReasoning) {
+            const toolCallsInProgress = blocks.filter(isToolCallBlock).some((block) => 
+                toTimelineItem(block, blocks, isGenerating, isLastMessage)?.isInProgress
+            );
+            
+            thinkingSteps.push({
+                type: 'reasoning',
+                content: reasoning,
+                isActive: isGenerating && isLastMessage && !toolCallsInProgress,
+            });
+        }
+
+        if (hasToolCalls) {
+            blocks.filter(isToolCallBlock).forEach((block) => {
+                const item = toTimelineItem(block, blocks, isGenerating, isLastMessage);
+                if (item) {
+                    thinkingSteps.push({
+                        type: 'tool_call',
+                        toolCall: item.toolCall,
+                        result: item.result,
+                        isActive: item.isInProgress,
+                    });
+                }
+            });
+        }
+    }
+
     return (
         <>
+            {/* Show unified thinking path if we have reasoning or tool calls */}
+            {showThinkingPath && (
+                <ThinkingPath steps={thinkingSteps} message={message} handleLinkClick={handleLinkClick} />
+            )}
+
+            {/* Render text content blocks */}
             {groups.map((group, idx) => {
                 if (group.type === 'text') {
                     const isLastGroup = idx === groups.length - 1;
@@ -144,13 +239,8 @@ export const RenderBlocks = ({
                     );
                 }
 
-                // Timeline group - convert tool call blocks to timeline items
-                const toolCalls = group.blocks
-                    .filter(isToolCallBlock)
-                    .map((block) => toTimelineItem(block, group.blocks, isGenerating, isLastMessage))
-                    .filter((item): item is { toolCall: ToolCallData; isInProgress: boolean } => item !== null);
-
-                return <ToolCallTimeline key={idx} toolCalls={toolCalls} />;
+                // Skip timeline groups - they're now handled by ThinkingPath
+                return null;
             })}
         </>
     );

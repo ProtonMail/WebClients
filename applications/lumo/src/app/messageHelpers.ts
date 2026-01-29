@@ -207,7 +207,8 @@ export function messageContentEqual(a: Message, b: Message): boolean {
         a.content === b.content &&
         a.toolCall === b.toolCall && // String comparison (cheap)
         a.toolResult === b.toolResult && // String comparison (cheap)
-        a.blocks === b.blocks // Reference equality (cheap, blocks array replaced on update)
+        a.blocks === b.blocks && // Reference equality (cheap, blocks array replaced on update)
+        a.reasoning === b.reasoning // String comparison for reasoning content
     );
 }
 

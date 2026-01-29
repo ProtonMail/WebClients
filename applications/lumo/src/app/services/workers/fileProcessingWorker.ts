@@ -305,4 +305,5 @@ self.addEventListener('beforeunload', async () => {
     }
 });
 
-workerLogger.log('file processing worker initialized');
+// Worker initialized (log suppressed to reduce console noise)
+// workerLogger.log('file processing worker initialized');

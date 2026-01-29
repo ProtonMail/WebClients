@@ -8,6 +8,7 @@ import type {
     RemoteFilledAttachment,
     RemoteShallowAttachment,
 } from '../../../remote/types';
+import { attachmentDataCache } from '../../../services/attachmentDataCache';
 import type { Attachment, AttachmentId, SerializedAttachment, SpaceId } from '../../../types';
 
 export type PushAttachmentRequest = {
@@ -90,10 +91,14 @@ const attachmentsReducer = createReducer<AttachmentMap>(initialState, (builder) 
         .addCase(deleteAttachment, (state, action) => {
             console.log('Action triggered: deleteAttachment', action.payload);
             const attachmentId = action.payload;
+            // Clean up cache when deleting attachment
+            attachmentDataCache.delete(attachmentId);
             delete state[attachmentId];
         })
         .addCase(deleteAllAttachments, () => {
             console.log('Action triggered: deleteAllAttachments');
+            // Clean up all cached data when deleting all attachments
+            attachmentDataCache.clear();
             return EMPTY_ATTACHMENT_MAP;
         })
         .addCase(deleteAttachmentsBySpaceId, (state, action) => {
@@ -102,6 +107,8 @@ const attachmentsReducer = createReducer<AttachmentMap>(initialState, (builder) 
             Object.keys(state).forEach((attachmentId) => {
                 const attachment = state[attachmentId];
                 if (attachment && attachment.spaceId === spaceId) {
+                    // Clean up cache when deleting attachment
+                    attachmentDataCache.delete(attachmentId);
                     delete state[attachmentId];
                 }
             });

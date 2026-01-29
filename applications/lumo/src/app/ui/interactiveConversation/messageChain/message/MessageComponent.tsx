@@ -45,7 +45,9 @@ const areEqual = (prevProps: MessageComponentProps, nextProps: MessageComponentP
         prevProps.message.status !== nextProps.message.status ||
         prevProps.message.toolCall !== nextProps.message.toolCall ||
         prevProps.message.contextFiles?.length !== nextProps.message.contextFiles?.length ||
-        prevProps.message.toolResult !== nextProps.message.toolResult;
+        prevProps.message.toolResult !== nextProps.message.toolResult ||
+        prevProps.message.reasoning !== nextProps.message.reasoning ||
+        prevProps.message.thinkingTimeline?.length !== nextProps.message.thinkingTimeline?.length;
 
     // Compare siblingInfo by its key properties
     const siblingInfoChanged =
@@ -78,7 +80,7 @@ const MessageComponentPure = ({
     const messageContent = message?.content;
     const isUser = message.role === Role.User;
     const isRunning = message.placeholder || false;
-    const isLoading = message.placeholder && !messageContent;
+    const isLoading = message.placeholder && !messageContent && !message.reasoning;
 
     return (
         <ChatContainerItem
