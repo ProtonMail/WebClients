@@ -347,7 +347,9 @@ export const filterElementsInState = ({
 
         // Check if element has a disabled category label (only relevant for default category view)
         const elementContainsDisabledCategoryLabel =
-            isCurrentLabelDefaultCategory && disabledCategoriesIDs?.some((id) => labelIDsSet.has(id));
+            isCurrentLabelDefaultCategory &&
+            disabledCategoriesIDs?.some((id) => labelIDsSet.has(id)) &&
+            labelIDsSet.has(MAILBOX_LABEL_IDS.INBOX);
 
         // Elements in a category but not in inbox should be filtered when viewing a category
         const isElementInCategoryButNotInbox = isCurrentLabelCategory && !labelIDsSet.has(MAILBOX_LABEL_IDS.INBOX);
