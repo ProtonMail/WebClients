@@ -24,6 +24,7 @@ interface PublicAuthStore {
     setIsLoggedIn: (isLoggedIn: boolean) => void;
     setPublicRole: (publicRole: MemberRole) => void;
 
+    getUserMainAddress: () => UserAddress | undefined;
     hasUploadedFile: (uid: string) => boolean;
     addUploadedFile: (uid: string) => void;
     removeUploadedFiles: (uids: string | string[]) => void;
@@ -40,6 +41,10 @@ export const usePublicAuthStore = create<PublicAuthStore>()(
             publicRole: MemberRole.Viewer,
             isLoggedIn: false,
             uploadedFiles: new Map<string, UploadedFileData>(),
+
+            getUserMainAddress: () => {
+                return get().addresses.at(0);
+            },
 
             setAddresses: (addresses: UserAddress[]) => {
                 set({ addresses });

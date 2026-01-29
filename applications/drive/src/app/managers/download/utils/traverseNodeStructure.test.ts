@@ -4,8 +4,8 @@ import { PROTON_DOCS_DOCUMENT_MIMETYPE } from '@proton/shared/lib/helpers/mimety
 import { createMockNodeEntity } from '../../../utils/test/nodeEntity';
 import { traverseNodeStructure } from './traverseNodeStructure';
 
-jest.mock('@proton/drive/index', () => {
-    const actual = jest.requireActual('@proton/drive/index');
+jest.mock('@proton/drive', () => {
+    const actual = jest.requireActual('@proton/drive');
     return {
         ...actual,
         getDrive: jest.fn(() => ({

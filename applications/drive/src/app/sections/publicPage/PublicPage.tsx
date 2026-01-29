@@ -76,7 +76,7 @@ const PublicPageContent = () => {
             {rootNode.type === NodeType.File ? (
                 <PublicFileView rootNode={rootNode} />
             ) : (
-                <PublicFolderView nodeUid={rootNode.uid} folderName={rootNode.name} />
+                <PublicFolderView rootNode={rootNode} />
             )}
             <TransferManager deprecatedRootShareId={undefined} />
         </div>

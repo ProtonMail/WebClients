@@ -2,19 +2,17 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 
 import { useShallow } from 'zustand/react/shallow';
 
-import { useActiveBreakpoint, useAuthentication } from '@proton/components';
-import type { ProtonDrivePublicLinkClient } from '@proton/drive';
+import { useActiveBreakpoint } from '@proton/components';
+import type { NodeEntity, ProtonDrivePublicLinkClient } from '@proton/drive';
 import { MemberRole, NodeType } from '@proton/drive';
 import { uploadManager } from '@proton/drive/modules/upload';
 import type { SORT_DIRECTION } from '@proton/shared/lib/constants';
-import { isProtonDocsDocument, isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype';
+import { isNativeProtonDocsAppFile } from '@proton/shared/lib/helpers/mimetype';
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 import { LayoutSetting } from '@proton/shared/lib/interfaces/drive/userSettings';
 
-import { useDocumentActions } from '../../hooks/docs/useDocumentActions';
 import { useBatchThumbnailLoader } from '../../hooks/drive/useBatchThumbnailLoader';
-import { downloadManager } from '../../managers/download/DownloadManager';
-import { useDrivePublicPreviewModal } from '../../modals/preview';
+import { useUploadInput } from '../../hooks/drive/useUploadInput';
 import { useContextMenuStore } from '../../modules/contextMenu';
 import { useSelectionStore } from '../../modules/selection';
 import type { SortConfig, SortField } from '../../modules/sorting';
@@ -29,22 +27,23 @@ import type {
     DriveExplorerSort,
 } from '../../statelessComponents/DriveExplorer/types';
 import { UploadDragDrop } from '../../statelessComponents/UploadDragDrop/UploadDragDrop';
-import { useDriveDocsFeatureFlag, useIsSheetsEnabled } from '../../store/_documents';
+import { getOpenInDocsInfo } from '../../utils/docs/openInDocs';
 import { useSdkErrorHandler } from '../../utils/errorHandling/useSdkErrorHandler';
 import { getNodeAncestry } from '../../utils/sdk/getNodeAncestry';
 import { getNodeEntity } from '../../utils/sdk/getNodeEntity';
 import { getPublicFolderCells } from './PublicFolderDriveExplorerCells';
 import { PublicFolderEmptyView } from './PublicFolderEmptyView';
 import { PublicFolderItemContextMenu } from './PublicFolderItemContextMenu';
+import { PublicHeader } from './PublicHeader';
+import { usePublicActions } from './actions/usePublicActions';
 import { getPublicLinkClient } from './publicLinkClient';
 import { subscribeToPublicFolderEvents } from './subscribeToPublicFolderEvents';
 import { usePublicAuthStore } from './usePublicAuth.store';
 import { usePublicFolderStore } from './usePublicFolder.store';
 import { usePublicFolderLoader } from './usePublicFolderLoader';
 
-export interface PublicFolderViewProps {
-    nodeUid: string;
-    folderName: string;
+interface PublicFolderViewProps {
+    rootNode: NodeEntity;
 }
 
 const usePublicBreadcrumb = (driveClient: ProtonDrivePublicLinkClient) => {
@@ -84,27 +83,61 @@ const usePublicBreadcrumb = (driveClient: ProtonDrivePublicLinkClient) => {
     };
 };
 
-export const PublicFolderView = ({ nodeUid, folderName }: PublicFolderViewProps) => {
+export const PublicFolderView = ({ rootNode }: PublicFolderViewProps) => {
     const publicDriveClient = getPublicLinkClient();
     const { loadPublicFolderChildren } = usePublicFolderLoader();
     const { loading: breadcrumbLoading, data: crumbs, load: loadBreadcrumbs } = usePublicBreadcrumb(publicDriveClient);
 
-    const [previewModal, showPreviewModal] = useDrivePublicPreviewModal();
     const contextMenuControls = useContextMenuStore();
     const contextMenuAnchorRef = useRef<HTMLDivElement>(null);
 
     const { loadThumbnail } = useBatchThumbnailLoader({ drive: publicDriveClient });
-    const { isDocsEnabled } = useDriveDocsFeatureFlag();
-    const isSheetsEnabled = useIsSheetsEnabled();
-    const { openDocument } = useDocumentActions();
-    const authentication = useAuthentication();
     const { selectedItemIds } = useSelectionStore(
         useShallow((state) => ({
             selectedItemIds: state.selectedItemIds,
         }))
     );
 
-    const { publicRole } = usePublicAuthStore();
+    const {
+        modals,
+        handleOpenDocsOrSheets,
+        handleDownload,
+        handleDetails,
+        handlePreview,
+        handleCopyLink,
+        handleCreateFolder,
+    } = usePublicActions();
+
+    const { publicRole } = usePublicAuthStore(
+        useShallow((state) => ({
+            publicRole: state.publicRole,
+        }))
+    );
+
+    const handleUpload = useCallback(
+        (files: FileList) => {
+            return uploadManager.upload(files, rootNode.uid);
+        },
+        [rootNode.uid]
+    );
+
+    const {
+        inputRef: fileInputRef,
+        handleClick: handleClickFileUpload,
+        handleChange: handleFileChange,
+    } = useUploadInput({
+        onUpload: handleUpload,
+        forFolders: false,
+    });
+
+    const {
+        inputRef: folderInputRef,
+        handleClick: handleClickFolderUpload,
+        handleChange: handleFolderChange,
+    } = useUploadInput({
+        onUpload: handleUpload,
+        forFolders: true,
+    });
 
     const { isLoading, hasEverLoaded, sortField, direction, itemUids, folder } = usePublicFolderStore(
         useShallow((state) => ({
@@ -167,26 +200,12 @@ export const PublicFolderView = ({ nodeUid, folderName }: PublicFolderViewProps)
         }
         document.getSelection()?.removeAllRanges();
 
-        if (item.mediaType && isProtonDocsDocument(item.mediaType)) {
-            if (isDocsEnabled) {
-                return openDocument({
-                    type: 'doc',
-                    uid,
-                    openBehavior: 'tab',
-                });
+        if (item.mediaType && isNativeProtonDocsAppFile(item.mediaType)) {
+            const openInDocsInfo = getOpenInDocsInfo(item.mediaType);
+            if (openInDocsInfo) {
+                return handleOpenDocsOrSheets(uid, openInDocsInfo);
             }
-            return;
-        } else if (item.mediaType && isProtonDocsSpreadsheet(item.mediaType)) {
-            if (isSheetsEnabled) {
-                return openDocument({
-                    uid,
-                    type: 'sheet',
-                    openBehavior: 'tab',
-                });
-            }
-            return;
         }
-
         if (item.type === NodeType.File || item.type === NodeType.Photo) {
             const previewableNodeUids = [];
             for (const itemUid of itemUids) {
@@ -199,15 +218,7 @@ export const PublicFolderView = ({ nodeUid, folderName }: PublicFolderViewProps)
                 }
             }
 
-            showPreviewModal({
-                drive: publicDriveClient,
-                // TODO: This is temporary hack to prevent passing the deprecatedContextShareId
-                // This property was need for legacy compatibility. As we only use new sdk logic here, this will never be used
-                deprecatedContextShareId: '',
-                nodeUid: item.uid,
-                previewableNodeUids,
-                verifySignatures: Boolean(authentication.getUID()),
-            });
+            handlePreview(uid);
 
             return;
         }
@@ -233,11 +244,11 @@ export const PublicFolderView = ({ nodeUid, folderName }: PublicFolderViewProps)
     );
 
     useEffect(() => {
-        const abortController = loadView(nodeUid);
+        const abortController = loadView(rootNode.uid);
         return () => {
             abortController.abort();
         };
-    }, [loadView, nodeUid]);
+    }, [loadView, rootNode.uid]);
 
     const { viewportWidth } = useActiveBreakpoint();
 
@@ -245,10 +256,6 @@ export const PublicFolderView = ({ nodeUid, folderName }: PublicFolderViewProps)
         sortBy: sortField,
         sortDirection: direction,
         onSort: handleSorting,
-    };
-
-    const handleDownload = (uid: string) => {
-        void downloadManager.downloadAndScan([uid], { skipSignatureCheck: true });
     };
 
     const events: DriveExplorerEvents = {
@@ -270,7 +277,7 @@ export const PublicFolderView = ({ nodeUid, folderName }: PublicFolderViewProps)
 
     const selectionStore = useSelectionStore.getState();
     const selection: DriveExplorerSelection = {
-        selectedItems: new Set(selectedItemIds),
+        selectedItems: selectedItemIds,
         selectionMethods: {
             selectionState: selectionStore.getSelectionState(),
             selectItem: selectionStore.selectItem,
@@ -284,19 +291,30 @@ export const PublicFolderView = ({ nodeUid, folderName }: PublicFolderViewProps)
 
     const cells = getPublicFolderCells({
         viewportWidth,
-        onDownload: handleDownload,
+        onDownload: (uid: string) => handleDownload([uid]),
     });
+
+    const handleHeaderDownload = () => {
+        if (selectedItemIds.size > 0) {
+            return handleDownload(Array.from(selectedItemIds.values()));
+        }
+        return handleDownload(Array.from(itemUids.values()));
+    };
 
     const conditions: DriveExplorerConditions = {
         isDraggable: () => false,
         isDoubleClickable: () => true,
     };
     const handleDrop = (dataTransfer: DataTransfer) => {
-        void uploadManager.upload(dataTransfer, nodeUid);
+        void uploadManager.upload(dataTransfer, rootNode.uid);
     };
 
+    const isViewer = publicRole === MemberRole.Viewer;
+
     return (
-        <UploadDragDrop className="h-full" disabled={publicRole === MemberRole.Viewer} onDrop={handleDrop}>
+        <UploadDragDrop className="h-full" disabled={isViewer} onDrop={handleDrop}>
+            <input multiple type="file" ref={fileInputRef} className="hidden" onChange={handleFileChange} />
+            <input multiple type="file" ref={folderInputRef} className="hidden" onChange={handleFolderChange} />
             <PublicFolderItemContextMenu
                 anchorRef={contextMenuAnchorRef}
                 close={contextMenuControls.close}
@@ -304,10 +322,8 @@ export const PublicFolderView = ({ nodeUid, folderName }: PublicFolderViewProps)
                 open={contextMenuControls.open}
                 position={contextMenuControls.position}
             />
-            {isEmpty ? (
-                <PublicFolderEmptyView />
-            ) : (
-                <>
+            <PublicHeader
+                breadcrumbOrName={
                     <Breadcrumbs
                         renderingMode={BreadcrumbRenderingMode.Prominent}
                         loading={breadcrumbLoading}
@@ -318,26 +334,45 @@ export const PublicFolderView = ({ nodeUid, folderName }: PublicFolderViewProps)
                             },
                         }}
                     />
-                    <DriveExplorer
-                        itemIds={Array.from(itemUids.values())}
-                        layout={LayoutSetting.List}
-                        cells={cells}
-                        selection={selection}
-                        events={events}
-                        conditions={conditions}
-                        sort={sort}
-                        loading={isLoading}
-                        caption={folderName}
-                        config={{ itemHeight: 52 }}
-                        contextMenuControls={{
-                            isOpen: contextMenuControls.isOpen,
-                            showContextMenu: contextMenuControls.handleContextMenu,
-                            close: contextMenuControls.close,
-                        }}
-                    />
-                </>
+                }
+                sharedBy={
+                    (rootNode.keyAuthor.ok ? rootNode.keyAuthor.value : rootNode.keyAuthor.error.claimedAuthor) ||
+                    undefined
+                }
+                onDownload={handleHeaderDownload}
+                onDetails={() => handleDetails(rootNode.uid)}
+                onCopyLink={handleCopyLink}
+                onUploadFile={!isViewer ? handleClickFileUpload : undefined}
+                onUploadFolder={!isViewer ? handleClickFolderUpload : undefined}
+                onCreateFolder={!isViewer ? () => handleCreateFolder(rootNode.uid) : undefined}
+                nbSelected={selectedItemIds.size}
+                isEmptyView={isEmpty}
+            />
+
+            {isEmpty ? (
+                <PublicFolderEmptyView uploadEnabled={!isViewer} onUpload={handleUpload} />
+            ) : (
+                <DriveExplorer
+                    itemIds={Array.from(itemUids.values())}
+                    layout={LayoutSetting.List}
+                    cells={cells}
+                    selection={selection}
+                    events={events}
+                    conditions={conditions}
+                    sort={sort}
+                    loading={isLoading}
+                    caption={rootNode.name}
+                    config={{ itemHeight: 52 }}
+                    contextMenuControls={{
+                        isOpen: contextMenuControls.isOpen,
+                        showContextMenu: contextMenuControls.handleContextMenu,
+                        close: contextMenuControls.close,
+                    }}
+                />
             )}
-            {previewModal}
+            {modals.previewModal}
+            {modals.detailsModal}
+            {modals.createFolderModal}
         </UploadDragDrop>
     );
 };
