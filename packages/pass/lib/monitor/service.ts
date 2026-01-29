@@ -41,7 +41,7 @@ export const createMonitorService = (core: PassCoreProxy, store: Store<State>): 
 
         checkWeakPasswords: async (options) => {
             const logins = getLoginItems(options?.shareIds);
-            const candidates = logins.filter((item) => item.data.content.password.v);
+            const candidates = logins.filter((item) => item.data.content.password.v.length);
             const passwords = candidates.map((item) => deobfuscate(item.data.content.password));
             const chunks = chunk(passwords, WASM_PROCEDURE_BATCH_SIZE);
             const scores = (await seq(chunks, core.check_password_scores)).flat();
