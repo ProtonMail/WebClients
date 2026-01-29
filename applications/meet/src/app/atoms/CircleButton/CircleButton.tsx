@@ -45,7 +45,8 @@ export const CircleButton = ({
     return (
         <Tooltip
             title={tooltipTitle}
-            tooltipClassName="circle-button-tooltip bg-strong color-norm"
+            tooltipClassName="meet-tooltip bg-strong color-norm"
+            tooltipStyle={{ '--meet-tooltip-bg': 'var(--background-strong)' }}
             isOpen={tooltipTitle ? undefined : false}
             openDelay={750}
             closeDelay={0}

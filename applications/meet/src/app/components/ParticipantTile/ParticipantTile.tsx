@@ -107,7 +107,7 @@ export const ParticipantTile = ({ participant, viewSize = 'large' }: Participant
             )}
         >
             <div
-                className="absolute top-custom right-custom flex items-center justify-center gap-2"
+                className="absolute top-custom right-custom flex items-center justify-center gap-2 z-up"
                 style={{
                     '--top-custom': `${positionBySize[viewSize]}rem`,
                     '--right-custom': `${positionBySize[viewSize]}rem`,
@@ -151,7 +151,7 @@ export const ParticipantTile = ({ participant, viewSize = 'large' }: Participant
 
             {shouldShowVideo ? (
                 <>
-                    <div className="gradient-overlay absolute top-0 left-0 w-full h-full" />
+                    <div className="gradient-overlay absolute top-0 left-0 w-full h-full z-1" />
                     <VideoTrack
                         key={cameraVideoPublication?.trackSid}
                         className="participant-tile-body__video bg-strong w-full h-full rounded-xl"
@@ -178,7 +178,7 @@ export const ParticipantTile = ({ participant, viewSize = 'large' }: Participant
             )}
             <div
                 className={clsx(
-                    'color-norm absolute left-custom bottom-custom participant-tile-name text-ellipsis max-w-custom',
+                    'color-norm absolute left-custom bottom-custom participant-tile-name text-ellipsis max-w-custom flex',
                     viewSize !== 'large' && 'text-sm'
                 )}
                 style={{
