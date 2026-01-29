@@ -42,7 +42,7 @@ export interface MediaManagementContextType {
         videoDeviceId?: string;
         forceUpdate?: boolean;
         preserveCache?: boolean;
-    }) => Promise<void>;
+    }) => Promise<boolean | undefined>;
     toggleAudio: ({
         isEnabled,
         audioDeviceId,
@@ -51,7 +51,7 @@ export interface MediaManagementContextType {
         isEnabled?: boolean;
         audioDeviceId?: string | null;
         preserveCache?: boolean;
-    }) => Promise<void>;
+    }) => Promise<boolean | undefined>;
     backgroundBlur: boolean;
     toggleBackgroundBlur: ReturnType<typeof debounce>;
     isBackgroundBlurSupported: boolean;
@@ -93,8 +93,8 @@ const defaultValues: MediaManagementContextType = {
     speakerState: DEFAULT_DEVICE_STATE,
     isVideoEnabled: false,
     isAudioEnabled: false,
-    toggleVideo: () => Promise.resolve(),
-    toggleAudio: () => Promise.resolve(),
+    toggleVideo: () => Promise.resolve(undefined),
+    toggleAudio: () => Promise.resolve(undefined),
     backgroundBlur: false,
     toggleBackgroundBlur: debounce(() => Promise.resolve(), 500),
     isBackgroundBlurSupported: true,

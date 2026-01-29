@@ -9,16 +9,22 @@ import useNotifications from '@proton/components/hooks/useNotifications';
 import { useMeetErrorReporting } from '@proton/meet';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 
-import { useAudioToggle } from '../hooks/useAudioToggle';
+import { useAudioToggle } from '../hooks/mediaToggle/useAudioToggle';
+import { useVideoToggle } from '../hooks/mediaToggle/useVideoToggle';
 import { useDevicePermissionChangeListener } from '../hooks/useDevicePermissionChangeListener';
 import { useDevices } from '../hooks/useDevices';
 import { useDynamicDeviceHandling } from '../hooks/useDynamicDeviceHandling';
 import { useMicrophoneVolumeAnalysis } from '../hooks/useMicrophoneVolumeAnalysis';
-import { useVideoToggle } from '../hooks/useVideoToggle';
-import type { SwitchActiveDevice } from '../types';
+import type { DeviceState, SwitchActiveDevice } from '../types';
 import { supportsSetSinkId } from '../utils/browser';
 import { setAudioSessionType } from '../utils/ios-audio-session';
 import { MediaManagementContext } from './MediaManagementContext';
+
+const getSelectedDeviceId = (deviceState: DeviceState, activeDeviceId: string) => {
+    return deviceState.preferredAvailable && deviceState.preferredDevice?.deviceId
+        ? deviceState.preferredDevice.deviceId
+        : activeDeviceId;
+};
 
 export const MediaManagementProvider = ({ children }: { children: React.ReactNode }) => {
     const room = useRoomContext();
@@ -68,6 +74,7 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
             try {
                 await room.switchActiveDevice(deviceType, deviceId);
             } catch (error) {
+                reportMeetError('Failed to switch active device', error);
                 // eslint-disable-next-line no-console
                 console.error(error);
                 return;
@@ -91,14 +98,25 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
         isVideoEnabled,
         facingMode,
         isBackgroundBlurSupported,
-    } = useVideoToggle(activeCameraDeviceId, switchActiveDevice, initialCameraState, cameraState.systemDefault!);
+    } = useVideoToggle(
+        activeCameraDeviceId,
+        switchActiveDevice,
+        initialCameraState,
+        cameraState.systemDefault!,
+        cameras
+    );
 
     const { toggleAudio, noiseFilter, toggleNoiseFilter, isAudioEnabled } = useAudioToggle(
         activeMicrophoneDeviceId,
         switchActiveDevice,
         initialAudioState,
-        microphoneState.systemDefault!
+        microphoneState.systemDefault!,
+        microphones
     );
+
+    const selectedCameraId = getSelectedDeviceId(cameraState, activeCameraDeviceId);
+    const selectedMicrophoneId = getSelectedDeviceId(microphoneState, activeMicrophoneDeviceId);
+    const selectedAudioOutputDeviceId = getSelectedDeviceId(speakerState, activeAudioOutputDeviceId);
 
     const handleDevicePermissionChange = (permissions: { camera?: PermissionState; microphone?: PermissionState }) => {
         if (permissions.camera === 'denied') {
@@ -121,7 +139,15 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
     const initializeCamera = async (initialCameraState: boolean) => {
         try {
             if (initialCameraState) {
-                await toggleVideo({ isEnabled: true, preserveCache: true });
+                const result = await toggleVideo({
+                    videoDeviceId: selectedCameraId,
+                    isEnabled: true,
+                    preserveCache: true,
+                });
+
+                if (!result) {
+                    throw new Error('Failed to initialize camera');
+                }
             }
         } catch (error) {
             reportMeetError('Failed to initialize camera', error);
@@ -154,10 +180,33 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
                     await audioPublication.track.mute();
                 }
             } else {
-                await toggleAudio({ isEnabled: true, preserveCache: true });
+                const result = await toggleAudio({
+                    audioDeviceId: selectedMicrophoneId,
+                    isEnabled: true,
+                    preserveCache: true,
+                });
+
+                if (!result) {
+                    throw new Error('Failed to initialize microphone');
+                }
             }
         } catch (error) {
             reportMeetError('Failed to initialize microphone', error);
+            throw error;
+        }
+    };
+
+    const initializeAudioOutput = async (initialAudioOutputState: boolean) => {
+        try {
+            if (initialAudioOutputState) {
+                await switchActiveDevice({
+                    deviceType: 'audiooutput',
+                    deviceId: selectedAudioOutputDeviceId,
+                    isSystemDefaultDevice: speakerState.useSystemDefault,
+                });
+            }
+        } catch (error) {
+            reportMeetError('Failed to initialize audio output', error);
             throw error;
         }
     };
@@ -168,6 +217,7 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
         const results = await Promise.allSettled([
             initializeCamera(initialCameraState),
             initializeMicrophone(initialAudioState),
+            initializeAudioOutput(true),
         ]);
 
         const cameraError = results[0].status === 'rejected' ? results[0].reason : null;
@@ -333,9 +383,9 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
                 cameraState,
                 microphoneState,
                 speakerState,
-                selectedCameraId: cameraState.preferredDevice?.deviceId ?? activeCameraDeviceId,
-                selectedMicrophoneId: microphoneState.preferredDevice?.deviceId ?? activeMicrophoneDeviceId,
-                selectedAudioOutputDeviceId: speakerState.preferredDevice?.deviceId ?? activeAudioOutputDeviceId,
+                selectedCameraId,
+                selectedMicrophoneId,
+                selectedAudioOutputDeviceId,
                 isVideoEnabled,
                 isAudioEnabled,
                 facingMode,
