@@ -164,6 +164,9 @@
       "Increase": [
         "Aumenta"
       ],
+      "Inspect indexed documents": [
+        "Ispeziona documenti indicizzati"
+      ],
       "Keep my subscription": [
         "Mantieni il mio abbonamento"
       ],
@@ -1455,6 +1458,9 @@
       "Remove message filter": [
         "Rimuovi filtro messaggio"
       ],
+      "Removed from future questions": [
+        "Rimosso da domande future"
+      ],
       "Retrieved Project Knowledge": [
         "Conoscenza del progetto recuperata"
       ],
@@ -1502,6 +1508,9 @@
       ],
       "There was an error processing this file. The content may not be readable or the file format might not be fully supported.": [
         "Si è verificato un errore durante l'elaborazione di questo file. Il contenuto potrebbe non essere leggibile o il formato del file potrebbe non essere completamente supportato."
+      ],
+      "These files won't be used for future questions.": [
+        "Questi file non verranno utilizzati per domande future."
       ],
       "This file appears to be empty or contains no extractable text content.": [
         "Questo file sembra essere vuoto o non contiene alcun contenuto testuale estraibile."
@@ -2015,6 +2024,9 @@
       "Create": [
         "Crea"
       ],
+      "Create folder": [
+        "Crea una cartella"
+      ],
       "Delete": [
         "Elimina"
       ],
@@ -2029,6 +2041,9 @@
       ],
       "Edit instructions": [
         "Modifica istruzioni"
+      ],
+      "Edit project": [
+        "Modifica progetto"
       ],
       "Hide settings": [
         "Nascondi Impostazioni"
@@ -2075,6 +2090,9 @@
       "Select conversation": [
         "Seleziona conversazione"
       ],
+      "Settings": [
+        "Impostazioni"
+      ],
       "Show settings": [
         "Visualizza impostazioni"
       ],
@@ -2118,6 +2136,9 @@
       ],
       "Collapse projects": [
         "Comprimi progetti"
+      ],
+      "Create a free account": [
+        "Crea un account gratuito"
       ],
       "Delete": [
         "Elimina"
@@ -2178,6 +2199,9 @@
       ],
       "Untitled chat": [
         "Chat senza titolo"
+      ],
+      "Upload from computer": [
+        "Carica dal computer"
       ]
     },
     "collider_2025:Error": {
@@ -2204,6 +2228,9 @@
       ],
       "File \"${ file.name }\" (${ fileSizeFormatted }) exceeds the ${ maxSizeFormatted } limit. Link a ${ DRIVE_APP_NAME } folder to upload larger files.": [
         "Il file \"${ file.name }\" (${ fileSizeFormatted }) supera il limite di ${ maxSizeFormatted }. Collega una cartella ${ DRIVE_APP_NAME } per caricare file più grandi."
+      ],
+      "File download failed due to integrity check. Please try again.": [
+        "Download del file fallito a causa del controllo di integrità. Riprova."
       ],
       "File type not supported: ${ file.name }": [
         "Tipo di file non supportato: ${ file.name }"
@@ -2305,6 +2332,9 @@
       ],
       "Your files are large. ${ LUMO_SHORT_APP_NAME } may not be able to process all information.": [
         "I tuoi file sono grandi. ${ LUMO_SHORT_APP_NAME } potrebbe non essere in grado di elaborare tutte le informazioni."
+      ],
+      "Your information is zero-access encrypted": [
+        "Le tue informazioni sono crittografate a conoscenza zero"
       ]
     },
     "collider_2025:Label": {
@@ -2319,6 +2349,11 @@
       ],
       "Untitled chat": [
         "Chat senza titolo"
+      ]
+    },
+    "collider_2025:Navigation": {
+      "All projects": [
+        "Tutti i progetti"
       ]
     },
     "collider_2025:Notification": {
@@ -2373,6 +2408,9 @@
       "Compare the methodologies used across these studies": [
         "Confronta le metodologie utilizzate in questi studi"
       ],
+      "Create a packing list for a winter hiking trip in Patagonia": [
+        "Crea una lista di cose da mettere in valigia per un viaggio di escursionismo invernale in Patagonia"
+      ],
       "Explain the trade-offs between paying off debt vs investing": [
         "Spiega i compromessi tra ripagare un debito e investire"
       ],
@@ -2403,6 +2441,9 @@
       "Help me understand this concept step by step": [
         "Aiutami a capire questo concetto passo dopo passo"
       ],
+      "Help me understand what this code does": [
+        "Aiutami a capire cosa fa questo codice"
+      ],
       "How do people celebrate New Year's Eve around the world?": [
         "Come si festeggia il Capodanno in tutto il mondo?"
       ],
@@ -2430,6 +2471,12 @@
       "Summarize the key obligations and rights in this contract": [
         "Riassumi gli obblighi e i diritti chiave di questo contratto"
       ],
+      "Summarize the key points from this meeting": [
+        "Riassumi i punti chiave di questa riunione"
+      ],
+      "What are the main findings and how do they relate to each other?": [
+        "Quali sono i risultati principali e come si relazionano tra loro?"
+      ],
       "What are the termination clauses and notice requirements?": [
         "Quali sono le clausole di risoluzione e i requisiti di preavviso?"
       ],
@@ -2450,6 +2497,9 @@
       "Indexing": [
         "Indicizzazione"
       ],
+      "Indexing error": [
+        "Errore di indicizzazione"
+      ],
       "Indexing for search": [
         "Indicizzazione per la ricerca"
       ]
@@ -2460,6 +2510,9 @@
       ]
     },
     "collider_2025:Success": {
+      "Drive folder linked successfully": [
+        "Cartella drive collegata con successo"
+      ],
       "Drive folder unlinked": [
         "Cartella Drive scollegata"
       ],
@@ -2507,8 +2560,14 @@
       "How does ${ LUMO_SHORT_APP_NAME } keep our conversations confidential?": [
         "Come fa ${ LUMO_SHORT_APP_NAME } a mantenere riservate le nostre conversazioni?"
       ],
+      "Inspiration": [
+        "Ispirazione"
+      ],
       "Instructions": [
         "Istruzioni"
+      ],
+      "Introducing Projects": [
+        "Introduzione ai Progetti"
       ],
       "Last 30 days": [
         "Ultimi 30 giorni"
@@ -3765,6 +3824,9 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Questo campo richiede un minimo di ${ minimumLength } caratteri."
       ],
+      "This offer is not available in your country": [
+        "Questa offerta non é disponibile nel tuo Paese"
+      ],
       "Try using only letters, numerals, and _.-": [
         "Prova ad usare solo lettere, numeri e _.-"
       ],
@@ -4094,6 +4156,9 @@
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Declassando ad un piano gratuito, perderai definitivamente questi benefici, anche se in futuro effettuerai un nuovo upgrade."
       ],
+      "Chunk": [
+        "Blocco"
+      ],
       "chunks": [
         "chunk"
       ],
@@ -4344,6 +4409,9 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Dato che sei un utente fedele, il tuo account ha funzionalità aggiuntive abilitate."
       ],
+      "Size:": [
+        "Dimensione:"
+      ],
       "Start sharing it with contacts and use it for online services.": [
         "Inizia a condividerlo con i contatti e utilizzalo per i servizi online."
       ],
@@ -4371,6 +4439,9 @@
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Questo ora è il tuo ${ defaultEmailAddress } per l'invio di nuovi messaggi."
+      ],
+      "This may indicate that projects were deleted but their indexed files weren't cleaned up, or that spaces failed to load from IndexedDB.": [
+        "Ci potrebbero essere progetti eliminati senza che i relativi file indicizzati siano stati ripuliti, oppure spazi che non sono stati caricati da IndexedDB."
       ],
       "This will sign you out of all accounts currently logged in.": [
         "Verrai disconnesso da tutti gli account attualmente connessi."
@@ -4872,6 +4943,9 @@
       ]
     },
     "lumo: Debug View": {
+      "Clear History": [
+        "Cancella Cronologia"
+      ],
       "Differential": [
         "Differenziale"
       ],
@@ -4890,6 +4964,9 @@
       "Redux updates": [
         "Aggiornamenti Redux"
       ],
+      "Redux/sec": [
+        "Redux/sec"
+      ],
       "Render time": [
         "Tempo di rendering"
       ],
@@ -4901,6 +4978,9 @@
       ],
       "Spring state": [
         "Stato di spring"
+      ],
+      "Spring-Mass Visualization": [
+        "Visualizzazione Molla-Massa"
       ],
       "Status": [
         "Stato"
@@ -4934,6 +5014,10 @@
         "${ n } riunione attiva alla volta",
         "${ n } riunioni attive contemporaneamente"
       ],
+      "${ n } participant": [
+        "${ n } partecipante",
+        "${ n } partecipanti"
+      ],
       "24 hours per meeting": [
         "24 ore per riunione"
       ],
@@ -4942,6 +5026,9 @@
       ],
       "Appointment scheduling": [
         "Pianificazione degli appuntamenti"
+      ],
+      "Booking pages": [
+        "Pagine di prenotazione"
       ],
       "Browser, mobile, and desktop apps": [
         "App per browser, per dispositivi mobili e per desktop"
@@ -4952,8 +5039,8 @@
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "Condivisione dello schermo con crittografia end-to-end e chat effimera durante la chiamata"
       ],
-      "Meeting recording (coming soon)": [
-        "Registrazione riunione (prossimamente)"
+      "Meeting recording": [
+        "Registrazione riunione"
       ],
       "One active meeting at a time": [
         "Una riunione attiva alla volta"
@@ -6589,6 +6676,9 @@
       ]
     },
     "Status": {
+      "Enabled": [
+        "Abilitato"
+      ],
       "Not available": [
         "Non disponibile"
       ]
