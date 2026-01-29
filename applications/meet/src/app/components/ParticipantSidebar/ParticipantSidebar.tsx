@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { IcChevronLeft } from '@proton/icons/icons/IcChevronLeft';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
+import clsx from '@proton/utils/clsx';
 
 import { SCREEN_SHARE_PAGE_SIZE } from '../../constants';
 import { useMeetContext } from '../../contexts/MeetContext';
@@ -60,7 +61,7 @@ export const ParticipantSidebar = ({
                 </Button>
             )}
             {participantSideBarOpen && (
-                <div className="h-full flex items-start flex-column flex-nowrap">
+                <div className={clsx('h-full flex items-start flex-column flex-nowrap')}>
                     {participants.map((participant) => {
                         return (
                             <div

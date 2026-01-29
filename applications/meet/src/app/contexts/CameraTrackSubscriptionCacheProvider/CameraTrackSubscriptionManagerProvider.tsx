@@ -17,6 +17,7 @@ import { CameraTrackSubscriptionManager } from '../../utils/subscriptionManagers
 interface CameraTrackSubscriptionManagerApi {
     register: RegisterCameraTrackFn;
     unregister(publication: TrackPublication | undefined): void;
+    removeForcePin(publication: TrackPublication): void;
 }
 
 const CameraTrackSubscriptionManagerContext = createContext<CameraTrackSubscriptionManagerApi | null>(null);
@@ -68,15 +69,22 @@ export const CameraTrackSubscriptionManagerProvider = ({ children }: { children:
         };
     }, [room]);
 
-    const register = useCallback<RegisterCameraTrackFn>((publication, participantIdentity) => {
-        managerRef.current.register(publication, participantIdentity);
+    const register = useCallback<RegisterCameraTrackFn>((publication, participantIdentity, forcePin) => {
+        managerRef.current.register(publication, participantIdentity, forcePin);
     }, []);
 
     const unregister = useCallback((publication: TrackPublication | undefined) => {
         managerRef.current?.unregister(publication);
     }, []);
 
-    const value = useMemo<CameraTrackSubscriptionManagerApi>(() => ({ register, unregister }), [register, unregister]);
+    const removeForcePin = useCallback((publication: TrackPublication) => {
+        managerRef.current?.removeForcePin(publication);
+    }, []);
+
+    const value = useMemo<CameraTrackSubscriptionManagerApi>(
+        () => ({ register, unregister, removeForcePin }),
+        [register, unregister, removeForcePin]
+    );
 
     return (
         <CameraTrackSubscriptionManagerContext.Provider value={value}>
