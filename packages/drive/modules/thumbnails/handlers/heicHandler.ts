@@ -36,6 +36,7 @@ export class HeicHandler extends BaseHandler {
         fileSize: number,
         mimeType: SupportedMimeTypes.webp | SupportedMimeTypes.jpg,
         thumbnailTypes: ThumbnailType[],
+        originalMimeType: string,
         debug: boolean = false
     ): Promise<ThumbnailGenerationResult> {
         const perf = this.createPerformanceTracker(debug);
@@ -49,9 +50,12 @@ export class HeicHandler extends BaseHandler {
             const img = await getImageFromFile(blob);
             perf.end('imageDecoding');
 
-            const thumbnails = await this.generateThumbnailsFromImage(fileSize, img, {
+            const thumbnails = await this.generateThumbnailsFromImage({
+                fileSize,
+                img,
                 mimeType,
                 thumbnailTypes,
+                originalMimeType,
                 perf,
             });
 

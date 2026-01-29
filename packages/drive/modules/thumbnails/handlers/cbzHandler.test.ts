@@ -48,7 +48,14 @@ describe('CbzHandler', () => {
             const blob = new Blob(['cbz content'], { type: 'application/x-cbz' });
 
             await expect(
-                handler.generate(blob, 'large.cbz', largeSize, SupportedMimeTypes.webp, [ThumbnailType.Type1])
+                handler.generate(
+                    blob,
+                    'large.cbz',
+                    largeSize,
+                    SupportedMimeTypes.webp,
+                    [ThumbnailType.Type1],
+                    'application/x-cbz'
+                )
             ).rejects.toThrow(UnsupportedFormatError);
 
             Object.defineProperty(constants, 'isIosDevice', { value: false, writable: true });
@@ -61,7 +68,14 @@ describe('CbzHandler', () => {
             const blob = new Blob(['cbz content'], { type: 'application/x-cbz' });
 
             await expect(
-                handler.generate(blob, 'comic.cbz', blob.size, SupportedMimeTypes.webp, [ThumbnailType.Type1])
+                handler.generate(
+                    blob,
+                    'comic.cbz',
+                    blob.size,
+                    SupportedMimeTypes.webp,
+                    [ThumbnailType.Type1],
+                    'application/x-cbz'
+                )
             ).rejects.toThrow(MissingDataError);
         });
 
@@ -72,7 +86,14 @@ describe('CbzHandler', () => {
             const blob = new Blob(['cbz content'], { type: 'application/x-cbz' });
 
             try {
-                await handler.generate(blob, 'comic.cbz', blob.size, SupportedMimeTypes.webp, [ThumbnailType.Type1]);
+                await handler.generate(
+                    blob,
+                    'comic.cbz',
+                    blob.size,
+                    SupportedMimeTypes.webp,
+                    [ThumbnailType.Type1],
+                    'application/x-cbz'
+                );
                 fail('Should have thrown MissingDataError');
             } catch (error) {
                 expect(error).toBeInstanceOf(MissingDataError);
@@ -90,7 +111,14 @@ describe('CbzHandler', () => {
             const blob = new Blob(['corrupted cbz'], { type: 'application/x-cbz' });
 
             await expect(
-                handler.generate(blob, 'corrupted.cbz', blob.size, SupportedMimeTypes.webp, [ThumbnailType.Type1])
+                handler.generate(
+                    blob,
+                    'corrupted.cbz',
+                    blob.size,
+                    SupportedMimeTypes.webp,
+                    [ThumbnailType.Type1],
+                    'application/x-cbz'
+                )
             ).rejects.toThrow(UnsupportedFormatError);
         });
 
@@ -101,9 +129,14 @@ describe('CbzHandler', () => {
             const blob = new Blob(['corrupted cbz'], { type: 'application/x-cbz' });
 
             try {
-                await handler.generate(blob, 'corrupted.cbz', blob.size, SupportedMimeTypes.webp, [
-                    ThumbnailType.Type1,
-                ]);
+                await handler.generate(
+                    blob,
+                    'corrupted.cbz',
+                    blob.size,
+                    SupportedMimeTypes.webp,
+                    [ThumbnailType.Type1],
+                    'application/x-cbz'
+                );
                 fail('Should have thrown UnsupportedFormatError');
             } catch (error) {
                 expect(error).toBeInstanceOf(UnsupportedFormatError);

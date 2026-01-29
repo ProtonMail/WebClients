@@ -41,23 +41,23 @@ export function calculateThumbnailSize(
 
 export const getLongestEdge = (width: number, height: number) => (width > height ? width : height);
 
-export function shouldGenerateHDPreview(size: number, width: number, height: number): boolean {
+export function shouldGenerateHDPreview(
+    size: number,
+    width: number,
+    height: number,
+    originalMimeType: string
+): boolean {
     const edge = getLongestEdge(width, height);
-    return edge > HD_THUMBNAIL_MAX_SIDE && size > HD_THUMBNAIL_MAX_SIZE;
+    const isLargeImage = edge > HD_THUMBNAIL_MAX_SIDE;
+    // Always force Type2 (HD) thumbnail generation in case it's not jpg/webp
+    // https://drive.gitlab-pages.protontech.ch/documentation/specifications/data/thumbnails/#type-2-hd-photo
+    const isJpegOrWebp = originalMimeType === SupportedMimeTypes.jpg || originalMimeType === SupportedMimeTypes.webp;
+
+    return isLargeImage || !isJpegOrWebp;
 }
 
 export function getMaxThumbnailSize(thumbnailType: ThumbnailType): number {
     return thumbnailType === ThumbnailType.Type2 ? HD_THUMBNAIL_MAX_SIZE * 0.9 : THUMBNAIL_MAX_SIZE * 0.9;
-}
-
-export function getThumbnailTypesToGenerate(fileSize: number, width: number, height: number): ThumbnailType[] {
-    const thumbnailTypesToGenerate: ThumbnailType[] = [ThumbnailType.Type1];
-
-    if (shouldGenerateHDPreview(fileSize, width, height)) {
-        thumbnailTypesToGenerate.push(ThumbnailType.Type2);
-    }
-
-    return thumbnailTypesToGenerate;
 }
 
 export async function optimizeCanvasForThumbnail(

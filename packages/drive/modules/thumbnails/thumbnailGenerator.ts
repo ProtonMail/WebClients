@@ -84,9 +84,7 @@ async function processThumbnail(
                 fileSize,
                 detectedMimeType: result.generationInfo.detectedMimeType,
                 handler: result.generationInfo.handler,
-                thumbnailMimeType,
-                thumbnailTypes,
-                thumbnailCount: result.thumbnails?.thumbnails?.length || 0,
+                thumbnails: result.thumbnails,
                 performance: {
                     totalTime: `${totalTime.toFixed(2)}ms`,
                     ...result.performance,

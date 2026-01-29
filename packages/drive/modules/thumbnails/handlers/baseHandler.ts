@@ -1,9 +1,9 @@
-import type { ThumbnailType } from '@protontech/drive-sdk';
+import { ThumbnailType } from '@protontech/drive-sdk';
 
 import type { SupportedMimeTypes } from '@proton/shared/lib/drive/constants';
 
 import { PerformanceTracker } from '../performanceTracker';
-import { type ThumbnailInfo, type ThumbnailResult, getThumbnailTypesToGenerate, scaleImage } from '../utils';
+import { type ThumbnailInfo, type ThumbnailResult, scaleImage, shouldGenerateHDPreview } from '../utils';
 import type { GenericHandler, HandlerOptions, ThumbnailGenerationResult } from './interfaces';
 
 export abstract class BaseHandler implements GenericHandler {
@@ -15,25 +15,25 @@ export abstract class BaseHandler implements GenericHandler {
         return new PerformanceTracker(debug);
     }
 
-    protected async generateThumbnailsFromImage(
-        fileSize: number,
-        img: HTMLImageElement,
-        options: {
-            mimeType: SupportedMimeTypes.webp | SupportedMimeTypes.jpg;
-            thumbnailTypes: ThumbnailType[];
-            customDimensions?: { width: number; height: number };
-            duration?: number;
-            perf?: PerformanceTracker;
-        }
-    ): Promise<ThumbnailResult> {
-        const { mimeType, thumbnailTypes, customDimensions, duration, perf } = options;
+    protected async generateThumbnailsFromImage(options: {
+        fileSize: number;
+        img: HTMLImageElement;
+        mimeType: SupportedMimeTypes.webp | SupportedMimeTypes.jpg;
+        thumbnailTypes: ThumbnailType[];
+        originalMimeType: string;
+        customDimensions?: { width: number; height: number };
+        duration?: number;
+        perf?: PerformanceTracker;
+    }): Promise<ThumbnailResult> {
+        const { fileSize, img, mimeType, thumbnailTypes, originalMimeType, customDimensions, duration, perf } = options;
 
         try {
             const dimensions = customDimensions || { width: img.width, height: img.height };
-            const allThumbnailTypes = getThumbnailTypesToGenerate(fileSize, dimensions.width, dimensions.height);
-            const thumbnailTypesToGenerate = thumbnailTypes
-                ? allThumbnailTypes.filter((type) => thumbnailTypes.includes(type))
-                : allThumbnailTypes;
+            const thumbnailTypesToGenerate = thumbnailTypes.filter(
+                (thumbnailType) =>
+                    thumbnailType !== ThumbnailType.Type2 ||
+                    shouldGenerateHDPreview(fileSize, dimensions.width, dimensions.height, originalMimeType)
+            );
 
             const thumbnails: ThumbnailInfo[] = [];
 
@@ -59,6 +59,7 @@ export abstract class BaseHandler implements GenericHandler {
         fileSize: number,
         mimeType: SupportedMimeTypes.webp | SupportedMimeTypes.jpg,
         thumbnailTypes: ThumbnailType[],
+        originalMimeType: string,
         debug?: boolean,
         options?: HandlerOptions
     ): Promise<ThumbnailGenerationResult>;
