@@ -501,27 +501,22 @@ export const createAuthService = ({
             history.replace({ ...history.location, pathname: getLocalPath() });
         },
 
-        onUnlocked: async (mode, _, localID) => {
+        onUnlocked: async (mode, _, localID, offline) => {
             if (clientBooted(app.getState().status)) return;
-
-            const validSession = authStore.validSession(authStore.getSession());
 
             if (mode === LockMode.SESSION) {
                 /** If the unlock request was triggered before the authentication
                  * store session was fully hydrated, trigger a session resume. */
-                if (!validSession) await auth.resumeSession(localID, { retryable: false, unlocked: true });
-                else await auth.login(authStore.getSession(), { unlocked: true });
+                await auth.resumeSession(localID, { retryable: false, unlocked: true });
             }
 
             if ([LockMode.PASSWORD, LockMode.BIOMETRICS].includes(mode)) {
-                const offlineEnabled = (await core.settings.resolve(localID))?.offlineEnabled ?? false;
-                if (!getOnline() && offlineEnabled) store.dispatch(bootIntent({ offline: true }));
+                if (offline) store.dispatch(bootIntent({ offline: true }));
                 else {
                     /** User may have resumed connection while trying to offline-unlock,
                      * as such force-lock if the lock mode requires it */
                     const forceLock = authStore.getLockMode() === LockMode.SESSION;
-                    const resumed = await auth.resumeSession(localID, { retryable: false, forceLock });
-                    if (!resumed && (await canUnlockOffline(localID))) store.dispatch(bootIntent({ offline: true }));
+                    await auth.resumeSession(localID, { retryable: false, forceLock });
                 }
             }
         },

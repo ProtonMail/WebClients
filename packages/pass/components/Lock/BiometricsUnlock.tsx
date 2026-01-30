@@ -7,7 +7,7 @@ import { Button } from '@proton/atoms/Button/Button';
 import Icon from '@proton/components/components/icon/Icon';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useAuthStore } from '@proton/pass/components/Core/AuthStoreProvider';
-import { useOnline } from '@proton/pass/components/Core/ConnectivityProvider';
+import { useOffline } from '@proton/pass/components/Core/ConnectivityProvider';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import type { AuthRouteState } from '@proton/pass/components/Navigation/routing';
 import { useUnlockGuard } from '@proton/pass/hooks/auth/useUnlockGuard';
@@ -25,13 +25,13 @@ type Props = { offlineEnabled?: boolean };
 
 export const BiometricsUnlock: FC<Props> = ({ offlineEnabled }) => {
     const { createNotification } = useNotifications();
+    const offline = useOffline();
 
-    const online = useOnline();
     const authStore = useAuthStore();
     const history = useHistory<MaybeNull<AuthRouteState>>();
 
     const biometricsUnlock = useRequest(unlock, { initial: true });
-    const disabled = !online && !offlineEnabled;
+    const disabled = offline && !offlineEnabled;
     const [key, rerender] = useRerender();
     const { getBiometricsKey } = usePassCore();
 
@@ -46,8 +46,8 @@ export const BiometricsUnlock: FC<Props> = ({ offlineEnabled }) => {
 
         const localID = authStore?.getLocalID();
         history.replace(getBasename(localID) ?? '/', null);
-        biometricsUnlock.dispatch({ mode: LockMode.BIOMETRICS, secret });
-    }, []);
+        biometricsUnlock.dispatch({ mode: LockMode.BIOMETRICS, secret, offline });
+    }, [offline]);
 
     useUnlockGuard({ offlineEnabled, onOffline: rerender });
 
