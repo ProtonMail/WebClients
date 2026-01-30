@@ -160,7 +160,7 @@ export interface InviteGroupOwnerParameters {
     GroupMemberID: string;
     EncryptionAddress: string;
     TokenKeyPacket: string;
-    TokenKeySignature: string;
+    TokenSignaturePacket: string;
 }
 
 export const inviteGroupOwner = (inviteGroupOwnerParams: InviteGroupOwnerParameters) => ({
