@@ -18,9 +18,7 @@ import {
 } from '@rowsncolumns/spreadsheet'
 import { number2Alpha, ssfFormat, uuid } from '@rowsncolumns/utils'
 import {
-  CURRENCY,
   DATE_PATTERN_EXAMPLE_VALUE,
-  LOCALE,
   NUMBER_PATTERN_EXAMPLE_VALUE,
   PATTERN_SPECS,
   PERCENT_PATTERN_EXAMPLE_VALUE,
@@ -56,7 +54,23 @@ export function useProtonSheetsUIState(
     isViewOnlyMode,
   }: { isReadonly: boolean; isRevisionMode: boolean; isViewOnlyMode: boolean },
 ) {
-  const currencySymbol = getCurrencySymbol(LOCALE, CURRENCY)
+  const kv = {
+    ...state.kv,
+    set: state.yjsState.kvSet,
+  }
+
+  const { application } = useApplication()
+  const logger = application.logger
+
+  const locale = {
+    ...state.locale,
+    set: useEvent((newLocale: string | undefined) => {
+      logger.info('action: set locale', newLocale)
+      kv.set('locale', newLocale)
+    }),
+  }
+
+  const currencySymbol = getCurrencySymbol(locale.resolved, locale.currency)
   if (!currencySymbol) {
     // TODO: handle this more gracefully, default to "$"?
     throw new Error('Currency symbol not found.')
@@ -117,9 +131,6 @@ export function useProtonSheetsUIState(
     isRevisionMode,
     isViewOnlyMode,
   }
-
-  const { application } = useApplication()
-  const logger = application.logger
 
   // operation
   const operation = {
@@ -326,7 +337,7 @@ export function useProtonSheetsUIState(
   const search = { open: useEvent(state.searchState.onRequestSearch) }
 
   // format
-  const patternSpecs = PATTERN_SPECS({ locale: LOCALE, currency: CURRENCY })
+  const patternSpecs = PATTERN_SPECS({ locale: locale.resolved, currency: locale.currency })
   const formatUtils = useFormatUtils(state, patternSpecs, logger)
   const canUnmerge = useMemo(
     () =>
@@ -637,11 +648,6 @@ export function useProtonSheetsUIState(
     },
   }
 
-  const kv = {
-    ...state.kv,
-    set: state.yjsState.kvSet,
-  }
-
   return {
     focusGrid,
     withFocusGrid,
@@ -658,6 +664,7 @@ export function useProtonSheetsUIState(
     charts,
     data,
     kv,
+    locale,
     /** @deprecated temporary, to be removed eventually */
     legacy: state,
   }
@@ -721,7 +728,7 @@ function useFormatUtils(state: ProtonSheetsState, patternSpecs: Record<string, P
     )
   }
   function createNumberPatternExample(pattern: string, value: number | Date) {
-    return ssfFormat(pattern, value)
+    return ssfFormat(pattern, value, state.locale.resolved)
   }
   function useNumberPatternEntry(spec: PatternSpec, exampleValue?: number | Date) {
     return {
