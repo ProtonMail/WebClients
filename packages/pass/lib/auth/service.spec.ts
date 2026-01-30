@@ -26,7 +26,7 @@ describe('Core AuthService', () => {
                 authStore,
                 onInit: jest.fn(),
                 getPersistedSession: jest.fn(() => Promise.resolve(null)),
-                getMemorySession: jest.fn(() => Promise.resolve(null)),
+                getMemorySession: jest.fn(() => Promise.resolve({})),
             });
         });
 
@@ -36,7 +36,7 @@ describe('Core AuthService', () => {
                 authStore,
                 onInit: jest.fn(),
                 getPersistedSession: jest.fn(() => Promise.resolve(null)),
-                getMemorySession: jest.fn(() => Promise.resolve(null)),
+                getMemorySession: jest.fn(() => Promise.resolve({})),
                 onResumeStart: jest.fn(() => Promise.resolve(false)),
             });
 
