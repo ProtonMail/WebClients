@@ -4,14 +4,7 @@ import fs from 'fs/promises';
 import path from 'path';
 
 import { logComponentCreationError, logConclusion, logIntro, logItemCompletion } from './utils/log';
-import {
-    getAtomTemplate,
-    getMdxTemplate,
-    getStoriesTemplate,
-    getStylesTemplate,
-    getTestTemplate,
-    getWriteTemplate,
-} from './utils/templates';
+import { getAtomTemplate, getStylesTemplate, getTestTemplate, getWriteTemplate } from './utils/templates';
 
 const program = new Command();
 
@@ -29,12 +22,10 @@ async function run(AtomName: string, options: { tag: string }) {
         process.exit(0);
     }
 
-    const [atomTemplate, testTemplate, stylesTemplate, mdxTemplate, storiesTemplate] = await Promise.all([
+    const [atomTemplate, testTemplate, stylesTemplate] = await Promise.all([
         getAtomTemplate(AtomName, rootHtmlTag),
         getTestTemplate(AtomName),
         getStylesTemplate(AtomName),
-        getMdxTemplate(AtomName),
-        getStoriesTemplate(AtomName),
     ]);
 
     await fs.mkdir(atomDir);
@@ -45,8 +36,6 @@ async function run(AtomName: string, options: { tag: string }) {
         writeTemplate(`${AtomName}.tsx`, atomTemplate),
         writeTemplate(`${AtomName}.test.tsx`, testTemplate),
         writeTemplate(`${AtomName}.scss`, stylesTemplate),
-        writeTemplate(`${AtomName}.mdx`, mdxTemplate),
-        writeTemplate(`${AtomName}.stories.tsx`, storiesTemplate),
     ]);
 
     logConclusion();

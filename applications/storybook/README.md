@@ -7,13 +7,29 @@ This project is a storybook instance documenting Proton's design system in the s
 Run docs-only in development mode
 
 ```shell
-yarn workspace proton-storybook storybook
-yarn storybook
+yarn workspace proton-storybook docs # From root folder
+
+yarn docs
 ```
 
-The start script defaults to running in docs-only mode (`--docs` flag), however another script called "storybook-raw" has been left (original start script) to run storybook in the original configuration. The storybook docs mention storybook being unable to keep a proper cache in docs-only mode, so the raw command can be used if you're experiencing performance issues while developing locally or just if you'd like to run storybook with a canvas view / for viewing canvas specific addons.
+Run in development mode
 
 ```shell
-yarn workspace proton-storybook storybook-raw
-yarn storybook-raw
+yarn workspace proton-storybook dev # From root folder
+
+yarn dev
 ```
+
+## Visual Testing
+
+The current solution relies on `Playwright` to run visual tests against the `Storybook` stories, which captures all the stories defined for a given component inside one single page.
+
+### CI
+
+It runs as `storybook:test:visual` job defined [here](../../ci/jobs/e2e/visual-storybook.gitlab-ci.yml).
+
+## Update the snapshots
+
+Given a MR that introduces any expected change that should lead to update the snapshots, just need to run **manually** in the CI the job `storybook:test:visual:update`, which will run the visual tests in update mode and commit the changes directly to the MR.
+
+This way the changes can be reviewed as a standalone commit.

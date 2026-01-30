@@ -1,0 +1,35 @@
+import type { Meta, StoryObj } from '@storybook/react-webpack5';
+
+import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
+
+const meta: Meta<typeof InlineLinkButton> = {
+    title: 'Atoms/InlineLinkButton',
+    args: {
+        children: 'Inline link button',
+        onClick: () => alert('See? This is a real button.'),
+    },
+    component: InlineLinkButton,
+    parameters: {
+        docs: {
+            description: {
+                component:
+                    'The InlineLinkButton component is a button with the exact look and behaviour of a link, <b>should ONLY be used inside a text content</b>.',
+            },
+        },
+    },
+    tags: ['autodocs'],
+};
+
+export default meta;
+
+type Story = StoryObj<typeof InlineLinkButton>;
+
+export const Default: Story = {};
+
+export const InsideParagraph: Story = {
+    render: (args) => (
+        <p>
+            This is a paragraph with an <InlineLinkButton {...args}>inline link button</InlineLinkButton> inside.
+        </p>
+    ),
+};
