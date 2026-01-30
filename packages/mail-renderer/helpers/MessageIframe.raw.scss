@@ -600,4 +600,8 @@ blockquote.protonmail_quote
 	.no-print {
 		display: none;
 	}
+
+	img {
+		mix-blend-mode: normal !important; // got some issues with mix-blend-mode in printed files (some img disappear)
+	}
 }
