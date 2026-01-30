@@ -19,7 +19,6 @@ import type { RootSagaOptions, State } from '@proton/pass/store/types';
 import type { MaybeNull } from '@proton/pass/types';
 import { type Maybe, PlanType } from '@proton/pass/types';
 import type { EncryptedPassCache, PassCache } from '@proton/pass/types/worker/cache';
-import { throwError } from '@proton/pass/utils/fp/throw';
 import { logger } from '@proton/pass/utils/logger';
 import { partialMerge } from '@proton/pass/utils/object/merge';
 import { SETTINGS_PASSWORD_MODE } from '@proton/shared/lib/interfaces';
@@ -48,13 +47,10 @@ export function* hydrate(
         const keyPassword = authStore.getPassword();
         const encryptedCache: Partial<EncryptedPassCache> = yield getCache();
         const cacheKey: Maybe<CryptoKey> = yield getCacheKey(encryptedCache, authStore);
-
-        const cache: Maybe<PassCache> = cacheKey
-            ? yield decryptCache(cacheKey, encryptedCache).catch((err) => (config.online ? undefined : throwError(err)))
-            : undefined;
+        const cache: Maybe<PassCache> = cacheKey ? yield decryptCache(cacheKey, encryptedCache).catch(noop) : undefined;
 
         /** Offline boot requires valid cache */
-        if (!config.online && !cache) throw new PassCryptoHydrationError('Missing or invalid offline cache');
+        if (!config.online && !cache) throw new PassCryptoHydrationError('Invalid offline cache');
         /** Online hydration requires keyPassword for PassCrypto */
         if (config.online && !keyPassword) throw new PassCryptoHydrationError('Missing `keyPassword`');
 
@@ -139,7 +135,10 @@ export function* hydrate(
         };
     } catch (err) {
         logger.warn(`[Hydration] Error occured`, err);
-        yield config.onError?.(err);
+
+        if (config.onError) yield config.onError?.(err);
+        else throw err;
+
         return { fromCache: false };
     }
 }
