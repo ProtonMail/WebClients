@@ -3135,6 +3135,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Zaten 10 takma ad oluşturmuşsunuz. Sınırsız sayıda takma ad oluşturabilmek ve 500 GB depolama alanı edinmek için ${ BRAND_NAME } Limited tarifesine geçin."
+      ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "CSV ve VCF dosyası aracılığıyla içe aktarmak için dosyanın ${ MAX_IMPORT_FILE_SIZE_STRING } veya ${ maxContactString } kişiyi aşmadığından emin olun. Dosyanız daha büyükse lütfen daha küçük dosyalara bölün. ${ learnMoreLink }."
       ]
     },
     "description": {
@@ -4070,6 +4073,9 @@
       ],
       "Your file ${ formattedFilename } is empty.": [
         "${ formattedFilename } dosyanız boş."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ maxContactString } contacts.": [
+        "${ formattedFilename } dosyanızda ${ maxContactString } kişiden daha fazla kişi var."
       ]
     },
     "Error importing event": {
@@ -6465,6 +6471,10 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Rezervasyon aralığı sayısı sınırına ulaştınız (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "Tüm kişileriniz ${ maxContact } sınırına ulaşılana kadar içe aktarılacaktır",
+        "Tüm kişileriniz ${ maxContact } sınırına ulaşılana kadar içe aktarılacaktır"
       ]
     },
     "info": {
@@ -7515,7 +7525,7 @@
         "Uçtan uca şifrelenmiş ekran paylaşımı ve geçici çağrı içi sohbet"
       ],
       "Meeting recording": [
-        "Toplantı kaydı"
+        "Görüşme kaydı"
       ],
       "One active meeting at a time": [
         "Aynı anda bir etkin görüşme"

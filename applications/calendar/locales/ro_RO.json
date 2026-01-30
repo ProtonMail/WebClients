@@ -3158,6 +3158,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ați creat deja 10 aliasuri. Obțineți aliasuri nelimitate și 500 GiB de spațiu de stocare cu ${ BRAND_NAME } Unlimited."
+      ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Pentru a importa prin fișier CSV sau VCF, asigurați-vă că fișierul nu depășește ${ MAX_IMPORT_FILE_SIZE_STRING } sau ${ maxContactString } de contacte. Dacă fișierul este mai mare, împărțiți-l în fișiere mai mici. ${ learnMoreLink }."
       ]
     },
     "description": {
@@ -4106,6 +4109,9 @@
       ],
       "Your file ${ formattedFilename } is empty.": [
         "Fișierul ${ formattedFilename } este gol."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ maxContactString } contacts.": [
+        "Fișierul ${ formattedFilename } conține mai mult de ${ maxContactString } de contacte."
       ]
     },
     "Error importing event": {
@@ -6551,6 +6557,11 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Ați atins limita locurilor de rezervare (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "Vor fi importate toate contactele, până la limita de ${ maxContact }.",
+        "Vor fi importate toate contactele, până la limita de ${ maxContact }.",
+        "Vor fi importate toate contactele, până la limita de ${ maxContact }."
       ]
     },
     "info": {
@@ -7623,6 +7634,17 @@
         "Maxim participanți: ${ n }",
         "Maxim participanți: ${ n }",
         "Maxim participanți: ${ n }"
+      ],
+      "${ n } participant": [
+        "${ n } participant",
+        "${ n } participanți",
+        "${ n } de participanți"
+      ],
+      "Booking pages": [
+        "Pagini de rezervare"
+      ],
+      "Meeting recording": [
+        "Înregistrare conferință"
       ]
     },
     "Message": {
