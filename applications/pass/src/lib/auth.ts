@@ -112,6 +112,11 @@ export const createAuthService = ({
         api,
         authStore,
 
+        getMemorySession: (localID) => {
+            if (authStore.hasSession(localID)) return authStore.getSession();
+            return {};
+        },
+
         getPersistedSession,
 
         onInit: async (options) => {
@@ -122,11 +127,12 @@ export const createAuthService = ({
 
             const activeLocalID = authStore.getLocalID();
             const pathLocalID = getLocalIDFromPathname(history.location.pathname);
-            const validLocalID = activeLocalID === pathLocalID;
-            const validActiveSession = authStore.validSession(authStore.getSession());
 
             /** Clear auth store if URL `localID` was tampered with */
+            const validLocalID = activeLocalID === pathLocalID;
             if (!validLocalID) authStore.clear();
+
+            const validActiveSession = authStore.validSession(authStore.getSession());
 
             /** Force lock unless: matching localID + valid session + online.
              * Allows bypassing locks on page refresh when localID is preserved */
@@ -195,10 +201,7 @@ export const createAuthService = ({
             }
 
             const session = authStore.getSession();
-
-            const loggedIn = await (authStore.hasSession(localID) && authStore.validSession(session)
-                ? auth.login(session, options)
-                : auth.resumeSession(localID, options));
+            const loggedIn = await auth.resumeSession(localID, options);
 
             const locked = authStore.getLocked();
             const validSession = authStore.validSession(session) && session.LocalID === localID;
