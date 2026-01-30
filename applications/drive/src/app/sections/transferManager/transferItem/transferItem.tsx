@@ -23,6 +23,7 @@ import {
 import { getMalwareReportComment, useMalwareReport } from '../useMalwareReport/useMalwareReport';
 import { useTransferManagerActions } from '../useTransferManagerActions';
 import type { TransferManagerEntry } from '../useTransferManagerState';
+import { isCancellable, isRetryable, isShareable } from '../utils/transferStatus';
 
 type Props = {
     entry: TransferManagerEntry;
@@ -228,14 +229,12 @@ export const TransferItem = ({ entry, onShare }: Props) => {
                 </div>
             </div>
             <div className="shrink-0 flex justify-end">
-                {(entry.status === BaseTransferStatus.Finished || entry.status === UploadStatus.PhotosDuplicate) &&
-                    entry.type === 'upload' &&
-                    onShare && (
-                        <Button color="weak" shape="solid" onClick={onShare}>
-                            {c('Action').t`Share`}
-                        </Button>
-                    )}
-                {(entry.status === BaseTransferStatus.InProgress || entry.status === BaseTransferStatus.Pending) && (
+                {isShareable(entry) && entry.type === 'upload' && onShare && (
+                    <Button color="weak" shape="solid" onClick={onShare}>
+                        {c('Action').t`Share`}
+                    </Button>
+                )}
+                {isCancellable(entry) && (
                     <Tooltip title={c('Action').t`Cancel`}>
                         <Button
                             icon
@@ -278,7 +277,7 @@ export const TransferItem = ({ entry, onShare }: Props) => {
                         </Tooltip>
                     </div>
                 )}
-                {(entry.status === BaseTransferStatus.Failed || entry.status === BaseTransferStatus.Cancelled) && (
+                {isRetryable(entry) && (
                     <Button
                         color="weak"
                         shape="outline"
