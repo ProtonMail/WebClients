@@ -3,21 +3,22 @@
     "description": "",
     "keywords": [],
     "license": "GPL-3.0",
-    "author": "",
-    "main": "index.js",
     "scripts": {
+        "build": "storybook build --loglevel warn --quiet",
+        "build:serve": "http-server ./storybook-static --cors --port 3000 --silent",
+        "build:wait": "wait-on http://localhost:3000",
         "check-types": "tsc",
         "deploy": "netlify deploy --auth $NETLIFY_AUTH_TOKEN --site $NETLIFY_SITE_ID --dir applications/storybook/storybook-static --alias $NETLIFY_ALIAS",
         "deploy:prod": "netlify deploy --auth $NETLIFY_AUTH_TOKEN --site $NETLIFY_SITE_ID --prod --dir applications/storybook/storybook-static",
+        "dev": "storybook dev -p 6006",
+        "docs": "yarn run dev --docs",
         "lint": "eslint --quiet",
         "pretty": "prettier --write $(find . -path ./node_modules -prune -o -path ./src -type f -name '*.js' -o -name '*.ts' -o -name '*.tsx')",
-        "start": "storybook dev -p 6006",
-        "storybook:build": "storybook build --loglevel warn --quiet",
-        "storybook:build:serve": "http-server ./storybook-static --cors --port 3000 --silent",
-        "storybook:build:wait": "wait-on http://localhost:3000",
-        "storybook:dev": "storybook dev -p 6006"
+        "test:visual": "yarn build:wait && playwright test --config=playwright.config.ts",
+        "test:visual:update": "yarn run test:visual -u"
     },
     "dependencies": {
+        "@proton/atoms": "workspace:^",
         "@proton/components": "workspace:^",
         "@proton/eslint-config-proton": "workspace:^",
         "@proton/icons": "workspace:^",
@@ -40,6 +41,7 @@
     },
     "devDependencies": {
         "@babel/core": "^7.28.5",
+        "@playwright/test": "^1.57.0",
         "@proton/icons": "workspace:^",
         "@storybook/addon-docs": "^9.1.17",
         "@storybook/addon-links": "^9.1.17",
@@ -47,7 +49,9 @@
         "@storybook/react-webpack5": "^9.1.17",
         "@storybook/source-loader": "^9.0.0-rc.0",
         "eslint-plugin-storybook": "^9.1.17",
+        "http-server": "^14.1.1",
         "netlify-cli": "17.38.1",
-        "storybook": "^9.1.17"
+        "storybook": "^9.1.17",
+        "wait-on": "^8.0.5"
     }
 }

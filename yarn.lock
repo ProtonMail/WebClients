@@ -8166,7 +8166,6 @@ __metadata:
     "@babel/core": "npm:^7.28.5"
     "@babel/preset-react": "npm:^7.28.5"
     "@babel/preset-typescript": "npm:^7.28.5"
-    "@playwright/test": "npm:^1.57.0"
     "@proton/colors": "workspace:^"
     "@proton/eslint-config-proton": "workspace:^"
     "@proton/hooks": "workspace:^"
@@ -8195,20 +8194,17 @@ __metadata:
     commander: "npm:^14.0.2"
     eslint: "npm:^9.39.2"
     eslint-plugin-storybook: "npm:^9.1.17"
-    http-server: "npm:^14.1.1"
     jest: "npm:^30.2.0"
     mustache: "npm:^4.2.0"
     netlify-cli: "npm:17.38.1"
     prettier: "npm:^3.8.1"
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
-    storybook: "npm:^9.1.17"
     tinycolor2: "npm:^1.6.0"
     ts-loader: "npm:^9.5.4"
     ts-node: "npm:^10.9.2"
     ttag: "npm:^1.8.12"
     typescript: "npm:^5.9.3"
-    wait-on: "npm:^8.0.5"
     webpack: "npm:^5.104.1"
   languageName: unknown
   linkType: soft
@@ -37948,6 +37944,8 @@ __metadata:
   resolution: "proton-storybook@workspace:applications/storybook"
   dependencies:
     "@babel/core": "npm:^7.28.5"
+    "@playwright/test": "npm:^1.57.0"
+    "@proton/atoms": "workspace:^"
     "@proton/components": "workspace:^"
     "@proton/eslint-config-proton": "workspace:^"
     "@proton/icons": "workspace:^"
@@ -37965,6 +37963,7 @@ __metadata:
     cross-env: "npm:^10.1.0"
     eslint: "npm:^9.39.2"
     eslint-plugin-storybook: "npm:^9.1.17"
+    http-server: "npm:^14.1.1"
     netlify-cli: "npm:17.38.1"
     prettier: "npm:^3.8.1"
     prop-types: "npm:15.8.1"
@@ -37974,6 +37973,7 @@ __metadata:
     storybook: "npm:^9.1.17"
     ts-loader: "npm:^9.5.4"
     typescript: "npm:^5.9.3"
+    wait-on: "npm:^8.0.5"
     webpack: "npm:^5.104.1"
   languageName: unknown
   linkType: soft
