@@ -3,6 +3,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { Href } from '@proton/atoms/Href/Href';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import Icon from '@proton/components/components/icon/Icon';
 import clsx from '@proton/utils/clsx';
@@ -65,6 +66,26 @@ const Info = ({
         return 'info-circle';
     };
 
+    if (!title && url) {
+        return (
+            <Href
+                className={clsx(
+                    'info-button inline-flex align-middle color-inherit relative rounded-full',
+                    !fakeDisabled && 'interactive-pseudo interactive--no-background',
+                    buttonClass
+                )}
+                href={url}
+            >
+                <Icon
+                    className={clsx(colorPrimary && 'color-primary', className)}
+                    name={icon()}
+                    alt={c('Action').t`More info: ${safeTitle}`}
+                    {...rest}
+                />
+            </Href>
+        );
+    }
+
     return (
         <Tooltip
             title={safeTitle}
@@ -75,6 +96,7 @@ const Info = ({
             tooltipClassName={tooltipClassName}
             tooltipStyle={tooltipStyle}
         >
+            {/* eslint-disable-next-line jsx-a11y/prefer-tag-over-role */}
             <button
                 tabIndex={buttonTabIndex}
                 className={clsx(
