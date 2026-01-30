@@ -3135,6 +3135,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du hast bereits 10 Aliasnamen erstellt. Erhalte unbegrenzte Aliase und 500 GB Speicherplatz mit ${ BRAND_NAME } Unlimitiert."
+      ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Um Daten über eine CSV- und VCF-Datei zu importieren, stelle sicher, dass die Datei nicht mehr als ${ MAX_IMPORT_FILE_SIZE_STRING } oder ${ maxContactString } Kontakte enthält. Wenn deine Datei größer ist, teile sie bitte in kleinere Dateien auf. ${ learnMoreLink }."
       ]
     },
     "description": {
@@ -4070,6 +4073,9 @@
       ],
       "Your file ${ formattedFilename } is empty.": [
         "Die Datei ${ formattedFilename } ist leer."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ maxContactString } contacts.": [
+        "Die Datei ${ formattedFilename } enthält mehr als ${ maxContactString } Kontakte."
       ]
     },
     "Error importing event": {
@@ -6465,6 +6471,10 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Du hast das Limit für Buchungsplätze erreicht (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "Alle deine Kontakte werden importiert, bis zu einer Obergrenze von ${ maxContact }.",
+        "Alle deine Kontakte werden importiert, bis zu einer Obergrenze von ${ maxContact }."
       ]
     },
     "info": {

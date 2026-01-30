@@ -949,6 +949,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "桌面應用程式免費試用期將會在${ formattedEndDate }.${ upgradeButton }完結"
+      ],
+      "Manage advanced account protections": [
+        "管理進階帳戶保護"
       ]
     },
     "action": {
@@ -2971,6 +2974,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "您已經創建10個別名。${ BRAND_NAME }無限版可獲得無限別名和500GB的儲存容量。"
+      ],
+      "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
+        "添加資料夾和檔案至 ${ DRIVE_APP_NAME } 和邀請成員瀏覽或編輯。"
       ]
     },
     "description": {
@@ -5995,6 +6001,36 @@
       ],
       "You’ll also lose access to ${ boldPlanTitle } features:": [
         "您將失去存取至 ${ boldPlanTitle } 功能:"
+      ],
+      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
+        "將訊息、聯絡人和行事曆匯入 ${ BRAND_NAME }。"
+      ],
+      "Thank you for subscribing. Secure browsing starts now.": [
+        "感謝您訂閱。立即安全瀏覽。"
+      ],
+      "This booking was made via ${ CALENDAR_APP_NAME }, part of ${ BRAND_NAME }'s suite of privacy-first products.": [
+        "此預定是透過 ${ CALENDAR_APP_NAME }，是 ${ BRAND_NAME } 的隱私優先的產品之一。"
+      ],
+      "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
+        "此是貴組織使用者可看見的名稱或暱稱。您可隨時時修正它。"
+      ],
+      "To add a new booking page, ask your admin to upgrade your plan.": [
+        "若要新增預定頁面，詢問您的管理員升級您的方案。"
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar.": [
+        "若要新增預定頁面，於預定頁面移除現有的。"
+      ],
+      "To add a new booking page, upgrade your plan.": [
+        "若要新增預定頁面，升級您的方案。"
+      ],
+      "Where will the appointment take place?": [
+        "預約將在哪裡舉行？"
+      ],
+      "Your free trial was successfully converted to a ${ cycle }-month subscription. Your renewal date is ${ nextBillingDate }.": [
+        "您的免費試用已成功轉換為每 ${ cycle } 月訂購授權。您的續訂日期為 ${ nextBillingDate }。"
+      ],
+      "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
+        "您仍可瀏覽您的帳號資料，但所有使用者帳號將被從貴組織移除。"
       ]
     },
     "info": {
@@ -6677,6 +6713,9 @@
       ],
       "Zoom meeting": [
         "Zoom 會議"
+      ],
+      "Notifications are disabled, to enable them change the browser settings.": [
+        "通知已關閉，若要啟用它們請變更瀏覽器設定。"
       ]
     },
     "Label for contact group color": {
@@ -6815,6 +6854,12 @@
       ],
       "What’s this?": [
         "這是什麼？"
+      ],
+      "How to collaborate in ${ DOCS_SHORT_APP_NAME }": [
+        "如何於 ${ DOCS_SHORT_APP_NAME } 合作"
+      ],
+      "if your data is leaked": [
+        "若您的資料外洩"
       ]
     },
     "Link label (optional)": {
@@ -6953,6 +6998,9 @@
       ],
       "Up to ${ n } participant": [
         "至多 ${ n } 位參與者"
+      ],
+      "Booking pages": [
+        "預定頁面"
       ]
     },
     "Message": {
@@ -8298,6 +8346,9 @@
       ],
       "Your subscription renews soon": [
         "您的訂閱即將重新續約"
+      ],
+      "Upgrade your storage for just ${ pricingTitle } with ${ planName }": [
+        "以 ${ planName } 的 ${ pricingTitle } 方案升級您的儲存空間"
       ]
     },
     "Offer fearue": {
@@ -9610,6 +9661,9 @@
       ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "使用兩年的 ${ planName } 升級並節省更多"
+      ],
+      "Protect your account from threats with Sentinel": [
+        "使用 Sentinel 保護您的帳戶免受威脅"
       ]
     },
     "specialoffer: Tooltip": {
@@ -11160,6 +11214,12 @@
       ],
       "Your shorter address is now ready": [
         "您的短地址已完成"
+      ],
+      "Host": [
+        "主持"
+      ],
+      "Information exposed in breach": [
+        "於外洩的資料"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -11678,6 +11738,11 @@
       ],
       "Passcode:": [
         "數字密碼:"
+      ]
+    },
+    "label": {
+      "How long should an appointment last?": [
+        "預約應持續多久？"
       ]
     }
   }

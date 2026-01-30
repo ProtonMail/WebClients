@@ -3135,6 +3135,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Vous avez déjà créé 10 alias. Bénéficiez d'un nombre illimité d'alias et de 500 Go d'espace de stockage avec ${ BRAND_NAME } Unlimited."
+      ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Pour importer à partir d'un fichier CSV ou VCF, assurez-vous que le fichier ne dépasse pas ${ MAX_IMPORT_FILE_SIZE_STRING } ou ${ maxContactString } contacts. Si votre fichier est plus volumineux, divisez-le en plusieurs fichiers plus petits. ${ learnMoreLink }"
       ]
     },
     "description": {
@@ -4070,6 +4073,9 @@
       ],
       "Your file ${ formattedFilename } is empty.": [
         "Votre fichier ${ formattedFilename } est vide."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ maxContactString } contacts.": [
+        "Votre fichier ${ formattedFilename } contient plus de ${ maxContactString } contacts."
       ]
     },
     "Error importing event": {
@@ -6465,6 +6471,10 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Vous avez atteint la limite de créneaux de réservation (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })."
+      ],
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "Tous vos contacts seront importés, dans la limite de ${ maxContact }",
+        "Tous vos contacts seront importés, dans la limite de ${ maxContact }"
       ]
     },
     "info": {
@@ -7515,7 +7525,7 @@
         "Partage d'écran chiffré de bout en bout et chat éphémère pendant les appels"
       ],
       "Meeting recording": [
-        "Enregistrement des réunions"
+        "Enregistrement de la réunion"
       ],
       "One active meeting at a time": [
         "Une réunion active à la fois"

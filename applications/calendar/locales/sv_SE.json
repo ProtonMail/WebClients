@@ -3123,6 +3123,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du har redan skapat 10 alias. Skaffa obegränsat antal alias och 500 GB lagringsutrymme med ${ BRAND_NAME } Unlimited."
+      ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "För import via en CSV- och VCF-fil, se till att filen inte överstiger ${ MAX_IMPORT_FILE_SIZE_STRING } eller ${ maxContactString } kontakter. Om din fil är större, dela upp den i mindre filer. ${ learnMoreLink }."
       ]
     },
     "description": {
@@ -4055,6 +4058,9 @@
       ],
       "Your file ${ formattedFilename } is empty.": [
         "Din fil ${ formattedFilename } är tom."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ maxContactString } contacts.": [
+        "Din fil ${ formattedFilename } innehåller fler än ${ maxContactString } kontakter."
       ]
     },
     "Error importing event": {
@@ -6420,6 +6426,10 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Du kommer fortfarande att kunna se dina egna kontodata, men alla användarkonton kommer att tas bort från din organisation."
+      ],
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "Alla dina kontakter kommer att importeras, upp till en gräns på ${ maxContact }",
+        "Alla dina kontakter kommer att importeras, upp till en gräns på ${ maxContact }"
       ]
     },
     "info": {
@@ -7473,6 +7483,12 @@
       "Up to ${ n } participant": [
         "Upp till ${ n } deltagare",
         "Upp till ${ n } deltagare"
+      ],
+      "Booking pages": [
+        "Bokningssidor"
+      ],
+      "Meeting recording": [
+        "Mötesinspelning"
       ]
     },
     "Message": {

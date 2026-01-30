@@ -3135,6 +3135,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ya has creado 10 alias. Obtén alias ilimitados y 500 GB de almacenamiento con ${ BRAND_NAME } Unlimited."
+      ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Para importar mediante un archivo CSV o VCF, asegúrate de que este no supere los ${ MAX_IMPORT_FILE_SIZE_STRING } o los ${ maxContactString } contactos. Si el archivo es más grande, divídelo en varios archivos más pequeños. ${ learnMoreLink }."
       ]
     },
     "description": {
@@ -4070,6 +4073,9 @@
       ],
       "Your file ${ formattedFilename } is empty.": [
         "Tu archivo ${ formattedFilename } está vacío."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ maxContactString } contacts.": [
+        "Tu archivo ${ formattedFilename } contiene más de ${ maxContactString } contactos."
       ]
     },
     "Error importing event": {
@@ -6465,6 +6471,10 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Has alcanzado el límite de franjas de reserva (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "Se importarán todos tus contactos, hasta un límite de ${ maxContact }.",
+        "Se importarán todos tus contactos, hasta un máximo de ${ maxContact }."
       ]
     },
     "info": {
@@ -7523,6 +7533,16 @@
       "Up to ${ n } participant": [
         "Hasta ${ n } participante",
         "Hasta ${ n } participantes"
+      ],
+      "${ n } participant": [
+        "${ n } participante",
+        "${ n } participantes"
+      ],
+      "Booking pages": [
+        "Páginas de reserva"
+      ],
+      "Meeting recording": [
+        "Grabación de la reunión"
       ]
     },
     "Message": {
