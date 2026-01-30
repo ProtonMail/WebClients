@@ -35,11 +35,7 @@ exposeAuthStore(createAuthStore(createStore()));
 exposeApi({ subscribe: jest.fn() } as any);
 
 const config = { SSO_URL: 'test://' } as PassConfig;
-
-const settings = {
-    resolve: jest.fn(() => Promise.resolve({})),
-    read: jest.fn(() => Promise.resolve({})),
-};
+const settings = { clear: jest.fn(), resolve: jest.fn() };
 
 const app = {
     getState: getInitialAppState,
@@ -80,7 +76,7 @@ const hasSession = jest.spyOn(authStore, 'hasSession');
 jest.spyOn(sessions, 'getDefaultLocalID').mockImplementation(() => undefined);
 jest.spyOn(sessions, 'getPersistedLocalIDsForUserID').mockImplementation(() => []);
 jest.spyOn(storage, 'clearUserLocalData').mockImplementation(() => []);
-jest.spyOn(storage, 'localGarbageCollect').mockImplementation(() => Promise.resolve());
+jest.spyOn(storage, 'localGarbageCollect').mockImplementation(() => Promise.resolve([]));
 
 describe('AuthService', () => {
     beforeEach(() => {
