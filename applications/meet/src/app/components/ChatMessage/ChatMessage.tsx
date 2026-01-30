@@ -83,6 +83,7 @@ export const ChatMessage = ({ onMessageSend }: ChatMessageProps) => {
                     as={TextAreaTwo}
                     assistContainerClassName="display-none"
                     rows={1}
+                    autoFocus={true}
                 />
                 <Button
                     className={clsx(
