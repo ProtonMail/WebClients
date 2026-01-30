@@ -48,6 +48,7 @@ import UnprivatizationRequestTopBanner from '@proton/components/containers/membe
 import { CANCEL_ROUTE } from '@proton/components/containers/payments/subscription/cancellationFlow/helper';
 import useShowDashboard from '@proton/components/hooks/accounts/useShowDashboard';
 import useAssistantFeatureEnabled from '@proton/components/hooks/assistant/useAssistantFeatureEnabled';
+import { useIsGroupOwner } from '@proton/components/hooks/useIsGroupOwner';
 import useShowVPNDashboard from '@proton/components/hooks/useShowVPNDashboard';
 import { FeatureCode, useFeatures } from '@proton/features';
 import { getHasPassB2BPlan, hasAIAssistant, hasAllProductsB2CPlan } from '@proton/payments';
@@ -235,6 +236,7 @@ const MainContainer = () => {
     const { isB2B: isB2BDrive } = useDrivePlan();
 
     const isB2BTrial = useIsB2BTrial(subscription, organization);
+    const [isGroupOwner, loadingIsGroupOwner] = useIsGroupOwner();
 
     const canDisplayNonPrivateEmailPhone = useFlag('B2BNonPrivateEmailPhone');
 
@@ -287,6 +289,7 @@ const MainContainer = () => {
         showMeetDashboardVariant: showMeetDashboardVariant.name,
         isAuthenticatorAvailable,
         hasPendingInvitations,
+        isGroupOwner,
         isOLESEnabled,
         isCategoryViewEnabled,
     });
@@ -394,7 +397,8 @@ const MainContainer = () => {
             loadingDataRecovery ||
             loadingIsSessionRecoveryAvailable ||
             loadingGroupMembership ||
-            loadingGroups
+            loadingGroups ||
+            loadingIsGroupOwner
         ) {
             return <PrivateMainAreaLoading />;
         }
