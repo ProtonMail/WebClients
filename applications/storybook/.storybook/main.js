@@ -21,15 +21,7 @@ module.exports = {
     },
     staticDirs: ['../src/assets', '../src/assets/favicons'],
     // Storybook v9: use *.stories.(js|ts|tsx) for CSF and *.mdx for standalone docs (no .stories.mdx indexer)
-    stories: [
-        '../src/stories/atoms/*.stories.@(js|jsx|ts|tsx)',
-        '../src/stories/components/*.stories.@(js|jsx|ts|tsx)',
-        '../src/stories/coreConcepts/*.stories.@(js|jsx|ts|tsx)',
-        '../src/stories/coreConcepts/LayersManagement.mdx',
-        '../src/stories/coreConcepts/Responsive.mdx',
-        '../src/stories/coreConcepts/SassCssVariables.mdx',
-        // '../src/stories/cssUtilities/*.stories.@(mdx|js|jsx|ts|tsx)',
-    ],
+    stories: ['../src/stories/**/*.stories.@(ts|tsx)', '../src/stories/**/*.mdx'],
     typescript: {
         check: false,
         checkOptions: {},
