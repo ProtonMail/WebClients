@@ -4170,6 +4170,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ați creat deja 10 aliasuri. Obțineți aliasuri nelimitate și 500 GiB de spațiu de stocare cu ${ BRAND_NAME } Unlimited."
+      ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Pentru a importa prin fișier CSV sau VCF, asigurați-vă că fișierul nu depășește ${ MAX_IMPORT_FILE_SIZE_STRING } sau ${ maxContactString } de contacte. Dacă fișierul este mai mare, împărțiți-l în fișiere mai mici. ${ learnMoreLink }."
       ]
     },
     "description": {
@@ -5083,6 +5086,9 @@
       ],
       "ZIP code is required": [
         "Codul poștal este obligatoriu."
+      ],
+      "Unable to load VPN dashboard. Please check your connection and try again.": [
+        "Nu se poate încărca panoul de control VPN. Verificați conexiunea și reîncercați."
       ]
     },
     "error": {
@@ -5183,6 +5189,9 @@
       ],
       "Your file ${ formattedFilename } is empty.": [
         "Fișierul ${ formattedFilename } este gol."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ maxContactString } contacts.": [
+        "Fișierul ${ formattedFilename } conține mai mult de ${ maxContactString } de contacte."
       ]
     },
     "Error importing event": {
@@ -8872,6 +8881,113 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Sunteți la doar câteva clicuri distanță de un cont cu mesaje ordonate."
+      ],
+      "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
+        "${ VPN_APP_NAME } vă maschează adresa IP, așa că site-urile web nu vă pot identifica."
+      ],
+      "**Auto-connect**: Opens and connects to VPN as soon as you turn on your device.": [
+        "**Autoconectare**: deschide și conectează VPN-ul imediat ce dispozitivul pornește."
+      ],
+      "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
+        "**Întrerupătorul de conexiune**: oprește divulgările de date prin blocarea conexiunii dacă VPN-ul cade în mod neașteptat."
+      ],
+      "A secure connection is essential when working remotely. A VPN protects company data from cyber threats and keeps your work private.": [
+        "O conexiune securizată este esențială atunci când lucrați la distanță. Un VPN protejează datele companiei de amenințările cibernetice și vă menține activitatea privată."
+      ],
+      "A VPN encrypts your connection and hides your IP address, making it much harder for anyone to track or monitor your browsing.": [
+        "Un VPN vă criptează conexiunea și vă ascunde adresa IP, ceea ce face mult mai dificil pentru oricine să vă urmărească sau să vă monitorizeze navigarea pe web."
+      ],
+      "A VPN hides your IP address and encrypts your browsing activity, making it harder for websites, advertisers, and ISPs to track you over time.": [
+        "Un VPN vă ascunde adresa IP și vă criptează activitatea de navigare, ceea ce îngreunează site-urile web, agenții de publicitate și furnizorii de servicii de internet să vă urmărească în timp."
+      ],
+      "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
+        "Un VPN este un tunel securizat între dispozitivul utilizat și internet. Acesta vă ascunde locul și activitatea față de furnizorul de servicii de internet (ISP) și față de site-urile web pe care le vizitați."
+      ],
+      "Ad targeting": [
+        "Publicitate țintită"
+      ],
+      "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
+        "Agenții de publicitate vă urmăresc navigarea pentru a afișa anunțuri țintite. ${ VPN_APP_NAME } blochează instrumentele de urmărire și reclamele, făcându-vă conexiunea mai rapidă și îmbunătățindu-vă experiența online."
+      ],
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "Vor fi importate toate contactele, până la limita de ${ maxContact }.",
+        "Vor fi importate toate contactele, până la limita de ${ maxContact }.",
+        "Vor fi importate toate contactele, până la limita de ${ maxContact }."
+      ],
+      "Connect to ${ VPN_APP_NAME } to browse privately": [
+        "Conectați-vă la ${ VPN_APP_NAME } pentru a naviga privat"
+      ],
+      "Geoblocking": [
+        "Blocare geografică"
+      ],
+      "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
+        "Guvernele și ISP-urile vă pot monitoriza activitatea online. Ascunzându-vă adresa IP reală și criptându-vă activitatea, navigarea devine privată."
+      ],
+      "In restrictive countries": [
+        "În țările restrictive"
+      ],
+      "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
+        "Este bine să folosiți un VPN tot timpul. Dar amenințările cibernetice pot fi maxime în aceste situații:"
+      ],
+      "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
+        "Majoritatea rețelelor Wi-Fi publice sunt sigure, dar unele nu au securitate, expunându-vă la amenințări cibernetice. Un VPN vă criptează traficul, păstrându-vă protecția."
+      ],
+      "Not connected": [
+        "Neconectat"
+      ],
+      "On public WiFi networks": [
+        "Pe rețele Wi-Fi publice"
+      ],
+      "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
+        "Navigarea privată (sau modul „incognito”) este utilă doar pentru a vă păstra activitatea ascunsă pe dispozitiv. Îți oprește browserul să salveze istoricul și cookie-urile, dar nu te face invizibil. ISP-ul dvs., administratorul de rețea și site-urile web pe care le vizitați pot vedea în continuare ceea ce faceți online."
+      ],
+      "Scan the QR code with your mobile device": [
+        "Scanați codul QR cu dispozitivul mobil"
+      ],
+      "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
+        "Unele guverne blochează sau restricționează accesul la anumite site-uri web. Un VPN vă ajută să ocoliți cenzura, păstrându-vă în același timp activitatea și identitatea privată."
+      ],
+      "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
+        "Unele site-uri web și servicii de redare în flux blochează conținutul în funcție de regiune. Un VPN vă permite să ocoliți aceste restricții și să accesați internetul în mod liber."
+      ],
+      "Stay connected effortlessly by enabling the following VPN settings:": [
+        "Păstrați-vă conexiunea fără efort, activând următoarele setări VPN:"
+      ],
+      "Surveillance": [
+        "Supraveghere"
+      ],
+      "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
+        "Aceasta înseamnă că ISP-ul și site-urile web pe care le vizitați nu vă pot corela informațiile personale cu activitatea dvs. online."
+      ],
+      "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
+        "Acest cod unic poate fi folosit de către site-uri web și ISP (furnizorii de servicii de internet) pentru a vă corela locul și istoricul de navigare cu dispozitivul utilizat."
+      ],
+      "Tracking": [
+        "Urmăritori"
+      ],
+      "VPN IP": [
+        "IP VPN"
+      ],
+      "When working remotely": [
+        "Când lucrați la distanță"
+      ],
+      "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
+        "Când vă conectați la VPN, acesta utilizează tehnologia de criptare pentru a vă ascunde adresa IP (un cod unic atribuit dispozitivului)."
+      ],
+      "Your internet service provider can monitor and sometimes sell your data, or even restrict what websites you can access.": [
+        "Furnizorul de servicii de internet vă poate monitoriza și uneori vinde datele sau chiar vă poate restricționa site-urile web pe care le puteți accesa."
+      ],
+      "Your IP": [
+        "IP dispozitiv"
+      ],
+      "Your IP address is visible and can be used to track your online activity.": [
+        "Adresa IP vă este vizibilă și poate fi utilizată pentru a vă urmări activitatea online."
+      ],
+      "Your online activity is protected": [
+        "Activitatea online vă este protejată"
+      ],
+      "Your physical location is visible and can be used to restrict your access to the internet.": [
+        "Locul unde vă aflați este vizibil și poate fi folosit pentru a vă restricționa accesul la internet."
       ]
     },
     "info": {
@@ -9960,6 +10076,15 @@
       ],
       "ZIP code": [
         "Cod poștal"
+      ],
+      "Your IP": [
+        "IP dispozitiv"
+      ],
+      "Your ISP": [
+        "ISP"
+      ],
+      "Your location": [
+        "Amplasare"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10467,6 +10592,17 @@
         "Maxim participanți: ${ n }",
         "Maxim participanți: ${ n }",
         "Maxim participanți: ${ n }"
+      ],
+      "${ n } participant": [
+        "${ n } participant",
+        "${ n } participanți",
+        "${ n } de participanți"
+      ],
+      "Booking pages": [
+        "Pagini de rezervare"
+      ],
+      "Meeting recording": [
+        "Înregistrare conferință"
       ]
     },
     "Message": {
@@ -15832,6 +15968,39 @@
       ],
       "✨ Categories are coming!": [
         "✨ Sosesc categoriile!"
+      ],
+      "Desktop": [
+        "Desktop"
+      ],
+      "Download the app": [
+        "Descărcați aplicația"
+      ],
+      "Get more from your VPN": [
+        "Obțineți mai mult de la VPN"
+      ],
+      "How does it all work?": [
+        "Cum funcționează tot?"
+      ],
+      "Make a secure connection your default": [
+        "Faceți o conexiune sigură ca implicită"
+      ],
+      "Mobile": [
+        "Dispozitive mobile"
+      ],
+      "Private browsing vs VPN": [
+        "Navigare privată versus un VPN"
+      ],
+      "VPN explained": [
+        "VPN explicat"
+      ],
+      "What can a VPN protect you from?": [
+        "De ce te poate proteja un VPN?"
+      ],
+      "What is a VPN?": [
+        "Ce este un VPN?"
+      ],
+      "When is it most important to use a VPN?": [
+        "Când este cel mai important să folosiți un VPN?"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16454,6 +16623,17 @@
       ],
       "Passcode:": [
         "Cod de acces:"
+      ]
+    },
+    "Drawer tab, Action": {
+      "Download for Linux": [
+        "Descărcare pentru Linux"
+      ],
+      "Download for macOS": [
+        "Descărcare pentru macOS"
+      ],
+      "Download for Windows": [
+        "Descărcare pentru Windows"
       ]
     }
   }

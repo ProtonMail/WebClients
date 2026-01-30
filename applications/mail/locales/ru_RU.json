@@ -4748,6 +4748,9 @@
       ],
       "ZIP code is required": [
         "Необходимо указать почтовый индекс"
+      ],
+      "Unable to load VPN dashboard. Please check your connection and try again.": [
+        "Не удалось загрузить панель управления VPN. Проверьте ваше подключение и попробуйте снова."
       ]
     },
     "Error adding participants to a calendar event": {
@@ -8400,6 +8403,108 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Вы всего в нескольких нажатиях от почтового ящика, свободного от хлама"
+      ],
+      "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
+        "${ VPN_APP_NAME } скрывает ваш IP-адрес, поэтому веб-сайты не могут вас идентифицировать."
+      ],
+      "**Auto-connect**: Opens and connects to VPN as soon as you turn on your device.": [
+        "**Автоподключение**: Открывает и подключается к VPN, как только вы включаете устройство."
+      ],
+      "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
+        "**Kill switch**: Останавливает утечку данных, блокируя Интернет, если VPN неожиданно отключается."
+      ],
+      "A secure connection is essential when working remotely. A VPN protects company data from cyber threats and keeps your work private.": [
+        "Безопасное подключение необходимо при удаленной работе. VPN защищает данные компании от киберугроз и сохраняет приватность вашей работы."
+      ],
+      "A VPN encrypts your connection and hides your IP address, making it much harder for anyone to track or monitor your browsing.": [
+        "VPN шифрует ваше подключение и скрывает ваш адрес IP, что значительно затрудняет отслеживание и контроль вашего просмотра веб-страниц."
+      ],
+      "A VPN hides your IP address and encrypts your browsing activity, making it harder for websites, advertisers, and ISPs to track you over time.": [
+        "VPN скрывает ваш адрес IP и шифрует ваши действия в браузере, благодаря чему веб-сайтам, рекламодателям и интернет-провайдерам сложнее впоследствии вас отследить."
+      ],
+      "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
+        "VPN - это защищенный туннель между вашим устройством и Интернетом. Он скрывает ваше местоположение и активность от вашего интернет-провайдера (ISP) и посещаемых вами сайтов."
+      ],
+      "Ad targeting": [
+        "Нацеливание рекламы"
+      ],
+      "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
+        "Рекламодатели отслеживают ваш просмотр веб-страниц, чтобы показывать целевую рекламу. ${ VPN_APP_NAME } блокирует трекеры и рекламу, делая ваше подключение быстрее и улучшая работу в Интернете."
+      ],
+      "Connect to ${ VPN_APP_NAME } to browse privately": [
+        "Подключитесь к ${ VPN_APP_NAME }, чтобы приватно просматривать веб-страницы"
+      ],
+      "Geoblocking": [
+        "Геоблокировка"
+      ],
+      "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
+        "Правительства и интернет-провайдеры могут отслеживать ваши действия в Интернете. Скрывая свой реальный адрес IP и шифруя свои действия, ваш просмотр веб-страниц становится приватным."
+      ],
+      "In restrictive countries": [
+        "В странах, где действуют ограничения"
+      ],
+      "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
+        "Лучше всего использовать VPN постоянно. А вот когда угрозы кибербезопасности могут быть самыми высокими:"
+      ],
+      "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
+        "Большинство публичных сетей WiFi безопасны, но в некоторых из них отсутствует защита, что подвергает вас киберугрозам. VPN шифрует ваш трафик, обеспечивая вам защиту."
+      ],
+      "Not connected": [
+        "Нет подключения"
+      ],
+      "On public WiFi networks": [
+        "При использовании публичных сетей WiFi"
+      ],
+      "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
+        "Приватный просмотр (или режим «инкогнито») полезен только для того, чтобы скрыть ваши действия на устройстве. Он не позволяет браузеру сохранять историю и файлы cookie, но не делает вас невидимым. Ваш интернет-провайдер, администратор сети и посещаемые вами сайты все равно могут видеть, что вы делаете в Интернете."
+      ],
+      "Scan the QR code with your mobile device": [
+        "Отсканируйте QR-код с вашего мобильного устройства"
+      ],
+      "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
+        "Некоторые правительства блокируют или ограничивают доступ к определенным веб-сайтам. VPN помогает обойти цензуру, при этом сохраняя ваши действия и личные данные конфиденциальными."
+      ],
+      "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
+        "Некоторые веб-сайты службы трансляций блокируют содержимое по регионам. VPN позволяет вам обходить эти ограничения и получать свободный доступ к Интернету."
+      ],
+      "Stay connected effortlessly by enabling the following VPN settings:": [
+        "Оставайтесь на связи без усилий, включив следующие настройки VPN:"
+      ],
+      "Surveillance": [
+        "Надзор"
+      ],
+      "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
+        "Это означает, что ваш интернет-провайдер и посещаемые вами сайты не смогут связать вашу личную информацию с вашими действиями в Интернете."
+      ],
+      "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
+        "Этот уникальный код может использоваться веб-сайтами и интернет-провайдерами для привязки вашего местоположения и истории просмотров к вашему устройству."
+      ],
+      "Tracking": [
+        "Отслеживание"
+      ],
+      "VPN IP": [
+        "IP VPN"
+      ],
+      "When working remotely": [
+        "Во время удаленной работы"
+      ],
+      "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
+        "Когда вы подключаетесь к VPN, используется технология шифрования, чтобы скрыть ваш адрес IP (уникальный код, присвоенный вашему устройству)."
+      ],
+      "Your internet service provider can monitor and sometimes sell your data, or even restrict what websites you can access.": [
+        "Ваш интернет-провайдер может отслеживать, а иногда и продавать ваши данные или даже определять, на какие сайты вы можете заходить."
+      ],
+      "Your IP": [
+        "Ваш IP-адрес"
+      ],
+      "Your IP address is visible and can be used to track your online activity.": [
+        "Ваш адрес IP виден и может быть использован для отслеживания ваших действий в Интернете."
+      ],
+      "Your online activity is protected": [
+        "Ваши действия в Интернете защищены"
+      ],
+      "Your physical location is visible and can be used to restrict your access to the internet.": [
+        "Ваше физическое местоположение видно и может быть использовано для ограничения вашего доступа к Интернету."
       ]
     },
     "info": {
@@ -9337,6 +9442,15 @@
       ],
       "ZIP code": [
         "Почтовый индекс"
+      ],
+      "Your IP": [
+        "Ваш IP-адрес"
+      ],
+      "Your ISP": [
+        "Ваш интернет-провайдер"
+      ],
+      "Your location": [
+        "Ваше местоположение"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -14700,6 +14814,39 @@
       ],
       "Your shorter address is now ready": [
         "Ваш укороченный адрес готов"
+      ],
+      "Desktop": [
+        "Для настольных компьютеров"
+      ],
+      "Download the app": [
+        "Скачать приложение"
+      ],
+      "Get more from your VPN": [
+        "Получите больше от VPN"
+      ],
+      "How does it all work?": [
+        "Как всё это работает?"
+      ],
+      "Make a secure connection your default": [
+        "Сделайте защищенное подключение вашим подключением по умолчанию"
+      ],
+      "Mobile": [
+        "Для мобильных устройств"
+      ],
+      "Private browsing vs VPN": [
+        "Приватный просмотр по сравнению с VPN"
+      ],
+      "VPN explained": [
+        "Что такое VPN"
+      ],
+      "What can a VPN protect you from?": [
+        "От чего вас может защитить VPN?"
+      ],
+      "What is a VPN?": [
+        "Что такое VPN?"
+      ],
+      "When is it most important to use a VPN?": [
+        "Когда важнее всего использовать VPN?"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15355,6 +15502,17 @@
       ],
       "Passcode:": [
         "Код доступа:"
+      ]
+    },
+    "Drawer tab, Action": {
+      "Download for Linux": [
+        "Скачать для Linux"
+      ],
+      "Download for macOS": [
+        "Скачать для macOS"
+      ],
+      "Download for Windows": [
+        "Скачать для Windows"
       ]
     }
   }
