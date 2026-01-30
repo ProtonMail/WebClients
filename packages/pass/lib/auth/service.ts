@@ -97,7 +97,7 @@ export interface AuthServiceConfig {
     /** The in-memory session is used to store the session data securely.
      * It allows resuming a session without any API calls to re-authenticate.
      * In most cases you can omit the implementation and rely on the `authStore` */
-    getMemorySession?: () => MaybePromise<any>;
+    getMemorySession?: (localID: Maybe<number>) => MaybePromise<Partial<AuthSession>>;
     /** The persisted session will be parsed and decrypted to extract the
      * session data. Requires an API call to retrieve the local key. */
     getPersistedSession: (localID: Maybe<number>) => MaybePromise<MaybeNull<EncryptedAuthSession>>;
@@ -537,7 +537,7 @@ export const createAuthService = (config: AuthServiceConfig) => {
             pipe(
                 async (localID: Maybe<number>, options: AuthOptions): Promise<boolean> => {
                     try {
-                        const memorySession = await config.getMemorySession?.();
+                        const memorySession = await config.getMemorySession?.(localID);
                         const persistedSession = await config.getPersistedSession(localID);
                         const validMemorySession = memorySession && authStore.validSession(memorySession);
                         const hasSession = Boolean(validMemorySession || persistedSession);
@@ -551,7 +551,8 @@ export const createAuthService = (config: AuthServiceConfig) => {
                              * from in-memory session does not account for force lock, rather
                              * when locking, the in-memory session should be cleared */
                             logger.info(`[AuthService] Resuming in-memory session [lock=${options.forceLock}]`);
-                            return await authService.login(memorySession, {});
+                            options.forcePersist = options.forcePersist || !persistedSession;
+                            return await authService.login(memorySession, options);
                         }
 
                         if (!persistedSession) {
