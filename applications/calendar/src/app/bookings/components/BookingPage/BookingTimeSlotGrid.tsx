@@ -81,20 +81,20 @@ export const BookingTimeSlotGrid = () => {
                                 data-index={i}
                             >
                                 {canShowSlots &&
-                                    slotsArray[i].map((timeslot, j) => {
-                                        if (timeslot) {
-                                            const timeString = format(timeslot.tzDate, 'HH:mm', {
+                                    slotsArray[i].map((slot, j) => {
+                                        if (slot) {
+                                            const timeString = format(slot.tzDate, 'HH:mm', {
                                                 locale: dateLocale,
                                             });
 
                                             return (
-                                                <li key={timeslot.id}>
+                                                <li key={slot.id}>
                                                     <Button
                                                         shape="outline"
                                                         color="weak"
                                                         className="w-full booking-button-slot-outline"
                                                         onClick={() => {
-                                                            setTimeslot(timeslot);
+                                                            setTimeslot(slot);
                                                             setBookSlotModalOpen(true);
                                                         }}
                                                         title={
@@ -103,6 +103,7 @@ export const BookingTimeSlotGrid = () => {
                                                             c('Action')
                                                                 .t`Select ${dateHeaderLongString} at ${timeString}`
                                                         }
+                                                        aria-pressed={renderBookModal && timeslot?.id === slot.id}
                                                     >
                                                         {timeString}
                                                     </Button>
