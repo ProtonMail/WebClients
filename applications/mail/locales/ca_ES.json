@@ -4152,6 +4152,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ja heu creat 10 àlies. Obteniu àlies il·limitats i 500 GB d'emmagatzematge amb ${ BRAND_NAME } Unlimited."
+      ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Per importar mitjançant un fitxer CSV i VCF, assegureu-vos que el fitxer no superi ${ MAX_IMPORT_FILE_SIZE_STRING } o els ${ maxContactString } contactes. Si el vostre fitxer és més gran, dividiu-lo en fitxers més petits. ${ learnMoreLink }."
       ]
     },
     "description": {
@@ -5052,6 +5055,9 @@
       ],
       "ZIP code is required": [
         "Es requereix el codi postal."
+      ],
+      "Unable to load VPN dashboard. Please check your connection and try again.": [
+        "No es pot carregar el tauler de control de VPN. Comproveu la vostra connexió i torneu-ho a provar."
       ]
     },
     "error": {
@@ -5150,6 +5156,9 @@
       ],
       "Your file ${ formattedFilename } is empty.": [
         "El vostre fitxer ${ formattedFilename } està buit."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ maxContactString } contacts.": [
+        "El vostre fitxer ${ formattedFilename } conté més de ${ maxContactString } contactes."
       ]
     },
     "Error importing event": {
@@ -8733,6 +8742,112 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Sou tot just a uns quants clics d'una safata d'entrada ordenada"
+      ],
+      "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
+        "${ VPN_APP_NAME } està emmascarant la vostra adreça IP, de manera que els llocs web no us poden identificar."
+      ],
+      "**Auto-connect**: Opens and connects to VPN as soon as you turn on your device.": [
+        "**Connexió automàtica**: s'obre i es connecta a la VPN tan bon punt encengueu el dispositiu."
+      ],
+      "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
+        "**Interruptor de bloqueig (kill switch)**: atura les filtracions de dades en bloquejar la connexió a Internet si la VPN es desconnecta sobtadament."
+      ],
+      "A secure connection is essential when working remotely. A VPN protects company data from cyber threats and keeps your work private.": [
+        "Una connexió segura és essencial quan es treballa a distància. Una VPN protegeix les dades de l'empresa de les amenaces cibernètiques i manté la vostra feina privada."
+      ],
+      "A VPN encrypts your connection and hides your IP address, making it much harder for anyone to track or monitor your browsing.": [
+        "Una VPN xifra la vostra connexió i amaga la vostra adreça IP, cosa que fa molt més difícil per a qualsevol rastrejar o supervisar la vostra navegació."
+      ],
+      "A VPN hides your IP address and encrypts your browsing activity, making it harder for websites, advertisers, and ISPs to track you over time.": [
+        "Una VPN amaga la vostra adreça IP i xifra la vostra activitat de navegació, cosa que dificulta que els llocs web, els anunciants i els ISP us facin un seguiment al llarg del temps."
+      ],
+      "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
+        "Una VPN és un túnel segur entre el vostre dispositiu i internet. Oculta la vostra ubicació i activitat al vostre proveïdor de serveis d'internet (ISP) i als llocs web que visiteu."
+      ],
+      "Ad targeting": [
+        "Orientació d'anuncis"
+      ],
+      "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
+        "Els anunciants fan un seguiment de la vostra navegació per mostrar anuncis orientats. ${ VPN_APP_NAME } bloqueja els rastrejadors i els anuncis, cosa que fa la connexió més ràpida i millora l'experiència en línia."
+      ],
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "S'importaran tots els vostres contactes, fins a un límit d'${ maxContact }",
+        "S'importaran tots els vostres contactes, fins a un límit de ${ maxContact }"
+      ],
+      "Connect to ${ VPN_APP_NAME } to browse privately": [
+        "Connecteu-vos a ${ VPN_APP_NAME } per navegar en privat."
+      ],
+      "Geoblocking": [
+        "Geobloqueig"
+      ],
+      "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
+        "Els governs i els ISP poden controlar la vostra activitat en línia. En amagar la vostra IP real i xifrar la vostra activitat, la vostra navegació esdevé privada."
+      ],
+      "In restrictive countries": [
+        "En països amb restriccions"
+      ],
+      "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
+        "El millor és utilitzar una VPN en tot moment. Però aquí és quan les amenaces de ciberseguretat poden ser majors:"
+      ],
+      "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
+        "La majoria de les xarxes wifi públiques són segures, però algunes no tenen seguretat, la qual cosa us exposa a amenaces cibernètiques. Una VPN xifra el vostre trànsit, mantenint-vos protegit."
+      ],
+      "Not connected": [
+        "Sense connexió"
+      ],
+      "On public WiFi networks": [
+        "A les xarxes wifi públiques"
+      ],
+      "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
+        "La navegació privada (o mode «incògnit») només és útil per mantenir la vostra activitat amagada al dispositiu. Impedeix que el vostre navegador desi l'historial i les galetes, però no us fa invisible. El vostre ISP, l'administrador de xarxa i els llocs web que visiteu encara poden veure el que feu en línia."
+      ],
+      "Scan the QR code with your mobile device": [
+        "Escanegeu el codi QR amb el vostre dispositiu mòbil"
+      ],
+      "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
+        "Alguns governs bloquegen o restringeixen l'accés a determinats llocs web. Una VPN ajuda a evitar la censura mentre manté la vostra activitat i identitat privades."
+      ],
+      "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
+        "Alguns llocs web i serveis d'estríming bloquegen els continguts per regió. Una VPN us permet evitar aquestes restriccions i accedir a internet lliurement."
+      ],
+      "Stay connected effortlessly by enabling the following VPN settings:": [
+        "Mantingueu-vos connectat fàcilment activant la configuració següent de la VPN:"
+      ],
+      "Surveillance": [
+        "Vigilància"
+      ],
+      "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
+        "Això vol dir que el vostre proveïdor d'accés a internet i els llocs web que visiteu no poden connectar la vostra informació personal amb la vostra activitat en línia."
+      ],
+      "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
+        "Aquest codi únic el poden utilitzar els llocs web i els ISP (proveïdors de serveis d'internet) per a enllaçar la vostra ubicació i l'historial de navegació al vostre dispositiu."
+      ],
+      "Tracking": [
+        "Seguiment"
+      ],
+      "VPN IP": [
+        "IP de VPN"
+      ],
+      "When working remotely": [
+        "Quan es treballa a distància"
+      ],
+      "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
+        "Quan us connecteu a la VPN, aquesta utilitza tecnologia de xifratge per ocultar la vostra adreça IP (un codi únic assignat al vostre dispositiu)."
+      ],
+      "Your internet service provider can monitor and sometimes sell your data, or even restrict what websites you can access.": [
+        "El vostre proveïdor de serveis d'internet pot supervisar i, de vegades, vendre les vostres dades o, fins i tot, restringir els llocs web als quals podeu accedir."
+      ],
+      "Your IP": [
+        "La vostra IP"
+      ],
+      "Your IP address is visible and can be used to track your online activity.": [
+        "La vostra adreça IP és visible i es pot utilitzar per fer un seguiment de la vostra activitat en línia."
+      ],
+      "Your online activity is protected": [
+        "La vostra activitat en línia està protegida."
+      ],
+      "Your physical location is visible and can be used to restrict your access to the internet.": [
+        "La vostra ubicació física és visible i es pot utilitzar per restringir l'accés a internet."
       ]
     },
     "info": {
@@ -9813,6 +9928,15 @@
       ],
       "ZIP code": [
         "Codi postal"
+      ],
+      "Your IP": [
+        "La vostra IP"
+      ],
+      "Your ISP": [
+        "El vostre proveïdor d'accés a internet"
+      ],
+      "Your location": [
+        "La vostra ubicació"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -15556,6 +15680,39 @@
       ],
       "✨ Categories are coming!": [
         "✨ Arriben les categories!"
+      ],
+      "Desktop": [
+        "Escriptori"
+      ],
+      "Download the app": [
+        "Descarrega l'aplicació"
+      ],
+      "Get more from your VPN": [
+        "Obteniu més de la vostra VPN"
+      ],
+      "How does it all work?": [
+        "Com funciona tot?"
+      ],
+      "Make a secure connection your default": [
+        "Feu d'una connexió segura l'opció predeterminada"
+      ],
+      "Mobile": [
+        "Mòbil"
+      ],
+      "Private browsing vs VPN": [
+        "Navegació privada i VPN"
+      ],
+      "VPN explained": [
+        "Explicacions sobre la VPN"
+      ],
+      "What can a VPN protect you from?": [
+        "De què us pot protegir una VPN?"
+      ],
+      "What is a VPN?": [
+        "Què és una VPN?"
+      ],
+      "When is it most important to use a VPN?": [
+        "Quan és més important utilitzar una VPN?"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16133,6 +16290,17 @@
       ],
       "Passcode:": [
         "Codi d'accés:"
+      ]
+    },
+    "Drawer tab, Action": {
+      "Download for Linux": [
+        "Descarrega per a Linux"
+      ],
+      "Download for macOS": [
+        "Descarrega per al macOS"
+      ],
+      "Download for Windows": [
+        "Descarrega per a Windows"
       ]
     }
   }

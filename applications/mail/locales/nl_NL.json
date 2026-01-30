@@ -4152,6 +4152,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "U heeft al 10 aliassen aangemaakt. Krijg onbeperkte aliassen en 500 GB opslag met ${ BRAND_NAME } Unlimited."
+      ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Om te importeren via een CSV- en VCF-bestand, moet u ervoor zorgen dat het bestand niet groter is dan ${ MAX_IMPORT_FILE_SIZE_STRING } of niet meer dan ${ maxContactString } contacten bevat. Als uw bestand groter is, splits het dan op in kleinere bestanden. ${ learnMoreLink }."
       ]
     },
     "description": {
@@ -5049,6 +5052,12 @@
       ],
       "ZIP code is required": [
         "Postcode is vereist"
+      ],
+      "This offer is not available in your country": [
+        "Dit aanbod is niet beschikbaar in uw land"
+      ],
+      "Unable to load VPN dashboard. Please check your connection and try again.": [
+        "Kan VPN-dashboard niet laden. Controleer uw verbinding en probeer het opnieuw."
       ]
     },
     "error": {
@@ -5147,6 +5156,9 @@
       ],
       "Your file ${ formattedFilename } is empty.": [
         "Uw bestand ${ formattedFilename } is leeg."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ maxContactString } contacts.": [
+        "Uw bestand ${ formattedFilename } bevat meer dan ${ maxContactString } contacten."
       ]
     },
     "Error importing event": {
@@ -8727,6 +8739,115 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "U bent slechts een paar klikken verwijderd van een overzichtelijke inbox"
+      ],
+      "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
+        "${ VPN_APP_NAME } maskeert uw IP-adres, zodat websites u niet kunnen identificeren."
+      ],
+      "**Auto-connect**: Opens and connects to VPN as soon as you turn on your device.": [
+        "**Automatisch Verbinden**: Opent en verbindt met VPN zodra u uw apparaat aan zet."
+      ],
+      "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
+        "**IP-beveiliging**: Stop datalekken door uw internet te blokkeren als uw VPN-verbinding onverwachts stopt."
+      ],
+      "A secure connection is essential when working remotely. A VPN protects company data from cyber threats and keeps your work private.": [
+        "Een veilige verbinding is essentieel bij het werken op afstand. Een VPN beschermt bedrijfsgegevens tegen cyberbedreigingen en houdt uw werk privé."
+      ],
+      "A VPN encrypts your connection and hides your IP address, making it much harder for anyone to track or monitor your browsing.": [
+        "Een VPN versleutelt uw verbinding en verbergt uw IP-adres, waardoor het voor iedereen veel moeilijker is om browsen te volgen of te volgen."
+      ],
+      "A VPN hides your IP address and encrypts your browsing activity, making it harder for websites, advertisers, and ISPs to track you over time.": [
+        "Een VPN verbergt uw IP-adres en versleutelt uw browseractiviteit, waardoor het moeilijker wordt voor websites, adverteerders en internet service providers om u over een bepaalde periode te volgen."
+      ],
+      "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
+        "Een VPN is een veilige tunnel tussen uw apparaat en het internet. Het verbergt uw locatie en activiteit van uw internetserviceprovider (ISP) en de websites die u bezoekt."
+      ],
+      "Ad targeting": [
+        "Advertentie doelwit"
+      ],
+      "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
+        "Adverteerders volgen uw internetgedrag om gerichte advertenties te tonen. ${ VPN_APP_NAME } blokkeert trackers en advertenties, maakt uw verbinding sneller en verbetert uw online ervaring."
+      ],
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "Al uw contacten worden geïmporteerd, met een limiet van ${ maxContact }",
+        "Al uw contacten worden geïmporteerd, met een maximum van ${ maxContact }."
+      ],
+      "Connect to ${ VPN_APP_NAME } to browse privately": [
+        "Verbind met ${ VPN_APP_NAME } om privé te browsen"
+      ],
+      "Geoblocking": [
+        "Geoblocking"
+      ],
+      "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
+        "Regeringen en ISP's kunnen uw online activiteiten controleren. Door uw echte IP te verbergen en uw activiteit te versleutelen, wordt uw internetgedrag privé."
+      ],
+      "In restrictive countries": [
+        "In restrictieve landen"
+      ],
+      "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
+        "Het is het beste om op elk moment een VPN te gebruiken. Maar hier is wanneer cyberbeveiligingsbedreigingen het grootst kunnen zijn:"
+      ],
+      "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
+        "De meeste openbare wifi-netwerken zijn veilig, maar sommige zijn onveilig, waardoor u wordt blootgesteld aan cyberbedreigingen. Een VPN versleutelt uw verkeer en houdt u beschermd."
+      ],
+      "Not connected": [
+        "Niet verbonden"
+      ],
+      "On public WiFi networks": [
+        "Op openbare wifinetwerken"
+      ],
+      "Please wait for the action to be completed": [
+        "Wacht alstublieft tot de actie is voltooid"
+      ],
+      "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
+        "Privé browsen (of \"incognito\" modus) is alleen handig om uw activiteit verborgen te houden op uw apparaat. Het stopt uw browser om geschiedenis en cookies op te slaan, maar het maakt u niet onzichtbaar. Uw ISP, netwerkbeheerder en de websites die u bezoekt kunnen nog steeds zien wat u online doet."
+      ],
+      "Scan the QR code with your mobile device": [
+        "Scan de QR-code met uw mobiele apparaat"
+      ],
+      "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
+        "Sommige regeringen blokkeren of beperken de toegang tot bepaalde websites. Een VPN helpt censuur te omzeilen en uw activiteit en identiteit privé te houden."
+      ],
+      "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
+        "Sommige websites en streaming services blokkeren de inhoud per regio. Een VPN stelt u in staat om deze beperkingen te omzeilen en toegang tot het internet te krijgen."
+      ],
+      "Stay connected effortlessly by enabling the following VPN settings:": [
+        "Blijf moeiteloos verbonden door de volgende VPN-instellingen in te schakelen:"
+      ],
+      "Surveillance": [
+        "Surveillance"
+      ],
+      "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
+        "Dit betekent dat uw internetprovider en de websites die u bezoekt, uw persoonlijke gegevens niet kunnen koppelen aan uw online activiteiten."
+      ],
+      "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
+        "Deze unieke code kan worden gebruikt door websites en ISP's (internet service providers) om uw locatie en browsegeschiedenis te koppelen aan uw apparaat"
+      ],
+      "Tracking": [
+        "Tracking"
+      ],
+      "VPN IP": [
+        "VPN IP-adres"
+      ],
+      "When working remotely": [
+        "Bij werken op afstand"
+      ],
+      "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
+        "Wanneer u verbinding maakt met VPN, gebruikt het versleutelingstechnologie om uw IP-adres te verbergen (een unieke code toegewezen aan uw apparaat)."
+      ],
+      "Your internet service provider can monitor and sometimes sell your data, or even restrict what websites you can access.": [
+        "Uw internet service provider kan uw gegevens monitoren en soms verkopen, of zelfs beperken welke websites u kunt bezoeken."
+      ],
+      "Your IP": [
+        "Uw IP-adres"
+      ],
+      "Your IP address is visible and can be used to track your online activity.": [
+        "Uw IP-adres is zichtbaar en kan worden gebruikt om uw online activiteit te volgen."
+      ],
+      "Your online activity is protected": [
+        "Uw online activiteiten zijn beschermd"
+      ],
+      "Your physical location is visible and can be used to restrict your access to the internet.": [
+        "Uw fysieke locatie is zichtbaar en kan worden gebruikt om uw toegang tot het internet te beperken."
       ]
     },
     "info": {
@@ -9807,6 +9928,15 @@
       ],
       "ZIP code": [
         "Postcode"
+      ],
+      "Your IP": [
+        "Uw IP-adres"
+      ],
+      "Your ISP": [
+        "Uw internet service provider"
+      ],
+      "Your location": [
+        "Uw locatie"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10306,6 +10436,16 @@
       "Up to ${ n } participant": [
         "Tot ${ n } deelnemer",
         "Tot ${ n } deelnemers"
+      ],
+      "${ n } participant": [
+        "${ n } deelnemer",
+        "${ n } deelnemers"
+      ],
+      "Booking pages": [
+        "Boekingspagina's"
+      ],
+      "Meeting recording": [
+        "Opname van vergadering"
       ]
     },
     "Message": {
@@ -12743,6 +12883,9 @@
       ],
       "No unread messages found": [
         "Geen ongelezen berichten gevonden"
+      ],
+      "An action is being processed": [
+        "Er wordt een actie verwerkt"
       ]
     },
     "Section": {
@@ -15537,6 +15680,39 @@
       ],
       "✨ Categories are coming!": [
         "✨ Categorieën komen eraan!"
+      ],
+      "Desktop": [
+        "Desktop"
+      ],
+      "Download the app": [
+        "Download de app"
+      ],
+      "Get more from your VPN": [
+        "Haal meer uit uw VPN"
+      ],
+      "How does it all work?": [
+        "Hoe werkt het?"
+      ],
+      "Make a secure connection your default": [
+        "Maak een beveiligde verbinding uw standaard"
+      ],
+      "Mobile": [
+        "Mobiel"
+      ],
+      "Private browsing vs VPN": [
+        "Privé browsen versus VPN"
+      ],
+      "VPN explained": [
+        "VPN uitgelegd"
+      ],
+      "What can a VPN protect you from?": [
+        "Waartegen kan een VPN u beschermen?"
+      ],
+      "What is a VPN?": [
+        "Wat is een VPN?"
+      ],
+      "When is it most important to use a VPN?": [
+        "Wanneer is het erg belangrijk om een VPN te gebruiken?"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16114,6 +16290,17 @@
       ],
       "Passcode:": [
         "Toegangscode:"
+      ]
+    },
+    "Drawer tab, Action": {
+      "Download for Linux": [
+        "Downloaden voor Linux"
+      ],
+      "Download for macOS": [
+        "Download voor macOS"
+      ],
+      "Download for Windows": [
+        "Download voor Windows"
       ]
     }
   }

@@ -4149,6 +4149,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Hai già creato 10 alias. Ottieni alias illimitati e 500 GB di spazio di archiviazione con ${ BRAND_NAME } Unlimited."
+      ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Per importare tramite file CSV o VCF, assicurati che il file non superi i ${ MAX_IMPORT_FILE_SIZE_STRING } o i ${ maxContactString } contatti. Se il tuo file è più grande, dividilo in file più piccoli. ${ learnMoreLink }."
       ]
     },
     "description": {
@@ -5049,6 +5052,9 @@
       ],
       "ZIP code is required": [
         "Il codice postale è obbligatorio"
+      ],
+      "Unable to load VPN dashboard. Please check your connection and try again.": [
+        "Impossibile caricare il pannello di controllo della VPN. Controlla la tua connessione e riprova."
       ]
     },
     "error": {
@@ -5147,6 +5153,9 @@
       ],
       "Your file ${ formattedFilename } is empty.": [
         "Il tuo file ${ formattedFilename } è vuoto."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ maxContactString } contacts.": [
+        "Il tuo file ${ formattedFilename } contiene più di ${ maxContactString } contatti."
       ]
     },
     "Error importing event": {
@@ -8730,6 +8739,112 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Sei a pochi clic da una posta in arrivo organizzata"
+      ],
+      "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
+        "${ VPN_APP_NAME } sta mascherando il tuo indirizzo IP, così i siti web non possono identificarti."
+      ],
+      "**Auto-connect**: Opens and connects to VPN as soon as you turn on your device.": [
+        "**Connessione automatica**: si apre e si connette alla VPN non appena accendi il dispositivo."
+      ],
+      "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
+        "**Kill switch**: blocca la fuga di dati bloccando la connessione Internet in caso di interruzione imprevista della VPN."
+      ],
+      "A secure connection is essential when working remotely. A VPN protects company data from cyber threats and keeps your work private.": [
+        "Una connessione sicura è essenziale quando si lavora da remoto. Una VPN protegge i dati aziendali dalle minacce informatiche e mantiene il tuo lavoro privato."
+      ],
+      "A VPN encrypts your connection and hides your IP address, making it much harder for anyone to track or monitor your browsing.": [
+        "Una VPN crittografa la tua connessione e nasconde il tuo indirizzo IP, rendendo molto più difficile per chiunque tracciare o monitorare la tua navigazione."
+      ],
+      "A VPN hides your IP address and encrypts your browsing activity, making it harder for websites, advertisers, and ISPs to track you over time.": [
+        "Una VPN nasconde il tuo indirizzo IP e crittografa la tua attività di navigazione, rendendo più difficile per siti web, inserzionisti e ISP tracciarti nel tempo."
+      ],
+      "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
+        "Una VPN è un tunnel sicuro tra il tuo dispositivo e Internet. Nasconde la tua posizione e attività al tuo provider di servizi Internet (ISP) e ai siti Web che visiti."
+      ],
+      "Ad targeting": [
+        "Targeting degli annunci"
+      ],
+      "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
+        "Gli inserzionisti monitorano la tua navigazione per mostrarti annunci pubblicitari mirati. ${ VPN_APP_NAME } blocca tracker e annunci pubblicitari, rendendo la tua connessione più veloce e migliorando la tua esperienza online."
+      ],
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "Tutti i tuoi contatti verranno importati, fino a un limite di ${ maxContact }",
+        "Tutti i tuoi contatti verranno importati, fino a un limite di ${ maxContact }"
+      ],
+      "Connect to ${ VPN_APP_NAME } to browse privately": [
+        "Connettiti a ${ VPN_APP_NAME } per navigare in privato"
+      ],
+      "Geoblocking": [
+        "Blocco geografico"
+      ],
+      "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
+        "I governi e gli ISP possono monitorare la tua attività online. Nascondendo il tuo vero IP e crittografando la tua attività, la tua navigazione diventa privata."
+      ],
+      "In restrictive countries": [
+        "Nei paesi con restrizioni"
+      ],
+      "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
+        "È meglio usare una VPN in ogni momento. Ma ecco quando le minacce alla sicurezza informatica possono essere più elevate:"
+      ],
+      "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
+        "La maggior parte delle reti WiFi pubbliche sono sicure, ma alcune sono carenti di sicurezza, esponendoti a minacce informatiche. Una VPN crittografa il tuo traffico, mantenendoti protetto."
+      ],
+      "Not connected": [
+        "Non connesso"
+      ],
+      "On public WiFi networks": [
+        "Sulle reti Wi-Fi pubbliche"
+      ],
+      "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
+        "La navigazione privata (o modalità \"incognito\") è utile solo per tenere nascosta la tua attività sul tuo dispositivo. Impedisce al tuo browser di salvare cronologia e cookie, ma non ti rende invisibile. Il tuo ISP, l'amministratore di rete e i siti Web che visiti possono comunque vedere cosa fai online."
+      ],
+      "Scan the QR code with your mobile device": [
+        "Scansiona il codice QR con il tuo dispositivo mobile"
+      ],
+      "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
+        "Alcuni governi bloccano o limitano l'accesso a determinati siti web. Una VPN aiuta a bypassare la censura mantenendo private la tua attività e la tua identità."
+      ],
+      "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
+        "Alcuni siti web e servizi di streaming bloccano i contenuti in base alla regione. Una VPN ti consente di aggirare queste restrizioni e accedere a Internet liberamente."
+      ],
+      "Stay connected effortlessly by enabling the following VPN settings:": [
+        "Rimani connesso senza sforzo abilitando le seguenti impostazioni VPN:"
+      ],
+      "Surveillance": [
+        "Sorveglianza"
+      ],
+      "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
+        "Ciò significa che il tuo ISP e i siti web che visiti non possono collegare le tue informazioni personali alla tua attività online."
+      ],
+      "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
+        "Questo codice univoco può essere utilizzato dai siti Web e dagli ISP (fornitori di servizi Internet) per collegare la tua posizione e la cronologia di navigazione al tuo dispositivo"
+      ],
+      "Tracking": [
+        "Monitoraggio"
+      ],
+      "VPN IP": [
+        "IP della VPN"
+      ],
+      "When working remotely": [
+        "Quando si lavora da remoto"
+      ],
+      "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
+        "Quando ti connetti a una VPN, questa utilizza la tecnologia di crittografia per nascondere il tuo indirizzo IP (un codice univoco assegnato al tuo dispositivo)."
+      ],
+      "Your internet service provider can monitor and sometimes sell your data, or even restrict what websites you can access.": [
+        "Il tuo fornitore di servizi Internet può monitorare e talvolta vendere i tuoi dati o addirittura limitare i siti web a cui puoi accedere."
+      ],
+      "Your IP": [
+        "Il tuo IP"
+      ],
+      "Your IP address is visible and can be used to track your online activity.": [
+        "Il tuo indirizzo IP è visibile e può essere utilizzato per tracciare la tua attività online."
+      ],
+      "Your online activity is protected": [
+        "La tua attività online è protetta"
+      ],
+      "Your physical location is visible and can be used to restrict your access to the internet.": [
+        "La tua posizione fisica è visibile e può essere utilizzata per limitare il tuo accesso a Internet."
       ]
     },
     "info": {
@@ -9810,6 +9925,15 @@
       ],
       "ZIP code": [
         "Codice postale"
+      ],
+      "Your IP": [
+        "Il tuo IP"
+      ],
+      "Your ISP": [
+        "Il tuo ISP"
+      ],
+      "Your location": [
+        "La tua posizione"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -15553,6 +15677,39 @@
       ],
       "✨ Categories are coming!": [
         "✨ Le categorie stanno arrivando!"
+      ],
+      "Desktop": [
+        "Desktop"
+      ],
+      "Download the app": [
+        "Scarica l'app"
+      ],
+      "Get more from your VPN": [
+        "Ottieni di più dalla tua VPN"
+      ],
+      "How does it all work?": [
+        "Come funziona?"
+      ],
+      "Make a secure connection your default": [
+        "Rendi la connessione sicura la tua connessione predefinita"
+      ],
+      "Mobile": [
+        "Mobile"
+      ],
+      "Private browsing vs VPN": [
+        "Navigazione privata vs VPN"
+      ],
+      "VPN explained": [
+        "VPN explained"
+      ],
+      "What can a VPN protect you from?": [
+        "Da cosa può proteggerti una VPN?"
+      ],
+      "What is a VPN?": [
+        "Che cos'è una VPN?"
+      ],
+      "When is it most important to use a VPN?": [
+        "Quando è più importante utilizzare una VPN?"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16130,6 +16287,17 @@
       ],
       "Passcode:": [
         "Codice di accesso:"
+      ]
+    },
+    "Drawer tab, Action": {
+      "Download for Linux": [
+        "Scarica per Linux"
+      ],
+      "Download for macOS": [
+        "Scarica per macOS"
+      ],
+      "Download for Windows": [
+        "Scarica per Windows"
       ]
     }
   }

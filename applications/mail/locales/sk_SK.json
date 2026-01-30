@@ -5120,6 +5120,9 @@
       ],
       "ZIP code is required": [
         "PSČ je povinné"
+      ],
+      "Unable to load VPN dashboard. Please check your connection and try again.": [
+        "Nie je možné načítať VPN nástenku. Skontrolujte vaše pripojenie a skúste to znova, prosím."
       ]
     },
     "error": {
@@ -9017,6 +9020,108 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Ste len pár kliknutí od prehľadnej doručenej pošty."
+      ],
+      "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
+        "${ VPN_APP_NAME } maskuje vašu IP adresu, aby vás webové stránky nemohli identifikovať."
+      ],
+      "**Auto-connect**: Opens and connects to VPN as soon as you turn on your device.": [
+        "**Automatické pripojenie**: Otvorí sa a pripojí k VPN hneď po zapnutí zariadenia."
+      ],
+      "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
+        "**Kill switch**: Zabráni úniku dát tým, že zablokuje váš internet, ak sa VPN neočakávane preruší."
+      ],
+      "A secure connection is essential when working remotely. A VPN protects company data from cyber threats and keeps your work private.": [
+        "Bezpečné pripojenie je pri práci na diaľku nevyhnutné. VPN chráni firemné údaje pred kybernetickými hrozbami a udržiava vašu prácu v súkromí."
+      ],
+      "A VPN encrypts your connection and hides your IP address, making it much harder for anyone to track or monitor your browsing.": [
+        "VPN šifruje vaše pripojenie a skrýva vašu IP adresu, takže je oveľa ťažšie sledovať alebo monitorovať vaše prehliadanie."
+      ],
+      "A VPN hides your IP address and encrypts your browsing activity, making it harder for websites, advertisers, and ISPs to track you over time.": [
+        "VPN skrýva vašu IP adresu a šifruje vašu aktivitu pri surfovaní, takže webové stránky, inzerenti a poskytovatelia internetových služieb budú mať sťažené dlhodobé sledovanie."
+      ],
+      "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
+        "VPN je bezpečný tunel medzi vaším zariadením a internetom. Skrýva vašu polohu a aktivity pred poskytovateľom internetových služieb (ISP) a navštívenými webovými stránkami."
+      ],
+      "Ad targeting": [
+        "Cielená reklama"
+      ],
+      "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
+        "Inzerenti sledujú vaše prehliadanie, aby mohli zobrazovať cielené reklamy. ${ VPN_APP_NAME } blokuje sledovače a reklamy, čím zrýchľuje vaše pripojenie a zlepšuje váš online zážitok."
+      ],
+      "Connect to ${ VPN_APP_NAME } to browse privately": [
+        "Pripojte sa k ${ VPN_APP_NAME } a surfujte v súkromí"
+      ],
+      "Geoblocking": [
+        "Geoblokácia"
+      ],
+      "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
+        "Vlády a poskytovatelia internetových služieb môžu monitorovať vašu online aktivitu. Skrytím vašej skutočnej IP adresy a šifrovaním vašej aktivity sa vaše prehliadanie stane súkromným."
+      ],
+      "In restrictive countries": [
+        "V krajinách s reštriktívnym režimom"
+      ],
+      "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
+        "Najlepšie je vždy používať VPN sieť. Tu však môžu byť hrozby kybernetickej bezpečnosti najvyššie:"
+      ],
+      "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
+        "Väčšina verejných WiFi sietí je bezpečná, ale niektoré nie sú dostatočne zabezpečené, čo vás vystavuje kybernetickým hrozbám. VPN šifruje vašu prevádzku, čím vás chráni."
+      ],
+      "Not connected": [
+        "Nepripojené"
+      ],
+      "On public WiFi networks": [
+        "Vo verejných WiFi sieťach"
+      ],
+      "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
+        "Súkromné surfovanie (alebo režim „inkognito“) je užitočné len na to, aby vaša aktivita v zariadení zostala skrytá. Zabráni prehliadaču ukladať históriu a súbory cookie, ale neurobí vás neviditeľnými. Váš poskytovateľ internetových služieb, správca siete a webové stránky, ktoré navštevujete, môžu stále vidieť, čo robíte online."
+      ],
+      "Scan the QR code with your mobile device": [
+        "Naskenujte QR kód pomocou mobilného zariadenia"
+      ],
+      "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
+        "Niektoré vlády blokujú alebo obmedzujú prístup na určité webové stránky. VPN pomáha obísť cenzúru a zároveň zachováva súkromie vašich aktivít a identity."
+      ],
+      "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
+        "Niektoré webové lokality a stravovacie služby blokujú obsah podľa regiónov. VPN vám umožní tieto obmedzenia obísť a získať voľný prístup na internet."
+      ],
+      "Stay connected effortlessly by enabling the following VPN settings:": [
+        "Zostaňte ľahko pripojení povolením nasledujúcich nastavení VPN:"
+      ],
+      "Surveillance": [
+        "Monitorovanie"
+      ],
+      "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
+        "To znamená, že poskytovateľ internetových služieb a navštívené webové lokality nemôžu spájať vaše osobné údaje s vašou online aktivitou."
+      ],
+      "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
+        "Tento jedinečný kód môžu webové stránky a poskytovatelia internetových služieb (ISP) použiť na prepojenie vašej polohy a histórie prehliadania s vaším zariadením"
+      ],
+      "Tracking": [
+        "Sledovanie"
+      ],
+      "VPN IP": [
+        "IP VPN"
+      ],
+      "When working remotely": [
+        "Pri práci na diaľku"
+      ],
+      "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
+        "Pri pripájaní k VPN sa používa šifrovacia technológia na skrytie vašej IP adresy (jedinečný kód pridelený vášmu zariadeniu)."
+      ],
+      "Your internet service provider can monitor and sometimes sell your data, or even restrict what websites you can access.": [
+        "Poskytovateľ internetových služieb môže sledovať a niekedy aj predávať vaše údaje alebo dokonca obmedzovať prístup na webové stránky."
+      ],
+      "Your IP": [
+        "Vaša IP"
+      ],
+      "Your IP address is visible and can be used to track your online activity.": [
+        "Vaša IP adresa je viditeľná a môže sa použiť na sledovanie vašej online aktivity."
+      ],
+      "Your online activity is protected": [
+        "Vaša online aktivita je chránená"
+      ],
+      "Your physical location is visible and can be used to restrict your access to the internet.": [
+        "Vaša fyzická poloha je viditeľná a môže sa použiť na obmedzenie vášho prístupu na internet."
       ]
     },
     "info": {
@@ -10113,6 +10218,15 @@
       ],
       "ZIP code": [
         "PSČ"
+      ],
+      "Your IP": [
+        "Vaša IP"
+      ],
+      "Your ISP": [
+        "Váš ISP"
+      ],
+      "Your location": [
+        "Vaša poloha"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -16124,6 +16238,39 @@
       ],
       "✨ Categories are coming!": [
         "✨ Prichádzajú kategórie!"
+      ],
+      "Desktop": [
+        "Počítač"
+      ],
+      "Download the app": [
+        "Stiahnuť aplikáciu"
+      ],
+      "Get more from your VPN": [
+        "Získajte zo svojej VPN viac"
+      ],
+      "How does it all work?": [
+        "Ako to všetko funguje?"
+      ],
+      "Make a secure connection your default": [
+        "Nastavte zabezpečené pripojenie ako východzie"
+      ],
+      "Mobile": [
+        "Mobil"
+      ],
+      "Private browsing vs VPN": [
+        "Súkromné surfovanie v porovnaní s VPN"
+      ],
+      "VPN explained": [
+        "Vysvetlenie VPN"
+      ],
+      "What can a VPN protect you from?": [
+        "Pred čím vás môže VPN ochrániť?"
+      ],
+      "What is a VPN?": [
+        "Čo to je VPN?"
+      ],
+      "When is it most important to use a VPN?": [
+        "Kedy je najdôležitejšie používať VPN?"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16791,6 +16938,17 @@
       ],
       "Passcode:": [
         "Prístupový kód:"
+      ]
+    },
+    "Drawer tab, Action": {
+      "Download for Linux": [
+        "Stiahnuť pre Linux"
+      ],
+      "Download for macOS": [
+        "Stiahnuť pre macOS"
+      ],
+      "Download for Windows": [
+        "Stiahnuť pre Windows"
       ]
     }
   }

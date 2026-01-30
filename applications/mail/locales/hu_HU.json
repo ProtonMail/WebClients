@@ -4908,6 +4908,9 @@
       ],
       "ZIP code is required": [
         "Irányítószám szükséges"
+      ],
+      "Unable to load VPN dashboard. Please check your connection and try again.": [
+        "Nem sikerült betölteni a VPN vezérlőpultot. Ellenőrizze a kapcsolatot és próbálkozzon újra."
       ]
     },
     "error": {
@@ -8537,6 +8540,108 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Már csak néhány kattintás választja el a rendetlenség-mentes postaládától"
+      ],
+      "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
+        "A ${ VPN_APP_NAME } maszkolja az IP-címet, így a weboldalak nem tudják azonosítani."
+      ],
+      "**Auto-connect**: Opens and connects to VPN as soon as you turn on your device.": [
+        "**Automatikus kapcsolódás**: Megnyitja a VPN-t, és kapcsolódik hozzá, amint bekapcsolja az eszközét."
+      ],
+      "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
+        "**Vészkapcsoló**: Megállítja az adatszivárgást azáltal, hogy blokkolja az internetet, ha a VPN kapcsolat váratlanul megszakad."
+      ],
+      "A secure connection is essential when working remotely. A VPN protects company data from cyber threats and keeps your work private.": [
+        "A biztonságos kapcsolat elengedhetetlen a távmunkához. A VPN megvédi a vállalati adatokat a kiberfenyegetésektől, és privátban tartja a munkáját."
+      ],
+      "A VPN encrypts your connection and hides your IP address, making it much harder for anyone to track or monitor your browsing.": [
+        "A VPN titkosítja a kapcsolatot és elrejti az IP-címét, így sokkal nehezebbé teszi, hogy bárki nyomon kövesse vagy figyelje a böngészését."
+      ],
+      "A VPN hides your IP address and encrypts your browsing activity, making it harder for websites, advertisers, and ISPs to track you over time.": [
+        "A VPN elrejti az Ön IP-címét és titkosítja a böngészési tevékenységét, így a webhelyek, hirdetők és internetszolgáltatók nehezebben tudják Önt nyomon követni."
+      ],
+      "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
+        "A VPN egy biztonságos alagút az Ön eszköze és az internet között. Elrejti az Ön tartózkodási helyét és tevékenységét az internetszolgáltatója (ISP) és a meglátogatott webhelyek elől."
+      ],
+      "Ad targeting": [
+        "Célzott hirdetések"
+      ],
+      "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
+        "A hirdetők nyomon követik az Ön böngészési tevékenységét, hogy célzott hirdetéseket mutassanak. A ${ VPN_APP_NAME } blokkolja a követőket és a hirdetéseket, ezáltal felgyorsítja a kapcsolatot, és javítja az online élményt."
+      ],
+      "Connect to ${ VPN_APP_NAME } to browse privately": [
+        "Kapcsolódjon a ${ VPN_APP_NAME } alkalmazáshoz a privát böngészéshez"
+      ],
+      "Geoblocking": [
+        "Földrajzi tiltás"
+      ],
+      "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
+        "A kormányok és az internetszolgáltatók megfigyelhetik az online tevékenységeket. A valós IP-cím elrejtésével és a tevékenysége titkosításával az Ön böngészése privát lesz."
+      ],
+      "In restrictive countries": [
+        "Korlátozó országokban"
+      ],
+      "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
+        "A legjobb, ha mindig VPN-t használ. Amikor a kiberbiztonsági fenyegetések a legnagyobbak lehetnek:"
+      ],
+      "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
+        "A legtöbb nyilvános Wi-Fi-hálózat biztonságos, de néhány nem rendelkezik megfelelő védelemmel, így ki van téve a kiberfenyegetéseknek. A VPN titkosítja a forgalmat, amivel védelmet nyújt."
+      ],
+      "Not connected": [
+        "Nincs kapcsolódva"
+      ],
+      "On public WiFi networks": [
+        "Nyilvános Wi-Fi-hálózatokon"
+      ],
+      "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
+        "A privát böngészés (vagy „inkognitó” mód) csak arra jó, hogy a tevékenységét rejtve tartsa az eszközén. Megakadályozza, hogy a böngészője elmentse az előzményeket és a cookie-kat, de nem tesz láthatatlanná. Az internetszolgáltatója, a hálózati rendszergazda és az Ön által látogatott webhelyek továbbra is láthatják, hogy mit csinál az interneten."
+      ],
+      "Scan the QR code with your mobile device": [
+        "Olvassa be a QR-kódot a mobilkészülékével"
+      ],
+      "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
+        "Egyes kormányok letiltják vagy korlátozzák a hozzáférést bizonyos weboldalakhoz. A VPN segít megkerülni a cenzúrát, miközben megőrzi az Ön tevékenysége és személyazonossága privát jellegét."
+      ],
+      "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
+        "Egyes weboldalak és videómegosztó szolgáltatások földrajzi régiónként blokkolják a tartalmakat. A VPN segítségével megkerülheti ezeket a korlátozásokat, és szabadon hozzáférhet az internethez."
+      ],
+      "Stay connected effortlessly by enabling the following VPN settings:": [
+        "Maradjon könnyedén kapcsolatban a következő VPN-beállítások engedélyezésével:"
+      ],
+      "Surveillance": [
+        "Megfigyelés"
+      ],
+      "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
+        "Ez azt jelenti, hogy az internetszolgáltatója és az Ön által látogatott webhelyek nem tudják összekapcsolni személyes adatait az online tevékenységével."
+      ],
+      "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
+        "Ezt az egyedi kódot a weboldalak és az internetszolgáltatók felhasználhatják az Ön tartózkodási helyének és böngészési előzményeinek az eszközéhez való kapcsolására."
+      ],
+      "Tracking": [
+        "Nyomkövetés"
+      ],
+      "VPN IP": [
+        "VPN IP"
+      ],
+      "When working remotely": [
+        "Ha távolról dolgozik"
+      ],
+      "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
+        "Amikor VPN-hez kapcsolódik, az titkosítási technológiát használ az IP-cím (az eszközhöz rendelt egyedi kód) elrejtéséhez."
+      ],
+      "Your internet service provider can monitor and sometimes sell your data, or even restrict what websites you can access.": [
+        "Az internetszolgáltatója megfigyelheti vagy akár eladhatja az Ön adatait, és korlátozhatja, hogy mely weboldalakat érheti el."
+      ],
+      "Your IP": [
+        "Az Ön IP-címe"
+      ],
+      "Your IP address is visible and can be used to track your online activity.": [
+        "Az Ön IP-címe látható, és felhasználható az online tevékenységének nyomon követésére."
+      ],
+      "Your online activity is protected": [
+        "Az online tevékenysége védett"
+      ],
+      "Your physical location is visible and can be used to restrict your access to the internet.": [
+        "A fizikai tartózkodási helye látható, és felhasználható az internethez való hozzáférése korlátozására."
       ]
     },
     "info": {
@@ -9584,6 +9689,15 @@
       ],
       "ZIP code": [
         "Irányítószám"
+      ],
+      "Your IP": [
+        "Az Ön IP-címe"
+      ],
+      "Your ISP": [
+        "Az Ön internetszolgáltatója"
+      ],
+      "Your location": [
+        "Az ön tartózkodási helye"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -15139,6 +15253,39 @@
       ],
       "✨ Categories are coming!": [
         "✨ Érkeznek a kategóriák!"
+      ],
+      "Desktop": [
+        "Asztali számítógép"
+      ],
+      "Download the app": [
+        "Töltse le az alkalmazást"
+      ],
+      "Get more from your VPN": [
+        "Hozzon ki többet a VPN-ből"
+      ],
+      "How does it all work?": [
+        "Hogyan is működik ez az egész?"
+      ],
+      "Make a secure connection your default": [
+        "Tegye a biztonságos kapcsolatot alapértelmezetté"
+      ],
+      "Mobile": [
+        "Mobil"
+      ],
+      "Private browsing vs VPN": [
+        "Privát böngészés és VPN"
+      ],
+      "VPN explained": [
+        "A VPN működése"
+      ],
+      "What can a VPN protect you from?": [
+        "Mitől véd meg egy VPN?"
+      ],
+      "What is a VPN?": [
+        "Mi az a VPN?"
+      ],
+      "When is it most important to use a VPN?": [
+        "Mikor a legfontosabb a VPN használata?"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15711,6 +15858,17 @@
       ],
       "Passcode:": [
         "Belépési kód:"
+      ]
+    },
+    "Drawer tab, Action": {
+      "Download for Linux": [
+        "Letöltés Linux rendszerre"
+      ],
+      "Download for macOS": [
+        "Letöltés macOS rendszerre"
+      ],
+      "Download for Windows": [
+        "Letöltés Windows rendszerre"
       ]
     }
   }

@@ -121,13 +121,13 @@
         "Penjajaran teks"
       ],
       "All Read": [
-        "Semua yang Telah Dibaca"
+        "Semua Dibaca"
       ],
       "All Starred": [
         "Semua yang Dibintangi"
       ],
       "All Unread": [
-        "Semua yang Belum Dibaca"
+        "Semua Belum Dibaca"
       ],
       "All Unstarred": [
         "Semua yang Tidak Dibintangi"
@@ -1435,7 +1435,7 @@
         "Berhenti menghasilkan jawaban"
       ],
       "Stop marking as read": [
-        "Berhenti menandai sebagai telah dibaca"
+        "Berhenti tandai dibaca"
       ],
       "Stop moving to Archive": [
         "Berhenti memindahkan ke Arsip"
@@ -4451,7 +4451,7 @@
         "Terdapat kesalahan pada saat menyimpan alias Anda"
       ],
       "Attachments are limited to ${ readableAttachmentMaxSize }": [
-        "Lampiran terbatas pada ${ readableAttachmentMaxSize }"
+        "Lampiran dibatasi hingga ${ readableAttachmentMaxSize }"
       ],
       "Authentication canceled.": [
         "Autentikasi dibatalkan."
@@ -4937,7 +4937,7 @@
         "Nama label ini tidak dapat digunakan. Mohon pilih nama lain."
       ],
       "This message has already been sent": [
-        "Pesan ini telah terkirim"
+        "Pesan ini sudah terkirim"
       ],
       "This message has already been sent. A new draft has been saved.": [
         "Pesan ini telah terkirim. Draf baru telah tersimpan."
@@ -4976,7 +4976,7 @@
         "Anda tidak dapat mengirim email ke lebih dari ${ maxContacts } penerima"
       ],
       "You cannot open more than ${ maxActiveComposer } composer window at a time": [
-        "Anda tidak dapat membuka lebih dari ${ maxActiveComposer } jendela komposer dalam satu waktu"
+        "Anda tidak dapat membuka lebih dari ${ maxActiveComposer } jendela penulis pesan sekaligus"
       ],
       "You did not provide a file.": [
         "Anda tidak menyediakan berkas."
@@ -5010,11 +5010,14 @@
       ],
       "ZIP code is required": [
         "Kode pos diperlukan"
+      ],
+      "Unable to load VPN dashboard. Please check your connection and try again.": [
+        "Dasbor VPN tidak dapat dimuat. Silakan periksa koneksi Anda dan coba lagi."
       ]
     },
     "error": {
       "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
-        "Silakan masuk dengan alamat Gmail yang telah meneruskan pesan ke ${ MAIL_APP_NAME }"
+        "Silakan masuk dengan alamat Gmail yang sudah meneruskan pesan ke ${ MAIL_APP_NAME }"
       ],
       "Please sign in with the same Gmail address you originally connected": [
         "Silakan masuk dengan alamat Gmail yang sama dengan yang Anda gunakan pertama kali untuk terhubung"
@@ -5577,7 +5580,7 @@
         "Sembunyikan pesan yang dipindahkan"
       ],
       "Read": [
-        "Telah dibaca"
+        "Dibaca"
       ],
       "Show moved message": [
         "Tampilkan pesan yang dipindahkan"
@@ -6332,10 +6335,10 @@
         "${ elementsCount } percakapan akan dilabeli sebagai:"
       ],
       "${ elementsCount } conversation will be marked as read.": [
-        "${ elementsCount } percakapan akan ditandai sebagai telah dibaca."
+        "${ elementsCount } percakapan akan ditandai dibaca."
       ],
       "${ elementsCount } conversation will be marked as unread.": [
-        "${ elementsCount } percakapan akan ditandai sebagai belum dibaca."
+        "${ elementsCount } percakapan akan ditandai belum dibaca."
       ],
       "${ elementsCount } conversation will be moved": [
         "${ elementsCount } percakapan akan dipindahkan"
@@ -6347,10 +6350,10 @@
         "${ elementsCount } pesan akan dilabeli sebagai:"
       ],
       "${ elementsCount } message will be marked as read.": [
-        "${ elementsCount } pesan akan ditandai sebagai telah dibaca."
+        "${ elementsCount } pesan akan ditandai dibaca."
       ],
       "${ elementsCount } message will be marked as unread.": [
-        "${ elementsCount } pesan akan ditandai sebagai belum dibaca."
+        "${ elementsCount } pesan akan ditandai belum dibaca."
       ],
       "${ elementsCount } message will be moved": [
         "${ elementsCount } pesan akan dipindahkan"
@@ -6380,7 +6383,7 @@
         "${ messagesNotAuthorizedToMove } pesan tidak dapat dipindahkan."
       ],
       "${ n } unread conversation": [
-        "${ n } percakapan yang belum dibaca"
+        "${ n } percakapan belum dibaca"
       ],
       "${ numberOfUTMTrackers } link cleaned": [
         "${ numberOfUTMTrackers } tautan dibersihkan"
@@ -7007,7 +7010,7 @@
         "Email yang ditandai dengan label ${ nameDeleted } tidak akan dihapus dan tetap dapat ditemukan pada foldernya masing-masing."
       ],
       "embedded image": [
-        "gambar yang tersemat"
+        "Gambar tersemat"
       ],
       "Enabling auto-deletion…": [
         "Mengaktifkan penghapusan otomatis…"
@@ -8147,10 +8150,10 @@
         "Buka kunci pesan"
       ],
       "Unread conversations": [
-        "Percakapan yang belum dibaca"
+        "Percakapan belum dibaca"
       ],
       "Unread messages": [
-        "Pesan yang belum dibaca"
+        "Pesan belum dibaca"
       ],
       "Unsaved changes": [
         "Perubahan yang belum disimpan"
@@ -8411,7 +8414,7 @@
         "Anda akan diberi tahu apabila kata sandi atau data lainnya yang Anda miliki terbocorkan dari layanan pihak ketiga."
       ],
       "You have ${ unread } in your inbox.": [
-        "Anda memiliki ${ unread } pada kotak masuk Anda."
+        "Anda memiliki ${ unread } di kotak masuk Anda."
       ],
       "You have **${ count } conversation** stored in this folder": [
         "Anda memiliki **${ count } percakapan** yang tersimpan dalam folder ini"
@@ -8580,6 +8583,108 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Anda hanya berjarak beberapa klik dari kotak masuk yang rapi"
+      ],
+      "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
+        "${ VPN_APP_NAME } sedang menyamarkan alamat IP Anda, sehingga situs web yang Anda kunjungi tidak akan dapat mengenali diri Anda."
+      ],
+      "**Auto-connect**: Opens and connects to VPN as soon as you turn on your device.": [
+        "**Sambungan otomatis**: Membuka aplikasi dan menghubungkan Anda ke VPN segera setelah Anda menyalakan perangkat Anda."
+      ],
+      "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
+        "**Kill switch**: Menghentikan kebocoran data dengan memblokir internet Anda apabila koneski VPN terputus secara tiba-tiba."
+      ],
+      "A secure connection is essential when working remotely. A VPN protects company data from cyber threats and keeps your work private.": [
+        "Koneksi yang aman sangat penting pada saat bekerja secara remote. VPN melindungi data perusahaan Anda dari ancaman siber dan menjaga pekerjaan Anda tetap privat."
+      ],
+      "A VPN encrypts your connection and hides your IP address, making it much harder for anyone to track or monitor your browsing.": [
+        "VPN mengenkripsi koneksi Anda dan menyembunyikan alamat IP Anda, yang mempersulit siapa pun untuk melacak atau memantau aktivitas penjelajahan Anda."
+      ],
+      "A VPN hides your IP address and encrypts your browsing activity, making it harder for websites, advertisers, and ISPs to track you over time.": [
+        "VPN menyembunyikan alamat IP Anda dan mengenkripsi aktivitas penjelajahan Anda, yang mempersulit situs web, pengiklan, dan ISP untuk dapat melacak Anda seiring waktu."
+      ],
+      "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
+        "VPN merupakan terowongan yang aman antara perangkat Anda dan jaringan internet. VPN menyembunyikan lokasi dan aktivitas Anda dari penyedia layanan internet (ISP) dan situs web yang Anda kunjungi."
+      ],
+      "Ad targeting": [
+        "Penargetan iklan"
+      ],
+      "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
+        "Para pengiklan dapat melacak penjelajahan Anda untuk menampilkan iklan yang ditargetkan. ${ VPN_APP_NAME } memblokir program pelacak dan iklan, yang mempercepat koneksi Anda dan meningkatkan pengalaman online Anda."
+      ],
+      "Connect to ${ VPN_APP_NAME } to browse privately": [
+        "Hubungkan ke ${ VPN_APP_NAME } untuk berselancar secara privat"
+      ],
+      "Geoblocking": [
+        "Pemblokiran wilayah"
+      ],
+      "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
+        "Pemerintah dan ISP dapat memantau aktivitas online Anda. Dengan menyembunyikan alamat IP asli dan mengenkripsi aktivitas Anda, penjelajahan internet Anda akan menjadi privat."
+      ],
+      "In restrictive countries": [
+        "Di negara dengan pembatasan yang ketat"
+      ],
+      "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
+        "Tidak ada waktu yang tidak tepat untuk menggunakan VPN. Meskipun demikian, terdapat beberapa lokasi dan situasi di mana ancaman kejahatan siber dapat sangat membahayakan:"
+      ],
+      "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
+        "Sebagian besar jaringan WiFi publik dapat diakses secara aman, namun jaringan tertentu yang kurang aman dapat memaparkan diri Anda ke berbagai ancaman siber. VPN melindungi lalu lintas jaringan Anda, yang membuat diri Anda tetap terlindung atas ancaman ini."
+      ],
+      "Not connected": [
+        "Tidak terhubung"
+      ],
+      "On public WiFi networks": [
+        "Di jaringan WiFI publik"
+      ],
+      "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
+        "Penjelajahan pribadi (atau mode \"incognito\") hanya berguna untuk menyembunyikan aktivitas Anda pada perangkat yang Anda gunakan. Walaupun mode ini menghentikan browser Anda untuk menyimpan riwayat penjelajahan dan cookie, mode ini tidak serta-merta membuat Anda kasat mata. Pihak ISP, pengelola jaringan, dan situs web yang Anda kunjungi masih akan dapat melihat apa yang Anda lakukan secara online."
+      ],
+      "Scan the QR code with your mobile device": [
+        "Pindai kode QR dengan perangkat seluler Anda"
+      ],
+      "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
+        "Pemerintahan tertentu dapat memblokir atau membatasi akses ke situs web yang spesifik. VPN dapat membantu Anda untuk menangkal sensor selagi menjaga aktivitas dan identitas Anda tetap privat."
+      ],
+      "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
+        "Situs web dan layanan streaming tertentu dapat memblokir konten berdasarkan wilayah. VPN memungkinkan Anda untuk melewati pembatasan ini dan mengakses internet secara bebas."
+      ],
+      "Stay connected effortlessly by enabling the following VPN settings:": [
+        "Buat diri Anda selalu terhubung tanpa harus repot dengan mengaktifkan pengaturan VPN berikut:"
+      ],
+      "Surveillance": [
+        "Pemantauan"
+      ],
+      "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
+        "Hal ini berarti bahwa ISP Anda dan situs web yang Anda kunjungi tidak akan dapat mengaitkan informasi pribadi Anda dengan aktivitas online Anda."
+      ],
+      "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
+        "Kode unik ini dapat digunakan oleh situs web dan penyedia layanan internet (ISP) untuk menautkan lokasi dan riwayat penjelajahan Anda ke perangkat Anda"
+      ],
+      "Tracking": [
+        "Pelacakan"
+      ],
+      "VPN IP": [
+        "IP VPN"
+      ],
+      "When working remotely": [
+        "Pada saat bekerja secara remote"
+      ],
+      "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
+        "Pada saat Anda terhubung ke VPN, aplikasi VPN akan menggunakan teknologi enkripsi untuk menyembunyikan alamat IP (yang merupakan kode unik perangkat) milik Anda."
+      ],
+      "Your internet service provider can monitor and sometimes sell your data, or even restrict what websites you can access.": [
+        "Penyedia layanan internet Anda dapat memantau dan terkadang menjual data Anda, atau bahkan membatasi situs web mana saja yang dapat Anda akses."
+      ],
+      "Your IP": [
+        "IP Anda"
+      ],
+      "Your IP address is visible and can be used to track your online activity.": [
+        "Alamat IP Anda sedang terlihat dan dapat digunakan untuk melacak aktivitas online Anda."
+      ],
+      "Your online activity is protected": [
+        "Aktivitas online Anda terlindung"
+      ],
+      "Your physical location is visible and can be used to restrict your access to the internet.": [
+        "Lokasi fisik Anda sedang terlihat dan dapat digunakan untuk membatasi akses internet Anda."
       ]
     },
     "info": {
@@ -8865,10 +8970,10 @@
         "Nama pengguna ${ BRAND_NAME }"
       ],
       "${ count } unread conversation": [
-        "${ count } percakapan yang belum dibaca"
+        "${ count } percakapan belum dibaca"
       ],
       "${ count } unread message": [
-        "${ count } pesan yang belum dibaca"
+        "${ count } pesan belum dibaca"
       ],
       "${ n } month": [
         "${ n } bulan"
@@ -9459,7 +9564,7 @@
         "Kunci publik"
       ],
       "Read": [
-        "Telah dibaca"
+        "Dibaca"
       ],
       "Recipient": [
         "Penerima"
@@ -9652,6 +9757,15 @@
       ],
       "ZIP code": [
         "Kode pos"
+      ],
+      "Your IP": [
+        "IP Anda"
+      ],
+      "Your ISP": [
+        "ISP Anda"
+      ],
+      "Your location": [
+        "Lokasi Anda"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -13783,13 +13897,13 @@
         "${ elementsCount } percakapan ditambahkan ke ${ labelName }."
       ],
       "${ elementsCount } conversation marked as read.": [
-        "${ elementsCount } percakapan ditandai sebagai telah dibaca."
+        "${ elementsCount } percakapan ditandai dibaca."
       ],
       "${ elementsCount } conversation marked as Starred.": [
         "${ elementsCount } percakapan ditandai sebagai Dibintangi."
       ],
       "${ elementsCount } conversation marked as unread.": [
-        "${ elementsCount } percakapan ditandai sebagai belum dibaca."
+        "${ elementsCount } percakapan ditandai belum dibaca."
       ],
       "${ elementsCount } conversation moved to ${ labelName } and sender added to your not spam list.": [
         "${ elementsCount } percakapan dipindahkan ke ${ labelName } dan para pengirimnya ditambahkan ke daftar bukan spam Anda."
@@ -13816,7 +13930,7 @@
         "${ elementsCount } pesan ditambahkan ke ${ labelName }."
       ],
       "${ elementsCount } message marked as read.": [
-        "${ elementsCount } pesan ditandai telah dibaca."
+        "${ elementsCount } pesan ditandai dibaca."
       ],
       "${ elementsCount } message marked as Starred.": [
         "${ elementsCount } pesan ditandai sebagai Dibintangi."
@@ -14276,7 +14390,7 @@
         "${ numMessages } pesan"
       ],
       "${ unreads } unread message": [
-        "${ unreads } pesan yang belum dibaca"
+        "${ unreads } pesan belum dibaca"
       ],
       "(active)": [
         "(aktif)"
@@ -14729,7 +14843,7 @@
         "Muat konten eksternal"
       ],
       "Mark all messages as read": [
-        "Tandai seluruh pesan sebagai telah dibaca"
+        "Tandai semua pesan dibaca"
       ],
       "Mark as read": [
         "Tandai sebagai telah dibaca"
@@ -14741,7 +14855,7 @@
         "Tandai percakapan sebagai telah dibaca"
       ],
       "Mark conversations as unread": [
-        "Tandai percakapan sebagai belum dibaca"
+        "Tandai percakapan belum dibaca"
       ],
       "Mark email as legitimate": [
         "Tandai email sebagai absah"
@@ -14750,7 +14864,7 @@
         "Tandai pesan sebagai telah dibaca"
       ],
       "Mark messages as unread": [
-        "Tandai pesan sebagai belum dibaca"
+        "Tandai pesan belum dibaca"
       ],
       "Merge contacts": [
         "Gabungkan kontak"
@@ -15243,6 +15357,39 @@
       ],
       "✨ Categories are coming!": [
         "✨ Kategori akan segera hadir!"
+      ],
+      "Desktop": [
+        "Desktop"
+      ],
+      "Download the app": [
+        "Unduh aplikasinya"
+      ],
+      "Get more from your VPN": [
+        "Dapatkan yang lebh dari VPN Anda"
+      ],
+      "How does it all work?": [
+        "Bagaimana cara semua ini bekerja?"
+      ],
+      "Make a secure connection your default": [
+        "Jadikan koneksi yang aman sebagai koneksi bawaan Anda"
+      ],
+      "Mobile": [
+        "Seluler"
+      ],
+      "Private browsing vs VPN": [
+        "Penjelajahan pribadi vs. VPN"
+      ],
+      "VPN explained": [
+        "Kupas tuntas VPN"
+      ],
+      "What can a VPN protect you from?": [
+        "Dari hal apa saja VPN dapat melindungi Anda?"
+      ],
+      "What is a VPN?": [
+        "Apa itu VPN?"
+      ],
+      "When is it most important to use a VPN?": [
+        "Kapan waktu yang paling tepat untuk menggunakan VPN?"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15499,7 +15646,7 @@
         "Sebagian kontak yang akan digabungkan menampilkan kesalahan. Silakan periksa kontak ini satu per satu"
       ],
       "The attachment's signature failed verification.\nYou can still download this attachment but it might have been tampered with.": [
-        "Tanda tangan lampiran gagal diverifikasi.\nAnda akan tetap dapat mengunduh lampiran ini, namun lampiran ini mungkin saja telah dimodifikasi."
+        "Verifikasi tanda tangan lampiran gagal.\nAnda tetap dapat mengunduh lampiran ini, tetapi kemungkinan telah dimanipulasi."
       ],
       "The contact data is corrupted and cannot be displayed.": [
         "Data kontak telah rusak dan tidak dapat dimunculkan."
@@ -15775,6 +15922,17 @@
       ],
       "Passcode:": [
         "Kode sandi:"
+      ]
+    },
+    "Drawer tab, Action": {
+      "Download for Linux": [
+        "Unduh untuk Linux"
+      ],
+      "Download for macOS": [
+        "Unduh untuk macOS"
+      ],
+      "Download for Windows": [
+        "Unduh untuk Windows"
       ]
     }
   }

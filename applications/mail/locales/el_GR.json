@@ -4152,6 +4152,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Έχετε ήδη δημιουργήσει 10 ψευδώνυμα. Αποκτήστε απεριόριστα ψευδώνυμα και 500 GB αποθηκευτικού χώρου με ${ BRAND_NAME } Unlimited."
+      ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Για εισαγωγή μέσω αρχείου CSV και VCF, βεβαιωθείτε ότι το αρχείο δεν υπερβαίνει ${ MAX_IMPORT_FILE_SIZE_STRING } ή τις ${ maxContactString } επαφές. Εάν το αρχείο σας είναι μεγαλύτερο, παρακαλούμε χωρίστε το σε μικρότερα αρχεία. ${ learnMoreLink }."
       ]
     },
     "description": {
@@ -5052,6 +5055,9 @@
       ],
       "ZIP code is required": [
         "Απαιτείται ταχυδρομικός κώδικας"
+      ],
+      "Unable to load VPN dashboard. Please check your connection and try again.": [
+        "Δεν είναι δυνατή η φόρτωση του πίνακα ελέγχου VPN. Παρακαλούμε ελέγξτε τη σύνδεσή σας και προσπαθήστε ξανά."
       ]
     },
     "error": {
@@ -5150,6 +5156,9 @@
       ],
       "Your file ${ formattedFilename } is empty.": [
         "Το αρχείο σας ${ formattedFilename } είναι κενό."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ maxContactString } contacts.": [
+        "Το αρχείο σας ${ formattedFilename } περιέχει περισσότερες από ${ maxContactString } επαφές."
       ]
     },
     "Error importing event": {
@@ -8733,6 +8742,112 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Είστε μόνο μερικά κλικ μακριά από τα εισερχόμενα χωρίς ακαταστασία"
+      ],
+      "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
+        "Το ${ VPN_APP_NAME } καλύπτει τη διεύθυνση IP σας, επομένως οι ιστότοποι δεν μπορούν να σας αναγνωρίσουν."
+      ],
+      "**Auto-connect**: Opens and connects to VPN as soon as you turn on your device.": [
+        "**Αυτόματη σύνδεση**: Ανοίγει και συνδέεται στο VPN μόλις ενεργοποιήσετε τη συσκευή σας."
+      ],
+      "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
+        "**Λειτουργία kill switch**: Σταματά τις διαρροές δεδομένων μπλοκάροντας το διαδίκτυο αν το VPN αποσυνδεθεί απροσδόκητα."
+      ],
+      "A secure connection is essential when working remotely. A VPN protects company data from cyber threats and keeps your work private.": [
+        "Μια ασφαλής σύνδεση είναι απαραίτητη όταν εργάζεστε εξ αποστάσεως. Ένα VPN προστατεύει εταιρικά δεδομένα από απειλές στον κυβερνοχώρο και διατηρεί την εργασία σας ιδιωτική."
+      ],
+      "A VPN encrypts your connection and hides your IP address, making it much harder for anyone to track or monitor your browsing.": [
+        "Ένα VPN κρυπτογραφεί τη σύνδεσή σας και κρύβει την ΙΡ διεύθυνσή σας, καθιστώντας πολύ πιο δύσκολο για οποιονδήποτε να παρακολουθεί ή να παρακολουθεί την περιήγησή σας."
+      ],
+      "A VPN hides your IP address and encrypts your browsing activity, making it harder for websites, advertisers, and ISPs to track you over time.": [
+        "Ένα VPN κρύβει τη διεύθυνσή ΙΡ σας και κρυπτογραφεί τη δραστηριότητα περιήγησής σας, καθιστώντας πιο δύσκολο για τους ιστότοπους, τους διαφημιστές και τους ISP να σας παρακολουθούν με την πάροδο του χρόνου."
+      ],
+      "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
+        "Ένα VPN είναι μια ασφαλής σήραγγα μεταξύ της συσκευής σας και του διαδικτύου. Αποκρύπτει την τοποθεσία και τη δραστηριότητά σας από τον πάροχο υπηρεσιών διαδικτύου (ISP) και τους ιστότοπους που επισκέπτεστε."
+      ],
+      "Ad targeting": [
+        "Στόχευση διαφημίσεων"
+      ],
+      "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
+        "Οι διαφημιζόμενοι παρακολουθούν την περιήγησή σας για να εμφανίζουν στοχευμένες διαφημίσεις. Το ${ VPN_APP_NAME } αποκλείει ιχνηλάτες και διαφημίσεις, κάνοντας τη σύνδεσή σας ταχύτερη και βελτιώνοντας την εμπειρία σας στο διαδίκτυο."
+      ],
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "Όλες οι επαφές σας θα εισαχθούν, μέχρι το όριο των ${ maxContact }",
+        "Όλες οι επαφές σας θα εισαχθούν, μέχρι το όριο των ${ maxContact }"
+      ],
+      "Connect to ${ VPN_APP_NAME } to browse privately": [
+        "Συνδεθείτε στο ${ VPN_APP_NAME } για ιδιωτική περιήγηση"
+      ],
+      "Geoblocking": [
+        "Γεωγραφικός αποκλεισμός"
+      ],
+      "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
+        "Οι κυβερνήσεις και οι ISP μπορούν να παρακολουθούν τη δραστηριότητά σας στο διαδίκτυο. Κρύβοντας την πραγματική σας IP και κρυπτογραφώντας τη δραστηριότητά σας, η περιήγησή σας γίνεται ιδιωτική."
+      ],
+      "In restrictive countries": [
+        "Σε περιοριστικές χώρες"
+      ],
+      "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
+        "Είναι καλύτερο να χρησιμοποιείτε ένα VPN ανά πάσα στιγμή. Αλλά εδώ είναι όπου οι απειλές στον κυβερνοχώρο μπορεί να είναι οι υψηλότερες:"
+      ],
+      "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
+        "Τα περισσότερα δημόσια δίκτυα WiFi είναι ασφαλή, αλλά ορισμένα στερούνται ασφάλειας, εκθέτοντάς σας σε απειλές στον κυβερνοχώρο. Ένα VPN κρυπτογραφεί την κίνησή σας, διατηρώντας σας προστατευμένους."
+      ],
+      "Not connected": [
+        "Μη συνδεδεμένο"
+      ],
+      "On public WiFi networks": [
+        "Σε δημόσια δίκτυα WiFi"
+      ],
+      "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
+        "Η ιδιωτική περιήγηση (ή η κατάσταση ανώνυμης περιήγησης) είναι χρήσιμη μόνο για να διατηρείτε τη δραστηριότητά σας κρυφή στη συσκευή σας. Εμποδίζει το πρόγραμμα περιήγησής σας να αποθηκεύει ιστορικό και cookies, αλλά δεν σας κάνει αόρατους. Η υπηρεσία παροχής Internet, ο διαχειριστής δικτύου και οι τοποθεσίες Web που επισκέπτεστε εξακολουθούν να μπορούν να δουν τι κάνετε στο Internet."
+      ],
+      "Scan the QR code with your mobile device": [
+        "Σαρώστε τον κωδικό QR με την κινητή συσκευή σας"
+      ],
+      "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
+        "Ορισμένες κυβερνήσεις αποκλείουν ή περιορίζουν την πρόσβαση σε ορισμένους ιστότοπους. Ένα VPN βοηθά στην παράκαμψη της λογοκρισίας, διατηρώντας παράλληλα τη δραστηριότητα και την ταυτότητά σας ιδιωτικές."
+      ],
+      "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
+        "Ορισμένοι ιστότοποι και υπηρεσίες ροής αποκλείουν περιεχόμενο ανά περιοχή. Ένα VPN σάς επιτρέπει να παρακάμψετε αυτούς τους περιορισμούς και να έχετε ελεύθερη πρόσβαση στο διαδίκτυο."
+      ],
+      "Stay connected effortlessly by enabling the following VPN settings:": [
+        "Μείνετε συνδεδεμένοι χωρίς κόπο ενεργοποιώντας τις ακόλουθες ρυθμίσεις VPN:"
+      ],
+      "Surveillance": [
+        "Παρακολούθηση"
+      ],
+      "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
+        "Αυτό σημαίνει ότι ο ISP σας και οι ιστότοποι που επισκέπτεστε δεν μπορούν να συνδέσουν τα προσωπικά σας στοιχεία με τη δραστηριότητά σας στο Internet."
+      ],
+      "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
+        "Αυτός ο μοναδικός κωδικός μπορεί να χρησιμοποιηθεί από ιστότοπους και ISP (internet service providers) για τη σύνδεση της τοποθεσίας και του ιστορικού περιήγησής σας με τη συσκευή σας."
+      ],
+      "Tracking": [
+        "Παρακολούθηση"
+      ],
+      "VPN IP": [
+        "VPN IP"
+      ],
+      "When working remotely": [
+        "Όταν εργάζεστε εξ αποστάσεως"
+      ],
+      "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
+        "Όταν συνδέεστε στο VPN, χρησιμοποιεί τεχνολογία κρυπτογράφησης για να κρύψει τη διεύθυνση IP σας (ένας μοναδικός κωδικός που έχει εκχωρηθεί στη συσκευή σας)."
+      ],
+      "Your internet service provider can monitor and sometimes sell your data, or even restrict what websites you can access.": [
+        "Ο πάροχος υπηρεσιών διαδικτύου σας μπορεί να παρακολουθεί και μερικές φορές να πουλά τα δεδομένα σας ή ακόμα και να περιορίζει τους ιστότοπους στους οποίους μπορείτε να έχετε πρόσβαση."
+      ],
+      "Your IP": [
+        "Η διεύθυνση IP σας"
+      ],
+      "Your IP address is visible and can be used to track your online activity.": [
+        "Η διεύθυνση IP σας είναι ορατή και μπορεί να χρησιμοποιηθεί για την παρακολούθηση της δραστηριότητάς σας στο διαδίκτυο."
+      ],
+      "Your online activity is protected": [
+        "Η δραστηριότητά σας στο διαδίκτυο προστατεύεται"
+      ],
+      "Your physical location is visible and can be used to restrict your access to the internet.": [
+        "Η φυσική σας τοποθεσία είναι ορατή και μπορεί να χρησιμοποιηθεί για να περιορίσει την πρόσβασή σας στο διαδίκτυο."
       ]
     },
     "info": {
@@ -9813,6 +9928,15 @@
       ],
       "ZIP code": [
         "Τ.Κ."
+      ],
+      "Your IP": [
+        "Η διεύθυνση IP σας"
+      ],
+      "Your ISP": [
+        "Ο ISP σας"
+      ],
+      "Your location": [
+        "Η τοποθεσία σας"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -15556,6 +15680,39 @@
       ],
       "✨ Categories are coming!": [
         "✨ Οι κατηγορίες έρχονται!"
+      ],
+      "Desktop": [
+        "Υπολογιστής"
+      ],
+      "Download the app": [
+        "Λήψη της εφαρμογής"
+      ],
+      "Get more from your VPN": [
+        "Αποκτήστε περισσότερα από το VPN σας."
+      ],
+      "How does it all work?": [
+        "Πώς λειτουργούν όλα;"
+      ],
+      "Make a secure connection your default": [
+        "Ορισμός ασφαλούς σύνδεσης ως προεπιλογής"
+      ],
+      "Mobile": [
+        "Κινητό"
+      ],
+      "Private browsing vs VPN": [
+        "Ιδιωτική περιήγηση έναντι VPN"
+      ],
+      "VPN explained": [
+        "Επεξήγηση VPN"
+      ],
+      "What can a VPN protect you from?": [
+        "Από τι μπορεί να σας προστατεύσει ένα VPN;"
+      ],
+      "What is a VPN?": [
+        "Τι είναι το VPN;"
+      ],
+      "When is it most important to use a VPN?": [
+        "Πότε είναι πιο σημαντικό να χρησιμοποιήσετε ένα VPN;"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16133,6 +16290,17 @@
       ],
       "Passcode:": [
         "Κωδικός πρόσβασης:"
+      ]
+    },
+    "Drawer tab, Action": {
+      "Download for Linux": [
+        "Λήψη για Linux"
+      ],
+      "Download for macOS": [
+        "Λήψη για MacOS"
+      ],
+      "Download for Windows": [
+        "Λήψη για Windows"
       ]
     }
   }
