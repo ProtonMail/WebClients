@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import Tabs from '@proton/components/components/tabs/Tabs';
 import {
     type Subscription,
+    getIsB2BAudienceFromPlan,
     hasAnyB2bBundle,
     hasPassBusiness,
     hasVpnBusiness,
@@ -32,8 +33,9 @@ const canViewB2BActivityMonitor = (user: UserModel, organization?: OrganizationE
     const isAdmin = user.isAdmin && user.isSelf;
     const hasOrganizationKey = hasOrganizationSetupWithKeys(organization);
     const hasOrganization = hasOrganizationSetup(organization);
+    const isB2B = getIsB2BAudienceFromPlan(organization?.PlanName);
 
-    return (hasOrganizationKey || hasOrganization) && isAdmin;
+    return (hasOrganizationKey || hasOrganization || isB2B) && isAdmin;
 };
 
 const useCanViewB2BOrganization = (user: UserModel, organization?: OrganizationExtended) => {

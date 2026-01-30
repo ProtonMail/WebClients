@@ -8,6 +8,7 @@ import {
     getHasExternalMemberCapableB2BPlan,
     getHasMemberCapablePlan,
     getHasVpnB2BPlan,
+    getIsB2BAudienceFromPlan,
     hasAnyB2bBundle,
     hasBundleBiz2025,
     hasBundlePro2024,
@@ -93,7 +94,8 @@ export const getOrganizationAppRoutes = ({
 
     const hasExternalMemberCapableB2BPlan = getHasExternalMemberCapableB2BPlan(subscription);
 
-    const canShowB2BActivityMonitorEvents = isOrgConfigured && isAdmin;
+    const canShowB2BActivityMonitorEvents =
+        (isOrgConfigured || getIsB2BAudienceFromPlan(organization?.PlanName)) && isAdmin;
 
     //vpnbiz2023, and all business bundle plans have the Connection Events feature
     const hasPlanWithEventLogging =
