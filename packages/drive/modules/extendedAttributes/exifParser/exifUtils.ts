@@ -1,5 +1,7 @@
 import type { ExifTags, ExpandedTags } from 'exifreader';
 
+import { isValidDate } from '@proton/shared/lib/date/date';
+
 import { formatExifDateTime } from './formatExifDateTime';
 
 export const getFormattedDateTime = (exif?: ExifTags) => {
@@ -23,9 +25,14 @@ export const getFormattedDateTime = (exif?: ExifTags) => {
 
 export const getCaptureDateTime = (file: File, exif?: ExifTags) => {
     const formattedDateTime = getFormattedDateTime(exif);
+
+    // NOTE: From specification (https://drive.gitlab-pages.protontech.ch/documentation/specifications/photos/upload/#revision-commit),
+    // the fallback datetime should be the creation time. However in a browser
+    // context, the File object has only the last modified time.
     const captureDateTime = new Date(formattedDateTime || file.lastModified);
 
-    if (captureDateTime.getTime() < 0) {
+    // Dates before the Unix epoch (1970) are not supported by the backend.
+    if (!isValidDate(captureDateTime) || captureDateTime.getTime() < 0) {
         return new Date();
     }
 

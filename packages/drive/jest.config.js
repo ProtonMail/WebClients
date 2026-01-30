@@ -1,4 +1,5 @@
 module.exports = {
+    setupFilesAfterEnv: ['./jest.setup.js'],
     moduleDirectories: ['<rootDir>/node_modules', 'node_modules'],
     testPathIgnorePatterns: [],
     collectCoverage: false,
