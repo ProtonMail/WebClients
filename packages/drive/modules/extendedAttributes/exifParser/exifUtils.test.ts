@@ -1,6 +1,18 @@
 import { getCaptureDateTime, getCaptureDateTimeString, getFormattedDateTime } from './exifUtils';
 
 describe('exif', () => {
+    const MOCK_NOW = new Date('2026-01-30T10:30:00Z');
+    const MOCK_NOW_TIMESTAMP = MOCK_NOW.getTime();
+
+    beforeEach(() => {
+        jest.useFakeTimers();
+        jest.setSystemTime(MOCK_NOW);
+    });
+
+    afterEach(() => {
+        jest.useRealTimers();
+    });
+
     const mockExif = {
         DateTime: {
             id: 306,
@@ -105,13 +117,10 @@ describe('exif', () => {
                     description: '1892:10:06 14:56:16',
                 },
             };
-            const beforeTest = new Date();
             const value = getCaptureDateTimeString(mockPreEpoch);
-            const afterTest = new Date();
             const date = new Date(value!);
 
-            expect(date.getTime()).toBeGreaterThanOrEqual(beforeTest.getTime());
-            expect(date.getTime()).toBeLessThanOrEqual(afterTest.getTime());
+            expect(date.getTime()).toBe(MOCK_NOW_TIMESTAMP);
         });
     });
     describe('getCaptureDateTime', () => {
@@ -128,12 +137,9 @@ describe('exif', () => {
                     description: '1892:10:06 14:56:16',
                 },
             };
-            const beforeTest = new Date();
             const date = getCaptureDateTime(mockFile, mockPreEpoch);
-            const afterTest = new Date();
 
-            expect(date.getTime()).toBeGreaterThanOrEqual(beforeTest.getTime());
-            expect(date.getTime()).toBeLessThanOrEqual(afterTest.getTime());
+            expect(date.getTime()).toBe(MOCK_NOW_TIMESTAMP);
         });
 
         it('should return valid date for post-epoch dates', () => {
@@ -156,6 +162,60 @@ describe('exif', () => {
             const expectedDate = new Date(mockFile.lastModified);
 
             expect(date.getTime()).toBe(expectedDate.getTime());
+        });
+
+        describe('invalid date handling', () => {
+            it('should return current date for invalid EXIF month (month 13)', () => {
+                const mockInvalidMonth = {
+                    DateTimeOriginal: {
+                        id: 36867,
+                        value: ['2024:13:15 10:30:00'],
+                        description: '2024:13:15 10:30:00',
+                    },
+                };
+
+                const date = getCaptureDateTime(mockFile, mockInvalidMonth);
+
+                // Should return the mocked current date
+                expect(date.getTime()).toBe(MOCK_NOW_TIMESTAMP);
+            });
+
+            it('should return current date for zero EXIF date (0000:00:00)', () => {
+                const mockZeroDate = {
+                    DateTimeOriginal: {
+                        id: 36867,
+                        value: ['0000:00:00 00:00:00'],
+                        description: '0000:00:00 00:00:00',
+                    },
+                };
+
+                const date = getCaptureDateTime(mockFile, mockZeroDate);
+
+                // Should return the mocked current date
+                expect(date.getTime()).toBe(MOCK_NOW_TIMESTAMP);
+            });
+
+            it('should fall back to file.lastModified when EXIF date can not be parsed', () => {
+                const mockInvalid = {
+                    DateTimeOriginal: {
+                        id: 36867,
+                        value: ['invalid'],
+                        description: 'invalid',
+                    },
+                };
+
+                // Create a file with valid lastModified that's not "now"
+                const pastDate = new Date('2024-06-15').getTime();
+                const fileWithPastDate = new File(['content'], 'test.jpg', {
+                    type: 'image/jpeg',
+                    lastModified: pastDate,
+                });
+
+                const date = getCaptureDateTime(fileWithPastDate, mockInvalid);
+
+                // Should use file.lastModified as fallback
+                expect(date.getTime()).toBe(pastDate);
+            });
         });
     });
 });
