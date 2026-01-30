@@ -1,5 +1,6 @@
 import { put, takeLeading } from 'redux-saga/effects';
 
+import { isPassCryptoError } from '@proton/pass/lib/crypto/utils/errors';
 import { offlineResume, startEventPolling } from '@proton/pass/store/actions';
 import type { RootSagaOptions } from '@proton/pass/store/types';
 import identity from '@proton/utils/identity';
@@ -13,15 +14,14 @@ function* offlineResumeWorker(options: RootSagaOptions, { payload, meta }: Retur
 
     try {
         if ((yield auth.resumeSession(localID, { retryable: false })) as boolean) {
-            /** Network errors during hydration (getUserData, getOrganization) are handled
-             * gracefully with cached fallbacks. Any errors escaping from hydration are true
-             * terminal failures which should soft logout to clear the corrupted state. */
             yield hydrate(
                 {
                     online: true,
                     merge: identity,
-                    onError: function* () {
-                        yield auth.logout({ soft: true });
+                    onError: function* (err) {
+                        if (isPassCryptoError(err)) {
+                            yield auth.logout({ soft: true });
+                        }
                     },
                 },
                 options
