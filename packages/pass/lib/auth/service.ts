@@ -164,7 +164,7 @@ export interface AuthServiceConfig {
     /** Callback when session lock is created, updated or deleted */
     onLockUpdate?: (lock: Lock, localID: Maybe<number>, broadcast: boolean) => MaybePromise<void>;
     /** Called with the `sessionLockToken` when session is successfully unlocked */
-    onUnlocked?: (mode: LockMode, token: Maybe<string>, localID: Maybe<number>) => Promise<void>;
+    onUnlocked?: (mode: LockMode, token: Maybe<string>, localID: Maybe<number>, offline: boolean) => Promise<void>;
     /** Implement encrypted local session persistence using this hook. Called on every
      * successful consumed fork or unlocked session. */
     onSessionPersist?: (encryptedSession: string) => MaybePromise<void>;
@@ -426,7 +426,7 @@ export const createAuthService = (config: AuthServiceConfig) => {
             return lock;
         },
 
-        unlock: async (mode: LockMode, secret: string): Promise<void> => {
+        unlock: async (mode: LockMode, secret: string, offline: boolean): Promise<void> => {
             if (mode === LockMode.NONE) return;
 
             try {
@@ -435,7 +435,7 @@ export const createAuthService = (config: AuthServiceConfig) => {
                 const localID = authStore.getLocalID();
                 await adapter.check();
 
-                await config.onUnlocked?.(mode, token, localID);
+                await config.onUnlocked?.(mode, token, localID, offline);
             } catch (error) {
                 /** error is thrown for clients to consume */
                 logger.warn(`[AuthService] Unlock failure [mode=${mode}]`, error);

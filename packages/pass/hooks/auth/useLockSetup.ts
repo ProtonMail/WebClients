@@ -109,7 +109,7 @@ export const useLockSetup = (): LockSetup => {
                         assistiveText: c('Info')
                             .t`Please confirm your PIN code in order to unregister your current lock.`,
                         onSubmit: async (secret) => {
-                            await unlock({ mode: currentLockMode, secret });
+                            await unlock({ mode: currentLockMode, secret, offline: false });
                             resolve({ secret });
                         },
                     });
@@ -119,7 +119,7 @@ export const useLockSetup = (): LockSetup => {
                     const secret = (await getBiometricsKey?.(authStore!).catch(noop)) ?? '';
                     if (!secret) return resolve(undefined);
 
-                    return unlock({ mode: currentLockMode, secret })
+                    return unlock({ mode: currentLockMode, secret, offline: false })
                         .then(() => resolve({ secret }))
                         .catch(() => resolve(undefined));
                 }
@@ -155,7 +155,7 @@ export const useLockSetup = (): LockSetup => {
                             }
                         })(),
                         onSubmit: async (secret) => {
-                            await unlock({ mode: currentLockMode, secret });
+                            await unlock({ mode: currentLockMode, secret, offline: false });
                             resolve({ secret });
                         },
                     });
