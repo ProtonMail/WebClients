@@ -20,6 +20,7 @@ import {
     useErrorHandler,
     useHandler,
     useModalState,
+    useNotifications,
 } from '@proton/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import { forceAddonsMinMaxConstraints } from '@proton/components/containers/payments/planCustomizer';
@@ -213,6 +214,7 @@ const Step1 = ({
     const silentApi = getSilentApi(normalApi);
     const { getPaymentsApi } = usePaymentsApi();
     const handleError = useErrorHandler();
+    const { createNotification } = useNotifications();
 
     const [upsellMailTrialModal, setUpsellMailTrialModal, renderUpsellMailTrialModal] = useModalState();
     const [checkTrialResult, setCheckTrialResult] = useState<CheckTrialPriceResult | undefined>();
@@ -242,6 +244,15 @@ const Step1 = ({
     useEffect(() => {
         metrics.core_single_signup_pageLoad_total.increment({});
     }, []);
+
+    useEffect(() => {
+        if (signupParameters.notificationText) {
+            createNotification({
+                type: 'info',
+                text: signupParameters.notificationText,
+            });
+        }
+    }, [signupParameters.notificationText]);
 
     const isMailVariantB = signupParameters.isMailVariantB;
 
