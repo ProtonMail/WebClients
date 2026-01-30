@@ -460,7 +460,8 @@ export const createAuthService = ({
 
         onSessionEmpty: () => {
             history.replace('/');
-            app.setStatus(AppStatus.UNAUTHORIZED);
+            if (!app.getState().booted) app.setStatus(AppStatus.UNAUTHORIZED);
+            else void auth.logout({ soft: true });
         },
 
         /** This retry handling is crucial to handle an edge case where the session might be
