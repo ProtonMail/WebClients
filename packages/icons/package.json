@@ -4,6 +4,8 @@
     "sideEffects": false,
     "type": "module",
     "exports": {
+        "./assets/file-icons.svg": "./assets/file-icons.svg",
+        "./assets/sprite-icons.svg": "./assets/sprite-icons.svg",
         "./types": "./types.ts",
         "./Icons": "./Icons.tsx",
         "./InlineIcons": "./InlineIcons.tsx",

@@ -20,11 +20,14 @@ module.exports = {
         options: {},
     },
     staticDirs: ['../src/assets', '../src/assets/favicons'],
+    // Storybook v9: use *.stories.(js|ts|tsx) for CSF and *.mdx for standalone docs (no .stories.mdx indexer)
     stories: [
-        '../src/stories/atoms/*.stories.@(mdx|js|jsx|ts|tsx)',
-        '../src/stories/components/*.stories.@(mdx|js|jsx|ts|tsx)',
-        // TODO: remove the commented out stories once we have a proper way to handle mdx files in storybook
-        // '../src/stories/coreConcepts/*.stories.@(mdx|js|jsx|ts|tsx)',
+        '../src/stories/atoms/*.stories.@(js|jsx|ts|tsx)',
+        '../src/stories/components/*.stories.@(js|jsx|ts|tsx)',
+        '../src/stories/coreConcepts/*.stories.@(js|jsx|ts|tsx)',
+        '../src/stories/coreConcepts/LayersManagement.mdx',
+        '../src/stories/coreConcepts/Responsive.mdx',
+        '../src/stories/coreConcepts/SassCssVariables.mdx',
         // '../src/stories/cssUtilities/*.stories.@(mdx|js|jsx|ts|tsx)',
     ],
     typescript: {
