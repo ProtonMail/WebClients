@@ -123,7 +123,8 @@ export const createAuthService = ({
             if (DESKTOP_BUILD && core.isFirstLaunch?.()) return false;
 
             const sessions = getPersistedSessions();
-            await localGarbageCollect(sessions).catch(noop);
+            const garbagedLocalIDs = await localGarbageCollect(sessions).catch(noop);
+            garbagedLocalIDs?.forEach(core.settings.clear);
 
             const activeLocalID = authStore.getLocalID();
             const pathLocalID = getLocalIDFromPathname(history.location.pathname);
@@ -132,10 +133,12 @@ export const createAuthService = ({
             const validLocalID = activeLocalID === pathLocalID;
             if (!validLocalID) authStore.clear();
 
-            const validActiveSession = authStore.validSession(authStore.getSession());
+            /** Clear auth store if active localID was garbage collected */
+            if (activeLocalID && garbagedLocalIDs?.includes(activeLocalID)) authStore.clear();
 
             /** Force lock unless: matching localID + valid session + online.
              * Allows bypassing locks on page refresh when localID is preserved */
+            const validActiveSession = authStore.validSession(authStore.getSession());
             options.forceLock = options.forceLock ?? !(validLocalID && validActiveSession && getOnline());
 
             const localID = pathLocalID ?? authStore.getLocalID() ?? getDefaultLocalID(sessions);

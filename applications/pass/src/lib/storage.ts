@@ -39,10 +39,11 @@ export const clearUserLocalData = (localID: number) => {
     void fileStorage.clearAll();
 };
 
-export const localGarbageCollect = async (encryptedSessions: EncryptedAuthSession[]) => {
+export const localGarbageCollect = async (encryptedSessions: EncryptedAuthSession[]): Promise<number[]> => {
     const dbs = await getPassDBs();
     const userIDs = new Set(encryptedSessions.map(prop('UserID')));
     const localIDs = new Set(encryptedSessions.map(prop('LocalID')));
+    const garbagedLocalIDs = new Set<number>();
 
     /** Remove legacy non-indexed storage keys */
     localStorage.removeItem(TELEMETRY_STORAGE_KEY);
@@ -65,9 +66,12 @@ export const localGarbageCollect = async (encryptedSessions: EncryptedAuthSessio
         if (match) {
             const localID = parseInt(match[1], 10);
             if (Number.isFinite(localID) && !localIDs.has(localID)) {
+                garbagedLocalIDs.add(localID);
                 logger.debug(`[GarbageCollect] Clearing stale "${key}" storage`);
                 localStorage.removeItem(key);
             }
         }
     });
+
+    return Array.from(garbagedLocalIDs);
 };
