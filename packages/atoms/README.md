@@ -12,38 +12,6 @@ Ideally functional, controlled (only props in events out) & stateful only to the
 
 1 module per component. Should be kept 1 level deep. No grouping or nesting (other than for purely semantic co-location as in a component is so complex that its implementation details spans across multiple files).
 
-## How to run it locally
+## Storybook and visual tests
 
-- Run Storybook dev server with: `yarn storybook:dev`
-- Build storybook with: `yarn storybook:build`
-
-## Visual Testing
-
-The current solution relies on `Playwright` to run visual tests against the `Storybook` stories, which captures all the stories defined for a given component inside one single page.
-
-### Locally
-
-**Prerequisite**: Docker installed and running.
-
-Run the following commands inside the current `atoms` folder:
-
-- `yarn storybook:build`
-- `yarn docker:build`
-- `yarn docker:run`
-- `yarn storybook:test:visual` (From inside the container)
-
-Any visual change should be visible inside the `tests` folder.
-
-NOTE: to stop the container just run `docker rm storybook-atoms`
-
-#### Update the snapshots
-
-`yarn storybook:test:visual:update` (From inside the container)
-
-### CI
-
-It runs as `storybook:atoms:test:visual` job defined [here](https://gitlab.protontech.ch/web/clients/-/blob/main/ci/jobs/storybook.gitlab-ci.yml?ref_type=heads).
-
-## Gotchas
-
-Whenever you make some changes to the atoms, in order to visual test them, you will have to update the Storybook build by running `yarn storybook:build`. The `storybook-static` folder will be automatically updated inside the Docker container.
+Stories and visual tests are hosted inside the [Storybook](../../applications/storybook/) application, refer to the [docs](../../applications/storybook/README.md) in order to update the visual snapshots in case of expected changes.

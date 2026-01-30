@@ -21,11 +21,11 @@ module.exports = {
     },
     staticDirs: ['../src/assets', '../src/assets/favicons'],
     stories: [
+        '../src/stories/atoms/*.stories.@(mdx|js|jsx|ts|tsx)',
         '../src/stories/components/*.stories.@(mdx|js|jsx|ts|tsx)',
         // TODO: remove the commented out stories once we have a proper way to handle mdx files in storybook
         // '../src/stories/coreConcepts/*.stories.@(mdx|js|jsx|ts|tsx)',
         // '../src/stories/cssUtilities/*.stories.@(mdx|js|jsx|ts|tsx)',
-        '../../../packages/atoms/**/*.stories.@(js|jsx|ts|tsx)',
     ],
     typescript: {
         check: false,
