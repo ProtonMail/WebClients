@@ -10,8 +10,9 @@ import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 
 import { DownloadManager } from '../../managers/download/DownloadManager';
 import { useSharingModal } from '../../modals/SharingModal/SharingModal';
-import { BaseTransferStatus, IssueStatus, useDownloadManagerStore } from '../../zustand/download/downloadManager.store';
+import { IssueStatus, useDownloadManagerStore } from '../../zustand/download/downloadManager.store';
 import type { TransferManagerEntry } from './useTransferManagerState';
+import { isCancellable, isRetryable } from './utils/transferStatus';
 
 export const useTransferManagerActions = () => {
     const downloadManager = DownloadManager.getInstance();
@@ -66,10 +67,30 @@ export const useTransferManagerActions = () => {
     };
 
     const cancelAll = (entries: TransferManagerEntry[]) => {
-        const title = c('Title').t`Cancel all uploads?`;
-        const message = c('Info')
-            .t`This will cancel any remaining uploads. Cancelled files won't be saved in ${DRIVE_APP_NAME}.`;
-        const submitText = c('Action').t`Cancel uploads`;
+        const cancellableEntries = entries.filter(isCancellable);
+        const hasDownloads = cancellableEntries.some((entry) => entry.type === 'download');
+        const hasUploads = cancellableEntries.some((entry) => entry.type === 'upload');
+
+        let title: string;
+        let message: string;
+        let submitText: string;
+
+        if (hasDownloads && hasUploads) {
+            title = c('Title').t`Cancel all transfers?`;
+            message = c('Info')
+                .t`This will cancel any remaining uploads and downloads. Cancelled uploads won't be saved in ${DRIVE_APP_NAME}.`;
+            submitText = c('Action').t`Cancel transfers`;
+        } else if (hasDownloads) {
+            title = c('Title').t`Cancel all downloads?`;
+            message = c('Info').t`This will cancel any remaining downloads.`;
+            submitText = c('Action').t`Cancel downloads`;
+        } else {
+            title = c('Title').t`Cancel all uploads?`;
+            message = c('Info')
+                .t`This will cancel any remaining uploads. Cancelled files won't be saved in ${DRIVE_APP_NAME}.`;
+            submitText = c('Action').t`Cancel uploads`;
+        }
+
         const cancelText = c('Action').t`Go back`;
 
         void showConfirmModal({
@@ -81,7 +102,7 @@ export const useTransferManagerActions = () => {
             // needs to be async because that's required by ConfirmModal.onSubmit
             onSubmit: async () => {
                 for (const entry of entries) {
-                    if (entry.status === BaseTransferStatus.InProgress || entry.status === BaseTransferStatus.Pending) {
+                    if (isCancellable(entry)) {
                         cancelTransfer(entry);
                     }
                 }
@@ -107,7 +128,7 @@ export const useTransferManagerActions = () => {
 
     const retryFailedTransfers = (entries: TransferManagerEntry[]) => {
         for (const entry of entries) {
-            if (entry.status === BaseTransferStatus.Failed) {
+            if (isRetryable(entry)) {
                 retryTransfer(entry);
             }
         }
