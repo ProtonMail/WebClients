@@ -43,7 +43,7 @@ import { authStore } from '@proton/pass/lib/auth/store';
 import type { AuthSwitchService } from '@proton/pass/lib/auth/switch';
 import { getOfflineVerifier } from '@proton/pass/lib/cache/crypto';
 import { canLocalUnlock } from '@proton/pass/lib/cache/utils';
-import { clientBooted, clientOffline } from '@proton/pass/lib/client';
+import { clientBooted } from '@proton/pass/lib/client';
 import { bootIntent, cacheCancel, lockSync, stateDestroy, stopEventPolling } from '@proton/pass/store/actions';
 import { AppStatus, AuthMode, type MaybeNull } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
@@ -552,7 +552,7 @@ export const createAuthService = ({
 
         onSessionFailure: () => {
             logger.info('[AuthServiceProvider] Session resume failure');
-            if (!(clientOffline(app.getState().status) && !getOnline())) {
+            if (!app.getState().booted) {
                 app.setStatus(AppStatus.ERROR);
                 app.setBooted(false);
             }
