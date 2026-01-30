@@ -142,7 +142,7 @@ const MeetProfessionalFromFree = ({ subscription, upsells, handleExplorePlans }:
                                             <span>
                                                 {text}
                                                 {status === 'coming-soon' && (
-                                                    <span className="color-weak"> ({status})</span>
+                                                    <span className="color-weak"> ({c('Info').t`Coming soon`})</span>
                                                 )}
                                             </span>
                                             {tooltip && <Info buttonClass="ml-2 align-middle" title={tooltip} />}
