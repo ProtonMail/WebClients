@@ -94,6 +94,7 @@ import LiveChatZendesk, {
     getIsSelfChat,
     useCanEnableChat,
 } from '@proton/components/containers/zendesk/LiveChatZendesk';
+import { useIsGroupOwner } from '@proton/components/hooks/useIsGroupOwner';
 import useShowVPNDashboard from '@proton/components/hooks/useShowVPNDashboard';
 import { useIsB2BTrial } from '@proton/payments/ui';
 import { APPS, VPN_TV_PATHS } from '@proton/shared/lib/constants';
@@ -134,6 +135,7 @@ const MainContainer: FunctionComponent = () => {
     const [isSessionRecoveryAvailable, loadingIsSessionRecoveryAvailable] = useIsSessionRecoveryAvailable();
     const isBreachesAccountDashboardEnabled = useFlag('BreachesAccountDashboard');
     const recoveryNotification = useRecoveryNotification(false, false);
+    const [isGroupOwner, loadingIsGroupOwner] = useIsGroupOwner();
 
     const vpnRoutes = getRoutes({
         user,
@@ -167,6 +169,7 @@ const MainContainer: FunctionComponent = () => {
         isRetentionPoliciesEnabled,
         isProtonMeetIntegrationEnabled,
         isUserGroupsNoCustomDomainEnabled,
+        isGroupOwner,
     });
 
     const canEnableChat = useCanEnableChat(user);
@@ -292,7 +295,8 @@ const MainContainer: FunctionComponent = () => {
             loadingOrganization ||
             loadingGroups ||
             loadingDataRecovery ||
-            loadingIsSessionRecoveryAvailable
+            loadingIsSessionRecoveryAvailable ||
+            loadingIsGroupOwner
         ) {
             return <PrivateMainAreaLoading />;
         }

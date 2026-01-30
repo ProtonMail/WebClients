@@ -65,6 +65,7 @@ export const getRoutes = ({
     showMeetDashboardVariant,
     isAuthenticatorAvailable,
     hasPendingInvitations,
+    isGroupOwner,
     isOLESEnabled,
     isCategoryViewEnabled,
 }: Arguments) => {
@@ -137,6 +138,7 @@ export const getRoutes = ({
             isSsoForPbsEnabled,
             isRetentionPoliciesEnabled,
             isOLESEnabled,
+            isGroupOwner,
         }),
         vpn: getVpnAppRoutes({ app }),
         wallet: getWalletAppRoutes(),
