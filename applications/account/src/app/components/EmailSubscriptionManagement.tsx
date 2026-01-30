@@ -2,14 +2,13 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { EmailSubscriptionToggleWithHeader } from '@proton/components/containers/account/EmailSubscriptionToggles';
 import {
     type EmailSubscription,
     filterNews,
     getEmailSubscriptions,
 } from '@proton/components/containers/account/constants/email-subscriptions';
-import { BRAND_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
+import { BRAND_NAME } from '@proton/shared/lib/constants';
 import type { NewsletterSubscriptionUpdateData } from '@proton/shared/lib/helpers/newsletter';
 
 import PublicFooter from './PublicFooter';
@@ -35,7 +34,7 @@ const EmailSubscriptionManagement = ({ News, onChange }: EmailSubscriptionManage
         loadingMap,
         onChange: (value: NewsletterSubscriptionUpdateData) => {
             setLoadingMapDiff(value, true);
-            onChange(value).finally(() => setLoadingMapDiff(value, false));
+            void onChange(value).finally(() => setLoadingMapDiff(value, false));
         },
     };
 
@@ -70,11 +69,6 @@ const EmailSubscriptionManagement = ({ News, onChange }: EmailSubscriptionManage
                         />
                     </div>
                 </div>
-            }
-            footer={
-                <ButtonLike fullWidth as="a" href={SSO_PATHS.SWITCH} target="_self">
-                    {c('Action').t`Sign in`}
-                </ButtonLike>
             }
             below={<PublicFooter />}
         />
