@@ -28,13 +28,3 @@ export const getStylesTemplate = async (atomName: string) => {
     const template = await getTemplateFile(`Atom.scss.mustache`);
     return prettify(mustache.render(template, { kebabCaseName: toKebabCase(atomName) }), 'scss');
 };
-
-export const getMdxTemplate = async (atomName: string) => {
-    const template = await getTemplateFile(`Atom.mdx.mustache`);
-    return prettify(mustache.render(template, { atomName, atomNameLowercase: atomName.toLowerCase() }), 'mdx');
-};
-
-export const getStoriesTemplate = async (atomName: string) => {
-    const template = await getTemplateFile(`Atom.stories.tsx.mustache`);
-    return prettify(mustache.render(template, { atomName }));
-};
