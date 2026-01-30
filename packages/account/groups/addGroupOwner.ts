@@ -93,7 +93,7 @@ export const addGroupOwnerThunk = ({
 
         const encryptionAddress = newOwnerAddress.Email;
 
-        const TokenKeySignature = await CryptoProxy.signMessage({
+        const TokenSignaturePacket = await CryptoProxy.signMessage({
             textData: groupAddressKeySessionKey,
             signingKeys: [signingPrivateKey],
             detached: true,
@@ -104,7 +104,7 @@ export const addGroupOwnerThunk = ({
             GroupMemberID: groupMemberID,
             EncryptionAddress: encryptionAddress,
             TokenKeyPacket,
-            TokenKeySignature,
+            TokenSignaturePacket,
         };
 
         await api(inviteGroupOwnerApi(apiParams));
