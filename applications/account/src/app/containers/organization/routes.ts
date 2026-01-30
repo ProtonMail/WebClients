@@ -52,6 +52,7 @@ interface Props {
     isSharedServerFeatureEnabled: boolean;
     isSsoForPbsEnabled: boolean;
     isRetentionPoliciesEnabled: boolean;
+    isGroupOwner: boolean | null;
     isOLESEnabled?: boolean;
 }
 
@@ -74,6 +75,7 @@ export const getOrganizationAppRoutes = ({
     isSharedServerFeatureEnabled,
     isSsoForPbsEnabled,
     isRetentionPoliciesEnabled,
+    isGroupOwner,
     isOLESEnabled,
 }: Props): SidebarConfig => {
     const isAdmin = user.isAdmin && user.isSelf;
@@ -176,8 +178,10 @@ export const getOrganizationAppRoutes = ({
         isOrganizationB2B(organization) &&
         (hasActiveOrganizationKey || hasActiveOrganization);
 
+    const organizationSectionVisible = canHaveOrganization || !!isGroupOwner;
+
     return {
-        available: canHaveOrganization && app !== APPS.PROTONWALLET,
+        available: organizationSectionVisible && app !== APPS.PROTONWALLET,
         header: sectionTitle,
         routes: {
             migrationAssistant: {
@@ -185,14 +189,14 @@ export const getOrganizationAppRoutes = ({
                 text: c('Title').t`Migration assistant`,
                 to: '/migration-assistant',
                 icon: 'arrow-down-to-square',
-                available: showBusinessMigrationSection,
+                available: canHaveOrganization && showBusinessMigrationSection,
             },
             users: {
                 id: 'users',
                 text: hasExternalMemberCapableB2BPlan ? c('Title').t`Users` : c('Title').t`Users and addresses`,
                 to: '/users-addresses',
                 icon: 'users',
-                available: canShowUsersAndAddressesSection,
+                available: canHaveOrganization && canShowUsersAndAddressesSection,
                 subsections: [
                     {
                         id: 'schedule-call',
@@ -213,7 +217,7 @@ export const getOrganizationAppRoutes = ({
                 text: c('Title').t`Groups`,
                 to: '/user-groups',
                 icon: 'pass-group',
-                available: canShowGroupsSection,
+                available: organizationSectionVisible && canShowGroupsSection,
                 subsections: [
                     {
                         id: 'groups-management',
@@ -225,7 +229,7 @@ export const getOrganizationAppRoutes = ({
                 text: c('Title').t`Domain names`,
                 to: '/domain-names',
                 icon: 'globe',
-                available: canShowDomainNamesSection,
+                available: canHaveOrganization && canShowDomainNamesSection,
                 subsections: [
                     { id: 'domains' },
                     {
@@ -239,9 +243,12 @@ export const getOrganizationAppRoutes = ({
                 text: subMenuTitle,
                 to: '/organization-keys',
                 icon: 'buildings',
-                available: isPartOfFamily
-                    ? hasActiveOrganization //Show this section once the family is setup (only requires a name)
-                    : (hasActiveOrganizationKey || hasActiveOrganization) && organization && !!organization.RequiresKey,
+                available:
+                    canHaveOrganization && (isPartOfFamily
+                        ? hasActiveOrganization //Show this section once the family is setup (only requires a name)
+                        : (hasActiveOrganizationKey || hasActiveOrganization) &&
+                          organization &&
+                          !!organization.RequiresKey),
                 subsections: [
                     {
                         id: 'schedule-call',
@@ -263,7 +270,7 @@ export const getOrganizationAppRoutes = ({
                 text: c('Title').t`Gateways`,
                 to: '/gateways',
                 icon: 'servers',
-                available: hasVpnB2BPlan || hasAnyB2bBundle(subscription),
+                available: canHaveOrganization && (hasVpnB2BPlan || hasAnyB2bBundle(subscription)),
                 subsections: [
                     {
                         id: 'servers',
@@ -275,7 +282,10 @@ export const getOrganizationAppRoutes = ({
                 text: c('Title').t`Shared servers`,
                 to: '/shared-servers',
                 icon: 'earth',
-                available: isSharedServerFeatureEnabled && (hasVpnB2BPlan || hasAnyB2bBundle(subscription)),
+                available:
+                    canHaveOrganization &&
+                    isSharedServerFeatureEnabled &&
+                    (hasVpnB2BPlan || hasAnyB2bBundle(subscription)),
                 subsections: [
                     {
                         id: 'servers',
@@ -288,7 +298,7 @@ export const getOrganizationAppRoutes = ({
                 description: c('Subtitle').t`View VPN session details for your organization.`,
                 to: '/gateway-monitor',
                 icon: 'monitor',
-                available: canShowB2BConnectionEvents,
+                available: canHaveOrganization && canShowB2BConnectionEvents,
                 subsections: [
                     {
                         id: 'vpn-connection-events',
@@ -300,7 +310,7 @@ export const getOrganizationAppRoutes = ({
                 text: c('Title').t`Activity monitor`,
                 to: '/activity-monitor',
                 icon: 'card-identity',
-                available: canShowB2BActivityMonitorEvents,
+                available: canHaveOrganization && canShowB2BActivityMonitorEvents,
                 subsections: [
                     {
                         id: 'activity-monitor-dashboard',
@@ -312,7 +322,10 @@ export const getOrganizationAppRoutes = ({
                 text: subMenuTitle,
                 to: '/multi-user-support',
                 icon: 'users',
-                available: isPartOfFamily ? !hasActiveOrganization : !hasActiveOrganizationKey && canHaveOrganization,
+                available:
+                    canHaveOrganization && (isPartOfFamily
+                        ? !hasActiveOrganization
+                        : !hasActiveOrganizationKey && canHaveOrganization),
                 subsections: [
                     {
                         id: 'schedule-call',
@@ -330,6 +343,7 @@ export const getOrganizationAppRoutes = ({
                 to: '/organization-filters',
                 icon: 'filter',
                 available:
+                    canHaveOrganization &&
                     app !== APPS.PROTONVPN_SETTINGS &&
                     !hasExternalMemberCapableB2BPlan &&
                     !isPassFamilyPlan &&
@@ -346,7 +360,7 @@ export const getOrganizationAppRoutes = ({
                 text: c('Title').t`Data retention`,
                 to: '/retention-policies',
                 icon: 'archive-box',
-                available: canShowRetentionPolicies,
+                available: canHaveOrganization && canShowRetentionPolicies,
                 subsections: [{ id: 'retention-policies' }],
             },
             security: {
@@ -355,6 +369,7 @@ export const getOrganizationAppRoutes = ({
                 to: '/authentication-security',
                 icon: 'shield',
                 available:
+                    canHaveOrganization &&
                     (hasActiveOrganizationKey || hasActiveOrganization) &&
                     organization &&
                     (organization.MaxMembers > 1 ||
@@ -390,6 +405,7 @@ export const getOrganizationAppRoutes = ({
                 to: '/single-sign-on',
                 icon: 'key',
                 available:
+                    canHaveOrganization &&
                     appSupportsSSO(app) &&
                     (planSupportsSSO(organization?.PlanName, isSsoForPbsEnabled) ||
                         upsellPlanSSO(organization?.PlanName)) &&
@@ -401,7 +417,7 @@ export const getOrganizationAppRoutes = ({
                 text: c('Title').t`Access control`,
                 to: '/access-control',
                 icon: 'sliders',
-                available: canShowAccessControl,
+                available: canHaveOrganization && canShowAccessControl,
                 subsections: [
                     {
                         id: 'application-access',
