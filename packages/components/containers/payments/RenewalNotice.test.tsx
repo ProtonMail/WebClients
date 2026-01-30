@@ -648,7 +648,7 @@ describe('Coupons - multiple redemptions', () => {
         );
 
         expect(container).toHaveTextContent(
-            'The specially discounted price of CHF 1 is valid for the first month. The coupon is valid for 2 renewals. Then it will automatically be renewed at CHF 4.99 for 1 month. You can cancel at any time. Renewal pricing subject to change according to terms and conditions.'
+            'The specially discounted price of CHF 1 is valid for 2 months. Then it will automatically be renewed at CHF 4.99 for 1 month. You can cancel at any time. Renewal pricing subject to change according to terms and conditions.'
         );
     });
 
@@ -684,7 +684,7 @@ describe('Coupons - multiple redemptions', () => {
         );
 
         expect(container).toHaveTextContent(
-            'The specially discounted price of CHF 47.88 is valid for the first 12 months. The coupon is valid for 3 renewals. Then it will automatically be renewed at CHF 47.88 for 12 months. You can cancel at any time. Renewal pricing subject to change according to terms and conditions.'
+            'The specially discounted price of CHF 47.88 is valid for the first 12 months. The discount is valid for 2 renewals. Then it will automatically be renewed at CHF 47.88 for 12 months. You can cancel at any time. Renewal pricing subject to change according to terms and conditions.'
         );
     });
 });
@@ -1126,7 +1126,7 @@ describe('Custom Billing', () => {
             );
 
             expect(container).toHaveTextContent(
-                'The specially discounted price is valid for the first month. The coupon is valid for 3 renewals. Then it will automatically be renewed at CHF 4.99 for 1 month. You can cancel at any time. Renewal pricing subject to change according to terms and conditions.'
+                'The specially discounted price is valid for 3 months. Then it will automatically be renewed at CHF 4.99 for 1 month. You can cancel at any time. Renewal pricing subject to change according to terms and conditions.'
             );
         });
 
@@ -1168,7 +1168,7 @@ describe('Custom Billing', () => {
             );
 
             expect(container).toHaveTextContent(
-                'The specially discounted price is valid for the first 12 months. The coupon is valid for 2 renewals. Then it will automatically be renewed at CHF 47.88 for 12 months. You can cancel at any time. Renewal pricing subject to change according to terms and conditions.'
+                'The specially discounted price is valid for the first 12 months. The discount is valid for 1 renewal. Then it will automatically be renewed at CHF 47.88 for 12 months. You can cancel at any time. Renewal pricing subject to change according to terms and conditions.'
             );
         });
     });
