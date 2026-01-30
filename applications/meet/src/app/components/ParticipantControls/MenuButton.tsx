@@ -4,11 +4,13 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { IcBug } from '@proton/icons/icons/IcBug';
+import { IcCross } from '@proton/icons/icons/IcCross';
 import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 import { IcMeetChat } from '@proton/icons/icons/IcMeetChat';
 import { IcMeetParticipants } from '@proton/icons/icons/IcMeetParticipants';
 import { IcMeetSettings } from '@proton/icons/icons/IcMeetSettings';
 import { IcThreeDotsVertical } from '@proton/icons/icons/IcThreeDotsVertical';
+import { isMobile } from '@proton/shared/lib/helpers/browser';
 
 import { CircleButton } from '../../atoms/CircleButton/CircleButton';
 import { useDebugOverlayContext } from '../../containers/MeetContainer';
@@ -122,15 +124,26 @@ export const MenuButton = () => {
                 >
                     <div className="menu-wrapper border-norm w-full h-full border border-norm">
                         <div className="menu-wrapper-content w-full h-full px-4 flex py-6 flex-column gap-4 items-center justify-center relative">
-                            <div className="flex justify-center pt-3 pb-1 absolute w-full top-0 left-0">
-                                <div
-                                    className="rounded-full w-custom h-custom menu-handle"
-                                    style={{
-                                        '--w-custom': '2.5rem',
-                                        '--h-custom': '0.25rem',
-                                    }}
-                                />
-                            </div>
+                            {isMobile() ? (
+                                <div className="flex justify-center pt-3 pb-1 absolute w-full top-0 left-0">
+                                    <div
+                                        className="rounded-full w-custom h-custom menu-handle"
+                                        style={{
+                                            '--w-custom': '2.5rem',
+                                            '--h-custom': '0.25rem',
+                                        }}
+                                    />
+                                </div>
+                            ) : (
+                                <button
+                                    onClick={() => setIsOpen(false)}
+                                    aria-label={c('Action').t`Close`}
+                                    className="ml-auto ml-4 mr-4 cursor-pointer"
+                                >
+                                    <IcCross className="color-hint" size={5} />
+                                </button>
+                            )}
+
                             <div className="flex flex-column gap-4 items-center justify-center w-full pt-4">
                                 {items.map((item) => {
                                     return (
