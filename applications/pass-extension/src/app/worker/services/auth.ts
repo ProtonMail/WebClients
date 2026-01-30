@@ -88,7 +88,7 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
             return authStore.validPersistedSession(persistedSession) ? persistedSession : null;
         }),
 
-        getMemorySession: withContext((ctx) => ctx.service.storage.session.getItems(SESSION_KEYS)),
+        getMemorySession: withContext((ctx, _localID) => ctx.service.storage.session.getItems(SESSION_KEYS)),
 
         onLoginStart: withContext((ctx) => {
             browser.alarms.clear(SESSION_RESUME_ALARM).catch(noop);

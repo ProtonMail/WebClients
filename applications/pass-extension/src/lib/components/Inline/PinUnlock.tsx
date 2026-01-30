@@ -38,7 +38,7 @@ const PinUnlockRender: ForwardRefRenderFunction<HTMLInputElement, Props> = ({ he
         try {
             setLoading(true);
             setError(null);
-            await unlock({ mode: LockMode.SESSION, secret });
+            await unlock({ mode: LockMode.SESSION, secret, offline: false });
             onUnlock?.();
         } catch {
         } finally {

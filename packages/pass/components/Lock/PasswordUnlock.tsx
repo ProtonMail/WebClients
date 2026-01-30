@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { useAuthStore } from '@proton/pass/components/Core/AuthStoreProvider';
-import { useOnline } from '@proton/pass/components/Core/ConnectivityProvider';
+import { useOffline } from '@proton/pass/components/Core/ConnectivityProvider';
 import { useUnlockGuard } from '@proton/pass/hooks/auth/useUnlockGuard';
 import { useRequest } from '@proton/pass/hooks/useRequest';
 import { useRerender } from '@proton/pass/hooks/useRerender';
@@ -19,21 +19,24 @@ import { PasswordForm } from './PasswordForm';
 type Props = { extraPassword: boolean; offlineEnabled?: boolean };
 
 export const PasswordUnlock: FC<Props> = ({ extraPassword, offlineEnabled }) => {
-    const online = useOnline();
+    const offline = useOffline();
     const authStore = useAuthStore();
     const history = useHistory();
     const passwordUnlock = useRequest(unlock, { initial: true });
-    const disabled = !online && !offlineEnabled;
+    const disabled = offline && !offlineEnabled;
     const [key, rerender] = useRerender();
 
-    const onSubmit = useCallback(({ password }: PasswordCredentials) => {
-        /** As booting offline will not trigger the AuthService::login
-         * sequence we need to re-apply the redirection logic implemented
-         * in the service's `onLoginComplete` callback */
-        const localID = authStore?.getLocalID();
-        history.replace(getBasename(localID) ?? '/');
-        passwordUnlock.dispatch({ mode: LockMode.PASSWORD, secret: password });
-    }, []);
+    const onSubmit = useCallback(
+        ({ password }: PasswordCredentials) => {
+            /** As booting offline will not trigger the AuthService::login
+             * sequence we need to re-apply the redirection logic implemented
+             * in the service's `onLoginComplete` callback */
+            const localID = authStore?.getLocalID();
+            history.replace(getBasename(localID) ?? '/');
+            passwordUnlock.dispatch({ mode: LockMode.PASSWORD, secret: password, offline });
+        },
+        [offline]
+    );
 
     useUnlockGuard({ offlineEnabled, onOffline: rerender });
 
@@ -44,7 +47,7 @@ export const PasswordUnlock: FC<Props> = ({ extraPassword, offlineEnabled }) => 
             disabled={disabled}
             id="offline-unlock"
             loading={passwordUnlock.loading}
-            submitLabel={!online && offlineEnabled ? c('Action').t`Continue offline` : c('Action').t`Continue`}
+            submitLabel={offline && offlineEnabled ? c('Action').t`Continue offline` : c('Action').t`Continue`}
             onSubmit={onSubmit}
             onValidate={extraPassword ? validateExtraPassword : validateCurrentPassword}
         />
