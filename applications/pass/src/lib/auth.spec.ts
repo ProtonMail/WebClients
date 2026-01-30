@@ -71,7 +71,6 @@ const authService = auth.createAuthService({
 } as any);
 
 const resumeSession = jest.spyOn(authService, 'resumeSession');
-const login = jest.spyOn(authService, 'login');
 const requestFork = jest.spyOn(authService, 'requestFork').mockImplementation();
 const getPersistedSession = jest.spyOn(authService.config, 'getPersistedSession');
 const clear = jest.spyOn(authStore, 'clear');
@@ -140,13 +139,13 @@ describe('AuthService', () => {
             history.location.pathname = '/u/42';
 
             hasSession.mockImplementation(() => true);
-            login.mockImplementation(async () => true);
+            resumeSession.mockImplementation(async () => true);
 
             const options: AuthOptions = {};
             const result = await authService.init(options);
 
             expect(result).toBe(true);
-            expect(login).toHaveBeenCalled();
+            expect(resumeSession).toHaveBeenCalled();
             expect(options.forceLock).toBe(false);
         });
 
