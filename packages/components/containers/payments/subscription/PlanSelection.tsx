@@ -7,6 +7,7 @@ import Info from '@proton/components/components/link/Info';
 import CalendarLogo from '@proton/components/components/logo/CalendarLogo';
 import DriveLogo from '@proton/components/components/logo/DriveLogo';
 import MailLogo from '@proton/components/components/logo/MailLogo';
+import MeetLogo from '@proton/components/components/logo/MeetLogo';
 import PassLogo from '@proton/components/components/logo/PassLogo';
 import VpnLogo from '@proton/components/components/logo/VpnLogo';
 import WalletLogo from '@proton/components/components/logo/WalletLogo';
@@ -909,18 +910,26 @@ const PlanSelection = (props: Props) => {
         </div>
     );
 
+    const isMeetAvailable = useFlag('PMVC2025');
+
     const logosRow = (
-        <div className="my-6 flex justify-center flex-nowrap items-center color-weak">
+        <div className="my-6 flex justify-center flex-nowrap items-center color-weak gap-1 lg:gap-2">
             <MailLogo variant="glyph-only" />
-            <IcPlus alt="+" className="mx-2" />
+            <IcPlus alt="+" />
             <CalendarLogo variant="glyph-only" />
-            <IcPlus alt="+" className="mx-2" />
+            <IcPlus alt="+" />
             <DriveLogo variant="glyph-only" />
-            <IcPlus alt="+" className="mx-2" />
+            <IcPlus alt="+" />
             <VpnLogo variant="glyph-only" />
-            <IcPlus alt="+" className="mx-2" />
+            <IcPlus alt="+" />
             <PassLogo variant="glyph-only" />
-            <IcPlus alt="+" className="mx-2" />
+            {isMeetAvailable && (
+                <>
+                    <IcPlus alt="+" />
+                    <MeetLogo variant="glyph-only" />
+                </>
+            )}
+            <IcPlus alt="+" />
             <WalletLogo variant="glyph-only" />
         </div>
     );
