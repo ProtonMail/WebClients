@@ -28,8 +28,8 @@ export type State = ReturnType<typeof rootReducer>;
 export type Telemetry = { start: () => void; stop: () => void; push: (event: TelemetryEvent) => Promise<boolean> };
 export type PassSaga = (options: RootSagaOptions) => Generator;
 export type PassBootResult =
-    | { ok: true; fromCache: boolean; offline?: boolean; version?: string; reauth?: ReauthActionPayload }
-    | { ok: false; clearCache: boolean };
+    | { ok: true; fromCache: boolean; offline: boolean; version?: string; reauth?: ReauthActionPayload }
+    | { ok: false; clearCache: boolean; offline: boolean };
 
 export interface RootSagaOptions {
     /** defines the current client type */

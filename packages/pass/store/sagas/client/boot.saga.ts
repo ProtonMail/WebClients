@@ -42,10 +42,10 @@ import { loadCryptoWorker } from '@proton/shared/lib/helpers/setupCryptoWorker';
 import { type HydrationResult, hydrate } from './hydrate.saga';
 
 function* bootWorker({ payload }: ReturnType<typeof bootIntent>, options: RootSagaOptions) {
+    const { offline = false, reauth } = payload ?? {};
+
     try {
         const settings: ProxiedSettings = yield options.getSettings();
-        const { offline = false, reauth } = payload ?? {};
-
         if (offline && !settings.offlineEnabled) throw new Error('Unauthorized offline boot');
 
         const online = !offline;
@@ -111,7 +111,7 @@ function* bootWorker({ payload }: ReturnType<typeof bootIntent>, options: RootSa
         logger.warn('[Saga::Boot]', error);
         yield put(bootFailure(error));
         options.setAppStatus(AppStatus.ERROR);
-        options.onBoot?.({ ok: false, clearCache: isPassCryptoError(error) });
+        options.onBoot?.({ ok: false, clearCache: isPassCryptoError(error), offline });
     }
 }
 
@@ -129,7 +129,7 @@ export default function* watcher(options: RootSagaOptions) {
         if (caching || destroyed) {
             logger.warn(`[Saga::Boot] boot cancelled [caching=${Boolean(caching)}, destroyed=${Boolean(destroyed)}]`);
             yield put(bootFailure(new Error(c('Action').t`Please retry`)));
-            options.onBoot?.({ ok: false, clearCache: false });
+            options.onBoot?.({ ok: false, clearCache: false, offline: action.payload?.offline ?? false });
         } else yield put(cacheRequest({ throttle: true }));
     });
 }
