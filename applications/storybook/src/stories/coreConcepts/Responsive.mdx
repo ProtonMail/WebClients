@@ -25,12 +25,12 @@ $breakpoints: im-to-em((
     'small' : 680px,
     'xsmall': 450px,
 ));
- 
+ 
 /* Inclusive and exclusive operators for a finer control over the intervals */
 @include media(">small", "<=medium") {
     width: 50%;
 }
- 
+ 
 /* Use ligatured operators if you fancy a slicker declaration */
 @include media(">small", "≤medium") {
     line-height: 1.5;
@@ -101,7 +101,7 @@ $media-expressions: (
     'portrait': '(orientation: portrait)',
     'reduced-motion': '(prefers-reduced-motion: reduce)',
 );
- 
+ 
 @include media('mouse', '>small') {
     display: inline-flex;
 }
