@@ -166,9 +166,11 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
         };
     }, []);
 
+    /** Only called to verify existing locks once app is booted.
+     * This shoult **NOT** trigger `AuthService::onUnlocked` */
     const handleUnlock = useCallback(async ({ mode, secret }: UnlockDTO) => {
         try {
-            await authService.unlock(mode, secret);
+            await authService.unlock(mode, secret, false);
         } catch (err) {
             throw new Error(getErrorMessage(err));
         }
