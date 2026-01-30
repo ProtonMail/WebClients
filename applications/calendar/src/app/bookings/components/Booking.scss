@@ -161,6 +161,12 @@ body:has(.booking-main-container) {
 			background: #f7f5ff;
 		}
 
+		&[aria-pressed='true'] {
+			border: 1px solid #c5b7ff;
+			background: #f7f5ff;
+			color: #372580;
+		}
+
 		&[disabled] {
 			&#{&} {
 				border: 1px solid #efebff;
