@@ -57,19 +57,17 @@ const IconHeroWorldMap24 = ({ className }: { className?: string }) => {
 const IconHeroCheckmarkCircle = ({ className }: { className?: string }) => {
     return (
         <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className={className}
             width="48"
             height="48"
-            viewBox="0 0 48 48"
-            className={className}
             fill="none"
-            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 48 48"
         >
+            <path d="M40.5 24c0-9.113-7.387-16.5-16.5-16.5S7.5 14.887 7.5 24 14.887 40.5 24 40.5 40.5 33.113 40.5 24Zm3 0c0 10.77-8.73 19.5-19.5 19.5S4.5 34.77 4.5 24 13.23 4.5 24 4.5 43.5 13.23 43.5 24Z" />
             <path
-                d="M18 25.5L22.5 30L30 19.5M42 24C42 33.9411 33.9411 42 24 42C14.0589 42 6 33.9411 6 24C6 14.0589 14.0589 6 24 6C33.9411 6 42 14.0589 42 24Z"
-                stroke="var(--signal-success)"
-                strokeWidth="3"
-                strokeLinecap="round"
-                strokeLinejoin="round"
+                className="booking-icon-success-checkmark"
+                d="M28.78 18.628a1.5 1.5 0 0 1 2.44 1.744l-7.5 10.5a1.5 1.5 0 0 1-2.28.189l-4.5-4.5a1.5 1.5 0 0 1 2.12-2.121l3.248 3.247 6.471-9.059Z"
             />
         </svg>
     );
@@ -138,7 +136,7 @@ export const BookingSuccess = () => {
                 style={{ '--max-w-custom': '37.5rem' }}
             >
                 <div className="text-center mb-6">
-                    <IconHeroCheckmarkCircle className="mb-2" />
+                    <IconHeroCheckmarkCircle className="mb-2 fill-success" />
 
                     <h1 className="text-5xl mb-2 booking-color-title font-arizona">{c('Title')
                         .t`Your booking is confirmed`}</h1>
