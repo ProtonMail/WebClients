@@ -288,7 +288,7 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
             return true;
         }),
 
-        onUnlocked: withContext(async (ctx, mode, _, localID) => {
+        onUnlocked: withContext(async (ctx, mode, _, localID, offline) => {
             if (clientBooted(ctx.getState().status)) return;
 
             switch (mode) {
@@ -303,9 +303,8 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
 
                 case LockMode.PASSWORD:
                     /** NOTE: can only happen during offline unlocking for now */
-                    const online = ctx.service.connectivity.getStatus() === ConnectivityStatus.ONLINE;
-                    if (online) await authService.resumeSession(localID, { retryable: false, unlocked: true });
-                    else ctx.service.store.dispatch(bootIntent({ offline: true }));
+                    if (offline) ctx.service.store.dispatch(bootIntent({ offline: true }));
+                    else await authService.resumeSession(localID, { retryable: false, unlocked: true });
                     break;
             }
         }),
