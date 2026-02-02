@@ -1,16 +1,19 @@
-const { dirname, join } = require('node:path');
+import { createRequire } from 'node:module';
+import { dirname, join } from 'node:path';
 
-function getAbsolutePath(value) {
-    return dirname(require.resolve(join(value, 'package.json')));
-}
+const require = createRequire(import.meta.url);
 
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { getJsLoader } = require('@proton/pack/webpack/js.loader.swc');
 const getCssLoaders = require('@proton/pack/webpack/css.loader');
 const getAssetsLoaders = require('@proton/pack/webpack/assets.loader');
 
+function getAbsolutePath(value) {
+    return dirname(require.resolve(join(value, 'package.json')));
+}
+
 /** @type { import('@storybook/react-webpack5').StorybookConfig } */
-module.exports = {
+export default {
     addons: [getAbsolutePath('@storybook/addon-links'), getAbsolutePath('@storybook/addon-docs')],
     core: {
         disableTelemetry: true,
@@ -20,7 +23,7 @@ module.exports = {
         options: {},
     },
     staticDirs: ['../src/assets', '../src/assets/favicons'],
-    // Storybook v9: use *.stories.(js|ts|tsx) for CSF and *.mdx for standalone docs (no .stories.mdx indexer)
+    // Storybook v10: use *.stories.(js|ts|tsx) for CSF and *.mdx for standalone docs
     stories: ['../src/stories/**/*.stories.@(ts|tsx)', '../src/stories/**/*.mdx'],
     typescript: {
         check: false,
@@ -65,20 +68,12 @@ module.exports = {
             module: {
                 ...config.module,
                 rules: [
+                    // Allow extensionless resolution for ESM packages (e.g. @storybook/addon-links)
+                    { test: /\.m?js$/, resolve: { fullySpecified: false } },
                     // Filter out JS/CSS loaders that are not related to MDX to prevent Webpack from blowing up due to conflicting rules
                     ...config.module.rules.filter((rule) => {
                         return rule && rule.test && rule.test.toString().includes('mdx');
                     }),
-                    {
-                        test: /\.stories\.(mdx|tsx)?$/,
-                        use: [
-                            {
-                                loader: require.resolve('@storybook/source-loader'),
-                                options: { parser: 'typescript' },
-                            },
-                        ],
-                        enforce: 'pre',
-                    },
                     ...[getJsLoader(options), ...getCssLoaders(options), ...getAssetsLoaders(options)],
                 ],
             },
