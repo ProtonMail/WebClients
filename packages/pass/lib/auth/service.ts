@@ -546,10 +546,6 @@ export const createAuthService = (config: AuthServiceConfig) => {
                         if (!proceed) return false;
 
                         if (validMemorySession) {
-                            /** If we have an in-memory decrypted AuthSession - use it to
-                             * login without making any other API requests. Authorizing
-                             * from in-memory session does not account for force lock, rather
-                             * when locking, the in-memory session should be cleared */
                             logger.info(`[AuthService] Resuming in-memory session [lock=${options.forceLock}]`);
                             options.forcePersist = options.forcePersist || !persistedSession;
                             return await authService.login(memorySession, options);
