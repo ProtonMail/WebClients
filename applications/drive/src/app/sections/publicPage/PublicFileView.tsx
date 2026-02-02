@@ -13,9 +13,11 @@ import { usePublicAuthStore } from './usePublicAuth.store';
 
 interface PublicFileViewProps {
     rootNode: NodeEntity;
+    customPassword?: string;
+    isPartialView?: boolean;
 }
 
-export const PublicFileView = ({ rootNode }: PublicFileViewProps) => {
+export const PublicFileView = ({ rootNode, customPassword, isPartialView }: PublicFileViewProps) => {
     const [contentData, setContentData] = useState<Uint8Array<ArrayBuffer>[] | undefined>(undefined);
     const { modals, handleDetails, handleOpenDocsOrSheets, handleCopyLink } = usePublicActions();
 
@@ -64,6 +66,8 @@ export const PublicFileView = ({ rootNode }: PublicFileViewProps) => {
                 onDetails={() => handleDetails(rootNode.uid)}
                 onDownload={handleDownload}
                 onCopyLink={handleCopyLink}
+                customPassword={customPassword}
+                isPartialView={isPartialView}
             />
             <PartialPreview
                 className="flex-1"

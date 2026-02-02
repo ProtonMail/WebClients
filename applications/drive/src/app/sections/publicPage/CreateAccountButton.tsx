@@ -21,7 +21,7 @@ export const CreateAccountButton = () => {
         <ButtonLike
             className="w-full md:w-auto inline-flex items-center"
             color="norm"
-            shape="solid"
+            shape="ghost"
             as="a"
             href={UPSELL_LINK}
             target="_blank"
