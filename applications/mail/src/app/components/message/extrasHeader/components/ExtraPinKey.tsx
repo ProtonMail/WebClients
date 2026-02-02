@@ -78,6 +78,7 @@ const getPromptKeyPinningType = ({
             if (!isSigningKeyPinned && PromptPin) {
                 return PROMPT_KEY_PINNING_TYPE.AUTOPROMPT;
             }
+            break;
         }
         case MAIL_VERIFICATION_STATUS.SIGNED_AND_INVALID:
         case MAIL_VERIFICATION_STATUS.NOT_VERIFIED: {
@@ -102,6 +103,7 @@ const getPromptKeyPinningType = ({
             if (PromptPin) {
                 return PROMPT_KEY_PINNING_TYPE.AUTOPROMPT;
             }
+            break;
         }
         case MAIL_VERIFICATION_STATUS.NOT_SIGNED: {
             if (!firstAttachedPublicKey || isAttachedKeyPinned) {

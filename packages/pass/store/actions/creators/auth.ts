@@ -85,11 +85,9 @@ export const lockCreateSuccess = createAction(
                         case LockMode.SESSION:
                             return c('Info').t`PIN code successfully registered. Use it to unlock ${PASS_APP_NAME}`;
                         case LockMode.PASSWORD:
-                            return c('Info')
-                                .t`Password lock successfully registered. Use it to unlock ${PASS_APP_NAME}`;
+                            return c('Info').t`Password lock successfully registered. Use it to unlock ${PASS_APP_NAME}`;
                         case LockMode.BIOMETRICS:
-                            return c('Info')
-                                .t`Biometrics lock successfully registered. Use it to unlock ${PASS_APP_NAME}`;
+                            return c('Info').t`Biometrics lock successfully registered. Use it to unlock ${PASS_APP_NAME}`;
                     }
                 })(),
                 type: 'info',
@@ -110,6 +108,7 @@ export const unlock = requestActionsFactory<UnlockDTO, LockMode, LockMode>('auth
                                 return c('Error').t`Too many failed attempts. Please sign in again.`;
                             }
                         }
+                        return c('Error').t`Unlock failure`;
                     default:
                         return c('Error').t`Unlock failure`;
                 }
@@ -146,9 +145,7 @@ export const extraPasswordToggle = requestActionsFactory<ExtraPasswordDTO, boole
             withNotification({
                 type: 'info',
                 loading: true,
-                text: payload.enabled
-                    ? c('Info').t`Registering extra password...`
-                    : c('Info').t`Removing extra password...`,
+                text: payload.enabled ? c('Info').t`Registering extra password...` : c('Info').t`Removing extra password...`,
             })({ payload }),
     },
     success: {
@@ -158,9 +155,7 @@ export const extraPasswordToggle = requestActionsFactory<ExtraPasswordDTO, boole
                 withSettings,
                 withNotification({
                     type: 'success',
-                    text: enabled
-                        ? c('Info').t`Extra password successfully created`
-                        : c('Info').t`Extra password successfully removed`,
+                    text: enabled ? c('Info').t`Extra password successfully created` : c('Info').t`Extra password successfully removed`,
                 })
             )({ payload: enabled }),
     },
