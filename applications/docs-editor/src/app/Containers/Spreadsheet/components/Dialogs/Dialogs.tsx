@@ -3,6 +3,7 @@ import { InsertLinkDialog } from './InsertLink'
 import { useUI } from '../../ui-store'
 import { DeleteSheetDialog } from './DeleteSheet'
 import { ResizeDimensionEditorDialog } from './ResizeDimensionEditorDialog'
+import { SpreadsheetSettingsDialog } from './SpreadsheetSettingsDialog'
 
 export function Dialogs() {
   return (
@@ -22,6 +23,7 @@ export function Dialogs() {
       />
       <DeleteSheetDialog />
       <ResizeDimensionEditorDialog />
+      <SpreadsheetSettingsDialog />
     </>
   )
 }
