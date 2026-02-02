@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { Icon, ToolbarButton } from '@proton/components';
+import { ToolbarButton } from '@proton/components';
+import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 
 import { ContextMenuButton } from '../../components/sections/ContextMenu';
 
@@ -28,7 +29,7 @@ export const DetailsButton = ({ buttonType, onClick, close }: Props) => {
         return (
             <ToolbarButton
                 title={title}
-                icon={<Icon name={icon} alt={title} />}
+                icon={<IcInfoCircle alt={title} />}
                 onClick={onClick}
                 data-testid="toolbar-details"
             />

@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react';
 
 import { DropdownMenuButton, Icon } from '@proton/components';
+import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import type { IconName } from '@proton/icons/types';
 
 export const DropdownMenuItem = ({
@@ -24,6 +25,6 @@ export const DropdownMenuItem = ({
                 <p className="text-left color-weak">{description}</p>
             </div>
         </span>
-        {isSelected ? <Icon name="checkmark" /> : null}
+        {isSelected ? <IcCheckmark /> : null}
     </DropdownMenuButton>
 );

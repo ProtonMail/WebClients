@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { Icon, TableCell } from '@proton/components';
+import { TableCell } from '@proton/components';
+import { IcThreeDotsVertical } from '@proton/icons/icons/IcThreeDotsVertical';
 
 import { useItemContextMenu, useSelection } from '../FileBrowser';
 
@@ -33,7 +34,7 @@ export const ContextMenuCell = ({ uid }: ContextMenuCellProps) => {
                 }}
                 className={isContextMenuButtonActive ? 'file-browser--options-focus' : 'mouse:group-hover:opacity-100'}
             >
-                <Icon name="three-dots-vertical" alt={c('Action').t`More options`} />
+                <IcThreeDotsVertical alt={c('Action').t`More options`} />
             </Button>
         </TableCell>
     );

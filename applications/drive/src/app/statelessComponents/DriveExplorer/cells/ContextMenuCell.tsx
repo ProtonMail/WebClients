@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { Icon } from '@proton/components';
+import { IcThreeDotsVertical } from '@proton/icons/icons/IcThreeDotsVertical';
 import clsx from '@proton/utils/clsx';
 
 import type { CellDefinition, ContextMenuControls, SelectionMethods } from '../types';
@@ -25,7 +25,7 @@ export const ContextMenuCell = ({ isActive = false, onClick, className }: Contex
                 className
             )}
         >
-            <Icon name="three-dots-vertical" alt={c('Action').t`More options`} />
+            <IcThreeDotsVertical alt={c('Action').t`More options`} />
         </Button>
     );
 };

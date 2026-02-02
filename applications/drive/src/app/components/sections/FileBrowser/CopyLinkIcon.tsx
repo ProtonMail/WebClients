@@ -5,7 +5,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { Icon } from '@proton/components';
+import { IcLink } from '@proton/icons/icons/IcLink';
 import noop from '@proton/utils/noop';
 
 import { useActions } from '../../../store';
@@ -61,7 +61,7 @@ const CopyLinkIcon = ({ shareId, linkId, trashed, isExpired, className }: Props)
                     }
                 }}
             >
-                <Icon name="link" alt={c('Action').t`Copy link`} />
+                <IcLink alt={c('Action').t`Copy link`} />
             </Button>
         </Tooltip>
     );

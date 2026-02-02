@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Icon } from '@proton/components';
+import { IcTrash } from '@proton/icons/icons/IcTrash';
 import clsx from '@proton/utils/clsx';
 
 import type { CellDefinitionConfig } from '../../../statelessComponents/DriveExplorer/types';
@@ -15,7 +15,7 @@ export function LocationCell({ location, isTrashed = false, className }: Locatio
     return (
         <div title={location} className={clsx('text-ellipsis', className)}>
             <span className="text-pre">
-                {isTrashed && <Icon name="trash" className="mr-1" />}
+                {isTrashed && <IcTrash className="mr-1" />}
                 {location}
             </span>
         </div>

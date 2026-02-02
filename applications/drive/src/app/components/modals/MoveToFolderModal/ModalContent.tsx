@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { Alert, Icon, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
+import { Alert, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
+import { IcFolderPlus } from '@proton/icons/icons/IcFolderPlus';
 
 import type { DecryptedLink, TreeItem } from '../../../store';
 import FolderTree from '../../FolderTree/FolderTree';
@@ -60,7 +61,7 @@ export const ModalContent = ({
                             onClick={() => onCreate(selectedLinkId)}
                             title={c('Action').t`Create new folder`}
                         >
-                            <Icon name="folder-plus" />
+                            <IcFolderPlus alt={c('Action').t`Create new folder`} />
                         </Button>
                     ) : (
                         <Button

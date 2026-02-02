@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
-import { Icon, ToolbarButton } from '@proton/components';
+import { ToolbarButton } from '@proton/components';
 import { getDrive } from '@proton/drive';
+import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 
 import { useDetailsModal } from '../../modals/DetailsModal';
 import { useFilesDetailsModal } from '../../modals/FilesDetailsModal';
@@ -29,7 +30,7 @@ const DetailsButton = ({ selectedBrowserItems }: Props) => {
         <>
             <ToolbarButton
                 title={c('Action').t`Details`}
-                icon={<Icon name="info-circle" alt={c('Action').t`Details`} />}
+                icon={<IcInfoCircle alt={c('Action').t`Details`} />}
                 onClick={() => {
                     if (selectedBrowserItems.length === 1) {
                         void showDetailsModal({

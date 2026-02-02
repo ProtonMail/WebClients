@@ -8,7 +8,6 @@ import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import type { ModalStateProps } from '@proton/components';
 import {
     Alert,
-    Icon,
     ModalTwo,
     ModalTwoContent,
     ModalTwoFooter,
@@ -19,6 +18,7 @@ import {
 import EllipsisLoader from '@proton/components/components/loader/EllipsisLoader';
 import { VERIFICATION_STATUS } from '@proton/crypto';
 import type { Revision } from '@proton/drive';
+import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 import { getNumAccessesTooltipMessage, getSizeTooltipMessage } from '@proton/shared/lib/drive/translations';
 import humanSize, { bytesSize } from '@proton/shared/lib/helpers/humanSize';
 
@@ -241,7 +241,7 @@ const DetailsModalContent = ({
                             <>
                                 {c('Title').t`Size`}
                                 <Tooltip title={getSizeTooltipMessage()} className="ml-1 mb-1">
-                                    <Icon name="info-circle" size={3.5} alt={getSizeTooltipMessage()} />
+                                    <IcInfoCircle size={3.5} alt={getSizeTooltipMessage()} />
                                 </Tooltip>
                             </>
                         }
@@ -276,7 +276,7 @@ const DetailsModalContent = ({
                         <>
                             {c('Title').t`# of downloads`}
                             <Tooltip title={getNumAccessesTooltipMessage()} className="ml-1 mb-1">
-                                <Icon name="info-circle" size={3.5} alt={getNumAccessesTooltipMessage()} />
+                                <IcInfoCircle size={3.5} alt={getNumAccessesTooltipMessage()} />
                             </Tooltip>
                         </>
                     }

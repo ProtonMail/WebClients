@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { Icon, ToolbarButton } from '@proton/components';
+import { ToolbarButton } from '@proton/components';
+import { IcArrowsCross } from '@proton/icons/icons/IcArrowsCross';
 
 import type { DecryptedLink } from '../../../../store';
 import { useMoveToFolderModal } from '../../../modals/MoveToFolderModal/MoveToFolderModal';
@@ -17,7 +18,7 @@ const MoveToFolderButton = ({ shareId, selectedLinks }: Props) => {
         <>
             <ToolbarButton
                 title={c('Action').t`Move to folder`}
-                icon={<Icon name="arrows-cross" alt={c('Action').t`Move to folder`} />}
+                icon={<IcArrowsCross alt={c('Action').t`Move to folder`} />}
                 onClick={() => showMoveToFolderModal({ shareId, selectedItems: selectedLinks })}
                 data-testid="toolbar-move"
             />

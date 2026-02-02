@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { c } from 'ttag';
 
 import { Banner, BannerVariants } from '@proton/atoms/Banner/Banner';
@@ -10,10 +8,11 @@ import {
     CollapsibleContent,
     CollapsibleHeader,
     CollapsibleHeaderIconButton,
-    Icon,
     type ModalStateProps,
     ModalTwoContent,
 } from '@proton/components';
+import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
+import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 import { getNumAccessesTooltipMessage, getSizeTooltipMessage } from '@proton/shared/lib/drive/translations';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
@@ -58,7 +57,7 @@ function FileDetailsComponent({ details }: { details: FileDetails }) {
                                 <CollapsibleHeader
                                     suffix={
                                         <CollapsibleHeaderIconButton>
-                                            <Icon name="chevron-down" />
+                                            <IcChevronDown />
                                         </CollapsibleHeaderIconButton>
                                     }
                                 >
@@ -107,7 +106,7 @@ function FileDetailsComponent({ details }: { details: FileDetails }) {
                                 <>
                                     {c('Title').t`Size`}
                                     <Tooltip title={getSizeTooltipMessage()} className="ml-1 mb-1">
-                                        <Icon name="info-circle" size={3.5} alt={getSizeTooltipMessage()} />
+                                        <IcInfoCircle size={3.5} alt={getSizeTooltipMessage()} />
                                     </Tooltip>
                                 </>
                             }
@@ -133,7 +132,7 @@ function FileDetailsComponent({ details }: { details: FileDetails }) {
                         <>
                             {c('Title').t`Number of downloads`}
                             <Tooltip title={getNumAccessesTooltipMessage()} className="ml-1 mb-1">
-                                <Icon name="info-circle" size={3.5} alt={getNumAccessesTooltipMessage()} />
+                                <IcInfoCircle size={3.5} alt={getNumAccessesTooltipMessage()} />
                             </Tooltip>
                         </>
                     }
@@ -147,7 +146,7 @@ function FileDetailsComponent({ details }: { details: FileDetails }) {
                 <CollapsibleHeader
                     suffix={
                         <CollapsibleHeaderIconButton>
-                            <Icon name="chevron-down" />
+                            <IcChevronDown />
                         </CollapsibleHeaderIconButton>
                     }
                     data-testid="drive:advanced-details"

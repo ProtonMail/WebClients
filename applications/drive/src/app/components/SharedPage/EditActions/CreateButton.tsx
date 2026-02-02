@@ -1,8 +1,10 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { Dropdown, DropdownMenu, DropdownMenuButton, Icon, MimeIcon, usePopperAnchor } from '@proton/components';
+import { Dropdown, DropdownMenu, DropdownMenuButton, MimeIcon, usePopperAnchor } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
+import { IcFolderPlus } from '@proton/icons/icons/IcFolderPlus';
+import { IcPlus } from '@proton/icons/icons/IcPlus';
 import { getNewWindow } from '@proton/shared/lib/helpers/window';
 
 import usePublicToken from '../../../hooks/drive/usePublicToken';
@@ -35,7 +37,7 @@ export const CreateButton = ({ token, linkId }: Props) => {
                 className="flex gap-2 items-center"
                 size="medium"
             >
-                <Icon name="plus" size={4} />
+                <IcPlus size={4} />
                 {c('Action').t`Create`}
             </Button>
             <Dropdown anchorRef={anchorRef} isOpen={isOpen} onClose={close}>
@@ -52,7 +54,7 @@ export const CreateButton = ({ token, linkId }: Props) => {
                             })
                         }
                     >
-                        <Icon name="folder-plus" />
+                        <IcFolderPlus />
                         {c('Action').t`New folder`}
                     </DropdownMenuButton>
                     {isDocsPublicSharingEnabled && (

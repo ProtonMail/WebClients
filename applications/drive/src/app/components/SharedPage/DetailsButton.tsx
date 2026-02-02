@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { Icon } from '@proton/components';
+import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 
 import usePublicToken from '../../hooks/drive/usePublicToken';
 import { usePublicDetailsModal } from '../modals/DetailsModal';
@@ -31,7 +31,7 @@ const DetailsButton = ({ className, linkId }: Props) => {
                 }}
                 data-testid="public-details"
             >
-                <Icon name="info-circle" alt={c('Action').t`Details`} />
+                <IcInfoCircle alt={c('Action').t`Details`} />
             </Button>
             {publicDetailsModal}
         </>

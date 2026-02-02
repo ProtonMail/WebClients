@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { Icon } from '@proton/components';
+import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine';
 import { DESKTOP_PLATFORMS } from '@proton/shared/lib/constants';
 import macosImg from '@proton/styles/assets/img/onboarding/drive-v2-macos.svg';
 import windowsImg from '@proton/styles/assets/img/onboarding/drive-v2-windows.svg';
@@ -51,7 +51,7 @@ export const DesktopAppStepButtons = ({ platform, download, onNext }: Props) => 
                 shape="ghost"
                 color="norm"
                 onClick={() => {
-                    countActionWithTelemetry(Actions.OnboardingV2InstallSkip);
+                    void countActionWithTelemetry(Actions.OnboardingV2InstallSkip);
                     onNext();
                 }}
             >
@@ -64,20 +64,20 @@ export const DesktopAppStepButtons = ({ platform, download, onNext }: Props) => 
                 color="norm"
                 onClick={() => {
                     if (platform === DESKTOP_PLATFORMS.MACOS) {
-                        countActionWithTelemetry(Actions.OnboardingV2InstallMacApp);
+                        void countActionWithTelemetry(Actions.OnboardingV2InstallMacApp);
                     } else if (
                         platform === DESKTOP_PLATFORMS.WINDOWS ||
                         platform === DESKTOP_PLATFORMS.WINDOWS_X64 ||
                         platform === DESKTOP_PLATFORMS.WINDOWS_ARM
                     ) {
-                        countActionWithTelemetry(Actions.OnboardingV2InstallWindowsApp);
+                        void countActionWithTelemetry(Actions.OnboardingV2InstallWindowsApp);
                     }
 
                     download();
                     onNext();
                 }}
             >
-                <Icon name="arrow-down-line" />
+                <IcArrowDownLine />
                 <span>{c('Onboarding Action').t`Install and continue`}</span>
             </Button>
         </div>

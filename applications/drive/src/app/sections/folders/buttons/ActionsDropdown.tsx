@@ -4,7 +4,9 @@ import { c } from 'ttag';
 
 import { Dropdown, DropdownMenu, DropdownMenuButton, Icon, ToolbarButton, usePopperAnchor } from '@proton/components';
 import { MemberRole, generateNodeUid, getDrive } from '@proton/drive/index';
+import { IcChevronDownFilled } from '@proton/icons/icons/IcChevronDownFilled';
 import type { IconName } from '@proton/icons/types';
+import clsx from '@proton/utils/clsx';
 import generateUID from '@proton/utils/generateUID';
 
 import { useFilesDetailsModal } from '../../../components/modals/FilesDetailsModal';
@@ -128,7 +130,9 @@ export const ActionsDropdown = ({ volumeId, shareId, selectedItems, role }: Prop
                 ref={anchorRef}
                 aria-expanded={isOpen}
                 onClick={toggle}
-                icon={<Icon name="chevron-down-filled" alt={c('Title').t`Show actions`} rotate={isOpen ? 180 : 0} />}
+                icon={
+                    <IcChevronDownFilled alt={c('Title').t`Show actions`} className={clsx(isOpen && 'rotateX-180')} />
+                }
                 data-testid="actions-dropdown"
                 title={c('Title').t`Show actions`}
             />

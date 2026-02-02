@@ -1,7 +1,9 @@
 import { c } from 'ttag';
 
 import { Vr } from '@proton/atoms/Vr/Vr';
-import { Icon, Toolbar, ToolbarButton } from '@proton/components';
+import { Toolbar, ToolbarButton } from '@proton/components';
+import { IcArrowRotateRight } from '@proton/icons/icons/IcArrowRotateRight';
+import { IcCrossCircle } from '@proton/icons/icons/IcCrossCircle';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { useSelection } from '../../../components/FileBrowser';
@@ -62,13 +64,13 @@ export const TrashToolbar = ({ trashView }: { trashView: ReturnType<typeof useJo
                 <Vr />
                 <ToolbarButton
                     title={c('Action').t`Restore from trash`}
-                    icon={<Icon name="arrow-rotate-right" />}
+                    icon={<IcArrowRotateRight />}
                     onClick={() => restoreNodes(selectedItems)}
                     data-testid="toolbar-restore"
                 />
                 <ToolbarButton
                     title={c('Action').t`Delete permanently`}
-                    icon={<Icon name="cross-circle" />}
+                    icon={<IcCrossCircle />}
                     onClick={() => handleDelete()}
                     data-testid="toolbar-delete"
                 />
