@@ -184,7 +184,7 @@ describe('Extension AuthService', () => {
                     RefreshToken: 'test-refresh',
                 });
 
-                await auth.config.onUnlocked?.(LockMode.SESSION, undefined, undefined);
+                await auth.config.onUnlocked?.(LockMode.SESSION, undefined, undefined, false);
                 expect(auth.login).toHaveBeenCalledWith(authStore.getSession(), { unlocked: true });
                 expect(auth.resumeSession).not.toHaveBeenCalled();
             });
@@ -193,25 +193,15 @@ describe('Extension AuthService', () => {
                 ctx.status = AppStatus.SESSION_LOCKED;
                 authStore.clear();
 
-                await auth.config.onUnlocked?.(LockMode.SESSION, undefined, 123);
+                await auth.config.onUnlocked?.(LockMode.SESSION, undefined, 123, false);
                 expect(auth.resumeSession).toHaveBeenCalledWith(123, { retryable: false, unlocked: true });
                 expect(auth.login).not.toHaveBeenCalled();
             });
 
-            test('should handle PASSWORD lock mode when online', async () => {
+            test('should handle PASSWORD lock mode', async () => {
                 ctx.status = AppStatus.PASSWORD_LOCKED;
-                connectivity.getStatus = jest.fn().mockReturnValue(ConnectivityStatus.ONLINE);
 
-                await auth.config.onUnlocked?.(LockMode.PASSWORD, undefined, 123);
-                expect(auth.resumeSession).toHaveBeenCalledWith(123, { retryable: false, unlocked: true });
-                expect(ctx.service.store.dispatch).not.toHaveBeenCalled();
-            });
-
-            test('should handle PASSWORD lock mode when offline', async () => {
-                ctx.status = AppStatus.PASSWORD_LOCKED;
-                connectivity.getStatus = jest.fn().mockReturnValue(ConnectivityStatus.OFFLINE);
-
-                await auth.config.onUnlocked?.(LockMode.PASSWORD, undefined, undefined);
+                await auth.config.onUnlocked?.(LockMode.PASSWORD, undefined, undefined, true);
                 expect(ctx.service.store.dispatch).toHaveBeenCalledWith(bootIntent({ offline: true }));
                 expect(auth.resumeSession).not.toHaveBeenCalled();
             });
@@ -219,7 +209,7 @@ describe('Extension AuthService', () => {
             test('should not do anything when already booted', async () => {
                 ctx.status = AppStatus.READY;
 
-                await auth.config.onUnlocked?.(LockMode.SESSION, undefined, undefined);
+                await auth.config.onUnlocked?.(LockMode.SESSION, undefined, undefined, false);
                 expect(auth.login).not.toHaveBeenCalled();
                 expect(auth.resumeSession).not.toHaveBeenCalled();
                 expect(ctx.service.store.dispatch).not.toHaveBeenCalled();
