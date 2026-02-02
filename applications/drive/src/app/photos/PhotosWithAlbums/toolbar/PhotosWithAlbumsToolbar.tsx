@@ -19,6 +19,9 @@ import {
     usePopperAnchor,
 } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
+import { IcArrowLeft } from '@proton/icons/icons/IcArrowLeft';
+import { IcPlus } from '@proton/icons/icons/IcPlus';
+import { IcThreeDotsVertical } from '@proton/icons/icons/IcThreeDotsVertical';
 import type { IconName } from '@proton/icons/types';
 import useFlag from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
@@ -105,7 +108,7 @@ const AlbumGalleryDropdownButton = ({
                 className="inline-flex flex-nowrap flex-row items-center toolbar-button"
                 data-testid="toolbar-album-more-options"
             >
-                <Icon name="three-dots-vertical" className="mr-2" /> {c('Action').t`More`}
+                <IcThreeDotsVertical className="mr-2" /> {c('Action').t`More`}
             </DropdownButton>
             <Dropdown isOpen={isOpen} anchorRef={anchorRef} onClose={close}>
                 <DropdownMenu>
@@ -224,7 +227,7 @@ export const ToolbarLeftActionsAlbumsGallery = ({
             onClick={onAlbumsClick}
             data-testid="toolbar-go-back"
         >
-            <Icon name="arrow-left" className="mr-2 shrink-0" /> {c('Action').t`Go back`}
+            <IcArrowLeft className="mr-2 shrink-0" /> {c('Action').t`Go back`}
         </Button>
     );
 };
@@ -249,7 +252,7 @@ const ToolbarRightActionsAlbums = ({ createAlbumModal }: ToolbarRightActionsAlbu
                 className="inline-flex flex-nowrap flex-row items-center"
                 data-testid="toolbar-new-album"
             >
-                <Icon name="plus" className={clsx(!viewportWidth.xsmall && 'mr-2')} />{' '}
+                <IcPlus className={clsx(!viewportWidth.xsmall && 'mr-2')} />{' '}
                 <span className={clsx(viewportWidth.xsmall && 'sr-only')}>{c('Action').t`New album`}</span>
             </Button>
         </>
@@ -440,7 +443,7 @@ const SelectionDropdownButton = ({ children }: SelectionDropdownButtonProps) => 
                 className="inline-flex flex-nowrap flex-row items-center toolbar-button"
                 data-testid="toolbar-album-more-options"
             >
-                <Icon name="three-dots-vertical" className="mr-2" /> {c('Action').t`More`}
+                <IcThreeDotsVertical className="mr-2" /> {c('Action').t`More`}
             </DropdownButton>
             <Dropdown isOpen={isOpen} anchorRef={anchorRef} onClose={close}>
                 <DropdownMenu>{children}</DropdownMenu>
@@ -513,24 +516,24 @@ export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
     // Only show set cover button if photo selected is not already the cover
     const canSelectCover = Boolean(
         !hasMultipleSelected &&
-            onSelectCover &&
-            album &&
-            selectedItems.length &&
-            album.cover?.linkId !== selectedItems[0].linkId &&
-            album.permissions.isAdmin &&
-            !driveAlbumsDisabled
+        onSelectCover &&
+        album &&
+        selectedItems.length &&
+        album.cover?.linkId !== selectedItems[0].linkId &&
+        album.permissions.isAdmin &&
+        !driveAlbumsDisabled
     );
     const canSavePhotos = Boolean(
         album &&
-            hasSelection &&
-            rootLinkId &&
-            onSavePhotos &&
-            selectedItems.every(({ parentLinkId }) => parentLinkId !== rootLinkId)
+        hasSelection &&
+        rootLinkId &&
+        onSavePhotos &&
+        selectedItems.every(({ parentLinkId }) => parentLinkId !== rootLinkId)
     );
     const canRemoveAlbum = Boolean(album && album.permissions.isEditor && removeAlbumPhotos && !driveAlbumsDisabled);
     const canShare = Boolean(
         (openSharePhotoModal && !hasMultipleSelected && !album) ||
-            (!hasMultipleSelected && album && album.permissions.isAdmin)
+        (!hasMultipleSelected && album && album.permissions.isAdmin)
     );
     const canShareMultiple = Boolean(hasMultipleSelected && openSharePhotosIntoAnAlbumModal && !album);
     const canAddPhotosFromGallery = Boolean(

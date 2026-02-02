@@ -5,7 +5,7 @@ import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { UserAvatar } from '@proton/atoms/UserAvatar/UserAvatar';
-import { Icon } from '@proton/components';
+import { IcUserPlus } from '@proton/icons/icons/IcUserPlus';
 import { useContactEmails } from '@proton/mail/store/contactEmails/hooks';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import folderImages from '@proton/styles/assets/img/drive/folder-images.svg';
@@ -106,7 +106,7 @@ export const AlbumCoverHeader = ({
                             onClick={onShare}
                             data-testid="cover-share"
                         >
-                            <Icon name="user-plus" className="mr-2" />
+                            <IcUserPlus className="mr-2" />
                             {c('Action').t`Share`}
                         </Button>
                     )}

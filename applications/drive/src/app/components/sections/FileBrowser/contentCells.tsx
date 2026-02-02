@@ -3,7 +3,9 @@ import { c } from 'ttag';
 import { Avatar } from '@proton/atoms/Avatar/Avatar';
 import { Button } from '@proton/atoms/Button/Button';
 import { UserAvatar, UserAvatarSizeEnum } from '@proton/atoms/UserAvatar/UserAvatar';
-import { FileIcon, Icon, TableCell, useActiveBreakpoint, useConfirmActionModal } from '@proton/components';
+import { FileIcon, TableCell, useActiveBreakpoint, useConfirmActionModal } from '@proton/components';
+import { IcGlobe } from '@proton/icons/icons/IcGlobe';
+import { IcTv } from '@proton/icons/icons/IcTv';
 import { useContactEmails } from '@proton/mail/store/contactEmails/hooks';
 import clsx from '@proton/utils/clsx';
 
@@ -64,7 +66,7 @@ export const DeviceNameCell = ({ item }: { item: DeviceItem }) => {
             className="m-0 flex items-center flex-nowrap flex-1 filebrowser-list-device-name-cell"
             data-testid="column-name"
         >
-            <Icon name="tv" alt={iconText} className="mr-2" />
+            <IcTv alt={iconText} className="mr-2" />
             <NameCellBase name={item.name} />
         </TableCell>
     );
@@ -201,7 +203,7 @@ export const SharedByCell = ({ item }: { item: SharedWithMeItem }) => {
                             '--max-h-custom': '1.75rem',
                         }}
                     >
-                        <Icon className="color-weak" name="globe" />
+                        <IcGlobe className="color-weak" />
                     </Avatar>
                     <span className="text-ellipsis color-weak">{c('Info').t`Public link`}</span>
                 </>

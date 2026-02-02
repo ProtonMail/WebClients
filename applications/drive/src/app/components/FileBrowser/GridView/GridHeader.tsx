@@ -3,7 +3,8 @@ import * as React from 'react';
 import { c, msgid } from 'ttag';
 
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { Checkbox, Icon, Loader, TableHeaderCell, TableRowSticky } from '@proton/components';
+import { Checkbox, Loader, TableHeaderCell, TableRowSticky } from '@proton/components';
+import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import { getNumAccessesTooltipMessage } from '@proton/shared/lib/drive/translations';
 
@@ -58,6 +59,7 @@ export const GridHeader = <T extends string>({
         <thead onContextMenu={stopPropagation}>
             <TableRowSticky scrollAreaRef={scrollAreaRef}>
                 <TableHeaderCell className="file-browser-header-checkbox-cell">
+                    {/* eslint-disable-next-line jsx-a11y/prefer-tag-over-role */}
                     <div role="presentation" key="select-all" className="flex pl-2" onClick={stopPropagation}>
                         <Checkbox
                             indeterminate={selection?.selectionState === SelectionState.SOME}
@@ -97,7 +99,7 @@ export const GridHeader = <T extends string>({
                             {activeSortingText}
                             {sortField === 'numAccesses' && (
                                 <Tooltip className="pl-1" title={getNumAccessesTooltipMessage()}>
-                                    <Icon name="info-circle" size={3.5} alt={getNumAccessesTooltipMessage()} />
+                                    <IcInfoCircle size={3.5} alt={getNumAccessesTooltipMessage()} />
                                 </Tooltip>
                             )}
                         </TableHeaderCell>

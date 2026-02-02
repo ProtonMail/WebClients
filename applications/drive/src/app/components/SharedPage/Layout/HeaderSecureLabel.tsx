@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Icon } from '@proton/components';
+import { IcLockFilled } from '@proton/icons/icons/IcLockFilled';
 import clsx from '@proton/utils/clsx';
 
 interface Props {
@@ -9,7 +9,7 @@ interface Props {
 }
 const HeaderSecureLabel = ({ className, shortText = false }: Props) => (
     <div className={clsx('flex flex-row', className)}>
-        <Icon name="lock-filled" className="mr-2" />
+        <IcLockFilled className="mr-2" />
         <span className="encryption-block-text">
             {shortText ? c('Info').t`Encrypted` : c('Info').t`End-to-end encrypted`}
         </span>

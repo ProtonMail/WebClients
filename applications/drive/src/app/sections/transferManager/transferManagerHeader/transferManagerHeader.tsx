@@ -1,8 +1,9 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { Icon, Progress, useActiveBreakpoint } from '@proton/components';
+import { Progress, useActiveBreakpoint } from '@proton/components';
 import { UploadStatus } from '@proton/drive/modules/upload';
+import { IcArrowRotateRight } from '@proton/icons/icons/IcArrowRotateRight';
 import clsx from '@proton/utils/clsx';
 
 import { ProgressBarStatus } from '../../../components/TransferManager/ProgressBar';
@@ -96,11 +97,7 @@ export const TransferManagerHeader = ({ isMinimized, toggleMinimize, onClose }: 
                             onClick={() => retryFailedTransfers(items)}
                             data-testid="drive-transfers-manager:header-controls-retry-failed"
                         >
-                            {viewportWidth.xsmall ? (
-                                <Icon name="arrow-rotate-right" className="icon-size-4.5" />
-                            ) : (
-                                retryAllText
-                            )}
+                            {viewportWidth.xsmall ? <IcArrowRotateRight className="icon-size-4.5" /> : retryAllText}
                         </Button>
                     )}
                     <MinimizeButton onClick={toggleMinimize} isMinimized={isMinimized} />

@@ -7,7 +7,6 @@ import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import {
     ContactEmailsProvider,
-    Icon,
     type ModalStateProps,
     ModalTwo,
     ModalTwoContent,
@@ -17,6 +16,7 @@ import {
 } from '@proton/components';
 import { MemberRole, type ShareNodeSettings } from '@proton/drive';
 import useLoading from '@proton/hooks/useLoading';
+import { IcCogWheel } from '@proton/icons/icons/IcCogWheel';
 import useFlag from '@proton/unleash/useFlag';
 
 import ModalContentLoader from '../../components/modals/ModalContentLoader';
@@ -204,7 +204,7 @@ export const SharingModalView = ({
                                           }
                                           data-testid="share-modal-settings"
                                       >
-                                          <Icon name="cog-wheel" />
+                                          <IcCogWheel />
                                       </Button>
                                   </Tooltip>,
                               ]

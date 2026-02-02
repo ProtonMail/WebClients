@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { Icon, ToolbarButton } from '@proton/components';
+import { ToolbarButton } from '@proton/components';
+import { IcPenSquare } from '@proton/icons/icons/IcPenSquare';
 import { isProtonDocsDocument } from '@proton/shared/lib/helpers/mimetype';
 
 import type { useActions } from '../../../store';
@@ -30,7 +31,7 @@ const RenameButton = ({ selectedLinks, renameLink }: RenameButtonProps) => {
         <>
             <ToolbarButton
                 title={c('Action').t`Rename`}
-                icon={<Icon name="pen-square" alt={c('Action').t`Rename`} />}
+                icon={<IcPenSquare alt={c('Action').t`Rename`} />}
                 onClick={() =>
                     showRenameModal({
                         isFile: selectedLinks[0].isFile,

@@ -5,7 +5,9 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { FileIcon, Icon, TableRowBusy } from '@proton/components';
+import { FileIcon, TableRowBusy } from '@proton/components';
+import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
+import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
 import clsx from '@proton/utils/clsx';
 
 import type { DecryptedLink } from '../../store';
@@ -61,7 +63,7 @@ const ExpandableRow = ({
                         data-testid={!isSelected ? 'checkbox-not-visible' : 'checkbox-visible'}
                     >
                         <span className="flex justify-center items-center w-8 h-8 bg-primary rounded-full">
-                            <Icon name="checkmark" className="p-1" size={4} />
+                            <IcCheckmark className="p-1" size={4} />
                         </span>
                     </div>
                     <div
@@ -82,9 +84,8 @@ const ExpandableRow = ({
                             data-testid={isExpanded ? 'expanded-folder' : 'expand-button'}
                             icon
                         >
-                            <Icon
+                            <IcChevronDown
                                 size={3}
-                                name="chevron-down"
                                 alt={isExpanded ? c('Action').t`Collapse` : c('Action').t`Expand`}
                                 className={isExpanded ? 'rotateX-180' : undefined}
                             />

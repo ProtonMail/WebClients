@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { Icon } from '@proton/components';
+import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine';
 import clsx from '@proton/utils/clsx';
 
 import type { CellDefinition } from '../../../statelessComponents/DriveExplorer/types';
@@ -23,7 +23,7 @@ export const DownloadCell = ({ uid, onDownload, className }: DownloadCellProps) 
     return (
         <Button className={buttonClassName} shape="ghost" size="small" onClick={handleClick}>
             <span>{c('Action').t`Download`}</span>
-            <Icon name="arrow-down-line" className="ml-2 md:hidden lg:inline" />
+            <IcArrowDownLine className="ml-2 md:hidden lg:inline" />
         </Button>
     );
 };

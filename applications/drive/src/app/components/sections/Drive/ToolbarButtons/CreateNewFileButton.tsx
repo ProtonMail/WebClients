@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { Icon, ToolbarButton } from '@proton/components';
+import { ToolbarButton } from '@proton/components';
+import { IcFile } from '@proton/icons/icons/IcFile';
 
 import { useCreateFileModal } from '../../../modals/CreateFileModal';
 
@@ -10,7 +11,7 @@ const CreateNewFileButton = () => {
     return (
         <>
             <ToolbarButton
-                icon={<Icon name="file" alt={c('Action').t`Create new text file`} />}
+                icon={<IcFile alt={c('Action').t`Create new text file`} />}
                 title={c('Action').t`Create new text file`}
                 onClick={() => showCreateFileModal({})}
                 data-testid="toolbar-create-file"

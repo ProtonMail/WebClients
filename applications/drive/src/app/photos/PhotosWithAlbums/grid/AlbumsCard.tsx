@@ -10,10 +10,14 @@ import {
     DropdownButton,
     DropdownMenu,
     DropdownMenuButton,
-    Icon,
     usePopperAnchor,
     useTheme,
 } from '@proton/components';
+import { IcPencil } from '@proton/icons/icons/IcPencil';
+import { IcThreeDotsVertical } from '@proton/icons/icons/IcThreeDotsVertical';
+import { IcTrash } from '@proton/icons/icons/IcTrash';
+import { IcUserPlus } from '@proton/icons/icons/IcUserPlus';
+import { IcUsers } from '@proton/icons/icons/IcUsers';
 import { isVideo } from '@proton/shared/lib/helpers/mimetype';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import folderImagesDark from '@proton/styles/assets/img/drive/empty-image-album-dark.webp';
@@ -22,7 +26,7 @@ import playCircleFilledIcon from '@proton/styles/assets/img/drive/play-circle-fi
 import useFlag from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
-import SignatureIcon from '../../../components/SignatureIcon';
+import { SignatureIcon } from '../../../components/SignatureIcon';
 import { getMimeTypeDescription } from '../../../components/sections/helpers';
 import { type DecryptedLink, isDecryptedLink } from '../../../store';
 import type { DecryptedAlbum } from '../../PhotosStore/PhotosWithAlbumsProvider';
@@ -69,7 +73,7 @@ export const AlbumDropdownButton = ({ onShare, onRename, onDelete }: AlbumDropdo
                 icon
                 className="inline-flex flex-nowrap flex-row items-center relative z-up border-none"
             >
-                <Icon name="three-dots-vertical" alt={c('Action').t`More`} />
+                <IcThreeDotsVertical alt={c('Action').t`More`} />
             </DropdownButton>
             <Dropdown isOpen={isOpen} anchorRef={anchorRef} onClose={close}>
                 <DropdownMenu>
@@ -81,7 +85,7 @@ export const AlbumDropdownButton = ({ onShare, onRename, onDelete }: AlbumDropdo
                             }}
                             className="text-left flex items-center flex-nowrap"
                         >
-                            <Icon className="mr-2" name="pencil" />
+                            <IcPencil className="mr-2" />
                             {c('Action').t`Rename album`}
                         </DropdownMenuButton>
                     )}
@@ -93,7 +97,7 @@ export const AlbumDropdownButton = ({ onShare, onRename, onDelete }: AlbumDropdo
                         }}
                         className="text-left flex items-center flex-nowrap"
                     >
-                        <Icon className="mr-2" name="user-plus" />
+                        <IcUserPlus className="mr-2" name="user-plus" />
                         {c('Action').t`Share album`}
                     </DropdownMenuButton>
 
@@ -105,7 +109,7 @@ export const AlbumDropdownButton = ({ onShare, onRename, onDelete }: AlbumDropdo
                             }}
                             className="text-left flex items-center flex-nowrap"
                         >
-                            <Icon className="mr-2" name="trash" />
+                            <IcTrash className="mr-2" />
                             {c('Action').t`Delete album`}
                         </DropdownMenuButton>
                     )}
@@ -220,14 +224,13 @@ export const AlbumsCard: FC<Props> = ({
                                 {album.signatureIssues && (
                                     <SignatureIcon
                                         isFile
-                                        signatureIssues={album.signatureIssues}
-                                        haveParentAccess={!!album.parentLinkId}
+                                        haveSignatureIssues={!!album.signatureIssues}
                                         className="color-danger"
                                     />
                                 )}
                                 {album.isShared && (
                                     <div className="albums-card-share-icon rounded-50 flex items-center justify-center">
-                                        <Icon name="users" color="white" size={3} />
+                                        <IcUsers color="white" size={3} />
                                     </div>
                                 )}
                             </div>
