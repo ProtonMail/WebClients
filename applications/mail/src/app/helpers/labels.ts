@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import type { IconName } from '@proton/icons/types';
+import { getLabelFromCategoryId } from '@proton/mail/features/categoriesView/categoriesStringHelpers';
 import { isCategoryLabel, labelIncludes } from '@proton/mail/helpers/location';
 import type { MessageWithOptionalBody } from '@proton/mail/store/messages/messagesTypes';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
@@ -10,8 +11,6 @@ import type { Label, MailSettings } from '@proton/shared/lib/interfaces';
 import type { Folder } from '@proton/shared/lib/interfaces/Folder';
 import { CUSTOM_VIEWS, CUSTOM_VIEWS_LABELS, LABEL_IDS_TO_HUMAN } from '@proton/shared/lib/mail/constants';
 import { SHOW_MOVED } from '@proton/shared/lib/mail/mailSettings';
-
-import { getLabelFromCategoryId } from 'proton-mail/components/categoryView/categoriesStringHelpers';
 
 import type { Conversation } from '../models/conversation';
 import type { Element } from '../models/element';
