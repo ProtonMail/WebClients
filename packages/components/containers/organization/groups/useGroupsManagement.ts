@@ -7,10 +7,12 @@ import { c } from 'ttag';
 import { addGroup, removeGroup, updateGroup, updateMembersAfterEdit } from '@proton/account';
 import { useCustomDomains } from '@proton/account/domains/hooks';
 import { useGroupMembers } from '@proton/account/groupMembers/hooks';
+import { useGroupMemberships } from '@proton/account/groupMemberships/hooks';
 import { createGroup, editGroup } from '@proton/account/groups/actions';
 import { addGroupMemberThunk } from '@proton/account/groups/addGroupMember';
 import { useGroups } from '@proton/account/groups/hooks';
 import { useMembers } from '@proton/account/members/hooks';
+import { useUser } from '@proton/account/user/hooks';
 import useKTVerifier from '@proton/components/containers/keyTransparency/useKTVerifier';
 import useGroupKeys from '@proton/components/containers/organization/groups/useGroupKeys';
 import useApi from '@proton/components/hooks/useApi';
@@ -22,6 +24,7 @@ import { checkMemberAddressAvailability } from '@proton/shared/lib/api/members';
 import { emailValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import type { Address, EnhancedMember, Group, GroupMember, Organization } from '@proton/shared/lib/interfaces';
 import { GroupFlags, GroupPermissions } from '@proton/shared/lib/interfaces';
+import { GROUP_MEMBER_PERMISSIONS } from '@proton/shared/lib/interfaces/GroupMember';
 
 import shouldShowMail from './shouldShowMail';
 import type { DomainSuggestion, GroupFormData, GroupsManagementReturn } from './types';
@@ -43,7 +46,9 @@ const INITIAL_FORM_VALUES = (organization?: Organization) => ({
 const useGroupsManagement = (organization?: Organization): GroupsManagementReturn | undefined => {
     const handleError = useErrorHandler();
     const [members] = useMembers();
+    const [memberships, loadingMemberships] = useGroupMemberships();
     const [groups, loadingGroups] = useGroups();
+    const [user, loadingUser] = useUser();
     const api = useApi();
     const dispatch = useDispatch();
     const { createNotification } = useNotifications();
@@ -183,10 +188,14 @@ const useGroupsManagement = (organization?: Organization): GroupsManagementRetur
         loadingGroups ||
         loadingPmMeDomain ||
         loadingGroupsProtonMeDomain ||
+        loadingUser ||
+        loadingMemberships ||
         !groups ||
         !members ||
         !selectedDomain ||
-        !suggestedAddressDomainPart
+        !suggestedAddressDomainPart ||
+        !user ||
+        !memberships
     ) {
         return undefined;
     }
@@ -272,6 +281,7 @@ const useGroupsManagement = (organization?: Organization): GroupsManagementRetur
 
         const addMembersPromises = newEmails.map((email) =>
             addGroupMember({ ID: Group.ID, Address: Group.Address }, email).catch((error) => {
+                // eslint-disable-next-line no-console
                 console.error(`Failed to add recipient ${email}:`, error);
             })
         );
@@ -331,8 +341,16 @@ const useGroupsManagement = (organization?: Organization): GroupsManagementRetur
 
     const domainData = { loadingCustomDomains, selectedDomain, customDomains, setSelectedDomain };
 
+    const filteredGroups = user.isAdmin
+        ? groups
+        : groups.filter((group) =>
+              memberships.some(
+                  ({ GroupID, Permissions }) => GroupID === group.ID && Permissions & GROUP_MEMBER_PERMISSIONS.OWNER
+              )
+          );
+
     return {
-        groups,
+        groups: filteredGroups,
         members,
         selectedGroup,
         uiState,
