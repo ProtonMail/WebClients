@@ -1,8 +1,10 @@
 import { c } from 'ttag';
 
 import Badge from '@proton/components/components/badge/Badge';
-import type { Group, GroupMember } from '@proton/shared/lib/interfaces';
-import { GROUP_MEMBER_STATE } from '@proton/shared/lib/interfaces';
+import { hasBit } from '@proton/shared/lib/helpers/bitset';
+import type { EnhancedMember, Group, GroupMember } from '@proton/shared/lib/interfaces';
+import { GROUP_MEMBER_PERMISSIONS, GROUP_MEMBER_STATE } from '@proton/shared/lib/interfaces';
+import { useFlag } from '@proton/unleash/index';
 
 import GroupMemberItemDropdown from './GroupMemberItemDropdown';
 import { GroupMemberItemWrapper } from './components/GroupMemberItemWrapper';
@@ -28,7 +30,7 @@ const getInvitationBadgeMap = (): InvitationBadgeMap => ({
 
 interface Props {
     groupMember: GroupMember;
-    memberName?: string;
+    member?: EnhancedMember;
     group: Group; // needs to be removed once GroupMemberItemDropdown does not need it
     canOnlyDelete: boolean;
     canChangeVisibility: boolean;
@@ -37,12 +39,15 @@ interface Props {
 export const GroupMemberItem = ({
     groupMember,
     groupMember: { Email, State },
-    memberName,
+    member,
     group,
     canOnlyDelete,
     canChangeVisibility,
 }: Props) => {
     const badge = getInvitationBadgeMap()[State];
+    const isGroupOwner = hasBit(groupMember.Permissions, GROUP_MEMBER_PERMISSIONS.OWNER);
+    const isGroupOwnerEnabled = useFlag('UserGroupsGroupOwner');
+    const memberName = member?.Name ?? '';
 
     return (
         <>
@@ -59,10 +64,20 @@ export const GroupMemberItem = ({
                             </Badge>
                         </span>
                     )}
+                    {isGroupOwnerEnabled && isGroupOwner && (
+                        <Badge
+                            type="origin"
+                            className="rounded-sm color-weak"
+                            tooltip={c('tooltip').t`User is a group`}
+                        >
+                            {c('invitation status').t`Owner`}
+                        </Badge>
+                    )}
                 </div>
                 <div>
                     <GroupMemberItemDropdown
-                        member={groupMember}
+                        groupMember={groupMember}
+                        member={member}
                         group={group}
                         canOnlyDelete={canOnlyDelete}
                         canChangeVisibility={canChangeVisibility}
