@@ -51,7 +51,7 @@ export const useVerifyMessage = (localID: string) => {
                     verificationComplete({
                         ID: localID,
                         verification: {
-                            verificationStatus: MAIL_VERIFICATION_STATUS.SIGNED_AND_INVALID,
+                            verificationStatus: MAIL_VERIFICATION_STATUS.NOT_VERIFIED,
                             verificationErrors: [new Error('message decryption failure')],
                         },
                     })
