@@ -7,6 +7,10 @@ im.$media-expressions: $media-expressions;
 .open-link-modal {
 	backdrop-filter: blur(10px);
 
+	.open-link-modal-body {
+		overflow-y: auto !important;
+	}
+
 	.reload-button:hover {
 		color: var(--text-invert);
 	}
@@ -18,6 +22,10 @@ im.$media-expressions: $media-expressions;
 		&:focus {
 			background-color: var(--interaction-weak-major-1);
 		}
+	}
+
+	.modal-two-dialog-container {
+		overflow-y: auto !important;
 	}
 
 	.modal-two-dialog-container,
