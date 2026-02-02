@@ -152,7 +152,7 @@ const AccountItem = ({
                     <CircleLoader />
                 </div>
             ) : (
-                <IcArrowRight className="account-button-icon my-auto" aria-hidden="true" />
+                <IcArrowRight className="account-button-icon my-auto rtl:mirror" aria-hidden="true" />
             )}
         </div>
     );
