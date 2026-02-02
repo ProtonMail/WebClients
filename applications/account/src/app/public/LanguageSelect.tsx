@@ -87,6 +87,7 @@ const LanguageSelect = ({ className, style, locales = {}, outlined, globe, color
 
     return (
         <SimpleDropdown
+            data-testid="language-dropdown"
             as={Button}
             shape="ghost"
             size="small"

@@ -3,11 +3,10 @@ import { type KeyboardEvent, type ReactNode, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
-import { Challenge, DropdownSizeUnit, InputFieldTwo, Option, SelectTwo } from '@proton/components';
+import { Challenge, DropdownSizeUnit, InputFieldTwo, Option, SelectTwo, useTheme } from '@proton/components';
 import { IcCheckmarkCircle } from '@proton/icons/icons/IcCheckmarkCircle';
 import clsx from '@proton/utils/clsx';
 
-import { usePublicTheme } from '../../../containers/PublicThemeProvider';
 import challengeIconsSvg from '../../../signup/challenge-icons.source.svg';
 import { getThemeData } from '../../../signup/challenge-theme';
 import { SignupType } from '../../../signup/interfaces';
@@ -39,7 +38,7 @@ const useEmailInput = ({
     const anchorRef = useRef<HTMLButtonElement | null>(null);
     const accountDataContext = useAccountFormDataContext();
 
-    const theme = usePublicTheme();
+    const theme = useTheme();
     const [, setRerender] = useState<any>();
 
     const [loadingChallenge, setLoadingChallenge] = useState(true);
@@ -88,7 +87,12 @@ const useEmailInput = ({
                     }}
                 >
                     <div
-                        className={clsx(inputsWrapper, inputClassName, theme.dark && 'ui-prominent', 'bg-transparent')}
+                        className={clsx(
+                            inputsWrapper,
+                            inputClassName,
+                            theme.information.dark && 'ui-prominent',
+                            'bg-transparent'
+                        )}
                     >
                         {state.signupType === SignupType.External && (
                             <InputFieldTwo

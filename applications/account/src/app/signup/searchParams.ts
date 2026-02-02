@@ -1,5 +1,3 @@
-import type { Location } from 'history';
-
 import { forceAddonsMinMaxConstraints } from '@proton/components/containers/payments/planCustomizer';
 import {
     type ADDON_NAMES,
@@ -14,7 +12,6 @@ import {
     type Plan,
     type PlansMap,
     fixPlanName,
-    getHas2025OfferCoupon,
     getPlanByName,
     getPlanMaxIPs,
     getSupportedAddons,
@@ -27,9 +24,8 @@ import {
 import type { OtherProductParam, ProductParam } from '@proton/shared/lib/apps/product';
 import { otherProductParamValues } from '@proton/shared/lib/apps/product';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
-import { APPS, SSO_PATHS } from '@proton/shared/lib/constants';
+import { APPS } from '@proton/shared/lib/constants';
 import { getCookie } from '@proton/shared/lib/helpers/cookies';
-import { ThemeTypes } from '@proton/shared/lib/themes/constants';
 import clamp from '@proton/utils/clamp';
 
 import type { PlanParameters, SignupDefaults } from '../single-signup-v2/interface';
@@ -182,34 +178,6 @@ export const getSignupSearchParams = (
     };
 };
 
-export const getThemeFromLocation = (location: Location, searchParams: URLSearchParams) => {
-    const hasBFCoupon = getHas2025OfferCoupon(searchParams.get('coupon')?.toUpperCase());
-    const hasVisionary = searchParams.get('plan')?.toLowerCase() === PLANS.VISIONARY;
-    const hasDarkTheme = searchParams.get('theme') === 'dark';
-    if (location.pathname.includes('signup') && (hasBFCoupon || hasVisionary || hasDarkTheme)) {
-        return { themeType: ThemeTypes.Carbon, className: '' };
-    }
-    if (location.pathname === SSO_PATHS.PASS_SIGNUP || location.pathname === SSO_PATHS.MAIL_SIGNUP) {
-        return { themeType: ThemeTypes.Storefront, className: 'signup-v2-account-gradient' };
-    }
-    if (
-        location.pathname === SSO_PATHS.PASS_SIGNUP_B2B ||
-        location.pathname === SSO_PATHS.MAIL_SIGNUP_B2B ||
-        location.pathname === SSO_PATHS.DRIVE_SIGNUP_B2B ||
-        location.pathname === SSO_PATHS.LUMO_SIGNUP_B2B ||
-        location.pathname === SSO_PATHS.BUSINESS_SIGNUP
-    ) {
-        return {
-            themeType: ThemeTypes.Storefront,
-            className: 'ui-prominent signup-v2-account-gradient',
-            isDarkBg: true,
-        };
-    }
-    if (location.pathname === SSO_PATHS.WALLET_SIGNUP) {
-        return { themeType: ThemeTypes.StorefrontWallet, className: 'signup-v2-account-gradient--wallet' };
-    }
-    return null;
-};
 export const getPlanIDsFromParams = (
     plans: Plan[],
     currency: Currency,

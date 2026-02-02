@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { ProtonLoader } from '@proton/atoms/ProtonLoader/ProtonLoader';
-import TextLoader from '@proton/components/components/loader/TextLoader';
+import { TextLoader } from '@proton/components';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
@@ -11,7 +11,7 @@ interface Props {
     loaderClassName?: string;
 }
 
-const AccountLoaderPage = ({ text, loaderClassName = '' }: Props) => {
+const PrivateAppLoaderPage = ({ text, loaderClassName = '' }: Props) => {
     const appName = getAppName(APPS.PROTONACCOUNT);
     const textToDisplay = text || c('Info').t`Loading ${appName}`;
 
@@ -27,4 +27,4 @@ const AccountLoaderPage = ({ text, loaderClassName = '' }: Props) => {
     );
 };
 
-export default AccountLoaderPage;
+export default PrivateAppLoaderPage;
