@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { Card } from '@proton/atoms/Card/Card';
 import { DualPaneContent } from '@proton/atoms/DualPane/DualPaneContent';
@@ -28,11 +29,13 @@ interface Props {
 
 const OrganizationGroupsManagementSection = ({ organization }: Props) => {
     const groupsManagement = useGroupsManagement(organization);
+    const [user, loadingUser] = useUser();
     const isUserGroupsNoCustomDomainEnabled = useFlag('UserGroupsNoCustomDomain');
 
-    if (!groupsManagement) {
+    if (!groupsManagement || loadingUser || !user) {
         return <Loader />;
     }
+
     const {
         groups,
         domainData: { customDomains },
@@ -40,7 +43,7 @@ const OrganizationGroupsManagementSection = ({ organization }: Props) => {
         actions,
     } = groupsManagement;
     const hasUsableDomain = customDomains?.some(getIsDomainActive) || isUserGroupsNoCustomDomainEnabled;
-
+    const isAdmin = user.isAdmin;
     const linkToDomainPage = (
         <SettingsLink key="link-to-domain-page" path="/domain-names">{c('Action').t`Domain name`}</SettingsLink>
     );
@@ -81,16 +84,18 @@ const OrganizationGroupsManagementSection = ({ organization }: Props) => {
                         .t`The groups feature is not supported on your current subscription. Previously created groups are disabled and can only be deleted.`}
                 </Card>
             )}
-            <Button
-                className="group-button flex flex-row flex-nowrap items-center px-3"
-                disabled={!hasUsableDomain || canOnlyDelete}
-                onClick={() => {
-                    actions.onCreateGroup();
-                }}
-            >
-                <IcPlus className="shrink-0 mr-2" />
-                {c('Action').t`New group`}
-            </Button>
+            {isAdmin && (
+                <Button
+                    className="group-button flex flex-row flex-nowrap items-center px-3"
+                    disabled={!hasUsableDomain || canOnlyDelete}
+                    onClick={() => {
+                        actions.onCreateGroup();
+                    }}
+                >
+                    <IcPlus className="shrink-0 mr-2" />
+                    {c('Action').t`New group`}
+                </Button>
+            )}
             {(hasUsableDomain || usingGroupsDomainButNotActive) && (
                 <div className="content flex-1 overflow-hidden mt-4 h-custom" style={{ '--h-custom': '95%' }}>
                     <div className="flex flex-nowrap flex-column h-full">
