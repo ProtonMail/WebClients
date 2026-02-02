@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -6,9 +6,10 @@ import { Banner } from '@proton/atoms/Banner/Banner';
 import { Button } from '@proton/atoms/Button/Button';
 import { Card } from '@proton/atoms/Card/Card';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
-import { FileInput, Icon, InputFieldTwo, Tabs, Toggle } from '@proton/components';
+import { FileInput, InputFieldTwo, Tabs, Toggle } from '@proton/components';
 import type { MaybeNode } from '@proton/drive';
 import type { ExpectedTreeNode } from '@proton/drive/diagnostic';
+import { IcExclamationTriangleFilled } from '@proton/icons/icons/IcExclamationTriangleFilled';
 
 import ModalContentLoader from '../../components/modals/ModalContentLoader';
 import { withHoc } from '../../hooks/withHoc';
@@ -205,7 +206,7 @@ function DiagnosticsModalViewResultsTable({ type, results }: { type: string; res
                 {results?.[type]?.map((result, index) => (
                     <tr key={index}>
                         <td>{result.time.toLocaleTimeString()}</td>
-                        <td>{result.critical ? <Icon name="exclamation-triangle-filled" /> : null}</td>
+                        <td>{result.critical ? <IcExclamationTriangleFilled /> : null}</td>
                         <td>
                             <pre>{JSON.stringify(result.details, null, 2)}</pre>
                         </td>

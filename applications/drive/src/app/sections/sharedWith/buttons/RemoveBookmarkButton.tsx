@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
-import { Icon, ToolbarButton } from '@proton/components';
 import type { useConfirmActionModal } from '@proton/components';
+import { ToolbarButton } from '@proton/components';
+import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
 
 import { ContextMenuButton } from '../../../components/sections/ContextMenu';
 import { useBookmarksActions } from '../hooks/useBookmarksActions';
@@ -35,7 +36,7 @@ export const RemoveBookmarkButton = ({ uids, showConfirmModal, close, buttonType
         return (
             <ToolbarButton
                 title={c('Action').t`Remove`}
-                icon={<Icon name="cross-big" alt={c('Action').t`Remove`} />}
+                icon={<IcCrossBig alt={c('Action').t`Remove`} />}
                 onClick={handleRemoveBookmark}
                 data-testid="toolbar-delete-bookmark"
             />

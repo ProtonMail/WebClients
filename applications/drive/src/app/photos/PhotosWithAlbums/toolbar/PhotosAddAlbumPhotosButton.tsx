@@ -1,8 +1,9 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import type {  ButtonLikeSize } from '@proton/atoms/Button/ButtonLike';
-import { DropdownMenuButton, Icon, ToolbarButton, useActiveBreakpoint } from '@proton/components';
+import type { ButtonLikeSize } from '@proton/atoms/Button/ButtonLike';
+import { DropdownMenuButton, ToolbarButton, useActiveBreakpoint } from '@proton/components';
+import { IcPlus } from '@proton/icons/icons/IcPlus';
 import clsx from '@proton/utils/clsx';
 
 export interface PhotosAddAlbumPhotosButtonProps {
@@ -26,7 +27,7 @@ export const PhotosAddAlbumPhotosButton = ({
                 title={c('Action').t`Add photos`}
                 className="inline-flex flex-nowrap flex-row items-center"
             >
-                <Icon name="plus" className={clsx(!viewportWidth.xsmall && 'mr-2')} />
+                <IcPlus className={clsx(!viewportWidth.xsmall && 'mr-2')} />
                 <span className={clsx(viewportWidth.xsmall && 'sr-only')}>{c('Action').t`Add photos`}</span>
             </ToolbarButton>
         );
@@ -38,7 +39,7 @@ export const PhotosAddAlbumPhotosButton = ({
                 className="text-left flex items-center flex-nowrap"
                 onClick={onClick}
             >
-                <Icon name="plus" className="mr-2" />
+                <IcPlus className="mr-2" />
                 <span>{c('Action').t`Add photos`}</span>
             </DropdownMenuButton>
         );
@@ -53,7 +54,7 @@ export const PhotosAddAlbumPhotosButton = ({
             title={c('Action').t`Add photos`}
             className="inline-flex flex-nowrap flex-row items-center"
         >
-            <Icon name="plus" className="mr-2" />
+            <IcPlus className="mr-2" />
             <span>{c('Action').t`Add photos`}</span>
         </Button>
     );

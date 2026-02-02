@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { Icon, ToolbarButton } from '@proton/components';
+import { ToolbarButton } from '@proton/components';
+import { IcArrowOutSquare } from '@proton/icons/icons/IcArrowOutSquare';
 
 import { ContextMenuButton } from '../../../components/sections/ContextMenu';
 import { useBookmarksActions } from '../hooks/useBookmarksActions';
@@ -30,7 +31,7 @@ export const OpenBookmarkButton = ({ url, close, buttonType }: Props) => {
         return (
             <ToolbarButton
                 title={c('Action').t`Open`}
-                icon={<Icon name="arrow-out-square" alt={c('Action').t`Open`} />}
+                icon={<IcArrowOutSquare alt={c('Action').t`Open`} />}
                 onClick={handleOpen}
                 data-testid="toolbar-open-bookmark"
             />

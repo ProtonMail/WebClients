@@ -1,12 +1,13 @@
-import React, { useCallback, useRef } from 'react';
+import { useCallback, useRef } from 'react';
 
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
 import { Input } from '@proton/atoms/Input/Input';
-import { Icon, Spotlight, usePopperAnchor } from '@proton/components';
+import { Spotlight, usePopperAnchor } from '@proton/components';
 import useSearchTelemetry from '@proton/encrypted-search/lib/useSearchTelemetry';
+import { IcMagnifier } from '@proton/icons/icons/IcMagnifier';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import esSpotlightIcon from '@proton/styles/assets/img/illustrations/spotlight-stars.svg';
 
@@ -132,7 +133,7 @@ export const SearchField = () => {
                                     handleSearch(searchParams);
                                 }}
                             >
-                                <Icon name="magnifier" alt={c('Action').t`Search`} />
+                                <IcMagnifier alt={c('Action').t`Search`} />
                             </Button>
                         }
                         suffix={

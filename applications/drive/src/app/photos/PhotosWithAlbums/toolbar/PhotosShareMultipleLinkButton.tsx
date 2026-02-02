@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { DropdownMenuButton, Icon, ToolbarButton } from '@proton/components';
+import { DropdownMenuButton, ToolbarButton } from '@proton/components';
+import { IcUserPlus } from '@proton/icons/icons/IcUserPlus';
 import clsx from '@proton/utils/clsx';
 
 export interface PhotosShareMultipleLinkButtonProps {
@@ -22,7 +23,7 @@ export const PhotosShareMultipleLinkButton = ({
             data-testid="toolbar-share-multiple"
             className="inline-flex flex-nowrap flex-row items-center"
         >
-            <Icon name="user-plus" className={clsx(!showIconOnly && 'mr-2')} />
+            <IcUserPlus className={clsx(!showIconOnly && 'mr-2')} />
             <span className={clsx(showIconOnly && 'sr-only')}>{c('Action').t`Share`}</span>
         </ButtonComp>
     );

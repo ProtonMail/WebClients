@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { Icon, ToolbarButton } from '@proton/components';
+import { ToolbarButton } from '@proton/components';
+import { IcFile } from '@proton/icons/icons/IcFile';
 
 import { ContextMenuButton } from '../../../components/sections/ContextMenu';
 import type { FolderButtonProps } from './types';
@@ -12,7 +13,7 @@ export const CreateNewFileButton = ({ type, close, onClick }: FolderButtonProps)
         return (
             <ToolbarButton
                 data-testid="toolbar-create-new-file"
-                icon={<Icon name="file" alt={title} />}
+                icon={<IcFile alt={title} />}
                 title={title}
                 onClick={onClick}
             />

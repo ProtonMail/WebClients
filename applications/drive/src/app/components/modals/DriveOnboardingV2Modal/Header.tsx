@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { Icon } from '@proton/components';
+import { IcArrowLeft } from '@proton/icons/icons/IcArrowLeft';
 import clsx from '@proton/utils/clsx';
 
 type Props = {
@@ -19,7 +19,7 @@ export const Header = memo(({ onBack, currentStep, maxSteps }: Props) => {
             {onBack ? (
                 <Tooltip title={c('Action').t`Go back`}>
                     <Button className="shrink-0 absolute top-0 left-0" icon shape="ghost" onClick={onBack}>
-                        <Icon name="arrow-left" alt={c('Action').t`Go back`} />
+                        <IcArrowLeft alt={c('Action').t`Go back`} />
                     </Button>
                 </Tooltip>
             ) : null}

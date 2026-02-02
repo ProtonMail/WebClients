@@ -2,8 +2,9 @@ import type { FC } from 'react';
 
 import { c } from 'ttag';
 
-import { DropdownMenuButton, Icon, ToolbarButton } from '@proton/components';
+import { DropdownMenuButton, ToolbarButton } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
+import { IcWindowImage } from '@proton/icons/icons/IcWindowImage';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
@@ -30,7 +31,7 @@ export const PhotosMakeCoverButton: FC<Props> = ({ onSelectCover, showIconOnly, 
             data-testid="toolbar-set-as-cover"
             className="inline-flex flex-nowrap flex-row items-center"
         >
-            <Icon name="window-image" className={clsx(!showIconOnly && 'mr-2')} />
+            <IcWindowImage className={clsx(!showIconOnly && 'mr-2')} />
             <span className={clsx(showIconOnly && 'sr-only')}>{c('Action').t`Set as cover`}</span>
         </ButtonComp>
     );

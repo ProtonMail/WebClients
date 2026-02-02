@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { Icon, ToolbarButton } from '@proton/components';
+import { ToolbarButton } from '@proton/components';
+import { IcTrash } from '@proton/icons/icons/IcTrash';
 
 import { ContextMenuButton } from '../../components/sections/ContextMenu';
 
@@ -29,7 +30,7 @@ export const DeleteButton = ({ buttonType, deletionType, close, onClick }: Props
         return (
             <ToolbarButton
                 title={title}
-                icon={<Icon name={icon} alt={title} />}
+                icon={<IcTrash alt={title} />}
                 onClick={onClick}
                 data-testid={`toolbar-${deletionType}`}
             />

@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { Icon, ToolbarButton } from '@proton/components';
+import { ToolbarButton } from '@proton/components';
+import { IcPenSquare } from '@proton/icons/icons/IcPenSquare';
 
 import { ContextMenuButton } from '../../components/sections/ContextMenu';
 import type { ActionButtonProps } from './types';
@@ -13,7 +14,7 @@ export const RenameActionButton = ({ onClick, type, close }: ActionButtonProps) 
         return (
             <ToolbarButton
                 title={title}
-                icon={<Icon name={icon} alt={title} />}
+                icon={<IcPenSquare alt={title} />}
                 onClick={onClick}
                 data-testid="toolbar-rename"
             />

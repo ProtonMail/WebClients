@@ -3,7 +3,10 @@ import React, { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { Icon } from '@proton/components';
+import { IcArrowUpLine } from '@proton/icons/icons/IcArrowUpLine';
+import { IcFileArrowInUp } from '@proton/icons/icons/IcFileArrowInUp';
+import { IcFolderArrowUp } from '@proton/icons/icons/IcFolderArrowUp';
+import { IcLockOpenCheckFilled } from '@proton/icons/icons/IcLockOpenCheckFilled';
 import clsx from '@proton/utils/clsx';
 
 import { useActiveShare } from '../../../../hooks/drive/useActiveShare';
@@ -60,11 +63,11 @@ export const UploadStep = ({ onNext }: OnboardingProps) => {
                         onNext();
                     }}
                 >
-                    <Icon size={6} name="arrow-up-line" />
+                    <IcArrowUpLine size={6} />
                     <span className="text-lg">{c('Onboarding Info').t`Drag and drop your files here`}</span>
 
                     <div className="absolute bottom-0 mb-8 color-weak">
-                        <Icon name="lock-open-check-filled" className="mr-2" />
+                        <IcLockOpenCheckFilled className="mr-2" />
                         <span>{c('Info').t`End-to-end encrypted`}</span>
                     </div>
                 </div>
@@ -134,7 +137,7 @@ export const UploadStepButtons = ({ onNext }: OnboardingProps) => {
                     color="norm"
                     onClick={folderClick}
                 >
-                    <Icon name="folder-arrow-up" />
+                    <IcFolderArrowUp />
                     <span>{c('Onboarding Action').t`Upload folder`}</span>
                 </Button>
                 <Button
@@ -143,7 +146,7 @@ export const UploadStepButtons = ({ onNext }: OnboardingProps) => {
                     color="norm"
                     onClick={fileClick}
                 >
-                    <Icon name="file-arrow-in-up" />
+                    <IcFileArrowInUp />
                     <span>{c('Onboarding Action').t`Upload file`}</span>
                 </Button>
             </div>

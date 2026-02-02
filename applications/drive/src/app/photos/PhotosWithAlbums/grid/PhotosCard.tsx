@@ -6,13 +6,17 @@ import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { Checkbox, FileIcon, Icon } from '@proton/components';
+import { Checkbox, FileIcon } from '@proton/components';
+import { IcCloud } from '@proton/icons/icons/IcCloud';
+import { IcHeart } from '@proton/icons/icons/IcHeart';
+import { IcHeartFilled } from '@proton/icons/icons/IcHeartFilled';
+import { IcUsers } from '@proton/icons/icons/IcUsers';
 import { isVideo } from '@proton/shared/lib/helpers/mimetype';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import playCircleFilledIcon from '@proton/styles/assets/img/drive/play-circle-filled.svg';
 import clsx from '@proton/utils/clsx';
 
-import SignatureIcon from '../../../components/SignatureIcon';
+import { SignatureIcon } from '../../../components/SignatureIcon';
 import { getMimeTypeDescription } from '../../../components/sections/helpers';
 import { type DecryptedLink, type PhotoLink, isDecryptedLink } from '../../../store';
 import { stopPropagation } from '../../../utils/stopPropagation';
@@ -154,13 +158,11 @@ export const PhotosCard: FC<Props> = ({
                                 onFavorite?.();
                             }}
                         >
-                            <Icon
-                                name={isFavorite ? 'heart-filled' : 'heart'}
-                                size={5}
-                                alt={
-                                    isFavorite ? c('Action').t`Remove from favorites` : c('Action').t`Mark as favorite`
-                                }
-                            />
+                            {isFavorite ? (
+                                <IcHeartFilled size={5} alt={c('Action').t`Remove from favorites`} />
+                            ) : (
+                                <IcHeart size={5} alt={c('Action').t`Mark as favorite`} />
+                            )}
                         </button>
                     </Tooltip>
                 )}
@@ -192,21 +194,19 @@ export const PhotosCard: FC<Props> = ({
                                             data-testid="photo-cloud-icon"
                                             className="photos-card-bottom-icon rounded-50 color-white flex items-center justify-center"
                                         >
-                                            <Icon name="cloud" alt={c('Info').t`Photo is not saved to your library`} />
+                                            <IcCloud alt={c('Info').t`Photo is not saved to your library`} />
                                         </div>
                                     )}
                                 {photo.signatureIssues && (
                                     <SignatureIcon
                                         isFile
-                                        mimeType={photo.mimeType}
-                                        signatureIssues={photo.signatureIssues}
-                                        haveParentAccess={!!photo.parentLinkId}
+                                        haveSignatureIssues={!!photo.signatureIssues}
                                         className="color-danger"
                                     />
                                 )}
                                 {photo.isShared && (
                                     <div className="photos-card-bottom-icon rounded-50 flex items-center justify-center">
-                                        <Icon name="users" color="white" size={3} />
+                                        <IcUsers color="white" size={3} />
                                     </div>
                                 )}
                             </div>

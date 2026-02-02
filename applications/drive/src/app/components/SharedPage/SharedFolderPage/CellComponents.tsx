@@ -3,7 +3,9 @@ import { c } from 'ttag';
 import { Avatar } from '@proton/atoms/Avatar/Avatar';
 import { Button } from '@proton/atoms/Button/Button';
 import { UserAvatar, UserAvatarSizeEnum } from '@proton/atoms/UserAvatar/UserAvatar';
-import { FileIcon, Icon, TableCell } from '@proton/components';
+import { FileIcon, TableCell } from '@proton/components';
+import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine';
+import { IcUser } from '@proton/icons/icons/IcUser';
 import { isProtonDocsDocument, isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype';
 import clsx from '@proton/utils/clsx';
 
@@ -88,7 +90,7 @@ function UploadedByCell({ item }: { item: PublicLink }) {
                         '--max-h-custom': '1.75rem',
                     }}
                 >
-                    <Icon name="user" className="color-weak" />
+                    <IcUser className="color-weak" />
                 </Avatar>
             )}
             <span className="text-ellipsis hidden lg:inline">{email || c('Info').t`Anonymous`}</span>
@@ -158,7 +160,7 @@ function DownloadCell({ item }: { item: PublicLink }) {
                     loading={isCurrentInProgress}
                 >
                     <span>{c('Action').t`Download`}</span>
-                    {!isCurrentInProgress ? <Icon name="arrow-down-line" className="ml-2 md:hidden lg:inline" /> : null}
+                    {!isCurrentInProgress ? <IcArrowDownLine className="ml-2 md:hidden lg:inline" /> : null}
                 </Button>
             )}
         </TableCell>

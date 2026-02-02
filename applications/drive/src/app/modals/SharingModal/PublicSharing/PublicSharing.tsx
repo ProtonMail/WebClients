@@ -8,7 +8,6 @@ import { Button } from '@proton/atoms/Button/Button';
 import { Input } from '@proton/atoms/Input/Input';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import {
-    Icon,
     SUBSCRIPTION_STEPS,
     Toggle,
     useConfig,
@@ -17,6 +16,9 @@ import {
     useUpsellConfig,
 } from '@proton/components';
 import { MemberRole } from '@proton/drive/index';
+import { IcGlobe } from '@proton/icons/icons/IcGlobe';
+import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
+import { IcSquares } from '@proton/icons/icons/IcSquares';
 import { PLANS, PLAN_NAMES } from '@proton/payments';
 import { APPS, SHARED_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
@@ -119,7 +121,7 @@ export const PublicSharing = ({
             <div className={clsx('flex items-center justify-space-between mb-4', !url && 'opacity-30')}>
                 <div className="w-full flex flex-nowrap gap-2">
                     <Avatar color="weak" className="shrink-0">
-                        <Icon name="globe" />
+                        <IcGlobe />
                     </Avatar>
                     <p className="flex-1 flex flex-column p-0 m-0">
                         <span className="text-semibold">{c('Label').t`Anyone with the link`}</span>
@@ -129,7 +131,7 @@ export const PublicSharing = ({
                                 : c('Label').t`Anyone on the Internet with the link can view`}
                             {hasEditorRole && (
                                 <Tooltip title={editorPermissionsTooltipText}>
-                                    <Icon className="ml-1" name="info-circle" />
+                                    <IcInfoCircle className="ml-1" />
                                 </Tooltip>
                             )}
                         </span>
@@ -166,7 +168,7 @@ export const PublicSharing = ({
                         disabled={!url}
                         data-testid="share-anyone-copyUrlButton"
                     >
-                        <Icon name="squares" />
+                        <IcSquares />
                     </Button>
                 </div>
             ) : null}

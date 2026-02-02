@@ -6,11 +6,12 @@ import { useShallow } from 'zustand/react/shallow';
 import { Button } from '@proton/atoms/Button/Button';
 import { Vr } from '@proton/atoms/Vr/Vr';
 import { usePopperAnchor } from '@proton/components';
-import Icon from '@proton/components/components/icon/Icon';
 import DriveLogo from '@proton/components/components/logo/DriveLogo';
 import Toolbar from '@proton/components/components/toolbar/Toolbar';
 import ToolbarButton from '@proton/components/components/toolbar/ToolbarButton';
 
+import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine';
+import { IcPlus } from '@proton/icons/icons/IcPlus';
 import { UploadCreateDropdown } from '../../statelessComponents/UploadCreateDropdown/UploadCreateDropdown';
 import { CopyLinkButton } from '../commonButtons/CopyLinkButton';
 import { DetailsButton } from '../commonButtons/DetailsButton';
@@ -71,7 +72,7 @@ export const PublicHeader = ({
                     {showUploadActions && (
                         <>
                             <ToolbarButton
-                                icon={<Icon name="plus" size={4} />}
+                                icon={<IcPlus size={4} />}
                                 ref={anchorRef}
                                 onClick={toggle}
                                 title={c('Action').t`Create`}
@@ -88,7 +89,7 @@ export const PublicHeader = ({
                     )}
                     {onDetails && <DetailsButton buttonType="toolbar" onClick={onDetails} />}
                     <ToolbarButton onClick={onDownload} disabled={isEmptyView}>
-                        <Icon className="mr-2" name="arrow-down-line" size={4} />
+                        <IcArrowDownLine className="mr-2" size={4} />
                         {downloadCopy}
                     </ToolbarButton>
                 </Toolbar>

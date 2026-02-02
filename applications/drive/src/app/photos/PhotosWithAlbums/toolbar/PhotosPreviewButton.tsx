@@ -2,7 +2,8 @@ import type { FC } from 'react';
 
 import { c } from 'ttag';
 
-import { DropdownMenuButton, Icon, ToolbarButton } from '@proton/components';
+import { DropdownMenuButton, ToolbarButton } from '@proton/components';
+import { IcEye } from '@proton/icons/icons/IcEye';
 import clsx from '@proton/utils/clsx';
 
 interface Props {
@@ -20,7 +21,7 @@ export const PhotosPreviewButton: FC<Props> = ({ onClick, showIconOnly, dropDown
             data-testid="toolbar-preview"
             className="inline-flex flex-nowrap flex-row items-center"
         >
-            <Icon name="eye" className={clsx(!showIconOnly && 'mr-2')} />
+            <IcEye className={clsx(!showIconOnly && 'mr-2')} />
             <span className={clsx(showIconOnly && 'sr-only')}>{c('Action').t`Preview`}</span>
         </ButtonComp>
     );

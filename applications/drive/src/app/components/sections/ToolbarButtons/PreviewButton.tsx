@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
-import { Icon, ToolbarButton } from '@proton/components';
+import { ToolbarButton } from '@proton/components';
 import { getDrive } from '@proton/drive';
+import { IcEye } from '@proton/icons/icons/IcEye';
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 
 import { useFlagsDriveSDKPreview } from '../../../flags/useFlagsDriveSDKPreview';
@@ -43,7 +44,7 @@ const PreviewButton = ({ selectedBrowserItems }: Props) => {
         <>
             <ToolbarButton
                 title={c('Action').t`Preview`}
-                icon={<Icon name="eye" alt={c('Action').t`Preview`} />}
+                icon={<IcEye alt={c('Action').t`Preview`} />}
                 onClick={() => {
                     if (selectedBrowserItems.length) {
                         const nodeUid = selectedBrowserItems[0].nodeUid || selectedBrowserItems[0].uid;
