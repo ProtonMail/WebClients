@@ -3,13 +3,14 @@ import { useHistory, useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { Href } from '@proton/atoms/Href/Href';
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
+import { Href } from '@proton/atoms/Href/Href';
 import type { OnLoginCallback } from '@proton/components';
 import {
     GenericError,
+    IllustrationPlaceholder,
     useApi,
     useConfig,
     useErrorHandler,
@@ -31,13 +32,15 @@ import {
     handleRequestToken,
     handleValidateResetToken,
 } from '@proton/components/containers/resetPassword/resetActions';
+import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { validateResetToken } from '@proton/shared/lib/api/reset';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
-import { BRAND_NAME } from '@proton/shared/lib/constants';
+import { AUTH_ACCOUNT_FAILED_GENERIC, BRAND_NAME } from '@proton/shared/lib/constants';
 import { decodeAutomaticResetParams } from '@proton/shared/lib/helpers/encoding';
 import { getKnowledgeBaseUrl, getStaticURL } from '@proton/shared/lib/helpers/url';
 import { KeyTransparencyActivation } from '@proton/shared/lib/interfaces';
+import noAccessErrorSvg from '@proton/styles/assets/img/errors/no-access-page.svg';
 import noop from '@proton/utils/noop';
 
 import SetPasswordWithPolicyForm from '../login/SetPasswordWithPolicyForm';
@@ -101,6 +104,7 @@ const ResetPasswordContainer = ({
     };
 
     const [step, setStep] = useState(STEPS.REQUEST_RECOVERY_METHODS);
+    const [errorCode, setErrorCode] = useState<number | undefined>(undefined);
 
     const handleCancel = () => {
         createFlow.reset();
@@ -141,6 +145,8 @@ const ResetPasswordContainer = ({
 
     const handleError = (e: any) => {
         errorHandler(e);
+        const { code } = getApiError(e);
+        setErrorCode(code);
         setStep((step) => {
             if (step === STEPS.NEW_PASSWORD) {
                 return STEPS.ERROR;
@@ -537,9 +543,21 @@ const ResetPasswordContainer = ({
             )}
             {step === STEPS.ERROR && (
                 <>
-                    <Header title={c('Title').t`Error`} onBack={handleBackStep} />
+                    {errorCode !== AUTH_ACCOUNT_FAILED_GENERIC && (
+                        <Header title={c('Title').t`Error`} onBack={handleBackStep} />
+                    )}
                     <Content>
-                        <GenericError />
+                        {errorCode === AUTH_ACCOUNT_FAILED_GENERIC ? (
+                            <>
+                                <IllustrationPlaceholder
+                                    title={c('Error message').t`Account is deleted or disabled`}
+                                    url={noAccessErrorSvg}
+                                />
+                                <span></span>
+                            </>
+                        ) : (
+                            <GenericError />
+                        )}
                         <Button color="norm" size="large" onClick={handleBack} fullWidth className="mt-6">
                             {c('Action').t`Return to sign in`}
                         </Button>
