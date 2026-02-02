@@ -5,7 +5,7 @@
         "forceConsistentCasingInFileNames": true,
         "incremental": true,
         "jsx": "preserve",
-        "lib": ["dom", "dom.iterable", "esnext"],
+        "lib": ["dom", "dom.iterable", "esnext", "WebWorker"],
         "maxNodeModuleJsDepth": 10,
         "module": "esnext",
         "moduleResolution": "bundler",
