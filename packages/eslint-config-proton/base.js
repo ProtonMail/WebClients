@@ -57,6 +57,7 @@ export default defineConfig(
             '@typescript-eslint/no-explicit-any': 'off',
             '@typescript-eslint/no-floating-promises': 'warn',
             '@typescript-eslint/no-for-in-array': 'error',
+            'no-fallthrough': 'error',
 
             '@typescript-eslint/no-misused-promises': ['error', { checksVoidReturn: false }],
 
