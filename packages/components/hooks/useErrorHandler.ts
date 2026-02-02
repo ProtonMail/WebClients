@@ -3,11 +3,13 @@ import { useCallback } from 'react';
 import { c } from 'ttag';
 
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { AUTH_ACCOUNT_FAILED_GENERIC } from '@proton/shared/lib/constants';
 import { traceError as traceSentryError } from '@proton/shared/lib/helpers/sentry';
 
 import useNotifications from './useNotifications';
 
-const ignoreErrors = ['InactiveSession', 'AppVersionBadError', 'AbortError'];
+const ignoreErrorNames = ['InactiveSession', 'AppVersionBadError', 'AbortError'];
+const ignoreErrorCodes = [AUTH_ACCOUNT_FAILED_GENERIC];
 
 /**
  * Don't allow tracing of api errors
@@ -36,7 +38,10 @@ const useErrorHandler = () => {
             const errorMessage = error.message || c('Error').t`Unknown error`;
 
             // Bad app version and unreachable errors are handled in a top banner
-            const shouldNotify = notify && !error.cancel && !ignoreErrors.includes(error.name);
+            const shouldNotify =
+                notify &&
+                !error.cancel &&
+                (!ignoreErrorNames.includes(error.name) && !ignoreErrorCodes.includes(error.code));
             if (shouldNotify) {
                 createNotification({ type: 'error', text: apiErrorMessage || errorMessage });
             }
