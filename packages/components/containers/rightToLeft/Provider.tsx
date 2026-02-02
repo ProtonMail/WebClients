@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import RightToLeftContext from './context';
 
 const getIsRTL = (lang: string) => {
-    return /^fa/.test(lang);
+    return /^(fa|ar)/.test(lang);
 };
 
 interface Props {
