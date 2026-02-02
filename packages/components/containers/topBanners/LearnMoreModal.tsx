@@ -16,6 +16,7 @@ import Time from '@proton/components/components/time/Time';
 import TimeRemaining from '@proton/components/components/timeRemaining/TimeRemaining';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import useConfig from '@proton/components/hooks/useConfig';
+import { getPlanTitle } from '@proton/payments/core/subscription/helpers';
 import chronometerSvg from '@proton/styles/assets/img/onboarding/b2b/img-b2b-chronometer.svg';
 import hourglassSvg from '@proton/styles/assets/img/onboarding/b2b/img-b2b-hourglass.svg';
 import clsx from '@proton/utils/clsx';
@@ -84,7 +85,7 @@ const LearnMoreModal = (props: ModalStateProps) => {
     }, [open]);
 
     const trialEndsOn = subscription?.PeriodEnd;
-    const planTitle = subscription?.Plans?.[0]?.Title;
+    const planTitle = getPlanTitle(subscription);
 
     const trialInfo = useMemo(() => getTrialInfo(planTitle), [planTitle]);
 
@@ -92,14 +93,14 @@ const LearnMoreModal = (props: ModalStateProps) => {
         return null;
     }
 
-    const timeRemaining = <TimeRemaining expiry={trialEndsOn} key="eslint-autofix-85E064" />;
+    const timeRemaining = <TimeRemaining expiry={trialEndsOn} key="time-remaining" />;
 
     // translator: full sentence is: "Your free trial ends in 14 days" or "Your free trial ends in 14 hours" or "Your free trial ends in 14 minutes"
     // translator: the most common case is "days"
     const title = c('b2b_trials_Title').jt`Your free trial ends in ${timeRemaining}`;
 
     const boldEndDate = (
-        <span className="text-bold" key="eslint-autofix-AC0828">
+        <span className="text-bold" key="end-date">
             <Time>{trialEndsOn}</Time>
         </span>
     );

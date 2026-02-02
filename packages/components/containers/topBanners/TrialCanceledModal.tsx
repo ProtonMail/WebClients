@@ -10,6 +10,7 @@ import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import Time from '@proton/components/components/time/Time';
+import { getPlanTitle } from '@proton/payments/core/subscription/helpers';
 
 const TrialCanceledModal = (props: ModalStateProps) => {
     const { onClose } = props;
@@ -18,7 +19,7 @@ const TrialCanceledModal = (props: ModalStateProps) => {
     const [user] = useUser();
 
     const trialEndsOn = subscription?.PeriodEnd;
-    const planTitle = subscription?.Plans?.[0]?.Title;
+    const planTitle = getPlanTitle(subscription);
 
     if (!subscription || !organization || !user) {
         return null;

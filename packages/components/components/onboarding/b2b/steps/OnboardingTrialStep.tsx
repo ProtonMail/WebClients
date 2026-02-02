@@ -11,6 +11,7 @@ import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import Time from '@proton/components/components/time/Time';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
+import { getPlanTitle } from '@proton/payments/core/subscription/helpers';
 import { useIsB2BTrial } from '@proton/payments/ui';
 import chronometerSvg from '@proton/styles/assets/img/onboarding/b2b/img-b2b-chronometer.svg';
 import helpSvg from '@proton/styles/assets/img/onboarding/b2b/img-b2b-help.svg';
@@ -26,7 +27,7 @@ const getTrialInfo = (subscriptionEnd?: number, planTitle?: string) => {
         return [];
     }
 
-    const cancelDate = <Time key="eslint-autofix-560DB6">{subscriptionEnd}</Time>;
+    const cancelDate = <Time key="cancel-date">{subscriptionEnd}</Time>;
 
     const cancelAnytimeTitle = <b>{c('Onboarding Trial').jt`Cancel anytime before ${cancelDate}.`}</b>;
     const cancelAnytimeDescription = c('Onboarding Trial')
@@ -42,13 +43,13 @@ const getTrialInfo = (subscriptionEnd?: number, planTitle?: string) => {
 
     // translator: full sentence is: If you need help, visit our help center or contact our support team.
     const helpCenterLink = (
-        <Href href="https://proton.me/support/business" key="eslint-autofix-EF1560">{c('Onboarding Trial')
+        <Href key="help-center-link" href="https://proton.me/support/business">{c('Onboarding Trial')
             .t`help center`}</Href>
     );
 
     // translator: full sentence is: If you need help, visit our help center or contact our support team.
     const contactSupportLink = (
-        <Href href="https://proton.me/support/business" key="eslint-autofix-EEF3DD">{c('Onboarding Trial')
+        <Href key="contact-support-link" href="https://proton.me/support/business">{c('Onboarding Trial')
             .t`contact our support team`}</Href>
     );
 
@@ -102,7 +103,7 @@ const OnboardingTrialStep = ({ onNext }: Props) => {
     const isB2BTrial = useIsB2BTrial(subscription, organization);
 
     const trialEndsOn = subscription?.PeriodEnd;
-    const planTitle = subscription?.Plans?.[0]?.Title;
+    const planTitle = getPlanTitle(subscription);
 
     const trialInfo = useMemo(() => getTrialInfo(trialEndsOn, planTitle), [trialEndsOn, planTitle]);
 
@@ -110,7 +111,7 @@ const OnboardingTrialStep = ({ onNext }: Props) => {
         return null;
     }
 
-    const trialEndsOnFormatted = <Time key="eslint-autofix-FC02AC">{trialEndsOn}</Time>;
+    const trialEndsOnFormatted = <Time key="trial-ends-on">{trialEndsOn}</Time>;
 
     return (
         <>
