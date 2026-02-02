@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { Icon, ToolbarButton, type useConfirmActionModal } from '@proton/components';
+import { ToolbarButton, type useConfirmActionModal } from '@proton/components';
+import { IcLinkSlash } from '@proton/icons/icons/IcLinkSlash';
 
 import { ContextMenuButton } from '../../../components/sections/ContextMenu';
 import { useSharingActions } from '../../../hooks/drive/useSharingActions';
@@ -33,7 +34,7 @@ export const StopSharingButton = ({ uid, parentUid, showConfirmModal, close, but
         return (
             <ToolbarButton
                 title={c('Action').t`Stop sharing`}
-                icon={<Icon name="link-slash" />}
+                icon={<IcLinkSlash />}
                 onClick={handleClick}
                 data-testid="toolbar-button-stop-sharing"
             />

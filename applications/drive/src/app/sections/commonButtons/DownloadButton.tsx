@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { Icon, ToolbarButton } from '@proton/components';
+import { ToolbarButton } from '@proton/components';
+import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine';
 
 import { ContextMenuButton } from '../../components/sections/ContextMenu';
 
@@ -27,7 +28,7 @@ export const DownloadButton = ({ buttonType, onClick, close }: Props) => {
         return (
             <ToolbarButton
                 title={title}
-                icon={<Icon name={icon} alt={title} />}
+                icon={<IcArrowDownLine alt={title} />}
                 onClick={onClick}
                 data-testid="toolbar-download"
             />

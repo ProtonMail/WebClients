@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { Icon, ToolbarButton } from '@proton/components';
+import { ToolbarButton } from '@proton/components';
+import { IcPlusCircle } from '@proton/icons/icons/IcPlusCircle';
 import clsx from '@proton/utils/clsx';
 
 export interface PhotosAddToAlbumButtonProps {
@@ -15,7 +16,7 @@ export const PhotosAddToAlbumButton = ({ onClick, showIconOnly }: PhotosAddToAlb
         data-testid="toolbar-add-to-album"
         className="inline-flex flex-nowrap flex-row items-center"
     >
-        <Icon name="plus-circle" className={clsx(!showIconOnly && 'mr-2')} />
+        <IcPlusCircle className={clsx(!showIconOnly && 'mr-2')} />
         <span className={clsx(showIconOnly && 'sr-only')}>{c('Action').t`Add to album`}</span>
     </ToolbarButton>
 );

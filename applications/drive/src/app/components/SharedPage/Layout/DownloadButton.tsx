@@ -9,9 +9,12 @@ import {
     Dropdown,
     DropdownMenu,
     DropdownMenuButton,
-    Icon,
     usePopperAnchor,
 } from '@proton/components';
+import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine';
+import { IcChevronDownFilled } from '@proton/icons/icons/IcChevronDownFilled';
+import { IcChevronUpFilled } from '@proton/icons/icons/IcChevronUpFilled';
+import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 import { isProtonDocsDocument, isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype';
 
 import usePublicToken from '../../../hooks/drive/usePublicToken';
@@ -91,7 +94,7 @@ export function DownloadButton({ items, rootLink, openInDocs, disabled }: Downlo
                 onClick={() => handleDownload()}
                 data-testid="download-button"
             >
-                <Icon name="arrow-down-line" size={4} />
+                <IcArrowDownLine size={4} />
                 {/* Default Download text if scan not available */}
                 {buttonTextWithoutScan}
             </Button>
@@ -108,7 +111,7 @@ export function DownloadButton({ items, rootLink, openInDocs, disabled }: Downlo
                     data-testid="download-button"
                     color="weak"
                 >
-                    <Icon name="arrow-down-line" size={4} />
+                    <IcArrowDownLine size={4} />
                     {buttonTextWithoutScan}
                 </Button>
                 <Button
@@ -122,11 +125,9 @@ export function DownloadButton({ items, rootLink, openInDocs, disabled }: Downlo
                     }}
                 >
                     {isDownloading && <CircleLoader />}
-                    {!isDownloading && isOpen && (
-                        <Icon name="chevron-up-filled" alt={c('Action').t`Hide download options`} />
-                    )}
+                    {!isDownloading && isOpen && <IcChevronUpFilled alt={c('Action').t`Hide download options`} />}
                     {!isDownloading && !isOpen && (
-                        <Icon name="chevron-down-filled" alt={c('Action').t`Show more download options`} />
+                        <IcChevronDownFilled alt={c('Action').t`Show more download options`} />
                     )}
                 </Button>
             </ButtonGroup>
@@ -137,7 +138,7 @@ export function DownloadButton({ items, rootLink, openInDocs, disabled }: Downlo
                         onClick={() => handleDownload()}
                         data-testid="dropdown-download-button"
                     >
-                        <Icon name="arrow-down-line" />
+                        <IcArrowDownLine />
                         {buttonTextWithoutScan}
                     </DropdownMenuButton>
                     <DropdownMenuButton
@@ -145,7 +146,7 @@ export function DownloadButton({ items, rootLink, openInDocs, disabled }: Downlo
                         onClick={() => handleDownload({ virusScan: true })}
                         data-testid="scan-download-button"
                     >
-                        <Icon name="arrow-down-line" />
+                        <IcArrowDownLine />
                         {buttonTextWithScan}
                     </DropdownMenuButton>
                     <ContextSeparator />
@@ -154,7 +155,7 @@ export function DownloadButton({ items, rootLink, openInDocs, disabled }: Downlo
                         onClick={() => showScanAndDownloadInfoModal({})}
                         data-testid="learn-more"
                     >
-                        <Icon name="info-circle" />
+                        <IcInfoCircle />
                         {c('Info').t`Learn more`}
                     </DropdownMenuButton>
                 </DropdownMenu>

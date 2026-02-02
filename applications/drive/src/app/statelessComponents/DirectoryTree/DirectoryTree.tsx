@@ -1,8 +1,12 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { FileIcon, Radio, useErrorHandler } from '@proton/components';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcChevronUp } from '@proton/icons/icons/IcChevronUp';
+import { IcFile } from '@proton/icons/icons/IcFile';
+import { IcInbox } from '@proton/icons/icons/IcInbox';
+import { IcTv } from '@proton/icons/icons/IcTv';
+import { IcUsers } from '@proton/icons/icons/IcUsers';
 import clsx from '@proton/utils/clsx';
 import orderBy from '@proton/utils/orderBy';
 
@@ -127,7 +131,7 @@ function DirectoryTreeBranch({
                             onClick={handleExpand}
                             disabled={isLoading}
                         >
-                            <Icon name="chevron-up" className="border border-norm rounded-50" />
+                            <IcChevronUp className="border border-norm rounded-50" />
                         </button>
                     )}
 
@@ -158,16 +162,16 @@ function DirectoryTreeBranch({
 
 function TreeItemIcon({ type }: { type: string }) {
     if (type === 'files-root') {
-        return <Icon name="inbox" />;
+        return <IcInbox />;
     }
     if (type === 'devices-root' || type === 'device') {
-        return <Icon name="tv" />;
+        return <IcTv />;
     }
     if (type === 'shares-root') {
-        return <Icon name="users" />;
+        return <IcUsers />;
     }
     if (type === 'folder') {
         return <FileIcon mimeType={'Folder'} />;
     }
-    return <Icon name="file" />;
+    return <IcFile />;
 }

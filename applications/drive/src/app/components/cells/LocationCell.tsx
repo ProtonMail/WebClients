@@ -1,4 +1,5 @@
-import { Icon, TableCell, useActiveBreakpoint } from '@proton/components';
+import { TableCell, useActiveBreakpoint } from '@proton/components';
+import { IcTrash } from '@proton/icons/icons/IcTrash';
 import clsx from '@proton/utils/clsx';
 
 interface Props {
@@ -15,7 +16,7 @@ export const LocationCell = ({ location, isTrashed }: Props) => {
         >
             <div key="location" title={location} className="text-ellipsis">
                 <span className="text-pre">
-                    {isTrashed && <Icon name="trash" className="mr-1" />}
+                    {isTrashed && <IcTrash className="mr-1" />}
                     {location}
                 </span>
             </div>

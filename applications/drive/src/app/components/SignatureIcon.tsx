@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { Icon } from '@proton/components';
+import { IcLockExclamationFilled } from '@proton/icons/icons/IcLockExclamationFilled';
 
 import type { SignatureIssues } from '../store';
 import { hasValidAnonymousSignature } from './hasValidAnonymousSignature';
@@ -32,7 +32,7 @@ export function SignatureIcon({ haveSignatureIssues, isFile, className }: Simple
 
     return (
         <Tooltip title={title}>
-            <Icon name="lock-exclamation-filled" className={className} />
+            <IcLockExclamationFilled className={className} />
         </Tooltip>
     );
 }
@@ -58,7 +58,7 @@ export function DeprecatedSignatureIcon({
 
     return (
         <Tooltip title={title}>
-            <Icon name="lock-exclamation-filled" className={className} />
+            <IcLockExclamationFilled className={className} />
         </Tooltip>
     );
 }

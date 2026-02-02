@@ -3,8 +3,9 @@ import { useEffect } from 'react';
 import { c } from 'ttag';
 import { useShallow } from 'zustand/react/shallow';
 
-import { ButtonWithTextAndIcon, Icon, useActiveBreakpoint } from '@proton/components';
+import { ButtonWithTextAndIcon, useActiveBreakpoint } from '@proton/components';
 import { VintageClock } from '@proton/components/components/vintageClock/VintageClock';
+import { IcLockFilled } from '@proton/icons/icons/IcLockFilled';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 import { toMinutesAndSeconds } from '@proton/shared/lib/helpers/time';
 import clsx from '@proton/utils/clsx';
@@ -82,7 +83,7 @@ export function DriveEmptyViewFreeUpload() {
                         />
                     </div>
                     <span className="flex justify-center gap-2">
-                        <Icon name="lock-filled" className="color-success" /> {c('Info').t`End-to-end encrypted`}
+                        <IcLockFilled className="color-success" /> {c('Info').t`End-to-end encrypted`}
                     </span>
                 </div>
             </div>

@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { Icon, ToolbarButton } from '@proton/components';
+import { ToolbarButton } from '@proton/components';
+import { IcFolderPlus } from '@proton/icons/icons/IcFolderPlus';
 
 import type { DriveFolder } from '../../../../hooks/drive/useActiveShare';
 import type { useActions } from '../../../../store';
@@ -17,7 +18,7 @@ const CreateNewFolderButton = ({ activeFolder, createFolder }: CreateNewFolderBu
     return (
         <>
             <ToolbarButton
-                icon={<Icon name="folder-plus" alt={c('Action').t`Create new folder`} />}
+                icon={<IcFolderPlus alt={c('Action').t`Create new folder`} />}
                 title={c('Action').t`Create new folder`}
                 onClick={() => showCreateFolderModal({ folder: activeFolder, createFolder })}
                 data-testid="toolbar-new-folder"

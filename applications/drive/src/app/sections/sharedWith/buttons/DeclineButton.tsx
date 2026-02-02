@@ -1,8 +1,9 @@
 import { c } from 'ttag';
 
-import { Icon, ToolbarButton } from '@proton/components';
 import type { useConfirmActionModal } from '@proton/components';
+import { ToolbarButton } from '@proton/components';
 import type { NodeType } from '@proton/drive';
+import { IcCross } from '@proton/icons/icons/IcCross';
 
 import { ContextMenuButton } from '../../../components/sections/ContextMenu';
 import useVolumesState from '../../../store/_volumes/useVolumesState';
@@ -50,7 +51,7 @@ export const DeclineButton = ({
         return (
             <ToolbarButton
                 title={c('Action').t`Decline`}
-                icon={<Icon name="cross" alt={c('Action').t`Decline`} />}
+                icon={<IcCross alt={c('Action').t`Decline`} />}
                 onClick={handleDecline}
                 data-testid="toolbar-decline-invitation"
             />

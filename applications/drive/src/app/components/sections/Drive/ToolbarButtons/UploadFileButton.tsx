@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { Icon, ToolbarButton } from '@proton/components';
+import { ToolbarButton } from '@proton/components';
+import { IcFileArrowInUp } from '@proton/icons/icons/IcFileArrowInUp';
 
 import { useActiveShare } from '../../../../hooks/drive/useActiveShare';
 import { useFileUploadInput } from '../../../../store';
@@ -18,7 +19,7 @@ const UploadFileButton = () => {
             <input multiple type="file" ref={fileInput} className="hidden" onChange={handleChange} />
             <ToolbarButton
                 data-testid="toolbar-upload-file"
-                icon={<Icon name="file-arrow-in-up" alt={c('Action').t`Upload file`} />}
+                icon={<IcFileArrowInUp alt={c('Action').t`Upload file`} />}
                 title={c('Action').t`Upload file`}
                 onClick={handleClick}
             />

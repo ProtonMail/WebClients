@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { Checkbox, Icon, InputFieldTwo, TextAreaTwo } from '@proton/components';
+import { Checkbox, InputFieldTwo, TextAreaTwo } from '@proton/components';
+import { IcInfoCircleFilled } from '@proton/icons/icons/IcInfoCircleFilled';
 import { SHARE_INVITE_MESSAGE_MAX_LENGTH } from '@proton/shared/lib/drive/constants';
 import clsx from '@proton/utils/clsx';
 
@@ -54,7 +55,7 @@ export const DirectSharingInviteMessage = ({
                 title={c('Tooltip')
                     .t`Message and file name are stored with zero access encryption when included in the email`}
             >
-                <Icon name="info-circle-filled" className="color-disabled ml-2" size={5} />
+                <IcInfoCircleFilled className="color-disabled ml-2" size={5} />
             </Tooltip>
         </div>
     </>

@@ -5,7 +5,7 @@ import { c, msgid } from 'ttag';
 import { useShallow } from 'zustand/react/shallow';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { Icon } from '@proton/components';
+import { IcArrowLeft } from '@proton/icons/icons/IcArrowLeft';
 
 import useNavigate from '../../../hooks/drive/useNavigate';
 import { AlbumsPageTypes, usePhotoLayoutStore } from '../../../zustand/photos/layout.store';
@@ -132,8 +132,7 @@ export const TitleArea = ({
                             navigateToAlbum(albumShareId, albumLinkId);
                         }}
                     >
-                        <Icon name="arrow-left" className="mr-2 shrink-0" />{' '}
-                        {c('Action').t`Go back to album “${albumName}“`}
+                        <IcArrowLeft className="mr-2 shrink-0" /> {c('Action').t`Go back to album “${albumName}“`}
                     </Button>
                 ) : (
                     <ToolbarLeftActionsGallery

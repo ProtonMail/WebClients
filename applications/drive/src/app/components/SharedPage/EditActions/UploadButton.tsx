@@ -1,7 +1,9 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { Dropdown, DropdownMenu, DropdownMenuButton, Icon, usePopperAnchor } from '@proton/components';
+import { Dropdown, DropdownMenu, DropdownMenuButton, usePopperAnchor } from '@proton/components';
+import { IcFileArrowInUp } from '@proton/icons/icons/IcFileArrowInUp';
+import { IcFolderArrowUp } from '@proton/icons/icons/IcFolderArrowUp';
 
 import { useFileUploadInput, useFolderUploadInput } from '../../../store';
 
@@ -29,7 +31,7 @@ export const UploadButton = ({ volumeId, token, linkId }: UploadFileButtonProps)
             <input multiple type="file" ref={fileInput} className="hidden" onChange={handleFileChange} />
             <input type="file" ref={folerInput} className="hidden" onChange={handleFolderChange} />
             <Button ref={anchorRef} onClick={toggle} className="flex gap-2 items-center" size="medium">
-                <Icon name="file-arrow-in-up" size={4} />
+                <IcFileArrowInUp size={4} />
                 {c('Action').t`Upload`}
             </Button>
             <Dropdown anchorRef={anchorRef} isOpen={isOpen} onClose={close}>
@@ -39,7 +41,7 @@ export const UploadButton = ({ volumeId, token, linkId }: UploadFileButtonProps)
                         onClick={handleFileClick}
                         data-testid="download-button"
                     >
-                        <Icon name="file-arrow-in-up" />
+                        <IcFileArrowInUp />
                         {c('Action').t`Upload file`}
                     </DropdownMenuButton>
                     <DropdownMenuButton
@@ -47,7 +49,7 @@ export const UploadButton = ({ volumeId, token, linkId }: UploadFileButtonProps)
                         onClick={handleFolderClick}
                         data-testid="download-button"
                     >
-                        <Icon name="folder-arrow-up" />
+                        <IcFolderArrowUp />
                         {c('Action').t`Upload folder`}
                     </DropdownMenuButton>
                 </DropdownMenu>

@@ -4,8 +4,8 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { Icon } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
+import { IcFolderArrowIn } from '@proton/icons/icons/IcFolderArrowIn';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS, DRIVE_APP_NAME, DRIVE_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import { openNewTab } from '@proton/shared/lib/helpers/browser';
@@ -77,7 +77,7 @@ export const SaveForLaterButton = ({ className, alreadyBookmarked, customPasswor
                         color="norm"
                         data-testid="save-in-drive-button"
                     >
-                        <Icon name="folder-arrow-in" />
+                        <IcFolderArrowIn />
                         {isAdding ? c('Info').t`Saving...` : buttonText}
                     </Button>
                 </Tooltip>

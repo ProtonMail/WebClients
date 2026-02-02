@@ -6,9 +6,14 @@ import { useShallow } from 'zustand/react/shallow';
 import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { Icon } from '@proton/components/index';
 import { NodeType, splitNodeUid } from '@proton/drive/index';
 import { UploadStatus } from '@proton/drive/modules/upload';
+import { IcCheckmarkCircleFilled } from '@proton/icons/icons/IcCheckmarkCircleFilled';
+import { IcClock } from '@proton/icons/icons/IcClock';
+import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
+import { IcCrossCircle } from '@proton/icons/icons/IcCrossCircle';
+import { IcCrossCircleFilled } from '@proton/icons/icons/IcCrossCircleFilled';
+import { IcExclamationCircle } from '@proton/icons/icons/IcExclamationCircle';
 import { shortHumanSize } from '@proton/shared/lib/helpers/humanSize';
 
 import { useDownloadContainsDocumentsModal } from '../../../components/modals/DownloadContainsDocumentsModal';
@@ -52,28 +57,28 @@ const getStatusLabel = (entry: TransferManagerEntry): string | undefined => {
 
 const getItemIconByStatus = (entry: TransferManagerEntry) => {
     if (entry.status === BaseTransferStatus.Finished || entry.status === UploadStatus.PhotosDuplicate) {
-        return <Icon size={5} className="color-success" name="checkmark-circle-filled" />;
+        return <IcCheckmarkCircleFilled size={5} className="color-success" />;
     }
     if (entry.status === BaseTransferStatus.Pending) {
-        return <Icon size={5} name="clock" />;
+        return <IcClock size={5} />;
     }
     if (entry.status === BaseTransferStatus.InProgress) {
         return <CircleLoader size="small" className="color-signal-info" />;
     }
     if (entry.status === BaseTransferStatus.Cancelled) {
-        return <Icon size={5} className="color-weak" name="cross-circle" />;
+        return <IcCrossCircle size={5} className="color-weak" />;
     }
     if (entry.status === UploadStatus.Skipped) {
-        return <Icon size={5} className="color-weak" name="cross-circle" />;
+        return <IcCrossCircle size={5} className="color-weak" />;
     }
     if (entry.status === BaseTransferStatus.Failed) {
-        return <Icon size={5} className="color-danger" name="cross-circle-filled" />;
+        return <IcCrossCircleFilled size={5} className="color-danger" />;
     }
     if (entry.status === BaseTransferStatus.MalwareDetected) {
-        return <Icon size={5} className="color-danger" name="cross-circle-filled" />;
+        return <IcCrossCircleFilled size={5} className="color-danger" />;
     }
     if (entry.status === UploadStatus.ConflictFound) {
-        return <Icon size={5} className="color-weak" name="clock" />;
+        return <IcClock size={5} className="color-weak" />;
     }
     return null;
 };
@@ -244,7 +249,7 @@ export const TransferItem = ({ entry, onShare }: Props) => {
                             onClick={() => cancelTransfer(entry)}
                             data-testid="drive-transfers-manager:item-controls-cancel"
                         >
-                            <Icon name="cross-big" size={4} />
+                            <IcCrossBig size={4} />
                         </Button>
                     </Tooltip>
                 )}
@@ -259,7 +264,7 @@ export const TransferItem = ({ entry, onShare }: Props) => {
                                 onClick={() => reportMalware()}
                                 data-testid="drive-transfers-manager:item-controls-cancel"
                             >
-                                <Icon name="exclamation-circle" size={4} />
+                                <IcExclamationCircle size={4} />
                             </Button>
                         </Tooltip>
 

@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { Icon, ToolbarButton } from '@proton/components';
+import { ToolbarButton } from '@proton/components';
+import { IcEye } from '@proton/icons/icons/IcEye';
 
 import { ContextMenuButton } from '../../components/sections/ContextMenu';
 
@@ -26,12 +27,7 @@ export const PreviewButton = ({ buttonType, close, onClick }: Props) => {
 
     if (buttonType === 'toolbar') {
         return (
-            <ToolbarButton
-                title={title}
-                icon={<Icon name={icon} alt={title} />}
-                onClick={onClick}
-                data-testid="toolbar-preview"
-            />
+            <ToolbarButton title={title} icon={<IcEye alt={title} />} onClick={onClick} data-testid="toolbar-preview" />
         );
     }
 

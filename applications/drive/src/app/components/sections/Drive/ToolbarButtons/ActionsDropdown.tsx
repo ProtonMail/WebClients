@@ -4,10 +4,12 @@ import { c } from 'ttag';
 
 import { Dropdown, DropdownMenu, DropdownMenuButton, Icon, ToolbarButton, usePopperAnchor } from '@proton/components';
 import { getDrive } from '@proton/drive';
+import { IcChevronDownFilled } from '@proton/icons/icons/IcChevronDownFilled';
 import type { IconName } from '@proton/icons/types';
 import type { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
 import { getCanAdmin, getCanWrite } from '@proton/shared/lib/drive/permissions';
 import { isProtonDocsDocument } from '@proton/shared/lib/helpers/mimetype';
+import clsx from '@proton/utils/clsx';
 import generateUID from '@proton/utils/generateUID';
 
 import type { DecryptedLink, useActions } from '../../../../store';
@@ -134,7 +136,9 @@ const ActionsDropdown = ({ volumeId, shareId, selectedLinks, permissions, trashL
                 ref={anchorRef}
                 aria-expanded={isOpen}
                 onClick={toggle}
-                icon={<Icon name="chevron-down-filled" alt={c('Title').t`Show actions`} rotate={isOpen ? 180 : 0} />}
+                icon={
+                    <IcChevronDownFilled alt={c('Title').t`Show actions`} className={clsx(isOpen && 'rotateX-180')} />
+                }
                 data-testid="actions-dropdown"
                 title={c('Title').t`Show actions`}
             />

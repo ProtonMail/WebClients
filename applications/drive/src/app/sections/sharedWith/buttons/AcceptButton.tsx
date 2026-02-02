@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
-import { Icon, ToolbarButton } from '@proton/components';
+import { ToolbarButton } from '@proton/components';
 import type { NodeType } from '@proton/drive';
+import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 
 import { ContextMenuButton } from '../../../components/sections/ContextMenu';
 import useVolumesState from '../../../store/_volumes/useVolumesState';
@@ -37,7 +38,7 @@ export const AcceptButton = ({ nodeUid, invitationUid, type, close, buttonType }
         return (
             <ToolbarButton
                 title={c('Action').t`Accept`}
-                icon={<Icon name="checkmark" alt={c('Action').t`Accept`} />}
+                icon={<IcCheckmark alt={c('Action').t`Accept`} />}
                 onClick={handleAcceptInvitation}
                 data-testid="toolbar-accept-invitation"
             />
