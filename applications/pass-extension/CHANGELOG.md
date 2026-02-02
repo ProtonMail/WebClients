@@ -1,3 +1,15 @@
+### Version 1.34.1
+
+- [Gradual rollout] Credit card autofill
+- Support localhost as valid passkey RPID
+- Support enforcing a single personal vault policy for B2B users
+- Fix importing file attachments from 1Password "Document" item
+- Improve date format display in multiple languages
+- Replace YouTube video onboarding with video hosted on proton.me
+- Make sidebar menu responsive in full window size
+- Support opening Pass Monitor directly in extension instead of web app
+- Improve passkeys and password change autofill
+
 ### Version 1.33.2
 
 - Support right click on items (behind feature flag)
