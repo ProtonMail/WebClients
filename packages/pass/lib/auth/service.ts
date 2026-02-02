@@ -97,7 +97,7 @@ export interface AuthServiceConfig {
     /** The in-memory session is used to store the session data securely.
      * It allows resuming a session without any API calls to re-authenticate.
      * In most cases you can omit the implementation and rely on the `authStore` */
-    getMemorySession?: () => MaybePromise<any>;
+    getMemorySession?: (localID: Maybe<number>) => MaybePromise<Partial<AuthSession>>;
     /** The persisted session will be parsed and decrypted to extract the
      * session data. Requires an API call to retrieve the local key. */
     getPersistedSession: (localID: Maybe<number>) => MaybePromise<MaybeNull<EncryptedAuthSession>>;
@@ -164,7 +164,7 @@ export interface AuthServiceConfig {
     /** Callback when session lock is created, updated or deleted */
     onLockUpdate?: (lock: Lock, localID: Maybe<number>, broadcast: boolean) => MaybePromise<void>;
     /** Called with the `sessionLockToken` when session is successfully unlocked */
-    onUnlocked?: (mode: LockMode, token: Maybe<string>, localID: Maybe<number>) => Promise<void>;
+    onUnlocked?: (mode: LockMode, token: Maybe<string>, localID: Maybe<number>, offline: boolean) => Promise<void>;
     /** Implement encrypted local session persistence using this hook. Called on every
      * successful consumed fork or unlocked session. */
     onSessionPersist?: (encryptedSession: string) => MaybePromise<void>;
@@ -426,7 +426,7 @@ export const createAuthService = (config: AuthServiceConfig) => {
             return lock;
         },
 
-        unlock: async (mode: LockMode, secret: string): Promise<void> => {
+        unlock: async (mode: LockMode, secret: string, offline: boolean): Promise<void> => {
             if (mode === LockMode.NONE) return;
 
             try {
@@ -435,7 +435,7 @@ export const createAuthService = (config: AuthServiceConfig) => {
                 const localID = authStore.getLocalID();
                 await adapter.check();
 
-                await config.onUnlocked?.(mode, token, localID);
+                await config.onUnlocked?.(mode, token, localID, offline);
             } catch (error) {
                 /** error is thrown for clients to consume */
                 logger.warn(`[AuthService] Unlock failure [mode=${mode}]`, error);
@@ -537,7 +537,7 @@ export const createAuthService = (config: AuthServiceConfig) => {
             pipe(
                 async (localID: Maybe<number>, options: AuthOptions): Promise<boolean> => {
                     try {
-                        const memorySession = await config.getMemorySession?.();
+                        const memorySession = await config.getMemorySession?.(localID);
                         const persistedSession = await config.getPersistedSession(localID);
                         const validMemorySession = memorySession && authStore.validSession(memorySession);
                         const hasSession = Boolean(validMemorySession || persistedSession);
@@ -546,12 +546,9 @@ export const createAuthService = (config: AuthServiceConfig) => {
                         if (!proceed) return false;
 
                         if (validMemorySession) {
-                            /** If we have an in-memory decrypted AuthSession - use it to
-                             * login without making any other API requests. Authorizing
-                             * from in-memory session does not account for force lock, rather
-                             * when locking, the in-memory session should be cleared */
                             logger.info(`[AuthService] Resuming in-memory session [lock=${options.forceLock}]`);
-                            return await authService.login(memorySession, {});
+                            options.forcePersist = options.forcePersist || !persistedSession;
+                            return await authService.login(memorySession, options);
                         }
 
                         if (!persistedSession) {

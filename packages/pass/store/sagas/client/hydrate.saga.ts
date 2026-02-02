@@ -11,14 +11,14 @@ import { userStateHydrated } from '@proton/pass/lib/user/user.predicates';
 import { getUserData } from '@proton/pass/lib/user/user.requests';
 import { stateHydrate } from '@proton/pass/store/actions';
 import { migrate } from '@proton/pass/store/migrate';
-import type { HydratedUserState } from '@proton/pass/store/reducers';
+import type { HydratedUserState, UserState } from '@proton/pass/store/reducers';
 import type { OrganizationState } from '@proton/pass/store/reducers/organization';
 import type { SettingsState } from '@proton/pass/store/reducers/settings';
+import { selectUserState } from '@proton/pass/store/selectors';
 import type { RootSagaOptions, State } from '@proton/pass/store/types';
 import type { MaybeNull } from '@proton/pass/types';
 import { type Maybe, PlanType } from '@proton/pass/types';
 import type { EncryptedPassCache, PassCache } from '@proton/pass/types/worker/cache';
-import { throwError } from '@proton/pass/utils/fp/throw';
 import { logger } from '@proton/pass/utils/logger';
 import { partialMerge } from '@proton/pass/utils/object/merge';
 import { SETTINGS_PASSWORD_MODE } from '@proton/shared/lib/interfaces';
@@ -31,7 +31,7 @@ import noop from '@proton/utils/noop';
 type HydrateCacheOptions = {
     online: boolean;
     merge: (existing: State, incoming: State) => State;
-    onError?: () => Generator;
+    onError?: (err: unknown) => Generator;
 };
 
 export type HydrationResult = { fromCache: boolean; version?: string };
@@ -47,38 +47,24 @@ export function* hydrate(
         const keyPassword = authStore.getPassword();
         const encryptedCache: Partial<EncryptedPassCache> = yield getCache();
         const cacheKey: Maybe<CryptoKey> = yield getCacheKey(encryptedCache, authStore);
-
-        const cache: Maybe<PassCache> = cacheKey
-            ? yield decryptCache(cacheKey, encryptedCache).catch((err) => (config.online ? undefined : throwError(err)))
-            : undefined;
+        const cache: Maybe<PassCache> = cacheKey ? yield decryptCache(cacheKey, encryptedCache).catch(noop) : undefined;
 
         /** Offline boot requires valid cache */
-        if (!config.online && !cache) throw new PassCryptoHydrationError('Missing or invalid offline cache');
+        if (!config.online && !cache) throw new PassCryptoHydrationError('Invalid offline cache');
         /** Online hydration requires keyPassword for PassCrypto */
         if (config.online && !keyPassword) throw new PassCryptoHydrationError('Missing `keyPassword`');
 
+        const snapshot = cache?.snapshot;
+        const fromCache = cache?.state !== undefined && cache?.snapshot !== undefined;
         const cachedState = cache?.state
             ? migrate(cache.state, cache.snapshot, { from: encryptedCache.version, to: getConfig().APP_VERSION })
             : undefined;
-        const cachedUser = cachedState?.user;
-        const snapshot = cache?.snapshot;
-        const fromCache = cache?.state !== undefined && cache?.snapshot !== undefined;
 
-        /** Request #1: Fetch user data only when online and not fully hydrated.
-         * May be triggered on initial boot or when we detect a non-hydrated user
-         * state on subsequent boots. Graceful fallback to possibly stale cached
-         * user on network failure to avoid blocking the hydration sequence. */
-        const userState: Maybe<HydratedUserState> = yield userStateHydrated(cachedUser) || !config.online
-            ? cachedUser
-            : getUserData(extensionId).catch((err) => {
-                  /** Terminate on network errors if no
-                   * cached user state is available */
-                  if (!cachedUser) throw err;
-                  return cachedUser;
-              });
-
-        /** Hydration error: User state must be resolvable from cache or network */
-        if (!userState) throw new PassCryptoHydrationError('User not resolved');
+        /** Request #1: Fetch user data only when not fully hydrated. May be triggered on
+         * initial boot or when we detect a non-hydrated user state on subsequent boots. If
+         * resuming from an offline boot and cache is unavailable: fallback to current state. */
+        const cachedUserState: Maybe<UserState> = cachedState?.user ?? (yield select(selectUserState));
+        const userState: HydratedUserState = yield userStateHydrated(cachedUserState) ? cachedUserState : getUserData(extensionId);
 
         const user = userState.user;
         const addresses = Object.values(userState.addresses);
@@ -149,7 +135,10 @@ export function* hydrate(
         };
     } catch (err) {
         logger.warn(`[Hydration] Error occured`, err);
-        yield config.onError?.();
+
+        if (config.onError) yield config.onError?.(err);
+        else throw err;
+
         return { fromCache: false };
     }
 }

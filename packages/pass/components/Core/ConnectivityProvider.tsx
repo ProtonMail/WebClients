@@ -110,6 +110,8 @@ export const useOnline = () => {
     return ctx ? ctx.status === ConnectivityStatus.ONLINE : true;
 };
 
+export const useOffline = () => !useOnline();
+
 export const useConnectivity = () => useContext(ConnectivityContext)?.status ?? ConnectivityStatus.ONLINE;
 export const useCheckConnectivity = () => useContext(ConnectivityContext)?.check;
 export const useOnlineRef = () => useStatefulRef(useOnline());
