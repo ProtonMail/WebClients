@@ -132,11 +132,24 @@ async function postXmlHttpRequest(options: ProtonDriveHTTPClientBlobRequest) {
         };
         options.signal?.addEventListener('abort', listener);
 
-        xhr.onload = async () => {
+        const formatStatusText = (xhr: XMLHttpRequest): string | undefined => {
+            if (xhr.response?.Error) {
+                return String(xhr.response.Error);
+            }
+            if (xhr.statusText) {
+                return xhr.statusText;
+            }
+            if (xhr.response) {
+                return typeof xhr.response === 'object' ? JSON.stringify(xhr.response) : String(xhr.response);
+            }
+            return undefined;
+        };
+
+        xhr.onload = () => {
             resolve(
                 new Response(xhr.response, {
                     status: xhr.status,
-                    statusText: xhr.response?.Error || xhr.statusText || xhr.response,
+                    statusText: formatStatusText(xhr),
                 })
             );
         };
