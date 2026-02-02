@@ -2,21 +2,18 @@ import type { NodeEntity } from '@proton/drive/index';
 import { AbortError, NodeType } from '@proton/drive/index';
 
 import { TransferCancel } from '../../utils/transfer';
-import { IssueStatus, useDownloadManagerStore } from '../../zustand/download/downloadManager.store';
+import { useDownloadManagerStore } from '../../zustand/download/downloadManager.store';
 import type { DownloadController } from './DownloadManager';
 import type { ArchiveItem, ArchiveTracker, DownloadQueueTask, DownloadScheduler } from './downloadTypes';
 import type { MalwareDetection } from './malwareDetection/malwareDetection';
 import { createAsyncQueue } from './utils/asyncQueue';
+import { createFileDownloadStream } from './utils/createFileDownloadStream';
 import { downloadLogDebug } from './utils/downloadLogger';
-import { getDownloadSdk } from './utils/getDownloadSdk';
 import { getNodeStorageSize } from './utils/getNodeStorageSize';
+import { validateDownloadSignatures } from './utils/handleDownloadCompletion';
 import { handleDownloadError } from './utils/handleError';
 import { getNodeModifiedTime } from './utils/nodeHelpers';
-import {
-    addAndWaitForManifestIssueDecision,
-    addAndWaitForMetadataIssueDecision,
-    detectMetadataSignatureIssue,
-} from './utils/signatureIssues';
+import { checkMetadataSignature } from './utils/validateSignatures';
 import { waitForUnsupportedFileDecision } from './utils/waitForUserDecision';
 
 export type { ArchiveItem, ArchiveTracker } from './downloadTypes';
@@ -189,87 +186,60 @@ export class ArchiveStreamGenerator {
      */
     private async createArchiveItem(taskId: string, node: NodeEntity, parentPath: string[]): Promise<ArchiveItem> {
         if (node.type !== NodeType.File && node.type !== NodeType.Photo) {
-            const metadataIssueError = detectMetadataSignatureIssue(node);
-            if (metadataIssueError !== undefined) {
-                const decision = await addAndWaitForMetadataIssueDecision(this.downloadId, node, metadataIssueError);
-                if (decision === IssueStatus.Approved) {
-                    return { isFile: false, name: node.name, parentPath };
-                } else {
-                    // This is user cancellation
+            await checkMetadataSignature(
+                this.downloadId,
+                node,
+                () => {},
+                () => {
                     const error = new TransferCancel({ id: this.downloadId });
                     this.abortController.abort(error);
                     throw error;
                 }
-            } else {
-                return { isFile: false, name: node.name, parentPath };
-            }
+            );
+            return { isFile: false, name: node.name, parentPath };
         }
         const { getQueueItem } = useDownloadManagerStore.getState();
-        const drive = getDownloadSdk(this.downloadId);
-        const downloader = await drive.getFileDownloader(node.uid, this.abortController.signal);
-        const claimedSize = downloader.getClaimedSizeInBytes();
 
-        const transformStream = new TransformStream<Uint8Array<ArrayBuffer>>();
-        const streamWriter = transformStream.writable.getWriter();
-        let writerClosed = false;
-        // SDK expects a WritableStream, so wrap our writer while keeping control over it
-        const writableForDownloader = new WritableStream<Uint8Array<ArrayBuffer>>({
-            write(chunk) {
-                return streamWriter.write(chunk);
+        const { stream, controller, claimedSize, closeWriter, abortWriter } = await createFileDownloadStream({
+            downloadId: this.downloadId,
+            node,
+            abortSignal: this.abortController.signal,
+            onProgress: (downloadedBytes) => {
+                this.tracker.updateDownloadProgress(taskId, downloadedBytes, this.totalClaimedSize);
+                this.scheduler.updateDownloadProgress(taskId, downloadedBytes);
             },
-            close() {
-                writerClosed = true;
-                return streamWriter.close();
-            },
-            abort(reason) {
-                writerClosed = true;
-                return streamWriter.abort(reason);
-            },
+            malwareDetection: this.malwareDetection,
         });
 
         this.tracker.registerFile(taskId);
 
-        const controller = downloader.downloadToStream(writableForDownloader, (downloadedBytes) => {
-            this.tracker.updateDownloadProgress(taskId, downloadedBytes, this.totalClaimedSize);
-            this.scheduler.updateDownloadProgress(taskId, downloadedBytes);
-        });
         const queueItem = getQueueItem(this.downloadId);
 
         const completeIndividualFile = async () => {
             try {
-                if (queueItem?.shouldScanForMalware) {
-                    await this.malwareDetection.checkMalware(this.downloadId, node);
-                    await this.malwareDetection.getPendingDecisionPromise(this.downloadId);
-                }
-
-                await controller.completion();
+                await validateDownloadSignatures({
+                    downloadId: this.downloadId,
+                    node,
+                    controller,
+                    onApproved: closeWriter,
+                    onRejected: () => {
+                        const error = new TransferCancel({ id: this.downloadId });
+                        this.abortController.abort(error);
+                        throw error;
+                    },
+                    onError: (error) => {
+                        abortWriter(error);
+                        handleDownloadError(this.downloadId, [node], error, this.abortController.signal.aborted);
+                        this.handleTrackerError(error);
+                        this.archiveItemsQueue.error(error);
+                    },
+                });
             } catch (error) {
-                // Manifest issues cannot be inferred by metadata, can only be thrown when completing the download
+                // If download completion throws, mark signature issues if applicable
                 if (controller.isDownloadCompleteWithSignatureIssues()) {
                     this.hasSignatureIssues = true;
-                    const decision = await addAndWaitForManifestIssueDecision(this.downloadId, node);
-                    writerClosed = true;
-                    if (decision === IssueStatus.Approved) {
-                        void streamWriter.close();
-                    } else {
-                        // This is user cancellation
-                        void streamWriter.abort(new TransferCancel({ id: this.downloadId }));
-                    }
-                } else {
-                    void streamWriter.abort(error);
-                    handleDownloadError(this.downloadId, [node], error, this.abortController.signal.aborted);
-                    this.handleTrackerError(error);
-                    this.archiveItemsQueue.error(error);
-                    throw error;
                 }
-            } finally {
-                if (!writerClosed) {
-                    // writableForDownloader is locked by the SDK so we can't close it,
-                    // but we own the underlying streamWriter so we can close that
-                    streamWriter.close().catch(() => {
-                        downloadLogDebug('Download error on closing streamWriter', { downloadId: this.downloadId });
-                    });
-                }
+                throw error;
             }
         };
 
@@ -277,20 +247,7 @@ export class ArchiveStreamGenerator {
             await waitForUnsupportedFileDecision(this.downloadId, completeIndividualFile);
         }
 
-        const metadataIssueError = detectMetadataSignatureIssue(node);
-        if (metadataIssueError !== undefined) {
-            const decision = await addAndWaitForMetadataIssueDecision(this.downloadId, node, metadataIssueError);
-            if (decision === IssueStatus.Approved) {
-                void completeIndividualFile();
-            } else {
-                // This is user cancellation
-                const error = new TransferCancel({ id: this.downloadId });
-                this.abortController.abort(error);
-                throw error;
-            }
-        } else {
-            void completeIndividualFile();
-        }
+        void completeIndividualFile();
 
         this.tracker.attachController(taskId, controller);
 
@@ -298,7 +255,7 @@ export class ArchiveStreamGenerator {
             isFile: true,
             name: node.name,
             parentPath,
-            stream: transformStream.readable,
+            stream,
             fileModifyTime: getNodeModifiedTime(node),
             claimedSize,
         };
