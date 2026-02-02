@@ -30,6 +30,7 @@ import type { CellInterface } from '@rowsncolumns/grid'
 import { Direction, isCellWithinBounds, isEqualCells, selectionFromActiveCell } from '@rowsncolumns/grid'
 import { useApplication } from '../ApplicationProvider'
 import type { LoggerInterface } from '@proton/utils/logs'
+import * as Ariakit from '@ariakit/react'
 
 type PatternSpec = {
   type: NonNullable<CellFormat['numberFormat']>['type']
@@ -196,6 +197,8 @@ export function useProtonSheetsUIState(
   const [showInsertLinkDialog, setShowInsertLinkDialog] = useState(false)
   const [insertLinkCell, setInsertLinkCell] = useState<CellInterface>(() => state.activeCell)
   const [deleteSheetId, setDeleteSheetId] = useState<number | undefined>(undefined)
+  const spreadsheetSettingsDialogStore = Ariakit.useDialogStore()
+
   const view = {
     formulaBar: {
       enabled: showFormulaBar,
@@ -229,6 +232,9 @@ export function useProtonSheetsUIState(
         setInsertLinkCell(cell ?? state.activeCell)
       }),
       close: useEvent(() => setShowInsertLinkDialog(false)),
+    },
+    spreadsheetSettingsDialog: {
+      store: spreadsheetSettingsDialogStore,
     },
     deleteSheetConfirmation: {
       sheetId: deleteSheetId,
