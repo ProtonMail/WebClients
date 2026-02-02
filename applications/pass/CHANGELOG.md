@@ -1,3 +1,10 @@
+### Version 1.34.1
+
+- Support offline mode for all users
+- Support enforcing a single personal vault policy for B2B users
+- Fix importing file attachments from 1Password "Document" item
+- Improve date format display in multiple languages
+
 ### Version 1.33.5
 
 - Improve connectivity retry logic
