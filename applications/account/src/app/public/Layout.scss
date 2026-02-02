@@ -14,7 +14,18 @@ im.$media-expressions: $media-expressions;
 	transform: translateZ(0); // to be rendered by GPU
 	// main content
 	transition: max-inline-size 0.15s easing(ease-in);
-	border-radius: var(--border-radius-lg);
+	border-radius: calc(var(--border-radius-xl) * 1.5);
+	background: var(--background-norm);
+
+	@include im.media('>xsmall') {
+		background: var(--background-elevated);
+	}
+
+	[data-theme-mode='dark'] & {
+		@include im.media('>xsmall') {
+			border: 1px solid var(--border-weak);
+		}
+	}
 
 	&-main-header {
 		display: flex;
@@ -22,14 +33,16 @@ im.$media-expressions: $media-expressions;
 		justify-content: space-between;
 		align-items: center;
 
-		@include im.media('>xsmall') {
-			display: grid;
-			grid-template-columns: repeat(3, minmax(auto, 100%));
-			justify-content: space-between;
-		}
+		&-grid {
+			@include im.media('>xsmall') {
+				display: grid;
+				grid-template-columns: repeat(3, minmax(auto, 100%));
+				justify-content: space-between;
+			}
 
-		@include im.media('>small') {
-			grid-template-columns: 30vw minmax(max-content, 100%) 30vw;
+			@include im.media('>small') {
+				grid-template-columns: 30vw minmax(max-content, 100%) 30vw;
+			}
 		}
 
 		> * {
@@ -39,7 +52,6 @@ im.$media-expressions: $media-expressions;
 
 		> div:last-child {
 			display: flex;
-			flex-wrap: wrap;
 			justify-self: flex-end;
 
 			> * {
@@ -52,6 +64,14 @@ im.$media-expressions: $media-expressions;
 	&-bg {
 		@include im.media('>xsmall') {
 			background: linear-gradient(68.66deg, #e8e2ff 1.3%, #f7f5ff 50%);
+		}
+
+		[data-theme-mode='dark'] & {
+			@include im.media('>xsmall') {
+				--scrollbar-thumb-color: #413085;
+
+				background: radial-gradient(#221850 15%, #191333 35%, var(--background-lowered));
+			}
 		}
 
 		&--dark {

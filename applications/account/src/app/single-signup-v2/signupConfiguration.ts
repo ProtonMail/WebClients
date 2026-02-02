@@ -4,7 +4,7 @@ import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
 import type { Audience, VPNServersCountData } from '@proton/shared/lib/interfaces';
 
-import type { PublicTheme } from '../containers/PublicThemeProvider';
+import type { SignupV2Theme } from './SignupV2ThemeProvider';
 import { getAuthenticatorConfiguration } from './authenticator/configuration';
 import { getDriveConfiguration } from './drive/configuration';
 import { getGenericConfiguration } from './generic/configuration';
@@ -32,7 +32,7 @@ export const getSignupConfiguration = ({
     audience: Audience.B2B | Audience.B2C;
     vpnServersCountData: VPNServersCountData;
     viewportWidth: any; // todo lazy
-    theme: PublicTheme;
+    theme: SignupV2Theme;
     isNewB2BPlanEnabled: boolean;
     isMeetPlansEnabled: boolean;
 }) => {

@@ -20,7 +20,7 @@ import { FlagProvider } from '@proton/unleash';
 import config from '../config';
 import type { AccountStore } from '../store/store';
 import { extraThunkArguments } from '../store/thunk';
-import AccountLoaderPage from './AccountLoaderPage';
+import PrivateAppLoaderPage from './PrivateAppLoaderPage';
 import { bootstrapApp } from './bootstrap';
 
 const LazyMainContainer = lazy(
@@ -64,7 +64,7 @@ const PrivateApp = () => {
                 if (state.error) {
                     return <StandardLoadErrorPage errorMessage={state.error.message} />;
                 }
-                const loader = <AccountLoaderPage />;
+                const loader = <PrivateAppLoaderPage />;
                 if (!state.store) {
                     return loader;
                 }

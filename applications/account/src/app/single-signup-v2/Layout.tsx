@@ -6,10 +6,10 @@ import { PublicTopBanners } from '@proton/components';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
-import { usePublicTheme } from '../containers/PublicThemeProvider';
 import LayoutLogosV2 from '../public/LayoutLogosV2';
 import Box from './Box';
 import LayoutHeader from './LayoutHeader';
+import { useSignupV2Theme } from './SignupV2ThemeProvider';
 
 import './Layout.scss';
 
@@ -40,22 +40,22 @@ const Layout = ({
     bottomRight,
     className,
 }: Props) => {
-    const theme = usePublicTheme();
+    const signupV2Theme = useSignupV2Theme();
     return (
         <div
             className={clsx(
                 'flex *:min-size-auto flex-nowrap flex-column h-full overflow-auto relative signup-v2-wrapper',
-                theme.background === 'bf' && 'signup-v2-bg--bf2025',
-                theme.background === 'b2b' && 'signup-v2-bg--b2b',
-                theme.layout.className,
-                !theme.background && 'signup-v2-bg',
-                theme.intent && `signup-v2-bg--${theme.intent.replace('proton-', '')}`,
+                signupV2Theme.background === 'bf' && 'signup-v2-bg--bf2025',
+                signupV2Theme.background === 'b2b' && 'signup-v2-bg--b2b',
+                signupV2Theme.layout.className,
+                !signupV2Theme.background && 'signup-v2-bg',
+                signupV2Theme.intent && `signup-v2-bg--${signupV2Theme.intent.replace('proton-', '')}`,
                 className
             )}
         >
             <PublicTopBanners />
             <LayoutHeader
-                isDarkBg={theme.dark}
+                isDarkBg={signupV2Theme.dark}
                 hasDecoration={hasDecoration}
                 className={headerClassName}
                 onBack={onBack}

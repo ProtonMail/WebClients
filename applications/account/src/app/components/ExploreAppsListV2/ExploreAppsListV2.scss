@@ -177,7 +177,7 @@ im.$media-expressions: $media-expressions;
 		inset-block-start: -0.625rem;
 		transition: transform var(--transition-duration) ease;
 		transform: translateY(0);
-		background-color: rgb(255 255 255 / 0.5);
+		background-color: rgb(255 255 255 / 0.66);
 		backdrop-filter: blur(0.19rem);
 		color: var(--text-norm);
 
@@ -196,7 +196,7 @@ im.$media-expressions: $media-expressions;
 			background: var(--gradient-hover);
 			background-size: 150%;
 			border-radius: inherit;
-			opacity: 0.5;
+			opacity: 0.7;
 			z-index: -1;
 		}
 	}

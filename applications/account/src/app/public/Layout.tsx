@@ -7,11 +7,12 @@ import { Logo, ProtonLogo, PublicTopBanners, getAppVersion, useConfig, useTheme 
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
 import { addDesktopAppVersion } from '@proton/shared/lib/desktop/version';
-import { isElectronApp, isElectronMail, isElectronOnMac } from '@proton/shared/lib/helpers/desktop';
+import { isElectronMail, isElectronOnMac } from '@proton/shared/lib/helpers/desktop';
 import { getStaticURL } from '@proton/shared/lib/helpers/url';
 import { locales } from '@proton/shared/lib/i18n/locales';
 import clsx from '@proton/utils/clsx';
 
+import { ThemeToggleDropdown } from '../content/theme/ThemeToggleDropdown';
 import BackButton from './BackButton';
 import LanguageSelect from './LanguageSelect';
 import LayoutFooter from './LayoutFooter';
@@ -25,6 +26,7 @@ export interface Props {
     bottomRight?: ReactNode;
     topRight?: ReactNode;
     hasDecoration?: boolean;
+    hasThemeToggle?: boolean;
     onBack?: () => void;
     hasWelcome?: boolean;
     headerClassName?: string;
@@ -66,6 +68,7 @@ const Layout = ({
     centeredContent,
     layoutClassName,
     topRight,
+    hasThemeToggle = true,
 }: Props) => {
     const { APP_VERSION, APP_NAME } = useConfig();
     const appVersion = getAppVersion(APP_VERSION);
@@ -74,10 +77,7 @@ const Layout = ({
     const theme = useTheme();
 
     const protonLogo = (
-        <ProtonLogo
-            color={isElectronApp && theme.information.dark ? 'invert' : undefined}
-            className={clsx(onBack && 'ml-4 md:ml-0')}
-        />
+        <ProtonLogo color={theme.information.dark ? 'invert' : undefined} className={clsx(onBack && 'ml-4 md:ml-0')} />
     );
 
     const protonLogoBrand = (() => {
@@ -96,7 +96,7 @@ const Layout = ({
             return (
                 <Logo
                     appName={toApp}
-                    color={isElectronApp && theme.information.dark ? 'invert' : undefined}
+                    color={theme.information.dark ? 'invert' : undefined}
                     className={clsx(onBack && 'ml-4 md:ml-0')}
                     fallback={protonLogo}
                 />
@@ -109,8 +109,7 @@ const Layout = ({
     return (
         <div
             className={clsx(
-                'flex *:min-size-auto flex-nowrap flex-column h-full overflow-auto relative sign-layout-bg',
-                theme.information.dark && 'sign-layout-bg--dark',
+                'flex *:min-size-auto flex-nowrap flex-column h-full overflow-auto relative ui-standard sign-layout-bg',
                 layoutClassName
             )}
         >
@@ -118,7 +117,8 @@ const Layout = ({
             <header
                 className={clsx(
                     headerClassName,
-                    'sign-layout-main-header gap-1 sm:gap-4 px-6 py-3 lg:px-12 md:pt-5 md:pb-10 mb-2 md:mb-0'
+                    'sign-layout-main-header gap-2 sm:gap-4 px-4 sm:px-6 py-3 lg:px-12 md:pt-5 md:pb-10 mb-2 md:mb-0',
+                    stepper ? 'sign-layout-main-header-grid' : undefined
                 )}
             >
                 <div className="inline-flex flex-nowrap shrink-0">
@@ -139,19 +139,14 @@ const Layout = ({
                         <div className={clsx('shrink-0', isElectronOnMac && 'md:pl-14 lg:pl-8')}>{protonLogoBrand}</div>
                     )}
                 </div>
-                <div>
-                    <div className="hidden md:block">{stepper}</div>
-                </div>
-                <div>
-                    {topRight ||
-                        (hasDecoration && (
-                            <LanguageSelect
-                                className="signup-link mr-custom"
-                                style={{ '--mr-custom': 'calc(var(--space-3) * -1)' }}
-                                globe
-                                locales={locales}
-                            />
-                        ))}
+                {stepper && (
+                    <div>
+                        <div className="hidden md:block">{stepper}</div>
+                    </div>
+                )}
+                <div className="flex items-center gap-1 flex-nowrap">
+                    {topRight || (hasDecoration && <LanguageSelect className="signup-link" globe locales={locales} />)}
+                    {hasThemeToggle && <ThemeToggleDropdown />}
                 </div>
             </header>
             <div
@@ -172,7 +167,7 @@ const Layout = ({
             {hasDecoration ? (
                 <>
                     <LayoutFooter app={toApp || APP_NAME} className="shrink-0 text-center p-4" version={version} />
-                    <div className="static lg:fixed m-0 lg:m-8 lg:mr-12 mb-4 lg:mb-12 bottom-0 right-0 text-center lg:text-right text-sm sm:text-rg">
+                    <div className="static lg:fixed m-0 lg:m-8 lg:mr-12 mb-4 lg:mb-12 bottom-0 right-0 text-center lg:text-right">
                         {bottomRight}
                     </div>
                     <p

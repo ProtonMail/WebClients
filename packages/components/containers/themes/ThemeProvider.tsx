@@ -3,6 +3,7 @@ import { createContext, useCallback, useContext, useEffect, useLayoutEffect, use
 
 import isDeepEqual from 'lodash/isEqual';
 
+import { getStoredThemeString, setStoredThemeString } from '@proton/components/containers/themes/themeCookieStorage';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
 import {
@@ -12,11 +13,9 @@ import {
     invokeInboxDesktopIPC,
 } from '@proton/shared/lib/desktop/ipcHelpers';
 import { clearBit, hasBit, setBit } from '@proton/shared/lib/helpers/bitset';
-import { getCookie, setCookie } from '@proton/shared/lib/helpers/cookies';
 import { isElectronMail, isElectronOnSupportedApps } from '@proton/shared/lib/helpers/desktop';
 import { updateElectronThemeModeClassnames } from '@proton/shared/lib/helpers/initElectronClassnames';
 import createListeners from '@proton/shared/lib/helpers/listeners';
-import { getSecondLevelDomain } from '@proton/shared/lib/helpers/url';
 import {
     ColorScheme,
     MotionModeSetting,
@@ -72,6 +71,8 @@ export const ThemeContext = createContext<ThemeContextInterface>({
 interface Props {
     appName: APP_NAMES;
     children: ReactNode;
+    persist?: boolean;
+    initialThemeSetting?: ThemeSetting | (() => ThemeSetting);
 }
 
 export const useTheme = () => {
@@ -81,10 +82,6 @@ export const useTheme = () => {
 export const getThemeStyle = (themeType: ThemeTypes = PROTON_DEFAULT_THEME) => {
     return PROTON_THEMES_MAP[themeType]?.theme || PROTON_THEMES_MAP[PROTON_DEFAULT_THEME].theme;
 };
-
-const THEME_COOKIE_NAME = 'Theme';
-
-const storedTheme = getCookie(THEME_COOKIE_NAME);
 
 export const THEME_ID = 'theme-root';
 
@@ -131,10 +128,21 @@ const darkThemes = getDarkThemes();
 
 const prominentHeaderThemes = getProminentHeaderThemes();
 
-const ThemeProvider = ({ children, appName }: Props) => {
-    const [themeSetting, setThemeSettingDefault] = useState(() => {
-        return getParsedThemeSetting(storedTheme);
-    });
+const syncToCookie = (themeSetting: ThemeSetting) => {
+    setStoredThemeString(serializeThemeSetting(themeSetting));
+};
+
+const defaultInitialThemeSetting = () => {
+    return getParsedThemeSetting(getStoredThemeString());
+};
+
+const ThemeProvider = ({
+    children,
+    appName,
+    persist = true,
+    initialThemeSetting = defaultInitialThemeSetting,
+}: Props) => {
+    const [themeSetting, setThemeSettingDefault] = useState(initialThemeSetting);
 
     const constrainedThemeSettings: ThemeSetting = useMemo(() => {
         // We want to Proton Wallet to inherit from all theme settings except styles
@@ -320,19 +328,9 @@ const ThemeProvider = ({ children, appName }: Props) => {
     }, []);
 
     useEffect(() => {
-        const syncToCookie = () => {
-            const cookieValue = serializeThemeSetting(themeSetting);
-            // Note: We might set `undefined` which will clear the cookie
-            setCookie({
-                cookieName: THEME_COOKIE_NAME,
-                cookieValue,
-                cookieDomain: getSecondLevelDomain(window.location.hostname),
-                path: '/',
-                expirationDate: 'max',
-            });
-        };
-
-        syncToCookie();
+        if (persist) {
+            syncToCookie(themeSetting);
+        }
     }, [themeSetting]);
 
     useEffect(() => {
