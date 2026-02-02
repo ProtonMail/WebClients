@@ -139,7 +139,7 @@ export const Input = createComponent(function Input(props: ComponentPropsWithRef
   )
 })
 
-function SelectFallbackLabel() {
+export function SelectFallbackLabel() {
   const store = Ariakit.useSelectContext()
   const items = Ariakit.useStoreState(store, (s) => s?.items)
   const value = Ariakit.useStoreState(store, (s) => s?.value)

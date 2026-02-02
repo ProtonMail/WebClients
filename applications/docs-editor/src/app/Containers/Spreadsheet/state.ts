@@ -308,6 +308,7 @@ export function useProtonSheetsState(deps: ProtonSheetsStateDependencies) {
   const locale = {
     account: localeAccount,
     auto: localeAuto,
+    value: kv.locale ?? 'auto',
     resolved: localeResolved,
     currency: localeCurrency,
   }

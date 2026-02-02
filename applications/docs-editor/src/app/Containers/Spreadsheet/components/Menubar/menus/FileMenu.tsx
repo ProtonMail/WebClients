@@ -9,6 +9,7 @@ import { reportErrorToSentry } from '../../../../../Utils/errorMessage'
 import useLoading from '@proton/hooks/useLoading'
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader'
 import { useApplication } from '../../../../ApplicationProvider'
+import { useUI } from '../../../ui-store'
 
 const { s } = createStringifier(strings)
 
@@ -126,6 +127,7 @@ export function FileMenu({ renderMenuButton, clientInvoker, isPublicMode, ...pro
         </UI.MenuItem>
         <DownloadSubmenu triggerMenuAction={triggerMenuAction} clientInvoker={clientInvoker} />
         <UI.MenuSeparator />
+        <SpreadsheetSettings />
         <UI.MenuItem
           leadingIconSlot={<UI.Icon legacyName="info-circle" />}
           onClick={() => {
@@ -331,6 +333,19 @@ function DownloadSubmenu({
   )
 }
 
+function SpreadsheetSettings() {
+  const isReadonly = useUI((state) => state.info.isReadonly)
+  const store = useUI((ui) => ui.view.spreadsheetSettingsDialog.store)
+
+  return (
+    <Ariakit.DialogDisclosure
+      store={store}
+      disabled={isReadonly}
+      render={<UI.MenuItem leadingIconSlot={<UI.Icon legacyName="cog-wheel" />}>{s('Settings')}</UI.MenuItem>}
+    />
+  )
+}
+
 function strings() {
   return {
     'New spreadsheet': c('sheets_2025:Spreadsheet editor menubar file menu').t`New spreadsheet`,
@@ -353,5 +368,6 @@ function strings() {
     'Open Proton Drive': c('sheets_2025:Spreadsheet editor menubar file menu').t`Open ${DRIVE_APP_NAME}`,
     'Download logs': c('sheets_2025:Spreadsheet editor menubar file menu').t`Download logs`,
     'Toggle debug mode': c('sheets_2025:Spreadsheet editor menubar file menu').t`Toggle debug mode`,
+    Settings: c('sheets_2025:Spreadsheet editor menubar file menu').t`Settings`,
   }
 }
