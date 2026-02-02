@@ -63,9 +63,9 @@ const getPromptKeyPinningType = ({
     const senderHasPinnedKeys = !!senderPinnedKeys.length;
     const firstAttachedPublicKey = attachedPublicKeys.length ? attachedPublicKeys[0] : undefined;
     const isSignedByAttachedKey =
-        !!signingPublicKey && attachedPublicKeys?.some((key) => signingPublicKey?.equals(key));
+        !!signingPublicKey && attachedPublicKeys?.some((key) => signingPublicKey?.equals(key, true));
     const isAttachedKeyPinned =
-        firstAttachedPublicKey && senderPinnedKeys.some((key) => firstAttachedPublicKey.equals(key));
+        firstAttachedPublicKey && senderPinnedKeys.some((key) => firstAttachedPublicKey.equals(key, true));
 
     switch (verificationStatus) {
         case undefined:
@@ -177,7 +177,7 @@ const ExtraPinKey = ({ message, messageVerification }: Props) => {
     // Prevent to propose an already pinned key even if for a strange reason,
     // the suggested key is already pinned yet the verification still fails
     const signingPublicKeyAlreadyPinned = messageVerification?.senderPinnedKeys?.some((pinKey) =>
-        bePinnedPublicKey?.equals(pinKey)
+        bePinnedPublicKey?.equals(pinKey, true)
     );
 
     const contact = useMemo<ContactWithBePinnedPublicKey>(() => {

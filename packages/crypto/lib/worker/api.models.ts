@@ -243,7 +243,7 @@ export interface KeyReference {
      * as well as same certification signatures, namely same expiration time, capabilities, algorithm preferences etc.
      * @param [ignoreOtherCerts] - whether third-party certifications (e.g. from Proton CA) should be ignored.
      */
-    equals(otherKey: KeyReference, ignoreOtherCerts?: boolean): boolean;
+    equals(otherKey: KeyReference, ignoreOtherCerts: boolean): boolean;
     subkeys: {
         getAlgorithmInfo(): AlgorithmInfo;
         getKeyID(): KeyID;
