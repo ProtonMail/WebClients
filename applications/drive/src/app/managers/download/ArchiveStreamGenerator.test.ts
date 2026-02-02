@@ -68,8 +68,9 @@ const schedulerTracker = trackInstances(() => {
 
 const createMalwareDetectionMock = () =>
     ({
-        checkMalware: jest.fn(() => Promise.resolve(undefined)),
-        getPendingDecisionPromise: jest.fn(() => Promise.resolve(undefined)),
+        wrapStream: jest.fn((_, __, stream) => stream),
+        resolveDecision: jest.fn(),
+        rejectPending: jest.fn(),
     }) as unknown as MalwareDetection;
 
 describe('ArchiveStreamGenerator', () => {

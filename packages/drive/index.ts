@@ -62,6 +62,7 @@ export type {
     BookmarkOrUid,
     DriveEvent,
     UploadController,
+    DownloadController,
     Result,
     SeekableReadableStream,
     PhotoNode,
