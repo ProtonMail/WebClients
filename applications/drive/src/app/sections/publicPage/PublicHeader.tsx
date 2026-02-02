@@ -3,7 +3,6 @@ import type { ReactNode } from 'react';
 import { c } from 'ttag';
 import { useShallow } from 'zustand/react/shallow';
 
-import { Button } from '@proton/atoms/Button/Button';
 import { Vr } from '@proton/atoms/Vr/Vr';
 import { usePopperAnchor } from '@proton/components';
 import DriveLogo from '@proton/components/components/logo/DriveLogo';
@@ -15,7 +14,9 @@ import { IcPlus } from '@proton/icons/icons/IcPlus';
 import { UploadCreateDropdown } from '../../statelessComponents/UploadCreateDropdown/UploadCreateDropdown';
 import { CopyLinkButton } from '../commonButtons/CopyLinkButton';
 import { DetailsButton } from '../commonButtons/DetailsButton';
+import { BookmarkButton } from './BookmarkButton';
 import { CreateAccountButton } from './CreateAccountButton';
+import { GoBackButton } from './GoBackButton';
 import { UserInfo } from './UserInfo';
 import { usePublicAuthStore } from './usePublicAuth.store';
 
@@ -30,6 +31,8 @@ export interface PublicHeaderProps {
     onCreateFolder?: () => void;
     nbSelected?: number;
     isEmptyView?: boolean;
+    customPassword?: string;
+    isPartialView?: boolean;
 }
 
 export const PublicHeader = ({
@@ -43,6 +46,8 @@ export const PublicHeader = ({
     onCreateFolder,
     nbSelected,
     isEmptyView = false,
+    customPassword,
+    isPartialView = false,
 }: PublicHeaderProps) => {
     const downloadCopy =
         nbSelected && nbSelected > 1 ? c('Action').t`Download (${nbSelected})` : c('Action').t`Download`;
@@ -51,53 +56,59 @@ export const PublicHeader = ({
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
 
     return (
-        <div className="flex justify-space-between my-4">
-            <div className="flex flex-column">
-                <div className="flex items-center gap-1">
-                    <DriveLogo to="/" variant="glyph-only" />
-                    {breadcrumbOrName}
-                </div>
+        <>
+            {isPartialView && <GoBackButton />}
+            <div className="flex justify-space-between my-4">
+                <div className="flex flex-column">
+                    <div className="flex items-center gap-1">
+                        <DriveLogo to="/" variant="glyph-only" />
+                        {breadcrumbOrName}
+                    </div>
 
-                {sharedBy && (
-                    <span className="flex gap-1 ml-11 pl-0.5 color-weak mt-1">
-                        {c('Subtitle').t`Shared by ${sharedBy}`}
-                        <span className="text-norm mx-1">&#x2022;</span>
-                        {c('Info').t`End-to-end encrypted`}
-                    </span>
-                )}
-            </div>
-            <div className="flex gap-2 items-center">
-                <Toolbar className="h-auto toolbar--heavy toolbar--in-container">
-                    <CopyLinkButton buttonType="toolbar" onClick={onCopyLink} />
-                    {showUploadActions && (
+                    {sharedBy && (
+                        <span className="flex gap-1 ml-11 pl-0.5 color-weak">
+                            {c('Subtitle').t`Shared by ${sharedBy}`}
+                            <span className="text-norm mx-1">&#x2022;</span>
+                            {c('Info').t`End-to-end encrypted`}
+                        </span>
+                    )}
+                </div>
+                <div className="flex gap-2 items-center">
+                    {!isPartialView && (
                         <>
-                            <ToolbarButton
-                                icon={<IcPlus size={4} />}
-                                ref={anchorRef}
-                                onClick={toggle}
-                                title={c('Action').t`Create`}
-                            />
-                            <UploadCreateDropdown
-                                onUploadFile={onUploadFile}
-                                onUploadFolder={onUploadFolder}
-                                onCreateFolder={onCreateFolder}
-                                anchorRef={anchorRef}
-                                isOpen={isOpen}
-                                onClose={close}
-                            />
+                            <Toolbar className="h-auto toolbar--heavy toolbar--in-container">
+                                <CopyLinkButton buttonType="toolbar" onClick={onCopyLink} />
+                                {showUploadActions && (
+                                    <>
+                                        <ToolbarButton
+                                            icon={<IcPlus size={4} />}
+                                            ref={anchorRef}
+                                            onClick={toggle}
+                                            title={c('Action').t`Create`}
+                                        />
+                                        <UploadCreateDropdown
+                                            onUploadFile={onUploadFile}
+                                            onUploadFolder={onUploadFolder}
+                                            onCreateFolder={onCreateFolder}
+                                            anchorRef={anchorRef}
+                                            isOpen={isOpen}
+                                            onClose={close}
+                                        />
+                                    </>
+                                )}
+                                {onDetails && <DetailsButton buttonType="toolbar" onClick={onDetails} />}
+                                <ToolbarButton onClick={onDownload} disabled={isEmptyView}>
+                                    <IcArrowDownLine className="mr-2" size={4} />
+                                    {downloadCopy}
+                                </ToolbarButton>
+                            </Toolbar>
+                            <Vr className="h-custom" style={{ '--h-custom': '2.25rem' }} />
+                            <BookmarkButton customPassword={customPassword} />
+                            {userAddress ? <UserInfo userAddress={userAddress} /> : <CreateAccountButton />}
                         </>
                     )}
-                    {onDetails && <DetailsButton buttonType="toolbar" onClick={onDetails} />}
-                    <ToolbarButton onClick={onDownload} disabled={isEmptyView}>
-                        <IcArrowDownLine className="mr-2" size={4} />
-                        {downloadCopy}
-                    </ToolbarButton>
-                </Toolbar>
-                <Vr className="h-custom" style={{ '--h-custom': '2.25rem' }} />
-                <Button shape="solid" onClick={() => alert('Not implemented yet')}>{c('Action')
-                    .t`Save for later`}</Button>
-                {userAddress ? <UserInfo userAddress={userAddress} /> : <CreateAccountButton />}
+                </div>
             </div>
-        </div>
+        </>
     );
 };

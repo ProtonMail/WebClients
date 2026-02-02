@@ -1,12 +1,11 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom-v5-compat';
 
-import { useTheme } from '@proton/components';
+import { useAppTitle, useTheme } from '@proton/components';
 import { NodeType, useDrive } from '@proton/drive';
 import { ThemeTypes } from '@proton/shared/lib/themes/constants';
 import useFlag from '@proton/unleash/useFlag';
 
-import { ErrorPage, LoadingPage, PasswordPage } from '../../components/SharedPage';
 import config from '../../config';
 import LocationErrorBoundary from '../../containers/LocationErrorBoundary';
 import PublicSharedLinkContainerLegacy from '../../containers/PublicSharedLinkContainerLegacy';
@@ -16,6 +15,9 @@ import { TransferManager } from '../../sections/transferManager/TransferManager'
 import { deleteStoredUrlPassword } from '../../utils/url/password';
 import { PublicFileView } from './PublicFileView';
 import { PublicFolderView } from './PublicFolderView';
+import { PublicPageError } from './PublicPageError';
+import { PublicPageLoader } from './PublicPageLoader';
+import { PublicPagePassword } from './PublicPagePassword';
 import { usePublicAuthSession } from './usePublicAuthSession';
 import { usePublicLink } from './usePublicLink';
 
@@ -24,11 +26,12 @@ export const PUBLIC_SHARE_SIGNUP_MODAL_KEY = 'public-share-signup-modal';
 const PublicPageContent = () => {
     const { drive, init } = useDrive();
     const { setTheme } = useTheme();
-    const isPartialView = usePartialPublicView();
-
     const { resumeSession } = usePublicAuthSession();
     const { rootNode, isLoading, isPasswordNeeded, setCustomPassword, customPassword, loadPublicLink } =
         usePublicLink();
+    const isPartialView = usePartialPublicView();
+
+    useAppTitle(rootNode?.name);
 
     useEffect(() => {
         if (!drive) {
@@ -55,28 +58,23 @@ const PublicPageContent = () => {
     }, [setTheme]);
 
     if (isPasswordNeeded) {
-        return (
-            <PasswordPage
-                submitPassword={async (password) => setCustomPassword(password)}
-                isPartialView={isPartialView}
-            />
-        );
+        return <PublicPagePassword submitPassword={async (password) => setCustomPassword(password)} />;
     }
 
     if (isLoading) {
-        return <LoadingPage haveCustomPassword={!!customPassword} isPartialView={isPartialView} />;
+        return <PublicPageLoader />;
     }
 
     if (!rootNode) {
-        return <ErrorPage isPartialView={isPartialView} />;
+        return <PublicPageError />;
     }
 
     return (
         <div className="h-full px-10 pt-3">
             {rootNode.type === NodeType.File ? (
-                <PublicFileView rootNode={rootNode} />
+                <PublicFileView rootNode={rootNode} customPassword={customPassword} isPartialView={isPartialView} />
             ) : (
-                <PublicFolderView rootNode={rootNode} />
+                <PublicFolderView rootNode={rootNode} customPassword={customPassword} isPartialView={isPartialView} />
             )}
             <TransferManager deprecatedRootShareId={undefined} />
         </div>
