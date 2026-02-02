@@ -14,7 +14,6 @@ import {
     useErrorHandler,
     useEventManager,
     useModalState,
-    useTheme,
 } from '@proton/components';
 import type { AddressGeneration } from '@proton/components/containers/login/interface';
 import { IcBug } from '@proton/icons/icons/IcBug';
@@ -127,7 +126,6 @@ const SetupAddressContainer = () => {
     const authentication = useAuthentication();
     const { stop } = useEventManager();
     const getUser = useGetUser();
-    const { setThemeSetting } = useTheme();
     const dispatch = useDispatch();
 
     const generateAddressRef = useRef<AddressGeneration | undefined>(undefined);
@@ -205,9 +203,6 @@ const SetupAddressContainer = () => {
                 history.replace({ ...location, hash: '' });
             }
 
-            // Special case to reset the user's theme since it's logged in at this point. Does not care about resetting it back since it always redirects back to the application.
-            setThemeSetting();
-
             // Stop the event manager since we're setting a new password (and it'd automatically log out) and we refresh once we're done
             stop();
             generateAddressRef.current = await getAddressGenerationSetup({
@@ -252,7 +247,7 @@ const SetupAddressContainer = () => {
     }
 
     return (
-        <Layout onBack={handleBack} hasDecoration={false} toApp={toApp}>
+        <Layout onBack={handleBack} hasDecoration={false} hasThemeToggle={false} toApp={toApp}>
             <Main>
                 <GenerateAddressStep
                     onBack={handleBack}

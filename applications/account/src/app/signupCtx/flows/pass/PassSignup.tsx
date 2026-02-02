@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
-import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import { useModalState } from '@proton/components/index';
 import { CYCLE } from '@proton/payments';
 import { usePaymentOptimistic } from '@proton/payments/ui';
@@ -11,6 +10,7 @@ import { APPS } from '@proton/shared/lib/constants';
 import { replaceUrl } from '@proton/shared/lib/helpers/browser';
 import { ThemeTypes } from '@proton/shared/lib/themes/constants';
 
+import { SetTheme } from '../../../content/theme/SetTheme';
 import { SignupType } from '../../../signup/interfaces';
 import { type BaseSignupContextProps, SignupContextProvider, useSignup } from '../../context/SignupContext';
 import getAvailablePlansWithCycles from '../../helpers/getAvailablePlansWithCycles';
@@ -110,11 +110,8 @@ const availablePlans = getAvailablePlansWithCycles([passPlus, unlimited, family,
 const PassSignupPage = (props: BaseSignupContextProps) => {
     const location = useLocation();
     const searchParams = new URLSearchParams(location.search);
-    const theme = useTheme();
     const [activeSessions, setActiveSessions] = useState<GetActiveSessionsResult>();
     const [accessModalProps, setHasAccessModal, renderAccessModal] = useModalState();
-
-    useEffect(() => theme.setTheme(ThemeTypes.Carbon), []);
 
     // check if there is an active session already
     useEffect(() => {
@@ -130,37 +127,40 @@ const PassSignupPage = (props: BaseSignupContextProps) => {
     const handleGoToApp = () => replaceUrl(getAppHref('', 'proton-pass', activeSessions?.session?.localID));
 
     return (
-        <SignupContextProvider
-            {...props}
-            app={APPS.PROTONPASS}
-            flowId="pass-generic"
-            onLogin={async (session) => {
-                await props.handleLogin({ data: session, flow: 'signup', appIntent: { app: APPS.PROTONPASS } });
-            }}
-            paymentsDataConfig={{
-                availablePlans,
-                plan: {
-                    planIDs: {}, // free only - empty planIDs means free plan
-                    currency: undefined,
-                    cycle: CYCLE.YEARLY, // free plans still need a cycle value
-                    coupon: undefined,
-                },
-                telemetryContext: 'ctx-signup-pass',
-            }}
-            accountFormDataConfig={{
-                defaultEmail: searchParams.get('email') || '',
-                availableSignupTypes: new Set([SignupType.External, SignupType.Proton]),
-            }}
-        >
-            <PassSignup />
-            {renderAccessModal && (
-                <AccessModal
-                    {...accessModalProps}
-                    onSignOut={async () => setHasAccessModal(false)}
-                    onContinue={handleGoToApp}
-                />
-            )}
-        </SignupContextProvider>
+        <>
+            <SetTheme theme={ThemeTypes.Carbon} />
+            <SignupContextProvider
+                {...props}
+                app={APPS.PROTONPASS}
+                flowId="pass-generic"
+                onLogin={async (session) => {
+                    await props.handleLogin({ data: session, flow: 'signup', appIntent: { app: APPS.PROTONPASS } });
+                }}
+                paymentsDataConfig={{
+                    availablePlans,
+                    plan: {
+                        planIDs: {}, // free only - empty planIDs means free plan
+                        currency: undefined,
+                        cycle: CYCLE.YEARLY, // free plans still need a cycle value
+                        coupon: undefined,
+                    },
+                    telemetryContext: 'ctx-signup-pass',
+                }}
+                accountFormDataConfig={{
+                    defaultEmail: searchParams.get('email') || '',
+                    availableSignupTypes: new Set([SignupType.External, SignupType.Proton]),
+                }}
+            >
+                <PassSignup />
+                {renderAccessModal && (
+                    <AccessModal
+                        {...accessModalProps}
+                        onSignOut={async () => setHasAccessModal(false)}
+                        onContinue={handleGoToApp}
+                    />
+                )}
+            </SignupContextProvider>
+        </>
     );
 };
 

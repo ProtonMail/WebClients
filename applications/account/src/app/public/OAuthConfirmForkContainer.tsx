@@ -19,6 +19,7 @@ interface Props {
 
 const OAuthConfirmForkContainer = ({ name = '', image, onConfirm, onCancel }: Props) => {
     const [loading, withLoading] = useLoading();
+
     const children = (
         <Main>
             <Header

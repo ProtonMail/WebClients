@@ -17,7 +17,7 @@ const UserItem = forwardRef<HTMLButtonElement, UserItemProps>(({ User, ...rest }
             <button
                 type="button"
                 {...rest}
-                className="public-user-item--container w-full max-w-custom flex interactive items-start rounded p-2 text-right relative text-sm"
+                className="public-user-item--container w-full max-w-custom flex interactive items-center rounded p-2 text-right relative text-sm"
                 style={{ '--max-w-custom': '25em' }}
                 ref={ref}
             >

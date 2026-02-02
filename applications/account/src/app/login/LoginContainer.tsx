@@ -46,7 +46,6 @@ import Testflight from './Testflight';
 import TwoFactorStep from './TwoFactorStep';
 import UnlockForm from './UnlockForm';
 import SSOLogin from './sso/SSOLogin';
-import { useLoginTheme } from './useLoginTheme';
 
 export enum RememberMode {
     VisibleDisabled = 0, // default
@@ -260,9 +259,6 @@ const LoginContainer = ({
         toApp,
         step,
     };
-
-    useLoginTheme();
-
     if (isElectronDisabled) {
         return <ElectronBlockedContainer />;
     }

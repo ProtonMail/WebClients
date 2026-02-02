@@ -94,7 +94,6 @@ const ResetPasswordContainer = ({
     const { createNotification } = useNotifications();
     const [persistent] = useLocalState(false, defaultPersistentKey);
     const getKtActivation = useGetAccountKTActivation();
-
     const defaultCountry = useMyCountry();
 
     const createFlow = useFlowRef();

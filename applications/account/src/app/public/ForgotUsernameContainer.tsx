@@ -153,7 +153,6 @@ const ForgotUsernameContainer = ({ toApp, metaTags, onBack, loginUrl, onStartAut
     const defaultCountry = useMyCountry();
 
     const createFlow = useFlowRef();
-
     const handleBackStep = (() => {
         return (
             onBack ||
