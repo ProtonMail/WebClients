@@ -190,7 +190,7 @@ export const addGroupMemberThunk = ({
         const Email = getEmailFromKey(forwardeePublicKey) ?? email;
         const userIDsForForwardeeKey = [{ email: Email, name: Email }];
 
-        if (!member || isPrivate(member)) {
+        if (!member || isPrivate(member) || !organizationKey.privateKey) {
             const { activationToken, forwardeeKey, proxyInstances } = await getInternalParametersPrivate(
                 forwarderKey.privateKey,
                 userIDsForForwardeeKey,
