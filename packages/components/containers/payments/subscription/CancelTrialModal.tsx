@@ -21,7 +21,7 @@ import useVPNServersCount from '@proton/components/hooks/useVPNServersCount';
 import { useAutomaticCurrency } from '@proton/components/payments/client-extensions';
 import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
 import type { FreePlanDefault, PLANS, Plan } from '@proton/payments';
-import { FREE_PLAN, getPlansMap } from '@proton/payments';
+import { FREE_PLAN, PLAN_TYPES, getPlanTitle, getPlansMap } from '@proton/payments';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 
 const FeatureList = () => {
@@ -47,7 +47,7 @@ const FeatureList = () => {
         return null;
     }
 
-    const planName = subscription.Plans[0]?.Name;
+    const planName = subscription.Plans.find((plan) => plan.Type === PLAN_TYPES.PLAN)?.Name;
     const plansMap = getPlansMap(plans, currency, true);
     const shortPlan = getShortPlan(planName as PLANS, plansMap, { vpnServers, freePlan });
     const features = shortPlan?.features.map((feature) => feature.text) ?? [];
@@ -56,7 +56,7 @@ const FeatureList = () => {
         return null;
     }
 
-    const planTitle = subscription?.Plans?.[0]?.Title;
+    const planTitle = getPlanTitle(subscription);
     const boldPlanTitle = (
         <span className="text-bold" key="plan-title">
             {planTitle}
