@@ -18,17 +18,13 @@ import { DownloadDriveClientRegistry } from './DownloadDriveClientRegistry';
 import { DownloadScheduler } from './DownloadScheduler';
 import type { DownloadOptions } from './downloadTypes';
 import { MalwareDetection } from './malwareDetection/malwareDetection';
+import { createFileDownloadStream } from './utils/createFileDownloadStream';
 import { downloadLogDebug } from './utils/downloadLogger';
-import { getDownloadSdk } from './utils/getDownloadSdk';
 import { getNodeStorageSize } from './utils/getNodeStorageSize';
+import { validateDownloadSignatures } from './utils/handleDownloadCompletion';
 import { handleDownloadError } from './utils/handleError';
 import { hydrateAndCheckNodes, hydratePhotos } from './utils/hydrateAndCheckNodes';
 import { queueDownloadRequest } from './utils/queueDownloadRequest';
-import {
-    addAndWaitForManifestIssueDecision,
-    addAndWaitForMetadataIssueDecision,
-    detectMetadataSignatureIssue,
-} from './utils/signatureIssues';
 import { traverseNodeStructure } from './utils/traverseNodeStructure';
 
 const DEFAULT_MIME_TYPE = 'application/octet-stream';
@@ -242,45 +238,29 @@ export class DownloadManager {
     }
 
     private async startSingleFileDownload(node: NodeEntity, downloadId: string): Promise<void> {
-        const { updateDownloadItem, getQueueItem } = useDownloadManagerStore.getState();
+        const { updateDownloadItem } = useDownloadManagerStore.getState();
 
-        const drive = getDownloadSdk(downloadId);
         const abortController = new AbortController();
-        let fileDownloader: FileDownloader | FileRevisionDownloader;
         let completionPromise: Promise<void>;
         let currentDownloadedBytes = 0;
 
         try {
-            const queueItem = getQueueItem(downloadId);
-            const revisionUid = queueItem?.revisionUid;
-
-            // ProtonDrivePublicLinkClient does not allow revision download
-            fileDownloader =
-                revisionUid && 'getFileRevisionDownloader' in drive
-                    ? await drive.getFileRevisionDownloader(revisionUid, abortController.signal)
-                    : await drive.getFileDownloader(node.uid, abortController.signal);
-            const storeItem = getQueueItem(downloadId);
             const storageSize = getNodeStorageSize(node);
             updateDownloadItem(downloadId, { storageSize: storageSize, status: DownloadStatus.InProgress });
 
-            const transformStream = new TransformStream<Uint8Array<ArrayBuffer>>();
-            const streamWriter = transformStream.writable.getWriter();
-            const streamWrapperPromise = loadCreateReadableStreamWrapper(transformStream.readable);
-            let writerClosed = false;
-
-            const writableForDownloader = new WritableStream<Uint8Array<ArrayBuffer>>({
-                write(chunk) {
-                    return streamWriter.write(chunk);
+            const { stream, controller, closeWriter, abortWriter } = await createFileDownloadStream({
+                downloadId,
+                node,
+                abortSignal: abortController.signal,
+                onProgress: (downloadedBytes) => {
+                    currentDownloadedBytes = downloadedBytes;
+                    updateDownloadItem(downloadId, { downloadedBytes });
+                    this.scheduler.updateDownloadProgress(downloadId, downloadedBytes);
                 },
-                close() {
-                    writerClosed = true;
-                    return streamWriter.close();
-                },
-                abort(reason) {
-                    writerClosed = true;
-                    return streamWriter.abort(reason);
-                },
+                malwareDetection: this.malwareDetection,
             });
+
+            const streamWrapperPromise = loadCreateReadableStreamWrapper(stream);
 
             const savePromise = streamWrapperPromise.then((streamForSaver) =>
                 fileSaver.saveAsFile(streamForSaver, {
@@ -292,9 +272,7 @@ export class DownloadManager {
             );
 
             const abortSaving = async (reason?: unknown) => {
-                writerClosed = true;
-                await writableForDownloader.abort();
-                await streamWriter.abort(reason);
+                abortWriter(reason);
                 const streamForSaver = await streamWrapperPromise;
                 if (!streamForSaver.locked) {
                     await streamForSaver.cancel(reason);
@@ -302,50 +280,16 @@ export class DownloadManager {
                 await savePromise.catch(() => undefined);
             };
 
-            const controller = fileDownloader.downloadToStream(writableForDownloader, (downloadedBytes) => {
-                currentDownloadedBytes = downloadedBytes;
-                updateDownloadItem(downloadId, { downloadedBytes });
-                this.scheduler.updateDownloadProgress(downloadId, downloadedBytes);
+            await validateDownloadSignatures({
+                downloadId,
+                node,
+                controller,
+                onApproved: closeWriter,
+                onRejected: () => {
+                    throw new TransferCancel({ id: downloadId });
+                },
+                onError: abortSaving,
             });
-
-            if (storeItem?.shouldScanForMalware) {
-                // Right now this can only be Approved or ignored, so no need to handle the decision
-                await this.malwareDetection.checkMalware(downloadId, node);
-                await this.malwareDetection.getPendingDecisionPromise(downloadId);
-            }
-
-            try {
-                const metadataIssueLocation = detectMetadataSignatureIssue(node);
-                if (metadataIssueLocation !== undefined) {
-                    const decision = await addAndWaitForMetadataIssueDecision(downloadId, node, metadataIssueLocation);
-                    if (decision === IssueStatus.Approved) {
-                        await controller.completion();
-                    } else {
-                        throw new TransferCancel({ id: downloadId }); // user cancellation
-                    }
-                } else {
-                    await controller.completion();
-                }
-            } catch (error) {
-                if (controller.isDownloadCompleteWithSignatureIssues()) {
-                    const decision = await addAndWaitForManifestIssueDecision(downloadId, node);
-                    if (decision === IssueStatus.Approved) {
-                        void streamWriter.close();
-                    } else {
-                        throw new TransferCancel({ id: downloadId }); // user cancellation
-                    }
-                } else {
-                    // Catches error or user cancellation
-                    void abortSaving(error);
-                    throw error;
-                }
-            } finally {
-                if (!writerClosed) {
-                    streamWriter.close().catch(() => {
-                        downloadLogDebug('Download error on closing streamWriter', { downloadId });
-                    });
-                }
-            }
 
             completionPromise = this.attachActiveDownload({
                 downloadId,
