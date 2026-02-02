@@ -35,11 +35,7 @@ exposeAuthStore(createAuthStore(createStore()));
 exposeApi({ subscribe: jest.fn() } as any);
 
 const config = { SSO_URL: 'test://' } as PassConfig;
-
-const settings = {
-    resolve: jest.fn(() => Promise.resolve({})),
-    read: jest.fn(() => Promise.resolve({})),
-};
+const settings = { clear: jest.fn(), resolve: jest.fn() };
 
 const app = {
     getState: getInitialAppState,
@@ -71,7 +67,6 @@ const authService = auth.createAuthService({
 } as any);
 
 const resumeSession = jest.spyOn(authService, 'resumeSession');
-const login = jest.spyOn(authService, 'login');
 const requestFork = jest.spyOn(authService, 'requestFork').mockImplementation();
 const getPersistedSession = jest.spyOn(authService.config, 'getPersistedSession');
 const clear = jest.spyOn(authStore, 'clear');
@@ -81,7 +76,7 @@ const hasSession = jest.spyOn(authStore, 'hasSession');
 jest.spyOn(sessions, 'getDefaultLocalID').mockImplementation(() => undefined);
 jest.spyOn(sessions, 'getPersistedLocalIDsForUserID').mockImplementation(() => []);
 jest.spyOn(storage, 'clearUserLocalData').mockImplementation(() => []);
-jest.spyOn(storage, 'localGarbageCollect').mockImplementation(() => Promise.resolve());
+jest.spyOn(storage, 'localGarbageCollect').mockImplementation(() => Promise.resolve([]));
 
 describe('AuthService', () => {
     beforeEach(() => {
@@ -140,13 +135,13 @@ describe('AuthService', () => {
             history.location.pathname = '/u/42';
 
             hasSession.mockImplementation(() => true);
-            login.mockImplementation(async () => true);
+            resumeSession.mockImplementation(async () => true);
 
             const options: AuthOptions = {};
             const result = await authService.init(options);
 
             expect(result).toBe(true);
-            expect(login).toHaveBeenCalled();
+            expect(resumeSession).toHaveBeenCalled();
             expect(options.forceLock).toBe(false);
         });
 

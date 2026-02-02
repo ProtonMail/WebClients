@@ -43,7 +43,7 @@ import { authStore } from '@proton/pass/lib/auth/store';
 import type { AuthSwitchService } from '@proton/pass/lib/auth/switch';
 import { getOfflineVerifier } from '@proton/pass/lib/cache/crypto';
 import { canLocalUnlock } from '@proton/pass/lib/cache/utils';
-import { clientBooted, clientOffline } from '@proton/pass/lib/client';
+import { clientBooted } from '@proton/pass/lib/client';
 import { bootIntent, cacheCancel, lockSync, stateDestroy, stopEventPolling } from '@proton/pass/store/actions';
 import { AppStatus, AuthMode, type MaybeNull } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
@@ -112,24 +112,33 @@ export const createAuthService = ({
         api,
         authStore,
 
+        getMemorySession: (localID) => {
+            if (authStore.hasSession(localID)) return authStore.getSession();
+            return {};
+        },
+
         getPersistedSession,
 
         onInit: async (options) => {
             if (DESKTOP_BUILD && core.isFirstLaunch?.()) return false;
 
             const sessions = getPersistedSessions();
-            await localGarbageCollect(sessions).catch(noop);
+            const garbagedLocalIDs = await localGarbageCollect(sessions).catch(noop);
+            garbagedLocalIDs?.forEach(core.settings.clear);
 
             const activeLocalID = authStore.getLocalID();
             const pathLocalID = getLocalIDFromPathname(history.location.pathname);
-            const validLocalID = activeLocalID === pathLocalID;
-            const validActiveSession = authStore.validSession(authStore.getSession());
 
             /** Clear auth store if URL `localID` was tampered with */
+            const validLocalID = activeLocalID === pathLocalID;
             if (!validLocalID) authStore.clear();
+
+            /** Clear auth store if active localID was garbage collected */
+            if (activeLocalID && garbagedLocalIDs?.includes(activeLocalID)) authStore.clear();
 
             /** Force lock unless: matching localID + valid session + online.
              * Allows bypassing locks on page refresh when localID is preserved */
+            const validActiveSession = authStore.validSession(authStore.getSession());
             options.forceLock = options.forceLock ?? !(validLocalID && validActiveSession && getOnline());
 
             const localID = pathLocalID ?? authStore.getLocalID() ?? getDefaultLocalID(sessions);
@@ -195,10 +204,7 @@ export const createAuthService = ({
             }
 
             const session = authStore.getSession();
-
-            const loggedIn = await (authStore.hasSession(localID) && authStore.validSession(session)
-                ? auth.login(session, options)
-                : auth.resumeSession(localID, options));
+            const loggedIn = await auth.resumeSession(localID, options);
 
             const locked = authStore.getLocked();
             const validSession = authStore.validSession(session) && session.LocalID === localID;
@@ -457,7 +463,8 @@ export const createAuthService = ({
 
         onSessionEmpty: () => {
             history.replace('/');
-            app.setStatus(AppStatus.UNAUTHORIZED);
+            if (!app.getState().booted) app.setStatus(AppStatus.UNAUTHORIZED);
+            else void auth.logout({ soft: true });
         },
 
         /** This retry handling is crucial to handle an edge case where the session might be
@@ -498,27 +505,22 @@ export const createAuthService = ({
             history.replace({ ...history.location, pathname: getLocalPath() });
         },
 
-        onUnlocked: async (mode, _, localID) => {
+        onUnlocked: async (mode, _, localID, offline) => {
             if (clientBooted(app.getState().status)) return;
-
-            const validSession = authStore.validSession(authStore.getSession());
 
             if (mode === LockMode.SESSION) {
                 /** If the unlock request was triggered before the authentication
                  * store session was fully hydrated, trigger a session resume. */
-                if (!validSession) await auth.resumeSession(localID, { retryable: false, unlocked: true });
-                else await auth.login(authStore.getSession(), { unlocked: true });
+                await auth.resumeSession(localID, { retryable: false, unlocked: true });
             }
 
             if ([LockMode.PASSWORD, LockMode.BIOMETRICS].includes(mode)) {
-                const offlineEnabled = (await core.settings.resolve(localID))?.offlineEnabled ?? false;
-                if (!getOnline() && offlineEnabled) store.dispatch(bootIntent({ offline: true }));
+                if (offline) store.dispatch(bootIntent({ offline: true }));
                 else {
                     /** User may have resumed connection while trying to offline-unlock,
                      * as such force-lock if the lock mode requires it */
                     const forceLock = authStore.getLockMode() === LockMode.SESSION;
-                    const resumed = await auth.resumeSession(localID, { retryable: false, forceLock });
-                    if (!resumed && (await canUnlockOffline(localID))) store.dispatch(bootIntent({ offline: true }));
+                    await auth.resumeSession(localID, { retryable: false, forceLock });
                 }
             }
         },
@@ -553,7 +555,7 @@ export const createAuthService = ({
 
         onSessionFailure: () => {
             logger.info('[AuthServiceProvider] Session resume failure');
-            if (!(clientOffline(app.getState().status) && !getOnline())) {
+            if (!app.getState().booted) {
                 app.setStatus(AppStatus.ERROR);
                 app.setBooted(false);
             }

@@ -20,7 +20,7 @@ export const AppStatusFromLockMode = {
 
 export type Lock = { mode: LockMode; locked: boolean; ttl?: number };
 export type LockCreateDTO = { mode: LockMode; secret: string; ttl: number; current?: { secret: string } };
-export type UnlockDTO = { mode: LockMode; secret: string };
+export type UnlockDTO = { mode: LockMode; secret: string; offline: boolean };
 export type LockOptions = { broadcast?: boolean; soft?: boolean };
 
 export interface LockAdapter {
