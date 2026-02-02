@@ -1,6 +1,7 @@
 import { Router } from 'react-router-dom';
 
 import { createBrowserHistory as createHistory } from 'history';
+import { PublicAppThemeProvider } from 'proton-account/src/app/content/theme/PublicAppThemeProvider';
 
 import * as bootstrap from '@proton/account/bootstrap';
 import { initStandaloneSession } from '@proton/account/bootstrap/standaloneSession';
@@ -62,7 +63,7 @@ const App = () => {
         return bootstrapApp();
     });
     return (
-        <ProtonApp config={config}>
+        <ProtonApp config={config} ThemeProvider={privateApp ? undefined : PublicAppThemeProvider}>
             <ErrorBoundary component={<StandardErrorPage />}>
                 <AuthenticationProvider store={extraThunkArguments.authentication}>
                     <Router history={extraThunkArguments.history}>
