@@ -52,6 +52,11 @@
         color: var(--interaction-norm);
         animation: gentlePulse 1.5s ease-in-out infinite;
     }
+
+    &--error {
+        background-color: var(--signal-danger);
+        color: var(--signal-danger-contrast);
+    }
 }
 
 .thinking-step-toggle {
