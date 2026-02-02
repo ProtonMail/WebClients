@@ -464,6 +464,8 @@ export enum API_CODES {
     INVALID_ID_ERROR = 2061,
 }
 
+export const AUTH_ACCOUNT_FAILED_GENERIC = 10001;
+
 export const GET_VTIMEZONES_API_LIMIT = 10;
 export const GET_CANONICAL_EMAILS_API_LIMIT = 100;
 
