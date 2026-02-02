@@ -67,10 +67,10 @@ import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
 import mailReferPage from '../../pages/refer-a-friend';
-import { PublicThemeProvider, getPublicTheme } from '../containers/PublicThemeProvider';
 import generateDeferredMnemonicData from '../containers/recoveryPhrase/generateDeferredMnemonicData';
 import { usePrefetchGenerateRecoveryKit } from '../containers/recoveryPhrase/useRecoveryKitDownload';
 import type { Paths } from '../content/helper';
+import { SetTheme } from '../content/theme/SetTheme';
 import { cachedPlans, cachedPlansMap } from '../defaultPlans';
 import { getOptimisticDomains, isPorkbunSignup, isReferralSignup } from '../signup/helper';
 import type {
@@ -97,6 +97,7 @@ import { useMetaTags } from '../useMetaTags';
 import Layout from './Layout';
 import LoginModal from './LoginModal';
 import { isRegularPlanCard } from './PlanCardSelector';
+import { SignupV2ThemeProvider, getSignupV2Theme } from './SignupV2ThemeProvider';
 import type { Step1Rref } from './Step1';
 import Step1 from './Step1';
 import Step2 from './Step2';
@@ -268,7 +269,7 @@ const SingleSignupContainerV2 = ({
         });
     });
 
-    const theme = getPublicTheme(toApp, audience, viewportWidth, signupParameters, initialSearchParams);
+    const theme = getSignupV2Theme(toApp, audience, viewportWidth, signupParameters, initialSearchParams);
     // true iff trial detected through signupParameters (thus the signup prefix)
     const signupTrial = !!signupParameters.trial;
 
@@ -1240,7 +1241,7 @@ const SingleSignupContainerV2 = ({
     const loginModalDefaultUsername = isPorkbun ? '' : tmpLoginEmail;
 
     return (
-        <PublicThemeProvider value={theme}>
+        <SignupV2ThemeProvider value={theme}>
             {preload}
             {renderLoginModal && (
                 <LoginModal
@@ -1370,7 +1371,8 @@ const SingleSignupContainerV2 = ({
                     }}
                 />
             )}
-            <UnAuthenticated theme={theme.type}>
+            <UnAuthenticated>
+                <SetTheme theme={theme.type} />
                 {model.step === Steps.Account && (
                     <Step1
                         initialSessionsLength={initialSessionsLength}
@@ -1634,7 +1636,7 @@ const SingleSignupContainerV2 = ({
                     />
                 )}
             </UnAuthenticated>
-        </PublicThemeProvider>
+        </SignupV2ThemeProvider>
     );
 };
 

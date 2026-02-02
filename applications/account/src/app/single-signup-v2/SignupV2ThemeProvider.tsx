@@ -9,7 +9,7 @@ import { ThemeTypes } from '@proton/shared/lib/themes/constants';
 
 import type { SignupParameters2 } from '../single-signup-v2/interface';
 
-export interface PublicTheme {
+export interface SignupV2Theme {
     type?: ThemeTypes;
     background?: 'bf' | 'b2b' | 'lumo';
     intent: APP_NAMES | undefined;
@@ -34,15 +34,15 @@ const defaultValue = {
     },
 };
 
-const PublicThemeContext = createContext<PublicTheme>(defaultValue);
+const SignupV2ThemeContext = createContext<SignupV2Theme>(defaultValue);
 
-export const getPublicTheme = (
+export const getSignupV2Theme = (
     toApp: APP_NAMES | undefined,
     audience: Audience,
     viewportWidth: Breakpoints['viewportWidth'],
     signupParameters: SignupParameters2,
     searchParams?: URLSearchParams
-): PublicTheme => {
+): SignupV2Theme => {
     const darkTheme =
         getHas2025OfferCoupon(signupParameters.coupon) || (searchParams && searchParams.get('theme') === 'dark');
     if (darkTheme) {
@@ -89,10 +89,10 @@ export const getPublicTheme = (
     };
 };
 
-export const PublicThemeProvider = ({ value, children }: { value: PublicTheme; children: ReactNode }) => {
-    return <PublicThemeContext.Provider value={value}>{children}</PublicThemeContext.Provider>;
+export const SignupV2ThemeProvider = ({ value, children }: { value: SignupV2Theme; children: ReactNode }) => {
+    return <SignupV2ThemeContext.Provider value={value}>{children}</SignupV2ThemeContext.Provider>;
 };
 
-export const usePublicTheme = () => {
-    return useContext(PublicThemeContext);
+export const useSignupV2Theme = () => {
+    return useContext(SignupV2ThemeContext);
 };

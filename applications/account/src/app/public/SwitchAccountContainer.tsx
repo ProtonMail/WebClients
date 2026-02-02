@@ -195,7 +195,6 @@ const SwitchAccountContainer = ({
     const [error, setError] = useState(false);
     const { createNotification } = useNotifications();
     const validRef = useRef(false);
-
     const [openSignOutAllPrompt, setOpenSignOutAllPrompt, renderOpenSignOutAllPrompt] = useModalState();
     const [confirmSignoutModal, setConfirmSignoutModal, renderConfirmSignoutModal] = useModalState();
     const [tmpSessions, setTmpSessions] = useState<ActiveSession[]>([]);

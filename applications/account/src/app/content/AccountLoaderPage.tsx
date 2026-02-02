@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
-import { ProtonLoader, ProtonLoaderType } from '@proton/atoms/ProtonLoader/ProtonLoader';
-import { TextLoader } from '@proton/components';
+import { ProtonLoader } from '@proton/atoms/ProtonLoader/ProtonLoader';
+import TextLoader from '@proton/components/components/loader/TextLoader';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
@@ -9,19 +9,17 @@ import clsx from '@proton/utils/clsx';
 interface Props {
     text?: string;
     loaderClassName?: string;
-    className?: string;
-    isDarkBg?: boolean;
 }
 
-const AccountLoaderPage = ({ text, loaderClassName = '', className, isDarkBg = false }: Props) => {
+const AccountLoaderPage = ({ text, loaderClassName = '' }: Props) => {
     const appName = getAppName(APPS.PROTONACCOUNT);
     const textToDisplay = text || c('Info').t`Loading ${appName}`;
 
     return (
-        <div className={clsx('h-full', className)}>
+        <div className="h-full">
             <div className={clsx(['absolute inset-center text-center'])}>
                 <div>
-                    <ProtonLoader className={loaderClassName} type={isDarkBg ? ProtonLoaderType.Negative : undefined} />
+                    <ProtonLoader className={loaderClassName} />
                 </div>
                 <TextLoader className="color-weak">{textToDisplay}</TextLoader>
             </div>

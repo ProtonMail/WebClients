@@ -4,7 +4,6 @@ import { Route, Switch, useHistory } from 'react-router-dom';
 import type * as H from 'history';
 
 import type { OnLoginCallback, OnLoginCallbackResult } from '@proton/components/containers/app/interface';
-import UnAuthenticated from '@proton/components/containers/authentication/UnAuthenticated';
 import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import {
     getEmailSessionForkSearchParameter,
@@ -16,7 +15,7 @@ import { SSO_PATHS } from '@proton/shared/lib/constants';
 import { replaceUrl } from '@proton/shared/lib/helpers/browser';
 
 import { readForkState } from '../public/persistedForkState';
-import { type ProductParams, getProductParams, getThemeFromLocation } from '../signup/searchParams';
+import { type ProductParams, getProductParams } from '../signup/searchParams';
 import useLocationWithoutLocale from '../useLocationWithoutLocale';
 import AccountEffect from './AccountAutoLogin';
 import AccountLoaderPage from './AccountLoaderPage';
@@ -187,16 +186,9 @@ export const PublicAppInitial = ({ sessions }: { sessions: { initialSessionsLeng
         return handleLoginResult(result);
     };
 
-    const theme = getThemeFromLocation(location, searchParams);
-    const loader = theme ? (
-        <UnAuthenticated theme={theme.themeType}>
-            <AccountLoaderPage className={theme.className} isDarkBg={theme.isDarkBg} />
-        </UnAuthenticated>
-    ) : (
-        <AccountLoaderPage />
-    );
-
     const hasBackToSwitch = activeSessions === undefined ? maybeHasActiveSessions : activeSessions.length >= 1;
+
+    const loader = <AccountLoaderPage />;
 
     const blockingLoginEffect = hasInitialSessionBlockingLoading ? (
         <AccountEffect

@@ -25,6 +25,7 @@ import config from '../config';
 import locales from '../locales';
 import { extendStore, setupStore } from '../store/public-store';
 import { PublicAppInitial } from './PublicAppInitial';
+import { PublicAppThemeProvider } from './theme/PublicAppThemeProvider';
 
 const bootstrapApp = () => {
     const api = createApi({ config, sendLocaleHeaders: true });
@@ -57,7 +58,7 @@ const PublicApp = () => {
     const { store, authentication, api, sessions } = useInstance(bootstrapApp);
 
     return (
-        <ProtonApp config={config}>
+        <ProtonApp config={config} ThemeProvider={PublicAppThemeProvider}>
             <AuthenticationProvider store={authentication}>
                 <BrowserRouter>
                     <ProtonStoreProvider store={store}>

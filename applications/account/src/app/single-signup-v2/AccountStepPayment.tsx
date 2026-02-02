@@ -39,9 +39,9 @@ import { Audience, isBilledUser } from '@proton/shared/lib/interfaces';
 import { getSentryError } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
 
-import { usePublicTheme } from '../containers/PublicThemeProvider';
 import AccountStepPaymentSummary from './AccountStepPaymentSummary';
 import Guarantee from './Guarantee';
+import { useSignupV2Theme } from './SignupV2ThemeProvider';
 import type { Measure, OptimisticOptions, SignupModelV2, SignupParameters2 } from './interface';
 import type { TelemetryPayType } from './measure';
 import { getPaymentMethod } from './measure';
@@ -114,7 +114,7 @@ const AccountStepPayment = ({
     onMethodChanged,
     couponConfig,
 }: Props) => {
-    const publicTheme = usePublicTheme();
+    const signupV2Theme = useSignupV2Theme();
     const formRef = useRef<HTMLFormElement>(null);
 
     const measurePay = (
@@ -179,7 +179,7 @@ const AccountStepPayment = ({
         paymentMethods: model.session?.paymentMethods,
         paymentStatus: model.paymentStatus,
         api: normalApi,
-        theme: publicTheme,
+        theme: signupV2Theme,
         billingAddress: model.subscriptionData.billingAddress,
         user,
         subscription: model.session?.subscription,

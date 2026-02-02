@@ -3,8 +3,8 @@ import type { FreePlanDefault, Plan, PlansMap } from '@proton/payments';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import type { Audience, VPNServersCountData } from '@proton/shared/lib/interfaces';
 
-import type { PublicTheme } from '../../containers/PublicThemeProvider';
 import { SignupType } from '../../signup/interfaces';
+import type { SignupV2Theme } from '../SignupV2ThemeProvider';
 import type { PlanParameters, SignupConfiguration, SignupParameters2 } from '../interface';
 import { getMailConfiguration } from '../mail/configuration';
 import { getCustomStep } from './CustomStep';
@@ -22,7 +22,7 @@ export const getGenericConfiguration = ({
     signupParameters,
     isNewB2BPlanEnabled,
 }: {
-    theme: PublicTheme;
+    theme: SignupV2Theme;
     audience: Audience.B2C | Audience.B2B;
     toApp?: APP_NAMES;
     signupParameters: SignupParameters2;

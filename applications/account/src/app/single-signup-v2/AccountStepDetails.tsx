@@ -17,13 +17,13 @@ import { useVariant } from '@proton/unleash';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
-import { usePublicTheme } from '../containers/PublicThemeProvider';
 import PasswordStrengthIndicatorSpotlight from '../signup/PasswordStrengthIndicatorSpotlight';
 import challengeIconsSvg from '../signup/challenge-icons.source.svg';
 import { getThemeData } from '../signup/challenge-theme';
 import { type AccountData, SignupType } from '../signup/interfaces';
 import { useAccountFormDataContext } from '../signupCtx/context/accountData/AccountFormDataContext';
 import { AsyncValidationStateValue } from '../signupCtx/context/accountData/asyncValidator/createAsyncValidator';
+import { useSignupV2Theme } from './SignupV2ThemeProvider';
 import type { BaseMeasure, SignupModelV2 } from './interface';
 import type { AvailableExternalEvents, InteractCreateEvents, UserCheckoutEvents } from './measure';
 
@@ -87,7 +87,7 @@ const AccountStepDetails = ({
 
     const anchorRef = useRef<HTMLButtonElement | null>(null);
     const passwordContainerRef = useRef<HTMLInputElement>(null);
-    const theme = usePublicTheme();
+    const signupV2Theme = useSignupV2Theme();
     const [, setRerender] = useState<any>();
     const [loadingChallenge, setLoadingChallenge] = useState(true);
 
@@ -192,7 +192,7 @@ const AccountStepDetails = ({
                             setLoadingChallenge(false);
                         }}
                     >
-                        <div className={clsx(inputsWrapper, theme.dark && 'ui-prominent', 'bg-transparent')}>
+                        <div className={clsx(inputsWrapper, signupV2Theme.dark && 'ui-prominent', 'bg-transparent')}>
                             {(state.signupType === SignupType.External ||
                                 state.signupType === SignupType.BringYourOwnEmail) && (
                                 <InputFieldTwo

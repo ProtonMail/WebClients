@@ -82,7 +82,6 @@ import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
-import { usePublicTheme } from '../containers/PublicThemeProvider';
 import { getLocaleTermsURL } from '../content/helper';
 import SignupSupportDropdown from '../signup/SignupSupportDropdown';
 import { getSubscriptionPrices } from '../signup/helper';
@@ -105,6 +104,7 @@ import Guarantee from './Guarantee';
 import Layout from './Layout';
 import { PlanCardSelector } from './PlanCardSelector';
 import RightSummary from './RightSummary';
+import { useSignupV2Theme } from './SignupV2ThemeProvider';
 import { getAccessiblePlans, getFreeSubscriptionData, getSubscriptionMapping, getUpdatedPlanIDs } from './helper';
 import {
     type Measure,
@@ -235,7 +235,7 @@ const Step1 = ({
     const [loadingPaymentDetails, setLoadingPaymentDetails] = useState(false);
     const accountDetailsRef = useRef<AccountStepDetailsRef>();
     const accountStepPaymentRef = useRef<AccountStepPaymentRef>();
-    const theme = usePublicTheme();
+    const signupV2Theme = useSignupV2Theme();
     const { getAvailableCurrencies } = useCurrencies();
     const [changingCurrency, withChangingCurrency] = useLoading();
 
@@ -668,7 +668,7 @@ const Step1 = ({
         </div>
     );
 
-    const isDarkBg = theme.dark;
+    const isDarkBg = signupV2Theme.dark;
 
     let step = 1;
 
@@ -1101,7 +1101,7 @@ const Step1 = ({
                                     selectedPlanName={selectedPlan.Name}
                                     cycle={options.cycle}
                                     currency={options.currency}
-                                    dark={theme.dark}
+                                    dark={signupV2Theme.dark}
                                     planCards={planCards[audience]}
                                     onSelect={handleChangePlan}
                                     onSelectedClick={() => {

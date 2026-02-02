@@ -59,7 +59,6 @@ const SignInWithAnotherDeviceContainer = ({ api, toApp, paths, onLogin, onStartA
     const [persistent] = useLocalState(false, defaultPersistentKey);
     const getKtActivation = useGetAccountKTActivation();
     const errorHandler = useErrorHandler();
-
     const restartRef = useRef<null | (() => Promise<void>)>(null);
 
     useEffect(() => {
@@ -193,8 +192,8 @@ const SignInWithAnotherDeviceContainer = ({ api, toApp, paths, onLogin, onStartA
                     subTitle={toAppName ? getContinueToString(toAppName) : ''}
                 />
                 <Content>
-                    <div className="ui-standard flex justify-center items-center mb-6">
-                        <div className="p-4 bg-norm border border-weak rounded-lg lh100">
+                    <div className="ui-standard flex justify-center items-center mb-6 bg-elevated">
+                        <div className="p-4 border border-weak rounded-lg lh100" style={{ backgroundColor: 'white' }}>
                             {result?.type === 'init' ? (
                                 <SignInWithAnotherDeviceQRCode data={result.qrCode} />
                             ) : (
