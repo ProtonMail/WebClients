@@ -48,8 +48,8 @@ function getToolCallLabel(toolCall: ToolCallData): [string, string] {
                 `Searched the web for "${query}"`
             ];
         case 'weather':
-            const location = 'city' in toolCall.arguments.location 
-                ? toolCall.arguments.location.city 
+            const location = 'city' in toolCall.arguments.location
+                ? toolCall.arguments.location.city
                 : `${toolCall.arguments.location.lat}, ${toolCall.arguments.location.lon}`;
             return [
                 `Checking the weather in ${location}...`,
@@ -118,14 +118,14 @@ const ReasoningStep = ({
     return (
         <div className={clsx('thinking-step', isFirst && 'thinking-step--first', isLast && 'thinking-step--last')}>
             <div className="thinking-step-icon-container">
-                <Icon 
-                    name="lightbulb" 
-                    size={3} 
-                    className={clsx('thinking-step-icon-badge', isActive && 'thinking-step-icon-badge--active')} 
+                <Icon
+                    name="lightbulb"
+                    size={3}
+                    className={clsx('thinking-step-icon-badge', isActive && 'thinking-step-icon-badge--active')}
                 />
             </div>
 
-            <div className="flex-1 min-w-0">
+            <div className="flex-1 min-w-0 pt-1">
                 <button
                     className="thinking-step-toggle flex items-center w-full text-left"
                     onClick={() => setIsExpanded(!isExpanded)}
@@ -173,6 +173,7 @@ interface ImageToolResult {
     elapsed_ms?: number;
     seed?: number | null;
     tool?: string;
+    error?: boolean;
 }
 
 const parseWebSearchResults = (result: string): WebSearchResults | null => {
@@ -222,24 +223,31 @@ const ToolCallStep = ({
     const iconName = getToolCallIcon(toolCall);
 
     const hasDetails = result && result.trim().length > 0;
-    const webSearchResults = hasDetails && toolCall.name === 'web_search' 
-        ? parseWebSearchResults(result) 
+    const webSearchResults = hasDetails && toolCall.name === 'web_search'
+        ? parseWebSearchResults(result)
         : null;
     const imageToolResult = hasDetails && (toolCall.name === 'describe_image' || toolCall.name === 'generate_image' || toolCall.name === 'edit_image')
         ? parseImageToolResult(result)
         : null;
 
+    // Check if the tool call failed
+    const hasError = imageToolResult?.error === true;
+
     return (
         <div className={clsx('thinking-step', isFirst && 'thinking-step--first', isLast && 'thinking-step--last')}>
             <div className="thinking-step-icon-container">
-                <Icon 
-                    name={iconName as IconName} 
-                    size={3} 
-                    className={clsx('thinking-step-icon-badge', isActive && 'thinking-step-icon-badge--active')} 
+                <Icon
+                    name={iconName as IconName}
+                    size={3}
+                    className={clsx(
+                        'thinking-step-icon-badge',
+                        isActive && 'thinking-step-icon-badge--active',
+                        hasError && 'thinking-step-icon-badge--error'
+                    )}
                 />
             </div>
 
-            <div className="flex-1 min-w-0">
+            <div className="flex-1 min-w-0 pt-1">
                 {hasDetails ? (
                     <>
                         <button
@@ -248,9 +256,15 @@ const ToolCallStep = ({
                             type="button"
                             aria-expanded={isExpanded}
                         >
-                            <span className={clsx('thinking-step-label flex-1 m-0', isActive ? 'color-norm' : 'color-weak')}>
+                            <span className={clsx('thinking-step-label flex-1 m-0', isActive ? 'color-norm' : hasError ? 'color-danger' : 'color-weak')}>
                                 {label}
                             </span>
+                            {hasError && (
+                                <span className="flex items-center gap-1 text-sm color-danger shrink-0 mr-2">
+                                    <Icon name="exclamation-circle-filled" size={3} />
+                                    Failed
+                                </span>
+                            )}
                             {webSearchResults && webSearchResults.results.length > 0 && (
                                 <span className="text-sm color-weak shrink-0 mr-2">
                                     {webSearchResults.results.length} {webSearchResults.results.length === 1 ? 'result' : 'results'}
@@ -294,10 +308,10 @@ const ToolCallStep = ({
                                                 </span>
                                             )}
                                         </div>
-                                        <LumoMarkdown 
-                                            message={message} 
-                                            content={imageToolResult.info} 
-                                            handleLinkClick={handleLinkClick} 
+                                        <LumoMarkdown
+                                            message={message}
+                                            content={imageToolResult.info}
+                                            handleLinkClick={handleLinkClick}
                                         />
                                     </div>
                                 ) : (
