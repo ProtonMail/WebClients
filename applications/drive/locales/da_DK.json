@@ -1226,6 +1226,18 @@
       ],
       "Zoom out": [
         "Zoom ud"
+      ],
+      "Cancel downloads": [
+        "Annuller downloads"
+      ],
+      "Cancel transfers": [
+        "Annuller overførsler"
+      ],
+      "Download (${ nbSelected })": [
+        "Download (${ nbSelected })"
+      ],
+      "Scan & Download (${ nbSelected })": [
+        "Scan og download (${ nbSelected })"
       ]
     },
     "Action: Docs": {
@@ -2975,6 +2987,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du har allerede oprettet 10 aliasser. Få ubegrænsede aliasser og 500 GB lagerplads med ${ BRAND_NAME } Unlimited."
+      ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "For at importere via en CSV- eller VCF-fil, skal du sikre dig, at filen ikke overskrider ${ MAX_IMPORT_FILE_SIZE_STRING } eller ${ maxContactString } kontakter. Hvis din fil er større, skal du opdele den i mindre filer. ${ learnMoreLink }."
       ]
     },
     "description": {
@@ -3842,6 +3857,9 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Navn, der ikke kan dekrypteres"
+      ],
+      "We cannot retrieve this item": [
+        "Vi kan ikke hente dette element"
       ]
     },
     "error": {
@@ -3917,6 +3935,9 @@
       ],
       "Your file ${ formattedFilename } is empty.": [
         "Din fil ${ formattedFilename } er tom."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ maxContactString } contacts.": [
+        "Din fil ${ formattedFilename } indeholder mere end ${ maxContactString } kontakter."
       ]
     },
     "Error importing event": {
@@ -6807,6 +6828,16 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Du vil stadig kunne se dine egne kontodata, men alle brugerkonti vil blive fjernet fra din organisation."
+      ],
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "Alle dine kontakter vil blive importeret, op til en grænse på ${ maxContact }",
+        "Alle dine kontakter vil blive importeret, op til en grænse på ${ maxContact }"
+      ],
+      "This will cancel any remaining downloads.": [
+        "Dette annullerer eventuelle udestående downloads."
+      ],
+      "This will cancel any remaining uploads and downloads. Cancelled uploads won't be saved in ${ DRIVE_APP_NAME }.": [
+        "Dette vil annullere eventuelle resterende uploads og downloads. Annullerede uploads gemmes ikke i ${ DRIVE_APP_NAME }."
       ]
     },
     "info": {
@@ -10009,6 +10040,18 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Dit abonnement har i øjeblikket en eksisterende rabat. Ved at skifte til denne nye kampagne vil den eksisterende rabat ikke længere blive anvendt."
+      ],
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "Rabatten er gyldig for ${ renewalsWithCoupon } fornyelse.",
+        "Rabatten er gyldig for ${ renewalsWithCoupon } fornyelser."
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Den særligt nedsatte pris er gyldig i ${ couponRedemptions } måned. Derefter fornys den automatisk til ${ renewPriceStr } for 1 måned. Du kan opsige når som helst.",
+        "Den særligt nedsatte pris er gyldig i ${ couponRedemptions } måneder. Derefter fornys den automatisk til ${ renewPriceStr } for 1 måned. Du kan opsige når som helst."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Den særligt nedsatte pris på ${ priceWithDiscount } er gyldig i ${ couponRedemptions } måned. Derefter fornys den automatisk til ${ renewPriceStr } for 1 måned. Du kan opsige når som helst.",
+        "Den særligt nedsatte pris på ${ priceWithDiscount } er gyldig i ${ couponRedemptions } måneder. Derefter fornys den automatisk til ${ renewPriceStr } for 1 måned. Du kan opsige når som helst."
       ]
     },
     "Payments.Error": {
@@ -12827,6 +12870,12 @@
       ],
       "You’ve got 5 GB of storage": [
         "Du har 5 GB lagerplads"
+      ],
+      "Cancel all downloads?": [
+        "Annuller alle downloads?"
+      ],
+      "Cancel all transfers?": [
+        "Annuller alle overførsler?"
       ]
     },
     "Today icon tooltip in mini calendar": {

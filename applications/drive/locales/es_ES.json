@@ -1226,6 +1226,18 @@
       ],
       "Zoom out": [
         "Alejar"
+      ],
+      "Cancel downloads": [
+        "Cancelar descargas"
+      ],
+      "Cancel transfers": [
+        "Cancelar transferencias"
+      ],
+      "Download (${ nbSelected })": [
+        "Descargar (${ nbSelected })"
+      ],
+      "Scan & Download (${ nbSelected })": [
+        "Escanear y descargar (${ nbSelected })"
       ]
     },
     "Action: Docs": {
@@ -2975,6 +2987,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ya has creado 10 alias. Obtén alias ilimitados y 500 GB de almacenamiento con ${ BRAND_NAME } Unlimited."
+      ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Para importar mediante un archivo CSV o VCF, asegúrate de que este no supere los ${ MAX_IMPORT_FILE_SIZE_STRING } o los ${ maxContactString } contactos. Si el archivo es más grande, divídelo en varios archivos más pequeños. ${ learnMoreLink }."
       ]
     },
     "description": {
@@ -3842,6 +3857,9 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Nombre indescifrable"
+      ],
+      "We cannot retrieve this item": [
+        "No se puede recuperar este elemento"
       ]
     },
     "error": {
@@ -3917,6 +3935,9 @@
       ],
       "Your file ${ formattedFilename } is empty.": [
         "Tu archivo ${ formattedFilename } está vacío."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ maxContactString } contacts.": [
+        "Tu archivo ${ formattedFilename } contiene más de ${ maxContactString } contactos."
       ]
     },
     "Error importing event": {
@@ -6807,6 +6828,16 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Podrás seguir viendo los datos de tu propia cuenta, pero todas las cuentas de usuario serán eliminadas de tu organización."
+      ],
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "Se importarán todos tus contactos, hasta un límite de ${ maxContact }.",
+        "Se importarán todos tus contactos, hasta un máximo de ${ maxContact }."
+      ],
+      "This will cancel any remaining downloads.": [
+        "Esto cancelará las descargas restantes."
+      ],
+      "This will cancel any remaining uploads and downloads. Cancelled uploads won't be saved in ${ DRIVE_APP_NAME }.": [
+        "Esto cancelará cualquier carga o descarga restante. Las cargas canceladas no se guardarán en ${ DRIVE_APP_NAME }."
       ]
     },
     "info": {
@@ -7870,6 +7901,16 @@
       "Up to ${ n } participant": [
         "Hasta ${ n } participante",
         "Hasta ${ n } participantes"
+      ],
+      "${ n } participant": [
+        "${ n } participante",
+        "${ n } participantes"
+      ],
+      "Booking pages": [
+        "Páginas de reserva"
+      ],
+      "Meeting recording": [
+        "Grabación de la reunión"
       ]
     },
     "Message": {
@@ -10059,6 +10100,18 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Tu suscripción tiene un descuento existente. Al cambiarte a esta nueva promoción, el descuento existente ya no se aplicará."
+      ],
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "El descuento es válido para ${ renewalsWithCoupon } renovación.",
+        "El descuento es válido para ${ renewalsWithCoupon } renovaciones."
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "El precio con descuento especial es válido durante ${ couponRedemptions } mes. Después, se renovará automáticamente a ${ renewPriceStr } por 1 mes. Puedes cancelar en cualquier momento.",
+        "El precio con descuento especial es válido durante ${ couponRedemptions } meses. Después, se renovará automáticamente a ${ renewPriceStr } por 1 mes. Puedes cancelar en cualquier momento."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "El precio con descuento especial de ${ priceWithDiscount } es válido durante ${ couponRedemptions } mes. Después, se renovará automáticamente a ${ renewPriceStr } por 1 mes. Puedes cancelar en cualquier momento.",
+        "El precio con descuento especial de ${ priceWithDiscount } es válido durante ${ couponRedemptions } meses. Después, se renovará automáticamente a ${ renewPriceStr } por 1 mes. Puedes cancelar en cualquier momento."
       ]
     },
     "Payments.Error": {
@@ -12877,6 +12930,12 @@
       ],
       "You’ve got 5 GB of storage": [
         "Has obtenido 5 GB de almacenamiento."
+      ],
+      "Cancel all downloads?": [
+        "¿Cancelar todas las descargas?"
+      ],
+      "Cancel all transfers?": [
+        "¿Cancelar todas las transferencias?"
       ]
     },
     "Today icon tooltip in mini calendar": {

@@ -1315,7 +1315,7 @@
     },
     "b2b_trials_2025_Info": {
       "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
-        "Setelah uji coba ini berakhir pada ${ formattedDate1 }, paket Anda akan menjadi langganan berbayar yang diperbarui secara otomatis setiap ${ renewCycle } bulan. Anda tidak akan ditagih apabila Anda membatalkan sebelum ${ formattedDate2 }."
+        "Setelah masa uji coba berakhir pada ${ formattedDate1 }, langganan akan menjadi berbayar dan diperpanjang otomatis setiap ${ renewCycle } bulan. Anda tidak akan dikenakan biaya jika membatalkan sebelum ${ formattedDate2 }."
       ],
       "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
         "Setelah masa uji coba ini berakhir pada ${ formattedDate1 }, paket Anda akan menjadi langganan berbayar yang diperbarui secara otomatis secara bulanan. Anda tidak akan ditagih apabila Anda membatalkan sebelum ${ formattedDate2 }."
@@ -1760,7 +1760,7 @@
         "Kebijakan tanpa log yang ketat"
       ],
       "Unlimited daily chats": [
-        "Tanpa batasan jumlah percakapan harian"
+        "Obrolan harian tanpa batas"
       ],
       "Unlimited favorites for quick access": [
         "Tanpa batasan jumlah favorit untuk akses yang cepat"
@@ -3074,7 +3074,7 @@
     },
     "Duo offer: Link": {
       "Get 4x more storage": [
-        "Dapatkan ruang penyimpanan 4x lebih besar"
+        "Dapatkan penyimpanan 4x lebih besar"
       ],
       "Share your plan": [
         "Bagikan paket Anda"
@@ -3085,7 +3085,7 @@
         "Dapatkan ruang penyimpanan 4x lebih besar dengan ${ BRAND_NAME } Duo"
       ],
       "Share your plan benefits with ${ BRAND_NAME } Duo": [
-        "Bagikan keutamaan paket Anda dengan ${ BRAND_NAME } Duo"
+        "Bagikan manfaat paket Anda dengan ${ BRAND_NAME } Duo."
       ]
     },
     "Edit billing address form note": {
@@ -3116,10 +3116,10 @@
         "CATATAN:"
       ],
       "This event occurrence was canceled.": [
-        "Keberlangsungan acara ini telah dibatalkan."
+        "Kejadian acara ini telah dibatalkan."
       ],
       "This event occurrence was updated.": [
-        "Keberlangsungan acara ini telah diperbarui."
+        "Kejadian acara ini telah diperbarui."
       ],
       "This event was updated.": [
         "Acara ini telah diperbarui."
@@ -3183,7 +3183,7 @@
     },
     "emergency_access": {
       "Trusted contact": [
-        "Kontak terpercaya"
+        "Kontak tepercaya"
       ]
     },
     "Error": {
@@ -3485,7 +3485,7 @@
         "Tidak ada kontak yang dapat diimpor"
       ],
       "No emails found to import - the account does not have an inbox": [
-        "Tidak ada email yang ditemukan untuk dapat diimpor - akun ini tidak memiliki kotak masuk"
+        "Tidak ada email yang ditemukan untuk diimpor - akun ini tidak memiliki kotak masuk"
       ],
       "No file to upload": [
         "Tidak ada berkas untuk diunggah"
@@ -3802,7 +3802,7 @@
     },
     "error": {
       "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
-        "Silakan masuk dengan alamat Gmail yang telah meneruskan pesan ke ${ MAIL_APP_NAME }"
+        "Silakan masuk dengan alamat Gmail yang sudah meneruskan pesan ke ${ MAIL_APP_NAME }"
       ],
       "Please sign in with the same Gmail address you originally connected": [
         "Silakan masuk dengan alamat Gmail yang sama dengan yang Anda gunakan pertama kali untuk terhubung"
@@ -4398,7 +4398,7 @@
         "Hanya skala kalender Gregorian yang diizinkan"
       ],
       "Recurring event has no occurrences": [
-        "Acara yang berulang tidak memiiliki keberlangsungan"
+        "Acara berulang tidak memiliki kejadian"
       ],
       "Recurring rule not supported": [
         "Aturan berulang tidak didukung"
@@ -4709,7 +4709,7 @@
         "${ CALENDAR_APP_NAME } memerlukan alamat ${ BRAND_NAME } untuk sinkronisasi dan pengenkripsian acara yang aman. ${ claimAddressButton }"
       ],
       "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. Claim your free ${ MAIL_APP_NAME } address now.": [
-        "${ CALENDAR_APP_NAME } memerlukan alamat ${ BRAND_NAME } untuk sinkronisasi dan pengenkripsian acara yang aman. Klaim alamat ${ MAIL_APP_NAME } gratis Anda sekarang juga."
+        "${ CALENDAR_APP_NAME } memerlukan alamat ${ BRAND_NAME } untuk sinkronisasi dan enkripsi acara yang aman. Klaim alamat ${ MAIL_APP_NAME } gratis Anda sekarang juga."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } kalender baru"
@@ -5606,7 +5606,7 @@
         "Anggota"
       ],
       "Merged": [
-        "Tergabung"
+        "Digabungkan"
       ],
       "Messages to all your email addresses will go to your inbox.": [
         "Pesan ke semua alamat email Anda akan menuju ke kotak masuk Anda."
@@ -6527,10 +6527,10 @@
         "Anda memiliki ${ expiresInDays } hari tersisa untuk mengklaim bonus selamat datang 3 GB Anda dan "
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
-        "Anda memiliki langganan ${ planTitle } versi uji coba. Apabila Anda ingin melanjutkan langganan Anda setelah masa uji coba ini berakhir, silakan tambahkan metode pembayaran."
+        "Anda memiliki langganan uji coba ${ planTitle }. Jika ingin melanjutkan langganan setelah masa uji coba, silakan tambahkan metode pembayaran."
       ],
       "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
-        "Anda memiliki langganan ${ planTitle } yang berada dalam masa uji coba. Tidak ada pembayaran yang diperlukan untuk saat ini. Langganan Anda akan diperbarui secara otomatis pada akhir masa uji coba."
+        "Anda memiliki langganan uji coba ${ planTitle }. Tidak diperlukan pembayaran saat ini. Langganan Anda akan diperpanjang secara otomatis di akhir masa uji coba."
       ],
       "You may be redirected to your bank’s website.": [
         "Anda mungkin akan dialihkan ke situs web milik bank Anda."
@@ -6635,7 +6635,7 @@
         "Tanggal tagihan Anda selanjutnya adalah ${ renewalTime }."
       ],
       "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
-        "Tanggal penagihan Anda selanjutnya adalah ${ renewalTime }. Silakan hubungi layanan dukungan apabila Anda perlu untuk mengubah paket dengan segera."
+        "Tanggal penagihan berikutnya adalah ${ renewalTime }. Silakan hubungi dukungan jika Anda memerlukan perubahan paket segera."
       ],
       "Your online activity is protected": [
         "Aktivitas online Anda terlindung"
@@ -7723,7 +7723,7 @@
         "Hingga ${ n } pertemuan per hari"
       ],
       "Up to ${ n } participant": [
-        "Hinnga ${ n } peserta"
+        "Hingga ${ n } peserta"
       ]
     },
     "Message": {
@@ -8490,7 +8490,7 @@
         "Pembagian brankas (hingga ${ n } pengguna)"
       ],
       "Vault sharing with up to ${ n } person": [
-        "Pembagian berkas dengan hingga ${ n } pengguna"
+        "Berbagi brankas dengan hingga ${ n } pengguna"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Kami memindai dark web untuk memeriksa apakah alamat atau alias ${ BRAND_NAME } Anda telah dibocorkan serta memberitahukan Anda dengan segera apabila kami menemukan sesuatu."
@@ -9749,7 +9749,7 @@
         "Tanpa termasuk ${ taxName } ${ taxRate }%: ${ taxAmount }"
       ],
       "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
-        "Tanpa termasuk pajak ${ taxRate }%: ${ taxAmount }"
+        "Belum termasuk pajak ${ taxRate }%: ${ taxAmount }"
       ],
       "Got it": [
         "Paham"
@@ -9758,7 +9758,7 @@
         "Saya membeli produk ini selaku pihak bisnis"
       ],
       "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "Meliputi ${ taxName } ${ taxRate }%: ${ taxAmount }"
+        "Termasuk ${ taxName } ${ taxRate }%: ${ taxAmount }"
       ],
       "Including ${ taxRate }% taxes: ${ taxAmount }": [
         "Meliputi pajak ${ taxRate }%: ${ taxAmount }"
@@ -9791,7 +9791,7 @@
         "Kupon ini valid untuk ${ couponRedemptions } kali pembaruan."
       ],
       "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
-        "Harga diskon khusus ini valid untuk ${ subscriptionLength } bulan pertama."
+        "Harga diskon khusus ini berlaku untuk ${ subscriptionLength } bulan pertama."
       ],
       "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
         "Harga diskon khusus ini valid untuk bulan pertama. Kupon ini valid untuk ${ couponRedemptions } kali pembaruan. Setelahnya, langganan ini akan diperbarui secara otomatis pada harga ${ renewPriceStr } untuk 1 bulan. Anda dapat membatalkan langganan Anda kapan saja."
@@ -9948,13 +9948,13 @@
         "Nomor Bisnis"
       ],
       "Edit ABN": [
-        "Sunting ABN"
+        "Edit ABN"
       ],
       "Edit Business Number": [
         "Sunting Nomor Bisnis"
       ],
       "Edit EIN": [
-        "Sunting EIN"
+        "Edit EIN"
       ],
       "Edit VAT number": [
         "Sunting nomor PPN"
@@ -10013,7 +10013,7 @@
         "Nama perusahaan"
       ],
       "E.g., ": [
-        "Misalnya "
+        "Mis., "
       ],
       "Email": [
         "Email"
@@ -10853,7 +10853,7 @@
         "Ruang penyimpanan ${ app }"
       ],
       "${ app } storage used": [
-        "${ app } ruang penyimpanan digunakan"
+        "${ app } penyimpanan digunakan"
       ],
       "${ storage } ${ percentage }% full": [
         "${ storage } ${ percentage }% penuh"
@@ -11242,7 +11242,7 @@
         "Bonus ruang penyimpanan gratis tahunan"
       ],
       "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
-        "Anda masih memiliki ${ expiryDate } pada paket ${ planName } Anda. Kami akan menambahkan saldo yang senilai dengan waktu langganan yang tersisa ke Akun ${ BRAND_NAME } Anda. Pastikan Anda tidak melebihi batasan paket gratis sebelum membatalkan langganan. ${ learnMoreLink }"
+        "Langganan ${ planName } Anda masih berlaku hingga ${ expiryDate }. Kami akan menambahkan kredit untuk sisa waktu ke Akun ${ BRAND_NAME } Anda. Pastikan Anda tidak melebihi batas paket gratis sebelum membatalkan. ${ learnMoreLink }"
       ],
       "Your ${ planName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
         "Paket ${ planName } Anda tidak hanya menjaga keamanan data dan komunikasi bisnis Anda. Paket ini juga mendukung sasaran kepatuhan bisnis Anda, membuat bisnis Anda tampil menonjol, serta membuat tim Anda selalu terhubung."
@@ -11315,7 +11315,7 @@
         "Sistem kami tidak akan lagi mendebit Anda secara otomatis melalui metode pembayaran ini, namun langganan Anda akan tetap diperbarui pada akhir siklus tagihan. Apabila Anda ingin menurunkan akun atau mengubah paket berlangganan, Anda tetap harus mengurus proses pemindahan paket secara manual sebelum tagihan Anda jatuh tempo. Di samping itu, apabila Anda menonaktifkan autodebit dan lupa membayar tagihan, kami dapat menurunkan akun Anda dan menonaktifkan berbagai fitur berbayar yang ada secara otomatis."
       ],
       "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
-        "Sistem kami tidak akan lagi mendebit Anda secara otomatis melalui metode pembayaran ini, namun langganan Anda akan tetap diperbarui pada akhir siklus tagihan. Apabila Anda ingin menurunkan akun atau mengubah paket berlangganan, Anda tetap harus mengurus proses pemindahan paket secara manual sebelum tagihan Anda jatuh tempo. Mohon diperhatikan bahwa kami tidak dapat menurunkan akun Anda apabila Anda melebihi batas kuota yang diizinkan atau menggunakan fitur berbayar selaku pengguna gratis, dan kami juga tidak dapat menghapus berkas, email, atau data lainnya yang Anda miliki. Apabila Anda menonaktifkan autodebit, jangan lupa untuk membayar tagihan Anda pada waktunya untuk menghindari penangguhan akun."
+        "Sistem kami tidak akan lagi menagih otomatis menggunakan metode pembayaran ini, tetapi langganan Anda tetap akan diperpanjang di akhir siklus tagihan. Jika Anda ingin menurunkan paket atau mengubah langganan, Anda tetap perlu melakukannya sendiri sebelum periode penagihan berakhir. Kami tidak dapat menurunkan paket Anda secara otomatis karena jika Anda melebihi kuota penyimpanan free plan atau menggunakan fitur berbayar lainnya, kami tidak dapat menghapus file, email, atau data lain secara otomatis untuk Anda. Jika Anda menonaktifkan pembayaran otomatis, pastikan untuk membayar tagihan langganan berikutnya sebelum tanggal jatuh tempo agar akun Anda tidak ditangguhkan."
       ]
     },
     "Subscription saving": {
@@ -12029,7 +12029,7 @@
         "Bagaimana cara semua ini bekerja?"
       ],
       "How does it work?": [
-        "Bagaimana cara hal ini bekerja?"
+        "Bagaimana cara kerjanya?"
       ],
       "How your free trial works": [
         "Bagaimana masa uji coba gratis Anda bekerja"
@@ -12464,7 +12464,7 @@
         "Tingkatkan ke ${ planName }"
       ],
       "Upgrade to keep your premium benefits.": [
-        "Tingkatkan untuk mempertahankan berbagai keutamaan premium Anda."
+        "Tingkatkan paket untuk tetap menikmati manfaat premium."
       ],
       "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
         "Tingkatkan ruang penyimpanan Anda dengan ${ planName } seharga ${ formattedPrice }"
