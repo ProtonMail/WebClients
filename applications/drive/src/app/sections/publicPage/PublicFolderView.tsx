@@ -44,6 +44,8 @@ import { usePublicFolderLoader } from './usePublicFolderLoader';
 
 interface PublicFolderViewProps {
     rootNode: NodeEntity;
+    customPassword?: string;
+    isPartialView?: boolean;
 }
 
 const usePublicBreadcrumb = (driveClient: ProtonDrivePublicLinkClient) => {
@@ -83,7 +85,7 @@ const usePublicBreadcrumb = (driveClient: ProtonDrivePublicLinkClient) => {
     };
 };
 
-export const PublicFolderView = ({ rootNode }: PublicFolderViewProps) => {
+export const PublicFolderView = ({ rootNode, customPassword, isPartialView }: PublicFolderViewProps) => {
     const publicDriveClient = getPublicLinkClient();
     const { loadPublicFolderChildren } = usePublicFolderLoader();
     const { loading: breadcrumbLoading, data: crumbs, load: loadBreadcrumbs } = usePublicBreadcrumb(publicDriveClient);
@@ -347,6 +349,8 @@ export const PublicFolderView = ({ rootNode }: PublicFolderViewProps) => {
                 onCreateFolder={!isViewer ? () => handleCreateFolder(rootNode.uid) : undefined}
                 nbSelected={selectedItemIds.size}
                 isEmptyView={isEmpty}
+                customPassword={customPassword}
+                isPartialView={isPartialView}
             />
 
             {isEmpty ? (
