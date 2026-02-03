@@ -1723,7 +1723,7 @@
         "Sådan ændrer du din IP-adresse på Windows"
       ],
       "In this article, we look at who can see your internet history when you use WiFi, what they can see, and why they might do this.": [
-        "I denne artikel ser vi på, hvem der kan se din internethistorik, når du bruger WiFi, hvad de kan se, og hvorfor de måtte gøre dette."
+        "I denne artikel ser vi på, hvem der kan se din internethistorik, når du bruger wi-fi, hvad de kan se, og hvorfor de kunne finde på det."
       ],
       "Increase VPN speeds by up to 400% with VPN Accelerator": [
         "Forøg VPN-hastighederne med op til 400 % med VPN Accelerator"
@@ -3405,6 +3405,9 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Du kan importere begivenheder i iCal format (ICS-fil). Denne fil skal have en maksimal størrelse på ${ MAX_IMPORT_FILE_SIZE_STRING } og have op til ${ MAX_IMPORT_EVENTS_STRING } begivenheder. Hvis din fil er større, skal du opdele den i mindre filer."
+      ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "For at importere via en CSV- eller VCF-fil, skal du sikre dig, at filen ikke overskrider ${ MAX_IMPORT_FILE_SIZE_STRING } eller ${ maxContactString } kontakter. Hvis din fil er større, skal du opdele den i mindre filer. ${ learnMoreLink }."
       ]
     },
     "description": {
@@ -4443,6 +4446,9 @@
       ],
       "Your file ${ formattedFilename } is empty.": [
         "Din fil ${ formattedFilename } er tom."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ maxContactString } contacts.": [
+        "Din fil ${ formattedFilename } indeholder mere end ${ maxContactString } kontakter."
       ]
     },
     "Error importing event": {
@@ -4548,6 +4554,9 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Vi kunne ikke indlæse denne side. Opdater siden eller tjek din internetforbindelse."
+      ],
+      "Account is deleted or disabled": [
+        "Kontoen er slettet eller deaktiveret"
       ]
     },
     "Error notification": {
@@ -5966,7 +5975,7 @@
         "+${ organization.BonusVPN }-forbindelser til ${ VPN_APP_NAME } (tillader dig at forbinde flere enheder til VPN)"
       ],
       "2FA disabled": [
-        "2FA deaktiveret"
+        "Tofaktorgodkendelse deaktiveret"
       ],
       "30-day money-back guarantee": [
         "30 dages tilbagebetalingsgaranti"
@@ -8271,6 +8280,13 @@
       ],
       "Zoom meeting": [
         "Zoom-møde"
+      ],
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "Alle dine kontakter vil blive importeret, op til en grænse på ${ maxContact }",
+        "Alle dine kontakter vil blive importeret, op til en grænse på ${ maxContact }"
+      ],
+      "Coming soon": [
+        "Kommer snart"
       ]
     },
     "info": {
@@ -9671,7 +9687,7 @@
         "Log-in lykkedes (afventer mnemonic-bekræftelse)"
       ],
       "Sign in success (awaiting second factor)": [
-        "Login succes (afventer anden faktor)"
+        "Login lykkedes (afventer anden faktor)"
       ],
       "Sign in success (awaiting verification)": [
         "Vellykket log-in (afventer bekræftelse)"
@@ -11930,6 +11946,18 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Dit abonnement har i øjeblikket en eksisterende rabat. Ved at skifte til denne nye kampagne vil den eksisterende rabat ikke længere blive anvendt."
+      ],
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "Rabatten er gyldig for ${ renewalsWithCoupon } fornyelse.",
+        "Rabatten er gyldig for ${ renewalsWithCoupon } fornyelser."
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Den særligt nedsatte pris er gyldig i ${ couponRedemptions } måned. Derefter fornys den automatisk til ${ renewPriceStr } for 1 måned. Du kan opsige når som helst.",
+        "Den særligt nedsatte pris er gyldig i ${ couponRedemptions } måneder. Derefter fornys den automatisk til ${ renewPriceStr } for 1 måned. Du kan opsige når som helst."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Den særligt nedsatte pris på ${ priceWithDiscount } er gyldig i ${ couponRedemptions } måned. Derefter fornys den automatisk til ${ renewPriceStr } for 1 måned. Du kan opsige når som helst.",
+        "Den særligt nedsatte pris på ${ priceWithDiscount } er gyldig i ${ couponRedemptions } måneder. Derefter fornys den automatisk til ${ renewPriceStr } for 1 måned. Du kan opsige når som helst."
       ]
     },
     "Payments.Error": {
@@ -16778,6 +16806,32 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "Efter vellykket verifikation skal du ikke fjerne denne TXT-post, da den er nødvendig for at bekræfte, at du fortsætter med at eje domænet."
+      ]
+    },
+    "Theme": {
+      "Auto": [
+        "Automatisk"
+      ],
+      "Dark": [
+        "Mørk"
+      ],
+      "Light": [
+        "Lys"
+      ],
+      "Mode: Auto": [
+        "Tilstand: Automatisk"
+      ],
+      "Mode: Dark": [
+        "Tilstand: Mørk"
+      ],
+      "Mode: Light": [
+        "Tilstand: Lys"
+      ],
+      "Sync with system": [
+        "Synkronisér med system"
+      ],
+      "Use ${ BRAND_NAME } settings": [
+        "Brug ${ BRAND_NAME } indstillinger"
       ]
     }
   }

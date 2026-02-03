@@ -3405,6 +3405,9 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "U kunt afspraken importeren in iCal formaat (. ics-bestand). Het bestand moet een maximale grootte hebben van ${ MAX_IMPORT_FILE_SIZE_STRING } en mag maximaal ${ MAX_IMPORT_EVENTS_STRING } afspraken bevatten. Als uw bestand groter is, splitst u het op in kleinere bestanden."
+      ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Om te importeren via een CSV- en VCF-bestand, moet u ervoor zorgen dat het bestand niet groter is dan ${ MAX_IMPORT_FILE_SIZE_STRING } of niet meer dan ${ maxContactString } contacten bevat. Als uw bestand groter is, splits het dan op in kleinere bestanden. ${ learnMoreLink }."
       ]
     },
     "description": {
@@ -4362,6 +4365,12 @@
       ],
       "ZIP code is required": [
         "Postcode is vereist"
+      ],
+      "This offer is not available in your country": [
+        "Dit aanbod is niet beschikbaar in uw land"
+      ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "U heeft alle adressen in uw abonnement gebruikt. Upgrade uw abonnement om een nieuw adres toe te voegen of schakel een adres in uw account uit."
       ]
     },
     "error": {
@@ -4437,6 +4446,9 @@
       ],
       "Your file ${ formattedFilename } is empty.": [
         "Uw bestand ${ formattedFilename } is leeg."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ maxContactString } contacts.": [
+        "Uw bestand ${ formattedFilename } bevat meer dan ${ maxContactString } contacten."
       ]
     },
     "Error importing event": {
@@ -4542,6 +4554,9 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "We konden deze pagina niet laden. Ververs de pagina of controleer uw internetverbinding."
+      ],
+      "Account is deleted or disabled": [
+        "Account is verwijderd of uitgeschakeld"
       ]
     },
     "Error notification": {
@@ -8262,6 +8277,16 @@
       ],
       "Zoom meeting": [
         "Zoom meeting"
+      ],
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "Al uw contacten worden geïmporteerd, met een limiet van ${ maxContact }",
+        "Al uw contacten worden geïmporteerd, met een maximum van ${ maxContact }."
+      ],
+      "Coming soon": [
+        "Binnenkort beschikbaar"
+      ],
+      "We recommend adding servers in different locations (one per city) to maximize redundancy.": [
+        "We raden u aan servers op verschillende locaties (één per stad) toe te voegen om de redundantie te maximaliseren."
       ]
     },
     "info": {
@@ -9773,6 +9798,16 @@
       "Up to ${ n } participant": [
         "Tot ${ n } deelnemer",
         "Tot ${ n } deelnemers"
+      ],
+      "${ n } participant": [
+        "${ n } deelnemer",
+        "${ n } deelnemers"
+      ],
+      "Booking pages": [
+        "Boekingspagina's"
+      ],
+      "Meeting recording": [
+        "Opname van vergadering"
       ]
     },
     "Member action": {
@@ -11899,6 +11934,18 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Uw abonnement heeft momenteel een bestaande korting. Overstappen naar deze nieuwe promotie betekent dat de bestaande korting niet langer wordt toegepast."
+      ],
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "De korting is geldig voor ${ renewalsWithCoupon } verlenging.",
+        "De korting is geldig voor ${ renewalsWithCoupon } verlengingen."
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "De speciale kortingsprijs is geldig voor ${ couponRedemptions } maand. Daarna wordt deze automatisch verlengd voor ${ renewPriceStr } per maand. U kunt op elk moment annuleren.",
+        "De speciale kortingsprijs is geldig voor ${ couponRedemptions } maanden. Daarna wordt deze automatisch verlengd voor ${ renewPriceStr } per maand. U kunt op elk moment annuleren."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "De speciaal gereduceerde prijs van ${ priceWithDiscount } is geldig voor ${ couponRedemptions } maand. Daarna wordt deze automatisch verlengd voor ${ renewPriceStr } voor 1 maand. U kunt op elk moment annuleren.",
+        "De speciaal gereduceerde prijs van ${ priceWithDiscount } is geldig voor ${ couponRedemptions } maanden. Daarna wordt deze automatisch verlengd voor ${ renewPriceStr } voor 1 maand. U kunt op elk moment annuleren."
       ]
     },
     "Payments.Error": {
@@ -16305,6 +16352,12 @@
       ],
       "You can protect up to ${ FAMILY_MAX_USERS } people with ${ PLAN_NAMES[plan] }. Starting from just ${ priceString }/month per account.": [
         "U kunt tot ${ FAMILY_MAX_USERS } mensen beveiligen met ${ PLAN_NAMES[plan] }. Vanaf slechts ${ priceString }/maand per account."
+      ],
+      "${ BRAND_NAME } for Business": [
+        "Welkom bij ${ BRAND_NAME } voor Business"
+      ],
+      "Everything you need to collaborate securely in a single subscription. Get access to ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, ${ SHEETS_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } and ${ LUMO_SHORT_APP_NAME } AI Assistant.": [
+        "Alles wat u nodig heeft om veilig samen te werken in één abonnement. Krijg toegang tot ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, ${ SHEETS_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } en ${ LUMO_SHORT_APP_NAME } AI Assistent."
       ]
     },
     "upsell panel": {
@@ -16729,6 +16782,32 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "Na een succesvolle verificatie mag u dit TXT-record niet verwijderen, omdat het nodig is om te bevestigen dat u de eigenaar van het domein blijft."
+      ]
+    },
+    "Theme": {
+      "Auto": [
+        "Automatisch"
+      ],
+      "Dark": [
+        "Donker"
+      ],
+      "Light": [
+        "Licht"
+      ],
+      "Mode: Auto": [
+        "Modus: Automatisch"
+      ],
+      "Mode: Dark": [
+        "Modus: Donker"
+      ],
+      "Mode: Light": [
+        "Modus: Licht"
+      ],
+      "Sync with system": [
+        "Synchroniseren met systeem"
+      ],
+      "Use ${ BRAND_NAME } settings": [
+        "Gebruik ${ BRAND_NAME } instellingen"
       ]
     }
   }

@@ -4093,7 +4093,7 @@
         "Sloučit alespoň ${ calendarsToFixCount } kalendářů s ${ BRAND_NAME } existujícími kalendáři"
       ],
       "Missing key packet": [
-        "Chybějící paket klíčů"
+        "Chybějící paket klíče"
       ],
       "Name already exists": [
         "Jméno již existuje"
@@ -4396,7 +4396,7 @@
         "Dosáhli jste limitu počtu kontaktů vašeho účtu"
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
-        "Využili jste všechny adresy ve vašem tarifu. Prosím navyšte svůj tarif, abyste mohli přidat novou adresu, nebo deaktivujte adresu ve svém účtu."
+        "Využili jste všechny adresy ve vašem tarifu. Prosím navyšte svůj tarif, abyste mohli přidat novou adresu, nebo deaktivujte některou z adres ve svém účtu."
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Limit počtu uživatelů ve vašem tarifu byl vyčerpán. Přejděte na vyšší tarif, abyste mohli přidat dalšího uživatele."
@@ -8497,6 +8497,9 @@
       ],
       "Zoom meeting": [
         "schůzku na Zoomu"
+      ],
+      "Coming soon": [
+        "Již brzy"
       ]
     },
     "info": {
@@ -17253,6 +17256,14 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "Po úspěšném ověření, neodstraňujte TXT záznam, je potřebný k ověření, že doménu stále vlastníte."
+      ]
+    },
+    "Theme": {
+      "Dark": [
+        "Tmavý"
+      ],
+      "Light": [
+        "Světlý"
       ]
     }
   }

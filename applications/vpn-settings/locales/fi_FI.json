@@ -1256,6 +1256,12 @@
       ],
       "Set “${ emailAddress }” as default address": [
         "Aseta \"${ emailAddress }\" oletusosoitteeksi"
+      ],
+      "Edit address “${ emailAddress }”": [
+        "Muokkaa osoitetta \"${ emailAddress }\""
+      ],
+      "Reconnect": [
+        "Yhdistä uudelleen"
       ]
     },
     "Address status": {
@@ -1850,6 +1856,9 @@
       ],
       "Website access problem": [
         "Verkkosivuston avautumisongelma"
+      ],
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "${ LUMO_SHORT_APP_NAME } -ongelma"
       ]
     },
     "Button": {
@@ -3270,6 +3279,9 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Voit tuoda tapahtumia iCal-muodossa (ICS-tiedostosta). Tiedosto voi olla enintään ${ MAX_IMPORT_FILE_SIZE_STRING } kokoinen ja sisältää enintään ${ MAX_IMPORT_EVENTS_STRING } tapahtumaa. Jos tiedosto on suurempi, jaa se pienempiin tiedostoihin."
+      ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Tuodaksesi CSV- ja VCF-tiedostoista, varmista ettei tiedoston koko ylitä ${ MAX_IMPORT_FILE_SIZE_STRING } tai yhteystietojen määrä ${ maxContactString } yhteystietoa. Jos tiedostosi on suurempi, jaa se pienempiin osiin. ${ learnMoreLink }"
       ]
     },
     "description": {
@@ -4195,6 +4207,9 @@
       ],
       "ZIP code is required": [
         "Postinumero vaaditaan"
+      ],
+      "Please enter a valid postal code": [
+        "Syötä kelvollinen postinumero"
       ]
     },
     "error": {
@@ -4270,6 +4285,9 @@
       ],
       "Your file ${ formattedFilename } is empty.": [
         "Tiedosto \"${ formattedFilename }\" on tyhjä."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ maxContactString } contacts.": [
+        "Tiedosto ${ formattedFilename } sisältää yli ${ maxContactString } yhteystietoa."
       ]
     },
     "Error importing event": {
@@ -4372,6 +4390,9 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Sivua ei voitu ladata. Päivitä sivu tai tarkista Internet-yhteytesi."
+      ],
+      "Account is deleted or disabled": [
+        "Tili on poistettu tai poistettu käytöstä"
       ]
     },
     "Error notification": {
@@ -4581,6 +4602,10 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Tilisi käyttää ${ usedSpace } tallennustilaa, mikä ylittää sinulle varatun ${ inviteSpace } määrän. Poista joitakin tietoja tai pyydä tilauksen ylläpitäjää korottamaan tallennustilaasi."
+      ],
+      "Pending invitation": [
+        "Odottava kutsu",
+        "Odottavaa kutsua"
       ]
     },
     "familyOffer_2023:Info": {
@@ -4784,6 +4809,9 @@
       ],
       "Stream from Netflix, HBO, and more": [
         "Suoratoista Netflixistä, HBO:sta ja muista"
+      ],
+      "File attachment ": [
+        "Liitetiedosto "
       ]
     },
     "Features: Tooltip": {
@@ -7910,6 +7938,16 @@
       ],
       "Zoom meeting": [
         "Zoom-kokousta"
+      ],
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "Kaikki yhteystiedot tuodaan ${ maxContact } yhteystiedon rajoitukseen saakka",
+        "Kaikki yhteystiedot tuodaan ${ maxContact } yhteystiedon rajoitukseen saakka"
+      ],
+      "Coming soon": [
+        "Tulossa pian"
+      ],
+      "Two-factor authentication": [
+        "Kaksivaiheinen tunnistautuminen"
       ]
     },
     "info": {
@@ -8834,6 +8872,9 @@
       ],
       "ZIP code": [
         "Postinumero"
+      ],
+      "Minimum ${ MIN_CHARS } characters": [
+        "Vähintään ${ MIN_CHARS } merkkiä"
       ]
     },
     "label": {
@@ -10826,6 +10867,9 @@
       ],
       "UDP": [
         "UDP"
+      ],
+      "Android": [
+        "Android"
       ]
     },
     "option": {
@@ -11335,6 +11379,18 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Tilauksessasi on jo olemassa oleva alennus. Siirtyminen tähän uuteen kampanjaan tarkoittaa, että aiempaa alennusta ei enää käytetä."
+      ],
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "Alennus on voimassa ${ renewalsWithCoupon } uudistuksen ajan.",
+        "Alennus on voimassa ${ renewalsWithCoupon } uudistuksen ajan."
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Erikoistarjoushinta on voimassa ${ couponRedemptions } kuukauden. Sen jälkeen se uusitaan automaattisesti hintaan ${ renewPriceStr } yhden kuukauden ajaksi. Voit peruuttaa tilauksen milloin tahansa.",
+        "Erikoistarjoushinta on voimassa ${ couponRedemptions } kuukautta. Sen jälkeen se uusitaan automaattisesti hintaan ${ renewPriceStr } yhden kuukauden ajaksi. Voit peruuttaa tilauksen milloin tahansa."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Erikoistarjoushinta ${ priceWithDiscount } on voimassa ${ couponRedemptions } kuukauden. Sen jälkeen se uusitaan automaattisesti hintaan ${ renewPriceStr } yhden kuukauden ajaksi. Voit peruuttaa tilauksen milloin tahansa.",
+        "Erikoistarjoushinta ${ priceWithDiscount } on voimassa ${ couponRedemptions } kuukautta. Sen jälkeen se uusitaan automaattisesti hintaan ${ renewPriceStr } yhden kuukauden ajaksi. Voit peruuttaa tilauksen milloin tahansa."
       ]
     },
     "Payments.Error": {
@@ -11804,6 +11860,9 @@
       ],
       "You can get up to **${ maxRewardAmount }** in credit.": [
         "Voit ansaita jopa **${ maxRewardAmount }** krediitteinä."
+      ],
+      "your subscription": [
+        "tilauksesi"
       ]
     },
     "Remove organization logo": {
@@ -11862,6 +11921,9 @@
       ],
       "Save changes": [
         "Tallenna muutokset"
+      ],
+      "Purge all": [
+        "Tyhjennä kaikki"
       ]
     },
     "retention_policy_2025_Confirmation": {
@@ -15058,6 +15120,19 @@
       ],
       "Your subscriptions": [
         "Tilauksesi"
+      ],
+      "${ friendsInvited } Friend invited": [
+        "${ friendsInvited } ystävä kutsuttu",
+        "${ friendsInvited } ystävää kutsuttu"
+      ],
+      "Connect a Gmail address": [
+        "Yhdistä Gmail-osoite"
+      ],
+      "How your free trial works": [
+        "Miten ilmainen kokeilujakso toimii"
+      ],
+      "Welcome to ${ planName }": [
+        "Tervetuloa ${ planName }:ään"
       ]
     },
     "Title for payment methods table": {
@@ -15450,6 +15525,12 @@
       ],
       "Protect your organization from data breaches with ${ VPN_APP_NAME } for Business.": [
         "Suojaa organisaatiosi datamurroilta ${ VPN_APP_NAME } for Business -palvelulla."
+      ],
+      "${ BRAND_NAME } for Business": [
+        "${ BRAND_NAME } for Business"
+      ],
+      "Everything you need to collaborate securely in a single subscription. Get access to ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, ${ SHEETS_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } and ${ LUMO_SHORT_APP_NAME } AI Assistant.": [
+        "Kaikki mitä tarvitset turvalliseen yhteistyöhön yhdellä tilauksella. Saat käyttöösi ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, ${ SHEETS_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } ja ${ LUMO_SHORT_APP_NAME } AI Assistantin."
       ]
     },
     "upsell panel": {
@@ -15747,6 +15828,12 @@
       ],
       "Windows": [
         "Windows"
+      ],
+      "Android": [
+        "Android"
+      ],
+      "GNU/Linux": [
+        "GNU/Linux"
       ]
     },
     "wallet_signup_2024: Info": {
@@ -15847,6 +15934,47 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "Älä poista tätä TXT-tietuetta onnistuneen vahvistuksen jälkeen, koska sen avulla varmistetaan verkkotunnuksen kuuluvan sinulle myös jatkossa."
+      ]
+    },
+    "meet_2025: Feature": {
+      "${ n } participant": [
+        "${ n } osallistuja",
+        "${ n } osallistujaa"
+      ],
+      "Booking pages": [
+        "Ajanvaraussivut"
+      ],
+      "Browser, mobile, and desktop apps": [
+        "Selain, mobiili- ja työpöytäsovellukset"
+      ],
+      "Meeting recording": [
+        "Kokoustallenne"
+      ]
+    },
+    "Theme": {
+      "Auto": [
+        "Automaattinen"
+      ],
+      "Dark": [
+        "Tumma"
+      ],
+      "Light": [
+        "Vaalea"
+      ],
+      "Mode: Auto": [
+        "Tila: Autom."
+      ],
+      "Mode: Dark": [
+        "Tila: Tumma"
+      ],
+      "Mode: Light": [
+        "Tila: Vaalea"
+      ],
+      "Sync with system": [
+        "Seuraa järjestelmää"
+      ],
+      "Use ${ BRAND_NAME } settings": [
+        "Käytä ${ BRAND_NAME } asetuksia"
       ]
     }
   }

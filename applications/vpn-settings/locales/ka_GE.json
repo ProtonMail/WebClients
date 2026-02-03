@@ -8119,6 +8119,9 @@
       ],
       "Zoom meeting": [
         "Zoom-ის შეხვედრა"
+      ],
+      "Coming soon": [
+        "სულ მალე"
       ]
     },
     "info": {
@@ -9597,6 +9600,16 @@
       "Up to ${ n } participant": [
         "${ n }-მდე მონაწილე",
         "${ n }-მდე მონაწილე"
+      ],
+      "${ n } participant": [
+        "${ n } მონაწილე",
+        "${ n } მონაწილე"
+      ],
+      "Booking pages": [
+        "დაჯავშნის გვერდები"
+      ],
+      "Meeting recording": [
+        "შეხვედრის ჩანაწერი"
       ]
     },
     "Member action": {
@@ -16463,6 +16476,14 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "წარმატებული შემოწმების შემდეგ ნუ წაშლით ამ TXT ჩანაწერს. ის იმ ფაქტის შესამოწმებლად გამოიყენება, რომ დომენი, ჯერ კიდევ, თქვენ გეკუთვნით."
+      ]
+    },
+    "Theme": {
+      "Dark": [
+        "მუქი"
+      ],
+      "Light": [
+        "ღია"
       ]
     }
   }

@@ -3405,6 +3405,9 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Vous pouvez importer des événements au format iCal (fichier ICS). Le fichier peut avoir une taille maximale de ${ MAX_IMPORT_FILE_SIZE_STRING } et contenir jusqu'à ${ MAX_IMPORT_EVENTS_STRING } événements. Si votre fichier est plus volumineux, nous vous invitons à le diviser en plusieurs fichiers plus petits."
+      ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Pour importer à partir d'un fichier CSV ou VCF, assurez-vous que le fichier ne dépasse pas ${ MAX_IMPORT_FILE_SIZE_STRING } ou ${ maxContactString } contacts. Si votre fichier est plus volumineux, divisez-le en plusieurs fichiers plus petits. ${ learnMoreLink }"
       ]
     },
     "description": {
@@ -4443,6 +4446,9 @@
       ],
       "Your file ${ formattedFilename } is empty.": [
         "Votre fichier ${ formattedFilename } est vide."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ maxContactString } contacts.": [
+        "Votre fichier ${ formattedFilename } contient plus de ${ maxContactString } contacts."
       ]
     },
     "Error importing event": {
@@ -4548,6 +4554,9 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Nous n'avons pas pu charger cette page. Actualisez la page ou vérifiez votre connexion internet."
+      ],
+      "Account is deleted or disabled": [
+        "Le compte est supprimé ou désactivé."
       ]
     },
     "Error notification": {
@@ -8271,6 +8280,13 @@
       ],
       "Zoom meeting": [
         "réunion Zoom"
+      ],
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "Tous vos contacts seront importés, dans la limite de ${ maxContact }",
+        "Tous vos contacts seront importés, dans la limite de ${ maxContact }"
+      ],
+      "Coming soon": [
+        "Bientôt disponible"
       ]
     },
     "info": {
@@ -9774,7 +9790,7 @@
         "Partage d'écran chiffré de bout en bout et chat éphémère pendant les appels"
       ],
       "Meeting recording": [
-        "Enregistrement des réunions"
+        "Enregistrement de la réunion"
       ],
       "One active meeting at a time": [
         "Une réunion active à la fois"
@@ -11941,6 +11957,18 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Votre abonnement bénéficie actuellement d'une réduction existante. Le passage à cette nouvelle promotion signifie que la réduction existante ne sera plus appliquée."
+      ],
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "La réduction est valable pour ${ renewalsWithCoupon } renouvellement.",
+        "La réduction est valable pour ${ renewalsWithCoupon } renouvellements."
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Le tarif exceptionnellement réduit est valable pendant ${ couponRedemptions } mois. Il sera ensuite automatiquement renouvelé au prix de ${ renewPriceStr } pour une durée d'un mois. Vous pouvez annuler à tout moment.",
+        "Le tarif exceptionnellement réduit est valable pendant ${ couponRedemptions } mois. Il sera ensuite automatiquement renouvelé au prix de ${ renewPriceStr } pour une durée d'un mois. Vous pouvez annuler à tout moment."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Le tarif exceptionnellement réduit de ${ priceWithDiscount } est valable pendant ${ couponRedemptions } mois. Il sera ensuite automatiquement renouvelé au prix de ${ renewPriceStr } pour une durée d'un mois. Vous pouvez annuler à tout moment.",
+        "Le tarif exceptionnellement réduit de ${ priceWithDiscount } est valable pendant ${ couponRedemptions } mois. Il sera ensuite automatiquement renouvelé au prix de ${ renewPriceStr } pour une durée d'un mois. Vous pouvez annuler à tout moment."
       ]
     },
     "Payments.Error": {
@@ -16336,7 +16364,7 @@
         "Le saviez-vous ?"
       ],
       "Everything you need to collaborate securely in a single subscription. Get access to ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, ${ SHEETS_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } and ${ LUMO_SHORT_APP_NAME } AI Assistant.": [
-        "Tout ce dont vous avez besoin pour collaborer en toute sécurité dans un seul abonnement. Accédez à ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, ${ SHEETS_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } et à l'assistant IA ${ LUMO_SHORT_APP_NAME }."
+        "Tout ce dont vous avez besoin pour collaborer en toute sécurité avec un seul abonnement. Accédez à ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, ${ SHEETS_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } et ${ LUMO_SHORT_APP_NAME } AI Assistant."
       ],
       "Get ${ drivePlusPlanMaxSpace } storage for your files, photos and documents, and recover file versions with 10-year file recovery.": [
         "Obtenez ${ drivePlusPlanMaxSpace } d'espace de stockage pour vos fichiers, photos et documents, ainsi que les versions des fichiers des 10 dernières années."
@@ -16792,6 +16820,32 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "Une fois la vérification réussie, ne retirez pas cet enregistrement TXT : il est nécessaire pour confirmer que vous restez propriétaire du domaine."
+      ]
+    },
+    "Theme": {
+      "Auto": [
+        "Automatique"
+      ],
+      "Dark": [
+        "Sombre"
+      ],
+      "Light": [
+        "Clair"
+      ],
+      "Mode: Auto": [
+        "Mode : Auto"
+      ],
+      "Mode: Dark": [
+        "Mode : Sombre"
+      ],
+      "Mode: Light": [
+        "Mode : Clair"
+      ],
+      "Sync with system": [
+        "Synchroniser avec le système"
+      ],
+      "Use ${ BRAND_NAME } settings": [
+        "Utilisez les paramètres ${ BRAND_NAME }"
       ]
     }
   }
