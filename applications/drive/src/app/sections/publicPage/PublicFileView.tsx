@@ -35,12 +35,17 @@ export const PublicFileView = ({ rootNode, customPassword, isPartialView }: Publ
             setContentData(data);
         }
     };
-    const handleDownload = async () => {
+    const handleDownload = async (shouldScan?: boolean) => {
         if (contentData) {
             const { node } = getNodeEntity(await getPublicLinkClient().getNode(rootNode.uid));
             await downloadManager.downloadFromBuffer(node, contentData);
-        } else {
+            return;
+        }
+
+        if (shouldScan) {
             await downloadManager.downloadAndScan([rootNode.uid], { skipSignatureCheck: true });
+        } else {
+            await downloadManager.download([rootNode.uid], { skipSignatureCheck: true });
         }
     };
 
@@ -64,7 +69,8 @@ export const PublicFileView = ({ rootNode, customPassword, isPartialView }: Publ
                     undefined
                 }
                 onDetails={() => handleDetails(rootNode.uid)}
-                onDownload={handleDownload}
+                onDownload={() => handleDownload()}
+                onScanAndDownload={() => handleDownload(true)}
                 onCopyLink={handleCopyLink}
                 customPassword={customPassword}
                 isPartialView={isPartialView}
@@ -75,7 +81,7 @@ export const PublicFileView = ({ rootNode, customPassword, isPartialView }: Publ
                 nodeUid={rootNode.uid}
                 verifySignatures={false}
                 onContentLoaded={handleContentLoaded}
-                onDownload={handleDownload}
+                onDownload={() => handleDownload()}
             />
             {modals.detailsModal}
         </div>
