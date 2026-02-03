@@ -72,7 +72,7 @@ const headerItemsSmallScreen: ListViewHeaderItem[] = [headerItems.checkbox, head
 type SearchSortFields = Extract<SortField, SortField.name | SortField.fileModifyTime | SortField.size>;
 const SORT_FIELDS: SearchSortFields[] = [SortField.name, SortField.size, SortField.fileModifyTime];
 
-export const Search = ({ shareId, searchView }: Props) => {
+export const SearchLegacy = ({ shareId, searchView }: Props) => {
     const contextMenuAnchorRef = useRef<HTMLDivElement>(null);
 
     const browserItemContextMenu = useItemContextMenu();
@@ -86,13 +86,14 @@ export const Search = ({ shareId, searchView }: Props) => {
     const { layout, items, sortParams, setSorting, isLoading } = searchView;
 
     const selectedItems = useMemo(
-        () => getSelectedItems(items, selectionControls!.selectedItemIds),
-        [items, selectionControls!.selectedItemIds]
+        () => getSelectedItems(items, selectionControls?.selectedItemIds || []),
+        [items, selectionControls?.selectedItemIds]
     );
 
     // We consider that search is limited to items you own for now
     const browserItems: SearchItem[] = items.map((item) => ({ ...item, id: item.linkId, isAdmin: true }));
-    const { getDragMoveControls } = useDriveDragMove(shareId, browserItems, selectionControls!.clearSelections);
+    const clearSelections = selectionControls?.clearSelections || (() => {});
+    const { getDragMoveControls } = useDriveDragMove(shareId, browserItems, clearSelections);
 
     /* eslint-disable react/display-name */
     const GridHeaderComponent = useMemo(

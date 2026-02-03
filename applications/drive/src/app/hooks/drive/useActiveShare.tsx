@@ -1,5 +1,5 @@
-import { createContext, useCallback, useContext, useState } from 'react';
 import * as React from 'react';
+import { createContext, useCallback, useContext, useState } from 'react';
 
 export type DriveFolder = { volumeId: string; shareId: string; linkId: string };
 
@@ -8,6 +8,7 @@ interface ActiveShareProviderState {
     activeFolder: DriveFolder;
     setFolder: (folder: DriveFolder) => void;
     setDefaultRoot: () => void;
+    defaultShareRoot: DriveFolder;
 }
 
 const DriveFolderContext = createContext<ActiveShareProviderState | null>(null);
@@ -45,6 +46,9 @@ export const ActiveShareProvider = ({ defaultShareRoot, children }: Props) => {
                 activeFolder,
                 setFolder,
                 setDefaultRoot,
+                defaultShareRoot: {
+                    ...defaultShareRoot,
+                },
             }}
         >
             {children}

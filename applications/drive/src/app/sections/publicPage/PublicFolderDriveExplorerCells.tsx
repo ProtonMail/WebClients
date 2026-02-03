@@ -72,8 +72,8 @@ export const getPublicFolderCells = ({
             render: (uid) => {
                 const SizeCellComponent = () => {
                     const item = usePublicFolderStore(useShallow((state) => state.getFolderItem(uid)));
-                    if (!item || item.type === NodeType.Folder || !item.size) {
-                        return <span className="text-pre">--</span>;
+                    if (!item) {
+                        return null;
                     }
 
                     return <SizeCell size={item.size} />;

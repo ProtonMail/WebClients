@@ -4,7 +4,13 @@ import type { ESLink } from './types';
 import useSearchLibrary from './useSearchLibrary';
 
 function useSearchResultsProvider() {
-    const { encryptedSearch, esStatus } = useSearchLibrary();
+    const {
+        encryptedSearch,
+        esStatus,
+        enableEncryptedSearch,
+        cacheIndexedDB,
+        esStatus: { esSupported, isEnablingEncryptedSearch },
+    } = useSearchLibrary();
     const { dbExists } = esStatus;
 
     const [query, setQuery] = useState<string>('');
@@ -31,6 +37,10 @@ function useSearchResultsProvider() {
         query,
         isSearching,
         results,
+        isSearchSupported: esSupported,
+        enableSearch: enableEncryptedSearch,
+        isEnablingSearch: isEnablingEncryptedSearch,
+        cachedSearchDB: cacheIndexedDB,
     };
 }
 
