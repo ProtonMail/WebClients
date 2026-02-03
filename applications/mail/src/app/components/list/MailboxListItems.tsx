@@ -1,12 +1,17 @@
 import { type ChangeEvent, Fragment, type RefObject, useEffect } from 'react';
+import { useLocation } from 'react-router';
+
+import { c } from 'ttag';
 
 import { useUserSettings } from '@proton/account';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { DENSITY } from '@proton/shared/lib/constants';
 import type { Label } from '@proton/shared/lib/interfaces';
 import { CHECKLIST_DISPLAY_TYPE } from '@proton/shared/lib/interfaces';
+import { CUSTOM_VIEWS, CUSTOM_VIEWS_LABELS } from '@proton/shared/lib/mail/constants';
 
 import { useGetStartedChecklist } from 'proton-mail/containers/onboardingChecklist/provider/GetStartedChecklistProvider';
+import { useMailboxLayoutProvider } from 'proton-mail/router/components/MailboxLayoutContext';
 
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { PLACEHOLDER_ID_PREFIX } from '../../hooks/usePlaceholders';
@@ -64,6 +69,10 @@ const MailboxListItems = ({
     const shouldOverrideCompactness = shouldHighlight() && contentIndexingDone && esEnabled;
     const isCompactView = userSettings.Density === DENSITY.COMPACT && !shouldOverrideCompactness;
 
+    const location = useLocation();
+
+    const { isColumnModeActive } = useMailboxLayoutProvider();
+
     useEffect(() => {
         if (elements.length >= 5 && displayState === CHECKLIST_DISPLAY_TYPE.FULL) {
             changeChecklistDisplay(CHECKLIST_DISPLAY_TYPE.REDUCED);
@@ -72,7 +81,24 @@ const MailboxListItems = ({
     }, [elements]);
 
     if (elements.length === 0) {
-        return noPlaceholder ? null : <EmptyListPlaceholder labelID={labelID} isSearch={isSearch} isUnread={false} />;
+        if (noPlaceholder) {
+            return null;
+        }
+
+        // Small message in column view to inform user that no messages are available
+        if (
+            isColumnModeActive &&
+            !location.pathname.includes(CUSTOM_VIEWS[CUSTOM_VIEWS_LABELS.NEWSLETTER_SUBSCRIPTIONS].route)
+        ) {
+            return (
+                <div className="w-full h-full flex items-center justify-center">
+                    <p className="text-center text-sm color-weak">{c('Info')
+                        .t`Seems like you are all caught up for now`}</p>
+                </div>
+            );
+        }
+
+        return <EmptyListPlaceholder labelID={labelID} isSearch={isSearch} isUnread={false} />;
     }
 
     const showUserOnboarding =
