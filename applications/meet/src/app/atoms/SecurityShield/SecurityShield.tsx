@@ -35,11 +35,8 @@ export const SecurityShield = ({
                 originalPlacement={tooltipPlacement}
             >
                 <div
-                    className={clsx(
-                        'security-shield flex items-center justify-center',
-                        smallIcon && 'w-custom h-custom'
-                    )}
-                    style={{ display: 'inline-block', ...(smallIcon ? smallIconStyle : undefined) }}
+                    className={clsx('security-shield flex items-center justify-center')}
+                    style={{ display: 'inline-block' }}
                 >
                     <IcMeetShieldFull
                         className={clsx('shield-full', smallIcon && 'w-custom h-custom')}
