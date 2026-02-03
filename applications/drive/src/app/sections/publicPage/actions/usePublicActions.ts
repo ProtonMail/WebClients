@@ -2,6 +2,7 @@ import { c, msgid } from 'ttag';
 
 import { useConfirmActionModal, useNotifications } from '@proton/components';
 import { NodeType, splitNodeUid } from '@proton/drive';
+import { getPlatformFriendlyDateForFileName } from '@proton/shared/lib/docs/utils/getPlatformFriendlyDateForFileName';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import { type OpenInDocsType, isNativeProtonDocsAppFile } from '@proton/shared/lib/helpers/mimetype';
 import isTruthy from '@proton/utils/isTruthy';
@@ -18,7 +19,9 @@ import {
     getOpenInDocsInfo,
     openPublicDocsOrSheetsDocument,
 } from '../../../utils/docs/openInDocs';
+import { useSdkErrorHandler } from '../../../utils/errorHandling/useSdkErrorHandler';
 import { isPreviewOrFallbackAvailable } from '../../../utils/isPreviewOrFallbackAvailable';
+import { getNodeEntity } from '../../../utils/sdk/getNodeEntity';
 import { getPublicLinkClient } from '../publicLinkClient';
 import { usePublicFolderStore } from '../usePublicFolder.store';
 import { usePublicPageNotifications } from '../usePublicPageNotifications';
@@ -32,6 +35,7 @@ export const usePublicActions = () => {
     const [confirmModal, showConfirmModal] = useConfirmActionModal();
     const { createDeleteNotification } = usePublicPageNotifications();
     const { createNotification } = useNotifications();
+    const { handleError } = useSdkErrorHandler();
 
     const handlePreview = (uid: string) => {
         const { getAllFolderItems } = usePublicFolderStore.getState();
@@ -172,6 +176,30 @@ export const usePublicActions = () => {
         });
     };
 
+    const handleCreateDocsOrSheets = async (uid: string, documentType: OpenInDocsType['type']) => {
+        try {
+            const date = getPlatformFriendlyDateForFileName();
+            // translator: Default title for a new Proton Document (example: Untitled document 2024-04-23)
+            const docName = c('Title').t`Untitled document ${date}`;
+            // translator: Default title for a new Proton Spreadsheet (example: Untitled spreadsheet 2024-04-23)
+            const sheetName = c('Title').t`Untitled spreadsheet ${date}`;
+            const name = documentType === 'spreadsheet' ? sheetName : docName;
+            const maybeNode = await getPublicLinkClient().experimental.createDocument(
+                uid,
+                name,
+                documentType === 'document' ? 1 : 2
+            );
+            const { node } = getNodeEntity(maybeNode);
+            await getActionEventManager().emit({
+                type: ActionEventName.CREATED_NODES,
+                items: [{ uid: node.uid, parentUid: node.parentUid }],
+            });
+            handleOpenDocsOrSheets(node.uid, { isNative: true, type: documentType });
+        } catch (e) {
+            handleError(e);
+        }
+    };
+
     return {
         modals: {
             previewModal,
@@ -188,5 +216,6 @@ export const usePublicActions = () => {
         handleOpenDocsOrSheets,
         handleCopyLink,
         handleCreateFolder,
+        handleCreateDocsOrSheets,
     };
 };
