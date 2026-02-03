@@ -38,7 +38,7 @@ export const SideBar = ({
             >
                 {header}
 
-                <div className={header ? '' : 'ml-auto'}>
+                <div className={clsx(header ? '' : 'ml-auto', 'shrink-0')}>
                     <CloseButton onClose={onClose} />
                 </div>
             </div>
