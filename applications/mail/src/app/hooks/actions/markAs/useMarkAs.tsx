@@ -1,5 +1,9 @@
 import { useCallback } from 'react';
 
+import { c } from 'ttag';
+
+import { useNotifications } from '@proton/components/index';
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 import isTruthy from '@proton/utils/isTruthy';
@@ -37,6 +41,7 @@ export interface MarkAsParams {
 export const useMarkAs = () => {
     const { markAllAs, selectAllMarkModal } = useMarkAllAs();
     const dispatch = useMailDispatch();
+    const { createNotification } = useNotifications();
     const { sendSimpleActionReport } = useListTelemetry();
     const getConversationsByIDs = useGetConversationsByIDs();
     const handleOnBackMoveAction = useMoveBackAction();
@@ -45,6 +50,13 @@ export const useMarkAs = () => {
         async ({ elements, labelID = '', status, silent, selectAll, onCheckAll, sourceAction }: MarkAsParams) => {
             if (!elements.length) {
                 return;
+            }
+            // Disable marking as read/unread in soft deleted folder
+            if (labelID === MAILBOX_LABEL_IDS.SOFT_DELETED) {
+                return createNotification({
+                    text: c('Error').t`That action can't be performed on emails in this folder`,
+                    type: 'error',
+                });
             }
 
             const isMessage = isElementMessage(elements[0]); // All elements are of the same type
