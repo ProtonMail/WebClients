@@ -40,6 +40,7 @@ const defaultRules: PlanCapRule[] = [
     { plan: PLANS.MAIL_BUSINESS, cycle: CYCLE.YEARLY },
     { plan: PLANS.BUNDLE_PRO, cycle: CYCLE.YEARLY },
     { plan: PLANS.BUNDLE_PRO_2024, cycle: CYCLE.YEARLY },
+    { plan: PLANS.BUNDLE_BIZ_2025, cycle: CYCLE.YEARLY },
 ];
 
 export const isSupportedCycle = ({

@@ -6,6 +6,7 @@ export const isUserEligibleForBusySlots = (organization: Organization): boolean 
     const isEligible = [
         PLANS.BUNDLE_PRO, // Business
         PLANS.BUNDLE_PRO_2024, // Business
+        PLANS.BUNDLE_BIZ_2025, // Business
         PLANS.VISIONARY, // Visionary
         PLANS.FAMILY, // Family
         PLANS.DUO, // Duo
