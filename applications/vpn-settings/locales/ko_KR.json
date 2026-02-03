@@ -1167,6 +1167,11 @@
         "재활성화"
       ]
     },
+    "Action: Sheets": {
+      "Open in ${ SHEETS_APP_NAME }": [
+        "${ SHEETS_APP_NAME }에서 열기"
+      ]
+    },
     "Addon": {
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe 글쓰기 도우미"
@@ -1647,6 +1652,9 @@
       ]
     },
     "Billing cycle": {
+      "Renews automatically at ${ renewPrice }, for ${ renewCycle } month": [
+        "${ renewCycle }개월간 자동으로 ${ renewPrice }에 갱신됩니다"
+      ],
       "Renews automatically on ${ subscriptionManagerName }": [
         "${ subscriptionManagerName }에 자동으로 갱신합니다."
       ]
@@ -1752,6 +1760,9 @@
       "Contacts": [
         "연락처"
       ],
+      "Domain connected": [
+        "도메인 연결됨"
+      ],
       "Domain ownership verified": [
         "도메인 소유권 인증됨"
       ],
@@ -1782,6 +1793,21 @@
       "Migration includes": [
         "이전에 포함되는 항목:"
       ],
+      "Migration started for ${ n } user": [
+        "${ n }명의 사용자에 대한 마이그레이션이 시작됨"
+      ],
+      "Migration status": [
+        "마이그레이션 상태"
+      ],
+      "Organization does not have enough seats available": [
+        "조직의 사용 권한이 충분하지 않습니다."
+      ],
+      "Organization does not have enough storage available": [
+        "조직에 충분한 저장공간이 남아있지 않습니다."
+      ],
+      "Required": [
+        "필수"
+      ],
       "Required to create user accounts": [
         "사용자 계정 생성 필요"
       ],
@@ -1797,11 +1823,20 @@
       "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Markeplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue. Learn more": [
         "조직의 데이터를 이전하기 위해, Google Workspace Marketplace에서 ${ BRAND_NAME } 이전 작업 도우미를 설치해야 합니다. 데이터 복사를 위해 ${ BRAND_NAME }에 권한 부여가 필요합니다. 설치 완료 후, 작업을 계속하기 위해 다시 이 탭으로 전환하세요. 더 알아보기"
       ],
+      "Transfer errors": [
+        "전송 오류"
+      ],
       "User": [
         "사용자"
       ],
       "Verify your domain": [
         "내 도메인 인증"
+      ],
+      "Verify your domain to start a migration": [
+        "마이그레이션을 시작하려면 도메인을 확인하세요"
+      ],
+      "What are you migrating?": [
+        "무엇을 이전하시나요?"
       ]
     },
     "Browser": {
@@ -3287,8 +3322,8 @@
       "Simplify syncing and scheduling with shared calendars.": [
         "공유 캘린더로 동기화 및 일정 예약을 간소화하세요."
       ],
-      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
-        "CSV 파일 및 VCF 파일을 통한 불러오기를 위해, 파일이 ${ MAX_IMPORT_FILE_SIZE_STRING } 또는 연락처 ${ MAX_IMPORT_CONTACTS_STRING }개를 초과하지 않도록 않도록 해주세요. 파일이 더 크다면, 더 작은 파일로 나눠주세요. ${ learnMoreLink }."
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "CSV 파일 및 VCF 파일을 통한 불러오기를 위해, 파일이 ${ MAX_IMPORT_FILE_SIZE_STRING } 또는 연락처 ${ maxContactString }개를 초과하지 않도록 않도록 해주세요. 파일이 더 크다면, 더 작은 파일로 나눠주세요. ${ learnMoreLink }."
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Google 및 Outlook에서 콘텐츠를 불러오려면, ${ easySwitchLink }"
@@ -4178,6 +4213,9 @@
       "This label name is not available. Please choose a different name.": [
         "이 라벨 이름은 사용할 수 없어요. 다른 이름을 선택하세요."
       ],
+      "This offer is not available in your country": [
+        "이 제안은 현재 거주 중인 국가에서 사용할 수 없습니다."
+      ],
       "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
         "개인이 아닌 사용자를 생성하거나 해당 계정에 접근하도록 하려면, 관리자 권한을 복원해야만 합니다."
       ],
@@ -4234,6 +4272,9 @@
       ],
       "You have reached the number of contacts limit for your account": [
         "계정의 최대 연락처 수를 초과했습니다"
+      ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "플랜에서 사용 가능한 모든 주소를 사용했습니다. 새 주소를 사용하려면 계정에서 주소를 비활성화하거나 플랜을 업그레이드하세요."
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "현재 요금제에서 사용 가능한 모든 사용자를 사용했습니다. 새 사용자를 추가하려면 요금제를 업그레이드해 주세요."
@@ -4321,8 +4362,8 @@
       "An error occurred uploading your file. No file has been selected.": [
         "파일을 업로드하는 동안 오류가 발생했습니다. 파일을 선택하지 않았습니다."
       ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
-        "파일 ${ formattedFilename } 에 연락처가 ${ MAX_IMPORT_CONTACTS_STRING } 개 넘게 포함되어 있습니다."
+      "Your file ${ formattedFilename } contains more than ${ maxContactString } contacts.": [
+        "파일 ${ formattedFilename }이(가) ${ maxContactString }개 초과 연락처를 포함하고 있습니다."
       ],
       "Your file ${ formattedFilename } has no contacts to be imported.": [
         "${ formattedFilename } 파일에 가져올 연락처가 없습니다."
@@ -5435,6 +5476,12 @@
       "Too many recent requests. Please try again in a few moments.": [
         "너무 많은 요청을 시도했습니다. 잠시 후 다시 시도해 주세요."
       ],
+      "Two-factor authentication is enabled in your external account.": [
+        "사용자의 외부 계정에 2단계 인증이 활성화되었습니다."
+      ],
+      "Two-factor authentication is enabled in your external email account.": [
+        "2단계 인증이 사용자의 외부 계정에 활성화되었습니다."
+      ],
       "Use your app password if:": [
         "다음과 같은 경우 앱 비밀번호를 사용하세요:"
       ],
@@ -5902,8 +5949,8 @@
       "All your changes will be lost.": [
         "저장하지 않은 변경사항은 손실됩니다."
       ],
-      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
-        "최대 ${ MAX_CONTACTS_PER_USER }개까지 연락처가 불러오기됩니다."
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "최대 ${ maxContact }개까지 연락처가 불러오기됩니다."
       ],
       "Allocated": [
         "할당 됨"
@@ -6057,6 +6104,12 @@
       ],
       "CNET editors choice award with a rating of 8.4 out of 10": [
         "10점 중 8.4점 평가의 CNET 에디터 초이스 어워드"
+      ],
+      "Coming soon": [
+        "곧 찾아옵니다"
+      ],
+      "Compromised": [
+        "유출됨"
       ],
       "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
         "인증 제공자(IdP)를 통해 조직의 SAML 인증을 구성하십시오. 이 설정값은 전체 조직의 SAML 활성화가 진행됩니다."
@@ -7213,6 +7266,9 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "로얄 사용자시기에, 계정에 추가적인 기능이 활성화 되었습니다."
       ],
+      "Some ${ BRAND_NAME } apps may not support security keys yet. If you turn off authenticator app 2FA, you may not be able to sign in to those apps.": [
+        "일부 ${ BRAND_NAME } 앱이 보안 키를 아직 지원하지 않습니다. 2단계 인증 앱 사용을 중지하는 경우 해당 앱에 로그인하지 못할 가능성이 있습니다."
+      ],
       "Some keys successfully reactivated": [
         "일부 키가 성공적으로 재활성화 되었습니다"
       ],
@@ -7687,6 +7743,9 @@
       "We need to authenticate your payment with your bank.": [
         "은행의 결제 수단 인증이 필요합니다."
       ],
+      "We recommend adding servers in different locations (one per city) to maximize redundancy.": [
+        "중복성을 최대화하기 위해 서로 다른 위치에 서버를 하나씩 추가하는 것을 권장합니다."
+      ],
       "We recommend having at least 2 servers in order to provide redundancy.": [
         "중복성을 위해 최소 2개의 서버를 보유하는 것이 좋습니다."
       ],
@@ -7776,6 +7835,9 @@
       ],
       "With email categories, important messages land in a primary inbox. Everything else is organized into categories.": [
         "이메일 카테고리를 사용하면 중요한 메시지가 우선 순위 받은 편지함에 도착합니다. 나머지 메시지는 카테고리로 정리됩니다."
+      ],
+      "With groups, you can implement the company security policies for access control and reduce the risk of accessing unauthorised data.": [
+        "그룹을 사용하면 접근 제어에 대한 회사 보안 정책을 구현하고 승인되지 않은 데이터에 접근할 위험을 줄일 수 있습니다."
       ],
       "With groups, you can quickly and easily send emails to all the people in a specified group.": [
         "그룹으로, 빠르고 쉽게 특정 그룹 내의 사용자에게 이메일 전송이 가능합니다."
@@ -9492,6 +9554,9 @@
       "${ n } active meeting at a time": [
         "동시 활성 회의 ${ n }개"
       ],
+      "${ n } participant": [
+        "참여자 ${ n }명"
+      ],
       "24 hours per meeting": [
         "회의 당 24시간"
       ],
@@ -9501,6 +9566,9 @@
       "Appointment scheduling": [
         "일정 예약"
       ],
+      "Booking pages": [
+        "예약 페이지"
+      ],
       "Browser, mobile, and desktop apps": [
         "브라우저, 모바일 및 데스크톱 앱"
       ],
@@ -9509,6 +9577,9 @@
       ],
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "종단간 암호화된 화면 공유 및 임시 통화 중 채팅"
+      ],
+      "Meeting recording": [
+        "회의 녹화"
       ],
       "One active meeting at a time": [
         "동싀 활성 회의 1개"
@@ -9659,6 +9730,12 @@
       ],
       "Hong Kong dollar": [
         "홍콩 달러"
+      ],
+      "Polish złoty": [
+        "폴란드 즐로티"
+      ],
+      "Singapore dollar": [
+        "싱가포르 달러"
       ],
       "South Korean won": [
         "대한민국 원"
@@ -11552,23 +11629,23 @@
       "terms and conditions": [
         "이용 약관"
       ],
-      "The coupon is valid for ${ couponRedemptions } renewal.": [
-        "쿠폰이 ${ couponRedemptions }회 갱신까지 유효합니다."
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "해당 할인은 ${ renewalsWithCoupon }회 갱신까지 유효합니다."
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "특별 할인가는 ${ couponRedemptions }개월 동안 유효합니다. 이후 매월 ${ renewPriceStr }에 자동으로 갱신됩니다. 언제든지 취소할 수 있습니다."
       ],
       "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
         "특별 할인 가격은 최초 ${ subscriptionLength }개월에 한해 유효합니다."
       ],
-      "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "특별 할인가가 첫 달에만 적용됩니다. 쿠폰은 ${ couponRedemptions }회 갱신까지 유효합니다. 이후에는 매월 ${ renewPriceStr }(으)로 1개월 동안 자동 갱신됩니다. 언제든지 취소할 수 있습니다."
-      ],
       "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "특별 할인가는 첫 달에만 유효합니다. 이후 매 달 ${ renewPriceStr }에 자동으로 갱신됩니다. 취소는 언제나 가능합니다."
       ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "특별 할인가 ${ priceWithDiscount }은(는) ${ couponRedemptions }개월간 유효합니다. 이후 ${ renewPriceStr }(으)로 1개월간 자동 갱신됩니다. 언제든지 취소할 수 있습니다."
+      ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "특별 할인 가격인 ${ priceWithDiscount }은(는) 최초 ${ subscriptionLength }개월에 한해 유효합니다."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "특별 할인가 ${ priceWithDiscount }는 첫 달만 적용됩니다. 쿠폰은 ${ couponRedemptions }회 갱신까지 유효합니다. 이후에는 매월 ${ renewPriceStr }로 개월 동안 자동 갱신되며, 언제든지 취소할 수 있습니다."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "특별 할인가 ${ priceWithDiscount }는 첫 달에만 유효합니다. 이후 매 달 ${ renewPriceStr }에 자동으로 갱신됩니다. 취소는 언제나 가능합니다."
@@ -14408,6 +14485,14 @@
         "vCard 란"
       ]
     },
+    "Theme": {
+      "Dark": [
+        "다크"
+      ],
+      "Light": [
+        "라이트"
+      ]
+    },
     "Time unit": {
       "${ ceilDays } day": [
         "${ ceilDays }일"
@@ -15356,6 +15441,9 @@
       "Third-party apps and services": [
         "제3자 앱 및 서비스"
       ],
+      "To preview this spreadsheet, download it.": [
+        "이 스프레드시트를 미리 보려면 다운로드하세요."
+      ],
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "이 스프레드시트를 미리보려면, ${ SHEETS_APP_NAME }에서 열거나 다운로드하세요."
       ],
@@ -15891,6 +15979,9 @@
       ]
     },
     "Upsell": {
+      "${ BRAND_NAME } for Business": [
+        "${ BRAND_NAME } for Business"
+      ],
       "**Save up to ${ priceString }** with a longer subscription. Same premium features, lower price.": [
         "장기 구독 옵션으로 **최대 ${ priceString } 절약하세요**. 같은 프리미엄 기능이지만 더 저렴하게 누릴 수 있어요."
       ],
@@ -15902,6 +15993,9 @@
       ],
       "Did you know?": [
         "알고 계셨나요?"
+      ],
+      "Everything you need to collaborate securely in a single subscription. Get access to ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, ${ SHEETS_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } and ${ LUMO_SHORT_APP_NAME } AI Assistant.": [
+        "하나의 구독으로 안전하게 협업하는 데 필요한 모든 것을 받아보세요. ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, ${ SHEETS_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } 및 ${ LUMO_SHORT_APP_NAME } AI 어시스턴트에 접근하세요."
       ],
       "Get ${ drivePlusPlanMaxSpace } storage for your files, photos and documents, and recover file versions with 10-year file recovery.": [
         "파일, 사진 및 문서를 위해 ${ drivePlusPlanMaxSpace } 저장공간을 이용하고, 10년 파일 복구 기능을 통해 파일 버전을 복구하세요."

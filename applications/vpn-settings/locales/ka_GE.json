@@ -3348,9 +3348,6 @@
       "Simplify syncing and scheduling with shared calendars.": [
         "გაამართივეთ გაზიარებული კალენდრების დაგეგმვა და სინქრონიზაცია."
       ],
-      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
-        "CSV და VCF ფაილების შემოსატანად დარწმუნდით, რომ ფაილი ${ MAX_IMPORT_FILE_SIZE_STRING }-ზე ან ${ MAX_IMPORT_CONTACTS_STRING }-ზე მეტ კონტაქტს არ შეიცავს. თუ თქვენი ფაილი უფრო დიდია, დაყავით ის უფრო პატარა ფაილებად. ${ learnMoreLink }."
-      ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Google-დან ან Outlook-დან კონტაქტების შემოსატანად, ${ easySwitchLink }."
       ],
@@ -4368,9 +4365,6 @@
       ],
       "An error occurred uploading your file. No file has been selected.": [
         "შეცდომა ფაილის ატვირთვისას. ფაილი არჩეული არაა."
-      ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
-        "ფაილი ${ formattedFilename } ${ MAX_IMPORT_CONTACTS_STRING }-ზე მეტ კონტაქტს შეიცავს."
       ],
       "Your file ${ formattedFilename } has no contacts to be imported.": [
         "თქვენს ფაილში ${ formattedFilename } შემოსატანი კონტაქტები ნაპოვნი არაა."
@@ -5991,10 +5985,6 @@
       "All your changes will be lost.": [
         "ყველა თქვენი ცვლილება დაიკარგება."
       ],
-      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
-        "შემოტანილი იქნება ყველა თქვენი კონტაქტი. ლიმიტია ${ MAX_CONTACTS_PER_USER }",
-        "შემოტანილი იქნება ყველა თქვენი კონტაქტი. ლიმიტია ${ MAX_CONTACTS_PER_USER }"
-      ],
       "Allocated": [
         "გამოყოფილი"
       ],
@@ -6144,6 +6134,9 @@
       ],
       "CNET editors choice award with a rating of 8.4 out of 10": [
         "CNET-ის რედაქტორების არჩევნის ჯილდო 8.4 რეიტინგიტ 10-დან"
+      ],
+      "Coming soon": [
+        "სულ მალე"
       ],
       "Compromised": [
         "კომპრომენტირებული"
@@ -9563,6 +9556,10 @@
         "${ n } ერთდროული აქტიური შეხვედრა",
         "${ n } ერთდროული აქტიური შეხვედრა"
       ],
+      "${ n } participant": [
+        "${ n } მონაწილე",
+        "${ n } მონაწილე"
+      ],
       "24 hours per meeting": [
         "24 საათი თითო შეხვედრისთვის"
       ],
@@ -9572,6 +9569,9 @@
       "Appointment scheduling": [
         "შეხვედრის დაგეგმვა"
       ],
+      "Booking pages": [
+        "დაჯავშნის გვერდები"
+      ],
       "Browser, mobile, and desktop apps": [
         "ბრაუზერის, მობილურის და კომპიუტეირს აპები"
       ],
@@ -9580,6 +9580,9 @@
       ],
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "გამჭოლად დაშიფრული ეკრანის გაზიარება და ეფერემული ჩატი ზარის დროს"
+      ],
+      "Meeting recording": [
+        "შეხვედრის ჩანაწერი"
       ],
       "One active meeting at a time": [
         "ერთი აქტიური შეხვედრა ერთდროულად"
@@ -11650,10 +11653,6 @@
       ],
       "terms and conditions": [
         "პირობები და წესები"
-      ],
-      "The coupon is valid for ${ couponRedemptions } renewal.": [
-        "კუპონი გამოსადეგია ${ couponRedemptions }-ის განახლებისთვის.",
-        "კუპონი გამოსადეგია ${ couponRedemptions }-ის განახლებისთვის."
       ],
       "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
         "სპეციალურად დაკლებული ფასები ვარგისია პირველ ${ subscriptionLength } თვეში.",
@@ -14491,6 +14490,14 @@
       ],
       "vCard field": [
         "vCard-ის ველი"
+      ]
+    },
+    "Theme": {
+      "Dark": [
+        "მუქი"
+      ],
+      "Light": [
+        "ღია"
       ]
     },
     "Themes": {

@@ -1723,7 +1723,7 @@
         "Sådan ændrer du din IP-adresse på Windows"
       ],
       "In this article, we look at who can see your internet history when you use WiFi, what they can see, and why they might do this.": [
-        "I denne artikel ser vi på, hvem der kan se din internethistorik, når du bruger WiFi, hvad de kan se, og hvorfor de måtte gøre dette."
+        "I denne artikel ser vi på, hvem der kan se din internethistorik, når du bruger wi-fi, hvad de kan se, og hvorfor de kunne finde på det."
       ],
       "Increase VPN speeds by up to 400% with VPN Accelerator": [
         "Forøg VPN-hastighederne med op til 400 % med VPN Accelerator"
@@ -3388,8 +3388,8 @@
       "Simplify syncing and scheduling with shared calendars.": [
         "Forenkl synkronisering og planlægning med delte kalendere."
       ],
-      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
-        "For at importere via en CSV- eller VCF-fil, skal du være sikker på at filen ikke overskriver ${ MAX_IMPORT_FILE_SIZE_STRING } eller ${ MAX_IMPORT_CONTACTS_STRING } kontakter. Hvis din fil er større, skal du dele den i mindre filer. ${ learnMoreLink }."
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "For at importere via en CSV- eller VCF-fil, skal du sikre dig, at filen ikke overskrider ${ MAX_IMPORT_FILE_SIZE_STRING } eller ${ maxContactString } kontakter. Hvis din fil er større, skal du opdele den i mindre filer. ${ learnMoreLink }."
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "For at importere dine kontakter fra Google eller Outlook, ${ easySwitchLink }."
@@ -4435,8 +4435,8 @@
       "An error occurred uploading your file. No file has been selected.": [
         "Der opstod en fejl under upload af din fil. Ingen fil er blevet valgt."
       ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
-        "Din fil ${ formattedFilename } indeholder mere end ${ MAX_IMPORT_CONTACTS_STRING } kontakter."
+      "Your file ${ formattedFilename } contains more than ${ maxContactString } contacts.": [
+        "Din fil ${ formattedFilename } indeholder mere end ${ maxContactString } kontakter."
       ],
       "Your file ${ formattedFilename } has no contacts to be imported.": [
         "Din fil ${ formattedFilename } har ingen kontakter til import."
@@ -4522,6 +4522,9 @@
       ]
     },
     "Error message": {
+      "Account is deleted or disabled": [
+        "Kontoen er slettet eller deaktiveret"
+      ],
       "App currently unavailable": [
         "App ikke tilgængelig i øjeblikket"
       ],
@@ -5966,7 +5969,7 @@
         "+${ organization.BonusVPN }-forbindelser til ${ VPN_APP_NAME } (tillader dig at forbinde flere enheder til VPN)"
       ],
       "2FA disabled": [
-        "2FA deaktiveret"
+        "Tofaktorgodkendelse deaktiveret"
       ],
       "30-day money-back guarantee": [
         "30 dages tilbagebetalingsgaranti"
@@ -6079,9 +6082,9 @@
       "All your changes will be lost.": [
         "Alle dine ændringer vil gå tabt."
       ],
-      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
-        "Alle dine kontakter vil blive importeret, op til en grænse på ${ MAX_CONTACTS_PER_USER }",
-        "Alle dine kontakter vil blive importeret, op til en grænse på ${ MAX_CONTACTS_PER_USER }"
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "Alle dine kontakter vil blive importeret, op til en grænse på ${ maxContact }",
+        "Alle dine kontakter vil blive importeret, op til en grænse på ${ maxContact }"
       ],
       "Allocated": [
         "Tildelt"
@@ -6235,6 +6238,9 @@
       ],
       "CNET editors choice award with a rating of 8.4 out of 10": [
         "CNET editors choice award med en bedømmelse på 8,4 ud af 10"
+      ],
+      "Coming soon": [
+        "Kommer snart"
       ],
       "Compromised": [
         "Kompromitteret"
@@ -9671,7 +9677,7 @@
         "Log-in lykkedes (afventer mnemonic-bekræftelse)"
       ],
       "Sign in success (awaiting second factor)": [
-        "Login succes (afventer anden faktor)"
+        "Login lykkedes (afventer anden faktor)"
       ],
       "Sign in success (awaiting verification)": [
         "Vellykket log-in (afventer bekræftelse)"
@@ -11853,28 +11859,28 @@
       "terms and conditions": [
         "vilkår og betingelser"
       ],
-      "The coupon is valid for ${ couponRedemptions } renewal.": [
-        "Kuponen er gyldig til ${ couponRedemptions } fornyelse",
-        "Kuponen er gyldig til ${ couponRedemptions } fornyelser"
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "Rabatten er gyldig for ${ renewalsWithCoupon } fornyelse.",
+        "Rabatten er gyldig for ${ renewalsWithCoupon } fornyelser."
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Den særligt nedsatte pris er gyldig i ${ couponRedemptions } måned. Derefter fornys den automatisk til ${ renewPriceStr } for 1 måned. Du kan opsige når som helst.",
+        "Den særligt nedsatte pris er gyldig i ${ couponRedemptions } måneder. Derefter fornys den automatisk til ${ renewPriceStr } for 1 måned. Du kan opsige når som helst."
       ],
       "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
         "Den særligt nedsatte pris gælder for den første måned på ${ subscriptionLength }.",
         "Den særligt nedsatte pris gælder for de første ${ subscriptionLength } måneder."
       ],
-      "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "Den særligt nedsatte pris er gyldig i den første måned. Kuponen er gyldig til ${ couponRedemptions } fornyelse. Deretter vil den automatisk blive fornyet til ${ renewPriceStr } for 1 måned. Du kan opsige når som helst.",
-        "Den særligt nedsatte pris er gyldig i den første måned. Kuponen er gyldig til ${ couponRedemptions } fornyelser. Deretter vil den automatisk blive fornyet til ${ renewPriceStr } for 1 måned. Du kan opsige når som helst."
-      ],
       "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Den særligt nedsatte pris er gyldig i den første måned. Derefter fornys den automatisk til ${ renewPriceStr } hver måned. De kan opsige når som helst."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Den særligt nedsatte pris på ${ priceWithDiscount } er gyldig i ${ couponRedemptions } måned. Derefter fornys den automatisk til ${ renewPriceStr } for 1 måned. Du kan opsige når som helst.",
+        "Den særligt nedsatte pris på ${ priceWithDiscount } er gyldig i ${ couponRedemptions } måneder. Derefter fornys den automatisk til ${ renewPriceStr } for 1 måned. Du kan opsige når som helst."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "Den særlige udsalgspris på ${ priceWithDiscount } gælder for den første ${ subscriptionLength } måned.",
         "Den særlige udsalgspris på ${ priceWithDiscount } gælder for de første ${ subscriptionLength } måneder."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "Den særlige rabatpris på ${ priceWithDiscount } er gyldig for den første måned. Kuponen er gyldig til ${ couponRedemptions } fornyelse. Derefter vil den automatisk blive fornyet til ${ renewPriceStr } i 1 måned. Du kan annullere når som helst.",
-        "Den særlige rabatpris på ${ priceWithDiscount } er gyldig for den første måned. Kuponen er gyldig til ${ couponRedemptions } fornyelser. Derefter vil den automatisk blive fornyet til ${ renewPriceStr } i 1 måned. Du kan annullere når som helst."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Den særlige rabatpris på ${ priceWithDiscount } er gyldig i den første måned. Derefter fornys den automatisk til ${ renewPriceStr } hver måned. Du kan annullere når som helst."
@@ -14773,6 +14779,32 @@
       ],
       "vCard field": [
         "vCard-felt"
+      ]
+    },
+    "Theme": {
+      "Auto": [
+        "Automatisk"
+      ],
+      "Dark": [
+        "Mørk"
+      ],
+      "Light": [
+        "Lys"
+      ],
+      "Mode: Auto": [
+        "Tilstand: Automatisk"
+      ],
+      "Mode: Dark": [
+        "Tilstand: Mørk"
+      ],
+      "Mode: Light": [
+        "Tilstand: Lys"
+      ],
+      "Sync with system": [
+        "Synkronisér med system"
+      ],
+      "Use ${ BRAND_NAME } settings": [
+        "Brug ${ BRAND_NAME } indstillinger"
       ]
     },
     "Themes": {
