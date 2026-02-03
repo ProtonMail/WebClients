@@ -1,4 +1,5 @@
 import { getStoredThemeString } from '@proton/components/containers/themes/themeCookieStorage';
+import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { ThemeModeSetting } from '@proton/shared/lib/themes/constants';
 import {
     PROTON_DEFAULT_THEME,
@@ -77,6 +78,10 @@ export const getPublicAppThemeSetting = ({ themeMode }: { themeMode: ThemeModeSe
 export const getInitialPublicAppThemeSetting = (): ThemeSetting => {
     const defaultThemeSetting = getDefaultThemeSetting(PROTON_DEFAULT_THEME);
     const searchParams = new URLSearchParams(window.location.search);
+
+    if (isElectronApp) {
+        return defaultThemeSetting;
+    }
 
     // 1. URL param (?theme=light/dark/auto)
     const paramThemeMode = getThemeModeSettingFromString(searchParams.get('theme'));

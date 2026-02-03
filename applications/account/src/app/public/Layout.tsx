@@ -7,7 +7,7 @@ import { Logo, ProtonLogo, PublicTopBanners, getAppVersion, useConfig, useTheme 
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
 import { addDesktopAppVersion } from '@proton/shared/lib/desktop/version';
-import { isElectronMail, isElectronOnMac } from '@proton/shared/lib/helpers/desktop';
+import { isElectronApp, isElectronMail, isElectronOnMac } from '@proton/shared/lib/helpers/desktop';
 import { getStaticURL } from '@proton/shared/lib/helpers/url';
 import { locales } from '@proton/shared/lib/i18n/locales';
 import clsx from '@proton/utils/clsx';
@@ -146,7 +146,7 @@ const Layout = ({
                 )}
                 <div className="flex items-center gap-1 flex-nowrap">
                     {topRight || (hasDecoration && <LanguageSelect className="signup-link" globe locales={locales} />)}
-                    {hasThemeToggle && <ThemeToggleDropdown />}
+                    {hasThemeToggle && !isElectronApp && <ThemeToggleDropdown />}
                 </div>
             </header>
             <div
