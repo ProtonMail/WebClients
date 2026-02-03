@@ -4791,6 +4791,9 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "iCal形式(ICSファイル)でイベントをインポートできます。ファイルの最大サイズは${ MAX_IMPORT_FILE_SIZE_STRING }で、最大${ MAX_IMPORT_EVENTS_STRING }件のイベントを含むことができます。ファイルがそれより大きい場合は、小さいファイルに分割してください。"
+      ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "CSVファイルおよびVCFファイルでインポートするには、ファイルが${ MAX_IMPORT_FILE_SIZE_STRING }または${ maxContactString }件の連絡先を超えないようにしてください。ファイルが大きすぎる場合は、小さいファイルに分割してください。${ learnMoreLink }"
       ]
     },
     "description": {
@@ -5086,6 +5089,15 @@
       ],
       "Windows 8/8.1/7 or Windows 32-bit (ARM64)": [
         "Windows 8/8.1/7 または Windows 32-bit (ARM64)"
+      ],
+      "Fedora": [
+        "Fedora"
+      ],
+      "iOS": [
+        "iOS"
+      ],
+      "Ubuntu/Debian": [
+        "Ubuntu/Debian"
       ]
     },
     "Download link": {
@@ -6669,6 +6681,9 @@
       ],
       "ZIP code is required": [
         "郵便番号は必須です"
+      ],
+      "This offer is not available in your country": [
+        "このオファーはお住まいの国ではご利用いただけません"
       ]
     },
     "error": {
@@ -6743,6 +6758,9 @@
       ],
       "Your file ${ formattedFilename } is empty.": [
         "ファイル${ formattedFilename } は空です。"
+      ],
+      "Your file ${ formattedFilename } contains more than ${ maxContactString } contacts.": [
+        "あなたのファイル ${ formattedFilename } には${ maxContactString } 以上の連絡先が含まれています。"
       ]
     },
     "Error importing event": {
@@ -11715,6 +11733,18 @@
       ],
       "Zoom meeting": [
         "Zoom ミーティング"
+      ],
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "${ maxContact } の制限まで、すべての連絡先がインポートされます"
+      ],
+      "Coming soon": [
+        "近日公開"
+      ],
+      "Receive notifications for ${ categoryLabel }": [
+        "${ categoryLabel }の通知を受け取る"
+      ],
+      "We recommend adding servers in different locations (one per city) to maximize redundancy.": [
+        "冗長性を最大化するために、異なる場所にサーバーを追加することをお勧めします（都市ごとに1つ）。"
       ]
     },
     "info": {
@@ -13601,6 +13631,72 @@
       ],
       "ZIP code": [
         "郵便番号"
+      ],
+      "Automated confirmations and alerts": [
+        "自動確認とアラート"
+      ],
+      "Bookings, billings, and orders": [
+        "予約、請求、注文"
+      ],
+      "Categories": [
+        "カテゴリ"
+      ],
+      "Deals, offers, marketing emails": [
+        "お得な情報、特典、マーケティングメール"
+      ],
+      "Discussion board posts and threads": [
+        "掲示板の投稿とスレッド"
+      ],
+      "Forums": [
+        "フォーラム"
+      ],
+      "Go to Forums": [
+        "フォーラムへ移動"
+      ],
+      "Go to Newsletters": [
+        "ニュースレターへ移動"
+      ],
+      "Go to Primary": [
+        "プライマリーへ移動"
+      ],
+      "Go to Promotions": [
+        "プロモーションへ移動"
+      ],
+      "Go to Social": [
+        "ソーシャルへ移動"
+      ],
+      "Go to Transactions": [
+        "取引へ移動"
+      ],
+      "Go to Updates": [
+        "アップデートへ移動"
+      ],
+      "Newsletters": [
+        "ニュースレター"
+      ],
+      "Non-promotional content and news": [
+        "プロモーション以外のコンテンツおよびニュース"
+      ],
+      "Primary": [
+        "プライマリー"
+      ],
+      "Promotions": [
+        "プロモーション"
+      ],
+      "Social": [
+        "ソーシャル"
+      ],
+      "Social media updates and activity": [
+        "ソーシャルメディアの更新とアクティビティ"
+      ],
+      "Transactions": [
+        "取引"
+      ],
+      "Updates": [
+        "更新情報"
+      ],
+      "Use email categories": [
+        "メールカテゴリを使用"
       ]
     },
     "label": {
@@ -14291,6 +14387,15 @@
       ],
       "Up to ${ n } participant": [
         "最大${ n }人の参加者"
+      ],
+      "${ n } participant": [
+        "${ n }人の参加者"
+      ],
+      "Booking pages": [
+        "予約ページ"
+      ],
+      "Meeting recording": [
+        "ミーティング録画"
       ]
     },
     "meet_2025: Info": {
@@ -17284,6 +17389,18 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "あなたのサブスクリプションは現在、割引が適用されています。この新しいプロモーションに移行すると、既存の割引は適用されなくなります。"
+      ],
+      "Sorry, this offer is not available for your account.": [
+        "申し訳ありませんが、このオファーはお客様のアカウントではご利用いただけません。"
+      ],
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "この割引は ${ renewalsWithCoupon } の更新で有効です。"
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "特別割引価格は${ couponRedemptions }ヶ月間有効です。その後、1ヶ月${ renewPriceStr }で自動更新されます。いつでもキャンセル可能です。"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "${ priceWithDiscount }の特別割引価格は${ couponRedemptions }ヶ月間有効です。その後、1ヶ月${ renewPriceStr }で自動更新されます。いつでもキャンセル可能です。"
       ]
     },
     "Payments.Error": {
@@ -23003,6 +23120,9 @@
       ],
       "Your subscriptions": [
         "あなたのサブスクリプション"
+      ],
+      "Get unlimited meetings on all your devices with ${ planName }. ${ upgradeButton }": [
+        "${ planName }で、すべてのデバイスで無制限のミーティングをご利用いただけます。${ upgradeButton }"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -23369,6 +23489,9 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "外部アカウントが 24 時間の帯域幅制限に達している可能性があります。 ${ BRAND_NAME } は、できるだけ早くインポートを再開しようとします。"
+      ],
+      "System notification": [
+        "システム通知"
       ]
     },
     "tooltip": {
@@ -23683,6 +23806,12 @@
       ],
       "You can protect up to ${ FAMILY_MAX_USERS } people with ${ PLAN_NAMES[plan] }. Starting from just ${ priceString }/month per account.": [
         "${ FAMILY_MAX_USERS } を持つ最大 ${ PLAN_NAMES[plan] }人を保護することができます。アカウントごとに ${ priceString }/月から開始します。"
+      ],
+      "${ BRAND_NAME } for Business": [
+        "${ BRAND_NAME } for Business"
+      ],
+      "Everything you need to collaborate securely in a single subscription. Get access to ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, ${ SHEETS_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } and ${ LUMO_SHORT_APP_NAME } AI Assistant.": [
+        "コラボレーションに必要なすべてを1つのサブスクリプションで安全に管理。 ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ DOCS_SHORT_APP_NAME }、${ SHEETS_SHORT_APP_NAME }、${ MEET_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、 ${ LUMO_SHORT_APP_NAME } AI アシスタントへのアクセス権を取得できます。"
       ]
     },
     "upsell panel": {
@@ -24173,6 +24302,9 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "お客様のトライアルは${ textDate }に終了します。${ textDate }までにキャンセルした場合、料金は請求されません。${ action }"
+      ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } offer has ended": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } オファーは終了しました"
       ]
     },
     "Warning for domain modal": {
@@ -24398,6 +24530,14 @@
       ],
       "Yearly, ${ untilString }": [
         "毎年、${ untilString }"
+      ]
+    },
+    "Theme": {
+      "Dark": [
+        "ダーク"
+      ],
+      "Light": [
+        "ライト"
       ]
     }
   }

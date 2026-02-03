@@ -2498,7 +2498,7 @@
         "Hvis du vil forlade Google, er en af de første ting, du skal gøre, at stoppe med at bruge Googles proprietære browser, Chrome, og dens indbyggede adgangskodeadministrator. Et afgørende første skridt mod at forlade Google er at downloade dine adgangskoder, så du lettere kan overgå til en ny, bedre adgangskodeadministrator."
       ],
       "In this article, we look at who can see your internet history when you use WiFi, what they can see, and why they might do this.": [
-        "I denne artikel ser vi på, hvem der kan se din internethistorik, når du bruger WiFi, hvad de kan se, og hvorfor de måtte gøre dette."
+        "I denne artikel ser vi på, hvem der kan se din internethistorik, når du bruger wi-fi, hvad de kan se, og hvorfor de kunne finde på det."
       ],
       "Increase VPN speeds by up to 400% with VPN Accelerator": [
         "Forøg VPN-hastighederne med op til 400 % med VPN Accelerator"
@@ -4815,6 +4815,9 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Du kan importere begivenheder i iCal format (ICS-fil). Denne fil skal have en maksimal størrelse på ${ MAX_IMPORT_FILE_SIZE_STRING } og have op til ${ MAX_IMPORT_EVENTS_STRING } begivenheder. Hvis din fil er større, skal du opdele den i mindre filer."
+      ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "For at importere via en CSV- eller VCF-fil, skal du sikre dig, at filen ikke overskrider ${ MAX_IMPORT_FILE_SIZE_STRING } eller ${ maxContactString } kontakter. Hvis din fil er større, skal du opdele den i mindre filer. ${ learnMoreLink }."
       ]
     },
     "description": {
@@ -6794,6 +6797,9 @@
       ],
       "Your file ${ formattedFilename } is empty.": [
         "Din fil ${ formattedFilename } er tom."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ maxContactString } contacts.": [
+        "Din fil ${ formattedFilename } indeholder mere end ${ maxContactString } kontakter."
       ]
     },
     "Error importing event": {
@@ -6908,6 +6914,9 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Vi kunne ikke indlæse denne side. Opdater siden eller tjek din internetforbindelse."
+      ],
+      "Account is deleted or disabled": [
+        "Kontoen er slettet eller deaktiveret"
       ]
     },
     "Error message, Disable account": {
@@ -8847,7 +8856,7 @@
         "+${ organization.BonusVPN }-forbindelser til ${ VPN_APP_NAME } (tillader dig at forbinde flere enheder til VPN)"
       ],
       "2FA disabled": [
-        "2FA deaktiveret"
+        "Tofaktorgodkendelse deaktiveret"
       ],
       "30-day money-back guarantee": [
         "30 dages tilbagebetalingsgaranti"
@@ -10521,7 +10530,7 @@
         "Prisen inkluderer alle gældende cyklusbaserede rabatter og kuponer, der ikke er udløbet, og som er gemt på din konto."
       ],
       "Privacy and security starts here": [
-        "Privatlivsbeskyttelse og sikkerhed starter her"
+        "Privatlivsbeskyttelse og sikkerhed begynder her"
       ],
       "Private AI assistant": [
         "Privat AI-assistent"
@@ -10989,7 +10998,7 @@
         "Dette invitationslink er udløbet. Vi har lige sendt dig et nyt link."
       ],
       "This invitation link is already used. Please sign in directly instead.": [
-        "Dette invitationslink er allerede anvendt. Log ind direkte i stedet."
+        "Dette invitationslink er allerede anvendt. Log direkte ind i stedet."
       ],
       "This is a 12-word phrase that you were prompted to set.": [
         "Dette er en 12-ords sætning, som du blev bedt om at indstille."
@@ -11864,6 +11873,16 @@
       ],
       "Zoom meeting": [
         "Zoom-møde"
+      ],
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "Alle dine kontakter vil blive importeret, op til en grænse på ${ maxContact }",
+        "Alle dine kontakter vil blive importeret, op til en grænse på ${ maxContact }"
+      ],
+      "Coming soon": [
+        "Kommer snart"
+      ],
+      "Receive notifications for ${ categoryLabel }": [
+        "Modtag notifikationer for ${ categoryLabel }"
       ]
     },
     "info": {
@@ -12862,7 +12881,7 @@
         "Ugedage"
       ],
       "Default email address": [
-        "Standard e-mailadresse"
+        "Standard-e-mailadresse"
       ],
       "Default language": [
         "Standardsporg"
@@ -13489,7 +13508,7 @@
         "Vælg Linux-pakkeformat"
       ],
       "Select Linux platform": [
-        "Vælg Linux platform"
+        "Vælg Linux-platform"
       ],
       "Send auto-reply": [
         "Send auto-svar"
@@ -13758,6 +13777,72 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Automated confirmations and alerts": [
+        "Automatiske bekræftelser og advarsler"
+      ],
+      "Bookings, billings, and orders": [
+        "Bookinger, faktureringer og ordrer"
+      ],
+      "Categories": [
+        "Kategorier"
+      ],
+      "Deals, offers, marketing emails": [
+        "Tilbud, rabatter, marketing-e-mails"
+      ],
+      "Discussion board posts and threads": [
+        "Opslag og tråde på diskussionsforum"
+      ],
+      "Forums": [
+        "Fora"
+      ],
+      "Go to Forums": [
+        "Gå til Fora"
+      ],
+      "Go to Newsletters": [
+        "Gå til Nyhedsbreve"
+      ],
+      "Go to Primary": [
+        "Gå til primær"
+      ],
+      "Go to Promotions": [
+        "Gå til kampagner"
+      ],
+      "Go to Social": [
+        "Gå til Socialt"
+      ],
+      "Go to Transactions": [
+        "Gå til transaktioner"
+      ],
+      "Go to Updates": [
+        "Gå til Opdateringer"
+      ],
+      "Newsletters": [
+        "Nyhedsbreve"
+      ],
+      "Non-promotional content and news": [
+        "Ikke-salgsfremmende indhold og nyheder"
+      ],
+      "Primary": [
+        "Primær"
+      ],
+      "Promotions": [
+        "Kampagner"
+      ],
+      "Social": [
+        "Social"
+      ],
+      "Social media updates and activity": [
+        "Opdateringer og aktivitet på sociale medier"
+      ],
+      "Transactions": [
+        "Transaktioner"
+      ],
+      "Updates": [
+        "Opdateringer"
+      ],
+      "Use email categories": [
+        "Brug e-mailkategorier"
       ]
     },
     "label": {
@@ -14260,7 +14345,7 @@
         "Log-in lykkedes (afventer mnemonic-bekræftelse)"
       ],
       "Sign in success (awaiting second factor)": [
-        "Login succes (afventer anden faktor)"
+        "Login lykkedes (afventer anden faktor)"
       ],
       "Sign in success (awaiting verification)": [
         "Vellykket log-in (afventer bekræftelse)"
@@ -14868,7 +14953,7 @@
         "Tilbage til ${ MEET_SHORT_APP_NAME }"
       ],
       "Back to calendar": [
-        "Tilbage til kalender"
+        "Tilbage til kalenderen"
       ],
       "Back to documents": [
         "Retur til dokumenter"
@@ -15655,7 +15740,7 @@
         "Skift abonnement?"
       ],
       "Unlock premium features by upgrading": [
-        "Lås op for premium-funktioner ved at opgradere"
+        "Lås op for premiumfunktioner ved at opgradere"
       ]
     },
     "new_plans: Title": {
@@ -17512,6 +17597,18 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Dit abonnement har i øjeblikket en eksisterende rabat. Ved at skifte til denne nye kampagne vil den eksisterende rabat ikke længere blive anvendt."
+      ],
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "Rabatten er gyldig for ${ renewalsWithCoupon } fornyelse.",
+        "Rabatten er gyldig for ${ renewalsWithCoupon } fornyelser."
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Den særligt nedsatte pris er gyldig i ${ couponRedemptions } måned. Derefter fornys den automatisk til ${ renewPriceStr } for 1 måned. Du kan opsige når som helst.",
+        "Den særligt nedsatte pris er gyldig i ${ couponRedemptions } måneder. Derefter fornys den automatisk til ${ renewPriceStr } for 1 måned. Du kan opsige når som helst."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Den særligt nedsatte pris på ${ priceWithDiscount } er gyldig i ${ couponRedemptions } måned. Derefter fornys den automatisk til ${ renewPriceStr } for 1 måned. Du kan opsige når som helst.",
+        "Den særligt nedsatte pris på ${ priceWithDiscount } er gyldig i ${ couponRedemptions } måneder. Derefter fornys den automatisk til ${ renewPriceStr } for 1 måned. Du kan opsige når som helst."
       ]
     },
     "Payments.Error": {
@@ -17949,7 +18046,7 @@
     },
     "PQC compatibility warning": {
       "**You must update all ${ BRAND_NAME } mobile apps**: your new keys won't work on older app versions.": [
-        "**Du skal opdatere alle ${ BRAND_NAME } mobilapps**: Dine nye nøgler vil ikke fungere på ældre appversioner."
+        "**Du skal opdatere alle ${ BRAND_NAME }-mobilapps**: Dine nye nøgler vil ikke fungere i ældre appversioner."
       ]
     },
     "PQC key generation": {
@@ -22622,7 +22719,7 @@
         "Etiketter"
       ],
       "Language and time": [
-        "Sprog og tid"
+        "Sprog og klokkeslæt"
       ],
       "Last activity": [
         "Seneste aktivitet"
@@ -22763,7 +22860,7 @@
         "Adgangskode"
       ],
       "Password generator rules": [
-        "Adgangskodegenerator regler"
+        "Adgangskodegeneratorregler"
       ],
       "Password reset settings": [
         "Indstillinger for nulstilling af adgangskode"
@@ -23323,6 +23420,9 @@
       ],
       "Your subscriptions": [
         "Dine abonnementer"
+      ],
+      "Your ${ planTitle } subscription has started": [
+        "Dit ${ planTitle }-abonnement er startet"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -23689,6 +23789,9 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "Din eksterne konto har muligvis nået sin 24-timers båndbreddegrænse. ${ BRAND_NAME } vil forsøge at genoptage importen så hurtig som muligt."
+      ],
+      "System notification": [
+        "System-notifikation"
       ]
     },
     "tooltip": {
@@ -24519,6 +24622,9 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Din prøveperiode udløber den ${ textDate }. Du vil ikke blive opkrævet, hvis du opsiger før den ${ textDate }. ${ action }"
+      ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } offer has ended": [
+        "Tilbuddet om ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } er udløbet"
       ]
     },
     "Warning for domain modal": {
@@ -24774,6 +24880,32 @@
       ],
       "Yearly, ${ untilString }": [
         "Årligt, ${ untilString }"
+      ]
+    },
+    "Theme": {
+      "Auto": [
+        "Automatisk"
+      ],
+      "Dark": [
+        "Mørk"
+      ],
+      "Light": [
+        "Lys"
+      ],
+      "Mode: Auto": [
+        "Tilstand: Automatisk"
+      ],
+      "Mode: Dark": [
+        "Tilstand: Mørk"
+      ],
+      "Mode: Light": [
+        "Tilstand: Lys"
+      ],
+      "Sync with system": [
+        "Synkronisér med system"
+      ],
+      "Use ${ BRAND_NAME } settings": [
+        "Brug ${ BRAND_NAME } indstillinger"
       ]
     }
   }

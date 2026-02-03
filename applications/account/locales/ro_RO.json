@@ -4839,6 +4839,9 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Puteți importa evenimente în format iCal (fișier ICS). Fișierul ar trebui să aibă dimensiunea maximă de ${ MAX_IMPORT_FILE_SIZE_STRING } și să aibă până la ${ MAX_IMPORT_EVENTS_STRING } evenimente. Dacă fișierul este mai mare, împărțiți-l în fișiere mai mici."
+      ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Pentru a importa prin fișier CSV sau VCF, asigurați-vă că fișierul nu depășește ${ MAX_IMPORT_FILE_SIZE_STRING } sau ${ maxContactString } de contacte. Dacă fișierul este mai mare, împărțiți-l în fișiere mai mici. ${ learnMoreLink }."
       ]
     },
     "description": {
@@ -5134,6 +5137,15 @@
       ],
       "Windows 8/8.1/7 or Windows 32-bit (ARM64)": [
         "Windows 8/8.1/7 sau Windows 32-bit (ARM64)"
+      ],
+      "Fedora": [
+        "Fedora"
+      ],
+      "iOS": [
+        "iOS"
+      ],
+      "Ubuntu/Debian": [
+        "Ubuntu/Debian"
       ]
     },
     "Download link": {
@@ -6745,6 +6757,9 @@
       ],
       "ZIP code is required": [
         "Codul poștal este obligatoriu."
+      ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "Ați folosit toate adresele disponibile în plan. Modificați-vă planul pentru a adăuga o adresă nouă sau dezactivați o adresă din cont."
       ]
     },
     "error": {
@@ -6821,6 +6836,9 @@
       ],
       "Your file ${ formattedFilename } is empty.": [
         "Fișierul ${ formattedFilename } este gol."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ maxContactString } contacts.": [
+        "Fișierul ${ formattedFilename } conține mai mult de ${ maxContactString } de contacte."
       ]
     },
     "Error importing event": {
@@ -6935,6 +6953,9 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Această pagină nu s-a putut încărca. Reîmprospătați-o sau verificați conexiunea la internet."
+      ],
+      "Account is deleted or disabled": [
+        "Contul este șters sau dezactivat."
       ]
     },
     "Error message, Disable account": {
@@ -11974,6 +11995,17 @@
       ],
       "Zoom meeting": [
         "o întâlnire pe Zoom"
+      ],
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "Vor fi importate toate contactele, până la limita de ${ maxContact }.",
+        "Vor fi importate toate contactele, până la limita de ${ maxContact }.",
+        "Vor fi importate toate contactele, până la limita de ${ maxContact }."
+      ],
+      "Coming soon": [
+        "În curând"
+      ],
+      "Receive notifications for ${ categoryLabel }": [
+        "Primire notificări pentru ${ categoryLabel }"
       ]
     },
     "info": {
@@ -12589,7 +12621,7 @@
         "15 minute"
       ],
       "2 minutes": [
-        "Două minute"
+        "două minute"
       ],
       "30 minutes": [
         "30 de minute"
@@ -13725,7 +13757,7 @@
         "Acțiune glisare la dreapta"
       ],
       "Sync with system": [
-        "Ca cea din sistem"
+        "Ca în sistem"
       ],
       "System information": [
         "Informații sistem"
@@ -13876,6 +13908,72 @@
       ],
       "ZIP code": [
         "Cod poștal"
+      ],
+      "Automated confirmations and alerts": [
+        "Confirmări și alerte automate"
+      ],
+      "Bookings, billings, and orders": [
+        "Rezervări, facturări și comenzi"
+      ],
+      "Categories": [
+        "Categorii"
+      ],
+      "Deals, offers, marketing emails": [
+        "Oferte, promoții, e-mailuri de marketing"
+      ],
+      "Discussion board posts and threads": [
+        "Publicări și fire de discuție pe forum"
+      ],
+      "Forums": [
+        "Forumuri"
+      ],
+      "Go to Forums": [
+        "Accesare forumuri"
+      ],
+      "Go to Newsletters": [
+        "Accesare buletine informative"
+      ],
+      "Go to Primary": [
+        "Accesare principal"
+      ],
+      "Go to Promotions": [
+        "Accesare promoții"
+      ],
+      "Go to Social": [
+        "Accesare rețele sociale"
+      ],
+      "Go to Transactions": [
+        "Accesare tranzacții"
+      ],
+      "Go to Updates": [
+        "Accesare actualizări"
+      ],
+      "Newsletters": [
+        "Buletine informative"
+      ],
+      "Non-promotional content and news": [
+        "Conținut și știri non-promoționale"
+      ],
+      "Primary": [
+        "Primar"
+      ],
+      "Promotions": [
+        "Promoții"
+      ],
+      "Social": [
+        "Rețele sociale"
+      ],
+      "Social media updates and activity": [
+        "Actualizări și activitate pe rețelele sociale"
+      ],
+      "Transactions": [
+        "Tranzacții"
+      ],
+      "Updates": [
+        "Actualizări"
+      ],
+      "Use email categories": [
+        "Folosire categorii mesaje"
       ]
     },
     "label": {
@@ -14588,6 +14686,17 @@
         "Maxim participanți: ${ n }",
         "Maxim participanți: ${ n }",
         "Maxim participanți: ${ n }"
+      ],
+      "${ n } participant": [
+        "${ n } participant",
+        "${ n } participanți",
+        "${ n } de participanți"
+      ],
+      "Booking pages": [
+        "Pagini de rezervare"
+      ],
+      "Meeting recording": [
+        "Înregistrare conferință"
       ]
     },
     "meet_2025: Info": {
@@ -17675,6 +17784,24 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Abonamentul actual are în prezent o reducere existentă. Trecerea la această nouă promoție înseamnă că reducerea curentă nu va mai fi aplicată."
+      ],
+      "Sorry, this offer is not available for your account.": [
+        "Ne pare rău, această ofertă nu este disponibilă pentru acest cont."
+      ],
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "Reducerea este valabilă pentru ${ renewalsWithCoupon } reînnoire.",
+        "Reducerea este valabilă pentru ${ renewalsWithCoupon } reînnoiri.",
+        "Reducerea este valabilă pentru ${ renewalsWithCoupon } de reînnoiri."
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Prețul cu reducerea specială este valabil pentru ${ couponRedemptions } lună. Apoi va fi reînnoit automat cu ${ renewPriceStr } pentru o lună. Puteți anula oricând.",
+        "Prețul cu reducerea specială este valabil pentru ${ couponRedemptions } luni. Apoi va fi reînnoit automat cu ${ renewPriceStr } pentru o lună. Puteți anula oricând.",
+        "Prețul cu reducerea specială este valabil pentru ${ couponRedemptions } de luni. Apoi va fi reînnoit automat cu ${ renewPriceStr } pentru o lună. Puteți anula oricând."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Prețul cu reducerea specială de ${ priceWithDiscount } este valabil pentru ${ couponRedemptions } lună. Apoi va fi reînnoit automat cu ${ renewPriceStr } pentru o lună. Puteți anula oricând.",
+        "Prețul special redus de ${ priceWithDiscount } este valabil pentru ${ couponRedemptions } luni. Apoi va fi reînnoit automat la ${ renewPriceStr } pentru o lună. Puteți anula oricând.",
+        "Prețul special redus de ${ priceWithDiscount } este valabil pentru ${ couponRedemptions } de luni. Apoi va fi reînnoit automat la ${ renewPriceStr } pentru o lună. Puteți anula oricând."
       ]
     },
     "Payments.Error": {
@@ -23572,6 +23699,12 @@
       ],
       "Your subscriptions": [
         "Abonamente personale"
+      ],
+      "Get unlimited meetings on all your devices with ${ planName }. ${ upgradeButton }": [
+        "Obțineți conferințe nelimitate pe toate dispozitivele deținute cu ${ planName }. ${ upgradeButton }"
+      ],
+      "Your ${ planTitle } subscription has started": [
+        "Abonamentul ${ planTitle } a început"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -23938,6 +24071,9 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "Contul extern ar putea să fi atins limita lățimii de bandă pentru 24 de ore. ${ BRAND_NAME } va încerca să reia importarea cât mai curând posibil."
+      ],
+      "System notification": [
+        "Notificare de sistem"
       ]
     },
     "tooltip": {
@@ -24256,6 +24392,12 @@
       ],
       "You can protect up to ${ FAMILY_MAX_USERS } people with ${ PLAN_NAMES[plan] }. Starting from just ${ priceString }/month per account.": [
         "Puteți proteja până la ${ FAMILY_MAX_USERS } persoane cu ${ PLAN_NAMES[plan] }. Începând de la doar ${ priceString }/lună per cont."
+      ],
+      "${ BRAND_NAME } for Business": [
+        "${ BRAND_NAME } for Business"
+      ],
+      "Everything you need to collaborate securely in a single subscription. Get access to ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, ${ SHEETS_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } and ${ LUMO_SHORT_APP_NAME } AI Assistant.": [
+        "Tot ce aveți nevoie pentru a colabora securizat într-un singur abonament. Obțineți acces la ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, ${ SHEETS_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } și Asistentul de IA ${ LUMO_SHORT_APP_NAME }."
       ]
     },
     "upsell panel": {
@@ -24779,6 +24921,9 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Perioada de probare se va încheia la ${ textDate }. Nu vă vom taxa dacă anulați înainte de ${ textDate }. ${ action }"
+      ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } offer has ended": [
+        "Oferta ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } a expirat"
       ]
     },
     "Warning for domain modal": {
@@ -25064,6 +25209,32 @@
       ],
       "Yearly, ${ untilString }": [
         "Anual, ${ untilString }"
+      ]
+    },
+    "Theme": {
+      "Auto": [
+        "Automat"
+      ],
+      "Dark": [
+        "Neagră"
+      ],
+      "Light": [
+        "Albă"
+      ],
+      "Mode: Auto": [
+        "Mod: automat"
+      ],
+      "Mode: Dark": [
+        "Mod: întunecat"
+      ],
+      "Mode: Light": [
+        "Mod: luminos"
+      ],
+      "Sync with system": [
+        "Ca în sistem"
+      ],
+      "Use ${ BRAND_NAME } settings": [
+        "Utilizare setări din ${ BRAND_NAME }"
       ]
     }
   }

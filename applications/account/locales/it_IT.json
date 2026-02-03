@@ -4815,6 +4815,9 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Puoi importare eventi con il formato iCal (file ICS). Il file deve avere una dimensione massima di ${ MAX_IMPORT_FILE_SIZE_STRING } o fino a ${ MAX_IMPORT_EVENTS_STRING } eventi. Se il tuo file è più grande, dividilo in file più piccoli."
+      ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Per importare tramite file CSV o VCF, assicurati che il file non superi i ${ MAX_IMPORT_FILE_SIZE_STRING } o i ${ maxContactString } contatti. Se il tuo file è più grande, dividilo in file più piccoli. ${ learnMoreLink }."
       ]
     },
     "description": {
@@ -6794,6 +6797,9 @@
       ],
       "Your file ${ formattedFilename } is empty.": [
         "Il tuo file ${ formattedFilename } è vuoto."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ maxContactString } contacts.": [
+        "Il tuo file ${ formattedFilename } contiene più di ${ maxContactString } contatti."
       ]
     },
     "Error importing event": {
@@ -11861,6 +11867,16 @@
       ],
       "Zoom meeting": [
         "Meeting Zoom"
+      ],
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "Tutti i tuoi contatti verranno importati, fino a un limite di ${ maxContact }",
+        "Tutti i tuoi contatti verranno importati, fino a un limite di ${ maxContact }"
+      ],
+      "Coming soon": [
+        "In arrivo"
+      ],
+      "Receive notifications for ${ categoryLabel }": [
+        "Ricevi notifiche per ${ categoryLabel }"
       ]
     },
     "info": {
@@ -13755,6 +13771,72 @@
       ],
       "ZIP code": [
         "Codice postale"
+      ],
+      "Automated confirmations and alerts": [
+        "Conferme e avvisi automatici"
+      ],
+      "Bookings, billings, and orders": [
+        "Prenotazioni, fatturazioni e ordini"
+      ],
+      "Categories": [
+        "Categorie"
+      ],
+      "Deals, offers, marketing emails": [
+        "Offerte, promozioni, email di marketing"
+      ],
+      "Discussion board posts and threads": [
+        "Messaggi e discussioni del forum"
+      ],
+      "Forums": [
+        "Forum"
+      ],
+      "Go to Forums": [
+        "Vai ai forum"
+      ],
+      "Go to Newsletters": [
+        "Vai alle newsletter"
+      ],
+      "Go to Primary": [
+        "Vai su Principale"
+      ],
+      "Go to Promotions": [
+        "Vai a Promozioni"
+      ],
+      "Go to Social": [
+        "Vai al Social Feed"
+      ],
+      "Go to Transactions": [
+        "Vai a Transazioni"
+      ],
+      "Go to Updates": [
+        "Vai agli aggiornamenti"
+      ],
+      "Newsletters": [
+        "Newsletter"
+      ],
+      "Non-promotional content and news": [
+        "Contenuti non promozionali e notizie"
+      ],
+      "Primary": [
+        "Primario"
+      ],
+      "Promotions": [
+        "Promozioni"
+      ],
+      "Social": [
+        "Social"
+      ],
+      "Social media updates and activity": [
+        "Aggiornamenti e attività sui social media"
+      ],
+      "Transactions": [
+        "Transazioni"
+      ],
+      "Updates": [
+        "Aggiornamenti"
+      ],
+      "Use email categories": [
+        "Usa categorie email"
       ]
     },
     "label": {
@@ -17509,6 +17591,18 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Il tuo abbonamento ha attualmente uno sconto esistente. Passare a questa nuova promozione significa che lo sconto esistente non sarà più applicato."
+      ],
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "Lo sconto è valido per ${ renewalsWithCoupon } rinnovo.",
+        "Lo sconto è valido per ${ renewalsWithCoupon } rinnovi."
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Il prezzo scontato speciale è valido per ${ couponRedemptions } mese. Poi si rinnoverà automaticamente a ${ renewPriceStr } per 1 mese. Puoi annullare in qualsiasi momento.",
+        "Il prezzo speciale scontato è valido per ${ couponRedemptions } mesi. Successivamente, verrà rinnovato automaticamente a ${ renewPriceStr } per 1 mese. Puoi annullare in qualsiasi momento."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Il prezzo speciale scontato di ${ priceWithDiscount } è valido per ${ couponRedemptions } mese. Poi si rinnoverà automaticamente a ${ renewPriceStr } per 1 mese. Puoi annullare in qualsiasi momento.",
+        "Il prezzo speciale scontato di ${ priceWithDiscount } è valido per ${ couponRedemptions } mesi. Si rinnoverà poi automaticamente a ${ renewPriceStr } per 1 mese. Puoi annullare in qualsiasi momento."
       ]
     },
     "Payments.Error": {
@@ -23686,6 +23780,9 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "Il tuo account esterno potrebbe aver raggiunto il suo limite di larghezza di banda di 24 ore. ${ BRAND_NAME } proverà a riprendere l'importazione appena possibile."
+      ],
+      "System notification": [
+        "Notifica di sistema"
       ]
     },
     "tooltip": {
@@ -24516,6 +24613,9 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "La tua prova finirà il ${ textDate }. Non ti verrà addebitato alcun costo se annulli prima del ${ textDate }. ${ action }"
+      ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } offer has ended": [
+        "L'offerta ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } è scaduta"
       ]
     },
     "Warning for domain modal": {
@@ -24771,6 +24871,14 @@
       ],
       "Yearly, ${ untilString }": [
         "Ogni anno, ${ untilString }"
+      ]
+    },
+    "Theme": {
+      "Dark": [
+        "Scuro"
+      ],
+      "Light": [
+        "Chiaro"
       ]
     }
   }

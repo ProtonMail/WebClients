@@ -4815,6 +4815,9 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Du kan importere hendelser i iCal-format (ICS fil). Filen kan ha en maks størrelse på ${ MAX_IMPORT_FILE_SIZE_STRING } og ha opp til ${ MAX_IMPORT_EVENTS_STRING } hendelser. Hvis filen er større, må du dele den opp i flere mindre filer."
+      ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "For å importere via en CSV- og VCF-fil, forsikre deg om at filen ikke overskrider ${ MAX_IMPORT_FILE_SIZE_STRING } eller ${ maxContactString } kontakter. Hvis filen er større, del den opp i mindre filer. ${ learnMoreLink }."
       ]
     },
     "description": {
@@ -5110,6 +5113,15 @@
       ],
       "Windows 8/8.1/7 or Windows 32-bit (ARM64)": [
         "Windows 8/8.1/7 eller Windows 32-bit (ARM64)"
+      ],
+      "Fedora": [
+        "Fedora"
+      ],
+      "iOS": [
+        "iOS"
+      ],
+      "Ubuntu/Debian": [
+        "Ubuntu/Debian"
       ]
     },
     "Download link": {
@@ -6704,6 +6716,12 @@
       ],
       "ZIP code is required": [
         "Postnummer kreves"
+      ],
+      "This offer is not available in your country": [
+        "Dette tilbudet er ikke tilgjengelig i landet ditt"
+      ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "Du har brukt alle adressene i planen. Oppgrader planen for å legge til en ny adresse eller deaktiver en adresse i kontoen din."
       ]
     },
     "error": {
@@ -6779,6 +6797,9 @@
       ],
       "Your file ${ formattedFilename } is empty.": [
         "Filen ${ formattedFilename } er tom."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ maxContactString } contacts.": [
+        "Filen ${ formattedFilename } inneholder mer enn ${ maxContactString } kontakter."
       ]
     },
     "Error importing event": {
@@ -11840,6 +11861,19 @@
       ],
       "Zoom meeting": [
         "Zoom-møte"
+      ],
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "Alle kontaktene dine blir importert, opptil en grense på ${ maxContact }.",
+        "Alle kontaktene dine blir importert, opptil en grense på ${ maxContact }."
+      ],
+      "Coming soon": [
+        "Kommer snart"
+      ],
+      "Receive notifications for ${ categoryLabel }": [
+        "Motta varsler for ${ categoryLabel }"
+      ],
+      "We recommend adding servers in different locations (one per city) to maximize redundancy.": [
+        "Vi anbefaler å legge til tjenere på forskjellige steder (én per by) for å maksimere redundansen."
       ]
     },
     "info": {
@@ -13734,6 +13768,72 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Automated confirmations and alerts": [
+        "Automatiserte bekreftelser og varsler"
+      ],
+      "Bookings, billings, and orders": [
+        "Reservasjoner, faktureringer og ordrer"
+      ],
+      "Categories": [
+        "Kategorier"
+      ],
+      "Deals, offers, marketing emails": [
+        "Kampanjer, tilbud, markedsførings-e-poster"
+      ],
+      "Discussion board posts and threads": [
+        "Innlegg og tråder i diskusjonsforum"
+      ],
+      "Forums": [
+        "Forum"
+      ],
+      "Go to Forums": [
+        "Gå til forum"
+      ],
+      "Go to Newsletters": [
+        "Gå til nyhetsbrev"
+      ],
+      "Go to Primary": [
+        "Gå til primær"
+      ],
+      "Go to Promotions": [
+        "Gå til kampanjer"
+      ],
+      "Go to Social": [
+        "Gå til sosialt"
+      ],
+      "Go to Transactions": [
+        "Gå til transaksjoner"
+      ],
+      "Go to Updates": [
+        "Gå til oppdateringer"
+      ],
+      "Newsletters": [
+        "Nyhetsbrev"
+      ],
+      "Non-promotional content and news": [
+        "Ikke-salgsfremmende innhold og nyheter"
+      ],
+      "Primary": [
+        "Primær"
+      ],
+      "Promotions": [
+        "Kampanjer"
+      ],
+      "Social": [
+        "Sosiale medier"
+      ],
+      "Social media updates and activity": [
+        "Oppdateringer og aktivitet på sosiale medier"
+      ],
+      "Transactions": [
+        "Transaksjoner"
+      ],
+      "Updates": [
+        "Oppdateringer"
+      ],
+      "Use email categories": [
+        "Bruk e-postkategorier"
       ]
     },
     "label": {
@@ -14435,6 +14535,16 @@
       "Up to ${ n } participant": [
         "Opptil ${ n } deltaker",
         "Opptil ${ n } deltakere"
+      ],
+      "${ n } participant": [
+        "${ n } deltaker",
+        "${ n } deltakere"
+      ],
+      "Booking pages": [
+        "Bestillingssider"
+      ],
+      "Meeting recording": [
+        "Opptak av møte"
       ]
     },
     "meet_2025: Info": {
@@ -17475,6 +17585,21 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Abonnementet ditt har for øyeblikket en eksisterende rabatt. Hvis du flytter til denne nye kampanjen, vil den eksisterende rabatten ikke lenger gjelde."
+      ],
+      "Sorry, this offer is not available for your account.": [
+        "Beklager, dette tilbudet er ikke tilgjengelig for kontoen din."
+      ],
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "Rabatten er gyldig for ${ renewalsWithCoupon } fornyelse.",
+        "Rabatten er gyldig for ${ renewalsWithCoupon } fornyelser."
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Den spesielt rabatterte prisen er gyldig i ${ couponRedemptions } måned. Deretter fornyes den automatisk til ${ renewPriceStr } for 1 måned. Du kan avbryte når som helst.",
+        "Den spesielt rabatterte prisen er gyldig i ${ couponRedemptions } måneder. Deretter fornyes den automatisk til ${ renewPriceStr } for 1 måned. Du kan avbryte når som helst."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Den spesielt rabatterte prisen på ${ priceWithDiscount } er gyldig for ${ couponRedemptions } måned. Deretter vil den automatisk bli fornyet til ${ renewPriceStr } for 1 måned. Du kan avbryte når som helst.",
+        "Den spesielt rabatterte prisen på ${ priceWithDiscount } er gyldig i ${ couponRedemptions } måneder. Deretter vil den automatisk bli fornyet til ${ renewPriceStr } for 1 måned. Du kan avbryte når som helst."
       ]
     },
     "Payments.Error": {
@@ -23283,6 +23408,9 @@
       ],
       "Your subscriptions": [
         "Dine abonnementer"
+      ],
+      "Get unlimited meetings on all your devices with ${ planName }. ${ upgradeButton }": [
+        "Få ubegrenset antall møter på alle enhetene dine med ${ planName }. ${ upgradeButton }"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -23649,6 +23777,9 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "Din eksterne konto kan ha nådd båndbreddegrensen for 24 timer. ${ BRAND_NAME } vil forsøke å gjenoppta importen så snart som mulig."
+      ],
+      "System notification": [
+        "Systemvarsel"
       ]
     },
     "tooltip": {
@@ -23965,6 +24096,12 @@
       ],
       "You can protect up to ${ FAMILY_MAX_USERS } people with ${ PLAN_NAMES[plan] }. Starting from just ${ priceString }/month per account.": [
         "Du kan beskytte opptil ${ FAMILY_MAX_USERS } personer med ${ PLAN_NAMES[plan] } . Fra bare ${ priceString }/måned per konto."
+      ],
+      "${ BRAND_NAME } for Business": [
+        "${ BRAND_NAME } for Business"
+      ],
+      "Everything you need to collaborate securely in a single subscription. Get access to ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, ${ SHEETS_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } and ${ LUMO_SHORT_APP_NAME } AI Assistant.": [
+        "Alt du trenger for å samarbeide sikkert i ett enkelt abonnement. Få tilgang til ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, ${ SHEETS_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } og ${ LUMO_SHORT_APP_NAME } KI-assistent."
       ]
     },
     "upsell panel": {
@@ -24473,6 +24610,9 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Prøveperioden avsluttes ${ textDate }. Du blir ikke belastet hvis du avbryter før ${ textDate }. ${ action }"
+      ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } offer has ended": [
+        "Tilbudet ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } har utløpt"
       ]
     },
     "Warning for domain modal": {
@@ -24728,6 +24868,14 @@
       ],
       "Yearly, ${ untilString }": [
         "Årlig, ${ untilString }"
+      ]
+    },
+    "Theme": {
+      "Dark": [
+        "Mørk"
+      ],
+      "Light": [
+        "Lys"
       ]
     }
   }
