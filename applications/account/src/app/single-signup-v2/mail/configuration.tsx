@@ -190,8 +190,9 @@ const getPorkbunFeatures = (plan: Plan | undefined) => {
         return [];
     }
 
+    // TODO: this check can be safely removed after Mail Business is fully grandfathered out, use isWorkspacePlan instead
     const isMailEssentials = plan.Name === PLANS.MAIL_PRO;
-    const isPBS = plan.Name === PLANS.BUNDLE_PRO_2024;
+    const isWorkspacePlan = [PLANS.BUNDLE_PRO_2024, PLANS.BUNDLE_BIZ_2025].includes(plan.Name as PLANS);
 
     return [
         getShortStorageFeatureB2B(plan.MaxSpace),
@@ -200,8 +201,8 @@ const getPorkbunFeatures = (plan: Plan | undefined) => {
         getCloudStorageAndSharingFeature(),
         !isMailEssentials && getAdvancedAccountProtectionFeature(),
         !isMailEssentials && getManageUserPermissionsAndAccessFeature(),
-        isPBS && getB2BVPNConnectionsPerUserFeature(),
-        isPBS && getPasswordManagerToSecureCredentialsFeature(),
+        isWorkspacePlan && getB2BVPNConnectionsPerUserFeature(),
+        isWorkspacePlan && getPasswordManagerToSecureCredentialsFeature(),
         getScribeFeature(),
     ].filter(isTruthy);
 };
@@ -456,7 +457,7 @@ export const getMailConfiguration = ({
                     type: 'standard' as const,
                     guarantee: true,
                 },
-                {
+                !isNewB2BPlanEnabled && {
                     plan: PLANS.MAIL_BUSINESS,
                     subsection: (
                         <FeatureListPlanCardSubSection
@@ -491,10 +492,29 @@ export const getMailConfiguration = ({
                             }
                         />
                     ),
+                    type: isNewB2BPlanEnabled ? ('best' as const) : ('standard' as const),
+                    guarantee: true,
+                },
+                isNewB2BPlanEnabled && {
+                    plan: PLANS.BUNDLE_BIZ_2025,
+                    subsection: (
+                        <FeatureListPlanCardSubSection
+                            description={c('mail_signup_2025: Info')
+                                .t`All ${BRAND_NAME} for Business apps and premium features to protect your entire business`}
+                            features={
+                                <PlanCardFeatureList
+                                    {...planCardFeatureProps}
+                                    features={getPorkbunFeatures(plansMap?.[PLANS.BUNDLE_BIZ_2025])}
+                                    icon={true}
+                                    tooltip={true}
+                                />
+                            }
+                        />
+                    ),
                     type: 'standard' as const,
                     guarantee: true,
                 },
-            ],
+            ].filter(isTruthy),
             [Audience.B2C]: [],
         };
     }
@@ -569,7 +589,7 @@ export const getMailConfiguration = ({
         defaults: {
             plan: (() => {
                 if (invite?.type === 'porkbun') {
-                    return PLANS.MAIL_BUSINESS;
+                    return isNewB2BPlanEnabled ? PLANS.BUNDLE_PRO_2024 : PLANS.MAIL_BUSINESS;
                 }
                 if (audience === Audience.B2B) {
                     return PLANS.BUNDLE_PRO_2024;
