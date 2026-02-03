@@ -275,6 +275,7 @@ enum MeetFeatureFlag {
     MeetOpenLinksInDesktopApp = 'MeetOpenLinksInDesktopApp',
     MeetDebugMode = 'MeetDebugMode',
     MeetSinglePeerConnection = 'MeetSinglePeerConnection',
+    MeetQualityTelemetry = 'MeetQualityTelemetry',
 }
 
 enum LumoFeatureFlag {
