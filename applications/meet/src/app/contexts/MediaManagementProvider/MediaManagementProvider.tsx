@@ -8,17 +8,20 @@ import { c } from 'ttag';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useMeetErrorReporting } from '@proton/meet';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
+import { wait } from '@proton/shared/lib/helpers/promise';
 
-import { useAudioToggle } from '../hooks/mediaToggle/useAudioToggle';
-import { useVideoToggle } from '../hooks/mediaToggle/useVideoToggle';
-import { useDevicePermissionChangeListener } from '../hooks/useDevicePermissionChangeListener';
-import { useDevices } from '../hooks/useDevices';
-import { useDynamicDeviceHandling } from '../hooks/useDynamicDeviceHandling';
-import { useMicrophoneVolumeAnalysis } from '../hooks/useMicrophoneVolumeAnalysis';
-import type { DeviceState, SwitchActiveDevice } from '../types';
-import { supportsSetSinkId } from '../utils/browser';
-import { setAudioSessionType } from '../utils/ios-audio-session';
+import { preloadBackgroundProcessorAssets } from '../../processors/background-processor/createBackgroundProcessor';
+import type { DeviceState, SwitchActiveDevice } from '../../types';
+import { supportsSetSinkId } from '../../utils/browser';
+import { setAudioSessionType } from '../../utils/ios-audio-session';
 import { MediaManagementContext } from './MediaManagementContext';
+import { useAudioToggle } from './mediaToggle/useAudioToggle';
+import { useVideoToggle } from './mediaToggle/useVideoToggle';
+import { useCameraPreview } from './useCameraPreview';
+import { useDevicePermissionChangeListener } from './useDevicePermissionChangeListener';
+import { useDevices } from './useDevices';
+import { useDynamicDeviceHandling } from './useDynamicDeviceHandling';
+import { useMicrophoneVolumeAnalysis } from './useMicrophoneVolumeAnalysis';
 
 const getSelectedDeviceId = (deviceState: DeviceState, activeDeviceId: string) => {
     return deviceState.preferredAvailable && deviceState.preferredDevice?.deviceId
@@ -113,6 +116,14 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
         microphoneState.systemDefault!,
         microphones
     );
+
+    const { handlePreviewCameraToggle, cleanupCameraPreview } = useCameraPreview({
+        selectedCameraId: activeCameraDeviceId,
+        facingMode: 'user',
+        isBackgroundBlurSupported,
+        backgroundBlur,
+        room,
+    });
 
     const selectedCameraId = getSelectedDeviceId(cameraState, activeCameraDeviceId);
     const selectedMicrophoneId = getSelectedDeviceId(microphoneState, activeMicrophoneDeviceId);
@@ -212,6 +223,10 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
     };
 
     const initializeDevices = async () => {
+        await cleanupCameraPreview();
+
+        await wait(200);
+
         await cleanupMicrophoneVolumeAnalysis();
 
         const results = await Promise.allSettled([
@@ -369,9 +384,14 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
         };
     }, []);
 
+    useEffect(() => {
+        void preloadBackgroundProcessorAssets();
+    }, []);
+
     return (
         <MediaManagementContext.Provider
             value={{
+                handlePreviewCameraToggle,
                 devicePermissions,
                 handleDevicePermissionChange,
                 microphones,

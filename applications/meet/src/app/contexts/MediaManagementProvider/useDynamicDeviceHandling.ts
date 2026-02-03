@@ -7,10 +7,10 @@ import isEqual from 'lodash/isEqual';
 
 import isTruthy from '@proton/utils/isTruthy';
 
-import type { DeviceState, SwitchActiveDevice } from '../types';
-import { supportsSetSinkId } from '../utils/browser';
-import { filterDevices, isDefaultDevice } from '../utils/device-utils';
-import { useStableCallback } from './useStableCallback';
+import { useStableCallback } from '../../hooks/useStableCallback';
+import type { DeviceState, SwitchActiveDevice } from '../../types';
+import { supportsSetSinkId } from '../../utils/browser';
+import { filterDevices, isDefaultDevice } from '../../utils/device-utils';
 
 const dynamicDeviceUpdate = ({
     deviceList,

@@ -9,7 +9,7 @@ import { isSafari } from '@proton/shared/lib/helpers/browser';
 
 import { OptionButton } from '../../atoms/OptionButton/OptionButton';
 import { DEFAULT_DEVICE_ID } from '../../constants';
-import { useMediaManagementContext } from '../../contexts/MediaManagementContext';
+import { useMediaManagementContext } from '../../contexts/MediaManagementProvider/MediaManagementContext';
 import type { DeviceState } from '../../types';
 import { shouldShowDeviceCheckmark, shouldShowSystemDefaultCheckmark } from '../../utils/device-utils';
 import { DeviceSettingsDropdown } from '../DeviceSettingsDropdown';

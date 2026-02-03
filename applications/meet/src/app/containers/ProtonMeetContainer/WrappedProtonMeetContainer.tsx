@@ -6,7 +6,7 @@ import { LogLevel, Room, Track, setLogExtension } from 'livekit-client';
 import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
 import useFlag from '@proton/unleash/useFlag';
 
-import { MediaManagementProvider } from '../../contexts/MediaManagementProvider';
+import { MediaManagementProvider } from '../../contexts/MediaManagementProvider/MediaManagementProvider';
 import { SubscriptionManagementProvider } from '../../contexts/SubscriptionManagementProvider';
 import { UIStateProvider } from '../../contexts/UIStateContext';
 import { audioQuality, legacyQualityConstants, qualityConstants, screenShareQuality } from '../../qualityConstants';

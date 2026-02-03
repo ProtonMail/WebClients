@@ -2,8 +2,8 @@ import { useCallback, useState } from 'react';
 
 import { useMediaDevices } from '@livekit/components-react';
 
-import type { DeviceState } from '../types';
-import { filterDevices, getDefaultLabel, isDefaultDevice } from '../utils/device-utils';
+import type { DeviceState } from '../../types';
+import { filterDevices, getDefaultLabel, isDefaultDevice } from '../../utils/device-utils';
 
 const getDefaultDevice = (devices: MediaDeviceInfo[]): MediaDeviceInfo => {
     const defaultDevice = devices.find((d) => isDefaultDevice(d.deviceId));
