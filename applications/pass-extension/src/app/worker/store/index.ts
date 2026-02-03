@@ -134,6 +134,7 @@ export const options: RootSagaOptions = {
 
             const lockMode = authStore.getLockMode();
             const lockTtl = authStore.getLockTTL();
+
             /* If the boot is initiated following a session unlock, execute the
              * `onSessionLockUpdate` effect after the sequence successfully completes.
              * This step ensures the proper setup of the `SESSION_LOCK_ALARM` based on

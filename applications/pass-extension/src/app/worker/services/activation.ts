@@ -37,7 +37,8 @@ import { ForkType } from '@proton/shared/lib/authentication/fork/constants';
 import { APPS, SSO_PATHS } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
-import { getSessionResumeAlarm, getSessionResumeDelay, shouldForceLock } from './auth';
+import { getAutoResumeDelay } from './auth/auth.alarms';
+import { shouldForceLock } from './auth/auth.utils';
 
 type ActivationServiceState = {
     updateAvailable: MaybeNull<string>;
@@ -217,20 +218,29 @@ export const createActivationService = () => {
 
                 if (clientErrored(status)) {
                     if (endpoint === 'popup') return true;
-                    else {
-                        const { lastCalledAt, callCount } = ctx.service.auth.resumeSession;
-                        const nextDelay = getSessionResumeDelay(callCount);
-                        const resumeAlarm = await getSessionResumeAlarm();
 
-                        const scheduledTime = resumeAlarm
-                            ? msToEpoch(resumeAlarm.scheduledTime)
-                            : (lastCalledAt ?? 0) + nextDelay;
+                    /* Non-popup clients (content-scripts, settings page, etc.) should not trigger
+                     * concurrent resume attempts. We check if an alarm is already  managing the
+                     * retry schedule - if so, defer to it. Even without an alarm, we respect the
+                     * backoff delay based on `lastCalledAt` to prevent hammering the resume logic. */
+                    const alarmTime = await ctx.service.auth.alarms.autoResumeAlarm.when();
 
-                        const delay = scheduledTime - getEpoch();
-                        if (!resumeAlarm && delay <= 0) return true;
-
-                        logger.info(`[Activation] Automatic session resume stalled for ${delay}s`);
+                    if (alarmTime !== undefined) {
+                        const delay = msToEpoch(alarmTime) - getEpoch();
+                        logger.info(`[Activation] Automatic session resume scheduled in ${delay}s`);
+                        return false;
                     }
+
+                    const { lastCalledAt, callCount } = ctx.service.auth.resumeSession;
+                    const nextResumeTime = (lastCalledAt ?? 0) + getAutoResumeDelay(callCount);
+                    const delay = nextResumeTime - getEpoch();
+
+                    if (delay > 0) {
+                        logger.info(`[Activation] Automatic session resume stalled for ${delay}s`);
+                        return false;
+                    }
+
+                    return true;
                 }
 
                 return false;

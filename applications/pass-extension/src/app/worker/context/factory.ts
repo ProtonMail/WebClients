@@ -2,7 +2,7 @@ import WorkerMessageBroker from 'proton-pass-extension/app/worker/channel';
 import { createActivationService } from 'proton-pass-extension/app/worker/services/activation';
 import { createAliasService } from 'proton-pass-extension/app/worker/services/alias';
 import { createApiProxyService } from 'proton-pass-extension/app/worker/services/api-proxy';
-import { createAuthService } from 'proton-pass-extension/app/worker/services/auth';
+import { createAuthService } from 'proton-pass-extension/app/worker/services/auth/auth.service';
 import { createAutoFillService } from 'proton-pass-extension/app/worker/services/autofill';
 import { createAutoSaveService } from 'proton-pass-extension/app/worker/services/autosave';
 import { createB2BEventsService } from 'proton-pass-extension/app/worker/services/b2b';

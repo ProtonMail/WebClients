@@ -6,7 +6,7 @@ import { getMinimalHostPermissions, hasHostPermissions } from 'proton-pass-exten
 import { safariPullFork, sendSafariMessage } from 'proton-pass-extension/lib/utils/safari';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
-import { SESSION_RESUME_MAX_RETRIES, SESSION_RESUME_RETRY_TIMEOUT } from '@proton/pass/constants';
+import { SESSION_RESUME_MAX_RETRIES } from '@proton/pass/constants';
 import {
     AccountForkResponse,
     extractBlobOfflineComponents,
@@ -23,6 +23,7 @@ import { getOfflineVerifier } from '@proton/pass/lib/cache/crypto';
 import {
     clientAuthorized,
     clientBooted,
+    clientErrored,
     clientOffline,
     clientPasswordLocked,
     clientSessionLocked,
@@ -42,73 +43,39 @@ import {
 } from '@proton/pass/store/actions/creators/client';
 import { notification } from '@proton/pass/store/actions/creators/notification';
 import type { Api } from '@proton/pass/types/api/api';
-import type { MaybeNull, RequiredProps } from '@proton/pass/types/utils/index';
+import type { MaybeNull } from '@proton/pass/types/utils/index';
 import { NotificationKey } from '@proton/pass/types/worker/notification';
 import { AppStatus } from '@proton/pass/types/worker/state';
 import { or } from '@proton/pass/utils/fp/predicates';
 import { logger } from '@proton/pass/utils/logger';
-import { epochToMs, getEpoch } from '@proton/pass/utils/time/epoch';
+import { getEpoch } from '@proton/pass/utils/time/epoch';
 import { InvalidPersistentSessionError } from '@proton/shared/lib/authentication/error';
-import type { ExtensionForkPayload } from '@proton/shared/lib/authentication/fork/extension';
-import { FIBONACCI_LIST } from '@proton/shared/lib/constants';
 import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 import { setUID as setSentryUID } from '@proton/shared/lib/helpers/sentry';
 import { getSecondLevelDomain } from '@proton/shared/lib/helpers/url';
 import noop from '@proton/utils/noop';
 
-export const SESSION_LOCK_ALARM = 'alarm::session-lock';
-export const SESSION_RESUME_ALARM = 'alarm::session-resume';
-
-export const getSessionResumeAlarm = () => browser.alarms.get(SESSION_RESUME_ALARM).catch(noop);
-
-export const createLockAlarm = async (ttl: number) => {
-    const when = epochToMs(getEpoch() + ttl);
-    logger.debug(`[AuthService] Creating session-lock alarm  [${ttl}s]`);
-    await browser.alarms.create(SESSION_LOCK_ALARM, { when }).catch(noop);
-};
-
-export const clearLockAlarm = async () => {
-    logger.debug(`[AuthService] Clearing session-lock alarm`);
-    await browser.alarms.clear(SESSION_LOCK_ALARM).catch(noop);
-};
-
-export const getSessionResumeDelay = (retryCount: number) => {
-    const retryIdx = Math.min(retryCount, FIBONACCI_LIST.length - 1);
-    return SESSION_RESUME_RETRY_TIMEOUT * FIBONACCI_LIST[retryIdx];
-};
-
-export const shouldForceLock = withContext<() => Promise<boolean>>(async (ctx) => {
-    try {
-        return (await ctx.service.storage.local.getItem('forceLock')) ?? false;
-    } catch {
-        return false;
-    }
-});
-
-type ValidExtensionForkPayload = RequiredProps<ExtensionForkPayload, 'keyPassword'>;
-
-export const validateExtensionForkPayload = (payload: ExtensionForkPayload): payload is ValidExtensionForkPayload =>
-    Boolean(payload.keyPassword);
+import type { AuthAlarms } from './auth.alarms';
+import { createAuthAlarms } from './auth.alarms';
+import { shouldForceLock, validateExtensionForkPayload } from './auth.utils';
 
 export interface ExtensionAuthService extends AuthService {
     /** Starts extension specific listeners. Moved outside
      * the extension's AuthService factory to ensure it is
      * called once the `WorkerContext` has been set up. */
     listen: () => void;
+    alarms: AuthAlarms;
 }
 
 export const createAuthService = (api: Api, authStore: AuthStore) => {
+    const alarms = createAuthAlarms();
+
     const authService = createCoreAuthService({
         api,
         authStore,
         onInit: withContext(async (ctx, options) => {
-            browser.alarms.clear(SESSION_RESUME_ALARM).catch(noop);
-
-            /** If the client has managed to boot offline we should
-             * not clear the lock alarm in order to preserve the auto-locking
-             * capabilities. The `AuthService::init` sequence may be triggered
-             * when trying to auto-resume in the background */
-            if (!ctx.getState().booted) void clearLockAlarm();
+            void alarms.clearAutoResume();
+            void alarms.clearAutoLock();
 
             if (BUILD_TARGET === 'safari') {
                 const environment = getSecondLevelDomain(config.SSO_URL);
@@ -137,7 +104,7 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
         getMemorySession: withContext((ctx, _localID) => ctx.service.storage.session.getItems(SESSION_KEYS)),
 
         onLoginStart: withContext((ctx) => {
-            browser.alarms.clear(SESSION_RESUME_ALARM).catch(noop);
+            void alarms.clearAutoResume();
             if (!ctx.booted) ctx.setStatus(AppStatus.AUTHORIZING);
         }),
 
@@ -175,7 +142,7 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
             void ctx.service.storage.session.clear();
             void ctx.service.storage.local.clear({ preserve: ['features', 'pass::qa'] });
             void fileStorage.clearAll();
-            void clearLockAlarm();
+            void alarms.clearAutoLock();
 
             if (BUILD_TARGET === 'safari') void sendSafariMessage({ credentials: null });
         }),
@@ -230,14 +197,14 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
                 ctx.service.store.dispatch(lockSync(lock));
 
                 const { ttl, mode } = lock;
-                await clearLockAlarm();
+                await alarms.clearAutoLock();
                 const booted = clientBooted(ctx.getState().status);
 
                 /* To avoid potential issues during the boot sequence, refrain from
                  * setting the `SESSION_LOCK_ALARM` immediately if the session is locked.
                  * This precaution is taken because the boot process might exceed the lock
                  * TTL duration, leading to an unsuccessful boot for the user */
-                if (booted && mode !== LockMode.NONE && ttl) void createLockAlarm(ttl);
+                if (booted && mode !== LockMode.NONE && ttl) void alarms.setAutoLock(ttl);
             } catch {}
         }),
 
@@ -254,7 +221,7 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
              * clear the in-memory session storage */
             void ctx.service.storage.local.setItem('forceLock', true);
             void ctx.service.storage.session.removeItems(SESSION_KEYS);
-            void clearLockAlarm();
+            void alarms.clearAutoLock();
         }),
 
         onResumeStart: withContext<AuthServiceConfig['onResumeStart']>(async (ctx, { hasSession, memorySession }) => {
@@ -327,20 +294,12 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
 
                 ctx.setStatus(status);
                 ctx.setBooted(false);
-            }
 
-            if (options.retryable) {
-                const retryCount = authService.resumeSession.callCount;
-                const retryInfo = `(${retryCount}/${SESSION_RESUME_MAX_RETRIES})`;
-
-                if (retryCount <= SESSION_RESUME_MAX_RETRIES) {
-                    const delay = getSessionResumeDelay(retryCount);
-                    const when = epochToMs(getEpoch() + delay);
-                    logger.info(`[AuthService] Retrying session resume in ${delay}s ${retryInfo}`);
-
-                    await browser.alarms.clear(SESSION_RESUME_ALARM).catch(noop);
-                    void browser.alarms.create(SESSION_RESUME_ALARM, { when }).catch(noop);
-                } else logger.info(`[AuthService] Reached max number of resume retries ${retryInfo}`);
+                if (options.retryable && clientErrored(ctx.getState().status)) {
+                    const retryCount = authService.resumeSession.callCount;
+                    if (retryCount <= SESSION_RESUME_MAX_RETRIES) await alarms.setAutoResume(retryCount);
+                    else logger.info(`[AuthService] Reached max number of resume retries`);
+                }
             }
         }),
 
@@ -481,35 +440,24 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
         WorkerMessageBroker.registerMessage(WorkerMessageType.AUTH_OFFLINE_SWITCH, handleOfflineSwitch);
         WorkerMessageBroker.registerMessage(WorkerMessageType.AUTH_UNLOCK, handleUnlock);
 
-        /** These alarms may be triggered while the service worker was idle,
-         * as such, we should check for the app status before triggering any effects
-         * that would make API calls to avoid unauthenticated requests being sent out */
-        browser.alarms.onAlarm.addListener(
-            withContext(async (ctx, { name }) => {
-                switch (name) {
-                    case SESSION_LOCK_ALARM: {
-                        const booted = clientBooted(ctx.getState().status);
-                        logger.info(`[AuthService] session lock alarm detected [booted=${booted}]`);
-                        await ctx.service.storage.local.setItem('forceLock', true);
-                        if (booted) return authService.lock(LockMode.SESSION, { soft: false });
-                        else return authService.init({ forceLock: true, retryable: false });
-                    }
-                    case SESSION_RESUME_ALARM: {
-                        logger.info(`[AuthService] session resume alarm detected`);
-                        const appStatus = ctx.getState().status;
-                        const offline = !ctx.service.connectivity.online;
-                        const offlineResume = clientOffline(appStatus) && offline;
+        /** Auth alarms may be triggered while the service worker is idle,
+         * as such, we should check for the app status before triggering any
+         * API side-effects to avoid unauthenticated requests being sent out */
 
-                        if (offlineResume) {
-                            return authService.init({
-                                forceLock: await shouldForceLock(),
-                                retryable: true,
-                            });
-                        }
-                    }
-                }
+        alarms.autoLockAlarm.listen(
+            withContext(async (ctx) => {
+                const booted = clientBooted(ctx.getState().status);
+                logger.info(`[AuthService] session lock alarm detected [booted=${booted}]`);
+                await ctx.service.storage.local.setItem('forceLock', true);
+                if (booted) return authService.lock(LockMode.SESSION, { soft: false });
+                else return authService.init({ forceLock: true, retryable: false });
             })
         );
+
+        alarms.autoResumeAlarm.listen(async () => {
+            logger.info(`[AuthService] auto-resume alarm fired`);
+            return authService.init({ forceLock: await shouldForceLock(), retryable: true });
+        });
 
         /** For UX: on connectivity restored, resume session if app is offline,
          * or re-initialize auth if password-locked from offline boot. */
@@ -523,6 +471,8 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
             else if (clientPasswordLocked(appStatus)) authService.init({ forceLock: true }).catch(noop);
         });
     });
+
+    authService.alarms = alarms;
 
     return authService;
 };
