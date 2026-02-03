@@ -450,11 +450,14 @@ export const getSupport = (): PlanCardFeatureDefinition => {
         included: true,
     };
 };
+
+const MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT = 6;
 export const getPhoneSupport = (): PlanCardFeatureDefinition => {
     return {
-        text: c('new_plans: feature').t`Phone support (20+ users)`,
+        // translator: full sentence 'Phone support (6+ users)'
+        text: c('new_plans: feature').t`Phone support (${MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT}+ users)`,
         tooltip: c('new_plans: tooltip')
-            .t`Phone support is available from the ${BRAND_NAME} Customer Support team during European business hours, for customers with 20 or more users`,
+            .t`Phone support is available from the ${BRAND_NAME} Customer Support team during European business hours, for customers with ${MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT} or more users`,
         included: true,
         icon: 'phone',
     };
