@@ -75,7 +75,7 @@ const ItemColumnLayout = ({
 
     const breakpoints = useActiveBreakpoint();
 
-    const { expirationTime, hasExpiration } = useExpiringElement(element, labelID, conversationMode);
+    const { expirationTime, hasExpiration } = useExpiringElement(element, labelID);
 
     const body = contentIndexingDone ? (element as ESMessage).decryptedBody : undefined;
     const { Subject } = element;

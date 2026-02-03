@@ -71,7 +71,7 @@ const ItemRowLayout = ({
     const snoozedElement = useMailSelector(selectSnoozeElement);
     const snoozeDropdownState = useMailSelector(selectSnoozeDropdownState);
 
-    const { expirationTime, hasExpiration } = useExpiringElement(element, labelID, conversationMode);
+    const { expirationTime, hasExpiration } = useExpiringElement(element, labelID);
 
     const body = contentIndexingDone ? (element as ESMessage).decryptedBody : undefined;
     const { Subject } = element;
