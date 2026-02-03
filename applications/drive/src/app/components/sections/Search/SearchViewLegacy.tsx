@@ -12,9 +12,9 @@ import { extractSearchParameters } from '../../../store/_search/utils';
 import { FileBrowserStateProvider } from '../../FileBrowser';
 import DriveToolbar from '../Drive/DriveToolbar';
 import ToolbarRow from '../ToolbarRow/ToolbarRow';
-import { Search } from './Search';
+import { SearchLegacy } from './SearchLegacy';
 
-export function SearchView() {
+export function SearchViewLegacy() {
     const { activeFolder, setDefaultRoot } = useActiveShare();
     useEffect(setDefaultRoot, []);
 
@@ -22,7 +22,7 @@ export function SearchView() {
     const query = extractSearchParameters(location);
 
     const searchView = useSearchView(activeFolder.shareId, query);
-
+    const resultCount = searchView.numberOfResults;
     return (
         <FileBrowserStateProvider itemIds={searchView.items.map(({ linkId }) => linkId)}>
             <ToolbarRow
@@ -31,9 +31,9 @@ export function SearchView() {
                         {searchView.isLoading
                             ? c('Title').t`Searching…`
                             : c('Title').ngettext(
-                                  msgid`Found ${searchView.numberOfResults} result`,
-                                  `Found ${searchView.numberOfResults} results`,
-                                  searchView.numberOfResults
+                                  msgid`Found ${resultCount} result`,
+                                  `Found ${resultCount} results`,
+                                  resultCount
                               )}
                     </span>
                 }
@@ -49,7 +49,7 @@ export function SearchView() {
                     />
                 }
             />
-            <Search shareId={activeFolder.shareId} searchView={searchView} />
+            <SearchLegacy shareId={activeFolder.shareId} searchView={searchView} />
         </FileBrowserStateProvider>
     );
 }

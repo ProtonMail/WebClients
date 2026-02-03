@@ -15,6 +15,7 @@ export enum SortField {
     sharedOn = 'sharedOn',
     sharedBy = 'sharedBy',
     uploadedBy = 'uploadedBy',
+    location = 'location',
 }
 
 export type SortFieldDataType = {
@@ -31,6 +32,7 @@ export type SortFieldDataType = {
     [SortField.sharedOn]: Date | undefined;
     [SortField.sharedBy]: string;
     [SortField.uploadedBy]: string;
+    [SortField.location]: string;
 };
 
 /**
