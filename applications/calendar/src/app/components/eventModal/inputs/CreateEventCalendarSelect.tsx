@@ -99,6 +99,8 @@ const CreateEventCalendarSelect = ({
             ? newDefaultFullDayNotifications
             : model.fullDayNotifications;
 
+        const conferenceHost = model.conferenceUrl ? memberEmail : undefined;
+
         setModel({
             ...model,
             calendar: { id: newId, color, permissions, isOwned, isSubscribed, isWritable, isUnknown },
@@ -112,6 +114,7 @@ const CreateEventCalendarSelect = ({
             defaultEventDuration,
             partDayNotifications,
             fullDayNotifications,
+            conferenceHost,
         });
     };
 

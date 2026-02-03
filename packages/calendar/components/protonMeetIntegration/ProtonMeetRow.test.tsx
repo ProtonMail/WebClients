@@ -9,6 +9,7 @@ import { useGetMeetingByLinkName } from '@proton/meet';
 import { useCreateMeeting } from '@proton/meet/hooks/useCreateMeeting';
 import { useMeetingUpdates } from '@proton/meet/hooks/useMeetingUpdates';
 import { getPassphraseFromEncryptedPassword } from '@proton/meet/utils/cryptoUtils';
+import type { Address } from '@proton/shared/lib/interfaces';
 import { type EventModel, VIDEO_CONFERENCE_PROVIDER } from '@proton/shared/lib/interfaces/calendar';
 
 import { calendarUrlQueryParams } from '../../constants';
@@ -43,6 +44,10 @@ jest.mock('@proton/account/user/hooks', () => ({
             Email: 'test@proton.me',
         },
     ]),
+}));
+
+jest.mock('@proton/account/addresses/hooks', () => ({
+    useAddresses: jest.fn().mockReturnValue([[{ ID: 'address-id', Email: 'test@proton.me' }], false]),
 }));
 
 jest.mock('@proton/unleash', () => ({
@@ -92,6 +97,10 @@ jest.mock('./useAutoAddMeetLinkNotification', () => ({
 const mockModel = {
     title: 'Test Meeting',
     attendees: [],
+    member: {
+        addressID: 'address-id',
+        memberID: 'member-id',
+    },
 };
 
 const password = 'testpassword';
@@ -103,6 +112,9 @@ const modelWithMeeting = {
     conferenceUrl: `https://meet.proton.me${meetingLink}`,
     conferenceId: 'abcdefghij',
     conferenceHost: 'test@proton.me',
+    selfAddress: {
+        Email: 'test@proton.me',
+    } as Address,
 };
 
 const mockMeeting = {

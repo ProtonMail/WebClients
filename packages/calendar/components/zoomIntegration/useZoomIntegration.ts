@@ -2,6 +2,7 @@ import { useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useOAuthToken } from '@proton/activation/index';
 import { OAUTH_PROVIDER } from '@proton/activation/src/interface';
@@ -34,6 +35,10 @@ export const useZoomIntegration = ({
     setActiveProvider,
 }: UseZoomIntegrationParams) => {
     const [user] = useUser();
+    const [addresses] = useAddresses();
+
+    const calendarEmail =
+        model.selfAddress?.Email || addresses?.find(({ ID }) => ID === model.member.addressID)?.Email || user.Email;
 
     const [oAuthToken, oauthTokenLoading] = useOAuthToken();
     const isUserConnectedToZoom = oAuthToken?.some(({ Provider }) => Provider === OAUTH_PROVIDER.ZOOM);
@@ -115,7 +120,7 @@ export const useZoomIntegration = ({
                 conferenceId: data?.VideoConference?.ID,
                 conferenceUrl: data?.VideoConference?.URL,
                 conferencePassword: data?.VideoConference?.Password,
-                conferenceHost: user.Email,
+                conferenceHost: calendarEmail,
                 conferenceProvider: VIDEO_CONFERENCE_PROVIDER.ZOOM,
                 isConferenceTmpDeleted: false,
             });

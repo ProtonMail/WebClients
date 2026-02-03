@@ -4,6 +4,7 @@ import { useHistory, useLocation } from 'react-router-dom';
 import debounce from 'lodash/debounce';
 import { c } from 'ttag';
 
+import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useNotifications } from '@proton/components';
 import type { SessionKey } from '@proton/crypto';
@@ -56,10 +57,14 @@ export const useProtonMeetIntegration = ({
     const isAutoAddMeetingLinkEnabled = useFlag('AutoAddMeetingLink');
 
     const [user] = useUser();
+    const [addresses] = useAddresses();
 
     const notifications = useNotifications();
 
     const { showAutoAddNotification, canAutoAddMeeting } = useAutoAddMeetLinkNotification();
+
+    const calendarEmail =
+        model.selfAddress?.Email || addresses?.find(({ ID }) => ID === model.member.addressID)?.Email || user.Email;
 
     const [processState, setProcessState] = useState<IntegrationState | undefined>(
         isActive ? 'meeting-present' : undefined
@@ -67,7 +72,7 @@ export const useProtonMeetIntegration = ({
 
     const [meetingObject, setMeetingObject] = useState<Meeting | null>(null);
 
-    const isCurrentUserMeetingHost = user.Email === model.conferenceHost;
+    const isCurrentUserMeetingHost = calendarEmail === model.conferenceHost;
 
     const [meetingDetails, setMeetingDetails] = useState({
         id: '',
@@ -146,7 +151,7 @@ export const useProtonMeetIntegration = ({
             ...modelRef.current,
             conferenceId,
             conferenceUrl,
-            conferenceHost: user.Email,
+            conferenceHost: calendarEmail,
             conferenceProvider: VIDEO_CONFERENCE_PROVIDER.PROTON_MEET,
             isConferenceTmpDeleted: false,
         });
