@@ -10,3 +10,11 @@ export interface CreateMeetingParams {
     type?: MeetingType;
     protonCalendar?: boolean;
 }
+
+export enum UpsellModalTypes {
+    Schedule = 'schedule',
+    PersonalMeeting = 'personalMeeting',
+    StartMeeting = 'startMeeting',
+    FreeAccount = 'freeAccount',
+    PaidAccount = 'paidAccount',
+}

@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
 
+import { useGetMeetUserSettings } from '@proton/meet/store/hooks/useMeetUserSettings';
 import useFlag from '@proton/unleash/useFlag';
 
-import { useGetMeetUserSettings } from '../store/hooks/useMeetUserSettings';
 import { useMeetingList } from './useMeetingList';
 
 const useAuthenticatedDependencySetup = () => {

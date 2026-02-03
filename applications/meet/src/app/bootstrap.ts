@@ -11,6 +11,8 @@ import { getDecryptedPersistedState } from '@proton/account/persist/helper';
 import type { NotificationsManager } from '@proton/components/containers/notifications/manager';
 import { setupGuestCrossStorage } from '@proton/cross-storage/account-impl/guestInstance';
 import { FeatureCode, fetchFeatures } from '@proton/features/index';
+import type { MeetDispatch, MeetState, MeetStore } from '@proton/meet/store/store';
+import { setupStore } from '@proton/meet/store/store';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import type { ApiWithListener } from '@proton/shared/lib/api/createApi';
 import createApi from '@proton/shared/lib/api/createApi';
@@ -32,8 +34,6 @@ import { appMode } from '@proton/shared/lib/webpack.constants';
 import noop from '@proton/utils/noop';
 
 import locales from './locales';
-import type { MeetDispatch, MeetState, MeetStore } from './store/store';
-import { setupStore } from './store/store';
 import { meetTelemetryConfig } from './telemetryConfig';
 import { clearStoredDevices } from './utils/deviceStorage';
 import { clearDisabledRotatePersonalMeeting } from './utils/disableRotatePersonalMeeting';

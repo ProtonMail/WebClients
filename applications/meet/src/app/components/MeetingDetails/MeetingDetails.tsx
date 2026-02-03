@@ -8,6 +8,7 @@ import TableBody from '@proton/components/components/table/TableBody';
 import TableCell from '@proton/components/components/table/TableCell';
 import TableRow from '@proton/components/components/table/TableRow';
 import { IcMeetCopy } from '@proton/icons/icons/IcMeetCopy';
+import { useMeetings } from '@proton/meet/store/hooks/useMeetings';
 import { parseMeetingLink } from '@proton/meet/utils/parseMeetingLink';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import type { Meeting } from '@proton/shared/lib/interfaces/Meet';
@@ -17,7 +18,6 @@ import { SideBar } from '../../atoms/SideBar/SideBar';
 import { useMeetContext } from '../../contexts/MeetContext';
 import { useUIStateContext } from '../../contexts/UIStateContext';
 import { useCopyTextToClipboard } from '../../hooks/useCopyTextToClipboard';
-import { useMeetings } from '../../store/hooks/useMeetings';
 import { MeetingSideBars } from '../../types';
 
 import './MeetingDetails.scss';
