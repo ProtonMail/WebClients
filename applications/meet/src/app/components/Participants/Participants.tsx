@@ -80,10 +80,11 @@ export const Participants = () => {
                             placeholder={c('Placeholder').t`Find...`}
                         />
                     ) : (
-                        <div className="text-semibold flex items-center">
-                            <div className="flex items-baseline gap-1">
-                                <span className="text-semibold text-2xl">{c('Title').t`Participants`}</span>
-                                <span className="text-semibold text-sm color-hint">
+                        <div className="text-semibold flex items-center flex-nowrap">
+                            <div className="flex items-baseline gap-1 flex-nowrap">
+                                <span className="text-semibold text-2xl text-ellipsis">{c('Title')
+                                    .t`Participants`}</span>
+                                <span className="text-semibold text-sm color-hint text-tabular-nums">
                                     {maxParticipants
                                         ? `(${participantsCount}/${maxParticipants})`
                                         : `(${participantsCount})`}
@@ -91,7 +92,7 @@ export const Participants = () => {
                             </div>
 
                             <Button
-                                className="search-open-button p-0 ml-2 flex items-center justify-center"
+                                className="search-open-button p-0 ml-2 flex items-center justify-center shrink-0"
                                 shape="ghost"
                                 size="small"
                                 onClick={() => setIsSearchOn(!isSearchOn)}
