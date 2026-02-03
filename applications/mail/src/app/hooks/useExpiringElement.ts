@@ -2,13 +2,12 @@ import { useMemo } from 'react';
 
 import { getUnixTime } from 'date-fns';
 
-import type { Conversation } from '../models/conversation';
+import { isElementConversation } from 'proton-mail/helpers/elements';
+
 import type { Element } from '../models/element';
 import { useGetAllMessages, useGetMessage } from './message/useMessage';
 
-const isConversationMode = (element: Element, conversationMode: boolean): element is Conversation => conversationMode;
-
-export const useExpiringElement = (element: Element, labelID: string, conversationMode = false) => {
+export const useExpiringElement = (element: Element, labelID: string) => {
     const getAllMessages = useGetAllMessages();
     const getMessage = useGetMessage();
 
@@ -19,7 +18,7 @@ export const useExpiringElement = (element: Element, labelID: string, conversati
      */
     const expirationTime = useMemo(() => {
         if (element) {
-            if (isConversationMode(element, conversationMode)) {
+            if (isElementConversation(element)) {
                 const label = element.Labels?.find((label) => label.ID === labelID);
                 if (label?.ContextExpirationTime) {
                     return label.ContextExpirationTime;
@@ -54,7 +53,7 @@ export const useExpiringElement = (element: Element, labelID: string, conversati
         }
         return undefined;
         // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-7ED95B
-    }, [labelID, element, conversationMode]);
+    }, [labelID, element]);
 
     return {
         expirationTime,
