@@ -38,6 +38,9 @@
       "Back": [
         "Voltar"
       ],
+      "Back to search settings": [
+        "Voltar para configurações de pesquisa"
+      ],
       "Cancel": [
         "Cancelar"
       ],
@@ -52,6 +55,9 @@
       ],
       "Chat with us": [
         "Converse conosco"
+      ],
+      "Clean up orphaned documents": [
+        "Limpar documentos órfãos"
       ],
       "Close": [
         "Fechar"
@@ -161,6 +167,9 @@
       "Increase": [
         "Aumentar"
       ],
+      "Inspect indexed documents": [
+        "Inspecionar documentos indexados"
+      ],
       "Keep my subscription": [
         "Manter minha assinatura"
       ],
@@ -217,6 +226,9 @@
       ],
       "Previous page": [
         "Página anterior"
+      ],
+      "Re-index all content - conversations and files": [
+        "Reindexar todo o conteúdo - conversas e arquivos"
       ],
       "Refer a friend": [
         "Indicar um amigo"
@@ -298,6 +310,9 @@
       ],
       "Show more benefits": [
         "Mostrar mais benefícios"
+      ],
+      "Show orphaned space IDs": [
+        "Exibir IDs de espaços órfãos"
       ],
       "Sign out": [
         "Encerrar sessão"
@@ -818,6 +833,9 @@
       "Add to active": [
         "Adicionar a ativos"
       ],
+      "Already in KB": [
+        "Já na KB"
+      ],
       "Browse ${ DRIVE_SHORT_APP_NAME }": [
         "Navegar para ${ DRIVE_SHORT_APP_NAME }"
       ],
@@ -1097,6 +1115,12 @@
       "Failed to process ${ DRIVE_SHORT_APP_NAME } file: ${ file.name }": [
         "Falha ao processar o arquivo ${ DRIVE_SHORT_APP_NAME }: ${ file.name }"
       ],
+      "Failed to upload \"${ file.name }\" to ${ DRIVE_APP_NAME }": [
+        "Falha ao enviar \"${ file.name }\" para o ${ DRIVE_APP_NAME }"
+      ],
+      "File \"${ file.name }\" (${ fileSizeFormatted }) exceeds the ${ maxSizeFormatted } limit. Link a Drive folder to your project to work with larger files.": [
+        "O arquivo \"${ file.name }\" (${ fileSizeFormatted }) excede o limite de ${ maxSizeFormatted }. Conecte uma pasta do Drive ao seu projeto para trabalhar com arquivos maiores."
+      ],
       "File \"${ file.name }\" is too large (${ fileSizeFormatted }). Maximum allowed size is ${ maxSizeFormatted }.": [
         "O arquivo \"${ file.name }\" é muito grande (${ fileSizeFormatted }). O tamanho máximo permitido é ${ maxSizeFormatted }."
       ],
@@ -1114,6 +1138,12 @@
       ],
       "PowerPoint files are not supported. Please convert to PDF and upload the PDF version for better text extraction.": [
         "Arquivos do PowerPoint não são suportados. Converta-os para PDF e envie a versão PDF para melhor extração de texto."
+      ],
+      "Re-indexing failed. Please try again.": [
+        "A reindexação falhou. Tente novamente."
+      ],
+      "Search service not available": [
+        "Serviço de pesquisa indisponível"
       ],
       "Sign up for free to continue chatting and unlock access to chat history, starred chats, and more features.": [
         "Crie uma conta gratuitamente para continuar conversando e desbloquear acesso ao histórico de bate-papo, bate-papos favoritos e mais recursos."
@@ -1296,11 +1326,20 @@
       "Ask anything to ${ LUMO_SHORT_APP_NAME }": [
         "Pergunte qualquer coisa ao ${ LUMO_SHORT_APP_NAME }"
       ],
+      "Attached Files": [
+        "Arquivos anexados"
+      ],
+      "Auto-matched": [
+        "Correspondência automática"
+      ],
       "Be cautious of unfamiliar domains or excessive subdomains": [
         "Tenha cuidado com domínios desconhecidos ou subdomínios excessivos"
       ],
       "characters": [
         "caracteres"
+      ],
+      "characters not shown": [
+        "caracteres não exibidos"
       ],
       "Chat knowledge": [
         "Base de conhecimento dos bate-papos"
@@ -1335,6 +1374,9 @@
       "Error Processing File": [
         "Erro ao processar arquivo"
       ],
+      "Exceeds ${ maxSize } limit": [
+        "Excede o limite de ${ maxSize }"
+      ],
       "Exclude file": [
         "Excluir arquivo"
       ],
@@ -1358,6 +1400,15 @@
       ],
       "files are not currently supported for content extraction.": [
         "arquivos não são atualmente suportados para extração de conteúdo."
+      ],
+      "Files automatically retrieved based on your question.": [
+        "Arquivos recuperados automaticamente com base na sua pergunta."
+      ],
+      "Files automatically retrieved based on your questions:": [
+        "Arquivos recuperados automaticamente com base em suas perguntas:"
+      ],
+      "Files you've added to this conversation.": [
+        "Arquivos que você adicionou a esta conversa."
       ],
       "For each conversation, ${ LUMO_SHORT_APP_NAME } has the capacity to process a limited amount of information. The progress bar shows how much capacity your current files are using. ": [
         "Para cada conversa, ${ LUMO_SHORT_APP_NAME } tem a capacidade de processar uma quantidade limitada de informações. A barra de progresso mostra quanta capacidade seus arquivos atuais estão usando. "
@@ -1395,6 +1446,9 @@
       "No files available": [
         "Nenhum arquivo disponível"
       ],
+      "No supported files in this folder": [
+        "Nenhum arquivo compatível nesta pasta"
+      ],
       "Note:": [
         "Nota:"
       ],
@@ -1425,6 +1479,9 @@
       "Processing file contents...": [
         "Processando conteúdo do arquivo..."
       ],
+      "Relevant files will be automatically retrieved based on your questions.": [
+        "Os arquivos relevantes serão recuperados automaticamente com base em suas perguntas."
+      ],
       "Remove": [
         "Remover"
       ],
@@ -1433,6 +1490,12 @@
       ],
       "Remove message filter": [
         "Remover filtro de mensagem"
+      ],
+      "Removed from future questions": [
+        "Removido de perguntas futuras"
+      ],
+      "Retrieved Project Knowledge": [
+        "Conhecimento extraído do projeto"
       ],
       "rows": [
         "linhas"
@@ -1478,6 +1541,9 @@
       ],
       "There was an error processing this file. The content may not be readable or the file format might not be fully supported.": [
         "Ocorreu um erro ao processar este arquivo. O conteúdo pode não ser legível ou o formato do arquivo pode não ser totalmente suportado."
+      ],
+      "These files won't be used for future questions.": [
+        "Estes arquivos não serão usados para perguntas futuras."
       ],
       "This file appears to be empty or contains no extractable text content.": [
         "Este arquivo parece estar vazio ou não contém conteúdo de texto extraível."
@@ -1551,7 +1617,7 @@
     },
     "collider_2025: Invite Info": {
       "Know someone who'd benefit from a privacy-first AI? Invite them to join the ${ LUMO_SHORT_APP_NAME } waitlist. You have ${ remainingInvitesText } invitations remaining.": [
-        "Conhece alguém que se beneficiaria de uma IA que prioriza a privacidade? Convide-o(a) para entrar na lista de espera do ${ LUMO_SHORT_APP_NAME }. Você tem ${ remainingInvitesText } convites restantes."
+        "Conhece alguém que se beneficiaria de uma IA com foco em privacidade? Convide essa pessoa para entrar na lista de espera do ${ LUMO_SHORT_APP_NAME }. Você tem ${ remainingInvitesText } convites restantes."
       ],
       "You have ${ remainingInvitesText } invitations remaining.": [
         "Você tem ${ remainingInvitesText } convites restantes."
@@ -1570,7 +1636,7 @@
         "Nenhum convite restante  "
       ],
       "Thanks for helping others discover ${ LUMO_SHORT_APP_NAME }! If more invites become available, we’ll let you know.": [
-        "Obrigado por ajudar outros a conhecer o ${ LUMO_SHORT_APP_NAME }! Se mais convites ficarem disponíveis, avisaremos você."
+        "Obrigado por ajudar outras pessoas a descobrir o ${ LUMO_SHORT_APP_NAME }! Se mais convites ficarem disponíveis, avisaremos você."
       ],
       "We've invited ${ emailText }. They'll get instructions on how to join the waitlist.": [
         "Convidamos ${ emailText }. Ele(a) receberá instruções sobre como entrar na lista de espera."
@@ -1750,11 +1816,20 @@
       "All chats deleted successfully": [
         "Todas as conversas foram excluídas com sucesso"
       ],
+      "File \"${ file.name }\" uploaded to ${ DRIVE_APP_NAME }": [
+        "Arquivo \"${ file.name }\" enviado para o ${ DRIVE_APP_NAME }"
+      ],
       "File added to knowledge base: ${ result.fileName }": [
         "Arquivo adicionado à base de conhecimento: ${ result.fileName }"
       ],
       "File uploaded and added to knowledge base": [
         "Arquivo enviado e adicionado à base de conhecimento"
+      ],
+      "File uploaded and indexed for search": [
+        "Arquivo enviado e indexado para pesquisa"
+      ],
+      "File uploaded to Drive folder": [
+        "Arquivo enviado para a pasta do Drive"
       ],
       "Thanks for the feedback!": [
         "Obrigado pelo feedback!"
@@ -1973,6 +2048,9 @@
       "Back to project": [
         "Voltar ao projeto"
       ],
+      "Back to projects": [
+        "Voltar aos projetos"
+      ],
       "Cancel": [
         "Cancelar"
       ],
@@ -2023,6 +2101,9 @@
       ],
       "Manage Drive folder link": [
         "Gerenciar link de pasta do Drive"
+      ],
+      "More breadcrumbs": [
+        "Mais trilhas"
       ],
       "More concise": [
         "Mais conciso"
@@ -2078,6 +2159,9 @@
       "Think longer": [
         "Pense mais"
       ],
+      "Toggle selection": [
+        "Alternar seleção"
+      ],
       "Try again": [
         "Tentar novamente"
       ],
@@ -2098,6 +2182,9 @@
       ]
     },
     "collider_2025:Button": {
+      "Add instructions to tailor ${ LUMO_SHORT_APP_NAME }'s responses": [
+        "Adicione instruções para personalizar as respostas do ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Back to projects": [
         "Voltar aos projetos"
       ],
@@ -2193,8 +2280,41 @@
       ]
     },
     "collider_2025:Error": {
+      "Cannot link the root folder. Please select a subfolder.": [
+        "Não é possível vincular a pasta raiz. Selecione uma subpasta."
+      ],
       "Error processing file: ${ file.name }": [
         "Erro ao processar arquivo: ${ file.name }"
+      ],
+      "Error uploading file: ${ file.name }": [
+        "Erro ao carregar arquivo: ${ file.name }"
+      ],
+      "Failed to create folder": [
+        "Falha ao criar a pasta"
+      ],
+      "Failed to download \"${ file.name }\": Data integrity check failed. Please try again.": [
+        "Falha ao baixar \"${ file.name }\": Falha na verificação de integridade dos dados. Tente novamente."
+      ],
+      "Failed to index Drive folder for search": [
+        "Falha ao indexar a pasta do Drive para pesquisa"
+      ],
+      "Failed to link Drive folder": [
+        "Falha ao vincular a pasta do Drive"
+      ],
+      "Failed to process file: ${ file.name }": [
+        "Falha ao processar arquivo: ${ file.name }"
+      ],
+      "Failed to unlink Drive folder": [
+        "Falha ao desvincular a pasta do Drive"
+      ],
+      "File \"${ file.name }\" (${ fileSizeFormatted }) exceeds the ${ maxSizeFormatted } limit. Link a ${ DRIVE_APP_NAME } folder to upload larger files.": [
+        "O arquivo \"${ file.name }\" (${ fileSizeFormatted }) excede o limite de ${ maxSizeFormatted }. Conecte uma pasta do ${ DRIVE_APP_NAME } para enviar arquivos maiores."
+      ],
+      "File download failed due to integrity check. Please try again.": [
+        "Falha ao baixar arquivo devido à verificação de integridade. Tente novamente."
+      ],
+      "File format not supported: ${ file.name }": [
+        "Formato de arquivo não suportado: ${ file.name }"
       ],
       "File type not supported: ${ file.name }": [
         "Tipo de arquivo não suportado: ${ file.name }"
@@ -2212,6 +2332,17 @@
       ],
       "Unlimited projects": [
         "Projetos ilimitados"
+      ]
+    },
+    "collider_2025:FeaturePoint": {
+      "Chats, files, and context stay together in an encrypted workspace.": [
+        "As conversas, os arquivos e o contexto permanecem juntos em um espaço de trabalho criptografado."
+      ],
+      "Project-specific instructions mean no repeating yourself.": [
+        "Instruções específicas para o projeto significam que não há necessidade de repeti-las."
+      ],
+      "Tailored responses based on your project’s files and instructions.": [
+        "Respostas personalizadas com base nos arquivos e instruções do seu projeto."
       ]
     },
     "collider_2025:Info": {
@@ -2234,11 +2365,17 @@
       "AIs from Big Tech are built on harvesting your data. But ${ LUMO_SHORT_APP_NAME } is different. It was created by the scientists behind innovative, privacy-first services like ${ MAIL_APP_NAME } and ${ VPN_APP_NAME }. And it’s owned by a Swiss nonprofit, whose mission is to advance privacy and never make money from user data.": [
         "As IAs das big techs são criadas para coletar seus dados, mas o ${ LUMO_SHORT_APP_NAME } é diferente. Ele foi criado pelos cientistas por trás de serviços inovadores e que priorizam a privacidade, como o ${ MAIL_APP_NAME } e o ${ VPN_APP_NAME }. E é propriedade de uma organização suíça sem fins lucrativos, cuja missão é promover a privacidade e nunca lucrar com os dados dos usuários."
       ],
+      "All messages and chat history": [
+        "Todo o histórico de mensagens e chats"
+      ],
       "Are you sure you want to delete \"${ project.name }\"? This action cannot be undone.": [
         "Você tem certeza de que deseja excluir \"${ project.name }\"? Esta ação não pode ser desfeita."
       ],
       "Are you sure you want to delete this conversation? This action cannot be undone.": [
         "Você tem certeza de que deseja excluir essa conversa? Esta ação não pode ser desfeita."
+      ],
+      "Auto-retrieved": [
+        "Recuperado automaticamente"
       ],
       "Browse to the ${ DRIVE_SHORT_APP_NAME } folder you want to link to this project, then click \"Link this folder\".": [
         "Navegue até a pasta do ${ DRIVE_SHORT_APP_NAME } que você deseja vincular a este projeto e clique em \"Vincular esta pasta\"."
@@ -2248,6 +2385,12 @@
       ],
       "Current chat:": [
         "Bate-papo atual:"
+      ],
+      "Drive files are not available for guest users": [
+        "Arquivos do Drive não estão disponíveis para usuários convidados"
+      ],
+      "File \"${ file.name }\" is already added to this conversation": [
+        "O arquivo \"${ file.name }\" já foi adicionado a esta conversa"
       ],
       "File \"${ file.name }\" is already in this project": [
         "O arquivo \"${ file.name }\" já está neste projeto"
@@ -2288,6 +2431,9 @@
       "This project already has files. Please remove all files before linking a Drive folder.": [
         "Esse projeto já tem arquivos. Remova todos os arquivos antes de vincular uma pasta do Drive."
       ],
+      "This will remove all ${ files.length } files from this project. This action cannot be undone.": [
+        "Isso removerá todos os ${ files.length } arquivos deste projeto. Esta ação não pode ser desfeita."
+      ],
       "Tips on how to write useful instructions": [
         "Dicas de como escrever instruções úteis"
       ],
@@ -2302,6 +2448,9 @@
       ],
       "Your files are large. ${ LUMO_SHORT_APP_NAME } may not be able to process all information.": [
         "Seus arquivos são grandes. ${ LUMO_SHORT_APP_NAME } talvez não consiga processar todas as informações."
+      ],
+      "Your information is zero-access encrypted": [
+        "Sua informação é criptografada com acesso zero"
       ]
     },
     "collider_2025:Label": {
@@ -2405,11 +2554,29 @@
       ]
     },
     "collider_2025:Prompt": {
+      "Analyze my spending patterns and suggest areas to reduce expenses": [
+        "Analise meus padrões de gastos e sugira áreas para reduzir despesas"
+      ],
       "Can you explain why this answer is correct?": [
         "Você pode explicar por que essa resposta está correta?"
       ],
+      "Compare the methodologies used across these studies": [
+        "Compare as metodologias utilizadas nesses estudos"
+      ],
+      "Create a packing list for a winter hiking trip in Patagonia": [
+        "Crie uma lista de itens para uma viagem de inverno para fazer trilha na Patagônia"
+      ],
+      "Explain the risks associated with this type of asset": [
+        "Explique os riscos associados a este tipo de ativo"
+      ],
+      "Explain the trade-offs between paying off debt vs investing": [
+        "Explique as vantagens e desvantagens entre quitar dívidas e investir."
+      ],
       "Explain this medication and its potential side effects": [
         "Explique este medicamento e seus possíveis efeitos colaterais."
+      ],
+      "Help me create a plan to achieve this goal": [
+        "Ajude-me a criar um plano para atingir este objetivo"
       ],
       "Help me draft a professional response to this email": [
         "Ajude-me a redigir uma resposta profissional a este e-mail."
@@ -2417,8 +2584,29 @@
       "Help me organize my thoughts on this decision": [
         "Ajude-me a organizar meus pensamentos sobre essa decisão."
       ],
+      "Help me plan a 2-week itinerary for Japan with cultural experiences": [
+        "Ajude-me a planejar um roteiro de 2 semanas para o Japão com experiências culturais"
+      ],
+      "Help me prepare questions about this diagnosis for my doctor": [
+        "Me ajude a preparar perguntas sobre este diagnóstico para o meu médico"
+      ],
       "Help me prepare talking points for this presentation": [
         "Ajude-me a preparar os pontos a serem abordados nesta apresentação."
+      ],
+      "Help me refine this draft to be more concise and impactful": [
+        "Ajude-me a refinar este rascunho para que fique mais conciso e impactante"
+      ],
+      "Help me understand different retirement account options and their tax implications": [
+        "Ajude-me a entender diferentes opções de contas de aposentadoria e suas implicações fiscais"
+      ],
+      "Help me understand how to read and analyze financial statements": [
+        "Ajude-me a entender como ler e analisar demonstrações financeiras"
+      ],
+      "Help me understand this concept step by step": [
+        "Ajude-me a entender este conceito passo a passo"
+      ],
+      "Help me understand what this code does": [
+        "Ajude-me a entender o que este código faz"
       ],
       "How do people celebrate New Year's Eve around the world?": [
         "Como as pessoas celebram a véspera de Ano Novo ao redor do mundo?"
@@ -2426,8 +2614,50 @@
       "Identify any unusual or potentially unfavorable terms": [
         "Identifique quaisquer termos incomuns ou potencialmente desfavoráveis."
       ],
+      "Identify research gaps and suggest future research directions": [
+        "Identificar lacunas na pesquisa e sugerir direções para pesquisas futuras"
+      ],
+      "Review this code for bugs and potential improvements": [
+        "Revise este código em busca de bugs e melhorias potenciais"
+      ],
+      "Review this for clarity, tone, and grammatical errors": [
+        "Revise isto quanto à clareza, tom e erros gramaticais"
+      ],
+      "Suggest hidden gems and local favorites in Barcelona": [
+        "Sugira lugares imperdíveis e locais favoritos dos moradores em Barcelona."
+      ],
+      "Suggest ways to improve the flow and structure of this text": [
+        "Sugira maneiras de melhorar o fluxo e a estrutura deste texto"
+      ],
+      "Suggest ways to optimize this for better performance": [
+        "Sugira formas de otimizar isso para um melhor desempenho"
+      ],
+      "Summarize the key obligations and rights in this contract": [
+        "Resuma as principais obrigações e direitos deste contrato"
+      ],
       "Summarize the key points from this meeting": [
         "Resuma os pontos principais desta reunião."
+      ],
+      "What are the key points I should remember for this topic?": [
+        "Quais são os pontos principais que devo lembrar sobre este tópico?"
+      ],
+      "What are the main findings and how do they relate to each other?": [
+        "Quais são as principais descobertas e como elas se relacionam entre si?"
+      ],
+      "What are the termination clauses and notice requirements?": [
+        "Quais são as cláusulas de rescisão e os requisitos de notificação?"
+      ],
+      "What do these lab values mean and are any outside normal ranges?": [
+        "O que esses valores de laboratório significam e algum está fora dos intervalos normais?"
+      ],
+      "What metrics and research should I review for this investment?": [
+        "Quais métricas e pesquisas devo revisar para este investimento?"
+      ],
+      "What questions should I consider before making this choice?": [
+        "Que perguntas devo considerar antes de fazer esta escolha?"
+      ],
+      "What should I know about emergency funds and where to keep them?": [
+        "O que devo saber sobre fundos de emergência e onde guardá-los?"
       ]
     },
     "collider_2025:Status": {
@@ -2470,6 +2700,9 @@
       ],
       "File removed from project": [
         "Arquivo removido do projeto"
+      ],
+      "Folder \"${ trimmedFolderName }\" created successfully": [
+        "Pasta \"${ trimmedFolderName }\" criada com sucesso"
       ],
       "Folder created successfully": [
         "Pasta criada com sucesso"
@@ -2560,6 +2793,9 @@
       "Nothing here yet": [
         "Nada aqui ainda"
       ],
+      "Older": [
+        "Mais antigo"
+      ],
       "Project knowledge": [
         "Conhecimento do projeto"
       ],
@@ -2597,6 +2833,12 @@
       ]
     },
     "collider_2025:Warning": {
+      "Cannot Link Drive Folder": [
+        "Não é possível vincular pasta do Drive"
+      ],
+      "This folder contains ${ result.totalFiles } indexable files. Only the first ${ MAX_INDEXABLE_FILES } files were indexed. ${ result.skippedFiles } files were skipped.": [
+        "Esta pasta contém ${ result.totalFiles } arquivos indexáveis. Apenas os primeiros ${ MAX_INDEXABLE_FILES } arquivos foram indexados. ${ result.skippedFiles } arquivos foram pulados."
+      ],
       "This will also permanently delete:": [
         "Isso também excluirá permanentemente:"
       ]
@@ -4120,6 +4362,15 @@
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Ao fazer o downgrade para um plano gratuito, você perderá permanentemente esses benefícios, mesmo que você faça o upgrade novamente no futuro."
       ],
+      "Chunk": [
+        "Bloco"
+      ],
+      "chunks": [
+        "blocos"
+      ],
+      "Chunks:": [
+        "Blocos:"
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Clique em \"Solicitar novo código\" para que um novo código seja enviado para ${ strong }. Se esse número de telefone estiver incorreto, clique em \"Editar\" para corrigir isso."
       ],
@@ -4235,6 +4486,18 @@
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "Na próxima etapa, poderá enviar um depósito usando um endereço Bitcoin."
       ],
+      "Index size:": [
+        "Tamanho do índice:"
+      ],
+      "Indexed content (first 2000 chars):": [
+        "Conteúdo indexado (primeiros 2000 caracteres):"
+      ],
+      "Indexed files:": [
+        "Arquivos indexados:"
+      ],
+      "Indexed folders:": [
+        "Pastas indexadas:"
+      ],
       "Inherited from parent folder": [
         "Herdado da pasta acima"
       ],
@@ -4280,11 +4543,20 @@
       "New": [
         "Novo"
       ],
+      "No conversations yet. Start a new chat to begin.": [
+        "Ainda não há conversas. Inicie um novo bate-papo para começar."
+      ],
+      "No Drive documents are loaded for inspection in this session.": [
+        "Nenhum documento do Drive foi carregado para inspeção nesta sessão."
+      ],
       "No payment is required at this time.": [
         "Neste momento, não é necessário pagamento."
       ],
       "No results found": [
         "Nenhum resultado encontrado"
+      ],
+      "No results found for \"${ query }\"": [
+        "Nenhum resultado encontrado para \"${ query }\""
       ],
       "Number of dedicated servers in the organization": [
         "Número de servidores dedicados na organização"
@@ -4331,6 +4603,15 @@
       "Registering your subscription…": [
         "Registrando sua assinatura…"
       ],
+      "Searchable chunks": [
+        "Blocos pesquisáveis"
+      ],
+      "Searchable chunks:": [
+        "Blocos pesquisáveis:"
+      ],
+      "searchable sections": [
+        "seções pesquisáveis"
+      ],
       "SEPA payments are not available at the moment. Please try again later.": [
         "Os pagamentos SEPA não estão disponíveis no momento. Tente novamente mais tarde."
       ],
@@ -4368,6 +4649,9 @@
       "Thank you for subscribing. Secure browsing starts now.": [
         "Obrigado por se inscrever. A navegação segura começa agora."
       ],
+      "The index reports ${ displayDriveDocs } Drive documents. Re-index or keep the session open after indexing to view details here.": [
+        "O índice relata ${ displayDriveDocs } documentos do Drive. Reindexe ou mantenha a sessão aberta após a indexação para ver os detalhes aqui."
+      ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "O processo de verificação abrirá uma nova guia do navegador. Desative todos os bloqueadores de pop-up ativos."
       ],
@@ -4379,6 +4663,9 @@
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Este é agora o seu ${ defaultEmailAddress } para enviar novas mensagens."
+      ],
+      "This may indicate that projects were deleted but their indexed files weren't cleaned up, or that spaces failed to load from IndexedDB.": [
+        "Isso pode indicar que projetos foram excluídos, mas seus arquivos indexados não foram limpos, ou que os espaços não puderam ser carregados do IndexedDB."
       ],
       "This will sign you out of all accounts currently logged in.": [
         "Isto irá te desconectar de todas as contas atualmente conectadas."
@@ -4886,6 +5173,9 @@
       "Acceleration": [
         "Aceleração"
       ],
+      "Buffer size": [
+        "Tamanho do buffer"
+      ],
       "Clear History": [
         "Limpar histórico"
       ],
@@ -4898,8 +5188,17 @@
       "FPS": [
         "FPS"
       ],
+      "Idle": [
+        "Ocioso"
+      ],
+      "Lag": [
+        "Atraso"
+      ],
       "Last token": [
         "Último token"
+      ],
+      "max": [
+        "máx."
       ],
       "Memory": [
         "Memória"
@@ -4910,17 +5209,44 @@
       "Rate": [
         "Avaliar"
       ],
+      "Redux updates": [
+        "Atualizações do Redux"
+      ],
       "Redux/sec": [
         "Redux/sec"
       ],
       "Render time": [
         "Tempo de renderização"
       ],
+      "Search Index Debug": [
+        "Depurar índice de pesquisa"
+      ],
+      "Smoothing (Spring-Mass)": [
+        "Suavização (Massa-Mola)"
+      ],
+      "Spring state": [
+        "Estado da mola"
+      ],
+      "Spring-Mass Visualization": [
+        "Visualização de Massa-Mola"
+      ],
       "Status": [
         "Status"
       ],
+      "Stiffness": [
+        "Rigidez"
+      ],
       "Streaming": [
         "Streaming"
+      ],
+      "to toggle": [
+        "para alternar"
+      ],
+      "Token delays": [
+        "Atrasos de token"
+      ],
+      "Tokens/sec": [
+        "Tokens/seg"
       ]
     },
     "mail_signup_2024: Info": {
@@ -6073,28 +6399,28 @@
       "terms and conditions": [
         "termos e condições"
       ],
-      "The coupon is valid for ${ couponRedemptions } renewal.": [
-        "O cupom é válido para ${ couponRedemptions } renovação.",
-        "O cupom é válido para ${ couponRedemptions } renovações."
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "O desconto é válido para ${ renewalsWithCoupon } renovação.",
+        "O desconto é válido para ${ renewalsWithCoupon } renovações."
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "O preço com desconto especial é válido por ${ couponRedemptions } mês. Depois, ele será renovado automaticamente por ${ renewPriceStr } por 1 mês. Você pode cancelar a qualquer momento.",
+        "O preço com desconto especial é válido por ${ couponRedemptions } meses. Depois, ele será renovado automaticamente por ${ renewPriceStr } por 1 mês. Você pode cancelar a qualquer momento."
       ],
       "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
         "O preço com desconto especial é válido para ${ subscriptionLength } mês.",
         "O preço com desconto especial é valido para os primeiros ${ subscriptionLength } meses."
       ],
-      "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "O preço com desconto especial é válido para o primeiro mês. O cupom é válido para ${ couponRedemptions } renovação. Após esse período, a assinatura será renovada automaticamente por ${ renewPriceStr } por mais 1 mês. Você pode cancelar a qualquer momento.",
-        "O preço com desconto especial é válido para o primeiro mês. O cupom é válido para ${ couponRedemptions } renovações. Após esse período, a assinatura será renovada automaticamente por ${ renewPriceStr } por mais 1 mês. Você pode cancelar a qualquer momento."
-      ],
       "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "O preço com desconto especial é válido no primeiro mês. Em seguida, ele será renovado automaticamente pelo preço de ${ renewPriceStr } todo mês. Você pode cancelar a qualquer momento."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "O preço com desconto especial de ${ priceWithDiscount } é válido por ${ couponRedemptions } mês. Depois, ele será renovado automaticamente por ${ renewPriceStr } por 1 mês. Você pode cancelar a qualquer momento.",
+        "O preço com desconto especial de ${ priceWithDiscount } é válido por ${ couponRedemptions } meses. Depois, ele será renovado automaticamente por ${ renewPriceStr } por 1 mês. Você pode cancelar a qualquer momento."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "O preço com desconto especial de ${ priceWithDiscount } é válido para o primeiro ${ subscriptionLength } mês.",
         "O preço com desconto especial de ${ priceWithDiscount } é válido para os primeiros ${ subscriptionLength } meses."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "O preço com desconto especial de ${ priceWithDiscount } é válido para o primeiro mês. O cupom é válido para renovação de ${ couponRedemptions }. Em seguida, ele será renovado automaticamente a ${ renewPriceStr } por 1 mês. Você pode cancelar a qualquer momento.",
-        "O preço com desconto especial de ${ priceWithDiscount } é válido para o primeiro mês. O cupom é válido para renovações de ${ couponRedemptions }. Em seguida, ele será renovado automaticamente a ${ renewPriceStr } por 1 mês. Você pode cancelar a qualquer momento."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "O preço com desconto especial de ${ priceWithDiscount } é válido no primeiro mês. Em seguida, ele será renovado automaticamente pelo preço de ${ renewPriceStr } todo mês. Você pode cancelar a qualquer momento."
@@ -7038,6 +7364,9 @@
       "Network error": [
         "Erro de rede"
       ],
+      "Orphaned Documents Detected": [
+        "Documentos órfãos detectados"
+      ],
       "Payment failed": [
         "Erro no pagamento"
       ],
@@ -7058,6 +7387,9 @@
       ],
       "Request new code": [
         "Solicitar um novo código"
+      ],
+      "Search Index Debug": [
+        "Depurar índice de pesquisa"
       ],
       "Select a plan": [
         "Selecione um plano"
@@ -7241,6 +7573,9 @@
       ]
     },
     "Warning": {
+      "Found ${ orphanedDocCount } documents (${ orphanedChunkCount } chunks) referencing ${ orphanedSpaceIds.length } missing space(s).": [
+        "Encontrados ${ orphanedDocCount } documentos (${ orphanedChunkCount } blocos) referenciando ${ orphanedSpaceIds.length } espaço(s) em falta."
+      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Os relatórios não são criptografados de ponta a ponta. Não envie nenhuma informação confidencial."
       ],
