@@ -1,16 +1,12 @@
 import { useHistory } from 'react-router-dom';
 
 import useAppLink from '@proton/components/components/link/useAppLink';
+import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
+import { selectPreviousMeetingLink, selectUpsellModalType, setUpsellModalType } from '@proton/meet/store/slices';
+import { UpsellModalTypes } from '@proton/meet/types/types';
 import { APPS } from '@proton/shared/lib/constants';
 
 import { CTAModal } from '../../components/AnonymousModal/CTAModal';
-import { useMeetDispatch, useMeetSelector } from '../../store/hooks';
-import {
-    selectPreviousMeetingLink,
-    selectUpsellModalType,
-    setUpsellModalType,
-} from '../../store/slices/meetAppStateSlice';
-import { UpsellModalTypes } from '../../types';
 import { DashboardContainerBody } from './DashboardContainerBody';
 
 export const GuestDashboardContainer = () => {

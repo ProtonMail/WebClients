@@ -1,7 +1,7 @@
 import type { PayloadAction } from '@reduxjs/toolkit';
 import { createSlice } from '@reduxjs/toolkit';
 
-import type { UpsellModalTypes } from '../../types';
+import type { UpsellModalTypes } from '../../types/types';
 import type { MeetState } from '../store';
 
 export interface MeetAppState {

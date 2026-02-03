@@ -5,12 +5,12 @@ import type { LocalParticipant, RemoteParticipant } from 'livekit-client';
 import { c } from 'ttag';
 
 import { useNotifications } from '@proton/components';
+import { useMeetSelector } from '@proton/meet/store/hooks';
+import { selectMeetSettings } from '@proton/meet/store/slices/settings';
 import { isChromiumBased, isFirefox, isMobile, isSafari } from '@proton/shared/lib/helpers/browser';
 
 import { useCameraTrackSubscriptionManager } from '../../contexts/CameraTrackSubscriptionCacheProvider/CameraTrackSubscriptionManagerProvider';
 import { useMediaManagementContext } from '../../contexts/MediaManagementContext';
-import { useMeetSelector } from '../../store/hooks';
-import { selectMeetSettings } from '../../store/slices/settings';
 import type { MeetChatMessage } from '../../types';
 import { useLatest } from '../useLatest';
 import { PiPSessionManager } from './PiPSessionManager';

@@ -12,7 +12,7 @@ const mockMeetingName = 'Mock Meeting Name';
 const meetingLinkName = '1234567890';
 const mockLink = `https://example.com/join/id-${meetingLinkName}#pwd-password1234`;
 
-vi.mock('../../store/hooks/useMeetings', () => ({
+vi.mock('@proton/meet/store/hooks/useMeetings', () => ({
     useMeetings: () => [
         [
             {

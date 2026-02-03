@@ -99,14 +99,6 @@ export interface DeviceState {
     preferredDevice: MediaDeviceInfo | null;
 }
 
-export enum UpsellModalTypes {
-    Schedule = 'schedule',
-    PersonalMeeting = 'personalMeeting',
-    StartMeeting = 'startMeeting',
-    FreeAccount = 'freeAccount',
-    PaidAccount = 'paidAccount',
-}
-
 export interface KeyRotationLog {
     timestamp: number;
     epoch: number;
