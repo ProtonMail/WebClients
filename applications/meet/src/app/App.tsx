@@ -36,7 +36,7 @@ const ComingSoonWrapper = ({ children }: { children: React.ReactNode }) => {
 
     const isOnJoinMeetingPageAndHasAccess = isJoin && token && isEarlyAccessPublic; // We have the meeting link id token if we are joining a meeting
 
-    const shouldDisplayComingSoonPage = !isEarlyAccess && !isOnJoinMeetingPageAndHasAccess;
+    const shouldDisplayComingSoonPage = !isEarlyAccess && !isOnJoinMeetingPageAndHasAccess && !isElectronApp;
 
     if (shouldDisplayComingSoonPage) {
         return <ComingSoon />;
