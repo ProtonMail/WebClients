@@ -13,6 +13,10 @@ jest.mock('@proton/account/user/hooks', () => ({
     useUser: jest.fn(() => [{ hasPaidMail: true, Email: 'test@proton.me' }, false]),
 }));
 
+jest.mock('@proton/account/addresses/hooks', () => ({
+    useAddresses: jest.fn(() => [[{ ID: 'address-id', Email: 'test@proton.me' }], false]),
+}));
+
 jest.mock('./useZoomOAuth', () => ({
     useZoomOAuth: jest.fn(() => ({
         loadingConfig: false,
@@ -39,7 +43,11 @@ jest.mock('../videoConferencing/useVideoConfTelemetry', () => ({
 
 const defaultProps = {
     hasZoomError: false,
-    model: {} as EventModel,
+    model: {
+        member: {
+            addressID: 'address-id',
+        },
+    } as EventModel,
     setModel: jest.fn(),
     onRowClick: jest.fn(),
     setActiveProvider: jest.fn(),
@@ -114,7 +122,7 @@ describe('useZoomIntegration', () => {
         expect(mockZoomUpsellModal.openModal).toHaveBeenCalled();
     });
 
-    it('should readd the temporary deleted Zoom video conference', async () => {
+    it('should read the temporary deleted Zoom video conference', async () => {
         const mockApi = jest.fn();
 
         jest.mocked(useApi).mockReturnValue(mockApi);
@@ -127,6 +135,7 @@ describe('useZoomIntegration', () => {
                 ...defaultProps,
                 // @ts-expect-error - only mocking the relevant properties
                 model: {
+                    member: defaultProps.model.member,
                     isConferenceTmpDeleted: true,
                     conferenceUrl: mockZoomVideoConference.URL,
                     conferenceId: mockZoomVideoConference.ID,

@@ -115,9 +115,7 @@ describe('video conf helpers', () => {
             const expected = [
                 '',
                 SEPARATOR_PROTON_EVENTS,
-                `Join Proton Meet: ${baseProtonParams.meetingURL} (ID: ${baseProtonParams.meetingId})`,
-                '',
-                'Meeting host: Jane Smith',
+                `Join Proton Meet: ${baseProtonParams.meetingURL}`,
                 SEPARATOR_PROTON_EVENTS,
             ].join('\n');
 
@@ -149,9 +147,7 @@ describe('video conf helpers', () => {
             const expected = [
                 '',
                 SEPARATOR_PROTON_EVENTS,
-                `Join Proton Meet: ${baseProtonParams.meetingURL} (ID: ${baseProtonParams.meetingId})`,
-                '',
-                '',
+                `Join Proton Meet: ${baseProtonParams.meetingURL}`,
                 SEPARATOR_PROTON_EVENTS,
             ].join('\n');
 
@@ -182,7 +178,7 @@ describe('video conf helpers', () => {
                 SEPARATOR_PROTON_EVENTS,
                 'Notes',
                 SEPARATOR_PROTON_EVENTS,
-                `Join Proton Meet: ${baseProtonParams.meetingURL} (ID: ${baseProtonParams.meetingId})`,
+                `Join Proton Meet: ${baseProtonParams.meetingURL}`,
                 SEPARATOR_PROTON_EVENTS,
                 'End',
             ].join('\n');
