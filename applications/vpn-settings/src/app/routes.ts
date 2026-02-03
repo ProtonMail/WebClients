@@ -308,11 +308,6 @@ export const getRoutes = ({
                     id: 'openvpn',
                 },
                 {
-                    text: c('Title').t`Recovery`,
-                    id: 'email',
-                    available: !isSSOUser,
-                },
-                {
                     text: c('Title').t`Email subscriptions`,
                     available: !user.isMember,
                     id: 'news',
