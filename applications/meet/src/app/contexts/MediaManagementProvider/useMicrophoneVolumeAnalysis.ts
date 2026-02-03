@@ -1,6 +1,6 @@
 import { useCallback, useRef } from 'react';
 
-import { isAudioSessionAvailable, withIOSAudioSessionWorkaround } from '../utils/ios-audio-session';
+import { isAudioSessionAvailable, withIOSAudioSessionWorkaround } from '../../utils/ios-audio-session';
 
 export const useMicrophoneVolumeAnalysis = () => {
     const initSequenceRef = useRef(0);

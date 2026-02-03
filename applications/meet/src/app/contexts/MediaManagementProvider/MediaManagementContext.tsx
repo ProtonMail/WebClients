@@ -2,7 +2,7 @@ import { createContext, useContext } from 'react';
 
 import debounce from 'lodash/debounce';
 
-import type { DeviceState, SwitchActiveDevice } from '../types';
+import type { DeviceState, SwitchActiveDevice } from '../../types';
 
 const DEFAULT_DEVICE_STATE: DeviceState = {
     systemDefault: null,
@@ -71,6 +71,7 @@ export interface MediaManagementContextType {
     };
     initializeMicrophoneVolumeAnalysis: (deviceId: string | null) => Promise<void>;
     cleanupMicrophoneVolumeAnalysis: () => void;
+    handlePreviewCameraToggle: (videoElement: HTMLVideoElement) => Promise<void>;
 }
 
 const defaultValues: MediaManagementContextType = {
@@ -114,6 +115,7 @@ const defaultValues: MediaManagementContextType = {
     }),
     initializeMicrophoneVolumeAnalysis: () => Promise.resolve(),
     cleanupMicrophoneVolumeAnalysis: () => {},
+    handlePreviewCameraToggle: () => Promise.resolve(),
 };
 
 export const MediaManagementContext = createContext<MediaManagementContextType>(defaultValues);

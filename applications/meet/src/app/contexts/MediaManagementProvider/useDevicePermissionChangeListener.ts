@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 
 import { isSafari } from '@proton/shared/lib/helpers/browser';
 
-import { useRequestPermission } from './useRequestPermission';
+import { useRequestPermission } from '../../hooks/useRequestPermission';
 
 export const useDevicePermissionChangeListener = (
     handleDevicePermissionChange: ({

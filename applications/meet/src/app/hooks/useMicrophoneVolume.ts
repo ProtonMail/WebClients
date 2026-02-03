@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import { useLocalParticipant } from '@livekit/components-react';
 import { Track } from 'livekit-client';
 
-import { useMediaManagementContext } from '../contexts/MediaManagementContext';
+import { useMediaManagementContext } from '../contexts/MediaManagementProvider/MediaManagementContext';
 
 const calculateRms = (data: Uint8Array<ArrayBuffer>): number => {
     let sum = 0;
