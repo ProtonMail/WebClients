@@ -33,6 +33,7 @@ const message: MessageState = {
     localID: 'localId',
     data: {
         ToList: [recipient1, recipient2],
+        Sender: { Name: '', Address: 'sender@test.com' },
     } as Message,
 };
 
@@ -83,7 +84,7 @@ const setupComposer = (store: MailStore, composerID: string) => {
             messageID: message.localID || '',
             // @ts-expect-error
             recipients: pick(message?.data, ['ToList', 'CCList', 'BCCList']),
-            senderEmailAddress: message.data?.Sender?.Address || '',
+            senderEmailAddress: message.data?.Sender.Address || '',
         })
     );
 };

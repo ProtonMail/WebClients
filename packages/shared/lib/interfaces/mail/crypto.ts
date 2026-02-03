@@ -19,6 +19,8 @@ export interface SendPreferences {
     warnings?: string[];
     error?: EncryptionPreferencesError;
     ktVerificationResult?: KeyTransparencyVerificationResult;
+    /** @dev needed for BYOE exception, see `getMaybeAlteredSendInfoForBYOE` */
+    isInternal: boolean;
 }
 
 export interface Packets {

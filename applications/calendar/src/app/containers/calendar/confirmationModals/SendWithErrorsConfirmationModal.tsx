@@ -3,12 +3,12 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { Prompt } from '@proton/components';
 import type { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
+import type { SendPreferences } from '@proton/shared/lib/interfaces/mail/crypto';
 import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 
 import { getCleanSendDataFromSendPref, getSendPrefErrorMap } from '../../../helpers/sendPreferences';
 import type { CleanSendIcsActionData, InviteActions } from '../../../interfaces/Invite';
 import { INVITE_ACTION_TYPES } from '../../../interfaces/Invite';
-import type { AugmentedSendPreferences } from '../interface';
 
 const getModalContent = (
     newInviteActions: InviteActions,
@@ -61,7 +61,7 @@ const getModalContent = (
 };
 
 interface Props {
-    sendPreferencesMap: SimpleMap<AugmentedSendPreferences>;
+    sendPreferencesMap: SimpleMap<SendPreferences>;
     inviteActions: InviteActions;
     vevent: VcalVeventComponent;
     cancelVevent?: VcalVeventComponent;

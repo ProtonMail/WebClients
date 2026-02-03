@@ -5,6 +5,8 @@ import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { defaultFontStyle } from '@proton/components/components/editor/helpers';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
+import { getIsBYOEAddress } from '@proton/shared/lib/helpers/address';
+import type { Recipient } from '@proton/shared/lib/interfaces';
 
 import { useMailSelector } from 'proton-mail/store/hooks';
 
@@ -33,6 +35,9 @@ const useReduxRefac = ({ composerID, modelMessage, handleChange, handleChangeCon
             return;
         }
 
+        const prevAddress = getAddressFromEmail(addresses, modelMessage.data?.Sender.Address);
+        const isPrevAddressBYOE = prevAddress ? getIsBYOEAddress(prevAddress) : false;
+
         if (composer?.senderEmailAddress !== modelMessage.data?.Sender?.Address) {
             const newAddress = getAddressFromEmail(addresses, composer.senderEmailAddress);
 
@@ -40,12 +45,18 @@ const useReduxRefac = ({ composerID, modelMessage, handleChange, handleChangeCon
                 return;
             }
 
-            const prevAddress = getAddressFromEmail(addresses, modelMessage.data?.Sender.Address);
-            const Sender = newAddress
-                ? { Name: newAddress.DisplayName, Address: composer.senderEmailAddress }
+            const Sender: Recipient | undefined = newAddress
+                ? {
+                      Name: newAddress.DisplayName,
+                      Address: composer.senderEmailAddress,
+                  }
                 : undefined;
 
-            handleChange({ data: { AddressID: newAddress.ID, Sender } });
+            handleChange(
+                { data: { AddressID: newAddress.ID, Sender } },
+                // If sender address changes from BYOE to standard, or vice versa, the send preferences might change
+                getIsBYOEAddress(newAddress) !== isPrevAddressBYOE
+            );
 
             const fontStyle = defaultFontStyle(mailSettings);
             handleChangeContent(
@@ -67,7 +78,7 @@ const useReduxRefac = ({ composerID, modelMessage, handleChange, handleChangeCon
             const modelRecipientType = modelMessage?.data?.[type];
 
             if (storeRecipientType !== modelRecipientType) {
-                handleChange({ data: { [type]: storeRecipientType } });
+                handleChange({ data: { [type]: storeRecipientType } }, isPrevAddressBYOE);
             }
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-596C74
