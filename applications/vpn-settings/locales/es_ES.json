@@ -3402,6 +3402,9 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Puedes importar eventos en formato iCal (archivos ICS). El archivo puede tener un tamaño máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } y tener hasta ${ MAX_IMPORT_EVENTS_STRING } eventos. Si tu archivo es más grande, debes dividirlo en archivos más pequeños."
+      ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Para importar mediante un archivo CSV o VCF, asegúrate de que este no supere los ${ MAX_IMPORT_FILE_SIZE_STRING } o los ${ maxContactString } contactos. Si el archivo es más grande, divídelo en varios archivos más pequeños. ${ learnMoreLink }."
       ]
     },
     "description": {
@@ -4359,6 +4362,9 @@
       ],
       "ZIP code is required": [
         "Se requiere el código postal."
+      ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "Has agotado todas las direcciones disponibles. Actualiza tu plan para añadir una nueva o desactiva alguna de las que tienes en tu cuenta."
       ]
     },
     "error": {
@@ -4434,6 +4440,9 @@
       ],
       "Your file ${ formattedFilename } is empty.": [
         "Tu archivo ${ formattedFilename } está vacío."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ maxContactString } contacts.": [
+        "Tu archivo ${ formattedFilename } contiene más de ${ maxContactString } contactos."
       ]
     },
     "Error importing event": {
@@ -4539,6 +4548,9 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "No hemos podido cargar esta página. Vuelve a cargar la página o verifica tu conexión a internet."
+      ],
+      "Account is deleted or disabled": [
+        "La cuenta está eliminada o desactivada"
       ]
     },
     "Error notification": {
@@ -8259,6 +8271,13 @@
       ],
       "Zoom meeting": [
         "reunión de Zoom"
+      ],
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "Se importarán todos tus contactos, hasta un límite de ${ maxContact }.",
+        "Se importarán todos tus contactos, hasta un máximo de ${ maxContact }."
+      ],
+      "Coming soon": [
+        "Próximamente"
       ]
     },
     "info": {
@@ -9767,6 +9786,16 @@
       "Up to ${ n } participant": [
         "Hasta ${ n } participante",
         "Hasta ${ n } participantes"
+      ],
+      "${ n } participant": [
+        "${ n } participante",
+        "${ n } participantes"
+      ],
+      "Booking pages": [
+        "Páginas de reserva"
+      ],
+      "Meeting recording": [
+        "Grabación de la reunión"
       ]
     },
     "Member action": {
@@ -11904,6 +11933,18 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Tu suscripción tiene un descuento existente. Al cambiarte a esta nueva promoción, el descuento existente ya no se aplicará."
+      ],
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "El descuento es válido para ${ renewalsWithCoupon } renovación.",
+        "El descuento es válido para ${ renewalsWithCoupon } renovaciones."
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "El precio con descuento especial es válido durante ${ couponRedemptions } mes. Después, se renovará automáticamente a ${ renewPriceStr } por 1 mes. Puedes cancelar en cualquier momento.",
+        "El precio con descuento especial es válido durante ${ couponRedemptions } meses. Después, se renovará automáticamente a ${ renewPriceStr } por 1 mes. Puedes cancelar en cualquier momento."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "El precio con descuento especial de ${ priceWithDiscount } es válido durante ${ couponRedemptions } mes. Después, se renovará automáticamente a ${ renewPriceStr } por 1 mes. Puedes cancelar en cualquier momento.",
+        "El precio con descuento especial de ${ priceWithDiscount } es válido durante ${ couponRedemptions } meses. Después, se renovará automáticamente a ${ renewPriceStr } por 1 mes. Puedes cancelar en cualquier momento."
       ]
     },
     "Payments.Error": {
@@ -16315,6 +16356,12 @@
       ],
       "You can protect up to ${ FAMILY_MAX_USERS } people with ${ PLAN_NAMES[plan] }. Starting from just ${ priceString }/month per account.": [
         "Puedes proteger hasta ${ FAMILY_MAX_USERS } personas con ${ PLAN_NAMES[plan] }. Desde ${ priceString }/mes por cuenta."
+      ],
+      "${ BRAND_NAME } for Business": [
+        "${ BRAND_NAME } para Empresas"
+      ],
+      "Everything you need to collaborate securely in a single subscription. Get access to ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, ${ SHEETS_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } and ${ LUMO_SHORT_APP_NAME } AI Assistant.": [
+        "Todo lo que necesitas para colaborar de forma segura en una sola suscripción. Accede a ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, ${ SHEETS_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } y el Asistente de IA de ${ LUMO_SHORT_APP_NAME }."
       ]
     },
     "upsell panel": {
@@ -16728,6 +16775,32 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "Después de la verificación, no elimines este registro TXT porque se necesita para confirmar que continúas siendo el propietario del dominio."
+      ]
+    },
+    "Theme": {
+      "Auto": [
+        "Automático"
+      ],
+      "Dark": [
+        "Oscuro"
+      ],
+      "Light": [
+        "Claro"
+      ],
+      "Mode: Auto": [
+        "Modo: Automático"
+      ],
+      "Mode: Dark": [
+        "Modo: Oscuro"
+      ],
+      "Mode: Light": [
+        "Modo: Claro"
+      ],
+      "Sync with system": [
+        "Sincronizar con el sistema"
+      ],
+      "Use ${ BRAND_NAME } settings": [
+        "Usa la configuración de ${ BRAND_NAME }"
       ]
     }
   }

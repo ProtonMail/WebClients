@@ -3405,6 +3405,9 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Μπορείτε να εισάγετε εκδηλώσεις σε μορφή iCal (ICS αρχείο).\nΤο αρχείο θα πρέπει να έχει μέγιστο μέγεθος ${ MAX_IMPORT_FILE_SIZE_STRING } και να έχει μέχρι και ${ MAX_IMPORT_EVENTS_STRING } εκδηλώσεις.\nΑν το αρχείο σας είναι μεγαλύτερο, παρακαλούμε να το χωρίσετε σε μικρότερα αρχεία."
+      ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Για εισαγωγή μέσω αρχείου CSV και VCF, βεβαιωθείτε ότι το αρχείο δεν υπερβαίνει ${ MAX_IMPORT_FILE_SIZE_STRING } ή τις ${ maxContactString } επαφές. Εάν το αρχείο σας είναι μεγαλύτερο, παρακαλούμε χωρίστε το σε μικρότερα αρχεία. ${ learnMoreLink }."
       ]
     },
     "description": {
@@ -4443,6 +4446,9 @@
       ],
       "Your file ${ formattedFilename } is empty.": [
         "Το αρχείο σας ${ formattedFilename } είναι κενό."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ maxContactString } contacts.": [
+        "Το αρχείο σας ${ formattedFilename } περιέχει περισσότερες από ${ maxContactString } επαφές."
       ]
     },
     "Error importing event": {
@@ -4548,6 +4554,9 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Δεν ήταν δυνατή η φόρτωση αυτής της σελίδας. Ανανεώστε τη σελίδα ή ελέγξτε τη σύνδεσή σας στο διαδίκτυο."
+      ],
+      "Account is deleted or disabled": [
+        "Ο λογαριασμός έχει διαγραφεί ή απενεργοποιηθεί"
       ]
     },
     "Error notification": {
@@ -8271,6 +8280,13 @@
       ],
       "Zoom meeting": [
         "Σύσκεψη Zoom"
+      ],
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "Όλες οι επαφές σας θα εισαχθούν, μέχρι το όριο των ${ maxContact }",
+        "Όλες οι επαφές σας θα εισαχθούν, μέχρι το όριο των ${ maxContact }"
+      ],
+      "Coming soon": [
+        "Έρχεται σύντομα"
       ]
     },
     "info": {
@@ -11934,6 +11950,18 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Η συνδρομή σας έχει ήδη μια υπάρχουσα έκπτωση. Η μετάβαση σε αυτή τη νέα προσφορά σημαίνει ότι η υπάρχουσα έκπτωση δε θα ισχύει πλέον."
+      ],
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "Το έκπτωση ισχύει για ${ renewalsWithCoupon } ανανέωση.",
+        "Το έκπτωση ισχύει για ${ renewalsWithCoupon } ανανεώσεις."
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Η ειδικά μειωμένη τιμή ισχύει για ${ couponRedemptions } μήνα. Στη συνέχεια, θα ανανεωθεί αυτόματα σε ${ renewPriceStr } για 1 μήνα. Μπορείτε να ακυρώσετε ανά πάσα στιγμή.",
+        "Η ειδικά μειωμένη τιμή ισχύει για ${ couponRedemptions } μήνες. Στη συνέχεια, θα ανανεωθεί αυτόματα σε ${ renewPriceStr } για 1 μήνα. Μπορείτε να ακυρώσετε ανά πάσα στιγμή."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Η ειδικά μειωμένη τιμή των ${ priceWithDiscount } ισχύει για ${ couponRedemptions } μήνα. Στη συνέχεια, θα ανανεωθεί αυτόματα σε ${ renewPriceStr } για 1 μήνα. Μπορείτε να ακυρώσετε ανά πάσα στιγμή.",
+        "Η ειδικά μειωμένη τιμή των ${ priceWithDiscount } ισχύει για ${ couponRedemptions } μήνες. Στη συνέχεια, θα ανανεωθεί αυτόματα σε ${ renewPriceStr } για 1 μήνα. Μπορείτε να ακυρώσετε ανά πάσα στιγμή."
       ]
     },
     "Payments.Error": {
@@ -16782,6 +16810,32 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "Μετά την επιτυχή επαλήθευση, μην καταργήσετε αυτήν την εγγραφή TXT, διότι απαιτείται για να επιβεβαιώσετε ότι συνεχίζετε να είστε ο ιδιοκτήτης του τομέα."
+      ]
+    },
+    "Theme": {
+      "Auto": [
+        "Αυτόματο"
+      ],
+      "Dark": [
+        "Σκοτεινό"
+      ],
+      "Light": [
+        "Φωτεινό"
+      ],
+      "Mode: Auto": [
+        "Λειτουργία: Αυτόματη"
+      ],
+      "Mode: Dark": [
+        "Λειτουργία: Σκοτεινή"
+      ],
+      "Mode: Light": [
+        "Λειτουργία: Φωτεινή"
+      ],
+      "Sync with system": [
+        "Συγχρονισμός με το σύστημα"
+      ],
+      "Use ${ BRAND_NAME } settings": [
+        "Χρησιμοποιήστε τις ρυθμίσεις ${ BRAND_NAME }"
       ]
     }
   }

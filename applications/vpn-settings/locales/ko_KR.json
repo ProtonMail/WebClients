@@ -1649,6 +1649,9 @@
     "Billing cycle": {
       "Renews automatically on ${ subscriptionManagerName }": [
         "${ subscriptionManagerName }에 자동으로 갱신합니다."
+      ],
+      "Renews automatically at ${ renewPrice }, for ${ renewCycle } month": [
+        "${ renewCycle }개월간 자동으로 ${ renewPrice }에 갱신됩니다"
       ]
     },
     "Billing cycle option": {
@@ -1802,6 +1805,33 @@
       ],
       "Verify your domain": [
         "내 도메인 인증"
+      ],
+      "Domain connected": [
+        "도메인 연결됨"
+      ],
+      "Migration started for ${ n } user": [
+        "${ n }명의 사용자에 대한 마이그레이션이 시작됨"
+      ],
+      "Migration status": [
+        "마이그레이션 상태"
+      ],
+      "Organization does not have enough seats available": [
+        "조직의 사용 권한이 충분하지 않습니다."
+      ],
+      "Organization does not have enough storage available": [
+        "조직에 충분한 저장공간이 남아있지 않습니다."
+      ],
+      "Required": [
+        "필수"
+      ],
+      "Transfer errors": [
+        "전송 오류"
+      ],
+      "Verify your domain to start a migration": [
+        "마이그레이션을 시작하려면 도메인을 확인하세요"
+      ],
+      "What are you migrating?": [
+        "무엇을 이전하시나요?"
       ]
     },
     "Browser": {
@@ -3304,6 +3334,9 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "iCal 포맷(ICS 파일)으로 이벤트를 불러올 수 있습니다. 파일 크기가 최대 ${ MAX_IMPORT_FILE_SIZE_STRING } 및 최대 ${ MAX_IMPORT_EVENTS_STRING }개의 이벤트를 포함하고 있어야 합니다. 만약 파일이 너무 크다면, 작은 파일들로 분할해 주세요."
+      ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "CSV 파일 및 VCF 파일을 통한 불러오기를 위해, 파일이 ${ MAX_IMPORT_FILE_SIZE_STRING } 또는 연락처 ${ maxContactString }개를 초과하지 않도록 않도록 해주세요. 파일이 더 크다면, 더 작은 파일로 나눠주세요. ${ learnMoreLink }."
       ]
     },
     "description": {
@@ -4255,6 +4288,12 @@
       ],
       "ZIP code is required": [
         "우편번호가 필요합니다"
+      ],
+      "This offer is not available in your country": [
+        "이 제안은 현재 거주 중인 국가에서 사용할 수 없습니다."
+      ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "플랜에서 사용 가능한 모든 주소를 사용했습니다. 새 주소를 사용하려면 계정에서 주소를 비활성화하거나 플랜을 업그레이드하세요."
       ]
     },
     "error": {
@@ -4329,6 +4368,9 @@
       ],
       "Your file ${ formattedFilename } is empty.": [
         "사용자의 ${ formattedFilename } 파일이 비어있습니다."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ maxContactString } contacts.": [
+        "파일 ${ formattedFilename }이(가) ${ maxContactString }개 초과 연락처를 포함하고 있습니다."
       ]
     },
     "Error importing event": {
@@ -5458,6 +5500,12 @@
       ],
       "Your password is correct.": [
         "사용자의 비밀번호가 알맞습니다."
+      ],
+      "Two-factor authentication is enabled in your external account.": [
+        "사용자의 외부 계정에 2단계 인증이 활성화되었습니다."
+      ],
+      "Two-factor authentication is enabled in your external email account.": [
+        "2단계 인증이 사용자의 외부 계정에 활성화되었습니다."
       ]
     },
     "Import instructions": {
@@ -8043,6 +8091,24 @@
       ],
       "Zoom meeting": [
         "Zoom 미팅"
+      ],
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "최대 ${ maxContact }개까지 연락처가 불러오기됩니다."
+      ],
+      "Coming soon": [
+        "곧 찾아옵니다"
+      ],
+      "Compromised": [
+        "유출됨"
+      ],
+      "Some ${ BRAND_NAME } apps may not support security keys yet. If you turn off authenticator app 2FA, you may not be able to sign in to those apps.": [
+        "일부 ${ BRAND_NAME } 앱이 보안 키를 아직 지원하지 않습니다. 2단계 인증 앱 사용을 중지하는 경우 해당 앱에 로그인하지 못할 가능성이 있습니다."
+      ],
+      "We recommend adding servers in different locations (one per city) to maximize redundancy.": [
+        "중복성을 최대화하기 위해 서로 다른 위치에 서버를 하나씩 추가하는 것을 권장합니다."
+      ],
+      "With groups, you can implement the company security policies for access control and reduce the risk of accessing unauthorised data.": [
+        "그룹을 사용하면 접근 제어에 대한 회사 보안 정책을 구현하고 승인되지 않은 데이터에 접근할 위험을 줄일 수 있습니다."
       ]
     },
     "info": {
@@ -9524,6 +9590,15 @@
       ],
       "Up to ${ n } participant": [
         "최대 ${ n }명 참가자"
+      ],
+      "${ n } participant": [
+        "참여자 ${ n }명"
+      ],
+      "Booking pages": [
+        "예약 페이지"
+      ],
+      "Meeting recording": [
+        "회의 녹화"
       ]
     },
     "Member action": {
@@ -9668,6 +9743,12 @@
       ],
       "US Dollar": [
         "미국 달러"
+      ],
+      "Polish złoty": [
+        "폴란드 즐로티"
+      ],
+      "Singapore dollar": [
+        "싱가포르 달러"
       ]
     },
     "Navigation": {
@@ -11623,6 +11704,15 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "구독에 현재 기존 할인이 적용되어 있습니다. 새로운 프로모션으로 변경하면 기존 할인이 더 이상 적용되지 않습니다."
+      ],
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "해당 할인은 ${ renewalsWithCoupon }회 갱신까지 유효합니다."
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "특별 할인가는 ${ couponRedemptions }개월 동안 유효합니다. 이후 매월 ${ renewPriceStr }에 자동으로 갱신됩니다. 언제든지 취소할 수 있습니다."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "특별 할인가 ${ priceWithDiscount }은(는) ${ couponRedemptions }개월간 유효합니다. 이후 ${ renewPriceStr }(으)로 1개월간 자동 갱신됩니다. 언제든지 취소할 수 있습니다."
       ]
     },
     "Payments.Error": {
@@ -15496,6 +15586,9 @@
       ],
       "Your subscriptions": [
         "구독"
+      ],
+      "To preview this spreadsheet, download it.": [
+        "이 스프레드시트를 미리 보려면 다운로드하세요."
       ]
     },
     "Title for payment methods table": {
@@ -15929,6 +16022,12 @@
       ],
       "You can protect up to ${ FAMILY_MAX_USERS } people with ${ PLAN_NAMES[plan] }. Starting from just ${ priceString }/month per account.": [
         "매월 계정 당 ${ priceString }에 불과한 ${ PLAN_NAMES[plan] }(으)로 최대 ${ FAMILY_MAX_USERS }명의 사용자를 동시에 보호할 수 있어요."
+      ],
+      "${ BRAND_NAME } for Business": [
+        "${ BRAND_NAME } for Business"
+      ],
+      "Everything you need to collaborate securely in a single subscription. Get access to ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, ${ SHEETS_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } and ${ LUMO_SHORT_APP_NAME } AI Assistant.": [
+        "하나의 구독으로 안전하게 협업하는 데 필요한 모든 것을 받아보세요. ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, ${ SHEETS_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } 및 ${ LUMO_SHORT_APP_NAME } AI 어시스턴트에 접근하세요."
       ]
     },
     "upsell panel": {
@@ -16342,6 +16441,19 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "인증을 성공하면, TXT 레코드를 삭제하지 마십시오. 등록된 도메인을 계속 소유하고 있는지에 대한 확인이 필요합니다."
+      ]
+    },
+    "Action: Sheets": {
+      "Open in ${ SHEETS_APP_NAME }": [
+        "${ SHEETS_APP_NAME }에서 열기"
+      ]
+    },
+    "Theme": {
+      "Dark": [
+        "다크"
+      ],
+      "Light": [
+        "라이트"
       ]
     }
   }

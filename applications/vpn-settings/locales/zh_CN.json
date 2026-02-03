@@ -3027,6 +3027,9 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "您可以导入 iCal 格式（. ics 文件）的日程。文件大小上限为 ${ MAX_IMPORT_FILE_SIZE_STRING }，且日程总数上限为 ${ MAX_IMPORT_EVENTS_STRING }。若您的文件超出限制，请先拆分成较小的文件。"
+      ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "如需通过 CSV 和 VCF 文件导入，请确保文件不超过 ${ MAX_IMPORT_FILE_SIZE_STRING } 或 ${ maxContactString } 位联系人。如果文件较大，请将其拆分成更小的文件。${ learnMoreLink }."
       ]
     },
     "description": {
@@ -3994,6 +3997,9 @@
       ],
       "Your file ${ formattedFilename } is empty.": [
         "文件 ${ formattedFilename } 为空。"
+      ],
+      "Your file ${ formattedFilename } contains more than ${ maxContactString } contacts.": [
+        "您的文件 ${ formattedFilename } 中的联系人数已超过 ${ maxContactString }。"
       ]
     },
     "Error importing event": {
@@ -7534,6 +7540,9 @@
       ],
       "Zoom meeting": [
         "Zoom 会议"
+      ],
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "您的所有联系人都将被导入，最多可达 ${ maxContact } 人"
       ]
     },
     "info": {
@@ -15195,6 +15204,14 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "验证成功后请勿删除该 TXT 记录，我们需要根据它确认您是否仍持有该域名。"
+      ]
+    },
+    "Theme": {
+      "Dark": [
+        "深色主题"
+      ],
+      "Light": [
+        "浅色主题"
       ]
     }
   }

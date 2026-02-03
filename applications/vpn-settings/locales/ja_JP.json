@@ -3386,6 +3386,9 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "iCal形式(ICSファイル)でイベントをインポートできます。ファイルの最大サイズは${ MAX_IMPORT_FILE_SIZE_STRING }で、最大${ MAX_IMPORT_EVENTS_STRING }件のイベントを含むことができます。ファイルがそれより大きい場合は、小さいファイルに分割してください。"
+      ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "CSVファイルおよびVCFファイルでインポートするには、ファイルが${ MAX_IMPORT_FILE_SIZE_STRING }または${ maxContactString }件の連絡先を超えないようにしてください。ファイルが大きすぎる場合は、小さいファイルに分割してください。${ learnMoreLink }"
       ]
     },
     "description": {
@@ -4340,6 +4343,9 @@
       ],
       "ZIP code is required": [
         "郵便番号は必須です"
+      ],
+      "This offer is not available in your country": [
+        "このオファーはお住まいの国ではご利用いただけません"
       ]
     },
     "error": {
@@ -4414,6 +4420,9 @@
       ],
       "Your file ${ formattedFilename } is empty.": [
         "ファイル${ formattedFilename } は空です。"
+      ],
+      "Your file ${ formattedFilename } contains more than ${ maxContactString } contacts.": [
+        "あなたのファイル ${ formattedFilename } には${ maxContactString } 以上の連絡先が含まれています。"
       ]
     },
     "Error importing event": {
@@ -8152,6 +8161,15 @@
       ],
       "Zoom meeting": [
         "Zoom ミーティング"
+      ],
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "${ maxContact } の制限まで、すべての連絡先がインポートされます"
+      ],
+      "Coming soon": [
+        "近日公開"
+      ],
+      "We recommend adding servers in different locations (one per city) to maximize redundancy.": [
+        "冗長性を最大化するために、異なる場所にサーバーを追加することをお勧めします（都市ごとに1つ）。"
       ]
     },
     "info": {
@@ -9647,6 +9665,15 @@
       ],
       "Up to ${ n } participant": [
         "最大${ n }人の参加者"
+      ],
+      "${ n } participant": [
+        "${ n }人の参加者"
+      ],
+      "Booking pages": [
+        "予約ページ"
+      ],
+      "Meeting recording": [
+        "ミーティング録画"
       ]
     },
     "Member action": {
@@ -11755,6 +11782,15 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "あなたのサブスクリプションは現在、割引が適用されています。この新しいプロモーションに移行すると、既存の割引は適用されなくなります。"
+      ],
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "この割引は ${ renewalsWithCoupon } の更新で有効です。"
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "特別割引価格は${ couponRedemptions }ヶ月間有効です。その後、1ヶ月${ renewPriceStr }で自動更新されます。いつでもキャンセル可能です。"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "${ priceWithDiscount }の特別割引価格は${ couponRedemptions }ヶ月間有効です。その後、1ヶ月${ renewPriceStr }で自動更新されます。いつでもキャンセル可能です。"
       ]
     },
     "Payments.Error": {
@@ -16099,6 +16135,12 @@
       ],
       "You can protect up to ${ FAMILY_MAX_USERS } people with ${ PLAN_NAMES[plan] }. Starting from just ${ priceString }/month per account.": [
         "${ FAMILY_MAX_USERS } を持つ最大 ${ PLAN_NAMES[plan] }人を保護することができます。アカウントごとに ${ priceString }/月から開始します。"
+      ],
+      "${ BRAND_NAME } for Business": [
+        "${ BRAND_NAME } for Business"
+      ],
+      "Everything you need to collaborate securely in a single subscription. Get access to ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, ${ SHEETS_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } and ${ LUMO_SHORT_APP_NAME } AI Assistant.": [
+        "コラボレーションに必要なすべてを1つのサブスクリプションで安全に管理。 ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ DOCS_SHORT_APP_NAME }、${ SHEETS_SHORT_APP_NAME }、${ MEET_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、 ${ LUMO_SHORT_APP_NAME } AI アシスタントへのアクセス権を取得できます。"
       ]
     },
     "upsell panel": {
@@ -16512,6 +16554,14 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "検証に成功しても、この TXT レコードを削除しないでください。ドメインを引き続き所有していることを確認するためにこの TXT レコードが必要です。"
+      ]
+    },
+    "Theme": {
+      "Dark": [
+        "ダーク"
+      ],
+      "Light": [
+        "ライト"
       ]
     }
   }

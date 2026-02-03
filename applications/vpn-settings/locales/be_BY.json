@@ -3443,6 +3443,9 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Вы можаце імпартаваць падзеі ў фармаце iCal (файл ICS). Максімальна памер файла павінен быць ${ MAX_IMPORT_FILE_SIZE_STRING } і мець не больш за ${ MAX_IMPORT_EVENTS_STRING } падзей. Падзяліце свой файл на меншыя часткі, калі ён занадта вялікі."
+      ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Пераканайцеся, што файл не перавышае аб'ем у ${ MAX_IMPORT_FILE_SIZE_STRING } або ${ maxContactString } кантакты для імпартавання праз файл CSV і VCF. Раздзяліце яго на меншыя файлы, калі файл перавышае максімальны аб'ём. ${ learnMoreLink }"
       ]
     },
     "description": {
@@ -4415,6 +4418,9 @@
       ],
       "ZIP code is required": [
         "Патрабуецца ўвесці паштовы індэкс"
+      ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "Вы выкарысталі ўсе адрасы на сваім тарыфным плане. Палепшыце свой тарыфны план, каб дадаць новыя адрасы або адключыце адрас у сваім уліковым запісе."
       ]
     },
     "error": {
@@ -4492,6 +4498,9 @@
       ],
       "Your file ${ formattedFilename } is empty.": [
         "Ваш файл ${ formattedFilename } пусты."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ maxContactString } contacts.": [
+        "Ваш файл ${ formattedFilename } змяшчае больш за ${ maxContactString } кантактаў."
       ]
     },
     "Error importing event": {
@@ -5936,8 +5945,8 @@
       "${ numberOfNonPrivateKeys } uploaded file is not a valid private key. Please verify and try again.": [
         "${ numberOfNonPrivateKeys } запампаваны файл з'яўляецца несапраўдным прыватным ключом. Спраўдзіце яго/іх і паспрабуйце яшчэ раз.",
         "${ numberOfNonPrivateKeys } запампаваныя файлы з'яўляюцца несапраўднымі прыватнымі ключамі. Спраўдзіце іх і паспрабуйце яшчэ раз.",
-        "${ numberOfNonPrivateKeys } запампаваных файаў з'яўляюцца несапраўднымі прыватнымі ключамі. Спраўдзіце іх і паспрабуйце яшчэ раз.",
-        "${ numberOfNonPrivateKeys } запампаваныя файлы з'яўляюцца несапраўднымі прыватнымі ключамі. Спраўдзіце іх і паспрабуйце яшчэ раз."
+        "${ numberOfNonPrivateKeys } запампаваных файлаў з'яўляюцца несапраўднымі прыватнымі ключамі. Спраўдзіце іх і паспрабуйце яшчэ раз.",
+        "${ numberOfNonPrivateKeys } запампаваных файлаў з'яўляюцца несапраўднымі прыватнымі ключамі. Спраўдзіце іх і паспрабуйце яшчэ раз."
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Пажыццёвая прапанова ${ PASS_SHORT_APP_NAME } не прадугледжвае кошту падаўжэння. Робіцца аднаразовая плата за пажыццёвы доступ да ${ PASS_SHORT_APP_NAME }."
@@ -8094,7 +8103,7 @@
         "Нам неабходна аўтэнтыфікаваць плацеж з дапамогай вашага банка."
       ],
       "We recommend adding servers in different locations (one per city) to maximize redundancy.": [
-        "Рэкамендуецца дадаваць серверы ў розных месцазнаходжаннях (па адным на горад), каб разгрануць лішкавасць."
+        "Рэкамендуецца дадаваць серверы ў розных месцазнаходжаннях (па адным на горад), каб разгарнуць лішкавасць."
       ],
       "We recommend having at least 2 servers in order to provide redundancy.": [
         "Мы рэкамендуем мець прынамсі 2 серверы, каб забяспечыць лішкавасць."
@@ -8187,7 +8196,7 @@
         "З катэгорыямі электроннай пошты важныя паведамленні трапляюць у асноўную паштовую скрыню. Усё астатняе размяркоўваецца па катэгорыях."
       ],
       "With groups, you can implement the company security policies for access control and reduce the risk of accessing unauthorised data.": [
-        "З групамі вы можаце ўкараняць палітыкі бяспекі кампаніі для кантролю доступу і знізіць рызыку несанкцыяванага доступу да даных."
+        "З групамі вы можаце ўкараняць палітыкі бяспекі кампаніі для кантролю доступу і знізіць рызыку несанкцыянаванага доступу да даных."
       ],
       "With groups, you can quickly and easily send emails to all the people in a specified group.": [
         "Пры дапамозе груп, вы можаце хутка і лёгка адпраўляць лісты ўсім людзям у канкрэтнай групе."
@@ -8494,6 +8503,15 @@
       ],
       "Zoom meeting": [
         "сустрэчу па Zoom"
+      ],
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "Усе вашы кантакты будуць імпартаваны. Абмежаванне імпартавання складае да ${ maxContact }",
+        "Усе вашы кантакты будуць імпартаваны. Абмежаванне імпартавання складае да ${ maxContact }",
+        "Усе вашы кантакты будуць імпартаваны. Абмежаванне імпартавання складае да ${ maxContact }",
+        "Усе вашы кантакты будуць імпартаваны. Абмежаванне імпартавання складае да ${ maxContact }"
+      ],
+      "Coming soon": [
+        "Неўзабаве з'явіцца"
       ]
     },
     "info": {
@@ -8531,7 +8549,7 @@
         "Дадайце новага карыстальніка ў вашу арганізацыю і стварыце для яго адрас."
       ],
       "For security reasons, we need to verify that you are the owner of ${ domainName }. Please add the following TXT record in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips ${ kbLink }.": [
-        "У мэтах бяспекі нам трэба спраўдзіць, што вы з'яўляецеся ўладальнікам ${ domainName }. Дадайце наступны запіс TXT у кансоль DNS (якая размешчана на той платформе, дзе вы набылі карыстальніцкі дамен). Вы можаце знайсці прыклад і некалькі карысных парад вось ${ kbLink }."
+        "У мэтах бяспекі нам трэба спраўдзіць, што вы з'яўляецеся ўладальнікам ${ domainName }. Дадайце наступны запіс TXT у кансоль DNS (якая размешчана на той платформе, дзе вы набылі карыстальніцкі дамен). Вы можаце знайсці прыклад і некалькі карысных парад тут ${ kbLink }."
       ]
     },
     "Info for payment methods": {
@@ -10037,6 +10055,18 @@
         "Да ${ n } удзельнікаў",
         "Да ${ n } удзельнікаў",
         "Да ${ n } удзельнікаў"
+      ],
+      "${ n } participant": [
+        "${ n } удзельнік",
+        "${ n } удзельнікі",
+        "${ n } удзельнікаў",
+        "${ n } удзельнікаў"
+      ],
+      "Booking pages": [
+        "Старонкі браніравання"
+      ],
+      "Meeting recording": [
+        "Запіс сустрэчы"
       ]
     },
     "Member action": {
@@ -12250,6 +12280,24 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Ваша падпіска мае бягучую скідку. Пераход на гэту новую акцыю азначае, што ранейшая скідка больш не будзе ўжывацца."
+      ],
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "Скідка дзейнічае для ${ renewalsWithCoupon } падаўжэння.",
+        "Скідка дзейнічае для ${ renewalsWithCoupon } падаўжэнняў.",
+        "Скідка дзейнічае для ${ renewalsWithCoupon } падаўжэнняў.",
+        "Скідка дзейнічае для ${ renewalsWithCoupon } падаўжэнняў."
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Спецыяльны зніжаны кошт дзейнічае на працягу ${ couponRedemptions } месяца. Пасля гэтага адбудзецца аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы час.",
+        "Спецыяльны зніжаны кошт дзейнічае на працягу ${ couponRedemptions } месяцы. Пасля гэтага адбудзецца аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы час.",
+        "Спецыяльны зніжаны кошт дзейнічае на працягу ${ couponRedemptions } месяцаў. Пасля гэтага адбудзецца аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы час.",
+        "Спецыяльны зніжаны кошт дзейнічае на працягу ${ couponRedemptions } месяцаў. Пасля гэтага адбудзецца аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы час."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Спецыяльны зніжаны кошт у памеры ${ priceWithDiscount } дзейнічае на працягу ${ couponRedemptions } месяца. Пасля гэтага адбудзецца аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы час.",
+        "Спецыяльны зніжаны кошт у памеры ${ priceWithDiscount } дзейнічае на працягу ${ couponRedemptions } месяцаў. Пасля гэтага адбудзецца аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы час.",
+        "Спецыяльны зніжаны кошт у памеры ${ priceWithDiscount } дзейнічае на працягу ${ couponRedemptions } месяцаў. Пасля гэтага адбудзецца аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы час.",
+        "Спецыяльны зніжаны кошт у памеры ${ priceWithDiscount } дзейнічае на працягу ${ couponRedemptions } месяцаў. Пасля гэтага адбудзецца аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы час."
       ]
     },
     "Payments.Error": {
@@ -16798,6 +16846,12 @@
       ],
       "You can protect up to ${ FAMILY_MAX_USERS } people with ${ PLAN_NAMES[plan] }. Starting from just ${ priceString }/month per account.": [
         "Вы можаце абараніць да ${ FAMILY_MAX_USERS } асоб з тарыфным планам ${ PLAN_NAMES[plan] }. Пачынаючы ўсяго ад ${ priceString } у месяц за ўліковы запіс."
+      ],
+      "${ BRAND_NAME } for Business": [
+        "Рассылка ${ BRAND_NAME } for Business"
+      ],
+      "Everything you need to collaborate securely in a single subscription. Get access to ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, ${ SHEETS_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } and ${ LUMO_SHORT_APP_NAME } AI Assistant.": [
+        "Усё неабходнае для бяспечнай сумеснай працы ў адной падпісцы. Атрымайце доступ да ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, ${ SHEETS_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } і ${ LUMO_SHORT_APP_NAME } AI Assistant."
       ]
     },
     "upsell panel": {
@@ -17256,6 +17310,14 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "Пасля паспяховага спраўджання не выдаляйце гэты запіс TXT, бо ён неабходны для пацвярджэння таго, што вы з'яўляецеся ўладальнікам дамена."
+      ]
+    },
+    "Theme": {
+      "Dark": [
+        "Цёмная"
+      ],
+      "Light": [
+        "Светлая"
       ]
     }
   }

@@ -3393,6 +3393,9 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Du kan importera händelser i iCal-format (ICS-fil). Filen bör ha en maximal storlek på ${ MAX_IMPORT_FILE_SIZE_STRING } och ha upp till ${ MAX_IMPORT_EVENTS_STRING } händelser. Om din fil är större, dela upp den i mindre filer."
+      ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "För import via en CSV- och VCF-fil, se till att filen inte överstiger ${ MAX_IMPORT_FILE_SIZE_STRING } eller ${ maxContactString } kontakter. Om din fil är större, dela upp den i mindre filer. ${ learnMoreLink }."
       ]
     },
     "description": {
@@ -4353,6 +4356,9 @@
       ],
       "ZIP code is required": [
         "Postnummer är obligatoriskt"
+      ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "Du har använt alla adresser i ditt paket. Uppgradera ditt paket för att lägga till en ny adress eller inaktivera en adress i ditt konto."
       ]
     },
     "error": {
@@ -4428,6 +4434,9 @@
       ],
       "Your file ${ formattedFilename } is empty.": [
         "Din fil ${ formattedFilename } är tom."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ maxContactString } contacts.": [
+        "Din fil ${ formattedFilename } innehåller fler än ${ maxContactString } kontakter."
       ]
     },
     "Error importing event": {
@@ -4533,6 +4542,9 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Vi kunde inte ladda denna sida. Uppdatera sidan eller kontrollera din internetanslutning."
+      ],
+      "Account is deleted or disabled": [
+        "Konto är borttaget eller inaktiverat"
       ]
     },
     "Error notification": {
@@ -8231,6 +8243,13 @@
       ],
       "Zoom meeting": [
         "Zoom-möte"
+      ],
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "Alla dina kontakter kommer att importeras, upp till en gräns på ${ maxContact }",
+        "Alla dina kontakter kommer att importeras, upp till en gräns på ${ maxContact }"
+      ],
+      "Coming soon": [
+        "Kommer snart"
       ]
     },
     "info": {
@@ -9738,6 +9757,12 @@
       "Up to ${ n } participant": [
         "Upp till ${ n } deltagare",
         "Upp till ${ n } deltagare"
+      ],
+      "Booking pages": [
+        "Bokningssidor"
+      ],
+      "Meeting recording": [
+        "Mötesinspelning"
       ]
     },
     "Member action": {
@@ -11872,6 +11897,10 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Din prenumeration har för närvarande en befintlig rabatt. Att flytta till denna nya kampanj innebär att den befintliga rabatten inte längre kommer att tillämpas."
+      ],
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "Rabatten är giltig för ${ renewalsWithCoupon } förnyelse.",
+        "Rabatten är giltig för ${ renewalsWithCoupon } förnyelser."
       ]
     },
     "Payments.Error": {
@@ -16262,6 +16291,9 @@
       ],
       "You can protect up to ${ FAMILY_MAX_USERS } people with ${ PLAN_NAMES[plan] }. Starting from just ${ priceString }/month per account.": [
         "Du kan skydda upp till ${ FAMILY_MAX_USERS } personer med ${ PLAN_NAMES[plan] }. Från bara ${ priceString }/månad per konto."
+      ],
+      "${ BRAND_NAME } for Business": [
+        "${ BRAND_NAME } för företag"
       ]
     },
     "upsell panel": {
@@ -16683,6 +16715,32 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "Efter lyckad verifiering, ta inte bort denna TXT-post eftersom den behövs för att bekräfta att du fortsätter att äga domänen."
+      ]
+    },
+    "Theme": {
+      "Auto": [
+        "Auto"
+      ],
+      "Dark": [
+        "Mörk"
+      ],
+      "Light": [
+        "Ljus"
+      ],
+      "Mode: Auto": [
+        "Läge: Auto"
+      ],
+      "Mode: Dark": [
+        "Läge: Mörkt"
+      ],
+      "Mode: Light": [
+        "Läge: Ljust"
+      ],
+      "Sync with system": [
+        "Synkronisera med system"
+      ],
+      "Use ${ BRAND_NAME } settings": [
+        "Använd ${ BRAND_NAME }-inställningar"
       ]
     }
   }
