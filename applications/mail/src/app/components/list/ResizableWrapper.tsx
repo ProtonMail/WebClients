@@ -177,5 +177,3 @@ export const ResizableWrapper = ({
         </div>
     );
 };
-
-export default ResizableWrapper;

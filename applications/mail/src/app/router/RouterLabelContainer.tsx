@@ -10,7 +10,7 @@ import clsx from '@proton/utils/clsx';
 import { CategoriesTabs } from 'proton-mail/components/categoryView/categoriesTabs/CategoriesTabs';
 import { useCategoriesView } from 'proton-mail/components/categoryView/useCategoriesView';
 import MailboxList from 'proton-mail/components/list/MailboxList';
-import ResizableWrapper from 'proton-mail/components/list/ResizableWrapper';
+import { ResizableWrapper } from 'proton-mail/components/list/ResizableWrapper';
 import { ResizeHandlePosition } from 'proton-mail/components/list/ResizeHandle';
 import type { SOURCE_ACTION } from 'proton-mail/components/list/list-telemetry/useListTelemetry';
 import { ROUTE_ELEMENT } from 'proton-mail/constants';
@@ -52,7 +52,7 @@ export const RouterLabelContainer = ({
 }: Props) => {
     const { sort, filter, labelID, elementID, messageID } = params;
     const { handleBack, page, handleFilter } = navigation;
-    const { elements, elementIDs, loading, placeholderCount } = elementsData;
+    const { elements, elementIDs, loading } = elementsData;
     const {
         handleElement,
         isMessageOpening,
@@ -95,12 +95,13 @@ export const RouterLabelContainer = ({
     const getElementsFromIDs = useGetElementsFromIDs();
 
     const showList = isColumnModeActive || !elementID;
-    const elementsLength = loading ? placeholderCount : elements.length;
-    const showContentPanel = (isColumnModeActive && !!elementsLength) || !!elementID;
+    const showContentPanel = isColumnModeActive || !!elementID;
     const showContentView = showContentPanel && !!elementID;
     const isComposerOpened = composersCount > 0;
     const showPlaceholder =
-        !breakpoints.viewportWidth['<=small'] && (!elementID || (!!checkedIDs.length && isColumnModeActive));
+        (!breakpoints.viewportWidth['<=small'] && !elementID && elements.length) ||
+        (!!checkedIDs.length && isColumnModeActive) ||
+        (!elements.length && isColumnModeActive);
 
     const { commanderList } = useMailCommander();
     const { applyOptimisticLocationEnabled, applyLocation } = useApplyLocation();
@@ -247,12 +248,7 @@ export const RouterLabelContainer = ({
                     <Route
                         path={ROUTE_ELEMENT}
                         render={() => (
-                            <RouterElementContainer
-                                params={params}
-                                navigation={navigation}
-                                elementsData={elementsData}
-                                actions={actions}
-                            />
+                            <RouterElementContainer params={params} navigation={navigation} actions={actions} />
                         )}
                     />
                 </Switch>

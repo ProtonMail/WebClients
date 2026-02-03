@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import type { IconName } from '@proton/icons/types';
+import { getLabelFromCategoryId } from '@proton/mail/features/categoriesView/categoriesStringHelpers';
 import { isCategoryLabel, labelIncludes } from '@proton/mail/helpers/location';
 import type { MessageWithOptionalBody } from '@proton/mail/store/messages/messagesTypes';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
@@ -371,9 +372,12 @@ export const getCustomViewFromLabel = (label: string) => {
 
 export const getLabelName = (labelID: string, labels: Label[] = [], folders: Folder[] = []): string => {
     if (labelID in LABEL_IDS_TO_HUMAN) {
+        if (isCategoryLabel(labelID)) {
+            return getLabelFromCategoryId(labelID);
+        }
+
         const folders = getStandardFolders();
-        const labelIDToUse = isCategoryLabel(labelID) ? MAILBOX_LABEL_IDS.INBOX : labelID;
-        return folders[labelIDToUse]?.name || folders[MAILBOX_LABEL_IDS.INBOX].name;
+        return folders[labelID]?.name || folders[MAILBOX_LABEL_IDS.INBOX].name;
     }
 
     const labelsMap = toMap(labels, 'ID');
