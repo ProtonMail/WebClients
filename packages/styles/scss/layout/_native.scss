@@ -44,8 +44,8 @@
 	}
 
 	.top-bar.ignore-drag,
-        .header.ignore-drag,
-        .sidebar-header.ignore-drag {
+	.header.ignore-drag,
+	.sidebar-header.ignore-drag {
 		-webkit-app-region: no-drag;
 		user-select: initial;
 	}
@@ -136,15 +136,6 @@
 			--border-weak: rgb(255 255 255 / 0.05);
 			--promotion-background-start: rgb(132 102 255 / 0.3);
 			--promotion-background-end: rgb(132 102 255 / 0.1);
-		}
-	}
-
-	.sign-layout-bg {
-		background: linear-gradient(62.88deg, #32226f 30%, #1d1738 100%);
-		color: var(--text-norm);
-
-		.signup-link {
-			color: var(--text-norm);
 		}
 	}
 }
