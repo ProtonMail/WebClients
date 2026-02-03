@@ -15,6 +15,10 @@ describe('shouldShowMail', () => {
                 expected: true,
             },
             {
+                plan: PLANS.BUNDLE_BIZ_2025,
+                expected: true,
+            },
+            {
                 plan: PLANS.VISIONARY,
                 expected: true,
             },

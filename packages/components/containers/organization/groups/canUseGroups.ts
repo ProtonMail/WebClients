@@ -1,6 +1,12 @@
 import { PLANS } from '@proton/payments';
 
-const groupsCompatiblePlans = new Set([PLANS.MAIL_BUSINESS, PLANS.BUNDLE_PRO, PLANS.BUNDLE_PRO_2024, PLANS.VISIONARY]);
+const groupsCompatiblePlans = new Set([
+    PLANS.MAIL_BUSINESS,
+    PLANS.BUNDLE_PRO,
+    PLANS.BUNDLE_PRO_2024,
+    PLANS.BUNDLE_BIZ_2025,
+    PLANS.VISIONARY,
+]);
 
 const vpnPlans = new Set([PLANS.VPN_BUSINESS, PLANS.VPN_PRO, PLANS.VPN_PASS_BUNDLE_BUSINESS]);
 
