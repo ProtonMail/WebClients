@@ -4,7 +4,7 @@ import { CryptoProxy, type PrivateKeyReference, type PublicKeyReference } from '
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { addGroupMember as addGroupMemberApi } from '@proton/shared/lib/api/groups';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
-import { ADDRESS_STATUS, MEMBER_PRIVATE, RECIPIENT_TYPES } from '@proton/shared/lib/constants';
+import { MEMBER_PRIVATE, RECIPIENT_TYPES } from '@proton/shared/lib/constants';
 import { getIsEncryptionDisabled } from '@proton/shared/lib/helpers/address';
 import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import type { Address, ApiKeysConfig, CachedOrganizationKey, EnhancedMember } from '@proton/shared/lib/interfaces';
@@ -12,6 +12,7 @@ import { GroupMemberType } from '@proton/shared/lib/interfaces';
 import { getAddressKeyToken, getDecryptedUserKeys, getEmailFromKey, splitKeys } from '@proton/shared/lib/keys';
 import { getInternalParameters, getInternalParametersPrivate } from '@proton/shared/lib/keys/forward/forward';
 import { getGroupMemberPublicKeys } from '@proton/shared/lib/keys/groupKeys';
+import { getMemberByEmail } from '@proton/shared/lib/keys/memberHelper';
 
 import type { AddressesState } from '../addresses';
 import { replaceMemberAddressTokensIfNeeded } from '../addresses/replaceAddressToken';
@@ -25,8 +26,10 @@ import type { UserKeysState } from '../userKeys';
 type RequiredState = AddressesState & UserKeysState & OrganizationKeyState & KtState;
 
 const signMemberEmail = async (memberEmail: string, groupKey: PrivateKeyReference) => {
+    // we must always sign using the canonical email, canonicalize even if it's already canonical
+    const canonicalMemberEmail = canonicalizeInternalEmail(memberEmail);
     return CryptoProxy.signMessage({
-        textData: memberEmail,
+        textData: canonicalMemberEmail,
         signingKeys: groupKey,
         signatureContext: { critical: true, value: 'account.key-token.address' },
         detached: true,
@@ -165,13 +168,7 @@ export const addGroupMemberThunk = ({
         });
 
         const canonicalEmail = canonicalizeInternalEmail(email);
-        const member = members.find((member) =>
-            member.Addresses?.some(
-                (address) =>
-                    address.Status === ADDRESS_STATUS.STATUS_ENABLED &&
-                    canonicalizeInternalEmail(address.Email) === canonicalEmail
-            )
-        );
+        const member = getMemberByEmail(members, canonicalEmail);
 
         const forwarderKey = await dispatch(getGroupKey({ groupAddress }));
 
