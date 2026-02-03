@@ -1949,26 +1949,6 @@
         "Correu nou"
       ]
     },
-    "app-switcher": {
-      "Browse the web privately and block ads": [
-        "Navegueu pel web de manera privada i bloquegeu els anuncis"
-      ],
-      "Keep your schedule private": [
-        "Manteniu la vostra agenda privada"
-      ],
-      "Protect your passwords and identity": [
-        "Protegiu les vostres contrasenyes i identitat"
-      ],
-      "Safeguard your files and photos": [
-        "Protegiu els vostres fitxers i fotos"
-      ],
-      "Secure your communications": [
-        "Protegiu les vostres comunicacions"
-      ],
-      "Talk confidentially": [
-        "Parleu amb confidencialitat"
-      ]
-    },
     "app-switcher_2025": {
       "Bitcoin wallet": [
         "Cartera de Bitcoins"
@@ -3202,11 +3182,6 @@
       ],
       "Expand": [
         "Amplia"
-      ]
-    },
-    "collider_2025: app-switcher": {
-      "Chat with a private AI assistant": [
-        "Converseu amb un assistent d'IA privat"
       ]
     },
     "collider_2025: feature": {
@@ -4789,8 +4764,8 @@
       "Simplify syncing and scheduling with shared calendars.": [
         "Simplifiqueu la sincronització i la programació amb calendaris compartits."
       ],
-      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
-        "Per importar a través de fitxers CSV i VCF, assegureu-vos que el fitxer no excedeixi ${ MAX_IMPORT_FILE_SIZE_STRING } o ${ MAX_IMPORT_CONTACTS_STRING } contactes. Si el fitxer és més gran, dividiu-lo en fitxers més petits. ${ learnMoreLink }."
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Per importar mitjançant un fitxer CSV i VCF, assegureu-vos que el fitxer no superi ${ MAX_IMPORT_FILE_SIZE_STRING } o els ${ maxContactString } contactes. Si el vostre fitxer és més gran, dividiu-lo en fitxers més petits. ${ learnMoreLink }."
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Per a importar els vostres contactes de Google o Outlook, ${ easySwitchLink }"
@@ -6786,8 +6761,8 @@
       "An error occurred uploading your file. No file has been selected.": [
         "S'ha produït un error carregant el fitxer. No s'ha seleccionat cap fitxer."
       ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
-        "El vostre fitxer ${ formattedFilename } conté més de ${ MAX_IMPORT_CONTACTS_STRING } contactes."
+      "Your file ${ formattedFilename } contains more than ${ maxContactString } contacts.": [
+        "El vostre fitxer ${ formattedFilename } conté més de ${ maxContactString } contactes."
       ],
       "Your file ${ formattedFilename } has no contacts to be imported.": [
         "El vostre fitxer ${ formattedFilename } no conté contactes per importar."
@@ -6873,6 +6848,9 @@
       ]
     },
     "Error message": {
+      "Account is deleted or disabled": [
+        "S'ha eliminat el compte o s'ha desactivat"
+      ],
       "App currently unavailable": [
         "L'aplicació no està disponible actualment."
       ],
@@ -8981,9 +8959,9 @@
       "All your changes will be lost.": [
         "Tots els vostres canvis es perdran."
       ],
-      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
-        "Tots els vostres contactes s'importaran, fins a un límit de ${ MAX_CONTACTS_PER_USER }",
-        "Tots els vostres contactes s'importaran, fins a un límit de ${ MAX_CONTACTS_PER_USER }"
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "S'importaran tots els vostres contactes, fins a un límit d'${ maxContact }",
+        "S'importaran tots els vostres contactes, fins a un límit de ${ maxContact }"
       ],
       "Allocated": [
         "Assignat"
@@ -9242,6 +9220,9 @@
       ],
       "CNET editors choice award with a rating of 8.4 out of 10": [
         "Premi Editors' Choice de CNET amb una puntuació de 8,4 sobre 10"
+      ],
+      "Coming soon": [
+        "Pròximament"
       ],
       "Compromised": [
         "En perill"
@@ -9505,9 +9486,6 @@
       ],
       "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
         "Cada domini només pot tenir un registre SPF (TXT). Si voleu mantenir el registre SPF (TXT) existent, podeu afegir ${ spf } al registre actual (poseu-ho després de ${ spfValue })."
-      ],
-      "Early access": [
-        "Accés anticipat"
       ],
       "Edit email address": [
         "Edita l'adreça de correu"
@@ -10544,6 +10522,9 @@
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Poseu-vos en contacte amb nosaltres per a qualsevol ajuda relacionada amb ${ BRAND_NAME }."
       ],
+      "Receive notifications for ${ categoryLabel }": [
+        "Rebeu notificacions de ${ categoryLabel }"
+      ],
       "Recently used servers:": [
         "Servidors utilitzats recentment:"
       ],
@@ -10642,9 +10623,6 @@
       ],
       "Securing your account": [
         "S'està protegint el compte"
-      ],
-      "Select a service to continue": [
-        "Seleccioneu un servei per a continuar"
       ],
       "Select one or multiple user affiliations": [
         "Seleccioneu una o diverses afiliacions per a l'usuari."
@@ -11576,9 +11554,6 @@
       ],
       "You can enforce the password rules members of your organization will use when they create or reset the password to their ${ BRAND_NAME } Account.": [
         "Podeu aplicar les regles de contrasenya que els membres de la vostra organització utilitzaran quan creïn o restableixin la contrasenya del seu compte de ${ BRAND_NAME }."
-      ],
-      "You can get our premium privacy services in one bundle—and it's just **${ priceString }/month**.": [
-        "Podeu obtenir els nostres serveis de privacitat prèmium en un sol paquet, i només per **${ priceString }/mes**."
       ],
       "You can get our premium privacy services in one bundle—and it’s just **${ priceString }/month**.": [
         "Podeu obtenir els nostres serveis de privadesa prèmium en un sol paquet, i només per **${ priceString }/mes**."
@@ -12648,6 +12623,9 @@
       "Autofill 2FA": [
         "Emplena automàticament el 2FA"
       ],
+      "Automated confirmations and alerts": [
+        "Confirmacions i alertes automatitzades"
+      ],
       "Automatically save contacts": [
         "Deseu els contactes automàticament"
       ],
@@ -12687,6 +12665,9 @@
       "Block malware, ads and trackers": [
         "Bloqueja el programari maliciós, els anuncis i els rastrejadors"
       ],
+      "Bookings, billings, and orders": [
+        "Reserves, factures i comandes"
+      ],
       "Browser": [
         "Navegador"
       ],
@@ -12722,6 +12703,9 @@
       ],
       "Cash": [
         "Efectiu"
+      ],
+      "Categories": [
+        "Categories"
       ],
       "Category": [
         "Categoria"
@@ -12858,6 +12842,9 @@
       "Days of the week": [
         "Dies de la setmana"
       ],
+      "Deals, offers, marketing emails": [
+        "Ofertes, promocions, correus electrònics de màrqueting"
+      ],
       "Default email address": [
         "Adreça de correu electrònic predeterminada"
       ],
@@ -12900,6 +12887,9 @@
       "Disabled": [
         "Desactivada"
       ],
+      "Discussion board posts and threads": [
+        "Publicacions i fils del fòrum de discussió"
+      ],
       "Display name": [
         "Nom per a mostrar"
       ],
@@ -12935,9 +12925,6 @@
       ],
       "Email address": [
         "Adreça de correu electrònic"
-      ],
-      "Email categories": [
-        "Categories de correu electrònic"
       ],
       "Email or username": [
         "Correu electrònic o nom d'usuari"
@@ -13038,6 +13025,9 @@
       "for your first month": [
         "el primer mes"
       ],
+      "Forums": [
+        "Fòrums"
+      ],
       "From: ${ fromEmail }": [
         "De: ${ fromEmail }"
       ],
@@ -13052,6 +13042,27 @@
       ],
       "Gift code": [
         "Codi regal"
+      ],
+      "Go to Forums": [
+        "Ves als fòrums"
+      ],
+      "Go to Newsletters": [
+        "Ves als butlletins"
+      ],
+      "Go to Primary": [
+        "Aneu al primari"
+      ],
+      "Go to Promotions": [
+        "Ves a les promocions"
+      ],
+      "Go to Social": [
+        "Ves al canal de continguts"
+      ],
+      "Go to Transactions": [
+        "Aneu a les transaccions"
+      ],
+      "Go to Updates": [
+        "Ves a les actualitzacions"
       ],
       "Group address": [
         "Adreça del grup"
@@ -13275,6 +13286,9 @@
       "New second password": [
         "Nova segona contrasenya"
       ],
+      "Newsletters": [
+        "Butlletins"
+      ],
       "No (users cannot use the app until a vault is shared with them)": [
         "No (els usuaris no poden utilitzar l'aplicació fins que no es comparteixi una caixa forta amb ells)"
       ],
@@ -13283,6 +13297,9 @@
       ],
       "No label found": [
         "No s'ha trobat cap etiqueta"
+      ],
+      "Non-promotional content and news": [
+        "Contingut i notícies no promocionals"
       ],
       "Non-standard ports": [
         "Ports no estàndard"
@@ -13406,6 +13423,12 @@
       ],
       "Previous password": [
         "Contrasenya anterior"
+      ],
+      "Primary": [
+        "Principal"
+      ],
+      "Promotions": [
+        "Promocions"
       ],
       "Prompt to trust keys": [
         "Sol·liciteu confiança en les claus"
@@ -13552,6 +13575,12 @@
       "SMTP username": [
         "Nom d'usuari SMTP"
       ],
+      "Social": [
+        "Social"
+      ],
+      "Social media updates and activity": [
+        "Actualitzacions i activitat de les xarxes socials"
+      ],
       "Spam": [
         "Correu brossa"
       ],
@@ -13636,6 +13665,9 @@
       "Token name": [
         "Nom del testimoni"
       ],
+      "Transactions": [
+        "Transaccions"
+      ],
       "Two-password mode": [
         "Mode de dues contrasenyes"
       ],
@@ -13651,6 +13683,9 @@
       "Unlimited logins and devices": [
         "Nombre il·limitat d'inicis de sessió i de dispositius"
       ],
+      "Updates": [
+        "Actualitzacions"
+      ],
       "Upload 1 or more encryption keys": [
         "Pengeu 1 o més claus de xifratge"
       ],
@@ -13665,6 +13700,9 @@
       ],
       "URL": [
         "URL"
+      ],
+      "Use email categories": [
+        "Utilitzeu les categories de correu electrònic"
       ],
       "Use folder colors": [
         "Utilitza colors de carpeta"
@@ -15645,9 +15683,6 @@
       "Review subscription and pay": [
         "Reviseu la subscripció i pagueu"
       ],
-      "Start exploring the ${ BRAND_NAME } universe": [
-        "Comença a explorar l'univers de ${ BRAND_NAME }"
-      ],
       "Switch plans?": [
         "Voleu canviar de pla?"
       ],
@@ -17432,28 +17467,28 @@
       "terms and conditions": [
         "termes i condicions"
       ],
-      "The coupon is valid for ${ couponRedemptions } renewal.": [
-        "El cupó és vàlid per a ${ couponRedemptions } renovació.",
-        "El cupó és vàlid per a ${ couponRedemptions } renovacions."
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "El descompte és vàlid per a ${ renewalsWithCoupon } renovació.",
+        "El descompte és vàlid per a ${ renewalsWithCoupon } renovacions."
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "El preu amb descompte especial és vàlid durant ${ couponRedemptions } mes. Després, es renovarà automàticament a ${ renewPriceStr } per un període d'1 mes. Podeu cancel·lar la subscripció en qualsevol moment.",
+        "El preu amb descompte especial és vàlid durant ${ couponRedemptions } mesos. Després, es renovarà automàticament a ${ renewPriceStr } per un període d'1 mes. Podeu cancel·lar la subscripció en qualsevol moment."
       ],
       "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
         "El preu amb descompte especial és vàlid durant el primer ${ subscriptionLength } mes.",
         "El preu amb descompte especial és vàlid durant el primers ${ subscriptionLength } mesos."
       ],
-      "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "El preu amb descompte especial és vàlid durant el primer mes. El cupó és vàlid per a ${ couponRedemptions } renovació. Després, es renovarà automàticament per ${ renewPriceStr } durant 1 mes. Podreu cancel·lar-ho en qualsevol moment.",
-        "El preu amb descompte especial és vàlid durant el primer mes. El cupó és vàlid per a ${ couponRedemptions } renovacions. Després, es renovarà automàticament per ${ renewPriceStr } durant 1 mes. Podreu cancel·lar-ho en qualsevol moment."
-      ],
       "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "El preu amb descompte especial és vàlid durant el primer mes. Després, es renovarà automàticament per ${ renewPriceStr } cada mes. Podreu cancel·lar-ho en qualsevol moment."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "El preu amb descompte especial de ${ priceWithDiscount } és vàlid durant ${ couponRedemptions } mes. Després, es renovarà automàticament a ${ renewPriceStr } per un període d'1 mes. Podeu cancel·lar la subscripció en qualsevol moment.",
+        "El preu amb descompte especial de ${ priceWithDiscount } és vàlid durant ${ couponRedemptions } mesos. Després, es renovarà automàticament a ${ renewPriceStr } per un període d'1 mes. Podeu cancel·lar la subscripció en qualsevol moment."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "El preu amb descompte especial de ${ priceWithDiscount } és vàlid durant el primer ${ subscriptionLength } mes.",
         "El preu amb descompte especial de ${ priceWithDiscount } és vàlid durant els primers ${ subscriptionLength } mesos."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "El preu amb descompte especial de ${ priceWithDiscount } és vàlid durant el primer mes. El cupó és vàlid per a ${ couponRedemptions } renovació. Aleshores, es renovarà automàticament a ${ renewPriceStr } durant 1 mes. Podeu cancel·lar-ho en qualsevol moment.",
-        "El preu amb descompte especial de ${ priceWithDiscount } és vàlid durant el primer mes. El cupó és vàlid per a ${ couponRedemptions } renovacions. Aleshores, es renovarà automàticament a ${ renewPriceStr } durant 1 mes. Podeu cancel·lar-ho en qualsevol moment."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "El preu amb descompte especial de ${ priceWithDiscount } és vàlid durant el primer mes. Aleshores, es renovarà automàticament a ${ renewPriceStr } cada mes. Podeu cancel·lar-ho en qualsevol moment."
@@ -21650,6 +21685,32 @@
         "No s'ha trobat cap testimoni SMTP"
       ]
     },
+    "Theme": {
+      "Auto": [
+        "Automàtic"
+      ],
+      "Dark": [
+        "Fosc"
+      ],
+      "Light": [
+        "Clar"
+      ],
+      "Mode: Auto": [
+        "Mode: Automàtic"
+      ],
+      "Mode: Dark": [
+        "Mode: Fosc"
+      ],
+      "Mode: Light": [
+        "Mode: Clar"
+      ],
+      "Sync with system": [
+        "Sincronitzeu-ho amb el sistema"
+      ],
+      "Use ${ BRAND_NAME } settings": [
+        "Utilitzeu les preferències de ${ BRAND_NAME }"
+      ]
+    },
     "Time unit": {
       "${ ceilDays } day": [
         "${ ceilDays } dia",
@@ -23294,8 +23355,8 @@
       "Your ${ planName } free trial ends on ${ textDate }": [
         "La vostra prova gratuïta de ${ planName } acaba el ${ textDate }"
       ],
-      "Your ${ planName } subscription has started": [
-        "La subscripció a ${ planName } ha començat"
+      "Your ${ planTitle } subscription has started": [
+        "La vostra subscripció a ${ planTitle } ha començat"
       ],
       "Your calendar link": [
         "Enllaç del vostre calendari"
@@ -23587,6 +23648,9 @@
       ],
       "Specify the users of the eduGAIN entity who are allowed to authenticate with SAML SSO": [
         "Especifiqueu els usuaris de l'entitat d'eduGAIN que tenen permís per autenticar-se amb un inici de sessió únic (SSO) SAML."
+      ],
+      "System notification": [
+        "Notificació del sistema"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Les subcarpetes del sistema es mostraran com a carpetes independents a ${ MAIL_APP_NAME }"
@@ -24429,6 +24493,9 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } transferirà tantes dades com sigui possible, començant pels missatges més recents."
+      ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } offer has ended": [
+        "L'oferta de ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } ha finalitzat"
       ],
       "Are you sure you want to delete the phone number?": [
         "Confirmes que vols eliminar el número de telèfon?"

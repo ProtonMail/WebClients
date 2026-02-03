@@ -1949,26 +1949,6 @@
         "Νέα διεύθυνση ηλεκτρονικού ταχυδρομείου"
       ]
     },
-    "app-switcher": {
-      "Browse the web privately and block ads": [
-        "Ιδιωτική περιήγηση στον ιστό και αποκλεισμός διαφημίσεων"
-      ],
-      "Keep your schedule private": [
-        "Διατηρήστε το πρόγραμμά σας απόρρητο"
-      ],
-      "Protect your passwords and identity": [
-        "Προστατέψτε τους κωδικούς πρόσβασης και την ταυτότητά σας"
-      ],
-      "Safeguard your files and photos": [
-        "Προστατέψτε τα αρχεία και τις φωτογραφίες σας"
-      ],
-      "Secure your communications": [
-        "Ασφαλίστε τις επικοινωνίες σας"
-      ],
-      "Talk confidentially": [
-        "Μιλήστε εμπιστευτικά"
-      ]
-    },
     "app-switcher_2025": {
       "Bitcoin wallet": [
         "Πορτοφόλι Bitcoin"
@@ -3202,11 +3182,6 @@
       ],
       "Expand": [
         "Ανάπτυξη"
-      ]
-    },
-    "collider_2025: app-switcher": {
-      "Chat with a private AI assistant": [
-        "Συνομιλία με έναν ιδιωτικό βοήθημα τεχνητής νοημοσύνης"
       ]
     },
     "collider_2025: feature": {
@@ -4789,8 +4764,8 @@
       "Simplify syncing and scheduling with shared calendars.": [
         "Απλοποιήστε τον συγχρονισμό και τον προγραμματισμό με τα κοινοποιημένα ημερολόγια."
       ],
-      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
-        "Για εισαγωγή μέσω αρχείου CSV και VCF, βεβαιωθείτε ότι το αρχείο δεν υπερβαίνει ${ MAX_IMPORT_FILE_SIZE_STRING } ή τις ${ MAX_IMPORT_CONTACTS_STRING } επαφές. Εάν το αρχείο σας είναι μεγαλύτερο, παρακαλούμε χωρίστε το σε μικρότερα αρχεία. ${ learnMoreLink }."
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Για εισαγωγή μέσω αρχείου CSV και VCF, βεβαιωθείτε ότι το αρχείο δεν υπερβαίνει ${ MAX_IMPORT_FILE_SIZE_STRING } ή τις ${ maxContactString } επαφές. Εάν το αρχείο σας είναι μεγαλύτερο, παρακαλούμε χωρίστε το σε μικρότερα αρχεία. ${ learnMoreLink }."
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Για να εισαγάγετε τις επαφές σας από την Google ή το Outlook, ${ easySwitchLink }."
@@ -6786,8 +6761,8 @@
       "An error occurred uploading your file. No file has been selected.": [
         "Παρουσιάστηκε σφάλμα κατά τη μεταφόρτωση του αρχείου σας. Δεν έχει επιλεγεί αρχείο."
       ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
-        "Το αρχείο σας ${ formattedFilename } περιέχει περισσότερες από ${ MAX_IMPORT_CONTACTS_STRING } επαφές."
+      "Your file ${ formattedFilename } contains more than ${ maxContactString } contacts.": [
+        "Το αρχείο σας ${ formattedFilename } περιέχει περισσότερες από ${ maxContactString } επαφές."
       ],
       "Your file ${ formattedFilename } has no contacts to be imported.": [
         "Το αρχείο σας ${ formattedFilename } δεν περιέχει επαφές προς εισαγωγή."
@@ -6873,6 +6848,9 @@
       ]
     },
     "Error message": {
+      "Account is deleted or disabled": [
+        "Ο λογαριασμός έχει διαγραφεί ή απενεργοποιηθεί"
+      ],
       "App currently unavailable": [
         "Η εφαρμογή δεν είναι διαθέσιμη αυτήν τη στιγμή"
       ],
@@ -8981,9 +8959,9 @@
       "All your changes will be lost.": [
         "Όλες οι αλλαγές σας θα χαθούν."
       ],
-      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
-        "Όλες οι επαφές σας θα εισαχθούν, μέχρι το όριο της ${ MAX_CONTACTS_PER_USER }",
-        "Όλες οι επαφές σας θα εισαχθούν, μέχρι το όριο των ${ MAX_CONTACTS_PER_USER }"
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "Όλες οι επαφές σας θα εισαχθούν, μέχρι το όριο των ${ maxContact }",
+        "Όλες οι επαφές σας θα εισαχθούν, μέχρι το όριο των ${ maxContact }"
       ],
       "Allocated": [
         "Κατανεμημένος"
@@ -9242,6 +9220,9 @@
       ],
       "CNET editors choice award with a rating of 8.4 out of 10": [
         "Βραβείο επιλογής συντακτών CNET με βαθμολογία 8,4 στα 10"
+      ],
+      "Coming soon": [
+        "Έρχεται σύντομα"
       ],
       "Compromised": [
         "Εκτεθειμένο"
@@ -9505,9 +9486,6 @@
       ],
       "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
         "Κάθε τομέας μπορεί να έχει μόνο μία εγγραφή SPF (TXT). Εάν θέλετε να διατηρήσετε την υπάρχουσα εγγραφή SPF (TXT), μπορείτε να προσθέσετε ${ spf } στην τρέχουσα εγγραφή σας (τοποθετήστε τη μετά το ${ spfValue })."
-      ],
-      "Early access": [
-        "Πρώιμη πρόσβαση"
       ],
       "Edit email address": [
         "Επεξεργασία ηλεκτρονικής διεύθυνσης"
@@ -10544,6 +10522,9 @@
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Επικοινωνήστε μαζί μας για βοήθεια σε οτιδήποτε ${ BRAND_NAME }."
       ],
+      "Receive notifications for ${ categoryLabel }": [
+        "Λάβετε ειδοποιήσεις για ${ categoryLabel }"
+      ],
       "Recently used servers:": [
         "Πρόσφατα χρησιμοποιημένοι διακομιστές:"
       ],
@@ -10642,9 +10623,6 @@
       ],
       "Securing your account": [
         "Διασφάλιση του λογαριασμού σας"
-      ],
-      "Select a service to continue": [
-        "Επιλέξτε μία υπηρεσία για να συνεχίσετε"
       ],
       "Select one or multiple user affiliations": [
         "Επιλέξτε μία ή περισσότερες συνεργασίες χρηστών"
@@ -11576,9 +11554,6 @@
       ],
       "You can enforce the password rules members of your organization will use when they create or reset the password to their ${ BRAND_NAME } Account.": [
         "Μπορείτε να επιβάλετε τους κανόνες κωδικού που θα χρησιμοποιούν τα μέλη του οργανισμού σας όταν δημιουργούν ή κάνουν επαναφορά του κωδικού πρόσβασης για τον ${ BRAND_NAME } λογαριασμό τους."
-      ],
-      "You can get our premium privacy services in one bundle—and it's just **${ priceString }/month**.": [
-        "Μπορείτε να αποκτήσετε τις premium υπηρεσίες ιδιωτικότητας σε ένα πακέτο—και είναι μόνο **${ priceString }/μήνα**."
       ],
       "You can get our premium privacy services in one bundle—and it’s just **${ priceString }/month**.": [
         "Μπορείτε να αποκτήσετε τις premium υπηρεσίες ιδιωτικότητας σε ένα πακέτο—και είναι μόνο **${ priceString }/μήνα**."
@@ -12648,6 +12623,9 @@
       "Autofill 2FA": [
         "Αυτόματη συμπλήρωση 2FA"
       ],
+      "Automated confirmations and alerts": [
+        "Αυτοματοποιημένες επιβεβαιώσεις και ειδοποιήσεις"
+      ],
       "Automatically save contacts": [
         "Αυτόματη αποθήκευση επαφών"
       ],
@@ -12687,6 +12665,9 @@
       "Block malware, ads and trackers": [
         "Αποκλεισμός κακόβουλου λογισμικού, διαφημίσεων και ιχνηλατών"
       ],
+      "Bookings, billings, and orders": [
+        "Κρατήσεις, λογαριασμοί και παραγγελίες"
+      ],
       "Browser": [
         "Πρόγραμμα περιήγησης"
       ],
@@ -12722,6 +12703,9 @@
       ],
       "Cash": [
         "Μετρητά"
+      ],
+      "Categories": [
+        "Κατηγορίες"
       ],
       "Category": [
         "Κατηγορία"
@@ -12858,6 +12842,9 @@
       "Days of the week": [
         "Ημέρα της εβδομάδας"
       ],
+      "Deals, offers, marketing emails": [
+        "Συμφωνίες, προσφορές, διαφημιστικά email"
+      ],
       "Default email address": [
         "Προεπιλεγμένη διεύθυνση ηλεκτρονικού ταχυδρομείου"
       ],
@@ -12900,6 +12887,9 @@
       "Disabled": [
         "Απενεργοποιημένο"
       ],
+      "Discussion board posts and threads": [
+        "Δημοσιεύσεις και θέματα σε φόρουμ συζητήσεων"
+      ],
       "Display name": [
         "Εμφανιζόμενο Όνομα"
       ],
@@ -12935,9 +12925,6 @@
       ],
       "Email address": [
         "Διεύθυνση email"
-      ],
-      "Email categories": [
-        "Κατηγορίες ηλεκτρονικών μηνυμάτων"
       ],
       "Email or username": [
         "Διεύθυνση ή όνομα χρήστη"
@@ -13038,6 +13025,9 @@
       "for your first month": [
         "για τον πρώτο μήνα σας"
       ],
+      "Forums": [
+        "Φόρουμ"
+      ],
       "From: ${ fromEmail }": [
         "Από: ${ fromEmail }"
       ],
@@ -13052,6 +13042,27 @@
       ],
       "Gift code": [
         "Κωδικός δώρου"
+      ],
+      "Go to Forums": [
+        "Μετάβαση στα Φόρουμ"
+      ],
+      "Go to Newsletters": [
+        "Μετάβαση στα Ενημερωτικά Δελτία"
+      ],
+      "Go to Primary": [
+        "Μετάβαση στα Κύρια"
+      ],
+      "Go to Promotions": [
+        "Μετάβαση στις Προσφορές"
+      ],
+      "Go to Social": [
+        "Μετάβαση στα Κοινωνικά"
+      ],
+      "Go to Transactions": [
+        "Μετάβαση στις Συναλλαγές"
+      ],
+      "Go to Updates": [
+        "Μετάβαση στις Ενημερώσεις"
       ],
       "Group address": [
         "Διεύθυνση ομάδας"
@@ -13275,6 +13286,9 @@
       "New second password": [
         "Νέος δεύτερος κωδικός πρόσβασης"
       ],
+      "Newsletters": [
+        "Ενημερωτικά δελτία"
+      ],
       "No (users cannot use the app until a vault is shared with them)": [
         "Όχι (οι χρήστες δεν μπορούν να χρησιμοποιήσουν την εφαρμογή έως ότου μοιραστεί μαζί τους μία κρύπτη)"
       ],
@@ -13283,6 +13297,9 @@
       ],
       "No label found": [
         "Δεν βρέθηκε ετικέτα"
+      ],
+      "Non-promotional content and news": [
+        "Μη προωθητικό περιεχόμενο και ειδήσεις"
       ],
       "Non-standard ports": [
         "Μη τυποποιημένες θύρες"
@@ -13406,6 +13423,12 @@
       ],
       "Previous password": [
         "Προηγούμενος κωδικός πρόσβασης"
+      ],
+      "Primary": [
+        "Κύριο"
+      ],
+      "Promotions": [
+        "Προωθήσεις"
       ],
       "Prompt to trust keys": [
         "Προτροπή για χαρακτηρισμό κλειδιών ως αξιόπιστα"
@@ -13552,6 +13575,12 @@
       "SMTP username": [
         "Ονόμα χρήστη SMTP"
       ],
+      "Social": [
+        "Κοινωνικά"
+      ],
+      "Social media updates and activity": [
+        "Ενημερώσεις και δραστηριότητες στα μέσα κοινωνικής δικτύωσης"
+      ],
       "Spam": [
         "Ενοχλητικό"
       ],
@@ -13636,6 +13665,9 @@
       "Token name": [
         "Όνομα διακριτικού"
       ],
+      "Transactions": [
+        "Συναλλαγές"
+      ],
       "Two-password mode": [
         "Λειτουργία δύο κωδικών"
       ],
@@ -13651,6 +13683,9 @@
       "Unlimited logins and devices": [
         "Απεριόριστες συνδέσεις και συσκευές"
       ],
+      "Updates": [
+        "Ενημερώσεις"
+      ],
       "Upload 1 or more encryption keys": [
         "Ανεβάστε 1 ή περισσότερα κλειδιά κρυπτογράφησης"
       ],
@@ -13665,6 +13700,9 @@
       ],
       "URL": [
         "Διεύθυνση URL"
+      ],
+      "Use email categories": [
+        "Χρήση κατηγοριών email"
       ],
       "Use folder colors": [
         "Χρήση χρωμάτων φακέλου"
@@ -15645,9 +15683,6 @@
       "Review subscription and pay": [
         "Ανασκόπηση συνδρομής και πληρωμή"
       ],
-      "Start exploring the ${ BRAND_NAME } universe": [
-        "Ξεκινήστε την εξερεύνηση του ${ BRAND_NAME } σύμπαντος"
-      ],
       "Switch plans?": [
         "Αλλαγή προγράμματος;"
       ],
@@ -17432,28 +17467,28 @@
       "terms and conditions": [
         "όροι και προϋποθέσεις"
       ],
-      "The coupon is valid for ${ couponRedemptions } renewal.": [
-        "Το κουπόνι ισχύει για ${ couponRedemptions } ανανέωση.",
-        "Το κουπόνι ισχύει για ${ couponRedemptions } ανανεώσεις."
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "Το έκπτωση ισχύει για ${ renewalsWithCoupon } ανανέωση.",
+        "Το έκπτωση ισχύει για ${ renewalsWithCoupon } ανανεώσεις."
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Η ειδικά μειωμένη τιμή ισχύει για ${ couponRedemptions } μήνα. Στη συνέχεια, θα ανανεωθεί αυτόματα σε ${ renewPriceStr } για 1 μήνα. Μπορείτε να ακυρώσετε ανά πάσα στιγμή.",
+        "Η ειδικά μειωμένη τιμή ισχύει για ${ couponRedemptions } μήνες. Στη συνέχεια, θα ανανεωθεί αυτόματα σε ${ renewPriceStr } για 1 μήνα. Μπορείτε να ακυρώσετε ανά πάσα στιγμή."
       ],
       "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
         "Η ειδικά μειωμένη τιμή ισχύει για τον πρώτο ${ subscriptionLength } μήνα.",
         "Η ειδικά μειωμένη τιμή ισχύει για τους πρώτους ${ subscriptionLength } μήνες."
       ],
-      "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "Η ειδικά μειωμένη τιμή ισχύει για τον πρώτο μήνα. Το κουπόνι ισχύει για ${ couponRedemptions } ανανέωση. Στη συνέχεια, θα ανανεώνεται αυτόματα με τιμή ${ renewPriceStr } για 1 μήνα. Μπορείτε να ακυρώσετε οποιαδήποτε στιγμή.",
-        "Η ειδικά μειωμένη τιμή ισχύει για τον πρώτο μήνα. Το κουπόνι ισχύει για ${ couponRedemptions } ανανεώσεις. Στη συνέχεια, θα ανανεώνεται αυτόματα με τιμή ${ renewPriceStr } για 1 μήνα. Μπορείτε να ακυρώσετε οποιαδήποτε στιγμή."
-      ],
       "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Η ειδικά μειωμένη τιμή ισχύει για τον πρώτο μήνα. Στη συνέχεια, θα ανανεωθεί αυτόματα σε ${ renewPriceStr } κάθε μήνα. Μπορείτε να ακυρώσετε ανά πάσα στιγμή."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Η ειδικά μειωμένη τιμή των ${ priceWithDiscount } ισχύει για ${ couponRedemptions } μήνα. Στη συνέχεια, θα ανανεωθεί αυτόματα σε ${ renewPriceStr } για 1 μήνα. Μπορείτε να ακυρώσετε ανά πάσα στιγμή.",
+        "Η ειδικά μειωμένη τιμή των ${ priceWithDiscount } ισχύει για ${ couponRedemptions } μήνες. Στη συνέχεια, θα ανανεωθεί αυτόματα σε ${ renewPriceStr } για 1 μήνα. Μπορείτε να ακυρώσετε ανά πάσα στιγμή."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "Η ειδικά μειωμένη τιμή του ${ priceWithDiscount } ισχύει για τον πρώτο ${ subscriptionLength } μήνα.",
         "Η ειδικά μειωμένη τιμή του ${ priceWithDiscount } ισχύει για τους πρώτους ${ subscriptionLength } μήνες."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "Η ειδικά μειωμένη τιμή του ${ priceWithDiscount } ισχύει για τον πρώτο μήνα. Το κουπόνι ισχύει για ${ couponRedemptions } ανανέωση. Στη συνέχεια, θα ανανεωθεί αυτόματα στο ${ renewPriceStr } για 1 μήνα. Μπορείτε να ακυρώσετε ανά πάσα στιγμή.",
-        "Η ειδικά μειωμένη τιμή του ${ priceWithDiscount } ισχύει για τον πρώτο μήνα. Το κουπόνι ισχύει για ${ couponRedemptions } ανανεώσεις. Στη συνέχεια, θα ανανεωθεί αυτόματα στο ${ renewPriceStr } για 1 μήνα. Μπορείτε να ακυρώσετε ανά πάσα στιγμή."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Η ειδικά μειωμένη τιμή των ${ priceWithDiscount } ισχύει για τον πρώτο μήνα. Στη συνέχεια, θα ανανεωθεί αυτόματα σε ${ renewPriceStr } το μήνα. Μπορείτε να ακυρώσετε ανά πάσα στιγμή."
@@ -21647,6 +21682,32 @@
         "Δεν βρέθηκαν διακριτικά SMTP"
       ]
     },
+    "Theme": {
+      "Auto": [
+        "Αυτόματο"
+      ],
+      "Dark": [
+        "Σκοτεινό"
+      ],
+      "Light": [
+        "Φωτεινό"
+      ],
+      "Mode: Auto": [
+        "Λειτουργία: Αυτόματη"
+      ],
+      "Mode: Dark": [
+        "Λειτουργία: Σκοτεινή"
+      ],
+      "Mode: Light": [
+        "Λειτουργία: Φωτεινή"
+      ],
+      "Sync with system": [
+        "Συγχρονισμός με το σύστημα"
+      ],
+      "Use ${ BRAND_NAME } settings": [
+        "Χρησιμοποιήστε τις ρυθμίσεις ${ BRAND_NAME }"
+      ]
+    },
     "Time unit": {
       "${ ceilDays } day": [
         "${ ceilDays } ημέρα",
@@ -23291,8 +23352,8 @@
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Η δωρεάν δοκιμή του ${ planName } λήγει στις ${ textDate }"
       ],
-      "Your ${ planName } subscription has started": [
-        "Η ${ planName } συνδρομή σας έχει ξεκινήσει"
+      "Your ${ planTitle } subscription has started": [
+        "Η ${ planTitle } συνδρομή σας έχει ξεκινήσει"
       ],
       "Your calendar link": [
         "Ο σύνδεσμος του ημερολογίου σας"
@@ -23584,6 +23645,9 @@
       ],
       "Specify the users of the eduGAIN entity who are allowed to authenticate with SAML SSO": [
         "Καθορίστε τους χρήστες της οντότητας eduGAIN που επιτρέπεται να πραγματοποιούν έλεγχο ταυτότητας με SAML SSO"
+      ],
+      "System notification": [
+        "Ειδοποίηση συστήματος"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Οι υποφάκελοι συστήματος θα εμφανιστούν στο ${ MAIL_APP_NAME } ως χωριστοί φάκελοι"
@@ -24426,6 +24490,9 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "Η ${ BRAND_NAME } θα μεταφέρει όσο το δυνατόν περισσότερα δεδομένα, ξεκινώντας από τα πιο πρόσφατα μηνύματά σας."
+      ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } offer has ended": [
+        "Η προσφορά ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } έχει λήξει"
       ],
       "Are you sure you want to delete the phone number?": [
         "Θέλετε σίγουρα να διαγράψετε τον αριθμό τηλεφώνου;"

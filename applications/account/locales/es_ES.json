@@ -1820,26 +1820,6 @@
         "Nuevo correo electrónico"
       ]
     },
-    "app-switcher": {
-      "Browse the web privately and block ads": [
-        "Navega en la web de manera privada y bloquea anuncios"
-      ],
-      "Keep your schedule private": [
-        "Mantén privada tu agenda"
-      ],
-      "Protect your passwords and identity": [
-        "Protege tus contraseñas y tu identidad"
-      ],
-      "Safeguard your files and photos": [
-        "Protege tus archivos y fotos"
-      ],
-      "Secure your communications": [
-        "Protege tus comunicaciones"
-      ],
-      "Talk confidentially": [
-        "Hablar confidencialmente"
-      ]
-    },
     "app-switcher_2025": {
       "Bitcoin wallet": [
         "Cartera Bitcoin"
@@ -2981,11 +2961,6 @@
       ],
       "Expand": [
         "Expandir"
-      ]
-    },
-    "collider_2025: app-switcher": {
-      "Chat with a private AI assistant": [
-        "Chatea con un asistente de IA privado"
       ]
     },
     "collider_2025: feature": {
@@ -4548,8 +4523,8 @@
       "Simplify syncing and scheduling with shared calendars.": [
         "Simplifica la sincronización y la programación con calendarios compartidos."
       ],
-      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
-        "Para importar mediante un archivo CSV y VCF, asegúrate que el archivo no exceda de ${ MAX_IMPORT_FILE_SIZE_STRING } o de ${ MAX_IMPORT_CONTACTS_STRING } contactos. Si el archivo es grande, divídelo en archivos pequeños. ${ learnMoreLink }."
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Para importar mediante un archivo CSV o VCF, asegúrate de que este no supere los ${ MAX_IMPORT_FILE_SIZE_STRING } o los ${ maxContactString } contactos. Si el archivo es más grande, divídelo en varios archivos más pequeños. ${ learnMoreLink }."
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Para importar tus contactos desde Google u Outlook, ${ easySwitchLink }."
@@ -4792,6 +4767,9 @@
       "Edge": [
         "Edge"
       ],
+      "Fedora": [
+        "Fedora"
+      ],
       "Fire TV": [
         "Fire TV"
       ],
@@ -4809,6 +4787,9 @@
       ],
       "Installation guide": [
         "Guía de Instalación"
+      ],
+      "iOS": [
+        "iOS"
       ],
       "iPhone/iPad": [
         "iPhone/iPad"
@@ -4851,6 +4832,9 @@
       ],
       "TV": [
         "TV"
+      ],
+      "Ubuntu/Debian": [
+        "Ubuntu/Debian"
       ],
       "Windows": [
         "Windows"
@@ -6254,6 +6238,9 @@
       "You have reached the number of contacts limit for your account": [
         "Has alcanzado el límite de contactos para tu cuenta."
       ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "Has agotado todas las direcciones disponibles. Actualiza tu plan para añadir una nueva o desactiva alguna de las que tienes en tu cuenta."
+      ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Has utilizado todos los usuarios de tu plan. Mejora tu plan para añadir un nuevo usuario."
       ],
@@ -6347,8 +6334,8 @@
       "An error occurred uploading your file. No file has been selected.": [
         "Se ha producido un error al subir el archivo. No se ha seleccionado ningún archivo."
       ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
-        "El archivo ${ formattedFilename } contiene más de ${ MAX_IMPORT_CONTACTS_STRING } contactos."
+      "Your file ${ formattedFilename } contains more than ${ maxContactString } contacts.": [
+        "Tu archivo ${ formattedFilename } contiene más de ${ maxContactString } contactos."
       ],
       "Your file ${ formattedFilename } has no contacts to be imported.": [
         "El archivo ${ formattedFilename } no tiene contactos para importar."
@@ -6434,6 +6421,9 @@
       ]
     },
     "Error message": {
+      "Account is deleted or disabled": [
+        "La cuenta está eliminada o desactivada"
+      ],
       "App currently unavailable": [
         "La aplicación no está disponible actualmente."
       ],
@@ -8439,9 +8429,9 @@
       "All your changes will be lost.": [
         "Todos los cambios se perderán."
       ],
-      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
-        "Todos tus contactos serán importados hasta un límite de ${ MAX_CONTACTS_PER_USER }.",
-        "Todos tus contactos serán importados hasta un límite de ${ MAX_CONTACTS_PER_USER }."
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "Se importarán todos tus contactos, hasta un límite de ${ maxContact }.",
+        "Se importarán todos tus contactos, hasta un máximo de ${ maxContact }."
       ],
       "Allocated": [
         "Asignado"
@@ -8667,6 +8657,9 @@
       ],
       "CNET editors choice award with a rating of 8.4 out of 10": [
         "Premio Editors' Choice de CNET con una calificación de 8,44 sobre 10 estrellas"
+      ],
+      "Coming soon": [
+        "Próximamente"
       ],
       "Compromised": [
         "Vulnerada"
@@ -8924,9 +8917,6 @@
       ],
       "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
         "Cada dominio solo puede tener un registro SPF (TXT). Si deseas mantener el registro SPF (TXT) existente, puedes añadir ${ spf } a tu registro actual (colóquelo después de ${ spfValue })."
-      ],
-      "Early access": [
-        "Acceso anticipado"
       ],
       "Edit email address": [
         "Editar la dirección de correo electrónico"
@@ -9894,6 +9884,9 @@
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Contáctanos para obtener ayuda con cualquier cosa de ${ BRAND_NAME }."
       ],
+      "Receive notifications for ${ categoryLabel }": [
+        "Recibe notificaciones para ${ categoryLabel }"
+      ],
       "Recently used servers:": [
         "Servidores usados recientemente:"
       ],
@@ -9989,9 +9982,6 @@
       ],
       "Securing your account": [
         "Protegiendo tu cuenta"
-      ],
-      "Select a service to continue": [
-        "Selecciona un servicio para continuar"
       ],
       "Select one or multiple user affiliations": [
         "Selecciona una o varias afiliaciones para el usuario"
@@ -11817,6 +11807,9 @@
       "Autofill 2FA": [
         "Rellenar automáticamente 2FA"
       ],
+      "Automated confirmations and alerts": [
+        "Confirmaciones y alertas automatizadas"
+      ],
       "Autosave": [
         "Guardar automáticamente"
       ],
@@ -11850,6 +11843,9 @@
       "Block malware, ads and trackers": [
         "Bloquear malware, anuncios y rastreadores"
       ],
+      "Bookings, billings, and orders": [
+        "Reservaciones, facturas y órdenes"
+      ],
       "Browser": [
         "Navegador"
       ],
@@ -11882,6 +11878,9 @@
       ],
       "Cash": [
         "Efectivo"
+      ],
+      "Categories": [
+        "Categorías"
       ],
       "Category": [
         "Categoría"
@@ -12003,6 +12002,9 @@
       "Days of the week": [
         "Días de la semana"
       ],
+      "Deals, offers, marketing emails": [
+        "Ofertas, promociones, correos electrónicos de publicidad"
+      ],
       "Default email address": [
         "Dirección de correo electrónico por defecto"
       ],
@@ -12042,6 +12044,9 @@
       "Disabled": [
         "Desactivado"
       ],
+      "Discussion board posts and threads": [
+        "Publicaciones e hilos del foro de debate"
+      ],
       "Display name": [
         "Nombre a mostrar"
       ],
@@ -12071,9 +12076,6 @@
       ],
       "Email address": [
         "Dirección de correo electrónico"
-      ],
-      "Email categories": [
-        "Categorías de correo electrónico"
       ],
       "Email or username": [
         "Dirección de correo electrónico o nombre de usuario"
@@ -12165,6 +12167,9 @@
       "for your first month": [
         "en tu primer mes"
       ],
+      "Forums": [
+        "Foros"
+      ],
       "From: ${ fromEmail }": [
         "De: ${ fromEmail }"
       ],
@@ -12179,6 +12184,27 @@
       ],
       "Gift code": [
         "Código promocional"
+      ],
+      "Go to Forums": [
+        "Ir a Foros"
+      ],
+      "Go to Newsletters": [
+        "Ir a Boletines"
+      ],
+      "Go to Primary": [
+        "Ir a Principal"
+      ],
+      "Go to Promotions": [
+        "Ir a Promociones"
+      ],
+      "Go to Social": [
+        "Ir a Sociales"
+      ],
+      "Go to Transactions": [
+        "Ir a Operaciones"
+      ],
+      "Go to Updates": [
+        "Ir a Actualizaciones"
       ],
       "Group address": [
         "Dirección del grupo"
@@ -12381,6 +12407,9 @@
       "New second password": [
         "Nueva segunda contraseña"
       ],
+      "Newsletters": [
+        "Boletines"
+      ],
       "No (users cannot use the app until a vault is shared with them)": [
         "No (los usuarios no podrán usar la aplicación hasta que se comparta una caja fuerte con ellos)"
       ],
@@ -12389,6 +12418,9 @@
       ],
       "No label found": [
         "No se ha encontrado ninguna etiqueta."
+      ],
+      "Non-promotional content and news": [
+        "Contenido no promocional y noticias"
       ],
       "Non-standard ports": [
         "Puertos no estándares"
@@ -12513,6 +12545,12 @@
       "Previous password": [
         "Contraseña anterior"
       ],
+      "Primary": [
+        "Principal"
+      ],
+      "Promotions": [
+        "Promociones"
+      ],
       "Proration": [
         "Prorrateo"
       ],
@@ -12634,6 +12672,12 @@
       "SMTP token": [
         "Token SMTP"
       ],
+      "Social": [
+        "Redes Sociales"
+      ],
+      "Social media updates and activity": [
+        "Actualizaciones y actividad en redes sociales"
+      ],
       "Spam": [
         "Spam"
       ],
@@ -12703,6 +12747,9 @@
       "To: ${ toEmail }": [
         "Para: ${ toEmail }"
       ],
+      "Transactions": [
+        "Transacciones"
+      ],
       "Two-password mode": [
         "Modo de doble contraseña"
       ],
@@ -12718,6 +12765,9 @@
       "Unlimited logins and devices": [
         "Número ilimitado de inicios de sesión y dispositivos"
       ],
+      "Updates": [
+        "Actualizaciones"
+      ],
       "Upload 1 or more encryption keys": [
         "Carga 1 o más claves de cifrado"
       ],
@@ -12729,6 +12779,9 @@
       ],
       "URL": [
         "URL"
+      ],
+      "Use email categories": [
+        "Usar categorías de correo electrónico"
       ],
       "Use folder colors": [
         "Usar los colores de las carpetas"
@@ -13447,6 +13500,10 @@
         "${ n } reunión activa a la vez",
         "${ n } reuniones activas a la vez"
       ],
+      "${ n } participant": [
+        "${ n } participante",
+        "${ n } participantes"
+      ],
       "24 hours per meeting": [
         "24 horas por reunión"
       ],
@@ -13456,6 +13513,9 @@
       "Appointment scheduling": [
         "Programación de citas"
       ],
+      "Booking pages": [
+        "Páginas de reserva"
+      ],
       "Browser, mobile, and desktop apps": [
         "Aplicaciones para navegador, móvil y escritorio"
       ],
@@ -13464,6 +13524,9 @@
       ],
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "Pantalla compartida con cifrado de extremo a extremo y chat efímero en la llamada"
+      ],
+      "Meeting recording": [
+        "Grabación de la reunión"
       ],
       "One active meeting at a time": [
         "Una reunión activa a la vez"
@@ -14650,9 +14713,6 @@
       ],
       "Review subscription and pay": [
         "Verificar suscripción y pagar"
-      ],
-      "Start exploring the ${ BRAND_NAME } universe": [
-        "Lánzate a explorar el universo ${ BRAND_NAME }"
       ],
       "Switch plans?": [
         "¿Cambiar de plan?"
@@ -16302,6 +16362,9 @@
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Se renueva por ${ renewPriceStr } y cancela cuando quieras."
       ],
+      "Sorry, this offer is not available for your account.": [
+        "Lo sentimos, esta oferta no está disponible para tu cuenta."
+      ],
       "Sorry, this offer is not available with your current plan.": [
         "Lo sentimos, esta oferta no está disponible con tu plan actual."
       ],
@@ -16311,28 +16374,28 @@
       "terms and conditions": [
         "términos y condiciones"
       ],
-      "The coupon is valid for ${ couponRedemptions } renewal.": [
-        "El cupón es válido por ${ couponRedemptions } renovación.",
-        "El cupón es válido para ${ couponRedemptions } renovaciones."
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "El descuento es válido para ${ renewalsWithCoupon } renovación.",
+        "El descuento es válido para ${ renewalsWithCoupon } renovaciones."
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "El precio con descuento especial es válido durante ${ couponRedemptions } mes. Después, se renovará automáticamente a ${ renewPriceStr } por 1 mes. Puedes cancelar en cualquier momento.",
+        "El precio con descuento especial es válido durante ${ couponRedemptions } meses. Después, se renovará automáticamente a ${ renewPriceStr } por 1 mes. Puedes cancelar en cualquier momento."
       ],
       "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
         "El precio especial de descuento es válido para el primer ${ subscriptionLength } mes.",
         "El precio especial de descuento es válido para los primeros ${ subscriptionLength } meses."
       ],
-      "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "El precio con descuento especial es válido para el primer mes. El cupón es válido para ${ couponRedemptions } renovación. Después se renovará automáticamente a ${ renewPriceStr } por 1 mes. Puedes cancelar en cualquier momento.",
-        "El precio con descuento especial es válido para el primer mes. El cupón es válido para ${ couponRedemptions } renovaciones. Después se renovará automáticamente a ${ renewPriceStr } por 1 mes. Puedes cancelarlo en cualquier momento."
-      ],
       "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "La oferta especial es válida durante el primer mes. Después se renovará automáticamente por ${ renewPriceStr } cada mes. Puedes cancelarla en cualquier momento."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "El precio con descuento especial de ${ priceWithDiscount } es válido durante ${ couponRedemptions } mes. Después, se renovará automáticamente a ${ renewPriceStr } por 1 mes. Puedes cancelar en cualquier momento.",
+        "El precio con descuento especial de ${ priceWithDiscount } es válido durante ${ couponRedemptions } meses. Después, se renovará automáticamente a ${ renewPriceStr } por 1 mes. Puedes cancelar en cualquier momento."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "El precio especial de descuento de ${ priceWithDiscount } es válido para el primer ${ subscriptionLength } mes",
         "El precio especial de descuento de ${ priceWithDiscount } es válido para los primeros ${ subscriptionLength } meses."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "La oferta especial por ${ priceWithDiscount } es válida para el primer mes. El cupón es válido para ${ couponRedemptions } renovación. Después se renovará automáticamente a ${ renewPriceStr } por 1 mes. Puedes cancelarlo en cualquier momento.",
-        "La oferta especial por ${ priceWithDiscount } es válida para el primer mes. El cupón es válido para ${ couponRedemptions } renovaciones Después se renovará automáticamente a ${ renewPriceStr } por 1 mes. Puedes cancelarlo en cualquier momento."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "La oferta especial por ${ priceWithDiscount } es válida durante el primer mes. Después se renovará automáticamente por ${ renewPriceStr } cada mes. Puedes cancelarla en cualquier momento."
@@ -20422,6 +20485,32 @@
         "Campo vCard"
       ]
     },
+    "Theme": {
+      "Auto": [
+        "Automático"
+      ],
+      "Dark": [
+        "Oscuro"
+      ],
+      "Light": [
+        "Claro"
+      ],
+      "Mode: Auto": [
+        "Modo: Automático"
+      ],
+      "Mode: Dark": [
+        "Modo: Oscuro"
+      ],
+      "Mode: Light": [
+        "Modo: Claro"
+      ],
+      "Sync with system": [
+        "Sincronizar con el sistema"
+      ],
+      "Use ${ BRAND_NAME } settings": [
+        "Usa la configuración de ${ BRAND_NAME }"
+      ]
+    },
     "Time unit": {
       "${ ceilDays } day": [
         "${ ceilDays } día",
@@ -21251,6 +21340,9 @@
       "Get the apps": [
         "Obtener las aplicaciones"
       ],
+      "Get unlimited meetings on all your devices with ${ planName }. ${ upgradeButton }": [
+        "Consigue reuniones ilimitadas en todos tus dispositivos con ${ planName }. ${ upgradeButton }"
+      ],
       "Gift": [
         "Regalo"
       ],
@@ -21997,8 +22089,8 @@
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Tu prueba gratuita de ${ planName } Plus termina el ${ textDate }."
       ],
-      "Your ${ planName } subscription has started": [
-        "Tu suscripción a ${ planName } ha comenzado."
+      "Your ${ planTitle } subscription has started": [
+        "Tu suscripción a ${ planTitle } ha comenzado"
       ],
       "Your calendar link": [
         "Enlace a tu calendario"
@@ -22242,6 +22334,9 @@
       ],
       "Specify the users of the eduGAIN entity who are allowed to authenticate with SAML SSO": [
         "Especifica los usuarios de la entidad de eduGAIN que tienen permiso para autenticarse con un inicio de sesión único (SSO) SAML."
+      ],
+      "System notification": [
+        "Notificación del sistema"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Las carpetas secundarias del sistema se mostrarán como carpetas separadas en ${ MAIL_APP_NAME }."
@@ -22567,6 +22662,9 @@
       ]
     },
     "Upsell": {
+      "${ BRAND_NAME } for Business": [
+        "${ BRAND_NAME } para Empresas"
+      ],
       "**Save up to ${ priceString }** with a longer subscription. Same premium features, lower price.": [
         "**Ahorra hasta ${ priceString }** con una suscripción más larga. Mismas funciones premium, menor precio."
       ],
@@ -22578,6 +22676,9 @@
       ],
       "Did you know?": [
         "¿Lo sabías?"
+      ],
+      "Everything you need to collaborate securely in a single subscription. Get access to ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, ${ SHEETS_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } and ${ LUMO_SHORT_APP_NAME } AI Assistant.": [
+        "Todo lo que necesitas para colaborar de forma segura en una sola suscripción. Accede a ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, ${ SHEETS_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } y el Asistente de IA de ${ LUMO_SHORT_APP_NAME }."
       ],
       "Get ${ drivePlusPlanMaxSpace } storage for your files, photos and documents, and recover file versions with 10-year file recovery.": [
         "Consigue ${ drivePlusPlanMaxSpace } de almacenamiento para tus archivos, fotos y documentos, y recupera versiones anteriores con el historial de archivos de 10 años."
@@ -23008,6 +23109,9 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } transferirá tantos datos como sea posible, comenzando con tus mensajes más recientes."
+      ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } offer has ended": [
+        "La oferta de ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } ha finalizado"
       ],
       "Are you sure you want to delete the phone number?": [
         "¿Estás seguro de que quieres eliminar este número de teléfono?"

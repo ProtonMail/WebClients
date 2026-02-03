@@ -1949,26 +1949,6 @@
         "Yeni e-posta"
       ]
     },
-    "app-switcher": {
-      "Browse the web privately and block ads": [
-        "İnternet üzerinde gizliliğinizi koruyarak ve reklamları engelleyerek gezinin"
-      ],
-      "Keep your schedule private": [
-        "Zaman planınızı gizli tutun"
-      ],
-      "Protect your passwords and identity": [
-        "Parolalarınızı ve kimliğinizi koruyun"
-      ],
-      "Safeguard your files and photos": [
-        "Dosyalarınızı ve fotoğraflarınızı koruyun"
-      ],
-      "Secure your communications": [
-        "İletişiminizin güvenliğini sağlayın"
-      ],
-      "Talk confidentially": [
-        "Gizliliğinizi koruyarak konuşun"
-      ]
-    },
     "app-switcher_2025": {
       "Bitcoin wallet": [
         "Bitcoin cüzdanı"
@@ -3202,11 +3182,6 @@
       ],
       "Expand": [
         "Genişlet"
-      ]
-    },
-    "collider_2025: app-switcher": {
-      "Chat with a private AI assistant": [
-        "Kişisel yapay zeka yardımcınızla sohbet edin"
       ]
     },
     "collider_2025: feature": {
@@ -4789,8 +4764,8 @@
       "Simplify syncing and scheduling with shared calendars.": [
         "Paylaşılan takvimler ile zamanlamayı eşitlemeyi ve planlamayı kolaylaştırın."
       ],
-      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
-        "CSV ve VCF dosyası ile içe aktarma için, ${ MAX_IMPORT_FILE_SIZE_STRING } dosya boyutunu ya da ${ MAX_IMPORT_CONTACTS_STRING } kişiyi aşmadığınızdan emin olun. Dosyanız büyükse lütfen daha küçük dosyalara bölün. ${ learnMoreLink }."
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "CSV ve VCF dosyası ile içe aktarma için, ${ MAX_IMPORT_FILE_SIZE_STRING } dosya boyutunu ya da ${ maxContactString } kişiyi aşmadığınızdan emin olun. Dosyanız büyükse lütfen daha küçük dosyalara bölün. ${ learnMoreLink }."
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Kişilerinizi Google ya da Outlook üzerinden içe aktarmak için ${ easySwitchLink }."
@@ -6691,7 +6666,7 @@
         "Hesabınızın kişi sayısı sınırına ulaştınız"
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
-        "Planınızdaki tüm adresleri kullandınız. Yeni bir adres eklemek veya hesabınızdaki bir adresi devre dışı bırakmak için lütfen tarifenizi yükseltin."
+        "Tarifenizdeki tüm adresleri kullandınız. Yeni bir adres eklemek veya hesabınızdaki bir adresi kullanımdan kaldırmak için lütfen tarifenizi yükseltin."
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Tarifenizin kullanıcı sayısı sınırına ulaştınız. Yeni bir kullanıcı eklemek için lütfen tarifenizi yükseltin."
@@ -6786,8 +6761,8 @@
       "An error occurred uploading your file. No file has been selected.": [
         "Dosyanız yüklenirken bir sorun çıktı. Herhangi bir dosya seçilmemiş."
       ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
-        "${ formattedFilename } dosyanızda ${ MAX_IMPORT_CONTACTS_STRING } kişiden daha fazla kişi var."
+      "Your file ${ formattedFilename } contains more than ${ maxContactString } contacts.": [
+        "${ formattedFilename } dosyanızda ${ maxContactString } taneden fazla kişi var."
       ],
       "Your file ${ formattedFilename } has no contacts to be imported.": [
         "${ formattedFilename } dosyanızda içe aktarılacak bir kişi yok."
@@ -6873,6 +6848,9 @@
       ]
     },
     "Error message": {
+      "Account is deleted or disabled": [
+        "Hesap silindi veya devre dışı bırakıldı"
+      ],
       "App currently unavailable": [
         "Uygulama şu anda kullanılamıyor"
       ],
@@ -8981,9 +8959,9 @@
       "All your changes will be lost.": [
         "Yaptığınız tüm değişiklikler kaybolacak."
       ],
-      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
-        "${ MAX_CONTACTS_PER_USER } kişiye kadar tüm kişileriniz içe aktarılacak",
-        "${ MAX_CONTACTS_PER_USER } kişiye kadar tüm kişileriniz içe aktarılacak"
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "${ maxContact } kişiye kadar olan tüm kişileriniz içe aktarılacak",
+        "${ maxContact } kişiye kadar olan tüm kişileriniz içe aktarılacak"
       ],
       "Allocated": [
         "Ayrılmış"
@@ -9242,6 +9220,9 @@
       ],
       "CNET editors choice award with a rating of 8.4 out of 10": [
         "CNET Editörün Seçimi ödülünü 10 üzerinden 8,4 puanla kazandı"
+      ],
+      "Coming soon": [
+        "Çok yakında"
       ],
       "Compromised": [
         "Ele geçirilmiş"
@@ -9505,9 +9486,6 @@
       ],
       "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
         "Her etki alanı için yalnızca bir SPF (TXT) kaydı olabilir. Var olan SPF (TXT) kaydını tutmak istiyorsanız var olan kaydınıza ${ spf } ekleyebilirsiniz (${ spfValue } sonrasına ekleyin)."
-      ],
-      "Early access": [
-        "Erken erişim"
       ],
       "Edit email address": [
         "E-posta adresini düzenle"
@@ -10544,6 +10522,9 @@
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "${ BRAND_NAME } ile ilgili her konuda yardım almak için bizimle görüşün."
       ],
+      "Receive notifications for ${ categoryLabel }": [
+        "${ categoryLabel } bildirimlerini al"
+      ],
       "Recently used servers:": [
         "Son kullanılan sunucular:"
       ],
@@ -10642,9 +10623,6 @@
       ],
       "Securing your account": [
         "Hesabınız korunuyor"
-      ],
-      "Select a service to continue": [
-        "İlerlemek için bir hizmet seçin"
       ],
       "Select one or multiple user affiliations": [
         "Bir ya da birkaç kullanıcı ilişkisi seçin"
@@ -11576,9 +11554,6 @@
       ],
       "You can enforce the password rules members of your organization will use when they create or reset the password to their ${ BRAND_NAME } Account.": [
         "Kuruluşunuzun üyeleri, ${ BRAND_NAME } hesaplarının parolasını oluştururken veya sıfırlarken uygulanacak zorunlu parola kuralları belirleyebilirsiniz."
-      ],
-      "You can get our premium privacy services in one bundle—and it's just **${ priceString }/month**.": [
-        "Ücretli gizlilik hizmetlerimizi tek bir pakette alabilirsiniz — ve fiyatı sadece **${ priceString }/ay**."
       ],
       "You can get our premium privacy services in one bundle—and it’s just **${ priceString }/month**.": [
         "Ücretli gizlilik hizmetlerimizi bir arada yalnızca **${ priceString }/ay** ile alabilirsiniz."
@@ -12648,6 +12623,9 @@
       "Autofill 2FA": [
         "Otomatik iki adımlı doğrulama doldurma"
       ],
+      "Automated confirmations and alerts": [
+        "Otomatik onaylar ve uyarılar"
+      ],
       "Automatically save contacts": [
         "Kişileri otomatik olarak kaydet"
       ],
@@ -12687,6 +12665,9 @@
       "Block malware, ads and trackers": [
         "Kötü amaçlı yazılımlar, reklamlar ve etkinlik izleyiciler engellensin"
       ],
+      "Bookings, billings, and orders": [
+        "Rezervasyonlar, faturalar ve siparişler"
+      ],
       "Browser": [
         "Tarayıcı"
       ],
@@ -12722,6 +12703,9 @@
       ],
       "Cash": [
         "Nakit"
+      ],
+      "Categories": [
+        "Kategoriler"
       ],
       "Category": [
         "Kategori"
@@ -12858,6 +12842,9 @@
       "Days of the week": [
         "Haftanın günleri"
       ],
+      "Deals, offers, marketing emails": [
+        "Fırsatlar, teklifler, pazarlama e-postaları"
+      ],
       "Default email address": [
         "Varsayılan e-posta adresi"
       ],
@@ -12900,6 +12887,9 @@
       "Disabled": [
         "Kapalı"
       ],
+      "Discussion board posts and threads": [
+        "Tartışma panosu gönderileri ve konuları"
+      ],
       "Display name": [
         "Görüntülenecek ad"
       ],
@@ -12935,9 +12925,6 @@
       ],
       "Email address": [
         "E-posta adresi"
-      ],
-      "Email categories": [
-        "E-posta kategorileri"
       ],
       "Email or username": [
         "E-posta adresi ya da kullanıcı adı"
@@ -13038,6 +13025,9 @@
       "for your first month": [
         "ilk ayınız için"
       ],
+      "Forums": [
+        "Forumlar"
+      ],
       "From: ${ fromEmail }": [
         "Kimden: ${ fromEmail }"
       ],
@@ -13052,6 +13042,27 @@
       ],
       "Gift code": [
         "Hediye kodu"
+      ],
+      "Go to Forums": [
+        "Forumlara git"
+      ],
+      "Go to Newsletters": [
+        "Duyurulara git"
+      ],
+      "Go to Primary": [
+        "Birincil e-postalara git"
+      ],
+      "Go to Promotions": [
+        "Fırsatlara git"
+      ],
+      "Go to Social": [
+        "Sosyal ağlara git"
+      ],
+      "Go to Transactions": [
+        "Hesap işlemlerine git"
+      ],
+      "Go to Updates": [
+        "Güncellemelere git"
       ],
       "Group address": [
         "Grup adresi"
@@ -13275,6 +13286,9 @@
       "New second password": [
         "Yeni ikinci parola"
       ],
+      "Newsletters": [
+        "Duyurular"
+      ],
       "No (users cannot use the app until a vault is shared with them)": [
         "Hayır (bir kasa kendileriyle paylaşılmadıkça kullanıcılar uygulamayı kullanamaz)"
       ],
@@ -13283,6 +13297,9 @@
       ],
       "No label found": [
         "Herhangi bir etiket bulunamadı"
+      ],
+      "Non-promotional content and news": [
+        "Fırsatlar dışındaki içerikler ve haberler"
       ],
       "Non-standard ports": [
         "Standart olmayan bağlantı noktaları"
@@ -13406,6 +13423,12 @@
       ],
       "Previous password": [
         "Önceki parola"
+      ],
+      "Primary": [
+        "Birincil saat dilimi"
+      ],
+      "Promotions": [
+        "Kazançlar"
       ],
       "Prompt to trust keys": [
         "Anahtarlara güvenilmesi sorulsun"
@@ -13552,6 +13575,12 @@
       "SMTP username": [
         "SMTP kullanıcı adı"
       ],
+      "Social": [
+        "Sosyal ağ"
+      ],
+      "Social media updates and activity": [
+        "Sosyal ağ güncellemeleri ve etkinlikleri"
+      ],
       "Spam": [
         "İstenmeyen e-posta"
       ],
@@ -13636,6 +13665,9 @@
       "Token name": [
         "Kod adı"
       ],
+      "Transactions": [
+        "Hesap işlemleri"
+      ],
       "Two-password mode": [
         "İki parola kipi"
       ],
@@ -13651,6 +13683,9 @@
       "Unlimited logins and devices": [
         "Sınırsız sayıda oturum açma ve aygıt"
       ],
+      "Updates": [
+        "Güncellemeler"
+      ],
       "Upload 1 or more encryption keys": [
         "1 ya da birkaç şifreleme anahtarı yükleyin"
       ],
@@ -13665,6 +13700,9 @@
       ],
       "URL": [
         "İnternet adresi"
+      ],
+      "Use email categories": [
+        "E-posta kategorileri kullanılsın"
       ],
       "Use folder colors": [
         "Klasör renkleri kullanılsın"
@@ -14448,7 +14486,7 @@
         "Uçtan uca şifrelenmiş ekran paylaşımı ve geçici çağrı içi sohbet"
       ],
       "Meeting recording": [
-        "Toplantı kaydı"
+        "Görüşme kaydı"
       ],
       "One active meeting at a time": [
         "Aynı anda bir etkin görüşme"
@@ -15644,9 +15682,6 @@
       ],
       "Review subscription and pay": [
         "Aboneliği ve ödemeyi gözden geçirin"
-      ],
-      "Start exploring the ${ BRAND_NAME } universe": [
-        "${ BRAND_NAME } evrenini keşfetmeye başlayın"
       ],
       "Switch plans?": [
         "Tarifeler değiştirilsin mi?"
@@ -17421,7 +17456,7 @@
         "${ renewPriceStr } tutar ile yenilenir. İstediğiniz zaman iptal edebilirsiniz."
       ],
       "Sorry, this offer is not available for your account.": [
-        "Üzgünüz, bu teklif hesabınız için geçerli değil."
+        "Ne yazık ki bu teklif hesabınız ile kullanılamıyor."
       ],
       "Sorry, this offer is not available with your current plan.": [
         "Ne yazık ki, bu teklif geçerli tarifeniz ile kullanılamıyor."
@@ -17432,28 +17467,28 @@
       "terms and conditions": [
         "hükümler ve koşullar"
       ],
-      "The coupon is valid for ${ couponRedemptions } renewal.": [
-        "Kupon ${ couponRedemptions } yenileme için geçerlidir.",
-        "Kupon ${ couponRedemptions } yenileme için geçerlidir."
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "İndirim ${ renewalsWithCoupon } yenileme için geçerlidir.",
+        "İndirim ${ renewalsWithCoupon } yenileme için geçerlidir."
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Özel indirimli fiyat ${ couponRedemptions } ay boyunca geçerlidir. Ardından otomatik olarak 1 ay için ${ renewPriceStr } ile yenilenir. İstediğiniz zaman iptal edebilirsiniz.",
+        "Özel indirimli fiyat ${ couponRedemptions } ay boyunca geçerlidir. Ardından otomatik olarak 1 ay için ${ renewPriceStr } ile yenilenir. İstediğiniz zaman iptal edebilirsiniz."
       ],
       "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
         "Özel indirimli fiyat yalnızca ilk ${ subscriptionLength } ay için geçerlidir.",
         "Özel indirimli fiyat yalnızca ilk ${ subscriptionLength } ay için geçerlidir."
       ],
-      "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "İndirimli fiyat yalnızca ilk ay için geçerlidir. Kupon, ${ couponRedemptions } yenileme için geçerlidir. Sonrasında aylık ${ renewPriceStr } ile otomatik olarak yenilenir. İstediğiniz zaman iptal edebilirsiniz.",
-        "İndirimli fiyat yalnızca ilk ay için geçerlidir. Kupon, ${ couponRedemptions } yenileme için geçerlidir. Sonrasında aylık ${ renewPriceStr } ile otomatik olarak yenilenir. İstediğiniz zaman iptal edebilirsiniz."
-      ],
       "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Özel indirimli fiyat yalnızca ilk ay için geçerlidir. Ardından her ay otomatik olarak ${ renewPriceStr } ile yenilenir. İstediğiniz zaman iptal edebilirsiniz."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Özel indirimli fiyat ${ priceWithDiscount }, ${ couponRedemptions } ay boyunca geçerlidir. Ardından otomatik olarak 1 ay için ${ renewPriceStr } ile yenilenir. İstediğiniz zaman iptal edebilirsiniz.",
+        "Özel indirimli fiyat ${ priceWithDiscount }, ${ couponRedemptions } ay boyunca geçerlidir. Ardından otomatik olarak 1 ay için ${ renewPriceStr } ile yenilenir. İstediğiniz zaman iptal edebilirsiniz."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "Özel indirimli ${ priceWithDiscount } fiyatı ilk ${ subscriptionLength } ay için geçerlidir.",
         "Özel indirimli ${ priceWithDiscount } fiyatı ilk ${ subscriptionLength } ay için geçerlidir."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "Özel indirimli ${ priceWithDiscount } fiyatı ilk ay için geçerlidir. Kupon, ${ couponRedemptions } yenileme için geçerlidir. Ardından, her ay ${ renewPriceStr } ile otomatik olarak yenilenir. İstediğiniz zaman iptal edebilirsiniz.",
-        "Özel indirimli ${ priceWithDiscount } fiyatı ilk ay için geçerlidir. Kupon, ${ couponRedemptions } yenileme için geçerlidir. Ardından, her ay ${ renewPriceStr } ile otomatik olarak yenilenir. İstediğiniz zaman iptal edebilirsiniz."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Özel indirimli ${ priceWithDiscount } fiyatı ilk ay için geçerlidir. Daha sonra her ay otomatik olarak ${ renewPriceStr } ile yenilenir. İstediğiniz zaman iptal edebilirsiniz."
@@ -21647,6 +21682,32 @@
         "Herhangi bir SMTP kodu bulunamadı"
       ]
     },
+    "Theme": {
+      "Auto": [
+        "Otomatik"
+      ],
+      "Dark": [
+        "Koyu"
+      ],
+      "Light": [
+        "Açık"
+      ],
+      "Mode: Auto": [
+        "Mod: Otomatik"
+      ],
+      "Mode: Dark": [
+        "Mod: Karanlık"
+      ],
+      "Mode: Light": [
+        "Mod: Aydınlık"
+      ],
+      "Sync with system": [
+        "Sistemle senkronize et"
+      ],
+      "Use ${ BRAND_NAME } settings": [
+        "${ BRAND_NAME } ayarlarını kullan"
+      ]
+    },
     "Time unit": {
       "${ ceilDays } day": [
         "${ ceilDays } gün",
@@ -22513,7 +22574,7 @@
         "Uygulamaları indirme"
       ],
       "Get unlimited meetings on all your devices with ${ planName }. ${ upgradeButton }": [
-        "${ planName } ile tüm aygıtlarınızda sınırsız toplantı gerçekleştirin. ${ upgradeButton }"
+        "${ planName } ile tüm aygıtlarınızda sınırsız görüşmeler yapın. ${ upgradeButton }"
       ],
       "Gift": [
         "Hediye"
@@ -23291,8 +23352,8 @@
       "Your ${ planName } free trial ends on ${ textDate }": [
         "${ planName } ücretsiz deneme süreniz ${ textDate } tarihinde sonra erecek"
       ],
-      "Your ${ planName } subscription has started": [
-        "${ planName } aboneliğiniz başladı"
+      "Your ${ planTitle } subscription has started": [
+        "${ planTitle } aboneliğiniz başladı"
       ],
       "Your calendar link": [
         "Takvim bağlantınız"
@@ -23584,6 +23645,9 @@
       ],
       "Specify the users of the eduGAIN entity who are allowed to authenticate with SAML SSO": [
         "SAML tek oturum açma ile kimliklerini doğrulayabilecek eduGAIN varlığının kullanıcılarını belirtin"
+      ],
+      "System notification": [
+        "Sistem bildirimi"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Sistem alt klasörleri ${ MAIL_APP_NAME } üzerinde ayrı klasörler olarak görünecek"
@@ -23965,7 +24029,7 @@
     },
     "Upsell": {
       "${ BRAND_NAME } for Business": [
-        "İşletmeler için ${ BRAND_NAME }"
+        "${ BRAND_NAME } for Business"
       ],
       "**Save up to ${ priceString }** with a longer subscription. Same premium features, lower price.": [
         "**Daha uzun süre abone olarak ${ priceString }** kadar kazanç sağlayın. Aynı ücretli özellikler, daha düşük fiyat."
@@ -23980,7 +24044,7 @@
         "Biliyor muydunuz?"
       ],
       "Everything you need to collaborate securely in a single subscription. Get access to ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, ${ SHEETS_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } and ${ LUMO_SHORT_APP_NAME } AI Assistant.": [
-        "Tek bir abonelikle güvenli bir şekilde işbirliği yapmak için ihtiyacınız olan her şey. ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, ${ SHEETS_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } ve ${ LUMO_SHORT_APP_NAME } Yapay Zeka Asistanına erişin."
+        "Tek bir abonelikle güvenli bir şekilde işbirliği yapmak için gerek duyduğunuz her şey. ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, ${ SHEETS_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } ve ${ LUMO_SHORT_APP_NAME } yapay zeka yardımcısına erişim."
       ],
       "Get ${ drivePlusPlanMaxSpace } storage for your files, photos and documents, and recover file versions with 10-year file recovery.": [
         "Dosyalarınız, fotoğraflarınız ve belgeleriniz için ${ drivePlusPlanMaxSpace } depolama alanı edinin ve 10 yıl geriye dönük dosya kurtarma özelliği ile dosya sürümlerini geri yükleyin."
@@ -24426,6 +24490,9 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME }, en son iletilerinizden başlayarak olabildiğince fazla veri aktaracak."
+      ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } offer has ended": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } teklifi sona erdi"
       ],
       "Are you sure you want to delete the phone number?": [
         "Telefon numarasını silmek istediğinize emin misiniz?"

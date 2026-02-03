@@ -1765,26 +1765,6 @@
         "بريد إلكتروني جديد"
       ]
     },
-    "app-switcher": {
-      "Browse the web privately and block ads": [
-        "تصفح الإنترنيت بأمان تام واحظر الإعلانات"
-      ],
-      "Keep your schedule private": [
-        "حافظ على خصوصية جدولك"
-      ],
-      "Protect your passwords and identity": [
-        "احمِ كلمات مرورك وهويتك"
-      ],
-      "Safeguard your files and photos": [
-        "احمِ ملفاتك وصورك"
-      ],
-      "Secure your communications": [
-        "أمّن اتصالاتك"
-      ],
-      "Talk confidentially": [
-        "اجعل محادثاتك سرية وآمنة"
-      ]
-    },
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "تطبيقات ${ BRAND_NAME }"
@@ -2769,11 +2749,6 @@
       ],
       "Expand": [
         "توسيع"
-      ]
-    },
-    "collider_2025: app-switcher": {
-      "Chat with a private AI assistant": [
-        "دردش مع مساعد ذكاء اصطناعي خاص"
       ]
     },
     "collider_2025: feature": {
@@ -4323,9 +4298,6 @@
       ],
       "Simplify syncing and scheduling with shared calendars.": [
         "بسّط المزامنة والجدولة باستخدام التقويمات المشتركة."
-      ],
-      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
-        "للاستيراد عبر ملف CSV و VCF، تأكد من أن الملف لا يتجاوز ${ MAX_IMPORT_FILE_SIZE_STRING } أو ${ MAX_IMPORT_CONTACTS_STRING } جهة اتصال. إذا كان ملفك أكبر، فيرجى تقسيمه إلى ملفات أصغر. ${ learnMoreLink }."
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "لاستيراد جهات اتصالك من Google أو Outlook، ${ easySwitchLink }."
@@ -6032,9 +6004,6 @@
       ],
       "An error occurred uploading your file. No file has been selected.": [
         "حدث خطأ أثناء تحميل الملف الخاص بك. لم يتم تحديد أي ملف."
-      ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
-        "يحتوي ملفك ${ formattedFilename } على أكثر من ${ MAX_IMPORT_CONTACTS_STRING } جهة اتصال."
       ],
       "Your file ${ formattedFilename } has no contacts to be imported.": [
         "الملف الخاص بك ${ formattedFilename } ليس لديه جهات اتصال لاستيرادها."
@@ -8252,14 +8221,6 @@
       "All your changes will be lost.": [
         "سيتم فقدان التغييرات الخاصة بك."
       ],
-      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
-        "سيتم استيراد كل جهات اتصالك، بحد أقصى ${ MAX_CONTACTS_PER_USER } من جهات الاتصال",
-        "سيتم استيراد جميع جهات اتصالك، بحد أقصى جهة اتصال واحدة (${ MAX_CONTACTS_PER_USER }).",
-        "سيتم استيراد جميع جهات اتصالك، بحد أقصى جهتي اتصال (${ MAX_CONTACTS_PER_USER }).",
-        "سيتم استيراد كل جهات اتصالك، بحد أقصى ${ MAX_CONTACTS_PER_USER } جهات اتصال",
-        "سيتم استيراد كل جهات اتصالك، بحد أقصى ${ MAX_CONTACTS_PER_USER } جهة اتصال",
-        "سيتم استيراد كل جهات اتصالك، بحد أقصى ${ MAX_CONTACTS_PER_USER } جهة اتصال"
-      ],
       "Allocated": [
         "مخصص"
       ],
@@ -8478,6 +8439,9 @@
       ],
       "CNET editors choice award with a rating of 8.4 out of 10": [
         "جائزة اختيار محرري CNET بتقييم 8.4 من 10"
+      ],
+      "Coming soon": [
+        "قريبًا"
       ],
       "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
         "قم بإعداد مصادقة SAML لمؤسستك عبر موفر هوية (IdP). وهذا سيمكن SAML للمنظمة كُلََّها."
@@ -8749,9 +8713,6 @@
       ],
       "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
         "يمكن أن يحتوي كل نطاق على سجل SPF (TXT) واحد فقط. إذا كنت تريد الاحتفاظ بسجل SPF (TXT) الحالي، فيمكنك إضافة ${ spf } إلى سجلك الحالي (ضعه بعد ${ spfValue })."
-      ],
-      "Early access": [
-        "وصول مبكر"
       ],
       "Edit email address": [
         "تعديل عنوان البريد الإلكتروني"
@@ -9805,9 +9766,6 @@
       ],
       "Securing your account": [
         "جارٍ تأمين حسابك ..."
-      ],
-      "Select a service to continue": [
-        "حدد خدمة للمتابعة"
       ],
       "Select one or multiple user affiliations": [
         "حدد انتماء مستخدم واحد أو أكثر"
@@ -11623,6 +11581,9 @@
       "Autofill 2FA": [
         "تعبئة تلقائية للمصادقة الثنائية (2FA)"
       ],
+      "Automated confirmations and alerts": [
+        "التأكيدات والتنبيهات التلقائية"
+      ],
       "Autosave": [
         "حفظ تلقائي"
       ],
@@ -11649,6 +11610,9 @@
       ],
       "Block malware, ads and trackers": [
         "احجب الإعلانات، البرامج الخبيثة، وبرامج التعقب"
+      ],
+      "Bookings, billings, and orders": [
+        "الحجوزات والفواتير والطلبات"
       ],
       "Browser": [
         "المتصفح"
@@ -11791,6 +11755,9 @@
       "Date format": [
         "تنسيق التاريخ"
       ],
+      "Deals, offers, marketing emails": [
+        "الصفقات والعروض ورسائل البريد الإلكتروني التسويقية"
+      ],
       "Default email address": [
         "عنوان البريد الإلكتروني الافتراضي"
       ],
@@ -11826,6 +11793,9 @@
       ],
       "Disabled": [
         "معطل"
+      ],
+      "Discussion board posts and threads": [
+        "منشورات وسلاسل محادثات منتديات النقاش"
       ],
       "Display name": [
         "الاسم المعروض"
@@ -11944,6 +11914,9 @@
       "for your first month": [
         "لشهرك الأول"
       ],
+      "Forums": [
+        "المنتديات"
+      ],
       "From: ${ fromEmail }": [
         "مِن: ${ fromEmail }"
       ],
@@ -11958,6 +11931,27 @@
       ],
       "Gift code": [
         "رمز الهدية"
+      ],
+      "Go to Forums": [
+        "الانتقال إلى المنتديات"
+      ],
+      "Go to Newsletters": [
+        "الانتقال إلى النشرات الإخبارية"
+      ],
+      "Go to Primary": [
+        "الانتقال إلى الأساسي"
+      ],
+      "Go to Promotions": [
+        "الانتقال إلى العروض الترويجية"
+      ],
+      "Go to Social": [
+        "الانتقال إلى الشبكات الاجتماعية"
+      ],
+      "Go to Transactions": [
+        "الانتقال إلى المعاملات"
+      ],
+      "Go to Updates": [
+        "الانتقال إلى التحديثات"
       ],
       "Group address": [
         "عنوان المجموعة"
@@ -12145,11 +12139,17 @@
       "New second password": [
         "كلمة مرور ثانية جديدة"
       ],
+      "Newsletters": [
+        "النشرات الإخبارية"
+      ],
       "No filter": [
         "بلا حجب"
       ],
       "No label found": [
         "لم يُعثر على تسمية"
+      ],
+      "Non-promotional content and news": [
+        "المحتوى غير الترويجي والأخبار"
       ],
       "Non-standard ports": [
         "منافذ غير تقليدية"
@@ -12261,6 +12261,12 @@
       ],
       "Previous password": [
         "كلمة المرور السابقة"
+      ],
+      "Primary": [
+        "الرئيسي"
+      ],
+      "Promotions": [
+        "العروض الترويجية"
       ],
       "Proration": [
         "التناسب"
@@ -12375,6 +12381,12 @@
       "Single sign-on URL": [
         "رابط تسجيل الدخول الفردي (SSO)"
       ],
+      "Social": [
+        "الاجتماعية"
+      ],
+      "Social media updates and activity": [
+        "تحديثات وأنشطة وسائل التواصل الاجتماعي"
+      ],
       "Spam": [
         "البريد العشوائي"
       ],
@@ -12441,6 +12453,9 @@
       "To: ${ toEmail }": [
         "إلى ${ toEmail }"
       ],
+      "Transactions": [
+        "المعاملات"
+      ],
       "Two-password mode": [
         "نمط كلمة مرور الثنائية"
       ],
@@ -12455,6 +12470,9 @@
       ],
       "Unlimited logins and devices": [
         "عمليات تسجيل دخول وأجهزة غير محدودة"
+      ],
+      "Updates": [
+        "التحديثات"
       ],
       "Upload 1 or more encryption keys": [
         "تحميل مفتاح تشفير واحد أو أكثر"
@@ -14342,9 +14360,6 @@
       "Review subscription and pay": [
         "مراجعة الاشتراك والدفع"
       ],
-      "Start exploring the ${ BRAND_NAME } universe": [
-        "ابدأ في استكشاف عالم ${ BRAND_NAME }"
-      ],
       "Switch plans?": [
         "هل تريد تبديل الخطط؟"
       ],
@@ -15974,14 +15989,6 @@
       "terms and conditions": [
         "الشروط والأحكام"
       ],
-      "The coupon is valid for ${ couponRedemptions } renewals.": [
-        "القسيمة صالحة لـ ${ couponRedemptions } من التجديدات.",
-        "القسيمة صالحة لتجديد واحد (${ couponRedemptions }).",
-        "القسيمة صالحة لتجديدين (${ couponRedemptions }).",
-        "القسيمة صالحة لـ ${ couponRedemptions } تجديدات.",
-        "القسيمة صالحة لـ ${ couponRedemptions } تجديدًا.",
-        "القسيمة صالحة لـ ${ couponRedemptions } تجديدًا."
-      ],
       "The specially discounted price is valid for the first ${ subscriptionLength } months.": [
         "السعر المخفَّض خاص للأشهر ${ subscriptionLength } الأولى",
         "السعر المخفَّض خاص للشهر ${ subscriptionLength } الأول",
@@ -15989,14 +15996,6 @@
         "السعر المخفَّض خاص للأشهر ${ subscriptionLength } الأولى",
         "السعر المخفَّض خاص للأشهر ${ subscriptionLength } الأولى",
         "السعر المخفَّض خاص للأشهر ${ subscriptionLength } الأولى"
-      ],
-      "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "السعر المخفَّض خاص للشهر الأول. القسيمة صالحة لـ ${ couponRedemptions } من مرات التجديد. بعد ذلك سيُجدَّد الاشتراك تلقائيًا بسعر ${ renewPriceStr } لشهر واحد. يمكنك إلغاءه في أي وقت",
-        "السعر المخفَّض خاص للشهر الأول. القسيمة صالحة لـ ${ couponRedemptions } من مرات التجديد. بعد ذلك سيُجدَّد الاشتراك تلقائيًا بسعر ${ renewPriceStr } لشهر واحد. يمكنك إلغاءه في أي وقت",
-        "السعر المخفَّض خاص للشهر الأول. القسيمة صالحة لـ ${ couponRedemptions } من مرات التجديد. بعد ذلك سيُجدَّد الاشتراك تلقائيًا بسعر ${ renewPriceStr } لشهر واحد. يمكنك إلغاءه في أي وقت",
-        "السعر المخفَّض خاص للشهر الأول. القسيمة صالحة لـ ${ couponRedemptions } من مرات التجديد. بعد ذلك سيُجدَّد الاشتراك تلقائيًا بسعر ${ renewPriceStr } لشهر واحد. يمكنك إلغاءه في أي وقت",
-        "السعر المخفَّض خاص للشهر الأول. القسيمة صالحة لـ ${ couponRedemptions } من مرات التجديد. بعد ذلك سيُجدَّد الاشتراك تلقائيًا بسعر ${ renewPriceStr } لشهر واحد. يمكنك إلغاءه في أي وقت",
-        "السعر المخفَّض خاص للشهر الأول. القسيمة صالحة لـ ${ couponRedemptions } من مرات التجديد. بعد ذلك سيُجدَّد الاشتراك تلقائيًا بسعر ${ renewPriceStr } لشهر واحد. يمكنك إلغاءه في أي وقت"
       ],
       "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "السعر المخفض الخاص صالح للشهر الأول. ثم سيتم تجديده تلقائيًا بسعر ${ renewPriceStr } كل شهر. يمكنك الإلغاء في أي وقت."
@@ -16008,14 +16007,6 @@
         "السعر المخفض الخاص البالغ ${ priceWithDiscount } صالح لأول ${ subscriptionLength } أشهر.",
         "السعر المخفض الخاص البالغ ${ priceWithDiscount } صالح لأول ${ subscriptionLength } شهرًا.",
         "السعر المخفض الخاص البالغ ${ priceWithDiscount } صالح لأول ${ subscriptionLength } شهرًا."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "السعر المخفض الخاص البالغ ${ priceWithDiscount } صالح للشهر الأول. القسيمة صالحة لـ ${ couponRedemptions } من التجديدات. سيُجدد تلقائيًا بعد ذلك بسعر ${ renewPriceStr } لمدة شهر واحد. يمكنك الإلغاء في أي وقت.",
-        "السعر المخفض الخاص البالغ ${ priceWithDiscount } صالح للشهر الأول. القسيمة صالحة لتجديد واحد (${ couponRedemptions }). سيُجدد تلقائيًا بعد ذلك بسعر ${ renewPriceStr } لمدة شهر واحد. يمكنك الإلغاء في أي وقت.",
-        "السعر المخفض الخاص البالغ ${ priceWithDiscount } صالح للشهر الأول. القسيمة صالحة لتجديدين (${ couponRedemptions }). سيُجدد تلقائيًا بعد ذلك بسعر ${ renewPriceStr } لمدة شهر واحد. يمكنك الإلغاء في أي وقت.",
-        "السعر المخفض الخاص البالغ ${ priceWithDiscount } صالح للشهر الأول. القسيمة صالحة لـ ${ couponRedemptions } تجديدات. سيُجدد تلقائيًا بعد ذلك بسعر ${ renewPriceStr } لمدة شهر واحد. يمكنك الإلغاء في أي وقت.",
-        "السعر المخفض الخاص البالغ ${ priceWithDiscount } صالح للشهر الأول. القسيمة صالحة لـ ${ couponRedemptions } تجديدًا. سيُجدد تلقائيًا بعد ذلك بسعر ${ renewPriceStr } لمدة شهر واحد. يمكنك الإلغاء في أي وقت.",
-        "السعر المخفض الخاص البالغ ${ priceWithDiscount } صالح للشهر الأول. القسيمة صالحة لـ ${ couponRedemptions } تجديدًا. سيُجدد تلقائيًا بعد ذلك بسعر ${ renewPriceStr } لمدة شهر واحد. يمكنك الإلغاء في أي وقت."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "السعر المخفض الخاص البالغ ${ priceWithDiscount } صالح للشهر الأول. سيُجدد تلقائيًا بعد ذلك بسعر ${ renewPriceStr } كل شهر. يمكنك الإلغاء في أي وقت."
@@ -20227,6 +20218,14 @@
         "حقل vCard"
       ]
     },
+    "Theme": {
+      "Dark": [
+        "داكن"
+      ],
+      "Light": [
+        "فاتح"
+      ]
+    },
     "Time unit": {
       "${ ceilDays } days": [
         "${ ceilDays } أيام",
@@ -21804,9 +21803,6 @@
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "تنتهي الفترة التجريبية المجانية لخطة ${ planName } في ${ textDate }"
-      ],
-      "Your ${ planName } subscription has started": [
-        "لقد بدأ اشتراكك في ${ planName }"
       ],
       "Your calendar link": [
         "رابط تقويمك"

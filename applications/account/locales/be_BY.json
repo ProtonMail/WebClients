@@ -1965,26 +1965,6 @@
         "Новы ліст"
       ]
     },
-    "app-switcher": {
-      "Browse the web privately and block ads": [
-        "Прыватны прагляд вэб-старонак і блакіроўка рэкламы"
-      ],
-      "Keep your schedule private": [
-        "Трымае ваш расклад у сакрэце"
-      ],
-      "Protect your passwords and identity": [
-        "Абарона вашых пароляў і ідэнтычнасці"
-      ],
-      "Safeguard your files and photos": [
-        "Абарона вашых файлаў і фатаграфій"
-      ],
-      "Secure your communications": [
-        "Абарона вашых камунікацый"
-      ],
-      "Talk confidentially": [
-        "Размаўляйце канфідэнцыяльна"
-      ]
-    },
     "app-switcher_2025": {
       "Bitcoin wallet": [
         "Кашалёк Bitcoin"
@@ -3238,11 +3218,6 @@
       ],
       "Expand": [
         "Разгарнуць"
-      ]
-    },
-    "collider_2025: app-switcher": {
-      "Chat with a private AI assistant": [
-        "Чат з прыватным памочнікам ШІ"
       ]
     },
     "collider_2025: feature": {
@@ -4837,8 +4812,8 @@
       "Simplify syncing and scheduling with shared calendars.": [
         "Спрасціце сінхранізацыю і планаванне з дапамогай абагуленых календароў."
       ],
-      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
-        "Пераканайцеся, што файл не перавышае аб'ем у ${ MAX_IMPORT_FILE_SIZE_STRING } або ${ MAX_IMPORT_CONTACTS_STRING } кантакты для імпартавання праз файл CSV і VCF. Раздзяліце яго на меншыя файлы, калі файл перавышае максімальны аб'ём. ${ learnMoreLink }"
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Пераканайцеся, што файл не перавышае аб'ем у ${ MAX_IMPORT_FILE_SIZE_STRING } або ${ maxContactString } кантакты для імпартавання праз файл CSV і VCF. Раздзяліце яго на меншыя файлы, калі файл перавышае максімальны аб'ём. ${ learnMoreLink }"
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Для імпартавання вашых кантактаў з Google або Outlook, ${ easySwitchLink }"
@@ -5087,6 +5062,9 @@
       "Edge": [
         "Edge"
       ],
+      "Fedora": [
+        "Fedora"
+      ],
       "Fire TV": [
         "Fire TV"
       ],
@@ -5104,6 +5082,9 @@
       ],
       "Installation guide": [
         "Дапаможнік па ўсталяванні"
+      ],
+      "iOS": [
+        "iOS"
       ],
       "iPhone/iPad": [
         "iPhone/iPad"
@@ -5146,6 +5127,9 @@
       ],
       "TV": [
         "TV"
+      ],
+      "Ubuntu/Debian": [
+        "Ubuntu/Debian"
       ],
       "Windows": [
         "Windows"
@@ -6052,7 +6036,7 @@
         "Гэта дзеянне ўступіць у сілу неадкладна."
       ],
       "Time required before automatically giving access": [
-        "Час, які патрабуецца, перад тым як доступ будзе прадастаўлены аўтаматычна"
+        "Час, які патрабуецца, перад тым як доступ будзе дадзены аўтаматычна"
       ],
       "Time required before automatically giving you access": [
         "Час, які патрабуецца, перад тым як доступ будзе прадастаўлены аўтаматычна"
@@ -6757,6 +6741,9 @@
       "You have reached the number of contacts limit for your account": [
         "Вы дасягнулі абмежавання па колькасці кантактаў для вашага ўліковага запісу"
       ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "Вы выкарысталі ўсе адрасы на сваім тарыфным плане. Палепшыце свой тарыфны план, каб дадаць новыя адрасы або адключыце адрас у сваім уліковым запісе."
+      ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Вы дасягнулі максімальнай колькасці карыстальнікаў на вашым тарыфным плане. Палепшыце свой тарыфны план, каб дадаць новага карыстальніка."
       ],
@@ -6852,8 +6839,8 @@
       "An error occurred uploading your file. No file has been selected.": [
         "Адбылася памылка пры запампоўванні вашага файла. Ніводны файл не выбраны."
       ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
-        "Ваш файл ${ formattedFilename } змяшчае больш за ${ MAX_IMPORT_CONTACTS_STRING } кантактаў."
+      "Your file ${ formattedFilename } contains more than ${ maxContactString } contacts.": [
+        "Ваш файл ${ formattedFilename } змяшчае больш за ${ maxContactString } кантактаў."
       ],
       "Your file ${ formattedFilename } has no contacts to be imported.": [
         "Ваш файл ${ formattedFilename } не змяшчае кантактаў для імпартавання."
@@ -8803,8 +8790,8 @@
       "${ numberOfNonPrivateKeys } uploaded file is not a valid private key. Please verify and try again.": [
         "${ numberOfNonPrivateKeys } запампаваны файл з'яўляецца несапраўдным прыватным ключом. Спраўдзіце яго/іх і паспрабуйце яшчэ раз.",
         "${ numberOfNonPrivateKeys } запампаваныя файлы з'яўляюцца несапраўднымі прыватнымі ключамі. Спраўдзіце іх і паспрабуйце яшчэ раз.",
-        "${ numberOfNonPrivateKeys } запампаваных файаў з'яўляюцца несапраўднымі прыватнымі ключамі. Спраўдзіце іх і паспрабуйце яшчэ раз.",
-        "${ numberOfNonPrivateKeys } запампаваныя файлы з'яўляюцца несапраўднымі прыватнымі ключамі. Спраўдзіце іх і паспрабуйце яшчэ раз."
+        "${ numberOfNonPrivateKeys } запампаваных файлаў з'яўляюцца несапраўднымі прыватнымі ключамі. Спраўдзіце іх і паспрабуйце яшчэ раз.",
+        "${ numberOfNonPrivateKeys } запампаваных файлаў з'яўляюцца несапраўднымі прыватнымі ключамі. Спраўдзіце іх і паспрабуйце яшчэ раз."
       ],
       "${ PASS_APP_NAME } allows you to store passwords, notes, and other sensitive information with end-to-end encryption. Available on ${ ios }, ${ android } and in your ${ browser }.": [
         "${ PASS_APP_NAME } дазваляе вам захоўваць паролі, нататкі і іншыя канфідэнцыяльныя звесткі з дапамогай скразнога шыфравання. Праграмы даступны для ${ ios }, ${ android } і ў вашым браўзеры ${ browser }."
@@ -9163,11 +9150,11 @@
       "All your changes will be lost.": [
         "Усе вашы змены будуць страчаны."
       ],
-      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
-        "Усе вашы кантакты будуць імпартаваны. Абмежаванне імпартавання складае ${ MAX_CONTACTS_PER_USER }",
-        "Усе вашы кантакты будуць імпартаваны. Абмежаванне імпартавання складае ${ MAX_CONTACTS_PER_USER }",
-        "Усе вашы кантакты будуць імпартаваны. Абмежаванне імпартавання складае ${ MAX_CONTACTS_PER_USER }",
-        "Усе вашы кантакты будуць імпартаваны. Абмежаванне імпартавання складае ${ MAX_CONTACTS_PER_USER }"
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "Усе вашы кантакты будуць імпартаваны. Абмежаванне імпартавання складае да ${ maxContact }",
+        "Усе вашы кантакты будуць імпартаваны. Абмежаванне імпартавання складае да ${ maxContact }",
+        "Усе вашы кантакты будуць імпартаваны. Абмежаванне імпартавання складае да ${ maxContact }",
+        "Усе вашы кантакты будуць імпартаваны. Абмежаванне імпартавання складае да ${ maxContact }"
       ],
       "Allocated": [
         "Вылучана"
@@ -9426,6 +9413,9 @@
       ],
       "CNET editors choice award with a rating of 8.4 out of 10": [
         "Узнагарода \"Выбар рэдакцыі CNET\" з рэйтынгам 8,4 з 10"
+      ],
+      "Coming soon": [
+        "Неўзабаве з'явіцца"
       ],
       "Compromised": [
         "Скампраметаваны"
@@ -9699,9 +9689,6 @@
       ],
       "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
         "Кожны дамен можа мець толькі адзін запіс SPF (TXT). Калі вы хочаце захаваць існуючы запіс SPF (TXT), вы можаце дадаць ${ spf } да вашага бягучага запісу (пастаўце яго пасля ${ spfValue })."
-      ],
-      "Early access": [
-        "Ранні доступ"
       ],
       "Edit email address": [
         "Рэдагаваць адрас электроннай пошты"
@@ -10750,6 +10737,9 @@
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Звяртайцеся да нас з любымі пытаннямі, якія датычацца ${ BRAND_NAME }"
       ],
+      "Receive notifications for ${ categoryLabel }": [
+        "Атрымліваць апавяшчэнні для ${ categoryLabel }"
+      ],
       "Recently used servers:": [
         "Серверы, якімі вы нядаўна карысталіся:"
       ],
@@ -10848,9 +10838,6 @@
       ],
       "Securing your account": [
         "Абарона вашага ўліковага запісу"
-      ],
-      "Select a service to continue": [
-        "Выберыце сэрвіс, каб працягнуць"
       ],
       "Select one or multiple user affiliations": [
         "Выберыце адну або некалькі прыналежнасцей карыстальніка"
@@ -11591,7 +11578,7 @@
         "Нам неабходна аўтэнтыфікаваць плацеж з дапамогай вашага банка."
       ],
       "We recommend adding servers in different locations (one per city) to maximize redundancy.": [
-        "Рэкамендуецца дадаваць серверы ў розных месцазнаходжаннях (па адным на горад), каб разгрануць лішкавасць."
+        "Рэкамендуецца дадаваць серверы ў розных месцазнаходжаннях (па адным на горад), каб разгарнуць лішкавасць."
       ],
       "We recommend having at least 2 servers in order to provide redundancy.": [
         "Мы рэкамендуем мець прынамсі 2 серверы, каб забяспечыць лішкавасць."
@@ -11705,7 +11692,7 @@
         "З катэгорыямі электроннай пошты важныя паведамленні трапляюць у асноўную паштовую скрыню. Усё астатняе размяркоўваецца па катэгорыях."
       ],
       "With groups, you can implement the company security policies for access control and reduce the risk of accessing unauthorised data.": [
-        "З групамі вы можаце ўкараняць палітыкі бяспекі кампаніі для кантролю доступу і знізіць рызыку несанкцыяванага доступу да даных."
+        "З групамі вы можаце ўкараняць палітыкі бяспекі кампаніі для кантролю доступу і знізіць рызыку несанкцыянаванага доступу да даных."
       ],
       "With groups, you can quickly and easily send emails to all the people in a specified group.": [
         "Пры дапамозе груп, вы можаце хутка і лёгка адпраўляць лісты ўсім людзям у канкрэтнай групе."
@@ -12144,7 +12131,7 @@
         "Дадайце новага карыстальніка ў вашу арганізацыю і стварыце для яго адрас."
       ],
       "For security reasons, we need to verify that you are the owner of ${ domainName }. Please add the following TXT record in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips ${ kbLink }.": [
-        "У мэтах бяспекі нам трэба спраўдзіць, што вы з'яўляецеся ўладальнікам ${ domainName }. Дадайце наступны запіс TXT у кансоль DNS (якая размешчана на той платформе, дзе вы набылі карыстальніцкі дамен). Вы можаце знайсці прыклад і некалькі карысных парад вось ${ kbLink }."
+        "У мэтах бяспекі нам трэба спраўдзіць, што вы з'яўляецеся ўладальнікам ${ domainName }. Дадайце наступны запіс TXT у кансоль DNS (якая размешчана на той платформе, дзе вы набылі карыстальніцкі дамен). Вы можаце знайсці прыклад і некалькі карысных парад тут ${ kbLink }."
       ]
     },
     "Info for payment methods": {
@@ -12903,6 +12890,9 @@
       "Autofill 2FA": [
         "Аўтазапаўненне 2ФА"
       ],
+      "Automated confirmations and alerts": [
+        "Аўтаматычныя пацвярджэнні і абвесткі"
+      ],
       "Automatically save contacts": [
         "Аўтаматычна захоўваць кантакты"
       ],
@@ -12942,6 +12932,9 @@
       "Block malware, ads and trackers": [
         "Блакіраваць шкодныя праграмы, рэкламу і праграмы сачэння"
       ],
+      "Bookings, billings, and orders": [
+        "Браніраванні, выстаўленні рахункаў і заказы"
+      ],
       "Browser": [
         "Браўзер"
       ],
@@ -12977,6 +12970,9 @@
       ],
       "Cash": [
         "Наяўныя"
+      ],
+      "Categories": [
+        "Катэгорыі"
       ],
       "Category": [
         "Катэгорыя"
@@ -13113,6 +13109,9 @@
       "Days of the week": [
         "Дні тыдня"
       ],
+      "Deals, offers, marketing emails": [
+        "Акцыі, прапановы, маркетынгавыя лісты"
+      ],
       "Default email address": [
         "Прадвызначаны адрас электроннай пошты"
       ],
@@ -13155,6 +13154,9 @@
       "Disabled": [
         "Адключана"
       ],
+      "Discussion board posts and threads": [
+        "Допісы дыскусійнай дошкі і гутаркі"
+      ],
       "Display name": [
         "Бачнае імя"
       ],
@@ -13190,9 +13192,6 @@
       ],
       "Email address": [
         "Адрас электроннай пошты"
-      ],
-      "Email categories": [
-        "Катэгорыі лістоў"
       ],
       "Email or username": [
         "Электронная пошта або імя карыстальніка"
@@ -13293,6 +13292,9 @@
       "for your first month": [
         "за ваш першы месяц"
       ],
+      "Forums": [
+        "Форумы"
+      ],
       "From: ${ fromEmail }": [
         "Ад: ${ fromEmail }"
       ],
@@ -13307,6 +13309,27 @@
       ],
       "Gift code": [
         "Падарункавы код"
+      ],
+      "Go to Forums": [
+        "Перайсці на форум"
+      ],
+      "Go to Newsletters": [
+        "Перайсці ў рассылкі"
+      ],
+      "Go to Primary": [
+        "Перайсці ў асноўныя"
+      ],
+      "Go to Promotions": [
+        "Перайсці да рэкламных акцый"
+      ],
+      "Go to Social": [
+        "Перайсці ў сацыяльныя сеткі"
+      ],
+      "Go to Transactions": [
+        "Перайсці ў трансакцыі"
+      ],
+      "Go to Updates": [
+        "Перайсці ў абнаўленні"
       ],
       "Group address": [
         "Адрас групы"
@@ -13530,6 +13553,9 @@
       "New second password": [
         "Новы другі пароль"
       ],
+      "Newsletters": [
+        "Рассылкі"
+      ],
       "No (users cannot use the app until a vault is shared with them)": [
         "Не (карыстальнікі не змогуць выкарыстоўваць праграму, пакуль сховішча не будзе абагулена з імі)"
       ],
@@ -13538,6 +13564,9 @@
       ],
       "No label found": [
         "Метка не знойдзена"
+      ],
+      "Non-promotional content and news": [
+        "Нерэкламны змесціва і навіны"
       ],
       "Non-standard ports": [
         "Нестандартныя парты"
@@ -13661,6 +13690,12 @@
       ],
       "Previous password": [
         "Папярэдні пароль"
+      ],
+      "Primary": [
+        "Асноўны"
+      ],
+      "Promotions": [
+        "Рэклама"
       ],
       "Prompt to trust keys": [
         "Запытваць давераныя ключы"
@@ -13809,6 +13844,12 @@
       "SMTP username": [
         "Імя карыстальніка SMTP"
       ],
+      "Social": [
+        "Сацыяльныя сеткі"
+      ],
+      "Social media updates and activity": [
+        "Абнаўленні і актыўнасць у сацыяльных сетках"
+      ],
       "Spam": [
         "Спам"
       ],
@@ -13893,6 +13934,9 @@
       "Token name": [
         "Назва токена"
       ],
+      "Transactions": [
+        "Трансакцыі"
+      ],
       "Two-password mode": [
         "Рэжым двух пароляў"
       ],
@@ -13908,6 +13952,9 @@
       "Unlimited logins and devices": [
         "Неабмежаваная колькасць запісаў уваходу і прылад"
       ],
+      "Updates": [
+        "Абнаўленні"
+      ],
       "Upload 1 or more encryption keys": [
         "Запампаваць 1 або больш ключоў шыфравання"
       ],
@@ -13922,6 +13969,9 @@
       ],
       "URL": [
         "URL-адрас"
+      ],
+      "Use email categories": [
+        "Выкарыстоўваць катэгорыі электроннай пошты"
       ],
       "Use folder colors": [
         "Выкарыстоўваць колеры папак"
@@ -14697,6 +14747,12 @@
         "${ n } актыўных сустрэч адначасова",
         "${ n } актыўных сустрэч адначасова"
       ],
+      "${ n } participant": [
+        "${ n } удзельнік",
+        "${ n } удзельнікі",
+        "${ n } удзельнікаў",
+        "${ n } удзельнікаў"
+      ],
       "24 hours per meeting": [
         "24 гадзіны на сустрэчу"
       ],
@@ -14706,6 +14762,9 @@
       "Appointment scheduling": [
         "Планаванне сустрэч"
       ],
+      "Booking pages": [
+        "Старонкі браніравання"
+      ],
       "Browser, mobile, and desktop apps": [
         "Браўзер, мабільныя прылады і праграмы для камп'ютараў"
       ],
@@ -14714,6 +14773,9 @@
       ],
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "Дэманстрацыя экрана са скразным шыфраваннем і эфемерны чат пры званках"
+      ],
+      "Meeting recording": [
+        "Запіс сустрэчы"
       ],
       "One active meeting at a time": [
         "Адна актыўная сустрэча адначасова"
@@ -15969,9 +16031,6 @@
       ],
       "Review subscription and pay": [
         "Прагляд падпіскі і аплаты"
-      ],
-      "Start exploring the ${ BRAND_NAME } universe": [
-        "Пачніце даследаваць сэрвісы ${ BRAND_NAME }"
       ],
       "Switch plans?": [
         "Змяніць тарыфны план?"
@@ -17771,6 +17830,9 @@
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Падаўжаецца за ${ renewPriceStr }. Скасаваць можна ў любы час."
       ],
+      "Sorry, this offer is not available for your account.": [
+        "На жаль, гэтая прапанова недаступна для вашага ўліковага запісу."
+      ],
       "Sorry, this offer is not available with your current plan.": [
         "Гэта прапанова недаступна з вашым бягучым тарыфным планам."
       ],
@@ -17780,11 +17842,17 @@
       "terms and conditions": [
         "умовамі выкарыстання"
       ],
-      "The coupon is valid for ${ couponRedemptions } renewal.": [
-        "Купон дзейнічае для ${ couponRedemptions } падаўжэння.",
-        "Купон дзейнічае для ${ couponRedemptions } падаўжэнняў.",
-        "Купон дзейнічае для ${ couponRedemptions } падаўжэнняў.",
-        "Купон дзейнічае для ${ couponRedemptions } падаўжэнняў."
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "Скідка дзейнічае для ${ renewalsWithCoupon } падаўжэння.",
+        "Скідка дзейнічае для ${ renewalsWithCoupon } падаўжэнняў.",
+        "Скідка дзейнічае для ${ renewalsWithCoupon } падаўжэнняў.",
+        "Скідка дзейнічае для ${ renewalsWithCoupon } падаўжэнняў."
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Спецыяльны зніжаны кошт дзейнічае на працягу ${ couponRedemptions } месяца. Пасля гэтага адбудзецца аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы час.",
+        "Спецыяльны зніжаны кошт дзейнічае на працягу ${ couponRedemptions } месяцы. Пасля гэтага адбудзецца аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы час.",
+        "Спецыяльны зніжаны кошт дзейнічае на працягу ${ couponRedemptions } месяцаў. Пасля гэтага адбудзецца аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы час.",
+        "Спецыяльны зніжаны кошт дзейнічае на працягу ${ couponRedemptions } месяцаў. Пасля гэтага адбудзецца аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы час."
       ],
       "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
         "Спецыяльны зніжаны кошт дзейнічае на працягу першага ${ subscriptionLength } месяца.",
@@ -17792,26 +17860,20 @@
         "Спецыяльны зніжаны кошт дзейнічае на працягу першых ${ subscriptionLength } месяцаў.",
         "Спецыяльны зніжаны кошт дзейнічае на працягу першых ${ subscriptionLength } месяцаў."
       ],
-      "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "Спецыяльны зніжаны кошт дзейнічае на працягу першага месяца. Гэты купон дзейнічае для падаўжэння на ${ couponRedemptions }. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы момант.",
-        "Спецыяльны зніжаны кошт дзейнічае на працягу першага месяца. Гэты купон дзейнічае для падаўжэння на ${ couponRedemptions }. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы момант.",
-        "Спецыяльны зніжаны кошт дзейнічае на працягу першага месяца. Гэты купон дзейнічае для падаўжэння на ${ couponRedemptions }. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы момант.",
-        "Спецыяльны зніжаны кошт дзейнічае на працягу першага месяца. Гэты купон дзейнічае для падаўжэння на ${ couponRedemptions }. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы момант."
-      ],
       "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Спецыяльны зніжаны кошт дзейнічае на працягу першага месяца. Пасля гэтага адбудзецца аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за кожны месяц. Скасаваць можна ў любы момант."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Спецыяльны зніжаны кошт у памеры ${ priceWithDiscount } дзейнічае на працягу ${ couponRedemptions } месяца. Пасля гэтага адбудзецца аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы час.",
+        "Спецыяльны зніжаны кошт у памеры ${ priceWithDiscount } дзейнічае на працягу ${ couponRedemptions } месяцаў. Пасля гэтага адбудзецца аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы час.",
+        "Спецыяльны зніжаны кошт у памеры ${ priceWithDiscount } дзейнічае на працягу ${ couponRedemptions } месяцаў. Пасля гэтага адбудзецца аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы час.",
+        "Спецыяльны зніжаны кошт у памеры ${ priceWithDiscount } дзейнічае на працягу ${ couponRedemptions } месяцаў. Пасля гэтага адбудзецца аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы час."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "Спецыяльны зніжаны кошт у памеры ${ priceWithDiscount } дзейнічае на працягу першага ${ subscriptionLength } месяца.",
         "Спецыяльны зніжаны кошт у памеры ${ priceWithDiscount } дзейнічае на працягу першых ${ subscriptionLength } месяцаў.",
         "Спецыяльны зніжаны кошт у памеры ${ priceWithDiscount } дзейнічае на працягу першых ${ subscriptionLength } месяцаў.",
         "Спецыяльны зніжаны кошт у памеры ${ priceWithDiscount } дзейнічае на працягу першых ${ subscriptionLength } месяцаў."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "Спецыяльны зніжаны кошт у памеры ${ priceWithDiscount } дзейнічае на працягу першага месяца. Гэты купон дзейнічае для ${ couponRedemptions } падаўжэння. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы момант.",
-        "Спецыяльны зніжаны кошт у памеры ${ priceWithDiscount } дзейнічае на працягу першага месяца. Гэты купон дзейнічае для ${ couponRedemptions } падаўжэнняў. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы момант.",
-        "Спецыяльны зніжаны кошт у памеры ${ priceWithDiscount } дзейнічае на працягу першага месяца. Гэты купон дзейнічае для ${ couponRedemptions } падаўжэнняў. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы момант.",
-        "Спецыяльны зніжаны кошт у памеры ${ priceWithDiscount } дзейнічае на працягу першага месяца. Гэты купон дзейнічае для ${ couponRedemptions } падаўжэнняў. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы момант."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Спецыяльны зніжаны кошт у памеры ${ priceWithDiscount } дзейнічае на працягу першага месяца. Пасля гэтага адбудзецца аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за кожны месяц. Скасаваць можна ў любы момант."
@@ -20150,7 +20212,7 @@
         "Выберыце свой ідэальны тарыфны план"
       ],
       "Private AI assistant with encrypted chat history": [
-        "Прыватныпамочнік ШІ з зашыфраванай гісторыяй чатаў"
+        "Прыватны памочнік ШІ з зашыфраванай гісторыяй чатаў"
       ],
       "Promo applied – ${ checkout.discountPercent }% off": [
         "Промакод ужыты. Вы атрымалі скідку ў памеры ${ checkout.discountPercent }%"
@@ -22149,6 +22211,14 @@
         "Токены SMTP не знойдзены"
       ]
     },
+    "Theme": {
+      "Dark": [
+        "Цёмная"
+      ],
+      "Light": [
+        "Светлая"
+      ]
+    },
     "Time unit": {
       "${ ceilDays } day": [
         "${ ceilDays } дзень",
@@ -22420,7 +22490,7 @@
         "Адрас для кожнай ролі"
       ],
       "Annual": [
-        "Штогодовая"
+        "Штогадовая"
       ],
       "Anytime, anywhere access": [
         "Доступ у любы час і ў любым месцы"
@@ -23045,6 +23115,9 @@
       ],
       "Get the apps": [
         "Атрымаць праграмы"
+      ],
+      "Get unlimited meetings on all your devices with ${ planName }. ${ upgradeButton }": [
+        "Атрымлівайце неабмежаваную колькасць сустрэч на ўсіх сваіх прыладах з тарыфным планам ${ planName }. ${ upgradeButton }"
       ],
       "Gift": [
         "Падарунак"
@@ -23826,9 +23899,6 @@
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Ваш бясплатны пробны перыяд для тарыфнага плана ${ planName } завершыцца ${ textDate }"
       ],
-      "Your ${ planName } subscription has started": [
-        "Ваша падпіска ${ planName } пачалася"
-      ],
       "Your calendar link": [
         "Ваша спасылка на каляндар"
       ],
@@ -24119,6 +24189,9 @@
       ],
       "Specify the users of the eduGAIN entity who are allowed to authenticate with SAML SSO": [
         "Пазначце карыстальнікаў аб'екта eduGAIN, якім дазволена аўтэнтыфікацыя з дапамогай SAML SSO"
+      ],
+      "System notification": [
+        "Сістэмнае апавяшчэнне"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Сістэмныя падпапкі будуць адлюстроўвацца ў якасці асобных папак у ${ MAIL_APP_NAME }"
@@ -24503,6 +24576,9 @@
       ]
     },
     "Upsell": {
+      "${ BRAND_NAME } for Business": [
+        "Рассылка ${ BRAND_NAME } for Business"
+      ],
       "**Save up to ${ priceString }** with a longer subscription. Same premium features, lower price.": [
         "**Зэканомце да ${ priceString }** з працяглай падпіскай. Тыя ж самыя прэміяльныя функцыі за меншую плату."
       ],
@@ -24514,6 +24590,9 @@
       ],
       "Did you know?": [
         "Ці ведалі вы што?"
+      ],
+      "Everything you need to collaborate securely in a single subscription. Get access to ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, ${ SHEETS_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } and ${ LUMO_SHORT_APP_NAME } AI Assistant.": [
+        "Усё неабходнае для бяспечнай сумеснай працы ў адной падпісцы. Атрымайце доступ да ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, ${ SHEETS_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } і ${ LUMO_SHORT_APP_NAME } AI Assistant."
       ],
       "Get ${ drivePlusPlanMaxSpace } storage for your files, photos and documents, and recover file versions with 10-year file recovery.": [
         "Атрымайце ${ drivePlusPlanMaxSpace } сховішча для вашых файлаў, фатаграфій і дакументаў, а таксама магчымасць аднаўляць версіі файлаў за 10 гадоў."
@@ -24986,6 +25065,9 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } перанясе столькі даных, колькі будзе магчыма, пачынаючы з самых новых паведамленняў."
+      ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } offer has ended": [
+        "Прапанова на ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } больш не дзейнічае"
       ],
       "Are you sure you want to delete the phone number?": [
         "Вы сапраўды хочаце выдаліць гэты нумар тэлефона?"
