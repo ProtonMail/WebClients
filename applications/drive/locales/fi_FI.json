@@ -138,8 +138,14 @@
       "Cancel download": [
         "Peru lataus"
       ],
+      "Cancel downloads": [
+        "Peruuta lataukset"
+      ],
       "Cancel subscription": [
         "Peru tilaus"
+      ],
+      "Cancel transfers": [
+        "Peruuta siirrot"
       ],
       "Cancel trial and pay": [
         "Peruuta kokeilujakso ja maksa"
@@ -389,8 +395,8 @@
       "Download ${ DRIVE_APP_NAME } apps": [
         "Lataa ${ DRIVE_APP_NAME }-sovellukset"
       ],
-      "Download (${ count })": [
-        "Lataa (${ count })"
+      "Download (${ nbSelected })": [
+        "Lataa (${ nbSelected })"
       ],
       "Download anyway": [
         "Lataa silti"
@@ -505,6 +511,9 @@
       ],
       "Get link": [
         "Hanki linkki"
+      ],
+      "Get mobile and desktop apps": [
+        "Hanki mobiili- ja työpöytäsovellukset"
       ],
       "Get secure storage for ${ simplePriceString }": [
         "Hanki turvallista tallennustilaa hintaan ${ simplePriceString }"
@@ -920,17 +929,14 @@
       "Save changes": [
         "Tallenna muutokset"
       ],
-      "Save for later": [
-        "Tallenna myöhemmäksi"
-      ],
       "Save photos and remove": [
         "Tallenna kuvat ja poista"
       ],
       "Scan & Download": [
         "Skannaa ja lataa"
       ],
-      "Scan & Download (${ count })": [
-        "Skannaa ja lataa (${ count })"
+      "Scan & Download (${ nbSelected })": [
+        "Skannaa ja lataa (${ nbSelected })"
       ],
       "Search": [
         "Hae"
@@ -1033,9 +1039,6 @@
       ],
       "Sign out of all accounts": [
         "Kirjaa kaikki tilit ulos"
-      ],
-      "Sign up": [
-        "Rekisteröidy"
       ],
       "Skip verification": [
         "Ohita vahvistus"
@@ -1532,6 +1535,9 @@
       ]
     },
     "Bug category": {
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "${ LUMO_SHORT_APP_NAME } -ongelma"
+      ],
       "Application problem": [
         "Sovellusongelma"
       ],
@@ -2891,8 +2897,8 @@
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Varmista tilillesi korkein mahdollinen suojaus asettamalla palautuslauseke."
       ],
-      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
-        "Tuodaksesi CSV- ja VCF-tiedostoista, varmista ettei tiedoston koko ylitä ${ MAX_IMPORT_FILE_SIZE_STRING } tai yhteystietojen määrä ${ MAX_IMPORT_CONTACTS_STRING } yhteystietoa. Jos tiedostosi on suurempi, jaa se pienempiin osiin. ${ learnMoreLink }"
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Tuodaksesi CSV- ja VCF-tiedostoista, varmista ettei tiedoston koko ylitä ${ MAX_IMPORT_FILE_SIZE_STRING } tai yhteystietojen määrä ${ maxContactString } yhteystietoa. Jos tiedostosi on suurempi, jaa se pienempiin osiin. ${ learnMoreLink }"
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Tuo yhteystietosi Googlesta tai Outlookista ${ easySwitchLink }."
@@ -3315,6 +3321,9 @@
       "Failed to open to contact": [
         "Yhteystiedon avaaminen epäonnistui"
       ],
+      "Failed to resend invitation": [
+        "Kutsun uudelleenlähettäminen epäonnistui"
+      ],
       "Failed to save some photos to your Drive": [
         "Joidenkin kuvien tallentaminen Driveesi epäonnistui"
       ],
@@ -3430,6 +3439,9 @@
       "No emails found to import - the account does not have an inbox": [
         "Tuotavia viestejä ei löytynyt - tilillä ei ole saapuneet-kansiota"
       ],
+      "No file to upload": [
+        "Ei lähetettävää tiedostoa"
+      ],
       "No valid address found": [
         "Kelvollista osoitetta ei löytynyt"
       ],
@@ -3470,6 +3482,9 @@
       ],
       "Please activate your search again": [
         "Aktivoi hakusi uudelleen"
+      ],
+      "Please enter a valid postal code": [
+        "Syötä kelvollinen postinumero"
       ],
       "Please enter a valid ZIP code": [
         "Syötä kelvollinen postinumero"
@@ -3665,6 +3680,9 @@
       "Unknown location": [
         "Tuntematon sijainti"
       ],
+      "Unknown number of downloads": [
+        "Tuntematon määrä latauksia"
+      ],
       "Unknown payment token status": [
         "Tuntematon maksutunnisteen tila"
       ],
@@ -3683,6 +3701,9 @@
       "Validation error": [
         "Vahvistusvirhe"
       ],
+      "We cannot retrieve this item": [
+        "Emme voi noutaa tätä kohdetta"
+      ],
       "We were not able to load some invitations": [
         "Joitain kutsuja ei voitu ladata"
       ],
@@ -3697,6 +3718,9 @@
       ],
       "We were not able to load the folder contents": [
         "Emme voineet ladata kansion sisältöä"
+      ],
+      "We're sorry, but free upload is not available right now.": [
+        "Valitettavasti ilmainen lataus ei ole tällä hetkellä saatavilla."
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Voit lähettää viestin enintään ${ maxContacts } vastaanottajalle",
@@ -3789,8 +3813,8 @@
       "An error occurred uploading your file. No file has been selected.": [
         "Virhe siirrettäessä tiedostoa. Tiedostoa ei ole valittu."
       ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
-        "Tiedosto ${ formattedFilename } sisältää yli ${ MAX_IMPORT_CONTACTS_STRING } yhteystietoa."
+      "Your file ${ formattedFilename } contains more than ${ maxContactString } contacts.": [
+        "Tiedosto ${ formattedFilename } sisältää yli ${ maxContactString } yhteystietoa."
       ],
       "Your file ${ formattedFilename } has no contacts to be imported.": [
         "Tiedosto ${ formattedFilename } ei sisällä tuotavia yhteystietoja."
@@ -4904,9 +4928,9 @@
       "All your changes will be lost.": [
         "Kaikki muutokset menetetään."
       ],
-      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
-        "Kaikki yhteystiedot tuodaan ${ MAX_CONTACTS_PER_USER } yhteystiedon rajoitukseen saakka",
-        "Kaikki yhteystiedot tuodaan ${ MAX_CONTACTS_PER_USER } yhteystiedon rajoitukseen saakka"
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "Kaikki yhteystiedot tuodaan ${ maxContact } yhteystiedon rajoitukseen saakka",
+        "Kaikki yhteystiedot tuodaan ${ maxContact } yhteystiedon rajoitukseen saakka"
       ],
       "Already in this folder": [
         "Jo tässä kansiossa"
@@ -5171,6 +5195,9 @@
       ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy -logo"
+      ],
+      "Done": [
+        "Valmis"
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Etkö näe mitään? Muista sammuttaa pop-up estot."
@@ -6114,6 +6141,12 @@
       "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
         "Verkkosivustot ja Internet-palveluntarjoajat (ISP) voivat käyttää tätä yksilöllistä koodia yhdistääkseen sijaintisi ja selaushistoriasi laitteeseesi"
       ],
+      "This will cancel any remaining downloads.": [
+        "Tämä peruuttaa kaikki jäljellä olevat lataukset."
+      ],
+      "This will cancel any remaining uploads and downloads. Cancelled uploads won't be saved in ${ DRIVE_APP_NAME }.": [
+        "Tämä peruuttaa kaikki jäljellä olevat lataukset ja lähetykset. Peruutetut lataukset eivät tallennu ${ DRIVE_APP_NAME }en."
+      ],
       "This will only delete the album. Your photos will remain in your timeline. This action cannot be undone.": [
         "Tämä poistaa vain albumin. Kuvasi säilyvät aikajanallasi. Tätä toimintoa ei voi kumota."
       ],
@@ -6768,6 +6801,9 @@
       "Anderson": [
         "Andersson"
       ],
+      "Anonymous": [
+        "Anonyymi"
+      ],
       "Anyone on the Internet with the link can edit": [
         "Linkin välityksellä kuka tahansa voi muokata"
       ],
@@ -7182,6 +7218,9 @@
       ],
       "Replace existing folder": [
         "Korvaa olemassa oleva kansio"
+      ],
+      "Replace existing folder or file": [
+        "Korvaa olemassa oleva kansio tai tiedosto"
       ],
       "Reveal password": [
         "Näytä salasana"
@@ -7610,6 +7649,21 @@
       ],
       "for ${ price }": [
         "hintaan ${ price }"
+      ]
+    },
+    "meet_2025: Feature": {
+      "${ n } participant": [
+        "${ n } osallistuja",
+        "${ n } osallistujaa"
+      ],
+      "Booking pages": [
+        "Ajanvaraussivut"
+      ],
+      "Browser, mobile, and desktop apps": [
+        "Selain, mobiili- ja työpöytäsovellukset"
+      ],
+      "Meeting recording": [
+        "Kokoustallenne"
       ]
     },
     "Message": {
@@ -9222,6 +9276,9 @@
       ],
       "Upload folder": [
         "Lähetä kansio"
+      ],
+      "Upload more files": [
+        "Lähetä enemmän tiedostoja"
       ]
     },
     "Onboarding Info": {
@@ -9562,28 +9619,28 @@
       "terms and conditions": [
         "käyttöehdot"
       ],
-      "The coupon is valid for ${ couponRedemptions } renewal.": [
-        "Etukoodi on voimassa ${ couponRedemptions } uudistuksen ajan.",
-        "Etukoodi on voimassa ${ couponRedemptions } uudistuksen ajan."
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "Alennus on voimassa ${ renewalsWithCoupon } uudistuksen ajan.",
+        "Alennus on voimassa ${ renewalsWithCoupon } uudistuksen ajan."
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Erikoistarjoushinta on voimassa ${ couponRedemptions } kuukauden. Sen jälkeen se uusitaan automaattisesti hintaan ${ renewPriceStr } yhden kuukauden ajaksi. Voit peruuttaa tilauksen milloin tahansa.",
+        "Erikoistarjoushinta on voimassa ${ couponRedemptions } kuukautta. Sen jälkeen se uusitaan automaattisesti hintaan ${ renewPriceStr } yhden kuukauden ajaksi. Voit peruuttaa tilauksen milloin tahansa."
       ],
       "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
         "Alennushinta on voimassa ${ subscriptionLength } kuukauden ajan.",
         "Alennushinta on voimassa ${ subscriptionLength } kuukauden ajan."
       ],
-      "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "Eirtyishinta on voimassa ensimmäisen kuukauden ajan. ${ couponRedemptions } uusiminen sallitaan. Sen jälkeen se uusiutuu automaattisesti hintaan ${ renewPriceStr } yhdeksi kuukaudeksi. Voit perua tilauksen milloin tahansa.",
-        "Eirtyishinta on voimassa ensimmäisen kuukauden ajan. ${ couponRedemptions } uusimista sallitaan. Sen jälkeen se uusiutuu automaattisesti hintaan ${ renewPriceStr } yhdeksi kuukaudeksi. Voit perua tilauksen milloin tahansa."
-      ],
       "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Erityishinta on voimassa vain ensimmäisen kuukauden ajan, jonka jälkeen tilaus jatkuu automaattisesti ${ renewPriceStr } kuukausihintaan. Voit perua milloin tahansa."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Erikoistarjoushinta ${ priceWithDiscount } on voimassa ${ couponRedemptions } kuukauden. Sen jälkeen se uusitaan automaattisesti hintaan ${ renewPriceStr } yhden kuukauden ajaksi. Voit peruuttaa tilauksen milloin tahansa.",
+        "Erikoistarjoushinta ${ priceWithDiscount } on voimassa ${ couponRedemptions } kuukautta. Sen jälkeen se uusitaan automaattisesti hintaan ${ renewPriceStr } yhden kuukauden ajaksi. Voit peruuttaa tilauksen milloin tahansa."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "Erikoisalennettu hinta, ${ priceWithDiscount } , on voimassa ensimmäisen ${ subscriptionLength } kuukauden.",
         "Erikoisalennettu hinta, ${ priceWithDiscount } , on voimassa ensimmäiset ${ subscriptionLength } kuukautta."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "Erikoisalennettu ${ priceWithDiscount } hinta on voimassa ensimmäisen kuukauden. Etukoodi kelpaa ${ couponRedemptions } uusintakerran.Tämän jälkeen uusinta tapahtuu automaattisesti hintaan ${ renewPriceStr } per kuukausi. Voit peruuttaa tilauksen milloin vain.",
-        "Erikoisalennettu ${ priceWithDiscount } hinta on voimassa ensimmäisen kuukauden. Etukoodi kelpaa ${ couponRedemptions } uusintakertaa.Tämän jälkeen uusinta tapahtuu automaattisesti hintaan ${ renewPriceStr } per kuukausi. Voit peruuttaa tilauksen milloin vain."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Erityishinta ${ priceWithDiscount } on voimassa vain ensimmäisen kuukauden ajan, jonka jälkeen tilaus jatkuu automaattisesti ${ renewPriceStr } kuukausihintaan. Voit perua milloin tahansa."
@@ -10003,6 +10060,9 @@
       ],
       "You can get up to **${ maxRewardAmount }** in credit.": [
         "Voit ansaita jopa **${ maxRewardAmount }** krediitteinä."
+      ],
+      "your subscription": [
+        "tilauksesi"
       ]
     },
     "Safety review": {
@@ -11465,6 +11525,12 @@
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Peru ${ MAIL_SHORT_APP_NAME }-tilaus"
       ],
+      "Cancel all downloads?": [
+        "Peru kaikki lataukset?"
+      ],
+      "Cancel all transfers?": [
+        "Peruuta kaikki siirrot?"
+      ],
       "Cancel all uploads?": [
         "Perutaanko kaikki lähetykset?"
       ],
@@ -11768,6 +11834,9 @@
       ],
       "How does it work?": [
         "Miten se toimii?"
+      ],
+      "How your free trial works": [
+        "Miten ilmainen kokeilujakso toimii"
       ],
       "Human verification": [
         "Ihmisvahvistus"
@@ -12289,6 +12358,9 @@
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "${ planName } -kokeilusi päättyy ${ textDate }"
+      ],
+      "Your ${ planTitle } subscription has started": [
+        "${ planTitle }-tilauksesi on alkanut"
       ],
       "Your 3 GB bonus": [
         "3 Gt bonuksesi"

@@ -393,9 +393,6 @@
       "Download ${ DRIVE_APP_NAME } apps": [
         "Pobierz aplikacje ${ DRIVE_APP_NAME }"
       ],
-      "Download (${ count })": [
-        "Pobierz (${ count })"
-      ],
       "Download anyway": [
         "Pobierz mimo to"
       ],
@@ -915,9 +912,6 @@
       "Scan & Download": [
         "Skanuj i pobierz"
       ],
-      "Scan & Download (${ count })": [
-        "Skanuj i pobierz (${ count })"
-      ],
       "Search": [
         "Szukaj"
       ],
@@ -1019,9 +1013,6 @@
       ],
       "Sign out of all accounts": [
         "Wyloguj się ze wszystkich kont"
-      ],
-      "Sign up": [
-        "Zarejestruj się"
       ],
       "Skip verification": [
         "Pomiń weryfikację"
@@ -2826,9 +2817,6 @@
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Ustaw hasło odzyskiwania, aby zapewnić najwyższe bezpieczeństwo konta."
       ],
-      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
-        "Upewnij się, że plik importu CSV lub VCF nie przekracza rozmiaru ${ MAX_IMPORT_FILE_SIZE_STRING } lub ${ MAX_IMPORT_CONTACTS_STRING } kontaktów. Podziel swój plik na mniejsze, jeśli jest zbyt duży. ${ learnMoreLink }."
-      ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "${ easySwitchLink }, aby zaimportować kontakty z konta Google lub Outlook."
       ],
@@ -3714,9 +3702,6 @@
       ],
       "An error occurred uploading your file. No file has been selected.": [
         "Wystąpił błąd podczas przesyłania pliku. Nie został wybrany żaden plik."
-      ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
-        "Plik ${ formattedFilename } zawiera więcej niż ${ MAX_IMPORT_CONTACTS_STRING } kontaktów."
       ],
       "Your file ${ formattedFilename } has no contacts to be imported.": [
         "Plik ${ formattedFilename } nie posiada kontaktów do zaimportowania."
@@ -4909,12 +4894,6 @@
       ],
       "All your changes will be lost.": [
         "Wszystkie zmiany zostaną utracone."
-      ],
-      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
-        "Zostanie zaimportowanych maksymalnie ${ MAX_CONTACTS_PER_USER } kontaktów",
-        "Zostaną zaimportowane maksymalnie ${ MAX_CONTACTS_PER_USER } kontakty",
-        "Zostanie zaimportowanych maksymalnie ${ MAX_CONTACTS_PER_USER } kontaktów",
-        "Zostanie zaimportowane maksymalnie ${ MAX_CONTACTS_PER_USER } kontakt"
       ],
       "Also try looking in Trash.": [
         "Spróbuj przeszukać kosz."
@@ -9751,23 +9730,11 @@
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Odnowienie za ${ renewPriceStr }. Anuluj w dowolnym momencie."
       ],
-      "The coupon is valid for ${ couponRedemptions } renewal.": [
-        "Kupon jest ważny na ${ couponRedemptions } odnowienie.",
-        "Kupon jest ważny na ${ couponRedemptions } odnowienia.",
-        "Kupon jest ważny na ${ couponRedemptions } odnowień.",
-        "Kupon jest ważny na ${ couponRedemptions } odnowień."
-      ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "Specjalna obniżona cena ${ priceWithDiscount } ważna przez pierwszy ${ subscriptionLength } miesiąc.",
         "Specjalna obniżona cena ${ priceWithDiscount } ważna przez pierwsze ${ subscriptionLength } miesiące.",
         "Specjalna obniżona cena ${ priceWithDiscount } ważna przez pierwsze ${ subscriptionLength } miesięcy.",
         "Specjalna obniżona cena ${ priceWithDiscount } ważna przez pierwsze ${ subscriptionLength } miesiąca."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "Specjalna obniżona cena ${ priceWithDiscount } ważna przez pierwszy miesiąc. Kupon jest ważny na ${ couponRedemptions } odnowienie. Następne automatyczne odnowienie nastąpi w cenie ${ renewPriceStr } miesięcznie. Możesz anulować w dowolnym momencie.",
-        "Specjalna obniżona cena ${ priceWithDiscount } ważna przez pierwszy miesiąc. Kupon jest ważny na ${ couponRedemptions } odnowienia. Następne automatyczne odnowienie nastąpi w cenie ${ renewPriceStr } miesięcznie. Możesz anulować w dowolnym momencie.",
-        "Specjalna obniżona cena ${ priceWithDiscount } ważna przez pierwszy miesiąc. Kupon jest ważny na ${ couponRedemptions } odnowień. Następne automatyczne odnowienie nastąpi w cenie ${ renewPriceStr } miesięcznie. Możesz anulować w dowolnym momencie.",
-        "Specjalna obniżona cena ${ priceWithDiscount } ważna przez pierwszy miesiąc. Kupon jest ważny na ${ couponRedemptions } odnowień. Następne automatyczne odnowienie nastąpi w cenie ${ renewPriceStr } miesięcznie. Możesz anulować w dowolnym momencie."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Specjalna obniżona cena ${ priceWithDiscount } ważna przez pierwszy miesiąc. Odnowienie nastąpi w cenie ${ renewPriceStr } miesięcznie. Możesz anulować w dowolnym momencie."
@@ -12517,9 +12484,6 @@
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Darmowa wersja próbna planu ${ planName } zakończy się ${ textDate }"
-      ],
-      "Your ${ planName } subscription has started": [
-        "Subskrypcja ${ planName } została rozpoczęta"
       ],
       "Your 3 GB bonus": [
         "Twój bonus 3 GB"

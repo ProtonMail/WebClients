@@ -138,8 +138,14 @@
       "Cancel download": [
         "Annulla il download"
       ],
+      "Cancel downloads": [
+        "Annulla download"
+      ],
       "Cancel subscription": [
         "Annulla abbonamento"
+      ],
+      "Cancel transfers": [
+        "Annulla trasferimenti"
       ],
       "Cancel trial and pay": [
         "Annulla la prova e paga"
@@ -389,8 +395,8 @@
       "Download ${ DRIVE_APP_NAME } apps": [
         "Scarica le app per ${ DRIVE_APP_NAME }"
       ],
-      "Download (${ count })": [
-        "Scarica (${ count })"
+      "Download (${ nbSelected })": [
+        "Scarica (${ nbSelected })"
       ],
       "Download anyway": [
         "Scarica comunque"
@@ -926,17 +932,14 @@
       "Save changes": [
         "Salva le modifiche"
       ],
-      "Save for later": [
-        "Salva per dopo"
-      ],
       "Save photos and remove": [
         "Salva foto e rimuovi"
       ],
       "Scan & Download": [
         "Scansiona e scarica"
       ],
-      "Scan & Download (${ count })": [
-        "Scansiona e scarica (${ count })"
+      "Scan & Download (${ nbSelected })": [
+        "Scansiona e scarica (${ nbSelected })"
       ],
       "Search": [
         "Cerca"
@@ -1039,9 +1042,6 @@
       ],
       "Sign out of all accounts": [
         "Esci da tutti gli account"
-      ],
-      "Sign up": [
-        "Registrati"
       ],
       "Skip verification": [
         "Salta la verifica"
@@ -2940,8 +2940,8 @@
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Per garantire la massima sicurezza possibile per il tuo account, imposta una frase di recupero."
       ],
-      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
-        "Per importare tramite file CSV o VCF, assicurati che il file non superi i ${ MAX_IMPORT_FILE_SIZE_STRING } o i ${ MAX_IMPORT_CONTACTS_STRING } contatti. Se il tuo file è più grande, dividilo in file più piccoli. ${ learnMoreLink }."
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Per importare tramite file CSV o VCF, assicurati che il file non superi i ${ MAX_IMPORT_FILE_SIZE_STRING } o i ${ maxContactString } contatti. Se il tuo file è più grande, dividilo in file più piccoli. ${ learnMoreLink }."
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Per importare i tuoi contatti da Google o Outlook, ${ easySwitchLink }."
@@ -3788,6 +3788,9 @@
       "Validation error": [
         "Errore nella convalida"
       ],
+      "We cannot retrieve this item": [
+        "Impossibile recuperare questo elemento"
+      ],
       "We were not able to load some invitations": [
         "Non siamo riusciti a caricare alcuni inviti"
       ],
@@ -3909,8 +3912,8 @@
       "An error occurred uploading your file. No file has been selected.": [
         "Si è verificato un errore durante il caricamento del file. Nessun file è stato selezionato."
       ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
-        "Il tuo file ${ formattedFilename } contiene più di ${ MAX_IMPORT_CONTACTS_STRING } contatti."
+      "Your file ${ formattedFilename } contains more than ${ maxContactString } contacts.": [
+        "Il tuo file ${ formattedFilename } contiene più di ${ maxContactString } contatti."
       ],
       "Your file ${ formattedFilename } has no contacts to be imported.": [
         "Il tuo file ${ formattedFilename } non ha alcun contatto da importare."
@@ -5030,9 +5033,9 @@
       "All your changes will be lost.": [
         "Tutte le modifiche andranno perse."
       ],
-      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
-        "Tutti i tuoi contatti verranno importati, fino a un limite di ${ MAX_CONTACTS_PER_USER }",
-        "Tutti i tuoi contatti verranno importati, fino a un limite di ${ MAX_CONTACTS_PER_USER }"
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "Tutti i tuoi contatti verranno importati, fino a un limite di ${ maxContact }",
+        "Tutti i tuoi contatti verranno importati, fino a un limite di ${ maxContact }"
       ],
       "Already in this folder": [
         "Questa cartella è già piena"
@@ -6287,6 +6290,12 @@
       ],
       "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
         "Questo codice univoco può essere utilizzato dai siti Web e dagli ISP (fornitori di servizi Internet) per collegare la tua posizione e la cronologia di navigazione al tuo dispositivo"
+      ],
+      "This will cancel any remaining downloads.": [
+        "Questo annullerà tutti i download rimanenti."
+      ],
+      "This will cancel any remaining uploads and downloads. Cancelled uploads won't be saved in ${ DRIVE_APP_NAME }.": [
+        "Questo annullerà tutti i caricamenti e download rimanenti. I caricamenti annullati non verranno salvati in ${ DRIVE_APP_NAME }."
       ],
       "This will cancel any remaining uploads. Cancelled files won't be saved in ${ DRIVE_APP_NAME }.": [
         "Questo annullerà tutti i caricamenti rimanenti. I file annullati non verranno salvati in ${ DRIVE_APP_NAME }."
@@ -9986,28 +9995,28 @@
       "terms and conditions": [
         "Termini e Condizioni"
       ],
-      "The coupon is valid for ${ couponRedemptions } renewal.": [
-        "Il coupon è valido per ${ couponRedemptions } rinnovo.",
-        "Il coupon è valido per ${ couponRedemptions } rinnovi."
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "Lo sconto è valido per ${ renewalsWithCoupon } rinnovo.",
+        "Lo sconto è valido per ${ renewalsWithCoupon } rinnovi."
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Il prezzo scontato speciale è valido per ${ couponRedemptions } mese. Poi si rinnoverà automaticamente a ${ renewPriceStr } per 1 mese. Puoi annullare in qualsiasi momento.",
+        "Il prezzo speciale scontato è valido per ${ couponRedemptions } mesi. Successivamente, verrà rinnovato automaticamente a ${ renewPriceStr } per 1 mese. Puoi annullare in qualsiasi momento."
       ],
       "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
         "Il prezzo con sconto speciale è valido per il primo ${ subscriptionLength } mese.",
         "Il prezzo scontato è valido per i primi ${ subscriptionLength } mesi."
       ],
-      "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "Il prezzo speciale scontato è valido per il primo mese. Il coupon è valido per ${ couponRedemptions } rinnovo. Successivamente verrà rinnovato automaticamente a ${ renewPriceStr } per 1 mese. Puoi annullare in qualsiasi momento.",
-        "Il prezzo scontato è valido per il primo mese. Il coupon è valido per ${ couponRedemptions } rinnovi. Successivamente verrà rinnovato automaticamente a ${ renewPriceStr } per 1 mese. Puoi annullare in qualsiasi momento."
-      ],
       "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Il prezzo scontato speciale è valido per il primo mese. Successivamente, verrà rinnovato automaticamente a ${ renewPriceStr } ogni mese. Puoi annullare in qualsiasi momento."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Il prezzo speciale scontato di ${ priceWithDiscount } è valido per ${ couponRedemptions } mese. Poi si rinnoverà automaticamente a ${ renewPriceStr } per 1 mese. Puoi annullare in qualsiasi momento.",
+        "Il prezzo speciale scontato di ${ priceWithDiscount } è valido per ${ couponRedemptions } mesi. Si rinnoverà poi automaticamente a ${ renewPriceStr } per 1 mese. Puoi annullare in qualsiasi momento."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "Il prezzo scontato di ${ priceWithDiscount } è valido per il primo ${ subscriptionLength } mese.",
         "Il prezzo scontato di ${ priceWithDiscount } è valido per i primi ${ subscriptionLength } mesi."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "Il prezzo scontato di ${ priceWithDiscount } è valido per il primo mese. Il coupon è valido per ${ couponRedemptions } rinnovo. Successivamente verrà rinnovato automaticamente a ${ renewPriceStr } per 1 mese. Puoi annullare in qualsiasi momento.",
-        "Il prezzo scontato di ${ priceWithDiscount } è valido per il primo mese. Il coupon è valido per ${ couponRedemptions } rinnovi. Successivamente verrà rinnovato automaticamente a ${ renewPriceStr } per 1 mese. Puoi annullare in qualsiasi momento."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "La tariffa scontata, con prezzo speciale di ${ priceWithDiscount } è valida per il primo mese. Il piano si rinnoverà poi automaticamente al prezzo di ${ renewPriceStr } per mese. Puoi disdire quando vuoi."
@@ -11967,6 +11976,12 @@
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Annulla l'abbonamento a ${ MAIL_SHORT_APP_NAME }"
       ],
+      "Cancel all downloads?": [
+        "Annulla tutti i download?"
+      ],
+      "Cancel all transfers?": [
+        "Annullare tutti i trasferimenti?"
+      ],
       "Cancel all uploads?": [
         "Cancellare tutti i caricamenti?"
       ],
@@ -12842,9 +12857,6 @@
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "La tua prova gratuita di ${ planName } termina il giorno ${ textDate }"
-      ],
-      "Your ${ planName } subscription has started": [
-        "Il tuo abbonamento a ${ planName } è iniziato"
       ],
       "Your 3 GB bonus": [
         "Il tuo bonus di 3 GB"

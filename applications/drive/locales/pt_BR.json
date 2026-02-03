@@ -138,8 +138,14 @@
       "Cancel download": [
         "Cancelar download"
       ],
+      "Cancel downloads": [
+        "Cancelar downloads"
+      ],
       "Cancel subscription": [
         "Cancelar assinatura"
+      ],
+      "Cancel transfers": [
+        "Cancelar transferências"
       ],
       "Cancel trial and pay": [
         "Cancelar avaliação e pagar"
@@ -389,8 +395,8 @@
       "Download ${ DRIVE_APP_NAME } apps": [
         "Baixar os aplicativos do ${ DRIVE_APP_NAME }"
       ],
-      "Download (${ count })": [
-        "Baixar (${ count })"
+      "Download (${ nbSelected })": [
+        "Baixar (${ nbSelected })"
       ],
       "Download anyway": [
         "Baixar mesmo assim"
@@ -926,17 +932,14 @@
       "Save changes": [
         "Salvar alterações"
       ],
-      "Save for later": [
-        "Salvar para depois"
-      ],
       "Save photos and remove": [
         "Salvar fotos e remover"
       ],
       "Scan & Download": [
         "Escanear e Baixar"
       ],
-      "Scan & Download (${ count })": [
-        "Escanear e Baixar (${ count })"
+      "Scan & Download (${ nbSelected })": [
+        "Escanear e Baixar (${ nbSelected })"
       ],
       "Search": [
         "Pesquisar"
@@ -1039,9 +1042,6 @@
       ],
       "Sign out of all accounts": [
         "Encerrar sessão de todas as contas"
-      ],
-      "Sign up": [
-        "Registre-se"
       ],
       "Skip verification": [
         "Pular verificação"
@@ -2940,8 +2940,8 @@
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Para assegurar a máxima proteção de sua conta, defina uma frase de recuperação."
       ],
-      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
-        "Para importar por meio de um arquivo CSV e VCF, certifique-se de que o arquivo não exceda ${ MAX_IMPORT_FILE_SIZE_STRING } ou ${ MAX_IMPORT_CONTACTS_STRING } contatos. Se o seu arquivo for maior, divida-o em arquivos menores. ${ learnMoreLink }."
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Para importar por meio de um arquivo CSV e VCF, certifique-se de que o arquivo não exceda ${ MAX_IMPORT_FILE_SIZE_STRING } ou ${ maxContactString } contatos. Se o seu arquivo for maior, divida-o em arquivos menores. ${ learnMoreLink }."
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Para importar seus contatos do Google o Outlook, ${ easySwitchLink }."
@@ -3788,6 +3788,9 @@
       "Validation error": [
         "Erro de validação"
       ],
+      "We cannot retrieve this item": [
+        "Não foi possível recuperar este item"
+      ],
       "We were not able to load some invitations": [
         "Não foi possível carregar alguns convites"
       ],
@@ -3811,6 +3814,9 @@
       ],
       "We were not able to load the folder contents": [
         "Não foi possível carregar o conteúdo da pasta"
+      ],
+      "We're sorry, but free upload is not available right now.": [
+        "Desculpe, o upload gratuito não está disponível no momento."
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Você não pode enviar um e-mail para mais de ${ maxContacts } destinatário",
@@ -3906,8 +3912,8 @@
       "An error occurred uploading your file. No file has been selected.": [
         "Ocorreu um erro ao carregar o seu arquivo. Nenhum arquivo foi selecionado."
       ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
-        "Seu arquivo ${ formattedFilename } contém mais de ${ MAX_IMPORT_CONTACTS_STRING } contatos."
+      "Your file ${ formattedFilename } contains more than ${ maxContactString } contacts.": [
+        "Seu arquivo ${ formattedFilename } contém mais de ${ maxContactString } contatos."
       ],
       "Your file ${ formattedFilename } has no contacts to be imported.": [
         "O arquivo ${ formattedFilename } não tem contatos para serem importados."
@@ -5027,9 +5033,9 @@
       "All your changes will be lost.": [
         "Todas as suas alterações serão perdidas."
       ],
-      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
-        "Todos os seus contatos serão importados, até o limite de ${ MAX_CONTACTS_PER_USER }",
-        "Todos os seus contatos serão importados, até o limite de ${ MAX_CONTACTS_PER_USER }"
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "Todos os seus contatos serão importados, até o limite de ${ maxContact }",
+        "Todos os seus contatos serão importados, até o limite de ${ maxContact }"
       ],
       "Already in this folder": [
         "Já nesta pasta"
@@ -5189,6 +5195,9 @@
       ],
       "Collaborate efficiently while protecting your client and business data from breaches, ransomware, and surveillance.": [
         "Colabore com eficiência enquanto protege os dados dos seus clientes e da sua empresa contra violações, ransomware e vigilância."
+      ],
+      "Computed hash does not match XAttr": [
+        "Hash computado não corresponde ao XAttr"
       ],
       "Conflict": [
         "Conflito"
@@ -6285,6 +6294,12 @@
       "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
         "Esse código único pode ser usado por sites e provedores de serviços de internet para vincular sua localização e histórico de navegação ao seu dispositivo"
       ],
+      "This will cancel any remaining downloads.": [
+        "Isso cancelará todos os downloads restantes."
+      ],
+      "This will cancel any remaining uploads and downloads. Cancelled uploads won't be saved in ${ DRIVE_APP_NAME }.": [
+        "Isso vai cancelar todos os uploads e downloads restantes. Uploads cancelados não serão salvos no ${ DRIVE_APP_NAME }."
+      ],
       "This will cancel any remaining uploads. Cancelled files won't be saved in ${ DRIVE_APP_NAME }.": [
         "Isso vai cancelar quaisquer envios restantes. Arquivos cancelados não serão salvos no ${ DRIVE_APP_NAME }."
       ],
@@ -6326,6 +6341,9 @@
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Para completar o seu pagamento, envie ${ btcAmountBold } para o endereço abaixo."
+      ],
+      "To download these files, open them in ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME } and export them.": [
+        "Para baixar estes arquivos, abra-os no ${ DOCS_APP_NAME } ou ${ SHEETS_APP_NAME } e exporte-os."
       ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
         "Para ativar a pesquisa verdadeiramente privada, o ${ DRIVE_APP_NAME } precisa indexar seus arquivos localmente."
@@ -6491,6 +6509,9 @@
       ],
       "We are experiencing technical issues. Any albums related actions are temporarily disabled.": [
         "Estamos enfrentando problemas técnicos. Todas as ações relacionadas a álbuns estão temporariamente desativadas. Agradecemos a sua compreensão."
+      ],
+      "We couldn't verify ${ nameAuthor } uploaded ${ node.name }. The following may have been tampered with: file data order. Only open if you trust it.": [
+        "Não foi possível verificar se ${ nameAuthor } enviou ${ node.name }. Os seguintes dados podem ter sido adulterados: ordem dos dados do arquivo. Abra somente se confiar no conteúdo."
       ],
       "We couldn’t process your payment.": [
         "Não foi possível realizar o pagamento."
@@ -9989,28 +10010,28 @@
       "terms and conditions": [
         "termos e condições"
       ],
-      "The coupon is valid for ${ couponRedemptions } renewal.": [
-        "O cupom é válido para ${ couponRedemptions } renovação.",
-        "O cupom é válido para ${ couponRedemptions } renovações."
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "O desconto é válido para ${ renewalsWithCoupon } renovação.",
+        "O desconto é válido para ${ renewalsWithCoupon } renovações."
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "O preço com desconto especial é válido por ${ couponRedemptions } mês. Depois, ele será renovado automaticamente por ${ renewPriceStr } por 1 mês. Você pode cancelar a qualquer momento.",
+        "O preço com desconto especial é válido por ${ couponRedemptions } meses. Depois, ele será renovado automaticamente por ${ renewPriceStr } por 1 mês. Você pode cancelar a qualquer momento."
       ],
       "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
         "O preço com desconto especial é válido para ${ subscriptionLength } mês.",
         "O preço com desconto especial é valido para os primeiros ${ subscriptionLength } meses."
       ],
-      "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "O preço com desconto especial é válido para o primeiro mês. O cupom é válido para ${ couponRedemptions } renovação. Após esse período, a assinatura será renovada automaticamente por ${ renewPriceStr } por mais 1 mês. Você pode cancelar a qualquer momento.",
-        "O preço com desconto especial é válido para o primeiro mês. O cupom é válido para ${ couponRedemptions } renovações. Após esse período, a assinatura será renovada automaticamente por ${ renewPriceStr } por mais 1 mês. Você pode cancelar a qualquer momento."
-      ],
       "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "O preço com desconto especial é válido no primeiro mês. Em seguida, ele será renovado automaticamente pelo preço de ${ renewPriceStr } todo mês. Você pode cancelar a qualquer momento."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "O preço com desconto especial de ${ priceWithDiscount } é válido por ${ couponRedemptions } mês. Depois, ele será renovado automaticamente por ${ renewPriceStr } por 1 mês. Você pode cancelar a qualquer momento.",
+        "O preço com desconto especial de ${ priceWithDiscount } é válido por ${ couponRedemptions } meses. Depois, ele será renovado automaticamente por ${ renewPriceStr } por 1 mês. Você pode cancelar a qualquer momento."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "O preço com desconto especial de ${ priceWithDiscount } é válido para o primeiro ${ subscriptionLength } mês.",
         "O preço com desconto especial de ${ priceWithDiscount } é válido para os primeiros ${ subscriptionLength } meses."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "O preço com desconto especial de ${ priceWithDiscount } é válido para o primeiro mês. O cupom é válido para renovação de ${ couponRedemptions }. Em seguida, ele será renovado automaticamente a ${ renewPriceStr } por 1 mês. Você pode cancelar a qualquer momento.",
-        "O preço com desconto especial de ${ priceWithDiscount } é válido para o primeiro mês. O cupom é válido para renovações de ${ couponRedemptions }. Em seguida, ele será renovado automaticamente a ${ renewPriceStr } por 1 mês. Você pode cancelar a qualquer momento."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "O preço com desconto especial de ${ priceWithDiscount } é válido no primeiro mês. Em seguida, ele será renovado automaticamente pelo preço de ${ renewPriceStr } todo mês. Você pode cancelar a qualquer momento."
@@ -11970,6 +11991,12 @@
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Cancelar assinatura do ${ MAIL_SHORT_APP_NAME }"
       ],
+      "Cancel all downloads?": [
+        "Cancelar todos os downloads?"
+      ],
+      "Cancel all transfers?": [
+        "Cancelar todas as transferências?"
+      ],
       "Cancel all uploads?": [
         "Cancelar todos os envios?"
       ],
@@ -12684,6 +12711,9 @@
       "This folder has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "A pasta tem uma assinatura ausente ou incorreta. Vá em Menu (⋮) → Detalhes para informações."
       ],
+      "This is likely due to the account or address having been deleted.": [
+        "Isso provavelmente se deve ao fato de a conta ou o endereço terem sido excluídos."
+      ],
       "This link is password protected": [
         "O link está protegido com senha"
       ],
@@ -12801,6 +12831,15 @@
       "We couldn’t verify that an anonymous user uploaded this folder.": [
         "Não pudemos verificar que um usuário anônimo enviou essa pasta."
       ],
+      "We weren’t able to confirm that the file content was uploaded by ${ claimedContentAuthor }. The reason is: ${ activeRevision.contentAuthor.error.error }": [
+        "Não foi possível confirmar que o conteúdo do arquivo foi enviado por ${ claimedContentAuthor }. O motivo é: ${ activeRevision.contentAuthor.error.error }"
+      ],
+      "We weren’t able to confirm that the name was created or modified by ${ claimedNameAuthor }. The reason is: ${ nodeEntity.nameAuthor.error.error }": [
+        "Não foi possível confirmar que o nome foi criado ou modificado por ${ claimedNameAuthor }. O motivo é: ${ nodeEntity.nameAuthor.error.error }"
+      ],
+      "We weren’t able to confirm that the node was created by ${ claimedKeyAuthor }. The reason is: ${ nodeEntity.keyAuthor.error.error }": [
+        "Não foi possível confirmar que o nó foi criado por ${ claimedKeyAuthor }. O motivo é: ${ nodeEntity.keyAuthor.error.error }"
+      ],
       "Welcome offer": [
         "Oferta de boas-vindas"
       ],
@@ -12834,8 +12873,8 @@
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Sua avaliação gratuita do ${ planName } termina em ${ textDate }"
       ],
-      "Your ${ planName } subscription has started": [
-        "Sua assinatura ${ planName } começou"
+      "Your ${ planTitle } subscription has started": [
+        "Sua assinatura ${ planTitle } começou"
       ],
       "Your 3 GB bonus": [
         "Seu bônus de 3 GB"
