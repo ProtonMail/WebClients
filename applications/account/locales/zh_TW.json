@@ -1398,6 +1398,18 @@
       ],
       "Zoom out": [
         "縮小"
+      ],
+      "Manage advanced account protections": [
+        "管理進階帳戶保護"
+      ],
+      "Manage users/addresses": [
+        "管理使用者/電子郵件地址"
+      ],
+      "Set up a custom domain": [
+        "設置個自訂域名"
+      ],
+      "Share your calendar with your team": [
+        "與團隊共享您的行事曆"
       ]
     },
     "action": {
@@ -1775,6 +1787,12 @@
       ],
       "Unlimited logins, credit cards, hide-my-email aliases and more": [
         "無上限登入、信用卡、 hide-my-email 別名和更多"
+      ],
+      "Admin panel to manage your family": [
+        "管理員面板以管理您的家庭"
+      ],
+      "Use your own email domain": [
+        "使用您的電子郵件網域"
       ]
     },
     "BF2024: Offers": {
@@ -1800,6 +1818,9 @@
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "透過端對端加密保護電子郵件及行事曆。包含 15 電子郵件地址、支援自訂電子郵件網域、無限hide-my-email別名及更多"
+      ],
+      "Storage space is shared across all ${ BRAND_NAME } services.": [
+        "儲存空間於全部的 ${ BRAND_NAME } 服務。"
       ]
     },
     "BF2025: Deal details": {
@@ -2311,6 +2332,9 @@
       ],
       "Zero-access encryption": [
         "零存取加密"
+      ],
+      "Limited favorites": [
+        "有限的收藏"
       ]
     },
     "collider_2025: Info": {
@@ -3728,6 +3752,12 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "您可以使用 iCal 格式 (ICS 檔案) 匯入事件。檔案大小上限為 ${ MAX_IMPORT_FILE_SIZE_STRING }，上限為 ${ MAX_IMPORT_EVENTS_STRING } 個事件。若您的檔案超出此限，請將其分割為較小的檔案。"
+      ],
+      "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
+        "添加資料夾和檔案至 ${ DRIVE_APP_NAME } 和邀請成員瀏覽或編輯。"
+      ],
+      "Create groups you can email with a single address.": [
+        "創建您可透單一位址傳送電子郵件的群組"
       ]
     },
     "description": {
@@ -4038,6 +4068,15 @@
       ],
       "60 minutes": [
         "60 分鐘"
+      ],
+      "120 minutes": [
+        "120 分鐘"
+      ],
+      "30m": [
+        "30 分鐘"
+      ],
+      "90 minutes": [
+        "90 分鐘"
       ]
     },
     "edm": {
@@ -4908,6 +4947,9 @@
       ],
       "Your file ${ formattedFilename } is empty.": [
         "您的檔案 ${ formattedFilename } 是空的。"
+      ],
+      "Your file ${ formattedFilename } contains more than ${ maxContactString } contacts.": [
+        "您的檔案 ${ formattedFilename } 包含多於 ${ maxContactString } 位聯絡人。"
       ]
     },
     "Error importing event": {
@@ -8966,6 +9008,33 @@
       ],
       "Zoom meeting": [
         "Zoom 會議"
+      ],
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "所有聯絡人將被匯入，至多 ${ maxContact }"
+      ],
+      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
+        "將訊息、聯絡人和行事曆匯入 ${ BRAND_NAME }。"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "團隊專用的 VPN 伺服器數量"
+      ],
+      "Receive notifications for ${ categoryLabel }": [
+        "替 ${ categoryLabel } 接受通知"
+      ],
+      "Thank you for subscribing. Secure browsing starts now.": [
+        "感謝您訂閱。立即安全瀏覽。"
+      ],
+      "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
+        "此是貴組織使用者可看見的名稱或暱稱。您可隨時時修正它。"
+      ],
+      "Your free trial was successfully converted to a ${ cycle }-month subscription. Your renewal date is ${ nextBillingDate }.": [
+        "您的免費試用已成功轉換為每 ${ cycle } 月訂購授權。您的續訂日期為 ${ nextBillingDate }。"
+      ],
+      "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
+        "您將失去存取於 ${ boldEndDate } 的 ${ boldPlanTitle }"
+      ],
+      "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
+        "您仍可瀏覽您的帳號資料，但所有使用者帳號將被從貴組織移除。"
       ]
     },
     "info": {
@@ -10344,6 +10413,69 @@
       ],
       "ZIP code": [
         "郵遞區號"
+      ],
+      "Automated confirmations and alerts": [
+        "自動確認和警報"
+      ],
+      "Bookings, billings, and orders": [
+        "預定、帳單和訂購"
+      ],
+      "Categories": [
+        "分類目錄"
+      ],
+      "Deals, offers, marketing emails": [
+        "優惠、促銷、行銷電子郵件"
+      ],
+      "Forums": [
+        "論壇"
+      ],
+      "Go to Forums": [
+        "前往論壇"
+      ],
+      "Go to Primary": [
+        "到主要"
+      ],
+      "Go to Promotions": [
+        "前往優惠活動"
+      ],
+      "Go to Social": [
+        "去社交"
+      ],
+      "Go to Transactions": [
+        "至翻譯"
+      ],
+      "Go to Updates": [
+        "前往更新"
+      ],
+      "Newsletters": [
+        "電子報"
+      ],
+      "Non-promotional content and news": [
+        "非促銷內容與新聞"
+      ],
+      "Password strength": [
+        "密碼強度"
+      ],
+      "Primary": [
+        "主要"
+      ],
+      "Promotions": [
+        "優惠活動"
+      ],
+      "Social": [
+        "社群網路"
+      ],
+      "Social media updates and activity": [
+        "社交媒體更新和活動"
+      ],
+      "Transactions": [
+        "交易記錄"
+      ],
+      "Updates": [
+        "更新"
+      ],
+      "Your password (trusted contact)": [
+        "您的密碼 (信任的內容)"
       ]
     },
     "label": {
@@ -10630,6 +10762,27 @@
       ],
       "What’s this?": [
         "這是什麼？"
+      ],
+      "How to collaborate in ${ DOCS_SHORT_APP_NAME }": [
+        "如何於 ${ DOCS_SHORT_APP_NAME } 合作"
+      ],
+      "How to migrate to ${ BRAND_NAME }": [
+        "如何遷移至 ${ BRAND_NAME }"
+      ],
+      "How to set up ${ VPN_APP_NAME }": [
+        "如何設定 ${ VPN_APP_NAME }"
+      ],
+      "How to set up a custom domain": [
+        "如何設置個自訂域名"
+      ],
+      "How to share a calendar": [
+        "如何共享行事曆"
+      ],
+      "How to use ${ PASS_APP_NAME } for Business": [
+        "如何將 ${ PASS_APP_NAME } 用於商務"
+      ],
+      "if your data is leaked": [
+        "若您的資料外洩"
       ]
     },
     "Link label (optional)": {
@@ -10860,6 +11013,12 @@
       ],
       "Up to ${ n } participant": [
         "至多 ${ n } 位參與者"
+      ],
+      "${ n } participant": [
+        "${ n } 位參與者"
+      ],
+      "Booking pages": [
+        "預定頁面"
       ]
     },
     "Member action": {
@@ -12433,6 +12592,15 @@
       ],
       "Your subscription renews soon": [
         "您的訂閱即將重新續約"
+      ],
+      "${ BRAND_NAME } Unlimited for 12 months": [
+        "十二個月的 ${ BRAND_NAME } Unlimited"
+      ],
+      "Upgrade your productivity for just ${ pricingTitle } with ${ planName }": [
+        "以 ${ pricingTitle } 的 ${ planName } 方案提升您的工作效率"
+      ],
+      "Upgrade your storage for just ${ pricingTitle } with ${ planName }": [
+        "以 ${ planName } 的 ${ pricingTitle } 方案升級您的儲存空間"
       ]
     },
     "Offer fearue": {
@@ -12467,6 +12635,12 @@
       ],
       "Storage": [
         "雲端儲存"
+      ],
+      "Edit docs online": [
+        "線上編輯文件"
+      ],
+      "Ultrafast VPN servers in 110+ countries": [
+        "在110 多個國家提供極速 VPN 伺服器"
       ]
     },
     "Onboarding": {
@@ -12518,6 +12692,9 @@
       ],
       "Your free trial has started": [
         "您的免費試用已開始"
+      ],
+      "Cancel anytime before ${ cancelDate }.": [
+        "於 ${ cancelDate } 前隨時取消。"
       ]
     },
     "Option": {
@@ -13284,6 +13461,15 @@
       ],
       "Your payment is still being processed": [
         "您的付款仍在處理中"
+      ],
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "此折扣可適用續約訂購 ${ renewalsWithCoupon } 。"
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "特殊折扣將套用於 ${ couponRedemptions } 個月。其後以 1 個月 ${ renewPriceStr } 自動續約。您可以在任何時候取消。"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "享受特惠折扣 ${ priceWithDiscount } ${ couponRedemptions } 個月。而後將以每 1 月 ${ renewPriceStr } 的價格自動續約。您可以在任何時候取消訂閱。"
       ]
     },
     "Payments.Error": {
@@ -13331,6 +13517,9 @@
       ],
       "Yes, I'm sure": [
         "是的，我確定"
+      ],
+      "Your plan includes this feature already.": [
+        "您的方案以包含此功能。"
       ]
     },
     "Payments.plan_name": {
@@ -13341,6 +13530,12 @@
     "Payments.Saved payment method details": {
       "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
         "Google Pay - 卡片於 ${ paymentMethod.Details.Last4 } 結束"
+      ],
+      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "APPle Pay - 卡片於 ${ paymentMethod.Details.Last4 } 結束"
+      ],
+      "Bank transfer - ${ details }": [
+        "匯款 - ${ details }"
       ]
     },
     "Payments.Sepa": {
@@ -13558,6 +13753,9 @@
       ],
       "ZIP code": [
         "郵遞區號"
+      ],
+      "Your organization name": [
+        "貴組織名稱"
       ]
     },
     "placeholder": {
@@ -13584,6 +13782,9 @@
       ],
       "Secure email with advanced features for your everyday communications.": [
         "為您的日常通訊提供進階功能的安全電子郵件。"
+      ],
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "您的頂級質子版服務源自於 ${ BRAND_NAME } 、 ${ MAIL_SHORT_APP_NAME } 、 ${ PASS_SHORT_APP_NAME } 、 ${ VPN_SHORT_APP_NAME } 、 ${ DRIVE_SHORT_APP_NAME } 和 ${ CALENDAR_SHORT_APP_NAME }"
       ]
     },
     "Plans": {
@@ -14850,6 +15051,9 @@
       ],
       "Upgrade for ${ pricingTitle }": [
         "升級至${ pricingTitle }"
+      ],
+      "Browse securely": [
+        "安全地瀏覽"
       ]
     },
     "specialoffer: Offers": {
@@ -14929,6 +15133,9 @@
       ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "使用兩年的 ${ planName } 升級並節省更多"
+      ],
+      "Protect your account from threats with Sentinel": [
+        "使用 Sentinel 保護您的帳戶免受威脅"
       ]
     },
     "specialoffer: Tooltip": {
@@ -17521,6 +17728,15 @@
       ],
       "Your subscriptions": [
         "您的訂購授權"
+      ],
+      "Enable advanced account protection": [
+        "啟用進階帳戶保護"
+      ],
+      "Information exposed in breach": [
+        "於外洩的資料"
+      ],
+      "Upload and share files": [
+        "上傳並共享檔案"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -18485,6 +18701,19 @@
       ],
       "Yearly, ${ untilString }": [
         "每年，${ untilString }"
+      ]
+    },
+    "Action: Sheets": {
+      "Open in ${ SHEETS_APP_NAME }": [
+        "於 ${ SHEETS_APP_NAME } 開啟"
+      ]
+    },
+    "Theme": {
+      "Dark": [
+        "深色"
+      ],
+      "Light": [
+        "淺色"
       ]
     }
   }

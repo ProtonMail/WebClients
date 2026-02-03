@@ -4815,6 +4815,9 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Etkinlikleri iCal biçiminde içe aktarabilirsiniz (ICS dosyası).\nDosya en fazla ${ MAX_IMPORT_FILE_SIZE_STRING } boyutunda olmalı ve en fazla ${ MAX_IMPORT_EVENTS_STRING } etkinlik kaydı içermelidir.\nDosyanız daha büyükse, daha küçük dosyalara bölün."
+      ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "CSV ve VCF dosyası ile içe aktarma için, ${ MAX_IMPORT_FILE_SIZE_STRING } dosya boyutunu ya da ${ maxContactString } kişiyi aşmadığınızdan emin olun. Dosyanız büyükse lütfen daha küçük dosyalara bölün. ${ learnMoreLink }."
       ]
     },
     "description": {
@@ -6691,7 +6694,7 @@
         "Hesabınızın kişi sayısı sınırına ulaştınız"
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
-        "Planınızdaki tüm adresleri kullandınız. Yeni bir adres eklemek veya hesabınızdaki bir adresi devre dışı bırakmak için lütfen tarifenizi yükseltin."
+        "Tarifenizdeki tüm adresleri kullandınız. Yeni bir adres eklemek veya hesabınızdaki bir adresi kullanımdan kaldırmak için lütfen tarifenizi yükseltin."
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Tarifenizin kullanıcı sayısı sınırına ulaştınız. Yeni bir kullanıcı eklemek için lütfen tarifenizi yükseltin."
@@ -6794,6 +6797,9 @@
       ],
       "Your file ${ formattedFilename } is empty.": [
         "${ formattedFilename } dosyanız boş."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ maxContactString } contacts.": [
+        "${ formattedFilename } dosyanızda ${ maxContactString } taneden fazla kişi var."
       ]
     },
     "Error importing event": {
@@ -6908,6 +6914,9 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Bu sayfa yüklenemedi. Lütfen sayfayı yenileyin veya internet bağlantınızı denetleyin."
+      ],
+      "Account is deleted or disabled": [
+        "Hesap silinmiş ya da kullanımdan kaldırılmış"
       ]
     },
     "Error message, Disable account": {
@@ -11861,6 +11870,16 @@
       ],
       "Zoom meeting": [
         "Zoom görüşmesi"
+      ],
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "${ maxContact } kişiye kadar olan tüm kişileriniz içe aktarılacak",
+        "${ maxContact } kişiye kadar olan tüm kişileriniz içe aktarılacak"
+      ],
+      "Coming soon": [
+        "Çok yakında"
+      ],
+      "Receive notifications for ${ categoryLabel }": [
+        "${ categoryLabel } bildirimlerini al"
       ]
     },
     "info": {
@@ -13755,6 +13774,72 @@
       ],
       "ZIP code": [
         "Posta kodu"
+      ],
+      "Automated confirmations and alerts": [
+        "Otomatik onaylar ve uyarılar"
+      ],
+      "Bookings, billings, and orders": [
+        "Rezervasyonlar, faturalar ve siparişler"
+      ],
+      "Categories": [
+        "Kategoriler"
+      ],
+      "Deals, offers, marketing emails": [
+        "Fırsatlar, teklifler, pazarlama e-postaları"
+      ],
+      "Discussion board posts and threads": [
+        "Tartışma panosu gönderileri ve konuları"
+      ],
+      "Forums": [
+        "Forumlar"
+      ],
+      "Go to Forums": [
+        "Forumlara git"
+      ],
+      "Go to Newsletters": [
+        "Duyurulara git"
+      ],
+      "Go to Primary": [
+        "Birincil e-postalara git"
+      ],
+      "Go to Promotions": [
+        "Fırsatlara git"
+      ],
+      "Go to Social": [
+        "Sosyal ağlara git"
+      ],
+      "Go to Transactions": [
+        "Hesap işlemlerine git"
+      ],
+      "Go to Updates": [
+        "Güncellemelere git"
+      ],
+      "Newsletters": [
+        "Duyurular"
+      ],
+      "Non-promotional content and news": [
+        "Fırsatlar dışındaki içerikler ve haberler"
+      ],
+      "Primary": [
+        "Birincil saat dilimi"
+      ],
+      "Promotions": [
+        "Kazançlar"
+      ],
+      "Social": [
+        "Sosyal ağ"
+      ],
+      "Social media updates and activity": [
+        "Sosyal ağ güncellemeleri ve etkinlikleri"
+      ],
+      "Transactions": [
+        "Hesap işlemleri"
+      ],
+      "Updates": [
+        "Güncellemeler"
+      ],
+      "Use email categories": [
+        "E-posta kategorileri kullanılsın"
       ]
     },
     "label": {
@@ -14448,7 +14533,7 @@
         "Uçtan uca şifrelenmiş ekran paylaşımı ve geçici çağrı içi sohbet"
       ],
       "Meeting recording": [
-        "Toplantı kaydı"
+        "Görüşme kaydı"
       ],
       "One active meeting at a time": [
         "Aynı anda bir etkin görüşme"
@@ -17421,7 +17506,7 @@
         "${ renewPriceStr } tutar ile yenilenir. İstediğiniz zaman iptal edebilirsiniz."
       ],
       "Sorry, this offer is not available for your account.": [
-        "Üzgünüz, bu teklif hesabınız için geçerli değil."
+        "Ne yazık ki bu teklif hesabınız ile kullanılamıyor."
       ],
       "Sorry, this offer is not available with your current plan.": [
         "Ne yazık ki, bu teklif geçerli tarifeniz ile kullanılamıyor."
@@ -17509,6 +17594,18 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Aboneliğinizde şu anda uygulanan bir indirim var. Yeni indirime geçmek bu indirimin artık uygulanmayacağı anlamına gelir."
+      ],
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "İndirim ${ renewalsWithCoupon } yenileme için geçerlidir.",
+        "İndirim ${ renewalsWithCoupon } yenileme için geçerlidir."
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Özel indirimli fiyat ${ couponRedemptions } ay boyunca geçerlidir. Ardından otomatik olarak 1 ay için ${ renewPriceStr } ile yenilenir. İstediğiniz zaman iptal edebilirsiniz.",
+        "Özel indirimli fiyat ${ couponRedemptions } ay boyunca geçerlidir. Ardından otomatik olarak 1 ay için ${ renewPriceStr } ile yenilenir. İstediğiniz zaman iptal edebilirsiniz."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Özel indirimli fiyat ${ priceWithDiscount }, ${ couponRedemptions } ay boyunca geçerlidir. Ardından otomatik olarak 1 ay için ${ renewPriceStr } ile yenilenir. İstediğiniz zaman iptal edebilirsiniz.",
+        "Özel indirimli fiyat ${ priceWithDiscount }, ${ couponRedemptions } ay boyunca geçerlidir. Ardından otomatik olarak 1 ay için ${ renewPriceStr } ile yenilenir. İstediğiniz zaman iptal edebilirsiniz."
       ]
     },
     "Payments.Error": {
@@ -22513,7 +22610,7 @@
         "Uygulamaları indirme"
       ],
       "Get unlimited meetings on all your devices with ${ planName }. ${ upgradeButton }": [
-        "${ planName } ile tüm aygıtlarınızda sınırsız toplantı gerçekleştirin. ${ upgradeButton }"
+        "${ planName } ile tüm aygıtlarınızda sınırsız görüşmeler yapın. ${ upgradeButton }"
       ],
       "Gift": [
         "Hediye"
@@ -23320,6 +23417,9 @@
       ],
       "Your subscriptions": [
         "Abonelikleriniz"
+      ],
+      "Your ${ planTitle } subscription has started": [
+        "${ planTitle } aboneliğiniz başladı"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -23686,6 +23786,9 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "Dış hesabınız 24 saatlik bant genişliği sınırına ulaşmış olabilir. ${ BRAND_NAME }, olabilecek en kısa sürede içe aktarma işlemini sürdürmeye çalışacak."
+      ],
+      "System notification": [
+        "Sistem bildirimi"
       ]
     },
     "tooltip": {
@@ -23965,7 +24068,7 @@
     },
     "Upsell": {
       "${ BRAND_NAME } for Business": [
-        "İşletmeler için ${ BRAND_NAME }"
+        "${ BRAND_NAME } for Business"
       ],
       "**Save up to ${ priceString }** with a longer subscription. Same premium features, lower price.": [
         "**Daha uzun süre abone olarak ${ priceString }** kadar kazanç sağlayın. Aynı ücretli özellikler, daha düşük fiyat."
@@ -23980,7 +24083,7 @@
         "Biliyor muydunuz?"
       ],
       "Everything you need to collaborate securely in a single subscription. Get access to ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, ${ SHEETS_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } and ${ LUMO_SHORT_APP_NAME } AI Assistant.": [
-        "Tek bir abonelikle güvenli bir şekilde işbirliği yapmak için ihtiyacınız olan her şey. ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, ${ SHEETS_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } ve ${ LUMO_SHORT_APP_NAME } Yapay Zeka Asistanına erişin."
+        "Tek bir abonelikle güvenli bir şekilde işbirliği yapmak için gerek duyduğunuz her şey. ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, ${ SHEETS_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } ve ${ LUMO_SHORT_APP_NAME } yapay zeka yardımcısına erişim."
       ],
       "Get ${ drivePlusPlanMaxSpace } storage for your files, photos and documents, and recover file versions with 10-year file recovery.": [
         "Dosyalarınız, fotoğraflarınız ve belgeleriniz için ${ drivePlusPlanMaxSpace } depolama alanı edinin ve 10 yıl geriye dönük dosya kurtarma özelliği ile dosya sürümlerini geri yükleyin."
@@ -24516,6 +24619,9 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Deneme süreniz ${ textDate } tarihinde sona erecek. ${ textDate } tarihinden önce iptal ederseniz sizden ücret alınmayacak. ${ action }"
+      ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } offer has ended": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } teklifi sona erdi"
       ]
     },
     "Warning for domain modal": {
@@ -24771,6 +24877,32 @@
       ],
       "Yearly, ${ untilString }": [
         "Yılda bir, ${ untilString }"
+      ]
+    },
+    "Theme": {
+      "Auto": [
+        "Otomatik"
+      ],
+      "Dark": [
+        "Koyu"
+      ],
+      "Light": [
+        "Açık"
+      ],
+      "Mode: Auto": [
+        "Kip: Otomatik"
+      ],
+      "Mode: Dark": [
+        "Kip: Koyu"
+      ],
+      "Mode: Light": [
+        "Kip: Açık"
+      ],
+      "Sync with system": [
+        "Sistem ile eşitle"
+      ],
+      "Use ${ BRAND_NAME } settings": [
+        "${ BRAND_NAME } ayarları kullanılsın"
       ]
     }
   }

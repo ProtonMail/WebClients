@@ -4815,6 +4815,9 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Pots importar esdeveniments en format iCal (fitxer ICS).\nEl fitxer ha de tenir una mida màxima de ${ MAX_IMPORT_FILE_SIZE_STRING } i tenir fins a ${ MAX_IMPORT_EVENTS_STRING } esdeveniments. Si el fitxer és més gran, dividiu-lo en fitxers més petits."
+      ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Per importar mitjançant un fitxer CSV i VCF, assegureu-vos que el fitxer no superi ${ MAX_IMPORT_FILE_SIZE_STRING } o els ${ maxContactString } contactes. Si el vostre fitxer és més gran, dividiu-lo en fitxers més petits. ${ learnMoreLink }."
       ]
     },
     "description": {
@@ -6794,6 +6797,9 @@
       ],
       "Your file ${ formattedFilename } is empty.": [
         "El vostre fitxer ${ formattedFilename } està buit."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ maxContactString } contacts.": [
+        "El vostre fitxer ${ formattedFilename } conté més de ${ maxContactString } contactes."
       ]
     },
     "Error importing event": {
@@ -6908,6 +6914,9 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "No hem pogut carregar aquesta pàgina. Refresqueu la pàgina o comproveu la vostra connexió a Internet."
+      ],
+      "Account is deleted or disabled": [
+        "S'ha eliminat el compte o s'ha desactivat"
       ]
     },
     "Error message, Disable account": {
@@ -11861,6 +11870,16 @@
       ],
       "Zoom meeting": [
         "reunió de Zoom"
+      ],
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "S'importaran tots els vostres contactes, fins a un límit d'${ maxContact }",
+        "S'importaran tots els vostres contactes, fins a un límit de ${ maxContact }"
+      ],
+      "Coming soon": [
+        "Pròximament"
+      ],
+      "Receive notifications for ${ categoryLabel }": [
+        "Rebeu notificacions de ${ categoryLabel }"
       ]
     },
     "info": {
@@ -13755,6 +13774,72 @@
       ],
       "ZIP code": [
         "Codi postal"
+      ],
+      "Automated confirmations and alerts": [
+        "Confirmacions i alertes automatitzades"
+      ],
+      "Bookings, billings, and orders": [
+        "Reserves, factures i comandes"
+      ],
+      "Categories": [
+        "Categories"
+      ],
+      "Deals, offers, marketing emails": [
+        "Ofertes, promocions, correus electrònics de màrqueting"
+      ],
+      "Discussion board posts and threads": [
+        "Publicacions i fils del fòrum de discussió"
+      ],
+      "Forums": [
+        "Fòrums"
+      ],
+      "Go to Forums": [
+        "Ves als fòrums"
+      ],
+      "Go to Newsletters": [
+        "Ves als butlletins"
+      ],
+      "Go to Primary": [
+        "Aneu al primari"
+      ],
+      "Go to Promotions": [
+        "Ves a les promocions"
+      ],
+      "Go to Social": [
+        "Ves al canal de continguts"
+      ],
+      "Go to Transactions": [
+        "Aneu a les transaccions"
+      ],
+      "Go to Updates": [
+        "Ves a les actualitzacions"
+      ],
+      "Newsletters": [
+        "Butlletins"
+      ],
+      "Non-promotional content and news": [
+        "Contingut i notícies no promocionals"
+      ],
+      "Primary": [
+        "Principal"
+      ],
+      "Promotions": [
+        "Promocions"
+      ],
+      "Social": [
+        "Social"
+      ],
+      "Social media updates and activity": [
+        "Actualitzacions i activitat de les xarxes socials"
+      ],
+      "Transactions": [
+        "Transaccions"
+      ],
+      "Updates": [
+        "Actualitzacions"
+      ],
+      "Use email categories": [
+        "Utilitzeu les categories de correu electrònic"
       ]
     },
     "label": {
@@ -17509,6 +17594,18 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "La vostra subscripció ja té un descompte aplicat. Canviar a aquesta nova promoció implica que el descompte actual ja no s'aplicarà."
+      ],
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "El descompte és vàlid per a ${ renewalsWithCoupon } renovació.",
+        "El descompte és vàlid per a ${ renewalsWithCoupon } renovacions."
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "El preu amb descompte especial és vàlid durant ${ couponRedemptions } mes. Després, es renovarà automàticament a ${ renewPriceStr } per un període d'1 mes. Podeu cancel·lar la subscripció en qualsevol moment.",
+        "El preu amb descompte especial és vàlid durant ${ couponRedemptions } mesos. Després, es renovarà automàticament a ${ renewPriceStr } per un període d'1 mes. Podeu cancel·lar la subscripció en qualsevol moment."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "El preu amb descompte especial de ${ priceWithDiscount } és vàlid durant ${ couponRedemptions } mes. Després, es renovarà automàticament a ${ renewPriceStr } per un període d'1 mes. Podeu cancel·lar la subscripció en qualsevol moment.",
+        "El preu amb descompte especial de ${ priceWithDiscount } és vàlid durant ${ couponRedemptions } mesos. Després, es renovarà automàticament a ${ renewPriceStr } per un període d'1 mes. Podeu cancel·lar la subscripció en qualsevol moment."
       ]
     },
     "Payments.Error": {
@@ -23323,6 +23420,9 @@
       ],
       "Your subscriptions": [
         "Les vostres subscripcions"
+      ],
+      "Your ${ planTitle } subscription has started": [
+        "La vostra subscripció a ${ planTitle } ha començat"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -23689,6 +23789,9 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "És possible que el vostre compte extern hagi assolit el límit d'amplada de banda de 24 hores. ${ BRAND_NAME } intentarà reprendre la importació al més aviat possible."
+      ],
+      "System notification": [
+        "Notificació del sistema"
       ]
     },
     "tooltip": {
@@ -24519,6 +24622,9 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "La vostra prova finalitzarà el ${ textDate }. No se us cobrarà si cancel·leu abans del ${ textDate }. ${ action }"
+      ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } offer has ended": [
+        "L'oferta de ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } ha finalitzat"
       ]
     },
     "Warning for domain modal": {
@@ -24774,6 +24880,32 @@
       ],
       "Yearly, ${ untilString }": [
         "Cada any, ${ untilString }"
+      ]
+    },
+    "Theme": {
+      "Auto": [
+        "Automàtic"
+      ],
+      "Dark": [
+        "Fosc"
+      ],
+      "Light": [
+        "Clar"
+      ],
+      "Mode: Auto": [
+        "Mode: Automàtic"
+      ],
+      "Mode: Dark": [
+        "Mode: Fosc"
+      ],
+      "Mode: Light": [
+        "Mode: Clar"
+      ],
+      "Sync with system": [
+        "Sincronitzeu-ho amb el sistema"
+      ],
+      "Use ${ BRAND_NAME } settings": [
+        "Utilitzeu les preferències de ${ BRAND_NAME }"
       ]
     }
   }

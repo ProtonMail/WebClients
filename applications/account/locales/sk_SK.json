@@ -4863,6 +4863,9 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Môžete importovať udalosti vo formáte iCal (ICS súbor). Tento súbor by mal mať maximálnu veľkosť ${ MAX_IMPORT_FILE_SIZE_STRING } a maximálne ${ MAX_IMPORT_EVENTS_STRING } udalostí. Ak je váš súbor väčší, prosím rozdeľte ho na menšie súbory."
+      ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Pre importovanie prostredníctvom súborov CSV a VCF zabezpečte, aby veľkosť súboru nepresiahla ${ MAX_IMPORT_FILE_SIZE_STRING } alebo ${ maxContactString } kontaktov. Ak je váš súbor väčší, rozdeľte ho na menšie súbory. ${ learnMoreLink }."
       ]
     },
     "description": {
@@ -5158,6 +5161,15 @@
       ],
       "Windows 8/8.1/7 or Windows 32-bit (ARM64)": [
         "Windows 8/8.1/7 alebo Windows 32-bit (ARM64)"
+      ],
+      "Fedora": [
+        "Fedora"
+      ],
+      "iOS": [
+        "iOS"
+      ],
+      "Ubuntu/Debian": [
+        "Ubuntu/Debian"
       ]
     },
     "Download link": {
@@ -6863,6 +6875,9 @@
       ],
       "Your file ${ formattedFilename } is empty.": [
         "Váš súbor ${ formattedFilename } je prázdny."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ maxContactString } contacts.": [
+        "Váš súbor ${ formattedFilename } obsahuje viac ako ${ maxContactString } kontaktov."
       ]
     },
     "Error importing event": {
@@ -12105,6 +12120,18 @@
       ],
       "Zoom meeting": [
         "Zoom míting"
+      ],
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "Všetky vaše kontakty budú importované až do limitu ${ maxContact }",
+        "Všetky vaše kontakty budú importované až do limitu ${ maxContact }",
+        "Všetky vaše kontakty budú importované až do limitu ${ maxContact }",
+        "Všetky vaše kontakty budú importované až do limitu ${ maxContact }"
+      ],
+      "Coming soon": [
+        "Už čoskoro"
+      ],
+      "Receive notifications for ${ categoryLabel }": [
+        "Prijímať upozornenia pre kategóriu ${ categoryLabel }"
       ]
     },
     "info": {
@@ -14015,6 +14042,72 @@
       ],
       "ZIP code": [
         "PSČ"
+      ],
+      "Automated confirmations and alerts": [
+        "Automatické potvrdenia a upozornenia"
+      ],
+      "Bookings, billings, and orders": [
+        "Rezervácie, fakturácie a objednávky"
+      ],
+      "Categories": [
+        "Kategórie"
+      ],
+      "Deals, offers, marketing emails": [
+        "Ponuky, akcie, marketingové emaily"
+      ],
+      "Discussion board posts and threads": [
+        "Príspevky a vlákna diskusného fóra"
+      ],
+      "Forums": [
+        "Diskusné fóra"
+      ],
+      "Go to Forums": [
+        "Prejsť na Fóra"
+      ],
+      "Go to Newsletters": [
+        "Prejsť na Newslettery"
+      ],
+      "Go to Primary": [
+        "Prejsť do zložky Hlavná"
+      ],
+      "Go to Promotions": [
+        "Prejsť na Propagačné akcie"
+      ],
+      "Go to Social": [
+        "Prejsť do zložky Sociálne"
+      ],
+      "Go to Transactions": [
+        "Prejsť na Transakcie"
+      ],
+      "Go to Updates": [
+        "Prejsť na aktualizácie"
+      ],
+      "Newsletters": [
+        "Newslettery"
+      ],
+      "Non-promotional content and news": [
+        "Nepropagačný obsah a správy"
+      ],
+      "Primary": [
+        "Primárne"
+      ],
+      "Promotions": [
+        "Propagačné akcie"
+      ],
+      "Social": [
+        "Sociálne siete"
+      ],
+      "Social media updates and activity": [
+        "Aktualizácie a aktivita na sociálnych médiách"
+      ],
+      "Transactions": [
+        "Transakcie"
+      ],
+      "Updates": [
+        "Aktualizácie"
+      ],
+      "Use email categories": [
+        "Použiť kategórie emailov"
       ]
     },
     "label": {
@@ -14738,6 +14831,18 @@
         "Až do ${ n } účastníkov",
         "Až do ${ n } účastníkov",
         "Až do ${ n } účastníkov"
+      ],
+      "${ n } participant": [
+        "${ n } účastník",
+        "${ n } účastníci",
+        "${ n } účastníkov",
+        "${ n } účastníkov"
+      ],
+      "Booking pages": [
+        "Stránky rezervácií"
+      ],
+      "Meeting recording": [
+        "Nahrávanie schôdze"
       ]
     },
     "meet_2025: Info": {
@@ -17875,6 +17980,24 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Vaše predplatné má v súčasnosti platnú zľavu. Prechodom na túto novú akciu sa existujúca zľava prestane uplatňovať."
+      ],
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "Zľava je platná na ${ renewalsWithCoupon } obnovenie.",
+        "Zľava je platná na ${ renewalsWithCoupon } obnovenia.",
+        "Zľava je platná na ${ renewalsWithCoupon } obnovení.",
+        "Zľava je platná na ${ renewalsWithCoupon } obnovení."
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Špeciálne zľavnená cena platí ${ couponRedemptions } mesiac. Potom sa každý mesiac automaticky obnoví za ${ renewPriceStr } na 1 mesiac. Službu môžete kedykoľvek zrušiť.",
+        "Špeciálne zľavnená cena platí ${ couponRedemptions } mesiace. Potom sa každý mesiac automaticky obnoví za ${ renewPriceStr } na 1 mesiac. Službu môžete kedykoľvek zrušiť.",
+        "Špeciálne zľavnená cena platí ${ couponRedemptions } mesiacov. Potom sa každý mesiac automaticky obnoví za ${ renewPriceStr } na 1 mesiac. Službu môžete kedykoľvek zrušiť.",
+        "Špeciálne zľavnená cena platí ${ couponRedemptions } mesiacov. Potom sa každý mesiac automaticky obnoví za ${ renewPriceStr } na 1 mesiac. Službu môžete kedykoľvek zrušiť."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Špeciálne zľavnená cena ${ priceWithDiscount } platí ${ couponRedemptions } mesiac. Potom sa každý mesiac automaticky obnoví za ${ renewPriceStr } na 1 mesiac. Službu môžete kedykoľvek zrušiť.",
+        "Špeciálne zľavnená cena ${ priceWithDiscount } platí ${ couponRedemptions } mesiace. Potom sa každý mesiac automaticky obnoví za ${ renewPriceStr } na 1 mesiac. Službu môžete kedykoľvek zrušiť.",
+        "Špeciálne zľavnená cena ${ priceWithDiscount } platí ${ couponRedemptions } mesiacov. Potom sa každý mesiac automaticky obnoví za ${ renewPriceStr } na 1 mesiac. Službu môžete kedykoľvek zrušiť.",
+        "Špeciálne zľavnená cena ${ priceWithDiscount } platí ${ couponRedemptions } mesiacov. Potom sa každý mesiac automaticky obnoví za ${ renewPriceStr } na 1 mesiac. Službu môžete kedykoľvek zrušiť."
       ]
     },
     "Payments.Error": {
@@ -23861,6 +23984,9 @@
       ],
       "Your subscriptions": [
         "Vaše predplatné"
+      ],
+      "Get unlimited meetings on all your devices with ${ planName }. ${ upgradeButton }": [
+        "Získajte neobmedzené schôdzky na všetkých svojich zariadeniach s ${ planName }. ${ upgradeButton }"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -24227,6 +24353,9 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "Váš externý účet mohol dosiahnuť 24-hodinový limit prenosovej kapacity. ${ BRAND_NAME } sa pokúsi obnoviť import hneď, ako to bude možné"
+      ],
+      "System notification": [
+        "Systémové notifikácie"
       ]
     },
     "tooltip": {
@@ -24547,6 +24676,12 @@
       ],
       "You can protect up to ${ FAMILY_MAX_USERS } people with ${ PLAN_NAMES[plan] }. Starting from just ${ priceString }/month per account.": [
         "Môžete chrániť až ${ FAMILY_MAX_USERS } osôb s ${ PLAN_NAMES[plan] }. Už od ${ priceString }/mesiac za účet."
+      ],
+      "${ BRAND_NAME } for Business": [
+        "${ BRAND_NAME } pre Business"
+      ],
+      "Everything you need to collaborate securely in a single subscription. Get access to ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, ${ SHEETS_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } and ${ LUMO_SHORT_APP_NAME } AI Assistant.": [
+        "Všetko, čo potrebujete na bezpečnú spoluprácu v rámci jedného predplatného. Získajte prístup k aplikáciám ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, ${ SHEETS_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } a k Asistentovi AI ${ LUMO_SHORT_APP_NAME }."
       ]
     },
     "upsell panel": {
@@ -25085,6 +25220,9 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Vaše skúšobné obdobie skončí dňa ${ textDate }. Ak ho zrušíte pred ${ textDate }, nebudú vám účtované žiadne poplatky. ${ action }"
+      ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } offer has ended": [
+        "Ponuka ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } už skončila"
       ]
     },
     "Warning for domain modal": {
@@ -25400,6 +25538,14 @@
       ],
       "Yearly, ${ untilString }": [
         "Ročne, ${ untilString }"
+      ]
+    },
+    "Theme": {
+      "Dark": [
+        "Tmavý"
+      ],
+      "Light": [
+        "Svetlý"
       ]
     }
   }

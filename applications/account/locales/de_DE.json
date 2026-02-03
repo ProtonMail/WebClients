@@ -4815,6 +4815,9 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Du kannst Termine im iCal-Format (ICS-Datei) importieren. Die Datei darf die max. Größe von ${ MAX_IMPORT_FILE_SIZE_STRING } nicht überschreiten und bis zu ${ MAX_IMPORT_EVENTS_STRING } Termine enthalten. Sollte deine Datei größer sein, teile sie bitte in kleinere Dateien auf."
+      ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Um Daten über eine CSV- und VCF-Datei zu importieren, stelle sicher, dass die Datei nicht mehr als ${ MAX_IMPORT_FILE_SIZE_STRING } oder ${ maxContactString } Kontakte enthält. Wenn deine Datei größer ist, teile sie bitte in kleinere Dateien auf. ${ learnMoreLink }."
       ]
     },
     "description": {
@@ -6794,6 +6797,9 @@
       ],
       "Your file ${ formattedFilename } is empty.": [
         "Die Datei ${ formattedFilename } ist leer."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ maxContactString } contacts.": [
+        "Die Datei ${ formattedFilename } enthält mehr als ${ maxContactString } Kontakte."
       ]
     },
     "Error importing event": {
@@ -6908,6 +6914,9 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Diese Seite konnte nicht geladen werden. Bitte aktualisiere die Seite oder überprüfe deine Internetverbindung."
+      ],
+      "Account is deleted or disabled": [
+        "Konto ist gelöscht oder deaktiviert"
       ]
     },
     "Error message, Disable account": {
@@ -11861,6 +11870,16 @@
       ],
       "Zoom meeting": [
         "Zoom-Meeting"
+      ],
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "Alle deine Kontakte werden importiert, bis zu einer Obergrenze von ${ maxContact }.",
+        "Alle deine Kontakte werden importiert, bis zu einer Obergrenze von ${ maxContact }."
+      ],
+      "Coming soon": [
+        "Demnächst verfügbar"
+      ],
+      "Receive notifications for ${ categoryLabel }": [
+        "Benachrichtigungen für ${ categoryLabel } erhalten"
       ]
     },
     "info": {
@@ -13755,6 +13774,72 @@
       ],
       "ZIP code": [
         "Postleitzahl"
+      ],
+      "Automated confirmations and alerts": [
+        "Automatische Bestätigungen und Benachrichtigungen"
+      ],
+      "Bookings, billings, and orders": [
+        "Buchungen, Abrechnungen und Bestellungen"
+      ],
+      "Categories": [
+        "Kategorien"
+      ],
+      "Deals, offers, marketing emails": [
+        "Angebote, Aktionen, Marketing-E-Mails"
+      ],
+      "Discussion board posts and threads": [
+        "Beiträge und Threads im Diskussionsforum"
+      ],
+      "Forums": [
+        "Foren"
+      ],
+      "Go to Forums": [
+        "Zu Foren wechseln"
+      ],
+      "Go to Newsletters": [
+        "Zu Newsletter wechseln"
+      ],
+      "Go to Primary": [
+        "Zu Primär wechseln"
+      ],
+      "Go to Promotions": [
+        "Zu Werbung wechseln"
+      ],
+      "Go to Social": [
+        "Zu soziale Medien wechseln"
+      ],
+      "Go to Transactions": [
+        "Zu Transaktionen wechseln"
+      ],
+      "Go to Updates": [
+        "Zu Updates wechseln"
+      ],
+      "Newsletters": [
+        "Newsletter"
+      ],
+      "Non-promotional content and news": [
+        "Werbefreie Inhalte und Neuigkeiten"
+      ],
+      "Primary": [
+        "Primäre"
+      ],
+      "Promotions": [
+        "Werbung"
+      ],
+      "Social": [
+        "Soziale Medien"
+      ],
+      "Social media updates and activity": [
+        "Aktualisierungen und Aktivitäten in sozialen Medien"
+      ],
+      "Transactions": [
+        "Transaktionen"
+      ],
+      "Updates": [
+        "Aktualisierungen"
+      ],
+      "Use email categories": [
+        "E-Mail-Kategorien verwenden"
       ]
     },
     "label": {
@@ -17509,6 +17594,18 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Dein Abonnement hat derzeit einen bestehenden Rabatt. Der Wechsel zu dieser neuen Aktion bedeutet, dass der bestehende Rabatt nicht länger angewendet wird."
+      ],
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "Der Rabatt ist für ${ renewalsWithCoupon } Verlängerung gültig.",
+        "Der Rabatt ist für ${ renewalsWithCoupon } Verlängerungen gültig."
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Der speziell ermäßigte Preis ist für ${ couponRedemptions } Monat gültig. Danach wird er automatisch zum Preis von ${ renewPriceStr } pro Monat verlängert. Du kannst jederzeit kündigen.",
+        "Der speziell ermäßigte Preis ist für ${ couponRedemptions } Monate gültig. Danach wird er automatisch zum Preis von ${ renewPriceStr } pro Monat verlängert. Du kannst jederzeit kündigen."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Der speziell ermäßigte Preis von ${ priceWithDiscount } gilt für ${ couponRedemptions } Monat. Danach wird er automatisch zum Preis von ${ renewPriceStr } pro Monat verlängert. Du kannst jederzeit kündigen.",
+        "Der speziell ermäßigte Preis von ${ priceWithDiscount } gilt für ${ couponRedemptions } Monate. Danach wird er automatisch zum Preis von ${ renewPriceStr } pro Monat verlängert. Du kannst jederzeit kündigen."
       ]
     },
     "Payments.Error": {
@@ -23320,6 +23417,9 @@
       ],
       "Your subscriptions": [
         "Deine Abonnements"
+      ],
+      "Your ${ planTitle } subscription has started": [
+        "Dein ${ planTitle }-Abonnement hat begonnen"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -23686,6 +23786,9 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "Dein externes Konto könnte sein 24-Stunden-Bandbreitenlimit erreicht haben. ${ BRAND_NAME } wird versuchen, den Import so bald wie möglich fortzusetzen."
+      ],
+      "System notification": [
+        "Systembenachrichtigung"
       ]
     },
     "tooltip": {
@@ -24516,6 +24619,9 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Deine Testversion endet am ${ textDate }. Dir werden keine Kosten berechnet, wenn du vor dem ${ textDate } kündigst. ${ action }"
+      ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } offer has ended": [
+        "Das Angebot \"${ PLAN_NAMES[PLANS.PASS_LIFETIME] }\" ist abgelaufen"
       ]
     },
     "Warning for domain modal": {
@@ -24771,6 +24877,32 @@
       ],
       "Yearly, ${ untilString }": [
         "Jährlich, ${ untilString }"
+      ]
+    },
+    "Theme": {
+      "Auto": [
+        "Automatisch"
+      ],
+      "Dark": [
+        "Dunkel"
+      ],
+      "Light": [
+        "Hell"
+      ],
+      "Mode: Auto": [
+        "Modus: Automatisch"
+      ],
+      "Mode: Dark": [
+        "Modus: Dunkel"
+      ],
+      "Mode: Light": [
+        "Modus: Hell"
+      ],
+      "Sync with system": [
+        "Mit dem System synchronisieren"
+      ],
+      "Use ${ BRAND_NAME } settings": [
+        "${ BRAND_NAME }-Einstellungen verwenden"
       ]
     }
   }

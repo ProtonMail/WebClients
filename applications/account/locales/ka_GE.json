@@ -5007,6 +5007,15 @@
       ],
       "Windows 8/8.1/7 or Windows 32-bit (ARM64)": [
         "Windows 8/8.1/7 ან Windows 32-bit (ARM64)"
+      ],
+      "Fedora": [
+        "Fedora"
+      ],
+      "iOS": [
+        "iOS"
+      ],
+      "Ubuntu/Debian": [
+        "Ubuntu/Debian"
       ]
     },
     "Download link": {
@@ -11534,6 +11543,12 @@
       ],
       "Zoom meeting": [
         "Zoom-ის შეხვედრა"
+      ],
+      "Coming soon": [
+        "სულ მალე"
+      ],
+      "Receive notifications for ${ categoryLabel }": [
+        "შეტყობინებების მიღება ${ categoryLabel }-ისთვის"
       ]
     },
     "info": {
@@ -13394,6 +13409,72 @@
       ],
       "ZIP code": [
         "საფოსტო კოდი"
+      ],
+      "Automated confirmations and alerts": [
+        "ავტომატიზებული დადასტურება და განგაშები"
+      ],
+      "Bookings, billings, and orders": [
+        "ჯავშნები, ბილინგი და შეკვეთები"
+      ],
+      "Categories": [
+        "კატეგორიები"
+      ],
+      "Deals, offers, marketing emails": [
+        "შეთანხმებები, შეთავაზებები და მარკეტინგის ელფოსტები"
+      ],
+      "Discussion board posts and threads": [
+        "ფორუმის პოსტები და საუბრები"
+      ],
+      "Forums": [
+        "ფორუმები"
+      ],
+      "Go to Forums": [
+        "ფორუმებზე გადასვლა"
+      ],
+      "Go to Newsletters": [
+        "ახალ ამბებზე გადასვლა"
+      ],
+      "Go to Primary": [
+        "ძირითადზე გადასვლა"
+      ],
+      "Go to Promotions": [
+        "რეკლამებზე გადსავლა"
+      ],
+      "Go to Social": [
+        "სოციალურ ქსელებზე გადასვლა"
+      ],
+      "Go to Transactions": [
+        "ტრანზაქციებზე გადასვლა"
+      ],
+      "Go to Updates": [
+        "განახლებებზე გადასვლა"
+      ],
+      "Newsletters": [
+        "სიახლეები"
+      ],
+      "Non-promotional content and news": [
+        "არასარეკლამო შემცველობა და ახალი ამბები"
+      ],
+      "Primary": [
+        "ძირითადი"
+      ],
+      "Promotions": [
+        "რეკლამა"
+      ],
+      "Social": [
+        "სოციალური"
+      ],
+      "Social media updates and activity": [
+        "სოციალური მედიის განახლებები და აქტივობა"
+      ],
+      "Transactions": [
+        "ტრანზაქციები"
+      ],
+      "Updates": [
+        "განახლებები"
+      ],
+      "Use email categories": [
+        "ელფოსტის კატეგორიების გამოყენება"
       ]
     },
     "label": {
@@ -14078,6 +14159,16 @@
       "Up to ${ n } participant": [
         "${ n }-მდე მონაწილე",
         "${ n }-მდე მონაწილე"
+      ],
+      "${ n } participant": [
+        "${ n } მონაწილე",
+        "${ n } მონაწილე"
+      ],
+      "Booking pages": [
+        "დაჯავშნის გვერდები"
+      ],
+      "Meeting recording": [
+        "შეხვედრის ჩანაწერი"
       ]
     },
     "meet_2025: Info": {
@@ -23139,6 +23230,9 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "თქვენმა გარე ანგარიშმა შეიძლება სიჩქარის 24 საათიან ლიმიტს მიაღწია. ${ BRAND_NAME }-ი შეეცდება შემოტანა, რაც შეიძლება, მალე განაახლოს."
+      ],
+      "System notification": [
+        "სისტემური შეტყობინება"
       ]
     },
     "tooltip": {
@@ -24172,6 +24266,14 @@
       ],
       "Yearly, ${ untilString }": [
         "ყოველწლიურად, ${ untilString }-მდე"
+      ]
+    },
+    "Theme": {
+      "Dark": [
+        "მუქი"
+      ],
+      "Light": [
+        "ღია"
       ]
     }
   }
