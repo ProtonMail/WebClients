@@ -2,7 +2,7 @@ import { type RefObject, useMemo } from 'react';
 
 import type { PopperPosition } from '@proton/components/components/popper/interface';
 
-import { useMediaManagementContext } from '../../contexts/MediaManagementContext';
+import { useMediaManagementContext } from '../../contexts/MediaManagementProvider/MediaManagementContext';
 import { useDeviceLoading } from '../../hooks/useDeviceLoading';
 import { supportsSetSinkId } from '../../utils/browser';
 import { filterDevices, isDefaultDevice } from '../../utils/device-utils';

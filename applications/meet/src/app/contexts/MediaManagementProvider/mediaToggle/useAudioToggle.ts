@@ -8,11 +8,11 @@ import throttle from 'lodash/throttle';
 
 import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
 
-import { DEFAULT_DEVICE_ID } from '../../constants';
-import { audioQuality } from '../../qualityConstants';
-import type { SwitchActiveDevice } from '../../types';
-import { isAudioSessionAvailable, setAudioSessionType } from '../../utils/ios-audio-session';
-import { useStableCallback } from '../useStableCallback';
+import { DEFAULT_DEVICE_ID } from '../../../constants';
+import { useStableCallback } from '../../../hooks/useStableCallback';
+import { audioQuality } from '../../../qualityConstants';
+import type { SwitchActiveDevice } from '../../../types';
+import { isAudioSessionAvailable, setAudioSessionType } from '../../../utils/ios-audio-session';
 import { ERRORS_SIGNALING_POTENTIAL_STALE_DEVICE_STATE } from './constants';
 
 const isAdvancedNoiseFilterSupported = isKrispNoiseFilterSupported();
