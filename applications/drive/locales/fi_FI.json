@@ -1217,6 +1217,21 @@
       ],
       "Zoom out": [
         "Loitonna"
+      ],
+      "Cancel downloads": [
+        "Peruuta lataukset"
+      ],
+      "Cancel transfers": [
+        "Peruuta siirrot"
+      ],
+      "Download (${ nbSelected })": [
+        "Lataa (${ nbSelected })"
+      ],
+      "Get mobile and desktop apps": [
+        "Hanki mobiili- ja työpöytäsovellukset"
+      ],
+      "Scan & Download (${ nbSelected })": [
+        "Skannaa ja lataa (${ nbSelected })"
       ]
     },
     "Action: Docs": {
@@ -1615,6 +1630,9 @@
       ],
       "Website access problem": [
         "Verkkosivuston avautumisongelma"
+      ],
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "${ LUMO_SHORT_APP_NAME } -ongelma"
       ]
     },
     "Button": {
@@ -2920,6 +2938,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Olet jo luonut 10 aliasta. Saat rajattomasti aliaksia ja 500 Gt tallennustilaa ${ BRAND_NAME } Unlimitedilla."
+      ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Tuodaksesi CSV- ja VCF-tiedostoista, varmista ettei tiedoston koko ylitä ${ MAX_IMPORT_FILE_SIZE_STRING } tai yhteystietojen määrä ${ maxContactString } yhteystietoa. Jos tiedostosi on suurempi, jaa se pienempiin osiin. ${ learnMoreLink }"
       ]
     },
     "description": {
@@ -3722,6 +3743,24 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Nimen salausta ei pysty purkamaan"
+      ],
+      "Failed to resend invitation": [
+        "Kutsun uudelleenlähettäminen epäonnistui"
+      ],
+      "No file to upload": [
+        "Ei lähetettävää tiedostoa"
+      ],
+      "Please enter a valid postal code": [
+        "Syötä kelvollinen postinumero"
+      ],
+      "Unknown number of downloads": [
+        "Tuntematon määrä latauksia"
+      ],
+      "We cannot retrieve this item": [
+        "Emme voi noutaa tätä kohdetta"
+      ],
+      "We're sorry, but free upload is not available right now.": [
+        "Valitettavasti ilmainen lataus ei ole tällä hetkellä saatavilla."
       ]
     },
     "error": {
@@ -3797,6 +3836,9 @@
       ],
       "Your file ${ formattedFilename } is empty.": [
         "Tiedosto \"${ formattedFilename }\" on tyhjä."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ maxContactString } contacts.": [
+        "Tiedosto ${ formattedFilename } sisältää yli ${ maxContactString } yhteystietoa."
       ]
     },
     "Error importing event": {
@@ -6609,6 +6651,22 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Voit silti tarkastella omia tilitietojasi, mutta kaikki käyttäjätilit poistetaan organisaatiostasi."
+      ],
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "Kaikki yhteystiedot tuodaan ${ maxContact } yhteystiedon rajoitukseen saakka",
+        "Kaikki yhteystiedot tuodaan ${ maxContact } yhteystiedon rajoitukseen saakka"
+      ],
+      "Computed hash does not match XAttr": [
+        "Laskettu hajautusarvo ei vastaa XAttr-arvoa"
+      ],
+      "Done": [
+        "Valmis"
+      ],
+      "This will cancel any remaining downloads.": [
+        "Tämä peruuttaa kaikki jäljellä olevat lataukset."
+      ],
+      "This will cancel any remaining uploads and downloads. Cancelled uploads won't be saved in ${ DRIVE_APP_NAME }.": [
+        "Tämä peruuttaa kaikki jäljellä olevat lataukset ja lähetykset. Peruutetut lataukset eivät tallennu ${ DRIVE_APP_NAME }en."
       ]
     },
     "info": {
@@ -7350,6 +7408,12 @@
       ],
       "ZIP code": [
         "Postinumero"
+      ],
+      "Anonymous": [
+        "Anonyymi"
+      ],
+      "Replace existing folder or file": [
+        "Korvaa olemassa oleva kansio tai tiedosto"
       ]
     },
     "Label for contact group color": {
@@ -9222,6 +9286,9 @@
       ],
       "Upload folder": [
         "Lähetä kansio"
+      ],
+      "Upload more files": [
+        "Lähetä enemmän tiedostoja"
       ]
     },
     "Onboarding Info": {
@@ -9624,6 +9691,18 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Tilauksessasi on jo olemassa oleva alennus. Siirtyminen tähän uuteen kampanjaan tarkoittaa, että aiempaa alennusta ei enää käytetä."
+      ],
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "Alennus on voimassa ${ renewalsWithCoupon } uudistuksen ajan.",
+        "Alennus on voimassa ${ renewalsWithCoupon } uudistuksen ajan."
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Erikoistarjoushinta on voimassa ${ couponRedemptions } kuukauden. Sen jälkeen se uusitaan automaattisesti hintaan ${ renewPriceStr } yhden kuukauden ajaksi. Voit peruuttaa tilauksen milloin tahansa.",
+        "Erikoistarjoushinta on voimassa ${ couponRedemptions } kuukautta. Sen jälkeen se uusitaan automaattisesti hintaan ${ renewPriceStr } yhden kuukauden ajaksi. Voit peruuttaa tilauksen milloin tahansa."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Erikoistarjoushinta ${ priceWithDiscount } on voimassa ${ couponRedemptions } kuukauden. Sen jälkeen se uusitaan automaattisesti hintaan ${ renewPriceStr } yhden kuukauden ajaksi. Voit peruuttaa tilauksen milloin tahansa.",
+        "Erikoistarjoushinta ${ priceWithDiscount } on voimassa ${ couponRedemptions } kuukautta. Sen jälkeen se uusitaan automaattisesti hintaan ${ renewPriceStr } yhden kuukauden ajaksi. Voit peruuttaa tilauksen milloin tahansa."
       ]
     },
     "Payments.Error": {
@@ -10003,6 +10082,9 @@
       ],
       "You can get up to **${ maxRewardAmount }** in credit.": [
         "Voit ansaita jopa **${ maxRewardAmount }** krediitteinä."
+      ],
+      "your subscription": [
+        "tilauksesi"
       ]
     },
     "Safety review": {
@@ -12316,6 +12398,18 @@
       ],
       "You’ve got 5 GB of storage": [
         "Sinulla on 5 Gt tallennustilaa"
+      ],
+      "Cancel all downloads?": [
+        "Peru kaikki lataukset?"
+      ],
+      "Cancel all transfers?": [
+        "Peruuta kaikki siirrot?"
+      ],
+      "How your free trial works": [
+        "Miten ilmainen kokeilujakso toimii"
+      ],
+      "Your ${ planTitle } subscription has started": [
+        "${ planTitle }-tilauksesi on alkanut"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -12617,6 +12711,21 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Kokeilujaksosi päättyy ${ textDate }. Sinua ei veloiteta, jos peruutat tilauksesi ennen ${ textDate }. ${ action }"
+      ]
+    },
+    "meet_2025: Feature": {
+      "${ n } participant": [
+        "${ n } osallistuja",
+        "${ n } osallistujaa"
+      ],
+      "Booking pages": [
+        "Ajanvaraussivut"
+      ],
+      "Browser, mobile, and desktop apps": [
+        "Selain, mobiili- ja työpöytäsovellukset"
+      ],
+      "Meeting recording": [
+        "Kokoustallenne"
       ]
     }
   }
