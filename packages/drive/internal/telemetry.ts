@@ -142,7 +142,7 @@ export class MetricHandler {
                 this.lastUploadError = new Date();
             }
 
-            if (metric.error === 'unknown') {
+            if (metric.error === 'unknown' || metric.error === 'integrity_error') {
                 captureMessage('Metric event details: upload unknown error', {
                     level: 'debug', // Debug as we need it only when we investigate metric reports.
                     tags: {
@@ -150,6 +150,7 @@ export class MetricHandler {
                     },
                     extra: {
                         error: metric.originalError,
+                        errorType: metric.error,
                     },
                 });
             }
