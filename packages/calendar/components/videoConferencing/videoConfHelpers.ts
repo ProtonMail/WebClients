@@ -47,7 +47,13 @@ export const addVideoConfInfoToDescription = ({
         [VIDEO_CONFERENCE_PROVIDER.PROTON_MEET]: MEET_APP_NAME,
     };
 
-    const videoConfDetails = `
+    const videoConfDetails =
+        provider && provider === VIDEO_CONFERENCE_PROVIDER.PROTON_MEET
+            ? `
+${SEPARATOR_PROTON_EVENTS}
+Join ${providerLabels[provider]}: ${meetingURL}
+${SEPARATOR_PROTON_EVENTS}`
+            : `
 ${SEPARATOR_PROTON_EVENTS}
 Join ${providerLabels[provider]}: ${meetingURL} (ID: ${meetingId}${password ? `, passcode: ${password}` : ''})
 
