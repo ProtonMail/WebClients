@@ -3494,6 +3494,9 @@
       "60 minutes per meeting": [
         "60 minuter per möte"
       ],
+      "Booking pages": [
+        "Bokningssidor"
+      ],
       "Browser, mobile, and desktop apps": [
         "Appar för webbläsare, mobil och stationär dator"
       ],
@@ -3502,6 +3505,9 @@
       ],
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "End-to-end-krypterad skärmdelning och kortvarig chatt i samtal"
+      ],
+      "Meeting recording": [
+        "Mötesinspelning"
       ],
       "One active meeting at a time": [
         "Ett aktivt möte åt gången"
@@ -4574,17 +4580,13 @@
       "terms and conditions": [
         "användarvillkor"
       ],
-      "The coupon is valid for ${ couponRedemptions } renewal.": [
-        "Kupongen är giltig för ${ couponRedemptions } förnyelse.",
-        "Kupongen är giltig för ${ couponRedemptions } förnyelser."
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "Rabatten är giltig för ${ renewalsWithCoupon } förnyelse.",
+        "Rabatten är giltig för ${ renewalsWithCoupon } förnyelser."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "Det rabatterade priset ${ priceWithDiscount } gäller för den första ${ subscriptionLength } månaden.",
         "Det rabatterade priset på ${ priceWithDiscount } gäller under de första ${ subscriptionLength } månaderna."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "Det rabatterade priset på ${ priceWithDiscount } gäller den första månaden. Kupongen är giltig för ${ couponRedemptions } förnyelse. Därefter förnyas det automatiskt till ${ renewPriceStr } i 1 månad. Du kan avbryt när som helst.",
-        "Det rabatterade priset på ${ priceWithDiscount } gäller den första månaden. Kupongen är giltig för ${ couponRedemptions } förnyelse. Därefter förnyas det automatiskt till ${ renewPriceStr } i 1 månad. Du kan avbryt när som helst."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Det speciellt rabatterade priset på ${ priceWithDiscount } är giltig för den första månaden. Sedan kommer det förnyas den automatiskt med ${ renewPriceStr } varje månad. Du kan avbryta när som helst."

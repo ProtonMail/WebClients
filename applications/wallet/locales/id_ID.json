@@ -371,7 +371,7 @@
         "Buka kunci data"
       ],
       "Update recovery file": [
-        "Perbarui berkas pemulihan"
+        "Perbarui file pemulihan"
       ],
       "Update recovery phrase": [
         "Perbarui frasa pemulihan"
@@ -383,7 +383,7 @@
         "Tingkatkan sekarang"
       ],
       "Upload and share files": [
-        "Unggah dan bagikan berkas"
+        "Unggah dan bagikan file"
       ],
       "Use ${ address.Email }": [
         "Gunakan ${ address.Email }"
@@ -501,7 +501,7 @@
     },
     "b2b_trials_2025_Info": {
       "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
-        "Setelah uji coba ini berakhir pada ${ formattedDate1 }, paket Anda akan menjadi langganan berbayar yang diperbarui secara otomatis setiap ${ renewCycle } bulan. Anda tidak akan ditagih apabila Anda membatalkan sebelum ${ formattedDate2 }."
+        "Setelah masa uji coba berakhir pada ${ formattedDate1 }, langganan akan menjadi berbayar dan diperpanjang otomatis setiap ${ renewCycle } bulan. Anda tidak akan dikenakan biaya jika membatalkan sebelum ${ formattedDate2 }."
       ],
       "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
         "Setelah masa uji coba ini berakhir pada ${ formattedDate1 }, paket Anda akan menjadi langganan berbayar yang diperbarui secara otomatis secara bulanan. Anda tidak akan ditagih apabila Anda membatalkan sebelum ${ formattedDate2 }."
@@ -976,7 +976,7 @@
         "Batalkan dan turunkan"
       ],
       "Cloud storage and sharing for large files": [
-        "Penyimpanan awan dan pembagian untuk berkas besar"
+        "Penyimpanan cloud dan pembagian untuk file besar"
       ],
       "Encrypted cloud storage for photos and documents": [
         "Ruang penyimpanan cloud terenkripsi untuk foto dan dokumen"
@@ -1045,7 +1045,7 @@
         "Riwayat percakapan utuh dengan fitur pencarian"
       ],
       "Large file upload support": [
-        "Dukungan untuk unggahan berkas besar"
+        "Dukungan untuk unggahan file besar"
       ],
       "Limited daily chats": [
         "Percakapan harian dalam jumlah yang terbatas"
@@ -1057,16 +1057,16 @@
         "Kebijakan tanpa log yang ketat"
       ],
       "Unlimited daily chats": [
-        "Tanpa batasan jumlah percakapan harian"
+        "Obrolan harian tanpa batas"
       ],
       "Unlimited favorites for quick access": [
         "Tanpa batasan jumlah favorit untuk akses yang cepat"
       ],
       "Upload and query multiple large files": [
-        "Unggah dan kuerikan beberapa berkas besar sekaligus"
+        "Unggah dan telusuri beberapa file berukuran besar"
       ],
       "Upload and query small files": [
-        "Unggah dan kuerikan berkas kecil"
+        "Unggah dan kuerikan file kecil"
       ],
       "Web search access": [
         "Akses pencarian web"
@@ -2028,7 +2028,7 @@
         "${ DOCS_SHORT_APP_NAME } di ${ DRIVE_APP_NAME } memungkinkan Anda untuk saling bekerja sama dalam lingkungan yang aman dan terenkripsi."
       ],
       "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
-        "Tambahkan folder dan berkas ke ${ DRIVE_APP_NAME } dan undang anggota tim untuk meninjau atau menyunting berkas ini."
+        "Tambahkan folder dan file ke ${ DRIVE_APP_NAME } dan undang anggota tim untuk meninjau atau mengedit file ini."
       ],
       "Automatically forward incoming email to another email address.": [
         "Meneruskan email yang masuk ke alamat email lainnya secara otomatis."
@@ -2046,7 +2046,7 @@
         "Akses email dan kalender Anda pada desktop dan perangkat seluler dengan mudah."
       ],
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
-        "Sinkronkan berkas ke layanan cloud dari desktop Anda dengan mudah dan akses berkas ini dari perangkat seluler Anda."
+        "Sinkronkan file ke layanan cloud dari desktop Anda dengan mudah dan akses file dari perangkat seluler Anda."
       ],
       "Encourage the use of two-factor authentication in your organization for extra security.": [
         "Anjurkan penggunaan autentikasi dua faktor di dalam organisasi Anda untuk keamanan yang lebih."
@@ -2196,7 +2196,7 @@
     },
     "emergency_access": {
       "Trusted contact": [
-        "Kontak terpercaya"
+        "Kontak tepercaya"
       ]
     },
     "Error": {
@@ -3032,10 +3032,10 @@
         "Anda akan diberi tahu apabila kata sandi atau data lainnya yang Anda miliki terbocorkan dari layanan pihak ketiga."
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
-        "Anda memiliki langganan ${ planTitle } versi uji coba. Apabila Anda ingin melanjutkan langganan Anda setelah masa uji coba ini berakhir, silakan tambahkan metode pembayaran."
+        "Anda memiliki langganan uji coba ${ planTitle }. Jika ingin melanjutkan langganan setelah masa uji coba, silakan tambahkan metode pembayaran."
       ],
       "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
-        "Anda memiliki langganan ${ planTitle } yang berada dalam masa uji coba. Tidak ada pembayaran yang diperlukan untuk saat ini. Langganan Anda akan diperbarui secara otomatis pada akhir masa uji coba."
+        "Anda memiliki langganan uji coba ${ planTitle }. Tidak diperlukan pembayaran saat ini. Langganan Anda akan diperpanjang secara otomatis di akhir masa uji coba."
       ],
       "You may be redirected to your bank’s website.": [
         "Anda mungkin akan dialihkan ke situs web milik bank Anda."
@@ -3053,7 +3053,7 @@
         "Anda kemudian akan ditagih setiap ${ renewCycle } bulan pada harga ${ renewAmountStr }."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
-        "Akun ${ BRAND_NAME } Anda sedang ditangguhkan. Setelah 28 hari, email tidak akan lagi diantarkan ke kotak masuk Anda, tautan berbagi Drive Anda akan diblokir, dan Anda tidak akan dapat mengunggah berkas baru. Untuk dapat kembali menggunakan layanan seperti biasa, silakan lunasi seluruh tagihan yang tertunggak."
+        "Akun ${ BRAND_NAME } Anda sedang ditangguhkan. Setelah 28 hari, email tidak akan lagi diantarkan ke kotak masuk Anda, tautan berbagi Drive Anda akan diblokir, dan Anda tidak akan dapat mengunggah file baru. Untuk dapat kembali menggunakan layanan seperti biasa, silakan lunasi seluruh tagihan yang tertunggak."
       ],
       "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Langganan ${ plan } Plus Anda akan digantikan dengan ${ PASS_SHORT_APP_NAME } Lifetime. Saldo sisa langganan Anda akan ditambahkan ke akun Anda. Penawaran ${ PASS_SHORT_APP_NAME } Lifetime ini tidak memiliki harga perpanjangan, karena sekalinya Anda membayar, Anda akan memperoleh akses seumur hidup ke ${ PASS_SHORT_APP_NAME }."
@@ -3068,7 +3068,7 @@
         "Tanggal tagihan Anda selanjutnya adalah ${ renewalTime }."
       ],
       "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
-        "Tanggal penagihan Anda selanjutnya adalah ${ renewalTime }. Silakan hubungi layanan dukungan apabila Anda perlu untuk mengubah paket dengan segera."
+        "Tanggal penagihan berikutnya adalah ${ renewalTime }. Silakan hubungi dukungan jika Anda memerlukan perubahan paket segera."
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Nomor telepon Anda hanya akan digunakan satu kali ini untuk keperluan verifikasi."
@@ -3196,7 +3196,7 @@
         "Negara"
       ],
       "Credits": [
-        "Saldo"
+        "Kredit"
       ],
       "Currency": [
         "Mata uang"
@@ -3503,7 +3503,7 @@
         "Hingga ${ n } pertemuan per hari"
       ],
       "Up to ${ n } participant": [
-        "Hinnga ${ n } peserta"
+        "Hingga ${ n } peserta"
       ]
     },
     "New Label form": {
@@ -3536,7 +3536,7 @@
         "Turunkan jenis akun"
       ],
       "Get ${ BRAND_NAME } for free": [
-        "Dapatkan ${ BRAND_NAME } secara cuma-cuma"
+        "Dapatkan ${ BRAND_NAME } secara gratis"
       ],
       "Get ${ planName }": [
         "Dapatkan ${ planName }"
@@ -3606,7 +3606,7 @@
         "${ n } koneksi VPN"
       ],
       "${ options }-day file version history": [
-        "Riwayat versi berkas ${ options } hari"
+        "Riwayat versi file ${ options } hari"
       ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "${ PASS_APP_NAME } + SimpleLogin untuk seumur hidup"
@@ -3636,7 +3636,7 @@
         "1 pengguna"
       ],
       "10-year file version history": [
-        "Riwayat versi berkas 10 tahun"
+        "Riwayat versi file 10 tahun"
       ],
       "24/7 account management support": [
         "Layanan pengelolaan akun 24/7"
@@ -3684,7 +3684,7 @@
         "Tagihan yang terpusat"
       ],
       "Collaborate and share large files": [
-        "Kolaborasi dan berbagi berkas besar"
+        "Kolaborasi dan berbagi file besar"
       ],
       "Contact groups": [
         "Grup kontak"
@@ -3816,7 +3816,7 @@
         "Dukungan prioritas & percakapan langsung"
       ],
       "Recover previous file versions": [
-        "Pulihkan versi berkas sebelumnya"
+        "Pulihkan versi file sebelumnya"
       ],
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Pemeriksaan rutin keamanan akunmu. Kami akan mengingatkan jika kamu memiliki kata sandi yang salah atau yang sudah pernah digunakan, dan perlu diperbarui."
@@ -3843,7 +3843,7 @@
         "Kirim & terima undangan"
       ],
       "Share files with no size limit": [
-        "Bagikan berkas tanpa batasan ukuran"
+        "Bagikan file tanpa batasan ukuran"
       ],
       "Short domain (@pm.me)": [
         "Domain pendek (@pm.me)"
@@ -3864,7 +3864,7 @@
         "Kebijakan tanpa log yang ketat"
       ],
       "Sync and backup all your files across devices": [
-        "Sinkronkan dan cadangkan seluruh berkas Anda antar berbagai perangkat"
+        "Sinkronkan dan cadangkan seluruh file Anda antar berbagai perangkat"
       ],
       "Tor over VPN": [
         "Tor melalui VPN"
@@ -3891,7 +3891,7 @@
         "Tanpa batasan jumlah label"
       ],
       "Unlimited logins, notes and credit cards": [
-        "Tanpa batasan jumlah entri masuk, catatan, dan kartu kredit"
+        "Tanpa batasan jumlah login, catatan, dan kartu kredit"
       ],
       "Unlimited messages per day": [
         "Tanpa batasan jumlah pesan per harinya"
@@ -3936,7 +3936,7 @@
         "Pembagian brankas (hingga ${ n } pengguna)"
       ],
       "Vault sharing with up to ${ n } person": [
-        "Pembagian berkas dengan hingga ${ n } pengguna"
+        "Berbagi brankas dengan hingga ${ n } pengguna"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Kami memindai dark web untuk memeriksa apakah alamat atau alias ${ BRAND_NAME } Anda telah dibocorkan serta memberitahukan Anda dengan segera apabila kami menemukan sesuatu."
@@ -3963,10 +3963,10 @@
         "${ brand } akan berakhir dalam ${ last4 }"
       ],
       "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
-        "Ruang penyimpanan 1 TB yang memungkinkan Anda untuk menyimpan, menyinkronkan, dan membagikan berkas dengan mudah. Terlindung oleh enkripsi end-to-end."
+        "Penyimpanan 1 TB yang memungkinkan Anda untuk menyimpan, menyinkronkan, dan membagikan file dengan mudah. Terlindung oleh enkripsi end-to-end."
       ],
       "200 GB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
-        "Ruang penyimpanan 200 GB yang memungkinkan Anda untuk menyimpan, menyinkronkan, dan membagikan berkas dengan mudah. Terlindung oleh enkripsi end-to-end."
+        "Penyimpanan cloud 200 GB yang memungkinkan Anda untuk menyimpan, menyinkronkan, dan membagikan file dengan mudah. Terlindung oleh enkripsi end-to-end."
       ],
       "Advanced network security and access management with dedicated secure Gateways": [
         "Keamanan jaringan dan pengelolaan akses tingkat lanjut dengan Gateway khusus yang aman"
@@ -4066,7 +4066,7 @@
         "${ CALENDAR_APP_NAME }: Amankan jadwal Anda dengan enkripsi ujung ke ujung. Meliputi dukungan untuk kalender khusus, fitur berbagi kalender, dan masih banyak lagi."
       ],
       "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
-        "${ DRIVE_APP_NAME }: Amankan berkas Anda dengan penyimpanan cloud terenkripsi. Meliputi sinkronisasi otomatis, file sharing terenkripsi, dan masih banyak lagi."
+        "${ DRIVE_APP_NAME }: Amankan file Anda dengan penyimpanan cloud terenkripsi. Meliputi sinkronisasi otomatis, file sharing terenkripsi, dan masih banyak lagi."
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: Amankan email Anda dengan enkripsi end-to-end. Meliputi dukungan untuk domain email khusus, 15 alamat email, alias hide-my-email tanpa batasan jumlah, dan masih banyak lagi."
@@ -4219,7 +4219,7 @@
         "Arahkan lalu lintas internet Anda melalui jaringan Tor dengan satu klik"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
-        "Amankan berkas Anda dengan ruang penyimpanan terenkripsi berbasis cloud. Dengan dukungan sinkronisasi otomatis, file sharing terenkripsi, dan masih banyak lagi."
+        "Amankan file Anda dengan ruang penyimpanan terenkripsi berbasis cloud. Dengan dukungan sinkronisasi otomatis, file sharing terenkripsi, dan masih banyak lagi."
       ],
       "Securely share individual items with anyone (even if they don't use ${ PASS_APP_NAME })": [
         "Bagikan item individu secara aman dengan siapa pun (bahkan jika mereka tidak menggunakan ${ PASS_APP_NAME })"
@@ -4237,7 +4237,7 @@
         "Atur filter untuk membalas, menyortir, dan/atau melabeli email Anda secara otomatis"
       ],
       "Share your files or folders with anyone by using secure, shareable links": [
-        "Bagikan berkas atau folder Anda dengan siapa pun melalui tautan yang aman dan mudah untuk dibagikan"
+        "Bagikan file atau folder Anda dengan siapa pun melalui tautan yang aman dan mudah untuk dibagikan"
       ],
       "SMTP allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME }.": [
         "SMTP memungkinkan layanan atau perangkat pihak ketiga untuk mengirimkan email melalui ${ MAIL_APP_NAME }."
@@ -4255,7 +4255,7 @@
         "Ruang penyimpanan terbagi untuk seluruh pengguna antara ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, dan ${ PASS_APP_NAME }."
       ],
       "Support for file-sharing protocols like BitTorrent": [
-        "Dukungan untuk protokol berbagi berkas seperti BitTorrent"
+        "Dukungan untuk protokol berbagi file seperti BitTorrent"
       ],
       "Upload your business' logo to customize your teams experience on the ${ BRAND_NAME } web apps": [
         "Unggah logo bisnis Anda untuk menyesuaikan pengalaman tim Anda di aplikasi web ${ BRAND_NAME }"
@@ -4331,7 +4331,7 @@
     },
     "Notification for duplicate filenames in the current upload": {
       "Some images were not uploaded due to duplicate filenames in the current selection.": [
-        "Beberapa gambar tidak diunggah karena nama berkas yang berduplikat dalam seleksi saat ini."
+        "Beberapa gambar tidak diunggah karena nama file yang berduplikat dalam seleksi saat ini."
       ]
     },
     "Onboarding Trial": {
@@ -4382,7 +4382,7 @@
         "Pembagian brankas, item, dan tautan yang aman"
       ],
       "Unlimited logins, notes, credit cards and more": [
-        "Tanpa batasan jumlah entri masuk, catatan, kartu kredit, dan masih banyak lagi"
+        "Tanpa batasan jumlah login, catatan, kartu kredit, dan masih banyak lagi"
       ]
     },
     "pass_signup_2023: Title": {
@@ -4404,7 +4404,7 @@
         "Perlindungan akun mutakhir"
       ],
       "File attachments (up to 10GB)": [
-        "Lampiran berkas (hingga 10GB)"
+        "Lampiran file (hingga 10GB)"
       ],
       "Team policies": [
         "Kebijakan tim"
@@ -4487,7 +4487,7 @@
         "Tanpa termasuk ${ taxName } ${ taxRate }%: ${ taxAmount }"
       ],
       "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
-        "Tanpa termasuk pajak ${ taxRate }%: ${ taxAmount }"
+        "Belum termasuk pajak ${ taxRate }%: ${ taxAmount }"
       ],
       "Got it": [
         "Paham"
@@ -4496,7 +4496,7 @@
         "Saya membeli produk ini selaku pihak bisnis"
       ],
       "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "Meliputi ${ taxName } ${ taxRate }%: ${ taxAmount }"
+        "Termasuk ${ taxName } ${ taxRate }%: ${ taxAmount }"
       ],
       "Including ${ taxRate }% taxes: ${ taxAmount }": [
         "Meliputi pajak ${ taxRate }%: ${ taxAmount }"
@@ -4514,7 +4514,7 @@
         "Silakan aktifkan kembali langganan Anda terlebih dahulu untuk menurunkan jumlah pengaya."
       ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
-        "Harga pembaruan dapat berubah sewaktu-waktu sesuai dengan ${ termsAndConditionsLink } yang berlaku."
+        "Harga perpanjangan dapat berubah sesuai dengan ${ termsAndConditionsLink }."
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Diperbarui seharga ${ renewPriceStr }, batalkan kapan saja."
@@ -4525,23 +4525,14 @@
       "terms and conditions": [
         "syarat dan ketentuan"
       ],
-      "The coupon is valid for ${ couponRedemptions } renewal.": [
-        "Kupon ini valid untuk ${ couponRedemptions } kali pembaruan."
-      ],
       "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
-        "Harga diskon khusus ini valid untuk ${ subscriptionLength } bulan pertama."
-      ],
-      "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "Harga diskon khusus ini valid untuk bulan pertama. Kupon ini valid untuk ${ couponRedemptions } kali pembaruan. Setelahnya, langganan ini akan diperbarui secara otomatis pada harga ${ renewPriceStr } untuk 1 bulan. Anda dapat membatalkan langganan Anda kapan saja."
+        "Harga diskon khusus ini berlaku untuk ${ subscriptionLength } bulan pertama."
       ],
       "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Harga diskon khusus ini valid untuk bulan pertama. Selanjutnya, langganan ini akan diperbarui secara otomatis pada harga ${ renewPriceStr } per bulannya. Anda dapat membatalkan langganan Anda kapan saja."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "Harga diskon khusus ${ priceWithDiscount } ini valid untuk ${ subscriptionLength } bulan pertama."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "Harga diskon khusus ${ priceWithDiscount } ini valid untuk bulan pertama. Kupon ini valid untuk ${ couponRedemptions } kali pembaruan. Setelahnya, langganan ini akan diperbarui secara otomatis pada harga ${ renewPriceStr } untuk 1 bulan. Anda dapat membatalkan langganan Anda kapan saja."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Harga diskon khusus ${ priceWithDiscount } ini valid untuk bulan pertama. Selanjutnya, paket Anda akan diperbarui secara otomatis dengan harga ${ renewPriceStr } per bulannya. Anda dapat membatalkan langganan Anda kapan saja."
@@ -4686,13 +4677,13 @@
         "Nomor Bisnis"
       ],
       "Edit ABN": [
-        "Sunting ABN"
+        "Edit ABN"
       ],
       "Edit Business Number": [
         "Sunting Nomor Bisnis"
       ],
       "Edit EIN": [
-        "Sunting EIN"
+        "Edit EIN"
       ],
       "Edit VAT number": [
         "Sunting nomor PPN"
@@ -4721,7 +4712,7 @@
         "Konfirmasi frasa sandi atau biarkan kosong"
       ],
       "E.g., ": [
-        "Misalnya "
+        "Mis., "
       ],
       "Enter a passphrase or leave empty": [
         "Masukkan frasa sandi atau biarkan kosong"
@@ -5011,7 +5002,7 @@
         "Ruang penyimpanan ${ app }"
       ],
       "${ app } storage used": [
-        "${ app } ruang penyimpanan digunakan"
+        "${ app } penyimpanan digunakan"
       ],
       "${ storage } ${ percentage }% full": [
         "${ storage } ${ percentage }% penuh"
@@ -5050,7 +5041,7 @@
         "Anda akan kehilangan akses kecepatan VPN tertinggi, perlindungan untuk 10 perangkat, streaming berkecepatan tinggi, perlindungan pemblokir iklan dan perangkat lunak jahat, serta dukungan prioritas juga."
       ],
       "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
-        "Anda akan kehilangan akses ke entri masuk dan catatan yang tak terbatas, alias hide-my-email yang tak terbatas, 20 brankas, serta dukungan prioritas."
+        "Anda akan kehilangan akses ke login dan catatan tanpa batas, alias hide-my-email tanpa batas, 20 brankas, serta dukungan prioritas."
       ]
     },
     "Subscription": {
@@ -5165,7 +5156,7 @@
         "Sistem kami tidak akan lagi mendebit Anda secara otomatis melalui metode pembayaran ini, namun langganan Anda akan tetap diperbarui pada akhir siklus tagihan. Apabila Anda ingin menurunkan akun atau mengubah paket berlangganan, Anda tetap harus mengurus proses pemindahan paket secara manual sebelum tagihan Anda jatuh tempo. Di samping itu, apabila Anda menonaktifkan autodebit dan lupa membayar tagihan, kami dapat menurunkan akun Anda dan menonaktifkan berbagai fitur berbayar yang ada secara otomatis."
       ],
       "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
-        "Sistem kami tidak akan lagi mendebit Anda secara otomatis melalui metode pembayaran ini, namun langganan Anda akan tetap diperbarui pada akhir siklus tagihan. Apabila Anda ingin menurunkan akun atau mengubah paket berlangganan, Anda tetap harus mengurus proses pemindahan paket secara manual sebelum tagihan Anda jatuh tempo. Mohon diperhatikan bahwa kami tidak dapat menurunkan akun Anda apabila Anda melebihi batas kuota yang diizinkan atau menggunakan fitur berbayar selaku pengguna gratis, dan kami juga tidak dapat menghapus berkas, email, atau data lainnya yang Anda miliki. Apabila Anda menonaktifkan autodebit, jangan lupa untuk membayar tagihan Anda pada waktunya untuk menghindari penangguhan akun."
+        "Sistem kami tidak akan lagi menagih otomatis menggunakan metode pembayaran ini, tetapi langganan Anda tetap akan diperpanjang di akhir siklus tagihan. Jika Anda ingin menurunkan paket atau mengubah langganan, Anda tetap perlu melakukannya sendiri sebelum periode penagihan berakhir. Kami tidak dapat menurunkan paket Anda secara otomatis karena jika Anda melebihi kuota penyimpanan free plan atau menggunakan fitur berbayar lainnya, kami tidak dapat menghapus file, email, atau data lain secara otomatis untuk Anda. Jika Anda menonaktifkan pembayaran otomatis, pastikan untuk membayar tagihan langganan berikutnya sebelum tanggal jatuh tempo agar akun Anda tidak ditangguhkan."
       ]
     },
     "Subscription saving": {
@@ -5452,7 +5443,7 @@
         "Peningkatan selesai!"
       ],
       "Upload and share files": [
-        "Unggah dan bagikan berkas"
+        "Unggah dan bagikan file"
       ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Gunakan ${ VPN_SHORT_APP_NAME } untuk privasi data"
@@ -5492,7 +5483,7 @@
         "${ LUMO_APP_NAME }: Asisten AI yang menghargai privasi Anda"
       ],
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Entri masuk aman pada seluruh perangkat Anda. Meliputi alias tanpa batasan jumlah, pembagian alias, 2FA yang terintegrasi, dan masih banyak lagi."
+        "${ PASS_APP_NAME }: Login aman pada seluruh perangkat Anda. Meliputi alias tanpa batasan jumlah, pembagian alias, 2FA yang terintegrasi, dan masih banyak lagi."
       ]
     },
     "Tooltip": {
@@ -5904,7 +5895,7 @@
         "Alamat email tidak valid"
       ],
       "For most people, this does not matter because they are receiving BTC from people they trust. However, if you are worried about this, we recommend using this primary BTC account without enabling Receive Bitcoin via Email and transacting with your other BTC accounts with Receive Bitcoin via Email enabled. This will improve your blockchain privacy by keeping BTC in this account separate from any BTC that you receive automatically.": [
-        "Untuk sebagian besar orang, ancaman teoritis ini tidak akan berpengaruh karena mereka menerima BTC dari orang lain yang mereka percayai. Meskipun demikian, apabila Anda khawatir akan hal ini, kami merekomendasikan Anda untuk menggunakan alamat BTC utama ini tanpa mengaktifkan Terima Bitcoin vis Email serta bertransaksi dengan akun BTC lainnya yang Anda miliki dengan Terima Bitcoin via Email yang diaktifkan. Hal ini akan meningkatkan privasi rantai blok Anda dengan menjaga BTC pada akun ini terpisah dengan BTC mana pun yang Anda terima secara otomatis."
+        "Untuk sebagian besar orang, ancaman teoritis ini tidak akan berpengaruh karena mereka menerima BTC dari orang lain yang mereka percayai. Meskipun demikian, apabila Anda khawatir akan hal ini, kami merekomendasikan Anda untuk menggunakan alamat BTC utama ini tanpa mengaktifkan Terima Bitcoin via Email serta bertransaksi dengan akun BTC lainnya yang Anda miliki dengan Terima Bitcoin via Email yang diaktifkan. Hal ini akan meningkatkan privasi blockchain Anda dengan menjaga BTC pada akun ini terpisah dengan BTC mana pun yang Anda terima secara otomatis."
       ],
       "For most people, this does not matter because they are receiving BTC from people they trust. However, if you are worried about this, you can create a new BTC account so that the new BTC you receive is separated from your existing BTC.": [
         "Untuk sebagian besar orang, ancaman teoritis ini tidak akan berpengaruh karena mereka menerima BTC dari orang lain yang mereka percayai. Meskipun demikian, apabila Anda khawatir akan hal ini, Anda dapat membuat akun BTC baru sehingga BTC baru yang Anda terima akan terpisah dari BTC yang telah Anda miliki."
@@ -5928,7 +5919,7 @@
         "Blockchain Bitcoin bersifat publik, yang berarti setiap transaksi dapat dilihat oleh publik. Namun, alamat Bitcoin bersifat pseudonim, yang berarti identitas pengirim dan penerima umumnya tidak diketahui."
       ],
       "View more": [
-        "Lihat lebih banyak"
+        "Lihat selengkapnya"
       ],
       "View wallet seed phrase": [
         "Tampilkan frasa benih dompet"
@@ -5937,7 +5928,7 @@
         "Preferensi dompet"
       ],
       "When you receive Bitcoin via Email, the sender knows one of your Bitcoin addresses as well as your email. Due to Bitcoin's public blockchain, it is theoretically possible for a malicious sender to discover the existence of other BTC that you have if you send BTC from this account.": [
-        "Ketika Anda menerima Bitcoin melalui Surel, pengirim mengetahui salah satu alamat Bitcoin dan juga surel Anda. Dikarenakan blockchain Bitcoin bersifat publik, secara teoritis pengirim jahat dapat mengetahui keberadaan BTC lain yang Anda miliki jika Anda mengirim BTC dari akun ini."
+        "Saat Anda menerima Bitcoin melalui Email, pengirim mengetahui salah satu alamat Bitcoin Anda serta email Anda. Karena blockchain Bitcoin bersifat publik, secara teoretis pengirim berbahaya dapat mengetahui keberadaan BTC lain yang Anda miliki jika Anda mengirim BTC dari akun ini."
       ]
     },
     "Wallet preferences": {
@@ -6183,7 +6174,7 @@
         "Bitcoin via Email"
       ],
       "Browser storage cleared. Please refresh the page": [
-        "Penyimpanan browser dihapus. Silakan muat ulang halaman"
+        "Penyimpanan peramban dihapus. Silakan muat ulang halaman"
       ],
       "Could not fill the pool after email address addition": [
         "Tidak dapat mengisi pool setelah penambahan alamat email"
@@ -6219,10 +6210,10 @@
         "Mata uang fiat baru diterapkan"
       ],
       "Preferred bitcoin unit could not be changed. Please try again.": [
-        "Unit bitcoin tidak dapat diubah. Silakan coba lagi."
+        "Unit bitcoin pilihan tidak dapat diubah. Silakan coba lagi."
       ],
       "Preferred bitcoin unit was changed": [
-        "Unit Bitcoin utama telah diubah"
+        "Unit bitcoin pilihan telah diubah"
       ],
       "Select an available email or create a new email address.": [
         "Pilih alamat email yang tersedia atau buat alamat email baru."
@@ -6256,7 +6247,7 @@
     },
     "Wallet setup": {
       "A passphrase acts as a second password. It cannot be changed or added later. Back it up safely to unlock your wallet each time you log in.": [
-        "Frasa sandi berfungsi sebagai kata sandi kedua. Ini tidak dapat diubah atau ditambahkan lagi. Cadangkan dengan aman untuk membuka dompet Anda setiap kali Anda masuk."
+        "Frasa sandi berfungsi sebagai kata sandi kedua. Frasa sandi tidak dapat diubah atau ditambahkan nanti. Cadangkan dengan aman untuk membuka dompet Anda setiap kali Anda masuk."
       ],
       "Add a passphrase": [
         "Tambahkan frasa sandi"

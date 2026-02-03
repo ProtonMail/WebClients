@@ -187,6 +187,9 @@
       "Let's talk": [
         "我們一起聊聊！"
       ],
+      "Manage advanced account protections": [
+        "管理進階帳戶保護"
+      ],
       "Manage groups": [
         "管理群組"
       ],
@@ -286,11 +289,17 @@
       "Set up 2FA": [
         "設定兩步驟驗證"
       ],
+      "Set up a custom domain": [
+        "設置個自訂域名"
+      ],
       "Set up email forwarding": [
         "設定電子郵件轉發"
       ],
       "Settings": [
         "各項設定"
+      ],
+      "Share your calendar with your team": [
+        "與團隊共享您的行事曆"
       ],
       "Show balance": [
         "顯示餘額"
@@ -478,6 +487,9 @@
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } 桌面應用程式"
+      ],
+      "Use your own email domain": [
+        "使用您的電子郵件網域"
       ]
     },
     "Billing cycle option": {
@@ -829,6 +841,9 @@
       ],
       "Limited daily chats": [
         "有限每日聊天"
+      ],
+      "Limited favorites": [
+        "有限的收藏"
       ],
       "Strict no-logs policy": [
         "嚴格的無紀錄日誌政策"
@@ -1789,6 +1804,9 @@
       ]
     },
     "Description": {
+      "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
+        "添加資料夾和檔案至 ${ DRIVE_APP_NAME } 和邀請成員瀏覽或編輯。"
+      ],
       "Automatically forward incoming email to another email address.": [
         "自動轉寄傳入的電子郵件到其它電子郵件地址。"
       ],
@@ -1797,6 +1815,9 @@
       ],
       "Connect your CRM, website, printers, and more.": [
         "連線至您的 CRM、網站、影印機、和其它。"
+      ],
+      "Create groups you can email with a single address.": [
+        "創建您可透單一位址傳送電子郵件的群組"
       ],
       "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
         "確保安全存取組織資料，即使您的團隊是遠端工作或使用公共 WiFi。"
@@ -2571,8 +2592,14 @@
       "Subscription auto-renews every month.": [
         "每月自動續購授權"
       ],
+      "Thank you for subscribing. Secure browsing starts now.": [
+        "感謝您訂閱。立即安全瀏覽。"
+      ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "驗證過程將開新瀏覽器索引標籤。請停用任何使用中的彈出視窗攔截程式。"
+      ],
+      "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
+        "此是貴組織使用者可看見的名稱或暱稱。您可隨時時修正它。"
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "此為您新傳送新電子郵件的${ defaultEmailAddress }"
@@ -2951,6 +2978,9 @@
       "Your password (admin)": [
         "您的密碼（管理員）"
       ],
+      "Your password (trusted contact)": [
+        "您的密碼 (信任的內容)"
+      ],
       "ZIP code": [
         "郵遞區號"
       ]
@@ -2995,20 +3025,38 @@
       "How to add Zoom links": [
         "如何新增 Zoom 連結"
       ],
+      "How to collaborate in ${ DOCS_SHORT_APP_NAME }": [
+        "如何於 ${ DOCS_SHORT_APP_NAME } 合作"
+      ],
       "How to enable ${ PROTON_SENTINEL_NAME }": [
         "如何啟用 ${ PROTON_SENTINEL_NAME }"
+      ],
+      "How to migrate to ${ BRAND_NAME }": [
+        "如何遷移至 ${ BRAND_NAME }"
       ],
       "How to pay with Bitcoin?": [
         "如何以比特幣繳款？"
       ],
+      "How to set up ${ VPN_APP_NAME }": [
+        "如何設定 ${ VPN_APP_NAME }"
+      ],
+      "How to set up a custom domain": [
+        "如何設置個自訂域名"
+      ],
       "How to set up SMTP": [
         "如何設置 SMTP"
+      ],
+      "How to share a calendar": [
+        "如何共享行事曆"
       ],
       "How to share via email": [
         "如何透過電子郵件共享"
       ],
       "How to use ${ DARK_WEB_MONITORING_NAME }": [
         "如何使用${ DARK_WEB_MONITORING_NAME }"
+      ],
+      "How to use ${ PASS_APP_NAME } for Business": [
+        "如何將 ${ PASS_APP_NAME } 用於商務"
       ],
       "How to use email forwarding": [
         "如何使用電子郵件轉發"
@@ -3069,6 +3117,9 @@
       "${ n } active meeting at a time": [
         "${ n } 個會議同時進行中"
       ],
+      "${ n } participant": [
+        "${ n } 位參與者"
+      ],
       "24 hours per meeting": [
         "24 小時會議"
       ],
@@ -3077,6 +3128,9 @@
       ],
       "Appointment scheduling": [
         "預定排定中"
+      ],
+      "Booking pages": [
+        "預定頁面"
       ],
       "Browser, mobile, and desktop apps": [
         "瀏覽器、移動端和桌面應用程式"
@@ -3914,6 +3968,9 @@
       " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
         " 參閱我們的 ${ helpCenterLink } 或 ${ contactSupportLink }。"
       ],
+      "Cancel anytime before ${ cancelDate }.": [
+        "於 ${ cancelDate } 前隨時取消。"
+      ],
       "contact our support team": [
         "聯絡我們的客戶支援團隊"
       ],
@@ -4086,23 +4143,23 @@
       "terms and conditions": [
         "合約條款"
       ],
-      "The coupon is valid for ${ couponRedemptions } renewal.": [
-        "此折價券可適用續約訂購 ${ couponRedemptions } 次。"
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "此折扣可適用續約訂購 ${ renewalsWithCoupon } 。"
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "特殊折扣將套用於 ${ couponRedemptions } 個月。其後以 1 個月 ${ renewPriceStr } 自動續約。您可以在任何時候取消。"
       ],
       "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
         "前 ${ subscriptionLength } 個月可享優惠價格。"
       ],
-      "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "特別優惠價僅適用於首月。折價券可使用 ${ couponRedemptions } 次，之後將以一個月 ${ renewPriceStr } 的價格自動續約。您可以隨時取消。"
-      ],
       "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "特殊折扣將套用於第一個月。其後將於每月自動以 ${ renewPriceStr } 續約。您可以在任何時候取消。"
       ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "享受特惠折扣 ${ priceWithDiscount } ${ couponRedemptions } 個月。而後將以每 1 月 ${ renewPriceStr } 的價格自動續約。您可以在任何時候取消訂閱。"
+      ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "前 ${ subscriptionLength } 個月，可享優惠價格 ${ priceWithDiscount }。"
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "首月限定優惠價為 ${ priceWithDiscount }。折價券可使用 ${ couponRedemptions } 次，之後將以一個月 ${ renewPriceStr } 的價格自動續約。您可以隨時取消。"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "${ priceWithDiscount } 特殊折扣將套用於第一個月。其後將於每月自動以 ${ renewPriceStr } 續約。您可以在任何時候取消。"
@@ -4189,6 +4246,9 @@
       ],
       "Yes, I'm sure": [
         "是的，我確定"
+      ],
+      "Your plan includes this feature already.": [
+        "您的方案以包含此功能。"
       ]
     },
     "Payments.plan_name": {
@@ -4197,6 +4257,12 @@
       ]
     },
     "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "APPle Pay - 卡片於 ${ paymentMethod.Details.Last4 } 結束"
+      ],
+      "Bank transfer - ${ details }": [
+        "匯款 - ${ details }"
+      ],
       "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
         "Google Pay - 卡片於 ${ paymentMethod.Details.Last4 } 結束"
       ]
@@ -4311,6 +4377,9 @@
       "VAT number": [
         "增值稅編號（VAT）"
       ],
+      "Your organization name": [
+        "貴組織名稱"
+      ],
       "ZIP code": [
         "郵遞區號"
       ]
@@ -4318,6 +4387,11 @@
     "plan customizer, users": {
       "contact": [
         "業務聯繫"
+      ]
+    },
+    "Plan description": {
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "您的頂級質子版服務源自於 ${ BRAND_NAME } 、 ${ MAIL_SHORT_APP_NAME } 、 ${ PASS_SHORT_APP_NAME } 、 ${ VPN_SHORT_APP_NAME } 、 ${ DRIVE_SHORT_APP_NAME } 和 ${ CALENDAR_SHORT_APP_NAME }"
       ]
     },
     "plus_block": {
@@ -4777,6 +4851,9 @@
       "Edit credit/debit card": [
         "編輯信用卡/扣帳卡"
       ],
+      "Enable advanced account protection": [
+        "啟用進階帳戶保護"
+      ],
       "Enhance security with 2FA": [
         "透過雙重驗證強化安全性"
       ],
@@ -4869,6 +4946,9 @@
       ],
       "Upgrade complete!": [
         "升級完成！"
+      ],
+      "Upload and share files": [
+        "上傳並共享檔案"
       ],
       "Verification failed": [
         "驗證失敗"

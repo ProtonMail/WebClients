@@ -3523,6 +3523,11 @@
         "Conferințe active simultan: ${ n }",
         "Conferințe active simultan: ${ n }"
       ],
+      "${ n } participant": [
+        "${ n } participant",
+        "${ n } participanți",
+        "${ n } de participanți"
+      ],
       "24 hours per meeting": [
         "Conferințe de 24 de ore"
       ],
@@ -3532,6 +3537,9 @@
       "Appointment scheduling": [
         "Planificare întâlniri"
       ],
+      "Booking pages": [
+        "Pagini de rezervare"
+      ],
       "Browser, mobile, and desktop apps": [
         "Aplicații pentru navigator web, mobil și desktop"
       ],
@@ -3540,6 +3548,9 @@
       ],
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "Partajare ecran cu criptare bilaterală și conversații temporare pe durata apelului"
+      ],
+      "Meeting recording": [
+        "Înregistrare conferință"
       ],
       "One active meeting at a time": [
         "O conferință activă simultan"
@@ -4636,33 +4647,33 @@
       "terms and conditions": [
         "termenii și condițiile"
       ],
-      "The coupon is valid for ${ couponRedemptions } renewal.": [
-        "Număr de reînnoiri disponibile pentru acest cupon: ${ couponRedemptions }",
-        "Număr de reînnoiri disponibile pentru acest cupon: ${ couponRedemptions }",
-        "Număr de reînnoiri disponibile pentru acest cupon: ${ couponRedemptions }"
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "Reducerea este valabilă pentru ${ renewalsWithCoupon } reînnoire.",
+        "Reducerea este valabilă pentru ${ renewalsWithCoupon } reînnoiri.",
+        "Reducerea este valabilă pentru ${ renewalsWithCoupon } de reînnoiri."
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Prețul cu reducerea specială este valabil pentru ${ couponRedemptions } lună. Apoi va fi reînnoit automat cu ${ renewPriceStr } pentru o lună. Puteți anula oricând.",
+        "Prețul cu reducerea specială este valabil pentru ${ couponRedemptions } luni. Apoi va fi reînnoit automat cu ${ renewPriceStr } pentru o lună. Puteți anula oricând.",
+        "Prețul cu reducerea specială este valabil pentru ${ couponRedemptions } de luni. Apoi va fi reînnoit automat cu ${ renewPriceStr } pentru o lună. Puteți anula oricând."
       ],
       "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
         "Prețul special redus este valabil pentru ${ subscriptionLength } lună.",
         "Prețul redus special este valabil pentru primele ${ subscriptionLength } luni.",
         "Prețul special redus este valabil pentru primele ${ subscriptionLength } de luni."
       ],
-      "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "Prețul cu reducerea specială este valabil pentru prima lună. Cuponul este valid pentru ${ couponRedemptions } reînnoire. Apoi se va reînnoi automat cu prețul de ${ renewPriceStr } pentru o lună. Puteți anula oricând.",
-        "Prețul cu reducerea specială este valabil pentru prima lună. Cuponul este valid pentru ${ couponRedemptions } reînnoiri. Apoi se va reînnoi automat cu prețul de ${ renewPriceStr } pentru o lună. Puteți anula oricând.",
-        "Prețul cu reducerea specială este valabil pentru prima lună. Cuponul este valid pentru ${ couponRedemptions } de reînnoiri. Apoi se va reînnoi automat cu prețul de ${ renewPriceStr } pentru o lună. Puteți anula oricând."
-      ],
       "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Prețul cu reducerea specială este valabil pentru prima lună. Apoi va fi reînnoit automat cu ${ renewPriceStr } lunar. Puteți anula oricând."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Prețul cu reducerea specială de ${ priceWithDiscount } este valabil pentru ${ couponRedemptions } lună. Apoi va fi reînnoit automat cu ${ renewPriceStr } pentru o lună. Puteți anula oricând.",
+        "Prețul special redus de ${ priceWithDiscount } este valabil pentru ${ couponRedemptions } luni. Apoi va fi reînnoit automat la ${ renewPriceStr } pentru o lună. Puteți anula oricând.",
+        "Prețul special redus de ${ priceWithDiscount } este valabil pentru ${ couponRedemptions } de luni. Apoi va fi reînnoit automat la ${ renewPriceStr } pentru o lună. Puteți anula oricând."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "Prețul redus special de ${ priceWithDiscount } este valid pentru ${ subscriptionLength } lună.",
         "Prețul redus special de ${ priceWithDiscount } este valid pentru primele ${ subscriptionLength } luni.",
         "Prețul redus special de ${ priceWithDiscount } este valid pentru primele ${ subscriptionLength } de luni."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "Prețul de ${ priceWithDiscount } cu reducerea specială este valabil pentru prima lună. Cuponul este valid pentru ${ couponRedemptions } reînnoire. Apoi se va reînnoi automat cu prețul de ${ renewPriceStr } pentru o lună. Puteți anula oricând.",
-        "Prețul de ${ priceWithDiscount } cu reducerea specială este valabil pentru prima lună. Cuponul este valid pentru ${ couponRedemptions } reînnoiri. Apoi se va reînnoi automat cu prețul de ${ renewPriceStr } pentru o lună. Puteți anula oricând.",
-        "Prețul de ${ priceWithDiscount } cu reducerea specială este valabil pentru prima lună. Cuponul este valid pentru ${ couponRedemptions } de reînnoiri. Apoi se va reînnoi automat cu prețul de ${ renewPriceStr } pentru o lună. Puteți anula oricând."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Prețul cu reducerea specială de ${ priceWithDiscount } este valabil pentru prima lună. Apoi va fi reînnoit automat cu ${ renewPriceStr } lunar. Puteți anula oricând."
