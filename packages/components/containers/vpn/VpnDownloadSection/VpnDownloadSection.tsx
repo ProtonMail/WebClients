@@ -3,8 +3,7 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
-import { DashboardCard } from '@proton/atoms/DashboardCard/DashboardCard';
-import { DashboardCardContent } from '@proton/atoms/DashboardCard/DashboardCard';
+import { DashboardCard, DashboardCardContent } from '@proton/atoms/DashboardCard/DashboardCard';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import DropdownButton from '@proton/components/components/dropdown/DropdownButton';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
@@ -12,7 +11,7 @@ import DropdownMenuLink from '@proton/components/components/dropdown/DropdownMen
 import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
 import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
 import type { Tab } from '@proton/components/components/tabs/Tabs';
-import Tabs from '@proton/components/components/tabs/Tabs';
+import { Tabs } from '@proton/components/components/tabs/Tabs';
 import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine';
 import { IcArrowOutSquare } from '@proton/icons/icons/IcArrowOutSquare';
 import type { IconName } from '@proton/icons/types';
@@ -80,15 +79,11 @@ const downloadData = [
                         links: [
                             {
                                 title: () => c('Download').t`Windows 10/11 (x64)`,
-                                link: 'https://vpn.protondownload.com/download/ProtonVPN_v4.2.2_x64.exe',
+                                link: 'https://protonvpn.com/download/ProtonVPN_v4.3.11_x64.exe',
                             },
                             {
                                 title: () => c('Download').t`Windows 10/11 (ARM64)`,
-                                link: 'https://vpn.protondownload.com/download/ProtonVPN_v4.2.2_arm64.exe',
-                            },
-                            {
-                                title: () => c('Download').t`Windows 8/8.1/7 or Windows 32-bit (ARM64)`,
-                                link: 'https://vpn.protondownload.com/download/ProtonVPN_win_v2.4.3.exe',
+                                link: 'https://protonvpn.com/download/ProtonVPN_v4.3.11_arm64.exe',
                             },
                         ],
                     },
@@ -107,24 +102,28 @@ const downloadData = [
                         title: () => c('Download').t`Download for macOS`,
                         links: [
                             {
-                                title: () => c('Download').t`macOS Ventura or later`,
-                                link: 'https://vpn.protondownload.com/download/macos/5.0.0/ProtonVPN_mac_v5.0.0.dmg',
+                                title: () => c('Download').t`macOS 14 (Sonoma) or newer`,
+                                link: 'https://protonvpn.com/download/macos/6.3.0/ProtonVPN_mac_v6.3.0.dmg',
+                            },
+                            {
+                                title: () => c('Download').t`macOS Ventura`,
+                                link: 'https://protonvpn.com/download/macos/5.1.0/ProtonVPN_mac_v5.1.0.dmg',
                             },
                             {
                                 title: () => c('Download').t`macOS Monterey`,
-                                link: 'https://vpn.protondownload.com/download/macos/4.8.0/ProtonVPN_mac_v4.8.0.dmg',
+                                link: 'https://protonvpn.com/download/macos/4.8.0/ProtonVPN_mac_v4.8.0.dmg',
                             },
                             {
                                 title: () => c('Download').t`macOS Big Sur`,
-                                link: 'https://vpn.protondownload.com/download/ProtonVPN_mac_v3.3.6.dmg',
+                                link: 'https://protonvpn.com/download/ProtonVPN_mac_v3.3.6.dmg',
                             },
                             {
                                 title: () => c('Download').t`macOS Catalina`,
-                                link: 'https://vpn.protondownload.com/download/ProtonVPN_mac_v3.0.22.dmg',
+                                link: 'https://protonvpn.com/download/ProtonVPN_mac_v3.0.22.dmg',
                             },
                             {
                                 title: () => c('Download').t`macOS Mojave or earlier`,
-                                link: 'https://vpn.protondownload.com/download/ProtonVPN_mac_v1.9.6.dmg',
+                                link: 'https://protonvpn.com/download/ProtonVPN_mac_v1.9.6.dmg',
                             },
                         ],
                     },
