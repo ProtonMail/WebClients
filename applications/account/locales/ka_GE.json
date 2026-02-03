@@ -1946,26 +1946,6 @@
         "ახალი ელფოსტა"
       ]
     },
-    "app-switcher": {
-      "Browse the web privately and block ads": [
-        "იმუშავეთ ინტერნეტში კონფიდენციალურად და დაბლოკეთ რეკლამა"
-      ],
-      "Keep your schedule private": [
-        "შეინარჩუნეთ თქვენი განრიგი კონფიდენციალურად"
-      ],
-      "Protect your passwords and identity": [
-        "დაიცავით თქვენი პაროლები და იდენტიფიკაცია"
-      ],
-      "Safeguard your files and photos": [
-        "დაიცავით თქვენი ფაილები და სურათები"
-      ],
-      "Secure your communications": [
-        "დაიცავით თქვენი კომუნიკაცია"
-      ],
-      "Talk confidentially": [
-        "ისაუბრეთ კონფიდენციალურად"
-      ]
-    },
     "app-switcher_2025": {
       "Bitcoin wallet": [
         "Bitcoin-ის საფულე"
@@ -3114,11 +3094,6 @@
       ],
       "Expand": [
         "ამოკეცვა"
-      ]
-    },
-    "collider_2025: app-switcher": {
-      "Chat with a private AI assistant": [
-        "ჩატი პირად ხი დამხმარესთან"
       ]
     },
     "collider_2025: feature": {
@@ -4695,9 +4670,6 @@
       "Simplify syncing and scheduling with shared calendars.": [
         "გაამართივეთ გაზიარებული კალენდრების დაგეგმვა და სინქრონიზაცია."
       ],
-      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
-        "CSV და VCF ფაილების შემოსატანად დარწმუნდით, რომ ფაილი ${ MAX_IMPORT_FILE_SIZE_STRING }-ზე ან ${ MAX_IMPORT_CONTACTS_STRING }-ზე მეტ კონტაქტს არ შეიცავს. თუ თქვენი ფაილი უფრო დიდია, დაყავით ის უფრო პატარა ფაილებად. ${ learnMoreLink }."
-      ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Google-დან ან Outlook-დან კონტაქტების შემოსატანად, ${ easySwitchLink }."
       ],
@@ -4936,6 +4908,9 @@
       "Edge": [
         "Edge"
       ],
+      "Fedora": [
+        "Fedora"
+      ],
       "Fire TV": [
         "Fire TV"
       ],
@@ -4953,6 +4928,9 @@
       ],
       "Installation guide": [
         "დაყენების ინსტრუქცია"
+      ],
+      "iOS": [
+        "iOS"
       ],
       "iPhone/iPad": [
         "iPhone/iPad"
@@ -4995,6 +4973,9 @@
       ],
       "TV": [
         "ტელევიზორი"
+      ],
+      "Ubuntu/Debian": [
+        "Ubuntu/Debian"
       ],
       "Windows": [
         "Windows"
@@ -6628,9 +6609,6 @@
       ],
       "An error occurred uploading your file. No file has been selected.": [
         "შეცდომა ფაილის ატვირთვისას. ფაილი არჩეული არაა."
-      ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
-        "ფაილი ${ formattedFilename } ${ MAX_IMPORT_CONTACTS_STRING }-ზე მეტ კონტაქტს შეიცავს."
       ],
       "Your file ${ formattedFilename } has no contacts to be imported.": [
         "თქვენს ფაილში ${ formattedFilename } შემოსატანი კონტაქტები ნაპოვნი არაა."
@@ -8787,10 +8765,6 @@
       "All your changes will be lost.": [
         "ყველა თქვენი ცვლილება დაიკარგება."
       ],
-      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
-        "შემოტანილი იქნება ყველა თქვენი კონტაქტი. ლიმიტია ${ MAX_CONTACTS_PER_USER }",
-        "შემოტანილი იქნება ყველა თქვენი კონტაქტი. ლიმიტია ${ MAX_CONTACTS_PER_USER }"
-      ],
       "Allocated": [
         "გამოყოფილი"
       ],
@@ -9039,6 +9013,9 @@
       ],
       "CNET editors choice award with a rating of 8.4 out of 10": [
         "CNET-ის რედაქტორების არჩევნის ჯილდო 8.4 რეიტინგიტ 10-დან"
+      ],
+      "Coming soon": [
+        "სულ მალე"
       ],
       "Compromised": [
         "კომპრომენტირებული"
@@ -9299,9 +9276,6 @@
       ],
       "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
         "თითოეულ დომენს, მხოლოდ, ერთი SPF (TXT) ჩანაწერი შეიძლება, ჰქონდეს. თუ გნებავთ, შეინარჩულოთ არსებული SPF (TXT) ჩანაწერი, თქვენს მმდინარე ჩანაწერს, შეგიძლიათ, ${ spf } დაამატოთ (ჩასვით ის ${ spfValue }-ის შემდეგ)."
-      ],
-      "Early access": [
-        "ადრეული წვდომა"
       ],
       "Edit email address": [
         "ელფოსტის მისამართის ჩასწორება"
@@ -10308,6 +10282,9 @@
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "გამოაღწიეთ ჩვენამდე, თუ ${ BRAND_NAME }-ის შესახებ ნებისმიერი კითხვა გაგიჩნდათ."
       ],
+      "Receive notifications for ${ categoryLabel }": [
+        "შეტყობინებების მიღება ${ categoryLabel }-ისთვის"
+      ],
       "Recently used servers:": [
         "ახლახან გამოყენებული სერვერები:"
       ],
@@ -10406,9 +10383,6 @@
       ],
       "Securing your account": [
         "თქვენი ანგარიშის დაცვა"
-      ],
-      "Select a service to continue": [
-        "გასაგრძელებლად აირჩიეთ სერვისი"
       ],
       "Select one or multiple user affiliations": [
         "აიჩიეთ ერთი ან მეტი მომხმარებლის წევრობა"
@@ -12293,6 +12267,9 @@
       "Autofill 2FA": [
         "2FA-ის ავტომატური შევსება"
       ],
+      "Automated confirmations and alerts": [
+        "ავტომატიზებული დადასტურება და განგაშები"
+      ],
       "Automatically save contacts": [
         "კონტაქტების ავტომატური შენახვა"
       ],
@@ -12332,6 +12309,9 @@
       "Block malware, ads and trackers": [
         "დაბლოკეთ malware-ი, რეკლამები და ტრეკერები"
       ],
+      "Bookings, billings, and orders": [
+        "ჯავშნები, ბილინგი და შეკვეთები"
+      ],
       "Browser": [
         "ბრაუზერი"
       ],
@@ -12367,6 +12347,9 @@
       ],
       "Cash": [
         "ხელზე ფული"
+      ],
+      "Categories": [
+        "კატეგორიები"
       ],
       "Category": [
         "კატეგორია"
@@ -12503,6 +12486,9 @@
       "Days of the week": [
         "დღე კვირაში"
       ],
+      "Deals, offers, marketing emails": [
+        "შეთანხმებები, შეთავაზებები და მარკეტინგის ელფოსტები"
+      ],
       "Default email address": [
         "ნაგულისხმევი ელფოსტის მისამართი"
       ],
@@ -12545,6 +12531,9 @@
       "Disabled": [
         "გათიშული"
       ],
+      "Discussion board posts and threads": [
+        "ფორუმის პოსტები და საუბრები"
+      ],
       "Display name": [
         "საჩვენებელი სახელი"
       ],
@@ -12580,9 +12569,6 @@
       ],
       "Email address": [
         "ელფოსტის მისამართი"
-      ],
-      "Email categories": [
-        "ელფოსტის კატეგორიები"
       ],
       "Email or username": [
         "ელფოსტა ან მომხმარებლის სახელი"
@@ -12683,6 +12669,9 @@
       "for your first month": [
         "თქვენი პირველი თვისთვის"
       ],
+      "Forums": [
+        "ფორუმები"
+      ],
       "From: ${ fromEmail }": [
         "გამომგზავნელი: ${ fromEmail }"
       ],
@@ -12697,6 +12686,27 @@
       ],
       "Gift code": [
         "სასაჩუქრე კოდი"
+      ],
+      "Go to Forums": [
+        "ფორუმებზე გადასვლა"
+      ],
+      "Go to Newsletters": [
+        "ახალ ამბებზე გადასვლა"
+      ],
+      "Go to Primary": [
+        "ძირითადზე გადასვლა"
+      ],
+      "Go to Promotions": [
+        "რეკლამებზე გადსავლა"
+      ],
+      "Go to Social": [
+        "სოციალურ ქსელებზე გადასვლა"
+      ],
+      "Go to Transactions": [
+        "ტრანზაქციებზე გადასვლა"
+      ],
+      "Go to Updates": [
+        "განახლებებზე გადასვლა"
       ],
       "Group address": [
         "ჯგუფის მისამართი"
@@ -12917,6 +12927,9 @@
       "New second password": [
         "ახალი მეორე პაროლი"
       ],
+      "Newsletters": [
+        "სიახლეები"
+      ],
       "No (users cannot use the app until a vault is shared with them)": [
         "არა (მომხმარებლები ვერ გამოიყენებენ აპს, სანამ მათ საცავს არ გაუზიარებენ)"
       ],
@@ -12925,6 +12938,9 @@
       ],
       "No label found": [
         "ჭდეები ნაპოვნი არაა"
+      ],
+      "Non-promotional content and news": [
+        "არასარეკლამო შემცველობა და ახალი ამბები"
       ],
       "Non-standard ports": [
         "არასტანდარტული პორტები"
@@ -13048,6 +13064,12 @@
       ],
       "Previous password": [
         "წინა პაროლი"
+      ],
+      "Primary": [
+        "ძირითადი"
+      ],
+      "Promotions": [
+        "რეკლამა"
       ],
       "Prompt to trust keys": [
         "გასაღებების ნდობის შესახებ კითხვა"
@@ -13191,6 +13213,12 @@
       "SMTP username": [
         "SMTP მომხმარებლის სახელი"
       ],
+      "Social": [
+        "სოციალური"
+      ],
+      "Social media updates and activity": [
+        "სოციალური მედიის განახლებები და აქტივობა"
+      ],
       "Spam": [
         "სპამი"
       ],
@@ -13275,6 +13303,9 @@
       "Token name": [
         "კოდის სახელი"
       ],
+      "Transactions": [
+        "ტრანზაქციები"
+      ],
       "Two-password mode": [
         "2-პაროლიანი რეჟიმი"
       ],
@@ -13290,6 +13321,9 @@
       "Unlimited logins and devices": [
         "მომხმარებლების და მოწყობილობების უსაზღვრო რაოდენობა"
       ],
+      "Updates": [
+        "განახლებები"
+      ],
       "Upload 1 or more encryption keys": [
         "ატვირთეთ 1 ან მეტი დაშიფვრის გასაღები"
       ],
@@ -13304,6 +13338,9 @@
       ],
       "URL": [
         "URL"
+      ],
+      "Use email categories": [
+        "ელფოსტის კატეგორიების გამოყენება"
       ],
       "Use folder colors": [
         "საქაღალდის ფერების გამოყენება"
@@ -14044,6 +14081,10 @@
         "${ n } ერთდროული აქტიური შეხვედრა",
         "${ n } ერთდროული აქტიური შეხვედრა"
       ],
+      "${ n } participant": [
+        "${ n } მონაწილე",
+        "${ n } მონაწილე"
+      ],
       "24 hours per meeting": [
         "24 საათი თითო შეხვედრისთვის"
       ],
@@ -14053,6 +14094,9 @@
       "Appointment scheduling": [
         "შეხვედრის დაგეგმვა"
       ],
+      "Booking pages": [
+        "დაჯავშნის გვერდები"
+      ],
       "Browser, mobile, and desktop apps": [
         "ბრაუზერის, მობილურის და კომპიუტეირს აპები"
       ],
@@ -14061,6 +14105,9 @@
       ],
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "გამჭოლად დაშიფრული ეკრანის გაზიარება და ეფერემული ჩატი ზარის დროს"
+      ],
+      "Meeting recording": [
+        "შეხვედრის ჩანაწერი"
       ],
       "One active meeting at a time": [
         "ერთი აქტიური შეხვედრა ერთდროულად"
@@ -15250,9 +15297,6 @@
       ],
       "Review subscription and pay": [
         "გადახედეთ გამოწერას და გადაიხადეთ"
-      ],
-      "Start exploring the ${ BRAND_NAME } universe": [
-        "დაიწყეთ ${ BRAND_NAME }-ის სამყაროში გარკვევა"
       ],
       "Switch plans?": [
         "გადავრთო სატარიფო გეგმა?"
@@ -17020,10 +17064,6 @@
       ],
       "terms and conditions": [
         "პირობები და წესები"
-      ],
-      "The coupon is valid for ${ couponRedemptions } renewal.": [
-        "კუპონი გამოსადეგია ${ couponRedemptions }-ის განახლებისთვის.",
-        "კუპონი გამოსადეგია ${ couponRedemptions }-ის განახლებისთვის."
       ],
       "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
         "სპეციალურად დაკლებული ფასები ვარგისია პირველ ${ subscriptionLength } თვეში.",
@@ -21127,6 +21167,14 @@
         "SMTP კოდები აღმოჩენილი არაა"
       ]
     },
+    "Theme": {
+      "Dark": [
+        "მუქი"
+      ],
+      "Light": [
+        "ღია"
+      ]
+    },
     "Time unit": {
       "${ ceilDays } day": [
         "${ ceilDays } დღე",
@@ -22768,9 +22816,6 @@
       "Your ${ planName } free trial ends on ${ textDate }": [
         "თქვენი ${ planName }-ის უფასო სატესტო პერიოდი ${ textDate }-ზე სრულდება"
       ],
-      "Your ${ planName } subscription has started": [
-        "თქვვენი ${ planName } გამოწერა დაიწყო"
-      ],
       "Your calendar link": [
         "თქვენი კალენდრის ბმული"
       ],
@@ -23046,6 +23091,9 @@
       ],
       "Specify the users of the eduGAIN entity who are allowed to authenticate with SAML SSO": [
         "მიუთითეთ eduGAIN ობიექტის მომხმარებლები, რომლებსაც SAML SSO-ით შესვლის უფლება გააჩნიათ"
+      ],
+      "System notification": [
+        "სისტემური შეტყობინება"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "სისტემური ქვესაქაღალდეები ${ MAIL_APP_NAME }-ში ცალკე საქაღალდეებად გამოჩნდება"

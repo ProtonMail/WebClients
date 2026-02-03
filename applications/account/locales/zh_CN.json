@@ -1603,23 +1603,6 @@
         "新邮件"
       ]
     },
-    "app-switcher": {
-      "Browse the web privately and block ads": [
-        "私密浏览网页并屏蔽广告"
-      ],
-      "Keep your schedule private": [
-        "保持您日程安排的私密性"
-      ],
-      "Protect your passwords and identity": [
-        "保护您的密码和身份"
-      ],
-      "Safeguard your files and photos": [
-        "保护您的文件和照片"
-      ],
-      "Secure your communications": [
-        "保护您的通信"
-      ]
-    },
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "${ BRAND_NAME } 应用"
@@ -3741,8 +3724,8 @@
       "Simplify syncing and scheduling with shared calendars.": [
         "使用共享日历简化同步和日程安排。"
       ],
-      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
-        "如需导入 CSV 或 VCF 文件，请确保文件大小不超过 ${ MAX_IMPORT_FILE_SIZE_STRING } 且联系人数量不超过 ${ MAX_IMPORT_CONTACTS_STRING } 个。若您的文件超出限制，请先拆分成较小的文件。${ learnMoreLink }"
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "如需通过 CSV 和 VCF 文件导入，请确保文件不超过 ${ MAX_IMPORT_FILE_SIZE_STRING } 或 ${ maxContactString } 位联系人。如果文件较大，请将其拆分成更小的文件。${ learnMoreLink }."
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "如需导入 Google 或 Outlook 中的联系人，请${ easySwitchLink }。"
@@ -5082,8 +5065,8 @@
       "An error occurred uploading your file. No file has been selected.": [
         "文件上传失败，尚未选择文件。"
       ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
-        "文件 ${ formattedFilename } 中的联系人数已超过 ${ MAX_IMPORT_CONTACTS_STRING }。"
+      "Your file ${ formattedFilename } contains more than ${ maxContactString } contacts.": [
+        "您的文件 ${ formattedFilename } 中的联系人数已超过 ${ maxContactString }。"
       ],
       "Your file ${ formattedFilename } has no contacts to be imported.": [
         "文件 ${ formattedFilename } 中没有可导入的联系人。"
@@ -6963,8 +6946,8 @@
       "All your changes will be lost.": [
         "您的所有改动都将丢失。"
       ],
-      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
-        "您的所有联系人都将被导入，直至达到 ${ MAX_CONTACTS_PER_USER } 人的上限"
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "您的所有联系人都将被导入，最多可达 ${ maxContact } 人"
       ],
       "Allocated": [
         "分配量"
@@ -7409,9 +7392,6 @@
       ],
       "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
         "每个域名只能有一个SPF (TXT) 记录。 如果您想保留现有的 SPF (TXT) 记录， 您可以添加 ${ spf } 到您当前的记录 (放在 ${ spfValue } 之后)。"
-      ],
-      "Early access": [
-        "抢先体验"
       ],
       "Edit email address": [
         "编辑邮箱地址"
@@ -8313,6 +8293,9 @@
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "如需任何帮助，请联系我们 ${ BRAND_NAME }"
       ],
+      "Receive notifications for ${ categoryLabel }": [
+        "接收关于 ${ categoryLabel } 的通知"
+      ],
       "Recently used servers:": [
         "近期使用的服务器："
       ],
@@ -8402,9 +8385,6 @@
       ],
       "Securing your account": [
         "确保账户安全"
-      ],
-      "Select a service to continue": [
-        "选择一项服务来继续"
       ],
       "Select one or multiple user affiliations": [
         "选择一个或多个用户的隶属关系"
@@ -10088,6 +10068,9 @@
       "Autofill 2FA": [
         "自动填充 2FA"
       ],
+      "Automated confirmations and alerts": [
+        "自动确认和提醒"
+      ],
       "Automatically save contacts": [
         "自动保存联系人"
       ],
@@ -10118,6 +10101,9 @@
       "Block malware, ads and trackers": [
         "拦截恶意软件、广告和追踪器"
       ],
+      "Bookings, billings, and orders": [
+        "预订、账单和订单"
+      ],
       "Browser": [
         "浏览器"
       ],
@@ -10147,6 +10133,9 @@
       ],
       "Cash": [
         "现金"
+      ],
+      "Categories": [
+        "分类"
       ],
       "Category": [
         "类别"
@@ -10274,6 +10263,9 @@
       "Date format": [
         "日期格式"
       ],
+      "Deals, offers, marketing emails": [
+        "优惠、促销、营销邮件"
+      ],
       "Default language": [
         "默认语言"
       ],
@@ -10309,6 +10301,9 @@
       ],
       "Disabled": [
         "未启用"
+      ],
+      "Discussion board posts and threads": [
+        "讨论版帖子和讨论串"
       ],
       "Display name": [
         "称呼"
@@ -10412,6 +10407,9 @@
       "Font size": [
         "字号"
       ],
+      "Forums": [
+        "论坛"
+      ],
       "From: ${ fromEmail }": [
         "发件人：${ fromEmail }"
       ],
@@ -10423,6 +10421,27 @@
       ],
       "Gift code": [
         "礼品码"
+      ],
+      "Go to Forums": [
+        "转到论坛"
+      ],
+      "Go to Newsletters": [
+        "转到通讯"
+      ],
+      "Go to Primary": [
+        "转至主要"
+      ],
+      "Go to Promotions": [
+        "转到优惠促销"
+      ],
+      "Go to Social": [
+        "转到社交"
+      ],
+      "Go to Transactions": [
+        "转到交易"
+      ],
+      "Go to Updates": [
+        "转到更新"
       ],
       "Group address": [
         "组地址"
@@ -10616,11 +10635,17 @@
       "New second password": [
         "新副密码"
       ],
+      "Newsletters": [
+        "时事通讯"
+      ],
       "No filter": [
         "无过滤规则"
       ],
       "No label found": [
         "未找到标签"
+      ],
+      "Non-promotional content and news": [
+        "非促销内容和新闻"
       ],
       "Non-standard ports": [
         "非标准端口"
@@ -10730,6 +10755,12 @@
       "Previous password": [
         "先前的密码"
       ],
+      "Primary": [
+        "基本的"
+      ],
+      "Promotions": [
+        "优惠促销"
+      ],
       "Prompt to trust keys": [
         "询问是否信任密钥"
       ],
@@ -10832,6 +10863,12 @@
       "Single sign-on URL": [
         "单点登录网址"
       ],
+      "Social": [
+        "社交媒体"
+      ],
+      "Social media updates and activity": [
+        "社交媒体更新与活动"
+      ],
       "Spam": [
         "垃圾邮件"
       ],
@@ -10898,6 +10935,9 @@
       "To: ${ toEmail }": [
         "收件人：${ toEmail }"
       ],
+      "Transactions": [
+        "交易记录"
+      ],
       "Two-password mode": [
         "双密码模式"
       ],
@@ -10906,6 +10946,9 @@
       ],
       "Undo send": [
         "撤消发送时限"
+      ],
+      "Updates": [
+        "更新"
       ],
       "Upload 1 or more encryption keys": [
         "上传一个或多个加密密钥"
@@ -10918,6 +10961,9 @@
       ],
       "URL": [
         "网址"
+      ],
+      "Use email categories": [
+        "使用电子邮件分类"
       ],
       "Use folder colors": [
         "文件夹附带颜色"
@@ -12616,9 +12662,6 @@
       "Review subscription and pay": [
         "确认订单并支付"
       ],
-      "Start exploring the ${ BRAND_NAME } universe": [
-        "发现更多 ${ BRAND_NAME } 服务"
-      ],
       "Switch plans?": [
         "切换计划？"
       ],
@@ -14101,23 +14144,14 @@
       "terms and conditions": [
         "服务条款"
       ],
-      "The coupon is valid for ${ couponRedemptions } renewal.": [
-        "该优惠券适用于${ couponRedemptions }次续费升级。"
-      ],
       "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
         "特惠价格仅限前 ${ subscriptionLength } 个月有效。"
-      ],
-      "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "专享折扣价仅限首月有效。本优惠券适用于 ${ couponRedemptions } 次续费周期。之后将自动以 1 个月 ${ renewPriceStr } 的价格续费，您可以随时取消。"
       ],
       "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "特别优惠价仅在首月有效。之后将每月自动以${ renewPriceStr }的价格续订。您可以随时取消。"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "Proton 用户的专属优惠：${ priceWithDiscount }特惠价格仅限订阅前${ subscriptionLength }个月有效。"
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "专享折扣价${ priceWithDiscount }仅限首月有效。本优惠券适用于${ couponRedemptions }次续费周期。之后将自动以1个月${ renewPriceStr }的价格续费，您可随时取消。"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "首月特别优惠价为${ priceWithDiscount }，之后将自动按每月${ renewPriceStr }续订。您可以随时取消。"
@@ -17616,6 +17650,14 @@
         "vCard 字段"
       ]
     },
+    "Theme": {
+      "Dark": [
+        "深色主题"
+      ],
+      "Light": [
+        "浅色主题"
+      ]
+    },
     "Time unit": {
       "${ ceilDays } day": [
         "${ ceilDays } 天"
@@ -18984,9 +19026,6 @@
       "Your ${ planName } free trial ends on ${ textDate }": [
         "您的 ${ planName } 免费试用期将于 ${ textDate } 结束"
       ],
-      "Your ${ planName } subscription has started": [
-        "您的 ${ planName } 订阅已启用"
-      ],
       "Your calendar link": [
         "您的日历链接"
       ],
@@ -19253,6 +19292,9 @@
       ],
       "Specify the users of the eduGAIN entity who are allowed to authenticate with SAML SSO": [
         "指定允许使用 SAML SSO 进行身份验证的 eduGAIN 实体账户"
+      ],
+      "System notification": [
+        "系统通知"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "系统子文件夹在 ${ MAIL_APP_NAME } 中将作为独立的文件夹显示"

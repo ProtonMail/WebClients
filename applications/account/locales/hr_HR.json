@@ -1249,17 +1249,6 @@
         "Nova e-pošta"
       ]
     },
-    "app-switcher": {
-      "Browse the web privately and block ads": [
-        "Pretražujte web privatno i blokirajte oglase"
-      ],
-      "Protect your passwords and identity": [
-        "Zaštitite svoje lozinke i identitet"
-      ],
-      "Talk confidentially": [
-        "Razgovarajte povjerljivo"
-      ]
-    },
     "Assistant option": {
       "Run on device": [
         "Pokreni na uređaju"
@@ -1720,11 +1709,6 @@
       ],
       "Expand": [
         "Proširi"
-      ]
-    },
-    "collider_2025: app-switcher": {
-      "Chat with a private AI assistant": [
-        "Čavrljajte sa privatnim AI pomoćnikom"
       ]
     },
     "collider_2025: feature": {
@@ -3879,9 +3863,6 @@
       "An error occurred uploading your file. No file has been selected.": [
         "Došlo je do pogreške prilikom učitavanja vaše datoteke. Nije odabrana nijedna datoteka."
       ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
-        "Vaša datoteka ${ formattedFilename } sadrži više od ${ MAX_IMPORT_CONTACTS_STRING } kontakata."
-      ],
       "Your file ${ formattedFilename } has no contacts to be imported.": [
         "Vaša datoteka ${ formattedFilename } nema kontakte za uvoz."
       ],
@@ -5387,9 +5368,6 @@
       "Drop to import": [
         "Ispustite za uvoz"
       ],
-      "Early access": [
-        "Rani pristup"
-      ],
       "Edit email address": [
         "Uredi adresu e-pošte"
       ],
@@ -5961,9 +5939,6 @@
       ],
       "Securing your account": [
         "Osiguravanje Vašeg korisničkog računa"
-      ],
-      "Select a service to continue": [
-        "Odaberi uslugu za nastavak"
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Odaberite koje kalendare želite uvesti. Novi kalendar bit će stvoren za svaki uvezeni kalendar, ovisno o broju kalendara dostupnih u Vašoj pretplati."
@@ -7242,11 +7217,26 @@
       "Font size": [
         "Veličina fonta"
       ],
+      "Forums": [
+        "Forumi"
+      ],
       "From: ${ fromEmail }": [
         "Od: ${ fromEmail }"
       ],
       "Gift code": [
         "Darovni kôd"
+      ],
+      "Go to Forums": [
+        "Idi na Forume"
+      ],
+      "Go to Newsletters": [
+        "Idi na biltene"
+      ],
+      "Go to Promotions": [
+        "Idi na Promocije"
+      ],
+      "Go to Social": [
+        "Idi na Društveno"
       ],
       "Group address": [
         "Adresa grupe"
@@ -7386,6 +7376,9 @@
       "New second password": [
         "Nova sekundarna lozinka"
       ],
+      "Newsletters": [
+        "Bilteni"
+      ],
       "No label found": [
         "Nema pronađene oznake"
       ],
@@ -7466,6 +7459,12 @@
       ],
       "Previous password": [
         "Prethodna lozinka"
+      ],
+      "Primary": [
+        "Glavno"
+      ],
+      "Promotions": [
+        "Promocije"
       ],
       "Purpose": [
         "Svrha"
@@ -7575,6 +7574,9 @@
       "To: ${ toEmail }": [
         "Za: ${ toEmail }"
       ],
+      "Transactions": [
+        "Transakcije"
+      ],
       "Two-password mode": [
         "Način rada s dvije lozinke"
       ],
@@ -7586,6 +7588,9 @@
       ],
       "Unlimited hide-my-email aliases": [
         "Neograničen broj hide-my-email pseudonima"
+      ],
+      "Updates": [
+        "Ažuriranja"
       ],
       "Upload 1 or more recovery files or encryption keys": [
         "Učitajte jednu ili više datoteka za oporavak ili ključeva za šifriranje"
@@ -8699,9 +8704,6 @@
       ],
       "Downgrade account?": [
         "Smanjiti pretplatu računa?"
-      ],
-      "Start exploring the ${ BRAND_NAME } universe": [
-        "Započnite istraživanje ${ BRAND_NAME } svemira"
       ],
       "Switch plans?": [
         "Promijeniti pretplatu?"
@@ -11743,6 +11745,14 @@
       ],
       "vCard field": [
         "vCard polje"
+      ]
+    },
+    "Theme": {
+      "Dark": [
+        "Tamno"
+      ],
+      "Light": [
+        "Svijetlo"
       ]
     },
     "Time unit": {

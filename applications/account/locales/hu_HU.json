@@ -1589,23 +1589,6 @@
         "Új e-mail"
       ]
     },
-    "app-switcher": {
-      "Browse the web privately and block ads": [
-        "Böngésszen privát módon"
-      ],
-      "Keep your schedule private": [
-        "Kezelje bizalmasan az időbeosztását"
-      ],
-      "Protect your passwords and identity": [
-        "Védje meg a jelszavait és kilétét"
-      ],
-      "Safeguard your files and photos": [
-        "Védje a fájljait és a fényképeit"
-      ],
-      "Secure your communications": [
-        "Kommunikáljon biztonságosan"
-      ]
-    },
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "${ BRAND_NAME } alkalmazások"
@@ -3775,9 +3758,6 @@
       "Simplify syncing and scheduling with shared calendars.": [
         "Egyszerűsítse a szinkronizálást és az ütemezést megosztott naptárakkal."
       ],
-      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
-        "CSV és VCF fájlon keresztül történő importáláshoz győződjön meg arról, hogy a fájl mérete nem haladja meg a ${ MAX_IMPORT_FILE_SIZE_STRING } vagy a ${ MAX_IMPORT_CONTACTS_STRING } kapcsolatok számát. Ha a fájl nagyobb, kérjük, ossza fel kisebb fájlokra. ${ learnMoreLink }."
-      ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Névjegyeinek importálásához a Google-ból vagy az Outlookból ${ easySwitchLink }."
       ],
@@ -5098,9 +5078,6 @@
       ],
       "An error occurred uploading your file. No file has been selected.": [
         "Hiba történt a fájl feltöltésekor. Nincs fájl kiválasztva."
-      ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
-        "A fájl több mint ${ MAX_IMPORT_CONTACTS_STRING } névjegyet tartalmaz: ${ formattedFilename }."
       ],
       "Your file ${ formattedFilename } has no contacts to be imported.": [
         "A fájlban nem találhatók importálható névjegyek: ${ formattedFilename }."
@@ -7014,10 +6991,6 @@
       "All your changes will be lost.": [
         "A változtatások el fognak veszni."
       ],
-      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
-        "Az összes névjegye importálásra kerül, maximum ${ MAX_CONTACTS_PER_USER } darabig",
-        "Az összes névjegye importálásra kerül, maximum ${ MAX_CONTACTS_PER_USER } darabig"
-      ],
       "Allocated": [
         "Lefoglalva"
       ],
@@ -7451,9 +7424,6 @@
       ],
       "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
         "Minden domain név csak egy SPF (TXT) rekorddal rendelkezhet. Ha meg akarja tartani a meglévő SPF (TXT) rekordot, akkor a jelenlegi rekordhoz hozzáadhatja a ${ spf } értéket (a ${ spfValue } után)."
-      ],
-      "Early access": [
-        "Korai hozzáférés"
       ],
       "Edit email address": [
         "E-mail cím szerkesztése"
@@ -8414,9 +8384,6 @@
       ],
       "Securing your account": [
         "Fiók biztosítása"
-      ],
-      "Select a service to continue": [
-        "Válasszon egy szolgáltatást a folytatáshoz"
       ],
       "Select one or multiple user affiliations": [
         "Egy vagy több felhasználói csoporthoz tartozás kiválasztása"
@@ -10030,6 +9997,9 @@
       "Autofill 2FA": [
         "Kétlépcsős kód automatikus kitöltése"
       ],
+      "Automated confirmations and alerts": [
+        "Automatikus visszaigazolások és értesítések"
+      ],
       "Autosave": [
         "Automatikus mentés"
       ],
@@ -10056,6 +10026,9 @@
       ],
       "Block malware, ads and trackers": [
         "Kártékony kódok, reklámok, követők blokkolása"
+      ],
+      "Bookings, billings, and orders": [
+        "Foglalások, számlázások és megrendelések"
       ],
       "Browser": [
         "Böngésző"
@@ -10195,6 +10168,9 @@
       "Date format": [
         "Dátumformátum"
       ],
+      "Deals, offers, marketing emails": [
+        "Akciók, ajánlatok, marketing e-mailek"
+      ],
       "Default language": [
         "Alapértelmezett nyelv"
       ],
@@ -10227,6 +10203,9 @@
       ],
       "Disabled": [
         "Kikapcsolva"
+      ],
+      "Discussion board posts and threads": [
+        "Fórumbejegyzések és fórumtémák"
       ],
       "Display name": [
         "Megjelenített név"
@@ -10330,6 +10309,9 @@
       "Font size": [
         "Betűméret"
       ],
+      "Forums": [
+        "Fórumok"
+      ],
       "From: ${ fromEmail }": [
         "Feladó: ${ fromEmail }"
       ],
@@ -10341,6 +10323,27 @@
       ],
       "Gift code": [
         "Ajándék kód"
+      ],
+      "Go to Forums": [
+        "Fórumok megnyitása"
+      ],
+      "Go to Newsletters": [
+        "Hírlevelek megnyitása"
+      ],
+      "Go to Primary": [
+        "Elsődleges megnyitása"
+      ],
+      "Go to Promotions": [
+        "Ugrás a promóciókhoz"
+      ],
+      "Go to Social": [
+        "Közösségi megnyitása"
+      ],
+      "Go to Transactions": [
+        "Tranzakciók megnyitása"
+      ],
+      "Go to Updates": [
+        "Ugrás a frissítésekhez"
       ],
       "Group address": [
         "Csoport címei"
@@ -10522,11 +10525,17 @@
       "New second password": [
         "Új második jelszó"
       ],
+      "Newsletters": [
+        "Hírlevelek"
+      ],
       "No filter": [
         "Nincs szűrés"
       ],
       "No label found": [
         "Nem található címke"
+      ],
+      "Non-promotional content and news": [
+        "Nem promóciós tartalom és hírek"
       ],
       "Non-standard ports": [
         "Nem szabványos portok"
@@ -10627,6 +10636,12 @@
       "Previous password": [
         "Előző jelszó"
       ],
+      "Primary": [
+        "Elsődleges"
+      ],
+      "Promotions": [
+        "Promóciók"
+      ],
       "Proration": [
         "Arányosítás"
       ],
@@ -10718,6 +10733,12 @@
       "Single sign-on URL": [
         "Egyszeri bejelentkezés URL"
       ],
+      "Social": [
+        "Közösségi"
+      ],
+      "Social media updates and activity": [
+        "Közösségi média hírek és tevékenység"
+      ],
       "Spam": [
         "Levélszemét"
       ],
@@ -10781,6 +10802,9 @@
       "To: ${ toEmail }": [
         "Címzett: ${ toEmail }"
       ],
+      "Transactions": [
+        "Tranzakciók"
+      ],
       "Two-password mode": [
         "Két jelszavas mód"
       ],
@@ -10789,6 +10813,9 @@
       ],
       "Undo send": [
         "Küldés visszavonása"
+      ],
+      "Updates": [
+        "Frissítések"
       ],
       "Upload 1 or more encryption keys": [
         "Töltsön fel egy vagy több titkosítási kulcsot"
@@ -12488,9 +12515,6 @@
       "Review subscription and pay": [
         "Előfizetés áttekintése és fizetés"
       ],
-      "Start exploring the ${ BRAND_NAME } universe": [
-        "Fedezze fel a ${ BRAND_NAME } univerzumát"
-      ],
       "Switch plans?": [
         "Csomag váltása?"
       ],
@@ -13967,17 +13991,9 @@
       "terms and conditions": [
         "felhasználási feltételek"
       ],
-      "The coupon is valid for ${ couponRedemptions } renewal.": [
-        "A kupon ${ couponRedemptions } megújításra érvényes.",
-        "A kupon ${ couponRedemptions } megújításra érvényes."
-      ],
       "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
         "A kedvezményes ár az első ${ subscriptionLength } hónapra érvényes.",
         "A kedvezményes ár az első ${ subscriptionLength } hónapra érvényes."
-      ],
-      "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "A kedvezményes ár az első hónapra érvényes. A kupon a ${ couponRedemptions } megújításáig érvényes. Ezután automatikusan megújul ${ renewPriceStr } áron havonta. Bármikor lemondhatja.",
-        "A kedvezményes ár az első hónapra érvényes. A kupon a ${ couponRedemptions } megújításáig érvényes. Ezután automatikusan megújul ${ renewPriceStr } áron havonta. Bármikor lemondhatja."
       ],
       "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "A kedvezményes ár az első hónapra érvényes. Ezt követően automatikusan megújul ${ renewPriceStr } áron havonta. Bármikor lemondhatja."
@@ -13985,10 +14001,6 @@
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "A kedvezményes ${ priceWithDiscount } ár az első ${ subscriptionLength } hónapra érvényes.",
         "A kedvezményes ${ priceWithDiscount } ár az első ${ subscriptionLength } hónapra érvényes."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "A kedvezményes ár ${ priceWithDiscount } az első hónapra érvényes. A kupon a ${ couponRedemptions } megújításáig érvényes. Ezután automatikusan megújul ${ renewPriceStr } áron 1 hónapra. Bármikor lemondhatja.",
-        "A kedvezményes ár ${ priceWithDiscount } az első hónapra érvényes. A kupon a ${ couponRedemptions } megújításáig érvényes. Ezután automatikusan megújul ${ renewPriceStr } áron 1 hónapra. Bármikor lemondhatja."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "A kedvezményes ár ${ priceWithDiscount } az első hónapra érvényes. Ezt követően automatikusan megújul ${ renewPriceStr } áron havonta. Bármikor lemondhatja."
@@ -17350,6 +17362,14 @@
         "vCard mező"
       ]
     },
+    "Theme": {
+      "Dark": [
+        "Sötét"
+      ],
+      "Light": [
+        "Világos"
+      ]
+    },
     "Time unit": {
       "${ ceilDays } day": [
         "${ ceilDays } nap",
@@ -18706,9 +18726,6 @@
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Az ön ${ planName } ingyenes próbaidőszaka végett ér: ${ textDate }"
-      ],
-      "Your ${ planName } subscription has started": [
-        "A ${ planName } előfizetése elindult."
       ],
       "Your calendar link": [
         "Az ön naptárának hivatkozása"

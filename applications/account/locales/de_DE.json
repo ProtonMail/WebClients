@@ -1949,26 +1949,6 @@
         "Neue E-Mail"
       ]
     },
-    "app-switcher": {
-      "Browse the web privately and block ads": [
-        "Surfe privat im Internet und blockiere Werbung"
-      ],
-      "Keep your schedule private": [
-        "Halte deinen Terminplan privat"
-      ],
-      "Protect your passwords and identity": [
-        "Schütze deine Passwörter und Identität"
-      ],
-      "Safeguard your files and photos": [
-        "Sichere deine Dateien und Fotos"
-      ],
-      "Secure your communications": [
-        "Sichere deine Kommunikation"
-      ],
-      "Talk confidentially": [
-        "Vertraulich sprechen"
-      ]
-    },
     "app-switcher_2025": {
       "Bitcoin wallet": [
         "Bitcoin-Wallet"
@@ -3202,11 +3182,6 @@
       ],
       "Expand": [
         "Erweitern"
-      ]
-    },
-    "collider_2025: app-switcher": {
-      "Chat with a private AI assistant": [
-        "Chatte mit einem privaten KI-Assistenten"
       ]
     },
     "collider_2025: feature": {
@@ -4789,8 +4764,8 @@
       "Simplify syncing and scheduling with shared calendars.": [
         "Vereinfache die Synchronisierung und Planung mit geteilten Kalendern."
       ],
-      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
-        "Wenn du über eine CSV- oder VCF-Datei importieren möchtest, stelle sicher, dass die Datei nicht größer ist als ${ MAX_IMPORT_FILE_SIZE_STRING } oder ${ MAX_IMPORT_CONTACTS_STRING } Kontakte. Wenn deine Datei größer ist, teile sie bitte in kleinere Dateien auf. ${ learnMoreLink }."
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Um Daten über eine CSV- und VCF-Datei zu importieren, stelle sicher, dass die Datei nicht mehr als ${ MAX_IMPORT_FILE_SIZE_STRING } oder ${ maxContactString } Kontakte enthält. Wenn deine Datei größer ist, teile sie bitte in kleinere Dateien auf. ${ learnMoreLink }."
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Verwende zum Importieren deiner Kontakte von Google oder Outlook ${ easySwitchLink }."
@@ -6786,8 +6761,8 @@
       "An error occurred uploading your file. No file has been selected.": [
         "Beim Hochladen der Datei ist ein Fehler aufgetreten. Es wurde keine Datei ausgewählt."
       ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
-        "Die Datei ${ formattedFilename } enthält mehr als ${ MAX_IMPORT_CONTACTS_STRING } Kontakte."
+      "Your file ${ formattedFilename } contains more than ${ maxContactString } contacts.": [
+        "Die Datei ${ formattedFilename } enthält mehr als ${ maxContactString } Kontakte."
       ],
       "Your file ${ formattedFilename } has no contacts to be imported.": [
         "Die Datei ${ formattedFilename } enthält keine zu importierenden Kontakte."
@@ -6873,6 +6848,9 @@
       ]
     },
     "Error message": {
+      "Account is deleted or disabled": [
+        "Konto ist gelöscht oder deaktiviert"
+      ],
       "App currently unavailable": [
         "App ist zurzeit nicht verfügbar"
       ],
@@ -8981,9 +8959,9 @@
       "All your changes will be lost.": [
         "Alle deine Änderungen gehen dabei verloren."
       ],
-      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
-        "Alle deine Kontakte werden importiert, bis zu einer Grenze von ${ MAX_CONTACTS_PER_USER }.",
-        "Alle deine Kontakte werden importiert, bis zu einer Grenze von ${ MAX_CONTACTS_PER_USER }."
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "Alle deine Kontakte werden importiert, bis zu einer Obergrenze von ${ maxContact }.",
+        "Alle deine Kontakte werden importiert, bis zu einer Obergrenze von ${ maxContact }."
       ],
       "Allocated": [
         "Zugewiesen"
@@ -9242,6 +9220,9 @@
       ],
       "CNET editors choice award with a rating of 8.4 out of 10": [
         "CNET Editors Choice Award mit einer Bewertung von 8,4 von 10"
+      ],
+      "Coming soon": [
+        "Demnächst verfügbar"
       ],
       "Compromised": [
         "Gefährdet"
@@ -9505,9 +9486,6 @@
       ],
       "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
         "Jede Domain kann nur einen SPF (TXT)-Eintrag haben. Wenn du den bestehenden SPF (TXT)-Eintrag behalten möchtest, kannst du ${ spf } zu deinem aktuellen Eintrag hinzufügen (platziere es nach ${ spfValue })."
-      ],
-      "Early access": [
-        "Früher Zugang"
       ],
       "Edit email address": [
         "E-Mail-Adresse bearbeiten"
@@ -10544,6 +10522,9 @@
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Wende dich an uns, wenn du Hilfe zu ${ BRAND_NAME } benötigst."
       ],
+      "Receive notifications for ${ categoryLabel }": [
+        "Benachrichtigungen für ${ categoryLabel } erhalten"
+      ],
       "Recently used servers:": [
         "Zuletzt genutzte Server:"
       ],
@@ -10642,9 +10623,6 @@
       ],
       "Securing your account": [
         "Dein Konto wird abgesichert"
-      ],
-      "Select a service to continue": [
-        "Wähle einen Dienst, um fortzufahren"
       ],
       "Select one or multiple user affiliations": [
         "Wähle eine oder mehrere Benutzerzugehörigkeiten"
@@ -11576,9 +11554,6 @@
       ],
       "You can enforce the password rules members of your organization will use when they create or reset the password to their ${ BRAND_NAME } Account.": [
         "Du kannst die Passwortregeln erzwingen, die Mitglieder deiner Organisation verwenden, wenn sie das Passwort für ihr ${ BRAND_NAME }-Konto erstellen oder zurücksetzen."
-      ],
-      "You can get our premium privacy services in one bundle—and it's just **${ priceString }/month**.": [
-        "Du kannst unsere Premium-Privatsphäre-Dienste in einem Paket bekommen – und das für nur **${ priceString }/Monat**."
       ],
       "You can get our premium privacy services in one bundle—and it’s just **${ priceString }/month**.": [
         "Du kannst unsere Premium-Privatsphäre-Dienste in einem Paket bekommen – und es kostet nur **${ priceString } pro Monat**."
@@ -12648,6 +12623,9 @@
       "Autofill 2FA": [
         "2FA automatisch ausfüllen"
       ],
+      "Automated confirmations and alerts": [
+        "Automatische Bestätigungen und Benachrichtigungen"
+      ],
       "Automatically save contacts": [
         "Kontakte automatisch speichern"
       ],
@@ -12687,6 +12665,9 @@
       "Block malware, ads and trackers": [
         "Malware, Werbung und Tracker blockieren"
       ],
+      "Bookings, billings, and orders": [
+        "Buchungen, Abrechnungen und Bestellungen"
+      ],
       "Browser": [
         "Browser"
       ],
@@ -12722,6 +12703,9 @@
       ],
       "Cash": [
         "Bar"
+      ],
+      "Categories": [
+        "Kategorien"
       ],
       "Category": [
         "Kategorie"
@@ -12858,6 +12842,9 @@
       "Days of the week": [
         "Tage der Woche"
       ],
+      "Deals, offers, marketing emails": [
+        "Angebote, Aktionen, Marketing-E-Mails"
+      ],
       "Default email address": [
         "Standard E-Mail-Adresse"
       ],
@@ -12900,6 +12887,9 @@
       "Disabled": [
         "Deaktiviert"
       ],
+      "Discussion board posts and threads": [
+        "Beiträge und Threads im Diskussionsforum"
+      ],
       "Display name": [
         "Anzeigename"
       ],
@@ -12935,9 +12925,6 @@
       ],
       "Email address": [
         "E-Mail-Adresse"
-      ],
-      "Email categories": [
-        "E-Mail-Kategorien"
       ],
       "Email or username": [
         "E‐Mail‐Adresse oder Benutzername"
@@ -13038,6 +13025,9 @@
       "for your first month": [
         "im ersten Monat"
       ],
+      "Forums": [
+        "Foren"
+      ],
       "From: ${ fromEmail }": [
         "Von: ${ fromEmail }"
       ],
@@ -13052,6 +13042,27 @@
       ],
       "Gift code": [
         "Gutscheincode"
+      ],
+      "Go to Forums": [
+        "Zu Foren wechseln"
+      ],
+      "Go to Newsletters": [
+        "Zu Newsletter wechseln"
+      ],
+      "Go to Primary": [
+        "Zu Primär wechseln"
+      ],
+      "Go to Promotions": [
+        "Zu Werbung wechseln"
+      ],
+      "Go to Social": [
+        "Zu soziale Medien wechseln"
+      ],
+      "Go to Transactions": [
+        "Zu Transaktionen wechseln"
+      ],
+      "Go to Updates": [
+        "Zu Updates wechseln"
       ],
       "Group address": [
         "Gruppenadresse"
@@ -13275,6 +13286,9 @@
       "New second password": [
         "Neues zusätzliches Passwort"
       ],
+      "Newsletters": [
+        "Newsletter"
+      ],
       "No (users cannot use the app until a vault is shared with them)": [
         "Nein (Benutzer können die App erst verwenden, wenn ein Tresor mit ihnen geteilt wird)"
       ],
@@ -13283,6 +13297,9 @@
       ],
       "No label found": [
         "Keine Kategorie gefunden"
+      ],
+      "Non-promotional content and news": [
+        "Werbefreie Inhalte und Neuigkeiten"
       ],
       "Non-standard ports": [
         "Nicht standardisierte Ports"
@@ -13406,6 +13423,12 @@
       ],
       "Previous password": [
         "Bisheriges Passwort"
+      ],
+      "Primary": [
+        "Primäre"
+      ],
+      "Promotions": [
+        "Werbung"
       ],
       "Prompt to trust keys": [
         "Aufforderung, Schlüsseln zu vertrauen"
@@ -13552,6 +13575,12 @@
       "SMTP username": [
         "SMTP-Benutzername"
       ],
+      "Social": [
+        "Soziale Medien"
+      ],
+      "Social media updates and activity": [
+        "Aktualisierungen und Aktivitäten in sozialen Medien"
+      ],
       "Spam": [
         "Spam"
       ],
@@ -13636,6 +13665,9 @@
       "Token name": [
         "Name des Tokens"
       ],
+      "Transactions": [
+        "Transaktionen"
+      ],
       "Two-password mode": [
         "Zwei-Passwort-Modus"
       ],
@@ -13651,6 +13683,9 @@
       "Unlimited logins and devices": [
         "Unbegrenzte Anmeldungen und Geräte"
       ],
+      "Updates": [
+        "Aktualisierungen"
+      ],
       "Upload 1 or more encryption keys": [
         "Lade einen oder mehrere Verschlüsselungsschlüssel hoch"
       ],
@@ -13665,6 +13700,9 @@
       ],
       "URL": [
         "URL"
+      ],
+      "Use email categories": [
+        "E-Mail-Kategorien verwenden"
       ],
       "Use folder colors": [
         "Farben für Ordner verwenden"
@@ -15645,9 +15683,6 @@
       "Review subscription and pay": [
         "Abonnement prüfen und bezahlen"
       ],
-      "Start exploring the ${ BRAND_NAME } universe": [
-        "Erkunde das Universum von ${ BRAND_NAME }"
-      ],
       "Switch plans?": [
         "Abonnement wechseln?"
       ],
@@ -17432,28 +17467,28 @@
       "terms and conditions": [
         "Allgemeinen Geschäftsbedingungen"
       ],
-      "The coupon is valid for ${ couponRedemptions } renewal.": [
-        "Der Gutschein ist für ${ couponRedemptions } Verlängerung gültig.",
-        "Der Gutschein ist für ${ couponRedemptions } Verlängerungen gültig."
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "Der Rabatt ist für ${ renewalsWithCoupon } Verlängerung gültig.",
+        "Der Rabatt ist für ${ renewalsWithCoupon } Verlängerungen gültig."
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Der speziell ermäßigte Preis ist für ${ couponRedemptions } Monat gültig. Danach wird er automatisch zum Preis von ${ renewPriceStr } pro Monat verlängert. Du kannst jederzeit kündigen.",
+        "Der speziell ermäßigte Preis ist für ${ couponRedemptions } Monate gültig. Danach wird er automatisch zum Preis von ${ renewPriceStr } pro Monat verlängert. Du kannst jederzeit kündigen."
       ],
       "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
         "Der speziell ermäßigte Preis ist für ${ subscriptionLength } Monat gültig.",
         "Der speziell ermäßigte Preis ist für die ersten ${ subscriptionLength } Monate gültig."
       ],
-      "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "Der speziell ermäßigte Preis gilt für den ersten Monat. Der Gutschein kann für ${ couponRedemptions } Verlängerung eingelöst werden. Danach wird das Abonnement automatisch zum Preis von ${ renewPriceStr } für 1 Monat verlängert. Du kannst jederzeit kündigen.",
-        "Der speziell ermäßigte Preis gilt für den ersten Monat. Der Gutschein kann für ${ couponRedemptions } Verlängerungen eingelöst werden. Danach wird das Abonnement automatisch zum Preis von ${ renewPriceStr } für 1 Monat verlängert. Du kannst jederzeit kündigen."
-      ],
       "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Der speziell ermäßigte Preis ist für den ersten Monat gültig. Danach wird das Abonnement automatisch jeden Monat zum Preis von ${ renewPriceStr } verlängert. Du kannst jederzeit kündigen."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Der speziell ermäßigte Preis von ${ priceWithDiscount } gilt für ${ couponRedemptions } Monat. Danach wird er automatisch zum Preis von ${ renewPriceStr } pro Monat verlängert. Du kannst jederzeit kündigen.",
+        "Der speziell ermäßigte Preis von ${ priceWithDiscount } gilt für ${ couponRedemptions } Monate. Danach wird er automatisch zum Preis von ${ renewPriceStr } pro Monat verlängert. Du kannst jederzeit kündigen."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "Der speziell ermäßigte Preis von ${ priceWithDiscount } ist für ${ subscriptionLength } Monat gültig.",
         "Der speziell ermäßigte Preis von ${ priceWithDiscount } ist für ${ subscriptionLength } Monate gültig."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "Der speziell ermäßigte Preis von ${ priceWithDiscount } gilt für den ersten Monat. Der Gutschein kann für ${ couponRedemptions } Verlängerung eingelöst werden. Danach wird das Abonnement automatisch zum Preis von ${ renewPriceStr } für 1 Monat verlängert. Du kannst jederzeit kündigen.",
-        "Der speziell ermäßigte Preis von ${ priceWithDiscount } gilt für den ersten Monat. Der Gutschein kann für ${ couponRedemptions } Verlängerungen eingelöst werden. Danach wird das Abonnement automatisch zum Preis von ${ renewPriceStr } für 1 Monat verlängert. Du kannst jederzeit kündigen."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Der speziell ermäßigte Preis von ${ priceWithDiscount } ist für den ersten Monat gültig. Danach wird das Abonnement automatisch jeden Monat zum Preis von ${ renewPriceStr } verlängert. Du kannst jederzeit kündigen."
@@ -21647,6 +21682,32 @@
         "Keine SMTP-Token gefunden"
       ]
     },
+    "Theme": {
+      "Auto": [
+        "Automatisch"
+      ],
+      "Dark": [
+        "Dunkel"
+      ],
+      "Light": [
+        "Hell"
+      ],
+      "Mode: Auto": [
+        "Modus: Automatisch"
+      ],
+      "Mode: Dark": [
+        "Modus: Dunkel"
+      ],
+      "Mode: Light": [
+        "Modus: Hell"
+      ],
+      "Sync with system": [
+        "Mit dem System synchronisieren"
+      ],
+      "Use ${ BRAND_NAME } settings": [
+        "${ BRAND_NAME }-Einstellungen verwenden"
+      ]
+    },
     "Time unit": {
       "${ ceilDays } day": [
         "${ ceilDays } Tag",
@@ -23291,8 +23352,8 @@
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Deine kostenlose Testversion von ${ planName } endet am ${ textDate }."
       ],
-      "Your ${ planName } subscription has started": [
-        "Dein ${ planName }-Abonnement hat begonnen."
+      "Your ${ planTitle } subscription has started": [
+        "Dein ${ planTitle }-Abonnement hat begonnen"
       ],
       "Your calendar link": [
         "Dein Kalender-Link"
@@ -23584,6 +23645,9 @@
       ],
       "Specify the users of the eduGAIN entity who are allowed to authenticate with SAML SSO": [
         "Gib die Benutzer der eduGAIN-Entität an, die sich mit SAML SSO authentifizieren dürfen"
+      ],
+      "System notification": [
+        "Systembenachrichtigung"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Systemunterordner werden in ${ MAIL_APP_NAME } als separate Ordner angezeigt"
@@ -24426,6 +24490,9 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } wird so viele Daten wie möglich übertragen, beginnend mit deinen aktuellsten Nachrichten."
+      ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } offer has ended": [
+        "Das Angebot \"${ PLAN_NAMES[PLANS.PASS_LIFETIME] }\" ist abgelaufen"
       ],
       "Are you sure you want to delete the phone number?": [
         "Möchtest du die Telefonnummer wirklich löschen?"

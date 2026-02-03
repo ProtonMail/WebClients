@@ -3365,9 +3365,6 @@
       "An error occurred uploading your file. No file has been selected.": [
         "Tella-d tuccḍa deg usali n ufaylu-inek·inem. Ulac afaylu i yettwafernen."
       ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
-        "Afaylu-inek·inem ${ formattedFilename } deg-s ugar n ${ MAX_IMPORT_CONTACTS_STRING } n yinermisen."
-      ],
       "Your file ${ formattedFilename } has no contacts to be imported.": [
         "Afaylu-inek·inem ${ formattedFilename } ur yesɛi ara inermisen ara nsifeḍ."
       ],
@@ -4566,10 +4563,6 @@
       ],
       "All your changes will be lost.": [
         "Ad ruḥen akk ibeddilen-inek/m."
-      ],
-      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
-        "Meṛṛa inermisen-ik ad ttwaktaren, s talast n ${ MAX_CONTACTS_PER_USER }",
-        "Meṛṛa inermisen-ik ad ttwaktaren, s talast n ${ MAX_CONTACTS_PER_USER }"
       ],
       "Allocated": [
         "Ittuheṛṛ"
@@ -6523,6 +6516,9 @@
       "Previous password": [
         "Awal uffir uzwir"
       ],
+      "Primary": [
+        "Agejdan"
+      ],
       "Proration": [
         "Asiḍen aktassaɣan"
       ],
@@ -6627,6 +6623,9 @@
       ],
       "Undo send": [
         "Sefsex tuzna"
+      ],
+      "Updates": [
+        "Ileqman"
       ],
       "Upload 1 or more encryption keys": [
         "Sali 1 neɣ ugar n tsura n uwgelhen"
@@ -9516,6 +9515,14 @@
       ],
       "vCard field": [
         "urti vCard"
+      ]
+    },
+    "Theme": {
+      "Dark": [
+        "Aberkan"
+      ],
+      "Light": [
+        "Aceεlal"
       ]
     },
     "Time unit": {

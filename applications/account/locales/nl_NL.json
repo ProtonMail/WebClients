@@ -1949,26 +1949,6 @@
         "Nieuwe e-mail"
       ]
     },
-    "app-switcher": {
-      "Browse the web privately and block ads": [
-        "Surf privé op het internet en blokkeer advertenties"
-      ],
-      "Keep your schedule private": [
-        "Houd uw planning privé"
-      ],
-      "Protect your passwords and identity": [
-        "Bescherm uw wachtwoorden en identiteit"
-      ],
-      "Safeguard your files and photos": [
-        "Bescherm uw bestanden en foto's"
-      ],
-      "Secure your communications": [
-        "Beveilig uw communicatie"
-      ],
-      "Talk confidentially": [
-        "Vertrouwelijk communiceren"
-      ]
-    },
     "app-switcher_2025": {
       "Bitcoin wallet": [
         "Bitcoin portemonnee"
@@ -3202,11 +3182,6 @@
       ],
       "Expand": [
         "Uitvouwen"
-      ]
-    },
-    "collider_2025: app-switcher": {
-      "Chat with a private AI assistant": [
-        "Chat met een privé AI-assistent"
       ]
     },
     "collider_2025: feature": {
@@ -4789,8 +4764,8 @@
       "Simplify syncing and scheduling with shared calendars.": [
         "Vereenvoudig het synchroniseren en plannen met gedeelde agenda's."
       ],
-      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
-        "Voor importeren via CSV- en VCF-bestand, zorg ervoor dat het bestand niet ${ MAX_IMPORT_FILE_SIZE_STRING } of ${ MAX_IMPORT_CONTACTS_STRING } contacten overschrijdt. Als uw bestand groter is, splits het dan in kleinere bestanden. ${ learnMoreLink }."
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Om te importeren via een CSV- en VCF-bestand, moet u ervoor zorgen dat het bestand niet groter is dan ${ MAX_IMPORT_FILE_SIZE_STRING } of niet meer dan ${ maxContactString } contacten bevat. Als uw bestand groter is, splits het dan op in kleinere bestanden. ${ learnMoreLink }."
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Importeer uw contacten uit Google of Outlook, ${ easySwitchLink }."
@@ -5039,6 +5014,9 @@
       "Edge": [
         "Edge"
       ],
+      "Fedora": [
+        "Fedora"
+      ],
       "Fire TV": [
         "Fire TV"
       ],
@@ -5056,6 +5034,9 @@
       ],
       "Installation guide": [
         "Installatie handleiding"
+      ],
+      "iOS": [
+        "iOS"
       ],
       "iPhone/iPad": [
         "iPhone/iPad"
@@ -5098,6 +5079,9 @@
       ],
       "TV": [
         "TV"
+      ],
+      "Ubuntu/Debian": [
+        "Ubuntu/Debian"
       ],
       "Windows": [
         "Windows"
@@ -6609,6 +6593,9 @@
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Dit bericht kan koppelingen bevatten die niet op de juiste wijze geopend kunnen worden door uw huidige browser."
       ],
+      "This offer is not available in your country": [
+        "Dit aanbod is niet beschikbaar in uw land"
+      ],
       "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
         "Om niet-privé gebruikersaccounts en toegang tot hun accounts aan te maken, moet u uw beheerdersbevoegdheden herstellen."
       ],
@@ -6677,6 +6664,9 @@
       ],
       "You have reached the number of contacts limit for your account": [
         "U heeft de limiet van het aantal contacten bereikt voor dit account"
+      ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "U heeft alle adressen in uw abonnement gebruikt. Upgrade uw abonnement om een nieuw adres toe te voegen of schakel een adres in uw account uit."
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "U heeft het maximale aantal gebruikers bereikt dat uw huidige abonnement toestaat. Upgrade uw abonnement om een nieuwe gebruiker toe te voegen."
@@ -6771,8 +6761,8 @@
       "An error occurred uploading your file. No file has been selected.": [
         "Fout opgetreden tijdens het uploaden van uw bestand. Er is geen bestand geselecteerd."
       ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
-        "Uw bestand ${ formattedFilename } bevat meer dan ${ MAX_IMPORT_CONTACTS_STRING } contacten."
+      "Your file ${ formattedFilename } contains more than ${ maxContactString } contacts.": [
+        "Uw bestand ${ formattedFilename } bevat meer dan ${ maxContactString } contacten."
       ],
       "Your file ${ formattedFilename } has no contacts to be imported.": [
         "Uw bestand ${ formattedFilename } heeft geen contactpersonen om te importeren."
@@ -6858,6 +6848,9 @@
       ]
     },
     "Error message": {
+      "Account is deleted or disabled": [
+        "Account is verwijderd of uitgeschakeld"
+      ],
       "App currently unavailable": [
         "App momenteel niet beschikbaar"
       ],
@@ -8966,9 +8959,9 @@
       "All your changes will be lost.": [
         "Alle wijzigingen gaan verloren."
       ],
-      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
-        "Al uw contacten worden geïmporteerd, met een limiet van ${ MAX_CONTACTS_PER_USER }",
-        "Al uw contacten worden geïmporteerd, met een limiet van ${ MAX_CONTACTS_PER_USER }"
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "Al uw contacten worden geïmporteerd, met een limiet van ${ maxContact }",
+        "Al uw contacten worden geïmporteerd, met een maximum van ${ maxContact }."
       ],
       "Allocated": [
         "Toegewezen"
@@ -9227,6 +9220,9 @@
       ],
       "CNET editors choice award with a rating of 8.4 out of 10": [
         "CNET editors keuze met een beoordeling van 8,4 van de 10"
+      ],
+      "Coming soon": [
+        "Binnenkort beschikbaar"
       ],
       "Compromised": [
         "Gecompromitteerd"
@@ -9490,9 +9486,6 @@
       ],
       "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
         "Elk domein kan slechts één SPF- (TXT-)record hebben. Als u de bestaande SPF- (TXT-)record wilt houden, u kunt ${ spf } toevoegen aan uw huidige record (zet het na ${ spfValue })."
-      ],
-      "Early access": [
-        "Vroegtijdige toegang"
       ],
       "Edit email address": [
         "Wijzig e-mailadres"
@@ -10529,6 +10522,9 @@
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Contacteer ons voor hulp met ${ BRAND_NAME }."
       ],
+      "Receive notifications for ${ categoryLabel }": [
+        "Ontvang meldingen voor ${ categoryLabel }"
+      ],
       "Recently used servers:": [
         "Recent gebruikte servers:"
       ],
@@ -10627,9 +10623,6 @@
       ],
       "Securing your account": [
         "Beveiliging van uw account"
-      ],
-      "Select a service to continue": [
-        "Selecteer een service om door te gaan"
       ],
       "Select one or multiple user affiliations": [
         "Selecteer één of meerdere gebruikers affiliaties"
@@ -11356,6 +11349,9 @@
       ],
       "We need to authenticate your payment with your bank.": [
         "We moeten uw betaling authenticeren met uw bank."
+      ],
+      "We recommend adding servers in different locations (one per city) to maximize redundancy.": [
+        "We raden u aan servers op verschillende locaties (één per stad) toe te voegen om de redundantie te maximaliseren."
       ],
       "We recommend having at least 2 servers in order to provide redundancy.": [
         "We bevelen aan om minstens 2 servers te bezitten om redundantie te bieden."
@@ -12627,6 +12623,9 @@
       "Autofill 2FA": [
         "Automatisch invullen 2FA"
       ],
+      "Automated confirmations and alerts": [
+        "Geautomatiseerde bevestigingen en meldingen"
+      ],
       "Automatically save contacts": [
         "Contacten automatisch opslaan"
       ],
@@ -12666,6 +12665,9 @@
       "Block malware, ads and trackers": [
         "Blokkeer malware, advertenties en trackers"
       ],
+      "Bookings, billings, and orders": [
+        "Boekingen, factureringen en bestellingen"
+      ],
       "Browser": [
         "Browser"
       ],
@@ -12701,6 +12703,9 @@
       ],
       "Cash": [
         "Contant"
+      ],
+      "Categories": [
+        "Categorieën"
       ],
       "Category": [
         "Categorie"
@@ -12837,6 +12842,9 @@
       "Days of the week": [
         "Dagen van de week"
       ],
+      "Deals, offers, marketing emails": [
+        "Aanbiedingen, acties, marketing-e-mails"
+      ],
       "Default email address": [
         "Standaard e-mailadres"
       ],
@@ -12879,6 +12887,9 @@
       "Disabled": [
         "Uitgeschakeld"
       ],
+      "Discussion board posts and threads": [
+        "Discussieforum berichten en discussiedraden"
+      ],
       "Display name": [
         "Weergavenaam"
       ],
@@ -12914,9 +12925,6 @@
       ],
       "Email address": [
         "E-mailadres"
-      ],
-      "Email categories": [
-        "E-mailcategorieën"
       ],
       "Email or username": [
         "E-mailadres of gebruikersnaam"
@@ -13017,6 +13025,9 @@
       "for your first month": [
         "voor uw eerste maand"
       ],
+      "Forums": [
+        "Forums"
+      ],
       "From: ${ fromEmail }": [
         "Van: ${ fromEmail }"
       ],
@@ -13031,6 +13042,27 @@
       ],
       "Gift code": [
         "Geschenkcode"
+      ],
+      "Go to Forums": [
+        "Ga naar Forums"
+      ],
+      "Go to Newsletters": [
+        "Ga naar Nieuwsbrieven"
+      ],
+      "Go to Primary": [
+        "Ga naar Primair"
+      ],
+      "Go to Promotions": [
+        "Ga naar Aanbiedingen"
+      ],
+      "Go to Social": [
+        "Ga naar Social"
+      ],
+      "Go to Transactions": [
+        "Ga naar Transacties"
+      ],
+      "Go to Updates": [
+        "Ga naar Updates"
       ],
       "Group address": [
         "Groepsadres"
@@ -13254,6 +13286,9 @@
       "New second password": [
         "Nieuw tweede wachtwoord"
       ],
+      "Newsletters": [
+        "Nieuwsbrieven"
+      ],
       "No (users cannot use the app until a vault is shared with them)": [
         "Nee (gebruikers kunnen de app pas gebruiken als er een kluis met hen gedeeld is)"
       ],
@@ -13262,6 +13297,9 @@
       ],
       "No label found": [
         "Geen label gevonden"
+      ],
+      "Non-promotional content and news": [
+        "Niet-promotionele inhoud en nieuws"
       ],
       "Non-standard ports": [
         "Niet-standaard poorten"
@@ -13385,6 +13423,12 @@
       ],
       "Previous password": [
         "Vorig wachtwoord"
+      ],
+      "Primary": [
+        "Primair"
+      ],
+      "Promotions": [
+        "Promoties"
       ],
       "Prompt to trust keys": [
         "Vraag naar het vertrouwen van sleutels"
@@ -13531,6 +13575,12 @@
       "SMTP username": [
         "SMTP-gebruikersnaam."
       ],
+      "Social": [
+        "Sociaal"
+      ],
+      "Social media updates and activity": [
+        "Updates en activiteit op sociale media"
+      ],
       "Spam": [
         "Spam"
       ],
@@ -13615,6 +13665,9 @@
       "Token name": [
         "Token naam"
       ],
+      "Transactions": [
+        "Transacties"
+      ],
       "Two-password mode": [
         "Twee-wachtwoord modus"
       ],
@@ -13630,6 +13683,9 @@
       "Unlimited logins and devices": [
         "Onbeperkt aantal inloggen en apparaten"
       ],
+      "Updates": [
+        "Updates"
+      ],
       "Upload 1 or more encryption keys": [
         "Upload 1 of meer encryptiesleutels"
       ],
@@ -13644,6 +13700,9 @@
       ],
       "URL": [
         "Website"
+      ],
+      "Use email categories": [
+        "E-mailcategorieën gebruiken"
       ],
       "Use folder colors": [
         "Gebruik mapkleuren"
@@ -14401,6 +14460,10 @@
         "${ n } actieve vergadering tegelijkertijd",
         "${ n } actieve vergaderingen tegelijk"
       ],
+      "${ n } participant": [
+        "${ n } deelnemer",
+        "${ n } deelnemers"
+      ],
       "24 hours per meeting": [
         "24 uur per vergadering"
       ],
@@ -14410,6 +14473,9 @@
       "Appointment scheduling": [
         "Afspraak Plannen"
       ],
+      "Booking pages": [
+        "Boekingspagina's"
+      ],
       "Browser, mobile, and desktop apps": [
         "Browser-, mobiele en desktop-apps"
       ],
@@ -14418,6 +14484,9 @@
       ],
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "End-to-end versleutelde schermdeling en korte chats tijdens telefoongesprekken"
+      ],
+      "Meeting recording": [
+        "Opname van vergadering"
       ],
       "One active meeting at a time": [
         "Eén actieve vergadering tegelijkertijd"
@@ -15613,9 +15682,6 @@
       ],
       "Review subscription and pay": [
         "Abonnement controleren en betalen"
-      ],
-      "Start exploring the ${ BRAND_NAME } universe": [
-        "Ontdek het ${ BRAND_NAME }-universum"
       ],
       "Switch plans?": [
         "Van abonnement wisselen?"
@@ -17389,6 +17455,9 @@
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Wordt verlengd voor ${ renewPriceStr }, altijd opzegbaar."
       ],
+      "Sorry, this offer is not available for your account.": [
+        "Sorry, dit aanbod is niet beschikbaar voor uw account."
+      ],
       "Sorry, this offer is not available with your current plan.": [
         "Sorry, deze aanbieding is niet beschikbaar met uw huidige abonnement."
       ],
@@ -17398,28 +17467,28 @@
       "terms and conditions": [
         "algemene voorwaarden"
       ],
-      "The coupon is valid for ${ couponRedemptions } renewal.": [
-        "De kortingscode is geldig voor ${ couponRedemptions } verlenging.",
-        "De kortingscode is geldig voor ${ couponRedemptions } verlengingen."
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "De korting is geldig voor ${ renewalsWithCoupon } verlenging.",
+        "De korting is geldig voor ${ renewalsWithCoupon } verlengingen."
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "De speciale kortingsprijs is geldig voor ${ couponRedemptions } maand. Daarna wordt deze automatisch verlengd voor ${ renewPriceStr } per maand. U kunt op elk moment annuleren.",
+        "De speciale kortingsprijs is geldig voor ${ couponRedemptions } maanden. Daarna wordt deze automatisch verlengd voor ${ renewPriceStr } per maand. U kunt op elk moment annuleren."
       ],
       "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
         "De speciale kortingsprijs is geldig voor de eerste ${ subscriptionLength } maand.",
         "De speciale kortingsprijs is geldig voor de eerste ${ subscriptionLength } maanden."
       ],
-      "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "De speciale kortingsprijs is geldig voor de eerste maand. De kortingscode is geldig voor ${ couponRedemptions } vernieuwing. Daarna wordt uw abonnement automatisch vernieuwd voor ${ renewPriceStr } voor 1 maand. U kunt op elk moment annuleren.",
-        "De speciale kortingsprijs is geldig voor de eerste maand. De kortingscode is geldig voor ${ couponRedemptions } vernieuwingen. Daarna wordt uw abonnement automatisch vernieuwd voor ${ renewPriceStr } voor 1 maand. U kunt op elk moment annuleren."
-      ],
       "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "De speciale kortingsprijs is geldig voor de eerste maand. Daarna wordt uw abonnement automatisch vernieuwd voor ${ renewPriceStr } per maand. U kunt op elk moment annuleren."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "De speciaal gereduceerde prijs van ${ priceWithDiscount } is geldig voor ${ couponRedemptions } maand. Daarna wordt deze automatisch verlengd voor ${ renewPriceStr } voor 1 maand. U kunt op elk moment annuleren.",
+        "De speciaal gereduceerde prijs van ${ priceWithDiscount } is geldig voor ${ couponRedemptions } maanden. Daarna wordt deze automatisch verlengd voor ${ renewPriceStr } voor 1 maand. U kunt op elk moment annuleren."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "De speciale kortingsprijs van ${ priceWithDiscount } is geldig voor de eerste ${ subscriptionLength } maand.",
         "De speciale kortingsprijs van ${ priceWithDiscount } is geldig voor de eerste ${ subscriptionLength } maanden."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "De speciale kortingsprijs van ${ priceWithDiscount } is geldig voor de eerste maand. De kortingscode is geldig voor ${ couponRedemptions } vernieuwing. Daarna wordt uw abonnement automatisch vernieuwd voor ${ renewPriceStr } voor 1 maand. U kunt op elk moment annuleren.",
-        "De speciale kortingsprijs van ${ priceWithDiscount } is geldig voor de eerste maand. De kortingscode is geldig voor ${ couponRedemptions } vernieuwingen. Daarna wordt uw abonnement automatisch vernieuwd voor ${ renewPriceStr } voor 1 maand. U kunt op elk moment annuleren."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "De speciale kortingsprijs van ${ priceWithDiscount } is geldig voor de eerste maand. Daarna wordt uw abonnement automatisch vernieuwd voor ${ renewPriceStr } per maand. U kunt op elke moment annuleren"
@@ -21613,6 +21682,32 @@
         "Geen SMTP-tokens gevonden"
       ]
     },
+    "Theme": {
+      "Auto": [
+        "Automatisch"
+      ],
+      "Dark": [
+        "Donker"
+      ],
+      "Light": [
+        "Licht"
+      ],
+      "Mode: Auto": [
+        "Modus: Automatisch"
+      ],
+      "Mode: Dark": [
+        "Modus: Donker"
+      ],
+      "Mode: Light": [
+        "Modus: Licht"
+      ],
+      "Sync with system": [
+        "Synchroniseren met systeem"
+      ],
+      "Use ${ BRAND_NAME } settings": [
+        "Gebruik ${ BRAND_NAME } instellingen"
+      ]
+    },
     "Time unit": {
       "${ ceilDays } day": [
         "${ ceilDays } dag",
@@ -22478,6 +22573,9 @@
       "Get the apps": [
         "Verkrijg de apps"
       ],
+      "Get unlimited meetings on all your devices with ${ planName }. ${ upgradeButton }": [
+        "Krijg toegang tot een onbeperkt aantal vergaderingen op al uw apparaten met ${ planName }. ${ upgradeButton }"
+      ],
       "Gift": [
         "Geschenk"
       ],
@@ -23254,8 +23352,8 @@
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Uw ${ planName } gratis proefperiode eindigt op ${ textDate }"
       ],
-      "Your ${ planName } subscription has started": [
-        "Uw ${ planName }-abonnement is nu gestart."
+      "Your ${ planTitle } subscription has started": [
+        "Uw ${ planTitle }-abonnement is nu gestart."
       ],
       "Your calendar link": [
         "Uw agendakoppeling"
@@ -23547,6 +23645,9 @@
       ],
       "Specify the users of the eduGAIN entity who are allowed to authenticate with SAML SSO": [
         "Specificeer de gebruikers van de eduGAIN entiteit die zijn toegestaan om te verifiëren met SAML SSO"
+      ],
+      "System notification": [
+        "Systeemmelding"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Systeemsubmappen worden weergegeven als aparte mappen in ${ MAIL_APP_NAME }"
@@ -23927,6 +24028,9 @@
       ]
     },
     "Upsell": {
+      "${ BRAND_NAME } for Business": [
+        "Welkom bij ${ BRAND_NAME } voor Business"
+      ],
       "**Save up to ${ priceString }** with a longer subscription. Same premium features, lower price.": [
         "**Bespaar tot ${ priceString }** met een langer abonnement. Dezelfde premium functies, lagere prijs."
       ],
@@ -23938,6 +24042,9 @@
       ],
       "Did you know?": [
         "Wist u dat?"
+      ],
+      "Everything you need to collaborate securely in a single subscription. Get access to ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, ${ SHEETS_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } and ${ LUMO_SHORT_APP_NAME } AI Assistant.": [
+        "Alles wat u nodig heeft om veilig samen te werken in één abonnement. Krijg toegang tot ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, ${ SHEETS_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } en ${ LUMO_SHORT_APP_NAME } AI Assistent."
       ],
       "Get ${ drivePlusPlanMaxSpace } storage for your files, photos and documents, and recover file versions with 10-year file recovery.": [
         "Ontvang ${ drivePlusPlanMaxSpace } opslag voor uw bestanden, foto's en documenten, en herstel bestandsversies tot 10 jaar oud."
@@ -24383,6 +24490,9 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } zal zo veel mogelijk gegevens overdragen, te beginnen met uw meest recente berichten."
+      ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } offer has ended": [
+        "Het aanbod voor ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } is beëindigd"
       ],
       "Are you sure you want to delete the phone number?": [
         "Bent u zeker dat u het telefoonnummer wilt verwijderen?"
