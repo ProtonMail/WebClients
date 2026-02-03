@@ -9,6 +9,7 @@ import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 
 import { useFreeUploadOverModal } from '../../../modals/FreeUploadOverModal/useFreeUploadOverModal';
 import { sendErrorReport } from '../../../utils/errorHandling';
+import { EnrichedError } from '../../../utils/errorHandling/EnrichedError';
 import { useFreeUploadStore } from '../../../zustand/freeUpload/freeUpload.store';
 import { useFreeUploadApi } from './useFreeUploadApi';
 import { useFreeUploadFeature } from './useFreeUploadFeature';
@@ -62,8 +63,16 @@ export function useRunningFreeUploadTimer(createTime?: number) {
                     if (EndTime !== null) {
                         const endTimeMs = EndTime * 1000;
                         if (isAfter(endTimeMs, addMinutes(new Date(), 10))) {
-                            const error = new Error(
-                                c('Error').t`We're sorry, but free upload is not available right now.`
+                            const error = new EnrichedError(
+                                c('Error').t`We're sorry, but free upload is not available right now.`,
+                                {
+                                    level: 'debug',
+                                    extra: {
+                                        endTimeMs,
+                                        isAfterTenMinutes: true,
+                                    },
+                                },
+                                'Free upload not available'
                             );
                             showErrorNotification(error);
                             throw error;
