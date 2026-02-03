@@ -3077,8 +3077,8 @@
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "アカウントを可能な限り高度に保護するためには、回復用フレーズを設定してください。"
       ],
-      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
-        "CSVファイルおよびVCFファイルでインポートするには、ファイルが${ MAX_IMPORT_FILE_SIZE_STRING }または${ MAX_IMPORT_CONTACTS_STRING }件の連絡先を超えないようにしてください。ファイルが大きすぎる場合は、小さいファイルに分割してください。${ learnMoreLink }"
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "CSVファイルおよびVCFファイルでインポートするには、ファイルが${ MAX_IMPORT_FILE_SIZE_STRING }または${ maxContactString }件の連絡先を超えないようにしてください。ファイルが大きすぎる場合は、小さいファイルに分割してください。${ learnMoreLink }"
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "${ easySwitchLink }で、GoogleやOutlookから連絡先をインポート"
@@ -3891,6 +3891,9 @@
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "このメッセージは、現在お使いのブラウザでは適切に開くことができないリンクのURLを含んでいる可能性があります。"
       ],
+      "This offer is not available in your country": [
+        "このオファーはお住まいの国ではご利用いただけません"
+      ],
       "Trusted keys are not valid for sending": [
         "信頼された鍵が送信に使用できません"
       ],
@@ -4023,8 +4026,8 @@
       "An error occurred uploading your file. No file has been selected.": [
         "ファイルのアップロード中にエラーが発生しました。ファイルが選択されていません。"
       ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
-        "あなたのファイル ${ formattedFilename } には${ MAX_IMPORT_CONTACTS_STRING } 以上の連絡先が含まれています。"
+      "Your file ${ formattedFilename } contains more than ${ maxContactString } contacts.": [
+        "あなたのファイル ${ formattedFilename } には${ maxContactString } 以上の連絡先が含まれています。"
       ],
       "Your file ${ formattedFilename } has no contacts to be imported.": [
         "ファイル ${ formattedFilename } にインポートする連絡先がありません。"
@@ -5087,8 +5090,8 @@
       "All participants will get a cancellation email. Which event would you like to delete?": [
         "参加者全員にキャンセルメールが届きます。 どのイベントを削除しますか?"
       ],
-      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
-        "${ MAX_CONTACTS_PER_USER } の制限まで、すべての連絡先がインポートされます"
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "${ maxContact } の制限まで、すべての連絡先がインポートされます"
       ],
       "American Express SafeKey logo": [
         "American Express SafeKey ロゴ"
@@ -7388,6 +7391,9 @@
       "${ n } active meeting at a time": [
         "一度に${ n }件のミーティングを同時に開催"
       ],
+      "${ n } participant": [
+        "${ n }人の参加者"
+      ],
       "24 hours per meeting": [
         "ミーティング1回あたり24時間"
       ],
@@ -7397,6 +7403,9 @@
       "Appointment scheduling": [
         "日程調整ツール"
       ],
+      "Booking pages": [
+        "予約ページ"
+      ],
       "Browser, mobile, and desktop apps": [
         "ブラウザ、モバイル、デスクトップアプリ"
       ],
@@ -7405,6 +7414,9 @@
       ],
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "エンドツーエンドで暗号化された画面共有と通話中の一時的なチャット"
+      ],
+      "Meeting recording": [
+        "ミーティング録画"
       ],
       "One active meeting at a time": [
         "一度に1つのミーティングを開催"
@@ -9182,23 +9194,23 @@
       "terms and conditions": [
         "利用規約"
       ],
-      "The coupon is valid for ${ couponRedemptions } renewal.": [
-        "クーポンは ${ couponRedemptions } の更新で有効です。"
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "この割引は ${ renewalsWithCoupon } の更新で有効です。"
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "特別割引価格は${ couponRedemptions }ヶ月間有効です。その後、1ヶ月${ renewPriceStr }で自動更新されます。いつでもキャンセル可能です。"
       ],
       "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
         "特別割引価格は最初の ${ subscriptionLength } ヶ月間有効です。"
       ],
-      "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "特別割引価格は最初の月のみ有効です。クーポンは${ couponRedemptions }の更新で有効です。そのあとは 1 ヶ月${ renewPriceStr }で自動更新されます。いつでもキャンセル可能です。"
-      ],
       "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "特別な割引価格は最初の月のみ有効です。その後、毎月${ renewPriceStr }で自動更新されます。いつでもキャンセル可能です。"
       ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "${ priceWithDiscount }の特別割引価格は${ couponRedemptions }ヶ月間有効です。その後、1ヶ月${ renewPriceStr }で自動更新されます。いつでもキャンセル可能です。"
+      ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "${ priceWithDiscount } の特別割引価格は最初の ${ subscriptionLength } ヶ月間有効です。"
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "${ priceWithDiscount }の特別な割引価格は最初の月のみ適用されます。クーポンは${ couponRedemptions }の更新で有効です。そのあとは 1 ヶ月${ renewPriceStr }で自動更新されます。いつでもキャンセル可能です。"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "${ priceWithDiscount }の特別な割引価格は最初の月のみ有効です。そのあとは毎月${ renewPriceStr }で自動更新されます。いつでもキャンセル可能です。"
@@ -11877,9 +11889,6 @@
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "${ planName }の無料トライアルは${ textDate }に終了します"
-      ],
-      "Your ${ planName } subscription has started": [
-        "${ planName }サブスクリプションが開始されました"
       ],
       "Your account is protected": [
         "あなたのアカウントは保護されています"
