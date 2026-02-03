@@ -2,8 +2,6 @@ import WorkerMessageBroker from 'proton-pass-extension/__mocks__/app/worker/chan
 import { clearBrowserMocks } from 'proton-pass-extension/__mocks__/webextension-polyfill';
 import { WorkerContext } from 'proton-pass-extension/app/worker/context/inject';
 import type { WorkerContextInterface } from 'proton-pass-extension/app/worker/context/types';
-import type { ExtensionAuthService } from 'proton-pass-extension/app/worker/services/auth';
-import { createAuthService } from 'proton-pass-extension/app/worker/services/auth';
 import * as permissionUtils from 'proton-pass-extension/lib/utils/permissions';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
@@ -18,6 +16,9 @@ import type { Api } from '@proton/pass/types';
 import { NotificationKey } from '@proton/pass/types/worker/notification';
 import { AppStatus } from '@proton/pass/types/worker/state';
 import createStore from '@proton/shared/lib/helpers/store';
+
+import type { ExtensionAuthService } from './auth.service';
+import { createAuthService } from './auth.service';
 
 jest.mock('proton-pass-extension/lib/utils/permissions');
 const permissions = permissionUtils as jest.MockedObject<typeof permissionUtils>;

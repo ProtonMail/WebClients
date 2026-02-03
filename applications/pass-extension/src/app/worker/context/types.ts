@@ -1,7 +1,7 @@
 import type { ActivationService } from 'proton-pass-extension/app/worker/services/activation';
 import type { AliasService } from 'proton-pass-extension/app/worker/services/alias';
 import type { APIProxyService } from 'proton-pass-extension/app/worker/services/api-proxy';
-import type { ExtensionAuthService } from 'proton-pass-extension/app/worker/services/auth';
+import type { ExtensionAuthService } from 'proton-pass-extension/app/worker/services/auth/auth.service';
 import type { AutoFillService } from 'proton-pass-extension/app/worker/services/autofill';
 import type { AutoSaveService } from 'proton-pass-extension/app/worker/services/autosave';
 import type { B2BEventsService } from 'proton-pass-extension/app/worker/services/b2b';
