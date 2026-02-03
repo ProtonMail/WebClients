@@ -42,11 +42,17 @@ export const ChatItem = ({
 }: ChatItemProps) => {
     const { type, name, timestamp } = item;
 
+    const roomNameLabel = (
+        <span key="room-name" className="ml-1 room-name">
+            {roomName}
+        </span>
+    );
+
     return (
         <div
             key={`${type}-${name}-${timestamp}`}
             className={clsx(
-                'flex gap-2 height-custom flex-nowrap shrink-0',
+                'chat-item flex gap-2 height-custom flex-nowrap shrink-0',
                 (shouldGrow || ellipsisOverflow) && 'flex-1'
             )}
             style={{ '--height-custom': 'fit-content' }}
@@ -90,14 +96,13 @@ export const ChatItem = ({
                     </div>
                 )}
                 {isParticipantEventRecord(item) && (
-                    <div className="flex justify-start items-start text-semibold">
-                        <span className="color-weak">
-                            {item.eventType === ParticipantEvent.Join ? c('Info').t`Joined` : c('Info').t`Left`}
-                        </span>
-
-                        <span className="ml-1" style={{ color: 'var(--interaction-norm)' }}>
-                            {roomName}
-                        </span>
+                    <div className="flex justify-start items-start text-semibold color-weak">
+                        {
+                            // translator: full sentence is "Joined <room name>" or "Left <room name>"
+                            item.eventType === ParticipantEvent.Join
+                                ? c('Info').jt`Joined ${roomNameLabel}`
+                                : c('Info').jt`Left ${roomNameLabel}`
+                        }
                     </div>
                 )}
             </div>
