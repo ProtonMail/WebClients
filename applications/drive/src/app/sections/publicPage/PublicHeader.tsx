@@ -8,14 +8,14 @@ import { usePopperAnchor } from '@proton/components';
 import DriveLogo from '@proton/components/components/logo/DriveLogo';
 import Toolbar from '@proton/components/components/toolbar/Toolbar';
 import ToolbarButton from '@proton/components/components/toolbar/ToolbarButton';
-
-import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
+
 import { UploadCreateDropdown } from '../../statelessComponents/UploadCreateDropdown/UploadCreateDropdown';
 import { CopyLinkButton } from '../commonButtons/CopyLinkButton';
 import { DetailsButton } from '../commonButtons/DetailsButton';
 import { BookmarkButton } from './BookmarkButton';
 import { CreateAccountButton } from './CreateAccountButton';
+import { DownloadDropdown } from './DownloadDropdown';
 import { GoBackButton } from './GoBackButton';
 import { UserInfo } from './UserInfo';
 import { usePublicAuthStore } from './usePublicAuth.store';
@@ -23,7 +23,8 @@ import { usePublicAuthStore } from './usePublicAuth.store';
 export interface PublicHeaderProps {
     breadcrumbOrName: ReactNode;
     sharedBy: string | undefined;
-    onDownload: () => Promise<void>;
+    onDownload: () => void;
+    onScanAndDownload: () => void;
     onDetails?: () => void;
     onCopyLink: () => void;
     onUploadFile?: () => void;
@@ -39,6 +40,7 @@ export const PublicHeader = ({
     breadcrumbOrName,
     sharedBy,
     onDownload,
+    onScanAndDownload,
     onDetails,
     onCopyLink,
     onUploadFile,
@@ -49,8 +51,6 @@ export const PublicHeader = ({
     customPassword,
     isPartialView = false,
 }: PublicHeaderProps) => {
-    const downloadCopy =
-        nbSelected && nbSelected > 1 ? c('Action').t`Download (${nbSelected})` : c('Action').t`Download`;
     const userAddress = usePublicAuthStore(useShallow((state) => state.getUserMainAddress()));
     const showUploadActions = onUploadFile && onUploadFolder && onCreateFolder;
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
@@ -97,10 +97,12 @@ export const PublicHeader = ({
                                     </>
                                 )}
                                 {onDetails && <DetailsButton buttonType="toolbar" onClick={onDetails} />}
-                                <ToolbarButton onClick={onDownload} disabled={isEmptyView}>
-                                    <IcArrowDownLine className="mr-2" size={4} />
-                                    {downloadCopy}
-                                </ToolbarButton>
+                                <DownloadDropdown
+                                    onDownload={onDownload}
+                                    onScanAndDownload={onScanAndDownload}
+                                    nbSelected={nbSelected}
+                                    disabled={isEmptyView}
+                                />
                             </Toolbar>
                             <Vr className="h-custom" style={{ '--h-custom': '2.25rem' }} />
                             <BookmarkButton customPassword={customPassword} />

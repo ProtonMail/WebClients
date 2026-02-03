@@ -296,11 +296,11 @@ export const PublicFolderView = ({ rootNode, customPassword, isPartialView }: Pu
         onDownload: (uid: string) => handleDownload([uid]),
     });
 
-    const handleHeaderDownload = () => {
+    const handleHeaderDownload = (shouldScan?: boolean) => {
         if (selectedItemIds.size > 0) {
-            return handleDownload(Array.from(selectedItemIds.values()));
+            return handleDownload(Array.from(selectedItemIds.values()), shouldScan);
         }
-        return handleDownload(Array.from(itemUids.values()));
+        return handleDownload(Array.from(itemUids.values()), shouldScan);
     };
 
     const conditions: DriveExplorerConditions = {
@@ -341,7 +341,8 @@ export const PublicFolderView = ({ rootNode, customPassword, isPartialView }: Pu
                     (rootNode.keyAuthor.ok ? rootNode.keyAuthor.value : rootNode.keyAuthor.error.claimedAuthor) ||
                     undefined
                 }
-                onDownload={handleHeaderDownload}
+                onDownload={() => handleHeaderDownload()}
+                onScanAndDownload={() => handleHeaderDownload(true)}
                 onDetails={() => handleDetails(rootNode.uid)}
                 onCopyLink={handleCopyLink}
                 onUploadFile={!isViewer ? handleClickFileUpload : undefined}
