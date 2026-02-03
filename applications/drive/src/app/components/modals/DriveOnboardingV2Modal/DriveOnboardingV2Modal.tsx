@@ -13,6 +13,8 @@ import isTruthy from '@proton/utils/isTruthy';
 import { useFreeUploadApi } from '../../../hooks/drive/freeUpload/useFreeUploadApi';
 import { useInitializeFreeUploadTimer } from '../../../hooks/drive/freeUpload/useInitializeFreeUploadTimer';
 import { useDesktopDownloads } from '../../../hooks/drive/useDesktopDownloads';
+import { sendErrorReport } from '../../../utils/errorHandling';
+import { EnrichedError } from '../../../utils/errorHandling/EnrichedError';
 import { Actions, countActionWithTelemetry } from '../../../utils/telemetry';
 import { useOnboarding } from '../../onboarding/useOnboarding';
 import { Header } from './Header';
@@ -105,7 +107,17 @@ export const DriveOnboardingV2Modal: FC<ModalStateProps> = (props) => {
                 if (IsFreshAccount) {
                     await initializeTimer();
                 } else {
-                    const error = new Error(c('Error').t`We're sorry, but free upload is not available right now.`);
+                    const error = new EnrichedError(
+                        c('Error').t`We're sorry, but free upload is not available right now.`,
+                        {
+                            level: 'debug',
+                            extra: {
+                                IsFreshAccount,
+                            },
+                        },
+                        'Free upload not available'
+                    );
+                    sendErrorReport(error);
                     showErrorNotification(error);
                 }
             }
