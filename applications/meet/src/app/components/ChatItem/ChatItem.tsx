@@ -88,7 +88,7 @@ export const ChatItem = ({
                 {isMeetChatMessage(item) && (
                     <div
                         className={clsx(
-                            'color-weak text-semibold chat-message',
+                            'color-norm text-semibold chat-message',
                             ellipsisOverflow && 'text-ellipsis chat-message-one-line'
                         )}
                     >
