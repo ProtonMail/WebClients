@@ -8,6 +8,7 @@ import { usePopperAnchor } from '@proton/components';
 import DriveLogo from '@proton/components/components/logo/DriveLogo';
 import Toolbar from '@proton/components/components/toolbar/Toolbar';
 import ToolbarButton from '@proton/components/components/toolbar/ToolbarButton';
+import useLoading from '@proton/hooks/useLoading';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
 
 import { UploadCreateDropdown } from '../../statelessComponents/UploadCreateDropdown/UploadCreateDropdown';
@@ -30,6 +31,8 @@ export interface PublicHeaderProps {
     onUploadFile?: () => void;
     onUploadFolder?: () => void;
     onCreateFolder?: () => void;
+    onCreateDocument?: () => Promise<void>;
+    onCreateSpreadsheet?: () => Promise<void>;
     nbSelected?: number;
     isEmptyView?: boolean;
     customPassword?: string;
@@ -46,6 +49,8 @@ export const PublicHeader = ({
     onUploadFile,
     onUploadFolder,
     onCreateFolder,
+    onCreateDocument,
+    onCreateSpreadsheet,
     nbSelected,
     isEmptyView = false,
     customPassword,
@@ -54,6 +59,7 @@ export const PublicHeader = ({
     const userAddress = usePublicAuthStore(useShallow((state) => state.getUserMainAddress()));
     const showUploadActions = onUploadFile && onUploadFolder && onCreateFolder;
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
+    const [isCreatingNativeProtonDocs, withIsCreatingNativeProtonDocs] = useLoading(false);
 
     return (
         <>
@@ -85,11 +91,16 @@ export const PublicHeader = ({
                                             ref={anchorRef}
                                             onClick={toggle}
                                             title={c('Action').t`Create`}
+                                            loading={isCreatingNativeProtonDocs}
                                         />
                                         <UploadCreateDropdown
                                             onUploadFile={onUploadFile}
                                             onUploadFolder={onUploadFolder}
                                             onCreateFolder={onCreateFolder}
+                                            onCreateDocument={() => withIsCreatingNativeProtonDocs(onCreateDocument)}
+                                            onCreateSpreadsheet={() =>
+                                                withIsCreatingNativeProtonDocs(onCreateSpreadsheet)
+                                            }
                                             anchorRef={anchorRef}
                                             isOpen={isOpen}
                                             onClose={close}
