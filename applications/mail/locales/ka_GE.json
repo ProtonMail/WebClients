@@ -4084,9 +4084,6 @@
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "იმისათვის, რომ გქონდეთ უმაღლესი შესაძლო უსაფრთხოება თქვენი ანგარიშისთვის, დააყენეთ აღდგენის ფრაზა."
       ],
-      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
-        "CSV და VCF ფაილების შემოსატანად დარწმუნდით, რომ ფაილი ${ MAX_IMPORT_FILE_SIZE_STRING }-ზე ან ${ MAX_IMPORT_CONTACTS_STRING }-ზე მეტ კონტაქტს არ შეიცავს. თუ თქვენი ფაილი უფრო დიდია, დაყავით ის უფრო პატარა ფაილებად. ${ learnMoreLink }."
-      ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Google-დან ან Outlook-დან კონტაქტების შემოსატანად, ${ easySwitchLink }."
       ],
@@ -4218,6 +4215,17 @@
       ],
       "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
         "თქვენი ${ PLAN_NAMES[PLANS.PASS] }-ის გამოწერა წელიწადში სპეციალური ${ price } ღირს. Free სატარიფო გეგმაზე ჩამოწევით ფასადკლებას სამუდამოდ დაკარგავთ იმის მიუხედავად, ასწევთ თუ არა სატარიფო გეგმას მომავალში."
+      ]
+    },
+    "Drawer tab, Action": {
+      "Download for Linux": [
+        "გადმოწერა Linux-სთვის"
+      ],
+      "Download for macOS": [
+        "გადმოწერა macOS-სთვის"
+      ],
+      "Download for Windows": [
+        "გადმოწერა Windows-სთვის"
       ]
     },
     "driveplus2024: Deal details": {
@@ -4956,6 +4964,9 @@
       "Try using only letters, numerals, and _.-": [
         "სცადეთ გამოიყენოთ, მხოლოდ, ანბანის სიმბოლოები, ციფრები და _.-"
       ],
+      "Unable to load VPN dashboard. Please check your connection and try again.": [
+        "VPN-ის სამუშაო მაგიდის ჩატვირთვა შეუძლებელია. გადაამოწმეთ თქვენი კავშირი და თავიდან სცადეთ."
+      ],
       "Unexpected error, we can't import the contacts": [
         "მოულოდნელი შეცდომა. კონტაქტები ვერ შემოვიტანე"
       ],
@@ -5100,9 +5111,6 @@
       ],
       "An error occurred uploading your file. No file has been selected.": [
         "შეცდომა ფაილის ატვირთვისას. ფაილი არჩეული არაა."
-      ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
-        "ფაილი ${ formattedFilename } ${ MAX_IMPORT_CONTACTS_STRING }-ზე მეტ კონტაქტს შეიცავს."
       ],
       "Your file ${ formattedFilename } has no contacts to be imported.": [
         "თქვენს ფაილში ${ formattedFilename } შემოსატანი კონტაქტები ნაპოვნი არაა."
@@ -6516,6 +6524,9 @@
         "${ updated } კონტაქტი წარმატებით განახლდა.",
         "${ updated } კონტაქტი წარმატებით განახლდა."
       ],
+      "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
+        "${ VPN_APP_NAME } ნიღბავს თქვენს IP მისამართს და ვებგვერდები თქვენს იდენტიფიკაციას ვერ მოახდენენ."
+      ],
       "(${ memberCount } member)": [
         "(${ memberCount } წევრი)",
         "(${ memberCount } წევრი)"
@@ -6535,6 +6546,12 @@
       "**${ total }** result found in ${ labelName }": [
         "${ labelName }-ში აღმოჩენილია **${ total }** შედეგი",
         "${ labelName }-ში აღმოჩენილია **${ total }** შედეგი"
+      ],
+      "**Auto-connect**: Opens and connects to VPN as soon as you turn on your device.": [
+        "**ავტოდაკავშირება**: გახსნის და დააკავშირებს VPN-ს მაშინვე, როცა თქვენს მოწყობილობას ჩართავთ."
+      ],
+      "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
+        "**Kill switch**: აჩერებს მონაცემების გაჟონვას თქვენი ინტერნეტის დაბლოკვით, თუ VPN გაითიშება."
       ],
       "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
         "**ნაბიჯი 1:** მოიწვიეთ თქვენი მეგობრები ${ BRAND_NAME }-ზე თქვენი რეფერალი ბმულით."
@@ -6578,6 +6595,9 @@
       ],
       "Active": [
         "აქტიური"
+      ],
+      "Ad targeting": [
+        "დამიზნებული რეკლამა"
       ],
       "Add image URL": [
         "გამოსახულების URL-ის დამატება"
@@ -6631,10 +6651,6 @@
       ],
       "All your changes will be lost.": [
         "ყველა თქვენი ცვლილება დაიკარგება."
-      ],
-      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
-        "შემოტანილი იქნება ყველა თქვენი კონტაქტი. ლიმიტია ${ MAX_CONTACTS_PER_USER }",
-        "შემოტანილი იქნება ყველა თქვენი კონტაქტი. ლიმიტია ${ MAX_CONTACTS_PER_USER }"
       ],
       "American Express SafeKey logo": [
         "American Express SafeKey-ის ლოგო"
@@ -6830,6 +6846,9 @@
       ],
       "Confirm phishing report": [
         "ფიშინგის ანგარიშის დასტური"
+      ],
+      "Connect to ${ VPN_APP_NAME } to browse privately": [
+        "მიუერთდით ${ VPN_APP_NAME } ინტერნეტში უსაფრთხოდ სამუშაოდ"
       ],
       "Consider when's the best time for your recipient to receive your email, and schedule it to be sent then.": [
         "მოიფიქრეთ, როდისაა თქვენთვის საუკეთესო დრო, მიმღებმა თქვენი ელფოსტა მიიღოს და დაგეგმეთ, როდის გაიგზავნება ის."
@@ -7161,6 +7180,9 @@
       "Generate text": [
         "ტექსტის გენერაცია"
       ],
+      "Geoblocking": [
+        "გეოდაბლოკვა"
+      ],
       "Get it on Google Play": [
         "მიიღეთ ის Google Play-ზე"
       ],
@@ -7250,6 +7272,9 @@
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "მიმდინარეობს მონაცემების ${ fromEmail }-დან ${ toEmail }-ში შემოტანა."
       ],
+      "In restrictive countries": [
+        "აკრძალვების მქონე ქვეყნებში"
+      ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "შემდეგ ნაბიჯზე თქვენ საშუალება გექნებათ, დეპოზიტი ბიტკოინის მისამართით გადმოგვცეთ."
       ],
@@ -7287,8 +7312,7 @@
         "ინიციალიზაცია…"
       ],
       "Insert image": [
-        "გამოსახულების ჩასმა",
-        "გამოსახულებების ჩასმა"
+        "გამოსახულების ჩასმა"
       ],
       "Insert link": [
         "ბმულის ჩასმა"
@@ -7310,6 +7334,9 @@
       ],
       "It's better to have:": [
         "უკეთესია, გქონდეთ:"
+      ],
+      "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
+        "საუკეთესო გზაა, VPN ყოველთვის გამოიყენოთ. მაგრამ ეს ადგილებია, სადაც კიბერუსაფრთხოების საფრთხეები ყველაზე დიდია:"
       ],
       "JCB logo": [
         "JCB ლოგო"
@@ -7524,6 +7551,9 @@
       "Not a valid URL": [
         "არასწორი URL"
       ],
+      "Not connected": [
+        "მიერთებული არაა"
+      ],
       "Number of dedicated servers in the organization": [
         "გამოყოფილი სერვერების რაოდენობა ორგანიზაციაში"
       ],
@@ -7535,6 +7565,9 @@
       ],
       "of": [
         "-დან"
+      ],
+      "On public WiFi networks": [
+        "ან საჯარო WiFi ქსელები"
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "ერთი ან მეტი თქვენს მიერ სანდოდ მიჩნეული გასაღები მონიშნულ იქნა, როგორც \"გატეხილი\", მათი მფლობელების მიერ. გირჩევთ, ეს გასაღებები \"არასანდოდ\" მონიშნოთ."
@@ -7693,6 +7726,9 @@
       "Print email": [
         "ელფოსტის დაბეჭდვა"
       ],
+      "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
+        "პირადი დათვალიერება (ან „ინკოგნიტო“ რეჟიმი) სასარგებლოა, მხოლოდ, თქვენი აქტივობის თქვენს მოწყობილობაზე დამალვისთვის. ის ხელს უშლის თქვენს ბრაუზერს ისტორიისა და ქუქი-ფაილების შენახვაში, მაგრამ არ გხდით უხილავს. თქვენს ინტერნეტ პროვაიდერს, ქსელის ადმინისტრატორს და ვებსაიტებს, რომლებსაც სტუმრობთ, კვლავ შეუძლიათ ნახონ, რას აკეთებთ ონლაინ."
+      ],
       "Proofread selection": [
         "მონიშნულის კორექტურა"
       ],
@@ -7764,6 +7800,9 @@
       ],
       "Saving draft": [
         "მონახაზის შენახვა"
+      ],
+      "Scan the QR code with your mobile device": [
+        "დაასკანერეთ QR კოდი თქვენი მობილური მოწყობილობით"
       ],
       "Scheduled send of this message will be canceled.": [
         "ამ შეტყობინების დაგეგმილი გაგზავნა გაუქმდება."
@@ -7886,6 +7925,9 @@
       "Start using the shorter, catchier version of your email address.": [
         "დაიწყეთ თქვენი ელფოსტის უფრო მოკლე და გასაგები ვერსიის გამოყენება."
       ],
+      "Stay connected effortlessly by enabling the following VPN settings:": [
+        "დარჩით დაკავშირებული შემდეგი VPN-ის პარამეტრების ჩართვით:"
+      ],
       "Storage capabilities are not supported in this browser, we need this support to enable message content search.": [
         "ამ ბრაუზერში საცავის შესაძლებლობები მხარდაჭერილი არაა. ჩვენ, ის, შეტყობინების შემცველობაში ძებნის ჩასართავად გვჭირდება."
       ],
@@ -7913,6 +7955,9 @@
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "გამოწერა სრულდება: გაააქტიურეთ ის ${ byDate }-მდე, რათა ${ planName }-ის ფუნქციები შეინარჩუნოთ. ${ reactivateLink }"
+      ],
+      "Surveillance": [
+        "დაზვერვა"
       ],
       "Symbols (#$&)": [
         "სიმბოლოები (#$&)"
@@ -8178,6 +8223,9 @@
       "Trackers blocked:": [
         "დაბლოკილი ტრეკერები:"
       ],
+      "Tracking": [
+        "ტრეკინგი"
+      ],
       "Trash existing messages": [
         "არსებული შეტყობინებების გადატანა ნაგვის ყუთში"
       ],
@@ -8301,6 +8349,9 @@
       "Visa Secure logo": [
         "Visa-ის დაცულობის ლოგო"
       ],
+      "VPN IP": [
+        "VPN IP"
+      ],
       "Warning": [
         "გაფრთხილება"
       ],
@@ -8360,6 +8411,12 @@
       ],
       "When giving out your email, use a unique, disposable hide-my-email alias instead of your real email address.": [
         "როდესაც აზიარებთ თქვენს ელფოსტას, რეალურის მაგიერ მიუთითეთ ერთჯერადი მეტსახელი, რომელიც მიანიჭა ფუნქციამ - hide-my-email"
+      ],
+      "When working remotely": [
+        "დისტანციურად მუშაობისას"
+      ],
+      "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
+        "როცა მიუერთდებით VPN-ს, ის იყენებს დაშიფვრის ტექნოლოგიებს, რომ თქვენი IP მისამართი (თქვენი მოწყობილობისთვის მინიჭებული ნიკალური კოდი) დამალოს."
       ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "როცა ჩართეთ სანდო გასაღებები ${ senderName }-სთვის, საჯარო გასაღებები კონტაქტის დეტალებში იქნა ჩამატებული."
@@ -8580,6 +8637,15 @@
       "Your information was found on ${ displayedDate }": [
         "თქვენი ინფორმაციის აღმოჩენის თარიღია ${ displayedDate }"
       ],
+      "Your internet service provider can monitor and sometimes sell your data, or even restrict what websites you can access.": [
+        "თქვენს პროვაიდერს შეუძლია თქვენი მონიტორინგი და, ხანდახან, თქვენი მონაცემების გაყიდვა და შეზღუდვა, სად შეგიძლიათ შესვლა."
+      ],
+      "Your IP": [
+        "თქვენი IP"
+      ],
+      "Your IP address is visible and can be used to track your online activity.": [
+        "თქვენი IP მისამართი ხილულია და შეიძლება, თქვენი ინტერნეტში მუშაობის ტრეკინგისთვის იქნეს გამოყენებული."
+      ],
       "Your login information will not be saved after the import is completed.": [
         "შესვლისას გამოყენებული თქვენი ინფორმაცია შემოტანის დასრულების შემდეგ შენახული არ იქნება."
       ],
@@ -8599,11 +8665,17 @@
       "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
         "თქვენი შემდეგი გადახდის თარიღია ${ renewalTime }. დაუკავშირდით მხარდაჭერის გუნდს, თუ სატარიფო გეგმის შეცვლა დაუყოვნებლივ გჭირდებათ."
       ],
+      "Your online activity is protected": [
+        "თქვენი აქტივობა ინტერნეეტში დაცულია"
+      ],
       "Your password was leaked:": [
         "თქვენი პაროლი გაჟონილია:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "თქვენი ტელეფონის ნომერი, მხოლოდ, ერთხელ, შესამოწმებლად იქნება გამოყენებული."
+      ],
+      "Your physical location is visible and can be used to restrict your access to the internet.": [
+        "თქვენი ფიზიკური მდებარეობა ხილულია და, შეიძლება, თქვენთვის ინტერნთან წვდომის შესაზღუდად იქნეს გამოყენებული."
       ],
       "Your private writing assistant": [
         "თქვენი პირადი წერის დამხმარე"
@@ -9692,6 +9764,15 @@
       "Your domain": [
         "თქვენი დომენი"
       ],
+      "Your IP": [
+        "თქვენი IP"
+      ],
+      "Your ISP": [
+        "თქვენი ISP"
+      ],
+      "Your location": [
+        "თქვენი მდებარეობა"
+      ],
       "Your password (admin)": [
         "თქვენი პაროლი (admin)"
       ],
@@ -10159,6 +10240,10 @@
         "${ n } ერთდროული აქტიური შეხვედრა",
         "${ n } ერთდროული აქტიური შეხვედრა"
       ],
+      "${ n } participant": [
+        "${ n } მონაწილე",
+        "${ n } მონაწილე"
+      ],
       "24 hours per meeting": [
         "24 საათი თითო შეხვედრისთვის"
       ],
@@ -10168,6 +10253,9 @@
       "Appointment scheduling": [
         "შეხვედრის დაგეგმვა"
       ],
+      "Booking pages": [
+        "დაჯავშნის გვერდები"
+      ],
       "Browser, mobile, and desktop apps": [
         "ბრაუზერის, მობილურის და კომპიუტეირს აპები"
       ],
@@ -10176,6 +10264,9 @@
       ],
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "გამჭოლად დაშიფრული ეკრანის გაზიარება და ეფერემული ჩატი ზარის დროს"
+      ],
+      "Meeting recording": [
+        "შეხვედრის ჩანაწერი"
       ],
       "One active meeting at a time": [
         "ერთი აქტიური შეხვედრა ერთდროულად"
@@ -11980,10 +12071,6 @@
       ],
       "terms and conditions": [
         "პირობები და წესები"
-      ],
-      "The coupon is valid for ${ couponRedemptions } renewal.": [
-        "კუპონი გამოსადეგია ${ couponRedemptions }-ის განახლებისთვის.",
-        "კუპონი გამოსადეგია ${ couponRedemptions }-ის განახლებისთვის."
       ],
       "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
         "სპეციალურად დაკლებული ფასები ვარგისია პირველ ${ subscriptionLength } თვეში.",
@@ -14655,6 +14742,9 @@
       "Deleting contacts": [
         "კონტაქტების წაშლა"
       ],
+      "Desktop": [
+        "სამუშაო მაგიდა"
+      ],
       "Disable categories?": [
         "გამოვრთო კატეგორიები?"
       ],
@@ -14675,6 +14765,9 @@
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "${ DRIVE_APP_NAME }-ის აპების გადმოწერა"
+      ],
+      "Download the app": [
+        "აპის გადმოწერა"
       ],
       "Edit billing address": [
         "გადახდის მისამართის ჩასწორება"
@@ -14757,6 +14850,9 @@
       "Get full access to ${ CALENDAR_APP_NAME }": [
         "მიიღეთ სრული წვდომა ${ CALENDAR_APP_NAME }-ზე"
       ],
+      "Get more from your VPN": [
+        "მიიღეთ მეტი თქვენი VPN-სგან"
+      ],
       "Get the ${ appName[APP_NAME] } apps": [
         "მიიღეთ ${ appName[APP_NAME] } აპები"
       ],
@@ -14780,6 +14876,9 @@
       ],
       "High security for your account": [
         "მაღალი უსაფრთხოება თქვენი ანგარიშისთვის"
+      ],
+      "How does it all work?": [
+        "როგორ მუშაობს ეს ყველაფერი?"
       ],
       "How does it work?": [
         "როგორ მუშაობს?"
@@ -14848,6 +14947,9 @@
       "Load remote content": [
         "გარე შემცველობის ჩატვირთვა"
       ],
+      "Make a secure connection your default": [
+        "დაცული კავშირის გამოყენება ნაგულისხმევად"
+      ],
       "Mark all messages as read": [
         "ყველა შეტყობინებების მონიშვნა წაკითხულად"
       ],
@@ -14889,6 +14991,9 @@
       ],
       "Minicalendar": [
         "მინიკალენდარი"
+      ],
+      "Mobile": [
+        "მობილური"
       ],
       "More": [
         "მეტი"
@@ -15045,6 +15150,9 @@
       ],
       "Priority support:": [
         "პრიორიტეტული მხარდაჭერა:"
+      ],
+      "Private browsing vs VPN": [
+        "კონფიდენციალური რეჟიმი vs VPN"
       ],
       "Processing...": [
         "დამუშავება..."
@@ -15308,6 +15416,9 @@
       "Verifying your payment...": [
         "თქვენი გადახდის გადამოწმება..."
       ],
+      "VPN explained": [
+        "VPN-ის ახსნა"
+      ],
       "Warning": [
         "გაფრთხილება"
       ],
@@ -15330,17 +15441,23 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "მოგესალმებათ ${ BRAND_NAME } for Business"
       ],
+      "What can a VPN protect you from?": [
+        "რისგან გიცავთ VPN?"
+      ],
+      "What is a VPN?": [
+        "რა არის VPN?"
+      ],
       "What would you like to import?": [
         "რისი შემოტანა გნებავთ?"
+      ],
+      "When is it most important to use a VPN?": [
+        "როდისაა VPN-ის გამოყენება ყველაზე მნიშვნელოვანი?"
       ],
       "You can now create unlimited folders and labels": [
         "ახლა, შეგიძლიათ, განუსაზღვრელი რაოდენობის საქაღალდეები და ჭდეები შექმნათ"
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "თქვენი ${ planName }-ის უფასო სატესტო პერიოდი ${ textDate }-ზე სრულდება"
-      ],
-      "Your ${ planName } subscription has started": [
-        "თქვვენი ${ planName } გამოწერა დაიწყო"
       ],
       "Your account is protected": [
         "თქვენი ანგარიში დაცულია"
