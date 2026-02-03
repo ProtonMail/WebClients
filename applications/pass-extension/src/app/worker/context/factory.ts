@@ -39,7 +39,7 @@ import { passwordLockAdapterFactory } from '@proton/pass/lib/auth/lock/password/
 import { sessionLockAdapterFactory } from '@proton/pass/lib/auth/lock/session/adapter';
 import { LockMode } from '@proton/pass/lib/auth/lock/types';
 import { createAuthStore, exposeAuthStore } from '@proton/pass/lib/auth/store';
-import { clientBooted, clientDisabled, clientLocked, clientStatusResolved } from '@proton/pass/lib/client';
+import { clientBooted, clientStatusResolved } from '@proton/pass/lib/client';
 import { exposePassCrypto } from '@proton/pass/lib/crypto';
 import { createPassCrypto } from '@proton/pass/lib/crypto/pass-crypto';
 import { QA_SERVICE } from '@proton/pass/lib/qa/service';
@@ -138,7 +138,7 @@ export const createWorkerContext = (config: ProtonConfig) => {
             if (context.status !== status) {
                 logger.info(`[Worker::Context] Status update : ${context.status} -> ${status}`);
                 context.status = status;
-                setPopupIcon({ disabled: clientDisabled(status), locked: clientLocked(status) });
+                setPopupIcon(status);
                 onStateUpdate(context.getState());
             }
         },
