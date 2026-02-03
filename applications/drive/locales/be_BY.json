@@ -144,8 +144,14 @@
       "Cancel download": [
         "Скасаваць спампоўванне"
       ],
+      "Cancel downloads": [
+        "Скасаваць спампоўкі"
+      ],
       "Cancel subscription": [
         "Скасаваць падпіску"
+      ],
+      "Cancel transfers": [
+        "Скасаваць перадачы"
       ],
       "Cancel trial and pay": [
         "Скасаваць пробны перыяд і купіць падпіску"
@@ -399,8 +405,8 @@
       "Download ${ DRIVE_APP_NAME } apps": [
         "Спампаваць праграмы ${ DRIVE_APP_NAME }"
       ],
-      "Download (${ count })": [
-        "Спампаваць (${ count })"
+      "Download (${ nbSelected })": [
+        "Спампаваць (${ nbSelected })"
       ],
       "Download anyway": [
         "Усё роўна спампаваць"
@@ -936,17 +942,14 @@
       "Save changes": [
         "Захаваць змены"
       ],
-      "Save for later": [
-        "Захаваць на потым"
-      ],
       "Save photos and remove": [
         "Захаваць фатаграфіі і выдаліць"
       ],
       "Scan & Download": [
         "Сканіраваць і спампаваць"
       ],
-      "Scan & Download (${ count })": [
-        "Сканіраваць і спампаваць (${ count })"
+      "Scan & Download (${ nbSelected })": [
+        "Сканіраваць і спампаваць (${ nbSelected })"
       ],
       "Search": [
         "Пошук"
@@ -1049,9 +1052,6 @@
       ],
       "Sign out of all accounts": [
         "Выйсці з усіх уліковых запісаў"
-      ],
-      "Sign up": [
-        "Зарэгістравацца"
       ],
       "Skip verification": [
         "Прапусціць праверку"
@@ -2974,8 +2974,8 @@
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Задайце фразу аднаўлення для забеспячэння свайму ўліковаму запісу найвышэйшага з магчымых узроўняў абароны."
       ],
-      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
-        "Пераканайцеся, што файл не перавышае аб'ем у ${ MAX_IMPORT_FILE_SIZE_STRING } або ${ MAX_IMPORT_CONTACTS_STRING } кантакты для імпартавання праз файл CSV і VCF. Раздзяліце яго на меншыя файлы, калі файл перавышае максімальны аб'ём. ${ learnMoreLink }"
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Пераканайцеся, што файл не перавышае аб'ем у ${ MAX_IMPORT_FILE_SIZE_STRING } або ${ maxContactString } кантакты для імпартавання праз файл CSV і VCF. Раздзяліце яго на меншыя файлы, калі файл перавышае максімальны аб'ём. ${ learnMoreLink }"
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Для імпартавання вашых кантактаў з Google або Outlook, ${ easySwitchLink }"
@@ -3836,6 +3836,9 @@
       "Validation error": [
         "Памылка праверкі"
       ],
+      "We cannot retrieve this item": [
+        "Немагчыма атрымаць гэты элемент"
+      ],
       "We were not able to load some invitations": [
         "Не ўдалося загрузіць некаторыя запрашэнні"
       ],
@@ -3961,8 +3964,8 @@
       "An error occurred uploading your file. No file has been selected.": [
         "Адбылася памылка пры запампоўванні вашага файла. Ніводны файл не выбраны."
       ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
-        "Ваш файл ${ formattedFilename } змяшчае больш за ${ MAX_IMPORT_CONTACTS_STRING } кантактаў."
+      "Your file ${ formattedFilename } contains more than ${ maxContactString } contacts.": [
+        "Ваш файл ${ formattedFilename } змяшчае больш за ${ maxContactString } кантактаў."
       ],
       "Your file ${ formattedFilename } has no contacts to be imported.": [
         "Ваш файл ${ formattedFilename } не змяшчае кантактаў для імпартавання."
@@ -5186,11 +5189,11 @@
       "All your changes will be lost.": [
         "Усе вашы змены будуць страчаны."
       ],
-      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
-        "Усе вашы кантакты будуць імпартаваны. Абмежаванне імпартавання складае ${ MAX_CONTACTS_PER_USER }",
-        "Усе вашы кантакты будуць імпартаваны. Абмежаванне імпартавання складае ${ MAX_CONTACTS_PER_USER }",
-        "Усе вашы кантакты будуць імпартаваны. Абмежаванне імпартавання складае ${ MAX_CONTACTS_PER_USER }",
-        "Усе вашы кантакты будуць імпартаваны. Абмежаванне імпартавання складае ${ MAX_CONTACTS_PER_USER }"
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "Усе вашы кантакты будуць імпартаваны. Абмежаванне імпартавання складае да ${ maxContact }",
+        "Усе вашы кантакты будуць імпартаваны. Абмежаванне імпартавання складае да ${ maxContact }",
+        "Усе вашы кантакты будуць імпартаваны. Абмежаванне імпартавання складае да ${ maxContact }",
+        "Усе вашы кантакты будуць імпартаваны. Абмежаванне імпартавання складае да ${ maxContact }"
       ],
       "Already in this folder": [
         "Ужо ў гэтай папцы"
@@ -5864,6 +5867,9 @@
       "Makes your account safer": [
         "Зрабіце свой уліковы запіс больш бяспечным"
       ],
+      "Malware detected": [
+        "Выяўлена шкодная праграма"
+      ],
       "Mar": [
         "Сак"
       ],
@@ -6461,6 +6467,12 @@
       "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
         "Гэты ўнікальны код можа быць выкарыстаны вэб-сайтамі і пастаўшчыком паслуг інтэрнэту (ISP), каб звязаць ваша месцазнаходжанне і гісторыю прагляду старонак на вашай прыладзе."
       ],
+      "This will cancel any remaining downloads.": [
+        "Гэта скасуе ўсе спампоўкі, якія засталіся."
+      ],
+      "This will cancel any remaining uploads and downloads. Cancelled uploads won't be saved in ${ DRIVE_APP_NAME }.": [
+        "Гэта скасуе ўсе астатнія запампоўкі і спампоўкі. Скасаваныя запампоўкі не будуць захаваны ў ${ DRIVE_APP_NAME }."
+      ],
       "This will cancel any remaining uploads. Cancelled files won't be saved in ${ DRIVE_APP_NAME }.": [
         "Гэта скасуе ўсе астатнія запампоўкі. Скасаваныя файлы не будуць захаваны ў ${ DRIVE_APP_NAME }."
       ],
@@ -6670,6 +6682,9 @@
       ],
       "We are experiencing technical issues. Any albums related actions are temporarily disabled.": [
         "У нас узніклі тэхнічныя праблемы. Часова адключаны ўсе дзеянні, якія звязаны з альбомамі."
+      ],
+      "We couldn't verify ${ nameAuthor } uploaded ${ node.name }. The following may have been tampered with: file data order. Only open if you trust it.": [
+        "Немагчыма спраўдзіць, што ${ nameAuthor } запампаваў ${ node.name }. Наступныя элементы могуць быць падробленымі: парадак даных файла. Адкрывайце іх толькі тады, калі давяраеце гэтаму змесціву."
       ],
       "We couldn’t process your payment.": [
         "Мы не можам апрацаваць ваш плацеж."
@@ -8041,6 +8056,12 @@
         "${ n } актыўных сустрэч адначасова",
         "${ n } актыўных сустрэч адначасова"
       ],
+      "${ n } participant": [
+        "${ n } удзельнік",
+        "${ n } удзельнікі",
+        "${ n } удзельнікаў",
+        "${ n } удзельнікаў"
+      ],
       "24 hours per meeting": [
         "24 гадзіны на сустрэчу"
       ],
@@ -8050,6 +8071,9 @@
       "Appointment scheduling": [
         "Планаванне сустрэч"
       ],
+      "Booking pages": [
+        "Старонкі браніравання"
+      ],
       "Browser, mobile, and desktop apps": [
         "Браўзер, мабільныя прылады і праграмы для камп'ютараў"
       ],
@@ -8058,6 +8082,9 @@
       ],
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "Дэманстрацыя экрана са скразным шыфраваннем і эфемерны чат пры званках"
+      ],
+      "Meeting recording": [
+        "Запіс сустрэчы"
       ],
       "One active meeting at a time": [
         "Адна актыўная сустрэча адначасова"
@@ -9445,7 +9472,7 @@
         "${ numberOfItems } элементаў выдалена"
       ],
       "${ numberOfItems } item deleted permanently": [
-        "${ numberOfItems } элемента выдалены незваротна",
+        "${ numberOfItems } элемент выдалены незваротна",
         "${ numberOfItems } элементы выдалены незваротна",
         "${ numberOfItems } элементаў выдалены незваротна",
         "${ numberOfItems } элементаў выдалены незваротна"
@@ -10301,11 +10328,17 @@
       "terms and conditions": [
         "умовамі выкарыстання"
       ],
-      "The coupon is valid for ${ couponRedemptions } renewal.": [
-        "Купон дзейнічае для ${ couponRedemptions } падаўжэння.",
-        "Купон дзейнічае для ${ couponRedemptions } падаўжэнняў.",
-        "Купон дзейнічае для ${ couponRedemptions } падаўжэнняў.",
-        "Купон дзейнічае для ${ couponRedemptions } падаўжэнняў."
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "Скідка дзейнічае для ${ renewalsWithCoupon } падаўжэння.",
+        "Скідка дзейнічае для ${ renewalsWithCoupon } падаўжэнняў.",
+        "Скідка дзейнічае для ${ renewalsWithCoupon } падаўжэнняў.",
+        "Скідка дзейнічае для ${ renewalsWithCoupon } падаўжэнняў."
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Спецыяльны зніжаны кошт дзейнічае на працягу ${ couponRedemptions } месяца. Пасля гэтага адбудзецца аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы час.",
+        "Спецыяльны зніжаны кошт дзейнічае на працягу ${ couponRedemptions } месяцы. Пасля гэтага адбудзецца аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы час.",
+        "Спецыяльны зніжаны кошт дзейнічае на працягу ${ couponRedemptions } месяцаў. Пасля гэтага адбудзецца аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы час.",
+        "Спецыяльны зніжаны кошт дзейнічае на працягу ${ couponRedemptions } месяцаў. Пасля гэтага адбудзецца аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы час."
       ],
       "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
         "Спецыяльны зніжаны кошт дзейнічае на працягу першага ${ subscriptionLength } месяца.",
@@ -10313,26 +10346,20 @@
         "Спецыяльны зніжаны кошт дзейнічае на працягу першых ${ subscriptionLength } месяцаў.",
         "Спецыяльны зніжаны кошт дзейнічае на працягу першых ${ subscriptionLength } месяцаў."
       ],
-      "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "Спецыяльны зніжаны кошт дзейнічае на працягу першага месяца. Гэты купон дзейнічае для падаўжэння на ${ couponRedemptions }. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы момант.",
-        "Спецыяльны зніжаны кошт дзейнічае на працягу першага месяца. Гэты купон дзейнічае для падаўжэння на ${ couponRedemptions }. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы момант.",
-        "Спецыяльны зніжаны кошт дзейнічае на працягу першага месяца. Гэты купон дзейнічае для падаўжэння на ${ couponRedemptions }. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы момант.",
-        "Спецыяльны зніжаны кошт дзейнічае на працягу першага месяца. Гэты купон дзейнічае для падаўжэння на ${ couponRedemptions }. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы момант."
-      ],
       "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Спецыяльны зніжаны кошт дзейнічае на працягу першага месяца. Пасля гэтага адбудзецца аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за кожны месяц. Скасаваць можна ў любы момант."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Спецыяльны зніжаны кошт у памеры ${ priceWithDiscount } дзейнічае на працягу ${ couponRedemptions } месяца. Пасля гэтага адбудзецца аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы час.",
+        "Спецыяльны зніжаны кошт у памеры ${ priceWithDiscount } дзейнічае на працягу ${ couponRedemptions } месяцаў. Пасля гэтага адбудзецца аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы час.",
+        "Спецыяльны зніжаны кошт у памеры ${ priceWithDiscount } дзейнічае на працягу ${ couponRedemptions } месяцаў. Пасля гэтага адбудзецца аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы час.",
+        "Спецыяльны зніжаны кошт у памеры ${ priceWithDiscount } дзейнічае на працягу ${ couponRedemptions } месяцаў. Пасля гэтага адбудзецца аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы час."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "Спецыяльны зніжаны кошт у памеры ${ priceWithDiscount } дзейнічае на працягу першага ${ subscriptionLength } месяца.",
         "Спецыяльны зніжаны кошт у памеры ${ priceWithDiscount } дзейнічае на працягу першых ${ subscriptionLength } месяцаў.",
         "Спецыяльны зніжаны кошт у памеры ${ priceWithDiscount } дзейнічае на працягу першых ${ subscriptionLength } месяцаў.",
         "Спецыяльны зніжаны кошт у памеры ${ priceWithDiscount } дзейнічае на працягу першых ${ subscriptionLength } месяцаў."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "Спецыяльны зніжаны кошт у памеры ${ priceWithDiscount } дзейнічае на працягу першага месяца. Гэты купон дзейнічае для ${ couponRedemptions } падаўжэння. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы момант.",
-        "Спецыяльны зніжаны кошт у памеры ${ priceWithDiscount } дзейнічае на працягу першага месяца. Гэты купон дзейнічае для ${ couponRedemptions } падаўжэнняў. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы момант.",
-        "Спецыяльны зніжаны кошт у памеры ${ priceWithDiscount } дзейнічае на працягу першага месяца. Гэты купон дзейнічае для ${ couponRedemptions } падаўжэнняў. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы момант.",
-        "Спецыяльны зніжаны кошт у памеры ${ priceWithDiscount } дзейнічае на працягу першага месяца. Гэты купон дзейнічае для ${ couponRedemptions } падаўжэнняў. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы момант."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Спецыяльны зніжаны кошт у памеры ${ priceWithDiscount } дзейнічае на працягу першага месяца. Пасля гэтага адбудзецца аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за кожны месяц. Скасаваць можна ў любы момант."
@@ -12392,6 +12419,12 @@
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Скасаваць падпіску ${ MAIL_SHORT_APP_NAME }"
       ],
+      "Cancel all downloads?": [
+        "Скасаваць усе спампоўванні?"
+      ],
+      "Cancel all transfers?": [
+        "Скасаваць усе перадачы?"
+      ],
       "Cancel all uploads?": [
         "Скасаваць усе запампоўкі?"
       ],
@@ -13279,9 +13312,6 @@
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Ваш бясплатны пробны перыяд для тарыфнага плана ${ planName } завершыцца ${ textDate }"
-      ],
-      "Your ${ planName } subscription has started": [
-        "Ваша падпіска ${ planName } пачалася"
       ],
       "Your 3 GB bonus": [
         "Ваш бонус у 3 ГБ"
