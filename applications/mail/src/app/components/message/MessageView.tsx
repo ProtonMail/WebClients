@@ -371,7 +371,6 @@ const MessageView = (
             toggleOriginalMessage,
             handleLoadRemoteImages,
             handleLoadEmbeddedImages,
-            onBack,
         }
     );
 
