@@ -5,7 +5,7 @@ import { MINUTE } from '@proton/shared/lib/constants';
 
 import * as extensionAlarms from './alarm';
 
-const { createExtensionAlarm, createBrowserAlarm } = extensionAlarms;
+const { createExtensionAlarm, setupBrowserAlarm } = extensionAlarms;
 
 const TEST_ALARM_NAME = 'test-alarm';
 
@@ -27,13 +27,13 @@ describe('Alarm utilities', () => {
         clearBrowserMocks();
     });
 
-    describe('createBrowserAlarm', () => {
+    describe('setupBrowserAlarm', () => {
         test('should register alarm listener on creation', () => {
-            createBrowserAlarm(TEST_ALARM_NAME, onAlarm);
+            setupBrowserAlarm(TEST_ALARM_NAME, onAlarm);
         });
 
         test('should only trigger callback when alarm name matches', () => {
-            createBrowserAlarm(TEST_ALARM_NAME, onAlarm);
+            setupBrowserAlarm(TEST_ALARM_NAME, onAlarm);
             expect(browser.alarms.onAlarm.addListener).toHaveBeenCalledWith(expect.any(Function));
 
             const listener = browser.alarms.onAlarm.addListener.mock.calls[0][0];
@@ -45,7 +45,7 @@ describe('Alarm utilities', () => {
         });
 
         test('should create browser alarm when set is called', async () => {
-            const alarm = createBrowserAlarm(TEST_ALARM_NAME, onAlarm);
+            const alarm = setupBrowserAlarm(TEST_ALARM_NAME, onAlarm);
             const when = 2_000_000;
             await alarm.set(when);
 
@@ -53,21 +53,21 @@ describe('Alarm utilities', () => {
         });
 
         test('should clear alarm when reset is called', async () => {
-            const alarm = createBrowserAlarm(TEST_ALARM_NAME, onAlarm);
+            const alarm = setupBrowserAlarm(TEST_ALARM_NAME, onAlarm);
             await alarm.reset();
 
             expect(browser.alarms.clear).toHaveBeenCalledWith(TEST_ALARM_NAME);
         });
 
         test('should handle errors when clearing alarm', async () => {
-            const alarm = createBrowserAlarm(TEST_ALARM_NAME, onAlarm);
+            const alarm = setupBrowserAlarm(TEST_ALARM_NAME, onAlarm);
             browser.alarms.clear.mockRejectedValueOnce(new Error('Clear failed'));
 
             await expect(alarm.reset()).resolves.toBe(false);
         });
 
         test('should return `scheduledTime` when exists', async () => {
-            const alarm = createBrowserAlarm(TEST_ALARM_NAME, onAlarm);
+            const alarm = setupBrowserAlarm(TEST_ALARM_NAME, onAlarm);
             const scheduledTime = 2_000_000;
             browser.alarms.get.mockResolvedValueOnce({ scheduledTime });
             const result = await alarm.when();
@@ -77,7 +77,7 @@ describe('Alarm utilities', () => {
         });
 
         test('should return `undefined` when no alarm exists', async () => {
-            const alarm = createBrowserAlarm(TEST_ALARM_NAME, onAlarm);
+            const alarm = setupBrowserAlarm(TEST_ALARM_NAME, onAlarm);
             browser.alarms.get.mockResolvedValueOnce(undefined);
 
             const result = await alarm.when();
@@ -86,7 +86,7 @@ describe('Alarm utilities', () => {
         });
 
         test('should handle errors when getting alarm info', async () => {
-            const alarm = createBrowserAlarm(TEST_ALARM_NAME, onAlarm);
+            const alarm = setupBrowserAlarm(TEST_ALARM_NAME, onAlarm);
             browser.alarms.get.mockRejectedValueOnce(new Error('Get failed'));
 
             const result = await alarm.when();
