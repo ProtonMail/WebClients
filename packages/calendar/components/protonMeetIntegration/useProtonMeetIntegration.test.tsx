@@ -39,6 +39,10 @@ jest.mock('@proton/account/user/hooks', () => ({
     ]),
 }));
 
+jest.mock('@proton/account/addresses/hooks', () => ({
+    useAddresses: jest.fn().mockReturnValue([[{ ID: 'address-id', Email: 'test@proton.me' }], false]),
+}));
+
 jest.mock('@proton/unleash', () => ({
     useFlag: jest.fn().mockReturnValue(true),
 }));
@@ -88,7 +92,12 @@ const Wrapper = ({ children }: { children: React.ReactNode }) => {
 };
 
 const defaultProps = {
-    model: { attendees: [{ email: 'test@proton.me' }] } as EventModel,
+    model: {
+        attendees: [{ email: 'test@proton.me' }],
+        member: {
+            addressID: 'address-id',
+        },
+    } as EventModel,
     setModel: jest.fn(),
     setActiveProvider: jest.fn(),
     isActive: false,
@@ -158,7 +167,7 @@ describe('useProtonMeetIntegration', () => {
         );
     });
 
-    it('should readd a temporary deleted Proton Meet video conference', async () => {
+    it('should read a temporary deleted Proton Meet video conference', async () => {
         const mockApi = jest.fn();
 
         jest.mocked(useApi).mockReturnValueOnce(mockApi);
