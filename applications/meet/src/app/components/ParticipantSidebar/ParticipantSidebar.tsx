@@ -5,12 +5,12 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { IcChevronLeft } from '@proton/icons/icons/IcChevronLeft';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
+import { useMeetSelector } from '@proton/meet/store/hooks';
+import { selectMeetSettings } from '@proton/meet/store/slices/settings';
 import clsx from '@proton/utils/clsx';
 
 import { SCREEN_SHARE_PAGE_SIZE } from '../../constants';
 import { useMeetContext } from '../../contexts/MeetContext';
-import { useMeetSelector } from '../../store/hooks';
-import { selectMeetSettings } from '../../store/slices/settings';
 import { ParticipantTile } from '../ParticipantTile/ParticipantTile';
 
 import './ParticipantSidebar.scss';

@@ -9,6 +9,7 @@ import LoaderPage from '@proton/components/containers/app/LoaderPage';
 import StandardErrorPage from '@proton/components/containers/app/StandardErrorPage';
 import StandardLoadErrorPage from '@proton/components/containers/app/StandardLoadErrorPage';
 import AuthenticationProvider from '@proton/components/containers/authentication/Provider';
+import type { MeetStore } from '@proton/meet/store/store';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { ProtonStoreProvider } from '@proton/redux-shared-store/index';
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
@@ -19,7 +20,6 @@ import { FlagProvider } from '@proton/unleash';
 import { bootstrapGuestApp } from '../bootstrap';
 import config from '../config';
 import { WasmContext } from '../contexts/WasmContext';
-import type { MeetStore } from '../store/store';
 
 type ExtraThunkArguments = Omit<ProtonThunkArguments, 'config' | 'api' | 'eventManager' | 'notificationsManager'> & {
     unauthenticatedApi: UnauthenticatedApi;

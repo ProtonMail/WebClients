@@ -7,6 +7,8 @@ import useAppLink from '@proton/components/components/link/useAppLink';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { getMeetingLink } from '@proton/meet';
+import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
+import { selectUpsellModalType, setUpsellModalType } from '@proton/meet/store/slices';
 import { APPS } from '@proton/shared/lib/constants';
 import { MeetingType } from '@proton/shared/lib/interfaces/Meet';
 import useFlag from '@proton/unleash/useFlag';
@@ -15,8 +17,6 @@ import { CTAModal } from '../../components/AnonymousModal/CTAModal';
 import { JoinWithLinkModal } from '../../components/JoinWithLinkModal/JoinWithLinkModal';
 import { PersonalMeetingModal } from '../../components/PersonalMeetingModal/PersonalMeetingModal';
 import { useDependencySetup } from '../../hooks/useDependencySetup';
-import { useMeetDispatch, useMeetSelector } from '../../store/hooks';
-import { selectUpsellModalType, setUpsellModalType } from '../../store/slices/meetAppStateSlice';
 import { getNextOccurrence } from '../../utils/getNextOccurrence';
 import { DashboardContainerBody } from './DashboardContainerBody';
 

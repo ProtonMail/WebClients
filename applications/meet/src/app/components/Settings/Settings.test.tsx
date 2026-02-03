@@ -4,6 +4,8 @@ import { configureStore } from '@reduxjs/toolkit';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
+import type { MeetSettingsState } from '@proton/meet/store/slices/settings';
+import { settingsReducer } from '@proton/meet/store/slices/settings';
 import { ProtonStoreContext } from '@proton/react-redux-store';
 
 import type { MeetContextValues } from '../../contexts/MeetContext';
@@ -11,8 +13,6 @@ import { MeetContext } from '../../contexts/MeetContext';
 import type { UIStateContextType } from '../../contexts/UIStateContext';
 import { UIStateContext } from '../../contexts/UIStateContext';
 import { useIsLocalParticipantAdmin } from '../../hooks/useIsLocalParticipantAdmin';
-import type { MeetSettingsState } from '../../store/slices/settings';
-import { settingsReducer } from '../../store/slices/settings';
 import { MeetingSideBars } from '../../types';
 import { Settings } from './Settings';
 

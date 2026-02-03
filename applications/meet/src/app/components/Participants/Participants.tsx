@@ -12,6 +12,11 @@ import { IcMeetCamera } from '@proton/icons/icons/IcMeetCamera';
 import { IcMeetCameraOff } from '@proton/icons/icons/IcMeetCameraOff';
 import { IcMeetEyeClosed } from '@proton/icons/icons/IcMeetEyeClosed';
 import { IcMeetMicrophoneOff } from '@proton/icons/icons/IcMeetMicrophoneOff';
+import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
+import {
+    selectParticipantsWithDisabledVideos,
+    setParticipantsWithDisabledVideos,
+} from '@proton/meet/store/slices/settings';
 import clsx from '@proton/utils/clsx';
 
 import { SideBar } from '../../atoms/SideBar/SideBar';
@@ -21,8 +26,6 @@ import { useMeetContext } from '../../contexts/MeetContext';
 import { useUIStateContext } from '../../contexts/UIStateContext';
 import { useDebouncedActiveSpeakers } from '../../hooks/useDebouncedActiveSpeakers';
 import { useIsLocalParticipantAdmin } from '../../hooks/useIsLocalParticipantAdmin';
-import { useMeetDispatch, useMeetSelector } from '../../store/hooks';
-import { selectParticipantsWithDisabledVideos, setParticipantsWithDisabledVideos } from '../../store/slices/settings';
 import { MeetingSideBars } from '../../types';
 import { getParticipantInitials } from '../../utils/getParticipantInitials';
 import { ParticipantHostControls } from '../ParticipantHostControls/ParticipantHostControls';

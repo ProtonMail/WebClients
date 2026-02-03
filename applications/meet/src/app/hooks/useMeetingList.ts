@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
 import { useCreateMeeting, useGetMeetingDependencies } from '@proton/meet';
+import { useGetMeetings, useMeetings } from '@proton/meet/store/hooks/useMeetings';
 import { decryptMeetingName, decryptMeetingPassword } from '@proton/meet/utils/cryptoUtils';
 import { CacheType } from '@proton/redux-utilities';
 import { HOUR } from '@proton/shared/lib/constants';
@@ -13,7 +14,6 @@ import type { Meeting } from '@proton/shared/lib/interfaces/Meet';
 import { MeetingType } from '@proton/shared/lib/interfaces/Meet';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { useGetMeetings, useMeetings } from '../store/hooks/useMeetings';
 import { saveRotatePersonalMeetingDisable } from '../utils/disableRotatePersonalMeeting';
 import { useRotatePersonalMeetingLink } from './useRotatePersonalMeetingLink';
 

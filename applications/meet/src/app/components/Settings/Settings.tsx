@@ -2,6 +2,8 @@ import { c } from 'ttag';
 
 import Toggle from '@proton/components/components/toggle/Toggle';
 import { useLoading } from '@proton/hooks';
+import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
+import { selectMeetSettings, setDisableVideos, setPipEnabled, setSelfView } from '@proton/meet/store/slices/settings';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 import clsx from '@proton/utils/clsx';
 
@@ -10,8 +12,6 @@ import { useMediaManagementContext } from '../../contexts/MediaManagementContext
 import { useMeetContext } from '../../contexts/MeetContext';
 import { useUIStateContext } from '../../contexts/UIStateContext';
 import { useIsLocalParticipantAdmin } from '../../hooks/useIsLocalParticipantAdmin';
-import { useMeetDispatch, useMeetSelector } from '../../store/hooks';
-import { selectMeetSettings, setDisableVideos, setPipEnabled, setSelfView } from '../../store/slices/settings';
 import { MeetingSideBars } from '../../types';
 import { BackgroundBlurToggle } from '../BackgroundBlurToggle';
 import { NoiseCancellingToggle } from '../NoiseCancellingToggle';

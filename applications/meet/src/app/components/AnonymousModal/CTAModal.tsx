@@ -4,12 +4,12 @@ import { Button } from '@proton/atoms/Button/Button';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import { UpsellModalTypes } from '@proton/meet/types/types';
 import { CALENDAR_APP_NAME, MEET_APP_NAME } from '@proton/shared/lib/constants';
 import scheduleIcon from '@proton/styles/assets/img/meet/schedule-icon.png';
 import useFlag from '@proton/unleash/useFlag';
 
 import { CloseButton } from '../../atoms/CloseButton/CloseButton';
-import { UpsellModalTypes } from '../../types';
 
 import './CTAModal.scss';
 
