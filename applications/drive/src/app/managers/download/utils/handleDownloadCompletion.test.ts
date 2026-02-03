@@ -52,6 +52,7 @@ describe('validateDownloadSignatures', () => {
             mocks.mockOnRejected
         );
         expect(mocks.mockController.completion).toHaveBeenCalled();
+        expect(mocks.mockOnApproved).toHaveBeenCalled();
     });
 
     it('should handle manifest signature errors', async () => {
