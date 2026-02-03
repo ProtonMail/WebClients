@@ -242,10 +242,10 @@
         "Buat item"
       ],
       "Create login": [
-        "Buat entri masuk"
+        "Buat login"
       ],
       "Create new login": [
-        "Buat entri masuk baru"
+        "Buat login baru"
       ],
       "Create note": [
         "Buat catatan"
@@ -488,7 +488,7 @@
         "Pindahkan ke Sampah"
       ],
       "Multiple select": [
-        "Pilih banyak berkas"
+        "Pilih beberapa file"
       ],
       "Next month": [
         "Bulan selanjutnya"
@@ -719,7 +719,7 @@
         "Saya mengerti, saya tidak akan butuh alias ini lagi"
       ],
       "Unlock": [
-        "Membuka"
+        "Buka kunci"
       ],
       "Unlock offline with password": [
         "Buka kunci secara offline dengan kata sandi"
@@ -731,7 +731,7 @@
         "Perbarui"
       ],
       "Update this login": [
-        "Perbarui entri masuk ini"
+        "Perbarui login ini"
       ],
       "Updating": [
         "Memperbarui"
@@ -810,10 +810,10 @@
         "${ DARK_WEB_MONITORING_NAME } tersedia dengan paket berbayar. Tingkatkan akun Anda untuk memperoleh akses ke fitur ini dengan segera."
       ],
       "${ total } other login uses the same password": [
-        "${ total } entri masuk lainnya menggunakan kata sandi yang sama"
+        "${ total } login lainnya menggunakan kata sandi yang sama"
       ],
       "2FA adds another layer of security to your logins. ${ PASS_APP_NAME } makes 2FA easier by storing and automatically autofilling your 2FA codes.": [
-        "2FA menambahkan lapisan keamanan tambahan pada entri masuk Anda. ${ PASS_APP_NAME } menjadikan 2FA lebih mudah dengan menyimpan dan mengisi kode 2FA Anda secara otomatis."
+        "2FA menambahkan lapisan keamanan tambahan pada login Anda. ${ PASS_APP_NAME } menjadikan 2FA lebih mudah dengan menyimpan dan mengisi kode 2FA Anda secara otomatis."
       ],
       "A checked box means the feature is disabled.": [
         "Boks yang tercentang merupakan tanda bahwa fitur tersebut sedang dinonaktifkan."
@@ -988,10 +988,10 @@
         "Alamat tidak dapat divalidasi pada saat ini."
       ],
       "CSV file is missing expected headers: ${ missingHeaders }": [
-        "Berkas CSV tidak memiliki header yang seharusnya ada: ${ missingHeaders }"
+        "File CSV tidak memiliki header yang seharusnya ada: ${ missingHeaders }"
       ],
       "Decrypting your ${ PASS_APP_NAME } export file failed. ${ errorDetail }": [
-        "Berkas ekspor ${ PASS_APP_NAME } Anda gagal didekripsi. ${ errorDetail }"
+        "File ekspor ${ PASS_APP_NAME } Anda gagal didekripsi. ${ errorDetail }"
       ],
       "Deleting item failed": [
         "Item gagal dihapus"
@@ -1015,7 +1015,7 @@
         "Item gagal disunting"
       ],
       "Empty CSV file": [
-        "Berkas CSV kosong"
+        "File CSV kosong"
       ],
       "Emptying trash failed": [
         "Sampah gagal dikosongkan"
@@ -1156,10 +1156,10 @@
         "Status pemantauan untuk alamat surel ini gagal diperbarui"
       ],
       "File could not be parsed": [
-        "Berkas tidak dapat diurai"
+        "File tidak dapat diurai"
       ],
       "File does not match expected format": [
-        "Berkas tidak cocok dengan format yang diharapkan"
+        "File tidak cocok dengan format yang diharapkan"
       ],
       "Import failed for vault \"${ vaultData.name }\": ${ errorMessage }": [
         "Impor untuk brankas \"${ vaultData.name }\" gagal: ${ errorMessage }"
@@ -1195,7 +1195,7 @@
         "Item tidak ada"
       ],
       "LastPass will export a corrupted CSV file if any of your item fields contain unexpected commas, quotes or multiple lines": [
-        "LastPass akan mengekspor berkas CSV yang rusak apabila satu atau lebih kolom item Anda mengandung koma, tanda kutip, atau rangkaian baris yang tidak terduga"
+        "LastPass akan mengekspor file CSV yang rusak apabila satu atau lebih kolom item Anda mengandung koma, tanda kutip, atau rangkaian baris yang tidak terduga"
       ],
       "Missing passkey": [
         "Passkey hilang"
@@ -1297,13 +1297,13 @@
         "Pembukaan kunci gagal"
       ],
       "Unsupported ${ PASS_APP_NAME } file format": [
-        "Berkas format ${ PASS_APP_NAME } tidak didukung"
+        "Format file ${ PASS_APP_NAME } tidak didukung"
       ],
       "Unsupported 1Password file format": [
-        "Format berkas 1Password tidak didukung"
+        "Format file 1Password tidak didukung"
       ],
       "Unsupported Bitwarden file format": [
-        "Format berkas Bitwarden tidak didukung"
+        "Format file Bitwarden tidak didukung"
       ],
       "Updating vault \"${ payload.content.name }\" failed": [
         "Brankas \"${ payload.content.name }\" gagal diperbarui"
@@ -1459,7 +1459,7 @@
         "${ PASS_APP_NAME } akan menghasilkan alamat penerusan (yang juga dikenal dengan istilah alias terbalik) yang dapat Anda salin ke papan klip."
       ],
       "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
-        "${ PASS_APP_NAME } hanya akan mengimpor entri masuk, catatan, kartu kredit, dan identitas."
+        "${ PASS_APP_NAME } hanya akan mengimpor login, catatan, kartu kredit, dan identitas."
       ],
       "${ PASS_APP_NAME } will prompt you as soon as generated passwords are autofilled.": [
         "${ PASS_APP_NAME } akan meminta Anda untuk menyimpan kata sandi segera setelah kata sandi yang dihasilkan diisi secara otomatis."
@@ -1546,7 +1546,7 @@
         "Setelah mengonfirmasi, Anda akan perlu untuk menerima permintaan izin untuk ${ PASS_APP_NAME }."
       ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
-        "Setelah data Anda berhasil diimpor, Anda dapat menghapus berkas CSV yang mengandung kata sandi ini demi keamanan Anda."
+        "Setelah data Anda berhasil diimpor, Anda dapat menghapus file CSV yang mengandung kata sandi ini demi keamanan Anda."
       ],
       "Alias successfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
         "Alias berhasil dinonaktifkan. Anda tidak akan lagi menerima email yang terkirim ke ${ item.aliasEmail }"
@@ -1621,7 +1621,7 @@
         "Disimpan secara otomatis pada ${ url }"
       ],
       "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
-        "Sebelum mengekspor data Anda dengan format ini, silakan buka pengaturan Safari -> tab \"Umum\" -> nonaktifkan pilihan \"Buka berkas aman setelah mengunduh\". Hal ini akan mencegah Safari untuk secara tidak sengaja mengekstrak berkas yang diekspor."
+        "Sebelum mengekspor data Anda dengan format ini, silakan buka pengaturan Safari -> tab \"Umum\" -> nonaktifkan pilihan \"Buka file aman setelah mengunduh\". Hal ini akan mencegah Safari untuk secara tidak sengaja mengekstrak file yang diekspor."
       ],
       "Biometrics lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Kunci biometrik berhasil didaftarkan. Gunakan kunci ini untuk membuka ${ PASS_APP_NAME }"
@@ -1708,7 +1708,7 @@
         "Menghasilkan alias..."
       ],
       "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, passkeys...). For a complete export, we recommend using a different format.": [
-        "CSV merupakan format berkas yang menawarkan tampilan data yang ramah dipandang. Namun, karena kesederhanaannya, sebagian data tidak akan diikutsertakan dalam ekspor (kolom kustom, passkey, dll.). Untuk ekspor yang lengkap, kami menyarankan Anda untuk menggunakan format berkas yang berbeda."
+        "CSV menyediakan format yang praktis untuk melihat data Anda. Namun, karena kesederhanaannya, sebagian data tidak akan disertakan (kolom kustom, kunci sandi...). Untuk ekspor lengkap, kami menyarankan menggunakan format lain."
       ],
       "Current version": [
         "Versi saat ini"
@@ -1747,7 +1747,7 @@
         "Domain: ${ domainPath } atau @"
       ],
       "Drop file here to upload": [
-        "Lepaskan berkas di sini untuk mengunggah"
+        "Lepaskan file di sini untuk mengunggah"
       ],
       "Drop to import": [
         "Lepaskan untuk mengimpor"
@@ -1846,7 +1846,7 @@
         "keuangan"
       ],
       "Follow those steps to import your data with a generic CSV:": [
-        "Ikuti langkah-langkah berikut untuk mengimpor data Anda dengan berkas CSV generik:"
+        "Ikuti langkah-langkah berikut untuk mengimpor data Anda dengan file CSV generik:"
       ],
       "For easy access to your passwords and more.": [
         "Untuk akses mudah ke kata sandi Anda dan lainnya."
@@ -2041,7 +2041,7 @@
         "Tidak ada item identitas yang ditemukan"
       ],
       "No login found": [
-        "Tidak ada entri masuk yang ditemukan"
+        "Tidak ada login yang ditemukan"
       ],
       "No network connection": [
         "Tidak ada koneksi jaringan"
@@ -2224,7 +2224,7 @@
         "Silakan biarkan browser Anda tetap terbuka agar papan klip dapat dibersihkan secara otomatis."
       ],
       "Please make sure the previously active window is where you want to autotype and your cursor was focused on the login field.": [
-        "Silakan pastikan jendela yang sebelumnya aktif adalah jendela di mana Anda ingin mengisi otomatis, dan kursor Anda telah terfokus pada kolom entri masuk."
+        "Silakan pastikan jendela yang sebelumnya aktif adalah jendela di mana Anda ingin mengisi otomatis, dan kursor Anda telah terfokus pada kolom login."
       ],
       "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
         "Mohon diperhatikan bahwa setelah dihapus, alias ini tidak akan lagi dapat dipulihkan. Apakah Anda ingin sekadar menonaktifkan alias ini?"
@@ -2290,7 +2290,7 @@
         "Klik kanan ikon ekstensi dan pilih \"Kelola ekstensi\". Setelahnya, tuju \"Akses situs\" dan aktifkan perizinan situs."
       ],
       "Save login": [
-        "Tambah entri masuk"
+        "Simpan login"
       ],
       "Save passkey": [
         "Simpan passkey"
@@ -2302,7 +2302,7 @@
         "Lihat info lebih lanjut"
       ],
       "Select an existing login or create a new one.": [
-        "Pilih entri masuk yang telah ada atau buat entri masuk baru."
+        "Pilih login yang telah ada atau buat baru."
       ],
       "Select destination vault": [
         "Pilih brankas tujuan"
@@ -2338,7 +2338,7 @@
         "Bagikan alias kepada pengguna lainnya dengan menambahkan kotak masuk mereka sebagai kotak masuk penerusan."
       ],
       "Share your logins and secure notes, with up to 10 people": [
-        "Bagikan entri masuk dan catatan aman Anda, sampai dengan 10 pengguna"
+        "Bagikan login dan catatan aman Anda, hingga 10 orang"
       ],
       "Shared item invitation": [
         "Undangan item yang dibagikan"
@@ -2356,7 +2356,7 @@
         "Catatan SimpleLogin disimpan pada lokasi yang sama dengan alamat alias, dan walaupun catatan ini terlindung oleh enkripsi, catatan ini tidak terlindung secara E2E — yang berarti bahwa siapa pun yang memiliki akses ke basis data SimpleLogin akan dapat membaca catatan ini."
       ],
       "Simply use ${ emailBold } next time you need an alias: it'll be ${ automaticallyBold } created the first time it receives an email. To have more fine-grained control, you can also define ${ rulesHyperLink }.": [
-        "Cukup gunakan ${ emailBold } pada saat Anda membutuhkan alias ke depannya: alias ini akan ${ automaticallyBold } dihasilkan secara otomatis pada saat alias menerima email. Untuk memperoleh kendali yang lebih terperinci, Anda juga dapat mendefinisikan ${ rulesHyperLink }."
+        "Cukup gunakan ${ emailBold } saat Anda membutuhkan alias: alias tersebut akan ${ automaticallyBold } dibuat saat pertama kali menerima email. Untuk kontrol yang lebih terperinci, Anda juga dapat menentukan ${ rulesHyperLink }."
       ],
       "Successfully exported all your items": [
         "Seluruh item Anda berhasil diekspor"
@@ -2392,7 +2392,7 @@
         "Ekspor ini hanya akan mengandung brankas yang Anda miliki."
       ],
       "The exported file will be encrypted using PGP and requires a strong passphrase.": [
-        "Berkas yang diekspor akan dienkripsi menggunakan PGP dan memerlukan frasa sandi yang aman."
+        "File yang diekspor akan dienkripsi menggunakan PGP dan memerlukan frasa sandi yang aman."
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Informasi yang terpapar ini dibocorkan oleh layanan pihak ketiga. Informasi Akun ${ BRAND_NAME } Anda tetap aman dan terenkripsi. ${ learnMoreLink }"
@@ -2413,7 +2413,7 @@
         "Pengguna ini belum menjawab undangan Anda."
       ],
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
-        "Ekspor ini tidak akan terenkripsi, dan semua orang yang memiliki akses ke berkas ekspor yang dihasilkan akan dapat melihat kata sandi Anda. Demi keamanan Anda, mohon hapus berkas ekspor ini setelah tidak lagi digunakan."
+        "Ekspor ini tidak dienkripsi, dan siapa pun yang memiliki akses ke file hasil ekspor dapat melihat kata sandi Anda. Demi keamanan, harap hapus file tersebut setelah selesai digunakan."
       ],
       "This feature is currently experimental on Linux. Please ensure your system is up-to-date.": [
         "Fitur ini saat ini berstatus eksperimental pada sistem Linux. Pastikan sistem Anda telah terbarukan."
@@ -2458,7 +2458,7 @@
         "Untuk menjaga agar alamat email pribadi Anda tetap tersembunyi, Anda dapat membuat kontak alias yang menyamarkan alamat Anda."
       ],
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
-        "Untuk memindahkan data dari pengelola kata sandi lain, tuju pengelola kata sandi yang dimaksud, ekspor data Anda, lalu unggah data ini ke ${ PASS_APP_NAME }. Setelah data selesai diunggah, hapus berkas yang diekspor."
+        "Untuk migrasi data dari pengelola kata sandi lain, masuk ke pengelola kata sandi yang dimaksud, ekspor data Anda, lalu unggah data ini ke ${ PASS_APP_NAME }. Setelah data selesai diunggah, hapus file yang diekspor."
       ],
       "To review your imported data, click on the ${ PASS_APP_NAME } icon in your browser toolbar.": [
         "Untuk meninjau data Anda yang telah diimpor, klik ikon ${ PASS_APP_NAME } pada bilah toolbar browser Anda."
@@ -2509,7 +2509,7 @@
         "Tidak terverifikasi"
       ],
       "Update login": [
-        "Perbarui entri masuk"
+        "Perbarui login"
       ],
       "Updating vault organization...": [
         "Memperbarui organisasi brankas..."
@@ -2572,7 +2572,7 @@
         "Kami telah mengirimkan kode verifikasi ke ${ email }. Masukkan kode tersebut pada kolom di bawah ini:"
       ],
       "When creating/editing a Login on ${ PASS_APP_NAME } the 'username' input will always be visible.": [
-        "Pada saat Anda membuat/menyunting informasi entri masuk pada ${ PASS_APP_NAME }, kolom masukan 'nama pengguna' akan selalu ditampilkan."
+        "Saat membuat/mengedit Login di ${ PASS_APP_NAME }, kolom input ‘username’ akan selalu terlihat."
       ],
       "When sending an email from this alias, the email will display ${ emailSender } as sender.": [
         "Pada saat mengirim email dari alias ini, email yang bersangkutan akan menampilkan ${ emailSender } sebagai nama pengirimnya."
@@ -2665,7 +2665,7 @@
         "domain Anda"
       ],
       "Your files will be encrypted and then saved": [
-        "Berkas Anda akan dienkripsi lalu disimpan"
+        "File Anda akan dienkripsi lalu disimpan"
       ],
       "Your information was found on ${ displayedDate }": [
         "Informasi Anda ditemukan pada tanggal ${ displayedDate }"
@@ -2729,7 +2729,7 @@
         "${ secureLinksCount } tautan aman"
       ],
       "${ usageCount } login": [
-        "${ usageCount } entri masuk"
+        "${ usageCount } login"
       ],
       "${ years } year": [
         "${ years } tahun"
@@ -2954,7 +2954,7 @@
         "Buat alias hide-my-email"
       ],
       "Create a login": [
-        "Buat entri masuk"
+        "Buat login"
       ],
       "Create an encrypted note": [
         "Buat catatan yang terenkripsi"
@@ -3077,7 +3077,7 @@
         "Nama kolom"
       ],
       "File format": [
-        "Format berkas"
+        "Format file"
       ],
       "Finance": [
         "Keuangan"
@@ -3104,7 +3104,7 @@
         "Umum"
       ],
       "Generic CSV": [
-        "Berkas CSV umum"
+        "File CSV umum"
       ],
       "Get Started": [
         "Mulai"
@@ -3251,13 +3251,13 @@
         "Akun LinkedIn"
       ],
       "Login": [
-        "Entri masuk"
+        "Login"
       ],
       "Login autofill": [
-        "Pengisian entri masuk otomatis"
+        "Pengisian login otomatis"
       ],
       "Logins": [
-        "Entri masuk"
+        "Login"
       ],
       "Mailboxes": [
         "Kotak surat"
@@ -3386,7 +3386,7 @@
         "Pemilik"
       ],
       "Passkey": [
-        "Passkey"
+        "Kunci sandi"
       ],
       "Passkeys": [
         "Passkey"
@@ -3548,7 +3548,7 @@
         "Pilih bahasa yang diinginkan"
       ],
       "Select the vault where SimpleLogin aliases will be imported into": [
-        "Pilih brankas di mana alias SimpleLogin akan diimpor"
+        "Pilih brankas lokasi alias SimpleLogin akan diimpor"
       ],
       "Select your password manager": [
         "Pilih pengelola kata sandi Anda"
@@ -3882,22 +3882,22 @@
         "\"${ filename }\" terlalu besar untuk diunggah. Ukuran maksimum yang diperkenankan adalah (${ maxFileSizeInMB })"
       ],
       "${ filesCount } file": [
-        "${ filesCount } berkas"
+        "${ filesCount } file"
       ],
       "Attachments": [
         "Lampiran"
       ],
       "Choose a file or drag it here": [
-        "Pilih berkas atau seret berkas ke layar ini"
+        "Pilih file atau seret di sini"
       ],
       "Delete ${ deleteFile.state.name }": [
         "Hapus ${ deleteFile.state.name }"
       ],
       "Delete all files": [
-        "Hapus seluruh berkas"
+        "Hapus semua file"
       ],
       "Do you want to remove all the files?": [
-        "Apakah Anda ingin menghapus seluruh berkas?"
+        "Apakah Anda ingin menghapus seluruh file?"
       ],
       "Download": [
         "Unduh"
@@ -3906,46 +3906,46 @@
         "Unduh \"${ filename }\""
       ],
       "Download file": [
-        "Unduh berkas"
+        "Unduh file"
       ],
       "Due to a limitation on Firefox, ${ PASS_APP_NAME } needs to be re-opened in a new window before you can upload files.": [
-        "Karena batasan yang ada pada Firefox, ${ PASS_APP_NAME } perlu untuk dibuka pada jendala baru sebelum Anda dapat mengunggah berkas."
+        "Karena batasan pada Firefox, ${ PASS_APP_NAME } perlu dibuka pada jendala baru sebelum Anda dapat mengunggah file."
       ],
       "Exporting files": [
-        "Mengekspor berkas"
+        "Mengekspor file"
       ],
       "Failed linking files to item": [
-        "Berkas gagal ditautkan ke item"
+        "File gagal ditautkan ke item"
       ],
       "File": [
-        "Berkas"
+        "File"
       ],
       "File attachments": [
-        "Lampiran berkas"
+        "Lampiran file"
       ],
       "If enabled, all your files will be downloaded when exporting. This may take some time depending on your internet connection.": [
-        "Apabila diaktifkan, seluruh berkas Anda akan diunduh pada saat mengekspor. Proses ini dapat memakan waktu sejenak tergantung dari koneksi internet Anda."
+        "Apabila diaktifkan, seluruh file Anda akan diunduh pada saat mengekspor. Proses ini dapat memakan waktu sejenak tergantung dari koneksi internet Anda."
       ],
       "If your data contains file attachments, they will not be imported.": [
-        "Apabila data Anda mengandung lampiran berkas, data ini tidak akan diimpor."
+        "Apabila data Anda mengandung lampiran file, data ini tidak akan diimpor."
       ],
       "Include file attachments": [
-        "Sertakan lampiran berkas"
+        "Sertakan lampiran file"
       ],
       "Not enough available storage space for the selected files.": [
-        "Ruang penyimpanan yang tersedia tidak memadai untuk berkas yang dipilih."
+        "Ruang penyimpanan yang tersedia tidak memadai untuk file yang dipilih."
       ],
       "Once deleted, this file can still be recovered from the item's history.": [
-        "Setelah dihapus, berkas ini akan tetap dapat dipulihkan dari riwayat item."
+        "Setelah dihapus, file ini akan tetap dapat dipulihkan dari riwayat item."
       ],
       "Open new window to upload files": [
-        "Buka jendela baru untuk mengunggah berkas"
+        "Buka jendela baru untuk mengunggah file"
       ],
       "Please be patient while your files are being downloaded.": [
-        "Mohon bersabar selagi berkas Anda diunduh."
+        "Harap bersabar file Anda sedang diunduh."
       ],
       "Remove all files": [
-        "Hapus seluruh berkas"
+        "Hapus semua file"
       ],
       "Rename": [
         "Ubah nama"
@@ -3954,31 +3954,31 @@
         "Pulihkan"
       ],
       "Some files are too large to upload. The maximum allowed size is (${ maxFileSizeInMB })": [
-        "Sebagian berkas terlalu besar untuk dapat diunggah. Ukuran berkas maksimal yang diizinkan adalah (${ maxFileSizeInMB })"
+        "Beberapa file terlalu besar untuk dapat diunggah. Ukuran file maksimal yang diizinkan adalah (${ maxFileSizeInMB })"
       ],
       "The exported file attachments will not be encrypted.": [
-        "Lampiran berkas yang diekspor tidak akan dienkripsi."
+        "Lampiran file yang diekspor tidak akan dienkripsi."
       ],
       "The file you are trying to import is empty": [
-        "Berkas yang ingin Anda impor kosong"
+        "File yang ingin Anda impor kosong"
       ],
       "Total files: ": [
-        "Jumlah berkas: "
+        "Jumlah file: "
       ],
       "Total imported files: ": [
-        "Jumlah berkas yang diimpor: "
+        "Jumlah file yang diimpor: "
       ],
       "Upgrade to support file attachments": [
-        "Tingkatkan untuk mendukung lampiran berkas"
+        "Tingkatkan untuk mendukung lampiran file"
       ],
       "Upload files from your device.": [
-        "Unggah berkas dari perangkat Anda."
+        "Unggah file dari perangkat Anda."
       ],
       "You can attach files to items for a better organization": [
-        "Anda dapat melampirkan berkas ke item untuk pengelolaan yang lebih baik"
+        "Anda dapat melampirkan file ke item untuk pengelolaan yang lebih baik"
       ],
       "You may close this window after saving the file.": [
-        "Anda dapat menutup jendela ini setelah menyimpan berkas."
+        "Anda dapat menutup jendela ini setelah menyimpan file."
       ]
     },
     "Permission": {
@@ -4018,7 +4018,7 @@
         "Kupon"
       ],
       "E.g., ": [
-        "Misalnya "
+        "Mis., "
       ],
       "Email address": [
         "Alamat email"
@@ -4176,7 +4176,7 @@
     },
     "Success": {
       "Aliases sync enabled successfully. SimpleLogin aliases may take some time to sync": [
-        "Penyinkronan alias berhasil diaktifkan. Alias SimpleLogin dapat memerlukan beberapa saat untuk tersinkron"
+        "Sinkronisasi alias berhasil diaktifkan. Alias SimpleLogin mungkin memerlukan waktu untuk tersinkronisasi."
       ],
       "Catch-all setting successfully disabled": [
         "Pengaturan catch-all berhasil dinonaktifkan"
@@ -4797,7 +4797,7 @@
         "Nama kolom wajib diisi"
       ],
       "OTP secret or URI is invalid": [
-        "Secret OTP atau URI tidak valid"
+        "Rahasia OTP atau URI tidak valid"
       ],
       "Section name cannot be empty": [
         "Nama bagian tidak dapat dikosongkan"
@@ -4969,7 +4969,7 @@
         "Tidak ada item yang dibagikan yang cocok"
       ],
       "Once synced, deleting aliases in ${ PASS_SHORT_APP_NAME } will also delete them in SimpleLogin.": [
-        "Setelah data tersinkron, menghapus alias di ${ PASS_SHORT_APP_NAME } akan turut menghapus alias yang sama pada SimpleLogin."
+        "Setelah disinkronkan, menghapus alias di ${ PASS_SHORT_APP_NAME } akan ikut menghapus alias yang sama pada SimpleLogin."
       ],
       "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
         "Alias hanya dapat mengandung karakter alfanumerik yang ditulis dalam huruf kecil, titik, tanda hubung, dan garis bawah"
@@ -5008,7 +5008,7 @@
         "Awalan alias tidak boleh melebihi 40 karakter"
       ],
       "This alias \"${ aliasEmail }\" is currently used in the login \"${ relatedLoginName }\".": [
-        "Alias ini \"${ aliasEmail }\" sedang digunakan pada entri masuk \"${ relatedLoginName }\"."
+        "Alias ini \"${ aliasEmail }\" sedang digunakan pada login \"${ relatedLoginName }\"."
       ],
       "This email address will no longer be monitored for data breaches.": [
         "Alamat email ini tidak akan lagi dipantau untuk kebocoran data."
