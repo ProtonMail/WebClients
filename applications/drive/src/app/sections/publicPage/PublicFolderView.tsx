@@ -108,6 +108,7 @@ export const PublicFolderView = ({ rootNode, customPassword, isPartialView }: Pu
         handlePreview,
         handleCopyLink,
         handleCreateFolder,
+        handleCreateDocsOrSheets,
     } = usePublicActions();
 
     const { publicRole } = usePublicAuthStore(
@@ -348,6 +349,10 @@ export const PublicFolderView = ({ rootNode, customPassword, isPartialView }: Pu
                 onUploadFile={!isViewer ? handleClickFileUpload : undefined}
                 onUploadFolder={!isViewer ? handleClickFolderUpload : undefined}
                 onCreateFolder={!isViewer ? () => handleCreateFolder(rootNode.uid) : undefined}
+                onCreateDocument={!isViewer ? () => handleCreateDocsOrSheets(rootNode.uid, 'document') : undefined}
+                onCreateSpreadsheet={
+                    !isViewer ? () => handleCreateDocsOrSheets(rootNode.uid, 'spreadsheet') : undefined
+                }
                 nbSelected={selectedItemIds.size}
                 isEmptyView={isEmpty}
                 customPassword={customPassword}
