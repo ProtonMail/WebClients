@@ -39,6 +39,7 @@ describe('icon', () => {
                 hasPinnedKeys: false,
                 isPublicKeyPinned: false,
                 encryptionDisabled: false,
+                isInternal: true,
             };
             expect(getSendStatusIcon(sendPreferences)).toMatchObject({
                 colorClassName: 'color-info',
@@ -58,6 +59,7 @@ describe('icon', () => {
                 hasPinnedKeys: true,
                 isPublicKeyPinned: true,
                 encryptionDisabled: false,
+                isInternal: true,
             };
             expect(getSendStatusIcon(sendPreferences)).toMatchObject({
                 colorClassName: 'color-info',
@@ -77,6 +79,7 @@ describe('icon', () => {
                 hasPinnedKeys: true,
                 isPublicKeyPinned: false,
                 encryptionDisabled: false,
+                isInternal: true,
                 error: new EncryptionPreferencesError(
                     ENCRYPTION_PREFERENCES_ERROR_TYPES.PRIMARY_NOT_PINNED,
                     'test error'
@@ -100,6 +103,7 @@ describe('icon', () => {
                 hasPinnedKeys: false,
                 isPublicKeyPinned: false,
                 encryptionDisabled: false,
+                isInternal: false,
             };
             expect(getSendStatusIcon(sendPreferences)).toMatchObject({
                 colorClassName: 'color-success',
@@ -119,6 +123,7 @@ describe('icon', () => {
                 hasPinnedKeys: true,
                 isPublicKeyPinned: true,
                 encryptionDisabled: false,
+                isInternal: false,
             };
             expect(getSendStatusIcon(sendPreferences)).toMatchObject({
                 colorClassName: 'color-success',
@@ -138,6 +143,7 @@ describe('icon', () => {
                 hasPinnedKeys: true,
                 isPublicKeyPinned: false,
                 encryptionDisabled: false,
+                isInternal: false,
                 error: new EncryptionPreferencesError(
                     ENCRYPTION_PREFERENCES_ERROR_TYPES.PRIMARY_NOT_PINNED,
                     'test error'
@@ -161,6 +167,7 @@ describe('icon', () => {
                 hasPinnedKeys: false,
                 isPublicKeyPinned: false,
                 encryptionDisabled: false,
+                isInternal: false,
                 warnings: ['warning test 1', 'warning test 2'],
             };
             expect(getSendStatusIcon(sendPreferences)).toMatchObject({
@@ -181,6 +188,7 @@ describe('icon', () => {
                 hasPinnedKeys: true,
                 isPublicKeyPinned: true,
                 encryptionDisabled: false,
+                isInternal: false,
                 warnings: ['warning test 1', 'warning test 2'],
             };
             expect(getSendStatusIcon(sendPreferences)).toMatchObject({
@@ -200,6 +208,7 @@ describe('icon', () => {
                 hasApiKeys: false,
                 hasPinnedKeys: false,
                 encryptionDisabled: false,
+                isInternal: false,
             };
             expect(getSendStatusIcon(sendPreferences)).toMatchObject({
                 colorClassName: 'color-success',
@@ -219,6 +228,7 @@ describe('icon', () => {
                 hasPinnedKeys: true,
                 isPublicKeyPinned: false,
                 encryptionDisabled: false,
+                isInternal: false,
             };
             expect(getSendStatusIcon(sendPreferences)).toMatchObject({
                 colorClassName: 'color-success',
@@ -238,6 +248,7 @@ describe('icon', () => {
                 hasPinnedKeys: true,
                 isPublicKeyPinned: true,
                 encryptionDisabled: false,
+                isInternal: false,
             };
             expect(getSendStatusIcon(sendPreferences)).toMatchObject({
                 colorClassName: 'color-success',
@@ -257,6 +268,7 @@ describe('icon', () => {
                 hasPinnedKeys: true,
                 isPublicKeyPinned: true,
                 encryptionDisabled: false,
+                isInternal: false,
                 warnings: ['warning test 1', 'warning test 2'],
             };
             expect(getSendStatusIcon(sendPreferences)).toMatchObject({
@@ -277,6 +289,7 @@ describe('icon', () => {
                 hasPinnedKeys: false,
                 isPublicKeyPinned: false,
                 encryptionDisabled: false,
+                isInternal: false,
             };
             expect(getSendStatusIcon(sendPreferences)).toBeUndefined();
         });
@@ -292,6 +305,7 @@ describe('icon', () => {
                     hasApiKeys: false,
                     hasPinnedKeys: false,
                     isPublicKeyPinned: false,
+                    isInternal: false,
                 };
                 expect(getSendStatusIcon(sendPreferences)).toMatchObject({
                     colorClassName: 'color-norm',

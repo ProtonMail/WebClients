@@ -7,9 +7,8 @@ import type {
     VcalAttendeeProperty,
     VcalVeventComponent,
 } from '@proton/shared/lib/interfaces/calendar';
+import type { SendPreferences } from '@proton/shared/lib/interfaces/mail/crypto';
 import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
-
-import type { AugmentedSendPreferences } from '../containers/calendar/interface';
 
 export enum INVITE_ACTION_TYPES {
     NONE,
@@ -56,7 +55,7 @@ export interface SendIcsActionData {
     vevent?: VcalVeventComponent;
     cancelVevent?: VcalVeventComponent;
     noCheckSendPrefs?: boolean;
-    sendPreferencesMap?: SimpleMap<AugmentedSendPreferences>;
+    sendPreferencesMap?: SimpleMap<SendPreferences>;
 }
 
 export type SendIcs = {
@@ -67,7 +66,7 @@ export type SendIcs = {
         veventComponent: VcalVeventComponent;
         inviteActions: InviteActions;
         timestamp: number;
-        sendPreferencesMap: SimpleMap<AugmentedSendPreferences>;
+        sendPreferencesMap: SimpleMap<SendPreferences>;
     }>;
     (
         data: SendIcsActionData,
@@ -76,7 +75,7 @@ export type SendIcs = {
         veventComponent?: VcalVeventComponent;
         inviteActions: InviteActions;
         timestamp: number;
-        sendPreferencesMap: SimpleMap<AugmentedSendPreferences>;
+        sendPreferencesMap: SimpleMap<SendPreferences>;
     }>;
 };
 
@@ -91,7 +90,7 @@ export interface ReencryptInviteActionData {
 }
 
 export interface CleanSendIcsActionData extends SendIcsActionData {
-    sendPreferencesMap: SimpleMap<AugmentedSendPreferences>;
+    sendPreferencesMap: SimpleMap<SendPreferences>;
 }
 
 export interface UpdatePartstatOperation {

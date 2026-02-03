@@ -7,6 +7,7 @@ import { useGetEncryptionPreferences, useModals, useNotifications } from '@proto
 import { serverTime } from '@proton/crypto';
 import type { MessageStateWithData } from '@proton/mail/store/messages/messagesTypes';
 import { HOUR } from '@proton/shared/lib/constants';
+import { getIsBYOEAddress } from '@proton/shared/lib/helpers/address';
 import { isNoReplyEmail, validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import { mentionAttachment } from '@proton/shared/lib/helpers/emailAttachment';
 import { getItem } from '@proton/shared/lib/helpers/storage';
@@ -17,6 +18,8 @@ import type { EncryptionPreferencesError } from '@proton/shared/lib/mail/encrypt
 import { getRecipients, getRecipientsAddresses, isPlainText } from '@proton/shared/lib/mail/messages';
 import getSendPreferences from '@proton/shared/lib/mail/send/getSendPreferences';
 import unique from '@proton/utils/unique';
+
+import { getAddressFromEmail } from 'proton-mail/helpers/addresses';
 
 import SendWithChangedPreferencesModal, {
     PREFERENCE_CHANGE_TYPE,
@@ -155,10 +158,10 @@ export const useSendVerifications = (
                 ...message,
                 data: uniqueMessageRecipients(message.data),
             };
-            const emails = unique(getRecipientsAddresses(uniqueMessage.data));
+            const recipientEmails = unique(getRecipientsAddresses(uniqueMessage.data));
 
             // Invalid addresses
-            const invalids = emails.filter((email) => !validateEmailAddress(email));
+            const invalids = recipientEmails.filter((email) => !validateEmailAddress(email));
             if (invalids.length > 0) {
                 const invalidAddresses = invalids.join(', ');
                 createNotification({
@@ -179,76 +182,91 @@ export const useSendVerifications = (
             const emailsWithE2EEDisabled: string[] = [];
             const expiresNotEncrypted: string[] = [];
 
-            await Promise.all(
-                emails.map(async (email) => {
-                    let sendPreferences;
-                    // We need to retrieve the most recent encryption preferences (thus bypassing & updating the cache), to avoid missing any of the latest legitimate changes
-                    // that occured after the last contact update we received. This also re-downloads public encryption keys (both pinned and not).
-                    // However, at this point the server could provide malicious encryption information, and the user cannot visually check
-                    // whether something is off through the send status icons.
-                    // Hence, we must compare the newly fetched data with the cached one, which the user could verify before hitting Send.
-                    const lastMinuteEncryptionPrefs = await getEncryptionPreferences({
-                        email,
-                        lifetime: 0,
-                        contactEmailsMap: contactsMap,
-                    });
-                    if (lastMinuteEncryptionPrefs.emailAddressWarnings?.length) {
-                        emailWarnings[email] = lastMinuteEncryptionPrefs.emailAddressWarnings as string[];
-                    }
-                    const cachedSendInfo = trustedMapSendInfo[email];
-                    if (!cachedSendInfo || !cachedSendInfo.contactSignatureInfo?.isVerified) {
-                        // Cached data might not be available if the user clicks 'Send' before the icons are loaded,
-                        // or in the UnsubscribeBanner context. In both cases, it's fine to use the last-minute preferences.
-                        sendPreferences = getSendPreferences(lastMinuteEncryptionPrefs, message.data);
-                    } else if (!lastMinuteEncryptionPrefs.isContactSignatureVerified) {
-                        // The signed contact was deleted, or the contact signature was removed.
-                        // Note: unpinning a key still results in a new signed contact body, so this block does not deal with that case.
+            const senderAddress = addresses ? getAddressFromEmail(addresses, message.data?.Sender.Address) : undefined;
+            const isBYOESender = senderAddress ? getIsBYOEAddress(senderAddress) : false;
+            const hasOnlyInternalRecipients = recipientEmails.every(
+                (recipient) => trustedMapSendInfo[recipient]?.sendPreferences?.isInternal
+            );
 
-                        if (
-                            cachedSendInfo.sendPreferences?.encrypt &&
-                            cachedSendInfo.sendPreferences?.isPublicKeyPinned
-                        ) {
-                            // We warn the user if the contact previously had encryption enabled and included a valid trusted key.
-                            // This is needed because we cannot tell whether the user deleted the contact, or whether the action was faked by the server to try
-                            // to downgrade encryption preferences maliciously.
-                            emailsWithMissingPreferences.push(email);
-                        }
-                        sendPreferences = getSendPreferences(lastMinuteEncryptionPrefs, message.data);
+            await Promise.all(
+                recipientEmails.map(async (email) => {
+                    if (isBYOESender && !hasOnlyInternalRecipients) {
+                        // Skip re-fetch and verifications if the sender address is BYOE and external recipients are involved, since send preferences
+                        // are overridden as the message is sent externally (see `getMaybeAlteredSendInfoForBYOE`).
+                        // We might miss some send pref updates as a result, but since encryption is ultimately disabled,
+                        // this should not be disruptive for the user.
+                        mapSendPrefs[email] = trustedMapSendInfo[email]?.sendPreferences;
                     } else {
-                        // We have both verified cached preferences and verified last-minute preferences.
-                        // We must check that the last-minute preferences' signature is newer than the cached one, and that it was created recently,
-                        // otherwise the server might be trying to downgrade the encryption preferences maliciously.
-                        const cachedSignatureTime = cachedSendInfo.contactSignatureInfo.creationTime!;
-                        const lastMinuteSignatureTime = lastMinuteEncryptionPrefs.contactSignatureTimestamp!;
-                        const lastMinuteSignatureAge = Math.abs(+lastMinuteSignatureTime - +serverTime());
-                        if (
-                            +lastMinuteSignatureTime < +cachedSignatureTime ||
-                            (+lastMinuteSignatureTime !== +cachedSignatureTime && lastMinuteSignatureAge > 24 * HOUR)
-                        ) {
-                            // The server sent us an old last-minute contact signature. This should never happen, since the server time is used when signing.
-                            // This might be an attempt to downgrade the encryption preferences, so we silently discard last-minute prefs and send with cached ones.
-                            sendPreferences = cachedSendInfo.sendPreferences!;
-                        } else {
-                            // The last-minute signature is newer than the cached one, and was created recently enough, so
-                            // even if the pinned keys are removed at the last minute, we can be positive that the user made those changes.
-                            // Thus, we can now trust & use the last-minute preferences.
+                        let sendPreferences;
+                        // We need to retrieve the most recent encryption preferences (thus bypassing & updating the cache), to avoid missing any of the latest legitimate changes
+                        // that occured after the last contact update we received. This also re-downloads public encryption keys (both pinned and not).
+                        // However, at this point the server could provide malicious encryption information, and the user cannot visually check
+                        // whether something is off through the send status icons.
+                        // Hence, we must compare the newly fetched data with the cached one, which the user could verify before hitting Send.
+                        const lastMinuteEncryptionPrefs = await getEncryptionPreferences({
+                            email,
+                            lifetime: 0,
+                            contactEmailsMap: contactsMap,
+                        });
+                        if (lastMinuteEncryptionPrefs.emailAddressWarnings?.length) {
+                            emailWarnings[email] = lastMinuteEncryptionPrefs.emailAddressWarnings as string[];
+                        }
+                        const cachedSendInfo = trustedMapSendInfo[email];
+                        if (!cachedSendInfo || !cachedSendInfo.contactSignatureInfo?.isVerified) {
+                            // Cached data might not be available if the user clicks 'Send' before the icons are loaded,
+                            // or in the UnsubscribeBanner context. In both cases, it's fine to use the last-minute preferences.
                             sendPreferences = getSendPreferences(lastMinuteEncryptionPrefs, message.data);
-                            // In the case of internal addresses with E2EE disabled for mail, pinned keys are automatically ignored.
-                            // So even if the last-minute contact signature is verified, we must warn the user if the recipient has just disabled E2EE on their address
+                        } else if (!lastMinuteEncryptionPrefs.isContactSignatureVerified) {
+                            // The signed contact was deleted, or the contact signature was removed.
+                            // Note: unpinning a key still results in a new signed contact body, so this block does not deal with that case.
+
                             if (
-                                sendPreferences.encryptionDisabled &&
-                                !cachedSendInfo.sendPreferences?.encryptionDisabled
+                                cachedSendInfo.sendPreferences?.encrypt &&
+                                cachedSendInfo.sendPreferences?.isPublicKeyPinned
                             ) {
-                                emailsWithE2EEDisabled.push(email);
+                                // We warn the user if the contact previously had encryption enabled and included a valid trusted key.
+                                // This is needed because we cannot tell whether the user deleted the contact, or whether the action was faked by the server to try
+                                // to downgrade encryption preferences maliciously.
+                                emailsWithMissingPreferences.push(email);
+                            }
+                            sendPreferences = getSendPreferences(lastMinuteEncryptionPrefs, message.data);
+                        } else {
+                            // We have both verified cached preferences and verified last-minute preferences.
+                            // We must check that the last-minute preferences' signature is newer than the cached one, and that it was created recently,
+                            // otherwise the server might be trying to downgrade the encryption preferences maliciously.
+                            const cachedSignatureTime = cachedSendInfo.contactSignatureInfo.creationTime!;
+                            const lastMinuteSignatureTime = lastMinuteEncryptionPrefs.contactSignatureTimestamp!;
+                            const lastMinuteSignatureAge = Math.abs(+lastMinuteSignatureTime - +serverTime());
+                            if (
+                                +lastMinuteSignatureTime < +cachedSignatureTime ||
+                                (+lastMinuteSignatureTime !== +cachedSignatureTime &&
+                                    lastMinuteSignatureAge > 24 * HOUR)
+                            ) {
+                                // The server sent us an old last-minute contact signature. This should never happen, since the server time is used when signing.
+                                // This might be an attempt to downgrade the encryption preferences, so we silently discard last-minute prefs and send with cached ones.
+                                sendPreferences = cachedSendInfo.sendPreferences!;
+                            } else {
+                                // The last-minute signature is newer than the cached one, and was created recently enough, so
+                                // even if the pinned keys are removed at the last minute, we can be positive that the user made those changes.
+                                // Thus, we can now trust & use the last-minute preferences.
+                                sendPreferences = getSendPreferences(lastMinuteEncryptionPrefs, message.data);
+                                // In the case of internal addresses with E2EE disabled for mail, pinned keys are automatically ignored.
+                                // So even if the last-minute contact signature is verified, we must warn the user if the recipient has just disabled E2EE on their address
+                                if (
+                                    sendPreferences.encryptionDisabled &&
+                                    !cachedSendInfo.sendPreferences?.encryptionDisabled
+                                ) {
+                                    emailsWithE2EEDisabled.push(email);
+                                }
                             }
                         }
-                    }
-                    mapSendPrefs[email] = sendPreferences;
-                    if (sendPreferences.error) {
-                        sendErrors[email] = sendPreferences.error;
-                    }
-                    if (message.draftFlags?.expiresIn && !sendPreferences.encrypt) {
-                        expiresNotEncrypted.push(email);
+                        mapSendPrefs[email] = sendPreferences;
+                        if (sendPreferences.error) {
+                            sendErrors[email] = sendPreferences.error;
+                        }
+                        if (message.draftFlags?.expiresIn && !sendPreferences.encrypt) {
+                            expiresNotEncrypted.push(email);
+                        }
                     }
                 })
             );
@@ -273,8 +291,8 @@ export const useSendVerifications = (
                 await new Promise((resolve, reject) => {
                     const handleSendAnyway = () => {
                         for (const email of emailsWithErrors) {
-                            const indexOfEmail = emails.findIndex((emailAddress) => emailAddress === email);
-                            emails.splice(indexOfEmail, 1);
+                            const indexOfEmail = recipientEmails.findIndex((emailAddress) => emailAddress === email);
+                            recipientEmails.splice(indexOfEmail, 1);
                             delete mapSendPrefs[email];
                         }
                         resolve(undefined);
@@ -282,7 +300,7 @@ export const useSendVerifications = (
                     createModal(
                         <SendWithErrorsModal
                             mapErrors={sendErrors}
-                            cannotSend={emailsWithErrors.length === emails.length}
+                            cannotSend={emailsWithErrors.length === recipientEmails.length}
                             onSubmit={handleSendAnyway}
                             onClose={reject}
                         />
@@ -339,7 +357,7 @@ export const useSendVerifications = (
 
             return { cleanMessage, mapSendPrefs, hasChanged: emailsWithErrors.length > 0 };
         },
-        [contactsMap, createModal, createNotification, getEncryptionPreferences]
+        [addresses, contactsMap, createModal, createNotification, getEncryptionPreferences]
     );
 
     return { preliminaryVerifications, extendedVerifications };

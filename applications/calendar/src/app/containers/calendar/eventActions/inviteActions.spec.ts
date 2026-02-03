@@ -7,11 +7,11 @@ import type { VcalAttendeeProperty, VcalVeventComponent } from '@proton/shared/l
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import type { GetVTimezonesMap } from '@proton/shared/lib/interfaces/hooks/GetVTimezonesMap';
 import type { RelocalizeText } from '@proton/shared/lib/interfaces/hooks/RelocalizeText';
+import type { SendPreferences } from '@proton/shared/lib/interfaces/mail/crypto';
 import { PACKAGE_TYPE } from '@proton/shared/lib/mail/mailSettings';
 import { generateTestAddress } from '@proton/testing/lib/builders';
 
 import { INVITE_ACTION_TYPES } from '../../../interfaces/Invite';
-import type { AugmentedSendPreferences } from '../interface';
 import { getAttendeesDiff, getHasProtonAttendees, getRoleDiff, getSendIcsAction } from './inviteActions';
 
 const generateContact = ({
@@ -41,7 +41,7 @@ const generateContact = ({
             value: buildMailTo(mail),
             parameters: { cn: mail, role, rsvp, partstat: 'NEEDS-ACTION' },
         },
-    ] as unknown as [SimpleMap<AugmentedSendPreferences>, SimpleMap<ContactEmail>, VcalAttendeeProperty];
+    ] as unknown as [SimpleMap<SendPreferences>, SimpleMap<ContactEmail>, VcalAttendeeProperty];
 
 const contactA = generateContact({ mail: 'plus@proton.test', isInternal: true });
 const contactB = generateContact({ mail: 'pmtest2@proton.test', isInternal: true });
@@ -578,7 +578,7 @@ describe('getSendIcsAction', () => {
                 hasPinnedKeys: false,
                 warnings: [],
             },
-        } as unknown as SimpleMap<AugmentedSendPreferences>;
+        } as unknown as SimpleMap<SendPreferences>;
 
         describe('when no vevent', () => {
             it('should call `onRequestError`', async () => {
