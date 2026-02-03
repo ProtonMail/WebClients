@@ -4144,8 +4144,8 @@
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Ak chcete zabezpečiť čo najvyššiu bezpečnosť svojho účtu, nastavte frázu na obnovenie."
       ],
-      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
-        "Pre importovanie prostredníctvom súborov CSV a VCF zabezpečte, aby veľkosť súboru nepresiahla ${ MAX_IMPORT_FILE_SIZE_STRING } alebo ${ MAX_IMPORT_CONTACTS_STRING } kontaktov. Ak je váš súbor väčší, rozdeľte ho na menšie súbory. ${ learnMoreLink }."
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Pre importovanie prostredníctvom súborov CSV a VCF zabezpečte, aby veľkosť súboru nepresiahla ${ MAX_IMPORT_FILE_SIZE_STRING } alebo ${ maxContactString } kontaktov. Ak je váš súbor väčší, rozdeľte ho na menšie súbory. ${ learnMoreLink }."
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Pre import kontaktov zo služby Google alebo Outlook ${ easySwitchLink }."
@@ -4283,6 +4283,17 @@
       ],
       "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
         "Vaše predplatné ${ PLAN_NAMES[PLANS.PASS] } je za špeciálnu cenu ${ price } ročne. Znížením ceny na bezplatný plán natrvalo stratíte zľavu, a to aj v prípade, že v budúcnosti opäť prejdete na vyšší plán."
+      ]
+    },
+    "Drawer tab, Action": {
+      "Download for Linux": [
+        "Stiahnuť pre Linux"
+      ],
+      "Download for macOS": [
+        "Stiahnuť pre macOS"
+      ],
+      "Download for Windows": [
+        "Stiahnuť pre Windows"
       ]
     },
     "driveplus2024: Deal details": {
@@ -5055,6 +5066,9 @@
       "Try using only letters, numerals, and _.-": [
         "Skúste používať iba písmená, číslice a _.-"
       ],
+      "Unable to load VPN dashboard. Please check your connection and try again.": [
+        "Nie je možné načítať VPN nástenku. Skontrolujte vaše pripojenie a skúste to znova, prosím."
+      ],
       "Unexpected error, we can't import the contacts": [
         "Neočakávaná chyba, nemôžeme importovať kontakty"
       ],
@@ -5214,8 +5228,8 @@
       "An error occurred uploading your file. No file has been selected.": [
         "Vyskytla sa chyba pri nahrávaní vášho súboru. Nebol vybraný žiadny súbor."
       ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
-        "Váš súbor ${ formattedFilename } obsahuje viac ako ${ MAX_IMPORT_CONTACTS_STRING } kontaktov."
+      "Your file ${ formattedFilename } contains more than ${ maxContactString } contacts.": [
+        "Váš súbor ${ formattedFilename } obsahuje viac ako ${ maxContactString } kontaktov."
       ],
       "Your file ${ formattedFilename } has no contacts to be imported.": [
         "Váš súbor ${ formattedFilename } nemá žiadne kontakty na import."
@@ -6771,6 +6785,9 @@
         "${ updated } kontaktov bolo úspešne aktualizovaných.",
         "${ updated } kontaktov bolo úspešne aktualizovaných."
       ],
+      "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
+        "${ VPN_APP_NAME } maskuje vašu IP adresu, aby vás webové stránky nemohli identifikovať."
+      ],
       "(${ memberCount } member)": [
         "(${ memberCount } člen)",
         "(${ memberCount } členovia)",
@@ -6794,6 +6811,12 @@
         "**${ total }** výsledky nájdené v ${ labelName }",
         "**${ total }** výsledkov nájdených v ${ labelName }",
         "**${ total }** výsledkov nájdených v ${ labelName }"
+      ],
+      "**Auto-connect**: Opens and connects to VPN as soon as you turn on your device.": [
+        "**Automatické pripojenie**: Otvorí sa a pripojí k VPN hneď po zapnutí zariadenia."
+      ],
+      "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
+        "**Kill switch**: Zabráni úniku dát tým, že zablokuje váš internet, ak sa VPN neočakávane preruší."
       ],
       "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
         "**Krok 1:** Pozvite svojich priateľov do ${ BRAND_NAME } pomocou svojho odporúčacieho odkazu."
@@ -6828,8 +6851,20 @@
       "A request to unsubscribe from this mailing list will be sent to the sender of the newsletter and automatically processed.": [
         "Žiadosť o odhlásenie z tohto mailingového zoznamu bude odoslaná odosielateľovi noviniek a automaticky spracovaná."
       ],
+      "A secure connection is essential when working remotely. A VPN protects company data from cyber threats and keeps your work private.": [
+        "Bezpečné pripojenie je pri práci na diaľku nevyhnutné. VPN chráni firemné údaje pred kybernetickými hrozbami a udržiava vašu prácu v súkromí."
+      ],
       "A user is an account associated with a single username, mailbox, and person": [
         "Používateľ je účet spojený s jedným používateľským menom, poštovou schránkou a osobou"
+      ],
+      "A VPN encrypts your connection and hides your IP address, making it much harder for anyone to track or monitor your browsing.": [
+        "VPN šifruje vaše pripojenie a skrýva vašu IP adresu, takže je oveľa ťažšie sledovať alebo monitorovať vaše prehliadanie."
+      ],
+      "A VPN hides your IP address and encrypts your browsing activity, making it harder for websites, advertisers, and ISPs to track you over time.": [
+        "VPN skrýva vašu IP adresu a šifruje vašu aktivitu pri surfovaní, takže webové stránky, inzerenti a poskytovatelia internetových služieb budú mať sťažené dlhodobé sledovanie."
+      ],
+      "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
+        "VPN je bezpečný tunel medzi vaším zariadením a internetom. Skrýva vašu polohu a aktivity pred poskytovateľom internetových služieb (ISP) a navštívenými webovými stránkami."
       ],
       "Access 6,500+ high-speed servers on up to 10 devices to keep your browsing data safe. Available on ${ ios }, ${ android }, ${ appleTV }, and ${ desktop }.": [
         "Pristupujte k viac ako 6500 vysokorýchlostným serverom až na 10 zariadeniach, aby boli vaše údaje pri prehliadaní v bezpečí. K dispozícii na ${ ios }, ${ android }, ${ appleTV } a ${ desktop }."
@@ -6843,6 +6878,9 @@
       "Active": [
         "Aktívne"
       ],
+      "Ad targeting": [
+        "Cielená reklama"
+      ],
       "Add image URL": [
         "Pridať URL adresu obrázka"
       ],
@@ -6854,6 +6892,9 @@
       ],
       "Addresses settings": [
         "Nastavenia adries"
+      ],
+      "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
+        "Inzerenti sledujú vaše prehliadanie, aby mohli zobrazovať cielené reklamy. ${ VPN_APP_NAME } blokuje sledovače a reklamy, čím zrýchľuje vaše pripojenie a zlepšuje váš online zážitok."
       ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "Asistent s umelou inteligenciou vám pomôže tvoriť lepšie emaily, rýchlo a jednoducho."
@@ -6900,11 +6941,11 @@
       "All your changes will be lost.": [
         "Všetky vaše zmeny budú stratené."
       ],
-      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
-        "Všetky vaše kontakty budú importované až do limitu ${ MAX_CONTACTS_PER_USER }",
-        "Všetky vaše kontakty budú importované až do limitu ${ MAX_CONTACTS_PER_USER }",
-        "Všetky vaše kontakty budú importované až do limitu ${ MAX_CONTACTS_PER_USER }",
-        "Všetky vaše kontakty budú importované až do limitu ${ MAX_CONTACTS_PER_USER }"
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "Všetky vaše kontakty budú importované až do limitu ${ maxContact }",
+        "Všetky vaše kontakty budú importované až do limitu ${ maxContact }",
+        "Všetky vaše kontakty budú importované až do limitu ${ maxContact }",
+        "Všetky vaše kontakty budú importované až do limitu ${ maxContact }"
       ],
       "American Express SafeKey logo": [
         "American Express SafeKey logo"
@@ -7112,6 +7153,9 @@
       ],
       "Confirm phishing report": [
         "Potvrdiť nahlásenie phishingu"
+      ],
+      "Connect to ${ VPN_APP_NAME } to browse privately": [
+        "Pripojte sa k ${ VPN_APP_NAME } a surfujte v súkromí"
       ],
       "Consider when's the best time for your recipient to receive your email, and schedule it to be sent then.": [
         "Zvážte, kedy je pre príjemcu najlepší čas na prijatie emailu, a naplánujte jeho odoslanie na tento čas."
@@ -7464,6 +7508,9 @@
       "Generate text": [
         "Generovať text"
       ],
+      "Geoblocking": [
+        "Geoblokácia"
+      ],
       "Get it on Google Play": [
         "Stiahnuť z Google Play"
       ],
@@ -7475,6 +7522,9 @@
       ],
       "Google Pay mark": [
         "Google Pay mark"
+      ],
+      "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
+        "Vlády a poskytovatelia internetových služieb môžu monitorovať vašu online aktivitu. Skrytím vašej skutočnej IP adresy a šifrovaním vašej aktivity sa vaše prehliadanie stane súkromným."
       ],
       "Has ${ numAttachments } attachment (${ numAttachmentsSize })": [
         "Obsahuje ${ numAttachments } prílohu (${ numAttachmentsSize })",
@@ -7557,6 +7607,9 @@
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Importujú sa vaše údaje z ${ fromEmail } do ${ toEmail }."
       ],
+      "In restrictive countries": [
+        "V krajinách s reštriktívnym režimom"
+      ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "V ďalšom kroku budete môcť odoslať vklad pomocou Bitcoin adresy."
       ],
@@ -7594,10 +7647,7 @@
         "Inicializácia…"
       ],
       "Insert image": [
-        "Vložiť obrázok",
-        "Vložiť obrázky",
-        "Vložiť obrázky",
-        "Vložiť obrázky"
+        "Vložiť obrázok"
       ],
       "Insert link": [
         "Vložiť odkaz"
@@ -7619,6 +7669,9 @@
       ],
       "It's better to have:": [
         "Je lepšie, ak máte:"
+      ],
+      "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
+        "Najlepšie je vždy používať VPN sieť. Tu však môžu byť hrozby kybernetickej bezpečnosti najvyššie:"
       ],
       "JCB logo": [
         "JCB logo"
@@ -7770,6 +7823,9 @@
       "More refine actions": [
         "Ďalšie spresnenie akcií"
       ],
+      "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
+        "Väčšina verejných WiFi sietí je bezpečná, ale niektoré nie sú dostatočne zabezpečené, čo vás vystavuje kybernetickým hrozbám. VPN šifruje vašu prevádzku, čím vás chráni."
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Pomenujte svoj nový priečinok a vyberte nadradený priečinok, do ktorého ho chcete vložiť. Pokiaľ nadradený priečinok nevyberiete, bude nový priečinok vytvorený v hlavnom priečinku."
       ],
@@ -7836,6 +7892,9 @@
       "Not a valid URL": [
         "Neplatný odkaz"
       ],
+      "Not connected": [
+        "Nepripojené"
+      ],
       "Number of dedicated servers in the organization": [
         "Počet dedikovaných serverov v organizácii"
       ],
@@ -7847,6 +7906,9 @@
       ],
       "of": [
         "z"
+      ],
+      "On public WiFi networks": [
+        "Vo verejných WiFi sieťach"
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Jeden alebo viac dôveryhodných kľúčov bol vlastníkom označený ako \"kompromitovaný\". Odporúčame, aby ste u takýchto kľúčov vybrali voľbu \"Nedôverovať\"."
@@ -8007,6 +8069,9 @@
       "Print email": [
         "Vytlačiť email"
       ],
+      "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
+        "Súkromné surfovanie (alebo režim „inkognito“) je užitočné len na to, aby vaša aktivita v zariadení zostala skrytá. Zabráni prehliadaču ukladať históriu a súbory cookie, ale neurobí vás neviditeľnými. Váš poskytovateľ internetových služieb, správca siete a webové stránky, ktoré navštevujete, môžu stále vidieť, čo robíte online."
+      ],
       "Proofread selection": [
         "Korektúra výberu"
       ],
@@ -8078,6 +8143,9 @@
       ],
       "Saving draft": [
         "Ukladanie konceptu"
+      ],
+      "Scan the QR code with your mobile device": [
+        "Naskenujte QR kód pomocou mobilného zariadenia"
       ],
       "Scheduled send of this message will be canceled.": [
         "Naplánované odoslanie tejto správy bude zrušené."
@@ -8193,6 +8261,12 @@
       "Snoozing this conversation will be canceled.": [
         "Odloženie tejto konverzácie bude zrušené."
       ],
+      "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
+        "Niektoré vlády blokujú alebo obmedzujú prístup na určité webové stránky. VPN pomáha obísť cenzúru a zároveň zachováva súkromie vašich aktivít a identity."
+      ],
+      "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
+        "Niektoré webové lokality a stravovacie služby blokujú obsah podľa regiónov. VPN vám umožní tieto obmedzenia obísť a získať voľný prístup na internet."
+      ],
       "Sorry, this message does not exist or has already expired.": [
         "Je nám ľúto, táto správa neexistuje, alebo jej už vypršala platnosť."
       ],
@@ -8201,6 +8275,9 @@
       ],
       "Start using the shorter, catchier version of your email address.": [
         "Začnite používať kratšiu verziu vašej emailovej adresy."
+      ],
+      "Stay connected effortlessly by enabling the following VPN settings:": [
+        "Zostaňte ľahko pripojení povolením nasledujúcich nastavení VPN:"
       ],
       "Storage capabilities are not supported in this browser, we need this support to enable message content search.": [
         "Možnosti úložiska nie sú v tomto prehliadači podporované, potrebujeme túto podporu, aby sme mohli prehľadávať obsah správ."
@@ -8237,6 +8314,9 @@
       ],
       "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
         "Predplatné sa končí: Ak si chcete ponechať výhody predplatného ${ planName }, reštartujte si predplatné v Obchode Google Play do ${ byDate }. ${ reactivateLink }"
+      ],
+      "Surveillance": [
+        "Monitorovanie"
       ],
       "Symbols (#$&)": [
         "Znaky (#$&)"
@@ -8373,6 +8453,9 @@
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Tento odkaz môže byť homografickým útokom. Preverte si, či je toto odkaz, ktorý chcete otvoriť, alebo ho ignorujte."
       ],
+      "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
+        "To znamená, že poskytovateľ internetových služieb a navštívené webové lokality nemôžu spájať vaše osobné údaje s vašou online aktivitou."
+      ],
       "This message has been adjusted to comply with a dark background.": [
         "Táto správa bola upravená tak, aby zodpovedala tmavému pozadiu."
       ],
@@ -8451,6 +8534,9 @@
       "This sender's public key has not been trusted yet.": [
         "Verejný kľúč tohto odosielateľa nebol doposiaľ overený."
       ],
+      "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
+        "Tento jedinečný kód môžu webové stránky a poskytovatelia internetových služieb (ISP) použiť na prepojenie vašej polohy a histórie prehliadania s vaším zariadením"
+      ],
       "This was shown to you because your email subject line contains password reset keywords.": [
         "Toto sa vám zobrazilo, pretože predmet vášho emailu obsahuje kľúčové slová pre resetovanie hesla."
       ],
@@ -8513,6 +8599,9 @@
       ],
       "Trackers blocked:": [
         "Blokované trackery:"
+      ],
+      "Tracking": [
+        "Sledovanie"
       ],
       "Trash existing messages": [
         "Presunúť existujúce správy do Koša"
@@ -8640,6 +8729,9 @@
       "Visa Secure logo": [
         "Visa Secure logo"
       ],
+      "VPN IP": [
+        "IP VPN"
+      ],
       "Warning": [
         "Varovanie"
       ],
@@ -8699,6 +8791,12 @@
       ],
       "When giving out your email, use a unique, disposable hide-my-email alias instead of your real email address.": [
         "Pri poskytovaní svojho emailu používajte namiesto svojej skutočnej emailovej adresy jedinečný, jednorazový hide-my-email alias."
+      ],
+      "When working remotely": [
+        "Pri práci na diaľku"
+      ],
+      "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
+        "Pri pripájaní k VPN sa používa šifrovacia technológia na skrytie vašej IP adresy (jedinečný kód pridelený vášmu zariadeniu)."
       ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Hneď ako povolíte dôverné kľúče pre ${ senderName }, verejné kľúče budú doplnené k detailu kontaktu."
@@ -8961,6 +9059,15 @@
       "Your information was found on ${ displayedDate }": [
         "Vaše informácie boli nájdené dňa ${ displayedDate }"
       ],
+      "Your internet service provider can monitor and sometimes sell your data, or even restrict what websites you can access.": [
+        "Poskytovateľ internetových služieb môže sledovať a niekedy aj predávať vaše údaje alebo dokonca obmedzovať prístup na webové stránky."
+      ],
+      "Your IP": [
+        "Vaša IP"
+      ],
+      "Your IP address is visible and can be used to track your online activity.": [
+        "Vaša IP adresa je viditeľná a môže sa použiť na sledovanie vašej online aktivity."
+      ],
       "Your login information will not be saved after the import is completed.": [
         "Po dokončení importu nebudú vaše prihlasovacie údaje uložené."
       ],
@@ -8982,11 +9089,17 @@
       "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
         "Váš ďalší dátum fakturácie je ${ renewalTime }. Ak potrebujete okamžitú zmenu plánu, kontaktujte podporu, prosím."
       ],
+      "Your online activity is protected": [
+        "Vaša online aktivita je chránená"
+      ],
       "Your password was leaked:": [
         "Vaše heslo bolo prezradené:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Vaše telefónne číslo bude použité iba pre toto jednorazové overenie."
+      ],
+      "Your physical location is visible and can be used to restrict your access to the internet.": [
+        "Vaša fyzická poloha je viditeľná a môže sa použiť na obmedzenie vášho prístupu na internet."
       ],
       "Your private writing assistant": [
         "Váš súkromný asistent písania"
@@ -10105,6 +10218,15 @@
       "Your domain": [
         "Vaša doména"
       ],
+      "Your IP": [
+        "Vaša IP"
+      ],
+      "Your ISP": [
+        "Váš ISP"
+      ],
+      "Your location": [
+        "Vaša poloha"
+      ],
       "Your password (admin)": [
         "Vaše heslo (správca)"
       ],
@@ -10590,6 +10712,12 @@
         "${ n } aktívnych stretnutí naraz",
         "${ n } aktívnych stretnutí naraz"
       ],
+      "${ n } participant": [
+        "${ n } účastník",
+        "${ n } účastníci",
+        "${ n } účastníkov",
+        "${ n } účastníkov"
+      ],
       "24 hours per meeting": [
         "24 hodín na schôdzu"
       ],
@@ -10599,6 +10727,9 @@
       "Appointment scheduling": [
         "Plánovanie schôdzok"
       ],
+      "Booking pages": [
+        "Stránky rezervácií"
+      ],
       "Browser, mobile, and desktop apps": [
         "Aplikácie pre prehliadače, mobily a desktopy"
       ],
@@ -10607,6 +10738,9 @@
       ],
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "End-to-end šifrované zdieľanie obrazovky a dočasný chat počas hovoru"
+      ],
+      "Meeting recording": [
+        "Nahrávanie schôdze"
       ],
       "One active meeting at a time": [
         "Jeden aktívny hovor naraz"
@@ -12484,11 +12618,17 @@
       "terms and conditions": [
         "zmluvnými podmienkami používania"
       ],
-      "The coupon is valid for ${ couponRedemptions } renewal.": [
-        "Kupón je možné použiť na ${ couponRedemptions } obnovenie.",
-        "Kupón je možné použiť na ${ couponRedemptions } obnovenia.",
-        "Kupón je možné použiť na ${ couponRedemptions } obnovení.",
-        "Kupón je možné použiť na ${ couponRedemptions } obnovení."
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "Zľava je platná na ${ renewalsWithCoupon } obnovenie.",
+        "Zľava je platná na ${ renewalsWithCoupon } obnovenia.",
+        "Zľava je platná na ${ renewalsWithCoupon } obnovení.",
+        "Zľava je platná na ${ renewalsWithCoupon } obnovení."
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Špeciálne zľavnená cena platí ${ couponRedemptions } mesiac. Potom sa každý mesiac automaticky obnoví za ${ renewPriceStr } na 1 mesiac. Službu môžete kedykoľvek zrušiť.",
+        "Špeciálne zľavnená cena platí ${ couponRedemptions } mesiace. Potom sa každý mesiac automaticky obnoví za ${ renewPriceStr } na 1 mesiac. Službu môžete kedykoľvek zrušiť.",
+        "Špeciálne zľavnená cena platí ${ couponRedemptions } mesiacov. Potom sa každý mesiac automaticky obnoví za ${ renewPriceStr } na 1 mesiac. Službu môžete kedykoľvek zrušiť.",
+        "Špeciálne zľavnená cena platí ${ couponRedemptions } mesiacov. Potom sa každý mesiac automaticky obnoví za ${ renewPriceStr } na 1 mesiac. Službu môžete kedykoľvek zrušiť."
       ],
       "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
         "Špeciálna zľavnená cena platí pre prvý ${ subscriptionLength } mesiac.",
@@ -12496,26 +12636,20 @@
         "Špeciálna zľavnená cena platí pre prvých ${ subscriptionLength } mesiacov.",
         "Špeciálna zľavnená cena platí pre prvých ${ subscriptionLength } mesiacov."
       ],
-      "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "Špeciálna zľava platí pre prvý mesiac. Kupón je platný pre ${ couponRedemptions } obnovenie. Potom dôjde k automatickej obnove za ${ renewPriceStr } na 1 mesiac. Zrušiť môžete kedykoľvek.",
-        "Špeciálna zľava platí pre prvý mesiac. Kupón je platný pre ${ couponRedemptions } obnovenia. Potom dôjde k automatickej obnove za ${ renewPriceStr } na 1 mesiac. Zrušiť môžete kedykoľvek.",
-        "Špeciálna zľava platí pre prvý mesiac. Kupón je platný pre ${ couponRedemptions } obnovení. Potom dôjde k automatickej obnove za ${ renewPriceStr } na 1 mesiac. Zrušiť môžete kedykoľvek.",
-        "Špeciálna zľava platí pre prvý mesiac. Kupón je platný pre ${ couponRedemptions } obnovení. Potom dôjde k automatickej obnove za ${ renewPriceStr } na 1 mesiac. Zrušiť môžete kedykoľvek."
-      ],
       "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Špeciálne zľavnená cena platí prvý mesiac. Potom sa každý mesiac automaticky obnoví za ${ renewPriceStr }. Službu môžete kedykoľvek zrušiť."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Špeciálne zľavnená cena ${ priceWithDiscount } platí ${ couponRedemptions } mesiac. Potom sa každý mesiac automaticky obnoví za ${ renewPriceStr } na 1 mesiac. Službu môžete kedykoľvek zrušiť.",
+        "Špeciálne zľavnená cena ${ priceWithDiscount } platí ${ couponRedemptions } mesiace. Potom sa každý mesiac automaticky obnoví za ${ renewPriceStr } na 1 mesiac. Službu môžete kedykoľvek zrušiť.",
+        "Špeciálne zľavnená cena ${ priceWithDiscount } platí ${ couponRedemptions } mesiacov. Potom sa každý mesiac automaticky obnoví za ${ renewPriceStr } na 1 mesiac. Službu môžete kedykoľvek zrušiť.",
+        "Špeciálne zľavnená cena ${ priceWithDiscount } platí ${ couponRedemptions } mesiacov. Potom sa každý mesiac automaticky obnoví za ${ renewPriceStr } na 1 mesiac. Službu môžete kedykoľvek zrušiť."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "Špeciálna zľavnená cena ${ priceWithDiscount } platí pre prvý ${ subscriptionLength } mesiac.",
         "Špeciálna zľavnená cena ${ priceWithDiscount } platí pre prvé ${ subscriptionLength } mesiace.",
         "Špeciálna zľavnená cena ${ priceWithDiscount } platí pre prvých ${ subscriptionLength } mesiacov.",
         "Špeciálna zľavnená cena ${ priceWithDiscount } platí pre prvých ${ subscriptionLength } mesiacov."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "Špeciálna zľavnená cena ${ priceWithDiscount } platí počas prvého mesiaca. Kupón je platný pre ${ couponRedemptions } obnovenie. Potom sa každý mesiac automaticky obnoví za ${ renewPriceStr } na 1 mesiac. Službu môžete kedykoľvek zrušiť.",
-        "Špeciálna zľavnená cena ${ priceWithDiscount } platí počas prvého mesiaca. Kupón je platný pre ${ couponRedemptions } obnovenia. Potom sa každý mesiac automaticky obnoví za ${ renewPriceStr } na 1 mesiac. Službu môžete kedykoľvek zrušiť.",
-        "Špeciálna zľavnená cena ${ priceWithDiscount } platí počas prvého mesiaca. Kupón je platný pre ${ couponRedemptions } obnovení. Potom sa každý mesiac automaticky obnoví za ${ renewPriceStr } na 1 mesiac. Službu môžete kedykoľvek zrušiť.",
-        "Špeciálna zľavnená cena ${ priceWithDiscount } platí počas prvého mesiaca. Kupón je platný pre ${ couponRedemptions } obnovení. Potom sa každý mesiac automaticky obnoví za ${ renewPriceStr } na 1 mesiac. Službu môžete kedykoľvek zrušiť."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Špeciálne zľavnená cena ${ priceWithDiscount } platí prvý mesiac. Potom sa každý mesiac automaticky obnoví za ${ renewPriceStr }. Službu môžete kedykoľvek zrušiť."
@@ -15408,6 +15542,9 @@
       "Deleting contacts": [
         "Mazanie kontaktov"
       ],
+      "Desktop": [
+        "Počítač"
+      ],
       "Disable categories?": [
         "Deaktivovať kategórie?"
       ],
@@ -15428,6 +15565,9 @@
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Stiahnuť aplikácie ${ DRIVE_APP_NAME }"
+      ],
+      "Download the app": [
+        "Stiahnuť aplikáciu"
       ],
       "Edit billing address": [
         "Upraviť fakturačnú adresu"
@@ -15510,6 +15650,9 @@
       "Get full access to ${ CALENDAR_APP_NAME }": [
         "Získajte plný prístup k ${ CALENDAR_APP_NAME }"
       ],
+      "Get more from your VPN": [
+        "Získajte zo svojej VPN viac"
+      ],
       "Get the ${ appName[APP_NAME] } apps": [
         "Získať ${ appName[APP_NAME] } aplikácie"
       ],
@@ -15533,6 +15676,9 @@
       ],
       "High security for your account": [
         "Vysoké zabezpečenie vášho účtu"
+      ],
+      "How does it all work?": [
+        "Ako to všetko funguje?"
       ],
       "How does it work?": [
         "Ako to funguje?"
@@ -15603,6 +15749,9 @@
       "Load remote content": [
         "Načítať vzdialený obsah"
       ],
+      "Make a secure connection your default": [
+        "Nastavte zabezpečené pripojenie ako východzie"
+      ],
       "Mark all messages as read": [
         "Označiť všetky správy ako prečítané"
       ],
@@ -15644,6 +15793,9 @@
       ],
       "Minicalendar": [
         "Minikalendár"
+      ],
+      "Mobile": [
+        "Mobil"
       ],
       "More": [
         "Viac"
@@ -15800,6 +15952,9 @@
       ],
       "Priority support:": [
         "Prioritná podpora:"
+      ],
+      "Private browsing vs VPN": [
+        "Súkromné surfovanie v porovnaní s VPN"
       ],
       "Processing...": [
         "Prebieha spracovanie..."
@@ -16065,6 +16220,9 @@
       "Verifying your payment...": [
         "Overujeme vašu platbu..."
       ],
+      "VPN explained": [
+        "Vysvetlenie VPN"
+      ],
       "Warning": [
         "Upozornenie"
       ],
@@ -16089,17 +16247,23 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "Vitajte v službe ${ BRAND_NAME } pre Business"
       ],
+      "What can a VPN protect you from?": [
+        "Pred čím vás môže VPN ochrániť?"
+      ],
+      "What is a VPN?": [
+        "Čo to je VPN?"
+      ],
       "What would you like to import?": [
         "Čo by ste chceli importovať?"
+      ],
+      "When is it most important to use a VPN?": [
+        "Kedy je najdôležitejšie používať VPN?"
       ],
       "You can now create unlimited folders and labels": [
         "Teraz môžete vytvárať neobmedzený počet priečinkov a štítkov"
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Vaša bezplatná skúšobná verzia služby ${ planName } končí ${ textDate }"
-      ],
-      "Your ${ planName } subscription has started": [
-        "Vaše predplatné ${ planName } začalo"
       ],
       "Your account is protected": [
         "Váš účet je chránený"

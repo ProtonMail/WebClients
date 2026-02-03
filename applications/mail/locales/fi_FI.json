@@ -2098,6 +2098,9 @@
       ]
     },
     "Bug category": {
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "${ LUMO_SHORT_APP_NAME } -ongelma"
+      ],
       "Application problem": [
         "Sovellusongelma"
       ],
@@ -4056,8 +4059,8 @@
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Varmista tilillesi korkein mahdollinen suojaus asettamalla palautuslauseke."
       ],
-      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
-        "Tuodaksesi CSV- ja VCF-tiedostoista, varmista ettei tiedoston koko ylitä ${ MAX_IMPORT_FILE_SIZE_STRING } tai yhteystietojen määrä ${ MAX_IMPORT_CONTACTS_STRING } yhteystietoa. Jos tiedostosi on suurempi, jaa se pienempiin osiin. ${ learnMoreLink }"
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Tuodaksesi CSV- ja VCF-tiedostoista, varmista ettei tiedoston koko ylitä ${ MAX_IMPORT_FILE_SIZE_STRING } tai yhteystietojen määrä ${ maxContactString } yhteystietoa. Jos tiedostosi on suurempi, jaa se pienempiin osiin. ${ learnMoreLink }"
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Tuo yhteystietosi Googlesta tai Outlookista ${ easySwitchLink }."
@@ -4190,6 +4193,17 @@
       ],
       "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
         "${ PLAN_NAMES[PLANS.PASS] }-tilauksesi on erityishintaan ${ price } vuodessa. Jos vaihdat maksuttomaan tilaukseen, menetät alennuksen ikuisesti, vaikka päivittäisit uudelleen tulevaisuudessa."
+      ]
+    },
+    "Drawer tab, Action": {
+      "Download for Linux": [
+        "Lataa Linuxille"
+      ],
+      "Download for macOS": [
+        "Lataa macOS:lle"
+      ],
+      "Download for Windows": [
+        "Lataa Windowsille"
       ]
     },
     "driveplus2024: Deal details": {
@@ -4700,6 +4714,9 @@
       "Please activate your search again": [
         "Aktivoi hakusi uudelleen"
       ],
+      "Please enter a valid postal code": [
+        "Syötä kelvollinen postinumero"
+      ],
       "Please enter a valid ZIP code": [
         "Syötä kelvollinen postinumero"
       ],
@@ -4922,6 +4939,9 @@
       "Try using only letters, numerals, and _.-": [
         "Kokeile vain kirjaimia, numeroita ja merkkejä _.-"
       ],
+      "Unable to load VPN dashboard. Please check your connection and try again.": [
+        "VPN-hallintapaneelia ei voi ladata. Tarkista yhteytesi ja yritä uudelleen."
+      ],
       "Unexpected error, we can't import the contacts": [
         "Odottamaton virhe, yhteystietojen tuonti ei onnistu"
       ],
@@ -5067,8 +5087,8 @@
       "An error occurred uploading your file. No file has been selected.": [
         "Virhe siirrettäessä tiedostoa. Tiedostoa ei ole valittu."
       ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
-        "Tiedosto ${ formattedFilename } sisältää yli ${ MAX_IMPORT_CONTACTS_STRING } yhteystietoa."
+      "Your file ${ formattedFilename } contains more than ${ maxContactString } contacts.": [
+        "Tiedosto ${ formattedFilename } sisältää yli ${ maxContactString } yhteystietoa."
       ],
       "Your file ${ formattedFilename } has no contacts to be imported.": [
         "Tiedosto ${ formattedFilename } ei sisällä tuotavia yhteystietoja."
@@ -6500,6 +6520,9 @@
         "${ updated } yhteystieto päivitettiin.",
         "${ updated } yhteystietoa päivitettiin."
       ],
+      "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
+        "${ VPN_APP_NAME } naamioi IP-osoitteesi, jotta verkkosivustot eivät voi tunnistaa sinua."
+      ],
       "(${ memberCount } member)": [
         "(${ memberCount } jäsen)",
         "(${ memberCount } jäsentä)"
@@ -6519,6 +6542,12 @@
       "**${ total }** result found in ${ labelName }": [
         "**${ total }** tulos kohteessa ${ labelName }",
         "**${ total }** tulosta kohteessa ${ labelName }"
+      ],
+      "**Auto-connect**: Opens and connects to VPN as soon as you turn on your device.": [
+        "**Automaattinen yhdistäminen**: Avaa ja muodostaa VPN-yhteyden heti, kun käynnistät laitteen."
+      ],
+      "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
+        "**Tappokytkin**: Estää tietovuodot katkaisemalla Internet-yhteytesi, jos VPN-yhteys katkeaa yllättäen."
       ],
       "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
         "**Vaihe 1:** Kutsu kaverisi ${ BRAND_NAME }:iin suosittelulinkilläsi."
@@ -6551,8 +6580,20 @@
       "A request to unsubscribe from this mailing list will be sent to the sender of the newsletter and automatically processed.": [
         "Sähköpostitilauksen lopetuspyyntö lähetetään viestien lähettäjälle ja käsitellään automaattisesti."
       ],
+      "A secure connection is essential when working remotely. A VPN protects company data from cyber threats and keeps your work private.": [
+        "Suojattu yhteys on välttämätön etätyöskenneltäessä. VPN suojaa yrityksen tietoja kyberuhkilta ja pitää työsi yksityisenä."
+      ],
       "A user is an account associated with a single username, mailbox, and person": [
         "Käyttäjä tarkoittaa tiliä, joka on liitetty yksittäiseen käyttäjätunnukseen, postilaatikkoon ja henkilöön."
+      ],
+      "A VPN encrypts your connection and hides your IP address, making it much harder for anyone to track or monitor your browsing.": [
+        "VPN salaa yhteytesi ja piilottaa IP-osoitteesi, mikä vaikeuttaa huomattavasti selaamisesi seuraamista tai valvomista."
+      ],
+      "A VPN hides your IP address and encrypts your browsing activity, making it harder for websites, advertisers, and ISPs to track you over time.": [
+        "VPN piilottaa IP-osoitteesi ja salaa selaustoimintasi, jolloin verkkosivustojen, mainostajien ja Internet-palveluntarjoajien on vaikeampi seurata sinua ajan mittaan."
+      ],
+      "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
+        "VPN on suojattu tunneli laitteesi ja Internetin välillä. Se piilottaa sijaintisi ja toimintasi Internet-palveluntarjoajaltasi (ISP) ja verkkosivustoilta, joilla vierailet."
       ],
       "Access 6,500+ high-speed servers on up to 10 devices to keep your browsing data safe. Available on ${ ios }, ${ android }, ${ appleTV }, and ${ desktop }.": [
         "Käytä yli 6 500 nopeaa palvelinta jopa 10 laitteella ja pidä selaustietosi turvassa. Saatavilla seuraavilla alustoilla: ${ ios }, ${ android }, ${ appleTV } ja ${ desktop }."
@@ -6566,6 +6607,9 @@
       "Active": [
         "Aktiiviset"
       ],
+      "Ad targeting": [
+        "Mainosten kohdentaminen"
+      ],
       "Add image URL": [
         "Lisää kuvan URL"
       ],
@@ -6577,6 +6621,9 @@
       ],
       "Addresses settings": [
         "Osoiteasetukset"
+      ],
+      "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
+        "Mainostajat seuraavat selauskäyttäytymistäsi näyttääkseen kohdennettuja mainoksia. ${ VPN_APP_NAME } estää seurannan ja mainokset, nopeuttaen yhteyttäsi ja parantaen käyttökokemustasi."
       ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "Tekoälyä käyttävä avustaja, joka auttaa sinua laatimaan parempia viestejä nopeasti ja vaivattomasti."
@@ -6619,9 +6666,9 @@
       "All your changes will be lost.": [
         "Kaikki muutokset menetetään."
       ],
-      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
-        "Kaikki yhteystiedot tuodaan ${ MAX_CONTACTS_PER_USER } yhteystiedon rajoitukseen saakka",
-        "Kaikki yhteystiedot tuodaan ${ MAX_CONTACTS_PER_USER } yhteystiedon rajoitukseen saakka"
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "Kaikki yhteystiedot tuodaan ${ maxContact } yhteystiedon rajoitukseen saakka",
+        "Kaikki yhteystiedot tuodaan ${ maxContact } yhteystiedon rajoitukseen saakka"
       ],
       "American Express SafeKey logo": [
         "American Express SafeKey -logo"
@@ -6820,6 +6867,9 @@
       ],
       "Confirm phishing report": [
         "Vahvista tietojenkalasteluilmoitus"
+      ],
+      "Connect to ${ VPN_APP_NAME } to browse privately": [
+        "Yhdistä ${ VPN_APP_NAME }:ään selataksesi yksityisesti"
       ],
       "Consider when's the best time for your recipient to receive your email, and schedule it to be sent then.": [
         "Mieti, mihin aikaan vastaanottajasi on parasta vastaanottaa sähköpostisi, ja ajoita se lähetettäväksi silloin."
@@ -7151,6 +7201,9 @@
       "Generate text": [
         "Luo tekstiä"
       ],
+      "Geoblocking": [
+        "Geoblokkaus"
+      ],
       "Get it on Google Play": [
         "Hanki Google Playstä"
       ],
@@ -7162,6 +7215,9 @@
       ],
       "Google Pay mark": [
         "Google Payn merkki"
+      ],
+      "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
+        "Hallitukset ja Internet-palveluntarjoajat voivat valvoa verkkotoimintaasi. Piilottamalla oikean IP-osoitteensi ja salaamalla toimintasi, selaamisesi muuttuu yksityiseksi."
       ],
       "Has ${ numAttachments } attachment (${ numAttachmentsSize })": [
         "Sisältää ${ numAttachments } liitteen (${ numAttachmentsSize })",
@@ -7240,6 +7296,9 @@
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Tietojasi tuodaan tililtä ${ fromEmail } tilille ${ toEmail }."
       ],
+      "In restrictive countries": [
+        "Rajoittavissa maissa"
+      ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "Seuraavassa vaiheessa voit tehdä talletuksen Bitcoin-osoitteella."
       ],
@@ -7277,8 +7336,7 @@
         "Valmistellaan…"
       ],
       "Insert image": [
-        "Lisää kuva",
-        "Lisää kuvia"
+        "Lisää kuva"
       ],
       "Insert link": [
         "Lisää linkki"
@@ -7300,6 +7358,9 @@
       ],
       "It's better to have:": [
         "On parempi olla:"
+      ],
+      "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
+        "VPN:ää kannattaa käyttää aina. Mutta näissä tilanteissa kyberturvauhat voivat olla suurimmat:"
       ],
       "JCB logo": [
         "JCB-logo"
@@ -7451,6 +7512,9 @@
       "More refine actions": [
         "Lisää parannusehdotuksia"
       ],
+      "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
+        "Useimmat julkiset Wi-Fi-verkot ovat turvallisia, mutta joskus puutteellisesti suojattuja, jolloin voit altistua kyberuhkille. VPN salaa tietoliikenteesi ja pitää sinut suojattuna."
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Nimeä uusi kansio ja valitse mihin kansioon haluat sijoittaa sen. Jos et valitse yläkansiota, luodaan uusi kansio juuritason kansiona."
       ],
@@ -7517,6 +7581,9 @@
       "Not a valid URL": [
         "Virheellinen URL"
       ],
+      "Not connected": [
+        "Ei yhdistetty"
+      ],
       "Number of dedicated servers in the organization": [
         "Organisaation omien palvelinten määrä"
       ],
@@ -7525,6 +7592,9 @@
       ],
       "of": [
         "/"
+      ],
+      "On public WiFi networks": [
+        "Julkisissa Wi-Fi-verkoissa"
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Ainakin yksi luotetuista avaimistasi on merkitty niiden omistajien toimesta \"vaarantuneeksi\". Suosittelemme että muutat avaimet \"epäluotettaviksi\"."
@@ -7683,6 +7753,9 @@
       "Print email": [
         "Tulosta viesti"
       ],
+      "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
+        "Yksityinen selaus (tai \"incognito\"-tila) on hyödyllinen pitämään toimintasi piilotettuna vain laitteellasi. Se estää selainta tallentamasta selaushistoriaa ja evästeitä, mutta se ei tee sinusta näkymätöntä. Internet-palveluntarjoajasi, verkon ylläpitäjäsi ja vierailemasi verkkosivustot näkevät edelleen, mitä teet verkossa."
+      ],
       "Proofread selection": [
         "Oikolue valinta"
       ],
@@ -7754,6 +7827,9 @@
       ],
       "Saving draft": [
         "Tallennetaan luonnosta"
+      ],
+      "Scan the QR code with your mobile device": [
+        "Skannaa QR-koodi mobiililaitteellasi"
       ],
       "Scheduled send of this message will be canceled.": [
         "Viestin ajoitettu lähetys perutaan."
@@ -7867,6 +7943,12 @@
       "Snoozing this conversation will be canceled.": [
         "Tämän keskustelun torkutus perutaan."
       ],
+      "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
+        "Jotkut viranomaiset estävät tai rajoittavat pääsyä tietyille verkkosivustoille. VPN auttaa ohittamaan sensuurin ja pitämään toimintasi ja identiteettisi yksityisenä."
+      ],
+      "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
+        "Jotkin verkkosivustot ja suoratoistopalvelut estävät sisältöä aluekohtaisesti. VPN:n avulla voit kiertää nämä rajoitukset ja käyttää Internetiä vapaasti."
+      ],
       "Sorry, this message does not exist or has already expired.": [
         "Valitettavasti viestiä ei ole olemassa tai se on jo tuhoutunut."
       ],
@@ -7875,6 +7957,9 @@
       ],
       "Start using the shorter, catchier version of your email address.": [
         "Aloita sähköpostiosoitteesi lyhyemmän ja tarttuvamman version käyttäminen."
+      ],
+      "Stay connected effortlessly by enabling the following VPN settings:": [
+        "Pysy vaivattomasti yhdistettynä ottamalla käyttöön seuraavat VPN-asetukset:"
       ],
       "Storage capabilities are not supported in this browser, we need this support to enable message content search.": [
         "Tämä selain ei tue tallennusominaisuuksia, joita tarvitaan viestin sisältöhaun suorittamiseen."
@@ -7909,6 +7994,9 @@
       ],
       "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
         "Tilaus päättyy: Jotta ${ planName } -etusi säilyvät, käynnistä tilauksesi uudelleen Google Play Kaupassa viimeistään ${ byDate }. ${ reactivateLink }"
+      ],
+      "Surveillance": [
+        "Tarkkailu"
       ],
       "Symbols (#$&)": [
         "Symbolit (#$&)"
@@ -8038,6 +8126,9 @@
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Linkki saattaa olla homografiahyökkäys. Vahvista linkin olevan sivusto, jolla haluat vierailla, tai älä avaa sitä."
       ],
+      "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
+        "Tämä tarkoittaa, että Internet-palveluntarjoajasi ja vierailemasi verkkosivustot eivät voi yhdistää henkilötietojasi verkkotoimintaasi."
+      ],
       "This message has been adjusted to comply with a dark background.": [
         "Viestin ulkoasua on muutettu tummalle taustalle sopivaksi."
       ],
@@ -8114,6 +8205,9 @@
       "This sender's public key has not been trusted yet.": [
         "Tämän lähettäjän julkiseen avaimeen ei ole vielä luotettu."
       ],
+      "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
+        "Verkkosivustot ja Internet-palveluntarjoajat (ISP) voivat käyttää tätä yksilöllistä koodia yhdistääkseen sijaintisi ja selaushistoriasi laitteeseesi"
+      ],
       "This was shown to you because your email subject line contains password reset keywords.": [
         "Tämä näytettiin sinulle koska sähköpostiviestisi aihe sisältää salasanan palauttamisen avainsanoja."
       ],
@@ -8173,6 +8267,9 @@
       ],
       "Trackers blocked:": [
         "Seurantoja estetty:"
+      ],
+      "Tracking": [
+        "Seuranta"
       ],
       "Trash existing messages": [
         "Poista olemassa olevat viestit"
@@ -8300,6 +8397,9 @@
       "Visa Secure logo": [
         "Visa Secure -logo"
       ],
+      "VPN IP": [
+        "VPN:n IP-osoite"
+      ],
       "Warning": [
         "Varoitus"
       ],
@@ -8359,6 +8459,12 @@
       ],
       "When giving out your email, use a unique, disposable hide-my-email alias instead of your real email address.": [
         "Kun jaat sähköpostiosoitteesi, käytä todellisen osoitteesi sijaan yksilöllistä, hävitettävää Hide-my-email-aliasta."
+      ],
+      "When working remotely": [
+        "Etätyöskennellessä"
+      ],
+      "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
+        "Kun yhdistät VPN:ään, se käyttää salaustekniikkaa IP-osoitteesi (laitteellesi annettu yksilöllinen koodi) salaamiseen."
       ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Kun otit luotetut avaimet käyttöön lähettäjälle ${ senderName }, lisättiin julkiset avaimet yhteystiedon tietoihin."
@@ -8588,6 +8694,15 @@
       "Your information was found on ${ displayedDate }": [
         "Tietosi havaittiin ${ displayedDate }"
       ],
+      "Your internet service provider can monitor and sometimes sell your data, or even restrict what websites you can access.": [
+        "Internet-palveluntarjoajasi voi valvoa ja myös myydä tietojasi, tai jopa rajoittaa mitä verkkosivustoja voit käyttää."
+      ],
+      "Your IP": [
+        "IP-osoitteesi"
+      ],
+      "Your IP address is visible and can be used to track your online activity.": [
+        "IP-osoitteesi näkyy, ja sitä voidaan käyttää verkkotoimintasi seuraamiseen."
+      ],
       "Your login information will not be saved after the import is completed.": [
         "Kirjautumistietojasi ei säilytetä tuonnin päätyttyä."
       ],
@@ -8607,11 +8722,17 @@
       "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
         "Seuraava laskutuspäiväsi on ${ renewalTime }. Jos haluat muuttaa tilausta heti, ota yhteyttä asiakaspalveluun."
       ],
+      "Your online activity is protected": [
+        "Verkkotoimintasi on suojattu"
+      ],
       "Your password was leaked:": [
         "Salasanasi paljastui:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Puhelinnumeroasi käytetään vain tähän kertaluontoiseen vahvistukseen."
+      ],
+      "Your physical location is visible and can be used to restrict your access to the internet.": [
+        "Fyysinen sijaintisi on nähtävissä, ja sitä voidaan käyttää Internet-käyttösi rajoittamiseen."
       ],
       "Your private writing assistant": [
         "Yksityinen kirjoitusavustajasi"
@@ -9703,6 +9824,15 @@
       "Your domain": [
         "Sinun verkkotunnuksesi"
       ],
+      "Your IP": [
+        "IP-osoitteesi"
+      ],
+      "Your ISP": [
+        "Internet-palveluntarjoajasi"
+      ],
+      "Your location": [
+        "Sijaintisi"
+      ],
       "Your password (admin)": [
         "Salasanasi (ylläpitäjä)"
       ],
@@ -10163,6 +10293,21 @@
       ],
       "Trash": [
         "Poista"
+      ]
+    },
+    "meet_2025: Feature": {
+      "${ n } participant": [
+        "${ n } osallistuja",
+        "${ n } osallistujaa"
+      ],
+      "Booking pages": [
+        "Ajanvaraussivut"
+      ],
+      "Browser, mobile, and desktop apps": [
+        "Selain, mobiili- ja työpöytäsovellukset"
+      ],
+      "Meeting recording": [
+        "Kokoustallenne"
       ]
     },
     "Message": {
@@ -11897,28 +12042,28 @@
       "terms and conditions": [
         "käyttöehdot"
       ],
-      "The coupon is valid for ${ couponRedemptions } renewal.": [
-        "Etukoodi on voimassa ${ couponRedemptions } uudistuksen ajan.",
-        "Etukoodi on voimassa ${ couponRedemptions } uudistuksen ajan."
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "Alennus on voimassa ${ renewalsWithCoupon } uudistuksen ajan.",
+        "Alennus on voimassa ${ renewalsWithCoupon } uudistuksen ajan."
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Erikoistarjoushinta on voimassa ${ couponRedemptions } kuukauden. Sen jälkeen se uusitaan automaattisesti hintaan ${ renewPriceStr } yhden kuukauden ajaksi. Voit peruuttaa tilauksen milloin tahansa.",
+        "Erikoistarjoushinta on voimassa ${ couponRedemptions } kuukautta. Sen jälkeen se uusitaan automaattisesti hintaan ${ renewPriceStr } yhden kuukauden ajaksi. Voit peruuttaa tilauksen milloin tahansa."
       ],
       "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
         "Alennushinta on voimassa ${ subscriptionLength } kuukauden ajan.",
         "Alennushinta on voimassa ${ subscriptionLength } kuukauden ajan."
       ],
-      "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "Eirtyishinta on voimassa ensimmäisen kuukauden ajan. ${ couponRedemptions } uusiminen sallitaan. Sen jälkeen se uusiutuu automaattisesti hintaan ${ renewPriceStr } yhdeksi kuukaudeksi. Voit perua tilauksen milloin tahansa.",
-        "Eirtyishinta on voimassa ensimmäisen kuukauden ajan. ${ couponRedemptions } uusimista sallitaan. Sen jälkeen se uusiutuu automaattisesti hintaan ${ renewPriceStr } yhdeksi kuukaudeksi. Voit perua tilauksen milloin tahansa."
-      ],
       "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Erityishinta on voimassa vain ensimmäisen kuukauden ajan, jonka jälkeen tilaus jatkuu automaattisesti ${ renewPriceStr } kuukausihintaan. Voit perua milloin tahansa."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Erikoistarjoushinta ${ priceWithDiscount } on voimassa ${ couponRedemptions } kuukauden. Sen jälkeen se uusitaan automaattisesti hintaan ${ renewPriceStr } yhden kuukauden ajaksi. Voit peruuttaa tilauksen milloin tahansa.",
+        "Erikoistarjoushinta ${ priceWithDiscount } on voimassa ${ couponRedemptions } kuukautta. Sen jälkeen se uusitaan automaattisesti hintaan ${ renewPriceStr } yhden kuukauden ajaksi. Voit peruuttaa tilauksen milloin tahansa."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "Erikoisalennettu hinta, ${ priceWithDiscount } , on voimassa ensimmäisen ${ subscriptionLength } kuukauden.",
         "Erikoisalennettu hinta, ${ priceWithDiscount } , on voimassa ensimmäiset ${ subscriptionLength } kuukautta."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "Erikoisalennettu ${ priceWithDiscount } hinta on voimassa ensimmäisen kuukauden. Etukoodi kelpaa ${ couponRedemptions } uusintakerran.Tämän jälkeen uusinta tapahtuu automaattisesti hintaan ${ renewPriceStr } per kuukausi. Voit peruuttaa tilauksen milloin vain.",
-        "Erikoisalennettu ${ priceWithDiscount } hinta on voimassa ensimmäisen kuukauden. Etukoodi kelpaa ${ couponRedemptions } uusintakertaa.Tämän jälkeen uusinta tapahtuu automaattisesti hintaan ${ renewPriceStr } per kuukausi. Voit peruuttaa tilauksen milloin vain."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Erityishinta ${ priceWithDiscount } on voimassa vain ensimmäisen kuukauden ajan, jonka jälkeen tilaus jatkuu automaattisesti ${ renewPriceStr } kuukausihintaan. Voit perua milloin tahansa."
@@ -12433,6 +12578,9 @@
       ],
       "You can get up to **${ maxRewardAmount }** in credit.": [
         "Voit ansaita jopa **${ maxRewardAmount }** krediitteinä."
+      ],
+      "your subscription": [
+        "tilauksesi"
       ]
     },
     "Remaining days before the message expire": {
@@ -14552,6 +14700,9 @@
       "Deleting contacts": [
         "Poistetaan yhteystietoja"
       ],
+      "Desktop": [
+        "Työpöytä"
+      ],
       "Disable categories?": [
         "Poistetaanko luokat käytöstä?"
       ],
@@ -14572,6 +14723,9 @@
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Lataa ${ DRIVE_APP_NAME }-sovellukset"
+      ],
+      "Download the app": [
+        "Lataa sovellus"
       ],
       "Edit billing address": [
         "Muokkaa laskutusosoitetta"
@@ -14654,6 +14808,9 @@
       "Get full access to ${ CALENDAR_APP_NAME }": [
         "Hanki kaikki ${ CALENDAR_APP_NAME } ominaisuudet käyttöösi"
       ],
+      "Get more from your VPN": [
+        "Saa enemmän VPN-yhteydestäsi"
+      ],
       "Get the ${ appName[APP_NAME] } apps": [
         "Hanki ${ appName[APP_NAME] } -sovellukset"
       ],
@@ -14678,11 +14835,17 @@
       "High security for your account": [
         "Vahva suojaus tilillesi"
       ],
+      "How does it all work?": [
+        "Miten se toimii?"
+      ],
       "How does it work?": [
         "Miten se toimii?"
       ],
       "How to update your email address": [
         "Miten päivität sähköpostiosoitteesi"
+      ],
+      "How your free trial works": [
+        "Miten ilmainen kokeilujakso toimii"
       ],
       "Human verification": [
         "Ihmisvahvistus"
@@ -14742,6 +14905,9 @@
       "Load remote content": [
         "Lataa ulkoinen sisältö"
       ],
+      "Make a secure connection your default": [
+        "Aseta suojattu yhteys oletukseksesi"
+      ],
       "Mark all messages as read": [
         "Merkitse kaikki viestit luetuiksi"
       ],
@@ -14783,6 +14949,9 @@
       ],
       "Minicalendar": [
         "Pienoiskalenteri"
+      ],
+      "Mobile": [
+        "Mobiili"
       ],
       "More": [
         "Lisää"
@@ -14939,6 +15108,9 @@
       ],
       "Priority support:": [
         "Ensisijainen tuki:"
+      ],
+      "Private browsing vs VPN": [
+        "Yksityinen selaus vs VPN"
       ],
       "Processing...": [
         "Käsitellään..."
@@ -15196,6 +15368,9 @@
       "Verifying your payment...": [
         "Vahvistetaan maksua..."
       ],
+      "VPN explained": [
+        "VPNnän selitys"
+      ],
       "Warning": [
         "Varoitus"
       ],
@@ -15218,14 +15393,26 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "Tervetuloa ${ BRAND_NAME } for Businessiin"
       ],
+      "What can a VPN protect you from?": [
+        "Miltä VPN voi suojata sinua?"
+      ],
+      "What is a VPN?": [
+        "Mikä on VPN?"
+      ],
       "What would you like to import?": [
         "Mitä haluat tuoda?"
+      ],
+      "When is it most important to use a VPN?": [
+        "Milloin VPN:n käyttäminen on tärkeintä?"
       ],
       "You can now create unlimited folders and labels": [
         "Voit nyt luoda rajattomasti kansioita ja tunnisteita"
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "${ planName } -kokeilusi päättyy ${ textDate }"
+      ],
+      "Your ${ planTitle } subscription has started": [
+        "${ planTitle }-tilauksesi on alkanut"
       ],
       "Your account is protected": [
         "Tilisi on suojattu"
