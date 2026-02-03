@@ -1226,6 +1226,18 @@
       ],
       "Zoom out": [
         "Uzaklaştır"
+      ],
+      "Cancel downloads": [
+        "İndirmeleri iptal et"
+      ],
+      "Cancel transfers": [
+        "Aktarımları iptal et"
+      ],
+      "Download (${ nbSelected })": [
+        "İndir (${ nbSelected })"
+      ],
+      "Scan & Download (${ nbSelected })": [
+        "Tara ve indir (${ nbSelected })"
       ]
     },
     "Action: Docs": {
@@ -2975,6 +2987,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Zaten 10 takma ad oluşturmuşsunuz. Sınırsız sayıda takma ad oluşturabilmek ve 500 GB depolama alanı edinmek için ${ BRAND_NAME } Limited tarifesine geçin."
+      ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "CSV ve VCF dosyası ile içe aktarma için, ${ MAX_IMPORT_FILE_SIZE_STRING } dosya boyutunu ya da ${ maxContactString } kişiyi aşmadığınızdan emin olun. Dosyanız büyükse lütfen daha küçük dosyalara bölün. ${ learnMoreLink }."
       ]
     },
     "description": {
@@ -3842,6 +3857,9 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Şifresi çözülemeyen ad"
+      ],
+      "We cannot retrieve this item": [
+        "Bu öge alınamadı"
       ]
     },
     "error": {
@@ -3917,6 +3935,9 @@
       ],
       "Your file ${ formattedFilename } is empty.": [
         "${ formattedFilename } dosyanız boş."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ maxContactString } contacts.": [
+        "${ formattedFilename } dosyanızda ${ maxContactString } taneden fazla kişi var."
       ]
     },
     "Error importing event": {
@@ -6807,6 +6828,19 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Kendi hesap bilgilerinizi görmeyi sürdürebileceksiniz. Ancak kuruluşunuzun tüm kullanıcı hesapları silinecek."
+      ],
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "${ maxContact } kişiye kadar olan tüm kişileriniz içe aktarılacak",
+        "${ maxContact } kişiye kadar olan tüm kişileriniz içe aktarılacak"
+      ],
+      "Computed hash does not match XAttr": [
+        "Hesaplanan karma XAttr ile eşleşmiyor"
+      ],
+      "This will cancel any remaining downloads.": [
+        "Bu işlem kalan tüm indirmeleri iptal edecek."
+      ],
+      "This will cancel any remaining uploads and downloads. Cancelled uploads won't be saved in ${ DRIVE_APP_NAME }.": [
+        "Bu işlem kalan tüm yüklemeleri ve indirmeleri iptal edecek. İptal edilen yüklemeler ${ DRIVE_APP_NAME } içine kaydedilmeyecek."
       ]
     },
     "info": {
@@ -7859,7 +7893,7 @@
         "Uçtan uca şifrelenmiş ekran paylaşımı ve geçici çağrı içi sohbet"
       ],
       "Meeting recording": [
-        "Toplantı kaydı"
+        "Görüşme kaydı"
       ],
       "One active meeting at a time": [
         "Aynı anda bir etkin görüşme"
@@ -10009,6 +10043,18 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Aboneliğinizde şu anda uygulanan bir indirim var. Yeni indirime geçmek bu indirimin artık uygulanmayacağı anlamına gelir."
+      ],
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "İndirim ${ renewalsWithCoupon } yenileme için geçerlidir.",
+        "İndirim ${ renewalsWithCoupon } yenileme için geçerlidir."
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Özel indirimli fiyat ${ couponRedemptions } ay boyunca geçerlidir. Ardından otomatik olarak 1 ay için ${ renewPriceStr } ile yenilenir. İstediğiniz zaman iptal edebilirsiniz.",
+        "Özel indirimli fiyat ${ couponRedemptions } ay boyunca geçerlidir. Ardından otomatik olarak 1 ay için ${ renewPriceStr } ile yenilenir. İstediğiniz zaman iptal edebilirsiniz."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Özel indirimli fiyat ${ priceWithDiscount }, ${ couponRedemptions } ay boyunca geçerlidir. Ardından otomatik olarak 1 ay için ${ renewPriceStr } ile yenilenir. İstediğiniz zaman iptal edebilirsiniz.",
+        "Özel indirimli fiyat ${ priceWithDiscount }, ${ couponRedemptions } ay boyunca geçerlidir. Ardından otomatik olarak 1 ay için ${ renewPriceStr } ile yenilenir. İstediğiniz zaman iptal edebilirsiniz."
       ]
     },
     "Payments.Error": {
@@ -12827,6 +12873,15 @@
       ],
       "You’ve got 5 GB of storage": [
         "5 GB depolama alanı kazandınız"
+      ],
+      "Cancel all downloads?": [
+        "Tüm indirmeler iptal edilsin mi?"
+      ],
+      "Cancel all transfers?": [
+        "Tüm aktarımlar iptal edilsin mi?"
+      ],
+      "Your ${ planTitle } subscription has started": [
+        "${ planTitle } aboneliğiniz başladı"
       ]
     },
     "Today icon tooltip in mini calendar": {
