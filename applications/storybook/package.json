@@ -15,7 +15,7 @@
         "lint": "eslint --quiet",
         "pretty": "prettier --write $(find . -path ./node_modules -prune -o -path ./src -type f -name '*.js' -o -name '*.ts' -o -name '*.tsx')",
         "test:visual": "yarn build:wait && playwright test --config=playwright.config.ts",
-        "test:visual:clean": "rimraf tests/stories-visual.test.ts-snapshots",
+        "test:visual:clean": "rimraf ./tests/stories-visual.test.ts-snapshots",
         "test:visual:update": "yarn run test:visual:clean && yarn run test:visual -u"
     },
     "dependencies": {
