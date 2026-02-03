@@ -3319,9 +3319,6 @@
       "An error occurred uploading your file. No file has been selected.": [
         "आपकी फ़ाइल अपलोड करते समय एक त्रुटि हुई। कोई फ़ाइल नहीं चुनी गई है।"
       ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
-        "आपकी फ़ाइल ${ formattedFilename } में ${ MAX_IMPORT_CONTACTS_STRING } से अधिक संपर्क हैं।"
-      ],
       "Your file ${ formattedFilename } has no contacts to be imported.": [
         "आपकी फ़ाइल ${ formattedFilename } में आयात करने के लिए कोई संपर्क नहीं है।"
       ],
@@ -11198,6 +11195,14 @@
       ],
       "vCard field": [
         "vCard फील्ड"
+      ]
+    },
+    "Theme": {
+      "Dark": [
+        "अंधेरा"
+      ],
+      "Light": [
+        "रोशनी"
       ]
     },
     "Time unit": {

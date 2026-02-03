@@ -3742,9 +3742,6 @@
       "An error occurred uploading your file. No file has been selected.": [
         "Pri nalaganju datoteke je prišlo do napake. Izbrana ni bila nobena datoteka."
       ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
-        "Datoteka ${ formattedFilename } vsebuje več kot ${ MAX_IMPORT_CONTACTS_STRING } stikov."
-      ],
       "Your file ${ formattedFilename } has no contacts to be imported.": [
         "V datoteki ${ formattedFilename } ni stikov, ki bi jih lahko uvozili."
       ],
@@ -5283,12 +5280,6 @@
       ],
       "All your changes will be lost.": [
         "Vse vaše spremembe bodo izgubljene."
-      ],
-      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
-        "Vsi vaši stiki bodo uvoženi, do meje ${ MAX_CONTACTS_PER_USER }.",
-        "Vsi vaši stiki bodo uvoženi, do meje ${ MAX_CONTACTS_PER_USER }.",
-        "Vsi vaši stiki bodo uvoženi, do meje ${ MAX_CONTACTS_PER_USER }.",
-        "Vsi vaši stiki bodo uvoženi, do meje ${ MAX_CONTACTS_PER_USER }."
       ],
       "Allocated": [
         "Dodeljeno"
@@ -10219,12 +10210,6 @@
       "terms and conditions": [
         "pravili in pogoji"
       ],
-      "The coupon is valid for ${ couponRedemptions } renewal.": [
-        "Kupon velja za ${ couponRedemptions } podaljšanje.",
-        "Kupon velja za ${ couponRedemptions } podaljšanji.",
-        "Kupon velja za ${ couponRedemptions } podaljšanja.",
-        "Kupon velja za ${ couponRedemptions } podaljšanj."
-      ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Izredno znižana cena ${ priceWithDiscount } velja za prvi mesec. Potem se bo samodejno podaljšala mesečno za ${ renewPriceStr }. Naročnino lahko kadarkoli prekinete."
       ],
@@ -11647,6 +11632,9 @@
       ],
       "Yes, it was me": [
         "Da, bil sem jaz."
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Preusmerjeni boste k ponudniku SSO tretje osebe."
       ]
     },
     "sso: auth device state": {
@@ -12551,6 +12539,14 @@
       ],
       "vCard field": [
         "Polje vCard"
+      ]
+    },
+    "Theme": {
+      "Dark": [
+        "Temna"
+      ],
+      "Light": [
+        "Svetla"
       ]
     },
     "Time unit": {

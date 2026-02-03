@@ -1233,6 +1233,9 @@
       "Edit address": [
         "Muokkaa osoitetta"
       ],
+      "Edit address “${ emailAddress }”": [
+        "Muokkaa osoitetta \"${ emailAddress }\""
+      ],
       "Enable": [
         "Ota käyttöön"
       ],
@@ -1247,6 +1250,9 @@
       ],
       "Generate missing keys for address “${ emailAddress }”": [
         "Luo puuttuvat avaimet osoitteelle “${ emailAddress }”"
+      ],
+      "Reconnect": [
+        "Yhdistä uudelleen"
       ],
       "Saving": [
         "Tallennetaan"
@@ -1767,6 +1773,9 @@
       ]
     },
     "Bug category": {
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "${ LUMO_SHORT_APP_NAME } -ongelma"
+      ],
       "Application problem": [
         "Sovellusongelma"
       ],
@@ -3256,8 +3265,8 @@
       "Simplify syncing and scheduling with shared calendars.": [
         "Yksinkertaista synkronointia ja ajoitusta jaetuilla kalentereilla."
       ],
-      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
-        "Tuodaksesi CSV- ja VCF-tiedostoista, varmista ettei tiedoston koko ylitä ${ MAX_IMPORT_FILE_SIZE_STRING } tai yhteystietojen määrä ${ MAX_IMPORT_CONTACTS_STRING } yhteystietoa. Jos tiedostosi on suurempi, jaa se pienempiin osiin. ${ learnMoreLink }"
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Tuodaksesi CSV- ja VCF-tiedostoista, varmista ettei tiedoston koko ylitä ${ MAX_IMPORT_FILE_SIZE_STRING } tai yhteystietojen määrä ${ maxContactString } yhteystietoa. Jos tiedostosi on suurempi, jaa se pienempiin osiin. ${ learnMoreLink }"
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Tuo yhteystietosi Googlesta tai Outlookista ${ easySwitchLink }."
@@ -3949,6 +3958,9 @@
       "Please enter a valid Entity ID URL": [
         "Syötä kelvollinen entiteetti-ID-URL"
       ],
+      "Please enter a valid postal code": [
+        "Syötä kelvollinen postinumero"
+      ],
       "Please enter a valid ZIP code": [
         "Syötä kelvollinen postinumero"
       ],
@@ -4262,8 +4274,8 @@
       "An error occurred uploading your file. No file has been selected.": [
         "Virhe siirrettäessä tiedostoa. Tiedostoa ei ole valittu."
       ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
-        "Tiedosto ${ formattedFilename } sisältää yli ${ MAX_IMPORT_CONTACTS_STRING } yhteystietoa."
+      "Your file ${ formattedFilename } contains more than ${ maxContactString } contacts.": [
+        "Tiedosto ${ formattedFilename } sisältää yli ${ maxContactString } yhteystietoa."
       ],
       "Your file ${ formattedFilename } has no contacts to be imported.": [
         "Tiedosto ${ formattedFilename } ei sisällä tuotavia yhteystietoja."
@@ -4349,6 +4361,9 @@
       ]
     },
     "Error message": {
+      "Account is deleted or disabled": [
+        "Tili on poistettu tai poistettu käytöstä"
+      ],
       "App currently unavailable": [
         "Sovellus ei ole tällä hetkellä käytettävissä"
       ],
@@ -4527,6 +4542,10 @@
       ],
       "Pending": [
         "Odottaa"
+      ],
+      "Pending invitation": [
+        "Odottava kutsu",
+        "Odottavaa kutsua"
       ],
       "Sorry, you can't switch plans at this time.": [
         "Valitettavasti et voi tällä hetkellä vaihtaa tilaustasi."
@@ -4766,6 +4785,9 @@
       ],
       "Double VPN": [
         "Kaksois-VPN"
+      ],
+      "File attachment ": [
+        "Liitetiedosto "
       ],
       "Lightning-fast speeds": [
         "Salamannopea"
@@ -5848,9 +5870,9 @@
       "All your changes will be lost.": [
         "Kaikki muutokset menetetään."
       ],
-      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
-        "Kaikki yhteystiedot tuodaan ${ MAX_CONTACTS_PER_USER } yhteystiedon rajoitukseen saakka",
-        "Kaikki yhteystiedot tuodaan ${ MAX_CONTACTS_PER_USER } yhteystiedon rajoitukseen saakka"
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "Kaikki yhteystiedot tuodaan ${ maxContact } yhteystiedon rajoitukseen saakka",
+        "Kaikki yhteystiedot tuodaan ${ maxContact } yhteystiedon rajoitukseen saakka"
       ],
       "Allocated": [
         "Varattu"
@@ -5992,6 +6014,9 @@
       ],
       "Cloud storage, integrated with ${ DOCS_APP_NAME }": [
         "Pilvitallennus, integroitu ${ DOCS_APP_NAME } kanssa"
+      ],
+      "Coming soon": [
+        "Tulossa pian"
       ],
       "Compromised": [
         "Vaarantunut"
@@ -7408,6 +7433,9 @@
       "trusted device": [
         "luotetulla laitteella"
       ],
+      "Two-factor authentication": [
+        "Kaksivaiheinen tunnistautuminen"
+      ],
       "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
         "Kahden salasanan tila vaatii kaksi salasanaa: Yhden tilillesi kirjautumiseen ja toisen tietojesi salauksen purkuun. (Edistynyt)"
       ],
@@ -8513,6 +8541,9 @@
       "Method for importing metadata": [
         "Metatietojen tuontitapa"
       ],
+      "Minimum ${ MIN_CHARS } characters": [
+        "Vähintään ${ MIN_CHARS } merkkiä"
+      ],
       "Minimum number of characters": [
         "Merkkien vähimmäismäärä"
       ],
@@ -9302,6 +9333,21 @@
       ],
       "Set up your account with your Porkbun domain.": [
         "Määritä tilisi Porkbun-verkkotunnuksellasi."
+      ]
+    },
+    "meet_2025: Feature": {
+      "${ n } participant": [
+        "${ n } osallistuja",
+        "${ n } osallistujaa"
+      ],
+      "Booking pages": [
+        "Ajanvaraussivut"
+      ],
+      "Browser, mobile, and desktop apps": [
+        "Selain, mobiili- ja työpöytäsovellukset"
+      ],
+      "Meeting recording": [
+        "Kokoustallenne"
       ]
     },
     "Member action": {
@@ -10740,6 +10786,9 @@
       "Allowed ${ defaultLabel }": [
         "Sallittu ${ defaultLabel }"
       ],
+      "Android": [
+        "Android"
+      ],
       "Country configs": [
         "Maakohtaiset määritykset"
       ],
@@ -11267,28 +11316,28 @@
       "terms and conditions": [
         "käyttöehdot"
       ],
-      "The coupon is valid for ${ couponRedemptions } renewal.": [
-        "Etukoodi on voimassa ${ couponRedemptions } uudistuksen ajan.",
-        "Etukoodi on voimassa ${ couponRedemptions } uudistuksen ajan."
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "Alennus on voimassa ${ renewalsWithCoupon } uudistuksen ajan.",
+        "Alennus on voimassa ${ renewalsWithCoupon } uudistuksen ajan."
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Erikoistarjoushinta on voimassa ${ couponRedemptions } kuukauden. Sen jälkeen se uusitaan automaattisesti hintaan ${ renewPriceStr } yhden kuukauden ajaksi. Voit peruuttaa tilauksen milloin tahansa.",
+        "Erikoistarjoushinta on voimassa ${ couponRedemptions } kuukautta. Sen jälkeen se uusitaan automaattisesti hintaan ${ renewPriceStr } yhden kuukauden ajaksi. Voit peruuttaa tilauksen milloin tahansa."
       ],
       "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
         "Alennushinta on voimassa ${ subscriptionLength } kuukauden ajan.",
         "Alennushinta on voimassa ${ subscriptionLength } kuukauden ajan."
       ],
-      "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "Eirtyishinta on voimassa ensimmäisen kuukauden ajan. ${ couponRedemptions } uusiminen sallitaan. Sen jälkeen se uusiutuu automaattisesti hintaan ${ renewPriceStr } yhdeksi kuukaudeksi. Voit perua tilauksen milloin tahansa.",
-        "Eirtyishinta on voimassa ensimmäisen kuukauden ajan. ${ couponRedemptions } uusimista sallitaan. Sen jälkeen se uusiutuu automaattisesti hintaan ${ renewPriceStr } yhdeksi kuukaudeksi. Voit perua tilauksen milloin tahansa."
-      ],
       "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Erityishinta on voimassa vain ensimmäisen kuukauden ajan, jonka jälkeen tilaus jatkuu automaattisesti ${ renewPriceStr } kuukausihintaan. Voit perua milloin tahansa."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Erikoistarjoushinta ${ priceWithDiscount } on voimassa ${ couponRedemptions } kuukauden. Sen jälkeen se uusitaan automaattisesti hintaan ${ renewPriceStr } yhden kuukauden ajaksi. Voit peruuttaa tilauksen milloin tahansa.",
+        "Erikoistarjoushinta ${ priceWithDiscount } on voimassa ${ couponRedemptions } kuukautta. Sen jälkeen se uusitaan automaattisesti hintaan ${ renewPriceStr } yhden kuukauden ajaksi. Voit peruuttaa tilauksen milloin tahansa."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "Erikoisalennettu hinta, ${ priceWithDiscount } , on voimassa ensimmäisen ${ subscriptionLength } kuukauden.",
         "Erikoisalennettu hinta, ${ priceWithDiscount } , on voimassa ensimmäiset ${ subscriptionLength } kuukautta."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "Erikoisalennettu ${ priceWithDiscount } hinta on voimassa ensimmäisen kuukauden. Etukoodi kelpaa ${ couponRedemptions } uusintakerran.Tämän jälkeen uusinta tapahtuu automaattisesti hintaan ${ renewPriceStr } per kuukausi. Voit peruuttaa tilauksen milloin vain.",
-        "Erikoisalennettu ${ priceWithDiscount } hinta on voimassa ensimmäisen kuukauden. Etukoodi kelpaa ${ couponRedemptions } uusintakertaa.Tämän jälkeen uusinta tapahtuu automaattisesti hintaan ${ renewPriceStr } per kuukausi. Voit peruuttaa tilauksen milloin vain."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Erityishinta ${ priceWithDiscount } on voimassa vain ensimmäisen kuukauden ajan, jonka jälkeen tilaus jatkuu automaattisesti ${ renewPriceStr } kuukausihintaan. Voit perua milloin tahansa."
@@ -11804,6 +11853,9 @@
       ],
       "You can get up to **${ maxRewardAmount }** in credit.": [
         "Voit ansaita jopa **${ maxRewardAmount }** krediitteinä."
+      ],
+      "your subscription": [
+        "tilauksesi"
       ]
     },
     "Remove organization logo": {
@@ -11856,6 +11908,9 @@
       ],
       "Edit": [
         "Muokkaa"
+      ],
+      "Purge all": [
+        "Tyhjennä kaikki"
       ],
       "Purge deleted": [
         "Tyhjennä poistetut"
@@ -13993,6 +14048,23 @@
         "vCard-kenttä"
       ]
     },
+    "Theme": {
+      "Dark": [
+        "Tumma"
+      ],
+      "Light": [
+        "Vaalea"
+      ],
+      "Mode: Auto": [
+        "Tila: Autom."
+      ],
+      "Mode: Dark": [
+        "Tila: Tumma"
+      ],
+      "Sync with system": [
+        "Seuraa järjestelmää"
+      ]
+    },
     "Themes": {
       "Themes": [
         "Teemat"
@@ -14025,6 +14097,10 @@
       ],
       "${ feature } is now active": [
         "${ feature } on nyt käytössä"
+      ],
+      "${ friendsInvited } Friend invited": [
+        "${ friendsInvited } ystävä kutsuttu",
+        "${ friendsInvited } ystävää kutsuttu"
       ],
       "${ friendsSubscribed } Friend subscribed": [
         "${ friendsSubscribed } ystävä tilasi",
@@ -14240,6 +14316,9 @@
       ],
       "Confirm phone number": [
         "Vahvista puhelinnumero"
+      ],
+      "Connect a Gmail address": [
+        "Yhdistä Gmail-osoite"
       ],
       "Connect apps and devices": [
         "Yhdistä sovelluksia ja laitteita"
@@ -14564,6 +14643,9 @@
       ],
       "How to choose a good logo": [
         "Miten valita hyvä logo"
+      ],
+      "How your free trial works": [
+        "Miten ilmainen kokeilujakso toimii"
       ],
       "Human verification": [
         "Ihmisvahvistus"
@@ -15011,6 +15093,9 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "Tervetuloa ${ BRAND_NAME } for Businessiin"
       ],
+      "Welcome to ${ planName }": [
+        "Tervetuloa ${ planName }:ään"
+      ],
       "What is an alias?": [
         "Mikä on alias?"
       ],
@@ -15436,8 +15521,14 @@
       ]
     },
     "Upsell": {
+      "${ BRAND_NAME } for Business": [
+        "${ BRAND_NAME } for Business"
+      ],
       "Did you know?": [
         "Tiesitkö?"
+      ],
+      "Everything you need to collaborate securely in a single subscription. Get access to ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, ${ SHEETS_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } and ${ LUMO_SHORT_APP_NAME } AI Assistant.": [
+        "Kaikki mitä tarvitset turvalliseen yhteistyöhön yhdellä tilauksella. Saat käyttöösi ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, ${ SHEETS_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } ja ${ LUMO_SHORT_APP_NAME } AI Assistantin."
       ],
       "Get ${ drivePlusPlanMaxSpace } storage for your files, photos and documents, and recover file versions with 10-year file recovery.": [
         "Hanki ${ drivePlusPlanMaxSpace } tallennustilaa tiedostoillesi, valokuvillesi ja dokumenteillesi ja palauta tiedostoversioita 10 vuoden tiedostojen palautustakuun avulla."
@@ -15733,11 +15824,17 @@
       ]
     },
     "VPNClient": {
+      "Android": [
+        "Android"
+      ],
       "Android TV": [
         "Android TV"
       ],
       "Chromebook": [
         "Chromebook"
+      ],
+      "GNU/Linux": [
+        "GNU/Linux"
       ],
       "iOS": [
         "iOS"

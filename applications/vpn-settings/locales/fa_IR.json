@@ -2464,9 +2464,6 @@
       "An error occurred uploading your file. No file has been selected.": [
         "هنگام بارگذاری فایل شما خطایی رخ داد. هیچ فایلی انتخاب نشده است."
       ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
-        "فایل ${ formattedFilename } شما شامل بیش از ${ MAX_IMPORT_CONTACTS_STRING } مخاطب می‌باشد."
-      ],
       "Your file ${ formattedFilename } has no contacts to be imported.": [
         "فایل ${ formattedFilename } شما هیچ مخاطبی برای درون‌برد ندارد."
       ],
@@ -6649,6 +6646,14 @@
       ],
       "vCard field": [
         "کادر vCard"
+      ]
+    },
+    "Theme": {
+      "Dark": [
+        "تاریک"
+      ],
+      "Light": [
+        "روشن"
       ]
     },
     "Time unit": {
