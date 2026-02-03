@@ -298,6 +298,7 @@ describe('hasCancellablePlan', () => {
             PLANS.BUNDLE,
             PLANS.BUNDLE_PRO,
             PLANS.BUNDLE_PRO_2024,
+            PLANS.BUNDLE_BIZ_2025,
             PLANS.DRIVE,
             PLANS.DRIVE_PRO,
             PLANS.DUO,
