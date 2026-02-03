@@ -211,6 +211,7 @@ describe('MetricHandler', () => {
                     },
                     extra: {
                         error: new Error('some error'),
+                        errorType: 'unknown',
                     },
                 });
             });
