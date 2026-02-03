@@ -60,7 +60,7 @@ export const usePublicActions = () => {
         });
     };
 
-    const handleDownload = async (uids: string[]) => {
+    const handleDownload = async (uids: string[], shouldScan?: boolean) => {
         const { getFolderItem } = usePublicFolderStore.getState();
         const items = uids.map(getFolderItem).filter(isTruthy);
 
@@ -78,8 +78,11 @@ export const usePublicActions = () => {
                 await downloadPublicDocument({ uid: singleItem.uid, type: openInDocsInfo.type, token, urlPassword });
             }
         }
-
-        void downloadManager.downloadAndScan(uids, { skipSignatureCheck: true });
+        if (shouldScan) {
+            await downloadManager.downloadAndScan(uids, { skipSignatureCheck: true });
+        } else {
+            await downloadManager.download(uids, { skipSignatureCheck: true });
+        }
     };
 
     const handleDetails = (uid: string) => {
