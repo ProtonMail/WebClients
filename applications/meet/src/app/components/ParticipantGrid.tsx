@@ -1,10 +1,11 @@
 import { useMemo } from 'react';
 
+import { useMeetSelector } from '@proton/meet/store/hooks';
+import { selectMeetSettings } from '@proton/meet/store/slices/settings';
+
 import { useMeetContext } from '../contexts/MeetContext';
 import { useIsLargerThanMd } from '../hooks/useIsLargerThanMd';
 import { useIsNarrowHeight } from '../hooks/useIsNarrowHeight';
-import { useMeetSelector } from '../store/hooks';
-import { selectMeetSettings } from '../store/slices/settings';
 import { calculateGridLayout } from '../utils/calculateGridLayout';
 import { ParticipantTile } from './ParticipantTile/ParticipantTile';
 

@@ -6,6 +6,8 @@ import { Track } from 'livekit-client';
 import { c } from 'ttag';
 
 import { IcMeetMicrophoneOff } from '@proton/icons/icons/IcMeetMicrophoneOff';
+import { useMeetSelector } from '@proton/meet/store/hooks';
+import { selectMeetSettings, selectParticipantsWithDisabledVideos } from '@proton/meet/store/slices/settings';
 import { isMobile, isSafari } from '@proton/shared/lib/helpers/browser';
 import clsx from '@proton/utils/clsx';
 
@@ -15,8 +17,6 @@ import { useCameraTrackSubscriptionManager } from '../../contexts/CameraTrackSub
 import { useMediaManagementContext } from '../../contexts/MediaManagementContext';
 import { useMeetContext } from '../../contexts/MeetContext';
 import { useDebouncedSpeakingStatus } from '../../hooks/useDebouncedSpeakingStatus';
-import { useMeetSelector } from '../../store/hooks';
-import { selectMeetSettings, selectParticipantsWithDisabledVideos } from '../../store/slices/settings';
 import { getParticipantDisplayColors } from '../../utils/getParticipantDisplayColors';
 import { NetworkQualityIndicator } from '../NetworkQualityIndicator/NetworkQualityIndicator';
 import { ParticipantPlaceholder } from '../ParticipantPlaceholder/ParticipantPlaceholder';
