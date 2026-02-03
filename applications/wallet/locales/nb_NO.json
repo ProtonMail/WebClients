@@ -2355,6 +2355,9 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Dette feltet krever minimum ${ minimumLength } tegn."
       ],
+      "This offer is not available in your country": [
+        "Dette tilbudet er ikke tilgjengelig i landet ditt"
+      ],
       "Try using only letters, numerals, and _.-": [
         "Prøv å bruke bare bokstaver, tall og _.-"
       ],
@@ -3496,6 +3499,10 @@
         "${ n } aktivt møte om gangen",
         "${ n } aktive møter om gangen"
       ],
+      "${ n } participant": [
+        "${ n } deltaker",
+        "${ n } deltakere"
+      ],
       "24 hours per meeting": [
         "24 timer per møte"
       ],
@@ -3505,6 +3512,9 @@
       "Appointment scheduling": [
         "Avtaleplanlegging"
       ],
+      "Booking pages": [
+        "Bestillingssider"
+      ],
       "Browser, mobile, and desktop apps": [
         "Nettleser-, mobil- og skrivebordsapper"
       ],
@@ -3513,6 +3523,9 @@
       ],
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "Ende-til-ende-kryptert skjermdeling og kortvarig chat under samtaler"
+      ],
+      "Meeting recording": [
+        "Opptak av møte"
       ],
       "One active meeting at a time": [
         "Ett aktivt møte om gangen"
@@ -4579,28 +4592,28 @@
       "terms and conditions": [
         "vilkår og betingelser"
       ],
-      "The coupon is valid for ${ couponRedemptions } renewal.": [
-        "Kupongen er gyldig for ${ couponRedemptions } fornyelse.",
-        "Kupongen er gyldig for ${ couponRedemptions } fornyelser."
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "Rabatten er gyldig for ${ renewalsWithCoupon } fornyelse.",
+        "Rabatten er gyldig for ${ renewalsWithCoupon } fornyelser."
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Den spesielt rabatterte prisen er gyldig i ${ couponRedemptions } måned. Deretter fornyes den automatisk til ${ renewPriceStr } for 1 måned. Du kan avbryte når som helst.",
+        "Den spesielt rabatterte prisen er gyldig i ${ couponRedemptions } måneder. Deretter fornyes den automatisk til ${ renewPriceStr } for 1 måned. Du kan avbryte når som helst."
       ],
       "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
         "Spesialrabattprisen gjelder for den første måneden [${ subscriptionLength }].",
         "Den spesielt rabatterte prisen er gyldig de første ${ subscriptionLength } månedene."
       ],
-      "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "Den spesielt rabatterte prisen er gyldig den første måneden. Kupongen er gyldig for ${ couponRedemptions } fornyelse. Deretter vil den automatisk bli fornyet til ${ renewPriceStr } for 1 måned. Du kan avbryte når som helst.",
-        "Den spesielt rabatterte prisen er gyldig den første måneden. Kupongen er gyldig for ${ couponRedemptions } fornyelser. Deretter vil den automatisk bli fornyet til ${ renewPriceStr } for 1 måned. Du kan avbryte når som helst."
-      ],
       "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Den spesielt rabatterte prisen er gyldig den første måneden. Da blir den automatisk fornyet til ${ renewPriceStr } hver måned. Du kan avbryte når som helst."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Den spesielt rabatterte prisen på ${ priceWithDiscount } er gyldig for ${ couponRedemptions } måned. Deretter vil den automatisk bli fornyet til ${ renewPriceStr } for 1 måned. Du kan avbryte når som helst.",
+        "Den spesielt rabatterte prisen på ${ priceWithDiscount } er gyldig i ${ couponRedemptions } måneder. Deretter vil den automatisk bli fornyet til ${ renewPriceStr } for 1 måned. Du kan avbryte når som helst."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "Den spesielt rabatterte prisen på ${ priceWithDiscount } er gyldig for den første ${ subscriptionLength } måneden.",
         "Den spesielt rabatterte prisen på ${ priceWithDiscount } er gyldig de første ${ subscriptionLength } månedene."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "Den spesielt rabatterte prisen på ${ priceWithDiscount } er gyldig den første måneden. Kupongen er gyldig for ${ couponRedemptions } fornyelse. Deretter vil den automatisk bli fornyet til ${ renewPriceStr } for 1 måned. Du kan avbryte når som helst.",
-        "Den spesielt rabatterte prisen på ${ priceWithDiscount } er gyldig den første måneden. Kupongen er gyldig for ${ couponRedemptions } fornyelser. Deretter vil den automatisk bli fornyet til ${ renewPriceStr } for 1 måned. Du kan avbryte når som helst."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Den spesielt rabatterte prisen på ${ priceWithDiscount } er gyldig den første måneden. Da blir den automatisk fornyet til ${ renewPriceStr } hver måned. Du kan avbryte når som helst."

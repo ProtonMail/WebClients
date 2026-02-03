@@ -4592,28 +4592,28 @@
       "terms and conditions": [
         "Allgemeinen Geschäftsbedingungen"
       ],
-      "The coupon is valid for ${ couponRedemptions } renewal.": [
-        "Der Gutschein ist für ${ couponRedemptions } Verlängerung gültig.",
-        "Der Gutschein ist für ${ couponRedemptions } Verlängerungen gültig."
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "Der Rabatt ist für ${ renewalsWithCoupon } Verlängerung gültig.",
+        "Der Rabatt ist für ${ renewalsWithCoupon } Verlängerungen gültig."
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Der speziell ermäßigte Preis ist für ${ couponRedemptions } Monat gültig. Danach wird er automatisch zum Preis von ${ renewPriceStr } pro Monat verlängert. Du kannst jederzeit kündigen.",
+        "Der speziell ermäßigte Preis ist für ${ couponRedemptions } Monate gültig. Danach wird er automatisch zum Preis von ${ renewPriceStr } pro Monat verlängert. Du kannst jederzeit kündigen."
       ],
       "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
         "Der speziell ermäßigte Preis ist für ${ subscriptionLength } Monat gültig.",
         "Der speziell ermäßigte Preis ist für die ersten ${ subscriptionLength } Monate gültig."
       ],
-      "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "Der speziell ermäßigte Preis gilt für den ersten Monat. Der Gutschein kann für ${ couponRedemptions } Verlängerung eingelöst werden. Danach wird das Abonnement automatisch zum Preis von ${ renewPriceStr } für 1 Monat verlängert. Du kannst jederzeit kündigen.",
-        "Der speziell ermäßigte Preis gilt für den ersten Monat. Der Gutschein kann für ${ couponRedemptions } Verlängerungen eingelöst werden. Danach wird das Abonnement automatisch zum Preis von ${ renewPriceStr } für 1 Monat verlängert. Du kannst jederzeit kündigen."
-      ],
       "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Der speziell ermäßigte Preis ist für den ersten Monat gültig. Danach wird das Abonnement automatisch jeden Monat zum Preis von ${ renewPriceStr } verlängert. Du kannst jederzeit kündigen."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Der speziell ermäßigte Preis von ${ priceWithDiscount } gilt für ${ couponRedemptions } Monat. Danach wird er automatisch zum Preis von ${ renewPriceStr } pro Monat verlängert. Du kannst jederzeit kündigen.",
+        "Der speziell ermäßigte Preis von ${ priceWithDiscount } gilt für ${ couponRedemptions } Monate. Danach wird er automatisch zum Preis von ${ renewPriceStr } pro Monat verlängert. Du kannst jederzeit kündigen."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "Der speziell ermäßigte Preis von ${ priceWithDiscount } ist für ${ subscriptionLength } Monat gültig.",
         "Der speziell ermäßigte Preis von ${ priceWithDiscount } ist für ${ subscriptionLength } Monate gültig."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "Der speziell ermäßigte Preis von ${ priceWithDiscount } gilt für den ersten Monat. Der Gutschein kann für ${ couponRedemptions } Verlängerung eingelöst werden. Danach wird das Abonnement automatisch zum Preis von ${ renewPriceStr } für 1 Monat verlängert. Du kannst jederzeit kündigen.",
-        "Der speziell ermäßigte Preis von ${ priceWithDiscount } gilt für den ersten Monat. Der Gutschein kann für ${ couponRedemptions } Verlängerungen eingelöst werden. Danach wird das Abonnement automatisch zum Preis von ${ renewPriceStr } für 1 Monat verlängert. Du kannst jederzeit kündigen."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Der speziell ermäßigte Preis von ${ priceWithDiscount } ist für den ersten Monat gültig. Danach wird das Abonnement automatisch jeden Monat zum Preis von ${ renewPriceStr } verlängert. Du kannst jederzeit kündigen."
