@@ -318,7 +318,6 @@ export const useMailboxHotkeys = (
                         return;
                     }
                     e.stopPropagation();
-                    handleBack();
                     await markAs({
                         elements,
                         labelID,
