@@ -14,7 +14,7 @@ import clsx from '@proton/utils/clsx';
 import { SecurityShield } from '../../atoms/SecurityShield/SecurityShield';
 import { SpeakingIndicator } from '../../atoms/SpeakingIndicator';
 import { useCameraTrackSubscriptionManager } from '../../contexts/CameraTrackSubscriptionCacheProvider/CameraTrackSubscriptionManagerProvider';
-import { useMediaManagementContext } from '../../contexts/MediaManagementContext';
+import { useMediaManagementContext } from '../../contexts/MediaManagementProvider/MediaManagementContext';
 import { useMeetContext } from '../../contexts/MeetContext';
 import { useDebouncedSpeakingStatus } from '../../hooks/useDebouncedSpeakingStatus';
 import { getParticipantDisplayColors } from '../../utils/getParticipantDisplayColors';

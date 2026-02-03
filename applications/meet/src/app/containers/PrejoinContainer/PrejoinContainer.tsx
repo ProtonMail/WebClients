@@ -7,7 +7,7 @@ import { DeviceSettings } from '../../components/DeviceSettings/DeviceSettings';
 import { JoiningRoomLoader } from '../../components/JoiningRoomLoader';
 import { PageHeader } from '../../components/PageHeader/PageHeader';
 import { PreJoinDetails } from '../../components/PreJoinDetails/PreJoinDetails';
-import { useMediaManagementContext } from '../../contexts/MediaManagementContext';
+import { useMediaManagementContext } from '../../contexts/MediaManagementProvider/MediaManagementContext';
 import { LoadingState } from '../../types';
 import { getDisplayNameStorageKey } from '../../utils/storage';
 

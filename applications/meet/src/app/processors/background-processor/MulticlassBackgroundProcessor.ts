@@ -129,6 +129,7 @@ export default class MulticlassBackgroundProcessor extends VideoTransformer<Back
     private fallbackPixelBufferObjects: (WebGLBuffer | null)[] = [];
     private pixelBufferWidth = 0;
     private pixelBufferHeight = 0;
+    private pendingGpuSync: WebGLSync | null = null;
 
     constructor(opts: BackgroundOptions) {
         super();
@@ -223,6 +224,12 @@ export default class MulticlassBackgroundProcessor extends VideoTransformer<Back
             return;
         }
 
+        // Clean up pending GPU sync
+        if (this.pendingGpuSync) {
+            this.maskGl.deleteSync(this.pendingGpuSync);
+            this.pendingGpuSync = null;
+        }
+
         this.maskGl.deleteTexture(this.maskTexture as WebGLTexture);
         this.maskGl.deleteProgram(this.maskShaderProgram as WebGLProgram);
         this.maskGl.deleteBuffer(this.maskVertexBuffer as WebGLBuffer);
@@ -263,6 +270,31 @@ export default class MulticlassBackgroundProcessor extends VideoTransformer<Back
         this.lastCanvasHeight = 0;
     }
 
+    private withTimeout<T>(promise: Promise<T>, timeoutMs: number, timeoutError: string): Promise<T> {
+        return Promise.race([
+            promise,
+            new Promise<T>((_, reject) => setTimeout(() => reject(new Error(timeoutError)), timeoutMs)),
+        ]);
+    }
+
+    private waitForGpuSync(gl: WebGL2RenderingContext, sync: WebGLSync): void {
+        const result = gl.clientWaitSync(sync, gl.SYNC_FLUSH_COMMANDS_BIT, 0);
+
+        if (result === gl.ALREADY_SIGNALED || result === gl.CONDITION_SATISFIED) {
+            // GPU work completed
+            gl.deleteSync(sync);
+            return;
+        }
+
+        if (result === gl.WAIT_FAILED) {
+            // GPU error - clean up and continue
+            gl.deleteSync(sync);
+            return;
+        }
+
+        gl.deleteSync(sync);
+    }
+
     async transform(frame: VideoFrame, controller: TransformStreamDefaultController<VideoFrame>) {
         let originalFrameTransferred = false;
         try {
@@ -295,12 +327,22 @@ export default class MulticlassBackgroundProcessor extends VideoTransformer<Back
                 // Original frame is NOT transferred - we still own it and must close it
 
                 if (this.inputVideo) {
-                    await new Promise((resolve) => {
-                        this.inputVideo!.requestVideoFrameCallback((_now, e) => {
-                            const durationUntilFrameRenderedInMs = e.expectedDisplayTime - e.presentationTime;
-                            setTimeout(resolve, durationUntilFrameRenderedInMs);
+                    try {
+                        const videoFrameCallbackPromise = new Promise<void>((resolve) => {
+                            this.inputVideo!.requestVideoFrameCallback((_now, e) => {
+                                const durationUntilFrameRenderedInMs = e.expectedDisplayTime - e.presentationTime;
+                                setTimeout(resolve, durationUntilFrameRenderedInMs);
+                            });
                         });
-                    });
+                        // Add timeout to prevent infinite hang if video callback never fires
+                        await this.withTimeout(
+                            videoFrameCallbackPromise,
+                            5000,
+                            'Video frame callback timeout on first frame'
+                        );
+                    } catch {
+                        // Timeout or error - continue without waiting
+                    }
                 }
 
                 if (this.imageSegmenter) {
@@ -347,7 +389,13 @@ export default class MulticlassBackgroundProcessor extends VideoTransformer<Back
                 controller.enqueue(frame);
                 originalFrameTransferred = true;
             }
-            await segmentationPromise;
+
+            // Add timeout to prevent infinite hang if MediaPipe callback never fires
+            try {
+                await this.withTimeout(segmentationPromise, 200, 'MediaPipe segmentation callback timeout');
+            } catch {
+                // Timeout or error - continue processing next frame
+            }
         } catch {
             // Ignore
         } finally {
@@ -724,6 +772,13 @@ export default class MulticlassBackgroundProcessor extends VideoTransformer<Back
             return;
         }
 
+        // Wait for previous frame's GPU operations to complete before modifying shared state
+        // This prevents race conditions when frames are processed faster than GPU can render
+        if (this.pendingGpuSync) {
+            this.waitForGpuSync(gl, this.pendingGpuSync);
+            this.pendingGpuSync = null;
+        }
+
         // Save WebGL state to restore later (avoid conflicts with LiveKit)
         const savedState = this.saveWebGLState(gl);
 
@@ -758,6 +813,11 @@ export default class MulticlassBackgroundProcessor extends VideoTransformer<Back
 
         // Restore WebGL state to avoid conflicts with LiveKit
         this.restoreWebGLState(gl, savedState);
+
+        // Create a fence to track when these GPU operations complete
+        // This allows the next frame to wait without blocking the main thread
+        gl.flush(); // Ensure commands are submitted to GPU
+        this.pendingGpuSync = gl.fenceSync(gl.SYNC_GPU_COMMANDS_COMPLETE, 0);
     }
 }
 

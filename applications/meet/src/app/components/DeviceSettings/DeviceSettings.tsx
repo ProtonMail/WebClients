@@ -12,7 +12,7 @@ import { isMobile } from '@proton/shared/lib/helpers/browser';
 import clsx from '@proton/utils/clsx';
 
 import { CircleButton } from '../../atoms/CircleButton/CircleButton';
-import { useMediaManagementContext } from '../../contexts/MediaManagementContext';
+import { useMediaManagementContext } from '../../contexts/MediaManagementProvider/MediaManagementContext';
 import { useDeviceLoading } from '../../hooks/useDeviceLoading';
 import { useIsLargerThanMd } from '../../hooks/useIsLargerThanMd';
 import { supportsSetSinkId } from '../../utils/browser';

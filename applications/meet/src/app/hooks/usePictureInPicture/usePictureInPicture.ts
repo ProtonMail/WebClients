@@ -10,7 +10,7 @@ import { selectMeetSettings } from '@proton/meet/store/slices/settings';
 import { isChromiumBased, isFirefox, isMobile, isSafari } from '@proton/shared/lib/helpers/browser';
 
 import { useCameraTrackSubscriptionManager } from '../../contexts/CameraTrackSubscriptionCacheProvider/CameraTrackSubscriptionManagerProvider';
-import { useMediaManagementContext } from '../../contexts/MediaManagementContext';
+import { useMediaManagementContext } from '../../contexts/MediaManagementProvider/MediaManagementContext';
 import type { MeetChatMessage } from '../../types';
 import { useLatest } from '../useLatest';
 import { PiPSessionManager } from './PiPSessionManager';

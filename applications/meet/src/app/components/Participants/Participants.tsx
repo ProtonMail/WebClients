@@ -21,7 +21,7 @@ import clsx from '@proton/utils/clsx';
 
 import { SideBar } from '../../atoms/SideBar/SideBar';
 import { SpeakingIndicator } from '../../atoms/SpeakingIndicator';
-import { useMediaManagementContext } from '../../contexts/MediaManagementContext';
+import { useMediaManagementContext } from '../../contexts/MediaManagementProvider/MediaManagementContext';
 import { useMeetContext } from '../../contexts/MeetContext';
 import { useUIStateContext } from '../../contexts/UIStateContext';
 import { useDebouncedActiveSpeakers } from '../../hooks/useDebouncedActiveSpeakers';

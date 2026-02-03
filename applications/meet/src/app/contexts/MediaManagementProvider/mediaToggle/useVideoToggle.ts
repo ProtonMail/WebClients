@@ -8,15 +8,15 @@ import debounce from 'lodash/debounce';
 import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 
-import { DEFAULT_DEVICE_ID } from '../../constants';
+import { DEFAULT_DEVICE_ID } from '../../../constants';
+import { useStableCallback } from '../../../hooks/useStableCallback';
+import type { BackgroundBlurProcessor } from '../../../processors/background-processor/MulticlassBackgroundProcessor';
 import {
     createBackgroundProcessor,
     ensureBackgroundBlurProcessor,
-    preloadBackgroundProcessorAssets,
-} from '../../processors/background-processor/createBackgroundProcessor';
-import type { SwitchActiveDevice } from '../../types';
-import { getPersistedBackgroundBlur, persistBackgroundBlur } from '../../utils/backgroundBlurPersistance';
-import { useStableCallback } from '../useStableCallback';
+} from '../../../processors/background-processor/createBackgroundProcessor';
+import type { SwitchActiveDevice } from '../../../types';
+import { getPersistedBackgroundBlur, persistBackgroundBlur } from '../../../utils/backgroundBlurPersistance';
 import { ERRORS_SIGNALING_POTENTIAL_STALE_DEVICE_STATE } from './constants';
 
 const getVideoTrackPublications = (localParticipant: LocalParticipant) => {
@@ -24,7 +24,6 @@ const getVideoTrackPublications = (localParticipant: LocalParticipant) => {
         (track) => track.kind === Track.Kind.Video && track.source !== Track.Source.ScreenShare
     );
 };
-const backgroundBlurProcessorInstance = createBackgroundProcessor();
 
 export const useVideoToggle = (
     activeCameraDeviceId: string,
@@ -47,9 +46,7 @@ export const useVideoToggle = (
     const prevEnabled = useRef<boolean | null>(null);
     const preventAutoApplyingBlur = useRef(false);
 
-    useEffect(() => {
-        void preloadBackgroundProcessorAssets();
-    }, []);
+    const backgroundBlurProcessorInstanceRef = useRef<BackgroundBlurProcessor | null>(createBackgroundProcessor());
 
     const getCurrentVideoTrack = () => {
         return getVideoTrackPublications(room.localParticipant).filter(
@@ -64,7 +61,10 @@ export const useVideoToggle = (
 
         processorAttachInProgress.current = true;
         try {
-            const result = await ensureBackgroundBlurProcessor(getCurrentVideoTrack(), backgroundBlurProcessorInstance);
+            const result = await ensureBackgroundBlurProcessor(
+                getCurrentVideoTrack(),
+                backgroundBlurProcessorInstanceRef.current
+            );
             return result;
         } finally {
             processorAttachInProgress.current = false;
@@ -135,7 +135,7 @@ export const useVideoToggle = (
 
                 const newVideoTrack = getCurrentVideoTrack();
 
-                if (backgroundBlur && backgroundBlurProcessorInstance && newVideoTrack) {
+                if (backgroundBlur && backgroundBlurProcessorInstanceRef.current && newVideoTrack) {
                     // Prevent the localTrackPublished handler from also trying to attach the processor
                     preventAutoApplyingBlur.current = true;
 
@@ -196,7 +196,7 @@ export const useVideoToggle = (
     }, [facingMode, toggleVideo]);
 
     const toggleBackgroundBlur = useStableCallback(async () => {
-        if (!backgroundBlurProcessorInstance || blurToggleInProgress.current) {
+        if (!backgroundBlurProcessorInstanceRef.current || blurToggleInProgress.current) {
             return;
         }
 
@@ -209,7 +209,7 @@ export const useVideoToggle = (
                 const processor = await attachBackgroundBlurProcessor();
                 processor?.enable?.();
             } else {
-                backgroundBlurProcessorInstance?.disable?.();
+                backgroundBlurProcessorInstanceRef.current?.disable?.();
             }
         } catch (error) {
             // eslint-disable-next-line no-console
@@ -281,6 +281,6 @@ export const useVideoToggle = (
         toggleBackgroundBlur: debouncedToggleBackgroundBlur,
         isVideoEnabled: isCameraEnabled,
         facingMode,
-        isBackgroundBlurSupported: !!backgroundBlurProcessorInstance,
+        isBackgroundBlurSupported: !!backgroundBlurProcessorInstanceRef.current,
     };
 };

@@ -34,7 +34,7 @@ import { PiPPreviewVideo } from '../../components/PiPPreviewVideo/PiPPreviewVide
 import { WebRtcUnsupportedModal } from '../../components/WebRtcUnsupportedModal/WebRtcUnsupportedModal';
 import { MEETING_LOCKED_ERROR_CODE, PAGE_SIZE, SMALL_SCREEN_PAGE_SIZE } from '../../constants';
 import { MLSContext } from '../../contexts/MLSContext';
-import { useMediaManagementContext } from '../../contexts/MediaManagementContext';
+import { useMediaManagementContext } from '../../contexts/MediaManagementProvider/MediaManagementContext';
 import { useUIStateContext } from '../../contexts/UIStateContext';
 import { useWasmApp } from '../../contexts/WasmContext';
 import type { SRPHandshakeInfo } from '../../hooks/srp/useMeetSrp';

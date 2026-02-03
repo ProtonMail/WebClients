@@ -2,7 +2,7 @@ import type { IconProps } from '@proton/components/components/icon/Icon';
 import { IcMeetMicrophone } from '@proton/icons/icons/IcMeetMicrophone';
 import type { IconSize } from '@proton/icons/types';
 
-import { useMediaManagementContext } from '../contexts/MediaManagementContext';
+import { useMediaManagementContext } from '../contexts/MediaManagementProvider/MediaManagementContext';
 import { useMicrophoneVolume, useMicrophoneVolumeDirect } from '../hooks/useMicrophoneVolume';
 
 const NORMAL_SPEAKING_MIN_THRESHOLD = 0.04;
