@@ -1,5 +1,11 @@
-import { SearchView } from '../components/sections/Search/SearchView';
+import { SearchViewLegacy } from '../components/sections/Search/SearchViewLegacy';
+import { useFlagsDriveSDKSearch } from '../flags/useFlagsDriveSDKSearch';
+import { SearchView } from '../sections/search/SearchView';
 
 export const SearchContainer = () => {
-    return <SearchView />;
+    const isDriveSDKSearchEnabled = useFlagsDriveSDKSearch();
+    if (isDriveSDKSearchEnabled) {
+        return <SearchView />;
+    }
+    return <SearchViewLegacy />;
 };

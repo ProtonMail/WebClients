@@ -8,12 +8,14 @@ import { SortField } from '../../modules/sorting/types';
 import type { CellDefinitionConfig } from '../../statelessComponents/DriveExplorer/types';
 
 export interface SizeCellProps {
-    size: number;
+    size: number | undefined;
     className?: string;
 }
 
 export function SizeCell({ size, className }: SizeCellProps) {
-    return <span className={clsx('text-pre', className)}>{humanSize({ bytes: size })}</span>;
+    const isSizeFieldNotApplicable = size === undefined;
+    const content = isSizeFieldNotApplicable ? <span className="text-pre">--</span> : humanSize({ bytes: size });
+    return <span className={clsx('text-pre', className)}>{content}</span>;
 }
 
 export const defaultSizeCellConfig: CellDefinitionConfig = {

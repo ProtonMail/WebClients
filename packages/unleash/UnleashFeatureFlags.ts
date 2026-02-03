@@ -174,6 +174,7 @@ enum DriveFeatureFlag {
     DriveWebSDKCopy = 'DriveWebSDKCopy',
     DriveWebSDKPreview = 'DriveWebSDKPreview',
     DriveWebSDKPublic = 'DriveWebSDKPublic',
+    DriveWebSDKSearch = 'DriveWebSDKSearch',
     // Video Preview
     DriveWebVideoAutoPlay = 'DriveWebVideoAutoPlay',
     // Thumbnail Generation
