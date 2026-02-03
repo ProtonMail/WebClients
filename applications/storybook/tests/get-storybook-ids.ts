@@ -28,7 +28,7 @@ export function getStorybooIds() {
     const storybookStaticFolder = resolve(__dirname, '../storybook-static');
 
     if (!existsSync(storybookStaticFolder)) {
-        throw new Error('storybook-static folder does not exist, try to run "yarn storybook:build" first.');
+        throw new Error('storybook-static folder does not exist, try to run "yarn build" first.');
     }
 
     const content = readFileSync(resolve(storybookStaticFolder, './index.json'), 'utf-8');
@@ -41,7 +41,7 @@ export function getStorybooIds() {
     }
 
     const ids = Object.keys(parsedContent.entries)
-        .filter((id: string) => parsedContent.entries[id].type.toLowerCase() === StorybookEntryType.STORY)
+        .filter((id: string) => parsedContent.entries[id].type.toLowerCase() === StorybookEntryType.DOCS)
         .sort((a, b) => a.localeCompare(b));
 
     return ids;
