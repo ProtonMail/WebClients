@@ -85,6 +85,7 @@ export const getSignupConfiguration = ({
                 PLANS.BUNDLE,
                 PLANS.BUNDLE_PRO,
                 PLANS.BUNDLE_PRO_2024,
+                PLANS.BUNDLE_BIZ_2025,
                 PLANS.VPN_PASS_BUNDLE,
                 PLANS.PASS,
                 PLANS.PASS_BUSINESS,

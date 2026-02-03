@@ -95,20 +95,24 @@ export const getProductParams = (pathname: string, searchParams: URLSearchParams
         .filter(Boolean);
 
     productParam = productParam || 'generic';
+    const planParam = searchParams.get('plan') as any;
 
     if (productParam === 'business') {
-        if ([PLANS.MAIL_PRO, PLANS.MAIL_BUSINESS].includes(searchParams.get('plan') as any)) {
+        if ([PLANS.MAIL_PRO, PLANS.MAIL_BUSINESS].includes(planParam)) {
             product = APPS.PROTONMAIL;
             productParam = APPS.PROTONMAIL;
         }
     }
 
     if (!product) {
-        if (
-            [PLANS.MAIL_PRO, PLANS.MAIL_BUSINESS, PLANS.BUNDLE_PRO, PLANS.BUNDLE_PRO_2024].includes(
-                searchParams.get('plan') as any
-            )
-        ) {
+        const plans = [
+            PLANS.MAIL_PRO,
+            PLANS.MAIL_BUSINESS,
+            PLANS.BUNDLE_PRO,
+            PLANS.BUNDLE_PRO_2024,
+            PLANS.BUNDLE_BIZ_2025,
+        ];
+        if (plans.includes(planParam)) {
             product = APPS.PROTONMAIL;
         }
     }

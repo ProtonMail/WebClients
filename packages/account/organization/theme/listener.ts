@@ -12,6 +12,7 @@ const getHasAccess = (organization: Organization | undefined) => {
     return [
         PLANS.BUNDLE_PRO,
         PLANS.BUNDLE_PRO_2024,
+        PLANS.BUNDLE_BIZ_2025,
         PLANS.MAIL_BUSINESS,
         PLANS.DRIVE_BUSINESS,
         PLANS.PASS_BUSINESS,
@@ -38,8 +39,8 @@ export const organizationThemeListener = (startListening: SharedStartListening<O
                 bootstrapEvent.match(action) ||
                 Boolean(
                     currentOrganization?.PlanName !== previousOrganization?.PlanName ||
-                        currentOrganization?.Settings !== previousOrganization?.Settings ||
-                        currentOrganization?.Name !== previousOrganization?.Name
+                    currentOrganization?.Settings !== previousOrganization?.Settings ||
+                    currentOrganization?.Name !== previousOrganization?.Name
                 )
             );
         },

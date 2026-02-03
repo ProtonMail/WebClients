@@ -144,7 +144,15 @@ export const getBilledText = ({
     }
 };
 
-const bundlePlans = [PLANS.BUNDLE, PLANS.BUNDLE_PRO, PLANS.BUNDLE_PRO_2024, PLANS.VISIONARY, PLANS.DUO, PLANS.FAMILY];
+const bundlePlans = [
+    PLANS.BUNDLE,
+    PLANS.BUNDLE_PRO,
+    PLANS.BUNDLE_PRO_2024,
+    PLANS.BUNDLE_BIZ_2025,
+    PLANS.VISIONARY,
+    PLANS.DUO,
+    PLANS.FAMILY,
+];
 
 const PlanCardViewSlot = ({
     highlightPrice,
