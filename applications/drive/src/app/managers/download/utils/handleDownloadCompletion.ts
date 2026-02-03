@@ -29,6 +29,8 @@ export async function validateDownloadSignatures({
     try {
         // Check metadata signature and wait for controller completion
         await checkMetadataSignature(downloadId, node, () => controller.completion(), onRejected);
+
+        await onApproved();
     } catch (error) {
         if (controller.isDownloadCompleteWithSignatureIssues()) {
             // Handle manifest signature issues
