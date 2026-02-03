@@ -25,6 +25,9 @@
       ]
     },
     "Action": {
+      "${ PASS_SHORT_APP_NAME } for iOS": [
+        "${ PASS_SHORT_APP_NAME } iOS:lle"
+      ],
       "Accept": [
         "Hyväksy"
       ],
@@ -166,8 +169,17 @@
       "Continue offline": [
         "Jatka yhteydettömässä tilassa"
       ],
+      "Copy": [
+        "Kopioi"
+      ],
       "Copy and close": [
         "Kopioi ja sulje"
+      ],
+      "Copy card number": [
+        "Kopioi kortin numero"
+      ],
+      "Copy email": [
+        "Kopioi sähköpostiosoite"
       ],
       "Copy forwarding address": [
         "Kopioi välitysosoite"
@@ -178,8 +190,14 @@
       "Copy password": [
         "Kopioi salasana"
       ],
+      "Copy security code": [
+        "Kopioi turvakoodi"
+      ],
       "Copy to clipboard": [
         "Kopioi leikepöydälle"
+      ],
+      "Copy username": [
+        "Kopioi käyttäjätunnus"
       ],
       "Create": [
         "Luo"
@@ -222,6 +240,9 @@
       ],
       "Custom section": [
         "Mukautettu osio"
+      ],
+      "Cut": [
+        "Leikkaa"
       ],
       "Delete": [
         "Poista"
@@ -318,6 +339,9 @@
       ],
       "Get ${ PASS_APP_NAME }": [
         "Hanki ${ PASS_APP_NAME }"
+      ],
+      "Get mobile and desktop apps": [
+        "Hanki mobiili- ja työpöytäsovellukset"
       ],
       "Get mobile apps": [
         "Hanki mobiilisovellukset"
@@ -465,6 +489,9 @@
       ],
       "Pass Monitor": [
         "Pass Monitor"
+      ],
+      "Paste": [
+        "Liitä"
       ],
       "Pause monitoring": [
         "Pysäytä valvonta"
@@ -1198,6 +1225,9 @@
       ],
       "Unsupported 1Password file format": [
         "Ei tuettu 1Password-tiedostomuoto"
+      ],
+      "Unsupported Bitwarden file format": [
+        "Ei tuettu Bitwarden-tiedostomuoto"
       ],
       "Updating vault \"${ payload.content.name }\" failed": [
         "Holvin \"${ payload.content.name }\" päivitys epäonnistui"
@@ -2131,6 +2161,9 @@
       "Selected items successfully restored from trash": [
         "Valitut kohteet palautetiin roskakorista"
       ],
+      "Servers are unreachable": [
+        "Palvelimia ei tavoiteta"
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Palvelimia ei tavoiteta. Yritä muutaman minuutin kuluttua uudelleen."
       ],
@@ -2910,6 +2943,9 @@
       "Generic CSV": [
         "Geneerinen CSV"
       ],
+      "Get ${ PASS_SHORT_APP_NAME } Plus": [
+        "Hanki ${ PASS_SHORT_APP_NAME } Plus"
+      ],
       "Get ${ PASS_SHORT_APP_NAME } Unlimited": [
         "Hanki ${ PASS_SHORT_APP_NAME } Unlimited"
       ],
@@ -3035,6 +3071,9 @@
       ],
       "Language": [
         "Kieli"
+      ],
+      "Larger window": [
+        "Suurempi ikkuna"
       ],
       "Last 2 weeks": [
         "Kahden viikon sisällä"
@@ -3528,6 +3567,9 @@
       "Unlimited": [
         "Unlimited"
       ],
+      "Unlock premium features": [
+        "Avaa premium-ominaisuudet"
+      ],
       "Unlock with": [
         "Lukituksen avaustapa"
       ],
@@ -3581,6 +3623,9 @@
       ],
       "Vault ID": [
         "Holvin ID"
+      ],
+      "Vault, item & link sharing": [
+        "Holvin, kohteen ja linkkien jakaminen"
       ],
       "Vaults": [
         "Holvit"
@@ -3912,6 +3957,9 @@
       ],
       "my-domain.com": [
         "oma-verkkotunnus.fi"
+      ],
+      "Name displayed in emails": [
+        "Sähköposteissa näkyvä nimi"
       ],
       "Note from SimpleLogin": [
         "Muistiinpano SimpleLogista"

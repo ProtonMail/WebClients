@@ -1476,6 +1476,9 @@
       "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
         "${ PASS_APP_NAME } kommer endast importera inloggningar, anteckningar, kreditkort och identiteter."
       ],
+      "${ PASS_SHORT_APP_NAME } offline mode enabled.": [
+        "${ PASS_SHORT_APP_NAME } offlineläge aktiverat."
+      ],
       "${ payload.count } invite successfully sent": [
         "${ payload.count } inbjudan skickad",
         "${ payload.count } inbjudningar skickat"
@@ -4840,6 +4843,9 @@
     "Warning": {
       "${ BRAND_NAME } password is required": [
         "${ BRAND_NAME }-lösenord är obligatoriskt"
+      ],
+      "${ PASS_SHORT_APP_NAME } offline mode disabled.": [
+        "${ PASS_SHORT_APP_NAME } offlineläge inaktiverat."
       ],
       "2 consecutive dots are not allowed": [
         "2 på varandra följande punkter är inte tillåtet"
