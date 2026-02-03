@@ -90,6 +90,9 @@
       "Apply": [
         "Potrdi"
       ],
+      "Ask me next time": [
+        "Vprašaj me naslednjič"
+      ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "Največ ${ maxContacts } stik je dovoljen na skupino stikov.",
         "Največ ${ maxContacts } stika sta dovoljena na skupino stikov.",
@@ -231,8 +234,14 @@
       "Create a new contact group": [
         "Ustvari novo skupino stikov"
       ],
+      "Create a spreadsheet": [
+        "Ustvari preglednico"
+      ],
       "Create and copy alias": [
         "Ustvari in kopiraj vzdevek"
+      ],
+      "Create new ${ SHEETS_APP_NAME }": [
+        "Ustvari nov ${ SHEETS_APP_NAME }"
       ],
       "Create new folder": [
         "Ustvari novo mapo"
@@ -276,6 +285,9 @@
       "Delete contact group": [
         "Izbriši skupino stikov"
       ],
+      "Delete older revisions": [
+        "Izbriši starejše revizije"
+      ],
       "Delete permanently": [
         "Trajno izbriši"
       ],
@@ -299,6 +311,12 @@
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Prenesite aplikacije ${ DRIVE_APP_NAME }"
+      ],
+      "Download a copy (as docx)": [
+        "Prenesi kopijo (kot docx)"
+      ],
+      "Download a copy (as xlsx)": [
+        "Prenesi kopijo (kot xlsx)"
       ],
       "Download anyway": [
         "Vseeno prenesi"
@@ -341,6 +359,9 @@
       ],
       "Export selection as .vcf": [
         "Izvozi izbor kot .vcf"
+      ],
+      "Export this version (as xlsx)": [
+        "Izvozi to različico (kot xlsx)"
       ],
       "Forgot password?": [
         "Pozabljeno geslo?"
@@ -522,6 +543,9 @@
       "OK": [
         "V redu"
       ],
+      "Okay": [
+        "V redu"
+      ],
       "Open": [
         "Odpri"
       ],
@@ -588,6 +612,9 @@
       "Remove button": [
         "Odstranite gumb"
       ],
+      "Remove file": [
+        "Odstrani datoteko"
+      ],
       "Rename": [
         "Preimenuj"
       ],
@@ -630,6 +657,9 @@
       "Restore this version?": [
         "Obnovi to različico?"
       ],
+      "Restoring...": [
+        "Obnavljanje ..."
+      ],
       "Save": [
         "Shrani"
       ],
@@ -644,6 +674,9 @@
       ],
       "Search recent documents": [
         "Išči nedavne dokumente"
+      ],
+      "Search recents": [
+        "Išči nedavne"
       ],
       "See how": [
         "Poglejte, kako"
@@ -732,6 +765,9 @@
       "Take out of trash": [
         "Izprazni smetnjak"
       ],
+      "Toggle debug mode": [
+        "Preklopi način odpravljanja programskih napak"
+      ],
       "Trust": [
         "Zaupaj"
       ],
@@ -809,6 +845,9 @@
       ],
       "View invoice": [
         "Ogled računa"
+      ],
+      "View only": [
+        "Le ogled"
       ],
       "Web page (.html)": [
         "Spletna stran (.html)"
@@ -2408,13 +2447,13 @@
     },
     "Drawer tab, Action": {
       "Download for Linux": [
-        "Naloži za Linux"
+        "Prenesi za Linux"
       ],
       "Download for macOS": [
-        "Naloži za macOS"
+        "Prenesi za macOS"
       ],
       "Download for Windows": [
-        "Naloži za Windows"
+        "Prenesi za Windows"
       ]
     },
     "drive:action": {
@@ -2648,6 +2687,9 @@
       ],
       "External invitations are temporarily disabled. Please try again later": [
         "Zunanja povabila so začasno onemogočena. Poskusite znova pozneje."
+      ],
+      "Failed to remove older revisions": [
+        "Ni uspelo odstraniti starejših različic"
       ],
       "Failed to rename document. Please try again later.": [
         "Dokument ni bil preimenovan. Poskusite znova kasneje."
@@ -2907,6 +2949,9 @@
       "Try using only letters, numerals, and _.-": [
         "Poskusite uporabiti samo črke, števke in _.-"
       ],
+      "Unable to load VPN dashboard. Please check your connection and try again.": [
+        "Ni mogoče naložiti nadzorne plošče VPN. Preverite svojo povezavo in poskusite znova."
+      ],
       "Unexpected error, we can't import the contacts": [
         "Nepričakovana napaka, ne moremo uvoziti stikov"
       ],
@@ -2930,6 +2975,12 @@
       ],
       "We are having trouble saving recent edits. Please refresh the page.": [
         "Imamo težave pri shranjevanju zadnjih urejanj. Prosimo, ponovno naložite stran."
+      ],
+      "We are having trouble syncing your document. Please refresh the page.": [
+        "Težave pri sinhronizaciji vašega dokumenta. Osvežite stran."
+      ],
+      "We couldn’t import this file into ${ SHEETS_APP_NAME }. You can try to copy and paste the contents into a new ${ SHEETS_APP_NAME }.": [
+        "Te datoteke ni bilo mogoče uvoziti v ${ SHEETS_APP_NAME }. Poskusite kopirati in prilepiti vsebino v nov ${ SHEETS_APP_NAME }."
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Sporočilo lahko pošljete največ ${ maxContacts } prejemniku.",
@@ -3013,9 +3064,6 @@
       ],
       "An error occurred uploading your file. No file has been selected.": [
         "Pri nalaganju datoteke je prišlo do napake. Izbrana ni bila nobena datoteka."
-      ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
-        "Datoteka ${ formattedFilename } vsebuje več kot ${ MAX_IMPORT_CONTACTS_STRING } stikov."
       ],
       "Your file ${ formattedFilename } has no contacts to be imported.": [
         "V datoteki ${ formattedFilename } ni stikov, ki bi jih lahko uvozili."
@@ -3869,6 +3917,9 @@
         "${ contactsLength } stiki",
         "${ contactsLength } stikov"
       ],
+      "${ DOCS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
+        "Datoteke ${ DOCS_APP_NAME } ni mogoče prenesti neposredno in ne bodo vključene v ta prenos. Druge datoteke lahko prenesete s klikom na 'Nadaljuj prenos'."
+      ],
       "${ DOCS_APP_NAME } lets you collaborate in real-time with end-to-end encryption for complete privacy. Create a copy to start editing, or ask the owner for edit access.": [
         "${ DOCS_APP_NAME } vam omogoča sodelovanje v realnem času s celovitim šifriranjem za popolno zasebnost. Ustvarite kopijo in začnite urejati ali se obrnite na lastnika za dostop za urejanje."
       ],
@@ -3992,6 +4043,9 @@
       "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
         "Oglaševalci sledijo vašemu brskanju, da vam kažejo ciljno usmerjene oglase. ${ VPN_APP_NAME } blokira sledilnike in oglase, s čimer pospeši vašo povezavo in izboljša vašo spletno izkušnjo."
       ],
+      "All": [
+        "Vse"
+      ],
       "All (${ totalFoldersCount } folder)": [
         "Vse (${ totalFoldersCount } mapa)",
         "Vse (${ totalFoldersCount } mapi)",
@@ -4003,12 +4057,6 @@
         "Vse (${ totalFoldersCount } oznaki)",
         "Vse (${ totalFoldersCount } oznake)",
         "Vse (${ totalFoldersCount } oznak)"
-      ],
-      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
-        "Vsi vaši stiki bodo uvoženi, do meje ${ MAX_CONTACTS_PER_USER }.",
-        "Vsi vaši stiki bodo uvoženi, do meje ${ MAX_CONTACTS_PER_USER }.",
-        "Vsi vaši stiki bodo uvoženi, do meje ${ MAX_CONTACTS_PER_USER }.",
-        "Vsi vaši stiki bodo uvoženi, do meje ${ MAX_CONTACTS_PER_USER }."
       ],
       "an anonymous user": [
         "anonimni uporabnik"
@@ -4088,6 +4136,9 @@
       "Continue": [
         "Nadaljuj"
       ],
+      "Converting document...": [
+        "Pretvarjanje dokumenta ..."
+      ],
       "Copy the link to clipboard": [
         "Kopiraj povezavo v odložišče"
       ],
@@ -4114,6 +4165,9 @@
       ],
       "Create a new contact group": [
         "Ustvari novo skupino stikov"
+      ],
+      "Create an end-to-end encrypted document.": [
+        "Ustvarite celovito šifriran dokument."
       ],
       "Create in": [
         "Ustvari v"
@@ -4153,6 +4207,9 @@
       ],
       "Document owner has the password": [
         "Lastnik dokumenta ima geslo."
+      ],
+      "Documents": [
+        "Dokumenti"
       ],
       "Downgrade": [
         "Zmanjšaj"
@@ -4210,6 +4267,12 @@
       ],
       "Enter your own password (as organization admin).": [
         "Vpišite vaše lastno geslo (kot skrbnik organizacije)."
+      ],
+      "Error converting document: ${ errorMessage }": [
+        "Napaka pri pretvorbi dokumenta: ${ errorMessage }"
+      ],
+      "Error loading document: ${ errorDetail }": [
+        "Napaka pri nalaganju dokumenta: ${ errorDetail }"
       ],
       "Error Syncing": [
         "Napaka pri sinhronizaciji"
@@ -4319,6 +4382,9 @@
       "Important note": [
         "Pomembna opomba"
       ],
+      "Importing ODS files is currently in beta": [
+        "Uvoz ODS datotek je trenutno v beta različici"
+      ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Uvažanje podatkov iz ${ fromEmail } v ${ toEmail }."
       ],
@@ -4405,6 +4471,9 @@
       ],
       "Low Priority": [
         "Nizka pomembnost"
+      ],
+      "Making a copy...": [
+        "Ustvarjanje kopije ..."
       ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "Največ ${ MAX_SHARED_URL_PASSWORD_LENGTH } znak",
@@ -4574,6 +4643,12 @@
       "Public documents are not yet enabled for your organization.": [
         "Javni dokumenti še niso omogočeni za vašo organizacijo."
       ],
+      "Recent documents": [
+        "Nedavni dokumenti"
+      ],
+      "Recent spreadsheets": [
+        "Nedavne preglednice"
+      ],
       "Recents": [
         "Nedavno"
       ],
@@ -4664,6 +4739,9 @@
       "Something went wrong": [
         "Nekaj je šlo narobe."
       ],
+      "Spreadsheets": [
+        "Preglednice"
+      ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Ostanite povezani brez težav tako, da omogočite naslednje nastavitve VPN:"
       ],
@@ -4715,6 +4793,9 @@
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Ta naslov je onemogočen. Za pošiljanje na ta naslov ga mora lastnik najprej omogočiti."
       ],
+      "This document has grown too large, and your latest changes couldn’t be saved. Download a copy to keep your work.": [
+        "Ta dokument je postal prevelik in zadnjih sprememb ni bilo mogoče shraniti. Prenesite kopijo, da obdržite svoje delo."
+      ],
       "This document has lots of activity. Some features may be temporarily unavailable.": [
         "Ta dokument ima veliko dejavnosti. Nekatere funkcije morda začasno niso na voljo."
       ],
@@ -4759,6 +4840,9 @@
       ],
       "This will upload a new version of the folder": [
         "S tem boste naložili novo različico mape"
+      ],
+      "To download the ${ DOCS_APP_NAME } files, open them in ${ DOCS_APP_NAME } and export them.": [
+        "Če želite prenesti datoteke ${ DOCS_APP_NAME }, jih odprite v ${ DOCS_APP_NAME } in jih izvozite."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Zaradi boja proti neželeni vsebini in zlorabam najprej potrdite, da ste človek."
@@ -4984,6 +5068,9 @@
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Vaši podatki so pripravljeni na uvoz iz računa ${ importedEmailAddressStrong } v račun ${ BRAND_NAME }."
+      ],
+      "Your data stays yours. Create and collaborate using fully featured spreadsheets secured with end-to-end encryption.": [
+        "Vaši podatki ostanejo vaši. Ustvarjajte in sodelujte z uporabo polno opremljenih preglednic, zaščitenih s šifriranjem od konca do konca."
       ],
       "Your email address and password were leaked:": [
         "Vaš e-poštni naslov in geslo sta bila izpostavljena :"
@@ -5262,6 +5349,9 @@
       ],
       "Emails (last month)": [
         "E-pošto (zadnji mesec)"
+      ],
+      "Enable email notifications": [
+        "Omogoči e-poštna obvestila"
       ],
       "Encrypt emails": [
         "Šifriraj sporočila"
@@ -7132,6 +7222,9 @@
       "Not enough space to upload ${ formattedTotal }": [
         "Ni dovolj prostora za nalaganje ${ formattedTotal }"
       ],
+      "Public link update access failed ": [
+        "Dostop do posodobitve javne povezave ni uspel "
+      ],
       "Recent documents updated": [
         "Nedavni dokumenti so bili posodobljeni"
       ],
@@ -7161,6 +7254,9 @@
       ],
       "The link to your item was deleted": [
         "Povezava do vašega predmeta je bila izbrisana"
+      ],
+      "The spreadsheet failed to be created": [
+        "Ustvarjanje preglednice ni uspelo"
       ],
       "Trash failed to be emptied": [
         "Smetnjaka ni bilo mogoče izprazniti"
@@ -7369,6 +7465,9 @@
       "Recents": [
         "Nedavno"
       ],
+      "Searching": [
+        "Iskanje"
+      ],
       "Trash": [
         "Smeti"
       ]
@@ -7464,12 +7563,6 @@
       ],
       "terms and conditions": [
         "pravili in pogoji"
-      ],
-      "The coupon is valid for ${ couponRedemptions } renewal.": [
-        "Kupon velja za ${ couponRedemptions } podaljšanje.",
-        "Kupon velja za ${ couponRedemptions } podaljšanji.",
-        "Kupon velja za ${ couponRedemptions } podaljšanja.",
-        "Kupon velja za ${ couponRedemptions } podaljšanj."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Izredno znižana cena ${ priceWithDiscount } velja za prvi mesec. Potem se bo samodejno podaljšala mesečno za ${ renewPriceStr }. Naročnino lahko kadarkoli prekinete."
@@ -7657,8 +7750,14 @@
       ]
     },
     "Recent documents table header": {
+      "Created by": [
+        "Ustvaril"
+      ],
       "Deleted": [
         "Izbrisano"
+      ],
+      "Earlier": [
+        "Prejšnje"
       ],
       "Location": [
         "Lokacija"
@@ -7680,6 +7779,9 @@
       ],
       "Today": [
         "Danes"
+      ],
+      "Viewed": [
+        "Ogledano"
       ],
       "Yesterday": [
         "Včeraj"
@@ -8019,6 +8121,12 @@
       ]
     },
     "Sort menu options": {
+      "Created by": [
+        "Ustvaril"
+      ],
+      "Last viewed first": [
+        "Nazadnje gledano najprej"
+      ],
       "Location": [
         "Kraj"
       ],
@@ -8244,6 +8352,9 @@
       ],
       "Sign in to your organization": [
         "Prijavite se v svojo organizacijo"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Preusmerjeni boste k ponudniku SSO tretje osebe."
       ]
     },
     "State": {
@@ -8879,6 +8990,12 @@
       "Docs": [
         "Dokumenti"
       ],
+      "Document Size Limit Exceeded": [
+        "Velikost dokumenta presežena"
+      ],
+      "Document Size Limit Reached": [
+        "Dosežena je omejitev velikosti dokumenta"
+      ],
       "Document verification failed": [
         "Preverjanje dokumenta ni uspelo."
       ],
@@ -9193,6 +9310,9 @@
       ],
       "Untitled document ${ date }": [
         "Neimenovan dokument ${ date }"
+      ],
+      "Untitled spreadsheet ${ date }": [
+        "Neimenovana preglednica ${ date }"
       ],
       "Upgrade to ${ planName }": [
         "Nadgradi na ${ planName }."
