@@ -1,9 +1,10 @@
 import type { RefObject } from 'react';
 import { useRef } from 'react';
-import { useLocation } from 'react-router-dom';
+
+import { c } from 'ttag';
 
 import type { HotkeyTuple } from '@proton/components';
-import { useEventManager, useHotkeys } from '@proton/components';
+import { useEventManager, useHotkeys, useNotifications } from '@proton/components';
 import { useFolders } from '@proton/mail';
 import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
@@ -25,7 +26,6 @@ import {
 import { useOnCompose } from '../../containers/ComposeProvider';
 import { hasLabel, isStarred } from '../../helpers/elements';
 import { getFolderName } from '../../helpers/labels';
-import { isConversationMode } from '../../helpers/mailSettings';
 import type { Element } from '../../models/element';
 import { APPLY_LOCATION_TYPES } from '../actions/applyLocation/interface';
 import { useApplyLocation } from '../actions/applyLocation/useApplyLocation';
@@ -58,7 +58,6 @@ interface MessageHotkeysHandlers {
     toggleOriginalMessage: () => void;
     handleLoadRemoteImages: () => void;
     handleLoadEmbeddedImages: () => void;
-    onBack: () => void;
 }
 
 export const useMessageHotkeys = (
@@ -80,12 +79,11 @@ export const useMessageHotkeys = (
         toggleOriginalMessage,
         handleLoadRemoteImages,
         handleLoadEmbeddedImages,
-        onBack,
     }: MessageHotkeysHandlers
 ) => {
-    const location = useLocation();
     const [folders] = useFolders();
     const { call } = useEventManager();
+    const { createNotification } = useNotifications();
     const labelDropdownToggleRef = useRef<() => void>(noop);
     const moveDropdownToggleRef = useRef<() => void>(noop);
     const filterDropdownToggleRef = useRef<() => void>(noop);
@@ -103,6 +101,7 @@ export const useMessageHotkeys = (
         mailSettings.Shortcuts && isMessageReady && expanded && message.messageDocument?.initialized;
 
     const isScheduledMessage = message.data?.LabelIDs?.includes(MAILBOX_LABEL_IDS.SCHEDULED);
+    const isSoftDeleted = message.data?.LabelIDs?.includes(MAILBOX_LABEL_IDS.SOFT_DELETED);
 
     const moveElementTo = async (e: KeyboardEvent, LabelID: MAILBOX_LABEL_IDS) => {
         if (!message.data) {
@@ -176,6 +175,20 @@ export const useMessageHotkeys = (
         }
     };
 
+    const handleComposeNewMessage = (action: MESSAGE_ACTIONS) => async (e: KeyboardEvent) => {
+        if (hotkeysEnabledAndMessageReady && !isScheduledMessage) {
+            e.stopPropagation();
+            e.preventDefault();
+            if (isSoftDeleted) {
+                return createNotification({
+                    text: c('Error').t`That action can't be performed on emails in this folder`,
+                    type: 'error',
+                });
+            }
+            void onCompose({ type: ComposeTypes.newMessage, action, referenceMessage: message });
+        }
+    };
+
     const shortcutHandlers: HotkeyTuple[] = [
         [
             'Enter',
@@ -218,48 +231,9 @@ export const useMessageHotkeys = (
                 }
             },
         ],
-        [
-            'R',
-            (e) => {
-                if (hotkeysEnabledAndMessageReady && !isScheduledMessage) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    void onCompose({
-                        type: ComposeTypes.newMessage,
-                        action: MESSAGE_ACTIONS.REPLY,
-                        referenceMessage: message,
-                    });
-                }
-            },
-        ],
-        [
-            ['Shift', 'R'],
-            (e) => {
-                if (hotkeysEnabledAndMessageReady && !isScheduledMessage) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    void onCompose({
-                        type: ComposeTypes.newMessage,
-                        action: MESSAGE_ACTIONS.REPLY_ALL,
-                        referenceMessage: message,
-                    });
-                }
-            },
-        ],
-        [
-            ['Shift', 'F'],
-            (e) => {
-                if (hotkeysEnabledAndMessageReady && !isScheduledMessage) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    void onCompose({
-                        type: ComposeTypes.newMessage,
-                        action: MESSAGE_ACTIONS.FORWARD,
-                        referenceMessage: message,
-                    });
-                }
-            },
-        ],
+        ['R', handleComposeNewMessage(MESSAGE_ACTIONS.REPLY)],
+        [['Shift', 'R'], handleComposeNewMessage(MESSAGE_ACTIONS.REPLY_ALL)],
+        [['Shift', 'F'], handleComposeNewMessage(MESSAGE_ACTIONS.FORWARD)],
         [
             ['Shift', 'C'],
             async (e) => {
@@ -284,11 +258,6 @@ export const useMessageHotkeys = (
                 if (hotkeysEnabledAndMessageReady) {
                     e.stopPropagation();
                     setExpanded(false);
-                    if (isConversationMode(labelID, mailSettings, location)) {
-                        messageRef.current?.focus();
-                    } else {
-                        onBack();
-                    }
                     void markAs({
                         elements: [message.data as Element],
                         labelID,
