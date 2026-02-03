@@ -164,6 +164,7 @@ const getIsSentinelPlanCondition: Set<PLANS | ADDON_NAMES> = new Set([
     PLANS.FAMILY,
     PLANS.DUO,
     PLANS.BUNDLE_PRO,
+    PLANS.BUNDLE_PRO_2024,
     PLANS.BUNDLE_BIZ_2025,
     PLANS.PASS,
     PLANS.PASS_FAMILY,
