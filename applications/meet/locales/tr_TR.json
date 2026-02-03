@@ -1394,6 +1394,12 @@
       "Failed to lock meeting": [
         "Görüşme kilitlenemedi"
       ],
+      "Failed to request permission for the camera. Please check your system permissions and try again. You might have to enable permissions manually, please refresh the page afterwards": [
+        "Mikrofona erişme izni isteği yapılamadı. Lütfen sistem izinlerinizi denetleyip yeniden deneyin. İzinleri el ile vermeniz gerekebilir. Ardından lütfen sayfayı yenileyin."
+      ],
+      "Failed to request permission for the microphone. Please check your system permissions and try again. You might have to enable permissions manually, please refresh the page afterwards": [
+        "Mikrofona erişme izni isteği yapılamadı. Lütfen sistem izinlerinizi denetleyip yeniden deneyin. İzinleri el ile vermeniz gerekebilir. Ardından lütfen sayfayı yenileyin."
+      ],
       "Failed to rotate personal meeting link": [
         "Kişisel görüşme bağlantısı değiştirilemedi"
       ],
@@ -1861,6 +1867,9 @@
       ],
       "Please enter the passphrase to decrypt and view this meeting": [
         "Lütfen bu görüşmeyi görüntülemek ve şifresini çözmek için parolayı yazın"
+      ],
+      "Poor connection": [
+        "Bağlantı kötü"
       ],
       "Recording saved": [
         "Görüşme kaydedildi"

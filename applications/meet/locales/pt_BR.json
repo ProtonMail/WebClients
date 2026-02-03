@@ -1394,6 +1394,12 @@
       "Failed to lock meeting": [
         "Falha ao bloquear reunião"
       ],
+      "Failed to request permission for the camera. Please check your system permissions and try again. You might have to enable permissions manually, please refresh the page afterwards": [
+        "Falha ao solicitar permissão para a câmera. Verifique as permissões do seu sistema e tente novamente. Talvez seja necessário ativar as permissões manualmente; atualize a página depois."
+      ],
+      "Failed to request permission for the microphone. Please check your system permissions and try again. You might have to enable permissions manually, please refresh the page afterwards": [
+        "Falha ao solicitar permissão para o microfone. Verifique as permissões do seu sistema e tente novamente. Talvez seja necessário habilitar as permissões manualmente; atualize a página depois."
+      ],
       "Failed to rotate personal meeting link": [
         "Não foi possível redefinir link de reunião pessoal"
       ],
@@ -1861,6 +1867,9 @@
       ],
       "Please enter the passphrase to decrypt and view this meeting": [
         "Insira a frase secreta para descriptografar e visualizar esta reunião."
+      ],
+      "Poor connection": [
+        "Conexão ruim"
       ],
       "Recording saved": [
         "A gravação foi salva"
