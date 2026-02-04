@@ -3,37 +3,40 @@ import { useRef } from 'react';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
-import { Avatar } from '@proton/atoms/Avatar/Avatar';
 import { Button } from '@proton/atoms/Button/Button';
-import { Input } from '@proton/atoms/Input/Input';
-import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import {
-    SUBSCRIPTION_STEPS,
-    Toggle,
-    useConfig,
-    useNotifications,
-    useSettingsLink,
-    useUpsellConfig,
-} from '@proton/components';
-import { MemberRole } from '@proton/drive/index';
+import { SUBSCRIPTION_STEPS, Toggle, useConfig, useSettingsLink, useUpsellConfig } from '@proton/components';
+import { MemberRole } from '@proton/drive';
+import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
+import { IcFormTextboxPassword } from '@proton/icons/icons/IcFormTextboxPassword';
 import { IcGlobe } from '@proton/icons/icons/IcGlobe';
-import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
-import { IcSquares } from '@proton/icons/icons/IcSquares';
 import { PLANS, PLAN_NAMES } from '@proton/payments';
 import { APPS, SHARED_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import { getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
 import drivePlusUpgrade from '@proton/styles/assets/img/drive/drive-plus-upsell-banner.svg';
-import clsx from '@proton/utils/clsx';
 
 import { useDriveUpsellModal } from '../../../components/modals/DriveUpsellModal';
+import { CopyPublicLink } from './CopyPublicLink';
+import { usePublickLinkSettingsModal } from './PublicLinkSettingsModal';
 import { PublicRoleDropdownMenu } from './PublicRoleDropdownMenu';
 
 interface Props {
-    url?: string;
-    role: MemberRole;
-    onChangeRole: ({ role }: { role: MemberRole }) => Promise<void>;
+    publicLink?: {
+        role: MemberRole;
+        url: string;
+        customPassword?: string;
+        expirationTime?: Date;
+    };
+    onUpdate: ({
+        role,
+        customPassword,
+        expiration,
+    }: {
+        role?: MemberRole;
+        customPassword?: string;
+        expiration?: Date;
+    }) => Promise<void>;
     onCreate: () => Promise<void>;
     onDelete: () => Promise<void>;
     isLoading: boolean;
@@ -42,9 +45,8 @@ interface Props {
     disabledToggle?: boolean;
 }
 export const PublicSharing = ({
-    url,
-    role,
-    onChangeRole,
+    publicLink,
+    onUpdate,
     onCreate,
     onDelete,
     isLoading,
@@ -52,11 +54,13 @@ export const PublicSharing = ({
     onToggle,
     disabledToggle,
 }: Props) => {
+    const { url, role } = publicLink ?? {};
+
     const contentRef = useRef<HTMLDivElement>(null);
-    const { createNotification } = useNotifications();
-    const [driveUpsellModal, showDriveUpsellModal] = useDriveUpsellModal();
     const [user] = useUser();
     const goToSettings = useSettingsLink();
+    const [publicLinkSettingsModal, showPublicLinkSettingsModal] = usePublickLinkSettingsModal();
+
     const { APP_NAME } = useConfig();
     const upsellRef = getUpsellRefFromApp({
         app: APP_NAME,
@@ -65,18 +69,16 @@ export const PublicSharing = ({
         fromApp: APPS.PROTONDRIVE,
     });
     const upsellConfig = useUpsellConfig({ upsellRef, step: SUBSCRIPTION_STEPS.PLAN_SELECTION });
+    const [driveUpsellModal, showDriveUpsellModal] = useDriveUpsellModal();
 
     const handleCopyURLClick = () => {
         if (contentRef.current) {
             textToClipboard(url, contentRef.current);
-            createNotification({
-                text: c('Success').t`Secure link copied`,
-            });
         }
     };
 
     const handleChangeRole = (role: MemberRole) => {
-        return onChangeRole({ role }).catch((error) => {
+        return onUpdate({ role }).catch((error) => {
             if (error.data.Code === API_CUSTOM_ERROR_CODES.MAX_PUBLIC_EDIT_MODE_FOR_FREE_USER) {
                 const planName = PLAN_NAMES[user.isFree ? PLANS.DRIVE : PLANS.BUNDLE];
                 return showDriveUpsellModal({
@@ -108,71 +110,100 @@ export const PublicSharing = ({
         }
     };
 
-    const hasEditorRole = role === MemberRole.Editor;
-    const editorPermissionsTooltipText = c('Info')
-        .t`Your email address will be visible as the link's owner on the share page`;
-
     return (
-        <div className="w-full" ref={contentRef} data-testid="share-modal-shareWithAnyoneSection">
-            <div className="flex justify-space-between items-center mb-6">
-                <h2 className="text-lg text-semibold mr">{c('Info').t`Create public link`}</h2>
-                <Toggle disabled={disabledToggle} checked={!!url} loading={isLoading} onChange={handleToggle} />
-            </div>
-            <div className={clsx('flex items-center justify-space-between mb-4', !url && 'opacity-30')}>
-                <div className="w-full flex flex-nowrap gap-2">
-                    <Avatar color="weak" className="shrink-0">
-                        <IcGlobe />
-                    </Avatar>
-                    <p className="flex-1 flex flex-column p-0 m-0">
-                        <span className="text-semibold">{c('Label').t`Anyone with the link`}</span>
-                        <span className="flex items-center color-weak">
-                            {hasEditorRole
-                                ? c('Label').t`Anyone on the Internet with the link can edit`
-                                : c('Label').t`Anyone on the Internet with the link can view`}
-                            {hasEditorRole && (
-                                <Tooltip title={editorPermissionsTooltipText}>
-                                    <IcInfoCircle className="ml-1" />
-                                </Tooltip>
-                            )}
+        <>
+            <div className="w-full" ref={contentRef} data-testid="share-modal-shareWithAnyoneSection">
+                {/* Header */}
+                <div className="flex items-center justify-space-between border-bottom border-weak px-8 pb-3 mb-5">
+                    <div className="flex items-center gap-2">
+                        <div
+                            className="ratio-square rounded-50 w-2"
+                            // Background colors not available in bg-* classes
+                            style={{ background: !!url ? 'var(--signal-success)' : 'var(--interaction-weak-major-3)' }}
+                        ></div>
+                        <span className="text-bold">{c('Title').t`Public link`}</span>
+                    </div>
+
+                    <div className="flex items-center">
+                        <span className="color-weak mr-2">
+                            {!!url ? c('Label').t`Active` : c('Label').t`Not active`}
                         </span>
-                    </p>
-                    <div className="shrink-0">
-                        {viewOnly ? (
-                            <div className="hidden sm:block">{c('Label').t`Viewer`}</div>
-                        ) : (
-                            <PublicRoleDropdownMenu
-                                disabled={!url || isLoading}
-                                selectedRole={role}
-                                onChangeRole={handleChangeRole}
-                            />
-                        )}
+                        <Toggle disabled={disabledToggle} checked={!!url} loading={isLoading} onChange={handleToggle} />
                     </div>
                 </div>
-            </div>
-            {!!url ? (
-                <div className="w-full flex justify-space-between">
-                    <Input
-                        readOnly
-                        value={url}
-                        className="overflow-hidden text-ellipsis bg-weak border-weak color-weak"
-                        data-testid="share-anyone-url"
-                        disabled={!url}
-                    />
+
+                {/* Content */}
+                <div className="flex flex-column gap-4 px-8">
+                    <div className="flex items-center justify-space-between flex-nowrap">
+                        <div className="flex items-center gap-3">
+                            <div
+                                className="flex items-center ratio-square p-2 rounded"
+                                // Background colors not available in bg-* classes
+                                style={{
+                                    background: !!url
+                                        ? 'var(--signal-success-minor-2)'
+                                        : 'var(--interaction-weak-minor-1)',
+                                }}
+                            >
+                                <IcGlobe className={!!url ? 'color-success' : 'color-hint'} />
+                            </div>
+                            <span className={!url ? undefined : 'color-hint'}>{c('Label')
+                                .t`Anyone on the Internet with the link`}</span>
+                        </div>
+
+                        <div className="shrink-0">
+                            {viewOnly ? (
+                                <div className="hidden sm:block">{c('Label').t`can view`}</div>
+                            ) : (
+                                <PublicRoleDropdownMenu
+                                    disabled={!url || isLoading}
+                                    selectedRole={role ?? MemberRole.Viewer}
+                                    onChangeRole={handleChangeRole}
+                                />
+                            )}
+                        </div>
+                    </div>
+
+                    <CopyPublicLink url={url} onClick={handleCopyURLClick} disabled={!url} />
+                </div>
+
+                {/* Footer */}
+                <div className="w-full px-5">
                     <Button
-                        color="norm"
-                        shape="outline"
-                        icon
-                        id="copy-url-button"
-                        onClick={handleCopyURLClick}
-                        className="ml-3"
+                        className="w-full flex items-center justify-space-between mt-4"
+                        color="weak"
+                        shape="ghost"
+                        size="small"
+                        data-testid="public-link-settings-button"
+                        onClick={() =>
+                            showPublicLinkSettingsModal({
+                                customPassword: publicLink?.customPassword,
+                                expiration: publicLink?.expirationTime,
+                                onPublicLinkSettingsChange: onUpdate,
+                            })
+                        }
                         disabled={!url}
-                        data-testid="share-anyone-copyUrlButton"
                     >
-                        <IcSquares />
+                        <div className="flex items-center gap-3">
+                            <div
+                                className="flex items-center ratio-square p-2 rounded"
+                                // Background color not available in bg-* classes
+                                style={{
+                                    background: 'var(--interaction-weak-minor-2)',
+                                }}
+                            >
+                                <IcFormTextboxPassword className="color-hint" />
+                            </div>
+                            <span>{c('Action').t`Set password or expiration date`}</span>
+                        </div>
+
+                        <IcChevronRight />
                     </Button>
                 </div>
-            ) : null}
+            </div>
+
             {driveUpsellModal}
-        </div>
+            {publicLinkSettingsModal}
+        </>
     );
 };

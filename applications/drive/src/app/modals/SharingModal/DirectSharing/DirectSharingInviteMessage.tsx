@@ -21,7 +21,8 @@ export const DirectSharingInviteMessage = ({
     onChangeInviteMessage,
     onToggleIncludeInviteMessage,
 }: Props) => (
-    <>
+    // Wrapped in a div do we return a single element - important for flexbox layout
+    <div>
         {includeInviteMessage && (
             <div className="relative">
                 <InputFieldTwo
@@ -35,28 +36,31 @@ export const DirectSharingInviteMessage = ({
                     maxLength={500}
                     value={inviteMessage}
                 />
-                <span className="absolute right-0 bottom-0 text-sm color-weak">
-                    {inviteMessage.length}/{SHARE_INVITE_MESSAGE_MAX_LENGTH}
-                </span>
             </div>
         )}
 
-        <div className="w-full flex items-center">
-            <Checkbox
-                disabled={isAdding}
-                id="direct-sharing-toggle-invite-message"
-                className="color-weak"
-                checked={includeInviteMessage}
-                onChange={onToggleIncludeInviteMessage}
-            >
-                {c('Label').t`Include message and file name in invite email`}
-            </Checkbox>
-            <Tooltip
-                title={c('Tooltip')
-                    .t`Message and file name are stored with zero access encryption when included in the email`}
-            >
-                <IcInfoCircleFilled className="color-disabled ml-2" size={5} />
-            </Tooltip>
+        <div className="w-full flex justify-space-between items-center">
+            <div>
+                <Checkbox
+                    disabled={isAdding}
+                    id="direct-sharing-toggle-invite-message"
+                    className="color-weak"
+                    checked={includeInviteMessage}
+                    onChange={onToggleIncludeInviteMessage}
+                >
+                    {c('Label').t`Include message and file name in invite email`}
+                </Checkbox>
+                <Tooltip
+                    title={c('Tooltip')
+                        .t`Message and file name are stored with zero access encryption when included in the email`}
+                >
+                    <IcInfoCircleFilled className="color-disabled ml-2" size={5} />
+                </Tooltip>
+            </div>
+
+            <span className="text-sm color-weak">
+                {inviteMessage.length}/{SHARE_INVITE_MESSAGE_MAX_LENGTH}
+            </span>
         </div>
-    </>
+    </div>
 );

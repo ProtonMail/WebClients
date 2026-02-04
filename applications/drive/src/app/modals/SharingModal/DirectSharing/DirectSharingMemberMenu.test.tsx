@@ -45,19 +45,19 @@ describe('DirectSharingMemberMenu', () => {
 
     it('renders with default viewer role', () => {
         render(<DirectSharingMemberMenu {...defaultProps} />);
-        expect(screen.getByText('Viewer')).toBeInTheDocument();
+        expect(screen.getByText('can view')).toBeInTheDocument();
     });
 
     it('renders with editor role', () => {
         render(<DirectSharingMemberMenu {...defaultProps} selectedRole={MemberRole.Editor} />);
-        expect(screen.getByText('Editor')).toBeInTheDocument();
+        expect(screen.getByText('can edit')).toBeInTheDocument();
     });
 
     it('shows pending state for external invitation', () => {
         render(
             <DirectSharingMemberMenu {...defaultProps} externalInvitationState={NonProtonInvitationState.Pending} />
         );
-        expect(screen.getByText('Pending')).toBeInTheDocument();
+        expect(screen.getByText('pending')).toBeInTheDocument();
     });
 
     it('shows accepted state for external invitation', () => {
@@ -69,8 +69,8 @@ describe('DirectSharingMemberMenu', () => {
                 externalInvitationState={NonProtonInvitationState.UserRegistered}
             />
         );
-        expect(screen.getByText('Accepted')).toBeInTheDocument();
-        expect(screen.getByText('Editor (Accepted)')).toBeInTheDocument();
+        expect(screen.getByText('accepted')).toBeInTheDocument();
+        expect(screen.getByText('Editor (accepted)')).toBeInTheDocument();
     });
 
     it('shows menu options for external invitation when pending', () => {
@@ -82,8 +82,8 @@ describe('DirectSharingMemberMenu', () => {
                 externalInvitationState={NonProtonInvitationState.Pending}
             />
         );
-        expect(screen.getByText('Pending')).toBeInTheDocument();
-        expect(screen.getByText('Viewer (Pending)')).toBeInTheDocument();
+        expect(screen.getByText('pending')).toBeInTheDocument();
+        expect(screen.getByText('Viewer (pending)')).toBeInTheDocument();
         expect(screen.getByText('Editor')).toBeInTheDocument();
         expect(screen.getByText('Resend invite')).toBeInTheDocument();
     });
@@ -97,8 +97,8 @@ describe('DirectSharingMemberMenu', () => {
                 onCopyInvitationLink={jest.fn()}
             />
         );
-        // Button shows "Viewer" and dropdown also has "Viewer" option
-        expect(screen.getAllByText('Viewer')).toHaveLength(2);
+        expect(screen.getAllByText('can view')).toHaveLength(1);
+        expect(screen.getAllByText('Viewer')).toHaveLength(1);
         expect(screen.getByText('Editor')).toBeInTheDocument();
         expect(screen.getByText('Remove access')).toBeInTheDocument();
         expect(screen.getByText('Copy invite link')).toBeInTheDocument();
@@ -118,13 +118,13 @@ describe('DirectSharingMemberMenu', () => {
 
     it('disables dropdown button when disabled prop is true', () => {
         render(<DirectSharingMemberMenu {...defaultProps} disabled={true} />);
-        expect(screen.getByText('Viewer')).toBeDisabled();
+        expect(screen.getByText('can view')).toBeDisabled();
     });
 
     it('shows loading state when internal loading is true', () => {
         mockedUseLoading.mockReturnValueOnce([true, jest.fn(), jest.fn()] as any);
         render(<DirectSharingMemberMenu {...defaultProps} />);
-        expect(screen.getByText('Viewer')).toBeDisabled();
+        expect(screen.getByText('can view')).toBeDisabled();
         expect(screen.getByTestId('circle-loader')).toBeInTheDocument();
     });
 

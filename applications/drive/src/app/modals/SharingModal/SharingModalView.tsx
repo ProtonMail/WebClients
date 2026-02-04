@@ -5,15 +5,8 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import {
-    ContactEmailsProvider,
-    type ModalStateProps,
-    ModalTwo,
-    ModalTwoContent,
-    ModalTwoFooter,
-    ModalTwoHeader,
-    useToggle,
-} from '@proton/components';
+import { ContactEmailsProvider, FileIcon, Icon, type ModalStateProps, ModalTwo, useToggle } from '@proton/components';
+import { ModalHeaderCloseButton } from '@proton/components/components/modalTwo/ModalHeader';
 import { MemberRole, type ShareNodeSettings } from '@proton/drive';
 import useLoading from '@proton/hooks/useLoading';
 import { IcCogWheel } from '@proton/icons/icons/IcCogWheel';
@@ -31,10 +24,13 @@ import { PublicSharing } from './PublicSharing/PublicSharing';
 import { useSharingSettingsModal } from './SharingSettingsModal';
 import type { DirectMember, DirectSharingRole } from './interfaces';
 
+import './SharingModalView.scss';
+
 export interface SharingModalViewProps extends ModalStateProps {
     isLoading: boolean;
 
     name: string;
+    mediaType?: string;
     linkId: string;
     ownerEmail?: string;
     ownerDisplayName?: string;
@@ -76,6 +72,7 @@ export const SharingModalView = ({
     open,
     isLoading,
     name,
+    mediaType,
     linkId,
     ownerEmail,
     ownerDisplayName,
@@ -179,57 +176,53 @@ export const SharingModalView = ({
 
         return (
             <ContactEmailsProvider>
-                <ModalTwoHeader
-                    title={c('Title').t`Share ${name}`}
-                    closeButtonProps={{ disabled: isClosedButtonDisabled }}
-                    actions={
-                        !isInvitationWorkflow
-                            ? [
-                                  <Tooltip disabled={isSettingsDisabled} title={c('Info').t`Share via link settings`}>
-                                      <Button
-                                          icon
-                                          shape="ghost"
-                                          onClick={() =>
-                                              showSettingsModal({
-                                                  customPassword: publicLink?.customPassword,
-                                                  expiration: publicLink?.expirationTime,
-                                                  onPublicLinkSettingsChange: handleUpdatePublicLink,
-                                                  stopSharing: async () => {
-                                                      await actions.stopSharing();
-                                                      onClose();
-                                                  },
-                                                  havePublicLink: !!publicLink?.url,
-                                                  isPublicLinkEnabled,
-                                              })
-                                          }
-                                          data-testid="share-modal-settings"
-                                      >
-                                          <IcCogWheel />
-                                      </Button>
-                                  </Tooltip>,
-                              ]
-                            : undefined
-                    }
-                    additionalContent={
-                        !isInvitationWorkflow ? (
-                            <>
-                                <DirectSharingAutocomplete
-                                    disabled={isDirectSharingDisabled}
-                                    existingEmails={existingEmails}
-                                    invitees={invitees}
-                                    onAdd={addInvitee}
-                                    onRemove={removeInvitee}
-                                    onChangeRole={setRole}
-                                    selectedRole={selectedRole}
-                                />
-                                <h2 className="text-lg text-semibold">{c('Info').t`People with access`}</h2>
-                            </>
-                        ) : undefined
-                    }
-                />
-                {!isInvitationWorkflow ? (
-                    <>
-                        <ModalTwoContent className="mb-5">
+                <div className="flex items-center justify-space-between flex-nowrap border-bottom border-weak px-8 py-3 mb-5">
+                    <div className="modal-two-header flex items-center flex-nowrap gap-2 m-0">
+                        <FileIcon mimeType={mediaType ?? ''} />
+                        <span className="modal-two-header-title h4 text-bold text-ellipsis">{c('Title')
+                            .t`Share ${name}`}</span>
+                    </div>
+
+                    <div className="grow-0 shrink-0">
+                        {!isInvitationWorkflow && (
+                            <Tooltip disabled={isSettingsDisabled} title={c('Info').t`Share via link settings`}>
+                                <Button
+                                    icon
+                                    shape="ghost"
+                                    onClick={() =>
+                                        showSettingsModal({
+                                            sharedFileName: name,
+                                            stopSharing: async () => {
+                                                await actions.stopSharing();
+                                                onClose();
+                                            },
+                                        })
+                                    }
+                                    data-testid="share-modal-settings"
+                                >
+                                    <IcCogWheel />
+                                </Button>
+                            </Tooltip>
+                        )}
+
+                        <ModalHeaderCloseButton buttonProps={{ disabled: isClosedButtonDisabled }} />
+                    </div>
+                </div>
+
+                <div className="flex flex-column gap-4 px-8">
+                    <DirectSharingAutocomplete
+                        disabled={isDirectSharingDisabled}
+                        existingEmails={existingEmails}
+                        invitees={invitees}
+                        onAdd={addInvitee}
+                        onRemove={removeInvitee}
+                        onChangeRole={setRole}
+                        selectedRole={selectedRole}
+                    />
+
+                    {!isInvitationWorkflow ? (
+                        <>
+                            <span className="color-weak">{c('Info').t`Who has access`}</span>
                             <DirectSharingListing
                                 viewOnly={isDirectSharingDisabled}
                                 linkId={linkId}
@@ -242,38 +235,9 @@ export const SharingModalView = ({
                                 onResendInvitation={actions.resendInvitation}
                                 onCopyInvitationLink={actions.copyInvitationLink}
                             />
-                        </ModalTwoContent>
-                        {isPublicLinkEnabled ? (
-                            <>
-                                <hr className="mb-0.5 min-h-px" />
-                                <ModalTwoFooter>
-                                    <PublicSharing
-                                        viewOnly={!isPublicEditModeEnabled}
-                                        onCreate={handleCreatePublicLink}
-                                        isLoading={isShareWithAnyoneLoading}
-                                        url={publicLink?.url}
-                                        role={publicLink?.role || MemberRole.Viewer}
-                                        onChangeRole={handleUpdatePublicLink}
-                                        onDelete={handleDeletePublicLink}
-                                        onToggle={actions.onPublicLinkToggle}
-                                        disabledToggle={publicLinkUpdating}
-                                    />
-                                </ModalTwoFooter>
-                            </>
-                        ) : null}
-                    </>
-                ) : (
-                    <>
-                        <ModalTwoContent className="mb-5">
-                            <DirectSharingAutocomplete
-                                disabled={isDirectSharingDisabled}
-                                existingEmails={existingEmails}
-                                invitees={invitees}
-                                onAdd={addInvitee}
-                                onRemove={removeInvitee}
-                                onChangeRole={setRole}
-                                selectedRole={selectedRole}
-                            />
+                        </>
+                    ) : (
+                        <>
                             <DirectSharingInviteMessage
                                 isAdding={isAdding}
                                 inviteMessage={inviteMessage}
@@ -281,9 +245,8 @@ export const SharingModalView = ({
                                 onChangeInviteMessage={setInviteMessage}
                                 onToggleIncludeInviteMessage={toggleIncludeInviteMessage}
                             />
-                        </ModalTwoContent>
-                        <ModalTwoFooter>
-                            <div className="w-full flex justify-space-between mb-4">
+
+                            <div className="w-full flex justify-space-between pt-5">
                                 <Button disabled={isAdding} onClick={handleCancel}>{c('Action').t`Cancel`}</Button>
                                 <Button
                                     type="submit"
@@ -295,9 +258,9 @@ export const SharingModalView = ({
                                     {c('Action').t`Share`}
                                 </Button>
                             </div>
-                        </ModalTwoFooter>
-                    </>
-                )}
+                        </>
+                    )}
+                </div>
             </ContactEmailsProvider>
         );
     };
@@ -305,7 +268,11 @@ export const SharingModalView = ({
     return (
         <>
             <ModalTwo
+                className="double-modal"
+                size="large"
+                fullscreenOnMobile
                 as="form"
+                open={open}
                 onClose={onClose}
                 onExit={onExit}
                 onReset={(e: any) => {
@@ -313,12 +280,30 @@ export const SharingModalView = ({
                     onClose();
                 }}
                 disableCloseOnEscape={publicLinkStateChanging || publicLinkUpdating || isAdding}
-                size="large"
-                fullscreenOnMobile
-                open={open}
             >
-                {renderModalState()}
+                <div className="double-modal-content shadow-lifted mb-3">{renderModalState()}</div>
+
+                {!isInvitationWorkflow && isPublicLinkEnabled && (
+                    <div className="double-modal-content shadow-lifted">
+                        <PublicSharing
+                            publicLink={publicLink}
+                            viewOnly={!isPublicEditModeEnabled}
+                            onCreate={handleCreatePublicLink}
+                            isLoading={isShareWithAnyoneLoading}
+                            onUpdate={handleUpdatePublicLink}
+                            onDelete={handleDeletePublicLink}
+                            onToggle={actions.onPublicLinkToggle}
+                            disabledToggle={publicLinkUpdating}
+                        />
+                    </div>
+                )}
+
+                <div className="flex items-center justify-center gap-2 pt-5">
+                    <Icon name="lock" />
+                    {c('Action').t`Sharing is end-to-end encrypted`}
+                </div>
             </ModalTwo>
+
             {settingsModal}
         </>
     );

@@ -61,45 +61,42 @@ export const DirectSharingListing = ({
 
     return (
         <>
-            <div className="flex flex-nowrap my-4 items-center" data-testid="share-owner">
-                <div className="flex-1 flex flex-nowrap items-center gap-2">
+            <div className="flex flex-nowrap items-center" data-testid="share-owner">
+                <div className="flex-1 flex flex-nowrap items-center gap-3">
                     <UserAvatar name={ownerName} className="shrink-0" />
-                    <p className="flex-1 flex flex-column flex-nowrap p-0 m-0">
-                        <span className="text-semibold">
+                    <div className="flex-1 flex flex-column flex-nowrap p-0 m-0">
+                        <div className="max-w-full text-ellipsis">
                             {ownerName} {ownerIsCurrentUser && <>({c('Info').t`you`})</>}
-                        </span>
+                        </div>
                         {ownerDisplayName ? (
-                            <span className="color-weak block max-w-full text-ellipsis" title={ownerEmail}>
+                            <div className="text-sm color-weak max-w-full text-ellipsis" title={ownerEmail}>
                                 {ownerEmail}
-                            </span>
+                            </div>
                         ) : null}
-                    </p>
+                    </div>
                 </div>
-                <div className="mx-2 shrink-0">{c('Info').t`Owner`}</div>
+                <div className="color-weak mx-2 shrink-0">{c('Info').t`owner`}</div>
             </div>
 
             {sortedMembersWithName.map(({ member, displayName, displayEmail }) => {
                 return (
                     <div
                         key={member.uid}
-                        className="flex flex-nowrap my-4 justify-space-between items-center"
+                        className="flex flex-nowrap justify-space-between items-center"
                         data-testid="share-members"
                     >
-                        <div className="flex flex-nowrap items-center gap-2">
+                        <div className="flex flex-nowrap items-center gap-3">
                             <UserAvatar name={displayName || displayEmail} />
-                            <p className="flex flex-column p-0 m-0">
-                                <span
-                                    className="w-full text-semibold text-ellipsis"
-                                    title={displayName ? undefined : displayEmail}
-                                >
+                            <div className="flex flex-column p-0 m-0">
+                                <div className="max-w-full text-ellipsis">
                                     {displayName ? displayName : displayEmail}
-                                </span>
+                                </div>
                                 {displayName ? (
-                                    <span className="w-full color-weak text-ellipsis" title={displayEmail}>
+                                    <div className="text-sm color-weak max-w-full text-ellipsis" title={displayEmail}>
                                         {displayEmail}
-                                    </span>
+                                    </div>
                                 ) : null}
-                            </p>
+                            </div>
                         </div>
                         <DirectSharingMemberMenu
                             disabled={viewOnly}
