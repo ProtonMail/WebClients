@@ -8,6 +8,7 @@ import {
     unprivatizeMembersListener,
 } from '@proton/account';
 import { startHostAccountSessionsListener } from '@proton/account/accountSessions/hostListener';
+import { groupOwnerInvitesListener } from '@proton/account/groupOwnerInvites/groupOwnerInvitesListener';
 import { startCalendarEventListener, startHolidaysDirectoryListener } from '@proton/calendar';
 import { startCalendarEventLoopV6Listening } from '@proton/redux-shared-store/eventLoop/calendarEventLoopV6';
 import { startContactEventLoopV6Listening } from '@proton/redux-shared-store/eventLoop/contactEventLoopV6';
@@ -40,6 +41,7 @@ export const start = ({
         startAccountSessionsListener(startListening);
         convertAddressesListener(startListening);
         unprivatizeMembersListener(startListening);
+        groupOwnerInvitesListener(startListening);
     }
 
     if (mode === 'lite') {
