@@ -16,7 +16,7 @@ import {
 import { confirmPendingAuthDevice, getAuthDevices, rejectPendingAuthDevice } from '@proton/pass/store/actions/creators/sso';
 import type { BitField, MaybeNull, PassPlanResponse, RequiredNonNull, UserMonitorStatusResponse } from '@proton/pass/types';
 import { EventActions } from '@proton/pass/types';
-import type { PassFeature } from '@proton/pass/types/api/features';
+import type { FeatureFlagVariant, PassFeature } from '@proton/pass/types/api/features';
 import { or } from '@proton/pass/utils/fp/predicates';
 import { objectDelete } from '@proton/pass/utils/object/delete';
 import { merge, partialMerge } from '@proton/pass/utils/object/merge';
@@ -27,6 +27,10 @@ import type { AuthDeviceOutput } from '@proton/shared/lib/keys/device';
 
 export type AddressState = { [addressId: string]: Address };
 export type FeatureFlagState = Partial<Record<PassFeature, boolean>>;
+export type FeatureFlagVariantValue = Omit<FeatureFlagVariant, 'enabled'>;
+export type FeatureFlagVariants = Partial<Record<PassFeature, FeatureFlagVariantValue>>;
+export type FeatureFlagAndVariantState = { features: FeatureFlagState; variants: FeatureFlagVariants };
+
 export type UserSettingsState = {
     Email: { Status: SETTINGS_STATUS };
     HighSecurity: {
@@ -64,6 +68,7 @@ export type UserState = {
     addresses: AddressState;
     eventId: MaybeNull<string>;
     features: MaybeNull<FeatureFlagState>;
+    featureVariants: MaybeNull<FeatureFlagVariants>;
     user: MaybeNull<User>;
     userSettings: MaybeNull<UserSettingsState>;
     devices: AuthDeviceOutput[];
@@ -77,6 +82,7 @@ const getInitialState = (): UserState => ({
     devices: [],
     eventId: null,
     features: null,
+    featureVariants: null,
     monitor: { ProtonAddress: true, Aliases: true },
     plan: null,
     user: null,
@@ -178,8 +184,8 @@ const reducer: Reducer<UserState> = (state = getInitialState(), action) => {
     }
 
     if (getUserFeaturesSuccess.match(action)) {
-        const next: UserState = { ...state, features: null }; /* wipe all features before merge */
-        return partialMerge(next, { features: action.payload });
+        const next: UserState = { ...state, features: null, featureVariants: null }; /* wipe all features before merge */
+        return partialMerge(next, { features: action.payload.features, featureVariants: action.payload.variants });
     }
 
     if (sentinelToggle.success.match(action)) {

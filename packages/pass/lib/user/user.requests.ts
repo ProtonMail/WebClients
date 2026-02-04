@@ -1,6 +1,12 @@
 import { DEFAULT_PASS_FEATURES } from '@proton/pass/constants';
 import { api } from '@proton/pass/lib/api/api';
-import type { FeatureFlagState, HydratedAccessState, HydratedUserState } from '@proton/pass/store/reducers';
+import type {
+    FeatureFlagAndVariantState,
+    FeatureFlagState,
+    FeatureFlagVariants,
+    HydratedAccessState,
+    HydratedUserState,
+} from '@proton/pass/store/reducers';
 import type { Maybe } from '@proton/pass/types';
 import type { FeatureFlagsResponse } from '@proton/pass/types/api/features';
 import { PassFeaturesValues } from '@proton/pass/types/api/features';
@@ -13,7 +19,7 @@ import { getUser } from '@proton/shared/lib/api/user';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import type { Address, User, UserSettings } from '@proton/shared/lib/interfaces';
 
-export const getFeatureFlags = async (webExtensionId: Maybe<string>): Promise<FeatureFlagState> => {
+export const getFeatureFlags = async (webExtensionId: Maybe<string>): Promise<FeatureFlagAndVariantState> => {
     logger.info(`[User] syncing feature flags`);
 
     const { toggles } = await api<FeatureFlagsResponse>({
@@ -22,10 +28,22 @@ export const getFeatureFlags = async (webExtensionId: Maybe<string>): Promise<Fe
         ...(EXTENSION_BUILD ? { params: { browserFamily: BUILD_TARGET, webExtensionId } } : {}),
     });
 
-    return PassFeaturesValues.reduce<FeatureFlagState>((features, feat) => {
-        features[feat] = toggles.some((toggle) => toggle.name === feat);
-        return features;
-    }, {});
+    return PassFeaturesValues.reduce<FeatureFlagAndVariantState>(
+        (acc, feature) => {
+            const toggle = toggles.find((toggle) => toggle.name === feature);
+            acc.features[feature] = Boolean(toggle);
+
+            if (toggle?.variant.enabled) {
+                acc.variants[feature] = {
+                    name: toggle.variant.name,
+                    payload: toggle.variant.payload ?? null,
+                };
+            }
+
+            return acc;
+        },
+        { features: {}, variants: {} }
+    );
 };
 
 export const getUserAccess = async (): Promise<HydratedAccessState> => {
@@ -59,19 +77,20 @@ export type UserData = {
     addresses: Record<string, Address>;
     eventId: string;
     features: FeatureFlagState;
+    featureVariants: FeatureFlagVariants;
     user: User;
     userSettings: UserSettings;
 };
 
 /** Resolves all necessary user data to build up the user state */
 export const getUserData = async (webExtensionId: Maybe<string>): Promise<HydratedUserState> => {
-    const [user, eventId, userSettings, addresses, access, features] = await Promise.all([
+    const [user, eventId, userSettings, addresses, access, featureFlagsData] = await Promise.all([
         getUserModel(),
         getUserLatestEventID(),
         getUserSettings(),
         getAllAddresses(api).then((addresses) => toMap(addresses, 'ID')),
         getUserAccess(),
-        getFeatureFlags(webExtensionId).catch(() => DEFAULT_PASS_FEATURES),
+        getFeatureFlags(webExtensionId).catch(() => ({ features: DEFAULT_PASS_FEATURES, variants: {} })),
     ]);
 
     return {
@@ -79,7 +98,8 @@ export const getUserData = async (webExtensionId: Maybe<string>): Promise<Hydrat
         addresses,
         devices: [],
         eventId,
-        features,
+        features: featureFlagsData.features,
+        featureVariants: featureFlagsData.variants,
         user,
         userSettings: {
             Email: { Status: userSettings.Email.Status },
