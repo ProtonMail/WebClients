@@ -19,14 +19,15 @@ export const useProjectActions = () => {
 
     const createProject = useCallback(
         async (projectName: string, projectInstructions?: string, files?: File[], projectIcon?: string) => {
-            const createdAt = new Date().toISOString();
+            const now = new Date().toISOString();
             const spaceId = newSpaceId();
 
             // Create a space marked as a project
             dispatch(
                 addSpace({
                     id: spaceId,
-                    createdAt,
+                    createdAt: now,
+                    updatedAt: now,
                     spaceKey: generateSpaceKeyBase64(),
                     isProject: true,
                     projectName,
@@ -48,7 +49,7 @@ export const useProjectActions = () => {
 
     const createConversationInProject = useCallback(
         (spaceId: SpaceId) => {
-            const createdAt = new Date().toISOString();
+            const now = new Date().toISOString();
             const conversationId = newConversationId();
 
             dispatch(
@@ -56,7 +57,8 @@ export const useProjectActions = () => {
                     id: conversationId,
                     spaceId,
                     title: 'New chat',
-                    createdAt,
+                    createdAt: now,
+                    updatedAt: now,
                     status: ConversationStatus.COMPLETED,
                 })
             );

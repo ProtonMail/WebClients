@@ -77,9 +77,11 @@ const validateEncryptedField = (encrypted: unknown): EncryptedData => {
 
 export function convertSpaceFromApi(input: unknown): GetSpaceRemote {
     if (typeof input !== 'object' || input === null) throw new Error('Invalid input: expected object');
-    const { ID, CreateTime, DeleteTime, Encrypted, SpaceKey, SpaceTag, Conversations, Assets } = input as SpaceFromApi;
+    const { ID, CreateTime, UpdateTime, DeleteTime, Encrypted, SpaceKey, SpaceTag, Conversations, Assets } = input as SpaceFromApi;
     if (!isRemoteId(ID)) throw new Error('Invalid ID: expected non-empty string');
     if (!isValidDateString(CreateTime)) throw new Error('Invalid CreateTime: expected Date');
+    // UpdateTime is optional for backward compatibility - fallback to CreateTime if not present
+    if (UpdateTime && !isValidDateString(UpdateTime)) throw new Error('Invalid UpdateTime: expected Date');
     if (!isValidDateString(DeleteTime) && DeleteTime !== undefined && DeleteTime !== null) {
         throw new Error('Invalid DeleteTime: expected Date');
     }
@@ -94,6 +96,7 @@ export function convertSpaceFromApi(input: unknown): GetSpaceRemote {
         remoteId: ID as SpaceId,
         id: SpaceTag as LocalId,
         createdAt: new Date(CreateTime as string).toISOString(),
+        updatedAt: new Date((UpdateTime || CreateTime) as string).toISOString(), // Fallback to CreateTime for backward compatibility
         wrappedSpaceKey: SpaceKey as Base64,
     };
     if (deleted) {
@@ -172,11 +175,13 @@ export function convertSpacesFromApi(input: unknown): ListSpacesRemote {
 
 export function convertConversationFromApi(input: unknown, spaceTag: SpaceTag): GetConversationRemote {
     if (typeof input !== 'object' || input === null) throw new Error('Invalid input');
-    const { ID, SpaceID, CreateTime, DeleteTime, IsStarred, Encrypted, Messages, ConversationTag } =
+    const { ID, SpaceID, CreateTime, UpdateTime, DeleteTime, IsStarred, Encrypted, Messages, ConversationTag } =
         input as ConversationFromApi;
     if (!isRemoteId(ID)) throw new Error('Invalid ID: expected non-empty string');
     if (!isRemoteId(SpaceID)) throw new Error('Invalid SpaceID: expected non-empty string');
     if (!isValidDateString(CreateTime)) throw new Error('Invalid CreateTime: expected serialized Date');
+    // UpdateTime is optional for backward compatibility - fallback to CreateTime if not present
+    if (UpdateTime && !isValidDateString(UpdateTime)) throw new Error('Invalid UpdateTime: expected serialized Date');
     if (!isValidDateString(DeleteTime) && !isNil(DeleteTime)) {
         throw new Error('Invalid DeleteTime: expected serialized Date');
     }
@@ -190,6 +195,7 @@ export function convertConversationFromApi(input: unknown, spaceTag: SpaceTag): 
         remoteId: ID as RemoteId,
         remoteSpaceId: SpaceID as RemoteId,
         createdAt: new Date(CreateTime as string).toISOString(),
+        updatedAt: new Date((UpdateTime || CreateTime) as string).toISOString(), // Fallback to CreateTime for backward compatibility
         starred: IsStarred ?? false,
     };
     if (deleted) {

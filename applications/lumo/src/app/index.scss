@@ -267,7 +267,7 @@ im.$media-expressions: $media-expressions;
 	// placeholder text
 	color: var(--text-weak);
 	content: attr(data-placeholder);
-	float: inline-start;
+	float: left;
 	block-size: 0;
 	pointer-events: none;
 }

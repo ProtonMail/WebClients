@@ -53,6 +53,7 @@ export const initialLumoUserSettings: LumoUserSettings = {
     },
     featureFlags: [],
     indexedDriveFolders: [],
+    automaticWebSearch: true, // Default to enabled (automatic)
 };
 
 // Actions

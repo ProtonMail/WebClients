@@ -49,3 +49,32 @@ export const searchConversations = (conversations: Conversation[], searchInput: 
     const matchesSearch = (c: Conversation) => !searchInput || c.title.toLowerCase().includes(normalizedSearchInput);
     return conversations.filter(matchesSearch);
 };
+
+/**
+ * Filter conversations to only those within the last 7 days.
+ * Used to enforce the 7-day retention policy for free users.
+ */
+export const filterConversationsWithin7Days = (conversations: Conversation[]): Conversation[] => {
+    const now = new Date();
+    const sevenDaysAgo = subDays(now, 7);
+    
+    return conversations.filter((conversation) => {
+        const createdAt = new Date(conversation.createdAt);
+        return createdAt >= sevenDaysAgo;
+    });
+};
+
+/**
+ * Apply retention policy based on subscription status.
+ * Free users can only access conversations from the last 7 days.
+ * Lumo Plus users have access to all conversations.
+ */
+export const applyRetentionPolicy = (
+    conversations: Conversation[],
+    hasLumoPlus: boolean
+): Conversation[] => {
+    if (hasLumoPlus) {
+        return conversations;
+    }
+    return filterConversationsWithin7Days(conversations);
+};

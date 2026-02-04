@@ -149,9 +149,11 @@ describe('Lumo Persistence Integration Tests', () => {
                 // Create a test space
                 console.log('Create a test space');
                 const spaceId = newSpaceId();
+                const now = new Date().toISOString();
                 const testSpace: Space = {
                     id: spaceId,
-                    createdAt: new Date().toISOString(),
+                    createdAt: now,
+                    updatedAt: now,
                     spaceKey: generateSpaceKeyBase64(),
                 };
 
@@ -192,9 +194,11 @@ describe('Lumo Persistence Integration Tests', () => {
                 // Create initial test space
                 console.log('Create initial test space');
                 const spaceId = newSpaceId();
+                const now = new Date().toISOString();
                 const space: Space = {
                     id: spaceId,
-                    createdAt: new Date().toISOString(),
+                    createdAt: now,
+                    updatedAt: now,
                     spaceKey: generateSpaceKeyBase64(),
                 };
 
@@ -458,11 +462,7 @@ describe('Lumo Persistence Integration Tests', () => {
                 // Create space
                 console.log('Create space');
                 const spaceId = newSpaceId();
-                const space = {
-                    id: spaceId,
-                    createdAt: new Date().toISOString(),
-                    spaceKey: generateSpaceKeyBase64(),
-                };
+                const space = createTestSpace({ id: spaceId });
                 const spaceDek = await getSpaceDek(space);
                 dispatch(addSpace(space));
                 dispatch(pushSpaceRequest({ id: spaceId }));
@@ -470,10 +470,12 @@ describe('Lumo Persistence Integration Tests', () => {
                 // Create conversation
                 console.log('Create conversation');
                 const conversationId = newConversationId();
+                const now = new Date().toISOString();
                 const conversation = {
                     id: conversationId,
                     spaceId,
-                    createdAt: new Date().toISOString(),
+                    createdAt: now,
+                    updatedAt: now,
                     title: '',
                     status: ConversationStatus.COMPLETED,
                 };
@@ -596,11 +598,7 @@ describe('Lumo Persistence Integration Tests', () => {
                 // Create space
                 console.log('Create space');
                 const spaceId = newSpaceId();
-                const space = {
-                    id: spaceId,
-                    createdAt: new Date().toISOString(),
-                    spaceKey: generateSpaceKeyBase64(),
-                };
+                const space = createTestSpace({ id: spaceId });
                 dispatch(addSpace(space));
                 dispatch(pushSpaceRequest({ id: spaceId }));
 
@@ -883,19 +881,17 @@ describe('Lumo Persistence Integration Tests', () => {
             // - space
             console.log('- space');
             const spaceId = newSpaceId();
-            const space = {
-                id: spaceId,
-                createdAt: new Date().toISOString(),
-                spaceKey: generateSpaceKeyBase64(),
-            };
+            const space = createTestSpace({ id: spaceId });
             const spaceDek = await getSpaceDek(space);
             // - conversation
             console.log('- conversation');
             const conversationId = newConversationId();
+            const now = new Date().toISOString();
             const conversation = {
                 id: conversationId,
                 spaceId,
-                createdAt: new Date().toISOString(),
+                createdAt: now,
+                updatedAt: now,
                 title: 'Test Conversation',
                 status: ConversationStatus.COMPLETED,
             };
@@ -1022,14 +1018,14 @@ describe('Lumo Persistence Integration Tests', () => {
                     const restoredSpace = restoredState.spaces[spaceId];
                     expect(restoredSpace).toBeDefined();
                     expect(restoredSpace.id).toBe(spaceId);
-                    expectSpaceEqual(restoredSpace, space, { ignoreFields: ['createdAt'] });
+                    expectSpaceEqual(restoredSpace, space, { ignoreFields: ['createdAt', 'updatedAt'] });
                     // - conversation
                     console.log('- conversation');
                     const restoredConversation = restoredState.conversations[conversationId];
                     expect(restoredConversation).toBeDefined();
                     expect(restoredConversation.id).toBe(conversationId);
                     expect(restoredConversation.title).toBe(conversation.title);
-                    expectConversationEqual(restoredConversation, conversation, { ignoreFields: ['createdAt'] });
+                    expectConversationEqual(restoredConversation, conversation, { ignoreFields: ['createdAt', 'updatedAt'] });
                     // - message
                     console.log('- message');
                     const restoredMessage = restoredState.messages[messageId];
@@ -2126,11 +2122,7 @@ describe('Lumo Persistence Integration Tests', () => {
 
                 // Create test spaces
                 const spaceIds = [newSpaceId(), newSpaceId()];
-                const spaces = spaceIds.map((id) => ({
-                    id,
-                    createdAt: new Date().toISOString(),
-                    spaceKey: generateSpaceKeyBase64(),
-                }));
+                const spaces = spaceIds.map((id) => createTestSpace({ id }));
 
                 for (const space of spaces) {
                     dispatch(addSpace(space));
@@ -2139,10 +2131,12 @@ describe('Lumo Persistence Integration Tests', () => {
 
                 // Create conversations for each space
                 const conversationIds = [newConversationId(), newConversationId()];
+                const now = new Date().toISOString();
                 const conversations = conversationIds.map((id, index) => ({
                     id,
                     spaceId: spaceIds[index],
-                    createdAt: new Date().toISOString(),
+                    createdAt: now,
+                    updatedAt: now,
                     title: `Test conversation ${index + 1}`, // Required field
                 }));
 
@@ -2331,11 +2325,7 @@ describe('Lumo Persistence Integration Tests', () => {
 
                 // Create test spaces in Browser 1
                 const spaceIds = [newSpaceId(), newSpaceId()];
-                const spaces = spaceIds.map((id) => ({
-                    id,
-                    createdAt: new Date().toISOString(),
-                    spaceKey: generateSpaceKeyBase64(),
-                }));
+                const spaces = spaceIds.map((id) => createTestSpace({ id }));
 
                 for (const space of spaces) {
                     browser1.dispatch(addSpace(space));
@@ -2455,11 +2445,7 @@ describe('Lumo Persistence Integration Tests', () => {
                 // Create a test space first
                 console.log('Creating test space');
                 const spaceId = newSpaceId();
-                const space = {
-                    id: spaceId,
-                    createdAt: new Date().toISOString(),
-                    spaceKey: generateSpaceKeyBase64(),
-                };
+                const space = createTestSpace({ id: spaceId });
                 dispatch(addSpace(space));
                 dispatch(pushSpaceRequest({ id: spaceId }));
 
@@ -2665,21 +2651,19 @@ describe('Lumo Persistence Integration Tests', () => {
                     // Create space
                     console.log('Creating test space');
                     testSpaceId = newSpaceId();
-                    const space = {
-                        id: testSpaceId,
-                        createdAt: new Date().toISOString(),
-                        spaceKey: generateSpaceKeyBase64(),
-                    };
+                    const space = createTestSpace({ id: testSpaceId });
                     dispatch(addSpace(space));
                     dispatch(pushSpaceRequest({ id: testSpaceId }));
 
                     // Create conversation
                     console.log('Creating test conversation');
                     testConversationId = newConversationId();
+                    const now = new Date().toISOString();
                     const conversation = {
                         id: testConversationId,
                         spaceId: testSpaceId,
-                        createdAt: new Date().toISOString(),
+                        createdAt: now,
+                        updatedAt: now,
                         title: 'Test Conversation with Attachment',
                         status: ConversationStatus.COMPLETED,
                     };
@@ -2912,11 +2896,7 @@ describe('Lumo Persistence Integration Tests', () => {
                     // Create space
                     console.log('Creating test space');
                     testSpaceId = newSpaceId();
-                    const space = {
-                        id: testSpaceId,
-                        createdAt: new Date().toISOString(),
-                        spaceKey: generateSpaceKeyBase64(),
-                    };
+                    const space = createTestSpace({ id: testSpaceId });
                     dispatch(addSpace(space));
                     dispatch(pushSpaceRequest({ id: testSpaceId }));
 
