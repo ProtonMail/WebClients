@@ -4151,6 +4151,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du har allerede oprettet 10 aliasser. Få ubegrænsede aliasser og 500 GB lagerplads med ${ BRAND_NAME } Unlimited."
+      ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "For at importere via en CSV- eller VCF-fil, skal du sikre dig, at filen ikke overskrider ${ MAX_IMPORT_FILE_SIZE_STRING } eller ${ maxContactString } kontakter. Hvis din fil er større, skal du opdele den i mindre filer. ${ learnMoreLink }."
       ]
     },
     "description": {
@@ -5062,6 +5065,12 @@
       ],
       "ZIP code is required": [
         "Postnummer er påkrævet"
+      ],
+      "That action can't be performed on emails in this folder": [
+        "Denne handling kan ikke udføres på e-mails i denne mappe"
+      ],
+      "This offer is not available in your country": [
+        "Dette tilbud er ikke tilgængeligt i dit land"
       ]
     },
     "error": {
@@ -5160,6 +5169,9 @@
       ],
       "Your file ${ formattedFilename } is empty.": [
         "Din fil ${ formattedFilename } er tom."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ maxContactString } contacts.": [
+        "Din fil ${ formattedFilename } indeholder mere end ${ maxContactString } kontakter."
       ]
     },
     "Error importing event": {
@@ -6363,7 +6375,7 @@
         "${ BRAND_NAME } Scribe-skriveassistent"
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
-        "${ BRAND_NAME }'s krypteringsteknologi betyder, at ingen kan få adgang til din adgangskode - ikke engang os."
+        "${ BRAND_NAME }s krypteringsteknologi betyder, at ingen kan få adgang til din adgangskode - ikke engang os."
       ],
       "${ BRAND_NAME }'s password manager lets you create, store, and autofill passwords, so you never have to reset them.": [
         "${ BRAND_NAME }'s adgangskodeadministrator gør det muligt for dig at oprette, gemme og automatisk udfylde adgangskoder, så du aldrig behøver at nulstille dem."
@@ -8841,6 +8853,16 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Du er få klik fra en ryddelig indbakke."
+      ],
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "Alle dine kontakter vil blive importeret, op til en grænse på ${ maxContact }",
+        "Alle dine kontakter vil blive importeret, op til en grænse på ${ maxContact }"
+      ],
+      "No messages found": [
+        "Ingen beskeder fundet"
+      ],
+      "Please wait for the action to be completed": [
+        "Afvent at handlingen afsluttes"
       ]
     },
     "info": {
@@ -10432,6 +10454,16 @@
       "Up to ${ n } participant": [
         "Op til ${ n } deltager",
         "Op til ${ n } deltagere"
+      ],
+      "${ n } participant": [
+        "${ n } deltager",
+        "${ n } deltagere"
+      ],
+      "Booking pages": [
+        "Reservationssider"
+      ],
+      "Meeting recording": [
+        "Møde-optagelse"
       ]
     },
     "Message": {
@@ -11144,6 +11176,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Vi scanner det mørke web for at tjekke, om dine ${ BRAND_NAME }-adresser eller aliasser er blevet lækket, og giver dig straks besked, hvis vi finder noget."
+      ],
+      "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
+        "Telefonsupport (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ brugere)"
       ]
     },
     "new_plans: feature highlight": {
@@ -11237,7 +11272,7 @@
         "Beskyt din familie med alle premium funktioner i ${ plusTitle } for 6 brugere."
       ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
-        "Beskyt din families privatliv med alle ${ BRAND_NAME } tjenester kombineret."
+        "Beskyt din families privatliv med alle ${ BRAND_NAME }-tjenester kombineret."
       ],
       "Safely access internet from anywhere with essential network monitoring": [
         "Sikker adgang til internettet overalt med vigtig netværksovervågning"
@@ -11511,6 +11546,9 @@
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "Du kan have mere end én administrator. Alle administratorer kan tilføje og administrere brugere, men kun den primære administrator har kontrol over fakturering."
+      ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } or more users": [
+        "Telefonsupport er tilgængelig fra ${ BRAND_NAME } Kundesupport-team i den europæiske åbningstid for kunder med ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } eller flere brugere"
       ]
     },
     "new_plans: Upsell attribute": {
@@ -12297,6 +12335,18 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Dit abonnement har i øjeblikket en eksisterende rabat. Ved at skifte til denne nye kampagne vil den eksisterende rabat ikke længere blive anvendt."
+      ],
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "Rabatten er gyldig for ${ renewalsWithCoupon } fornyelse.",
+        "Rabatten er gyldig for ${ renewalsWithCoupon } fornyelser."
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Den særligt nedsatte pris er gyldig i ${ couponRedemptions } måned. Derefter fornys den automatisk til ${ renewPriceStr } for 1 måned. Du kan opsige når som helst.",
+        "Den særligt nedsatte pris er gyldig i ${ couponRedemptions } måneder. Derefter fornys den automatisk til ${ renewPriceStr } for 1 måned. Du kan opsige når som helst."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Den særligt nedsatte pris på ${ priceWithDiscount } er gyldig i ${ couponRedemptions } måned. Derefter fornys den automatisk til ${ renewPriceStr } for 1 måned. Du kan opsige når som helst.",
+        "Den særligt nedsatte pris på ${ priceWithDiscount } er gyldig i ${ couponRedemptions } måneder. Derefter fornys den automatisk til ${ renewPriceStr } for 1 måned. Du kan opsige når som helst."
       ]
     },
     "Payments.Error": {
@@ -12869,6 +12919,9 @@
       ],
       "No unread messages found": [
         "Ingen ulæste beskeder fundet"
+      ],
+      "An action is being processed": [
+        "En handling behandles"
       ]
     },
     "Section": {
@@ -15696,6 +15749,9 @@
       ],
       "✨ Categories are coming!": [
         "✨ Kategorier er på vej!"
+      ],
+      "Your ${ planTitle } subscription has started": [
+        "Dit ${ planTitle }-abonnement er startet"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16273,6 +16329,11 @@
       ],
       "Passcode:": [
         "Adgangskode:"
+      ]
+    },
+    "Action: Sheets": {
+      "Open in ${ SHEETS_APP_NAME }": [
+        "Åbn i ${ SHEETS_APP_NAME }"
       ]
     }
   }
