@@ -19,6 +19,7 @@ export interface VpnLocationFilterPolicy {
     State: number;
     Type: number;
     Users: SharedServerUser[];
+    UpdateTime?: number;
 }
 
 export interface SharedServerUser {
