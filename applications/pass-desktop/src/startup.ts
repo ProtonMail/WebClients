@@ -5,6 +5,7 @@ import contextMenu from './lib/context-menu';
 import { setupIpcHandlers as info } from './lib/install-info';
 import { setupIpcHandlers as navigation } from './lib/navigation';
 import { setupIpcHandlers as theming } from './lib/theming';
+import { setupIpcHandlers as update } from './lib/update';
 import type { PassElectronContext } from './types';
 import { handleSquirrelEvents } from './utils/squirrel';
 
@@ -20,4 +21,5 @@ export const startup = async (ctx: PassElectronContext) => {
     theming();
     autotype(() => ctx.window);
     contextMenu(() => ctx.window);
+    update(() => ctx.session);
 };
