@@ -2,7 +2,7 @@ import { put, takeEvery } from 'redux-saga/effects';
 
 import { getFeatureFlags } from '@proton/pass/lib/user/user.requests';
 import { getUserFeaturesFailure, getUserFeaturesIntent, getUserFeaturesSuccess } from '@proton/pass/store/actions';
-import type { FeatureFlagState } from '@proton/pass/store/reducers';
+import type { FeatureFlagAndVariantState } from '@proton/pass/store/reducers';
 import type { RootSagaOptions } from '@proton/pass/store/types';
 
 /* Try to sync the user feature flags on each wakeup success :
@@ -14,7 +14,7 @@ function* syncFeatures({ getAuthStore, onFeatureFlags, extensionId }: RootSagaOp
         const locked = getAuthStore().getLocked();
         if (!loggedIn || locked) throw new Error('Cannot fetch user features');
 
-        const incoming: FeatureFlagState = yield getFeatureFlags(extensionId);
+        const incoming: FeatureFlagAndVariantState = yield getFeatureFlags(extensionId);
         yield put(getUserFeaturesSuccess(meta.request.id, incoming));
 
         onFeatureFlags?.(incoming);
