@@ -15,11 +15,10 @@ export const useIndexedDBConnectionMonitor = () => {
 
     useEffect(() => {
         const handleConnectionFailed = (event: Event) => {
-            
             // Only show the notification once to avoid spam
             if (!connectionFailedNotificationShown.current) {
                 connectionFailedNotificationShown.current = true;
-                
+
                 createNotification({
                     text: c('collider_2025:Error')
                         .t`Database connection lost. Please refresh the page to continue.`,
@@ -29,14 +28,14 @@ export const useIndexedDBConnectionMonitor = () => {
         };
 
         const handleReconnected = (event: Event) => {
-            
+
             // Only show reconnection notification if we previously showed a failure
             if (reconnectionNotificationShown.current || connectionFailedNotificationShown.current) {
                 createNotification({
                     text: c('collider_2025:Success').t`Database connection restored.`,
                     type: 'success',
                 });
-                
+
                 // Reset flags
                 reconnectionNotificationShown.current = false;
                 connectionFailedNotificationShown.current = false;

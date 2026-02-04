@@ -12,6 +12,7 @@ import { useLumoSelector } from '../../../redux/hooks';
 import { SearchService } from '../../../services/search/searchService';
 import type { SearchResult } from '../../../services/search/types';
 import { useIsGuest } from '../../../providers/IsGuestProvider';
+import { useLumoPlan } from '../../../hooks/useLumoPlan';
 import type { Attachment } from '../../../types';
 import { FileContentModal } from '../Files/KnowledgeBase/FileContentModal';
 import { getProjectCategory } from '../../projects/constants';
@@ -200,6 +201,7 @@ interface SearchModalInnerProps {
 const SearchModalInner = ({ onClose }: SearchModalInnerProps) => {
     const history = useHistory();
     const [user] = useUser();
+    const { hasLumoPlus } = useLumoPlan();
     // Select only the slices needed for search; memoize to keep stable references
     const conversations = useLumoSelector((state) => state.conversations);
     const messages = useLumoSelector((state) => state.messages);
@@ -229,7 +231,9 @@ const SearchModalInner = ({ onClose }: SearchModalInnerProps) => {
 
         try {
             const searchService = SearchService.get(user?.ID);
-            const allConversations = await searchService.getAllConversations(searchState);
+            const allConversations = await searchService.getAllConversations(searchState, {
+                hasLumoPlus,
+            });
             setResults(allConversations);
         } catch (err) {
             console.error('[SearchModal] Failed to load conversations:', err);
@@ -238,7 +242,7 @@ const SearchModalInner = ({ onClose }: SearchModalInnerProps) => {
         } finally {
             setIsSearching(false);
         }
-    }, [searchState, user?.ID]);
+    }, [searchState, user?.ID, hasLumoPlus]);
 
     // Load conversations on mount
     useEffect(() => {
@@ -269,7 +273,9 @@ const SearchModalInner = ({ onClose }: SearchModalInnerProps) => {
 
         try {
             const searchService = SearchService.get(user?.ID);
-            const searchResults = await searchService.searchAsync(searchQuery, searchState);
+            const searchResults = await searchService.searchAsync(searchQuery, searchState, {
+                hasLumoPlus,
+            });
             setResults(searchResults);
         } catch (err) {
             console.error('[SearchModal] Search failed:', err);
@@ -278,7 +284,7 @@ const SearchModalInner = ({ onClose }: SearchModalInnerProps) => {
         } finally {
             setIsSearching(false);
         }
-    }, [searchState, loadAllConversations, user?.ID]);
+    }, [searchState, loadAllConversations, user?.ID, hasLumoPlus]);
 
     // Handle search input changes with debouncing
     const handleSearchChange = (value: string) => {

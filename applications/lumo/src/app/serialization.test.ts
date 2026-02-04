@@ -13,6 +13,7 @@ import { type Conversation, type Message, Role, type Space, getSpaceDek } from '
 const mockSpace: Space = {
     id: 'SpaceId',
     createdAt: 'spaceCreationDate',
+    updatedAt: 'spaceCreationDate',
     spaceKey: 'ABABABABABABABABABABABABABABABABABABABABABA=',
 };
 
@@ -36,6 +37,7 @@ describe('serialization', () => {
             title: 'Conversation Title',
             spaceId: mockSpace.id,
             createdAt: 'conversationCreationDate',
+            updatedAt: 'conversationCreationDate',
             starred: false,
         };
 

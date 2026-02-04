@@ -33,6 +33,7 @@ export type MessageFromApi = {
 export type SpaceFromApi = {
     ID?: any;                // Expecting type SpaceId
     CreateTime?: any;        // Expecting a serialized Date
+    UpdateTime?: any;        // Expecting a serialized Date
     DeleteTime?: any;        // Expecting a serialized Date | null | undefined
     Encrypted?: any;         // Expecting Base64-encoded data | undefined
     SpaceKey?: any;          // Expecting Base64-encoded data
@@ -46,6 +47,7 @@ export type ConversationFromApi = {
     ID?: unknown;               // Expecting type ConversationId
     SpaceID?: unknown;          // Expecting type SpaceId
     CreateTime?: unknown;       // Expecting a serialized Date
+    UpdateTime?: unknown;       // Expecting a serialized Date
     DeleteTime?: unknown;       // Expecting a serialized Date | null | undefined
     IsStarred?: unknown;        // Expecting type boolean | undefined
     Encrypted?: unknown;        // Expecting Base64-encoded data | undefined
