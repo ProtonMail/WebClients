@@ -229,6 +229,7 @@ export type IconName =
     | 'folder-plus'
     | 'folders'
     | 'folders-filled'
+    | 'form-textbox-password'
     | 'gift'
     | 'gift-2'
     | 'globe'

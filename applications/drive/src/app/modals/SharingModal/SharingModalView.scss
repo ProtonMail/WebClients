@@ -1,0 +1,17 @@
+.double-modal {
+	background: transparent;
+	border-radius: 0;
+	box-shadow: none;
+	padding: var(--space-2);
+
+	&-content {
+		background-color: var(--background-norm);
+		padding-block-end: var(--space-8);
+		border-radius: var(--border-radius-lg);
+
+		/* Adds padding to the second card  */
+		&:nth-child(2) {
+			padding-block-start: var(--space-4);
+		}
+	}
+}
