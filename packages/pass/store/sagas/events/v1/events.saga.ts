@@ -6,7 +6,6 @@ import { api } from '@proton/pass/lib/api/api';
 import { isBusinessPlan } from '@proton/pass/lib/organization/helpers';
 import { lockCreateSuccess, startEventPolling, stopEventPolling } from '@proton/pass/store/actions';
 import { getOrganizationSettings } from '@proton/pass/store/actions/creators/organization';
-import { groupInvitesChannel } from '@proton/pass/store/sagas/events/channel.group-invites';
 import { selectFeatureFlag, selectLockSetupRequired, selectPassPlan } from '@proton/pass/store/selectors';
 import type { RootSagaOptions } from '@proton/pass/store/types';
 import type { MaybeNull } from '@proton/pass/types';
@@ -14,6 +13,7 @@ import { PassFeature } from '@proton/pass/types/api/features';
 import type { UserPassPlan } from '@proton/pass/types/api/plan';
 import { logger } from '@proton/pass/utils/logger';
 
+import { groupInvitesChannel } from './channel.group-invites';
 import { invitesChannel } from './channel.invites';
 import { shareChannels } from './channel.share';
 import { sharesChannel } from './channel.shares';

@@ -8,7 +8,6 @@ import { parseShareResponse } from '@proton/pass/lib/shares/share.parser';
 import { hasShareChanged } from '@proton/pass/lib/shares/share.predicates';
 import { sharesEventNew, sharesEventSync, vaultCreationSuccess } from '@proton/pass/store/actions';
 import type { ItemsByShareId, SharesState } from '@proton/pass/store/reducers';
-import type { EventChannel, EventChannelOnEvent } from '@proton/pass/store/sagas/events/types';
 import { selectShareState } from '@proton/pass/store/selectors';
 import type { RootSagaOptions } from '@proton/pass/store/types';
 import type { Api, Maybe, Share, ShareGetResponse, SharesGetResponse } from '@proton/pass/types';
@@ -21,6 +20,7 @@ import { toMap } from '@proton/shared/lib/helpers/object';
 import { eventChannelFactory } from './channel.factory';
 import { getShareChannelForks } from './channel.share';
 import { channelEvents, channelInitalize } from './channel.worker';
+import type { EventChannel, EventChannelOnEvent } from './types';
 
 type NewSharesChannel = Channel<ShareGetResponse[]>;
 /** We're only interested in new shares in this effect : Deleted shares will
