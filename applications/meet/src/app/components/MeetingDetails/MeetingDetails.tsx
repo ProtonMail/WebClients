@@ -155,7 +155,7 @@ export const MeetingDetails = ({ currentMeeting }: { currentMeeting?: Meeting })
                 </div>
 
                 <div className="meeting-info-wrapper meeting-info-mls-wrapper meet-radius overflow-hidden p-4">
-                    <div className="text-semibold pl-2 mb-4">{c('Title').t`MLS state`}</div>
+                    <div className="text-semibold pl-2 mb-4">{c('Title').t`Messaging Layer Security`}</div>
                     <div className="px-2">
                         <div className="color-weak mb-2 pb-3 border-bottom">
                             {c('Info')
@@ -164,21 +164,18 @@ export const MeetingDetails = ({ currentMeeting }: { currentMeeting?: Meeting })
                         {mlsGroupState && (
                             <div className="flex gap-4 min-h-0">
                                 <div className="shrink-0 flex flex-column">
-                                    <div className="pt-2 pb-3 color-weak text-semibold border-bottom">{c('Title')
-                                        .t`Epoch`}</div>
                                     {mlsGroupState.displayCode !== null && (
                                         <div
                                             className="py-3 color-weak text-semibold flex-1"
                                             style={{ display: 'flex', alignItems: 'center' }}
                                         >
-                                            <span>{c('Title').t`Authenticator`}</span>
+                                            <span>{c('Title').t`Security code`}</span>
                                         </div>
                                     )}
+                                    <div className="pt-2 pb-3 color-weak text-semibold border-bottom">{c('Title')
+                                        .t`Epoch`}</div>
                                 </div>
                                 <div className="flex-1 flex flex-column text-break">
-                                    <div className="pt-2 pb-3 border-bottom">
-                                        <div>{mlsGroupState.epoch.toString()}</div>
-                                    </div>
                                     {mlsGroupState.displayCode !== null && (
                                         <div className="py-3">
                                             <div className="overflow-y-auto" style={{ maxHeight: '8rem' }}>
@@ -190,7 +187,7 @@ export const MeetingDetails = ({ currentMeeting }: { currentMeeting?: Meeting })
                                                     }}
                                                 >
                                                     {mlsGroupState
-                                                        .displayCode!.match(/.{1,4}/g) // seperate every 4 characters
+                                                        .displayCode!.match(/.{1,4}/g) // separate every 4 characters
                                                         ?.map((group, i) => (
                                                             <span
                                                                 key={i}
@@ -203,6 +200,9 @@ export const MeetingDetails = ({ currentMeeting }: { currentMeeting?: Meeting })
                                             </div>
                                         </div>
                                     )}
+                                    <div className="pt-2 pb-3 border-bottom">
+                                        <div>{mlsGroupState.epoch.toString()}</div>
+                                    </div>
                                 </div>
                             </div>
                         )}
