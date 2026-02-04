@@ -75,7 +75,7 @@ export function isRole(value: any): value is Role {
 export type SpacePub = {
     id: SpaceId;
     createdAt: string; // date
-    // todo: updatedAt (for sorting)
+    updatedAt: string; // date - last modification time (for sorting)
 };
 
 export type LinkedDriveFolder = {
@@ -169,8 +169,8 @@ export function getSpacePriv(s: SpacePriv): SpacePriv {
 }
 
 export function getSpacePub(s: SpacePub): SpacePub {
-    const { id, createdAt } = s;
-    return { id, createdAt };
+    const { id, createdAt, updatedAt } = s;
+    return { id, createdAt, updatedAt };
 }
 
 export function getSpaceKeyClear(s: SpaceKeyClear): SpaceKeyClear {
@@ -192,11 +192,12 @@ export function splitSpace(s: Space): {
 
 export function cleanSpace(space: Space): Space {
     if (space.isProject === true) {
-        const { id, createdAt, spaceKey, projectName, projectInstructions, isProject, projectIcon, linkedDriveFolder } =
+        const { id, createdAt, updatedAt, spaceKey, projectName, projectInstructions, isProject, projectIcon, linkedDriveFolder } =
             space;
         return {
             id,
             createdAt,
+            updatedAt,
             spaceKey,
             isProject,
             ...(projectName !== undefined && { projectName }),
@@ -205,10 +206,11 @@ export function cleanSpace(space: Space): Space {
             ...(linkedDriveFolder !== undefined && { linkedDriveFolder }),
         };
     } else {
-        const { id, createdAt, spaceKey, isProject } = space;
+        const { id, createdAt, updatedAt, spaceKey, isProject } = space;
         return {
             id,
             createdAt,
+            updatedAt,
             spaceKey,
             ...(isProject !== undefined && { isProject }),
         };
@@ -233,13 +235,14 @@ type ProjectInfoNotLinked = {
 type ProjectInfo = ProjectInfoLinked | ProjectInfoNotLinked;
 
 export function cleanSerializedSpace(space: SerializedSpace): SerializedSpace {
-    const { id, createdAt, encrypted, wrappedSpaceKey, dirty, deleted } = space;
+    const { id, createdAt, updatedAt, encrypted, wrappedSpaceKey, dirty, deleted } = space;
 
     // For deleted spaces, we ensure wrappedSpaceKey is not included
     if (deleted === true) {
         return {
             id,
             createdAt,
+            updatedAt,
             ...(encrypted && { encrypted }),
             deleted: true,
             ...(dirty ? { dirty: true } : {}),
@@ -250,6 +253,7 @@ export function cleanSerializedSpace(space: SerializedSpace): SerializedSpace {
     return {
         id,
         createdAt,
+        updatedAt,
         ...(encrypted && { encrypted }),
         wrappedSpaceKey,
         ...(dirty ? { dirty: true } : {}),
@@ -453,7 +457,7 @@ export type ConversationPub = {
     id: ConversationId;
     spaceId: SpaceId;
     createdAt: string; // date
-    // todo: updatedAt (for sorting)
+    updatedAt: string; // date - last modification time (for sorting)
     starred?: boolean;
 };
 
@@ -492,8 +496,8 @@ export function isConversationPriv(value: any): value is ConversationPriv {
 }
 
 export function getConversationPub(c: ConversationPub): ConversationPub {
-    const { id, spaceId, createdAt, starred } = c;
-    return { id, spaceId, createdAt, starred };
+    const { id, spaceId, createdAt, updatedAt, starred } = c;
+    return { id, spaceId, createdAt, updatedAt, starred };
 }
 
 export function getConversationPriv(c: ConversationPriv): ConversationPriv {
@@ -512,11 +516,12 @@ export function splitConversation(c: Conversation): {
 }
 
 export function cleanConversation(conversation: Conversation): Conversation {
-    const { id, spaceId, createdAt, title, starred, status, ghost } = conversation;
+    const { id, spaceId, createdAt, updatedAt, title, starred, status, ghost } = conversation;
     return {
         id,
         spaceId,
         createdAt,
+        updatedAt,
         title,
         ...(starred && { starred: true }),
         status: status ?? ConversationStatus.COMPLETED,
@@ -525,11 +530,12 @@ export function cleanConversation(conversation: Conversation): Conversation {
 }
 
 export function cleanSerializedConversation(conversation: SerializedConversation): SerializedConversation {
-    const { id, spaceId, createdAt, starred, encrypted, dirty, deleted } = conversation;
+    const { id, spaceId, createdAt, updatedAt, starred, encrypted, dirty, deleted } = conversation;
     return {
         id,
         spaceId,
         createdAt,
+        updatedAt,
         ...(starred && { starred: true }),
         encrypted,
         ...(dirty && { dirty: true }),

@@ -2,6 +2,7 @@ import type { AesGcmCryptoKey } from '../../crypto/types';
 import { DbApi } from '../../indexedDb/db';
 import { Role } from '../../types';
 import type { DriveDocument } from '../../types/documents';
+import { applyRetentionPolicy } from '../../ui/sidepanel/helpers';
 import { BM25Index } from './bm25Index';
 import { chunkDocument } from './documentChunker';
 import type { SearchResult, SearchServiceStatus, SearchState } from './types';
@@ -320,21 +321,24 @@ export class SearchService {
         }
     }
 
-    async getAllConversations(state: SearchState): Promise<SearchResult[]> {
+    async getAllConversations(state: SearchState, options?: { hasLumoPlus?: boolean }): Promise<SearchResult[]> {
         const { conversations, spaces } = state;
-        const results: SearchResult[] = [];
-
-        Object.values(conversations).forEach((conversation) => {
+        
+        // Apply retention policy (7-day limit for free users)
+        const hasLumoPlus = options?.hasLumoPlus ?? true; // Default to Plus access if not specified
+        const accessibleConversations = applyRetentionPolicy(Object.values(conversations), hasLumoPlus);
+        
+        const results: SearchResult[] = accessibleConversations.map((conversation) => {
             const projectInfo = conversation.spaceId ? getProjectInfo(conversation.spaceId, spaces) : {};
             const timestamp = new Date(conversation.createdAt).getTime();
 
-            results.push({
+            return {
                 type: 'conversation',
                 conversationId: conversation.id,
                 conversationTitle: conversation.title || 'Untitled',
                 timestamp,
                 ...projectInfo,
-            });
+            };
         });
 
         return results.sort((a, b) => b.timestamp - a.timestamp);
@@ -392,7 +396,7 @@ export class SearchService {
         }
     }
 
-    async searchAsync(query: string, state: SearchState): Promise<SearchResult[]> {
+    async searchAsync(query: string, state: SearchState, options?: { hasLumoPlus?: boolean }): Promise<SearchResult[]> {
         const normalizedQuery = query.toLowerCase().trim();
         if (!normalizedQuery) {
             return [];
@@ -400,6 +404,11 @@ export class SearchService {
 
         const results: SearchResult[] = [];
         const { conversations, messages, spaces } = state;
+        
+        // Apply retention policy (7-day limit for free users)
+        const hasLumoPlus = options?.hasLumoPlus ?? true; // Default to Plus access if not specified
+        const accessibleConversations = applyRetentionPolicy(Object.values(conversations), hasLumoPlus);
+        const accessibleConversationIds = new Set(accessibleConversations.map(c => c.id));
 
         const workerResults = await this.searchWithWorker(normalizedQuery);
         const foundConversationIds = new Set<string>();
@@ -407,7 +416,7 @@ export class SearchService {
         if (workerResults.length > 0) {
             for (const [_score, conversationId] of workerResults) {
                 const conversation = conversations[conversationId];
-                if (!conversation) continue;
+                if (!conversation || !accessibleConversationIds.has(conversationId)) continue;
 
                 foundConversationIds.add(conversationId);
                 const projectInfo = conversation.spaceId ? getProjectInfo(conversation.spaceId, spaces) : {};
@@ -423,7 +432,7 @@ export class SearchService {
             }
         }
 
-        Object.values(conversations).forEach((conversation) => {
+        accessibleConversations.forEach((conversation) => {
             if (foundConversationIds.has(conversation.id)) return;
 
             const title = conversation.title?.toLowerCase() || '';

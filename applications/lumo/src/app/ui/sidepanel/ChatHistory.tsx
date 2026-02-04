@@ -82,7 +82,8 @@ export const ChatHistory = ({ onItemClick, searchInput = '' }: Props) => {
             conversationId
         );
 
-        const sortedConversations = conversations.sort(sortByDate('desc'));
+        // Sort by updatedAt (most recently updated conversations first)
+        const sortedConversations = conversations.sort(sortByDate('desc', 'updatedAt'));
         // Exclude favorites from history - they appear in a separate section
         const nonFavorites = sortedConversations.filter((conversation) => !conversation.starred);
         const filteredConversations = searchConversations(nonFavorites, searchInput);

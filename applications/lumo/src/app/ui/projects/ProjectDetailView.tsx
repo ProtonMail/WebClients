@@ -24,7 +24,7 @@ import lumoProjects from '@proton/styles/assets/img/lumo/lumo-projects.svg';
 import { useIsLumoSmallScreen } from '../../hooks/useIsLumoSmallScreen';
 import { DragAreaProvider } from '../../providers/DragAreaProvider';
 import { PandocProvider } from '../../providers/PandocProvider';
-import { WebSearchProvider } from '../../providers/WebSearchProvider';
+import { WebSearchProvider, useWebSearch } from '../../providers/WebSearchProvider';
 import { useLumoDispatch, useLumoSelector } from '../../redux/hooks';
 import {
     selectAttachmentsBySpaceId,
@@ -167,11 +167,12 @@ const ProjectDetailViewInner = () => {
     const provisionalAttachments = useLumoSelector(selectProvisionalAttachments);
 
     const { createConversationInProject, deleteProject } = useProjectActions();
+    const { isWebSearchButtonToggled } = useWebSearch();
 
     // Sync space data when navigating to a project to ensure we have the latest state
     // This ensures project-level data (files, settings, linked folders) stays in sync across browsers
     useEffect(() => {
-        if (!projectId) return;
+        if (!projectId || projectId === 'undefined') return;
         
         console.log(`Project navigation: pulling specific space to sync project ${projectId}`);
         dispatch(pullSpaceRequest({ id: projectId }));
@@ -225,7 +226,7 @@ const ProjectDetailViewInner = () => {
                             console.log('Navigate callback:', newConvId);
                             history.push(`/c/${newConvId}`);
                         },
-                        enableExternalToolsToggled: false,
+                        enableExternalToolsToggled: isWebSearchButtonToggled,
                     })
                 );
                 console.log('Message sent successfully');
@@ -234,7 +235,7 @@ const ProjectDetailViewInner = () => {
                 throw error; // Re-throw to see it in error boundary
             }
         },
-        [api, dispatch, projectId, provisionalAttachments, createConversationInProject, history]
+        [api, dispatch, projectId, provisionalAttachments, createConversationInProject, history, isWebSearchButtonToggled]
     );
 
     // Title editing handlers - must be defined before conditional return (Rules of Hooks)
