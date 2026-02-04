@@ -1329,7 +1329,7 @@
         "Megabytes"
       ],
       "Terabyte": [
-        "Terabytes"
+        "Terabyte"
       ]
     },
     "Header": {
@@ -1877,6 +1877,9 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Đang chuyển tất cả nội dung từ \"${ payload.content.name }\""
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Việc chuyển các mục sang kho khác sẽ xóa các liên kết bảo mật của chúng."
       ],
       "Moving items": [
         "Đang chuyển nội dung"

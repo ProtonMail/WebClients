@@ -1949,26 +1949,6 @@
         "Ny e-post"
       ]
     },
-    "app-switcher": {
-      "Browse the web privately and block ads": [
-        "Surf privat på nettet og blokker annonser"
-      ],
-      "Keep your schedule private": [
-        "Hold timeplanen privat"
-      ],
-      "Protect your passwords and identity": [
-        "Beskytt passordene og identiteten din"
-      ],
-      "Safeguard your files and photos": [
-        "Beskytt filene og bildene dine"
-      ],
-      "Secure your communications": [
-        "Sikre kommunikasjonen din"
-      ],
-      "Talk confidentially": [
-        "Snakk konfidensielt"
-      ]
-    },
     "app-switcher_2025": {
       "Bitcoin wallet": [
         "Bitcoin-lommebok"
@@ -3202,11 +3182,6 @@
       ],
       "Expand": [
         "Utvid"
-      ]
-    },
-    "collider_2025: app-switcher": {
-      "Chat with a private AI assistant": [
-        "Chat med en privat KI-assistent"
       ]
     },
     "collider_2025: feature": {
@@ -4789,8 +4764,8 @@
       "Simplify syncing and scheduling with shared calendars.": [
         "Forenkle synkronisering og planlegging med delte kalendere."
       ],
-      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
-        "For import via CSV- og VCF-fil, forsikre deg om at filen ikke overskrider ${ MAX_IMPORT_FILE_SIZE_STRING } eller ${ MAX_IMPORT_CONTACTS_STRING } kontakter. Hvis filen er større, del den opp i mindre filer. ${ learnMoreLink }."
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "For å importere via en CSV- og VCF-fil, forsikre deg om at filen ikke overskrider ${ MAX_IMPORT_FILE_SIZE_STRING } eller ${ maxContactString } kontakter. Hvis filen er større, del den opp i mindre filer. ${ learnMoreLink }."
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "For å importere kontaktene dine fra Google eller Outlook, ${ easySwitchLink }."
@@ -5039,6 +5014,9 @@
       "Edge": [
         "Edge"
       ],
+      "Fedora": [
+        "Fedora"
+      ],
       "Fire TV": [
         "Fire TV"
       ],
@@ -5056,6 +5034,9 @@
       ],
       "Installation guide": [
         "Installasjonsveiledning"
+      ],
+      "iOS": [
+        "iOS"
       ],
       "iPhone/iPad": [
         "iPhone/iPad"
@@ -5098,6 +5079,9 @@
       ],
       "TV": [
         "TV"
+      ],
+      "Ubuntu/Debian": [
+        "Ubuntu/Debian"
       ],
       "Windows": [
         "Windows"
@@ -6609,6 +6593,9 @@
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Denne meldingen kan inneholde noen koblinger til nettadresser som ikke kan åpnes riktig av din nåværende nettleser."
       ],
+      "This offer is not available in your country": [
+        "Dette tilbudet er ikke tilgjengelig i landet ditt"
+      ],
       "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
         "For å opprette ikke-private brukerkontoer og få tilgang til kontoene deres, må du gjenopprette administratorrettighetene dine."
       ],
@@ -6677,6 +6664,9 @@
       ],
       "You have reached the number of contacts limit for your account": [
         "Du har nådd grensen for antall kontakter for kontoen din"
+      ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "Du har brukt alle adressene i planen. Oppgrader planen for å legge til en ny adresse eller deaktiver en adresse i kontoen din."
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Du har brukt alle brukerne i planen din. Oppgrader planen din for å legge til en ny bruker."
@@ -6771,8 +6761,8 @@
       "An error occurred uploading your file. No file has been selected.": [
         "Det oppstod en feil under opplasting av filen. Ingen fil er valgt."
       ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
-        "Filen ${ formattedFilename } inneholder flere enn ${ MAX_IMPORT_CONTACTS_STRING } kontakter."
+      "Your file ${ formattedFilename } contains more than ${ maxContactString } contacts.": [
+        "Filen ${ formattedFilename } inneholder mer enn ${ maxContactString } kontakter."
       ],
       "Your file ${ formattedFilename } has no contacts to be imported.": [
         "Filen ${ formattedFilename } har ingen kontakter å importere."
@@ -8966,9 +8956,9 @@
       "All your changes will be lost.": [
         "Alle endringene dine vil gå tapt."
       ],
-      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
-        "Alle kontaktene dine blir importert, opptil en grense på ${ MAX_CONTACTS_PER_USER }.",
-        "Alle kontaktene dine blir importert, opptil en grense på ${ MAX_CONTACTS_PER_USER }."
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "Alle kontaktene dine blir importert, opptil en grense på ${ maxContact }.",
+        "Alle kontaktene dine blir importert, opptil en grense på ${ maxContact }."
       ],
       "Allocated": [
         "Tildelt"
@@ -9227,6 +9217,9 @@
       ],
       "CNET editors choice award with a rating of 8.4 out of 10": [
         "CNET-redaktørens valgpris med en vurdering på 8.4 av 10"
+      ],
+      "Coming soon": [
+        "Kommer snart"
       ],
       "Compromised": [
         "Kompromittert"
@@ -9490,9 +9483,6 @@
       ],
       "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
         "Hvert domene kan bare ha én SPF-post (TXT). Hvis du vil beholde den eksisterende SPF-posten (TXT), kan du legge til ${ spf } i gjeldende post (plasser den etter ${ spfValue })."
-      ],
-      "Early access": [
-        "Tidlig tilgang"
       ],
       "Edit email address": [
         "Rediger e-postadresse"
@@ -10529,6 +10519,9 @@
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Ta kontakt med oss for å få hjelp med hva som helst ${ BRAND_NAME }."
       ],
+      "Receive notifications for ${ categoryLabel }": [
+        "Motta varsler for ${ categoryLabel }"
+      ],
       "Recently used servers:": [
         "Nylig brukte tjenere:"
       ],
@@ -10627,9 +10620,6 @@
       ],
       "Securing your account": [
         "Sikrer kontoen din"
-      ],
-      "Select a service to continue": [
-        "Velg en tjeneste for å fortsette"
       ],
       "Select one or multiple user affiliations": [
         "Velg én eller flere brukertilknytninger"
@@ -11356,6 +11346,9 @@
       ],
       "We need to authenticate your payment with your bank.": [
         "Vi trenger å autentisere betalingen med banken din."
+      ],
+      "We recommend adding servers in different locations (one per city) to maximize redundancy.": [
+        "Vi anbefaler å legge til tjenere på forskjellige steder (én per by) for å maksimere redundansen."
       ],
       "We recommend having at least 2 servers in order to provide redundancy.": [
         "Vi anbefaler å ha minst 2 tjenere for å gi redundans."
@@ -12627,6 +12620,9 @@
       "Autofill 2FA": [
         "Autofyll 2FA"
       ],
+      "Automated confirmations and alerts": [
+        "Automatiserte bekreftelser og varsler"
+      ],
       "Automatically save contacts": [
         "Lagre automatisk kontakter"
       ],
@@ -12666,6 +12662,9 @@
       "Block malware, ads and trackers": [
         "Blokkér skadevare, reklamer og sporere"
       ],
+      "Bookings, billings, and orders": [
+        "Reservasjoner, faktureringer og ordrer"
+      ],
       "Browser": [
         "Nettleser"
       ],
@@ -12701,6 +12700,9 @@
       ],
       "Cash": [
         "Kontant"
+      ],
+      "Categories": [
+        "Kategorier"
       ],
       "Category": [
         "Kategori"
@@ -12837,6 +12839,9 @@
       "Days of the week": [
         "Ukedager"
       ],
+      "Deals, offers, marketing emails": [
+        "Kampanjer, tilbud, markedsførings-e-poster"
+      ],
       "Default email address": [
         "Standard e-postadresse"
       ],
@@ -12879,6 +12884,9 @@
       "Disabled": [
         "Deaktivert"
       ],
+      "Discussion board posts and threads": [
+        "Innlegg og tråder i diskusjonsforum"
+      ],
       "Display name": [
         "Visningsnavn"
       ],
@@ -12914,9 +12922,6 @@
       ],
       "Email address": [
         "E-postadresse"
-      ],
-      "Email categories": [
-        "E-postkategorier"
       ],
       "Email or username": [
         "E-post eller brukernavn"
@@ -13017,6 +13022,9 @@
       "for your first month": [
         "for første måneden din"
       ],
+      "Forums": [
+        "Forum"
+      ],
       "From: ${ fromEmail }": [
         "Fra: ${ fromEmail }"
       ],
@@ -13031,6 +13039,27 @@
       ],
       "Gift code": [
         "Gavekode"
+      ],
+      "Go to Forums": [
+        "Gå til forum"
+      ],
+      "Go to Newsletters": [
+        "Gå til nyhetsbrev"
+      ],
+      "Go to Primary": [
+        "Gå til primær"
+      ],
+      "Go to Promotions": [
+        "Gå til kampanjer"
+      ],
+      "Go to Social": [
+        "Gå til sosialt"
+      ],
+      "Go to Transactions": [
+        "Gå til transaksjoner"
+      ],
+      "Go to Updates": [
+        "Gå til oppdateringer"
       ],
       "Group address": [
         "Gruppeadresse"
@@ -13254,6 +13283,9 @@
       "New second password": [
         "Nytt andre passord"
       ],
+      "Newsletters": [
+        "Nyhetsbrev"
+      ],
       "No (users cannot use the app until a vault is shared with them)": [
         "Nei (brukere kan ikke bruke appen før et hvelv er delt med dem)"
       ],
@@ -13262,6 +13294,9 @@
       ],
       "No label found": [
         "Ingen etikett funnet"
+      ],
+      "Non-promotional content and news": [
+        "Ikke-salgsfremmende innhold og nyheter"
       ],
       "Non-standard ports": [
         "Ikke-standard porter"
@@ -13385,6 +13420,12 @@
       ],
       "Previous password": [
         "Forrige passord"
+      ],
+      "Primary": [
+        "Primær"
+      ],
+      "Promotions": [
+        "Kampanjer"
       ],
       "Prompt to trust keys": [
         "Be om å klarere nøkler"
@@ -13531,6 +13572,12 @@
       "SMTP username": [
         "SMTP-brukernavn"
       ],
+      "Social": [
+        "Sosiale medier"
+      ],
+      "Social media updates and activity": [
+        "Oppdateringer og aktivitet på sosiale medier"
+      ],
       "Spam": [
         "Søppelpost"
       ],
@@ -13615,6 +13662,9 @@
       "Token name": [
         "Tokennavn"
       ],
+      "Transactions": [
+        "Transaksjoner"
+      ],
       "Two-password mode": [
         "To-passordmodus"
       ],
@@ -13630,6 +13680,9 @@
       "Unlimited logins and devices": [
         "Ubegrenset antall pålogginger og enheter"
       ],
+      "Updates": [
+        "Oppdateringer"
+      ],
       "Upload 1 or more encryption keys": [
         "Last opp 1 eller flere krypteringsnøkler"
       ],
@@ -13644,6 +13697,9 @@
       ],
       "URL": [
         "Nettadresse"
+      ],
+      "Use email categories": [
+        "Bruk e-postkategorier"
       ],
       "Use folder colors": [
         "Bruk mappefarger"
@@ -14401,6 +14457,10 @@
         "${ n } aktivt møte om gangen",
         "${ n } aktive møter om gangen"
       ],
+      "${ n } participant": [
+        "${ n } deltaker",
+        "${ n } deltakere"
+      ],
       "24 hours per meeting": [
         "24 timer per møte"
       ],
@@ -14410,6 +14470,9 @@
       "Appointment scheduling": [
         "Avtaleplanlegging"
       ],
+      "Booking pages": [
+        "Bestillingssider"
+      ],
       "Browser, mobile, and desktop apps": [
         "Nettleser-, mobil- og skrivebordsapper"
       ],
@@ -14418,6 +14481,9 @@
       ],
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "Ende-til-ende-kryptert skjermdeling og kortvarig chat under samtaler"
+      ],
+      "Meeting recording": [
+        "Opptak av møte"
       ],
       "One active meeting at a time": [
         "Ett aktivt møte om gangen"
@@ -15613,9 +15679,6 @@
       ],
       "Review subscription and pay": [
         "Se gjennom abonnement og betal"
-      ],
-      "Start exploring the ${ BRAND_NAME } universe": [
-        "Start å utforske ${ BRAND_NAME }-universet"
       ],
       "Switch plans?": [
         "Bytte plan?"
@@ -17389,6 +17452,9 @@
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Fornyes til ${ renewPriceStr }, avbryt når som helst."
       ],
+      "Sorry, this offer is not available for your account.": [
+        "Beklager, dette tilbudet er ikke tilgjengelig for kontoen din."
+      ],
       "Sorry, this offer is not available with your current plan.": [
         "Beklager, dette tilbudet er ikke tilgjengelig med din gjeldende plan."
       ],
@@ -17398,28 +17464,28 @@
       "terms and conditions": [
         "vilkår og betingelser"
       ],
-      "The coupon is valid for ${ couponRedemptions } renewal.": [
-        "Kupongen er gyldig for ${ couponRedemptions } fornyelse.",
-        "Kupongen er gyldig for ${ couponRedemptions } fornyelser."
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "Rabatten er gyldig for ${ renewalsWithCoupon } fornyelse.",
+        "Rabatten er gyldig for ${ renewalsWithCoupon } fornyelser."
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Den spesielt rabatterte prisen er gyldig i ${ couponRedemptions } måned. Deretter fornyes den automatisk til ${ renewPriceStr } for 1 måned. Du kan avbryte når som helst.",
+        "Den spesielt rabatterte prisen er gyldig i ${ couponRedemptions } måneder. Deretter fornyes den automatisk til ${ renewPriceStr } for 1 måned. Du kan avbryte når som helst."
       ],
       "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
         "Spesialrabattprisen gjelder for den første måneden [${ subscriptionLength }].",
         "Den spesielt rabatterte prisen er gyldig de første ${ subscriptionLength } månedene."
       ],
-      "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "Den spesielt rabatterte prisen er gyldig den første måneden. Kupongen er gyldig for ${ couponRedemptions } fornyelse. Deretter vil den automatisk bli fornyet til ${ renewPriceStr } for 1 måned. Du kan avbryte når som helst.",
-        "Den spesielt rabatterte prisen er gyldig den første måneden. Kupongen er gyldig for ${ couponRedemptions } fornyelser. Deretter vil den automatisk bli fornyet til ${ renewPriceStr } for 1 måned. Du kan avbryte når som helst."
-      ],
       "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Den spesielt rabatterte prisen er gyldig den første måneden. Da blir den automatisk fornyet til ${ renewPriceStr } hver måned. Du kan avbryte når som helst."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Den spesielt rabatterte prisen på ${ priceWithDiscount } er gyldig for ${ couponRedemptions } måned. Deretter vil den automatisk bli fornyet til ${ renewPriceStr } for 1 måned. Du kan avbryte når som helst.",
+        "Den spesielt rabatterte prisen på ${ priceWithDiscount } er gyldig i ${ couponRedemptions } måneder. Deretter vil den automatisk bli fornyet til ${ renewPriceStr } for 1 måned. Du kan avbryte når som helst."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "Den spesielt rabatterte prisen på ${ priceWithDiscount } er gyldig for den første ${ subscriptionLength } måneden.",
         "Den spesielt rabatterte prisen på ${ priceWithDiscount } er gyldig de første ${ subscriptionLength } månedene."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "Den spesielt rabatterte prisen på ${ priceWithDiscount } er gyldig den første måneden. Kupongen er gyldig for ${ couponRedemptions } fornyelse. Deretter vil den automatisk bli fornyet til ${ renewPriceStr } for 1 måned. Du kan avbryte når som helst.",
-        "Den spesielt rabatterte prisen på ${ priceWithDiscount } er gyldig den første måneden. Kupongen er gyldig for ${ couponRedemptions } fornyelser. Deretter vil den automatisk bli fornyet til ${ renewPriceStr } for 1 måned. Du kan avbryte når som helst."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Den spesielt rabatterte prisen på ${ priceWithDiscount } er gyldig den første måneden. Da blir den automatisk fornyet til ${ renewPriceStr } hver måned. Du kan avbryte når som helst."
@@ -21613,6 +21679,14 @@
         "Ingen SMTP-tokener funnet"
       ]
     },
+    "Theme": {
+      "Dark": [
+        "Mørk"
+      ],
+      "Light": [
+        "Lys"
+      ]
+    },
     "Time unit": {
       "${ ceilDays } day": [
         "${ ceilDays } dag",
@@ -22478,6 +22552,9 @@
       "Get the apps": [
         "Skaff deg appene"
       ],
+      "Get unlimited meetings on all your devices with ${ planName }. ${ upgradeButton }": [
+        "Få ubegrenset antall møter på alle enhetene dine med ${ planName }. ${ upgradeButton }"
+      ],
       "Gift": [
         "Gave"
       ],
@@ -23254,9 +23331,6 @@
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Din gratis prøveperiode av ${ planName } slutter på ${ textDate }."
       ],
-      "Your ${ planName } subscription has started": [
-        "${ planName }-abonnementet ditt er startet"
-      ],
       "Your calendar link": [
         "Din kalenderkobling"
       ],
@@ -23547,6 +23621,9 @@
       ],
       "Specify the users of the eduGAIN entity who are allowed to authenticate with SAML SSO": [
         "Angi brukerne av eduGAIN-enheten som har tillatelse til å autentisere med SAML SSO"
+      ],
+      "System notification": [
+        "Systemvarsel"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Systemundermapper vises som separate mapper i ${ MAIL_APP_NAME }."
@@ -23927,6 +24004,9 @@
       ]
     },
     "Upsell": {
+      "${ BRAND_NAME } for Business": [
+        "${ BRAND_NAME } for Business"
+      ],
       "**Save up to ${ priceString }** with a longer subscription. Same premium features, lower price.": [
         "**Spar opptil ${ priceString }** med et lengre abonnement. Samme premiumfunksjoner, lavere pris."
       ],
@@ -23938,6 +24018,9 @@
       ],
       "Did you know?": [
         "Visste du at?"
+      ],
+      "Everything you need to collaborate securely in a single subscription. Get access to ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, ${ SHEETS_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } and ${ LUMO_SHORT_APP_NAME } AI Assistant.": [
+        "Alt du trenger for å samarbeide sikkert i ett enkelt abonnement. Få tilgang til ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, ${ SHEETS_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } og ${ LUMO_SHORT_APP_NAME } KI-assistent."
       ],
       "Get ${ drivePlusPlanMaxSpace } storage for your files, photos and documents, and recover file versions with 10-year file recovery.": [
         "Skaff deg ${ drivePlusPlanMaxSpace } lagringsplass for filer, bilder og dokumenter, og gjenopprett filversjoner med 10-års filgjenoppretting."
@@ -24383,6 +24466,9 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } vil overføre så mye data som mulig, og starter med de nyeste meldingene dine."
+      ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } offer has ended": [
+        "Tilbudet ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } har utløpt"
       ],
       "Are you sure you want to delete the phone number?": [
         "Er du sikker på at du vil slette telefonnummeret?"

@@ -141,8 +141,14 @@
       "Cancel download": [
         "Anulare descărcare"
       ],
+      "Cancel downloads": [
+        "Anulare descărcări"
+      ],
       "Cancel subscription": [
         "Anulare abonament"
+      ],
+      "Cancel transfers": [
+        "Anulare transferuri"
       ],
       "Cancel trial and pay": [
         "Anulare perioadă de probare și plătire"
@@ -394,8 +400,8 @@
       "Download ${ DRIVE_APP_NAME } apps": [
         "Descărcați aplicațiile ${ DRIVE_APP_NAME }"
       ],
-      "Download (${ count })": [
-        "Descărcare (${ count })"
+      "Download (${ nbSelected })": [
+        "Descărcare (${ nbSelected })"
       ],
       "Download anyway": [
         "Descărcare așa"
@@ -931,17 +937,14 @@
       "Save changes": [
         "Salvare modificări"
       ],
-      "Save for later": [
-        "Salvare pentru mai târziu"
-      ],
       "Save photos and remove": [
         "Salvare și eliminare fotografii"
       ],
       "Scan & Download": [
         "Scanare și descărcare"
       ],
-      "Scan & Download (${ count })": [
-        "Scanare și descărcare (${ count })"
+      "Scan & Download (${ nbSelected })": [
+        "Scanare și descărcare (${ nbSelected })"
       ],
       "Search": [
         "Căutare"
@@ -1044,9 +1047,6 @@
       ],
       "Sign out of all accounts": [
         "Deconectare din toate conturile"
-      ],
-      "Sign up": [
-        "Înregistrare"
       ],
       "Skip verification": [
         "Ignorare verificare"
@@ -2957,8 +2957,8 @@
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Pentru a asigura cea mai mare securitate posibilă a contului, setați o frază de recuperare."
       ],
-      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
-        "Pentru a importa prin fișier CSV sau VCF, asigurați-vă că fișierul nu depășește ${ MAX_IMPORT_FILE_SIZE_STRING } sau ${ MAX_IMPORT_CONTACTS_STRING } de contacte. Dacă fișierul este mai mare, împărțiți-l în fișiere mai mici. ${ learnMoreLink }."
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Pentru a importa prin fișier CSV sau VCF, asigurați-vă că fișierul nu depășește ${ MAX_IMPORT_FILE_SIZE_STRING } sau ${ maxContactString } de contacte. Dacă fișierul este mai mare, împărțiți-l în fișiere mai mici. ${ learnMoreLink }."
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Pentru a vă importa contactele din Google sau Outlook, ${ easySwitchLink }."
@@ -3812,6 +3812,9 @@
       "Validation error": [
         "Eroare validare."
       ],
+      "We cannot retrieve this item": [
+        "Acest articol nu se poate prelua."
+      ],
       "We were not able to load some invitations": [
         "Nu s-au putut încărca unele invitații"
       ],
@@ -3935,8 +3938,8 @@
       "An error occurred uploading your file. No file has been selected.": [
         "A apărut o eroare la încărcarea fișierului. Nu a fost selectat niciun fișier."
       ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
-        "Fișierul ${ formattedFilename } conține mai mult de ${ MAX_IMPORT_CONTACTS_STRING } contacte."
+      "Your file ${ formattedFilename } contains more than ${ maxContactString } contacts.": [
+        "Fișierul ${ formattedFilename } conține mai mult de ${ maxContactString } de contacte."
       ],
       "Your file ${ formattedFilename } has no contacts to be imported.": [
         "Fișierul ${ formattedFilename } nu are contacte de importat."
@@ -5108,10 +5111,10 @@
       "All your changes will be lost.": [
         "Toate modificările vor fi pierdute."
       ],
-      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
-        "Vor fi importate toate contactele, până la limita de ${ MAX_CONTACTS_PER_USER }.",
-        "Vor fi importate toate contactele, până la limita de ${ MAX_CONTACTS_PER_USER }.",
-        "Vor fi importate toate contactele, până la limita de ${ MAX_CONTACTS_PER_USER }."
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "Vor fi importate toate contactele, până la limita de ${ maxContact }.",
+        "Vor fi importate toate contactele, până la limita de ${ maxContact }.",
+        "Vor fi importate toate contactele, până la limita de ${ maxContact }."
       ],
       "Already in this folder": [
         "Deja în acest folder"
@@ -5271,6 +5274,9 @@
       ],
       "Collaborate efficiently while protecting your client and business data from breaches, ransomware, and surveillance.": [
         "Colaborați eficient, protejând în același timp datele clienților și ale afacerii proprii împotriva divulgărilor, a programelor de tip răscumpărare și a supravegherii."
+      ],
+      "Computed hash does not match XAttr": [
+        "Hash-ul calculat nu corespunde cu XAttr."
       ],
       "Conflict": [
         "Conflict"
@@ -6375,6 +6381,12 @@
       ],
       "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
         "Acest cod unic poate fi folosit de către site-uri web și ISP (furnizorii de servicii de internet) pentru a vă corela locul și istoricul de navigare cu dispozitivul utilizat."
+      ],
+      "This will cancel any remaining downloads.": [
+        "Aceasta va anula toate descărcările rămase."
+      ],
+      "This will cancel any remaining uploads and downloads. Cancelled uploads won't be saved in ${ DRIVE_APP_NAME }.": [
+        "Aceasta va anula toate încărcările și descărcările rămase. Încărcările anulate nu vor fi salvate în ${ DRIVE_APP_NAME }."
       ],
       "This will cancel any remaining uploads. Cancelled files won't be saved in ${ DRIVE_APP_NAME }.": [
         "Aceasta va anula toate încărcările rămase. Fișierele anulate nu vor fi salvate în ${ DRIVE_APP_NAME }."
@@ -7570,7 +7582,7 @@
         "Opțiuni abonament"
       ],
       "Sync with system": [
-        "Ca cea din sistem"
+        "Ca în sistem"
       ],
       "System information": [
         "Informații sistem"
@@ -7940,6 +7952,11 @@
         "Conferințe active simultan: ${ n }",
         "Conferințe active simultan: ${ n }"
       ],
+      "${ n } participant": [
+        "${ n } participant",
+        "${ n } participanți",
+        "${ n } de participanți"
+      ],
       "24 hours per meeting": [
         "Conferințe de 24 de ore"
       ],
@@ -7949,6 +7966,9 @@
       "Appointment scheduling": [
         "Planificare întâlniri"
       ],
+      "Booking pages": [
+        "Pagini de rezervare"
+      ],
       "Browser, mobile, and desktop apps": [
         "Aplicații pentru navigator web, mobil și desktop"
       ],
@@ -7957,6 +7977,9 @@
       ],
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "Partajare ecran cu criptare bilaterală și conversații temporare pe durata apelului"
+      ],
+      "Meeting recording": [
+        "Înregistrare conferință"
       ],
       "One active meeting at a time": [
         "O conferință activă simultan"
@@ -10092,33 +10115,33 @@
       "terms and conditions": [
         "termenii și condițiile"
       ],
-      "The coupon is valid for ${ couponRedemptions } renewal.": [
-        "Număr de reînnoiri disponibile pentru acest cupon: ${ couponRedemptions }",
-        "Număr de reînnoiri disponibile pentru acest cupon: ${ couponRedemptions }",
-        "Număr de reînnoiri disponibile pentru acest cupon: ${ couponRedemptions }"
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "Reducerea este valabilă pentru ${ renewalsWithCoupon } reînnoire.",
+        "Reducerea este valabilă pentru ${ renewalsWithCoupon } reînnoiri.",
+        "Reducerea este valabilă pentru ${ renewalsWithCoupon } de reînnoiri."
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Prețul cu reducerea specială este valabil pentru ${ couponRedemptions } lună. Apoi va fi reînnoit automat cu ${ renewPriceStr } pentru o lună. Puteți anula oricând.",
+        "Prețul cu reducerea specială este valabil pentru ${ couponRedemptions } luni. Apoi va fi reînnoit automat cu ${ renewPriceStr } pentru o lună. Puteți anula oricând.",
+        "Prețul cu reducerea specială este valabil pentru ${ couponRedemptions } de luni. Apoi va fi reînnoit automat cu ${ renewPriceStr } pentru o lună. Puteți anula oricând."
       ],
       "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
         "Prețul special redus este valabil pentru ${ subscriptionLength } lună.",
         "Prețul redus special este valabil pentru primele ${ subscriptionLength } luni.",
         "Prețul special redus este valabil pentru primele ${ subscriptionLength } de luni."
       ],
-      "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "Prețul cu reducerea specială este valabil pentru prima lună. Cuponul este valid pentru ${ couponRedemptions } reînnoire. Apoi se va reînnoi automat cu prețul de ${ renewPriceStr } pentru o lună. Puteți anula oricând.",
-        "Prețul cu reducerea specială este valabil pentru prima lună. Cuponul este valid pentru ${ couponRedemptions } reînnoiri. Apoi se va reînnoi automat cu prețul de ${ renewPriceStr } pentru o lună. Puteți anula oricând.",
-        "Prețul cu reducerea specială este valabil pentru prima lună. Cuponul este valid pentru ${ couponRedemptions } de reînnoiri. Apoi se va reînnoi automat cu prețul de ${ renewPriceStr } pentru o lună. Puteți anula oricând."
-      ],
       "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Prețul cu reducerea specială este valabil pentru prima lună. Apoi va fi reînnoit automat cu ${ renewPriceStr } lunar. Puteți anula oricând."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Prețul cu reducerea specială de ${ priceWithDiscount } este valabil pentru ${ couponRedemptions } lună. Apoi va fi reînnoit automat cu ${ renewPriceStr } pentru o lună. Puteți anula oricând.",
+        "Prețul special redus de ${ priceWithDiscount } este valabil pentru ${ couponRedemptions } luni. Apoi va fi reînnoit automat la ${ renewPriceStr } pentru o lună. Puteți anula oricând.",
+        "Prețul special redus de ${ priceWithDiscount } este valabil pentru ${ couponRedemptions } de luni. Apoi va fi reînnoit automat la ${ renewPriceStr } pentru o lună. Puteți anula oricând."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "Prețul redus special de ${ priceWithDiscount } este valid pentru ${ subscriptionLength } lună.",
         "Prețul redus special de ${ priceWithDiscount } este valid pentru primele ${ subscriptionLength } luni.",
         "Prețul redus special de ${ priceWithDiscount } este valid pentru primele ${ subscriptionLength } de luni."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "Prețul de ${ priceWithDiscount } cu reducerea specială este valabil pentru prima lună. Cuponul este valid pentru ${ couponRedemptions } reînnoire. Apoi se va reînnoi automat cu prețul de ${ renewPriceStr } pentru o lună. Puteți anula oricând.",
-        "Prețul de ${ priceWithDiscount } cu reducerea specială este valabil pentru prima lună. Cuponul este valid pentru ${ couponRedemptions } reînnoiri. Apoi se va reînnoi automat cu prețul de ${ renewPriceStr } pentru o lună. Puteți anula oricând.",
-        "Prețul de ${ priceWithDiscount } cu reducerea specială este valabil pentru prima lună. Cuponul este valid pentru ${ couponRedemptions } de reînnoiri. Apoi se va reînnoi automat cu prețul de ${ renewPriceStr } pentru o lună. Puteți anula oricând."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Prețul cu reducerea specială de ${ priceWithDiscount } este valabil pentru prima lună. Apoi va fi reînnoit automat cu ${ renewPriceStr } lunar. Puteți anula oricând."
@@ -12128,6 +12151,12 @@
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Anulare abonare ${ MAIL_SHORT_APP_NAME }"
       ],
+      "Cancel all downloads?": [
+        "Anulați toate descărcările?"
+      ],
+      "Cancel all transfers?": [
+        "Anulați toate transferurile?"
+      ],
       "Cancel all uploads?": [
         "Anulați toate încărcările?"
       ],
@@ -13010,8 +13039,8 @@
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Probarea gratuită pentru ${ planName } se încheie ${ textDate }"
       ],
-      "Your ${ planName } subscription has started": [
-        "Abonamentul ${ planName } a început"
+      "Your ${ planTitle } subscription has started": [
+        "Abonamentul ${ planTitle } a început"
       ],
       "Your 3 GB bonus": [
         "Bonusul de 3 GiB"

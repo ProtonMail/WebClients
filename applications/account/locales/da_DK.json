@@ -1949,26 +1949,6 @@
         "Ny e-mail"
       ]
     },
-    "app-switcher": {
-      "Browse the web privately and block ads": [
-        "Surf privat på nettet og bloker reklamer"
-      ],
-      "Keep your schedule private": [
-        "Hold din tidsplan privat"
-      ],
-      "Protect your passwords and identity": [
-        "Beskyt dine adgangskoder og identitet"
-      ],
-      "Safeguard your files and photos": [
-        "Pas på dine filer og fotos"
-      ],
-      "Secure your communications": [
-        "Beskyt din kommunikation"
-      ],
-      "Talk confidentially": [
-        "Tal fortroligt"
-      ]
-    },
     "app-switcher_2025": {
       "Bitcoin wallet": [
         "Bitcoin Wallet"
@@ -2498,7 +2478,7 @@
         "Hvis du vil forlade Google, er en af de første ting, du skal gøre, at stoppe med at bruge Googles proprietære browser, Chrome, og dens indbyggede adgangskodeadministrator. Et afgørende første skridt mod at forlade Google er at downloade dine adgangskoder, så du lettere kan overgå til en ny, bedre adgangskodeadministrator."
       ],
       "In this article, we look at who can see your internet history when you use WiFi, what they can see, and why they might do this.": [
-        "I denne artikel ser vi på, hvem der kan se din internethistorik, når du bruger WiFi, hvad de kan se, og hvorfor de måtte gøre dette."
+        "I denne artikel ser vi på, hvem der kan se din internethistorik, når du bruger wi-fi, hvad de kan se, og hvorfor de kunne finde på det."
       ],
       "Increase VPN speeds by up to 400% with VPN Accelerator": [
         "Forøg VPN-hastighederne med op til 400 % med VPN Accelerator"
@@ -3202,11 +3182,6 @@
       ],
       "Expand": [
         "Udvid"
-      ]
-    },
-    "collider_2025: app-switcher": {
-      "Chat with a private AI assistant": [
-        "Chat med en privat AI-assistent"
       ]
     },
     "collider_2025: feature": {
@@ -4789,8 +4764,8 @@
       "Simplify syncing and scheduling with shared calendars.": [
         "Forenkl synkronisering og planlægning med delte kalendere."
       ],
-      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
-        "For at importere via en CSV- eller VCF-fil, skal du være sikker på at filen ikke overskriver ${ MAX_IMPORT_FILE_SIZE_STRING } eller ${ MAX_IMPORT_CONTACTS_STRING } kontakter. Hvis din fil er større, skal du dele den i mindre filer. ${ learnMoreLink }."
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "For at importere via en CSV- eller VCF-fil, skal du sikre dig, at filen ikke overskrider ${ MAX_IMPORT_FILE_SIZE_STRING } eller ${ maxContactString } kontakter. Hvis din fil er større, skal du opdele den i mindre filer. ${ learnMoreLink }."
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "For at importere dine kontakter fra Google eller Outlook, ${ easySwitchLink }."
@@ -6786,8 +6761,8 @@
       "An error occurred uploading your file. No file has been selected.": [
         "Der opstod en fejl under upload af din fil. Ingen fil er blevet valgt."
       ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
-        "Din fil ${ formattedFilename } indeholder mere end ${ MAX_IMPORT_CONTACTS_STRING } kontakter."
+      "Your file ${ formattedFilename } contains more than ${ maxContactString } contacts.": [
+        "Din fil ${ formattedFilename } indeholder mere end ${ maxContactString } kontakter."
       ],
       "Your file ${ formattedFilename } has no contacts to be imported.": [
         "Din fil ${ formattedFilename } har ingen kontakter til import."
@@ -6873,6 +6848,9 @@
       ]
     },
     "Error message": {
+      "Account is deleted or disabled": [
+        "Kontoen er slettet eller deaktiveret"
+      ],
       "App currently unavailable": [
         "App ikke tilgængelig i øjeblikket"
       ],
@@ -8847,7 +8825,7 @@
         "+${ organization.BonusVPN }-forbindelser til ${ VPN_APP_NAME } (tillader dig at forbinde flere enheder til VPN)"
       ],
       "2FA disabled": [
-        "2FA deaktiveret"
+        "Tofaktorgodkendelse deaktiveret"
       ],
       "30-day money-back guarantee": [
         "30 dages tilbagebetalingsgaranti"
@@ -8984,9 +8962,9 @@
       "All your changes will be lost.": [
         "Alle dine ændringer vil gå tabt."
       ],
-      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
-        "Alle dine kontakter vil blive importeret, op til en grænse på ${ MAX_CONTACTS_PER_USER }",
-        "Alle dine kontakter vil blive importeret, op til en grænse på ${ MAX_CONTACTS_PER_USER }"
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "Alle dine kontakter vil blive importeret, op til en grænse på ${ maxContact }",
+        "Alle dine kontakter vil blive importeret, op til en grænse på ${ maxContact }"
       ],
       "Allocated": [
         "Tildelt"
@@ -9245,6 +9223,9 @@
       ],
       "CNET editors choice award with a rating of 8.4 out of 10": [
         "CNET editors choice award med en bedømmelse på 8,4 ud af 10"
+      ],
+      "Coming soon": [
+        "Kommer snart"
       ],
       "Compromised": [
         "Kompromitteret"
@@ -9508,9 +9489,6 @@
       ],
       "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
         "Hvert domæne kan kun have en SPF (TXT)-post. Hvis du vil beholde den nuværende SPF (TXT)-post, kan du tilføje ${ spf } til din nuværende post (put det efter ${ spfValue })."
-      ],
-      "Early access": [
-        "Tidlig adgang"
       ],
       "Edit email address": [
         "Rediger e-mailadresse"
@@ -10521,7 +10499,7 @@
         "Prisen inkluderer alle gældende cyklusbaserede rabatter og kuponer, der ikke er udløbet, og som er gemt på din konto."
       ],
       "Privacy and security starts here": [
-        "Privatlivsbeskyttelse og sikkerhed starter her"
+        "Privatlivsbeskyttelse og sikkerhed begynder her"
       ],
       "Private AI assistant": [
         "Privat AI-assistent"
@@ -10546,6 +10524,9 @@
       ],
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Kontakt os for at få hjælp til hvad som helst ${ BRAND_NAME }."
+      ],
+      "Receive notifications for ${ categoryLabel }": [
+        "Modtag notifikationer for ${ categoryLabel }"
       ],
       "Recently used servers:": [
         "Nyligt anvendte servere:"
@@ -10645,9 +10626,6 @@
       ],
       "Securing your account": [
         "Sikrer din konto"
-      ],
-      "Select a service to continue": [
-        "Vælg en tjeneste for at fortsætte"
       ],
       "Select one or multiple user affiliations": [
         "Vælg en eller flere brugertilknytninger"
@@ -10989,7 +10967,7 @@
         "Dette invitationslink er udløbet. Vi har lige sendt dig et nyt link."
       ],
       "This invitation link is already used. Please sign in directly instead.": [
-        "Dette invitationslink er allerede anvendt. Log ind direkte i stedet."
+        "Dette invitationslink er allerede anvendt. Log direkte ind i stedet."
       ],
       "This is a 12-word phrase that you were prompted to set.": [
         "Dette er en 12-ords sætning, som du blev bedt om at indstille."
@@ -11579,9 +11557,6 @@
       ],
       "You can enforce the password rules members of your organization will use when they create or reset the password to their ${ BRAND_NAME } Account.": [
         "Du kan gennemtvinge de adgangskoderegler, som medlemmer af din organisation bruger, når de opretter eller nulstiller adgangskoden til deres ${ BRAND_NAME }- konto."
-      ],
-      "You can get our premium privacy services in one bundle—and it's just **${ priceString }/month**.": [
-        "Du kan få vores premium privatlivstjenester i én pakke – og til blot **${ priceString }/måned**."
       ],
       "You can get our premium privacy services in one bundle—and it’s just **${ priceString }/month**.": [
         "Du kan få vores premium privatlivstjenester i én pakke – og til kun **${ priceString }/måned**."
@@ -12651,6 +12626,9 @@
       "Autofill 2FA": [
         "Autofyld 2FA"
       ],
+      "Automated confirmations and alerts": [
+        "Automatiske bekræftelser og advarsler"
+      ],
       "Automatically save contacts": [
         "Gem automatisk kontakter"
       ],
@@ -12690,6 +12668,9 @@
       "Block malware, ads and trackers": [
         "Blokér malware, reklamer og trackere"
       ],
+      "Bookings, billings, and orders": [
+        "Bookinger, faktureringer og ordrer"
+      ],
       "Browser": [
         "Browser"
       ],
@@ -12725,6 +12706,9 @@
       ],
       "Cash": [
         "Kontant"
+      ],
+      "Categories": [
+        "Kategorier"
       ],
       "Category": [
         "Kategori"
@@ -12861,8 +12845,11 @@
       "Days of the week": [
         "Ugedage"
       ],
+      "Deals, offers, marketing emails": [
+        "Tilbud, rabatter, marketing-e-mails"
+      ],
       "Default email address": [
-        "Standard e-mailadresse"
+        "Standard-e-mailadresse"
       ],
       "Default language": [
         "Standardsporg"
@@ -12903,6 +12890,9 @@
       "Disabled": [
         "Deaktiveret"
       ],
+      "Discussion board posts and threads": [
+        "Opslag og tråde på diskussionsforum"
+      ],
       "Display name": [
         "Visningsnavn"
       ],
@@ -12938,9 +12928,6 @@
       ],
       "Email address": [
         "E-mail"
-      ],
-      "Email categories": [
-        "E-mailkategorier"
       ],
       "Email or username": [
         "E-mail eller brugernavn"
@@ -13041,6 +13028,9 @@
       "for your first month": [
         "i din første måned"
       ],
+      "Forums": [
+        "Fora"
+      ],
       "From: ${ fromEmail }": [
         "Fra: ${ fromEmail }"
       ],
@@ -13055,6 +13045,27 @@
       ],
       "Gift code": [
         "Gavekode"
+      ],
+      "Go to Forums": [
+        "Gå til Fora"
+      ],
+      "Go to Newsletters": [
+        "Gå til Nyhedsbreve"
+      ],
+      "Go to Primary": [
+        "Gå til primær"
+      ],
+      "Go to Promotions": [
+        "Gå til kampagner"
+      ],
+      "Go to Social": [
+        "Gå til Socialt"
+      ],
+      "Go to Transactions": [
+        "Gå til transaktioner"
+      ],
+      "Go to Updates": [
+        "Gå til Opdateringer"
       ],
       "Group address": [
         "Gruppeadresse"
@@ -13278,6 +13289,9 @@
       "New second password": [
         "Ny anden adgangskode"
       ],
+      "Newsletters": [
+        "Nyhedsbreve"
+      ],
       "No (users cannot use the app until a vault is shared with them)": [
         "Nej (brugere kan ikke bruge appen før en boks er delt med dem)"
       ],
@@ -13286,6 +13300,9 @@
       ],
       "No label found": [
         "Ingen etikette fundet"
+      ],
+      "Non-promotional content and news": [
+        "Ikke-salgsfremmende indhold og nyheder"
       ],
       "Non-standard ports": [
         "Ikke-standard porte"
@@ -13410,6 +13427,12 @@
       "Previous password": [
         "Forrige adgangskode"
       ],
+      "Primary": [
+        "Primær"
+      ],
+      "Promotions": [
+        "Kampagner"
+      ],
       "Prompt to trust keys": [
         "Spørg om at stole på nøgler"
       ],
@@ -13489,7 +13512,7 @@
         "Vælg Linux-pakkeformat"
       ],
       "Select Linux platform": [
-        "Vælg Linux platform"
+        "Vælg Linux-platform"
       ],
       "Send auto-reply": [
         "Send auto-svar"
@@ -13554,6 +13577,12 @@
       ],
       "SMTP username": [
         "SMTP-brugernavn"
+      ],
+      "Social": [
+        "Social"
+      ],
+      "Social media updates and activity": [
+        "Opdateringer og aktivitet på sociale medier"
       ],
       "Spam": [
         "Spam"
@@ -13639,6 +13668,9 @@
       "Token name": [
         "Tokennavn"
       ],
+      "Transactions": [
+        "Transaktioner"
+      ],
       "Two-password mode": [
         "To-adgangskodetilstand"
       ],
@@ -13654,6 +13686,9 @@
       "Unlimited logins and devices": [
         "Ubegrænset antal indlogninger og enheder"
       ],
+      "Updates": [
+        "Opdateringer"
+      ],
       "Upload 1 or more encryption keys": [
         "Upload 1 eller flere krypteringsnøgler"
       ],
@@ -13668,6 +13703,9 @@
       ],
       "URL": [
         "URL"
+      ],
+      "Use email categories": [
+        "Brug e-mailkategorier"
       ],
       "Use folder colors": [
         "Brug mappefarver"
@@ -14260,7 +14298,7 @@
         "Log-in lykkedes (afventer mnemonic-bekræftelse)"
       ],
       "Sign in success (awaiting second factor)": [
-        "Login succes (afventer anden faktor)"
+        "Login lykkedes (afventer anden faktor)"
       ],
       "Sign in success (awaiting verification)": [
         "Vellykket log-in (afventer bekræftelse)"
@@ -14868,7 +14906,7 @@
         "Tilbage til ${ MEET_SHORT_APP_NAME }"
       ],
       "Back to calendar": [
-        "Tilbage til kalender"
+        "Tilbage til kalenderen"
       ],
       "Back to documents": [
         "Retur til dokumenter"
@@ -15648,14 +15686,11 @@
       "Review subscription and pay": [
         "Gennemgå abonnement og betal"
       ],
-      "Start exploring the ${ BRAND_NAME } universe": [
-        "Start udforskningen af ${ BRAND_NAME }-universet"
-      ],
       "Switch plans?": [
         "Skift abonnement?"
       ],
       "Unlock premium features by upgrading": [
-        "Lås op for premium-funktioner ved at opgradere"
+        "Lås op for premiumfunktioner ved at opgradere"
       ]
     },
     "new_plans: Title": {
@@ -17435,28 +17470,28 @@
       "terms and conditions": [
         "vilkår og betingelser"
       ],
-      "The coupon is valid for ${ couponRedemptions } renewal.": [
-        "Kuponen er gyldig til ${ couponRedemptions } fornyelse",
-        "Kuponen er gyldig til ${ couponRedemptions } fornyelser"
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "Rabatten er gyldig for ${ renewalsWithCoupon } fornyelse.",
+        "Rabatten er gyldig for ${ renewalsWithCoupon } fornyelser."
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Den særligt nedsatte pris er gyldig i ${ couponRedemptions } måned. Derefter fornys den automatisk til ${ renewPriceStr } for 1 måned. Du kan opsige når som helst.",
+        "Den særligt nedsatte pris er gyldig i ${ couponRedemptions } måneder. Derefter fornys den automatisk til ${ renewPriceStr } for 1 måned. Du kan opsige når som helst."
       ],
       "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
         "Den særligt nedsatte pris gælder for den første måned på ${ subscriptionLength }.",
         "Den særligt nedsatte pris gælder for de første ${ subscriptionLength } måneder."
       ],
-      "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "Den særligt nedsatte pris er gyldig i den første måned. Kuponen er gyldig til ${ couponRedemptions } fornyelse. Deretter vil den automatisk blive fornyet til ${ renewPriceStr } for 1 måned. Du kan opsige når som helst.",
-        "Den særligt nedsatte pris er gyldig i den første måned. Kuponen er gyldig til ${ couponRedemptions } fornyelser. Deretter vil den automatisk blive fornyet til ${ renewPriceStr } for 1 måned. Du kan opsige når som helst."
-      ],
       "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Den særligt nedsatte pris er gyldig i den første måned. Derefter fornys den automatisk til ${ renewPriceStr } hver måned. De kan opsige når som helst."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Den særligt nedsatte pris på ${ priceWithDiscount } er gyldig i ${ couponRedemptions } måned. Derefter fornys den automatisk til ${ renewPriceStr } for 1 måned. Du kan opsige når som helst.",
+        "Den særligt nedsatte pris på ${ priceWithDiscount } er gyldig i ${ couponRedemptions } måneder. Derefter fornys den automatisk til ${ renewPriceStr } for 1 måned. Du kan opsige når som helst."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "Den særlige udsalgspris på ${ priceWithDiscount } gælder for den første ${ subscriptionLength } måned.",
         "Den særlige udsalgspris på ${ priceWithDiscount } gælder for de første ${ subscriptionLength } måneder."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "Den særlige rabatpris på ${ priceWithDiscount } er gyldig for den første måned. Kuponen er gyldig til ${ couponRedemptions } fornyelse. Derefter vil den automatisk blive fornyet til ${ renewPriceStr } i 1 måned. Du kan annullere når som helst.",
-        "Den særlige rabatpris på ${ priceWithDiscount } er gyldig for den første måned. Kuponen er gyldig til ${ couponRedemptions } fornyelser. Derefter vil den automatisk blive fornyet til ${ renewPriceStr } i 1 måned. Du kan annullere når som helst."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Den særlige rabatpris på ${ priceWithDiscount } er gyldig i den første måned. Derefter fornys den automatisk til ${ renewPriceStr } hver måned. Du kan annullere når som helst."
@@ -17949,7 +17984,7 @@
     },
     "PQC compatibility warning": {
       "**You must update all ${ BRAND_NAME } mobile apps**: your new keys won't work on older app versions.": [
-        "**Du skal opdatere alle ${ BRAND_NAME } mobilapps**: Dine nye nøgler vil ikke fungere på ældre appversioner."
+        "**Du skal opdatere alle ${ BRAND_NAME }-mobilapps**: Dine nye nøgler vil ikke fungere i ældre appversioner."
       ]
     },
     "PQC key generation": {
@@ -21650,6 +21685,32 @@
         "Ingen SMTP-tokens fundet"
       ]
     },
+    "Theme": {
+      "Auto": [
+        "Automatisk"
+      ],
+      "Dark": [
+        "Mørk"
+      ],
+      "Light": [
+        "Lys"
+      ],
+      "Mode: Auto": [
+        "Tilstand: Automatisk"
+      ],
+      "Mode: Dark": [
+        "Tilstand: Mørk"
+      ],
+      "Mode: Light": [
+        "Tilstand: Lys"
+      ],
+      "Sync with system": [
+        "Synkronisér med system"
+      ],
+      "Use ${ BRAND_NAME } settings": [
+        "Brug ${ BRAND_NAME } indstillinger"
+      ]
+    },
     "Time unit": {
       "${ ceilDays } day": [
         "${ ceilDays } dag",
@@ -22622,7 +22683,7 @@
         "Etiketter"
       ],
       "Language and time": [
-        "Sprog og tid"
+        "Sprog og klokkeslæt"
       ],
       "Last activity": [
         "Seneste aktivitet"
@@ -22763,7 +22824,7 @@
         "Adgangskode"
       ],
       "Password generator rules": [
-        "Adgangskodegenerator regler"
+        "Adgangskodegeneratorregler"
       ],
       "Password reset settings": [
         "Indstillinger for nulstilling af adgangskode"
@@ -23294,8 +23355,8 @@
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Din gratis prøveperiode på ${ planName } slutter ${ textDate }"
       ],
-      "Your ${ planName } subscription has started": [
-        "Dit ${ planName } abonnement er startet"
+      "Your ${ planTitle } subscription has started": [
+        "Dit ${ planTitle }-abonnement er startet"
       ],
       "Your calendar link": [
         "Dit kalenderlink"
@@ -23587,6 +23648,9 @@
       ],
       "Specify the users of the eduGAIN entity who are allowed to authenticate with SAML SSO": [
         "Angiv de brugere af eduGAIN-enheden, der har tilladelse til at godkende med SAML SSO"
+      ],
+      "System notification": [
+        "System-notifikation"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Systemundermapper vises som separate mapper i ${ MAIL_APP_NAME }"
@@ -24429,6 +24493,9 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } vil overføre så mange data som muligt, startende med dine seneste beskeder."
+      ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } offer has ended": [
+        "Tilbuddet om ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } er udløbet"
       ],
       "Are you sure you want to delete the phone number?": [
         "Er du sikker på, at du vil slette telefonnummeret?"

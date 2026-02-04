@@ -1398,23 +1398,6 @@
         "नया ईमेल"
       ]
     },
-    "app-switcher": {
-      "Browse the web privately and block ads": [
-        "प्राइवेट रूप से वेब ब्राउज़ करें और विज्ञापनों को ब्लॉक करें"
-      ],
-      "Keep your schedule private": [
-        "अपने शेड्यूल को निजी रखें"
-      ],
-      "Protect your passwords and identity": [
-        "अपने पासवर्ड और पहचान की सुरक्षा करें"
-      ],
-      "Safeguard your files and photos": [
-        "अपनी फाइलों और तस्वीरों की सुरक्षा करें"
-      ],
-      "Secure your communications": [
-        "अपने संचार को सुरक्षित करें"
-      ]
-    },
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "${ BRAND_NAME } ऐप"
@@ -4278,9 +4261,6 @@
       "An error occurred uploading your file. No file has been selected.": [
         "आपकी फ़ाइल अपलोड करते समय एक त्रुटि हुई। कोई फ़ाइल नहीं चुनी गई है।"
       ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
-        "आपकी फ़ाइल ${ formattedFilename } में ${ MAX_IMPORT_CONTACTS_STRING } से अधिक संपर्क हैं।"
-      ],
       "Your file ${ formattedFilename } has no contacts to be imported.": [
         "आपकी फ़ाइल ${ formattedFilename } में आयात करने के लिए कोई संपर्क नहीं है।"
       ],
@@ -6395,9 +6375,6 @@
       ],
       "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
         "प्रत्येक डोमेन के पास केवल एक SPF (TXT) रिकॉर्ड हो सकता है। यदि आप वर्तमान SPF (TXT) रिकॉर्ड को रखना चाहते हैं, तो आप अपने वर्तमान रिकॉर्ड में ${ spf } जोड़ सकते हैं (इसे ${ spfValue } के बाद डालें)।"
-      ],
-      "Early access": [
-        "जल्दी एक्सेस"
       ],
       "Edit email address": [
         "ईमेल एड्रेस संपादित करें"
@@ -9232,6 +9209,9 @@
       "Previous password": [
         "पिछला पासवर्ड"
       ],
+      "Primary": [
+        "प्राथमिक"
+      ],
       "Proration": [
         "प्रोडशन"
       ],
@@ -9376,6 +9356,9 @@
       ],
       "Undo send": [
         "भेजें पूर्ववत करें"
+      ],
+      "Updates": [
+        "अपडेट"
       ],
       "Upload 1 or more encryption keys": [
         "1 या अधिक एन्क्रिप्शन कुंजियाँ अपलोड करें"
@@ -10769,9 +10752,6 @@
       ],
       "Review subscription and pay": [
         "सदस्यता देख लें और भुगतान करें"
-      ],
-      "Start exploring the ${ BRAND_NAME } universe": [
-        "${ BRAND_NAME } की दुनिया को देखें"
       ],
       "Switch plans?": [
         "प्लान बदले?"
@@ -14594,6 +14574,14 @@
       ],
       "vCard field": [
         "vCard फील्ड"
+      ]
+    },
+    "Theme": {
+      "Dark": [
+        "अंधेरा"
+      ],
+      "Light": [
+        "रोशनी"
       ]
     },
     "Time unit": {

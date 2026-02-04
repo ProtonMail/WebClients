@@ -1941,26 +1941,6 @@
         "新しいメール"
       ]
     },
-    "app-switcher": {
-      "Browse the web privately and block ads": [
-        "広告をブロックしプライベートにウェブを閲覧します"
-      ],
-      "Keep your schedule private": [
-        "予定をプライベートに保ちます"
-      ],
-      "Protect your passwords and identity": [
-        "パスワードや認証情報を保護します"
-      ],
-      "Safeguard your files and photos": [
-        "ファイルや写真を保護します"
-      ],
-      "Secure your communications": [
-        "コミュニケーションを保護します"
-      ],
-      "Talk confidentially": [
-        "安心して会話する"
-      ]
-    },
     "app-switcher_2025": {
       "Bitcoin wallet": [
         "Bitcoinウォレット"
@@ -3184,11 +3164,6 @@
       ],
       "Expand": [
         "開く"
-      ]
-    },
-    "collider_2025: app-switcher": {
-      "Chat with a private AI assistant": [
-        "プライベートAIアシスタントとチャット"
       ]
     },
     "collider_2025: feature": {
@@ -4765,8 +4740,8 @@
       "Simplify syncing and scheduling with shared calendars.": [
         "共有カレンダーで同期やスケジューリングを簡単に。"
       ],
-      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
-        "CSVファイルおよびVCFファイルでインポートするには、ファイルが${ MAX_IMPORT_FILE_SIZE_STRING }または${ MAX_IMPORT_CONTACTS_STRING }件の連絡先を超えないようにしてください。ファイルが大きすぎる場合は、小さいファイルに分割してください。${ learnMoreLink }"
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "CSVファイルおよびVCFファイルでインポートするには、ファイルが${ MAX_IMPORT_FILE_SIZE_STRING }または${ maxContactString }件の連絡先を超えないようにしてください。ファイルが大きすぎる場合は、小さいファイルに分割してください。${ learnMoreLink }"
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "${ easySwitchLink }で、GoogleやOutlookから連絡先をインポート"
@@ -5015,6 +4990,9 @@
       "Edge": [
         "Edge"
       ],
+      "Fedora": [
+        "Fedora"
+      ],
       "Fire TV": [
         "Fire TV"
       ],
@@ -5032,6 +5010,9 @@
       ],
       "Installation guide": [
         "インストール ガイド"
+      ],
+      "iOS": [
+        "iOS"
       ],
       "iPhone/iPad": [
         "iPhone/iPad"
@@ -5074,6 +5055,9 @@
       ],
       "TV": [
         "TV"
+      ],
+      "Ubuntu/Debian": [
+        "Ubuntu/Debian"
       ],
       "Windows": [
         "Windows"
@@ -6571,6 +6555,9 @@
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "このメッセージは、現在お使いのブラウザでは適切に開くことができないリンクのURLを含んでいる可能性があります。"
       ],
+      "This offer is not available in your country": [
+        "このオファーはお住まいの国ではご利用いただけません"
+      ],
       "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
         "非プライベート ユーザー アカウントを作成し、そのアカウントにアクセスするには、管理者権限を復元する必要があります。"
       ],
@@ -6735,8 +6722,8 @@
       "An error occurred uploading your file. No file has been selected.": [
         "ファイルのアップロード中にエラーが発生しました。ファイルが選択されていません。"
       ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
-        "あなたのファイル ${ formattedFilename } には${ MAX_IMPORT_CONTACTS_STRING } 以上の連絡先が含まれています。"
+      "Your file ${ formattedFilename } contains more than ${ maxContactString } contacts.": [
+        "あなたのファイル ${ formattedFilename } には${ maxContactString } 以上の連絡先が含まれています。"
       ],
       "Your file ${ formattedFilename } has no contacts to be imported.": [
         "ファイル ${ formattedFilename } にインポートする連絡先がありません。"
@@ -8872,8 +8859,8 @@
       "All your changes will be lost.": [
         "変更内容はすべて失われます。"
       ],
-      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
-        "${ MAX_CONTACTS_PER_USER } の制限まで、すべての連絡先がインポートされます"
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "${ maxContact } の制限まで、すべての連絡先がインポートされます"
       ],
       "Allocated": [
         "割り当て"
@@ -9133,6 +9120,9 @@
       "CNET editors choice award with a rating of 8.4 out of 10": [
         "CNET editors choice賞で 10 段階中 8.4 の評価"
       ],
+      "Coming soon": [
+        "近日公開"
+      ],
       "Compromised": [
         "侵害された"
       ],
@@ -9390,9 +9380,6 @@
       ],
       "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
         "各ドメインは SPF (TXT) レコードを 1 つだけ持つことができます。 既存の SPF (TXT) レコードを保持したい場合は、現在のレコードに ${ spf } を追加します (${ spfValue } の後に置きます)。"
-      ],
-      "Early access": [
-        "早期アクセス"
       ],
       "Edit email address": [
         "メールアドレスを編集"
@@ -10423,6 +10410,9 @@
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "何かお困りの際は、${ BRAND_NAME }までお問い合わせください。"
       ],
+      "Receive notifications for ${ categoryLabel }": [
+        "${ categoryLabel }の通知を受け取る"
+      ],
       "Recently used servers:": [
         "最近使用したサーバー:"
       ],
@@ -10521,9 +10511,6 @@
       ],
       "Securing your account": [
         "アカウントを安全にしています"
-      ],
-      "Select a service to continue": [
-        "続けるサービスを選択してください"
       ],
       "Select one or multiple user affiliations": [
         "一人または複数のユーザーの所属を選択してください"
@@ -11244,6 +11231,9 @@
       ],
       "We need to authenticate your payment with your bank.": [
         "お客様のお支払いを銀行で認証する必要があります。"
+      ],
+      "We recommend adding servers in different locations (one per city) to maximize redundancy.": [
+        "冗長性を最大化するために、異なる場所にサーバーを追加することをお勧めします（都市ごとに1つ）。"
       ],
       "We recommend having at least 2 servers in order to provide redundancy.": [
         "冗長性を確保するため、少なくとも2台のサーバーを設置することをお勧めします。"
@@ -12495,6 +12485,9 @@
       "Autofill 2FA": [
         "2要素認証自動入力"
       ],
+      "Automated confirmations and alerts": [
+        "自動確認とアラート"
+      ],
       "Automatically save contacts": [
         "連絡先を自動的に保存"
       ],
@@ -12534,6 +12527,9 @@
       "Block malware, ads and trackers": [
         "マルウェア、広告、トラッカーをブロック"
       ],
+      "Bookings, billings, and orders": [
+        "予約、請求、注文"
+      ],
       "Browser": [
         "ブラウザ"
       ],
@@ -12569,6 +12565,9 @@
       ],
       "Cash": [
         "現金"
+      ],
+      "Categories": [
+        "カテゴリ"
       ],
       "Category": [
         "カテゴリー"
@@ -12705,6 +12704,9 @@
       "Days of the week": [
         "曜日"
       ],
+      "Deals, offers, marketing emails": [
+        "お得な情報、特典、マーケティングメール"
+      ],
       "Default email address": [
         "既定のメールアドレス"
       ],
@@ -12747,6 +12749,9 @@
       "Disabled": [
         "無効"
       ],
+      "Discussion board posts and threads": [
+        "掲示板の投稿とスレッド"
+      ],
       "Display name": [
         "表示名"
       ],
@@ -12782,9 +12787,6 @@
       ],
       "Email address": [
         "メールアドレス"
-      ],
-      "Email categories": [
-        "メールカテゴリ"
       ],
       "Email or username": [
         "メールアドレスまたはユーザー名"
@@ -12885,6 +12887,9 @@
       "for your first month": [
         "最初の1か月間"
       ],
+      "Forums": [
+        "フォーラム"
+      ],
       "From: ${ fromEmail }": [
         "送信者: ${ fromEmail }"
       ],
@@ -12899,6 +12904,27 @@
       ],
       "Gift code": [
         "ギフトコード"
+      ],
+      "Go to Forums": [
+        "フォーラムへ移動"
+      ],
+      "Go to Newsletters": [
+        "ニュースレターへ移動"
+      ],
+      "Go to Primary": [
+        "プライマリーへ移動"
+      ],
+      "Go to Promotions": [
+        "プロモーションへ移動"
+      ],
+      "Go to Social": [
+        "ソーシャルへ移動"
+      ],
+      "Go to Transactions": [
+        "取引へ移動"
+      ],
+      "Go to Updates": [
+        "アップデートへ移動"
       ],
       "Group address": [
         "グループアドレス"
@@ -13122,6 +13148,9 @@
       "New second password": [
         "新しいセカンドパスワード"
       ],
+      "Newsletters": [
+        "ニュースレター"
+      ],
       "No (users cannot use the app until a vault is shared with them)": [
         "いいえ (保管庫が共有されない限り、ユーザーはアプリを使用できません)"
       ],
@@ -13130,6 +13159,9 @@
       ],
       "No label found": [
         "ラベルが見つかりませんでした"
+      ],
+      "Non-promotional content and news": [
+        "プロモーション以外のコンテンツおよびニュース"
       ],
       "Non-standard ports": [
         "標準的ではないポート"
@@ -13253,6 +13285,12 @@
       ],
       "Previous password": [
         "以前のパスワード"
+      ],
+      "Primary": [
+        "プライマリー"
+      ],
+      "Promotions": [
+        "プロモーション"
       ],
       "Prompt to trust keys": [
         "鍵を信頼するか確認する"
@@ -13398,6 +13436,12 @@
       "SMTP username": [
         "SMTP ユーザー名"
       ],
+      "Social": [
+        "ソーシャル"
+      ],
+      "Social media updates and activity": [
+        "ソーシャルメディアの更新とアクティビティ"
+      ],
       "Spam": [
         "迷惑メール"
       ],
@@ -13482,6 +13526,9 @@
       "Token name": [
         "トークン名"
       ],
+      "Transactions": [
+        "取引"
+      ],
       "Two-password mode": [
         "2 パスワードモード"
       ],
@@ -13497,6 +13544,9 @@
       "Unlimited logins and devices": [
         "無制限のログインとデバイス"
       ],
+      "Updates": [
+        "更新情報"
+      ],
       "Upload 1 or more encryption keys": [
         "1 つ以上の暗号鍵をアップロード"
       ],
@@ -13511,6 +13561,9 @@
       ],
       "URL": [
         "URL"
+      ],
+      "Use email categories": [
+        "メールカテゴリを使用"
       ],
       "Use folder colors": [
         "フォルダーの色を使用"
@@ -14259,6 +14312,9 @@
       "${ n } active meeting at a time": [
         "一度に${ n }件のミーティングを同時に開催"
       ],
+      "${ n } participant": [
+        "${ n }人の参加者"
+      ],
       "24 hours per meeting": [
         "ミーティング1回あたり24時間"
       ],
@@ -14268,6 +14324,9 @@
       "Appointment scheduling": [
         "日程調整ツール"
       ],
+      "Booking pages": [
+        "予約ページ"
+      ],
       "Browser, mobile, and desktop apps": [
         "ブラウザ、モバイル、デスクトップアプリ"
       ],
@@ -14276,6 +14335,9 @@
       ],
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "エンドツーエンドで暗号化された画面共有と通話中の一時的なチャット"
+      ],
+      "Meeting recording": [
+        "ミーティング録画"
       ],
       "One active meeting at a time": [
         "一度に1つのミーティングを開催"
@@ -15441,9 +15503,6 @@
       ],
       "Review subscription and pay": [
         "サブスクリプションを見なおして決済"
-      ],
-      "Start exploring the ${ BRAND_NAME } universe": [
-        "${ BRAND_NAME } の世界の探検を始めましょう"
       ],
       "Switch plans?": [
         "プランを変更しますか?"
@@ -17204,6 +17263,9 @@
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "${ renewPriceStr }で更新、いつでもキャンセル可能。"
       ],
+      "Sorry, this offer is not available for your account.": [
+        "申し訳ありませんが、このオファーはお客様のアカウントではご利用いただけません。"
+      ],
       "Sorry, this offer is not available with your current plan.": [
         "申し訳ありませんが、この特典は現在のプランではご利用いただけません。"
       ],
@@ -17213,23 +17275,23 @@
       "terms and conditions": [
         "利用規約"
       ],
-      "The coupon is valid for ${ couponRedemptions } renewal.": [
-        "クーポンは ${ couponRedemptions } の更新で有効です。"
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "この割引は ${ renewalsWithCoupon } の更新で有効です。"
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "特別割引価格は${ couponRedemptions }ヶ月間有効です。その後、1ヶ月${ renewPriceStr }で自動更新されます。いつでもキャンセル可能です。"
       ],
       "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
         "特別割引価格は最初の ${ subscriptionLength } ヶ月間有効です。"
       ],
-      "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "特別割引価格は最初の月のみ有効です。クーポンは${ couponRedemptions }の更新で有効です。そのあとは 1 ヶ月${ renewPriceStr }で自動更新されます。いつでもキャンセル可能です。"
-      ],
       "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "特別な割引価格は最初の月のみ有効です。その後、毎月${ renewPriceStr }で自動更新されます。いつでもキャンセル可能です。"
       ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "${ priceWithDiscount }の特別割引価格は${ couponRedemptions }ヶ月間有効です。その後、1ヶ月${ renewPriceStr }で自動更新されます。いつでもキャンセル可能です。"
+      ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "${ priceWithDiscount } の特別割引価格は最初の ${ subscriptionLength } ヶ月間有効です。"
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "${ priceWithDiscount }の特別な割引価格は最初の月のみ適用されます。クーポンは${ couponRedemptions }の更新で有効です。そのあとは 1 ヶ月${ renewPriceStr }で自動更新されます。いつでもキャンセル可能です。"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "${ priceWithDiscount }の特別な割引価格は最初の月のみ有効です。そのあとは毎月${ renewPriceStr }で自動更新されます。いつでもキャンセル可能です。"
@@ -21351,6 +21413,14 @@
         "SMTP トークンがありません"
       ]
     },
+    "Theme": {
+      "Dark": [
+        "ダーク"
+      ],
+      "Light": [
+        "ライト"
+      ]
+    },
     "Time unit": {
       "${ ceilDays } day": [
         "${ ceilDays }日"
@@ -22200,6 +22270,9 @@
       "Get the apps": [
         "アプリを入手"
       ],
+      "Get unlimited meetings on all your devices with ${ planName }. ${ upgradeButton }": [
+        "${ planName }で、すべてのデバイスで無制限のミーティングをご利用いただけます。${ upgradeButton }"
+      ],
       "Gift": [
         "ギフト"
       ],
@@ -22974,9 +23047,6 @@
       "Your ${ planName } free trial ends on ${ textDate }": [
         "${ planName }の無料トライアルは${ textDate }に終了します"
       ],
-      "Your ${ planName } subscription has started": [
-        "${ planName }サブスクリプションが開始されました"
-      ],
       "Your calendar link": [
         "カレンダーのリンク"
       ],
@@ -23267,6 +23337,9 @@
       ],
       "Specify the users of the eduGAIN entity who are allowed to authenticate with SAML SSO": [
         "EduGAINエンティティのユーザーのうち、SAML SSOで認証することが許可されているユーザーを指定してください"
+      ],
+      "System notification": [
+        "システム通知"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "システムのサブフォルダーは ${ MAIL_APP_NAME } のそれぞれのフォルダーとして表示されます"
@@ -23645,6 +23718,9 @@
       ]
     },
     "Upsell": {
+      "${ BRAND_NAME } for Business": [
+        "${ BRAND_NAME } for Business"
+      ],
       "**Save up to ${ priceString }** with a longer subscription. Same premium features, lower price.": [
         "長期契約で**最大${ priceString } 節約できます**。同じプレミアム機能で、より低価格。"
       ],
@@ -23656,6 +23732,9 @@
       ],
       "Did you know?": [
         "知ってましたか？"
+      ],
+      "Everything you need to collaborate securely in a single subscription. Get access to ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, ${ SHEETS_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } and ${ LUMO_SHORT_APP_NAME } AI Assistant.": [
+        "コラボレーションに必要なすべてを1つのサブスクリプションで安全に管理。 ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ DOCS_SHORT_APP_NAME }、${ SHEETS_SHORT_APP_NAME }、${ MEET_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、 ${ LUMO_SHORT_APP_NAME } AI アシスタントへのアクセス権を取得できます。"
       ],
       "Get ${ drivePlusPlanMaxSpace } storage for your files, photos and documents, and recover file versions with 10-year file recovery.": [
         "ファイル、写真、ドキュメント用に最大${ drivePlusPlanMaxSpace }のストレージを利用し、10年間のファイル復元機能で過去のファイルバージョンを復元できます。"
@@ -24083,6 +24162,9 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } は、最新のメッセージからできるだけ多くのデータを転送します。"
+      ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } offer has ended": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } オファーは終了しました"
       ],
       "Are you sure you want to delete the phone number?": [
         "本当にこの電話番号を削除しますか？"

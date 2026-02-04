@@ -1590,7 +1590,7 @@
     },
     "collider_2025: Invite": {
       "Email address is not valid": [
-        "L'adresse e-mail n'est pas valide."
+        "L'adresse e-mail n'est pas valide"
       ],
       "Email address is required": [
         "Une adresse e-mail est requise"
@@ -1617,7 +1617,7 @@
     },
     "collider_2025: Invite Info": {
       "Know someone who'd benefit from a privacy-first AI? Invite them to join the ${ LUMO_SHORT_APP_NAME } waitlist. You have ${ remainingInvitesText } invitations remaining.": [
-        "Vous connaissez des personnes qui souhaitent bénéficier d'une IA respectueuse de la vie privée ? Invitez-les à rejoindre la liste d'attente de ${ LUMO_SHORT_APP_NAME }. Il vous reste ${ remainingInvitesText } invitations."
+        "Vous connaissez quelqu'un qui bénéficierait d'une IA respectueuse de la vie privée ? Invitez-le à rejoindre la liste d'attente de ${ LUMO_SHORT_APP_NAME }. Il vous reste ${ remainingInvitesText } invitations."
       ],
       "You have ${ remainingInvitesText } invitations remaining.": [
         "Il vous reste ${ remainingInvitesText } invitations."
@@ -1639,12 +1639,12 @@
         "Merci d'aider les autres à découvrir ${ LUMO_SHORT_APP_NAME } ! Si d'autres invitations deviennent disponibles, nous vous en informerons."
       ],
       "We've invited ${ emailText }. They'll get instructions on how to join the waitlist.": [
-        "Nous avons invité ${ emailText }. Cette personne recevra des instructions pour rejoindre la liste d'attente."
+        "Nous avons invité ${ emailText }. Le destinataire recevra des instructions sur la façon de rejoindre la liste d'attente."
       ]
     },
     "collider_2025: Invite Title": {
       "Invite friends to experience ${ LUMO_APP_NAME }": [
-        "Invitez des amis à découvrir ${ LUMO_APP_NAME }"
+        "Invitez vos amis à découvrir ${ LUMO_APP_NAME }"
       ]
     },
     "collider_2025: Job": {
@@ -5297,7 +5297,7 @@
         "Partage d'écran chiffré de bout en bout et chat éphémère pendant les appels"
       ],
       "Meeting recording": [
-        "Enregistrement des réunions"
+        "Enregistrement de la réunion"
       ],
       "One active meeting at a time": [
         "Une réunion active à la fois"
@@ -6393,28 +6393,28 @@
       "terms and conditions": [
         "conditions générales d'utilisation"
       ],
-      "The coupon is valid for ${ couponRedemptions } renewal.": [
-        "Le code cadeau est valide pour ${ couponRedemptions } renouvellement.",
-        "Le code cadeau est valide pour ${ couponRedemptions } renouvellements."
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "La réduction est valable pour ${ renewalsWithCoupon } renouvellement.",
+        "La réduction est valable pour ${ renewalsWithCoupon } renouvellements."
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Le tarif exceptionnellement réduit est valable pendant ${ couponRedemptions } mois. Il sera ensuite automatiquement renouvelé au prix de ${ renewPriceStr } pour une durée d'un mois. Vous pouvez annuler à tout moment.",
+        "Le tarif exceptionnellement réduit est valable pendant ${ couponRedemptions } mois. Il sera ensuite automatiquement renouvelé au prix de ${ renewPriceStr } pour une durée d'un mois. Vous pouvez annuler à tout moment."
       ],
       "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
         "Le tarif réduit spécial est valable pendant le premier ${ subscriptionLength } mois.",
         "Le tarif réduit spécial est valable pendant les premiers ${ subscriptionLength } mois."
       ],
-      "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "Le tarif exceptionnellement réduit est valable le premier mois. Le coupon est valide pour ${ couponRedemptions } renouvellement. Il sera ensuite automatiquement renouvelé à ${ renewPriceStr } pendant 1 mois. Vous pouvez annuler à tout moment.",
-        "Le tarif exceptionnellement réduit est valable le premier mois. Le coupon est valide pour ${ couponRedemptions } renouvellements. Il sera ensuite automatiquement renouvelé à ${ renewPriceStr } pendant 1 mois. Vous pouvez annuler à tout moment."
-      ],
       "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Le tarif exceptionnel s'applique le premier mois. Ensuite, l'abonnement sera automatiquement renouvelé au prix de ${ renewPriceStr } par mois. Vous pouvez résilier l'abonnement à tout moment."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Le tarif exceptionnellement réduit de ${ priceWithDiscount } est valable pendant ${ couponRedemptions } mois. Il sera ensuite automatiquement renouvelé au prix de ${ renewPriceStr } pour une durée d'un mois. Vous pouvez annuler à tout moment.",
+        "Le tarif exceptionnellement réduit de ${ priceWithDiscount } est valable pendant ${ couponRedemptions } mois. Il sera ensuite automatiquement renouvelé au prix de ${ renewPriceStr } pour une durée d'un mois. Vous pouvez annuler à tout moment."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "Le tarif réduit spécial de ${ priceWithDiscount } est valable pendant le premier ${ subscriptionLength } mois.",
         "Le tarif réduit spécial de ${ priceWithDiscount } est valable pendant les premiers ${ subscriptionLength } mois."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "Le tarif exceptionnellement réduit de ${ priceWithDiscount } est valable le premier mois. Le coupon est valide pour ${ couponRedemptions } renouvellement. Il sera ensuite automatiquement renouvelé à ${ renewPriceStr } pendant 1 mois. Vous pouvez annuler à tout moment.",
-        "Le tarif exceptionnellement réduit de ${ priceWithDiscount } est valable le premier mois. Le coupon est valide pour ${ couponRedemptions } renouvellements. Il sera ensuite automatiquement renouvelé à ${ renewPriceStr } pendant 1 mois. Vous pouvez annuler à tout moment."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Le tarif exceptionnel de ${ priceWithDiscount } s'applique le premier mois. Ensuite, l'abonnement sera automatiquement renouvelé au prix de ${ renewPriceStr } par mois. Vous pouvez résilier l'abonnement à tout moment."

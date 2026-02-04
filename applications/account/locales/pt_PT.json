@@ -1596,23 +1596,6 @@
         "Novo e-mail"
       ]
     },
-    "app-switcher": {
-      "Browse the web privately and block ads": [
-        "Navegue na web de forma privada e bloqueie anúncios"
-      ],
-      "Keep your schedule private": [
-        "Mantenha a sua agenda privada"
-      ],
-      "Protect your passwords and identity": [
-        "Proteja as suas palavras-passe e a sua identidade"
-      ],
-      "Safeguard your files and photos": [
-        "Proteja os seus ficheiros e fotos"
-      ],
-      "Secure your communications": [
-        "Proteja as suas comunicações"
-      ]
-    },
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "Aplicações ${ BRAND_NAME }"
@@ -3707,9 +3690,6 @@
       "Simplify syncing and scheduling with shared calendars.": [
         "Simplifique a sincronização e o agendamento com calendários partilhados."
       ],
-      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
-        "Para importar via ficheiro CSV ou VCF, certifique-se de que o ficheiro não excede ${ MAX_IMPORT_FILE_SIZE_STRING } ou ${ MAX_IMPORT_CONTACTS_STRING } contactos. Se o seu ficheiro for maior, divida-o em ficheiros mais pequenos. ${ learnMoreLink }."
-      ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Para importar os seus contactos do Google e Outlook, ${ easySwitchLink }."
       ],
@@ -4982,9 +4962,6 @@
       ],
       "An error occurred uploading your file. No file has been selected.": [
         "Ocorreu um erro ao enviar o ficheiro. Nenhum ficheiro foi selecionado."
-      ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
-        "O ficheiro ${ formattedFilename } contém mais de ${ MAX_IMPORT_CONTACTS_STRING } contactos."
       ],
       "Your file ${ formattedFilename } has no contacts to be imported.": [
         "O ficheiro ${ formattedFilename } não tem contactos para importar."
@@ -6871,10 +6848,6 @@
       "All your changes will be lost.": [
         "Todas as suas alterações serão perdidas."
       ],
-      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
-        "Todos os seus contactos serão importados até o limite de ${ MAX_CONTACTS_PER_USER }.",
-        "Todos os seus contactos serão importados até o limite de ${ MAX_CONTACTS_PER_USER }."
-      ],
       "Allocated": [
         "Alocado"
       ],
@@ -7305,9 +7278,6 @@
       ],
       "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
         "Cada domínio pode ter apenas um registo SPF (TXT). Se deseja manter o registo SPF (TXT) existente, pode adicionar ${ spf } ao seu registo atual (colocando-o após ${ spfValue })."
-      ],
-      "Early access": [
-        "Acesso antecipado"
       ],
       "Edit email address": [
         "Editar o endereço de e-mail"
@@ -8277,9 +8247,6 @@
       ],
       "Securing your account": [
         "A proteger a sua conta"
-      ],
-      "Select a service to continue": [
-        "Selecione um serviço para continuar"
       ],
       "Select one or multiple user affiliations": [
         "Selecione uma ou várias afiliações para o utilizador."
@@ -10190,6 +10157,9 @@
       "Font size": [
         "Tamanho das letras"
       ],
+      "Forums": [
+        "Fóruns"
+      ],
       "From: ${ fromEmail }": [
         "De: ${ fromEmail }"
       ],
@@ -10379,6 +10349,9 @@
       "New second password": [
         "Nova segunda palavra-passe"
       ],
+      "Newsletters": [
+        "Boletins informativos"
+      ],
       "No filter": [
         "Sem filtro"
       ],
@@ -10484,6 +10457,12 @@
       "Previous password": [
         "Palavra-passe anterior"
       ],
+      "Primary": [
+        "Principal"
+      ],
+      "Promotions": [
+        "Promoções"
+      ],
       "Proration": [
         "Repartição"
       ],
@@ -10578,6 +10557,9 @@
       "Single sign-on URL": [
         "URL da autenticação única"
       ],
+      "Social": [
+        "Rede social"
+      ],
       "Spam": [
         "Spam"
       ],
@@ -10641,6 +10623,9 @@
       "To: ${ toEmail }": [
         "Para: ${ toEmail }"
       ],
+      "Transactions": [
+        "Transações"
+      ],
       "Two-password mode": [
         "Modo palavra-passe dupla"
       ],
@@ -10649,6 +10634,9 @@
       ],
       "Undo send": [
         "Anular envio"
+      ],
+      "Updates": [
+        "Atualizações"
       ],
       "Upload 1 or more encryption keys": [
         "Envie 1 ou mais chaves de encriptação"
@@ -12332,9 +12320,6 @@
       "Review subscription and pay": [
         "Reveja a subscrição e pague"
       ],
-      "Start exploring the ${ BRAND_NAME } universe": [
-        "Comece a explorar o universo da ${ BRAND_NAME }"
-      ],
       "Switch plans?": [
         "Alterar o plano?"
       ],
@@ -13791,17 +13776,9 @@
       "Taxes": [
         "Impostos"
       ],
-      "The coupon is valid for ${ couponRedemptions } renewal.": [
-        "O cupão é válido para ${ couponRedemptions } renovação.",
-        "O cupão é válido para ${ couponRedemptions } renovações."
-      ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "O preço especialmente descontado de ${ priceWithDiscount } é válido para o primeiro ${ subscriptionLength } mês.",
         "O preço especialmente descontado de ${ priceWithDiscount } é válido para os primeiros ${ subscriptionLength } meses."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "O preço com desconto especial de ${ priceWithDiscount } é válido para o primeiro mês. O cupão é válido para ${ couponRedemptions } renovação. Após esse período, será renovado automaticamente por ${ renewPriceStr } por 1 mês. Pode cancelar a qualquer momento.",
-        "O preço com desconto especial de ${ priceWithDiscount } é válido para o primeiro mês. O cupão é válido para ${ couponRedemptions } renovações. Após esse período, será renovado automaticamente por ${ renewPriceStr } por 1 mês. Pode cancelar a qualquer momento."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "O preço com desconto especial de ${ priceWithDiscount } é válido no primeiro mês. Após este período, será automaticamente renovado a cada mês por ${ renewPriceStr } . Pode cancelar a qualquer momento."
@@ -17229,6 +17206,14 @@
         "Campo vCard"
       ]
     },
+    "Theme": {
+      "Dark": [
+        "Escuro"
+      ],
+      "Light": [
+        "Claro"
+      ]
+    },
     "Time unit": {
       "${ ceilDays } day": [
         "${ ceilDays } dia",
@@ -18585,9 +18570,6 @@
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "A sua avaliação gratuita ${ planName } finaliza em ${ textDate }."
-      ],
-      "Your ${ planName } subscription has started": [
-        "A sua subscrição do ${ planName } começou."
       ],
       "Your calendar link": [
         "A sua ligação ao calendário"

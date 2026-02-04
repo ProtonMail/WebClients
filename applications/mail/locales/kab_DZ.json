@@ -3590,9 +3590,6 @@
       "An error occurred uploading your file. No file has been selected.": [
         "Tella-d tuccḍa deg usali n ufaylu-inek·inem. Ulac afaylu i yettwafernen."
       ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
-        "Afaylu-inek·inem ${ formattedFilename } deg-s ugar n ${ MAX_IMPORT_CONTACTS_STRING } n yinermisen."
-      ],
       "Your file ${ formattedFilename } has no contacts to be imported.": [
         "Afaylu-inek·inem ${ formattedFilename } ur yesɛi ara inermisen ara nsifeḍ."
       ],
@@ -4655,10 +4652,6 @@
       "All your changes will be lost.": [
         "Ad ruḥen akk ibeddilen-inek/m."
       ],
-      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
-        "Meṛṛa inermisen-ik ad ttwaktaren, s talast n ${ MAX_CONTACTS_PER_USER }",
-        "Meṛṛa inermisen-ik ad ttwaktaren, s talast n ${ MAX_CONTACTS_PER_USER }"
-      ],
       "American Express SafeKey logo": [
         "Alugu n American Express SafeKey"
       ],
@@ -5013,8 +5006,7 @@
         "Yettwaɣellet seg ukaram agejdan"
       ],
       "Insert image": [
-        "Ger tugna",
-        "Ger tugniwn"
+        "Ger tugna"
       ],
       "Insert link": [
         "Ger aseɣwen"
@@ -9029,6 +9021,9 @@
       "Deleting contacts": [
         "Tukksa n yinermisen"
       ],
+      "Desktop": [
+        "Tanarit"
+      ],
       "Don't give spam a chance": [
         "Ur ttmuddu ara tagnit i yispamen"
       ],
@@ -9170,6 +9165,9 @@
       ],
       "Minicalendar": [
         "Awitay ameẓẓyan"
+      ],
+      "Mobile": [
+        "Aziraz"
       ],
       "More": [
         "Ugar"

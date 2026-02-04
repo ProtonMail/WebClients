@@ -1695,6 +1695,11 @@
         "메시지 검색"
       ]
     },
+    "Action: Sheets": {
+      "Open in ${ SHEETS_APP_NAME }": [
+        "${ SHEETS_APP_NAME }에서 열기"
+      ]
+    },
     "Actions message": {
       "${ addContact } or ${ importContact }.": [
         "${ addContact } 혹은 ${ importContact }"
@@ -4073,8 +4078,8 @@
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "최상의 계정 보안 상태를 유지하려면, 복구 문구를 설정하세요."
       ],
-      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
-        "CSV 파일 및 VCF 파일을 통한 불러오기를 위해, 파일이 ${ MAX_IMPORT_FILE_SIZE_STRING } 또는 연락처 ${ MAX_IMPORT_CONTACTS_STRING }개를 초과하지 않도록 않도록 해주세요. 파일이 더 크다면, 더 작은 파일로 나눠주세요. ${ learnMoreLink }."
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "CSV 파일 및 VCF 파일을 통한 불러오기를 위해, 파일이 ${ MAX_IMPORT_FILE_SIZE_STRING } 또는 연락처 ${ maxContactString }개를 초과하지 않도록 않도록 해주세요. 파일이 더 크다면, 더 작은 파일로 나눠주세요. ${ learnMoreLink }."
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Google 및 Outlook에서 콘텐츠를 불러오려면, ${ easySwitchLink }"
@@ -4209,6 +4214,17 @@
       ],
       "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
         "${ PLAN_NAMES[PLANS.PASS] } 구독이 연간 ${ price }의 특별 가격으로 제공됩니다. Free 플랜으로 다운그레이드함으로서 할인을 잃게되며 추후에도 할인된 가격으로 구독할 수 없습니다."
+      ]
+    },
+    "Drawer tab, Action": {
+      "Download for Linux": [
+        "Linux용 다운로드"
+      ],
+      "Download for macOS": [
+        "macOS용 다운로드"
+      ],
+      "Download for Windows": [
+        "Windows용 다운로드"
       ]
     },
     "driveplus2024: Deal details": {
@@ -4942,11 +4958,17 @@
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "이 메시지는 현재 브라우저에서 제대로 열 수 없는 URL 링크있을 수 있습니다."
       ],
+      "This offer is not available in your country": [
+        "이 제안은 현재 거주 중인 국가에서 사용할 수 없습니다."
+      ],
       "Trusted keys are not valid for sending": [
         "인증된 키가 전송하기에 유효하지 않음"
       ],
       "Try using only letters, numerals, and _.-": [
         "문자, 숫자 및 _.- 만 사용하십시오"
+      ],
+      "Unable to load VPN dashboard. Please check your connection and try again.": [
+        "VPN 대시보드를 불러오지 못했습니다. 연결 상태 확인 후 다시 시도해 주세요."
       ],
       "Unexpected error, we can't import the contacts": [
         "예상치 못한 오류가 발생하여, 연락처를 가져올 수 없습니다."
@@ -5095,8 +5117,8 @@
       "An error occurred uploading your file. No file has been selected.": [
         "파일을 업로드하는 동안 오류가 발생했습니다. 파일을 선택하지 않았습니다."
       ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
-        "파일 ${ formattedFilename } 에 연락처가 ${ MAX_IMPORT_CONTACTS_STRING } 개 넘게 포함되어 있습니다."
+      "Your file ${ formattedFilename } contains more than ${ maxContactString } contacts.": [
+        "파일 ${ formattedFilename }이(가) ${ maxContactString }개 초과 연락처를 포함하고 있습니다."
       ],
       "Your file ${ formattedFilename } has no contacts to be imported.": [
         "${ formattedFilename } 파일에 가져올 연락처가 없습니다."
@@ -6105,6 +6127,12 @@
       "Too many recent requests. Please try again in a few moments.": [
         "너무 많은 요청을 시도했습니다. 잠시 후 다시 시도해 주세요."
       ],
+      "Two-factor authentication is enabled in your external account.": [
+        "사용자의 외부 계정에 2단계 인증이 활성화되었습니다."
+      ],
+      "Two-factor authentication is enabled in your external email account.": [
+        "2단계 인증이 사용자의 외부 계정에 활성화되었습니다."
+      ],
       "Use your app password if:": [
         "다음과 같은 경우 앱 비밀번호를 사용하세요:"
       ],
@@ -6460,6 +6488,9 @@
       "${ updated } contact updated successfully.": [
         "${ updated } 연락처가 성공적으로 업데이트 되었습니다."
       ],
+      "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
+        "${ VPN_APP_NAME }가 IP를 가려 웹 사이트에서 사용자를 식별할 수 없게 됩니다."
+      ],
       "(${ memberCount } member)": [
         "(${ memberCount } 회원)"
       ],
@@ -6477,6 +6508,12 @@
       ],
       "**${ total }** result found in ${ labelName }": [
         "${ labelName }(에)서 **${ total }**개 결과 찾음"
+      ],
+      "**Auto-connect**: Opens and connects to VPN as soon as you turn on your device.": [
+        "**자동 연결**: 기기를 켜자마자 VPN이 실행되며 연결됩니다."
+      ],
+      "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
+        "**킬 스위치**: VPN이 예기치 않게 끊길 경우 인터넷을 차단하여 데이터 유출을 차단합니다."
       ],
       "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
         "**1단계:** 리퍼럴 링크로 친구들을 ${ BRAND_NAME }에 초대하세요."
@@ -6508,8 +6545,20 @@
       "A request to unsubscribe from this mailing list will be sent to the sender of the newsletter and automatically processed.": [
         "이 메일링 리스트의 구독 취소 요청은 뉴스레터 발송자에게 전송되어 자동으로 처리됩니다."
       ],
+      "A secure connection is essential when working remotely. A VPN protects company data from cyber threats and keeps your work private.": [
+        "재택 근무시에는 안전한 연결이 필수적입니다. VPN이 사이버 위협으로부터 기업의 데이터를 보호하고 작업을 비공개로 유지합니다."
+      ],
       "A user is an account associated with a single username, mailbox, and person": [
         "사용자는 단일 사용자 이름, 사서함 및 사람과 연결된 계정입니다."
+      ],
+      "A VPN encrypts your connection and hides your IP address, making it much harder for anyone to track or monitor your browsing.": [
+        "VPN이 연결을 암호화하고 IP 주소를 가려 누구나 브라우징을 추적하거나 모니터링하기가 훨씬 더 어려워집니다."
+      ],
+      "A VPN hides your IP address and encrypts your browsing activity, making it harder for websites, advertisers, and ISPs to track you over time.": [
+        "VPN이 IP 주소를 숨기고 브라우징 활동을 암호화하여 웹사이트, 광고주 및 ISP가 시간이 지남에 따라 사용자를 추적하기 어렵게 만듭니다."
+      ],
+      "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
+        "VPN은 기기와 인터넷 사이의 안전한 터널입니다. 인터넷 서비스 공급자(ISP)와 방문하는 웹사이트로부터 사용자의 위치와 활동을 숨기죠."
       ],
       "Access 6,500+ high-speed servers on up to 10 devices to keep your browsing data safe. Available on ${ ios }, ${ android }, ${ appleTV }, and ${ desktop }.": [
         "최대 10개의 기기에서 6,500개 이상의 고속 서버에 접근하여 브라우징 데이터를 안전하게 보호하세요. ${ ios }, ${ android }, ${ appleTV }, 그리고 ${ desktop }에서 사용할 수 있습니다."
@@ -6523,6 +6572,9 @@
       "Active": [
         "활성"
       ],
+      "Ad targeting": [
+        "광고 트래킹"
+      ],
       "Add image URL": [
         "이미지 URL 추가"
       ],
@@ -6534,6 +6586,9 @@
       ],
       "Addresses settings": [
         "주소 설정"
+      ],
+      "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
+        "광고주는 타겟 광고를 표시하기 위해 브라우징을 추적합니다. ${ VPN_APP_NAME }이 트래커와 광고를 차단하여 연결 속도를 증대시키고 온라인 경험을 개선합니다."
       ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "AI를 기반으로 한 글쓰기 도우미가 더 빠르고 효율적으로 이메일 생성을 도와드려요."
@@ -6574,8 +6629,8 @@
       "All your changes will be lost.": [
         "저장하지 않은 변경사항은 손실됩니다."
       ],
-      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
-        "최대 ${ MAX_CONTACTS_PER_USER }개까지 연락처가 불러오기됩니다."
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "최대 ${ maxContact }개까지 연락처가 불러오기됩니다."
       ],
       "American Express SafeKey logo": [
         "American Express SafeKey 로고"
@@ -6774,6 +6829,9 @@
       ],
       "Confirm phishing report": [
         "피싱 신고 확인"
+      ],
+      "Connect to ${ VPN_APP_NAME } to browse privately": [
+        "${ VPN_APP_NAME }으로 연결하여 비공개로 방문하기"
       ],
       "Consider when's the best time for your recipient to receive your email, and schedule it to be sent then.": [
         "수신자가 이메일을 받기에 가장 좋은 시간이 언제인지 고려해보고, 그때 전송되도록 예약 전송을 설정하세요."
@@ -7099,6 +7157,9 @@
       "Generate text": [
         "텍스트 생성"
       ],
+      "Geoblocking": [
+        "차단된 콘텐츠"
+      ],
       "Get it on Google Play": [
         "Google Play에서 다운로드"
       ],
@@ -7110,6 +7171,9 @@
       ],
       "Google Pay mark": [
         "Google Pay 표시"
+      ],
+      "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
+        "정부와 ISP가 사용자의 온라인 활동을 모니터링할 수 있습니다. 실제 IP를 숨기고 활동을 암호화함으로서 브라우징이 비공개화 됩니다."
       ],
       "Has ${ numAttachments } attachment (${ numAttachmentsSize })": [
         "${ numAttachments }개의 첨부파일 포함 (${ numAttachmentsSize })"
@@ -7186,6 +7250,9 @@
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "${ toEmail }(에)서 ${ fromEmail }(으)로 데이터를 전달 중입니다."
       ],
+      "In restrictive countries": [
+        "제한적인 국가에서 사용시"
+      ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "다음 단계에서, Bitcoin 주소를 사용하여 보증금을 제출할 수 있습니다."
       ],
@@ -7245,6 +7312,9 @@
       ],
       "It's better to have:": [
         "포함되면 더 좋습니다:"
+      ],
+      "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
+        "대부분의 상황에서 VPN을 사용하는 것이 권장됩니다. 그러나 사이버 보안 위협이 가장 높을 수 있는 경우는 다음과 같습니다:"
       ],
       "JCB logo": [
         "JCB 로고"
@@ -7396,6 +7466,9 @@
       "More refine actions": [
         "더 다듬기"
       ],
+      "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
+        "대다수의 공용 WiFi 네트워크는 안전하지만 일부 네트워크는 보안이 취약하여 사이버 위협에 노출됩니다. VPN이 트래픽을 암호화하여 사용자를 보호합니다."
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "새 폴더의 이름을 지정하고 넣고 싶은 상위 폴더를 선택하세요. 상위 폴더를 선택하지 않으면, 이 새 폴더는 최상위 폴더로 생성됩니다."
       ],
@@ -7462,6 +7535,9 @@
       "Not a valid URL": [
         "유효하지 않은 URL"
       ],
+      "Not connected": [
+        "연결되지 않음"
+      ],
       "Number of dedicated servers in the organization": [
         "조직의 전용 서버 수"
       ],
@@ -7473,6 +7549,9 @@
       ],
       "of": [
         "/"
+      ],
+      "On public WiFi networks": [
+        "공공 WiFi 네트워크에서 사용시"
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "신뢰할 수 있는 키 중 하나 이상이 소유자에 의해 \"유출되었음\"으로 표시되었습니다. 이 열쇠들을 \"신뢰하지 않는\" 것을 추천합니다."
@@ -7594,6 +7673,9 @@
       "Please use another browser or download the file.": [
         "파일을 다운로드 하거나 다른 브라우저를 사용하세요."
       ],
+      "Please wait for the action to be completed": [
+        "작업이 완료될 때까지 잠시 기다려 주세요."
+      ],
       "Please wait till your changes are synced with the server.": [
         "사용자의 변경이 서버에 동기화 될 때 까지 기다려 주세요."
       ],
@@ -7627,6 +7709,9 @@
       "Print email": [
         "이메일 출력"
       ],
+      "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
+        "비공개 브라우징 모드(일명 \"시크릿\" 모드)는 기기에서의 온라인 활동을 숨기는 것에 한해 유용합니다. 이 모드로 브라우저가 기록과 쿠키를 저장하는 것을 방지할 수 있지만, 사용자의 온라인 상 노출을 방지할 수는 없습니다. ISP, 네트워크 관리자 및 방문하는 웹 사이트는 여전히 사용자가 온라인에서 수행하는 작업을 확인할 수 있습니다."
+      ],
       "Proofread selection": [
         "단락 교정"
       ],
@@ -7644,6 +7729,9 @@
       ],
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "${ BRAND_NAME }에 대한 도움이 필요하면 저희에게 연락하세요."
+      ],
+      "Receive notifications for ${ categoryLabel }": [
+        "${ categoryLabel }에 대한 알림 받기"
       ],
       "Recipient: ": [
         "입금처: "
@@ -7695,6 +7783,9 @@
       ],
       "Saving draft": [
         "임시 저장 중...\n"
+      ],
+      "Scan the QR code with your mobile device": [
+        "모바일 기기로 QR 코드를 스캔해보세요"
       ],
       "Scheduled send of this message will be canceled.": [
         "이 메시지의 예약 발송이 취소됩니다."
@@ -7807,6 +7898,12 @@
       "Snoozing this conversation will be canceled.": [
         "이 대화의 방해 금지 상태가 취소됩니다."
       ],
+      "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
+        "일부 정부는 특정 웹사이트에 대한 접근을 차단하거나 제한합니다. VPN이 사용자의 활동과 신원을 비공개로 유지하면서 검열을 우회하는 데 도움을 드립니다."
+      ],
+      "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
+        "일부 웹사이트와 스트리밍 서비스는 지역별로 콘텐츠를 차단합니다. VPN을 사용하면 이러한 제한을 우회하고 인터넷에 자유롭게 접속할 수 있습니다."
+      ],
       "Sorry, this message does not exist or has already expired.": [
         "죄송합니다. 이 메시지가 존재하지 않거나 이미 만료되었습니다."
       ],
@@ -7815,6 +7912,9 @@
       ],
       "Start using the shorter, catchier version of your email address.": [
         "더 짧고 매력있는 이메일 주소를 사용하세요."
+      ],
+      "Stay connected effortlessly by enabling the following VPN settings:": [
+        "다음 VPN 설정을 활성화하여 손쉽게 연결 상태를 유지해 보세요:"
       ],
       "Storage capabilities are not supported in this browser, we need this support to enable message content search.": [
         "이 브라우저에서 브라우저 저장소를 지원하지 않습니다. 메시지 내용 검색을 사용하려면 기능의 지원이 필요합니다."
@@ -7848,6 +7948,9 @@
       ],
       "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
         "구독 종료: ${ planName } 혜택을 유지하려면, ${ byDate }까지 Google Play Store에서 구독을 갱신하십시오. ${ reactivateLink }"
+      ],
+      "Surveillance": [
+        "감시"
       ],
       "Symbols (#$&)": [
         "기호 (#$&)"
@@ -7978,6 +8081,9 @@
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "이 링크는 호모그래프(homograph) 공격 일 수 있습니다. 방문하려는 링크가 정확한지 확인하거나 열지 마세요."
       ],
+      "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
+        "즉 ISP와 방문한 웹사이트가 사용자의 개인 정보를 온라인 활동과 연관지을 수 없다는 것이죠."
+      ],
       "This message has been adjusted to comply with a dark background.": [
         "이 메시지는 어두운 배경에 맞게 조정되었습니다."
       ],
@@ -8053,6 +8159,9 @@
       "This sender's public key has not been trusted yet.": [
         "이 발신자의 공개 키는 아직 신뢰되지 않았습니다."
       ],
+      "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
+        "이 고유 코드는 웹사이트와 ISP(인터넷 서비스 제공업체)에서 위치와 검색 기록을 기기에 연결하는 데 사용할 수 있습니다."
+      ],
       "This was shown to you because your email subject line contains password reset keywords.": [
         "이메일 제목에 암호 재설정 키워드가 포함되어 있기 때문에 표시되었습니다."
       ],
@@ -8115,6 +8224,9 @@
       ],
       "Trackers blocked:": [
         "추적 차단됨:"
+      ],
+      "Tracking": [
+        "트래킹"
       ],
       "Trash existing messages": [
         "존재하는 메시지 휴지통 이동"
@@ -8242,6 +8354,9 @@
       "Visa Secure logo": [
         "Visa Secure 로고"
       ],
+      "VPN IP": [
+        "VPN IP"
+      ],
       "Warning": [
         "경고"
       ],
@@ -8301,6 +8416,12 @@
       ],
       "When giving out your email, use a unique, disposable hide-my-email alias instead of your real email address.": [
         "이메일을 보낼 때, 실제 이메일 주소 대신 고유한 일회용 hide-my-email 별칭을 사용하세요."
+      ],
+      "When working remotely": [
+        "재택 근무시"
+      ],
+      "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
+        "VPN에 연결하여 암호화 기술을 사용하여 IP 주소(기기에 할당된 고유 코드)를 숨길 수 있습니다."
       ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "${ senderName }에 인증 키를 활성화하면, 공개 키가 연락처 상세 정보에 생성됩니다."
@@ -8518,6 +8639,15 @@
       "Your information was found on ${ displayedDate }": [
         "${ displayedDate }에 사용자의 정보가 발견되었습니다."
       ],
+      "Your internet service provider can monitor and sometimes sell your data, or even restrict what websites you can access.": [
+        "인터넷 서비스 제공업체에서 데이터를 모니터링하고 때로는 판매하거나 접근 가능한 웹사이트를 제한할 수도 있습니다."
+      ],
+      "Your IP": [
+        "나의 IP"
+      ],
+      "Your IP address is visible and can be used to track your online activity.": [
+        "IP가 노출되며 온라인 활동을 추적하는데 사용될 수 있습니다."
+      ],
       "Your login information will not be saved after the import is completed.": [
         "로그인 정보는 가져오기 작업이 끝나면 삭제됩니다."
       ],
@@ -8536,11 +8666,17 @@
       "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
         "다음 청구일은 ${ renewalTime }입니다. 즉시 플랜 변경이 필요한 경우 지원 팀에 연락해 주세요."
       ],
+      "Your online activity is protected": [
+        "온라인 활동이 보호됩니다"
+      ],
       "Your password was leaked:": [
         "사용자의 비밀번호가 유출되었습니다:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "회원님의 전화번호는 이번 인증에만 사용됩니다."
+      ],
+      "Your physical location is visible and can be used to restrict your access to the internet.": [
+        "사용자의 물리적 위치가 표시되며 인터넷 접속을 제한하는 데 사용될 수 있습니다."
       ],
       "Your private writing assistant": [
         "나만의 개인 글쓰기 도우미"
@@ -8992,6 +9128,9 @@
       ],
       "Cash": [
         "현금"
+      ],
+      "Categories": [
+        "카테고리"
       ],
       "Categories badge": [
         "카테고리 배지"
@@ -9473,6 +9612,9 @@
       "Search in": [
         "검색"
       ],
+      "Select the categories to include and manage notifications for new emails.": [
+        "새 이메일에 대한 알림을 받을 수 있도록 포함할 카테고리를 선택하고 관리하세요."
+      ],
       "Send auto-reply": [
         "자동 회신 보내기"
       ],
@@ -9625,6 +9767,15 @@
       ],
       "Your domain": [
         "나의 도메인"
+      ],
+      "Your IP": [
+        "나의 IP"
+      ],
+      "Your ISP": [
+        "나의 ISP"
+      ],
+      "Your location": [
+        "나의 위치"
       ],
       "Your password (admin)": [
         "사용자의 비밀번호 (관리자)"
@@ -10093,6 +10244,9 @@
       "${ n } active meeting at a time": [
         "동시 활성 회의 ${ n }개"
       ],
+      "${ n } participant": [
+        "참여자 ${ n }명"
+      ],
       "24 hours per meeting": [
         "회의 당 24시간"
       ],
@@ -10102,6 +10256,9 @@
       "Appointment scheduling": [
         "일정 예약"
       ],
+      "Booking pages": [
+        "예약 페이지"
+      ],
       "Browser, mobile, and desktop apps": [
         "브라우저, 모바일 및 데스크톱 앱"
       ],
@@ -10110,6 +10267,9 @@
       ],
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "종단간 암호화된 화면 공유 및 임시 통화 중 채팅"
+      ],
+      "Meeting recording": [
+        "회의 녹화"
       ],
       "One active meeting at a time": [
         "동싀 활성 회의 1개"
@@ -11888,23 +12048,23 @@
       "terms and conditions": [
         "이용 약관"
       ],
-      "The coupon is valid for ${ couponRedemptions } renewal.": [
-        "쿠폰이 ${ couponRedemptions }회 갱신까지 유효합니다."
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "해당 할인은 ${ renewalsWithCoupon }회 갱신까지 유효합니다."
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "특별 할인가는 ${ couponRedemptions }개월 동안 유효합니다. 이후 매월 ${ renewPriceStr }에 자동으로 갱신됩니다. 언제든지 취소할 수 있습니다."
       ],
       "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
         "특별 할인 가격은 최초 ${ subscriptionLength }개월에 한해 유효합니다."
       ],
-      "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "특별 할인가가 첫 달에만 적용됩니다. 쿠폰은 ${ couponRedemptions }회 갱신까지 유효합니다. 이후에는 매월 ${ renewPriceStr }(으)로 1개월 동안 자동 갱신됩니다. 언제든지 취소할 수 있습니다."
-      ],
       "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "특별 할인가는 첫 달에만 유효합니다. 이후 매 달 ${ renewPriceStr }에 자동으로 갱신됩니다. 취소는 언제나 가능합니다."
       ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "특별 할인가 ${ priceWithDiscount }은(는) ${ couponRedemptions }개월간 유효합니다. 이후 ${ renewPriceStr }(으)로 1개월간 자동 갱신됩니다. 언제든지 취소할 수 있습니다."
+      ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "특별 할인 가격인 ${ priceWithDiscount }은(는) 최초 ${ subscriptionLength }개월에 한해 유효합니다."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "특별 할인가 ${ priceWithDiscount }는 첫 달만 적용됩니다. 쿠폰은 ${ couponRedemptions }회 갱신까지 유효합니다. 이후에는 매월 ${ renewPriceStr }로 개월 동안 자동 갱신되며, 언제든지 취소할 수 있습니다."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "특별 할인가 ${ priceWithDiscount }는 첫 달에만 유효합니다. 이후 매 달 ${ renewPriceStr }에 자동으로 갱신됩니다. 취소는 언제나 가능합니다."
@@ -12504,6 +12664,9 @@
       ]
     },
     "Search - no results": {
+      "An action is being processed": [
+        "작업이 처리 중입니다"
+      ],
       "No messages found": [
         "메시지 발견되지 않음"
       ],
@@ -14228,6 +14391,9 @@
       "Download ${ VPN_APP_NAME }": [
         "${ VPN_APP_NAME } 다운로드"
       ],
+      "Download the desktop app": [
+        "데스크톱 앱 다운로드"
+      ],
       "Enable ${ DARK_WEB_MONITORING_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } 활성화"
       ],
@@ -14515,6 +14681,9 @@
       "Deleting contacts": [
         "연락처 삭제"
       ],
+      "Desktop": [
+        "데스크톱"
+      ],
       "Disable categories?": [
         "카테고리를 비활성화하시겠어요?"
       ],
@@ -14535,6 +14704,9 @@
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "${ DRIVE_APP_NAME } 앱 다운로드"
+      ],
+      "Download the app": [
+        "앱 다운로드"
       ],
       "Edit billing address": [
         "청구 주소 수정"
@@ -14617,6 +14789,9 @@
       "Get full access to ${ CALENDAR_APP_NAME }": [
         "${ CALENDAR_APP_NAME }의 모든 기능 이용하기"
       ],
+      "Get more from your VPN": [
+        "VPN에 대해 더 알아보기"
+      ],
       "Get the ${ appName[APP_NAME] } apps": [
         "${ appName[APP_NAME] } 앱 받기"
       ],
@@ -14640,6 +14815,9 @@
       ],
       "High security for your account": [
         "내 계정을 위한 높은 수준의 보안"
+      ],
+      "How does it all work?": [
+        "어떤 방식으로 작동하나요?"
       ],
       "How does it work?": [
         "어떻게 작동하나요?"
@@ -14707,6 +14885,9 @@
       "Load remote content": [
         "외부 콘텐츠 로드"
       ],
+      "Make a secure connection your default": [
+        "보안 연결을 기본값으로 설정하세요"
+      ],
       "Mark all messages as read": [
         "모든 메시지를 읽음으로 표시"
       ],
@@ -14748,6 +14929,9 @@
       ],
       "Minicalendar": [
         "간편 캘린더"
+      ],
+      "Mobile": [
+        "모바일"
       ],
       "More": [
         "더 보기"
@@ -14904,6 +15088,9 @@
       ],
       "Priority support:": [
         "우선 지원:"
+      ],
+      "Private browsing vs VPN": [
+        "비공개 브라우징 모드 vs VPN"
       ],
       "Processing...": [
         "처리 중..."
@@ -15094,6 +15281,9 @@
       "To": [
         "수신"
       ],
+      "To preview this spreadsheet, download it.": [
+        "이 스프레드시트를 미리 보려면 다운로드하세요."
+      ],
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "이 스프레드시트를 미리보려면, ${ SHEETS_APP_NAME }에서 열거나 다운로드하세요."
       ],
@@ -15163,6 +15353,9 @@
       "Verifying your payment...": [
         "결제 수단을 인증하는 중..."
       ],
+      "VPN explained": [
+        "VPN 심층탐구"
+      ],
       "Warning": [
         "경고"
       ],
@@ -15184,17 +15377,23 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "${ BRAND_NAME } for Business에 오신 것을 환영합니다"
       ],
+      "What can a VPN protect you from?": [
+        "VPN은 무엇으로부터 나를 보호할 수 있나요?"
+      ],
+      "What is a VPN?": [
+        "VPN이란 무엇인가요?"
+      ],
       "What would you like to import?": [
         "무엇을 가져오시겠어요?"
+      ],
+      "When is it most important to use a VPN?": [
+        "VPN을 사용해야 하는 가장 중요한 순간은 언제인가요?"
       ],
       "You can now create unlimited folders and labels": [
         "무제한 폴더 및 라벨을 생성할 수 있습니다."
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "사용자의 ${ planName } 무료 체험이 ${ textDate }에 종료됩니다."
-      ],
-      "Your ${ planName } subscription has started": [
-        "${ planName } 구독이 시작되었습니다"
       ],
       "Your account is protected": [
         "계정이 보호됩니다."

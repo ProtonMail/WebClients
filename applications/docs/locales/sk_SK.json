@@ -2511,8 +2511,8 @@
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Ak chcete zabezpečiť čo najvyššiu bezpečnosť svojho účtu, nastavte frázu na obnovenie."
       ],
-      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
-        "Pre importovanie prostredníctvom súborov CSV a VCF zabezpečte, aby veľkosť súboru nepresiahla ${ MAX_IMPORT_FILE_SIZE_STRING } alebo ${ MAX_IMPORT_CONTACTS_STRING } kontaktov. Ak je váš súbor väčší, rozdeľte ho na menšie súbory. ${ learnMoreLink }."
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Pre importovanie prostredníctvom súborov CSV a VCF zabezpečte, aby veľkosť súboru nepresiahla ${ MAX_IMPORT_FILE_SIZE_STRING } alebo ${ maxContactString } kontaktov. Ak je váš súbor väčší, rozdeľte ho na menšie súbory. ${ learnMoreLink }."
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Pre import kontaktov zo služby Google alebo Outlook ${ easySwitchLink }."
@@ -3290,8 +3290,8 @@
       "An error occurred uploading your file. No file has been selected.": [
         "Vyskytla sa chyba pri nahrávaní vášho súboru. Nebol vybraný žiadny súbor."
       ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
-        "Váš súbor ${ formattedFilename } obsahuje viac ako ${ MAX_IMPORT_CONTACTS_STRING } kontaktov."
+      "Your file ${ formattedFilename } contains more than ${ maxContactString } contacts.": [
+        "Váš súbor ${ formattedFilename } obsahuje viac ako ${ maxContactString } kontaktov."
       ],
       "Your file ${ formattedFilename } has no contacts to be imported.": [
         "Váš súbor ${ formattedFilename } nemá žiadne kontakty na import."
@@ -4331,11 +4331,11 @@
         "Všetky (${ totalFoldersCount } štítkov)",
         "Všetky (${ totalFoldersCount } štítkov)"
       ],
-      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
-        "Všetky vaše kontakty budú importované až do limitu ${ MAX_CONTACTS_PER_USER }",
-        "Všetky vaše kontakty budú importované až do limitu ${ MAX_CONTACTS_PER_USER }",
-        "Všetky vaše kontakty budú importované až do limitu ${ MAX_CONTACTS_PER_USER }",
-        "Všetky vaše kontakty budú importované až do limitu ${ MAX_CONTACTS_PER_USER }"
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "Všetky vaše kontakty budú importované až do limitu ${ maxContact }",
+        "Všetky vaše kontakty budú importované až do limitu ${ maxContact }",
+        "Všetky vaše kontakty budú importované až do limitu ${ maxContact }",
+        "Všetky vaše kontakty budú importované až do limitu ${ maxContact }"
       ],
       "an anonymous user": [
         "anonymný používateľ"
@@ -6260,6 +6260,12 @@
         "${ n } aktívnych stretnutí naraz",
         "${ n } aktívnych stretnutí naraz"
       ],
+      "${ n } participant": [
+        "${ n } účastník",
+        "${ n } účastníci",
+        "${ n } účastníkov",
+        "${ n } účastníkov"
+      ],
       "24 hours per meeting": [
         "24 hodín na schôdzu"
       ],
@@ -6269,6 +6275,9 @@
       "Appointment scheduling": [
         "Plánovanie schôdzok"
       ],
+      "Booking pages": [
+        "Stránky rezervácií"
+      ],
       "Browser, mobile, and desktop apps": [
         "Aplikácie pre prehliadače, mobily a desktopy"
       ],
@@ -6277,6 +6286,9 @@
       ],
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "End-to-end šifrované zdieľanie obrazovky a dočasný chat počas hovoru"
+      ],
+      "Meeting recording": [
+        "Nahrávanie schôdze"
       ],
       "One active meeting at a time": [
         "Jeden aktívny hovor naraz"
@@ -8101,11 +8113,17 @@
       "terms and conditions": [
         "zmluvnými podmienkami používania"
       ],
-      "The coupon is valid for ${ couponRedemptions } renewal.": [
-        "Kupón je možné použiť na ${ couponRedemptions } obnovenie.",
-        "Kupón je možné použiť na ${ couponRedemptions } obnovenia.",
-        "Kupón je možné použiť na ${ couponRedemptions } obnovení.",
-        "Kupón je možné použiť na ${ couponRedemptions } obnovení."
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "Zľava je platná na ${ renewalsWithCoupon } obnovenie.",
+        "Zľava je platná na ${ renewalsWithCoupon } obnovenia.",
+        "Zľava je platná na ${ renewalsWithCoupon } obnovení.",
+        "Zľava je platná na ${ renewalsWithCoupon } obnovení."
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Špeciálne zľavnená cena platí ${ couponRedemptions } mesiac. Potom sa každý mesiac automaticky obnoví za ${ renewPriceStr } na 1 mesiac. Službu môžete kedykoľvek zrušiť.",
+        "Špeciálne zľavnená cena platí ${ couponRedemptions } mesiace. Potom sa každý mesiac automaticky obnoví za ${ renewPriceStr } na 1 mesiac. Službu môžete kedykoľvek zrušiť.",
+        "Špeciálne zľavnená cena platí ${ couponRedemptions } mesiacov. Potom sa každý mesiac automaticky obnoví za ${ renewPriceStr } na 1 mesiac. Službu môžete kedykoľvek zrušiť.",
+        "Špeciálne zľavnená cena platí ${ couponRedemptions } mesiacov. Potom sa každý mesiac automaticky obnoví za ${ renewPriceStr } na 1 mesiac. Službu môžete kedykoľvek zrušiť."
       ],
       "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
         "Špeciálna zľavnená cena platí pre prvý ${ subscriptionLength } mesiac.",
@@ -8113,26 +8131,20 @@
         "Špeciálna zľavnená cena platí pre prvých ${ subscriptionLength } mesiacov.",
         "Špeciálna zľavnená cena platí pre prvých ${ subscriptionLength } mesiacov."
       ],
-      "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "Špeciálna zľava platí pre prvý mesiac. Kupón je platný pre ${ couponRedemptions } obnovenie. Potom dôjde k automatickej obnove za ${ renewPriceStr } na 1 mesiac. Zrušiť môžete kedykoľvek.",
-        "Špeciálna zľava platí pre prvý mesiac. Kupón je platný pre ${ couponRedemptions } obnovenia. Potom dôjde k automatickej obnove za ${ renewPriceStr } na 1 mesiac. Zrušiť môžete kedykoľvek.",
-        "Špeciálna zľava platí pre prvý mesiac. Kupón je platný pre ${ couponRedemptions } obnovení. Potom dôjde k automatickej obnove za ${ renewPriceStr } na 1 mesiac. Zrušiť môžete kedykoľvek.",
-        "Špeciálna zľava platí pre prvý mesiac. Kupón je platný pre ${ couponRedemptions } obnovení. Potom dôjde k automatickej obnove za ${ renewPriceStr } na 1 mesiac. Zrušiť môžete kedykoľvek."
-      ],
       "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Špeciálne zľavnená cena platí prvý mesiac. Potom sa každý mesiac automaticky obnoví za ${ renewPriceStr }. Službu môžete kedykoľvek zrušiť."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Špeciálne zľavnená cena ${ priceWithDiscount } platí ${ couponRedemptions } mesiac. Potom sa každý mesiac automaticky obnoví za ${ renewPriceStr } na 1 mesiac. Službu môžete kedykoľvek zrušiť.",
+        "Špeciálne zľavnená cena ${ priceWithDiscount } platí ${ couponRedemptions } mesiace. Potom sa každý mesiac automaticky obnoví za ${ renewPriceStr } na 1 mesiac. Službu môžete kedykoľvek zrušiť.",
+        "Špeciálne zľavnená cena ${ priceWithDiscount } platí ${ couponRedemptions } mesiacov. Potom sa každý mesiac automaticky obnoví za ${ renewPriceStr } na 1 mesiac. Službu môžete kedykoľvek zrušiť.",
+        "Špeciálne zľavnená cena ${ priceWithDiscount } platí ${ couponRedemptions } mesiacov. Potom sa každý mesiac automaticky obnoví za ${ renewPriceStr } na 1 mesiac. Službu môžete kedykoľvek zrušiť."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "Špeciálna zľavnená cena ${ priceWithDiscount } platí pre prvý ${ subscriptionLength } mesiac.",
         "Špeciálna zľavnená cena ${ priceWithDiscount } platí pre prvé ${ subscriptionLength } mesiace.",
         "Špeciálna zľavnená cena ${ priceWithDiscount } platí pre prvých ${ subscriptionLength } mesiacov.",
         "Špeciálna zľavnená cena ${ priceWithDiscount } platí pre prvých ${ subscriptionLength } mesiacov."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "Špeciálna zľavnená cena ${ priceWithDiscount } platí počas prvého mesiaca. Kupón je platný pre ${ couponRedemptions } obnovenie. Potom sa každý mesiac automaticky obnoví za ${ renewPriceStr } na 1 mesiac. Službu môžete kedykoľvek zrušiť.",
-        "Špeciálna zľavnená cena ${ priceWithDiscount } platí počas prvého mesiaca. Kupón je platný pre ${ couponRedemptions } obnovenia. Potom sa každý mesiac automaticky obnoví za ${ renewPriceStr } na 1 mesiac. Službu môžete kedykoľvek zrušiť.",
-        "Špeciálna zľavnená cena ${ priceWithDiscount } platí počas prvého mesiaca. Kupón je platný pre ${ couponRedemptions } obnovení. Potom sa každý mesiac automaticky obnoví za ${ renewPriceStr } na 1 mesiac. Službu môžete kedykoľvek zrušiť.",
-        "Špeciálna zľavnená cena ${ priceWithDiscount } platí počas prvého mesiaca. Kupón je platný pre ${ couponRedemptions } obnovení. Potom sa každý mesiac automaticky obnoví za ${ renewPriceStr } na 1 mesiac. Službu môžete kedykoľvek zrušiť."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Špeciálne zľavnená cena ${ priceWithDiscount } platí prvý mesiac. Potom sa každý mesiac automaticky obnoví za ${ renewPriceStr }. Službu môžete kedykoľvek zrušiť."

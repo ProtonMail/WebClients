@@ -3547,6 +3547,12 @@
         "${ n } aktívnych stretnutí naraz",
         "${ n } aktívnych stretnutí naraz"
       ],
+      "${ n } participant": [
+        "${ n } účastník",
+        "${ n } účastníci",
+        "${ n } účastníkov",
+        "${ n } účastníkov"
+      ],
       "24 hours per meeting": [
         "24 hodín na schôdzu"
       ],
@@ -3556,6 +3562,9 @@
       "Appointment scheduling": [
         "Plánovanie schôdzok"
       ],
+      "Booking pages": [
+        "Stránky rezervácií"
+      ],
       "Browser, mobile, and desktop apps": [
         "Aplikácie pre prehliadače, mobily a desktopy"
       ],
@@ -3564,6 +3573,9 @@
       ],
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "End-to-end šifrované zdieľanie obrazovky a dočasný chat počas hovoru"
+      ],
+      "Meeting recording": [
+        "Nahrávanie schôdze"
       ],
       "One active meeting at a time": [
         "Jeden aktívny hovor naraz"
@@ -4690,11 +4702,17 @@
       "terms and conditions": [
         "zmluvnými podmienkami používania"
       ],
-      "The coupon is valid for ${ couponRedemptions } renewal.": [
-        "Kupón je možné použiť na ${ couponRedemptions } obnovenie.",
-        "Kupón je možné použiť na ${ couponRedemptions } obnovenia.",
-        "Kupón je možné použiť na ${ couponRedemptions } obnovení.",
-        "Kupón je možné použiť na ${ couponRedemptions } obnovení."
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "Zľava je platná na ${ renewalsWithCoupon } obnovenie.",
+        "Zľava je platná na ${ renewalsWithCoupon } obnovenia.",
+        "Zľava je platná na ${ renewalsWithCoupon } obnovení.",
+        "Zľava je platná na ${ renewalsWithCoupon } obnovení."
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Špeciálne zľavnená cena platí ${ couponRedemptions } mesiac. Potom sa každý mesiac automaticky obnoví za ${ renewPriceStr } na 1 mesiac. Službu môžete kedykoľvek zrušiť.",
+        "Špeciálne zľavnená cena platí ${ couponRedemptions } mesiace. Potom sa každý mesiac automaticky obnoví za ${ renewPriceStr } na 1 mesiac. Službu môžete kedykoľvek zrušiť.",
+        "Špeciálne zľavnená cena platí ${ couponRedemptions } mesiacov. Potom sa každý mesiac automaticky obnoví za ${ renewPriceStr } na 1 mesiac. Službu môžete kedykoľvek zrušiť.",
+        "Špeciálne zľavnená cena platí ${ couponRedemptions } mesiacov. Potom sa každý mesiac automaticky obnoví za ${ renewPriceStr } na 1 mesiac. Službu môžete kedykoľvek zrušiť."
       ],
       "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
         "Špeciálna zľavnená cena platí pre prvý ${ subscriptionLength } mesiac.",
@@ -4702,26 +4720,20 @@
         "Špeciálna zľavnená cena platí pre prvých ${ subscriptionLength } mesiacov.",
         "Špeciálna zľavnená cena platí pre prvých ${ subscriptionLength } mesiacov."
       ],
-      "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "Špeciálna zľava platí pre prvý mesiac. Kupón je platný pre ${ couponRedemptions } obnovenie. Potom dôjde k automatickej obnove za ${ renewPriceStr } na 1 mesiac. Zrušiť môžete kedykoľvek.",
-        "Špeciálna zľava platí pre prvý mesiac. Kupón je platný pre ${ couponRedemptions } obnovenia. Potom dôjde k automatickej obnove za ${ renewPriceStr } na 1 mesiac. Zrušiť môžete kedykoľvek.",
-        "Špeciálna zľava platí pre prvý mesiac. Kupón je platný pre ${ couponRedemptions } obnovení. Potom dôjde k automatickej obnove za ${ renewPriceStr } na 1 mesiac. Zrušiť môžete kedykoľvek.",
-        "Špeciálna zľava platí pre prvý mesiac. Kupón je platný pre ${ couponRedemptions } obnovení. Potom dôjde k automatickej obnove za ${ renewPriceStr } na 1 mesiac. Zrušiť môžete kedykoľvek."
-      ],
       "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Špeciálne zľavnená cena platí prvý mesiac. Potom sa každý mesiac automaticky obnoví za ${ renewPriceStr }. Službu môžete kedykoľvek zrušiť."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Špeciálne zľavnená cena ${ priceWithDiscount } platí ${ couponRedemptions } mesiac. Potom sa každý mesiac automaticky obnoví za ${ renewPriceStr } na 1 mesiac. Službu môžete kedykoľvek zrušiť.",
+        "Špeciálne zľavnená cena ${ priceWithDiscount } platí ${ couponRedemptions } mesiace. Potom sa každý mesiac automaticky obnoví za ${ renewPriceStr } na 1 mesiac. Službu môžete kedykoľvek zrušiť.",
+        "Špeciálne zľavnená cena ${ priceWithDiscount } platí ${ couponRedemptions } mesiacov. Potom sa každý mesiac automaticky obnoví za ${ renewPriceStr } na 1 mesiac. Službu môžete kedykoľvek zrušiť.",
+        "Špeciálne zľavnená cena ${ priceWithDiscount } platí ${ couponRedemptions } mesiacov. Potom sa každý mesiac automaticky obnoví za ${ renewPriceStr } na 1 mesiac. Službu môžete kedykoľvek zrušiť."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "Špeciálna zľavnená cena ${ priceWithDiscount } platí pre prvý ${ subscriptionLength } mesiac.",
         "Špeciálna zľavnená cena ${ priceWithDiscount } platí pre prvé ${ subscriptionLength } mesiace.",
         "Špeciálna zľavnená cena ${ priceWithDiscount } platí pre prvých ${ subscriptionLength } mesiacov.",
         "Špeciálna zľavnená cena ${ priceWithDiscount } platí pre prvých ${ subscriptionLength } mesiacov."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "Špeciálna zľavnená cena ${ priceWithDiscount } platí počas prvého mesiaca. Kupón je platný pre ${ couponRedemptions } obnovenie. Potom sa každý mesiac automaticky obnoví za ${ renewPriceStr } na 1 mesiac. Službu môžete kedykoľvek zrušiť.",
-        "Špeciálna zľavnená cena ${ priceWithDiscount } platí počas prvého mesiaca. Kupón je platný pre ${ couponRedemptions } obnovenia. Potom sa každý mesiac automaticky obnoví za ${ renewPriceStr } na 1 mesiac. Službu môžete kedykoľvek zrušiť.",
-        "Špeciálna zľavnená cena ${ priceWithDiscount } platí počas prvého mesiaca. Kupón je platný pre ${ couponRedemptions } obnovení. Potom sa každý mesiac automaticky obnoví za ${ renewPriceStr } na 1 mesiac. Službu môžete kedykoľvek zrušiť.",
-        "Špeciálna zľavnená cena ${ priceWithDiscount } platí počas prvého mesiaca. Kupón je platný pre ${ couponRedemptions } obnovení. Potom sa každý mesiac automaticky obnoví za ${ renewPriceStr } na 1 mesiac. Službu môžete kedykoľvek zrušiť."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Špeciálne zľavnená cena ${ priceWithDiscount } platí prvý mesiac. Potom sa každý mesiac automaticky obnoví za ${ renewPriceStr }. Službu môžete kedykoľvek zrušiť."

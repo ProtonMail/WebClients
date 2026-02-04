@@ -3968,9 +3968,6 @@
       "An error occurred uploading your file. No file has been selected.": [
         "आपकी फ़ाइल अपलोड करते समय एक त्रुटि हुई। कोई फ़ाइल नहीं चुनी गई है।"
       ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
-        "आपकी फ़ाइल ${ formattedFilename } में ${ MAX_IMPORT_CONTACTS_STRING } से अधिक संपर्क हैं।"
-      ],
       "Your file ${ formattedFilename } has no contacts to be imported.": [
         "आपकी फ़ाइल ${ formattedFilename } में आयात करने के लिए कोई संपर्क नहीं है।"
       ],
@@ -5579,6 +5576,9 @@
       "Inherited from parent folder": [
         "मूल फ़ोल्डर से इनहेरिट की गई"
       ],
+      "Insert image": [
+        "तस्वीर डालें"
+      ],
       "Insert link": [
         "लिंक डालें"
       ],
@@ -6293,6 +6293,9 @@
       ],
       "Visa Secure logo": [
         "Visa सेक्योर लोगो"
+      ],
+      "VPN IP": [
+        "VPN IP"
       ],
       "Warning": [
         "चेतावनी"
@@ -10690,6 +10693,9 @@
       "Forward": [
         "फ़ॉरवर्ड करें"
       ],
+      "Get more from your VPN": [
+        "अपने VPN से और पाएं"
+      ],
       "Get the ${ appName[APP_NAME] } apps": [
         "${ appName[APP_NAME] } ऐप्स प्राप्त करें"
       ],
@@ -10774,6 +10780,9 @@
       ],
       "Minicalendar": [
         "छोटा-कैलेंडर"
+      ],
+      "Mobile": [
+        "मोबाइल"
       ],
       "More": [
         "ज़्यादा"

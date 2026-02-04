@@ -138,8 +138,14 @@
       "Cancel download": [
         "Cancel·lar la descarregada"
       ],
+      "Cancel downloads": [
+        "Cancel·leu les descàrregues"
+      ],
       "Cancel subscription": [
         "Cancel·la la subscripció"
+      ],
+      "Cancel transfers": [
+        "Cancel·leu les transferències"
       ],
       "Cancel trial and pay": [
         "Cancel·la la prova i paga"
@@ -389,8 +395,8 @@
       "Download ${ DRIVE_APP_NAME } apps": [
         "Descarrega les aplicacions del ${ DRIVE_APP_NAME }"
       ],
-      "Download (${ count })": [
-        "Baixa'n (${ count })"
+      "Download (${ nbSelected })": [
+        "Descarregueu (${ nbSelected })"
       ],
       "Download anyway": [
         "Baixa igualment"
@@ -926,17 +932,14 @@
       "Save changes": [
         "Desa els canvis"
       ],
-      "Save for later": [
-        "Deseu-ho per després"
-      ],
       "Save photos and remove": [
         "Desa les fotos i esborra"
       ],
       "Scan & Download": [
         "Escaneja i descarrega"
       ],
-      "Scan & Download (${ count })": [
-        "Escaneja i descarrega(${ count })"
+      "Scan & Download (${ nbSelected })": [
+        "Escanegeu i descarregueu (${ nbSelected })"
       ],
       "Search": [
         "Cerca"
@@ -1039,9 +1042,6 @@
       ],
       "Sign out of all accounts": [
         "Tanca tots els comptes"
-      ],
-      "Sign up": [
-        "Crea un compte"
       ],
       "Skip verification": [
         "Omet la verificació"
@@ -2940,8 +2940,8 @@
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Per a garantir la màxima seguretat possible del vostre compte, configureu una frase de recuperació."
       ],
-      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
-        "Per importar a través de fitxers CSV i VCF, assegureu-vos que el fitxer no excedeixi ${ MAX_IMPORT_FILE_SIZE_STRING } o ${ MAX_IMPORT_CONTACTS_STRING } contactes. Si el fitxer és més gran, dividiu-lo en fitxers més petits. ${ learnMoreLink }."
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Per importar mitjançant un fitxer CSV i VCF, assegureu-vos que el fitxer no superi ${ MAX_IMPORT_FILE_SIZE_STRING } o els ${ maxContactString } contactes. Si el vostre fitxer és més gran, dividiu-lo en fitxers més petits. ${ learnMoreLink }."
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Per a importar els vostres contactes de Google o Outlook, ${ easySwitchLink }"
@@ -3788,6 +3788,9 @@
       "Validation error": [
         "S'ha produït un error de validació"
       ],
+      "We cannot retrieve this item": [
+        "No s'ha pogut recuperar aquest element"
+      ],
       "We were not able to load some invitations": [
         "No s'han pogut carregar algunes invitacions"
       ],
@@ -3909,8 +3912,8 @@
       "An error occurred uploading your file. No file has been selected.": [
         "S'ha produït un error carregant el fitxer. No s'ha seleccionat cap fitxer."
       ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
-        "El vostre fitxer ${ formattedFilename } conté més de ${ MAX_IMPORT_CONTACTS_STRING } contactes."
+      "Your file ${ formattedFilename } contains more than ${ maxContactString } contacts.": [
+        "El vostre fitxer ${ formattedFilename } conté més de ${ maxContactString } contactes."
       ],
       "Your file ${ formattedFilename } has no contacts to be imported.": [
         "El vostre fitxer ${ formattedFilename } no conté contactes per importar."
@@ -5030,9 +5033,9 @@
       "All your changes will be lost.": [
         "Tots els vostres canvis es perdran."
       ],
-      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
-        "Tots els vostres contactes s'importaran, fins a un límit de ${ MAX_CONTACTS_PER_USER }",
-        "Tots els vostres contactes s'importaran, fins a un límit de ${ MAX_CONTACTS_PER_USER }"
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "S'importaran tots els vostres contactes, fins a un límit d'${ maxContact }",
+        "S'importaran tots els vostres contactes, fins a un límit de ${ maxContact }"
       ],
       "Already in this folder": [
         "Ja és en aquesta carpeta"
@@ -5192,6 +5195,9 @@
       ],
       "Collaborate efficiently while protecting your client and business data from breaches, ransomware, and surveillance.": [
         "Col·laboreu de manera eficient mentre protegiu les dades dels vostres clients i de l'empresa contra infraccions, programari de rescat i vigilància."
+      ],
+      "Computed hash does not match XAttr": [
+        "L'empremta electrònica calculada no coincideix amb XAttr"
       ],
       "Conflict": [
         "Conflicte"
@@ -6287,6 +6293,12 @@
       ],
       "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
         "Aquest codi únic el poden utilitzar els llocs web i els ISP (proveïdors de serveis d'internet) per a enllaçar la vostra ubicació i l'historial de navegació al vostre dispositiu."
+      ],
+      "This will cancel any remaining downloads.": [
+        "Això cancel·larà totes les descàrregues restants."
+      ],
+      "This will cancel any remaining uploads and downloads. Cancelled uploads won't be saved in ${ DRIVE_APP_NAME }.": [
+        "Això cancel·larà qualsevol càrrega i descàrrega pendent. Les càrregues cancel·lades no es desaran a ${ DRIVE_APP_NAME }."
       ],
       "This will cancel any remaining uploads. Cancelled files won't be saved in ${ DRIVE_APP_NAME }.": [
         "Això cancel·larà qualsevol càrrega pendent. Els fitxers cancel·lats no es desaran a ${ DRIVE_APP_NAME }."
@@ -9998,28 +10010,28 @@
       "terms and conditions": [
         "termes i condicions"
       ],
-      "The coupon is valid for ${ couponRedemptions } renewal.": [
-        "El cupó és vàlid per a ${ couponRedemptions } renovació.",
-        "El cupó és vàlid per a ${ couponRedemptions } renovacions."
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "El descompte és vàlid per a ${ renewalsWithCoupon } renovació.",
+        "El descompte és vàlid per a ${ renewalsWithCoupon } renovacions."
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "El preu amb descompte especial és vàlid durant ${ couponRedemptions } mes. Després, es renovarà automàticament a ${ renewPriceStr } per un període d'1 mes. Podeu cancel·lar la subscripció en qualsevol moment.",
+        "El preu amb descompte especial és vàlid durant ${ couponRedemptions } mesos. Després, es renovarà automàticament a ${ renewPriceStr } per un període d'1 mes. Podeu cancel·lar la subscripció en qualsevol moment."
       ],
       "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
         "El preu amb descompte especial és vàlid durant el primer ${ subscriptionLength } mes.",
         "El preu amb descompte especial és vàlid durant el primers ${ subscriptionLength } mesos."
       ],
-      "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "El preu amb descompte especial és vàlid durant el primer mes. El cupó és vàlid per a ${ couponRedemptions } renovació. Després, es renovarà automàticament per ${ renewPriceStr } durant 1 mes. Podreu cancel·lar-ho en qualsevol moment.",
-        "El preu amb descompte especial és vàlid durant el primer mes. El cupó és vàlid per a ${ couponRedemptions } renovacions. Després, es renovarà automàticament per ${ renewPriceStr } durant 1 mes. Podreu cancel·lar-ho en qualsevol moment."
-      ],
       "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "El preu amb descompte especial és vàlid durant el primer mes. Després, es renovarà automàticament per ${ renewPriceStr } cada mes. Podreu cancel·lar-ho en qualsevol moment."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "El preu amb descompte especial de ${ priceWithDiscount } és vàlid durant ${ couponRedemptions } mes. Després, es renovarà automàticament a ${ renewPriceStr } per un període d'1 mes. Podeu cancel·lar la subscripció en qualsevol moment.",
+        "El preu amb descompte especial de ${ priceWithDiscount } és vàlid durant ${ couponRedemptions } mesos. Després, es renovarà automàticament a ${ renewPriceStr } per un període d'1 mes. Podeu cancel·lar la subscripció en qualsevol moment."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "El preu amb descompte especial de ${ priceWithDiscount } és vàlid durant el primer ${ subscriptionLength } mes.",
         "El preu amb descompte especial de ${ priceWithDiscount } és vàlid durant els primers ${ subscriptionLength } mesos."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "El preu amb descompte especial de ${ priceWithDiscount } és vàlid durant el primer mes. El cupó és vàlid per a ${ couponRedemptions } renovació. Aleshores, es renovarà automàticament a ${ renewPriceStr } durant 1 mes. Podeu cancel·lar-ho en qualsevol moment.",
-        "El preu amb descompte especial de ${ priceWithDiscount } és vàlid durant el primer mes. El cupó és vàlid per a ${ couponRedemptions } renovacions. Aleshores, es renovarà automàticament a ${ renewPriceStr } durant 1 mes. Podeu cancel·lar-ho en qualsevol moment."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "El preu amb descompte especial de ${ priceWithDiscount } és vàlid durant el primer mes. Aleshores, es renovarà automàticament a ${ renewPriceStr } cada mes. Podeu cancel·lar-ho en qualsevol moment."
@@ -11979,6 +11991,12 @@
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Cancel·la la subscripció de ${ MAIL_SHORT_APP_NAME }"
       ],
+      "Cancel all downloads?": [
+        "Voleu cancel·lar totes les descàrregues?"
+      ],
+      "Cancel all transfers?": [
+        "Voleu cancel·lar totes les transferències?"
+      ],
       "Cancel all uploads?": [
         "Voleu cancel·lar totes les càrregues?"
       ],
@@ -12855,8 +12873,8 @@
       "Your ${ planName } free trial ends on ${ textDate }": [
         "La vostra prova gratuïta de ${ planName } acaba el ${ textDate }"
       ],
-      "Your ${ planName } subscription has started": [
-        "La subscripció a ${ planName } ha començat"
+      "Your ${ planTitle } subscription has started": [
+        "La vostra subscripció a ${ planTitle } ha començat"
       ],
       "Your 3 GB bonus": [
         "La vostra bonificació de 3 GB"

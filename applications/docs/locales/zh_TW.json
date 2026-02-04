@@ -198,6 +198,9 @@
       "Copy address": [
         "複製電子郵件地址"
       ],
+      "Copy alias “${ name }”": [
+        "複製別名 \"${ name }\""
+      ],
       "Copy email to clipboard": [
         "複製電郵位址至剪貼簿"
       ],
@@ -429,6 +432,9 @@
       "Load image": [
         "載入圖像"
       ],
+      "Manage advanced account protections": [
+        "管理進階帳戶保護"
+      ],
       "Manage folders": [
         "管理資料夾"
       ],
@@ -612,6 +618,9 @@
       "Save changes": [
         "儲存變更"
       ],
+      "Save preferences": [
+        "儲存偏好設定"
+      ],
       "Search": [
         "搜尋"
       ],
@@ -645,6 +654,9 @@
       "Set up 2FA": [
         "設定兩步驟驗證"
       ],
+      "Set up a custom domain": [
+        "設置個自訂域名"
+      ],
       "Set up email forwarding": [
         "設定電子郵件轉發"
       ],
@@ -653,6 +665,9 @@
       ],
       "Share": [
         "分享"
+      ],
+      "Share your calendar with your team": [
+        "與團隊共享您的行事曆"
       ],
       "Show advanced PGP settings": [
         "顯示進階 PGP 設定"
@@ -949,6 +964,9 @@
       ],
       "Unlimited logins, credit cards, hide-my-email aliases and more": [
         "無上限登入、信用卡、 hide-my-email 別名和更多"
+      ],
+      "Use your own email domain": [
+        "使用您的電子郵件網域"
       ]
     },
     "BF2024: Offers": {
@@ -1208,6 +1226,9 @@
       ],
       "Limited daily chats": [
         "有限每日聊天"
+      ],
+      "Limited favorites": [
+        "有限的收藏"
       ],
       "Strict no-logs policy": [
         "嚴格的無紀錄日誌政策"
@@ -2256,6 +2277,9 @@
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "雙重驗證可以增加一層安全保障，防止盜用。"
       ],
+      "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
+        "添加資料夾和檔案至 ${ DRIVE_APP_NAME } 和邀請成員瀏覽或編輯。"
+      ],
       "Also included": [
         "並包含"
       ],
@@ -2267,6 +2291,9 @@
       ],
       "Connect your CRM, website, printers, and more.": [
         "連線至您的 CRM、網站、影印機、和其它。"
+      ],
+      "Create groups you can email with a single address.": [
+        "創建您可透單一位址傳送電子郵件的群組"
       ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "解密聯絡人資料中… 此步驟將耗時數分鐘。當作業完成時，您就可以下載所有已匯出的聯絡人檔案。"
@@ -2309,9 +2336,6 @@
       ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "以確保您帳戶的最高可能的安全，設置復原詞句。"
-      ],
-      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
-        "匯入 CSV 或 VCF 檔，請確保檔案大小不超過 ${ MAX_IMPORT_FILE_SIZE_STRING }，且聯絡人數不超過 ${ MAX_IMPORT_CONTACTS_STRING }。如果檔案超過此限制，請將其分成比較小的檔案。 ${ learnMoreLink }"
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "從 Google 或 Outlook, ${ easySwitchLink } 來匯入你的聯絡人"
@@ -3032,8 +3056,8 @@
       "An error occurred uploading your file. No file has been selected.": [
         "上載您的檔案時發生錯誤。未選取任何檔案。"
       ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
-        "您的檔案 ${ formattedFilename } 包含多於 ${ MAX_IMPORT_CONTACTS_STRING } 位聯絡人。"
+      "Your file ${ formattedFilename } contains more than ${ maxContactString } contacts.": [
+        "您的檔案 ${ formattedFilename } 包含多於 ${ maxContactString } 位聯絡人。"
       ],
       "Your file ${ formattedFilename } has no contacts to be imported.": [
         "您的檔案 ${ formattedFilename } 沒有任何聯絡人可供匯入。"
@@ -3933,8 +3957,8 @@
       "All (${ totalFoldersCount } label)": [
         "全部 (${ totalFoldersCount } 個標籤)"
       ],
-      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
-        "所有聯絡人都已匯入，已達 ${ MAX_CONTACTS_PER_USER } 的限制"
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "所有聯絡人將被匯入，至多 ${ maxContact }"
       ],
       "an anonymous user": [
         "一位未知使用者"
@@ -3968,6 +3992,9 @@
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "在申請一組新的驗證碼之前，請檢查您的垃圾郵件資料夾以及 ${ strong } 的位址正確無誤。"
+      ],
+      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
+        "將訊息、聯絡人和行事曆匯入 ${ BRAND_NAME }。"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "一旦降級至免費方案，您將永久失去這些優惠，即便您日後再次升級也是如此。"
@@ -4608,6 +4635,9 @@
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "此電郵位址已停用。若要傳送到此電郵位址，請其擁有者首先啟用此電郵位址。"
       ],
+      "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
+        "此是貴組織使用者可看見的名稱或暱稱。您可隨時時修正它。"
+      ],
       "This item already exists in your library": [
         "此項目已存在於資料庫"
       ],
@@ -4907,6 +4937,12 @@
       ],
       "You’ll also lose access to ${ boldPlanTitle } features:": [
         "您將失去存取至 ${ boldPlanTitle } 功能:"
+      ],
+      "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
+        "您將失去存取於 ${ boldEndDate } 的 ${ boldPlanTitle }"
+      ],
+      "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
+        "您仍可瀏覽您的帳號資料，但所有使用者帳號將被從貴組織移除。"
       ]
     },
     "info": {
@@ -5392,6 +5428,9 @@
       ],
       "Your password (admin)": [
         "您的密碼（管理員）"
+      ],
+      "Your password (trusted contact)": [
+        "您的密碼 (信任的內容)"
       ]
     },
     "Label for contact group color": {
@@ -5452,11 +5491,26 @@
       "How to add Zoom links": [
         "如何新增 Zoom 連結"
       ],
+      "How to collaborate in ${ DOCS_SHORT_APP_NAME }": [
+        "如何於 ${ DOCS_SHORT_APP_NAME } 合作"
+      ],
       "How to enable ${ PROTON_SENTINEL_NAME }": [
         "如何啟用 ${ PROTON_SENTINEL_NAME }"
       ],
+      "How to migrate to ${ BRAND_NAME }": [
+        "如何遷移至 ${ BRAND_NAME }"
+      ],
+      "How to set up ${ VPN_APP_NAME }": [
+        "如何設定 ${ VPN_APP_NAME }"
+      ],
+      "How to set up a custom domain": [
+        "如何設置個自訂域名"
+      ],
       "How to set up SMTP": [
         "如何設置 SMTP"
+      ],
+      "How to share a calendar": [
+        "如何共享行事曆"
       ],
       "How to share via email": [
         "如何透過電子郵件共享"
@@ -5464,11 +5518,17 @@
       "How to use ${ DARK_WEB_MONITORING_NAME }": [
         "如何使用${ DARK_WEB_MONITORING_NAME }"
       ],
+      "How to use ${ PASS_APP_NAME } for Business": [
+        "如何將 ${ PASS_APP_NAME } 用於商務"
+      ],
       "How to use email forwarding": [
         "如何使用電子郵件轉發"
       ],
       "How to use Groups": [
         "如何使用群組"
+      ],
+      "if your data is leaked": [
+        "若您的資料外洩"
       ],
       "Learn more": [
         "瞭解詳情"
@@ -5589,6 +5649,9 @@
       "${ n } active meeting at a time": [
         "${ n } 個會議同時進行中"
       ],
+      "${ n } participant": [
+        "${ n } 位參與者"
+      ],
       "24 hours per meeting": [
         "24 小時會議"
       ],
@@ -5597,6 +5660,9 @@
       ],
       "Appointment scheduling": [
         "預定排定中"
+      ],
+      "Booking pages": [
+        "預定頁面"
       ],
       "Browser, mobile, and desktop apps": [
         "瀏覽器、移動端和桌面應用程式"
@@ -6951,6 +7017,9 @@
       ]
     },
     "Offer": {
+      "${ BRAND_NAME } Unlimited for 12 months": [
+        "十二個月的 ${ BRAND_NAME } Unlimited"
+      ],
       "${ planName } for 12 months": [
         "為期 12 個月的 ${ planName }"
       ],
@@ -7008,6 +7077,12 @@
       "This offer won't be shown again.": [
         "此優惠將不再顯示。"
       ],
+      "Upgrade your productivity for just ${ pricingTitle } with ${ planName }": [
+        "以 ${ pricingTitle } 的 ${ planName } 方案提升您的工作效率"
+      ],
+      "Upgrade your storage for just ${ pricingTitle } with ${ planName }": [
+        "以 ${ planName } 的 ${ pricingTitle } 方案升級您的儲存空間"
+      ],
       "When you switch from a monthly to annual subscription.": [
         "當您從每月切換至每年訂月。"
       ],
@@ -7036,6 +7111,9 @@
       "Custom email domain": [
         "自訂電子郵件網域名稱電郵網域名稱"
       ],
+      "Edit docs online": [
+        "線上編輯文件"
+      ],
       "Email addresses": [
         "電子郵件地址"
       ],
@@ -7060,6 +7138,9 @@
     "Onboarding Trial": {
       " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
         " 參閱我們的 ${ helpCenterLink } 或 ${ contactSupportLink }。"
+      ],
+      "Cancel anytime before ${ cancelDate }.": [
+        "於 ${ cancelDate } 前隨時取消。"
       ],
       "contact our support team": [
         "聯絡我們的客戶支援團隊"
@@ -7217,23 +7298,23 @@
       "terms and conditions": [
         "合約條款"
       ],
-      "The coupon is valid for ${ couponRedemptions } renewal.": [
-        "此折價券可適用續約訂購 ${ couponRedemptions } 次。"
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "此折扣可適用續約訂購 ${ renewalsWithCoupon } 。"
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "特殊折扣將套用於 ${ couponRedemptions } 個月。其後以 1 個月 ${ renewPriceStr } 自動續約。您可以在任何時候取消。"
       ],
       "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
         "前 ${ subscriptionLength } 個月可享優惠價格。"
       ],
-      "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "特別優惠價僅適用於首月。折價券可使用 ${ couponRedemptions } 次，之後將以一個月 ${ renewPriceStr } 的價格自動續約。您可以隨時取消。"
-      ],
       "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "特殊折扣將套用於第一個月。其後將於每月自動以 ${ renewPriceStr } 續約。您可以在任何時候取消。"
       ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "享受特惠折扣 ${ priceWithDiscount } ${ couponRedemptions } 個月。而後將以每 1 月 ${ renewPriceStr } 的價格自動續約。您可以在任何時候取消訂閱。"
+      ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "前 ${ subscriptionLength } 個月，可享優惠價格 ${ priceWithDiscount }。"
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "首月限定優惠價為 ${ priceWithDiscount }。折價券可使用 ${ couponRedemptions } 次，之後將以一個月 ${ renewPriceStr } 的價格自動續約。您可以隨時取消。"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "${ priceWithDiscount } 特殊折扣將套用於第一個月。其後將於每月自動以 ${ renewPriceStr } 續約。您可以在任何時候取消。"
@@ -7344,11 +7425,19 @@
       ],
       "Start typing an email address": [
         "在此輸入一個電郵位址"
+      ],
+      "Your organization name": [
+        "貴組織名稱"
       ]
     },
     "Placeholder for contact group name": {
       "Name": [
         "名稱"
+      ]
+    },
+    "Plan description": {
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "您的頂級質子版服務源自於 ${ BRAND_NAME } 、 ${ MAIL_SHORT_APP_NAME } 、 ${ PASS_SHORT_APP_NAME } 、 ${ VPN_SHORT_APP_NAME } 、 ${ DRIVE_SHORT_APP_NAME } 和 ${ CALENDAR_SHORT_APP_NAME }"
       ]
     },
     "Progress bar description": {
@@ -7880,6 +7969,9 @@
       ]
     },
     "specialoffer: Link": {
+      "Browse securely": [
+        "安全地瀏覽"
+      ],
       "Get unlimited aliases": [
         "取得無限別名"
       ],
@@ -7979,6 +8071,9 @@
       ],
       "Get one plan that includes it all, get ${ BRAND_NAME } Unlimited": [
         "取得包含全部的單一方案，取得 ${ BRAND_NAME } Unlimited"
+      ],
+      "Protect your account from threats with Sentinel": [
+        "使用 Sentinel 保護您的帳戶免受威脅"
       ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "使用兩年的 ${ planName } 升級並節省更多"
@@ -8641,6 +8736,9 @@
       "Enable 2FA": [
         "啟用2FA"
       ],
+      "Enable advanced account protection": [
+        "啟用進階帳戶保護"
+      ],
       "End-to-end encrypted": [
         "點對點加密"
       ],
@@ -8703,6 +8801,9 @@
       ],
       "Import groups": [
         "匯入群組"
+      ],
+      "Information exposed in breach": [
+        "於外洩的資料"
       ],
       "Invalid verification code": [
         "驗證碼無效"
@@ -8898,6 +8999,9 @@
       ],
       "Upgrade to keep your premium benefits.": [
         "升級以保留您的進階權益。"
+      ],
+      "Upload and share files": [
+        "上傳並共享檔案"
       ],
       "Uploading a large file or folder": [
         "上傳大檔案或資料夾"

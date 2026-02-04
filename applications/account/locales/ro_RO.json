@@ -1957,26 +1957,6 @@
         "Mesaj nou"
       ]
     },
-    "app-switcher": {
-      "Browse the web privately and block ads": [
-        "Navigați pe web în mod privat și blocați reclamele"
-      ],
-      "Keep your schedule private": [
-        "Păstrați-vă programul privat"
-      ],
-      "Protect your passwords and identity": [
-        "Protejați-vă parolele și identitatea"
-      ],
-      "Safeguard your files and photos": [
-        "Asigurați-vă fișierele și fotografiile"
-      ],
-      "Secure your communications": [
-        "Securizați-vă informațiile"
-      ],
-      "Talk confidentially": [
-        "Discutați confidențial"
-      ]
-    },
     "app-switcher_2025": {
       "Bitcoin wallet": [
         "Portofel bitcoin"
@@ -3220,11 +3200,6 @@
       ],
       "Expand": [
         "Extindere"
-      ]
-    },
-    "collider_2025: app-switcher": {
-      "Chat with a private AI assistant": [
-        "Conversați cu un asistent de IA privat"
       ]
     },
     "collider_2025: feature": {
@@ -4813,8 +4788,8 @@
       "Simplify syncing and scheduling with shared calendars.": [
         "Simplificați sincronizarea și programarea cu calendare partajate."
       ],
-      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
-        "Pentru a importa prin fișier CSV sau VCF, asigurați-vă că fișierul nu depășește ${ MAX_IMPORT_FILE_SIZE_STRING } sau ${ MAX_IMPORT_CONTACTS_STRING } de contacte. Dacă fișierul este mai mare, împărțiți-l în fișiere mai mici. ${ learnMoreLink }."
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Pentru a importa prin fișier CSV sau VCF, asigurați-vă că fișierul nu depășește ${ MAX_IMPORT_FILE_SIZE_STRING } sau ${ maxContactString } de contacte. Dacă fișierul este mai mare, împărțiți-l în fișiere mai mici. ${ learnMoreLink }."
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Pentru a vă importa contactele din Google sau Outlook, ${ easySwitchLink }."
@@ -5063,6 +5038,9 @@
       "Edge": [
         "Edge"
       ],
+      "Fedora": [
+        "Fedora"
+      ],
       "Fire TV": [
         "Fire TV"
       ],
@@ -5080,6 +5058,9 @@
       ],
       "Installation guide": [
         "Ghid de instalare"
+      ],
+      "iOS": [
+        "iOS"
       ],
       "iPhone/iPad": [
         "iPhone/iPad"
@@ -5122,6 +5103,9 @@
       ],
       "TV": [
         "TV"
+      ],
+      "Ubuntu/Debian": [
+        "Ubuntu/Debian"
       ],
       "Windows": [
         "Windows"
@@ -6719,6 +6703,9 @@
       "You have reached the number of contacts limit for your account": [
         "Ați atins limita numărului de contacte disponibil pentru acest cont."
       ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "Ați folosit toate adresele disponibile în plan. Modificați-vă planul pentru a adăuga o adresă nouă sau dezactivați o adresă din cont."
+      ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Ați folosit toate numele de utilizator din plan. Treceți la un plan cu plată superior pentru a adăuga un utilizator nou."
       ],
@@ -6813,8 +6800,8 @@
       "An error occurred uploading your file. No file has been selected.": [
         "A apărut o eroare la încărcarea fișierului. Nu a fost selectat niciun fișier."
       ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
-        "Fișierul ${ formattedFilename } conține mai mult de ${ MAX_IMPORT_CONTACTS_STRING } contacte."
+      "Your file ${ formattedFilename } contains more than ${ maxContactString } contacts.": [
+        "Fișierul ${ formattedFilename } conține mai mult de ${ maxContactString } de contacte."
       ],
       "Your file ${ formattedFilename } has no contacts to be imported.": [
         "Fișierul ${ formattedFilename } nu are contacte de importat."
@@ -6900,6 +6887,9 @@
       ]
     },
     "Error message": {
+      "Account is deleted or disabled": [
+        "Contul este șters sau dezactivat."
+      ],
       "App currently unavailable": [
         "Aplicație momentan indisponibilă"
       ],
@@ -9066,10 +9056,10 @@
       "All your changes will be lost.": [
         "Toate modificările vor fi pierdute."
       ],
-      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
-        "Vor fi importate toate contactele, până la limita de ${ MAX_CONTACTS_PER_USER }.",
-        "Vor fi importate toate contactele, până la limita de ${ MAX_CONTACTS_PER_USER }.",
-        "Vor fi importate toate contactele, până la limita de ${ MAX_CONTACTS_PER_USER }."
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "Vor fi importate toate contactele, până la limita de ${ maxContact }.",
+        "Vor fi importate toate contactele, până la limita de ${ maxContact }.",
+        "Vor fi importate toate contactele, până la limita de ${ maxContact }."
       ],
       "Allocated": [
         "Alocat"
@@ -9328,6 +9318,9 @@
       ],
       "CNET editors choice award with a rating of 8.4 out of 10": [
         "Premiul pentru alegerea editorilor CNET cu o evaluare de 8,4 din 10"
+      ],
+      "Coming soon": [
+        "În curând"
       ],
       "Compromised": [
         "Compromisă"
@@ -9596,9 +9589,6 @@
       ],
       "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
         "Fiecare domeniu poate avea o singură înregistrare SPF (TXT). Dacă doriți să păstrați înregistrarea SPF (TXT) existentă, puteți adăuga ${ spf } la înregistrarea curentă (puneți-o după ${ spfValue })."
-      ],
-      "Early access": [
-        "Acces timpuriu"
       ],
       "Edit email address": [
         "Editare adresă de e-mail"
@@ -10641,6 +10631,9 @@
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Contactați-ne pentru ajutor despre orice din ${ BRAND_NAME }."
       ],
+      "Receive notifications for ${ categoryLabel }": [
+        "Primire notificări pentru ${ categoryLabel }"
+      ],
       "Recently used servers:": [
         "Servere utilizate recent:"
       ],
@@ -10739,9 +10732,6 @@
       ],
       "Securing your account": [
         "Securizare cont"
-      ],
-      "Select a service to continue": [
-        "Selectați un serviciu pentru a continua"
       ],
       "Select one or multiple user affiliations": [
         "Selectați una sau mai multe afilieri pentru utilizatori."
@@ -12589,7 +12579,7 @@
         "15 minute"
       ],
       "2 minutes": [
-        "Două minute"
+        "două minute"
       ],
       "30 minutes": [
         "30 de minute"
@@ -12768,6 +12758,9 @@
       "Autofill 2FA": [
         "Autocompletare A2F"
       ],
+      "Automated confirmations and alerts": [
+        "Confirmări și alerte automate"
+      ],
       "Automatically save contacts": [
         "Salvare automată contacte"
       ],
@@ -12807,6 +12800,9 @@
       "Block malware, ads and trackers": [
         "Blocare malware, reclame și instrumente de urmărire"
       ],
+      "Bookings, billings, and orders": [
+        "Rezervări, facturări și comenzi"
+      ],
       "Browser": [
         "Navigator"
       ],
@@ -12842,6 +12838,9 @@
       ],
       "Cash": [
         "Numerar"
+      ],
+      "Categories": [
+        "Categorii"
       ],
       "Category": [
         "Categoria"
@@ -12978,6 +12977,9 @@
       "Days of the week": [
         "Ziua săptămânii"
       ],
+      "Deals, offers, marketing emails": [
+        "Oferte, promoții, e-mailuri de marketing"
+      ],
       "Default email address": [
         "Adresa de e-mail implicită"
       ],
@@ -13020,6 +13022,9 @@
       "Disabled": [
         "Dezactivat"
       ],
+      "Discussion board posts and threads": [
+        "Publicări și fire de discuție pe forum"
+      ],
       "Display name": [
         "Nume afișat"
       ],
@@ -13055,9 +13060,6 @@
       ],
       "Email address": [
         "Adresă e-mail"
-      ],
-      "Email categories": [
-        "Categorii de e-mail"
       ],
       "Email or username": [
         "E-mail sau utilizator"
@@ -13158,6 +13160,9 @@
       "for your first month": [
         "pentru prima lună"
       ],
+      "Forums": [
+        "Forumuri"
+      ],
       "From: ${ fromEmail }": [
         "De la: ${ fromEmail }"
       ],
@@ -13172,6 +13177,27 @@
       ],
       "Gift code": [
         "Cod cadou"
+      ],
+      "Go to Forums": [
+        "Accesare forumuri"
+      ],
+      "Go to Newsletters": [
+        "Accesare buletine informative"
+      ],
+      "Go to Primary": [
+        "Accesare principal"
+      ],
+      "Go to Promotions": [
+        "Accesare promoții"
+      ],
+      "Go to Social": [
+        "Accesare rețele sociale"
+      ],
+      "Go to Transactions": [
+        "Accesare tranzacții"
+      ],
+      "Go to Updates": [
+        "Accesare actualizări"
       ],
       "Group address": [
         "Adresă grup"
@@ -13395,6 +13421,9 @@
       "New second password": [
         "Parola secundară nouă"
       ],
+      "Newsletters": [
+        "Buletine informative"
+      ],
       "No (users cannot use the app until a vault is shared with them)": [
         "Nu (utilizatorii nu pot folosi aplicația până când un seif nu este partajat cu ei)"
       ],
@@ -13403,6 +13432,9 @@
       ],
       "No label found": [
         "Nu există etichete"
+      ],
+      "Non-promotional content and news": [
+        "Conținut și știri non-promoționale"
       ],
       "Non-standard ports": [
         "Porturi nonstandard"
@@ -13526,6 +13558,12 @@
       ],
       "Previous password": [
         "Parola anterioară"
+      ],
+      "Primary": [
+        "Primar"
+      ],
+      "Promotions": [
+        "Promoții"
       ],
       "Prompt to trust keys": [
         "Solicitare chei de încredere"
@@ -13673,6 +13711,12 @@
       "SMTP username": [
         "Utilizator SMTP"
       ],
+      "Social": [
+        "Rețele sociale"
+      ],
+      "Social media updates and activity": [
+        "Actualizări și activitate pe rețelele sociale"
+      ],
       "Spam": [
         "Nedorite"
       ],
@@ -13725,7 +13769,7 @@
         "Acțiune glisare la dreapta"
       ],
       "Sync with system": [
-        "Ca cea din sistem"
+        "Ca în sistem"
       ],
       "System information": [
         "Informații sistem"
@@ -13757,6 +13801,9 @@
       "Token name": [
         "Nume cod de acces"
       ],
+      "Transactions": [
+        "Tranzacții"
+      ],
       "Two-password mode": [
         "Mod cu două parole"
       ],
@@ -13772,6 +13819,9 @@
       "Unlimited logins and devices": [
         "Conectări și dispozitive nelimitate"
       ],
+      "Updates": [
+        "Actualizări"
+      ],
       "Upload 1 or more encryption keys": [
         "Încărcare una sau mai multe chei de criptare"
       ],
@@ -13786,6 +13836,9 @@
       ],
       "URL": [
         "Adresa URL"
+      ],
+      "Use email categories": [
+        "Folosire categorii mesaje"
       ],
       "Use folder colors": [
         "Folosire culori folder"
@@ -14552,6 +14605,11 @@
         "Conferințe active simultan: ${ n }",
         "Conferințe active simultan: ${ n }"
       ],
+      "${ n } participant": [
+        "${ n } participant",
+        "${ n } participanți",
+        "${ n } de participanți"
+      ],
       "24 hours per meeting": [
         "Conferințe de 24 de ore"
       ],
@@ -14561,6 +14619,9 @@
       "Appointment scheduling": [
         "Planificare întâlniri"
       ],
+      "Booking pages": [
+        "Pagini de rezervare"
+      ],
       "Browser, mobile, and desktop apps": [
         "Aplicații pentru navigator web, mobil și desktop"
       ],
@@ -14569,6 +14630,9 @@
       ],
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "Partajare ecran cu criptare bilaterală și conversații temporare pe durata apelului"
+      ],
+      "Meeting recording": [
+        "Înregistrare conferință"
       ],
       "One active meeting at a time": [
         "O conferință activă simultan"
@@ -15794,9 +15858,6 @@
       ],
       "Review subscription and pay": [
         "Revizuire abonament și plată"
-      ],
-      "Start exploring the ${ BRAND_NAME } universe": [
-        "Începeți să explorați universul ${ BRAND_NAME }"
       ],
       "Switch plans?": [
         "Schimbare planuri?"
@@ -17583,6 +17644,9 @@
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Reînnoire cu ${ renewPriceStr }, anulați oricând."
       ],
+      "Sorry, this offer is not available for your account.": [
+        "Ne pare rău, această ofertă nu este disponibilă pentru acest cont."
+      ],
       "Sorry, this offer is not available with your current plan.": [
         "Ne pare rău, această ofertă nu este disponibilă cu planul actual."
       ],
@@ -17592,33 +17656,33 @@
       "terms and conditions": [
         "termenii și condițiile"
       ],
-      "The coupon is valid for ${ couponRedemptions } renewal.": [
-        "Număr de reînnoiri disponibile pentru acest cupon: ${ couponRedemptions }",
-        "Număr de reînnoiri disponibile pentru acest cupon: ${ couponRedemptions }",
-        "Număr de reînnoiri disponibile pentru acest cupon: ${ couponRedemptions }"
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "Reducerea este valabilă pentru ${ renewalsWithCoupon } reînnoire.",
+        "Reducerea este valabilă pentru ${ renewalsWithCoupon } reînnoiri.",
+        "Reducerea este valabilă pentru ${ renewalsWithCoupon } de reînnoiri."
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Prețul cu reducerea specială este valabil pentru ${ couponRedemptions } lună. Apoi va fi reînnoit automat cu ${ renewPriceStr } pentru o lună. Puteți anula oricând.",
+        "Prețul cu reducerea specială este valabil pentru ${ couponRedemptions } luni. Apoi va fi reînnoit automat cu ${ renewPriceStr } pentru o lună. Puteți anula oricând.",
+        "Prețul cu reducerea specială este valabil pentru ${ couponRedemptions } de luni. Apoi va fi reînnoit automat cu ${ renewPriceStr } pentru o lună. Puteți anula oricând."
       ],
       "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
         "Prețul special redus este valabil pentru ${ subscriptionLength } lună.",
         "Prețul redus special este valabil pentru primele ${ subscriptionLength } luni.",
         "Prețul special redus este valabil pentru primele ${ subscriptionLength } de luni."
       ],
-      "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "Prețul cu reducerea specială este valabil pentru prima lună. Cuponul este valid pentru ${ couponRedemptions } reînnoire. Apoi se va reînnoi automat cu prețul de ${ renewPriceStr } pentru o lună. Puteți anula oricând.",
-        "Prețul cu reducerea specială este valabil pentru prima lună. Cuponul este valid pentru ${ couponRedemptions } reînnoiri. Apoi se va reînnoi automat cu prețul de ${ renewPriceStr } pentru o lună. Puteți anula oricând.",
-        "Prețul cu reducerea specială este valabil pentru prima lună. Cuponul este valid pentru ${ couponRedemptions } de reînnoiri. Apoi se va reînnoi automat cu prețul de ${ renewPriceStr } pentru o lună. Puteți anula oricând."
-      ],
       "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Prețul cu reducerea specială este valabil pentru prima lună. Apoi va fi reînnoit automat cu ${ renewPriceStr } lunar. Puteți anula oricând."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Prețul cu reducerea specială de ${ priceWithDiscount } este valabil pentru ${ couponRedemptions } lună. Apoi va fi reînnoit automat cu ${ renewPriceStr } pentru o lună. Puteți anula oricând.",
+        "Prețul special redus de ${ priceWithDiscount } este valabil pentru ${ couponRedemptions } luni. Apoi va fi reînnoit automat la ${ renewPriceStr } pentru o lună. Puteți anula oricând.",
+        "Prețul special redus de ${ priceWithDiscount } este valabil pentru ${ couponRedemptions } de luni. Apoi va fi reînnoit automat la ${ renewPriceStr } pentru o lună. Puteți anula oricând."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "Prețul redus special de ${ priceWithDiscount } este valid pentru ${ subscriptionLength } lună.",
         "Prețul redus special de ${ priceWithDiscount } este valid pentru primele ${ subscriptionLength } luni.",
         "Prețul redus special de ${ priceWithDiscount } este valid pentru primele ${ subscriptionLength } de luni."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "Prețul de ${ priceWithDiscount } cu reducerea specială este valabil pentru prima lună. Cuponul este valid pentru ${ couponRedemptions } reînnoire. Apoi se va reînnoi automat cu prețul de ${ renewPriceStr } pentru o lună. Puteți anula oricând.",
-        "Prețul de ${ priceWithDiscount } cu reducerea specială este valabil pentru prima lună. Cuponul este valid pentru ${ couponRedemptions } reînnoiri. Apoi se va reînnoi automat cu prețul de ${ renewPriceStr } pentru o lună. Puteți anula oricând.",
-        "Prețul de ${ priceWithDiscount } cu reducerea specială este valabil pentru prima lună. Cuponul este valid pentru ${ couponRedemptions } de reînnoiri. Apoi se va reînnoi automat cu prețul de ${ renewPriceStr } pentru o lună. Puteți anula oricând."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Prețul cu reducerea specială de ${ priceWithDiscount } este valabil pentru prima lună. Apoi va fi reînnoit automat cu ${ renewPriceStr } lunar. Puteți anula oricând."
@@ -21884,6 +21948,32 @@
         "Nu s-au găsit coduri de acces SMTP"
       ]
     },
+    "Theme": {
+      "Auto": [
+        "Automat"
+      ],
+      "Dark": [
+        "Neagră"
+      ],
+      "Light": [
+        "Albă"
+      ],
+      "Mode: Auto": [
+        "Mod: automat"
+      ],
+      "Mode: Dark": [
+        "Mod: întunecat"
+      ],
+      "Mode: Light": [
+        "Mod: luminos"
+      ],
+      "Sync with system": [
+        "Ca în sistem"
+      ],
+      "Use ${ BRAND_NAME } settings": [
+        "Utilizare setări din ${ BRAND_NAME }"
+      ]
+    },
     "Time unit": {
       "${ ceilDays } day": [
         "${ ceilDays } zi",
@@ -22765,6 +22855,9 @@
       "Get the apps": [
         "Luați aplicațiile"
       ],
+      "Get unlimited meetings on all your devices with ${ planName }. ${ upgradeButton }": [
+        "Obțineți conferințe nelimitate pe toate dispozitivele deținute cu ${ planName }. ${ upgradeButton }"
+      ],
       "Gift": [
         "Cadou"
       ],
@@ -23543,8 +23636,8 @@
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Probarea gratuită pentru ${ planName } se încheie ${ textDate }"
       ],
-      "Your ${ planName } subscription has started": [
-        "Abonamentul ${ planName } a început"
+      "Your ${ planTitle } subscription has started": [
+        "Abonamentul ${ planTitle } a început"
       ],
       "Your calendar link": [
         "legătură web calendar"
@@ -23836,6 +23929,9 @@
       ],
       "Specify the users of the eduGAIN entity who are allowed to authenticate with SAML SSO": [
         "Specificați utilizatorii entității eduGAIN cărora li se permite să se autentifice cu autentificare unică SAML SSO."
+      ],
+      "System notification": [
+        "Notificare de sistem"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Subfolderele de sistem vor fi afișate ca foldere separate în ${ MAIL_APP_NAME }."
@@ -24218,6 +24314,9 @@
       ]
     },
     "Upsell": {
+      "${ BRAND_NAME } for Business": [
+        "${ BRAND_NAME } for Business"
+      ],
       "**Save up to ${ priceString }** with a longer subscription. Same premium features, lower price.": [
         "**Economisiți până la ${ priceString }** cu un abonament de durată mai mare. Aceleași funcții premium, preț mai mic."
       ],
@@ -24229,6 +24328,9 @@
       ],
       "Did you know?": [
         "Știați că?"
+      ],
+      "Everything you need to collaborate securely in a single subscription. Get access to ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, ${ SHEETS_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } and ${ LUMO_SHORT_APP_NAME } AI Assistant.": [
+        "Tot ce aveți nevoie pentru a colabora securizat într-un singur abonament. Obțineți acces la ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, ${ SHEETS_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } și Asistentul de IA ${ LUMO_SHORT_APP_NAME }."
       ],
       "Get ${ drivePlusPlanMaxSpace } storage for your files, photos and documents, and recover file versions with 10-year file recovery.": [
         "Obțineți ${ drivePlusPlanMaxSpace } spațiu de stocare pentru fișierele, fotografiile și documentele personale și recuperați fișierele cu versiuni de fișiere de până la 10 ani."
@@ -24689,6 +24791,9 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } va transfera cât mai multe date posibil, începând cu cele mai recente mesaje."
+      ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } offer has ended": [
+        "Oferta ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } a expirat"
       ],
       "Are you sure you want to delete the phone number?": [
         "Ștergeți acest număr de telefon?"

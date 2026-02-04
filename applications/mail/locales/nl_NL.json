@@ -4102,8 +4102,8 @@
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Stel een herstelzin in om de hoogst mogelijke beveiliging van uw account te waarborgen."
       ],
-      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
-        "Voor importeren via CSV- en VCF-bestand, zorg ervoor dat het bestand niet ${ MAX_IMPORT_FILE_SIZE_STRING } of ${ MAX_IMPORT_CONTACTS_STRING } contacten overschrijdt. Als uw bestand groter is, splits het dan in kleinere bestanden. ${ learnMoreLink }."
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Om te importeren via een CSV- en VCF-bestand, moet u ervoor zorgen dat het bestand niet groter is dan ${ MAX_IMPORT_FILE_SIZE_STRING } of niet meer dan ${ maxContactString } contacten bevat. Als uw bestand groter is, splits het dan op in kleinere bestanden. ${ learnMoreLink }."
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Importeer uw contacten uit Google of Outlook, ${ easySwitchLink }."
@@ -4239,6 +4239,17 @@
       ],
       "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
         "Uw ${ PLAN_NAMES[PLANS.PASS] }-abonnement heeft een speciale prijs van ${ price } per jaar. Als u downgrade naar een Free abonnement, zult u permanent uw korting verliezen, zelfs als u in de toekomst opnieuw upgrade."
+      ]
+    },
+    "Drawer tab, Action": {
+      "Download for Linux": [
+        "Downloaden voor Linux"
+      ],
+      "Download for macOS": [
+        "Download voor macOS"
+      ],
+      "Download for Windows": [
+        "Download voor Windows"
       ]
     },
     "driveplus2024: Deal details": {
@@ -4982,11 +4993,17 @@
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Dit bericht kan koppelingen bevatten die niet op de juiste wijze geopend kunnen worden door uw huidige browser."
       ],
+      "This offer is not available in your country": [
+        "Dit aanbod is niet beschikbaar in uw land"
+      ],
       "Trusted keys are not valid for sending": [
         "Vertrouwde sleutels zijn niet geldig om mee te verzenden"
       ],
       "Try using only letters, numerals, and _.-": [
         "Probeer enkel letters, nummers en _.- te gebruiken"
+      ],
+      "Unable to load VPN dashboard. Please check your connection and try again.": [
+        "Kan VPN-dashboard niet laden. Controleer uw verbinding en probeer het opnieuw."
       ],
       "Unexpected error, we can't import the contacts": [
         "Onverwachte fout, we kunnen de contacten niet importeren"
@@ -5139,8 +5156,8 @@
       "An error occurred uploading your file. No file has been selected.": [
         "Fout opgetreden tijdens het uploaden van uw bestand. Er is geen bestand geselecteerd."
       ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
-        "Uw bestand ${ formattedFilename } bevat meer dan ${ MAX_IMPORT_CONTACTS_STRING } contacten."
+      "Your file ${ formattedFilename } contains more than ${ maxContactString } contacts.": [
+        "Uw bestand ${ formattedFilename } bevat meer dan ${ maxContactString } contacten."
       ],
       "Your file ${ formattedFilename } has no contacts to be imported.": [
         "Uw bestand ${ formattedFilename } heeft geen contactpersonen om te importeren."
@@ -6572,6 +6589,9 @@
         "${ updated } contact bijgewerkt.",
         "${ updated } contacten bijgewerkt."
       ],
+      "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
+        "${ VPN_APP_NAME } maskeert uw IP-adres, zodat websites u niet kunnen identificeren."
+      ],
       "(${ memberCount } member)": [
         "(${ memberCount } lid)",
         "(${ memberCount } leden)"
@@ -6591,6 +6611,12 @@
       "**${ total }** result found in ${ labelName }": [
         "**${ total }** resultaat gevonden in ${ labelName }",
         "**${ total }** resultaten gevonden in ${ labelName }"
+      ],
+      "**Auto-connect**: Opens and connects to VPN as soon as you turn on your device.": [
+        "**Automatisch Verbinden**: Opent en verbindt met VPN zodra u uw apparaat aan zet."
+      ],
+      "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
+        "**IP-beveiliging**: Stop datalekken door uw internet te blokkeren als uw VPN-verbinding onverwachts stopt."
       ],
       "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
         "**Stap 1:** Nodig uw vrienden uit voor ${ BRAND_NAME } met uw verwijzingssnelkoppeling."
@@ -6623,8 +6649,20 @@
       "A request to unsubscribe from this mailing list will be sent to the sender of the newsletter and automatically processed.": [
         "Een verzoek om u uit te schrijven voor deze mailinglijst wordt verzonden naar de afzender van de nieuwsbrief en wordt automatisch verwerkt."
       ],
+      "A secure connection is essential when working remotely. A VPN protects company data from cyber threats and keeps your work private.": [
+        "Een veilige verbinding is essentieel bij het werken op afstand. Een VPN beschermt bedrijfsgegevens tegen cyberbedreigingen en houdt uw werk privé."
+      ],
       "A user is an account associated with a single username, mailbox, and person": [
         "Een gebruiker is een account geassocieerd met een enkele gebruikersnaam, mailbox en persoon"
+      ],
+      "A VPN encrypts your connection and hides your IP address, making it much harder for anyone to track or monitor your browsing.": [
+        "Een VPN versleutelt uw verbinding en verbergt uw IP-adres, waardoor het voor iedereen veel moeilijker is om browsen te volgen of te volgen."
+      ],
+      "A VPN hides your IP address and encrypts your browsing activity, making it harder for websites, advertisers, and ISPs to track you over time.": [
+        "Een VPN verbergt uw IP-adres en versleutelt uw browseractiviteit, waardoor het moeilijker wordt voor websites, adverteerders en internet service providers om u over een bepaalde periode te volgen."
+      ],
+      "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
+        "Een VPN is een veilige tunnel tussen uw apparaat en het internet. Het verbergt uw locatie en activiteit van uw internetserviceprovider (ISP) en de websites die u bezoekt."
       ],
       "Access 6,500+ high-speed servers on up to 10 devices to keep your browsing data safe. Available on ${ ios }, ${ android }, ${ appleTV }, and ${ desktop }.": [
         "Toegang tot 6 500+ hoge snelheid servers op maximaal 10 apparaten om uw surfgegevens veilig te houden. Beschikbaar op ${ ios }, ${ android }, ${ appleTV }en ${ desktop }."
@@ -6638,6 +6676,9 @@
       "Active": [
         "Actief"
       ],
+      "Ad targeting": [
+        "Advertentie doelwit"
+      ],
       "Add image URL": [
         "Afbeeldings-URL toevoegen"
       ],
@@ -6649,6 +6690,9 @@
       ],
       "Addresses settings": [
         "Adresinstellingen"
+      ],
+      "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
+        "Adverteerders volgen uw internetgedrag om gerichte advertenties te tonen. ${ VPN_APP_NAME } blokkeert trackers en advertenties, maakt uw verbinding sneller en verbetert uw online ervaring."
       ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "AI-aangedreven assistent om u te helpen snel en moeiteloos betere e-mails te schrijven."
@@ -6691,9 +6735,9 @@
       "All your changes will be lost.": [
         "Alle wijzigingen gaan verloren."
       ],
-      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
-        "Al uw contacten worden geïmporteerd, met een limiet van ${ MAX_CONTACTS_PER_USER }",
-        "Al uw contacten worden geïmporteerd, met een limiet van ${ MAX_CONTACTS_PER_USER }"
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "Al uw contacten worden geïmporteerd, met een limiet van ${ maxContact }",
+        "Al uw contacten worden geïmporteerd, met een maximum van ${ maxContact }."
       ],
       "American Express SafeKey logo": [
         "American Express SafeKey logo"
@@ -6895,6 +6939,9 @@
       ],
       "Confirm phishing report": [
         "Phishing-rapport bevestigen"
+      ],
+      "Connect to ${ VPN_APP_NAME } to browse privately": [
+        "Verbind met ${ VPN_APP_NAME } om privé te browsen"
       ],
       "Consider when's the best time for your recipient to receive your email, and schedule it to be sent then.": [
         "Overweeg het beste moment om uw ontvanger uw e-mail te laten ontvangen en plan in dat de e-mail dan verstuurd wordt."
@@ -7229,6 +7276,9 @@
       "Generate text": [
         "Genereer tekst"
       ],
+      "Geoblocking": [
+        "Geoblocking"
+      ],
       "Get it on Google Play": [
         "Download op Google Play"
       ],
@@ -7240,6 +7290,9 @@
       ],
       "Google Pay mark": [
         "Google Pay merk"
+      ],
+      "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
+        "Regeringen en ISP's kunnen uw online activiteiten controleren. Door uw echte IP te verbergen en uw activiteit te versleutelen, wordt uw internetgedrag privé."
       ],
       "Has ${ numAttachments } attachment (${ numAttachmentsSize })": [
         "Heeft ${ numAttachments } bijlage (${ numAttachmentsSize })",
@@ -7318,6 +7371,9 @@
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Het importeren van uw gegevens van ${ fromEmail } naar ${ toEmail }."
       ],
+      "In restrictive countries": [
+        "In restrictieve landen"
+      ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "In de volgende stap kunt u een storting doen met een Bitcoin-adres."
       ],
@@ -7355,8 +7411,7 @@
         "Initialiseren..."
       ],
       "Insert image": [
-        "Afbeelding toevoegen",
-        "Afbeeldingen toevoegen"
+        "Afbeelding invoegen"
       ],
       "Insert link": [
         "Koppeling invoegen"
@@ -7378,6 +7433,9 @@
       ],
       "It's better to have:": [
         "Het is beter om:"
+      ],
+      "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
+        "Het is het beste om op elk moment een VPN te gebruiken. Maar hier is wanneer cyberbeveiligingsbedreigingen het grootst kunnen zijn:"
       ],
       "JCB logo": [
         "JCB-logo"
@@ -7529,6 +7587,9 @@
       "More refine actions": [
         "Meer verfijnacties"
       ],
+      "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
+        "De meeste openbare wifi-netwerken zijn veilig, maar sommige zijn onveilig, waardoor u wordt blootgesteld aan cyberbedreigingen. Een VPN versleutelt uw verkeer en houdt u beschermd."
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Benoem uw nieuwe map en selecteer de bovenliggende map waarin u deze wilt plaatsen. Als u geen bovenliggende map selecteert, wordt deze als hoofdmap gemaakt."
       ],
@@ -7595,6 +7656,9 @@
       "Not a valid URL": [
         "Ongeldige link"
       ],
+      "Not connected": [
+        "Niet verbonden"
+      ],
       "Number of dedicated servers in the organization": [
         "Aantal toegewijde servers in uw organisatie"
       ],
@@ -7606,6 +7670,9 @@
       ],
       "of": [
         "van"
+      ],
+      "On public WiFi networks": [
+        "Op openbare wifinetwerken"
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Eén of meerdere van uw vertrouwde sleutels zijn gemarkeerd als \"gecompromitteerd\" door hun eigenaars. We adviseren u deze sleutel niet meer te vertrouwen."
@@ -7728,6 +7795,9 @@
       "Please use another browser or download the file.": [
         "Gebruik een andere browser of download het bestand."
       ],
+      "Please wait for the action to be completed": [
+        "Wacht alstublieft tot de actie is voltooid"
+      ],
       "Please wait till your changes are synced with the server.": [
         "Wacht tot uw wijzigingen gesynchroniseerd zijn met de server."
       ],
@@ -7760,6 +7830,9 @@
       ],
       "Print email": [
         "E-mail afdrukken"
+      ],
+      "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
+        "Privé browsen (of \"incognito\" modus) is alleen handig om uw activiteit verborgen te houden op uw apparaat. Het stopt uw browser om geschiedenis en cookies op te slaan, maar het maakt u niet onzichtbaar. Uw ISP, netwerkbeheerder en de websites die u bezoekt kunnen nog steeds zien wat u online doet."
       ],
       "Proofread selection": [
         "Selectie proeflezen"
@@ -7832,6 +7905,9 @@
       ],
       "Saving draft": [
         "Concept opslaan"
+      ],
+      "Scan the QR code with your mobile device": [
+        "Scan de QR-code met uw mobiele apparaat"
       ],
       "Scheduled send of this message will be canceled.": [
         "Geplande verzending van dit bericht zal worden geannuleerd."
@@ -7945,6 +8021,12 @@
       "Snoozing this conversation will be canceled.": [
         "Dit gesprek snoozen wordt geannuleerd."
       ],
+      "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
+        "Sommige regeringen blokkeren of beperken de toegang tot bepaalde websites. Een VPN helpt censuur te omzeilen en uw activiteit en identiteit privé te houden."
+      ],
+      "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
+        "Sommige websites en streaming services blokkeren de inhoud per regio. Een VPN stelt u in staat om deze beperkingen te omzeilen en toegang tot het internet te krijgen."
+      ],
       "Sorry, this message does not exist or has already expired.": [
         "Sorry, dit bericht bestaat niet of is al verlopen."
       ],
@@ -7953,6 +8035,9 @@
       ],
       "Start using the shorter, catchier version of your email address.": [
         "Gebruik de kortere, meer catchy versie van uw e-mailadres."
+      ],
+      "Stay connected effortlessly by enabling the following VPN settings:": [
+        "Blijf moeiteloos verbonden door de volgende VPN-instellingen in te schakelen:"
       ],
       "Storage capabilities are not supported in this browser, we need this support to enable message content search.": [
         "Opslagmogelijkheden worden niet ondersteund in deze browser, we hebben deze ondersteuning nodig om het zoeken naar berichten mogelijk te maken."
@@ -7987,6 +8072,9 @@
       ],
       "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
         "Abonnement eindigt: Om uw ${ planName }-voordelen te behouden, kunt u uw abonnement herstarten in de Google Play Store vóór ${ byDate }. ${ reactivateLink }"
+      ],
+      "Surveillance": [
+        "Surveillance"
       ],
       "Symbols (#$&)": [
         "Symbolen (#$&)"
@@ -8119,6 +8207,9 @@
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Deze koppeling kan een homografie-aanval zijn. Controleer eerst of de koppeling juist is, of open hem niet."
       ],
+      "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
+        "Dit betekent dat uw internetprovider en de websites die u bezoekt, uw persoonlijke gegevens niet kunnen koppelen aan uw online activiteiten."
+      ],
       "This message has been adjusted to comply with a dark background.": [
         "Dit bericht werd gewijzigd om overeen te komen met een donkere achtergrond."
       ],
@@ -8195,6 +8286,9 @@
       "This sender's public key has not been trusted yet.": [
         "De openbare sleutel van de afzender is nog niet vertrouwd."
       ],
+      "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
+        "Deze unieke code kan worden gebruikt door websites en ISP's (internet service providers) om uw locatie en browsegeschiedenis te koppelen aan uw apparaat"
+      ],
       "This was shown to you because your email subject line contains password reset keywords.": [
         "Dit werd u getoond omdat uw e-mailonderwerp trefwoorden met wachtwoord reset bevat."
       ],
@@ -8257,6 +8351,9 @@
       ],
       "Trackers blocked:": [
         "Trackers geblokkeerd:"
+      ],
+      "Tracking": [
+        "Tracking"
       ],
       "Trash existing messages": [
         "Verwijder bestaande berichten"
@@ -8384,6 +8481,9 @@
       "Visa Secure logo": [
         "Visa Secure logo"
       ],
+      "VPN IP": [
+        "VPN IP-adres"
+      ],
       "Warning": [
         "Waarschuwing"
       ],
@@ -8443,6 +8543,12 @@
       ],
       "When giving out your email, use a unique, disposable hide-my-email alias instead of your real email address.": [
         "Gebruik bij het geven van uw e-mailadres een unieke, wegwerpbare alias met Hide-my-email, in plaats van uw echte e-mailadres."
+      ],
+      "When working remotely": [
+        "Bij werken op afstand"
+      ],
+      "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
+        "Wanneer u verbinding maakt met VPN, gebruikt het versleutelingstechnologie om uw IP-adres te verbergen (een unieke code toegewezen aan uw apparaat)."
       ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Toen u vertrouwde sleutels inschakelde voor ${ senderName }, zijn de openbare sleutels meteen toegevoegd aan deze contactpersoon."
@@ -8675,6 +8781,15 @@
       "Your information was found on ${ displayedDate }": [
         "Uw informatie is gevonden op ${ displayedDate }"
       ],
+      "Your internet service provider can monitor and sometimes sell your data, or even restrict what websites you can access.": [
+        "Uw internet service provider kan uw gegevens monitoren en soms verkopen, of zelfs beperken welke websites u kunt bezoeken."
+      ],
+      "Your IP": [
+        "Uw IP-adres"
+      ],
+      "Your IP address is visible and can be used to track your online activity.": [
+        "Uw IP-adres is zichtbaar en kan worden gebruikt om uw online activiteit te volgen."
+      ],
       "Your login information will not be saved after the import is completed.": [
         "Uw inloginformatie zal niet worden opgeslagen nadat de import is voltooid."
       ],
@@ -8694,11 +8809,17 @@
       "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
         "Uw volgende factuurdatum is ${ renewalTime }. Neem contact op met support als u een onmiddellijke abonnementswijziging nodig heeft."
       ],
+      "Your online activity is protected": [
+        "Uw online activiteiten zijn beschermd"
+      ],
       "Your password was leaked:": [
         "Uw wachtwoord werd gelekt:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Uw telefoonnummer wordt alleen gebruikt voor deze eenmalige verificatie."
+      ],
+      "Your physical location is visible and can be used to restrict your access to the internet.": [
+        "Uw fysieke locatie is zichtbaar en kan worden gebruikt om uw toegang tot het internet te beperken."
       ],
       "Your private writing assistant": [
         "Uw privé schrijfhulp"
@@ -9799,6 +9920,15 @@
       "Your domain": [
         "Uw domein"
       ],
+      "Your IP": [
+        "Uw IP-adres"
+      ],
+      "Your ISP": [
+        "Uw internet service provider"
+      ],
+      "Your location": [
+        "Uw locatie"
+      ],
       "Your password (admin)": [
         "Uw wachtwoord (beheerder)"
       ],
@@ -10272,6 +10402,10 @@
         "${ n } actieve vergadering tegelijkertijd",
         "${ n } actieve vergaderingen tegelijk"
       ],
+      "${ n } participant": [
+        "${ n } deelnemer",
+        "${ n } deelnemers"
+      ],
       "24 hours per meeting": [
         "24 uur per vergadering"
       ],
@@ -10281,6 +10415,9 @@
       "Appointment scheduling": [
         "Afspraak Plannen"
       ],
+      "Booking pages": [
+        "Boekingspagina's"
+      ],
       "Browser, mobile, and desktop apps": [
         "Browser-, mobiele en desktop-apps"
       ],
@@ -10289,6 +10426,9 @@
       ],
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "End-to-end versleutelde schermdeling en korte chats tijdens telefoongesprekken"
+      ],
+      "Meeting recording": [
+        "Opname van vergadering"
       ],
       "One active meeting at a time": [
         "Eén actieve vergadering tegelijkertijd"
@@ -12100,28 +12240,28 @@
       "terms and conditions": [
         "algemene voorwaarden"
       ],
-      "The coupon is valid for ${ couponRedemptions } renewal.": [
-        "De kortingscode is geldig voor ${ couponRedemptions } verlenging.",
-        "De kortingscode is geldig voor ${ couponRedemptions } verlengingen."
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "De korting is geldig voor ${ renewalsWithCoupon } verlenging.",
+        "De korting is geldig voor ${ renewalsWithCoupon } verlengingen."
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "De speciale kortingsprijs is geldig voor ${ couponRedemptions } maand. Daarna wordt deze automatisch verlengd voor ${ renewPriceStr } per maand. U kunt op elk moment annuleren.",
+        "De speciale kortingsprijs is geldig voor ${ couponRedemptions } maanden. Daarna wordt deze automatisch verlengd voor ${ renewPriceStr } per maand. U kunt op elk moment annuleren."
       ],
       "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
         "De speciale kortingsprijs is geldig voor de eerste ${ subscriptionLength } maand.",
         "De speciale kortingsprijs is geldig voor de eerste ${ subscriptionLength } maanden."
       ],
-      "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "De speciale kortingsprijs is geldig voor de eerste maand. De kortingscode is geldig voor ${ couponRedemptions } vernieuwing. Daarna wordt uw abonnement automatisch vernieuwd voor ${ renewPriceStr } voor 1 maand. U kunt op elk moment annuleren.",
-        "De speciale kortingsprijs is geldig voor de eerste maand. De kortingscode is geldig voor ${ couponRedemptions } vernieuwingen. Daarna wordt uw abonnement automatisch vernieuwd voor ${ renewPriceStr } voor 1 maand. U kunt op elk moment annuleren."
-      ],
       "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "De speciale kortingsprijs is geldig voor de eerste maand. Daarna wordt uw abonnement automatisch vernieuwd voor ${ renewPriceStr } per maand. U kunt op elk moment annuleren."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "De speciaal gereduceerde prijs van ${ priceWithDiscount } is geldig voor ${ couponRedemptions } maand. Daarna wordt deze automatisch verlengd voor ${ renewPriceStr } voor 1 maand. U kunt op elk moment annuleren.",
+        "De speciaal gereduceerde prijs van ${ priceWithDiscount } is geldig voor ${ couponRedemptions } maanden. Daarna wordt deze automatisch verlengd voor ${ renewPriceStr } voor 1 maand. U kunt op elk moment annuleren."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "De speciale kortingsprijs van ${ priceWithDiscount } is geldig voor de eerste ${ subscriptionLength } maand.",
         "De speciale kortingsprijs van ${ priceWithDiscount } is geldig voor de eerste ${ subscriptionLength } maanden."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "De speciale kortingsprijs van ${ priceWithDiscount } is geldig voor de eerste maand. De kortingscode is geldig voor ${ couponRedemptions } vernieuwing. Daarna wordt uw abonnement automatisch vernieuwd voor ${ renewPriceStr } voor 1 maand. U kunt op elk moment annuleren.",
-        "De speciale kortingsprijs van ${ priceWithDiscount } is geldig voor de eerste maand. De kortingscode is geldig voor ${ couponRedemptions } vernieuwingen. Daarna wordt uw abonnement automatisch vernieuwd voor ${ renewPriceStr } voor 1 maand. U kunt op elk moment annuleren."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "De speciale kortingsprijs van ${ priceWithDiscount } is geldig voor de eerste maand. Daarna wordt uw abonnement automatisch vernieuwd voor ${ renewPriceStr } per maand. U kunt op elke moment annuleren"
@@ -12729,6 +12869,9 @@
       ]
     },
     "Search - no results": {
+      "An action is being processed": [
+        "Er wordt een actie verwerkt"
+      ],
       "No messages found": [
         "Geen berichten gevonden"
       ],
@@ -14827,6 +14970,9 @@
       "Deleting contacts": [
         "Contacten aan het verwijderen"
       ],
+      "Desktop": [
+        "Desktop"
+      ],
       "Disable categories?": [
         "Categorieën uitschakelen?"
       ],
@@ -14847,6 +14993,9 @@
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Download ${ DRIVE_APP_NAME } apps"
+      ],
+      "Download the app": [
+        "Download de app"
       ],
       "Edit billing address": [
         "Factuuradres bewerken"
@@ -14929,6 +15078,9 @@
       "Get full access to ${ CALENDAR_APP_NAME }": [
         "Krijg volledige toegang tot ${ CALENDAR_APP_NAME }"
       ],
+      "Get more from your VPN": [
+        "Haal meer uit uw VPN"
+      ],
       "Get the ${ appName[APP_NAME] } apps": [
         "Download de ${ appName[APP_NAME] }-apps"
       ],
@@ -14952,6 +15104,9 @@
       ],
       "High security for your account": [
         "Hoge beveiliging voor uw account"
+      ],
+      "How does it all work?": [
+        "Hoe werkt het?"
       ],
       "How does it work?": [
         "Hoe werkt het?"
@@ -15020,6 +15175,9 @@
       "Load remote content": [
         "Externe inhoud laden"
       ],
+      "Make a secure connection your default": [
+        "Maak een beveiligde verbinding uw standaard"
+      ],
       "Mark all messages as read": [
         "Markeer alle berichten als gelezen"
       ],
@@ -15061,6 +15219,9 @@
       ],
       "Minicalendar": [
         "Mini-agenda"
+      ],
+      "Mobile": [
+        "Mobiel"
       ],
       "More": [
         "Meer"
@@ -15217,6 +15378,9 @@
       ],
       "Priority support:": [
         "Prioriteitsondersteuning:"
+      ],
+      "Private browsing vs VPN": [
+        "Privé browsen versus VPN"
       ],
       "Processing...": [
         "Wordt verwerkt..."
@@ -15480,6 +15644,9 @@
       "Verifying your payment...": [
         "Uw betaling wordt geverifieerd..."
       ],
+      "VPN explained": [
+        "VPN uitgelegd"
+      ],
       "Warning": [
         "Waarschuwing"
       ],
@@ -15502,8 +15669,17 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "Welkom bij ${ BRAND_NAME } voor Business"
       ],
+      "What can a VPN protect you from?": [
+        "Waartegen kan een VPN u beschermen?"
+      ],
+      "What is a VPN?": [
+        "Wat is een VPN?"
+      ],
       "What would you like to import?": [
         "Wat zou u willen importeren?"
+      ],
+      "When is it most important to use a VPN?": [
+        "Wanneer is het erg belangrijk om een VPN te gebruiken?"
       ],
       "You can now create unlimited folders and labels": [
         "U kunt nu onbeperkt mappen en labels maken"
@@ -15511,8 +15687,8 @@
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Uw ${ planName } gratis proefperiode eindigt op ${ textDate }"
       ],
-      "Your ${ planName } subscription has started": [
-        "Uw ${ planName }-abonnement is nu gestart."
+      "Your ${ planTitle } subscription has started": [
+        "Uw ${ planTitle }-abonnement is nu gestart."
       ],
       "Your account is protected": [
         "Uw account is beschermd"

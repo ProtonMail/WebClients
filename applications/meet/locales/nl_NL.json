@@ -1394,6 +1394,12 @@
       "Failed to lock meeting": [
         "Vergrendelen van vergadering is mislukt"
       ],
+      "Failed to request permission for the camera. Please check your system permissions and try again. You might have to enable permissions manually, please refresh the page afterwards": [
+        "Het is niet gelukt om toegang te krijgen tot de camera. Controleer uw systeemrechten en probeer het opnieuw. Mogelijk moet u de rechten handmatig inschakelen. Vernieuw de pagina daarna."
+      ],
+      "Failed to request permission for the microphone. Please check your system permissions and try again. You might have to enable permissions manually, please refresh the page afterwards": [
+        "Het is niet gelukt om toegang te krijgen tot de microfoon. Controleer uw systeemrechten en probeer het opnieuw. Mogelijk moet u de rechten handmatig inschakelen. Vernieuw de pagina daarna."
+      ],
       "Failed to rotate personal meeting link": [
         "Roteren van de persoonlijke vergadering link is mislukt."
       ],
@@ -1861,6 +1867,9 @@
       ],
       "Please enter the passphrase to decrypt and view this meeting": [
         "Voer het wachtwoord in om deze vergadering te ontsleutelen en te bekijken."
+      ],
+      "Poor connection": [
+        "Slechte verbinding"
       ],
       "Recording saved": [
         "Opname opgeslagen"

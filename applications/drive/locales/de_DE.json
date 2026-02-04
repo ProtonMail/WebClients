@@ -138,8 +138,14 @@
       "Cancel download": [
         "Download abbrechen"
       ],
+      "Cancel downloads": [
+        "Downloads abbrechen"
+      ],
       "Cancel subscription": [
         "Abonnement kündigen"
+      ],
+      "Cancel transfers": [
+        "Übertragungen abbrechen"
       ],
       "Cancel trial and pay": [
         "Testversion beenden und bezahlen"
@@ -389,8 +395,8 @@
       "Download ${ DRIVE_APP_NAME } apps": [
         "${ DRIVE_APP_NAME }-Apps herunterladen"
       ],
-      "Download (${ count })": [
-        "Download (${ count })"
+      "Download (${ nbSelected })": [
+        "(${ nbSelected }) herunterladen"
       ],
       "Download anyway": [
         "Trotzdem herunterladen"
@@ -926,17 +932,14 @@
       "Save changes": [
         "Änderungen speichern"
       ],
-      "Save for later": [
-        "Für später speichern"
-      ],
       "Save photos and remove": [
         "Fotos speichern und entfernen"
       ],
       "Scan & Download": [
         "Scannen & herunterladen"
       ],
-      "Scan & Download (${ count })": [
-        "Scannen und herunterladen (${ count })"
+      "Scan & Download (${ nbSelected })": [
+        "(${ nbSelected }) einlesen und herunterladen"
       ],
       "Search": [
         "Suchen"
@@ -1039,9 +1042,6 @@
       ],
       "Sign out of all accounts": [
         "Von allen Konten abmelden"
-      ],
-      "Sign up": [
-        "Registrieren"
       ],
       "Skip verification": [
         "Überprüfung überspringen"
@@ -2934,8 +2934,8 @@
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Um die größtmögliche Sicherheit deines Kontos zu gewährleisten, solltest du eine Wiederherstellungsphrase festlegen."
       ],
-      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
-        "Wenn du über eine CSV- oder VCF-Datei importieren möchtest, stelle sicher, dass die Datei nicht größer ist als ${ MAX_IMPORT_FILE_SIZE_STRING } oder ${ MAX_IMPORT_CONTACTS_STRING } Kontakte. Wenn deine Datei größer ist, teile sie bitte in kleinere Dateien auf. ${ learnMoreLink }."
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Um Daten über eine CSV- und VCF-Datei zu importieren, stelle sicher, dass die Datei nicht mehr als ${ MAX_IMPORT_FILE_SIZE_STRING } oder ${ maxContactString } Kontakte enthält. Wenn deine Datei größer ist, teile sie bitte in kleinere Dateien auf. ${ learnMoreLink }."
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Verwende zum Importieren deiner Kontakte von Google oder Outlook ${ easySwitchLink }."
@@ -3782,6 +3782,9 @@
       "Validation error": [
         "Überprüfungsfehler"
       ],
+      "We cannot retrieve this item": [
+        "Dieses Element konnte nicht abgerufen werden"
+      ],
       "We were not able to load some invitations": [
         "Wir konnten einige deiner Einladungen nicht laden."
       ],
@@ -3903,8 +3906,8 @@
       "An error occurred uploading your file. No file has been selected.": [
         "Beim Hochladen der Datei ist ein Fehler aufgetreten. Es wurde keine Datei ausgewählt."
       ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
-        "Die Datei ${ formattedFilename } enthält mehr als ${ MAX_IMPORT_CONTACTS_STRING } Kontakte."
+      "Your file ${ formattedFilename } contains more than ${ maxContactString } contacts.": [
+        "Die Datei ${ formattedFilename } enthält mehr als ${ maxContactString } Kontakte."
       ],
       "Your file ${ formattedFilename } has no contacts to be imported.": [
         "Die Datei ${ formattedFilename } enthält keine zu importierenden Kontakte."
@@ -5024,9 +5027,9 @@
       "All your changes will be lost.": [
         "Alle deine Änderungen gehen dabei verloren."
       ],
-      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
-        "Alle deine Kontakte werden importiert, bis zu einer Grenze von ${ MAX_CONTACTS_PER_USER }.",
-        "Alle deine Kontakte werden importiert, bis zu einer Grenze von ${ MAX_CONTACTS_PER_USER }."
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "Alle deine Kontakte werden importiert, bis zu einer Obergrenze von ${ maxContact }.",
+        "Alle deine Kontakte werden importiert, bis zu einer Obergrenze von ${ maxContact }."
       ],
       "Already in this folder": [
         "Bereits in diesem Ordner"
@@ -5186,6 +5189,9 @@
       ],
       "Collaborate efficiently while protecting your client and business data from breaches, ransomware, and surveillance.": [
         "Effizient zusammenarbeiten, während du deine Kunden- und Geschäftsdaten vor Datenlecks, Ransomware und Überwachung schützt."
+      ],
+      "Computed hash does not match XAttr": [
+        "Berechneter Hash stimmt nicht mit XAttr überein"
       ],
       "Conflict": [
         "Konflikt"
@@ -6281,6 +6287,12 @@
       ],
       "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
         "Dieser eindeutige Code kann von Webseiten und ISPs (Internetdiensteanbietern) verwendet werden, um deinen Standort und deinen Browserverlauf mit deinem Gerät zu verknüpfen."
+      ],
+      "This will cancel any remaining downloads.": [
+        "Dies bricht alle verbleibenden Downloads ab."
+      ],
+      "This will cancel any remaining uploads and downloads. Cancelled uploads won't be saved in ${ DRIVE_APP_NAME }.": [
+        "Dies bricht alle verbleibenden Uploads und Downloads ab. Abgebrochene Uploads werden nicht in ${ DRIVE_APP_NAME } gespeichert."
       ],
       "This will cancel any remaining uploads. Cancelled files won't be saved in ${ DRIVE_APP_NAME }.": [
         "Das bricht alle verbleibenden Uploads ab. Abgebrochene Dateien werden nicht in ${ DRIVE_APP_NAME } gespeichert."
@@ -9989,28 +10001,28 @@
       "terms and conditions": [
         "Allgemeinen Geschäftsbedingungen"
       ],
-      "The coupon is valid for ${ couponRedemptions } renewal.": [
-        "Der Gutschein ist für ${ couponRedemptions } Verlängerung gültig.",
-        "Der Gutschein ist für ${ couponRedemptions } Verlängerungen gültig."
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "Der Rabatt ist für ${ renewalsWithCoupon } Verlängerung gültig.",
+        "Der Rabatt ist für ${ renewalsWithCoupon } Verlängerungen gültig."
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Der speziell ermäßigte Preis ist für ${ couponRedemptions } Monat gültig. Danach wird er automatisch zum Preis von ${ renewPriceStr } pro Monat verlängert. Du kannst jederzeit kündigen.",
+        "Der speziell ermäßigte Preis ist für ${ couponRedemptions } Monate gültig. Danach wird er automatisch zum Preis von ${ renewPriceStr } pro Monat verlängert. Du kannst jederzeit kündigen."
       ],
       "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
         "Der speziell ermäßigte Preis ist für ${ subscriptionLength } Monat gültig.",
         "Der speziell ermäßigte Preis ist für die ersten ${ subscriptionLength } Monate gültig."
       ],
-      "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "Der speziell ermäßigte Preis gilt für den ersten Monat. Der Gutschein kann für ${ couponRedemptions } Verlängerung eingelöst werden. Danach wird das Abonnement automatisch zum Preis von ${ renewPriceStr } für 1 Monat verlängert. Du kannst jederzeit kündigen.",
-        "Der speziell ermäßigte Preis gilt für den ersten Monat. Der Gutschein kann für ${ couponRedemptions } Verlängerungen eingelöst werden. Danach wird das Abonnement automatisch zum Preis von ${ renewPriceStr } für 1 Monat verlängert. Du kannst jederzeit kündigen."
-      ],
       "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Der speziell ermäßigte Preis ist für den ersten Monat gültig. Danach wird das Abonnement automatisch jeden Monat zum Preis von ${ renewPriceStr } verlängert. Du kannst jederzeit kündigen."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Der speziell ermäßigte Preis von ${ priceWithDiscount } gilt für ${ couponRedemptions } Monat. Danach wird er automatisch zum Preis von ${ renewPriceStr } pro Monat verlängert. Du kannst jederzeit kündigen.",
+        "Der speziell ermäßigte Preis von ${ priceWithDiscount } gilt für ${ couponRedemptions } Monate. Danach wird er automatisch zum Preis von ${ renewPriceStr } pro Monat verlängert. Du kannst jederzeit kündigen."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "Der speziell ermäßigte Preis von ${ priceWithDiscount } ist für ${ subscriptionLength } Monat gültig.",
         "Der speziell ermäßigte Preis von ${ priceWithDiscount } ist für ${ subscriptionLength } Monate gültig."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "Der speziell ermäßigte Preis von ${ priceWithDiscount } gilt für den ersten Monat. Der Gutschein kann für ${ couponRedemptions } Verlängerung eingelöst werden. Danach wird das Abonnement automatisch zum Preis von ${ renewPriceStr } für 1 Monat verlängert. Du kannst jederzeit kündigen.",
-        "Der speziell ermäßigte Preis von ${ priceWithDiscount } gilt für den ersten Monat. Der Gutschein kann für ${ couponRedemptions } Verlängerungen eingelöst werden. Danach wird das Abonnement automatisch zum Preis von ${ renewPriceStr } für 1 Monat verlängert. Du kannst jederzeit kündigen."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Der speziell ermäßigte Preis von ${ priceWithDiscount } ist für den ersten Monat gültig. Danach wird das Abonnement automatisch jeden Monat zum Preis von ${ renewPriceStr } verlängert. Du kannst jederzeit kündigen."
@@ -11970,6 +11982,12 @@
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "${ MAIL_SHORT_APP_NAME }-Abonnement kündigen"
       ],
+      "Cancel all downloads?": [
+        "Alle Downloads abbrechen?"
+      ],
+      "Cancel all transfers?": [
+        "Alle Übertragungen abbrechen?"
+      ],
       "Cancel all uploads?": [
         "Alle Uploads abbrechen?"
       ],
@@ -12846,8 +12864,8 @@
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Deine kostenlose Testversion von ${ planName } endet am ${ textDate }."
       ],
-      "Your ${ planName } subscription has started": [
-        "Dein ${ planName }-Abonnement hat begonnen."
+      "Your ${ planTitle } subscription has started": [
+        "Dein ${ planTitle }-Abonnement hat begonnen"
       ],
       "Your 3 GB bonus": [
         "Dein 3 GB-Bonus"

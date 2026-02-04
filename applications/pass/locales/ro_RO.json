@@ -1417,7 +1417,7 @@
         "${ PASS_APP_NAME } va afișa fișierul favicon prin proxy-ul de imagini anonim ${ BRAND_NAME }."
       ],
       "${ PASS_APP_NAME } will follow your system theme.": [
-        "${ PASS_APP_NAME } va folosi tema ca cea a sistemului."
+        "${ PASS_APP_NAME } va folosi tema ca cea din sistem."
       ],
       "${ PASS_APP_NAME } will generate a forwarding address (also referred to as reverse alias) that you can copy to the clipboard.": [
         "${ PASS_APP_NAME } va genera o adresă de transferare (cunoscută și ca alias invers) pe care o puteți copia în memorie."
@@ -1927,6 +1927,11 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Se mută toate articolele din „${ payload.content.name }”."
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Mutarea unui articol într-un alt seif îi va șterge legăturile web securizate.",
+        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate.",
+        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate."
       ],
       "Moving items": [
         "Se mută articolele."
@@ -2660,7 +2665,7 @@
         "15 secunde"
       ],
       "2 minutes": [
-        "Două minute"
+        "două minute"
       ],
       "24 hours": [
         "24 de ore"

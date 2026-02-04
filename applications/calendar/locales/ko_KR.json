@@ -3074,8 +3074,8 @@
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "최상의 계정 보안 상태를 유지하려면, 복구 문구를 설정하세요."
       ],
-      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
-        "CSV 파일 및 VCF 파일을 통한 불러오기를 위해, 파일이 ${ MAX_IMPORT_FILE_SIZE_STRING } 또는 연락처 ${ MAX_IMPORT_CONTACTS_STRING }개를 초과하지 않도록 않도록 해주세요. 파일이 더 크다면, 더 작은 파일로 나눠주세요. ${ learnMoreLink }."
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "CSV 파일 및 VCF 파일을 통한 불러오기를 위해, 파일이 ${ MAX_IMPORT_FILE_SIZE_STRING } 또는 연락처 ${ maxContactString }개를 초과하지 않도록 않도록 해주세요. 파일이 더 크다면, 더 작은 파일로 나눠주세요. ${ learnMoreLink }."
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Google 및 Outlook에서 콘텐츠를 불러오려면, ${ easySwitchLink }"
@@ -3885,6 +3885,9 @@
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "이 메시지는 현재 브라우저에서 제대로 열 수 없는 URL 링크있을 수 있습니다."
       ],
+      "This offer is not available in your country": [
+        "이 제안은 현재 거주 중인 국가에서 사용할 수 없습니다."
+      ],
       "Trusted keys are not valid for sending": [
         "인증된 키가 전송하기에 유효하지 않음"
       ],
@@ -4017,8 +4020,8 @@
       "An error occurred uploading your file. No file has been selected.": [
         "파일을 업로드하는 동안 오류가 발생했습니다. 파일을 선택하지 않았습니다."
       ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
-        "파일 ${ formattedFilename } 에 연락처가 ${ MAX_IMPORT_CONTACTS_STRING } 개 넘게 포함되어 있습니다."
+      "Your file ${ formattedFilename } contains more than ${ maxContactString } contacts.": [
+        "파일 ${ formattedFilename }이(가) ${ maxContactString }개 초과 연락처를 포함하고 있습니다."
       ],
       "Your file ${ formattedFilename } has no contacts to be imported.": [
         "${ formattedFilename } 파일에 가져올 연락처가 없습니다."
@@ -4737,6 +4740,12 @@
       "Too many recent requests. Please try again in a few moments.": [
         "너무 많은 요청을 시도했습니다. 잠시 후 다시 시도해 주세요."
       ],
+      "Two-factor authentication is enabled in your external account.": [
+        "사용자의 외부 계정에 2단계 인증이 활성화되었습니다."
+      ],
+      "Two-factor authentication is enabled in your external email account.": [
+        "2단계 인증이 사용자의 외부 계정에 활성화되었습니다."
+      ],
       "Use your app password if:": [
         "다음과 같은 경우 앱 비밀번호를 사용하세요:"
       ],
@@ -5075,8 +5084,8 @@
       "All participants will get a cancellation email. Which event would you like to delete?": [
         "모든 참가자가 취소 이메일을 수신받습니다. 어느 이벤트를 삭제하시겠어요?"
       ],
-      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
-        "최대 ${ MAX_CONTACTS_PER_USER }개까지 연락처가 불러오기됩니다."
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "최대 ${ maxContact }개까지 연락처가 불러오기됩니다."
       ],
       "American Express SafeKey logo": [
         "American Express SafeKey 로고"
@@ -7376,6 +7385,9 @@
       "${ n } active meeting at a time": [
         "동시 활성 회의 ${ n }개"
       ],
+      "${ n } participant": [
+        "참여자 ${ n }명"
+      ],
       "24 hours per meeting": [
         "회의 당 24시간"
       ],
@@ -7385,6 +7397,9 @@
       "Appointment scheduling": [
         "일정 예약"
       ],
+      "Booking pages": [
+        "예약 페이지"
+      ],
       "Browser, mobile, and desktop apps": [
         "브라우저, 모바일 및 데스크톱 앱"
       ],
@@ -7393,6 +7408,9 @@
       ],
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "종단간 암호화된 화면 공유 및 임시 통화 중 채팅"
+      ],
+      "Meeting recording": [
+        "회의 녹화"
       ],
       "One active meeting at a time": [
         "동싀 활성 회의 1개"
@@ -9170,23 +9188,23 @@
       "terms and conditions": [
         "이용 약관"
       ],
-      "The coupon is valid for ${ couponRedemptions } renewal.": [
-        "쿠폰이 ${ couponRedemptions }회 갱신까지 유효합니다."
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "해당 할인은 ${ renewalsWithCoupon }회 갱신까지 유효합니다."
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "특별 할인가는 ${ couponRedemptions }개월 동안 유효합니다. 이후 매월 ${ renewPriceStr }에 자동으로 갱신됩니다. 언제든지 취소할 수 있습니다."
       ],
       "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
         "특별 할인 가격은 최초 ${ subscriptionLength }개월에 한해 유효합니다."
       ],
-      "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "특별 할인가가 첫 달에만 적용됩니다. 쿠폰은 ${ couponRedemptions }회 갱신까지 유효합니다. 이후에는 매월 ${ renewPriceStr }(으)로 1개월 동안 자동 갱신됩니다. 언제든지 취소할 수 있습니다."
-      ],
       "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "특별 할인가는 첫 달에만 유효합니다. 이후 매 달 ${ renewPriceStr }에 자동으로 갱신됩니다. 취소는 언제나 가능합니다."
       ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "특별 할인가 ${ priceWithDiscount }은(는) ${ couponRedemptions }개월간 유효합니다. 이후 ${ renewPriceStr }(으)로 1개월간 자동 갱신됩니다. 언제든지 취소할 수 있습니다."
+      ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "특별 할인 가격인 ${ priceWithDiscount }은(는) 최초 ${ subscriptionLength }개월에 한해 유효합니다."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "특별 할인가 ${ priceWithDiscount }는 첫 달만 적용됩니다. 쿠폰은 ${ couponRedemptions }회 갱신까지 유효합니다. 이후에는 매월 ${ renewPriceStr }로 개월 동안 자동 갱신되며, 언제든지 취소할 수 있습니다."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "특별 할인가 ${ priceWithDiscount }는 첫 달에만 유효합니다. 이후 매 달 ${ renewPriceStr }에 자동으로 갱신됩니다. 취소는 언제나 가능합니다."
@@ -11865,9 +11883,6 @@
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "사용자의 ${ planName } 무료 체험이 ${ textDate }에 종료됩니다."
-      ],
-      "Your ${ planName } subscription has started": [
-        "${ planName } 구독이 시작되었습니다"
       ],
       "Your account is protected": [
         "계정이 보호됩니다."
