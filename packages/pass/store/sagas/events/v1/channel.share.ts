@@ -20,6 +20,7 @@ import {
     vaultDeleteSuccess,
 } from '@proton/pass/store/actions';
 import type { ShareItem } from '@proton/pass/store/reducers/shares';
+import { discardDrafts } from '@proton/pass/store/sagas/items/item-drafts';
 import { selectAllShares, selectShare } from '@proton/pass/store/selectors';
 import type { RootSagaOptions } from '@proton/pass/store/types';
 import type { Api, ItemRevision, Maybe, PassEventListResponse, Share, ShareGetResponse } from '@proton/pass/types';
@@ -28,7 +29,6 @@ import { logId, logger } from '@proton/pass/utils/logger';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import noop from '@proton/utils/noop';
 
-import { discardDrafts } from '../items/item-drafts';
 import { eventChannelFactory } from './channel.factory';
 import { channelEvents, channelInitalize } from './channel.worker';
 import type { EventChannel } from './types';
