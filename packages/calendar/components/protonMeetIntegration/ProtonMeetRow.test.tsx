@@ -70,6 +70,7 @@ jest.mock('@proton/meet/hooks/useMeetingUpdates', () => ({
     useMeetingUpdates: jest.fn().mockReturnValue({
         saveMeetingName: jest.fn(),
         saveMeetingPassword: jest.fn(),
+        saveMeetingSchedule: jest.fn(),
     }),
 }));
 
