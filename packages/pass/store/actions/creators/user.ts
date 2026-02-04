@@ -41,3 +41,5 @@ export const getUserAccessFailure = createAction(
 );
 
 export const getUserSettings = requestActionsFactory<string, UserSettings>('user::settings::get')({ key: identity });
+
+export const setUserEventID = createAction('user::userEventID::set', (userEventID: string) => ({ payload: { userEventID } }));
