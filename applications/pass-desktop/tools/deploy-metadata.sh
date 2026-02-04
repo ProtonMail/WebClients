@@ -1,41 +1,28 @@
 #!/usr/bin/env sh
-set -euo
+set -eu
 
-if [ -z "${PASS_DESKTOP_METADATA_REPO}" ]; then
-  echo "PASS_DESKTOP_METADATA_REPO is not set."
-  exit 1
-fi
-
-PLATFORM="$PASS_RELEASE_PLATFORM"
-CHANNEL="$PASS_RELEASE_CHANNEL"
-VERSION=$(grep '"version":' -m 1 applications/pass-desktop/package.json | sed 's/.*"version": "\(.*\)".*/\1/')
 CWD=$(pwd)
-GIT_COMMIT_AUTHOR="${GITLAB_USER_NAME}"
-GIT_COMMIT_EMAIL="${GITLAB_USER_EMAIL}"
-METADATA_REPO=$(mktemp -d)
-BRANCH_NAME="release/${PLATFORM}-${VERSION}-${CHANNEL}"
+PLATFORM="$1"
+BRANCH_NAME="release/${PLATFORM}-${VERSION}-beta"
 
-# Clone existing metadata
-git clone --depth 1 "${PASS_DESKTOP_METADATA_REPO}" "$METADATA_REPO"
+. "${CWD}/applications/pass-desktop/tools/helpers/current-version.sh"
+. "${CWD}/applications/pass-desktop/tools/helpers/git-metadata.sh"
 
-# Configure git
+VERSION=$(get_current_version)
+
+# Setup metadata repository
+METADATA_REPO=$(setup_metadata_repo)
 cd "$METADATA_REPO"
-git config --local user.name "${GIT_COMMIT_AUTHOR}"
-git config --local user.email "${GIT_COMMIT_EMAIL}"
 
 # Update metadata
-python3 "${CWD}/applications/pass-desktop/tools/update-metadata.py" "$PLATFORM" "$CHANNEL"
+python3 "${CWD}/applications/pass-desktop/tools/update-metadata.py" "$PLATFORM"
 
-# Copy over RELEASES
+# Copy over RELEASES, initially to BETA feed, copy to RELEASE will be made manually afterward
 if [ "$PLATFORM" = "windows" ]; then
-  cp "$CWD/applications/pass-desktop/out/make/squirrel.windows/x64/RELEASES" "assets/windows/RELEASES"
+  cp "$CWD/applications/pass-desktop/out/make/squirrel.windows/x64/RELEASES" "assets/windows/beta/RELEASES"
 elif [ "$PLATFORM" = "macos" ]; then
-  cp "$CWD/applications/pass-desktop/out/make/zip/darwin/universal/RELEASES.json" "assets/macos/RELEASES.json"
+  cp "$CWD/applications/pass-desktop/out/make/zip/darwin/universal/RELEASES.json" "assets/macos/beta/RELEASES.json"
 fi
 
-# Deploy metadata
-git checkout -b "$BRANCH_NAME"
-git add .
-git status
-git commit -m "Pass Desktop ${VERSION} (${PLATFORM}, ${CHANNEL})"
-git push -u origin "$BRANCH_NAME" -o merge_request.create -o merge_request.target=main -o merge_request.remove_source_branch
+# Commit and push with MR
+commit_and_push_mr "$BRANCH_NAME" "Pass Desktop ${VERSION} (${PLATFORM}) Beta"

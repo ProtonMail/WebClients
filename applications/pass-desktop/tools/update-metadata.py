@@ -1,14 +1,12 @@
+import hashlib
+import json
 import os
 import sys
-import json
-import hashlib
 from datetime import datetime, timezone
-import sys
 
 script_dir = os.path.dirname(os.path.realpath(__file__))
 project_root = os.path.dirname(script_dir)
 platform = sys.argv[1]
-channel = sys.argv[2]
 
 def sha512sum(filename):
     h = hashlib.sha512()
@@ -34,10 +32,6 @@ def to_release_file(file):
     return release_file
 
 def main():
-    if channel is None:
-        print("PASS_RELEASE_CHANNEL not set")
-        sys.exit(1)
-
     with open(os.path.join(project_root, "package.json")) as f:
         version = json.load(f)["version"]
 
@@ -75,10 +69,10 @@ def main():
         version_json = json.load(f)
 
     new_release = {
-        "CategoryName": channel,
+        "CategoryName": "Beta",
         "Version": version,
         "ReleaseDate": now,
-        "RolloutPercentage": 0.05,
+        "RolloutPercentage": 1, # 100% of beta channel by default
         "File": list(map(to_release_file, files))
     }
 
