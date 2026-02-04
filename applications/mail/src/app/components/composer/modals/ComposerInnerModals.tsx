@@ -1,12 +1,11 @@
 import { c } from 'ttag';
 
-import { Href } from '@proton/atoms/Href/Href';
 import { Button } from '@proton/atoms/Button/Button';
+import { Href } from '@proton/atoms/Href/Href';
 import { Alert, Checkbox, useLocalState } from '@proton/components';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import type { AI_ASSISTANT_ACCESS } from '@proton/shared/lib/interfaces';
 import type { ATTACHMENT_DISPOSITION } from '@proton/shared/lib/mail/constants';
 
 import { NO_REPLY_EMAIL_DONT_SHOW_AGAIN_KEY } from '../../../constants';
@@ -34,7 +33,6 @@ interface Props {
     attachmentsFoundKeyword: string;
     noReplyEmail: string;
     composerID: string;
-    handleToggleAssistant: (aiFlag: AI_ASSISTANT_ACCESS) => void;
 }
 
 const ComposerInnerModals = ({
@@ -52,7 +50,6 @@ const ComposerInnerModals = ({
     attachmentsFoundKeyword,
     noReplyEmail,
     composerID,
-    handleToggleAssistant,
 }: Props) => {
     const [mailSettings] = useMailSettings();
     const boldNoReplyEmail = <strong key="no-reply-email">{noReplyEmail}</strong>;
@@ -160,11 +157,7 @@ const ComposerInnerModals = ({
                 </ComposerInnerModal>
             )}
             {innerModal === ComposerInnerModalStates.AssistantSettings && (
-                <ComposerAssistantSettingModal
-                    onClose={handleCloseInnerModal}
-                    composerID={composerID}
-                    onToggleAssistant={handleToggleAssistant}
-                />
+                <ComposerAssistantSettingModal onClose={handleCloseInnerModal} composerID={composerID} />
             )}
         </>
     );
