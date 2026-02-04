@@ -62,7 +62,7 @@ export const RecordingInProgressModal = () => {
                         className="continue-button rounded-full py-4 px-6 color-invert font-semibold border-none"
                         onClick={() => setIsRecordingInProgressModalOpen(false)}
                         color="norm"
-                    >{c('Action').t`Agree and continue`}</Button>
+                    >{c('Action').t`Continue`}</Button>
                     <Button
                         className="leave-button rounded-full py-4 px-6 color-weak font-semibold border-none"
                         onClick={handleLeave}
