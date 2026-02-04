@@ -30,6 +30,7 @@ import locales from '../../locales';
 import { LumoThemeProvider } from '../../providers/LumoThemeProvider';
 import type { LumoStore } from '../../redux/store';
 import { extraThunkArguments } from '../../redux/thunk';
+import { IndexedDBConnectionMonitor } from '../../ui/components/IndexedDBConnectionMonitor';
 
 const RouterContainerLazy = lazy(
     () =>
@@ -110,6 +111,7 @@ const AuthApp = () => {
                                         <Router history={extraThunkArguments.history}>
                                             <EventManagerProvider eventManager={extraThunkArguments.eventManager}>
                                                 <ErrorBoundary big component={<StandardErrorPage big />}>
+                                                    <IndexedDBConnectionMonitor />
                                                     <StandardPrivateApp>
                                                         <LumoThemeProvider>
                                                             <RouterContainerLazy />
