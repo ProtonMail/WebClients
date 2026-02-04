@@ -2833,9 +2833,6 @@
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Para garantir a maior segurança possível da sua conta, defina uma frase de recuperação."
       ],
-      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
-        "Para importar via ficheiro CSV ou VCF, certifique-se de que o ficheiro não excede ${ MAX_IMPORT_FILE_SIZE_STRING } ou ${ MAX_IMPORT_CONTACTS_STRING } contactos. Se o seu ficheiro for maior, divida-o em ficheiros mais pequenos. ${ learnMoreLink }."
-      ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Para importar os seus contactos do Google e Outlook, ${ easySwitchLink }."
       ],
@@ -3668,9 +3665,6 @@
       ],
       "An error occurred uploading your file. No file has been selected.": [
         "Ocorreu um erro ao enviar o ficheiro. Nenhum ficheiro foi selecionado."
-      ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
-        "O ficheiro ${ formattedFilename } contém mais de ${ MAX_IMPORT_CONTACTS_STRING } contactos."
       ],
       "Your file ${ formattedFilename } has no contacts to be imported.": [
         "O ficheiro ${ formattedFilename } não tem contactos para importar."
@@ -4712,10 +4706,6 @@
       ],
       "All participants will get a cancellation email. Which event would you like to delete?": [
         "Todos os participantes receberão um e-mail de cancelamento. Que evento gostaria de eliminar?"
-      ],
-      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
-        "Todos os seus contactos serão importados até o limite de ${ MAX_CONTACTS_PER_USER }.",
-        "Todos os seus contactos serão importados até o limite de ${ MAX_CONTACTS_PER_USER }."
       ],
       "American Express SafeKey logo": [
         "Logotipo do American Express SafeKey"
@@ -8505,17 +8495,9 @@
       "Taxes": [
         "Impostos"
       ],
-      "The coupon is valid for ${ couponRedemptions } renewal.": [
-        "O cupão é válido para ${ couponRedemptions } renovação.",
-        "O cupão é válido para ${ couponRedemptions } renovações."
-      ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "O preço especialmente descontado de ${ priceWithDiscount } é válido para o primeiro ${ subscriptionLength } mês.",
         "O preço especialmente descontado de ${ priceWithDiscount } é válido para os primeiros ${ subscriptionLength } meses."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "O preço com desconto especial de ${ priceWithDiscount } é válido para o primeiro mês. O cupão é válido para ${ couponRedemptions } renovação. Após esse período, será renovado automaticamente por ${ renewPriceStr } por 1 mês. Pode cancelar a qualquer momento.",
-        "O preço com desconto especial de ${ priceWithDiscount } é válido para o primeiro mês. O cupão é válido para ${ couponRedemptions } renovações. Após esse período, será renovado automaticamente por ${ renewPriceStr } por 1 mês. Pode cancelar a qualquer momento."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "O preço com desconto especial de ${ priceWithDiscount } é válido no primeiro mês. Após este período, será automaticamente renovado a cada mês por ${ renewPriceStr } . Pode cancelar a qualquer momento."
@@ -10976,9 +10958,6 @@
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "A sua avaliação gratuita ${ planName } finaliza em ${ textDate }."
-      ],
-      "Your ${ planName } subscription has started": [
-        "A sua subscrição do ${ planName } começou."
       ],
       "Your account is protected": [
         "A sua conta está protegida"

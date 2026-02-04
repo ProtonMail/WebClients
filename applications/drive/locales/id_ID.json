@@ -298,7 +298,7 @@
         "Buat kata sandi baru"
       ],
       "Create new text file": [
-        "Buat berkas teks baru"
+        "Buat file teks baru"
       ],
       "Current plan": [
         "Paket saat ini"
@@ -383,9 +383,6 @@
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Unduh aplikasi ${ DRIVE_APP_NAME }"
-      ],
-      "Download (${ count })": [
-        "Unduh (${ count })"
       ],
       "Download anyway": [
         "Tetap unduh"
@@ -709,7 +706,7 @@
         "Beri nama album Anda"
       ],
       "New": [
-        "Berkas/folder baru"
+        "File/folder baru"
       ],
       "New album": [
         "Album baru"
@@ -844,7 +841,7 @@
         "Ubah nama album"
       ],
       "Replace file": [
-        "Ubah berkas"
+        "Ganti file"
       ],
       "Report": [
         "Laporkan"
@@ -927,9 +924,6 @@
       "Scan & Download": [
         "Pindai & Unduh"
       ],
-      "Scan & Download (${ count })": [
-        "Pindai & Unduh (${ count })"
-      ],
       "Search": [
         "Cari"
       ],
@@ -991,7 +985,7 @@
         "Bagikan album"
       ],
       "Share file": [
-        "Bagikan berkas"
+        "Bagikan file"
       ],
       "Share item": [
         "Bagikan item"
@@ -1031,9 +1025,6 @@
       ],
       "Sign out of all accounts": [
         "Keluar dari seluruh akun"
-      ],
-      "Sign up": [
-        "Daftar"
       ],
       "Skip verification": [
         "Lewati verifikasi"
@@ -1117,7 +1108,7 @@
         "Berhenti percayai"
       ],
       "Update recovery file": [
-        "Perbarui berkas pemulihan"
+        "Perbarui file pemulihan"
       ],
       "Update recovery phrase": [
         "Perbarui frasa pemulihan"
@@ -1135,16 +1126,16 @@
         "Unggah"
       ],
       "Upload and share files": [
-        "Unggah dan bagikan berkas"
+        "Unggah dan bagikan file"
       ],
       "Upload anyway": [
         "Tetap unggah"
       ],
       "Upload file": [
-        "Unggah berkas"
+        "Unggah file"
       ],
       "Upload files": [
-        "Unggah berkas"
+        "Unggah file"
       ],
       "Upload folder": [
         "Unggah folder"
@@ -1207,7 +1198,7 @@
         "Windows 11/10 (x64)"
       ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
-        "Anda tidak dapat mengirim berkas vCard ke lebih dari ${ maxAttachments } kontak"
+        "Anda tidak dapat mengirim file vCard ke lebih dari ${ maxAttachments } kontak"
       ],
       "Your 3 GB bonus": [
         "Bonus 3 GB Anda"
@@ -1315,7 +1306,7 @@
     },
     "b2b_trials_2025_Info": {
       "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
-        "Setelah uji coba ini berakhir pada ${ formattedDate1 }, paket Anda akan menjadi langganan berbayar yang diperbarui secara otomatis setiap ${ renewCycle } bulan. Anda tidak akan ditagih apabila Anda membatalkan sebelum ${ formattedDate2 }."
+        "Setelah masa uji coba berakhir pada ${ formattedDate1 }, langganan akan menjadi berbayar dan diperpanjang otomatis setiap ${ renewCycle } bulan. Anda tidak akan dikenakan biaya jika membatalkan sebelum ${ formattedDate2 }."
       ],
       "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
         "Setelah masa uji coba ini berakhir pada ${ formattedDate1 }, paket Anda akan menjadi langganan berbayar yang diperbarui secara otomatis secara bulanan. Anda tidak akan ditagih apabila Anda membatalkan sebelum ${ formattedDate2 }."
@@ -1410,13 +1401,13 @@
         "Peringatan kesehatan kata sandi"
       ],
       "Recover previous file versions": [
-        "Pulihkan versi berkas sebelumnya"
+        "Pulihkan versi file sebelumnya"
       ],
       "Unlimited folders, labels and filters": [
         "Tanpa batasan jumlah folder, label, dan filter"
       ],
       "Unlimited logins, credit cards, hide-my-email aliases and more": [
-        "Tanpa batasan jumlah entri masuk, kartu kredit, alias hide-my-email, dan masih banyak lagi"
+        "Tanpa batasan jumlah login, kartu kredit, alias hide-my-email, dan masih banyak lagi"
       ],
       "Use your own email domain": [
         "Gunakan domain email milik Anda sendiri"
@@ -1435,7 +1426,7 @@
         "Akses konten yang diblokir dan jelajahi internet secara privat. Meliputi 8500+ server di 110+ negara, 10 perangkat, streaming berkecepatan tinggi, pemblokir iklan, perlindungan malware, VPN Accelerator, dan masih banyak lagi."
       ],
       "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
-        "Entri masuk yang aman pada seluruh perangkat Anda. Meliputi alias hide-my-email tanpa batasan jumlah, pembagian entri, 2FA yang terintegrasi, ${ DARK_WEB_MONITORING_NAME }, dan masih banyak lagi."
+        "Login yang aman pada seluruh perangkat Anda. Meliputi alias hide-my-email tanpa batasan jumlah, pembagian entri, 2FA yang terintegrasi, ${ DARK_WEB_MONITORING_NAME }, dan masih banyak lagi."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Amankan email dan jadwal Anda dengan enkripsi end-to-end. Meliputi ${ addresses } alamat email, dukungan untuk domain email khusus, asisten penulisan ${ BRAND_NAME } Scribe, alias hide-my-email tanpa batasan jumlah, dan masih banyak lagi."
@@ -1450,7 +1441,7 @@
         "Amankan email dan jadwal Anda dengan enkripsi end-to-end. Meliputi 15 alamat email, dukungan untuk domain email khusus, alias hide-my-email tanpa batasan jumlah, dan masih banyak lagi."
       ],
       "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
-        "Amankan berkas Anda dengan penyimpanan cloud yang terenkripsi. Meliputi penyunting dokumen online, pencadangan foto, riwayat versi, pembagian berkas yang terenkripsi, dan masih banyak lagi."
+        "Amankan file Anda dengan penyimpanan cloud yang terenkripsi. Meliputi editor dokumen daring, pencadangan foto, riwayat versi, pembagian file yang terenkripsi, dan masih banyak lagi."
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Ruang penyimpanan terbagi antar seluruh layanan ${ BRAND_NAME }."
@@ -1679,7 +1670,7 @@
         "Batalkan dan turunkan"
       ],
       "Cloud storage and sharing for large files": [
-        "Penyimpanan awan dan pembagian untuk berkas besar"
+        "Penyimpanan cloud dan pembagian untuk file besar"
       ],
       "Encrypted cloud storage for photos and documents": [
         "Ruang penyimpanan cloud terenkripsi untuk foto dan dokumen"
@@ -1748,7 +1739,7 @@
         "Riwayat percakapan utuh dengan fitur pencarian"
       ],
       "Large file upload support": [
-        "Dukungan untuk unggahan berkas besar"
+        "Dukungan untuk unggahan file besar"
       ],
       "Limited daily chats": [
         "Percakapan harian dalam jumlah yang terbatas"
@@ -1760,16 +1751,16 @@
         "Kebijakan tanpa log yang ketat"
       ],
       "Unlimited daily chats": [
-        "Tanpa batasan jumlah percakapan harian"
+        "Obrolan harian tanpa batas"
       ],
       "Unlimited favorites for quick access": [
         "Tanpa batasan jumlah favorit untuk akses yang cepat"
       ],
       "Upload and query multiple large files": [
-        "Unggah dan kuerikan beberapa berkas besar sekaligus"
+        "Unggah dan telusuri beberapa file berukuran besar"
       ],
       "Upload and query small files": [
-        "Unggah dan kuerikan berkas kecil"
+        "Unggah dan kuerikan file kecil"
       ],
       "Web search access": [
         "Akses pencarian web"
@@ -2814,7 +2805,7 @@
     },
     "Default signing preference": {
       "Use global default (${ globalDefaultText })": [
-        "Gunakan nilai bawaan global (${ globalDefaultText })"
+        "Gunakan pengaturan bawaan global (${ globalDefaultText })"
       ]
     },
     "Delinquent modal title": {
@@ -2833,7 +2824,7 @@
         "2FA memberikan lapisan keamanan tambahan, yang mencegah akses masuk yang tidak diinginkan."
       ],
       "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
-        "Tambahkan folder dan berkas ke ${ DRIVE_APP_NAME } dan undang anggota tim untuk meninjau atau menyunting berkas ini."
+        "Tambahkan folder dan file ke ${ DRIVE_APP_NAME } dan undang anggota tim untuk meninjau atau mengedit file ini."
       ],
       "Also included": [
         "Turut meliputi"
@@ -2851,7 +2842,7 @@
         "Buat grup yang dapat Anda kirimi email dengan satu alamat."
       ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
-        "Mendekripsi kontak… Proses ini dapat memakan waktu hingga beberapa menit. Setelah selesai, Anda akan dapat mengunduh berkas yang berisi seluruh kontak yang Anda ekspor."
+        "Mendekripsi kontak… Proses ini dapat memakan waktu hingga beberapa menit. Setelah selesai, Anda akan dapat mengunduh file yang berisi seluruh kontak yang Anda ekspor."
       ],
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Menghapus kontak... Proses ini dapat memakan waktu hingga beberapa menit. Setelah proses ini selesai, Anda dapat menutup jendela ini."
@@ -2860,7 +2851,7 @@
         "Akses email dan kalender Anda pada desktop dan perangkat seluler dengan mudah."
       ],
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
-        "Sinkronkan berkas ke layanan cloud dari desktop Anda dengan mudah dan akses berkas ini dari perangkat seluler Anda."
+        "Sinkronkan file ke layanan cloud dari desktop Anda dengan mudah dan akses file dari perangkat seluler Anda."
       ],
       "Encourage the use of two-factor authentication in your organization for extra security.": [
         "Anjurkan penggunaan autentikasi dua faktor di dalam organisasi Anda untuk keamanan yang lebih."
@@ -2910,9 +2901,6 @@
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Untuk memastikan keamanan yang setinggi mungkin pada akun Anda, tentukanlah frasa pemulihan."
       ],
-      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
-        "Untuk mengimpor melalui berkas CSV dan VCF, pastikan berkas Anda tidak melebihi batas ukuran ${ MAX_IMPORT_FILE_SIZE_STRING } atau batas jumlah ${ MAX_IMPORT_CONTACTS_STRING } kontak. Apabila berkas Anda melebihi batas ini, silakan pisahkan berkas Anda ke beberapa berkas yang lebih kecil. ${ learnMoreLink }"
-      ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Untuk mengimpor kontak Anda dari Google atau Outlook, ${ easySwitchLink }."
       ],
@@ -2920,7 +2908,7 @@
         "Untuk memulai, beri nama organisasi Anda."
       ],
       "Upgrade to ${ planName } to keep sharing files with edit access": [
-        "Tingkatkan ke ${ planName } untuk tetap dapat membagikan berkas dengan akses sunting"
+        "Tingkatkan ke ${ planName } untuk tetap dapat membagikan file dengan akses pengeditan"
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Seret-lepas untuk mengurutkan prioritas penggabungan kontak. Tandai kontak yang ingin digabung."
@@ -2932,7 +2920,7 @@
         "Dengan grup kontak, Anda dapat mengirim email ke seluruh anggota grup hanya dengan sekali klik."
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
-        "Anda dapat mengimpor acara dalam format iCal (berkas ICS). Berkas Anda harus berukuran maksimal ${ MAX_IMPORT_FILE_SIZE_STRING } dan mengandung paling banyak ${ MAX_IMPORT_EVENTS_STRING } acara. Apabila berkas Anda melebihi persyaratan ini, mohon terlebih dahulu pisahkan menjadi berkas yang lebih kecil."
+        "Anda dapat mengimpor acara dalam format iCal (berkas ICS). File Anda harus berukuran maksimal ${ MAX_IMPORT_FILE_SIZE_STRING } dan mengandung maksimal ${ MAX_IMPORT_EVENTS_STRING } acara. Apabila file Anda melebihi persyaratan ini, silakan bagi menjadi file yang lebih kecil."
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Anda dapat menandai kontak-kontak yang tidak ingin digabung atau disimpan. Penghapusan akan dilakukan setelah Anda menekan tombol gabung"
@@ -2957,7 +2945,7 @@
         "Di samping itu, kami telah menyamakan isi kolom CSV dengan isi kolom vCard milik Anda secara otomatis. Anda dapat memeriksa dan mengubah isi kedua kolom tersebut secara manual."
       ],
       "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
-        "Kami menemukan baris-baris berikut ini di berkas CSV Anda. Pilih baris yang ingin Anda impor."
+        "Kami menemukan kolom berikut ini di file CSV Anda. Pilih kolom yang ingin Anda impor."
       ]
     },
     "Docs Info": {
@@ -3074,7 +3062,7 @@
     },
     "Duo offer: Link": {
       "Get 4x more storage": [
-        "Dapatkan ruang penyimpanan 4x lebih besar"
+        "Dapatkan penyimpanan 4x lebih besar"
       ],
       "Share your plan": [
         "Bagikan paket Anda"
@@ -3085,7 +3073,7 @@
         "Dapatkan ruang penyimpanan 4x lebih besar dengan ${ BRAND_NAME } Duo"
       ],
       "Share your plan benefits with ${ BRAND_NAME } Duo": [
-        "Bagikan keutamaan paket Anda dengan ${ BRAND_NAME } Duo"
+        "Bagikan manfaat paket Anda dengan ${ BRAND_NAME } Duo."
       ]
     },
     "Edit billing address form note": {
@@ -3107,7 +3095,7 @@
         "DESKRIPSI:"
       ],
       "Here's what changed:": [
-        "Berikut apa-apa saja yang telah berubah:"
+        "Berikut yang berubah:"
       ],
       "LOCATION:": [
         "LOKASI"
@@ -3116,10 +3104,10 @@
         "CATATAN:"
       ],
       "This event occurrence was canceled.": [
-        "Keberlangsungan acara ini telah dibatalkan."
+        "Kejadian acara ini telah dibatalkan."
       ],
       "This event occurrence was updated.": [
-        "Keberlangsungan acara ini telah diperbarui."
+        "Kejadian acara ini telah diperbarui."
       ],
       "This event was updated.": [
         "Acara ini telah diperbarui."
@@ -3183,7 +3171,7 @@
     },
     "emergency_access": {
       "Trusted contact": [
-        "Kontak terpercaya"
+        "Kontak tepercaya"
       ]
     },
     "Error": {
@@ -3326,7 +3314,7 @@
         "Terjadi kesalahan mendekripsi komputer"
       ],
       "Error reading file": [
-        "Kesalahan membaca berkas"
+        "Kesalahan membaca file"
       ],
       "Expected structure attached": [
         "Struktur yang diharapkan terlampir"
@@ -3386,16 +3374,16 @@
         "Gagal memperbarui node berbagi publik"
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
-        "Berkas \"${ item.name }\" tidak dapat diunggah karena terdapat kesalahan \"${ error }\""
+        "File \"${ item.name }\" tidak dapat diunggah karena terdapat kesalahan \"${ error }\""
       ],
       "File \"${ name }\" is already downloading": [
-        "Proses unduhan berkas \"${ name }\" sedang berlangsung"
+        "Proses unduhan file \"${ name }\" sedang berlangsung"
       ],
       "File cannot be merged with folder": [
         "Berkas tidak dapat digabungkan dengan folder"
       ],
       "File selection is already downloading": [
-        "Proses unduhan berkas yang dipilih sedang berlangsung"
+        "File yang dipilih sudah dalam proses pengunduhan"
       ],
       "First name is too long": [
         "Nama depan terlalu panjang"
@@ -3440,7 +3428,7 @@
         "IBAN tidak valid"
       ],
       "Invalid JSON file": [
-        "Berkas JSON tidak valid"
+        "File JSON tidak valid"
       ],
       "Invalid name": [
         "Nama tidak valid"
@@ -3449,7 +3437,7 @@
         "Kode pos tidak valid"
       ],
       "Invalid public key file": [
-        "Berkas kunci publik tidak valid"
+        "File kunci publik tidak valid"
       ],
       "Invalid verification code": [
         "Kode verifikasi tidak valid"
@@ -3485,10 +3473,10 @@
         "Tidak ada kontak yang dapat diimpor"
       ],
       "No emails found to import - the account does not have an inbox": [
-        "Tidak ada email yang ditemukan untuk dapat diimpor - akun ini tidak memiliki kotak masuk"
+        "Tidak ada email yang ditemukan untuk diimpor - akun ini tidak memiliki kotak masuk"
       ],
       "No file to upload": [
-        "Tidak ada berkas untuk diunggah"
+        "Tidak ada file untuk diunggah"
       ],
       "No valid address found": [
         "Tidak ada alamat valid yang ditemukan"
@@ -3596,7 +3584,7 @@
         "Sebagian kontak tidak dapat dihapus"
       ],
       "Some files were ignored because they are not supported in Photos": [
-        "Sebagian berkas tidak diproses karena tidak diduking oleh Photos"
+        "Beberapa file tidak diproses karena tidak didukung oleh Photos"
       ],
       "Some groups could not be deleted": [
         "Sebagian grup tidak dapat dihapus"
@@ -3665,19 +3653,19 @@
         "Nominal saldo minimal yang dapat ditambahkan adalah ${ price }"
       ],
       "The new revision of original file is not uploaded yet, please try again later": [
-        "Revisi baru berkas asli belum diunggah. Silakan coba lagi nanti"
+        "Revisi baru file asli belum diunggah. Silakan coba lagi nanti"
       ],
       "The original file has missing active revision": [
-        "Berkas asli memiliki revisi aktif yang hilang"
+        "File asli memiliki revisi aktif yang hilang"
       ],
       "The original file has missing hash key": [
-        "Terdapat kunci hash yang hilang pada berkas asli"
+        "Terdapat kunci hash yang hilang pada file asli"
       ],
       "The original file has missing session key": [
-        "Terdapat kunci sesi yang hilang pada berkas asli"
+        "Terdapat kunci sesi yang hilang pada file asli"
       ],
       "The original file is not uploaded yet, please try again later": [
-        "Berkas asli belum diunggah. Silakan coba lagi nanti"
+        "File asli belum diunggah. Silakan coba lagi nanti"
       ],
       "The original folder not found": [
         "Folder asli tidak ditemukan"
@@ -3802,7 +3790,7 @@
     },
     "error": {
       "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
-        "Silakan masuk dengan alamat Gmail yang telah meneruskan pesan ke ${ MAIL_APP_NAME }"
+        "Silakan masuk dengan alamat Gmail yang sudah meneruskan pesan ke ${ MAIL_APP_NAME }"
       ],
       "Please sign in with the same Gmail address you originally connected": [
         "Silakan masuk dengan alamat Gmail yang sama dengan yang Anda gunakan pertama kali untuk terhubung"
@@ -3810,34 +3798,34 @@
     },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
-        "Terdapat kesalahan dalam membaca berkas \"${ formattedFilename }\" milik Anda. Format berkas tidak sesuai."
+        "Terdapat kesalahan dalam membaca file \"${ formattedFilename }\" milik Anda. Format file tidak sesuai."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
-        "Terdapat kesalahan pada saat mengunggah berkas ${ formattedFilename }. Ukuran berkas tidak boleh melebihi ${ MAX_IMPORT_FILE_SIZE_STRING }."
+        "Terdapat kesalahan pada saat mengunggah file ${ formattedFilename }. Ukuran berkas tidak boleh melebihi ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Only ICS file formats are allowed.": [
-        "Terdapat kesalahan pada saat mengunggah berkas ${ formattedFilename }. Hanya format berkas ICS yang diizinkan."
+        "Terdapat kesalahan pada saat mengunggah file ${ formattedFilename }. Hanya format file ICS yang diizinkan."
       ],
       "An error occurred uploading your file. No file has been selected.": [
-        "Terdapat kesalahan pada saat mengunggah berkas. Tidak ada berkas yang dipilih."
+        "Terdapat kesalahan pada saat mengunggah file. Tidak ada file yang dipilih."
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "Terdapat kesalahan yang tidak terduga. Proses impor harus diulang."
       ],
       "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } event.": [
-        "Berkas ${ formattedFilename } milik Anda mengandung lebih dari ${ MAX_IMPORT_EVENTS } acara."
+        "File ${ formattedFilename } milik Anda mengandung lebih dari ${ MAX_IMPORT_EVENTS } acara."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
-        "Berkas ${ formattedFilename } tidak dapat diimpor karena mengandung metode yang tidak valid."
+        "File ${ formattedFilename } tidak dapat diimpor karena mengandung metode yang tidak valid."
       ],
       "Your file ${ formattedFilename } has no events to be imported.": [
-        "Berkas ${ formattedFilename } tidak memiliki acara untuk diimpor."
+        "File ${ formattedFilename } tidak memiliki acara untuk diimpor."
       ],
       "Your file ${ formattedFilename } is empty.": [
-        "Berkas ${ formattedFilename } Anda kosong."
+        "File ${ formattedFilename } Anda kosong."
       ],
       "Your file ${ formattedFilename } is not a calendar.": [
-        "Berkas ${ formattedFilename } bukan merupakan kalender."
+        "File ${ formattedFilename } bukan kalender."
       ]
     },
     "Error importing contact": {
@@ -3853,22 +3841,19 @@
     },
     "Error importing contacts": {
       "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
-        "Terdapat kesalahan pada saat membaca berkas \"${ formattedFilename }\" milik Anda. Format berkas tidak sesuai."
+        "Terdapat kesalahan pada saat membaca file \"${ formattedFilename }\" milik Anda. Format file tidak sesuai."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
-        "Terdapat kesalahan pada saat mengunggah berkas ${ formattedFilename }. Ukuran berkas tidak boleh melebihi ${ MAX_IMPORT_FILE_SIZE_STRING }."
+        "Terdapat kesalahan pada saat mengunggah file ${ formattedFilename }. Ukuran file tidak boleh melebihi ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
       "An error occurred uploading your file ${ formattedFilename }. No .csv or .vcf file selected": [
-        "Terdapat kesalahan pada saat mengunggah berkas ${ formattedFilename } milik Anda. Tidak ada berkas .csv atau .vcf yang dipilih"
+        "Terdapat kesalahan pada saat mengunggah file ${ formattedFilename } milik Anda. Tidak ada file .csv atau .vcf yang dipilih"
       ],
       "An error occurred uploading your file. No file has been selected.": [
-        "Terdapat kesalahan pada saat mengunggah berkas. Tidak ada berkas yang dipilih."
-      ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
-        "Berkas ${ formattedFilename } Anda berisi lebih dari ${ MAX_IMPORT_CONTACTS_STRING } kontak."
+        "Terdapat kesalahan pada saat mengunggah file. Tidak ada file yang dipilih."
       ],
       "Your file ${ formattedFilename } has no contacts to be imported.": [
-        "Berkas ${ formattedFilename } Anda tidak memiliki kontak untuk diimpor."
+        "File ${ formattedFilename } Anda tidak memiliki kontak untuk diimpor."
       ],
       "Your file ${ formattedFilename } is empty.": [
         "Berkas ${ formattedFilename } Anda kosong."
@@ -4177,12 +4162,12 @@
         "Meliputi dukungan untuk 3 domain email khusus, 90 alamat email, alias hide-my-email tanpa batasan jumlah, pembagian kalender, dan masih banyak lagi."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
-        "Amankan berkas Anda dengan penyimpanan cloud yang terenkripsi. Meliputi sinkronisasi otomatis, pembagian berkas terenkripsi, dan masih banyak lagi."
+        "Amankan file Anda dengan penyimpanan cloud yang terenkripsi. Meliputi sinkronisasi otomatis, pembagian file terenkripsi, dan masih banyak lagi."
       ]
     },
     "Feature": {
       "Encrypted cloud storage for files, photos and documents": [
-        "Ruang penyimpanan cloud terenkripsi untuk berkas, foto, dan dokumen"
+        "Penyimpanan cloud terenkripsi untuk berkas, foto, dan dokumen"
       ],
       "More premium features": [
         "Fitur premium lainnya"
@@ -4398,7 +4383,7 @@
         "Hanya skala kalender Gregorian yang diizinkan"
       ],
       "Recurring event has no occurrences": [
-        "Acara yang berulang tidak memiiliki keberlangsungan"
+        "Acara berulang tidak memiliki kejadian"
       ],
       "Recurring rule not supported": [
         "Aturan berulang tidak didukung"
@@ -4452,13 +4437,13 @@
         "Undangan yang diimpor akan muncul pada ${ CALENDAR_APP_NAME } sebagai acara sederhana tanpa rincian seputar penyelenggara dan peserta. Untuk memperoleh pembaruan seputar acara dan melihat daftar peserta, mintalah penyelenggara acara untuk mengundang Anda melalui alamat email ${ BRAND_NAME } Anda."
       ],
       "This file contains an event invitation:": [
-        "Berkas ini mengandung undangan acara:"
+        "File ini mengandung undangan acara:"
       ],
       "This file contains an invitation response:": [
-        "Berkas ini mengandung jawaban undangan:"
+        "File ini mengandung jawaban undangan:"
       ],
       "This file contains some data that we cannot import:": [
-        "Sebagian data yang terkandung dalam berkas ini tidak dapat kami impor:"
+        "Sebagian data yang terkandung dalam file ini tidak dapat kami impor:"
       ]
     },
     "Import contact": {
@@ -4583,16 +4568,16 @@
         "Pilih ${ boldExportCSV }."
       ],
       "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
-        "Untuk mengimpor kalender ke ${ BRAND_NAME }, Anda akan memerlukan ${ knowledgeBaseLink }. Unduh berkas ini dari Yahoo dengan mengikuti 3 langkah mudah berikut:"
+        "Untuk mengimpor kalender ke ${ BRAND_NAME }, Anda akan memerlukan ${ knowledgeBaseLink }. Unduh file ini dari Yahoo dengan mengikuti 3 langkah mudah berikut:"
       ],
       "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download this before you start the import process.": [
-        "Untuk mengimpor kalender ke ${ BRAND_NAME }, Anda akan memerlukan ${ knowledgeBaseLink }. Harap unduh berkas ini sebelum memulai proses impor."
+        "Untuk mengimpor kalender ke ${ BRAND_NAME }, Anda akan memerlukan ${ knowledgeBaseLink }. Harap unduh file ini sebelum memulai proses impor."
       ],
       "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
-        "Untuk mengimpor kontak ke ${ BRAND_NAME }, Anda akan memerlukan ${ knowledgeBaseLink }. Unduh berkas ini dari Yahoo dengan mengikuti 3 langkah mudah berikut:"
+        "Untuk mengimpor kontak ke ${ BRAND_NAME }, Anda akan memerlukan ${ knowledgeBaseLink }. Unduh file ini dari Yahoo dengan mengikuti 3 langkah mudah berikut:"
       ],
       "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
-        "Untuk mengimpor kontak ke ${ BRAND_NAME }, Anda akan memerlukan ${ knowledgeBaseLink }. Harap unduh berkas ini sebelum memulai proses impor."
+        "Untuk mengimpor kontak ke ${ BRAND_NAME }, Anda akan memerlukan ${ knowledgeBaseLink }. Harap unduh file ini sebelum memulai proses impor."
       ],
       "To import emails to ${ BRAND_NAME }, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
         "Untuk mengimpor email ke ${ BRAND_NAME }, Anda akan memerlukan ${ appPasswordLink } dari Yahoo. Anda dapat memperolehnya dengan mengikuti langkah-langkah berikut:"
@@ -4643,7 +4628,7 @@
         "Arahkan kursor Anda ke kalender yang hendak Anda impor dan buka menu dropdown."
       ],
       "Select ${ boldExport } to export the calendar as an ICS file.": [
-        "Pilih ${ boldExport } untuk mengekspor kalender sebagai berkas ICS."
+        "Pilih ${ boldExport } untuk mengekspor kalender sebagai file ICS."
       ]
     },
     "Import provider": {
@@ -4709,7 +4694,7 @@
         "${ CALENDAR_APP_NAME } memerlukan alamat ${ BRAND_NAME } untuk sinkronisasi dan pengenkripsian acara yang aman. ${ claimAddressButton }"
       ],
       "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. Claim your free ${ MAIL_APP_NAME } address now.": [
-        "${ CALENDAR_APP_NAME } memerlukan alamat ${ BRAND_NAME } untuk sinkronisasi dan pengenkripsian acara yang aman. Klaim alamat ${ MAIL_APP_NAME } gratis Anda sekarang juga."
+        "${ CALENDAR_APP_NAME } memerlukan alamat ${ BRAND_NAME } untuk sinkronisasi dan enkripsi acara yang aman. Klaim alamat ${ MAIL_APP_NAME } gratis Anda sekarang juga."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } kalender baru"
@@ -4739,7 +4724,7 @@
         "${ contactsLength } kontak"
       ],
       "${ DOCS_APP_NAME } and ${ SHEETS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
-        "Berkas ${ DOCS_APP_NAME } dan ${ SHEETS_APP_NAME } tidak dapat diunduh secara langsung dan tidak akan disertakan pada unduhan ini. Anda dapat mengunduh berkas lainnya dengan mengeklik 'Lanjut unduh'."
+        "File ${ DOCS_APP_NAME } dan ${ SHEETS_APP_NAME } tidak dapat diunduh secara langsung dan tidak akan disertakan pada unduhan ini. Anda dapat mengunduh file lainnya dengan mengeklik 'Lanjut unduh'."
       ],
       "${ doneCount } finished": [
         "${ doneCount } selesai diproses"
@@ -4871,7 +4856,7 @@
         "**Langkah 3:** Dapatkan saldo senilai ${ referrerRewardAmount } untuk setiap teman yang berlangganan ke salah satu paket."
       ],
       "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
-        "**Langkah 3:** Dapatkan saldo senilai ${ referrerRewardAmount } untuk setiap orang yang berlangganan ke salah satu paket."
+        "**Langkah 3:** Dapatkan kredit senilai ${ referrerRewardAmount } untuk setiap orang yang berlangganan ke salah satu paket."
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } ruang penyimpanan tambahan"
@@ -4883,7 +4868,7 @@
         "Jaminan 30 hari uang kembali."
       ],
       "A number will be added to the filename": [
-        "Nomor akan ditambahkan ke nama berkas"
+        "Nomor akan ditambahkan ke nama file"
       ],
       "A number will be added to the folder name": [
         "Nomor akan ditambahkan ke nama folder"
@@ -4932,9 +4917,6 @@
       ],
       "All your changes will be lost.": [
         "Seluruh perubahan yang Anda buat akan hilang."
-      ],
-      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
-        "Seluruh kontak Anda akan diimpor hingga batas jumlah ${ MAX_CONTACTS_PER_USER } kontak"
       ],
       "Already in your library": [
         "Sudah dalam pustaka Anda"
@@ -5015,7 +4997,7 @@
         "Saldo dari langganan terakhir Anda"
       ],
       "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access or decrypt your files for you. To unlock your drive after a password reset, you must have one of the following:": [
-        "Karena ${ DRIVE_APP_NAME } terenkripsi secara end-to-end, kami tidak dapat mengakses\natau mendekripsi data Anda. Untuk kembali membuka kunci drive setelah pengaturan ulang kata sandi, Anda harus memiliki setidaknya salah satu hal berikut:"
+        "Karena ${ DRIVE_APP_NAME } dienkripsi end-to-end, kami tidak dapat mengakses atau mendekripsi file Anda untuk Anda. Untuk membuka drive Anda setelah reset kata sandi, Anda harus memiliki salah satu dari berikut ini:"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Sebelum meminta kode verifikasi baru, periksa folder spam Anda dan pastikan ${ strong } merupakan alamat email yang benar."
@@ -5072,7 +5054,7 @@
         "Hapus data pencarian terenkripsi"
       ],
       "Clearing browser data will clear the search index on this device. All files would need to be re-indexed again while using the search functionality.": [
-        "Menghapus data browser akan turut mengosongkan indeks pencarian yang ada pada perangkat ini. Seluruh berkas yang ada akan kembali diindeks ulang pada saat Anda menggunakan fitur pencarian."
+        "Menghapus data peramban akan turut mengosongkan indeks pencarian yang ada pada perangkat ini. Seluruh file yang ada akan kembali diindeks ulang pada saat Anda menggunakan fitur pencarian."
       ],
       "Clears browser data related to the encrypted search.": [
         "Menghapus data browser yang berhubungan dengan pencarian terenkripsi."
@@ -5105,7 +5087,7 @@
         "Lanjutkan"
       ],
       "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
-        "Lanjut gunakan ${ DRIVE_APP_NAME } tanpa membuka kunci berkas"
+        "Lanjut gunakan ${ DRIVE_APP_NAME } tanpa membuka kunci file"
       ],
       "Copy the link to clipboard": [
         "Salin tautan ke papan klip"
@@ -5135,13 +5117,13 @@
         "Buat di"
       ],
       "Create links and share your files with others.": [
-        "Buat tautan dan bagikan berkas Anda dengan yang lain."
+        "Buat tautan dan bagikan file Anda dengan yang lain."
       ],
       "Create public link": [
         "Buat tautan publik"
       ],
       "Create your first folder and start moving your files.": [
-        "Buat folder pertama Anda dan pindahkan berkas Anda."
+        "Buat folder pertama Anda dan pindahkan file Anda."
       ],
       "Creating": [
         "Membuat"
@@ -5162,7 +5144,7 @@
         "Des"
       ],
       "Decrypting files": [
-        "Mendekripsi berkas"
+        "Mendekripsi file"
       ],
       "Dedicated servers": [
         "Server khusus"
@@ -5231,13 +5213,13 @@
         "Mengunduh"
       ],
       "Drop file here to upload": [
-        "Lepaskan berkas di sini untuk mengunggah"
+        "Lepaskan file di sini untuk mengunggah"
       ],
       "Drop files here": [
-        "Lepaskan berkas di sini"
+        "Lepaskan file di sini"
       ],
       "Drop files here to upload or click on the upload button": [
-        "Seret berkas ke sini atau klik tombol unggah untuk mengunggah"
+        "Lepaskan file di sini atau klik tombol unggah untuk mengunggah"
       ],
       "Drop to import": [
         "Lepaskan untuk mengimpor"
@@ -5291,7 +5273,7 @@
         "Masukkan kode yang tertera pada aplikasi autentikator Anda"
       ],
       "Enter the credentials of the email account you want to import from.": [
-        "Masukkan kredensial akun email yang berkasnya ingin Anda impor."
+        "Masukkan kredensial akun email yang ingin Anda impor."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Masukkan kode verifikasi yang dikirim ke ${ destinationText }."
@@ -5330,19 +5312,19 @@
         "Feb"
       ],
       "File \"${ name }\" was deleted during download": [
-        "Berkas \"${ name }\" telah dihapus pada saat pengunduhan sedang berlangsung"
+        "File \"${ name }\" telah dihapus pada saat pengunduhan sedang berlangsung"
       ],
       "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "Berkas ini tidak ditandatangani. Kami tidak dapat memverifikasi bahwa ${ fileName } diunggah oleh ${ emailAddress }."
+        "File ini tidak ditandatangani. Kami tidak dapat memverifikasi bahwa ${ fileName } diunggah oleh ${ emailAddress }."
       ],
       "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
-        "Berkas ini tidak ditandatangani. Kami tidak dapat memverifikasi siapa yang mengunggah ${ fileName }."
+        "File ini tidak ditandatangani. Kami tidak dapat memverifikasi yang mengunggah ${ fileName }."
       ],
       "File will not be updated": [
-        "Berkas tidak akan diperbarui"
+        "File tidak akan diperbarui"
       ],
       "Files and folders that others shared with you will appear here": [
-        "Berkas dan folder yang pengguna lain bagikan kepada Anda akan muncul di sini"
+        "File dan folder yang pengguna lain bagikan kepada Anda akan muncul di sini"
       ],
       "Finalizing": [
         "Menuntaskan"
@@ -5366,7 +5348,7 @@
         "Folder yang Anda sinkronkan dari komputer Anda akan muncul pada layar ini."
       ],
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
-        "Untuk hasil yang maksimal, hindari streaming serta berbagai kegiatan lainnya yang boros akan memori atau pisah unggahan Anda ke dalam beberapa kelompok berkas kecil."
+        "Untuk hasil terbaik, hindari streaming dan aktivitas yang membutuhkan banyak memori, atau bagi unggahan Anda menjadi beberapa kelompok kecil."
       ],
       "Free 5GB encrypted storage to get started": [
         "Ruang penyimpanan terenkripsi 5GB gratis untuk memulai"
@@ -5384,13 +5366,13 @@
         "Dapatkan aplikasi kami untuk mencadangkan foto dari ponsel Anda, atau unggah foto Anda di sini."
       ],
       "Get the desktop app to sync files from your computer.": [
-        "Dapatkan aplikasi desktop untuk menyinkronkan berkas dari komputer Anda."
+        "Dapatkan aplikasi desktop untuk menyinkronkan file dari komputer Anda."
       ],
       "Get to know ${ DRIVE_APP_NAME } and earn your 3 GB storage bonus! Take action today.": [
         "Kenali ${ DRIVE_APP_NAME } dan dapatkan bonus ruang penyimpanan 3 GB Anda! Jangan lewatkan kesempatan ini sekarang juga."
       ],
       "Go to \"My files\" and upload some files first.": [
-        "Masuk ke \"Berkas saya\" dan unggah beberapa berkas terlebih dahulu."
+        "Masuk ke \"File saya\" dan unggah beberapa file dulu."
       ],
       "Google Pay mark": [
         "Tanda Google Pay"
@@ -5408,7 +5390,7 @@
         "Bagaimana cara pencarian terenkripsi bekerja?"
       ],
       "If those files are not fully downloaded locally on ${ deviceName } you will lose access to them.": [
-        "Apabila berkas ini tidak diunduh secara lokal pada ${ deviceName }, Anda akan kehilangan akses ke berkas ini."
+        "Apabila file ini tidak diunduh secara lokal pada ${ deviceName }, Anda akan kehilangan akses ke file ini."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Apabila Anda menemui masalah dalam membuat akun, silakan minta undangan baru yang akan kami respon dalam satu hari kerja."
@@ -5495,7 +5477,7 @@
         "Masalah ditemukan"
       ],
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
-        "Sepertinya baru-baru ini Anda mencoba untuk mengunggah ${ uploadName }. Apabila unggahan gagal, silakan ${ replaceFile }. Apabila unggahan masih berlangsung, mengubah berkas akan membatalkan unggahan yang telah ada."
+        "Sepertinya baru-baru ini Anda mencoba untuk mengunggah ${ uploadName }. Apabila unggahan gagal, silakan ${ replaceFile }. Apabila unggahan masih berlangsung, mengubah file akan membatalkan unggahan yang telah ada."
       ],
       "It's better to have:": [
         "Kata sandi Anda sebaiknya mengandung:"
@@ -5528,7 +5510,7 @@
         "Anda hanya perlu menentukan pilihan Anda -- biarkan kami yang mengurus sisanya."
       ],
       "Keep your files secure with end-to-end encryption.": [
-        "Jaga berkas Anda tetap aman dengen enkripsi end-to-end."
+        "Jaga file Anda tetap aman dengen enkripsi end-to-end."
       ],
       "Key fingerprint": [
         "Sidik jari kunci"
@@ -5606,7 +5588,7 @@
         "Anggota"
       ],
       "Merged": [
-        "Tergabung"
+        "Digabungkan"
       ],
       "Messages to all your email addresses will go to your inbox.": [
         "Pesan ke semua alamat email Anda akan menuju ke kotak masuk Anda."
@@ -5621,7 +5603,7 @@
         "Sebagian besar jaringan WiFi publik dapat diakses secara aman, namun jaringan tertentu yang kurang aman dapat memaparkan diri Anda ke berbagai ancaman siber. VPN melindungi lalu lintas jaringan Anda, yang membuat diri Anda tetap terlindung atas ancaman ini."
       ],
       "Moving files": [
-        "Memindahkan berkas"
+        "Memindahkan file"
       ],
       "My Links": [
         "Tautan Saya"
@@ -5669,7 +5651,7 @@
         "URL tidak valid"
       ],
       "Not all files were transferred. Try uploading or downloading the files again.": [
-        "Tidak semua berkas berhasil ditransfer. Cobalah untuk mengunggah atau mengunduh kembali berkas yang bersangkutan."
+        "Tidak semua file berhasil ditransfer. Coba unggah atau unduh kembali file tersebut."
       ],
       "Not connected": [
         "Tidak terhubung"
@@ -5747,7 +5729,7 @@
         "Orang-orang dengan akses"
       ],
       "Permanently delete all files in your locked drive": [
-        "Hapus seluruh berkas yang terdapat pada drive terkunci milik Anda secara permanen"
+        "Hapus seluruh file yang terdapat pada drive terkunci milik Anda secara permanen"
       ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "Enkripsi PGP/Inline hanya kompatibel dengan format teks polos."
@@ -5822,7 +5804,7 @@
         "Silakan coba lagi, gunakan metode pembayaran lainnya, atau hubungi PayPal untuk memperoleh bantuan."
       ],
       "Please use another browser or download the file.": [
-        "Silakan gunakan browser lain atau unduh berkas yang bersangkutan."
+        "Silakan gunakan peramban lain atau unduh file yang bersangkutan."
       ],
       "Please wait till your changes are synced with the server.": [
         "Silakan tunggu hingga perubahan Anda tersinkron dengan server."
@@ -5837,16 +5819,16 @@
         "Pratinjau gagal dimuat"
       ],
       "Preview for this file type is currently not supported on this browser.": [
-        "Pratinjau untuk tipe berkas ini untuk sementara belum didukung pada browser ini."
+        "Pratinjau untuk tipe file ini untuk sementara belum didukung pada peramban ini."
       ],
       "Preview for this file type is not supported": [
-        "Pratinjau untuk tipe berkas ini tidak didukung"
+        "Pratinjau untuk tipe file ini tidak didukung"
       ],
       "Preview of documents is not yet supported.": [
         "Pratinjau dokumen saat ini belum didukung."
       ],
       "Previous versions are kept for ${ retentionLabel }": [
-        "Versi lawas dari berkas ini akan disimpan selama ${ retentionLabel }"
+        "Versi sebelumnya dari file ini akan disimpan selama ${ retentionLabel }"
       ],
       "Previous versions are not saved": [
         "Versi sebelumnya tidak disimpan"
@@ -5861,7 +5843,7 @@
         "Penjelajahan pribadi (atau mode \"incognito\") hanya berguna untuk menyembunyikan aktivitas Anda pada perangkat yang Anda gunakan. Walaupun mode ini menghentikan browser Anda untuk menyimpan riwayat penjelajahan dan cookie, mode ini tidak serta-merta membuat Anda kasat mata. Pihak ISP, pengelola jaringan, dan situs web yang Anda kunjungi masih akan dapat melihat apa yang Anda lakukan secara online."
       ],
       "Private search enabled. You may now close this dialogue and search for files and folders.": [
-        "Pencarian pribadi diaktifkan. Anda kini dapat menutup kotak dialog ini dan mulai mencari berkas dan folder tertentu."
+        "Pencarian pribadi diaktifkan. Anda kini dapat menutup kotak dialog ini dan mulai mencari file dan folder tertentu."
       ],
       "Public link": [
         "Tautan publik"
@@ -5903,7 +5885,7 @@
         "Pulihkan Foto"
       ],
       "Restored files ${ formattedDate }": [
-        "Berkas yang dipulihkan ${ formattedDate }"
+        "File yang dipulihkan ${ formattedDate }"
       ],
       "Restoring Photos... Please keep the tab open": [
         "Memulihkan Foto... Mohon biarkan tab ini terbuka"
@@ -5939,7 +5921,7 @@
         "Pilih seluruh item untuk"
       ],
       "Select an uploaded file or folder and create a link to it.": [
-        "Pilih berkas atau folder yang telah diunggah dan buat tautan untuk berkas atau folder tersebut."
+        "Pilih file atau folder yang telah diunggah dan buat tautan untuk file atau folder tersebut."
       ],
       "Select item": [
         "Pilih item"
@@ -5978,7 +5960,7 @@
         "Mempersiapkan alamat baru Anda…"
       ],
       "Share files with links": [
-        "Berbagi berkas dengan tautan"
+        "Berbagi file dengan tautan"
       ],
       "Share via link settings": [
         "Bagikan melalui pengaturan tautan"
@@ -6020,10 +6002,10 @@
         "Dilewati"
       ],
       "Some files failed to download. Try downloading the files again.": [
-        "Sebagian berkas gagal diunduh. Coba unduh kembali berkas yang bersangkutan."
+        "Beberapa file gagal diunduh. Coba unduh kembali file tersebut."
       ],
       "Some files failed to upload. Try uploading the files again.": [
-        "Sebagian berkas gagal diunggah. Coba unggah kembali berkas yang bersangkutan."
+        "Beberapa file gagal diunggah. Coba unggah kembali file tersebut."
       ],
       "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
         "Pemerintahan tertentu dapat memblokir atau membatasi akses ke situs web yang spesifik. VPN dapat membantu Anda untuk menangkal sensor selagi menjaga aktivitas dan identitas Anda tetap privat."
@@ -6032,7 +6014,7 @@
         "Sebagian item gagal"
       ],
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
-        "Beberapa berkas Anda tidak lagi dapat diakses. Pulihkan akses ke berkas Anda. ${ StartRecoveryButton }"
+        "Beberapa file Anda tidak lagi dapat diakses. Pulihkan akses ke file Anda. ${ StartRecoveryButton }"
       ],
       "Some photos in this album are not saved to your timeline. Deleting this album will permanently delete those photos.": [
         "Beberapa foto dalam album ini tidak disimpan ke lini masa Anda. Menghapus album ini akan menghapus foto-foto tersebut secara permanen."
@@ -6086,19 +6068,19 @@
         "yang"
       ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
-        "Akun ini mungkin memiliki kunci baru, atau berkas/folder berikut mungkin telah dimodifikasi: ${ items }. Mohon buka berkas/folder ini hanya apabila Anda memercayai sumbernya."
+        "Akun ini mungkin memiliki kunci baru, atau file/folder berikut mungkin telah dimodifikasi: ${ items }. Hanya buka file/folder ini jika Anda memercayai sumbernya."
       ],
       "The albums you create are shown here.": [
         "Album yang Anda buat akan muncul di sini."
       ],
       "The digital signature has been partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
-        "Tanda tangan digital ini telah diverifikasi secara parsial. Berkas ini diunggah melalui tautan berbagi publik oleh pengguna tanpa akun ${ BRAND_NAME }, sehingga identitas pengunggah ini tidak dapat diverifikasi."
+        "Tanda tangan digital ini telah diverifikasi secara parsial. File ini diunggah melalui tautan berbagi publik oleh pengguna tanpa akun ${ BRAND_NAME }, sehingga identitas pengunggah ini tidak dapat diverifikasi."
       ],
       "The digital signature has been partially verified. This folder was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
         "Tanda tangan digital ini telah diverifikasi secara parsial. Folder ini diunggah melalui tautan berbagi publik oleh pengguna tanpa akun ${ BRAND_NAME }, sehingga identitas pengunggah ini tidak dapat diverifikasi."
       ],
       "The download count includes both actual downloads and instances when files are previewed.": [
-        "Jumlah unduhan meliputi berapa kali berkas telah diunduh dan berapa kali berkas telah dipratinjau"
+        "Jumlah unduhan mencakup unduhan sebenarnya serta saat file dipratinjau."
       ],
       "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
         "Data yang terenkripsi akan berukuran sedikit lebih besar berkat sisipan overhead enkripsi dan tanda tangan digital yang memastikan keamanan data Anda."
@@ -6107,7 +6089,7 @@
         "Informasi yang terpapar ini dibocorkan oleh layanan pihak ketiga. Informasi Akun ${ BRAND_NAME } Anda tetap aman dan terenkripsi. ${ learnMoreLink }"
       ],
       "The following may have been tampered with: ${ items }. Only open if you trust it.": [
-        "Berkas/folder berikut mungkin telah dimodifikasi: ${ items }. Mohon buka berkas/folder ini hanya apabila Anda memercayai sumbernya."
+        "File/folder berikut mungkin telah dimodifikasi: ${ items }. Hanya buka file/folder ini jika Anda memercayai sumbernya."
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Pemilik alamat ini telah menonaktifkan enkripsi ujung ke ujung. Untuk dapat mengirim email terenkripsi kealamat ini, pemiliknya harus mengaktifkan ulang enkripsi ujung ke ujung."
@@ -6116,7 +6098,7 @@
         "Proses verifikasi akan membuka tab browser baru. Mohon nonaktifkan segala pemblokir pop-up yang aktif."
       ],
       "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
-        "Terdapat berkas yang masih perlu untuk ditransfer. Dengan menutup jendela transfer, seluruh proses yang sedang berlangsung akan dibatalkan."
+        "Masih ada file yang perlu ditransfer. Menutup pengelola transfer akan menghentikan semua operasi."
       ],
       "There is nothing to see here": [
         "Tidak ada apa-apa di sini"
@@ -6128,16 +6110,16 @@
         "Alamat ini nonaktif. Agar dapat mengirim ke alamat ini, pemiliknya harus mengaktifkan dulu alamat tersebut."
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
-        "Browser ini tidak mendukung pratinjau dokumen PDF. Silakan unduh berkas yang bersangkutan."
+        "Peramban ini tidak mendukung pratinjau dokumen PDF. Silakan unduh file."
       ],
       "This can NOT be undone. Please enter the device name to confirm removal.": [
         "Tindakan ini TIDAK dapat diurungkan. Silakan masukkan nama perangkat untuk mengonfirmasi penghapusan."
       ],
       "This file is too large to preview": [
-        "Berkas ini terlalu besar untuk dipratinjau"
+        "File terlalu besar untuk dipratinjau"
       ],
       "This file may have been deleted, moved or made unavailable. Try reaching out to the file owner.": [
-        "Berkas ini mungkin telah dihapus, dipindahkan, atau tidak lagi tersedia. Cobalah untuk menghubungi pemilik berkas yang bersangkutan."
+        "File ini mungkin telah dihapus, dipindahkan, atau tidak lagi tersedia. Cobalah untuk menghubungi pemilik file yang bersangkutan."
       ],
       "This folder is empty": [
         "Folder ini kosong"
@@ -6170,13 +6152,13 @@
         "Kode unik ini dapat digunakan oleh situs web dan penyedia layanan internet (ISP) untuk menautkan lokasi dan riwayat penjelajahan Anda ke perangkat Anda"
       ],
       "This will cancel any remaining uploads. Cancelled files won't be saved in ${ DRIVE_APP_NAME }.": [
-        "Tindakan ini akan membatalkan seluruh unggahan yang tersisa. Berkas yang dibatalkan tidak akan disimpan di ${ DRIVE_APP_NAME }."
+        "Tindakan ini akan membatalkan seluruh unggahan yang tersisa. File yang dibatalkan tidak akan disimpan di ${ DRIVE_APP_NAME }."
       ],
       "This will only delete the album. Your photos will remain in your timeline. This action cannot be undone.": [
         "Tindakan ini hanya akan menghapus album yang bersangkutan. Foto Anda akan tetap tersedia pada lini masa Anda. Tindakan ini tidak dapat diurungkan."
       ],
       "This will permanently delete the file you uploaded.": [
-        "Tindakan ini akan menghapus berkas yang telah Anda unggah secara permanen."
+        "Tindakan ini akan menghapus file yang telah Anda unggah secara permanen."
       ],
       "This will permanently delete the folder you uploaded.": [
         "Tindakan ini akan menghapus folder yang telah Anda unggah secara permanen."
@@ -6185,22 +6167,22 @@
         "Tindakan ini akan menghapus item terpilih yang telah Anda unggah secara permanen."
       ],
       "This will replace the existing file with the folder": [
-        "Dengan ini, berkas yang telah ada akan diganti dengan folder"
+        "Tindakan ini akan menggantikan file yang ada dengan folder."
       ],
       "This will replace the existing folder or file with the file": [
-        "Tindakan ini akan mengganti folder atau berkas yang telah ada dengan berkas ini"
+        "Tindakan ini akan mengganti folder atau file yang telah ada dengan file ini"
       ],
       "This will replace the existing folder or file with the folder": [
-        "Tindakan ini akan mengganti folder atau berkas yang telah ada dengan folder ini"
+        "Tindakan ini akan mengganti folder atau file yang telah ada dengan folder ini"
       ],
       "This will replace the existing folder with the file": [
-        "Dengan ini, folder yang telah ada akan diganti dengan berkas"
+        "Ini akan menggantikan folder yang ada dengan file tersebut."
       ],
       "This will sign you out of all accounts currently logged in.": [
         "Tindakan ini akan mengeluarkan seluruh akun milik Anda yang sedang terhubung masuk."
       ],
       "This will upload a new version of the file": [
-        "Dengan ini, versi baru berkas akan diunggah"
+        "Ini akan mengunggah versi baru dari file tersebut"
       ],
       "This will upload a new version of the folder": [
         "Dengan ini, versi baru folder akan diunggah"
@@ -6212,19 +6194,19 @@
         "Untuk menyelesaikan pembayaran Anda, silakan kirim ${ btcAmountBold } ke alamat di bawah ini."
       ],
       "To download these files, open them in ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME } and export them.": [
-        "Untuk mengunduh, buka berkas ini di ${ DOCS_APP_NAME } atau ${ SHEETS_APP_NAME } dan ekspor berkas."
+        "Untuk mengunduh, buka file ini di ${ DOCS_APP_NAME } atau ${ SHEETS_APP_NAME } dan ekspor file."
       ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
         "Untuk mengaktifkan mode pencarian yang sepenuhnya privat, ${ DRIVE_APP_NAME } perlu untuk terlebih dahulu mengindeks berkas Anda secara lokal."
       ],
       "To enable truly private search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
-        "Untuk mengaktifkan pencarian yang benar-benar privat, kami perlu untuk mengindeks berkas Anda secara lokal. Anda akan tetap dapat menggunakan ${ DRIVE_APP_NAME } seperti biasa - kami akan memberitahukan Anda pada saat proses pengindeksan ini telah selesai."
+        "Untuk mengaktifkan pencarian yang benar-benar privat, kami perlu mengindeks file Anda secara lokal. Anda tetap dapat menggunakan ${ DRIVE_APP_NAME } seperti biasa — kami akan memberi tahu Anda saat pengindeksan selesai."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Untuk melawan spam dan penyalahgunaan, mohon verifikasi bahwa Anda manusia."
       ],
       "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it’s still best to download files only from trusted sources. ": [
-        "Untuk membantu melindungi Anda, ${ DRIVE_APP_NAME } dapat memindai berkas Anda tanpa mengusik privasi dan memblokir berkas yang berbahaya. Meskipun demikian, Anda tetap disarankan untuk hanya mengunduh berkas dari sumber yang dipercaya. "
+        "Untuk membantu melindungi Anda, ${ DRIVE_APP_NAME } dapat memindai file Anda tanpa mengusik privasi dan memblokir file berbahaya. Meskipun demikian, Anda tetap disarankan untuk hanya mengunduh file dari sumber tepercaya. "
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Untuk mengimpor acara, buatlah kalender di ${ CALENDAR_APP_NAME } terlebih dahulu. Acara yang diimpor akan muncul pada kalender ini."
@@ -6257,13 +6239,13 @@
         "Pelacakan"
       ],
       "Transfer canceled for file \"${ name }\"": [
-        "Transfer berkas \"${ name }\" dibatalkan"
+        "Transfer file \"${ name }\" dibatalkan"
       ],
       "Transfer canceled for folder \"${ name }\"": [
         "Transfer folder \"${ name }\" dibatalkan"
       ],
       "Transfer skipped for file \"${ file.name }\"": [
-        "Transfer untuk berkas \"${ file.name }\" dilewati"
+        "Transfer untuk file \"${ file.name }\" dilewati"
       ],
       "Transfer skipped for folder \"${ folderName }\"": [
         "Transfer untuk folder \"${ folderName }\" dilewati"
@@ -6284,7 +6266,7 @@
         "Cobalah untuk mencari berdasarkan nama, tanggal pembuatan, atau tipe berkas."
       ],
       "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
-        "Sayangnya, berkas ini atau sebagian data yang terkandung di dalamnya tidak dapat didekripsi."
+        "Sayangnya, file ini atau sebagian data yang terkandung di dalamnya tidak dapat didekripsi."
       ],
       "Unknown date": [
         "Tanggal yang tidak diketahui"
@@ -6293,7 +6275,7 @@
         "Kesalahan yang tidak diketahui"
       ],
       "Unlock drive to recover files": [
-        "Buka kunci drive untuk memulihkan berkas-berkas yang ada"
+        "Buka kunci drive untuk memulihkan file yang ada"
       ],
       "Unsaved changes": [
         "Perubahan yang belum disimpan"
@@ -6326,13 +6308,13 @@
         "Mengunggah"
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
-        "Mengunggah ratusan berkas sekaligus dapat berdampak pada kinerja."
+        "Mengunggah ratusan file sekaligus dapat berdampak pada kinerja."
       ],
       "Uppercase and lowercase letters": [
         "Huruf besar dan kecil"
       ],
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
-        "Gunakan formulir ini untuk melaporkan berkas yang tidak pantas, ilegal,\nataupun berbahaya kepada kami. Anda akan melaporkan:"
+        "Gunakan formulir ini untuk melaporkan file yang tidak pantas, ilegal,\nataupun berbahaya kepada kami. Anda akan melaporkan:"
       ],
       "User activated": [
         "Pengguna diaktifkan"
@@ -6368,7 +6350,7 @@
         "Menunggu"
       ],
       "Want to sync files faster?": [
-        "Ingin menyinkronkan berkas secara lebih cepat?"
+        "Ingin sinkronisasi file lebih cepat?"
       ],
       "Warning": [
         "Peringatan"
@@ -6380,7 +6362,7 @@
         "Kami sedang mengalami masalah teknis. Semua tindakan terkait album untuk sementara dinonaktifkan."
       ],
       "We couldn't verify ${ nameAuthor } uploaded ${ node.name }. The following may have been tampered with: file data order. Only open if you trust it.": [
-        "Kami tidak dapat memverifikasi bahwa ${ nameAuthor } merupakan pengunggah dari node ${ node.name }. Informasi berikut mungkin telah dimodifikasi: urutan data berkas. Mohon untuk hanya membuka berkas ini apabila Anda memercayai isi berkas ini."
+        "Kami tidak dapat memverifikasi bahwa ${ nameAuthor } merupakan pengunggah dari node ${ node.name }. Informasi berikut mungkin telah dimodifikasi: urutan data file. Hanya buka file ini jika Anda memercayai isinya."
       ],
       "We couldn’t process your payment.": [
         "Kami tidak dapat memproses pembayaran Anda."
@@ -6449,7 +6431,7 @@
         "Apakah Anda ingin menerima kode verifikasi baru?"
       ],
       "Would you like to restore your files?": [
-        "Apakah Anda ingin untuk memulihkan berkas Anda?"
+        "Apakah Anda ingin untuk memulihkan file Anda?"
       ],
       "Would you like to save it before removing?": [
         "Apakah Anda ingin menyimpannya sebelum menghapus?"
@@ -6518,7 +6500,7 @@
         "Anda tidak dapat mengurungkan tindakan ini."
       ],
       "You don’t have permission to copy files to this folder.": [
-        "Anda tidak memiliki izin untuk menyalin berkas ke folder ini."
+        "Anda tidak memiliki izin untuk menyalin file ke folder ini."
       ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Anda akan diberi tahu apabila kata sandi atau data lainnya yang Anda miliki terbocorkan dari layanan pihak ketiga."
@@ -6527,10 +6509,10 @@
         "Anda memiliki ${ expiresInDays } hari tersisa untuk mengklaim bonus selamat datang 3 GB Anda dan "
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
-        "Anda memiliki langganan ${ planTitle } versi uji coba. Apabila Anda ingin melanjutkan langganan Anda setelah masa uji coba ini berakhir, silakan tambahkan metode pembayaran."
+        "Anda memiliki langganan uji coba ${ planTitle }. Jika ingin melanjutkan langganan setelah masa uji coba, silakan tambahkan metode pembayaran."
       ],
       "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
-        "Anda memiliki langganan ${ planTitle } yang berada dalam masa uji coba. Tidak ada pembayaran yang diperlukan untuk saat ini. Langganan Anda akan diperbarui secara otomatis pada akhir masa uji coba."
+        "Anda memiliki langganan uji coba ${ planTitle }. Tidak diperlukan pembayaran saat ini. Langganan Anda akan diperpanjang secara otomatis di akhir masa uji coba."
       ],
       "You may be redirected to your bank’s website.": [
         "Anda mungkin akan dialihkan ke situs web milik bank Anda."
@@ -6548,7 +6530,7 @@
         "Anda akan kehilangan semua perubahan yang belum disimpan."
       ],
       "You will need to save it again from the public link page.": [
-        "Anda akan perlu untuk kembali menyimpan berkas ini dari halaman tautan publik."
+        "Anda akan perlu untuk kembali menyimpan file ini dari halaman tautan publik."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Anda akan segera dialihkan menuju PayPal untuk memverifikasi pembayaran anda."
@@ -6575,7 +6557,7 @@
         "Anda telah mencapai batas jumlah alamat dalam grup kontak"
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
-        "Akun ${ BRAND_NAME } Anda sedang ditangguhkan. Setelah 28 hari, email tidak akan lagi diantarkan ke kotak masuk Anda, tautan berbagi Drive Anda akan diblokir, dan Anda tidak akan dapat mengunggah berkas baru. Untuk dapat kembali menggunakan layanan seperti biasa, silakan lunasi seluruh tagihan yang tertunggak."
+        "Akun ${ BRAND_NAME } Anda sedang ditangguhkan. Setelah 28 hari, email tidak akan lagi diantarkan ke kotak masuk Anda, tautan berbagi Drive Anda akan diblokir, dan Anda tidak akan dapat mengunggah file baru. Untuk dapat kembali menggunakan layanan seperti biasa, silakan lunasi seluruh tagihan yang tertunggak."
       ],
       "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Langganan ${ plan } Plus Anda akan digantikan dengan ${ PASS_SHORT_APP_NAME } Lifetime. Saldo sisa langganan Anda akan ditambahkan ke akun Anda. Penawaran ${ PASS_SHORT_APP_NAME } Lifetime ini tidak memiliki harga perpanjangan, karena sekalinya Anda membayar, Anda akan memperoleh akses seumur hidup ke ${ PASS_SHORT_APP_NAME }."
@@ -6584,7 +6566,7 @@
         "Akun Anda memiliki setidaknya satu tagihan yang tertunggak. Akses ke akun Anda akan segera dibatasi. ${ payInvoiceLink }"
       ],
       "Your current browser does not support the downloading of large files/multiple files. Download the desktop app for seamless uploads and downloads.": [
-        "Browser Anda saat ini tidak mendukung pengunduhan berkas yang besar/banyak berkas secara bersamaan. Unduk aplikasi desktop kami untuk memperoleh unggahan dan unduhan yang terpadu."
+        "Peramban Anda saat ini tidak mendukung pengunduhan file yang besar/banyak file secara bersamaan. Unduk aplikasi desktop kami untuk memperoleh unggahan dan unduhan yang terpadu."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Data Anda siap untuk diimpor dari ${ importedEmailAddressStrong } menuju akun ${ BRAND_NAME } Anda."
@@ -6602,13 +6584,13 @@
         "Email Anda hanya akan digunakan satu kali ini untuk keperluan verifikasi."
       ],
       "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ KeyReactivationButton }": [
-        "Berkas Anda tidak lagi dapat diakses karena kata sandi yang ada telah diatur ulang. Unggah kembali kunci enkripsi lama untuk dapat kembali mengakses berkas Anda. ${ KeyReactivationButton }"
+        "File Anda tidak lagi dapat diakses karena kata sandi yang ada telah diatur ulang. Unggah kembali kunci enkripsi lama untuk dapat kembali mengakses file Anda. ${ KeyReactivationButton }"
       ],
       "Your files will be encrypted and then saved": [
-        "Berkas Anda akan dienkripsi lalu disimpan"
+        "File Anda akan dienkripsi lalu disimpan"
       ],
       "Your files will be encrypted and then saved.": [
-        "Berkas Anda akan dienkripsi dan kemudian disimpan."
+        "File Anda akan dienkripsi dan kemudian disimpan."
       ],
       "Your free trial was successfully converted to a ${ cycle }-month subscription. Your renewal date is ${ nextBillingDate }.": [
         "Masa uji coba gratis Anda berhasil diubah menjadi langganan ${ cycle }-bulanan. Tanggal pembaruan Anda adalah ${ nextBillingDate }."
@@ -6629,13 +6611,13 @@
         "Alamat IP Anda sedang terlihat dan dapat digunakan untuk melacak aktivitas online Anda."
       ],
       "Your login information will not be saved after the import is completed.": [
-        "Informasi seputar akun Anda tidak akan disimpan setelah impor selesai."
+        "Informasi seputar login Anda tidak akan disimpan setelah impor selesai."
       ],
       "Your next billing date is ${ renewalTime }.": [
         "Tanggal tagihan Anda selanjutnya adalah ${ renewalTime }."
       ],
       "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
-        "Tanggal penagihan Anda selanjutnya adalah ${ renewalTime }. Silakan hubungi layanan dukungan apabila Anda perlu untuk mengubah paket dengan segera."
+        "Tanggal penagihan berikutnya adalah ${ renewalTime }. Silakan hubungi dukungan jika Anda memerlukan perubahan paket segera."
       ],
       "Your online activity is protected": [
         "Aktivitas online Anda terlindung"
@@ -6727,16 +6709,16 @@
     },
     "Item": {
       "file attributes": [
-        "atribut berkas"
+        "atribut file"
       ],
       "file data": [
-        "data berkas"
+        "data file"
       ],
       "file data key": [
-        "kunci berkas data"
+        "kunci file data"
       ],
       "file data order": [
-        "urutan data berkas"
+        "urutan data file"
       ],
       "hash key": [
         "kunci hash"
@@ -6851,7 +6833,7 @@
         "Aplikasi dalam lingkungan bisnis"
       ],
       "Apply to all duplicated files": [
-        "Terapkan ke seluruh berkas yang terduplikat"
+        "Terapkan ke semua file duplikat"
       ],
       "Apply to all duplicated folders": [
         "Terapkan ke seluruh folder yang terduplikat"
@@ -6962,7 +6944,7 @@
         "Waktu pembuatan"
       ],
       "Credits": [
-        "Saldo"
+        "Kredit"
       ],
       "Delete": [
         "Hapus"
@@ -7052,7 +7034,7 @@
         "Nama berkas"
       ],
       "File transfer overview": [
-        "Ikhtisar transfer berkas"
+        "Ringkasan transfer file"
       ],
       "First name": [
         "Nama depan"
@@ -7100,7 +7082,7 @@
         "Sertakan log aplikasi dalam laporan bug"
       ],
       "Include message and file name in invite email": [
-        "Sertakan pesan dan nama berkas dalam email undangan"
+        "Sertakan pesan dan nama file dalam email undangan"
       ],
       "Integrated 2FA authenticator": [
         "Autentikator 2FA terintegrasi"
@@ -7109,7 +7091,7 @@
         "Pertahankan keduanya"
       ],
       "Keep both files": [
-        "Pertahankan kedua berkas"
+        "Pertahankan kedua file"
       ],
       "Keep both folders": [
         "Pertahankan kedua folder"
@@ -7250,13 +7232,13 @@
         "Provinsi"
       ],
       "Replace existing file": [
-        "Gantikan berkas yang telah ada"
+        "Gantikan file yang telah ada"
       ],
       "Replace existing folder": [
         "Gantikan folder yang telah ada"
       ],
       "Replace existing folder or file": [
-        "Ganti folder atau berkas yang telah ada"
+        "Ganti folder atau file yang telah ada"
       ],
       "Reveal password": [
         "Perlihatkan kata sandi"
@@ -7343,7 +7325,7 @@
         "Tema"
       ],
       "This will permanently delete all files in your locked drive.": [
-        "Tindakan ini akan menghapus seluruh berkas yang terdapat pada drive milik Anda yang terkunci secara permanen."
+        "Tindakan ini akan menghapus seluruh file yang terdapat pada drive milik Anda yang terkunci secara permanen."
       ],
       "Thomas": [
         "Thomas"
@@ -7403,7 +7385,7 @@
         "Apa alasan utamamu dalam membatalkan atau menurunkan paket?"
       ],
       "Yes, I want to permanently delete my old files": [
-        "Ya, saya ingin menghapus berkas lama saya secara permanen"
+        "Ya, saya ingin menghapus file lama saya secara permanen"
       ],
       "Your alias": [
         "Alias Anda"
@@ -7637,7 +7619,7 @@
         "Tingkatkan akun Anda untuk kembali memperoleh akses ke seluruh fitur"
       ],
       "Your ${ driveStorage } is full. To upload or sync files, free up space or ${ cta }.": [
-        "${ driveStorage } Anda penuh. Untuk tetap dapat mengunggah atau menyinkronkan berkas, kosongkan ruang yang ada atau ${ cta }."
+        "${ driveStorage } Anda penuh. Untuk tetap dapat mengunggah atau menyinkronkan file, kosongkan ruang yang ada atau ${ cta }."
       ],
       "Your ${ mailStorage } is full. To send or receive emails, free up space or ${ cta }.": [
         "${ mailStorage } Anda penuh. Untuk tetap dapat mengirim atau menerima email, kosongkan ruang yang ada atau ${ cta }."
@@ -7723,7 +7705,7 @@
         "Hingga ${ n } pertemuan per hari"
       ],
       "Up to ${ n } participant": [
-        "Hinnga ${ n } peserta"
+        "Hingga ${ n } peserta"
       ]
     },
     "Message": {
@@ -7791,7 +7773,7 @@
         "Dokumen arsip"
       ],
       "Audio file": [
-        "Berkas audio"
+        "File audio"
       ],
       "AV1 Image File Format (AVIF)": [
         "AV1 Image File Format (AVIF)"
@@ -7956,10 +7938,10 @@
         "TypeScript"
       ],
       "Unknown file": [
-        "Berkas yang tidak diketahui"
+        "File tidak dikenal"
       ],
       "Video file": [
-        "Berkas video"
+        "File video"
       ],
       "Waveform Audio Format": [
         "Waveform Audio Format"
@@ -8042,7 +8024,7 @@
         "Turunkan jenis akun"
       ],
       "Get ${ BRAND_NAME } for free": [
-        "Dapatkan ${ BRAND_NAME } secara cuma-cuma"
+        "Dapatkan ${ BRAND_NAME } secara gratis"
       ],
       "Get ${ planName }": [
         "Dapatkan ${ planName }"
@@ -8118,7 +8100,7 @@
         "${ n } koneksi VPN"
       ],
       "${ options }-day file version history": [
-        "Riwayat versi berkas ${ options } hari"
+        "Riwayat versi file ${ options } hari"
       ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "${ PASS_APP_NAME } + SimpleLogin untuk seumur hidup"
@@ -8157,7 +8139,7 @@
         "10 fitur premium lainnya"
       ],
       "10-year file version history": [
-        "Riwayat versi berkas 10 tahun"
+        "Riwayat versi file 10 tahun"
       ],
       "15 GB storage": [
         "Penyimpanan 15 GB"
@@ -8217,7 +8199,7 @@
         "Tagihan yang terpusat"
       ],
       "Collaborate and share large files": [
-        "Kolaborasi dan berbagi berkas besar"
+        "Kolaborasi dan berbagi file besar"
       ],
       "Contact groups": [
         "Grup kontak"
@@ -8361,7 +8343,7 @@
         "Tulis pesan balasan dengan cepat"
       ],
       "Recover previous file versions": [
-        "Pulihkan versi berkas sebelumnya"
+        "Pulihkan versi file sebelumnya"
       ],
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Pemeriksaan rutin keamanan akunmu. Kami akan mengingatkan jika kamu memiliki kata sandi yang salah atau yang sudah pernah digunakan, dan perlu diperbarui."
@@ -8382,7 +8364,7 @@
         "Server Secure Core"
       ],
       "Secure file storage and sharing": [
-        "Penyimpanan dan pembagian berkas yang aman"
+        "Penyimpanan dan pembagian file yang aman"
       ],
       "Secure link sharing": [
         "Pembagian tautan aman"
@@ -8394,7 +8376,7 @@
         "Kirim & terima undangan"
       ],
       "Share files with no size limit": [
-        "Bagikan berkas tanpa batasan ukuran"
+        "Bagikan file tanpa batasan ukuran"
       ],
       "Short domain (@pm.me)": [
         "Domain pendek (@pm.me)"
@@ -8418,7 +8400,7 @@
         "Dukungan hingga 2 pengguna"
       ],
       "Sync and backup all your files across devices": [
-        "Sinkronkan dan cadangkan seluruh berkas Anda antar berbagai perangkat"
+        "Sinkronkan dan cadangkan seluruh file Anda antar berbagai perangkat"
       ],
       "Tor over VPN": [
         "Tor melalui VPN"
@@ -8445,7 +8427,7 @@
         "Tanpa batasan jumlah label"
       ],
       "Unlimited logins, notes and credit cards": [
-        "Tanpa batasan jumlah entri masuk, catatan, dan kartu kredit"
+        "Tanpa batasan jumlah login, catatan, dan kartu kredit"
       ],
       "Unlimited messages per day": [
         "Tanpa batasan jumlah pesan per harinya"
@@ -8490,7 +8472,7 @@
         "Pembagian brankas (hingga ${ n } pengguna)"
       ],
       "Vault sharing with up to ${ n } person": [
-        "Pembagian berkas dengan hingga ${ n } pengguna"
+        "Berbagi brankas dengan hingga ${ n } pengguna"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Kami memindai dark web untuk memeriksa apakah alamat atau alias ${ BRAND_NAME } Anda telah dibocorkan serta memberitahukan Anda dengan segera apabila kami menemukan sesuatu."
@@ -8528,10 +8510,10 @@
         "${ brand } akan berakhir dalam ${ last4 }"
       ],
       "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
-        "Ruang penyimpanan 1 TB yang memungkinkan Anda untuk menyimpan, menyinkronkan, dan membagikan berkas dengan mudah. Terlindung oleh enkripsi end-to-end."
+        "Penyimpanan 1 TB yang memungkinkan Anda untuk menyimpan, menyinkronkan, dan membagikan file dengan mudah. Terlindung oleh enkripsi end-to-end."
       ],
       "200 GB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
-        "Ruang penyimpanan 200 GB yang memungkinkan Anda untuk menyimpan, menyinkronkan, dan membagikan berkas dengan mudah. Terlindung oleh enkripsi end-to-end."
+        "Penyimpanan cloud 200 GB yang memungkinkan Anda untuk menyimpan, menyinkronkan, dan membagikan file dengan mudah. Terlindung oleh enkripsi end-to-end."
       ],
       "Advanced network security and access management with dedicated secure Gateways": [
         "Keamanan jaringan dan pengelolaan akses tingkat lanjut dengan Gateway khusus yang aman"
@@ -8642,7 +8624,7 @@
         "${ CALENDAR_APP_NAME }: Amankan jadwal Anda dengan enkripsi ujung ke ujung. Meliputi dukungan untuk kalender khusus, fitur berbagi kalender, dan masih banyak lagi."
       ],
       "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
-        "${ DRIVE_APP_NAME }: Amankan berkas Anda dengan penyimpanan cloud terenkripsi. Meliputi sinkronisasi otomatis, file sharing terenkripsi, dan masih banyak lagi."
+        "${ DRIVE_APP_NAME }: Amankan file Anda dengan penyimpanan cloud terenkripsi. Meliputi sinkronisasi otomatis, file sharing terenkripsi, dan masih banyak lagi."
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: Amankan email Anda dengan enkripsi end-to-end. Meliputi dukungan untuk domain email khusus, 15 alamat email, alias hide-my-email tanpa batasan jumlah, dan masih banyak lagi."
@@ -8795,7 +8777,7 @@
         "Arahkan lalu lintas internet Anda melalui jaringan Tor dengan satu klik"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
-        "Amankan berkas Anda dengan ruang penyimpanan terenkripsi berbasis cloud. Dengan dukungan sinkronisasi otomatis, file sharing terenkripsi, dan masih banyak lagi."
+        "Amankan file Anda dengan ruang penyimpanan terenkripsi berbasis cloud. Dengan dukungan sinkronisasi otomatis, file sharing terenkripsi, dan masih banyak lagi."
       ],
       "Securely share individual items with anyone (even if they don't use ${ PASS_APP_NAME })": [
         "Bagikan item individu secara aman dengan siapa pun (bahkan jika mereka tidak menggunakan ${ PASS_APP_NAME })"
@@ -8813,7 +8795,7 @@
         "Atur filter untuk membalas, menyortir, dan/atau melabeli email Anda secara otomatis"
       ],
       "Share your files or folders with anyone by using secure, shareable links": [
-        "Bagikan berkas atau folder Anda dengan siapa pun melalui tautan yang aman dan mudah untuk dibagikan"
+        "Bagikan file atau folder Anda dengan siapa pun melalui tautan yang aman dan mudah untuk dibagikan"
       ],
       "SMTP allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME }.": [
         "SMTP memungkinkan layanan atau perangkat pihak ketiga untuk mengirimkan email melalui ${ MAIL_APP_NAME }."
@@ -8831,7 +8813,7 @@
         "Ruang penyimpanan terbagi untuk seluruh pengguna antara ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, dan ${ PASS_APP_NAME }."
       ],
       "Support for file-sharing protocols like BitTorrent": [
-        "Dukungan untuk protokol berbagi berkas seperti BitTorrent"
+        "Dukungan untuk protokol berbagi file seperti BitTorrent"
       ],
       "Upload your business' logo to customize your teams experience on the ${ BRAND_NAME } web apps": [
         "Unggah logo bisnis Anda untuk menyesuaikan pengalaman tim Anda di aplikasi web ${ BRAND_NAME }"
@@ -9093,7 +9075,7 @@
         "Undangan eksternal gagal dikonversi"
       ],
       "Failed to download files: ${ err }": [
-        "Gagal mengunduh berkas: ${ err }"
+        "Gagal mengunduh file: ${ err }"
       ],
       "Failed to load invitation details": [
         "Rincian undangan gagal dimuat"
@@ -9111,25 +9093,25 @@
         "Gagal menghapus perangkat"
       ],
       "Failed to remove the file": [
-        "Gagal menghapus berkas"
+        "Gagal menghapus file"
       ],
       "Failed to rename device": [
         "Gagal mengganti nama perangkat"
       ],
       "Failed to upload files: ${ err }": [
-        "Gagal mengunggah berkas: ${ err }"
+        "Gagal mengunggah file: ${ err }"
       ],
       "File or folder \"${ filename }\" and ${ count } other are already uploading": [
-        "Berkas atau folder \"${ filename }\" dan ${ count } lainnya sedang dalam proses pengunggahan"
+        "File atau folder \"${ filename }\" dan ${ count } lainnya sedang dalam proses pengunggahan"
       ],
       "File or folder \"${ filename }\" is already uploading": [
-        "Berkas atau folder \"${ filename }\" sedang dalam proses pengunggahan"
+        "File atau folder \"${ filename }\" sedang dalam proses pengunggahan"
       ],
       "File or folder is missing a name": [
-        "Berkas atau folder belum dinamai"
+        "File atau folder belum dinamai"
       ],
       "File removed": [
-        "Berkas dihapus"
+        "File dihapus"
       ],
       "Invitation's email was sent again": [
         "Email undangan telah dikirim ulang"
@@ -9138,7 +9120,7 @@
         "Tautan disalin ke papan klip"
       ],
       "Move ${ n } file": [
-        "Pindahkan ${ n } berkas"
+        "Pindahkan ${ n } file"
       ],
       "Move ${ n } folder": [
         "Pindahkan ${ n } folder"
@@ -9204,7 +9186,7 @@
         "Anda berhenti membagikan item ini"
       ],
       "Your old files will be deleted in 72 hours": [
-        "Berkas lama Anda akan dihapus dalam 72 jam"
+        "File lama Anda akan dihapus dalam 72 jam"
       ],
       "Your settings have been changed successfully": [
         "Pengaturan Anda berhasil diubah"
@@ -9212,7 +9194,7 @@
     },
     "Notification for duplicate filenames in the current upload": {
       "Some images were not uploaded due to duplicate filenames in the current selection.": [
-        "Beberapa gambar tidak diunggah karena nama berkas yang berduplikat dalam seleksi saat ini."
+        "Beberapa gambar tidak diunggah karena nama file yang berduplikat dalam seleksi saat ini."
       ]
     },
     "Oauth instructions": {
@@ -9335,7 +9317,7 @@
         "Alamat surel"
       ],
       "File version history (over 1 week)": [
-        "Riwayat versi berkas (hingga lebih dari 1 minggu)"
+        "Riwayat versi file (hingga lebih dari 1 minggu)"
       ],
       "Free": [
         "Free"
@@ -9396,13 +9378,13 @@
         "Coba aplikasinya"
       ],
       "Upload file": [
-        "Unggah berkas"
+        "Unggah file"
       ],
       "Upload folder": [
         "Unggah folder"
       ],
       "Upload more files": [
-        "Unggah lebih banyak berkas"
+        "Unggah lebih banyak file"
       ]
     },
     "Onboarding Info": {
@@ -9410,7 +9392,7 @@
         "10 menit"
       ],
       "Access your files on the go": [
-        "Akses berkas Anda pada saat bepergian"
+        "Akses file Anda pada saat bepergian"
       ],
       "Back up your photos and memories": [
         "Cadangkan foto dan kenangan Anda"
@@ -9428,22 +9410,22 @@
         "Apakah Anda lebih menyukai ${ DRIVE_APP_NAME } di mode gelap, atau mode terang? Pilih warna yang paling menginspirasi Anda."
       ],
       "Drag and drop your files here": [
-        "Seret dan lepas berkas Anda di sini"
+        "Seret dan lepas file Anda di sini"
       ],
       "Edit documents online": [
         "Sunting dokumen secara online"
       ],
       "End-to-end encrypted storage for your files": [
-        "Ruang penyimpanan yang terenkripsi end-to-end untuk berkas Anda"
+        "Penyimpanan yang terenkripsi end-to-end untuk file Anda"
       ],
       "Faster uploads for large or multiple files": [
-        "Unggahan yang cepat untuk berkas yang besar atau dalam jumlah banyak"
+        "Unggahan cepat untuk file besar atau dalam jumlah banyak"
       ],
       "Files uploaded during this time won’t count towards your storage limit.": [
-        "Berkas yang diunggah dalam rentang waktu ini tidak akan dihitung ke batas penyimpanan Anda."
+        "File yang diunggah dalam rentang waktu ini tidak akan dihitung ke batas penyimpanan Anda."
       ],
       "Files uploaded now will not count towards your storage limit": [
-        "Berkas yang diunggah sekarang tidak akan dihitung ke batas penyimpanan Anda"
+        "File yang diunggah sekarang tidak akan dihitung ke batas penyimpanan Anda"
       ],
       "Final approval in progress": [
         "Persetujuan akhir sedang berlangsung"
@@ -9479,37 +9461,37 @@
         "Undang anggota tim"
       ],
       "Keep the momentum going by uploading more files using the storage included with your plan.": [
-        "Pertahankan momentum Anda dengan mengunggah lebih banyak berkas melalui ruang penyimpanan yang tersedia dengan paket Anda."
+        "Pertahankan momentum Anda dengan mengunggah lebih banyak file melalui penyimpanan yang tersedia dengan paket Anda."
       ],
       "Manage access": [
         "Kelola akses"
       ],
       "Organize files right from your desktop": [
-        "Organisir berkas langsung dari desktop Anda"
+        "Atur file langsung dari desktop Anda"
       ],
       "Protect your financial documents, ID cards, project files, photos, and more with end-to-end encryption.": [
-        "Lindungi dokumen keuangan, kartu identitas, arsip proyek, foto, dan berkas lainnya yang Anda miliki dengan enkripsi end-to-end."
+        "Lindungi dokumen keuangan, kartu identitas, arsip proyek, foto, dan file lainnya yang Anda miliki dengan enkripsi end-to-end."
       ],
       "Scan the QR code to install the mobile app": [
         "Pindai kode QR atau pasang aplikasi seluler"
       ],
       "Secure your files": [
-        "Amankan berkas Anda"
+        "Amankan file Anda"
       ],
       "Securely share files and folders": [
-        "Bagikan berkas dan folder secara aman"
+        "Bagikan file dan folder secara aman"
       ],
       "Share files & folders": [
-        "Bagikan berkas & folder"
+        "Bagikan file & folder"
       ],
       "Sync and access your files from anywhere": [
-        "Sinkronkan dan akses berkas Anda dari mana saja"
+        "Sinkronkan dan akses file Anda dari mana saja"
       ],
       "The owner needs to confirm sharing access. You'll get an email once it's done.": [
         "Pemilik perlu untuk mengonfirmasi akses berbagi. Anda akan memperoleh email setelah akses telah dikonfirmasi."
       ],
       "Upload your first file": [
-        "Unggah berkas pertama Anda"
+        "Unggah file pertama Anda"
       ],
       "Work faster, smarter": [
         "Bekerja secara lebih cepat dan cerdas"
@@ -9518,7 +9500,7 @@
         "Bekerja bersama"
       ],
       "You just snagged some free data and secured your files with end-to-end encryption － in record time!": [
-        "Anda baru saja memperoleh data gratis dan mengamankan berkas Anda dengan enkripsi end-to-end — dalam waktu yang singkat!"
+        "Anda baru saja memperoleh data gratis dan mengamankan file Anda dengan enkripsi end-to-end — dalam waktu yang singkat!"
       ]
     },
     "Onboarding Trial": {
@@ -9565,7 +9547,7 @@
         "Langganan penuh ${ planTitle } Anda akan dimulai pada ${ boldEndDate }."
       ],
       "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
-        "Anda akan dapat menggunakan ${ planTitle } secara cuma-cuma hingga masa uji coba Anda berakhir."
+        "Anda dapat menggunakan ${ planTitle } secara gratis hingga masa uji coba Anda berakhir."
       ]
     },
     "Option": {
@@ -9594,7 +9576,7 @@
         "Hanya lokasi saat ini: ${ name }"
       ],
       "Select JSON file": [
-        "Pilih berkas JSON"
+        "Pilih file JSON"
       ],
       "Verify content": [
         "Verifikasi konten"
@@ -9624,7 +9606,7 @@
         "Pembagian brankas, item, dan tautan yang aman"
       ],
       "Unlimited logins, notes, credit cards and more": [
-        "Tanpa batasan jumlah entri masuk, catatan, kartu kredit, dan masih banyak lagi"
+        "Tanpa batasan jumlah login, catatan, kartu kredit, dan masih banyak lagi"
       ]
     },
     "pass_signup_2023: Title": {
@@ -9646,7 +9628,7 @@
         "Perlindungan akun mutakhir"
       ],
       "File attachments (up to 10GB)": [
-        "Lampiran berkas (hingga 10GB)"
+        "Lampiran file (hingga 10GB)"
       ],
       "Team policies": [
         "Kebijakan tim"
@@ -9749,7 +9731,7 @@
         "Tanpa termasuk ${ taxName } ${ taxRate }%: ${ taxAmount }"
       ],
       "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
-        "Tanpa termasuk pajak ${ taxRate }%: ${ taxAmount }"
+        "Belum termasuk pajak ${ taxRate }%: ${ taxAmount }"
       ],
       "Got it": [
         "Paham"
@@ -9758,7 +9740,7 @@
         "Saya membeli produk ini selaku pihak bisnis"
       ],
       "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "Meliputi ${ taxName } ${ taxRate }%: ${ taxAmount }"
+        "Termasuk ${ taxName } ${ taxRate }%: ${ taxAmount }"
       ],
       "Including ${ taxRate }% taxes: ${ taxAmount }": [
         "Meliputi pajak ${ taxRate }%: ${ taxAmount }"
@@ -9776,7 +9758,7 @@
         "Silakan aktifkan kembali langganan Anda terlebih dahulu untuk menurunkan jumlah pengaya."
       ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
-        "Harga pembaruan dapat berubah sewaktu-waktu sesuai dengan ${ termsAndConditionsLink } yang berlaku."
+        "Harga perpanjangan dapat berubah sesuai dengan ${ termsAndConditionsLink }."
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Diperbarui seharga ${ renewPriceStr }, batalkan kapan saja."
@@ -9787,23 +9769,14 @@
       "terms and conditions": [
         "syarat dan ketentuan"
       ],
-      "The coupon is valid for ${ couponRedemptions } renewal.": [
-        "Kupon ini valid untuk ${ couponRedemptions } kali pembaruan."
-      ],
       "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
-        "Harga diskon khusus ini valid untuk ${ subscriptionLength } bulan pertama."
-      ],
-      "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "Harga diskon khusus ini valid untuk bulan pertama. Kupon ini valid untuk ${ couponRedemptions } kali pembaruan. Setelahnya, langganan ini akan diperbarui secara otomatis pada harga ${ renewPriceStr } untuk 1 bulan. Anda dapat membatalkan langganan Anda kapan saja."
+        "Harga diskon khusus ini berlaku untuk ${ subscriptionLength } bulan pertama."
       ],
       "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Harga diskon khusus ini valid untuk bulan pertama. Selanjutnya, langganan ini akan diperbarui secara otomatis pada harga ${ renewPriceStr } per bulannya. Anda dapat membatalkan langganan Anda kapan saja."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "Harga diskon khusus ${ priceWithDiscount } ini valid untuk ${ subscriptionLength } bulan pertama."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "Harga diskon khusus ${ priceWithDiscount } ini valid untuk bulan pertama. Kupon ini valid untuk ${ couponRedemptions } kali pembaruan. Setelahnya, langganan ini akan diperbarui secara otomatis pada harga ${ renewPriceStr } untuk 1 bulan. Anda dapat membatalkan langganan Anda kapan saja."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Harga diskon khusus ${ priceWithDiscount } ini valid untuk bulan pertama. Selanjutnya, paket Anda akan diperbarui secara otomatis dengan harga ${ renewPriceStr } per bulannya. Anda dapat membatalkan langganan Anda kapan saja."
@@ -9948,13 +9921,13 @@
         "Nomor Bisnis"
       ],
       "Edit ABN": [
-        "Sunting ABN"
+        "Edit ABN"
       ],
       "Edit Business Number": [
         "Sunting Nomor Bisnis"
       ],
       "Edit EIN": [
-        "Sunting EIN"
+        "Edit EIN"
       ],
       "Edit VAT number": [
         "Sunting nomor PPN"
@@ -10013,7 +9986,7 @@
         "Nama perusahaan"
       ],
       "E.g., ": [
-        "Misalnya "
+        "Mis., "
       ],
       "Email": [
         "Email"
@@ -10218,19 +10191,19 @@
         "**Apabila Anda tidak berlangganan,** paket Anda akan **diturunkan** ke ${ BRAND_NAME }${ PLAN_NAMES[PLANS.FREE] }."
       ],
       "**If you don’t cancel,** your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
-        "**Apabila Anda tidak membatalkan langganan,** paket penuh Anda akan dimulai dan Anda akan memeroleh saldo senilai **${ referrerRewardAmount }**."
+        "**Apabila Anda tidak membatalkan langganan,** paket penuh Anda akan dimulai dan Anda akan memeroleh kredit senilai **${ referrerRewardAmount }**."
       ],
       "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
-        "**Apabila Anda berlangganan sebelum tanggal ini,** Anda akan memperoleh saldo senilai **${ referrerRewardAmount }**."
+        "**Apabila Anda berlangganan sebelum tanggal ini,** Anda akan memperoleh kredit senilai **${ referrerRewardAmount }**."
       ],
       "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
         "Setelah tanggal ini, akun Anda akan diturunkan ke **${ BRAND_NAME } Free**. Apabila Anda ingin berubah pikiran, Anda dapat **mengaktifkan kembali langganan Anda** untuk mempertahankan akses ke berbagai fitur premium."
       ],
       "Earn up to ${ maxRewardAmount } in credit. You’ll get ${ referrerRewardAmount } when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
-        "Dapatkan saldo senilai hingga ${ maxRewardAmount }. Anda akan memperoleh ${ referrerRewardAmount } pada saat pengguna yang Anda undang berlangganan ke paket ${ BRAND_NAME }."
+        "Dapatkan kredit senilai hingga ${ maxRewardAmount }. Anda akan memperoleh ${ referrerRewardAmount } pada saat pengguna yang Anda undang berlangganan ke paket ${ BRAND_NAME }."
       ],
       "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
-        "Nikmati **${ planTitle }** secara cuma-cuma hingga **${ textDate }**."
+        "Nikmati **${ planTitle }** gratis sampai **${ textDate }**."
       ],
       "Friend joined": [
         "Teman yang bergabung"
@@ -10251,16 +10224,16 @@
         "Opsi pembagian lainnya"
       ],
       "Once your full subscription starts, you can still cancel within 30 days and get a prorated refund.": [
-        "Setelah langganan penuh Anda dimulai, Anda masih dapat membatalkan dalam kurun waktu 30 hari dan memperoleh uang kembali secara proratif."
+        "Setelah langganan penuh Anda dimulai, Anda masih dapat membatalkan dalam 30 hari dan mendapatkan pengembalian dana secara prorata"
       ],
       "Refer friends": [
         "Rujuk teman"
       ],
       "Start earning credits": [
-        "Mulai peroleh saldo"
+        "Mulai peroleh kredit"
       ],
       "You can get up to **${ maxRewardAmount }** in credit.": [
-        "Anda dapat memperoleh saldo hingga **${ maxRewardAmount }**."
+        "Anda dapat memperoleh kredit hingga **${ maxRewardAmount }**."
       ],
       "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
         "Anda memiliki **${ daysRemaining } hari tersisa** untuk menjelajahi seluruh fitur canggih yang dimiliki oleh **${ planTitle }**."
@@ -10771,7 +10744,7 @@
         "Akses konten yang diblokir dan jelajahi internet secara pribadi. Meliputi 1700 server di 60+ negara, kecepatan VPN tertinggi, 10 koneksi VPN, layanan streaming di seluruh dunia, pemblokir perangkat lunak jahat dan iklan, dan masih banyak lagi."
       ],
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
-        "Seluruh layanan premium kami dengan batasan tertingginya: 100 alamat email, dukungan untuk 10 domain khusus, alias hide-my-email tanpa batasan jumlah, pembagian kalender, penyimpanan cloud dan pembagian berkas terenkripsi, dan masih banyak lagi."
+        "Seluruh layanan premium kami dengan batasan tertingginya: 100 alamat email, dukungan untuk 10 domain khusus, alias hide-my-email tanpa batasan jumlah, pembagian kalender, penyimpanan cloud dan pembagian file terenkripsi, dan masih banyak lagi."
       ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
         "Meliputi dukungan 3 domain email khusus, 15 alamat email, alias Hide-my-email tidak terbatas, fitur berbagi kalender, dan masih banyak lagi."
@@ -10783,7 +10756,7 @@
         "Dapatkan semua layanan privasi baru versi berbayar tanpa harga tambahan, beserta akses dini ke semua fitur dan produk."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
-        "Amankan berkas Anda dengan penyimpanan cloud yang terenkripsi. Meliputi sinkronisasi otomatis, pembagian berkas terenkripsi, dan masih banyak lagi."
+        "Amankan file Anda dengan penyimpanan cloud yang terenkripsi. Meliputi sinkronisasi otomatis, pembagian file terenkripsi, dan masih banyak lagi."
       ]
     },
     "Spotlight": {
@@ -10794,7 +10767,7 @@
         "Pencarian terenkripsi kini telah hadir"
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
-        "Kini Anda dapat mencari berkas Drive dengan mudah seraya menjaga data Anda tetap aman."
+        "Kini Anda dapat mencari file Drive dengan mudah seraya menjaga data Anda tetap aman."
       ]
     },
     "sso": {
@@ -10853,7 +10826,7 @@
         "Ruang penyimpanan ${ app }"
       ],
       "${ app } storage used": [
-        "${ app } ruang penyimpanan digunakan"
+        "${ app } penyimpanan digunakan"
       ],
       "${ storage } ${ percentage }% full": [
         "${ storage } ${ percentage }% penuh"
@@ -10871,7 +10844,7 @@
         "Ruang penyimpanan yang digunakan"
       ],
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
-        "Untuk terus mengunggah dan menyinkronkan berkas, kosongkan ruang yang ada atau tingkatkan akun Anda untuk memperoleh lebih banyak ruang penyimpanan."
+        "Untuk terus mengunggah dan menyinkronkan file, kosongkan ruang yang ada atau tingkatkan akun Anda untuk memperoleh lebih banyak ruang penyimpanan."
       ],
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
         "Untuk terus menggunakan produk ${ BRAND_NAME }, kosongkan ruang yang ada atau ${ upgrade }"
@@ -10883,7 +10856,7 @@
         "Untuk mengirim atau menerima email, kosongkan ruang atau tingkatkan untuk penyimpanan tambahan."
       ],
       "To upload or sync files, free up space or ${ upgrade }": [
-        "Untuk dapat mengunggah atau menyinkronkan berkas, kosongkan ruang yang ada atau ${ upgrade }"
+        "Untuk dapat mengunggah atau menyinkronkan file, kosongkan ruang yang ada atau ${ upgrade }"
       ],
       "upgrade for more storage": [
         "tingkatkan akun Anda untuk memperoleh lebih banyak ruang penyimpanan"
@@ -10925,7 +10898,7 @@
         "Anda akan kehilangan akses kecepatan VPN tertinggi, perlindungan untuk 10 perangkat, streaming berkecepatan tinggi, perlindungan pemblokir iklan dan perangkat lunak jahat, serta dukungan prioritas juga."
       ],
       "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
-        "Anda akan kehilangan akses ke entri masuk dan catatan yang tak terbatas, alias hide-my-email yang tak terbatas, 20 brankas, serta dukungan prioritas."
+        "Anda akan kehilangan akses ke login dan catatan tanpa batas, alias hide-my-email tanpa batas, 20 brankas, serta dukungan prioritas."
       ]
     },
     "Subscription": {
@@ -11038,16 +11011,16 @@
         "${ planName } membantu Anda memastikan agar masing-masing anggota keluarga Anda — beserta dengan data mereka — selalu terlindung kapan pun mereka online."
       ],
       "${ planName } offers ${ planMaxSpace } storage for your emails, attachments, events, passwords, and files. You are also eligible for yearly storage bonuses.": [
-        "${ planName } menawarkan ruang penyimpanan ${ planMaxSpace } bagi email, lampiran, acara, kata sandi, dan berkas Anda. Di samping itu, Anda juga memenuhi syarat untuk memperoleh bonus ruang penyimpanan tahunan."
+        "${ planName } menawarkan penyimpanan ${ planMaxSpace } bagi email, lampiran, acara, kata sandi, dan file Anda. Anda juga memenuhi syarat untuk memperoleh bonus penyimpanan tahunan."
       ],
       "${ planName } offers ${ planMaxSpace } storage for your files and photos. You are also eligible for yearly storage bonuses.": [
-        "${ planName } menawarkan ruang penyimpanan ${ planMaxSpace } bagi berkas dan foto Anda. Di samping itu, Anda juga memenuhi syarat untuk memperoleh bonus ruang penyimpanan tahunan."
+        "${ planName } menawarkan ruang penyimpanan ${ planMaxSpace } bagi file dan foto Anda. Anda juga memenuhi syarat untuk bonus penyimpanan tahunan."
       ],
       "${ planName } offers ${ planMaxSpace } storage per user for emails, attachments, events, and files. You are also eligible for yearly storage bonuses.": [
-        "${ planName } menawarkan penyimpanan ${ planMaxSpace } per pengguna untuk email, lampiran, acara, dan berkas. Anda juga memenuhi syarat untuk mendapatkan bonus penyimpanan tahunan."
+        "${ planName } menawarkan penyimpanan ${ planMaxSpace } per pengguna untuk email, lampiran, acara, dan file. Anda juga memenuhi syarat untuk mendapatkan bonus penyimpanan tahunan."
       ],
       "${ planName } offers ${ planMaxSpace } storage per user for emails, attachments, events, files, and passwords. You are also eligible for yearly storage bonuses.": [
-        "${ planName } menawarkan ruang penyimpanan ${ planMaxSpace } bagi email, lampiran, acara, berkas, dan kata sandi. Anda juga akan memenuhi syarat untuk memperoleh bonus ruang penyimpanan tahunan."
+        "${ planName } menawarkan penyimpanan ${ planMaxSpace } bagi email, lampiran, acara, file, dan kata sandi. Anda juga akan memenuhi syarat untuk memperoleh bonus penyimpanan tahunan."
       ],
       "${ planNumberOfCalendars } calendar per user": [
         "${ planNumberOfCalendars } kalender per pengguna"
@@ -11071,7 +11044,7 @@
         "2 pengguna"
       ],
       "Add any new files": [
-        "Tambahkan berkas baru mana pun"
+        "Tambahkan file baru mana pun"
       ],
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
         "Setelah langganan ${ planName } Anda berakhir, Anda akan diturunkan ke ${ BRAND_NAME } Free, yang hanya menawarkan ruang penyimpanan Mail hingga 1 GB dan Drive hingga 5 GB. Anda juga akan kehilangan segala ruang penyimpanan bonus yang telah diberikan kepada Anda sebelumnya."
@@ -11194,7 +11167,7 @@
         "Dukung sasaran kepatuhan Anda"
       ],
       "Sync files on devices": [
-        "Sinkronkan berkas pada perangkat"
+        "Sinkronkan file pada perangkat"
       ],
       "The best of ${ BRAND_NAME }": [
         "Yang terbaik dari ${ BRAND_NAME }"
@@ -11206,7 +11179,7 @@
         "Privasi tanpa batas untuk dua orang pengguna"
       ],
       "Upload any new files": [
-        "Mengunggah berkas baru"
+        "Mengunggah file baru"
       ],
       "User subscriptions are ${ BRAND_NAME }'s sole revenue. Your support keeps us independent, furthers our mission for online privacy, and aids activists and organizations fighting for freedom.": [
         "Langganan pengguna merupakan sumber pemasukan ${ BRAND_NAME } satu-satunya. Dukungan Anda menjaga kami agar tetap independen, mendorong misi kami dalam mewujudkan privasi online, serta melindungi para aktivis dan organisasi yang berjuang demi kebebasan."
@@ -11218,7 +11191,7 @@
         "Pengguna tidak akan dapat mengirim email"
       ],
       "Users won’t be able to upload files on their devices": [
-        "Pengguna tidak akan dapat mengunggah berkas pada perangkat mereka"
+        "Pengguna tidak akan dapat mengunggah file pada perangkat mereka"
       ],
       "Version history": [
         "Riwayat versi"
@@ -11242,7 +11215,7 @@
         "Bonus ruang penyimpanan gratis tahunan"
       ],
       "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
-        "Anda masih memiliki ${ expiryDate } pada paket ${ planName } Anda. Kami akan menambahkan saldo yang senilai dengan waktu langganan yang tersisa ke Akun ${ BRAND_NAME } Anda. Pastikan Anda tidak melebihi batasan paket gratis sebelum membatalkan langganan. ${ learnMoreLink }"
+        "Langganan ${ planName } Anda masih berlaku hingga ${ expiryDate }. Kami akan menambahkan kredit untuk sisa waktu ke Akun ${ BRAND_NAME } Anda. Pastikan Anda tidak melebihi batas paket gratis sebelum membatalkan. ${ learnMoreLink }"
       ],
       "Your ${ planName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
         "Paket ${ planName } Anda tidak hanya menjaga keamanan data dan komunikasi bisnis Anda. Paket ini juga mendukung sasaran kepatuhan bisnis Anda, membuat bisnis Anda tampil menonjol, serta membuat tim Anda selalu terhubung."
@@ -11315,7 +11288,7 @@
         "Sistem kami tidak akan lagi mendebit Anda secara otomatis melalui metode pembayaran ini, namun langganan Anda akan tetap diperbarui pada akhir siklus tagihan. Apabila Anda ingin menurunkan akun atau mengubah paket berlangganan, Anda tetap harus mengurus proses pemindahan paket secara manual sebelum tagihan Anda jatuh tempo. Di samping itu, apabila Anda menonaktifkan autodebit dan lupa membayar tagihan, kami dapat menurunkan akun Anda dan menonaktifkan berbagai fitur berbayar yang ada secara otomatis."
       ],
       "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
-        "Sistem kami tidak akan lagi mendebit Anda secara otomatis melalui metode pembayaran ini, namun langganan Anda akan tetap diperbarui pada akhir siklus tagihan. Apabila Anda ingin menurunkan akun atau mengubah paket berlangganan, Anda tetap harus mengurus proses pemindahan paket secara manual sebelum tagihan Anda jatuh tempo. Mohon diperhatikan bahwa kami tidak dapat menurunkan akun Anda apabila Anda melebihi batas kuota yang diizinkan atau menggunakan fitur berbayar selaku pengguna gratis, dan kami juga tidak dapat menghapus berkas, email, atau data lainnya yang Anda miliki. Apabila Anda menonaktifkan autodebit, jangan lupa untuk membayar tagihan Anda pada waktunya untuk menghindari penangguhan akun."
+        "Sistem kami tidak akan lagi menagih otomatis menggunakan metode pembayaran ini, tetapi langganan Anda tetap akan diperpanjang di akhir siklus tagihan. Jika Anda ingin menurunkan paket atau mengubah langganan, Anda tetap perlu melakukannya sendiri sebelum periode penagihan berakhir. Kami tidak dapat menurunkan paket Anda secara otomatis karena jika Anda melebihi kuota penyimpanan free plan atau menggunakan fitur berbayar lainnya, kami tidak dapat menghapus file, email, atau data lain secara otomatis untuk Anda. Jika Anda menonaktifkan pembayaran otomatis, pastikan untuk membayar tagihan langganan berikutnya sebelum tanggal jatuh tempo agar akun Anda tidak ditangguhkan."
       ]
     },
     "Subscription saving": {
@@ -11474,7 +11447,7 @@
     },
     "summer2023: Tooltip": {
       "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
-        "Buat rincian entri masuk aman pada seluruh perangkat Anda. Meliputi alias tanpa batasan jumlah, 20 brankas, 2FA yang terintegrasi, pengisian kartu kredit otomatis, dan masih banyak lagi."
+        "Buat rincian login aman pada seluruh perangkat Anda. Meliputi alias tanpa batasan jumlah, 20 brankas, 2FA yang terintegrasi, pengisian kartu kredit otomatis, dan masih banyak lagi."
       ],
       "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
         "Meliputi 2950+ server di 65+ negara, kemampuan untuk menghubungkan hingga 10 perangkat, akses ke layanan streaming di seluruh dunia, pemblokir malware dan iklan, dan masih banyak lagi."
@@ -11483,7 +11456,7 @@
         "Meliputi dukungan 1 domain email khusus, 10 alamat email, 10 alias hide-my-email, pembagian kalender, dan masih banyak lagi."
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "Amankan berkas Anda dengan penyimpanan cloud yang terenkripsi. Meliputi riwayat versi, pembagian berkas terenkripsi, dan masih banyak lagi."
+        "Amankan file Anda dengan penyimpanan cloud yang terenkripsi. Meliputi riwayat versi, pembagian file terenkripsi, dan masih banyak lagi."
       ]
     },
     "Tab subscription modal": {
@@ -11729,7 +11702,7 @@
         "Ubah kata sandi"
       ],
       "Check for malicious files": [
-        "Pindai berkas berbahaya"
+        "Periksa file berbahaya"
       ],
       "Claim your ${ MAIL_APP_NAME } address": [
         "Klaim alamat ${ MAIL_APP_NAME } Anda"
@@ -11855,10 +11828,10 @@
         "Diagnostik"
       ],
       "Digital signature partially verified. This file was created using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
-        "Tanda tangan digital terverifikasi secara parsial. Berkas ini dibuat dengan menggunakan tautan berbagi yang tersedia secara publik oleh pengguna tanpa akun ${ BRAND_NAME }, sehingga identitas mereka tidak dapat diverifikasi."
+        "Tanda tangan digital terverifikasi secara parsial. File ini dibuat dengan menggunakan tautan berbagi yang tersedia secara publik oleh pengguna tanpa akun ${ BRAND_NAME }, sehingga identitas mereka tidak dapat diverifikasi."
       ],
       "Digital signature partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
-        "Tanda tangan digital terverifikasi secara parsial. Berkas ini diunggah melalui tautan berbagi yang tersedia secara publik oleh pengguna tanpa akun ${ BRAND_NAME }, sehingga identitas pengunggah ini tidak dapat diverifikasi."
+        "Tanda tangan digital terverifikasi secara parsial. File ini diunggah melalui tautan berbagi yang tersedia secara publik oleh pengguna tanpa akun ${ BRAND_NAME }, sehingga identitas pengunggah ini tidak dapat diverifikasi."
       ],
       "Digital signature partially verified. This folder was created using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
         "Tanda tangan digital terverifikasi secara parsial. Folder ini diunggah melalui tautan berbagi yang tersedia secara publik oleh pengguna tanpa akun ${ BRAND_NAME }, sehingga identitas pengunggah ini tidak dapat diverifikasi."
@@ -11867,10 +11840,10 @@
         "Tanda tangan digital terverifikasi secara parsial. Folder ini diunggah melalui tautan berbagi yang tersedia secara publik oleh pengguna tanpa akun ${ BRAND_NAME }, sehingga identitas pengunggah ini tidak dapat diverifikasi."
       ],
       "Digital signature verified. This file was securely created by <strong>${ emailAddress }</strong>.": [
-        "Tanda tangan digital berhasil diverifikasi. Berkas ini dibuat secara aman oleh <strong>${ emailAddress }</strong>."
+        "Tanda tangan digital berhasil diverifikasi. File ini dibuat secara aman oleh <strong>${ emailAddress }</strong>."
       ],
       "Digital signature verified. This file was securely uploaded by <strong>${ emailAddress }</strong>.": [
-        "Tanda tangan digital berhasil diverifikasi. Berkas ini diunggah secara aman oleh <strong>${ emailAddress }</strong>."
+        "Tanda tangan digital berhasil diverifikasi. File ini diunggah secara aman oleh <strong>${ emailAddress }</strong>."
       ],
       "Digital signature verified. This folder was securely created by <strong>${ emailAddress }</strong>.": [
         "Tanda tangan digital berhasil diverifikasi. Folder ini dibuat secara aman oleh <strong>${ emailAddress }</strong>."
@@ -11903,7 +11876,7 @@
         "Unduh aplikasinya"
       ],
       "Download unverified file?": [
-        "Unduh berkas yang tidak terverifikasi?"
+        "Unduh file yang tidak terverifikasi?"
       ],
       "Download unverified folder?": [
         "Unduh folder yang tidak terverifikasi?"
@@ -11915,7 +11888,7 @@
         "Letakkan untuk mengunggah"
       ],
       "Duplicate file found": [
-        "Ditemukan berkas duplikat"
+        "Ditemukan file duplikat"
       ],
       "Duplicate folder found": [
         "Ditemukan folder duplikat"
@@ -11972,10 +11945,10 @@
         "Gagal"
       ],
       "File details": [
-        "Rincian berkas"
+        "Rincian file"
       ],
       "File recovery process": [
-        "Proses pemulihan berkas"
+        "Proses pemulihan file"
       ],
       "Folder": [
         "Folder"
@@ -11990,7 +11963,7 @@
         "Dapatkan ${ DRIVE_SHORT_APP_NAME } pada ponsel Anda"
       ],
       "Get **${ referralInfo.uiData.refereeRewardAmount }** in credits with ${ planTitle }": [
-        "Dapatkan **saldo senilai ${ referralInfo.uiData.refereeRewardAmount }** dengan ${ planTitle }"
+        "Dapatkan **kredit senilai ${ referralInfo.uiData.refereeRewardAmount }** dengan ${ planTitle }"
       ],
       "Get full access to ${ CALENDAR_APP_NAME }": [
         "Dapatkan akses penuh ke ${ CALENDAR_APP_NAME }"
@@ -12029,10 +12002,10 @@
         "Bagaimana cara semua ini bekerja?"
       ],
       "How does it work?": [
-        "Bagaimana cara hal ini bekerja?"
+        "Bagaimana cara kerjanya?"
       ],
       "How your free trial works": [
-        "Bagaimana masa uji coba gratis Anda bekerja"
+        "Cara kerja masa uji coba gratis Anda"
       ],
       "Human verification": [
         "Verifikasi manusia"
@@ -12119,7 +12092,7 @@
         "Diubah"
       ],
       "My files": [
-        "Berkas saya"
+        "File saya"
       ],
       "Name": [
         "Nama"
@@ -12128,7 +12101,7 @@
         "Butuh lebih banyak alias?"
       ],
       "Need to share more files with edit access?": [
-        "Butuh untuk membagikan lebih banyak berkas dengan akses penyuntingan?"
+        "Butuh untuk membagikan lebih banyak file dengan akses pengeditan?"
       ],
       "Network error": [
         "Kesalahan jaringan"
@@ -12299,7 +12272,7 @@
         "Minta kode baru"
       ],
       "Restore your files": [
-        "Pulihkan berkas Anda"
+        "Pulihkan file Anda"
       ],
       "Save it for later in ${ DRIVE_APP_NAME }": [
         "Simpan untuk nanti di ${ DRIVE_APP_NAME }"
@@ -12380,7 +12353,7 @@
         "Ukuran dalam byte"
       ],
       "Sort files/folders": [
-        "Urutkan berkas/folder"
+        "Urutkan file/folder"
       ],
       "Start a new import": [
         "Mulai impor baru"
@@ -12410,7 +12383,7 @@
         "Tautan telah kedaluwarsa"
       ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
-        "Berkas ini tidak ditandatangani atau memiliki tanda tangan yang tidak valid. Kunjungi Menu (⋮) → Details untuk informasi lebih lanjut."
+        "File ini tidak ditandatangani atau memiliki tanda tangan yang tidak valid. Kunjungi Menu (⋮) → Details untuk informasi lebih lanjut."
       ],
       "This folder has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "Folder ini tidak ditandatangani atau memiliki tanda tangan yang tidak valid. Kunjungi Menu (⋮) → Details untuk informasi lebih lanjut."
@@ -12464,7 +12437,7 @@
         "Tingkatkan ke ${ planName }"
       ],
       "Upgrade to keep your premium benefits.": [
-        "Tingkatkan untuk mempertahankan berbagai keutamaan premium Anda."
+        "Tingkatkan paket untuk tetap menikmati manfaat premium."
       ],
       "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
         "Tingkatkan ruang penyimpanan Anda dengan ${ planName } seharga ${ formattedPrice }"
@@ -12473,7 +12446,7 @@
         "Tingkatkan ruang penyimpanan Anda dengan ${ planName } seharga ${ formattedPrice }"
       ],
       "Upload and share files": [
-        "Unggah dan bagikan berkas"
+        "Unggah dan bagikan file"
       ],
       "Uploaded": [
         "Diunggah"
@@ -12482,7 +12455,7 @@
         "Diunggah oleh"
       ],
       "Uploading a large file or folder": [
-        "Mengunggah berkas atau folder berukuran besar"
+        "Mengunggah file atau folder berukuran besar"
       ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Gunakan ${ VPN_SHORT_APP_NAME } untuk privasi data"
@@ -12512,31 +12485,31 @@
         "Peringatan: situs web ini terindikasi palsu"
       ],
       "We couldn’t verify that <strong>${ emailAddress }</strong> created this file.": [
-        "Kami tidak dapat memverifikasi bahwa berkas ini dibuat oleh <strong>${ emailAddress }</strong>."
+        "Kami tidak dapat memverifikasi bahwa file ini dibuat oleh <strong>${ emailAddress }</strong>."
       ],
       "We couldn’t verify that <strong>${ emailAddress }</strong> created this folder.": [
         "Kami tidak dapat memverifikasi bahwa folder ini dibuat oleh <strong>${ emailAddress }</strong>."
       ],
       "We couldn’t verify that <strong>${ emailAddress }</strong> uploaded this file.": [
-        "Kami tidak dapat memverifikasi bahwa berkas ini diunggah oleh <strong>${ emailAddress }</strong>."
+        "Kami tidak dapat memverifikasi bahwa file ini diunggah oleh <strong>${ emailAddress }</strong>."
       ],
       "We couldn’t verify that <strong>${ emailAddress }</strong> uploaded this folder.": [
         "Kami tidak dapat memverifikasi bahwa folder ini diunggah oleh <strong>${ emailAddress }</strong>."
       ],
       "We couldn’t verify that an anonymous user created this file.": [
-        "Kami tidak dapat memverifikasi bahwa berkas ini dibuat oleh pengguna anonim."
+        "Kami tidak dapat memverifikasi bahwa file ini dibuat oleh pengguna anonim."
       ],
       "We couldn’t verify that an anonymous user created this folder.": [
         "Kami tidak dapat memverifikasi bahwa folder ini dibuat oleh pengguna anonim."
       ],
       "We couldn’t verify that an anonymous user uploaded this file.": [
-        "Kami tidak dapat memverifikasi bahwa berkas ini diunggah oleh pengguna anonim."
+        "Kami tidak dapat memverifikasi bahwa file ini diunggah oleh pengguna anonim."
       ],
       "We couldn’t verify that an anonymous user uploaded this folder.": [
         "Kami tidak dapat memverifikasi bahwa folder ini diunggah oleh pengguna anonim."
       ],
       "We weren’t able to confirm that the file content was uploaded by ${ claimedContentAuthor }. The reason is: ${ activeRevision.contentAuthor.error.error }": [
-        "Kami tidak dapat mengonfirmasi bahwa isi berkas ini diunggah oleh ${ claimedContentAuthor }. Alasan: ${ activeRevision.contentAuthor.error.error }"
+        "Kami tidak dapat mengonfirmasi bahwa isi file ini diunggah oleh ${ claimedContentAuthor }. Alasan: ${ activeRevision.contentAuthor.error.error }"
       ],
       "We weren’t able to confirm that the name was created or modified by ${ claimedNameAuthor }. The reason is: ${ nodeEntity.nameAuthor.error.error }": [
         "Kami tidak dapat mengonfirmasi bahwa nama ini dibuat atau diubah oleh ${ claimedNameAuthor }. Alasan: ${ nodeEntity.nameAuthor.error.error }"
@@ -12569,16 +12542,13 @@
         "Anda memiliki berkas yang tidak dapat diakses"
       ],
       "You have no files to share": [
-        "Anda tidak memiliki berkas untuk dibagikan"
+        "Anda tidak memiliki file untuk dibagikan"
       ],
       "You have no folders yet": [
         "Anda belum memiliki folder"
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Masa uji coba gratis ${ planName } Anda akan berakhir pada ${ textDate }"
-      ],
-      "Your ${ planName } subscription has started": [
-        "Langganan ${ planName } Anda telah dimulai"
       ],
       "Your 3 GB bonus": [
         "Bonus 3 GB Anda"
@@ -12590,7 +12560,7 @@
         "Perubahan Anda belum disinkronkan"
       ],
       "Your download includes ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME } files": [
-        "Unduhan Anda meliputi berkas ${ DOCS_APP_NAME } atau ${ SHEETS_APP_NAME }"
+        "Unduhan Anda meliputi file ${ DOCS_APP_NAME } atau ${ SHEETS_APP_NAME }"
       ],
       "Your exposed information": [
         "Informasi Anda yang terpapar"
@@ -12618,13 +12588,13 @@
     },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
-        "Tambahkan berkas bersama ini ke ${ DRIVE_APP_NAME } anda untuk akses mudah nanti."
+        "Tambahkan file bersama ini ke ${ DRIVE_APP_NAME } anda untuk akses mudah nanti."
       ],
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Opsi Otomatis berarti pesan akan dikirim apa adanya sesuai format tulis yang dipakai. Opsi Teks Polos berarti pesan akan selalu dikirim dalam bentuk teks polos."
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
-        "Sesuaikan tema aplikasi dengan mode terang dan gelap pada sistem Anda secara otomatis"
+        "Beralih otomatis antara tema pilihan Anda untuk siang dan malam, selaras dengan mode siang dan malam sistem Anda."
       ],
       "Customize import to reduce the number of folders": [
         "Sesuaikan impor untuk mengurangi jumlah folder"
@@ -12666,7 +12636,7 @@
         "Muat gambar"
       ],
       "Message and file name are stored with zero access encryption when included in the email": [
-        "Pesan dan nama berkas disimpan dengan enkripsi zero-access pada saat diikutsertakan pada email"
+        "Pesan dan nama file disimpan dengan enkripsi zero-access pada saat diikutsertakan pada email"
       ],
       "Not all information listed here was exposed for all users.": [
         "Tidak semua informasi yang tercantum di sini terpapar untuk seluruh pengguna."
@@ -12702,7 +12672,7 @@
         "Unggah kunci publik untuk mengaktifkan pengiriman pesan terenkripsi ujung ke ujung ke alamat ini"
       ],
       "We have sent them an invite to access the item.": [
-        "Kami telah mengirim undangan untuk mengakses berkas ini."
+        "Kami telah mengirim undangan untuk mengakses file ini."
       ]
     },
     "tooltip": {
@@ -12710,7 +12680,7 @@
         "${ LUMO_APP_NAME }: Asisten AI yang menghargai privasi Anda"
       ],
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Entri masuk aman pada seluruh perangkat Anda. Meliputi alias tanpa batasan jumlah, pembagian alias, 2FA yang terintegrasi, dan masih banyak lagi."
+        "${ PASS_APP_NAME }: Login aman pada seluruh perangkat Anda. Meliputi alias tanpa batasan jumlah, pembagian alias, 2FA yang terintegrasi, dan masih banyak lagi."
       ]
     },
     "Unlimited offer": {

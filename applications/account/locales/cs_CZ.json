@@ -1965,26 +1965,6 @@
         "Nový e-mail"
       ]
     },
-    "app-switcher": {
-      "Browse the web privately and block ads": [
-        "Procházejte web soukromě a blokujte reklamu"
-      ],
-      "Keep your schedule private": [
-        "Udržujte svůj rozvrh v soukromí"
-      ],
-      "Protect your passwords and identity": [
-        "Chraňte svá hesla a identitu"
-      ],
-      "Safeguard your files and photos": [
-        "Ochraňte své soubory a fotky"
-      ],
-      "Secure your communications": [
-        "Zabezpečte svou komunikaci"
-      ],
-      "Talk confidentially": [
-        "Hovořit soukromě"
-      ]
-    },
     "app-switcher_2025": {
       "Bitcoin wallet": [
         "Bitcoinová peněženka"
@@ -3238,11 +3218,6 @@
       ],
       "Expand": [
         "Rozbalit"
-      ]
-    },
-    "collider_2025: app-switcher": {
-      "Chat with a private AI assistant": [
-        "Chatujte se soukromým AI asistentem"
       ]
     },
     "collider_2025: feature": {
@@ -4837,9 +4812,6 @@
       "Simplify syncing and scheduling with shared calendars.": [
         "Zjednodušte synchronizaci a plánování pomocí sdílených kalendářů."
       ],
-      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
-        "Pro importování prostřednictvím souborů CSV a VCF zajistěte, aby velikost souboru nepřesáhla ${ MAX_IMPORT_FILE_SIZE_STRING } nebo ${ MAX_IMPORT_CONTACTS_STRING } kontaktů. Pokud je váš soubor větší, rozdělte jej na menší soubory. ${ learnMoreLink }."
-      ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Pro import kontaktů ze služby Google nebo Outlook ${ easySwitchLink }."
       ],
@@ -6404,7 +6376,7 @@
         "Sloučit alespoň ${ calendarsToFixCount } kalendářů s ${ BRAND_NAME } existujícími kalendáři"
       ],
       "Missing key packet": [
-        "Chybějící paket klíčů"
+        "Chybějící paket klíče"
       ],
       "Missing signature": [
         "Chybí podpis"
@@ -6767,7 +6739,7 @@
         "Dosáhli jste limitu počtu kontaktů vašeho účtu"
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
-        "Využili jste všechny adresy ve vašem tarifu. Prosím navyšte svůj tarif, abyste mohli přidat novou adresu, nebo deaktivujte adresu ve svém účtu."
+        "Využili jste všechny adresy ve vašem tarifu. Prosím navyšte svůj tarif, abyste mohli přidat novou adresu, nebo deaktivujte některou z adres ve svém účtu."
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Limit počtu uživatelů ve vašem tarifu byl vyčerpán. Přejděte na vyšší tarif, abyste mohli přidat dalšího uživatele."
@@ -6863,9 +6835,6 @@
       ],
       "An error occurred uploading your file. No file has been selected.": [
         "Došlo k chybě při nahrávání vašeho souboru. Žádný soubor nebyl vybrán."
-      ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
-        "Váš soubor ${ formattedFilename } obsahuje více než ${ MAX_IMPORT_CONTACTS_STRING } kontaktů."
       ],
       "Your file ${ formattedFilename } has no contacts to be imported.": [
         "Váš soubor ${ formattedFilename } nemá žádné kontakty k importování."
@@ -9175,12 +9144,6 @@
       "All your changes will be lost.": [
         "Veškeré vaše změny budou ztraceny."
       ],
-      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
-        "Budou importovány všechny vaše kontakty až do limitu ${ MAX_CONTACTS_PER_USER }",
-        "Budou importovány všechny vaše kontakty až do limitu ${ MAX_CONTACTS_PER_USER }",
-        "Budou importovány všechny vaše kontakty až do limitu ${ MAX_CONTACTS_PER_USER }",
-        "Budou importovány všechny vaše kontakty až do limitu ${ MAX_CONTACTS_PER_USER }"
-      ],
       "Allocated": [
         "Přiděleno"
       ],
@@ -9438,6 +9401,9 @@
       ],
       "CNET editors choice award with a rating of 8.4 out of 10": [
         "Cena redakce CNET s hodnocením 8,4 z 10 hvězd"
+      ],
+      "Coming soon": [
+        "Již brzy"
       ],
       "Compromised": [
         "Kompromitováno"
@@ -9711,9 +9677,6 @@
       ],
       "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
         "Každá doména může mít pouze jeden záznam SPF (TXT). Pokud chcete zachovat stávající záznam SPF (TXT), můžete ke stávajícímu záznamu přidat ${ spf } (vložte jej za ${ spfValue })."
-      ],
-      "Early access": [
-        "Předběžný přístup"
       ],
       "Edit email address": [
         "Upravit e-mailovou adresu"
@@ -10762,6 +10725,9 @@
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Obraťte se na nás pro pomoc s čímkoli od ${ BRAND_NAME }"
       ],
+      "Receive notifications for ${ categoryLabel }": [
+        "Přijímat oznámení ohledně ${ categoryLabel }"
+      ],
       "Recently used servers:": [
         "Nedávno použité servery:"
       ],
@@ -10860,9 +10826,6 @@
       ],
       "Securing your account": [
         "Zabezpečení vašeho účtu"
-      ],
-      "Select a service to continue": [
-        "Vyberte službu a pokračujte"
       ],
       "Select one or multiple user affiliations": [
         "Vyberte jednu nebo více příslušností uživatele"
@@ -11814,9 +11777,6 @@
       ],
       "You can enforce the password rules members of your organization will use when they create or reset the password to their ${ BRAND_NAME } Account.": [
         "Můžete zavést pravidla pro hesla, která budou členové vaší organizace muset splnit při vytváření nebo resetování hesla ke svému účtu ${ BRAND_NAME }."
-      ],
-      "You can get our premium privacy services in one bundle—and it's just **${ priceString }/month**.": [
-        "Naše prémiové služby pro ochranu soukromí můžete získat v jednom balíčku – a to za pouhých **${ priceString }/měsíc**."
       ],
       "You can get our premium privacy services in one bundle—and it’s just **${ priceString }/month**.": [
         "Naše prémiové služby ochrany soukromí můžete získat v jednom balíčku—a to za pouhých **${ priceString }/měsíc**."
@@ -12918,6 +12878,9 @@
       "Autofill 2FA": [
         "Automaticky vyplnit 2FA"
       ],
+      "Automated confirmations and alerts": [
+        "Automatická potvrzení a upozornění"
+      ],
       "Automatically save contacts": [
         "Automaticky ukládat kontakty"
       ],
@@ -12957,6 +12920,9 @@
       "Block malware, ads and trackers": [
         "Blokovat malware, reklamy a sledovací prvky"
       ],
+      "Bookings, billings, and orders": [
+        "Rezervace, fakturace a objednávky"
+      ],
       "Browser": [
         "Prohlížeč"
       ],
@@ -12992,6 +12958,9 @@
       ],
       "Cash": [
         "Hotovost"
+      ],
+      "Categories": [
+        "Kategorie"
       ],
       "Category": [
         "Kategorie"
@@ -13128,6 +13097,9 @@
       "Days of the week": [
         "Dny v týdnu"
       ],
+      "Deals, offers, marketing emails": [
+        "Nabídky, akce, marketingové e-maily"
+      ],
       "Default email address": [
         "Výchozí e-mailová adresa"
       ],
@@ -13170,6 +13142,9 @@
       "Disabled": [
         "Deaktivovaný"
       ],
+      "Discussion board posts and threads": [
+        "Příspěvky a vlákna na diskuzním fóru"
+      ],
       "Display name": [
         "Zobrazované jméno"
       ],
@@ -13205,9 +13180,6 @@
       ],
       "Email address": [
         "E-mailová adresa"
-      ],
-      "Email categories": [
-        "Kategorie e-mailů"
       ],
       "Email or username": [
         "E-mail nebo uživatelské jméno"
@@ -13308,6 +13280,9 @@
       "for your first month": [
         "za první měsíc"
       ],
+      "Forums": [
+        "Fóra"
+      ],
       "From: ${ fromEmail }": [
         "Od: ${ fromEmail }"
       ],
@@ -13322,6 +13297,27 @@
       ],
       "Gift code": [
         "Dárkový kód"
+      ],
+      "Go to Forums": [
+        "Přejít na fóra"
+      ],
+      "Go to Newsletters": [
+        "Přejít na e-mailové zpravodaje"
+      ],
+      "Go to Primary": [
+        "Přejít na primární"
+      ],
+      "Go to Promotions": [
+        "Přejít ke slevám a akcím"
+      ],
+      "Go to Social": [
+        "Přejít na sociální média"
+      ],
+      "Go to Transactions": [
+        "Přejít k transakcím"
+      ],
+      "Go to Updates": [
+        "Přejít na aktualizace"
       ],
       "Group address": [
         "Skupinová adresa"
@@ -13545,6 +13541,9 @@
       "New second password": [
         "Nové druhé heslo"
       ],
+      "Newsletters": [
+        "E-mailové zpravodaje"
+      ],
       "No (users cannot use the app until a vault is shared with them)": [
         "Ne (uživatelé nemohou aplikaci používat, dokud s nimi není sdílen trezor)"
       ],
@@ -13553,6 +13552,9 @@
       ],
       "No label found": [
         "Nebyl nalezen žádný štítek"
+      ],
+      "Non-promotional content and news": [
+        "Nepropagační obsah a novinky"
       ],
       "Non-standard ports": [
         "Nestandardní porty"
@@ -13676,6 +13678,12 @@
       ],
       "Previous password": [
         "Předchozí heslo"
+      ],
+      "Primary": [
+        "Primární"
+      ],
+      "Promotions": [
+        "Propagační akce"
       ],
       "Prompt to trust keys": [
         "Dotaz na důvěru klíčům"
@@ -13824,6 +13832,12 @@
       "SMTP username": [
         "SMTP uživatelské jméno"
       ],
+      "Social": [
+        "Sociální"
+      ],
+      "Social media updates and activity": [
+        "Aktualizace a aktivita na sociálních médiích"
+      ],
       "Spam": [
         "Spam"
       ],
@@ -13908,6 +13922,9 @@
       "Token name": [
         "Název tokenu"
       ],
+      "Transactions": [
+        "Transakce"
+      ],
       "Two-password mode": [
         "Režim dvou hesel"
       ],
@@ -13922,6 +13939,9 @@
       ],
       "Unlimited logins and devices": [
         "Neomezený počet přihlášení a zařízení"
+      ],
+      "Updates": [
+        "Aktualizace"
       ],
       "Upload 1 or more encryption keys": [
         "Nahrát 1 nebo více dešifrovacích klíčů"
@@ -15997,9 +16017,6 @@
       "Review subscription and pay": [
         "Zkontrolovat předplatné a zaplatit"
       ],
-      "Start exploring the ${ BRAND_NAME } universe": [
-        "Začněte prozkoumávat svět ${ BRAND_NAME }"
-      ],
       "Switch plans?": [
         "Změnit tarif?"
       ],
@@ -17810,23 +17827,11 @@
       "terms and conditions": [
         "smluvní podmínky užívání"
       ],
-      "The coupon is valid for ${ couponRedemptions } renewal.": [
-        "Kupón je platný pro ${ couponRedemptions } obnovení.",
-        "Kupón je platný pro ${ couponRedemptions } obnovení.",
-        "Kupón je platný pro ${ couponRedemptions } obnovení.",
-        "Kupón je platný pro ${ couponRedemptions } obnovení."
-      ],
       "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
         "Speciální zvýhodněná cena platí pro první ${ subscriptionLength } měsíc.",
         "Speciální zvýhodněná cena platí pro první ${ subscriptionLength } měsíce.",
         "Speciální zvýhodněná cena platí pro prvních ${ subscriptionLength } měsíců.",
         "Speciální zvýhodněná cena platí pro prvních ${ subscriptionLength } měsíců."
-      ],
-      "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "Speciální zvýhodněná cena platí první měsíc. Kupón je platný pro ${ couponRedemptions } obnovení. Poté se automaticky obnoví za ${ renewPriceStr } na 1 měsíc. Předplatné můžete kdykoli zrušit.",
-        "Speciální zvýhodněná cena platí první měsíc. Kupón je platný pro ${ couponRedemptions } obnovení. Poté se automaticky obnoví za ${ renewPriceStr } na 1 měsíc. Předplatné můžete kdykoli zrušit.",
-        "Speciální zvýhodněná cena platí první měsíc. Kupón je platný pro ${ couponRedemptions } obnovení. Poté se automaticky obnoví za ${ renewPriceStr } na 1 měsíc. Předplatné můžete kdykoli zrušit.",
-        "Speciální zvýhodněná cena platí první měsíc. Kupón je platný pro ${ couponRedemptions } obnovení. Poté se automaticky obnoví za ${ renewPriceStr } na 1 měsíc. Předplatné můžete kdykoli zrušit."
       ],
       "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Speciální zvýhodněná cena platí první měsíc. Poté dojde každý měsíc k automatickému obnovení za ${ renewPriceStr }. Předplatné můžete kdykoli zrušit."
@@ -17836,12 +17841,6 @@
         "Speciální zvýhodněná cena ${ priceWithDiscount } platí pro první ${ subscriptionLength } měsíce.",
         "Speciální zvýhodněná cena ${ priceWithDiscount } platí pro prvních ${ subscriptionLength } měsíců.",
         "Speciální zvýhodněná cena ${ priceWithDiscount } platí pro prvních ${ subscriptionLength } měsíců."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "Speciální zvýhodněná cena ${ priceWithDiscount } platí první měsíc. Kupón je platný pro ${ couponRedemptions } obnovení. Poté se automaticky obnoví za ${ renewPriceStr } na 1 měsíc. Předplatné můžete kdykoli zrušit.",
-        "Speciální zvýhodněná cena ${ priceWithDiscount } platí první měsíc. Kupón je platný pro ${ couponRedemptions } obnovení. Poté se automaticky obnoví za ${ renewPriceStr } na 1 měsíc. Předplatné můžete kdykoli zrušit.",
-        "Speciální zvýhodněná cena ${ priceWithDiscount } platí první měsíc. Kupón je platný pro ${ couponRedemptions } obnovení. Poté se automaticky obnoví za ${ renewPriceStr } na 1 měsíc. Předplatné můžete kdykoli zrušit.",
-        "Speciální zvýhodněná cena ${ priceWithDiscount } platí první měsíc. Kupón je platný pro ${ couponRedemptions } obnovení. Poté se automaticky obnoví za ${ renewPriceStr } na 1 měsíc. Předplatné můžete kdykoli zrušit."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Speciální zvýhodněná cena ${ priceWithDiscount } platí první měsíc. Poté dojde každý měsíc k automatickému obnovení za ${ renewPriceStr }. Předplatné můžete kdykoli zrušit."
@@ -22179,6 +22178,14 @@
         "Nebyl nalezen žádný SMTP token"
       ]
     },
+    "Theme": {
+      "Dark": [
+        "Tmavý"
+      ],
+      "Light": [
+        "Světlý"
+      ]
+    },
     "Time unit": {
       "${ ceilDays } day": [
         "${ ceilDays } den",
@@ -23858,9 +23865,6 @@
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Vaše bezplatná zkušební verze ${ planName } skončí ${ textDate }"
-      ],
-      "Your ${ planName } subscription has started": [
-        "Vaše předplatné ${ planName } bylo zahájeno"
       ],
       "Your calendar link": [
         "URL adresa kalendáře"

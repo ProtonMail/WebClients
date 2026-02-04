@@ -4144,8 +4144,8 @@
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Задайце фразу аднаўлення для забеспячэння свайму ўліковаму запісу найвышэйшага з магчымых узроўняў абароны."
       ],
-      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
-        "Пераканайцеся, што файл не перавышае аб'ем у ${ MAX_IMPORT_FILE_SIZE_STRING } або ${ MAX_IMPORT_CONTACTS_STRING } кантакты для імпартавання праз файл CSV і VCF. Раздзяліце яго на меншыя файлы, калі файл перавышае максімальны аб'ём. ${ learnMoreLink }"
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Пераканайцеся, што файл не перавышае аб'ем у ${ MAX_IMPORT_FILE_SIZE_STRING } або ${ maxContactString } кантакты для імпартавання праз файл CSV і VCF. Раздзяліце яго на меншыя файлы, калі файл перавышае максімальны аб'ём. ${ learnMoreLink }"
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Для імпартавання вашых кантактаў з Google або Outlook, ${ easySwitchLink }"
@@ -4283,6 +4283,17 @@
       ],
       "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
         "Ваша падпіска ${ PLAN_NAMES[PLANS.PASS] } па спецыяльнай цане ${ price } у год. Перайшоўшы на бясплатны тарыфны план, вы назаўсёды страціце скідку, нават калі ў будучыні зноў палепшыце сваю падпіску."
+      ]
+    },
+    "Drawer tab, Action": {
+      "Download for Linux": [
+        "Спампаваць для Linux"
+      ],
+      "Download for macOS": [
+        "Спампаваць для macOS"
+      ],
+      "Download for Windows": [
+        "Спампаваць для Windows"
       ]
     },
     "driveplus2024: Deal details": {
@@ -5055,6 +5066,9 @@
       "Try using only letters, numerals, and _.-": [
         "Паспрабуйце выкарыстоўваць толькі літары, лічбы і _.-"
       ],
+      "Unable to load VPN dashboard. Please check your connection and try again.": [
+        "Немагчыма загрузіць панэль кіравання VPN. Праверце падключэнне і паўтарыце спробу."
+      ],
       "Unexpected error, we can't import the contacts": [
         "Нечаканая памылка. Немагчыма імпартаваць кантакты."
       ],
@@ -5214,8 +5228,8 @@
       "An error occurred uploading your file. No file has been selected.": [
         "Адбылася памылка пры запампоўванні вашага файла. Ніводны файл не выбраны."
       ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
-        "Ваш файл ${ formattedFilename } змяшчае больш за ${ MAX_IMPORT_CONTACTS_STRING } кантактаў."
+      "Your file ${ formattedFilename } contains more than ${ maxContactString } contacts.": [
+        "Ваш файл ${ formattedFilename } змяшчае больш за ${ maxContactString } кантактаў."
       ],
       "Your file ${ formattedFilename } has no contacts to be imported.": [
         "Ваш файл ${ formattedFilename } не змяшчае кантактаў для імпартавання."
@@ -6771,6 +6785,9 @@
         "${ updated } кантактаў паспяхова абноўлены.",
         "${ updated } кантактаў паспяхова абноўлены."
       ],
+      "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
+        "${ VPN_APP_NAME } маскіруе ваш IP-адрас і вэб-сайты не могуць вызначыць вас."
+      ],
       "(${ memberCount } member)": [
         "(${ memberCount } удзельнік)",
         "(${ memberCount } удзельнікі)",
@@ -6794,6 +6811,12 @@
         "**${ total }** вынікі знойдзены ў ${ labelName }",
         "**${ total }** вынікаў знойдзены ў ${ labelName }",
         "**${ total }** вынікаў знойдзены ў ${ labelName }"
+      ],
+      "**Auto-connect**: Opens and connects to VPN as soon as you turn on your device.": [
+        "**Аўтаматычнае падключэнне**: падключэнне да сервера VPN адбываецца адразу пасля ўключэння прылады."
+      ],
+      "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
+        "**Kill Switch**: спыняе ўцечку даных блакіруючы інтэрнэт, калі падключэнне па VPN нечакана знікла."
       ],
       "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
         "**Крок 1:** Запрашайце сваіх сяброў у ${ BRAND_NAME } са сваёй рэферальнай спасылкай."
@@ -6828,8 +6851,20 @@
       "A request to unsubscribe from this mailing list will be sent to the sender of the newsletter and automatically processed.": [
         "Запыт на скасаванне падпіскі ад гэтага спіса рассылкі будзе адпраўлены адпраўніку рассылкі і апрацаваны аўтаматычна."
       ],
+      "A secure connection is essential when working remotely. A VPN protects company data from cyber threats and keeps your work private.": [
+        "Бяспечнае падключэнне неабходна пры аддаленай працы. VPN абараняе даныя кампаніі ад кіберпагроз і захоўвае прыватнасць вашай працы."
+      ],
       "A user is an account associated with a single username, mailbox, and person": [
         "Карыстальнік - гэта ўліковы запіс, які звязаны з асобным імем карыстальніка, паштовай скрыняй і асобай"
+      ],
+      "A VPN encrypts your connection and hides your IP address, making it much harder for anyone to track or monitor your browsing.": [
+        "VPN шыфруе ваша падключэнне і хавае ваш IP-адрас. Гэта вельмі ўскладняе адсочванне або назеранне прагляду вэб-старонак для любых зацікаўленых структур."
+      ],
+      "A VPN hides your IP address and encrypts your browsing activity, making it harder for websites, advertisers, and ISPs to track you over time.": [
+        "VPN хавае ваш IP-адрас і шыфруе вашу актыўнасць у браўзеры. Гэта вельмі ўскладняе вэб-сайтам, рэкламадаўцам і пастаўшчыкам паслуг інтэрнэту адсочваць вас з цягам часу."
+      ],
+      "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
+        "VPN - гэта бяспечны тунэль паміж вашай прыладай і інтэрнэтам. Ён хавае ваша месцазнаходжанне і актыўнасць ад вашага пастаўшчыка паслуг інтэрнэту (ISP) і вэб-сайтаў, якія вы наведваеце."
       ],
       "Access 6,500+ high-speed servers on up to 10 devices to keep your browsing data safe. Available on ${ ios }, ${ android }, ${ appleTV }, and ${ desktop }.": [
         "Атрымайце доступ да больш чым 6500 высакахуткасных сервераў з магчымасцю падключэння да 10 прылад, каб захаваць свае даныя прыгляду ў бяспецы. Праграмы даступны для ${ ios }, ${ android }, ${ appleTV } і ${ desktop }."
@@ -6843,6 +6878,9 @@
       "Active": [
         "Актываваць"
       ],
+      "Ad targeting": [
+        "Мэтавая рэклама"
+      ],
       "Add image URL": [
         "Дадаць URL-адрас відарыса"
       ],
@@ -6854,6 +6892,9 @@
       ],
       "Addresses settings": [
         "Налады адрасоў"
+      ],
+      "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
+        "Рэкламадаўцы адсочваюць, якія вэб-старонкі вы наведваеце для паказу мэтавай рэкламы. ${ VPN_APP_NAME } блакіруе праграмы адсочвання і рэкламу, робіць ваша падключэнне хутчэйшым і паляпшае працу ў інтэрнэце."
       ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "Асістэнт ШІ дапаможа вам хутка і без намаганняў ствараць лепшыя лісты."
@@ -6900,11 +6941,11 @@
       "All your changes will be lost.": [
         "Усе вашы змены будуць страчаны."
       ],
-      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
-        "Усе вашы кантакты будуць імпартаваны. Абмежаванне імпартавання складае ${ MAX_CONTACTS_PER_USER }",
-        "Усе вашы кантакты будуць імпартаваны. Абмежаванне імпартавання складае ${ MAX_CONTACTS_PER_USER }",
-        "Усе вашы кантакты будуць імпартаваны. Абмежаванне імпартавання складае ${ MAX_CONTACTS_PER_USER }",
-        "Усе вашы кантакты будуць імпартаваны. Абмежаванне імпартавання складае ${ MAX_CONTACTS_PER_USER }"
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "Усе вашы кантакты будуць імпартаваны. Абмежаванне імпартавання складае да ${ maxContact }",
+        "Усе вашы кантакты будуць імпартаваны. Абмежаванне імпартавання складае да ${ maxContact }",
+        "Усе вашы кантакты будуць імпартаваны. Абмежаванне імпартавання складае да ${ maxContact }",
+        "Усе вашы кантакты будуць імпартаваны. Абмежаванне імпартавання складае да ${ maxContact }"
       ],
       "American Express SafeKey logo": [
         "Лагатып American Express SafeKey"
@@ -7112,6 +7153,9 @@
       ],
       "Confirm phishing report": [
         "Пацвердзіць скаргу на фішынг"
+      ],
+      "Connect to ${ VPN_APP_NAME } to browse privately": [
+        "Падключыцеся да ${ VPN_APP_NAME } для прыватнага прагляду"
       ],
       "Consider when's the best time for your recipient to receive your email, and schedule it to be sent then.": [
         "Заплануйце адпраўку электроннага ліста менавіта тады, калі вашаму атрымальніку найбольш пасуе атрымаць яго."
@@ -7464,6 +7508,9 @@
       "Generate text": [
         "Згенерыраваць тэкст"
       ],
+      "Geoblocking": [
+        "Геаблакіроўка"
+      ],
       "Get it on Google Play": [
         "Спампаваць у Google Play"
       ],
@@ -7475,6 +7522,9 @@
       ],
       "Google Pay mark": [
         "Пазнака Google Pay"
+      ],
+      "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
+        "Урады і пастаўшчыкі паслуг інтэрнэту могуць сачыць за тым, якія сайты вы наведваеце. Ваш прагляд вэб-старонак у інтэрнэце становіцца прыватным дзякуючы хаванню вашага рэальнага IP-адраса і шыфраванню."
       ],
       "Has ${ numAttachments } attachment (${ numAttachmentsSize })": [
         "Змяшчае ${ numAttachments } далучэнне (${ numAttachmentsSize })",
@@ -7557,6 +7607,9 @@
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Імпартаванне вашых даных з ${ fromEmail } у ${ toEmail }."
       ],
+      "In restrictive countries": [
+        "У краінах, якія абмяжоўваюць інтэрнэт"
+      ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "На наступным кроку вы можаце адправіць дэпазіт з выкарыстаннем адраса Bitcoin."
       ],
@@ -7594,10 +7647,7 @@
         "Ініцыялізацыя…"
       ],
       "Insert image": [
-        "Уставіць відарыс",
-        "Уставіць відарысы",
-        "Уставіць відарысы",
-        "Уставіць відарысы"
+        "Уставіць відарыс"
       ],
       "Insert link": [
         "Уставіць спасылку"
@@ -7619,6 +7669,9 @@
       ],
       "It's better to have:": [
         "Лепш за ўсё, каб у вас было:"
+      ],
+      "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
+        "Лепш за ўсё выкарыстоўваць VPN пастаянна, але тут прыведзены выпадкі калі пагрозы кібербяспекі могуць быць самымі высокімі:"
       ],
       "JCB logo": [
         "Лагатып JCB"
@@ -7770,6 +7823,9 @@
       "More refine actions": [
         "Больш удасканаленыя дзеянні"
       ],
+      "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
+        "Большасць агульнадаступных сетак Wi-Fi з'яўляюцца бяспечнымі, але ў некаторых адсутнічаюць функцыі бяспекі і гэта падвяргае вас кіберпагрозам. VPN шыфруе трафік і абараняе ваша падключэнне."
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Назавіце новую папку і выберыце бацькоўскую папку, у якую вы хочаце яе ўкласці. Калі вы не выбераце бацькоўскую папку, то гэта новая папка будзе створана як папка верхняга ўзроўню."
       ],
@@ -7836,6 +7892,9 @@
       "Not a valid URL": [
         "Несапраўдны URL-адрас"
       ],
+      "Not connected": [
+        "Не падключана"
+      ],
       "Number of dedicated servers in the organization": [
         "Колькасць вылучаных сервераў у арганізацыі"
       ],
@@ -7847,6 +7906,9 @@
       ],
       "of": [
         "з"
+      ],
+      "On public WiFi networks": [
+        "У грамадскіх сетках Wi-Fi"
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Адзін або некалькі вашых давераных ключоў былі пазначаны іх уладальнікам як скампраметаваныя. Мы рэкамендуем вам не давяраць гэтым ключам."
@@ -8007,6 +8069,9 @@
       "Print email": [
         "Друкаваць ліст"
       ],
+      "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
+        "Прыватны прагляд вэб-старонак (або рэжым \"інкогніта\") карысны толькі для хавання актыўнасці на вашай прыладзе. Браўзер не будзе захоўваць гісторыю і файлы cookie, але гэта не робіць вас нябачным. Ваш пастаўшчык паслуг інтэрнэту, сеткавы адміністратар і вэб-сайты ўсё яшчэ могуць бачыць, што вы робіце ў інтэрнэце."
+      ],
       "Proofread selection": [
         "Вычытаць выбранае"
       ],
@@ -8078,6 +8143,9 @@
       ],
       "Saving draft": [
         "Захаванне чарнавіка"
+      ],
+      "Scan the QR code with your mobile device": [
+        "Адсканіруйце QR-код з дапамогай мабільнай прылады"
       ],
       "Scheduled send of this message will be canceled.": [
         "Запланаваная адпраўка гэтага паведамлення будзе скасавана."
@@ -8193,6 +8261,12 @@
       "Snoozing this conversation will be canceled.": [
         "Адкладанне гэтай размовы будзе скасавана."
       ],
+      "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
+        "Некаторыя ўрады блакіруюць або абмяжоўваюць доступ да пэўных вэб-сайтаў. VPN дапамагае абысці цэнзуру, захоўваючы вашу актыўнасць і асобу ў таямніцы."
+      ],
+      "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
+        "Некаторыя вэб-сайты і сэрвісы з трансляцыямі блакіруюць змесціва па рэгіёнах. VPN дазваляе абысці гэтыя абмежаванні і атрымаць свабодны доступ у інтэрнэт."
+      ],
       "Sorry, this message does not exist or has already expired.": [
         "Прабачце, але гэтага паведамлення не існуе або яно ўжо пратэрмінавана."
       ],
@@ -8201,6 +8275,9 @@
       ],
       "Start using the shorter, catchier version of your email address.": [
         "Выбірайце кароткі і запамінальны адрас электроннай пошты."
+      ],
+      "Stay connected effortlessly by enabling the following VPN settings:": [
+        "Уключыце наступныя налады VPN, каб заставацца падключанымі без асаблівых намаганняў:"
       ],
       "Storage capabilities are not supported in this browser, we need this support to enable message content search.": [
         "Магчымасці сховішча не падтрымліваюцца ў гэтым браўзеры. Гэта падтрымка неабходна, каб уключыць пошук па змесціве."
@@ -8237,6 +8314,9 @@
       ],
       "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
         "Завяршэнне падпіскі: перазапусціце сваю падпіску ў Google Play Store да ${ byDate }, каб далей пакінуць перавагі ${ planName }. ${ reactivateLink }"
+      ],
+      "Surveillance": [
+        "Назіранне"
       ],
       "Symbols (#$&)": [
         "Сімвалы (#$&)"
@@ -8373,6 +8453,9 @@
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Гэта спасылка можа быць гамаграфічнай атакай. Спраўдзіце спасылку, якую вы хочаце наведаць або не пераходзьце па ёй."
       ],
+      "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
+        "Гэта азначае, што ваш пастаўшчык паслуг інтэрнэту і вэб-сайты не змогуць атрымліваць асабістыя звесткі з вашай актыўнасцю ў інтэрнэце."
+      ],
       "This message has been adjusted to comply with a dark background.": [
         "Гэта паведамленне было скарэктавана для правільнага адлюстравання на цёмным фоне."
       ],
@@ -8451,6 +8534,9 @@
       "This sender's public key has not been trusted yet.": [
         "Публічны ключ адпраўніка яшчэ не быў давераным."
       ],
+      "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
+        "Гэты ўнікальны код можа быць выкарыстаны вэб-сайтамі і пастаўшчыком паслуг інтэрнэту (ISP), каб звязаць ваша месцазнаходжанне і гісторыю прагляду старонак на вашай прыладзе."
+      ],
       "This was shown to you because your email subject line contains password reset keywords.": [
         "Гэта было паказана вам, бо тэма ліста змяшчае ключавыя словы для скідання пароля."
       ],
@@ -8513,6 +8599,9 @@
       ],
       "Trackers blocked:": [
         "Праграм сачэння заблакіравана:"
+      ],
+      "Tracking": [
+        "Адсочванне"
       ],
       "Trash existing messages": [
         "Перамясціць у сметніцу існуючыя паведамленні"
@@ -8640,6 +8729,9 @@
       "Visa Secure logo": [
         "Лагатып Visa Secure"
       ],
+      "VPN IP": [
+        "IP VPN"
+      ],
       "Warning": [
         "Папярэджанне"
       ],
@@ -8699,6 +8791,12 @@
       ],
       "When giving out your email, use a unique, disposable hide-my-email alias instead of your real email address.": [
         "Пры перадачы сваёй электроннай пошты, выкарыстоўвайце ўнікальны аднаразовы псеўданім функцыі Hide-my-email, замест свайго рэальнага адраса электроннай пошты."
+      ],
+      "When working remotely": [
+        "Пры аддаленай працы"
+      ],
+      "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
+        "VPN выкарыстоўвае тэхналогію шыфравання, каб схаваць ваш IP-адрас пры падключэнні да VPN (унікальны код, які прызначаны вашай прыладзе)."
       ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Калі вы ўключылі давераныя ключы для ${ senderName }, то гэтыя публічныя ключы былі дададзены да кантактных звестак."
@@ -8961,6 +9059,15 @@
       "Your information was found on ${ displayedDate }": [
         "Вашы звесткі былі знойдзены ${ displayedDate }"
       ],
+      "Your internet service provider can monitor and sometimes sell your data, or even restrict what websites you can access.": [
+        "Ваш пастаўшчык паслуг інтэрнэту можа назіраць за вашымі дзеяннямі ў інтэрнэце і час ад часу прадаваць вашы даныя або нават абмяжоўваць доступ да некаторых вэб-сайтаў"
+      ],
+      "Your IP": [
+        "Ваш IP"
+      ],
+      "Your IP address is visible and can be used to track your online activity.": [
+        "Ваш IP-адрас з'яўляецца бачным і можа быць выкарыстаны для адсочвання вашай актыўнасці ў інтэрнэце."
+      ],
       "Your login information will not be saved after the import is completed.": [
         "Пасля завяршэння імпартавання вашы даныя ўваходу не будуць захаваны."
       ],
@@ -8982,11 +9089,17 @@
       "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
         "Наступная дата спагнання адбудзецца ${ renewalTime }. Звяжыцеся са службай падтрымкі, калі вы запатрабавалі неадкладную змену тарыфнага плана."
       ],
+      "Your online activity is protected": [
+        "Ваша актыўнасць у інтэрнэце абаронена"
+      ],
       "Your password was leaked:": [
         "Адбылася ўцечка вашага пароля:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Ваш нумар тэлефона будзе выкарыстаны толькі для бягучай аднаразовай праверкі."
+      ],
+      "Your physical location is visible and can be used to restrict your access to the internet.": [
+        "Ваша фізічнае месцазнаходжанне з'яўляецца бачным і можа выкарыстоўвацца для забароны доступу ў інтэрнэт."
       ],
       "Your private writing assistant": [
         "Ваш прыватны памочнік у напісанні"
@@ -10105,6 +10218,15 @@
       "Your domain": [
         "Ваш дамен"
       ],
+      "Your IP": [
+        "Ваш IP"
+      ],
+      "Your ISP": [
+        "Ваш ISP"
+      ],
+      "Your location": [
+        "Ваша месцазнаходжанне"
+      ],
       "Your password (admin)": [
         "Ваш пароль (admin)"
       ],
@@ -10590,6 +10712,12 @@
         "${ n } актыўных сустрэч адначасова",
         "${ n } актыўных сустрэч адначасова"
       ],
+      "${ n } participant": [
+        "${ n } удзельнік",
+        "${ n } удзельнікі",
+        "${ n } удзельнікаў",
+        "${ n } удзельнікаў"
+      ],
       "24 hours per meeting": [
         "24 гадзіны на сустрэчу"
       ],
@@ -10599,6 +10727,9 @@
       "Appointment scheduling": [
         "Планаванне сустрэч"
       ],
+      "Booking pages": [
+        "Старонкі браніравання"
+      ],
       "Browser, mobile, and desktop apps": [
         "Браўзер, мабільныя прылады і праграмы для камп'ютараў"
       ],
@@ -10607,6 +10738,9 @@
       ],
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "Дэманстрацыя экрана са скразным шыфраваннем і эфемерны чат пры званках"
+      ],
+      "Meeting recording": [
+        "Запіс сустрэчы"
       ],
       "One active meeting at a time": [
         "Адна актыўная сустрэча адначасова"
@@ -12484,11 +12618,17 @@
       "terms and conditions": [
         "умовамі выкарыстання"
       ],
-      "The coupon is valid for ${ couponRedemptions } renewal.": [
-        "Купон дзейнічае для ${ couponRedemptions } падаўжэння.",
-        "Купон дзейнічае для ${ couponRedemptions } падаўжэнняў.",
-        "Купон дзейнічае для ${ couponRedemptions } падаўжэнняў.",
-        "Купон дзейнічае для ${ couponRedemptions } падаўжэнняў."
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "Скідка дзейнічае для ${ renewalsWithCoupon } падаўжэння.",
+        "Скідка дзейнічае для ${ renewalsWithCoupon } падаўжэнняў.",
+        "Скідка дзейнічае для ${ renewalsWithCoupon } падаўжэнняў.",
+        "Скідка дзейнічае для ${ renewalsWithCoupon } падаўжэнняў."
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Спецыяльны зніжаны кошт дзейнічае на працягу ${ couponRedemptions } месяца. Пасля гэтага адбудзецца аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы час.",
+        "Спецыяльны зніжаны кошт дзейнічае на працягу ${ couponRedemptions } месяцы. Пасля гэтага адбудзецца аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы час.",
+        "Спецыяльны зніжаны кошт дзейнічае на працягу ${ couponRedemptions } месяцаў. Пасля гэтага адбудзецца аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы час.",
+        "Спецыяльны зніжаны кошт дзейнічае на працягу ${ couponRedemptions } месяцаў. Пасля гэтага адбудзецца аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы час."
       ],
       "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
         "Спецыяльны зніжаны кошт дзейнічае на працягу першага ${ subscriptionLength } месяца.",
@@ -12496,26 +12636,20 @@
         "Спецыяльны зніжаны кошт дзейнічае на працягу першых ${ subscriptionLength } месяцаў.",
         "Спецыяльны зніжаны кошт дзейнічае на працягу першых ${ subscriptionLength } месяцаў."
       ],
-      "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "Спецыяльны зніжаны кошт дзейнічае на працягу першага месяца. Гэты купон дзейнічае для падаўжэння на ${ couponRedemptions }. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы момант.",
-        "Спецыяльны зніжаны кошт дзейнічае на працягу першага месяца. Гэты купон дзейнічае для падаўжэння на ${ couponRedemptions }. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы момант.",
-        "Спецыяльны зніжаны кошт дзейнічае на працягу першага месяца. Гэты купон дзейнічае для падаўжэння на ${ couponRedemptions }. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы момант.",
-        "Спецыяльны зніжаны кошт дзейнічае на працягу першага месяца. Гэты купон дзейнічае для падаўжэння на ${ couponRedemptions }. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы момант."
-      ],
       "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Спецыяльны зніжаны кошт дзейнічае на працягу першага месяца. Пасля гэтага адбудзецца аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за кожны месяц. Скасаваць можна ў любы момант."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Спецыяльны зніжаны кошт у памеры ${ priceWithDiscount } дзейнічае на працягу ${ couponRedemptions } месяца. Пасля гэтага адбудзецца аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы час.",
+        "Спецыяльны зніжаны кошт у памеры ${ priceWithDiscount } дзейнічае на працягу ${ couponRedemptions } месяцаў. Пасля гэтага адбудзецца аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы час.",
+        "Спецыяльны зніжаны кошт у памеры ${ priceWithDiscount } дзейнічае на працягу ${ couponRedemptions } месяцаў. Пасля гэтага адбудзецца аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы час.",
+        "Спецыяльны зніжаны кошт у памеры ${ priceWithDiscount } дзейнічае на працягу ${ couponRedemptions } месяцаў. Пасля гэтага адбудзецца аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы час."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "Спецыяльны зніжаны кошт у памеры ${ priceWithDiscount } дзейнічае на працягу першага ${ subscriptionLength } месяца.",
         "Спецыяльны зніжаны кошт у памеры ${ priceWithDiscount } дзейнічае на працягу першых ${ subscriptionLength } месяцаў.",
         "Спецыяльны зніжаны кошт у памеры ${ priceWithDiscount } дзейнічае на працягу першых ${ subscriptionLength } месяцаў.",
         "Спецыяльны зніжаны кошт у памеры ${ priceWithDiscount } дзейнічае на працягу першых ${ subscriptionLength } месяцаў."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "Спецыяльны зніжаны кошт у памеры ${ priceWithDiscount } дзейнічае на працягу першага месяца. Гэты купон дзейнічае для ${ couponRedemptions } падаўжэння. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы момант.",
-        "Спецыяльны зніжаны кошт у памеры ${ priceWithDiscount } дзейнічае на працягу першага месяца. Гэты купон дзейнічае для ${ couponRedemptions } падаўжэнняў. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы момант.",
-        "Спецыяльны зніжаны кошт у памеры ${ priceWithDiscount } дзейнічае на працягу першага месяца. Гэты купон дзейнічае для ${ couponRedemptions } падаўжэнняў. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы момант.",
-        "Спецыяльны зніжаны кошт у памеры ${ priceWithDiscount } дзейнічае на працягу першага месяца. Гэты купон дзейнічае для ${ couponRedemptions } падаўжэнняў. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы момант."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Спецыяльны зніжаны кошт у памеры ${ priceWithDiscount } дзейнічае на працягу першага месяца. Пасля гэтага адбудзецца аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за кожны месяц. Скасаваць можна ў любы момант."
@@ -15408,6 +15542,9 @@
       "Deleting contacts": [
         "Выдаленне кантактаў"
       ],
+      "Desktop": [
+        "Для камп'ютара"
+      ],
       "Disable categories?": [
         "Адключыць катэгорыі?"
       ],
@@ -15428,6 +15565,9 @@
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Спампаваць праграмы ${ DRIVE_APP_NAME }"
+      ],
+      "Download the app": [
+        "Спампаваць праграму"
       ],
       "Edit billing address": [
         "Рэдагаваць адрас аплаты"
@@ -15510,6 +15650,9 @@
       "Get full access to ${ CALENDAR_APP_NAME }": [
         "Атрыманне поўнага доступу да ${ CALENDAR_APP_NAME }"
       ],
+      "Get more from your VPN": [
+        "Атрымайце больш ад свайго VPN"
+      ],
       "Get the ${ appName[APP_NAME] } apps": [
         "Атрымаць праграмы ${ appName[APP_NAME] }"
       ],
@@ -15533,6 +15676,9 @@
       ],
       "High security for your account": [
         "Высокая бяспека для вашага ўліковага запісу"
+      ],
+      "How does it all work?": [
+        "Як гэта ўсё працуе?"
       ],
       "How does it work?": [
         "Як гэта працуе?"
@@ -15603,6 +15749,9 @@
       "Load remote content": [
         "Загружаць аддаленае змесціва"
       ],
+      "Make a secure connection your default": [
+        "Зрабіце бяспечнае падключэнне сваім прадвызначаным"
+      ],
       "Mark all messages as read": [
         "Пазначыць усе паведамленні як прачытаныя"
       ],
@@ -15644,6 +15793,9 @@
       ],
       "Minicalendar": [
         "Мінікаляндар"
+      ],
+      "Mobile": [
+        "Для смартфона"
       ],
       "More": [
         "Больш"
@@ -15800,6 +15952,9 @@
       ],
       "Priority support:": [
         "Прыярытэтная падтрымка:"
+      ],
+      "Private browsing vs VPN": [
+        "Прыватны прагляд у параўнанні з VPN"
       ],
       "Processing...": [
         "Апрацоўка..."
@@ -16065,6 +16220,9 @@
       "Verifying your payment...": [
         "Спраўджанне вашага плацяжу..."
       ],
+      "VPN explained": [
+        "Тлумачэнне VPN"
+      ],
       "Warning": [
         "Папярэджанне"
       ],
@@ -16089,17 +16247,23 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "Вітаем у ${ BRAND_NAME } for Business"
       ],
+      "What can a VPN protect you from?": [
+        "Ад чаго можа абараніць VPN?"
+      ],
+      "What is a VPN?": [
+        "Што такое VPN?"
+      ],
       "What would you like to import?": [
         "Што вы хочаце імпартаваць?"
+      ],
+      "When is it most important to use a VPN?": [
+        "У якіх выпадках варта выкарыстоўваць VPN?"
       ],
       "You can now create unlimited folders and labels": [
         "Цяпер вы можаце ствараць неабмежаваную колькасць папак і метак"
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Ваш бясплатны пробны перыяд для тарыфнага плана ${ planName } завершыцца ${ textDate }"
-      ],
-      "Your ${ planName } subscription has started": [
-        "Ваша падпіска ${ planName } пачалася"
       ],
       "Your account is protected": [
         "Ваш уліковы запіс абаронены"

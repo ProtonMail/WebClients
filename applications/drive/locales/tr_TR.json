@@ -138,8 +138,14 @@
       "Cancel download": [
         "İndirmeyi iptal et"
       ],
+      "Cancel downloads": [
+        "İndirmeleri iptal et"
+      ],
       "Cancel subscription": [
         "Aboneliği iptal et"
+      ],
+      "Cancel transfers": [
+        "Aktarımları iptal et"
       ],
       "Cancel trial and pay": [
         "Deneme süresini iptal et ve öde"
@@ -389,8 +395,8 @@
       "Download ${ DRIVE_APP_NAME } apps": [
         "${ DRIVE_APP_NAME } uygulamalarını indirin"
       ],
-      "Download (${ count })": [
-        "İndir (${ count })"
+      "Download (${ nbSelected })": [
+        "İndir (${ nbSelected })"
       ],
       "Download anyway": [
         "Yine de indir"
@@ -926,17 +932,14 @@
       "Save changes": [
         "Değişiklikleri kaydet"
       ],
-      "Save for later": [
-        "Daha sonrası için kaydet"
-      ],
       "Save photos and remove": [
         "Fotoğrafları kaydet ve kaldır"
       ],
       "Scan & Download": [
         "Tara ve indir"
       ],
-      "Scan & Download (${ count })": [
-        "Tara ve indir (${ count })"
+      "Scan & Download (${ nbSelected })": [
+        "Tara ve indir (${ nbSelected })"
       ],
       "Search": [
         "Arama"
@@ -1039,9 +1042,6 @@
       ],
       "Sign out of all accounts": [
         "Tüm hesapların oturumunu kapat"
-      ],
-      "Sign up": [
-        "Hesap açın"
       ],
       "Skip verification": [
         "Doğrulamayı atla"
@@ -2940,8 +2940,8 @@
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Hesabınızda olabilecek en yüksek güvenliğini sağlamak için bir kurtarma ifadesi belirleyin."
       ],
-      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
-        "CSV ve VCF dosyası ile içe aktarma için, ${ MAX_IMPORT_FILE_SIZE_STRING } dosya boyutunu ya da ${ MAX_IMPORT_CONTACTS_STRING } kişiyi aşmadığınızdan emin olun. Dosyanız büyükse lütfen daha küçük dosyalara bölün. ${ learnMoreLink }."
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "CSV ve VCF dosyası ile içe aktarma için, ${ MAX_IMPORT_FILE_SIZE_STRING } dosya boyutunu ya da ${ maxContactString } kişiyi aşmadığınızdan emin olun. Dosyanız büyükse lütfen daha küçük dosyalara bölün. ${ learnMoreLink }."
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Kişilerinizi Google ya da Outlook üzerinden içe aktarmak için ${ easySwitchLink }."
@@ -3788,6 +3788,9 @@
       "Validation error": [
         "Doğrulama sorunu"
       ],
+      "We cannot retrieve this item": [
+        "Bu öge alınamadı"
+      ],
       "We were not able to load some invitations": [
         "Bazı davetler yüklenemedi"
       ],
@@ -3909,8 +3912,8 @@
       "An error occurred uploading your file. No file has been selected.": [
         "Dosyanız yüklenirken bir sorun çıktı. Herhangi bir dosya seçilmemiş."
       ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
-        "${ formattedFilename } dosyanızda ${ MAX_IMPORT_CONTACTS_STRING } kişiden daha fazla kişi var."
+      "Your file ${ formattedFilename } contains more than ${ maxContactString } contacts.": [
+        "${ formattedFilename } dosyanızda ${ maxContactString } taneden fazla kişi var."
       ],
       "Your file ${ formattedFilename } has no contacts to be imported.": [
         "${ formattedFilename } dosyanızda içe aktarılacak bir kişi yok."
@@ -5030,9 +5033,9 @@
       "All your changes will be lost.": [
         "Yaptığınız tüm değişiklikler kaybolacak."
       ],
-      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
-        "${ MAX_CONTACTS_PER_USER } kişiye kadar tüm kişileriniz içe aktarılacak",
-        "${ MAX_CONTACTS_PER_USER } kişiye kadar tüm kişileriniz içe aktarılacak"
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "${ maxContact } kişiye kadar olan tüm kişileriniz içe aktarılacak",
+        "${ maxContact } kişiye kadar olan tüm kişileriniz içe aktarılacak"
       ],
       "Already in this folder": [
         "Zaten bu klasörde var"
@@ -5192,6 +5195,9 @@
       ],
       "Collaborate efficiently while protecting your client and business data from breaches, ransomware, and surveillance.": [
         "Müşterilerinizin ve kuruluşunuzun verilerinin ele geçirilmesi endişesi yaşamadan, fidye yazılımlarından ve gözetimden korunun ve verimli bir şekilde iş birliği yapın."
+      ],
+      "Computed hash does not match XAttr": [
+        "Hesaplanan karma XAttr ile eşleşmiyor"
       ],
       "Conflict": [
         "Çakışma"
@@ -6287,6 +6293,12 @@
       ],
       "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
         "Bu benzersiz kod, siteler ve internet hizmeti sağlayıcıları tarafından konumunuzu ve tarama geçmişinizi aygıtınızla ilişkilendirmek için kullanılabilir."
+      ],
+      "This will cancel any remaining downloads.": [
+        "Bu işlem kalan tüm indirmeleri iptal edecek."
+      ],
+      "This will cancel any remaining uploads and downloads. Cancelled uploads won't be saved in ${ DRIVE_APP_NAME }.": [
+        "Bu işlem kalan tüm yüklemeleri ve indirmeleri iptal edecek. İptal edilen yüklemeler ${ DRIVE_APP_NAME } içine kaydedilmeyecek."
       ],
       "This will cancel any remaining uploads. Cancelled files won't be saved in ${ DRIVE_APP_NAME }.": [
         "Bu işlem kalan tüm yüklemeleri iptal edecek. İptal edilen dosyalar ${ DRIVE_APP_NAME } üzerine kaydedilmeyecek."
@@ -7859,7 +7871,7 @@
         "Uçtan uca şifrelenmiş ekran paylaşımı ve geçici çağrı içi sohbet"
       ],
       "Meeting recording": [
-        "Toplantı kaydı"
+        "Görüşme kaydı"
       ],
       "One active meeting at a time": [
         "Aynı anda bir etkin görüşme"
@@ -9938,28 +9950,28 @@
       "terms and conditions": [
         "hükümler ve koşullar"
       ],
-      "The coupon is valid for ${ couponRedemptions } renewal.": [
-        "Kupon ${ couponRedemptions } yenileme için geçerlidir.",
-        "Kupon ${ couponRedemptions } yenileme için geçerlidir."
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "İndirim ${ renewalsWithCoupon } yenileme için geçerlidir.",
+        "İndirim ${ renewalsWithCoupon } yenileme için geçerlidir."
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Özel indirimli fiyat ${ couponRedemptions } ay boyunca geçerlidir. Ardından otomatik olarak 1 ay için ${ renewPriceStr } ile yenilenir. İstediğiniz zaman iptal edebilirsiniz.",
+        "Özel indirimli fiyat ${ couponRedemptions } ay boyunca geçerlidir. Ardından otomatik olarak 1 ay için ${ renewPriceStr } ile yenilenir. İstediğiniz zaman iptal edebilirsiniz."
       ],
       "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
         "Özel indirimli fiyat yalnızca ilk ${ subscriptionLength } ay için geçerlidir.",
         "Özel indirimli fiyat yalnızca ilk ${ subscriptionLength } ay için geçerlidir."
       ],
-      "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "İndirimli fiyat yalnızca ilk ay için geçerlidir. Kupon, ${ couponRedemptions } yenileme için geçerlidir. Sonrasında aylık ${ renewPriceStr } ile otomatik olarak yenilenir. İstediğiniz zaman iptal edebilirsiniz.",
-        "İndirimli fiyat yalnızca ilk ay için geçerlidir. Kupon, ${ couponRedemptions } yenileme için geçerlidir. Sonrasında aylık ${ renewPriceStr } ile otomatik olarak yenilenir. İstediğiniz zaman iptal edebilirsiniz."
-      ],
       "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Özel indirimli fiyat yalnızca ilk ay için geçerlidir. Ardından her ay otomatik olarak ${ renewPriceStr } ile yenilenir. İstediğiniz zaman iptal edebilirsiniz."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Özel indirimli fiyat ${ priceWithDiscount }, ${ couponRedemptions } ay boyunca geçerlidir. Ardından otomatik olarak 1 ay için ${ renewPriceStr } ile yenilenir. İstediğiniz zaman iptal edebilirsiniz.",
+        "Özel indirimli fiyat ${ priceWithDiscount }, ${ couponRedemptions } ay boyunca geçerlidir. Ardından otomatik olarak 1 ay için ${ renewPriceStr } ile yenilenir. İstediğiniz zaman iptal edebilirsiniz."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "Özel indirimli ${ priceWithDiscount } fiyatı ilk ${ subscriptionLength } ay için geçerlidir.",
         "Özel indirimli ${ priceWithDiscount } fiyatı ilk ${ subscriptionLength } ay için geçerlidir."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "Özel indirimli ${ priceWithDiscount } fiyatı ilk ay için geçerlidir. Kupon, ${ couponRedemptions } yenileme için geçerlidir. Ardından, her ay ${ renewPriceStr } ile otomatik olarak yenilenir. İstediğiniz zaman iptal edebilirsiniz.",
-        "Özel indirimli ${ priceWithDiscount } fiyatı ilk ay için geçerlidir. Kupon, ${ couponRedemptions } yenileme için geçerlidir. Ardından, her ay ${ renewPriceStr } ile otomatik olarak yenilenir. İstediğiniz zaman iptal edebilirsiniz."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Özel indirimli ${ priceWithDiscount } fiyatı ilk ay için geçerlidir. Daha sonra her ay otomatik olarak ${ renewPriceStr } ile yenilenir. İstediğiniz zaman iptal edebilirsiniz."
@@ -11919,6 +11931,12 @@
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "${ MAIL_SHORT_APP_NAME } aboneliğinizi iptal edin"
       ],
+      "Cancel all downloads?": [
+        "Tüm indirmeler iptal edilsin mi?"
+      ],
+      "Cancel all transfers?": [
+        "Tüm aktarımlar iptal edilsin mi?"
+      ],
       "Cancel all uploads?": [
         "Tüm yüklemeler iptal edilsin mi?"
       ],
@@ -12795,8 +12813,8 @@
       "Your ${ planName } free trial ends on ${ textDate }": [
         "${ planName } ücretsiz deneme süreniz ${ textDate } tarihinde sonra erecek"
       ],
-      "Your ${ planName } subscription has started": [
-        "${ planName } aboneliğiniz başladı"
+      "Your ${ planTitle } subscription has started": [
+        "${ planTitle } aboneliğiniz başladı"
       ],
       "Your 3 GB bonus": [
         "3 GB hediyeniz"

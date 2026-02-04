@@ -135,8 +135,14 @@
       "Cancel download": [
         "다운로드 취소"
       ],
+      "Cancel downloads": [
+        "다운로드 취소"
+      ],
       "Cancel subscription": [
         "구독 취소"
+      ],
+      "Cancel transfers": [
+        "전송 취소"
       ],
       "Cancel trial and pay": [
         "무료 체험 취소 및 바로 결제"
@@ -384,8 +390,8 @@
       "Download ${ DRIVE_APP_NAME } apps": [
         "${ DRIVE_APP_NAME } 앱 다운로드"
       ],
-      "Download (${ count })": [
-        "다운로드 (${ count })"
+      "Download (${ nbSelected })": [
+        "다운로드 (${ nbSelected }개)"
       ],
       "Download anyway": [
         "무시하고 다운로드"
@@ -927,8 +933,8 @@
       "Scan & Download": [
         "스캔 및 다운로드"
       ],
-      "Scan & Download (${ count })": [
-        "스캔 및 다운로드 (${ count }개)"
+      "Scan & Download (${ nbSelected })": [
+        "스캔 및 다운로드 (${ nbSelected }개)"
       ],
       "Search": [
         "검색"
@@ -1031,9 +1037,6 @@
       ],
       "Sign out of all accounts": [
         "모든 계정 로그아웃"
-      ],
-      "Sign up": [
-        "회원가입"
       ],
       "Skip verification": [
         "인증 건너뛰기"
@@ -1217,6 +1220,16 @@
       ],
       "Zoom out": [
         "축소"
+      ]
+    },
+    "Action: Docs": {
+      "Open in ${ DOCS_APP_NAME }": [
+        "${ DOCS_APP_NAME }에서 열기"
+      ]
+    },
+    "Action: Sheets": {
+      "Open in ${ SHEETS_APP_NAME }": [
+        "${ SHEETS_APP_NAME }에서 열기"
       ]
     },
     "Actions": {
@@ -2907,8 +2920,8 @@
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "최상의 계정 보안 상태를 유지하려면, 복구 문구를 설정하세요."
       ],
-      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
-        "CSV 파일 및 VCF 파일을 통한 불러오기를 위해, 파일이 ${ MAX_IMPORT_FILE_SIZE_STRING } 또는 연락처 ${ MAX_IMPORT_CONTACTS_STRING }개를 초과하지 않도록 않도록 해주세요. 파일이 더 크다면, 더 작은 파일로 나눠주세요. ${ learnMoreLink }."
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "CSV 파일 및 VCF 파일을 통한 불러오기를 위해, 파일이 ${ MAX_IMPORT_FILE_SIZE_STRING } 또는 연락처 ${ maxContactString }개를 초과하지 않도록 않도록 해주세요. 파일이 더 크다면, 더 작은 파일로 나눠주세요. ${ learnMoreLink }."
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Google 및 Outlook에서 콘텐츠를 불러오려면, ${ easySwitchLink }"
@@ -3358,6 +3371,9 @@
       "Failed to get details, please try again later": [
         "세부사항을 가져오지 못했습니다. 나중에 다시 시도하십시오."
       ],
+      "Failed to load signature details, please try again later": [
+        "서명 상세 정보를 불러올 수 없습니다. 나중에 다시 시도해 주세요."
+      ],
       "Failed to load the STL preview": [
         "STL 미리보기 불러오기 실패"
       ],
@@ -3700,6 +3716,9 @@
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "이 메시지는 현재 브라우저에서 제대로 열 수 없는 URL 링크있을 수 있습니다."
       ],
+      "This offer is not available in your country": [
+        "이 제안은 현재 거주 중인 국가에서 사용할 수 없습니다."
+      ],
       "Try using only letters, numerals, and _.-": [
         "문자, 숫자 및 _.- 만 사용하십시오"
       ],
@@ -3742,6 +3761,9 @@
       "Validation error": [
         "검증 오류"
       ],
+      "We cannot retrieve this item": [
+        "해당 항목을 가져올 수 없습니다"
+      ],
       "We were not able to load some invitations": [
         "초대 중 일부를 불러올 수 없었습니다"
       ],
@@ -3762,6 +3784,12 @@
       ],
       "We were not able to load some of your shared items": [
         "공유된 항목 중 일부를 가져올 수 없습니다"
+      ],
+      "We were not able to load the folder contents": [
+        "폴더의 내용을 불러올 수 없습니다"
+      ],
+      "We're sorry, but free upload is not available right now.": [
+        "죄송합니다. 현재 무료 업로드를 사용할 수 없습니다."
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "${ maxContacts }명 이상의 수신자에게 메일을 보낼 수 없습니다."
@@ -3855,8 +3883,8 @@
       "An error occurred uploading your file. No file has been selected.": [
         "파일을 업로드하는 동안 오류가 발생했습니다. 파일을 선택하지 않았습니다."
       ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
-        "파일 ${ formattedFilename } 에 연락처가 ${ MAX_IMPORT_CONTACTS_STRING } 개 넘게 포함되어 있습니다."
+      "Your file ${ formattedFilename } contains more than ${ maxContactString } contacts.": [
+        "파일 ${ formattedFilename }이(가) ${ maxContactString }개 초과 연락처를 포함하고 있습니다."
       ],
       "Your file ${ formattedFilename } has no contacts to be imported.": [
         "${ formattedFilename } 파일에 가져올 연락처가 없습니다."
@@ -4520,6 +4548,12 @@
       "Too many recent requests. Please try again in a few moments.": [
         "너무 많은 요청을 시도했습니다. 잠시 후 다시 시도해 주세요."
       ],
+      "Two-factor authentication is enabled in your external account.": [
+        "사용자의 외부 계정에 2단계 인증이 활성화되었습니다."
+      ],
+      "Two-factor authentication is enabled in your external email account.": [
+        "2단계 인증이 사용자의 외부 계정에 활성화되었습니다."
+      ],
       "Use your app password if:": [
         "다음과 같은 경우 앱 비밀번호를 사용하세요:"
       ],
@@ -4723,6 +4757,9 @@
       "${ contactsLength } contact": [
         "연락처 ${ contactsLength }개"
       ],
+      "${ DOCS_APP_NAME } and ${ SHEETS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
+        "${ DOCS_APP_NAME } 및 ${ SHEETS_APP_NAME } 파일은 직접 다운로드할 수 없으며 해당 다운로드에 포함되어 있지 않습니다. '계속 다운로드'를 클릭하여 다른 파일들을 계속 다운로드할 수 있습니다."
+      ],
       "${ doneCount } finished": [
         "${ doneCount }개 완료됨"
       ],
@@ -4915,8 +4952,11 @@
       "All your changes will be lost.": [
         "저장하지 않은 변경사항은 손실됩니다."
       ],
-      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
-        "최대 ${ MAX_CONTACTS_PER_USER }개까지 연락처가 불러오기됩니다."
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "최대 ${ maxContact }개까지 연락처가 불러오기됩니다."
+      ],
+      "Already in this folder": [
+        "폴더에 이미 존재함"
       ],
       "Already in your library": [
         "라이브러리에 이미 존재함"
@@ -5569,6 +5609,9 @@
       "Makes your account safer": [
         "내 계정을 더 안전하게 만드세요"
       ],
+      "Malware detected": [
+        "멀웨어 감지됨"
+      ],
       "Mar": [
         "3월"
       ],
@@ -5911,6 +5954,9 @@
       "Search Enabled": [
         "검색 활성화됨"
       ],
+      "Select a destination folder": [
+        "대상 폴더 선택"
+      ],
       "Select a folder to make the copy in": [
         "복사할 폴더를 선택하세요."
       ],
@@ -6148,6 +6194,12 @@
       "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
         "이 고유 코드는 웹사이트와 ISP(인터넷 서비스 제공업체)에서 위치와 검색 기록을 기기에 연결하는 데 사용할 수 있습니다."
       ],
+      "This will cancel any remaining downloads.": [
+        "이 작업은 남은 모든 다운로드를 취소합니다."
+      ],
+      "This will cancel any remaining uploads and downloads. Cancelled uploads won't be saved in ${ DRIVE_APP_NAME }.": [
+        "남은 업로드 및 다운로드가 취소됩니다. 취소된 업로드 파일은 ${ DRIVE_APP_NAME }에 저장되지 않습니다."
+      ],
       "This will cancel any remaining uploads. Cancelled files won't be saved in ${ DRIVE_APP_NAME }.": [
         "남은 업로드가 취소됩니다. 취소된 파일은 ${ DRIVE_APP_NAME }에 저장되지 않습니다."
       ],
@@ -6189,6 +6241,9 @@
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "결제를 완료하기 위해서, 아래 주소로 ${ btcAmountBold } 를 송금해 주시기 바랍니다."
+      ],
+      "To download these files, open them in ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME } and export them.": [
+        "이 파일을 다운로드하려면, ${ DOCS_APP_NAME } 또는 ${ SHEETS_APP_NAME }에서 열고 내보내세요."
       ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
         "비공개 검색을 활성화하려면, ${ DRIVE_APP_NAME }가 로컬에서 파일 인덱싱을 해야합니다."
@@ -6355,6 +6410,9 @@
       "We are experiencing technical issues. Any albums related actions are temporarily disabled.": [
         "현재 기술적인 문제가 발생했습니다. 앨범 관련 작업은 일시적으로 사용할 수 없습니다."
       ],
+      "We couldn't verify ${ nameAuthor } uploaded ${ node.name }. The following may have been tampered with: file data order. Only open if you trust it.": [
+        "${ nameAuthor }님이 ${ node.name } 파일을 업로드했는지 확인할 수 없습니다. 다음 항목이 손상되었을 수 있습니다: 파일 데이터 순서. 신뢰할 수 있는 경우에만 여세요."
+      ],
       "We couldn’t process your payment.": [
         "결제를 처리할 수 없습니다."
       ],
@@ -6387,6 +6445,9 @@
       ],
       "Week": [
         "주"
+      ],
+      "Welcome to ${ DRIVE_APP_NAME }, for the first 10 minutes, any files you upload don't count toward your storage quota.": [
+        "${ DRIVE_APP_NAME }에 오신 것을 환영해요! 처음 10분 동안 업로드하는 파일은 저장공간 할당량에 포함되지 않아요."
       ],
       "What do you want to do?": [
         "무엇을 시도하시겠습니까?"
@@ -6801,6 +6862,9 @@
       ],
       "Anderson": [
         "길동"
+      ],
+      "Anonymous": [
+        "익명"
       ],
       "Anyone on the Internet with the link can edit": [
         "링크를 가진 사용자가 인터넷 상에서 편집할 수 있습니다."
@@ -7659,6 +7723,9 @@
       "${ n } active meeting at a time": [
         "동시 활성 회의 ${ n }개"
       ],
+      "${ n } participant": [
+        "참여자 ${ n }명"
+      ],
       "24 hours per meeting": [
         "회의 당 24시간"
       ],
@@ -7668,6 +7735,9 @@
       "Appointment scheduling": [
         "일정 예약"
       ],
+      "Booking pages": [
+        "예약 페이지"
+      ],
       "Browser, mobile, and desktop apps": [
         "브라우저, 모바일 및 데스크톱 앱"
       ],
@@ -7676,6 +7746,9 @@
       ],
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "종단간 암호화된 화면 공유 및 임시 통화 중 채팅"
+      ],
+      "Meeting recording": [
+        "회의 녹화"
       ],
       "One active meeting at a time": [
         "동싀 활성 회의 1개"
@@ -8822,6 +8895,9 @@
       "\"${ name }\" deleted": [
         "\"${ name }\" 삭제됨"
       ],
+      "\"${ name }\" deleted permanently": [
+        "\"${ name }\"이(가) 영구적으로 삭제되었습니다."
+      ],
       "\"${ name }\" deleted permanently from trash": [
         "\"${ name }\" 이(가) 휴지통에서 완전히 삭제되었습니다"
       ],
@@ -8893,6 +8969,9 @@
       ],
       "${ numberOfItems } item deleted": [
         "${ numberOfItems }개 항목 삭제됨"
+      ],
+      "${ numberOfItems } item deleted permanently": [
+        "${ numberOfItems }개가 영구적으로 삭제되었습니다"
       ],
       "${ numberOfItems } item deleted permanently from trash": [
         "${ numberOfItems }개가 휴지통에서 영구적으로 삭제되었습니다"
@@ -9691,23 +9770,23 @@
       "terms and conditions": [
         "이용 약관"
       ],
-      "The coupon is valid for ${ couponRedemptions } renewal.": [
-        "쿠폰이 ${ couponRedemptions }회 갱신까지 유효합니다."
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "해당 할인은 ${ renewalsWithCoupon }회 갱신까지 유효합니다."
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "특별 할인가는 ${ couponRedemptions }개월 동안 유효합니다. 이후 매월 ${ renewPriceStr }에 자동으로 갱신됩니다. 언제든지 취소할 수 있습니다."
       ],
       "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
         "특별 할인 가격은 최초 ${ subscriptionLength }개월에 한해 유효합니다."
       ],
-      "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "특별 할인가가 첫 달에만 적용됩니다. 쿠폰은 ${ couponRedemptions }회 갱신까지 유효합니다. 이후에는 매월 ${ renewPriceStr }(으)로 1개월 동안 자동 갱신됩니다. 언제든지 취소할 수 있습니다."
-      ],
       "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "특별 할인가는 첫 달에만 유효합니다. 이후 매 달 ${ renewPriceStr }에 자동으로 갱신됩니다. 취소는 언제나 가능합니다."
       ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "특별 할인가 ${ priceWithDiscount }은(는) ${ couponRedemptions }개월간 유효합니다. 이후 ${ renewPriceStr }(으)로 1개월간 자동 갱신됩니다. 언제든지 취소할 수 있습니다."
+      ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "특별 할인 가격인 ${ priceWithDiscount }은(는) 최초 ${ subscriptionLength }개월에 한해 유효합니다."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "특별 할인가 ${ priceWithDiscount }는 첫 달만 적용됩니다. 쿠폰은 ${ couponRedemptions }회 갱신까지 유효합니다. 이후에는 매월 ${ renewPriceStr }로 개월 동안 자동 갱신되며, 언제든지 취소할 수 있습니다."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "특별 할인가 ${ priceWithDiscount }는 첫 달에만 유효합니다. 이후 매 달 ${ renewPriceStr }에 자동으로 갱신됩니다. 취소는 언제나 가능합니다."
@@ -11237,6 +11316,9 @@
       "Securely share your favorite moments with friends and family using Albums.": [
         "앨범을 사용하여 소중한 순간들을 친구나 가족과 안전하게 공유해 보세요."
       ],
+      "Shared by ${ sharedBy }": [
+        "${ sharedBy }님에 의해 공유됨"
+      ],
       "Your favorited photos will appear here": [
         "즐겨찾는 사진이 여기에 표시됩니다"
       ],
@@ -11512,6 +11594,9 @@
       "${ feature } is now active": [
         "${ feature }이(가) 이제 활성 상태입니다"
       ],
+      "${ freeUploadLength } of free uploads.": [
+        "${ freeUploadLength }개의 무료 업로드."
+      ],
       "${ numberOfFailedTransfer.total } failed download": [
         "${ numberOfFailedTransfer.total } 개의 파일 다운로드에 실패함"
       ],
@@ -11610,6 +11695,12 @@
       ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "${ MAIL_SHORT_APP_NAME } 구독 취소"
+      ],
+      "Cancel all downloads?": [
+        "모든 다운로드를 취소하겠습니까?"
+      ],
+      "Cancel all transfers?": [
+        "전송을 모두 취소합니까?"
       ],
       "Cancel all uploads?": [
         "모든 업로드를 취소하시겠습니까?"
@@ -12319,11 +12410,17 @@
       "This folder has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "이 폴더가 유효하지 않거나 서명이 존재하지 않습니다. 매뉴 (⋮) → 상세 정보에서 자세한 정보를 확인하세요."
       ],
+      "This is likely due to the account or address having been deleted.": [
+        "계정이나 주소가 삭제되었을 수 있습니다."
+      ],
       "This link is password protected": [
         "이 링크는 비밀번호로 보호되었습니다"
       ],
       "Time": [
         "시간"
+      ],
+      "To preview this spreadsheet, download it.": [
+        "이 스프레드시트를 미리 보려면 다운로드하세요."
       ],
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "이 스프레드시트를 미리보려면, ${ SHEETS_APP_NAME }에서 열거나 다운로드하세요."
@@ -12433,6 +12530,15 @@
       "We couldn’t verify that an anonymous user uploaded this folder.": [
         "익명의 사용자가 이 폴더를 업로드했는지 확인할 수 없습니다."
       ],
+      "We weren’t able to confirm that the file content was uploaded by ${ claimedContentAuthor }. The reason is: ${ activeRevision.contentAuthor.error.error }": [
+        "${ claimedContentAuthor }님이 파일을 업로드했는지 확인할 수 없었습니다. 원인: ${ activeRevision.contentAuthor.error.error }"
+      ],
+      "We weren’t able to confirm that the name was created or modified by ${ claimedNameAuthor }. The reason is: ${ nodeEntity.nameAuthor.error.error }": [
+        "${ claimedNameAuthor }님이 해당 이름이 생성되거나 수정되었는지 확인할 수 없습니다. 원인: ${ nodeEntity.nameAuthor.error.error }"
+      ],
+      "We weren’t able to confirm that the node was created by ${ claimedKeyAuthor }. The reason is: ${ nodeEntity.keyAuthor.error.error }": [
+        "${ claimedKeyAuthor }님이 해당 노드를 생성했는지 확인할 수 없습니다. 원인: ${ nodeEntity.keyAuthor.error.error }"
+      ],
       "Welcome offer": [
         "환영 혜택"
       ],
@@ -12466,9 +12572,6 @@
       "Your ${ planName } free trial ends on ${ textDate }": [
         "사용자의 ${ planName } 무료 체험이 ${ textDate }에 종료됩니다."
       ],
-      "Your ${ planName } subscription has started": [
-        "${ planName } 구독이 시작되었습니다"
-      ],
       "Your 3 GB bonus": [
         "나의 3 GB 보너스"
       ],
@@ -12477,6 +12580,9 @@
       ],
       "Your changes are not synced yet": [
         "변경 사항이 동기화되지 않았습니다."
+      ],
+      "Your download includes ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME } files": [
+        "다운로드에 ${ DOCS_APP_NAME } 또는 ${ SHEETS_APP_NAME } 파일이 포함되어 있습니다."
       ],
       "Your exposed information": [
         "사용자의 노출된 정보"

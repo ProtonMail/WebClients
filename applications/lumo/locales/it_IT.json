@@ -56,6 +56,9 @@
       "Chat with us": [
         "Chatta con noi"
       ],
+      "Clean up orphaned documents": [
+        "Pulisci documenti orfani"
+      ],
       "Close": [
         "Chiudi"
       ],
@@ -202,6 +205,9 @@
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Apri impostazioni ${ CALENDAR_APP_NAME }"
+      ],
+      "Open conversation": [
+        "Apri conversazione"
       ],
       "Open file preview": [
         "Apri anteprima file"
@@ -1112,6 +1118,9 @@
       "Failed to upload \"${ file.name }\" to ${ DRIVE_APP_NAME }": [
         "Impossibile caricare \"${ file.name }\" su ${ DRIVE_APP_NAME }"
       ],
+      "File \"${ file.name }\" (${ fileSizeFormatted }) exceeds the ${ maxSizeFormatted } limit. Link a Drive folder to your project to work with larger files.": [
+        "Il file \"${ file.name }\" (${ fileSizeFormatted }) supera il limite di ${ maxSizeFormatted }. Collega una cartella Drive al tuo progetto per lavorare con file più grandi."
+      ],
       "File \"${ file.name }\" is too large (${ fileSizeFormatted }). Maximum allowed size is ${ maxSizeFormatted }.": [
         "Il file \"${ file.name }\" è troppo grande (${ fileSizeFormatted }). La dimensione massima consentita è ${ maxSizeFormatted }."
       ],
@@ -1129,6 +1138,9 @@
       ],
       "PowerPoint files are not supported. Please convert to PDF and upload the PDF version for better text extraction.": [
         "I file PowerPoint non sono supportati. Converti in PDF e carica la versione PDF per una migliore estrazione del testo."
+      ],
+      "Re-indexing failed. Please try again.": [
+        "Reindicizzazione fallita. Riprova."
       ],
       "Search service not available": [
         "Servizio di ricerca non disponibile"
@@ -1242,6 +1254,9 @@
       "Large file uploads": [
         "Caricamenti di file di grandi dimensioni"
       ],
+      "New": [
+        "Novità"
+      ],
       "Unlimited chat history": [
         "Cronologia chat illimitata"
       ],
@@ -1311,11 +1326,20 @@
       "Ask anything to ${ LUMO_SHORT_APP_NAME }": [
         "Chiedi qualsiasi cosa a ${ LUMO_SHORT_APP_NAME }"
       ],
+      "Attached Files": [
+        "File allegati"
+      ],
+      "Auto-matched": [
+        "Corrispondenti"
+      ],
       "Be cautious of unfamiliar domains or excessive subdomains": [
         "Fai attenzione a domini sconosciuti o sottodomini eccessivi"
       ],
       "characters": [
         "caratteri"
+      ],
+      "characters not shown": [
+        "caratteri non visualizzati"
       ],
       "Chat knowledge": [
         "Contenuti della chat"
@@ -1356,11 +1380,17 @@
       "Exclude file": [
         "Rimuovi file"
       ],
+      "Excluded": [
+        "Escluso"
+      ],
       "File capacity": [
         "Capacità di archiviazione file"
       ],
       "File capacity for this conversation": [
         "Capacità dei file per questa conversazione"
+      ],
+      "File too large": [
+        "File troppo grande"
       ],
       "File too large for preview (>150k tokens)": [
         "File troppo grande per l'anteprima (>150k token)"
@@ -1424,6 +1454,9 @@
       ],
       "of": [
         "di"
+      ],
+      "Partial content": [
+        "Contenuto parziale"
       ],
       "Please share what you expected": [
         "Condividi quello che ti aspettavi"
@@ -1571,7 +1604,7 @@
         "Invita degli amici"
       ],
       "Maybe later": [
-        "Forse dopo"
+        "Forse più tardi"
       ],
       "Send invitation": [
         "Invia l'invito"
@@ -1812,6 +1845,9 @@
       "About ${ LUMO_SHORT_APP_NAME }": [
         "Informazioni su ${ LUMO_SHORT_APP_NAME }"
       ],
+      "Automatic web search": [
+        "Ricerca web automatica"
+      ],
       "Delete everything": [
         "Elimina tutto"
       ],
@@ -1829,6 +1865,9 @@
       ],
       "Save your favorites": [
         "Salva i tuoi preferiti"
+      ],
+      "Search Index": [
+        "Indici di ricerca"
       ],
       "Secure your spot": [
         "Assicurati il tuo posto"
@@ -2039,11 +2078,17 @@
       "Describe desired changes...": [
         "Descrivi i cambiamenti desiderati"
       ],
+      "Deselect all": [
+        "Deseleziona tutti"
+      ],
       "Edit instructions": [
         "Modifica istruzioni"
       ],
       "Edit project": [
         "Modifica progetto"
+      ],
+      "Go to project": [
+        "Vai al progetto"
       ],
       "Hide settings": [
         "Nascondi Impostazioni"
@@ -2054,6 +2099,12 @@
       "Manage chats": [
         "Gestisci chat"
       ],
+      "Manage Drive folder link": [
+        "Gestisci il link alla cartella di Drive"
+      ],
+      "More breadcrumbs": [
+        "Ulteriori segmenti"
+      ],
       "More concise": [
         "Più conciso"
       ],
@@ -2062,6 +2113,9 @@
       ],
       "Next message": [
         "Prossimo messaggio"
+      ],
+      "Open conversation": [
+        "Apri conversazione"
       ],
       "Previous message": [
         "Messaggio precedente"
@@ -2093,6 +2147,9 @@
       "Settings": [
         "Impostazioni"
       ],
+      "Show instructions and files": [
+        "Mostra istruzioni e file"
+      ],
       "Show settings": [
         "Visualizza impostazioni"
       ],
@@ -2113,6 +2170,9 @@
       ],
       "Upgrade to Plus": [
         "Effettua l'upgrade a Plus"
+      ],
+      "Upload file": [
+        "Carica file"
       ],
       "Upload files": [
         "Carica i file"
@@ -2140,6 +2200,9 @@
       "Create a free account": [
         "Crea un account gratuito"
       ],
+      "Create project": [
+        "Crea progetto"
+      ],
       "Delete": [
         "Elimina"
       ],
@@ -2148,6 +2211,9 @@
       ],
       "Expand": [
         "Espandi"
+      ],
+      "Expand projects": [
+        "Espandi progetti"
       ],
       "Favorite": [
         "Preferiti"
@@ -2182,8 +2248,14 @@
       "Projects": [
         "Progetti"
       ],
+      "Save": [
+        "Salva"
+      ],
       "Search": [
         "Cerca"
+      ],
+      "See all": [
+        "Mostra tutto"
       ],
       "Send": [
         "Invia"
@@ -2193,6 +2265,9 @@
       ],
       "Show sidebar": [
         "Mostra la barra laterale"
+      ],
+      "Sign in": [
+        "Accedi"
       ],
       "Unfavorite": [
         "Rimuovi dai preferiti"
@@ -2208,11 +2283,17 @@
       "Cannot link the root folder. Please select a subfolder.": [
         "Impossibile collegare la cartella principale. Seleziona una sottocartella."
       ],
+      "Error processing file: ${ file.name }": [
+        "Errore durante l'elaborazione del file: ${ file.name }"
+      ],
       "Error uploading file: ${ file.name }": [
         "Errore durante il caricamento del file: ${ file.name }"
       ],
       "Failed to create folder": [
         "Impossibile creare la cartella"
+      ],
+      "Failed to download \"${ file.name }\": Data integrity check failed. Please try again.": [
+        "Impossibile scaricare \"${ file.name }\": controllo integrità dati fallito. Riprova."
       ],
       "Failed to index Drive folder for search": [
         "Impossibile indicizzare la cartella Drive per la ricerca"
@@ -2232,6 +2313,9 @@
       "File download failed due to integrity check. Please try again.": [
         "Download del file fallito a causa del controllo di integrità. Riprova."
       ],
+      "File format not supported: ${ file.name }": [
+        "Formato file non supportato: ${ file.name }"
+      ],
       "File type not supported: ${ file.name }": [
         "Tipo di file non supportato: ${ file.name }"
       ],
@@ -2245,6 +2329,9 @@
       ],
       "Priority access & faster responses": [
         "Accesso prioritario e risposte più veloci"
+      ],
+      "Unlimited projects": [
+        "Progetti illimitati"
       ]
     },
     "collider_2025:Info": {
@@ -2257,6 +2344,9 @@
       ],
       "${ project.conversationCount } conversations": [
         "${ project.conversationCount } conversazioni"
+      ],
+      "${ project.fileCount } file": [
+        "${ project.fileCount } file"
       ],
       "${ project.fileCount } files": [
         "${ project.fileCount } file"
@@ -2285,8 +2375,17 @@
       "Current chat:": [
         "Chat attuale:"
       ],
+      "Drive files are not available for guest users": [
+        "I file di Drive non sono disponibili per gli utenti ospiti"
+      ],
+      "File \"${ file.name }\" is already added to this conversation": [
+        "File \"${ file.name }\" è già stato aggiunto a questa conversazione"
+      ],
       "File \"${ file.name }\" is already in this project": [
         "Il file \"${ file.name }\" è già presente in questo progetto"
+      ],
+      "Files uploaded to this project will be saved to the linked Drive folder.": [
+        "I file caricati in questo progetto verranno salvati nella cartella Drive collegata."
       ],
       "From ${ DRIVE_APP_NAME }": [
         "Da ${ DRIVE_APP_NAME }"
@@ -2309,11 +2408,17 @@
       "Processing...": [
         "Elaborazione in corso..."
       ],
+      "Projects help you organize conversations with custom instructions and files.": [
+        "I progetti ti aiutano a organizzare le conversazioni con istruzioni e file personalizzati."
+      ],
       "Projects help you organize conversations with custom instructions and files. Sign in or create a free account to get started.": [
         "I progetti ti aiutano a organizzare le conversazioni con istruzioni e file personalizzati. Accedi o crea un account gratuito per iniziare."
       ],
       "This message is empty. Sorry about that.": [
         "Questo messaggio è vuoto. Spiacenti."
+      ],
+      "This project already has files. Please remove all files before linking a Drive folder.": [
+        "Questo progetto ha già dei file. Rimuovi tutti i file prima di collegare una cartella di Drive."
       ],
       "This will remove all ${ files.length } files from this project. This action cannot be undone.": [
         "Questo rimuoverà tutti i ${ files.length } file da questo progetto. Questa azione non può essere annullata."
@@ -2338,6 +2443,9 @@
       ]
     },
     "collider_2025:Label": {
+      "chat": [
+        "Chat"
+      ],
       "chats": [
         "chat"
       ],
@@ -2346,6 +2454,15 @@
       ],
       "Edit conversation title": [
         "Modifica titolo conversazione"
+      ],
+      "Folder name": [
+        "Nome cartella"
+      ],
+      "Instructions": [
+        "Istruzioni"
+      ],
+      "Project Instructions (optional)": [
+        "Istruzioni del progetto (facoltativo)"
       ],
       "Untitled chat": [
         "Chat senza titolo"
@@ -2365,8 +2482,17 @@
       ]
     },
     "collider_2025:Placeholder": {
+      "Add instructions about the tone, style, and persona you want ${ LUMO_SHORT_APP_NAME } to adopt.": [
+        "Aggiungi istruzioni sul tono, stile e persona che vuoi che ${ LUMO_SHORT_APP_NAME } adotti."
+      ],
+      "Add instructions about the tone, style, and persona you want ${ LUMO_SHORT_APP_NAME } to adopt. These instructions will apply to all chats in this project.": [
+        "Aggiungi istruzioni sul tono, stile e persona che vuoi che ${ LUMO_SHORT_APP_NAME } adotti. Queste istruzioni si applicheranno a tutte le chat in questo progetto."
+      ],
       "Ask anything…": [
         "Chiedi qualsiasi cosa…"
+      ],
+      "Enter folder name": [
+        "Inserisci il nome della cartella"
       ],
       "Enter project name": [
         "Inserisci nome progetto"
@@ -2385,6 +2511,12 @@
       ]
     },
     "collider_2025:Project": {
+      "Develop stories, refine prose, and improve your writing craft": [
+        "Sviluppa storie, affina la prosa e migliora la tua arte di scrivere"
+      ],
+      "Financial assistant": [
+        "Assistente finanziario"
+      ],
       "Get help understanding assignments, solving problems, and learning concepts": [
         "Ottieni aiuto per capire i compiti, risolvere problemi e imparare concetti"
       ],
@@ -2394,14 +2526,26 @@
       "Plan financial goals with personalized insights": [
         "Pianifica obiettivi finanziari con insight personalizzati"
       ],
+      "Practice conversations, learn grammar, and build vocabulary in your target language": [
+        "Pratica conversazioni, impara la grammatica e costruisci il vocabolario nella tua lingua di destinazione"
+      ],
+      "Research & Analysis Partner": [
+        "Partner di Ricerca e Analisi"
+      ],
       "Study companion": [
         "Compagno di studi"
+      ],
+      "Synthesize sources, analyze data, and develop insights for your research projects": [
+        "Sintetizza le fonti, analizza i dati e sviluppa insight per i tuoi progetti di ricerca"
       ],
       "Writing coach": [
         "Assistente di scrittura"
       ]
     },
     "collider_2025:Prompt": {
+      "Analyze my spending patterns and suggest areas to reduce expenses": [
+        "Analizza le mie abitudini di spesa e suggerisci aree in cui ridurre le spese"
+      ],
       "Can you explain why this answer is correct?": [
         "Puoi spiegare perché questa risposta è corretta?"
       ],
@@ -2410,6 +2554,9 @@
       ],
       "Create a packing list for a winter hiking trip in Patagonia": [
         "Crea una lista di cose da mettere in valigia per un viaggio di escursionismo invernale in Patagonia"
+      ],
+      "Explain the risks associated with this type of asset": [
+        "Spiega i rischi associati a questo tipo di asset"
       ],
       "Explain the trade-offs between paying off debt vs investing": [
         "Spiega i compromessi tra ripagare un debito e investire"
@@ -2420,8 +2567,14 @@
       "Help me create a plan to achieve this goal": [
         "Aiutami a creare un piano per raggiungere questo obiettivo"
       ],
+      "Help me draft a professional response to this email": [
+        "Aiutami a creare una risposta professionale a questa email"
+      ],
       "Help me organize my thoughts on this decision": [
         "Aiutami a organizzare i miei pensieri su questa decisione"
+      ],
+      "Help me plan a 2-week itinerary for Japan with cultural experiences": [
+        "Aiutami a pianificare un itinerario di 2 settimane per il Giappone con esperienze culturali"
       ],
       "Help me prepare questions about this diagnosis for my doctor": [
         "Aiutami a preparare delle domande su questa diagnosi per il mio medico"
@@ -2474,17 +2627,26 @@
       "Summarize the key points from this meeting": [
         "Riassumi i punti chiave di questa riunione"
       ],
+      "What are the key points I should remember for this topic?": [
+        "Quali sono i punti chiave da ricordare per questo argomento?"
+      ],
       "What are the main findings and how do they relate to each other?": [
         "Quali sono i risultati principali e come si relazionano tra loro?"
       ],
       "What are the termination clauses and notice requirements?": [
         "Quali sono le clausole di risoluzione e i requisiti di preavviso?"
       ],
+      "What do these lab values mean and are any outside normal ranges?": [
+        "Cosa significano questi valori di laboratorio e sono al di fuori dei limiti normali?"
+      ],
       "What metrics and research should I review for this investment?": [
         "Quali metriche e ricerche dovrei esaminare per questo investimento?"
       ],
       "What questions should I consider before making this choice?": [
         "Quali domande dovrei considerare prima di fare questa scelta?"
+      ],
+      "What should I know about emergency funds and where to keep them?": [
+        "Cosa dovrei sapere sui fondi di emergenza e dove conservarli?"
       ]
     },
     "collider_2025:Status": {
@@ -2496,6 +2658,9 @@
       ],
       "Indexing": [
         "Indicizzazione"
+      ],
+      "Indexing complete": [
+        "Indicizzazione completata"
       ],
       "Indexing error": [
         "Errore di indicizzazione"
@@ -2510,14 +2675,23 @@
       ]
     },
     "collider_2025:Success": {
+      "All files removed from project": [
+        "Tutti i file rimossi dal progetto"
+      ],
       "Drive folder linked successfully": [
         "Cartella drive collegata con successo"
       ],
       "Drive folder unlinked": [
         "Cartella Drive scollegata"
       ],
+      "File \"${ file.name }\" added to project": [
+        "Il file \"${ file.name }\" è già presente in questo progetto"
+      ],
       "File removed from project": [
         "File rimosso dal progetto"
+      ],
+      "Folder \"${ trimmedFolderName }\" created successfully": [
+        "La cartella \"${ trimmedFolderName }\" è stata creata con successo"
       ],
       "Folder created successfully": [
         "Cartella creata con successo"
@@ -2533,8 +2707,14 @@
       "Create folder": [
         "Crea una cartella"
       ],
+      "Create new project": [
+        "Crea nuovo oggetto"
+      ],
       "Delete conversation?": [
         "Elimina la conversazione?"
+      ],
+      "Delete project?": [
+        "Eliminare il progetto?"
       ],
       "Earlier": [
         "Precedente"
@@ -2542,8 +2722,14 @@
       "Edit Instructions": [
         "Modifica istruzioni"
       ],
+      "Edit Project": [
+        "Modifica progetto"
+      ],
       "Favorites": [
         "Preferiti"
+      ],
+      "Get started by creating a new project": [
+        "Inizia creando un nuovo progetto"
       ],
       "Ghost mode": [
         "Modalità Ghost"
@@ -2578,6 +2764,9 @@
       "Link Drive Folder": [
         "Collega cartella Drive"
       ],
+      "Linked Drive Folder": [
+        "Collega cartella Drive"
+      ],
       "More options": [
         "Altre opzioni"
       ],
@@ -2589,6 +2778,9 @@
       ],
       "No result.": [
         "Nessun risultato."
+      ],
+      "Nothing here yet": [
+        "Non c'e ancora niente qui"
       ],
       "Older": [
         "Meno recente"
@@ -2635,6 +2827,9 @@
       ],
       "This folder contains ${ result.totalFiles } indexable files. Only the first ${ MAX_INDEXABLE_FILES } files were indexed. ${ result.skippedFiles } files were skipped.": [
         "Questa cartella contiene ${ result.totalFiles } file indicizzabili. Sono stati indicizzati solo i primi ${ MAX_INDEXABLE_FILES } file. ${ result.skippedFiles } file sono stati ignorati."
+      ],
+      "This will also permanently delete:": [
+        "Questo eliminerà anche permanentemente:"
       ]
     },
     "color": {
@@ -4280,11 +4475,17 @@
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "Nel passaggio successivo, sarai in grado di inviare un deposito utilizzando un indirizzo Bitcoin."
       ],
+      "Index size:": [
+        "Dimensione indice:"
+      ],
       "Indexed content (first 2000 chars):": [
         "Contenuto indicizzato (primi 2000 caratteri):"
       ],
       "Indexed files:": [
         "File indicizzati:"
+      ],
+      "Indexed folders:": [
+        "Cartelle indicizzate:"
       ],
       "Inherited from parent folder": [
         "Preso dalla cartella principale"
@@ -4322,6 +4523,9 @@
       "Messages to all your email addresses will go to your inbox.": [
         "I messaggi a tutti i tuoi indirizzi email verranno inviati alla tua casella di posta."
       ],
+      "MIME:": [
+        "MIME:"
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Dai un nome alla tua cartella e seleziona la cartella principale nella quale verrà contenuta. Se non selezioni una cartella principale, questa nuova cartella verrà creata come una cartella di primo livello."
       ],
@@ -4339,6 +4543,9 @@
       ],
       "No results found": [
         "Nessun risultato trovato"
+      ],
+      "No results found for \"${ query }\"": [
+        "Nessun risultato per \"${ query }\""
       ],
       "Number of dedicated servers in the organization": [
         "Numero di server dedicati nell'organizzazione"
@@ -4385,6 +4592,9 @@
       "Registering your subscription…": [
         "Registrazione dell'abbonamento…"
       ],
+      "Searchable chunks": [
+        "Chunk ricercabili"
+      ],
       "Searchable chunks:": [
         "Chunk ricercabili:"
       ],
@@ -4428,6 +4638,9 @@
       "Thank you for subscribing. Secure browsing starts now.": [
         "Grazie per esserti abbonato. La navigazione sicura inizia ora."
       ],
+      "The index reports ${ displayDriveDocs } Drive documents. Re-index or keep the session open after indexing to view details here.": [
+        "L'indice segnala ${ displayDriveDocs } documenti Drive. Re-indicizza o mantieni aperta la sessione dopo l'indicizzazione per visualizzare i dettagli qui."
+      ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Il processo di verifica aprirà una nuova finestra del browser. Disabilita qualsiasi blocco pop-up."
       ],
@@ -4469,6 +4682,9 @@
       ],
       "Total VPN connections": [
         "Totale connessioni VPN"
+      ],
+      "Unknown": [
+        "Sconosciuto"
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Effettua l'upgrade adesso per ottenere funzionalità premium, prodotti e spazio di archiviazione a un prezzo speciale"
@@ -4943,11 +5159,23 @@
       ]
     },
     "lumo: Debug View": {
+      "Acceleration": [
+        "Accelerazione"
+      ],
+      "Buffer size": [
+        "Dimensione buffer"
+      ],
       "Clear History": [
         "Cancella Cronologia"
       ],
+      "Debug View": [
+        "Vista di debug"
+      ],
       "Differential": [
         "Differenziale"
+      ],
+      "FPS": [
+        "FPS"
       ],
       "Idle": [
         "Inattivo"
@@ -4958,8 +5186,14 @@
       "max": [
         "max"
       ],
+      "Memory": [
+        "Memoria"
+      ],
       "Messages": [
         "Messaggi"
+      ],
+      "Rate": [
+        "Tariffa"
       ],
       "Redux updates": [
         "Aggiornamenti Redux"
@@ -4985,11 +5219,20 @@
       "Status": [
         "Stato"
       ],
+      "Stiffness": [
+        "Rigidità"
+      ],
       "Streaming": [
         "Streaming"
       ],
+      "to toggle": [
+        "per commutare"
+      ],
       "Token delays": [
         "Ritardi token"
+      ],
+      "Tokens/sec": [
+        "Token/sec"
       ]
     },
     "mail_signup_2024: Info": {
@@ -6136,28 +6379,28 @@
       "terms and conditions": [
         "Termini e Condizioni"
       ],
-      "The coupon is valid for ${ couponRedemptions } renewal.": [
-        "Il coupon è valido per ${ couponRedemptions } rinnovo.",
-        "Il coupon è valido per ${ couponRedemptions } rinnovi."
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "Lo sconto è valido per ${ renewalsWithCoupon } rinnovo.",
+        "Lo sconto è valido per ${ renewalsWithCoupon } rinnovi."
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Il prezzo scontato speciale è valido per ${ couponRedemptions } mese. Poi si rinnoverà automaticamente a ${ renewPriceStr } per 1 mese. Puoi annullare in qualsiasi momento.",
+        "Il prezzo speciale scontato è valido per ${ couponRedemptions } mesi. Successivamente, verrà rinnovato automaticamente a ${ renewPriceStr } per 1 mese. Puoi annullare in qualsiasi momento."
       ],
       "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
         "Il prezzo con sconto speciale è valido per il primo ${ subscriptionLength } mese.",
         "Il prezzo scontato è valido per i primi ${ subscriptionLength } mesi."
       ],
-      "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "Il prezzo speciale scontato è valido per il primo mese. Il coupon è valido per ${ couponRedemptions } rinnovo. Successivamente verrà rinnovato automaticamente a ${ renewPriceStr } per 1 mese. Puoi annullare in qualsiasi momento.",
-        "Il prezzo scontato è valido per il primo mese. Il coupon è valido per ${ couponRedemptions } rinnovi. Successivamente verrà rinnovato automaticamente a ${ renewPriceStr } per 1 mese. Puoi annullare in qualsiasi momento."
-      ],
       "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Il prezzo scontato speciale è valido per il primo mese. Successivamente, verrà rinnovato automaticamente a ${ renewPriceStr } ogni mese. Puoi annullare in qualsiasi momento."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Il prezzo speciale scontato di ${ priceWithDiscount } è valido per ${ couponRedemptions } mese. Poi si rinnoverà automaticamente a ${ renewPriceStr } per 1 mese. Puoi annullare in qualsiasi momento.",
+        "Il prezzo speciale scontato di ${ priceWithDiscount } è valido per ${ couponRedemptions } mesi. Si rinnoverà poi automaticamente a ${ renewPriceStr } per 1 mese. Puoi annullare in qualsiasi momento."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "Il prezzo scontato di ${ priceWithDiscount } è valido per il primo ${ subscriptionLength } mese.",
         "Il prezzo scontato di ${ priceWithDiscount } è valido per i primi ${ subscriptionLength } mesi."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "Il prezzo scontato di ${ priceWithDiscount } è valido per il primo mese. Il coupon è valido per ${ couponRedemptions } rinnovo. Successivamente verrà rinnovato automaticamente a ${ renewPriceStr } per 1 mese. Puoi annullare in qualsiasi momento.",
-        "Il prezzo scontato di ${ priceWithDiscount } è valido per il primo mese. Il coupon è valido per ${ couponRedemptions } rinnovi. Successivamente verrà rinnovato automaticamente a ${ renewPriceStr } per 1 mese. Puoi annullare in qualsiasi momento."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "La tariffa scontata, con prezzo speciale di ${ priceWithDiscount } è valida per il primo mese. Il piano si rinnoverà poi automaticamente al prezzo di ${ renewPriceStr } per mese. Puoi disdire quando vuoi."
@@ -6676,6 +6919,9 @@
       ]
     },
     "Status": {
+      "Disabled": [
+        "Disabilitato"
+      ],
       "Enabled": [
         "Abilitato"
       ],
@@ -6958,8 +7204,14 @@
       "${ hours } hours ago": [
         "${ hours } ore fa"
       ],
+      "${ minutes } minutes ago": [
+        "${ minutes } minuti fa"
+      ],
       "1 hour ago": [
         "1 ora fa"
+      ],
+      "Just now": [
+        "Adesso"
       ],
       "Yesterday": [
         "Ieri"
@@ -7092,6 +7344,9 @@
       "Network error": [
         "Errore di rete"
       ],
+      "Orphaned Documents Detected": [
+        "Documenti orfani rilevati"
+      ],
       "Payment failed": [
         "Pagamento non riuscito"
       ],
@@ -7112,6 +7367,9 @@
       ],
       "Request new code": [
         "Richiedi nuovo codice"
+      ],
+      "Search Index Debug": [
+        "Debug indice di ricerca"
       ],
       "Select a plan": [
         "Seleziona un piano"

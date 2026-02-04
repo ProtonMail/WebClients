@@ -3388,8 +3388,8 @@
       "Simplify syncing and scheduling with shared calendars.": [
         "Forenkle synkronisering og planlegging med delte kalendere."
       ],
-      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
-        "For import via CSV- og VCF-fil, forsikre deg om at filen ikke overskrider ${ MAX_IMPORT_FILE_SIZE_STRING } eller ${ MAX_IMPORT_CONTACTS_STRING } kontakter. Hvis filen er større, del den opp i mindre filer. ${ learnMoreLink }."
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "For å importere via en CSV- og VCF-fil, forsikre deg om at filen ikke overskrider ${ MAX_IMPORT_FILE_SIZE_STRING } eller ${ maxContactString } kontakter. Hvis filen er større, del den opp i mindre filer. ${ learnMoreLink }."
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "For å importere kontaktene dine fra Google eller Outlook, ${ easySwitchLink }."
@@ -4285,6 +4285,9 @@
       "This label name is not available. Please choose a different name.": [
         "Dette etikettenavnet er ikke tilgjengelig. Velg et annet navn."
       ],
+      "This offer is not available in your country": [
+        "Dette tilbudet er ikke tilgjengelig i landet ditt"
+      ],
       "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
         "For å opprette ikke-private brukerkontoer og få tilgang til kontoene deres, må du gjenopprette administratorrettighetene dine."
       ],
@@ -4341,6 +4344,9 @@
       ],
       "You have reached the number of contacts limit for your account": [
         "Du har nådd grensen for antall kontakter for kontoen din"
+      ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "Du har brukt alle adressene i planen. Oppgrader planen for å legge til en ny adresse eller deaktiver en adresse i kontoen din."
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Du har brukt alle brukerne i planen din. Oppgrader planen din for å legge til en ny bruker."
@@ -4429,8 +4435,8 @@
       "An error occurred uploading your file. No file has been selected.": [
         "Det oppstod en feil under opplasting av filen. Ingen fil er valgt."
       ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
-        "Filen ${ formattedFilename } inneholder flere enn ${ MAX_IMPORT_CONTACTS_STRING } kontakter."
+      "Your file ${ formattedFilename } contains more than ${ maxContactString } contacts.": [
+        "Filen ${ formattedFilename } inneholder mer enn ${ maxContactString } kontakter."
       ],
       "Your file ${ formattedFilename } has no contacts to be imported.": [
         "Filen ${ formattedFilename } har ingen kontakter å importere."
@@ -6073,9 +6079,9 @@
       "All your changes will be lost.": [
         "Alle endringene dine vil gå tapt."
       ],
-      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
-        "Alle kontaktene dine blir importert, opptil en grense på ${ MAX_CONTACTS_PER_USER }.",
-        "Alle kontaktene dine blir importert, opptil en grense på ${ MAX_CONTACTS_PER_USER }."
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "Alle kontaktene dine blir importert, opptil en grense på ${ maxContact }.",
+        "Alle kontaktene dine blir importert, opptil en grense på ${ maxContact }."
       ],
       "Allocated": [
         "Tildelt"
@@ -6229,6 +6235,9 @@
       ],
       "CNET editors choice award with a rating of 8.4 out of 10": [
         "CNET-redaktørens valgpris med en vurdering på 8.4 av 10"
+      ],
+      "Coming soon": [
+        "Kommer snart"
       ],
       "Compromised": [
         "Kompromittert"
@@ -7887,6 +7896,9 @@
       ],
       "We need to authenticate your payment with your bank.": [
         "Vi trenger å autentisere betalingen med banken din."
+      ],
+      "We recommend adding servers in different locations (one per city) to maximize redundancy.": [
+        "Vi anbefaler å legge til tjenere på forskjellige steder (én per by) for å maksimere redundansen."
       ],
       "We recommend having at least 2 servers in order to provide redundancy.": [
         "Vi anbefaler å ha minst 2 tjenere for å gi redundans."
@@ -9739,6 +9751,10 @@
         "${ n } aktivt møte om gangen",
         "${ n } aktive møter om gangen"
       ],
+      "${ n } participant": [
+        "${ n } deltaker",
+        "${ n } deltakere"
+      ],
       "24 hours per meeting": [
         "24 timer per møte"
       ],
@@ -9748,6 +9764,9 @@
       "Appointment scheduling": [
         "Avtaleplanlegging"
       ],
+      "Booking pages": [
+        "Bestillingssider"
+      ],
       "Browser, mobile, and desktop apps": [
         "Nettleser-, mobil- og skrivebordsapper"
       ],
@@ -9756,6 +9775,9 @@
       ],
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "Ende-til-ende-kryptert skjermdeling og kortvarig chat under samtaler"
+      ],
+      "Meeting recording": [
+        "Opptak av møte"
       ],
       "One active meeting at a time": [
         "Ett aktivt møte om gangen"
@@ -11830,28 +11852,28 @@
       "terms and conditions": [
         "vilkår og betingelser"
       ],
-      "The coupon is valid for ${ couponRedemptions } renewal.": [
-        "Kupongen er gyldig for ${ couponRedemptions } fornyelse.",
-        "Kupongen er gyldig for ${ couponRedemptions } fornyelser."
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "Rabatten er gyldig for ${ renewalsWithCoupon } fornyelse.",
+        "Rabatten er gyldig for ${ renewalsWithCoupon } fornyelser."
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Den spesielt rabatterte prisen er gyldig i ${ couponRedemptions } måned. Deretter fornyes den automatisk til ${ renewPriceStr } for 1 måned. Du kan avbryte når som helst.",
+        "Den spesielt rabatterte prisen er gyldig i ${ couponRedemptions } måneder. Deretter fornyes den automatisk til ${ renewPriceStr } for 1 måned. Du kan avbryte når som helst."
       ],
       "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
         "Spesialrabattprisen gjelder for den første måneden [${ subscriptionLength }].",
         "Den spesielt rabatterte prisen er gyldig de første ${ subscriptionLength } månedene."
       ],
-      "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "Den spesielt rabatterte prisen er gyldig den første måneden. Kupongen er gyldig for ${ couponRedemptions } fornyelse. Deretter vil den automatisk bli fornyet til ${ renewPriceStr } for 1 måned. Du kan avbryte når som helst.",
-        "Den spesielt rabatterte prisen er gyldig den første måneden. Kupongen er gyldig for ${ couponRedemptions } fornyelser. Deretter vil den automatisk bli fornyet til ${ renewPriceStr } for 1 måned. Du kan avbryte når som helst."
-      ],
       "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Den spesielt rabatterte prisen er gyldig den første måneden. Da blir den automatisk fornyet til ${ renewPriceStr } hver måned. Du kan avbryte når som helst."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Den spesielt rabatterte prisen på ${ priceWithDiscount } er gyldig for ${ couponRedemptions } måned. Deretter vil den automatisk bli fornyet til ${ renewPriceStr } for 1 måned. Du kan avbryte når som helst.",
+        "Den spesielt rabatterte prisen på ${ priceWithDiscount } er gyldig i ${ couponRedemptions } måneder. Deretter vil den automatisk bli fornyet til ${ renewPriceStr } for 1 måned. Du kan avbryte når som helst."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "Den spesielt rabatterte prisen på ${ priceWithDiscount } er gyldig for den første ${ subscriptionLength } måneden.",
         "Den spesielt rabatterte prisen på ${ priceWithDiscount } er gyldig de første ${ subscriptionLength } månedene."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "Den spesielt rabatterte prisen på ${ priceWithDiscount } er gyldig den første måneden. Kupongen er gyldig for ${ couponRedemptions } fornyelse. Deretter vil den automatisk bli fornyet til ${ renewPriceStr } for 1 måned. Du kan avbryte når som helst.",
-        "Den spesielt rabatterte prisen på ${ priceWithDiscount } er gyldig den første måneden. Kupongen er gyldig for ${ couponRedemptions } fornyelser. Deretter vil den automatisk bli fornyet til ${ renewPriceStr } for 1 måned. Du kan avbryte når som helst."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Den spesielt rabatterte prisen på ${ priceWithDiscount } er gyldig den første måneden. Da blir den automatisk fornyet til ${ renewPriceStr } hver måned. Du kan avbryte når som helst."
@@ -14748,6 +14770,14 @@
         "vCard-felt"
       ]
     },
+    "Theme": {
+      "Dark": [
+        "Mørk"
+      ],
+      "Light": [
+        "Lys"
+      ]
+    },
     "Themes": {
       "Themes": [
         "Temaer"
@@ -16279,6 +16309,9 @@
       ]
     },
     "Upsell": {
+      "${ BRAND_NAME } for Business": [
+        "${ BRAND_NAME } for Business"
+      ],
       "**Save up to ${ priceString }** with a longer subscription. Same premium features, lower price.": [
         "**Spar opptil ${ priceString }** med et lengre abonnement. Samme premiumfunksjoner, lavere pris."
       ],
@@ -16290,6 +16323,9 @@
       ],
       "Did you know?": [
         "Visste du at?"
+      ],
+      "Everything you need to collaborate securely in a single subscription. Get access to ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, ${ SHEETS_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } and ${ LUMO_SHORT_APP_NAME } AI Assistant.": [
+        "Alt du trenger for å samarbeide sikkert i ett enkelt abonnement. Få tilgang til ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, ${ SHEETS_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } og ${ LUMO_SHORT_APP_NAME } KI-assistent."
       ],
       "Get ${ drivePlusPlanMaxSpace } storage for your files, photos and documents, and recover file versions with 10-year file recovery.": [
         "Skaff deg ${ drivePlusPlanMaxSpace } lagringsplass for filer, bilder og dokumenter, og gjenopprett filversjoner med 10-års filgjenoppretting."

@@ -1965,26 +1965,6 @@
         "Nový email"
       ]
     },
-    "app-switcher": {
-      "Browse the web privately and block ads": [
-        "Prezerajte web v súkromí a blokujte reklamy"
-      ],
-      "Keep your schedule private": [
-        "Uchovajte si svoj program v súkromí"
-      ],
-      "Protect your passwords and identity": [
-        "Chráňte svoje heslá a identitu"
-      ],
-      "Safeguard your files and photos": [
-        "Chráňte svoje súbory a fotografie"
-      ],
-      "Secure your communications": [
-        "Zabezpečte si vašu komunikáciu"
-      ],
-      "Talk confidentially": [
-        "Diskutujte dôverne"
-      ]
-    },
     "app-switcher_2025": {
       "Bitcoin wallet": [
         "Bitcoinová peňaženka"
@@ -3238,11 +3218,6 @@
       ],
       "Expand": [
         "Rozbaliť"
-      ]
-    },
-    "collider_2025: app-switcher": {
-      "Chat with a private AI assistant": [
-        "Chatujte so súkromným AI asistentom"
       ]
     },
     "collider_2025: feature": {
@@ -4837,8 +4812,8 @@
       "Simplify syncing and scheduling with shared calendars.": [
         "Zjednodušte si synchronizáciu a plánovanie pomocou zdieľaných kalendárov."
       ],
-      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
-        "Pre importovanie prostredníctvom súborov CSV a VCF zabezpečte, aby veľkosť súboru nepresiahla ${ MAX_IMPORT_FILE_SIZE_STRING } alebo ${ MAX_IMPORT_CONTACTS_STRING } kontaktov. Ak je váš súbor väčší, rozdeľte ho na menšie súbory. ${ learnMoreLink }."
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Pre importovanie prostredníctvom súborov CSV a VCF zabezpečte, aby veľkosť súboru nepresiahla ${ MAX_IMPORT_FILE_SIZE_STRING } alebo ${ maxContactString } kontaktov. Ak je váš súbor väčší, rozdeľte ho na menšie súbory. ${ learnMoreLink }."
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Pre import kontaktov zo služby Google alebo Outlook ${ easySwitchLink }."
@@ -5087,6 +5062,9 @@
       "Edge": [
         "Edge"
       ],
+      "Fedora": [
+        "Fedora"
+      ],
       "Fire TV": [
         "Fire TV"
       ],
@@ -5104,6 +5082,9 @@
       ],
       "Installation guide": [
         "Inštalačná príručka"
+      ],
+      "iOS": [
+        "iOS"
       ],
       "iPhone/iPad": [
         "iPhone/iPad"
@@ -5146,6 +5127,9 @@
       ],
       "TV": [
         "TV"
+      ],
+      "Ubuntu/Debian": [
+        "Ubuntu/Debian"
       ],
       "Windows": [
         "Windows"
@@ -6855,8 +6839,8 @@
       "An error occurred uploading your file. No file has been selected.": [
         "Vyskytla sa chyba pri nahrávaní vášho súboru. Nebol vybraný žiadny súbor."
       ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
-        "Váš súbor ${ formattedFilename } obsahuje viac ako ${ MAX_IMPORT_CONTACTS_STRING } kontaktov."
+      "Your file ${ formattedFilename } contains more than ${ maxContactString } contacts.": [
+        "Váš súbor ${ formattedFilename } obsahuje viac ako ${ maxContactString } kontaktov."
       ],
       "Your file ${ formattedFilename } has no contacts to be imported.": [
         "Váš súbor ${ formattedFilename } nemá žiadne kontakty na import."
@@ -9166,11 +9150,11 @@
       "All your changes will be lost.": [
         "Všetky vaše zmeny budú stratené."
       ],
-      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
-        "Všetky vaše kontakty budú importované až do limitu ${ MAX_CONTACTS_PER_USER }",
-        "Všetky vaše kontakty budú importované až do limitu ${ MAX_CONTACTS_PER_USER }",
-        "Všetky vaše kontakty budú importované až do limitu ${ MAX_CONTACTS_PER_USER }",
-        "Všetky vaše kontakty budú importované až do limitu ${ MAX_CONTACTS_PER_USER }"
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "Všetky vaše kontakty budú importované až do limitu ${ maxContact }",
+        "Všetky vaše kontakty budú importované až do limitu ${ maxContact }",
+        "Všetky vaše kontakty budú importované až do limitu ${ maxContact }",
+        "Všetky vaše kontakty budú importované až do limitu ${ maxContact }"
       ],
       "Allocated": [
         "Pridelené"
@@ -9429,6 +9413,9 @@
       ],
       "CNET editors choice award with a rating of 8.4 out of 10": [
         "Ocenenie CNET editors choice s hodnotením 8,4 z 10"
+      ],
+      "Coming soon": [
+        "Už čoskoro"
       ],
       "Compromised": [
         "Kompromitovaný"
@@ -9702,9 +9689,6 @@
       ],
       "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
         "Každá doména môže mať iba jeden SPF (TXT) záznam. Ak chcete zachovať existujúci SPF (TXT) záznam, môžete k existujúcemu záznamu pridať ${ spf } (vložte ho za ${ spfValue })."
-      ],
-      "Early access": [
-        "Predbežný prístup"
       ],
       "Edit email address": [
         "Upraviť emailovú adresu"
@@ -10753,6 +10737,9 @@
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Obráťte sa na nás, ak potrebujete pomoc s čímkoľvek od ${ BRAND_NAME }."
       ],
+      "Receive notifications for ${ categoryLabel }": [
+        "Prijímať upozornenia pre kategóriu ${ categoryLabel }"
+      ],
       "Recently used servers:": [
         "Nedávno použité servery:"
       ],
@@ -10851,9 +10838,6 @@
       ],
       "Securing your account": [
         "Zabezpečujeme váš účet"
-      ],
-      "Select a service to continue": [
-        "Pre pokračovanie vyberte službu"
       ],
       "Select one or multiple user affiliations": [
         "Vyberte jednu alebo viacero používateľských príslušností"
@@ -12906,6 +12890,9 @@
       "Autofill 2FA": [
         "Automatické vypĺňanie 2FA"
       ],
+      "Automated confirmations and alerts": [
+        "Automatické potvrdenia a upozornenia"
+      ],
       "Automatically save contacts": [
         "Automaticky ukladať kontakty"
       ],
@@ -12945,6 +12932,9 @@
       "Block malware, ads and trackers": [
         "Blokovať malvér, reklamy a sledovače"
       ],
+      "Bookings, billings, and orders": [
+        "Rezervácie, fakturácie a objednávky"
+      ],
       "Browser": [
         "Prehliadač"
       ],
@@ -12980,6 +12970,9 @@
       ],
       "Cash": [
         "Hotovosť"
+      ],
+      "Categories": [
+        "Kategórie"
       ],
       "Category": [
         "Kategória"
@@ -13116,6 +13109,9 @@
       "Days of the week": [
         "Dni v týždni"
       ],
+      "Deals, offers, marketing emails": [
+        "Ponuky, akcie, marketingové emaily"
+      ],
       "Default email address": [
         "Predvolená emailová adresa"
       ],
@@ -13158,6 +13154,9 @@
       "Disabled": [
         "Vypnutý"
       ],
+      "Discussion board posts and threads": [
+        "Príspevky a vlákna diskusného fóra"
+      ],
       "Display name": [
         "Zobrazované meno"
       ],
@@ -13193,9 +13192,6 @@
       ],
       "Email address": [
         "Emailová adresa"
-      ],
-      "Email categories": [
-        "Kategórie emailu"
       ],
       "Email or username": [
         "Email alebo používateľské meno"
@@ -13296,6 +13292,9 @@
       "for your first month": [
         "za váš prvý mesiac"
       ],
+      "Forums": [
+        "Diskusné fóra"
+      ],
       "From: ${ fromEmail }": [
         "Od: ${ fromEmail }"
       ],
@@ -13310,6 +13309,27 @@
       ],
       "Gift code": [
         "Darčekový kód"
+      ],
+      "Go to Forums": [
+        "Prejsť na Fóra"
+      ],
+      "Go to Newsletters": [
+        "Prejsť na Newslettery"
+      ],
+      "Go to Primary": [
+        "Prejsť do zložky Hlavná"
+      ],
+      "Go to Promotions": [
+        "Prejsť na Propagačné akcie"
+      ],
+      "Go to Social": [
+        "Prejsť do zložky Sociálne"
+      ],
+      "Go to Transactions": [
+        "Prejsť na Transakcie"
+      ],
+      "Go to Updates": [
+        "Prejsť na aktualizácie"
       ],
       "Group address": [
         "Skupinová adresa"
@@ -13533,6 +13553,9 @@
       "New second password": [
         "Nové druhé heslo"
       ],
+      "Newsletters": [
+        "Newslettery"
+      ],
       "No (users cannot use the app until a vault is shared with them)": [
         "Nie (používatelia nemôžu používať aplikáciu, kým s nimi nie je zdieľaný trezor)"
       ],
@@ -13541,6 +13564,9 @@
       ],
       "No label found": [
         "Nebol nájdený žiadny štítok"
+      ],
+      "Non-promotional content and news": [
+        "Nepropagačný obsah a správy"
       ],
       "Non-standard ports": [
         "Neštandardné porty"
@@ -13664,6 +13690,12 @@
       ],
       "Previous password": [
         "Predchádzajúce heslo"
+      ],
+      "Primary": [
+        "Primárne"
+      ],
+      "Promotions": [
+        "Propagačné akcie"
       ],
       "Prompt to trust keys": [
         "Výzva na dôverovanie kľúčom"
@@ -13812,6 +13844,12 @@
       "SMTP username": [
         "SMTP používateľské meno"
       ],
+      "Social": [
+        "Sociálne siete"
+      ],
+      "Social media updates and activity": [
+        "Aktualizácie a aktivita na sociálnych médiách"
+      ],
       "Spam": [
         "Spam"
       ],
@@ -13896,6 +13934,9 @@
       "Token name": [
         "Názov tokenu"
       ],
+      "Transactions": [
+        "Transakcie"
+      ],
       "Two-password mode": [
         "Režim s dvomi heslami"
       ],
@@ -13911,6 +13952,9 @@
       "Unlimited logins and devices": [
         "Neobmedzený počet prihlásení a zariadení"
       ],
+      "Updates": [
+        "Aktualizácie"
+      ],
       "Upload 1 or more encryption keys": [
         "Nahrať 1 alebo viac šifrovacích kľúčov"
       ],
@@ -13925,6 +13969,9 @@
       ],
       "URL": [
         "Odkaz"
+      ],
+      "Use email categories": [
+        "Použiť kategórie emailov"
       ],
       "Use folder colors": [
         "Použiť farby priečinkov"
@@ -14700,6 +14747,12 @@
         "${ n } aktívnych stretnutí naraz",
         "${ n } aktívnych stretnutí naraz"
       ],
+      "${ n } participant": [
+        "${ n } účastník",
+        "${ n } účastníci",
+        "${ n } účastníkov",
+        "${ n } účastníkov"
+      ],
       "24 hours per meeting": [
         "24 hodín na schôdzu"
       ],
@@ -14709,6 +14762,9 @@
       "Appointment scheduling": [
         "Plánovanie schôdzok"
       ],
+      "Booking pages": [
+        "Stránky rezervácií"
+      ],
       "Browser, mobile, and desktop apps": [
         "Aplikácie pre prehliadače, mobily a desktopy"
       ],
@@ -14717,6 +14773,9 @@
       ],
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "End-to-end šifrované zdieľanie obrazovky a dočasný chat počas hovoru"
+      ],
+      "Meeting recording": [
+        "Nahrávanie schôdze"
       ],
       "One active meeting at a time": [
         "Jeden aktívny hovor naraz"
@@ -15972,9 +16031,6 @@
       ],
       "Review subscription and pay": [
         "Skontrolujte predplatné a zaplaťte"
-      ],
-      "Start exploring the ${ BRAND_NAME } universe": [
-        "Začnite preskúmavať svet ${ BRAND_NAME }"
       ],
       "Switch plans?": [
         "Zmeniť plán?"
@@ -17786,11 +17842,17 @@
       "terms and conditions": [
         "zmluvnými podmienkami používania"
       ],
-      "The coupon is valid for ${ couponRedemptions } renewal.": [
-        "Kupón je možné použiť na ${ couponRedemptions } obnovenie.",
-        "Kupón je možné použiť na ${ couponRedemptions } obnovenia.",
-        "Kupón je možné použiť na ${ couponRedemptions } obnovení.",
-        "Kupón je možné použiť na ${ couponRedemptions } obnovení."
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "Zľava je platná na ${ renewalsWithCoupon } obnovenie.",
+        "Zľava je platná na ${ renewalsWithCoupon } obnovenia.",
+        "Zľava je platná na ${ renewalsWithCoupon } obnovení.",
+        "Zľava je platná na ${ renewalsWithCoupon } obnovení."
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Špeciálne zľavnená cena platí ${ couponRedemptions } mesiac. Potom sa každý mesiac automaticky obnoví za ${ renewPriceStr } na 1 mesiac. Službu môžete kedykoľvek zrušiť.",
+        "Špeciálne zľavnená cena platí ${ couponRedemptions } mesiace. Potom sa každý mesiac automaticky obnoví za ${ renewPriceStr } na 1 mesiac. Službu môžete kedykoľvek zrušiť.",
+        "Špeciálne zľavnená cena platí ${ couponRedemptions } mesiacov. Potom sa každý mesiac automaticky obnoví za ${ renewPriceStr } na 1 mesiac. Službu môžete kedykoľvek zrušiť.",
+        "Špeciálne zľavnená cena platí ${ couponRedemptions } mesiacov. Potom sa každý mesiac automaticky obnoví za ${ renewPriceStr } na 1 mesiac. Službu môžete kedykoľvek zrušiť."
       ],
       "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
         "Špeciálna zľavnená cena platí pre prvý ${ subscriptionLength } mesiac.",
@@ -17798,26 +17860,20 @@
         "Špeciálna zľavnená cena platí pre prvých ${ subscriptionLength } mesiacov.",
         "Špeciálna zľavnená cena platí pre prvých ${ subscriptionLength } mesiacov."
       ],
-      "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "Špeciálna zľava platí pre prvý mesiac. Kupón je platný pre ${ couponRedemptions } obnovenie. Potom dôjde k automatickej obnove za ${ renewPriceStr } na 1 mesiac. Zrušiť môžete kedykoľvek.",
-        "Špeciálna zľava platí pre prvý mesiac. Kupón je platný pre ${ couponRedemptions } obnovenia. Potom dôjde k automatickej obnove za ${ renewPriceStr } na 1 mesiac. Zrušiť môžete kedykoľvek.",
-        "Špeciálna zľava platí pre prvý mesiac. Kupón je platný pre ${ couponRedemptions } obnovení. Potom dôjde k automatickej obnove za ${ renewPriceStr } na 1 mesiac. Zrušiť môžete kedykoľvek.",
-        "Špeciálna zľava platí pre prvý mesiac. Kupón je platný pre ${ couponRedemptions } obnovení. Potom dôjde k automatickej obnove za ${ renewPriceStr } na 1 mesiac. Zrušiť môžete kedykoľvek."
-      ],
       "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Špeciálne zľavnená cena platí prvý mesiac. Potom sa každý mesiac automaticky obnoví za ${ renewPriceStr }. Službu môžete kedykoľvek zrušiť."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Špeciálne zľavnená cena ${ priceWithDiscount } platí ${ couponRedemptions } mesiac. Potom sa každý mesiac automaticky obnoví za ${ renewPriceStr } na 1 mesiac. Službu môžete kedykoľvek zrušiť.",
+        "Špeciálne zľavnená cena ${ priceWithDiscount } platí ${ couponRedemptions } mesiace. Potom sa každý mesiac automaticky obnoví za ${ renewPriceStr } na 1 mesiac. Službu môžete kedykoľvek zrušiť.",
+        "Špeciálne zľavnená cena ${ priceWithDiscount } platí ${ couponRedemptions } mesiacov. Potom sa každý mesiac automaticky obnoví za ${ renewPriceStr } na 1 mesiac. Službu môžete kedykoľvek zrušiť.",
+        "Špeciálne zľavnená cena ${ priceWithDiscount } platí ${ couponRedemptions } mesiacov. Potom sa každý mesiac automaticky obnoví za ${ renewPriceStr } na 1 mesiac. Službu môžete kedykoľvek zrušiť."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "Špeciálna zľavnená cena ${ priceWithDiscount } platí pre prvý ${ subscriptionLength } mesiac.",
         "Špeciálna zľavnená cena ${ priceWithDiscount } platí pre prvé ${ subscriptionLength } mesiace.",
         "Špeciálna zľavnená cena ${ priceWithDiscount } platí pre prvých ${ subscriptionLength } mesiacov.",
         "Špeciálna zľavnená cena ${ priceWithDiscount } platí pre prvých ${ subscriptionLength } mesiacov."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "Špeciálna zľavnená cena ${ priceWithDiscount } platí počas prvého mesiaca. Kupón je platný pre ${ couponRedemptions } obnovenie. Potom sa každý mesiac automaticky obnoví za ${ renewPriceStr } na 1 mesiac. Službu môžete kedykoľvek zrušiť.",
-        "Špeciálna zľavnená cena ${ priceWithDiscount } platí počas prvého mesiaca. Kupón je platný pre ${ couponRedemptions } obnovenia. Potom sa každý mesiac automaticky obnoví za ${ renewPriceStr } na 1 mesiac. Službu môžete kedykoľvek zrušiť.",
-        "Špeciálna zľavnená cena ${ priceWithDiscount } platí počas prvého mesiaca. Kupón je platný pre ${ couponRedemptions } obnovení. Potom sa každý mesiac automaticky obnoví za ${ renewPriceStr } na 1 mesiac. Službu môžete kedykoľvek zrušiť.",
-        "Špeciálna zľavnená cena ${ priceWithDiscount } platí počas prvého mesiaca. Kupón je platný pre ${ couponRedemptions } obnovení. Potom sa každý mesiac automaticky obnoví za ${ renewPriceStr } na 1 mesiac. Službu môžete kedykoľvek zrušiť."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Špeciálne zľavnená cena ${ priceWithDiscount } platí prvý mesiac. Potom sa každý mesiac automaticky obnoví za ${ renewPriceStr }. Službu môžete kedykoľvek zrušiť."
@@ -22155,6 +22211,14 @@
         "Neboli nájdené žiadne SMTP tokeny"
       ]
     },
+    "Theme": {
+      "Dark": [
+        "Tmavý"
+      ],
+      "Light": [
+        "Svetlý"
+      ]
+    },
     "Time unit": {
       "${ ceilDays } day": [
         "${ ceilDays } deň",
@@ -23052,6 +23116,9 @@
       "Get the apps": [
         "Získajte aplikácie"
       ],
+      "Get unlimited meetings on all your devices with ${ planName }. ${ upgradeButton }": [
+        "Získajte neobmedzené schôdzky na všetkých svojich zariadeniach s ${ planName }. ${ upgradeButton }"
+      ],
       "Gift": [
         "Dar"
       ],
@@ -23832,9 +23899,6 @@
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Vaša bezplatná skúšobná verzia služby ${ planName } končí ${ textDate }"
       ],
-      "Your ${ planName } subscription has started": [
-        "Vaše predplatné ${ planName } začalo"
-      ],
       "Your calendar link": [
         "Váš odkaz na kalendár"
       ],
@@ -24125,6 +24189,9 @@
       ],
       "Specify the users of the eduGAIN entity who are allowed to authenticate with SAML SSO": [
         "Zadajte používateľov entity eduGAIN, ktorí sa môžu overovať pomocou SAML SSO"
+      ],
+      "System notification": [
+        "Systémové notifikácie"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Systémové podpriečinky sa v aplikácii ${ MAIL_APP_NAME } zobrazia ako samostatné priečinky"
@@ -24509,6 +24576,9 @@
       ]
     },
     "Upsell": {
+      "${ BRAND_NAME } for Business": [
+        "${ BRAND_NAME } pre Business"
+      ],
       "**Save up to ${ priceString }** with a longer subscription. Same premium features, lower price.": [
         "**Ušetrite až ${ priceString }** s dlhším predplatným. Rovnaké prémiové funkcie, nižšia cena."
       ],
@@ -24520,6 +24590,9 @@
       ],
       "Did you know?": [
         "Vedeli ste?"
+      ],
+      "Everything you need to collaborate securely in a single subscription. Get access to ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, ${ SHEETS_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } and ${ LUMO_SHORT_APP_NAME } AI Assistant.": [
+        "Všetko, čo potrebujete na bezpečnú spoluprácu v rámci jedného predplatného. Získajte prístup k aplikáciám ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, ${ SHEETS_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } a k Asistentovi AI ${ LUMO_SHORT_APP_NAME }."
       ],
       "Get ${ drivePlusPlanMaxSpace } storage for your files, photos and documents, and recover file versions with 10-year file recovery.": [
         "Získajte úložisko s kapacitou ${ drivePlusPlanMaxSpace } na svoje súbory, fotografie a dokumenty a obnovu verzií súborov s 10-ročnou zárukou obnovy súborov."
@@ -24995,6 +25068,9 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "Tento import môže prekročiť kapacitu úložiska, ktorá je momentálne k dispozícii vo vašom ${ BRAND_NAME } účte. Zvážte prosím prispôsobenie importu."
+      ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } offer has ended": [
+        "Ponuka ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } už skončila"
       ],
       "Are you sure you want to delete the phone number?": [
         "Naozaj chcete vymazať telefónne číslo?"
