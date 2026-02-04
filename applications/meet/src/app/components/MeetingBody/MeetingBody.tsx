@@ -157,7 +157,7 @@ export const MeetingBody = ({
                             flexBasis: 0,
                         }}
                     >
-                        <div className="gradient-overlay absolute top-0 left-0 w-full h-full" />
+                        <div className="absolute top-0 left-0 w-full h-full" />
                         <VideoTrack
                             key={screenShareTrack?.publication?.track?.sid}
                             className="screen-share-video w-full h-full block object-contain"
@@ -168,7 +168,7 @@ export const MeetingBody = ({
                             manageSubscription={false}
                         />
                         <div
-                            className="absolute bottom-custom left-custom flex"
+                            className="screen-share-label absolute bottom-custom left-custom flex rounded opacity-80"
                             style={{ '--bottom-custom': '1rem', '--left-custom': '1rem' }}
                         >
                             <SecurityShield
