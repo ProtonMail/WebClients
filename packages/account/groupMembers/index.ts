@@ -14,10 +14,15 @@ import { getGroupMember, getGroupMembers } from '@proton/shared/lib/api/groups';
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import { updateCollectionAsyncV6 } from '@proton/shared/lib/eventManager/updateCollectionAsyncV6';
 import type { UpdateCollectionV6 } from '@proton/shared/lib/eventManager/updateCollectionV6';
-import { type Api, GROUP_MEMBER_STATE, type GroupMember, type User } from '@proton/shared/lib/interfaces';
+import type { Api, Group, GroupMember, GroupMembershipReturn, User } from '@proton/shared/lib/interfaces';
+import { GROUP_MEMBER_STATE } from '@proton/shared/lib/interfaces';
 import { isAdmin } from '@proton/shared/lib/user/helpers';
 
 import { serverEvent } from '../eventLoop';
+import type { GroupMembershipsState } from '../groupMemberships';
+import { groupMembershipsThunk } from '../groupMemberships';
+import { isGroupOwner } from '../groupOwnerInvites/isGroupOwner';
+import { type GroupsState, groupThunk } from '../groups';
 import type { ModelState } from '../interface';
 import { type UserState, userThunk } from '../user';
 
@@ -33,7 +38,7 @@ export interface GroupMemberByIDByGroupID {
     [GroupID: string]: ModelState<GroupMembers | undefined>;
 }
 
-export interface GroupMembersState extends UserState {
+export interface GroupMembersState extends UserState, GroupsState, GroupMembershipsState {
     [name]: GroupMemberByIDByGroupID;
 }
 
@@ -156,7 +161,13 @@ const slice = createSlice({
 export const { updateOverridePermissions, resumeGroupMember } = slice.actions;
 const promiseStore = createPromiseMapStore<GroupMembers>();
 
-const canFetch = (user: User) => isAdmin(user);
+const canFetch = (user: User, groups: Group[], memberships: GroupMembershipReturn[]): boolean => {
+    if (isAdmin(user)) {
+        return true; // org admin
+    }
+
+    return isGroupOwner(groups, memberships);
+};
 
 export const groupMembersThunk = ({
     groupId,
@@ -171,8 +182,12 @@ export const groupMembersThunk = ({
         };
         const cb = async () => {
             try {
-                const user = await dispatch(userThunk());
-                if (!canFetch(user)) {
+                const [user, groups, memberships] = await Promise.all([
+                    dispatch(userThunk()),
+                    dispatch(groupThunk()),
+                    dispatch(groupMembershipsThunk()),
+                ]);
+                if (!canFetch(user, groups, memberships)) {
                     return {};
                 }
 
@@ -205,11 +220,7 @@ export const updateMembersAfterEdit = ({
     groupId: string;
 }): ThunkAction<void, GroupMembersState, ProtonThunkArguments, UnknownAction> => {
     return async (dispatch) => {
-        try {
-            await dispatch(groupMembersThunk({ groupId, cache: CacheType.None }));
-        } catch (error) {
-            console.error('Error', error);
-        }
+        await dispatch(groupMembersThunk({ groupId, cache: CacheType.None }));
     };
 };
 
@@ -224,8 +235,12 @@ export const groupMembersEventLoopV6Thunk = ({
     api: Api;
 }): ThunkAction<Promise<void>, GroupMembersState, ProtonThunkArguments, UnknownAction> => {
     return async (dispatch) => {
-        const user = await dispatch(userThunk());
-        if (!canFetch(user)) {
+        const [user, groups, memberships] = await Promise.all([
+            dispatch(userThunk()),
+            dispatch(groupThunk()),
+            dispatch(groupMembershipsThunk()),
+        ]);
+        if (!canFetch(user, groups, memberships)) {
             return;
         }
         await updateCollectionAsyncV6({
