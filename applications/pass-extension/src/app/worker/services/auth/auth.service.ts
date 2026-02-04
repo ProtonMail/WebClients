@@ -210,9 +210,14 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
 
         onLocked: withContext((ctx, mode, _localID, _broadcast) => {
             ctx.setBooted(false);
-            ctx.setStatus(AppStatusFromLockMode[mode]);
-            ctx.service.autofill.clear();
 
+            const offline = !ctx.service.connectivity.online;
+            const forcePasswordLock = offline && authStore.hasOfflineComponents();
+
+            if (forcePasswordLock) ctx.setStatus(AppStatus.PASSWORD_LOCKED);
+            else ctx.setStatus(AppStatusFromLockMode[mode]);
+
+            ctx.service.autofill.clear();
             ctx.service.store.dispatch(cacheCancel());
             ctx.service.store.dispatch(stopEventPolling());
             ctx.service.store.dispatch(stateDestroy());
