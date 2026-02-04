@@ -3112,6 +3112,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "すでに 10 個のエリアスを作成しました。${ BRAND_NAME }Unlimitedで無制限のエイリアスと 500 GBのストレージを獲得しましょう。"
+      ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "CSVファイルおよびVCFファイルでインポートするには、ファイルが${ MAX_IMPORT_FILE_SIZE_STRING }または${ maxContactString }件の連絡先を超えないようにしてください。ファイルが大きすぎる場合は、小さいファイルに分割してください。${ learnMoreLink }"
       ]
     },
     "description": {
@@ -3947,6 +3950,9 @@
       ],
       "ZIP code is required": [
         "郵便番号は必須です"
+      ],
+      "This offer is not available in your country": [
+        "このオファーはお住まいの国ではご利用いただけません"
       ]
     },
     "error": {
@@ -4031,6 +4037,9 @@
       ],
       "Your file ${ formattedFilename } is empty.": [
         "ファイル${ formattedFilename } は空です。"
+      ],
+      "Your file ${ formattedFilename } contains more than ${ maxContactString } contacts.": [
+        "あなたのファイル ${ formattedFilename } には${ maxContactString } 以上の連絡先が含まれています。"
       ]
     },
     "Error importing event": {
@@ -6376,6 +6385,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "予約枠の上限に達しました${ numberOfSlots }/${ MAX_BOOKING_SLOTS }"
+      ],
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "${ maxContact } の制限まで、すべての連絡先がインポートされます"
       ]
     },
     "info": {
@@ -7423,6 +7435,15 @@
       ],
       "Up to ${ n } participant": [
         "最大${ n }人の参加者"
+      ],
+      "${ n } participant": [
+        "${ n }人の参加者"
+      ],
+      "Booking pages": [
+        "予約ページ"
+      ],
+      "Meeting recording": [
+        "ミーティング録画"
       ]
     },
     "Message": {
@@ -9250,6 +9271,15 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "あなたのサブスクリプションは現在、割引が適用されています。この新しいプロモーションに移行すると、既存の割引は適用されなくなります。"
+      ],
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "この割引は ${ renewalsWithCoupon } の更新で有効です。"
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "特別割引価格は${ couponRedemptions }ヶ月間有効です。その後、1ヶ月${ renewPriceStr }で自動更新されます。いつでもキャンセル可能です。"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "${ priceWithDiscount }の特別割引価格は${ couponRedemptions }ヶ月間有効です。その後、1ヶ月${ renewPriceStr }で自動更新されます。いつでもキャンセル可能です。"
       ]
     },
     "Payments.Error": {

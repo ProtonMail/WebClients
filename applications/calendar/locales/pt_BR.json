@@ -1194,7 +1194,7 @@
     },
     "b2b_trials_2025_Info": {
       "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
-        "Quando o período de avaliação terminar em ${ formattedDate1 }, ela se tornará uma assinatura paga que é renovada automaticamente a cada ${ renewCycle } mês. Você não será cobrado se cancelar antes de ${ formattedDate2 }."
+        "Quando o período de avaliação terminar em ${ formattedDate1 }, ela se tornará uma assinatura paga renovada automaticamente a cada ${ renewCycle } meses. Você não será cobrado se cancelar antes de ${ formattedDate2 }."
       ],
       "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
         "Quando o período de avaliação terminar em ${ formattedDate1 }, ela se tornará uma assinatura paga que é renovada automaticamente mensalmente. Você não será cobrado se cancelar antes de ${ formattedDate2 }."
@@ -3135,6 +3135,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Você já criou 10 aliases. Obtenha aliases ilimitados e 500 GB de armazenamento com ${ BRAND_NAME } Unlimited."
+      ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Para importar por meio de um arquivo CSV e VCF, certifique-se de que o arquivo não exceda ${ MAX_IMPORT_FILE_SIZE_STRING } ou ${ maxContactString } contatos. Se o seu arquivo for maior, divida-o em arquivos menores. ${ learnMoreLink }."
       ]
     },
     "description": {
@@ -3982,6 +3985,9 @@
       ],
       "ZIP code is required": [
         "O CEP é obrigatório."
+      ],
+      "This offer is not available in your country": [
+        "Esta oferta não está disponível no seu país"
       ]
     },
     "error": {
@@ -4067,6 +4073,9 @@
       ],
       "Your file ${ formattedFilename } is empty.": [
         "O seu arquivo ${ formattedFilename } está vazio."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ maxContactString } contacts.": [
+        "Seu arquivo ${ formattedFilename } contém mais de ${ maxContactString } contatos."
       ]
     },
     "Error importing event": {
@@ -4818,6 +4827,12 @@
       ],
       "Your password is correct.": [
         "Sua senha está correta."
+      ],
+      "Two-factor authentication is enabled in your external account.": [
+        "A autenticação de dois fatores está ativada em sua conta externa."
+      ],
+      "Two-factor authentication is enabled in your external email account.": [
+        "A autenticação de dois fatores está ativada em sua conta de e-mail externa."
       ]
     },
     "Import instructions": {
@@ -6456,6 +6471,10 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Você atingiu o limite de agendamentos (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "Todos os seus contatos serão importados, até o limite de ${ maxContact }",
+        "Todos os seus contatos serão importados, até o limite de ${ maxContact }"
       ]
     },
     "info": {
@@ -7517,6 +7536,16 @@
       "Up to ${ n } participant": [
         "Até ${ n } participante",
         "Até ${ n } participantes"
+      ],
+      "${ n } participant": [
+        "${ n } participante",
+        "${ n } participantes"
+      ],
+      "Booking pages": [
+        "Páginas de agendamentos"
+      ],
+      "Meeting recording": [
+        "Gravação da reunião"
       ]
     },
     "Message": {
@@ -8248,6 +8277,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Rastreamos a dark web para verificar se seus endereços ou aliases ${ BRAND_NAME } sofreram vazamento e alertarmos você imediatamente se encontrarmos alguma coisa."
+      ],
+      "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
+        "Suporte por telefone (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } ou mais usuários)"
       ]
     },
     "new_plans: feature highlight": {
@@ -8367,7 +8399,7 @@
     },
     "new_plans: label": {
       "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
-        "Estamos sempre trabalhando para melhorar o ${ config.appName } . Quão satisfeito você está com sua experiência?"
+        "Estamos sempre nos esforçando para tornar o ${ config.appName } melhor. Qual seu nível de satisfação com sua experiência?"
       ]
     },
     "new_plans: Subtext": {
@@ -8615,6 +8647,9 @@
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "Você pode ter mais de um administrador. Todos os administradores podem adicionar e gerenciar usuários, mas apenas o administrador principal tem controle sobre o faturamento."
+      ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } or more users": [
+        "O suporte por telefone está disponível com a equipe de Suporte ao Cliente da ${ BRAND_NAME } durante o horário comercial europeu, para clientes com ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } ou mais usuários"
       ]
     },
     "new_plans: Upsell attribute": {
@@ -9324,7 +9359,7 @@
         "Mais planos estão disponíveis em outras moedas"
       ],
       "Payment method required for the subscription to be activated after the trial ends.": [
-        "Forneça um método de pagamento para ativar a assinatura após o término da avaliação."
+        "Método de pagamento necessário para que a assinatura seja ativada após o término do período de teste."
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reative sua assinatura primeiro para diminuir o número de complementos."
@@ -9412,6 +9447,18 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Sua assinatura atualmente tem um desconto existente. Mudar para esta nova promoção significa que o desconto atual não será mais aplicado."
+      ],
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "O desconto é válido para ${ renewalsWithCoupon } renovação.",
+        "O desconto é válido para ${ renewalsWithCoupon } renovações."
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "O preço com desconto especial é válido por ${ couponRedemptions } mês. Depois, ele será renovado automaticamente por ${ renewPriceStr } por 1 mês. Você pode cancelar a qualquer momento.",
+        "O preço com desconto especial é válido por ${ couponRedemptions } meses. Depois, ele será renovado automaticamente por ${ renewPriceStr } por 1 mês. Você pode cancelar a qualquer momento."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "O preço com desconto especial de ${ priceWithDiscount } é válido por ${ couponRedemptions } mês. Depois, ele será renovado automaticamente por ${ renewPriceStr } por 1 mês. Você pode cancelar a qualquer momento.",
+        "O preço com desconto especial de ${ priceWithDiscount } é válido por ${ couponRedemptions } meses. Depois, ele será renovado automaticamente por ${ renewPriceStr } por 1 mês. Você pode cancelar a qualquer momento."
       ]
     },
     "Payments.Error": {
@@ -9452,7 +9499,7 @@
         "Tem certeza de que deseja continuar?"
       ],
       "If you choose to modify your ${ planTitle } plan, you may lose access to some features.": [
-        "Se você optar por modificar seu ${ planTitle } plano, você pode perder o acesso a alguns recursos."
+        "Se você optar por modificar seu plano ${ planTitle }, você pode perder o acesso a alguns recursos."
       ],
       "Keep ${ planTitle }": [
         "Manter o ${ planTitle }"
@@ -11199,7 +11246,7 @@
         "Problema reportado"
       ],
       "Secret passphrase updated": [
-        "Passphrase secreta atualizada"
+        "Senha secreta atualizada"
       ],
       "Undo in progress": [
         "Desfazer em andamento"
@@ -12123,6 +12170,9 @@
       ],
       "Your shorter address is now ready": [
         "Seu endereço mais curto já está pronto"
+      ],
+      "Your ${ planTitle } subscription has started": [
+        "Sua assinatura ${ planTitle } começou"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
