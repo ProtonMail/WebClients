@@ -11,6 +11,7 @@ type RootStore = {
     update?: StoreUpdateProperties;
     theme?: DesktopTheme;
     windowConfig?: WindowConfigStoreProperties;
+    optInForBeta?: boolean;
 };
 
 export const store = new Store<RootStore>({

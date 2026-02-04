@@ -1,9 +1,9 @@
-import assert from 'assert';
 import { randomBytes } from 'crypto';
-import { type MessageBoxOptions, type Session, app, autoUpdater, dialog } from 'electron';
-import isURL from 'is-url';
+import type { CookiesSetDetails } from 'electron';
+import { type Session, app, autoUpdater } from 'electron';
 
 import { type FeatureFlagsResponse, PassFeature } from '@proton/pass/types/api/features';
+import { semver } from '@proton/pass/utils/string/semver';
 import noop from '@proton/utils/noop';
 
 import config from './app/config';
@@ -11,99 +11,90 @@ import { ARCH } from './lib/env';
 import { userAgent } from './lib/user-agent';
 import { store } from './store';
 import logger from './utils/logger';
-import { isMac, isProdEnv, isWindows } from './utils/platform';
+import { isMac, isProdEnv } from './utils/platform';
+
+const SUPPORTED_PLATFORMS = ['darwin', 'win32'];
+export const UPDATE_SOURCE_URL = `https://proton.me/download/PassDesktop/${process.platform}/${ARCH}`;
+const UPDATE_INTERVAL = 60 * 60 * 1_000; // 1h
 
 export type StoreUpdateProperties = {
     distribution: number;
 };
 
-type RemoteManifestResponse = {
+export type RemoteManifestResponse = {
     Releases: {
         Version: string;
         RolloutPercentage: number;
-        CategoryName: 'Stable' | 'EarlyAccess';
+        CategoryName: 'Stable' | 'Beta';
     }[];
-};
-
-export enum SourceType {
-    StaticStorage = 1,
-}
-
-export type UpdateSource = {
-    type: SourceType.StaticStorage;
-    baseUrl: string;
-};
-
-export type UpdateOptions = {
-    /** Electron session */
-    readonly session: Session;
-    /** Update source configuration */
-    readonly updateSource: UpdateSource;
-    /** How frequently to check for updates, in seconds. Defaults to 60 minutes (`3600`). */
-    readonly updateInterval?: number;
-    /** Prompts to apply the update immediately after download. Defaults to `false`. */
-    readonly notifyUser?: boolean;
 };
 
 const calculateUpdateDistribution = () => randomBytes(4).readUint32LE() / Math.pow(2, 32);
 
-const supportedPlatforms = ['darwin', 'win32'];
+const getIsBeta = () => store.get('optInForBeta') === true;
 
-const validateInput = (opts: UpdateOptions) => {
-    const defaults = {
-        updateInterval: 60 * 60,
-        notifyUser: false,
+const getFeedURL = (isBeta: boolean) => {
+    let feedURL = UPDATE_SOURCE_URL;
+    let serverType: 'default' | 'json' = 'default';
+
+    if (isBeta) {
+        feedURL += '/beta';
+    }
+
+    if (isMac) {
+        feedURL += '/RELEASES.json';
+        serverType = 'json';
+    }
+
+    return {
+        url: feedURL,
+        headers: { 'user-agent': userAgent() },
+        serverType,
     };
-
-    const { updateInterval, notifyUser, updateSource, session } = {
-        ...defaults,
-        ...opts,
-    };
-
-    // allows electron to be mocked in tests
-    const electron: typeof Electron.Main = (opts as any).electron || require('electron');
-
-    assert(
-        updateSource.baseUrl && isURL(updateSource.baseUrl) && updateSource.baseUrl.startsWith('https:'),
-        'baseUrl must be a valid HTTPS URL'
-    );
-
-    assert(updateInterval >= 5 * 60, 'updateInterval must be 5 minutes (`300`) or more');
-
-    return { updateSource, updateInterval, electron, notifyUser, session };
 };
 
-const checkForUpdates = async (opts: ReturnType<typeof validateInput>) => {
-    // don't attempt to update if rollout % not satisfied
+export const checkForUpdates = async (session: Session): Promise<boolean> => {
     const remoteManifestUrl = `https://proton.me/download/PassDesktop/${process.platform}/${ARCH}/version.json`;
-    const remoteManifest = await opts.session
+    const remoteManifest = await session
         .fetch(remoteManifestUrl)
         .then((r) => r.json())
         .then((r: RemoteManifestResponse) => r)
         .catch(noop);
 
+    // sort on semver version, filter or not 'Beta', return latest
     const latestRelease = (() => {
         if (!Array.isArray(remoteManifest?.Releases)) return;
-        return remoteManifest.Releases.find((r) => r.CategoryName === 'Stable');
+        return remoteManifest.Releases.filter((v) =>
+            (getIsBeta() ? ['Stable', 'Beta'] : ['Stable']).includes(v.CategoryName)
+        ).sort((a, b) => semver(b.Version) - semver(a.Version))[0];
     })();
 
     if (!latestRelease) {
         logger.log(`[Update] No stable release found, url=${remoteManifestUrl}`);
-        return;
+        return false;
     }
 
+    // no update if latest version is not newer
+    if (semver(latestRelease.Version) <= semver(config.APP_VERSION)) {
+        logger.log(
+            `[Update] Latest release is not newer, current=${config.APP_VERSION}, latest=${latestRelease.Version}`
+        );
+        return false;
+    }
+
+    // no update if rollout % not satisfied
     const localDistributionPct = store.get('update')?.distribution || calculateUpdateDistribution();
     const remoteDistributionPct = latestRelease.RolloutPercentage || 0;
     if (remoteDistributionPct < localDistributionPct) {
         logger.log(
             `[Update] Rollout distribution short-circuit triggered, r=${remoteDistributionPct}, l=${localDistributionPct}, v=${latestRelease.Version}`
         );
-        return;
+        return false;
     }
 
-    // don't attempt to update if PassEnableDesktopAutoUpdate disabled
+    // no update if PassEnableDesktopAutoUpdate disabled
     const featureFlagsUrl = `${config.API_URL}/feature/v2/frontend`;
-    const featureFlags = await opts.session
+    const featureFlags = await session
         .fetch(featureFlagsUrl)
         .then((r) => r.json())
         .then((r: FeatureFlagsResponse) => r.toggles)
@@ -111,42 +102,37 @@ const checkForUpdates = async (opts: ReturnType<typeof validateInput>) => {
 
     if (!featureFlags?.some((f) => f.name === PassFeature.PassEnableDesktopAutoUpdate)) {
         logger.log('[Update] Feature flag short-circuit triggered');
-        return;
+        return false;
     }
+
+    // reset feed url each time to adapt if beta settings changed
+    const feedUrl = getFeedURL(getIsBeta());
+    autoUpdater.setFeedURL(feedUrl);
+    logger.log(`[Update] Set feed url ${feedUrl.url}`);
 
     // don't attempt to update during development
     if (!isProdEnv()) {
-        logger.log(`[Update] Unpacked app short-circuit triggered`);
-        return;
+        logger.log(`[Update] Unpacked app short-circuit triggered as non prod env`);
+        // a bit weird but we eject because of dev env but there is a new version
+        // so we won't update but we can continue simulation as it was a yes
+        return true;
     }
 
+    logger.log(`[Update] Check for update v=${latestRelease.Version}`);
     autoUpdater.checkForUpdates();
+    return true;
 };
 
-const initUpdater = (opts: ReturnType<typeof validateInput>) => {
-    const { updateSource, updateInterval } = opts;
-
+const initUpdater = (session: Session) => {
     // exit early on unsupported platforms, e.g. `linux`
-    if (!supportedPlatforms.includes(process?.platform)) {
+    if (!SUPPORTED_PLATFORMS.includes(process?.platform)) {
         logger.log(
             `Electron's autoUpdater does not support the '${process.platform}' platform. Ref: https://www.electronjs.org/docs/latest/api/auto-updater#platform-notices`
         );
         return;
     }
 
-    let feedURL = updateSource.baseUrl;
-    let serverType: 'default' | 'json' = 'default';
-
-    if (isMac) {
-        feedURL += '/RELEASES.json';
-        serverType = 'json';
-    }
-
-    autoUpdater.setFeedURL({
-        url: feedURL,
-        headers: { 'user-agent': userAgent() },
-        serverType,
-    });
+    autoUpdater.setFeedURL(getFeedURL(getIsBeta()));
 
     autoUpdater.on('error', (err) => {
         logger.log('[Update] An error ocurred');
@@ -170,36 +156,34 @@ const initUpdater = (opts: ReturnType<typeof validateInput>) => {
         logger.log('[Update] No updates available.');
     });
 
-    if (opts.notifyUser) {
-        autoUpdater.on('update-downloaded', (event, releaseNotes, releaseName, releaseDate, updateURL) => {
-            logger.log('update-downloaded', [event, releaseNotes, releaseName, releaseDate, updateURL]);
-
-            const dialogOpts: MessageBoxOptions = {
-                type: 'info',
-                buttons: ['Restart', 'Later'],
-                title: 'Update Available',
-                message: isWindows ? releaseNotes : releaseName,
-                detail: 'A new version of Proton Pass has been downloaded. Restart the application to apply the updates.',
-            };
-
-            dialog
-                .showMessageBox(dialogOpts)
-                .then(({ response }) => {
-                    if (response === 0) autoUpdater.quitAndInstall();
-                })
-                .catch(noop);
-        });
-    }
+    autoUpdater.on('update-downloaded', () => {
+        logger.log('[Update] No updates available.');
+    });
 
     // check for updates right away and keep checking later
-    checkForUpdates(opts).catch(noop);
-    setInterval(() => checkForUpdates(opts), updateInterval * 1_000);
+    checkForUpdates(session).catch(noop);
+    setInterval(() => checkForUpdates(session), UPDATE_INTERVAL);
 };
 
-export const updateElectronApp = (opts: UpdateOptions) => {
-    // check for bad input early, so it will be logged during development
-    const safeOpts = validateInput(opts);
+export const updateElectronApp = (session: Session) => {
+    if (app.isReady()) initUpdater(session);
+    else app.on('ready', () => initUpdater(session));
+};
 
-    if (safeOpts.electron.app.isReady()) initUpdater(safeOpts);
-    else app.on('ready', () => initUpdater(safeOpts));
+export const setTagCookie = async (session: Session) => {
+    const apiUrl = new URL(config.API_URL);
+
+    const cookie: CookiesSetDetails = {
+        url: apiUrl.origin,
+        name: 'Tag',
+        value: getIsBeta() ? 'beta' : 'default',
+        domain: apiUrl.host,
+        path: '/',
+        secure: true,
+        httpOnly: false,
+        expirationDate: Math.floor(Date.now() / 1000) + 60 * 60 * 24 * 31 * 3, // 3 months
+        sameSite: 'no_restriction',
+    };
+
+    await session.cookies.set(cookie);
 };

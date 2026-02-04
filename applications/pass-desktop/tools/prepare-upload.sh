@@ -1,5 +1,5 @@
 #!/usr/bin/env sh
-set -euo
+set -eu
 
 echoerr() { echo "$@" 1>&2; }
 
@@ -7,35 +7,40 @@ CWD=$(pwd)
 BUILD_DIR="applications/pass-desktop/out/make"
 PLATFORM="$1"
 
-# Deployment is EarlyAccess if its CI tag contains a dash, eg. proton-pass@1.0.0-rc1
+# Extract version from CI tag and validate it's a stable release (no dash)
 TAG_VERSION="${CI_COMMIT_TAG:-}"
 TAG_VERSION="${TAG_VERSION##*@}"
-if [ -n "${TAG_VERSION}" ] && [ "${TAG_VERSION#*-}" = "${TAG_VERSION}" ]; then
-  CHANNEL="Stable"
-else
-  CHANNEL="EarlyAccess"
-fi
 
-# Currently, we're only supporting the stable channel
-if [ "$CHANNEL" != "Stable" ]; then
-  echoerr "Channels other than 'Stable' are currently unsupported (v=${TAG_VERSION},c=${CHANNEL})"
+# Exit if no tag version is found
+if [ -z "${TAG_VERSION}" ]; then
+  echoerr "Invalid or missing tag version (v=${TAG_VERSION})"
   exit 1
 fi
 
-# Copy artefacts
+# Todo remove
+# Strip test suffix for testing purposes (eg. 1.0.0-test1 -> 1.0.0)
+# The point is to accept versions with this particular format to be able to test upload
+if [ "${TAG_VERSION#*-test}" != "${TAG_VERSION}" ]; then
+  TAG_VERSION="${TAG_VERSION%%-test*}"
+fi
+
+# Exit if version contains a dash (eg. proton-pass@1.0.0-rc1)
+if [ "${TAG_VERSION#*-}" != "${TAG_VERSION}" ]; then
+  echoerr "Invalid tag version. Expected stable version without dash (v=${TAG_VERSION})"
+  exit 1
+fi
+
+echo "Processing for tag ${CI_COMMIT_TAG}"
+
+# Log build dir content
 cd "$BUILD_DIR"
-if [ "$CHANNEL" = "Stable" ] && [ "$PLATFORM" = "windows" ]; then
-  cp ./squirrel.windows/x64/*.exe "ProtonPass_Setup.exe"
-elif [ "$CHANNEL" = "Stable" ] && [ "$PLATFORM" = "linux" ]; then
-  cp ./rpm/x64/*.rpm "ProtonPass.rpm"
-  cp ./deb/x64/*.deb "ProtonPass.deb"
-elif [ "$CHANNEL" = "Stable" ] && [ "$PLATFORM" = "macos" ]; then
-  cp ./*.dmg "ProtonPass.dmg"
-fi
+echo "\nbuild dir:"
+ls -l . | grep -v '^total'
 
+# Populate `artifact.list` file which will be the reference for the actual upload
 cd "$CWD"
-if [ "$CHANNEL" = "Stable" ]; then
-  find "$BUILD_DIR" -type f ! -name RELEASES ! -name RELEASES.json > artifact.list
-fi
+find "$BUILD_DIR" -type f ! -name RELEASES ! -name RELEASES.json > artifact.list
 
-printf "PASS_RELEASE_CHANNEL=%s\nPASS_RELEASE_PLATFORM=%s" "$CHANNEL" "$PLATFORM" > deploy.env
+# Log artifacts
+echo "\nartifact.list:"
+cat artifact.list
