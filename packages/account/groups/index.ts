@@ -10,10 +10,13 @@ import { updateCollectionAsyncV6 } from '@proton/shared/lib/eventManager/updateC
 import { type UpdateCollectionV6, updateCollectionV6 } from '@proton/shared/lib/eventManager/updateCollectionV6';
 import { clearBit, setBit } from '@proton/shared/lib/helpers/bitset';
 import updateCollection from '@proton/shared/lib/helpers/updateCollection';
-import type { Api, Group, Organization, UserModel } from '@proton/shared/lib/interfaces';
+import type { Api, Group, GroupMembershipReturn, Organization, UserModel } from '@proton/shared/lib/interfaces';
+import { GROUP_MEMBER_PERMISSIONS } from '@proton/shared/lib/interfaces';
 
 import type { DomainsState } from '../domains';
 import { serverEvent } from '../eventLoop';
+import type { GroupMembershipsState } from '../groupMemberships';
+import { groupMembershipsThunk } from '../groupMemberships';
 import { getInitialModelState } from '../initialModelState';
 import type { ModelState } from '../interface';
 import { organizationThunk } from '../organization';
@@ -22,7 +25,7 @@ import { userThunk } from '../user';
 
 const name = 'groups';
 
-export interface GroupsState extends DomainsState, OrganizationKeyState {
+export interface GroupsState extends DomainsState, OrganizationKeyState, GroupMembershipsState {
     [name]: ModelState<Group[]>;
 }
 
@@ -33,8 +36,13 @@ const initialState: SliceState = getInitialModelState<Group[]>();
 
 export const selectGroups = (state: GroupsState) => state[name];
 
-const canFetch = (user: UserModel, organization: Organization) => {
-    return user.isAdmin && organization?.ID; // just need an org ID to get groups
+const canFetch = (user: UserModel, organization: Organization, memberships: GroupMembershipReturn[]): boolean => {
+    if (user.isAdmin && organization?.ID) {
+        return true; // org admin
+    }
+
+    const isGroupOwner = memberships.some((membership) => membership.Permissions & GROUP_MEMBER_PERMISSIONS.OWNER);
+    return isGroupOwner; // group owner of at least one group
 };
 
 export const fetchGroup = async (groupID: string, api: Api) => {
@@ -44,8 +52,12 @@ export const fetchGroup = async (groupID: string, api: Api) => {
 
 const modelThunk = createAsyncModelThunk<Model, GroupsState, ProtonThunkArguments>(`${name}/fetch`, {
     miss: async ({ extraArgument, dispatch }) => {
-        const [user, organization] = await Promise.all([dispatch(userThunk()), dispatch(organizationThunk())]);
-        if (!canFetch(user, organization)) {
+        const [user, organization, memberships] = await Promise.all([
+            dispatch(userThunk()),
+            dispatch(organizationThunk()),
+            dispatch(groupMembershipsThunk()),
+        ]);
+        if (!canFetch(user, organization, memberships)) {
             return [];
         }
         return extraArgument
@@ -163,8 +175,13 @@ export const groupsEventLoopV6Thunk = ({
     api: Api;
 }): ThunkAction<Promise<void>, GroupsState, ProtonThunkArguments, UnknownAction> => {
     return async (dispatch) => {
-        const [user, organization] = await Promise.all([dispatch(userThunk()), dispatch(organizationThunk())]);
-        if (!canFetch(user, organization)) {
+        const [user, organization, memberships] = await Promise.all([
+            dispatch(userThunk()),
+            dispatch(organizationThunk()),
+            dispatch(groupMembershipsThunk()),
+        ]);
+
+        if (!canFetch(user, organization, memberships)) {
             return;
         }
         await updateCollectionAsyncV6({
