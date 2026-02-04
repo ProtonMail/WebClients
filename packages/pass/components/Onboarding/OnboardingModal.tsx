@@ -74,7 +74,7 @@ export const OnboardingModal: FC<ModalProps> = ({ size = 'xlarge', ...props }) =
                 title={
                     currentStep.withHeader && (
                         <div
-                            className="hidden md:block absolute top-0 left-custom"
+                            className="hidden lg:block absolute top-0 left-custom"
                             style={{ '--left-custom': '100px' }}
                         >
                             <PassIconLogo />

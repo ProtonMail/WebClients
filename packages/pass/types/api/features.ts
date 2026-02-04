@@ -20,6 +20,7 @@ export enum PassFeature {
     PassWebInternalAlpha = 'PassWebInternalAlpha',
     PassWebPrfUnlock = 'PassWebPrfUnlock',
     PassDesktopBeta = 'PassDesktopBeta',
+    PassWebDesktopLifetimeBanner = 'PassWebDesktopLifetimeBanner',
 }
 
 export const PassFeaturesValues = Object.values(PassFeature);
