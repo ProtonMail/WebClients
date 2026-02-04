@@ -8,7 +8,7 @@
     "scripts": {
         "build:desktop": "cross-env-shell NODE_ENV=production 'yarn run build:native && electron-forge package'",
         "build:desktop:dev": "cross-env-shell NODE_ENV=production API_ENV=proton.black 'yarn run build:native && electron-forge package'",
-        "build:mas": "cross-env-shell NODE_ENV=production SKIP_CODESIGN=1 'yarn run build:native && electron-forge package && cp -r .webpack/*/* .webpack/ && rm -rf .webpack/arm64 && electron-builder --config electron-builder.config.js'",
+        "build:mas": "cross-env-shell NODE_ENV=production SKIP_CODESIGN=1 SKIP_NOTARIZE=1 CSC_LINK=mas/app.p12 CSC_KEY_PASSWORD=$APP_CERT_PASSWORD CSC_INSTALLER_LINK=mas/installer.p12 CSC_INSTALLER_KEY_PASSWORD=$INSTALLER_CERT_PASSWORD 'yarn run build:native && electron-forge package && cp -r .webpack/*/* .webpack/ && rm -rf .webpack/arm64 && electron-builder --config electron-builder.config.js'",
         "build:native": "cd native && yarn build:multi",
         "check-types": "tsc",
         "clean:build:artifacts": "rm -rf dist && rm -rf out && rm -rf .webpack",
