@@ -4,9 +4,9 @@ import { useHistory } from 'react-router';
 import { c, msgid } from 'ttag';
 
 import { useUserSettings } from '@proton/account/userSettings/hooks';
+import { Banner } from '@proton/atoms/Banner/Banner';
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
-import { IcPlus } from '@proton/icons/icons/IcPlus';
 import Loader from '@proton/components/components/loader/Loader';
 import { useModalTwoStatic } from '@proton/components/components/modalTwo/useModalTwo';
 import Table from '@proton/components/components/table/Table';
@@ -31,11 +31,13 @@ import { useSharedServers } from '@proton/components/containers/vpn/sharedServer
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import useApi from '@proton/components/hooks/useApi';
 import useNotifications from '@proton/components/hooks/useNotifications';
+import { IcPlus } from '@proton/icons/icons/IcPlus';
 import { getCountryOptions } from '@proton/payments';
 import { MINUTE, SECOND, VPN_APP_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import clsx from '@proton/utils/clsx';
 
+import useLocalState from '../../../hooks/useLocalState';
 import NotificationButton from '../../notifications/NotificationButton';
 import PolicyPreviewModal from './PolicyModal/PolicyPreviewModal';
 import UnpublishedChangesModal from './PolicyModal/UnpublishedChangesModal';
@@ -47,6 +49,7 @@ import { useCustomPrompt } from './useCustomPrompt';
 
 import './SharedServersSection.scss';
 
+const DEFAULT_SHOW_PUBLISH_BANNER = 'default_show_publish_banner';
 const OrangeDot = () => (
     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
         <g clipPath="url(#clip0_10876_154544)">
@@ -60,11 +63,14 @@ const OrangeDot = () => (
         </defs>
     </svg>
 );
-
-const SharedServersSection = ({ maxAge = 10 * MINUTE }) => {
+type SharedServersSectionProps = {
+    maxAge?: number;
+};
+const SharedServersSection = ({ maxAge = 10 * MINUTE }: SharedServersSectionProps) => {
     const api = useApi();
     const { createNotification, hideNotification } = useNotifications();
     const { loading, locations, policies, refresh, users, countUsersNotInAnyPolicy } = useSharedServers(maxAge);
+
     const history = useHistory();
 
     const [originalPolicies, setOriginalPolicies] = useState<VpnLocationFilterPolicyLocal[]>([]);
@@ -74,6 +80,8 @@ const SharedServersSection = ({ maxAge = 10 * MINUTE }) => {
     const [policyType, setPolicyType] = useState<PolicyType>(PolicyType.None);
     const [previousPolicyType, setOriginalPolicyType] = useState<PolicyType>(PolicyType.None);
 
+    const [showPublishBanner, setShowPublishBanner] = useState<boolean>(false);
+    const [defaultShowPublishBanner, setDefaultShowPublishBanner] = useLocalState(true, DEFAULT_SHOW_PUBLISH_BANNER);
     const [hasUnsavedChanges, setHasUnsavedChanges] = useState(false);
     const [didPublishChanges, setDidPublishChanges] = useState(false);
     const [createModal, showCreateModal] = useModalTwoStatic(Modal);
@@ -91,6 +99,19 @@ const SharedServersSection = ({ maxAge = 10 * MINUTE }) => {
         return localPolicies.filter((policy) => policy.Type === PolicyType.Custom);
     }, [localPolicies]);
 
+    useEffect(() => {
+        if (!policies?.length) {
+            return;
+        }
+        const policy = policies.find((p) => p.Type === PolicyType.Custom);
+        if (policy && typeof policy.UpdateTime === 'number') {
+            const updateMs = policy.UpdateTime * 1000;
+            const diffHours = (Date.now() - updateMs) / (1000 * 60 * 60);
+            if (diffHours < 3 && defaultShowPublishBanner) {
+                setShowPublishBanner(true);
+            }
+        }
+    }, [policies]);
     useCustomPrompt(hasUnsavedChanges, (path: string) => {
         showUnpublishedChangesModal({
             onDiscard: () => {
@@ -113,19 +134,10 @@ const SharedServersSection = ({ maxAge = 10 * MINUTE }) => {
             if (pendingPublishNotification.current) {
                 hideNotification(pendingPublishNotification.current);
             }
-            createNotification({
-                text: (
-                    <span style={{ wordBreak: 'auto-phrase' }}>
-                        {c('Success')
-                            .t`Changes published. Your changes will be visible to all users in the next few hours.`}
-                    </span>
-                ),
-                type: 'success',
-                showCloseButton: false,
-            });
-
             await refresh();
             setDidPublishChanges(true);
+            setShowPublishBanner(true);
+            setDefaultShowPublishBanner(true);
         } catch (error) {
             createNotification({
                 text: c('Error').t`Error publishing changes`,
@@ -283,6 +295,7 @@ const SharedServersSection = ({ maxAge = 10 * MINUTE }) => {
                     p.Type === nextType ? { ...p, State: PolicyState.Active } : { ...p, State: PolicyState.Inactive }
                 )
             );
+            setShowPublishBanner(false);
         },
         [policyType]
     );
@@ -359,7 +372,18 @@ const SharedServersSection = ({ maxAge = 10 * MINUTE }) => {
                     {c('Link').t`Learn more`}
                 </Href>
             </div>
-
+            {showPublishBanner && (
+                <Banner
+                    onDismiss={() => {
+                        setShowPublishBanner(false);
+                        setDefaultShowPublishBanner(false);
+                    }}
+                    className="mt-2"
+                >
+                    {c('Info')
+                        .t`Your recent changes have been published. They will be visible to users in the next few hours.`}
+                </Banner>
+            )}
             <div
                 className={`publish-banner ${hasUnsavedChanges && 'unpublished'} rounded my-6 flex items-center w-full p-2 flex-nowrap gap-4`}
             >
