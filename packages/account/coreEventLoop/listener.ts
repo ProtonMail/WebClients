@@ -7,6 +7,7 @@ import type { CoreEventLoopV6Callback, CoreEventLoopV6RequiredState } from '../c
 import { delegatedAccessLoop } from '../delegatedAccess/eventLoopV6';
 import { domainsLoop } from '../domains/eventLoopV6';
 import { groupMembersLoop } from '../groupMembers/eventLoopV6';
+import { groupOwnerInvitesLoop } from '../groupOwnerInvites/eventLoopV6';
 import { groupsLoop } from '../groups/eventLoopV6';
 import { membersLoop } from '../members/eventLoopV6';
 import { organizationLoop } from '../organization/eventLoopV6';
@@ -32,6 +33,7 @@ const loops: CoreEventLoopV6Callback[] = [
     userInvitationsLoops,
     samlSSOLoop,
     groupsLoop,
+    groupOwnerInvitesLoop,
     delegatedAccessLoop,
 ];
 Object.freeze(loops);
