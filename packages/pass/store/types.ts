@@ -22,7 +22,7 @@ import type { TelemetryEvent } from '@proton/pass/types/data/telemetry';
 import type { EncryptedPassCache } from '@proton/pass/types/worker/cache';
 
 import type { Notification } from './actions/enhancers/notification';
-import type { FeatureFlagState, rootReducer } from './reducers';
+import type { FeatureFlagAndVariantState, rootReducer } from './reducers';
 import type { ProxiedSettings } from './reducers/settings';
 
 export type State = ReturnType<typeof rootReducer>;
@@ -91,7 +91,7 @@ export interface RootSagaOptions {
     onNotification: (notification: Notification) => void;
 
     /** Callback for propagating feature flags updates */
-    onFeatureFlags?: (features: FeatureFlagState) => void;
+    onFeatureFlags?: (features: FeatureFlagAndVariantState) => void;
 
     /** Called whenever some changes were committed to the items state */
     onItemsUpdated?: (options?: { report: boolean }) => void;
