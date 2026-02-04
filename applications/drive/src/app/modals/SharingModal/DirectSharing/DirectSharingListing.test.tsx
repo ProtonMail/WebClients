@@ -71,7 +71,7 @@ describe('DirectSharingListing', () => {
         expect(ownerSection).toBeInTheDocument();
         expect(screen.getByText('Owner Name (you)')).toBeInTheDocument();
         expect(screen.getByText('owner@example.com')).toBeInTheDocument();
-        expect(screen.getByText('Owner')).toBeInTheDocument();
+        expect(screen.getByText('owner')).toBeInTheDocument();
     });
 
     it('renders owner information without display name', () => {
@@ -80,7 +80,7 @@ describe('DirectSharingListing', () => {
         const ownerSection = screen.getByTestId('share-owner');
         expect(ownerSection).toBeInTheDocument();
         expect(screen.getByText('owner@example.com (you)')).toBeInTheDocument();
-        expect(screen.getByText('Owner')).toBeInTheDocument();
+        expect(screen.getByText('owner')).toBeInTheDocument();
     });
 
     it('renders empty members list', () => {
@@ -132,13 +132,13 @@ describe('DirectSharingListing', () => {
         render(<DirectSharingListing {...defaultProps} members={MEMBERS} />);
 
         expect(screen.getByTestId('dropdown-button')).toBeInTheDocument();
-        expect(screen.getByText('Viewer')).toBeInTheDocument();
+        expect(screen.getByText('can view')).toBeInTheDocument();
     });
 
     it('disables dropdown when viewOnly is true', () => {
         render(<DirectSharingListing {...defaultProps} members={MEMBERS} viewOnly={true} />);
 
-        expect(screen.getByText('Viewer')).toBeDisabled();
+        expect(screen.getByText('can view')).toBeDisabled();
     });
 
     it('calls onChangeRole when role is changed', async () => {

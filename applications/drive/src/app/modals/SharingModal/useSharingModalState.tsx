@@ -9,6 +9,7 @@ import {
     type DegradedNode,
     MemberRole,
     type NodeEntity,
+    NodeType,
     type ShareNodeSettings,
     type ShareResult,
     generateNodeUid,
@@ -94,6 +95,8 @@ export const useSharingModalState = ({
     const [name, setName] = useState('');
 
     const [parentUid, setParentUid] = useState<string | undefined>(undefined);
+
+    const [mediaType, setMediaType] = useState<string | undefined>();
 
     const [isPublicLinkEnabled, setIsPublicLinkEnabled] = useState(!isAlbum);
 
@@ -253,6 +256,7 @@ export const useSharingModalState = ({
 
                 setName(getNodeName(node));
                 setParentUid(nodeInfo.parentUid);
+                setMediaType(nodeInfo.type === NodeType.Folder ? 'Folder' : nodeInfo.mediaType);
 
                 const ownerEmail = getOwnerEmail(nodeInfo);
                 if (ownerEmail) {
@@ -318,6 +322,7 @@ export const useSharingModalState = ({
         onClose,
         linkId,
         name,
+        mediaType,
         ownerDisplayName,
         ownerEmail,
         isLoading,

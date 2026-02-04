@@ -42,30 +42,32 @@ describe('PublicRoleDropdownMenu', () => {
 
     it('renders with default viewer role', () => {
         render(<PublicRoleDropdownMenu {...defaultProps} />);
-        expect(screen.getByText('Viewer')).toBeInTheDocument();
+        expect(screen.getByText('can view')).toBeInTheDocument();
     });
 
     it('renders with editor role', () => {
         render(<PublicRoleDropdownMenu {...defaultProps} selectedRole={MemberRole.Editor} />);
-        expect(screen.getByText('Editor')).toBeInTheDocument();
+        expect(screen.getByText('can edit')).toBeInTheDocument();
     });
 
     it('shows role options when dropdown is open', () => {
         mockedUsePopperAnchor.mockReturnValueOnce({ ...defaultUsePopperAnchorProps, isOpen: true });
         render(<PublicRoleDropdownMenu {...defaultProps} />);
-        expect(screen.getAllByText('Viewer').length).toEqual(2);
+        expect(screen.getByText('Viewer')).toBeInTheDocument();
+        expect(screen.getByText('Can view only')).toBeInTheDocument();
         expect(screen.getByText('Editor')).toBeInTheDocument();
+        expect(screen.getByText('Can view and edit')).toBeInTheDocument();
     });
 
     it('disables dropdown button when disabled prop is true', () => {
         render(<PublicRoleDropdownMenu {...defaultProps} disabled={true} />);
-        expect(screen.getByText('Viewer')).toBeDisabled();
+        expect(screen.getByText('can view')).toBeDisabled();
     });
 
     it('shows loading state when internal loading is true', () => {
         mockedUseLoading.mockReturnValueOnce([true, jest.fn(), jest.fn()] as any);
         render(<PublicRoleDropdownMenu {...defaultProps} />);
-        expect(screen.getByText('Viewer')).toBeDisabled();
+        expect(screen.getByText('can view')).toBeDisabled();
         expect(screen.getByTestId('circle-loader')).toBeInTheDocument();
     });
 

@@ -1,7 +1,6 @@
 import { c } from 'ttag';
 
 import { MemberRole, type NonProtonInvitationState } from '@proton/drive';
-import useFlag from '@proton/unleash/useFlag';
 
 import { DropdownMenuItem } from '../../DropdownMenuItem';
 import type { DirectSharingRole } from '../../interfaces';
@@ -16,8 +15,6 @@ export function DirectSharingRoles({
     selectedRole: DirectSharingRole;
     externalInvitationState?: NonProtonInvitationState;
 }) {
-    const adminRoleEnabled = useFlag('DriveSharingAdminPermissions');
-
     const getRoleLabel = (role: DirectSharingRole, baseLabel: string) => {
         if (role === selectedRole && externalInvitationState) {
             return `${baseLabel} (${InvitationStateTranslations[externalInvitationState]})`;
@@ -41,15 +38,6 @@ export function DirectSharingRoles({
                 onClick={() => onChangeRole(MemberRole.Editor)}
                 isSelected={selectedRole === MemberRole.Editor}
             />
-            {adminRoleEnabled && (
-                <DropdownMenuItem
-                    label={getRoleLabel(MemberRole.Admin, c('Label').t`Admin`)}
-                    description={c('Into').t`Can edit and manage access`}
-                    iconName="user-circle"
-                    onClick={() => onChangeRole(MemberRole.Admin)}
-                    isSelected={selectedRole === MemberRole.Admin}
-                />
-            )}
         </>
     );
 }
