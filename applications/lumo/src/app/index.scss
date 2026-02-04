@@ -8,16 +8,6 @@
 im.$breakpoints: $breakpoints-product;
 im.$media-expressions: $media-expressions;
 
-// body::before {
-// 	position: fixed;
-// 	display: flex;
-// 	inset-block-start: 0;
-// 	background-color: red;
-// 	color: white;
-// 	inset-inline-start: 0;
-// 	z-index: 12000;
-// }
-
 .main-text-container {
 	container-type: inline-size;
 	container-name: maintext;
@@ -340,18 +330,6 @@ im.$media-expressions: $media-expressions;
 		margin-block-start: 0.5rem;
 	}
 
-	// Note: these are older styles, either transfer markdown styles to LumoMarkdown.scss or delete
-	// /* Set consistent paragraph line height */
-	// p {
-	// 	line-height: 1.6;
-	// 	margin: 0;
-	// 	padding: 0;
-
-	// 	+ p {
-	// 		margin-block-start: 0.5rem;
-	// 	}
-	// }
-
 	ul,
 	ol {
 		margin-block: 0.5rem 0.5rem;
@@ -360,7 +338,7 @@ im.$media-expressions: $media-expressions;
 		gap: 0.25rem;
 		display: flex;
 		flex-direction: column;
-		margin-inline-start: 1.5em;
+		margin-inline-start: 2.5em;
 		white-space: normal;
 	}
 
