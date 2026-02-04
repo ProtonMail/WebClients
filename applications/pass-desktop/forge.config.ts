@@ -27,7 +27,7 @@ const config: ForgeConfig = {
         appCategoryType: 'public.app-category.productivity',
         osxSign: {},
         osxNotarize:
-            process.env.CI || process.env.PASS_DESKTOP_NOTARIZE
+            (process.env.CI || process.env.PASS_DESKTOP_NOTARIZE) && !process.env.SKIP_NOTARIZE
                 ? {
                       appleId: process.env.PASS_DESKTOP_APPLE_ID!,
                       appleIdPassword: process.env.PASS_DESKTOP_APPLE_ID_PASSWORD!,
