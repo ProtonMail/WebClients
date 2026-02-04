@@ -21,6 +21,7 @@ interface Props {
     onSubmit: () => void;
     disabled?: boolean;
     onCloseSpotlight: () => void;
+    canExpandAssistant: (skipTrialCheck?: boolean) => boolean;
 }
 
 const ComposerAssistantCustomInput = ({
@@ -32,6 +33,7 @@ const ComposerAssistantCustomInput = ({
     onSubmit,
     disabled,
     onCloseSpotlight,
+    canExpandAssistant,
 }: Props) => {
     const [showPopover, setShowPopover] = useState(false);
 
@@ -109,6 +111,11 @@ const ComposerAssistantCustomInput = ({
     }, []);
 
     const handleClickToggle = () => {
+        // If trying to open scribe input, check if compatible before opening scribe input
+        if (!showPopover && !canExpandAssistant(true)) {
+            return;
+        }
+
         // Previous prompt ref should be reset when closing the assistant or inserting a result.
         // However, when closing the assistant using a shortcut, it's not.
         // Composer hotkeys are managed higher (useComposerContent), and from there we cannot reset the ref.

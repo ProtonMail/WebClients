@@ -30,10 +30,9 @@ import ComposerInnerModal from 'proton-mail/components/composer/modals/ComposerI
 interface Props {
     composerID: string;
     onClose: () => void;
-    onToggleAssistant: (aiFlag: AI_ASSISTANT_ACCESS) => void;
 }
 
-const ComposerAssistantSettingModal = ({ composerID, onClose: closeSettingModal, onToggleAssistant }: Props) => {
+const ComposerAssistantSettingModal = ({ composerID, onClose: closeSettingModal }: Props) => {
     const api = useApi();
     const dispatch = useDispatch();
     const [loading, withLoading] = useLoading();
@@ -71,7 +70,6 @@ const ComposerAssistantSettingModal = ({ composerID, onClose: closeSettingModal,
 
         if (inputValue === AI_ASSISTANT_ACCESS.SERVER_ONLY) {
             await closeModal();
-            onToggleAssistant(inputValue);
             createNotification({ text: notificationText });
             return;
         }
@@ -81,7 +79,6 @@ const ComposerAssistantSettingModal = ({ composerID, onClose: closeSettingModal,
             const canRunLocally = hasCompatibleHardware && hasCompatibleBrowser;
             if (canRunLocally) {
                 await closeModal();
-                onToggleAssistant(inputValue);
                 void handleSettingChange?.();
                 createNotification({ text: notificationText });
                 return;
