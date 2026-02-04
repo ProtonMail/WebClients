@@ -2194,6 +2194,9 @@
       ],
       "Website access problem": [
         "ვებგვერდთან წვდომის პრობლემა"
+      ],
+      "Sheets problem": [
+        "Sheets-ის პრობლემა"
       ]
     },
     "Button": {
@@ -2644,6 +2647,9 @@
       ],
       "High-speed chats and advanced AI features.": [
         "სწრაფი ჩატები და დამატებითი ხი-ის ფუნქციები"
+      ],
+      "Private video calls for the conversations that matter.": [
+        "პირადი ვიდეოზარები მნიშვნელოვანი საუბრებისთვის."
       ]
     },
     "color": {
@@ -5018,6 +5024,9 @@
       ],
       "ZIP code is required": [
         "საფოსტო კოდი აუცილებელია"
+      ],
+      "This offer is not available in your country": [
+        "ეს შემოთავაზება თქვენს ქვეყანაში ხელმისაწვდომი არაა"
       ]
     },
     "error": {
@@ -6155,6 +6164,9 @@
       ],
       "Your password is correct.": [
         "პაროლი სწორია."
+      ],
+      "Two-factor authentication is enabled in your external account.": [
+        "თქვენს გარე ანგარიშში ჩართულია 2FA."
       ]
     },
     "Import ICS file from Mail": {
@@ -8686,6 +8698,21 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "გაჭედვისგან თავისუფალი საფოსტო ყუთისგან რამდენიმე წკაპი გაშორებთ"
+      ],
+      "Please wait for the action to be completed": [
+        "მოითმინეთ, სანამ ქმედება დასრულდება"
+      ],
+      "Receive notifications for ${ categoryLabel }": [
+        "შეტყობინებების მიღება ${ categoryLabel }-ისთვის"
+      ],
+      "This message will be purged on ${ value }": [
+        "ეს შეტყობინება წაიშლება ${ value }"
+      ],
+      "This message will be purged today at ${ value }": [
+        "ამ შეტყობინების ვადა იწურება დღეს, ${ value }-ზე"
+      ],
+      "This message will be purged tomorrow at ${ value }": [
+        "ეს შეტყობინება ხვალ, ${ value }-ზე წაიშლება"
       ]
     },
     "info": {
@@ -10235,6 +10262,40 @@
       ],
       "Screen-sharing": [
         "ეკრანის გაზიარება"
+      ],
+      "${ n } active meeting at a time": [
+        "${ n } ერთდროული აქტიური შეხვედრა",
+        "${ n } ერთდროული აქტიური შეხვედრა"
+      ],
+      "${ n } participant": [
+        "${ n } მონაწილე",
+        "${ n } მონაწილე"
+      ],
+      "Booking pages": [
+        "დაჯავშნის გვერდები"
+      ],
+      "Browser, mobile, and desktop apps": [
+        "ბრაუზერის, მობილურის და კომპიუტეირს აპები"
+      ],
+      "End-to-end encrypted screen sharing and ephemeral in-call chat": [
+        "გამჭოლად დაშიფრული ეკრანის გაზიარება და ეფერემული ჩატი ზარის დროს"
+      ],
+      "Meeting recording": [
+        "შეხვედრის ჩანაწერი"
+      ],
+      "One active meeting at a time": [
+        "ერთი აქტიური შეხვედრა ერთდროულად"
+      ],
+      "Unlimited meetings per day": [
+        "შეუზღუდავი შეხვედრები დღეში"
+      ],
+      "Up to ${ n } meeting per day": [
+        "${ n } შეხვედრამდე დღეში",
+        "${ n } შეხვედრამდე დღეში"
+      ],
+      "Up to ${ n } participant": [
+        "${ n }-მდე მონაწილე",
+        "${ n }-მდე მონაწილე"
       ]
     },
     "Message": {
@@ -12616,6 +12677,9 @@
       ],
       "No unread messages found": [
         "წაუკითხავი შეტყობინებები ნაპოვნი არაა"
+      ],
+      "An action is being processed": [
+        "მიმდინარეობს მოთხოვნის დამუშავება"
       ]
     },
     "Section": {
@@ -14406,6 +14470,9 @@
       ],
       "Show me how": [
         "მაჩვენე, როგორ"
+      ],
+      "Download the desktop app": [
+        "გადმოწერეთ კომპიუტერის აპი"
       ]
     },
     "Title": {
@@ -15431,6 +15498,9 @@
       ],
       "✨ Categories are coming!": [
         "✨ კატეგორიები გზაშია!"
+      ],
+      "To preview this spreadsheet, download it.": [
+        "ამ ელცხრილის მინიატურისთვის გადმოწერეთ ის."
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16002,6 +16072,11 @@
       ],
       "Passcode:": [
         "საკვანძო კოდი:"
+      ]
+    },
+    "Action: Sheets": {
+      "Open in ${ SHEETS_APP_NAME }": [
+        "${ SHEETS_APP_NAME }-ში გახსნა"
       ]
     }
   }

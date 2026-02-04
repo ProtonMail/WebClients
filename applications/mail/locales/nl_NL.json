@@ -4151,6 +4151,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "U heeft al 10 aliassen aangemaakt. Krijg onbeperkte aliassen en 500 GB opslag met ${ BRAND_NAME } Unlimited."
+      ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Om te importeren via een CSV- en VCF-bestand, moet u ervoor zorgen dat het bestand niet groter is dan ${ MAX_IMPORT_FILE_SIZE_STRING } of niet meer dan ${ maxContactString } contacten bevat. Als uw bestand groter is, splits het dan op in kleinere bestanden. ${ learnMoreLink }."
       ]
     },
     "description": {
@@ -5062,6 +5065,12 @@
       ],
       "ZIP code is required": [
         "Postcode is vereist"
+      ],
+      "That action can't be performed on emails in this folder": [
+        "Deze actie kan niet worden uitgevoerd op e-mails in deze map"
+      ],
+      "This offer is not available in your country": [
+        "Dit aanbod is niet beschikbaar in uw land"
       ]
     },
     "error": {
@@ -5160,6 +5169,9 @@
       ],
       "Your file ${ formattedFilename } is empty.": [
         "Uw bestand ${ formattedFilename } is leeg."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ maxContactString } contacts.": [
+        "Uw bestand ${ formattedFilename } bevat meer dan ${ maxContactString } contacten."
       ]
     },
     "Error importing event": {
@@ -8838,6 +8850,19 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "U bent slechts een paar klikken verwijderd van een overzichtelijke inbox"
+      ],
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "Al uw contacten worden geïmporteerd, met een limiet van ${ maxContact }",
+        "Al uw contacten worden geïmporteerd, met een maximum van ${ maxContact }."
+      ],
+      "No messages found": [
+        "Geen berichten gevonden"
+      ],
+      "Please wait for the action to be completed": [
+        "Wacht alstublieft tot de actie is voltooid"
+      ],
+      "Receive notifications for ${ categoryLabel }": [
+        "Ontvang meldingen voor ${ categoryLabel }"
       ]
     },
     "info": {
@@ -9921,6 +9946,12 @@
       ],
       "ZIP code": [
         "Postcode"
+      ],
+      "Categories": [
+        "Categorieën"
+      ],
+      "Select the categories to include and manage notifications for new emails.": [
+        "Selecteer de categorieën die u wilt opnemen en beheer meldingen voor nieuwe e-mails."
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10423,6 +10454,16 @@
       "Up to ${ n } participant": [
         "Tot ${ n } deelnemer",
         "Tot ${ n } deelnemers"
+      ],
+      "${ n } participant": [
+        "${ n } deelnemer",
+        "${ n } deelnemers"
+      ],
+      "Booking pages": [
+        "Boekingspagina's"
+      ],
+      "Meeting recording": [
+        "Opname van vergadering"
       ]
     },
     "Message": {
@@ -11135,6 +11176,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "We scannen het dark web om te controleren of uw ${ BRAND_NAME } adressen of aliassen zijn gelekt en waarschuwen u onmiddellijk wanneer we iets vinden."
+      ],
+      "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
+        "Telefonische ondersteuning (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ gebruikers)"
       ]
     },
     "new_plans: feature highlight": {
@@ -11502,6 +11546,9 @@
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "U kunt meerdere beheerders hebben. Alle beheerders kunnen gebruikers toevoegen en beheren, maar alleen de primaire beheerder kan de facturatie beheren."
+      ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } or more users": [
+        "Telefonische ondersteuning is beschikbaar vanuit het ${ BRAND_NAME } Klantenservice team tijdens Europese kantooruren, voor klanten met ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } of meer gebruikers"
       ]
     },
     "new_plans: Upsell attribute": {
@@ -12288,6 +12335,18 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Uw abonnement heeft momenteel een bestaande korting. Overstappen naar deze nieuwe promotie betekent dat de bestaande korting niet langer wordt toegepast."
+      ],
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "De korting is geldig voor ${ renewalsWithCoupon } verlenging.",
+        "De korting is geldig voor ${ renewalsWithCoupon } verlengingen."
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "De speciale kortingsprijs is geldig voor ${ couponRedemptions } maand. Daarna wordt deze automatisch verlengd voor ${ renewPriceStr } per maand. U kunt op elk moment annuleren.",
+        "De speciale kortingsprijs is geldig voor ${ couponRedemptions } maanden. Daarna wordt deze automatisch verlengd voor ${ renewPriceStr } per maand. U kunt op elk moment annuleren."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "De speciaal gereduceerde prijs van ${ priceWithDiscount } is geldig voor ${ couponRedemptions } maand. Daarna wordt deze automatisch verlengd voor ${ renewPriceStr } voor 1 maand. U kunt op elk moment annuleren.",
+        "De speciaal gereduceerde prijs van ${ priceWithDiscount } is geldig voor ${ couponRedemptions } maanden. Daarna wordt deze automatisch verlengd voor ${ renewPriceStr } voor 1 maand. U kunt op elk moment annuleren."
       ]
     },
     "Payments.Error": {
@@ -12860,6 +12919,9 @@
       ],
       "No unread messages found": [
         "Geen ongelezen berichten gevonden"
+      ],
+      "An action is being processed": [
+        "Er wordt een actie verwerkt"
       ]
     },
     "Section": {
@@ -15687,6 +15749,9 @@
       ],
       "✨ Categories are coming!": [
         "✨ Categorieën komen eraan!"
+      ],
+      "Your ${ planTitle } subscription has started": [
+        "Uw ${ planTitle }-abonnement is nu gestart."
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16264,6 +16329,11 @@
       ],
       "Passcode:": [
         "Toegangscode:"
+      ]
+    },
+    "Action: Sheets": {
+      "Open in ${ SHEETS_APP_NAME }": [
+        "Openen in ${ SHEETS_APP_NAME }"
       ]
     }
   }

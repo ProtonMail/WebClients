@@ -2183,6 +2183,9 @@
       ],
       "Website access problem": [
         "Verkkosivuston avautumisongelma"
+      ],
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "${ LUMO_SHORT_APP_NAME } -ongelma"
       ]
     },
     "Button": {
@@ -2616,6 +2619,9 @@
       ],
       "Web search access": [
         "Verkkohakuun pääsy"
+      ],
+      "Zero-access encryption": [
+        "Zero Access -salaus"
       ]
     },
     "collider_2025: Info": {
@@ -4105,6 +4111,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Olet jo luonut 10 aliasta. Saat rajattomasti aliaksia ja 500 Gt tallennustilaa ${ BRAND_NAME } Unlimitedilla."
+      ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Tuodaksesi CSV- ja VCF-tiedostoista, varmista ettei tiedoston koko ylitä ${ MAX_IMPORT_FILE_SIZE_STRING } tai yhteystietojen määrä ${ maxContactString } yhteystietoa. Jos tiedostosi on suurempi, jaa se pienempiin osiin. ${ learnMoreLink }"
       ]
     },
     "description": {
@@ -4990,6 +4999,15 @@
       ],
       "ZIP code is required": [
         "Postinumero vaaditaan"
+      ],
+      "Please enter a valid postal code": [
+        "Syötä kelvollinen postinumero"
+      ],
+      "That action can't be performed on emails in this folder": [
+        "Tätä toimintoa ei voi suorittaa tämän kansion sähköposteille."
+      ],
+      "This offer is not available in your country": [
+        "Tämä tarjous ei ole saatavilla maassasi"
       ]
     },
     "error": {
@@ -5088,6 +5106,9 @@
       ],
       "Your file ${ formattedFilename } is empty.": [
         "Tiedosto \"${ formattedFilename }\" on tyhjä."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ maxContactString } contacts.": [
+        "Tiedosto ${ formattedFilename } sisältää yli ${ maxContactString } yhteystietoa."
       ]
     },
     "Error importing event": {
@@ -8745,6 +8766,16 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Olet vain muutaman klikkauksen päässä siististä postilaatikosta"
+      ],
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "Kaikki yhteystiedot tuodaan ${ maxContact } yhteystiedon rajoitukseen saakka",
+        "Kaikki yhteystiedot tuodaan ${ maxContact } yhteystiedon rajoitukseen saakka"
+      ],
+      "No messages found": [
+        "Viestejä ei löytynyt"
+      ],
+      "Please wait for the action to be completed": [
+        "Odota, kunnes toiminto on valmis"
       ]
     },
     "info": {
@@ -10989,6 +11020,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Skannaamme pimeää verkkoa tarkistaaksemme, onko ${ BRAND_NAME } -osoitteesi tai -aliaksesi vuotaneet ja hälytämme välittömästi, jos löydämme jotain."
+      ],
+      "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
+        "Puhelintuki (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ käyttäjää)"
       ]
     },
     "new_plans: feature highlight": {
@@ -11350,6 +11384,9 @@
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "Sinulla voi olla useita ylläpitäjiä. Kaikki ylläpitäjät voivat lisätä ja poistaa käyttäjiä, mutta vain ensisijainen ylläpitäjä voi hallita laskutusta."
+      ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } or more users": [
+        "Puhelintuki on saatavilla ${ BRAND_NAME } -asiakastukitiimiltä Euroopan työaikana asiakkaille, joilla on vähintään ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } käyttäjää."
       ]
     },
     "new_plans: Upsell attribute": {
@@ -12079,6 +12116,18 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Tilauksessasi on jo olemassa oleva alennus. Siirtyminen tähän uuteen kampanjaan tarkoittaa, että aiempaa alennusta ei enää käytetä."
+      ],
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "Alennus on voimassa ${ renewalsWithCoupon } uudistuksen ajan.",
+        "Alennus on voimassa ${ renewalsWithCoupon } uudistuksen ajan."
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Erikoistarjoushinta on voimassa ${ couponRedemptions } kuukauden. Sen jälkeen se uusitaan automaattisesti hintaan ${ renewPriceStr } yhden kuukauden ajaksi. Voit peruuttaa tilauksen milloin tahansa.",
+        "Erikoistarjoushinta on voimassa ${ couponRedemptions } kuukautta. Sen jälkeen se uusitaan automaattisesti hintaan ${ renewPriceStr } yhden kuukauden ajaksi. Voit peruuttaa tilauksen milloin tahansa."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Erikoistarjoushinta ${ priceWithDiscount } on voimassa ${ couponRedemptions } kuukauden. Sen jälkeen se uusitaan automaattisesti hintaan ${ renewPriceStr } yhden kuukauden ajaksi. Voit peruuttaa tilauksen milloin tahansa.",
+        "Erikoistarjoushinta ${ priceWithDiscount } on voimassa ${ couponRedemptions } kuukautta. Sen jälkeen se uusitaan automaattisesti hintaan ${ renewPriceStr } yhden kuukauden ajaksi. Voit peruuttaa tilauksen milloin tahansa."
       ]
     },
     "Payments.Error": {
@@ -12553,6 +12602,9 @@
       ],
       "You can get up to **${ maxRewardAmount }** in credit.": [
         "Voit ansaita jopa **${ maxRewardAmount }** krediitteinä."
+      ],
+      "your subscription": [
+        "tilauksesi"
       ]
     },
     "Remaining days before the message expire": {
@@ -12609,6 +12661,9 @@
       ],
       "No unread messages found": [
         "Lukemattomia viestejä ei löytynyt"
+      ],
+      "An action is being processed": [
+        "Toimintoa käsitellään"
       ]
     },
     "Section": {
@@ -15400,6 +15455,12 @@
       ],
       "✨ Categories are coming!": [
         "✨ Luokat ovat tulossa!"
+      ],
+      "How your free trial works": [
+        "Miten ilmainen kokeilujakso toimii"
+      ],
+      "Your ${ planTitle } subscription has started": [
+        "${ planTitle }-tilauksesi on alkanut"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15971,6 +16032,29 @@
       ],
       "Passcode:": [
         "Tunnuskoodi:"
+      ]
+    },
+    "Action: Sheets": {
+      "Open in ${ SHEETS_APP_NAME }": [
+        "Avaa ${ SHEETS_APP_NAME } -sovelluksessa"
+      ]
+    },
+    "meet_2025: Feature": {
+      "${ n } participant": [
+        "${ n } osallistuja",
+        "${ n } osallistujaa"
+      ],
+      "Booking pages": [
+        "Ajanvaraussivut"
+      ],
+      "Browser, mobile, and desktop apps": [
+        "Selain, mobiili- ja työpöytäsovellukset"
+      ],
+      "Meeting recording": [
+        "Kokoustallenne"
+      ],
+      "Screen-sharing": [
+        "Näytön jakaminen"
       ]
     }
   }
