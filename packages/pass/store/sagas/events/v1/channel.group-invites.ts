@@ -1,9 +1,12 @@
 import { all, fork, put, select } from 'redux-saga/effects';
 
-import { type EventManagerEvent, NOOP_EVENT } from '@proton/pass/lib/events/manager';
+import type { EventManagerEvent } from '@proton/pass/lib/events/manager';
+import { NOOP_EVENT } from '@proton/pass/lib/events/manager';
 import { parseGroupInviteVault } from '@proton/pass/lib/invites/invite.parser';
 import { syncInvites } from '@proton/pass/store/actions';
 import type { InviteState } from '@proton/pass/store/reducers';
+import { eventChannelFactory } from '@proton/pass/store/sagas/events/v1/channel.factory';
+import { channelEvents, channelInitalize } from '@proton/pass/store/sagas/events/v1/channel.worker';
 import { selectInvites } from '@proton/pass/store/selectors/invites';
 import type { RootSagaOptions } from '@proton/pass/store/types';
 import type { Api, GroupInvitesListResponse, MaybeNull } from '@proton/pass/types';
@@ -13,9 +16,6 @@ import { partition } from '@proton/pass/utils/array/partition';
 import { truthy } from '@proton/pass/utils/fp/predicates';
 import { logger } from '@proton/pass/utils/logger';
 import { toMap } from '@proton/shared/lib/helpers/object';
-
-import { eventChannelFactory } from './channel.factory';
-import { channelEvents, channelInitalize } from './channel.worker';
 
 const NAMESPACE = 'ServerEvents::GroupInvites';
 
