@@ -29,8 +29,6 @@ import noop from '@proton/utils/noop';
 import LumoLoader from '../../components/LumoLoader';
 import config from '../../config';
 import locales from '../../locales';
-import { IsGuestProvider } from '../../providers/IsGuestProvider';
-import { LumoPlanProvider } from '../../providers/LumoPlanProvider';
 import { LumoThemeProvider } from '../../providers/LumoThemeProvider';
 import { OnboardingProvider } from '../../providers/OnboardingProvider';
 import { createLumoListenerMiddleware } from '../../redux/listeners';
@@ -47,9 +45,6 @@ const GuestContainerLazy = lazy(
     () =>
         import(
             /* webpackChunkName: "GuestContainer" */
-            /* webpackPrefetch: true */
-            /* webpackPreload: true */
-            /* webpackFetchPriority: "high" */
             './BasePublicApp'
         )
 );
@@ -147,15 +142,11 @@ const GuestApp = () => {
                                             <ModalsChildren />
                                             <IndexedDBConnectionMonitor />
                                             <OnboardingProvider>
-                                                <IsGuestProvider isGuest={true}>
-                                                    <LumoPlanProvider>
-                                                        <LumoThemeProvider>
-                                                            <Suspense fallback={<LumoLoader />}>
-                                                                <GuestContainerLazy />
-                                                            </Suspense>
-                                                        </LumoThemeProvider>
-                                                    </LumoPlanProvider>
-                                                </IsGuestProvider>
+                                                <LumoThemeProvider>
+                                                    <Suspense fallback={<LumoLoader />}>
+                                                        <GuestContainerLazy />
+                                                    </Suspense>
+                                                </LumoThemeProvider>
                                             </OnboardingProvider>
                                         </ErrorBoundary>
                                     </ApiProvider>

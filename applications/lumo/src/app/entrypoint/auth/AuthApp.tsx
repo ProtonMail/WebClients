@@ -1,4 +1,4 @@
-import { lazy, useState } from 'react';
+import { Suspense, lazy, useState } from 'react';
 import { Router } from 'react-router-dom';
 
 import {
@@ -36,8 +36,6 @@ const RouterContainerLazy = lazy(
     () =>
         import(
             /* webpackChunkName: "RouterContainer" */
-            /* webpackPrefetch: true */
-            /* webpackPreload: true */
             /* webpackFetchPriority: "high" */
             './RouterContainer'
         )
@@ -114,7 +112,9 @@ const AuthApp = () => {
                                                     <IndexedDBConnectionMonitor />
                                                     <StandardPrivateApp>
                                                         <LumoThemeProvider>
-                                                            <RouterContainerLazy />
+                                                            <Suspense fallback={loader}>
+                                                                <RouterContainerLazy />
+                                                            </Suspense>
                                                         </LumoThemeProvider>
                                                     </StandardPrivateApp>
                                                 </ErrorBoundary>

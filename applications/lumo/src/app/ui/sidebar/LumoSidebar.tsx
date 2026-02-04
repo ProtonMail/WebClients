@@ -1,33 +1,38 @@
-import React, { memo, useCallback, useEffect, useState } from 'react';
+import React, { Suspense, lazy, memo, useCallback, useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import { clsx } from 'clsx';
 import { c } from 'ttag';
-import useFlag from '@proton/unleash/useFlag';
 
-import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { Kbd } from '@proton/atoms/Kbd/Kbd';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { Icon, UserDropdown, useConfig, useModalStateObject } from '@proton/components';
 import { metaKey } from '@proton/shared/lib/helpers/browser';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import lumoCatIcon from '@proton/styles/assets/img/lumo/lumo-cat-icon.svg';
+import useFlag from '@proton/unleash/useFlag';
 
 import { useGuestChatHandler } from '../../hooks/useGuestChatHandler';
 import { useGhostChat } from '../../providers/GhostChatProvider';
 import { useIsGuest } from '../../providers/IsGuestProvider';
-import { useSidebar } from '../../providers/SidebarProvider';
 import { useSearchModal } from '../../providers/SearchModalProvider';
+import { useSidebar } from '../../providers/SidebarProvider';
 import { GuestChatDisclaimerModal } from '../components/GuestChatDisclaimerModal';
 import GuestDisclaimer from '../components/GuestDisclaimer';
-import SettingsModal from '../components/SettingsModal/SettingsModal';
 import { SearchModal } from '../components/SearchModal/SearchModal';
+import SettingsModal from '../components/SettingsModal/SettingsModal';
 import { ChatHistory } from '../sidepanel/ChatHistory';
 import { LumoSidebarUpsell } from '../upsells/composed/LumoSidebarUpsell';
 import { FavoritesSidebarSection } from './FavoritesSidebarSection';
 import ForBusinessSidebarButton from './ForBusinessSidebarButton';
-import { ProjectsSidebarSection } from './ProjectsSidebarSection';
+
+// import { ProjectsSidebarSection } from './ProjectsSidebarSection';
 
 import './LumoSidebar.scss';
+
+const ProjectsSidebarSection = lazy(() =>
+    import('./ProjectsSidebarSection').then((m) => ({ default: m.ProjectsSidebarSection }))
+);
 
 // Hook for text visibility - show immediately as sidebar expands, delay hide during collapse
 const useTextVisibility = (isCollapsed: boolean) => {
@@ -56,9 +61,21 @@ interface SidebarItemProps {
     showShortcutOnHover?: boolean;
 }
 
-const SidebarItem = ({ icon, label, onClick, showText, className, shortcut, showShortcutOnHover }: SidebarItemProps) => (
+const SidebarItem = ({
+    icon,
+    label,
+    onClick,
+    showText,
+    className,
+    shortcut,
+    showShortcutOnHover,
+}: SidebarItemProps) => (
     <Tooltip title={label} originalPlacement="right">
-        <button className={clsx('sidebar-item', className, showShortcutOnHover && 'show-shortcut-on-hover')} onClick={onClick} aria-label={label}>
+        <button
+            className={clsx('sidebar-item', className, showShortcutOnHover && 'show-shortcut-on-hover')}
+            onClick={onClick}
+            aria-label={label}
+        >
             <div className="sidebar-item-icon">
                 <Icon name={icon as any} size={4} className="rtl:mirror" />
             </div>
@@ -141,7 +158,11 @@ const ChatHistorySection = ({ searchValue, showText }: { searchValue: string; sh
                         'text-visible': showText,
                     })}
                 >
-                    <ChatHistory refInputSearch={{ current: null }} onItemClick={closeOnItemClick} searchInput={searchValue} />
+                    <ChatHistory
+                        refInputSearch={{ current: null }}
+                        onItemClick={closeOnItemClick}
+                        searchInput={searchValue}
+                    />
                 </div>
             )}
         </div>
@@ -272,11 +293,13 @@ const LumoSidebarContent = () => {
                     <NewChatButton showText={showText} isSmallScreen={isSmallScreen} />
                 </div>
 
-                {isLumoProjectsEnabled &&
+                {isLumoProjectsEnabled && (
                     <div className="sidebar-section">
-                        <ProjectsSidebarSection showText={showText} onItemClick={closeOnItemClick} />
+                        <Suspense fallback={null}>
+                            <ProjectsSidebarSection showText={showText} onItemClick={closeOnItemClick} />
+                        </Suspense>
                     </div>
-                }
+                )}
 
                 <FavoritesSidebarSection showText={showText} onItemClick={closeOnItemClick} />
 
@@ -332,6 +355,7 @@ const LumoSidebar = () => {
 
     return (
         <>
+            {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
             {isOverlay && <div className="sidebar-backdrop" onClick={toggle}></div>}
             <div
                 className={clsx(
