@@ -3,7 +3,6 @@ import { useMemo } from 'react';
 
 import { c } from 'ttag';
 
-import { useUser } from '@proton/account/user/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
@@ -100,7 +99,6 @@ const ComposerActions = ({
     onToggleToolbar,
     displayToolbar,
 }: Props) => {
-    const [user] = useUser();
     const dispatch = useMailDispatch();
     const { viewportWidth } = useActiveBreakpoint();
     const assistantSpotlight = useSpotlightOnFeature(FeatureCode.ComposerAssistantSpotlight, !viewportWidth['<=small']);
@@ -137,10 +135,6 @@ const ComposerActions = ({
     const handleToggleAssistant = () => {
         if (assistantSpotlight.show) {
             assistantSpotlight.onClose();
-        }
-        if (user.isFree) {
-            assistantUpsellModal.openModal(true);
-            return;
         }
         if (!isAssistantOpened && AIAssistantFlags === AI_ASSISTANT_ACCESS.CLIENT_ONLY) {
             if (!hasCompatibleHardware) {

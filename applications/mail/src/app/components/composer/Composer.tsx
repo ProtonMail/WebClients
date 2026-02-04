@@ -4,6 +4,7 @@ import { createPortal } from 'react-dom';
 
 import { c } from 'ttag';
 
+import { useUser } from '@proton/account/user/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { useHandler, useLocalState, useSubscribeEventManager } from '@proton/components';
 import { getHasAssistantStatus, getIsAssistantOpened } from '@proton/llm/lib';
@@ -92,14 +93,14 @@ const Composer = (
 
     const setAssistantStateRef = useRef(noop);
 
+    const [user] = useUser();
+
     const {
         openedAssistants,
         openAssistant,
         closeAssistant,
         setAssistantStatus,
         canShowAssistant,
-        hasCompatibleBrowser,
-        hasCompatibleHardware,
         initAssistant,
         downloadPaused,
         getIsStickyAssistant,
@@ -250,6 +251,10 @@ const Composer = (
         if (isAssistantOpenedInComposer) {
             closeAssistant(composerID, manual);
         } else {
+            if (user.isFree) {
+                openAssistant(composerID, manual);
+                return;
+            }
             if (aiFlag === AI_ASSISTANT_ACCESS.UNSET) {
                 setInnerModal(ComposerInnerModalStates.AssistantSettings);
                 return;
@@ -268,18 +273,8 @@ const Composer = (
         }
     };
 
-    const canRunAssistant =
-        userSettings.AIAssistantFlags === AI_ASSISTANT_ACCESS.SERVER_ONLY ||
-        (hasCompatibleBrowser && hasCompatibleHardware);
-
-    // open assistant by default if it was opened last time
     useEffect(() => {
-        if (getIsStickyAssistant(composerID, canShowAssistant, canRunAssistant)) {
-            if (userSettings.AIAssistantFlags === AI_ASSISTANT_ACCESS.UNSET) {
-                setInnerModal(ComposerInnerModalStates.AssistantSettings);
-                return;
-            }
-
+        if (getIsStickyAssistant(composerID, canShowAssistant)) {
             openAssistant(composerID);
 
             // Start initializing the Assistant when opening it if able to
@@ -401,7 +396,6 @@ const Composer = (
                 handleDelete={handleDelete}
                 handleSendAnyway={handleSendAnyway}
                 handleCancelSend={handleCancelSend}
-                handleToggleAssistant={(aiFlag) => handleToggleAssistant(true, aiFlag)}
                 composerID={composerID}
             />
             <div className="composer-blur-container flex flex-column flex-1 max-w-full">
