@@ -168,7 +168,7 @@ export const MeetingBody = ({
                             manageSubscription={false}
                         />
                         <div
-                            className="absolute bottom-custom left-custom"
+                            className="absolute bottom-custom left-custom flex"
                             style={{ '--bottom-custom': '1rem', '--left-custom': '1rem' }}
                         >
                             <SecurityShield
