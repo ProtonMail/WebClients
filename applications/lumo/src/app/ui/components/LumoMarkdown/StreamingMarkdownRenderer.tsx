@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 
 import type { SearchItem } from '../../../lib/toolCall/types';
 import type { Message } from '../../../types';
-import { ProgressiveMarkdownRenderer } from './ProgressiveMarkdownRenderer';
+import { LazyProgressiveMarkdownRenderer } from './LazyMarkdownComponents';
 
 /**
  * Optimized Streaming Markdown Renderer
@@ -99,7 +99,7 @@ const StreamingMarkdownRenderer: React.FC<StreamingMarkdownProps> = React.memo(
 
         // Use progressive rendering - renders complete blocks once, only re-parses incomplete section
         return (
-            <ProgressiveMarkdownRenderer
+            <LazyProgressiveMarkdownRenderer
                 content={displayContent}
                 isStreaming={effectiveIsStreaming}
                 handleLinkClick={handleLinkClick}

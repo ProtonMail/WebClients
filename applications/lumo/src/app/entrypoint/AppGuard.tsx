@@ -1,7 +1,10 @@
-import { useEffect, useMemo } from 'react';
+import { Suspense, lazy, useEffect, useMemo } from 'react';
 
-import AuthApp from './auth/AuthApp';
-import GuestApp from './guest/GuestApp';
+import { c } from 'ttag';
+
+import TextLoader from '@proton/components/components/loader/TextLoader';
+
+import { LUMO_APP_NAME } from '../constants';
 import { notifyMobileAppLoaded } from '../util/mobileAppNotification';
 
 export const LUMO_ROUTES = {
@@ -17,8 +20,30 @@ const determineRouteType = (pathname: string): 'private' | 'public' => {
     return 'private';
 };
 
+const AuthApp = lazy(
+    () =>
+        import(
+            /* webpackChunkName: "AuthApp" */
+            './auth/AuthApp'
+        )
+);
+
+const GuestApp = lazy(
+    () =>
+        import(
+            /* webpackChunkName: "GuestApp" */
+            './guest/GuestApp'
+        )
+);
+
 const AppGuard = () => {
     const routeType = useMemo(() => determineRouteType(window.location.pathname), [window.location.pathname]);
+
+    const fallback = (
+        <div className="absolute inset-center text-center">
+            <TextLoader className="color-weak ml-5">{c('Loading').t`Loading ${LUMO_APP_NAME}`}</TextLoader>
+        </div>
+    );
 
     // Notify mobile apps that the Lumo application is fully loaded
     // This runs once when AppGuard mounts, avoiding duplicate notifications
@@ -27,10 +52,18 @@ const AppGuard = () => {
     }, []);
 
     if (routeType === 'private') {
-        return <AuthApp />;
+        return (
+            <Suspense fallback={fallback}>
+                <AuthApp />
+            </Suspense>
+        );
     }
 
-    return <GuestApp />;
+    return (
+        <Suspense fallback={fallback}>
+            <GuestApp />
+        </Suspense>
+    );
 };
 
 export default AppGuard;

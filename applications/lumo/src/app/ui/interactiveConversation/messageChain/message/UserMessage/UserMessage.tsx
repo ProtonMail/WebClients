@@ -15,7 +15,7 @@ import { selectAttachments } from '../../../../../redux/selectors';
 import type { Attachment } from '../../../../../types';
 import { sendMessageEditEvent } from '../../../../../util/telemetry';
 import { FileCard, FileContentModal } from '../../../../components/Files';
-import LumoMarkdown from '../../../../components/LumoMarkdown/LumoMarkdown';
+import { LazyLumoMarkdown } from '../../../../components/LumoMarkdown/LazyMarkdownComponents';
 import SiblingSelector from '../../../../components/SiblingSelector';
 import useCollapsibleMessageContent from '../useCollapsibleMessageContent';
 import MessageEditor from './MessageEditor';
@@ -63,17 +63,17 @@ interface UserMessageProps {
     siblingInfo: SiblingInfo;
     handleEditMessage: HandleEditMessage;
     newMessageRef?: React.MutableRefObject<HTMLDivElement | null>;
-    onOpenFiles?: (message: Message) => void;
+    // onOpenFiles?: (message: Message) => void;
 }
 
-const UserMessage = ({ message, messageContent, siblingInfo, handleEditMessage, newMessageRef, onOpenFiles }: UserMessageProps) => {
+const UserMessage = ({ message, messageContent, siblingInfo, handleEditMessage, newMessageRef }: UserMessageProps) => {
     const [isEditing, setIsEditing] = useState(false);
     const [fileToView, setFileToView] = useState<Attachment | null>(null);
     const { isWebSearchButtonToggled } = useWebSearch();
 
     // Get full attachment data from Redux (shallow attachments in message only contain ID and basic metadata)
     const allAttachments = useLumoSelector(selectAttachments);
-    
+
     // Only show manually uploaded attachments to THIS message
     // Exclude auto-retrieved files (both Drive files and project files retrieved via RAG)
     // We check BOTH the shallow attachment (from message) AND full attachment (from Redux)
@@ -83,14 +83,14 @@ const UserMessage = ({ message, messageContent, siblingInfo, handleEditMessage, 
             const fullAttachment = allAttachments[shallowAttachment.id];
             // Check autoRetrieved on both shallow and full attachment
             const isAutoRetrieved = shallowAttachment.autoRetrieved || fullAttachment?.autoRetrieved;
-            
+
             if (isAutoRetrieved) {
                 return null; // Exclude auto-retrieved files (Drive or project files)
             }
             return fullAttachment || null;
         })
         .filter(Boolean) as Attachment[];
-    
+
     const hasAttachments = manualAttachments.length > 0;
 
     const { contentRef, isCollapsed, showCollapseButton, toggleCollapse } = useCollapsibleMessageContent(message);
@@ -124,7 +124,7 @@ const UserMessage = ({ message, messageContent, siblingInfo, handleEditMessage, 
                 <MessageEditor
                     messageContent={messageContent || ''}
                     handleEditMessage={(newContent) => {
-                        handleEditMessage(message, newContent, isWebSearchButtonToggled);
+                        void handleEditMessage(message, newContent, isWebSearchButtonToggled);
                         setIsEditing(false);
                     }}
                     handleCancel={() => setIsEditing(false)}
@@ -138,7 +138,7 @@ const UserMessage = ({ message, messageContent, siblingInfo, handleEditMessage, 
                         )}
                         ref={contentRef}
                     >
-                        <LumoMarkdown message={message} content={messageContent} />
+                        <LazyLumoMarkdown message={message} content={messageContent} />
                     </div>
                 </div>
             )}
