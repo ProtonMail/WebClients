@@ -41,7 +41,6 @@ interface Props extends ModalProps<typeof Form> {
     showIPv6?: boolean;
     showLoad?: boolean;
     showCancelButton?: boolean;
-    singleServer?: boolean;
     isDeleted: (logical: GatewayLogical) => boolean;
     onSubmitDone: (deletedLogicalIds: readonly string[], addedQuantities: Record<string, number>) => Promise<void>;
     onUpsell: () => void;
@@ -60,7 +59,6 @@ const GatewayServersModal = ({
     showIPv6 = true,
     showLoad = true,
     showCancelButton = false,
-    singleServer = false,
     isDeleted,
     onSubmitDone,
     onUpsell,
@@ -145,7 +143,6 @@ const GatewayServersModal = ({
             usedCount: usedCount - deletedServerCount + addedServerCount,
             users,
             countryOptions,
-            singleServer,
             showCancelButton,
             citiesAlreadyInUse: logicalsAlreadyInUse.map((logical) => logical.City),
             onSubmitDone: addQuantities,

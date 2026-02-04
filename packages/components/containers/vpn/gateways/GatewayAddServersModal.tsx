@@ -33,7 +33,6 @@ interface Props extends ModalStateProps {
     users: readonly GatewayUser[];
     countryOptions: CountryOptions;
     citiesAlreadyInUse: string[];
-    singleServer?: boolean;
     showCancelButton?: boolean;
     onSubmitDone: (quantities: Record<string, number>) => void;
     onUpsell: () => void;
@@ -49,7 +48,6 @@ const GatewayAddServersModal = ({
     onSubmitDone,
     onUpsell,
     citiesAlreadyInUse,
-    singleServer = false,
     showCancelButton = false,
     ...rest
 }: Props) => {
@@ -118,7 +116,6 @@ const GatewayAddServersModal = ({
                         <ModalTwoHeader title={c('Title').t`Add dedicated servers`} />
                         <ModalTwoContent>
                             <GatewayCountrySelection
-                                singleServer={singleServer}
                                 locations={locations}
                                 ownedCount={ownedCount}
                                 usedCount={usedCount}
