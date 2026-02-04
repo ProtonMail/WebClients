@@ -3123,6 +3123,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du har redan skapat 10 alias. Skaffa obegränsat antal alias och 500 GB lagringsutrymme med ${ BRAND_NAME } Unlimited."
+      ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "För import via en CSV- och VCF-fil, se till att filen inte överstiger ${ MAX_IMPORT_FILE_SIZE_STRING } eller ${ maxContactString } kontakter. Om din fil är större, dela upp den i mindre filer. ${ learnMoreLink }."
       ]
     },
     "description": {
@@ -3967,6 +3970,9 @@
       ],
       "ZIP code is required": [
         "Postnummer är obligatoriskt"
+      ],
+      "This offer is not available in your country": [
+        "Detta erbjudande är inte tillgängligt i ditt land"
       ]
     },
     "error": {
@@ -4052,6 +4058,9 @@
       ],
       "Your file ${ formattedFilename } is empty.": [
         "Din fil ${ formattedFilename } är tom."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ maxContactString } contacts.": [
+        "Din fil ${ formattedFilename } innehåller fler än ${ maxContactString } kontakter."
       ]
     },
     "Error importing event": {
@@ -6417,6 +6426,10 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Du kommer fortfarande att kunna se dina egna kontodata, men alla användarkonton kommer att tas bort från din organisation."
+      ],
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "Alla dina kontakter kommer att importeras, upp till en gräns på ${ maxContact }",
+        "Alla dina kontakter kommer att importeras, upp till en gräns på ${ maxContact }"
       ]
     },
     "info": {
@@ -7466,6 +7479,19 @@
       "Up to ${ n } participant": [
         "Upp till ${ n } deltagare",
         "Upp till ${ n } deltagare"
+      ],
+      "${ n } participant": [
+        "${ n } deltagare",
+        "${ n } deltagare"
+      ],
+      "Booking pages": [
+        "Bokningssidor"
+      ],
+      "End-to-end encrypted screen sharing and ephemeral in-call chat": [
+        "End-to-end-krypterad skärmdelning och kortvarig chatt i samtal"
+      ],
+      "Meeting recording": [
+        "Mötesinspelning"
       ]
     },
     "Message": {
@@ -8197,6 +8223,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Vi skannar den mörka webben för att kontrollera om dina ${ BRAND_NAME }-adresser eller alias har läckt och varnar dig omedelbart om vi hittar något."
+      ],
+      "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
+        "Telefonsupport (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ användare)"
       ]
     },
     "new_plans: feature highlight": {
@@ -8564,6 +8593,9 @@
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "Du kan ha mer än en administratör. Alla administratörer kan lägga till och hantera användare men endast den primära administratören har kontroll över fakturering."
+      ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } or more users": [
+        "Telefonsupport är tillgänglig från ${ BRAND_NAME } kundtjänst under europeiska öppettider, för kunder med ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } eller fler användare"
       ]
     },
     "new_plans: Upsell attribute": {
@@ -9350,6 +9382,13 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Din prenumeration har för närvarande en befintlig rabatt. Att flytta till denna nya kampanj innebär att den befintliga rabatten inte längre kommer att tillämpas."
+      ],
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "Rabatten är giltig för ${ renewalsWithCoupon } förnyelse.",
+        "Rabatten är giltig för ${ renewalsWithCoupon } förnyelser."
+      ],
+      "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
+        "Det speciellt rabatterade priset är giltig för den första månaden. Sedan kommer det förnyas automatiskt med ${ renewPriceStr } varje månad. Du kan avbryta när som helst."
       ]
     },
     "Payments.Error": {
@@ -12058,6 +12097,9 @@
       ],
       "Your shorter address is now ready": [
         "Din kortare adress är redo nu"
+      ],
+      "Your ${ planTitle } subscription has started": [
+        "Din ${ planTitle }-prenumeration har startat"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

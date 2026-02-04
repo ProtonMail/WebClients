@@ -2898,6 +2898,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "您已创建了 10 个别名。使用 ${ BRAND_NAME }  Unlimited，获得无限别名和 500 GB 的存储空间。"
+      ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "如需通过 CSV 和 VCF 文件导入，请确保文件不超过 ${ MAX_IMPORT_FILE_SIZE_STRING } 或 ${ maxContactString } 位联系人。如果文件较大，请将其拆分成更小的文件。${ learnMoreLink }."
       ]
     },
     "description": {
@@ -3736,6 +3739,9 @@
       ],
       "Your file ${ formattedFilename } is empty.": [
         "文件 ${ formattedFilename } 为空。"
+      ],
+      "Your file ${ formattedFilename } contains more than ${ maxContactString } contacts.": [
+        "您的文件 ${ formattedFilename } 中的联系人数已超过 ${ maxContactString }。"
       ]
     },
     "Error importing event": {
@@ -5902,6 +5908,9 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "您仍然可以查看您自己的账户数据，但所有用户账户将从您的组织中移除。"
+      ],
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "您的所有联系人都将被导入，最多可达 ${ maxContact } 人"
       ]
     },
     "info": {

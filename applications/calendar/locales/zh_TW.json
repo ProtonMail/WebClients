@@ -916,6 +916,78 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "桌面應用程式免費試用期將會在${ formattedEndDate }.${ upgradeButton }完結"
+      ],
+      "Add a date": [
+        "新增日期"
+      ],
+      "Add secret passphrase": [
+        "新增秘密助記詞"
+      ],
+      "Close sidebar": [
+        "關閉側邊欄"
+      ],
+      "Confirm booking": [
+        "確認預訂"
+      ],
+      "Copy alias “${ name }”": [
+        "複製別名 \"${ name }\""
+      ],
+      "Create a booking page": [
+        "建立預約頁面"
+      ],
+      "Create a free account": [
+        "建立一個免費帳戶"
+      ],
+      "Create a new booking page": [
+        "建立新的預約頁面"
+      ],
+      "Create booking page": [
+        "建立預約頁面"
+      ],
+      "Delete booking page": [
+        "刪除預定頁面"
+      ],
+      "Edit booking page": [
+        "編輯預定頁面"
+      ],
+      "Expand navigation bar to see bookings": [
+        "展開導航以查看預定"
+      ],
+      "Get a free ${ BRAND_NAME } address": [
+        "獲取免費 ${ BRAND_NAME } 電郵位址"
+      ],
+      "Go to the first available appointment": [
+        "至第一個可用預定"
+      ],
+      "Go to the next available appointment": [
+        "至下一個可用預定"
+      ],
+      "Join with ${ MEET_APP_NAME }": [
+        "透過 ${ MEET_APP_NAME } 加入"
+      ],
+      "Manage advanced account protections": [
+        "管理進階帳戶保護"
+      ],
+      "Manage users/addresses": [
+        "管理使用者/電子郵件地址"
+      ],
+      "Remove the booking range": [
+        "移除此預定頁面"
+      ],
+      "Reply with a note": [
+        "透過筆記回覆"
+      ],
+      "See upcoming availability": [
+        "查看將來的可用時間"
+      ],
+      "Select ${ dateHeaderLongString } at ${ timeString }": [
+        "於 ${ timeString } 選取 ${ dateHeaderLongString } 時長"
+      ],
+      "Set up a custom domain": [
+        "設置個自訂域名"
+      ],
+      "Share your calendar with your team": [
+        "與團隊共享您的行事曆"
       ]
     },
     "action": {
@@ -1092,6 +1164,15 @@
       ],
       "You have reached the trial limit.": [
         "您已達到試用限制。"
+      ],
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "在 ${ formattedDate1 } 試用結束後，它會變成付費訂閱，並將每月自動續訂。若您在 ${ formattedDate2 } 前取消，則不會被收費。"
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "您可在試用期內盡情享有多 ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } 席位。"
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "您無法於試用期新增自訂網域。"
       ]
     },
     "b2b_trials_Action": {
@@ -1160,6 +1241,21 @@
       ],
       "Unlimited folders, labels and filters": [
         "資料夾、標籤與篩選器無上限"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB 儲存空間: 40x 您目前的方案"
+      ],
+      "Admin panel to manage your family": [
+        "管理員面板以管理您的家庭"
+      ],
+      "Recover previous file versions": [
+        "復原先前的檔案版本"
+      ],
+      "Unlimited logins, credit cards, hide-my-email aliases and more": [
+        "無上限登入、信用卡、 hide-my-email 別名和更多"
+      ],
+      "Use your own email domain": [
+        "使用您的電子郵件網域"
       ]
     },
     "BF2024: Offers": {
@@ -1182,6 +1278,12 @@
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "透過端對端加密保護電子郵件及行事曆。包含15個電子郵件地址,支援自訂電子郵件網域,${ BRAND_NAME }Scribe 撰寫工具，無限hide-my-email別名及更多"
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "透過端對端加密保護電子郵件及行事曆。包含 15 電子郵件地址、支援自訂電子郵件網域、無限hide-my-email別名及更多"
+      ],
+      "Storage space is shared across all ${ BRAND_NAME } services.": [
+        "儲存空間於全部的 ${ BRAND_NAME } 服務。"
       ]
     },
     "BF2025: Deal details": {
@@ -1336,6 +1438,9 @@
       ],
       "Website access problem": [
         "網站存取問題"
+      ],
+      "Authenticator problem": [
+        "驗證問題"
       ]
     },
     "Button": {
@@ -1601,6 +1706,9 @@
       ],
       "Ultra fast and private VPN": [
         "超快與私有的VPN"
+      ],
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "您的頂級質子版服務賴自於 ${ BRAND_NAME } 、 ${ MAIL_SHORT_APP_NAME } 、 ${ PASS_SHORT_APP_NAME } 、 ${ VPN_SHORT_APP_NAME } 、 ${ DRIVE_SHORT_APP_NAME } 和 ${ CALENDAR_SHORT_APP_NAME }"
       ]
     },
     "Checkout row": {
@@ -1646,6 +1754,21 @@
       ],
       "Web search access": [
         "網頁搜尋存取"
+      ],
+      "Built and based in Europe": [
+        "基於歐洲創建"
+      ],
+      "Limited daily chats": [
+        "有限每日聊天"
+      ],
+      "Limited favorites": [
+        "有限的收藏"
+      ],
+      "Strict no-logs policy": [
+        "嚴格的無紀錄日誌政策"
+      ],
+      "Zero-access encryption": [
+        "零存取加密"
       ]
     },
     "collider_2025: Info": {
@@ -2667,6 +2790,15 @@
     "Custom frequency option": {
       "event": [
         "事件"
+      ],
+      "Doesn't end": [
+        "不會結束"
+      ],
+      "Ends after": [
+        "結束於"
+      ],
+      "Ends on": [
+        "結束於"
       ]
     },
     "customer_support.feature.all": {
@@ -2870,6 +3002,27 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "您已經創建10個別名。${ BRAND_NAME }無限版可獲得無限別名和500GB的儲存容量。"
+      ],
+      "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
+        "添加資料夾和檔案至 ${ DRIVE_APP_NAME } 和邀請成員瀏覽或編輯。"
+      ],
+      "Automatically forward incoming email to another email address.": [
+        "自動轉寄傳入的電子郵件到其它電子郵件地址。"
+      ],
+      "Configure this first to activate your organization and customize your email address.": [
+        "設置此以先啟動您的組織和自訂您的電子郵件地址。"
+      ],
+      "Connect your CRM, website, printers, and more.": [
+        "連線至您的 CRM、網站、影印機、和其它。"
+      ],
+      "Create groups you can email with a single address.": [
+        "創建您可透單一位址傳送電子郵件的群組"
+      ],
+      "Simplify syncing and scheduling with shared calendars.": [
+        "透過共享行事曆以簡化同步和排程"
+      ],
+      "To start, give your organization a name.": [
+        "若要開始，為貴組織取個名稱。"
       ]
     },
     "description": {
@@ -3001,6 +3154,9 @@
       ],
       "Only": [
         "僅"
+      ],
+      "All premium features from your current plan": [
+        "來自於您現行方案的全部頂級質子版功能"
       ]
     },
     "Duo offer: Link": {
@@ -3638,6 +3794,24 @@
       ],
       "ZIP code is required": [
         "郵遞區號為必要項目"
+      ],
+      "Failed to create ${ MEET_APP_NAME } video conference": [
+        "創建 ${ MEET_APP_NAME } 視訊會議失敗"
+      ],
+      "Failed to decrypt session key": [
+        "解密工作階段金鑰失敗"
+      ],
+      "Failed to update secret passphrase": [
+        "更新秘密助記詞失敗"
+      ],
+      "Location is required": [
+        "必須選擇位置"
+      ],
+      "No booking page data received": [
+        "尚無接受到預定頁面的資料"
+      ],
+      "This offer is not available in your country": [
+        "此優惠在您的國家/地區無法使用"
       ]
     },
     "error": {
@@ -3719,6 +3893,9 @@
       ],
       "Your file ${ formattedFilename } is empty.": [
         "您的檔案 ${ formattedFilename } 是空的。"
+      ],
+      "Your file ${ formattedFilename } contains more than ${ maxContactString } contacts.": [
+        "您的檔案 ${ formattedFilename } 包含多於 ${ maxContactString } 位聯絡人。"
       ]
     },
     "Error importing event": {
@@ -4080,6 +4257,9 @@
       ],
       "Unlimited hide-my-email aliases": [
         "無限制的 hide-my-email 別名"
+      ],
+      "Encrypted cloud storage for files, photos and documents": [
+        "給予檔案、照片和文件的加密雲端儲存"
       ]
     },
     "fido2: Error": {
@@ -4222,6 +4402,9 @@
       ],
       "Security Center": [
         "安全中心"
+      ],
+      "Username": [
+        "使用者名稱"
       ]
     },
     "Hint": {
@@ -4435,6 +4618,12 @@
       ],
       "Your password is correct.": [
         "您的密碼正確無誤。"
+      ],
+      "Two-factor authentication is enabled in your external account.": [
+        "您的外部帳號已啟用兩步驟驗證。"
+      ],
+      "Two-factor authentication is enabled in your external email account.": [
+        "您的外部電郵帳號已啟用兩步驟驗證。"
       ]
     },
     "Import instructions": {
@@ -5790,6 +5979,153 @@
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "您的系統時區似乎已更改為 ${ timezone }。您要更新您的時區喜好設定嗎？"
+      ],
+      "${ bookingDetails.duration } min": [
+        "${ bookingDetails.duration }分鐘"
+      ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
+        "${ CALENDAR_APP_NAME } 需要 ${ BRAND_NAME } 位址以進行安全的事件同步與加密。${ claimAddressButton }"
+      ],
+      "${ MEET_APP_NAME } video call": [
+        "${ MEET_APP_NAME } 視訊"
+      ],
+      "**Step 2:** Your friends get 2 weeks for free on their chosen ${ BRAND_NAME } plan.": [
+        "**步驟 2 ** 您的朋友取得 ${ BRAND_NAME } 方案的 2 週免費。"
+      ],
+      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
+        "**第三步：**每當有使者訂閱方案時，您將獲得 ${ referrerRewardAmount } 額度。"
+      ],
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "所有聯絡人將被匯入，至多 ${ maxContact }"
+      ],
+      "Appointment duration": [
+        "預約時長"
+      ],
+      "Are you sure you want to delete this booking page?": [
+        "您確定要刪除此預定頁面？"
+      ],
+      "Booking page deleted": [
+        "預定頁面已刪除"
+      ],
+      "Booking page example": [
+        "預定頁面的樣本"
+      ],
+      "Booking updated successfully": [
+        "預訂更新成功"
+      ],
+      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
+        "將訊息、聯絡人和行事曆匯入 ${ BRAND_NAME }。"
+      ],
+      "Choose a plan that works best for you.": [
+        "選擇最適合於您的方案。"
+      ],
+      "Failed to update meeting name": [
+        "更新會議名稱失敗"
+      ],
+      "Failed to update meeting password": [
+        "更新會議密碼失敗"
+      ],
+      "Google Pay mark": [
+        "Google Pay 標記"
+      ],
+      "Host": [
+        "主持"
+      ],
+      "How long should an appointment last?": [
+        "預約應持續多久？"
+      ],
+      "Learn what to do ${ dataLeakedLink }": [
+        "寮解渴做什麼 ${ dataLeakedLink }"
+      ],
+      "Location": [
+        "位置"
+      ],
+      "Manage booking page": [
+        "管理預定頁面"
+      ],
+      "No appointments available": [
+        "沒有可用的預定"
+      ],
+      "No appointments available this week": [
+        "此週沒有預定"
+      ],
+      "No calendar available; please delete the booking page.": [
+        "無可用行事曆;請刪除此預定頁面。"
+      ],
+      "No future appointments available": [
+        "無未來可用的預定"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "團隊專用的 VPN 伺服器數量"
+      ],
+      "Powered by": [
+        "驅動"
+      ],
+      "Powered by ${ protonButton }": [
+        "透過 ${ protonButton } 驅動"
+      ],
+      "Previously booked events won't be deleted.": [
+        "之前預定地事件無法被刪除。"
+      ],
+      "Range already exists.": [
+        "範圍已存在"
+      ],
+      "Range is too short.": [
+        "範圍太短。"
+      ],
+      "Saving event": [
+        "正在儲存活動"
+      ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Apple App Store by ${ byDate }. ${ reactivateLink }": [
+        "訂購授權即將到期，請於${ byDate }前至 App Store 重新訂購以保留您的${ planName }權益。${ reactivateLink }"
+      ],
+      "Take control of your digital life": [
+        "控制您的數位生活"
+      ],
+      "Thank you for subscribing. Secure browsing starts now.": [
+        "感謝您訂閱。立即安全瀏覽。"
+      ],
+      "This booking was made via ${ CALENDAR_APP_NAME }, part of ${ BRAND_NAME }'s suite of privacy-first products.": [
+        "此預定是透過 ${ CALENDAR_APP_NAME }，是 ${ BRAND_NAME } 的隱私優先的產品之一。"
+      ],
+      "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
+        "此是貴組織使用者可看見的名稱或暱稱。您可隨時時修正它。"
+      ],
+      "To add a new booking page, ask your admin to upgrade your plan.": [
+        "若要新增預定頁面，詢問您的管理員升級您的方案。"
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar.": [
+        "若要新增預定頁面，於預定頁面移除現有的。"
+      ],
+      "To add a new booking page, upgrade your plan.": [
+        "若要新增預定頁面，升級您的方案。"
+      ],
+      "Upgrade to keep your ${ planTitle } benefits.": [
+        "升級以保留您的 ${ planTitle } 權益。"
+      ],
+      "Where will the appointment take place?": [
+        "預約將在哪裡舉行？"
+      ],
+      "You've reached the maximum number of booking pages available in your plan.": [
+        "您已達到您方案中預定頁面的最大數量了。"
+      ],
+      "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "您的 ${ plan } 訂閱方案將被轉換成 ${ PASS_SHORT_APP_NAME } 終身方案。原訂閱中剩餘的額度將被退回您的帳戶。${ PASS_SHORT_APP_NAME } 終身方案不再需要續約，此次付費將能終身使用 ${ PASS_SHORT_APP_NAME }。"
+      ],
+      "Your free trial was successfully converted to a ${ cycle }-month subscription. Your renewal date is ${ nextBillingDate }.": [
+        "您的免費試用已成功轉換為每 ${ cycle } 月訂購授權。您的續訂日期為 ${ nextBillingDate }。"
+      ],
+      "Your trial will end in ${ timeRemaining }.": [
+        "您的試用將於 ${ timeRemaining } 結束."
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "您將失去存取至 ${ boldPlanTitle } 功能:"
+      ],
+      "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
+        "您將失去存取於 ${ boldEndDate } 的 ${ boldPlanTitle }"
+      ],
+      "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
+        "您仍可瀏覽您的帳號資料，但所有使用者帳號將被從貴組織移除。"
       ]
     },
     "info": {
@@ -6448,6 +6784,51 @@
       ],
       "Zoom meeting": [
         "Zoom 會議"
+      ],
+      "Add ${ MEET_APP_NAME } conferencing": [
+        "添加 ${ MEET_APP_NAME } 會議"
+      ],
+      "Add Zoom meeting": [
+        "新增 Zoom 會議"
+      ],
+      "Alias title": [
+        "別名標題"
+      ],
+      "Copy the link or manage your page from here anytime.": [
+        "於任何時候在此複製此連結或管理您的頁面。"
+      ],
+      "Create shareable pages where people can book time with you.": [
+        "建立共享頁面，讓其他人可以與您預約時間。"
+      ],
+      "Enable desktop notifications": [
+        "啟用桌面通知"
+      ],
+      "Full name": [
+        "全名"
+      ],
+      "Get the deal": [
+        "取得優惠"
+      ],
+      "Notifications are disabled, to enable them change the browser settings.": [
+        "通知已關閉，若要啟用它們請變更瀏覽器設定。"
+      ],
+      "Password strength": [
+        "密碼強度"
+      ],
+      "Repeat weekly": [
+        "每週重複"
+      ],
+      "Unavailable": [
+        "無法使用"
+      ],
+      "Very Dissatisfied": [
+        "非常不滿意"
+      ],
+      "Video conference": [
+        "視訊會議"
+      ],
+      "Your password (trusted contact)": [
+        "您的密碼 (信任的內容)"
       ]
     },
     "Label for contact group color": {
@@ -6574,6 +6955,39 @@
       ],
       "What’s this?": [
         "這是什麼？"
+      ],
+      "Booking pages": [
+        "預定頁面"
+      ],
+      "How to collaborate in ${ DOCS_SHORT_APP_NAME }": [
+        "如何於 ${ DOCS_SHORT_APP_NAME } 合作"
+      ],
+      "How to enable ${ PROTON_SENTINEL_NAME }": [
+        "如何啟用 ${ PROTON_SENTINEL_NAME }"
+      ],
+      "How to migrate to ${ BRAND_NAME }": [
+        "如何遷移至 ${ BRAND_NAME }"
+      ],
+      "How to set up ${ VPN_APP_NAME }": [
+        "如何設定 ${ VPN_APP_NAME }"
+      ],
+      "How to set up a custom domain": [
+        "如何設置個自訂域名"
+      ],
+      "How to set up SMTP": [
+        "如何設置 SMTP"
+      ],
+      "How to share a calendar": [
+        "如何共享行事曆"
+      ],
+      "How to use ${ PASS_APP_NAME } for Business": [
+        "如何將 ${ PASS_APP_NAME } 用於商務"
+      ],
+      "if your data is leaked": [
+        "若您的資料外洩"
+      ],
+      "Types of recovery methods": [
+        "復原方式的種類"
       ]
     },
     "Link label (optional)": {
@@ -6691,6 +7105,36 @@
       ],
       "Up to ${ n } participant": [
         "至多 ${ n } 位參與者"
+      ],
+      "${ n } participant": [
+        "${ n } 位參與者"
+      ],
+      "24 hours per meeting": [
+        "24 小時會議"
+      ],
+      "60 minutes per meeting": [
+        "60 分鐘會議"
+      ],
+      "Appointment scheduling": [
+        "預定排定中"
+      ],
+      "Booking pages": [
+        "預定頁面"
+      ],
+      "Browser, mobile, and desktop apps": [
+        "瀏覽器、移動端和桌面應用程式"
+      ],
+      "Built-in chat": [
+        "內建聊天"
+      ],
+      "One active meeting at a time": [
+        "單次單個會議進行"
+      ],
+      "Screen-sharing": [
+        "螢幕共享"
+      ],
+      "Unlimited meetings per day": [
+        "每日郵件無上限"
       ]
     },
     "Message": {
@@ -6702,6 +7146,9 @@
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "您的免費滿意體驗期已結束。您即將無法存取您的帳戶。${ action }"
+      ],
+      "Your free trial has ended. ${ nonAutoRenewalAction }": [
+        "您的免費試用已結束。 ${ nonAutoRenewalAction }"
       ]
     },
     "Message display when a new app version is available": {
@@ -7388,6 +7835,12 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "我們會掃描暗網去檢查你的${ BRAND_NAME }地址或别名是否被外洩，並且在發現任何問題時立即通知你。"
+      ],
+      "Existing ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } benefits": [
+        "現有 ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } 福利"
+      ],
+      "Short domain (@pm.me)": [
+        "短網域 (@pm.me)"
       ]
     },
     "new_plans: feature highlight": {
@@ -7489,6 +7942,9 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "你正在當前的方案中享受促銷價格。若你將帳號降級，你將會永遠失去此促銷價，即使你決定重新訂閱也是。"
+      ],
+      "200 GB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "200 GB 的雲端儲存空間，讓您可以輕鬆儲存、同步及共享檔案。受端對端加密保護。"
       ]
     },
     "new_plans: label": {
@@ -8021,6 +8477,18 @@
       ],
       "Your subscription renews soon": [
         "您的訂閱即將重新續約"
+      ],
+      "${ BRAND_NAME } Unlimited for 12 months": [
+        "十二個月的 ${ BRAND_NAME } Unlimited"
+      ],
+      "Limited-time offer, valid for your first month": [
+        "限時優惠，適用於您的首月"
+      ],
+      "Upgrade your productivity for just ${ pricingTitle } with ${ planName }": [
+        "以 ${ pricingTitle } 的 ${ planName } 方案提升您的工作效率"
+      ],
+      "Upgrade your storage for just ${ pricingTitle } with ${ planName }": [
+        "以 ${ planName } 的 ${ pricingTitle } 方案升級您的儲存空間"
       ]
     },
     "Offer fearue": {
@@ -8049,6 +8517,18 @@
       ],
       "Storage": [
         "雲端儲存"
+      ],
+      "Advanced threat protection": [
+        "進階的威脅保護"
+      ],
+      "Edit docs online": [
+        "線上編輯文件"
+      ],
+      "File version history (over 1 week)": [
+        "檔案版本歷史紀錄 (超過一周)"
+      ],
+      "Ultrafast VPN servers in 110+ countries": [
+        "在110 多個國家提供極速 VPN 伺服器"
       ]
     },
     "Onboarding": {
@@ -8114,6 +8594,15 @@
       ],
       "Your free trial has started": [
         "您的免費試用已開始"
+      ],
+      "Cancel anytime before ${ cancelDate }.": [
+        "於 ${ cancelDate } 前隨時取消。"
+      ],
+      "You can still cancel within 30 days and get a pro-rata refund.": [
+        "您仍然可以在 30 天內取消並獲得按比例的退款。"
+      ],
+      "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
+        "您可使用 ${ planTitle } 直到試用結束，您將不會被收費。"
       ]
     },
     "Option": {
@@ -8210,6 +8699,9 @@
       ],
       "Secure vault, item and link sharing": [
         "安全保管庫、項目和共享連結"
+      ],
+      "Unlimited logins, notes, credit cards and more": [
+        "無限登入、筆記、信用卡和更多"
       ]
     },
     "pass_signup_2023: Title": {
@@ -8232,6 +8724,9 @@
       ],
       "Team policies": [
         "團隊政策"
+      ],
+      "File attachments (up to 10GB)": [
+        "檔案附件 (至多 10 GB)"
       ]
     },
     "PassFamilyPlan2024": {
@@ -8398,6 +8893,30 @@
       ],
       "Your payment is still being processed": [
         "您的付款仍在處理中"
+      ],
+      "terms and conditions": [
+        "合約條款"
+      ],
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "此折扣可適用續約訂購 ${ renewalsWithCoupon } 。"
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "特殊折扣將套用於 ${ couponRedemptions } 個月。其後以 1 個月 ${ renewPriceStr } 自動續約。您可以在任何時候取消。"
+      ],
+      "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
+        "特殊折扣將套用於第一個月。其後將於每月自動以 ${ renewPriceStr } 續約。您可以在任何時候取消。"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "享受特惠折扣 ${ priceWithDiscount } ${ couponRedemptions } 個月。而後將以每 1 月 ${ renewPriceStr } 的價格自動續約。您可以在任何時候取消訂閱。"
+      ],
+      "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
+        "此行動將擴增現有訂閱。 您將只被收取先新添加和目前帳單週期剩餘的時間。您訂閱的續訂日期將維持不變。"
+      ],
+      "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
+        "您已有此方案的訂閱。您可變更訂閱於 ${ subscriptionPlatform }。"
+      ],
+      "You will soon be redirected to verify your payment.": [
+        "將會被重新導向驗證您的付款。"
       ]
     },
     "Payments.Error": {
@@ -8445,6 +8964,9 @@
       ],
       "Yes, I'm sure": [
         "是的，我確定"
+      ],
+      "Your plan includes this feature already.": [
+        "您的方案以包含此功能。"
       ]
     },
     "Payments.plan_name": {
@@ -8490,6 +9012,12 @@
       ],
       "VAT number": [
         "增值稅編號（VAT）"
+      ],
+      "Add ABN": [
+        "加入 ABN"
+      ],
+      "Add EIN": [
+        "加入 EIN"
       ]
     },
     "PGP key encryption warning": {
@@ -8636,6 +9164,21 @@
       ],
       "ZIP code": [
         "郵遞區號"
+      ],
+      "Email for booking confirmation": [
+        "電子郵件預定確認"
+      ],
+      "Enter passphrase": [
+        "請輸入密碼"
+      ],
+      "Name of attendee": [
+        "參與著姓名"
+      ],
+      "Optional feedback": [
+        "選擇性意見回饋"
+      ],
+      "Your organization name": [
+        "貴組織名稱"
       ]
     },
     "Placeholder for contact group name": {
@@ -8656,6 +9199,9 @@
     "plus_block": {
       "Upgrade to ${ upsellPlanTitle }": [
         "升級至${ upsellPlanTitle }"
+      ],
+      "More ${ BRAND_NAME } services.${ br }One easy subscription.": [
+        "更多 ${ BRAND_NAME } 服務。${ br } 一個簡單的訂購授權。"
       ]
     },
     "Progress bar description": {
@@ -8736,6 +9282,18 @@
       ],
       "Refer friends": [
         "推薦朋友"
+      ],
+      "Earn up to ${ maxRewardAmount } in credit. You’ll get ${ referrerRewardAmount } when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
+        "賺取至多 ${ maxRewardAmount } 額度。您將於邀請者訂閱至 ${ BRAND_NAME } 方案獲得 ${ referrerRewardAmount }。"
+      ],
+      "Invited friends": [
+        "邀請好友"
+      ],
+      "Start earning credits": [
+        "開始取得額度"
+      ],
+      "You can get up to **${ maxRewardAmount }** in credit.": [
+        "您將取得至多 **${ maxRewardAmount }** 額度。"
       ]
     },
     "Reload event button tooltip": {
@@ -9184,6 +9742,9 @@
       ],
       "Upgrade for ${ pricingTitle }": [
         "升級至${ pricingTitle }"
+      ],
+      "Browse securely": [
+        "安全地瀏覽"
       ]
     },
     "specialoffer: Offers": {
@@ -9249,6 +9810,9 @@
       ],
       "Standard price ${ amount } for 30 months": [
         "30 個月的原價 ${ amount }"
+      ],
+      "The special offer is valid for the first 2 years": [
+        "特別優惠適用於最的初兩年。"
       ]
     },
     "specialoffer: Title": {
@@ -9257,6 +9821,12 @@
       ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "使用兩年的 ${ planName } 升級並節省更多"
+      ],
+      "Get one plan that includes it all, get ${ BRAND_NAME } Unlimited": [
+        "取得包含全部的單一方案，取得 ${ BRAND_NAME } Unlimited"
+      ],
+      "Protect your account from threats with Sentinel": [
+        "使用 Sentinel 保護您的帳戶免受威脅"
       ]
     },
     "specialoffer: Tooltip": {
@@ -9294,6 +9864,9 @@
       ],
       "Video conferencing is here!": [
         "會議於此!"
+      ],
+      "${ MEET_APP_NAME } is here!": [
+        "${ MEET_APP_NAME } 於此!"
       ]
     },
     "sso": {
@@ -9402,6 +9975,9 @@
       ],
       "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
         "您將不能使用我們的無限密碼記錄、無限的 hide-my-email 別名、高達20個密碼保險箱與我們的全力支援。"
+      ],
+      "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
+        "繼續使用 ${ BRAND_NAME } 產品，釋放空間或 ${ upgrade }"
       ]
     },
     "Subscribe to calendar modal": {
@@ -9974,6 +10550,9 @@
       ],
       "You have successfully unsubscribed": [
         "您已成功取消訂購"
+      ],
+      "Booking page created": [
+        "預定頁面已創建"
       ]
     },
     "Suffix": {
@@ -10763,6 +11342,75 @@
       ],
       "Your shorter address is now ready": [
         "您的短地址已完成"
+      ],
+      "Appointment details": [
+        "預約詳細資訊"
+      ],
+      "Cannot create more Booking pages": [
+        "無法創建更多預定頁面"
+      ],
+      "Choose a time": [
+        "選擇一個時段"
+      ],
+      "Connect apps and devices": [
+        "連線應用程式和裝置"
+      ],
+      "Connect your custom domain": [
+        "連線您的自訂網域"
+      ],
+      "Delete booking page?": [
+        "刪除預定頁面?"
+      ],
+      "Download ${ DRIVE_APP_NAME } apps": [
+        "下載 ${ DRIVE_APP_NAME } 應用程式"
+      ],
+      "Enable advanced account protection": [
+        "啟用進階帳戶保護"
+      ],
+      "Get **${ referralInfo.uiData.refereeRewardAmount }** in credits with ${ planTitle }": [
+        "透過 ${ planTitle } 取得 **${ referralInfo.uiData.refereeRewardAmount }** 額度。"
+      ],
+      "Host": [
+        "主持"
+      ],
+      "Import emails, calendars, contacts": [
+        "匯入電子郵件、行事曆、聯絡人"
+      ],
+      "Information exposed in breach": [
+        "於外洩的資料"
+      ],
+      "Introducing booking pages": [
+        "介紹預定頁面"
+      ],
+      "Ready to automate your scheduling?": [
+        "準備好自動化您的行事曆了嗎?"
+      ],
+      "Referral": [
+        "推薦人"
+      ],
+      "Reply with a note": [
+        "透過筆記回覆"
+      ],
+      "Simplify password management": [
+        "簡化的密碼管理器"
+      ],
+      "The booking feature is currently unavailable.": [
+        "此預定功能功能暫未開放"
+      ],
+      "This booking page can’t be shown.": [
+        "此預定頁面無法被顯示"
+      ],
+      "This booking page has expired.": [
+        "此預定頁面已過期。"
+      ],
+      "Upload and share files": [
+        "上傳並共享檔案"
+      ],
+      "Your booking page is ready": [
+        "您的預訂頁面已就緒"
+      ],
+      "Your booking pages live here": [
+        "您的預訂網頁於此"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -11281,6 +11929,70 @@
       ],
       "Passcode:": [
         "數字密碼:"
+      ]
+    },
+    "customer_support.feature.meet": {
+      "For ${ MEET_APP_NAME }": [
+        "為 ${ MEET_APP_NAME }"
+      ]
+    },
+    "Duration": {
+      "120 minutes": [
+        "120 分鐘"
+      ],
+      "30 minutes": [
+        "30分鐘"
+      ],
+      "30m": [
+        "30 分鐘"
+      ],
+      "60 minutes": [
+        "60 分鐘"
+      ],
+      "90 minutes": [
+        "90 分鐘"
+      ]
+    },
+    "Form": {
+      "Confirm your booking": [
+        "確認您的預訂"
+      ]
+    },
+    "label": {
+      "How long should an appointment last?": [
+        "預約應持續多久？"
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "APPle Pay - 卡片於 ${ paymentMethod.Details.Last4 } 結束"
+      ],
+      "Bank transfer - ${ details }": [
+        "匯款 - ${ details }"
+      ],
+      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Google Pay - 卡片於 ${ paymentMethod.Details.Last4 } 結束"
+      ]
+    },
+    "Plan description": {
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "您的頂級質子版服務源自於 ${ BRAND_NAME } 、 ${ MAIL_SHORT_APP_NAME } 、 ${ PASS_SHORT_APP_NAME } 、 ${ VPN_SHORT_APP_NAME } 、 ${ DRIVE_SHORT_APP_NAME } 和 ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "Section": {
+      "Org setup and account security": [
+        "組織設定和帳號安全"
+      ]
+    },
+    "Text": {
+      "No bookings available.": [
+        "沒有可用的預訂。"
+      ],
+      "Please check the link and try again.": [
+        "請查看此連結並重試。"
+      ],
+      "Please try again later.": [
+        "請稍後再試。"
       ]
     }
   }
