@@ -2812,13 +2812,13 @@
     },
     "Drawer tab, Action": {
       "Download for Linux": [
-        "Naloži za Linux"
+        "Prenesi za Linux"
       ],
       "Download for macOS": [
-        "Naloži za macOS"
+        "Prenesi za macOS"
       ],
       "Download for Windows": [
-        "Naloži za Windows"
+        "Prenesi za Windows"
       ]
     },
     "drive:action": {
@@ -3421,6 +3421,9 @@
       ],
       "Your import will not be processed.": [
         "Vaš uvoz ne bo obdelan."
+      ],
+      "Unable to load VPN dashboard. Please check your connection and try again.": [
+        "Ni mogoče naložiti nadzorne plošče VPN. Preverite svojo povezavo in poskusite znova."
       ]
     },
     "error": {
@@ -8634,6 +8637,9 @@
       ],
       "Your settings have been changed successfully": [
         "Vaše nastavitve so bile uspešno spremenjene"
+      ],
+      "The spreadsheet failed to be created": [
+        "Ustvarjanje preglednice ni uspelo"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -9925,6 +9931,9 @@
       ],
       "Sign in to your organization": [
         "Prijavite se v svojo organizacijo"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Preusmerjeni boste k ponudniku SSO tretje osebe."
       ]
     },
     "State": {
@@ -11578,6 +11587,9 @@
       ],
       "You’ve got 5 GB of storage": [
         "Pridobili ste pet GB prostora za shranjevanje."
+      ],
+      "Untitled spreadsheet ${ date }": [
+        "Neimenovana preglednica ${ date }"
       ]
     },
     "Today icon tooltip in mini calendar": {

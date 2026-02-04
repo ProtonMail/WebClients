@@ -1226,6 +1226,18 @@
       ],
       "Zoom out": [
         "Zoom uit"
+      ],
+      "Cancel downloads": [
+        "Downloads annuleren"
+      ],
+      "Cancel transfers": [
+        "Overdrachten annuleren"
+      ],
+      "Download (${ nbSelected })": [
+        "Download (${ nbSelected })"
+      ],
+      "Scan & Download (${ nbSelected })": [
+        "Scan & download (${ nbSelected })"
       ]
     },
     "Action: Docs": {
@@ -2975,6 +2987,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "U heeft al 10 aliassen aangemaakt. Krijg onbeperkte aliassen en 500 GB opslag met ${ BRAND_NAME } Unlimited."
+      ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Om te importeren via een CSV- en VCF-bestand, moet u ervoor zorgen dat het bestand niet groter is dan ${ MAX_IMPORT_FILE_SIZE_STRING } of niet meer dan ${ maxContactString } contacten bevat. Als uw bestand groter is, splits het dan op in kleinere bestanden. ${ learnMoreLink }."
       ]
     },
     "description": {
@@ -3839,6 +3854,15 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Onversleutelbare naam"
+      ],
+      "This offer is not available in your country": [
+        "Dit aanbod is niet beschikbaar in uw land"
+      ],
+      "We cannot retrieve this item": [
+        "We kunnen dit item niet raadplegen"
+      ],
+      "We were not able to load some search results": [
+        "Sommige zoekresultaten konden niet geladen worden."
       ]
     },
     "error": {
@@ -3914,6 +3938,9 @@
       ],
       "Your file ${ formattedFilename } is empty.": [
         "Uw bestand ${ formattedFilename } is leeg."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ maxContactString } contacts.": [
+        "Uw bestand ${ formattedFilename } bevat meer dan ${ maxContactString } contacten."
       ]
     },
     "Error importing event": {
@@ -6804,6 +6831,22 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "U kunt nog steeds uw eigen accountgegevens bekijken, maar alle gebruikersaccounts worden verwijderd uit uw organisatie."
+      ],
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "Al uw contacten worden geïmporteerd, met een limiet van ${ maxContact }",
+        "Al uw contacten worden geïmporteerd, met een maximum van ${ maxContact }."
+      ],
+      "Computed hash does not match XAttr": [
+        "Berekende hash komt niet overeen met XAttr"
+      ],
+      "This will cancel any remaining downloads.": [
+        "Dit annuleert alle resterende downloads."
+      ],
+      "This will cancel any remaining uploads and downloads. Cancelled uploads won't be saved in ${ DRIVE_APP_NAME }.": [
+        "Dit zal alle resterende uploads en downloads annuleren. Geannuleerde uploads worden niet opgeslagen in ${ DRIVE_APP_NAME }."
+      ],
+      "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it's still best to download files only from trusted sources. ": [
+        "Om u te beschermen, kan ${ DRIVE_APP_NAME } uw bestanden op een privacyvriendelijke manier scannen en schadelijke bestanden blokkeren. Het is echter nog steeds het beste om bestanden alleen van vertrouwde bronnen te downloaden. "
       ]
     },
     "info": {
@@ -7864,6 +7907,16 @@
       "Up to ${ n } participant": [
         "Tot ${ n } deelnemer",
         "Tot ${ n } deelnemers"
+      ],
+      "${ n } participant": [
+        "${ n } deelnemer",
+        "${ n } deelnemers"
+      ],
+      "Booking pages": [
+        "Boekingspagina's"
+      ],
+      "Meeting recording": [
+        "Opname van vergadering"
       ]
     },
     "Message": {
@@ -8599,6 +8652,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "We scannen het dark web om te controleren of uw ${ BRAND_NAME } adressen of aliassen zijn gelekt en waarschuwen u onmiddellijk wanneer we iets vinden."
+      ],
+      "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
+        "Telefonische ondersteuning (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ gebruikers)"
       ]
     },
     "new_plans: feature highlight": {
@@ -8961,6 +9017,9 @@
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "U kunt meerdere beheerders hebben. Alle beheerders kunnen gebruikers toevoegen en beheren, maar alleen de primaire beheerder kan de facturatie beheren."
+      ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } or more users": [
+        "Telefonische ondersteuning is beschikbaar vanuit het ${ BRAND_NAME } Klantenservice team tijdens Europese kantooruren, voor klanten met ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } of meer gebruikers"
       ]
     },
     "new_plans: Upsell attribute": {
@@ -9996,6 +10055,18 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Uw abonnement heeft momenteel een bestaande korting. Overstappen naar deze nieuwe promotie betekent dat de bestaande korting niet langer wordt toegepast."
+      ],
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "De korting is geldig voor ${ renewalsWithCoupon } verlenging.",
+        "De korting is geldig voor ${ renewalsWithCoupon } verlengingen."
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "De speciale kortingsprijs is geldig voor ${ couponRedemptions } maand. Daarna wordt deze automatisch verlengd voor ${ renewPriceStr } per maand. U kunt op elk moment annuleren.",
+        "De speciale kortingsprijs is geldig voor ${ couponRedemptions } maanden. Daarna wordt deze automatisch verlengd voor ${ renewPriceStr } per maand. U kunt op elk moment annuleren."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "De speciaal gereduceerde prijs van ${ priceWithDiscount } is geldig voor ${ couponRedemptions } maand. Daarna wordt deze automatisch verlengd voor ${ renewPriceStr } voor 1 maand. U kunt op elk moment annuleren.",
+        "De speciaal gereduceerde prijs van ${ priceWithDiscount } is geldig voor ${ couponRedemptions } maanden. Daarna wordt deze automatisch verlengd voor ${ renewPriceStr } voor 1 maand. U kunt op elk moment annuleren."
       ]
     },
     "Payments.Error": {
@@ -12814,6 +12885,19 @@
       ],
       "You’ve got 5 GB of storage": [
         "U heeft 5 GB aan opslag"
+      ],
+      "Cancel all downloads?": [
+        "Alle downloads annuleren?"
+      ],
+      "Cancel all transfers?": [
+        "Alle overdrachten annuleren?"
+      ],
+      "Found ${ resultCount } result": [
+        "${ resultCount } zoekresultaat",
+        "${ resultCount } zoekresultaten"
+      ],
+      "Your ${ planTitle } subscription has started": [
+        "Uw ${ planTitle }-abonnement is nu gestart."
       ]
     },
     "Today icon tooltip in mini calendar": {
