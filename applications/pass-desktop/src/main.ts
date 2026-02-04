@@ -10,7 +10,6 @@ import noop from '@proton/utils/noop';
 import config from './app/config';
 import { WINDOWS_APP_ID } from './constants';
 import { migrateSameSiteCookies, upgradeSameSiteCookies } from './lib/cookies';
-import { ARCH } from './lib/env';
 import { fixSSOUrl } from './lib/sso';
 import { getTheme } from './lib/theming';
 import { userAgent } from './lib/user-agent';
@@ -19,11 +18,11 @@ import { setApplicationMenu } from './menu-view/application-menu';
 import { startup } from './startup';
 import { certificateVerifyProc } from './tls';
 import type { PassElectronContext } from './types';
-import { SourceType, updateElectronApp } from './update';
+import { setTagCookie, updateElectronApp } from './update';
 import logger from './utils/logger';
 import { isMac, isProdEnv, isWindows } from './utils/platform';
 
-const ctx: PassElectronContext = { window: null, quitting: false };
+const ctx: PassElectronContext = { session: null, window: null, quitting: false };
 
 const DOMAIN = getSecondLevelDomain(new URL(config.API_URL).hostname);
 
@@ -98,6 +97,8 @@ const createSession = () => {
     });
 
     secureSession.setUserAgent(userAgent());
+
+    void setTagCookie(secureSession);
 
     return secureSession;
 };
@@ -220,14 +221,14 @@ app.addListener('ready', async () => {
         secureDnsServers: [],
     });
 
-    const secureSession = createSession();
-    const handleActivate = onActivate(secureSession);
+    ctx.session = createSession();
+    const handleActivate = onActivate(ctx.session);
 
     // Match title bar with the saved (or default) theme
     nativeTheme.themeSource = getTheme();
 
     // Create tray icon
-    createTrayIcon(secureSession);
+    createTrayIcon(ctx.session);
 
     // On OS X it's common to re-create a window in the app when the
     // dock icon is clicked and there are no other windows open.
@@ -240,15 +241,9 @@ app.addListener('ready', async () => {
     // Prevent hiding windows when explicitly quitting
     app.addListener('before-quit', () => (ctx.quitting = true));
 
-    await createWindow(secureSession);
+    await createWindow(ctx.session);
 
-    updateElectronApp({
-        session: secureSession,
-        updateSource: {
-            type: SourceType.StaticStorage,
-            baseUrl: `https://proton.me/download/PassDesktop/${process.platform}/${ARCH}`,
-        },
-    });
+    updateElectronApp(ctx.session);
 });
 
 app.addListener('web-contents-created', (_, contents) => {

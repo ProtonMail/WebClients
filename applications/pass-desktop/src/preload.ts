@@ -41,6 +41,11 @@ const contextBridgeApi: ContextBridgeApi = {
 
     /* context menus */
     openContextMenu: (items) => invoke('contextMenu:open', items),
+
+    /* update system */
+    getBetaOptIn: () => invoke('update:getBetaOptIn'),
+    setBetaOptIn: (value) => invoke('update:setBetaOptIn', value),
+    checkForUpdates: () => invoke('update:checkNow'),
 };
 
 contextBridge.exposeInMainWorld('ctxBridge', contextBridgeApi);

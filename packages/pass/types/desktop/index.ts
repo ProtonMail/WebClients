@@ -27,6 +27,10 @@ export type ContextBridgeApi = {
     autotype: ({ fields, enterAtTheEnd }: AutotypeProperties) => Promise<void>;
 
     openContextMenu: (items: ContextMenuItemSerializable[]) => Promise<number>;
+
+    getBetaOptIn: () => Promise<boolean>;
+    setBetaOptIn: (optIn: boolean) => Promise<void>;
+    checkForUpdates: () => Promise<boolean>;
 };
 
 export type DesktopTheme = 'dark' | 'light' | 'system';
