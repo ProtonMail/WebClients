@@ -125,6 +125,7 @@ export const ParticipantTile = ({ participant, viewSize = 'large' }: Participant
                         size={indicatorSizeBySize[viewSize]}
                         participant={participant}
                         indicatorSize={(2 / 3) * indicatorSizeBySize[viewSize]}
+                        opacity
                     />
                 )}
                 {!audioIsOn && (
