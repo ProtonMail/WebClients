@@ -1,16 +1,57 @@
-import { useEffect } from 'react';
-import ReactMarkdown from 'react-markdown';
-import { oneLight } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import React, { Suspense, lazy, useEffect } from 'react';
+import type { Components } from 'react-markdown';
 
-// Import pre-configured SyntaxHighlighter with only essential languages
-// This significantly reduces bundle size and memory usage
-import { SyntaxHighlighter } from '../../components/LumoMarkdown/syntaxHighlighterConfig';
+// Lazy load markdown rendering to avoid loading heavy markdown packages in initial bundle
+const ReactMarkdown = lazy(() => import('react-markdown'));
+
+// Lazy load syntax highlighter components
+const SyntaxHighlighter = lazy(async () => {
+    const { SyntaxHighlighter: SH } = await import('../../components/LumoMarkdown/syntaxHighlighterConfig');
+    return { default: SH };
+});
+
+// Lazy load styles
+const getOneLight = () => import('react-syntax-highlighter/dist/esm/styles/prism').then((m) => m.oneLight);
 
 interface MarkdownModalProps {
     isOpen: boolean;
     onClose: () => void;
     markdownContent: string;
 }
+
+const MarkdownContent: React.FC<{ markdownContent: string }> = ({ markdownContent }) => {
+    const [style, setStyle] = React.useState<any>(null);
+
+    React.useEffect(() => {
+        void getOneLight().then(setStyle);
+    }, []);
+
+    const components = React.useMemo<Components>(
+        () => ({
+            code: ({ node, inline, className, children, ...props }: any) => {
+                const match = /language-(\w+)/.exec(className || '');
+                return !inline && match ? (
+                    <Suspense fallback={<pre>{String(children)}</pre>}>
+                        <SyntaxHighlighter language={match[1]} style={style} PreTag="div" {...props}>
+                            {String(children).replace(/\n$/, '')}
+                        </SyntaxHighlighter>
+                    </Suspense>
+                ) : (
+                    <code className={className} {...props}>
+                        {children}
+                    </code>
+                );
+            },
+        }),
+        [style]
+    );
+
+    return (
+        <Suspense fallback={<div>Loading...</div>}>
+            <ReactMarkdown components={components}>{markdownContent}</ReactMarkdown>
+        </Suspense>
+    );
+};
 
 export const MarkdownModal = ({ isOpen, onClose, markdownContent }: MarkdownModalProps) => {
     useEffect(() => {
@@ -36,32 +77,7 @@ export const MarkdownModal = ({ isOpen, onClose, markdownContent }: MarkdownModa
                     </button>
                 </div>
                 <div className="prose overflow-scroll max-h-[1024px]">
-                    <ReactMarkdown
-                        components={{
-                            // @ts-ignore
-                            code({ node, inline, className, children, ...props }) {
-                                const match = /language-(\w+)/.exec(className || '');
-                                return !inline && match ? (
-                                    // @ts-ignore
-                                    <SyntaxHighlighter
-                                        language={match[1]}
-                                        // @ts-ignore
-                                        style={oneLight}
-                                        PreTag="div"
-                                        {...props}
-                                    >
-                                        {String(children).replace(/\n$/, '')}
-                                    </SyntaxHighlighter>
-                                ) : (
-                                    <code className={className} {...props}>
-                                        {children}
-                                    </code>
-                                );
-                            },
-                        }}
-                    >
-                        {markdownContent}
-                    </ReactMarkdown>
+                    <MarkdownContent markdownContent={markdownContent} />
                 </div>
             </div>
         </div>

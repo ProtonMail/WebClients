@@ -37,8 +37,14 @@ const LumoLogoHeader = memo(() => {
         handleGuestClick();
     };
 
+    // Show default logo during loading instead of blank space
     if (isLumoPlanLoading) {
-        return null;
+        const defaultLogoSrc = theme === ThemeTypes.LumoDark ? lumoLogoDark : lumoLogo;
+        return (
+            <Link to="/" aria-label={`Go to ${LUMO_SHORT_APP_NAME} homepage`}>
+                <img src={defaultLogoSrc} alt={LUMO_SHORT_APP_NAME} />
+            </Link>
+        );
     }
 
     const getAltText = () => {

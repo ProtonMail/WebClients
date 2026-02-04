@@ -5,17 +5,20 @@ import { getConfig } from '@proton/pack/webpack.config';
 import { addDevEntry } from '@proton/pack/webpack/entries';
 
 import appConfig from './appConfig';
+// Import custom optimization for better markdown/syntax highlighting chunking
+import getLumoOptimizations from './webpack.optimization';
 
 const result = (opts: WebpackEnvArguments): Configuration => {
     const webpackOptions = getWebpackOptions(opts, { appConfig });
     const config = getConfig(webpackOptions);
+
+    // Override optimization with Lumo-specific configuration for better code splitting
+    config.optimization = getLumoOptimizations(webpackOptions);
     if (webpackOptions.appMode === 'standalone') {
         addDevEntry(config);
     }
     // @ts-ignore
-    const scssRule = config.module.rules.find((rule) => rule.test.toString().includes('scss'));
-    // @ts-ignore
-    const postCssLoader = scssRule.use.find((use) => use.loader.includes('postcss-loader'));
+    const _scssRule = config.module.rules.find((rule) => rule.test.toString().includes('scss'));
 
     // Exclude all mock-related files from production builds
     if (webpackOptions.isProduction) {
@@ -33,7 +36,7 @@ const result = (opts: WebpackEnvArguments): Configuration => {
         loader: 'file-loader',
         options: {
             // @ts-ignore
-            outputPath(url, resourcePath, context) {
+            outputPath(_url, _resourcePath, _context) {
                 return 'assets/';
             },
         },
