@@ -2,9 +2,9 @@ import { useCallback, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
 import useDocumentTitle from '@proton/components/hooks/useDocumentTitle';
-import type { User } from '@proton/shared/lib/interfaces';
 
 import { LUMO_FULL_APP_TITLE } from '../../constants';
+import { useSafeUser } from '../../contexts/SafeUserContext';
 import type { RouteParams } from '../../entrypoint/auth/RouterContainer';
 import { useLumoActions } from '../../hooks/useLumoActions';
 import { useLumoNavigate as useNavigate } from '../../hooks/useLumoNavigate';
@@ -33,10 +33,9 @@ import MainContainer from './MainContainer';
 
 import './InteractiveConversation.scss';
 
-export type InteractiveConversationComponentProps = { user: User | undefined };
-
-const InteractiveConversationComponentInner = ({ user }: InteractiveConversationComponentProps) => {
+const InteractiveConversationComponentInner = () => {
     // ** Hooks **
+    const user = useSafeUser(); // Get user from context (undefined for guests)
     const navigate = useNavigate();
     const dispatch = useLumoDispatch();
     const { conversationId: curConversationId } = useParams<RouteParams>();
@@ -45,7 +44,7 @@ const InteractiveConversationComponentInner = ({ user }: InteractiveConversation
     const { isGhostChatMode } = useGhostChat();
     const provisionalAttachments = useLumoSelector(selectProvisionalAttachments);
     const { onDragOver, onDragEnter, onDragLeave, onDrop } = useDragArea();
-    
+
     // Extract 'q' query parameter from URL (will be cleared after reading)
     const queryFromUrl = useQueryParam('q');
     const initialQuery = queryFromUrl;
@@ -99,9 +98,7 @@ const InteractiveConversationComponentInner = ({ user }: InteractiveConversation
     // ** Effects & related **
 
     // Set document title - don't expose conversation title in ghost mode for privacy
-    useDocumentTitle(
-        isGhostChatMode || !conversationTitle ? LUMO_FULL_APP_TITLE : `${conversationTitle} | Lumo`
-    );
+    useDocumentTitle(isGhostChatMode || !conversationTitle ? LUMO_FULL_APP_TITLE : `${conversationTitle} | Lumo`);
 
     // Synchronize the /c/:conversationId parameter with ConversationProvider.
     useEffect(() => {
@@ -180,8 +177,8 @@ const InteractiveConversationComponentInner = ({ user }: InteractiveConversation
             onDragOver={onDragOver}
         >
             {!curConversationId && (
-                <MainContainer 
-                    isProcessingAttachment={isProcessingAttachment} 
+                <MainContainer
+                    isProcessingAttachment={isProcessingAttachment}
                     handleSendMessage={handleSendMessage}
                     initialQuery={initialQuery || undefined}
                 />
@@ -208,12 +205,12 @@ const InteractiveConversationComponentInner = ({ user }: InteractiveConversation
     );
 };
 
-export const InteractiveConversationComponent = (props: InteractiveConversationComponentProps) => {
+export const InteractiveConversationComponent = () => {
     return (
         <DragAreaProvider>
             <PandocProvider>
                 <WebSearchProvider>
-                    <InteractiveConversationComponentInner {...props} />
+                    <InteractiveConversationComponentInner />
                 </WebSearchProvider>
             </PandocProvider>
         </DragAreaProvider>

@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import { createContext, useContext } from 'react';
+import { createContext, useContext, useMemo } from 'react';
 
 import { useMember } from '@proton/account/member/hook';
 import { useOrganization } from '@proton/account/organization/hooks';
@@ -94,10 +94,10 @@ const AuthenticatedLumoPlanProvider = ({ children }: { children: ReactNode }) =>
 
     const isLoading = isUserLoading || isSubscriptionLoading || isOrganizationLoading || isMemberLoading;
 
-    // In authenticated context, user and subscription should be loaded
-    // but we need to handle loading states gracefully
-    if (isLoading || !user || !subscription) {
-        const loadingDefaults: LumoPlanData = {
+    // ✅ ALWAYS call both useMemo hooks unconditionally (Rules of Hooks)
+    // Memoize loading defaults to prevent new object creation on Suspense re-renders
+    const loadingDefaults = useMemo(
+        (): LumoPlanData => ({
             // Basic user classification
             lumoUserType: LUMO_USER_TYPE.FREE, // Default assumption
             isGuest: false,
@@ -124,71 +124,80 @@ const AuthenticatedLumoPlanProvider = ({ children }: { children: ReactNode }) =>
             hasLumoB2B: false,
             userIsMember: false,
             showForBusinessLink: false,
+        }),
+        [user] // Only recreate if user changes
+    );
+
+    // Memoize the fully computed value to prevent recalculations during Suspense re-renders
+    // This ensures the value object has a stable reference when dependencies don't change
+    const value = useMemo((): LumoPlanData => {
+        // If still loading or missing data, return loading defaults
+        if (isLoading || !user || !subscription) {
+            return loadingDefaults;
+        }
+        // Calculate subscription details
+        const hasLumoSeat = user.NumLumo > 0;
+        const isVisionary = hasVisionary(subscription);
+        const hasLumoPlus = hasLumoSeat || isVisionary; //could be redundant since only admins of visionary plans get subcription response
+        const hasOrganization = organization ? isOrganization(organization) : false;
+        // const userCanPay = canPay(user) && !isDelinquent(user) && !isManagedExternally(subscription);
+        const userCanPay = canPay(user) && !isDelinquent(user);
+
+        const isOrgB2B = organization ? isOrganizationB2B(organization) : false;
+
+        // used to show Lumo for Business logos and messages
+        const hasLumoB2B = isOrgB2B && hasLumoSeat;
+
+        const lumoUserType = getUserType(false, hasLumoSeat, isVisionary);
+
+        // Calculate upsell eligibility
+        const showLumoUpsellFree = !hasLumoPlus && isFree(user) && userCanPay;
+
+        const showLumoUpsellB2C = !hasLumoPlus && !hasOrganization && isPaid(user) && userCanPay;
+        // bundlebiz2025 has all the lumo plus features included, so we don't need to show the upsell
+        const showLumoUpsellB2B = !hasLumoPlus && hasOrganization && userCanPay && !hasBundleBiz2025(subscription);
+        const showTalkToAdminLumoUpsell = hasOrganization && isMember(user);
+        const hasLumoAndCanManageSubscription = hasLumoPlus && canPay(user);
+        const userIsMember = isMember(user);
+
+        // Show "For Business" link unless user has a business organization plan with lumo seat included
+        const hasB2BPlanWithLumoSeatIncluded =
+            organization?.PlanName === PLANS.LUMO_BUSINESS || organization?.PlanName === PLANS.BUNDLE_BIZ_2025;
+        const showForBusinessLink = !hasB2BPlanWithLumoSeatIncluded;
+
+        return {
+            // Basic user classification
+            lumoUserType,
+            isGuest: false,
+            isLumoFree: lumoUserType === LUMO_USER_TYPE.FREE,
+            isLumoPaid: lumoUserType === LUMO_USER_TYPE.PAID,
+
+            // Subscription details
+            hasLumoSeat,
+            isVisionary,
+            hasLumoPlus,
+            hasOrganization,
+
+            // Upsell eligibility
+            canShowLumoUpsellFree: showLumoUpsellFree,
+            canShowLumoUpsellB2C: showLumoUpsellB2C,
+            canShowLumoUpsellB2B: showLumoUpsellB2B,
+            canShowTalkToAdminLumoUpsell: showTalkToAdminLumoUpsell,
+
+            // Management capabilities
+            hasLumoAndCanManageSubscription,
+
+            // Loading state
+            isLumoPlanLoading: false, // Not loading when we have all data
+
+            //B2B
+            hasLumoB2B,
+            userIsMember,
+            showForBusinessLink,
         };
-        return <LumoPlanContext.Provider value={loadingDefaults}>{children}</LumoPlanContext.Provider>;
-    }
+    }, [user, subscription, organization, isLoading, loadingDefaults]); // Only recalculate when these change
 
-    // Calculate subscription details
-    const hasLumoSeat = user.NumLumo > 0;
-    const isVisionary = hasVisionary(subscription);
-    const hasLumoPlus = hasLumoSeat || isVisionary; //could be redundant since only admins of visionary plans get subcription response
-    const hasOrganization = organization ? isOrganization(organization) : false;
-    // const userCanPay = canPay(user) && !isDelinquent(user) && !isManagedExternally(subscription);
-    const userCanPay = canPay(user) && !isDelinquent(user);
-
-    const isOrgB2B = organization ? isOrganizationB2B(organization) : false;
-
-    // used to show Lumo for Business logos and messages
-    const hasLumoB2B = isOrgB2B && hasLumoSeat;
-
-    const lumoUserType = getUserType(false, hasLumoSeat, isVisionary);
-
-    // Calculate upsell eligibility
-    const showLumoUpsellFree = !hasLumoPlus && isFree(user) && userCanPay;
-
-    const showLumoUpsellB2C = !hasLumoPlus && !hasOrganization && isPaid(user) && userCanPay;
-    // bundlebiz2025 has all the lumo plus features included, so we don't need to show the upsell
-    const showLumoUpsellB2B = !hasLumoPlus && hasOrganization && userCanPay && !hasBundleBiz2025(subscription);
-    const showTalkToAdminLumoUpsell = hasOrganization && isMember(user);
-    const hasLumoAndCanManageSubscription = hasLumoPlus && canPay(user);
-    const userIsMember = isMember(user);
-
-    // Show "For Business" link unless user has a business organization plan with lumo seat included
-    const hasB2BPlanWithLumoSeatIncluded =
-        organization?.PlanName === PLANS.LUMO_BUSINESS || organization?.PlanName === PLANS.BUNDLE_BIZ_2025;
-    const showForBusinessLink = !hasB2BPlanWithLumoSeatIncluded;
-
-    const value: LumoPlanData = {
-        // Basic user classification
-        lumoUserType,
-        isGuest: false,
-        isLumoFree: lumoUserType === LUMO_USER_TYPE.FREE,
-        isLumoPaid: lumoUserType === LUMO_USER_TYPE.PAID,
-
-        // Subscription details
-        hasLumoSeat,
-        isVisionary,
-        hasLumoPlus,
-        hasOrganization,
-
-        // Upsell eligibility
-        canShowLumoUpsellFree: showLumoUpsellFree,
-        canShowLumoUpsellB2C: showLumoUpsellB2C,
-        canShowLumoUpsellB2B: showLumoUpsellB2B,
-        canShowTalkToAdminLumoUpsell: showTalkToAdminLumoUpsell,
-
-        // Management capabilities
-        hasLumoAndCanManageSubscription,
-
-        // Loading state
-        isLumoPlanLoading: isLoading,
-
-        //B2B
-        hasLumoB2B,
-        userIsMember,
-        showForBusinessLink,
-    };
-
+    // Use the memoized value (which handles both loading and loaded states)
     return <LumoPlanContext.Provider value={value}>{children}</LumoPlanContext.Provider>;
 };
 

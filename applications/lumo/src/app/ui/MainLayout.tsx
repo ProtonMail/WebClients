@@ -1,26 +1,29 @@
-import type { ReactNode } from 'react';
+import { type ReactNode, lazy } from 'react';
 
-import { DriveIndexingProvider } from '../providers/DriveIndexingProvider';
-import { GhostChatProvider } from '../providers/GhostChatProvider';
-import { SidebarProvider, useSidebar } from '../providers/SidebarProvider';
-import { SearchModalProvider, useSearchModal } from '../providers/SearchModalProvider';
 import { useKeyboardShortcuts } from '../hooks/useKeyboardShortcuts';
+import { GhostChatProvider } from '../providers/GhostChatProvider';
+import { useIsGuest } from '../providers/IsGuestProvider';
+import { SearchModalProvider, useSearchModal } from '../providers/SearchModalProvider';
+import { SidebarProvider, useSidebar } from '../providers/SidebarProvider';
 import HighLoadWarning from './components/HighLoadWarning';
+import { PrivateHeader } from './header/PrivateHeader';
+import { PublicHeader } from './header/PublicHeader';
 import LumoSidebar from './sidebar/LumoSidebar';
 
 export type ActivePanel = 'chatHistory' | 'favoriteChats' | null;
 
 interface Props {
     children: ReactNode;
-    HeaderComponent: React.ComponentType<any>;
 }
 
-const MainLayoutContent = ({ children, HeaderComponent }: Props) => {
+const MainLayoutContent = ({ children }: Props) => {
     const { isSmallScreen } = useSidebar();
     const { openSearchModal } = useSearchModal();
-    
+    const isGuest = useIsGuest();
+
     // Set up keyboard shortcuts
     useKeyboardShortcuts({ onOpenSearch: openSearchModal });
+    const HeaderComponent = isGuest ? PublicHeader : PrivateHeader;
 
     return (
         <div className="relative reset4print flex flex-row h-full w-full overflow-hidden">
@@ -40,14 +43,23 @@ const MainLayoutContent = ({ children, HeaderComponent }: Props) => {
     );
 };
 
-export const MainLayout = ({ children, HeaderComponent }: Props) => {
+const DriveIndexingProviderLazy = lazy(() =>
+    import('../providers/DriveIndexingProvider').then((m) => ({ default: m.DriveIndexingProvider }))
+);
+
+export const MainLayout = ({ children }: Props) => {
+    const isGuest = useIsGuest();
     return (
         <GhostChatProvider>
             <SidebarProvider>
                 <SearchModalProvider>
-                    <DriveIndexingProvider>
-                        <MainLayoutContent children={children} HeaderComponent={HeaderComponent} />
-                    </DriveIndexingProvider>
+                    {!isGuest ? (
+                        <DriveIndexingProviderLazy>
+                            <MainLayoutContent children={children} />
+                        </DriveIndexingProviderLazy>
+                    ) : (
+                        <MainLayoutContent children={children} />
+                    )}
                 </SearchModalProvider>
             </SidebarProvider>
         </GhostChatProvider>

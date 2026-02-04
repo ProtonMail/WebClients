@@ -73,7 +73,7 @@ interface SpringMassVisualizationProps {
     rate: number;
 }
 
-const SpringMassVisualization = ({ lag, differential, isPulling, rate }: SpringMassVisualizationProps) => {
+const SpringMassVisualization = ({ lag, isPulling, rate }: SpringMassVisualizationProps) => {
     const width = 220;
     const height = 80;
     const restPosition = LAG0; // lag0
@@ -200,6 +200,7 @@ const Sparkline = ({
     const hasWarning = warningThreshold && recentValues.some((p) => p.v >= warningThreshold);
     const hasDanger = dangerThreshold && recentValues.some((p) => p.v >= dangerThreshold);
 
+    // eslint-disable-next-line no-nested-ternary
     const lineColor = hasDanger ? 'var(--signal-danger)' : hasWarning ? 'var(--signal-warning)' : color;
 
     return (
@@ -233,7 +234,7 @@ const Sparkline = ({
     );
 };
 
-export const PerformanceMonitor = () => {
+const PerformanceMonitor = () => {
     const [metrics, setMetrics] = useState<PerformanceMetrics>({
         tokensPerSecond: 0,
         totalTokens: 0,

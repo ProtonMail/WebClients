@@ -10,7 +10,7 @@ import { IcFileSlash } from '@proton/icons/icons/IcFileSlash';
 import type { Attachment } from '../../../../types';
 import { Role } from '../../../../types';
 import { isFileTypeSupported, mimeToHuman } from '../../../../util/filetypes';
-import LumoMarkdown from '../../LumoMarkdown/LumoMarkdown';
+import { LazyLumoMarkdown } from '../../LumoMarkdown/LazyMarkdownComponents';
 
 interface FileContentModalProps extends Omit<ModalProps, 'children'> {
     attachment: Attachment | null;
@@ -306,7 +306,7 @@ export const FileContentModal = ({ attachment, onClose, ...modalProps }: FileCon
                     className="prose prose-sm max-w-none overflow-auto p-6 --max-h-custom"
                     // style={{ '--max-h-custom': '70vh' }}
                 >
-                    <LumoMarkdown
+                    <LazyLumoMarkdown
                         message={{
                             id: 'file-content',
                             content: truncatedContent.content,
@@ -384,6 +384,7 @@ export const FileContentModal = ({ attachment, onClose, ...modalProps }: FileCon
                                     : `${c('collider_2025: Info').t`Processed content`} (${attachment.markdown?.length || 0} ${c('collider_2025: Info').t`characters`})`}
                             </span>
                             <Button size="small" shape="outline" onClick={() => setShowRaw(!showRaw)}>
+                                {/* eslint-disable-next-line no-nested-ternary */}
                                 {showRaw
                                     ? isCSVOrExcel
                                         ? c('collider_2025: Info').t`Show Table`
