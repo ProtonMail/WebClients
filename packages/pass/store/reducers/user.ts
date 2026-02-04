@@ -10,11 +10,12 @@ import {
     getUserSettings,
     monitorToggle,
     sentinelToggle,
+    setUserEventID,
     userEvent,
     userRefresh,
 } from '@proton/pass/store/actions';
 import { confirmPendingAuthDevice, getAuthDevices, rejectPendingAuthDevice } from '@proton/pass/store/actions/creators/sso';
-import type { BitField, MaybeNull, PassPlanResponse, RequiredNonNull, UserMonitorStatusResponse } from '@proton/pass/types';
+import type { BitField, Id, MaybeNull, PassPlanResponse, RequiredNonNull, UserMonitorStatusResponse } from '@proton/pass/types';
 import { EventActions } from '@proton/pass/types';
 import type { FeatureFlagVariant, PassFeature } from '@proton/pass/types/api/features';
 import { or } from '@proton/pass/utils/fp/predicates';
@@ -59,6 +60,7 @@ export type UserData = {
 
 export type UserAccessState = {
     plan: MaybeNull<PassPlanResponse>;
+    pendingInvites: number;
     waitingNewUserInvites: number;
     monitor: MaybeNull<UserMonitorStatusResponse>;
     userData: UserData;
@@ -66,7 +68,10 @@ export type UserAccessState = {
 
 export type UserState = {
     addresses: AddressState;
-    eventId: MaybeNull<string>;
+    /** Latest core event ID */
+    eventId: MaybeNull<Id>;
+    /** Latest user event ID in user-events v2 */
+    userEventId: MaybeNull<Id>;
     features: MaybeNull<FeatureFlagState>;
     featureVariants: MaybeNull<FeatureFlagVariants>;
     user: MaybeNull<User>;
@@ -74,7 +79,7 @@ export type UserState = {
     devices: AuthDeviceOutput[];
 } & UserAccessState;
 
-export type HydratedUserState = RequiredNonNull<UserState, Exclude<keyof UserState, 'organization' | 'monitor'>>;
+export type HydratedUserState = RequiredNonNull<UserState, Exclude<keyof UserState, 'organization' | 'monitor' | 'userEventId'>>;
 export type HydratedAccessState = RequiredNonNull<UserAccessState, Exclude<keyof UserAccessState, 'monitor'>>;
 
 const getInitialState = (): UserState => ({
@@ -84,9 +89,11 @@ const getInitialState = (): UserState => ({
     features: null,
     featureVariants: null,
     monitor: { ProtonAddress: true, Aliases: true },
+    pendingInvites: 0,
     plan: null,
     user: null,
     userData: { defaultShareId: null, aliasSyncEnabled: false, pendingAliasToSync: 0 },
+    userEventId: null,
     userSettings: null,
     waitingNewUserInvites: 0,
 });
@@ -97,6 +104,10 @@ export const INITIAL_HIGHSECURITY_SETTINGS = {
 };
 
 const reducer: Reducer<UserState> = (state = getInitialState(), action) => {
+    if (setUserEventID.match(action)) {
+        return partialMerge(state, { userEventId: action.payload.userEventID });
+    }
+
     if (userEvent.match(action)) {
         if (action.payload.EventID === state.eventId) return state;
 
