@@ -112,107 +112,135 @@ interface BaseResource {
 // Generic store operations
 class StoreOperations<T extends BaseResource> {
     constructor(
-        private readonly db: Promise<IDBDatabase>,
+        private db: Promise<IDBDatabase>,
         private readonly config: StoreConfig<T>
     ) {}
 
+    private wrapError(error: any, operation: string): Error {
+        const errorMessage = error?.message || error?.toString() || 'Unknown error';
+        const wrappedError = new Error(`${operation} failed: ${errorMessage}`);
+        (wrappedError as any).originalError = error;
+        (wrappedError as any).name = error?.name || 'Error';
+        return wrappedError;
+    }
+
     async add(object: T, { dirty }: { dirty: boolean }, tx?: IDBTransaction): Promise<void> {
-        tx ??= await this.getTransaction('readwrite');
-        const store = tx.objectStore(this.config.storeName);
-        console.log(`Adding ${this.config.type} ${object.id}`);
+        try {
+            tx ??= await this.getTransaction('readwrite');
+            const store = tx.objectStore(this.config.storeName);
+            console.log(`Adding ${this.config.type} ${object.id}`);
 
-        const cleanedObject = this.config.cleanFunction({ ...object, dirty });
+            const cleanedObject = this.config.cleanFunction({ ...object, dirty });
 
-        return new Promise<void>((resolve, reject) => {
-            const request = store.add(cleanedObject);
-            request.onsuccess = () => {
-                console.log(`${this.config.type} ${object.id} added successfully on IDB!`);
-                resolve();
-            };
-            request.onerror = () => {
-                if (request.error?.name === 'ConstraintError') {
-                    console.log(`Adding ${this.config.type} ${object.id} but it already exists, ignoring`);
+            return await new Promise<void>((resolve, reject) => {
+                const request = store.add(cleanedObject);
+                request.onsuccess = () => {
+                    console.log(`${this.config.type} ${object.id} added successfully on IDB!`);
                     resolve();
-                } else {
-                    console.error(`Error adding ${this.config.type}: ${request.error?.toString()}`);
-                    reject();
-                }
-            };
-        });
+                };
+                request.onerror = () => {
+                    if (request.error?.name === 'ConstraintError') {
+                        console.log(`Adding ${this.config.type} ${object.id} but it already exists, ignoring`);
+                        resolve();
+                    } else {
+                        console.error(`Error adding ${this.config.type}: ${request.error?.toString()}`);
+                        reject(this.wrapError(request.error, `add ${this.config.type}`));
+                    }
+                };
+            });
+        } catch (error) {
+            throw this.wrapError(error, `add ${this.config.type}`);
+        }
     }
 
     async update(object: T, { dirty }: { dirty: boolean }, tx?: IDBTransaction): Promise<void> {
-        tx ??= await this.getTransaction('readwrite');
-        const store = tx.objectStore(this.config.storeName);
-        console.log(`Updating ${this.config.type} ${object.id}`);
+        try {
+            tx ??= await this.getTransaction('readwrite');
+            const store = tx.objectStore(this.config.storeName);
+            console.log(`Updating ${this.config.type} ${object.id}`);
 
-        const cleanedObject = this.config.cleanFunction({ ...object, dirty });
+            const cleanedObject = this.config.cleanFunction({ ...object, dirty });
 
-        return new Promise<void>((resolve, reject) => {
-            const request = store.put(cleanedObject);
-            request.onsuccess = () => {
-                console.log(`${this.config.type} ${object.id} updated successfully on IDB!`, object);
-                resolve();
-            };
-            request.onerror = () => {
-                console.error(`Error updating ${this.config.type}: ${request.error?.toString()}`);
-                reject();
-            };
-        });
+            return await new Promise<void>((resolve, reject) => {
+                const request = store.put(cleanedObject);
+                request.onsuccess = () => {
+                    console.log(`${this.config.type} ${object.id} updated successfully on IDB!`, object);
+                    resolve();
+                };
+                request.onerror = () => {
+                    console.error(`Error updating ${this.config.type}: ${request.error?.toString()}`);
+                    reject(this.wrapError(request.error, `update ${this.config.type}`));
+                };
+            });
+        } catch (error) {
+            throw this.wrapError(error, `update ${this.config.type}`);
+        }
     }
 
     async getById(id: string, tx?: IDBTransaction): Promise<T | undefined> {
-        tx ??= await this.getTransaction('readonly');
-        const store = tx.objectStore(this.config.storeName);
+        try {
+            tx ??= await this.getTransaction('readonly');
+            const store = tx.objectStore(this.config.storeName);
 
-        return new Promise<T | undefined>((resolve, reject) => {
-            const request = store.get(id) as IDBRequest<T>;
-            request.onsuccess = () => {
-                if (request.result) {
-                    resolve(this.config.cleanFunction(request.result));
-                } else {
-                    resolve(undefined);
-                }
-            };
-            request.onerror = () => {
-                console.error(`Error retrieving item: ${request.error?.toString()}`);
-                reject();
-            };
-        });
+            return await new Promise<T | undefined>((resolve, reject) => {
+                const request = store.get(id) as IDBRequest<T>;
+                request.onsuccess = () => {
+                    if (request.result) {
+                        resolve(this.config.cleanFunction(request.result));
+                    } else {
+                        resolve(undefined);
+                    }
+                };
+                request.onerror = () => {
+                    console.error(`Error retrieving item: ${request.error?.toString()}`);
+                    reject(this.wrapError(request.error, `getById ${this.config.type}`));
+                };
+            });
+        } catch (error) {
+            throw this.wrapError(error, `getById ${this.config.type}`);
+        }
     }
 
     async getAll(tx?: IDBTransaction): Promise<T[]> {
-        tx ??= await this.getTransaction('readonly');
-        const store = tx.objectStore(this.config.storeName);
+        try {
+            tx ??= await this.getTransaction('readonly');
+            const store = tx.objectStore(this.config.storeName);
 
-        return new Promise<T[]>((resolve, reject) => {
-            const request = store.getAll() as IDBRequest<T[]>;
-            request.onsuccess = () => {
-                resolve(request.result.map(this.config.cleanFunction));
-            };
-            request.onerror = () => {
-                console.error(`Error retrieving all items: ${request.error?.toString()}`);
-                reject();
-            };
-        });
+            return await new Promise<T[]>((resolve, reject) => {
+                const request = store.getAll() as IDBRequest<T[]>;
+                request.onsuccess = () => {
+                    resolve(request.result.map(this.config.cleanFunction));
+                };
+                request.onerror = () => {
+                    console.error(`Error retrieving all items: ${request.error?.toString()}`);
+                    reject(this.wrapError(request.error, `getAll ${this.config.type}`));
+                };
+            });
+        } catch (error) {
+            throw this.wrapError(error, `getAll ${this.config.type}`);
+        }
     }
 
     async delete(id: string, tx?: IDBTransaction): Promise<void> {
-        tx ??= await this.getTransaction('readwrite');
-        const store = tx.objectStore(this.config.storeName);
-        console.log(`Deleting ${this.config.type} ${id}`);
+        try {
+            tx ??= await this.getTransaction('readwrite');
+            const store = tx.objectStore(this.config.storeName);
+            console.log(`Deleting ${this.config.type} ${id}`);
 
-        return new Promise<void>((resolve, reject) => {
-            const request = store.delete(id);
-            request.onsuccess = () => {
-                console.log(`${this.config.type} ${id} deleted successfully!`);
-                resolve();
-            };
-            request.onerror = () => {
-                console.error(`Error deleting item: ${request.error?.toString()}`);
-                reject();
-            };
-        });
+            return await new Promise<void>((resolve, reject) => {
+                const request = store.delete(id);
+                request.onsuccess = () => {
+                    console.log(`${this.config.type} ${id} deleted successfully!`);
+                    resolve();
+                };
+                request.onerror = () => {
+                    console.error(`Error deleting item: ${request.error?.toString()}`);
+                    reject(this.wrapError(request.error, `delete ${this.config.type}`));
+                };
+            });
+        } catch (error) {
+            throw this.wrapError(error, `delete ${this.config.type}`);
+        }
     }
 
     async getByIndex(indexName: string, value: any, tx?: IDBTransaction): Promise<T[]> {
@@ -421,15 +449,22 @@ export type UnsyncedMaps = {
 };
 
 export class DbApi {
-    private readonly db: Promise<IDBDatabase>;
+    private db: Promise<IDBDatabase>;
     private readonly spaceStore: StoreOperations<SerializedSpace>;
     private readonly conversationStore: StoreOperations<SerializedConversation>;
     private readonly messageStore: StoreOperations<SerializedMessage>;
     private readonly attachmentStore: StoreOperations<SerializedAttachment>;
     private readonly assetStore: StoreOperations<SerializedAsset>;
+    private readonly userId: string | undefined;
+    private isReconnecting = false;
+    private reconnectAttempts = 0;
+    private readonly maxReconnectAttempts = 5;
+    private readonly baseReconnectDelay = 1000; // 1 second
 
     constructor(userId: string | undefined) {
+        this.userId = userId;
         this.db = this.openDb(userId);
+        this.setupConnectionMonitoring();
 
         // Initialize store operations
         this.spaceStore = new StoreOperations(this.db, storeConfigs.space);
@@ -439,21 +474,165 @@ export class DbApi {
         this.assetStore = new StoreOperations(this.db, storeConfigs.asset);
     }
 
+    private setupConnectionMonitoring = async () => {
+        try {
+            const database = await this.db;
+            
+            // Monitor for unexpected database closure
+            database.onclose = () => {
+                console.warn('[LumoDB] Database connection closed unexpectedly. Attempting to reconnect...');
+                this.handleConnectionLoss();
+            };
+
+            // Monitor for version changes from other tabs
+            database.onversionchange = () => {
+                console.warn('[LumoDB] Database version changed by another tab. Closing connection...');
+                database.close();
+                this.handleConnectionLoss();
+            };
+        } catch (error) {
+            console.error('[LumoDB] Failed to setup connection monitoring:', error);
+            // If initial connection fails, try to reconnect
+            this.handleConnectionLoss();
+        }
+    };
+
+    private handleConnectionLoss = async () => {
+        if (this.isReconnecting) {
+            console.log('[LumoDB] Reconnection already in progress, skipping...');
+            return;
+        }
+
+        this.isReconnecting = true;
+        this.reconnectAttempts++;
+
+        if (this.reconnectAttempts > this.maxReconnectAttempts) {
+            console.error('[LumoDB] Max reconnection attempts reached. Please refresh the page.');
+            this.isReconnecting = false;
+            // Optionally dispatch an event or show a notification to the user
+            window.dispatchEvent(new CustomEvent('indexeddb-connection-failed', {
+                detail: { message: 'Connection to database lost. Please refresh the page.' }
+            }));
+            return;
+        }
+
+        // Calculate exponential backoff delay
+        const delay = this.baseReconnectDelay * Math.pow(2, this.reconnectAttempts - 1);
+        console.log(`[LumoDB] Attempting reconnection ${this.reconnectAttempts}/${this.maxReconnectAttempts} in ${delay}ms...`);
+
+        await new Promise(resolve => setTimeout(resolve, delay));
+
+        try {
+            // Create a new database connection
+            this.db = this.openDb(this.userId);
+            await this.setupConnectionMonitoring();
+            
+            // Update store operations with new connection
+            this.updateStoreConnections();
+
+            console.log('[LumoDB] Successfully reconnected to database');
+            this.reconnectAttempts = 0;
+            this.isReconnecting = false;
+
+            // Dispatch success event
+            window.dispatchEvent(new CustomEvent('indexeddb-reconnected', {
+                detail: { message: 'Database connection restored' }
+            }));
+        } catch (error) {
+            console.error('[LumoDB] Reconnection attempt failed:', error);
+            this.isReconnecting = false;
+            // Try again
+            this.handleConnectionLoss();
+        }
+    };
+
+    private updateStoreConnections = () => {
+        // Update the db reference in all store operations
+        (this.spaceStore as any).db = this.db;
+        (this.conversationStore as any).db = this.db;
+        (this.messageStore as any).db = this.db;
+        (this.attachmentStore as any).db = this.db;
+        (this.assetStore as any).db = this.db;
+    };
+
+    private async executeWithRetry<T>(
+        operation: () => Promise<T>,
+        operationName: string,
+        maxRetries = 3
+    ): Promise<T> {
+        let lastError: Error | undefined;
+
+        for (let attempt = 1; attempt <= maxRetries; attempt++) {
+            try {
+                return await operation();
+            } catch (error: any) {
+                lastError = error;
+                const errorMessage = error?.message || error?.toString() || '';
+                const isConnectionError = 
+                    errorMessage.includes('Connection to Indexed Database') ||
+                    errorMessage.includes('UnknownError') ||
+                    error?.name === 'UnknownError';
+
+                if (isConnectionError && attempt < maxRetries) {
+                    console.warn(`[LumoDB] ${operationName} failed with connection error (attempt ${attempt}/${maxRetries}). Retrying...`);
+                    
+                    // Trigger reconnection if not already in progress
+                    if (!this.isReconnecting) {
+                        this.handleConnectionLoss();
+                    }
+
+                    // Wait for reconnection with timeout
+                    const reconnectTimeout = 5000 * attempt; // Increasing timeout per attempt
+                    await this.waitForReconnection(reconnectTimeout);
+                } else {
+                    // Non-connection error or max retries reached
+                    throw error;
+                }
+            }
+        }
+
+        throw lastError || new Error(`${operationName} failed after ${maxRetries} attempts`);
+    }
+
+    private async waitForReconnection(timeout: number): Promise<void> {
+        const startTime = Date.now();
+        
+        while (this.isReconnecting && (Date.now() - startTime) < timeout) {
+            await new Promise(resolve => setTimeout(resolve, 100));
+        }
+
+        if (this.isReconnecting) {
+            throw new Error('Reconnection timeout');
+        }
+    }
+
     public newTransaction = async (storeName: string | string[], mode?: IDBTransactionMode) => {
-        return (await this.db).transaction(storeName, mode ?? 'readwrite');
+        return this.executeWithRetry(
+            async () => (await this.db).transaction(storeName, mode ?? 'readwrite'),
+            'newTransaction'
+        );
     };
 
     // Message operations
     public addMessage = async (message: SerializedMessage, { dirty }: { dirty: boolean }, tx?: IDBTransaction) => {
-        return this.messageStore.add(message, { dirty }, tx);
+        return this.executeWithRetry(
+            () => this.messageStore.add(message, { dirty }, tx),
+            'addMessage'
+        );
     };
 
     public updateMessage = async (message: SerializedMessage, { dirty }: { dirty: boolean }, tx?: IDBTransaction) => {
-        return this.messageStore.update(message, { dirty }, tx);
+        return this.executeWithRetry(
+            () => this.messageStore.update(message, { dirty }, tx),
+            'updateMessage'
+        );
     };
 
     public getMessageById = async (id: MessageId, tx?: IDBTransaction) => {
-        return this.messageStore.getById(id, tx);
+        return this.executeWithRetry(
+            () => this.messageStore.getById(id, tx),
+            'getMessageById'
+        );
     };
 
     // Conversation operations
@@ -462,7 +641,10 @@ export class DbApi {
         { dirty }: { dirty: boolean },
         tx?: IDBTransaction
     ) => {
-        return this.conversationStore.add(conversation, { dirty }, tx);
+        return this.executeWithRetry(
+            () => this.conversationStore.add(conversation, { dirty }, tx),
+            'addConversation'
+        );
     };
 
     public updateConversation = async (
@@ -470,28 +652,46 @@ export class DbApi {
         { dirty }: { dirty: boolean },
         tx?: IDBTransaction
     ) => {
-        return this.conversationStore.update(conversation, { dirty }, tx);
+        return this.executeWithRetry(
+            () => this.conversationStore.update(conversation, { dirty }, tx),
+            'updateConversation'
+        );
     };
 
     public getConversationById = async (id: ConversationId, tx?: IDBTransaction) => {
-        return this.conversationStore.getById(id, tx);
+        return this.executeWithRetry(
+            () => this.conversationStore.getById(id, tx),
+            'getConversationById'
+        );
     };
 
     // Space operations
     public addSpace = async (space: SerializedSpace, { dirty }: { dirty: boolean }, tx?: IDBTransaction) => {
-        return this.spaceStore.add(space, { dirty }, tx);
+        return this.executeWithRetry(
+            () => this.spaceStore.add(space, { dirty }, tx),
+            'addSpace'
+        );
     };
 
     public updateSpace = async (space: SerializedSpace, { dirty }: { dirty: boolean }, tx?: IDBTransaction) => {
-        return this.spaceStore.update(space, { dirty }, tx);
+        return this.executeWithRetry(
+            () => this.spaceStore.update(space, { dirty }, tx),
+            'updateSpace'
+        );
     };
 
     public getSpaceById = async (id: SpaceId, tx?: IDBTransaction) => {
-        return this.spaceStore.getById(id, tx);
+        return this.executeWithRetry(
+            () => this.spaceStore.getById(id, tx),
+            'getSpaceById'
+        );
     };
 
     public deleteSpace = async (id: SpaceId, tx?: IDBTransaction) => {
-        return this.spaceStore.delete(id, tx);
+        return this.executeWithRetry(
+            () => this.spaceStore.delete(id, tx),
+            'deleteSpace'
+        );
     };
 
     // Attachment operations
@@ -500,7 +700,10 @@ export class DbApi {
         { dirty }: { dirty: boolean },
         tx?: IDBTransaction
     ) => {
-        return this.attachmentStore.add(attachment, { dirty }, tx);
+        return this.executeWithRetry(
+            () => this.attachmentStore.add(attachment, { dirty }, tx),
+            'addAttachment'
+        );
     };
 
     public updateAttachment = async (
@@ -508,15 +711,24 @@ export class DbApi {
         { dirty }: { dirty: boolean },
         tx?: IDBTransaction
     ) => {
-        return this.attachmentStore.update(attachment, { dirty }, tx);
+        return this.executeWithRetry(
+            () => this.attachmentStore.update(attachment, { dirty }, tx),
+            'updateAttachment'
+        );
     };
 
     public getAttachmentById = async (id: AttachmentId, tx?: IDBTransaction) => {
-        return this.attachmentStore.getById(id, tx);
+        return this.executeWithRetry(
+            () => this.attachmentStore.getById(id, tx),
+            'getAttachmentById'
+        );
     };
 
     public deleteAttachment = async (id: AttachmentId, tx?: IDBTransaction) => {
-        return this.attachmentStore.delete(id, tx);
+        return this.executeWithRetry(
+            () => this.attachmentStore.delete(id, tx),
+            'deleteAttachment'
+        );
     };
 
     // Asset operations
@@ -570,19 +782,31 @@ export class DbApi {
 
     // Bulk operations
     public getAllSpaces = async (tx?: IDBTransaction): Promise<SerializedSpace[]> => {
-        return this.spaceStore.getAll(tx);
+        return this.executeWithRetry(
+            () => this.spaceStore.getAll(tx),
+            'getAllSpaces'
+        );
     };
 
     public getAllConversations = async (tx?: IDBTransaction): Promise<SerializedConversation[]> => {
-        return this.conversationStore.getAll(tx);
+        return this.executeWithRetry(
+            () => this.conversationStore.getAll(tx),
+            'getAllConversations'
+        );
     };
 
     public getAllMessages = async (tx?: IDBTransaction): Promise<SerializedMessage[]> => {
-        return this.messageStore.getAll(tx);
+        return this.executeWithRetry(
+            () => this.messageStore.getAll(tx),
+            'getAllMessages'
+        );
     };
 
     public getAllAttachments = async (tx?: IDBTransaction): Promise<SerializedAttachment[]> => {
-        return this.attachmentStore.getAll(tx);
+        return this.executeWithRetry(
+            () => this.attachmentStore.getAll(tx),
+            'getAllAttachments'
+        );
     };
 
     public getAllIdMaps = async (tx?: IDBTransaction): Promise<IdMapEntry[]> => {

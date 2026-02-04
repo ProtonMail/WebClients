@@ -38,6 +38,7 @@ import type { LumoStore } from '../../redux/store';
 import { extendStore, setupStore } from '../../redux/store';
 import { setStoreRef } from '../../redux/storeRef';
 import { extraThunkArguments } from '../../redux/thunk';
+import { IndexedDBConnectionMonitor } from '../../ui/components/IndexedDBConnectionMonitor';
 import ProtectGuestRouteGuard from '../../ui/components/ProtectGuestRouteGuard/ProtectGuestRouteGuard';
 import { initializeConsoleOverride } from '../../util/logging';
 import { lumoTelemetryConfig } from '../../util/telemetryConfig';
@@ -144,6 +145,7 @@ const GuestApp = () => {
                                         <ErrorBoundary big component={<StandardErrorPage big />}>
                                             <NotificationsChildren />
                                             <ModalsChildren />
+                                            <IndexedDBConnectionMonitor />
                                             <OnboardingProvider>
                                                 <IsGuestProvider isGuest={true}>
                                                     <LumoPlanProvider>
