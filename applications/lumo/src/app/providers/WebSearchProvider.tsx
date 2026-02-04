@@ -16,7 +16,7 @@ interface WebSearchProviderProps {
 
 export const WebSearchProvider = ({ children }: WebSearchProviderProps) => {
     const { lumoUserSettings, updateSettings } = useLumoUserSettings();
-    const automaticWebSearch = lumoUserSettings.automaticWebSearch ?? false;
+    const automaticWebSearch = lumoUserSettings.automaticWebSearch ?? true; // Default to true (automatic)
 
     // Initialize from persisted setting
     const [isWebSearchButtonToggled, setIsWebSearchButtonToggled] = useState<boolean>(automaticWebSearch);

@@ -7,6 +7,7 @@ import type { Base64 } from '../../types';
 export type MockDbSpace = {
     ID: string;
     CreateTime: string;
+    UpdateTime?: string; // Optional for backward compatibility with tests
     DeleteTime?: string;
     SpaceKey: string;
     SpaceTag: string;
@@ -22,6 +23,7 @@ export type MockDbConversation = {
     ID: string;
     SpaceID: string;
     CreateTime: string;
+    UpdateTime?: string; // Optional for backward compatibility with tests
     DeleteTime?: string;
     IsStarred: boolean;
     Encrypted: string;
@@ -434,9 +436,11 @@ export function createHandlers(mockDb: MockDatabase, errorHandler?: MockErrorHan
                 const nextSpaceId = await mockDb.getNextSpaceId();
                 console.log(`mock server: generated space ID:`, nextSpaceId);
 
+                const now = new Date().toISOString();
                 const space: MockDbSpace = {
                     ID: nextSpaceId,
-                    CreateTime: new Date().toISOString(),
+                    CreateTime: now,
+                    UpdateTime: now,
                     SpaceKey: body.SpaceKey,
                     SpaceTag: body.SpaceTag,
                     Encrypted: body.Encrypted,
@@ -644,10 +648,12 @@ export function createHandlers(mockDb: MockDatabase, errorHandler?: MockErrorHan
                 return new HttpResponse(null, { status: 404 });
             }
 
+            const now = new Date().toISOString();
             const conversation: MockDbConversation = {
                 ID: await mockDb.getNextConversationId(),
                 SpaceID: spaceId,
-                CreateTime: new Date().toISOString(),
+                CreateTime: now,
+                UpdateTime: now,
                 IsStarred: body.IsStarred ?? false,
                 Encrypted: body.Encrypted,
                 ConversationTag: body.ConversationTag,

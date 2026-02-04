@@ -390,9 +390,11 @@ export async function generateTestSpacesOnMockServer(count: number, masterKey: A
 
     for (let i = 0; i < count; i++) {
         const spaceId = newSpaceId();
+        const timestamp = new Date(now.getTime() - i * 1000).toISOString();
         const space: Space = {
             id: spaceId,
-            createdAt: new Date(now.getTime() - i * 1000).toISOString(), // Each space 1 second apart
+            createdAt: timestamp, // Each space 1 second apart
+            updatedAt: timestamp,
             spaceKey: generateSpaceKeyBase64(),
         };
 
@@ -407,6 +409,7 @@ export async function generateTestSpacesOnMockServer(count: number, masterKey: A
         const mockSpace: MockDbSpace = {
             ID: remoteId,
             CreateTime: serializedSpace.createdAt,
+            UpdateTime: serializedSpace.updatedAt,
             SpaceKey: serializedSpace.wrappedSpaceKey!,
             SpaceTag: spaceId,
             Encrypted: serializedSpace.encrypted as Base64,
@@ -419,19 +422,23 @@ export async function generateTestSpacesOnMockServer(count: number, masterKey: A
 
 // Helper functions for creating test objects
 export function createTestSpace(overrides: Partial<Space> = {}): Space {
+    const now = new Date().toISOString();
     return {
         id: newSpaceId(),
-        createdAt: new Date().toISOString(),
+        createdAt: now,
+        updatedAt: now,
         spaceKey: generateSpaceKeyBase64(),
         ...overrides,
     };
 }
 
 export function createTestConversation(spaceId: SpaceId, overrides: Partial<Conversation> = {}): Conversation {
+    const now = new Date().toISOString();
     return {
         id: newConversationId(),
         spaceId,
-        createdAt: new Date().toISOString(),
+        createdAt: now,
+        updatedAt: now,
         title: 'Test Conversation',
         status: ConversationStatus.COMPLETED,
         ...overrides,

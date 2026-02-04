@@ -899,7 +899,7 @@ export function initializeNewSpaceAndConversation(
     isGhostMode: boolean = false
 ): { conversationId: ConversationId; spaceId: SpaceId } {
     const spaceId = newSpaceId();
-    dispatch(addSpace({ id: spaceId, createdAt, spaceKey: generateSpaceKeyBase64() }));
+    dispatch(addSpace({ id: spaceId, createdAt, updatedAt: createdAt, spaceKey: generateSpaceKeyBase64() }));
     dispatch(pushSpaceRequest({ id: spaceId }));
 
     const conversationId = newConversationId();
@@ -909,6 +909,7 @@ export function initializeNewSpaceAndConversation(
             spaceId,
             title: c('collider_2025: Placeholder').t`New chat`,
             createdAt,
+            updatedAt: createdAt,
             status: ConversationStatus.GENERATING,
             ...(isGhostMode && { ghost: true }),
         })
