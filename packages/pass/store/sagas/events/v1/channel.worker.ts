@@ -40,10 +40,7 @@ export function* channelEvents<T extends {}>(eventChannel: EventChannel<T>, opti
     }
 }
 
-export function* channelInitalize<T extends {}>(
-    { manager, channelId }: EventChannel<T>,
-    options: RootSagaOptions
-): Generator {
+export function* channelInitalize<T extends {}>({ manager, channelId }: EventChannel<T>, options: RootSagaOptions): Generator {
     /** Initializes polling with smart delay for service worker context.
      * Prevents immediate polling for background service workers by
      * calculating delay from last poll timestamp. Falls back to

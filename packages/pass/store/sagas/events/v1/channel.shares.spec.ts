@@ -4,7 +4,6 @@ import { ACTIVE_POLLING_TIMEOUT } from '@proton/pass/lib/events/constants';
 import * as itemRequests from '@proton/pass/lib/items/item.requests';
 import * as shareParser from '@proton/pass/lib/shares/share.parser';
 import { sharesEventNew } from '@proton/pass/store/actions';
-import type { EventChannel } from '@proton/pass/store/sagas/events/types';
 import { sagaSetup } from '@proton/pass/store/sagas/testing';
 import type { RootSagaOptions } from '@proton/pass/store/types';
 import type { Api, IndexedByShareIdAndItemId, ItemRevision, Share, ShareGetResponse, SharesGetResponse } from '@proton/pass/types';
@@ -13,6 +12,7 @@ import noop from '@proton/utils/noop';
 
 import * as channelShare from './channel.share';
 import * as SharesChannel from './channel.shares';
+import type { EventChannel } from './types';
 
 jest.mock('./channel.share', () => ({ getShareChannelForks: jest.fn().mockReturnValue(jest.fn()) }));
 jest.mock('./channel.worker', () => ({
