@@ -6973,8 +6973,8 @@
       "Password-protected Emails": [
         "Лісты абароненыя паролем"
       ],
-      "Phone support (20+ users)": [
-        "Падтрымка па тэлефоне (ад 20 карыстальнікаў)"
+      "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
+        "Падтрымка па тэлефоне (ад ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } карыстальнікаў)"
       ],
       "Priority email support": [
         "Прыярытэтная падтрымка па электроннай пошце"
@@ -7410,8 +7410,8 @@
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Персаналізуйце свой подпіс у электронных лістах з дапамогай лагатыпаў, відарысаў, значкоў з сацыяльных сетак, спасылак на вашы кантактныя звесткі і г.д."
       ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
-        "Служба падтрымкі кліентаў ${ BRAND_NAME } ажыццяўляе падтрымку па тэлефоне ў працоўны час (еўрапейскі часавы пояс) для кліентаў ад 20 карыстальнікаў і больш."
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } or more users": [
+        "Служба падтрымкі кліентаў ${ BRAND_NAME } ажыццяўляе падтрымку па тэлефоне ў працоўны час (еўрапейскі часавы пояс) для кліентаў ад ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } карыстальнікаў і больш."
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Абмяжоўвае доступ да паведамленняў ${ BRAND_NAME } або старонніх асоб. Чытаць паведамленні можа толькі адпраўнік і меркаваны атрымальнік."
