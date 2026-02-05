@@ -45,9 +45,9 @@ pub fn install_update(package_uri: String) -> Result<String> {
     feedback.push("Configuring deployment options...".to_string());
     let options = AddPackageOptions::new()?;
 
-    // Force app shutdown before installing
-    options.SetDeferRegistrationWhenPackagesAreInUse(false)?;
-    feedback.push("Options configured: DeferRegistration=false".to_string());
+    // Defer installation until app closes
+    options.SetDeferRegistrationWhenPackagesAreInUse(true)?;
+    feedback.push("Options configured: DeferRegistration=true (will apply when app closes)".to_string());
 
     // Start the update installation with force update options
     feedback.push("Starting async package installation...".to_string());

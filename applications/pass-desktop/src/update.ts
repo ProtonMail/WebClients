@@ -61,6 +61,7 @@ export const checkForUpdates = async (session: Session): Promise<boolean> => {
         logger.log(`[Update] Hack update for new windows install, buildUri=${buildUri}`);
         const result = await installWindowsUpdate(buildUri);
         logger.log(`[Update] Hack update for new windows install, result=${result}`);
+        app.quit();
         return true;
     }
 

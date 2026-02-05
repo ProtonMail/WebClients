@@ -65,7 +65,7 @@ const config: ForgeConfig = {
                 packageDisplayName: 'Proton Pass',
                 packageDescription: 'Open-source and secure identity manager.',
                 packageBackgroundColor: 'transparent',
-                packageVersion: '1.34.1.1', // debug hack, remove that
+                // packageVersion: '1.34.1.1', // debug hack, remove that
                 appDisplayName: 'Proton Pass',
                 appExecutable: 'ProtonPass.exe',
                 publisher: windowsPublisher,
