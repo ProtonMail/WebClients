@@ -156,15 +156,7 @@ function StorageSplitOrganizationTooltip({ organization, user }: StorageSplitOrg
             <hr className="mb-0 min-h-px" />
             <div className="flex gap-2 items-center justify-space-between">
                 <span className="text-semibold">{c('Info').t`Your storage`}</span>
-                <Avatar
-                    color="weak"
-                    className="shrink-0 min-w-custom max-w-custom max-h-custom"
-                    style={{
-                        '--min-w-custom': '1.25rem',
-                        '--max-w-custom': '1.25rem',
-                        '--max-h-custom': '1.25rem',
-                    }}
-                >
+                <Avatar color="weak" className="shrink-0">
                     {getInitials(user.DisplayName ?? user.Name)}
                 </Avatar>
             </div>
