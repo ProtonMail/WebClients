@@ -62,13 +62,12 @@ const GroupMemberList = ({
                 <div className="flex flex-column gap-3">
                     {sortedGroupMembers.map((memberData: GroupMember) => {
                         const member = addressToMemberMap[memberData?.AddressID ?? memberData?.AddressId ?? ''];
-                        const memberName = member?.Name ?? '';
                         return (
                             <GroupMemberItem
                                 key={memberData.ID}
                                 group={group}
                                 groupMember={memberData}
-                                memberName={memberName}
+                                member={member}
                                 canOnlyDelete={canOnlyDelete}
                                 canChangeVisibility={canChangeVisibility}
                             />

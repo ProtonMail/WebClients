@@ -26,7 +26,7 @@ import {
     updateGroupMember,
 } from '@proton/shared/lib/api/groups';
 import { clearBit, hasBit, setBit } from '@proton/shared/lib/helpers/bitset';
-import type { Group, GroupMember } from '@proton/shared/lib/interfaces';
+import type { EnhancedMember, Group, GroupMember } from '@proton/shared/lib/interfaces';
 import { GROUP_MEMBER_PERMISSIONS, GROUP_MEMBER_STATE } from '@proton/shared/lib/interfaces';
 import useFlag from '@proton/unleash/useFlag';
 import isTruthy from '@proton/utils/isTruthy';
@@ -63,7 +63,8 @@ const Option = ({
 };
 
 interface Props {
-    member: GroupMember;
+    groupMember: GroupMember;
+    member?: EnhancedMember;
     group: Group; // needs to be removed once backend doesn't need Group.ID
     canOnlyDelete: boolean;
     canChangeVisibility: boolean;
@@ -83,7 +84,7 @@ const jsxJoin = (array: ReactNode[], separator: ReactNode): ReactNode[] => {
     );
 };
 
-const GroupMemberItemDropdown = ({ member, group, canOnlyDelete, canChangeVisibility }: Props) => {
+const GroupMemberItemDropdown = ({ groupMember, member, group, canOnlyDelete, canChangeVisibility }: Props) => {
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     const api = useApi();
     const handleError = useErrorHandler();
@@ -92,7 +93,7 @@ const GroupMemberItemDropdown = ({ member, group, canOnlyDelete, canChangeVisibi
     const { createNotification } = useNotifications();
     const { getMemberPublicKeys } = useGroupKeys();
 
-    const isGroupOwner = hasBit(member.Permissions, GROUP_MEMBER_PERMISSIONS.OWNER);
+    const isGroupOwner = hasBit(groupMember.Permissions, GROUP_MEMBER_PERMISSIONS.OWNER);
     const isGroupOwnersEnabled = useFlag('UserGroupsGroupOwner');
 
     const memberPermissionOptions: PermissionOption[] = [
@@ -104,17 +105,17 @@ const GroupMemberItemDropdown = ({ member, group, canOnlyDelete, canChangeVisibi
     ];
 
     const handleRevokeInvitation = async () => {
-        await api(revokeGroupInvitation(member.ID));
+        await api(revokeGroupInvitation(groupMember.ID));
         await call();
     };
 
     const handleResumeInvitation = async () => {
         try {
-            await api(resumeGroupMemberApi(member.ID));
+            await api(resumeGroupMemberApi(groupMember.ID));
             dispatch(
                 resumeGroupMemberAction({
                     groupID: group.ID,
-                    memberID: member.ID,
+                    memberID: groupMember.ID,
                 })
             );
         } catch (error) {
@@ -124,7 +125,7 @@ const GroupMemberItemDropdown = ({ member, group, canOnlyDelete, canChangeVisibi
 
     const handleResendInvitation = async () => {
         try {
-            await api(reinviteGroupMember(member.ID));
+            await api(reinviteGroupMember(groupMember.ID));
             createNotification({ text: c('Success notification').t`Resent invitation` });
         } catch (error) {
             handleError(error);
@@ -133,9 +134,9 @@ const GroupMemberItemDropdown = ({ member, group, canOnlyDelete, canChangeVisibi
 
     const handleOverrideGroupPermissions = async (value: number) => {
         try {
-            const newPermissions = setBit(clearBit(member.Permissions, GROUP_MEMBER_PERMISSIONS.SEND), value);
+            const newPermissions = setBit(clearBit(groupMember.Permissions, GROUP_MEMBER_PERMISSIONS.SEND), value);
             await api(
-                updateGroupMember(member.ID, {
+                updateGroupMember(groupMember.ID, {
                     GroupID: group.ID,
                     Permissions: newPermissions,
                 })
@@ -143,7 +144,7 @@ const GroupMemberItemDropdown = ({ member, group, canOnlyDelete, canChangeVisibi
             dispatch(
                 updateOverridePermissions({
                     groupID: group.ID,
-                    memberID: member.ID,
+                    memberID: groupMember.ID,
                     newValue: newPermissions,
                 })
             );
@@ -154,25 +155,57 @@ const GroupMemberItemDropdown = ({ member, group, canOnlyDelete, canChangeVisibi
 
     const handleSetGroupOwner = async () => {
         try {
-            const newOwnerAddressID = member.AddressID;
+            const newOwnerAddressID = groupMember.AddressID;
             if (!newOwnerAddressID) {
                 throw new Error('Member address ID not found');
             }
             await dispatch(
-                addGroupOwnerThunk({ group, groupMemberID: member.ID, newOwnerAddressID, getMemberPublicKeys })
+                addGroupOwnerThunk({ group, groupMemberID: groupMember.ID, newOwnerAddressID, getMemberPublicKeys })
+            );
+            const newPermissions = setBit(groupMember.Permissions, GROUP_MEMBER_PERMISSIONS.OWNER);
+            dispatch(
+                updateOverridePermissions({
+                    groupID: group.ID,
+                    memberID: groupMember.ID,
+                    newValue: newPermissions,
+                })
             );
         } catch (error) {
             handleError(error);
         }
     };
 
-    const overrideGroupPermissions: GROUP_MEMBER_PERMISSIONS = hasBit(member.Permissions, GROUP_MEMBER_PERMISSIONS.SEND)
+    const handleRemoveGroupOwner = async () => {
+        try {
+            const newPermissions = clearBit(groupMember.Permissions, GROUP_MEMBER_PERMISSIONS.OWNER);
+            await api(
+                updateGroupMember(groupMember.ID, {
+                    GroupID: group.ID,
+                    Permissions: newPermissions,
+                })
+            );
+            dispatch(
+                updateOverridePermissions({
+                    groupID: group.ID,
+                    memberID: groupMember.ID,
+                    newValue: newPermissions,
+                })
+            );
+        } catch (error) {
+            handleError(error);
+        }
+    };
+
+    const overrideGroupPermissions: GROUP_MEMBER_PERMISSIONS = hasBit(
+        groupMember.Permissions,
+        GROUP_MEMBER_PERMISSIONS.SEND
+    )
         ? GROUP_MEMBER_PERMISSIONS.SEND
         : GROUP_MEMBER_PERMISSIONS.NONE;
 
-    const isPaused = member.State === GROUP_MEMBER_STATE.PAUSED;
-    const isPending = member.State === GROUP_MEMBER_STATE.PENDING;
-    const isRejected = member.State === GROUP_MEMBER_STATE.REJECTED;
+    const isPaused = groupMember.State === GROUP_MEMBER_STATE.PAUSED;
+    const isPending = groupMember.State === GROUP_MEMBER_STATE.PENDING;
+    const isRejected = groupMember.State === GROUP_MEMBER_STATE.REJECTED;
 
     const canResendInvitation = isPending || isRejected;
 
@@ -191,12 +224,12 @@ const GroupMemberItemDropdown = ({ member, group, canOnlyDelete, canChangeVisibi
                 ))}
             </Fragment>
         ),
-        // Group owner
-        isGroupOwnersEnabled && (
+        // Group owner. Has to be a member of the org (for now)
+        isGroupOwnersEnabled && member && (
             <DropdownMenuButton
                 key="group-owner"
                 className="text-left flex justify-space-between items-center py-2 pb-3"
-                onClick={handleSetGroupOwner}
+                onClick={isGroupOwner ? handleRemoveGroupOwner : handleSetGroupOwner}
                 disabled={canOnlyDelete}
                 liClassName="py-0"
             >
