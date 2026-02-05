@@ -22,5 +22,5 @@ export declare namespace napi_native_messaging {
     export function install(binaryPath: string): Promise<void>;
 }
 export declare namespace msix_updater {
-    export function installUpdate(packageUri: string): Promise<void>;
+    export function installUpdate(packageUri: string): Promise<string>;
 }

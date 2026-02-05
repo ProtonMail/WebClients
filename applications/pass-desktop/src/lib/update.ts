@@ -5,6 +5,7 @@ import type { MaybeNull } from '@proton/pass/types';
 
 import { msix_updater } from '../../native';
 import { store } from '../store';
+import logger from '../utils/logger';
 import { setupIpcHandler } from './ipc';
 
 declare module 'proton-pass-desktop/lib/ipc' {
@@ -23,6 +24,8 @@ export const setupIpcHandlers = (getSession: () => MaybeNull<Session>) => {
     });
     setupIpcHandler('update:getBetaOptIn', () => store.get('optInForBeta') ?? false);
     setupIpcHandler('update:checkNow', () => {
+        logger.log(`[Update] dev log: ipc handler check now`);
+
         const session = getSession();
         if (!session) throw new Error('No sessions found');
         return checkForUpdates(session);

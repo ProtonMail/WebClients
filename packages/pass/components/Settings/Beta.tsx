@@ -50,13 +50,20 @@ const useToggleBetaDesktop = () => {
         await window.ctxBridge?.setBetaOptIn(newValue);
         setBetaEnabled(newValue);
         if (newValue) {
-            const result = await window.ctxBridge?.checkForUpdates();
-            createNotification({
-                text: result
-                    ? c('Info')
-                          .t`A new version is being downloaded. Once the download completes, it will be available on next restart.`
-                    : c('Info').t`No new versions are available at the moment.`,
-            });
+            try {
+                const result = await window.ctxBridge?.checkForUpdates();
+                createNotification({
+                    text: result
+                        ? c('Info')
+                              .t`A new version is being downloaded. Once the download completes, it will be available on next restart.`
+                        : c('Info').t`No new versions are available at the moment.`,
+                });
+            } catch (error) {
+                createNotification({
+                    type: 'error',
+                    text: `error durring update ${error}`,
+                });
+            }
         }
     };
     return { betaEnabled, onToggle };

@@ -57,7 +57,10 @@ const getFeedURL = (isBeta: boolean) => {
 export const checkForUpdates = async (session: Session): Promise<boolean> => {
     // Hack for dev
     if (isWindows) {
-        await installWindowsUpdate('file:///C:/ProtonPass.msix');
+        const buildUri = 'file:///C:/ProtonPass.msix';
+        logger.log(`[Update] Hack update for new windows install, buildUri=${buildUri}`);
+        const result = await installWindowsUpdate(buildUri);
+        logger.log(`[Update] Hack update for new windows install, result=${result}`);
         return true;
     }
 
