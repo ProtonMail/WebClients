@@ -161,3 +161,4 @@ export const PROTON_UNLIMITED_PRICE = 999; // €9.99
 
 /** Autofill model version. May be dynamically set in the future */
 export const MODEL_VERSION = '1';
+export const SYNC_VERSION: 1 | 2 = 2;
