@@ -12,11 +12,10 @@ import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { traceError } from '@proton/shared/lib/helpers/sentry';
 import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 
+import { driveMetrics } from '../../../modules/metrics';
 import { isIgnoredErrorForReporting } from '../../../utils/errorHandling';
 import { is4xx, is5xx } from '../../../utils/errorHandling/apiErrors';
 import { getIsPublicContext } from '../../../utils/getIsPublicContext';
-import { UserAvailabilityTypes } from '../../../utils/metrics/types/userSuccessMetricsTypes';
-import { userSuccessMetrics } from '../../../utils/metrics/userSuccessMetrics';
 import type { MetricUserPlan, UploadErrorCategoryType } from '../../../utils/type/MetricTypes';
 import { MetricShareType, UploadErrorCategory } from '../../../utils/type/MetricTypes';
 import { useSharesStore } from '../../../zustand/share/shares.store';
@@ -81,7 +80,7 @@ export default function useUploadMetrics(plan: MetricUserPlan, metricsModule = m
         const retry = failedUploadMetadata.numberOfErrors > 1;
 
         if (!IGNORED_ERROR_CATEGORIES_FROM_SUCCESS_RATE.includes(errorCategory) && !isIgnoredErrorForReporting(error)) {
-            userSuccessMetrics.mark(UserAvailabilityTypes.coreFeatureError);
+            driveMetrics.globalErrors.markCoreFeatureError();
 
             metricsModule.drive_upload_success_rate_total.increment({
                 status: 'failure',

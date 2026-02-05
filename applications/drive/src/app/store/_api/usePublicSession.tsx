@@ -12,8 +12,8 @@ import type { SRPHandshakeInfo } from '@proton/shared/lib/interfaces/drive/shari
 import { srpAuth } from '@proton/shared/lib/srp';
 import { formatUser } from '@proton/shared/lib/user/helpers';
 
+import { driveMetrics } from '../../modules/metrics';
 import { getLastActivePersistedUserSession } from '../../utils/lastActivePersistedUserSession';
-import { userSuccessMetrics } from '../../utils/metrics/userSuccessMetrics';
 import retryOnError from '../../utils/retryOnError';
 import {
     hasCustomPassword,
@@ -22,7 +22,6 @@ import {
     useDefaultShare,
     useShare,
 } from '../_shares';
-import { getMetricsUserPlan } from '../_user/getMetricsUserPlan';
 import useDebouncedRequest from './useDebouncedRequest';
 
 export const ERROR_CODE_INVALID_SRP_PARAMS = 2026;
@@ -89,10 +88,7 @@ function usePublicSessionProvider() {
                 }
                 const user = formatUser(resumedSession.User);
                 setUser(user);
-                await userSuccessMetrics.setLocalUser(
-                    persistedSession.UID,
-                    getMetricsUserPlan({ user, isPublicContext: true })
-                );
+                driveMetrics.init({ user, isPublicContext: true });
             } catch (e) {
                 // TODO: Probably getLastPersistedLocalID is the source of issue
                 // Investigate why later
@@ -152,7 +148,6 @@ function usePublicSessionProvider() {
             };
             // This enables metrics to work for both auth and un-auth customers
             metrics.setAuthHeaders(UID, AccessToken);
-            void userSuccessMetrics.setAuthHeaders(UID, AccessToken);
             return sessionInfo.current;
         });
     };

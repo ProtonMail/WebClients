@@ -2,8 +2,7 @@ import { fromUnixTime } from 'date-fns';
 
 import metrics from '@proton/metrics';
 
-import { UserAvailabilityTypes } from '../../utils/metrics/types/userSuccessMetricsTypes';
-import { userSuccessMetrics } from '../../utils/metrics/userSuccessMetrics';
+import { driveMetrics } from '../../modules/metrics';
 import type { MetricUserPlan } from '../../utils/type/MetricTypes';
 
 const REPORT_ERROR_USERS_EVERY = 5 * 60 * 1000; // 5 minutes,
@@ -76,7 +75,7 @@ export class IntegrityMetrics {
             fromBefore2024,
         });
         if (fromBefore2024 === 'no') {
-            userSuccessMetrics.mark(UserAvailabilityTypes.coreFeatureError);
+            driveMetrics.globalErrors.markCoreFeatureError();
             this.reportErroringUser(shareType, options.plan);
         }
     }
@@ -100,7 +99,7 @@ export class IntegrityMetrics {
             fromBefore2024,
         });
         if (fromBefore2024 === 'no' && addressMatchingDefaultShare === 'yes') {
-            userSuccessMetrics.mark(UserAvailabilityTypes.coreFeatureError);
+            driveMetrics.globalErrors.markCoreFeatureError();
             this.reportErroringUser(shareType, options.plan);
         }
     }
@@ -117,7 +116,7 @@ export class IntegrityMetrics {
             fileSize,
         });
         if (!options.retryHelped) {
-            userSuccessMetrics.mark(UserAvailabilityTypes.coreFeatureError);
+            driveMetrics.globalErrors.markCoreFeatureError();
             this.reportErroringUser(shareType, options.plan);
         }
     }
