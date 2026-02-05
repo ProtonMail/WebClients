@@ -1,7 +1,8 @@
 import { all, call, fork, put, select } from 'redux-saga/effects';
 
 import { PassCrypto } from '@proton/pass/lib/crypto';
-import type { EventCursor, EventManagerEvent } from '@proton/pass/lib/events/manager';
+import type { EventCursor, EventManagerEvent } from '@proton/pass/lib/events/manager/manager';
+import { SyncType } from '@proton/pass/lib/events/types';
 import { getUserData } from '@proton/pass/lib/user/user.requests';
 import {
     getInAppNotifications,
@@ -15,7 +16,6 @@ import { getGroup } from '@proton/pass/store/actions/creators/groups';
 import { getOrganizationPauseList, getOrganizationSettings } from '@proton/pass/store/actions/creators/organization';
 import type { HydratedUserState } from '@proton/pass/store/reducers';
 import { withRevalidate } from '@proton/pass/store/request/enhancers';
-import { SyncType } from '@proton/pass/store/sagas/client/sync';
 import { selectAllAddresses, selectLatestEventId, selectUser, selectUserPlan, selectUserSettings } from '@proton/pass/store/selectors';
 import type { RootSagaOptions } from '@proton/pass/store/types';
 import type { Api, MaybeNull, PassPlanResponse, UserEvent } from '@proton/pass/types';

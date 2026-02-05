@@ -1,6 +1,6 @@
 import type { EventChannel as ReduxSagaChannel } from 'redux-saga';
 
-import type { EventManager, EventManagerConfig, EventManagerEvent } from '@proton/pass/lib/events/manager';
+import type { EventManager, EventManagerConfig, EventManagerEvent } from '@proton/pass/lib/events/manager/manager';
 import type { RootSagaOptions } from '@proton/pass/store/types';
 
 export type EventChannelOnEvent<T extends {}> = (event: EventManagerEvent<T>, self: EventChannel<T>, options: RootSagaOptions) => Generator;

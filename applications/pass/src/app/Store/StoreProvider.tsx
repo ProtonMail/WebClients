@@ -31,7 +31,7 @@ import { isDocumentVisible, useVisibleEffect } from '@proton/pass/hooks/useVisib
 import { api } from '@proton/pass/lib/api/api';
 import { authStore } from '@proton/pass/lib/auth/store';
 import { clientBooted, clientReady } from '@proton/pass/lib/client';
-import { ACTIVE_POLLING_TIMEOUT } from '@proton/pass/lib/events/constants';
+import { ACTIVE_POLLING_TIMEOUT } from '@proton/pass/lib/events/manager/constants';
 import { createMonitorReport } from '@proton/pass/lib/monitor/monitor.report';
 import { setVersionTag } from '@proton/pass/lib/settings/beta';
 import { startEventPolling, stopEventPolling } from '@proton/pass/store/actions';

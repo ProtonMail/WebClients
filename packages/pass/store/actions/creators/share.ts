@@ -1,12 +1,12 @@
 import { createAction } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
+import type { SyncResult } from '@proton/pass/lib/events/types';
 import { withCache } from '@proton/pass/store/actions/enhancers/cache';
 import { withShareDedupe } from '@proton/pass/store/actions/enhancers/dedupe';
 import { withNotification } from '@proton/pass/store/actions/enhancers/notification';
 import type { ShareDedupeState } from '@proton/pass/store/reducers/shares-dedupe';
 import { requestActionsFactory } from '@proton/pass/store/request/flow';
-import type { SynchronizationResult } from '@proton/pass/store/sagas/client/sync';
 import type { Share, ShareId, ShareType } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 
@@ -16,7 +16,7 @@ export const shareEventDelete = createAction('share::event::delete', (share: Sha
     pipe(withCache, withShareDedupe)({ payload: { shareId: share.shareId } })
 );
 
-export const sharesEventNew = createAction('shares::event::new', (payload: Omit<SynchronizationResult, 'dedupe'>) =>
+export const sharesEventNew = createAction('shares::event::new', (payload: Omit<SyncResult, 'dedupe'>) =>
     pipe(withCache, withShareDedupe)({ payload })
 );
 

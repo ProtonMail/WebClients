@@ -2,8 +2,8 @@ import type { Action } from 'redux';
 import type { Task } from 'redux-saga';
 import { call, cancel, cancelled, fork, put, select, take, takeLeading } from 'redux-saga/effects';
 
-import { ACTIVE_POLLING_TIMEOUT } from '@proton/pass/lib/events/constants';
-import type { EventManagerEvent } from '@proton/pass/lib/events/manager';
+import { ACTIVE_POLLING_TIMEOUT } from '@proton/pass/lib/events/manager/constants';
+import type { EventManagerEvent } from '@proton/pass/lib/events/manager/manager';
 import { channelAcknowledge, clientInit } from '@proton/pass/store/actions';
 import { forcePoll } from '@proton/pass/store/actions/creators/polling';
 import { channelRequest } from '@proton/pass/store/actions/requests';

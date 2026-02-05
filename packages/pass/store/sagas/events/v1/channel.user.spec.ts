@@ -1,8 +1,8 @@
 import { runSaga } from 'redux-saga';
 
 import { exposePassCrypto } from '@proton/pass/lib/crypto';
+import { SyncType } from '@proton/pass/lib/events/types';
 import { syncIntent } from '@proton/pass/store/actions';
-import { SyncType } from '@proton/pass/store/sagas/client/sync';
 import { sagaSetup } from '@proton/pass/store/sagas/testing';
 import type { PassCryptoWorker } from '@proton/pass/types';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
