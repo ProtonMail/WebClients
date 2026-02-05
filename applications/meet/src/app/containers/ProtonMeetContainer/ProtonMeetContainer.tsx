@@ -55,6 +55,7 @@ import type { DecryptionErrorLog, KeyRotationLog, MLSGroupState, MeetChatMessage
 import { LoadingState, PopUpControls } from '../../types';
 import type { ProtonMeetKeyProvider } from '../../utils/ProtonMeetKeyProvider';
 import { KeyRotationScheduler } from '../../utils/SeamlessKeyRotationScheduler';
+import { checkIfUsingTurnRelay } from '../../utils/checkIfUsingTurnRelay';
 import { isLocalParticipantAdmin } from '../../utils/isLocalParticipantAdmin';
 import { getDisplayNameStorageKey } from '../../utils/storage';
 import { setupLiveKitAdminChangeEvent, setupWasmDependencies } from '../../utils/wasmUtils';
@@ -77,6 +78,11 @@ interface ProtonMeetContainerProps {
     setKeyRotationLogs: React.Dispatch<React.SetStateAction<KeyRotationLog[]>>;
     decryptionErrorLogs: DecryptionErrorLog[];
 }
+
+const isConnectionError = (error: any): boolean => {
+    const msg = error?.message || '';
+    return msg.includes('could not establish signal connection');
+};
 
 export const ProtonMeetContainer = ({
     guestMode = false,
@@ -103,6 +109,8 @@ export const ProtonMeetContainer = ({
     const instantJoinParam = searchParams.get('instantJoin');
 
     const [isInstantJoin, setIsInstantJoin] = useState(instantJoinParam === 'true');
+
+    const [isUsingTurnRelay, setIsUsingTurnRelay] = useState(false);
 
     const { initializeDevices } = useMediaManagementContext();
 
@@ -536,10 +544,29 @@ export const ProtonMeetContainer = ({
             try {
                 await room.setE2EEEnabled(true);
 
-                await room.connect(websocketUrl, accessToken, {
-                    autoSubscribe: false,
-                });
-            } catch (livekitError) {
+                try {
+                    // Wrap room.connect with its own try/catch to allow fallback to TURN TLS to work
+                    await room.connect(websocketUrl, accessToken, {
+                        autoSubscribe: false,
+                    });
+                } catch (roomConnectionError: any) {
+                    if (isConnectionError(roomConnectionError)) {
+                        reportMeetError('STUN UDP connection failed, trying with TURN relay', roomConnectionError);
+                        // Second attempt - configure room to force TURN relay
+                        await room.connect(websocketUrl, accessToken, {
+                            autoSubscribe: false,
+                            rtcConfig: {
+                                iceTransportPolicy: 'relay',
+                            },
+                        });
+                        setIsUsingTurnRelay(true);
+                    } else {
+                        // Not a connection error, just throw
+                        throw roomConnectionError;
+                    }
+                }
+                setIsUsingTurnRelay(await checkIfUsingTurnRelay(room));
+            } catch (livekitError: any) {
                 // If LiveKit connection fails after MLS join, clean up MLS group to prevent inconsistent state
                 try {
                     await wasmApp?.leaveMeeting();
@@ -1072,6 +1099,7 @@ export const ProtonMeetContainer = ({
                         sortedParticipantsMap={sortedParticipantsMap}
                         expirationTime={meetingDetails.expirationTime}
                         isGuestAdmin={isGuestAdminRef.current}
+                        isUsingTurnRelay={isUsingTurnRelay}
                     />
                 ) : (
                     <PrejoinContainer

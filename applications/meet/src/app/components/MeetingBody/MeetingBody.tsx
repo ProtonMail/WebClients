@@ -5,6 +5,7 @@ import { RoomAudioRenderer, VideoTrack } from '@livekit/components-react';
 import type { Participant } from 'livekit-client';
 import { c } from 'ttag';
 
+import { TopBanner } from '@proton/components/index';
 import { IcMeetRotateCamera } from '@proton/icons/icons/IcMeetRotateCamera';
 import { IcMeetShieldStar } from '@proton/icons/icons/IcMeetShieldStar';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
@@ -46,6 +47,7 @@ interface MeetingBodyProps {
     isLocalScreenShare: boolean;
     screenShareTrack: TrackReference;
     screenShareParticipant: Participant;
+    isUsingTurnRelay: boolean;
 }
 
 export const MeetingBody = ({
@@ -53,6 +55,7 @@ export const MeetingBody = ({
     isLocalScreenShare,
     screenShareTrack,
     screenShareParticipant,
+    isUsingTurnRelay,
 }: MeetingBodyProps) => {
     useMeetingInitialisation();
     const isLargerThanMd = useIsLargerThanMd();
@@ -66,6 +69,8 @@ export const MeetingBody = ({
     const { handleRotateCamera, isVideoEnabled } = useMediaManagementContext();
 
     const { sideBarState } = useUIStateContext();
+
+    const [bannerIsClosed, setBannerIsClosed] = useState(!isUsingTurnRelay);
 
     const isEarlyAccess = useFlag('MeetEarlyAccess');
 
@@ -116,6 +121,12 @@ export const MeetingBody = ({
                 isElectronApp && 'pt-6'
             )}
         >
+            {!bannerIsClosed && (
+                <TopBanner className="bg-norm meet-radius turn-top-banner" onClose={() => setBannerIsClosed(true)}>{c(
+                    'Banner'
+                )
+                    .t`Connected via TURN relay mode due to your network restrictions. This may increase latency and affect call quality.`}</TopBanner>
+            )}
             {!isNarrowHeight && (
                 <div className="flex lg:hidden flex-nowrap gap-2 justify-between items-center">
                     {isLocalParticipantAdmin || isLocalParticipantHost || isGuestAdmin ? (

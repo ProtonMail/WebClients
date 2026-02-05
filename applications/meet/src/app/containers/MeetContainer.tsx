@@ -69,6 +69,7 @@ interface MeetContainerProps {
     expirationTime: number | null;
     isGuestAdmin: boolean;
     participants: (RemoteParticipant | LocalParticipant)[];
+    isUsingTurnRelay: boolean;
 }
 
 export const MeetContainer = ({
@@ -114,6 +115,7 @@ export const MeetContainer = ({
     isRecordingInProgress,
     getKeychainIndexInformation,
     decryptionErrorLogs,
+    isUsingTurnRelay,
 }: MeetContainerProps) => {
     const [resolution, setResolution] = useState<string | null>(null);
     const debugOverlay = useDebugOverlay();
@@ -215,6 +217,7 @@ export const MeetContainer = ({
                             isLocalScreenShare={isLocalScreenShare}
                             screenShareTrack={screenShareTrack}
                             screenShareParticipant={screenShareParticipant}
+                            isUsingTurnRelay={isUsingTurnRelay}
                         />
                     </MeetContext.Provider>
                     <AutoCloseMeetingModal participantCount={participants.length} onLeave={handleLeave} />
