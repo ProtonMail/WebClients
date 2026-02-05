@@ -977,6 +977,9 @@
       "Set as cover": [
         "Kapak olarak ayarla"
       ],
+      "Set password or expiration date": [
+        "Parola veya geçerlilik süresi belirleyin"
+      ],
       "Set recovery methods": [
         "Kurtarma yöntemlerini ayarlayın"
       ],
@@ -1012,6 +1015,9 @@
       ],
       "Share your calendar with your team": [
         "Takviminizi ekibinizle paylaşın"
+      ],
+      "Sharing is end-to-end encrypted": [
+        "Paylaşım uçtan uca şifrelenir"
       ],
       "Sharing options": [
         "Paylaşım seçenekleri"
@@ -3812,6 +3818,9 @@
       "We were not able to load some of your shared items": [
         "Paylaşılan ögelerinizden bazıları yüklenemedi"
       ],
+      "We were not able to load some search results": [
+        "Bazı arama sonuçlarını yükleyemedik"
+      ],
       "We were not able to load the folder contents": [
         "Klasör içeriği yüklenemedi"
       ],
@@ -5249,9 +5258,6 @@
       "Create links and share your files with others.": [
         "Bağlantı oluşturun ve dosyalarınızı başkalarıyla paylaşın."
       ],
-      "Create public link": [
-        "Herkese açık bağlantı ekle"
-      ],
       "Create your first folder and start moving your files.": [
         "İlk klasörünüzü ekleyin ve dosyalarınızı taşımaya başlayın."
       ],
@@ -5669,6 +5675,9 @@
       "Learn what to do ${ dataLeakedLink }": [
         "${ dataLeakedLink } ne yapacağınızı öğrenin"
       ],
+      "Link copied": [
+        "Bağlantı kopyalandı"
+      ],
       "Link copied to clipboard": [
         "Bağlantı panoya kopyalandı"
       ],
@@ -5844,8 +5853,8 @@
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Uyarılarımız güvenliğe öncelik verir. Sızdırılmış bilgiler size tanıdık gelmiyorsa, bu raporu güvenle yok sayabilirsiniz."
       ],
-      "Owner": [
-        "Sahibi"
+      "owner": [
+        "sahip"
       ],
       "password": [
         "parola"
@@ -5861,9 +5870,6 @@
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Ödemeler TLS şifrelemesi ve İsviçre gizlilik yasaları ile korunmaktadır."
-      ],
-      "People with access": [
-        "Erişimi olan kişiler"
       ],
       "Permanently delete all files in your locked drive": [
         "Kilitlenmiş sürücüdeki tüm dosyaları kalıcı olarak sil"
@@ -6354,6 +6360,9 @@
       "To fight spam and abuse, please verify you are human.": [
         "İstenmeyen iletilere ve kötüye kullanıma karşı lütfen insan olduğunuzu doğrulayın."
       ],
+      "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it's still best to download files only from trusted sources. ": [
+        "${ DRIVE_APP_NAME } sizi korumak için dosyalarınızı gizliliğinizi koruyacak şekilde tarayabilir ve kötü amaçlı dosyaları engelleyebilir. Ancak yine de dosyaları yalnızca güvenilir kaynaklardan indirmek en iyisidir. "
+      ],
       "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it’s still best to download files only from trusted sources. ": [
         "${ DRIVE_APP_NAME }, korunmanıza yardımcı olmak için dosyalarınızı gizliliği koruyan bir şekilde tarayabilir ve kötü amaçlı dosyaları engelleyebilir. Ancak, yine de dosyaları yalnızca güvenilen kaynaklardan indirmeniz en iyisidir. "
       ],
@@ -6570,6 +6579,9 @@
       "who": [
         "kim"
       ],
+      "Who has access": [
+        "Erişimi olanlar"
+      ],
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
         "${ formattedRevisionDate } sürümünden geri yüklenecek. Diğer tüm sürümler bulunmayı sürdürecek."
       ],
@@ -6735,9 +6747,6 @@
       "Your email address was exposed:": [
         "E-posta adresiniz sızdırılmış:"
       ],
-      "Your email address will be visible as the link's owner on the share page": [
-        "E-posta adresiniz paylaşım sayfasında bağlantının sahibi olarak görünecektir"
-      ],
       "Your email will only be used for this one-time verification.": [
         "E-posta adresiniz yalnızca bu tek seferlik doğrulama için kullanılacak."
       ],
@@ -6858,9 +6867,6 @@
       ]
     },
     "Into": {
-      "Can edit and manage access": [
-        "Erişim düzenlenebilir ve yönetilebilir"
-      ],
       "Can view and edit": [
         "Görüntülenebilir ve düzenlenebilir"
       ],
@@ -6954,6 +6960,9 @@
       "Account holder": [
         "Hesap sahibi"
       ],
+      "Active": [
+        "Etkin"
+      ],
       "Add email address": [
         "E-posta adresi ekle"
       ],
@@ -6966,8 +6975,8 @@
       "Address": [
         "Adres"
       ],
-      "Admin": [
-        "Yönetici"
+      "admin": [
+        "yönetici"
       ],
       "Alias title": [
         "Takma ad başlığı"
@@ -6981,14 +6990,8 @@
       "Anonymous": [
         "İsimsiz"
       ],
-      "Anyone on the Internet with the link can edit": [
-        "Bağlantıya sahip olan herkes düzenleyebilir"
-      ],
-      "Anyone on the Internet with the link can view": [
-        "İnternet üzerinden bağlantıyı bilen herkes görüntüleyebilir"
-      ],
-      "Anyone with the link": [
-        "Bağlantıya sahip olan herkes"
+      "Anyone on the Internet with the link": [
+        "İnternette bu bağlantıya sahip olan herkes"
       ],
       "App password": [
         "Uygulama parolası"
@@ -7034,6 +7037,12 @@
       ],
       "Calendars": [
         "Takvimler"
+      ],
+      "can edit": [
+        "düzenlenebilir"
+      ],
+      "can view": [
+        "görüntülenebilir"
       ],
       "Cancel download": [
         "İndirmeyi iptal et"
@@ -7117,6 +7126,9 @@
         "Sürücü silinsin mi?",
         "Sürücüler silinsin mi?"
       ],
+      "Delete link and remove access for everyone": [
+        "Bağlantıyı sil ve herkesin erişimini kaldır"
+      ],
       "Delete recovery-related information.": [
         "Kurtarma ile ilgili bilgileri sil."
       ],
@@ -7179,9 +7191,6 @@
       ],
       "Enter device name": [
         "Aygıt adını yazın"
-      ],
-      "Erase this link and remove everyone with access": [
-        "Bu bağlantıyı silin ve erişimi olan herkesi kaldırın."
       ],
       "Expired": [
         "Geçerlilik süresi dolmuş"
@@ -7320,6 +7329,9 @@
       ],
       "New password": [
         "Yeni parola"
+      ],
+      "Not active": [
+        "Etkin değil"
       ],
       "Note": [
         "Not"
@@ -8464,8 +8476,8 @@
       "Password-protected Emails": [
         "Parola korumalı e-postalar"
       ],
-      "Phone support (20+ users)": [
-        "Telefon desteği (20+ kullanıcı)"
+      "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
+        "Telefon desteği (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ kullanıcı)"
       ],
       "Priority email support": [
         "Öncelikli e-posta desteği"
@@ -8894,8 +8906,8 @@
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "E-posta imzanızı logolar, görseller, sosyal ağ simgeleri, iletişim bilgilerinizin bağlantıları ve diğer şeylerle kişiselleştirin"
       ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
-        "20 ya da daha fazla kullanıcısı olan müşteriler için Avrupa çalışma saatleri içinde ${ BRAND_NAME } müşteri desteği ekibinden telefonla destek alabilirsiniz"
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } or more users": [
+        "Telefon desteği Avrupa çalışma saatleri içinde ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } veya daha fazla kullanıcıya sahip müşteriler için ${ BRAND_NAME } Müşteri Destek ekibi tarafından sağlanmaktadır."
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "İletilere ${ BRAND_NAME } veya üçüncü tarafların erişmesini engeller. İletileri yalnızca göndericisi ve alıcısı okuyabilir."
@@ -11005,11 +11017,11 @@
       ]
     },
     "Status": {
-      "Accepted": [
-        "Kabul edildi"
+      "accepted": [
+        "kabul edildi"
       ],
-      "Pending": [
-        "Bekliyor"
+      "pending": [
+        "beklemede"
       ]
     },
     "Storage": {
@@ -12216,9 +12228,9 @@
       "Folder details": [
         "Klasör bilgileri"
       ],
-      "Found ${ searchView.numberOfResults } result": [
-        "${ searchView.numberOfResults } sonuç bulundu",
-        "${ searchView.numberOfResults } sonuç bulundu"
+      "Found ${ resultCount } result": [
+        "${ resultCount } sonuç bulundu",
+        "${ resultCount } sonuç bulundu"
       ],
       "Get ${ DRIVE_SHORT_APP_NAME } on your phone": [
         "Telefonunuza ${ DRIVE_SHORT_APP_NAME } uygulamasını indirin"
@@ -12485,6 +12497,12 @@
       "Processing...": [
         "İşleniyor..."
       ],
+      "Public link": [
+        "Herkese açık bağlantı"
+      ],
+      "Public link settings": [
+        "Herkese açık bağlantı ayarları"
+      ],
       "Public shared link status": [
         "Herkese açık paylaşılmış bağlantı durumu"
       ],
@@ -12575,6 +12593,9 @@
       ],
       "Settings": [
         "Ayarlar"
+      ],
+      "Settings for ${ sharedFileName }": [
+        "${ sharedFileName } için ayarlar"
       ],
       "SHA1": [
         "SHA1"

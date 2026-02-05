@@ -3812,6 +3812,9 @@
       "We were not able to load some of your shared items": [
         "We konden een aantal van uw gedeelde items niet laden."
       ],
+      "We were not able to load some search results": [
+        "Sommige zoekresultaten konden niet geladen worden."
+      ],
       "We were not able to load the folder contents": [
         "De mapinhoud kon niet worden geladen"
       ],
@@ -5249,9 +5252,6 @@
       "Create links and share your files with others.": [
         "Maak links en deel uw bestanden met anderen."
       ],
-      "Create public link": [
-        "Maak een publieke link"
-      ],
       "Create your first folder and start moving your files.": [
         "Maak uw eerste map aan en begin uw bestanden te verplaatsen."
       ],
@@ -5844,9 +5844,6 @@
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Onze waarschuwingen geven prioriteit aan veiligheid. Als u de geschonden informatie niet herkent, kunt u dit rapport gerust negeren."
       ],
-      "Owner": [
-        "Eigenaar"
-      ],
       "password": [
         "wachtwoord"
       ],
@@ -5861,9 +5858,6 @@
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Betalingen worden beschermd met TLS-encryptie en Zwitserse privacywetten."
-      ],
-      "People with access": [
-        "Personen met toegang"
       ],
       "Permanently delete all files in your locked drive": [
         "Verwijder permanent alle bestanden op uw vergrendelde schijf"
@@ -6354,6 +6348,9 @@
       "To fight spam and abuse, please verify you are human.": [
         "Bevestig dat u een natuurlijk persoon bent, om spam en misbruik tegen te gaan."
       ],
+      "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it's still best to download files only from trusted sources. ": [
+        "Om u te beschermen, kan ${ DRIVE_APP_NAME } uw bestanden op een privacyvriendelijke manier scannen en schadelijke bestanden blokkeren. Het is echter nog steeds het beste om bestanden alleen van vertrouwde bronnen te downloaden. "
+      ],
       "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it’s still best to download files only from trusted sources. ": [
         "Om u te beschermen kan ${ DRIVE_APP_NAME } uw bestanden scannen op een privacyvriendelijke manier, en kwaadaardige bestanden blokkeren. Het is echter nog steeds best om enkel van vertrouwde bronnen bestanden te downloaden."
       ],
@@ -6735,9 +6732,6 @@
       "Your email address was exposed:": [
         "Uw emailadres werd blootgesteld:"
       ],
-      "Your email address will be visible as the link's owner on the share page": [
-        "Uw e-mailadres zal zichtbaar zijn als de eigenaar van de link op de deelpagina"
-      ],
       "Your email will only be used for this one-time verification.": [
         "Uw e-mailadres wordt alleen gebruikt voor deze eenmalige verificatie."
       ],
@@ -6858,9 +6852,6 @@
       ]
     },
     "Into": {
-      "Can edit and manage access": [
-        "Kan bewerken en toegang beheren"
-      ],
       "Can view and edit": [
         "Kan bekijken en bewerken"
       ],
@@ -6966,9 +6957,6 @@
       "Address": [
         "Adres"
       ],
-      "Admin": [
-        "Beheerder"
-      ],
       "Alias title": [
         "Alias titel"
       ],
@@ -6980,15 +6968,6 @@
       ],
       "Anonymous": [
         "Anoniem"
-      ],
-      "Anyone on the Internet with the link can edit": [
-        "Iedereen op het internet met de link kan bewerken"
-      ],
-      "Anyone on the Internet with the link can view": [
-        "Iedereen op het Internet kan het met deze link bekijken"
-      ],
-      "Anyone with the link": [
-        "Iedereen met de link"
       ],
       "App password": [
         "App-wachtwoord"
@@ -7179,9 +7158,6 @@
       ],
       "Enter device name": [
         "Apparaatnaam invoeren"
-      ],
-      "Erase this link and remove everyone with access": [
-        "Wis deze link en verwijder iedereen met toegang"
       ],
       "Expired": [
         "Verlopen"
@@ -8464,8 +8440,8 @@
       "Password-protected Emails": [
         "E-mails met wachtwoordbeveiliging"
       ],
-      "Phone support (20+ users)": [
-        "Telefonische ondersteuning (20+ gebruikers)"
+      "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
+        "Telefonische ondersteuning (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ gebruikers)"
       ],
       "Priority email support": [
         "Prioriteitsondersteuning per e-mail"
@@ -8894,8 +8870,8 @@
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Personaliseer uw e-mailhandtekening met een logo, afbeelding, pictogram van social media, koppeling naar uw contactgegevens en meer"
       ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
-        "Telefonische ondersteuning is beschikbaar van de ${ BRAND_NAME } klantenondersteuning tijdens Europese kantoortijden voor klanten met 20 of meer gebruikers."
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } or more users": [
+        "Telefonische ondersteuning is beschikbaar vanuit het ${ BRAND_NAME } Klantenservice team tijdens Europese kantooruren, voor klanten met ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } of meer gebruikers"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Voorkomt dat berichten worden gelezen door ${ BRAND_NAME } of derden. De enige personen die de berichten kunnen lezen, zijn de afzender en de beoogde ontvanger."
@@ -11004,14 +10980,6 @@
         "Uw abonnement wordt geannuleerd, even geduld"
       ]
     },
-    "Status": {
-      "Accepted": [
-        "Geaccepteerd"
-      ],
-      "Pending": [
-        "In behandeling"
-      ]
-    },
     "Storage": {
       "Get more storage": [
         "Krijg meer opslag"
@@ -12216,9 +12184,9 @@
       "Folder details": [
         "Map details"
       ],
-      "Found ${ searchView.numberOfResults } result": [
-        "${ searchView.numberOfResults } zoekresultaat",
-        "${ searchView.numberOfResults } zoekresultaten"
+      "Found ${ resultCount } result": [
+        "${ resultCount } zoekresultaat",
+        "${ resultCount } zoekresultaten"
       ],
       "Get ${ DRIVE_SHORT_APP_NAME } on your phone": [
         "Installeer ${ DRIVE_SHORT_APP_NAME } op uw telefoon"

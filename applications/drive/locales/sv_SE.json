@@ -977,6 +977,9 @@
       "Set as cover": [
         "Ställ in som omslag"
       ],
+      "Set password or expiration date": [
+        "Ställ in lösenord eller utgångsdatum"
+      ],
       "Set recovery methods": [
         "Ställ in återställningsmetoder"
       ],
@@ -1012,6 +1015,9 @@
       ],
       "Share your calendar with your team": [
         "Dela din kalender med ditt team"
+      ],
+      "Sharing is end-to-end encrypted": [
+        "Delning är end-to-end-krypterad"
       ],
       "Sharing options": [
         "Delningsalternativ"
@@ -3803,6 +3809,9 @@
       "We were not able to load some of your shared items": [
         "Vi kunde inte ladda några av dina delade objekt"
       ],
+      "We were not able to load some search results": [
+        "Vi kunde inte ladda några sökresultat"
+      ],
       "We were not able to load the folder contents": [
         "Vi kunde inte ladda mappens innehåll"
       ],
@@ -5178,6 +5187,9 @@
       "Cloud storage for businesses that take security seriously": [
         "Molnlagring för företag som tar säkerhet på allvar"
       ],
+      "Computed hash does not match XAttr": [
+        "Beräknat hash matchar inte XAttr"
+      ],
       "Conflict": [
         "Konflikt"
       ],
@@ -5227,9 +5239,6 @@
       ],
       "Create links and share your files with others.": [
         "Skapa länkar och dela dina filer med andra."
-      ],
-      "Create public link": [
-        "Skapa offentlig länk"
       ],
       "Create your first folder and start moving your files.": [
         "Skapa din första mapp och börja flytta dina filer."
@@ -5645,6 +5654,9 @@
       "Learn what to do ${ dataLeakedLink }": [
         "Lär dig vad du ska göra ${ dataLeakedLink }"
       ],
+      "Link copied": [
+        "Länk kopierad"
+      ],
       "Link copied to clipboard": [
         "Länk kopierad till urklipp"
       ],
@@ -5820,8 +5832,8 @@
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Våra varningar prioriterar säkerhet. Om du inte känner igen någon av intrångsinformationen kan du lugnt ignorera denna rapport."
       ],
-      "Owner": [
-        "Ägare"
+      "owner": [
+        "ägare"
       ],
       "password": [
         "lösenord"
@@ -5837,9 +5849,6 @@
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Betalningar är skyddad med TLS-kryptering och schweiziska integritetslagar."
-      ],
-      "People with access": [
-        "Personer med åtkomst"
       ],
       "Permanently delete all files in your locked drive": [
         "Ta permanent bort alla filer på din låsta lagringsenhet"
@@ -6327,6 +6336,9 @@
       "To fight spam and abuse, please verify you are human.": [
         "För att bekämpa skräppost och missbruk, verifiera att du är människa."
       ],
+      "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it's still best to download files only from trusted sources. ": [
+        "För att hjälpa till att skydda dig kan ${ DRIVE_APP_NAME } skanna dina filer på ett integritetsbevarande sätt och blockera skadliga filer. Men det är fortfarande bäst att bara ladda ner filer från betrodda källor. "
+      ],
       "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it’s still best to download files only from trusted sources. ": [
         "För att hjälpa till att skydda dig kan ${ DRIVE_APP_NAME } skanna dina filer på ett integritetsbevarande sätt och blockera skadliga filer. Men det är fortfarande bäst att bara ladda ner filer från betrodda källor. "
       ],
@@ -6537,6 +6549,9 @@
       "who": [
         "vem"
       ],
+      "Who has access": [
+        "Vem har åtkomst"
+      ],
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
         "kommer att återställas till versionen från ${ formattedRevisionDate }. Alla andra versioner kommer fortfarande att sparas."
       ],
@@ -6696,9 +6711,6 @@
       "Your email address was exposed:": [
         "Din e-postadress blev exponerad:"
       ],
-      "Your email address will be visible as the link's owner on the share page": [
-        "Din e-postadress kommer vara synlig som länkens ägare på delningssidan"
-      ],
       "Your email will only be used for this one-time verification.": [
         "Din e-post kommer endast användas för denna engångsverifiering."
       ],
@@ -6819,9 +6831,6 @@
       ]
     },
     "Into": {
-      "Can edit and manage access": [
-        "Kan redigera och hantera åtkomst"
-      ],
       "Can view and edit": [
         "Kan visa och redigera"
       ],
@@ -6915,6 +6924,9 @@
       "Account holder": [
         "Kontoinnehavare"
       ],
+      "Active": [
+        "Aktiv"
+      ],
       "Add email address": [
         "Lägg till e-postadress"
       ],
@@ -6927,8 +6939,8 @@
       "Address": [
         "Adress"
       ],
-      "Admin": [
-        "Admin"
+      "admin": [
+        "admin"
       ],
       "Alias title": [
         "Alias-rubrik"
@@ -6942,14 +6954,8 @@
       "Anonymous": [
         "Anonymt"
       ],
-      "Anyone on the Internet with the link can edit": [
-        "Vem som helst på internet med länken kan redigera"
-      ],
-      "Anyone on the Internet with the link can view": [
-        "Vem som helst på internet med länken kan visa"
-      ],
-      "Anyone with the link": [
-        "Vem som helst med länken"
+      "Anyone on the Internet with the link": [
+        "Vem som helst på internet med länken"
       ],
       "App password": [
         "Applösenord"
@@ -6992,6 +6998,12 @@
       ],
       "Calendars": [
         "Kalendrar"
+      ],
+      "can edit": [
+        "kan redigera"
+      ],
+      "can view": [
+        "kan visa"
       ],
       "Cancel download": [
         "Avbryt nedladdning"
@@ -7075,6 +7087,9 @@
         "Ta bort hårddisk?",
         "Ta bort hårddiskar?"
       ],
+      "Delete link and remove access for everyone": [
+        "Ta bort länk och ta bort åtkomst för alla"
+      ],
       "Delete recovery-related information.": [
         "Ta bort återställningsrelaterad information."
       ],
@@ -7137,9 +7152,6 @@
       ],
       "Enter device name": [
         "Ange enhetsnamn"
-      ],
-      "Erase this link and remove everyone with access": [
-        "Radera denna länk och ta bort alla med åtkomst"
       ],
       "Expired": [
         "Löpt ut"
@@ -7278,6 +7290,9 @@
       ],
       "New password": [
         "Nytt lösenord"
+      ],
+      "Not active": [
+        "Inte aktiv"
       ],
       "Note": [
         "Anteckning"
@@ -8476,8 +8491,8 @@
       "Password-protected Emails": [
         "Lösenordsskyddade e-postmeddelanden"
       ],
-      "Phone support (20+ users)": [
-        "Telefonsupport (20+ användare)"
+      "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
+        "Telefonsupport (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ användare)"
       ],
       "Priority email support": [
         "Prioriterad e-postsupport"
@@ -8906,8 +8921,8 @@
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Personifiera din e-postsignatur med loggor bilder, ikoner för sociala medier, länkar till dina kontaktuppgifter och mer"
       ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
-        "Telefonsupport är tillgänglig från ${ BRAND_NAME } kundsupportteam under europeiska öppettider, för kunder med 20 eller fler användare"
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } or more users": [
+        "Telefonsupport är tillgänglig från ${ BRAND_NAME } kundtjänst under europeiska öppettider, för kunder med ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } eller fler användare"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Förhindrar meddelanden från åtkomst av ${ BRAND_NAME } eller tredje part. De enda som kan läsa meddelandena är avsändaren och den tilltänkta mottagaren."
@@ -9966,6 +9981,9 @@
         "Rabatten är giltig för ${ renewalsWithCoupon } förnyelse.",
         "Rabatten är giltig för ${ renewalsWithCoupon } förnyelser."
       ],
+      "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
+        "Det speciellt rabatterade priset är giltig för den första månaden. Sedan kommer det förnyas automatiskt med ${ renewPriceStr } varje månad. Du kan avbryta när som helst."
+      ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "Det rabatterade priset ${ priceWithDiscount } gäller för den första ${ subscriptionLength } månaden.",
         "Det rabatterade priset på ${ priceWithDiscount } gäller under de första ${ subscriptionLength } månaderna."
@@ -11002,11 +11020,11 @@
       ]
     },
     "Status": {
-      "Accepted": [
-        "Accepterad"
+      "accepted": [
+        "accepterad"
       ],
-      "Pending": [
-        "Väntande"
+      "pending": [
+        "väntande"
       ]
     },
     "Storage": {
@@ -12213,9 +12231,9 @@
       "Folder details": [
         "Mappdetaljer"
       ],
-      "Found ${ searchView.numberOfResults } result": [
-        "Hittade ${ searchView.numberOfResults } resultat",
-        "Hittade ${ searchView.numberOfResults } resultat"
+      "Found ${ resultCount } result": [
+        "Hittade ${ resultCount } resultat",
+        "Hittade ${ resultCount } resultat"
       ],
       "Get ${ DRIVE_SHORT_APP_NAME } on your phone": [
         "Skaffa ${ DRIVE_SHORT_APP_NAME } på din telefon"
@@ -12482,6 +12500,12 @@
       "Processing...": [
         "Bearbetar..."
       ],
+      "Public link": [
+        "Offentlig länk"
+      ],
+      "Public link settings": [
+        "Inställning för offentlig länk"
+      ],
       "Public shared link status": [
         "Status för offentlig delad länk"
       ],
@@ -12572,6 +12596,9 @@
       ],
       "Settings": [
         "Inställningar"
+      ],
+      "Settings for ${ sharedFileName }": [
+        "Inställningar för ${ sharedFileName }"
       ],
       "SHA1": [
         "SHA1"
@@ -12809,6 +12836,9 @@
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Din gratis provperiod för ${ planName } slutar den ${ textDate }"
+      ],
+      "Your ${ planTitle } subscription has started": [
+        "Din ${ planTitle }-prenumeration har startat"
       ],
       "Your 3 GB bonus": [
         "Dina 3 GB bonus"
