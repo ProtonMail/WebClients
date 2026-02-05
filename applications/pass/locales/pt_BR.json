@@ -1437,6 +1437,9 @@
       "A contact is created for every email address that sends emails to or receives emails from ${ aliasEmail }.": [
         "Um contato é criado para cada endereço de e-mail que envia ou recebe e-mails de ${ aliasEmail }."
       ],
+      "A new version is being downloaded. Once the download completes, it will be available on next restart.": [
+        "Uma nova versão está sendo baixada. Assim que o download for concluído, ela estará disponível na próxima reinicialização."
+      ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "Uma nova versão do ${ PASS_APP_NAME } está disponível. Atualize para desfrutar dos recursos e correções de bugs mais recentes."
       ],
@@ -1904,8 +1907,7 @@
         "Movendo todos os itens de \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Movendo um item para outro cofre apagará seu link seguro.",
-        "Movendo item para outro cofre apagará seus links seguros."
+        "Movendo um item para outra pasta apagará seus links seguros."
       ],
       "Moving items": [
         "Movendo itens"
@@ -1930,6 +1932,9 @@
       ],
       "No network connection": [
         "Sem conexão com a internet"
+      ],
+      "No new versions are available at the moment.": [
+        "Não há novas versões disponíveis no momento."
       ],
       "None": [
         "Nenhum"
@@ -2317,6 +2322,9 @@
       "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
         "Isso rejeitará o dispositivo **${ name }** que tentou entrar na sua conta ${ BRAND_NAME } em **${ date }**."
       ],
+      "This will reload the application.": [
+        "Isso recarregará o aplicativo"
+      ],
       "To keep receiving emails transfer these aliases to a different mailbox:": [
         "Para continuar recebendo e-mails, transfira esses aliases para uma caixa de correio diferente:"
       ],
@@ -2332,8 +2340,8 @@
       "Trusted by over 50,000 business users and 100 million accounts around the world.": [
         "Com a confiança de mais de 50.000 usuários de negócios e 100 milhões de contas em todo o mundo."
       ],
-      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
-        "Experimente os novos recursos, atualizações e produtos da ${ BRAND_NAME } antes de serem lançados ao público. Isso recarregará o aplicativo"
+      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public.": [
+        "Experimente os novos recursos, atualizações e produtos da ${ BRAND_NAME } antes de serem lançados ao público."
       ],
       "Unable to copy to clipboard": [
         "Não é possível copiar para a área de transferência"
