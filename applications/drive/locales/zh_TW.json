@@ -135,6 +135,9 @@
       "Cancel subscription": [
         "取消訂購授權"
       ],
+      "Cancel transfers": [
+        "取消匯款"
+      ],
       "Cancel trial and pay": [
         "取消試用並付款"
       ],
@@ -375,6 +378,9 @@
       "Download anyway": [
         "仍要下載"
       ],
+      "Download info": [
+        "下載資訊"
+      ],
       "Download logs": [
         "下載日誌"
       ],
@@ -594,6 +600,9 @@
       "Manage share": [
         "管理共享"
       ],
+      "Manage users/addresses": [
+        "管理使用者/電子郵件地址"
+      ],
       "Mark as favorite": [
         "標記為最愛"
       ],
@@ -638,6 +647,9 @@
       ],
       "Move to trash": [
         "移至垃圾桶"
+      ],
+      "Name your album": [
+        "命名相簿"
       ],
       "New": [
         "新增"
@@ -828,6 +840,9 @@
       "Retry": [
         "重試"
       ],
+      "Run diagnostics": [
+        "執行診斷"
+      ],
       "Save": [
         "儲存"
       ],
@@ -986,6 +1001,9 @@
       ],
       "Toggle Contacts app": [
         "切換聯絡人應用程式"
+      ],
+      "Toggle referral": [
+        "切換推薦"
       ],
       "Toggle settings": [
         "切換設定"
@@ -1285,6 +1303,9 @@
       "6 user accounts": [
         "6 位使用者帳號"
       ],
+      "Admin panel to manage your family": [
+        "管理員面板以管理您的家庭"
+      ],
       "Advanced account protection": [
         "進階的帳號保護"
       ],
@@ -1336,6 +1357,9 @@
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "透過端對端加密保護電子郵件及行事曆。包含 15 電子郵件地址、支援自訂電子郵件網域、無限hide-my-email別名及更多"
+      ],
+      "Storage space is shared across all ${ BRAND_NAME } services.": [
+        "儲存空間於全部的 ${ BRAND_NAME } 服務。"
       ]
     },
     "BF2025: Deal details": {
@@ -1608,6 +1632,9 @@
       ]
     },
     "collider_2025: feature": {
+      "Access to advanced AI models": [
+        "存取進階 AI 模型"
+      ],
       "Basic chat history": [
         "基本聊天記錄"
       ],
@@ -1657,6 +1684,9 @@
       ],
       "High-speed chats and advanced AI features.": [
         "高速聊天和先進的人工智慧功能。"
+      ],
+      "Private video calls for the conversations that matter.": [
+        "用於重要交談的私密視訊。"
       ]
     },
     "color": {
@@ -3513,6 +3543,9 @@
       ],
       "ZIP code is required": [
         "郵遞區號為必要項目"
+      ],
+      "⚠️ Undecryptable name": [
+        "⚠️無法解密的名字"
       ]
     },
     "error": {
@@ -4031,6 +4064,9 @@
       ],
       "Recent": [
         "最近"
+      ],
+      "Share ${ photoCount } photo via": [
+        "共享 ${ photoCount } 照片透過"
       ]
     },
     "Hint": {
@@ -4530,19 +4566,19 @@
         "**自動連線**：在您開啟裝置時，即可開啟並連線至 VPN。"
       ],
       "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
-        "**第一步：**使用您的推薦連結邀請您的朋友加入 ${ BRAND_NAME }。"
+        "**第一步：**使用您的推薦連結邀請朋友加入 ${ BRAND_NAME }。"
       ],
       "**Step 2:** Your friends get 2 weeks for free on their chosen ${ BRAND_NAME } plan.": [
-        "**步驟 2 ** 您的朋友取得 ${ BRAND_NAME } 方案的 2 週免費。"
+        "**第二步：**您的朋友將取得 ${ BRAND_NAME } 方案的 2 週免費。"
       ],
       "**Step 2:** Your friends get 2 weeks for free on their plan.": [
-        "**步驟 2 ** 您的朋友取計畫外的 2 週免費。"
+        "**第二步：**您的朋友將取得該方案的 2 週免費。"
       ],
       "**Step 3:** Get ${ referrerRewardAmount } credits for every friend that subscribes to a plan.": [
         "**第三步：**每當有朋友訂閱方案時，您將獲得 ${ referrerRewardAmount } 額度。"
       ],
       "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
-        "**第三步：**每當有使者訂閱方案時，您將獲得 ${ referrerRewardAmount } 額度。"
+        "**第三步：**每當有使用者訂閱方案時，您將獲得 ${ referrerRewardAmount } 額度。"
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } 附贈的儲存空間"
@@ -4783,9 +4819,6 @@
       ],
       "Create links and share your files with others.": [
         "創建連結並與其他人分享您的檔案。"
-      ],
-      "Create public link": [
-        "創建公用連結"
       ],
       "Create your first folder and start moving your files.": [
         "創建您的第一個資料夾，並開始移動您的檔案。"
@@ -5288,6 +5321,9 @@
       "Number of dedicated servers in the organization": [
         "團隊專用的伺服器數量"
       ],
+      "Number of dedicated VPN servers in the organization": [
+        "團隊專用的 VPN 伺服器數量"
+      ],
       "Numbers": [
         "數字"
       ],
@@ -5324,9 +5360,6 @@
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "我們的警示偏向於謹慎。如果您不認識任何外洩的資訊，您可以放心地忽略此報告。"
       ],
-      "Owner": [
-        "擁有者"
-      ],
       "password": [
         "密碼"
       ],
@@ -5341,9 +5374,6 @@
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "支付受 TLS 加密及瑞士隱私法律保護。"
-      ],
-      "People with access": [
-        "具有存取權限的人員"
       ],
       "Permanently delete all files in your locked drive": [
         "永久刪除您已鎖定硬碟中的所有檔案"
@@ -6089,9 +6119,6 @@
       "Your email address was exposed:": [
         "您的電子郵件地址外洩:"
       ],
-      "Your email address will be visible as the link's owner on the share page": [
-        "您的電子郵件地址將於連結擁有者的共享頁面為可見。"
-      ],
       "Your email will only be used for this one-time verification.": [
         "您的電郵只會用於此一次性驗證。"
       ],
@@ -6206,9 +6233,6 @@
       ]
     },
     "Into": {
-      "Can edit and manage access": [
-        "可編輯及管理存取權"
-      ],
       "Can view and edit": [
         "可檢視和編輯"
       ],
@@ -6305,9 +6329,6 @@
       "Address": [
         "電郵位址"
       ],
-      "Admin": [
-        "管理員"
-      ],
       "Alias title": [
         "別名標題"
       ],
@@ -6316,15 +6337,6 @@
       ],
       "Anderson": [
         "安德松"
-      ],
-      "Anyone on the Internet with the link can edit": [
-        "網路上的任何人只要知道連結都可以編輯"
-      ],
-      "Anyone on the Internet with the link can view": [
-        "網路上的任何人只要知道連結都可以檢視"
-      ],
-      "Anyone with the link": [
-        "任何持有連結的人"
       ],
       "App password": [
         "應用程式密碼"
@@ -6509,9 +6521,6 @@
       "Enter device name": [
         "輸入裝置名稱"
       ],
-      "Erase this link and remove everyone with access": [
-        "刪除連結並移除所有有權限者"
-      ],
       "Expired": [
         "已失效"
       ],
@@ -6664,6 +6673,9 @@
       ],
       "Password": [
         "密碼"
+      ],
+      "Password strength": [
+        "密碼強度"
       ],
       "Payer": [
         "付款人"
@@ -7170,6 +7182,9 @@
       ],
       "Built-in chat": [
         "內建聊天"
+      ],
+      "Meeting recording": [
+        "會議錄影"
       ],
       "One active meeting at a time": [
         "單次單個會議進行"
@@ -7743,9 +7758,6 @@
       "Password-protected Emails": [
         "密碼 - 安全防護的電子郵件"
       ],
-      "Phone support (20+ users)": [
-        "電話支援 (20+ 使用者)"
-      ],
       "Priority email support": [
         "優先電子郵件支援"
       ],
@@ -8147,9 +8159,6 @@
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "以標誌、影像、社交媒體圖示、您的聯絡詳情連結等等，個人化您的電子郵件簽名檔"
       ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
-        "${ BRAND_NAME } 客戶服務團隊於歐洲辦公時間內，為 20 位或以上使用者的客戶提供電話支援"
-      ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "防止郵件被 ${ BRAND_NAME } 或第三方存取。能夠讀取郵件的人，就只有寄件者和意指的收件者。"
       ],
@@ -8346,6 +8355,12 @@
       "${ count } item failed to be decrypted": [
         "${ count } 個項目解密失敗"
       ],
+      "${ errors.length } item failed to be copied": [
+        "${ errors.length } 個項目複製失敗"
+      ],
+      "${ errors.length } item failed to be trashed": [
+        "${ errors.length } 個項目刪除失敗"
+      ],
       "${ nbFailures } photo could not be removed from \"${ albumLink.name }\"": [
         "無法從「${ albumLink.name }」中移除 ${ nbFailures } 張照片"
       ],
@@ -8358,8 +8373,14 @@
       "${ nbSuccesses } photo have been removed from \"${ albumLink.name }\"": [
         "已成功從「${ albumLink.name }」中移除 ${ nbSuccesses } 張照片"
       ],
+      "${ numberOfItems } copied item moved to trash": [
+        "${ numberOfItems } 個複製項目已移動到垃圾桶"
+      ],
       "${ numberOfItems } item deleted": [
         "已刪除${ numberOfItems }項目"
+      ],
+      "${ numberOfItems } item deleted permanently": [
+        "${ numberOfItems } 個項目已永久刪除"
       ],
       "${ numberOfItems } item deleted permanently from trash": [
         "${ numberOfItems } 個項目已從垃圾桶被永久刪除"
@@ -8384,6 +8405,9 @@
       ],
       "${ numberOfItems } item restored from trash": [
         "${ numberOfItems } 個項目已從垃圾桶中還原"
+      ],
+      "${ numberOfItems } item successfully copied": [
+        "${ numberOfItems } 個項目已成功複製"
       ],
       "${ numberOfItems } item successfully moved": [
         "${ numberOfItems } 個項目已成功移動"
@@ -8463,6 +8487,9 @@
       "Failed to remove the file": [
         "刪除檔案失敗"
       ],
+      "Failed to rename device": [
+        "無法重新命名裝置"
+      ],
       "Failed to upload files: ${ err }": [
         "上載檔案失敗：${ err }"
       ],
@@ -8501,6 +8528,12 @@
       ],
       "Root folder failed to be loaded": [
         "根資料夾載入失敗"
+      ],
+      "Selected item was not removed from your list": [
+        "選取項目未被從清單上移除"
+      ],
+      "Selected items were successfully removed from your list": [
+        "選取項目已成功從清單移除"
       ],
       "Share invitation accepted successfully": [
         "共享邀請函成功同意"
@@ -8671,6 +8704,9 @@
       ],
       "Storage": [
         "雲端儲存"
+      ],
+      "Ultrafast VPN servers in 110+ countries": [
+        "在110 多個國家提供極速 VPN 伺服器"
       ]
     },
     "Onboarding": {
@@ -9106,6 +9142,9 @@
       ],
       "Your payment is still being processed": [
         "您的付款仍在處理中"
+      ],
+      "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
+        "您的訂閱已套用現有折扣。若轉換至新的促銷方案，現有折扣將不再套用。"
       ]
     },
     "Payments.Error": {
@@ -10000,14 +10039,6 @@
     "State": {
       "Canceling your subscription, please wait": [
         "正將您的訂購授權取消，請稍候"
-      ]
-    },
-    "Status": {
-      "Accepted": [
-        "已接受"
-      ],
-      "Pending": [
-        "擱置中"
       ]
     },
     "Storage": {
@@ -11064,8 +11095,8 @@
       "Folder details": [
         "資料夾詳細資訊"
       ],
-      "Found ${ searchView.numberOfResults } result": [
-        "找到 ${ searchView.numberOfResults } 個結果"
+      "Found ${ resultCount } result": [
+        "找到 ${ resultCount } 個結果"
       ],
       "Get **${ referralInfo.uiData.refereeRewardAmount }** in credits with ${ planTitle }": [
         "透過 ${ planTitle } 取得 **${ referralInfo.uiData.refereeRewardAmount }** 額度。"
@@ -11534,6 +11565,9 @@
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "您的 ${ planName } 免費方案將於 ${ textDate } 結束"
+      ],
+      "Your ${ planTitle } subscription has started": [
+        "您的 ${ planTitle } 訂閱已開始"
       ],
       "Your 3 GB bonus": [
         "您的 3 GB 獎勵"

@@ -2474,6 +2474,9 @@
       "Payments problem": [
         "مشكلة في الدفع"
       ],
+      "Sheets problem": [
+        "مشكلة الجداول"
+      ],
       "Sign in problem": [
         "مشكلة في تسجيل الدخول"
       ],
@@ -4579,9 +4582,6 @@
       "macOS Monterey": [
         "نظام macOS Monterey"
       ],
-      "macOS Ventura or later": [
-        "macOS Ventura أو أحدث"
-      ],
       "Mail": [
         "البريد الإلكتروني"
       ],
@@ -4608,9 +4608,6 @@
       ],
       "Windows 10/11 (x64)": [
         "Windows 10/11 (x64)"
-      ],
-      "Windows 8/8.1/7 or Windows 32-bit (ARM64)": [
-        "Windows 8/8.1/7 أو Windows 32-bit (ARM64)"
       ]
     },
     "drive_signup_2023: Title": {
@@ -6964,7 +6961,7 @@
     },
     "Footer": {
       "${ BRAND_NAME }. Privacy by default.": [
-        "${ BRAND_NAME }، الخصوصية أساسنا."
+        "${ BRAND_NAME }. الخصوصية بشكل افتراضي"
       ]
     },
     "Free trial dekstop": {
@@ -13964,9 +13961,6 @@
       "Password-protected Emails": [
         "رسائل بريد إلكتروني محمية بكلمة مرور"
       ],
-      "Phone support (20+ users)": [
-        "دعم عبر الهاتف (لأكثر من 20 مستخدمًا)"
-      ],
       "Priority email support": [
         "دعم ذو أولوية عبر البريد الإلكتروني"
       ],
@@ -14503,9 +14497,6 @@
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "خصص توقيع بريدك الإلكتروني بالشعارات والصور وأيقونات وسائل التواصل الاجتماعي وروابط تفاصيل الاتصال الخاصة بك والمزيد"
-      ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
-        "الدعم عبر الهاتف متاح من فريق دعم عملاء ${ BRAND_NAME } خلال ساعات العمل الأوروبية، للعملاء الذين لديهم 20 مستخدمًا أو أكثر"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "يمنع الوصول إلى الرسائل من قِبل ${ BRAND_NAME } أو الأطراف الثالثة. الأشخاص الوحيدون الذين يمكنهم قراءة الرسائل هم المُرسِل والمستلم المقصود."
@@ -15957,7 +15948,7 @@
         "متضمنًا ${ taxRate }% ضرائب: ${ taxAmount }"
       ],
       "MM/YY": [
-        "شهر / سنة"
+        "ش/س"
       ],
       "More plans are available in other currencies": [
         "تتوفر خطط أخرى بعملات أخرى"
@@ -19870,9 +19861,6 @@
       "Catch-all address updated": [
         "تم تحديث عنوان Catch-all"
       ],
-      "Changes published. Your changes will be visible to all users in the next few hours.": [
-        "نُشرت التغييرات. ستكون تغييراتك مرئية لجميع المستخدمين في الساعات القليلة القادمة."
-      ],
       "Code sent to ${ methodTo }": [
         "تم إرسال الرمز إلى ${ methodTo }"
       ],
@@ -22700,7 +22688,7 @@
         "حزمتك من ${ a } و ${ b }"
       ],
       "Your ${ selected } plan": [
-        "باقتك ${ selected }"
+        "باقة ${ selected }"
       ]
     },
     "vpn_2step: tooltip": {

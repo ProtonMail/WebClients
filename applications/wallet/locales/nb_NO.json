@@ -3859,8 +3859,8 @@
       "Password-protected Emails": [
         "Passordbeskyttede e-poster"
       ],
-      "Phone support (20+ users)": [
-        "Telefonstøtte (20+ brukere)"
+      "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
+        "Telefonstøtte (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ brukere)"
       ],
       "Priority email support": [
         "Prioritert e-poststøtte"
@@ -4249,8 +4249,8 @@
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Tilpass e-postsignaturen din med logoer, bilder, ikoner for sosiale medier, koblinger til kontaktinformasjonen din og mer."
       ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
-        "Telefonstøtte er tilgjengelig fra ${ BRAND_NAME }-kundestøtteteamet i europeisk arbeidstid, for kunder med 20 eller flere brukere"
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } or more users": [
+        "Telefonstøtte er tilgjengelig fra kundestøtteteamet til ${ BRAND_NAME } i europeisk åpningstid for kunder med ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } eller flere brukere."
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Forhindrer at meldinger åpnes av ${ BRAND_NAME } eller tredjeparter. De eneste som kan lese meldingene, er avsenderen og den tiltenkte mottakeren."

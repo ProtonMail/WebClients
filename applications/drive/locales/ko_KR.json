@@ -5159,9 +5159,6 @@
       "Create links and share your files with others.": [
         "링크를 생성하여 내 파일을 다른 사람에게 공유해보세요."
       ],
-      "Create public link": [
-        "공개 링크 생성"
-      ],
       "Create your first folder and start moving your files.": [
         "첫 폴더를 생성하고 파일을 이동시켜 보세요."
       ],
@@ -5750,9 +5747,6 @@
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "당사의 알림은 안전을 최우선으로 합니다. 만약 유출된 정보에 대해 아는 것이 없다면, 이 보고서를 무시할 수 있습니다."
       ],
-      "Owner": [
-        "소유자"
-      ],
       "password": [
         "비밀번호"
       ],
@@ -5767,9 +5761,6 @@
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "결제는 TLS 암호화와 스위스의 보안 법에 의해 보호되고 있습니다."
-      ],
-      "People with access": [
-        "접근 권한이 있는 사람"
       ],
       "Permanently delete all files in your locked drive": [
         "잠긴 드라이브의 모든 파일을 영구적으로 삭제합니다"
@@ -6626,9 +6617,6 @@
       "Your email address was exposed:": [
         "사용자의 이메일 주소가 노출되었습니다:"
       ],
-      "Your email address will be visible as the link's owner on the share page": [
-        "공유 페이지에 링크의 소유자로서 사용자의 이메일 주소가 표시됩니다."
-      ],
       "Your email will only be used for this one-time verification.": [
         "회원님의 이메일 주소는 이번 인증에만 사용됩니다."
       ],
@@ -6746,9 +6734,6 @@
       ]
     },
     "Into": {
-      "Can edit and manage access": [
-        "접근 권한을 변경 및 관리할 수 있습니다"
-      ],
       "Can view and edit": [
         "보거나 편집할 수 있습니다"
       ],
@@ -6851,9 +6836,6 @@
       "Address": [
         "주소"
       ],
-      "Admin": [
-        "관리자"
-      ],
       "Alias title": [
         "별칭 제목"
       ],
@@ -6865,15 +6847,6 @@
       ],
       "Anonymous": [
         "익명"
-      ],
-      "Anyone on the Internet with the link can edit": [
-        "링크를 가진 사용자가 인터넷 상에서 편집할 수 있습니다."
-      ],
-      "Anyone on the Internet with the link can view": [
-        "링크가 있는 누구나 볼 수 있습니다"
-      ],
-      "Anyone with the link": [
-        "링크가 있는 누구나"
       ],
       "App password": [
         "앱 비밀번호"
@@ -7063,9 +7036,6 @@
       ],
       "Enter device name": [
         "기기 이름 입력"
-      ],
-      "Erase this link and remove everyone with access": [
-        "이 링크를 지우고 모두의 접근권한을 제거합니다"
       ],
       "Expired": [
         "만료됨"
@@ -8322,8 +8292,8 @@
       "Password-protected Emails": [
         "비밀번호로 보호된 이메일"
       ],
-      "Phone support (20+ users)": [
-        "휴대 전화 지원 (20명 이상 사용자)"
+      "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
+        "전화 지원 (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }명 이상 사용자)"
       ],
       "Priority email support": [
         "이메일 우선 지원"
@@ -8744,8 +8714,8 @@
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "로고, 이미지, 소셜 미디어 아이콘, 연락처 링크 등으로 이메일 서명을 개인화하세요."
       ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
-        "전화 지원은 20명 이상의 사용자가 있는 고객을 위해 유럽 업무 시간 동안 ${ BRAND_NAME } 고객 성공 팀에서 이용할 수 있습니다."
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } or more users": [
+        "전화 지원은 유럽 표준시 업무 시간 동안 ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }명 이상의 사용자가 있는 고객을 대상으로 ${ BRAND_NAME } 고객 지원팀에서 이용할 수 있습니다."
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "${ BRAND_NAME } 또는 제3자가 메시지에 접근하는 것을 방지합니다. 메시지를 읽을 수 있는 유일한 사람은 당신과 이메일을 받은 수신자 뿐이죠."
@@ -10797,10 +10767,7 @@
       ]
     },
     "Status": {
-      "Accepted": [
-        "수락함"
-      ],
-      "Pending": [
+      "pending": [
         "대기 중"
       ]
     },
@@ -11978,8 +11945,8 @@
       "Folder details": [
         "폴더 세부 정보"
       ],
-      "Found ${ searchView.numberOfResults } result": [
-        "${ searchView.numberOfResults }개 결과 찾음"
+      "Found ${ resultCount } result": [
+        "${ resultCount }개의 결과 찾음"
       ],
       "Get ${ DRIVE_SHORT_APP_NAME } on your phone": [
         "회원님의 휴대전화에 ${ DRIVE_SHORT_APP_NAME }를 설치하세요"
@@ -12571,6 +12538,9 @@
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "사용자의 ${ planName } 무료 체험이 ${ textDate }에 종료됩니다."
+      ],
+      "Your ${ planTitle } subscription has started": [
+        "${ planTitle } 구독이 시작되었습니다"
       ],
       "Your 3 GB bonus": [
         "나의 3 GB 보너스"

@@ -3629,6 +3629,9 @@
       "macOS": [
         "macOS"
       ],
+      "macOS 14 (Sonoma) or newer": [
+        "macOS 14 (Sonoma) alebo novší"
+      ],
       "macOS Big Sur": [
         "macOS Big Sur"
       ],
@@ -3641,8 +3644,8 @@
       "macOS Monterey": [
         "macOS Monterey"
       ],
-      "macOS Ventura or later": [
-        "macOS Ventura alebo novšie"
+      "macOS Ventura": [
+        "macOS Ventura"
       ],
       "Mobile": [
         "Mobil"
@@ -3658,9 +3661,6 @@
       ],
       "Windows 10/11 (x64)": [
         "Windows 10/11 (x64)"
-      ],
-      "Windows 8/8.1/7 or Windows 32-bit (ARM64)": [
-        "Windows 8/8.1/7 alebo Windows 32-bit (ARM64)"
       ]
     },
     "driveplus2024: Deal details": {
@@ -4574,6 +4574,9 @@
       ]
     },
     "Error message": {
+      "Account is deleted or disabled": [
+        "Účet je vymazaný alebo deaktivovaný"
+      ],
       "App currently unavailable": [
         "Aplikácia momentálne nie je k dispozícii"
       ],
@@ -10617,8 +10620,8 @@
       "Password-protected Emails": [
         "Heslom chránené emaily"
       ],
-      "Phone support (20+ users)": [
-        "Telefonická podpora (20+ používateľov)"
+      "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
+        "Telefónna podpora (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ používateľov)"
       ],
       "Priority email support": [
         "Prioritná emailová podpora"
@@ -11109,8 +11112,8 @@
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Prispôsobte si svoj emailový podpis pomocou log, obrázkov, ikon sociálnych médií, odkazov na vaše kontaktné údaje a ďalších"
       ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
-        "Telefonická podpora od tímu zákazníckej podpory ${ BRAND_NAME } je k dispozícii počas európskych pracovných hodín pre zákazníkov s viac než 20 používateľmi"
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } or more users": [
+        "Telefonická podpora od tímu zákazníckej podpory ${ BRAND_NAME } je k dispozícii počas európskych pracovných hodín pre zákazníkov s minimálne ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } používateľmi."
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Zabraňuje prístupu ${ BRAND_NAME } alebo tretím stranám k správam. Jediní ľudia, ktorí môžu čítať správy, sú odosielateľ a zamýšľaný príjemca."
@@ -14895,9 +14898,6 @@
       "Catch-all address updated": [
         "Adresa doménového koša aktualizovaná"
       ],
-      "Changes published. Your changes will be visible to all users in the next few hours.": [
-        "Zmeny boli publikované. Vaše úpravy budú viditeľné všetkým používateľom o niekoľko hodín."
-      ],
       "Code sent to ${ methodTo }": [
         "Kód zaslaný na ${ methodTo }"
       ],
@@ -15213,11 +15213,29 @@
       ]
     },
     "Theme": {
+      "Auto": [
+        "Automaticky"
+      ],
       "Dark": [
         "Tmavý"
       ],
       "Light": [
         "Svetlý"
+      ],
+      "Mode: Auto": [
+        "Režim: Automatický"
+      ],
+      "Mode: Dark": [
+        "Režim: Tmavý"
+      ],
+      "Mode: Light": [
+        "Režim: Svetlý"
+      ],
+      "Sync with system": [
+        "Synchronizovať so systémom"
+      ],
+      "Use ${ BRAND_NAME } settings": [
+        "Použiť nastavenia ${ BRAND_NAME }"
       ]
     },
     "Themes": {

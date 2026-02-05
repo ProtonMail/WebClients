@@ -5165,9 +5165,6 @@
       "Create links and share your files with others.": [
         "共有リンクを作成し、ファイルを共有できます。"
       ],
-      "Create public link": [
-        "公開リンクを作成"
-      ],
       "Create your first folder and start moving your files.": [
         "フォルダーを作成すると、そこにファイルを移動できるようになります。"
       ],
@@ -5756,9 +5753,6 @@
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "当社のアラートは安全性を優先しています。侵害された情報を認識できない場合は、このレポートを無視してください。"
       ],
-      "Owner": [
-        "所有者"
-      ],
       "password": [
         "パスワード"
       ],
@@ -5773,9 +5767,6 @@
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "支払いの詳細は TLS で暗号化され、スイスのプライバシー法によっても保護されています。"
-      ],
-      "People with access": [
-        "アクセス権のある人"
       ],
       "Permanently delete all files in your locked drive": [
         "ロックされたドライブ内のすべてのファイルを完全に削除する"
@@ -6632,9 +6623,6 @@
       "Your email address was exposed:": [
         "メールアドレスが漏洩しました:"
       ],
-      "Your email address will be visible as the link's owner on the share page": [
-        "あなたのメールアドレスはリンクの所有者として共有ページに表示されます"
-      ],
       "Your email will only be used for this one-time verification.": [
         "メールアドレスは、この一度限りの認証にのみ使用されます。"
       ],
@@ -6752,9 +6740,6 @@
       ]
     },
     "Into": {
-      "Can edit and manage access": [
-        "編集とアクセス管理が可能"
-      ],
       "Can view and edit": [
         "表示と編集が可能"
       ],
@@ -6857,9 +6842,6 @@
       "Address": [
         "メールアドレス"
       ],
-      "Admin": [
-        "管理者"
-      ],
       "Alias title": [
         "エイリアスのタイトル"
       ],
@@ -6871,15 +6853,6 @@
       ],
       "Anonymous": [
         "匿名"
-      ],
-      "Anyone on the Internet with the link can edit": [
-        "このリンクを知っていれば、インターネット上の誰でも編集できます"
-      ],
-      "Anyone on the Internet with the link can view": [
-        "このリンクを知っていれば、インターネット上の誰でも閲覧できます"
-      ],
-      "Anyone with the link": [
-        "リンクを知っている全員"
       ],
       "App password": [
         "アプリのパスワード"
@@ -7069,9 +7042,6 @@
       ],
       "Enter device name": [
         "デバイス名を入力"
-      ],
-      "Erase this link and remove everyone with access": [
-        "このリンクを消去し、アクセス権を持つ全員を削除します"
       ],
       "Expired": [
         "有効期限切れ"
@@ -8328,9 +8298,6 @@
       "Password-protected Emails": [
         "パスワードで保護されたメール"
       ],
-      "Phone support (20+ users)": [
-        "電話サポート (20 ユーザー以上)"
-      ],
       "Priority email support": [
         "優先的なメールサポート"
       ],
@@ -8749,9 +8716,6 @@
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "ロゴ、画像、ソーシャルメディアアイコン、連絡先詳細へのリンクなどを使用してメールの署名をパーソナライズします"
-      ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
-        "ユーザーが 20 名以上のお客様は、ヨーロッパの営業時間内に ${ BRAND_NAME }カスタマー サポート チームから電話サポートを利用可能"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "${ BRAND_NAME } または第三者によるメッセージへのアクセスを防ぎます。 メッセージを読める方は送信者と対象の受信者しかありません。"
@@ -10802,14 +10766,6 @@
         "サブスクリプションをキャンセルしています。お待ちください。"
       ]
     },
-    "Status": {
-      "Accepted": [
-        "受取済み"
-      ],
-      "Pending": [
-        "保留中"
-      ]
-    },
     "Storage": {
       "Get more storage": [
         "ストレージを増やす"
@@ -11983,9 +11939,6 @@
       ],
       "Folder details": [
         "フォルダーの詳細"
-      ],
-      "Found ${ searchView.numberOfResults } result": [
-        "${ searchView.numberOfResults }件見つかりました"
       ],
       "Get ${ DRIVE_SHORT_APP_NAME } on your phone": [
         "スマートフォンに ${ DRIVE_SHORT_APP_NAME } をインストールしましょう"

@@ -4975,9 +4975,6 @@
       "Create links and share your files with others.": [
         "Ossza meg a fájljait másokkal, hivatkozások létrehozásával."
       ],
-      "Create public link": [
-        "Nyilvános hivatkozás létrehozása"
-      ],
       "Create your first folder and start moving your files.": [
         "Hozza létre első mappáját és helyezze el benne a fájljait."
       ],
@@ -5543,9 +5540,6 @@
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Figyelmeztetéseink a biztonságot helyezik előtérbe.Ha nem ismeri fel ezeket a feltört információkat nyugodtan figyelmen kívül hagyhatja ezt."
       ],
-      "Owner": [
-        "Tulajdonos"
-      ],
       "password": [
         "jelszó"
       ],
@@ -5560,9 +5554,6 @@
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Fizetés adatait TLS titkosítással védjük. Svájci adatvédelmi törvények vonatkoznak rá."
-      ],
-      "People with access": [
-        "Hozzáféréssel rendelkezők"
       ],
       "Permanently delete all files in your locked drive": [
         "A zárolt tárhelyen található összes fájl végleges törlése"
@@ -6380,9 +6371,6 @@
       "Your email address was exposed:": [
         "Az e-mail címét felfedték:"
       ],
-      "Your email address will be visible as the link's owner on the share page": [
-        "Az Ön e-mail címe a hivatkozás tulajdonosaként lesz látható a megosztási oldalon."
-      ],
       "Your email will only be used for this one-time verification.": [
         "Az e-mail csak erre az egyszeri ellenőrzésre lesz felhasználva."
       ],
@@ -6603,15 +6591,6 @@
       "Anderson": [
         "Kovács"
       ],
-      "Anyone on the Internet with the link can edit": [
-        "Az interneten bárki, aki rendelkezik a hivatkozással, szerkesztheti"
-      ],
-      "Anyone on the Internet with the link can view": [
-        "Bárki az Interneten ezzel a hivatkozással megtudja nézni"
-      ],
-      "Anyone with the link": [
-        "Bárki ezzel a hivatkozással"
-      ],
       "App password": [
         "Jelszó hozzáadása"
       ],
@@ -6795,9 +6774,6 @@
       ],
       "Enter device name": [
         "Írja be az eszköz nevét"
-      ],
-      "Erase this link and remove everyone with access": [
-        "Törölje ezt a hivatkozást, és távolítsa el a hozzáféréssel rendelkezőket"
       ],
       "Expired": [
         "Lejárt"
@@ -8014,9 +7990,6 @@
       "Password-protected Emails": [
         "Jelszóval védett e-mailek"
       ],
-      "Phone support (20+ users)": [
-        "Telefonos támogatás (20 felhasználótól)"
-      ],
       "Priority email support": [
         "Elsőbbségi e-mail támogatás"
       ],
@@ -8437,9 +8410,6 @@
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Alakítsa saját igényeihez az e-mail aláírását, logóval, képpel, közösségi média ikonokkal, hivatkozásokkal az elérhetőségeire stb."
-      ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
-        "Telefonos támogatás érhető el a ${ BRAND_NAME } Ügyfélszolgálati csoportjától európai munkaidőben, 20 vagy több felhasználóval rendelkező ügyfelek számára."
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Megakadályozza, hogy a ${ BRAND_NAME } vagy harmadik felek hozzáférjenek az üzenetekhez. Csak a feladó és a szándékozott címzett tudja elolvasni az üzenetek szövegét."
@@ -10393,14 +10363,6 @@
         "Az előfizetése megszüntetése folyamatban van, kérjük, várjon"
       ]
     },
-    "Status": {
-      "Accepted": [
-        "Elfogadva"
-      ],
-      "Pending": [
-        "Függőben"
-      ]
-    },
     "Storage": {
       "Get more storage": [
         "További tárhely igénylése"
@@ -11580,10 +11542,6 @@
       ],
       "Folder details": [
         "Mappa adatai"
-      ],
-      "Found ${ searchView.numberOfResults } result": [
-        "${ searchView.numberOfResults } találat",
-        "${ searchView.numberOfResults } találat"
       ],
       "Get **${ referralInfo.uiData.refereeRewardAmount }** in credits with ${ planTitle }": [
         "Szerezzen **${ referralInfo.uiData.refereeRewardAmount }** kreditet a(z) ${ planTitle } csomaggal"

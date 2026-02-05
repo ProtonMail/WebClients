@@ -5023,6 +5023,9 @@
       "macOS": [
         "macOS"
       ],
+      "macOS 14 (Sonoma) or newer": [
+        "macOS 14 (Sonoma) 以降"
+      ],
       "macOS Big Sur": [
         "macOS Big Sur"
       ],
@@ -5035,8 +5038,8 @@
       "macOS Monterey": [
         "macOS Monterey"
       ],
-      "macOS Ventura or later": [
-        "macOS Ventura 以降"
+      "macOS Ventura": [
+        "macOS Ventura"
       ],
       "Mail": [
         "メール"
@@ -5067,9 +5070,6 @@
       ],
       "Windows 10/11 (x64)": [
         "Windows 10/11 (x64)"
-      ],
-      "Windows 8/8.1/7 or Windows 32-bit (ARM64)": [
-        "Windows 8/8.1/7 または Windows 32-bit (ARM64)"
       ]
     },
     "Download link": {
@@ -15142,9 +15142,6 @@
       "Password-protected Emails": [
         "パスワードで保護されたメール"
       ],
-      "Phone support (20+ users)": [
-        "電話サポート (20 ユーザー以上)"
-      ],
       "Priority email support": [
         "優先的なメールサポート"
       ],
@@ -15642,9 +15639,6 @@
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "ロゴ、画像、ソーシャルメディアアイコン、連絡先詳細へのリンクなどを使用してメールの署名をパーソナライズします"
-      ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
-        "ユーザーが 20 名以上のお客様は、ヨーロッパの営業時間内に ${ BRAND_NAME }カスタマー サポート チームから電話サポートを利用可能"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "${ BRAND_NAME } または第三者によるメッセージへのアクセスを防ぎます。 メッセージを読める方は送信者と対象の受信者しかありません。"
@@ -21025,9 +21019,6 @@
       ],
       "Catch-all address updated": [
         "Catch-All アドレスが更新されました"
-      ],
-      "Changes published. Your changes will be visible to all users in the next few hours.": [
-        "変更が公開されました。変更は数時間以内にすべてのユーザーに表示されます。"
       ],
       "Code sent to ${ methodTo }": [
         "${ methodTo } にコードを送信しました"

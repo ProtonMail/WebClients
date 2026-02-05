@@ -1510,7 +1510,10 @@
         "Důvěřovat"
       ],
       "Trust key": [
-        "Důvěřovat klíči"
+        "Důvěřovat klíči",
+        "Důvěřovat klíčům",
+        "Důvěřovat klíčům",
+        "Důvěřovat klíčům"
       ],
       "Trust public key": [
         "Důvěřovat veřejnému klíči"
@@ -4144,6 +4147,9 @@
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Chcete-li zajistit co nejvyšší zabezpečení účtu, nastavte frázi pro obnovení."
       ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Pro importování prostřednictvím souborů CSV a VCF zajistěte, aby velikost souboru nepřesáhla ${ MAX_IMPORT_FILE_SIZE_STRING } nebo ${ maxContactString } kontaktů. Pokud je váš soubor větší, rozdělte jej na menší soubory. ${ learnMoreLink }."
+      ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Pro import kontaktů ze služby Google nebo Outlook ${ easySwitchLink }."
       ],
@@ -4973,6 +4979,9 @@
       "Thanks for the feedback!": [
         "Děkujeme za zpětnou vazbu!"
       ],
+      "That action can't be performed on emails in this folder": [
+        "Tuto akci nelze provést u e-mailů v této složce"
+      ],
       "The amount due has changed. Please try again.": [
         "Částka k zaplacení se změnila. Zkuste to prosím znovu."
       ],
@@ -5224,6 +5233,9 @@
       ],
       "An error occurred uploading your file. No file has been selected.": [
         "Došlo k chybě při nahrávání vašeho souboru. Žádný soubor nebyl vybrán."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ maxContactString } contacts.": [
+        "Váš soubor ${ formattedFilename } obsahuje více než ${ maxContactString } kontaktů."
       ],
       "Your file ${ formattedFilename } has no contacts to be imported.": [
         "Váš soubor ${ formattedFilename } nemá žádné kontakty k importování."
@@ -6935,6 +6947,12 @@
       "All your changes will be lost.": [
         "Veškeré vaše změny budou ztraceny."
       ],
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "Budou importovány všechny vaše kontakty až do limitu ${ maxContact }",
+        "Budou importovány všechny vaše kontakty až do limitu ${ maxContact }",
+        "Budou importovány všechny vaše kontakty až do limitu ${ maxContact }",
+        "Budou importovány všechny vaše kontakty až do limitu ${ maxContact }"
+      ],
       "American Express SafeKey logo": [
         "Logo American Express SafeKey"
       ],
@@ -7852,6 +7870,9 @@
       ],
       "No links cleaned": [
         "Nebyl vyčištěn žádný odkaz"
+      ],
+      "No messages found": [
+        "Nenalezeny žádné zprávy"
       ],
       "No messages to show": [
         "Žádné zprávy k zobrazení"
@@ -11342,8 +11363,8 @@
       "Password-protected Emails": [
         "Zprávy chráněné heslem"
       ],
-      "Phone support (20+ users)": [
-        "Telefonická podpora (20+ uživatelů)"
+      "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
+        "Telefonická podpora (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ uživatelů)"
       ],
       "Priority email support": [
         "Prioritní podpora"
@@ -11793,8 +11814,8 @@
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Přizpůsobte svůj podpis logem, obrázky, ikony sociálních médií, odkazem na kontakt atd."
       ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
-        "Telefonická podpora je dostupná od týmu zákaznické podpory ${ BRAND_NAME } během evropské pracovní doby, pro zákazníky se 20 a více uživateli"
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } or more users": [
+        "Telefonická podpora je dostupná od týmu zákaznické podpory ${ BRAND_NAME } během evropské pracovní doby, pro zákazníky s ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } nebo více uživateli"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Zamezí přístup ke zprávám třetím stranám i ${ BRAND_NAME }. Jediní lidé, kteří mohou číst zprávy, jsou odesílatel a příjemce."
@@ -12606,6 +12627,18 @@
       "terms and conditions": [
         "smluvní podmínky užívání"
       ],
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "Sleva je platná pro ${ renewalsWithCoupon } obnovení.",
+        "Sleva je platná pro ${ renewalsWithCoupon } obnovení.",
+        "Sleva je platná pro ${ renewalsWithCoupon } obnovení.",
+        "Sleva je platná pro ${ renewalsWithCoupon } obnovení."
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Speciální zvýhodněná cena platí ${ couponRedemptions } měsíc. Poté dojde každý měsíc k automatickému obnovení za ${ renewPriceStr }. Předplatné můžete kdykoli zrušit.",
+        "Speciální zvýhodněná cena platí ${ couponRedemptions } měsíce. Poté dojde každý měsíc k automatickému obnovení za ${ renewPriceStr }. Předplatné můžete kdykoli zrušit.",
+        "Speciální zvýhodněná cena platí ${ couponRedemptions } měsíců. Poté dojde každý měsíc k automatickému obnovení za ${ renewPriceStr }. Předplatné můžete kdykoli zrušit.",
+        "Speciální zvýhodněná cena platí ${ couponRedemptions } měsíců. Poté dojde každý měsíc k automatickému obnovení za ${ renewPriceStr }. Předplatné můžete kdykoli zrušit."
+      ],
       "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
         "Speciální zvýhodněná cena platí pro první ${ subscriptionLength } měsíc.",
         "Speciální zvýhodněná cena platí pro první ${ subscriptionLength } měsíce.",
@@ -12614,6 +12647,12 @@
       ],
       "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Speciální zvýhodněná cena platí první měsíc. Poté dojde každý měsíc k automatickému obnovení za ${ renewPriceStr }. Předplatné můžete kdykoli zrušit."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Speciálně zvýhodněná cena ${ priceWithDiscount } platí ${ couponRedemptions } měsíc. Poté se automaticky obnoví za ${ renewPriceStr } na 1 měsíc. Službu můžete kdykoli zrušit.",
+        "Speciálně zvýhodněná cena ${ priceWithDiscount } platí ${ couponRedemptions } měsíce. Poté se automaticky obnoví za ${ renewPriceStr } na 1 měsíc. Službu můžete kdykoli zrušit.",
+        "Zvýhodněná cena ${ priceWithDiscount } platí po dobu ${ couponRedemptions } měsíců. Poté se automaticky obnoví za ${ renewPriceStr } na 1 měsíc. Službu můžete kdykoli zrušit.",
+        "Zvýhodněná cena ${ priceWithDiscount } platí po dobu ${ couponRedemptions } měsíců. Poté se automaticky obnoví za ${ renewPriceStr } na 1 měsíc. Službu můžete kdykoli zrušit."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "Speciální zvýhodněná cena ${ priceWithDiscount } platí pro první ${ subscriptionLength } měsíc.",
@@ -16234,6 +16273,9 @@
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Vaše bezplatná zkušební verze ${ planName } skončí ${ textDate }"
+      ],
+      "Your ${ planTitle } subscription has started": [
+        "Vaše předplatné ${ planTitle } bylo zahájeno"
       ],
       "Your account is protected": [
         "Váš účet je chráněn"

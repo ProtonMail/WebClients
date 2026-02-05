@@ -53,7 +53,7 @@
         "Tambahkan domain khusus"
       ],
       "Add domain": [
-        "Tambah domain"
+        "Tambahkan domain"
       ],
       "Add field": [
         "Tambahkan kolom"
@@ -80,7 +80,7 @@
         "Panel admin"
       ],
       "Advanced": [
-        "Opsi lanjutan"
+        "Lanjutan"
       ],
       "Advanced options": [
         "Opsi lanjutan"
@@ -107,7 +107,7 @@
         "Hapus banyak item sekaligus dari sampah"
       ],
       "Bulk move items to another vault": [
-        "Pindahkan banyak item sekaligus ke brankas lainnya"
+        "Pindahkan item secara massal ke brankas lain"
       ],
       "Bulk move items to trash": [
         "Pindahkan banyak item sekaligus ke sampah"
@@ -170,10 +170,10 @@
         "Lanjutkan"
       ],
       "Continue offline": [
-        "Lanjut secara offline"
+        "Lanjut secara luring"
       ],
       "Continue without pinning": [
-        "Lanjutkan tanpa menyemat"
+        "Lanjutkan tanpa penyematan"
       ],
       "Copy and close": [
         "Salin dan tutup"
@@ -338,7 +338,7 @@
         "Aktifkan alias ini untuk menerima email yang terkirim ke alias ini"
       ],
       "Exclude from monitoring": [
-        "Kecualikan dari pemantauan"
+        "Kecualikan dari monitoring"
       ],
       "Export": [
         "Ekspor"
@@ -350,7 +350,7 @@
         "Isi kata sandi"
       ],
       "Filter vault items": [
-        "Saring item brankas"
+        "Filter item brankas"
       ],
       "Generate alias": [
         "Hasilkan alias"
@@ -368,7 +368,7 @@
         "Membuat tautan aman..."
       ],
       "Get mobile and desktop apps": [
-        "Dapatkan Pass versi seluler dan desktop"
+        "Dapatkan aplikasi versi seluler dan desktop"
       ],
       "Get mobile apps": [
         "Dapatkan Pass versi mobile"
@@ -401,7 +401,7 @@
         "Mengimpor"
       ],
       "Include in monitoring": [
-        "Sertakan dalam pemantauan"
+        "Sertakan dalam monitoring"
       ],
       "Invite more...": [
         "Undang lebih banyak pengguna..."
@@ -443,7 +443,7 @@
         "Jadikan bawaan"
       ],
       "Make editor": [
-        "Jadikan penyunting"
+        "Jadikan editor"
       ],
       "Make manager": [
         "Jadikan pengelola"
@@ -458,7 +458,7 @@
         "Sinkronkan data"
       ],
       "Mark as resolved": [
-        "Tandai sebagai terselesaikan"
+        "Tandai terselesaikan"
       ],
       "Maximum views": [
         "Jumlah tampilan maksimum"
@@ -515,7 +515,7 @@
         "Pass Monitor"
       ],
       "Pause monitoring": [
-        "Jeda pemantauan"
+        "Jeda monitoring"
       ],
       "Pin item": [
         "Sematkan item"
@@ -593,7 +593,7 @@
         "Batasi jumlah tampilan"
       ],
       "Resume monitoring": [
-        "Lanjutkan pemantauan"
+        "Lanjutkan monitoring"
       ],
       "Retry": [
         "Coba lagi"
@@ -722,7 +722,7 @@
         "Buka kunci"
       ],
       "Unlock offline with password": [
-        "Buka kunci secara offline dengan kata sandi"
+        "Buka kunci secara luring dengan kata sandi"
       ],
       "Unpin item": [
         "Lepas sematan item"
@@ -789,7 +789,7 @@
     },
     "Button": {
       "More info": [
-        "Info lebih lanjut"
+        "Info selengkapnya"
       ]
     },
     "Collapsible tooltip": {
@@ -840,7 +840,7 @@
         "DKIM ${ WIKIPEDIA_LINK_DKIM } merupakan metode autentikasi emial yang dirancang untuk mencegah pemalsuan email. Mengatur DKIM sangat disarankan demi menurunkan peluang email Anda berakhir pada folder Spam penerima."
       ],
       "DMARC ${ WIKIPEDIA_LINK_DMARC } is designed to protect the domain from unauthorized use, commonly known as email spoofing. Built around SPF and DKIM, a DMARC policy tells the receiving mail server what to do if neither of those authentication methods passes.": [
-        "DMARC ${ WIKIPEDIA_LINK_DMARC } dirancang untuk melindungi domain dari penggunaan yang tidak diizinkan, atau yang umum dikenal sebagai tindak pemalsuan email (email spoofing). Sebagai teknologi yang dilandaskan pada SPF dan DKIM, kebijakan DMARC akan memberi tahu server email penerima apa yang harus dilakukan apabila kedua metode autentikasi ini gagal dilewati."
+        "DMARC ${ WIKIPEDIA_LINK_DMARC } dirancang untuk melindungi domain dari penggunaan tidak sah, yang umum dikenal sebagai pemalsuan email (email spoofing). Dibangun berdasarkan SPF dan DKIM, kebijakan DMARC memberi tahu server email penerima apa yang harus dilakukan jika kedua metode autentikasi tersebut gagal."
       ],
       "Get notified if your email, password or other personal data was leaked.": [
         "Dapatkan notifikasi apabila email, kata sandi, atau data pribadi Anda lainnya dibocorkan."
@@ -891,16 +891,16 @@
         "Akun ini terindikasi rentan. Kunjungi layanan keamanan kami dan ubah kata sandi Anda."
       ],
       "This service offers 2FA. Enable it for added account security.": [
-        "Layanan ini menawarkan 2FA. Aktifkan fitur ini untuk meningkatkan keamanan akun."
+        "Layanan ini menawarkan 2FA. Aktifkan untuk keamanan akun tambahan."
       ],
       "To verify ownership of the domain, please add the following TXT record. Some domain registrars (Namecheap, Cloudflare, etc.) might use @ for the root domain.": [
         "Untuk memverifikasi kepemilikan domain, silakan menambahkan rekaman TXT berikut. Beberapa pencatat domain (Namecheap, Cloudflare, dll.) dapat menggunakan @ untuk domain akar."
       ],
       "Unlock advanced security features and detailed logs to safeguard your online presence.": [
-        "Dapatkan berbagai fitur keamanan mutakhir dan log yang terperinci untuk melindungi presensi online Anda."
+        "Dapatkan berbagai fitur keamanan mutakhir dan log yang terperinci untuk melindungi presensi daring Anda."
       ],
       "With ${ PASS_SHORT_APP_NAME } Monitor, stay ahead of threats by getting instant alerts if your credentials are compromised. Unlock advanced security features and detailed logs to safeguard your online presence.": [
-        "Dengan ${ PASS_SHORT_APP_NAME } Monitor, tempatkan diri Anda selangkah di depan ancaman dengan memperoleh peringatan secara instan apabila kredensial Anda terpapar. Dapatkan berbagai fitur keamanan lanjutan dan log yang terperinci untuk melindungi presensi online Anda."
+        "Dengan ${ PASS_SHORT_APP_NAME } Monitor, tempatkan diri Anda selangkah di depan ancaman dengan memperoleh peringatan secara instan apabila kredensial Anda terpapar. Dapatkan berbagai fitur keamanan lanjutan dan log yang terperinci untuk melindungi presensi daring Anda."
       ],
       "Your email addresses were leaked in at least 1 data breach.": [
         "Alamat email Anda telah dibocorkan pada setidaknya 1 insiden kebocoran data."
@@ -925,7 +925,7 @@
         "Alias tidak dapat diperbarui untuk saat ini. Silakan coba lagi nanti"
       ],
       "Alias options could not be resolved": [
-        "Pengaturan alias tidak dapat diperoleh"
+        "Opsi alias tidak dapat diselesaikan"
       ],
       "An error occured during the import process": [
         "Terdapat masalah dalam proses impor"
@@ -1012,7 +1012,7 @@
         "Domain tidak tersedia, coba lagi nanti"
       ],
       "Editing item failed": [
-        "Item gagal disunting"
+        "Item gagal diedit"
       ],
       "Empty CSV file": [
         "File CSV kosong"
@@ -1024,16 +1024,16 @@
         "JSON terenkripsi tidak didukung"
       ],
       "Error reporting problem": [
-        "Terdapat masalah dengan pelaporan masalah"
+        "Terjadi masalah saat melaporkan kesalahan"
       ],
       "Failed removing the invite.": [
-        "Undangan gagal dihapus."
+        "Gagal menghapus undangan."
       ],
       "Failed resending invite.": [
-        "Undangan gagal dikirim ulang."
+        "Gagal mengirim ulang undangan."
       ],
       "Failed to add email address": [
-        "Alamat surel gagal ditambahkan"
+        "Alamat email gagal ditambahkan"
       ],
       "Failed to block the contact": [
         "Kontak gagal diblokir"
@@ -1057,7 +1057,7 @@
         "Domain gagal dihapus"
       ],
       "Failed to delete email address from monitoring": [
-        "Alamat surel gagal dihapus dari pemantauan"
+        "Gagal menghapus alamat email dari monitoring"
       ],
       "Failed to delete selected items": [
         "Item yang dipilih gagal dihapus"
@@ -1069,7 +1069,7 @@
         "Kotak surat gagal dihapus"
       ],
       "Failed to edit user's access.": [
-        "Akses pengguna gagal disunting."
+        "Akses pengguna gagal diedit."
       ],
       "Failed to load breaches for this address": [
         "Daftar kebocoran untuk alamat ini gagal dimuat"
@@ -1087,10 +1087,10 @@
         "Gagal memindahkan semua item dari \"${ payload.content.name }\""
       ],
       "Failed to move items": [
-        "Item gagal dipindahkan"
+        "Gagal memindahkan item"
       ],
       "Failed to move items to trash": [
-        "Item gagal dipindahkan ke sampah"
+        "Gagal memindahkan item ke tempat sampah"
       ],
       "Failed to pin item": [
         "Item gagal disematkan"
@@ -1102,7 +1102,7 @@
         "Kode verifikasi gagal dikirim ulang"
       ],
       "Failed to resend verification for custom email": [
-        "Verifikasi untuk surel khusus gagal dikirim ulang"
+        "Verifikasi untuk email khusus gagal dikirim ulang"
       ],
       "Failed to resolve breaches for this address": [
         "Kebocoran untuk alamat ini gagal diselesaikan"
@@ -1135,7 +1135,7 @@
         "Nama domain gagal diperbarui"
       ],
       "Failed to update monitoring settings": [
-        "Pengaturan pemantauan gagal diperbarui"
+        "Pengaturan monitoring gagal diperbarui"
       ],
       "Failed to update random prefix generation setting.": [
         "Pengaturan pembuatan awalan acak gagal diperbarui"
@@ -1144,16 +1144,16 @@
         "Domain gagal diverifikasi"
       ],
       "Failed to verify email address": [
-        "Alamat surel gagal diverifikasi"
+        "Alamat email gagal diverifikasi"
       ],
       "Failed updating ${ PROTON_SENTINEL_NAME } setting": [
         "Pengaturan ${ PROTON_SENTINEL_NAME } gagal diperbarui"
       ],
       "Failed updating monitor flag of the item": [
-        "Status pemantauan item ini gagal diperbarui"
+        "Status monitoring item ini gagal diperbarui"
       ],
       "Failed updating monitoring status for this email address": [
-        "Status pemantauan untuk alamat surel ini gagal diperbarui"
+        "Status monitoring untuk alamat email ini gagal diperbarui"
       ],
       "File could not be parsed": [
         "File tidak dapat diurai"
@@ -1198,7 +1198,7 @@
         "LastPass akan mengekspor file CSV yang rusak apabila satu atau lebih kolom item Anda mengandung koma, tanda kutip, atau rangkaian baris yang tidak terduga"
       ],
       "Missing passkey": [
-        "Passkey hilang"
+        "Kunci sandi hilang"
       ],
       "Moving item failed": [
         "Item gagal dipindahkan"
@@ -1231,7 +1231,7 @@
         "Permintaan pengaturan alias gagal"
       ],
       "Restoring item failed": [
-        "Item gagal dipulihkan"
+        "Gagal memulihkan item"
       ],
       "Restoring trashed items failed": [
         "Item yang dibuang gagal dipulihkan"
@@ -1291,7 +1291,7 @@
         "Item yang tidak diketahui"
       ],
       "Unknown passkey": [
-        "Passkey yang tidak diketahui"
+        "Kunci sandi yang tidak diketahui"
       ],
       "Unlock failure": [
         "Pembukaan kunci gagal"
@@ -1336,10 +1336,10 @@
         "Kata sandi kedua salah"
       ],
       "You're currently offline. Please resume connectivity to unlock ${ PASS_SHORT_APP_NAME }.": [
-        "Anda sedang offline. Silakan hubungkan kembali internet untuk membuka ${ PASS_SHORT_APP_NAME }."
+        "Anda sedang luring. Silakan hubungkan kembali internet untuk membuka ${ PASS_SHORT_APP_NAME }."
       ],
       "Your browser is having difficulties activating ${ PASS_APP_NAME }.": [
-        "Browser Anda mengalami masalah dalam mengaktifkan ${ PASS_APP_NAME }."
+        "Peramban Anda mengalami masalah dalam mengaktifkan ${ PASS_APP_NAME }."
       ],
       "Your DNS is not correctly set. The MX record we obtain is:": [
         "DNS Anda tidak diatur dengan benar. Rekaman MX yang kami peroleh adalah:"
@@ -1401,7 +1401,7 @@
         "Megabyte"
       ],
       "Terabyte": [
-        "Terabyte"
+        "Terabita"
       ]
     },
     "Header": {
@@ -1468,7 +1468,7 @@
         "${ PASS_APP_NAME } akan meminta Anda untuk menyimpan atau memperbarui kredensial."
       ],
       "${ PASS_APP_NAME } will suggest authenticating using saved passkeys": [
-        "${ PASS_APP_NAME } akan menyarankan untuk mengautentikasi menggunakan passkey yang tersimpan"
+        "${ PASS_APP_NAME } akan menyarankan untuk mengautentikasi menggunakan kunci sandi yang tersimpan"
       ],
       "${ PASS_APP_NAME } will suggest creating an email alias on sign-up forms.": [
         "${ PASS_APP_NAME } akan menyarankan untuk membuat alias email pada formulir pendaftaran."
@@ -1477,7 +1477,7 @@
         "${ PASS_APP_NAME } akan menyarankan pembuatan kata sandi yang kuat pada formulir pendaftaran."
       ],
       "${ PASS_APP_NAME } will suggest saving passkeys.": [
-        "${ PASS_APP_NAME } akan menyarankan untuk menyimpan passkey."
+        "${ PASS_APP_NAME } akan menyarankan untuk menyimpan kunci sandi."
       ],
       "${ payload.count } invite successfully sent": [
         "${ payload.count } undangan berhasil dikirim"
@@ -1510,7 +1510,7 @@
         "Versi terbaru dari ${ PASS_APP_NAME } telah tersedia. Perbarui aplikasi Anda untuk menikmati berbagai fitur terbaru dan perbaikan bug."
       ],
       "A passkey for \"${ username }\" will be saved and available on devices where ${ PASS_APP_NAME } is installed.": [
-        "Passkey untuk \"${ username }\" akan disimpan dan tersedia pada perangkat yang memasang ${ PASS_APP_NAME }."
+        "Kunci sandi untuk “${ username }” akan disimpan dan tersedia di perangkat yang telah terpasang ${ PASS_APP_NAME }."
       ],
       "Access successfully confirmed": [
         "Akses berhasil dikonfirmasi"
@@ -1564,7 +1564,7 @@
         "Alias yang tidak tersinkron (${ aliasCount })"
       ],
       "Aliases with custom domains are not monitored, please add them as a custom email for monitoring.": [
-        "Alias dengan domain khusus tidak dipantau. Silakan tambahkan alias ini sebagai email khusus untuk keperluan pemantauan."
+        "Alias dengan domain khusus tidak dipantau. Silakan tambahkan alias ini sebagai email khusus untuk keperluan monitoring."
       ],
       "All aliases using the mailbox ${ emailJSX } will be also deleted.": [
         "Seluruh alias yang menggunakan kotak surat ${ emailJSX } akan turut dihapus."
@@ -1573,7 +1573,7 @@
         "Seluruh kebocoran untuk alamat ini telah terselesaikan"
       ],
       "All current breaches will be marked as resolved. In case of future data breaches, you'll be notified.": [
-        "Seluruh kebocoran yang ada saat ini akan ditandai sebagai telah terselesaikan. Apabila ke depannya terdapat kebocoran data baru, Anda akan menerima notifikasi seputar hal ini."
+        "Seluruh kebocoran yang ada saat ini akan ditandai telah terselesaikan. Apabila ke depannya terdapat kebocoran data baru, Anda akan menerima notifikasi seputar hal ini."
       ],
       "All inactive secure links were removed": [
         "Seluruh tautan aman yang tidak aktif dihapus"
@@ -1645,10 +1645,10 @@
         "Dapat dilihat"
       ],
       "Can create, edit, and delete items in this vault.": [
-        "Dapat membuat, menyunting, dan menghapus item dalam brankas ini."
+        "Dapat membuat, mengedit, dan menghapus item dalam brankas ini."
       ],
       "Can create, edit, and delete this item.": [
-        "Dapat membuat, menyunting, dan menghapus item ini."
+        "Dapat membuat, mengedit, dan menghapus item ini."
       ],
       "Can grant and revoke access to this item, and delete it.": [
         "Dapat memberikan dan mencabut izin akses ke item ini serta menghapus item."
@@ -1672,16 +1672,16 @@
         "Ubah kata sandi Anda"
       ],
       "Choose a saved passkey to sign-in to ${ domain }": [
-        "Pilih passkey yang tersimpan untuk masuk ke ${ domain }"
+        "Pilih kunci sandi yang tersimpan untuk masuk ke ${ domain }"
       ],
       "Click the icon to open it anytime.": [
         "Klik pada ikon untuk membukanya kapan pun."
       ],
       "Close this window in order to use a security key or another passkey.": [
-        "Tutup jendela ini untuk menggunakan kunci keamanan atau passkey lainnya."
+        "Tutup jendela ini untuk menggunakan kunci keamanan atau kunci sandi lainnya."
       ],
       "Close this window in order to use another passkey manager.": [
-        "Tutup jendela ini untuk menggunakan pengelola passkey lainnya."
+        "Tutup jendela ini untuk menggunakan pengelola kunci sandi lainnya."
       ],
       "Confirm your extra password to proceed with its removal.": [
         "Konfirmasi kata sandi tambahan Anda untuk melanjutkan penghapusan kata sandi ini."
@@ -1735,7 +1735,7 @@
         "Gagal menonaktifkan penguncian otomatis"
       ],
       "Disabling offline mode...": [
-        "Menonaktifkan mode offline..."
+        "Menonaktifkan mode luring..."
       ],
       "Discover ${ PASS_APP_NAME } video": [
         "Telusuri video ${ PASS_APP_NAME }"
@@ -1756,19 +1756,19 @@
         "Impor kata sandi Anda secara mudah ke ${ PASS_APP_NAME }."
       ],
       "Editor": [
-        "Penyunting"
+        "Editor"
       ],
       "email": [
         "email"
       ],
       "Email address successfully deleted from monitoring": [
-        "Alamat email berhasil dihapus dari pemantauan"
+        "Alamat email berhasil dihapus dari monitoring"
       ],
       "Email address successfully excluded from monitoring": [
-        "Alamat email berhasil dikecualikan dari pemantauan"
+        "Alamat email berhasil dikecualikan dari monitoring"
       ],
       "Email address successfully included in monitoring": [
-        "Alamat email berhasil diikutsertakan dalam pemantauan"
+        "Alamat email berhasil diikutsertakan dalam monitoring"
       ],
       "Email headers illustration": [
         "Ilustrasi header email"
@@ -1795,7 +1795,7 @@
         "Gagal mengaktifkan penguncian biometrik"
       ],
       "Enabling offline mode...": [
-        "Mengaktifkan mode offline..."
+        "Mengaktifkan mode luring..."
       ],
       "Enabling password auto-lock": [
         "Mengaktifkan penguncian kata sandi otomatis"
@@ -1885,7 +1885,7 @@
         "Prioritas Tinggi"
       ],
       "How does monitoring work?": [
-        "Bagaimana cara pemantauan ini bekerja?"
+        "Bagaimana cara monitoring ini bekerja?"
       ],
       "Identity confirmed": [
         "Identitas terkonfirmasi"
@@ -1900,7 +1900,7 @@
         "Pada ${ PASS_SHORT_APP_NAME }, catatan item dienkripsi dengan kunci enkripsi dan hanya dapat dilihat oleh pengguna yang memiliki akses ke item. Bahkan ${ BRAND_NAME } atau SimpleLogin pun tidak dapat melihat catatan ini."
       ],
       "In order to get the best experience out of ${ PASS_APP_NAME }, please grant the necessary extension permissions": [
-        "Untuk memperoleh pengalaman ${ PASS_APP_NAME } yang terbaik, silakan berikan izin yang dibutuhkan pada ekstensi ini"
+        "Untuk mendapatkan pengalaman terbaik dengan ${ PASS_APP_NAME }, mohon berikan izin ekstensi yang diperlukan."
       ],
       "Internet connection lost": [
         "Koneksi internet terputus"
@@ -1942,10 +1942,10 @@
         "Pembagian item: ${ itemAccessCount } pengguna"
       ],
       "Item successfully excluded from monitoring": [
-        "Item berhasil dikecualikan dari pemantauan"
+        "Item berhasil dikecualikan dari monitoring"
       ],
       "Item successfully included in monitoring": [
-        "Item berhasil diikutsertakan dalam pemantauan"
+        "Item berhasil diikutsertakan dalam monitoring"
       ],
       "Item successfully moved": [
         "Item berhasil dipindahkan"
@@ -1996,7 +1996,7 @@
         "Monitor akun"
       ],
       "Monitoring settings successfully updated": [
-        "Pengaturan pemantauan berhasil diperbarui"
+        "Pengaturan monitoring berhasil diperbarui"
       ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end-to-end encrypted and is only accessible by you.": [
         "Lebih dari sekadar pengelola kata sandi, ${ PASS_APP_NAME } melindungi kata sandi dan alamat email pribadi Anda melalui alias email. Didukung oleh teknologi yang serupa dengan ${ MAIL_APP_NAME }, data Anda akan terenkripsi secara end-to-end dan hanya akan dapat diakses oleh Anda."
@@ -2023,7 +2023,7 @@
         "Memindahkan item ke sampah"
       ],
       "Navigate to your browser's extension settings and enable site permissions for ${ PASS_SHORT_APP_NAME }.": [
-        "Tuju pengaturan ekstensi browser Anda dan aktifkan izin situs untuk ${ PASS_SHORT_APP_NAME }."
+        "Buka pengaturan ekstensi peramban Anda dan aktifkan izin situs untuk ${ PASS_SHORT_APP_NAME }."
       ],
       "Need to email someone but don’t want them to see your email address? Set up a contact alias.": [
         "Perlu untuk mengirim email kepada seseorang, namun tidak ingin mereka sampai melihat alamat email Anda? Siapkan alias kontak."
@@ -2053,16 +2053,16 @@
         "Tidak disarankan"
       ],
       "Offline mode could not be disabled at the moment": [
-        "Mode offline tidak dapat dinonaktifkan untuk saat ini"
+        "Mode luring tidak dapat dinonaktifkan untuk saat ini"
       ],
       "Offline mode could not be enabled at the moment": [
-        "Mode offline tidak dapat diaktifkan pada saat ini"
+        "Mode luring tidak dapat diaktifkan pada saat ini"
       ],
       "Offline support successfully disabled": [
-        "Dukungan offline berhasil dinonaktifkan"
+        "Dukungan luring berhasil dinonaktifkan"
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
-        "Akses online ke ${ PASS_APP_NAME } akan memerlukan kode PIN. Anda akan dikeluarkan setelah 3 upaya percobaan yang gagal."
+        "Akses daring ke ${ PASS_APP_NAME } akan memerlukan kode PIN. Anda akan dikeluarkan setelah 3 upaya percobaan yang gagal."
       ],
       "Open the Extensions menu": [
         "Buka menu Ekstensi"
@@ -2083,7 +2083,7 @@
         "Uji coba Pass Plus"
       ],
       "Passkey sign-in": [
-        "Masuk dengan passkey"
+        "Masuk dengan kunci sandi"
       ],
       "password": [
         "kata sandi"
@@ -2176,7 +2176,7 @@
         "Silakan konfirmasikan kode PIN Anda untuk menonaktifkan kunci Anda saat ini."
       ],
       "Please confirm your PIN code to edit this setting.": [
-        "Mohon konfirmasi kode PIN Anda untuk menyunting pengaturan ini."
+        "Mohon konfirmasi kode PIN Anda untuk mengedit pengaturan ini."
       ],
       "Please confirm your second password": [
         "Silakan konfirmasi kata sandi kedua Anda"
@@ -2221,7 +2221,7 @@
         "Mohon biarkan jendela ini terbuka selagi data Anda diimpor. Proses ini dapat memakan waktu sejenak."
       ],
       "Please keep your browser open so the clipboard can be automatically cleared.": [
-        "Silakan biarkan browser Anda tetap terbuka agar papan klip dapat dibersihkan secara otomatis."
+        "Harap biarkan peramban Anda tetap terbuka agar papan klip dapat dibersihkan secara otomatis."
       ],
       "Please make sure the previously active window is where you want to autotype and your cursor was focused on the login field.": [
         "Silakan pastikan jendela yang sebelumnya aktif adalah jendela di mana Anda ingin mengisi otomatis, dan kursor Anda telah terfokus pada kolom login."
@@ -2230,7 +2230,7 @@
         "Mohon diperhatikan bahwa setelah dihapus, alias ini tidak akan lagi dapat dipulihkan. Apakah Anda ingin sekadar menonaktifkan alias ini?"
       ],
       "Please note that once deleted, the alias can't be restored. The alias is already disabled and won’t forward emails to your mailbox": [
-        "Mohon diperhatikan bahwa setelah dihapus, alias ini tidak akan lagi dapat dipulihkan. Alias ini telah dinonaktifkan dan tidak akan lagi meneruskan email ke kotak surat Anda"
+        "Perlu diperhatikan bahwa setelah dihapus, alias tidak dapat dipulihkan. Alias ini sudah dinonaktifkan dan tidak akan lagi meneruskan email ke kotak masuk Anda."
       ],
       "Please use full path domain, for example my-domain.com or my-subdomain.my-domain.com if you are using a subdomain.": [
         "Silakan gunakan jalur domain selengkapnya, semisal domain-saya.com atau subdomain-saya.domain-saya.com apabila Anda menggunakan subdomain."
@@ -2293,7 +2293,7 @@
         "Simpan login"
       ],
       "Save passkey": [
-        "Simpan passkey"
+        "Simpan kunci sandi"
       ],
       "Secure links": [
         "Tautan aman"
@@ -2326,7 +2326,7 @@
         "Server kami sedang tidak dapat dijangkau. Silakan coba lagi dalam beberapa menit"
       ],
       "Session timed out": [
-        "Masa berlaku sesi telah berakhir"
+        "Waktu sesi habis"
       ],
       "Set by your organization": [
         "Ditetapkan oleh organisasi Anda"
@@ -2431,7 +2431,7 @@
         "Tindakan ini tidak dapat diurungkan. Seluruh alias yang menggunakan domain ${ domainTextBold } akan dihapus. Mohon diperhatikan bahwa setelah dihapus, alias tidak akan lagi dapat dipulihkan."
       ],
       "This option is currently not available on your browser.": [
-        "Pilihan ini untuk saat ini tidak tersedia pada browser Anda."
+        "Pilihan ini untuk saat ini tidak tersedia pada peramban Anda."
       ],
       "This option is currently not available on your device.": [
         "Pilihan ini untuk saat ini tidak tersedia pada perangkat Anda."
@@ -2461,10 +2461,10 @@
         "Untuk migrasi data dari pengelola kata sandi lain, masuk ke pengelola kata sandi yang dimaksud, ekspor data Anda, lalu unggah data ini ke ${ PASS_APP_NAME }. Setelah data selesai diunggah, hapus file yang diekspor."
       ],
       "To review your imported data, click on the ${ PASS_APP_NAME } icon in your browser toolbar.": [
-        "Untuk meninjau data Anda yang telah diimpor, klik ikon ${ PASS_APP_NAME } pada bilah toolbar browser Anda."
+        "Untuk meninjau data Anda yang telah diimpor, klik ikon ${ PASS_APP_NAME } pada bilah toolbar peramban Anda."
       ],
       "Try reloading or reinstalling the extension and make sure your browser and ${ PASS_SHORT_APP_NAME } are up-to-date.": [
-        "Coba memuat ulang atau memasang ulang ekstensi dan pastikan peramban dan ${ PASS_SHORT_APP_NAME } Anda sudah yang terkini."
+        "Coba muat ulang atau instal ulang ekstensi, dan pastikan peramban Anda serta ${ PASS_SHORT_APP_NAME } sudah diperbarui ke versi terbaru."
       ],
       "Unable to copy to clipboard": [
         "Tidak dapat menyalin ke papan klip"
@@ -2479,7 +2479,7 @@
         "Buka kunci ${ PASS_APP_NAME } dengan kode PIN Anda untuk mengakses passkey yang Anda miliki"
       ],
       "Unlock ${ PASS_APP_NAME } with your PIN code to save this passkey": [
-        "Buka kunci ${ PASS_APP_NAME } dengan kode PIN Anda untuk menyimpan passkey ini"
+        "Buka kunci ${ PASS_APP_NAME } dengan kode PIN Anda untuk menyimpan kunci sandi ini"
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with biometrics": [
         "Buka ${ PASS_SHORT_APP_NAME } dengan biometrik"
@@ -2566,7 +2566,7 @@
         "Kami mendeteksi bahwa Anda memiliki ${ aliasCount } alias yang terdapat pada SimpleLogin namun tidak ada pada ${ PASS_APP_NAME }. Apakah Anda ingin mengimpor alias ini?"
       ],
       "Week": [
-        "Pekan"
+        "Minggu"
       ],
       "We’ve sent a verification code to ${ email }. Please enter it below:": [
         "Kami telah mengirimkan kode verifikasi ke ${ email }. Masukkan kode tersebut pada kolom di bawah ini:"
@@ -2584,7 +2584,7 @@
         "Anda juga dapat menetapkan kode PIN untuk membuka kunci ${ PASS_APP_NAME }"
       ],
       "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
-        "Anda kini dapat menggunakan kata sandi ${ BRAND_NAME } Anda untuk mengakses ${ PASS_SHORT_APP_NAME } secara offline"
+        "Anda kini dapat menggunakan kata sandi ${ BRAND_NAME } Anda untuk mengakses ${ PASS_SHORT_APP_NAME } secara luring"
       ],
       "You cannot change the mailboxes for this alias.": [
         "Anda tidak dapat mengubah kotak surat untuk alias ini."
@@ -2620,7 +2620,7 @@
         "Anda mungkin akan perlu untuk memberikan izin aksesibilitas kepada ${ PASS_APP_NAME }."
       ],
       "You need a vault with edit permission before you can import items.": [
-        "Anda butuh brankas dengan izin penyuntingan sebelum Anda dapat mengimpor item."
+        "Anda butuh brankas dengan izin pengeditan sebelum Anda dapat mengimpor item."
       ],
       "You will be able to customize your domain settings (catch-all email aliases, default display name for aliases etc...) after verifying your domain.": [
         "Anda akan dapat menyesuaikan pengaturan domain Anda (alias email catch-all, nama tampilan alias bawaan, dll...) setelah memverifikasi domain Anda."
@@ -2843,13 +2843,13 @@
         "Log aplikasi"
       ],
       "Authenticate with passkeys": [
-        "Autentikasi dengan passkey"
+        "Autentikasi dengan kunci sandi"
       ],
       "Auto-lock after": [
         "Kunci Pass secara otomatis setelah"
       ],
       "Autofill": [
-        "Pengisian otomatis"
+        "Isi otomatis"
       ],
       "Autofill 2FA": [
         "Isi 2FA otomatis"
@@ -2879,7 +2879,7 @@
         "Tanggal lahir"
       ],
       "Browser settings": [
-        "Pengaturan browser"
+        "Pengaturan peramban"
       ],
       "Capital letters (A-Z)": [
         "Huruf kapital (A-Z)"
@@ -3131,10 +3131,10 @@
         "Nama Host"
       ],
       "https://example.com": [
-        "https://contoh.com"
+        "https://example.com"
       ],
       "IBAN": [
-        "Nomor Rekening Bank Internasional"
+        "IBAN"
       ],
       "ID Card": [
         "Kartu ID"
@@ -3266,7 +3266,7 @@
         "Jadikan seluruh anggota sebagai admin"
       ],
       "Make all editors": [
-        "Jadikan seluruh anggota sebagai penyunting"
+        "Jadikan semua sebagai editor"
       ],
       "Make all managers": [
         "Jadikan semua sebagai pengelola"
@@ -3389,7 +3389,7 @@
         "Kunci sandi"
       ],
       "Passkeys": [
-        "Passkey"
+        "Kunci sandi"
       ],
       "Passphrase": [
         "Frasa sandi"
@@ -3443,7 +3443,7 @@
         "Kode PIN"
       ],
       "Points Balance": [
-        "Saldo"
+        "Saldo Poin"
       ],
       "Port": [
         "Port"
@@ -3494,7 +3494,7 @@
         "Nomor Rekaman"
       ],
       "Reddit handle": [
-        "Akun Reddit"
+        "ID pengguna Reddit"
       ],
       "Remove link": [
         "Hapus tautan"
@@ -3515,7 +3515,7 @@
         "Nomor Perutean"
       ],
       "Save passkeys": [
-        "Simpan passkey"
+        "Simpan kunci sandi"
       ],
       "Second password": [
         "Kata sandi kedua"
@@ -3671,7 +3671,7 @@
         "Sampah"
       ],
       "Type": [
-        "Jenis"
+        "Tipe"
       ],
       "Unknown": [
         "Tidak diketahui"
@@ -3716,7 +3716,7 @@
         "Perbarui"
       ],
       "Use ${ PASS_APP_NAME } as your browser's default password manager": [
-        "Gunakan ${ PASS_APP_NAME } sebagai pengelola kata sandi bawaan browser Anda"
+        "Gunakan ${ PASS_APP_NAME } sebagai pengelola kata sandi bawaan peramban Anda"
       ],
       "Used in": [
         "Digunakan pada"
@@ -3782,7 +3782,7 @@
         "Anda akan membuat"
       ],
       "Your browser will stop using its built-in password manager.": [
-        "Browser Anda tidak lagi akan menggunakan pengelola kata sandi bawaan yang dimilikinya."
+        "Peramban Anda akan berhenti menggunakan pengelola kata sandi bawaannya."
       ],
       "Your domain": [
         "Domain Anda"
@@ -3815,7 +3815,7 @@
         "${ count } item"
       ],
       "You can drag and drop the selected item to another vault": [
-        "Anda dapat menyeret dan melepaskan item yang dipilih ke brankas lain"
+        "Anda dapat menyeret dan melepas item yang dipilih ke brankas lain"
       ],
       "You selected ${ semiboldText } in this vault.": [
         "Anda memilih ${ semiboldText } dalam brankas ini."
@@ -3983,7 +3983,7 @@
     },
     "Permission": {
       "Will require a permission from your browser": [
-        "Akan membutuhkan izin dari browser Anda"
+        "Akan membutuhkan izin dari peramban Anda"
       ]
     },
     "Placeholder": {
@@ -4133,7 +4133,7 @@
         "Masuk dikonfirmasi"
       ],
       "Sign-in failed": [
-        "Upaya masuk gagal"
+        "Gagal masuk"
       ],
       "Sign-in rejected": [
         "Masuk ditolak"
@@ -4279,7 +4279,7 @@
         "Tambahkan domain khusus"
       ],
       "Add mailbox": [
-        "Tambah kotak surat"
+        "Tambahkan kotak surat"
       ],
       "Alias contacts": [
         "Kontak alias"
@@ -4357,7 +4357,7 @@
         "Domain khusus"
       ],
       "Custom email monitoring": [
-        "Pemantauan email khusus"
+        "Monitoring email khusus"
       ],
       "Custom emails": [
         "Email khusus"
@@ -4504,7 +4504,7 @@
         "Kotak surat"
       ],
       "Mark as resolved?": [
-        "Tandai sebagai terselesaikan?"
+        "Tandai terselesaikan?"
       ],
       "Member limit": [
         "Batas anggota"
@@ -4567,7 +4567,7 @@
         "Hadiah selamat datang kami kepada Anda"
       ],
       "Passkey": [
-        "Passkey"
+        "Kunci sandi"
       ],
       "Password": [
         "Kata sandi"
@@ -4576,7 +4576,7 @@
         "Kesehatan Kata Sandi"
       ],
       "Pause monitoring?": [
-        "Jeda pemantauan?"
+        "Jeda monitoring?"
       ],
       "Pending access confirmation": [
         "Menunggu konfirmasi akses"
@@ -4630,7 +4630,7 @@
         "Pulihkan versi ini?"
       ],
       "Resume monitoring?": [
-        "Lanjutkan pemantauan?"
+        "Lanjutkan monitoring?"
       ],
       "Reused ${ count } time": [
         "Digunakan ulang ${ count } kali"
@@ -4639,7 +4639,7 @@
         "Kata sandi yang digunakan ulang"
       ],
       "Review and share": [
-        "Kaji dan bagikan"
+        "Tinjau dan bagikan"
       ],
       "Secure your data": [
         "Amankan data Anda"
@@ -4678,7 +4678,7 @@
         "Status"
       ],
       "Stay safer online": [
-        "Tetap aman saat online"
+        "Tetap aman saat daring"
       ],
       "Suggestions": [
         "Saran"
@@ -4705,7 +4705,7 @@
         "Sampah kosong"
       ],
       "Unlock ${ brandNameJSX }": [
-        "Dapatkan ${ brandNameJSX }"
+        "Buka kunci ${ brandNameJSX } sekarang"
       ],
       "Unverified": [
         "Tidak terverifikasi"
@@ -4855,7 +4855,7 @@
         "Apakah Anda yakin ingin menghapus item ini secara permanen?"
       ],
       "At least one email address is required": [
-        "Setidaknya satu alamat surel dibutuhkan"
+        "Setidaknya satu alamat email dibutuhkan"
       ],
       "Cannot contain a dot at the beginning": [
         "Alias tidak dapat dimulai dengan titik"
@@ -4927,7 +4927,7 @@
         "Email tidak valid"
       ],
       "Invalid email addresses.": [
-        "Terdapat alamat surel yang tidak valid."
+        "Alamat email tidak valid."
       ],
       "Inviting email addresses outside organization is not allowed.": [
         "Mengundang alamat email di luar organisasi tidak diperkenankan"

@@ -1749,6 +1749,9 @@
       "Emptying trash...": [
         "Tømmer papirkurven..."
       ],
+      "Enable ${ PASS_SHORT_APP_NAME } beta": [
+        "Aktivér ${ PASS_SHORT_APP_NAME } beta"
+      ],
       "Enable auto-locking to secure your data": [
         "Aktiver autolåsning for at sikre dine data"
       ],
@@ -1980,10 +1983,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Flytter alle elementer fra \"${ payload.content.name }\""
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Flyttes et element til en anden boks, slettes dets sikre links.",
-        "Flyttes elementer til en anden boks, slettes deres sikre links."
       ],
       "Moving items": [
         "Flytter elementer"
@@ -2809,6 +2808,9 @@
       ],
       "Besides storing your logins, ${ PASS_APP_NAME } protects your identity with an integrated email alias feature. Whenever you sign up for a new online account, ${ PASS_APP_NAME } can automatically create an alias to keep your actual email address protected. ": [
         "Ud over at gemme dine logins beskytter ${ PASS_APP_NAME } din identitet med en integreret e-mailaliasfunktion. Når du tilmelder dig en ny onlinekonto, kan ${ PASS_APP_NAME } automatisk oprette et alias for at beskytte din faktiske e-mailadresse. "
+      ],
+      "Beta Access": [
+        "Beta-adgang"
       ],
       "Biometrics": [
         "Biometri"

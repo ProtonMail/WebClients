@@ -1658,6 +1658,9 @@
       "Emptying trash...": [
         "A esvaziar o lixo..."
       ],
+      "Enable ${ PASS_SHORT_APP_NAME } beta": [
+        "Ativar o ${ PASS_SHORT_APP_NAME } beta"
+      ],
       "Enable auto-locking to secure your data": [
         "Ative o bloqueio automático para proteger os seus dados"
       ],
@@ -1880,10 +1883,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Movendo todos os itens de \"${ payload.content.name }\""
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Mover um item para outro cofre apagará as suas ligações seguras.",
-        "Mover itens para outro cofre apagará as suas ligações seguras."
       ],
       "Moving items": [
         "A mover itens"
@@ -2662,6 +2661,9 @@
       ],
       "Besides storing your logins, ${ PASS_APP_NAME } protects your identity with an integrated email alias feature. Whenever you sign up for a new online account, ${ PASS_APP_NAME } can automatically create an alias to keep your actual email address protected. ": [
         "Além de armazenar os seus inícios de sessão, o ${ PASS_APP_NAME } protege a sua identidade com uma funcionalidade integrada de alias de e-mail. Sempre que se registar numa nova conta online, o ${ PASS_APP_NAME } pode criar automaticamente um alias para manter o seu endereço de e-mail real protegido. "
+      ],
+      "Beta Access": [
+        "Acesso Beta"
       ],
       "Biometrics": [
         "Biometria"

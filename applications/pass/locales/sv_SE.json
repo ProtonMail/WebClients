@@ -1437,6 +1437,9 @@
       "A contact is created for every email address that sends emails to or receives emails from ${ aliasEmail }.": [
         "En kontakt skapas för varje e-postadress som skickar e-post till eller tar emot e-post från ${ aliasEmail }."
       ],
+      "A new version is being downloaded. Once the download completes, it will be available on next restart.": [
+        "En ny version laddas ner. När nedladdningen är klar kommer den att vara tillgänglig vid nästa omstart."
+      ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "En ny version av ${ PASS_APP_NAME } är tillgänglig. Uppdatera den för att ta del av de senaste funktionerna och buggfixarna."
       ],
@@ -1677,6 +1680,9 @@
       "Enable auto-locking to secure your data": [
         "Aktivera automatisk låsning för att säkra din data"
       ],
+      "Enable offline mode to access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
+        "Aktivera offlineläge för att komma åt din ${ PASS_SHORT_APP_NAME }-data om du förlorar internetanslutningen eller om ${ BRAND_NAME }-servrar är oåtkomliga."
+      ],
       "Enabling biometrics auto-lock": [
         "Aktivera biometriskt autolås"
       ],
@@ -1897,10 +1903,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Flyttar alla objekt från “${ payload.content.name }“"
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Att flytta ett objekt till annat valv kommer radera dess säkra länkar.",
-        "Att flytta objekt till annat valv kommer radera deras säkra länkar."
-      ],
       "Moving items": [
         "Flyttar objekt"
       ],
@@ -1924,6 +1926,9 @@
       ],
       "No network connection": [
         "Ingen nätverksanslutning"
+      ],
+      "No new versions are available at the moment.": [
+        "Inga nya versioner är tillgängliga för tillfället."
       ],
       "None": [
         "Ingen"
@@ -2308,6 +2313,12 @@
       "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
         "Detta kommer avvisa enheten **${ name }** som försökte logga in på ditt ${ BRAND_NAME }-konto den **${ date }**."
       ],
+      "This will reload the application.": [
+        "Detta kommer ladda om applikationen."
+      ],
+      "This will trigger a check for new beta releases.": [
+        "Detta kommer utlösa en kontroll efter nya betaversioner."
+      ],
       "To keep receiving emails transfer these aliases to a different mailbox:": [
         "För att fortsätta ta emot e-post, överför dessa alias till en annan brevlåda:"
       ],
@@ -2322,9 +2333,6 @@
       ],
       "Trusted by over 50,000 business users and 100 million accounts around the world.": [
         "Betrodd av över 50 000 företagsanvändare och 100 miljoner konton runt om i världen."
-      ],
-      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
-        "Prova nya ${ BRAND_NAME }-funktioner, uppdateringar och produkter innan de släpps för allmänheten. Detta kommer ladda om applikationen"
       ],
       "Unable to copy to clipboard": [
         "Kan inte kopiera till urklipp"
@@ -2417,6 +2425,9 @@
       ],
       "When creating/editing a Login on ${ PASS_APP_NAME } the 'username' input will always be visible.": [
         "När du skapar/redigerar en inloggning på ${ PASS_APP_NAME } kommer inmatning 'användarnamn' alltid vara synligt."
+      ],
+      "When enabled, you can still access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
+        "När det är aktiverat kan du fortfarande komma åt din ${ PASS_SHORT_APP_NAME }-data om du förlorar internetanslutningen eller om ${ BRAND_NAME }-servrar är oåtkomliga."
       ],
       "When sending an email from this alias, the email will display ${ emailSender } as sender.": [
         "När du skickar ett e-postmeddelande från detta alias kommer e-postmeddelandet att visa ${ emailSender } som avsändare."

@@ -5047,6 +5047,9 @@
       "macOS": [
         "macOS"
       ],
+      "macOS 14 (Sonoma) or newer": [
+        "macOS 14 (Sonoma) veya daha yenisi"
+      ],
       "macOS Big Sur": [
         "macOS Big Sur"
       ],
@@ -5059,8 +5062,8 @@
       "macOS Monterey": [
         "macOS Monterey"
       ],
-      "macOS Ventura or later": [
-        "macOS Ventura ve sonrası"
+      "macOS Ventura": [
+        "macOS Ventura"
       ],
       "Mail": [
         "Mail"
@@ -5091,9 +5094,6 @@
       ],
       "Windows 10/11 (x64)": [
         "Windows 10/11 (x64)"
-      ],
-      "Windows 8/8.1/7 or Windows 32-bit (ARM64)": [
-        "Windows 8/8.1/7 veya Windows 32-bit (ARM64)"
       ]
     },
     "Download link": {
@@ -6849,7 +6849,7 @@
     },
     "Error message": {
       "Account is deleted or disabled": [
-        "Hesap silindi veya devre dışı bırakıldı"
+        "Hesap silinmiş ya da kullanımdan kaldırılmış"
       ],
       "App currently unavailable": [
         "Uygulama şu anda kullanılamıyor"
@@ -11791,6 +11791,9 @@
       "Your plan is limited to 10 versions for up to 7 days": [
         "Tarifeniz 10 sürüm ve 7 gün ile sınırlıdır"
       ],
+      "Your recent changes have been published. They will be visible to users in the next few hours.": [
+        "Son değişiklikleriniz yayınlandı. Önümüzdeki birkaç saat içinde kullanıcılar tarafından görülebilecek."
+      ],
       "Your recovery phrase": [
         "Kurtarma ifadeniz"
       ],
@@ -15313,8 +15316,8 @@
       "Password-protected Emails": [
         "Parola korumalı e-postalar"
       ],
-      "Phone support (20+ users)": [
-        "Telefon desteği (20+ kullanıcı)"
+      "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
+        "Telefon desteği (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ kullanıcı)"
       ],
       "Priority email support": [
         "Öncelikli e-posta desteği"
@@ -15823,8 +15826,8 @@
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "E-posta imzanızı logolar, görseller, sosyal ağ simgeleri, iletişim bilgilerinizin bağlantıları ve diğer şeylerle kişiselleştirin"
       ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
-        "20 ya da daha fazla kullanıcısı olan müşteriler için Avrupa çalışma saatleri içinde ${ BRAND_NAME } müşteri desteği ekibinden telefonla destek alabilirsiniz"
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } or more users": [
+        "Telefon desteği Avrupa çalışma saatleri içinde ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } veya daha fazla kullanıcıya sahip müşteriler için ${ BRAND_NAME } Müşteri Destek ekibi tarafından sağlanmaktadır."
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "İletilere ${ BRAND_NAME } veya üçüncü tarafların erişmesini engeller. İletileri yalnızca göndericisi ve alıcısı okuyabilir."
@@ -21295,9 +21298,6 @@
       "Catch-all address updated": [
         "Tümünü toplama adresi güncellendi"
       ],
-      "Changes published. Your changes will be visible to all users in the next few hours.": [
-        "Değişiklikler yayınlandı. Önümüzdeki birkaç saat içinde tüm kullanıcılar tarafından görülebilecek."
-      ],
       "Code sent to ${ methodTo }": [
         "Kod ${ methodTo } alıcısına gönderildi"
       ],
@@ -21693,19 +21693,19 @@
         "Açık"
       ],
       "Mode: Auto": [
-        "Mod: Otomatik"
+        "Kip: Otomatik"
       ],
       "Mode: Dark": [
-        "Mod: Karanlık"
+        "Kip: Koyu"
       ],
       "Mode: Light": [
-        "Mod: Aydınlık"
+        "Kip: Açık"
       ],
       "Sync with system": [
-        "Sistemle senkronize et"
+        "Sistem ile eşitle"
       ],
       "Use ${ BRAND_NAME } settings": [
-        "${ BRAND_NAME } ayarlarını kullan"
+        "${ BRAND_NAME } ayarları kullanılsın"
       ]
     },
     "Time unit": {

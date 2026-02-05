@@ -5095,6 +5095,9 @@
       "macOS": [
         "macOS"
       ],
+      "macOS 14 (Sonoma) or newer": [
+        "macOS 14 (Sonoma) або больш новая"
+      ],
       "macOS Big Sur": [
         "macOS Big Sur"
       ],
@@ -5107,8 +5110,8 @@
       "macOS Monterey": [
         "macOS Monterey"
       ],
-      "macOS Ventura or later": [
-        "macOS Ventura або больш новая версія"
+      "macOS Ventura": [
+        "macOS Ventura"
       ],
       "Mail": [
         "Mail"
@@ -5139,9 +5142,6 @@
       ],
       "Windows 10/11 (x64)": [
         "Windows 10/11 (x64)"
-      ],
-      "Windows 8/8.1/7 or Windows 32-bit (ARM64)": [
-        "Windows 8/8.1/7 або іншая 32-бітная Windows (ARM64)"
       ]
     },
     "Download link": {
@@ -6926,6 +6926,9 @@
       ]
     },
     "Error message": {
+      "Account is deleted or disabled": [
+        "Уліковы запіс выдалены або адключаны"
+      ],
       "App currently unavailable": [
         "Праграма часова недаступна"
       ],
@@ -15646,8 +15649,8 @@
       "Password-protected Emails": [
         "Лісты абароненыя паролем"
       ],
-      "Phone support (20+ users)": [
-        "Падтрымка па тэлефоне (ад 20 карыстальнікаў)"
+      "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
+        "Падтрымка па тэлефоне (ад ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } карыстальнікаў)"
       ],
       "Priority email support": [
         "Прыярытэтная падтрымка па электроннай пошце"
@@ -16174,8 +16177,8 @@
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Персаналізуйце свой подпіс у электронных лістах з дапамогай лагатыпаў, відарысаў, значкоў з сацыяльных сетак, спасылак на вашы кантактныя звесткі і г.д."
       ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
-        "Служба падтрымкі кліентаў ${ BRAND_NAME } ажыццяўляе падтрымку па тэлефоне ў працоўны час (еўрапейскі часавы пояс) для кліентаў ад 20 карыстальнікаў і больш."
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } or more users": [
+        "Служба падтрымкі кліентаў ${ BRAND_NAME } ажыццяўляе падтрымку па тэлефоне ў працоўны час (еўрапейскі часавы пояс) для кліентаў ад ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } карыстальнікаў і больш."
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Абмяжоўвае доступ да паведамленняў ${ BRAND_NAME } або старонніх асоб. Чытаць паведамленні можа толькі адпраўнік і меркаваны атрымальнік."
@@ -21824,9 +21827,6 @@
       "Catch-all address updated": [
         "Адрас для ўсёй пошты дамена абноўлены"
       ],
-      "Changes published. Your changes will be visible to all users in the next few hours.": [
-        "Змены апублікаваныя. Вашы змены будуць бачныя ўсім карыстальнікам на працягу наступных некалькіх гадзін."
-      ],
       "Code sent to ${ methodTo }": [
         "Код адпраўлены на ${ methodTo }"
       ],
@@ -22212,11 +22212,29 @@
       ]
     },
     "Theme": {
+      "Auto": [
+        "Аўтаматычная"
+      ],
       "Dark": [
         "Цёмная"
       ],
       "Light": [
         "Светлая"
+      ],
+      "Mode: Auto": [
+        "Рэжым: Аўтаматычны"
+      ],
+      "Mode: Dark": [
+        "Рэжым: Цёмны"
+      ],
+      "Mode: Light": [
+        "Рэжым: Светлы"
+      ],
+      "Sync with system": [
+        "Сінхранізацыя з сістэмай"
+      ],
+      "Use ${ BRAND_NAME } settings": [
+        "Выкарыстоўваць налады ${ BRAND_NAME }"
       ]
     },
     "Time unit": {
@@ -23898,6 +23916,9 @@
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Ваш бясплатны пробны перыяд для тарыфнага плана ${ planName } завершыцца ${ textDate }"
+      ],
+      "Your ${ planTitle } subscription has started": [
+        "Ваша падпіска з тарыфным планам ${ planTitle } пачалася"
       ],
       "Your calendar link": [
         "Ваша спасылка на каляндар"

@@ -1675,6 +1675,9 @@
       "Emptying trash...": [
         "Tyhjennetään roskakoria..."
       ],
+      "Enable ${ PASS_SHORT_APP_NAME } beta": [
+        "Käytä ${ PASS_SHORT_APP_NAME }in beetaa"
+      ],
       "Enable auto-locking to secure your data": [
         "Suojaa tietojasi ottamalla automaattilukitus käyttöön"
       ],
@@ -1900,10 +1903,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Siirretään kohteen \"${ payload.content.name }\" kaikkia kohteita"
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Kohteen siirto toiseen holviin poistaa sen suojatut linkit.",
-        "Kohteiden siirto toiseen holviin poistaa niiden suojatut linkit."
       ],
       "Moving items": [
         "Siirretään kohteita"
@@ -2675,6 +2674,9 @@
       ],
       "Besides storing your logins, ${ PASS_APP_NAME } protects your identity with an integrated email alias feature. Whenever you sign up for a new online account, ${ PASS_APP_NAME } can automatically create an alias to keep your actual email address protected. ": [
         "Kirjautumistietojesi tallentamisen lisäksi ${ PASS_APP_NAME } suojaa identiteettisi sisäänrakennetulla sähköpostialiasominaisuudella. Aina kun luot uuden tilin verkossa, ${ PASS_APP_NAME } voi automaattisesti luoda aliaksen, jotta todellinen sähköpostiosoitteesi pysyy suojattuna. "
+      ],
+      "Beta Access": [
+        "Käytä beetaversiota"
       ],
       "Biometrics": [
         "Biometria"

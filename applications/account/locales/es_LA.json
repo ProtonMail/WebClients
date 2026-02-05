@@ -5047,6 +5047,9 @@
       "macOS": [
         "macOS"
       ],
+      "macOS 14 (Sonoma) or newer": [
+        "macOS 14 (Sonoma) o posterior"
+      ],
       "macOS Big Sur": [
         "macOS BigSur"
       ],
@@ -5059,8 +5062,8 @@
       "macOS Monterey": [
         "macOS Monterey"
       ],
-      "macOS Ventura or later": [
-        "macOS Ventura o más reciente"
+      "macOS Ventura": [
+        "macOS Ventura"
       ],
       "Mail": [
         "Correo"
@@ -5091,9 +5094,6 @@
       ],
       "Windows 10/11 (x64)": [
         "Windows 10/11 (x64)"
-      ],
-      "Windows 8/8.1/7 or Windows 32-bit (ARM64)": [
-        "Windows 8/8.1/7 o Windows 32 bits (ARM64)"
       ]
     },
     "Download link": {
@@ -11794,6 +11794,9 @@
       "Your plan is limited to 10 versions for up to 7 days": [
         "El plan está limitado a 10 versiones por hasta 7 días"
       ],
+      "Your recent changes have been published. They will be visible to users in the next few hours.": [
+        "Sus cambios recientes se han publicado. Serán visibles para los usuarios en las próximas horas."
+      ],
       "Your recovery phrase": [
         "La frase de recuperación"
       ],
@@ -15316,8 +15319,8 @@
       "Password-protected Emails": [
         "Correos electrónicos protegidos con contraseña"
       ],
-      "Phone support (20+ users)": [
-        "Soporte por teléfono (20 o más usuarios)"
+      "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
+        "Soporte telefónico (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ usuarios)"
       ],
       "Priority email support": [
         "Soporte prioritario por correo electrónico"
@@ -15826,8 +15829,8 @@
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Personalice la firma del correo electrónico con logotipos, imágenes, íconos de redes sociales, enlaces a los datos de contacto y más"
       ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
-        "El equipo de atención al cliente de ${ BRAND_NAME } ofrece asistencia telefónica en horario laboral europeo a los clientes que tienen, como mínimo, 20 usuarios."
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } or more users": [
+        "El equipo de atención al cliente de ${ BRAND_NAME } ofrece asistencia telefónica durante el horario laboral europeo para clientes con ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } o más usuarios"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Evita que ${ BRAND_NAME } o terceros puedan acceder a los mensajes. Los únicos que pueden leerlos son el remitente y el destinatario."
@@ -17475,8 +17478,8 @@
         "El descuento es válido para ${ renewalsWithCoupon } renovaciones."
       ],
       "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "El precio con descuento especial es válido durante ${ couponRedemptions } mes. Después, se renovará automáticamente a ${ renewPriceStr } por 1 mes. Puedes cancelar en cualquier momento.",
-        "El precio con descuento especial es válido durante ${ couponRedemptions } meses. Después, se renovará automáticamente a ${ renewPriceStr } por 1 mes. Puedes cancelar en cualquier momento."
+        "El precio con descuento especial es válido durante ${ couponRedemptions } mes. Después se renovará automáticamente por ${ renewPriceStr } por 1 mes. Puede cancelar en cualquier momento.",
+        "El precio con descuento especial es válido durante ${ couponRedemptions } meses. Después se renovará automáticamente por ${ renewPriceStr } por 1 mes. Puede cancelar en cualquier momento."
       ],
       "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
         "El precio especial con descuento es válido para el primer (${ subscriptionLength }) mes",
@@ -17486,8 +17489,8 @@
         "El precio especial con descuento es válido durante el primer mes. Después se renovará automáticamente por ${ renewPriceStr } cada mes. Puede cancelarlo en cualquier momento."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "El precio con descuento especial de ${ priceWithDiscount } es válido durante ${ couponRedemptions } mes. Después, se renovará automáticamente a ${ renewPriceStr } por 1 mes. Puedes cancelar en cualquier momento.",
-        "El precio con descuento especial de ${ priceWithDiscount } es válido durante ${ couponRedemptions } meses. Después, se renovará automáticamente a ${ renewPriceStr } por 1 mes. Puedes cancelar en cualquier momento."
+        "El precio con descuento especial de ${ priceWithDiscount } es válido durante ${ couponRedemptions } mes. Después se renovará automáticamente por ${ renewPriceStr } por 1 mes. Puede cancelar en cualquier momento.",
+        "El precio con descuento especial de ${ priceWithDiscount } es válido durante ${ couponRedemptions } meses. Después se renovará automáticamente por ${ renewPriceStr } por 1 mes. Puede cancelar en cualquier momento."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "El precio especial de descuento de ${ priceWithDiscount } es válido para el primer ${ subscriptionLength } mes",
@@ -21297,9 +21300,6 @@
       ],
       "Catch-all address updated": [
         "Dirección catch-all actualizada"
-      ],
-      "Changes published. Your changes will be visible to all users in the next few hours.": [
-        "Cambios publicados. Sus cambios serán visibles para todos los usuarios en las próximas horas."
       ],
       "Code sent to ${ methodTo }": [
         "Código enviado a ${ methodTo }"

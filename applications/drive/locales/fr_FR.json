@@ -977,6 +977,9 @@
       "Set as cover": [
         "Définir comme couverture"
       ],
+      "Set password or expiration date": [
+        "Définir le mot de passe ou la date d'expiration"
+      ],
       "Set recovery methods": [
         "Définir les méthodes de récupération"
       ],
@@ -1012,6 +1015,9 @@
       ],
       "Share your calendar with your team": [
         "Partagez votre calendrier avec votre équipe"
+      ],
+      "Sharing is end-to-end encrypted": [
+        "Le partage est chiffré de bout en bout"
       ],
       "Sharing options": [
         "Options de partage"
@@ -3812,6 +3818,9 @@
       "We were not able to load some of your shared items": [
         "Nous n'avons pas pu charger certains de vos éléments partagés."
       ],
+      "We were not able to load some search results": [
+        "Nous n'avons pas pu charger certains résultats de recherche"
+      ],
       "We were not able to load the folder contents": [
         "Nous n'avons pas pu charger le contenu du dossier."
       ],
@@ -5249,9 +5258,6 @@
       "Create links and share your files with others.": [
         "Créez des liens et partagez vos fichiers avec d'autres personnes."
       ],
-      "Create public link": [
-        "Créer un lien public"
-      ],
       "Create your first folder and start moving your files.": [
         "Créez votre premier dossier et commencez à importer vos fichiers."
       ],
@@ -5669,6 +5675,9 @@
       "Learn what to do ${ dataLeakedLink }": [
         "Apprenez ce qu'il faut faire ${ dataLeakedLink }"
       ],
+      "Link copied": [
+        "Lien copié"
+      ],
       "Link copied to clipboard": [
         "Le lien est copié dans le presse-papiers."
       ],
@@ -5844,8 +5853,8 @@
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Nos alertes privilégient la sécurité. Si vous ne reconnaissez pas les informations compromises, vous pouvez ignorer ce rapport."
       ],
-      "Owner": [
-        "Propriétaire"
+      "owner": [
+        "propriétaire"
       ],
       "password": [
         "mot de passe"
@@ -5861,9 +5870,6 @@
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Les paiements sont protégés par le chiffrement TLS et par les lois suisses en matière de protection de la vie privée."
-      ],
-      "People with access": [
-        "Personnes avec accès"
       ],
       "Permanently delete all files in your locked drive": [
         "Supprimez définitivement tous les fichiers de votre disque dur verrouillé."
@@ -6354,6 +6360,9 @@
       "To fight spam and abuse, please verify you are human.": [
         "Pour lutter contre les messages indésirables/spam et les abus, nous vous invitons à prouver que vous n'êtes pas un robot."
       ],
+      "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it's still best to download files only from trusted sources. ": [
+        "Pour vous aider à vous protéger, ${ DRIVE_APP_NAME } peut analyser vos fichiers d'une manière respectueuse de la vie privée et bloquer les fichiers malveillants. Cependant, il est toujours préférable de télécharger des fichiers uniquement à partir de sources de confiance. "
+      ],
       "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it’s still best to download files only from trusted sources. ": [
         "Pour vous aider à vous protéger, ${ DRIVE_APP_NAME } peut analyser vos fichiers en respectant votre vie privée et bloquer les fichiers malveillants. Cependant, il est toujours préférable de télécharger des fichiers uniquement à partir de sources fiables."
       ],
@@ -6570,6 +6579,9 @@
       "who": [
         "qui"
       ],
+      "Who has access": [
+        "Qui a accès"
+      ],
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
         "sera restauré dans sa version datée du ${ formattedRevisionDate }. Toutes les autres versions seront conservées."
       ],
@@ -6735,9 +6747,6 @@
       "Your email address was exposed:": [
         "Votre adresse e-mail a été exposée :"
       ],
-      "Your email address will be visible as the link's owner on the share page": [
-        "Votre adresse e-mail sera visible en tant que propriétaire du lien sur la page partagée."
-      ],
       "Your email will only be used for this one-time verification.": [
         "Votre adresse e-mail ne sera utilisée que pour cette vérification unique."
       ],
@@ -6858,9 +6867,6 @@
       ]
     },
     "Into": {
-      "Can edit and manage access": [
-        "Peut modifier et gérer l'accès"
-      ],
       "Can view and edit": [
         "Peut voir et modifier"
       ],
@@ -6954,6 +6960,9 @@
       "Account holder": [
         "Titulaire du compte"
       ],
+      "Active": [
+        "Actif"
+      ],
       "Add email address": [
         "Ajouter une adresse e-mail"
       ],
@@ -6966,8 +6975,8 @@
       "Address": [
         "Adresse"
       ],
-      "Admin": [
-        "Administrateur"
+      "admin": [
+        "admin"
       ],
       "Album": [
         "Album"
@@ -6984,14 +6993,8 @@
       "Anonymous": [
         "Anonyme"
       ],
-      "Anyone on the Internet with the link can edit": [
-        "Toute personne ayant accès à internet et à ce lien peut apporter des modifications."
-      ],
-      "Anyone on the Internet with the link can view": [
-        "Toute personne ayant accès à internet et à ce lien peut consulter."
-      ],
-      "Anyone with the link": [
-        "Toute personne ayant le lien"
+      "Anyone on the Internet with the link": [
+        "Toute personne sur Internet disposant du lien"
       ],
       "App password": [
         "Mot de passe de l'application"
@@ -7037,6 +7040,12 @@
       ],
       "Calendars": [
         "Calendriers"
+      ],
+      "can edit": [
+        "peut modifier"
+      ],
+      "can view": [
+        "peut consulter"
       ],
       "Cancel download": [
         "Annuler le téléchargement"
@@ -7120,6 +7129,9 @@
         "Supprimer le disque ?",
         "Supprimer les disques ?"
       ],
+      "Delete link and remove access for everyone": [
+        "Supprimer le lien et retirer l'accès pour tous"
+      ],
       "Delete recovery-related information.": [
         "Supprimer les informations liées à la récupération."
       ],
@@ -7182,9 +7194,6 @@
       ],
       "Enter device name": [
         "Saisir le nom de l'appareil"
-      ],
-      "Erase this link and remove everyone with access": [
-        "Effacer ce lien et retirer toutes les personnes ayant accès"
       ],
       "Expired": [
         "Expiré"
@@ -7323,6 +7332,9 @@
       ],
       "New password": [
         "Nouveau mot de passe"
+      ],
+      "Not active": [
+        "Inactif"
       ],
       "Note": [
         "Note"
@@ -8524,8 +8536,8 @@
       "Password-protected Emails": [
         "Messages protégés par mot de passe"
       ],
-      "Phone support (20+ users)": [
-        "Assistance téléphonique (compte pour 20 utilisateurs ou plus)"
+      "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
+        "Support téléphonique (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ utilisateurs)"
       ],
       "Priority email support": [
         "Assistance prioritaire par e-mail"
@@ -8954,8 +8966,8 @@
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Personnalisez votre signature d'e-mail avec des logos, images, icônes de réseaux sociaux, liens vers vos coordonnées…"
       ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
-        "Un support téléphonique est disponible auprès de l'équipe service client ${ BRAND_NAME } aux heures de bureau européennes, pour les clients ayant 20 utilisateurs ou plus."
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } or more users": [
+        "Un support téléphonique est disponible auprès de l'équipe service client ${ BRAND_NAME } aux heures de bureau européennes, pour les clients ayant ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } utilisateurs ou plus."
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Empêche l'accès aux messages par ${ BRAND_NAME } ou par des tiers, les seules personnes pouvant lire les messages étant l'expéditeur et le destinataire."
@@ -11065,11 +11077,11 @@
       ]
     },
     "Status": {
-      "Accepted": [
-        "Accepté"
+      "accepted": [
+        "accepté"
       ],
-      "Pending": [
-        "En attente"
+      "pending": [
+        "en attente"
       ]
     },
     "Storage": {
@@ -12276,9 +12288,9 @@
       "Folder details": [
         "Informations sur le dossier"
       ],
-      "Found ${ searchView.numberOfResults } result": [
-        "${ searchView.numberOfResults } résultat trouvé",
-        "${ searchView.numberOfResults } résultats trouvés"
+      "Found ${ resultCount } result": [
+        "${ resultCount } résultat trouvé",
+        "${ resultCount } résultats trouvés"
       ],
       "Get ${ DRIVE_SHORT_APP_NAME } on your phone": [
         "Obtenez ${ DRIVE_SHORT_APP_NAME } sur votre téléphone"
@@ -12545,6 +12557,12 @@
       "Processing...": [
         "Traitement en cours…"
       ],
+      "Public link": [
+        "Lien public"
+      ],
+      "Public link settings": [
+        "Paramètres de lien public"
+      ],
       "Public shared link status": [
         "État du lien public partagé"
       ],
@@ -12635,6 +12653,9 @@
       ],
       "Settings": [
         "Paramètres"
+      ],
+      "Settings for ${ sharedFileName }": [
+        "Paramètres de ${ sharedFileName }"
       ],
       "SHA1": [
         "SHA1"

@@ -4772,9 +4772,6 @@
       "Create links and share your files with others.": [
         "创建共享链接即可将您的文件与他人分享。"
       ],
-      "Create public link": [
-        "创建公共链接"
-      ],
       "Create your first folder and start moving your files.": [
         "创建您的第一个文件夹并开始移动文件。"
       ],
@@ -5327,9 +5324,6 @@
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "我们的警报以安全为先。若您不认识任何被泄露的信息，则可以安全地忽略这份报告。"
       ],
-      "Owner": [
-        "所有者"
-      ],
       "password": [
         "密码"
       ],
@@ -5344,9 +5338,6 @@
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "支付安全由 TLS 加密和瑞士隐私法律保障。"
-      ],
-      "People with access": [
-        "有访问权限的人"
       ],
       "Permanently delete all files in your locked drive": [
         "永久删除锁定的网盘中的所有文件"
@@ -6146,9 +6137,6 @@
       "Your email address was exposed:": [
         "您的电子邮件地址已被泄露："
       ],
-      "Your email address will be visible as the link's owner on the share page": [
-        "您的电子邮件地址将作为链接所有者出现在分享页面上"
-      ],
       "Your email will only be used for this one-time verification.": [
         "您的邮箱将只会用于此一次性验证。"
       ],
@@ -6369,15 +6357,6 @@
       "Anonymous": [
         "匿名用户"
       ],
-      "Anyone on the Internet with the link can edit": [
-        "互联网上任何拥有链接的人都可以编辑"
-      ],
-      "Anyone on the Internet with the link can view": [
-        "互联网上任何知道链接的人都可以查看"
-      ],
-      "Anyone with the link": [
-        "拥有此链接的任何人"
-      ],
       "App password": [
         "应用密码"
       ],
@@ -6560,9 +6539,6 @@
       ],
       "Enter device name": [
         "输入设备名称"
-      ],
-      "Erase this link and remove everyone with access": [
-        "擦除此链接并删除所有有访问权限的人"
       ],
       "Expired": [
         "已失效"
@@ -7748,9 +7724,6 @@
       "Password-protected Emails": [
         "邮件密码保护"
       ],
-      "Phone support (20+ users)": [
-        "电话客服（20+ 位用户）"
-      ],
       "Priority email support": [
         "优先享受邮件客服"
       ],
@@ -8166,9 +8139,6 @@
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "在邮件落款中加入图标、照片、链接、社交网络标识等个性化元素"
-      ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
-        "${ BRAND_NAME } 客户支持团队可在欧洲工作时间为拥有 20 个或更多用户的客户提供电话支持"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "防止 ${ BRAND_NAME } 以及任何第三方窥探您的邮件。只有通信双方能够得知邮件内容。"
@@ -9963,14 +9933,6 @@
         "正在取消您的订阅，请稍候。"
       ]
     },
-    "Status": {
-      "Accepted": [
-        "已接受"
-      ],
-      "Pending": [
-        "待处理"
-      ]
-    },
     "Storage": {
       "Get more storage": [
         "获得更多存储空间"
@@ -11084,9 +11046,6 @@
       ],
       "Folder details": [
         "文件夹详细信息"
-      ],
-      "Found ${ searchView.numberOfResults } result": [
-        "找到${ searchView.numberOfResults }条结果"
       ],
       "Get **${ referralInfo.uiData.refereeRewardAmount }** in credits with ${ planTitle }": [
         "配合${ planTitle }获得**${ referralInfo.uiData.refereeRewardAmount }**余额奖励。"

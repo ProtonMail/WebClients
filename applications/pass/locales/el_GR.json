@@ -1437,6 +1437,9 @@
       "A contact is created for every email address that sends emails to or receives emails from ${ aliasEmail }.": [
         "Δημιουργείται μια επαφή για κάθε διεύθυνση ηλεκτρονικού ταχυδρομείου που στέλνει μηνύματα ηλεκτρονικού ταχυδρομείου ή λαμβάνει μηνύματα ηλεκτρονικού ταχυδρομείου από ${ aliasEmail }."
       ],
+      "A new version is being downloaded. Once the download completes, it will be available on next restart.": [
+        "Μια νέα έκδοση βρίσκεται σε διαδικασία λήψης. Μόλις ολοκληρωθεί η λήψη, θα είναι διαθέσιμη την επόμενη φορά που θα κάνετε επανεκκίνηση."
+      ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "Μια νέα έκδοση του ${ PASS_APP_NAME } είναι διαθέσιμη. Ενημερώστε το για να απολαύσετε τις πιο πρόσφατες δυνατότητες και διορθώσεις σφαλμάτων."
       ],
@@ -1903,10 +1906,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Μετακίνηση όλων των στοιχείων από το \"${ payload.content.name }\""
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Η μετακίνηση ενός στοιχείου σε άλλη κρύπτη θα διαγράψει τους ασφαλείς συνδέσμους του.",
-        "Η μετακίνηση στοιχείων σε άλλη κρύπτη θα διαγράψει τους ασφαλείς συνδέσμους των."
-      ],
       "Moving items": [
         "Μετακίνηση στοιχείων"
       ],
@@ -1930,6 +1929,9 @@
       ],
       "No network connection": [
         "Δεν υπάρχει σύνδεση δικτύου"
+      ],
+      "No new versions are available at the moment.": [
+        "Δεν υπάρχουν διαθέσιμες νέες εκδόσεις προς το παρόν."
       ],
       "None": [
         "Κανένα"
@@ -2317,6 +2319,12 @@
       "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
         "Αυτό θα απορρίψει τη συσκευή **${ name }** που προσπάθησε να συνδεθεί στον λογαριασμό σας ${ BRAND_NAME } στις **${ date }**."
       ],
+      "This will reload the application.": [
+        "Αυτό θα επαναφορτώσει την εφαρμογή."
+      ],
+      "This will trigger a check for new beta releases.": [
+        "Αυτό θα ενεργοποιήσει έναν έλεγχο για νέες εκδόσεις beta."
+      ],
       "To keep receiving emails transfer these aliases to a different mailbox:": [
         "Για να συνεχίσετε να λαμβάνετε μηνύματα ηλεκτρονικού ταχυδρομείου, μεταφέρετε αυτά τα ψευδώνυμα σε διαφορετικό γραμματοκιβώτιο:"
       ],
@@ -2332,8 +2340,8 @@
       "Trusted by over 50,000 business users and 100 million accounts around the world.": [
         "Εμπιστευόμενο από πάνω από 50.000 επαγγελματίες χρήστες και 100 εκατομμύρια λογαριασμούς παγκοσμίως."
       ],
-      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
-        "Δοκιμάστε νέες δυνατότητες, ενημερώσεις και προϊόντα ${ BRAND_NAME } πριν κυκλοφορήσουν στο κοινό. Αυτό θα φορτώσει ξανά την εφαρμογή"
+      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public.": [
+        "Δοκιμάστε νέες δυνατότητες, ενημερώσεις και προϊόντα ${ BRAND_NAME } πριν κυκλοφορήσουν στο κοινό."
       ],
       "Unable to copy to clipboard": [
         "Αδυναμία αντιγραφής στο πρόχειρο"

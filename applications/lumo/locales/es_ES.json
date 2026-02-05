@@ -1908,6 +1908,11 @@
         "Chat sin título"
       ]
     },
+    "collider_2025:Error": {
+      "Database connection lost. Please refresh the page to continue.": [
+        "Se ha perdido la conexión con la base de datos. Actualiza la página para continuar."
+      ]
+    },
     "collider_2025:Info": {
       "AIs from Big Tech are built on harvesting your data. But ${ LUMO_SHORT_APP_NAME } is different. It was created by the scientists behind innovative, privacy-first services like ${ MAIL_APP_NAME } and ${ VPN_APP_NAME }. And it’s owned by a Swiss nonprofit, whose mission is to advance privacy and never make money from user data.": [
         "Las IA de las grandes empresas tecnológicas se basan en la recopilación de tus datos. Pero ${ LUMO_SHORT_APP_NAME } es diferente. Fue creada por los científicos responsables de servicios innovadores y centrados en la privacidad como ${ MAIL_APP_NAME } y ${ VPN_APP_NAME }. Y es propiedad de una organización sin ánimo de lucro suiza, cuya misión es avanzar en la privacidad y nunca ganar dinero con los datos del usuario."
@@ -1964,6 +1969,11 @@
     "collider_2025:Prompt": {
       "How do people celebrate New Year's Eve around the world?": [
         "¿Cómo celebra la gente la Nochevieja alrededor del mundo?"
+      ]
+    },
+    "collider_2025:Success": {
+      "Database connection restored.": [
+        "Conexión de base de datos restaurada."
       ]
     },
     "collider_2025:Title": {
@@ -4652,8 +4662,8 @@
       "Password-protected Emails": [
         "Correos electrónicos protegidos con contraseña"
       ],
-      "Phone support (20+ users)": [
-        "Soporte por teléfono (20 o más usuarios)"
+      "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
+        "Soporte telefónico (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } o más usuarios)"
       ],
       "Priority email support": [
         "Soporte prioritario por correo electrónico"
@@ -5042,8 +5052,8 @@
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Personaliza tu firma de correo electrónico con logotipos, imágenes, iconos de redes sociales, enlaces en tus datos de contacto, etc."
       ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
-        "El equipo de atención al cliente de ${ BRAND_NAME } ofrece asistencia telefónica en horario laboral europeo a los clientes que tienen, como mínimo, 20 usuarios."
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } or more users": [
+        "El equipo de atención al cliente de ${ BRAND_NAME } ofrece asistencia telefónica durante el horario laboral europeo para clientes con ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } o más usuarios"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Impide que ${ BRAND_NAME } o terceros puedan acceder a los mensajes. Los únicos que pueden leerlos son el remitente y el destinatario."

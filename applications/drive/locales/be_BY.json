@@ -3860,6 +3860,9 @@
       "We were not able to load some of your shared items": [
         "Не ўдалося загрузіць некаторыя вашы абагуленыя элементы"
       ],
+      "We were not able to load some search results": [
+        "Не ўдалося загрузіць некаторыя вынікі пошуку"
+      ],
       "We were not able to load the folder contents": [
         "Не атрымалася загрузіць змесціва папкі"
       ],
@@ -5354,6 +5357,9 @@
       "Collaborate efficiently while protecting your client and business data from breaches, ransomware, and surveillance.": [
         "Эфектыўна супрацоўнічайце, абараняючы даныя сваіх кліентаў і бізнесу ад парушэнняў, праграм-вымагальнікаў і сачэння."
       ],
+      "Computed hash does not match XAttr": [
+        "Разлічаны хэш не супадае з XAttr"
+      ],
       "Conflict": [
         "Канфлікт"
       ],
@@ -5407,9 +5413,6 @@
       ],
       "Create links and share your files with others.": [
         "Стварайце спасылкі і абагульвайце свае файлы з іншымі."
-      ],
-      "Create public link": [
-        "Стварыць публічную спасылку"
       ],
       "Create your first folder and start moving your files.": [
         "Стварыце сваю першую папку і пачніце перамяшчаць туды свае файлы."
@@ -6011,9 +6014,6 @@
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Папярэджанні з нашага боку нацэлены на бяспеку. Калі вы не выявілі ў сябе ніякай уцечкі звестак, то можаце смела праігнараваць гэту справаздачу."
       ],
-      "Owner": [
-        "Уладальнік"
-      ],
       "password": [
         "пароль"
       ],
@@ -6028,9 +6028,6 @@
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Плацяжы абаронены шыфраваннем TLS і швейцарскімі законамі аб прыватнасці."
-      ],
-      "People with access": [
-        "Людзі ў якіх ёсць доступ"
       ],
       "Permanently delete all files in your locked drive": [
         "Незваротна выдаліць усе файлы на вашым заблакіраваным дыску"
@@ -6527,6 +6524,9 @@
       "To fight spam and abuse, please verify you are human.": [
         "У мэтах барацьбы са спамам і іншымі злоўжываннямі, нам неабходна пераканацца, што вы чалавек."
       ],
+      "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it's still best to download files only from trusted sources. ": [
+        "${ DRIVE_APP_NAME } можа сканіраваць вашы файлы з захаваннем прыватнасці і блакіраваць шкодныя файлы, каб дапамагчы абараніць вас. Аднак, лепш спампоўваць файлы толькі з надзейных крыніц. "
+      ],
       "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it’s still best to download files only from trusted sources. ": [
         "${ DRIVE_APP_NAME } можа сканіраваць вашы файлы з захаваннем прыватнасці і блакіраваць шкоднасныя файлы, каб дапамагчы абараніць вас. Аднак, лепш спампоўваць файлы толькі з надзейных крыніц."
       ],
@@ -6920,9 +6920,6 @@
       "Your email address was exposed:": [
         "Ваш адрас электроннай пошты скампраметаваны:"
       ],
-      "Your email address will be visible as the link's owner on the share page": [
-        "Ваш адрас электроннай пошты будзе бачны ў якасці ўладальніка спасылкі на старонцы абагульвання"
-      ],
       "Your email will only be used for this one-time verification.": [
         "Ваша электронная пошта будзе выкарыстана толькі для гэтай аднаразовай праверкі."
       ],
@@ -7049,9 +7046,6 @@
       ]
     },
     "Into": {
-      "Can edit and manage access": [
-        "Можа рэдагаваць і кіраваць доступам"
-      ],
       "Can view and edit": [
         "Можа праглядаць і рэдагаваць"
       ],
@@ -7163,9 +7157,6 @@
       "Address": [
         "Адрас"
       ],
-      "Admin": [
-        "Адміністратар"
-      ],
       "Alias title": [
         "Загаловак псеўданіма"
       ],
@@ -7177,15 +7168,6 @@
       ],
       "Anonymous": [
         "Ананімны"
-      ],
-      "Anyone on the Internet with the link can edit": [
-        "Любы карыстальнік у інтэрнэце з гэтай спасылкай можа рэдагаваць"
-      ],
-      "Anyone on the Internet with the link can view": [
-        "Любы карыстальнік у інтэрнэце з гэтай спасылкай можа праглядаць"
-      ],
-      "Anyone with the link": [
-        "Любы карыстальнік са спасылкай"
       ],
       "App password": [
         "Пароль праграмы"
@@ -7378,9 +7360,6 @@
       ],
       "Enter device name": [
         "Увядзіце назву прылады"
-      ],
-      "Erase this link and remove everyone with access": [
-        "Сцерці гэту спасылку і выдаліць доступ для ўсіх"
       ],
       "Expired": [
         "Пратэрмінавана"
@@ -8766,8 +8745,8 @@
       "Password-protected Emails": [
         "Лісты абароненыя паролем"
       ],
-      "Phone support (20+ users)": [
-        "Падтрымка па тэлефоне (ад 20 карыстальнікаў)"
+      "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
+        "Падтрымка па тэлефоне (ад ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } карыстальнікаў)"
       ],
       "Priority email support": [
         "Прыярытэтная падтрымка па электроннай пошце"
@@ -9212,8 +9191,8 @@
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Персаналізуйце свой подпіс у электронных лістах з дапамогай лагатыпаў, відарысаў, значкоў з сацыяльных сетак, спасылак на вашы кантактныя звесткі і г.д."
       ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
-        "Служба падтрымкі кліентаў ${ BRAND_NAME } ажыццяўляе падтрымку па тэлефоне ў працоўны час (еўрапейскі часавы пояс) для кліентаў ад 20 карыстальнікаў і больш."
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } or more users": [
+        "Служба падтрымкі кліентаў ${ BRAND_NAME } ажыццяўляе падтрымку па тэлефоне ў працоўны час (еўрапейскі часавы пояс) для кліентаў ад ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } карыстальнікаў і больш."
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Абмяжоўвае доступ да паведамленняў ${ BRAND_NAME } або старонніх асоб. Чытаць паведамленні можа толькі адпраўнік і меркаваны атрымальнік."
@@ -11438,14 +11417,6 @@
         "Скасаванне вашай падпіскі. Пачакайце..."
       ]
     },
-    "Status": {
-      "Accepted": [
-        "Прынята"
-      ],
-      "Pending": [
-        "У чаканні"
-      ]
-    },
     "Storage": {
       "Get more storage": [
         "Атрымаць больш месца ў сховішчы"
@@ -12710,11 +12681,11 @@
       "Folder details": [
         "Падрабязнасці папкі"
       ],
-      "Found ${ searchView.numberOfResults } result": [
-        "Знойдзены ${ searchView.numberOfResults } вынік",
-        "Знойдзены ${ searchView.numberOfResults } вынікі",
-        "Знойдзены ${ searchView.numberOfResults } вынікаў",
-        "Знойдзены ${ searchView.numberOfResults } вынікаў"
+      "Found ${ resultCount } result": [
+        "Знойдзены ${ resultCount } вынік",
+        "Знойдзены ${ resultCount } вынікі",
+        "Знойдзены ${ resultCount } вынікаў",
+        "Знойдзены ${ resultCount } вынікаў"
       ],
       "Get ${ DRIVE_SHORT_APP_NAME } on your phone": [
         "Атрымайце ${ DRIVE_SHORT_APP_NAME } на свой тэлефон"
@@ -13312,6 +13283,9 @@
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Ваш бясплатны пробны перыяд для тарыфнага плана ${ planName } завершыцца ${ textDate }"
+      ],
+      "Your ${ planTitle } subscription has started": [
+        "Ваша падпіска з тарыфным планам ${ planTitle } пачалася"
       ],
       "Your 3 GB bonus": [
         "Ваш бонус у 3 ГБ"
