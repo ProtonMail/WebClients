@@ -4,7 +4,7 @@ import { c } from 'ttag';
 import { useShallow } from 'zustand/react/shallow';
 
 import { useNotifications } from '@proton/components';
-import type { MaybeMissingNode, MaybeNode, MissingNode } from '@proton/drive/index';
+import type { MaybeMissingNode, MaybeNode, MissingNode, NodeEntity, ProtonDriveClient } from '@proton/drive/index';
 import { useDrive } from '@proton/drive/index';
 
 import { shouldTrackError, useSdkErrorHandler } from '../../../utils/errorHandling/useSdkErrorHandler';
@@ -19,6 +19,26 @@ const isMissingNode = (result: MaybeMissingNode): result is { ok: false; error: 
 
 const isMaybeNode = (result: MaybeMissingNode): result is MaybeNode => {
     return !isMissingNode(result);
+};
+
+// Nodes don't inherit trashTime when their parent folder is trashed,
+// so we must check ancestors.
+const isNodeOrAncestorTrashed = async (node: NodeEntity, drive: ProtonDriveClient): Promise<boolean> => {
+    if (node.trashTime) {
+        return Promise.resolve(true);
+    }
+
+    let currentNodeToCheckForTrash: NodeEntity = node;
+    while (currentNodeToCheckForTrash.parentUid) {
+        const parentUid = currentNodeToCheckForTrash.parentUid;
+        const parentMaybeNode = await drive.getNode(parentUid);
+        const { node: parentNodeEntity } = getNodeEntity(parentMaybeNode);
+        if (parentNodeEntity.trashTime) {
+            return true;
+        }
+        currentNodeToCheckForTrash = parentNodeEntity;
+    }
+    return false;
 };
 
 // Load nodes by UID from the SDK, convert them to UI presentation objects and store them in the store.
@@ -54,10 +74,12 @@ export const useSearchViewNodesLoader = () => {
 
                         const maybeNode = maybeMissingNode satisfies MaybeNode;
                         const { node } = getNodeEntity(maybeNode);
+
                         // The legacy search library indexes trashed items.
                         // We need to filter them out after loading since trash information
                         // is only available after fetching the metadata.
-                        if (node.trashTime) {
+                        const isNodeOrAncestorInTrash = await isNodeOrAncestorTrashed(node, drive);
+                        if (isNodeOrAncestorInTrash) {
                             continue;
                         }
 
