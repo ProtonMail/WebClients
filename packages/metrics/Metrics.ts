@@ -42,6 +42,8 @@ import type { HttpsProtonMeDriveDownloadErroringUsersTotalV1SchemaJson } from '.
 import type { HttpsProtonMeDriveDownloadErrorsTotalV2SchemaJson } from './types/drive_download_errors_total_v2.schema';
 import type { HttpsProtonMeDriveDownloadSpeedHistogramV1SchemaJson } from './types/drive_download_speed_histogram_v1.schema';
 import type { HttpsProtonMeDriveDownloadSuccessRateTotalV1SchemaJson } from './types/drive_download_success_rate_total_v1.schema';
+import type { HttpsProtonMeDriveErrorErroringUsersTotalV1SchemaJson } from './types/drive_error_erroring_users_total_v1.schema';
+import type { MeProtonDriveObservabilityDomainMetricsDriveErrorTotal } from './types/drive_error_total_v1.schema';
 import type { HttpsProtonMeDriveFilePreviewErrorsTotalV1SchemaJson } from './types/drive_file_preview_errors_total_v1.schema';
 import type { HttpsProtonMeDriveIntegrityBlockVerificationErrorsTotalV1SchemaJson } from './types/drive_integrity_block_verification_errors_total_v1.schema';
 import type { HttpsProtonMeDriveIntegrityDecryptionErrorsTotalV1SchemaJson } from './types/drive_integrity_decryption_errors_total_v1.schema';
@@ -251,6 +253,10 @@ class Metrics extends MetricsBase {
     public drive_download_speed_histogram: Histogram<HttpsProtonMeDriveDownloadSpeedHistogramV1SchemaJson>;
 
     public drive_download_success_rate_total: Counter<HttpsProtonMeDriveDownloadSuccessRateTotalV1SchemaJson>;
+
+    public drive_error_erroring_users_total: Counter<HttpsProtonMeDriveErrorErroringUsersTotalV1SchemaJson>;
+
+    public drive_error_total: Counter<MeProtonDriveObservabilityDomainMetricsDriveErrorTotal>;
 
     public drive_file_preview_errors_total: Counter<HttpsProtonMeDriveFilePreviewErrorsTotalV1SchemaJson>;
 
@@ -712,6 +718,16 @@ class Metrics extends MetricsBase {
 
         this.drive_download_success_rate_total = new Counter<HttpsProtonMeDriveDownloadSuccessRateTotalV1SchemaJson>(
             { name: 'drive_download_success_rate_total', version: 1 },
+            this.requestService
+        );
+
+        this.drive_error_erroring_users_total = new Counter<HttpsProtonMeDriveErrorErroringUsersTotalV1SchemaJson>(
+            { name: 'drive_error_erroring_users_total', version: 1 },
+            this.requestService
+        );
+
+        this.drive_error_total = new Counter<MeProtonDriveObservabilityDomainMetricsDriveErrorTotal>(
+            { name: 'drive_error_total', version: 1 },
             this.requestService
         );
 

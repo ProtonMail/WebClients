@@ -22,6 +22,9 @@ jest.mock('@proton/metrics', () => ({
     drive_download_mechanism_success_rate_total: {
         increment: jest.fn(),
     },
+    drive_error_total: {
+        increment: jest.fn(),
+    },
 }));
 
 const mockGetShare = jest.fn();

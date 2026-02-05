@@ -21,18 +21,17 @@ import { ProtonStoreProvider } from '@proton/redux-shared-store';
 import createApi from '@proton/shared/lib/api/createApi';
 // eslint-disable-next-line no-restricted-imports
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
-import { getClientID } from '@proton/shared/lib/apps/helper';
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
 import { FlagProvider } from '@proton/unleash';
 import noop from '@proton/utils/noop';
 
 import config from './config';
 import locales from './locales';
+import { driveMetrics } from './modules/metrics';
 import type { DriveStore } from './redux-store/store';
 import { extendStore, setupStore } from './redux-store/store';
 import { extraThunkArguments } from './redux-store/thunk';
 import { PublicPage } from './sections/publicPage/PublicPage';
-import { userSuccessMetrics } from './utils/metrics/userSuccessMetrics';
 import { logPerformanceMarker } from './utils/performance';
 import { Features, measureFeaturePerformance } from './utils/telemetry';
 import { loadStreamsPolyfill } from './utils/webStreamsPolyfill';
@@ -42,8 +41,7 @@ const bootstrapApp = async () => {
     const authentication = bootstrap.createAuthentication({ initialAuth: false });
     bootstrap.init({ config, locales, authentication });
 
-    userSuccessMetrics.init();
-    await userSuccessMetrics.setVersionHeaders(getClientID(config.APP_NAME), config.APP_VERSION);
+    driveMetrics.init({ isPublicContext: true });
 
     const store = setupStore({
         // Account sessions (switcher) feature, or Account persistence (state) feature is not used in unauthenticated context
@@ -104,7 +102,13 @@ const UrlsApp = () => {
                                 <AuthenticationProvider store={extraThunkArguments.authentication}>
                                     <FlagProvider unleashClient={extraThunkArguments.unleashClient}>
                                         <ApiProvider api={extraThunkArguments.api}>
-                                            <ErrorBoundary big component={<StandardErrorPage big />}>
+                                            <ErrorBoundary
+                                                big
+                                                component={<StandardErrorPage big />}
+                                                onError={(error) => {
+                                                    driveMetrics.globalErrors.markCrashError(error);
+                                                }}
+                                            >
                                                 <div className="h-full">
                                                     <NotificationsChildren />
                                                     <ModalsChildren />
