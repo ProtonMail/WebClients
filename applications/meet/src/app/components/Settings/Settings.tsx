@@ -41,15 +41,15 @@ export const Settings = () => {
         <SideBar
             onClose={() => toggleSideBarState(MeetingSideBars.Settings)}
             header={
-                <div className="text-semibold flex mx-auto">
-                    <div className="text-2xl">{c('Title').t`Settings`}</div>
+                <div className="flex items-center">
+                    <h2 className="text-3xl text-semibold">{c('Title').t`Settings`}</h2>
                 </div>
             }
         >
             <div className="flex flex-column w-full gap-4 pr-4">
                 {(isLocalParticipantAdmin || isLocalParticipantHost) && (
                     <div className="flex flex-column w-full gap-4">
-                        <div className="text-semibold color-weak pb-2">{c('Title').t`Security`}</div>
+                        <h3 className="text-semibold text-rg color-weak pb-2">{c('Title').t`Security`}</h3>
                         <div className="flex flex-column w-full gap-4 pl-4">
                             <div className="flex mx-auto justify-space-between gap-2 setting-container w-full flex-nowrap">
                                 <label
@@ -77,7 +77,7 @@ export const Settings = () => {
                     </div>
                 )}
                 <div className="flex flex-column w-full gap-4">
-                    <div className="text-semibold color-weak py-2">{c('Title').t`Video`}</div>
+                    <h3 className="text-semibold text-rg color-weak py-2">{c('Title').t`Video`}</h3>
                     <div className="flex flex-column w-full gap-4 pl-4">
                         {!isMobile() && (
                             <BackgroundBlurToggle
@@ -133,7 +133,7 @@ export const Settings = () => {
                     </div>
                 </div>
                 <div className="flex flex-column w-full gap-4">
-                    <div className="text-semibold color-weak py-2">{c('Title').t`Audio`}</div>
+                    <h3 className="text-semibold text-rg color-weak py-2">{c('Title').t`Audio`}</h3>
                     <div className="flex flex-column w-full gap-4 pl-4">
                         <NoiseCancellingToggle
                             idBase="settings"

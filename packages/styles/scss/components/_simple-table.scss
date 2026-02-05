@@ -25,6 +25,10 @@
 	th {
 		padding: var(--space-2);
 		border-block-end: 1px solid var(--table-border-color);
+
+		&.pl-0 {
+			padding-inline-start: 0;
+		}
 	}
 
 	.show-when-stacked {
