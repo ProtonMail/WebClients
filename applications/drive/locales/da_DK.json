@@ -3812,6 +3812,9 @@
       "We were not able to load some of your shared items": [
         "Vi kunne ikke indlæse nogle af dine delte elementer."
       ],
+      "We were not able to load some search results": [
+        "Vi kunne ikke indlæse nogle søgeresultater"
+      ],
       "We were not able to load the folder contents": [
         "Vi kunne ikke indlæse indholdet af mappen"
       ],
@@ -5249,9 +5252,6 @@
       "Create links and share your files with others.": [
         "Opret links og del dine filer med andre."
       ],
-      "Create public link": [
-        "Opret offentligt link"
-      ],
       "Create your first folder and start moving your files.": [
         "Opret din første mappe og begynd at flytte dine filer."
       ],
@@ -5844,9 +5844,6 @@
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Vores advarsler prioriterer sikkerhed. Hvis du ikke genkender nogen af de kompromitterede oplysninger, kan du roligt ignorere denne rapport."
       ],
-      "Owner": [
-        "Ejer"
-      ],
       "password": [
         "adgangskode"
       ],
@@ -5861,9 +5858,6 @@
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Betalinger er beskyttet af TLS-kryptering og schweizisk lovgivning om beskyttelse af privatlivets fred."
-      ],
-      "People with access": [
-        "Personer med adgang"
       ],
       "Permanently delete all files in your locked drive": [
         "Slet alle filer på dit låste drev permanent"
@@ -6354,6 +6348,9 @@
       "To fight spam and abuse, please verify you are human.": [
         "For at bekæmpe spam og misbrug bedes du bekræfte, at du er et menneske."
       ],
+      "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it's still best to download files only from trusted sources. ": [
+        "For at hjælpe med at beskytte dig, kan ${ DRIVE_APP_NAME } scanne dine filer på en måde der respekterer dit privatliv, og blokere skadelige filer. Det er dog stadig bedst kun at downloade filer fra betroede kilder. "
+      ],
       "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it’s still best to download files only from trusted sources. ": [
         "For at hjælpe med at beskytte dig, kan ${ DRIVE_APP_NAME } scanne dine filer på en måde der respekterer dit privatliv, og blokere skadelige filer. Det er dog stadig bedst kun at downloade filer fra betroede kilder. "
       ],
@@ -6735,9 +6732,6 @@
       "Your email address was exposed:": [
         "Din e-mailadresse blev eksponeret:"
       ],
-      "Your email address will be visible as the link's owner on the share page": [
-        "Din e-mailadresse vil være synlig som linkets ejer på delingssiden."
-      ],
       "Your email will only be used for this one-time verification.": [
         "Din e-mail vil kun blive brugt til denne engangsbekræftelse."
       ],
@@ -6858,9 +6852,6 @@
       ]
     },
     "Into": {
-      "Can edit and manage access": [
-        "Kan redigere og administrere adgang"
-      ],
       "Can view and edit": [
         "Kan se og redigere"
       ],
@@ -6966,9 +6957,6 @@
       "Address": [
         "Adresse"
       ],
-      "Admin": [
-        "Administrator"
-      ],
       "Alias title": [
         "Aliastitel"
       ],
@@ -6980,15 +6968,6 @@
       ],
       "Anonymous": [
         "Anonym"
-      ],
-      "Anyone on the Internet with the link can edit": [
-        "Enhver på internettet med linket kan redigere"
-      ],
-      "Anyone on the Internet with the link can view": [
-        "Enhver på internettet med linket kan se"
-      ],
-      "Anyone with the link": [
-        "Enhver der har linket"
       ],
       "App password": [
         "App-adgangskode"
@@ -7179,9 +7158,6 @@
       ],
       "Enter device name": [
         "Indtast navn på enheden"
-      ],
-      "Erase this link and remove everyone with access": [
-        "Slet dette link, og fjern alle med adgang"
       ],
       "Expired": [
         "Udløbet"
@@ -8464,8 +8440,8 @@
       "Password-protected Emails": [
         "Adgangskodebeskyttede e-mails"
       ],
-      "Phone support (20+ users)": [
-        "Telefon-support (20+ brugere)"
+      "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
+        "Telefonsupport (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ brugere)"
       ],
       "Priority email support": [
         "Prioriteret e-mailsupport"
@@ -8894,8 +8870,8 @@
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Personliggør din e-mail-signatur med logoer, billeder, ikoner til sociale medier, links til dine kontaktoplysninger og meget mere."
       ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
-        "Telefonsupport er tilgængelig fra ${ BRAND_NAME } Kundesupport-team i europæisk åbningstid for kunder med 20 eller flere brugere"
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } or more users": [
+        "Telefonsupport er tilgængelig fra ${ BRAND_NAME } Kundesupport-team i den europæiske åbningstid for kunder med ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } eller flere brugere"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Forhindrer, at beskeder kan tilgås af ${ BRAND_NAME } eller tredjeparter. De eneste personer, der kan læse beskederne, er afsenderen og den tilsigtede modtager."
@@ -11004,14 +10980,6 @@
         "Opsiger dit abonnement, vent venligst"
       ]
     },
-    "Status": {
-      "Accepted": [
-        "Accepteret"
-      ],
-      "Pending": [
-        "Afventer"
-      ]
-    },
     "Storage": {
       "Get more storage": [
         "Få mere lagerplads"
@@ -12216,9 +12184,9 @@
       "Folder details": [
         "Mappedetaljer"
       ],
-      "Found ${ searchView.numberOfResults } result": [
-        "Fandt ${ searchView.numberOfResults } resultat",
-        "Fandt ${ searchView.numberOfResults } resultater"
+      "Found ${ resultCount } result": [
+        "Fandt ${ resultCount } resultat",
+        "Fandt ${ resultCount } resultater"
       ],
       "Get ${ DRIVE_SHORT_APP_NAME } on your phone": [
         "Hent ${ DRIVE_SHORT_APP_NAME } til din telefon"

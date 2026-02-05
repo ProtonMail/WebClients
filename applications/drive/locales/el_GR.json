@@ -977,6 +977,9 @@
       "Set as cover": [
         "Ορίστε ως εξώφυλλο"
       ],
+      "Set password or expiration date": [
+        "Ορισμός κωδικού πρόσβασης ή ημερομηνίας λήξης"
+      ],
       "Set recovery methods": [
         "Ορισμός μεθόδων ανάκτησης"
       ],
@@ -1012,6 +1015,9 @@
       ],
       "Share your calendar with your team": [
         "Κοινοποιήστε το ημερολόγιό σας με την ομάδα σας"
+      ],
+      "Sharing is end-to-end encrypted": [
+        "Η κοινοποίηση είναι, διατερματικά κρυπτογραφημένη"
       ],
       "Sharing options": [
         "Επιλογές κοινοποίησης"
@@ -3812,6 +3818,9 @@
       "We were not able to load some of your shared items": [
         "Δεν μπορέσαμε να φορτώσουμε μερικά από τα κοινόχρηστα αντικείμενά σας"
       ],
+      "We were not able to load some search results": [
+        "Δεν ήταν δυνατή η φόρτωση ορισμένων αποτελεσμάτων αναζήτησης"
+      ],
       "We were not able to load the folder contents": [
         "Δεν ήταν δυνατή η φόρτωση του περιεχομένου του φακέλου."
       ],
@@ -5249,9 +5258,6 @@
       "Create links and share your files with others.": [
         "Δημιουργήστε συνδέσμους και μοιραστείτε τα αρχεία σας με άλλους."
       ],
-      "Create public link": [
-        "Δημιουργία δημόσιου συνδέσμου"
-      ],
       "Create your first folder and start moving your files.": [
         "Δημιουργήστε τον πρώτο σας φάκελο και αρχίστε να μετακινείτε τα αρχεία σας."
       ],
@@ -5669,6 +5675,9 @@
       "Learn what to do ${ dataLeakedLink }": [
         "Μάθετε τι να κάνετε ${ dataLeakedLink }"
       ],
+      "Link copied": [
+        "Ο σύνδεσμος αντιγράφηκε"
+      ],
       "Link copied to clipboard": [
         "Ο σύνδεσμος αντιγράφηκε στο πρόχειρο"
       ],
@@ -5844,8 +5853,8 @@
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Οι ειδοποιήσεις μας δίνουν προτεραιότητα στην ασφάλεια. Εάν δεν αναγνωρίζετε καμία από τις παραβιασμένες πληροφορίες, μπορείτε να αγνοήσετε με ασφάλεια αυτήν την αναφορά."
       ],
-      "Owner": [
-        "Ιδιοκτήτης"
+      "owner": [
+        "ιδιοκτήτης"
       ],
       "password": [
         "κωδικός πρόσβασης"
@@ -5861,9 +5870,6 @@
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Οι πληρωμές προστατεύονται με κρυπτογράφηση TLS και με Ελβετικούς νόμους περί ιδιωτικότητας."
-      ],
-      "People with access": [
-        "Άτομα με πρόσβαση"
       ],
       "Permanently delete all files in your locked drive": [
         "Οριστική διαγραφή όλων των αρχείων στον κλειδωμένο δίσκο σας"
@@ -6354,6 +6360,9 @@
       "To fight spam and abuse, please verify you are human.": [
         "Για την καταπολέμηση ενοχλήσεων και καταχρήσεων, παρακαλούμε επαληθεύστε ότι είστε άνθρωπος."
       ],
+      "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it's still best to download files only from trusted sources. ": [
+        "Για την προστασία σας, το ${ DRIVE_APP_NAME } μπορεί να σαρώσει τα αρχεία σας με τρόπο που διατηρεί το απόρρητο και να αποκλείσει κακόβουλα αρχεία. Ωστόσο, εξακολουθεί να είναι καλύτερο να κάνετε λήψη αρχείων μόνο από αξιόπιστες πηγές. "
+      ],
       "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it’s still best to download files only from trusted sources. ": [
         "Για την προστασία σας, το ${ DRIVE_APP_NAME } μπορεί να σαρώσει τα αρχεία σας με τρόπο που διατηρεί το απόρρητο και να αποκλείσει κακόβουλα αρχεία. Ωστόσο, εξακολουθεί να είναι καλύτερο να κάνετε λήψη αρχείων μόνο από αξιόπιστες πηγές."
       ],
@@ -6570,6 +6579,9 @@
       "who": [
         "ποιος"
       ],
+      "Who has access": [
+        "Ποιος έχει πρόσβαση"
+      ],
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
         "θα γίνει επαναφορά στην έκδοση από ${ formattedRevisionDate }. Όλες οι άλλες εκδόσεις θα εξακολουθούν να αποθηκεύονται."
       ],
@@ -6735,9 +6747,6 @@
       "Your email address was exposed:": [
         "Η διεύθυνση ηλεκτρονικού ταχυδρομείου σας διέρρευσε:"
       ],
-      "Your email address will be visible as the link's owner on the share page": [
-        "Η διεύθυνση ηλεκτρονικού ταχυδρομείου σας θα είναι ορατή ως κάτοχος του συνδέσμου στη σελίδα κοινής χρήσης"
-      ],
       "Your email will only be used for this one-time verification.": [
         "Το email σας θα χρησιμοποιηθεί μόνο για αυτή την εφάπαξ επαλήθευση."
       ],
@@ -6858,9 +6867,6 @@
       ]
     },
     "Into": {
-      "Can edit and manage access": [
-        "Μπορεί να επεξεργαστεί και να διαχειριστεί την πρόσβαση"
-      ],
       "Can view and edit": [
         "Μπορεί να δει και να επεξεργαστεί"
       ],
@@ -6954,6 +6960,9 @@
       "Account holder": [
         "Δικαιούχος λογαριασμού"
       ],
+      "Active": [
+        "Ενεργό"
+      ],
       "Add email address": [
         "Προσθήκη διεύθυνσης E-mail"
       ],
@@ -6966,8 +6975,8 @@
       "Address": [
         "Διεύθυνση"
       ],
-      "Admin": [
-        "Διαχειριστής"
+      "admin": [
+        "διαχειριστής"
       ],
       "Alias title": [
         "Τίτλος ψευδωνύμου"
@@ -6981,14 +6990,8 @@
       "Anonymous": [
         "Ανώνυμα"
       ],
-      "Anyone on the Internet with the link can edit": [
-        "Οποιοσδήποτε στο Διαδίκτυο με τον σύνδεσμο μπορεί να επεξεργαστεί"
-      ],
-      "Anyone on the Internet with the link can view": [
-        "Οποιοσδήποτε στο Διαδίκτυο με τον σύνδεσμο μπορεί να δει"
-      ],
-      "Anyone with the link": [
-        "Οποιοσδήποτε έχει το σύνδεσμο"
+      "Anyone on the Internet with the link": [
+        "Οποιοσδήποτε στο Διαδίκτυο με τον σύνδεσμο"
       ],
       "App password": [
         "Κωδικός πρόσβασης εφαρμογής"
@@ -7034,6 +7037,12 @@
       ],
       "Calendars": [
         "Ημερολόγια"
+      ],
+      "can edit": [
+        "μπορεί να επεξεργαστεί"
+      ],
+      "can view": [
+        "μπορεί να δει"
       ],
       "Cancel download": [
         "Ακύρωση λήψης"
@@ -7117,6 +7126,9 @@
         "Διαγραφή δίσκου;",
         "Διαγραφή δίσκων;"
       ],
+      "Delete link and remove access for everyone": [
+        "Διαγραφή συνδέσμου και κατάργηση πρόσβασης για όλους"
+      ],
       "Delete recovery-related information.": [
         "Διαγράψτε πληροφορίες που σχετίζονται με την ανάκτηση."
       ],
@@ -7179,9 +7191,6 @@
       ],
       "Enter device name": [
         "Εισάγετε όνομα συσκευής"
-      ],
-      "Erase this link and remove everyone with access": [
-        "Διαγραφή αυτού του συνδέσμου και κατάργηση όλων των ατόμων με πρόσβαση"
       ],
       "Expired": [
         "Έχει λήξει"
@@ -7320,6 +7329,9 @@
       ],
       "New password": [
         "Νέος κωδικός"
+      ],
+      "Not active": [
+        "Μη ενεργό"
       ],
       "Note": [
         "Σημείωση"
@@ -8464,8 +8476,8 @@
       "Password-protected Emails": [
         "Μηνύματα ηλεκτρονικού ταχυδρομείου που προστατεύονται με κωδικό πρόσβασης"
       ],
-      "Phone support (20+ users)": [
-        "Τηλεφωνική υποστήριξη (20+ χρήστες)"
+      "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
+        "Τηλεφωνική υποστήριξη (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ χρήστες)"
       ],
       "Priority email support": [
         "Υποστήριξη ηλεκτρονικού ταχυδρομείου προτεραιότητας"
@@ -8894,8 +8906,8 @@
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Εξατομικεύστε την υπογραφή email σας με λογότυπα, εικόνες, εικονίδια κοινωνικών μέσων, συνδέσμους προς τα στοιχεία επικοινωνίας σας και πολλά άλλα"
       ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
-        "Η τηλεφωνική υποστήριξη είναι διαθέσιμη από τη ${ BRAND_NAME } Ομάδα Υποστήριξης πελατών κατά τις Ευρωπαϊκές εργάσιμες ώρες, για πελάτες με 20 ή περισσότερους χρήστες"
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } or more users": [
+        "Η τηλεφωνική υποστήριξη είναι διαθέσιμη από την ομάδα υποστήριξης πελατών της ${ BRAND_NAME } κατά τις ευρωπαϊκές εργάσιμες ώρες, για πελάτες με ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } ή περισσότερους χρήστες."
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Αποτρέπει την πρόσβαση σε μηνύματα από ${ BRAND_NAME } ή τρίτους. Τα μόνα άτομα που μπορούν να διαβάσουν τα μηνύματα είναι ο αποστολέας και ο παραλήπτης."
@@ -11005,11 +11017,11 @@
       ]
     },
     "Status": {
-      "Accepted": [
-        "Έγινε αποδοχή"
+      "accepted": [
+        "αποδέχθηκε"
       ],
-      "Pending": [
-        "Σε εκκρεμότητα"
+      "pending": [
+        "εκκρεμεί"
       ]
     },
     "Storage": {
@@ -12216,9 +12228,9 @@
       "Folder details": [
         "Λεπτομέρειες φακέλου"
       ],
-      "Found ${ searchView.numberOfResults } result": [
-        "Βρέθηκε ${ searchView.numberOfResults } αποτέλεσμα",
-        "Βρέθηκαν ${ searchView.numberOfResults } αποτελέσματα"
+      "Found ${ resultCount } result": [
+        "Βρέθηκε ${ resultCount } αποτέλεσμα",
+        "Βρέθηκαν ${ resultCount } αποτελέσματα"
       ],
       "Get ${ DRIVE_SHORT_APP_NAME } on your phone": [
         "Κατεβάστε το ${ DRIVE_SHORT_APP_NAME } στο κινητό σας"
@@ -12485,6 +12497,12 @@
       "Processing...": [
         "Γίνεται επεξεργασία..."
       ],
+      "Public link": [
+        "Δημόσιος σύνδεσμος"
+      ],
+      "Public link settings": [
+        "Ρυθμίσεις δημοσιευμένου συνδέσμου"
+      ],
       "Public shared link status": [
         "Κατάσταση δημόσιου κοινόχρηστου συνδέσμου"
       ],
@@ -12575,6 +12593,9 @@
       ],
       "Settings": [
         "Ρυθμίσεις"
+      ],
+      "Settings for ${ sharedFileName }": [
+        "Ρυθμίσεις για ${ sharedFileName }"
       ],
       "SHA1": [
         "SHA1"

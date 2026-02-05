@@ -3860,6 +3860,9 @@
       "We were not able to load some of your shared items": [
         "Neboli sme schopní načítať niektoré z vašich zdieľaných položiek"
       ],
+      "We were not able to load some search results": [
+        "Niektoré výsledky vyhľadávania sa nám nepodarilo načítať."
+      ],
       "We were not able to load the folder contents": [
         "Nepodarilo sa nám načítať obsah priečinka"
       ],
@@ -5354,6 +5357,9 @@
       "Collaborate efficiently while protecting your client and business data from breaches, ransomware, and surveillance.": [
         "Spolupracujte efektívne a zároveň chráňte údaje svojich klientov a firmy pred napadnutím, ransomwarom a sledovaním."
       ],
+      "Computed hash does not match XAttr": [
+        "Vypočítaný hash sa nezhoduje s XAttr"
+      ],
       "Conflict": [
         "Konflikt"
       ],
@@ -5407,9 +5413,6 @@
       ],
       "Create links and share your files with others.": [
         "Vytvárajte odkazy a zdieľajte vaše súbory s ostatnými."
-      ],
-      "Create public link": [
-        "Vytvoriť verejný odkaz"
       ],
       "Create your first folder and start moving your files.": [
         "Vytvorte svoj prvý priečinok a začnite presúvať svoje súbory."
@@ -6011,9 +6014,6 @@
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Prioritou našich upozornení je bezpečnosť. Ak nepoznáte žiadnu z ohrozených informácií, môžete túto správu pokojne ignorovať."
       ],
-      "Owner": [
-        "Vlastník"
-      ],
       "password": [
         "heslo"
       ],
@@ -6028,9 +6028,6 @@
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Platby sú chránené šifrovaním TLS a švajčiarskymi zákonmi o ochrane súkromia."
-      ],
-      "People with access": [
-        "Ľudia s prístupom"
       ],
       "Permanently delete all files in your locked drive": [
         "Navždy zmazať všetky súbory na vašom zamknutom disku"
@@ -6527,6 +6524,9 @@
       "To fight spam and abuse, please verify you are human.": [
         "Aby ste zamedzili spamu a obťažovaniu, potvrďte, že ste človek."
       ],
+      "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it's still best to download files only from trusted sources. ": [
+        "Na vašu ochranu môže ${ DRIVE_APP_NAME } skenovať vaše súbory spôsobom zachovávajúcim súkromie a blokovať škodlivé súbory. Stále je však najlepšie sťahovať súbory len z dôveryhodných zdrojov. "
+      ],
       "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it’s still best to download files only from trusted sources. ": [
         "Na vašu ochranu môže ${ DRIVE_APP_NAME } skenovať vaše súbory spôsobom zachovávajúcim súkromie a blokovať škodlivé súbory. Stále je však najlepšie sťahovať súbory len z dôveryhodných zdrojov. "
       ],
@@ -6920,9 +6920,6 @@
       "Your email address was exposed:": [
         "Vaša emailová adresa bola prezradená:"
       ],
-      "Your email address will be visible as the link's owner on the share page": [
-        "Vaša emailová adresa bude viditeľná na zdieľanej stránke ako vlastník odkazu."
-      ],
       "Your email will only be used for this one-time verification.": [
         "Váš email bude použitý iba pre toto jednorazové overenie."
       ],
@@ -7049,9 +7046,6 @@
       ]
     },
     "Into": {
-      "Can edit and manage access": [
-        "Môže upravovať a spravovať prístup"
-      ],
       "Can view and edit": [
         "Môže zobraziť a upraviť"
       ],
@@ -7163,9 +7157,6 @@
       "Address": [
         "Adresa"
       ],
-      "Admin": [
-        "Správca"
-      ],
       "Alias title": [
         "Názov aliasu"
       ],
@@ -7177,15 +7168,6 @@
       ],
       "Anonymous": [
         "Anonymne"
-      ],
-      "Anyone on the Internet with the link can edit": [
-        "Ktokoľvek na internete s odkazom môže upravovať"
-      ],
-      "Anyone on the Internet with the link can view": [
-        "Ktokoľvek na internete s odkazom môže zobraziť"
-      ],
-      "Anyone with the link": [
-        "Ktokoľvek s odkazom"
       ],
       "App password": [
         "Heslo aplikácie"
@@ -7378,9 +7360,6 @@
       ],
       "Enter device name": [
         "Zadajte názov zariadenia"
-      ],
-      "Erase this link and remove everyone with access": [
-        "Vymazať tento odkaz a odstrániť všetkých s prístupom"
       ],
       "Expired": [
         "Vypršal"
@@ -8715,8 +8694,8 @@
       "Password-protected Emails": [
         "Heslom chránené emaily"
       ],
-      "Phone support (20+ users)": [
-        "Telefonická podpora (20+ používateľov)"
+      "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
+        "Telefónna podpora (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ používateľov)"
       ],
       "Priority email support": [
         "Prioritná emailová podpora"
@@ -9161,8 +9140,8 @@
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Prispôsobte si svoj emailový podpis pomocou log, obrázkov, ikon sociálnych médií, odkazov na vaše kontaktné údaje a ďalších"
       ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
-        "Telefonická podpora od tímu zákazníckej podpory ${ BRAND_NAME } je k dispozícii počas európskych pracovných hodín pre zákazníkov s viac než 20 používateľmi"
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } or more users": [
+        "Telefonická podpora od tímu zákazníckej podpory ${ BRAND_NAME } je k dispozícii počas európskych pracovných hodín pre zákazníkov s minimálne ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } používateľmi."
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Zabraňuje prístupu ${ BRAND_NAME } alebo tretím stranám k správam. Jediní ľudia, ktorí môžu čítať správy, sú odosielateľ a zamýšľaný príjemca."
@@ -11387,14 +11366,6 @@
         "Rušenie vášho predplatného, počkajte prosím"
       ]
     },
-    "Status": {
-      "Accepted": [
-        "Prijaté"
-      ],
-      "Pending": [
-        "Čakajúce"
-      ]
-    },
     "Storage": {
       "Get more storage": [
         "Získať viac úložného priestoru"
@@ -12659,11 +12630,11 @@
       "Folder details": [
         "Podrobnosti priečinka"
       ],
-      "Found ${ searchView.numberOfResults } result": [
-        "Nájdený ${ searchView.numberOfResults } výsledok",
-        "Nájdené ${ searchView.numberOfResults } výsledky",
-        "Nájdených ${ searchView.numberOfResults } výsledkov",
-        "Nájdených ${ searchView.numberOfResults } výsledkov"
+      "Found ${ resultCount } result": [
+        "Nájdený ${ resultCount } výsledok",
+        "Nájdené ${ resultCount } výsledky",
+        "Nájdených ${ resultCount } výsledkov",
+        "Nájdených ${ resultCount } výsledkov"
       ],
       "Get ${ DRIVE_SHORT_APP_NAME } on your phone": [
         "Získajte ${ DRIVE_SHORT_APP_NAME } do svojho telefónu"
@@ -13261,6 +13232,9 @@
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Vaša bezplatná skúšobná verzia služby ${ planName } končí ${ textDate }"
+      ],
+      "Your ${ planTitle } subscription has started": [
+        "Vaše predplatné ${ planTitle } začalo"
       ],
       "Your 3 GB bonus": [
         "Váš bonus 3 GB"
