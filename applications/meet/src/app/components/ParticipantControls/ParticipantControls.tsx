@@ -140,11 +140,13 @@ export const ParticipantControls = () => {
     const meetingTitle = (
         <div className="flex h3 items-center gap-2 pl-4 flex-nowrap">
             {meetUpsellEnabled && (
-                <>{guestMode || !paidUser ? <UpgradeIcon /> : <IcMeetShieldStar className="shield-star" size={5} />}</>
+                <span className="shrink-0">
+                    {guestMode || !paidUser ? <UpgradeIcon /> : <IcMeetShieldStar className="shield-star" size={5} />}
+                </span>
             )}
             <span className="participant-controls-title text-ellipsis">{roomName}</span>
             {hasAdminPermission && (
-                <div className="ml-2">
+                <div className="ml-2 shrink-0">
                     <MeetingDuration />
                 </div>
             )}

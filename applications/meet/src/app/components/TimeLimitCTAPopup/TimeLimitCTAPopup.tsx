@@ -36,7 +36,11 @@ export const TimeLimitCTAPopup = ({ children }: TimeLimitCTAPopupProps) => {
 
     const isPopupOpen = (isHovered || forceShowPopup) && meetUpsellEnabled;
 
-    const timeLeft = formatDuration(timeLeftMs);
+    const timeLeft = (
+        <time dateTime={formatDuration(timeLeftMs)} className="text-tabular-nums" key="time-left">
+            {formatDuration(timeLeftMs)}
+        </time>
+    );
 
     useEffect(() => {
         if (isExpiringSoon && meetUpsellEnabled) {
@@ -101,7 +105,7 @@ export const TimeLimitCTAPopup = ({ children }: TimeLimitCTAPopupProps) => {
                     {showRemainingTime ? (
                         <div className="w-full flex flex-column gap-2">
                             <div className="text-3xl text-semibold w-full text-center">
-                                {c('Info').t`Meeting will end in ${timeLeft}`}
+                                {c('Info').jt`Meeting will end in ${timeLeft}`}
                             </div>
                             <div className="color-weak w-full text-center text-semibold">
                                 {c('Info').t`Free meetings are limited to 1 hour. This call will disconnect soon.`}

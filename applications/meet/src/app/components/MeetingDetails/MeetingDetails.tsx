@@ -3,6 +3,7 @@ import { useMemo } from 'react';
 import { format } from 'date-fns';
 import { c } from 'ttag';
 
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import Table from '@proton/components/components/table/Table';
 import TableBody from '@proton/components/components/table/TableBody';
 import TableCell from '@proton/components/components/table/TableCell';
@@ -18,7 +19,7 @@ import { SideBar } from '../../atoms/SideBar/SideBar';
 import { useMeetContext } from '../../contexts/MeetContext';
 import { useUIStateContext } from '../../contexts/UIStateContext';
 import { useCopyTextToClipboard } from '../../hooks/useCopyTextToClipboard';
-import { MeetingSideBars } from '../../types';
+import { type KeyRotationLog, MeetingSideBars } from '../../types';
 
 import './MeetingDetails.scss';
 
@@ -88,46 +89,49 @@ export const MeetingDetails = ({ currentMeeting }: { currentMeeting?: Meeting })
         <SideBar
             onClose={() => toggleSideBarState(MeetingSideBars.MeetingDetails)}
             header={
-                <div className="text-semibold flex items-center">
-                    <div className="text-3xl">{c('Title').t`Info`}</div>
+                <div className="flex items-center">
+                    <h2 className="text-3xl text-semibold">{c('Title').t`Info`}</h2>
                 </div>
             }
         >
             <div className="flex-1 overflow-auto min-h-0">
                 <div className="meeting-info-wrapper meet-radius p-4">
-                    <div className="text-semibold pl-2 mb-4">{c('Title').t`Meeting details`}</div>
-                    <Table>
+                    <h3 className="text-semibold text-rg mb-4">{c('Title').t`Meeting details`}</h3>
+                    <Table className="mb-0">
                         <TableBody>
                             <TableRow>
-                                <TableCell className="align-top color-weak" colSpan={1}>{c('Title')
-                                    .t`Title`}</TableCell>
-                                <TableCell className="text-ellipsis" colSpan={2}>
-                                    {roomName}
-                                </TableCell>
+                                <TableCell type="header" scope="row" className="align-top color-weak w-1/3 pl-0">{c(
+                                    'Title'
+                                ).t`Title`}</TableCell>
+                                <TableCell className="text-ellipsis">{roomName}</TableCell>
                             </TableRow>
                             {formattedStartDate && (
                                 <TableRow>
-                                    <TableCell className="color-weak" colSpan={1}>{c('Title').t`Date`}</TableCell>
-                                    <TableCell colSpan={2}>{formattedStartDate}</TableCell>
+                                    <TableCell type="header" scope="row" className="color-weak w-1/3">{c('Title')
+                                        .t`Date`}</TableCell>
+                                    <TableCell>{formattedStartDate}</TableCell>
                                 </TableRow>
                             )}
                             {startTime && (
                                 <TableRow>
-                                    <TableCell className="color-weak" colSpan={1}>{c('Title').t`Time`}</TableCell>
-                                    <TableCell colSpan={2} className="time-cell">
+                                    <TableCell type="header" scope="row" className="color-weak w-1/3 pl-0">{c('Title')
+                                        .t`Time`}</TableCell>
+                                    <TableCell className="time-cell">
                                         {startTime} {endTime ? `- ${endTime}` : ''} ({timeZone})
                                     </TableCell>
                                 </TableRow>
                             )}
                             <TableRow>
-                                <TableCell className="align-top color-weak" colSpan={1}>{c('Title')
-                                    .t`Invite link`}</TableCell>
-                                <TableCell colSpan={2} className="text-break-all overflow-hidden">
+                                <TableCell type="header" scope="row" className="align-top color-weak w-1/3 pl-0">{c(
+                                    'Title'
+                                ).t`Invite link`}</TableCell>
+                                <TableCell className="text-break-all overflow-hidden">
                                     <button
                                         className="w-full color-primary cursor-pointer text-left unstyled p-0 m-0"
                                         onClick={() => {
                                             void copyTextToClipboard(meetingLink);
                                         }}
+                                        aria-label={c('Label').t`Copy invite link`}
                                     >
                                         {meetingLink}
                                     </button>
@@ -135,10 +139,10 @@ export const MeetingDetails = ({ currentMeeting }: { currentMeeting?: Meeting })
                             </TableRow>
                             {passphrase && (
                                 <TableRow>
-                                    <TableCell className="color-weak" colSpan={1}>
+                                    <TableCell type="header" scope="row" className="color-weak w-1/3 pl-0">
                                         {c('Title').t`Passphrase`}
                                     </TableCell>
-                                    <TableCell colSpan={2}>
+                                    <TableCell>
                                         <button
                                             className="w-full color-primary cursor-pointer text-left unstyled p-0 m-0"
                                             onClick={() => {
@@ -155,102 +159,90 @@ export const MeetingDetails = ({ currentMeeting }: { currentMeeting?: Meeting })
                 </div>
 
                 <div className="meeting-info-wrapper meeting-info-mls-wrapper meet-radius overflow-hidden p-4">
-                    <div className="text-semibold pl-2 mb-4">{c('Title').t`Messaging Layer Security`}</div>
-                    <div className="px-2">
-                        <div className="color-weak mb-2 pb-3 border-bottom">
-                            {c('Info')
-                                .t`This meeting is protected by end-to-end encryption with Messaging Layer Security (MLS).`}
-                        </div>
-                        {mlsGroupState && (
-                            <div className="flex gap-4 min-h-0">
-                                <div className="shrink-0 flex flex-column">
-                                    {mlsGroupState.displayCode !== null && (
-                                        <div
-                                            className="py-3 color-weak text-semibold flex-1"
-                                            style={{ display: 'flex', alignItems: 'center' }}
-                                        >
-                                            <span>{c('Title').t`Security code`}</span>
-                                        </div>
-                                    )}
-                                    <div className="pt-2 pb-3 color-weak text-semibold border-bottom">{c('Title')
-                                        .t`Epoch`}</div>
-                                </div>
-                                <div className="flex-1 flex flex-column text-break">
-                                    {mlsGroupState.displayCode !== null && (
-                                        <div className="py-3">
-                                            <div className="overflow-y-auto" style={{ maxHeight: '8rem' }}>
-                                                <button
-                                                    className="color-primary cursor-pointer unstyled p-0 m-0"
-                                                    style={{ display: 'flex', flexWrap: 'wrap', gap: '0.25em' }}
-                                                    onClick={() => {
-                                                        void copyTextToClipboard(mlsGroupState.displayCode!);
-                                                    }}
-                                                >
-                                                    {mlsGroupState
-                                                        .displayCode!.match(/.{1,4}/g) // separate every 4 characters
-                                                        ?.map((group, i) => (
-                                                            <span
-                                                                key={i}
-                                                                className={i % 2 === 0 ? 'color-norm' : 'color-hint'}
-                                                            >
-                                                                {group}
-                                                            </span>
-                                                        ))}
-                                                </button>
-                                            </div>
-                                        </div>
-                                    )}
-                                    <div className="pt-2 pb-3 border-bottom">
-                                        <div>{mlsGroupState.epoch.toString()}</div>
-                                    </div>
-                                </div>
-                            </div>
-                        )}
+                    <h3 className="text-semibold text-rg mb-4">{c('Title').t`Messaging Layer Security`}</h3>
+                    <div className="color-weak mb-2 pb-3 border-bottom">
+                        {c('Info')
+                            .t`This meeting is protected by end-to-end encryption with Messaging Layer Security (MLS).`}
                     </div>
+                    {mlsGroupState && mlsGroupState.displayCode !== null && (
+                        <Table className="mb-0">
+                            <TableBody>
+                                <TableRow>
+                                    <TableCell type="header" scope="row" className="align-top color-weak w-1/3 pl-0">{c(
+                                        'Title'
+                                    ).t`Security code`}</TableCell>
+                                    <TableCell>
+                                        <button
+                                            className="color-primary cursor-pointer unstyled p-0 m-0 flex flex-wrap gap-1 text-monospace"
+                                            onClick={() => {
+                                                void copyTextToClipboard(mlsGroupState.displayCode!);
+                                            }}
+                                        >
+                                            {mlsGroupState
+                                                .displayCode!.match(/.{1,4}/g) // separate every 4 characters
+                                                ?.map((group, i) => (
+                                                    <span key={i} className={i % 2 === 0 ? 'color-norm' : 'color-hint'}>
+                                                        {group}
+                                                    </span>
+                                                ))}
+                                        </button>
+                                    </TableCell>
+                                </TableRow>
+                                <TableRow>
+                                    <TableCell type="header" scope="row" className="align-top color-weak w-1/3 pl-0">{c(
+                                        'Title'
+                                    ).t`Epoch`}</TableCell>
+                                    <TableCell className="text-ellipsis">{mlsGroupState.epoch.toString()}</TableCell>
+                                </TableRow>
+                            </TableBody>
+                        </Table>
+                    )}
                 </div>
 
                 {isMeetShowMLSLogsEnabled && (
                     <div className="meeting-info-wrapper meeting-info-mls-wrapper meet-radius overflow-hidden p-4">
-                        <div className="text-semibold pl-2 mb-4 flex justify-space-between items-center w-full">
-                            {c('Title').t`Activity events`}
+                        <div className="mb-4 flex justify-space-between items-center w-full">
+                            <h3 className="text-semibold text-rg">{c('Title').t`Activity events`}</h3>
                             {isMeetAllowMLSLogExportEnabled && (
-                                <button
-                                    className="color-primary cursor-pointer unstyled p-0 m-0"
-                                    onClick={() => {
-                                        void copyTextToClipboard(getEncryptionLogs());
-                                    }}
-                                >
-                                    <IcMeetCopy />
-                                </button>
+                                <Tooltip title={c('Label').t`Copy all activity events`}>
+                                    <button
+                                        className="color-primary cursor-pointer unstyled p-0 m-0"
+                                        onClick={() => {
+                                            void copyTextToClipboard(getEncryptionLogs());
+                                        }}
+                                    >
+                                        <IcMeetCopy alt={c('Label').t`Copy all activity events`} />
+                                    </button>
+                                </Tooltip>
                             )}
                         </div>
-                        <div className="px-2">
-                            <Table>
-                                <TableBody>
-                                    {keyRotationLogs.map((log, index) => {
-                                        const errorMessage =
-                                            log.type === 'error' ? c('Title').t`Error at epoch ${log.epoch}` : '';
-                                        const prevLog = keyRotationLogs[index - 1] ?? null;
-                                        const logMessage =
-                                            index === 0
-                                                ? c('Title').t`Joined at epoch ${log.epoch}`
-                                                : c('Title').t`Epoch ${prevLog.epoch} → ${log.epoch}`;
+                        <Table className="mb-0">
+                            <TableBody>
+                                {keyRotationLogs.map((log: KeyRotationLog, index: number) => {
+                                    const errorMessage =
+                                        log.type === 'error' ? c('Title').t`Error at epoch ${log.epoch}` : '';
+                                    const prevLog = keyRotationLogs[index - 1] ?? null;
+                                    const logMessage =
+                                        index === 0
+                                            ? c('Title').t`Joined at epoch ${log.epoch}`
+                                            : c('Title').t`Epoch ${prevLog.epoch} → ${log.epoch}`;
 
-                                        const content = log.type === 'error' ? errorMessage : logMessage;
-                                        return (
-                                            <TableRow key={log.timestamp}>
-                                                <TableCell className="color-weak">
+                                    const content = log.type === 'error' ? errorMessage : logMessage;
+                                    return (
+                                        <TableRow key={log.timestamp}>
+                                            <TableCell type="header" scope="row" className="color-weak w-1/3 pl-0">
+                                                <time dateTime={log.timestamp.toString()}>
                                                     {format(new Date(log.timestamp), 'HH:mm:ss', {
                                                         locale: dateLocale,
                                                     })}
-                                                </TableCell>
-                                                <TableCell>{content}</TableCell>
-                                            </TableRow>
-                                        );
-                                    })}
-                                </TableBody>
-                            </Table>
-                        </div>
+                                                </time>
+                                            </TableCell>
+                                            <TableCell>{content}</TableCell>
+                                        </TableRow>
+                                    );
+                                })}
+                            </TableBody>
+                        </Table>
                     </div>
                 )}
             </div>
