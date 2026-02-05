@@ -397,6 +397,18 @@ export const getLabelName = (labelID: string, labels: Label[] = [], folders: Fol
     return labelID;
 };
 
+/**
+ * Only use this method when the label name in the toolbar.
+ * It's used to ensure that categories get the "Inbox" name.
+ */
+export const getLabelNameForToolbar = (labelID: string, labels: Label[] = [], folders: Folder[] = []) => {
+    if (isCategoryLabel(labelID)) {
+        return getStandardFolders()[MAILBOX_LABEL_IDS.INBOX].name;
+    }
+
+    return getLabelName(labelID, labels, folders);
+};
+
 export const getLabelNames = (changes: string[], labels: Label[], folders: Folder[]) => {
     if (!changes || changes.length === 0) {
         return;
