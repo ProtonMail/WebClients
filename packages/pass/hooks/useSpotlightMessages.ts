@@ -31,7 +31,6 @@ export const useSpotlightMessages = (extra: SpotlightMessageDefinition[] = []) =
                         message: c('Info')
                             .t`7 days to try premium features for free. Only during your first week of ${BRAND_NAME}.`,
                         className: SubTheme.ORANGE,
-                        onClose: () => upsell(null),
                         action: {
                             label: c('Label').t`Learn more`,
                             type: 'link',
