@@ -1,4 +1,14 @@
 import { cleanText } from './esBuild';
+import {
+    contentWithBlocquote,
+    contentWithoutBlockquote,
+    gmailQuote,
+    normalize,
+    office365Quote,
+    outlookQuote,
+    protonQuote,
+    yahooQuote,
+} from './esBuild.test.data';
 
 describe('ESBuild', () => {
     describe('cleanText', () => {
@@ -428,6 +438,52 @@ describe('ESBuild', () => {
                 const text = cleanText('<blockquote>Famous quote</blockquote><cite>- Author</cite>', true);
 
                 expect(text).toBe('Famous quote- Author');
+            });
+
+            it('should not return the blockquote content - Proton blockquote', () => {
+                const res = cleanText(protonQuote, false);
+                expect(normalize(res)).toBe(contentWithoutBlockquote);
+            });
+
+            it('should return the blockquote content - Proton blockquote', () => {
+                const res = cleanText(protonQuote, true);
+                expect(normalize(res)).toBe(contentWithBlocquote);
+            });
+
+            it('should not return the blockquote content - Gmail blockquote', () => {
+                const res = cleanText(gmailQuote, false);
+                expect(normalize(res)).toBe(contentWithoutBlockquote);
+            });
+            it('should return the blockquote content - Gmail blockquote', () => {
+                const res = cleanText(gmailQuote, true);
+                expect(normalize(res)).toBe(contentWithBlocquote);
+            });
+
+            it('should not return the blockquote content - Yahoo blockquote', () => {
+                const res = cleanText(yahooQuote, false);
+                expect(normalize(res)).toBe(contentWithoutBlockquote);
+            });
+            it('should return the blockquote content - Yahoo blockquote', () => {
+                const res = cleanText(yahooQuote, true);
+                expect(normalize(res)).toBe(contentWithBlocquote);
+            });
+
+            it('should not return the blockquote content - Outlook blockquote', () => {
+                const res = cleanText(outlookQuote, false);
+                expect(normalize(res)).toBe(contentWithoutBlockquote);
+            });
+            it('should return the blockquote content - Outlook blockquote', () => {
+                const res = cleanText(outlookQuote, true);
+                expect(normalize(res)).toBe(contentWithBlocquote);
+            });
+
+            it('should not return the blockquote content - Office365 blockquote', () => {
+                const res = cleanText(office365Quote, false);
+                expect(normalize(res)).toBe(contentWithoutBlockquote);
+            });
+            it('should return the blockquote content - Office365 blockquote', () => {
+                const res = cleanText(office365Quote, true);
+                expect(normalize(res)).toBe(contentWithBlocquote);
             });
         });
 
