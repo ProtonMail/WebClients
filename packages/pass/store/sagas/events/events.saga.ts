@@ -14,11 +14,12 @@ import { PassFeature } from '@proton/pass/types/api/features';
 import type { UserPassPlan } from '@proton/pass/types/api/plan';
 import { logger } from '@proton/pass/utils/logger';
 
-import { groupInvitesChannel } from './channel.group-invites';
-import { invitesChannel } from './channel.invites';
-import { shareChannels } from './channel.share';
-import { sharesChannel } from './channel.shares';
-import { userChannel } from './channel.user';
+import { groupInvitesChannel } from './v1/channel.group-invites';
+import { invitesChannel } from './v1/channel.invites';
+import { shareChannels } from './v1/channel.share';
+import { sharesChannel } from './v1/channel.shares';
+import { userChannel } from './v1/channel.user';
+import { userEventsChannel } from './v2/channel.user-events';
 
 type EventChannel = (api: Api, options: RootSagaOptions) => Generator;
 
@@ -42,7 +43,7 @@ function* getEventChannels(): Generator<unknown, EventChannel[]> {
             return channels;
 
         case 2:
-            return [userChannel];
+            return [userChannel, userEventsChannel];
     }
 }
 

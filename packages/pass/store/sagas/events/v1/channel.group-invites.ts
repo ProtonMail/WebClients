@@ -1,7 +1,7 @@
 import { all, fork, put, select } from 'redux-saga/effects';
 
-import type { EventManagerEvent } from '@proton/pass/lib/events/manager';
-import { NOOP_EVENT } from '@proton/pass/lib/events/manager';
+import type { EventManagerEvent } from '@proton/pass/lib/events/manager/manager';
+import { NOOP_EVENT } from '@proton/pass/lib/events/manager/manager';
 import { parseGroupInviteVault } from '@proton/pass/lib/invites/invite.parser';
 import { syncInvites } from '@proton/pass/store/actions';
 import type { InviteState } from '@proton/pass/store/reducers';
