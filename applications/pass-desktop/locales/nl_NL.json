@@ -1749,6 +1749,9 @@
       "Emptying trash...": [
         "Prullenbak leegmaken..."
       ],
+      "Enable ${ PASS_SHORT_APP_NAME } beta": [
+        "${ PASS_SHORT_APP_NAME } bèta Inschakelen"
+      ],
       "Enable auto-locking to secure your data": [
         "Schakel auto-vergrendeling in om uw gegevens te beveiligen"
       ],
@@ -1982,8 +1985,7 @@
         "Alle items uit \"${ payload.content.name }\" verplaatsen"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Het verplaatsen van een item naar een andere kluis verwijdert zijn geschiedenis.",
-        "Het verplaatsen van items naar een andere kluis verwijdert hun geschiedenis."
+        "Het verplaatsen van een item naar een andere kluis verwijdert zijn beveiligde links."
       ],
       "Moving items": [
         "Items verplaatsen"
@@ -2809,6 +2811,9 @@
       ],
       "Besides storing your logins, ${ PASS_APP_NAME } protects your identity with an integrated email alias feature. Whenever you sign up for a new online account, ${ PASS_APP_NAME } can automatically create an alias to keep your actual email address protected. ": [
         "Naast het opslaan van uw logins beschermt ${ PASS_APP_NAME } uw identiteit met een geïntegreerde email alias-functie. Wanneer u zich registreert voor een nieuw online account, kan ${ PASS_APP_NAME } automatisch een alias maken om uw werkelijke e-mailadres te beschermen. "
+      ],
+      "Beta Access": [
+        "Bèta-toegang"
       ],
       "Biometrics": [
         "Biometrie"

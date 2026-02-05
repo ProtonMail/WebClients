@@ -1770,6 +1770,9 @@
       "Emptying trash...": [
         "Se golește gunoiul..."
       ],
+      "Enable ${ PASS_SHORT_APP_NAME } beta": [
+        "Activare ${ PASS_SHORT_APP_NAME } beta"
+      ],
       "Enable auto-locking to secure your data": [
         "Activați autoblocarea pentru a securiza datele."
       ],
@@ -2005,11 +2008,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Se mută toate articolele din „${ payload.content.name }”."
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Mutarea unui articol într-un alt seif îi va șterge legăturile web securizate.",
-        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate.",
-        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate."
       ],
       "Moving items": [
         "Se mută articolele."
@@ -2855,6 +2853,9 @@
       ],
       "Besides storing your logins, ${ PASS_APP_NAME } protects your identity with an integrated email alias feature. Whenever you sign up for a new online account, ${ PASS_APP_NAME } can automatically create an alias to keep your actual email address protected. ": [
         "Pe lângă stocarea autentificărilor, ${ PASS_APP_NAME } vă protejează identitatea cu o funcție integrată de alias pentru e-mail.\n\nOri de câte ori vă înscrieți pentru un nou cont online, ${ PASS_APP_NAME } poate crea automat un alias pentru a vă păstra adresa de e-mail reală protejată."
+      ],
+      "Beta Access": [
+        "Acces la Beta"
       ],
       "Biometrics": [
         "Date biometrice"

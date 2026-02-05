@@ -1728,6 +1728,9 @@
       "Emptying trash...": [
         "ごみ箱を空にしています..."
       ],
+      "Enable ${ PASS_SHORT_APP_NAME } beta": [
+        "${ PASS_SHORT_APP_NAME } ベータ版を有効にする"
+      ],
       "Enable auto-locking to secure your data": [
         "自動ロックを有効にしてデータを保護します"
       ],
@@ -1955,9 +1958,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "「${ payload.content.name }」からすべてのアイテムを移動します"
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "アイテムを別の保管庫に移動すると、すべてのセキュアリンクが消去されます。"
       ],
       "Moving items": [
         "アイテムの移動"
@@ -2763,6 +2763,9 @@
       ],
       "Besides storing your logins, ${ PASS_APP_NAME } protects your identity with an integrated email alias feature. Whenever you sign up for a new online account, ${ PASS_APP_NAME } can automatically create an alias to keep your actual email address protected. ": [
         "ログイン情報を保存するだけでなく、${ PASS_APP_NAME } は統合されたメールエイリアス機能であなたの身元を保護します。新しいオンラインアカウントにサインアップするたびに、${ PASS_APP_NAME } は実際のメールアドレスを保護するために自動的にエイリアスを作成できます。 "
+      ],
+      "Beta Access": [
+        "ベータ版アクセス"
       ],
       "Biometrics": [
         "生体認証"

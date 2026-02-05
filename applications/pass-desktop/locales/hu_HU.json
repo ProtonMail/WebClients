@@ -1669,6 +1669,9 @@
       "Emptying trash...": [
         "Lomtár kiürítése..."
       ],
+      "Enable ${ PASS_SHORT_APP_NAME } beta": [
+        "${ PASS_SHORT_APP_NAME } béta verzió engedélyezése"
+      ],
       "Enable auto-locking to secure your data": [
         "Az adatok védelme érdekében engedélyezze az automatikus zárolást"
       ],
@@ -1891,10 +1894,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Az összes elem áthelyezése innen: \"${ payload.content.name }\""
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Egy elem másik tárolóba történő áthelyezése törli a biztonságos hivatkozásokat.",
-        "Az elemek másik tárolóba történő áthelyezése törli a biztonságos hivatkozásokat."
       ],
       "Moving items": [
         "Elemek áthelyezése"
@@ -2673,6 +2672,9 @@
       ],
       "Besides storing your logins, ${ PASS_APP_NAME } protects your identity with an integrated email alias feature. Whenever you sign up for a new online account, ${ PASS_APP_NAME } can automatically create an alias to keep your actual email address protected. ": [
         "A bejelentkezések tárolása mellett a ${ PASS_APP_NAME } egy integrált e-mail álnév funkcióval védi a személyazonosságát. Amikor új online fiókot regisztrál, a ${ PASS_APP_NAME } automatikusan létrehozhat egy e-mail álnevet, hogy a tényleges e-mail címe védve maradjon. "
+      ],
+      "Beta Access": [
+        "Béta hozzáférés"
       ],
       "Biometrics": [
         "Biometrikus"

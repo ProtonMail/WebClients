@@ -1728,6 +1728,9 @@
       "Emptying trash...": [
         "ნაგვის ყუთის დაცარიელება..."
       ],
+      "Enable ${ PASS_SHORT_APP_NAME } beta": [
+        "${ PASS_SHORT_APP_NAME }-ის ბეტას ჩართვა"
+      ],
       "Enable auto-locking to secure your data": [
         "ჩართეთ ავტოდაბლოკვა თქვენი მონაცემების დასაცავად"
       ],
@@ -1953,10 +1956,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "ყველა ელემენტის გადატანა \"${ payload.content.name }\"-დან"
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "ელემენტის გადატანა სხვა საცავში მის დაცულ ბმულებს წაშლის.",
-        "ელემენტის გადატანა სხვა საცავში მის დაცულ ბმულებს წაშლის."
       ],
       "Moving items": [
         "მიმდინარეობს ელემენტების გადატანა"
@@ -2755,6 +2754,9 @@
       ],
       "Bank Name": [
         "ბანკის სახელი"
+      ],
+      "Beta Access": [
+        "წვდომა ბეტა ვერსიებზე"
       ],
       "Biometrics": [
         "ბიომეტრია"

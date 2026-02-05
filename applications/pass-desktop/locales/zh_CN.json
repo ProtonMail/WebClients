@@ -1687,6 +1687,9 @@
       "Emptying trash...": [
         "正在清空回收站..."
       ],
+      "Enable ${ PASS_SHORT_APP_NAME } beta": [
+        "启用 ${ PASS_SHORT_APP_NAME } 测试版"
+      ],
       "Enable auto-locking to secure your data": [
         "启用自动锁定功能，确保数据安全"
       ],
@@ -1911,9 +1914,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "正在从 \"${ payload.content.name }\" 移动所有项目"
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "将项目移动到另一个保险库会删除其安全链接。"
       ],
       "Moving items": [
         "正在移动"
@@ -2689,6 +2689,9 @@
       ],
       "Besides storing your logins, ${ PASS_APP_NAME } protects your identity with an integrated email alias feature. Whenever you sign up for a new online account, ${ PASS_APP_NAME } can automatically create an alias to keep your actual email address protected. ": [
         "除了储存登录信息外，${ PASS_APP_NAME } 还通过集成的邮箱别名功能保护您的身份。每当你注册一个新的在线账户时，${ PASS_APP_NAME } 都会自动创建一个别名，以保护您的真实邮箱地址。 "
+      ],
+      "Beta Access": [
+        "测试版功能"
       ],
       "Biometrics": [
         "生物识别"
