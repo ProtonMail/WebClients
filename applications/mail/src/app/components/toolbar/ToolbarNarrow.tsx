@@ -39,7 +39,7 @@ const ToolbarNarrow = ({
     return (
         <div className="w-full">
             <nav
-                className={clsx(classname, 'justify-space-between py-1 pl-3 pr-2')}
+                className={clsx(classname, 'justify-space-between py-1 pl-3 pr-2 border-bottom border-weak')}
                 data-shortcut-target="mailbox-toolbar"
                 aria-label={c('Label').t`Toolbar`}
                 ref={toolbarRef}

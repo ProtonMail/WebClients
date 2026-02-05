@@ -148,7 +148,9 @@ export const RouterMailboxContainer = () => {
                     'flex',
                     !isColumnModeActive && elementID && 'row-layout-email-view full-width-email',
                     isColumnModeActive && 'column-layout-view',
+                    breakpoints.viewportWidth['<=small'] && 'border-none',
                 ])}
+                innerClassName={breakpoints.viewportWidth['<=small'] ? 'border-none' : ''}
                 hasToolbar
                 hasRowMode={hasRowMode}
                 ref={mainAreaRef}

@@ -7,6 +7,7 @@ import { useTheme } from '../themes/ThemeProvider';
 
 interface Props extends HTMLAttributes<HTMLDivElement> {
     className?: string;
+    innerClassName?: string;
     children?: ReactNode;
     hasToolbar?: boolean;
     hasRowMode?: boolean;
@@ -19,6 +20,7 @@ interface Props extends HTMLAttributes<HTMLDivElement> {
 const PrivateMainAreaBase = (
     {
         className,
+        innerClassName,
         hasToolbar = false,
         children,
         hasRowMode = false,
@@ -59,7 +61,8 @@ const PrivateMainAreaBase = (
                         'flex flex-nowrap w-full h-full',
                         hasDrawerSidebar ? 'main-area-border overflow-hidden' : 'overflow-auto',
                         hasDrawerSidebar && mainBordered ? 'main-area-rounded--right' : undefined,
-                        isProminent ? 'ui-standard main-area-rounded--left' : undefined
+                        isProminent ? 'ui-standard main-area-rounded--left' : undefined,
+                        innerClassName
                     )}
                 >
                     {children}
