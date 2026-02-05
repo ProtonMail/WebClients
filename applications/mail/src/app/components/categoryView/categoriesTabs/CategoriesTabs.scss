@@ -6,6 +6,7 @@
 @mixin extended-tab-styles {
 	.tab-wrapper {
 		flex-grow: 1;
+		max-inline-size: rem(224);
 	}
 
 	.tab-container {
