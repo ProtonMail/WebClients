@@ -7,11 +7,9 @@ import { useFolders, useLabels } from '@proton/mail';
 import clsx from '@proton/utils/clsx';
 
 import { useSelectAll } from 'proton-mail/hooks/useSelectAll';
-import { useMailSelector } from 'proton-mail/store/hooks';
 
 import { getLabelName, isLabelIDNewsletterSubscription } from '../../helpers/labels';
 import { getToolbarResponsiveSizes } from '../../helpers/toolbar/getToolbarResponsiveSizes';
-import { pageSize as pageSizeSelector } from '../../store/elements/elementsSelectors';
 import ListSettings from '../list/ListSettings';
 import SnoozeToolbarDropdown from '../list/snooze/containers/SnoozeToolbarDropdown';
 import LabelName from './LabelName';
@@ -68,8 +66,6 @@ const ToolbarColumnWide = ({
     const [labels] = useLabels();
     const [folders] = useFolders();
     const labelName = useMemo(() => getLabelName(labelID, labels, folders), [labelID, labels, folders]);
-
-    const pageSize = useMailSelector(pageSizeSelector);
 
     return (
         <div className="w-full">
@@ -128,13 +124,7 @@ const ToolbarColumnWide = ({
 
                 {(!localIsTiny && selectedIDs.length > 0) || selectedIDs.length === 0 ? (
                     <div className="flex items-center shrink-0 toolbar-inner gap-2">
-                        <PagingControls
-                            loading={loading}
-                            page={page}
-                            pageSize={pageSize}
-                            total={total}
-                            onPage={onPage}
-                        />
+                        <PagingControls loading={loading} page={page} total={total} onPage={onPage} />
                     </div>
                 ) : undefined}
             </nav>
