@@ -9,7 +9,7 @@ import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
 import type { AuthService } from '@proton/pass/lib/auth/service';
 import { authStore, createAuthStore, exposeAuthStore } from '@proton/pass/lib/auth/store';
-import { ACTIVE_POLLING_TIMEOUT } from '@proton/pass/lib/events/constants';
+import { ACTIVE_POLLING_TIMEOUT } from '@proton/pass/lib/events/manager/constants';
 import { sagaEvents } from '@proton/pass/store/events';
 import reducer from '@proton/pass/store/reducers';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';

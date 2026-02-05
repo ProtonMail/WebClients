@@ -1,6 +1,6 @@
 import { call, put, race, select, take } from 'redux-saga/effects';
 
-import { PassCrypto } from '@proton/pass/lib/crypto';
+import { syncV1 } from '@proton/pass/lib/events/v1/sync';
 import {
     getInAppNotifications,
     getUserAccessIntent,
@@ -18,11 +18,10 @@ import { resolvePrivateDomains } from '@proton/pass/store/actions/creators/priva
 import { resolveWebsiteRules } from '@proton/pass/store/actions/creators/rules';
 import { getAuthDevices } from '@proton/pass/store/actions/creators/sso';
 import { withRevalidate } from '@proton/pass/store/request/enhancers';
-import { synchronize } from '@proton/pass/store/sagas/client/sync';
-import { selectAllAddresses, selectUser } from '@proton/pass/store/selectors';
+import { selectUser } from '@proton/pass/store/selectors';
 import type { RootSagaOptions } from '@proton/pass/store/types';
 import { wait } from '@proton/shared/lib/helpers/promise';
-import type { Address, User } from '@proton/shared/lib/interfaces';
+import type { User } from '@proton/shared/lib/interfaces';
 
 function* syncWorker({ payload }: ReturnType<typeof syncIntent>, options: RootSagaOptions) {
     yield put(stopEventPolling());
@@ -46,14 +45,7 @@ function* syncWorker({ payload }: ReturnType<typeof syncIntent>, options: RootSa
             yield put(withRevalidate(getOrganizationPauseList.intent()));
         }
 
-        /* Re-hydrate the crypto context with current Redux addresses */
-        const keyPassword = options.getAuthStore().getPassword();
-        if (keyPassword) {
-            const addresses: Address[] = yield select(selectAllAddresses);
-            yield PassCrypto.hydrate({ user, keyPassword, addresses, clear: false });
-        }
-
-        yield put(syncSuccess(yield call(synchronize, payload.type, options)));
+        yield put(syncSuccess(yield call(syncV1, payload.type, options)));
     } catch (e: unknown) {
         yield put(syncFailure(e));
     } finally {
