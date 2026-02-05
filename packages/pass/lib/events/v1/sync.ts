@@ -56,7 +56,7 @@ export function* syncV1(type: SyncType, { getCore }: RootSagaOptions) {
     const deletedShareIds = cachedShareIds.filter(notIn(remoteShareIds));
     const disabledShareIds = Array.from(new Set(deletedShareIds.concat(inactiveCachedShareIds)));
 
-    type RemoteShare = { shareId: string; share: Maybe<Share>; type: ShareType };
+    type RemoteShare = { shareId: string; share: Maybe<Share> };
 
     /* only load shares that are not currently present
      * in cache and have not been registered on PassCrypto.
@@ -67,7 +67,6 @@ export function* syncV1(type: SyncType, { getCore }: RootSagaOptions) {
             async (encryptedShare): Promise<RemoteShare> => ({
                 shareId: encryptedShare.ShareID,
                 share: await parseShareResponse(encryptedShare),
-                type: encryptedShare.TargetType,
             })
         )
     )) as RemoteShare[];
