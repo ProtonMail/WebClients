@@ -3,7 +3,7 @@ import type { Task } from 'redux-saga';
 import { all, cancel, fork, put, select, take } from 'redux-saga/effects';
 
 import { PassErrorCode } from '@proton/pass/lib/api/errors';
-import type { EventManagerEvent } from '@proton/pass/lib/events/manager';
+import type { EventManagerEvent } from '@proton/pass/lib/events/manager/manager';
 import { PendingFileLinkTracker } from '@proton/pass/lib/file-attachments/file-link.tracker';
 import { parseItemRevision } from '@proton/pass/lib/items/item.parser';
 import { requestItemsForShareId } from '@proton/pass/lib/items/item.requests';

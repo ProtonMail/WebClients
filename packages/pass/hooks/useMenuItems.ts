@@ -7,7 +7,7 @@ import type { IconName } from '@proton/icons/types';
 import { syncIntent } from '@proton/pass//store/actions';
 import { usePasswordHistoryActions } from '@proton/pass/components/Password/PasswordHistoryActions';
 import { PASS_ANDROID_URL, PASS_IOS_URL } from '@proton/pass/constants';
-import { SyncType } from '@proton/pass/store/sagas/client/sync';
+import { SyncType } from '@proton/pass/lib/events/types';
 import { withTap } from '@proton/pass/utils/fp/pipe';
 import { PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import { Clients, clients } from '@proton/shared/lib/pass/constants';

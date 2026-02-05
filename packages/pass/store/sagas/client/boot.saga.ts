@@ -5,6 +5,9 @@ import { c } from 'ttag';
 import { api } from '@proton/pass/lib/api/api';
 import { PassCrypto } from '@proton/pass/lib/crypto';
 import { PassCryptoError, isPassCryptoError } from '@proton/pass/lib/crypto/utils/errors';
+import type { SyncResult } from '@proton/pass/lib/events/types';
+import { SyncType } from '@proton/pass/lib/events/types';
+import { syncV1 } from '@proton/pass/lib/events/v1/sync';
 import {
     aliasSyncStatus,
     bootFailure,
@@ -30,8 +33,6 @@ import { getAuthDevices } from '@proton/pass/store/actions/creators/sso';
 import { isCachingAction } from '@proton/pass/store/actions/enhancers/cache';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import { withRevalidate } from '@proton/pass/store/request/enhancers';
-import type { SynchronizationResult } from '@proton/pass/store/sagas/client/sync';
-import { SyncType, synchronize } from '@proton/pass/store/sagas/client/sync';
 import { selectProxiedSettings } from '@proton/pass/store/selectors';
 import type { RootSagaOptions } from '@proton/pass/store/types';
 import type { Maybe } from '@proton/pass/types';
@@ -68,7 +69,7 @@ function* bootWorker({ payload }: ReturnType<typeof bootIntent>, options: RootSa
          * that crypto operations can be performed with the current session state. */
         if (online && !PassCrypto.ready) throw new PassCryptoError();
 
-        const result = (fromCache ? undefined : yield synchronize(SyncType.FULL, options)) as Maybe<SynchronizationResult>;
+        const result: Maybe<SyncResult> = fromCache ? undefined : yield syncV1(SyncType.FULL, options);
 
         /** Sync settings after successful hydration and synchronization.
          * This prevents offline mode from being enabled if the boot

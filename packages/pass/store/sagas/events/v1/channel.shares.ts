@@ -2,7 +2,7 @@ import type { Channel } from 'redux-saga';
 import { channel } from 'redux-saga';
 import { all, cancelled, fork, put, select, take, takeEvery } from 'redux-saga/effects';
 
-import { NOOP_EVENT } from '@proton/pass/lib/events/manager';
+import { NOOP_EVENT } from '@proton/pass/lib/events/manager/manager';
 import { requestItemsForShareId } from '@proton/pass/lib/items/item.requests';
 import { parseShareResponse } from '@proton/pass/lib/shares/share.parser';
 import { hasShareChanged } from '@proton/pass/lib/shares/share.predicates';
@@ -91,7 +91,7 @@ export function* onNewRemoteShares(newSharesChannel: NewSharesChannel, api: Api,
                     )) as ItemsByShareId[]
                 ).reduce(diadic(merge));
 
-                yield put(sharesEventNew({ shares: toMap(activeNewShares, 'shareId'), items }));
+                yield put(sharesEventNew({ shares: toMap(activeNewShares, 'shareId'), items, v: 1 }));
                 for (const share of activeNewShares) yield fork(getShareChannelForks(api, options), share);
             }
         }
