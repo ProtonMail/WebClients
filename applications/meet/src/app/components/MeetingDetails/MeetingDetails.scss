@@ -8,7 +8,8 @@
 		word-break: keep-all;
 	}
 
-	tbody tr:last-child td {
+	tbody tr:last-child td,
+	tbody tr:last-child th {
 		border-block-end: none;
 	}
 }
