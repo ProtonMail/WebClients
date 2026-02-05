@@ -8,6 +8,7 @@ import { PassCrypto } from '@proton/pass/lib/crypto';
 import type { InviteBatchResult } from '@proton/pass/lib/invites/invite.utils';
 import { getItemKeys } from '@proton/pass/lib/items/item.requests';
 import { getOrganizationKey } from '@proton/pass/lib/organization/organization.requests';
+import type { InviteDataForUser } from '@proton/pass/types';
 import { type InviteTargetKey, type KeyRotationKeyPair, ShareType } from '@proton/pass/types';
 import type { NewUserPendingInvite, PendingInvite } from '@proton/pass/types/data/invites';
 import type {
@@ -31,6 +32,12 @@ import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import chunk from '@proton/utils/chunk';
 
 export type InviteData = { invites: PendingInvite[]; newUserInvites: NewUserPendingInvite[] };
+
+/** Retrieves all incoming invites */
+export const getInvites = async (): Promise<InviteDataForUser[]> => {
+    const res = await api({ url: `pass/v1/invite`, method: 'get' });
+    return res.Invites;
+};
 
 export const loadInvites = async (shareId: string): Promise<InviteData> => {
     const { Invites, NewUserInvites } = await api({
