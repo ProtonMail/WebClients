@@ -1512,6 +1512,9 @@
       "A contact is created for every email address that sends emails to or receives emails from ${ aliasEmail }.": [
         "Det opprettes en kontakt for hver e-postadresse som sender e-post til eller mottar e-post fra ${ aliasEmail }."
       ],
+      "A new version is being downloaded. Once the download completes, it will be available on next restart.": [
+        "En ny versjon lastes ned. Når nedlastingen er fullført, vil den være tilgjengelig ved neste omstart."
+      ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "En ny versjon av ${ PASS_APP_NAME } er tilgjengelig. Oppdater den for å nyte de nyeste funksjonene og feilrettingene."
       ],
@@ -1749,6 +1752,9 @@
       "Emptying trash...": [
         "Tømmer papirkurven..."
       ],
+      "Enable ${ PASS_SHORT_APP_NAME } beta": [
+        "Aktiver ${ PASS_SHORT_APP_NAME }-testversjon"
+      ],
       "Enable auto-locking to secure your data": [
         "Aktiver automatisk låsing for å sikre dataene dine"
       ],
@@ -1981,10 +1987,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Flytter alle elementer fra \"${ payload.content.name }\""
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Hvis du flytter et element til et annet hvelv, slettes de sikre koblingene.",
-        "Hvis du flytter elementer til et annet hvelv, slettes de sikre koblingene."
-      ],
       "Moving items": [
         "Flytter elementer"
       ],
@@ -2011,6 +2013,9 @@
       ],
       "No network connection": [
         "Ingen internettforbindelse"
+      ],
+      "No new versions are available at the moment.": [
+        "Ingen nye versjoner er tilgjengelige for øyeblikket."
       ],
       "None": [
         "Ingen"
@@ -2401,6 +2406,12 @@
       "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
         "Dette vil avvise enheten **${ name }** som prøvde å logge på ${ BRAND_NAME }-kontoen din den **${ date }**."
       ],
+      "This will reload the application.": [
+        "Dette vil laste inn applikasjonen på nytt."
+      ],
+      "This will trigger a check for new beta releases.": [
+        "Dette vil utløse en sjekk for nye betaversjoner."
+      ],
       "To keep receiving emails transfer these aliases to a different mailbox:": [
         "Hvis du vil fortsette å motta e-post, flytter du disse aliasene til en annen postboks:"
       ],
@@ -2415,6 +2426,9 @@
       ],
       "Trusted by over 50,000 business users and 100 million accounts around the world.": [
         "Klarert av over 50 000 forretningsbrukere og 100 millioner kontoer rundt om i verden."
+      ],
+      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public.": [
+        "Prøv nye ${ BRAND_NAME }-funksjoner, oppdateringer og produkter før de slippes til offentligheten."
       ],
       "Unable to copy to clipboard": [
         "Ikke i stand til å kopiere til utklippstavlen"
@@ -2809,6 +2823,9 @@
       ],
       "Besides storing your logins, ${ PASS_APP_NAME } protects your identity with an integrated email alias feature. Whenever you sign up for a new online account, ${ PASS_APP_NAME } can automatically create an alias to keep your actual email address protected. ": [
         "I tillegg til å lagre påloggingene dine, beskytter ${ PASS_APP_NAME } identiteten din med en integrert e-postaliasfunksjon. Hver gang du registrerer deg for en ny nettkonto, kan ${ PASS_APP_NAME } automatisk opprette et alias for å holde din faktiske e-postadresse beskyttet. "
+      ],
+      "Beta Access": [
+        "Beta-tilgang"
       ],
       "Biometrics": [
         "Biometri"

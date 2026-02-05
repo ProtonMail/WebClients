@@ -1791,6 +1791,9 @@
       "Emptying trash...": [
         "Vyprázdňovanie koša..."
       ],
+      "Enable ${ PASS_SHORT_APP_NAME } beta": [
+        "Zapnúť ${ PASS_SHORT_APP_NAME } beta"
+      ],
       "Enable auto-locking to secure your data": [
         "Povoľte automatické uzamykanie na zabezpečenie údajov"
       ],
@@ -2030,12 +2033,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Presúvanie všetkých položiek z \"${ payload.content.name }\""
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Presunutím položky do iného trezora sa vymažú jej bezpečné odkazy.",
-        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy.",
-        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy.",
-        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy."
       ],
       "Moving items": [
         "Presúvanie položiek"
@@ -2901,6 +2898,9 @@
       ],
       "Besides storing your logins, ${ PASS_APP_NAME } protects your identity with an integrated email alias feature. Whenever you sign up for a new online account, ${ PASS_APP_NAME } can automatically create an alias to keep your actual email address protected. ": [
         "Okrem ukladania prihlasovacích údajov ${ PASS_APP_NAME } chráni vašu identitu integrovanou funkciou emailového aliasu. Vždy, keď sa zaregistrujete na nové online konto, ${ PASS_APP_NAME } môže automaticky vytvoriť alias, aby bola vaša skutočná emailová adresa chránená. "
+      ],
+      "Beta Access": [
+        "Beta prístup"
       ],
       "Biometrics": [
         "Biometria"

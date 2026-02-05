@@ -1749,6 +1749,9 @@
       "Emptying trash...": [
         "Vaciando la papelera..."
       ],
+      "Enable ${ PASS_SHORT_APP_NAME } beta": [
+        "Activa la versión beta de ${ PASS_SHORT_APP_NAME }."
+      ],
       "Enable auto-locking to secure your data": [
         "Activa el bloqueo automático para asegurar tus datos"
       ],
@@ -1982,8 +1985,7 @@
         "Moviendo todos los elementos desde \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Mover un elemento a otra caja fuerte eliminará sus enlaces seguros.",
-        "Mover elementos a otra caja fuerte eliminará sus enlaces seguros."
+        "Mover un elemento a otra caja fuerte borrará sus enlaces seguros."
       ],
       "Moving items": [
         "Moviendo elementos"
@@ -2803,6 +2805,9 @@
       ],
       "Besides storing your logins, ${ PASS_APP_NAME } protects your identity with an integrated email alias feature. Whenever you sign up for a new online account, ${ PASS_APP_NAME } can automatically create an alias to keep your actual email address protected. ": [
         "Además de almacenar tus inicios de sesión, ${ PASS_APP_NAME } protege tu identidad con una función de alias de correo electrónico integrada. Cada vez que te registres para obtener una cuenta nueva en línea, ${ PASS_APP_NAME } puede crear automáticamente un alias para mantener protegida tu dirección de correo real. "
+      ],
+      "Beta Access": [
+        "Acceso beta"
       ],
       "Biometrics": [
         "Datos biométricos"
