@@ -1,6 +1,6 @@
 import { channel, eventChannel, runSaga } from 'redux-saga';
 
-import { ACTIVE_POLLING_TIMEOUT } from '@proton/pass/lib/events/constants';
+import { ACTIVE_POLLING_TIMEOUT } from '@proton/pass/lib/events/manager/constants';
 import * as itemRequests from '@proton/pass/lib/items/item.requests';
 import * as shareParser from '@proton/pass/lib/shares/share.parser';
 import { sharesEventNew } from '@proton/pass/store/actions';
@@ -61,7 +61,7 @@ describe('channel.shares saga', () => {
             newSharesChannel.put(response);
             await saga.nextTick();
 
-            expect(saga.dispatched).toContainEqual(sharesEventNew({ shares: toMap(shares, 'shareId'), items }));
+            expect(saga.dispatched).toContainEqual(sharesEventNew({ shares: toMap(shares, 'shareId'), items, v: 1 }));
             expect(getShareChannelForks).toHaveBeenCalledWith(api, options);
             expect(getShareChannelForks).toHaveBeenCalledTimes(2);
 

@@ -2,6 +2,7 @@ import { createAction } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
 import type { ReauthActionPayload } from '@proton/pass/lib/auth/reauth';
+import type { SyncResult, SyncType } from '@proton/pass/lib/events/types';
 import { type CacheMeta, withCache, withCacheOptions } from '@proton/pass/store/actions/enhancers/cache';
 import { withStreamableAction } from '@proton/pass/store/actions/enhancers/client';
 import { type EndpointOptions, withReceiver } from '@proton/pass/store/actions/enhancers/endpoint';
@@ -9,7 +10,6 @@ import { withNotification } from '@proton/pass/store/actions/enhancers/notificat
 import { bootRequest, syncRequest } from '@proton/pass/store/actions/requests';
 import { withRequest } from '@proton/pass/store/request/enhancers';
 import { requestActionsFactory } from '@proton/pass/store/request/flow';
-import type { SyncType, SynchronizationResult } from '@proton/pass/store/sagas/client/sync';
 import type { AppStatus } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import type { Chunk } from '@proton/pass/utils/object/chunk';
@@ -63,7 +63,7 @@ export const bootFailure = createAction('boot::failure', (error?: unknown) =>
  * actions. `bootSuccess` is dispatched mid-flight inside `bootWorker`: any `isCachingAction`
  * match would win the boot race and cancel the worker, leaving the app in an inconsistent state.
  * The `dedupe` result is embedded directly in the payload for this reason. */
-export const bootSuccess = createAction('boot::success', (payload?: SynchronizationResult) =>
+export const bootSuccess = createAction('boot::success', (payload?: SyncResult) =>
     pipe(withRequest({ id: bootRequest(), status: 'success' }), withStreamableAction)({ payload })
 );
 
@@ -80,7 +80,7 @@ export const syncIntent = createAction('sync::intent', (type: SyncType) =>
     )({ payload: { type } })
 );
 
-export const syncSuccess = createAction('sync::success', (payload: SynchronizationResult) =>
+export const syncSuccess = createAction('sync::success', (payload: SyncResult) =>
     pipe(
         withCache,
         withStreamableAction,

@@ -1,6 +1,7 @@
 import { put, select } from 'redux-saga/effects';
 
 import { PassCrypto } from '@proton/pass/lib/crypto';
+import { SyncType } from '@proton/pass/lib/events/types';
 import { requestItemsForShareId } from '@proton/pass/lib/items/item.requests';
 import { dedupeShares } from '@proton/pass/lib/shares/share.dedupe';
 import { parseShareResponse } from '@proton/pass/lib/shares/share.parser';
@@ -13,7 +14,13 @@ import { type ItemsByShareId, type SharesState, reducerMap } from '@proton/pass/
 import type { ShareDedupeState } from '@proton/pass/store/reducers/shares-dedupe';
 import { selectAllShares, selectItems, selectOrganizationVaultCreationPolicy } from '@proton/pass/store/selectors';
 import type { RootSagaOptions, State } from '@proton/pass/store/types';
-import { type Maybe, OrganizationVaultCreateMode, type Share, type ShareGetResponse, type ShareType } from '@proton/pass/types';
+import {
+    type Maybe,
+    OrganizationVaultCreateMode,
+    type Share,
+    type ShareGetResponse,
+    type ShareType,
+} from '@proton/pass/types';
 import { NotificationKey } from '@proton/pass/types/worker/notification';
 import { partition } from '@proton/pass/utils/array/partition';
 import { prop } from '@proton/pass/utils/fp/lens';
@@ -26,14 +33,14 @@ import { objectFilter } from '@proton/pass/utils/object/filter';
 import { fullMerge, merge } from '@proton/pass/utils/object/merge';
 import { toMap } from '@proton/shared/lib/helpers/object';
 
-export type SynchronizationResult = { shares: SharesState; items: ItemsByShareId; dedupe: ShareDedupeState };
+export type SyncResultV1 = {
+    shares: SharesState;
+    items: ItemsByShareId;
+    dedupe: ShareDedupeState;
+    v: 1;
+};
 
-export enum SyncType {
-    FULL = 'full' /* fetches all items */,
-    PARTIAL = 'partial' /* fetches only diff */,
-}
-
-export function* synchronize(type: SyncType, { getCore }: RootSagaOptions) {
+export function* syncV1(type: SyncType, { getCore }: RootSagaOptions) {
     const state: State = asIfNotOptimistic((yield select()) as State, reducerMap);
     const cachedShares = selectAllShares(state);
     const remote = ((yield requestShares()) as ShareGetResponse[]).sort(sortOn('CreateTime', 'ASC'));
@@ -72,7 +79,9 @@ export function* synchronize(type: SyncType, { getCore }: RootSagaOptions) {
     /* In the case of a partial sync : inactive shares should
      * be resolved for both remote and local shares. */
     const totalInactiveShares =
-        type === SyncType.FULL ? inactiveRemoteShares.length : inactiveRemoteShares.length + inactiveCachedShareIds.length;
+        type === SyncType.FULL
+            ? inactiveRemoteShares.length
+            : inactiveRemoteShares.length + inactiveCachedShareIds.length;
 
     /* update the disabled shareIds list with any inactive remote shares */
     disabledShareIds.push(...inactiveRemoteShares.map(prop('shareId')));
@@ -102,7 +111,8 @@ export function* synchronize(type: SyncType, { getCore }: RootSagaOptions) {
      * For b2b users, don't create vault if org doesn't allow it.
      * This accounts for first login, default vault being disabled. */
     if (!hasDefaultVault) {
-        const canCreateVault = selectOrganizationVaultCreationPolicy(state) !== OrganizationVaultCreateMode.ONLYORGADMINS;
+        const canCreateVault =
+            selectOrganizationVaultCreationPolicy(state) !== OrganizationVaultCreateMode.ONLYORGADMINS;
 
         if (canCreateVault) {
             logger.info(`[Sync] No default vault found, creating initial vault..`);
@@ -146,7 +156,8 @@ export function* synchronize(type: SyncType, { getCore }: RootSagaOptions) {
      * and merge with the new shares */
     const shares = cachedShares.filter(({ shareId }) => !disabledShareIds.includes(shareId)).concat(incomingShares);
 
-    const result: SynchronizationResult = {
+    const result: SyncResultV1 = {
+        v: 1,
         shares: toMap(shares, 'shareId'),
         items: fullMerge(itemState, syncedItems.reduce(diadic(merge), {})),
         dedupe: yield dedupeShares(shares, getCore()),
