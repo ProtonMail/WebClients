@@ -28,7 +28,7 @@ import offlineSetup from './client/offline-setup.saga';
 import reportProblem from './client/report-problem.saga';
 import settings from './client/settings.saga';
 import sync from './client/sync.saga';
-import events from './events/v1/events.saga';
+import events from './events/events.saga';
 import fileAttachmentsSagas from './file-attachments/file-attachments.sagas';
 import groupsGetAll from './groups/groups.get-all.saga';
 import groupsGet from './groups/groups.get.saga';
