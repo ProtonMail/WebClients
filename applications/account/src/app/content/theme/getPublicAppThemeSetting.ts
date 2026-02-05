@@ -79,20 +79,20 @@ export const getInitialPublicAppThemeSetting = (): ThemeSetting => {
     const defaultThemeSetting = getDefaultThemeSetting(PROTON_DEFAULT_THEME);
     const searchParams = new URLSearchParams(window.location.search);
 
+    // 1. Location based
+    const themeFromLocation = getThemeFromLocation(window.location, searchParams);
+    if (themeFromLocation !== null) {
+        return { ...defaultThemeSetting, ...themeFromLocation };
+    }
+
     if (isElectronApp) {
         return defaultThemeSetting;
     }
 
-    // 1. URL param (?theme=light/dark/auto)
+    // 2. URL param (?theme=light/dark/auto)
     const paramThemeMode = getThemeModeSettingFromString(searchParams.get('theme'));
     if (paramThemeMode !== undefined) {
         return { ...defaultThemeSetting, ...getThemeSettingFromMode(paramThemeMode) };
-    }
-
-    // 2. Location based
-    const themeFromLocation = getThemeFromLocation(window.location, searchParams);
-    if (themeFromLocation !== null) {
-        return { ...defaultThemeSetting, ...themeFromLocation };
     }
 
     // 3. PublicTheme local storage (in case it's set to light or dark)
