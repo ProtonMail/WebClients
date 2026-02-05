@@ -1835,10 +1835,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Az összes elem áthelyezése innen: \"${ payload.content.name }\""
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Egy elem másik tárolóba történő áthelyezése törli a biztonságos hivatkozásokat.",
-        "Az elemek másik tárolóba történő áthelyezése törli a biztonságos hivatkozásokat."
-      ],
       "Moving items": [
         "Elemek áthelyezése"
       ],
@@ -2245,9 +2241,6 @@
       ],
       "Trusted by over 50,000 business users and 100 million accounts around the world.": [
         "Világszerte több mint 50 000 üzleti felhasználó és 100 millió fiók bízik benne."
-      ],
-      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
-        "Próbálja ki a ${ BRAND_NAME } új funkcióit, frissítéseit és termékeit mielőtt azok elérhetővé válnak a nyilvánosság számára. Ez újra fogja tölteni az alkalmazást"
       ],
       "Unable to copy to clipboard": [
         "Vágólapra másolás sikertelen"
