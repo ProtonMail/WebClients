@@ -160,7 +160,7 @@ describe('MetricHandler', () => {
                         volumeType: MetricVolumeType.OwnVolume,
                         uploadedSize: 512,
                         expectedSize: 1024,
-                        error: 'network_error',
+                        error: '4xx',
                     },
                 });
 
@@ -170,7 +170,7 @@ describe('MetricHandler', () => {
                 });
                 expect(metrics.drive_sdk_upload_errors_total.increment).toHaveBeenCalledWith({
                     volumeType: 'own_volume',
-                    type: 'network_error',
+                    type: '4xx',
                 });
                 expect(metrics.drive_sdk_upload_errors_transfer_size_histogram.observe).toHaveBeenCalledWith({
                     Value: 512,
@@ -226,7 +226,7 @@ describe('MetricHandler', () => {
                         volumeType: MetricVolumeType.OwnVolume,
                         uploadedSize: 512,
                         expectedSize: 1024,
-                        error: 'network_error',
+                        error: 'unknown',
                     },
                 });
 
@@ -245,7 +245,7 @@ describe('MetricHandler', () => {
                         volumeType: MetricVolumeType.OwnVolume,
                         uploadedSize: 512,
                         expectedSize: 1024,
-                        error: 'network_error',
+                        error: 'unknown',
                     },
                 });
 
@@ -271,7 +271,7 @@ describe('MetricHandler', () => {
                         volumeType: MetricVolumeType.OwnVolume,
                         uploadedSize: 512,
                         expectedSize: 1024,
-                        error: 'network_error',
+                        error: 'unknown',
                     },
                 });
 
@@ -353,7 +353,7 @@ describe('MetricHandler', () => {
                         volumeType: MetricVolumeType.OwnVolume,
                         downloadedSize: 512,
                         claimedFileSize: 1024,
-                        error: 'network_error',
+                        error: '4xx',
                     },
                 });
 
@@ -363,7 +363,7 @@ describe('MetricHandler', () => {
                 });
                 expect(metrics.drive_sdk_download_errors_total.increment).toHaveBeenCalledWith({
                     volumeType: 'own_volume',
-                    type: 'network_error',
+                    type: '4xx',
                 });
                 expect(metrics.drive_sdk_download_errors_transfer_size_histogram.observe).toHaveBeenCalledWith({
                     Value: 512,
@@ -435,7 +435,7 @@ describe('MetricHandler', () => {
                         volumeType: MetricVolumeType.OwnVolume,
                         downloadedSize: 512,
                         claimedFileSize: 1024,
-                        error: 'network_error',
+                        error: 'unknown',
                     },
                 });
 
@@ -454,7 +454,7 @@ describe('MetricHandler', () => {
                         volumeType: MetricVolumeType.OwnVolume,
                         downloadedSize: 512,
                         claimedFileSize: 1024,
-                        error: 'network_error',
+                        error: 'unknown',
                     },
                 });
 
@@ -480,7 +480,7 @@ describe('MetricHandler', () => {
                         volumeType: MetricVolumeType.OwnVolume,
                         downloadedSize: 512,
                         claimedFileSize: 1024,
-                        error: 'network_error',
+                        error: 'unknown',
                     },
                 });
 

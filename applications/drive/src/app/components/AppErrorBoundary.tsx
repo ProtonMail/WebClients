@@ -16,6 +16,7 @@ import { ApiError } from '@proton/shared/lib/fetch/ApiError';
 import generateUID from '@proton/utils/generateUID';
 
 import { useActiveShare } from '../hooks/drive/useActiveShare';
+import { driveMetrics } from '../modules/metrics';
 
 interface Props {
     children: React.ReactNode;
@@ -35,6 +36,7 @@ const AppErrorBoundary = ({ children }: Props) => {
     }, [location]);
 
     const handleError = (error: Error) => {
+        driveMetrics.globalErrors.markCrashError(error);
         setState((prev) => ({ ...prev, error }));
         setDefaultRoot();
     };

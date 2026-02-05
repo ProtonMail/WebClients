@@ -12,14 +12,12 @@ import { traceError } from '@proton/shared/lib/helpers/sentry';
 import type { UserModel } from '@proton/shared/lib/interfaces';
 
 import { TransferState } from '../../../components/TransferManager/transfer';
+import { driveMetrics } from '../../../modules/metrics';
 import { isAbortError, isIgnoredErrorForReporting } from '../../../utils/errorHandling';
 import { is4xx, is5xx, isCryptoEnrichedError } from '../../../utils/errorHandling/apiErrors';
 import { getIsPublicContext } from '../../../utils/getIsPublicContext';
-import { UserAvailabilityTypes } from '../../../utils/metrics/types/userSuccessMetricsTypes';
-import { userSuccessMetrics } from '../../../utils/metrics/userSuccessMetrics';
 import type { DownloadErrorCategoryType, MetricShareTypeWithPublic } from '../../../utils/type/MetricTypes';
-import { MetricSharePublicType } from '../../../utils/type/MetricTypes';
-import { DownloadErrorCategory } from '../../../utils/type/MetricTypes';
+import { DownloadErrorCategory, MetricSharePublicType } from '../../../utils/type/MetricTypes';
 import { useSharesStore } from '../../../zustand/share/shares.store';
 import { getShareType } from '../../_uploads/UploadProvider/useUploadMetrics';
 import { getMetricsUserPlan } from '../../_user/getMetricsUserPlan';
@@ -108,7 +106,7 @@ export const useDownloadMetrics = (
                 });
                 lastErroringUserReport.current = Date.now();
             }
-            userSuccessMetrics.mark(UserAvailabilityTypes.coreFeatureError);
+            driveMetrics.globalErrors.markCoreFeatureError();
         }
     };
 

@@ -8,7 +8,7 @@ import type {
     MetricVerificationErrorEvent,
     MetricVolumeEventsSubscriptionsChangedEvent,
 } from '@protontech/drive-sdk';
-import type { LogHandler, MetricRecord } from '@protontech/drive-sdk/dist/telemetry';
+import type { LogHandler, MetricRecord, MetricHandler as SDKMetricHandler } from '@protontech/drive-sdk/dist/telemetry';
 import { LogFilter, LogLevel, Telemetry } from '@protontech/drive-sdk/dist/telemetry';
 
 import metrics from '@proton/metrics';
@@ -19,7 +19,17 @@ export type UserPlan = 'free' | 'paid' | 'anonymous' | 'unknown';
 
 const REPORT_ERRORING_USERS_INTERVAL = 5 * 60 * 1000; // 5 minutes
 
-export function initTelemetry(userPlan: UserPlan = 'unknown', logHandler: LogHandler, debug = false) {
+export function initTelemetry(
+    userPlan: UserPlan = 'unknown',
+    logHandler: LogHandler,
+    metricHandler?: SDKMetricHandler<MetricEvent>,
+    debug = false
+) {
+    const metricHandlers: SDKMetricHandler<MetricEvent>[] = [new MetricHandler(userPlan)];
+    if (metricHandler) {
+        metricHandlers.push(metricHandler);
+    }
+
     const telemetry = new Telemetry({
         logFilter: new LogFilter({
             globalLevel: debug ? LogLevel.DEBUG : LogLevel.INFO,
@@ -28,7 +38,7 @@ export function initTelemetry(userPlan: UserPlan = 'unknown', logHandler: LogHan
             },
         }),
         logHandlers: [logHandler],
-        metricHandlers: [new MetricHandler(userPlan)],
+        metricHandlers,
     });
 
     return telemetry;
@@ -134,7 +144,10 @@ export class MetricHandler {
             });
 
             // Report only once per interval.
-            if (!this.lastUploadError || this.lastUploadError.getTime() < Date.now() - REPORT_ERRORING_USERS_INTERVAL) {
+            if (
+                metric.error !== 'network_error' &&
+                (!this.lastUploadError || this.lastUploadError.getTime() < Date.now() - REPORT_ERRORING_USERS_INTERVAL)
+            ) {
                 metrics.drive_sdk_upload_erroring_users_total.increment({
                     volumeType: metric.volumeType || 'unknown',
                     userPlan: this.userPlan,
@@ -187,8 +200,9 @@ export class MetricHandler {
 
             // Report only once per interval.
             if (
-                !this.lastDownloadError ||
-                this.lastDownloadError.getTime() < Date.now() - REPORT_ERRORING_USERS_INTERVAL
+                metric.error !== 'network_error' &&
+                (!this.lastDownloadError ||
+                    this.lastDownloadError.getTime() < Date.now() - REPORT_ERRORING_USERS_INTERVAL)
             ) {
                 metrics.drive_sdk_download_erroring_users_total.increment({
                     volumeType: metric.volumeType || 'unknown',

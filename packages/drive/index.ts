@@ -1,8 +1,9 @@
 import { useCallback, useState } from 'react';
 
+import type { MetricEvent } from '@protontech/drive-sdk';
 import { MemoryCache, NodeType, ProtonDriveClient, VERSION } from '@protontech/drive-sdk';
 import { ProtonDrivePhotosClient } from '@protontech/drive-sdk/dist/protonDrivePhotosClient';
-import type { LogHandler } from '@protontech/drive-sdk/dist/telemetry';
+import type { LogHandler, MetricHandler, MetricRecord } from '@protontech/drive-sdk/dist/telemetry';
 // TODO: Remove that when sdk will be transpile with bun
 import 'core-js/actual/array/from-async';
 
@@ -70,6 +71,7 @@ export type {
 } from '@protontech/drive-sdk';
 export type { ProtonDrivePhotosClient } from '@protontech/drive-sdk/dist/protonDrivePhotosClient';
 export type { ProtonDrivePublicLinkClient } from '@protontech/drive-sdk/dist/protonDrivePublicLinkClient';
+export type SDKMetricRecord = MetricRecord<MetricEvent>;
 
 /* Other export */
 export {
@@ -126,6 +128,7 @@ export function useDrive() {
      * @param options.appVersion Pass from your app config. Example "5.0.0".
      * @param options.userPlan Should be "paid" for any paid user, "free" for not paid, and "anonymous" for public access. Keep "unknown" or unset if not known.
      * @param options.logging A custom logging handler to use instead of the default one. Useful for combining SDK logs with the application logging system.
+     * @param options.metricHandler A custom metric handler for ability to react to SDK metric events.
      */
     const init = useCallback(
         (options: {
@@ -133,6 +136,7 @@ export function useDrive() {
             appVersion: string;
             userPlan?: UserPlan;
             logging?: LogHandler & { getLogs: () => string[] };
+            metricHandler?: MetricHandler<MetricEvent>;
         }) => {
             const clientUid = getClientUid();
             const config = {
@@ -152,7 +156,7 @@ export function useDrive() {
             );
 
             loggingSingleton = options.logging || new Logging({ sentryComponent: 'drive-sdk-log' });
-            const telemetry = initTelemetry(options.userPlan, loggingSingleton, debug);
+            const telemetry = initTelemetry(options.userPlan, loggingSingleton, options.metricHandler, debug);
 
             driveLatestEventIdProvider = new LatestEventIdProvider();
             const driveEntitiesCache = new MemoryCache<string>();

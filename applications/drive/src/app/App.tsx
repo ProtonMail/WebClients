@@ -25,6 +25,7 @@ import noop from '@proton/utils/noop';
 
 import { bootstrapApp } from './bootstrap';
 import config from './config';
+import { driveMetrics } from './modules/metrics';
 import type { DriveStore } from './redux-store/store';
 import { extraThunkArguments } from './redux-store/thunk';
 import { UserSettingsProvider } from './store';
@@ -112,7 +113,13 @@ const App = () => {
                                         <EventManagerProvider eventManager={extraThunkArguments.eventManager}>
                                             <ApiProvider api={extraThunkArguments.api}>
                                                 <DrawerProvider defaultShowDrawerSidear={state.showDrawerSidebar}>
-                                                    <ErrorBoundary big component={<StandardErrorPage big />}>
+                                                    <ErrorBoundary
+                                                        big
+                                                        component={<StandardErrorPage big />}
+                                                        onError={(error) => {
+                                                            driveMetrics.globalErrors.markCrashError(error);
+                                                        }}
+                                                    >
                                                         <StandardPrivateApp noModals>
                                                             <UserSettingsProvider
                                                                 initialUser={state.initialUser}
