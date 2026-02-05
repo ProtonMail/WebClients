@@ -1,6 +1,7 @@
 import { randomBytes } from 'crypto';
 import type { CookiesSetDetails } from 'electron';
 import { type Session, app, autoUpdater } from 'electron';
+import { installWindowsUpdate } from 'proton-pass-desktop/lib/update';
 
 import { type FeatureFlagsResponse, PassFeature } from '@proton/pass/types/api/features';
 import { semver } from '@proton/pass/utils/string/semver';
@@ -11,7 +12,7 @@ import { ARCH } from './lib/env';
 import { userAgent } from './lib/user-agent';
 import { store } from './store';
 import logger from './utils/logger';
-import { isMac, isProdEnv } from './utils/platform';
+import { isMac, isProdEnv, isWindows } from './utils/platform';
 
 const SUPPORTED_PLATFORMS = ['darwin', 'win32'];
 export const UPDATE_SOURCE_URL = `https://proton.me/download/PassDesktop/${process.platform}/${ARCH}`;
@@ -54,6 +55,12 @@ const getFeedURL = (isBeta: boolean) => {
 };
 
 export const checkForUpdates = async (session: Session): Promise<boolean> => {
+    // Hack for dev
+    if (isWindows) {
+        await installWindowsUpdate('file:///C:/ProtonPass.msix');
+        return true;
+    }
+
     const remoteManifestUrl = `https://proton.me/download/PassDesktop/${process.platform}/${ARCH}/version.json`;
     const remoteManifest = await session
         .fetch(remoteManifestUrl)

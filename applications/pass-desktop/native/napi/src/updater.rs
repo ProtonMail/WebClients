@@ -14,6 +14,17 @@ use windows::{
 // No big issues if it's disabled in company managed environment
 // But for b2c auto update, we need this capability
 
+// Register the application to restart after update
+// Call this BEFORE calling install_update()
+pub fn register_for_restart() -> Result<()> {
+    // Register to restart with no command line arguments
+    unsafe {
+        RegisterApplicationRestart(PCWSTR::null(), REGISTER_APPLICATION_RESTART_FLAGS(0))?;
+    }
+
+    Ok(())
+}
+
 // Install an MSIX update from the given package URI
 pub fn install_update(package_uri: String) -> Result<()> {
     // Create PackageManager
@@ -42,15 +53,4 @@ pub fn install_update(package_uri: String) -> Result<()> {
         let error_text = result.ErrorText()?;
         bail!("Failed to install update: {}", error_text)
     }
-}
-
-// Register the application to restart after update
-// Call this BEFORE calling install_update()
-pub fn register_for_restart() -> Result<()> {
-    // Register to restart with no command line arguments
-    unsafe {
-        RegisterApplicationRestart(PCWSTR::null(), REGISTER_APPLICATION_RESTART_FLAGS(0))?;
-    }
-
-    Ok(())
 }

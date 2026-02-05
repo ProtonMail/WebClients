@@ -37,6 +37,7 @@ const windowsSignOptions =
               automaticallySelectCertificate: true,
           }
         : undefined;
+const windowsPublisher = process.env.WINDOWS_SIGN_PUBLISHER ?? 'CN=Proton AG';
 
 const config: ForgeConfig = {
     packagerConfig: {
@@ -63,10 +64,10 @@ const config: ForgeConfig = {
                 packageIdentity: 'ProtonPass',
                 packageDisplayName: 'Proton Pass',
                 packageDescription: 'Open-source and secure identity manager.',
+                packageBackgroundColor: 'transparent',
                 appDisplayName: 'Proton Pass',
                 appExecutable: 'ProtonPass.exe',
-                publisher:
-                    'CN=Proton AG, O=Proton AG, S=Genève, C=CH, OID.2.5.4.15=Private Organization, OID.1.3.6.1.4.1.311.60.2.1.3=CH, SERIALNUMBER=CHE-354.686.492',
+                publisher: windowsPublisher,
                 publisherDisplayName: 'Proton AG',
             },
             sign: !!windowsSignOptions,

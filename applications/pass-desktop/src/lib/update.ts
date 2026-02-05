@@ -3,6 +3,7 @@ import { checkForUpdates, setTagCookie } from 'proton-pass-desktop/update';
 
 import type { MaybeNull } from '@proton/pass/types';
 
+import { msix_updater } from '../../native';
 import { store } from '../store';
 import { setupIpcHandler } from './ipc';
 
@@ -27,3 +28,5 @@ export const setupIpcHandlers = (getSession: () => MaybeNull<Session>) => {
         return checkForUpdates(session);
     });
 };
+
+export const installWindowsUpdate = async (buildUri: string) => msix_updater.installUpdate(buildUri);
