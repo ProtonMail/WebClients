@@ -8,7 +8,7 @@ import clsx from '@proton/utils/clsx';
 
 import { useSelectAll } from 'proton-mail/hooks/useSelectAll';
 
-import { getLabelName, isLabelIDNewsletterSubscription } from '../../helpers/labels';
+import { getLabelNameForToolbar, isLabelIDNewsletterSubscription } from '../../helpers/labels';
 import { getToolbarResponsiveSizes } from '../../helpers/toolbar/getToolbarResponsiveSizes';
 import ListSettings from '../list/ListSettings';
 import SnoozeToolbarDropdown from '../list/snooze/containers/SnoozeToolbarDropdown';
@@ -70,7 +70,7 @@ const ToolbarRowWide = ({
 
     const [labels] = useLabels();
     const [folders] = useFolders();
-    const labelName = useMemo(() => getLabelName(labelID, labels, folders), [labelID, labels, folders]);
+    const labelName = useMemo(() => getLabelNameForToolbar(labelID, labels, folders), [labelID, labels, folders]);
 
     return (
         <div className="w-full">
