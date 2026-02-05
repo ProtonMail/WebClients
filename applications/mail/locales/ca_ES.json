@@ -1502,7 +1502,8 @@
         "De confiança"
       ],
       "Trust key": [
-        "Marca com a clau de confiança"
+        "Clau de confiança",
+        "Claus de confiança"
       ],
       "Trust public key": [
         "Confia en la clau pública"
@@ -4914,6 +4915,9 @@
       "Thanks for the feedback!": [
         "Gràcies pels vostres comentaris!"
       ],
+      "That action can't be performed on emails in this folder": [
+        "Aquesta acció no es pot realitzar en correus electrònics d'aquesta carpeta"
+      ],
       "The amount due has changed. Please try again.": [
         "L'import que cal pagar ha canviat. Torneu-ho a provar."
       ],
@@ -7628,6 +7632,9 @@
       ],
       "No links cleaned": [
         "No s'ha netejat cap enllaç"
+      ],
+      "No messages found": [
+        "No s'ha trobat cap missatge"
       ],
       "No messages to show": [
         "No hi ha cap missatge per a mostrar"
@@ -10998,8 +11005,8 @@
       "Password-protected Emails": [
         "Correus protegits amb contrasenya"
       ],
-      "Phone support (20+ users)": [
-        "Suport telefònic (a partir de 20 usuaris)"
+      "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
+        "Suport telefònic (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ usuaris)"
       ],
       "Priority email support": [
         "Suport prioritari per correu electrònic"
@@ -11433,8 +11440,8 @@
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Personalitzeu la vostra signatura de correu electrònic amb logos, imatges, icones de xarxes socials, enllaços als detalls de contacte, etc."
       ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
-        "L'Equip per a l'Èxit del Client de ${ BRAND_NAME } ofereix assistència telefònica durant l'horari laboral europeu per a clients amb almenys 20 usuaris."
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } or more users": [
+        "El servei d'atenció al client de ${ BRAND_NAME } ofereix assistència telefònica durant l'horari laboral europeu, per a clients amb ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } o més usuaris"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Evita que ${ BRAND_NAME } o tercers accedeixin als missatges. Les úniques persones que poden llegir els missatges són el remitent i el destinatari previst."

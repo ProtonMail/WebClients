@@ -1501,6 +1501,10 @@
       "Trust": [
         "Luota"
       ],
+      "Trust key": [
+        "Luota avaimeen",
+        "Luota avaimiin"
+      ],
       "Trust public key": [
         "Luota julkiseen avaimeen"
       ],
@@ -2617,6 +2621,9 @@
       ],
       "Web search access": [
         "Verkkohakuun pääsy"
+      ],
+      "Zero-access encryption": [
+        "Zero Access -salaus"
       ]
     },
     "collider_2025: Info": {
@@ -4853,6 +4860,9 @@
       ],
       "Thanks for the feedback!": [
         "Kiitos palautteesta!"
+      ],
+      "That action can't be performed on emails in this folder": [
+        "Tätä toimintoa ei voi suorittaa tämän kansion sähköposteille."
       ],
       "The amount due has changed. Please try again.": [
         "Erääntyvä summa on muuttunut. Yritä uudelleen."
@@ -7553,6 +7563,9 @@
       ],
       "No links cleaned": [
         "Linkkejä ei puhdistettu"
+      ],
+      "No messages found": [
+        "Viestejä ei löytynyt"
       ],
       "No messages to show": [
         "Ei viestejä näytettäväksi"
@@ -10308,6 +10321,9 @@
       ],
       "Meeting recording": [
         "Kokoustallenne"
+      ],
+      "Screen-sharing": [
+        "Näytön jakaminen"
       ]
     },
     "Message": {
@@ -10854,8 +10870,8 @@
       "Password-protected Emails": [
         "Salasanasuojatut sähköpostit"
       ],
-      "Phone support (20+ users)": [
-        "Puhelintuki (20+ käyttäjää)"
+      "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
+        "Puhelintuki (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ käyttäjää)"
       ],
       "Priority email support": [
         "Ensisijainen sähköpostituki"
@@ -11283,8 +11299,8 @@
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Mukauta sähköpostiallekirjoitustasi mm. logoilla, kuvilla, sosiaalisen median kuvakkeilla sekä yhteystietolinkeillä"
       ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
-        "${ BRAND_NAME }in aiakastukitiimi palvelee puhelimitse vähintään 20 käyttäjän asiakkaille eurooppalaisina toimistoaikoina"
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } or more users": [
+        "Puhelintuki on saatavilla ${ BRAND_NAME } -asiakastukitiimiltä Euroopan työaikana asiakkaille, joilla on vähintään ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } käyttäjää."
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Estää ${ BRAND_NAME }ilta ja ulkopuolisilta tahoilta avaamasta viestejä. Viestejä voivat lukea vain niiden lähettäjät ja tarkoitetut vastaanottajat."
