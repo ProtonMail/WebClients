@@ -3,6 +3,7 @@ import clsx from '@proton/utils/clsx';
 
 import { useMailboxCounter } from 'proton-mail/hooks/useMailboxCounter';
 import { getLocationCount } from 'proton-mail/hooks/useMailboxCounter.helpers';
+import { useMailboxLayoutProvider } from 'proton-mail/router/components/MailboxLayoutContext';
 
 import { CategoriesOnboarding } from '../categoriesOnboarding/CategoriesOnboarding';
 import { useCategoriesOnboarding } from '../categoriesOnboarding/useCategoriesOnboarding';
@@ -24,6 +25,8 @@ export const CategoriesTabsList = ({ categoryLabelID }: Props) => {
     const recategorizeElement = useRecategorizeElement();
     const { activeCategoriesTabs } = useCategoriesView();
 
+    const { isColumnModeActive } = useMailboxLayoutProvider();
+
     const [counterMap] = useMailboxCounter();
     const onboarding = useCategoriesOnboarding();
 
@@ -44,7 +47,7 @@ export const CategoriesTabsList = ({ categoryLabelID }: Props) => {
             <div
                 className={clsx(
                     'categories-tabs flex flex-row flex-nowrap justify-space-between px-4 h-fit-content border-bottom border-weak',
-                    activeCategoriesTabs.length <= 4 && 'low-active-categories'
+                    !isColumnModeActive && activeCategoriesTabs.length <= 4 && 'low-active-categories'
                 )}
                 data-testid="categories-tabs"
                 onDragEnter={handleDragEnter}
