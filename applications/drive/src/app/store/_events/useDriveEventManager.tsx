@@ -10,9 +10,7 @@ import type { Api } from '@proton/shared/lib/interfaces';
 import type { DriveEventsResult } from '@proton/shared/lib/interfaces/drive/events';
 import generateUID from '@proton/utils/generateUID';
 
-import { isIgnoredErrorForReporting, logError } from '../../utils/errorHandling';
-import { UserAvailabilityTypes } from '../../utils/metrics/types/userSuccessMetricsTypes';
-import { userSuccessMetrics } from '../../utils/metrics/userSuccessMetrics';
+import { logError } from '../../utils/errorHandling';
 import { driveEventsResultToDriveEvents } from '../_api';
 import type { VolumeTypeForEvents } from '../_volumes';
 import { EventsMetrics, countEventsPerType, getErrorCategory } from './driveEventsMetrics';
@@ -107,9 +105,6 @@ export function useDriveEventManagerProvider(api: Api, generalEventManager: Even
                 // This is in fact volumeType but since the metric is old we haven't updated yet and are using shareType as volumeType
                 shareType: volumeType,
             });
-            if (!isIgnoredErrorForReporting(e)) {
-                userSuccessMetrics.mark(UserAvailabilityTypes.coreFeatureError);
-            }
             throw e;
         }
     };
@@ -140,6 +135,7 @@ export function useDriveEventManagerProvider(api: Api, generalEventManager: Even
         if (!eventManagers.current.get(volumeId)) {
             await subscribeToVolume(volumeId, type);
         }
+        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
         eventManagers.current.get(volumeId)!.start();
     };
 

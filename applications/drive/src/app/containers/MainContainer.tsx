@@ -30,6 +30,7 @@ import { ActiveShareProvider } from '../hooks/drive/useActiveShare';
 import { useReactRouterNavigationLog } from '../hooks/util/useReactRouterNavigationLog';
 import { useRedirectToPublicPage } from '../hooks/util/useRedirectToPublicPage';
 import { logging } from '../modules/logging';
+import { driveMetrics } from '../modules/metrics';
 import { PhotosWithAlbumsContainer } from '../photos/PhotosWithAlbumsContainer';
 import { TransferManager } from '../sections/transferManager/TransferManager';
 import {
@@ -260,6 +261,9 @@ const MainContainer: FunctionComponent = () => {
                 appVersion: config.APP_VERSION,
                 userPlan,
                 logging,
+                metricHandler: {
+                    onEvent: (metric) => driveMetrics.globalErrors.onDriveSDKMetricEvent(metric.event),
+                },
             });
 
             drive = getDrive();

@@ -7,19 +7,17 @@ import { FeatureCode, fetchFeatures } from '@proton/features';
 import createApi from '@proton/shared/lib/api/createApi';
 import { queryUserSettings } from '@proton/shared/lib/api/drive/user';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
-import { getClientID } from '@proton/shared/lib/apps/helper';
 import { registerSessionRemovalListener } from '@proton/shared/lib/authentication/persistedSessionStorage';
 import { initSafariFontFixClassnames } from '@proton/shared/lib/helpers/initSafariFontFixClassnames';
 import { setMetricsEnabled } from '@proton/shared/lib/helpers/metrics';
-import type { ProtonConfig, User } from '@proton/shared/lib/interfaces';
+import type { ProtonConfig } from '@proton/shared/lib/interfaces';
 import type { UserSettingsResponse } from '@proton/shared/lib/interfaces/drive/userSettings';
 import { appMode } from '@proton/shared/lib/webpack.constants';
 import noop from '@proton/utils/noop';
 
 import locales from './locales';
+import { driveMetrics } from './modules/metrics';
 import { type DriveState, extendStore, setupStore } from './redux-store/store';
-import { getMetricsUserPlan } from './store/_user/getMetricsUserPlan';
-import { userSuccessMetrics } from './utils/metrics/userSuccessMetrics';
 import { clearOPFS } from './utils/opfs';
 import { Features, measureFeaturePerformance } from './utils/telemetry';
 import { loadStreamsPolyfill } from './utils/webStreamsPolyfill';
@@ -34,7 +32,6 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
     const silentApi = getSilentApi(api);
     const authentication = bootstrap.createAuthentication();
     bootstrap.init({ config, authentication, locales });
-    userSuccessMetrics.init();
     setupGuestCrossStorage({ appMode, appName });
     initSafariFontFixClassnames();
     const streamsPolyfillPromise = loadStreamsPolyfill();
@@ -56,6 +53,7 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
         const history = bootstrap.createHistory({ sessionResult, pathname });
         const unleashClient = bootstrap.createUnleash({ api: silentApi });
         const user = sessionResult.session?.User;
+        driveMetrics.init({ user });
         extendStore({ config, api, authentication, unleashClient, history });
         unleashVanillaStore.getState().setClient(unleashClient);
 
@@ -135,18 +133,10 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
         const [userData] = await Promise.all([userPromise, cryptoPromise, unleashPromise]);
         userDataFeature.end();
 
-        const setUserSuccessMetrics = (user: User) => {
-            return Promise.all([
-                userSuccessMetrics.setVersionHeaders(getClientID(config.APP_NAME), config.APP_VERSION),
-                userSuccessMetrics.setLocalUser(
-                    authentication.getUID(),
-                    getMetricsUserPlan({ user, isPublicContext: false })
-                ),
-            ]);
-        };
-
-        // Just about reporting if the user session load was fine, no need to wait for it
-        setUserSuccessMetrics(userData.user).catch(noop);
+        // The user used to init metric was from the cached session but it
+        // might not be up-to-date, thus we update it here to have the most
+        // accurate data.
+        driveMetrics.updateUser(userData.user);
 
         const postLoadFeature = measureFeaturePerformance(api, Features.globalBootstrapAppPostLoad);
         postLoadFeature.start();

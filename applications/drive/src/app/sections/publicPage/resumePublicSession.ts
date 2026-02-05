@@ -3,9 +3,8 @@ import type { useAuthentication } from '@proton/components';
 import { resumeSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { formatUser } from '@proton/shared/lib/user/helpers';
 
-import { getMetricsUserPlan } from '../../store/_user/getMetricsUserPlan';
+import { driveMetrics } from '../../modules/metrics';
 import { getLastActivePersistedUserSession } from '../../utils/lastActivePersistedUserSession';
-import { userSuccessMetrics } from '../../utils/metrics/userSuccessMetrics';
 import { usePublicAuthStore } from './usePublicAuth.store';
 
 interface ResumePublicSessionProps {
@@ -51,10 +50,7 @@ export const resumePublicSession = async ({
         usePublicAuthStore.getState().setAddresses(userAddresses);
 
         const user = formatUser(resumedSession.User);
-        await userSuccessMetrics.setLocalUser(
-            persistedSession.UID,
-            getMetricsUserPlan({ user, isPublicContext: true })
-        );
+        driveMetrics.init({ user, isPublicContext: true });
     } catch (e) {
         console.warn('Cannot resume session');
     }
