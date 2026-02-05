@@ -16,10 +16,12 @@ enum CONTENT_VERSION {
     V1 = 1,
     // Stop using turndown to clean the HTML before storing it in the database
     DOM_INDEXING = 2,
+    // Fix blockquote issue that was not removing HTML content
+    BLOCKQUOTE_FIX = 3,
 }
 
 const getContentVersion = (): CONTENT_VERSION => {
-    return CONTENT_VERSION.DOM_INDEXING;
+    return CONTENT_VERSION.BLOCKQUOTE_FIX;
 };
 
 /**
