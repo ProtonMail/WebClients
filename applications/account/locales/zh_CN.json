@@ -1432,6 +1432,18 @@
       ],
       "Zoom out": [
         "缩小"
+      ],
+      "Claim ${ BRAND_NAME } address": [
+        "认领 ${ BRAND_NAME } 地址"
+      ],
+      "Claim this address": [
+        "认领此地址"
+      ],
+      "Claim your free ${ BRAND_NAME } address": [
+        "认领您的免费 ${ BRAND_NAME } 地址"
+      ],
+      "Get a free ${ BRAND_NAME } address": [
+        "获取免费 ${ BRAND_NAME } 地址"
       ]
     },
     "action": {
@@ -1667,6 +1679,24 @@
       ],
       "You have reached the trial limit.": [
         "您已达到试用上限。"
+      ],
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "试用期于 ${ formattedDate1 } 结束后，将转为每 ${ renewCycle } 个月自动续费的付费订阅。若在 ${ formattedDate2 } 之前取消，则不会被收费。"
+      ],
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "试用期于 ${ formattedDate1 } 结束后，将转为每月自动续费的付费订阅。若在 ${ formattedDate2 } 之前取消，则不会被收费。"
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "您在试用期内最多可拥有 ${ TRIAL_MAX_DEDICATED_IPS } 个专用服务器。"
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "您在试用期内最多可拥有 ${ TRIAL_MAX_LUMO_SEATS } 个 ${ LUMO_SHORT_APP_NAME } 席位"
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "您在试用期内最多可拥有 ${ TRIAL_MAX_USERS } 位用户"
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "您在试用期内无法添加自定义域名"
       ]
     },
     "b2b_trials_Action": {
@@ -2056,6 +2086,9 @@
       ],
       "Website access problem": [
         "网站连接问题"
+      ],
+      "Authenticator problem": [
+        "验证器问题"
       ]
     },
     "Button": {
@@ -2260,6 +2293,9 @@
       ],
       "Ultra fast and private VPN": [
         "超快且私有的 VPN"
+      ],
+      "${ numberOfUsers } user": [
+        "最多 ${ numberOfUsers } 位用户"
       ]
     },
     "Checkout row": {
@@ -2295,6 +2331,51 @@
     "collider_2025: feature": {
       "Unlimited daily chats": [
         "无限聊天次数"
+      ],
+      "Access to advanced AI models": [
+        "访问高级 AI 模型"
+      ],
+      "Basic chat history": [
+        "基础聊天记录"
+      ],
+      "Built and based in Europe": [
+        "在欧洲构建并运营"
+      ],
+      "Compliance with data protection regulations": [
+        "符合数据保护法规要求"
+      ],
+      "Data never used for AI training": [
+        "数据绝不用于 AI 训练"
+      ],
+      "Full chat history with search": [
+        "完整聊天记录（支持搜索）"
+      ],
+      "Large file upload support": [
+        "支持大文件上传"
+      ],
+      "Limited daily chats": [
+        "每日聊天次数有限"
+      ],
+      "Limited favorites": [
+        "收藏数量有限"
+      ],
+      "Strict no-logs policy": [
+        "严格的无日志政策"
+      ],
+      "Unlimited favorites for quick access": [
+        "无限收藏，快速访问"
+      ],
+      "Upload and query multiple large files": [
+        "上传并查询多个大型文件"
+      ],
+      "Upload and query small files": [
+        "上传并查询小型文件"
+      ],
+      "Web search access": [
+        "网页搜索访问权限"
+      ],
+      "Zero-access encryption": [
+        "零访问加密"
       ]
     },
     "color": {
@@ -4055,16 +4136,25 @@
       ],
       "Only": [
         "仅"
+      ],
+      "2 TB of storage to share": [
+        "2 TB 共享存储空间"
       ]
     },
     "Duo offer: Link": {
       "Share your plan": [
         "分享您的套餐"
+      ],
+      "Get 4x more storage": [
+        "获得 4 倍存储空间"
       ]
     },
     "Duo offer: Title": {
       "Share your plan benefits with ${ BRAND_NAME } Duo": [
         "使用 ${ BRAND_NAME } Duo 分享您的套餐"
+      ],
+      "Get 4x more storage with ${ BRAND_NAME } Duo": [
+        "使用 ${ BRAND_NAME } Duo 获得 4 倍存储空间"
       ]
     },
     "Easy switch": {
@@ -4192,6 +4282,21 @@
       ],
       "This event was updated.": [
         "此事件已更新。"
+      ],
+      "DESCRIPTION:": [
+        "说明："
+      ],
+      "LOCATION:": [
+        "位置："
+      ],
+      "TIME:": [
+        "时间："
+      ],
+      "TITLE:": [
+        "标题："
+      ],
+      "You are invited to": [
+        "您被邀请至"
       ]
     },
     "Email body for invitation (date part)": {
@@ -4400,6 +4505,9 @@
       ],
       "You'll receive access to their account in **${ days } day**, or when they approve your request.": [
         "您将在**${ days } 天**内获得其账户访问权限，或在他们批准您的请求时。"
+      ],
+      "Trusted contact": [
+        "已信任联系人"
       ]
     },
     "Empty group name": {
@@ -5001,6 +5109,9 @@
       ],
       "ZIP code is required": [
         "必须填写邮政编码"
+      ],
+      "This offer is not available in your country": [
+        "此优惠在您所在的国家/地区不可用"
       ]
     },
     "Error importing calendar": {
@@ -5448,6 +5559,12 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "您已使用 ${ usedSpace } 存储空间，超过了账户分配的 ${ inviteSpace } 上限。请清理部分数据或要求账户管理员为您的邮箱扩容。"
+      ],
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "家庭计划目前不支持外部账户，请先创建 ${ BRAND_NAME } 地址后再加入。${ link }"
+      ],
+      "View the invitation": [
+        "查看邀请"
       ]
     },
     "familyOffer_2023:Info": {
@@ -6407,6 +6524,12 @@
       ],
       "Your password is correct.": [
         "密码输入无误。"
+      ],
+      "Two-factor authentication is enabled in your external account.": [
+        "您的外部账户已启用 2FA"
+      ],
+      "Two-factor authentication is enabled in your external email account.": [
+        "您的外部邮箱账户已启用 2FA"
       ]
     },
     "Import error link": {
@@ -9447,6 +9570,30 @@
       ],
       "Zoom meeting": [
         "Zoom 会议"
+      ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
+        "${ CALENDAR_APP_NAME } 需要 ${ BRAND_NAME } 地址以实现安全的事件同步和加密。${ claimAddressButton }。"
+      ],
+      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
+        "**第一步：** 使用您的推荐链接邀请朋友加入 ${ BRAND_NAME }"
+      ],
+      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
+        "**第二步：** 您的朋友可在其套餐上免费试用 2 周"
+      ],
+      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
+        "**第三步：** 每人订阅套餐，您即可获得 ${ referrerRewardAmount } 积分"
+      ],
+      "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
+        "确保完全私密且加密的通信。立即认领您的免费 ${ BRAND_NAME } 邮箱地址。"
+      ],
+      "Google Pay mark": [
+        "Google Pay 标记"
+      ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Apple App Store by ${ byDate }. ${ reactivateLink }": [
+        "订阅即将结束：为保留您的 ${ planName } 权益，请在 ${ byDate } 前通过 Apple App Store 重新开启您的订阅。${ reactivateLink }"
+      ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
+        "订阅即将结束：为保留您的 ${ planName } 权益，请在 ${ byDate } 前通过 Google Play 商店重新开启您的订阅。${ reactivateLink }"
       ]
     },
     "info": {
@@ -11033,6 +11180,12 @@
       ],
       "ZIP code": [
         "邮政编码"
+      ],
+      "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
+        "通过终端安全访问 ${ PASS_APP_NAME }，是脚本、自动化和开发工作流程的理想选择"
+      ],
+      "Command line interface (CLI)": [
+        "命令行界面 (CLI)"
       ]
     },
     "label": {
@@ -11381,6 +11534,9 @@
       ],
       "What’s this?": [
         "这是什么？"
+      ],
+      "Resume now": [
+        "立即恢复"
       ]
     },
     "Link label (optional)": {
@@ -11435,6 +11591,9 @@
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "您的订阅已经结束。 ${ cta } 以避免数据丢失。"
+      ],
+      "To continue using ${ BRAND_NAME }, please make sure your premium features are no longer in use or upgrade your plan.": [
+        "若要继续使用 ${ BRAND_NAME }，请确保您已不再使用高级功能或升级您的套餐。"
       ]
     },
     "Log event": {
@@ -12464,6 +12623,15 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "我们会扫描暗网，检查您的 ${ BRAND_NAME } 地址或别名是否被泄露，一旦发现任何情况，我们会立即提醒您。"
+      ],
+      "Existing ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } benefits": [
+        "现有的 ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } 权益"
+      ],
+      "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
+        "电话支持 (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ 用户)"
+      ],
+      "Short domain (@pm.me)": [
+        "短域名 (@pm.me)"
       ]
     },
     "new_plans: feature highlight": {
@@ -12881,6 +13049,9 @@
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "您可以指派多位管理员，所有管理员均可创建及管理用户，但只有主管理员能够执行计费相关操作。"
+      ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } or more users": [
+        "对于拥有 ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } 位或更多用户的客户，${ BRAND_NAME } 客户支持团队可在欧洲工作时间提供电话支持。"
       ]
     },
     "new_plans: upgrade": {
@@ -14070,6 +14241,9 @@
       ],
       "New credit/debit card": [
         "添加信用卡/借记卡"
+      ],
+      "Google Pay": [
+        "Google Pay"
       ]
     },
     "Payment.Sepa.Action": {
@@ -14167,6 +14341,63 @@
       ],
       "Your payment is still being processed": [
         "您的付款正在处理中"
+      ],
+      "Amount due after trial on ${ formattedDate }": [
+        "试用期结束后 ${ formattedDate } 的应付金额"
+      ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "不含 ${ taxRate }% ${ taxName }：${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "不含 ${ taxRate }% 税费：${ taxAmount }"
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "包含 ${ taxRate }% ${ taxName }：${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "包含 ${ taxRate }% 税费：${ taxAmount }"
+      ],
+      "Payment method required for the subscription to be activated after the trial ends.": [
+        "您需要提供付款方式，以便试用期结束后激活订阅。"
+      ],
+      "Taxes": [
+        "税费"
+      ],
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "此折扣适用于 ${ renewalsWithCoupon } 次续订。"
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "此特惠价格有效期 ${ couponRedemptions } 个月，之后将自动以 ${ renewPriceStr } 每月续订。您可以随时取消。"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "${ priceWithDiscount } 的特惠价格有效期 ${ couponRedemptions } 个月，之后将自动以 ${ renewPriceStr } 每月续订。您可以随时取消。"
+      ],
+      "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
+        "此操作将扩展您现有的订阅。您只需支付新增附加项的费用以及当前计费周期剩余时间的费用。您的订阅续订日期将不会改变。"
+      ],
+      "This offer is not available with your current plan.": [
+        "此优惠不适用于您当前的套餐"
+      ],
+      "VAT": [
+        "增值税"
+      ],
+      "VAT number": [
+        "增值税号"
+      ],
+      "You already have a subscription to this plan.": [
+        "您已订阅此套餐"
+      ],
+      "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
+        "您已订阅此套餐，您可以在 ${ subscriptionPlatform } 上更改您的订阅。"
+      ],
+      "You will soon be redirected to PayPal to verify your payment.": [
+        "您即将被重定向至 PayPal 以验证付款。"
+      ],
+      "You will soon be redirected to verify your payment.": [
+        "您即将被重定向以验证付款"
+      ],
+      "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
+        "您当前的订阅已享有一个现有折扣，转用此新促销意味着现有折扣将不再适用。"
       ]
     },
     "Payments.Error": {
@@ -14192,6 +14423,18 @@
     "Payments.ModificationWarning": {
       "Are you sure you want to proceed?": [
         "您确定要继续操作吗？"
+      ],
+      "If you choose to modify your ${ planTitle } plan, you may lose access to some features.": [
+        "如果您选择修改您的 ${ planTitle } 套餐，可能会失去某些功能的访问权限。"
+      ],
+      "Keep ${ planTitle }": [
+        "保留 ${ planTitle }"
+      ],
+      "Yes, I'm sure": [
+        "是的，我确定"
+      ],
+      "Your plan includes this feature already.": [
+        "您的套餐已包含此功能"
       ]
     },
     "Payments.plan_name": {
@@ -14205,6 +14448,9 @@
       ],
       "Bank transfer - ${ details }": [
         "银行转账 - ${ details }"
+      ],
+      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Google Pay - 卡号末四位 ${ paymentMethod.Details.Last4 }"
       ]
     },
     "Payments.Sepa": {
@@ -14227,6 +14473,30 @@
       ],
       "VAT number": [
         "增值税号 (VAT)"
+      ],
+      "Add ABN": [
+        "添加 ABN"
+      ],
+      "Add Business Number": [
+        "添加商业编号"
+      ],
+      "Add EIN": [
+        "添加 EIN"
+      ],
+      "Add VAT number": [
+        "添加增值税号"
+      ],
+      "Edit ABN": [
+        "编辑 ABN"
+      ],
+      "Edit Business Number": [
+        "编辑商业编号"
+      ],
+      "Edit EIN": [
+        "编辑 EIN"
+      ],
+      "Edit VAT number": [
+        "编辑增值税号"
       ]
     },
     "Permission": {
@@ -14404,6 +14674,9 @@
       ],
       "ZIP code": [
         "邮政编码"
+      ],
+      "Select country": [
+        "选择国家/地区"
       ]
     },
     "placeholder": {
@@ -14640,6 +14913,24 @@
       ],
       "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
         "您还有**${ daysRemaining }天**的时间，可以尽情探索**${ planTitle }**提供的所有强大功能。"
+      ],
+      "${ referrerRewardAmount } per referral": [
+        "每成功推荐 ${ referrerRewardAmount }"
+      ],
+      "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
+        "此后，您的账户将降级为 **${ BRAND_NAME } Free**。如果您改变主意，可以 **重新激活您的订阅** 以继续使用高级功能。"
+      ],
+      "Invite friends. Get credits.": [
+        "邀请朋友，获取积分。"
+      ],
+      "Refer friends": [
+        "推荐朋友"
+      ],
+      "Start earning credits": [
+        "开始赚取积分"
+      ],
+      "You can get up to **${ maxRewardAmount }** in credit.": [
+        "您最高可获得 **${ maxRewardAmount }** 积分！"
       ]
     },
     "Remove organization logo": {
@@ -16761,6 +17052,12 @@
       ],
       "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
         "您将失去无限次登录和笔记、无限次 hide-my-email 别名、20个保险库以及优先支持的特权。"
+      ],
+      "${ app } storage used": [
+        "${ app } 存储空间已使用"
+      ],
+      "Storage used": [
+        "已用存储空间"
       ]
     },
     "Subscribe to calendar modal": {
@@ -19034,6 +19331,21 @@
       ],
       "Your subscriptions": [
         "您的账户等级"
+      ],
+      "Claim your ${ MAIL_APP_NAME } address": [
+        "认领您的 ${ MAIL_APP_NAME } 地址"
+      ],
+      "Pause list": [
+        "暂停列表"
+      ],
+      "To preview this spreadsheet, download it.": [
+        "要预览此电子表格，请下载它"
+      ],
+      "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
+        "要预览此电子表格，请在 ${ SHEETS_APP_NAME } 中打开或下载它。"
+      ],
+      "Your ${ planTitle } subscription has started": [
+        "您的 ${ planTitle } 订阅已开始"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -19381,6 +19693,9 @@
       ],
       "Waiting for user to accept the invitation": [
         "等待用户接受邀请"
+      ],
+      "${ LUMO_APP_NAME }: AI assistant that respects your privacy": [
+        "${ LUMO_APP_NAME }：尊重您隐私的 AI 助手"
       ]
     },
     "Tooltip automatically attach public key": {
@@ -20265,6 +20580,104 @@
       ],
       "Yearly, ${ untilString }": [
         "每一年，${ untilString }"
+      ]
+    },
+    "Action: Sheets": {
+      "Open in ${ SHEETS_APP_NAME }": [
+        "在 ${ SHEETS_APP_NAME } 中打开"
+      ]
+    },
+    "collider_2025: Info": {
+      "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
+        "${ LUMO_APP_NAME } 是一款隐私优先的 AI，帮助您提高效率，同时保障数据安全。解锁其全部潜能，并享受新功能的早期访问权限。"
+      ],
+      "Add ${ LUMO_APP_NAME }": [
+        "添加 ${ LUMO_APP_NAME }"
+      ],
+      "Advanced account and network security in one plan": [
+        "高级账户与网络安全，合而为一"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "高速聊天和高级 AI 功能"
+      ],
+      "Private video calls for the conversations that matter.": [
+        "私密视频通话，用于重要的对话。"
+      ]
+    },
+    "customer_support.feature.meet": {
+      "For ${ MEET_APP_NAME }": [
+        "适用于 ${ MEET_APP_NAME }"
+      ]
+    },
+    "error": {
+      "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
+        "请使用已设置转发至 ${ MAIL_APP_NAME } 的 Gmail 地址登录"
+      ],
+      "Please sign in with the same Gmail address you originally connected": [
+        "请使用您最初连接时使用的相同 Gmail 地址登录"
+      ]
+    },
+    "meet_2025: Feature": {
+      "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
+        "${ MEET_APP_NAME }：用于重要对话的保密视频会议"
+      ],
+      "${ n } active meeting at a time": [
+        "同时进行 ${ n } 场活跃会议"
+      ],
+      "${ n } participant": [
+        "${ n } 位参与者"
+      ],
+      "24 hours per meeting": [
+        "每次会议最长 24 小时"
+      ],
+      "60 minutes per meeting": [
+        "每次会议最长 60 分钟"
+      ],
+      "Appointment scheduling": [
+        "预约安排"
+      ],
+      "Booking pages": [
+        "预约页面"
+      ],
+      "Browser, mobile, and desktop apps": [
+        "浏览器、移动端和桌面端应用"
+      ],
+      "Built-in chat": [
+        "内置聊天"
+      ],
+      "End-to-end encrypted screen sharing and ephemeral in-call chat": [
+        "端到端加密的屏幕共享和临时会议内聊天"
+      ],
+      "Meeting recording": [
+        "会议录制"
+      ],
+      "One active meeting at a time": [
+        "同时只能进行一场活跃会议"
+      ],
+      "Screen-sharing": [
+        "屏幕共享"
+      ],
+      "Unlimited meetings per day": [
+        "每日不限会议次数"
+      ],
+      "Up to ${ n } meeting per day": [
+        "每天最多 ${ n } 场会议"
+      ],
+      "Up to ${ n } participant": [
+        "最多 ${ n } 位参与者"
+      ]
+    },
+    "Payments.error": {
+      "Something went wrong. Google Pay verification failed.": [
+        "出错了，Google Pay 验证失败。"
+      ]
+    },
+    "Payments.info": {
+      "Credit for the unused portion of your previous plan subscription": [
+        "您先前套餐订阅未使用部分的抵扣金额"
+      ],
+      "Credits will be added to your balance": [
+        "积分将添加到您的账户余额"
       ]
     }
   }
