@@ -3591,6 +3591,9 @@
       "macOS": [
         "macOS"
       ],
+      "macOS 14 (Sonoma) or newer": [
+        "macOS 14 (Sonoma) o més recent"
+      ],
       "macOS Big Sur": [
         "macOS Big Sur"
       ],
@@ -3603,8 +3606,8 @@
       "macOS Monterey": [
         "macOS Monterey"
       ],
-      "macOS Ventura or later": [
-        "macOS Ventura o posterior"
+      "macOS Ventura": [
+        "macOS Ventura"
       ],
       "Mobile": [
         "Mòbil"
@@ -3620,9 +3623,6 @@
       ],
       "Windows 10/11 (x64)": [
         "Windows 10/11 (x64)"
-      ],
-      "Windows 8/8.1/7 or Windows 32-bit (ARM64)": [
-        "Windows 8/8.1/7 o Windows 32-bit (ARM64)"
       ]
     },
     "driveplus2024: Deal details": {
@@ -8241,6 +8241,9 @@
       "Your phone number will only be used for this one-time verification.": [
         "El vostre número de telèfon només s’utilitzarà per a aquesta única verificació."
       ],
+      "Your recent changes have been published. They will be visible to users in the next few hours.": [
+        "S'han publicat els vostres canvis recents. Seran visibles per als usuaris en les hores vinents."
+      ],
       "Your recovery phrase": [
         "La vostra frase de recuperació"
       ],
@@ -10338,8 +10341,8 @@
       "Password-protected Emails": [
         "Correus protegits amb contrasenya"
       ],
-      "Phone support (20+ users)": [
-        "Suport telefònic (a partir de 20 usuaris)"
+      "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
+        "Suport telefònic (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ usuaris)"
       ],
       "Priority email support": [
         "Suport prioritari per correu electrònic"
@@ -10824,8 +10827,8 @@
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Personalitzeu la vostra signatura de correu electrònic amb logos, imatges, icones de xarxes socials, enllaços als detalls de contacte, etc."
       ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
-        "L'Equip per a l'Èxit del Client de ${ BRAND_NAME } ofereix assistència telefònica durant l'horari laboral europeu per a clients amb almenys 20 usuaris."
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } or more users": [
+        "El servei d'atenció al client de ${ BRAND_NAME } ofereix assistència telefònica durant l'horari laboral europeu, per a clients amb ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } o més usuaris"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Evita que ${ BRAND_NAME } o tercers accedeixin als missatges. Les úniques persones que poden llegir els missatges són el remitent i el destinatari previst."
@@ -14477,9 +14480,6 @@
       ],
       "Catch-all address updated": [
         "S'ha actualitzat l'adreça d'arreplega"
-      ],
-      "Changes published. Your changes will be visible to all users in the next few hours.": [
-        "S'han publicat els canvis. Aquests seran visibles per a tots els usuaris en les pròximes hores."
       ],
       "Code sent to ${ methodTo }": [
         "Codi enviat a ${ methodTo }"

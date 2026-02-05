@@ -14,9 +14,6 @@
       "Add another account": [
         "Ajouter un autre compte"
       ],
-      "Agree and continue": [
-        "Accepter et continuer"
-      ],
       "Assign ${ selectedParticipantName } as host": [
         "Désigner ${ selectedParticipantName } comme hôte"
       ],
@@ -1748,8 +1745,8 @@
       "Internet connection lost": [
         "La connexion internet est perdue."
       ],
-      "Joined": [
-        "A rejoint"
+      "Joined ${ roomNameLabel }": [
+        "Vous avez rejoint ${ roomNameLabel }"
       ],
       "Learn more": [
         "En savoir plus"
@@ -1757,8 +1754,8 @@
       "Leaving will stop your screen sharing. Do you want to continue?": [
         "En quittant, vous mettrez fin au partage d'écran. Voulez-vous continuer ?"
       ],
-      "Left": [
-        "A quitté"
+      "Left ${ roomNameLabel }": [
+        "Vous avez quitté ${ roomNameLabel }"
       ],
       "Left by mistake?": [
         "Vous avez quitté par erreur ?"
@@ -2382,9 +2379,6 @@
       "Audio": [
         "Audio"
       ],
-      "Authenticator": [
-        "Authentificateur"
-      ],
       "Available Cameras": [
         "Caméras disponibles"
       ],
@@ -2454,11 +2448,11 @@
       "Meeting details": [
         "Information sur la réunion"
       ],
+      "Messaging Layer Security": [
+        "Messaging Layer Security"
+      ],
       "Minicalendar": [
         "Mini calendrier"
-      ],
-      "MLS state": [
-        "État MLS"
       ],
       "Participants": [
         "Participants"
@@ -2504,6 +2498,9 @@
       ],
       "Security": [
         "Sécurité"
+      ],
+      "Security code": [
+        "Code de sécurité"
       ],
       "Settings": [
         "Paramètres"

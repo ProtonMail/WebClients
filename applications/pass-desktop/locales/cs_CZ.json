@@ -1554,6 +1554,9 @@
       "A contact is created for every email address that sends emails to or receives emails from ${ aliasEmail }.": [
         "Pro každou e-mailovou adresu, která odesílá e-maily nebo přijímá e-maily z ${ aliasEmail }, je vytvořen kontakt."
       ],
+      "A new version is being downloaded. Once the download completes, it will be available on next restart.": [
+        "Nová verze se stahuje. Jakmile se stahování dokončí, bude dostupná při příštím restartu."
+      ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "Je dostupná nová verze aplikace ${ PASS_APP_NAME }. Aktualizací získáte nejnovější funkce a opravy chyb."
       ],
@@ -1790,6 +1793,9 @@
       ],
       "Emptying trash...": [
         "Vysypávání koše..."
+      ],
+      "Enable ${ PASS_SHORT_APP_NAME } beta": [
+        "Povolit ${ PASS_SHORT_APP_NAME } beta"
       ],
       "Enable auto-locking to secure your data": [
         "Povolte automatické zamykání pro ochranu vašich dat"
@@ -2032,10 +2038,7 @@
         "Přesouvání všech položek z \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Přesunutím položky do jiného trezoru se smažou její bezpečné odkazy.",
-        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy.",
-        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy.",
-        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy."
+        "Přesunutím položky do jiného trezoru se smažou její bezpečné odkazy."
       ],
       "Moving items": [
         "Přesouvání položek"
@@ -2063,6 +2066,9 @@
       ],
       "No network connection": [
         "Bez připojení k síti"
+      ],
+      "No new versions are available at the moment.": [
+        "V tuto chvíli nejsou k dispozici žádné nové verze."
       ],
       "None": [
         "Nic"
@@ -2457,6 +2463,12 @@
       "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
         "Tím zamítnete zařízení **${ name }**, které se **${ date }** pokusilo přihlásit k vašemu účtu ${ BRAND_NAME }."
       ],
+      "This will reload the application.": [
+        "Toto znovu načte aplikaci."
+      ],
+      "This will trigger a check for new beta releases.": [
+        "Tímto se spustí kontrola nových beta verzí."
+      ],
       "To keep receiving emails transfer these aliases to a different mailbox:": [
         "Chcete-li nadále přijímat e-maily, přeneste tyto aliasy do jiné e-mailové schránky:"
       ],
@@ -2471,6 +2483,9 @@
       ],
       "Trusted by over 50,000 business users and 100 million accounts around the world.": [
         "Důvěřa více než 50000 firemních uživatelů a 100 milionů účtů po celém světě."
+      ],
+      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public.": [
+        "Vyzkoušejte nové funkce, aktualizace a produkty ${ BRAND_NAME } dříve, než budou vydány pro veřejnost."
       ],
       "Unable to copy to clipboard": [
         "Nelze kopírovat do schránky"
@@ -2901,6 +2916,9 @@
       ],
       "Besides storing your logins, ${ PASS_APP_NAME } protects your identity with an integrated email alias feature. Whenever you sign up for a new online account, ${ PASS_APP_NAME } can automatically create an alias to keep your actual email address protected. ": [
         "Kromě ukládání přihlašovacích údajů chrání ${ PASS_APP_NAME } vaši identitu pomocí integrované funkce e-mailového aliasu. Při každé registraci nového online účtu, může ${ PASS_APP_NAME } automaticky vytvořit alias, aby vaše skutečná e-mailová adresa zůstala chráněná. "
+      ],
+      "Beta Access": [
+        "Beta přístup"
       ],
       "Biometrics": [
         "Biometrie"

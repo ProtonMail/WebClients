@@ -3812,6 +3812,9 @@
       "We were not able to load some of your shared items": [
         "Noen av dine delte elementer kunne ikke lastes inn"
       ],
+      "We were not able to load some search results": [
+        "Vi kunne ikke laste inn enkelte søkeresultater"
+      ],
       "We were not able to load the folder contents": [
         "Vi klarte ikke å laste innholdet i mappen"
       ],
@@ -5196,6 +5199,9 @@
       "Collaborate efficiently while protecting your client and business data from breaches, ransomware, and surveillance.": [
         "Samarbeid effektivt samtidig som du beskytter klient- og forretningsdataene dine mot datainnbrudd, løsepengevirus og overvåking."
       ],
+      "Computed hash does not match XAttr": [
+        "Beregnet hash stemmer ikke overens med XAttr"
+      ],
       "Conflict": [
         "Konflikt"
       ],
@@ -5245,9 +5251,6 @@
       ],
       "Create links and share your files with others.": [
         "Opprett koblinger og del filene dine med andre."
-      ],
-      "Create public link": [
-        "Opprett offentlig kobling"
       ],
       "Create your first folder and start moving your files.": [
         "Opprett din første mappe og begynn å flytte filene dine."
@@ -5841,9 +5844,6 @@
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Våre varsler prioriterer sikkerhet. Hvis du ikke gjenkjenner noe av informasjonen som er brutt, kan du trygt ignorere denne rapporten."
       ],
-      "Owner": [
-        "Eier"
-      ],
       "password": [
         "passord"
       ],
@@ -5858,9 +5858,6 @@
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Betalinger er beskyttet med TLS-kryptering og sveitsiske personvernlover."
-      ],
-      "People with access": [
-        "Personer med tilgang"
       ],
       "Permanently delete all files in your locked drive": [
         "Slett alle filer permanent i den låste stasjonen"
@@ -6351,6 +6348,9 @@
       "To fight spam and abuse, please verify you are human.": [
         "For å bekjempe søppelpost og misbruk må du bekrefte at du er et menneske."
       ],
+      "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it's still best to download files only from trusted sources. ": [
+        "For å beskytte deg kan ${ DRIVE_APP_NAME } skanne filene dine på en personvernbevarende måte og blokkere skadelige filer. Det er likevel best å laste ned filer kun fra klarerte kilder. "
+      ],
       "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it’s still best to download files only from trusted sources. ": [
         "For å beskytte deg kan ${ DRIVE_APP_NAME } skanne filene dine på en personvernbevarende måte og blokkere skadelige filer. Det er imidlertid fortsatt best å laste ned filer kun fra pålitelige kilder."
       ],
@@ -6732,9 +6732,6 @@
       "Your email address was exposed:": [
         "E-postadressen din ble eksponert:"
       ],
-      "Your email address will be visible as the link's owner on the share page": [
-        "E-postadressen din vil være synlig som koblingens eier på delingssiden"
-      ],
       "Your email will only be used for this one-time verification.": [
         "E-posten din vil kun bli brukt til denne engangsbekreftelsen."
       ],
@@ -6855,9 +6852,6 @@
       ]
     },
     "Into": {
-      "Can edit and manage access": [
-        "Kan redigere og administrere tilgang"
-      ],
       "Can view and edit": [
         "Kan se og redigere"
       ],
@@ -6963,9 +6957,6 @@
       "Address": [
         "Adresse"
       ],
-      "Admin": [
-        "Administrator"
-      ],
       "Alias title": [
         "Aliastittel"
       ],
@@ -6977,15 +6968,6 @@
       ],
       "Anonymous": [
         "Anonym"
-      ],
-      "Anyone on the Internet with the link can edit": [
-        "Alle på Internett med koblingen kan redigere"
-      ],
-      "Anyone on the Internet with the link can view": [
-        "Alle på Internett med koblingen kan se"
-      ],
-      "Anyone with the link": [
-        "Alle med koblingen"
       ],
       "App password": [
         "App-passord"
@@ -7176,9 +7158,6 @@
       ],
       "Enter device name": [
         "Skriv enhetsnavn"
-      ],
-      "Erase this link and remove everyone with access": [
-        "Slett denne koblingen og fjern alle med tilgang"
       ],
       "Expired": [
         "Utløpt"
@@ -8518,8 +8497,8 @@
       "Password-protected Emails": [
         "Passordbeskyttede e-poster"
       ],
-      "Phone support (20+ users)": [
-        "Telefonstøtte (20+ brukere)"
+      "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
+        "Telefonstøtte (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ brukere)"
       ],
       "Priority email support": [
         "Prioritert e-poststøtte"
@@ -8948,8 +8927,8 @@
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Tilpass e-postsignaturen din med logoer, bilder, ikoner for sosiale medier, koblinger til kontaktinformasjonen din og mer."
       ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
-        "Telefonstøtte er tilgjengelig fra ${ BRAND_NAME }-kundestøtteteamet i europeisk arbeidstid, for kunder med 20 eller flere brukere"
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } or more users": [
+        "Telefonstøtte er tilgjengelig fra kundestøtteteamet til ${ BRAND_NAME } i europeisk åpningstid for kunder med ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } eller flere brukere."
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Forhindrer at meldinger åpnes av ${ BRAND_NAME } eller tredjeparter. De eneste som kan lese meldingene, er avsenderen og den tiltenkte mottakeren."
@@ -11058,14 +11037,6 @@
         "Kansellerer abonnementet ditt, vent litt"
       ]
     },
-    "Status": {
-      "Accepted": [
-        "Akseptert"
-      ],
-      "Pending": [
-        "Venter"
-      ]
-    },
     "Storage": {
       "Get more storage": [
         "Få mer lagringskapasitet"
@@ -12270,9 +12241,9 @@
       "Folder details": [
         "Mappedetaljer"
       ],
-      "Found ${ searchView.numberOfResults } result": [
-        "Fant ${ searchView.numberOfResults } resultat",
-        "Fant ${ searchView.numberOfResults } resultater"
+      "Found ${ resultCount } result": [
+        "Fant ${ resultCount } resultat",
+        "Fant ${ resultCount } resultater"
       ],
       "Get ${ DRIVE_SHORT_APP_NAME } on your phone": [
         "Få ${ DRIVE_SHORT_APP_NAME } på telefonen din"
@@ -12866,6 +12837,9 @@
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Din gratis prøveperiode av ${ planName } slutter på ${ textDate }."
+      ],
+      "Your ${ planTitle } subscription has started": [
+        "Abonnementet ditt på ${ planTitle } har startet"
       ],
       "Your 3 GB bonus": [
         "Dine bonus 3 GB"

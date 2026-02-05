@@ -1791,6 +1791,9 @@
       "Emptying trash...": [
         "Ачышчэнне сметніцы..."
       ],
+      "Enable ${ PASS_SHORT_APP_NAME } beta": [
+        "Уключыць бэта-версію ${ PASS_SHORT_APP_NAME }"
+      ],
       "Enable auto-locking to secure your data": [
         "Уключыць аўтаматычную блакіроўку для бяспекі вашых даных"
       ],
@@ -2030,12 +2033,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Перамяшчэнне ўсіх элементаў з \"${ payload.content.name }\""
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Перамяшчэнне элемента ў іншае сховішча прывядзе да сцірання яго бяспечных спасылак",
-        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак.",
-        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак.",
-        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак."
       ],
       "Moving items": [
         "Перамяшчэнне элементаў"
@@ -2901,6 +2898,9 @@
       ],
       "Besides storing your logins, ${ PASS_APP_NAME } protects your identity with an integrated email alias feature. Whenever you sign up for a new online account, ${ PASS_APP_NAME } can automatically create an alias to keep your actual email address protected. ": [
         "${ PASS_APP_NAME } абараняе вашу ідэнтычнасць з дапамогай убудаванай функцыі псеўданіма электроннай пошты, а не толькі захоўвае вашы запісы ўваходу. Кожны раз, калі вы рэгіструеце новы ўліковы запіс у інтэрнэце, ${ PASS_APP_NAME } можа аўтаматычна ствараць псеўданім для захавання вашага сапраўднага адраса электроннай пошты ў абароненым стане. "
+      ],
+      "Beta Access": [
+        "Бэта-доступ"
       ],
       "Biometrics": [
         "Біяметрыя"

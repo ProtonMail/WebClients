@@ -3591,6 +3591,9 @@
       "macOS": [
         "macOS"
       ],
+      "macOS 14 (Sonoma) or newer": [
+        "macOS 14 (Sonoma) eller nyere"
+      ],
       "macOS Big Sur": [
         "macOS Big Sur"
       ],
@@ -3603,8 +3606,8 @@
       "macOS Monterey": [
         "macOS Monterey"
       ],
-      "macOS Ventura or later": [
-        "macOS Ventura eller nyere"
+      "macOS Ventura": [
+        "macOS Ventura"
       ],
       "Mobile": [
         "Mobil"
@@ -3620,9 +3623,6 @@
       ],
       "Windows 10/11 (x64)": [
         "Windows 10/11 (x64)"
-      ],
-      "Windows 8/8.1/7 or Windows 32-bit (ARM64)": [
-        "Windows 8/8.1/7 eller Windows 32-bit (ARM64)"
       ]
     },
     "driveplus2024: Deal details": {
@@ -8241,6 +8241,9 @@
       "Your phone number will only be used for this one-time verification.": [
         "Dit telefonnummer vil kun blive anvendt til denne engangsbekræftelse."
       ],
+      "Your recent changes have been published. They will be visible to users in the next few hours.": [
+        "Dine seneste ændringer er blevet publiceret. De vil være synlige for brugerne i løbet af de næste par timer."
+      ],
       "Your recovery phrase": [
         "Din gendannelsessætning"
       ],
@@ -10334,8 +10337,8 @@
       "Password-protected Emails": [
         "Adgangskodebeskyttede e-mails"
       ],
-      "Phone support (20+ users)": [
-        "Telefon-support (20+ brugere)"
+      "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
+        "Telefonsupport (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ brugere)"
       ],
       "Priority email support": [
         "Prioriteret e-mailsupport"
@@ -10816,8 +10819,8 @@
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Personliggør din e-mail-signatur med logoer, billeder, ikoner til sociale medier, links til dine kontaktoplysninger og meget mere."
       ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
-        "Telefonsupport er tilgængelig fra ${ BRAND_NAME } Kundesupport-team i europæisk åbningstid for kunder med 20 eller flere brugere"
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } or more users": [
+        "Telefonsupport er tilgængelig fra ${ BRAND_NAME } Kundesupport-team i den europæiske åbningstid for kunder med ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } eller flere brugere"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Forhindrer, at beskeder kan tilgås af ${ BRAND_NAME } eller tredjeparter. De eneste personer, der kan læse beskederne, er afsenderen og den tilsigtede modtager."
@@ -14463,9 +14466,6 @@
       ],
       "Catch-all address updated": [
         "Catch-all-adresse opdateret"
-      ],
-      "Changes published. Your changes will be visible to all users in the next few hours.": [
-        "Ændringer publiceret. Dine ændringer vil være synlige for alle brugere inden for de næste par timer."
       ],
       "Code sent to ${ methodTo }": [
         "Kode sendt til ${ methodTo }"

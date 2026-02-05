@@ -843,6 +843,9 @@
       "Manage Snooze": [
         "管理延遲"
       ],
+      "Manage users/addresses": [
+        "管理使用者/電子郵件地址"
+      ],
       "Mark as favorite": [
         "標記為最愛"
       ],
@@ -1461,6 +1464,9 @@
       "Toggle Contacts app": [
         "切換聯絡人應用程式"
       ],
+      "Toggle referral": [
+        "切換推薦"
+      ],
       "Toggle security center app": [
         "切換安全中心應用程式"
       ],
@@ -1475,6 +1481,9 @@
       ],
       "Trust": [
         "信任"
+      ],
+      "Trust key": [
+        "信任金鑰"
       ],
       "Trust public key": [
         "信任公開金鑰"
@@ -1941,6 +1950,9 @@
       "6 user accounts": [
         "6 位使用者帳號"
       ],
+      "Admin panel to manage your family": [
+        "管理員面板以管理您的家庭"
+      ],
       "Advanced account protection": [
         "進階的帳號保護"
       ],
@@ -1992,6 +2004,9 @@
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "透過端對端加密保護電子郵件及行事曆。包含 15 電子郵件地址、支援自訂電子郵件網域、無限hide-my-email別名及更多"
+      ],
+      "Storage space is shared across all ${ BRAND_NAME } services.": [
+        "儲存空間於全部的 ${ BRAND_NAME } 服務。"
       ]
     },
     "BF2025: Deal details": {
@@ -2541,6 +2556,9 @@
       ]
     },
     "collider_2025: feature": {
+      "Access to advanced AI models": [
+        "存取進階 AI 模型"
+      ],
       "Basic chat history": [
         "基本聊天記錄"
       ],
@@ -2590,6 +2608,9 @@
       ],
       "High-speed chats and advanced AI features.": [
         "高速聊天和先進的人工智慧功能。"
+      ],
+      "Private video calls for the conversations that matter.": [
+        "用於重要交談的私密視訊。"
       ]
     },
     "color": {
@@ -6392,19 +6413,19 @@
         "**自動連線**：在您開啟裝置時，即可開啟並連線至 VPN。"
       ],
       "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
-        "**第一步：**使用您的推薦連結邀請您的朋友加入 ${ BRAND_NAME }。"
+        "**第一步：**使用您的推薦連結邀請朋友加入 ${ BRAND_NAME }。"
       ],
       "**Step 2:** Your friends get 2 weeks for free on their chosen ${ BRAND_NAME } plan.": [
-        "**步驟 2 ** 您的朋友取得 ${ BRAND_NAME } 方案的 2 週免費。"
+        "**第二步：**您的朋友將取得 ${ BRAND_NAME } 方案的 2 週免費。"
       ],
       "**Step 2:** Your friends get 2 weeks for free on their plan.": [
-        "**步驟 2 ** 您的朋友取計畫外的 2 週免費。"
+        "**第二步：**您的朋友將取得該方案的 2 週免費。"
       ],
       "**Step 3:** Get ${ referrerRewardAmount } credits for every friend that subscribes to a plan.": [
         "**第三步：**每當有朋友訂閱方案時，您將獲得 ${ referrerRewardAmount } 額度。"
       ],
       "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
-        "**第三步：**每當有使者訂閱方案時，您將獲得 ${ referrerRewardAmount } 額度。"
+        "**第三步：**每當有使用者訂閱方案時，您將獲得 ${ referrerRewardAmount } 額度。"
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } 附贈的儲存空間"
@@ -6489,6 +6510,9 @@
       ],
       "All messages stored with this label will be permanently deleted.": [
         "使用此標籤儲存的所有訊息都將被永久刪除。"
+      ],
+      "All messages will be shown in Inbox, and the category tabs and tags will no longer be visible. ": [
+        "所有郵件將顯示在收件匣中，分類索引標籤和標記將不再顯示。 "
       ],
       "All your calendars are disabled.": [
         "您所有的行事曆停用中。"
@@ -7126,6 +7150,12 @@
       "Includes marketing emails like offers and product announcements.": [
         "包含行銷電子郵件，例如優惠和產品公告。"
       ],
+      "Includes news recaps and other non-promotional content. ": [
+        "包含新聞摘要和其他非促銷內容。 "
+      ],
+      "Includes updates from social networks and media-sharing sites.": [
+        "包含來自社群網路和媒體分享網站的更新。"
+      ],
       "Inherited from parent folder": [
         "繼承自上層資料夾"
       ],
@@ -7351,6 +7381,9 @@
       "No links cleaned": [
         "無需清理的連結"
       ],
+      "No messages found": [
+        "未找到郵件"
+      ],
       "No messages to show": [
         "沒有訊息可供顯示"
       ],
@@ -7383,6 +7416,9 @@
       ],
       "Number of dedicated servers in the organization": [
         "團隊專用的伺服器數量"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "團隊專用的 VPN 伺服器數量"
       ],
       "Numbers": [
         "數字"
@@ -7868,13 +7904,13 @@
         "此往來對話包含了排定傳送的郵件。此郵件的傳送將會被取消。"
       ],
       "This conversation contains non-trashed messages.": [
-        "這對話內容含有非拉圾訊息。"
+        "此往來對話群組包含非垃圾郵件。"
       ],
       "This conversation contains one or more expiring messages": [
         "此交談包含了一個或更多過期的訊息"
       ],
       "This conversation contains trashed messages.": [
-        "這對話內容含有拉圾訊息。"
+        "此往來對話群組包含已移至「垃圾桶」的郵件."
       ],
       "This conversation will be marked as spam. Would you also like to unsubscribe from future emails?": [
         "這些往來對話將標記為垃圾信件。請問您也想退訂日後相關的電郵嗎？"
@@ -7935,6 +7971,9 @@
       ],
       "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
         "此郵件將被移動至「草稿」，讓您可以繼續編輯。您必須重新安排寄送時間。"
+      ],
+      "This message will be purged today at ${ value }": [
+        "這封郵件將於今日的 ${ value } 清除"
       ],
       "This message will be purged tomorrow at ${ value }": [
         "此郵件將於明天 ${ value } 清除"
@@ -8238,6 +8277,9 @@
       ],
       "When you're traveling or using public WiFi, connect to ${ VPN_APP_NAME } to prevent anyone from tracking your online activity or stealing your data. It's free.": [
         "當您旅遊或使用公共無線網路，連接至${ VPN_APP_NAME }以避免其他人追蹤您連線活動或竊取資料。它是免費的。"
+      ],
+      "With new email categories, only important messages land in your primary inbox. Everything else is organized into categories.": [
+        "透過新的電子郵件分類，只有重要郵件會進入您的主要收件匣。其它訊息將被整理到不同的類別中。"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "您想要接收新的驗證碼，還是更換驗證方式？"
@@ -9104,6 +9146,9 @@
       "Go to Forums": [
         "前往論壇"
       ],
+      "Go to Newsletters": [
+        "前往電子報"
+      ],
       "Go to Primary": [
         "到主要"
       ],
@@ -9310,6 +9355,9 @@
       ],
       "Password hint": [
         "密碼提示"
+      ],
+      "Password strength": [
+        "密碼強度"
       ],
       "Payer": [
         "付款人"
@@ -10030,6 +10078,9 @@
       "Built-in chat": [
         "內建聊天"
       ],
+      "Meeting recording": [
+        "會議錄影"
+      ],
       "One active meeting at a time": [
         "單次單個會議進行"
       ],
@@ -10576,9 +10627,6 @@
       "Password-protected Emails": [
         "密碼 - 安全防護的電子郵件"
       ],
-      "Phone support (20+ users)": [
-        "電話支援 (20+ 使用者)"
-      ],
       "Priority email support": [
         "優先電子郵件支援"
       ],
@@ -10985,9 +11033,6 @@
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "以標誌、影像、社交媒體圖示、您的聯絡詳情連結等等，個人化您的電子郵件簽名檔"
       ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
-        "${ BRAND_NAME } 客戶服務團隊於歐洲辦公時間內，為 20 位或以上使用者的客戶提供電話支援"
-      ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "防止郵件被 ${ BRAND_NAME } 或第三方存取。能夠讀取郵件的人，就只有寄件者和意指的收件者。"
       ],
@@ -11311,6 +11356,9 @@
       ],
       "Storage": [
         "雲端儲存"
+      ],
+      "Ultrafast VPN servers in 110+ countries": [
+        "在110 多個國家提供極速 VPN 伺服器"
       ]
     },
     "Onboarding List Placeholder": {
@@ -11815,6 +11863,9 @@
       ],
       "Your payment is still being processed": [
         "您的付款仍在處理中"
+      ],
+      "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
+        "您的訂閱已套用現有折扣。若轉換至新的促銷方案，現有折扣將不再套用。"
       ]
     },
     "Payments.Error": {
@@ -14984,6 +15035,9 @@
       "Your ${ planName } free trial ends on ${ textDate }": [
         "您的 ${ planName } 免費方案將於 ${ textDate } 結束"
       ],
+      "Your ${ planTitle } subscription has started": [
+        "您的 ${ planTitle } 訂閱已開始"
+      ],
       "Your account is protected": [
         "你的帳號已被保護"
       ],
@@ -14995,6 +15049,9 @@
       ],
       "Your free trial has ended": [
         "您的免費試用已結束"
+      ],
+      "Your newsletters in one place": [
+        "您的電子報集中在一處"
       ],
       "Your plan": [
         "您的方案"

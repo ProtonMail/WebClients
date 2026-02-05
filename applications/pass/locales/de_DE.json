@@ -1437,6 +1437,9 @@
       "A contact is created for every email address that sends emails to or receives emails from ${ aliasEmail }.": [
         "Für jede E-Mail-Adresse, die E-Mails an ${ aliasEmail } sendet oder von dieser Adresse empfängt, wird ein Kontakt erstellt."
       ],
+      "A new version is being downloaded. Once the download completes, it will be available on next restart.": [
+        "Ein neues Update wird heruntergeladen. Sobald der Download abgeschlossen ist, ist es beim nächsten Neustart verfügbar."
+      ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "Eine neue Version von ${ PASS_APP_NAME } ist verfügbar. Aktualisiere sie, um die neuesten Funktionen und Fehlerbehebungen zu genießen."
       ],
@@ -1903,10 +1906,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Verschiebe alle Einträge von \"${ payload.content.name }\""
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Beim Verschieben eines Eintrags in einen anderen Tresor, werden seine sicheren Verknüpfungen gelöscht.",
-        "Beim Verschieben von Einträgen in einen anderen Tresor, werden ihre sicheren Verknüpfungen gelöscht."
-      ],
       "Moving items": [
         "Einträge verschieben"
       ],
@@ -1930,6 +1929,9 @@
       ],
       "No network connection": [
         "Keine Netzwerkverbindung"
+      ],
+      "No new versions are available at the moment.": [
+        "Im Moment sind keine neuen Versionen verfügbar."
       ],
       "None": [
         "Keine Sperre"
@@ -2317,6 +2319,12 @@
       "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
         "Dadurch wird das Gerät **${ name }**, das versuchte, sich am **${ date }** bei deinem ${ BRAND_NAME }-Konto anzumelden, abgelehnt."
       ],
+      "This will reload the application.": [
+        "Dies lädt die Anwendung neu."
+      ],
+      "This will trigger a check for new beta releases.": [
+        "Dies löst eine Prüfung auf neue Beta-Releases aus."
+      ],
       "To keep receiving emails transfer these aliases to a different mailbox:": [
         "Um weiterhin E-Mails zu empfangen, übertrage diese Aliase auf ein anderes E-Mail-Postfach:"
       ],
@@ -2332,8 +2340,8 @@
       "Trusted by over 50,000 business users and 100 million accounts around the world.": [
         "Vertrauenswürdig für über 50'000 Geschäftsbenutzern und 100 Millionen Konten weltweit."
       ],
-      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
-        "Teste neue Funktionen, Updates und Produkte von ${ BRAND_NAME }, bevor sie für die Öffentlichkeit freigegeben werden. Dadurch wird die Seite neu geladen."
+      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public.": [
+        "Teste neue Funktionen, Updates und Produkte von ${ BRAND_NAME }, bevor sie für die Öffentlichkeit freigegeben werden."
       ],
       "Unable to copy to clipboard": [
         "Kopieren in die Zwischenablage nicht möglich"

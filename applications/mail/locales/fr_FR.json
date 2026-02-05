@@ -1502,7 +1502,8 @@
         "Faire confiance"
       ],
       "Trust key": [
-        "Clé de confiance"
+        "Clé de confiance",
+        "Clés de confiance"
       ],
       "Trust public key": [
         "Approuver la clé publique"
@@ -4914,6 +4915,9 @@
       "Thanks for the feedback!": [
         "Merci pour les commentaires."
       ],
+      "That action can't be performed on emails in this folder": [
+        "Cette action ne peut pas être effectuée sur les messages de ce dossier"
+      ],
       "The amount due has changed. Please try again.": [
         "Le montant a changé. Nous vous invitons à réessayer."
       ],
@@ -7628,6 +7632,9 @@
       ],
       "No links cleaned": [
         "Aucun lien n'a été nettoyé."
+      ],
+      "No messages found": [
+        "Aucun message trouvé"
       ],
       "No messages to show": [
         "Aucun message à afficher"
@@ -10998,8 +11005,8 @@
       "Password-protected Emails": [
         "Messages protégés par mot de passe"
       ],
-      "Phone support (20+ users)": [
-        "Assistance téléphonique (compte pour 20 utilisateurs ou plus)"
+      "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
+        "Support téléphonique (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ utilisateurs)"
       ],
       "Priority email support": [
         "Assistance prioritaire par e-mail"
@@ -11433,8 +11440,8 @@
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Personnalisez votre signature d'e-mail avec des logos, images, icônes de réseaux sociaux, liens vers vos coordonnées…"
       ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
-        "Un support téléphonique est disponible auprès de l'équipe service client ${ BRAND_NAME } aux heures de bureau européennes, pour les clients ayant 20 utilisateurs ou plus."
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } or more users": [
+        "Un support téléphonique est disponible auprès de l'équipe service client ${ BRAND_NAME } aux heures de bureau européennes, pour les clients ayant ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } utilisateurs ou plus."
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Empêche l'accès aux messages par ${ BRAND_NAME } ou par des tiers, les seules personnes pouvant lire les messages étant l'expéditeur et le destinataire."

@@ -4880,6 +4880,9 @@
       "Thanks for the feedback!": [
         "의견을 주셔서 감사합니다!"
       ],
+      "That action can't be performed on emails in this folder": [
+        "이 폴더의 이메일에는 해당 작업을 수행할 수 없습니다."
+      ],
       "The amount due has changed. Please try again.": [
         "결제 예정 가격이 변경되었습니다. 다시 시도해 주세요."
       ],
@@ -7507,6 +7510,9 @@
       ],
       "No links cleaned": [
         "정리된 링크가 없음"
+      ],
+      "No messages found": [
+        "메시지를 찾을 수 없음"
       ],
       "No messages to show": [
         "표시할 매시지 없음"
@@ -10817,8 +10823,8 @@
       "Password-protected Emails": [
         "비밀번호로 보호된 이메일"
       ],
-      "Phone support (20+ users)": [
-        "휴대 전화 지원 (20명 이상 사용자)"
+      "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
+        "전화 지원 (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }명 이상 사용자)"
       ],
       "Priority email support": [
         "이메일 우선 지원"
@@ -11244,8 +11250,8 @@
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "로고, 이미지, 소셜 미디어 아이콘, 연락처 링크 등으로 이메일 서명을 개인화하세요."
       ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
-        "전화 지원은 20명 이상의 사용자가 있는 고객을 위해 유럽 업무 시간 동안 ${ BRAND_NAME } 고객 성공 팀에서 이용할 수 있습니다."
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } or more users": [
+        "전화 지원은 유럽 표준시 업무 시간 동안 ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }명 이상의 사용자가 있는 고객을 대상으로 ${ BRAND_NAME } 고객 지원팀에서 이용할 수 있습니다."
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "${ BRAND_NAME } 또는 제3자가 메시지에 접근하는 것을 방지합니다. 메시지를 읽을 수 있는 유일한 사람은 당신과 이메일을 받은 수신자 뿐이죠."
@@ -15394,6 +15400,9 @@
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "사용자의 ${ planName } 무료 체험이 ${ textDate }에 종료됩니다."
+      ],
+      "Your ${ planTitle } subscription has started": [
+        "${ planTitle } 구독이 시작되었습니다"
       ],
       "Your account is protected": [
         "계정이 보호됩니다."

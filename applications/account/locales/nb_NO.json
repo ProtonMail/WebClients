@@ -5047,6 +5047,9 @@
       "macOS": [
         "macOS"
       ],
+      "macOS 14 (Sonoma) or newer": [
+        "macOS 14 (Sonoma) eller nyere"
+      ],
       "macOS Big Sur": [
         "macOS Big Sur"
       ],
@@ -5059,8 +5062,8 @@
       "macOS Monterey": [
         "macOS Monterey"
       ],
-      "macOS Ventura or later": [
-        "macOS Ventura eller senere"
+      "macOS Ventura": [
+        "macOS Ventura"
       ],
       "Mail": [
         "E-post"
@@ -5091,9 +5094,6 @@
       ],
       "Windows 10/11 (x64)": [
         "Windows 10/11 (x64)"
-      ],
-      "Windows 8/8.1/7 or Windows 32-bit (ARM64)": [
-        "Windows 8/8.1/7 eller Windows 32-bit (ARM64)"
       ]
     },
     "Download link": {
@@ -6848,6 +6848,9 @@
       ]
     },
     "Error message": {
+      "Account is deleted or disabled": [
+        "Kontoen er slettet eller deaktivert"
+      ],
       "App currently unavailable": [
         "App er for øyeblikket utilgjengelig"
       ],
@@ -15310,8 +15313,8 @@
       "Password-protected Emails": [
         "Passordbeskyttede e-poster"
       ],
-      "Phone support (20+ users)": [
-        "Telefonstøtte (20+ brukere)"
+      "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
+        "Telefonstøtte (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ brukere)"
       ],
       "Priority email support": [
         "Prioritert e-poststøtte"
@@ -15820,8 +15823,8 @@
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Tilpass e-postsignaturen din med logoer, bilder, ikoner for sosiale medier, koblinger til kontaktinformasjonen din og mer."
       ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
-        "Telefonstøtte er tilgjengelig fra ${ BRAND_NAME }-kundestøtteteamet i europeisk arbeidstid, for kunder med 20 eller flere brukere"
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } or more users": [
+        "Telefonstøtte er tilgjengelig fra kundestøtteteamet til ${ BRAND_NAME } i europeisk åpningstid for kunder med ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } eller flere brukere."
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Forhindrer at meldinger åpnes av ${ BRAND_NAME } eller tredjeparter. De eneste som kan lese meldingene, er avsenderen og den tiltenkte mottakeren."
@@ -21292,9 +21295,6 @@
       "Catch-all address updated": [
         "Catch-all-adresse oppdatert"
       ],
-      "Changes published. Your changes will be visible to all users in the next few hours.": [
-        "Endringer publisert. Endringene dine vil være synlige for alle brukere i løpet av de neste timene."
-      ],
       "Code sent to ${ methodTo }": [
         "Kode sendt til ${ methodTo }"
       ],
@@ -21680,11 +21680,29 @@
       ]
     },
     "Theme": {
+      "Auto": [
+        "Auto"
+      ],
       "Dark": [
         "Mørk"
       ],
       "Light": [
         "Lys"
+      ],
+      "Mode: Auto": [
+        "Modus: auto"
+      ],
+      "Mode: Dark": [
+        "Modus: mørk"
+      ],
+      "Mode: Light": [
+        "Modus: lys"
+      ],
+      "Sync with system": [
+        "Synkroniser med system"
+      ],
+      "Use ${ BRAND_NAME } settings": [
+        "Bruk ${ BRAND_NAME }-innstillinger"
       ]
     },
     "Time unit": {
@@ -23330,6 +23348,9 @@
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Din gratis prøveperiode av ${ planName } slutter på ${ textDate }."
+      ],
+      "Your ${ planTitle } subscription has started": [
+        "Abonnementet ditt på ${ planTitle } har startet"
       ],
       "Your calendar link": [
         "Din kalenderkobling"

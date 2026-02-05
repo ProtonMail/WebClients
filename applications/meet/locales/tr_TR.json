@@ -14,9 +14,6 @@
       "Add another account": [
         "Başka bir hesap ekle"
       ],
-      "Agree and continue": [
-        "Kabul et ve ilerle"
-      ],
       "Assign ${ selectedParticipantName } as host": [
         "${ selectedParticipantName } katılımcısını görüşme sahibi olarak ata"
       ],
@@ -1748,8 +1745,8 @@
       "Internet connection lost": [
         "İnternet bağlantısı kesildi"
       ],
-      "Joined": [
-        "Katıldı"
+      "Joined ${ roomNameLabel }": [
+        "${ roomNameLabel } odasına katılındı"
       ],
       "Learn more": [
         "Ayrıntılı bilgi alın"
@@ -1757,8 +1754,8 @@
       "Leaving will stop your screen sharing. Do you want to continue?": [
         "Ayrılmanız ekran paylaşımınızı durduraca. İlerlemek istiyor musunuz?"
       ],
-      "Left": [
-        "Ayrıldı"
+      "Left ${ roomNameLabel }": [
+        "${ roomNameLabel } odasından ayrıl"
       ],
       "Left by mistake?": [
         "Yanlışlıkla mı ayrıldınız?"
@@ -2382,9 +2379,6 @@
       "Audio": [
         "Ses"
       ],
-      "Authenticator": [
-        "Kimlik doğrulayıcı"
-      ],
       "Available Cameras": [
         "Kullanılabilecek kameralar"
       ],
@@ -2454,11 +2448,11 @@
       "Meeting details": [
         "Görüşme ayrıntıları"
       ],
+      "Messaging Layer Security": [
+        "Mesajlaşma Katmanı Güvenliği"
+      ],
       "Minicalendar": [
         "Mini takvim"
-      ],
-      "MLS state": [
-        "MLS durumu"
       ],
       "Participants": [
         "Katılımcılar"
@@ -2504,6 +2498,9 @@
       ],
       "Security": [
         "Güvenlik"
+      ],
+      "Security code": [
+        "Güvenlik kodu"
       ],
       "Settings": [
         "Ayarlar"

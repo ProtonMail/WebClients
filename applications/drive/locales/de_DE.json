@@ -977,6 +977,9 @@
       "Set as cover": [
         "Als Titelbild festlegen"
       ],
+      "Set password or expiration date": [
+        "Passwort oder Ablaufdatum festlegen"
+      ],
       "Set recovery methods": [
         "Wiederherstellungsmethoden festlegen"
       ],
@@ -1012,6 +1015,9 @@
       ],
       "Share your calendar with your team": [
         "Teile deinen Kalender mit deinem Team"
+      ],
+      "Sharing is end-to-end encrypted": [
+        "Die Freigabe ist Ende-zu-Ende-verschlüsselt"
       ],
       "Sharing options": [
         "Freigabeoptionen"
@@ -3806,6 +3812,9 @@
       "We were not able to load some of your shared items": [
         "Wir konnten einige deiner geteilten Einträge nicht laden."
       ],
+      "We were not able to load some search results": [
+        "Einige Suchergebnisse konnten nicht geladen werden."
+      ],
       "We were not able to load the folder contents": [
         "Der Ordnerinhalt konnte nicht geladen werden"
       ],
@@ -5243,9 +5252,6 @@
       "Create links and share your files with others.": [
         "Links erstellen und deine Dateien mit anderen teilen."
       ],
-      "Create public link": [
-        "Öffentlichen Link erstellen"
-      ],
       "Create your first folder and start moving your files.": [
         "Erstelle deinen ersten Ordner und beginne mit dem Verschieben deiner Dateien."
       ],
@@ -5663,6 +5669,9 @@
       "Learn what to do ${ dataLeakedLink }": [
         "Erfahre, was zu tun ist ${ dataLeakedLink }"
       ],
+      "Link copied": [
+        "Link kopiert"
+      ],
       "Link copied to clipboard": [
         "Link in die Zwischenablage kopiert"
       ],
@@ -5838,7 +5847,7 @@
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Bei unseren Warnungen steht die Sicherheit im Vordergrund. Wenn du keine der gefährdeten Informationen erkennst, kannst du diesen Bericht getrost ignorieren."
       ],
-      "Owner": [
+      "owner": [
         "Besitzer"
       ],
       "password": [
@@ -5855,9 +5864,6 @@
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Zahlungen sind durch TLS-Verschlüsselung und Schweizer Datenschutzgesetze geschützt."
-      ],
-      "People with access": [
-        "Personen mit Zugriff"
       ],
       "Permanently delete all files in your locked drive": [
         "Alle Dateien auf dem gesperrten Laufwerk dauerhaft löschen"
@@ -6348,6 +6354,9 @@
       "To fight spam and abuse, please verify you are human.": [
         "Bitte beweise, dass du ein Mensch bist, um Spam und Missbrauch zu vermeiden."
       ],
+      "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it's still best to download files only from trusted sources. ": [
+        "Um dich zu schützen, kann ${ DRIVE_APP_NAME } deine Dateien datenschutzfreundlich scannen und bösartige Dateien blockieren. Es ist trotzdem am besten, Dateien nur aus vertrauenswürdigen Quellen herunterzuladen. "
+      ],
       "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it’s still best to download files only from trusted sources. ": [
         "Um dich zu schützen, kann ${ DRIVE_APP_NAME } deine Dateien unter Wahrung deiner Privatsphäre scannen und bösartige Dateien blockieren. Es ist jedoch immer noch am besten, Dateien nur von vertrauenswürdigen Quellen herunterzuladen."
       ],
@@ -6564,6 +6573,9 @@
       "who": [
         "Wer"
       ],
+      "Who has access": [
+        "Wer hat Zugriff"
+      ],
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
         "wird auf die Version vom ${ formattedRevisionDate } wiederhergestellt. Alle anderen Versionen bleiben erhalten."
       ],
@@ -6729,9 +6741,6 @@
       "Your email address was exposed:": [
         "Ihre E-Mail-Adresse wurde offengelegt:"
       ],
-      "Your email address will be visible as the link's owner on the share page": [
-        "Deine E-Mail-Adresse wird auf der Teilen-Seite als Besitzer des Links angezeigt."
-      ],
       "Your email will only be used for this one-time verification.": [
         "Deine E-Mail-Adresse wird nur für diese einmalige Überprüfung verwendet."
       ],
@@ -6852,9 +6861,6 @@
       ]
     },
     "Into": {
-      "Can edit and manage access": [
-        "Kann bearbeiten und Zugriff verwalten"
-      ],
       "Can view and edit": [
         "Kann anzeigen und bearbeiten"
       ],
@@ -6948,6 +6954,9 @@
       "Account holder": [
         "Kontoinhaber"
       ],
+      "Active": [
+        "Aktiv"
+      ],
       "Add email address": [
         "E-Mail-Adresse hinzufügen"
       ],
@@ -6960,7 +6969,7 @@
       "Address": [
         "Anschrift"
       ],
-      "Admin": [
+      "admin": [
         "Administrator"
       ],
       "Alias title": [
@@ -6975,14 +6984,8 @@
       "Anonymous": [
         "Anonym"
       ],
-      "Anyone on the Internet with the link can edit": [
-        "Jeder mit dem Link kann bearbeiten"
-      ],
-      "Anyone on the Internet with the link can view": [
-        "Für jeden im Internet mit diesem Link sichtbar"
-      ],
-      "Anyone with the link": [
-        "Jeder mit dem Link"
+      "Anyone on the Internet with the link": [
+        "Jeder im Internet mit dem Link"
       ],
       "App password": [
         "App-Passwort"
@@ -7028,6 +7031,12 @@
       ],
       "Calendars": [
         "Kalender"
+      ],
+      "can edit": [
+        "Kann bearbeiten"
+      ],
+      "can view": [
+        "Kann anzeigen"
       ],
       "Cancel download": [
         "Download abbrechen"
@@ -7111,6 +7120,9 @@
         "Laufwerk löschen?",
         "Laufwerke löschen?"
       ],
+      "Delete link and remove access for everyone": [
+        "Link löschen und Zugriff für alle entfernen"
+      ],
       "Delete recovery-related information.": [
         "Wiederherstellungsbezogene Informationen löschen."
       ],
@@ -7173,9 +7185,6 @@
       ],
       "Enter device name": [
         "Gerätename eingeben"
-      ],
-      "Erase this link and remove everyone with access": [
-        "Diesen Link löschen und jeden mit Zugriff entfernen"
       ],
       "Expired": [
         "Abgelaufen"
@@ -7314,6 +7323,9 @@
       ],
       "New password": [
         "Neues Passwort"
+      ],
+      "Not active": [
+        "Nicht aktiv"
       ],
       "Note": [
         "Notiz"
@@ -8515,8 +8527,8 @@
       "Password-protected Emails": [
         "Passwortgeschützte E-Mails"
       ],
-      "Phone support (20+ users)": [
-        "Telefonischer Support (ab 20 Benutzern)"
+      "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
+        "Telefonsupport (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } oder mehr Benutzer)"
       ],
       "Priority email support": [
         "Priorisierter E-Mail-Support"
@@ -8945,8 +8957,8 @@
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Gestalte deine E-Mail-Signatur individuell mit Logos, Bildern, Symbolen sozialer Netzwerke, Links zu deinen Kontaktdaten und mehr."
       ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
-        "Telefonische Unterstützung ist durch das ${ BRAND_NAME }-Kundenbetreuungsteam während der europäischen Geschäftszeiten für Kunden mit 20 oder mehr Benutzern verfügbar."
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } or more users": [
+        "Telefonischer Support ist durch das ${ BRAND_NAME }-Kundensupport-Team während der europäischen Geschäftszeiten für Kunden mit ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } oder mehr Benutzern verfügbar."
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Verhindert den Zugriff auf Nachrichten durch ${ BRAND_NAME } oder Dritte. Die Einzigen, die die Nachrichten lesen können, sind der Absender und der gewünschte Empfänger."
@@ -11056,10 +11068,10 @@
       ]
     },
     "Status": {
-      "Accepted": [
-        "Angenommen"
+      "accepted": [
+        "Akzeptiert"
       ],
-      "Pending": [
+      "pending": [
         "Ausstehend"
       ]
     },
@@ -12267,9 +12279,9 @@
       "Folder details": [
         "Ordnerdetails"
       ],
-      "Found ${ searchView.numberOfResults } result": [
-        "${ searchView.numberOfResults } Ergebnis gefunden",
-        "${ searchView.numberOfResults } Ergebnisse gefunden"
+      "Found ${ resultCount } result": [
+        "${ resultCount } Ergebnis gefunden",
+        "${ resultCount } Ergebnisse gefunden"
       ],
       "Get ${ DRIVE_SHORT_APP_NAME } on your phone": [
         "${ DRIVE_SHORT_APP_NAME } auf dein Smartphone holen"
@@ -12536,6 +12548,12 @@
       "Processing...": [
         "Wird verarbeitet..."
       ],
+      "Public link": [
+        "Öffentlicher Link"
+      ],
+      "Public link settings": [
+        "Einstellungen für öffentliche Links"
+      ],
       "Public shared link status": [
         "Status des öffentlichen Links"
       ],
@@ -12626,6 +12644,9 @@
       ],
       "Settings": [
         "Einstellungen"
+      ],
+      "Settings for ${ sharedFileName }": [
+        "Einstellungen für ${ sharedFileName }"
       ],
       "SHA1": [
         "SHA1"

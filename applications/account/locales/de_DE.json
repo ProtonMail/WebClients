@@ -5047,6 +5047,9 @@
       "macOS": [
         "macOS"
       ],
+      "macOS 14 (Sonoma) or newer": [
+        "macOS 14 (Sonoma) oder neuer"
+      ],
       "macOS Big Sur": [
         "macOS Big Sur"
       ],
@@ -5059,8 +5062,8 @@
       "macOS Monterey": [
         "macOS Monterey"
       ],
-      "macOS Ventura or later": [
-        "macOS Ventura oder neuer"
+      "macOS Ventura": [
+        "macOS Ventura"
       ],
       "Mail": [
         "E-Mail"
@@ -5091,9 +5094,6 @@
       ],
       "Windows 10/11 (x64)": [
         "Windows 10/11 (x64)"
-      ],
-      "Windows 8/8.1/7 or Windows 32-bit (ARM64)": [
-        "Windows 8/8.1/7 oder Windows 32-bit (ARM64)"
       ]
     },
     "Download link": {
@@ -11791,6 +11791,9 @@
       "Your plan is limited to 10 versions for up to 7 days": [
         "Dein Abonnement ist auf 10 Versionen für bis zu 7 Tage begrenzt."
       ],
+      "Your recent changes have been published. They will be visible to users in the next few hours.": [
+        "Deine letzten Änderungen wurden veröffentlicht. Sie sind in den nächsten Stunden für Benutzer sichtbar."
+      ],
       "Your recovery phrase": [
         "Deine Wiederherstellungsphrase"
       ],
@@ -15313,8 +15316,8 @@
       "Password-protected Emails": [
         "Passwortgeschützte E-Mails"
       ],
-      "Phone support (20+ users)": [
-        "Telefonischer Support (ab 20 Benutzern)"
+      "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
+        "Telefonsupport (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } oder mehr Benutzer)"
       ],
       "Priority email support": [
         "Priorisierter E-Mail-Support"
@@ -15823,8 +15826,8 @@
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Gestalte deine E-Mail-Signatur individuell mit Logos, Bildern, Symbolen sozialer Netzwerke, Links zu deinen Kontaktdaten und mehr."
       ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
-        "Telefonische Unterstützung ist durch das ${ BRAND_NAME }-Kundenbetreuungsteam während der europäischen Geschäftszeiten für Kunden mit 20 oder mehr Benutzern verfügbar."
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } or more users": [
+        "Telefonischer Support ist durch das ${ BRAND_NAME }-Kundensupport-Team während der europäischen Geschäftszeiten für Kunden mit ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } oder mehr Benutzern verfügbar."
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Verhindert den Zugriff auf Nachrichten durch ${ BRAND_NAME } oder Dritte. Die Einzigen, die die Nachrichten lesen können, sind der Absender und der gewünschte Empfänger."
@@ -21294,9 +21297,6 @@
       ],
       "Catch-all address updated": [
         "Catch-all-Weiterleitungsadresse aktualisiert"
-      ],
-      "Changes published. Your changes will be visible to all users in the next few hours.": [
-        "Änderungen veröffentlicht. Deine Änderungen werden in den nächsten Stunden für alle Benutzer sichtbar sein."
       ],
       "Code sent to ${ methodTo }": [
         "Code gesendet an ${ methodTo }"

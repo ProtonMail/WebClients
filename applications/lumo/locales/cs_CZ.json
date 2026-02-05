@@ -1608,6 +1608,65 @@
         "Vaše informace jsou šifrovány s nulovým přístupem"
       ]
     },
+    "collider_2025: Invite": {
+      "Email address is not valid": [
+        "E-mailová adresa je neplatná"
+      ],
+      "Email address is required": [
+        "Je vyžadována e-mailová adresa"
+      ]
+    },
+    "collider_2025: Invite Button": {
+      "Close": [
+        "Zavřít"
+      ],
+      "Invite friends": [
+        "Pozvat přátele"
+      ],
+      "Maybe later": [
+        "Možná později"
+      ],
+      "Send invitation": [
+        "Odeslat pozvánku"
+      ]
+    },
+    "collider_2025: Invite Email Placeholder": {
+      "Your friend's email": [
+        "E-mail vašeho přítele"
+      ]
+    },
+    "collider_2025: Invite Info": {
+      "Know someone who'd benefit from a privacy-first AI? Invite them to join the ${ LUMO_SHORT_APP_NAME } waitlist. You have ${ remainingInvitesText } invitations remaining.": [
+        "Znáte někoho, kdo by ocenil AI chránící soukromí? Pozvěte je na pořadník ${ LUMO_SHORT_APP_NAME }. Zbývá vám ještě ${ remainingInvitesText } pozvánek."
+      ],
+      "You have ${ remainingInvitesText } invitations remaining.": [
+        "Zbývá vám ${ remainingInvitesText } pozvánek."
+      ]
+    },
+    "collider_2025: Invite Sent": {
+      "Invitation sent": [
+        "Pozvánka odeslána"
+      ]
+    },
+    "collider_2025: Invite Success": {
+      "Invite sent!": [
+        "Pozvánka odeslána!"
+      ],
+      "No invites left  ": [
+        "Použili jste všechny pozvánky  "
+      ],
+      "Thanks for helping others discover ${ LUMO_SHORT_APP_NAME }! If more invites become available, we’ll let you know.": [
+        "Děkujeme, že pomáháte ostatním objevit ${ LUMO_SHORT_APP_NAME }! Pokud budou k dispozici další pozvánky, dáme vám vědět."
+      ],
+      "We've invited ${ emailText }. They'll get instructions on how to join the waitlist.": [
+        "Pozvali jsme ${ emailText }. Dostanou informace, jak se přidat na pořadník."
+      ]
+    },
+    "collider_2025: Invite Title": {
+      "Invite friends to experience ${ LUMO_APP_NAME }": [
+        "Pozvěte přátele, aby vyzkoušeli ${ LUMO_APP_NAME }"
+      ]
+    },
     "collider_2025: Job": {
       "Cat herder": [
         "Chovatelka koček"
@@ -2246,6 +2305,9 @@
       "Cannot link the root folder. Please select a subfolder.": [
         "Nelze propojit kořenovou složku. Vyberte podsložku."
       ],
+      "Database connection lost. Please refresh the page to continue.": [
+        "Připojení k databázi bylo ztraceno. Obnovte stránku pro pokračování."
+      ],
       "Error processing file: ${ file.name }": [
         "Chyba při zpracování souboru: ${ file.name }"
       ],
@@ -2653,6 +2715,9 @@
     "collider_2025:Success": {
       "All files removed from project": [
         "Všechny soubory odebrány z projektu"
+      ],
+      "Database connection restored.": [
+        "Připojení k databázi obnoveno."
       ],
       "Drive folder linked successfully": [
         "Složka Drive byla úspěšně propojena"
@@ -5162,6 +5227,11 @@
         "Co je to?"
       ]
     },
+    "Loading": {
+      "Loading ${ LUMO_APP_NAME }": [
+        "Načítání ${ LUMO_APP_NAME }"
+      ]
+    },
     "lumo: Debug View": {
       "Acceleration": [
         "Zrychlení"
@@ -5666,8 +5736,8 @@
       "Password-protected Emails": [
         "Zprávy chráněné heslem"
       ],
-      "Phone support (20+ users)": [
-        "Telefonická podpora (20+ uživatelů)"
+      "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
+        "Telefonická podpora (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ uživatelů)"
       ],
       "Priority email support": [
         "Prioritní podpora"
@@ -6072,8 +6142,8 @@
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Přizpůsobte svůj podpis logem, obrázky, ikony sociálních médií, odkazem na kontakt atd."
       ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
-        "Telefonická podpora je dostupná od týmu zákaznické podpory ${ BRAND_NAME } během evropské pracovní doby, pro zákazníky se 20 a více uživateli"
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } or more users": [
+        "Telefonická podpora je dostupná od týmu zákaznické podpory ${ BRAND_NAME } během evropské pracovní doby, pro zákazníky s ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } nebo více uživateli"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Zamezí přístup ke zprávám třetím stranám i ${ BRAND_NAME }. Jediní lidé, kteří mohou číst zprávy, jsou odesílatel a příjemce."
@@ -6450,6 +6520,18 @@
       "terms and conditions": [
         "smluvní podmínky užívání"
       ],
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "Sleva je platná pro ${ renewalsWithCoupon } obnovení.",
+        "Sleva je platná pro ${ renewalsWithCoupon } obnovení.",
+        "Sleva je platná pro ${ renewalsWithCoupon } obnovení.",
+        "Sleva je platná pro ${ renewalsWithCoupon } obnovení."
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Speciální zvýhodněná cena platí ${ couponRedemptions } měsíc. Poté dojde každý měsíc k automatickému obnovení za ${ renewPriceStr }. Předplatné můžete kdykoli zrušit.",
+        "Speciální zvýhodněná cena platí ${ couponRedemptions } měsíce. Poté dojde každý měsíc k automatickému obnovení za ${ renewPriceStr }. Předplatné můžete kdykoli zrušit.",
+        "Speciální zvýhodněná cena platí ${ couponRedemptions } měsíců. Poté dojde každý měsíc k automatickému obnovení za ${ renewPriceStr }. Předplatné můžete kdykoli zrušit.",
+        "Speciální zvýhodněná cena platí ${ couponRedemptions } měsíců. Poté dojde každý měsíc k automatickému obnovení za ${ renewPriceStr }. Předplatné můžete kdykoli zrušit."
+      ],
       "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
         "Speciální zvýhodněná cena platí pro první ${ subscriptionLength } měsíc.",
         "Speciální zvýhodněná cena platí pro první ${ subscriptionLength } měsíce.",
@@ -6458,6 +6540,12 @@
       ],
       "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Speciální zvýhodněná cena platí první měsíc. Poté dojde každý měsíc k automatickému obnovení za ${ renewPriceStr }. Předplatné můžete kdykoli zrušit."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Speciálně zvýhodněná cena ${ priceWithDiscount } platí ${ couponRedemptions } měsíc. Poté se automaticky obnoví za ${ renewPriceStr } na 1 měsíc. Službu můžete kdykoli zrušit.",
+        "Speciálně zvýhodněná cena ${ priceWithDiscount } platí ${ couponRedemptions } měsíce. Poté se automaticky obnoví za ${ renewPriceStr } na 1 měsíc. Službu můžete kdykoli zrušit.",
+        "Zvýhodněná cena ${ priceWithDiscount } platí po dobu ${ couponRedemptions } měsíců. Poté se automaticky obnoví za ${ renewPriceStr } na 1 měsíc. Službu můžete kdykoli zrušit.",
+        "Zvýhodněná cena ${ priceWithDiscount } platí po dobu ${ couponRedemptions } měsíců. Poté se automaticky obnoví za ${ renewPriceStr } na 1 měsíc. Službu můžete kdykoli zrušit."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "Speciální zvýhodněná cena ${ priceWithDiscount } platí pro první ${ subscriptionLength } měsíc.",

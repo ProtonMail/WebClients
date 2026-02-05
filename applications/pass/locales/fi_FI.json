@@ -1829,10 +1829,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Siirretään kohteen \"${ payload.content.name }\" kaikkia kohteita"
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Kohteen siirto toiseen holviin poistaa sen suojatut linkit.",
-        "Kohteiden siirto toiseen holviin poistaa niiden suojatut linkit."
-      ],
       "Moving items": [
         "Siirretään kohteita"
       ],
@@ -2224,9 +2220,6 @@
       ],
       "To review your imported data, click on the ${ PASS_APP_NAME } icon in your browser toolbar.": [
         "Voit tarkastella tuotuja tietoja klikkaamalla selaimen työkalurivin ${ PASS_APP_NAME }-kuvaketta."
-      ],
-      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
-        "Kokeile uusia ${ BRAND_NAME }-ominaisuuksia, -päivityksiä ja -tuotteita ennen kuin ne julkaistaan kaikille. Tämä käynnistää sovelluksen uudelleen."
       ],
       "Unable to copy to clipboard": [
         "Leikepöydälle kopiointi epäonnistui"

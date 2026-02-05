@@ -476,6 +476,9 @@
       "Get a new encrypted email address": [
         "Hanki uusi salattu sähköpostiosoite"
       ],
+      "Get Deal": [
+        "Hyödynnä tarjous"
+      ],
       "Get in touch": [
         "Ota yhteyttä"
       ],
@@ -517,6 +520,9 @@
       ],
       "Got it": [
         "Selvä"
+      ],
+      "Group owner": [
+        "Ryhmän omistaja"
       ],
       "Help and feedback": [
         "Tuki ja palaute"
@@ -1069,6 +1075,9 @@
       ],
       "Use recovery code": [
         "Käytä palautuskoodia"
+      ],
+      "Use this Gmail address": [
+        "Käytä tätä Gmail-osoitetta"
       ],
       "Use your current email instead": [
         "Käytä sen sijaan nykyistä sähköpostiosoitettasi"
@@ -2039,6 +2048,9 @@
       ],
       "Web search access": [
         "Verkkohakuun pääsy"
+      ],
+      "Zero-access encryption": [
+        "Zero Access -salaus"
       ]
     },
     "collider_2025: Info": {
@@ -3465,6 +3477,9 @@
       "macOS": [
         "macOS"
       ],
+      "macOS 14 (Sonoma) or newer": [
+        "macOS 14 (Sonoma) tai uudempi"
+      ],
       "macOS Big Sur": [
         "macOS Big Sur"
       ],
@@ -3477,8 +3492,8 @@
       "macOS Monterey": [
         "macOS Monterey"
       ],
-      "macOS Ventura or later": [
-        "macOS Ventura or uudempi"
+      "macOS Ventura": [
+        "macOS Ventura"
       ],
       "Mobile": [
         "Mobiili"
@@ -3494,9 +3509,6 @@
       ],
       "Windows 10/11 (x64)": [
         "Windows 10/11 (x64)"
-      ],
-      "Windows 8/8.1/7 or Windows 32-bit (ARM64)": [
-        "Windows 8/8.1/7 tai Windows 32-bit (ARM64)"
       ]
     },
     "driveplus2024: Deal details": {
@@ -4771,6 +4783,9 @@
       ]
     },
     "Features": {
+      "15 GB storage": [
+        "15 Gt tallennustilaa"
+      ],
       "4 more privacy services": [
         "4 muuta yksityisyyspalvelua"
       ],
@@ -4782,6 +4797,9 @@
       ],
       "and more premium features...": [
         "sekä lisää premium-ominaisuuksia..."
+      ],
+      "Desktop app": [
+        "Työpöytäsovellus"
       ],
       "Double VPN": [
         "Kaksois-VPN"
@@ -7908,6 +7926,9 @@
       "Your phone number will only be used for this one-time verification.": [
         "Puhelinnumeroasi käytetään vain tähän kertaluontoiseen vahvistukseen."
       ],
+      "Your recent changes have been published. They will be visible to users in the next few hours.": [
+        "Viimeisimmät muutoksesi on julkaistu. Ne näkyvät käyttäjille muutaman tunnin kuluessa."
+      ],
       "Your recovery phrase": [
         "Palautuslauseesi"
       ],
@@ -9348,6 +9369,9 @@
       ],
       "Meeting recording": [
         "Kokoustallenne"
+      ],
+      "Screen-sharing": [
+        "Näytön jakaminen"
       ]
     },
     "Member action": {
@@ -9865,8 +9889,8 @@
       "Password-protected Emails": [
         "Salasanasuojatut sähköpostit"
       ],
-      "Phone support (20+ users)": [
-        "Puhelintuki (20+ käyttäjää)"
+      "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
+        "Puhelintuki (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ käyttäjää)"
       ],
       "Priority email support": [
         "Ensisijainen sähköpostituki"
@@ -10345,8 +10369,8 @@
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Mukauta sähköpostiallekirjoitustasi mm. logoilla, kuvilla, sosiaalisen median kuvakkeilla sekä yhteystietolinkeillä"
       ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
-        "${ BRAND_NAME }in aiakastukitiimi palvelee puhelimitse vähintään 20 käyttäjän asiakkaille eurooppalaisina toimistoaikoina"
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } or more users": [
+        "Puhelintuki on saatavilla ${ BRAND_NAME } -asiakastukitiimiltä Euroopan työaikana asiakkaille, joilla on vähintään ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } käyttäjää."
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Estää ${ BRAND_NAME }ilta ja ulkopuolisilta tahoilta avaamasta viestejä. Viestejä voivat lukea vain niiden lähettäjät ja tarkoitetut vastaanottajat."
@@ -10875,6 +10899,9 @@
       ],
       "UDP": [
         "UDP"
+      ],
+      "Windows": [
+        "Ikkunat"
       ]
     },
     "option": {
@@ -13746,9 +13773,6 @@
       "Catch-all address updated": [
         "Nappaa kaikki -osoite päivitettiin"
       ],
-      "Changes published. Your changes will be visible to all users in the next few hours.": [
-        "Muutokset julkaistiin. Muutoksesi näkyvät kaikille käyttäjille seuraavien muutaman tunnin sisällä."
-      ],
       "Code sent to ${ methodTo }": [
         "Koodi lähetettiin kohteeseen ${ methodTo }"
       ],
@@ -14049,6 +14073,9 @@
       ]
     },
     "Theme": {
+      "Auto": [
+        "Automaattinen"
+      ],
       "Dark": [
         "Tumma"
       ],
@@ -14061,8 +14088,14 @@
       "Mode: Dark": [
         "Tila: Tumma"
       ],
+      "Mode: Light": [
+        "Tila: Vaalea"
+      ],
       "Sync with system": [
         "Seuraa järjestelmää"
+      ],
+      "Use ${ BRAND_NAME } settings": [
+        "Käytä ${ BRAND_NAME } asetuksia"
       ]
     },
     "Themes": {

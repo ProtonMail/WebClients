@@ -14,9 +14,6 @@
       "Add another account": [
         "Añada otra cuenta"
       ],
-      "Agree and continue": [
-        "Aceptar y continuar"
-      ],
       "Assign ${ selectedParticipantName } as host": [
         "Asignar a ${ selectedParticipantName } como anfitrión"
       ],
@@ -257,6 +254,9 @@
       "Start recording": [
         "Iniciar grabación"
       ],
+      "Start Recording Track Stats": [
+        "Iniciar estadísticas de grabación"
+      ],
       "Stay in meeting": [
         "Permanecer en la reunión"
       ],
@@ -265,6 +265,9 @@
       ],
       "Stop recording": [
         "Detener grabación"
+      ],
+      "Stop Recording Track Stats": [
+        "Detener estadísticas de grabación"
       ],
       "Submit": [
         "Enviar"
@@ -1742,8 +1745,8 @@
       "Internet connection lost": [
         "Sin conexión a Internet"
       ],
-      "Joined": [
-        "Unido"
+      "Joined ${ roomNameLabel }": [
+        "Se unió a ${ roomNameLabel }"
       ],
       "Learn more": [
         "Más información"
@@ -1751,8 +1754,8 @@
       "Leaving will stop your screen sharing. Do you want to continue?": [
         "Al salir detendrá su pantalla compartida. ¿Desea continuar?"
       ],
-      "Left": [
-        "Izquierda"
+      "Left ${ roomNameLabel }": [
+        "Salió de ${ roomNameLabel }"
       ],
       "Left by mistake?": [
         "¿Salió por error?"
@@ -2376,9 +2379,6 @@
       "Audio": [
         "Audio"
       ],
-      "Authenticator": [
-        "Autenticador"
-      ],
       "Available Cameras": [
         "Cámaras disponibles"
       ],
@@ -2451,9 +2451,6 @@
       "Minicalendar": [
         "Minicalendario"
       ],
-      "MLS state": [
-        "Estado de MLS"
-      ],
       "Participants": [
         "Participantes"
       ],
@@ -2498,6 +2495,9 @@
       ],
       "Security": [
         "Seguridad"
+      ],
+      "Security code": [
+        "Código de seguridad"
       ],
       "Settings": [
         "Ajustes"

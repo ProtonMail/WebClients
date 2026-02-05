@@ -374,6 +374,9 @@
       "enable desktop notifications": [
         "啟用桌面通知"
       ],
+      "Expand navigation bar to see bookings": [
+        "展開導航以查看預定"
+      ],
       "Expand video conferencing widget": [
         "展開會議工具"
       ],
@@ -556,6 +559,9 @@
       ],
       "Manage labels": [
         "管理標籤"
+      ],
+      "Manage users/addresses": [
+        "管理使用者/電子郵件地址"
       ],
       "Mark as resolved": [
         "標記為已解決"
@@ -752,6 +758,9 @@
       "See upcoming availability": [
         "查看將來的可用時間"
       ],
+      "Select ${ dateHeaderLongString } at ${ timeString }": [
+        "於 ${ timeString } 選取 ${ dateHeaderLongString } 時長"
+      ],
       "Select ${ planOrAppName }": [
         "選擇方案 ${ planOrAppName }"
       ],
@@ -865,6 +874,9 @@
       ],
       "Toggle Contacts app": [
         "切換聯絡人應用程式"
+      ],
+      "Toggle referral": [
+        "切換推薦"
       ],
       "Toggle settings": [
         "切換設定"
@@ -1218,6 +1230,9 @@
       "6 user accounts": [
         "6 位使用者帳號"
       ],
+      "Admin panel to manage your family": [
+        "管理員面板以管理您的家庭"
+      ],
       "Advanced account protection": [
         "進階的帳號保護"
       ],
@@ -1269,6 +1284,9 @@
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "透過端對端加密保護電子郵件及行事曆。包含 15 電子郵件地址、支援自訂電子郵件網域、無限hide-my-email別名及更多"
+      ],
+      "Storage space is shared across all ${ BRAND_NAME } services.": [
+        "儲存空間於全部的 ${ BRAND_NAME } 服務。"
       ]
     },
     "BF2025: Deal details": {
@@ -1716,6 +1734,9 @@
       ]
     },
     "collider_2025: feature": {
+      "Access to advanced AI models": [
+        "存取進階 AI 模型"
+      ],
       "Basic chat history": [
         "基本聊天記錄"
       ],
@@ -1765,6 +1786,9 @@
       ],
       "High-speed chats and advanced AI features.": [
         "高速聊天和先進的人工智慧功能。"
+      ],
+      "Private video calls for the conversations that matter.": [
+        "用於重要交談的私密視訊。"
       ]
     },
     "colon": {
@@ -4853,19 +4877,19 @@
         "**自動連線**：在您開啟裝置時，即可開啟並連線至 VPN。"
       ],
       "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
-        "**第一步：**使用您的推薦連結邀請您的朋友加入 ${ BRAND_NAME }。"
+        "**第一步：**使用您的推薦連結邀請朋友加入 ${ BRAND_NAME }。"
       ],
       "**Step 2:** Your friends get 2 weeks for free on their chosen ${ BRAND_NAME } plan.": [
-        "**步驟 2 ** 您的朋友取得 ${ BRAND_NAME } 方案的 2 週免費。"
+        "**第二步：**您的朋友將取得 ${ BRAND_NAME } 方案的 2 週免費。"
       ],
       "**Step 2:** Your friends get 2 weeks for free on their plan.": [
-        "**步驟 2 ** 您的朋友取計畫外的 2 週免費。"
+        "**第二步：**您的朋友將取得該方案的 2 週免費。"
       ],
       "**Step 3:** Get ${ referrerRewardAmount } credits for every friend that subscribes to a plan.": [
         "**第三步：**每當有朋友訂閱方案時，您將獲得 ${ referrerRewardAmount } 額度。"
       ],
       "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
-        "**第三步：**每當有使者訂閱方案時，您將獲得 ${ referrerRewardAmount } 額度。"
+        "**第三步：**每當有使用者訂閱方案時，您將獲得 ${ referrerRewardAmount } 額度。"
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } 附贈的儲存空間"
@@ -4962,6 +4986,9 @@
       ],
       "Appointment duration": [
         "預約時長"
+      ],
+      "Are you sure you want to delete this booking page?": [
+        "您確定要刪除此預定頁面？"
       ],
       "Are you sure you want to discard your import?": [
         "您確定要捨棄您的匯入嗎？"
@@ -5254,6 +5281,9 @@
       "Host": [
         "主持"
       ],
+      "How long should an appointment last?": [
+        "預約應持續多久？"
+      ],
       "If keyboard shortcuts are enabled, you can use the following keys for quick actions or to jump to different views. ${ metaKey } + K is always enabled.": [
         "若鍵盤快捷鍵啟用，您將可以使用下列快捷鍵快速操作或切換不同視角。${ metaKey }+K將永遠啟用。"
       ],
@@ -5464,6 +5494,9 @@
       "Number of dedicated servers in the organization": [
         "團隊專用的伺服器數量"
       ],
+      "Number of dedicated VPN servers in the organization": [
+        "團隊專用的 VPN 伺服器數量"
+      ],
       "Numbers": [
         "數字"
       ],
@@ -5568,6 +5601,9 @@
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "請稍候，我們正查找聯絡人中有沒有包含以非使用中金鑰加密的資料。"
+      ],
+      "Powered by": [
+        "驅動"
       ],
       "Powered by ${ protonButton }": [
         "透過 ${ protonButton } 驅動"
@@ -6305,6 +6341,9 @@
       "Add to group": [
         "加入至群組"
       ],
+      "Add Zoom meeting": [
+        "新增 Zoom 會議"
+      ],
       "Address": [
         "電郵位址"
       ],
@@ -6628,6 +6667,9 @@
       ],
       "Password": [
         "密碼"
+      ],
+      "Password strength": [
+        "密碼強度"
       ],
       "Payer": [
         "付款人"
@@ -7107,6 +7149,9 @@
       ],
       "Built-in chat": [
         "內建聊天"
+      ],
+      "Meeting recording": [
+        "會議錄影"
       ],
       "One active meeting at a time": [
         "單次單個會議進行"
@@ -7673,9 +7718,6 @@
       "Password-protected Emails": [
         "密碼 - 安全防護的電子郵件"
       ],
-      "Phone support (20+ users)": [
-        "電話支援 (20+ 使用者)"
-      ],
       "Priority email support": [
         "優先電子郵件支援"
       ],
@@ -8081,9 +8123,6 @@
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "以標誌、影像、社交媒體圖示、您的聯絡詳情連結等等，個人化您的電子郵件簽名檔"
-      ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
-        "${ BRAND_NAME } 客戶服務團隊於歐洲辦公時間內，為 20 位或以上使用者的客戶提供電話支援"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "防止郵件被 ${ BRAND_NAME } 或第三方存取。能夠讀取郵件的人，就只有寄件者和意指的收件者。"
@@ -8513,6 +8552,9 @@
       ],
       "Storage": [
         "雲端儲存"
+      ],
+      "Ultrafast VPN servers in 110+ countries": [
+        "在110 多個國家提供極速 VPN 伺服器"
       ]
     },
     "Onboarding": {
@@ -8892,6 +8934,9 @@
       ],
       "Your payment is still being processed": [
         "您的付款仍在處理中"
+      ],
+      "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
+        "您的訂閱已套用現有折扣。若轉換至新的促銷方案，現有折扣將不再套用。"
       ]
     },
     "Payments.Error": {
@@ -10659,6 +10704,9 @@
       "No bookings available.": [
         "沒有可用的預訂。"
       ],
+      "Please check the link and try again.": [
+        "請查看此連結並重試。"
+      ],
       "Please try again later.": [
         "請稍後再試。"
       ]
@@ -11182,6 +11230,9 @@
       "Remove participants": [
         "移除參與者"
       ],
+      "Reply with a note": [
+        "透過筆記回覆"
+      ],
       "Report a problem": [
         "回報問題"
       ],
@@ -11389,11 +11440,17 @@
       "Your ${ planName } free trial ends on ${ textDate }": [
         "您的 ${ planName } 免費方案將於 ${ textDate } 結束"
       ],
+      "Your ${ planTitle } subscription has started": [
+        "您的 ${ planTitle } 訂閱已開始"
+      ],
       "Your account is protected": [
         "你的帳號已被保護"
       ],
       "Your booking is confirmed": [
         "你的預約已確認"
+      ],
+      "Your booking page is ready": [
+        "您的預訂頁面已就緒"
       ],
       "Your booking pages live here": [
         "您的預訂網頁於此"

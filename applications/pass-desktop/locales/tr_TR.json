@@ -1512,6 +1512,9 @@
       "A contact is created for every email address that sends emails to or receives emails from ${ aliasEmail }.": [
         "${ aliasEmail } adresiyle e-posta gönderen veya alan her e-posta adresi için bir kişi oluşturulur."
       ],
+      "A new version is being downloaded. Once the download completes, it will be available on next restart.": [
+        "Yeni bir sürüm indiriliyor. İndirme işlemi tamamlandığında bir sonraki yeniden başlatmada kullanılabilir hale gelecek."
+      ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "Yeni bir ${ PASS_APP_NAME } sürümü yayınlanmış. Son özellikler ile hata düzeltmelerini almak için güncelleyin."
       ],
@@ -1749,6 +1752,9 @@
       "Emptying trash...": [
         "Çöp kutusu boşaltılıyor..."
       ],
+      "Enable ${ PASS_SHORT_APP_NAME } beta": [
+        "${ PASS_SHORT_APP_NAME } beta sürümüne geç"
+      ],
       "Enable auto-locking to secure your data": [
         "Verilerinizi korumak için otomatik kilitlemeyi açın"
       ],
@@ -1982,8 +1988,7 @@
         "\"${ payload.content.name }\" içindeki tüm ögeler taşınıyor"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Bir ögeyi başka bir kasaya taşımak onun güvenli bağlantılarını siler.",
-        "Ögeleri başka bir kasaya taşımak onların güvenli bağlantılarını siler."
+        "Başka bir kasaya taşınan ögenin güvenli bağlantıları silinir."
       ],
       "Moving items": [
         "Ögeler taşınıyor"
@@ -2011,6 +2016,9 @@
       ],
       "No network connection": [
         "Ağ bağlantısı yok"
+      ],
+      "No new versions are available at the moment.": [
+        "Şu anda yeni sürüm mevcut değil."
       ],
       "None": [
         "Yok"
@@ -2401,6 +2409,12 @@
       "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
         "Bu işlem, **${ date }** tarihinde ${ BRAND_NAME } hesabınızda oturum açmayı deneyen **${ name }** aygıtına izin vermeyecek."
       ],
+      "This will reload the application.": [
+        "Bu işlem uygulamayı yeniden yükleyecek."
+      ],
+      "This will trigger a check for new beta releases.": [
+        "Bu işlem yeni beta sürümleri için bir kontrolü tetikleyecek."
+      ],
       "To keep receiving emails transfer these aliases to a different mailbox:": [
         "E-posta almayı sürdürmek için bu takma adları farklı bir e-posta kutusuna aktarın:"
       ],
@@ -2415,6 +2429,9 @@
       ],
       "Trusted by over 50,000 business users and 100 million accounts around the world.": [
         "Dünya çapında 50.000 üzerinde kurumsal kullanıcı ve 100 milyon hesap tarafından güveniliyor."
+      ],
+      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public.": [
+        "Yeni ${ BRAND_NAME } özelliklerini, güncellemelerini ve ürünlerini herkese açık olmadan önce deneyin."
       ],
       "Unable to copy to clipboard": [
         "Panoya kopyalanamadı"
@@ -2809,6 +2826,9 @@
       ],
       "Besides storing your logins, ${ PASS_APP_NAME } protects your identity with an integrated email alias feature. Whenever you sign up for a new online account, ${ PASS_APP_NAME } can automatically create an alias to keep your actual email address protected. ": [
         "Oturum açma bilgilerinizi saklamanın yanında ${ PASS_APP_NAME }, bütünleşik bir e-posta takma adı özelliği ile kimliğinizi korur. Yeni bir çevrim içi hesap açtığınızda, ${ PASS_APP_NAME } gerçek e-posta adresinizi korumak için otomatik olarak bir takma ad oluşturabilir. "
+      ],
+      "Beta Access": [
+        "Beta erişimi"
       ],
       "Biometrics": [
         "Biyometri"

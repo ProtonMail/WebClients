@@ -382,6 +382,9 @@
       "Create label": [
         "Luo tunniste"
       ],
+      "Create link": [
+        "Luo linkki"
+      ],
       "Create new password": [
         "Luo uusi salasana"
       ],
@@ -435,6 +438,9 @@
       ],
       "Delete group": [
         "Poista ryhmä"
+      ],
+      "Delete link": [
+        "Poista linkki"
       ],
       "Delete logo": [
         "Poista logo"
@@ -646,6 +652,9 @@
       "Export": [
         "Vie"
       ],
+      "Export as CSV": [
+        "Vie CSV:nä"
+      ],
       "Export key": [
         "Vie avain"
       ],
@@ -696,6 +705,9 @@
       ],
       "Get a new encrypted email address": [
         "Hanki uusi salattu sähköpostiosoite"
+      ],
+      "Get Deal": [
+        "Hyödynnä tarjous"
       ],
       "Get in touch": [
         "Ota yhteyttä"
@@ -771,6 +783,9 @@
       ],
       "Got it": [
         "Selvä"
+      ],
+      "Group owner": [
+        "Ryhmän omistaja"
       ],
       "Help and feedback": [
         "Tuki ja palaute"
@@ -1515,6 +1530,9 @@
       ],
       "Use recovery code": [
         "Käytä palautuskoodia"
+      ],
+      "Use this Gmail address": [
+        "Käytä tätä Gmail-osoitetta"
       ],
       "Use your current email instead": [
         "Käytä sen sijaan nykyistä sähköpostiosoitettasi"
@@ -2533,6 +2551,9 @@
       ]
     },
     "Calendar link purpose update success message": {
+      "Label deleted": [
+        "Tunniste poistettiin"
+      ],
       "Label edited": [
         "Tunnistetta muokattiin"
       ]
@@ -2641,6 +2662,11 @@
       ],
       "More than 12 hours passed since last update — ${ CALENDAR_APP_NAME } will try to update the calendar in a few hours.": [
         "Edellisestä päivityksestä on kulunut yli 12 tuntia — ${ CALENDAR_APP_NAME } pyrkii päivittämään kalenterin muutaman tunnin kuluttua."
+      ]
+    },
+    "Calendar table settings button tooltip": {
+      "Open settings": [
+        "Avaa asetukset"
       ]
     },
     "Calendar view": {
@@ -2787,6 +2813,9 @@
       ],
       "Web search access": [
         "Verkkohakuun pääsy"
+      ],
+      "Zero-access encryption": [
+        "Zero Access -salaus"
       ]
     },
     "collider_2025: Info": {
@@ -4517,6 +4546,9 @@
       "macOS": [
         "macOS"
       ],
+      "macOS 14 (Sonoma) or newer": [
+        "macOS 14 (Sonoma) tai uudempi"
+      ],
       "macOS Big Sur": [
         "macOS Big Sur"
       ],
@@ -4529,8 +4561,8 @@
       "macOS Monterey": [
         "macOS Monterey"
       ],
-      "macOS Ventura or later": [
-        "macOS Ventura or uudempi"
+      "macOS Ventura": [
+        "macOS Ventura"
       ],
       "Mail": [
         "Sähköposti"
@@ -4555,12 +4587,12 @@
       ],
       "Windows 10/11 (x64)": [
         "Windows 10/11 (x64)"
-      ],
-      "Windows 8/8.1/7 or Windows 32-bit (ARM64)": [
-        "Windows 8/8.1/7 tai Windows 32-bit (ARM64)"
       ]
     },
     "Download link": {
+      ".deb for Debian / Ubuntu": [
+        ".deb Debianille/Ubuntulle"
+      ],
       ".rpm for Fedora / Red Hat": [
         ".rpm for Fedora / Red Hat"
       ],
@@ -4969,6 +5001,9 @@
       ],
       "Save": [
         "Tallenna"
+      ],
+      "Send confirmation email": [
+        "Lähetä vahvistussähköposti"
       ]
     },
     "email_forwarding_2023: Error": {
@@ -5030,6 +5065,11 @@
       ],
       "Type text or keyword": [
         "Syötä teksti tai avainsana"
+      ]
+    },
+    "email_forwarding_2023: Progress status": {
+      "Sending confirmation email": [
+        "Lähetetään vahvistussähköpostia"
       ]
     },
     "email_forwarding_2023: Prompt": {
@@ -5299,6 +5339,9 @@
       ],
       "Could not open updated vault": [
         "Muuttunutta holvia ei voitu avata"
+      ],
+      "Could not save preference": [
+        "Asetusta ei voitu tallentaa"
       ],
       "Couldn't load invoices. Please try again later.": [
         "Laskuja ei voitu ladata. Yritä myöhemmin uudelleen."
@@ -6514,6 +6557,9 @@
       ]
     },
     "Features": {
+      "15 GB storage": [
+        "15 Gt tallennustilaa"
+      ],
       "4 more privacy services": [
         "4 muuta yksityisyyspalvelua"
       ],
@@ -6525,6 +6571,9 @@
       ],
       "and more premium features...": [
         "sekä lisää premium-ominaisuuksia..."
+      ],
+      "Desktop app": [
+        "Työpöytäsovellus"
       ],
       "Double VPN": [
         "Kaksois-VPN"
@@ -7758,6 +7807,9 @@
       ],
       "${ storage } storage": [
         "${ storage } tallennustilaa"
+      ],
+      "${ url } added.": [
+        "${ url } lisättiin."
       ],
       "${ url } deleted.": [
         "${ url } poistettiin."
@@ -9070,6 +9122,9 @@
       "No countries enabled": [
         "Maita ei ole käytössä"
       ],
+      "No credit card required": [
+        "Maksukorttia ei vaadita"
+      ],
       "No folder selected": [
         "Kansiota ei valittu"
       ],
@@ -9475,6 +9530,9 @@
       ],
       "Set up your organization": [
         "Määritä organisaatiosi"
+      ],
+      "Setting successfully saved": [
+        "Asetus tallennettiin"
       ],
       "Setting up ${ feature }…": [
         "Määritetään ${ feature }…"
@@ -10447,6 +10505,9 @@
       "Your plan is limited to 10 versions for up to 7 days": [
         "Tilauksesi on rajoitettu 10 versioon, joita säilytetään enintään 7 päivää"
       ],
+      "Your recent changes have been published. They will be visible to users in the next few hours.": [
+        "Viimeisimmät muutoksesi on julkaistu. Ne näkyvät käyttäjille muutaman tunnin kuluessa."
+      ],
       "Your recovery phrase": [
         "Palautuslauseesi"
       ],
@@ -10656,6 +10717,9 @@
     "Key function description": {
       "Decryption": [
         "Salauksenpurku"
+      ],
+      "Decryption, verification": [
+        "Salauksenpurku, vahvistus"
       ]
     },
     "Key generation": {
@@ -10971,6 +11035,9 @@
       "10 VPN devices": [
         "10 VPN-laitetta"
       ],
+      "15 extra email addresses": [
+        "15 lisäsähköpostiosoitetta"
+      ],
       "15 minutes": [
         "15 minuutin kuluttua"
       ],
@@ -11196,6 +11263,9 @@
       "BTC amount": [
         "BTC-summa"
       ],
+      "Built-in 2FA authenticator": [
+        "Sisäänrakennettu kaksivaiheinen todentaja"
+      ],
       "Calendar": [
         "Kalenterin"
       ],
@@ -11288,6 +11358,9 @@
       ],
       "Conversation grouping": [
         "Keskustelujen ryhmittely"
+      ],
+      "Conversations per page": [
+        "Keskusteluja per sivu"
       ],
       "Copy": [
         "Kopioi"
@@ -11775,6 +11848,9 @@
       "Notification": [
         "Ilmoitus"
       ],
+      "Notification email address": [
+        "Ilmoitussähköpostiosoite"
+      ],
       "Notifications": [
         "Ilmoitukset"
       ],
@@ -12007,6 +12083,9 @@
       "SMTP token": [
         "SMTP avain"
       ],
+      "SMTP username": [
+        "SMTP-käyttäjätunnus"
+      ],
       "Social": [
         "Sosiaalinen"
       ],
@@ -12033,6 +12112,9 @@
       ],
       "Start time": [
         "Aloitusaika"
+      ],
+      "Start weekday": [
+        "Viikon aloituspäivä"
       ],
       "State": [
         "Osavaltio"
@@ -12223,6 +12305,11 @@
         "Lisää omistamasi verkkotunnus ${ MAIL_APP_NAME } -tilillesi."
       ]
     },
+    "Label for default event notifications": {
+      "Notifications": [
+        "Ilmoitukset"
+      ]
+    },
     "Label for default event settings": {
       "Duration": [
         "Kesto"
@@ -12268,6 +12355,11 @@
     "Label to change composer mode": {
       "Normal": [
         "Normaali"
+      ]
+    },
+    "Label to change density": {
+      "Compact": [
+        "Tiivis"
       ]
     },
     "Label to change view layout": {
@@ -12703,6 +12795,11 @@
         "Tuo kaikki ${ selectedItemsToImportCount }/${ itemsToImportCount } tunnisteen viestit ja merkitse ne tunnisteella"
       ]
     },
+    "mail_cro_experiment": {
+      "Get Deal": [
+        "Hyödynnä tarjous"
+      ]
+    },
     "mail_signup_2023: Info": {
       "**Get ${ plan }** for a limited time!": [
         "**Hanki ${ plan }** ajoitetun ajan!"
@@ -12808,6 +12905,9 @@
       ],
       "Meeting recording": [
         "Kokoustallenne"
+      ],
+      "Screen-sharing": [
+        "Näytön jakaminen"
       ]
     },
     "meet_2025: Info": {
@@ -12822,6 +12922,11 @@
       ],
       "Strict no-logs policy": [
         "Tiukka lokivapaa käytäntö"
+      ]
+    },
+    "meet_signup_2025: title": {
+      "For businesses": [
+        "Yrityksille"
       ]
     },
     "Member action": {
@@ -13555,8 +13660,8 @@
       "Password-protected Emails": [
         "Salasanasuojatut sähköpostit"
       ],
-      "Phone support (20+ users)": [
-        "Puhelintuki (20+ käyttäjää)"
+      "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
+        "Puhelintuki (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ käyttäjää)"
       ],
       "Priority email support": [
         "Ensisijainen sähköpostituki"
@@ -14056,8 +14161,8 @@
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Mukauta sähköpostiallekirjoitustasi mm. logoilla, kuvilla, sosiaalisen median kuvakkeilla sekä yhteystietolinkeillä"
       ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
-        "${ BRAND_NAME }in aiakastukitiimi palvelee puhelimitse vähintään 20 käyttäjän asiakkaille eurooppalaisina toimistoaikoina"
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } or more users": [
+        "Puhelintuki on saatavilla ${ BRAND_NAME } -asiakastukitiimiltä Euroopan työaikana asiakkaille, joilla on vähintään ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } käyttäjää."
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Estää ${ BRAND_NAME }ilta ja ulkopuolisilta tahoilta avaamasta viestejä. Viestejä voivat lukea vain niiden lähettäjät ja tarkoitetut vastaanottajat."
@@ -14738,6 +14843,9 @@
       "Label as...": [
         "Merkitse tunnisteella..."
       ],
+      "Left to Right": [
+        "Vasemmalta oikealle"
+      ],
       "macOS": [
         "macOS"
       ],
@@ -14824,6 +14932,9 @@
       ],
       "UDP": [
         "UDP"
+      ],
+      "Windows": [
+        "Ikkunat"
       ]
     },
     "option": {
@@ -14961,6 +15072,9 @@
     "OS compatibility": {
       ".dmg (12.0 or later)": [
         ".dmg (12.0 tai uudempi)"
+      ],
+      ".exe (64-bit)": [
+        ".exe (64-bit)"
       ]
     },
     "Participant name": {
@@ -17441,6 +17555,9 @@
       "Block ads, trackers, and malware": [
         "Estä mainoksia, seurantoja ja haittaohjelmia"
       ],
+      "Built-in 2FA authenticator": [
+        "Sisäänrakennettu kaksivaiheinen todentaja"
+      ],
       "Bundle": [
         "Kokoelma"
       ],
@@ -17509,6 +17626,9 @@
       ],
       "Password manager": [
         "Salasanahallinta"
+      ],
+      "Pick your perfect plan": [
+        "Valitse sinulle sopiva tilauksesi"
       ],
       "Private AI assistant with encrypted chat history": [
         "Yksityinen tekoälyavustaja salatulla keskusteluhistorialla"
@@ -17588,6 +17708,9 @@
       ],
       "Upload files of any size": [
         "Lataa minkä tahansa kokoisia tiedostoja"
+      ],
+      "Use your current email": [
+        "Käytä nykyistä sähköpostiosoitettasi"
       ],
       "use your current email.": [
         "käytä nykyistä sähköpostiosoitettasi."
@@ -18926,9 +19049,6 @@
       "Catch-all address updated": [
         "Nappaa kaikki -osoite päivitettiin"
       ],
-      "Changes published. Your changes will be visible to all users in the next few hours.": [
-        "Muutokset julkaistiin. Muutoksesi näkyvät kaikille käyttäjille seuraavien muutaman tunnin sisällä."
-      ],
       "Code sent to ${ methodTo }": [
         "Koodi lähetettiin kohteeseen ${ methodTo }"
       ],
@@ -19042,6 +19162,9 @@
       ],
       "Resuming import": [
         "Jatketaan tuontia"
+      ],
+      "Server copied to clipboard": [
+        "Palvelin kopioitiin leikepöydälle"
       ],
       "Session revoked": [
         "Istunto mitätöitiin"
@@ -19275,6 +19398,9 @@
       ]
     },
     "Theme": {
+      "Auto": [
+        "Automaattinen"
+      ],
       "Dark": [
         "Tumma"
       ],
@@ -19287,8 +19413,14 @@
       "Mode: Dark": [
         "Tila: Tumma"
       ],
+      "Mode: Light": [
+        "Tila: Vaalea"
+      ],
       "Sync with system": [
         "Seuraa järjestelmää"
+      ],
+      "Use ${ BRAND_NAME } settings": [
+        "Käytä ${ BRAND_NAME } asetuksia"
       ]
     },
     "Time unit": {
@@ -20848,6 +20980,12 @@
       ]
     },
     "Title header for keys table": {
+      "Actions": [
+        "Toiminnot"
+      ],
+      "Fingerprint": [
+        "Sormenjälki"
+      ],
       "Function": [
         "Toiminto"
       ],

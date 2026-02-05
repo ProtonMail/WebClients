@@ -1695,6 +1695,9 @@
       "Emptying trash...": [
         "휴지통 비우는 중..."
       ],
+      "Enable ${ PASS_SHORT_APP_NAME } beta": [
+        "${ PASS_SHORT_APP_NAME } 베타 활성화"
+      ],
       "Enable auto-locking to secure your data": [
         "데이터를 보호하려면 자동 잠금을 활성화 하세요."
       ],
@@ -1921,7 +1924,7 @@
         "\"${ payload.content.name }\" 에서 모든 항목 이동 중"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "항목을 다른 금고로 이동하면 이 항목의 모든 안전한 링크가 삭제됩니다."
+        "항목을 다른 금고로 이동시 안전한 링크가 삭제됩니다."
       ],
       "Moving items": [
         "항목 이동 중"
@@ -2724,6 +2727,9 @@
       ],
       "Besides storing your logins, ${ PASS_APP_NAME } protects your identity with an integrated email alias feature. Whenever you sign up for a new online account, ${ PASS_APP_NAME } can automatically create an alias to keep your actual email address protected. ": [
         "로그인을 보관하는것 뿐만 아니라 ${ PASS_APP_NAME }이 내장된 별칭 이메일 기능으로 신원을 보호합니다. 어디서든 새 계정을 만들 때, ${ PASS_APP_NAME }이 자동으로 별칭 주소를 만들어 실제 이메일 주소를 보호할 수 있습니다. "
+      ],
+      "Beta Access": [
+        "베타 참여"
       ],
       "Biometrics": [
         "생체 인식"

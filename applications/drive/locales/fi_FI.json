@@ -1777,6 +1777,9 @@
       ],
       "Web search access": [
         "Verkkohakuun pääsy"
+      ],
+      "Zero-access encryption": [
+        "Zero Access -salaus"
       ]
     },
     "collider_2025: Info": {
@@ -3716,6 +3719,9 @@
       "We were not able to load some of your shared items": [
         "Emme voineet ladata joitain jaettuja kohteitasi."
       ],
+      "We were not able to load some search results": [
+        "Emme voineet ladata joitain hakutuloksia"
+      ],
       "We were not able to load the folder contents": [
         "Emme voineet ladata kansion sisältöä"
       ],
@@ -5088,6 +5094,9 @@
       "Collaborate efficiently while protecting your client and business data from breaches, ransomware, and surveillance.": [
         "Tee tehokasta yhteistyötä ja suojaa samalla asiakkaiden ja yrityksen tietoja tietomurroilta, kiristysohjelmilta ja valvonnalta."
       ],
+      "Computed hash does not match XAttr": [
+        "Laskettu hajautusarvo ei vastaa XAttr-arvoa"
+      ],
       "Conflict": [
         "Ristiriita"
       ],
@@ -5137,9 +5146,6 @@
       ],
       "Create links and share your files with others.": [
         "Luo linkkejä ja jaa tiedostojasi muille."
-      ],
-      "Create public link": [
-        "Luo julkinen linkki"
       ],
       "Create your first folder and start moving your files.": [
         "Luo ensimmäinen kansiosi ja aloita tiedostojen siirto."
@@ -5712,9 +5718,6 @@
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Turvallisuus on hälytyksissämme etusijalla. Jos et tunnista tietomurron kohteeksi joutuneita tietoja, voit huoletta jättää tämän raportin huomiotta."
       ],
-      "Owner": [
-        "Omistaja"
-      ],
       "password": [
         "salasana"
       ],
@@ -5729,9 +5732,6 @@
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Maksut on suojattu TLS-salauksella ja Sveitsin tietosuojalailla."
-      ],
-      "People with access": [
-        "Käyttöoikeuden omaavat tahot"
       ],
       "Permanently delete all files in your locked drive": [
         "Poista kaikki lukitun levysi tiedostot"
@@ -6192,6 +6192,9 @@
       "To fight spam and abuse, please verify you are human.": [
         "Vahvista olevasi ihminen roskapostin ja väärinkäytösten torjumiseksi."
       ],
+      "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it's still best to download files only from trusted sources. ": [
+        "Suojellakseen sinua ${ DRIVE_APP_NAME } voi skannata tiedostojasi yksityisyyttä suojaavalla tavalla, ja estää haitallisia tiedostoja. On silti parasta ladata tiedostoja vain luotettavista lähteistä. "
+      ],
       "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it’s still best to download files only from trusted sources. ": [
         "Suojellakseen sinua ${ DRIVE_APP_NAME } voi skannata tiedostojasi yksityisyyttä suojaavalla tavalla, ja estää haitallisia tiedostoja. On silti parasta ladata tiedostoja vain luotettavista lähteistä. "
       ],
@@ -6567,9 +6570,6 @@
       "Your email address was exposed:": [
         "Sähköpostiosoitteesi vuosi:"
       ],
-      "Your email address will be visible as the link's owner on the share page": [
-        "Sähköpostiosoitteesi näkyy linkin omistajana jakosivulla"
-      ],
       "Your email will only be used for this one-time verification.": [
         "Sähköpostiosoitettasi käytetään vain tähän kertaluontoiseen vahvistukseen."
       ],
@@ -6681,9 +6681,6 @@
       ]
     },
     "Into": {
-      "Can edit and manage access": [
-        "Voi muokata ja hallita käyttöoikeutta"
-      ],
       "Can view and edit": [
         "Voi tarkastella ja muokata"
       ],
@@ -6789,9 +6786,6 @@
       "Address": [
         "Osoite"
       ],
-      "Admin": [
-        "Ylläpitäjä"
-      ],
       "Alias title": [
         "Aliaksen otsikko"
       ],
@@ -6803,15 +6797,6 @@
       ],
       "Anonymous": [
         "Anonyymi"
-      ],
-      "Anyone on the Internet with the link can edit": [
-        "Linkin välityksellä kuka tahansa voi muokata"
-      ],
-      "Anyone on the Internet with the link can view": [
-        "Linkin välityksellä kuka tahansa voi tarkastella"
-      ],
-      "Anyone with the link": [
-        "Kuka tahansa linkin omaava"
       ],
       "App password": [
         "Sovellussalasana"
@@ -7002,9 +6987,6 @@
       ],
       "Enter device name": [
         "Syötä laitteen nimi"
-      ],
-      "Erase this link and remove everyone with access": [
-        "Poista tämä linkki ja kaikki myönnetyt käyttöoikeudet"
       ],
       "Expired": [
         "Erääntynyt"
@@ -7664,6 +7646,9 @@
       ],
       "Meeting recording": [
         "Kokoustallenne"
+      ],
+      "Screen-sharing": [
+        "Näytön jakaminen"
       ]
     },
     "Message": {
@@ -8233,8 +8218,8 @@
       "Password-protected Emails": [
         "Salasanasuojatut sähköpostit"
       ],
-      "Phone support (20+ users)": [
-        "Puhelintuki (20+ käyttäjää)"
+      "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
+        "Puhelintuki (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ käyttäjää)"
       ],
       "Priority email support": [
         "Ensisijainen sähköpostituki"
@@ -8657,8 +8642,8 @@
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Mukauta sähköpostiallekirjoitustasi mm. logoilla, kuvilla, sosiaalisen median kuvakkeilla sekä yhteystietolinkeillä"
       ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
-        "${ BRAND_NAME }in aiakastukitiimi palvelee puhelimitse vähintään 20 käyttäjän asiakkaille eurooppalaisina toimistoaikoina"
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } or more users": [
+        "Puhelintuki on saatavilla ${ BRAND_NAME } -asiakastukitiimiltä Euroopan työaikana asiakkaille, joilla on vähintään ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } käyttäjää."
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Estää ${ BRAND_NAME }ilta ja ulkopuolisilta tahoilta avaamasta viestejä. Viestejä voivat lukea vain niiden lähettäjät ja tarkoitetut vastaanottajat."
@@ -10607,14 +10592,6 @@
         "Tilaustasi perutaan. Odota."
       ]
     },
-    "Status": {
-      "Accepted": [
-        "Hyväksytty"
-      ],
-      "Pending": [
-        "Odottaa"
-      ]
-    },
     "Storage": {
       "Get more storage": [
         "Hanki lisää tallennustilaa"
@@ -11789,9 +11766,9 @@
       "Folder details": [
         "Kansion tiedot"
       ],
-      "Found ${ searchView.numberOfResults } result": [
-        "Löytyi ${ searchView.numberOfResults } tulos",
-        "Löytyi ${ searchView.numberOfResults } tulosta"
+      "Found ${ resultCount } result": [
+        "Löytyi ${ resultCount } tulos",
+        "Löytyi ${ resultCount } tulosta"
       ],
       "Get ${ DRIVE_SHORT_APP_NAME } on your phone": [
         "Hanki ${ DRIVE_SHORT_APP_NAME } puhelimeesi"

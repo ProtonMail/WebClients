@@ -8104,8 +8104,8 @@
       "Password-protected Emails": [
         "Adgangskodebeskyttede e-mails"
       ],
-      "Phone support (20+ users)": [
-        "Telefon-support (20+ brugere)"
+      "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
+        "Telefonsupport (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ brugere)"
       ],
       "Priority email support": [
         "Prioriteret e-mailsupport"
@@ -8539,8 +8539,8 @@
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Personliggør din e-mail-signatur med logoer, billeder, ikoner til sociale medier, links til dine kontaktoplysninger og meget mere."
       ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
-        "Telefonsupport er tilgængelig fra ${ BRAND_NAME } Kundesupport-team i europæisk åbningstid for kunder med 20 eller flere brugere"
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } or more users": [
+        "Telefonsupport er tilgængelig fra ${ BRAND_NAME } Kundesupport-team i den europæiske åbningstid for kunder med ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } eller flere brugere"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Forhindrer, at beskeder kan tilgås af ${ BRAND_NAME } eller tredjeparter. De eneste personer, der kan læse beskederne, er afsenderen og den tilsigtede modtager."
