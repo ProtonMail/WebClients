@@ -37,11 +37,15 @@ export const useJointTrashNodes = () => {
     const [items, setItems] = useState<LegacyItem[]>([]);
 
     useEffect(() => {
+        let isCancelled = false;
+
         const convertNodes = async () => {
             try {
                 const defaultShare = await getDefaultShare();
                 if (!defaultShare) {
-                    setItems([]);
+                    if (!isCancelled) {
+                        setItems([]);
+                    }
                     return;
                 }
                 const driveItems = await Promise.all(
@@ -50,17 +54,26 @@ export const useJointTrashNodes = () => {
                     )
                 );
                 const photoItems = await Promise.all(
-                    photoNodesList.map(async (node) => {
-                        const item = await mapNodeToLegacyItem({ ok: true, value: node }, defaultShare.shareId, photos);
-                        return item;
-                    })
+                    photoNodesList.map((node) =>
+                        mapNodeToLegacyItem({ ok: true, value: node }, defaultShare.shareId, photos)
+                    )
                 );
-                setItems([...driveItems, ...photoItems]);
+                if (!isCancelled) {
+                    setItems([...driveItems, ...photoItems]);
+                }
             } catch (error) {
-                handleLegacyError(error);
+                if (!isCancelled) {
+                    handleLegacyError(error);
+                }
             }
         };
         void convertNodes();
+
+        return () => {
+            // Prevent state updates from async operations that complete after the component
+            // unmounts or dependencies change, avoiding race conditions between drive and photo stores.
+            isCancelled = true;
+        };
     }, [driveNodesList, photoNodesList, drive, photos, getDefaultShare]);
 
     const { sortedList, sortParams, setSorting } = useSortingWithDefault(items, DEFAULT_SORT);
