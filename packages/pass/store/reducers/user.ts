@@ -5,6 +5,7 @@ import {
     aliasSyncEnable,
     aliasSyncPending,
     aliasSyncStatus,
+    bootSuccess,
     getUserAccessSuccess,
     getUserFeaturesSuccess,
     getUserSettings,
@@ -104,9 +105,11 @@ export const INITIAL_HIGHSECURITY_SETTINGS = {
 };
 
 const reducer: Reducer<UserState> = (state = getInitialState(), action) => {
-    if (setUserEventID.match(action)) {
+    if (bootSuccess.match(action) && action.payload?.v === 2) {
         return partialMerge(state, { userEventId: action.payload.userEventID });
     }
+
+    if (setUserEventID.match(action)) return partialMerge(state, { userEventId: action.payload.userEventID });
 
     if (userEvent.match(action)) {
         if (action.payload.EventID === state.eventId) return state;
