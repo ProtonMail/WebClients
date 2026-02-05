@@ -4812,6 +4812,9 @@
       "Simplify syncing and scheduling with shared calendars.": [
         "Zjednodušte synchronizaci a plánování pomocí sdílených kalendářů."
       ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Pro importování prostřednictvím souborů CSV a VCF zajistěte, aby velikost souboru nepřesáhla ${ MAX_IMPORT_FILE_SIZE_STRING } nebo ${ maxContactString } kontaktů. Pokud je váš soubor větší, rozdělte jej na menší soubory. ${ learnMoreLink }."
+      ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Pro import kontaktů ze služby Google nebo Outlook ${ easySwitchLink }."
       ],
@@ -5092,6 +5095,9 @@
       "macOS": [
         "macOS"
       ],
+      "macOS 14 (Sonoma) or newer": [
+        "macOS 14 (Sonoma) nebo novější"
+      ],
       "macOS Big Sur": [
         "macOS Big Sur"
       ],
@@ -5104,8 +5110,8 @@
       "macOS Monterey": [
         "macOS Monterey"
       ],
-      "macOS Ventura or later": [
-        "macOS Ventura nebo novější"
+      "macOS Ventura": [
+        "macOS Ventura"
       ],
       "Mail": [
         "Mail"
@@ -5136,9 +5142,6 @@
       ],
       "Windows 10/11 (x64)": [
         "Windows 10/11 (x64)"
-      ],
-      "Windows 8/8.1/7 or Windows 32-bit (ARM64)": [
-        "Windows 8/8.1/7 nebo Windows 32-bit (ARM64)"
       ]
     },
     "Download link": {
@@ -6836,6 +6839,9 @@
       "An error occurred uploading your file. No file has been selected.": [
         "Došlo k chybě při nahrávání vašeho souboru. Žádný soubor nebyl vybrán."
       ],
+      "Your file ${ formattedFilename } contains more than ${ maxContactString } contacts.": [
+        "Váš soubor ${ formattedFilename } obsahuje více než ${ maxContactString } kontaktů."
+      ],
       "Your file ${ formattedFilename } has no contacts to be imported.": [
         "Váš soubor ${ formattedFilename } nemá žádné kontakty k importování."
       ],
@@ -6920,6 +6926,9 @@
       ]
     },
     "Error message": {
+      "Account is deleted or disabled": [
+        "Účet je smazán nebo zakázán"
+      ],
       "App currently unavailable": [
         "Aplikace je momentálně nedostupná"
       ],
@@ -9143,6 +9152,12 @@
       ],
       "All your changes will be lost.": [
         "Veškeré vaše změny budou ztraceny."
+      ],
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "Budou importovány všechny vaše kontakty až do limitu ${ maxContact }",
+        "Budou importovány všechny vaše kontakty až do limitu ${ maxContact }",
+        "Budou importovány všechny vaše kontakty až do limitu ${ maxContact }",
+        "Budou importovány všechny vaše kontakty až do limitu ${ maxContact }"
       ],
       "Allocated": [
         "Přiděleno"
@@ -12030,6 +12045,9 @@
       "Your plan is limited to 10 versions for up to 7 days": [
         "Váš plán je limitovaný na 10 verzí až na 7 dní"
       ],
+      "Your recent changes have been published. They will be visible to users in the next few hours.": [
+        "Vaše nedávné změny byly publikovány. Budou viditelné pro uživatele v následujících několika hodinách."
+      ],
       "Your recovery phrase": [
         "Vaše obnovovací fráze"
       ],
@@ -13958,6 +13976,9 @@
       "URL": [
         "URL"
       ],
+      "Use email categories": [
+        "Používat kategorie e-mailů"
+      ],
       "Use folder colors": [
         "Použít barvy složek"
       ],
@@ -15631,8 +15652,8 @@
       "Password-protected Emails": [
         "Zprávy chráněné heslem"
       ],
-      "Phone support (20+ users)": [
-        "Telefonická podpora (20+ uživatelů)"
+      "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
+        "Telefonická podpora (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ uživatelů)"
       ],
       "Priority email support": [
         "Prioritní podpora"
@@ -16159,8 +16180,8 @@
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Přizpůsobte svůj podpis logem, obrázky, ikony sociálních médií, odkazem na kontakt atd."
       ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
-        "Telefonická podpora je dostupná od týmu zákaznické podpory ${ BRAND_NAME } během evropské pracovní doby, pro zákazníky se 20 a více uživateli"
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } or more users": [
+        "Telefonická podpora je dostupná od týmu zákaznické podpory ${ BRAND_NAME } během evropské pracovní doby, pro zákazníky s ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } nebo více uživateli"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Zamezí přístup ke zprávám třetím stranám i ${ BRAND_NAME }. Jediní lidé, kteří mohou číst zprávy, jsou odesílatel a příjemce."
@@ -17827,6 +17848,18 @@
       "terms and conditions": [
         "smluvní podmínky užívání"
       ],
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "Sleva je platná pro ${ renewalsWithCoupon } obnovení.",
+        "Sleva je platná pro ${ renewalsWithCoupon } obnovení.",
+        "Sleva je platná pro ${ renewalsWithCoupon } obnovení.",
+        "Sleva je platná pro ${ renewalsWithCoupon } obnovení."
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Speciální zvýhodněná cena platí ${ couponRedemptions } měsíc. Poté dojde každý měsíc k automatickému obnovení za ${ renewPriceStr }. Předplatné můžete kdykoli zrušit.",
+        "Speciální zvýhodněná cena platí ${ couponRedemptions } měsíce. Poté dojde každý měsíc k automatickému obnovení za ${ renewPriceStr }. Předplatné můžete kdykoli zrušit.",
+        "Speciální zvýhodněná cena platí ${ couponRedemptions } měsíců. Poté dojde každý měsíc k automatickému obnovení za ${ renewPriceStr }. Předplatné můžete kdykoli zrušit.",
+        "Speciální zvýhodněná cena platí ${ couponRedemptions } měsíců. Poté dojde každý měsíc k automatickému obnovení za ${ renewPriceStr }. Předplatné můžete kdykoli zrušit."
+      ],
       "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
         "Speciální zvýhodněná cena platí pro první ${ subscriptionLength } měsíc.",
         "Speciální zvýhodněná cena platí pro první ${ subscriptionLength } měsíce.",
@@ -17835,6 +17868,12 @@
       ],
       "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Speciální zvýhodněná cena platí první měsíc. Poté dojde každý měsíc k automatickému obnovení za ${ renewPriceStr }. Předplatné můžete kdykoli zrušit."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Speciálně zvýhodněná cena ${ priceWithDiscount } platí ${ couponRedemptions } měsíc. Poté se automaticky obnoví za ${ renewPriceStr } na 1 měsíc. Službu můžete kdykoli zrušit.",
+        "Speciálně zvýhodněná cena ${ priceWithDiscount } platí ${ couponRedemptions } měsíce. Poté se automaticky obnoví za ${ renewPriceStr } na 1 měsíc. Službu můžete kdykoli zrušit.",
+        "Zvýhodněná cena ${ priceWithDiscount } platí po dobu ${ couponRedemptions } měsíců. Poté se automaticky obnoví za ${ renewPriceStr } na 1 měsíc. Službu můžete kdykoli zrušit.",
+        "Zvýhodněná cena ${ priceWithDiscount } platí po dobu ${ couponRedemptions } měsíců. Poté se automaticky obnoví za ${ renewPriceStr } na 1 měsíc. Službu můžete kdykoli zrušit."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "Speciální zvýhodněná cena ${ priceWithDiscount } platí pro první ${ subscriptionLength } měsíc.",
@@ -21791,9 +21830,6 @@
       "Catch-all address updated": [
         "Záchytná adresa aktualizována"
       ],
-      "Changes published. Your changes will be visible to all users in the next few hours.": [
-        "Změny zveřejněny. Vaše změny budou viditelné pro všechny uživatele během několika následujících hodin."
-      ],
       "Code sent to ${ methodTo }": [
         "Kód zaslán na ${ methodTo }"
       ],
@@ -22179,11 +22215,29 @@
       ]
     },
     "Theme": {
+      "Auto": [
+        "Automaticky"
+      ],
       "Dark": [
         "Tmavý"
       ],
       "Light": [
         "Světlý"
+      ],
+      "Mode: Auto": [
+        "Režim: Automaticky"
+      ],
+      "Mode: Dark": [
+        "Režim: Tmavý"
+      ],
+      "Mode: Light": [
+        "Režim: Světlý"
+      ],
+      "Sync with system": [
+        "Synchronizovat se systémem"
+      ],
+      "Use ${ BRAND_NAME } settings": [
+        "Použijte nastavení ${ BRAND_NAME }"
       ]
     },
     "Time unit": {
@@ -23866,6 +23920,9 @@
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Vaše bezplatná zkušební verze ${ planName } skončí ${ textDate }"
       ],
+      "Your ${ planTitle } subscription has started": [
+        "Vaše předplatné ${ planTitle } bylo zahájeno"
+      ],
       "Your calendar link": [
         "URL adresa kalendáře"
       ],
@@ -24156,6 +24213,9 @@
       ],
       "Specify the users of the eduGAIN entity who are allowed to authenticate with SAML SSO": [
         "Zadejte uživatele subjektu eduGAIN, kteří se mohou ověřovat pomocí SAML SSO"
+      ],
+      "System notification": [
+        "Systémové oznámení"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Systémové podsložky se v ${ MAIL_APP_NAME } zobrazí jako samostatné složky"
@@ -25032,6 +25092,9 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } přenese co nejvíce dat, počínaje vašimi nejnovějšími zprávami."
+      ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } offer has ended": [
+        "Nabídka ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } již skončila"
       ],
       "Are you sure you want to delete the phone number?": [
         "Jste si jistí, že chcete vymazat telefonní číslo?"

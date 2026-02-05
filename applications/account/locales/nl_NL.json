@@ -5047,6 +5047,9 @@
       "macOS": [
         "macOS"
       ],
+      "macOS 14 (Sonoma) or newer": [
+        "macOS 14 (Sonoma) of nieuwer"
+      ],
       "macOS Big Sur": [
         "macOS Big Sur"
       ],
@@ -5059,8 +5062,8 @@
       "macOS Monterey": [
         "macOS Monterey"
       ],
-      "macOS Ventura or later": [
-        "macOS Ventura of nieuwer"
+      "macOS Ventura": [
+        "macOS Ventura"
       ],
       "Mail": [
         "E-mail"
@@ -5091,9 +5094,6 @@
       ],
       "Windows 10/11 (x64)": [
         "Windows 10/11 (x64)"
-      ],
-      "Windows 8/8.1/7 or Windows 32-bit (ARM64)": [
-        "Windows 8/8.1/7 of Windows 32-bit (ARM64)"
       ]
     },
     "Download link": {
@@ -15313,8 +15313,8 @@
       "Password-protected Emails": [
         "E-mails met wachtwoordbeveiliging"
       ],
-      "Phone support (20+ users)": [
-        "Telefonische ondersteuning (20+ gebruikers)"
+      "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
+        "Telefonische ondersteuning (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ gebruikers)"
       ],
       "Priority email support": [
         "Prioriteitsondersteuning per e-mail"
@@ -15823,8 +15823,8 @@
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Personaliseer uw e-mailhandtekening met een logo, afbeelding, pictogram van social media, koppeling naar uw contactgegevens en meer"
       ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
-        "Telefonische ondersteuning is beschikbaar van de ${ BRAND_NAME } klantenondersteuning tijdens Europese kantoortijden voor klanten met 20 of meer gebruikers."
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } or more users": [
+        "Telefonische ondersteuning is beschikbaar vanuit het ${ BRAND_NAME } Klantenservice team tijdens Europese kantooruren, voor klanten met ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } of meer gebruikers"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Voorkomt dat berichten worden gelezen door ${ BRAND_NAME } of derden. De enige personen die de berichten kunnen lezen, zijn de afzender en de beoogde ontvanger."
@@ -21294,9 +21294,6 @@
       ],
       "Catch-all address updated": [
         "Catch-all adres bijgewerkt"
-      ],
-      "Changes published. Your changes will be visible to all users in the next few hours.": [
-        "Wijzigingen gepubliceerd. Uw wijzigingen zullen, in de komende uren, zichtbaar zijn voor alle gebruikers."
       ],
       "Code sent to ${ methodTo }": [
         "Code verzonden naar ${ methodTo }"
