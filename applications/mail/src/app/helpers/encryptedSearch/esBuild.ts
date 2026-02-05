@@ -83,13 +83,14 @@ export const cleanText = (text: string, includeQuote: boolean) => {
     removeTag(body, 'style');
     removeTag(body, 'script');
 
-    const preparedBody = prepareHTMLBody(body);
+    let finalBody = body;
 
     if (!includeQuote) {
-        const [noQuoteContent] = locateBlockquote(preparedBody);
-        return getCleanMessageContent(noQuoteContent || '');
+        const [noQuoteContent] = locateBlockquote(body);
+        finalBody = domParser.parseFromString(noQuoteContent, 'text/html').body;
     }
 
+    const preparedBody = prepareHTMLBody(finalBody);
     return getCleanMessageContent(preparedBody.textContent || '');
 };
 
