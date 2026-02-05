@@ -14,9 +14,6 @@
       "Add another account": [
         "Voeg een account toe"
       ],
-      "Agree and continue": [
-        "Akkoord en doorgaan"
-      ],
       "Assign ${ selectedParticipantName } as host": [
         "Wijs ${ selectedParticipantName } aan als host"
       ],
@@ -1748,8 +1745,8 @@
       "Internet connection lost": [
         "Internetverbinding verbroken"
       ],
-      "Joined": [
-        "Aangesloten"
+      "Joined ${ roomNameLabel }": [
+        "Deelname aan ${ roomNameLabel }"
       ],
       "Learn more": [
         "Meer informatie"
@@ -1757,8 +1754,8 @@
       "Leaving will stop your screen sharing. Do you want to continue?": [
         "Als u vertrekt, stopt uw schermdeling. Wilt u doorgaan?"
       ],
-      "Left": [
-        "Links"
+      "Left ${ roomNameLabel }": [
+        "${ roomNameLabel } verlaten"
       ],
       "Left by mistake?": [
         "Per ongeluk vertrokken?"
@@ -2382,9 +2379,6 @@
       "Audio": [
         "Audio"
       ],
-      "Authenticator": [
-        "Authenticator"
-      ],
       "Available Cameras": [
         "Beschikbare camera's"
       ],
@@ -2456,9 +2450,6 @@
       ],
       "Minicalendar": [
         "Mini-agenda"
-      ],
-      "MLS state": [
-        "MLS status"
       ],
       "Participants": [
         "Deelnemers"
