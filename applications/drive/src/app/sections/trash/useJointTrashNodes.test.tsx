@@ -150,4 +150,47 @@ describe('useJointTrashNodes', () => {
 
         expect(result.current.trashNodes).toEqual([]);
     });
+
+    it('prevents race condition when dependencies change before async operations complete', async () => {
+        const oldNode = { uid: 'old-1', name: 'Old node', type: NodeType.File };
+        const newNode = { uid: 'new-1', name: 'New node', type: NodeType.File };
+
+        driveStoreState.trashNodes = { [oldNode.uid]: oldNode };
+
+        let resolveOldMapping: ((value: LegacyItem) => void) | undefined;
+        const oldDelayedPromise = new Promise<LegacyItem>((resolve) => {
+            resolveOldMapping = resolve;
+        });
+        mockMapNodeToLegacyItem.mockReturnValueOnce(oldDelayedPromise);
+
+        const { result, rerender } = renderHook(() => useJointTrashNodes());
+
+        // Verify initial state is empty
+        expect(result.current.trashNodes).toEqual([]);
+
+        // Change dependencies before old async operation completes
+        driveStoreState.trashNodes = { [newNode.uid]: newNode };
+        mockMapNodeToLegacyItem.mockResolvedValueOnce(createLegacyItem(newNode.uid, newNode.name));
+        rerender();
+
+        // Wait for the new mapping to complete
+        await waitFor(() => {
+            expect(result.current.trashNodes).toHaveLength(1);
+        });
+
+        // Verify we got the new node
+        expect(result.current.trashNodes[0].uid).toBe(newNode.uid);
+
+        // Now complete the old async operation
+        if (resolveOldMapping) {
+            resolveOldMapping(createLegacyItem(oldNode.uid, oldNode.name));
+        }
+
+        // Wait a bit to ensure any state updates would have been attempted
+        await new Promise((resolve) => setTimeout(resolve, 50));
+
+        // The result should still be the new node, not the old one
+        expect(result.current.trashNodes).toHaveLength(1);
+        expect(result.current.trashNodes[0].uid).toBe(newNode.uid);
+    });
 });
