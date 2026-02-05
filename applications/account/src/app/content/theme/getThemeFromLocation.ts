@@ -40,18 +40,18 @@ export const getThemeFromLocation = (
 
     if (
         location.pathname.includes('signup') ||
-        SSO_PATHS.REFERAL_SIGNUP ||
-        SSO_PATHS.REFERAL_PLAN_SELECTION ||
-        SSO_PATHS.GREENLAND_SIGNUP ||
-        SSO_PATHS.START ||
-        SSO_PATHS.PASS_SIGNUP ||
-        SSO_PATHS.MAIL_SIGNUP ||
-        SSO_PATHS.CALENDAR_SIGNUP ||
-        SSO_PATHS.DRIVE_SIGNUP ||
-        SSO_PATHS.DOCS_SIGNUP ||
-        SSO_PATHS.VPN_SIGNUP ||
-        SSO_PATHS.LUMO_SIGNUP ||
-        SSO_PATHS.MEET_SIGNUP
+        location.pathname === SSO_PATHS.REFERAL_SIGNUP ||
+        location.pathname === SSO_PATHS.REFERAL_PLAN_SELECTION ||
+        location.pathname === SSO_PATHS.GREENLAND_SIGNUP ||
+        location.pathname === SSO_PATHS.START ||
+        location.pathname === SSO_PATHS.PASS_SIGNUP ||
+        location.pathname === SSO_PATHS.MAIL_SIGNUP ||
+        location.pathname === SSO_PATHS.CALENDAR_SIGNUP ||
+        location.pathname === SSO_PATHS.DRIVE_SIGNUP ||
+        location.pathname === SSO_PATHS.DOCS_SIGNUP ||
+        location.pathname === SSO_PATHS.VPN_SIGNUP ||
+        location.pathname === SSO_PATHS.LUMO_SIGNUP ||
+        location.pathname === SSO_PATHS.MEET_SIGNUP
     ) {
         return {
             LightTheme: ThemeTypes.Storefront,
