@@ -4957,9 +4957,6 @@
       "macOS Monterey": [
         "macOS Monterey"
       ],
-      "macOS Ventura or later": [
-        "macOS Ventura 및 이후 버전"
-      ],
       "Mail": [
         "Mail"
       ],
@@ -4989,9 +4986,6 @@
       ],
       "Windows 10/11 (x64)": [
         "Windows 10/11 (x64)"
-      ],
-      "Windows 8/8.1/7 or Windows 32-bit (ARM64)": [
-        "Windows 8/8.1/7 및 Windows 32비트 (ARM64)"
       ]
     },
     "Download link": {
@@ -8783,6 +8777,9 @@
       ],
       "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
         "이 링크가 있는 사용자는 캘린더에서 사용자가 여유로운지 바쁜지 확인할 수 있습니다. 제목, 위치 또는 참가자 등 이벤트 세부사항은 볼 수 없습니다."
+      ],
+      "Anyone with this link won't be able to sync or get future updates for your calendar. If you want to give them access again, you will have to create a new link.": [
+        "이 링크를 소유한 사용자는 캘린더를 동기화하거나 향후 업데이트를 받을 수 없습니다. 다시 접근 권한을 부여하려면 새 링크를 만들어야 합니다."
       ],
       "Are you sure you want to cancel editing the group?": [
         "편집 중인 그룹을 정말 삭제하시겠어요?"
@@ -14926,8 +14923,8 @@
       "Password-protected Emails": [
         "비밀번호로 보호된 이메일"
       ],
-      "Phone support (20+ users)": [
-        "휴대 전화 지원 (20명 이상 사용자)"
+      "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
+        "전화 지원 (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }명 이상 사용자)"
       ],
       "Priority email support": [
         "이메일 우선 지원"
@@ -15427,8 +15424,8 @@
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "로고, 이미지, 소셜 미디어 아이콘, 연락처 링크 등으로 이메일 서명을 개인화하세요."
       ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
-        "전화 지원은 20명 이상의 사용자가 있는 고객을 위해 유럽 업무 시간 동안 ${ BRAND_NAME } 고객 성공 팀에서 이용할 수 있습니다."
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } or more users": [
+        "전화 지원은 유럽 표준시 업무 시간 동안 ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }명 이상의 사용자가 있는 고객을 대상으로 ${ BRAND_NAME } 고객 지원팀에서 이용할 수 있습니다."
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "${ BRAND_NAME } 또는 제3자가 메시지에 접근하는 것을 방지합니다. 메시지를 읽을 수 있는 유일한 사람은 당신과 이메일을 받은 수신자 뿐이죠."
@@ -20756,9 +20753,6 @@
       "Catch-all address updated": [
         "Catch-all 주소 업데이트됨"
       ],
-      "Changes published. Your changes will be visible to all users in the next few hours.": [
-        "변경 사항이 게시되었습니다. 모든 구성원이 몇 시간 뒤 변경 사항을 확인할 수 있게 됩니다."
-      ],
       "Code sent to ${ methodTo }": [
         "${ methodTo }(으)로 코드를 전송했습니다."
       ],
@@ -21141,6 +21135,9 @@
       ],
       "Light": [
         "라이트"
+      ],
+      "Sync with system": [
+        "시스템과 연동"
       ]
     },
     "Time unit": {
@@ -22753,6 +22750,9 @@
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "사용자의 ${ planName } 무료 체험이 ${ textDate }에 종료됩니다."
+      ],
+      "Your ${ planTitle } subscription has started": [
+        "${ planTitle } 구독이 시작되었습니다"
       ],
       "Your calendar link": [
         "내 캘린더 링크"

@@ -2057,7 +2057,7 @@
     },
     "b2b_trials_2025_Info": {
       "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
-        "Quando o período de avaliação terminar em ${ formattedDate1 }, ela se tornará uma assinatura paga que é renovada automaticamente a cada ${ renewCycle } mês. Você não será cobrado se cancelar antes de ${ formattedDate2 }."
+        "Quando o período de avaliação terminar em ${ formattedDate1 }, ela se tornará uma assinatura paga renovada automaticamente a cada ${ renewCycle } meses. Você não será cobrado se cancelar antes de ${ formattedDate2 }."
       ],
       "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
         "Quando o período de avaliação terminar em ${ formattedDate1 }, ela se tornará uma assinatura paga que é renovada automaticamente mensalmente. Você não será cobrado se cancelar antes de ${ formattedDate2 }."
@@ -5047,6 +5047,9 @@
       "macOS": [
         "macOS"
       ],
+      "macOS 14 (Sonoma) or newer": [
+        "macOS 14 (Sonoma) ou mais recente"
+      ],
       "macOS Big Sur": [
         "macOS Big Sur"
       ],
@@ -5059,8 +5062,8 @@
       "macOS Monterey": [
         "macOS Monterey"
       ],
-      "macOS Ventura or later": [
-        "macOS Ventura o superior"
+      "macOS Ventura": [
+        "macOS Ventura"
       ],
       "Mail": [
         "Mail"
@@ -5091,9 +5094,6 @@
       ],
       "Windows 10/11 (x64)": [
         "Windows 10/11 (x64)"
-      ],
-      "Windows 8/8.1/7 or Windows 32-bit (ARM64)": [
-        "Windows 8/8.1/7 ou Windows 32-bit (ARM64)"
       ]
     },
     "Download link": {
@@ -9135,7 +9135,7 @@
         "Com base no seu fuso horário"
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
-        "Navegação básica e ações permanecem disponíveis, independentemente dos atalhos de teclado estarem ativos ou não nas configurações."
+        "A navegação básica e as ações permanecem disponíveis, independentemente de os atalhos de teclado estarem ativos ou não nas configurações."
       ],
       "Basic, Plus or Visionary subscription required": [
         "É necessária a assinatura Basic, Plus ou Visionary"
@@ -9695,7 +9695,7 @@
         "Para obter um histórico de versões de 10 anos, entre em contato com nossa equipe de vendas."
       ],
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
-        "Para acessar seu e-mail a qualquer momento e aproveitar uma experiência otimizada no seu dispositivo móvel, faça o download do nosso aplicativo para ${ androidAppLink } ou ${ iosAppLink }."
+        "Para ter acesso ao e-mail a qualquer momento e uma experiência otimizada em dispositivos móveis, baixe nosso app ${ androidAppLink } ou ${ iosAppLink }."
       ],
       "for choosing ${ product }": [
         "por escolher ${ product }"
@@ -10243,7 +10243,7 @@
         "Sem histórico de importação ou encaminhamento."
       ],
       "No label selected": [
-        "Nenhuma marcador selecionado"
+        "Nenhum marcador selecionado"
       ],
       "No logs yet.": [
         "Ainda não há registros."
@@ -13155,7 +13155,7 @@
         "Atalhos do teclado"
       ],
       "Label as": [
-        "Rotular como"
+        "Marcar como"
       ],
       "Label messages as": [
         "Marcar mensagens como"
@@ -15319,8 +15319,8 @@
       "Password-protected Emails": [
         "E-mails protegidos por senha"
       ],
-      "Phone support (20+ users)": [
-        "Suporte por telefone (20 ou mais usuários)"
+      "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
+        "Suporte por telefone (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } ou mais usuários)"
       ],
       "Priority email support": [
         "Suporte prioritário por e-mail"
@@ -15829,8 +15829,8 @@
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Personalize sua assinatura de e-mail com logotipos, imagens, ícones de redes sociais, links para seus detalhes de contato e muito mais"
       ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
-        "O suporte por telefone está disponível na equipe de Suporte ao Cliente da ${ BRAND_NAME } durante o horário comercial europeu, para clientes com 20 ou mais usuários"
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } or more users": [
+        "O suporte por telefone está disponível com a equipe de Suporte ao Cliente da ${ BRAND_NAME } durante o horário comercial europeu, para clientes com ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } ou mais usuários"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Impede que as mensagens sejam acessadas pela ${ BRAND_NAME } ou por terceiros. As únicas pessoas que podem ler as mensagens são o remetente e o destinatário pretendido."
@@ -17453,7 +17453,7 @@
         "Oferta indisponível"
       ],
       "Payment method required for the subscription to be activated after the trial ends.": [
-        "Forneça um método de pagamento para ativar a assinatura após o término da avaliação."
+        "Método de pagamento necessário para que a assinatura seja ativada após o término do período de teste."
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reative sua assinatura primeiro para diminuir o número de complementos."
@@ -17609,7 +17609,7 @@
         "Tem certeza de que deseja continuar?"
       ],
       "If you choose to modify your ${ planTitle } plan, you may lose access to some features.": [
-        "Se você optar por modificar seu ${ planTitle } plano, você pode perder o acesso a alguns recursos."
+        "Se você optar por modificar seu plano ${ planTitle }, você pode perder o acesso a alguns recursos."
       ],
       "Keep ${ planTitle }": [
         "Manter o ${ planTitle }"
@@ -21306,9 +21306,6 @@
       ],
       "Catch-all address updated": [
         "Endereço catch-all atualizado"
-      ],
-      "Changes published. Your changes will be visible to all users in the next few hours.": [
-        "Alterações publicadas. Suas alterações ficarão visíveis para todos os usuários nas próximas horas."
       ],
       "Code sent to ${ methodTo }": [
         "Código enviado para ${ methodTo }"
