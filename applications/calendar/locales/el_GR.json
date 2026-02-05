@@ -8104,8 +8104,8 @@
       "Password-protected Emails": [
         "Μηνύματα ηλεκτρονικού ταχυδρομείου που προστατεύονται με κωδικό πρόσβασης"
       ],
-      "Phone support (20+ users)": [
-        "Τηλεφωνική υποστήριξη (20+ χρήστες)"
+      "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
+        "Τηλεφωνική υποστήριξη (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ χρήστες)"
       ],
       "Priority email support": [
         "Υποστήριξη ηλεκτρονικού ταχυδρομείου προτεραιότητας"
@@ -8539,8 +8539,8 @@
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Εξατομικεύστε την υπογραφή email σας με λογότυπα, εικόνες, εικονίδια κοινωνικών μέσων, συνδέσμους προς τα στοιχεία επικοινωνίας σας και πολλά άλλα"
       ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
-        "Η τηλεφωνική υποστήριξη είναι διαθέσιμη από τη ${ BRAND_NAME } Ομάδα Υποστήριξης πελατών κατά τις Ευρωπαϊκές εργάσιμες ώρες, για πελάτες με 20 ή περισσότερους χρήστες"
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } or more users": [
+        "Η τηλεφωνική υποστήριξη είναι διαθέσιμη από την ομάδα υποστήριξης πελατών της ${ BRAND_NAME } κατά τις ευρωπαϊκές εργάσιμες ώρες, για πελάτες με ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } ή περισσότερους χρήστες."
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Αποτρέπει την πρόσβαση σε μηνύματα από ${ BRAND_NAME } ή τρίτους. Τα μόνα άτομα που μπορούν να διαβάσουν τα μηνύματα είναι ο αποστολέας και ο παραλήπτης."
