@@ -565,7 +565,7 @@
         "Expandir o widget de videoconferência"
       ],
       "Expiration time": [
-        "Tempo para expiração"
+        "Tempo de expiração"
       ],
       "Explore ${ VPN_APP_NAME }": [
         "Explore ${ VPN_APP_NAME }"
@@ -1502,7 +1502,8 @@
         "Confiar"
       ],
       "Trust key": [
-        "Chave de confiança"
+        "Chave de confiança",
+        "Chaves de confiança"
       ],
       "Trust public key": [
         "Confiar na chave pública"
@@ -1908,7 +1909,7 @@
     },
     "b2b_trials_2025_Info": {
       "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
-        "Quando o período de avaliação terminar em ${ formattedDate1 }, ela se tornará uma assinatura paga que é renovada automaticamente a cada ${ renewCycle } mês. Você não será cobrado se cancelar antes de ${ formattedDate2 }."
+        "Quando o período de avaliação terminar em ${ formattedDate1 }, ela se tornará uma assinatura paga renovada automaticamente a cada ${ renewCycle } meses. Você não será cobrado se cancelar antes de ${ formattedDate2 }."
       ],
       "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
         "Quando o período de avaliação terminar em ${ formattedDate1 }, ela se tornará uma assinatura paga que é renovada automaticamente mensalmente. Você não será cobrado se cancelar antes de ${ formattedDate2 }."
@@ -4548,7 +4549,7 @@
         "Não foi possível abrir o cofre atualizado"
       ],
       "Decryption error: decryption of this message's encrypted content failed.": [
-        "Erro ao descriptografar: não foi possível decodificar o conteúdo criptografado desta mensagem."
+        "Erro de descriptografia: a descriptografia do conteúdo criptografado desta mensagem falhou."
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Desmarque pelo menos ${ calendarsToFixCount } calendário",
@@ -4652,7 +4653,7 @@
         "A data de validade não é válida."
       ],
       "Invalid expiration time": [
-        "O tempo de expiração não é válido."
+        "O tempo de expiração é inválido."
       ],
       "Invalid IBAN": [
         "IBAN inválido"
@@ -4913,6 +4914,9 @@
       ],
       "Thanks for the feedback!": [
         "Obrigado pelo feedback!"
+      ],
+      "That action can't be performed on emails in this folder": [
+        "Essa ação não pode ser realizada em e-mails nesta pasta"
       ],
       "The amount due has changed. Please try again.": [
         "O valor devido foi alterado. Tente novamente."
@@ -5839,7 +5843,7 @@
         "Baixe o aplicativo"
       ],
       "Keep using ${ MAIL_APP_NAME } to discover more ways ${ BRAND_NAME } protects your privacy and simplifies emailing.": [
-        "Continue usando o ${ MAIL_APP_NAME } para descobrir mais sobre como o ${ BRAND_NAME } protege sua privacidade e simplifica o gerenciamento de e-mails."
+        "Continue usando o ${ MAIL_APP_NAME } para descobrir mais maneiras que a ${ BRAND_NAME } protege sua privacidade e simplifica o envio de e-mails."
       ],
       "Learn more": [
         "Saiba mais"
@@ -6851,7 +6855,7 @@
         "Saldo da sua assinatura anterior"
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
-        "Navegação básica e ações permanecem disponíveis, independentemente dos atalhos de teclado estarem ativos ou não nas configurações."
+        "A navegação básica e as ações permanecem disponíveis, independentemente de os atalhos de teclado estarem ativos ou não nas configurações."
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Antes de pedir um novo código de verificação, verifique sua pasta de spam e verifique que ${ strong } é o endereço correto."
@@ -7255,7 +7259,7 @@
         "Para informações adicionais e para remover restrições, inicie sessão no ${ mailLink }."
       ],
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
-        "Para acessar seu e-mail a qualquer momento e aproveitar uma experiência otimizada no seu dispositivo móvel, faça o download do nosso aplicativo para ${ androidAppLink } ou ${ iosAppLink }."
+        "Para ter acesso ao e-mail a qualquer momento e uma experiência otimizada em dispositivos móveis, baixe nosso app ${ androidAppLink } ou ${ iosAppLink }."
       ],
       "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
         "Para segurança extra, você pode definir uma frase secreta. Ela não será incluída no convite do calendário. Lembre-se de compartilhá-la com seus convidados separadamente."
@@ -7447,7 +7451,7 @@
         "Apenas confirme sua seleção e faremos o restante."
       ],
       "Keep your login and credit card details safe but always on hand by adding them to ${ PASS_APP_NAME }. It's free, and included with your ${ BRAND_NAME } Account.": [
-        "Mantenha seus dados de início de sessão e cartão de crédito seguros, mas sempre à mão para adicioná-los ao ${ PASS_APP_NAME }. É gratuito, e está incluído na sua conta ${ BRAND_NAME }"
+        "Mantenha os detalhes do seu login e cartão de crédito seguros, mas sempre à mão, adicionando-os ao ${ PASS_APP_NAME }. É gratuito e está incluído na sua conta ${ BRAND_NAME }."
       ],
       "Keep your mailbox tidy by automatically clearing out trash and spam that have been there for more than 30 days.": [
         "Mantenha sua caixa de correio organizada, limpando automaticamente o lixo e o spam que estão lá há mais de 30 dias."
@@ -7624,10 +7628,13 @@
         "Nenhum marcador encontrado"
       ],
       "No label selected": [
-        "Nenhuma marcador selecionado"
+        "Nenhum marcador selecionado"
       ],
       "No links cleaned": [
         "Nenhum link limpo"
+      ],
+      "No messages found": [
+        "Nenhuma mensagem encontrada"
       ],
       "No messages to show": [
         "Nenhuma mensagem para mostrar"
@@ -8326,7 +8333,7 @@
         "Para cancelar a inscrição nesta lista de e-mails, um e-mail será enviado de ${ boldFrom } com os seguintes detalhes, conforme definido pelo remetente do boletim informativo:"
       ],
       "To unsubscribe from this mailing list, you will be taken to the following URL where instructions will be provided by the sender of the newsletter:": [
-        "Para cancelar a inscrição desta lista de endereços, você será levado para o seguinte URL onde as instruções serão fornecidas pelo remetente da newsletter:"
+        "Para cancelar a inscrição desta lista de e-mails, você será direcionado para o seguinte URL, onde o remetente da newsletter fornecerá as instruções:"
       ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Para poder usar a verificação de endereço, você deve confiar em uma ou mais chaves públicas disponíveis, incluindo aquela que você deseja usar para o envio. Isso evita que as chaves de criptografia possam ser falsificadas."
@@ -9543,7 +9550,7 @@
         "Palavra-chave"
       ],
       "Label as": [
-        "Rotular como"
+        "Marcar como"
       ],
       "Label messages as": [
         "Marcar mensagens como"
@@ -9624,7 +9631,7 @@
         "Nova senha"
       ],
       "Newsletter entry deleted": [
-        "A entrada do boletim foi eliminada."
+        "A entrada da newsletter foi excluída."
       ],
       "Newsletters": [
         "Boletins informativos"
@@ -10998,8 +11005,8 @@
       "Password-protected Emails": [
         "E-mails protegidos por senha"
       ],
-      "Phone support (20+ users)": [
-        "Suporte por telefone (20 ou mais usuários)"
+      "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
+        "Suporte por telefone (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } ou mais usuários)"
       ],
       "Priority email support": [
         "Suporte prioritário por e-mail"
@@ -11277,7 +11284,7 @@
     },
     "new_plans: label": {
       "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
-        "Estamos sempre trabalhando para melhorar o ${ config.appName } . Quão satisfeito você está com sua experiência?"
+        "Estamos sempre nos esforçando para tornar o ${ config.appName } melhor. Qual seu nível de satisfação com sua experiência?"
       ]
     },
     "new_plans: Subtext": {
@@ -11433,8 +11440,8 @@
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Personalize sua assinatura de e-mail com logotipos, imagens, ícones de redes sociais, links para seus detalhes de contato e muito mais"
       ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
-        "O suporte por telefone está disponível na equipe de Suporte ao Cliente da ${ BRAND_NAME } durante o horário comercial europeu, para clientes com 20 ou mais usuários"
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } or more users": [
+        "O suporte por telefone está disponível com a equipe de Suporte ao Cliente da ${ BRAND_NAME } durante o horário comercial europeu, para clientes com ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } ou mais usuários"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Impede que as mensagens sejam acessadas pela ${ BRAND_NAME } ou por terceiros. As únicas pessoas que podem ler as mensagens são o remetente e o destinatário pretendido."
@@ -12229,7 +12236,7 @@
         "Mais planos estão disponíveis em outras moedas"
       ],
       "Payment method required for the subscription to be activated after the trial ends.": [
-        "Forneça um método de pagamento para ativar a assinatura após o término da avaliação."
+        "Método de pagamento necessário para que a assinatura seja ativada após o término do período de teste."
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reative sua assinatura primeiro para diminuir o número de complementos."
@@ -12357,7 +12364,7 @@
         "Tem certeza de que deseja continuar?"
       ],
       "If you choose to modify your ${ planTitle } plan, you may lose access to some features.": [
-        "Se você optar por modificar seu ${ planTitle } plano, você pode perder o acesso a alguns recursos."
+        "Se você optar por modificar seu plano ${ planTitle }, você pode perder o acesso a alguns recursos."
       ],
       "Keep ${ planTitle }": [
         "Manter o ${ planTitle }"
@@ -12610,7 +12617,7 @@
         "Diga ao assistente de escrita o que deve ser escrito. Exemplo: \"Convidar a Joana para minha festa\""
       ],
       "Tell the writing assistant what to write. Example: “Thank my coworker for help on a project”": [
-        "Diga ao assistente de escrita o que deve ser escrito. Exemplo: “Agradeça ao meu colega de trabalho pela ajuda em um projeto”"
+        "Diga ao assistente de escrita o que escrever. Exemplo: “Agradeça ao meu colega de trabalho pela ajuda em um projeto”"
       ],
       "Tell the writing assistant what to write. Example: “Write a cover letter for an internship”": [
         "Diga ao assistente de escrita o que deve ser escrito. Exemplo: ”Escrever uma carta de apresentação para um estágio”"
@@ -13276,7 +13283,7 @@
         "Erro na verificação do remetente"
       ],
       "Sender verification failed: ${ verificationErrorsMessage }": [
-        "Erro na verificação do remetente: ${ verificationErrorsMessage }"
+        "Falha na verificação do remetente: ${ verificationErrorsMessage }"
       ],
       "Sender's trusted keys verification failed": [
         "Erro na verificação de chaves de confiança do remetente"
@@ -14453,7 +14460,7 @@
         "${ elementsCount } mensagens recategorizadas."
       ],
       "Secret passphrase updated": [
-        "Passphrase secreta atualizada"
+        "Senha secreta atualizada"
       ],
       "Self-destruction removed": [
         "Autodestruição removida"

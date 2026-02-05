@@ -1510,7 +1510,10 @@
         "Dôverovať"
       ],
       "Trust key": [
-        "Dôveryhodný kľúč"
+        "Dôveryhodný kľúč",
+        "Dôveryhodné kľúče",
+        "Dôveryhodné kľúče",
+        "Dôveryhodné kľúče"
       ],
       "Trust public key": [
         "Dôverovať verejnému kľúču"
@@ -4976,6 +4979,9 @@
       "Thanks for the feedback!": [
         "Ďakujeme za spätnú väzbu!"
       ],
+      "That action can't be performed on emails in this folder": [
+        "Túto akciu nie je možné vykonať na emailoch v tejto zložke."
+      ],
       "The amount due has changed. Please try again.": [
         "Čiastka na zaplatenie sa zmenila. Skúste to znova, prosím."
       ],
@@ -7864,6 +7870,9 @@
       ],
       "No links cleaned": [
         "Neboli vyčistené žiadne odkazy"
+      ],
+      "No messages found": [
+        "Neboli nájdené žiadne správy"
       ],
       "No messages to show": [
         "Žiadne správy na zobrazenie"
@@ -11354,8 +11363,8 @@
       "Password-protected Emails": [
         "Heslom chránené emaily"
       ],
-      "Phone support (20+ users)": [
-        "Telefonická podpora (20+ používateľov)"
+      "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
+        "Telefónna podpora (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ používateľov)"
       ],
       "Priority email support": [
         "Prioritná emailová podpora"
@@ -11805,8 +11814,8 @@
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Prispôsobte si svoj emailový podpis pomocou log, obrázkov, ikon sociálnych médií, odkazov na vaše kontaktné údaje a ďalších"
       ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
-        "Telefonická podpora od tímu zákazníckej podpory ${ BRAND_NAME } je k dispozícii počas európskych pracovných hodín pre zákazníkov s viac než 20 používateľmi"
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } or more users": [
+        "Telefonická podpora od tímu zákazníckej podpory ${ BRAND_NAME } je k dispozícii počas európskych pracovných hodín pre zákazníkov s minimálne ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } používateľmi."
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Zabraňuje prístupu ${ BRAND_NAME } alebo tretím stranám k správam. Jediní ľudia, ktorí môžu čítať správy, sú odosielateľ a zamýšľaný príjemca."
@@ -16264,6 +16273,9 @@
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Vaša bezplatná skúšobná verzia služby ${ planName } končí ${ textDate }"
+      ],
+      "Your ${ planTitle } subscription has started": [
+        "Vaše predplatné ${ planTitle } začalo"
       ],
       "Your account is protected": [
         "Váš účet je chránený"

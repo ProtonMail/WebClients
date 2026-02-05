@@ -1502,7 +1502,8 @@
         "Lita på"
       ],
       "Trust key": [
-        "Lita på nyckel"
+        "Lita på nyckel",
+        "Lita på nycklar"
       ],
       "Trust public key": [
         "Lita på offentlig nyckel"
@@ -4908,6 +4909,9 @@
       "Thanks for the feedback!": [
         "Tack för din feedback!"
       ],
+      "That action can't be performed on emails in this folder": [
+        "Denna åtgärd kan inte utföras på e-post i denna mapp"
+      ],
       "The amount due has changed. Please try again.": [
         "Det förfallna beloppet har ändrats. Försök igen."
       ],
@@ -7613,6 +7617,9 @@
       ],
       "No links cleaned": [
         "Inga länkar rensade"
+      ],
+      "No messages found": [
+        "Inga meddelanden hittades"
       ],
       "No messages to show": [
         "Inga meddelanden att visa"
@@ -10968,8 +10975,8 @@
       "Password-protected Emails": [
         "Lösenordsskyddade e-postmeddelanden"
       ],
-      "Phone support (20+ users)": [
-        "Telefonsupport (20+ användare)"
+      "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
+        "Telefonsupport (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ användare)"
       ],
       "Priority email support": [
         "Prioriterad e-postsupport"
@@ -11403,8 +11410,8 @@
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Personifiera din e-postsignatur med loggor bilder, ikoner för sociala medier, länkar till dina kontaktuppgifter och mer"
       ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
-        "Telefonsupport är tillgänglig från ${ BRAND_NAME } kundsupportteam under europeiska öppettider, för kunder med 20 eller fler användare"
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } or more users": [
+        "Telefonsupport är tillgänglig från ${ BRAND_NAME } kundtjänst under europeiska öppettider, för kunder med ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } eller fler användare"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Förhindrar meddelanden från åtkomst av ${ BRAND_NAME } eller tredje part. De enda som kan läsa meddelandena är avsändaren och den tilltänkta mottagaren."
@@ -12219,6 +12226,9 @@
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "Rabatten är giltig för ${ renewalsWithCoupon } förnyelse.",
         "Rabatten är giltig för ${ renewalsWithCoupon } förnyelser."
+      ],
+      "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
+        "Det speciellt rabatterade priset är giltig för den första månaden. Sedan kommer det förnyas automatiskt med ${ renewPriceStr } varje månad. Du kan avbryta när som helst."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "Det rabatterade priset ${ priceWithDiscount } gäller för den första ${ subscriptionLength } månaden.",
@@ -15647,6 +15657,9 @@
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Din gratis provperiod för ${ planName } slutar den ${ textDate }"
+      ],
+      "Your ${ planTitle } subscription has started": [
+        "Din ${ planTitle }-prenumeration har startat"
       ],
       "Your account is protected": [
         "Ditt konto är skyddat"
