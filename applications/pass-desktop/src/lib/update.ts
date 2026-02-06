@@ -1,10 +1,10 @@
 import type { Session } from 'electron';
-import { checkForUpdates, setTagCookie } from 'proton-pass-desktop/update';
 
 import type { MaybeNull } from '@proton/pass/types';
 
 import { msix_updater } from '../../native';
 import { store } from '../store';
+import { checkForUpdates, setTagCookie } from '../update';
 import logger from '../utils/logger';
 import { setupIpcHandler } from './ipc';
 

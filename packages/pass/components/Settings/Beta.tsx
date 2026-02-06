@@ -9,6 +9,7 @@ import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { settingsEditIntent } from '@proton/pass/store/actions';
 import { selectBetaEnabled } from '@proton/pass/store/selectors';
 import { PassFeature } from '@proton/pass/types/api/features';
+import { logger } from '@proton/pass/utils/logger';
 import { BRAND_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
@@ -50,20 +51,16 @@ const useToggleBetaDesktop = () => {
         await window.ctxBridge?.setBetaOptIn(newValue);
         setBetaEnabled(newValue);
         if (newValue) {
-            try {
-                const result = await window.ctxBridge?.checkForUpdates();
-                createNotification({
-                    text: result
-                        ? c('Info')
-                              .t`A new version is being downloaded. Once the download completes, it will be available on next restart.`
-                        : c('Info').t`No new versions are available at the moment.`,
-                });
-            } catch (error) {
-                createNotification({
-                    type: 'error',
-                    text: `error durring update ${error}`,
-                });
-            }
+            const result = await window.ctxBridge?.checkForUpdates().catch((err) => {
+                logger.warn(`[Update] Check for update failed (${err})`);
+                return false;
+            });
+            createNotification({
+                text: result
+                    ? c('Info')
+                          .t`A new version is being downloaded. Once the download completes, it will be available on next restart.`
+                    : c('Info').t`No new versions are available at the moment.`,
+            });
         }
     };
     return { betaEnabled, onToggle };

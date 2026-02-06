@@ -1,7 +1,6 @@
 import { randomBytes } from 'crypto';
 import type { CookiesSetDetails } from 'electron';
 import { type Session, app, autoUpdater } from 'electron';
-import { installWindowsUpdate } from 'proton-pass-desktop/lib/update';
 
 import { type FeatureFlagsResponse, PassFeature } from '@proton/pass/types/api/features';
 import { semver } from '@proton/pass/utils/string/semver';
@@ -9,6 +8,7 @@ import noop from '@proton/utils/noop';
 
 import config from './app/config';
 import { ARCH } from './lib/env';
+import { installWindowsUpdate } from './lib/update';
 import { userAgent } from './lib/user-agent';
 import { store } from './store';
 import logger from './utils/logger';
@@ -27,6 +27,7 @@ export type RemoteManifestResponse = {
         Version: string;
         RolloutPercentage: number;
         CategoryName: 'Stable' | 'Beta';
+        File: { Url: string }[];
     }[];
 };
 
@@ -42,7 +43,7 @@ const getFeedURL = (isBeta: boolean) => {
         feedURL += '/beta';
     }
 
-    if (isMac) {
+    if (isMac()) {
         feedURL += '/RELEASES.json';
         serverType = 'json';
     }
@@ -55,16 +56,6 @@ const getFeedURL = (isBeta: boolean) => {
 };
 
 export const checkForUpdates = async (session: Session): Promise<boolean> => {
-    // Hack for dev
-    if (isWindows) {
-        const buildUri = 'file:///C:/ProtonPass.msix';
-        logger.log(`[Update] Hack update for new windows install, buildUri=${buildUri}`);
-        const result = await installWindowsUpdate(buildUri);
-        logger.log(`[Update] Hack update for new windows install, result=${result}`);
-        app.quit();
-        return true;
-    }
-
     const remoteManifestUrl = `https://proton.me/download/PassDesktop/${process.platform}/${ARCH}/version.json`;
     const remoteManifest = await session
         .fetch(remoteManifestUrl)
@@ -130,7 +121,13 @@ export const checkForUpdates = async (session: Session): Promise<boolean> => {
     }
 
     logger.log(`[Update] Check for update v=${latestRelease.Version}`);
-    autoUpdater.checkForUpdates();
+    if (isWindows()) {
+        const url = latestRelease.File[0]?.Url;
+        if (!url) logger.log(`[Update] No url found in the latest release`);
+        await installWindowsUpdate(url);
+    } else {
+        autoUpdater.checkForUpdates();
+    }
     return true;
 };
 

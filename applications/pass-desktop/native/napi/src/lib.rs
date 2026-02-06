@@ -106,23 +106,23 @@ impl Autotype {
 #[napi]
 pub mod msix_updater {
     #[napi]
-    pub async fn install_update(package_uri: String) -> napi::Result<String> {
+    pub async fn install_update(package_uri: String) -> napi::Result<()> {
         #[cfg(windows)]
         {
             use super::updater;
             use napi::tokio;
 
             // Register for restart before updating
-            let restart_msg = updater::register_for_restart().map_err(|e| napi::Error::from_reason(e.to_string()))?;
+            updater::register_for_restart().map_err(|e| napi::Error::from_reason(e.to_string()))?;
 
             // Install the update (spawn blocking since Windows APIs are synchronous)
-            let install_msg = tokio::task::spawn_blocking(move || {
+            tokio::task::spawn_blocking(move || {
                 updater::install_update(package_uri).map_err(|e| napi::Error::from_reason(e.to_string()))
             })
             .await
             .map_err(|e| napi::Error::from_reason(e.to_string()))??;
 
-            Ok(format!("{}\n\n{}", restart_msg, install_msg))
+            Ok(())
         }
 
         #[cfg(not(windows))]
