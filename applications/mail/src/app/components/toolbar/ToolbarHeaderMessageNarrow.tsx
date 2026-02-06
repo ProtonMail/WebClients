@@ -103,7 +103,6 @@ const ToolbarHeaderMessageNarrow = ({
                                 <SnoozeToolbarDropdown labelID={labelID} selectedIDs={selectedIDs} />
                             )}
                             <MoreDropdown
-                                labelID={labelID}
                                 elementIDs={elementIDs}
                                 selectedIDs={selectedIDs}
                                 isSearch={isSearch}
