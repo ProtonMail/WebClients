@@ -147,7 +147,6 @@ export const labelMessagesPending = (
 
         // Decrease
         conversation.Labels?.forEach((label) => {
-            const labelID = label.ID;
             const conversationCounter = state.value?.find((counter) => counter.LabelID === label.ID);
 
             if (!conversationCounter) {
@@ -172,7 +171,11 @@ export const labelMessagesPending = (
 
             // If target is a category, only decrease counters in old category
             if (isCategoryLabel(destinationLabelID)) {
-                if (isCategoryLabel(destinationLabelID) && isCategoryLabel(labelID) && destinationLabelID !== labelID) {
+                if (
+                    isCategoryLabel(destinationLabelID) &&
+                    isCategoryLabel(label.ID) &&
+                    destinationLabelID !== label.ID
+                ) {
                     if (messagesFromConversationInLabel.length === getContextNumMessages(conversation, label.ID)) {
                         conversationCounter.Total = safeDecreaseCount(conversationCounter.Total, 1);
                     }
@@ -189,7 +192,7 @@ export const labelMessagesPending = (
 
             if (destinationLabelID === MAILBOX_LABEL_IDS.TRASH || destinationLabelID === MAILBOX_LABEL_IDS.SPAM) {
                 // Decrease ALMOST_ALL_MAIL and custom labels counts since items are no longer visible there
-                if (labelID === MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL) {
+                if (label.ID === MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL) {
                     if (messagesFromConversationInLabel.length === getContextNumMessages(conversation, label.ID)) {
                         conversationCounter.Total = safeDecreaseCount(conversationCounter.Total, 1);
                     }
@@ -204,7 +207,7 @@ export const labelMessagesPending = (
                 }
 
                 // Do not updated unmodifiable labels. However unread needs to be updated when moving to trash
-                if (isUnmodifiableByUser(labelID, labels, folders)) {
+                if (isUnmodifiableByUser(label.ID, labels, folders)) {
                     if (
                         destinationLabelID === MAILBOX_LABEL_IDS.TRASH &&
                         unreadMessagesFromConversationInLabel.length === getContextNumUnread(conversation, label.ID) &&
@@ -215,7 +218,7 @@ export const labelMessagesPending = (
                     return;
                 }
                 // Decrease STARRED and custom labels counts since items are removed
-                if (isCustomLabel(labelID, labels) || isSystemLabel(labelID)) {
+                if (isCustomLabel(label.ID, labels) || isSystemLabel(label.ID)) {
                     if (messagesFromConversationInLabel.length === getContextNumMessages(conversation, label.ID)) {
                         conversationCounter.Total = safeDecreaseCount(conversationCounter.Total, 1);
                     }
@@ -232,10 +235,10 @@ export const labelMessagesPending = (
 
             // Do not update labels, categories and unmodifiable counters
             if (
-                isCustomLabel(labelID, labels) ||
-                isSystemLabel(labelID) ||
-                isCategoryLabel(labelID) ||
-                isUnmodifiableByUser(labelID, labels, folders)
+                isCustomLabel(label.ID, labels) ||
+                isSystemLabel(label.ID) ||
+                isCategoryLabel(label.ID) ||
+                isUnmodifiableByUser(label.ID, labels, folders)
             ) {
                 return;
             }
@@ -246,17 +249,17 @@ export const labelMessagesPending = (
                 }
             });
             // Do nothing if is not the folder in which the message was located
-            if (labelID !== messageFolderID) {
+            if (label.ID !== messageFolderID) {
                 return;
             }
 
             // Else decrease count
-            if (messagesFromConversationInLabel.length === getContextNumMessages(conversation, labelID)) {
+            if (messagesFromConversationInLabel.length === getContextNumMessages(conversation, label.ID)) {
                 conversationCounter.Total = safeDecreaseCount(conversationCounter.Total, 1);
             }
 
             if (
-                unreadMessagesFromConversationInLabel.length === getContextNumUnread(conversation, labelID) &&
+                unreadMessagesFromConversationInLabel.length === getContextNumUnread(conversation, label.ID) &&
                 unreadMessagesFromConversationInLabel.length > 0
             ) {
                 conversationCounter.Unread = safeDecreaseCount(conversationCounter.Unread, 1);
@@ -320,27 +323,26 @@ export const labelConversationsPending = (
 
         // DECREASE count in old locations
         conversation.Labels?.forEach((label) => {
-            const labelID = label.ID;
-            const messageCountState = state.value?.find((counter) => counter.LabelID === labelID);
+            const conversationCountState = state.value?.find((counter) => counter.LabelID === label.ID);
 
-            const hasUnreadInLabel = getContextNumUnread(conversation, labelID) > 0;
+            const hasUnreadInLabel = getContextNumUnread(conversation, label.ID) > 0;
 
-            if (!messageCountState) {
+            if (!conversationCountState) {
                 return;
             }
 
             // If the label cannot be updated, do not update counters
-            if (isUnmodifiableByUser(labelID, labels, folders)) {
+            if (isUnmodifiableByUser(label.ID, labels, folders)) {
                 return;
             }
 
-            if (isSystemLabel(labelID) || isCustomLabel(labelID, labels)) {
+            if (isSystemLabel(label.ID) || isCustomLabel(label.ID, labels)) {
                 // If moving to TRASH or SPAM, labels are removed
                 if (destinationLabelID === MAILBOX_LABEL_IDS.TRASH || destinationLabelID === MAILBOX_LABEL_IDS.SPAM) {
-                    messageCountState.Total = safeDecreaseCount(messageCountState?.Total, 1);
+                    conversationCountState.Total = safeDecreaseCount(conversationCountState?.Total, 1);
 
                     if (hasUnreadInLabel) {
-                        messageCountState.Unread = safeDecreaseCount(messageCountState?.Unread, 1);
+                        conversationCountState.Unread = safeDecreaseCount(conversationCountState?.Unread, 1);
                     }
                 }
 
@@ -349,10 +351,10 @@ export const labelConversationsPending = (
             }
 
             // When changing the category, remove the messages from the old category
-            if (isCategoryLabel(labelID) && isCategoryLabel(destinationLabelID) && destinationLabelID !== labelID) {
-                messageCountState.Total = safeDecreaseCount(messageCountState?.Total, 1);
+            if (isCategoryLabel(label.ID) && isCategoryLabel(destinationLabelID) && destinationLabelID !== label.ID) {
+                conversationCountState.Total = safeDecreaseCount(conversationCountState?.Total, 1);
                 if (hasUnreadInLabel) {
-                    messageCountState.Unread = safeDecreaseCount(messageCountState?.Unread, 1);
+                    conversationCountState.Unread = safeDecreaseCount(conversationCountState?.Unread, 1);
                 }
                 return;
             }
@@ -367,10 +369,10 @@ export const labelConversationsPending = (
             }
 
             // Remove the conversation messages from all locations (except the destination)
-            if (destinationLabelID !== labelID) {
-                messageCountState.Total = safeDecreaseCount(messageCountState?.Total, 1);
+            if (destinationLabelID !== label.ID) {
+                conversationCountState.Total = safeDecreaseCount(conversationCountState?.Total, 1);
                 if (hasUnreadInLabel) {
-                    messageCountState.Unread = safeDecreaseCount(messageCountState?.Unread, 1);
+                    conversationCountState.Unread = safeDecreaseCount(conversationCountState?.Unread, 1);
                 }
 
                 // If items are moving out from TRASH or SPAM, we need to add them to ALMOST_ALL_MAIL count
@@ -378,7 +380,7 @@ export const labelConversationsPending = (
                     (counter) => counter.LabelID === MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL
                 );
                 if (
-                    (labelID === MAILBOX_LABEL_IDS.TRASH || labelID === MAILBOX_LABEL_IDS.SPAM) &&
+                    (label.ID === MAILBOX_LABEL_IDS.TRASH || label.ID === MAILBOX_LABEL_IDS.SPAM) &&
                     destinationLabelID !== MAILBOX_LABEL_IDS.TRASH &&
                     destinationLabelID !== MAILBOX_LABEL_IDS.SPAM &&
                     almostAllMailCountState
@@ -393,7 +395,7 @@ export const labelConversationsPending = (
                     ) {
                         almostAllMailCountState.Unread = safeIncreaseCount(
                             almostAllMailCountState?.Unread,
-                            getContextNumUnread(conversation, labelID)
+                            getContextNumUnread(conversation, label.ID)
                         );
                     }
                 }
