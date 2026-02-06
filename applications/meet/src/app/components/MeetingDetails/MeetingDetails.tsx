@@ -80,13 +80,15 @@ export const MeetingDetails = ({ currentMeeting }: { currentMeeting?: Meeting })
     return (
         <SideBar
             onClose={() => toggleSideBarState(MeetingSideBars.MeetingDetails)}
+            paddingClassName="py-4"
+            paddingHeaderClassName="px-4"
             header={
                 <div className="flex items-center">
                     <h2 className="text-3xl text-semibold">{c('Title').t`Info`}</h2>
                 </div>
             }
         >
-            <div className="flex-1 overflow-auto min-h-0">
+            <div className="flex-1 overflow-auto min-h-0 px-4">
                 <div className="meeting-info-wrapper meet-radius p-4">
                     <h3 className="text-semibold text-rg mb-4">{c('Title').t`Meeting details`}</h3>
                     <Table className="mb-0">

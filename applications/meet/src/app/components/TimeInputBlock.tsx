@@ -74,7 +74,7 @@ export const TimeInputBlock = ({
                         setValues({ ...values, timeZone: item.value as string });
                     }}
                     value={values.timeZone}
-                    dropdownClassName="create-container-dropdown p-2"
+                    dropdownClassName="create-container-dropdown py-2"
                     style={{ '--w-custom': '16.25rem', '--max-w-custom': '16.25rem' }}
                     search={true}
                     originalPlacement="bottom-start"

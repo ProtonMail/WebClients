@@ -104,11 +104,6 @@ $profile-colors:
 
 .dropdown-content {
 	background-image: none !important;
-	scrollbar-color: var(--interaction-weak) transparent !important;
-
-	&::-webkit-scrollbar-thumb {
-		background: var(--interaction-weak) !important;
-	}
 }
 
 .search-open-button {

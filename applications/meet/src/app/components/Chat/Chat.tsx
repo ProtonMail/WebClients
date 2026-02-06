@@ -108,6 +108,7 @@ export const Chat = () => {
             onClose={() => toggleSideBarState(MeetingSideBars.Chat)}
             absoluteHeader={true}
             isScrolled={isScrolled}
+            paddingClassName="py-4"
             header={
                 <div className="flex items-center">
                     {!isSearchOn && (
@@ -139,7 +140,7 @@ export const Chat = () => {
         >
             <div
                 ref={scrollRef}
-                className="flex-1 overflow-y-auto w-full flex flex-column flex-nowrap gap-4 pb-4 message-list"
+                className="flex-1 overflow-y-auto w-full flex flex-column flex-nowrap gap-4 pb-4 px-4 message-list"
                 onScroll={handleScroll}
             >
                 {!isSearchOn && hasNoMessages && (
