@@ -39,12 +39,7 @@ const LoadMore = ({ isSearching, handleClickLoadMore }: { isSearching: boolean; 
             <EllipsisLoader />
         </div>
     ) : (
-        <DropdownMenuButton
-            className="text-underline"
-            onClick={handleClickLoadMore}
-            aria-label={c('Action').t`Load more`}
-            data-testid="toolbar:load-more"
-        >
+        <DropdownMenuButton className="text-underline" onClick={handleClickLoadMore} data-testid="toolbar:load-more">
             {c('Action').t`Load more`}
         </DropdownMenuButton>
     );
@@ -125,7 +120,7 @@ const PagingControls = ({ loading, page: inputPage, total: inputTotal, onPage: i
                     size="tiny"
                     data-testid="toolbar:previous-page"
                 >
-                    <IcChevronLeft alt={c('Action').t`Previous page`} />
+                    <IcChevronLeft alt={c('Action').t`Previous page`} className="rtl:mirror" />
                 </Button>
                 <DropdownButton
                     size="tiny"
@@ -153,7 +148,7 @@ const PagingControls = ({ loading, page: inputPage, total: inputTotal, onPage: i
                     size="tiny"
                     data-testid="toolbar:next-page"
                 >
-                    <IcChevronLeft alt={c('Action').t`Next page`} />
+                    <IcChevronLeft alt={c('Action').t`Next page`} className="rtl:mirror" />
                 </Button>
             </div>
 
