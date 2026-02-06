@@ -1,3 +1,8 @@
+### Version 1.34.2
+
+- Allow Pass Plus Trial to access all paid features
+- Fix minor Pass Plus Trial UI issues
+
 ### Version 1.34.1
 
 - Support offline mode for all users
