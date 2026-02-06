@@ -614,7 +614,6 @@ export const ProtonMeetContainer = ({
                 mlsSetupDone.current = false;
                 disallowHealthCheck();
 
-                setJoinedRoom(false);
                 joinedRoomLoggedRef.current = false;
                 void wasmApp?.leaveMeeting();
                 void stopPiP();
@@ -888,8 +887,6 @@ export const ProtonMeetContainer = ({
             keyRotationSchedulerRef.current.clean();
         }
 
-        setJoinedRoom(false);
-
         keyProvider.cleanCurrent();
 
         prepareUpsell();
@@ -915,9 +912,7 @@ export const ProtonMeetContainer = ({
             // clean the current key and epoch to avoid use them in next meeting
             keyRotationSchedulerRef.current.clean();
         }
-
         setJoinedRoom(false);
-
         keyProvider.cleanCurrent();
     };
 
@@ -936,7 +931,6 @@ export const ProtonMeetContainer = ({
         instantMeetingRef.current = false;
         resetParticipantNameMap();
         mlsSetupDone.current = false; // need to set mls again after leave meeting
-        setJoinedRoom(false);
 
         keyProvider.cleanCurrent();
 
