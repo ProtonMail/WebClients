@@ -9,15 +9,14 @@ import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
-import { validateDeepLinkParams } from '@proton/calendar';
-import { useGetCalendarBootstrap, useReadCalendarBootstrap } from '@proton/calendar/calendarBootstrap/hooks';
-import { useGetCalendarKeys } from '@proton/calendar/calendarBootstrap/keys';
-import { changeCalendarVisiblity } from '@proton/calendar/calendars/actions';
-import { VIDEO_CONF_API_ERROR_CODES } from '@proton/calendar/components/videoConferencing/constants';
-import {
-    VideoConferenceZoomIntegration,
-    useVideoConfTelemetry,
-} from '@proton/calendar/components/videoConferencing/useVideoConfTelemetry';
+import { VIDEO_CONF_API_ERROR_CODES } from '@proton/calendar/VIDEO_CONF_API_ERROR_CODES';
+import { VideoConferenceZoomIntegration } from '@proton/calendar/VideoConferenceZoomIntegration';
+import { changeCalendarVisiblity } from '@proton/calendar/changeCalendarVisiblity';
+import { useGetCalendarBootstrap } from '@proton/calendar/useGetCalendarBootstrap';
+import { useGetCalendarKeys } from '@proton/calendar/useGetCalendarKeys';
+import { useReadCalendarBootstrap } from '@proton/calendar/useReadCalendarBootstrap';
+import { useVideoConfTelemetry } from '@proton/calendar/useVideoConfTelemetry';
+import { validateDeepLinkParams } from '@proton/calendar/validateDeepLinkParams';
 import {
     Dropzone,
     ImportModal,

@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { organizationActions } from '@proton/account/organization';
 import { useOrganization } from '@proton/account/organization/hooks';
-import { useVideoConfTelemetry } from '@proton/calendar';
+import { useVideoConfTelemetry } from '@proton/calendar/useVideoConfTelemetry';
 import { useApi, useNotifications } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';

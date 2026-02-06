@@ -6,8 +6,8 @@ import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 import { useGetAddresses } from '@proton/account/addresses/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
-import { useGetCalendarBootstrap } from '@proton/calendar/calendarBootstrap/hooks';
-import { useGetCalendars } from '@proton/calendar/calendars/hooks';
+import { useGetCalendars } from '@proton/calendar/useCalendars';
+import { useGetCalendarBootstrap } from '@proton/calendar/useGetCalendarBootstrap';
 import {
     GenericError,
     ModalTwo as Modal,

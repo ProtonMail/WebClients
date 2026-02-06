@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import { changeCalendarVisiblity } from '@proton/calendar/calendars/actions';
+import { changeCalendarVisiblity } from '@proton/calendar/changeCalendarVisiblity';
 import SidebarList from '@proton/components/components/sidebar/SidebarList';
 import SimpleSidebarListItemHeader from '@proton/components/components/sidebar/SimpleSidebarListItemHeader';
 import useLocalState from '@proton/components/hooks/useLocalState';

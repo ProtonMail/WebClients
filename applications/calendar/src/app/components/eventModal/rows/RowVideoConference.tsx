@@ -5,8 +5,11 @@ import { c } from 'ttag';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
-import { ProtonMeetRow, ZoomRow, useProtonMeetIntegration, useZoomIntegration } from '@proton/calendar';
-import { PROTON_MEET_REGEX_LOCATION } from '@proton/calendar/components/videoConferencing/protonMeet/protonMeetHelpers';
+import { PROTON_MEET_REGEX_LOCATION } from '@proton/calendar/PROTON_MEET_REGEX_LOCATION';
+import { ProtonMeetRow } from '@proton/calendar/ProtonMeetRow';
+import { ZoomRow } from '@proton/calendar/ZoomRow';
+import { useProtonMeetIntegration } from '@proton/calendar/useProtonMeetIntegration';
+import { useZoomIntegration } from '@proton/calendar/useZoomIntegration';
 import {
     Dropdown,
     DropdownButton,

@@ -1,7 +1,7 @@
 import { renderHook } from '@testing-library/react-hooks';
 
-import { useCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
-import { useCalendars } from '@proton/calendar/calendars/hooks';
+import { useCalendarUserSettings } from '@proton/calendar/useCalendarUserSettings';
+import { useCalendars } from '@proton/calendar/useCalendars';
 import { useInboxDesktopBadgeCount } from '@proton/components';
 
 import useNewEmailNotification from 'proton-mail/hooks/mailbox/notifications/useNewEmailNotification';
@@ -38,10 +38,10 @@ jest.mock('proton-mail/hooks/mailbox/notifications/useNewEmailNotification', () 
     __esModule: true,
     default: jest.fn(),
 }));
-jest.mock('@proton/calendar/calendars/hooks', () => ({
+jest.mock('@proton/calendar/useCalendars', () => ({
     useCalendars: jest.fn(),
 }));
-jest.mock('@proton/calendar/calendarUserSettings/hooks', () => ({
+jest.mock('@proton/calendar/useCalendarUserSettings', () => ({
     useCalendarUserSettings: jest.fn(),
 }));
 jest.mock('proton-mail/hooks/mailbox/usePreLoadElements', () => ({

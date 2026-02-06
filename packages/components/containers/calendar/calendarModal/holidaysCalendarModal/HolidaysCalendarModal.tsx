@@ -3,8 +3,8 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { useGetCalendarBootstrap } from '@proton/calendar/calendarBootstrap/hooks';
-import { useGetHolidaysDirectory } from '@proton/calendar/holidaysDirectory/hooks';
+import { useGetCalendarBootstrap } from '@proton/calendar/useGetCalendarBootstrap';
+import { useGetHolidaysDirectory } from '@proton/calendar/useGetHolidaysDirectory';
 import Form from '@proton/components/components/form/Form';
 import Loader from '@proton/components/components/loader/Loader';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';

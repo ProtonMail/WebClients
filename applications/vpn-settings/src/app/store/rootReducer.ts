@@ -11,7 +11,7 @@ import {
     samlReducer,
 } from '@proton/account';
 import { oauthTokenReducer } from '@proton/activation/src/logic/oauthToken';
-import { calendarsReducer } from '@proton/calendar';
+import { calendarsReducer } from '@proton/calendar/calendarsReducer';
 import { sharedReducers } from '@proton/redux-shared-store';
 
 export const rootReducer = combineReducers({

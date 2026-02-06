@@ -4,7 +4,7 @@ import { useOrganization } from '@proton/account/organization/hooks';
 import { usePlans } from '@proton/account/plans/hooks';
 import { useGetSubscription, useSubscription } from '@proton/account/subscription/hooks';
 import { useGetUser, useUser } from '@proton/account/user/hooks';
-import { useGetCalendars } from '@proton/calendar/calendars/hooks';
+import { useGetCalendars } from '@proton/calendar/useCalendars';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { useModalTwo, useModalTwoPromise } from '@proton/components/components/modalTwo/useModalTwo';
 import useApi from '@proton/components/hooks/useApi';

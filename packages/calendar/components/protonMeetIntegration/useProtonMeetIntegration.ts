@@ -23,7 +23,6 @@ import { VIDEO_CONFERENCE_PROVIDER } from '@proton/shared/lib/interfaces/calenda
 import type { EventModel } from '@proton/shared/lib/interfaces/calendar/Event';
 import { useFlag } from '@proton/unleash';
 
-import { calendarUrlQueryParams, validateDeepLinkParams } from '../../index';
 import {
     VideoConferenceProtonMeetIntegration,
     useVideoConfTelemetry,
@@ -31,6 +30,8 @@ import {
 import { shouldAutoAddMeetingLink } from './shouldAutoAddMeetingLink';
 import type { IntegrationState } from './types';
 import { useAutoAddMeetLinkNotification } from './useAutoAddMeetLinkNotification';
+import { validateDeepLinkParams } from '../../utils';
+import { calendarUrlQueryParams } from '../../constants';
 
 interface UseProtonMeetIntegrationParameters {
     model: EventModel;

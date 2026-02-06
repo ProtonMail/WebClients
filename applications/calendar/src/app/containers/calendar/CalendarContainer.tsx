@@ -4,7 +4,7 @@ import { useHistory, useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { useCalendarBootstrap } from '@proton/calendar/calendarBootstrap/hooks';
+import { useCalendarBootstrap } from '@proton/calendar/useCalendarBootstrap';
 import {
     useActiveBreakpoint,
     useApi,

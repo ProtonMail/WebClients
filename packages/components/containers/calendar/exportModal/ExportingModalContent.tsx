@@ -5,8 +5,8 @@ import { c } from 'ttag';
 
 import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 import { useGetAddresses } from '@proton/account/addresses/hooks';
-import { useGetCalendarKeys } from '@proton/calendar/calendarBootstrap/keys';
-import { useGetCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
+import { useGetCalendarKeys } from '@proton/calendar/useGetCalendarKeys';
+import { useGetCalendarUserSettings } from '@proton/calendar/useGetCalendarUserSettings';
 import DynamicProgress from '@proton/components/components/progress/DynamicProgress';
 import useApi from '@proton/components/hooks/useApi';
 import useGetVerificationPreferences from '@proton/components/hooks/useGetVerificationPreferences';

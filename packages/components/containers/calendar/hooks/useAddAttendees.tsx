@@ -2,7 +2,7 @@ import { useCallback } from 'react';
 
 import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 import { useGetAddresses } from '@proton/account/addresses/hooks';
-import { useGetCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
+import { useGetCalendarUserSettings } from '@proton/calendar/useGetCalendarUserSettings';
 import useApi from '@proton/components/hooks/useApi';
 import useGetCalendarInfo from '@proton/components/hooks/useGetCalendarInfo';
 import useRelocalizeText from '@proton/components/hooks/useRelocalizeText';

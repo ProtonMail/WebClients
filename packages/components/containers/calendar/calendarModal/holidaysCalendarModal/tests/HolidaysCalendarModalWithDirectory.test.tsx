@@ -1,7 +1,7 @@
 import { fireEvent, render, screen, waitFor, within } from '@testing-library/react';
 import { mocked } from 'jest-mock';
 
-import { useCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
+import { useCalendarUserSettings } from '@proton/calendar/useCalendarUserSettings';
 import { CALENDAR_MODAL_TYPE } from '@proton/components/containers/calendar/calendarModal/interface';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { ACCENT_COLORS_MAP } from '@proton/shared/lib/colors';
@@ -40,8 +40,8 @@ jest.mock('@proton/components/hooks/useConfig', () => ({
 }));
 
 jest.mock('@proton/components/hooks/useNotifications');
-jest.mock('@proton/calendar/calendarUserSettings/hooks', () => ({
-    ...jest.requireActual('@proton/calendar/calendarUserSettings/hooks'),
+jest.mock('@proton/calendar/useCalendarUserSettings', () => ({
+    ...jest.requireActual('@proton/calendar/useCalendarUserSettings'),
     useCalendarUserSettings: jest.fn(),
 }));
 

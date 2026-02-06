@@ -4,7 +4,7 @@ import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
-import { useGetCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
+import { useGetCalendarUserSettings } from '@proton/calendar/useGetCalendarUserSettings';
 import { useApi, useGetCalendarEventRaw, useGetCalendarInfo } from '@proton/components';
 import { useGetCanonicalEmailsMap } from '@proton/components/hooks/useGetCanonicalEmailsMap';
 import useGetOrCreateCalendarAndSettings from '@proton/components/hooks/useGetOrCreateCalendarAndSettings';

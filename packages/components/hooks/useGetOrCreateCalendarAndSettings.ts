@@ -1,8 +1,8 @@
 import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 import { useGetAddresses } from '@proton/account/addresses/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import { useGetCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
-import { useGetCalendars } from '@proton/calendar/calendars/hooks';
+import { useGetCalendarUserSettings } from '@proton/calendar/useGetCalendarUserSettings';
+import { useGetCalendars } from '@proton/calendar/useCalendars';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { getOwnedPersonalCalendars, getVisualCalendars } from '@proton/shared/lib/calendar/calendar';
 import { getHasUserReachedCalendarsLimit } from '@proton/shared/lib/calendar/calendarLimits';

@@ -1,4 +1,4 @@
-import type { CalendarModelEventManager } from '@proton/calendar';
+import type { CalendarModelEventManager } from '@proton/calendar/types/CalendarModelEventManager';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import type {
     CalendarEventV6Response,

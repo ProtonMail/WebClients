@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { useOrganization } from '@proton/account/organization/hooks';
-import { toggleOrganizationSetting } from '@proton/calendar/calendars/actions';
+import { toggleOrganizationSetting } from '@proton/calendar/toggleOrganizationSetting';
 import { Info, SettingsLayoutLeft, SettingsLayoutRight, useNotifications, useToggle } from '@proton/components';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import SettingsLayout from '@proton/components/containers/account/SettingsLayout';
