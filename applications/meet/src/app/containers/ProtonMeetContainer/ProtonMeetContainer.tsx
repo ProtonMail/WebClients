@@ -509,7 +509,8 @@ export const ProtonMeetContainer = ({
                 token: meetingToken,
             });
 
-            void getQueryParticipantsCount(meetingToken);
+            // get participants count from the API so we can know which joinType to use based on the participants count
+            await getQueryParticipantsCount(meetingToken);
 
             accessTokenRef.current = accessToken;
 
@@ -622,6 +623,10 @@ export const ProtonMeetContainer = ({
                 } else if (reason !== undefined && reason !== DisconnectReason.CLIENT_INITIATED) {
                     // Log abnormal error to sentry
                     reportMeetError('Room disconnected unexpectedly', DisconnectReason[reason]);
+                }
+
+                if (reason === DisconnectReason.ROOM_DELETED || reason === DisconnectReason.PARTICIPANT_REMOVED) {
+                    history.push(guestMode ? '/incognito' : '/dashboard');
                 }
             });
 
