@@ -8,6 +8,8 @@ import {
     Track,
 } from 'livekit-client';
 
+import { wait } from '@proton/shared/lib/helpers/promise';
+
 interface PublicationItem {
     publication: RemoteTrackPublication;
     participant: RemoteParticipant;
@@ -34,13 +36,26 @@ export const sortAudioPublications = <T extends PublicationItem>(publications: T
 export class AudioTrackSubscriptionManager {
     private microphoneCapacity: number;
     private room: Room;
+    private reportError?: (label: string, options?: unknown) => void;
     private subscribedMicrophoneTrackPublications: Map<string, PublicationItem> = new Map();
     private lastSortingResult: PublicationItem[] = [];
     private reconcileInterval: NodeJS.Timeout | null = null;
+    private healthCheckInterval: NodeJS.Timeout | null = null;
+    private recoveryAttempts = new Map<string, number>();
+    private recoveryTimeouts = new Map<string, NodeJS.Timeout>();
+    private activeRecoveries = new Set<string>();
+    private lastPacketCounts = new Map<string, number>();
+    private firstSeenWithoutStats = new Map<string, number>();
+    private isRoomReconnecting = false;
+    private MAX_RECOVERY_ATTEMPTS = 3;
+    private RECOVERY_COOLDOWN = 5_000;
+    private HEALTH_CHECK_INTERVAL = 3_000;
+    private MISSING_STATS_GRACE_PERIOD = 5_000;
 
-    constructor(capacity: number, room: Room) {
+    constructor(capacity: number, room: Room, reportError?: (label: string, options?: unknown) => void) {
         this.microphoneCapacity = capacity;
         this.room = room;
+        this.reportError = reportError;
     }
 
     addToCache(publication: RemoteTrackPublication, participant: RemoteParticipant) {
@@ -187,6 +202,10 @@ export class AudioTrackSubscriptionManager {
             this.lastSortingResult = this.lastSortingResult.filter(
                 (item) => item.publication.trackSid !== publication.trackSid
             );
+
+            // Clean up any ongoing recovery for this track
+            const trackKey = `${participant.sid}-${publication.trackSid}`;
+            this.cleanupRecovery(trackKey);
         }
     };
 
@@ -208,8 +227,40 @@ export class AudioTrackSubscriptionManager {
         });
     };
 
+    handleParticipantDisconnected = (participant: RemoteParticipant) => {
+        // Clean up all recoveries for this participant
+        const keysToCleanup: string[] = [];
+        for (const key of this.recoveryAttempts.keys()) {
+            if (key.startsWith(participant.sid)) {
+                keysToCleanup.push(key);
+            }
+        }
+        keysToCleanup.forEach((key) => this.cleanupRecovery(key));
+    };
+
     handleRoomDisconnected = () => {
+        // Clear all timeouts before clearing maps
+        this.recoveryTimeouts.forEach((timeout) => clearTimeout(timeout));
         this.subscribedMicrophoneTrackPublications.clear();
+        this.recoveryAttempts.clear();
+        this.recoveryTimeouts.clear();
+        this.activeRecoveries.clear();
+        this.lastPacketCounts.clear();
+        this.firstSeenWithoutStats.clear();
+        this.isRoomReconnecting = false;
+    };
+
+    handleConnectionStateChanged = (state: ConnectionState) => {
+        // Prevent recovery attempts when the room is reconnecting
+        if (state === ConnectionState.Reconnecting || state === ConnectionState.SignalReconnecting) {
+            // eslint-disable-next-line no-console
+            console.log('Room is reconnecting, pausing track recovery attempts');
+            this.isRoomReconnecting = true;
+        } else if (state === ConnectionState.Connected) {
+            // eslint-disable-next-line no-console
+            console.log('Room reconnected, resuming track recovery attempts');
+            this.isRoomReconnecting = false;
+        }
     };
 
     listenToRoomEvents() {
@@ -218,7 +269,9 @@ export class AudioTrackSubscriptionManager {
         this.room.on(RoomEvent.TrackUnpublished, this.handleTrackUnpublished);
         this.room.on(RoomEvent.Connected, this.handleRoomConnected);
         this.room.on(RoomEvent.Disconnected, this.handleRoomDisconnected);
+        this.room.on(RoomEvent.ParticipantDisconnected, this.handleParticipantDisconnected);
         this.room.on(RoomEvent.ActiveSpeakersChanged, this.handleActiveSpeakerChanged);
+        this.room.on(RoomEvent.ConnectionStateChanged, this.handleConnectionStateChanged);
     }
 
     cleanupEventListeners() {
@@ -227,8 +280,230 @@ export class AudioTrackSubscriptionManager {
         this.room.off(RoomEvent.TrackUnpublished, this.handleTrackUnpublished);
         this.room.off(RoomEvent.Connected, this.handleRoomConnected);
         this.room.off(RoomEvent.Disconnected, this.handleRoomDisconnected);
+        this.room.off(RoomEvent.ParticipantDisconnected, this.handleParticipantDisconnected);
         this.room.off(RoomEvent.ActiveSpeakersChanged, this.handleActiveSpeakerChanged);
+        this.room.off(RoomEvent.ConnectionStateChanged, this.handleConnectionStateChanged);
     }
+
+    private async attemptRecovery(
+        publication: RemoteTrackPublication,
+        participant: RemoteParticipant,
+        trackKey: string
+    ): Promise<void> {
+        // Skip recovery if room is reconnecting
+        if (this.isRoomReconnecting) {
+            // eslint-disable-next-line no-console
+            console.log('Skipping recovery attempt, room is reconnecting');
+            return;
+        }
+
+        // Prevent concurrent recoveries for same track
+        if (this.activeRecoveries.has(trackKey)) {
+            // eslint-disable-next-line no-console
+            console.warn('Recovery already in progress for trackKey:', trackKey);
+            return;
+        }
+
+        const attempts = this.recoveryAttempts.get(trackKey) || 0;
+
+        if (attempts >= this.MAX_RECOVERY_ATTEMPTS) {
+            const context = {
+                participant: participant.identity,
+                trackSid: publication.trackSid,
+                attempts,
+            };
+            // eslint-disable-next-line no-console
+            console.error('Max recovery attempts reached', context);
+            this.reportError?.('AudioTrackSubscriptionManager: Max recovery attempts reached', {
+                level: 'error',
+                context,
+            });
+
+            this.cleanupRecovery(trackKey);
+            return;
+        }
+
+        // Mark recovery as active
+        this.activeRecoveries.add(trackKey);
+        this.recoveryAttempts.set(trackKey, attempts + 1);
+
+        try {
+            // eslint-disable-next-line no-console
+            console.log(`Recovery attempt ${attempts + 1}/${this.MAX_RECOVERY_ATTEMPTS}`);
+            // Unsubscribe, wait for cleanup, then resubscribe
+            publication.setSubscribed(false);
+            await wait(500);
+
+            // Check if recovery is still active and publication is still valid after the wait
+            if (!this.activeRecoveries.has(trackKey)) {
+                // eslint-disable-next-line no-console
+                console.log('Recovery was cleaned up during wait, aborting');
+                return;
+            }
+
+            // Check if publication is still in the cache
+            if (!this.subscribedMicrophoneTrackPublications.has(publication.trackSid)) {
+                // eslint-disable-next-line no-console
+                console.log('Publication was removed from cache during wait, aborting recovery');
+                this.cleanupRecovery(trackKey);
+                return;
+            }
+
+            publication.setSubscribed(true);
+
+            // Check if successful in the next recovery attempt
+            const timeout = setTimeout(() => {
+                this.activeRecoveries.delete(trackKey);
+            }, this.RECOVERY_COOLDOWN);
+
+            // Store timeout for cleanup
+            this.recoveryTimeouts.set(trackKey, timeout);
+        } catch (error) {
+            // eslint-disable-next-line no-console
+            console.error('Recovery attempt failed', error);
+            this.reportError?.('AudioTrackSubscriptionManager: Recovery attempt failed', {
+                level: 'error',
+                context: { error, trackKey, participant: participant.identity, trackSid: publication.trackSid },
+            });
+            this.activeRecoveries.delete(trackKey);
+        }
+    }
+
+    private cleanupRecovery(trackKey: string): void {
+        this.recoveryAttempts.delete(trackKey);
+        this.activeRecoveries.delete(trackKey);
+        this.lastPacketCounts.delete(trackKey);
+        this.firstSeenWithoutStats.delete(`firstSeen-${trackKey}`);
+
+        const timeout = this.recoveryTimeouts.get(trackKey);
+        if (timeout) {
+            clearTimeout(timeout);
+            this.recoveryTimeouts.delete(trackKey);
+        }
+    }
+
+    private checkBrokenTransceivers = async () => {
+        if (this.room.state !== ConnectionState.Connected) {
+            return;
+        }
+
+        try {
+            const subscriberPC = (this.room.engine as any).pcManager?.subscriber?.pc;
+            if (!subscriberPC) {
+                return;
+            }
+
+            const stats = await subscriberPC.getStats();
+            const currentCacheValues = Array.from(this.subscribedMicrophoneTrackPublications.values());
+
+            for (const item of currentCacheValues) {
+                const { publication, participant } = item;
+                const track = publication.track;
+                const trackKey = `${participant.sid}-${publication.trackSid}`;
+
+                // Skip if not subscribed or already recovering
+                if (!publication.isSubscribed || publication.isMuted || this.activeRecoveries.has(trackKey) || !track) {
+                    continue;
+                }
+
+                const trackId = track.mediaStreamTrack?.id;
+                if (!trackId) {
+                    continue;
+                }
+
+                // Look for inbound-rtp stats for this track
+                let foundStats = false;
+                let packetsReceived = 0;
+
+                for (const [, value] of stats) {
+                    if (value.type === 'inbound-rtp' && value.kind === 'audio' && value.trackIdentifier === trackId) {
+                        foundStats = true;
+                        packetsReceived = value.packetsReceived || 0;
+                        break;
+                    }
+                }
+
+                // If inbound-rtp stats missing entirely
+                if (!foundStats && track.mediaStreamTrack?.readyState === 'live') {
+                    const firstSeenKey = `firstSeen-${trackKey}`;
+                    const firstSeenTime = this.firstSeenWithoutStats.get(firstSeenKey);
+
+                    if (!firstSeenTime) {
+                        // First time seeing missing stats - give it grace period (track might be initializing)
+                        this.firstSeenWithoutStats.set(firstSeenKey, Date.now());
+                        continue;
+                    }
+
+                    const missingDuration = Date.now() - firstSeenTime;
+                    if (missingDuration > this.MISSING_STATS_GRACE_PERIOD) {
+                        const context = {
+                            participant: participant.identity,
+                            trackSid: publication.trackSid,
+                            missingDuration,
+                        };
+                        // eslint-disable-next-line no-console
+                        console.warn('Detected missing inbound-rtp stats', context);
+                        this.reportError?.('AudioTrackSubscriptionManager: Detected missing inbound-rtp stats', {
+                            level: 'warning',
+                            context,
+                        });
+
+                        void this.attemptRecovery(publication, participant, trackKey);
+                        this.firstSeenWithoutStats.delete(firstSeenKey);
+                    }
+                    continue;
+                } else if (foundStats) {
+                    // Stats appeared, clear the tracking
+                    const firstSeenKey = `firstSeen-${trackKey}`;
+                    this.firstSeenWithoutStats.delete(firstSeenKey);
+                }
+
+                // If packets number is freezing
+                const lastPackets = this.lastPacketCounts.get(trackKey) || 0;
+                this.lastPacketCounts.set(trackKey, packetsReceived);
+
+                // If packets haven't increased in 2 checks (6 seconds with 3s interval), but track is live
+                // This gives time for natural network jitter without false alarms
+                if (
+                    lastPackets > 0 &&
+                    packetsReceived === lastPackets &&
+                    track.mediaStreamTrack?.readyState === 'live' &&
+                    !publication.isMuted
+                ) {
+                    const context = {
+                        participant: participant.identity,
+                        trackSid: publication.trackSid,
+                        packetsReceived,
+                        lastPackets,
+                    };
+                    // eslint-disable-next-line no-console
+                    console.warn('Detected stalled audio', context);
+                    this.reportError?.('AudioTrackSubscriptionManager: Detected stalled audio', {
+                        level: 'warning',
+                        context,
+                    });
+
+                    void this.attemptRecovery(publication, participant, trackKey);
+                    continue;
+                }
+
+                // If track is healthy and was in recovery, cleanup recovery state
+                // This validates that the previous recovery attempt was successful
+                if (this.recoveryAttempts.has(trackKey)) {
+                    // eslint-disable-next-line no-console
+                    console.log('Track recovered successfully, cleaning up recovery state');
+                    this.cleanupRecovery(trackKey);
+                }
+            }
+        } catch (error) {
+            // eslint-disable-next-line no-console
+            console.error('Error checking broken transceivers:', error);
+            this.reportError?.('AudioTrackSubscriptionManager: Error checking broken transceivers', {
+                level: 'error',
+                context: { error },
+            });
+        }
+    };
 
     reconcileAudioTracks = () => {
         if (this.room.state !== ConnectionState.Connected) {
@@ -263,8 +538,19 @@ export class AudioTrackSubscriptionManager {
 
         // If any items from the cache lost subscription, we re-subscribe them
         currentCacheValues.forEach((item) => {
+            const trackKey = `${item.participant.sid}-${item.publication.trackSid}`;
+
+            // Skip if recovery already in progress for this track
+            if (this.activeRecoveries.has(trackKey)) {
+                return;
+            }
+
             if (!item.publication.isSubscribed) {
                 item.publication.setSubscribed(true);
+            }
+
+            if (item.publication.isSubscribed && !item.publication.isEnabled) {
+                item.publication.setEnabled(true);
             }
         });
     };
@@ -281,15 +567,36 @@ export class AudioTrackSubscriptionManager {
         }
     };
 
+    setupHealthCheckLoop = () => {
+        this.healthCheckInterval = setInterval(() => {
+            void this.checkBrokenTransceivers();
+        }, this.HEALTH_CHECK_INTERVAL);
+    };
+
+    cleanupHealthCheckLoop = () => {
+        if (this.healthCheckInterval) {
+            clearInterval(this.healthCheckInterval);
+        }
+    };
+
     setup = () => {
         this.listenToRoomEvents();
         this.setupReconcileLoop();
+        this.setupHealthCheckLoop();
     };
 
     cleanup = () => {
+        // Clear all timeouts first
+        this.recoveryTimeouts.forEach((timeout) => clearTimeout(timeout));
         this.subscribedMicrophoneTrackPublications.clear();
         this.lastSortingResult = [];
+        this.recoveryAttempts.clear();
+        this.recoveryTimeouts.clear();
+        this.activeRecoveries.clear();
+        this.lastPacketCounts.clear();
+        this.firstSeenWithoutStats.clear();
         this.cleanupEventListeners();
         this.cleanupReconcileLoop();
+        this.cleanupHealthCheckLoop();
     };
 }
