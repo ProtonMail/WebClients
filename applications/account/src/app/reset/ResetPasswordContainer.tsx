@@ -58,6 +58,7 @@ import { useMetaTags } from '../useMetaTags';
 import RequestRecoveryForm from './RequestRecoveryForm';
 import RequestResetTokenForm from './RequestResetTokenForm';
 import ValidateResetTokenForm from './ValidateResetTokenForm';
+import { useResetPasswordTelemetry } from './resetPasswordTelemetry';
 
 interface Props {
     onLogin: OnLoginCallback;
@@ -81,6 +82,14 @@ const ResetPasswordContainer = ({
     productParam,
 }: Props) => {
     const { APP_NAME } = useConfig();
+    const {
+        sendResetPasswordPageLoad,
+        sendResetPasswordRecoveryMethodsRequested,
+        sendResetPasswordCodeSent,
+        sendResetPasswordMethodValidated,
+        sendResetPasswordSuccess,
+        sendResetPasswordFailure,
+    } = useResetPasswordTelemetry();
 
     useMetaTags(metaTags);
 
@@ -129,15 +138,29 @@ const ResetPasswordContainer = ({
             return;
         }
         if (result.to === STEPS.NO_RECOVERY_METHODS) {
+            sendResetPasswordRecoveryMethodsRequested({ hasPasswordResetMethod: false, hasDataRecoveryMethod: false });
             setStep(result.to);
             return;
         }
+
+        if (result.to === STEPS.REQUEST_RESET_TOKEN) {
+            sendResetPasswordRecoveryMethodsRequested({
+                hasPasswordResetMethod: result.cache.Methods.includes('email') || result.cache.Methods.includes('sms'),
+                hasDataRecoveryMethod: result.cache.Methods.includes('mnemonic'),
+            });
+        }
+
         if (result.to === STEPS.VALIDATE_RESET_TOKEN) {
             const destination = result.cache.value;
             if (destination) {
                 createNotification({ text: c('Info').t`Done! We sent a code to ${destination}.`, expiration: 5000 });
+                sendResetPasswordCodeSent({ method: result.cache.method! });
             }
         }
+        if (result.to === STEPS.NEW_PASSWORD) {
+            sendResetPasswordMethodValidated({ method: result.cache.method! });
+        }
+
         cacheRef.current = result.cache;
         setStep(result.to);
     };
@@ -146,6 +169,7 @@ const ResetPasswordContainer = ({
         errorHandler(e);
         const { code } = getApiError(e);
         setErrorCode(code);
+        sendResetPasswordFailure({ step: STEPS[step], method: cacheRef.current?.method! });
         setStep((step) => {
             if (step === STEPS.NEW_PASSWORD) {
                 return STEPS.ERROR;
@@ -161,6 +185,10 @@ const ResetPasswordContainer = ({
 
     useEffect(() => {
         onStartAuth().catch(noop);
+    }, []);
+
+    useEffect(() => {
+        sendResetPasswordPageLoad();
     }, []);
 
     /**
@@ -514,6 +542,7 @@ const ResetPasswordContainer = ({
                                             cache,
                                         });
                                         if (validateFlow()) {
+                                            sendResetPasswordSuccess({ method: 'mnemonic' });
                                             return await handleResult(result);
                                         }
                                     } catch (e) {
@@ -530,6 +559,7 @@ const ResetPasswordContainer = ({
                                         cache,
                                     });
                                     if (validateFlow()) {
+                                        sendResetPasswordSuccess({ method: cache.method! });
                                         return await handleResult(result);
                                     }
                                 } catch (e) {
