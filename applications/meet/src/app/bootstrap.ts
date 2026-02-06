@@ -28,13 +28,11 @@ import { getAppVersionStr } from '@proton/shared/lib/fetch/headers';
 import { initElectronClassnames } from '@proton/shared/lib/helpers/initElectronClassnames';
 import type { ProtonConfig, Unwrap } from '@proton/shared/lib/interfaces';
 import initLogicalProperties from '@proton/shared/lib/logical/logical';
-import { telemetry } from '@proton/shared/lib/telemetry';
 import { createUnauthenticatedApi } from '@proton/shared/lib/unauthApi/unAuthenticatedApi';
 import { appMode } from '@proton/shared/lib/webpack.constants';
 import noop from '@proton/utils/noop';
 
 import locales from './locales';
-import { meetTelemetryConfig } from './telemetryConfig';
 import { clearStoredDevices } from './utils/deviceStorage';
 import { clearDisabledRotatePersonalMeeting } from './utils/disableRotatePersonalMeeting';
 
@@ -190,14 +188,6 @@ const completeAppBootstrap = async ({
         bootstrap.unleashReady({ unleashClient }).catch(noop),
     ]);
 
-    if (!!userData.userSettings.Telemetry) {
-        telemetry.init({
-            config,
-            uid: authentication.UID,
-            ...meetTelemetryConfig,
-        });
-    }
-
     await bootstrap.postLoad({ appName: config.APP_NAME, authentication, ...userData, history });
     await dispatch(addressesThunk());
 
@@ -326,12 +316,6 @@ export const bootstrapGuestApp = async (config: ProtonConfig, notificationsManag
     const unauthenticatedApi = createUnauthenticatedApi(api);
     const unleashClient = bootstrap.createUnleash({ api: unauthenticatedApi.apiCallback });
     const appVersion = getAppVersionStr(getClientID(config.APP_NAME), config.APP_VERSION);
-
-    telemetry.init({
-        config,
-        uid: authentication.UID,
-        ...meetTelemetryConfig,
-    });
 
     const [wasmApp] = await Promise.all([
         initializeWasmApp(authentication, appVersion),
