@@ -1,3 +1,5 @@
+import type { EventV6Response } from '@proton/shared/lib/api/events';
+
 export enum CustomPasswordState {
     NO_PASSWORD = 0,
     PASSWORD_SET = 1,
@@ -113,4 +115,14 @@ export interface ParticipantPermissions {
     PublishData: ParticipantCapabilityPermission;
     Subscribe: ParticipantCapabilityPermission;
     Admin: ParticipantCapabilityPermission;
+}
+
+interface EventV6Defaults {
+    More: boolean;
+    Refresh: boolean;
+    EventID: string;
+}
+
+export interface MeetEventResponse extends EventV6Defaults {
+    MeetMeetings: EventV6Response;
 }

@@ -47,6 +47,13 @@ export const getUpcomingMeetingsQuery = {
     url: `meet/v1/meetings/upcoming`,
 };
 
+export const getMeetingQuery = (meetingId: string) => {
+    return {
+        method: 'get',
+        url: `meet/v1/meetings/${meetingId}`,
+    };
+};
+
 export const deleteMeetingCall = (meetingId: string) => {
     return {
         method: 'delete',
@@ -132,3 +139,13 @@ export const updateParticipantPermissions = (
         data,
     };
 };
+
+export const getLatestMeetEventID = () => ({
+    url: 'meet/v1/events/latest',
+    method: 'get',
+});
+
+export const getMeetEvents = (eventID: string) => ({
+    url: `meet/v1/events/${eventID}`,
+    method: 'get',
+});

@@ -3,12 +3,15 @@ import { configureStore, createListenerMiddleware } from '@reduxjs/toolkit';
 
 import type { NotificationsManager } from '@proton/components/containers/notifications/manager';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
+import type { EventManager } from '@proton/shared/lib/eventManager/eventManager';
+import type { MeetEventResponse } from '@proton/shared/lib/interfaces/Meet';
 import noop from '@proton/utils/noop';
 
 import { start } from './listeners';
 import { type MeetState, rootReducer } from './rootReducer';
 
-interface MeetExtraThunkArguments extends ProtonThunkArguments {
+export interface MeetExtraThunkArguments extends ProtonThunkArguments {
+    meetEventManager: EventManager<MeetEventResponse>;
     notificationsManager?: NotificationsManager;
 }
 

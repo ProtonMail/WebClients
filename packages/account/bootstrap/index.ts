@@ -24,6 +24,7 @@ import {
     getMailEventsV6,
 } from '@proton/shared/lib/api/events';
 import { getIs401Error } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { getLatestMeetEventID, getMeetEvents } from '@proton/shared/lib/api/meet';
 import { getClientID } from '@proton/shared/lib/apps/helper';
 import type { AuthenticationStore } from '@proton/shared/lib/authentication/createAuthenticationStore';
 import createAuthenticationStore from '@proton/shared/lib/authentication/createAuthenticationStore';
@@ -65,6 +66,7 @@ import { loadLocales as loadLocalesI18n } from '@proton/shared/lib/i18n/loadLoca
 import { setTtagLocales } from '@proton/shared/lib/i18n/locales';
 import type { Api, Environment, ProtonConfig, Unwrap, UserSettings } from '@proton/shared/lib/interfaces';
 import type { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
+import type { MeetEventResponse } from '@proton/shared/lib/interfaces/Meet';
 import { telemetry } from '@proton/shared/lib/telemetry';
 import {
     EVENTS,
@@ -444,6 +446,18 @@ export const calendarEventManagerV6 = ({ api }: { api: Api }) => {
 
 export const compatEventManagerV6 = (parameters: Parameters<typeof createCompatEventManager>[0]) => {
     return createCompatEventManager<any>(parameters);
+};
+
+export const meetEventManager = ({ api }: { api: Api }) => {
+    return createEventManager<MeetEventResponse>({
+        getLatestEventID: (options) =>
+            api<{
+                EventID: string;
+            }>({ ...getLatestMeetEventID(), ...options }).then(({ EventID }) => EventID),
+        getEvents: ({ eventID, ...rest }) => {
+            return api<MeetEventResponse>({ ...getMeetEvents(eventID), ...rest });
+        },
+    });
 };
 
 export const loadLocales = ({
