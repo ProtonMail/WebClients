@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { useApi, useEventManager, useNotifications } from '@proton/components';
+import { useHasMeetProductAccess } from '@proton/meet/hooks/useHasMeetProductAccess';
 import { updateCalendarUserSettings } from '@proton/shared/lib/api/calendars';
 import { DEFAULT_CALENDAR_USER_SETTINGS } from '@proton/shared/lib/calendar/calendar';
 import { AutoAddVideoConferenceLinkProvider } from '@proton/shared/lib/calendar/constants';
@@ -14,10 +15,14 @@ import { useCalendarUserSettings } from '../../calendarUserSettings/hooks';
 
 // Type guard helper to check if auto-add is enabled
 const isAutoAddMeetEnabled = (
-    setting: typeof DEFAULT_CALENDAR_USER_SETTINGS.AutoAddConferenceLink
+    setting: typeof DEFAULT_CALENDAR_USER_SETTINGS.AutoAddConferenceLink,
+    hasMeetProductAccess: boolean
 ): setting is { Provider: AutoAddVideoConferenceLinkProvider; DisplayNotification: number } => {
     return (
-        typeof setting === 'object' && setting !== null && setting.Provider === AutoAddVideoConferenceLinkProvider.Meet
+        typeof setting === 'object' &&
+        setting !== null &&
+        setting.Provider === AutoAddVideoConferenceLinkProvider.Meet &&
+        hasMeetProductAccess
     );
 };
 
@@ -25,13 +30,15 @@ export const useAutoAddMeetLinkNotification = () => {
     const api = useApi();
     const { call } = useEventManager();
     const notifications = useNotifications();
+    const hasMeetProductAccess = useHasMeetProductAccess();
 
     const [calendarUserSettings = DEFAULT_CALENDAR_USER_SETTINGS] = useCalendarUserSettings();
     const autoAddConferenceLink = calendarUserSettings.AutoAddConferenceLink;
-    const canAutoAddMeeting = isAutoAddMeetEnabled(autoAddConferenceLink);
+    const canAutoAddMeeting = isAutoAddMeetEnabled(autoAddConferenceLink, hasMeetProductAccess);
 
     const shouldDisplayNotification =
-        isAutoAddMeetEnabled(autoAddConferenceLink) && !!autoAddConferenceLink.DisplayNotification;
+        isAutoAddMeetEnabled(autoAddConferenceLink, hasMeetProductAccess) &&
+        !!autoAddConferenceLink.DisplayNotification;
 
     const [isDisabling, setIsDisabling] = useState(false);
 

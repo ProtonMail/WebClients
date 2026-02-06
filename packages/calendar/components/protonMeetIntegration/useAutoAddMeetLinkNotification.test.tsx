@@ -1,6 +1,7 @@
 import { act, renderHook } from '@testing-library/react';
 
 import { useApi, useEventManager, useNotifications } from '@proton/components';
+import { useHasMeetProductAccess } from '@proton/meet/hooks/useHasMeetProductAccess';
 import { AutoAddVideoConferenceLinkProvider } from '@proton/shared/lib/calendar/constants';
 
 import { useCalendarUserSettings } from '../../calendarUserSettings/hooks';
@@ -10,6 +11,10 @@ jest.mock('@proton/components', () => ({
     useApi: jest.fn(),
     useEventManager: jest.fn(),
     useNotifications: jest.fn(),
+}));
+
+jest.mock('@proton/meet/hooks/useHasMeetProductAccess', () => ({
+    useHasMeetProductAccess: jest.fn(),
 }));
 
 jest.mock('../../calendarUserSettings/hooks', () => ({
@@ -31,6 +36,7 @@ describe('useAutoAddMeetLinkNotification', () => {
             createNotification: mockCreateNotification,
             hideNotification: mockHideNotification,
         });
+        (useHasMeetProductAccess as jest.Mock).mockReturnValue(true);
 
         mockApi.mockResolvedValue({});
     });
@@ -252,6 +258,27 @@ describe('useAutoAddMeetLinkNotification', () => {
                 resolveApi!();
                 await apiPromise;
             });
+        });
+    });
+
+    describe('useHasMeetProductAccess false', () => {
+        beforeEach(() => {
+            (useHasMeetProductAccess as jest.Mock).mockReturnValue(false);
+        });
+
+        it('should return false when auto-add is enabled with Meet provider', () => {
+            (useCalendarUserSettings as jest.Mock).mockReturnValue([
+                {
+                    AutoAddConferenceLink: {
+                        Provider: AutoAddVideoConferenceLinkProvider.Meet,
+                        DisplayNotification: 1,
+                    },
+                },
+            ]);
+
+            const { result } = renderHook(() => useAutoAddMeetLinkNotification());
+
+            expect(result.current.canAutoAddMeeting).toBe(false);
         });
     });
 });
