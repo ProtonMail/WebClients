@@ -6,6 +6,7 @@ const groupsCompatiblePlans = new Set([
     PLANS.BUNDLE_PRO_2024,
     PLANS.BUNDLE_BIZ_2025,
     PLANS.VISIONARY,
+    PLANS.PASS_BUSINESS,
 ]);
 
 const vpnPlans = new Set([PLANS.VPN_BUSINESS, PLANS.VPN_PRO, PLANS.VPN_PASS_BUNDLE_BUSINESS]);
