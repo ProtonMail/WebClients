@@ -27,8 +27,10 @@ import useModalState from '../../components/modalTwo/useModalState';
 import SignInWithAnotherDeviceSettings from './SignInWithAnotherDeviceSettings';
 import RecoveryEmail from './email/RecoveryEmail';
 import RecoveryPhone from './phone/RecoveryPhone';
+import { useRecoverySettingsTelemetry } from './recoverySettingsTelemetry';
 
 export const AccountRecoverySection = ({ divider = true }: { divider?: boolean }) => {
+    const { sendRecoverySettingEnabled } = useRecoverySettingsTelemetry();
     const [userSettings, loadingUserSettings] = useUserSettings();
     const dispatch = useDispatch();
     const [loadingEmailReset, withLoadingEmailReset] = useLoading();
@@ -56,6 +58,9 @@ export const AccountRecoverySection = ({ divider = true }: { divider?: boolean }
         }
         await showAuthModal({ config: updateResetEmail({ Reset: value }) });
         await dispatch(userSettingsThunk({ cache: CacheType.None }));
+        if (value) {
+            sendRecoverySettingEnabled({ setting: 'recovery_by_email' });
+        }
     };
 
     const handleChangePasswordPhoneToggle = async (value: number) => {
@@ -64,6 +69,9 @@ export const AccountRecoverySection = ({ divider = true }: { divider?: boolean }
         }
         await showAuthModal({ config: updateResetPhone({ Reset: value }) });
         await dispatch(userSettingsThunk({ cache: CacheType.None }));
+        if (value) {
+            sendRecoverySettingEnabled({ setting: 'recovery_by_phone' });
+        }
     };
 
     return (
@@ -94,6 +102,11 @@ export const AccountRecoverySection = ({ divider = true }: { divider?: boolean }
                                         return false;
                                     }
                                     return true;
+                                }}
+                                onSuccess={(updatedUserSettings) => {
+                                    if (!!updatedUserSettings.Email.Reset && !!updatedUserSettings.Email.Value) {
+                                        sendRecoverySettingEnabled({ setting: 'recovery_by_email' });
+                                    }
                                 }}
                             />
                             <div className="flex items-center">
@@ -137,6 +150,11 @@ export const AccountRecoverySection = ({ divider = true }: { divider?: boolean }
                                         return false;
                                     }
                                     return true;
+                                }}
+                                onSuccess={(updatedUserSettings) => {
+                                    if (!!updatedUserSettings.Phone.Reset && !!updatedUserSettings.Phone.Value) {
+                                        sendRecoverySettingEnabled({ setting: 'recovery_by_phone' });
+                                    }
                                 }}
                             />
                             <div className="flex items-center">

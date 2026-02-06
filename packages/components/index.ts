@@ -714,6 +714,7 @@ export { default as PrivacySection } from './containers/privacy/PrivacySection';
 export { default as TelemetryToggle } from './containers/privacy/TelemetryToggle';
 export { AccountRecoverySection } from './containers/recovery/AccountRecoverySection';
 export { DataRecoverySection } from './containers/recovery/DataRecoverySection';
+export { default as RecoveryPageTelemetry } from './containers/recovery/RecoveryPageTelemetry';
 export { OverviewSection } from './containers/recovery/OverviewSection';
 export { SessionRecoverySection } from './containers/recovery/SessionRecoverySection';
 export { InviteSection } from './containers/referral/invite/InviteSection';

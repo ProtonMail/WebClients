@@ -59,7 +59,7 @@ interface Props {
     defaultCountry?: string;
     className?: string;
     inputWidth?: string;
-    onSuccess?: () => void;
+    onSuccess?: (updatedUserSettings: UserSettings) => void;
     autoFocus?: boolean;
     renderForm?: (props: RenderFormProps) => ReactNode;
     inputProps?: Partial<Pick<InputFieldProps<typeof PhoneInput>, 'label'>>;
@@ -104,7 +104,7 @@ const RecoveryPhone = ({
         );
         dispatch(userSettingsActions.set({ UserSettings }));
         createNotification({ text: c('Success').t`Phone number updated` });
-        onSuccess?.();
+        onSuccess?.(UserSettings);
     };
 
     return (
