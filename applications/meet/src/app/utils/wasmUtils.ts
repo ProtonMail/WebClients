@@ -15,6 +15,9 @@ declare global {
                 participant_type: Number
             ) => Promise<void>;
         };
+        disconnectionEvent: {
+            disconnection_handler: () => Promise<void>;
+        };
     }
 }
 
@@ -32,6 +35,12 @@ export const setupWasmDependencies = ({ getGroupKeyInfo, onNewGroupKeyInfo }: Se
             if (groupKeyInfo) {
                 await onNewGroupKeyInfo(groupKeyInfo.key, groupKeyInfo.epoch);
             }
+        },
+    };
+    // Initialize window.disconnectionEvent
+    window.disconnectionEvent = {
+        disconnection_handler: async function () {
+            // Empty function for now
         },
     };
 };
