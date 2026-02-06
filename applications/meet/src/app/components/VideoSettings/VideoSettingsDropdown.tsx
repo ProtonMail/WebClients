@@ -54,7 +54,7 @@ const VideoSettingsDropdownComponent = ({
             onClose={onClose}
             originalPlacement={activeBreakpoint === 'small' ? 'top-end' : 'top-start'}
         >
-            <div className="flex flex-column gap-2 p-2 meet-scrollbar overflow-x-hidden overflow-y-auto">
+            <div className="flex flex-column gap-2 px-4 py-2 meet-scrollbar overflow-x-hidden overflow-y-auto">
                 <div className="flex flex-column gap-2">
                     <div className="color-weak meet-font-weight">
                         {noCameraDetected ? c('Info').t`No camera detected` : c('Info').t`Select a camera`}

@@ -62,10 +62,10 @@ export const ChatMessage = ({ onMessageSend }: ChatMessageProps) => {
     );
 
     return (
-        <div className="w-full relative">
+        <div className="w-full relative px-4">
             <div
                 className="w-custom border-top border-top-strong absolute top-0 left-custom"
-                style={{ '--left-custom': '-1rem', '--w-custom': 'calc(100% + 2rem)' }}
+                style={{ '--left-custom': '0', '--w-custom': 'calc(100% + 2rem)' }}
             />
             <div className="flex flex-nowrap items-start gap-4 w-full px-2 pt-4">
                 <InputFieldTwo
