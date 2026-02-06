@@ -99,26 +99,26 @@ export function usePictureInPicture({
         await sessionManager.current.destroy();
     };
 
+    const pictureInPictureWarmup = async () => {
+        if (isMobile()) {
+            return;
+        }
+        await sessionManager.current.pictureInPictureWarmup();
+    };
+
     // Stop PiP - properly async and awaits cleanup
     const stopPiP = async () => {
-        if (!isSafari()) {
-            // Non-Safari: Stop rendering and destroy all resources
-            await pipCleanup();
-        } else {
-            startRendering(
-                sessionManager.current.getCanvas() as HTMLCanvasElement,
-                displayableWithAvailableTracks,
-                messages,
-                participantNameMapRef.current,
-                true
-            );
-            await sessionManager.current.exitPictureInPicture();
+        await pipCleanup();
+
+        // Safari needs a warmup so we can pass strict Safari PiP requirements
+        if (isSafari()) {
+            void pictureInPictureWarmup();
         }
 
         setIsPipActive(false);
     };
 
-    const pipSetup = async (throttle: boolean = false) => {
+    const pipSetup = async () => {
         if (isMobile() || !pipEnabled) {
             return;
         }
@@ -126,10 +126,7 @@ export function usePictureInPicture({
         // Initialize session with canvas and video elements
         const { canvas } = sessionManager.current.init(displayableWithAvailableTracks);
 
-        // Start rendering (only when PiP is active)
-        startRendering(canvas, displayableWithAvailableTracks, messages, participantNameMapRef.current, throttle);
-
-        // Setup video stream and request PiP
+        startRendering(canvas, displayableWithAvailableTracks, messages, participantNameMapRef.current);
         await sessionManager.current.setupVideoStream();
     };
 
@@ -144,13 +141,20 @@ export function usePictureInPicture({
                 return;
             }
 
-            // In Safari the setup is already done
-            if (!isSafari()) {
-                await pipSetup(false);
-            }
+            if (isSafari()) {
+                const video = sessionManager.current.getVideo();
+                if (video?.paused) {
+                    video.play().catch(() => {});
+                }
 
-            if (!isFirefox()) {
                 await sessionManager.current.requestPictureInPicture();
+                await pipSetup();
+            } else {
+                await pipSetup();
+
+                if (!isFirefox()) {
+                    await sessionManager.current.requestPictureInPicture();
+                }
             }
 
             setIsPipActive(true);
@@ -224,7 +228,7 @@ export function usePictureInPicture({
 
             // Restart rendering loop with the latest tracks to avoid stale closures
             stopRendering();
-            startRendering(canvas, displayableWithAvailableTracks, messages, participantNameMapRef.current, false);
+            startRendering(canvas, displayableWithAvailableTracks, messages, participantNameMapRef.current);
         }
     }, [isPipActive, tracksKey, messages, startRendering, stopRendering]);
 
@@ -335,7 +339,7 @@ export function usePictureInPicture({
         isPipActive,
         canvas: sessionManager.current.getCanvas(),
         tracksLength: tracksForDisplay.length,
-        pipSetup,
+        pictureInPictureWarmup,
         pipCleanup,
         preparePictureInPicture,
     };

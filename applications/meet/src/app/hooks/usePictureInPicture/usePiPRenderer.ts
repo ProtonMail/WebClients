@@ -2,8 +2,6 @@ import { useCallback, useRef } from 'react';
 
 import type { Track as LiveKitTrack } from 'livekit-client';
 
-import { isSafari } from '@proton/shared/lib/helpers/browser';
-
 import { PIP_PREVIEW_ITEM_HEIGHT } from '../../constants';
 import { drawMessageOverlay, drawVideoWithAspectRatio } from './drawingUtils';
 import type { PiPOverlayMessage, TrackInfo } from './types';
@@ -207,19 +205,10 @@ export function usePiPRenderer() {
             canvas: HTMLCanvasElement,
             tracksToDisplay: TrackInfo[],
             messages: PiPOverlayMessage[],
-            participantNameMap: Record<string, string>,
-            throttle: boolean = false // New parameter
+            participantNameMap: Record<string, string>
         ) => {
-            let frameCount = 0;
-            const frameSkip = throttle && isSafari() ? 5 : 0; // Skip 5 frames between renders on Safari when throttled
-
             const render = () => {
-                frameCount++;
-
-                // Only render every Nth frame when throttled
-                if (frameSkip === 0 || frameCount % (frameSkip + 1) === 0) {
-                    drawPiP(canvas, tracksToDisplay, messages, participantNameMap);
-                }
+                drawPiP(canvas, tracksToDisplay, messages, participantNameMap);
 
                 animationFrameRef.current = requestAnimationFrame(render);
             };
