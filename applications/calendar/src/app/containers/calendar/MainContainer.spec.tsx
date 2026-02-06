@@ -166,7 +166,7 @@ jest.mock('@proton/calendar/calendarBootstrap/hooks', () => ({
     ]),
 }));
 
-jest.mock('@proton/calendar/useCalendarUserSettings', () => ({
+jest.mock('@proton/calendar/calendarUserSettings/hooks', () => ({
     useGetCalendarUserSettings: jest.fn(),
     useCalendarUserSettings: jest.fn(() => [
         {
@@ -214,7 +214,7 @@ jest.mock('@proton/components/containers/contacts/ContactEmailsProvider', () => 
     default: ({ children }: any) => <>{children}</>,
 }));
 jest.mock('../../containers/alarms/useCalendarAlarmsEventListener', () => () => ({}));
-jest.mock('@proton/calendar/useCalendars', () =>
+jest.mock('@proton/calendar/calendars/hooks', () =>
     jest.fn(() => [
         [
             {
