@@ -1,5 +1,5 @@
 import type { ShareItem } from '@proton/pass/store/reducers';
-import type { Share, ShareGetResponse } from '@proton/pass/types';
+import type { Share, ShareGetResponse, ShareId } from '@proton/pass/types';
 import { ShareFlags, ShareRole, ShareType } from '@proton/pass/types';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 
@@ -16,7 +16,12 @@ export function isItemShare(share: Share): share is Share<ShareType.Item> {
 export const isShareManageable = <T extends Share>(share: T) => share.owner || share.shareRoleId === ShareRole.MANAGER;
 export const isShareWritable = <T extends Share>({ shareRoleId }: T) => shareRoleId !== ShareRole.READ;
 export const isShareReadOnly = <T extends Share>({ shareRoleId }: T) => shareRoleId === ShareRole.READ;
-export const isShareVisible = <T extends Share>(share: T) => !hasBit(share.flags, ShareFlags.HIDDEN);
+export const isShareDeduped =
+    (shareIds: ShareId[]) =>
+    <T extends Share>({ shareId }: T) =>
+        shareIds.includes(shareId);
+export const isShareVisible = <T extends { flags: number }>(share: T) => !hasBit(share.flags, ShareFlags.HIDDEN);
+export const isGroupShare = <T extends Share>({ groupId }: T) => groupId !== null;
 
 /** If the `canAutofill` flag isis not present on the share item, fallback to client
  * side downgrade detection : only allow autofilling from writable shares. */
@@ -39,4 +44,6 @@ export const hasShareChanged = (current: Share, incoming: ShareGetResponse) =>
     current.targetMaxMembers !== incoming.TargetMaxMembers ||
     current.canAutofill !== incoming.CanAutoFill ||
     current.flags !== incoming.Flags ||
-    current.addressId !== incoming.AddressID;
+    current.addressId !== incoming.AddressID ||
+    current.groupId !== incoming.GroupID ||
+    current.permission !== incoming.Permission;

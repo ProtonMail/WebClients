@@ -1,3 +1,4 @@
+import { PassCrypto } from '@proton/pass/lib/crypto';
 import {
     hydrateShare,
     hydrateShareKeys,
@@ -31,6 +32,7 @@ export const createShareManager = <T extends ShareType = ShareType>(
         getShare: () => ctx.share as TypedOpenedShare<T>,
         setShare: (share) => (ctx.share = share),
         getType: () => ctx.share.targetType,
+        isGroupShare: () => !!ctx.share.groupId,
 
         setLatestRotation: (rotation) => (ctx.latestRotation = rotation),
 
@@ -94,7 +96,7 @@ export const createShareManager = <T extends ShareType = ShareType>(
         /* A share is considered `active` if its latest rotation key was
          * encrypted with an active user key - if the user key is inactive,
          * then share should be ignored until it becomes "active" again */
-        isActive(userKeys = []) {
+        isActive(): boolean {
             try {
                 const rotation = manager.getLatestRotation();
                 const targetKey = ((): Maybe<ShareKey> => {
@@ -105,9 +107,18 @@ export const createShareManager = <T extends ShareType = ShareType>(
                             return manager.getItemShareKey(rotation);
                     }
                 })();
-
                 if (!targetKey) return false;
-                return userKeys.some(({ ID }) => ID === targetKey.userKeyId);
+
+                if (manager.isGroupShare()) {
+                    const { addresses, groupKeys: groupKeysContext } = PassCrypto.getContext();
+                    const { addressId, groupId } = manager.getShare();
+                    const addressKeys = addresses?.find((address) => address.ID === addressId)?.Keys;
+                    const groupKeys = groupKeysContext.get(groupId as string);
+                    return !!(addressKeys?.length && groupKeys?.length);
+                }
+
+                const { userKeys } = PassCrypto.getContext();
+                return userKeys?.some(({ ID }) => ID === targetKey.userKeyId) || false;
             } catch (_) {
                 return false;
             }

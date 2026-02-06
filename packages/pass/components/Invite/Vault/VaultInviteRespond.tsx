@@ -1,4 +1,4 @@
-import { type FC, useEffect } from 'react';
+import { type FC, useEffect, useMemo } from 'react';
 import { useSelector } from 'react-redux';
 
 import { c, msgid } from 'ttag';
@@ -11,16 +11,46 @@ import { InviteStepResponse } from '@proton/pass/components/Invite/Steps/InviteS
 import { Card } from '@proton/pass/components/Layout/Card/Card';
 import { PassModal } from '@proton/pass/components/Layout/Modal/PassModal';
 import { VaultIcon } from '@proton/pass/components/Vault/VaultIcon';
+import { getInvitedGroup } from '@proton/pass/lib/invites/invite.utils';
 import { formatItemsCount } from '@proton/pass/lib/items/item.utils';
-import { selectVaultLimits } from '@proton/pass/store/selectors';
+import { selectOrganizationGroups, selectVaultLimits } from '@proton/pass/store/selectors';
 import { selectInviteByToken } from '@proton/pass/store/selectors/invites';
+import type { Invite, MaybeNull } from '@proton/pass/types';
 import { ShareType } from '@proton/pass/types';
+import type { Group } from '@proton/shared/lib/interfaces';
+
+const getTexts = (invite: Invite, invitedGroup: MaybeNull<Group>) => {
+    const { inviterEmail, fromNewUser } = invite;
+
+    if (fromNewUser) {
+        return {
+            title: c('Info').t`Congratulations, your access has been confirmed`,
+            acceptText: c('Action').t`Continue`,
+        };
+    }
+    if (invitedGroup) {
+        return {
+            title: inviterEmail,
+            // translator: full sentence is split into 3 components in our design. Example: {eric.norbert@proton.me} invites the group {} to access items in {name of the vault}"
+            subline: c('Info').t`invites the group ${invitedGroup.Name} to access items in`,
+            acceptText: c('Action').t`Accept invitation`,
+        };
+    }
+    return {
+        title: inviterEmail,
+        // translator: full sentence is split into 3 components in our design. Example: {eric.norbert@proton.me} invites you to access items in {name of the vault}"
+        subline: c('Info').t`invites you to access items in`,
+        acceptText: c('Action').t`Join shared vault`,
+    };
+};
 
 type Props = { token: string };
 
 export const VaultInviteRespond: FC<Props> = ({ token }) => {
     const { onInviteResponse } = useInviteActions();
     const invite = useSelector(selectInviteByToken(token));
+    const groups = useSelector(selectOrganizationGroups);
+    const invitedGroup = useMemo(() => getInvitedGroup(invite, groups), [groups, invite]);
     const { vaultLimitReached } = useSelector(selectVaultLimits);
     const invalid = !invite || invite.targetType !== ShareType.Vault;
 
@@ -30,22 +60,13 @@ export const VaultInviteRespond: FC<Props> = ({ token }) => {
 
     if (invalid) return null;
 
-    const { inviterEmail, vault, fromNewUser } = invite;
+    const { vault } = invite;
     const { itemCount, memberCount } = vault;
+    const { acceptText, ...modalTexts } = getTexts(invite, invitedGroup);
 
     return (
         <PassModal size="small" open onClose={() => onInviteResponse({ ok: false })} enableCloseWhenClickOutside>
-            <ModalTwoHeader
-                className="text-center text-break-all"
-                hasClose={false}
-                {...(fromNewUser
-                    ? { title: c('Info').t`Congratulations, your access has been confirmed` }
-                    : {
-                          title: inviterEmail,
-                          // translator: full sentence is split into 3 components in our design. Example: {eric.norbert@proton.me} invites you to access items in {name of the vault}"
-                          subline: c('Info').t`invites you to access items in`,
-                      })}
-            />
+            <ModalTwoHeader className="text-center text-break-all" hasClose={false} {...modalTexts} />
             <ModalTwoContent className="flex flex-column items-center">
                 <VaultIcon
                     color={vault.content.display.color}
@@ -71,11 +92,7 @@ export const VaultInviteRespond: FC<Props> = ({ token }) => {
                     </Card>
                 )}
 
-                <InviteStepResponse
-                    invite={invite}
-                    acceptText={fromNewUser ? c('Action').t`Continue` : c('Action').t`Join shared vault`}
-                    disabled={vaultLimitReached}
-                />
+                <InviteStepResponse invite={invite} acceptText={acceptText} disabled={vaultLimitReached} />
             </ModalTwoFooter>
         </PassModal>
     );

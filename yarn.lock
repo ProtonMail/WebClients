@@ -37049,6 +37049,7 @@ __metadata:
   dependencies:
     "@playwright/test": "npm:^1.57.0"
     "@proton/colors": "workspace:^"
+    "@proton/components": "workspace:^"
     "@proton/crypto": "workspace:^"
     "@proton/eslint-config-proton": "workspace:^"
     "@proton/payments": "workspace:^"
@@ -47416,9 +47417,9 @@ __metadata:
   linkType: hard
 
 "zod@npm:^3.25.0 || ^4.0.0":
-  version: 4.1.13
-  resolution: "zod@npm:4.1.13"
-  checksum: 10/0679190318928f69fcb07751063719de232c663b13955fcdb55db59839569d39f3f29b955cb0cba7af0b724233f88c06b3e84c550397ad4e68f8088fa6799d88
+  version: 4.1.12
+  resolution: "zod@npm:4.1.12"
+  checksum: 10/c5f04e6ac306515c4db6ef73cf7705f521c7a2107c8c8912416a0658d689f361db9bee829b0bf01ef4a22492f1065c5cbcdb523ce532606ac6792fd714f3c326
   languageName: node
   linkType: hard
 

@@ -20,7 +20,15 @@ import type {
 import type { FileID, FileIdentifier } from '@proton/pass/types/data';
 import type { ShareRole, ShareType } from '@proton/pass/types/data/shares';
 import type { MaybeNull } from '@proton/pass/types/utils';
-import type { Address, DecryptedAddressKey, DecryptedKey, User } from '@proton/shared/lib/interfaces';
+import type {
+    Address,
+    AddressKey,
+    DecryptedAddressKey,
+    DecryptedKey,
+    Group,
+    OrganizationKey,
+    User,
+} from '@proton/shared/lib/interfaces';
 
 import type {
     InviteTargetKey,
@@ -42,6 +50,7 @@ export type PassCryptoManagerContext = {
     primaryAddress?: Address;
     shareManagers: Map<ShareId, ShareManager>;
     fileKeys: Map<string, Uint8Array<ArrayBuffer>>;
+    groupKeys: Map<string, AddressKey[]>;
 };
 
 export type PassCryptoSnapshot = Pick<PassCryptoManagerContext, 'shareManagers'>;
@@ -56,8 +65,10 @@ export interface PassCryptoWorker extends SerializableCryptoContext<PassCryptoSn
         snapshot?: SerializedCryptoContext<PassCryptoSnapshot>;
         user: User;
         clear?: boolean;
+        groups?: Group[];
     }) => Promise<void>;
     clear: () => void;
+    setGroupKeys: (groups: Group[]) => void;
     getShareManager: (shareId: ShareId) => ShareManager;
     createVault: (content: Uint8Array<ArrayBuffer>) => Promise<VaultCreateRequest>;
     updateVault: (data: { shareId: ShareId; content: Uint8Array<ArrayBuffer> }) => Promise<VaultUpdateRequest>;
@@ -101,9 +112,22 @@ export interface PassCryptoWorker extends SerializableCryptoContext<PassCryptoSn
         inviteKeys: KeyRotationKeyPair[];
         inviterPublicKeys: string[];
     }) => Promise<InviteAcceptRequest>;
+    acceptGroupVaultInvite: (data: {
+        organizationKey: MaybeNull<OrganizationKey>;
+        groupId: string;
+        inviteKeys: KeyRotationKeyPair[];
+        inviterPublicKeys: string[];
+    }) => Promise<InviteAcceptRequest>;
     readVaultInvite: (data: {
         encryptedVaultContent: string;
         invitedAddressId: string;
+        inviteKey: KeyRotationKeyPair;
+        inviterPublicKeys: string[];
+    }) => Promise<Uint8Array<ArrayBuffer>>;
+    readGroupVaultInvite: (data: {
+        encryptedVaultContent: string;
+        organizationKey: MaybeNull<OrganizationKey>;
+        groupId: string;
         inviteKey: KeyRotationKeyPair;
         inviterPublicKeys: string[];
     }) => Promise<Uint8Array<ArrayBuffer>>;
@@ -169,6 +193,7 @@ export interface ShareManager<T extends ShareType = ShareType> extends Serializa
     getShare: () => TypedOpenedShare<T>;
     setShare: (share: TypedOpenedShare<T>) => void;
     getType: () => ShareType;
+    isGroupShare: () => boolean;
 
     isActive: (userKeys?: DecryptedKey[]) => boolean;
 

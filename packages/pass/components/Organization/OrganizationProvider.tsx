@@ -6,9 +6,10 @@ import { isB2BAdmin } from '@proton/pass/lib/organization/helpers';
 import { getOrganizationSettings } from '@proton/pass/store/actions/creators/organization';
 import { withRevalidate } from '@proton/pass/store/request/enhancers';
 import { selectOrganizationState, selectPassPlan, selectUser } from '@proton/pass/store/selectors';
-import type { MaybeNull } from '@proton/pass/types';
+import type { Maybe, MaybeNull } from '@proton/pass/types';
 import type { OrganizationSettings } from '@proton/pass/types/data/organization';
-import type { Organization } from '@proton/shared/lib/interfaces';
+import { toMap } from '@proton/shared/lib/helpers/object';
+import type { Group, Organization } from '@proton/shared/lib/interfaces';
 
 export type OrganizationContextValue = {
     organization: Organization;
@@ -17,6 +18,7 @@ export type OrganizationContextValue = {
         enabled: boolean;
         sync: () => void;
     };
+    groups: Group[];
 };
 
 const OrganizationContext = createContext<MaybeNull<OrganizationContextValue>>(null);
@@ -42,6 +44,7 @@ export const OrganizationProvider: FC<PropsWithChildren> = ({ children }) => {
                           enabled: org.canUpdate,
                           sync: () => dispatch(withRevalidate(getOrganizationSettings.intent())),
                       },
+                      groups: org.groups,
                   }
                 : null,
         [b2bAdmin, org]
@@ -65,4 +68,18 @@ export const useOrganization = (options?: Props) => {
     }, [options?.sync]);
 
     return context;
+};
+
+export const useOrganizationGroups = (
+    options?: Props
+): Record<string, Maybe<{ id: string; email: string; name: string }>> => {
+    const organization = useOrganization(options);
+    return useMemo(
+        () =>
+            toMap(
+                organization?.groups?.map((group) => ({ id: group.ID, email: group.Address.Email, name: group.Name })),
+                'email'
+            ),
+        [organization?.groups]
+    );
 };

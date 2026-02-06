@@ -11,18 +11,16 @@ import { logger } from '@proton/pass/utils/logger';
 import type { Organization } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
-function* getOrganizationSettingsWorker(
-    options: RootSagaOptions,
-    { meta }: ReturnType<typeof getOrganizationSettings.intent>
-) {
+function* getOrganizationSettingsWorker(options: RootSagaOptions, { meta }: ReturnType<typeof getOrganizationSettings.intent>) {
     try {
         const organization: MaybeNull<Organization> = yield select(selectOrganization);
         if (!organization) throw new Error('User not in organization');
 
-        const data: OrganizationGetResponse = yield call(fetchOrganizationSettings);
-        const orgLockTTL = data?.Settings?.ForceLockSeconds;
+        const settings: OrganizationGetResponse = yield call(fetchOrganizationSettings);
 
-        yield put(getOrganizationSettings.success(meta.request.id, data));
+        const orgLockTTL = settings?.Settings?.ForceLockSeconds;
+
+        yield put(getOrganizationSettings.success(meta.request.id, settings));
 
         try {
             if (orgLockTTL) {

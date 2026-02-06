@@ -3,6 +3,7 @@ import { CryptoProxy } from '@proton/crypto';
 import type { ItemKey, ShareGetResponse, ShareKeyResponse, TypedOpenedShare, VaultShareKey } from '@proton/pass/types';
 import { ContentFormatVersion, ShareType } from '@proton/pass/types';
 import { ADDRESS_TYPE } from '@proton/shared/lib/constants';
+import type { AddressKey, Group } from '@proton/shared/lib/interfaces';
 import { type Address, AddressConfirmationState, type DecryptedKey } from '@proton/shared/lib/interfaces';
 
 import { createVault } from '../processes/vault/create-vault';
@@ -71,11 +72,17 @@ export function randomContents(length: number = 20): Uint8Array<ArrayBuffer> {
 }
 
 export const createRandomShareResponses = async (
-    userKey: DecryptedKey,
+    encryptionKey: DecryptedKey,
+    signingKey: DecryptedKey,
     addressId: string,
     content?: Uint8Array<ArrayBuffer>
 ): Promise<[ShareGetResponse, ShareKeyResponse]> => {
-    const vault = await createVault({ content: content ?? randomContents(), userKey, addressId });
+    const vault = await createVault({
+        content: content ?? randomContents(),
+        encryptionKey,
+        signingKey,
+        addressId,
+    });
 
     return [
         {
@@ -105,7 +112,7 @@ export const createRandomShareResponses = async (
             Key: vault.EncryptedVaultKey,
             KeyRotation: 1,
             CreateTime: 0,
-            UserKeyID: userKey.ID,
+            UserKeyID: encryptionKey.ID,
         },
     ];
 };
@@ -156,4 +163,31 @@ export const createRandomItemKey = async (rotation: number): Promise<ItemKey> =>
     const raw = generateKey();
     const key = await importSymmetricKey(raw);
     return { key, raw, rotation };
+};
+
+export const createRandomGroupKey = async (groupId: string): Promise<{ group: Group; groupKey: DecryptedKey }> => {
+    const groupKey = await createRandomKey();
+    const groupArmoredKey = await CryptoProxy.exportPrivateKey({
+        format: 'armored',
+        privateKey: groupKey.privateKey,
+        passphrase: TEST_KEY_PASSWORD,
+    });
+    const groupAddressKey: AddressKey = {
+        ID: groupKey.ID,
+        PrivateKey: groupArmoredKey,
+        Primary: 1,
+        Active: 1,
+        Fingerprint: '',
+        Fingerprints: [],
+        Version: 1,
+        Flags: 0,
+        Signature: '',
+        AddressForwardingID: '',
+    };
+    const group = {
+        ID: groupId,
+        Address: { ...randomAddress(), Keys: [groupAddressKey] },
+    } as unknown as Group;
+
+    return { group, groupKey };
 };

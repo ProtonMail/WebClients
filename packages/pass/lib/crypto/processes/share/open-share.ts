@@ -25,6 +25,7 @@ export const openShare = async ({ encryptedShare, ...options }: OpenShareProcess
         targetMembers: encryptedShare.TargetMembers,
         targetType: encryptedShare.TargetType,
         vaultId: encryptedShare.VaultID,
+        groupId: encryptedShare.GroupID || null,
     };
 
     switch (options.type) {

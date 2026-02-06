@@ -1,7 +1,9 @@
 import { CryptoProxy } from '@proton/crypto';
+import { createAuthStore, exposeAuthStore } from '@proton/pass/lib/auth/store';
 import type { ItemRevisionContentsResponse, ShareGetResponse, ShareKeyResponse } from '@proton/pass/types';
 import { ContentFormatVersion, ItemState, PassEncryptionTag, ShareRole, ShareType } from '@proton/pass/types';
 import { ADDRESS_RECEIVE, ADDRESS_SEND, ADDRESS_STATUS } from '@proton/shared/lib/constants';
+import createStore from '@proton/shared/lib/helpers/store';
 import type { DecryptedKey, Key, User } from '@proton/shared/lib/interfaces';
 
 import { PassCrypto, exposePassCrypto } from './index';
@@ -12,6 +14,7 @@ import { PassCryptoHydrationError, PassCryptoNotHydratedError, PassCryptoShareEr
 import {
     TEST_KEY_PASSWORD,
     TEST_USER_KEY_ID,
+    createRandomGroupKey,
     createRandomKey,
     createRandomShareResponses,
     randomAddress,
@@ -23,6 +26,7 @@ import {
 describe('PassCrypto', () => {
     let user: User;
     let userKey: DecryptedKey;
+    let addressKey: DecryptedKey;
     const address = {
         ...randomAddress(),
         ID: `addressId-${Math.random()}`,
@@ -55,7 +59,32 @@ describe('PassCrypto', () => {
             ],
         } as User;
 
+        addressKey = await createRandomKey();
+        const addressArmoredKey = await CryptoProxy.exportPrivateKey({
+            format: 'armored',
+            privateKey: addressKey.privateKey,
+            passphrase: TEST_KEY_PASSWORD,
+        });
+        address.Keys = [
+            {
+                ID: `addressId-key-${Math.random()}`,
+                PrivateKey: addressArmoredKey,
+                Primary: 1,
+                Active: 1,
+                Fingerprint: '',
+                Fingerprints: [],
+                Version: 1,
+                Flags: 0,
+                Signature: '',
+                AddressForwardingID: '',
+            },
+        ];
+
         exposePassCrypto(createPassCrypto());
+
+        const authStore = createAuthStore(createStore());
+        authStore.setPassword(TEST_KEY_PASSWORD);
+        exposeAuthStore(authStore);
     });
 
     afterAll(async () => releaseCryptoProxy());
@@ -182,7 +211,7 @@ describe('PassCrypto', () => {
 
         test('should call updateVault with latest vaultKey', async () => {
             await setupHydratedPassCrypto();
-            const [encryptedShare, shareKey] = await createRandomShareResponses(userKey, address.ID);
+            const [encryptedShare, shareKey] = await createRandomShareResponses(userKey, userKey, address.ID);
 
             /* register the share */
             const share = await PassCrypto.openShare({ encryptedShare, encryptedShareKeys: [shareKey] });
@@ -213,7 +242,7 @@ describe('PassCrypto', () => {
             await setupHydratedPassCrypto();
 
             /* create a vault */
-            const [encryptedShare, shareKey] = await createRandomShareResponses(userKey, address.ID);
+            const [encryptedShare, shareKey] = await createRandomShareResponses(userKey, userKey, address.ID);
             const share = await PassCrypto.openShare({ encryptedShare, encryptedShareKeys: [shareKey] });
             const shareManager = PassCrypto.getShareManager(encryptedShare.ShareID);
 
@@ -393,7 +422,7 @@ describe('PassCrypto', () => {
 
             /** Register a share with rotation 1 and then try to open the same
              * share for rotation 2 without passing `encryptedShareKeys` */
-            const [encryptedShare, shareKey] = await createRandomShareResponses(userKey, address.ID);
+            const [encryptedShare, shareKey] = await createRandomShareResponses(userKey, userKey, address.ID);
             await PassCrypto.openShare({ encryptedShare, encryptedShareKeys: [shareKey] });
             const encryptedShareUpdate: ShareGetResponse = { ...encryptedShare, ContentKeyRotation: 2 };
 
@@ -405,7 +434,7 @@ describe('PassCrypto', () => {
         test('should successfully open share using existing share manager', async () => {
             await setupHydratedPassCrypto();
 
-            const [encryptedShare, shareKey] = await createRandomShareResponses(userKey, address.ID);
+            const [encryptedShare, shareKey] = await createRandomShareResponses(userKey, userKey, address.ID);
             const shareId = encryptedShare.ShareID;
 
             const share = await PassCrypto.openShare({ encryptedShare, encryptedShareKeys: [shareKey] });
@@ -414,6 +443,32 @@ describe('PassCrypto', () => {
             expect(reopened).not.toBeNull();
             expect(reopened?.shareId).toEqual(shareId);
             expect(reopened?.content).toEqual(share?.content);
+        });
+
+        test('should successfully open group share', async () => {
+            await setupHydratedPassCrypto();
+
+            const content = randomContents();
+
+            const groupId = 'groupId';
+            const { group, groupKey } = await createRandomGroupKey(groupId);
+            PassCrypto.setGroupKeys([group]);
+
+            const [encryptedShare, shareKey] = await createRandomShareResponses(
+                addressKey,
+                groupKey,
+                address.ID,
+                content
+            );
+            encryptedShare.GroupID = groupId;
+            const shareId = encryptedShare.ShareID;
+
+            const share = await PassCrypto.openShare({ encryptedShare, encryptedShareKeys: [shareKey] });
+
+            expect(share).not.toBeNull();
+            expect(share?.shareId).toEqual(shareId);
+            expect(share?.groupId).toEqual(groupId);
+            expect(share?.content).toEqual(content);
         });
     });
 
@@ -427,7 +482,7 @@ describe('PassCrypto', () => {
         test('should register only new vaults keys on shareManager', async () => {
             await setupHydratedPassCrypto();
 
-            const [encryptedShare, shareKey] = await createRandomShareResponses(userKey, address.ID);
+            const [encryptedShare, shareKey] = await createRandomShareResponses(userKey, userKey, address.ID);
             const shareId = encryptedShare.ShareID;
             await PassCrypto.openShare({ encryptedShare, encryptedShareKeys: [shareKey] });
 
@@ -436,7 +491,12 @@ describe('PassCrypto', () => {
             jest.spyOn(shareManager, 'addVaultShareKey');
 
             const content = randomContents();
-            const vault = await processes.createVault({ content, userKey, addressId: address.ID });
+            const vault = await processes.createVault({
+                content,
+                encryptionKey: userKey,
+                signingKey: userKey,
+                addressId: address.ID,
+            });
             const newShareKey: ShareKeyResponse = {
                 Key: vault.EncryptedVaultKey,
                 KeyRotation: 2,
@@ -490,7 +550,7 @@ describe('PassCrypto', () => {
         test('should decrypt item with shareManager vault key', async () => {
             await setupHydratedPassCrypto();
 
-            const [encryptedShare, shareKey] = await createRandomShareResponses(userKey, address.ID);
+            const [encryptedShare, shareKey] = await createRandomShareResponses(userKey, userKey, address.ID);
             await PassCrypto.openShare({ encryptedShare, encryptedShareKeys: [shareKey] });
             const vaultKey = await processes.openShareKey({ shareKey, userKeys: [userKey] });
 

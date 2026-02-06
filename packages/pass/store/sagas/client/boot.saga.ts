@@ -22,7 +22,7 @@ import {
     stateDestroy,
     stopEventPolling,
 } from '@proton/pass/store/actions';
-import { getOrganizationSettings } from '@proton/pass/store/actions/creators/organization';
+import { getOrganizationGroups, getOrganizationSettings } from '@proton/pass/store/actions/creators/organization';
 import { resolvePrivateDomains } from '@proton/pass/store/actions/creators/private-domains';
 import { resolveWebsiteRules } from '@proton/pass/store/actions/creators/rules';
 import { getAuthDevices } from '@proton/pass/store/actions/creators/sso';
@@ -101,6 +101,7 @@ function* bootWorker({ payload }: ReturnType<typeof bootIntent>, options: RootSa
                 yield put(withRevalidate(getUserAccessIntent(userID)));
                 yield put(withRevalidate(getUserSettings.intent(userID)));
                 yield put(withRevalidate(getOrganizationSettings.intent()));
+                yield put(withRevalidate(getOrganizationGroups.intent()));
             }
         }
 

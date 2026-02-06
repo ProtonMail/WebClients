@@ -5,6 +5,7 @@ import { configureStore } from '@reduxjs/toolkit';
 import createSagaMiddleware from 'redux-saga';
 
 import { AppStateManager } from '@proton/pass/components/Core/AppStateManager';
+import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
 import type { AuthService } from '@proton/pass/lib/auth/service';
 import { authStore, createAuthStore, exposeAuthStore } from '@proton/pass/lib/auth/store';
@@ -34,6 +35,7 @@ exposeAuthStore(createAuthStore(createStore()));
 
 export const TestStoreProvider: FC<PropsWithChildren> = ({ children }) => {
     const config = usePassConfig();
+    const core = usePassCore();
 
     useEffect(() => {
         const runner = sagaMiddleware.run(
@@ -41,6 +43,7 @@ export const TestStoreProvider: FC<PropsWithChildren> = ({ children }) => {
                 endpoint: 'web',
                 publish: sagaEvents.publish,
                 getConfig: () => config,
+                getCore: () => core.core,
                 getAppState: () => AppStateManager.getState(),
                 setAppStatus: AppStateManager.setStatus,
                 getAuthService: () => ({}) as AuthService,

@@ -74,6 +74,7 @@ export function* hydrate(
         const organization: MaybeNull<OrganizationState> = yield userState.plan.Type === PlanType.BUSINESS
             ? (cachedState?.organization ?? getOrganization().catch(() => null))
             : null;
+        const groups = organization?.groups;
 
         const twoPasswordMode = userState.userSettings.Password.Mode === SETTINGS_PASSWORD_MODE.TWO_PASSWORD_MODE;
 
@@ -125,7 +126,7 @@ export function* hydrate(
         /** If `keyPassword` is not defined then we may be dealing with an offline
          * state hydration in which case hydrating PassCrypto would throw. In such
          * cases, wait for network online in order to resume session */
-        if (keyPassword) yield PassCrypto.hydrate({ user, keyPassword, addresses, snapshot, clear: true });
+        if (keyPassword) yield PassCrypto.hydrate({ user, keyPassword, addresses, snapshot, groups, clear: true });
 
         yield put(stateHydrate(next));
 

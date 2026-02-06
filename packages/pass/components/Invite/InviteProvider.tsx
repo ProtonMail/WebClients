@@ -36,7 +36,7 @@ type InviteActionsContextValue = {
     manageVaultAccess: (shareId: string) => void;
     manageItemAccess: (shareId: string, itemId: string) => void;
     onInviteResponse: (response: InviteResponseDTO) => void;
-    setInvite: (invite: Invite) => void;
+    setInvite: (invite: MaybeNull<Invite>) => void;
 };
 
 const LatestInviteContext = createContext<MaybeNull<Invite>>(null);

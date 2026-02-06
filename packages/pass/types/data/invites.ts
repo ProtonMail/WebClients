@@ -7,9 +7,16 @@ export enum NewUserInviteState {
     READY = 2,
 }
 
+export enum InviteType {
+    User = 1,
+    GroupOrg = 2,
+    GroupOwner = 3,
+}
+
 export type InviteBase = {
     createTime: number;
     invitedEmail: string;
+    invitedGroupId: MaybeNull<string>;
     inviterEmail: string;
     targetId: string;
     targetType: ShareType;
@@ -34,6 +41,7 @@ export type InviteVaultData = {
 };
 
 export type Invite = InviteBase & {
+    type: InviteType;
     fromNewUser: boolean;
     invitedAddressId: string;
     keys: KeyRotationKeyPair[];
@@ -55,4 +63,5 @@ export type ShareMember = {
     shareRoleId: ShareRole;
     targetId: string;
     targetType: ShareType;
+    isGroupShare: boolean;
 };
