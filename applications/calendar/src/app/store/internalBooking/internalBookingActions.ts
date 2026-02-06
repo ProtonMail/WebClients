@@ -2,7 +2,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 
 import { getAddressKeysByUsageThunk } from '@proton/account/addressKeys/getAddressKeysByUsage';
 import { getVerificationPreferencesThunk } from '@proton/account/publicKeys/verificationPreferences';
-import { getDecryptedPassphraseAndCalendarKeysThunk } from '@proton/calendar/getDecryptedPassphraseAndCalendarKeysThunk';
+import { getDecryptedPassphraseAndCalendarKeysThunk } from '@proton/calendar/calendarBootstrap/keys';
 import { createBookingPage, getBookingPageDetails, updateBookingPage } from '@proton/shared/lib/api/calendarBookings';
 
 import type { APIBooking, SerializedFormData } from '../../containers/bookings/bookingsTypes';

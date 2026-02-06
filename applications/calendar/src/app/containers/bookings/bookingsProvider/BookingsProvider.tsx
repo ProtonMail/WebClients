@@ -6,9 +6,9 @@ import { c } from 'ttag';
 
 import { useUserSettings } from '@proton/account/index';
 import { useUser } from '@proton/account/user/hooks';
-import { useCalendarUserSettings } from '@proton/calendar/useCalendarUserSettings';
-import { useWriteableCalendars } from '@proton/calendar/useCalendars';
-import { useReadCalendarBootstrap } from '@proton/calendar/useReadCalendarBootstrap';
+import { useCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
+import { useWriteableCalendars } from '@proton/calendar/calendars/hooks';
+import { useReadCalendarBootstrap } from '@proton/calendar/calendarBootstrap/hooks';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import useAllowedProducts from '@proton/components/containers/organization/accessControl/useAllowedProducts';
 import useNotifications from '@proton/components/hooks/useNotifications';

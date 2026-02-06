@@ -1,6 +1,6 @@
 import { createSelector } from '@reduxjs/toolkit';
 
-import { selectCalendarsWithMembers } from '@proton/calendar/selectCalendarsWithMembers';
+import { selectCalendarsWithMembers } from '@proton/calendar/calendars';
 import { getVisualCalendars } from '@proton/shared/lib/calendar/calendar';
 import { TMP_UNIQUE_ID } from '@proton/shared/lib/calendar/constants';
 import type { CalendarWithOwnMembers, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';

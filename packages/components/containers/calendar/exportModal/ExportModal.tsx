@@ -5,7 +5,7 @@ import { c } from 'ttag';
 
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { Button } from '@proton/atoms/Button/Button';
-import { useGetCalendarUserSettings } from '@proton/calendar/useGetCalendarUserSettings';
+import { useGetCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
 import BasicModal from '@proton/components/components/modalTwo/BasicModal';
 import { getAppVersion } from '@proton/components/helpers/appVersion';
 import useConfig from '@proton/components/hooks/useConfig';

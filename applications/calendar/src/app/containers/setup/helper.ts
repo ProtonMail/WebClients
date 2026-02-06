@@ -1,4 +1,4 @@
-import type { selectCalendarsBootstrap } from '@proton/calendar/selectCalendarsBootstrap';
+import type { selectCalendarsBootstrap } from '@proton/calendar/calendarBootstrap';
 import { getPersonalCalendars } from '@proton/shared/lib/calendar/calendar';
 import { CALENDAR_FLAGS } from '@proton/shared/lib/calendar/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';

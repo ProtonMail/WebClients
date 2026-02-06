@@ -3,7 +3,7 @@ import { useRef } from 'react';
 import { Redirect, Route, Switch, useRouteMatch } from 'react-router-dom';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
-import { useLoadAllowedTimeZones } from '@proton/calendar/useLoadAllowedTimeZones';
+import { useLoadAllowedTimeZones } from '@proton/calendar/timezones';
 import {
     AddressKeysSection,
     AddressVerificationSection,

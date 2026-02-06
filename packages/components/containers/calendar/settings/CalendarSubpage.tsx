@@ -3,7 +3,7 @@ import { useHistory, useParams } from 'react-router';
 
 import { c } from 'ttag';
 
-import { useGetCalendarBootstrap } from '@proton/calendar/useGetCalendarBootstrap';
+import { useGetCalendarBootstrap } from '@proton/calendar/calendarBootstrap/hooks';
 import SettingsPageTitle from '@proton/components/containers/account/SettingsPageTitle';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import SettingsSection from '@proton/components/containers/account/SettingsSection';

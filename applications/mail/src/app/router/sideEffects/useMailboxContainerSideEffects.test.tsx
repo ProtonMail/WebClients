@@ -1,7 +1,7 @@
 import { renderHook } from '@testing-library/react-hooks';
 
-import { useCalendarUserSettings } from '@proton/calendar/useCalendarUserSettings';
-import { useCalendars } from '@proton/calendar/useCalendars';
+import { useCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
+import { useCalendars } from '@proton/calendar/calendars/hooks';
 import { useInboxDesktopBadgeCount } from '@proton/components';
 
 import useNewEmailNotification from 'proton-mail/hooks/mailbox/notifications/useNewEmailNotification';

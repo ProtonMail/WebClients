@@ -4,8 +4,8 @@ import { c } from 'ttag';
 
 import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import { useCalendarBootstrap } from '@proton/calendar/useCalendarBootstrap';
-import { useGetCalendarKeys } from '@proton/calendar/useGetCalendarKeys';
+import { useCalendarBootstrap } from '@proton/calendar/calendarBootstrap/hooks';
+import { useGetCalendarKeys } from '@proton/calendar/calendarBootstrap/keys';
 import { Badge, CalendarEventDateHeader, CalendarInviteButtons, Loader, useActiveBreakpoint } from '@proton/components';
 import { useLinkHandler } from '@proton/components/hooks/useLinkHandler';
 import { useLoading } from '@proton/hooks';

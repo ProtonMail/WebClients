@@ -1,7 +1,7 @@
 import { fireEvent, render, screen, waitFor, within } from '@testing-library/react';
 import { mocked } from 'jest-mock';
 
-import { useCalendarUserSettings } from '@proton/calendar/useCalendarUserSettings';
+import { useCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
 import { CALENDAR_MODAL_TYPE } from '@proton/components/containers/calendar/calendarModal/interface';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { ACCENT_COLORS_MAP } from '@proton/shared/lib/colors';

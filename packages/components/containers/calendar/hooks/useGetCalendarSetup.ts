@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { useGetAddresses } from '@proton/account/addresses/hooks';
-import { useGetCalendarBootstrap } from '@proton/calendar/useGetCalendarBootstrap';
+import { useGetCalendarBootstrap } from '@proton/calendar/calendarBootstrap/hooks';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { getActiveAddresses, getIsBYOEAddress } from '@proton/shared/lib/helpers/address';

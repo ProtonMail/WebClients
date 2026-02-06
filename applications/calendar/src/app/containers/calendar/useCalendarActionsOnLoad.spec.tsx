@@ -4,7 +4,7 @@ import { renderHook } from '@testing-library/react-hooks';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { createMemoryHistory } from 'history';
 
-import { changeCalendarVisiblity } from '@proton/calendar/changeCalendarVisiblity';
+import { changeCalendarVisiblity } from '@proton/calendar/calendars/actions';
 import { NotificationsProvider } from '@proton/components';
 
 import { useCalendarDispatch } from '../../store/hooks';
