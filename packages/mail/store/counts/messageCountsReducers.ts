@@ -221,28 +221,27 @@ export const labelConversationsPending = (
 
         // DECREASE count in old locations
         conversation.Labels?.forEach((label) => {
-            const labelID = label.ID;
-            const messageCountState = state.value?.find((counter) => counter.LabelID === labelID);
+            const messageCountState = state.value?.find((counter) => counter.LabelID === label.ID);
 
             if (!messageCountState) {
                 return;
             }
 
             // If the label cannot be updated, do not update counters
-            if (isUnmodifiableByUser(labelID, labels, folders)) {
+            if (isUnmodifiableByUser(label.ID, labels, folders)) {
                 return;
             }
 
-            if (isSystemLabel(labelID) || isCustomLabel(labelID, labels)) {
+            if (isSystemLabel(label.ID) || isCustomLabel(label.ID, labels)) {
                 // If moving to TRASH or SPAM, labels are removed
                 if (destinationLabelID === MAILBOX_LABEL_IDS.TRASH || destinationLabelID === MAILBOX_LABEL_IDS.SPAM) {
                     messageCountState.Total = safeDecreaseCount(
                         messageCountState?.Total,
-                        getContextNumMessages(conversation, labelID)
+                        getContextNumMessages(conversation, label.ID)
                     );
                     messageCountState.Unread = safeDecreaseCount(
                         messageCountState?.Unread,
-                        getContextNumUnread(conversation, labelID)
+                        getContextNumUnread(conversation, label.ID)
                     );
                 }
 
@@ -251,14 +250,14 @@ export const labelConversationsPending = (
             }
 
             // When changing the category, remove the messages from the old category
-            if (isCategoryLabel(labelID) && isCategoryLabel(destinationLabelID) && destinationLabelID !== labelID) {
+            if (isCategoryLabel(label.ID) && isCategoryLabel(destinationLabelID) && destinationLabelID !== label.ID) {
                 messageCountState.Total = safeDecreaseCount(
                     messageCountState?.Total,
-                    getContextNumMessages(conversation, labelID)
+                    getContextNumMessages(conversation, label.ID)
                 );
                 messageCountState.Unread = safeDecreaseCount(
                     messageCountState?.Unread,
-                    getContextNumUnread(conversation, labelID)
+                    getContextNumUnread(conversation, label.ID)
                 );
                 return;
             }
@@ -273,14 +272,14 @@ export const labelConversationsPending = (
             }
 
             // Remove the conversation messages from all locations (except the destination)
-            if (destinationLabelID !== labelID) {
+            if (destinationLabelID !== label.ID) {
                 messageCountState.Total = safeDecreaseCount(
                     messageCountState?.Total,
-                    getContextNumMessages(conversation, labelID)
+                    getContextNumMessages(conversation, label.ID)
                 );
                 messageCountState.Unread = safeDecreaseCount(
                     messageCountState?.Unread,
-                    getContextNumUnread(conversation, labelID)
+                    getContextNumUnread(conversation, label.ID)
                 );
 
                 // If items are moving out from TRASH or SPAM, we need to add them to ALMOST_ALL_MAIL count
@@ -288,18 +287,18 @@ export const labelConversationsPending = (
                     (counter) => counter.LabelID === MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL
                 );
                 if (
-                    (labelID === MAILBOX_LABEL_IDS.TRASH || labelID === MAILBOX_LABEL_IDS.SPAM) &&
+                    (label.ID === MAILBOX_LABEL_IDS.TRASH || label.ID === MAILBOX_LABEL_IDS.SPAM) &&
                     destinationLabelID !== MAILBOX_LABEL_IDS.TRASH &&
                     destinationLabelID !== MAILBOX_LABEL_IDS.SPAM &&
                     almostAllMailCountState
                 ) {
                     almostAllMailCountState.Total = safeIncreaseCount(
                         almostAllMailCountState?.Total,
-                        getContextNumMessages(conversation, labelID)
+                        getContextNumMessages(conversation, label.ID)
                     );
                     almostAllMailCountState.Unread = safeIncreaseCount(
                         almostAllMailCountState?.Unread,
-                        getContextNumUnread(conversation, labelID)
+                        getContextNumUnread(conversation, label.ID)
                     );
                 }
                 return;
