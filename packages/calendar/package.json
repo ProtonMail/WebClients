@@ -3,6 +3,10 @@
     "description": "",
     "license": "GPL-3.0",
     "sideEffects": false,
+    "type": "module",
+    "exports": {
+        ".": "./index.ts"
+    },
     "main": "index.ts",
     "scripts": {
         "check-types": "tsc",
