@@ -18,6 +18,8 @@ export type InviteRemoveIntent = AccessDTO & { inviteId: string };
 export type InviteRejectIntent = { inviteToken: string };
 export type InviteAcceptIntent = { invitedAddressId: string; inviterEmail: string; inviteToken: string };
 export type InviteAcceptSuccess = { inviteToken: string; share: Share; items: ItemRevision[] };
+export type GroupInviteAcceptIntent = { inviterEmail: string; inviteToken: string };
+export type GroupInviteAcceptSuccess = { inviteToken: string };
 
 export type InviteRecommendationsIntent = {
     pageSize: number;
@@ -37,4 +39,24 @@ export type InviteRecommendationsSuccess = {
         emails: string[];
         name: string;
     }>;
+};
+
+export type InviteRecommendationsSuggestedIntent = { shareId: string; startsWith: string };
+export type InviteRecommendationsSuggestedSuccess = {
+    startsWith: string;
+    suggested: { email: string; addressId: string; isGroup: boolean }[];
+};
+export type InviteRecommendationsOrganizationIntent = {
+    shareId: string;
+    since: MaybeNull<string>;
+    pageSize: number;
+    startsWith: string;
+};
+export type InviteRecommendationsOrganizationSuccess = {
+    startsWith: string;
+    name: string;
+    next: MaybeNull<string>;
+    more: boolean;
+    since: MaybeNull<string>;
+    emails: string[];
 };

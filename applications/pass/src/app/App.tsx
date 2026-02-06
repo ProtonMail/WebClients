@@ -68,6 +68,7 @@ import { AuthSwitchProvider } from './Auth/AuthSwitchProvider';
 import { ServiceWorkerContext, ServiceWorkerProvider } from './ServiceWorker/client/ServiceWorkerProvider';
 import type { ServiceWorkerClient } from './ServiceWorker/client/client';
 import { StoreProvider } from './Store/StoreProvider';
+import { store } from './Store/store';
 import locales from './locales';
 
 if (ENV === 'development') QA_SERVICE?.init(localStorage);
@@ -75,7 +76,7 @@ if (ENV === 'development') QA_SERVICE?.init(localStorage);
 const authStore = exposeAuthStore(createAuthStore(createSecureSessionStorage()));
 
 exposeApi(createApi({ config, threshold: API_CONCURRENCY_TRESHOLD }));
-exposePassCrypto(createPassCrypto(core));
+exposePassCrypto(createPassCrypto(core, store));
 sentry({ config: PASS_CONFIG });
 
 export const getPassCoreProps = (sw: Maybe<ServiceWorkerClient>): PassCoreProviderProps => {

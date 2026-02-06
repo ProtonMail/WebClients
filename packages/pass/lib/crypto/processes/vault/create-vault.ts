@@ -7,13 +7,15 @@ import type { DecryptedKey } from '@proton/shared/lib/interfaces';
 
 type CreateVaultProcessParams = {
     content: Uint8Array<ArrayBuffer>;
-    userKey: DecryptedKey;
+    encryptionKey: DecryptedKey;
+    signingKey: DecryptedKey;
     addressId: string;
 };
 
 export const createVault = async ({
     content,
-    userKey,
+    encryptionKey,
+    signingKey,
     addressId,
 }: CreateVaultProcessParams): Promise<VaultCreateRequest> => {
     if (content.length === 0) {
@@ -26,8 +28,8 @@ export const createVault = async ({
 
     const encryptedVaultKey = await CryptoProxy.encryptMessage({
         binaryData: key,
-        encryptionKeys: [userKey.privateKey],
-        signingKeys: [userKey.privateKey],
+        encryptionKeys: [encryptionKey.privateKey],
+        signingKeys: [signingKey.privateKey],
         format: 'binary',
     });
 

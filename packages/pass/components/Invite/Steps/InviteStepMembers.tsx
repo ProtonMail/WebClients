@@ -7,16 +7,17 @@ import { c } from 'ttag';
 import { Field } from '@proton/pass/components/Form/Field/Field';
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
 import { ListField } from '@proton/pass/components/Form/Field/ListField';
+import { InviteGroupField } from '@proton/pass/components/Invite/Steps/InviteGroupField';
 import { InviteRecommendations } from '@proton/pass/components/Invite/Steps/InviteRecommendations';
+import { useOrganizationGroups } from '@proton/pass/components/Organization/OrganizationProvider';
 import type { InviteAddressValidator } from '@proton/pass/hooks/invite/useAddressValidator';
 import { type AccessKeys, AccessTarget } from '@proton/pass/lib/access/types';
 import PassUI from '@proton/pass/lib/core/ui.proxy';
 import { getLimitReachedText } from '@proton/pass/lib/invites/invite.utils';
 import { InviteEmailsError } from '@proton/pass/lib/validation/invite';
 import { selectShareOrThrow } from '@proton/pass/store/selectors';
-import type { InviteFormMemberItem, MaybeNull } from '@proton/pass/types';
-import { type InviteFormValues, ShareRole } from '@proton/pass/types';
-import { prop } from '@proton/pass/utils/fp/lens';
+import type { InviteFormMemberItem, InviteFormValues, MaybeNull } from '@proton/pass/types';
+import { ShareRole } from '@proton/pass/types';
 import { truthy } from '@proton/pass/utils/fp/predicates';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 
@@ -36,8 +37,6 @@ type Props = {
     onUpdate: (members: InviteFormMemberItem[]) => Promise<void>;
 };
 
-const getFieldValue = prop('email');
-
 /** `InviteStepMembers` takes a forwarded ref parameter for the email
  * input element. This ref is essential to trigger validation on any
  * non-added email values that are are pushed to the member list. This
@@ -47,6 +46,7 @@ export const InviteStepMembers = forwardRef<HTMLInputElement, Props>(
         const emailField = (fieldRef as MaybeNull<MutableRefObject<HTMLInputElement>>)?.current;
         const scrollTimer = useRef<MaybeNull<NodeJS.Timeout>>(null);
         const share = useSelector(selectShareOrThrow(access.shareId));
+        const groups = useOrganizationGroups();
         const accessTarget = access.itemId ? AccessTarget.Item : AccessTarget.Vault;
 
         const [autocomplete, setAutocomplete] = useState('');
@@ -132,7 +132,10 @@ export const InviteStepMembers = forwardRef<HTMLInputElement, Props>(
                         fieldLoading={fieldLoading}
                         fieldKey="members"
                         fieldRef={fieldRef}
-                        fieldValue={getFieldValue}
+                        fieldValue={(entry) =>
+                            groups[entry.email] ? <InviteGroupField email={entry.email} /> : entry.email
+                        }
+                        fieldEditable={(entry) => !groups[entry.email]}
                         key={`autofocus-email-${autoFocus}`}
                         name="emails"
                         onBlur={onEmailFieldBlur}

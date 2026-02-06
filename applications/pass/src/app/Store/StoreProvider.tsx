@@ -78,6 +78,7 @@ export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
                 publish: sagaEvents.publish,
 
                 getConfig: () => config,
+                getCore: () => core.core,
                 getAppState: () => AppStateManager.getState(),
                 setAppStatus: AppStateManager.setStatus,
                 getAuthService: () => authService,

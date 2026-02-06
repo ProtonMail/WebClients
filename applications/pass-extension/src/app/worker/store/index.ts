@@ -102,6 +102,7 @@ export const options: RootSagaOptions = {
     getSettings: withContext((ctx) => ctx.service.settings.resolve()),
     getStorage: withContext((ctx) => ctx.service.storage.local),
     getTelemetry: withContext((ctx) => ctx.service.telemetry),
+    getCore: withContext((ctx) => ctx.service.core),
     getConfig: () => config,
     getAppState: withContext((ctx) => ctx.getState()),
     setAppStatus: withContext((ctx, status) => ctx.setStatus(status)),

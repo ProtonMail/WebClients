@@ -18,12 +18,14 @@ describe('openShareKey crypto process', () => {
 
     test('should decrypt vault key using private user keys', async () => {
         const userKeys = [await createRandomKey(), await createRandomKey(), await createRandomKey()];
+        const userKey = lastItem(userKeys)!;
         const content = randomContents();
 
         const vault = await createVault({
             content,
             addressId: randomAddress().ID,
-            userKey: lastItem(userKeys)!,
+            encryptionKey: userKey,
+            signingKey: userKey,
         });
 
         const vaultKey = await openShareKey({

@@ -111,6 +111,7 @@ interface DropdownMenuButtonProps extends DropdownMenuButtonCoreProps, DropdownM
     className?: string;
     isSelected?: boolean;
     parentClassName?: string;
+    extraClassname?: string;
     quickActions?: QuickActionChild[];
     quickActionsClassname?: string;
     quickActionsPlacement?: PopperPlacement;
@@ -124,6 +125,7 @@ const DropdownMenuButtonRender: ForwardRefRenderFunction<HTMLDivElement, Dropdow
         danger,
         ellipsis = true,
         extra,
+        extraClassname,
         icon,
         isSelected,
         label,
@@ -138,8 +140,6 @@ const DropdownMenuButtonRender: ForwardRefRenderFunction<HTMLDivElement, Dropdow
     },
     ref
 ) => {
-    const extraPadding = quickActions !== undefined ? 'pr-4' : '';
-
     return (
         <div className={clsx('relative shrink-0', parentClassName)} style={style} ref={ref}>
             <DropdownMenuButtonCore
@@ -155,7 +155,7 @@ const DropdownMenuButtonRender: ForwardRefRenderFunction<HTMLDivElement, Dropdow
                     label={label}
                     labelClassname={clsx('text-left', labelClassname)}
                     extra={
-                        <div className={clsx('flex items-center shrink-0 flex-nowrap color-weak', extraPadding)}>
+                        <div className={clsx('flex items-center shrink-0 flex-nowrap color-weak', extraClassname)}>
                             {isSelected && (
                                 <div className={clsx('ml-auto')}>
                                     <IcCheckmark color="var(--interaction-norm-major-1)" />

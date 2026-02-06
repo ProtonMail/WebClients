@@ -28,6 +28,8 @@ import sync from './client/sync.saga';
 import events from './events/events.saga';
 import fileAttachmentsSagas from './file-attachments/file-attachments.sagas';
 import itemsImport from './import/import.saga';
+import groupInviteAccept from './invites/group-invite-accept.saga';
+import groupInviteReject from './invites/group-invite-reject.saga';
 import inviteAccept from './invites/invite-accept.saga';
 import inviteAddressesValidate from './invites/invite-addresses-validate.saga';
 import inviteCreate from './invites/invite-create.saga';
@@ -64,8 +66,11 @@ import monitorAddressToggle from './monitor/monitor-address.toggle.saga';
 import monitorToggle from './monitor/monitor-toggle.saga';
 import sentinelToggle from './monitor/sentinel-toggle.saga';
 import notificationSagas from './notifications/notifications.sagas';
+import groupMembers from './organization/group-members.saga';
+import getOrganizationGroups from './organization/organization-groups.saga';
 import getOrganizationSettings from './organization/organization-settings.saga';
 import secureLinkSagas from './secure-links/secure-links.sagas';
+import sharesDedupe from './shares/dedupe-shares.sagas';
 import coupon from './user/coupon.saga';
 import featureFlags from './user/feature-flags.saga';
 import userAccess from './user/user-access.saga';
@@ -110,7 +115,11 @@ const COMMON_SAGAS = [
     events,
     exportUserData,
     featureFlags,
+    groupMembers,
+    getOrganizationGroups,
     getOrganizationSettings,
+    groupInviteAccept,
+    groupInviteReject,
     inviteAccept,
     inviteAddressesValidate,
     inviteCreate,
@@ -156,6 +165,7 @@ const COMMON_SAGAS = [
     vaultEdit,
     vaultMoveAllItems,
     vaultTransferOwner,
+    sharesDedupe,
 ];
 
 export const rootSagaFactory = (platformSagas: PassSaga[]) =>

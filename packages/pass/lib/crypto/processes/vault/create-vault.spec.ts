@@ -21,7 +21,12 @@ describe('createVault crypto process', () => {
         const address = randomAddress();
         const content = randomContents();
 
-        const vault = await createVault({ content, addressId: address.ID, userKey });
+        const vault = await createVault({
+            content,
+            addressId: address.ID,
+            encryptionKey: userKey,
+            signingKey: userKey,
+        });
 
         const { data, verificationStatus } = await CryptoProxy.decryptMessage({
             binaryMessage: Uint8Array.fromBase64(vault.EncryptedVaultKey),
@@ -53,7 +58,8 @@ describe('createVault crypto process', () => {
             createVault({
                 content: new Uint8Array(0),
                 addressId: address.ID,
-                userKey,
+                encryptionKey: userKey,
+                signingKey: userKey,
             })
         ).rejects.toThrow(PassCryptoVaultError);
     });

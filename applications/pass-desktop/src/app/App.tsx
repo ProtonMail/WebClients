@@ -5,6 +5,7 @@ import { AppGuard } from 'proton-pass-web/app/AppGuard';
 import { AuthServiceProvider } from 'proton-pass-web/app/Auth/AuthServiceProvider';
 import { AuthSwitchProvider } from 'proton-pass-web/app/Auth/AuthSwitchProvider';
 import { StoreProvider } from 'proton-pass-web/app/Store/StoreProvider';
+import { store } from 'proton-pass-web/app/Store/store';
 import { B2BEvents } from 'proton-pass-web/lib/b2b';
 import { core } from 'proton-pass-web/lib/core';
 import { i18n } from 'proton-pass-web/lib/i18n';
@@ -64,7 +65,7 @@ if (ENV === 'development') QA_SERVICE?.init(localStorage);
 const authStore = exposeAuthStore(createAuthStore(createSecureSessionStorage()));
 
 exposeApi(createApi({ config: PASS_CONFIG }));
-exposePassCrypto(createPassCrypto(core));
+exposePassCrypto(createPassCrypto(core, store));
 sentry({ config: PASS_CONFIG, sentryConfig: SENTRY_CONFIG });
 
 const history = createHashHistory();
