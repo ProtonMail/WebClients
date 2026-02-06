@@ -5,6 +5,7 @@ import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import { traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 import { useFlag } from '@proton/unleash';
 
+import { selectLabelID } from 'proton-mail/store/elements/elementsSelectors';
 import { useMailSelector } from 'proton-mail/store/hooks';
 
 import { folderLocation } from './listTelemetryHelper';
@@ -117,7 +118,7 @@ const useListTelemetry = () => {
     const api = useApi();
     const [folders = []] = useFolders();
     const [labels = []] = useLabels();
-    const labelID = useMailSelector((store) => store.elements.params.labelID);
+    const labelID = useMailSelector(selectLabelID);
 
     const isListTelemetryEnabled = useFlag('MailWebListTelemetry');
 
