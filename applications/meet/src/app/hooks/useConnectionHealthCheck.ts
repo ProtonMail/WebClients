@@ -1,6 +1,5 @@
 import { useEffect, useRef } from 'react';
 
-import { ConnectionStateInfo } from '@proton-meet/proton-meet-core';
 import type { App } from '@proton-meet/proton-meet-core';
 
 import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
@@ -41,27 +40,12 @@ export const useConnectionHealthCheck = ({
         let healthCheckTimeout: NodeJS.Timeout | null = null;
 
         const checkConnection = async () => {
-            let isWebsocketHasReconnected = false;
-            if (wasmApp?.getWsState && healthCheckAllowedRef.current && !isConnectionCheckInProgressRef.current) {
+            if (wasmApp !== null && healthCheckAllowedRef.current && !isConnectionCheckInProgressRef.current) {
                 try {
                     isConnectionCheckInProgressRef.current = true;
-                    isWebsocketHasReconnected = await wasmApp.isWebsocketHasReconnected();
-                    const connectionStatus = await wasmApp.getWsState();
 
-                    if (connectionStatus !== ConnectionStateInfo.Reconnecting) {
-                        try {
-                            const isMlsUpToDate = await wasmApp.isMlsUpToDate();
-
-                            if (!isMlsUpToDate) {
-                                setConnectionLost(true);
-                            }
-                        } catch (error) {
-                            reportMeetError('Failed to check MLS status', error);
-                            setConnectionLost(true);
-                        }
-                    } else {
-                        setConnectionLost(false);
-                    }
+                    const isMlsUpToDate = await wasmApp.isMlsUpToDate();
+                    setConnectionLost(!isMlsUpToDate);
                 } catch (error) {
                     reportMeetError('Failed to get connection status', error);
                 } finally {
@@ -69,9 +53,8 @@ export const useConnectionHealthCheck = ({
                 }
             }
 
-            // If the websocket has reconnected, check the connection every 5 seconds.
-            // Otherwise, check the connection every 30 seconds to avoid overwhelming the server.
-            timeout = setTimeout(checkConnection, isWebsocketHasReconnected ? 5_000 : 30_000);
+            // Client trigger the next health check every 10 seconds.
+            timeout = setTimeout(checkConnection, 10_000);
         };
 
         const logUserEpochHealth = async () => {
