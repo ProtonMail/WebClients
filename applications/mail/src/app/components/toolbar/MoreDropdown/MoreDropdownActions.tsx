@@ -17,8 +17,6 @@ import useListTelemetry, {
 } from 'proton-mail/components/list/list-telemetry/useListTelemetry';
 import { MoveAllType, useMoveAllToFolder } from 'proton-mail/hooks/actions/move/useMoveAllToFolder';
 import { useEmptyLabel } from 'proton-mail/hooks/actions/useEmptyLabel';
-import { selectLabelID } from 'proton-mail/store/elements/elementsSelectors';
-import { useMailSelector } from 'proton-mail/store/hooks';
 
 interface ActionProps {
     onMove: (labelID: string, sourceAction: SOURCE_ACTION) => void;
@@ -112,10 +110,8 @@ export const DeleteAction = ({ onDelete }: DeleteActionProps) => {
     );
 };
 
-export const MoveAllToTrashAction = () => {
-    const labelID = useMailSelector(selectLabelID);
-
-    const { moveAllToFolder } = useMoveAllToFolder();
+export const MoveAllToTrashAction = ({ labelID }: { labelID: string }) => {
+    const { moveAllToFolder, moveAllModal } = useMoveAllToFolder();
 
     const handleMoveAllToTrash = () => {
         void moveAllToFolder({
@@ -128,27 +124,28 @@ export const MoveAllToTrashAction = () => {
     };
 
     return (
-        <DropdownMenuButton
-            className="text-left inline-flex flex-nowrap"
-            onClick={handleMoveAllToTrash}
-            data-testid="toolbar:moveAllToTrash"
-        >
-            <IcTrash className="mr-2 shrink-0 mt-0.5" />
-            <span className="flex-1">
-                {
-                    // translator: This action will move all messages from the location to trash
-                    // Beware when translating this one because we might also have a button below,
-                    // which is deleting all messages. This is different
-                    c('Action').t`Move all to trash`
-                }
-            </span>
-        </DropdownMenuButton>
+        <>
+            <DropdownMenuButton
+                className="text-left inline-flex flex-nowrap"
+                onClick={handleMoveAllToTrash}
+                data-testid="toolbar:moveAllToTrash"
+            >
+                <IcTrash className="mr-2 shrink-0 mt-0.5" />
+                <span className="flex-1">
+                    {
+                        // translator: This action will move all messages from the location to trash
+                        // Beware when translating this one because we might also have a button below,
+                        // which is deleting all messages. This is different
+                        c('Action').t`Move all to trash`
+                    }
+                </span>
+            </DropdownMenuButton>
+            {moveAllModal}
+        </>
     );
 };
 
-export const MoveAllToArchiveAction = () => {
-    const labelID = useMailSelector(selectLabelID);
-
+export const MoveAllToArchiveAction = ({ labelID }: { labelID: string }) => {
     const { moveAllToFolder, moveAllModal } = useMoveAllToFolder();
 
     const handleMoveAllToArchive = () => {
@@ -176,9 +173,7 @@ export const MoveAllToArchiveAction = () => {
     );
 };
 
-export const DeleteAllAction = () => {
-    const labelID = useMailSelector(selectLabelID);
-
+export const DeleteAllAction = ({ labelID }: { labelID: string }) => {
     const { sendSimpleActionReport } = useListTelemetry();
     const { emptyLabel, modal: deleteAllModal } = useEmptyLabel();
 

@@ -1,3 +1,5 @@
+import { useMemo } from 'react';
+
 import { c } from 'ttag';
 
 import { DropdownMenu, DropdownMenuButton, useModalState } from '@proton/components';
@@ -12,6 +14,8 @@ import clsx from '@proton/utils/clsx';
 
 import { isConversationMode } from 'proton-mail/helpers/mailSettings';
 import { useSelectAll } from 'proton-mail/hooks/useSelectAll';
+import { selectLabelID } from 'proton-mail/store/elements/elementsSelectors';
+import { useMailSelector } from 'proton-mail/store/hooks';
 
 import { canMoveAll } from '../../helpers/labels';
 import useSnooze from '../../hooks/actions/useSnooze';
@@ -59,7 +63,6 @@ const canEmpty = (labelID: string, elementIDs: string[], selectedIDs: string[], 
 };
 
 interface Props {
-    labelID: string;
     elementIDs: string[];
     selectedIDs: string[];
     isSearch: boolean;
@@ -72,7 +75,6 @@ interface Props {
 }
 
 const MoreDropdown = ({
-    labelID,
     elementIDs,
     selectedIDs,
     isSearch,
@@ -82,8 +84,11 @@ const MoreDropdown = ({
     onDelete,
     onCheckAll,
 }: Props) => {
+    const labelID = useMailSelector(selectLabelID);
+
     const [mailSettings] = useMailSettings();
     const { selectAll } = useSelectAll({ labelID });
+
     let [firstActions, actions] = useLabelActions(labelID);
     if (isExtraTiny) {
         actions = [...firstActions, ...actions];
@@ -145,14 +150,17 @@ const MoreDropdown = ({
         });
     }
 
-    const inbox = <InboxAction onMove={onMove} />;
-    const nospam = <NoSpamAction onMove={onMove} />;
-    const archive = <ArchiveAction onMove={onMove} />;
-    const trash = <TrashAction onMove={onMove} />;
-    const spam = <SpamAction onMove={onMove} />;
-    const deleteButton = <DeleteAction onDelete={onDelete} />;
-
-    const allMoveButtons = { inbox, trash, archive, spam, nospam, delete: deleteButton };
+    const allMoveButtons = useMemo(
+        () => ({
+            inbox: <InboxAction onMove={onMove} />,
+            trash: <TrashAction onMove={onMove} />,
+            archive: <ArchiveAction onMove={onMove} />,
+            spam: <SpamAction onMove={onMove} />,
+            nospam: <NoSpamAction onMove={onMove} />,
+            delete: <DeleteAction onDelete={onDelete} />,
+        }),
+        [onMove, onDelete]
+    );
 
     return (
         <>
@@ -200,9 +208,9 @@ const MoreDropdown = ({
                                 </>
                             ) : null}
 
-                            {showMoveAllToTrash ? <MoveAllToTrashAction /> : null}
-                            {showMoveAllToArchive ? <MoveAllToArchiveAction /> : null}
-                            {showDelete ? <DeleteAllAction /> : null}
+                            {showMoveAllToTrash ? <MoveAllToTrashAction labelID={labelID} /> : null}
+                            {showMoveAllToArchive ? <MoveAllToArchiveAction labelID={labelID} /> : null}
+                            {showDelete ? <DeleteAllAction labelID={labelID} /> : null}
                         </DropdownMenu>
                     ),
                 }}
