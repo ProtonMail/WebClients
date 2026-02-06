@@ -4,7 +4,7 @@ import { useLocation } from 'react-router-dom';
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { useCalendars } from '@proton/calendar/useCalendars';
+import { useCalendars } from '@proton/calendar/calendars/hooks';
 import type { SectionConfig } from '@proton/components';
 import {
     SettingsListItem,

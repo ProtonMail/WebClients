@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { useCalendars } from '@proton/calendar/useCalendars';
+import { useCalendars } from '@proton/calendar/calendars/hooks';
 import { Spotlight, useLocalState } from '@proton/components';
 import SidebarList from '@proton/components/components/sidebar/SidebarList';
 import SimpleSidebarListItemHeader from '@proton/components/components/sidebar/SimpleSidebarListItemHeader';

@@ -8,8 +8,8 @@ import { useAddresses, useGetAddresses } from '@proton/account/addresses/hooks';
 import { Banner } from '@proton/atoms/Banner/Banner';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Href } from '@proton/atoms/Href/Href';
-import { useGetCalendars } from '@proton/calendar/useCalendars';
-import { useVideoConferencingWidget } from '@proton/calendar/useVideoConferencingWidget';
+import { useGetCalendars } from '@proton/calendar/calendars/hooks';
+import { useVideoConferencingWidget } from '@proton/calendar/videoConferencing/widget';
 import {
     AppLink,
     CalendarEventDateHeader,

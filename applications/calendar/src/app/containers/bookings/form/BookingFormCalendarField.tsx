@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { useCalendars, useWriteableCalendars } from '@proton/calendar/useCalendars';
+import { useCalendars, useWriteableCalendars } from '@proton/calendar/calendars/hooks';
 import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
 import Checkbox from '@proton/components/components/input/Checkbox';
 import Option from '@proton/components/components/option/Option';

@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { calendarSettingsActions } from '@proton/calendar/calendarSettingsActions';
+import { calendarSettingsActions } from '@proton/calendar/calendarUserSettings';
 import Info from '@proton/components/components/link/Info';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import SettingsLayout from '@proton/components/containers/account/SettingsLayout';

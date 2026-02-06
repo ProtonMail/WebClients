@@ -11,11 +11,11 @@ import {
 import * as bootstrap from '@proton/account/bootstrap';
 import { bootstrapEvent } from '@proton/account/bootstrap/action';
 import { getDecryptedPersistedState } from '@proton/account/persist/helper';
-import { calendarBootstrapThunk } from '@proton/calendar/calendarBootstrapThunk';
-import { calendarSettingsThunk } from '@proton/calendar/calendarSettingsThunk';
-import { calendarsThunk } from '@proton/calendar/calendarsThunk';
-import { createCalendarModelEventManager } from '@proton/calendar/createCalendarModelEventManager';
-import { holidaysDirectoryThunk } from '@proton/calendar/holidaysDirectoryThunk';
+import { calendarBootstrapThunk } from '@proton/calendar/calendarBootstrap';
+import { calendarSettingsThunk } from '@proton/calendar/calendarUserSettings';
+import { calendarsThunk } from '@proton/calendar/calendars';
+import { createCalendarModelEventManager } from '@proton/calendar/calendarModelEventManager';
+import { holidaysDirectoryThunk } from '@proton/calendar/holidaysDirectory';
 import { setupGuestCrossStorage } from '@proton/cross-storage/account-impl/guestInstance';
 import { FeatureCode, fetchFeatures } from '@proton/features';
 import createApi from '@proton/shared/lib/api/createApi';

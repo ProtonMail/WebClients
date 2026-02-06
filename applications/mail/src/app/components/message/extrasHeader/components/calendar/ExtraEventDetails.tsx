@@ -2,7 +2,7 @@ import { useMemo, useRef } from 'react';
 
 import { c } from 'ttag';
 
-import { useVideoConferencingWidget } from '@proton/calendar/useVideoConferencingWidget';
+import { useVideoConferencingWidget } from '@proton/calendar/videoConferencing/widget';
 import { IconRow } from '@proton/components';
 import { useLinkHandler } from '@proton/components/hooks/useLinkHandler';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';

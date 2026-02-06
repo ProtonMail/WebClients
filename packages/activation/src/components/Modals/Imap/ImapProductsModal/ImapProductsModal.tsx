@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
-import { useCalendars } from '@proton/calendar/useCalendars';
+import { useCalendars } from '@proton/calendar/calendars/hooks';
 import { Loader, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, useModalState } from '@proton/components';
 import useGetOrCreateCalendarAndSettings from '@proton/components/hooks/useGetOrCreateCalendarAndSettings';
 import { FeatureCode, useFeature } from '@proton/features';

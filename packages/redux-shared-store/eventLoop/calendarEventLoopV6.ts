@@ -1,7 +1,7 @@
 import type { TypedStartListening } from '@reduxjs/toolkit';
 
-import { calendarEventLoopV6Listener } from '@proton/calendar/calendarEventLoopV6Listener';
-import type { CalendarEventLoopV6RequiredState } from '@proton/calendar/types/CalendarEventLoopV6RequiredState';
+import { calendarEventLoopV6Listener } from '@proton/calendar/calendarEventLoop/listeners';
+import type { CalendarEventLoopV6RequiredState } from '@proton/calendar/calendarEventLoop/interface';
 import type { ProtonDispatch, ProtonThunkArguments } from '@proton/redux-shared-store-types';
 
 type AppStartListening = TypedStartListening<

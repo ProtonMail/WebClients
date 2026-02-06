@@ -5,7 +5,7 @@ import userEvent from '@testing-library/user-event';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { createMemoryHistory } from 'history';
 
-import { useCalendars } from '@proton/calendar/useCalendars';
+import { useCalendars } from '@proton/calendar/calendars/hooks';
 import { CacheProvider, useContactEmailsCache } from '@proton/components';
 import ModalsProvider from '@proton/components/containers/modals/Provider';
 import {

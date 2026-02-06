@@ -4,7 +4,7 @@ import { usePlans } from '@proton/account/plans/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useUserInvitations } from '@proton/account/userInvitations/hooks';
-import { useCalendars } from '@proton/calendar/useCalendars';
+import { useCalendars } from '@proton/calendar/calendars/hooks';
 import Loader from '@proton/components/components/loader/Loader';
 import SettingsSectionExtraWide from '@proton/components/containers/account/SettingsSectionExtraWide';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';

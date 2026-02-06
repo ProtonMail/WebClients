@@ -1,4 +1,4 @@
-import type { useGetCalendarKeys } from '@proton/calendar/useGetCalendarKeys';
+import type { useGetCalendarKeys } from '@proton/calendar/calendarBootstrap/keys';
 import { withPmAttendees } from '@proton/shared/lib/calendar/attendees';
 import { getBase64SharedSessionKey } from '@proton/shared/lib/calendar/crypto/keys/helpers';
 import { getSelfAttendeeToken } from '@proton/shared/lib/calendar/mailIntegration/invite';

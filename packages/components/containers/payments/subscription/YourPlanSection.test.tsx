@@ -5,7 +5,7 @@ import { useOrganization } from '@proton/account/organization/hooks';
 import { useGetSubscription, useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useGetUserInvitations, useUserInvitations } from '@proton/account/userInvitations/hooks';
-import { useCalendars } from '@proton/calendar/useCalendars';
+import { useCalendars } from '@proton/calendar/calendars/hooks';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import useCache from '@proton/components/hooks/useCache';
 import useConfig from '@proton/components/hooks/useConfig';
