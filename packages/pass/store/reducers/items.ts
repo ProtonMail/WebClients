@@ -3,7 +3,8 @@ import type { Action, Reducer } from 'redux';
 import { getItemEntityID } from '@proton/pass/lib/items/item.utils';
 import { AddressType } from '@proton/pass/lib/monitor/types';
 import {
-    aliasSyncPending,
+    aliasPendingCreate,
+    aliasPendingCreated,
     aliasSyncStatusToggle,
     bootSuccess,
     emptyTrashProgress,
@@ -312,10 +313,8 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
             }
         }
 
-        if (aliasSyncPending.success.match(action)) {
-            const { items, shareId } = action.payload;
-            return partialMerge(state, { [shareId]: toMap(items, 'itemId') });
-        }
+        if (aliasPendingCreate.success.match(action)) return addItems(action.payload)(state);
+        if (aliasPendingCreated.match(action)) return addItems(action.payload)(state);
 
         return state;
     }
