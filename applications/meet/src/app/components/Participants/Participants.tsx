@@ -73,6 +73,7 @@ export const Participants = () => {
             onClose={() => toggleSideBarState(MeetingSideBars.Participants)}
             absoluteHeader={true}
             isScrolled={isScrolled}
+            paddingClassName="py-4"
             header={
                 <div className="flex items-center">
                     {isSearchOn ? (
@@ -109,7 +110,7 @@ export const Participants = () => {
             }
         >
             <div
-                className="flex-1 overflow-y-auto w-full flex flex-column flex-nowrap gap-4 h-full participants-list"
+                className="flex-1 overflow-y-auto w-full flex flex-column flex-nowrap gap-4 h-full participants-list px-4"
                 onScroll={(event) => {
                     setIsScrolled(event.currentTarget.scrollTop > 0);
                 }}
