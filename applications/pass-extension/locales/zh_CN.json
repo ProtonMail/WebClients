@@ -771,6 +771,15 @@
       ],
       "Your password manager is not here? Request it.": [
         "您的密码管理器不在这里？请求添加它。"
+      ],
+      "Allow access": [
+        "允许访问"
+      ],
+      "Do not show again": [
+        "不再显示"
+      ],
+      "Do not show again when I press": [
+        "当我按下时不再显示"
       ]
     },
     "Browser": {
@@ -890,6 +899,9 @@
       ],
       "Your personal info was leaked in a data breach of a third-party service.": [
         "您的个人信息在第三方服务数据泄露事件中被泄露。"
+      ],
+      "These vaults will not be accessible and their content won’t be available to Search or Autofill.": [
+        "这些保险库将无法访问，且其内容将不会对搜索或自动填充功能可用。"
       ]
     },
     "Email": {
@@ -1323,6 +1335,15 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "您的 PIN 码已被另一 ${ PASS_APP_NAME } 客户端删除"
+      ],
+      "In order to continue, ${ PASS_APP_NAME } requires these extension permissions: ${ permissionsJSX }": [
+        "为了继续，${ PASS_APP_NAME } 需要以下扩展权限：${ permissionsJSX }"
+      ],
+      "Permission denied for ${ domainsJSX } website access.": [
+        "权限被拒绝，无法访问 ${ domainsJSX } 网站"
+      ],
+      "Permission denied for website access.": [
+        "访问网站的权限被拒绝"
       ]
     },
     "Error message": {
@@ -2598,6 +2619,54 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "您的组织要求您确保您对 ${ PASS_APP_NAME }的访问"
+      ],
+      "access to ${ domains }.": [
+        "访问 ${ domains }"
+      ],
+      "After confirming, you will need to accept a permission prompt for ${ PASS_APP_NAME }.": [
+        "确认后，您需要为 ${ PASS_APP_NAME } 接受一个权限提示"
+      ],
+      "Automatically fill in your saved payment information.": [
+        "自动填充您保存的付款信息"
+      ],
+      "Copied to clipboard (expires in ${ timeoutDurationHumanReadable })": [
+        "已复制到剪贴板（将在 ${ timeoutDurationHumanReadable } 后过期）"
+      ],
+      "Discover ${ PASS_APP_NAME } video": [
+        "探索 ${ PASS_APP_NAME } 视频"
+      ],
+      "Navigate to your browser's extension settings and enable site permissions for ${ PASS_SHORT_APP_NAME }.": [
+        "导航至您浏览器的扩展设置，并为 ${ PASS_SHORT_APP_NAME } 启用网站权限。"
+      ],
+      "No credit cards found": [
+        "未找到信用卡"
+      ],
+      "Open the Safari settings, find ${ PASS_APP_NAME }, go to \"Permissions\" and enable site permissions.": [
+        "打开 Safari 设置，找到 ${ PASS_APP_NAME }，进入“权限”并启用网站权限"
+      ],
+      "Please keep ${ PASS_APP_NAME } open so the clipboard can be automatically cleared.": [
+        "请保持 ${ PASS_APP_NAME } 开启，以便自动清除剪贴板"
+      ],
+      "Please keep your browser open so the clipboard can be automatically cleared.": [
+        "请保持浏览器开启，以便自动清除剪贴板"
+      ],
+      "Please make sure the previously active window is where you want to autotype and your cursor was focused on the login field.": [
+        "请确保之前活跃的窗口是您想要执行自动输入的位置，并且您的光标已聚焦在登录字段上"
+      ],
+      "Right-click the extension icon and select \"Manage extension\". Navigate to \"Permissions & data\" and enable site permissions.": [
+        "右键单击扩展图标并选择“管理扩展”，导航至“权限与数据”并启用网站权限。"
+      ],
+      "Right-click the extension icon and select \"Manage extension\". Navigate to \"Site access\" and enable site permissions.": [
+        "右键单击扩展图标并选择“管理扩展”，导航至“网站访问”并启用网站权限。"
+      ],
+      "This feature is currently experimental on Linux. Please ensure your system is up-to-date.": [
+        "此功能目前在 Linux 上处于实验阶段，请确保您的系统是最新的。"
+      ],
+      "You may need to grant accessiblity permission to ${ PASS_APP_NAME }.": [
+        "您可能需要授予 ${ PASS_APP_NAME } 辅助功能权限"
+      ],
+      "You will no longer have access to sharing, 2FA and other advanced features in ${ PASS_APP_NAME }": [
+        "您将无法再访问 ${ PASS_APP_NAME } 中的共享、2FA 和其他高级功能"
       ]
     },
     "Label": {
@@ -3701,6 +3770,12 @@
       ],
       "ZIP or Postal code": [
         "邮政编码"
+      ],
+      "Credit-card autofill": [
+        "信用卡自动填充"
+      ],
+      "Larger window": [
+        "更大窗口"
       ]
     },
     "Link": {
@@ -4658,6 +4733,18 @@
       ],
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "您将永久删除 ${ aliasCount } 个别名。"
+      ],
+      "Clear clipboard": [
+        "清除剪贴板"
+      ],
+      "Hidden vaults": [
+        "隐藏保险库"
+      ],
+      "Perform autotype?": [
+        "执行自动输入？"
+      ],
+      "Visible vaults": [
+        "可视化保险库"
       ]
     },
     "Title_cloned_item": {
@@ -4988,6 +5075,27 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "您的订阅不允许您创建多个保险库。 所有项目都将导入到您的第一个保险库中。 要导入多个保险库，请升级您的订阅。"
+      ],
+      "Grant clipboard access to enable automatic clearing of copied passwords and data.": [
+        "授予剪贴板访问权限以启用自动清除已复制的密码和数据"
+      ]
+    },
+    "Confirm": {
+      "Do you want your clipboard automatically cleared after ${ timeoutDurationHumanReadable }?": [
+        "您希望剪贴板在 ${ timeoutDurationHumanReadable } 后自动清除吗？"
+      ]
+    },
+    "Keyboard key": {
+      "SHIFT": [
+        "SHIFT"
+      ],
+      "V": [
+        "V"
+      ]
+    },
+    "Permission": {
+      "Will require a permission from your browser": [
+        "将需要您的浏览器授予权限"
       ]
     }
   }
