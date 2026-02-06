@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { useApi, useEventManager, useNotifications } from '@proton/components';
-import { useFolders, useLabels } from '@proton/mail';
+import { useCategoriesData, useFolders, useLabels } from '@proton/mail';
 import { isCustomFolder, isSystemFolder } from '@proton/mail/helpers/location';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { undoActions } from '@proton/shared/lib/api/mailUndoActions';
@@ -18,6 +18,7 @@ import { ModalType } from 'proton-mail/containers/globalModals/inteface';
 import { getFilteredUndoTokens } from 'proton-mail/helpers/chunk';
 import { isElementConversation, isElementMessage } from 'proton-mail/helpers/elements';
 import { useMoveEngine } from 'proton-mail/helpers/location/MoveEngine/useMoveEngine';
+import { getApplyLocationTracker } from 'proton-mail/helpers/location/applyLocationPerformanceTracker';
 import {
     shouldOpenConfirmationModalForConverversation,
     shouldOpenConfirmationModalForMessages,
@@ -27,6 +28,7 @@ import { useCreateFilters } from 'proton-mail/hooks/actions/useCreateFilters';
 import { useGetConversation } from 'proton-mail/hooks/conversation/useConversation';
 import { useGetElementByID } from 'proton-mail/hooks/mailbox/useElements';
 import type { Conversation } from 'proton-mail/models/conversation';
+import { selectConversationMode } from 'proton-mail/store/elements/elementsSelectors';
 import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
 import {
     labelConversations,
@@ -48,11 +50,13 @@ import {
 
 export const useApplyLocation = () => {
     const [mailSettings] = useMailSettings();
+    const categoriesData = useCategoriesData();
     const flagState = useFlag('ApplyLabelsOptimisticRefactoring');
     const dispatch = useMailDispatch();
     const [labels = []] = useLabels();
     const [folders = []] = useFolders();
     const api = useApi();
+    const conversationMode = useMailSelector(selectConversationMode);
 
     const { createNotification, removeNotification } = useNotifications();
     const { call } = useEventManager();
@@ -67,6 +71,7 @@ export const useApplyLocation = () => {
 
     const getConversationById = useGetConversation();
     const getElementByID = useGetElementByID();
+    const applyLocationTracker = getApplyLocationTracker();
 
     const dispatchMessage = ({
         elements,
@@ -373,6 +378,17 @@ export const useApplyLocation = () => {
     const applyLocation = async (
         params: ApplyLocationMoveProps | ApplyLocationLabelProps | ApplyLocationStarProps
     ): Promise<PromiseSettledResult<string | undefined>[]> => {
+        // We want to measure how much time it takes for an element to disappear from the view with the optimistic
+        // and catch potential optimistic bugs
+        applyLocationTracker.mark({
+            elements: params.elements,
+            actionType: params.type,
+            sourceLabelID,
+            destinationLabelID: params.destinationLabelID,
+            conversationMode,
+            isCategoryViewEnabled: categoriesData.categoryViewAccess,
+        });
+
         switch (params.type) {
             case APPLY_LOCATION_TYPES.MOVE:
                 handleOnBackMoveAction({
