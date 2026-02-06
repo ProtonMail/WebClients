@@ -73,6 +73,11 @@ export const selectFeatureFlag =
     ({ user: { features } }: State): boolean =>
         features?.[feature] ?? false;
 
+export const selectFeatureFlagVariant =
+    (feature: PassFeature) =>
+    ({ user: { featureVariants } }: State) =>
+        featureVariants?.[feature] ?? null;
+
 /** Resolves the user's default vault share, ensuring it exists
  * and is writable to guard against BE discrepancies. */
 export const selectDefaultShare = createSelector([selectUserData, selectShareState], (userData, shares): Maybe<VaultShareItem> => {

@@ -1,4 +1,4 @@
-import { type FC, type ReactNode, useMemo } from 'react';
+import { type FC, type ReactNode, useEffect, useMemo } from 'react';
 import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
@@ -22,7 +22,9 @@ import { useOnline } from '@proton/pass/components/Core/ConnectivityProvider';
 import { useOnboarding } from '@proton/pass/components/Onboarding/OnboardingProvider';
 import { PASS_PLUS_LIFETIME_PRICE, PASS_PLUS_PRICE, PROTON_UNLIMITED_PRICE, UpsellRef } from '@proton/pass/constants';
 import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
+import { useFeatureFlagVariant } from '@proton/pass/hooks/useFeatureFlagVariant';
 import { useNavigateToUpgrade } from '@proton/pass/hooks/useNavigateToUpgrade';
+import { updateFeatureVariantCookie } from '@proton/pass/lib/cookies/features';
 import { getUserCurrency, supportedCurrencies } from '@proton/pass/lib/user/user.currency';
 import { selectUser } from '@proton/pass/store/selectors';
 import { PassFeature } from '@proton/pass/types/api/features';
@@ -106,6 +108,14 @@ export const Content: FC = () => {
     const plusLifetimePrice = getSimplePriceString(getUserCurrency(user?.Currency), PASS_PLUS_LIFETIME_PRICE);
     const displayLifetimeCard = passLifetimeFlag && supportedCurrencies.includes(user?.Currency ?? '');
     const plusTitle = PLAN_NAMES[PLANS.PASS];
+    const welcomeUnlimitedVariant = useFeatureFlagVariant(PassFeature.PassOnboardingUpgrade);
+
+    /* Set cookie for A/B test when upgrade screen is shown (web/desktop only) */
+    useEffect(() => {
+        if (!EXTENSION_BUILD && welcomeUnlimitedVariant?.name) {
+            updateFeatureVariantCookie(PassFeature.PassOnboardingUpgrade, welcomeUnlimitedVariant.name);
+        }
+    }, []);
 
     return (
         <section className="pass-onboarding-upgrade">
