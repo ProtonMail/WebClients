@@ -9,7 +9,6 @@ import { DebugOverlay, useDebugOverlay } from '../components/DebugOverlay/DebugO
 import { MeetingBody } from '../components/MeetingBody/MeetingBody';
 import { MeetContext } from '../contexts/MeetContext';
 import { MeetingRecorderContext } from '../contexts/MeetingRecorderContext';
-import { useMeetingTelemetry } from '../hooks/telemetry/useMeetingTelemetry';
 import { useCurrentScreenShare } from '../hooks/useCurrentScreenShare';
 import { useMeetingRecorder } from '../hooks/useMeetingRecorder/useMeetingRecorder';
 import { useParticipantEvents } from '../hooks/useParticipantEvents';
@@ -149,8 +148,6 @@ export const MeetContainer = ({
         await downloadRecording();
         await handleEndMeeting();
     };
-
-    useMeetingTelemetry();
 
     // Safari needs a warmup so we can pass strict Safari PiP requirements
     // Running after joining the meeting
