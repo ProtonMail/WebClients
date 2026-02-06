@@ -19,6 +19,7 @@ import {
 } from '@proton/components';
 import { IcUpgrade } from '@proton/icons/icons/IcUpgrade';
 import { IcVideoCamera } from '@proton/icons/icons/IcVideoCamera';
+import { useHasMeetProductAccess } from '@proton/meet/hooks/useHasMeetProductAccess';
 import { MEET_APP_NAME } from '@proton/shared/lib/constants';
 import { type EventModel, VIDEO_CONFERENCE_PROVIDER } from '@proton/shared/lib/interfaces/calendar';
 import { useFlag } from '@proton/unleash';
@@ -47,9 +48,11 @@ export const RowVideoConference = ({
 }: Props) => {
     const [user] = useUser();
     const [organization] = useOrganization();
+    const hasMeetProductAccess = useHasMeetProductAccess();
+
     const isZoomIntegrationEnabled = useFlag('ZoomIntegration');
 
-    const isMeetVideoConferenceEnabled = useFlag('NewScheduleOption');
+    const isMeetVideoConferenceEnabled = useFlag('NewScheduleOption') && hasMeetProductAccess;
 
     const isZoomSettingEnabled = organization?.Settings.VideoConferencingEnabled;
 
