@@ -2,8 +2,9 @@ import isDeepEqual from 'lodash/isEqual';
 import type { Reducer } from 'redux';
 
 import {
+    aliasPendingCreate,
+    aliasPendingCreated,
     aliasSyncEnable,
-    aliasSyncPending,
     aliasSyncStatus,
     bootSuccess,
     getUserAccessSuccess,
@@ -221,9 +222,9 @@ const reducer: Reducer<UserState> = (state = getInitialState(), action) => {
         return partialMerge(state, { userData: { pendingAliasToSync: PendingAliasCount, aliasSyncEnabled: Enabled } });
     }
 
-    if (aliasSyncPending.success.match(action)) {
+    if (or(aliasPendingCreated.match, aliasPendingCreate.success.match)(action)) {
         /** optimistically update the pending alias count on sync success */
-        const pendingAliasToSync = Math.max(0, state.userData.pendingAliasToSync - action.payload.items.length);
+        const pendingAliasToSync = Math.max(0, state.userData.pendingAliasToSync - action.payload.length);
         return partialMerge(state, { userData: { pendingAliasToSync } });
     }
 
