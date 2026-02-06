@@ -11,7 +11,7 @@ import { useMeetingTelemetry } from '../hooks/telemetry/useMeetingTelemetry';
 import { useCurrentScreenShare } from '../hooks/useCurrentScreenShare';
 import { useMeetingRecorder } from '../hooks/useMeetingRecorder/useMeetingRecorder';
 import { useParticipantEvents } from '../hooks/useParticipantEvents';
-import type { DecryptionErrorLog, KeyRotationLog, MLSGroupState, MeetChatMessage, ParticipantEntity } from '../types';
+import type { KeyRotationLog, MLSGroupState, MeetChatMessage, ParticipantEntity } from '../types';
 
 // Debug overlay context for mobile menu access
 interface DebugOverlayContextType {
@@ -55,7 +55,6 @@ interface MeetContainerProps {
     keyRotationLogs: KeyRotationLog[];
     isRecordingInProgress: boolean;
     getKeychainIndexInformation: () => (number | undefined)[];
-    decryptionErrorLogs: DecryptionErrorLog[];
     sortedParticipants: (RemoteParticipant | LocalParticipant)[];
     pagedParticipants: (RemoteParticipant | LocalParticipant)[];
     sortedParticipantsMap: Map<string, RemoteParticipant | LocalParticipant>;
@@ -114,7 +113,6 @@ export const MeetContainer = ({
     isGuestAdmin,
     isRecordingInProgress,
     getKeychainIndexInformation,
-    decryptionErrorLogs,
     isUsingTurnRelay,
 }: MeetContainerProps) => {
     const [resolution, setResolution] = useState<string | null>(null);
@@ -205,7 +203,6 @@ export const MeetContainer = ({
                             isGuestAdmin,
                             isRecordingInProgress,
                             getKeychainIndexInformation,
-                            decryptionErrorLogs,
                             sortedParticipantsMap,
                         }}
                     >
