@@ -19,6 +19,7 @@ import organization from './organization';
 import pwHistory from './pw-history';
 import settings from './settings';
 import { shares } from './shares';
+import { sharesDedupe } from './shares-dedupe';
 import user from './user';
 
 export * from './access';
@@ -48,6 +49,7 @@ export const reducerMap = {
     request,
     settings,
     shares,
+    sharesDedupe,
     user,
 };
 export const rootReducer = combineReducers(reducerMap);

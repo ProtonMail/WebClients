@@ -25,18 +25,14 @@ export const getStateMock = () =>
                         itemId: 'share1-item2',
                         state: ItemState.Active,
                         shareId: 'share1',
-                        data: itemBuilder('login').set('content', (content) =>
-                            content.set('urls', ['http://proton.me'])
-                        ).data,
+                        data: itemBuilder('login').set('content', (content) => content.set('urls', ['http://proton.me'])).data,
                     },
                     item3: {
                         /* item with private domain */
                         itemId: 'share1-item3',
                         state: ItemState.Active,
                         shareId: 'share1',
-                        data: itemBuilder('login').set('content', (content) =>
-                            content.set('urls', ['https://github.io'])
-                        ).data,
+                        data: itemBuilder('login').set('content', (content) => content.set('urls', ['https://github.io'])).data,
                     },
                     item4: {
                         /* item with private sub-domain */
@@ -45,9 +41,7 @@ export const getStateMock = () =>
                         shareId: 'share1',
                         data: itemBuilder('login')
                             .set('content', (content) =>
-                                content
-                                    .set('urls', ['https://private.subdomain.github.io'])
-                                    .set('itemUsername', 'test@github.io')
+                                content.set('urls', ['https://private.subdomain.github.io']).set('itemUsername', 'test@github.io')
                             )
                             .set('extraFields', [
                                 {
@@ -62,9 +56,8 @@ export const getStateMock = () =>
                         itemId: 'share1-item5',
                         state: ItemState.Active,
                         shareId: 'share1',
-                        data: itemBuilder('login').set('content', (content) =>
-                            content.set('urls', ['https://othersubdomain.github.io'])
-                        ).data,
+                        data: itemBuilder('login').set('content', (content) => content.set('urls', ['https://othersubdomain.github.io']))
+                            .data,
                     },
                 },
                 share2: {
@@ -73,18 +66,14 @@ export const getStateMock = () =>
                         itemId: 'share2-item1',
                         state: ItemState.Trashed,
                         shareId: 'share2',
-                        data: itemBuilder('login').set('content', (content) =>
-                            content.set('urls', ['https://proton.me'])
-                        ).data,
+                        data: itemBuilder('login').set('content', (content) => content.set('urls', ['https://proton.me'])).data,
                     },
                     item2: {
                         /* active item with unsecure protocol */
                         itemId: 'share2-item2',
                         state: ItemState.Active,
                         shareId: 'share2',
-                        data: itemBuilder('login').set('content', (content) =>
-                            content.set('urls', ['http://proton.me'])
-                        ).data,
+                        data: itemBuilder('login').set('content', (content) => content.set('urls', ['http://proton.me'])).data,
                     },
                 },
                 share3: {
@@ -93,9 +82,8 @@ export const getStateMock = () =>
                         itemId: 'share3-item1',
                         state: ItemState.Active,
                         shareId: 'share3',
-                        data: itemBuilder('login').set('content', (content) =>
-                            content.set('urls', ['ftp://proton.me', 'htp::://invalid'])
-                        ).data,
+                        data: itemBuilder('login').set('content', (content) => content.set('urls', ['ftp://proton.me', 'htp::://invalid']))
+                            .data,
                     },
                     item2: {
                         /* type note */
@@ -116,27 +104,22 @@ export const getStateMock = () =>
                         itemId: 'share3-item4',
                         state: ItemState.Active,
                         shareId: 'share3',
-                        data: itemBuilder('login').set('content', (content) =>
-                            content.set('urls', ['https://sub.domain.google.com'])
-                        ).data,
+                        data: itemBuilder('login').set('content', (content) => content.set('urls', ['https://sub.domain.google.com'])).data,
                     },
                     item5: {
                         /* active item with nested subdomain */
                         itemId: 'share3-item5',
                         state: ItemState.Active,
                         shareId: 'share3',
-                        data: itemBuilder('login').set('content', (content) =>
-                            content.set('urls', ['https://my.sub.domain.google.com'])
-                        ).data,
+                        data: itemBuilder('login').set('content', (content) => content.set('urls', ['https://my.sub.domain.google.com']))
+                            .data,
                     },
                     item6: {
                         /* active item with unsecure nested subdomain */
                         state: ItemState.Active,
                         itemId: 'share3-item6',
                         shareId: 'share3',
-                        data: itemBuilder('login').set('content', (content) =>
-                            content.set('urls', ['http://google.com'])
-                        ).data,
+                        data: itemBuilder('login').set('content', (content) => content.set('urls', ['http://google.com'])).data,
                     },
                 },
                 share4: {
@@ -231,9 +214,7 @@ export const getStateMock = () =>
                         shareId: 'share6',
                         lastUseTime: getEpoch(),
                         data: itemBuilder('login').set('content', (content) =>
-                            content
-                                .set('itemUsername', 'username@subdomain.com')
-                                .set('urls', ['https://domain-of-hidden-share.com'])
+                            content.set('itemUsername', 'username@subdomain.com').set('urls', ['https://domain-of-hidden-share.com'])
                         ).data,
                     },
                 },
@@ -247,5 +228,8 @@ export const getStateMock = () =>
             share4: { shareId: 'share4', flags: 0 },
             share5: { shareId: 'share5', flags: 0 },
             share6: { shareId: 'share6', flags: 1 },
+        },
+        sharesDedupe: {
+            dedupeAndVisible: ['share1', 'share2', 'share3', 'share4', 'share5'],
         },
     }) as unknown as State;

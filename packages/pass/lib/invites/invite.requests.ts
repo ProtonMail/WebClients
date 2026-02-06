@@ -7,12 +7,16 @@ import { getPublicKeysForEmail } from '@proton/pass/lib/auth/address';
 import { PassCrypto } from '@proton/pass/lib/crypto';
 import type { InviteBatchResult } from '@proton/pass/lib/invites/invite.utils';
 import { getItemKeys } from '@proton/pass/lib/items/item.requests';
+import { getOrganizationKey } from '@proton/pass/lib/organization/organization.requests';
 import { type InviteTargetKey, type KeyRotationKeyPair, ShareType } from '@proton/pass/types';
 import type { NewUserPendingInvite, PendingInvite } from '@proton/pass/types/data/invites';
 import type {
+    GroupInviteAcceptIntent,
     InviteAcceptIntent,
     InviteNewUserDTO,
     InviteRecommendationsIntent,
+    InviteRecommendationsOrganizationIntent,
+    InviteRecommendationsSuggestedIntent,
     InviteRejectIntent,
     InviteRemoveIntent,
     InviteResendIntent,
@@ -41,6 +45,7 @@ export const loadInvites = async (shareId: string): Promise<InviteData> => {
                 targetId: invite.TargetID,
                 targetType: invite.TargetType,
                 invitedEmail: invite.InvitedEmail,
+                invitedGroupId: null,
                 inviterEmail: invite.InviterEmail,
                 remindersSent: invite.RemindersSent,
                 createTime: invite.CreateTime,
@@ -53,6 +58,7 @@ export const loadInvites = async (shareId: string): Promise<InviteData> => {
                 targetId: invite.TargetID!,
                 targetType: invite.TargetType!,
                 invitedEmail: invite.InvitedEmail!,
+                invitedGroupId: null,
                 inviterEmail: invite.InviterEmail!,
                 createTime: invite.CreateTime!,
                 signature: invite.Signature!,
@@ -216,9 +222,33 @@ export const acceptInvite = async (
     ).Share!;
 };
 
+export const acceptGroupInvite = async (
+    { inviteToken, inviterEmail }: GroupInviteAcceptIntent,
+    groupId: string,
+    inviteKeys: KeyRotationKeyPair[],
+    fetchOrganizationKey: boolean
+) => {
+    return api({
+        url: `pass/v1/invite/group/${inviteToken}`,
+        method: 'post',
+        data: await PassCrypto.acceptGroupVaultInvite({
+            organizationKey: fetchOrganizationKey ? await getOrganizationKey() : null,
+            groupId,
+            inviteKeys,
+            inviterPublicKeys: await getPublicKeysForEmail(inviterEmail),
+        }),
+    });
+};
+
 export const rejectInvite = async ({ inviteToken }: InviteRejectIntent) =>
     api({
         url: `pass/v1/invite/${inviteToken}`,
+        method: 'delete',
+    });
+
+export const rejectGroupInvite = async ({ inviteToken }: InviteRejectIntent) =>
+    api({
+        url: `pass/v1/invite/group/${inviteToken}`,
         method: 'delete',
     });
 
@@ -234,6 +264,32 @@ export const getInviteRecommendations = async (
                 StartsWith: startsWith,
                 ...(since ? { PlanSince: since } : {}),
             },
+            method: 'get',
+            signal: signal,
+        })
+    ).Recommendation!;
+};
+
+export const getInviteRecommendationsSuggested = async (
+    { shareId, startsWith }: InviteRecommendationsSuggestedIntent,
+    signal?: AbortSignal
+) => {
+    return api({
+        url: `pass/v1/share/${shareId}/invite/recommended_emails/suggested`,
+        params: { StartsWith: startsWith },
+        method: 'get',
+        signal: signal,
+    });
+};
+
+export const getInviteRecommendationsOrganization = async (
+    { shareId, pageSize, since, startsWith }: InviteRecommendationsOrganizationIntent,
+    signal?: AbortSignal
+) => {
+    return (
+        await api({
+            url: `pass/v1/share/${shareId}/invite/recommended_emails/organization`,
+            params: { PlanPageSize: pageSize, StartsWith: startsWith, ...(since ? { PlanSince: since } : {}) },
             method: 'get',
             signal: signal,
         })

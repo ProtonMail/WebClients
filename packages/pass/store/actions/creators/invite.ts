@@ -7,6 +7,7 @@ import {
     inviteAddressesValidateRequest,
     inviteCreateRequest,
     inviteRecommendationsRequest,
+    inviteRecommendationsSuggestedRequest,
     inviteRemoveRequest,
     inviteResendRequest,
     newUserInvitePromoteRequest,
@@ -15,13 +16,18 @@ import {
 import type { InviteState } from '@proton/pass/store/reducers';
 import { withRequest, withRequestFailure, withRequestSuccess } from '@proton/pass/store/request/enhancers';
 import { requestActionsFactory } from '@proton/pass/store/request/flow';
-import type { InviteFormValues } from '@proton/pass/types';
+import type { InviteFormValues, InviteType } from '@proton/pass/types';
 import type {
+    GroupInviteAcceptSuccess,
     InviteAcceptIntent,
     InviteAcceptSuccess,
     InviteBatchCreateSuccess,
     InviteRecommendationsIntent,
+    InviteRecommendationsOrganizationIntent,
+    InviteRecommendationsOrganizationSuccess,
     InviteRecommendationsSuccess,
+    InviteRecommendationsSuggestedIntent,
+    InviteRecommendationsSuggestedSuccess,
     InviteRejectIntent,
     InviteRemoveIntent,
     InviteResendIntent,
@@ -33,7 +39,7 @@ import { prop } from '@proton/pass/utils/fp/lens';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 
-export const syncInvites = createAction<InviteState>('invites::sync');
+export const syncInvites = createAction<{ type: InviteType; invites: InviteState }>('invites::sync');
 
 export const inviteBatchCreateIntent = createAction('invite::batch::create::intent', (payload: InviteFormValues) =>
     withRequest({ status: 'start', id: inviteCreateRequest(uniqueId()) })({ payload })
@@ -61,20 +67,14 @@ export const inviteBatchCreateFailure = createAction(
     withRequestFailure((error: unknown, count: number) =>
         withNotification({
             type: 'error',
-            text: c('Error').ngettext(
-                msgid`Cannot send invitation at the moment`,
-                `Cannot send invitations at the moment`,
-                count
-            ),
+            text: c('Error').ngettext(msgid`Cannot send invitation at the moment`, `Cannot send invitations at the moment`, count),
             error,
         })({ payload: {}, error })
     )
 );
 
-export const newUserInvitePromoteIntent = createAction(
-    'new-user-invite::promote::intent',
-    (payload: NewUserInvitePromoteIntent) =>
-        withRequest({ status: 'start', id: newUserInvitePromoteRequest(payload.newUserInviteId) })({ payload })
+export const newUserInvitePromoteIntent = createAction('new-user-invite::promote::intent', (payload: NewUserInvitePromoteIntent) =>
+    withRequest({ status: 'start', id: newUserInvitePromoteRequest(payload.newUserInviteId) })({ payload })
 );
 
 export const newUserInvitePromoteSuccess = createAction(
@@ -111,12 +111,38 @@ export const inviteAccept = requestActionsFactory<InviteAcceptIntent, InviteAcce
                 error,
             })({ payload }),
     },
+    success: { prepare: (payload) => withCache({ payload }) },
+});
+
+export const groupInviteAccept = requestActionsFactory<InviteAcceptIntent, GroupInviteAcceptSuccess, void>('invite::group::accept')({
+    key: prop('inviteToken'),
+    failure: {
+        prepare: (error, payload) =>
+            withNotification({
+                type: 'error',
+                text: c('Error').t`Invitation could not be accepted`,
+                error,
+            })({ payload }),
+    },
+    success: { prepare: (payload) => withCache({ payload }) },
+});
+
+export const inviteReject = requestActionsFactory<InviteRejectIntent, { inviteToken: string }>('invite::reject')({
+    key: prop('inviteToken'),
+    failure: {
+        prepare: (error, payload) =>
+            withNotification({
+                type: 'error',
+                text: c('Error').t`Invitation could not be rejected`,
+                error,
+            })({ payload }),
+    },
     success: {
         prepare: (payload) => withCache({ payload }),
     },
 });
 
-export const inviteReject = requestActionsFactory<InviteRejectIntent, { inviteToken: string }>('invite::reject')({
+export const groupInviteReject = requestActionsFactory<InviteRejectIntent, { inviteToken: string }>('invite::group::reject')({
     key: prop('inviteToken'),
     failure: {
         prepare: (error, payload) =>
@@ -187,10 +213,8 @@ export const inviteRemoveFailure = createAction(
     )
 );
 
-export const newUserInviteRemoveIntent = createAction(
-    'new-user-invite::remove::intent',
-    (payload: NewUserInviteRemoveIntent) =>
-        withRequest({ status: 'start', id: newUserInviteRemoveRequest(payload.newUserInviteId) })({ payload })
+export const newUserInviteRemoveIntent = createAction('new-user-invite::remove::intent', (payload: NewUserInviteRemoveIntent) =>
+    withRequest({ status: 'start', id: newUserInviteRemoveRequest(payload.newUserInviteId) })({ payload })
 );
 
 export const newUserInviteRemoveSuccess = createAction(
@@ -230,6 +254,50 @@ export const inviteRecommendationsSuccess = createAction(
 
 export const inviteRecommendationsFailure = createAction(
     'invite::recommendations::failure',
+    withRequestFailure((error: unknown) =>
+        withNotification({
+            type: 'error',
+            text: c('Error').t`Could not load recommendations at the moment.`,
+            error,
+        })({ payload: {} })
+    )
+);
+
+export const inviteRecommendationsSuggestedIntent = createAction(
+    'invite::recommendations::suggested::intent',
+    (payload: InviteRecommendationsSuggestedIntent, requestId: string) =>
+        withRequest({ status: 'start', id: inviteRecommendationsSuggestedRequest(requestId) })({ payload })
+);
+
+export const inviteRecommendationsSuggestedSuccess = createAction(
+    'invite::recommendations::suggested::success',
+    withRequestSuccess((payload: InviteRecommendationsSuggestedSuccess) => ({ payload }))
+);
+
+export const inviteRecommendationsSuggestedFailure = createAction(
+    'invite::recommendations::suggested::failure',
+    withRequestFailure((error: unknown) =>
+        withNotification({
+            type: 'error',
+            text: c('Error').t`Could not load recommendations at the moment.`,
+            error,
+        })({ payload: {} })
+    )
+);
+
+export const inviteRecommendationsOrganizationIntent = createAction(
+    'invite::recommendations::organization::intent',
+    (payload: InviteRecommendationsOrganizationIntent, requestId: string) =>
+        withRequest({ status: 'start', id: inviteRecommendationsSuggestedRequest(requestId) })({ payload })
+);
+
+export const inviteRecommendationsOrganizationSuccess = createAction(
+    'invite::recommendations::organization::success',
+    withRequestSuccess((payload: InviteRecommendationsOrganizationSuccess) => ({ payload }))
+);
+
+export const inviteRecommendationsOrganizationFailure = createAction(
+    'invite::recommendations::organization::failure',
     withRequestFailure((error: unknown) =>
         withNotification({
             type: 'error',

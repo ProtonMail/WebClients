@@ -16,7 +16,7 @@ import { isShareVisible } from '@proton/pass/lib/shares/share.predicates';
 import { intoShareVisibilityMap } from '@proton/pass/lib/shares/share.utils';
 import { sharesVisibilityEdit } from '@proton/pass/store/actions';
 import type { ShareItem } from '@proton/pass/store/reducers';
-import { selectAllVaults, selectRequestInFlight } from '@proton/pass/store/selectors';
+import { selectDedupedVaults, selectRequestInFlight } from '@proton/pass/store/selectors';
 import type { ShareId, ShareType, ShareVisibilityMap, VaultsVisibilityDTO } from '@proton/pass/types';
 import { partition } from '@proton/pass/utils/array/partition';
 import clsx from '@proton/utils/clsx';
@@ -61,7 +61,7 @@ type Props = {
 };
 
 export const OrganizeVaultsModal: FC<Props> = ({ onClose, onConfirm }) => {
-    const vaults = useSelector(selectAllVaults);
+    const vaults = useSelector(selectDedupedVaults);
     const [visibilityMap, setVisibilityMap] = useState<ShareVisibilityMap>({});
     const loading = useSelector(selectRequestInFlight(sharesVisibilityEdit.requestID()));
 

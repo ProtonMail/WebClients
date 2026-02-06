@@ -48,6 +48,8 @@ describe('Login.view', () => {
         vaultId: uniqueId(),
         canAutofill: true,
         flags: 0,
+        permission: 0,
+        groupId: null,
     };
 
     test('Happy path', async () => {

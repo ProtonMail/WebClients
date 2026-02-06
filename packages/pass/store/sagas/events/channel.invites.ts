@@ -1,16 +1,14 @@
 import { all, fork, put, select } from 'redux-saga/effects';
 
-import { getPublicKeysForEmail } from '@proton/pass/lib/auth/address';
-import { PassCrypto } from '@proton/pass/lib/crypto';
 import { type EventManagerEvent, NOOP_EVENT } from '@proton/pass/lib/events/manager';
-import { decodeVaultContent } from '@proton/pass/lib/vaults/vault-proto.transformer';
+import { parseInviteVault } from '@proton/pass/lib/invites/invite.parser';
 import { syncInvites } from '@proton/pass/store/actions';
 import type { InviteState } from '@proton/pass/store/reducers';
 import { selectAllVaults } from '@proton/pass/store/selectors';
 import { selectInvites } from '@proton/pass/store/selectors/invites';
 import type { RootSagaOptions } from '@proton/pass/store/types';
 import type { Api, InvitesGetResponse, MaybeNull, Share } from '@proton/pass/types';
-import { ShareType } from '@proton/pass/types';
+import { InviteType, ShareType } from '@proton/pass/types';
 import type { Invite } from '@proton/pass/types/data/invites';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { truthy } from '@proton/pass/utils/fp/predicates';
@@ -34,7 +32,7 @@ function* onInvitesEvent(event: EventManagerEvent<InvitesGetResponse>) {
 
     if (noop) return;
 
-    logger.info(`[ServerEvents::Invites] ${event.Invites.length} new invite(s) received`);
+    logger.info(`[${NAMESPACE}] ${event.Invites.length} new invite(s) received`);
 
     const vaults = (yield select(selectAllVaults)) as Share<ShareType.Vault>[];
     const vaultIds = vaults.map(prop('vaultId'));
@@ -61,20 +59,12 @@ function* onInvitesEvent(event: EventManagerEvent<InvitesGetResponse>) {
             if (!inviteKey) return null;
 
             try {
-                const encodedVault =
-                    invite.TargetType === ShareType.Vault
-                        ? await PassCrypto.readVaultInvite({
-                              encryptedVaultContent: encryptedVault!.Content,
-                              invitedAddressId: invite.InvitedAddressID!,
-                              inviteKey: inviteKey,
-                              inviterPublicKeys: await getPublicKeysForEmail(invite.InviterEmail),
-                          })
-                        : null;
-
                 return {
+                    type: InviteType.User,
                     createTime: invite.CreateTime,
                     invitedAddressId: invite.InvitedAddressID!,
                     invitedEmail: invite.InvitedEmail,
+                    invitedGroupId: null,
                     inviterEmail: invite.InviterEmail,
                     fromNewUser: invite.FromNewUser,
                     keys: invite.Keys,
@@ -82,13 +72,7 @@ function* onInvitesEvent(event: EventManagerEvent<InvitesGetResponse>) {
                     targetId: invite.TargetID,
                     targetType: invite.TargetType,
                     token: invite.InviteToken,
-                    vault: encodedVault
-                        ? {
-                              content: decodeVaultContent(encodedVault),
-                              memberCount: encryptedVault!.MemberCount,
-                              itemCount: encryptedVault!.ItemCount,
-                          }
-                        : null,
+                    vault: await parseInviteVault(invite, inviteKey),
                 };
             } catch (err: unknown) {
                 logger.warn(`[${NAMESPACE}] Could not decrypt invite`, err);
@@ -97,7 +81,8 @@ function* onInvitesEvent(event: EventManagerEvent<InvitesGetResponse>) {
         })
     );
 
-    yield put(syncInvites(toMap(invites.filter(truthy), 'token')));
+    const invitesMap = toMap(invites.filter(truthy), 'token');
+    yield put(syncInvites({ type: InviteType.User, invites: invitesMap }));
 }
 
 export const createInvitesChannel = (api: Api) =>

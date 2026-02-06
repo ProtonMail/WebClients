@@ -1,7 +1,7 @@
 import type { Reducer } from 'redux';
 
 import { getUserAccessSuccess, userEvent } from '@proton/pass/store/actions';
-import { getOrganizationSettings } from '@proton/pass/store/actions/creators/organization';
+import { getOrganizationGroups, getOrganizationSettings } from '@proton/pass/store/actions/creators/organization';
 import {
     type MaybeNull,
     OrganizationExportMode,
@@ -12,7 +12,7 @@ import {
     PlanType,
 } from '@proton/pass/types';
 import type { OrganizationSettings } from '@proton/pass/types/data/organization';
-import type { Organization } from '@proton/shared/lib/interfaces';
+import type { Group, Organization } from '@proton/shared/lib/interfaces';
 
 export const INITIAL_ORGANIZATION_SETTINGS: OrganizationSettings = {
     ExportMode: OrganizationExportMode.UNRESTRICTED,
@@ -29,6 +29,7 @@ export type OrganizationState = {
     canUpdate: boolean;
     organization: Organization;
     settings: OrganizationSettings;
+    groups: Group[];
 };
 
 const organizationReducer: Reducer<MaybeNull<OrganizationState>> = (state = null, action) => {
@@ -43,8 +44,11 @@ const organizationReducer: Reducer<MaybeNull<OrganizationState>> = (state = null
         }
 
         if (getOrganizationSettings.success.match(action)) {
-            const { Settings, CanUpdate } = action.payload;
-            return { ...state, settings: Settings, canUpdate: CanUpdate };
+            return { ...state, settings: action.payload.Settings, canUpdate: action.payload.CanUpdate };
+        }
+
+        if (getOrganizationGroups.success.match(action)) {
+            return { ...state, groups: action.payload.Groups };
         }
     }
 

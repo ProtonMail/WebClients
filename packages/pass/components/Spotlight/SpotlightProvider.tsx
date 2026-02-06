@@ -12,7 +12,7 @@ import type { SpotlightMessageDefinition } from '@proton/pass/components/Spotlig
 import { createUseContext } from '@proton/pass/hooks/useContextFactory';
 import { useStatefulRef } from '@proton/pass/hooks/useStatefulRef';
 import { selectHasPendingShareAccess } from '@proton/pass/store/selectors';
-import { type MaybeNull, ShareType, SpotlightMessage } from '@proton/pass/types';
+import { InviteType, type MaybeNull, ShareType, SpotlightMessage } from '@proton/pass/types';
 
 import { InviteIcon } from './SpotlightIcon';
 
@@ -83,17 +83,27 @@ export const SpotlightProvider: FC<PropsWithChildren> = ({ children }) => {
     const inviteMessage = useMemo<MaybeNull<SpotlightMessageDefinition>>(() => {
         if (!latestInvite || latestInvite.fromNewUser) return null;
 
-        const [title, message] = (() => {
+        const [title, message] = ((): [string, string] => {
             const { inviterEmail } = latestInvite;
 
             switch (latestInvite.targetType) {
                 case ShareType.Vault:
-                    return [c('Title').t`Vault shared with you`, c('Info').t`You're invited to a vault.`] as const;
+                    return latestInvite.type === InviteType.User
+                        ? [c('Title').t`Vault shared with you`, c('Info').t`You're invited to a vault.`]
+                        : [
+                              c('Title').t`Vault shared with a group you administer`,
+                              c('Info').t`The group is invited to a vault.`,
+                          ];
                 case ShareType.Item:
-                    return [
-                        c('Title').t`Shared item invitation`,
-                        c('Info').t`${inviterEmail} wants to share an item with you.`,
-                    ] as const;
+                    return latestInvite.type === InviteType.User
+                        ? [
+                              c('Title').t`Shared item invitation`,
+                              c('Info').t`${inviterEmail} wants to share an item with you.`,
+                          ]
+                        : [
+                              c('Title').t`Shared item invitation`,
+                              c('Info').t`${inviterEmail} wants to share an item with a group you administer.`,
+                          ];
             }
         })();
 

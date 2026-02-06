@@ -12,6 +12,7 @@ export enum PassFeature {
     PassEnableDesktopAutoUpdate = 'PassEnableDesktopAutoUpdate',
     PassExperimentalWebsiteRules = 'PassExperimentalWebsiteRules',
     PassExtensionCustomTLDs = 'PassExtensionCustomTLDs',
+    PassGroupInvitesV1 = 'PassGroupInvitesV1',
     PassHideShowVault = 'PassHideShowVault',
     PassIFrameKillswitch = 'PassIFrameKillswitch',
     PassItemCloning = 'PassItemCloning',

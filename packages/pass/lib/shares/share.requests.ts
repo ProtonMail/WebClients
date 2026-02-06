@@ -62,6 +62,7 @@ const mapShareMembers = (response: ActiveShareGetResponse[]) =>
         shareRoleId: member.ShareRoleID as ShareRole,
         expireTime: member.ExpireTime,
         createTime: member.CreateTime,
+        isGroupShare: member.IsGroupShare,
     }));
 
 export const loadShareItemMembers = async (shareId: string, itemId: string): Promise<ShareMember[]> =>

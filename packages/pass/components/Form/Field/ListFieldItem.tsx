@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
-import type { KeyboardEventHandler } from 'react';
+import type { KeyboardEventHandler, ReactNode } from 'react';
 import { memo, useRef, useState } from 'react';
 
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
@@ -18,7 +18,8 @@ export type ListFieldItemProps<T> = {
     onDelete: (idx: number) => void;
     onMoveLeft: (idx: number) => void;
     onMoveRight: (idx: number) => void;
-    renderValue: (value: T) => string;
+    renderValue: (value: T) => ReactNode;
+    renderEditable: (value: T) => boolean;
 };
 
 const getCaretPosition = (el: HTMLElement): number => {
@@ -46,11 +47,20 @@ const ListFieldItemRender = <T,>({
     onMoveLeft,
     onMoveRight,
     renderValue,
+    renderEditable,
 }: ListFieldItemProps<T>) => {
     const ref = useRef<HTMLSpanElement>(null);
     const [editing, setEditing] = useState(false);
 
+    const editable = renderEditable(entry.value);
+
+    const handleFocus = () => {
+        if (!editable) return;
+        setEditing(true);
+    };
+
     const handleBlur = () => {
+        if (!editable) return;
         setEditing(false);
         const update = ref.current?.innerText?.trim() ?? '';
         if (update !== entry.value) onChange(update, index, entry);
@@ -106,10 +116,10 @@ const ListFieldItemRender = <T,>({
                 <span
                     id={entry.id}
                     onBlur={handleBlur}
-                    onFocus={() => setEditing(true)}
+                    onFocus={handleFocus}
                     onClick={(e) => e.stopPropagation()}
                     onMouseDown={(e) => e.stopPropagation()}
-                    contentEditable
+                    contentEditable={editable}
                     onKeyDown={handleKeyDown}
                     ref={ref}
                     spellCheck={false}

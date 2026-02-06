@@ -19,11 +19,12 @@ describe('openShare crypto process', () => {
     const vaultId = `vaultId-${Math.random()}`;
     const shareId = `shareId-${Math.random()}`;
     const addressId = `addressId-${Math.random()}`;
+    const groupId = `groupId-${Math.random()}`;
     const permission = Math.random();
 
     test('should decrypt VaultShare accordingly', async () => {
         const userKey = await createRandomKey();
-        const vault = await createVault({ content, addressId, userKey });
+        const vault = await createVault({ content, addressId, encryptionKey: userKey, signingKey: userKey });
 
         /* resolve vault key */
         const vaultKey = await openShareKey({
@@ -57,6 +58,7 @@ describe('openShare crypto process', () => {
             VaultID: vaultId,
             CanAutoFill: true,
             Flags: 0,
+            GroupID: groupId,
         };
 
         const share = await openShare({ type: ShareType.Vault, encryptedShare, vaultKey });
@@ -71,5 +73,6 @@ describe('openShare crypto process', () => {
         expect(share.targetId).toEqual(vaultId);
         expect(share.targetType).toEqual(ShareType.Vault);
         expect(share.vaultId).toEqual(vaultId);
+        expect(share.groupId).toEqual(groupId);
     });
 });

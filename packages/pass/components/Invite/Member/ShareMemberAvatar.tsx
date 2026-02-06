@@ -1,4 +1,4 @@
-import type { FC } from 'react';
+import type { FC, ReactNode } from 'react';
 
 import { Avatar } from '@proton/atoms/Avatar/Avatar';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
@@ -6,7 +6,7 @@ import clsx from '@proton/utils/clsx';
 
 import './ShareMemberAvatar.scss';
 
-type Props = { value: string; loading?: boolean };
+type Props = { value: ReactNode; loading?: boolean };
 
 export const ShareMemberAvatar: FC<Props> = ({ value, loading }) => (
     <div className="mr-4 relative">

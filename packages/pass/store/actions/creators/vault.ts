@@ -2,6 +2,7 @@ import { createAction } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
 import { withCache } from '@proton/pass/store/actions/enhancers/cache';
+import { withShareDedupe } from '@proton/pass/store/actions/enhancers/dedupe';
 import { withNotification } from '@proton/pass/store/actions/enhancers/notification';
 import {
     shareLockRequest,
@@ -39,6 +40,7 @@ export const vaultCreationSuccess = createAction(
     withRequestSuccess((payload: { share: Share<ShareType.Vault> }) =>
         pipe(
             withCache,
+            withShareDedupe,
             withNotification({
                 type: 'success',
                 text: c('Info').t`Vault "${payload.share.content.name}" successfully created`,
@@ -67,6 +69,7 @@ export const vaultEditSuccess = createAction(
     withRequestSuccess((payload: { share: Share<ShareType.Vault> }) =>
         pipe(
             withCache,
+            withShareDedupe,
             withNotification({
                 type: 'info',
                 text: c('Info').t`Vault "${payload.share.content.name}" successfully updated`,
@@ -105,6 +108,7 @@ export const vaultDeleteSuccess = createAction(
     withRequestSuccess((payload: { shareId: string; content: ShareContent<ShareType.Vault> }) =>
         pipe(
             withCache,
+            withShareDedupe,
             withNotification({
                 type: 'info',
                 text: c('Info').t`Vault "${payload.content.name}" successfully deleted`,
@@ -165,6 +169,7 @@ export const vaultTransferOwnershipSuccess = createAction(
     withRequestSuccess((shareId: string, userShareId: string) =>
         pipe(
             withCache,
+            withShareDedupe,
             withNotification({
                 type: 'info',
                 text: c('Info').t`Ownership successfully transfered. You are no long the owner of this vault.`,

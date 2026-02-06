@@ -8,10 +8,12 @@ import type {
     OrganizationUpdatePasswordPolicyInput,
     OrganizationUrlPauseEntryDto,
 } from '@proton/pass/types';
+import type { GroupMembersGetResponse, GroupsGetResponse } from '@proton/pass/types/api/core';
 import type { OrganizationSettings } from '@proton/pass/types/data/organization';
 import { logger } from '@proton/pass/utils/logger';
-import { getOrganization as coreGetOrganization } from '@proton/shared/lib/api/organization';
-import type { Organization } from '@proton/shared/lib/interfaces';
+import { getGroupMembers as coreGetGroupMembers, getGroups } from '@proton/shared/lib/api/groups';
+import { getOrganization as coreGetOrganization, getOrganizationKeys } from '@proton/shared/lib/api/organization';
+import type { Organization, OrganizationKey } from '@proton/shared/lib/interfaces';
 
 import type { OrganizationReportDTO, PauseListEntryAddDTO, PauseListEntryUpdateDTO } from './types';
 
@@ -38,16 +40,25 @@ export const setOrganizationSettings = async (
         })
     ).Organization!;
 
+export const getOrganizationGroups = async (): Promise<GroupsGetResponse> => api(getGroups());
+
+export const getGroupMembers = async (groupId: string): Promise<GroupMembersGetResponse> =>
+    api(coreGetGroupMembers(groupId));
+
+export const getOrganizationKey = async (): Promise<OrganizationKey> => api(getOrganizationKeys());
+
 export const getOrganization = async (): Promise<MaybeNull<OrganizationState>> => {
     const organization = await getUserOrganization();
     if (!organization) return null;
 
     const { Settings, CanUpdate }: OrganizationGetResponse = await getOrganizationSettings();
+    const { Groups }: GroupsGetResponse = await getOrganizationGroups();
 
     return {
         settings: Settings!,
         canUpdate: CanUpdate,
         organization,
+        groups: Groups ?? [],
     };
 };
 
