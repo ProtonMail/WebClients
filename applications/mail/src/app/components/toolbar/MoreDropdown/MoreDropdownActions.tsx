@@ -7,9 +7,18 @@ import { IcFire } from '@proton/icons/icons/IcFire';
 import { IcFireSlash } from '@proton/icons/icons/IcFireSlash';
 import { IcInbox } from '@proton/icons/icons/IcInbox';
 import { IcTrash } from '@proton/icons/icons/IcTrash';
+import { TelemetryMailSelectAllEvents } from '@proton/shared/lib/api/telemetry';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
-import { SOURCE_ACTION } from 'proton-mail/components/list/list-telemetry/useListTelemetry';
+import useListTelemetry, {
+    ACTION_TYPE,
+    SELECTED_RANGE,
+    SOURCE_ACTION,
+} from 'proton-mail/components/list/list-telemetry/useListTelemetry';
+import { MoveAllType, useMoveAllToFolder } from 'proton-mail/hooks/actions/move/useMoveAllToFolder';
+import { useEmptyLabel } from 'proton-mail/hooks/actions/useEmptyLabel';
+import { selectLabelID } from 'proton-mail/store/elements/elementsSelectors';
+import { useMailSelector } from 'proton-mail/store/hooks';
 
 interface ActionProps {
     onMove: (labelID: string, sourceAction: SOURCE_ACTION) => void;
@@ -100,5 +109,104 @@ export const DeleteAction = ({ onDelete }: DeleteActionProps) => {
             <IcCrossCircle className="mr-2" />
             {c('Action').t`Delete`}
         </DropdownMenuButton>
+    );
+};
+
+export const MoveAllToTrashAction = () => {
+    const labelID = useMailSelector(selectLabelID);
+
+    const { moveAllToFolder } = useMoveAllToFolder();
+
+    const handleMoveAllToTrash = () => {
+        void moveAllToFolder({
+            type: MoveAllType.moveAll,
+            sourceLabelID: labelID,
+            destinationLabelID: MAILBOX_LABEL_IDS.TRASH,
+            telemetryEvent: TelemetryMailSelectAllEvents.button_move_to_trash,
+            sourceAction: SOURCE_ACTION.MORE_DROPDOWN,
+        });
+    };
+
+    return (
+        <DropdownMenuButton
+            className="text-left inline-flex flex-nowrap"
+            onClick={handleMoveAllToTrash}
+            data-testid="toolbar:moveAllToTrash"
+        >
+            <IcTrash className="mr-2 shrink-0 mt-0.5" />
+            <span className="flex-1">
+                {
+                    // translator: This action will move all messages from the location to trash
+                    // Beware when translating this one because we might also have a button below,
+                    // which is deleting all messages. This is different
+                    c('Action').t`Move all to trash`
+                }
+            </span>
+        </DropdownMenuButton>
+    );
+};
+
+export const MoveAllToArchiveAction = () => {
+    const labelID = useMailSelector(selectLabelID);
+
+    const { moveAllToFolder, moveAllModal } = useMoveAllToFolder();
+
+    const handleMoveAllToArchive = () => {
+        void moveAllToFolder({
+            type: MoveAllType.moveAll,
+            sourceLabelID: labelID,
+            destinationLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
+            telemetryEvent: TelemetryMailSelectAllEvents.button_move_to_archive,
+            sourceAction: SOURCE_ACTION.MORE_DROPDOWN,
+        });
+    };
+
+    return (
+        <>
+            <DropdownMenuButton
+                className="text-left inline-flex flex-nowrap"
+                onClick={handleMoveAllToArchive}
+                data-testid="toolbar:moveAllToArchive"
+            >
+                <IcArchiveBox className="mr-2 shrink-0 mt-0.5" />
+                <span className="flex-1">{c('Action').t`Move all to archive`}</span>
+            </DropdownMenuButton>
+            {moveAllModal}
+        </>
+    );
+};
+
+export const DeleteAllAction = () => {
+    const labelID = useMailSelector(selectLabelID);
+
+    const { sendSimpleActionReport } = useListTelemetry();
+    const { emptyLabel, modal: deleteAllModal } = useEmptyLabel();
+
+    const handleEmptyLabel = () => {
+        sendSimpleActionReport({
+            actionType: ACTION_TYPE.DELETE_PERMANENTLY,
+            actionLocation: SOURCE_ACTION.TOOLBAR,
+            numberMessage: SELECTED_RANGE.ALL,
+        });
+        void emptyLabel(labelID);
+    };
+
+    return (
+        <>
+            <DropdownMenuButton
+                className="text-left inline-flex flex-nowrap color-danger"
+                onClick={handleEmptyLabel}
+                data-testid="toolbar:more-empty"
+            >
+                <IcCrossCircle className="mr-2 shrink-0 mt-0.5" />
+                <span className="flex-1">{
+                    // translator: This action will delete permanently all messages from the location
+                    // Beware when translating this one because we might also have a button on top,
+                    // which is moving messages to trash. This is different
+                    c('Action').t`Delete all`
+                }</span>
+            </DropdownMenuButton>
+            {deleteAllModal}
+        </>
     );
 };
