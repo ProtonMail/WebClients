@@ -1,8 +1,12 @@
-import { RoomEvent, Track } from 'livekit-client';
+import { ConnectionState, RoomEvent, Track } from 'livekit-client';
 import type { Mock } from 'vitest';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
 import { AudioTrackSubscriptionManager, sortAudioPublications } from './AudioTrackSubscriptionManager';
+
+vi.mock('@proton/shared/lib/helpers/promise', () => ({
+    wait: vi.fn().mockResolvedValue(undefined),
+}));
 
 type EventCallback = (...args: unknown[]) => void;
 
@@ -12,12 +16,18 @@ interface MockPublication {
     isMuted: boolean;
     isSubscribed: boolean;
     isEnabled: boolean;
-    track?: object;
+    track?: {
+        mediaStreamTrack?: {
+            id?: string;
+            readyState?: string;
+        };
+    };
     setSubscribed: Mock;
     setEnabled: Mock;
 }
 
 interface MockParticipant {
+    sid: string;
     identity: string;
     lastSpokeAt?: Date;
     trackPublications: Map<string, MockPublication>;
@@ -28,27 +38,44 @@ interface MockRoom {
     localParticipant: { identity: string };
     remoteParticipants: Map<string, MockParticipant>;
     state?: string;
+    engine?: {
+        pcManager?: {
+            subscriber?: {
+                pc?: {
+                    getStats: Mock;
+                };
+            };
+        };
+    };
     on: Mock;
     off: Mock;
     emit: (event: RoomEvent, ...args: unknown[]) => void;
     getEventHandler: (event: RoomEvent) => EventCallback | undefined;
 }
 
-const createMockPublication = (overrides: Partial<MockPublication> = {}): MockPublication => ({
-    trackSid: `track-${Math.random().toString(36).slice(2, 9)}`,
-    source: Track.Source.Microphone,
-    isMuted: false,
-    isSubscribed: false,
-    isEnabled: false,
-    track: {},
-    setSubscribed: vi.fn(function (this: MockPublication, value: boolean) {
-        this.isSubscribed = value;
-    }),
-    setEnabled: vi.fn(function (this: MockPublication, value: boolean) {
-        this.isEnabled = value;
-    }),
-    ...overrides,
-});
+const createMockPublication = (overrides: Partial<MockPublication> = {}): MockPublication => {
+    const trackSid = overrides.trackSid || `track-${Math.random().toString(36).slice(2, 9)}`;
+    return {
+        trackSid,
+        source: Track.Source.Microphone,
+        isMuted: false,
+        isSubscribed: false,
+        isEnabled: false,
+        track: {
+            mediaStreamTrack: {
+                id: `media-${trackSid}`,
+                readyState: 'live',
+            },
+        },
+        setSubscribed: vi.fn(function (this: MockPublication, value: boolean) {
+            this.isSubscribed = value;
+        }),
+        setEnabled: vi.fn(function (this: MockPublication, value: boolean) {
+            this.isEnabled = value;
+        }),
+        ...overrides,
+    };
+};
 
 const createMockParticipant = (identity: string, publications: MockPublication[] = []): MockParticipant => {
     const trackPublications = new Map<string, MockPublication>();
@@ -62,6 +89,7 @@ const createMockParticipant = (identity: string, publications: MockPublication[]
     });
 
     return {
+        sid: `sid-${identity}`,
         identity,
         lastSpokeAt: undefined,
         trackPublications,
@@ -75,7 +103,16 @@ const createMockRoom = (): MockRoom => {
     const room: MockRoom = {
         localParticipant: { identity: 'local-participant' },
         remoteParticipants: new Map(),
-        state: 'connected',
+        state: ConnectionState.Connected,
+        engine: {
+            pcManager: {
+                subscriber: {
+                    pc: {
+                        getStats: vi.fn().mockResolvedValue(new Map()),
+                    },
+                },
+            },
+        },
         on: vi.fn((event: RoomEvent, callback: EventCallback) => {
             eventHandlers.set(event, callback);
             return room;
@@ -249,11 +286,13 @@ describe('sortAudioPublications', () => {
 describe('AudioTrackSubscriptionManager', () => {
     let mockRoom: MockRoom;
     let cache: AudioTrackSubscriptionManager;
+    let mockReportError: Mock;
 
     beforeEach(() => {
         vi.clearAllMocks();
         mockRoom = createMockRoom();
-        cache = new AudioTrackSubscriptionManager(80, mockRoom as any);
+        mockReportError = vi.fn();
+        cache = new AudioTrackSubscriptionManager(80, mockRoom as any, mockReportError);
         cache.listenToRoomEvents();
     });
 
@@ -700,7 +739,9 @@ describe('AudioTrackSubscriptionManager', () => {
             expect(mockRoom.on).toHaveBeenCalledWith(RoomEvent.TrackUnpublished, expect.any(Function));
             expect(mockRoom.on).toHaveBeenCalledWith(RoomEvent.Connected, expect.any(Function));
             expect(mockRoom.on).toHaveBeenCalledWith(RoomEvent.Disconnected, expect.any(Function));
+            expect(mockRoom.on).toHaveBeenCalledWith(RoomEvent.ParticipantDisconnected, expect.any(Function));
             expect(mockRoom.on).toHaveBeenCalledWith(RoomEvent.ActiveSpeakersChanged, expect.any(Function));
+            expect(mockRoom.on).toHaveBeenCalledWith(RoomEvent.ConnectionStateChanged, expect.any(Function));
 
             cache.cleanupEventListeners();
 
@@ -709,6 +750,24 @@ describe('AudioTrackSubscriptionManager', () => {
             expect(mockRoom.off).toHaveBeenCalledWith(RoomEvent.TrackUnpublished, expect.any(Function));
             expect(mockRoom.off).toHaveBeenCalledWith(RoomEvent.Connected, expect.any(Function));
             expect(mockRoom.off).toHaveBeenCalledWith(RoomEvent.Disconnected, expect.any(Function));
+            expect(mockRoom.off).toHaveBeenCalledWith(RoomEvent.ParticipantDisconnected, expect.any(Function));
+            expect(mockRoom.off).toHaveBeenCalledWith(RoomEvent.ActiveSpeakersChanged, expect.any(Function));
+            expect(mockRoom.off).toHaveBeenCalledWith(RoomEvent.ConnectionStateChanged, expect.any(Function));
+        });
+
+        it('should clear all intervals and recovery state on cleanup', () => {
+            vi.useFakeTimers();
+
+            cache.setupReconcileLoop();
+            cache.setupHealthCheckLoop();
+
+            const clearIntervalSpy = vi.spyOn(global, 'clearInterval');
+
+            cache.cleanup();
+
+            expect(clearIntervalSpy).toHaveBeenCalled();
+
+            vi.useRealTimers();
         });
     });
 
@@ -848,6 +907,336 @@ describe('AudioTrackSubscriptionManager', () => {
                 // Should not have been unsubscribed
                 expect(pub?.setSubscribed).not.toHaveBeenCalledWith(false);
             }
+        });
+    });
+
+    describe('participant disconnected handling', () => {
+        it('should cleanup recovery state when participant disconnects', () => {
+            const micPub = createMockPublication({ trackSid: 'mic-1' });
+            const participant = createMockParticipant('participant-1', [micPub]);
+
+            mockRoom.remoteParticipants.set('participant-1', participant);
+            mockRoom.emit(RoomEvent.Connected);
+
+            // Manually add some recovery state for this participant
+            const trackKey = `${participant.sid}-${micPub.trackSid}`;
+            (cache as any).recoveryAttempts.set(trackKey, 1);
+            (cache as any).activeRecoveries.add(trackKey);
+
+            const cleanupRecoverySpy = vi.spyOn(cache as any, 'cleanupRecovery');
+
+            mockRoom.emit(RoomEvent.ParticipantDisconnected, participant);
+
+            // Verify that cleanup was called for this participant's tracks
+            expect(cleanupRecoverySpy).toHaveBeenCalledWith(trackKey);
+        });
+
+        it('should handle participant disconnect with no recovery state gracefully', () => {
+            const participant = createMockParticipant('participant-2', []);
+
+            // Should not throw when there's no recovery state
+            expect(() => {
+                mockRoom.emit(RoomEvent.ParticipantDisconnected, participant);
+            }).not.toThrow();
+        });
+    });
+
+    describe('room disconnected handling', () => {
+        it('should clear all recovery state and timeouts on disconnect', () => {
+            const micPub1 = createMockPublication({ trackSid: 'mic-1' });
+            const participant1 = createMockParticipant('participant-1', [micPub1]);
+
+            mockRoom.remoteParticipants.set('participant-1', participant1);
+            cache.addToCache(micPub1 as any, participant1 as any);
+
+            // Add recovery state with a timeout
+            const trackKey = `${participant1.sid}-${micPub1.trackSid}`;
+            const mockTimeout = setTimeout(() => {}, 5000) as any;
+            (cache as any).recoveryTimeouts.set(trackKey, mockTimeout);
+            (cache as any).recoveryAttempts.set(trackKey, 1);
+            (cache as any).activeRecoveries.add(trackKey);
+
+            // Verify state is set up
+            expect((cache as any).recoveryTimeouts.size).toBe(1);
+            expect((cache as any).subscribedMicrophoneTrackPublications.size).toBeGreaterThan(0);
+
+            mockRoom.emit(RoomEvent.Disconnected);
+
+            // Verify all internal state is cleared
+            expect((cache as any).subscribedMicrophoneTrackPublications.size).toBe(0);
+            expect((cache as any).recoveryAttempts.size).toBe(0);
+            expect((cache as any).recoveryTimeouts.size).toBe(0);
+            expect((cache as any).activeRecoveries.size).toBe(0);
+            expect((cache as any).lastPacketCounts.size).toBe(0);
+            expect((cache as any).firstSeenWithoutStats.size).toBe(0);
+
+            // Clean up the timeout
+            clearTimeout(mockTimeout);
+        });
+    });
+
+    describe('health check and recovery', () => {
+        beforeEach(() => {
+            vi.useFakeTimers();
+        });
+
+        afterEach(() => {
+            vi.useRealTimers();
+        });
+
+        it('should setup health check interval', () => {
+            const setIntervalSpy = vi.spyOn(global, 'setInterval');
+
+            cache.setupHealthCheckLoop();
+
+            expect(setIntervalSpy).toHaveBeenCalledWith(expect.any(Function), 3000);
+        });
+
+        it('should not check broken transceivers when room is not connected', async () => {
+            mockRoom.state = ConnectionState.Disconnected;
+
+            const getStatsSpy = mockRoom.engine?.pcManager?.subscriber?.pc?.getStats;
+
+            await (cache as any).checkBrokenTransceivers();
+
+            expect(getStatsSpy).not.toHaveBeenCalled();
+        });
+
+        it('should detect missing inbound-rtp stats after grace period and attempt recovery', async () => {
+            const micPub = createMockPublication({ trackSid: 'mic-1', isSubscribed: true });
+            const participant = createMockParticipant('participant-1', [micPub]);
+
+            mockRoom.remoteParticipants.set('participant-1', participant);
+            cache.addToCache(micPub as any, participant as any);
+
+            // Mock getStats to return empty stats (no inbound-rtp)
+            const mockStats = new Map();
+            mockRoom.engine!.pcManager!.subscriber!.pc!.getStats.mockResolvedValue(mockStats);
+
+            // First check - should start tracking missing stats
+            await (cache as any).checkBrokenTransceivers();
+            expect(micPub.setSubscribed).not.toHaveBeenCalledWith(false);
+
+            // Advance time past grace period (5 seconds)
+            vi.advanceTimersByTime(6000);
+
+            // Second check - should trigger recovery
+            await (cache as any).checkBrokenTransceivers();
+
+            // Wait for recovery attempt
+            await vi.runAllTimersAsync();
+
+            // Should have attempted to unsubscribe and resubscribe
+            expect(micPub.setSubscribed).toHaveBeenCalledWith(false);
+            expect(micPub.setSubscribed).toHaveBeenCalledWith(true);
+        });
+
+        it('should detect stalled packets and attempt recovery', async () => {
+            const micPub = createMockPublication({ trackSid: 'mic-1', isSubscribed: true });
+            const participant = createMockParticipant('participant-1', [micPub]);
+
+            mockRoom.remoteParticipants.set('participant-1', participant);
+            cache.addToCache(micPub as any, participant as any);
+
+            const trackId = micPub.track?.mediaStreamTrack?.id;
+
+            // Mock getStats to return inbound-rtp with stalled packet count
+            const createMockStats = (packetsReceived: number) => {
+                const mockStats = new Map();
+                mockStats.set('inbound-rtp-1', {
+                    type: 'inbound-rtp',
+                    kind: 'audio',
+                    trackIdentifier: trackId,
+                    packetsReceived,
+                });
+                return mockStats;
+            };
+
+            // First check with 100 packets
+            mockRoom.engine!.pcManager!.subscriber!.pc!.getStats.mockResolvedValue(createMockStats(100));
+            await (cache as any).checkBrokenTransceivers();
+
+            // Second check with same 100 packets (stalled)
+            mockRoom.engine!.pcManager!.subscriber!.pc!.getStats.mockResolvedValue(createMockStats(100));
+            await (cache as any).checkBrokenTransceivers();
+
+            await vi.runAllTimersAsync();
+
+            // Should have attempted recovery
+            expect(micPub.setSubscribed).toHaveBeenCalledWith(false);
+            expect(micPub.setSubscribed).toHaveBeenCalledWith(true);
+        });
+
+        it('should not attempt recovery if already recovering', async () => {
+            const micPub = createMockPublication({ trackSid: 'mic-1', isSubscribed: true });
+            const participant = createMockParticipant('participant-1', [micPub]);
+
+            mockRoom.remoteParticipants.set('participant-1', participant);
+            cache.addToCache(micPub as any, participant as any);
+
+            const trackId = micPub.track?.mediaStreamTrack?.id;
+
+            // Mock getStats to return stalled packets
+            const mockStats = new Map();
+            mockStats.set('inbound-rtp-1', {
+                type: 'inbound-rtp',
+                kind: 'audio',
+                trackIdentifier: trackId,
+                packetsReceived: 100,
+            });
+            mockRoom.engine!.pcManager!.subscriber!.pc!.getStats.mockResolvedValue(mockStats);
+
+            // First check to establish baseline
+            await (cache as any).checkBrokenTransceivers();
+
+            // Second check to trigger recovery
+            await (cache as any).checkBrokenTransceivers();
+            const firstCallCount = micPub.setSubscribed.mock.calls.length;
+
+            // Third check while recovery is in progress (should not trigger another recovery)
+            await (cache as any).checkBrokenTransceivers();
+            const secondCallCount = micPub.setSubscribed.mock.calls.length;
+
+            // Call count should not have increased (no new recovery attempt)
+            expect(secondCallCount).toBe(firstCallCount);
+        });
+
+        it('should stop recovery after max attempts', async () => {
+            const micPub = createMockPublication({ trackSid: 'mic-1', isSubscribed: true });
+            // Set readyState to 'ended' so recovery keeps failing
+            micPub.track = {
+                mediaStreamTrack: {
+                    id: `media-mic-1`,
+                    readyState: 'ended',
+                },
+            };
+
+            const participant = createMockParticipant('participant-1', [micPub]);
+
+            mockRoom.remoteParticipants.set('participant-1', participant);
+            cache.addToCache(micPub as any, participant as any);
+
+            const trackId = micPub.track?.mediaStreamTrack?.id;
+
+            // Mock getStats to return stalled packets
+            const mockStats = new Map();
+            mockStats.set('inbound-rtp-1', {
+                type: 'inbound-rtp',
+                kind: 'audio',
+                trackIdentifier: trackId,
+                packetsReceived: 100,
+            });
+            mockRoom.engine!.pcManager!.subscriber!.pc!.getStats.mockResolvedValue(mockStats);
+
+            // Establish baseline
+            await (cache as any).checkBrokenTransceivers();
+
+            // Attempt recovery 3 times (max attempts)
+            for (let i = 0; i < 3; i++) {
+                await (cache as any).checkBrokenTransceivers();
+                await vi.runAllTimersAsync();
+                // Advance past recovery cooldown (5 seconds)
+                vi.advanceTimersByTime(6000);
+            }
+
+            const callCountAfterMaxAttempts = micPub.setSubscribed.mock.calls.length;
+
+            // Try one more time - should not attempt recovery
+            await (cache as any).checkBrokenTransceivers();
+            await vi.runAllTimersAsync();
+
+            const finalCallCount = micPub.setSubscribed.mock.calls.length;
+
+            // Should not have made additional calls after max attempts
+            expect(finalCallCount).toBe(callCountAfterMaxAttempts);
+        });
+
+        it('should skip tracks in recovery during reconciliation', () => {
+            const micPub = createMockPublication({ trackSid: 'mic-1', isSubscribed: false });
+            const participant = createMockParticipant('participant-1', [micPub]);
+
+            mockRoom.remoteParticipants.set('participant-1', participant);
+            cache.addToCache(micPub as any, participant as any);
+
+            // Manually set the track as recovering
+            const trackKey = `${participant.sid}-${micPub.trackSid}`;
+            (cache as any).activeRecoveries.add(trackKey);
+
+            // Call reconcile
+            cache.reconcileAudioTracks();
+
+            // Should not have tried to resubscribe because it's in recovery
+            expect(micPub.setSubscribed).not.toHaveBeenCalled();
+        });
+
+        it('should skip recovery attempts when room is reconnecting', async () => {
+            const micPub = createMockPublication({ trackSid: 'mic-1', isSubscribed: true });
+            const participant = createMockParticipant('participant-1', [micPub]);
+
+            mockRoom.remoteParticipants.set('participant-1', participant);
+            cache.addToCache(micPub as any, participant as any);
+
+            // Simulate room reconnecting
+            mockRoom.emit(RoomEvent.ConnectionStateChanged, ConnectionState.Reconnecting);
+
+            const trackId = micPub.track?.mediaStreamTrack?.id;
+
+            // Mock getStats to return stalled packets
+            const mockStats = new Map();
+            mockStats.set('inbound-rtp-1', {
+                type: 'inbound-rtp',
+                kind: 'audio',
+                trackIdentifier: trackId,
+                packetsReceived: 100,
+            });
+            mockRoom.engine!.pcManager!.subscriber!.pc!.getStats.mockResolvedValue(mockStats);
+
+            // First check to establish baseline
+            await (cache as any).checkBrokenTransceivers();
+
+            // Second check to trigger recovery (but should be skipped due to reconnecting)
+            await (cache as any).checkBrokenTransceivers();
+
+            await vi.runAllTimersAsync();
+
+            // Should not have attempted recovery because room is reconnecting
+            expect(micPub.setSubscribed).not.toHaveBeenCalledWith(false);
+        });
+
+        it('should resume recovery attempts when room reconnects', async () => {
+            const micPub = createMockPublication({ trackSid: 'mic-1', isSubscribed: true });
+            const participant = createMockParticipant('participant-1', [micPub]);
+
+            mockRoom.remoteParticipants.set('participant-1', participant);
+            cache.addToCache(micPub as any, participant as any);
+
+            // Simulate room reconnecting then reconnected
+            mockRoom.emit(RoomEvent.ConnectionStateChanged, ConnectionState.Reconnecting);
+            mockRoom.emit(RoomEvent.ConnectionStateChanged, ConnectionState.Connected);
+
+            const trackId = micPub.track?.mediaStreamTrack?.id;
+
+            // Mock getStats to return stalled packets
+            const mockStats = new Map();
+            mockStats.set('inbound-rtp-1', {
+                type: 'inbound-rtp',
+                kind: 'audio',
+                trackIdentifier: trackId,
+                packetsReceived: 100,
+            });
+            mockRoom.engine!.pcManager!.subscriber!.pc!.getStats.mockResolvedValue(mockStats);
+
+            // First check to establish baseline
+            await (cache as any).checkBrokenTransceivers();
+
+            // Second check to trigger recovery (should work now that room is connected)
+            await (cache as any).checkBrokenTransceivers();
+
+            await vi.runAllTimersAsync();
+
+            // Should have attempted recovery because room is connected again
+            expect(micPub.setSubscribed).toHaveBeenCalledWith(false);
+            expect(micPub.setSubscribed).toHaveBeenCalledWith(true);
         });
     });
 });
