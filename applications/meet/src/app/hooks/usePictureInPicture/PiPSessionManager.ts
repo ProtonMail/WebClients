@@ -8,17 +8,67 @@ export class PiPSessionManager {
     private pipVideo?: HTMLVideoElement;
 
     /**
-     * Initialize PiP session with canvas and video elements
+     * Lightweight warmup to pass strict Safari PiP requirements
      */
-    init(tracks: TrackInfo[]): { canvas: HTMLCanvasElement; pipVideo: HTMLVideoElement } {
-        // Create canvas with fixed 16:9 aspect ratio
-        const canvas = this.createCanvas(tracks);
-        const pipVideo = this.createVideoElement();
+    async pictureInPictureWarmup(): Promise<void> {
+        if (this.pipVideo) {
+            return;
+        }
+
+        const canvas = document.createElement('canvas');
+        canvas.width = PIP_PREVIEW_ITEM_WIDTH;
+        canvas.height = PIP_PREVIEW_ITEM_HEIGHT;
+        document.body.appendChild(canvas);
+
+        canvas.style.position = 'absolute';
+        canvas.style.left = '-9999px';
+        canvas.style.top = '-9999px';
+        canvas.style.pointerEvents = 'none';
 
         this.canvas = canvas;
+
+        const pipVideo = this.createVideoElement();
+        const stream = canvas.captureStream(30);
+        pipVideo.srcObject = stream;
+
         this.pipVideo = pipVideo;
 
-        return { canvas, pipVideo };
+        const ctx = canvas.getContext('2d');
+        await new Promise<void>((resolve) => {
+            let frames = 0;
+            const draw = () => {
+                if (ctx) {
+                    ctx.fillStyle = '#000';
+                    ctx.fillRect(0, 0, canvas.width, canvas.height);
+                }
+                frames++;
+                if (frames < 5) {
+                    requestAnimationFrame(draw);
+                } else {
+                    pipVideo
+                        .play()
+                        .finally(() => resolve())
+                        .catch(() => resolve());
+                }
+            };
+            draw();
+        });
+    }
+
+    init(tracks: TrackInfo[]): { canvas: HTMLCanvasElement; pipVideo: HTMLVideoElement } {
+        const desiredHeight = PIP_PREVIEW_ITEM_HEIGHT * Math.max(1, Math.min(tracks.length, 3));
+
+        if (!this.canvas) {
+            this.canvas = this.createCanvas(tracks);
+        } else {
+            this.canvas.height = desiredHeight;
+        }
+
+        if (!this.pipVideo) {
+            this.pipVideo = this.createVideoElement();
+        }
+
+        return { canvas: this.canvas, pipVideo: this.pipVideo };
     }
 
     /**
@@ -77,6 +127,10 @@ export class PiPSessionManager {
     async setupVideoStream(): Promise<void> {
         if (!this.pipVideo || !this.canvas) {
             throw new Error('Video or canvas not initialized');
+        }
+
+        if (this.pipVideo.srcObject && !this.pipVideo.paused) {
+            return;
         }
 
         const stream = await this.getCanvasStream();

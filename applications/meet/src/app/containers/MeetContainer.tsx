@@ -1,6 +1,8 @@
-import { createContext, useContext, useState } from 'react';
+import { createContext, useContext, useEffect, useState } from 'react';
 
 import type { LocalParticipant, RemoteParticipant } from 'livekit-client';
+
+import { isSafari } from '@proton/shared/lib/helpers/browser';
 
 import { AutoCloseMeetingModal } from '../components/AutoCloseMeetingModal/AutoCloseMeetingModal';
 import { DebugOverlay, useDebugOverlay } from '../components/DebugOverlay/DebugOverlay';
@@ -49,6 +51,8 @@ interface MeetContainerProps {
     stopPiP: () => void;
     chatMessages: MeetChatMessage[];
     setChatMessages: React.Dispatch<React.SetStateAction<MeetChatMessage[]>>;
+    pictureInPictureWarmup: () => void;
+    pipCleanup: () => void;
     preparePictureInPicture: () => void;
     instantMeeting: boolean;
     assignHost: (participantUuid: string) => Promise<void>;
@@ -106,6 +110,8 @@ export const MeetContainer = ({
     stopPiP,
     chatMessages,
     setChatMessages,
+    pictureInPictureWarmup,
+    pipCleanup,
     preparePictureInPicture,
     instantMeeting,
     assignHost,
@@ -145,6 +151,18 @@ export const MeetContainer = ({
     };
 
     useMeetingTelemetry();
+
+    // Safari needs a warmup so we can pass strict Safari PiP requirements
+    // Running after joining the meeting
+    useEffect(() => {
+        if (isSafari()) {
+            void pictureInPictureWarmup();
+
+            return () => {
+                void pipCleanup();
+            };
+        }
+    }, []);
 
     return (
         <DebugOverlayContext.Provider value={{ isEnabled: debugOverlay.isEnabled, open: debugOverlay.open }}>

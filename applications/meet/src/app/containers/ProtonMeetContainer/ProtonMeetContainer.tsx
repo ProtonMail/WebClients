@@ -196,7 +196,16 @@ export const ProtonMeetContainer = ({
         pageSize,
     });
 
-    const { stopPiP, startPiP, isPipActive, canvas, tracksLength, preparePictureInPicture } = usePictureInPicture({
+    const {
+        stopPiP,
+        startPiP,
+        isPipActive,
+        canvas,
+        tracksLength,
+        preparePictureInPicture,
+        pictureInPictureWarmup,
+        pipCleanup,
+    } = usePictureInPicture({
         isDisconnected: connectionLost,
         participantNameMap,
         chatMessages,
@@ -1078,6 +1087,8 @@ export const ProtonMeetContainer = ({
                         stopPiP={stopPiP}
                         chatMessages={chatMessages}
                         setChatMessages={setChatMessages}
+                        pictureInPictureWarmup={pictureInPictureWarmup}
+                        pipCleanup={pipCleanup}
                         preparePictureInPicture={preparePictureInPicture}
                         locked={meetingDetails.locked}
                         maxDuration={meetingDetails.maxDuration}
