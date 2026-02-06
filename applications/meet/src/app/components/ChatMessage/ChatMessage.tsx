@@ -74,7 +74,7 @@ export const ChatMessage = ({ onMessageSend }: ChatMessageProps) => {
                     onChange={(e) => setMessage(e.target.value)}
                     placeholder={c('Placeholder').t`Type an encrypted message...`}
                     unstyled={true}
-                    className={clsx('border-none resize-none px-0 my-auto', 'hide-scrollbar')}
+                    className={clsx('border-none resize-none px-0 my-auto', 'hide-scrollbar wrap-placeholder')}
                     style={{
                         minHeight: '2.25rem',
                         maxHeight: '6rem',
