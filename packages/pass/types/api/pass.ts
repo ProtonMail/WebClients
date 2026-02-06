@@ -716,6 +716,15 @@ export type CustomDomainSettingsOutput = {
     RandomPrefixGeneration: boolean;
 };
 export type CreatePendingFileOutput = { FileID: Id };
+export type FolderGetResponseDto = {
+    VaultID: Id;
+    FolderID: Id;
+    ParentFolderID?: Id | null;
+    KeyRotation: number;
+    FolderKey: BinaryString;
+    ContentFormatVersion: number;
+    Content: BinaryString;
+};
 export type GroupInvitesListResponse = {
     /* UserInvites */
     Invites: GroupInviteListItemResponse[];
@@ -1399,7 +1408,7 @@ export type GroupInviteListItemResponse = {
     /* Base64 encrypted invite data */
     Data?: string | null;
     /* If true, this user is owner of the group invited */
-    IsGroupAdmin: boolean;
+    IsGroupOwner: boolean;
     /* If true, this user is administrator of the organization that owns the group */
     IsOrgAdmin: boolean;
     /* Creation time for the invite */
@@ -1737,7 +1746,7 @@ export type OrgMemberVaultItemReport = {
     AccessibleVaultCount?: number;
 };
 export type UserMonitorReport = {
-    UserID: string;
+    UserID: number;
     OrganizationID: number;
     ReusedPasswords: number;
     Inactive2FA: number;

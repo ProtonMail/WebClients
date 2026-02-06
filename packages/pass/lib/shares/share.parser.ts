@@ -4,11 +4,13 @@ import { decodeVaultContent } from '@proton/pass/lib/vaults/vault-proto.transfor
 import type { Maybe, Share, ShareContent, ShareGetResponse, ShareType } from '@proton/pass/types';
 import { logId, logger } from '@proton/pass/utils/logger';
 
+type Options = { eventId?: string };
+
 /** Fetch latest event ID if not provided - pass `eventId` in
  * options to avoid  unnecessary API calls when already known. */
 export const parseShareResponse = async <T extends ShareType = ShareType>(
     encryptedShare: ShareGetResponse,
-    options?: { eventId?: string }
+    options?: Options
 ): Promise<Maybe<Share<T>>> => {
     const shareId = encryptedShare.ShareID;
 
@@ -36,6 +38,8 @@ export const parseShareResponse = async <T extends ShareType = ShareType>(
                 targetType: share.targetType,
                 vaultId: share.vaultId,
                 flags: share.flags,
+                groupId: share.groupId,
+                permission: share.permission,
             };
         }
     } catch (err) {

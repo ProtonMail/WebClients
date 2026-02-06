@@ -7,9 +7,9 @@ import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import Progress from '@proton/components/components/progress/Progress';
 import { useInviteActions } from '@proton/pass/components/Invite/InviteProvider';
 import { useRequest } from '@proton/pass/hooks/useRequest';
-import { inviteAccept, inviteReject } from '@proton/pass/store/actions';
+import { groupInviteAccept, groupInviteReject, inviteAccept, inviteReject } from '@proton/pass/store/actions';
 import type { ItemInvite, VaultInvite } from '@proton/pass/types';
-import { ShareType } from '@proton/pass/types';
+import { InviteType, ShareType } from '@proton/pass/types';
 import type { InviteAcceptSuccess } from '@proton/pass/types/data/invites.dto';
 
 type Props = {
@@ -20,7 +20,7 @@ type Props = {
 
 export const InviteStepResponse: FC<Props> = ({ acceptText, disabled, invite }) => {
     const { token, inviterEmail, invitedAddressId, fromNewUser } = invite;
-    const { onInviteResponse } = useInviteActions();
+    const { setInvite, onInviteResponse } = useInviteActions();
 
     const onAccept = useCallback(({ share, items }: InviteAcceptSuccess) => {
         const { shareId } = share;
@@ -34,15 +34,26 @@ export const InviteStepResponse: FC<Props> = ({ acceptText, disabled, invite }) 
         }
     }, []);
 
+    const onGroupAccept = useCallback(() => setInvite(null), []);
+
     const onReject = useCallback(() => onInviteResponse({ ok: false }), []);
 
     const acceptInvite = useRequest(inviteAccept, { onSuccess: onAccept });
+    const acceptGroupInvite = useRequest(groupInviteAccept, { onSuccess: onGroupAccept });
     const rejectInvite = useRequest(inviteReject, { onSuccess: onReject });
+    const rejectGroupInvite = useRequest(groupInviteReject, { onSuccess: onReject });
 
-    const handleRejectInvite = () => rejectInvite.dispatch({ inviteToken: token });
-    const handleAcceptInvite = () => acceptInvite.dispatch({ inviteToken: token, inviterEmail, invitedAddressId });
+    const handleRejectInvite = () =>
+        (invite.type === InviteType.User ? rejectInvite : rejectGroupInvite).dispatch({ inviteToken: token });
+    const handleAcceptInvite = () =>
+        (invite.type === InviteType.User ? acceptInvite : acceptGroupInvite).dispatch({
+            inviteToken: token,
+            inviterEmail,
+            invitedAddressId,
+        });
 
-    const loading = acceptInvite.loading || rejectInvite.loading;
+    const loading =
+        acceptInvite.loading || acceptGroupInvite.loading || rejectInvite.loading || rejectGroupInvite.loading;
 
     /** item invites do not have a `vault` property */
     const itemCount = invite.vault?.itemCount ?? 1;

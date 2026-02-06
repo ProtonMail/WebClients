@@ -59,7 +59,7 @@ export const createWorkerContext = (config: ProtonConfig) => {
     const store = createStoreService();
 
     auth.registerLockAdapter(LockMode.SESSION, sessionLockAdapterFactory(auth));
-    exposePassCrypto(createPassCrypto(core));
+    exposePassCrypto(createPassCrypto(core, store));
 
     const onStateUpdate = (state: AppState) => {
         WorkerMessageBroker.ports.broadcast(

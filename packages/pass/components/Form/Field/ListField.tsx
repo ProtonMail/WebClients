@@ -1,5 +1,5 @@
 import type { KeyboardEvent, ReactNode, Ref } from 'react';
-import { useCallback, useEffect, useMemo, useRef, useTransition } from 'react';
+import { isValidElement, useCallback, useEffect, useMemo, useRef, useTransition } from 'react';
 
 import type { ArrayHelpers, FieldProps, FormikErrors } from 'formik';
 import { FieldArray } from 'formik';
@@ -33,7 +33,8 @@ type ListFieldProps<Values, FieldKey extends ListFieldKeys<Values>, T = ListFiel
         icon?: IconName;
         label?: string;
         placeholder?: string;
-        fieldValue: (entry: T) => string;
+        fieldValue: (entry: T) => ReactNode;
+        fieldEditable: (entry: T) => boolean;
         onAutocomplete?: (value: string) => void;
         onBlur?: (value: string) => void;
         onPush: (value: string) => ListFieldValue<T>;
@@ -55,6 +56,7 @@ export const ListField = <
     label,
     placeholder,
     fieldValue,
+    fieldEditable,
     onAutocomplete,
     onBlur,
     onPaste,
@@ -65,7 +67,12 @@ export const ListField = <
 }: ListFieldProps<Values, FieldKey>) => {
     const values = (form.values[fieldKey] ?? []) as ListFieldValue<T>[];
     const errors = (form.errors[fieldKey] ?? []) as FormikErrors<ListFieldValue<T>>[];
-    const hasItem = Boolean(values) || values.some(({ value }) => !isEmptyString(fieldValue(value)));
+    const hasItem =
+        Boolean(values) ||
+        values.some(({ value }) => {
+            const valueNode = fieldValue(value);
+            return typeof valueNode === 'string' ? !isEmptyString(valueNode) : isValidElement(valueNode);
+        });
 
     /** Keep a ref for formik's array helper in order to properly memoise
      * `ListFieldItem` components when dealing with very large arrays */
@@ -220,6 +227,7 @@ export const ListField = <
                                 onMoveRight={fieldHandles.onMoveRight}
                                 onDelete={fieldHandles.onDelete}
                                 renderValue={fieldValue}
+                                renderEditable={fieldEditable}
                             />
                         ));
                     }}

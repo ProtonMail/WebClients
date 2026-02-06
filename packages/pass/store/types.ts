@@ -4,6 +4,7 @@ import type { PassConfig } from '@proton/pass/hooks/usePassConfig';
 import type { ReauthActionPayload } from '@proton/pass/lib/auth/reauth';
 import type { AuthService } from '@proton/pass/lib/auth/service';
 import type { AuthStore } from '@proton/pass/lib/auth/store';
+import type { PassCoreProxy } from '@proton/pass/lib/core/core.types';
 import type { FilePortWriter } from '@proton/pass/lib/file-storage/types';
 import type { SagaEvent } from '@proton/pass/store/events';
 import type {
@@ -38,6 +39,7 @@ export interface RootSagaOptions {
     extensionId?: Maybe<string>;
 
     getConfig: () => PassConfig;
+    getCore: () => PassCoreProxy;
     getAppState: () => AppState;
     getAuthService: () => AuthService;
     getAuthStore: () => AuthStore;

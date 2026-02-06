@@ -1,64 +1,93 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import debounce from 'lodash/debounce';
 
 import { useActionRequest } from '@proton/pass/hooks/useRequest';
 import type { AccessKeys } from '@proton/pass/lib/access/types';
-import type { inviteRecommendationsFailure, inviteRecommendationsSuccess } from '@proton/pass/store/actions';
-import { getShareAccessOptions, inviteRecommendationsIntent } from '@proton/pass/store/actions';
-import type { InviteRecommendationsIntent, InviteRecommendationsSuccess } from '@proton/pass/types/data/invites.dto';
+import { isBusinessPlan } from '@proton/pass/lib/organization/helpers';
+import type {
+    inviteRecommendationsOrganizationFailure,
+    inviteRecommendationsOrganizationSuccess,
+    inviteRecommendationsSuggestedFailure,
+    inviteRecommendationsSuggestedSuccess,
+} from '@proton/pass/store/actions';
+import {
+    getShareAccessOptions,
+    inviteRecommendationsOrganizationIntent,
+    inviteRecommendationsSuggestedIntent,
+} from '@proton/pass/store/actions';
+import { selectPassPlan } from '@proton/pass/store/selectors';
+import type { MaybeNull } from '@proton/pass/types';
+import type {
+    InviteRecommendationsOrganizationIntent,
+    InviteRecommendationsOrganizationSuccess,
+    InviteRecommendationsSuggestedSuccess,
+} from '@proton/pass/types/data/invites.dto';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 
-type InviteRecommendationsState = InviteRecommendationsSuccess & { loading: boolean };
+type InviteRecommendationsState = {
+    suggestions: InviteRecommendationsSuggestedSuccess & { loading: boolean };
+    organization: { data: MaybeNull<InviteRecommendationsOrganizationSuccess>; loading: boolean };
+};
+
+const setLoading = (state: InviteRecommendationsState, view: 'suggestions' | 'organization', loading: boolean) => {
+    return state[view].loading === loading ? state : { ...state, [view]: { ...state[view], loading } };
+};
 
 export const useInviteRecommendations = ({ shareId, itemId }: AccessKeys, startsWith: string, pageSize: number) => {
     const dispatch = useDispatch();
-    const pendingCall = useRef(false);
+    const pendingOrganizationCall = useRef(false);
+    const plan = useSelector(selectPassPlan);
+    const isB2b = isBusinessPlan(plan);
 
     const [state, setState] = useState<InviteRecommendationsState>({
-        emails: [],
-        loading: true,
-        more: false,
-        next: null,
-        organization: null,
-        since: null,
-        startsWith,
+        suggestions: { loading: true, startsWith, suggested: [] },
+        organization: { loading: true, data: null },
     });
 
-    const recommendations = useActionRequest<
-        typeof inviteRecommendationsIntent,
-        typeof inviteRecommendationsSuccess,
-        typeof inviteRecommendationsFailure
-    >(inviteRecommendationsIntent, {
+    const suggestions = useActionRequest<
+        typeof inviteRecommendationsSuggestedIntent,
+        typeof inviteRecommendationsSuggestedSuccess,
+        typeof inviteRecommendationsSuggestedFailure
+    >(inviteRecommendationsSuggestedIntent, {
         onSuccess: (data) =>
             setState((prev) => ({
-                ...data,
-                startsWith: data.startsWith,
-                /** on success there might still be an incoming request
-                 * being debounced - to avoid a flickering glitch, set the
-                 * loading state depending on the `pendingCall` value */
-                loading: pendingCall.current ?? false,
-                organization: data.organization
-                    ? {
-                          ...data.organization,
-                          /** If the response has a `since` property, it is paginated:
-                           * Append to the current organization emails list */
-                          emails: [
-                              ...(data.since ? (prev.organization?.emails ?? []) : []),
-                              ...data.organization.emails,
-                          ],
-                      }
-                    : null,
+                ...prev,
+                suggestions: { loading: false, ...data },
             })),
-        onFailure: () => setState((prev) => ({ ...prev, loading: false })),
+        onFailure: () => setState((prev) => ({ ...prev, suggestions: { ...prev.suggestions, loading: false } })),
+    });
+
+    const organization = useActionRequest<
+        typeof inviteRecommendationsOrganizationIntent,
+        typeof inviteRecommendationsOrganizationSuccess,
+        typeof inviteRecommendationsOrganizationFailure
+    >(inviteRecommendationsOrganizationIntent, {
+        onSuccess: (data) =>
+            setState((prev) => ({
+                ...prev,
+                organization: {
+                    /** on success there might still be an incoming request
+                     * being debounced - to avoid a flickering glitch, set the
+                     * loading state depending on the `pendingCall` value */
+                    loading: pendingOrganizationCall.current ?? false,
+                    data: {
+                        ...data,
+                        /** If the response has a `since` property, it is paginated:
+                         * Append to the current organization emails list */
+                        emails: [...(data.since ? (prev.organization?.data?.emails ?? []) : []), ...data.emails],
+                    },
+                },
+            })),
+        onFailure: () => setState((prev) => ({ ...prev, organization: { ...prev.organization, loading: false } })),
     });
 
     const next = useCallback(
         debounce(
-            (dto: InviteRecommendationsIntent, requestId: string) => {
-                recommendations.revalidate(dto, requestId);
-                pendingCall.current = false;
+            (dto: InviteRecommendationsOrganizationIntent, requestId: string) => {
+                organization.revalidate(dto, requestId);
+                pendingOrganizationCall.current = false;
             },
             500,
             { trailing: true, leading: false }
@@ -74,11 +103,18 @@ export const useInviteRecommendations = ({ shareId, itemId }: AccessKeys, starts
     }, [shareId, itemId]);
 
     useEffect(() => {
-        pendingCall.current = true;
+        pendingOrganizationCall.current = true;
         next.cancel();
 
-        setState((prev) => (prev.loading ? prev : { ...prev, loading: true }));
-        next({ pageSize, shareId, since: null, startsWith }, uniqueId());
+        setState((prev) => {
+            let next = { ...prev };
+            next = setLoading(next, 'suggestions', true);
+            next = setLoading(next, 'organization', isB2b);
+            return next;
+        });
+
+        suggestions.dispatch({ shareId, startsWith }, uniqueId());
+        if (isB2b) next({ pageSize, shareId, since: null, startsWith }, uniqueId());
     }, [startsWith, shareId, pageSize]);
 
     /** Force initial dispatch on mount */
@@ -88,14 +124,14 @@ export const useInviteRecommendations = ({ shareId, itemId }: AccessKeys, starts
         () => ({
             state,
             loadMore: () => {
-                if (!state.loading && state.more && state.next) {
-                    setState((prev) => ({ ...prev, loading: true }));
-                    recommendations.revalidate(
+                if (!state.organization.loading && state.organization.data?.more && state.organization.data?.next) {
+                    setState((prev) => setLoading(prev, 'organization', true));
+                    organization.revalidate(
                         {
                             pageSize,
                             shareId,
-                            since: state.next,
-                            startsWith: state.startsWith,
+                            since: state.organization.data.next,
+                            startsWith: state.organization.data.startsWith,
                         },
                         uniqueId()
                     );

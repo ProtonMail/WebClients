@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import Info from '@proton/components/components/link/Info';
@@ -8,6 +8,7 @@ import { ConfirmationModal } from '@proton/pass/components/Confirmation/Confirma
 import { type InviteLabels, useInviteLabels } from '@proton/pass/components/Invite/useInviteLabels';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
+import { GroupMembersModal, useGroupMembersModal } from '@proton/pass/components/Organization/Groups/GroupMembersModal';
 import { useConfirm } from '@proton/pass/hooks/useConfirm';
 import { useActionRequest } from '@proton/pass/hooks/useRequest';
 import type { AccessDTO } from '@proton/pass/lib/access/types';
@@ -32,6 +33,7 @@ type Props = AccessDTO & {
     owner: boolean;
     role: ShareRole;
     userShareId: string;
+    isGroupShare: boolean;
 };
 
 const getDefinition = (owner: boolean, target: AccessTarget, role: ShareRole, labels: InviteLabels) =>
@@ -57,8 +59,12 @@ export const ShareMember: FC<Props> = ({
     shareId,
     target,
     userShareId,
+    isGroupShare,
 }) => {
-    const initials = email.toUpperCase().slice(0, 2) ?? '';
+    const { open, isGroup, name, avatar, members, membersCount, onClick, onClose } = useGroupMembersModal(
+        email,
+        isGroupShare
+    );
     // TODO: Remove this in IDTEAM-4660
     const labels = useInviteLabels();
     const { title, description } = getDefinition(owner, target, role, labels);
@@ -86,18 +92,34 @@ export const ShareMember: FC<Props> = ({
         });
 
     const loading = transferOwner.loading || removeAccess.loading || editRole.loading;
+    const showTransfer = !isGroup && canTransfer && role === ShareRole.MANAGER;
 
     return (
         <div
             className={clsx('flex flex-nowrap items-center border border-weak rounded-xl px-4 py-3 w-full', className)}
         >
-            <ShareMemberAvatar value={initials} loading={loading} />
+            <button onClick={onClick}>
+                <ShareMemberAvatar value={avatar} loading={loading} />
+            </button>
+
             <div className="flex-1">
                 <div className="flex flex-nowrap flex-1 items-center gap-2">
-                    <Tooltip openDelay={100} originalPlacement="bottom-start" title={email}>
-                        <div className="text-ellipsis">{email}</div>
-                    </Tooltip>
-                    {me && <span className="color-primary text-sm">({c('Info').t`me`})</span>}
+                    {isGroup ? (
+                        <button onClick={onClick} className="text-ellipsis">
+                            {`${name} ${c('Info').ngettext(
+                                msgid`(${membersCount} member)`,
+                                `(${membersCount} members)`,
+                                membersCount
+                            )}`}
+                        </button>
+                    ) : (
+                        <>
+                            <Tooltip openDelay={100} originalPlacement="bottom-start" title={email}>
+                                <div className="text-ellipsis">{name}</div>
+                            </Tooltip>
+                            {me && <span className="color-primary text-sm">({c('Info').t`me`})</span>}
+                        </>
+                    )}
                 </div>
 
                 <div className="flex items-center gap-1">
@@ -129,8 +151,7 @@ export const ShareMember: FC<Props> = ({
                         disabled={editRole.loading}
                         className={role !== ShareRole.MANAGER ? 'pl-10' : ''}
                     />
-
-                    {canTransfer && role === ShareRole.MANAGER && (
+                    {showTransfer && (
                         <DropdownMenuButton
                             label={c('Action').t`Transfer ownership`}
                             icon="shield-half-filled"
@@ -154,6 +175,8 @@ export const ShareMember: FC<Props> = ({
                 submitText={c('Action').t`Confirm`}
                 alertText={c('Warning').t`Transfer ownership of this vault to ${email}?`}
             />
+
+            {open && <GroupMembersModal name={name} members={members} onClose={onClose} />}
         </div>
     );
 };

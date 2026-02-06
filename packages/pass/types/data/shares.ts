@@ -1,5 +1,5 @@
 import type { ShareId } from '@proton/pass/types/crypto';
-import type { Maybe } from '@proton/pass/types/utils';
+import type { Maybe, MaybeNull } from '@proton/pass/types/utils';
 
 import type { VaultColor, VaultIcon } from '../protobuf/vault-v1.static';
 
@@ -46,7 +46,9 @@ export type ShareBase<T extends ShareType = ShareType> = {
     targetMembers: number;
     targetType: T;
     vaultId: string;
+    permission: number;
     flags: number;
+    groupId: MaybeNull<string>;
 };
 
 export type WithEventId<T> = T & { eventId: string };

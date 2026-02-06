@@ -1,6 +1,6 @@
 import { createSelector } from '@reduxjs/toolkit';
 
-import { isItemShare, isShareVisible, isShareWritable, isVaultShare } from '@proton/pass/lib/shares/share.predicates';
+import { isItemShare, isShareDeduped, isShareWritable, isVaultShare } from '@proton/pass/lib/shares/share.predicates';
 import {
     hasNewUserInvitesReady,
     isOwnReadonlyVault,
@@ -21,38 +21,45 @@ import type { ShareItem } from '@proton/pass/store/reducers';
 import { selectRequestInFlight, selectRequestInFlightData } from '@proton/pass/store/request/selectors';
 import type { State } from '@proton/pass/store/types';
 import type { BulkSelectionDTO, Maybe, MaybeNull, ShareId, ShareType } from '@proton/pass/types';
-import { prop } from '@proton/pass/utils/fp/lens';
 import { not } from '@proton/pass/utils/fp/predicates';
 import { logId } from '@proton/pass/utils/logger';
 
 import { SelectorError } from './errors';
 
 export const selectShareState = ({ shares }: State) => shares;
+export const selectShareDedupeState = ({ sharesDedupe: { dedupe } }: State) => dedupe;
+export const selectShareDedupeAndVisibileState = ({ sharesDedupe: { dedupeAndVisible } }: State) => dedupeAndVisible;
 
-export const selectAllShares = createSelector(selectShareState, (s) => Object.values(s));
+export const selectAllShares = createSelector([selectShareState], (s) => Object.values(s));
 export const selectAllVaults = createSelector([selectAllShares], (s) => s.filter(isVaultShare).sort(sortVaults));
 
-export const selectVisibleVaults = createSelector([selectAllVaults], (v) => v.filter(isShareVisible));
-export const selectVisibleShares = createSelector(selectAllShares, (s) => s.filter(isShareVisible));
-export const selectVisibleShareIds = createSelector(selectVisibleShares, (s) => new Set(s.map(prop('shareId'))));
+export const selectDedupedShares = createSelector([selectAllShares, selectShareDedupeState], (s, d) => s.filter(isShareDeduped(d)));
+export const selectDedupedVaults = createSelector([selectAllVaults, selectShareDedupeState], (s, d) => s.filter(isShareDeduped(d)));
+
+export const selectVisibleVaults = createSelector([selectAllVaults, selectShareDedupeAndVisibileState], (s, d) =>
+    s.filter(isShareDeduped(d))
+);
+export const selectVisibleShares = createSelector([selectAllShares, selectShareDedupeAndVisibileState], (s, d) =>
+    s.filter(isShareDeduped(d))
+);
 
 /** Creates a selector that filters items by share visibility.
  * Takes any selector returning "entries" with `shareId` and
  * filters them to only include visible shareId references. */
 export const createVisibilityFilterSelector = <T extends { shareId: string }>(filterableSelector: (state: State) => T[]) =>
-    createSelector([filterableSelector, selectVisibleShareIds], (entries, shareIds) => {
-        return entries.filter(({ shareId }) => shareIds.has(shareId));
+    createSelector([filterableSelector, selectShareDedupeAndVisibileState], (entries, shareIds) => {
+        return entries.filter(({ shareId }) => shareIds.includes(shareId));
     });
 
-export const selectItemShares = createSelector([selectAllShares], (s) => s.filter(isItemShare));
-export const selectWritableShares = createSelector([selectAllShares], (v) => v.filter(isShareWritable));
+export const selectItemShares = createSelector([selectDedupedShares], (s) => s.filter(isItemShare));
+export const selectWritableShares = createSelector([selectDedupedShares], (v) => v.filter(isShareWritable));
 export const selectVisibleWritableShares = createSelector([selectVisibleShares], (v) => v.filter(isShareWritable));
-export const selectWritableVaults = createSelector([selectAllShares], (v) => v.filter(isWritableVault));
-export const selectOwnedVaults = createSelector([selectAllVaults], (v) => v.filter(isOwnVault));
-export const selectNonOwnedVaults = createSelector([selectAllVaults], (v) => v.filter(not(isOwnVault)));
-export const selectOwnWritableVaults = createSelector([selectAllVaults], (v) => v.filter(isOwnWritableVault));
-export const selectOwnReadOnlyVaults = createSelector([selectAllVaults], (v) => v.filter(isOwnReadonlyVault));
-export const selectWritableSharedVaults = createSelector([selectAllVaults], (v) => v.filter(isWritableSharedVault));
+export const selectWritableVaults = createSelector([selectDedupedShares], (v) => v.filter(isWritableVault));
+export const selectOwnedVaults = createSelector([selectDedupedVaults], (v) => v.filter(isOwnVault));
+export const selectNonOwnedVaults = createSelector([selectDedupedVaults], (v) => v.filter(not(isOwnVault)));
+export const selectOwnWritableVaults = createSelector([selectDedupedVaults], (v) => v.filter(isOwnWritableVault));
+export const selectOwnReadOnlyVaults = createSelector([selectDedupedVaults], (v) => v.filter(isOwnReadonlyVault));
+export const selectWritableSharedVaults = createSelector([selectDedupedShares], (v) => v.filter(isWritableSharedVault));
 
 export const selectCanCreateItems = createSelector([selectWritableVaults], (v) => v.length > 0);
 

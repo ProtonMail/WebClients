@@ -59,6 +59,7 @@ type OpenedShareBase = {
     targetMaxMembers: number;
     targetMembers: number;
     vaultId: string;
+    groupId: MaybeNull<string>;
 };
 
 export type OpenedShare = OpenedShareBase &

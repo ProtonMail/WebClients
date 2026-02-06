@@ -2,9 +2,10 @@ import { c, msgid } from 'ttag';
 
 import { isItemTarget } from '@proton/pass/lib/access/access.predicates';
 import { AccessTarget } from '@proton/pass/lib/access/types';
-import type { NewUserPendingInvite, Share } from '@proton/pass/types';
-import { type InviteBase, NewUserInviteState, type Result } from '@proton/pass/types';
+import type { Invite, Maybe, MaybeNull, NewUserPendingInvite, Share } from '@proton/pass/types';
+import { type InviteBase, InviteType, NewUserInviteState, type Result } from '@proton/pass/types';
 import { and } from '@proton/pass/utils/fp/predicates';
+import type { Group } from '@proton/shared/lib/interfaces';
 
 export const isTargetInvite = (targetId: string) => (invite: InviteBase) => invite.targetId === targetId;
 export const isItemInviteForItem = (itemId: string) => and(isItemTarget, isTargetInvite(itemId));
@@ -57,3 +58,9 @@ export const getLimitReachedText = (share: Share, target: AccessTarget) => {
         }
     }
 };
+
+export const isGroupInvite = (invite: Maybe<MaybeNull<Invite>>): invite is Invite =>
+    invite?.type === InviteType.GroupOrg || invite?.type === InviteType.GroupOwner;
+
+export const getInvitedGroup = (invite: Maybe<MaybeNull<Invite>>, groups: Maybe<MaybeNull<Group[]>>) =>
+    isGroupInvite(invite) ? groups?.find((group) => group.Address.Email === invite.invitedEmail) || null : null;

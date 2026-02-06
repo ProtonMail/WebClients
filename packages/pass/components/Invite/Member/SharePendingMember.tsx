@@ -7,6 +7,7 @@ import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import Info from '@proton/components/components/link/Info';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
+import { useMemberOrGroupName } from '@proton/pass/hooks/groups/useMemberOrGroupName';
 import { useActionRequest } from '@proton/pass/hooks/useRequest';
 import type { AccessDTO } from '@proton/pass/lib/access/types';
 import {
@@ -32,33 +33,37 @@ type SharePendingMemberProps = {
     className?: string;
 };
 
-export const SharePendingMember: FC<SharePendingMemberProps> = ({ actions, email, extra, loading, className }) => (
-    <div className={clsx('border border-weak rounded-xl px-4 py-3 max-w-full', className)}>
-        <div className="flex flex-nowrap items-center w-full">
-            <ShareMemberAvatar value={email.toUpperCase().slice(0, 2) ?? ''} loading={loading} />
-            <div className="flex-1">
-                <Tooltip openDelay={100} originalPlacement="bottom-start" title={email}>
-                    <div className="text-ellipsis">{email}</div>
-                </Tooltip>
-                <div className="flex items-center gap-1">
-                    <span className="color-weak text-sm">{c('Info').t`Invitation sent`}</span>
-                    <Info
-                        title={c('Info').t`The user did not accept the invitation yet.`}
-                        className="color-weak"
-                        questionMark
-                    />
-                </div>
-            </div>
+export const SharePendingMember: FC<SharePendingMemberProps> = ({ actions, email, extra, loading, className }) => {
+    const { name, avatar } = useMemberOrGroupName(email);
 
-            {actions && (
-                <QuickActionsDropdown color="weak" shape="ghost">
-                    {actions}
-                </QuickActionsDropdown>
-            )}
+    return (
+        <div className={clsx('border border-weak rounded-xl px-4 py-3 max-w-full', className)}>
+            <div className="flex flex-nowrap items-center w-full">
+                <ShareMemberAvatar value={avatar} loading={loading} />
+                <div className="flex-1">
+                    <Tooltip openDelay={100} originalPlacement="bottom-start" title={email}>
+                        <div className="text-ellipsis">{name}</div>
+                    </Tooltip>
+                    <div className="flex items-center gap-1">
+                        <span className="color-weak text-sm">{c('Info').t`Invitation sent`}</span>
+                        <Info
+                            title={c('Info').t`The user did not accept the invitation yet.`}
+                            className="color-weak"
+                            questionMark
+                        />
+                    </div>
+                </div>
+
+                {actions && (
+                    <QuickActionsDropdown color="weak" shape="ghost">
+                        {actions}
+                    </QuickActionsDropdown>
+                )}
+            </div>
+            {extra}
         </div>
-        {extra}
-    </div>
-);
+    );
+};
 
 export const PendingExistingMember: FC<PendingExistingMemberProps> = ({
     canManage,

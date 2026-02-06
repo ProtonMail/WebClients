@@ -1,11 +1,17 @@
+import type { Store } from 'redux';
+
 import { CryptoProxy } from '@proton/crypto';
 import { FILE_PENDING_SHARE, FILE_PUBLIC_SHARE } from '@proton/pass/constants';
 import { authStore } from '@proton/pass/lib/auth/store';
 import type { PassCoreProxy } from '@proton/pass/lib/core/core.types';
 import { encryptData } from '@proton/pass/lib/crypto/utils/crypto-helpers';
 import { serializeShareManagers } from '@proton/pass/lib/crypto/utils/seralize';
+import { getOrganizationGroups } from '@proton/pass/store/actions/creators/organization';
+import { asyncRequestDispatcherFactory } from '@proton/pass/store/request/utils';
+import type { State } from '@proton/pass/store/types';
 import type {
     FileIdentifier,
+    MaybeNull,
     PassCryptoManagerContext,
     PassCryptoWorker,
     SerializedCryptoContext,
@@ -20,8 +26,13 @@ import { first } from '@proton/pass/utils/array/first';
 import { unwrap } from '@proton/pass/utils/fp/promises';
 import { logId, logger } from '@proton/pass/utils/logger';
 import { entriesMap } from '@proton/pass/utils/object/map';
-import type { DecryptedAddressKey } from '@proton/shared/lib/interfaces';
-import { getDecryptedAddressKeysHelper, getDecryptedUserKeysHelper } from '@proton/shared/lib/keys';
+import type { DecryptedAddressKey, Group, OrganizationKey } from '@proton/shared/lib/interfaces';
+import {
+    getDecryptedAddressKeysHelper,
+    getDecryptedOrganizationKeyHelper,
+    getDecryptedUserKeysHelper,
+} from '@proton/shared/lib/keys';
+import { getDecryptedGroupAddressKey } from '@proton/shared/lib/keys/groupKeys';
 
 import * as processes from './processes';
 import { createShareManager } from './share-manager';
@@ -58,7 +69,7 @@ export const intoFileUniqueID = (fileIdentifier: FileIdentifier) => {
     return `${shareId}::${fileIdentifier.fileID}` + (fileIdentifier.pending ? '::pending' : '');
 };
 
-export const createPassCrypto = (core?: PassCoreProxy): PassCryptoWorker => {
+export const createPassCrypto = (core?: PassCoreProxy, store?: Store<State>): PassCryptoWorker => {
     const context: PassCryptoManagerContext = {
         user: undefined,
         userKeys: [],
@@ -67,6 +78,7 @@ export const createPassCrypto = (core?: PassCoreProxy): PassCryptoWorker => {
         primaryAddress: undefined,
         shareManagers: new Map(),
         fileKeys: new Map(),
+        groupKeys: new Map(),
     };
 
     const hasShareManager = (shareId: string): boolean => context.shareManagers.has(shareId);
@@ -101,6 +113,62 @@ export const createPassCrypto = (core?: PassCoreProxy): PassCryptoWorker => {
         return primaryAddressKey;
     };
 
+    /** When user is hydrated, its groups are loaded and their keys stored in context */
+    const setGroupKeys = (groups: Group[]) => {
+        context.groupKeys = new Map();
+        groups.forEach((group) => {
+            context.groupKeys.set(group.ID, group.Address.Keys);
+        });
+    };
+
+    /** When asking for a group keys, first check the context
+     * There are some race conditions where the user groups are not loaded yet
+     * In these cases, trigger fetch intent and retry */
+    const getGroupKeys = async (groupId: string) => {
+        let groupKeys = context.groupKeys.get(groupId);
+
+        if (groupKeys === undefined && store) {
+            // There's many cache layer but if we truly miss keys because they are not loaded
+            // This will trigger the request and update the group keys on success
+            await asyncRequestDispatcherFactory(store.dispatch)(getOrganizationGroups);
+            groupKeys = context.groupKeys.get(groupId);
+        }
+
+        if (groupKeys === undefined) throw new Error(`No groups keys for group id ${groupId}`);
+        return groupKeys;
+    };
+
+    const getDecryptedGroupKey = async (organizationKey: MaybeNull<OrganizationKey>, groupId: string) => {
+        assertHydrated(context);
+        const groupKeys = await getGroupKeys(groupId);
+
+        if (organizationKey) {
+            const decryptedOrganizationKey = await getDecryptedOrganizationKeyHelper({
+                userKeys: context.userKeys,
+                Key: organizationKey,
+                keyPassword: authStore.getPassword()!,
+            });
+
+            return getDecryptedGroupAddressKey(groupKeys, decryptedOrganizationKey.privateKey);
+        }
+
+        return getDecryptedGroupAddressKey(groupKeys, context.primaryUserKey.privateKey, {
+            required: true,
+            value: 'account.key-token.address',
+        });
+    };
+
+    const openShareKey = async (addressId: string, groupId: MaybeNull<string>, shareKey: ShareKeyResponse) => {
+        assertHydrated(context);
+
+        if (groupId) {
+            const addressKeys = await getDecryptedAddressKeys(addressId);
+            const groupKeys = await getGroupKeys(groupId);
+            return processes.openGroupShareKey({ shareKey, addressKeys, groupKeys });
+        }
+        return processes.openShareKey({ shareKey, userKeys: context.userKeys });
+    };
+
     const worker: PassCryptoWorker = {
         get ready() {
             try {
@@ -113,7 +181,7 @@ export const createPassCrypto = (core?: PassCoreProxy): PassCryptoWorker => {
 
         getContext: () => context,
 
-        async hydrate({ user, addresses, keyPassword, snapshot, clear }) {
+        async hydrate({ user, addresses, keyPassword, snapshot, groups, clear }) {
             logger.info('[PassCrypto] Hydrating crypto state');
 
             if (clear) worker.clear();
@@ -130,6 +198,8 @@ export const createPassCrypto = (core?: PassCoreProxy): PassCryptoWorker => {
                 context.primaryAddress = activeAddresses[0];
                 context.userKeys = userKeys;
                 context.primaryUserKey = userKeys[0];
+
+                if (groups) this.setGroupKeys(groups);
 
                 if (snapshot) {
                     const entries = snapshot.shareManagers as [string, SerializedCryptoContext<ShareContext>][];
@@ -155,7 +225,10 @@ export const createPassCrypto = (core?: PassCoreProxy): PassCryptoWorker => {
             context.primaryUserKey = undefined;
             context.shareManagers = new Map();
             context.fileKeys = new Map();
+            context.groupKeys = new Map();
         },
+
+        setGroupKeys,
 
         getShareManager,
 
@@ -168,7 +241,8 @@ export const createPassCrypto = (core?: PassCoreProxy): PassCryptoWorker => {
 
             return processes.createVault({
                 content,
-                userKey: context.primaryUserKey,
+                encryptionKey: context.primaryUserKey,
+                signingKey: context.primaryUserKey,
                 addressId: context.primaryAddress.ID,
             });
         },
@@ -212,21 +286,7 @@ export const createPassCrypto = (core?: PassCoreProxy): PassCryptoWorker => {
                 const { encryptedShare, encryptedShareKeys } = data;
                 const { ShareID: shareId } = encryptedShare;
                 const shareManager = hasShareManager(shareId) ? getShareManager(shareId) : undefined;
-
-                /** Check if share can be opened with available keys - either from existing
-                 * `shareManager` or provided `encryptedShareKeys` matched against user keys. */
-                const canOpenShare = ((): boolean => {
-                    if (!encryptedShareKeys) {
-                        if (!shareManager) throw new PassCryptoShareError('Missing share manager');
-                        return shareManager.isActive(context.userKeys);
-                    } else {
-                        if (encryptedShareKeys.length === 0) throw new PassCryptoShareError('Empty share keys');
-                        const latestKey = encryptedShareKeys.reduce((acc, curr) =>
-                            curr.KeyRotation > acc.KeyRotation ? curr : acc
-                        );
-                        return context.userKeys.some(({ ID }) => ID === latestKey.UserKeyID);
-                    }
-                })();
+                const canOpenShare = processes.canOpenShare(encryptedShare, encryptedShareKeys, shareManager);
 
                 /** Return null if share cannot be opened - typically occurs
                  * during password reset when user keys are unavailable. */
@@ -242,7 +302,11 @@ export const createPassCrypto = (core?: PassCoreProxy): PassCryptoWorker => {
                                       encryptedShareKeys.map((shareKey) =>
                                           shareManager?.hasVaultShareKey(shareKey.KeyRotation)
                                               ? shareManager.getVaultShareKey(shareKey.KeyRotation)
-                                              : processes.openShareKey({ shareKey, userKeys: context.userKeys })
+                                              : openShareKey(
+                                                    encryptedShare.AddressID,
+                                                    encryptedShare.GroupID || null,
+                                                    shareKey
+                                                )
                                       )
                                   )
                                 : shareManager!.getVaultShareKeys();
@@ -264,12 +328,15 @@ export const createPassCrypto = (core?: PassCoreProxy): PassCryptoWorker => {
 
                 /** Register or update `shareManager` and sync share keys if provided */
                 const manager = shareManager ?? createShareManager(share);
+
                 context.shareManagers.set(shareId, manager);
+
                 if (encryptedShareKeys) await worker.updateShareKeys({ shareId, encryptedShareKeys });
                 manager.setShare(share);
 
                 return manager.getShare() as TypedOpenedShare<T>;
             } catch (err: any) {
+                console.error('err', data.encryptedShare.ShareID, err);
                 throw isPassCryptoError(err) ? err : new PassCryptoError(err);
             }
         },
@@ -278,18 +345,18 @@ export const createPassCrypto = (core?: PassCoreProxy): PassCryptoWorker => {
             assertHydrated(context);
 
             const manager = getShareManager(shareId);
-            const { userKeys } = context;
+            const { addressId, groupId } = manager.getShare();
 
             switch (manager.getType()) {
                 case ShareType.Vault: {
                     const keys = encryptedShareKeys.filter(({ KeyRotation }) => !manager.hasVaultShareKey(KeyRotation));
-                    const newKeys = keys.map((shareKey) => processes.openShareKey({ shareKey, userKeys }));
+                    const newKeys = keys.map((shareKey) => openShareKey(addressId, groupId, shareKey));
                     return (await Promise.all(newKeys)).forEach(manager.addVaultShareKey);
                 }
 
                 case ShareType.Item: {
                     const keys = encryptedShareKeys.filter(({ KeyRotation }) => !manager.hasItemShareKey(KeyRotation));
-                    const newKeys = keys.map((shareKey) => processes.openShareKey({ shareKey, userKeys }));
+                    const newKeys = keys.map((shareKey) => openShareKey(addressId, groupId, shareKey));
                     return (await Promise.all(newKeys)).forEach(manager.addItemShareKey);
                 }
             }
@@ -446,6 +513,23 @@ export const createPassCrypto = (core?: PassCoreProxy): PassCryptoWorker => {
             return { Keys: vaultKeys };
         },
 
+        async acceptGroupVaultInvite({ organizationKey, groupId, inviteKeys, inviterPublicKeys }) {
+            assertHydrated(context);
+
+            const decryptedGroupKey = await getDecryptedGroupKey(organizationKey, groupId);
+
+            const vaultKeys = await processes.reencryptInviteKeys({
+                userKey: decryptedGroupKey!,
+                inviteKeys,
+                invitedPrivateKey: decryptedGroupKey!.privateKey,
+                inviterPublicKeys: await Promise.all(
+                    inviterPublicKeys.map((armoredKey) => CryptoProxy.importPublicKey({ armoredKey }))
+                ),
+            });
+
+            return { Keys: vaultKeys };
+        },
+
         async readVaultInvite({ inviteKey, invitedAddressId, encryptedVaultContent, inviterPublicKeys }) {
             assertHydrated(context);
 
@@ -453,6 +537,21 @@ export const createPassCrypto = (core?: PassCoreProxy): PassCryptoWorker => {
                 inviteKey,
                 encryptedVaultContent,
                 invitedPrivateKey: (await getPrimaryAddressKeyById(invitedAddressId)).privateKey,
+                inviterPublicKeys: await Promise.all(
+                    inviterPublicKeys.map((armoredKey) => CryptoProxy.importPublicKey({ armoredKey }))
+                ),
+            });
+        },
+
+        async readGroupVaultInvite({ inviteKey, organizationKey, groupId, encryptedVaultContent, inviterPublicKeys }) {
+            assertHydrated(context);
+
+            const decryptedGroupKey = await getDecryptedGroupKey(organizationKey, groupId);
+
+            return processes.readVaultInviteContent({
+                inviteKey,
+                encryptedVaultContent,
+                invitedPrivateKey: decryptedGroupKey!.privateKey,
                 inviterPublicKeys: await Promise.all(
                     inviterPublicKeys.map((armoredKey) => CryptoProxy.importPublicKey({ armoredKey }))
                 ),

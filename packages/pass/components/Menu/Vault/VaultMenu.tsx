@@ -54,7 +54,7 @@ export const VaultMenu: FC<Props> = ({ render, onAction = noop }) => {
                         canDelete={vault.owner}
                         canInvite={!vault.shared}
                         canManage={isShareManageable(vault)}
-                        canLeave={vault.shared && !vault.owner}
+                        canLeave={vault.shared && !vault.owner && !vault.groupId}
                         onAction={onAction}
                     />
                 ))}

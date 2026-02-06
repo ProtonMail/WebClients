@@ -120,6 +120,7 @@ export const AccessList: FC<Props> = ({
                         shareId={shareId}
                         target={target}
                         userShareId={member.shareId}
+                        isGroupShare={member.isGroupShare}
                     />
                 ))}
             </FieldsetCluster>

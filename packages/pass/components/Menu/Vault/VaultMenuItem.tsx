@@ -163,6 +163,7 @@ export const VaultMenuItem = memo(
                         {vault.targetMembers > 1 && <span className="text-sm ml-1">{vault.targetMembers}</span>}
                     </ButtonLike>
                 }
+                extraClassname="pr-4"
                 icon={
                     <VaultIcon
                         background

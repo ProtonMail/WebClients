@@ -1,5 +1,5 @@
-import type { CSSProperties } from 'react';
-import { type FC, useMemo, useRef, useState } from 'react';
+import type { CSSProperties, FC } from 'react';
+import { useMemo, useRef, useState } from 'react';
 import { useSelector } from 'react-redux';
 import type { List } from 'react-virtualized';
 
@@ -11,11 +11,15 @@ import Checkbox from '@proton/components/components/input/Checkbox';
 import { ShareMemberAvatar } from '@proton/pass/components/Invite/Member/ShareMemberAvatar';
 import { ButtonBar } from '@proton/pass/components/Layout/Button/ButtonBar';
 import { VirtualList } from '@proton/pass/components/Layout/List/VirtualList';
+import { useOrganizationGroups } from '@proton/pass/components/Organization/OrganizationProvider';
+import { useGetMemberOrGroupName } from '@proton/pass/hooks/groups/useMemberOrGroupName';
 import { useInviteRecommendations } from '@proton/pass/hooks/invite/useInviteRecommendations';
 import { useDebouncedValue } from '@proton/pass/hooks/useDebouncedValue';
+import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import type { AccessKeys } from '@proton/pass/lib/access/types';
 import { selectDefaultVault } from '@proton/pass/store/selectors';
 import type { MaybeNull } from '@proton/pass/types';
+import { PassFeature } from '@proton/pass/types/api/features';
 import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
 import clsx from '@proton/utils/clsx';
 
@@ -47,6 +51,9 @@ export const InviteRecommendations: FC<Props> = (props) => {
 
     const startsWith = useDebouncedValue(autocomplete, 250);
     const defaultVault = useSelector(selectDefaultVault);
+    const groups = useOrganizationGroups();
+    const getMemberOrGroupName = useGetMemberOrGroupName();
+    const groupShareFeatureFlag = useFeatureFlag(PassFeature.PassGroupInvitesV1);
 
     const access = useMemo(
         /** If not `access` prop is passed consider
@@ -56,19 +63,29 @@ export const InviteRecommendations: FC<Props> = (props) => {
     );
 
     const { loadMore, state } = useInviteRecommendations(access, startsWith, pageSize);
-    const { organization, emails, loading } = state;
+    const {
+        suggestions: { loading: loadingSuggestions, suggested },
+        organization: { loading: loadingOrganization, data: organization },
+    } = state;
 
     const displayedEmails = useMemo(() => {
+        const displayed = (() => {
+            if (organization !== null && view === organization.name) {
+                return [...(groupShareFeatureFlag ? Object.keys(groups) : []), ...organization.emails];
+            }
+            return suggested.map(({ email }) => email);
+        })();
+
         const startsWith = autocomplete.toLowerCase();
-        const displayed = organization !== null && view === organization.name ? organization.emails : emails;
 
         return isEmptyString(startsWith)
             ? displayed
             : displayed.filter((email) => email.toLowerCase().startsWith(startsWith));
-    }, [emails, organization, view, autocomplete]);
+    }, [suggested, organization, view, autocomplete]);
 
+    const loading = loadingSuggestions || loadingOrganization;
     /** Add an extra row for the loading placeholder */
-    const moreLoading = loading && displayedEmails.length > 0;
+    const moreLoading = loadingOrganization && displayedEmails.length > 0;
     const rowCount = displayedEmails.length + (moreLoading ? 1 : 0);
     const noResults = displayedEmails.length === 0 && !loading;
 
@@ -122,6 +139,7 @@ export const InviteRecommendations: FC<Props> = (props) => {
 
                             const email = displayedEmails[index];
                             const disabled = excluded.has(email);
+                            const { name, avatar } = getMemberOrGroupName(email, undefined);
 
                             return (
                                 <div style={style} key={key} className="flex anime-fade-in">
@@ -133,8 +151,8 @@ export const InviteRecommendations: FC<Props> = (props) => {
                                         onChange={({ target }) => onToggle(email, target.checked)}
                                     >
                                         <div className="flex flex-nowrap items-center flex-1">
-                                            <ShareMemberAvatar value={email.toUpperCase().slice(0, 2) ?? ''} />
-                                            <div className="flex-1 text-ellipsis mr-2">{email}</div>
+                                            <ShareMemberAvatar value={avatar} />
+                                            <div className="flex-1 text-ellipsis mr-2">{name}</div>
                                         </div>
                                     </Checkbox>
                                 </div>

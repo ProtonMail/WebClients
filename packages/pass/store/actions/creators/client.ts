@@ -4,6 +4,7 @@ import { c } from 'ttag';
 import type { ReauthActionPayload } from '@proton/pass/lib/auth/reauth';
 import { type CacheMeta, withCache, withCacheOptions } from '@proton/pass/store/actions/enhancers/cache';
 import { withStreamableAction } from '@proton/pass/store/actions/enhancers/client';
+import { withShareDedupe } from '@proton/pass/store/actions/enhancers/dedupe';
 import { type EndpointOptions, withReceiver } from '@proton/pass/store/actions/enhancers/endpoint';
 import { withNotification } from '@proton/pass/store/actions/enhancers/notification';
 import { bootRequest, syncRequest } from '@proton/pass/store/actions/requests';
@@ -35,18 +36,14 @@ export const cacheRequest = createAction('cache::request', (options: Omit<CacheM
 
 export const cacheCancel = createAction('cache::cancel');
 
-export const clientInit = requestActionsFactory<{ status: AppStatus } & EndpointOptions, EndpointOptions>(
-    'client::init'
-)({
+export const clientInit = requestActionsFactory<{ status: AppStatus } & EndpointOptions, EndpointOptions>('client::init')({
     key: ({ tabId, endpoint }: EndpointOptions) => `${endpoint}::${tabId}`,
     intent: { prepare: (payload) => withReceiver(payload)({ payload }) },
     success: { prepare: (payload) => withReceiver(payload)({ payload }) },
 });
 
-export const bootIntent = createAction(
-    'boot::intent',
-    (payload?: { offline?: boolean; reauth?: ReauthActionPayload }) =>
-        withRequest({ id: bootRequest(), status: 'start' })({ payload })
+export const bootIntent = createAction('boot::intent', (payload?: { offline?: boolean; reauth?: ReauthActionPayload }) =>
+    withRequest({ id: bootRequest(), status: 'start' })({ payload })
 );
 
 export const bootFailure = createAction('boot::failure', (error?: unknown) =>
@@ -64,7 +61,7 @@ export const bootFailure = createAction('boot::failure', (error?: unknown) =>
 );
 
 export const bootSuccess = createAction('boot::success', (payload?: SynchronizationResult) =>
-    pipe(withRequest({ id: bootRequest(), status: 'success' }), withStreamableAction)({ payload })
+    pipe(withShareDedupe, withRequest({ id: bootRequest(), status: 'success' }), withStreamableAction)({ payload })
 );
 
 export const syncIntent = createAction('sync::intent', (type: SyncType) =>
@@ -83,6 +80,7 @@ export const syncIntent = createAction('sync::intent', (type: SyncType) =>
 export const syncSuccess = createAction('sync::success', (payload: SynchronizationResult) =>
     pipe(
         withCache,
+        withShareDedupe,
         withStreamableAction,
         withRequest({ id: syncRequest(), status: 'success' }),
         withNotification({ type: 'info', text: c('Info').t`Successfully synced all vaults` })
