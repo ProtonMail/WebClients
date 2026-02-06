@@ -1,5 +1,6 @@
 import { all, call } from 'redux-saga/effects';
 
+import { processAliasNoteChanged, processPendingAliasToCreate } from '@proton/pass/lib/events/v2/user-events.alias';
 import { PendingFileLinkTracker } from '@proton/pass/lib/file-attachments/file-link.tracker';
 import { getItemKey } from '@proton/pass/lib/items/item.utils';
 import type { SyncEventListOutput } from '@proton/pass/types';
@@ -37,6 +38,8 @@ export function* processUserEvents(event: SyncEventListOutput) {
     const results: boolean[] = yield all([
         call(processItemsUpdated, event.ItemsUpdated),
         call(processItemsDeleted, event.ItemsDeleted),
+        call(processAliasNoteChanged, event.AliasNoteChanged),
+        call(processPendingAliasToCreate, event.PendingAliasToCreateChanged),
     ]);
 
     return results.every(Boolean);

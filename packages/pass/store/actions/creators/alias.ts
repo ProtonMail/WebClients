@@ -105,7 +105,8 @@ export const aliasSyncEnable = requestActionsFactory<ShareId, ShareId>('alias::s
     },
 });
 
-export const aliasSyncPending = requestActionsFactory<void, { items: ItemRevision[]; shareId: string }>('alias::sync::pending')({});
+export const aliasPendingCreate = requestActionsFactory<void, ItemRevision[]>('alias::sync::create')({});
+export const aliasPendingCreated = createAction<ItemRevision[]>('alias::sync::created');
 
 export const aliasSyncStatus = requestActionsFactory<void, SlSyncStatusOutput>('alias::sync::status')({
     success: sessionRequest(UNIX_MINUTE),

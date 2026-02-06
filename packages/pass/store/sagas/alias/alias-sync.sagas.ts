@@ -8,7 +8,7 @@ import {
     toggleAliasStatus,
 } from '@proton/pass/lib/alias/alias.requests';
 import { parseItemRevision } from '@proton/pass/lib/items/item.parser';
-import { aliasSyncEnable, aliasSyncPending, aliasSyncStatus, aliasSyncStatusToggle } from '@proton/pass/store/actions';
+import { aliasPendingCreate, aliasSyncEnable, aliasSyncStatus, aliasSyncStatusToggle } from '@proton/pass/store/actions';
 import { userAccessRequest } from '@proton/pass/store/actions/requests';
 import { requestInvalidate } from '@proton/pass/store/request/actions';
 import { createRequestSaga } from '@proton/pass/store/request/sagas';
@@ -28,28 +28,30 @@ const aliasSyncEnableSaga = createRequestSaga({
     },
 });
 
+export function* syncPendingAliases(): Generator<unknown, ItemRevision[]> {
+    try {
+        const shareId: Maybe<string> = yield select(selectUserDefaultShareID);
+        if (!shareId) throw new Error('Could not resolve user default vault');
+
+        const pendingAliases: AliasPending[] = yield getPendingAliases();
+        const encryptedItems: ItemRevisionContentsResponse[] = yield createAliasesFromPending({
+            shareId,
+            pendingAliases,
+        });
+
+        const items: ItemRevision[] = yield Promise.all(encryptedItems.map(parseItemRevision.bind(null, shareId)));
+        return items;
+    } catch (error) {
+        logger.warn('[SL::Sync] Failed to create pending aliases', error);
+        throw error;
+    }
+}
+
 /** Gets all pending aliases from SimpleLogin and
  * attempts to create alias items for each of them */
 const aliasSyncPendingSaga = createRequestSaga({
-    actions: aliasSyncPending,
-    call: function* () {
-        try {
-            const shareId: Maybe<string> = yield select(selectUserDefaultShareID);
-            if (!shareId) throw new Error('Could not resolve user default vault');
-
-            const pendingAliases: AliasPending[] = yield getPendingAliases();
-            const encryptedItems: ItemRevisionContentsResponse[] = yield createAliasesFromPending({
-                shareId,
-                pendingAliases,
-            });
-
-            const items: ItemRevision[] = yield Promise.all(encryptedItems.map(parseItemRevision.bind(null, shareId)));
-            return { items, shareId };
-        } catch (error) {
-            logger.warn('[SL::Sync] Failed to create pending aliases', error);
-            throw error;
-        }
-    },
+    actions: aliasPendingCreate,
+    call: syncPendingAliases,
 });
 
 const aliasSyncStatusSaga = createRequestSaga({
