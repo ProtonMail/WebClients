@@ -339,6 +339,10 @@ export enum SentryMailInitiatives {
     MOVE_ACTIONS = 'move-actions',
 }
 
+export enum SentryMailPerformanceInitiatives {
+    APPLY_LOCATION_PERFORMANCE = 'apply-location-performance',
+}
+
 export enum SentryCommonInitiatives {
     POST_SUBSCRIPTION = 'post-subscription',
     ENCRYPTED_SEARCH = 'encrypted-search',
@@ -352,7 +356,8 @@ export enum SentryCalendarInitiatives {
 export type SentryInitiative =
     | `${SentryMailInitiatives}`
     | `${SentryCommonInitiatives}`
-    | `${SentryCalendarInitiatives}`;
+    | `${SentryCalendarInitiatives}`
+    | `${SentryMailPerformanceInitiatives}`;
 
 type CaptureExceptionArgs = Parameters<typeof captureException>;
 
