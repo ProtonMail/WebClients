@@ -14,3 +14,7 @@
 	display: none; /* Chrome, Safari, Opera */
 	scrollbar-width: none !important;
 }
+
+.wrap-placeholder::placeholder {
+	white-space: nowrap;
+}
