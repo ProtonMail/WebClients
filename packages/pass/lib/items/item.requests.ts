@@ -13,6 +13,7 @@ import type {
     ImportItemRequest,
     ItemCreateIntent,
     ItemEditIntent,
+    ItemId,
     ItemImportIntent,
     ItemLatestKeyResponse,
     ItemMoveIndividualToShareRequest,
@@ -26,6 +27,7 @@ import type {
     Maybe,
     SelectedItem,
     SelectedRevision,
+    ShareId,
     UniqueItem,
 } from '@proton/pass/types';
 import { groupByKey } from '@proton/pass/utils/array/group-by-key';
@@ -279,6 +281,12 @@ export const updateItemLastUseTime = async (shareId: string, itemId: string) =>
             data: { LastUseTime: getEpoch() },
         })
     ).Revision;
+
+/** Request a single item */
+export const requestItem = async (shareId: ShareId, itemId: ItemId): Promise<ItemRevision> => {
+    const { Item } = await api({ url: `pass/v1/share/${shareId}/item/${itemId}`, method: 'get' });
+    return parseItemRevision(shareId, Item);
+};
 
 export const requestAllItemsForShareId = async (
     options: { shareId: string; OnlyAlias?: boolean },
