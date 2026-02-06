@@ -28,15 +28,8 @@ export const MeetingDetails = ({ currentMeeting }: { currentMeeting?: Meeting })
     const isMeetAllowMLSLogExportEnabled = useFlag('MeetAllowMLSLogExport');
     const copyTextToClipboard = useCopyTextToClipboard();
 
-    const {
-        meetingLink,
-        roomName,
-        passphrase,
-        mlsGroupState,
-        keyRotationLogs,
-        getKeychainIndexInformation,
-        decryptionErrorLogs,
-    } = useMeetContext();
+    const { meetingLink, roomName, passphrase, mlsGroupState, keyRotationLogs, getKeychainIndexInformation } =
+        useMeetContext();
 
     const { sideBarState, toggleSideBarState } = useUIStateContext();
 
@@ -74,7 +67,6 @@ export const MeetingDetails = ({ currentMeeting }: { currentMeeting?: Meeting })
             {
                 keyRotationLogs,
                 keychainIndexInformation: getKeychainIndexInformation() ?? [],
-                decryptionErrorLogs,
             },
             null,
             2
