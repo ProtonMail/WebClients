@@ -14,6 +14,7 @@ import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
 import { BRAND_NAME, SECOND } from '@proton/shared/lib/constants';
+import { telemetry } from '@proton/shared/lib/telemetry';
 
 import ValidationError from '../../../ValidationError';
 import { DelegatedAccessTypeEnum } from '../../../interface';
@@ -76,6 +77,9 @@ export const CreateOutgoingEmergencyContactModal = ({
                         try {
                             await dispatch(addDelegatedAccessThunk(payload));
                             createNotification({ text: c('emergency_access').t`Emergency contact added` });
+                            telemetry.sendCustomEvent('recovery_settings_setting_enabled_v1', {
+                                setting: 'emergency_contact_added',
+                            });
                             rest.onClose?.();
                         } catch (e) {
                             if (e instanceof ValidationError) {

@@ -40,8 +40,10 @@ import DisableMnemonicModal from '../mnemonic/DisableMnemonicModal';
 import GenerateMnemonicModal from '../mnemonic/GenerateMnemonicModal';
 import ExportRecoveryFileButton from './ExportRecoveryFileButton';
 import VoidRecoveryFilesModal from './VoidRecoveryFilesModal';
+import { useRecoverySettingsTelemetry } from './recoverySettingsTelemetry';
 
 export const DataRecoverySection = () => {
+    const { sendRecoverySettingEnabled } = useRecoverySettingsTelemetry();
     const [user] = useUser();
     const [userSettings] = useUserSettings();
     const dispatch = useDispatch();
@@ -122,15 +124,27 @@ export const DataRecoverySection = () => {
             dispatch(userThunk({ cache: CacheType.None })),
             dispatch(userSettingsThunk({ cache: CacheType.None })),
         ]);
+        if (checked) {
+            sendRecoverySettingEnabled({ setting: 'device_recovery' });
+        }
     };
 
     return (
         <>
             {renderDisableMnemonicModal && <DisableMnemonicModal {...disableMnemonicModal} />}
             {renderGenerateMnemonicModalButton && (
-                <GenerateMnemonicModal confirmStep {...generateMnemonicModalButton} />
+                <GenerateMnemonicModal
+                    confirmStep
+                    {...generateMnemonicModalButton}
+                    onSuccess={() => sendRecoverySettingEnabled({ setting: 'recovery_phrase' })}
+                />
             )}
-            {renderGenerateMnemonicModal && <GenerateMnemonicModal {...generateMnemonicModal} />}
+            {renderGenerateMnemonicModal && (
+                <GenerateMnemonicModal
+                    {...generateMnemonicModal}
+                    onSuccess={() => sendRecoverySettingEnabled({ setting: 'recovery_phrase' })}
+                />
+            )}
             {renderVoidRecoveryFilesModal && (
                 <VoidRecoveryFilesModal
                     onVoid={() => handleChangeDeviceRecoveryToggle(false)}
