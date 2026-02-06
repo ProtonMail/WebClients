@@ -4,10 +4,7 @@ import { DropdownMenu, DropdownMenuButton, useModalState } from '@proton/compone
 import { IcArchiveBox } from '@proton/icons/icons/IcArchiveBox';
 import { IcBell } from '@proton/icons/icons/IcBell';
 import { IcCrossCircle } from '@proton/icons/icons/IcCrossCircle';
-import { IcFire } from '@proton/icons/icons/IcFire';
-import { IcFireSlash } from '@proton/icons/icons/IcFireSlash';
 import { IcFolderArrowIn } from '@proton/icons/icons/IcFolderArrowIn';
-import { IcInbox } from '@proton/icons/icons/IcInbox';
 import { IcTag } from '@proton/icons/icons/IcTag';
 import { IcThreeDotsHorizontal } from '@proton/icons/icons/IcThreeDotsHorizontal';
 import { IcTrash } from '@proton/icons/icons/IcTrash';
@@ -33,6 +30,14 @@ import SnoozeToolbarDropdownStepWrapper, {
     SnoozeToolbarDropdownStepWrapperProps,
 } from '../list/snooze/containers/SnoozeToolbarDropdownStepWrapper';
 import type { DropdownRender } from '../message/extrasHeader/HeaderDropdown';
+import {
+    ArchiveAction,
+    DeleteAction,
+    InboxAction,
+    NoSpamAction,
+    SpamAction,
+    TrashAction,
+} from './MoreDropdown/MoreDropdownActions';
 import ToolbarDropdown from './ToolbarDropdown';
 
 const canEmpty = (labelID: string, elementIDs: string[], selectedIDs: string[], isSearch: boolean) => {
@@ -132,81 +137,6 @@ const MoreDropdown = ({
         });
     };
 
-    const inbox = (
-        <DropdownMenuButton
-            key="context-menu-inbox"
-            className="text-left"
-            onClick={() => onMove(MAILBOX_LABEL_IDS.INBOX, SOURCE_ACTION.TOOLBAR)}
-            data-testid="toolbar:more-dropdown--movetoinbox"
-        >
-            <IcInbox className="mr-2" />
-            {c('Action').t`Move to inbox`}
-        </DropdownMenuButton>
-    );
-
-    const nospam = (
-        <DropdownMenuButton
-            key="context-menu-nospam"
-            className="text-left"
-            onClick={() => onMove(MAILBOX_LABEL_IDS.INBOX, SOURCE_ACTION.TOOLBAR)}
-            data-testid="toolbar:more-dropdown--movetonospam"
-        >
-            <IcFireSlash className="mr-2" />
-            {c('Action').t`Move to inbox (not spam)`}
-        </DropdownMenuButton>
-    );
-
-    const archive = (
-        <DropdownMenuButton
-            key="context-menu-archive"
-            className="text-left"
-            onClick={() => onMove(MAILBOX_LABEL_IDS.ARCHIVE, SOURCE_ACTION.TOOLBAR)}
-            data-testid="toolbar:more-dropdown--movetonoarchive"
-        >
-            <IcArchiveBox className="mr-2" />
-            {c('Action').t`Move to archive`}
-        </DropdownMenuButton>
-    );
-
-    const trash = (
-        <DropdownMenuButton
-            key="context-menu-trash"
-            className="text-left"
-            onClick={() => onMove(MAILBOX_LABEL_IDS.TRASH, SOURCE_ACTION.TOOLBAR)}
-            data-testid="toolbar:more-dropdown--movetotrash"
-        >
-            <IcTrash className="mr-2" />
-            {c('Action').t`Move to trash`}
-        </DropdownMenuButton>
-    );
-
-    const spam = (
-        <DropdownMenuButton
-            key="context-menu-spam"
-            className="text-left"
-            onClick={() => onMove(MAILBOX_LABEL_IDS.SPAM, SOURCE_ACTION.TOOLBAR)}
-            data-testid="toolbar:more-dropdown--movetospam"
-        >
-            <IcFire className="mr-2" />
-            {c('Action').t`Move to spam`}
-        </DropdownMenuButton>
-    );
-
-    const deleteButton = (
-        <DropdownMenuButton
-            key="context-menu-delete"
-            className="text-left"
-            onClick={() => onDelete(SOURCE_ACTION.TOOLBAR)}
-            data-testid="toolbar:more-dropdown--delete"
-        >
-            <IcCrossCircle className="mr-2" />
-            {c('Action').t`Delete`}
-        </DropdownMenuButton>
-    );
-
-    const allMoveButtons = { inbox, trash, archive, spam, nospam, delete: deleteButton };
-    const moveButtons = actions.map((action) => allMoveButtons[action]);
-
     const additionalDropdowns: DropdownRender[] | undefined = inMore.additionalDropdowns
         ? [
               {
@@ -254,6 +184,15 @@ const MoreDropdown = ({
 
     const none = Object.values(inMore).every((visible) => !visible);
 
+    const inbox = <InboxAction onMove={onMove} />;
+    const nospam = <NoSpamAction onMove={onMove} />;
+    const archive = <ArchiveAction onMove={onMove} />;
+    const trash = <TrashAction onMove={onMove} />;
+    const spam = <SpamAction onMove={onMove} />;
+    const deleteButton = <DeleteAction onDelete={onDelete} />;
+
+    const allMoveButtons = { inbox, trash, archive, spam, nospam, delete: deleteButton };
+
     return (
         <>
             <ToolbarDropdown
@@ -268,7 +207,7 @@ const MoreDropdown = ({
                 {{
                     render: ({ onOpenAdditional }) => (
                         <DropdownMenu>
-                            {inMore.move ? moveButtons : null}
+                            {inMore.move ? actions.map((action) => allMoveButtons[action]) : null}
                             {inMore.additionalDropdowns ? (
                                 <>
                                     <DropdownMenuButton
