@@ -120,11 +120,12 @@ export const ParticipantTile = ({ participant, viewSize = 'large' }: Participant
                     participant={participant}
                     indicatorSize={(2 / 3) * indicatorSizeBySize[viewSize]}
                 />
-                {isSpeaking && audioIsOn && (
+                {audioIsOn && (
                     <SpeakingIndicator
                         size={indicatorSizeBySize[viewSize]}
                         participant={participant}
                         indicatorSize={(2 / 3) * indicatorSizeBySize[viewSize]}
+                        stopped={!isSpeaking}
                         opacity
                     />
                 )}
