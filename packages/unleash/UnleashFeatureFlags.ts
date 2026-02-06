@@ -277,6 +277,7 @@ enum MeetFeatureFlag {
     MeetDebugMode = 'MeetDebugMode',
     MeetSinglePeerConnection = 'MeetSinglePeerConnection',
     MeetQualityTelemetry = 'MeetQualityTelemetry',
+    MeetAllowLiveKitDebugReporting = 'MeetAllowLiveKitDebugReporting',
 }
 
 enum LumoFeatureFlag {
