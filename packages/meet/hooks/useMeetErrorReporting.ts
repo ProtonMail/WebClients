@@ -1,3 +1,5 @@
+import { useCallback } from 'react';
+
 import type { SeverityLevel } from '@sentry/browser';
 
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
@@ -12,20 +14,23 @@ interface ReportMeetErrorOptions {
 export const useMeetErrorReporting = () => {
     const shouldReportError = useFlag('MeetErrorReporting');
 
-    const reportMeetError = (label: string, options?: ReportMeetErrorOptions | unknown) => {
-        if (shouldReportError) {
-            if (options && typeof options === 'object' && 'context' in options) {
-                const { level = 'error', context, fingerprint } = options as ReportMeetErrorOptions;
-                captureMessage(label, {
-                    level,
-                    extra: context,
-                    fingerprint,
-                });
-            } else {
-                captureMessage(label, { level: 'error', extra: { error: options } });
+    const reportMeetError = useCallback(
+        (label: string, options?: ReportMeetErrorOptions | unknown) => {
+            if (shouldReportError) {
+                if (options && typeof options === 'object' && 'context' in options) {
+                    const { level = 'error', context, fingerprint } = options as ReportMeetErrorOptions;
+                    captureMessage(label, {
+                        level,
+                        extra: context,
+                        fingerprint,
+                    });
+                } else {
+                    captureMessage(label, { level: 'error', extra: { error: options } });
+                }
             }
-        }
-    };
+        },
+        [shouldReportError]
+    );
 
     return reportMeetError;
 };
