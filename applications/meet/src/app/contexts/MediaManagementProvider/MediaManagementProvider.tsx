@@ -10,6 +10,7 @@ import { useMeetErrorReporting } from '@proton/meet';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
+import { useStableCallback } from '../../hooks/useStableCallback';
 import { preloadBackgroundProcessorAssets } from '../../processors/background-processor/createBackgroundProcessor';
 import type { DeviceState, SwitchActiveDevice } from '../../types';
 import { supportsSetSinkId } from '../../utils/browser';
@@ -320,6 +321,11 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
         speakerState.preferredDevice?.deviceId,
     ]);
 
+    const cleanupPreviews = useStableCallback(async () => {
+        await cleanupCameraPreview();
+        await cleanupMicrophoneVolumeAnalysis();
+    });
+
     useEffect(() => {
         const wasConnectedRef = { current: false };
         const cleanupInProgressRef = { current: false };
@@ -338,6 +344,7 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
                     localParticipant.setScreenShareEnabled(false),
                     localParticipant.setCameraEnabled(false),
                     localParticipant.setMicrophoneEnabled(false),
+                    cleanupPreviews(),
                 ]);
             } catch (error) {
                 // eslint-disable-next-line no-console
