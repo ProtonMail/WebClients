@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 
 import { RoomContext } from '@livekit/components-react';
-import { LogLevel, Room, Track, setLogExtension } from 'livekit-client';
+import { LogLevel, Room, setLogExtension, setLogLevel } from 'livekit-client';
 
 import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
 import useFlag from '@proton/unleash/useFlag';
@@ -10,7 +10,7 @@ import { MediaManagementProvider } from '../../contexts/MediaManagementProvider/
 import { SubscriptionManagementProvider } from '../../contexts/SubscriptionManagementProvider';
 import { UIStateProvider } from '../../contexts/UIStateContext';
 import { audioQuality, legacyQualityConstants, qualityConstants, screenShareQuality } from '../../qualityConstants';
-import type { DecryptionErrorLog, KeyRotationLog } from '../../types';
+import type { KeyRotationLog } from '../../types';
 import { QualityScenarios } from '../../types';
 import { ProtonMeetKeyProvider } from '../../utils/ProtonMeetKeyProvider';
 import { ProtonMeetContainer, ProtonMeetContainerWithUser } from './ProtonMeetContainer';
@@ -26,57 +26,20 @@ export const WrappedProtonMeetContainer = ({ guestMode }: { guestMode?: boolean 
     const workerRef = useRef<Worker | null>(null);
 
     const [keyRotationLogs, setKeyRotationLogs] = useState<KeyRotationLog[]>([]);
-    const [decryptionErrorLogs, setDecryptionErrorLogs] = useState<DecryptionErrorLog[]>([]);
 
-    const isMeetAllowDecryptionErrorReportingEnabled = useFlag('MeetAllowDecryptionErrorReporting');
     const isMeetVp9Allowed = useFlag('MeetVp9');
     const isMeetHigherBitrate = useFlag('MeetHigherBitrate');
     const isMeetSinglePeerConnectionEnabled = useFlag('MeetSinglePeerConnection');
+    const isLiveKitDebugReportingAllowed = useFlag('MeetAllowLiveKitDebugReporting');
 
     useEffect(() => {
-        if (!isLogExtensionSetup.current && isMeetAllowDecryptionErrorReportingEnabled) {
+        if (!isLogExtensionSetup.current && isLiveKitDebugReportingAllowed) {
             isLogExtensionSetup.current = true;
 
-            setLogExtension((level, msg) => {
-                if (level === LogLevel.error || level === LogLevel.warn) {
-                    const missingKeyMatch = msg.match(/missing key at index (\d+) for participant (.+)/);
-                    const [, keyIndex, participantIdentity] = missingKeyMatch ?? [];
+            setLogLevel(LogLevel.debug);
 
-                    const receiverIdentity = roomRef.current?.localParticipant?.identity;
-                    const occupiedKeychainIndexes = keyProviderRef.current.getKeychainIndexInformation();
-
-                    if (keyIndex === undefined || !participantIdentity || keyRotationLogs.length === 0) {
-                        return;
-                    }
-
-                    const senderParticipant = roomRef.current?.remoteParticipants.get(participantIdentity);
-                    const senderTracks = Array.from(senderParticipant?.trackPublications.values() ?? []);
-                    const countBySource = (source: Track.Source) =>
-                        senderTracks.filter((pub) => pub.source === source).length;
-
-                    const decryptionErrorLog: DecryptionErrorLog = {
-                        keyIndex: Number(keyIndex),
-                        participantIdentity,
-                        receiverIdentity: receiverIdentity ?? '',
-                        tracksOfSender: {
-                            microphone: countBySource(Track.Source.Microphone),
-                            camera: countBySource(Track.Source.Camera),
-                            screenShareVideo: countBySource(Track.Source.ScreenShare),
-                            screenShareAudio: countBySource(Track.Source.ScreenShareAudio),
-                        },
-                    };
-
-                    reportMeetError(`[LiveKit] Missing key at index error detected`, {
-                        level: 'error',
-                        context: {
-                            occupiedKeychainIndexes,
-                            keyRotationLogs,
-                            ...decryptionErrorLog,
-                        },
-                    });
-
-                    setDecryptionErrorLogs((prev) => [...prev, decryptionErrorLog]);
-                }
+            setLogExtension((level, msg, context) => {
+                reportMeetError(`[LiveKit][room: ${roomRef.current?.name}] ${msg}`, { level, context });
             });
         }
     }, []);
@@ -145,7 +108,6 @@ export const WrappedProtonMeetContainer = ({ guestMode }: { guestMode?: boolean 
                                 hasSubscription={false}
                                 keyRotationLogs={keyRotationLogs}
                                 setKeyRotationLogs={setKeyRotationLogs}
-                                decryptionErrorLogs={decryptionErrorLogs}
                             />
                         ) : (
                             <ProtonMeetContainerWithUser
@@ -154,7 +116,6 @@ export const WrappedProtonMeetContainer = ({ guestMode }: { guestMode?: boolean 
                                 keyProvider={keyProviderRef.current}
                                 keyRotationLogs={keyRotationLogs}
                                 setKeyRotationLogs={setKeyRotationLogs}
-                                decryptionErrorLogs={decryptionErrorLogs}
                             />
                         )}
                     </UIStateProvider>
