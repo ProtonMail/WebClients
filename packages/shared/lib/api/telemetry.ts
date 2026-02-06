@@ -6,6 +6,7 @@ export enum TelemetryMeasurementGroups {
     accountOrgLogoUpload = 'account.web.org_logo_upload',
     accountSecurityCheckup = 'account.web.security_checkup',
     accountRecoverySettings = 'account.web.recovery_settings',
+    accountResetPassword = 'account.web.reset_password',
     accountDashboard = 'account.web.dashboard',
     alwaysOnUpsell = 'any.web.always_on_upsell',
     calendarEncryptedSearch = 'calendar.web.encrypted_search',
@@ -196,6 +197,15 @@ export enum TelemetryAccountDashboardEvents {
 export enum TelemetryRecoverySettingsEvents {
     page_load = 'page_load',
     setting_enabled = 'setting_enabled',
+}
+
+export enum TelemetryResetPasswordEvents {
+    page_load = 'page_load',
+    recovery_methods_requested = 'recovery_methods_requested',
+    code_sent = 'code_sent',
+    method_validated = 'method_validated',
+    success = 'success',
+    failure = 'failure',
 }
 
 export enum TelemetryKeyTransparencyErrorEvents {
@@ -412,6 +422,7 @@ export type TelemetryEvents =
     | TelemetryAccountCancellationEvents
     | TelemetryAccountDashboardEvents
     | TelemetryRecoverySettingsEvents
+    | TelemetryResetPasswordEvents
     | TelemetryKeyTransparencyErrorEvents
     | TelemetryMailEvents
     | TelemetryMailListEvents
