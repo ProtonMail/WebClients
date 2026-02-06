@@ -11,6 +11,7 @@ interface SideBarProps {
     absoluteHeader?: boolean;
     isScrolled?: boolean;
     paddingClassName?: string;
+    paddingHeaderClassName?: string;
 }
 
 export const SideBar = ({
@@ -20,6 +21,7 @@ export const SideBar = ({
     absoluteHeader = false,
     isScrolled = false,
     paddingClassName = 'p-4',
+    paddingHeaderClassName = '',
 }: SideBarProps) => {
     return (
         <div
@@ -33,7 +35,8 @@ export const SideBar = ({
                     'side-bar-header-wrapper flex items-center justify-space-between w-full flex-nowrap',
                     absoluteHeader && 'absolute top-0 left-0 px-4 pt-4',
                     isScrolled && 'scrolled',
-                    !!header && 'pb-4'
+                    !!header && 'pb-4',
+                    paddingHeaderClassName
                 )}
             >
                 {header}
