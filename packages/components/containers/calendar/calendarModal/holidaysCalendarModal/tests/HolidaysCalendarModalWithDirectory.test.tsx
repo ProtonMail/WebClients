@@ -40,8 +40,8 @@ jest.mock('@proton/components/hooks/useConfig', () => ({
 }));
 
 jest.mock('@proton/components/hooks/useNotifications');
-jest.mock('@proton/calendar/useCalendarUserSettings', () => ({
-    ...jest.requireActual('@proton/calendar/useCalendarUserSettings'),
+jest.mock('@proton/calendar/calendarUserSettings/hooks', () => ({
+    ...jest.requireActual('@proton/calendar/calendarUserSettings/hooks'),
     useCalendarUserSettings: jest.fn(),
 }));
 

@@ -38,10 +38,10 @@ jest.mock('proton-mail/hooks/mailbox/notifications/useNewEmailNotification', () 
     __esModule: true,
     default: jest.fn(),
 }));
-jest.mock('@proton/calendar/useCalendars', () => ({
+jest.mock('@proton/calendar/calendars/hooks', () => ({
     useCalendars: jest.fn(),
 }));
-jest.mock('@proton/calendar/useCalendarUserSettings', () => ({
+jest.mock('@proton/calendar/calendarUserSettings/hooks', () => ({
     useCalendarUserSettings: jest.fn(),
 }));
 jest.mock('proton-mail/hooks/mailbox/usePreLoadElements', () => ({

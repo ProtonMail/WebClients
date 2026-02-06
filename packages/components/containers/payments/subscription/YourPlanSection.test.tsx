@@ -52,7 +52,7 @@ jest.mock('@proton/account/addresses/hooks');
 const mockUseAddresses = useAddresses as jest.MockedFunction<any>;
 mockUseAddresses.mockReturnValue([addresses, false]);
 
-jest.mock('@proton/calendar/useCalendars');
+jest.mock('@proton/calendar/calendars/hooks');
 const mockUseCalendars = useCalendars as jest.MockedFunction<any>;
 mockUseCalendars.mockReturnValue([calendars, false]);
 

@@ -89,7 +89,7 @@ jest.mock('@proton/components/hooks/drawer/useDrawer', () => () => {
     return { toggleDrawerApp: jest.fn() };
 });
 
-jest.mock('@proton/calendar/useCalendarUserSettings', () => ({
+jest.mock('@proton/calendar/calendarUserSettings/hooks', () => ({
     useGetCalendarUserSettings: jest.fn(),
     useCalendarUserSettings: jest.fn(() => [
         {
