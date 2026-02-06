@@ -100,39 +100,39 @@ const MoreDropdown = ({
     const showDelete = canEmpty(labelID, elementIDs, selectedIDs, isSearch);
     const none = !showMove && !showAdditionalDropdowns && !showMoveAllToArchive && !showMoveAllToTrash && !showDelete;
 
-    const additionalDropdowns: DropdownRender[] | undefined = showAdditionalDropdowns
-        ? [
-              {
-                  contentProps: moveDropdownContentProps,
-                  render: ({ onClose, onLock }) => (
-                      <MoveDropdown
-                          labelID={labelID}
-                          selectedIDs={selectedIDs}
-                          onClose={onClose}
-                          onLock={onLock}
-                          isMessage={!isConversationMode(labelID, mailSettings)}
-                          selectAll={selectAll}
-                          onCheckAll={onCheckAll}
-                      />
-                  ),
-              },
-              {
-                  contentProps: labelDropdownContentProps,
-                  render: ({ onClose, onLock }) => (
-                      <LabelDropdown
-                          labelID={labelID}
-                          selectedIDs={selectedIDs}
-                          onClose={onClose}
-                          onLock={onLock}
-                          selectAll={selectAll}
-                      />
-                  ),
-              },
-          ]
-        : undefined;
+    const additionalDropdowns: DropdownRender[] = [];
+    if (showAdditionalDropdowns) {
+        additionalDropdowns.push({
+            contentProps: moveDropdownContentProps,
+            render: ({ onClose, onLock }) => (
+                <MoveDropdown
+                    labelID={labelID}
+                    selectedIDs={selectedIDs}
+                    onClose={onClose}
+                    onLock={onLock}
+                    isMessage={!isConversationMode(labelID, mailSettings)}
+                    selectAll={selectAll}
+                    onCheckAll={onCheckAll}
+                />
+            ),
+        });
+
+        additionalDropdowns.push({
+            contentProps: labelDropdownContentProps,
+            render: ({ onClose, onLock }) => (
+                <LabelDropdown
+                    labelID={labelID}
+                    selectedIDs={selectedIDs}
+                    onClose={onClose}
+                    onLock={onLock}
+                    selectAll={selectAll}
+                />
+            ),
+        });
+    }
 
     if (selectedIDs.length && (canSnooze || canUnsnooze)) {
-        additionalDropdowns?.push({
+        additionalDropdowns.push({
             contentProps: SnoozeToolbarDropdownStepWrapperProps,
             render: ({ onClose, onLock }) => (
                 <SnoozeToolbarDropdownStepWrapper
