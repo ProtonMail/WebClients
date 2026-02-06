@@ -68,7 +68,7 @@ const Toolbar = (props: Props) => {
 
     const isRetentionPoliciesEnabled = useFlag('DataRetentionPolicy');
 
-    const { categoryViewAccess } = useCategoriesView();
+    const { shouldShowTabs } = useCategoriesView();
 
     const viewPortIsNarrow = breakpoints.viewportWidth['<=small'] || breakpoints.viewportWidth.medium;
     const listInView = columnMode || !elementID;
@@ -87,7 +87,7 @@ const Toolbar = (props: Props) => {
         BASE_TOOLBAR_CLASSNAME,
         // In the newsletter subscription list, the toolbar must have no background and no border
         isLabelIDNewsletterSubscription(props.labelID) && 'toolbar--no-bg toolbar--in-container',
-        categoryViewAccess && 'toolbar--in-container'
+        shouldShowTabs && 'toolbar--in-container'
     );
 
     const selectAllProps = pick(props, ['labelID', 'elementIDs', 'checkedIDs', 'onCheck', 'loading']);
