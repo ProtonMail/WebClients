@@ -117,7 +117,7 @@ export const itemEditDismiss = createOptimisticAction(
     ({ payload }) => getItemEntityID(payload)
 );
 
-export const itemsEditEvent = createAction('items::edit::event', (items: ItemRevision[]) => withCache({ payload: { items } }));
+export const itemsUpdated = createAction('items::updated', (items: ItemRevision[]) => withCache({ payload: { items } }));
 
 export const itemMove = requestActionsFactory<ItemMoveIntent, ItemMoveDTO>('item::move')({
     key: getItemKey<UniqueItem>,

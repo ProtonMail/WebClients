@@ -12,7 +12,7 @@ import { parseShareResponse } from '@proton/pass/lib/shares/share.parser';
 import { getShareLatestEventId, requestShare } from '@proton/pass/lib/shares/share.requests';
 import {
     itemsDeleteEvent,
-    itemsEditEvent,
+    itemsUpdated,
     itemsUsedEvent,
     shareEvent,
     shareEventDelete,
@@ -104,7 +104,7 @@ const onShareEvent = (shareId: string) =>
                 )) as Maybe<ItemRevision>[]
             ).filter(truthy);
 
-            yield put(itemsEditEvent(updatedItems));
+            yield put(itemsUpdated(updatedItems));
         }
 
         if (FullRefresh) {
@@ -114,7 +114,7 @@ const onShareEvent = (shareId: string) =>
             if (share) {
                 yield put(shareEventUpdate(share));
                 const updatedItems: ItemRevision[] = yield requestItemsForShareId(shareId);
-                yield put(itemsEditEvent(updatedItems));
+                yield put(itemsUpdated(updatedItems));
             }
         }
 
