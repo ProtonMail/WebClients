@@ -323,11 +323,11 @@ export const labelConversationsPending = (
 
         // DECREASE count in old locations
         conversation.Labels?.forEach((label) => {
-            const messageCountState = state.value?.find((counter) => counter.LabelID === label.ID);
+            const conversationCountState = state.value?.find((counter) => counter.LabelID === label.ID);
 
             const hasUnreadInLabel = getContextNumUnread(conversation, label.ID) > 0;
 
-            if (!messageCountState) {
+            if (!conversationCountState) {
                 return;
             }
 
@@ -339,10 +339,10 @@ export const labelConversationsPending = (
             if (isSystemLabel(label.ID) || isCustomLabel(label.ID, labels)) {
                 // If moving to TRASH or SPAM, labels are removed
                 if (destinationLabelID === MAILBOX_LABEL_IDS.TRASH || destinationLabelID === MAILBOX_LABEL_IDS.SPAM) {
-                    messageCountState.Total = safeDecreaseCount(messageCountState?.Total, 1);
+                    conversationCountState.Total = safeDecreaseCount(conversationCountState?.Total, 1);
 
                     if (hasUnreadInLabel) {
-                        messageCountState.Unread = safeDecreaseCount(messageCountState?.Unread, 1);
+                        conversationCountState.Unread = safeDecreaseCount(conversationCountState?.Unread, 1);
                     }
                 }
 
@@ -352,9 +352,9 @@ export const labelConversationsPending = (
 
             // When changing the category, remove the messages from the old category
             if (isCategoryLabel(label.ID) && isCategoryLabel(destinationLabelID) && destinationLabelID !== label.ID) {
-                messageCountState.Total = safeDecreaseCount(messageCountState?.Total, 1);
+                conversationCountState.Total = safeDecreaseCount(conversationCountState?.Total, 1);
                 if (hasUnreadInLabel) {
-                    messageCountState.Unread = safeDecreaseCount(messageCountState?.Unread, 1);
+                    conversationCountState.Unread = safeDecreaseCount(conversationCountState?.Unread, 1);
                 }
                 return;
             }
@@ -370,9 +370,9 @@ export const labelConversationsPending = (
 
             // Remove the conversation messages from all locations (except the destination)
             if (destinationLabelID !== label.ID) {
-                messageCountState.Total = safeDecreaseCount(messageCountState?.Total, 1);
+                conversationCountState.Total = safeDecreaseCount(conversationCountState?.Total, 1);
                 if (hasUnreadInLabel) {
-                    messageCountState.Unread = safeDecreaseCount(messageCountState?.Unread, 1);
+                    conversationCountState.Unread = safeDecreaseCount(conversationCountState?.Unread, 1);
                 }
 
                 // If items are moving out from TRASH or SPAM, we need to add them to ALMOST_ALL_MAIL count
