@@ -10,6 +10,7 @@ import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
+import { useHasMeetProductAccess } from '@proton/meet/hooks/useHasMeetProductAccess';
 import { updateCalendarUserSettings } from '@proton/shared/lib/api/calendars';
 import { AutoAddVideoConferenceLinkProvider } from '@proton/shared/lib/calendar/constants';
 import { getClosestLocaleCode } from '@proton/shared/lib/i18n/helper';
@@ -36,7 +37,9 @@ const CalendarInvitationsSection = ({
     const [loadingAutoImportInvite, withLoadingAutoImportInvite] = useLoading();
     const [loadingAutoAddMeetLink, withLoading] = useLoading();
 
-    const isMeetVideoConferenceEnabled = useFlag('NewScheduleOption');
+    const hasMeetProductAccess = useHasMeetProductAccess();
+
+    const isMeetVideoConferenceEnabled = useFlag('NewScheduleOption') && hasMeetProductAccess;
 
     const handleChange = async (data: Partial<CalendarUserSettings>) => {
         await api(updateCalendarUserSettings(data));
