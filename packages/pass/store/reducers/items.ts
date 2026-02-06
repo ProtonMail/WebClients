@@ -27,7 +27,7 @@ import {
     itemTrash,
     itemUnpinSuccess,
     itemsDeleteEvent,
-    itemsEditEvent,
+    itemsUpdated,
     itemsUsedEvent,
     resolveAddressMonitor,
     restoreTrashProgress,
@@ -203,7 +203,7 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
 
         if (fileLinkPending.success.match(action)) return updateItem(action.payload.item)(state);
 
-        if (itemsEditEvent.match(action)) {
+        if (itemsUpdated.match(action)) {
             const { items } = action.payload;
             return addItems(items)(state);
         }
