@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { useCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
+import { useCalendarUserSettings } from '@proton/calendar/useCalendarUserSettings';
 import {
     CalendarShortcutsModal,
     DefaultQuickSettings,

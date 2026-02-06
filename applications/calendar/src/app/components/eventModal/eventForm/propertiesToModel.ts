@@ -1,5 +1,5 @@
-import { getVideoConferencingData } from '@proton/calendar';
-import { removeVideoConfInfoFromDescription } from '@proton/calendar/components/videoConferencing/videoConfHelpers';
+import { getVideoConferencingData } from '@proton/calendar/getVideoConferencingData';
+import { removeVideoConfInfoFromDescription } from '@proton/calendar/removeVideoConfInfoFromDescription';
 import { EVENT_VERIFICATION_STATUS, MAX_CHARS_API } from '@proton/shared/lib/calendar/constants';
 import { getDtendProperty } from '@proton/shared/lib/calendar/vcalConverter';
 import { getVeventStatus } from '@proton/shared/lib/calendar/vcalHelper';

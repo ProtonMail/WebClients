@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
-import { useZoomOAuth } from '@proton/calendar';
+import { useZoomOAuth } from '@proton/calendar/useZoomOAuth';
 import Badge from '@proton/components/components/badge/Badge';
 import Icon from '@proton/components/components/icon/Icon';
 import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';

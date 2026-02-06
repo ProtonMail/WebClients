@@ -7,7 +7,7 @@ import { c } from 'ttag';
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { useGetCalendars } from '@proton/calendar/calendars/hooks';
+import { useGetCalendars } from '@proton/calendar/useCalendars';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import PlusToPlusUpsell from '@proton/components/containers/payments/subscription/PlusToPlusUpsell';
 import useAssistantFeatureEnabled from '@proton/components/hooks/assistant/useAssistantFeatureEnabled';

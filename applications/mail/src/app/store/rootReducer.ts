@@ -1,12 +1,10 @@
 import { combineReducers } from '@reduxjs/toolkit';
 
 import { protonDomainsReducer, retentionPoliciesReducer } from '@proton/account';
-import {
-    calendarSettingsReducer,
-    calendarsBootstrapReducer,
-    calendarsReducer,
-    holidaysDirectoryReducer,
-} from '@proton/calendar';
+import { calendarSettingsReducer } from '@proton/calendar/calendarSettingsReducer';
+import { calendarsBootstrapReducer } from '@proton/calendar/calendarsBootstrapReducer';
+import { calendarsReducer } from '@proton/calendar/calendarsReducer';
+import { holidaysDirectoryReducer } from '@proton/calendar/holidaysDirectoryReducer';
 import { breachesCountReducer, securityCenterReducer } from '@proton/components';
 import { conversationCountsReducer, filtersReducer, messageCountsReducer } from '@proton/mail';
 import { sharedReducers } from '@proton/redux-shared-store';

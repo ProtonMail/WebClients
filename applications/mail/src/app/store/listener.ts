@@ -1,5 +1,6 @@
 import { startAccountSessionsListener, startListeningToPlanNameChange, startPersistListener } from '@proton/account';
-import { startCalendarEventListener, startHolidaysDirectoryListener } from '@proton/calendar';
+import { startCalendarEventListener } from '@proton/calendar/startCalendarEventListener';
+import { startHolidaysDirectoryListener } from '@proton/calendar/startHolidaysDirectoryListener';
 import { startAccountSecurityListener } from '@proton/components';
 import { mailSettingsHeartbeatListener, startSharedListening } from '@proton/redux-shared-store';
 

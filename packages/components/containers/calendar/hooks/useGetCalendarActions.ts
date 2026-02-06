@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 import { useGetAddresses } from '@proton/account/addresses/hooks';
-import { useGetCalendarBootstrap } from '@proton/calendar/calendarBootstrap/hooks';
+import { useGetCalendarBootstrap } from '@proton/calendar/useGetCalendarBootstrap';
 import { CALENDAR_MODAL_TYPE } from '@proton/components/containers/calendar/calendarModal/interface';
 import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';

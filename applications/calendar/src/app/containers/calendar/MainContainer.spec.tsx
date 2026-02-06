@@ -5,7 +5,7 @@ import userEvent from '@testing-library/user-event';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { createMemoryHistory } from 'history';
 
-import { useCalendars } from '@proton/calendar/calendars/hooks';
+import { useCalendars } from '@proton/calendar/useCalendars';
 import { CacheProvider, useContactEmailsCache } from '@proton/components';
 import ModalsProvider from '@proton/components/containers/modals/Provider';
 import {
@@ -166,7 +166,7 @@ jest.mock('@proton/calendar/calendarBootstrap/hooks', () => ({
     ]),
 }));
 
-jest.mock('@proton/calendar/calendarUserSettings/hooks', () => ({
+jest.mock('@proton/calendar/useCalendarUserSettings', () => ({
     useGetCalendarUserSettings: jest.fn(),
     useCalendarUserSettings: jest.fn(() => [
         {
@@ -214,7 +214,7 @@ jest.mock('@proton/components/containers/contacts/ContactEmailsProvider', () => 
     default: ({ children }: any) => <>{children}</>,
 }));
 jest.mock('../../containers/alarms/useCalendarAlarmsEventListener', () => () => ({}));
-jest.mock('@proton/calendar/calendars/hooks', () =>
+jest.mock('@proton/calendar/useCalendars', () =>
     jest.fn(() => [
         [
             {

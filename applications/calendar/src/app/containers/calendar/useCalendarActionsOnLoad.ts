@@ -1,8 +1,9 @@
 import { useCallback, useEffect, useRef } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 
-import { calendarUrlQueryParams, getQueryParamsStatus } from '@proton/calendar';
-import { changeCalendarVisiblity } from '@proton/calendar/calendars/actions';
+import { calendarUrlQueryParams } from '@proton/calendar/calendarUrlQueryParams';
+import { changeCalendarVisiblity } from '@proton/calendar/changeCalendarVisiblity';
+import { getQueryParamsStatus } from '@proton/calendar/getQueryParamsStatus';
 import { useNotifications } from '@proton/components';
 import type { Address } from '@proton/shared/lib/interfaces';
 import type { CalendarBootstrap, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';

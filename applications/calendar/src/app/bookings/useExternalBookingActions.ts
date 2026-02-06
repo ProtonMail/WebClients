@@ -3,8 +3,8 @@ import { useHistory } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { useGetAddresses } from '@proton/account/addresses/hooks';
-import { useGetCalendarKeys } from '@proton/calendar/calendarBootstrap/keys';
-import { useGetCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
+import { useGetCalendarKeys } from '@proton/calendar/useGetCalendarKeys';
+import { useGetCalendarUserSettings } from '@proton/calendar/useGetCalendarUserSettings';
 import { useApi, useNotifications } from '@proton/components';
 import { useGetCanonicalEmailsMap } from '@proton/components/hooks/useGetCanonicalEmailsMap';
 import { useGetVtimezonesMap } from '@proton/components/hooks/useGetVtimezonesMap';

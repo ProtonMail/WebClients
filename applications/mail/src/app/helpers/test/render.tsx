@@ -11,7 +11,7 @@ import type { History } from 'history';
 import { createMemoryHistory } from 'history';
 
 import { getModelState } from '@proton/account/test';
-import { createCalendarModelEventManager } from '@proton/calendar/calendarModelEventManager';
+import { createCalendarModelEventManager } from '@proton/calendar/createCalendarModelEventManager';
 import type { PrivateAuthenticationStore } from '@proton/components';
 import {
     ApiContext,

@@ -66,8 +66,8 @@ jest.mock('@proton/features/useFeature', () => () => {
     };
 });
 
-jest.mock('@proton/calendar/calendars/hooks', () => {});
-jest.mock('@proton/calendar/calendarUserSettings/hooks', () => ({
+jest.mock('@proton/calendar/useCalendars', () => {});
+jest.mock('@proton/calendar/useCalendarUserSettings', () => ({
     useCalendarUserSettings: () => [],
     useGetCalendarUserSettings: () => () => [],
 }));
@@ -76,7 +76,7 @@ jest.mock('@proton/components/containers/eventManager/calendar/CalendarModelEven
         subscribe: jest.fn(),
     })),
 }));
-jest.mock('@proton/calendar/calendars/hooks', () => ({
+jest.mock('@proton/calendar/useCalendars', () => ({
     useCalendars: jest.fn().mockReturnValue([
         [
             {

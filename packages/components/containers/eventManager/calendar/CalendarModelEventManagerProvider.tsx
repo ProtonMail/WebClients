@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 import { createContext, useContext } from 'react';
 
-import type { CalendarModelEventManager } from '@proton/calendar';
+import type { CalendarModelEventManager } from '@proton/calendar/types/CalendarModelEventManager';
 
 const CalendarModelEventManagerContext = createContext<CalendarModelEventManager | null>(null);
 

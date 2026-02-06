@@ -2,7 +2,7 @@ import { useCallback } from 'react';
 
 import { getUnixTime } from 'date-fns';
 
-import { useGetCalendars } from '@proton/calendar/calendars/hooks';
+import { useGetCalendars } from '@proton/calendar/useCalendars';
 import { useApi } from '@proton/components';
 import { CacheType } from '@proton/redux-utilities';
 import { getEvent, updateMember } from '@proton/shared/lib/api/calendars';

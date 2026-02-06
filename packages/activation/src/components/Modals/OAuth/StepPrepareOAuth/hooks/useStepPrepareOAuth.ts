@@ -14,7 +14,7 @@ import {
     selectOauthImportStateProducts,
 } from '@proton/activation/src/logic/draft/oauthDraft/oauthDraft.selector';
 import { useEasySwitchDispatch, useEasySwitchSelector } from '@proton/activation/src/logic/store';
-import { useCalendars } from '@proton/calendar/calendars/hooks';
+import { useCalendars } from '@proton/calendar/useCalendars';
 import { FeatureCode, useFeature } from '@proton/features';
 import { useFolders, useLabels } from '@proton/mail';
 import { getVisualCalendars } from '@proton/shared/lib/calendar/calendar';

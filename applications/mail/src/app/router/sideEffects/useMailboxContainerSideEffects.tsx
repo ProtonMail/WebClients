@@ -1,5 +1,5 @@
-import { useCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
-import { useCalendars } from '@proton/calendar/calendars/hooks';
+import { useCalendarUserSettings } from '@proton/calendar/useCalendarUserSettings';
+import { useCalendars } from '@proton/calendar/useCalendars';
 import { useInboxDesktopBadgeCount } from '@proton/components';
 
 import { useMailCategoriesRedirection } from 'proton-mail/components/categoryView/useMailCategoriesRedirection';

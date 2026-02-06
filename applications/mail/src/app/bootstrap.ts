@@ -12,7 +12,7 @@ import {
 import * as bootstrap from '@proton/account/bootstrap';
 import { bootstrapEvent } from '@proton/account/bootstrap/action';
 import { getDecryptedPersistedState } from '@proton/account/persist/helper';
-import { createCalendarModelEventManager } from '@proton/calendar';
+import { createCalendarModelEventManager } from '@proton/calendar/createCalendarModelEventManager';
 import { setupGuestCrossStorage } from '@proton/cross-storage/account-impl/guestInstance';
 import { FeatureCode, fetchFeatures } from '@proton/features';
 import { categoriesThunk, contactEmailsThunk, mailSettingsThunk } from '@proton/mail';

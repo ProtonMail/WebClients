@@ -13,12 +13,10 @@ import {
     samlReducer,
 } from '@proton/account';
 import { oauthTokenReducer } from '@proton/activation/src/logic/oauthToken';
-import {
-    calendarSettingsReducer,
-    calendarsBootstrapReducer,
-    calendarsReducer,
-    holidaysDirectoryReducer,
-} from '@proton/calendar';
+import { calendarSettingsReducer } from '@proton/calendar/calendarSettingsReducer';
+import { calendarsBootstrapReducer } from '@proton/calendar/calendarsBootstrapReducer';
+import { calendarsReducer } from '@proton/calendar/calendarsReducer';
+import { holidaysDirectoryReducer } from '@proton/calendar/holidaysDirectoryReducer';
 import { filtersReducer, incomingAddressForwardingsReducer, outgoingAddressForwardingsReducer } from '@proton/mail';
 import { sharedReducers } from '@proton/redux-shared-store';
 
