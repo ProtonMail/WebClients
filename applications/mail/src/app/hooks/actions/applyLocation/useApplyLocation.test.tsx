@@ -6,11 +6,13 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
 import { SPAM_ACTION } from '@proton/shared/lib/mail/mailSettings';
 import { mockUseFolders, mockUseLabels } from '@proton/testing';
+import { mockUseCategoriesData } from '@proton/testing/lib/mockUseCategoriesData';
 import { mockUseMailSettings } from '@proton/testing/lib/mockUseMailSettings';
 
 import { SUCCESS_NOTIFICATION_EXPIRATION } from 'proton-mail/constants';
 import { GlobalModalContext } from 'proton-mail/containers/globalModals/GlobalModalProvider';
 import { ModalType } from 'proton-mail/containers/globalModals/inteface';
+import 'proton-mail/helpers/location/applyLocationPerformanceTracker';
 import { labelMessages, unlabelMessages } from 'proton-mail/store/mailbox/mailboxActions';
 
 import { APPLY_LOCATION_TYPES } from './interface';
@@ -36,6 +38,19 @@ jest.mock('proton-mail/hooks/mailbox/useElements', () => ({
     useGetElementByID: () => mockUseGetElementByID,
 }));
 
+const mockMessageValidateMove = jest.fn();
+const mockConversationValidateMove = jest.fn();
+jest.mock('proton-mail/helpers/location/MoveEngine/useMoveEngine', () => ({
+    useMoveEngine: () => ({
+        messageMoveEngine: {
+            validateMove: mockMessageValidateMove,
+        },
+        conversationMoveEngine: {
+            validateMove: mockConversationValidateMove,
+        },
+    }),
+}));
+
 const mockDispatch = jest.fn();
 jest.mock('proton-mail/store/hooks', () => ({
     useMailDispatch: jest.fn(() => mockDispatch),
@@ -54,6 +69,18 @@ jest.mock('proton-mail/hooks/actions/useCreateFilters', () => ({
             undoCreateFilters: jest.fn(),
         })),
     })),
+}));
+
+const mockPerformance = {
+    mark: jest.fn(),
+    clearMarks: jest.fn(),
+    getEntriesByName: jest.fn(),
+    getEntriesByType: jest.fn(),
+    now: jest.fn(),
+};
+
+jest.mock('proton-mail/helpers/location/applyLocationPerformanceTracker', () => ({
+    getApplyLocationTracker: jest.fn(() => mockPerformance),
 }));
 
 const mockedCreateNotification = jest.fn();
@@ -87,11 +114,23 @@ const wrapper = ({ children }: { children: ReactNode }) => (
 
 describe('useApplyLocation', () => {
     beforeEach(() => {
+        mockUseCategoriesData();
         mockUseFolders();
         mockUseLabels();
         mockUseMailSettings();
         mockDispatch.mockClear();
         mockDispatch.mockResolvedValue({ payload: [] });
+
+        mockMessageValidateMove.mockImplementation((_destinationLabelID: string, elements: any[]) => ({
+            deniedElements: [],
+            allowedElements: elements,
+            notApplicableElements: [],
+        }));
+        mockConversationValidateMove.mockImplementation((_destinationLabelID: string, elements: any[]) => ({
+            deniedElements: [],
+            allowedElements: elements,
+            notApplicableElements: [],
+        }));
     });
 
     afterEach(() => {
@@ -129,11 +168,18 @@ describe('useApplyLocation', () => {
     describe('messages tests', () => {
         describe('messages notifications tests', () => {
             it('should display error notification when only denied moveds', async () => {
+                const deniedElement = { ID: '1', ConversationID: '123', Flags: MESSAGE_FLAGS.FLAG_SENT };
+                mockMessageValidateMove.mockReturnValueOnce({
+                    deniedElements: [deniedElement],
+                    allowedElements: [],
+                    notApplicableElements: [],
+                });
+
                 const { result } = renderHook(() => useApplyLocation(), { wrapper });
 
                 await result.current.applyLocation({
                     type: APPLY_LOCATION_TYPES.MOVE,
-                    elements: [{ ID: '1', ConversationID: '123', Flags: MESSAGE_FLAGS.FLAG_SENT }],
+                    elements: [deniedElement],
                     destinationLabelID: MAILBOX_LABEL_IDS.INBOX,
                 });
 
@@ -144,14 +190,19 @@ describe('useApplyLocation', () => {
             });
 
             it('should not display a notification if only one is denied', async () => {
+                const deniedElement = { ID: '1', ConversationID: '123', Flags: MESSAGE_FLAGS.FLAG_SENT };
+                const allowedElement = { ID: '1', ConversationID: '123', LabelIDs: [MAILBOX_LABEL_IDS.ARCHIVE] };
+                mockMessageValidateMove.mockReturnValueOnce({
+                    deniedElements: [deniedElement],
+                    allowedElements: [allowedElement],
+                    notApplicableElements: [],
+                });
+
                 const { result } = renderHook(() => useApplyLocation(), { wrapper });
 
                 await result.current.applyLocation({
                     type: APPLY_LOCATION_TYPES.MOVE,
-                    elements: [
-                        { ID: '1', ConversationID: '123', Flags: MESSAGE_FLAGS.FLAG_SENT },
-                        { ID: '1', ConversationID: '123', LabelIDs: [MAILBOX_LABEL_IDS.ARCHIVE] },
-                    ],
+                    elements: [deniedElement, allowedElement],
                     destinationLabelID: MAILBOX_LABEL_IDS.INBOX,
                 });
 
@@ -159,11 +210,18 @@ describe('useApplyLocation', () => {
             });
 
             it('should display info notification when the move is not applicable', async () => {
+                const notApplicableElement = { ID: '1', ConversationID: '123', LabelIDs: [MAILBOX_LABEL_IDS.INBOX] };
+                mockMessageValidateMove.mockReturnValueOnce({
+                    deniedElements: [],
+                    allowedElements: [],
+                    notApplicableElements: [notApplicableElement],
+                });
+
                 const { result } = renderHook(() => useApplyLocation(), { wrapper });
 
                 await result.current.applyLocation({
                     type: APPLY_LOCATION_TYPES.MOVE,
-                    elements: [{ ID: '1', ConversationID: '123', LabelIDs: [MAILBOX_LABEL_IDS.INBOX] }],
+                    elements: [notApplicableElement],
                     destinationLabelID: MAILBOX_LABEL_IDS.INBOX,
                 });
 
@@ -174,14 +232,19 @@ describe('useApplyLocation', () => {
             });
 
             it('should not display info notification when only one is not applicable', async () => {
+                const notApplicableElement = { ID: '1', ConversationID: '123', LabelIDs: [MAILBOX_LABEL_IDS.INBOX] };
+                const allowedElement = { ID: '1', ConversationID: '123', LabelIDs: [MAILBOX_LABEL_IDS.ARCHIVE] };
+                mockMessageValidateMove.mockReturnValueOnce({
+                    deniedElements: [],
+                    allowedElements: [allowedElement],
+                    notApplicableElements: [notApplicableElement],
+                });
+
                 const { result } = renderHook(() => useApplyLocation(), { wrapper });
 
                 await result.current.applyLocation({
                     type: APPLY_LOCATION_TYPES.MOVE,
-                    elements: [
-                        { ID: '1', ConversationID: '123', LabelIDs: [MAILBOX_LABEL_IDS.INBOX] },
-                        { ID: '1', ConversationID: '123', LabelIDs: [MAILBOX_LABEL_IDS.ARCHIVE] },
-                    ],
+                    elements: [notApplicableElement, allowedElement],
                     destinationLabelID: MAILBOX_LABEL_IDS.INBOX,
                 });
 
@@ -331,17 +394,23 @@ describe('useApplyLocation', () => {
             });
 
             it('should only dispatch the allowed element', async () => {
-                const { result } = renderHook(() => useApplyLocation(), { wrapper });
-
-                const element = {
+                const allowedElement = {
                     ID: '1',
                     ConversationID: '123',
                     LabelIDs: [MAILBOX_LABEL_IDS.ARCHIVE],
                 };
+                const notApplicableElement = { ...allowedElement, LabelIDs: [MAILBOX_LABEL_IDS.INBOX] };
+                mockMessageValidateMove.mockReturnValueOnce({
+                    deniedElements: [],
+                    allowedElements: [allowedElement],
+                    notApplicableElements: [notApplicableElement],
+                });
+
+                const { result } = renderHook(() => useApplyLocation(), { wrapper });
 
                 await result.current.applyLocation({
                     type: APPLY_LOCATION_TYPES.MOVE,
-                    elements: [element, { ...element, LabelIDs: [MAILBOX_LABEL_IDS.INBOX] }],
+                    elements: [allowedElement, notApplicableElement],
                     destinationLabelID: MAILBOX_LABEL_IDS.INBOX,
                 });
 
@@ -350,7 +419,7 @@ describe('useApplyLocation', () => {
                     destinationLabelID: MAILBOX_LABEL_IDS.INBOX,
                     labels: [],
                     folders: [],
-                    elements: [element],
+                    elements: [allowedElement],
                     conversations: [],
                     sourceLabelID: undefined,
                     spamAction: undefined,
@@ -393,22 +462,22 @@ describe('useApplyLocation', () => {
     describe('conversations tests', () => {
         describe('messages notifications tests', () => {
             it('should display error notification when only denied moveds', async () => {
+                const deniedElement = {
+                    ID: '1',
+                    Labels: [{ ID: MAILBOX_LABEL_IDS.SCHEDULED, ContextNumMessages: 10 }],
+                    NumMessages: 10,
+                };
+                mockConversationValidateMove.mockReturnValueOnce({
+                    deniedElements: [deniedElement],
+                    allowedElements: [],
+                    notApplicableElements: [],
+                });
+
                 const { result } = renderHook(() => useApplyLocation(), { wrapper });
 
                 await result.current.applyLocation({
                     type: APPLY_LOCATION_TYPES.MOVE,
-                    elements: [
-                        {
-                            ID: '1',
-                            Labels: [
-                                {
-                                    ID: MAILBOX_LABEL_IDS.SCHEDULED,
-                                    ContextNumMessages: 10,
-                                },
-                            ],
-                            NumMessages: 10,
-                        },
-                    ],
+                    elements: [deniedElement],
                     destinationLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
                 });
 
@@ -419,32 +488,27 @@ describe('useApplyLocation', () => {
             });
 
             it('should not display a notification if only one is denied', async () => {
+                const deniedElement = {
+                    ID: '1',
+                    Labels: [{ ID: MAILBOX_LABEL_IDS.SCHEDULED, ContextNumMessages: 10 }],
+                    NumMessages: 10,
+                };
+                const allowedElement = {
+                    ID: '2',
+                    Labels: [{ ID: MAILBOX_LABEL_IDS.SCHEDULED, ContextNumMessages: 1 }],
+                    NumMessages: 10,
+                };
+                mockConversationValidateMove.mockReturnValueOnce({
+                    deniedElements: [deniedElement],
+                    allowedElements: [allowedElement],
+                    notApplicableElements: [],
+                });
+
                 const { result } = renderHook(() => useApplyLocation(), { wrapper });
 
                 await result.current.applyLocation({
                     type: APPLY_LOCATION_TYPES.MOVE,
-                    elements: [
-                        {
-                            ID: '1',
-                            Labels: [
-                                {
-                                    ID: MAILBOX_LABEL_IDS.SCHEDULED,
-                                    ContextNumMessages: 10,
-                                },
-                            ],
-                            NumMessages: 10,
-                        },
-                        {
-                            ID: '2',
-                            Labels: [
-                                {
-                                    ID: MAILBOX_LABEL_IDS.SCHEDULED,
-                                    ContextNumMessages: 1,
-                                },
-                            ],
-                            NumMessages: 10,
-                        },
-                    ],
+                    elements: [deniedElement, allowedElement],
                     destinationLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
                 });
 
@@ -452,22 +516,22 @@ describe('useApplyLocation', () => {
             });
 
             it('should display info notification when the move is not applicable', async () => {
+                const notApplicableElement = {
+                    ID: '1',
+                    NumMessages: 10,
+                    Labels: [{ ID: MAILBOX_LABEL_IDS.STARRED, ContextNumMessages: 10 }],
+                };
+                mockConversationValidateMove.mockReturnValueOnce({
+                    deniedElements: [],
+                    allowedElements: [],
+                    notApplicableElements: [notApplicableElement],
+                });
+
                 const { result } = renderHook(() => useApplyLocation(), { wrapper });
 
                 await result.current.applyLocation({
                     type: APPLY_LOCATION_TYPES.STAR,
-                    elements: [
-                        {
-                            ID: '1',
-                            NumMessages: 10,
-                            Labels: [
-                                {
-                                    ID: MAILBOX_LABEL_IDS.STARRED,
-                                    ContextNumMessages: 10,
-                                },
-                            ],
-                        },
-                    ],
+                    elements: [notApplicableElement],
                     destinationLabelID: MAILBOX_LABEL_IDS.STARRED,
                 });
 
@@ -478,32 +542,27 @@ describe('useApplyLocation', () => {
             });
 
             it('should not display info notification when only one is not applicable', async () => {
+                const notApplicableElement = {
+                    ID: '1',
+                    NumMessages: 10,
+                    Labels: [{ ID: MAILBOX_LABEL_IDS.STARRED, ContextNumMessages: 10 }],
+                };
+                const allowedElement = {
+                    ID: '1',
+                    NumMessages: 10,
+                    Labels: [{ ID: MAILBOX_LABEL_IDS.STARRED, ContextNumMessages: 1 }],
+                };
+                mockConversationValidateMove.mockReturnValueOnce({
+                    deniedElements: [],
+                    allowedElements: [allowedElement],
+                    notApplicableElements: [notApplicableElement],
+                });
+
                 const { result } = renderHook(() => useApplyLocation(), { wrapper });
 
                 await result.current.applyLocation({
                     type: APPLY_LOCATION_TYPES.STAR,
-                    elements: [
-                        {
-                            ID: '1',
-                            NumMessages: 10,
-                            Labels: [
-                                {
-                                    ID: MAILBOX_LABEL_IDS.STARRED,
-                                    ContextNumMessages: 10,
-                                },
-                            ],
-                        },
-                        {
-                            ID: '1',
-                            NumMessages: 10,
-                            Labels: [
-                                {
-                                    ID: MAILBOX_LABEL_IDS.STARRED,
-                                    ContextNumMessages: 1,
-                                },
-                            ],
-                        },
-                    ],
+                    elements: [notApplicableElement, allowedElement],
                     destinationLabelID: MAILBOX_LABEL_IDS.STARRED,
                 });
 
