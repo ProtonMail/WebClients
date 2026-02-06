@@ -14,6 +14,7 @@ import {
 } from '@proton/components';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import { IcChevronLeft } from '@proton/icons/icons/IcChevronLeft';
+import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import { TelemetryMailPagingControlsEvents } from '@proton/shared/lib/api/telemetry';
 
 import { isPageConsecutive } from 'proton-mail/helpers/paging';
@@ -139,7 +140,6 @@ const PagingControls = ({ loading, page: inputPage, total: inputTotal, onPage: i
                     </>
                 </DropdownButton>
                 <Button
-                    className="rotateY-180"
                     onClick={handleClickNext}
                     tabIndex={nextDisableDisabled ? -1 : undefined}
                     disabled={nextDisableDisabled}
@@ -148,7 +148,7 @@ const PagingControls = ({ loading, page: inputPage, total: inputTotal, onPage: i
                     size="tiny"
                     data-testid="toolbar:next-page"
                 >
-                    <IcChevronLeft alt={c('Action').t`Next page`} className="rtl:mirror" />
+                    <IcChevronRight alt={c('Action').t`Next page`} className="rtl:mirror" />
                 </Button>
             </div>
 
