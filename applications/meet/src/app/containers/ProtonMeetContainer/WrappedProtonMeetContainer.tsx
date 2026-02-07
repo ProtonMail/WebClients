@@ -3,7 +3,6 @@ import { useEffect, useRef, useState } from 'react';
 import { RoomContext } from '@livekit/components-react';
 import { LogLevel, Room, setLogLevel } from 'livekit-client';
 
-import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
 import useFlag from '@proton/unleash/useFlag';
 
 import { MediaManagementProvider } from '../../contexts/MediaManagementProvider/MediaManagementProvider';
@@ -18,8 +17,6 @@ import { ProtonMeetContainer, ProtonMeetContainerWithUser } from './ProtonMeetCo
 export const WrappedProtonMeetContainer = ({ guestMode }: { guestMode?: boolean }) => {
     const roomRef = useRef<Room>();
 
-    const reportMeetError = useMeetErrorReporting();
-
     const isLogExtensionSetup = useRef(false);
 
     const keyProviderRef = useRef(new ProtonMeetKeyProvider());
@@ -33,7 +30,6 @@ export const WrappedProtonMeetContainer = ({ guestMode }: { guestMode?: boolean 
     const isLiveKitDebugReportingAllowed = useFlag('MeetAllowLiveKitDebugReporting');
 
     useEffect(() => {
-        reportMeetError('Test', { context: { test: 'test' } });
         if (!isLogExtensionSetup.current && isLiveKitDebugReportingAllowed) {
             isLogExtensionSetup.current = true;
 
