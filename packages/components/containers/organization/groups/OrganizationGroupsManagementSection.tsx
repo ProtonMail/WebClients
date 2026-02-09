@@ -1,5 +1,8 @@
+import { useEffect } from 'react';
+
 import { c } from 'ttag';
 
+import { groupOwnerInvitesThunk } from '@proton/account/groupOwnerInvites';
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { Card } from '@proton/atoms/Card/Card';
@@ -11,10 +14,12 @@ import SettingsParagraph from '@proton/components/containers/account/SettingsPar
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 import canUseGroups from '@proton/components/containers/organization/groups/canUseGroups';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
+import { useDispatch } from '@proton/redux-shared-store';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { Organization } from '@proton/shared/lib/interfaces';
 import { getIsDomainActive } from '@proton/shared/lib/organization/helper';
 import { useFlag } from '@proton/unleash';
+import noop from '@proton/utils/noop';
 
 import GroupForm from './GroupForm';
 import GroupList from './GroupList';
@@ -31,6 +36,11 @@ const OrganizationGroupsManagementSection = ({ organization }: Props) => {
     const groupsManagement = useGroupsManagement(organization);
     const [user, loadingUser] = useUser();
     const isUserGroupsNoCustomDomainEnabled = useFlag('UserGroupsNoCustomDomain');
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(groupOwnerInvitesThunk()).catch(noop);
+    }, []);
 
     if (!groupsManagement || loadingUser || !user) {
         return <Loader />;
