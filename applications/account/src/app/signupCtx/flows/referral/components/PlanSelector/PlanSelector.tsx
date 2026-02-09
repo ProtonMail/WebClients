@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-use-before-define */
 import { c } from 'ttag';
 
+import { useEligibleTrials } from '@proton/account/eligibleTrials/hooks';
 import { AppsLogos } from '@proton/components';
 import { PLANS, PLAN_NAMES, type PlanIDs } from '@proton/payments';
 import { usePaymentOptimistic } from '@proton/payments/ui';
@@ -33,9 +34,14 @@ interface Props {
 const PlanSelector = ({ onPlanClick, onCTAClick }: Props) => {
     const payments = usePaymentOptimistic();
     const { selectedPlan } = payments;
+    const { eligibleTrials } = useEligibleTrials();
 
     const isSelected = (plan: SupportedReferralPlans) => {
         return selectedPlan.name === plan;
+    };
+
+    const isEligible = (plan: SupportedReferralPlans) => {
+        return eligibleTrials.trialPlans.includes(plan);
     };
 
     const handlePlanClick = (plan: SupportedReferralPlans) => {
@@ -47,6 +53,7 @@ const PlanSelector = ({ onPlanClick, onCTAClick }: Props) => {
 
     const sharedPlanCardProps: PlanCardProps = {
         isSelected,
+        isEligible,
         onCTAClick,
     };
 
@@ -111,19 +118,23 @@ export default PlanSelector;
 
 interface PlanCardProps {
     isSelected: (plan: SupportedReferralPlans) => boolean;
+    isEligible: (plan: SupportedReferralPlans) => boolean;
     onCTAClick: () => void;
 }
 
-const noCreditCardRequired = (
-    <p className="m-0 text-center color-success text-semibold">{c('Info').t`No credit card required`}</p>
-);
+const PlanFooter = ({ plan }: { plan: PLANS }) => {
+    const { eligibleTrials } = useEligibleTrials();
 
-function BundlePlanCard({ isSelected, onCTAClick }: PlanCardProps) {
+    if (!eligibleTrials.creditCardRequiredPlans.includes(plan)) {
+        return <p className="m-0 text-center color-success text-semibold">{c('Info').t`No credit card required`}</p>;
+    }
+    return null;
+};
+
+function BundlePlanCard({ isSelected, isEligible, onCTAClick }: PlanCardProps) {
     const plan = PLANS.BUNDLE;
 
-    const selected = isSelected(plan);
-
-    if (!selected) {
+    if (!isSelected(plan) || !isEligible(plan)) {
         return null;
     }
 
@@ -148,16 +159,15 @@ function BundlePlanCard({ isSelected, onCTAClick }: PlanCardProps) {
                 />
             }
             onCTAClick={onCTAClick}
+            footer={<PlanFooter plan={plan} />}
         />
     );
 }
 
-function MailPlanCard({ isSelected, onCTAClick }: PlanCardProps) {
+function MailPlanCard({ isSelected, isEligible, onCTAClick }: PlanCardProps) {
     const plan = PLANS.MAIL;
 
-    const selected = isSelected(plan);
-
-    if (!selected) {
+    if (!isSelected(plan) || !isEligible(plan)) {
         return null;
     }
 
@@ -169,17 +179,15 @@ function MailPlanCard({ isSelected, onCTAClick }: PlanCardProps) {
             features={<MailFeatures />}
             logos={<AppsLogos logoSize={8} apps={[APPS.PROTONMAIL, APPS.PROTONCALENDAR]} />}
             onCTAClick={onCTAClick}
-            footer={noCreditCardRequired}
+            footer={<PlanFooter plan={plan} />}
         />
     );
 }
 
-function DrivePlanCard({ isSelected, onCTAClick }: PlanCardProps) {
+function DrivePlanCard({ isSelected, isEligible, onCTAClick }: PlanCardProps) {
     const plan = PLANS.DRIVE;
 
-    const selected = isSelected(plan);
-
-    if (!selected) {
+    if (!isSelected(plan) || !isEligible(plan)) {
         return null;
     }
 
@@ -191,17 +199,15 @@ function DrivePlanCard({ isSelected, onCTAClick }: PlanCardProps) {
             features={<DriveFeatures />}
             logos={<AppsLogos logoSize={8} apps={[APPS.PROTONDRIVE, APPS.PROTONDOCS]} />}
             onCTAClick={onCTAClick}
-            footer={noCreditCardRequired}
+            footer={<PlanFooter plan={plan} />}
         />
     );
 }
 
-function PassPlanCard({ isSelected, onCTAClick }: PlanCardProps) {
+function PassPlanCard({ isSelected, isEligible, onCTAClick }: PlanCardProps) {
     const plan = PLANS.PASS;
 
-    const selected = isSelected(plan);
-
-    if (!selected) {
+    if (!isSelected(plan) || !isEligible(plan)) {
         return null;
     }
 
@@ -213,17 +219,15 @@ function PassPlanCard({ isSelected, onCTAClick }: PlanCardProps) {
             features={<PassFeatures />}
             logos={<AppsLogos logoSize={8} apps={[APPS.PROTONPASS]} />}
             onCTAClick={onCTAClick}
-            footer={noCreditCardRequired}
+            footer={<PlanFooter plan={plan} />}
         />
     );
 }
 
-function VPNPlanCard({ isSelected, onCTAClick }: PlanCardProps) {
+function VPNPlanCard({ isSelected, isEligible, onCTAClick }: PlanCardProps) {
     const plan = PLANS.VPN2024;
 
-    const selected = isSelected(plan);
-
-    if (!selected) {
+    if (!isSelected(plan) || !isEligible(plan)) {
         return null;
     }
 
@@ -236,6 +240,7 @@ function VPNPlanCard({ isSelected, onCTAClick }: PlanCardProps) {
             features={<VPNFeatures />}
             logos={<AppsLogos logoSize={8} apps={[APPS.PROTONVPN_SETTINGS]} />}
             onCTAClick={onCTAClick}
+            footer={<PlanFooter plan={plan} />}
         />
     );
 }
