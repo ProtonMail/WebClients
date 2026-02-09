@@ -185,12 +185,10 @@ export const getAccountAppRoutes = ({
     isReferralProgramEnabled,
     recoveryNotification,
     organization,
-    isBreachesAccountDashboardEnabled,
     showVPNDashboard,
     showVPNDashboardVariant,
     showThemeSelection,
     assistantKillSwitch,
-    isUserGroupsMembershipFeatureEnabled,
     memberships,
     isZoomIntegrationEnabled,
     isProtonMeetIntegrationEnabled,
@@ -213,12 +211,10 @@ export const getAccountAppRoutes = ({
     isReferralProgramEnabled: boolean;
     recoveryNotification?: ThemeColor;
     organization?: OrganizationExtended;
-    isBreachesAccountDashboardEnabled: boolean;
     showVPNDashboard: boolean;
     showVPNDashboardVariant: VPNDashboardVariant | 'disabled' | undefined;
     showThemeSelection: boolean;
     assistantKillSwitch: boolean;
-    isUserGroupsMembershipFeatureEnabled: boolean;
     memberships: GroupMembershipReturn[] | undefined;
     isZoomIntegrationEnabled: boolean;
     isProtonMeetIntegrationEnabled: boolean;
@@ -610,7 +606,7 @@ export const getAccountAppRoutes = ({
                     {
                         text: DARK_WEB_MONITORING_NAME,
                         id: 'breaches',
-                        available: isBreachesAccountDashboardEnabled && !isSSOUser,
+                        available: !isSSOUser,
                     },
                     {
                         text: c('sso').t`Devices management`,
@@ -677,7 +673,7 @@ export const getAccountAppRoutes = ({
                 text: c('Title').t`Group membership`,
                 to: '/group-membership',
                 icon: 'pass-group',
-                available: isUserGroupsMembershipFeatureEnabled && (memberships?.length ?? 0) > 0,
+                available: (memberships?.length ?? 0) > 0,
                 subsections: [{ id: 'group-membership' }],
             },
         } satisfies Record<string, SectionConfig>,
