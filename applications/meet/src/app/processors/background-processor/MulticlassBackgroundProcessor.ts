@@ -96,12 +96,20 @@ export const preloadBackgroundBlurAssets = async (assetPaths?: {
 
 export default class MulticlassBackgroundProcessor extends VideoTransformer<BackgroundOptions> {
     static get isSupported() {
-        return (
+        const canvas = document.createElement('canvas');
+        const gl = canvas.getContext('webgl2');
+
+        const isSupported =
             typeof OffscreenCanvas !== 'undefined' &&
             typeof VideoFrame !== 'undefined' &&
             typeof createImageBitmap !== 'undefined' &&
-            !!document.createElement('canvas').getContext('webgl2')
-        );
+            !!gl;
+
+        if (gl) {
+            gl.getExtension('WEBGL_lose_context')?.loseContext();
+        }
+
+        return isSupported;
     }
 
     imageSegmenter?: vision.ImageSegmenter;
