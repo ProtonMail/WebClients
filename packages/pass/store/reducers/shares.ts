@@ -3,10 +3,12 @@ import type { Action, Reducer } from 'redux';
 import {
     bootSuccess,
     inviteAccept,
+    shareCreated,
+    shareDeleted,
     shareEvent,
-    shareEventDelete,
     shareEventUpdate,
     shareLeaveSuccess,
+    shareUpdated,
     sharesEventNew,
     sharesEventSync,
     sharesVisibilityEdit,
@@ -41,6 +43,18 @@ export const shares: Reducer<SharesState> = (state = {}, action: Action) => {
             : partialMerge(state, { [action.payload.shareId]: { eventId: Events.LatestEventID } });
     }
 
+    if (shareCreated.match(action)) {
+        const { share } = action.payload;
+        return fullMerge(state, { [share.shareId]: share });
+    }
+
+    if (shareUpdated.match(action)) {
+        const share = action.payload;
+        return fullMerge(state, { [share.shareId]: share });
+    }
+
+    if (shareDeleted.match(action)) return objectDelete(state, action.payload.shareId);
+
     if (vaultCreationSuccess.match(action)) {
         const { share } = action.payload;
         return fullMerge(state, { [share.shareId]: share });
@@ -60,7 +74,7 @@ export const shares: Reducer<SharesState> = (state = {}, action: Action) => {
         return fullMerge(state, { [share.shareId]: share });
     }
 
-    if (or(vaultDeleteSuccess.match, shareEventDelete.match, shareLeaveSuccess.match)(action)) {
+    if (or(vaultDeleteSuccess.match, shareLeaveSuccess.match)(action)) {
         return objectDelete(state, action.payload.shareId);
     }
 

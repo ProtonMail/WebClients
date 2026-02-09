@@ -7,13 +7,15 @@ import { withShareDedupe } from '@proton/pass/store/actions/enhancers/dedupe';
 import { withNotification } from '@proton/pass/store/actions/enhancers/notification';
 import type { ShareDedupeState } from '@proton/pass/store/reducers/shares-dedupe';
 import { requestActionsFactory } from '@proton/pass/store/request/flow';
-import type { Share, ShareId, ShareType } from '@proton/pass/types';
+import type { Share, ShareCreatedDTO, ShareId, ShareType } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 
 export const shareEventUpdate = createAction('share::event::update', (payload: Share) => pipe(withCache, withShareDedupe)({ payload }));
 
-export const shareEventDelete = createAction('share::event::delete', (share: Share) =>
-    pipe(withCache, withShareDedupe)({ payload: { shareId: share.shareId } })
+export const shareCreated = createAction('share::created', (payload: ShareCreatedDTO) => pipe(withCache, withShareDedupe)({ payload }));
+export const shareUpdated = createAction('share::updated', (payload: Share) => pipe(withCache, withShareDedupe)({ payload }));
+export const shareDeleted = createAction('share::deleted', ({ shareId }: Share) =>
+    pipe(withCache, withShareDedupe)({ payload: { shareId } })
 );
 
 export const sharesEventNew = createAction('shares::event::new', (payload: Omit<SyncResult, 'dedupe'>) =>

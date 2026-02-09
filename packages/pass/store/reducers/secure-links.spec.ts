@@ -1,11 +1,4 @@
-import {
-    itemDelete,
-    itemsDeleteEvent,
-    secureLinkCreate,
-    secureLinkRemove,
-    secureLinksGet,
-    shareEventDelete,
-} from '@proton/pass/store/actions';
+import { itemDelete, itemsDeleteEvent, secureLinkCreate, secureLinkRemove, secureLinksGet, shareDeleted } from '@proton/pass/store/actions';
 import type { SecureLink } from '@proton/pass/types';
 
 import type { SecureLinkState } from './secure-links';
@@ -131,7 +124,7 @@ describe('secure-links reducer', () => {
     });
 
     test('should remove entire share for share delete', () => {
-        const action = shareEventDelete({ shareId: 'share1' } as any);
+        const action = shareDeleted({ shareId: 'share1' } as any);
         const result = secureLinksReducer(state, action);
 
         expect(result.share1).toBeUndefined();
