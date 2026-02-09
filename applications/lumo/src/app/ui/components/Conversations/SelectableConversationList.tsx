@@ -12,6 +12,7 @@ import './SelectableConversationList.scss';
 export interface ConversationGroup {
     title: string;
     conversations: Conversation[];
+    headerAction?: React.ReactNode; // Optional action to show next to the title
 }
 
 export interface SelectableConversationListProps {
@@ -166,9 +167,17 @@ export const SelectableConversationList = ({
                     (group) =>
                         group.conversations.length > 0 && (
                             <div key={group.title} className="selectable-conversation-group">
-                                <h3 className="selectable-conversation-group-title text-sm color-weak mb-2">
-                                    {group.title}
-                                </h3>
+                                <div className="flex items-center mb-2">
+                                    <h3 className="selectable-conversation-group-title text-sm color-weak mb-0">
+                                        {group.title}
+                                    </h3>
+                                    {group.headerAction && (
+                                        <>
+                                            <div className="flex-1"></div>
+                                            <div>{group.headerAction}</div>
+                                        </>
+                                    )}
+                                </div>
                                 <div className="selectable-conversation-group-items">
                                     {group.conversations.map((conversation) => {
                                         const isSelected = selectedIds.has(conversation.id);
@@ -199,7 +208,7 @@ export const SelectableConversationList = ({
                                                             : c('collider_2025:Action').t`Open conversation`
                                                     }
                                                 >
-                                                    <div className="selectable-conversation-content flex flex-column flex-1">
+                                                    <div className="selectable-conversation-content flex flex-column">
                                                         <span className="selectable-conversation-title text-md">
                                                             {title}
                                                         </span>

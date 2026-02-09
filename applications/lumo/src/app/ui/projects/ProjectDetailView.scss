@@ -472,3 +472,10 @@ im.$media-expressions: $media-expressions;
 .selectable-conversation-item:hover .conversation-menu-button {
 	opacity: 1;
 }
+
+.keep-projects-button {
+	text-decoration: none;
+	&:hover {
+		text-decoration: underline;
+	}
+}

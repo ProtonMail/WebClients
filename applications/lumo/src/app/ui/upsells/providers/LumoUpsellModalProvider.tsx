@@ -186,10 +186,10 @@ export const LumoUpsellModalProvider: React.FC<LumoUpsellModalProviderProps> = (
 };
 
 // Utility function to dispatch modal opening events
-export const openLumoUpsellModal = (feature: UPSELL_FEATURE) => {
+export const openLumoUpsellModal = (feature: UPSELL_FEATURE, contextMessage?: string) => {
     window.dispatchEvent(
         new CustomEvent('open-lumo-upsell-modal', {
-            detail: { feature },
+            detail: { feature, contextMessage },
         })
     );
 };
