@@ -3,7 +3,7 @@ import { addDays, isSameDay } from 'date-fns';
 import {
     addVideoConfInfoToDescription,
     removeVideoConfInfoFromDescription,
-} from '@proton/calendar/components/videoConferencing/videoConfHelpers';
+} from '@proton/calendar/videoConferencing/videoConfHelpers';
 import { dedupeNotifications } from '@proton/shared/lib/calendar/alarms';
 import { modelToValarmComponent } from '@proton/shared/lib/calendar/alarms/modelToValarm';
 import { ICAL_EVENT_STATUS, MAX_CHARS_API } from '@proton/shared/lib/calendar/constants';

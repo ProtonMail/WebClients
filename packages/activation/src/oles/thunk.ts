@@ -12,7 +12,7 @@ import { type OrganizationKeyState, organizationKeyThunk } from '@proton/account
 import type { ProtonDomainsState } from '@proton/account/protonDomains';
 import type { UserInvitationsState } from '@proton/account/userInvitations';
 import type { UserSettingsState } from '@proton/account/userSettings';
-import { type CalendarsState, calendarsThunk } from '@proton/calendar';
+import { type CalendarsState, calendarsThunk } from '@proton/calendar/calendars';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { createCalendar, updateCalendarUserSettings } from '@proton/shared/lib/api/calendars';
 import { getSilentApi, getUIDApi } from '@proton/shared/lib/api/helpers/customConfig';

@@ -9,7 +9,8 @@ import {
 } from '@proton/account';
 import { startHostAccountSessionsListener } from '@proton/account/accountSessions/hostListener';
 import { groupOwnerInvitesListener } from '@proton/account/groupOwnerInvites/groupOwnerInvitesListener';
-import { startCalendarEventListener, startHolidaysDirectoryListener } from '@proton/calendar';
+import { startCalendarEventListener } from '@proton/calendar/calendars/listener';
+import { startHolidaysDirectoryListener } from '@proton/calendar/holidaysDirectory/listener';
 import { startCalendarEventLoopV6Listening } from '@proton/redux-shared-store/eventLoop/calendarEventLoopV6';
 import { startContactEventLoopV6Listening } from '@proton/redux-shared-store/eventLoop/contactEventLoopV6';
 import { startCoreEventLoopV6Listening } from '@proton/redux-shared-store/eventLoop/coreEventLoopV6';

@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { removeVideoConfInfoFromDescription } from '@proton/calendar/components/videoConferencing/videoConfHelpers';
+import { removeVideoConfInfoFromDescription } from '@proton/calendar/videoConferencing/videoConfHelpers';
 import { IconRow, TextAreaTwo } from '@proton/components';
 import { DESCRIPTION_INPUT_ID, MAX_CHARS_API } from '@proton/shared/lib/calendar/constants';
 import type { EventModel } from '@proton/shared/lib/interfaces/calendar';
