@@ -9,26 +9,18 @@ import {
     getDescriptionFromCategoryId,
     getLabelFromCategoryId,
 } from '@proton/mail/features/categoriesView/categoriesStringHelpers';
-import clsx from '@proton/utils/clsx';
 
 interface CategoryItemProps {
     category: CategoryTab;
     loading: boolean;
     onUpdate: (category: CategoryTab) => void;
-    isLast: boolean;
 }
 
-export const CategorySettingsItem = ({ category, loading, onUpdate, isLast }: CategoryItemProps) => {
+export const CategorySettingsItem = ({ category, loading, onUpdate }: CategoryItemProps) => {
     const categoryLabel = getLabelFromCategoryId(category.id);
 
     return (
-        <div
-            key={category.id}
-            className={clsx(
-                'flex border-bottom border-left border-right border-weak px-4 py-2',
-                isLast && 'category-last'
-            )}
-        >
+        <div key={category.id} className="flex px-4 py-2">
             <Toggle
                 id={`enable-${category.id}`}
                 className="self-center mr-3"

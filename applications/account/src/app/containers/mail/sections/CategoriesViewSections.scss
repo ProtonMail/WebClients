@@ -18,7 +18,8 @@
 
 	.wrapper {
 		display: grid;
-		grid-template-rows: minmax(192px, 0fr);
+		grid-template-rows: minmax(185px, 0fr);
+		border-radius: 1rem;
 		opacity: 0.5;
 		transition:
 			grid-template-rows 0.5s ease-out,
@@ -29,19 +30,9 @@
 		}
 
 		&.is-open {
-			grid-template-rows: minmax(192px, 1fr);
+			grid-template-rows: minmax(185px, 1fr);
 			opacity: 1;
 		}
-	}
-
-	.categories-header {
-		border-start-start-radius: 1rem;
-		border-start-end-radius: 1rem;
-	}
-
-	.category-last {
-		border-end-start-radius: 1rem;
-		border-end-end-radius: 1rem;
 	}
 
 	.mail-category-color {
