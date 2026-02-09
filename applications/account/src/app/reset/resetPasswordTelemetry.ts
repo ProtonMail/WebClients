@@ -54,7 +54,7 @@ export const useResetPasswordTelemetry = () => {
                 api,
                 measurementGroup: TelemetryMeasurementGroups.accountResetPassword,
                 event: TelemetryResetPasswordEvents.code_sent,
-                dimensions: { method },
+                dimensions: { method, variant: 'A' },
                 delay: false,
             });
             void telemetryReportsBatchQueue.flush();
