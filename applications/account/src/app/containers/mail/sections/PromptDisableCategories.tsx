@@ -3,18 +3,22 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { type ModalProps, Prompt, useApi } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
+import { mailSettingsActions } from '@proton/mail/store/mailSettings';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { updateMailCategoryView } from '@proton/shared/lib/api/mailSettings';
-import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import { LABEL_IDS_TO_HUMAN } from '@proton/shared/lib/mail/constants';
+import type { MailSettings } from '@proton/shared/lib/interfaces';
 
 export const PromptDisableCategories = (props: ModalProps) => {
     const api = useApi();
 
     const [loading, withLoading] = useLoading(false);
+    const dispatch = useDispatch();
 
     const handleDisable = async () => {
-        await withLoading(api(updateMailCategoryView(false)));
-        window.location.replace(`/${LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.INBOX]}`);
+        const response = await api<{ MailSettings: MailSettings }>(updateMailCategoryView(false));
+        dispatch(mailSettingsActions.updateMailSettings(response.MailSettings));
+
+        props.onClose?.();
     };
 
     return (
@@ -22,7 +26,7 @@ export const PromptDisableCategories = (props: ModalProps) => {
             {...props}
             title={c('Title').t`Disable categories?`}
             buttons={[
-                <Button color="norm" loading={loading} onClick={handleDisable}>{c('Action')
+                <Button color="norm" loading={loading} onClick={() => withLoading(handleDisable())}>{c('Action')
                     .t`Disable categories`}</Button>,
                 <Button onClick={() => props.onClose?.()}>{c('Action').t`Keep categories`}</Button>,
             ]}

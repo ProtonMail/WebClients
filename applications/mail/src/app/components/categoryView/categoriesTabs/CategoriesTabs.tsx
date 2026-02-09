@@ -9,7 +9,6 @@ import { CategoriesOnboarding } from '../categoriesOnboarding/CategoriesOnboardi
 import { useCategoriesOnboarding } from '../categoriesOnboarding/useCategoriesOnboarding';
 import { useCategoriesView } from '../useCategoriesView';
 import { useRecategorizeElement } from '../useRecategorizeElement';
-import { ButtonEditCategories } from './ButtonEditCategories';
 import { CategoriesTabsError, CategoryTabError } from './CategoryTabsErrors';
 import { Tab } from './Tab';
 import { getTabState } from './categoriesTabsHelper';
@@ -54,35 +53,32 @@ export const CategoriesTabsList = ({ categoryLabelID }: Props) => {
                 onDragLeave={handleDragLeave}
                 onDragEnd={handleDragEnd}
             >
-                <div className="flex flex-row flex-nowrap flex-1">
-                    {activeCategoriesTabs.map((category, index) => {
-                        const tabState = getTabState({
-                            index,
-                            category,
-                            categoriesList: activeCategoriesTabs || [],
-                            categoryLabelID,
-                            draggedOverCategoryId,
-                        });
+                {activeCategoriesTabs.map((category, index) => {
+                    const tabState = getTabState({
+                        index,
+                        category,
+                        categoriesList: activeCategoriesTabs || [],
+                        categoryLabelID,
+                        draggedOverCategoryId,
+                    });
 
-                        return (
-                            <div
-                                key={category.id}
-                                className="tab-wrapper"
-                                onDragOver={handleDragOver(category.id)}
-                                onDrop={handleDrop(category.id)}
-                            >
-                                <ErrorBoundary component={<CategoryTabError />}>
-                                    <Tab
-                                        category={category}
-                                        tabState={tabState}
-                                        count={getLocationCount(counterMap, category.id).Unread}
-                                    />
-                                </ErrorBoundary>
-                            </div>
-                        );
-                    })}
-                </div>
-                <ButtonEditCategories />
+                    return (
+                        <div
+                            key={category.id}
+                            className="tab-wrapper"
+                            onDragOver={handleDragOver(category.id)}
+                            onDrop={handleDrop(category.id)}
+                        >
+                            <ErrorBoundary component={<CategoryTabError />}>
+                                <Tab
+                                    category={category}
+                                    tabState={tabState}
+                                    count={getLocationCount(counterMap, category.id).Unread}
+                                />
+                            </ErrorBoundary>
+                        </div>
+                    );
+                })}
             </div>
 
             {onboarding.isUserEligible && (
