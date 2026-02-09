@@ -54,7 +54,7 @@ const Option = <V,>({
     };
 
     return (
-        <li className="dropdown-item px-2">
+        <li className="dropdown-item">
             <DropdownMenuButton
                 ref={ref}
                 type={type}
