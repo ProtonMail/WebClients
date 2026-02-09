@@ -1,10 +1,7 @@
 import { MINUTE } from '@proton/shared/lib/constants';
-import { captureMessage } from '@proton/shared/lib/helpers/sentry';
+import { spanToJSON, startInactiveSpan } from '@proton/shared/lib/helpers/sentry';
 
-import {
-    APPLY_LABEL_MARK_PREFIX,
-    getApplyLocationTracker,
-} from 'proton-mail/helpers/location/applyLocationPerformanceTracker';
+import { getApplyLocationTracker } from 'proton-mail/helpers/location/applyLocationPerformanceTracker';
 import type { Element } from 'proton-mail/models/element';
 
 // Unmock this module so we can test the real implementation
@@ -15,7 +12,8 @@ jest.mock('@proton/shared/lib/helpers/desktop', () => ({
 }));
 
 jest.mock('@proton/shared/lib/helpers/sentry', () => ({
-    captureMessage: jest.fn(),
+    startInactiveSpan: jest.fn(),
+    spanToJSON: jest.fn(),
     SentryMailPerformanceInitiatives: {
         APPLY_LOCATION_PERFORMANCE: 'apply-location-performance',
     },
@@ -26,33 +24,30 @@ jest.mock('proton-mail/metrics/mailMetricsHelper', () => ({
 }));
 
 describe('ApplyLocationPerformanceTracker', () => {
-    const mockPerformance = {
-        mark: jest.fn(),
-        clearMarks: jest.fn(),
-        getEntriesByName: jest.fn(),
-        getEntriesByType: jest.fn(),
-        now: jest.fn(),
-    };
+    let mockSpan: { end: jest.Mock; setStatus: jest.Mock };
+
+    const tracker = getApplyLocationTracker();
 
     beforeEach(() => {
+        jest.restoreAllMocks();
         jest.clearAllMocks();
-        jest.resetModules();
 
-        Object.defineProperty(global, 'performance', {
-            value: mockPerformance,
-            writable: true,
+        mockSpan = { end: jest.fn(), setStatus: jest.fn() };
+        (startInactiveSpan as jest.Mock).mockReturnValue(mockSpan);
+        (spanToJSON as jest.Mock).mockReturnValue({});
+    });
+
+    describe('getSpanName', () => {
+        it('should return the correct span name for a given element ID', () => {
+            expect(tracker.getSpanName('element-123')).toBe('APPLY_LOCATION_element-123');
         });
-
-        mockPerformance.now.mockReturnValue(1000);
-        mockPerformance.getEntriesByName.mockReturnValue([]);
-        mockPerformance.getEntriesByType.mockReturnValue([]);
     });
 
     describe('mark', () => {
-        it('should create a performance mark with correct prefix', () => {
+        it('should create a span with correct name and attributes', () => {
             const element = { ID: 'element-123' } as Element;
 
-            getApplyLocationTracker().mark({
+            tracker.mark({
                 elements: [element],
                 actionType: 'move',
                 sourceLabelID: 'inbox',
@@ -61,41 +56,23 @@ describe('ApplyLocationPerformanceTracker', () => {
                 isCategoryViewEnabled: false,
             });
 
-            expect(mockPerformance.mark).toHaveBeenCalledWith(
-                `${APPLY_LABEL_MARK_PREFIX}element-123`,
-                expect.objectContaining({
-                    detail: expect.objectContaining({
-                        sourceLabelID: 'inbox',
-                        destinationLabelID: 'trash',
-                        type: 'move',
-                    }),
-                })
+            expect(startInactiveSpan).toHaveBeenCalledWith(
+                tracker.getSpanName('element-123'),
+                'apply-location-performance',
+                {
+                    destinationLabelID: 'trash',
+                    isDesktopApp: 'false',
+                    isCategoryViewEnabled: 'false',
+                    sourceLabelID: 'inbox',
+                    type: 'move',
+                }
             );
-        });
-
-        it('should clear existing marks before creating new ones', () => {
-            const element = { ID: 'element-123' } as Element;
-
-            getApplyLocationTracker().mark({
-                elements: [element],
-                actionType: 'move',
-                sourceLabelID: 'inbox',
-                destinationLabelID: 'trash',
-                conversationMode: false,
-                isCategoryViewEnabled: false,
-            });
-
-            const clearMarksCallOrder = mockPerformance.clearMarks.mock.invocationCallOrder[0];
-            const markCallOrder = mockPerformance.mark.mock.invocationCallOrder[0];
-
-            expect(mockPerformance.clearMarks).toHaveBeenCalledWith(`${APPLY_LABEL_MARK_PREFIX}element-123`);
-            expect(clearMarksCallOrder).toBeLessThan(markCallOrder);
         });
 
         it('should use ConversationID for messages in conversation mode', () => {
             const element = { ID: 'msg-123', ConversationID: 'conv-456' } as Element;
 
-            getApplyLocationTracker().mark({
+            tracker.mark({
                 elements: [element],
                 actionType: 'move',
                 sourceLabelID: 'inbox',
@@ -104,13 +81,17 @@ describe('ApplyLocationPerformanceTracker', () => {
                 isCategoryViewEnabled: false,
             });
 
-            expect(mockPerformance.mark).toHaveBeenCalledWith(`${APPLY_LABEL_MARK_PREFIX}conv-456`, expect.any(Object));
+            expect(startInactiveSpan).toHaveBeenCalledWith(
+                tracker.getSpanName('conv-456'),
+                expect.any(String),
+                expect.any(Object)
+            );
         });
 
         it('should use element ID for messages when not in conversation mode', () => {
-            const element = { ID: 'msg-123', ConversationID: 'conv-456' } as Element;
+            const element = { ID: 'msg-789', ConversationID: 'conv-012' } as Element;
 
-            getApplyLocationTracker().mark({
+            tracker.mark({
                 elements: [element],
                 actionType: 'move',
                 sourceLabelID: 'inbox',
@@ -119,17 +100,21 @@ describe('ApplyLocationPerformanceTracker', () => {
                 isCategoryViewEnabled: false,
             });
 
-            expect(mockPerformance.mark).toHaveBeenCalledWith(`${APPLY_LABEL_MARK_PREFIX}msg-123`, expect.any(Object));
+            expect(startInactiveSpan).toHaveBeenCalledWith(
+                tracker.getSpanName('msg-789'),
+                expect.any(String),
+                expect.any(Object)
+            );
         });
 
-        it('should create marks for multiple elements', () => {
+        it('should create spans for multiple elements', () => {
             const elements = [
                 { ID: 'element-1' } as Element,
                 { ID: 'element-2' } as Element,
                 { ID: 'element-3' } as Element,
             ];
 
-            getApplyLocationTracker().mark({
+            tracker.mark({
                 elements,
                 actionType: 'move',
                 sourceLabelID: 'inbox',
@@ -138,77 +123,102 @@ describe('ApplyLocationPerformanceTracker', () => {
                 isCategoryViewEnabled: false,
             });
 
-            expect(mockPerformance.mark).toHaveBeenCalledTimes(3);
-            expect(mockPerformance.mark).toHaveBeenCalledWith(
-                `${APPLY_LABEL_MARK_PREFIX}element-1`,
+            expect(startInactiveSpan).toHaveBeenCalledTimes(3);
+            expect(startInactiveSpan).toHaveBeenCalledWith(
+                tracker.getSpanName('element-1'),
+                expect.any(String),
                 expect.any(Object)
             );
-            expect(mockPerformance.mark).toHaveBeenCalledWith(
-                `${APPLY_LABEL_MARK_PREFIX}element-2`,
+            expect(startInactiveSpan).toHaveBeenCalledWith(
+                tracker.getSpanName('element-2'),
+                expect.any(String),
                 expect.any(Object)
             );
-            expect(mockPerformance.mark).toHaveBeenCalledWith(
-                `${APPLY_LABEL_MARK_PREFIX}element-3`,
+            expect(startInactiveSpan).toHaveBeenCalledWith(
+                tracker.getSpanName('element-3'),
+                expect.any(String),
                 expect.any(Object)
             );
+        });
+
+        it('should not store span when startInactiveSpan returns undefined', () => {
+            (startInactiveSpan as jest.Mock).mockReturnValue(undefined);
+
+            const element = { ID: 'element-no-span' } as Element;
+
+            tracker.mark({
+                elements: [element],
+                actionType: 'move',
+                sourceLabelID: 'inbox',
+                destinationLabelID: 'trash',
+                conversationMode: false,
+                isCategoryViewEnabled: false,
+            });
+
+            // Measuring should do nothing since the span was not stored
+            tracker.measure('element-no-span');
+            expect(mockSpan.end).not.toHaveBeenCalled();
         });
     });
 
     describe('measure', () => {
-        it('should return null when no mark exists', () => {
-            mockPerformance.getEntriesByName.mockReturnValue([]);
+        it('should not end any span when no mark exists', () => {
+            tracker.measure('unknown-element');
 
-            const result = getApplyLocationTracker().measure('unknown-element');
-
-            expect(result).toBeNull();
-            expect(captureMessage).not.toHaveBeenCalled();
+            expect(mockSpan.end).not.toHaveBeenCalled();
         });
 
-        it('should return duration and detail when mark exists', () => {
-            const markDetail = {
+        it('should end the span when mark exists', () => {
+            const element = { ID: 'measure-element-1' } as Element;
+
+            tracker.mark({
+                elements: [element],
+                actionType: 'move',
                 sourceLabelID: 'inbox',
                 destinationLabelID: 'trash',
-                type: 'move',
-                isDesktopApp: 'false',
-            };
-
-            mockPerformance.getEntriesByName.mockReturnValue([
-                { name: `${APPLY_LABEL_MARK_PREFIX}element-123`, startTime: 500, detail: markDetail },
-            ]);
-            mockPerformance.now.mockReturnValue(750);
-
-            const result = getApplyLocationTracker().measure('element-123');
-
-            expect(result).toEqual({
-                duration: 250,
-                detail: markDetail,
+                conversationMode: false,
+                isCategoryViewEnabled: false,
             });
+
+            tracker.measure('measure-element-1');
+
+            expect(mockSpan.end).toHaveBeenCalledTimes(1);
         });
 
-        it('should clear the mark after measuring', () => {
-            mockPerformance.getEntriesByName.mockReturnValue([
-                { name: `${APPLY_LABEL_MARK_PREFIX}element-123`, startTime: 500, detail: {} },
-            ]);
+        it('should remove the span after measuring', () => {
+            const element = { ID: 'measure-element-2' } as Element;
 
-            getApplyLocationTracker().measure('element-123');
+            tracker.mark({
+                elements: [element],
+                actionType: 'move',
+                sourceLabelID: 'inbox',
+                destinationLabelID: 'trash',
+                conversationMode: false,
+                isCategoryViewEnabled: false,
+            });
 
-            expect(mockPerformance.clearMarks).toHaveBeenCalledWith(`${APPLY_LABEL_MARK_PREFIX}element-123`);
+            tracker.measure('measure-element-2');
+            expect(mockSpan.end).toHaveBeenCalledTimes(1);
+
+            mockSpan.end.mockClear();
+
+            // Measuring again should not end the span since it was already removed
+            tracker.measure('measure-element-2');
+            expect(mockSpan.end).not.toHaveBeenCalled();
         });
     });
 
     describe('cleanup', () => {
-        it('should clear old marks', async () => {
-            const oldMark = {
-                name: `${APPLY_LABEL_MARK_PREFIX}old-element`,
-                startTime: 0,
-            };
+        it('should end old spans with deadline_exceeded status', async () => {
+            const now = Date.now();
+            const oldStartTimestamp = (now - MINUTE - 100) / 1000;
 
-            mockPerformance.now.mockReturnValue(MINUTE + 100);
-            mockPerformance.getEntriesByType.mockReturnValue([oldMark]);
+            jest.spyOn(Date, 'now').mockReturnValue(now);
+            (spanToJSON as jest.Mock).mockReturnValue({ start_timestamp: oldStartTimestamp });
 
-            const element = { ID: 'new-element' } as Element;
+            const element = { ID: 'cleanup-old-element' } as Element;
 
-            getApplyLocationTracker().mark({
+            tracker.mark({
                 elements: [element],
                 actionType: 'move',
                 sourceLabelID: 'inbox',
@@ -219,23 +229,20 @@ describe('ApplyLocationPerformanceTracker', () => {
 
             await new Promise<void>((resolve) => queueMicrotask(resolve));
 
-            expect(mockPerformance.clearMarks).toHaveBeenCalledWith(`${APPLY_LABEL_MARK_PREFIX}old-element`);
+            expect(mockSpan.setStatus).toHaveBeenCalledWith('deadline_exceeded');
+            expect(mockSpan.end).toHaveBeenCalled();
         });
 
-        it('should not clear new marks', async () => {
-            const recentMark = {
-                name: `${APPLY_LABEL_MARK_PREFIX}recent-element`,
-                startTime: 900,
-            };
+        it('should not end recent spans', async () => {
+            const now = Date.now();
+            const recentStartTimestamp = (now - 100) / 1000;
 
-            mockPerformance.now.mockReturnValue(1000);
-            mockPerformance.getEntriesByType.mockReturnValue([recentMark]);
+            jest.spyOn(Date, 'now').mockReturnValue(now);
+            (spanToJSON as jest.Mock).mockReturnValue({ start_timestamp: recentStartTimestamp });
 
-            const element = { ID: 'new-element' } as Element;
+            const element = { ID: 'cleanup-recent-element' } as Element;
 
-            mockPerformance.clearMarks.mockClear();
-
-            getApplyLocationTracker().mark({
+            tracker.mark({
                 elements: [element],
                 actionType: 'move',
                 sourceLabelID: 'inbox',
@@ -246,35 +253,8 @@ describe('ApplyLocationPerformanceTracker', () => {
 
             await new Promise<void>((resolve) => queueMicrotask(resolve));
 
-            expect(mockPerformance.clearMarks).toHaveBeenCalledWith(`${APPLY_LABEL_MARK_PREFIX}new-element`);
-            expect(mockPerformance.clearMarks).not.toHaveBeenCalledWith(`${APPLY_LABEL_MARK_PREFIX}recent-element`);
-        });
-
-        it('should only clear marks with the correct prefix', async () => {
-            const otherMark = {
-                name: 'some-other-mark',
-                startTime: 0,
-            };
-
-            mockPerformance.now.mockReturnValue(MINUTE + 100);
-            mockPerformance.getEntriesByType.mockReturnValue([otherMark]);
-
-            const element = { ID: 'new-element' } as Element;
-
-            mockPerformance.clearMarks.mockClear();
-
-            getApplyLocationTracker().mark({
-                elements: [element],
-                actionType: 'move',
-                sourceLabelID: 'inbox',
-                destinationLabelID: 'trash',
-                conversationMode: false,
-                isCategoryViewEnabled: false,
-            });
-
-            await new Promise<void>((resolve) => queueMicrotask(resolve));
-
-            expect(mockPerformance.clearMarks).not.toHaveBeenCalledWith('some-other-mark');
+            expect(mockSpan.setStatus).not.toHaveBeenCalled();
+            expect(mockSpan.end).not.toHaveBeenCalled();
         });
     });
 });
