@@ -1,0 +1,53 @@
+.create-meeting-dropdown-button {
+	background: var(--interaction-norm);
+	color: var(--text-invert);
+
+	&:hover,
+	&:focus,
+	&:active {
+		background: var(--interaction-norm-major-1);
+		color: var(--text-invert);
+	}
+}
+
+.create-meeting-dropdown {
+	color: #0f0f0f66 !important;
+	background: #16161fcc !important;
+	box-shadow: 0 4px 16px 0 #00000040 !important;
+	backdrop-filter: blur(80px) !important;
+	border: 1px solid var(--circle-button-transparent) !important;
+
+	--selection-background-color: transparent !important;
+	--selection-text-color: var(--interaction-norm) !important;
+
+	.dropdown-content {
+		color: #0f0f0f66;
+		background: #16161fcc;
+		box-shadow: 0 4px 16px 0 #00000040;
+		backdrop-filter: blur(80px);
+		border: none;
+	}
+
+	.dropdown-content::before,
+	.dropdown-content::after {
+		background: #16161fcc;
+	}
+
+	.create-meeting-dropdown-menu {
+		min-block-size: 2.813rem;
+		border-radius: 1rem;
+		color: var(--text-weak);
+		font-size: 0.875rem;
+		font-weight: 500;
+		white-space: nowrap;
+
+		&:hover {
+			background: var(--interaction-norm-minor-3);
+		}
+	}
+}
+
+.create-meeting-dropdown::before,
+.create-meeting-dropdown::after {
+	background: #16161fcc !important;
+}

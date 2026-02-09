@@ -5,12 +5,12 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { IcChevronLeft } from '@proton/icons/icons/IcChevronLeft';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
+import { SCREEN_SHARE_PAGE_SIZE } from '@proton/meet/constants';
 import { useMeetSelector } from '@proton/meet/store/hooks';
 import { selectMeetSettings } from '@proton/meet/store/slices/settings';
 import clsx from '@proton/utils/clsx';
 
-import { SCREEN_SHARE_PAGE_SIZE } from '../../constants';
-import { useMeetContext } from '../../contexts/MeetContext';
+import { useSortedParticipantsContext } from '../../contexts/ParticipantsProvider/SortedParticipantsProvider';
 import { ParticipantTile } from '../ParticipantTile/ParticipantTile';
 
 import './ParticipantSidebar.scss';
@@ -24,7 +24,7 @@ export const ParticipantSidebar = ({
 }) => {
     const [isParticipantSidebarHovered, setIsParticipantSidebarHovered] = useState(false);
 
-    const { pagedParticipants, pagedParticipantsWithoutSelfView } = useMeetContext();
+    const { pagedParticipants, pagedParticipantsWithoutSelfView } = useSortedParticipantsContext();
 
     const { selfView } = useMeetSelector(selectMeetSettings);
 

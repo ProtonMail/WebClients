@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
@@ -8,29 +9,36 @@ import useModalState from '@proton/components/components/modalTwo/useModalState'
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { getMeetingLink } from '@proton/meet';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
-import { selectUpsellModalType, setUpsellModalType } from '@proton/meet/store/slices';
+import { selectPreviousMeetingLink, selectUpsellModalType, setUpsellModalType } from '@proton/meet/store/slices';
 import { APPS } from '@proton/shared/lib/constants';
-import { MeetingType } from '@proton/shared/lib/interfaces/Meet';
+import type { Meeting } from '@proton/shared/lib/interfaces/Meet';
 import useFlag from '@proton/unleash/useFlag';
 
 import { CTAModal } from '../../components/AnonymousModal/CTAModal';
+import { CreateRoomModal } from '../../components/CreateRoomModal/CreateRoomModal';
 import { JoinWithLinkModal } from '../../components/JoinWithLinkModal/JoinWithLinkModal';
 import { PersonalMeetingModal } from '../../components/PersonalMeetingModal/PersonalMeetingModal';
+import { ScheduleMeetingModal } from '../../components/ScheduleMeetingModal/ScheduleMeetingModal';
 import { useDependencySetup } from '../../hooks/useDependencySetup';
-import { getNextOccurrence } from '../../utils/getNextOccurrence';
 import { DashboardContainerBody } from './DashboardContainerBody';
 
 export const DashboardContainer = () => {
     const upsellModalType = useMeetSelector(selectUpsellModalType);
+    const previousMeetingLink = useMeetSelector(selectPreviousMeetingLink);
     const dispatch = useMeetDispatch();
 
     const [{ open: isPersonalMeetingModalOpen, onClose: handlePersonalMeetingModalClose }, openPersonalMeetingModal] =
         useModalState();
     const [{ open: isJoinWithLinkModalOpen, onClose: handleJoinWithLinkModalClose }, openJoinWithLinkModal] =
         useModalState();
-
+    const [{ open: isCreateRoomModalOpen, onClose: handleCreateRoomModalClose }, openCreateRoomModal] = useModalState();
+    const [{ open: isScheduleMeetingModalOpen, onClose: handleScheduleMeetingModalClose }, openScheduleMeetingModal] =
+        useModalState();
     const notifications = useNotifications();
     const history = useHistory();
+
+    const [editedRoom, setEditedRoom] = useState<Meeting | null>(null);
+    const [selectedMeeting, setSelectedMeeting] = useState<Meeting | undefined>();
 
     const { meetings, personalMeeting, setupNewPersonalMeeting, loadingRotatePersonalMeeting } =
         useDependencySetup(false);
@@ -42,7 +50,15 @@ export const DashboardContainer = () => {
 
     const [user] = useUser();
 
-    const handleScheduleMeeting = () => {
+    const handleScheduleInCalendar = () => {
+        goToApp(
+            `/?action=create&videoConferenceProvider=2&email=${encodeURIComponent(user.Email)}`,
+            APPS.PROTONCALENDAR,
+            true
+        );
+    };
+
+    const handleScheduleMeeting = (meeting?: Meeting) => {
         if (!isScheduleEnabled) {
             notifications.createNotification({
                 key: 'schedule-meeting-disabled',
@@ -54,37 +70,17 @@ export const DashboardContainer = () => {
         }
 
         if (!isScheduleInAdvanceEnabled) {
-            goToApp(
-                `/?action=create&videoConferenceProvider=2&email=${encodeURIComponent(user.Email)}`,
-                APPS.PROTONCALENDAR,
-                true
-            );
+            handleScheduleInCalendar();
+            return;
         }
 
-        history.push('/schedule/create');
+        setSelectedMeeting(meeting);
+        openScheduleMeetingModal(true);
     };
 
     const handleStartMeeting = () => {
         history.push('/join');
     };
-
-    const upcomingMeetings = (meetings ?? [])
-        ?.filter((meeting) => {
-            return (
-                (meeting.Type === MeetingType.SCHEDULED || meeting.Type === MeetingType.RECURRING) && meeting.StartTime
-            );
-        })
-        .map((meeting) => {
-            const occurrence = getNextOccurrence(meeting);
-            return {
-                ...meeting,
-                adjustedStartTime: occurrence.startTime,
-                adjustedEndTime: occurrence.endTime,
-            };
-        })
-        .sort((a, b) => {
-            return a.adjustedStartTime - b.adjustedStartTime;
-        });
 
     const personalMeetingLinkPath = getMeetingLink(
         personalMeeting?.MeetingLinkName as string,
@@ -104,15 +100,25 @@ export const DashboardContainer = () => {
                 onPersonalMeetingClick={() => openPersonalMeetingModal(true)}
                 onJoinWithLinkClick={() => openJoinWithLinkModal(true)}
                 onStartMeetingClick={handleStartMeeting}
-                upcomingMeetings={upcomingMeetings}
+                onCreateRoomClick={() => openCreateRoomModal(true)}
                 meetings={meetings ?? []}
                 isGuest={false}
+                handleScheduleInCalendar={handleScheduleInCalendar}
+                handleNewRoomClick={(room?: Meeting) => {
+                    if (room) {
+                        setEditedRoom(room);
+                    }
+
+                    openCreateRoomModal(true);
+                }}
+                handleRotatePersonalMeeting={setupNewPersonalMeeting}
+                loadingRotatePersonalMeeting={loadingRotatePersonalMeeting}
             />
             {upsellModalType && (
                 <CTAModal
                     ctaModalType={upsellModalType}
                     onClose={() => dispatch(setUpsellModalType(null))}
-                    rejoin={handleRejoin}
+                    rejoin={previousMeetingLink ? handleRejoin : undefined}
                     action={() => {}}
                 />
             )}
@@ -136,12 +142,24 @@ export const DashboardContainer = () => {
                     loadingRotatePersonalMeeting={loadingRotatePersonalMeeting}
                 />
             )}
-            {isJoinWithLinkModalOpen && (
-                <JoinWithLinkModal
-                    onClose={handleJoinWithLinkModalClose}
-                    onJoin={(meetingId, meetingPassword) => history.push(getMeetingLink(meetingId, meetingPassword))}
-                />
-            )}
+            <JoinWithLinkModal
+                open={isJoinWithLinkModalOpen}
+                onClose={handleJoinWithLinkModalClose}
+                onJoin={(meetingId, meetingPassword) => history.push(getMeetingLink(meetingId, meetingPassword))}
+            />
+            <CreateRoomModal
+                open={isCreateRoomModalOpen}
+                onClose={() => {
+                    setEditedRoom(null);
+                    handleCreateRoomModalClose();
+                }}
+                editedRoom={editedRoom}
+            />
+            <ScheduleMeetingModal
+                open={isScheduleMeetingModalOpen}
+                onClose={handleScheduleMeetingModalClose}
+                meeting={selectedMeeting}
+            />
         </>
     );
 };

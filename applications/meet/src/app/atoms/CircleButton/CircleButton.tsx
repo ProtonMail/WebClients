@@ -8,7 +8,7 @@ import clsx from '@proton/utils/clsx';
 
 import './CircleButton.scss';
 
-type CircleButtonVariant = 'default' | 'active' | 'danger' | 'transparent';
+type CircleButtonVariant = 'default' | 'active' | 'danger' | 'transparent' | 'highlight';
 type IndicatorStatus = 'warning' | 'default' | 'success' | 'danger';
 
 interface CircleButtonProps {

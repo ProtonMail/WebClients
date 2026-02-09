@@ -1,16 +1,9 @@
 import { createContext, useContext } from 'react';
 
 import type { TrackReference } from '@livekit/components-react';
-import type { LocalParticipant, Participant, RemoteParticipant } from 'livekit-client';
+import type { Participant } from 'livekit-client';
 
-import { PAGE_SIZE } from '../constants';
-import type {
-    KeyRotationLog,
-    MLSGroupState,
-    MeetChatMessage,
-    ParticipantEntity,
-    ParticipantEventRecord,
-} from '../types';
+import type { KeyRotationLog, MLSGroupState, ParticipantEntity } from '../types';
 
 export interface MeetContextValues {
     expirationTime: number | null;
@@ -18,17 +11,10 @@ export interface MeetContextValues {
     maxDuration: number;
     maxParticipants: number;
     paidUser: boolean;
-    page: number;
-    setPage: React.Dispatch<React.SetStateAction<number>>;
     roomName: string;
     resolution: string | null;
     setResolution: (resolution: string | null) => void;
     meetingLink: string;
-    chatMessages: MeetChatMessage[];
-    setChatMessages: React.Dispatch<React.SetStateAction<MeetChatMessage[]>>;
-    participantEvents: ParticipantEventRecord[];
-    pageSize: number;
-    setPageSize: (pageSize: number) => void;
     handleLeave: () => void;
     handleUngracefulLeave: () => void;
     handleEndMeeting: () => Promise<void>;
@@ -36,12 +22,6 @@ export interface MeetContextValues {
     participantNameMap: Record<string, string>;
     getParticipants: () => Promise<void>;
     displayName: string;
-    participants: (RemoteParticipant | LocalParticipant)[];
-    sortedParticipants: (RemoteParticipant | LocalParticipant)[];
-    pagedParticipants: (RemoteParticipant | LocalParticipant)[];
-    pageCount: number;
-    pagedParticipantsWithoutSelfView: (RemoteParticipant | LocalParticipant)[];
-    pageCountWithoutSelfView: number;
     passphrase: string;
     guestMode: boolean;
     mlsGroupState: MLSGroupState | null;
@@ -61,7 +41,6 @@ export interface MeetContextValues {
     keyRotationLogs: KeyRotationLog[];
     isRecordingInProgress: boolean;
     getKeychainIndexInformation: () => (number | undefined)[];
-    sortedParticipantsMap: Map<string, RemoteParticipant | LocalParticipant>;
     isGuestAdmin: boolean;
 }
 
@@ -71,17 +50,10 @@ export const MeetContext = createContext<MeetContextValues>({
     maxDuration: 0,
     maxParticipants: 0,
     paidUser: false,
-    page: 0,
-    setPage: () => {},
     roomName: '',
     resolution: null,
     setResolution: () => {},
     meetingLink: '',
-    chatMessages: [],
-    setChatMessages: () => {},
-    participantEvents: [],
-    pageSize: PAGE_SIZE,
-    setPageSize: () => {},
     handleLeave: () => {},
     handleUngracefulLeave: () => {},
     handleEndMeeting: async () => {},
@@ -89,12 +61,6 @@ export const MeetContext = createContext<MeetContextValues>({
     participantNameMap: {},
     getParticipants: () => Promise.resolve(),
     displayName: '',
-    participants: [],
-    sortedParticipants: [],
-    pagedParticipants: [],
-    pageCount: 0,
-    pagedParticipantsWithoutSelfView: [],
-    pageCountWithoutSelfView: 0,
     passphrase: '',
     guestMode: false,
     mlsGroupState: null,
@@ -114,7 +80,6 @@ export const MeetContext = createContext<MeetContextValues>({
     keyRotationLogs: [],
     isRecordingInProgress: false,
     getKeychainIndexInformation: () => [],
-    sortedParticipantsMap: new Map(),
     isGuestAdmin: false,
 });
 

@@ -8,12 +8,11 @@ import AppsDropdown, { UnAuthenticatedAppsDropdown } from '@proton/components/co
 import UserDropdown from '@proton/components/containers/heading/UserDropdown';
 import { IcCross } from '@proton/icons/icons/IcCross';
 import { isUrlPasswordValid } from '@proton/meet/utils/isUrlPasswordValid';
+import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { ForkType, requestFork } from '@proton/shared/lib/authentication/fork';
-import { APPS } from '@proton/shared/lib/constants';
+import { APPS, SSO_PATHS } from '@proton/shared/lib/constants';
 import logo from '@proton/styles/assets/img/meet/logo-with-name.png';
 import clsx from '@proton/utils/clsx';
-
-import { UpgradeButton } from '../UpgradeButton/UpgradeButton';
 
 import './PageHeader.scss';
 
@@ -46,6 +45,17 @@ export const PageHeader = ({ guestMode, showAppSwitcher = true, isInstantJoin = 
         handleSignIn(window.location.pathname.replace('/guest', '') + window.location.hash);
     };
 
+    const handleSignUpClick = () => {
+        const returnUrl = getAppHref(SSO_PATHS.MEET_SIGNUP, APPS.PROTONACCOUNT);
+        requestFork({
+            fromApp: APPS.PROTONMEET,
+            forkType: ForkType.SIGNUP,
+            extra: {
+                returnUrl,
+            },
+        });
+    };
+
     const isJoinPage = window.location.pathname.includes('join');
     const isSchedulePage = window.location.pathname.includes('schedule');
 
@@ -71,7 +81,7 @@ export const PageHeader = ({ guestMode, showAppSwitcher = true, isInstantJoin = 
             <div className={clsx('flex items-center', showAppSwitcher ? 'gap-4' : 'gap-2')}>
                 <button
                     className="logo-button rounded-full hidden md:block p-2"
-                    onClick={() => history.push(guestMode ? '/incognito' : '/dashboard')}
+                    onClick={() => history.push('/dashboard')}
                     aria-label={c('Alt').t`Go to dashboard`}
                 >
                     <img className="logo cursor-pointer " src={logo} alt="" />
@@ -93,30 +103,36 @@ export const PageHeader = ({ guestMode, showAppSwitcher = true, isInstantJoin = 
                         {buttons}
                     </div>
                     <div>
-                        <div className="flex items-center gap-2 mr-2 md:mr-0">
+                        <div className="flex items-center sign-in-header-button-container">
                             {guestMode ? (
-                                <Button
-                                    className="action-button rounded-full mr-2 md:mr-0"
-                                    onClick={handleSignInClick}
-                                    size="large"
-                                >
-                                    {c('Action').t`Sign in`}
-                                </Button>
-                            ) : (
                                 <>
-                                    <UpgradeButton />
-                                    <UserDropdown
-                                        app={APPS.PROTONMEET}
-                                        logoutRedirectUrl={`${location.pathname}${location.hash}`}
-                                    />
+                                    <Button
+                                        className="sign-in-header-button rounded-full py-2"
+                                        onClick={handleSignInClick}
+                                        size="medium"
+                                        shape="ghost"
+                                    >
+                                        {c('Action').t`Sign in`}
+                                    </Button>
+                                    <Button
+                                        className="create-account-header-button rounded-full py-2"
+                                        onClick={handleSignUpClick}
+                                        size="medium"
+                                        shape="ghost"
+                                    >
+                                        {c('Action').t`Create an account`}
+                                    </Button>
                                 </>
+                            ) : (
+                                <UserDropdown
+                                    app={APPS.PROTONMEET}
+                                    logoutRedirectUrl={`${location.pathname}${location.hash}`}
+                                />
                             )}
                             {(isJoinPage || isSchedulePage) && (
                                 <Button
                                     className="action-button w-custom h-custom rounded-full shrink-0 flex items-center justify-center p-0"
-                                    onClick={() =>
-                                        guestMode ? history.push('/incognito') : history.push('/dashboard')
-                                    }
+                                    onClick={() => history.push('/dashboard')}
                                     size="large"
                                     style={{
                                         '--w-custom': '2.5rem',

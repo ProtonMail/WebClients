@@ -1,7 +1,8 @@
 import { useState } from 'react';
 
+import { useParticipants } from '@livekit/components-react';
 import type { Participant } from 'livekit-client';
-import { Track } from 'livekit-client';
+import { RoomEvent, Track } from 'livekit-client';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
@@ -14,24 +15,46 @@ import { IcMeetEyeClosed } from '@proton/icons/icons/IcMeetEyeClosed';
 import { IcMeetMicrophoneOff } from '@proton/icons/icons/IcMeetMicrophoneOff';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
 import {
+    disableParticipantVideo,
+    enableParticipantVideo,
     selectParticipantsWithDisabledVideos,
-    setParticipantsWithDisabledVideos,
 } from '@proton/meet/store/slices/settings';
+import { MeetingSideBars, selectSideBarState, toggleSideBarState } from '@proton/meet/store/slices/uiStateSlice';
 import clsx from '@proton/utils/clsx';
+import isTruthy from '@proton/utils/isTruthy';
 
 import { SideBar } from '../../atoms/SideBar/SideBar';
 import { SpeakingIndicator } from '../../atoms/SpeakingIndicator';
 import { useMediaManagementContext } from '../../contexts/MediaManagementProvider/MediaManagementContext';
 import { useMeetContext } from '../../contexts/MeetContext';
-import { useUIStateContext } from '../../contexts/UIStateContext';
+import { useSortedParticipantsContext } from '../../contexts/ParticipantsProvider/SortedParticipantsProvider';
 import { useDebouncedActiveSpeakers } from '../../hooks/useDebouncedActiveSpeakers';
 import { useIsLocalParticipantAdmin } from '../../hooks/useIsLocalParticipantAdmin';
-import { MeetingSideBars } from '../../types';
 import { getParticipantInitials } from '../../utils/getParticipantInitials';
 import { ParticipantHostControls } from '../ParticipantHostControls/ParticipantHostControls';
 import { SideBarSearch } from '../SideBarSearch/SideBarSearch';
 
 import './Participants.scss';
+
+const updateOnlyOn = [
+    RoomEvent.ParticipantConnected,
+    RoomEvent.ParticipantDisconnected,
+    RoomEvent.ConnectionStateChanged,
+    RoomEvent.RoomMetadataChanged,
+    RoomEvent.ParticipantPermissionsChanged,
+    RoomEvent.ParticipantMetadataChanged,
+    RoomEvent.ParticipantNameChanged,
+    RoomEvent.ParticipantAttributesChanged,
+    RoomEvent.TrackMuted,
+    RoomEvent.TrackUnmuted,
+    RoomEvent.TrackPublished,
+    RoomEvent.TrackUnpublished,
+    RoomEvent.TrackSubscriptionFailed,
+    RoomEvent.TrackSubscriptionPermissionChanged,
+    RoomEvent.TrackSubscriptionStatusChanged,
+    RoomEvent.LocalTrackPublished,
+    RoomEvent.LocalTrackUnpublished,
+];
 
 export const Participants = () => {
     const [isSearchOn, setIsSearchOn] = useState(false);
@@ -39,15 +62,25 @@ export const Participants = () => {
 
     const [isScrolled, setIsScrolled] = useState(false);
 
-    const { participants } = useMeetContext();
+    const { sortedParticipants } = useSortedParticipantsContext();
 
     const activeSpeakers = useDebouncedActiveSpeakers();
+
+    const participants = useParticipants({
+        updateOnlyOn,
+    });
+
+    const participantsMap = new Map(participants.map((participant) => [participant.identity, participant]));
+
+    const updatedParticipantsWithSorting = sortedParticipants
+        .map((participant) => participantsMap.get(participant.identity))
+        .filter(isTruthy);
 
     const { participantNameMap, maxParticipants } = useMeetContext();
     const participantsWithDisabledVideos = useMeetSelector(selectParticipantsWithDisabledVideos);
     const dispatch = useMeetDispatch();
 
-    const { sideBarState, toggleSideBarState } = useUIStateContext();
+    const sideBarState = useMeetSelector(selectSideBarState);
 
     const { toggleVideo, isVideoEnabled } = useMediaManagementContext();
 
@@ -55,8 +88,8 @@ export const Participants = () => {
 
     const filteredParticipants =
         !isSearchOn || !searchExpression
-            ? participants
-            : participants.filter((participant) => {
+            ? updatedParticipantsWithSorting
+            : updatedParticipantsWithSorting.filter((participant) => {
                   return participantNameMap[participant.identity]?.toLowerCase().includes(lowerCaseSearchExpression);
               });
 
@@ -66,11 +99,11 @@ export const Participants = () => {
         return null;
     }
 
-    const participantsCount = `${participants.length < 10 ? 0 : ''}${participants.length}`;
+    const participantsCount = updatedParticipantsWithSorting.length;
 
     return (
         <SideBar
-            onClose={() => toggleSideBarState(MeetingSideBars.Participants)}
+            onClose={() => dispatch(toggleSideBarState(MeetingSideBars.Participants))}
             absoluteHeader={true}
             isScrolled={isScrolled}
             paddingClassName="py-4"
@@ -131,7 +164,7 @@ export const Participants = () => {
                         ? !isVideoEnabled
                         : participantsWithDisabledVideos.includes(participant.identity);
 
-                    const isSpeaking = activeSpeakers.find((p) => p.identity === participant.identity);
+                    const isSpeaking = activeSpeakers.has(participant.identity);
 
                     const remoteParticipantLabel = isParticipantVideoDisabled
                         ? c('Action').t`Receive video`
@@ -199,20 +232,9 @@ export const Participants = () => {
                                                 }
 
                                                 if (isParticipantVideoDisabled) {
-                                                    dispatch(
-                                                        setParticipantsWithDisabledVideos(
-                                                            participantsWithDisabledVideos.filter(
-                                                                (id) => id !== participant.identity
-                                                            )
-                                                        )
-                                                    );
+                                                    dispatch(enableParticipantVideo(participant.identity));
                                                 } else {
-                                                    dispatch(
-                                                        setParticipantsWithDisabledVideos([
-                                                            ...participantsWithDisabledVideos,
-                                                            participant.identity,
-                                                        ])
-                                                    );
+                                                    dispatch(disableParticipantVideo(participant.identity));
                                                 }
                                             }}
                                             aria-label={c('Action').t`Enable video`}

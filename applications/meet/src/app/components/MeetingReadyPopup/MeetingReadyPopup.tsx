@@ -1,40 +1,57 @@
+import { useMemo } from 'react';
+
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
+import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
+import { selectMeetingReadyPopupOpen, setMeetingReadyPopupOpen } from '@proton/meet/store/slices/uiStateSlice';
+import { isMobile } from '@proton/shared/lib/helpers/browser';
 
 import { CloseButton } from '../../atoms/CloseButton/CloseButton';
-import { CopyButton } from '../../atoms/CopyButton/CopyButton';
-import { useUIStateContext } from '../../contexts/UIStateContext';
+import { SlideClosable } from '../SlideClosable/SlideClosable';
 
 import './MeetingReadyPopup.scss';
 
 interface MeetingReadyPopupProps {
     meetingLink: string;
+    closeBySlide?: boolean;
 }
 
-export const MeetingReadyPopup = ({ meetingLink }: MeetingReadyPopupProps) => {
-    const { meetingReadyPopupOpen, setMeetingReadyPopupOpen } = useUIStateContext();
+export const MeetingReadyPopup = ({ meetingLink, closeBySlide }: MeetingReadyPopupProps) => {
+    const dispatch = useMeetDispatch();
+    const meetingReadyPopupOpen = useMeetSelector(selectMeetingReadyPopupOpen);
+
+    const WrapperComponent = useMemo(
+        () =>
+            closeBySlide
+                ? SlideClosable
+                : ({ children, className }: { children: React.ReactNode; className?: string }) => (
+                      <div className={className}>{children}</div>
+                  ),
+        [closeBySlide]
+    );
 
     if (!meetingReadyPopupOpen) {
         return null;
     }
 
     return (
-        <div
-            className="meeting-ready-popup-container absolute bottom-custom px-4 md:px-0"
-            style={{ '--bottom-custom': '6.5rem' }}
-        >
+        <WrapperComponent className="meeting-ready-popup-container" onClose={() => setMeetingReadyPopupOpen(false)}>
             <div
-                className="meeting-ready-popup large-meet-radius bg-weak rounded-lg p-8 md:p-6 relative flex flex-column items-center w-full md:w-custom md:h-fit-content gap-6"
+                className="meeting-ready-popup large-meet-radius rounded-lg p-4 md:p-6 relative flex flex-column items-center w-full sm:w-custom md:h-fit-content gap-6 border border-weak w-max-custom"
                 style={{
-                    '--md-w-custom': '24.5rem',
+                    '--sm-w-custom': '24.5rem',
                 }}
             >
-                <CloseButton
-                    onClose={() => setMeetingReadyPopupOpen(false)}
-                    className="absolute top-custom right-custom"
-                    style={{ '--top-custom': '0.75rem', '--right-custom': '0.75rem' }}
-                />
+                {!isMobile() && (
+                    <CloseButton
+                        onClose={() => dispatch(setMeetingReadyPopupOpen(false))}
+                        className="absolute top-custom right-custom"
+                        style={{ '--top-custom': '0.75rem', '--right-custom': '0.75rem' }}
+                    />
+                )}
+
                 <div className="flex flex-column items-center gap-2">
                     <div className="text-3xl text-center text-semibold">{c('Info').t`Your meeting is ready`}</div>
 
@@ -42,15 +59,24 @@ export const MeetingReadyPopup = ({ meetingLink }: MeetingReadyPopupProps) => {
                         .t`Share this link to invite others. You can also find it anytime by clicking the info icon in the toolbar.`}</div>
                 </div>
 
-                <div className="flex flex-column bg-norm border border-norm p-6 rounded-xl">
+                <div className="link-container flex flex-column bg-norm border border-norm p-4 meet-radius">
                     <div className="color-weak">{c('Info').t`Meeting link`}</div>
                     <Href href={meetingLink} className="meeting-ready-popup-meeting-link text-break-all">
                         {meetingLink}
                     </Href>
                 </div>
 
-                <CopyButton className="w-full" text={meetingLink} isPrimary={true} />
+                <Button
+                    className="copy-meeting-link-button w-full rounded-full border-none p-4 flex justify-center items-center gap-1"
+                    size="large"
+                    onClick={async () => {
+                        void navigator.clipboard.writeText(meetingLink);
+                        setMeetingReadyPopupOpen(false);
+                    }}
+                >
+                    {c('Action').t`Copy link and close`}
+                </Button>
             </div>
-        </div>
+        </WrapperComponent>
     );
 };

@@ -1,17 +1,18 @@
 import { c } from 'ttag';
 
 import { IcMeetChat } from '@proton/icons/icons/IcMeetChat';
+import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
+import { selectChatMessages } from '@proton/meet/store/slices/meetingState';
+import { MeetingSideBars, selectSideBarState, toggleSideBarState } from '@proton/meet/store/slices/uiStateSlice';
 
 import { CircleButton } from '../atoms/CircleButton/CircleButton';
-import { useMeetContext } from '../contexts/MeetContext';
-import { useUIStateContext } from '../contexts/UIStateContext';
-import { MeetingSideBars } from '../types';
 import { ChatPreview } from './ChatPreview';
 
 export const ChatButton = () => {
-    const { chatMessages } = useMeetContext();
+    const dispatch = useMeetDispatch();
+    const chatMessages = useMeetSelector(selectChatMessages);
 
-    const { toggleSideBarState, sideBarState } = useUIStateContext();
+    const sideBarState = useMeetSelector(selectSideBarState);
 
     const unreadMessages = chatMessages.filter((message) => !message.seen).length;
 
@@ -22,7 +23,7 @@ export const ChatButton = () => {
                 IconComponent={IcMeetChat}
                 variant={sideBarState[MeetingSideBars.Chat] ? 'active' : 'default'}
                 onClick={() => {
-                    toggleSideBarState(MeetingSideBars.Chat);
+                    dispatch(toggleSideBarState(MeetingSideBars.Chat));
                 }}
                 indicatorContent={unreadMessages > 0 ? unreadMessages.toString() : undefined}
                 indicatorStatus="success"

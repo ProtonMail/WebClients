@@ -5,16 +5,21 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import { IcCross } from '@proton/icons/icons/IcCross';
+import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
+import {
+    PermissionPromptStatus,
+    selectNoDeviceDetected,
+    setNoDeviceDetected,
+} from '@proton/meet/store/slices/uiStateSlice';
 
 import { useMediaManagementContext } from '../../contexts/MediaManagementProvider/MediaManagementContext';
-import { useUIStateContext } from '../../contexts/UIStateContext';
 import { useIsLargerThanMd } from '../../hooks/useIsLargerThanMd';
-import { PermissionPromptStatus } from '../../types';
 
 export const NoDeviceDetectedInfo = () => {
+    const dispatch = useMeetDispatch();
     const [isOpen, setIsOpen] = useState(true);
 
-    const { noDeviceDetected, setNoDeviceDetected } = useUIStateContext();
+    const noDeviceDetected = useMeetSelector(selectNoDeviceDetected);
 
     const { microphones, cameras } = useMediaManagementContext();
 
@@ -41,7 +46,7 @@ export const NoDeviceDetectedInfo = () => {
             key="open-microphone-device-modal"
             className="color-primary mx-1"
             onClick={() => {
-                setNoDeviceDetected(PermissionPromptStatus.MICROPHONE);
+                dispatch(setNoDeviceDetected(PermissionPromptStatus.MICROPHONE));
             }}
         >
             {microphoneLabel}
@@ -53,7 +58,7 @@ export const NoDeviceDetectedInfo = () => {
             key="open-camera-device-modal"
             className="color-primary mx-1"
             onClick={() => {
-                setNoDeviceDetected(PermissionPromptStatus.CAMERA);
+                dispatch(setNoDeviceDetected(PermissionPromptStatus.CAMERA));
             }}
         >
             {cameraLabel}

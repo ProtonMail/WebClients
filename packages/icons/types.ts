@@ -312,6 +312,7 @@ export type IconName =
     | 'meet-record-stop'
     | 'meet-rotate-camera'
     | 'meet-user'
+    | 'meet-users'
     | 'minus'
     | 'minus-circle'
     | 'minus-circle-filled'

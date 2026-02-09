@@ -12,8 +12,6 @@ const TRACK_UPDATE_EVENTS = [
     RoomEvent.TrackUnpublished,
     RoomEvent.TrackMuted,
     RoomEvent.TrackUnmuted,
-    RoomEvent.ParticipantConnected,
-    RoomEvent.ParticipantDisconnected,
     RoomEvent.LocalTrackPublished,
     RoomEvent.LocalTrackUnpublished,
     RoomEvent.TrackStreamStateChanged,
@@ -22,24 +20,22 @@ const TRACK_UPDATE_EVENTS = [
 export function usePiPTracks(sortedParticipants: (RemoteParticipant | LocalParticipant)[]) {
     const currentScreenShareTrack = useTracks([Track.Source.ScreenShare], {
         updateOnlyOn: TRACK_UPDATE_EVENTS,
+        onlySubscribed: false,
     })[0];
+
+    const cameraTracks = useTracks([Track.Source.Camera], {
+        updateOnlyOn: TRACK_UPDATE_EVENTS,
+        onlySubscribed: false,
+    });
 
     const currentCameraPublications = sortedParticipants
         .map((participant) => {
-            const cameraPublication = [...participant.videoTrackPublications.values()].find(
-                (track) => track.source === Track.Source.Camera
-            );
-
-            if (!cameraPublication) {
-                return null;
-            }
-
-            return { publication: cameraPublication, participant };
+            return cameraTracks.find((track) => track.participant?.identity === participant.identity);
         })
         .filter(isTruthy);
 
     const displayableCameraTracks = currentCameraPublications
-        .filter((publication) => !publication?.publication?.isMuted)
+        .filter((item) => item.publication && !item.publication?.isMuted)
         .slice(0, MAX_CAMERA_TRACKS);
 
     const tracksForDisplay = [currentScreenShareTrack, ...displayableCameraTracks]

@@ -1,27 +1,37 @@
 import { cleanup, render, screen } from '@testing-library/react';
 
-import type { MeetChatMessage, ParticipantEventRecord } from '../../types';
+import type { MeetChatMessage, ParticipantEventRecord } from '@proton/meet/types/types';
+import { ParticipantEvent } from '@proton/meet/types/types';
+
+import { MeetContext } from '../../contexts/MeetContext';
 import { ChatItem } from './ChatItem';
 
 const timestamp = 1718534400;
 
 const roomName = 'Mock Room Name';
 
-const mockChatMessage = {
+const mockParticipantName = 'John Doe';
+
+const mockChatMessage: MeetChatMessage = {
     type: 'message',
-    name: 'John Doe',
     timestamp,
     identity: '123',
     message: 'Hello, world!',
-} as MeetChatMessage;
+    id: 'test-message-id',
+};
 
-const mockParticipantEventRecord = {
+const mockParticipantEventRecord: ParticipantEventRecord = {
     type: 'event',
-    name: 'John Doe',
     timestamp,
     identity: '123',
-    eventType: 'join',
-} as ParticipantEventRecord;
+    eventType: ParticipantEvent.Join,
+};
+
+const mockContextValue = {
+    participantNameMap: {
+        '123': mockParticipantName,
+    },
+};
 
 const date = new Date(timestamp).toLocaleTimeString([], {
     hour: 'numeric',
@@ -32,31 +42,44 @@ const date = new Date(timestamp).toLocaleTimeString([], {
 describe('ChatItem', () => {
     afterEach(cleanup);
 
+    const Wrapper = ({ children }: { children: React.ReactNode }) => (
+        <MeetContext.Provider
+            // @ts-expect-error - mock data
+            value={mockContextValue}
+        >
+            {children}
+        </MeetContext.Provider>
+    );
+
     it('should render a chat message', () => {
         render(
-            <ChatItem
-                item={mockChatMessage}
-                colors={{ backgroundColor: 'text-primary', profileTextColor: 'text-primary' }}
-                displayDate={true}
-            />
+            <Wrapper>
+                <ChatItem
+                    item={mockChatMessage}
+                    colors={{ backgroundColor: 'text-primary', profileTextColor: 'text-primary' }}
+                    displayDate={true}
+                />
+            </Wrapper>
         );
 
-        expect(screen.getByText(mockChatMessage.name)).toBeInTheDocument();
+        expect(screen.getByText(mockParticipantName)).toBeInTheDocument();
         expect(screen.getByText(mockChatMessage.message)).toBeInTheDocument();
         expect(screen.getByText(date)).toBeInTheDocument();
     });
 
     it('should render a participant event record', () => {
         render(
-            <ChatItem
-                item={mockParticipantEventRecord}
-                colors={{ backgroundColor: 'text-primary', profileTextColor: 'text-primary' }}
-                displayDate={false}
-                roomName={roomName}
-            />
+            <Wrapper>
+                <ChatItem
+                    item={mockParticipantEventRecord}
+                    colors={{ backgroundColor: 'text-primary', profileTextColor: 'text-primary' }}
+                    displayDate={false}
+                    roomName={roomName}
+                />
+            </Wrapper>
         );
 
-        expect(screen.getByText(mockParticipantEventRecord.name)).toBeInTheDocument();
+        expect(screen.getByText(mockParticipantName)).toBeInTheDocument();
         expect(screen.getByText('Joined')).toBeInTheDocument();
         expect(screen.getByText(roomName)).toBeInTheDocument();
         expect(screen.queryByText(date)).not.toBeInTheDocument();
@@ -64,11 +87,13 @@ describe('ChatItem', () => {
 
     it('should render the participant initials', () => {
         render(
-            <ChatItem
-                item={mockChatMessage}
-                colors={{ backgroundColor: 'text-primary', profileTextColor: 'text-primary' }}
-                displayDate={true}
-            />
+            <Wrapper>
+                <ChatItem
+                    item={mockChatMessage}
+                    colors={{ backgroundColor: 'text-primary', profileTextColor: 'text-primary' }}
+                    displayDate={true}
+                />
+            </Wrapper>
         );
 
         expect(screen.getByText('JD')).toBeInTheDocument();

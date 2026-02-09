@@ -3,80 +3,63 @@ import { useEffect, useRef, useState } from 'react';
 import { useRoomContext } from '@livekit/components-react';
 import { type Participant, RoomEvent } from 'livekit-client';
 
-interface ActiveSpeakerSnapshot {
-    timestamp: number;
-    participantIds: string[];
-}
-
-const FREQ_THRESHOLD = 2;
+import { useStableCallback } from './useStableCallback';
 
 export function useDebouncedActiveSpeakers(delayMs = 1000) {
     const room = useRoomContext();
 
-    const [activeSpeakers, setActiveSpeakers] = useState<Participant[]>([]);
+    const [activeSpeakers, setActiveSpeakers] = useState<Map<string, Participant>>(new Map());
 
-    const previousActiveSpeakerSnapshots = useRef<ActiveSpeakerSnapshot[]>([]);
+    const timeoutsRef = useRef<Map<string, NodeJS.Timeout>>(new Map());
 
-    const prevActiveSpeakerIdentities = useRef<string[]>([]);
+    const handleActiveSpeakersChanged = useStableCallback((currentActiveSpeakers: Participant[]) => {
+        const newActiveSpeakers = new Map<string, Participant>();
+
+        currentActiveSpeakers.forEach((participant) => {
+            const identity = participant.identity;
+
+            const existingTimeout = timeoutsRef.current.get(identity);
+            if (existingTimeout) {
+                clearTimeout(existingTimeout);
+            }
+
+            newActiveSpeakers.set(identity, participant);
+
+            const timeout = setTimeout(() => {
+                setActiveSpeakers((currentMap) => {
+                    const updatedMap = new Map(currentMap);
+                    updatedMap.delete(identity);
+                    return updatedMap;
+                });
+                timeoutsRef.current.delete(identity);
+            }, delayMs);
+
+            timeoutsRef.current.set(identity, timeout);
+        });
+
+        setActiveSpeakers((prevMap) => {
+            const combinedMap = new Map(prevMap);
+            newActiveSpeakers.forEach((participant, identity) => {
+                combinedMap.set(identity, participant);
+            });
+            return combinedMap;
+        });
+    });
 
     useEffect(() => {
         if (!room) {
             return;
         }
 
-        const handleActiveSpeakersChanged = (currentActiveSpeakers: Participant[]) => {
-            const currentTimestamp = Date.now();
-            previousActiveSpeakerSnapshots.current = previousActiveSpeakerSnapshots.current.filter(
-                (snapshot) => currentTimestamp - snapshot.timestamp < delayMs
-            );
-
-            // Add current snapshot for frequency tracking
-            previousActiveSpeakerSnapshots.current.push({
-                timestamp: currentTimestamp,
-                participantIds: currentActiveSpeakers.map((p) => p.identity),
-            });
-
-            if (
-                previousActiveSpeakerSnapshots.current.length === 1 &&
-                currentActiveSpeakers.filter((p) => !prevActiveSpeakerIdentities.current.includes(p.identity)).length >
-                    0
-            ) {
-                setActiveSpeakers(currentActiveSpeakers);
-                prevActiveSpeakerIdentities.current = currentActiveSpeakers.map((p) => p.identity);
-                return;
-            }
-
-            const participantIdsWithFrequency = Object.fromEntries(
-                currentActiveSpeakers.map((p) => [
-                    p.identity,
-                    previousActiveSpeakerSnapshots.current.filter((snapshot) =>
-                        snapshot.participantIds.includes(p.identity)
-                    ).length,
-                ])
-            );
-
-            const filteredActiveSpeakers = currentActiveSpeakers.filter(
-                (p) => participantIdsWithFrequency[p.identity] >= FREQ_THRESHOLD
-            );
-
-            if (
-                filteredActiveSpeakers.filter((p) => !prevActiveSpeakerIdentities.current.includes(p.identity))
-                    .length === 0
-            ) {
-                return;
-            }
-
-            setActiveSpeakers(filteredActiveSpeakers);
-
-            prevActiveSpeakerIdentities.current = filteredActiveSpeakers.map((p) => p.identity);
-        };
-
         room.on(RoomEvent.ActiveSpeakersChanged, handleActiveSpeakersChanged);
 
         return () => {
             room.off(RoomEvent.ActiveSpeakersChanged, handleActiveSpeakersChanged);
+
+            timeoutsRef.current.forEach((timeout) => clearTimeout(timeout));
+            timeoutsRef.current.clear();
         };
-    }, [room]);
+    }, [room, handleActiveSpeakersChanged]);
 
     return activeSpeakers;
 }

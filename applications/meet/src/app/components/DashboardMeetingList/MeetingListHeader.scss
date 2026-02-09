@@ -1,0 +1,66 @@
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/meet/meet-breakpoints' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints;
+im.$media-expressions: $media-expressions;
+
+.meeting-list-header {
+	position: sticky;
+	inset-block-start: -1px;
+	z-index: 10;
+	transition: padding 0.2s ease;
+
+	&.is-stuck {
+		padding-block: 1rem;
+		background: rgb(22 22 31 / 0.4);
+		backdrop-filter: blur(22px);
+		inline-size: 100vw !important;
+		transform: translateX(-1.5rem);
+		padding-inline: 1.5rem;
+
+		@include im.media('>medium') {
+			transform: translateX(-2.5rem);
+			padding-inline: 2.5rem;
+		}
+
+		@include im.media('>large') {
+			transform: translateX(-3.75rem);
+			padding-inline: 3.75rem;
+		}
+	}
+
+	.search-input {
+		border: 1px solid var(--border-norm) !important;
+		background: var(--background-card);
+
+		&:hover,
+		&:active,
+		&:focus {
+			background: var(--interaction-default-hover);
+		}
+	}
+
+	.list-toolbar-schedule-button {
+		background: var(--interaction-weak);
+		border-color: var(--border-card);
+		font-size: 0.875rem;
+
+		&:hover,
+		&:active,
+		&:focus {
+			background: var(--interaction-weak-major-1);
+		}
+	}
+
+	.sort-dropdown-button {
+		background: var(--background-card);
+		border: 1px solid var(--border-card);
+		font-size: 0.875rem;
+
+		&:hover,
+		&:active,
+		&:focus {
+			background: var(--interaction-default-hover);
+		}
+	}
+}

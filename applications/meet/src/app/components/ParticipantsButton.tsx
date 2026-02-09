@@ -2,11 +2,12 @@ import { c, msgid } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { IcMeetParticipants } from '@proton/icons/icons/IcMeetParticipants';
+import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
+import { MeetingSideBars, selectSideBarState, toggleSideBarState } from '@proton/meet/store/slices/uiStateSlice';
 
 import { CircleButton } from '../atoms/CircleButton/CircleButton';
 import { useMeetContext } from '../contexts/MeetContext';
-import { useUIStateContext } from '../contexts/UIStateContext';
-import { MeetingSideBars } from '../types';
+import { useSortedParticipantsContext } from '../contexts/ParticipantsProvider/SortedParticipantsProvider';
 
 export const ParticipantsButton = ({
     hasAdminPermission,
@@ -15,11 +16,12 @@ export const ParticipantsButton = ({
     hasAdminPermission: boolean;
     isPaid: boolean;
 }) => {
-    const { maxParticipants, guestMode, instantMeeting, participants } = useMeetContext();
+    const dispatch = useMeetDispatch();
+    const { maxParticipants, guestMode, instantMeeting } = useMeetContext();
+    const { sortedParticipants } = useSortedParticipantsContext();
+    const participantCount = sortedParticipants.length;
 
-    const participantCount = participants.length;
-
-    const { sideBarState, toggleSideBarState } = useUIStateContext();
+    const sideBarState = useMeetSelector(selectSideBarState);
 
     const getParticipantsCount = () => {
         if (hasAdminPermission || (guestMode && instantMeeting)) {
@@ -78,7 +80,7 @@ export const ParticipantsButton = ({
             IconComponent={IcMeetParticipants}
             variant={sideBarState[MeetingSideBars.Participants] ? 'active' : 'default'}
             onClick={() => {
-                toggleSideBarState(MeetingSideBars.Participants);
+                dispatch(toggleSideBarState(MeetingSideBars.Participants));
             }}
             indicatorContent={getParticipantsCount()}
             indicatorStatus={getParticipantCountIndicatorVariant()}

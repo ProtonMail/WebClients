@@ -6,7 +6,9 @@ import {
     type MeetingRoomUpdate,
     ParticipantEvent,
     type ParticipantEventRecord,
-} from '../../types';
+} from '@proton/meet/types/types';
+
+import { useMeetContext } from '../../contexts/MeetContext';
 import { getParticipantInitials } from '../../utils/getParticipantInitials';
 import { ChatMessageContent } from '../ChatMessageContent';
 
@@ -40,7 +42,11 @@ export const ChatItem = ({
     shouldGrow = false,
     ellipsisOverflow = false,
 }: ChatItemProps) => {
-    const { type, name, timestamp } = item;
+    const { type, identity, timestamp } = item;
+
+    const { participantNameMap } = useMeetContext();
+
+    const participantName = participantNameMap[identity];
 
     const roomNameLabel = (
         <span key="room-name" className="ml-1 room-name">
@@ -66,14 +72,14 @@ export const ChatItem = ({
                     )}
                     style={{ '--w-custom': '2.5rem', '--h-custom': '2.5rem' }}
                 >
-                    <div>{getParticipantInitials(name)}</div>
+                    <div>{getParticipantInitials(participantName)}</div>
                 </div>
             </div>
 
             <div className="flex flex-column flex-nowrap justify-start">
                 <div className="flex items-start text-semibold flex-nowrap">
-                    <span className="text-ellipsis" title={name}>
-                        {name}
+                    <span className="text-ellipsis" title={participantName}>
+                        {participantName}
                     </span>
                     {displayDate && (
                         <div className="ml-2 color-weak text-nowrap shrink-0">

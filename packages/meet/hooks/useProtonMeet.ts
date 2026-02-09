@@ -14,7 +14,7 @@ export const useProtonMeet = () => {
 
     const { getMeetingByLinkName } = useGetMeetingByLinkName();
 
-    const { saveMeetingPassword, saveMeetingName } = useMeetingUpdates();
+    const { saveMeetingPassword, saveMeetingName, saveMeetingSchedule } = useMeetingUpdates();
 
     const { getActiveMeetings } = useGetActiveMeetings();
 
@@ -24,6 +24,7 @@ export const useProtonMeet = () => {
         getProtonMeet: getMeeting,
         saveProtonMeetPassword: saveMeetingPassword,
         saveProtonMeetName: saveMeetingName,
+        saveMeetingSchedule: saveMeetingSchedule,
         getActiveProtonMeet: getActiveMeetings,
         getProtonMeetByLinkName: getMeetingByLinkName,
     };

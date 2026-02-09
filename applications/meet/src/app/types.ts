@@ -1,46 +1,8 @@
-import type { ChatMessage } from 'livekit-client';
+export { MeetingSideBars, PopUpControls, PermissionPromptStatus } from '@proton/meet/store/slices/uiStateSlice';
 
 export enum LoadingState {
     JoiningInProgress = 'JoiningInProgress',
     WaitingRoom = 'WaitingRoom',
-}
-
-export interface MeetChatMessage extends Pick<ChatMessage, 'id' | 'message' | 'timestamp'> {
-    identity: string;
-    name: string;
-    seen?: boolean;
-    type?: 'message';
-}
-
-export enum ParticipantEvent {
-    Join = 'join',
-    Leave = 'leave',
-}
-
-export interface ParticipantEventRecord {
-    identity: string;
-    name: string;
-    eventType: ParticipantEvent;
-    timestamp: number;
-    type?: 'event';
-}
-
-export type MeetingRoomUpdate = ParticipantEventRecord | MeetChatMessage;
-
-export enum MeetingSideBars {
-    Participants = 'Participants',
-    AssignHost = 'AssignHost',
-    Settings = 'Settings',
-    Chat = 'Chat',
-    MeetingDetails = 'MeetingDetails',
-}
-
-export enum PopUpControls {
-    Microphone = 'Microphone',
-    Camera = 'Camera',
-    LeaveMeetingParticipant = 'LeaveMeetingParticipant',
-    LeaveMeeting = 'LeaveMeeting',
-    ScreenShareLeaveWarning = 'ScreenShareLeaveWarning',
 }
 
 export enum QualityScenarios {
@@ -72,12 +34,6 @@ export interface MeetingDetails {
     time: string;
     meetingLink: string;
     duration: string;
-}
-
-export enum PermissionPromptStatus {
-    CAMERA = 'CAMERA',
-    MICROPHONE = 'MICROPHONE',
-    CLOSED = 'CLOSED',
 }
 
 export type MLSGroupState = {

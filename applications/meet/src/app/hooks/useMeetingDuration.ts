@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 
+import { MINUTE } from '@proton/shared/lib/constants';
+
 import { useMeetContext } from '../contexts/MeetContext';
 
 export const useMeetingDuration = () => {
@@ -20,7 +22,7 @@ export const useMeetingDuration = () => {
 
             setMeetingDurationMs(Math.max(0, duration));
             setTimeLeftMs(Math.max(0, remainingTime));
-            setIsExpiringSoon(remainingTime <= 20 * 60 * 1000);
+            setIsExpiringSoon(remainingTime <= 5 * MINUTE);
         };
 
         updateDuration();
