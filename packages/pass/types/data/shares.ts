@@ -1,4 +1,5 @@
 import type { ShareId } from '@proton/pass/types/crypto';
+import type { ItemRevision } from '@proton/pass/types/data/items';
 import type { Maybe, MaybeNull } from '@proton/pass/types/utils';
 
 import type { VaultColor, VaultIcon } from '../protobuf/vault-v1.static';
@@ -51,7 +52,13 @@ export type ShareBase<T extends ShareType = ShareType> = {
     groupId: MaybeNull<string>;
 };
 
-export type WithEventId<T> = T & { eventId: string };
+export type WithEventId<T> = T & {
+    /** In Sync V1: used to track current share event
+     *  In Sync V2: global event token is sufficient */
+    eventId?: string;
+};
+
 export type Share<T extends ShareType = ShareType> = WithEventId<ShareBase<T>>;
+export type ShareCreatedDTO = { share: Share; items: ItemRevision[] };
 
 export type ShareVisibilityMap = Record<ShareId, boolean>;
