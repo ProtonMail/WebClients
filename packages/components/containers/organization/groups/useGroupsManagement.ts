@@ -183,7 +183,7 @@ const useGroupsManagement = (organization?: Organization): GroupsManagementRetur
 
     const { resetForm, values: formValues } = form;
 
-    if (
+    const isLoading =
         !organization ||
         loadingGroups ||
         loadingPmMeDomain ||
@@ -195,8 +195,9 @@ const useGroupsManagement = (organization?: Organization): GroupsManagementRetur
         !selectedDomain ||
         !suggestedAddressDomainPart ||
         !user ||
-        !memberships
-    ) {
+        !memberships;
+
+    if (isLoading) {
         return undefined;
     }
 

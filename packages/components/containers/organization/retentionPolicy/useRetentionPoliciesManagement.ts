@@ -49,7 +49,9 @@ export const useRetentionPoliciesManagement = (
     const { createNotification } = useNotifications();
     const [retentionRules, loadingRetentionRules] = useRetentionPolicies();
 
-    if (loadingRetentionRules || !retentionRules || !organization) {
+    const isLoading = loadingRetentionRules || !retentionRules || !organization;
+
+    if (isLoading) {
         return undefined;
     }
 
