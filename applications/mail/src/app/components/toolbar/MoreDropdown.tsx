@@ -238,7 +238,6 @@ const MoreDropdown = ({
                           onClose={onClose}
                           onLock={onLock}
                           selectAll={selectAll}
-                          onCheckAll={onCheckAll}
                       />
                   ),
               },

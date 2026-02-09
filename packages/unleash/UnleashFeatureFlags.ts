@@ -233,7 +233,6 @@ export enum MailFeatureFlag {
     CategoryView = 'CategoryView',
     // Used for the alpha experiment of the category view will be deleted
     ShowMessageCategory = 'ShowMessageCategory',
-    ApplyLabelsOptimisticRefactoring = 'ApplyLabelsOptimisticRefactoring',
     // Attempt to fix the unability to save/send drafts on huge accounts
     PreventEventLoopCallOnCompose = 'PreventEventLoopCallOnCompose',
     FasterEncryptedSearchIndexing = 'FasterEncryptedSearchIndexing',

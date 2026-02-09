@@ -9,6 +9,7 @@ import type { Label } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 
 import type { Element } from 'proton-mail/models/element';
+import * as mailboxActions from 'proton-mail/store/mailbox/mailboxActions';
 
 import { addApiMock } from '../../../helpers/test/api';
 import { minimalCache } from '../../../helpers/test/cache';
@@ -107,8 +108,7 @@ describe('LabelDropdown', () => {
     });
 
     it('should label a message', async () => {
-        const apiMock = jest.fn(() => ({ UndoToken: 1000 }));
-        addApiMock(`mail/v4/messages/label`, apiMock);
+        const labelMessagesSpy = jest.spyOn(mailboxActions, 'labelMessages');
 
         await setup();
 
@@ -130,13 +130,17 @@ describe('LabelDropdown', () => {
             fireEvent.click(applyButton);
         });
 
-        // label call has been made
-        expect(apiMock).toHaveBeenCalled();
+        expect(labelMessagesSpy).toHaveBeenCalledWith(
+            expect.objectContaining({
+                destinationLabelID: label1ID,
+            })
+        );
+
+        labelMessagesSpy.mockRestore();
     });
 
     it('should unlabel a message', async () => {
-        const apiMock = jest.fn(() => ({ UndoToken: 1000 }));
-        addApiMock(`mail/v4/messages/unlabel`, apiMock);
+        const unLabelMessagesSpy = jest.spyOn(mailboxActions, 'unlabelMessages');
 
         await setup([label1ID]);
 
@@ -158,14 +162,17 @@ describe('LabelDropdown', () => {
             fireEvent.click(applyButton);
         });
 
-        // label call has been made
-        expect(apiMock).toHaveBeenCalled();
+        expect(unLabelMessagesSpy).toHaveBeenCalledWith(
+            expect.objectContaining({
+                destinationLabelID: label1ID,
+            })
+        );
+
+        unLabelMessagesSpy.mockRestore();
     });
 
     it('should add the "also archive" option', async () => {
-        const apiMock = jest.fn(() => ({ UndoToken: 1000 }));
-        addApiMock(`mail/v4/messages/label`, apiMock);
-
+        const labelMessagesSpy = jest.spyOn(mailboxActions, 'labelMessages');
         await setup();
 
         const checkbox1 = screen.getByTestId(`label-dropdown:label-checkbox-${label1Name}`) as HTMLInputElement;
@@ -193,17 +200,27 @@ describe('LabelDropdown', () => {
             fireEvent.click(applyButton);
         });
 
-        // label calls have been made
+        // labelMessages should be called twice:
         // Call 1 => Apply label
         // Call 2 => Apply archive
-        expect(apiMock).toHaveBeenCalledTimes(2);
-        expect((apiMock.mock.calls[0] as any[])[0]?.data?.LabelID).toEqual(label1ID);
-        expect((apiMock.mock.calls[1] as any[])[0]?.data?.LabelID).toEqual(MAILBOX_LABEL_IDS.ARCHIVE);
+        expect(labelMessagesSpy).toHaveBeenCalledTimes(2);
+        expect(labelMessagesSpy).toHaveBeenCalledWith(
+            expect.objectContaining({
+                destinationLabelID: label1ID,
+            })
+        );
+        expect(labelMessagesSpy).toHaveBeenCalledWith(
+            expect.objectContaining({
+                destinationLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
+            })
+        );
+
+        labelMessagesSpy.mockRestore();
     });
 
-    it('should add the "always label sender\'s email" option', async () => {
-        const labelApiMock = jest.fn(() => ({ UndoToken: 1000 }));
-        addApiMock(`mail/v4/messages/label`, labelApiMock);
+    // Something is not right with the "always label sender email" (filterApiMock not called). Will be fixed separately
+    it('should add the "always label sender email" option', async () => {
+        const labelMessagesSpy = jest.spyOn(mailboxActions, 'labelMessages');
 
         const filterApiMock = jest.fn(() => ({ Filter: {} }));
         addApiMock('mail/v4/filters', filterApiMock);
@@ -235,7 +252,12 @@ describe('LabelDropdown', () => {
             fireEvent.click(applyButton);
         });
 
-        expect(labelApiMock).toHaveBeenCalled();
+        expect(labelMessagesSpy).toHaveBeenCalledWith(
+            expect.objectContaining({
+                destinationLabelID: label1ID,
+            })
+        );
+
         expect(filterApiMock).toHaveBeenCalled();
     });
 

@@ -16,8 +16,6 @@ import {
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
-import { SOURCE_ACTION } from 'proton-mail/components/list/list-telemetry/useListTelemetry';
-
 import ItemAttachmentIcon from '../../list/ItemAttachmentIcon';
 import ItemDate from '../../list/ItemDate';
 import ItemLabels from '../../list/ItemLabels';
@@ -124,11 +122,7 @@ const HeaderCollapsed = ({
                 {messageLoaded ? (
                     <>
                         <span className="message-header-star mr-2 flex">
-                            <ItemStar
-                                element={message.data}
-                                sourceAction={SOURCE_ACTION.MESSAGE_VIEW}
-                                labelID={labelID}
-                            />
+                            <ItemStar element={message.data} labelID={labelID} />
                         </span>
 
                         <span className="flex">

@@ -104,7 +104,7 @@ export const RouterLabelContainer = ({
         (!elements.length && isColumnModeActive);
 
     const { commanderList } = useMailCommander();
-    const { applyOptimisticLocationEnabled, applyLocation } = useApplyLocation();
+    const { applyLocation } = useApplyLocation();
 
     const { focusID, setFocusID, focusLastID, focusFirstID, focusNextID, focusPreviousID } = useMailboxFocus({
         elementIDs,
@@ -165,9 +165,7 @@ export const RouterLabelContainer = ({
         async (newLabelID: string, sourceAction: SOURCE_ACTION): Promise<void> => {
             const folderName = getFolderName(newLabelID, folders);
             const elements = getElementsFromIDs(selectedIDs);
-            if (applyOptimisticLocationEnabled && !selectAll) {
-                await applyLocation({ type: APPLY_LOCATION_TYPES.MOVE, elements, destinationLabelID: newLabelID });
-            } else {
+            if (selectAll) {
                 await moveToFolder({
                     elements,
                     sourceLabelID: labelID,
@@ -180,6 +178,8 @@ export const RouterLabelContainer = ({
                 if (selectedIDs.includes(elementID || '')) {
                     handleBack();
                 }
+            } else {
+                await applyLocation({ type: APPLY_LOCATION_TYPES.MOVE, elements, destinationLabelID: newLabelID });
             }
         },
         // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-D39BF9

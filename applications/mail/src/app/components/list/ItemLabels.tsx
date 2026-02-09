@@ -12,7 +12,6 @@ import { APPLY_LOCATION_TYPES } from 'proton-mail/hooks/actions/applyLocation/in
 import { useApplyLocation } from 'proton-mail/hooks/actions/applyLocation/useApplyLocation';
 
 import { getLabelIDs } from '../../helpers/elements';
-import { useApplyLabels } from '../../hooks/actions/label/useApplyLabels';
 import type { Element } from '../../models/element';
 
 interface Props {
@@ -35,8 +34,7 @@ const ItemLabels = ({
     showDropdown = true,
 }: Props) => {
     const history = useHistory();
-    const { applyOptimisticLocationEnabled, applyLocation } = useApplyLocation();
-    const { applyLabels } = useApplyLabels();
+    const { applyLocation } = useApplyLocation();
 
     const labelsSorted = useMemo<Label[]>(() => {
         const labelIDs = Object.keys(getLabelIDs(element, labelID));
@@ -52,20 +50,12 @@ const ItemLabels = ({
     const handleGo = (label: Label) => () => history.push(`/${label.ID}`);
 
     const handleUnlabel = (labelID: string) => () => {
-        if (applyOptimisticLocationEnabled) {
-            return applyLocation({
-                type: APPLY_LOCATION_TYPES.APPLY_LABEL,
-                changes: { [labelID]: false },
-                elements: [element || ({} as Element)],
-                destinationLabelID: labelID,
-                removeLabel: true,
-            });
-        }
-
-        return applyLabels({
-            elements: [element || ({} as Element)],
+        return applyLocation({
+            type: APPLY_LOCATION_TYPES.APPLY_LABEL,
             changes: { [labelID]: false },
-            labelID,
+            elements: [element || ({} as Element)],
+            destinationLabelID: labelID,
+            removeLabel: true,
         });
     };
 

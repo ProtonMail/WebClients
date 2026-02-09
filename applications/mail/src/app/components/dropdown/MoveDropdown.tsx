@@ -83,7 +83,7 @@ const MoveDropdown = ({
     const getMessagesOrElements = useGetMessagesOrElementsFromIDs();
     const { moveToFolder, moveScheduledModal, moveSnoozedModal, moveToSpamModal, selectAllMoveModal } =
         useMoveToFolder(setContainFocus);
-    const { applyOptimisticLocationEnabled, applyLocation } = useApplyLocation();
+    const { applyLocation } = useApplyLocation();
     const { getSendersToFilter } = useCreateFilters();
 
     const breakpoints = useActiveBreakpoint();
@@ -159,14 +159,7 @@ const MoveDropdown = ({
         // We only need to ignore the value in that scenario
         const canApplyAlways = selectedFolderID !== MAILBOX_LABEL_IDS.SPAM;
 
-        if (applyOptimisticLocationEnabled && !selectAll) {
-            await applyLocation({
-                type: APPLY_LOCATION_TYPES.MOVE,
-                elements,
-                destinationLabelID: selectedFolderID,
-                createFilters: canApplyAlways ? always : false,
-            });
-        } else {
+        if (selectAll) {
             await moveToFolder({
                 elements,
                 sourceLabelID: labelID,
@@ -177,6 +170,13 @@ const MoveDropdown = ({
                 onCheckAll,
                 sourceAction: SOURCE_ACTION.TOOLBAR,
                 currentFolder: displayedFolder,
+            });
+        } else {
+            await applyLocation({
+                type: APPLY_LOCATION_TYPES.MOVE,
+                elements,
+                destinationLabelID: selectedFolderID,
+                createFilters: canApplyAlways ? always : false,
             });
         }
         onClose();
