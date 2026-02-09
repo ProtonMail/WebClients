@@ -1,17 +1,14 @@
 import { all, call } from 'redux-saga/effects';
 
-import { processAliasNoteChanged, processPendingAliasToCreate } from '@proton/pass/lib/events/v2/user-events.alias';
-import {
-    processSharesCreated,
-    processSharesDeleted,
-    processSharesUpdated,
-} from '@proton/pass/lib/events/v2/user-events.shares';
-import { processBreachUpdate } from '@proton/pass/lib/events/v2/user-events.user';
 import { PendingFileLinkTracker } from '@proton/pass/lib/file-attachments/file-link.tracker';
 import { getItemKey } from '@proton/pass/lib/items/item.utils';
 import type { SyncEventListOutput } from '@proton/pass/types';
 
+import { processAliasNoteChanged, processPendingAliasToCreate } from './user-events.alias';
+import { processFoldersDeleted, processFoldersUpdated } from './user-events.folders';
 import { processItemsDeleted, processItemsUpdated } from './user-events.items';
+import { processSharesCreated, processSharesDeleted, processSharesUpdated } from './user-events.shares';
+import { processBreachUpdate } from './user-events.user';
 
 export type ProcessResult = { status: 'processed'; ok: boolean } | { status: 'skipped'; reason: string };
 
@@ -50,6 +47,8 @@ export function* processUserEvents(event: SyncEventListOutput) {
         call(processSharesCreated, event.SharesCreated),
         call(processSharesUpdated, event.SharesUpdated),
         call(processSharesDeleted, event.SharesDeleted),
+        call(processFoldersUpdated, event.FoldersUpdated),
+        call(processFoldersDeleted, event.FoldersDeleted),
     ]);
 
     return results.every(Boolean);
