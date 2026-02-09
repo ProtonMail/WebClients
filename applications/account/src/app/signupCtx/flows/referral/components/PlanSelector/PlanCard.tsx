@@ -18,7 +18,7 @@ const PlanCard = ({
     description: ReactNode;
     features: ReactNode;
     logos: ReactNode;
-    footer?: ReactNode;
+    footer: ReactNode;
     onCTAClick: () => void;
 }) => {
     return (
@@ -46,7 +46,7 @@ const PlanCard = ({
                 className="mt-2 py-4 text-semibold"
             >{c('Signup').t`Start free trial`}</Button>
 
-            {footer && <div className="mt-4">{footer}</div>}
+            {footer}
         </div>
     );
 };
