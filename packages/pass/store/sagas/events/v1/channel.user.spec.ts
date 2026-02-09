@@ -1,7 +1,6 @@
 import { runSaga } from 'redux-saga';
 
 import { exposePassCrypto } from '@proton/pass/lib/crypto';
-import { SyncType } from '@proton/pass/lib/events/types';
 import { syncIntent } from '@proton/pass/store/actions';
 import { sagaSetup } from '@proton/pass/store/sagas/testing';
 import type { PassCryptoWorker } from '@proton/pass/types';
@@ -45,7 +44,7 @@ describe('`onUserRefreshed`', () => {
         await task.toPromise();
 
         expect(PassCrypto.hydrate).toHaveBeenCalledWith({ user, keyPassword, addresses, clear: false });
-        expect(saga.dispatched).toContainEqual(syncIntent(SyncType.FULL));
+        expect(saga.dispatched).toContainEqual(syncIntent());
     });
 
     test('should not trigger full sync when keys are unchanged', async () => {
@@ -57,7 +56,7 @@ describe('`onUserRefreshed`', () => {
         await task.toPromise();
 
         expect(PassCrypto.hydrate).toHaveBeenCalledWith({ user, keyPassword, addresses, clear: false });
-        expect(saga.dispatched).not.toContainEqual(syncIntent(SyncType.FULL));
+        expect(saga.dispatched).not.toContainEqual(syncIntent());
     });
 
     test('should handle crypto hydration errors gracefully', async () => {

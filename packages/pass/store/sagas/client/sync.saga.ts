@@ -1,6 +1,6 @@
 import { call, put, race, select, take } from 'redux-saga/effects';
 
-import { syncV1 } from '@proton/pass/lib/events/v1/sync';
+import { sync } from '@proton/pass/lib/events/sync';
 import {
     getInAppNotifications,
     getUserAccessIntent,
@@ -23,7 +23,7 @@ import type { RootSagaOptions } from '@proton/pass/store/types';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import type { User } from '@proton/shared/lib/interfaces';
 
-function* syncWorker({ payload }: ReturnType<typeof syncIntent>, options: RootSagaOptions) {
+function* syncWorker(options: RootSagaOptions) {
     yield put(stopEventPolling());
 
     const user: User = yield select(selectUser);
@@ -45,7 +45,7 @@ function* syncWorker({ payload }: ReturnType<typeof syncIntent>, options: RootSa
             yield put(withRevalidate(getOrganizationPauseList.intent()));
         }
 
-        yield put(syncSuccess(yield call(syncV1, payload.type, options)));
+        yield put(syncSuccess(yield call(sync, options)));
     } catch (e: unknown) {
         yield put(syncFailure(e));
     } finally {
@@ -58,9 +58,9 @@ function* syncWorker({ payload }: ReturnType<typeof syncIntent>, options: RootSa
 export default function* watcher(options: RootSagaOptions): Generator {
     while (true) {
         yield call(function* () {
-            const action: ReturnType<typeof syncIntent> = yield take(syncIntent.match);
+            yield take(syncIntent.match);
             yield race({
-                sync: syncWorker(action, options),
+                sync: call(syncWorker, options),
                 cancel: take(stateDestroy.match),
             });
         });

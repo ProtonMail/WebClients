@@ -1,7 +1,6 @@
 import { put, select } from 'redux-saga/effects';
 
 import { PassCrypto } from '@proton/pass/lib/crypto';
-import { SyncType } from '@proton/pass/lib/events/types';
 import { requestItemsForShareId } from '@proton/pass/lib/items/item.requests';
 import { dedupeShares } from '@proton/pass/lib/shares/share.dedupe';
 import { parseShareResponse } from '@proton/pass/lib/shares/share.parser';
@@ -12,7 +11,7 @@ import { asIfNotOptimistic } from '@proton/pass/store//optimistic/selectors/sele
 import { notification } from '@proton/pass/store/actions';
 import { type ItemsByShareId, type SharesState, reducerMap } from '@proton/pass/store/reducers';
 import type { ShareDedupeState } from '@proton/pass/store/reducers/shares-dedupe';
-import { selectAllShares, selectItems, selectOrganizationVaultCreationPolicy } from '@proton/pass/store/selectors';
+import { selectAllShares, selectOrganizationVaultCreationPolicy } from '@proton/pass/store/selectors';
 import type { RootSagaOptions, State } from '@proton/pass/store/types';
 import {
     type Maybe,
@@ -29,8 +28,7 @@ import { and, not, notIn } from '@proton/pass/utils/fp/predicates';
 import { sortOn } from '@proton/pass/utils/fp/sort';
 import { diadic } from '@proton/pass/utils/fp/variadics';
 import { logger } from '@proton/pass/utils/logger';
-import { objectFilter } from '@proton/pass/utils/object/filter';
-import { fullMerge, merge } from '@proton/pass/utils/object/merge';
+import { partialMerge } from '@proton/pass/utils/object/merge';
 import { toMap } from '@proton/shared/lib/helpers/object';
 
 export type SyncResultV1 = {
@@ -40,7 +38,7 @@ export type SyncResultV1 = {
     v: 1;
 };
 
-export function* syncV1(type: SyncType, { getCore }: RootSagaOptions) {
+export function* syncV1({ getCore }: RootSagaOptions) {
     const state: State = asIfNotOptimistic((yield select()) as State, reducerMap);
     const cachedShares = selectAllShares(state);
     const remote = ((yield requestShares()) as ShareGetResponse[]).sort(sortOn('CreateTime', 'ASC'));
@@ -75,20 +73,13 @@ export function* syncV1(type: SyncType, { getCore }: RootSagaOptions) {
      * it means the decryption failed and as such is considered inactive. */
     const [activeRemoteShares, inactiveRemoteShares] = partition(remoteShares, ({ share }) => Boolean(share));
 
-    /* In the case of a partial sync : inactive shares should
-     * be resolved for both remote and local shares. */
-    const totalInactiveShares =
-        type === SyncType.FULL
-            ? inactiveRemoteShares.length
-            : inactiveRemoteShares.length + inactiveCachedShareIds.length;
-
     /* update the disabled shareIds list with any inactive remote shares */
     disabledShareIds.push(...inactiveRemoteShares.map(prop('shareId')));
 
     /* Check if PassCrypto may have been cleared due to
      * an inactive or locked session during this sequence,
      * which could result in detecting  inactive shares  */
-    if (totalInactiveShares > 0 && PassCrypto.ready) {
+    if (inactiveRemoteShares.length > 0 && PassCrypto.ready) {
         yield put(
             notification({
                 endpoint: 'popup',
@@ -103,7 +94,6 @@ export function* syncV1(type: SyncType, { getCore }: RootSagaOptions) {
     /* when checking the presence of an active vault we must both
      * check the active remote shares and the local cached shares */
     const incomingShares = activeRemoteShares.map(prop('share')) as Share[];
-    const incomingShareIds = incomingShares.map(prop('shareId'));
     const hasDefaultVault = incomingShares.concat(cachedShares).some(and(isActiveVault, isWritableVault, isOwnVault));
 
     /* When syncing, if no owned writable vault exists, create it.
@@ -132,16 +122,10 @@ export function* syncV1(type: SyncType, { getCore }: RootSagaOptions) {
     logger.info(`[Sync] Discovered ${cachedShareIds.length} share(s) in cache`);
     logger.info(`[Sync] User has ${remote.length} share(s) in database`);
     logger.info(`[Sync] ${deletedShareIds.length} share(s) deleted`);
-    logger.info(`[Sync] User has ${totalInactiveShares} total inactive share(s)`);
-    logger.info(`[Sync] ${incomingShares.length} share(s) need to be synced`);
-    logger.info(`[Sync] Performing ${type} sync`);
+    logger.info(`[Sync] ${inactiveRemoteShares.length} inactive remote share(s)`);
+    logger.info(`[Sync] ${incomingShares.length} new share(s) to sync`);
 
-    /* On full sync : we want to request all items for each share
-     * On partial sync : only request items for new shares (event-loop
-     * will take care of updates) and remove items from deleted shares */
-    const fullSync = type === SyncType.FULL;
-    const itemShareIds = (fullSync ? remoteShareIds : incomingShareIds).filter(notIn(disabledShareIds));
-    const itemState = fullSync ? {} : objectFilter(selectItems(state), notIn(disabledShareIds));
+    const itemShareIds = remoteShareIds.filter(notIn(disabledShareIds));
 
     const syncedItems = (yield Promise.all(
         itemShareIds.map(
@@ -158,8 +142,8 @@ export function* syncV1(type: SyncType, { getCore }: RootSagaOptions) {
     const result: SyncResultV1 = {
         v: 1,
         shares: toMap(shares, 'shareId'),
-        items: fullMerge(itemState, syncedItems.reduce(diadic(merge), {})),
         dedupe: yield dedupeShares(shares, getCore()),
+        items: syncedItems.reduce<ItemsByShareId>(diadic(partialMerge), {}),
     };
 
     return result;

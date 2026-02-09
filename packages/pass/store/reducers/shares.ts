@@ -12,6 +12,7 @@ import {
     sharesEventNew,
     sharesEventSync,
     sharesVisibilityEdit,
+    sync,
     syncSuccess,
     vaultCreationSuccess,
     vaultDeleteSuccess,
@@ -30,7 +31,7 @@ export type SharesState = Record<ShareId, ShareItem>;
 
 export const shares: Reducer<SharesState> = (state = {}, action: Action) => {
     if (bootSuccess.match(action) && action.payload?.shares !== undefined) return action.payload.shares;
-    if (syncSuccess.match(action)) return action.payload.shares;
+    if (or(sync.match, syncSuccess.match)(action)) return action.payload.shares;
     if (sharesEventNew.match(action)) return fullMerge(state, action.payload.shares);
 
     if (shareEvent.match(action) && state !== null) {

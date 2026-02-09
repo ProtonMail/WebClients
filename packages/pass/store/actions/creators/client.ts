@@ -2,7 +2,7 @@ import { createAction } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
 import type { ReauthActionPayload } from '@proton/pass/lib/auth/reauth';
-import type { SyncResult, SyncType } from '@proton/pass/lib/events/types';
+import type { SyncResult } from '@proton/pass/lib/events/types';
 import { type CacheMeta, withCache, withCacheOptions } from '@proton/pass/store/actions/enhancers/cache';
 import { withStreamableAction } from '@proton/pass/store/actions/enhancers/client';
 import { type EndpointOptions, withReceiver } from '@proton/pass/store/actions/enhancers/endpoint';
@@ -67,7 +67,7 @@ export const bootSuccess = createAction('boot::success', (payload?: SyncResult) 
     pipe(withRequest({ id: bootRequest(), status: 'success' }), withStreamableAction)({ payload })
 );
 
-export const syncIntent = createAction('sync::intent', (type: SyncType) =>
+export const syncIntent = createAction('sync::intent', () =>
     pipe(
         withRequest({ id: syncRequest(), status: 'start' }),
         withNotification({
@@ -77,7 +77,7 @@ export const syncIntent = createAction('sync::intent', (type: SyncType) =>
             showCloseButton: false,
             loading: true,
         })
-    )({ payload: { type } })
+    )({ payload: null })
 );
 
 export const syncSuccess = createAction('sync::success', (payload: SyncResult) =>
@@ -88,6 +88,8 @@ export const syncSuccess = createAction('sync::success', (payload: SyncResult) =
         withNotification({ type: 'info', text: c('Info').t`Successfully synced all vaults` })
     )({ payload })
 );
+
+export const sync = createAction('sync::v2', (payload: SyncResult) => pipe(withCache, withShareDedupe, withStreamableAction)({ payload }));
 
 export const syncFailure = createAction('sync::failure', (error: unknown) =>
     pipe(
