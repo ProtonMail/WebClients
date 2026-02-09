@@ -8,7 +8,7 @@ import { processAliasNoteChanged, processPendingAliasToCreate } from './user-eve
 import { processFoldersDeleted, processFoldersUpdated } from './user-events.folders';
 import { processItemsDeleted, processItemsUpdated } from './user-events.items';
 import { processSharesCreated, processSharesDeleted, processSharesUpdated } from './user-events.shares';
-import { processBreachUpdate } from './user-events.user';
+import { processBreachUpdate, processUserRefresh } from './user-events.user';
 
 export type ProcessResult = { status: 'processed'; ok: boolean } | { status: 'skipped'; reason: string };
 
@@ -49,6 +49,7 @@ export function* processUserEvents(event: SyncEventListOutput) {
         call(processSharesDeleted, event.SharesDeleted),
         call(processFoldersUpdated, event.FoldersUpdated),
         call(processFoldersDeleted, event.FoldersDeleted),
+        call(processUserRefresh, event.RefreshUser),
     ]);
 
     return results.every(Boolean);
