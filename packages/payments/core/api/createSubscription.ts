@@ -1,5 +1,6 @@
 import { type ProductParam, getProductHeaders } from '@proton/shared/lib/apps/product';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
+import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import type { Api } from '@proton/shared/lib/interfaces';
 
 import type { PaymentTelemetryContext } from '../../telemetry/helpers';
@@ -7,6 +8,7 @@ import type { PaymentTelemetryPayload } from '../../telemetry/shared-checkout-te
 import { checkoutTelemetry } from '../../telemetry/telemetry';
 import { type BillingAddressProperty, normalizeBillingAddress } from '../billing-address/billing-address';
 import { PAYMENT_METHOD_TYPES, PLANS } from '../constants';
+import { isCountryWithRequiredPostalCode, isCountryWithStates } from '../countries';
 import type {
     AmountAndCurrency,
     Currency,
@@ -34,7 +36,7 @@ type CommonSubscribeData = {
 
 type SubscribeDataV4 = CommonSubscribeData & TokenPaymentMethod & BillingAddressProperty;
 type SubscribeDataV5 = CommonSubscribeData & V5PaymentToken & BillingAddressProperty;
-type SubscribeDataNoPayment = CommonSubscribeData;
+type SubscribeDataNoPayment = CommonSubscribeData & BillingAddressProperty;
 export type SubscribeData = SubscribeDataV4 | SubscribeDataV5 | SubscribeDataNoPayment;
 
 function prepareSubscribeDataPayload(data: SubscribeData): SubscribeData {
@@ -179,6 +181,46 @@ const createSubscriptionQuery = (
     return config;
 };
 
+function reportWrongBillingAddress(data: SubscribeData) {
+    try {
+        const extra = {
+            billingAddress: data?.BillingAddress,
+            CountryCode: data?.BillingAddress?.CountryCode,
+            State: data?.BillingAddress?.State,
+            hasZipCode: !!data?.BillingAddress?.ZipCode,
+            amount: data?.Amount,
+            currency: data?.Currency,
+            codes: data?.Codes,
+            cycle: data?.Cycle,
+            plans: data?.Plans,
+            startTrial: data?.StartTrial,
+            hasVatId: !!data?.VatId,
+            planName: data?.Plans ? getPlanNameFromIDs(data.Plans) : undefined,
+        };
+
+        if (!data?.BillingAddress?.CountryCode) {
+            captureMessage('Payments: missing CountryCode in billing address', {
+                level: 'warning',
+                extra,
+            });
+        }
+
+        if (isCountryWithStates(data?.BillingAddress?.CountryCode) && !data?.BillingAddress?.State) {
+            captureMessage('Payments: missing State in billing address', {
+                level: 'warning',
+                extra,
+            });
+        }
+
+        if (isCountryWithRequiredPostalCode(data?.BillingAddress?.CountryCode) && !data?.BillingAddress?.ZipCode) {
+            captureMessage('Payments: missing ZipCode in billing address', {
+                level: 'warning',
+                extra,
+            });
+        }
+    } catch {}
+}
+
 export const createSubscription = async (
     api: Api,
     data: SubscribeData,
@@ -221,6 +263,7 @@ export const createSubscription = async (
     };
 
     try {
+        reportWrongBillingAddress(data);
         const response = await api<{ Subscription: Subscription }>(config);
 
         checkoutTelemetry.reportPayment({
