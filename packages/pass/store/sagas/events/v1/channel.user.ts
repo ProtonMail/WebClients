@@ -2,7 +2,6 @@ import { all, call, fork, put, select } from 'redux-saga/effects';
 
 import { PassCrypto } from '@proton/pass/lib/crypto';
 import type { EventCursor, EventManagerEvent } from '@proton/pass/lib/events/manager/manager';
-import { SyncType } from '@proton/pass/lib/events/types';
 import { getUserData } from '@proton/pass/lib/user/user.requests';
 import {
     getInAppNotifications,
@@ -53,7 +52,7 @@ export function* onUserRefreshed(eventUser?: User, keyPassword?: string) {
             /** Full sync removes shares we can no longer decrypt
              * and/or recovers newly accessible ones */
             logger.info(`[ServerEvents::User] Detected user keys update`);
-            yield put(syncIntent(SyncType.FULL));
+            yield put(syncIntent());
         }
     } catch (err) {
         logger.warn(`[ServerEvents::User] user refresh failed`, err);
