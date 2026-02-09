@@ -1,5 +1,5 @@
-import type { ContextVerificationOptions } from '@proton/crypto';
-import { type PrivateKeyReference, toPublicKeyReference } from '@proton/crypto';
+import type { ContextVerificationOptions, PublicKeyReference, SessionKey } from '@proton/crypto';
+import { CryptoProxy, type PrivateKeyReference, toPublicKeyReference } from '@proton/crypto';
 import { getDefaultKeyFlags } from '@proton/shared/lib/keys/keyFlags';
 import noop from '@proton/utils/noop';
 
@@ -158,5 +158,44 @@ export const getGroupMemberPublicKeys = async ({
     return {
         forwardeeKeysConfig,
         forwardeeArmoredPrimaryPublicKey: allPublicKeys[0],
+    };
+};
+
+export const encryptGroupOwnerTokenPackets = async ({
+    decryptedToken,
+    sessionKey,
+    encryptionKey,
+    signingKey,
+    signatureContextValue,
+}: {
+    decryptedToken: string;
+    sessionKey: SessionKey;
+    encryptionKey: PublicKeyReference;
+    signingKey: PrivateKeyReference;
+    signatureContextValue: string;
+}): Promise<{ TokenKeyPacket: string; TokenSignaturePacket: string }> => {
+    // Generate the token key packet - sessionKey encrypted with the publicUserKey
+    const TokenKeyPacket = (
+        await CryptoProxy.encryptSessionKey({
+            ...sessionKey,
+            encryptionKeys: [encryptionKey],
+            format: 'binary',
+        })
+    ).toBase64();
+
+    // Re-sign the decrypted token with the private user key
+    const TokenSignaturePacket = await CryptoProxy.signMessage({
+        textData: decryptedToken,
+        signingKeys: [signingKey],
+        detached: true,
+        signatureContext: {
+            critical: true,
+            value: signatureContextValue,
+        },
+    });
+
+    return {
+        TokenKeyPacket,
+        TokenSignaturePacket,
     };
 };
