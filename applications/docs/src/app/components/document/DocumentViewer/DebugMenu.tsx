@@ -13,6 +13,10 @@ import type { DocumentType } from '@proton/drive-store/store/_documents'
 import clsx from '@proton/utils/clsx'
 import { ConnectionCloseReason } from '@proton/docs-proto'
 import { isDevOrBlack } from '@proton/docs-shared'
+import {
+  decompressDocumentUpdate,
+  isCompressedDocumentUpdate,
+} from '@proton/docs-core/lib/utils/document-update-compression'
 
 export type DebugMenuProps = {
   docController?: AuthenticatedDocControllerInterface
@@ -117,6 +121,33 @@ export function DebugMenu({ docController, editorController, documentState, docu
     a.remove()
   }
 
+  const downloadBaseCommit = async () => {
+    const baseCommit = documentState.getProperty('baseCommit')
+    if (!baseCommit) {
+      return
+    }
+    const JSZip = (await import('jszip')).default
+    const zip = new JSZip()
+    for (const message of baseCommit.messages) {
+      const content = message.content
+      if (isCompressedDocumentUpdate(content)) {
+        const decompressed = decompressDocumentUpdate(content)
+        zip.file(`${message.timestamp}.bin`, decompressed)
+      } else {
+        zip.file(`${message.timestamp}.bin`, content)
+      }
+    }
+    const zipBlob = await zip.generateAsync({ type: 'blob' })
+    const zipUrl = URL.createObjectURL(zipBlob)
+    const zipLink = document.createElement('a')
+    zipLink.href = zipUrl
+    zipLink.download = 'all-updates-in-base-commit.zip'
+    document.body.appendChild(zipLink)
+    zipLink.click()
+    document.body.removeChild(zipLink)
+    URL.revokeObjectURL(zipUrl)
+  }
+
   const isDocument = documentType === 'doc'
   const isSpreadsheet = documentType === 'sheet'
 
@@ -213,6 +244,9 @@ export function DebugMenu({ docController, editorController, documentState, docu
             Download All Updates as ZIP
           </Button>
         )}
+        <Button size="small" onClick={downloadBaseCommit}>
+          Download base commit updates
+        </Button>
       </div>
     </div>
   )
