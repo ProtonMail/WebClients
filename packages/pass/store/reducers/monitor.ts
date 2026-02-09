@@ -1,21 +1,19 @@
 import type { Reducer } from 'redux';
 
 import { PassErrorCode } from '@proton/pass/lib/api/errors';
-import {
-    intoCustomMonitorAddress,
-    intoMonitorDomain,
-    intoProtonMonitorAddress,
-} from '@proton/pass/lib/monitor/monitor.utils';
+import { intoCustomMonitorAddress, intoMonitorDomain, intoProtonMonitorAddress } from '@proton/pass/lib/monitor/monitor.utils';
 import { AddressType, type MonitorAddress, type MonitorDomain } from '@proton/pass/lib/monitor/types';
 import {
     addCustomAddress,
     deleteCustomAddress,
     getBreaches,
     resolveAddressMonitor,
+    setBreaches,
     toggleAddressMonitor,
     verifyCustomAddress,
 } from '@proton/pass/store/actions';
 import type { MaybeNull } from '@proton/pass/types';
+import { or } from '@proton/pass/utils/fp/predicates';
 import { partialMerge } from '@proton/pass/utils/object/merge';
 import lastItem from '@proton/utils/lastItem';
 
@@ -28,7 +26,7 @@ export type MonitorState = MaybeNull<{
 }>;
 
 const monitorReducer: Reducer<MonitorState> = (state = null, action) => {
-    if (getBreaches.success.match(action)) {
+    if (or(getBreaches.success.match, setBreaches.match)(action)) {
         return {
             custom: action.payload.CustomEmails?.map(intoCustomMonitorAddress) ?? [],
             preview: action.payload.DomainsPeek?.map(intoMonitorDomain) ?? [],
@@ -120,9 +118,7 @@ const monitorReducer: Reducer<MonitorState> = (state = null, action) => {
 
             return partialMerge(state, {
                 [type]: state[type].map((breach) =>
-                    action.payload.type === AddressType.ALIAS || breach.addressId !== action.payload.addressId
-                        ? breach
-                        : action.payload
+                    action.payload.type === AddressType.ALIAS || breach.addressId !== action.payload.addressId ? breach : action.payload
                 ),
             });
         }
