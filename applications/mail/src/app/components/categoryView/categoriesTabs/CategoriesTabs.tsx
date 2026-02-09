@@ -45,7 +45,7 @@ export const CategoriesTabsList = ({ categoryLabelID }: Props) => {
         <>
             <div
                 className={clsx(
-                    'categories-tabs flex flex-row flex-nowrap justify-space-between px-4 h-fit-content border-bottom border-weak',
+                    'categories-tabs flex flex-row flex-nowrap px-4 h-fit-content border-bottom border-weak',
                     !isColumnModeActive && activeCategoriesTabs.length <= 4 && 'low-active-categories'
                 )}
                 data-testid="categories-tabs"
