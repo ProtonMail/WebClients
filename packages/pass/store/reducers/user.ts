@@ -12,6 +12,7 @@ import {
     getUserSettings,
     monitorToggle,
     sentinelToggle,
+    setUserAccess,
     setUserEventID,
     userEvent,
     userRefresh,
@@ -110,7 +111,9 @@ const reducer: Reducer<UserState> = (state = getInitialState(), action) => {
         return partialMerge(state, { userEventId: action.payload.userEventID });
     }
 
+    /** Sync V2 state */
     if (setUserEventID.match(action)) return partialMerge(state, { userEventId: action.payload.userEventID });
+    if (setUserAccess.match(action)) return partialMerge(state, action.payload);
 
     if (userEvent.match(action)) {
         if (action.payload.EventID === state.eventId) return state;
