@@ -1,3 +1,5 @@
+import { createAction } from '@reduxjs/toolkit';
+
 import type { DomainCriterias } from '@proton/pass/lib/settings/pause-list';
 import { withCache } from '@proton/pass/store/actions/enhancers/cache';
 import { withSettings } from '@proton/pass/store/actions/enhancers/settings';
@@ -14,3 +16,4 @@ export const getOrganizationSettings = requestActionsFactory<void, OrganizationG
 export const getOrganizationPauseList = requestActionsFactory<void, DomainCriterias, void>('organization::pause-list::get')({
     success: { ...cachedRequest(15 * UNIX_MINUTE), prepare: (payload) => pipe(withSettings, withCache)({ payload }) },
 });
+export const setOrganizationSettings = createAction<OrganizationGetResponse>('organization::settings::set');
