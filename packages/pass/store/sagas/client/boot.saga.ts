@@ -2,14 +2,11 @@ import type { Action } from 'redux';
 import { call, put, race, select, take, takeLeading } from 'redux-saga/effects';
 import { c } from 'ttag';
 
-import { SYNC_VERSION } from '@proton/pass/constants';
 import { api } from '@proton/pass/lib/api/api';
 import { PassCrypto } from '@proton/pass/lib/crypto';
 import { PassCryptoError, isPassCryptoError } from '@proton/pass/lib/crypto/utils/errors';
+import { sync } from '@proton/pass/lib/events/sync';
 import type { SyncResult } from '@proton/pass/lib/events/types';
-import { SyncType } from '@proton/pass/lib/events/types';
-import { syncV1 } from '@proton/pass/lib/events/v1/sync';
-import { syncV2 } from '@proton/pass/lib/events/v2/user-events.sync';
 import {
     aliasSyncStatus,
     bootFailure,
@@ -71,7 +68,7 @@ function* bootWorker({ payload }: ReturnType<typeof bootIntent>, options: RootSa
          * that crypto operations can be performed with the current session state. */
         if (online && !PassCrypto.ready) throw new PassCryptoError();
 
-        const result: Maybe<SyncResult> = fromCache ? undefined : yield SYNC_VERSION === 2 ? syncV2() : syncV1(SyncType.FULL, options);
+        const result: Maybe<SyncResult> = fromCache ? undefined : yield sync(options);
 
         /** Sync settings after successful hydration and synchronization.
          * This prevents offline mode from being enabled if the boot

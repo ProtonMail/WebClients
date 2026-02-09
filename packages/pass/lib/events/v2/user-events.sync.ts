@@ -56,6 +56,6 @@ export function* syncV2(): Generator<unknown, SyncResultV2> {
         userEventID,
         access,
         shares: toMap(activeShares.map(prop('share')), 'shareId'),
-        items: items.reduce(diadic(merge)),
+        items: items.reduce(diadic(merge), {}),
     };
 }

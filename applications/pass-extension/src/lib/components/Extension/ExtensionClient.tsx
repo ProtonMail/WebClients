@@ -16,7 +16,6 @@ import { createUseContext } from '@proton/pass/hooks/useContextFactory';
 import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
 import { useVisibleEffect } from '@proton/pass/hooks/useVisibleEffect';
 import { clientErrored } from '@proton/pass/lib/client';
-import { SyncType } from '@proton/pass/lib/events/types';
 import { telemetryBool } from '@proton/pass/lib/telemetry/utils';
 import { lock, signoutIntent } from '@proton/pass/store/actions/creators/auth';
 import { syncIntent } from '@proton/pass/store/actions/creators/client';
@@ -114,7 +113,7 @@ export const ExtensionClient: FC<Props> = ({ children, onWorkerMessage }) => {
                 AppStateManager.reset();
                 dispatch(signoutIntent({ soft }));
             },
-            sync: () => dispatch(syncIntent(SyncType.FULL)),
+            sync: () => dispatch(syncIntent()),
         }),
         []
     );

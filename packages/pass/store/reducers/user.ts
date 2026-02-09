@@ -14,6 +14,8 @@ import {
     sentinelToggle,
     setUserAccess,
     setUserEventID,
+    sync,
+    syncSuccess,
     userEvent,
     userRefresh,
 } from '@proton/pass/store/actions';
@@ -114,6 +116,7 @@ const reducer: Reducer<UserState> = (state = getInitialState(), action) => {
     /** Sync V2 state */
     if (setUserEventID.match(action)) return partialMerge(state, { userEventId: action.payload.userEventID });
     if (setUserAccess.match(action)) return partialMerge(state, action.payload);
+    if (or(sync.match, syncSuccess.match)(action) && action.payload.v === 2) return partialMerge(state, action.payload.access);
 
     if (userEvent.match(action)) {
         if (action.payload.EventID === state.eventId) return state;
