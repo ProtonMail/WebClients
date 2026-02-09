@@ -6,18 +6,12 @@ import usePreviousDistinct from '@proton/hooks/usePreviousDistinct';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { queryMembers, searchMembers as searchMembersAPI } from '@proton/shared/lib/api/members';
 import type { Member } from '@proton/shared/lib/interfaces';
-import noop from '@proton/utils/noop';
-
-import { useMembers } from './hooks';
 
 interface UseMembersAdvancedParams {
     page?: number;
     pageSize?: number;
     keywords?: string;
     searchDebounceThreshold?: number;
-}
-interface UseMembersAdvancedInternalParams extends UseMembersAdvancedParams {
-    enabled: boolean;
 }
 
 interface UseMembersAdvancedResult {
@@ -35,27 +29,16 @@ interface MembersResponse {
     More?: boolean;
 }
 
-const LARGE_ORG_MEMBER_THRESHOLD = 100;
-const DEFAULT_MEMBERS_RESULT = {
-    data: [] as Member[],
-    loading: true,
-    error: null,
-    total: 0,
-    sync: async () => {},
-    totalPages: 0,
-};
-
 /**
  * Remote mode hook for advanced members management.
  * Handles pagination and search through API calls for large organizations.
  */
-const useMembersAdvancedRemote = ({
-    enabled,
+export const useMembersRemote = ({
     page = 1,
     pageSize = 50,
     keywords,
     searchDebounceThreshold = 300,
-}: UseMembersAdvancedInternalParams) => {
+}: UseMembersAdvancedParams): UseMembersAdvancedResult => {
     const rawApi = useApi();
     const api = useMemo(() => getSilentApi(rawApi), [rawApi]);
     const [buffer, setBuffer] = useState<Member[]>([]);
@@ -136,110 +119,5 @@ const useMembersAdvancedRemote = ({
         };
     }, [sync]);
 
-    if (!enabled) {
-        return DEFAULT_MEMBERS_RESULT;
-    }
     return { data: returnData, loading, error, total, sync, totalPages: Math.ceil(total / pageSize) };
 };
-
-const useMembersAdvancedLocal = ({ enabled, page = 1, pageSize = 50, keywords }: UseMembersAdvancedInternalParams) => {
-    const [allMembers, membersLoading] = useMembers();
-    if (!enabled || !allMembers) {
-        return DEFAULT_MEMBERS_RESULT;
-    }
-
-    // Filter by keywords if provided
-    let filteredMembers = allMembers;
-    if (keywords) {
-        const searchLower = keywords.toLowerCase();
-        filteredMembers = allMembers.filter((member) => {
-            const name = member.Name?.toLowerCase() || '';
-            // Check if any address email matches
-            const addressEmails = member.Addresses?.map((addr) => addr.Email?.toLowerCase() || '').join(' ') || '';
-            return name.includes(searchLower) || addressEmails.includes(searchLower);
-        });
-    }
-
-    // Paginate locally
-    const total = filteredMembers.length;
-    const actualPage = Math.min(page, Math.ceil(total / pageSize));
-    const startIndex = pageSize * (actualPage - 1);
-    const endIndex = startIndex + pageSize;
-    const paginatedData = filteredMembers.slice(startIndex, endIndex);
-
-    return {
-        data: paginatedData as Member[],
-        loading: membersLoading,
-        error: null,
-        // No need to do anything as redux wrapper already handles the sync
-        sync: noop as unknown as () => Promise<void>,
-        total,
-        totalPages: Math.ceil(total / pageSize),
-    };
-};
-
-/**
- * Advanced members hook that's independent from Redux store, unlike the existing `useMembers` hook.
- * Provides additional features including data pagination (`page`, `pageSize`) and keywords search (`keyword` param)
- * for filtering members. Useful when you need isolated member data management without relying on global state.
- *
- * For small organizations (< 100 members), uses local mode with `useMembers` for better performance.
- * For large organizations (>= 100 members), uses remote mode with API pagination and search.
- */
-const useMembersAdvanced = ({
-    page = 1,
-    pageSize = 50,
-    keywords,
-    searchDebounceThreshold = 200,
-}: UseMembersAdvancedParams): UseMembersAdvancedResult => {
-    const rawApi = useApi();
-    const api = useMemo(() => getSilentApi(rawApi), [rawApi]);
-    const [mode, setMode] = useState<'local' | 'remote' | null>(null);
-
-    // Initialization: fetch member count and determine if we should use local mode
-    useEffect(() => {
-        if (mode != null) {
-            return;
-        }
-
-        async function initialize() {
-            try {
-                const { Total } = await api<MembersResponse>(
-                    queryMembers({
-                        Page: 0,
-                        PageSize: 1,
-                    })
-                );
-                setMode(Total < LARGE_ORG_MEMBER_THRESHOLD ? 'local' : 'remote');
-            } catch (error) {
-                // If initialization fails, default to remote mode
-                setMode('remote');
-            }
-        }
-        void initialize();
-    }, [mode, api]);
-
-    // Remote mode: use the remote hook
-    const remoteResult = useMembersAdvancedRemote({
-        enabled: mode === 'remote',
-        page,
-        pageSize,
-        keywords,
-        searchDebounceThreshold,
-    });
-
-    // Local mode: use Redux store and handle pagination/search locally
-    const localResult = useMembersAdvancedLocal({
-        enabled: mode === 'local',
-        page,
-        pageSize,
-        keywords,
-    });
-
-    if (mode == null) {
-        return DEFAULT_MEMBERS_RESULT;
-    }
-    return mode === 'local' ? localResult : remoteResult;
-};
-
-export default useMembersAdvanced;

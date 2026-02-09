@@ -6,4 +6,3 @@ const hooks = createHooks(membersThunk, selectMembers);
 
 export const useMembers = hooks.useValue;
 export const useGetMembers = hooks.useGet;
-export { default as useMembersAdvanced } from './useMembersAdvanced';

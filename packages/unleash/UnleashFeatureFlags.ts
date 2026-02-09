@@ -106,6 +106,7 @@ enum AccountFlag {
     MeetDashboard = 'MeetDashboard',
     FirstEmail = 'FirstEmail',
     Ipv6ForWgConfig = 'Ipv6ForWgConfig',
+    MembersRemote = 'MembersRemote',
 }
 
 enum PaymentsFlag {
