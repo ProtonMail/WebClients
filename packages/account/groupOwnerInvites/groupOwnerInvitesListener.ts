@@ -1,4 +1,5 @@
 import type { SharedStartListening } from '@proton/redux-shared-store-types';
+import { CacheType } from '@proton/redux-utilities';
 
 import type { GroupOwnerInvitesState } from '.';
 import { groupOwnerInvitesThunk, selectGroupOwnerInvites } from '.';
@@ -29,8 +30,10 @@ export const groupOwnerInvitesListener = (startListening: SharedStartListening<C
             }
 
             // refetch groups and memberships
-            await listenerApi.dispatch(groupThunk());
-            await listenerApi.dispatch(groupMembershipsThunk());
+            await Promise.all([
+                listenerApi.dispatch(groupThunk({ cache: CacheType.None })),
+                listenerApi.dispatch(groupMembershipsThunk({ cache: CacheType.None })),
+            ]);
         },
     });
 };
