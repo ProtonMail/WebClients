@@ -118,7 +118,7 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
         microphones
     );
 
-    const { handlePreviewCameraToggle, cleanupCameraPreview } = useCameraPreview({
+    const { handlePreviewCameraToggle, cleanupCameraPreview, cleanupPreviewTrack } = useCameraPreview({
         selectedCameraId: activeCameraDeviceId,
         facingMode: 'user',
         isBackgroundBlurSupported,
@@ -330,7 +330,7 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
         const wasConnectedRef = { current: false };
         const cleanupInProgressRef = { current: false };
 
-        const handleCleanup = async () => {
+        const handleCleanup = async (shouldCleanupPreviews: boolean = true) => {
             if (cleanupInProgressRef.current) {
                 return;
             }
@@ -344,7 +344,7 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
                     localParticipant.setScreenShareEnabled(false),
                     localParticipant.setCameraEnabled(false),
                     localParticipant.setMicrophoneEnabled(false),
-                    cleanupPreviews(),
+                    shouldCleanupPreviews ? cleanupPreviews() : Promise.resolve(),
                 ]);
             } catch (error) {
                 // eslint-disable-next-line no-console
@@ -377,7 +377,7 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
             }
 
             wasConnectedRef.current = false;
-            void handleCleanup();
+            void handleCleanup(false);
         };
 
         room.on(RoomEvent.Connected, handleConnected);
@@ -387,7 +387,7 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
             room.off(RoomEvent.Connected, handleConnected);
             room.off(RoomEvent.Disconnected, handleDisconnected);
 
-            void handleCleanup();
+            void handleCleanup(true);
         };
     }, []);
 
@@ -399,6 +399,7 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
         <MediaManagementContext.Provider
             value={{
                 handlePreviewCameraToggle,
+                cleanupPreviewTrack,
                 devicePermissions,
                 handleDevicePermissionChange,
                 microphones,

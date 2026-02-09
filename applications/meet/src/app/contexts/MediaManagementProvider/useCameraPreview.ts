@@ -162,5 +162,6 @@ export const useCameraPreview = ({
         handlePreviewCameraToggle,
         cleanupCameraPreview,
         handlePreviewBackgroundBlurPreferenceUpdate,
+        cleanupPreviewTrack,
     };
 };
