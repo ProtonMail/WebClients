@@ -133,7 +133,6 @@ const MainContainer: FunctionComponent = () => {
     const [referralInfo] = useReferralInfo();
     const [isDataRecoveryAvailable, loadingDataRecovery] = useIsDataRecoveryAvailable();
     const [isSessionRecoveryAvailable, loadingIsSessionRecoveryAvailable] = useIsSessionRecoveryAvailable();
-    const isBreachesAccountDashboardEnabled = useFlag('BreachesAccountDashboard');
     const recoveryNotification = useRecoveryNotification(false, false);
     const [isGroupOwner, loadingIsGroupOwner] = useIsGroupOwner();
 
@@ -145,7 +144,6 @@ const MainContainer: FunctionComponent = () => {
         isB2BTrial,
         isReferralProgramEnabled: Boolean(userSettings.Referral?.Eligible),
         referralInfo: referralInfo.uiData,
-        isBreachesAccountDashboardEnabled,
         isProtonMeetIntegrationEnabled,
         isZoomIntegrationEnabled,
         organization,
