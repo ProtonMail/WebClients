@@ -37,6 +37,7 @@ import {
     shareDeleted,
     shareLeaveSuccess,
     sharesEventNew,
+    sync,
     syncSuccess,
     vaultDeleteSuccess,
     vaultMoveAllItemsProgress,
@@ -114,7 +115,7 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
     ],
     (state = {}, action: Action) => {
         if (bootSuccess.match(action) && action.payload?.items !== undefined) return action.payload.items;
-        if (syncSuccess.match(action)) return action.payload.items;
+        if (or(sync.match, syncSuccess.match)(action)) return action.payload.items;
         if (sharesEventNew.match(action)) return fullMerge(state, action.payload.items);
 
         if (shareCreated.match(action)) {
