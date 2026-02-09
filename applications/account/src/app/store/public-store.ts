@@ -1,6 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
 
 import { apiStatusReducer } from '@proton/account/apiStatus';
+import { eligibleTrialsReducer } from '@proton/account/eligibleTrials';
 import { paymentStatusReducer } from '@proton/account/paymentStatus';
 import { plansReducer } from '@proton/account/plans';
 import { referralInfoReducer } from '@proton/account/referralInfo';
@@ -10,7 +11,13 @@ import { type AccountThunkPublicArguments, extraThunkArguments } from './public-
 
 export const setupStore = () => {
     return configureStore({
-        reducer: { ...paymentStatusReducer, ...plansReducer, ...apiStatusReducer, ...referralInfoReducer },
+        reducer: {
+            ...paymentStatusReducer,
+            ...plansReducer,
+            ...apiStatusReducer,
+            ...referralInfoReducer,
+            ...eligibleTrialsReducer,
+        },
         devTools: process.env.NODE_ENV !== 'production',
         middleware: (getDefaultMiddleware) =>
             getDefaultMiddleware({

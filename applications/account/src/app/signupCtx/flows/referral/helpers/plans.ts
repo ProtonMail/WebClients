@@ -6,13 +6,10 @@ import getAvailablePlansWithCycles from '../../../helpers/getAvailablePlansWithC
 
 type ReferralSelectedPlan = {
     planIDs: PlanIDs;
-    requiresPaymentMethod?: boolean;
-    prioritizeExternalSignupType?: boolean;
 };
 
 export const unlimited: ReferralSelectedPlan = {
     planIDs: { [PLANS.BUNDLE]: 1 },
-    requiresPaymentMethod: true,
 };
 
 const mailPlus: ReferralSelectedPlan = {
@@ -21,18 +18,14 @@ const mailPlus: ReferralSelectedPlan = {
 
 const drivePlus: ReferralSelectedPlan = {
     planIDs: { [PLANS.DRIVE]: 1 },
-    prioritizeExternalSignupType: true,
 };
 
 const passPlus: ReferralSelectedPlan = {
     planIDs: { [PLANS.PASS]: 1 },
-    prioritizeExternalSignupType: true,
 };
 
 const vpnPlus: ReferralSelectedPlan = {
     planIDs: { [PLANS.VPN2024]: 1 },
-    requiresPaymentMethod: true,
-    prioritizeExternalSignupType: true,
 };
 
 export type SupportedReferralPlans = PLANS.BUNDLE | PLANS.MAIL | PLANS.DRIVE | PLANS.PASS | PLANS.VPN2024;
@@ -46,22 +39,17 @@ const referralPlanMap: Record<SupportedReferralPlans, ReferralSelectedPlan> = {
 };
 
 /**
- * Trial plans require payment token
+ * Plans that prioritize External signup type (e.g., email-based signup)
+ * This is a static configuration since it's UI behavior not controlled by the API
  */
-export const plansRequiringPaymentToken: SupportedReferralPlans[] = Object.entries(referralPlanMap)
-    .filter(([, { requiresPaymentMethod }]) => requiresPaymentMethod)
-    .map(([plan]) => plan as SupportedReferralPlans);
-
-export const autoRenewingPlans: SupportedReferralPlans[] = Object.entries(referralPlanMap)
-    .filter(([, { requiresPaymentMethod }]) => requiresPaymentMethod)
-    .map(([plan]) => plan as SupportedReferralPlans);
+export const externalSignupPriorityPlans: SupportedReferralPlans[] = [PLANS.DRIVE, PLANS.PASS, PLANS.VPN2024];
 
 /**
- * Plans that prioritize External signup type
+ * Check if a plan prioritizes external signup type
  */
-export const plansPrioritizingExternalSignupType: SupportedReferralPlans[] = Object.entries(referralPlanMap)
-    .filter(([, { prioritizeExternalSignupType }]) => prioritizeExternalSignupType)
-    .map(([plan]) => plan as SupportedReferralPlans);
+export const doesPlanPrioritizeExternalSignup = (plan: PLANS | string): boolean => {
+    return externalSignupPriorityPlans.includes(plan as SupportedReferralPlans);
+};
 
 export const getReferralSelectedPlan = (plan: SupportedReferralPlans | undefined): ReferralSelectedPlan => {
     if (!plan || !(plan in referralPlanMap)) {
