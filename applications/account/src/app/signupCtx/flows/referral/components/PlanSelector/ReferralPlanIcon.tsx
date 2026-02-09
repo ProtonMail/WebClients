@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { useEligibleTrials } from '@proton/account/eligibleTrials/hooks';
 import clsx from '@proton/utils/clsx';
 
 import type { SupportedReferralPlans } from '../../helpers/plans';
@@ -16,6 +17,12 @@ interface Props {
 }
 
 export const ReferralPlanIcon = ({ icon, plan, selected, handleClick, title, extraShortTitle }: Props) => {
+    const { eligibleTrials } = useEligibleTrials();
+
+    if (!eligibleTrials.trialPlans.includes(plan)) {
+        return null;
+    }
+
     return (
         <button
             className={clsx(

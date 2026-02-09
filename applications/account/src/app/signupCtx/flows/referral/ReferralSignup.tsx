@@ -1,6 +1,7 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Route, Switch, useHistory, useLocation } from 'react-router-dom';
 
+import { useEligibleTrials } from '@proton/account/eligibleTrials/hooks';
 import { useReferralInfo } from '@proton/account/referralInfo/hooks';
 import { LoaderPage } from '@proton/components';
 import { useNotifyErrorHandler } from '@proton/components/hooks/useErrorHandler';
@@ -18,10 +19,9 @@ import {
     REFERRAL_DEFAULT_PLAN,
     type SupportedReferralPlans,
     availableReferralPlans,
+    doesPlanPrioritizeExternalSignup,
     getAppIntentFromReferralPlan,
     getReferralSelectedPlan,
-    plansPrioritizingExternalSignupType,
-    plansRequiringPaymentToken,
 } from './helpers/plans';
 import PaymentStep from './steps/PaymentStep';
 import RecoveryPhraseStep from './steps/RecoveryPhraseStep';
@@ -36,6 +36,7 @@ const ReferralSignupInner = () => {
 
     const notifyError = useNotifyErrorHandler();
     const payments = usePaymentOptimistic();
+    const { eligibleTrials } = useEligibleTrials();
 
     /**
      * We have a recovery step in this flow, so let's prefetch the recovery kit
@@ -47,7 +48,7 @@ const ReferralSignupInner = () => {
             {step === 'account-details' && (
                 <AccountDetailsStep
                     onSuccess={async () => {
-                        if (plansRequiringPaymentToken.includes(payments.selectedPlan.name as SupportedReferralPlans)) {
+                        if (eligibleTrials.creditCardRequiredPlans.includes(payments.selectedPlan.name)) {
                             setStep('payment');
                             return;
                         }
@@ -140,6 +141,18 @@ const ReferralSignup = (props: BaseSignupContextProps) => {
 
     const planParam = signupSearchParams.getPlan(searchParams) || REFERRAL_DEFAULT_PLAN;
 
+    const { fetchEligibleTrials } = useEligibleTrials();
+
+    /**
+     * Fetch eligible trials from API when referral identifier is available
+     */
+    useEffect(() => {
+        const referralIdentifier = signupSearchParams.getReferralIdentifier(searchParams);
+        if (referralIdentifier) {
+            void fetchEligibleTrials(referralIdentifier);
+        }
+    }, []);
+
     return (
         <SignupContextProvider
             {...props}
@@ -163,9 +176,7 @@ const ReferralSignup = (props: BaseSignupContextProps) => {
             accountFormDataConfig={{
                 defaultEmail,
                 availableSignupTypes:
-                    plansPrioritizingExternalSignupType.includes(
-                        payments.selectedPlan.name as SupportedReferralPlans
-                    ) || defaultEmail
+                    doesPlanPrioritizeExternalSignup(payments.selectedPlan.name) || defaultEmail
                         ? new Set([SignupType.External, SignupType.Proton])
                         : new Set([SignupType.Proton, SignupType.External]),
             }}

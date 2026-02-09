@@ -60,6 +60,19 @@ export const checkReferrer = (identifier: string) => ({
     url: `core/v4/referrals/identifiers/${identifier}`,
 });
 
+export interface ListEligibleTrialsResponse {
+    TrialPlans: string[];
+    CreditCardRequiredPlans: string[];
+}
+
+/**
+ * List eligible trial plans for a referral identifier
+ */
+export const listEligibleTrials = (referralIdentifier: string) => ({
+    method: 'get',
+    url: `core/v4/trials/${referralIdentifier}`,
+});
+
 export interface ReferralRegistrationPlan {
     name: PLANS;
     cycle: CYCLE;

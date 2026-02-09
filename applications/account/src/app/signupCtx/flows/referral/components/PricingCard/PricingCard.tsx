@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
+import { useEligibleTrials } from '@proton/account/eligibleTrials/hooks';
 import { useReferralInfo } from '@proton/account/referralInfo/hooks';
 import { VerticalStep } from '@proton/atoms/VerticalSteps/VerticalStep';
 import { VerticalSteps } from '@proton/atoms/VerticalSteps/VerticalSteps';
@@ -21,8 +22,6 @@ import clsx from '@proton/utils/clsx';
 
 import { getReferrerName } from '../../../../helpers/signupSearchParams';
 import { getPlanIconPath } from '../../helpers/planIcons';
-import type { SupportedReferralPlans } from '../../helpers/plans';
-import { autoRenewingPlans, plansRequiringPaymentToken } from '../../helpers/plans';
 import { FreeFeatures } from '../Features/FreeFeatures';
 import { TaxRow } from './TaxRow';
 
@@ -79,10 +78,11 @@ const PricingHeader = () => {
 const TrialExplanation = () => {
     const payments = usePaymentOptimistic();
     const { selectedPlan } = payments;
+    const { eligibleTrials } = useEligibleTrials();
 
     const planName = PLAN_NAMES[selectedPlan.getPlanName()];
 
-    const creditCardRequired = plansRequiringPaymentToken.includes(selectedPlan.name as SupportedReferralPlans);
+    const creditCardRequired = eligibleTrials.creditCardRequiredPlans.includes(selectedPlan.name);
 
     const [referralInfo, loadingReferralInfo] = useReferralInfo();
 
@@ -122,7 +122,7 @@ const PricingFooter = ({ step }: { step: PricingStep }) => {
     const payments = usePaymentOptimistic();
     const { selectedPlan } = payments;
     const isPaidPlan = selectedPlan.name !== PLANS.FREE;
-
+    const { eligibleTrials } = useEligibleTrials();
     const hasFullCheckoutDetails = payments.initializationStatus.pricingInitialized && !payments.loadingPaymentDetails;
 
     const planToCheck = {
@@ -143,7 +143,7 @@ const PricingFooter = ({ step }: { step: PricingStep }) => {
     const priceWithDiscountPerMonth = getSimplePriceString(uiData.currency, uiData.withDiscountPerMonth);
     const priceWithDiscountPerCycle = getSimplePriceString(uiData.currency, uiData.withDiscountPerCycle);
 
-    const willAutoRenew = autoRenewingPlans.includes(payments.selectedPlan.name as SupportedReferralPlans);
+    const willAutoRenew = eligibleTrials.creditCardRequiredPlans.includes(payments.selectedPlan.name);
 
     const showTaxRow = step === 'payment';
     const taxRow = showTaxRow && <TaxRow checkResult={payments.checkResult} />;
@@ -279,9 +279,9 @@ const Free = () => {
 export const PricingCard = ({ step }: { step: PricingStep }) => {
     const payments = usePaymentOptimistic();
     const { selectedPlan } = payments;
-
+    const { eligibleTrials } = useEligibleTrials();
     const isPaidPlan = selectedPlan.name !== PLANS.FREE;
-    const willAutoRenew = autoRenewingPlans.includes(payments.selectedPlan.name as SupportedReferralPlans);
+    const willAutoRenew = eligibleTrials.creditCardRequiredPlans.includes(payments.selectedPlan.name);
 
     const planToCheck = {
         planIDs: { [payments.selectedPlan.name]: 1 },
