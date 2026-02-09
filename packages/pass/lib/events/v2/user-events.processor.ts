@@ -1,6 +1,11 @@
 import { all, call } from 'redux-saga/effects';
 
 import { processAliasNoteChanged, processPendingAliasToCreate } from '@proton/pass/lib/events/v2/user-events.alias';
+import {
+    processSharesCreated,
+    processSharesDeleted,
+    processSharesUpdated,
+} from '@proton/pass/lib/events/v2/user-events.shares';
 import { processBreachUpdate } from '@proton/pass/lib/events/v2/user-events.user';
 import { PendingFileLinkTracker } from '@proton/pass/lib/file-attachments/file-link.tracker';
 import { getItemKey } from '@proton/pass/lib/items/item.utils';
@@ -42,6 +47,9 @@ export function* processUserEvents(event: SyncEventListOutput) {
         call(processAliasNoteChanged, event.AliasNoteChanged),
         call(processPendingAliasToCreate, event.PendingAliasToCreateChanged),
         call(processBreachUpdate, event.BreachUpdate),
+        call(processSharesCreated, event.SharesCreated),
+        call(processSharesUpdated, event.SharesUpdated),
+        call(processSharesDeleted, event.SharesDeleted),
     ]);
 
     return results.every(Boolean);
