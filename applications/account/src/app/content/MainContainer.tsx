@@ -167,12 +167,10 @@ const MainContainer = () => {
     useFeatures([FeatureCode.EasySwitch]);
 
     const showThemeSelection = useShowThemeSelection();
-    const isBreachesAccountDashboardEnabled = useFlag('BreachesAccountDashboard');
     const canDisplayB2BLogsPass = useFlag('B2BLogsPass');
     const canDisplayB2BLogsVPN = useFlag('B2BLogsVPN');
     const isUserGroupsFeatureEnabled = useFlag('UserGroupsPermissionCheck');
     const isUserGroupsNoCustomDomainEnabled = useFlag('UserGroupsNoCustomDomain');
-    const isUserGroupsMembershipFeatureEnabled = useFlag('UserGroupsMembersPermissionCheck');
     const isB2BAuthLogsEnabled = useFlag('B2BAuthenticationLogs');
     const { paymentsEnabled: isScribePaymentEnabled } = useAssistantFeatureEnabled();
     const isScribeAdminSettingFeatureEnabled = useFlag('ScribeAdminSetting');
@@ -253,7 +251,6 @@ const MainContainer = () => {
         isDataRecoveryAvailable,
         isSessionRecoveryAvailable,
         recoveryNotification: recoveryNotification?.color,
-        isBreachesAccountDashboardEnabled,
         showVPNDashboard,
         showVPNDashboardVariant: showVPNDashboardVariant.name,
         isUserGroupsFeatureEnabled,
@@ -264,7 +261,6 @@ const MainContainer = () => {
         canDisplayPassReports,
         memberships,
         groups,
-        isUserGroupsMembershipFeatureEnabled,
         isUserGroupsNoCustomDomainEnabled,
         canB2BHidePhotos,
         isB2BDrive,
