@@ -9,6 +9,7 @@ import { processAliasNoteChanged, processPendingAliasToCreate } from './user-eve
 import { processFoldersDeleted, processFoldersUpdated } from './user-events.folders';
 import { processItemsDeleted, processItemsUpdated } from './user-events.items';
 import { processSharesCreated, processSharesDeleted, processSharesUpdated } from './user-events.shares';
+import { processFullRefresh } from './user-events.sync';
 import { processBreachUpdate, processOrganizationInfoChanged, processUserRefresh } from './user-events.user';
 
 export type ProcessResult = { status: 'processed'; ok: boolean } | { status: 'skipped'; reason: string };
@@ -36,7 +37,10 @@ export function* processUserEvents(event: SyncEventListOutput, options: RootSaga
     if (shouldSkipEvent(event)) return false;
 
     /** Trigger full sync and update `LastEventID` */
-    if (event.FullRefresh) return true;
+    if (event.FullRefresh) {
+        const synced: boolean = yield call(processFullRefresh);
+        return synced;
+    }
 
     /** Run all processors in parallel - each returns boolean indicating success */
     const results: boolean[] = yield all([
