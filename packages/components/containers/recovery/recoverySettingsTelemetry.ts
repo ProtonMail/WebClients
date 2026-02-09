@@ -20,7 +20,18 @@ export const useRecoverySettingsTelemetry = () => {
     }, [api]);
 
     const sendRecoverySettingEnabled = useCallback(
-        ({ setting }: { setting: string }) => {
+        ({
+            setting,
+        }: {
+            setting:
+                | 'qr_code_sign_in'
+                | 'session_recovery'
+                | 'recovery_file_download'
+                | 'recovery_phrase'
+                | 'device_recovery'
+                | 'recovery_by_email'
+                | 'recovery_by_phone';
+        }) => {
             void sendTelemetryReport({
                 api,
                 measurementGroup: TelemetryMeasurementGroups.accountRecoverySettings,
