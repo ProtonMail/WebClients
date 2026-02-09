@@ -126,7 +126,9 @@ const PlanFooter = ({ plan }: { plan: PLANS }) => {
     const { eligibleTrials } = useEligibleTrials();
 
     if (!eligibleTrials.creditCardRequiredPlans.includes(plan)) {
-        return <p className="m-0 text-center color-success text-semibold">{c('Info').t`No credit card required`}</p>;
+        return (
+            <p className="m-0 mt-4 text-center color-success text-semibold">{c('Info').t`No credit card required`}</p>
+        );
     }
     return null;
 };
