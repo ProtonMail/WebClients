@@ -7,9 +7,8 @@ import type { IconProps } from '@proton/components/components/icon/Icon';
 import type { PopperPosition } from '@proton/components/components/popper/interface';
 import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
 import { IcChevronUp } from '@proton/icons/icons/IcChevronUp';
+import type { PopUpControls } from '@proton/meet/store/slices/uiStateSlice';
 import clsx from '@proton/utils/clsx';
-
-import type { PopUpControls } from '../../types';
 
 import './ToggleButton.scss';
 

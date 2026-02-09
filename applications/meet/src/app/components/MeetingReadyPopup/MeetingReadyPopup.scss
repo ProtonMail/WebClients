@@ -10,22 +10,40 @@ im.$media-expressions: $media-expressions;
 	@include im.media('>medium') {
 		inset-inline-start: 1.75rem;
 	}
-}
 
-.meeting-ready-popup {
-	z-index: 1000;
-	padding-block-start: 4rem !important;
-}
+	.link-container {
+		background: var(--meeting-list-placeholder-button-background);
+		border: 1px solid #2f3043;
+	}
 
-.meeting-ready-popup-meeting-link {
-	text-decoration: none !important;
-}
+	.meeting-ready-popup {
+		--popup-background: color-mix(in srgb, var(--interaction-weak-minor-3) 60%, transparent);
+		--popup-border-color: #2f3043;
+		--caret-size: 1rem;
 
-.copy-meeting-link-button {
-	background-color: var(--interaction-norm-minor-2);
+		position: relative;
+		z-index: 1000;
+		padding-block-start: 4rem !important;
+		background: var(--popup-background) !important;
+		backdrop-filter: blur(22px) !important;
+	}
 
-	&:hover,
-	&:focus {
-		background-color: var(--interaction-norm-minor-1) !important;
+	.meeting-ready-popup-meeting-link {
+		text-decoration: none !important;
+		color: var(--interaction-norm-major-1);
+
+		&:hover,
+		&:focus {
+			color: var(--interaction-norm-major-2);
+		}
+	}
+
+	.copy-meeting-link-button {
+		background-color: var(--interaction-weak);
+
+		&:hover,
+		&:focus {
+			background-color: var(--interaction-weak-major-1) !important;
+		}
 	}
 }

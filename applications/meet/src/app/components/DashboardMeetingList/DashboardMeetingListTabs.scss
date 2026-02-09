@@ -1,0 +1,39 @@
+.dashboard-meeting-list-tabs {
+	.meeting-list-tab-counter {
+		background: var(--background-card);
+		font-size: 0.75rem;
+	}
+
+	.meeting-tab-button {
+		&-active,
+		&-disabled {
+			&:hover {
+				background-color: transparent;
+				color: var(--interaction-weak);
+			}
+
+			&:active,
+			&:focus {
+				background-color: transparent;
+			}
+		}
+
+		&-active {
+			color: var(--text-norm);
+
+			&:active,
+			&:focus {
+				color: var(--text-norm);
+			}
+		}
+
+		&-disabled {
+			color: var(--text-disabled);
+
+			&:active,
+			&:focus {
+				color: var(--text-disabled);
+			}
+		}
+	}
+}

@@ -1,22 +1,22 @@
 import { useEffect, useRef, useState } from 'react';
 
-import type { LocalParticipant, RemoteParticipant } from 'livekit-client';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { IcMagnifier } from '@proton/icons/icons/IcMagnifier';
+import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
+import { markChatMessagesAsSeen } from '@proton/meet/store/slices/meetingState';
+import { MeetingSideBars, selectSideBarState, toggleSideBarState } from '@proton/meet/store/slices/uiStateSlice';
+import type { MeetChatMessage } from '@proton/meet/types/types';
 import placeholder from '@proton/styles/assets/img/meet/chat-empty-state.png';
 import placeholderSearch from '@proton/styles/assets/img/meet/search-empty-state.png';
 
 import { SecurityShield } from '../../atoms/SecurityShield/SecurityShield';
 import { SideBar } from '../../atoms/SideBar/SideBar';
 import { useMeetContext } from '../../contexts/MeetContext';
-import { useUIStateContext } from '../../contexts/UIStateContext';
-import { useChatMessage } from '../../hooks/useChatMessage';
+import { useSortedParticipantsContext } from '../../contexts/ParticipantsProvider/SortedParticipantsProvider';
+import { useChatMessage } from '../../hooks/bridges/useChatMessage';
 import { useMeetingRoomUpdates } from '../../hooks/useMeetingRoomUpdates';
-import type { MeetChatMessage } from '../../types';
-import { MeetingSideBars } from '../../types';
-import { getParticipantDisplayColors } from '../../utils/getParticipantDisplayColors';
 import { ChatItem } from '../ChatItem/ChatItem';
 import { ChatMessage } from '../ChatMessage/ChatMessage';
 import { SideBarSearch } from '../SideBarSearch/SideBarSearch';
@@ -24,18 +24,19 @@ import { SideBarSearch } from '../SideBarSearch/SideBarSearch';
 import './Chat.scss';
 
 export const Chat = () => {
+    const dispatch = useMeetDispatch();
     const [isSearchOn, setIsSearchOn] = useState(false);
     const [searchExpression, setSearchExpression] = useState('');
 
     const [isScrolled, setIsScrolled] = useState(false);
 
-    const { roomName, setChatMessages } = useMeetContext();
+    const { roomName } = useMeetContext();
 
-    const { sideBarState, toggleSideBarState } = useUIStateContext();
+    const sideBarState = useMeetSelector(selectSideBarState);
 
     const meetingRoomUpdates = useMeetingRoomUpdates();
 
-    const { sortedParticipantsMap } = useMeetContext();
+    const { sortedParticipantsDisplayColorsMap } = useSortedParticipantsContext();
 
     const sendMessage = useChatMessage();
 
@@ -75,18 +76,9 @@ export const Chat = () => {
         }
 
         if (sideBarState[MeetingSideBars.Chat]) {
-            setChatMessages((prev) =>
-                prev.map((item) => ({
-                    ...item,
-                    seen: true,
-                }))
-            );
+            dispatch(markChatMessagesAsSeen());
         }
     }, [sideBarState[MeetingSideBars.Chat]]);
-
-    const colors = meetingRoomUpdates.map((item) =>
-        getParticipantDisplayColors(sortedParticipantsMap.get(item.identity) as RemoteParticipant | LocalParticipant)
-    );
 
     const lowerCaseSearchExpression = searchExpression.toLowerCase();
 
@@ -105,7 +97,7 @@ export const Chat = () => {
 
     return (
         <SideBar
-            onClose={() => toggleSideBarState(MeetingSideBars.Chat)}
+            onClose={() => dispatch(toggleSideBarState(MeetingSideBars.Chat))}
             absoluteHeader={true}
             isScrolled={isScrolled}
             paddingClassName="py-4"
@@ -174,12 +166,17 @@ export const Chat = () => {
                         <div className="text-center color-disabled">{c('Info').t`No search results`}</div>
                     </div>
                 )}
-                {filteredMeetingRoomUpdates.map((item, index) => (
+                {filteredMeetingRoomUpdates.map((item) => (
                     <ChatItem
                         key={`${item.identity}-${item.timestamp}`}
                         item={item}
                         roomName={roomName}
-                        colors={colors[index]}
+                        colors={
+                            sortedParticipantsDisplayColorsMap.get(item.identity) ?? {
+                                backgroundColor: 'meet-background-1',
+                                profileTextColor: 'profile-color-1',
+                            }
+                        }
                     />
                 ))}
             </div>

@@ -1,4 +1,5 @@
-import { SCREEN_SHARE_PAGE_SIZE } from '../../constants';
+import { SCREEN_SHARE_PAGE_SIZE } from '@proton/meet/constants';
+
 import {
     PROFILE_COLORS,
     drawParticipantBorder,

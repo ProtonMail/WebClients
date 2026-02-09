@@ -1,0 +1,23 @@
+.placeholder-button {
+	position: relative;
+	border-radius: 1.5rem;
+	border: 1px dashed var(--border-card);
+	background: var(--meeting-list-placeholder-button-background);
+
+	&:hover,
+	&:focus {
+		background: var(--background-weak);
+	}
+}
+
+.schedule-in-calendar-button {
+	background: transparent;
+	color: var(--interaction-weak-major-3);
+
+	&:active,
+	&:hover,
+	&:focus {
+		background: transparent;
+		color: var(--interaction-weak-contrast);
+	}
+}

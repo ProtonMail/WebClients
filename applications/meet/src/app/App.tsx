@@ -16,13 +16,12 @@ import { GuestDashboardContainer } from './containers/DashboardContainer/GuestDa
 import { GuestContainer } from './containers/GuestContainer';
 import { WrappedProtonMeetContainer } from './containers/ProtonMeetContainer/WrappedProtonMeetContainer';
 import { ProviderContainer } from './containers/ProviderContainer';
-import { ScheduleContainer } from './containers/ScheduleContainer';
 import { getPublicToken } from './hooks/srp/usePublicToken';
 
 // @ts-ignore
 import meetTheme from './styles/meet.theme.css';
 
-const routes = ['join', 'schedule/create', 'dashboard', 'incognito'];
+const routes = ['join', 'dashboard'];
 
 const landingPageRoute = '/start-free-meeting';
 
@@ -67,7 +66,7 @@ const RedirectWrapper = ({ children }: { children: React.ReactNode }) => {
             }
         }
 
-        if (!isGuest && location.pathname.includes('incognito')) {
+        if (!isGuest && location.pathname.includes('guest')) {
             history.push('/dashboard');
         }
 
@@ -78,15 +77,11 @@ const RedirectWrapper = ({ children }: { children: React.ReactNode }) => {
             history.replace(cleanPath + location.hash);
         }
 
-        if (window.location.pathname.includes('dashboard') && isGuest) {
-            history.push('/join');
-        }
-
         if (
             !routes.some((route) => window.location.pathname.includes(route)) ||
             window.location.pathname.includes('login')
         ) {
-            history.push(isGuest ? '/join' : '/dashboard');
+            history.push('/dashboard');
         }
 
         hasInitialized.current = true;
@@ -117,7 +112,7 @@ export const App = () => {
                         <RedirectWrapper>
                             <ComingSoonWrapper>
                                 <Route path="/join" render={() => <WrappedProtonMeetContainer guestMode={true} />} />
-                                <Route path="/incognito" component={GuestDashboardContainer} />
+                                <Route path="/dashboard" component={GuestDashboardContainer} />
                             </ComingSoonWrapper>
                         </RedirectWrapper>
                     </GuestContainer>
@@ -126,7 +121,6 @@ export const App = () => {
                         <RedirectWrapper>
                             <ComingSoonWrapper>
                                 <Route path="/join" render={() => <WrappedProtonMeetContainer />} />
-                                <Route path="/schedule" component={ScheduleContainer} />
                                 <Route path="/dashboard" component={DashboardContainer} />
                             </ComingSoonWrapper>
                         </RedirectWrapper>

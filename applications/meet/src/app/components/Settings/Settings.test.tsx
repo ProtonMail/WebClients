@@ -6,14 +6,12 @@ import userEvent from '@testing-library/user-event';
 
 import type { MeetSettingsState } from '@proton/meet/store/slices/settings';
 import { settingsReducer } from '@proton/meet/store/slices/settings';
+import { MeetingSideBars, uiStateReducer } from '@proton/meet/store/slices/uiStateSlice';
 import { ProtonStoreContext } from '@proton/react-redux-store';
 
 import type { MeetContextValues } from '../../contexts/MeetContext';
 import { MeetContext } from '../../contexts/MeetContext';
-import type { UIStateContextType } from '../../contexts/UIStateContext';
-import { UIStateContext } from '../../contexts/UIStateContext';
 import { useIsLocalParticipantAdmin } from '../../hooks/useIsLocalParticipantAdmin';
-import { MeetingSideBars } from '../../types';
 import { Settings } from './Settings';
 
 vi.mock('../../hooks/useLocalParticipantResolution', () => ({
@@ -44,8 +42,10 @@ vi.mock('../../contexts/MediaManagementContext', () => ({
 
 const createMockStore = (settingsState: Partial<MeetSettingsState> = {}) => {
     return configureStore({
+        // @ts-expect-error - mock data
         reducer: {
             ...settingsReducer,
+            ...uiStateReducer,
         },
         preloadedState: {
             meetSettings: {
@@ -56,6 +56,26 @@ const createMockStore = (settingsState: Partial<MeetSettingsState> = {}) => {
                 pipEnabled: true,
                 ...settingsState,
             },
+            uiState: {
+                meetingReadyPopupOpen: false,
+                sideBarState: {
+                    [MeetingSideBars.Participants]: false,
+                    [MeetingSideBars.AssignHost]: false,
+                    [MeetingSideBars.Settings]: true,
+                    [MeetingSideBars.Chat]: false,
+                    [MeetingSideBars.MeetingDetails]: false,
+                },
+                popupState: {
+                    Microphone: false,
+                    Camera: false,
+                    LeaveMeeting: false,
+                    LeaveMeetingParticipant: false,
+                    ScreenShareLeaveWarning: false,
+                    EndMeeting: false,
+                },
+                permissionPromptStatus: 'CLOSED',
+                noDeviceDetected: 'CLOSED',
+            },
         },
     });
 };
@@ -64,21 +84,13 @@ const mockContextValues = {
     handleMeetingLockToggle: vi.fn(),
 };
 
-const mockUIStateContextValues = {
-    sideBarState: {
-        [MeetingSideBars.Settings]: true,
-    },
-};
-
 const Wrapper = ({
     children,
     contextValue = {},
-    uiStateContextValue = {},
     settingsState = {},
 }: {
     children: React.ReactNode;
     contextValue?: Partial<MeetContextValues>;
-    uiStateContextValue?: Partial<UIStateContextType>;
     settingsState?: Partial<MeetSettingsState>;
 }) => {
     const store = createMockStore(settingsState);
@@ -86,14 +98,7 @@ const Wrapper = ({
     return (
         <Provider context={ProtonStoreContext} store={store}>
             {/* @ts-expect-error - contextValue is a partial MeetContextValues */}
-            <MeetContext.Provider value={{ ...mockContextValues, ...contextValue }}>
-                <UIStateContext.Provider
-                    // @ts-expect-error - mock data
-                    value={{ ...mockUIStateContextValues, ...uiStateContextValue }}
-                >
-                    {children}
-                </UIStateContext.Provider>
-            </MeetContext.Provider>
+            <MeetContext.Provider value={{ ...mockContextValues, ...contextValue }}>{children}</MeetContext.Provider>
         </Provider>
     );
 };

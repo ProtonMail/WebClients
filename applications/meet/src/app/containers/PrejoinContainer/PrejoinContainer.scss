@@ -4,11 +4,6 @@
 im.$breakpoints: $breakpoints;
 im.$media-expressions: $media-expressions;
 
-.action-button {
-	background-color: var(--background-card);
-	border-color: var(--border-card);
-}
-
 .prejoin-container {
 	block-size: 100%;
 	padding: var(--space-4);

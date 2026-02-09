@@ -1,0 +1,16 @@
+.room-list {
+	.add-meeting-room-button {
+		background: var(--background-card);
+		border-radius: 0;
+		border-end-start-radius: 2rem;
+		border-end-end-radius: 2rem;
+		border: 1px dashed var(--border-card);
+		border-block-start-width: 0;
+
+		&:hover,
+		&:active,
+		&:focus {
+			background: var(--background-weak);
+		}
+	}
+}

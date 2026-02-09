@@ -5,16 +5,21 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import { IcCross } from '@proton/icons/icons/IcCross';
+import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
+import {
+    PermissionPromptStatus,
+    selectPermissionPromptStatus,
+    setPermissionPromptStatus as setPermissionPromptStatusAction,
+} from '@proton/meet/store/slices/uiStateSlice';
 
 import { useMediaManagementContext } from '../../contexts/MediaManagementProvider/MediaManagementContext';
-import { useUIStateContext } from '../../contexts/UIStateContext';
 import { useIsLargerThanMd } from '../../hooks/useIsLargerThanMd';
-import { PermissionPromptStatus } from '../../types';
 
 export const NoPermissionInfo = () => {
+    const dispatch = useMeetDispatch();
     const [isOpen, setIsOpen] = useState(true);
 
-    const { permissionPromptStatus, setPermissionPromptStatus } = useUIStateContext();
+    const permissionPromptStatus = useMeetSelector(selectPermissionPromptStatus);
 
     const {
         devicePermissions: { camera, microphone },
@@ -43,7 +48,7 @@ export const NoPermissionInfo = () => {
             key="request-microphone-permission"
             className="color-primary mx-1"
             onClick={() => {
-                setPermissionPromptStatus(PermissionPromptStatus.MICROPHONE);
+                dispatch(setPermissionPromptStatusAction(PermissionPromptStatus.MICROPHONE));
             }}
         >
             {microphoneLabel}
@@ -55,7 +60,7 @@ export const NoPermissionInfo = () => {
             key="request-camera-permission"
             className="color-primary mx-1"
             onClick={() => {
-                setPermissionPromptStatus(PermissionPromptStatus.CAMERA);
+                dispatch(setPermissionPromptStatusAction(PermissionPromptStatus.CAMERA));
             }}
         >
             {cameraLabel}

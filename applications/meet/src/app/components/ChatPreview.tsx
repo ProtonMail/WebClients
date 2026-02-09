@@ -1,14 +1,13 @@
 import { useEffect, useState } from 'react';
 
-import type { LocalParticipant, RemoteParticipant } from 'livekit-client';
+import { useMeetSelector } from '@proton/meet/store/hooks';
+import { MeetingSideBars, selectSideBarState } from '@proton/meet/store/slices/uiStateSlice';
 
 import { CloseButton } from '../atoms/CloseButton/CloseButton';
 import { useMeetContext } from '../contexts/MeetContext';
-import { useUIStateContext } from '../contexts/UIStateContext';
+import { useSortedParticipantsContext } from '../contexts/ParticipantsProvider/SortedParticipantsProvider';
 import { useIsLargerThanMd } from '../hooks/useIsLargerThanMd';
 import { useMeetingRoomUpdates } from '../hooks/useMeetingRoomUpdates';
-import { MeetingSideBars } from '../types';
-import { getParticipantDisplayColors } from '../utils/getParticipantDisplayColors';
 import { ChatItem } from './ChatItem/ChatItem';
 
 const CHAT_MESSAGE_TIMEOUT = 8000;
@@ -18,11 +17,12 @@ const PARTICIPANT_COUNT_THRESHOLD = 5;
 export const ChatPreview = () => {
     const [isOpen, setIsOpen] = useState(false);
 
-    const { sortedParticipants, sortedParticipantsMap, roomName } = useMeetContext();
+    const { roomName } = useMeetContext();
+    const { sortedParticipants, sortedParticipantsDisplayColorsMap } = useSortedParticipantsContext();
 
     const meetingRoomUpdates = useMeetingRoomUpdates();
 
-    const { sideBarState } = useUIStateContext();
+    const sideBarState = useMeetSelector(selectSideBarState);
 
     const participantCountBiggerThanThreshold = sortedParticipants.length > PARTICIPANT_COUNT_THRESHOLD;
 
@@ -41,6 +41,11 @@ export const ChatPreview = () => {
     const isLargerThanMd = useIsLargerThanMd();
 
     const shouldNotDisplayLastMessage = !isOpen || sideBarState[MeetingSideBars.Chat] || !latestMeetingRoomUpdate;
+
+    const colors = sortedParticipantsDisplayColorsMap.get(latestMeetingRoomUpdate?.identity) ?? {
+        backgroundColor: 'meet-background-1',
+        profileTextColor: 'profile-color-1',
+    };
 
     // We always show the latest meeting room update (message or participant event), had to make it disappear after a timeout
     useEffect(() => {
@@ -75,9 +80,7 @@ export const ChatPreview = () => {
         >
             <ChatItem
                 item={latestMeetingRoomUpdate}
-                colors={getParticipantDisplayColors(
-                    sortedParticipantsMap.get(latestMeetingRoomUpdate.identity) as RemoteParticipant | LocalParticipant
-                )}
+                colors={colors}
                 displayDate={false}
                 shouldGrow={false}
                 roomName={roomName}

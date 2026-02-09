@@ -5,11 +5,11 @@ import { useRoomContext } from '@livekit/components-react';
 import type { Participant, TrackPublication } from 'livekit-client';
 import { RoomEvent } from 'livekit-client';
 
+import { PAGE_SIZE, SMALL_SCREEN_PAGE_SIZE } from '@proton/meet/constants';
 import { useMeetSelector } from '@proton/meet/store/hooks';
 import { selectMeetSettings, selectParticipantsWithDisabledVideos } from '@proton/meet/store/slices/settings';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 
-import { PAGE_SIZE, SMALL_SCREEN_PAGE_SIZE } from '../../constants';
 import { useParticipantQuality } from '../../hooks/useParticipantQuality';
 import type { RegisterCameraTrackFn } from '../../utils/subscriptionManagers/CameraTrackSubscriptionManager';
 import { CameraTrackSubscriptionManager } from '../../utils/subscriptionManagers/CameraTrackSubscriptionManager';

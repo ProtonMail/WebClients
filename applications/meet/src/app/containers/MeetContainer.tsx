@@ -1,7 +1,5 @@
 import { createContext, useContext, useEffect, useState } from 'react';
 
-import type { LocalParticipant, RemoteParticipant } from 'livekit-client';
-
 import { isSafari } from '@proton/shared/lib/helpers/browser';
 
 import { AutoCloseMeetingModal } from '../components/AutoCloseMeetingModal/AutoCloseMeetingModal';
@@ -9,10 +7,10 @@ import { DebugOverlay, useDebugOverlay } from '../components/DebugOverlay/DebugO
 import { MeetingBody } from '../components/MeetingBody/MeetingBody';
 import { MeetContext } from '../contexts/MeetContext';
 import { MeetingRecorderContext } from '../contexts/MeetingRecorderContext';
+import { useSortedParticipantsContext } from '../contexts/ParticipantsProvider/SortedParticipantsProvider';
 import { useCurrentScreenShare } from '../hooks/useCurrentScreenShare';
 import { useMeetingRecorder } from '../hooks/useMeetingRecorder/useMeetingRecorder';
-import { useParticipantEvents } from '../hooks/useParticipantEvents';
-import type { KeyRotationLog, MLSGroupState, MeetChatMessage, ParticipantEntity } from '../types';
+import type { KeyRotationLog, MLSGroupState, ParticipantEntity } from '../types';
 
 // Debug overlay context for mobile menu access
 interface DebugOverlayContextType {
@@ -48,8 +46,6 @@ interface MeetContainerProps {
     isDisconnected: boolean;
     startPiP: () => void;
     stopPiP: () => void;
-    chatMessages: MeetChatMessage[];
-    setChatMessages: React.Dispatch<React.SetStateAction<MeetChatMessage[]>>;
     pictureInPictureWarmup: () => void;
     pipCleanup: () => void;
     preparePictureInPicture: () => void;
@@ -58,34 +54,12 @@ interface MeetContainerProps {
     keyRotationLogs: KeyRotationLog[];
     isRecordingInProgress: boolean;
     getKeychainIndexInformation: () => (number | undefined)[];
-    sortedParticipants: (RemoteParticipant | LocalParticipant)[];
-    pagedParticipants: (RemoteParticipant | LocalParticipant)[];
-    sortedParticipantsMap: Map<string, RemoteParticipant | LocalParticipant>;
-    pageCount: number;
-    pagedParticipantsWithoutSelfView: (RemoteParticipant | LocalParticipant)[];
-    pageCountWithoutSelfView: number;
-    setPage: React.Dispatch<React.SetStateAction<number>>;
-    setPageSize: React.Dispatch<React.SetStateAction<number>>;
-    page: number;
-    pageSize: number;
     expirationTime: number | null;
     isGuestAdmin: boolean;
-    participants: (RemoteParticipant | LocalParticipant)[];
     isUsingTurnRelay: boolean;
 }
 
 export const MeetContainer = ({
-    participants,
-    sortedParticipants,
-    sortedParticipantsMap,
-    pagedParticipants,
-    pageCount,
-    pagedParticipantsWithoutSelfView,
-    pageCountWithoutSelfView,
-    setPage,
-    setPageSize,
-    page,
-    pageSize,
     expirationTime,
     locked,
     maxDuration,
@@ -107,8 +81,6 @@ export const MeetContainer = ({
     isDisconnected,
     startPiP,
     stopPiP,
-    chatMessages,
-    setChatMessages,
     pictureInPictureWarmup,
     pipCleanup,
     preparePictureInPicture,
@@ -123,7 +95,7 @@ export const MeetContainer = ({
     const [resolution, setResolution] = useState<string | null>(null);
     const debugOverlay = useDebugOverlay();
 
-    const participantEvents = useParticipantEvents(participantNameMap);
+    const { sortedParticipants, pagedParticipants } = useSortedParticipantsContext();
 
     const { recordingState, startRecording, stopRecording, downloadRecording } = useMeetingRecorder(
         participantNameMap,
@@ -169,21 +141,10 @@ export const MeetContainer = ({
                 >
                     <MeetContext.Provider
                         value={{
-                            participants,
-                            sortedParticipants,
-                            pagedParticipants,
-                            pageCount,
-                            pagedParticipantsWithoutSelfView,
-                            pageCountWithoutSelfView,
-                            setPage,
-                            setPageSize,
                             roomName,
                             resolution,
                             setResolution,
                             meetingLink: shareLink,
-                            chatMessages,
-                            setChatMessages,
-                            participantEvents,
                             handleLeave: leaveWithStopRecording,
                             handleUngracefulLeave: handleUngracefulLeave,
                             handleEndMeeting: endMeetingWithStopRecording,
@@ -191,8 +152,6 @@ export const MeetContainer = ({
                             participantNameMap,
                             getParticipants,
                             displayName,
-                            page,
-                            pageSize,
                             passphrase,
                             guestMode,
                             mlsGroupState,
@@ -218,7 +177,6 @@ export const MeetContainer = ({
                             isGuestAdmin,
                             isRecordingInProgress,
                             getKeychainIndexInformation,
-                            sortedParticipantsMap,
                         }}
                     >
                         {debugOverlay.isOpen && (
@@ -232,7 +190,7 @@ export const MeetContainer = ({
                             isUsingTurnRelay={isUsingTurnRelay}
                         />
                     </MeetContext.Provider>
-                    <AutoCloseMeetingModal participantCount={participants.length} onLeave={handleLeave} />
+                    <AutoCloseMeetingModal participantCount={sortedParticipants.length} onLeave={handleLeave} />
                 </MeetingRecorderContext.Provider>
             </div>
         </DebugOverlayContext.Provider>

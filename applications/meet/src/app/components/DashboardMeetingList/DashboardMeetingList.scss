@@ -1,0 +1,13 @@
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/meet/meet-breakpoints' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints;
+im.$media-expressions: $media-expressions;
+
+.dashboard-meeting-list-container {
+	--w-custom: 90vw;
+
+	@include im.media('>small') {
+		--w-custom: 80vw;
+	}
+}

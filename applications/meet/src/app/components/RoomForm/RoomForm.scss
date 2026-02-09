@@ -1,0 +1,33 @@
+.room-form {
+	inline-size: 25rem;
+	padding-block-end: 15rem;
+
+	.input-name {
+		border-color: var(--theme-color) !important;
+
+		&:focus-within {
+			box-shadow: 0 0 0 0.063rem var(--theme-color) !important;
+		}
+	}
+
+	.input-submit {
+		background-color: var(--theme-color) !important;
+		color: var(--text-invert) !important;
+	}
+
+	&.variant-orange {
+		--theme-color: var(--ui-orange-interaction-minor-1);
+	}
+
+	&.variant-blue {
+		--theme-color: var(--ui-blue-interaction-minor-1);
+	}
+
+	&.variant-green {
+		--theme-color: var(--ui-green-interaction-minor-1);
+	}
+
+	&.variant-red {
+		--theme-color: var(--ui-red-interaction-norm);
+	}
+}

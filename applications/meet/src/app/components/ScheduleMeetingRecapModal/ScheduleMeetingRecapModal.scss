@@ -1,0 +1,76 @@
+.meeting-details-card {
+	border-radius: 2rem;
+	border: 1px solid var(--border-weak);
+	background-color: var(--background-card);
+	color: white;
+}
+
+.meeting-details {
+	font-size: 0.875rem;
+	color: var(--text-weak);
+}
+
+.meeting-title {
+	font-size: 1rem;
+	font-weight: 600;
+}
+
+.done-button {
+	color: black;
+	background: var(--interaction-norm);
+	border: 1px solid #ffffff0a;
+}
+
+.done-button:hover,
+.done-button:active {
+	color: black;
+	background: #c1b8ff;
+}
+
+.calendar-dropdown-button {
+	background-color: var(--background-card);
+	border: 1px solid var(--border-norm);
+	color: white;
+}
+
+.calendar-dropdown-button:hover,
+.calendar-dropdown-button:active {
+	background-color: var(--border-norm);
+	color: #a0a0a0;
+}
+
+.calendar-dropdown {
+	color: #0f0f0f66 !important;
+	background: #16161fcc !important;
+	box-shadow: 0 4px 16px 0 #00000040 !important;
+	backdrop-filter: blur(80px) !important;
+	border: 1px solid var(--circle-button-transparent) !important;
+	min-inline-size: 15em;
+
+	.dropdown-content {
+		color: #0f0f0f66;
+		background: #16161fcc;
+		box-shadow: 0 4px 16px 0 #00000040;
+		backdrop-filter: blur(80px);
+		border: none;
+	}
+
+	.dropdown-content::before,
+	.dropdown-content::after {
+		background: #16161fcc;
+	}
+
+	.calendar-dropdown-menu {
+		min-block-size: 2.813rem;
+		border-radius: 1rem;
+		color: var(--text-weak);
+		font-size: 0.875rem;
+		font-weight: 500;
+		white-space: nowrap;
+	}
+}
+
+.calendar-dropdown::before,
+.calendar-dropdown::after {
+	background: #16161fcc !important;
+}
