@@ -10,6 +10,13 @@ im.$media-expressions: $media-expressions;
 	inline-size: 2.5rem !important;
 	block-size: 2.5rem !important;
 	border-radius: 100% !important;
+	border-color: var(--border-weak) !important;
+	color: var(--text-hint) !important;
+
+	&:hover,
+	&:focus {
+		color: var(--text-norm) !important;
+	}
 }
 
 .meet-page-header {
@@ -64,6 +71,11 @@ im.$media-expressions: $media-expressions;
 		.user-dropdown-displayName,
 		.user-dropdown-email {
 			font-size: 0.875rem !important;
+			color: var(--text-norm);
+		}
+
+		.user-dropdown-email {
+			color: var(--text-hint);
 		}
 	}
 
@@ -95,8 +107,64 @@ im.$media-expressions: $media-expressions;
 
 .userDropdown {
 	box-shadow: none !important;
+	border-radius: 1.5rem !important;
+
+	button,
+	a.button {
+		border-radius: 1.5rem;
+	}
+
+	.user-initials-active {
+		color: var(--ui-purple-interaction-minor-1);
+		border-color: transparent;
+	}
+
+	.userDropdown-planname {
+		color: var(--text-norm);
+	}
+}
+
+.apps-dropdown {
+	box-shadow: none !important;
+	border-radius: 1.5rem !important;
 }
 
 .dropdown {
 	box-shadow: none !important;
+}
+
+.create-account-header-button {
+	color: var(--interaction-norm);
+
+	--padding-inline: 0.5em;
+
+	&:hover,
+	&:active,
+	&:focus {
+		background-color: transparent;
+		color: var(--interaction-norm-major-1);
+	}
+}
+
+.sign-in-header-button-container {
+	gap: var(--space-4);
+
+	@include im.media('<=medium') {
+		gap: var(--space-2);
+	}
+
+	@include im.media('<=small') {
+		gap: var(--space-0);
+	}
+}
+
+.sign-in-header-button {
+	color: var(--text-weak);
+
+	&:hover,
+	&:active,
+	&:focus {
+		background-color: transparent;
+		color: var(--text-norm);
+	}
 }

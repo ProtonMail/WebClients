@@ -1,120 +1,93 @@
 import { c } from 'ttag';
 
-import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
-import { IcCalendarToday } from '@proton/icons/icons/IcCalendarToday';
+import { Button } from '@proton/atoms/Button/Button';
 import { IcLink } from '@proton/icons/icons/IcLink';
-import { IcPhone } from '@proton/icons/icons/IcPhone';
-import { IcUser } from '@proton/icons/icons/IcUser';
-import { CALENDAR_APP_NAME } from '@proton/shared/lib/constants';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import type { Meeting } from '@proton/shared/lib/interfaces/Meet';
-import isTruthy from '@proton/utils/isTruthy';
 
-import { CardButton } from '../../atoms/CardButton/CardButton';
-import { MeetingRow } from '../../components/MeetingRow/MeetingRow';
-import { NoUpcomingMeetings } from '../../components/NoUpcomingMeetings/NoUpcomingMeetings';
+import { CreateMeetingDropdown } from '../../components/CreateMeetingDropdown/CreateMeetingDropdown';
+import { DashboardMeetingList } from '../../components/DashboardMeetingList/DashboardMeetingList';
 import { PageHeader } from '../../components/PageHeader/PageHeader';
+import { UpsellBanner, UpsellBannerWithUser } from '../../components/UpsellBanner/UpsellBanner';
+
+import './DashboardContainerBody.scss';
 
 interface DashboardContainerBodyProps {
-    onScheduleClick: () => void;
+    onScheduleClick: (meeting?: Meeting) => void;
     onPersonalMeetingClick: () => void;
     onJoinWithLinkClick: () => void;
     onStartMeetingClick: () => void;
-    upcomingMeetings: Meeting[];
+    onCreateRoomClick: () => void;
     meetings: Meeting[];
     isGuest: boolean;
+    handleScheduleInCalendar: () => void;
+    handleNewRoomClick: (room?: Meeting) => void;
+    handleRotatePersonalMeeting?: () => void;
+    loadingRotatePersonalMeeting?: boolean;
 }
 
 export const DashboardContainerBody = ({
     onScheduleClick,
-    onPersonalMeetingClick,
     onJoinWithLinkClick,
     onStartMeetingClick,
-    upcomingMeetings,
+    onCreateRoomClick,
     meetings,
     isGuest,
+    handleScheduleInCalendar,
+    handleNewRoomClick,
+    handleRotatePersonalMeeting,
+    loadingRotatePersonalMeeting,
 }: DashboardContainerBodyProps) => {
+    const getHeadline = () => {
+        // translator: this word is part of the full sentence "Your conversations matter" but we need to emphasize matter with a purple color
+        const matterWord = (
+            <span key="matter-word" className="meet-dashboard-headline-emphasized">
+                {c('Info').t`matter`}
+            </span>
+        );
+        // translator: full sentence is "Your conversations matter" where matter is emphasized with a purple color
+        return c('Headline').jt`Your conversations ${matterWord}`;
+    };
+
     return (
-        <div className="w-full h-full meet-container-padding-x overflow-y-auto lg:overflow-y-hidden flex flex-column flex-nowrap bg-weak">
-            <PageHeader guestMode={isGuest} showAppSwitcher={!isElectronApp} />
-            <div className="flex gap-4 py-4 flex-nowrap w-full shrink-0">
-                <div className="flex flex-column md:flex-row flex-nowrap gap-1 md:gap-3 xl:gap-4 w-full">
-                    <CardButton
-                        className="w-full md:w-1/3"
-                        title={c('Title').t`Schedule meeting`}
-                        description={c('Description').t`Plan meetings and send invites with ${CALENDAR_APP_NAME}.`}
-                        icon={<IcCalendarToday size={5} />}
-                        circleColor="var(--ui-blue-interaction-minor-3)"
-                        iconColor="var(--ui-blue-interaction-minor-1)"
-                        onClick={onScheduleClick}
-                    />
-                    <CardButton
-                        className="w-full md:w-1/3"
-                        title={c('Title').t`Personal meeting link`}
-                        description={c('Description').t`An always available meeting room for people you trust.`}
-                        icon={<IcUser size={5} />}
-                        circleColor="var(--ui-purple-interaction-minor-3)"
-                        iconColor="var(--ui-purple-interaction-minor-1)"
-                        onClick={onPersonalMeetingClick}
-                    />
-                    {isElectronApp && (
-                        <CardButton
-                            className="w-full md:w-1/3"
-                            title={c('Title').t`Join with link`}
-                            description={c('Description').t`Use a link to join a meeting.`}
-                            icon={<IcLink size={5} />}
-                            circleColor="var(--ui-blue-interaction-minor-3)"
-                            iconColor="var(-ui-blue-interaction-minor-1)"
-                            onClick={onJoinWithLinkClick}
-                        />
-                    )}
-                    <CardButton
-                        className="w-full md:w-1/3"
-                        title={c('Title').t`Start secure meeting`}
-                        description={c('Description').t`Start a call immediately then share the link with others.`}
-                        icon={<IcPhone size={5} />}
-                        circleColor="var(--ui-green-interaction-minor-3)"
-                        iconColor="var(--ui-green-interaction-minor-1)"
-                        onClick={onStartMeetingClick}
-                    />
-                </div>
-            </div>
-            <div className="flex flex-column gap-4 py-4 flex-nowrap w-full shrink-0">
-                <div className="flex justify-start items-center w-full">
-                    <div className="text-lg md:text-xl color-hint text-semibold">{c('Title').t`Upcoming meetings`}</div>
-                    <div
-                        className="flex items-center justify-center bg-strong rounded-full w-custom h-custom ml-2 text-sm color-weak"
-                        style={{ '--w-custom': '1.5rem', '--h-custom': '1.5rem' }}
-                    >
-                        {upcomingMeetings?.length ?? 0}
+        <div className="overflow-y-auto h-full flex flex-column flex-nowrap">
+            {isGuest ? <UpsellBanner isPaid={false} /> : <UpsellBannerWithUser />}
+            <div className="flex-1 min-h-0 w-full meet-container-padding-x flex flex-column flex-nowrap meet-container relative">
+                <PageHeader guestMode={isGuest} showAppSwitcher={!isElectronApp} />
+                <div className="flex flex-column items-center flex-nowrap w-full shrink-0 meet-dashboard-header-wrapper">
+                    <h1 className="meet-dashboard-headline text-center">{getHeadline()}</h1>
+                    <span className="meet-dashboard-subtitle mt-5 mb-5 text-center">{c('Header')
+                        .t`Speak freely again - every call is end-to-end encrypted`}</span>
+                    <div className="flex justify-center meet-dashboard-cta-wrapper mt-5 mb-5 w-full">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <CreateMeetingDropdown
+                                className="w-full"
+                                onScheduleClick={onScheduleClick}
+                                onStartMeetingClick={onStartMeetingClick}
+                                onCreateRoomClick={onCreateRoomClick}
+                            />
+                            <Button
+                                className="rounded-full border-none flex justify-center items-center join-via-link-button text-rg py-4 px-6"
+                                size="large"
+                                onClick={onJoinWithLinkClick}
+                            >
+                                <span className="inline-flex items-center mx-2">
+                                    <IcLink size={4} className="shrink-0 mr-2" />
+                                    {c('Action').t`Join via link`}
+                                </span>
+                            </Button>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div className="flex flex-column shrink-0 lg:flex-1 w-full py-4">
-                <div className="flex flex-column gap-1 flex-nowrap w-full h-full overflow-y-auto">
-                    {meetings === null && (
-                        <CircleLoader
-                            className="color-primary w-custom h-custom m-auto"
-                            style={{ '--w-custom': '5.3rem', '--h-custom': '5.3rem', '--stroke-width': 1.3 }}
-                        />
-                    )}
-                    {meetings && upcomingMeetings.length > 0 && (
-                        <>
-                            {upcomingMeetings.map((meeting, index) => (
-                                <MeetingRow
-                                    key={[meeting.ID, meeting.CalendarID, meeting.CalendarEventID]
-                                        .filter(isTruthy)
-                                        .join('-')}
-                                    meeting={meeting}
-                                    index={index}
-                                />
-                            ))}
-                        </>
-                    )}
-                    {meetings && upcomingMeetings.length === 0 && (
-                        <NoUpcomingMeetings onSchedule={onScheduleClick} onStart={onStartMeetingClick} />
-                    )}
-                </div>
+                <DashboardMeetingList
+                    meetings={meetings}
+                    isGuest={isGuest}
+                    handleScheduleInCalendar={handleScheduleInCalendar}
+                    handleScheduleClick={onScheduleClick}
+                    handleNewRoomClick={handleNewRoomClick}
+                    handleRotatePersonalMeeting={handleRotatePersonalMeeting}
+                    loadingRotatePersonalMeeting={loadingRotatePersonalMeeting}
+                />
             </div>
         </div>
     );

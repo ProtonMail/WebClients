@@ -1,0 +1,10 @@
+.time-based-meeting-list {
+	.meeting-list-day-header {
+		color: var(--primary-major-1);
+
+		.meeting-list-day-header-line {
+			block-size: 1px;
+			background: linear-gradient(to right, var(--primary-major-1), transparent);
+		}
+	}
+}

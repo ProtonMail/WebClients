@@ -1,17 +1,17 @@
 import { c } from 'ttag';
 
 import { useApi, useNotifications } from '@proton/components';
+import { useMeetDispatch } from '@proton/meet/store/hooks';
+import { MeetingSideBars, toggleSideBarState } from '@proton/meet/store/slices/uiStateSlice';
 import { updateParticipantPermissions } from '@proton/shared/lib/api/meet';
 
-import { useUIStateContext } from '../contexts/UIStateContext';
-import { MeetingSideBars, ParticipantCapabilityPermission } from '../types';
+import { ParticipantCapabilityPermission } from '../types';
 
 export const useAssignHost = (accessToken: string, meetingLinkName: string) => {
+    const dispatch = useMeetDispatch();
     const api = useApi();
 
     const notifications = useNotifications();
-
-    const { toggleSideBarState } = useUIStateContext();
 
     const assignHost = async (participantUuid: string) => {
         try {
@@ -24,7 +24,7 @@ export const useAssignHost = (accessToken: string, meetingLinkName: string) => {
                     AccessToken: accessToken,
                 })
             );
-            toggleSideBarState(MeetingSideBars.AssignHost);
+            dispatch(toggleSideBarState(MeetingSideBars.AssignHost));
 
             notifications.createNotification({
                 type: 'success',

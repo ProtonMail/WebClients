@@ -28,7 +28,7 @@ export const TimeLimitCTAPopup = ({ children }: TimeLimitCTAPopupProps) => {
 
     const { timeLeftMs, isExpiringSoon } = useMeetingDuration();
 
-    const [showRemainingTime, setShowRemainingTime] = useState(true);
+    const [showRemainingTime, setShowRemainingTime] = useState(false);
     const [isHovered, setIsHovered] = useState(false);
 
     const canOpenDropdown = !paidUser;
@@ -43,10 +43,8 @@ export const TimeLimitCTAPopup = ({ children }: TimeLimitCTAPopupProps) => {
     );
 
     useEffect(() => {
-        if (isExpiringSoon && meetUpsellEnabled) {
-            setShowRemainingTime(true);
-        }
-    }, [isExpiringSoon]);
+        setShowRemainingTime(isExpiringSoon && meetUpsellEnabled);
+    }, [isExpiringSoon, meetUpsellEnabled]);
 
     const handleMouseEnter = () => {
         if (canOpenDropdown) {
@@ -103,7 +101,7 @@ export const TimeLimitCTAPopup = ({ children }: TimeLimitCTAPopupProps) => {
                         />
                     )}
                     {showRemainingTime ? (
-                        <div className="w-full flex flex-column gap-2">
+                        <div className="w-full flex flex-column gap-2 pl-5 pr-5">
                             <div className="text-3xl text-semibold w-full text-center">
                                 {c('Info').jt`Meeting will end in ${timeLeft}`}
                             </div>
@@ -121,7 +119,7 @@ export const TimeLimitCTAPopup = ({ children }: TimeLimitCTAPopupProps) => {
                                     <UpgradeIcon customSize={32} />
                                 </div>
                                 <div className="flex-1 flex flex-column">
-                                    <div className="text-lg text-semibold">{c('Info')
+                                    <div className="text-lg text-semibold mb-1">{c('Info')
                                         .t`Meet without restrictions`}</div>
                                     <div className="color-hint text-sm">
                                         {c('Info')
@@ -131,9 +129,9 @@ export const TimeLimitCTAPopup = ({ children }: TimeLimitCTAPopupProps) => {
                             </div>
                             <SettingsLink className="w-full" path={'/dashboard'} target={'_blank'}>
                                 <Button
-                                    className="create-account-button rounded-full color-invert reload-button py-4 text-semibold w-full"
+                                    className="create-account-button rounded-full color-invert reload-button py-3 w-full"
                                     color="norm"
-                                    size="large"
+                                    size="medium"
                                 >
                                     {c('Action').t`Get Meet Professional`}
                                 </Button>

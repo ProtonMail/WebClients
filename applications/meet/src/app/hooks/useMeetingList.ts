@@ -77,7 +77,9 @@ export const useMeetingList = (): [Meeting[] | null, Meeting | null, () => void,
             }
 
             const filteredMeetings = activeMeetings.filter((meeting: Meeting) =>
-                [MeetingType.PERSONAL, MeetingType.RECURRING, MeetingType.SCHEDULED].includes(meeting.Type)
+                [MeetingType.PERSONAL, MeetingType.RECURRING, MeetingType.SCHEDULED, MeetingType.PERMANENT].includes(
+                    meeting.Type
+                )
             );
 
             const decryptionTasks = filteredMeetings.map((meeting: Meeting) => () => getDecryptedMeeting(meeting));
@@ -105,7 +107,12 @@ export const useMeetingList = (): [Meeting[] | null, Meeting | null, () => void,
 
         setPersonalMeeting(decryptedPersonalMeeting);
 
-        setMeetings((prev) => [...(prev ?? []), decryptedPersonalMeeting]);
+        setMeetings((prev) => {
+            const prevMeetings = prev ?? [];
+            // Replace existing personal meeting instead of appending
+            const withoutPersonalMeeting = prevMeetings.filter((m) => m.Type !== MeetingType.PERSONAL);
+            return [...withoutPersonalMeeting, decryptedPersonalMeeting];
+        });
 
         void getMeetings({ cache: CacheType.None });
     };

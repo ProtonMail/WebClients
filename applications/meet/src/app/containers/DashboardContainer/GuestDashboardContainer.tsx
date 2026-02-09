@@ -1,12 +1,15 @@
 import { useHistory } from 'react-router-dom';
 
 import useAppLink from '@proton/components/components/link/useAppLink';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
+import { getMeetingLink } from '@proton/meet';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
 import { selectPreviousMeetingLink, selectUpsellModalType, setUpsellModalType } from '@proton/meet/store/slices';
 import { UpsellModalTypes } from '@proton/meet/types/types';
 import { APPS } from '@proton/shared/lib/constants';
 
 import { CTAModal } from '../../components/AnonymousModal/CTAModal';
+import { JoinWithLinkModal } from '../../components/JoinWithLinkModal/JoinWithLinkModal';
 import { DashboardContainerBody } from './DashboardContainerBody';
 
 export const GuestDashboardContainer = () => {
@@ -31,6 +34,9 @@ export const GuestDashboardContainer = () => {
         goToApp('/meet/signup', APPS.PROTONACCOUNT, true);
     };
 
+    const [{ open: isJoinWithLinkModalOpen, onClose: handleJoinWithLinkModalClose }, openJoinWithLinkModal] =
+        useModalState();
+
     return (
         <>
             <DashboardContainerBody
@@ -41,23 +47,32 @@ export const GuestDashboardContainer = () => {
                 onPersonalMeetingClick={() => {
                     dispatch(setUpsellModalType(UpsellModalTypes.PersonalMeeting));
                 }}
-                onJoinWithLinkClick={() => {}}
-                onStartMeetingClick={() => {
-                    dispatch(setUpsellModalType(UpsellModalTypes.StartMeeting));
+                onJoinWithLinkClick={() => openJoinWithLinkModal(true)}
+                handleNewRoomClick={() => {
+                    dispatch(setUpsellModalType(UpsellModalTypes.Room));
                 }}
-                upcomingMeetings={[]}
+                onStartMeetingClick={handleStartMeeting}
+                onCreateRoomClick={() => {
+                    dispatch(setUpsellModalType(UpsellModalTypes.Room));
+                }}
+                handleScheduleInCalendar={() => {}}
                 meetings={[]}
             />
             {upsellModalType && (
                 <CTAModal
                     ctaModalType={upsellModalType}
                     onClose={() => dispatch(setUpsellModalType(null))}
-                    rejoin={handleRejoin}
+                    rejoin={previousMeetingLink ? handleRejoin : undefined}
                     action={
                         upsellModalType === UpsellModalTypes.StartMeeting ? handleStartMeeting : handleCreateAccount
                     }
                 />
             )}
+            <JoinWithLinkModal
+                open={isJoinWithLinkModalOpen}
+                onClose={handleJoinWithLinkModalClose}
+                onJoin={(meetingId, meetingPassword) => history.push(getMeetingLink(meetingId, meetingPassword))}
+            />
         </>
     );
 };

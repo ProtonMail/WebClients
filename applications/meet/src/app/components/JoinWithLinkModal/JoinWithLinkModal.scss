@@ -1,16 +1,18 @@
 .join-with-link-modal {
-	.join-button {
-		background-color: var(--interaction-norm);
-		color: var(--text-invert);
+	padding-block-end: 10rem;
 
-		&:hover,
-		&:focus {
-			background-color: var(--interaction-norm-minor-1);
-			color: var(--text-invert);
+	.join-button {
+		color: var(--text-invert);
+		background: var(--interaction-norm);
+	}
+
+	.input {
+		&:focus-within {
+			box-shadow: unset !important;
 		}
 	}
 
-	.meeting-link-textarea::placeholder {
+	.meeting-link-input::placeholder {
 		color: var(--text-disabled);
 	}
 }

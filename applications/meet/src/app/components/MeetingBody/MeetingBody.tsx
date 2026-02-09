@@ -5,9 +5,11 @@ import { RoomAudioRenderer, VideoTrack } from '@livekit/components-react';
 import type { Participant } from 'livekit-client';
 import { c } from 'ttag';
 
+import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { TopBanner } from '@proton/components/index';
 import { IcMeetRotateCamera } from '@proton/icons/icons/IcMeetRotateCamera';
-import { IcMeetShieldStar } from '@proton/icons/icons/IcMeetShieldStar';
+import { useMeetSelector } from '@proton/meet/store/hooks';
+import { selectSideBarState } from '@proton/meet/store/slices/uiStateSlice';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import useFlag from '@proton/unleash/useFlag';
@@ -17,7 +19,6 @@ import { CircleButton } from '../../atoms/CircleButton/CircleButton';
 import { SecurityShield } from '../../atoms/SecurityShield/SecurityShield';
 import { useMediaManagementContext } from '../../contexts/MediaManagementProvider/MediaManagementContext';
 import { useMeetContext } from '../../contexts/MeetContext';
-import { useUIStateContext } from '../../contexts/UIStateContext';
 import { useIsLargerThanMd } from '../../hooks/useIsLargerThanMd';
 import { useIsLocalParticipantAdmin } from '../../hooks/useIsLocalParticipantAdmin';
 import { useIsNarrowHeight } from '../../hooks/useIsNarrowHeight';
@@ -38,7 +39,6 @@ import { PermissionRequest } from '../PermissionRequest/PermissionRequest';
 import { RecordingInProgressModal } from '../RecordingInProgressModal/RecordingInProgressModal';
 import { Settings } from '../Settings/Settings';
 import { TimeLimitCTAPopup } from '../TimeLimitCTAPopup/TimeLimitCTAPopup';
-import { UpgradeIcon } from '../UpgradeIcon/UpgradeIcon';
 
 import './MeetingBody.scss';
 
@@ -62,19 +62,20 @@ export const MeetingBody = ({
 
     const isNarrowHeight = useIsNarrowHeight();
 
+    const { activeBreakpoint } = useActiveBreakpoint();
+    const isXSmallScreen = activeBreakpoint === 'xsmall';
+
     const [participantSideBarOpen, setParticipantSideBarOpen] = useState(true);
 
-    const { participantNameMap, meetingLink, roomName, guestMode, paidUser, isGuestAdmin } = useMeetContext();
+    const { participantNameMap, roomName, guestMode, isGuestAdmin, meetingLink } = useMeetContext();
 
     const { handleRotateCamera, isVideoEnabled } = useMediaManagementContext();
 
-    const { sideBarState } = useUIStateContext();
+    const sideBarState = useMeetSelector(selectSideBarState);
 
     const [bannerIsClosed, setBannerIsClosed] = useState(!isUsingTurnRelay);
 
     const isEarlyAccess = useFlag('MeetEarlyAccess');
-
-    const meetUpsellEnabled = useFlag('MeetUpsell');
 
     const isSideBarOpen = Object.values(sideBarState).some((value) => value);
 
@@ -105,10 +106,7 @@ export const MeetingBody = ({
         : c('Info').t`${presenterName} is presenting`;
     const meetingTitle = (
         <div className="flex items-center gap-2 flex-nowrap">
-            {meetUpsellEnabled && (
-                <>{guestMode || !paidUser ? <UpgradeIcon /> : <IcMeetShieldStar className="shield-star" size={5} />}</>
-            )}
-            <div className="meeting-name flex-1 text-lg text-ellipsis overflow-hidden text-semibold">{roomName}</div>
+            <div className="flex-1 text-lg text-ellipsis overflow-hidden text-semibold">{roomName}</div>
             {(isLocalParticipantAdmin || isLocalParticipantHost) && <MeetingDuration />}
         </div>
     );
@@ -227,7 +225,7 @@ export const MeetingBody = ({
             <NoDeviceDetectedModal />
             <NoPermissionInfo />
             <PermissionRequest />
-            <MeetingReadyPopup meetingLink={meetingLink} />
+            {isXSmallScreen && <MeetingReadyPopup meetingLink={meetingLink} closeBySlide={true} />}
             <RecordingInProgressModal />
         </div>
     );

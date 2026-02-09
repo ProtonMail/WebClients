@@ -1,0 +1,16 @@
+.guest-user-prompt {
+	background: linear-gradient(270deg, #5b4f96 0%, #34296b 100%);
+
+	@media (width <= 48em) {
+		--w-custom: 100% !important;
+	}
+
+	.guest-user-prompt-purple-text,
+	.guest-user-prompt-action-link {
+		color: var(--interaction-norm) !important;
+	}
+
+	.guest-user-prompt-action-link {
+		text-decoration: none !important;
+	}
+}

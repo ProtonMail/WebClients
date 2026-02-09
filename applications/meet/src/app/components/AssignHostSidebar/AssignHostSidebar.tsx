@@ -8,32 +8,35 @@ import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import { IcMagnifier } from '@proton/icons/icons/IcMagnifier';
+import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
+import { MeetingSideBars, selectSideBarState, toggleSideBarState } from '@proton/meet/store/slices/uiStateSlice';
 import clsx from '@proton/utils/clsx';
 
 import { SideBar } from '../../atoms/SideBar/SideBar';
 import { useMeetContext } from '../../contexts/MeetContext';
-import { useUIStateContext } from '../../contexts/UIStateContext';
-import { MeetingSideBars } from '../../types';
+import { useSortedParticipantsContext } from '../../contexts/ParticipantsProvider/SortedParticipantsProvider';
 import { getParticipantInitials } from '../../utils/getParticipantInitials';
 import { SideBarSearch } from '../SideBarSearch/SideBarSearch';
 
 import './AssignHostSidebar.scss';
 
 export const AssignHostSidebar = () => {
+    const dispatch = useMeetDispatch();
     const [isSearchOn, setIsSearchOn] = useState(false);
     const [searchExpression, setSearchExpression] = useState('');
 
     const { localParticipant } = useLocalParticipant();
 
-    const { participantNameMap, assignHost, participantsMap, participants } = useMeetContext();
+    const { participantNameMap, assignHost, participantsMap } = useMeetContext();
+    const { sortedParticipants } = useSortedParticipantsContext();
 
     const [isScrolled, setIsScrolled] = useState(false);
 
-    const { sideBarState, toggleSideBarState } = useUIStateContext();
+    const sideBarState = useMeetSelector(selectSideBarState);
 
     const lowerCaseSearchExpression = searchExpression.toLowerCase();
 
-    const filteredParticipants = participants.filter((participant) => {
+    const filteredParticipants = sortedParticipants.filter((participant) => {
         return (
             participant.identity !== localParticipant.identity &&
             !participantsMap[participant.identity]?.IsHost &&
@@ -55,7 +58,7 @@ export const AssignHostSidebar = () => {
     const selectedParticipantName = selectedParticipantIdentity ? participantNameMap[selectedParticipantIdentity] : '';
 
     return (
-        <SideBar onClose={() => toggleSideBarState(MeetingSideBars.AssignHost)} paddingClassName="px-2 py-4">
+        <SideBar onClose={() => dispatch(toggleSideBarState(MeetingSideBars.AssignHost))} paddingClassName="px-2 py-4">
             <div className="assign-host-sidebar flex-1 w-full flex flex-column flex-nowrap gap-4 h-full">
                 <div className="text-center flex flex-column gap-3 flex-nowrap mb-4 px-6">
                     <div className="text-4xl text-semibold">{c('Title').t`Assign a new host`}</div>

@@ -104,6 +104,17 @@ export const updateMeetingNameCall = (meetingId: string, data: { Name: string })
     };
 };
 
+export const updateMeetingScheduleCall = (
+    meetingId: string,
+    data: { StartTime: string; EndTime: string; Timezone: string; RRule: string | null }
+) => {
+    return {
+        method: 'put',
+        url: `meet/v1/meetings/${meetingId}/schedule`,
+        data,
+    };
+};
+
 export const lockMeetingCall = (meetingLinkName: string, data: { AccessToken: string }) => {
     return {
         method: 'post',

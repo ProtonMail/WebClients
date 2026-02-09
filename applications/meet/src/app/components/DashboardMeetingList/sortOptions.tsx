@@ -1,0 +1,62 @@
+import { formatInTimeZone } from 'date-fns-tz';
+import { c } from 'ttag';
+
+import { IcCalendarCheckmark } from '@proton/icons/icons/IcCalendarCheckmark';
+import { IcCalendarToday } from '@proton/icons/icons/IcCalendarToday';
+import { IcClock } from '@proton/icons/icons/IcClock';
+import { IcClockRotateLeft } from '@proton/icons/icons/IcClockRotateLeft';
+import type { SETTINGS_DATE_FORMAT } from '@proton/shared/lib/interfaces';
+import type { Meeting } from '@proton/shared/lib/interfaces/Meet';
+
+import type { SortOptionObject } from './types';
+import { SortOption } from './types';
+import { formatMeetingDate } from './utils';
+
+const userTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+
+const getCreatedOnSubtitle = (meeting: Meeting, dateFormat: SETTINGS_DATE_FORMAT) => {
+    const formattedDate = formatMeetingDate(
+        formatInTimeZone(1000 * meeting.CreateTime, userTimezone, 'yyyy-MM-dd'),
+        dateFormat
+    );
+    return c('Info').t`Created on ${formattedDate}`;
+};
+
+const getLastUsedOnSubtitle = (meeting: Meeting, dateFormat: SETTINGS_DATE_FORMAT) => {
+    const formattedDate = formatMeetingDate(
+        formatInTimeZone(1000 * (meeting.LastUsedTime ?? 0), userTimezone, 'yyyy-MM-dd'),
+        dateFormat
+    );
+    return c('Info').t`Last used on ${formattedDate}`;
+};
+
+export const getSortOptions = (): SortOptionObject[] => [
+    {
+        value: SortOption.NewlyCreated,
+        label: c('Sort option').t`Newly created`,
+        icon: <IcClock className="shrink-0 mr-2" />,
+        groupBy: 'CreateTime',
+        getSubtitle: getCreatedOnSubtitle,
+    },
+    {
+        value: SortOption.Upcoming,
+        label: c('Sort option').t`Upcoming meetings`,
+        icon: <IcCalendarToday className="shrink-0 mr-2" />,
+        groupBy: 'adjustedStartTime',
+        getSubtitle: getCreatedOnSubtitle,
+    },
+    {
+        value: SortOption.Past,
+        label: c('Sort option').t`Past meetings`,
+        icon: <IcCalendarCheckmark className="shrink-0 mr-2" />,
+        groupBy: 'adjustedEndTime',
+        getSubtitle: getCreatedOnSubtitle,
+    },
+    {
+        value: SortOption.LastUsed,
+        label: c('Sort option').t`Last used`,
+        icon: <IcClockRotateLeft className="shrink-0 mr-2" />,
+        groupBy: 'LastUsedTime',
+        getSubtitle: getLastUsedOnSubtitle,
+    },
+];

@@ -46,16 +46,26 @@ im.$media-expressions: $media-expressions;
 	}
 
 	.upgrade-icon-container {
-		background: #ffffff0a;
+		background: var(--background-card);
 	}
 
 	.create-account-button {
-		background: linear-gradient(126.18deg in oklch, #cbcbff 37.29%, #9696f9 70%, #8e75f7 100%);
+		background: linear-gradient(72.02deg, #ffb477 6.88%, #ff8cfc 50.55%, #afafff 105.07%);
+		font-weight: 500;
 
 		&:hover,
 		&:focus {
-			background: linear-gradient(126.18deg, #cbcbff -6.94%, #9696f9 6.61%, #8e75f7 85.09%);
+			background: linear-gradient(72.02deg, #ffb477 6.88%, #ff8cfc 50.55%, #afafff 105.07%);
 			color: var(--text-invert);
+		}
+	}
+
+	.close-button {
+		background: transparent;
+
+		&:hover,
+		&:focus {
+			background: rgb(255 255 255 / 0.1);
 		}
 	}
 }

@@ -4,14 +4,18 @@ import { Button } from '@proton/atoms/Button/Button';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
-
-import { useUIStateContext } from '../../contexts/UIStateContext';
-import { PermissionPromptStatus } from '../../types';
+import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
+import {
+    PermissionPromptStatus,
+    selectNoDeviceDetected,
+    setNoDeviceDetected,
+} from '@proton/meet/store/slices/uiStateSlice';
 
 import './NoDeviceDetectedModal.scss';
 
 export const NoDeviceDetectedModal = () => {
-    const { noDeviceDetected, setNoDeviceDetected } = useUIStateContext();
+    const dispatch = useMeetDispatch();
+    const noDeviceDetected = useMeetSelector(selectNoDeviceDetected);
 
     if (noDeviceDetected === PermissionPromptStatus.CLOSED) {
         return null;
@@ -33,7 +37,7 @@ export const NoDeviceDetectedModal = () => {
         <ModalTwo
             open={true}
             onClose={() => {
-                setNoDeviceDetected(PermissionPromptStatus.CLOSED);
+                dispatch(setNoDeviceDetected(PermissionPromptStatus.CLOSED));
             }}
             rootClassName="no-device-available-backdrop"
             className="no-device-available-modal border border-norm"
@@ -48,7 +52,7 @@ export const NoDeviceDetectedModal = () => {
                 <Button
                     className="ignore-no-device-available-button text-bold color-primary w-full rounded-full text-semibold"
                     shape="ghost"
-                    onClick={() => setNoDeviceDetected(PermissionPromptStatus.CLOSED)}
+                    onClick={() => dispatch(setNoDeviceDetected(PermissionPromptStatus.CLOSED))}
                 >
                     {continueWithoutDeviceLabel}
                 </Button>

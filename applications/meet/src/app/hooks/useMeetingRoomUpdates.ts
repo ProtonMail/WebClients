@@ -1,12 +1,26 @@
+import { useMeetSelector } from '@proton/meet/store/hooks';
+import { selectChatMessages, selectEvents } from '@proton/meet/store/slices/meetingState';
+import type { MeetChatMessage, ParticipantEventRecord } from '@proton/meet/types/types';
+
 import { useMeetContext } from '../contexts/MeetContext';
-import type { MeetChatMessage, ParticipantEventRecord } from '../types';
 
 export const useMeetingRoomUpdates = (): (MeetChatMessage | ParticipantEventRecord)[] => {
-    const { participantEvents, chatMessages } = useMeetContext();
+    const participantEvents = useMeetSelector(selectEvents);
+    const chatMessages = useMeetSelector(selectChatMessages);
+
+    const { participantNameMap } = useMeetContext();
 
     const combinedData = [
-        ...participantEvents.map((event) => ({ ...event, type: 'event' as const })),
-        ...chatMessages.map((message) => ({ ...message, type: 'message' as const })),
+        ...participantEvents.map((event) => ({
+            ...event,
+            type: 'event' as const,
+            name: participantNameMap?.[event.identity],
+        })),
+        ...chatMessages.map((message) => ({
+            ...message,
+            type: 'message' as const,
+            name: participantNameMap?.[message.identity],
+        })),
     ].sort((a, b) => a.timestamp - b.timestamp);
 
     return combinedData;

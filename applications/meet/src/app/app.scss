@@ -29,7 +29,7 @@ body {
 .app-root {
 	position: relative;
 	z-index: 1;
-	background: var(--interaction-weak-minor-3);
+	background: var(--background-norm);
 
 	--font-weight-bold: 700;
 
@@ -60,9 +60,21 @@ $meet-background-colors:
 	}
 }
 
+$meet-room-background-colors:
+	linear-gradient(141.78deg, #968aef 8.4%, #4a4478 93.76%), linear-gradient(141.78deg, #51cc52 8.4%, #1b3228 93.76%),
+	linear-gradient(141.78deg, #9581ff 8.4%, #413968 93.76%), linear-gradient(141.78deg, #0bf 8.4%, #094a62 93.76%),
+	linear-gradient(141.78deg, #fb7878 8.4%, #552c40 93.76%), linear-gradient(141.78deg, #ff9761 8.4%, #523a2e 93.76%);
+
+@for $i from 1 through 6 {
+	.meet-room-background-#{$i} {
+		background: #{list.nth($meet-room-background-colors, $i)};
+		box-shadow: 0 8px 40px 0 rgb(0 0 0 / 0.16);
+	}
+}
+
 $profile-colors:
-	var(--ui-purple-interaction-minor-1), var(--ui-green-interaction-minor-1), var(--interaction-norm),
-	var(--ui-blue-interaction-minor-1), var(--ui-red-interaction-norm-major-1), var(--ui-orange-interaction-minor-1);
+	var(--ui-purple-interaction-minor-1), var(--ui-green-interaction-norm), var(--interaction-norm),
+	var(--ui-blue-interaction-minor-1), var(--ui-red-interaction-norm), var(--ui-orange-interaction-minor-1);
 
 @for $i from 1 through 6 {
 	.profile-background-#{$i} {
@@ -213,6 +225,10 @@ $profile-colors:
 	}
 }
 
+.meet-container {
+	color: var(--background-norm);
+}
+
 .draggable-mac-electron-header {
 	-webkit-app-region: drag;
 }
@@ -254,4 +270,54 @@ $profile-colors:
 
 .tooltip--bottom-end.meet-tooltip {
 	border-start-end-radius: 0 !important;
+}
+
+.button-large {
+	--padding-block: 1em;
+}
+
+.action-button {
+	background-color: var(--background-card);
+	border-color: var(--border-card);
+}
+
+.action-button-new {
+	border: 1px solid var(--border-card) !important;
+	background: var(--background-card) !important;
+
+	&:hover {
+		background: var(--interaction-default-hover) !important;
+	}
+}
+
+.color-white {
+	color: white;
+}
+
+.meet-glow-effect {
+	&::before,
+	&::after {
+		content: '';
+		position: absolute;
+		inline-size: 16.25rem;
+		block-size: 16.25rem;
+		inset-block-start: 0;
+		background: var(--interaction-norm-minor-1);
+		opacity: 0.4;
+		filter: blur(8rem);
+		z-index: -1;
+		pointer-events: none;
+	}
+
+	&::before {
+		inset-inline-start: -2rem;
+	}
+
+	&::after {
+		inset-inline-end: -2rem;
+	}
+}
+
+.border-card {
+	border: 1px solid var(--border-card);
 }

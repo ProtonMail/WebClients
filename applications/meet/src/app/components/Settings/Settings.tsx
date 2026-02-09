@@ -4,15 +4,18 @@ import Toggle from '@proton/components/components/toggle/Toggle';
 import { useLoading } from '@proton/hooks';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
 import { selectMeetSettings, setDisableVideos, setPipEnabled, setSelfView } from '@proton/meet/store/slices/settings';
+import {
+    MeetingSideBars,
+    selectSideBarState,
+    toggleSideBarState as toggleSideBarStateAction,
+} from '@proton/meet/store/slices/uiStateSlice';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 import clsx from '@proton/utils/clsx';
 
 import { SideBar } from '../../atoms/SideBar/SideBar';
 import { useMediaManagementContext } from '../../contexts/MediaManagementProvider/MediaManagementContext';
 import { useMeetContext } from '../../contexts/MeetContext';
-import { useUIStateContext } from '../../contexts/UIStateContext';
 import { useIsLocalParticipantAdmin } from '../../hooks/useIsLocalParticipantAdmin';
-import { MeetingSideBars } from '../../types';
 import { BackgroundBlurToggle } from '../BackgroundBlurToggle';
 import { NoiseCancellingToggle } from '../NoiseCancellingToggle';
 
@@ -26,7 +29,7 @@ export const Settings = () => {
         useMediaManagementContext();
     const { handleMeetingLockToggle, isLocalScreenShare } = useMeetContext();
 
-    const { sideBarState, toggleSideBarState } = useUIStateContext();
+    const sideBarState = useMeetSelector(selectSideBarState);
 
     const { isLocalParticipantAdmin, isLocalParticipantHost } = useIsLocalParticipantAdmin();
 
@@ -39,7 +42,7 @@ export const Settings = () => {
 
     return (
         <SideBar
-            onClose={() => toggleSideBarState(MeetingSideBars.Settings)}
+            onClose={() => dispatch(toggleSideBarStateAction(MeetingSideBars.Settings))}
             header={
                 <div className="flex items-center">
                     <h2 className="text-3xl text-semibold">{c('Title').t`Settings`}</h2>

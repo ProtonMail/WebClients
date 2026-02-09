@@ -3,31 +3,40 @@ import { useEffect, useRef } from 'react';
 import { useLocalParticipant } from '@livekit/components-react';
 import { c } from 'ttag';
 
-import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 import { IcMeetCamera } from '@proton/icons/icons/IcMeetCamera';
 import { IcMeetCameraOff } from '@proton/icons/icons/IcMeetCameraOff';
 import { IcMeetMicrophone } from '@proton/icons/icons/IcMeetMicrophone';
 import { IcMeetMicrophoneOff } from '@proton/icons/icons/IcMeetMicrophoneOff';
 import { IcMeetSettings } from '@proton/icons/icons/IcMeetSettings';
-import { IcMeetShieldStar } from '@proton/icons/icons/IcMeetShieldStar';
-import { useMeetSelector } from '@proton/meet/store/hooks';
+import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
+import { selectPage, setPage } from '@proton/meet/store/slices/meetingState';
 import { selectMeetSettings } from '@proton/meet/store/slices/settings';
+import {
+    MeetingSideBars,
+    PermissionPromptStatus,
+    PopUpControls,
+    selectPopupState,
+    selectSideBarState,
+    setNoDeviceDetected,
+    setPermissionPromptStatus,
+    togglePopupState,
+    toggleSideBarState,
+} from '@proton/meet/store/slices/uiStateSlice';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
-import { useFlag } from '@proton/unleash';
 import clsx from '@proton/utils/clsx';
 
 import { CircleButton } from '../../atoms/CircleButton/CircleButton';
 import { Pagination } from '../../atoms/Pagination/Pagination';
 import { useMediaManagementContext } from '../../contexts/MediaManagementProvider/MediaManagementContext';
 import { useMeetContext } from '../../contexts/MeetContext';
-import { useUIStateContext } from '../../contexts/UIStateContext';
+import { useSortedParticipantsContext } from '../../contexts/ParticipantsProvider/SortedParticipantsProvider';
 import { useIsLargerThanMd } from '../../hooks/useIsLargerThanMd';
 import { useIsLocalParticipantAdmin } from '../../hooks/useIsLocalParticipantAdmin';
 import { useIsNarrowHeight } from '../../hooks/useIsNarrowHeight';
-import { MeetingSideBars, PermissionPromptStatus, PopUpControls } from '../../types';
 import { AudioPlaybackPrompt } from '../AudioPlaybackPrompt/AudioPlaybackPrompt';
 import { AudioSettings } from '../AudioSettings/AudioSettings';
 import { ChatButton } from '../ChatButton';
+import { InfoButton } from '../InfoButton/InfoButton';
 import { LeaveMeetingPopup } from '../LeaveMeetingPopup/LeaveMeetingPopup';
 import { MeetingDuration } from '../MeetingDuration';
 import { MicrophoneWithVolumeWithMicrophoneState } from '../MicrophoneWithVolume';
@@ -36,34 +45,28 @@ import { RecordingControls } from '../RecordingControls/RecordingControls';
 import { ScreenShareButton } from '../ScreenShareButton';
 import { TimeLimitCTAPopup } from '../TimeLimitCTAPopup/TimeLimitCTAPopup';
 import { ToggleButton } from '../ToggleButton/ToggleButton';
-import { UpgradeIcon } from '../UpgradeIcon/UpgradeIcon';
 import { VideoSettings } from '../VideoSettings/VideoSettings';
 import { MenuButton } from './MenuButton';
 
 import './ParticipantControls.scss';
 
 export const ParticipantControls = () => {
-    const meetUpsellEnabled = useFlag('MeetUpsell');
+    const dispatch = useMeetDispatch();
     const { isMicrophoneEnabled, isCameraEnabled } = useLocalParticipant();
-    const { roomName, page, setPage, isScreenShare, guestMode, paidUser, isGuestAdmin } = useMeetContext();
+    const { roomName, isScreenShare, guestMode, isGuestAdmin } = useMeetContext();
+    const page = useMeetSelector(selectPage);
     const { selfView } = useMeetSelector(selectMeetSettings);
     const isLargerThanMd = useIsLargerThanMd();
     const isNarrowHeight = useIsNarrowHeight();
 
-    const {
-        sideBarState,
-        toggleSideBarState,
-        togglePopupState,
-        setPermissionPromptStatus,
-        setNoDeviceDetected,
-        popupState,
-    } = useUIStateContext();
+    const sideBarState = useMeetSelector(selectSideBarState);
+    const popupState = useMeetSelector(selectPopupState);
 
     const { isLocalParticipantAdmin, isLocalParticipantHost } = useIsLocalParticipantAdmin();
 
     const hasAdminPermission = isLocalParticipantAdmin || isLocalParticipantHost;
 
-    const { pageCount, pageCountWithoutSelfView } = useMeetContext();
+    const { pageCount, pageCountWithoutSelfView } = useSortedParticipantsContext();
 
     const currentPageCount = selfView ? pageCount : pageCountWithoutSelfView;
 
@@ -95,7 +98,7 @@ export const ParticipantControls = () => {
             cameraPermission !== prevDevicePermissionsRef.current.camera &&
             popupState[PopUpControls.Camera]
         ) {
-            togglePopupState(PopUpControls.Camera);
+            dispatch(togglePopupState(PopUpControls.Camera));
         }
 
         if (
@@ -103,7 +106,7 @@ export const ParticipantControls = () => {
             microphonePermission !== prevDevicePermissionsRef.current.microphone &&
             popupState[PopUpControls.Microphone]
         ) {
-            togglePopupState(PopUpControls.Microphone);
+            dispatch(togglePopupState(PopUpControls.Microphone));
         }
 
         prevDevicePermissionsRef.current = { camera: cameraPermission, microphone: microphonePermission };
@@ -139,11 +142,6 @@ export const ParticipantControls = () => {
 
     const meetingTitle = (
         <div className="flex h3 items-center gap-2 pl-4 flex-nowrap">
-            {meetUpsellEnabled && (
-                <span className="shrink-0">
-                    {guestMode || !paidUser ? <UpgradeIcon /> : <IcMeetShieldStar className="shield-star" size={5} />}
-                </span>
-            )}
             <span className="participant-controls-title text-ellipsis">{roomName}</span>
             {hasAdminPermission && (
                 <div className="ml-2 shrink-0">
@@ -158,7 +156,11 @@ export const ParticipantControls = () => {
             <AudioPlaybackPrompt />
             {!isLargerThanMd && !isNarrowHeight && pageCount > 1 && !isScreenShare && (
                 <div className="w-full flex justify-center">
-                    <Pagination totalPages={pageCount} currentPage={page} onPageChange={setPage} />
+                    <Pagination
+                        totalPages={pageCount}
+                        currentPage={page}
+                        onPageChange={(page) => dispatch(setPage(page))}
+                    />
                 </div>
             )}
             <div
@@ -185,11 +187,11 @@ export const ParticipantControls = () => {
                                 isOn={microphones.length === 0 ? false : isMicrophoneEnabled}
                                 onClick={() => {
                                     if (!hasMicrophonePermission) {
-                                        setPermissionPromptStatus(PermissionPromptStatus.MICROPHONE);
+                                        dispatch(setPermissionPromptStatus(PermissionPromptStatus.MICROPHONE));
                                         return;
                                     }
                                     if (microphones.length === 0) {
-                                        setNoDeviceDetected(PermissionPromptStatus.MICROPHONE);
+                                        dispatch(setNoDeviceDetected(PermissionPromptStatus.MICROPHONE));
                                         return;
                                     }
 
@@ -211,7 +213,7 @@ export const ParticipantControls = () => {
                                         return;
                                     }
 
-                                    togglePopupState(PopUpControls.Microphone);
+                                    dispatch(togglePopupState(PopUpControls.Microphone));
                                 }}
                             />
                             <ToggleButton
@@ -220,11 +222,11 @@ export const ParticipantControls = () => {
                                 isOn={cameras.length === 0 ? false : isCameraEnabled}
                                 onClick={() => {
                                     if (!hasCameraPermission) {
-                                        setPermissionPromptStatus(PermissionPromptStatus.CAMERA);
+                                        dispatch(setPermissionPromptStatus(PermissionPromptStatus.CAMERA));
                                         return;
                                     }
                                     if (cameras.length === 0) {
-                                        setNoDeviceDetected(PermissionPromptStatus.CAMERA);
+                                        dispatch(setNoDeviceDetected(PermissionPromptStatus.CAMERA));
                                         return;
                                     }
 
@@ -248,7 +250,7 @@ export const ParticipantControls = () => {
                                         return;
                                     }
 
-                                    togglePopupState(PopUpControls.Camera);
+                                    dispatch(togglePopupState(PopUpControls.Camera));
                                 }}
                             />
                         </>
@@ -259,11 +261,11 @@ export const ParticipantControls = () => {
                                 variant={isMicrophoneEnabled ? 'default' : 'danger'}
                                 onClick={() => {
                                     if (!hasMicrophonePermission) {
-                                        setPermissionPromptStatus(PermissionPromptStatus.MICROPHONE);
+                                        dispatch(setPermissionPromptStatus(PermissionPromptStatus.MICROPHONE));
                                         return;
                                     }
                                     if (microphones.length === 0) {
-                                        setNoDeviceDetected(PermissionPromptStatus.MICROPHONE);
+                                        dispatch(setNoDeviceDetected(PermissionPromptStatus.MICROPHONE));
                                         return;
                                     }
 
@@ -282,11 +284,11 @@ export const ParticipantControls = () => {
                                 variant={isCameraEnabled ? 'default' : 'danger'}
                                 onClick={() => {
                                     if (!hasCameraPermission) {
-                                        setPermissionPromptStatus(PermissionPromptStatus.CAMERA);
+                                        dispatch(setPermissionPromptStatus(PermissionPromptStatus.CAMERA));
                                         return;
                                     }
                                     if (cameras.length === 0) {
-                                        setNoDeviceDetected(PermissionPromptStatus.CAMERA);
+                                        dispatch(setNoDeviceDetected(PermissionPromptStatus.CAMERA));
                                         return;
                                     }
 
@@ -316,20 +318,20 @@ export const ParticipantControls = () => {
                             IconComponent={IcMeetSettings}
                             variant={sideBarState[MeetingSideBars.Settings] ? 'active' : 'default'}
                             onClick={() => {
-                                toggleSideBarState(MeetingSideBars.Settings);
+                                dispatch(toggleSideBarState(MeetingSideBars.Settings));
                             }}
                             ariaLabel={c('Alt').t`Toggle settings`}
                         />
                         <RecordingControls />
-                        <CircleButton
-                            IconComponent={IcInfoCircle}
-                            onClick={() => toggleSideBarState(MeetingSideBars.MeetingDetails)}
-                            variant={sideBarState[MeetingSideBars.MeetingDetails] ? 'active' : 'default'}
-                            ariaLabel={c('Alt').t`Toggle meeting details`}
-                        />
+                        <InfoButton />
                     </div>
                     <div className="flex lg:hidden gap-2 flex-nowrap">
                         {isMobile() ? <ChatButton /> : <ScreenShareButton />}
+                        {!isMobile() && (
+                            <div className="hidden sm:block">
+                                <InfoButton />
+                            </div>
+                        )}
                         <RecordingControls />
                         <MenuButton />
                     </div>
@@ -338,7 +340,11 @@ export const ParticipantControls = () => {
                 </div>
                 <div className={clsx(isLargerThanMd || isNarrowHeight ? '' : 'hidden', 'flex flex-1 justify-end')}>
                     {currentPageCount > 1 && (
-                        <Pagination totalPages={currentPageCount} currentPage={page} onPageChange={setPage} />
+                        <Pagination
+                            totalPages={currentPageCount}
+                            currentPage={page}
+                            onPageChange={(page) => dispatch(setPage(page))}
+                        />
                     )}
                 </div>
             </div>

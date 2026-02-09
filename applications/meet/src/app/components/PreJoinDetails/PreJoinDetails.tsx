@@ -88,7 +88,7 @@ export const PreJoinDetails = ({
                             }}
                             aria-label={c('Alt').t`Copy meeting link`}
                         >
-                            <IcMeetCopy size={4} />
+                            <IcMeetCopy size={4} alt={c('Action').t`Copy meeting link`} />
                         </Button>
                     </InputFieldStacked>
                 )}
