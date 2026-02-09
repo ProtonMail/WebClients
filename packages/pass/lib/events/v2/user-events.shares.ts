@@ -1,6 +1,7 @@
 import { call, put, select } from 'redux-saga/effects';
 
 import { MIN_MAX_BATCH_PER_REQUEST } from '@proton/pass/constants';
+import { PassCrypto } from '@proton/pass/lib/crypto';
 import type { EventProcessor } from '@proton/pass/lib/events/v2/user-events.types';
 import { requestItemsForShareId } from '@proton/pass/lib/items/item.requests';
 import { parseShareResponse } from '@proton/pass/lib/shares/share.parser';
@@ -54,28 +55,23 @@ async function* batchedShareFetcher<T>(
     return processed;
 }
 
-/** Cleans up local state for a share if it exists: discards any
- * open drafts and dispatches `shareDeleted` to purge from store. */
+/** Unconditionally cleans up crypto state and drafts for a share.
+ * Dispatches `shareDeleted` only if the share exists in the store. */
 function* onShareDeleted(shareId: ShareId) {
     const share: Maybe<Share> = yield select(selectShare(shareId));
 
-    if (share) {
-        yield discardDrafts(shareId);
-        yield put(shareDeleted(share));
-    }
+    yield discardDrafts(shareId);
+    PassCrypto.removeShare(shareId);
+    if (share) yield put(shareDeleted(share));
 }
 
-/** Processes newly created shares in batches. For each share, fetches the
- * share details (with decryption) and all its items.
- *
- * NOTE: Before fetching, any existing local share data is purged via
- * `onShareDeleted`. This handles the edge-case where a user deletes a share
- * and CS restores it — stale local cache would otherwise conflict with the
- * freshly restored share. Returns `true` if all fetches succeeded. */
+/** Processes newly created shares in batches. For each share, fetches the share
+ * details (with decryption) and all its items. The CS-restore edge-case (delete
+ * then re-create) is handled at the reducer level: `shareCreated` wipes any
+ * existing entry before merging, so stale local data never conflicts with freshly
+ * fetched state. Returns `true` if all fetches succeeded. */
 export function* processSharesCreated(created: SyncEventShareOutput[]): EventProcessor {
     if (created.length === 0) return true;
-
-    for (const { ShareID } of created) yield call(onShareDeleted, ShareID);
     const fetcher = batchedShareFetcher(created, shareWithItemsFetcher);
 
     while (true) {
