@@ -28,5 +28,7 @@ export const selectCategoriesTabs = createSelector([selectCategoriesLabel], (cat
 });
 
 export const selectActiveCategoriesTabs = createSelector([selectCategoriesTabs], (categoriesTabs) => {
-    return categoriesTabs.filter((tab) => tab.display);
+    // TODO enable this again once the alpha is done
+    // return categoriesTabs.filter((tab) => tab.display);
+    return categoriesTabs.map((cat) => ({ ...cat, display: true }));
 });
