@@ -1,8 +1,10 @@
-import { getUserEventLatestID } from '@proton/pass/lib/events/v2/user-events.requests';
+import { call, put } from 'redux-saga/effects';
+
 import { requestItemsForShareId } from '@proton/pass/lib/items/item.requests';
 import { parseShareResponse } from '@proton/pass/lib/shares/share.parser';
 import { requestShares } from '@proton/pass/lib/shares/share.requests';
 import { getUserAccess } from '@proton/pass/lib/user/user.requests';
+import { sync } from '@proton/pass/store/actions';
 import type { HydratedAccessState, ItemsByShareId, SharesState } from '@proton/pass/store/reducers';
 import type { Share, ShareGetResponse } from '@proton/pass/types';
 import { partition } from '@proton/pass/utils/array/partition';
@@ -10,6 +12,9 @@ import { prop } from '@proton/pass/utils/fp/lens';
 import { diadic } from '@proton/pass/utils/fp/variadics';
 import { merge } from '@proton/pass/utils/object/merge';
 import { toMap } from '@proton/shared/lib/helpers/object';
+
+import { getUserEventLatestID } from './user-events.requests';
+import type { EventProcessor } from './user-events.types';
 
 // import { getInvites } from '@proton/pass/lib/invites/invite.requests';
 
@@ -58,4 +63,14 @@ export function* syncV2(): Generator<unknown, SyncResultV2> {
         shares: toMap(activeShares.map(prop('share')), 'shareId'),
         items: items.reduce(diadic(merge), {}),
     };
+}
+
+export function* processFullRefresh(): EventProcessor {
+    try {
+        const result: SyncResultV2 = yield call(syncV2);
+        yield put(sync(result));
+        return true;
+    } catch {
+        return false;
+    }
 }
