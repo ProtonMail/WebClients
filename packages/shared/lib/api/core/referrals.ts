@@ -1,4 +1,4 @@
-import type { BillingAddress, CYCLE, PLANS } from '@proton/payments';
+import type { BillingAddress, CYCLE, Currency, PLANS } from '@proton/payments';
 
 import type { ReferralData } from '../../interfaces';
 
@@ -93,6 +93,7 @@ export interface ReferralRegistrationSubscription {
     paymentToken: string;
     billingAddress: BillingAddress;
     code?: string;
+    currency?: Currency;
 }
 
 export const postReferralRegistration = ({
@@ -113,5 +114,6 @@ export const postReferralRegistration = ({
         PaymentToken: referralRegistrationSubscription?.paymentToken,
         BillingAddress: referralRegistrationSubscription?.billingAddress,
         Codes: referralRegistrationSubscription?.code ? [referralRegistrationSubscription.code] : undefined,
+        Currency: referralRegistrationSubscription?.currency,
     },
 });

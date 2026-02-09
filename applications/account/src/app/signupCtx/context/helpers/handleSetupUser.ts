@@ -274,6 +274,7 @@ export const handleSetupUser = async ({
                     paymentToken: subscriptionData.paymentToken.Details.Token,
                     billingAddress: subscriptionData.billingAddress,
                     code: subscriptionData.checkResult.Coupon?.Code,
+                    currency: subscriptionData.currency,
                 };
             }
             return undefined;
