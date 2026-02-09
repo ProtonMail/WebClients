@@ -46,7 +46,10 @@ export const shares: Reducer<SharesState> = (state = {}, action: Action) => {
 
     if (shareCreated.match(action)) {
         const { share } = action.payload;
-        return fullMerge(state, { [share.shareId]: share });
+        /** Wipe any existing entry before merging to avoid stale
+         * properties surviving a recursive `fullMerge` (e.g. when
+         * CS restores a previously deleted share). */
+        return fullMerge(objectDelete(state, share.shareId), { [share.shareId]: share });
     }
 
     if (shareUpdated.match(action)) {

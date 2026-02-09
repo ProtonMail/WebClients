@@ -120,7 +120,9 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
 
         if (shareCreated.match(action)) {
             const { share, items } = action.payload;
-            return fullMerge(state, { [share.shareId]: toMap(items, 'itemId') });
+            /** Wipe existing items for this share before merging so stale
+             * entries don't survive (mirrors the objectDelete in the shares reducer). */
+            return fullMerge(objectDelete(state, share.shareId), { [share.shareId]: toMap(items, 'itemId') });
         }
 
         if (shareDeleted.match(action)) return objectDelete(state, action.payload.shareId);
