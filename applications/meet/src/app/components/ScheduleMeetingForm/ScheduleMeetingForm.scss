@@ -1,0 +1,153 @@
+.create-schedule-bg {
+	background-color: var(--background-norm) !important;
+}
+
+.create-container {
+	.field-two-assist {
+		display: none !important;
+	}
+
+	.input,
+	.select {
+		background-color: var(--background-card) !important;
+		border-radius: 1.5rem !important;
+		padding: 0.5rem !important;
+		border-width: 0.063rem !important;
+		border-style: solid;
+		border-color: var(--border-weak);
+	}
+
+	.select {
+		padding: 1.6rem !important;
+	}
+
+	.date-input {
+		padding: 0.45rem !important;
+		justify-content: center !important;
+		align-items: center !important;
+	}
+
+	.input.focus,
+	.input:not(.disabled):focus-within {
+		box-shadow: 0 0 0 0.063rem var(--ui-blue-interaction-minor-1);
+	}
+
+	.button {
+		padding: 0.8rem;
+	}
+
+	.timezone-button {
+		font-weight: 500 !important;
+	}
+
+	.save-button {
+		color: black;
+		background: var(--interaction-norm);
+		border: 1px solid #ffffff0a;
+	}
+
+	.save-button:hover,
+	.save-button:active {
+		color: black;
+		background: #c1b8ff;
+	}
+
+	.delete-button {
+		background-color: var(--background-card);
+		border: 1px solid var(--border-norm);
+		color: white;
+	}
+
+	.delete-button:hover,
+	.delete-button:active {
+		background-color: var(--button-lighter-hover-background-color);
+		color: #a0a0a0;
+	}
+
+	.input-link {
+		border: 1px solid var(--signal-danger-minor-2);
+		color: var(--ui-purple-interaction-minor-1);
+		background-color: var(--ui-purple-interaction-minor-3);
+		border-radius: 1.5em;
+	}
+
+	.button-copy {
+		background-color: var(--ui-purple-interaction-minor-1);
+		color: black;
+	}
+}
+
+.field {
+	&:focus {
+		box-shadow: 0 0 0 0.063rem var(--interaction-norm) !important;
+	}
+}
+
+.create-container-dropdown {
+	box-shadow: none !important;
+	border-radius: 1rem !important;
+	border: 1px solid var(--border-norm) !important;
+
+	.minicalendar {
+		.today-icon {
+			border-radius: var(--border-radius-full) !important;
+		}
+	}
+
+	.minicalendar-day {
+		opacity: 1 !important;
+		border: none !important;
+	}
+
+	.minicalendar-day--selected::before {
+		background-color: var(--interaction-norm) !important;
+		border-radius: var(--border-radius-full) !important;
+		color: var(--text-invert) !important;
+	}
+
+	.minicalendar-day--selected::after {
+		border: none !important;
+		background: transparent !important;
+	}
+
+	.minicalendar-day[aria-pressed='true'] {
+		background: transparent !important;
+	}
+
+	.minicalendar-day--selected .minicalendar-day-number {
+		color: var(--text-invert) !important;
+	}
+
+	.minicalendar-day[aria-current='date']::before {
+		border: none !important;
+	}
+
+	.minicalendar-day[aria-current='date']::after {
+		border-radius: var(--border-radius-full) !important;
+	}
+
+	.field {
+		border-color: var(--border-norm) !important;
+
+		&:focus {
+			box-shadow: 0 0 0 0.063rem var(--interaction-norm) !important;
+		}
+	}
+
+	.dropdown-content {
+		border-radius: 1rem !important;
+	}
+
+	.dropdown-item-button {
+		border-radius: var(--border-radius-xl);
+		background-color: var(--interaction-norm-minor-2);
+
+		&:hover {
+			background-color: var(--interaction-norm-minor-3) !important;
+		}
+	}
+
+	.dropdown-item--is-selected {
+		background-color: var(--interaction-norm-minor-2) !important;
+	}
+}

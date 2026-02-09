@@ -3,14 +3,14 @@ import { useMemo } from 'react';
 import { useMeetSelector } from '@proton/meet/store/hooks';
 import { selectMeetSettings } from '@proton/meet/store/slices/settings';
 
-import { useMeetContext } from '../contexts/MeetContext';
+import { useSortedParticipantsContext } from '../contexts/ParticipantsProvider/SortedParticipantsProvider';
 import { useIsLargerThanMd } from '../hooks/useIsLargerThanMd';
 import { useIsNarrowHeight } from '../hooks/useIsNarrowHeight';
 import { calculateGridLayout } from '../utils/calculateGridLayout';
 import { ParticipantTile } from './ParticipantTile/ParticipantTile';
 
 export const ParticipantGrid = () => {
-    const { pagedParticipants, pagedParticipantsWithoutSelfView } = useMeetContext();
+    const { pagedParticipants, pagedParticipantsWithoutSelfView } = useSortedParticipantsContext();
 
     const { selfView } = useMeetSelector(selectMeetSettings);
 

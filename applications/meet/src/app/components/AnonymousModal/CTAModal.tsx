@@ -16,7 +16,7 @@ import './CTAModal.scss';
 interface CTAModalProps {
     onClose: () => void;
     ctaModalType: UpsellModalTypes;
-    rejoin: () => void;
+    rejoin?: () => void;
     action: () => void;
 }
 
@@ -24,6 +24,7 @@ export const CTAModal = ({ onClose, ctaModalType, rejoin, action }: CTAModalProp
     const showUpsellModalAfterMeeting = useFlag('MeetShowUpsellModalAfterMeeting');
     const titles = {
         [UpsellModalTypes.Schedule]: c('Info').t`Schedule your next meeting`,
+        [UpsellModalTypes.Room]: c('Info').t`Create a meeting room`,
         [UpsellModalTypes.PersonalMeeting]: c('Info').t`Get your personal meeting ID`,
         [UpsellModalTypes.StartMeeting]: c('Info').t`Host your own secure meeting`,
         [UpsellModalTypes.FreeAccount]: c('Info').t`Meet without restrictions`,
@@ -33,6 +34,7 @@ export const CTAModal = ({ onClose, ctaModalType, rejoin, action }: CTAModalProp
     const subtitles = {
         [UpsellModalTypes.Schedule]: c('Info')
             .t`Create an account to connect Meet with ${CALENDAR_APP_NAME} and send meeting invites instantly.`,
+        [UpsellModalTypes.Room]: c('Info').t`Create an account to have a meeting room that you can use at any time.`,
         [UpsellModalTypes.PersonalMeeting]: c('Info')
             .t`Create an account to have a personal meeting link you can reuse for every call.`,
         [UpsellModalTypes.StartMeeting]: c('Info')
@@ -45,6 +47,7 @@ export const CTAModal = ({ onClose, ctaModalType, rejoin, action }: CTAModalProp
 
     const actionText = {
         [UpsellModalTypes.Schedule]: c('Action').t`Create a free account`,
+        [UpsellModalTypes.Room]: c('Action').t`Create a free account`,
         [UpsellModalTypes.PersonalMeeting]: c('Action').t`Create a free account`,
         [UpsellModalTypes.StartMeeting]: c('Action').t`Start a meeting`,
         [UpsellModalTypes.FreeAccount]: c('Action').t`Get Meet Professional`,
@@ -53,8 +56,11 @@ export const CTAModal = ({ onClose, ctaModalType, rejoin, action }: CTAModalProp
 
     const actionButton = (
         <Button
-            className="create-account-button rounded-full color-invert reload-button py-4 text-semibold"
-            onClick={action}
+            className="create-account-button rounded-full color-invert reload-button py-4 text-semibold w-full"
+            onClick={() => {
+                onClose();
+                action();
+            }}
             color="norm"
             size="large"
         >
@@ -100,11 +106,13 @@ export const CTAModal = ({ onClose, ctaModalType, rejoin, action }: CTAModalProp
                         <>{actionButton}</>
                     )}
 
-                    <div className="w-full flex justify-center gap-2">
-                        <span className="color-weak">{c('Info').t`Left by mistake?`}</span>
-                        <InlineLinkButton className="rejoin-meeting-button" onClick={rejoin}>{c('Action')
-                            .t`Rejoin meeting`}</InlineLinkButton>
-                    </div>
+                    {rejoin && (
+                        <div className="w-full flex justify-center gap-2">
+                            <span className="color-weak">{c('Info').t`Left by mistake?`}</span>
+                            <InlineLinkButton className="rejoin-meeting-button" onClick={rejoin}>{c('Action')
+                                .t`Rejoin meeting`}</InlineLinkButton>
+                        </div>
+                    )}
                 </div>
             </div>
         </ModalTwo>

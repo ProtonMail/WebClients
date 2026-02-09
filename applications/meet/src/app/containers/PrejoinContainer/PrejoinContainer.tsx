@@ -5,6 +5,7 @@ import clsx from '@proton/utils/clsx';
 
 import { DeviceSettings } from '../../components/DeviceSettings/DeviceSettings';
 import { JoiningRoomLoader } from '../../components/JoiningRoomLoader';
+import { OpenDesktopAppBanner } from '../../components/OpenDesktopAppBanner/OpenDesktopAppBanner';
 import { PageHeader } from '../../components/PageHeader/PageHeader';
 import { PreJoinDetails } from '../../components/PreJoinDetails/PreJoinDetails';
 import { useMediaManagementContext } from '../../contexts/MediaManagementProvider/MediaManagementContext';
@@ -108,6 +109,7 @@ export const PrejoinContainer = ({
 
     return (
         <>
+            {roomId && !guestMode && <OpenDesktopAppBanner meetingLink={shareLink} />}
             {isLoading && <div className="w-full h-full absolute top-0 left-0 z-up" />}
             <div className="absolute w-full meet-container-padding-x">
                 <PageHeader guestMode={guestMode} showAppSwitcher={false} isInstantJoin={isInstantJoin} />

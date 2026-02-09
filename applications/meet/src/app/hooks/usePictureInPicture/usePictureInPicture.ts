@@ -1,18 +1,19 @@
 import { useEffect, useRef, useState } from 'react';
 
 import { useRoomContext } from '@livekit/components-react';
-import type { LocalParticipant, RemoteParticipant } from 'livekit-client';
 import { c } from 'ttag';
 
 import { useNotifications } from '@proton/components';
 import { useMeetSelector } from '@proton/meet/store/hooks';
+import { selectChatMessages } from '@proton/meet/store/slices/meetingState';
 import { selectMeetSettings } from '@proton/meet/store/slices/settings';
 import { isChromiumBased, isFirefox, isMobile, isSafari } from '@proton/shared/lib/helpers/browser';
 
 import { useCameraTrackSubscriptionManager } from '../../contexts/CameraTrackSubscriptionCacheProvider/CameraTrackSubscriptionManagerProvider';
 import { useMediaManagementContext } from '../../contexts/MediaManagementProvider/MediaManagementContext';
-import type { MeetChatMessage } from '../../types';
+import { useSortedParticipantsContext } from '../../contexts/ParticipantsProvider/SortedParticipantsProvider';
 import { useLatest } from '../useLatest';
+import { useStableCallback } from '../useStableCallback';
 import { PiPSessionManager } from './PiPSessionManager';
 import type { TrackInfo } from './types';
 import { usePiPMediaSession } from './usePiPMediaSession';
@@ -43,15 +44,15 @@ const enableMediaSessionControls = async () => {
 export function usePictureInPicture({
     isDisconnected,
     participantNameMap,
-    chatMessages,
-    sortedParticipants,
 }: {
     isDisconnected: boolean;
     participantNameMap: Record<string, string>;
-    chatMessages: MeetChatMessage[];
-    sortedParticipants: (RemoteParticipant | LocalParticipant)[];
 }) {
     const room = useRoomContext();
+
+    const chatMessages = useMeetSelector(selectChatMessages);
+
+    const { sortedParticipants } = useSortedParticipantsContext();
 
     const { toggleVideo, toggleAudio, isVideoEnabled, isAudioEnabled, selectedMicrophoneId, selectedCameraId } =
         useMediaManagementContext();
@@ -131,7 +132,7 @@ export function usePictureInPicture({
     };
 
     // Start PiP
-    const startPiP = async () => {
+    const startPiP = useStableCallback(async () => {
         if (!pipEnabled) {
             return;
         }
@@ -180,7 +181,7 @@ export function usePictureInPicture({
         } finally {
             preventBlur.current = false;
         }
-    };
+    });
 
     const preparePictureInPicture = () => {
         preventBlur.current = true;
@@ -197,7 +198,7 @@ export function usePictureInPicture({
     useEffect(() => {
         if (chatMessages.length > 0) {
             const lastMessage = chatMessages[chatMessages.length - 1];
-            addChatMessage(lastMessage.name, lastMessage.message);
+            addChatMessage(participantNameMapRef.current[lastMessage.identity], lastMessage.message);
         }
     }, [chatMessages, addChatMessage]);
 

@@ -1,14 +1,15 @@
-import { CustomPasswordState, type Meeting } from '@proton/shared/lib/interfaces/Meet';
+import { CustomPasswordState, type Meeting, MeetingType } from '@proton/shared/lib/interfaces/Meet';
 
-import {
-    decryptMeetingPassword,
-    decryptSessionKey,
-    encryptMeetingName,
-    getCombinedPassword,
-} from '../utils/cryptoUtils';
+import { decryptMeetingPassword, decryptSessionKey, getCombinedPassword } from '../utils/cryptoUtils';
 import { useGetMeetingDependencies } from './useGetMeetingDependencies';
 import { useUpdateMeetingName } from './useUpdateMeetingName';
 import { useUpdateMeetingPassword } from './useUpdateMeetingPassword';
+import { useUpdateMeetingSchedule } from './useUpdateMeetingSchedule';
+
+// Check if the password is encrypted (PGP armored message)
+const isPasswordEncrypted = (password: string): boolean => {
+    return password.includes('-----BEGIN PGP MESSAGE-----');
+};
 
 export const useMeetingUpdates = () => {
     const getMeetingDependencies = useGetMeetingDependencies();
@@ -16,6 +17,8 @@ export const useMeetingUpdates = () => {
     const { updateMeetingName } = useUpdateMeetingName();
 
     const { updateMeetingPassword } = useUpdateMeetingPassword();
+
+    const { updateMeetingSchedule } = useUpdateMeetingSchedule();
 
     const saveMeetingPassword = async ({
         passphrase,
@@ -42,15 +45,13 @@ export const useMeetingUpdates = () => {
             throw new Error('Missing session key');
         }
 
-        const updatedMeeting = await updateMeetingPassword({
+        return updateMeetingPassword({
             meetingId: id,
             password: getCombinedPassword(passwordBase, passphrase),
             sessionKey,
             customPassword: !!passphrase ? CustomPasswordState.PASSWORD_SET : CustomPasswordState.NO_PASSWORD,
             salt: meetingObject?.Salt as string,
         });
-
-        return updatedMeeting;
     };
 
     const saveMeetingName = async ({
@@ -66,9 +67,12 @@ export const useMeetingUpdates = () => {
             throw new Error('Missing meeting password');
         }
 
-        const { userKeys } = await getMeetingDependencies();
+        let decryptedPassword = meetingObject.Password;
 
-        const decryptedPassword = await decryptMeetingPassword(meetingObject.Password, userKeys);
+        if (isPasswordEncrypted(decryptedPassword)) {
+            const { userKeys } = await getMeetingDependencies();
+            decryptedPassword = await decryptMeetingPassword(decryptedPassword, userKeys);
+        }
 
         const sessionKey = await decryptSessionKey({
             encryptedSessionKey: meetingObject.SessionKey,
@@ -80,12 +84,30 @@ export const useMeetingUpdates = () => {
             throw new Error('Missing session key');
         }
 
-        const encryptedConferenceName = await encryptMeetingName(newTitle, sessionKey);
-
-        const updatedMeeting = await updateMeetingName(id, encryptedConferenceName, sessionKey);
-
-        return updatedMeeting;
+        return updateMeetingName(id, newTitle, sessionKey);
     };
 
-    return { saveMeetingPassword, saveMeetingName };
+    const saveMeetingSchedule = async ({
+        startTime,
+        endTime,
+        timezone,
+        recurrence,
+        id,
+        meetingObject,
+    }: {
+        startTime: string;
+        endTime: string;
+        timezone: string;
+        recurrence: string | null;
+        id: string;
+        meetingObject: Meeting;
+    }) => {
+        if (meetingObject.Type !== MeetingType.SCHEDULED && meetingObject.Type !== MeetingType.RECURRING) {
+            throw new Error('Meeting must be of type scheduled or recurring');
+        }
+
+        return updateMeetingSchedule(id, startTime, endTime, recurrence, timezone);
+    };
+
+    return { saveMeetingPassword, saveMeetingName, saveMeetingSchedule };
 };

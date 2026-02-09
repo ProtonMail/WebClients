@@ -1,3 +1,5 @@
+import type { ChatMessage } from 'livekit-client';
+
 import type { MeetingType } from '@proton/shared/lib/interfaces/Meet';
 
 export interface CreateMeetingParams {
@@ -13,8 +15,29 @@ export interface CreateMeetingParams {
 
 export enum UpsellModalTypes {
     Schedule = 'schedule',
+    Room = 'room',
     PersonalMeeting = 'personalMeeting',
     StartMeeting = 'startMeeting',
     FreeAccount = 'freeAccount',
     PaidAccount = 'paidAccount',
 }
+
+export interface MeetChatMessage extends Pick<ChatMessage, 'id' | 'message' | 'timestamp'> {
+    identity: string;
+    seen?: boolean;
+    type?: 'message';
+}
+
+export enum ParticipantEvent {
+    Join = 'join',
+    Leave = 'leave',
+}
+
+export interface ParticipantEventRecord {
+    identity: string;
+    eventType: ParticipantEvent;
+    timestamp: number;
+    type?: 'event';
+}
+
+export type MeetingRoomUpdate = ParticipantEventRecord | MeetChatMessage;

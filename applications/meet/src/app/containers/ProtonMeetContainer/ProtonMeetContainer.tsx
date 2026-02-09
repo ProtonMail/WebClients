@@ -5,7 +5,6 @@ import { type GroupKeyInfo, JoinTypeInfo, MeetCoreErrorEnum } from '@proton-meet
 import { DisconnectReason, type Room, Track } from 'livekit-client';
 import { c } from 'ttag';
 
-import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
 import useNotifications from '@proton/components/hooks/useNotifications';
@@ -13,10 +12,11 @@ import { useMeetErrorReporting } from '@proton/meet';
 import { useCreateInstantMeeting } from '@proton/meet/hooks/useCreateInstantMeeting';
 import { useMeetDispatch } from '@proton/meet/store/hooks';
 import { setPreviousMeetingLink, setUpsellModalType } from '@proton/meet/store/slices';
+import { resetMeetingState } from '@proton/meet/store/slices/meetingState';
 import { toggleMeetingLockThunk } from '@proton/meet/store/slices/settings';
+import { PopUpControls, setMeetingReadyPopupOpen, setPopupStateValue } from '@proton/meet/store/slices/uiStateSlice';
 import { UpsellModalTypes } from '@proton/meet/types/types';
 import { getMeetingLink } from '@proton/meet/utils/getMeetingLink';
-import { hasBundleBiz2025, hasBundlePro2024, hasVisionary } from '@proton/payments/core/subscription/helpers';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { isFirefox, isMobile } from '@proton/shared/lib/helpers/browser';
 import { isWebRtcSupported } from '@proton/shared/lib/helpers/isWebRtcSupported';
@@ -29,13 +29,13 @@ import useFlag from '@proton/unleash/useFlag';
 
 import { ConnectionLostModal } from '../../components/ConnectionLostModal/ConnectionLostModal';
 import { MeetingLockedModal } from '../../components/MeetingLockedModal/MeetingLockedModal';
+import { MeetingOpenedInDesktopApp } from '../../components/MeetingOpenedInDesktopApp/MeetingOpenedInDesktopApp';
 import { PasswordPrompt } from '../../components/PasswordPrompt/PasswordPrompt';
 import { PiPPreviewVideo } from '../../components/PiPPreviewVideo/PiPPreviewVideo';
 import { WebRtcUnsupportedModal } from '../../components/WebRtcUnsupportedModal/WebRtcUnsupportedModal';
-import { MEETING_LOCKED_ERROR_CODE, PAGE_SIZE, SMALL_SCREEN_PAGE_SIZE } from '../../constants';
+import { MEETING_LOCKED_ERROR_CODE } from '../../constants';
 import { MLSContext } from '../../contexts/MLSContext';
 import { useMediaManagementContext } from '../../contexts/MediaManagementProvider/MediaManagementContext';
-import { useUIStateContext } from '../../contexts/UIStateContext';
 import { useWasmApp } from '../../contexts/WasmContext';
 import type { SRPHandshakeInfo } from '../../hooks/srp/useMeetSrp';
 import { useMeetingSetup } from '../../hooks/srp/useMeetingSetup';
@@ -43,19 +43,17 @@ import { useAssignHost } from '../../hooks/useAssignHost';
 import { useConnectionHealthCheck } from '../../hooks/useConnectionHealthCheck';
 import { defaultDisplayNameHooks } from '../../hooks/useDefaultDisplayName';
 import { useDependencySetup } from '../../hooks/useDependencySetup';
-import { useDesktopAppDetection } from '../../hooks/useDesktopAppDetection';
-import { useIsLargerThanMd } from '../../hooks/useIsLargerThanMd';
-import { useIsNarrowHeight } from '../../hooks/useIsNarrowHeight';
+import { useIsTreatedAsPaidMeetUser } from '../../hooks/useIsTreatedAsPaidMeetUser';
 import { useIsRecordingInProgress } from '../../hooks/useMeetingRecorder/useIsRecordingInProgress';
 import { useParticipantNameMap } from '../../hooks/useParticipantNameMap';
 import { usePictureInPicture } from '../../hooks/usePictureInPicture/usePictureInPicture';
-import { useSortedParticipants } from '../../hooks/useSortedParticipants';
 import { useWakeLock } from '../../hooks/useWakeLock';
-import type { KeyRotationLog, MLSGroupState, MeetChatMessage } from '../../types';
-import { LoadingState, PopUpControls } from '../../types';
+import type { KeyRotationLog, MLSGroupState } from '../../types';
+import { LoadingState } from '../../types';
 import type { ProtonMeetKeyProvider } from '../../utils/ProtonMeetKeyProvider';
 import { KeyRotationScheduler } from '../../utils/SeamlessKeyRotationScheduler';
 import { checkIfUsingTurnRelay } from '../../utils/checkIfUsingTurnRelay';
+import { getDesktopAppPreference, tryOpenInDesktopApp } from '../../utils/desktopAppDetector';
 import { isLocalParticipantAdmin } from '../../utils/isLocalParticipantAdmin';
 import { getDisplayNameStorageKey } from '../../utils/storage';
 import { setupLiveKitAdminChangeEvent, setupWasmDependencies } from '../../utils/wasmUtils';
@@ -73,7 +71,7 @@ interface ProtonMeetContainerProps {
     room: Room;
     keyProvider: ProtonMeetKeyProvider;
     user?: UserModel | null;
-    hasSubscription: boolean;
+    paidUser: boolean;
     keyRotationLogs: KeyRotationLog[];
     setKeyRotationLogs: React.Dispatch<React.SetStateAction<KeyRotationLog[]>>;
 }
@@ -88,7 +86,7 @@ export const ProtonMeetContainer = ({
     room,
     keyProvider,
     user = null,
-    hasSubscription = false,
+    paidUser = false,
     keyRotationLogs,
     setKeyRotationLogs,
 }: ProtonMeetContainerProps) => {
@@ -97,6 +95,7 @@ export const ProtonMeetContainer = ({
     const promptOnTabClose = useFlag('MeetPromptOnTabClose');
     const showUpsellModalAfterMeeting = useFlag('MeetShowUpsellModalAfterMeeting');
     const meetUpsellEnabled = useFlag('MeetUpsell');
+    const meetOpenLinksInDesktopApp = useFlag('MeetOpenLinksInDesktopApp');
 
     useWakeLock();
 
@@ -111,8 +110,6 @@ export const ProtonMeetContainer = ({
     const [isUsingTurnRelay, setIsUsingTurnRelay] = useState(false);
 
     const { initializeDevices } = useMediaManagementContext();
-
-    const { setMeetingReadyPopupOpen } = useUIStateContext();
 
     const authentication = useAuthentication();
     const { createNotification } = useNotifications();
@@ -132,11 +129,10 @@ export const ProtonMeetContainer = ({
     const [invalidPassphrase, setInvalidPassphrase] = useState(false);
     const [isMeetingLockedModalOpen, setIsMeetingLockedModalOpen] = useState(false);
     const [isWebRtcUnsupportedModalOpen, setIsWebRtcUnsupportedModalOpen] = useState(false);
+    const [openedInDesktopApp, setOpenedInDesktopApp] = useState(false);
 
     const { getMeetingDetails, initHandshake, token, urlPassword, getAccessDetails, getMeetingInfo } =
         useMeetingSetup();
-
-    const { setPopupStateValue } = useUIStateContext();
 
     const instantMeetingRef = useRef(!token);
 
@@ -164,8 +160,6 @@ export const ProtonMeetContainer = ({
 
     const [connectionLost, setConnectionLost] = useState(false);
 
-    const [chatMessages, setChatMessages] = useState<MeetChatMessage[]>([]);
-
     const accessTokenRef = useRef<string | null>(null);
 
     const {
@@ -177,24 +171,6 @@ export const ProtonMeetContainer = ({
         getQueryParticipantsCount,
         participantsCount,
     } = useParticipantNameMap(meetingDetails.meetingId as string);
-
-    const [page, setPage] = useState(0);
-    const isLargerThanMd = useIsLargerThanMd();
-    const isNarrowHeight = useIsNarrowHeight();
-    const [pageSize, setPageSize] = useState(isLargerThanMd && !isNarrowHeight ? PAGE_SIZE : SMALL_SCREEN_PAGE_SIZE);
-
-    const {
-        participants,
-        sortedParticipants,
-        pagedParticipants,
-        sortedParticipantsMap,
-        pageCount,
-        pagedParticipantsWithoutSelfView,
-        pageCountWithoutSelfView,
-    } = useSortedParticipants({
-        page,
-        pageSize,
-    });
 
     const {
         stopPiP,
@@ -208,8 +184,6 @@ export const ProtonMeetContainer = ({
     } = usePictureInPicture({
         isDisconnected: connectionLost,
         participantNameMap,
-        chatMessages,
-        sortedParticipants,
     });
 
     const isRecordingInProgress = useIsRecordingInProgress();
@@ -246,13 +220,16 @@ export const ProtonMeetContainer = ({
         setConnectionLost,
     });
 
-    const treatedAsPaidUser = hasSubscription || !!user?.hasPaidMeet;
-
     const {
         isLocalParticipantHost,
         isLocalParticipantAdmin: isLocalParticipantAdminLevelUser,
         hasAnotherAdmin,
     } = isLocalParticipantAdmin(participantsMap, room.localParticipant);
+
+    const shareLink = `${window.location.origin}${getMeetingLink(
+        meetingDetails.meetingId,
+        meetingDetails.meetingPassword
+    )}`;
 
     const hasEpochError = (epoch: bigint | undefined) => {
         if (epoch && lastEpochRef.current && lastEpochRef.current > epoch) {
@@ -618,6 +595,8 @@ export const ProtonMeetContainer = ({
                 void wasmApp?.leaveMeeting();
                 void stopPiP();
 
+                dispatch(resetMeetingState());
+
                 if (reason === DisconnectReason.ROOM_DELETED) {
                     createNotification({
                         type: 'info',
@@ -692,7 +671,7 @@ export const ProtonMeetContainer = ({
             const { id, passwordBase } = await createInstantMeeting({
                 params: {},
                 isGuest: guestMode,
-                isPaidUser: treatedAsPaidUser,
+                isPaidUser: paidUser,
             });
 
             const handshakeResult = await handleHandshakeInfoFetch(id);
@@ -720,7 +699,7 @@ export const ProtonMeetContainer = ({
                 maxParticipants,
             }));
 
-            setMeetingReadyPopupOpen(true);
+            dispatch(setMeetingReadyPopupOpen(true));
 
             await handleJoin(displayName, id);
 
@@ -825,6 +804,13 @@ export const ProtonMeetContainer = ({
     };
 
     const setup = async () => {
+        if (meetOpenLinksInDesktopApp && getDesktopAppPreference() && token && !isInstantJoin) {
+            setOpenedInDesktopApp(true);
+
+            tryOpenInDesktopApp(shareLink);
+            return;
+        }
+
         if (instantMeetingRef.current) {
             setDecryptionReadinessStatus(MeetingDecryptionReadinessStatus.READY_TO_DECRYPT);
 
@@ -837,12 +823,6 @@ export const ProtonMeetContainer = ({
     useEffect(() => {
         void setup();
     }, []);
-
-    useDesktopAppDetection({
-        token,
-        isInstantMeeting: instantMeetingRef.current,
-        isInstantJoin,
-    });
 
     const prepareUpsell = () => {
         if (!showUpsellModalAfterMeeting || !meetUpsellEnabled) {
@@ -858,15 +838,15 @@ export const ProtonMeetContainer = ({
 
         if (guestMode) {
             dispatch(setUpsellModalType(UpsellModalTypes.Schedule));
-            history.push('/incognito');
+            history.push('/dashboard');
             return;
         }
 
-        if (user && !treatedAsPaidUser) {
+        if (user && !paidUser) {
             dispatch(setUpsellModalType(UpsellModalTypes.FreeAccount));
         }
 
-        if (user && treatedAsPaidUser) {
+        if (user && paidUser) {
             dispatch(setUpsellModalType(UpsellModalTypes.PaidAccount));
         }
 
@@ -1018,16 +998,16 @@ export const ProtonMeetContainer = ({
                             (publication) => publication.source === Track.Source.ScreenShare
                         )
                     ) {
-                        setPopupStateValue(PopUpControls.ScreenShareLeaveWarning, true);
+                        dispatch(setPopupStateValue({ popup: PopUpControls.ScreenShareLeaveWarning, value: true }));
                     } else {
-                        setPopupStateValue(PopUpControls.LeaveMeetingParticipant, true);
+                        dispatch(setPopupStateValue({ popup: PopUpControls.LeaveMeetingParticipant, value: true }));
                     }
                     return false;
                 } else if (userIsAdminLevel && !hasAnotherAdmin) {
-                    setPopupStateValue(PopUpControls.LeaveMeeting, true);
+                    dispatch(setPopupStateValue({ popup: PopUpControls.LeaveMeeting, value: true }));
                     return false;
                 } else {
-                    setPopupStateValue(PopUpControls.LeaveMeetingParticipant, true);
+                    dispatch(setPopupStateValue({ popup: PopUpControls.LeaveMeetingParticipant, value: true }));
                     return false;
                 }
             }
@@ -1040,14 +1020,13 @@ export const ProtonMeetContainer = ({
         };
     }, [joinedRoom, isLocalParticipantHost, isLocalParticipantAdminLevelUser, hasAnotherAdmin, history]);
 
+    if (openedInDesktopApp) {
+        return <MeetingOpenedInDesktopApp />;
+    }
+
     if (decryptionReadinessStatus === MeetingDecryptionReadinessStatus.UNINITIALIZED) {
         return null;
     }
-
-    const shareLink = `${window.location.origin}${getMeetingLink(
-        meetingDetails.meetingId,
-        meetingDetails.meetingPassword
-    )}`;
 
     return (
         <MLSContext.Provider value={{ mls: wasmApp }}>
@@ -1079,8 +1058,6 @@ export const ProtonMeetContainer = ({
                         isDisconnected={connectionLost}
                         startPiP={startPiP}
                         stopPiP={stopPiP}
-                        chatMessages={chatMessages}
-                        setChatMessages={setChatMessages}
                         pictureInPictureWarmup={pictureInPictureWarmup}
                         pipCleanup={pipCleanup}
                         preparePictureInPicture={preparePictureInPicture}
@@ -1089,21 +1066,10 @@ export const ProtonMeetContainer = ({
                         maxParticipants={meetingDetails.maxParticipants}
                         instantMeeting={instantMeetingRef.current}
                         assignHost={assignHost}
-                        paidUser={treatedAsPaidUser}
+                        paidUser={paidUser}
                         keyRotationLogs={keyRotationLogs}
                         isRecordingInProgress={isRecordingInProgress}
                         getKeychainIndexInformation={() => keyProvider.getKeychainIndexInformation() ?? []}
-                        participants={participants}
-                        sortedParticipants={sortedParticipants}
-                        pagedParticipants={pagedParticipants}
-                        pageCount={pageCount}
-                        pagedParticipantsWithoutSelfView={pagedParticipantsWithoutSelfView}
-                        pageCountWithoutSelfView={pageCountWithoutSelfView}
-                        setPage={setPage}
-                        setPageSize={setPageSize}
-                        page={page}
-                        pageSize={pageSize}
-                        sortedParticipantsMap={sortedParticipantsMap}
                         expirationTime={meetingDetails.expirationTime}
                         isGuestAdmin={isGuestAdminRef.current}
                         isUsingTurnRelay={isUsingTurnRelay}
@@ -1155,15 +1121,10 @@ export const ProtonMeetContainer = ({
     );
 };
 
-export const ProtonMeetContainerWithUser = (props: Omit<ProtonMeetContainerProps, 'user' | 'hasSubscription'>) => {
+export const ProtonMeetContainerWithUser = (props: Omit<ProtonMeetContainerProps, 'user' | 'paidUser'>) => {
     const [user] = useUser();
-    const [subscription] = useSubscription();
 
-    const treatedAsPaidUser =
-        hasVisionary(subscription) ||
-        hasBundlePro2024(subscription) ||
-        hasBundleBiz2025(subscription) ||
-        !!user?.hasPaidMeet;
+    const paidUser = useIsTreatedAsPaidMeetUser();
 
-    return <ProtonMeetContainer {...props} user={user} hasSubscription={treatedAsPaidUser} />;
+    return <ProtonMeetContainer {...props} user={user} paidUser={paidUser} />;
 };

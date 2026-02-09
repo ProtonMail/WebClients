@@ -42,7 +42,6 @@ export const IcMeetRecordStop = ({
                     fillRule="evenodd"
                     clipRule="evenodd"
                     d="M8 0C3.58172 0 0 3.58172 0 8C0 12.4183 3.58172 16 8 16C12.4183 16 16 12.4183 16 8C16 3.58172 12.4183 0 8 0ZM5 11V5H11V11H5Z"
-                    fill="currentColor"
                 ></path>
             </svg>
             {alt ? <span className="sr-only">{alt}</span> : null}

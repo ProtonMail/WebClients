@@ -16,6 +16,7 @@ import { SpeakingIndicator } from '../../atoms/SpeakingIndicator';
 import { useCameraTrackSubscriptionManager } from '../../contexts/CameraTrackSubscriptionCacheProvider/CameraTrackSubscriptionManagerProvider';
 import { useMediaManagementContext } from '../../contexts/MediaManagementProvider/MediaManagementContext';
 import { useMeetContext } from '../../contexts/MeetContext';
+import { useSortedParticipantsContext } from '../../contexts/ParticipantsProvider/SortedParticipantsProvider';
 import { useDebouncedSpeakingStatus } from '../../hooks/useDebouncedSpeakingStatus';
 import { getParticipantDisplayColors } from '../../utils/getParticipantDisplayColors';
 import { NetworkQualityIndicator } from '../NetworkQualityIndicator/NetworkQualityIndicator';
@@ -53,10 +54,11 @@ export const ParticipantTile = ({ participant, viewSize = 'large' }: Participant
 
     const { localParticipant } = useLocalParticipant();
 
-    const isSpeaking = useDebouncedSpeakingStatus(participant);
-
+    const { sortedParticipantsDisplayColorsMap } = useSortedParticipantsContext();
     const { facingMode } = useMediaManagementContext();
     const { disableVideos } = useMeetSelector(selectMeetSettings);
+
+    const isSpeaking = useDebouncedSpeakingStatus(participant);
 
     // Use useParticipantTracks to get camera tracks for this specific participant
     // This properly subscribes to track state changes
@@ -64,18 +66,20 @@ export const ParticipantTile = ({ participant, viewSize = 'large' }: Participant
     const cameraTrackRef = cameraTrackRefs[0];
     const cameraVideoPublication = cameraTrackRef?.publication;
 
-    const audioPublication = Array.from(participant.trackPublications.values()).find(
-        (pub) => pub.kind === Track.Kind.Audio && pub.track
-    );
+    const audioTrackRefs = useParticipantTracks([Track.Source.Microphone], participant.identity);
+    const audioTrackRef = audioTrackRefs[0];
+    const audioPublication = audioTrackRef?.publication;
 
     const audioIsOn = audioPublication?.track && !audioPublication?.track?.isMuted;
 
-    const { borderColor, backgroundColor, profileColor } = getParticipantDisplayColors(participant);
+    const cameraIsOn = cameraVideoPublication?.track && !cameraVideoPublication?.track?.isMuted;
+
+    const { borderColor, backgroundColor, profileColor } = sortedParticipantsDisplayColorsMap.get(
+        participant.identity
+    ) ?? { borderColor: 'tile-border-1', backgroundColor: 'meet-background-1', profileColor: 'profile-color-1' };
 
     const shouldShowVideo =
-        !!cameraVideoPublication &&
-        !!cameraVideoPublication.track &&
-        !cameraVideoPublication.isMuted &&
+        cameraIsOn &&
         ((!disableVideos && !participantsWithDisabledVideos.includes(participant.identity)) ||
             participant.identity === localParticipant.identity);
 

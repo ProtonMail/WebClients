@@ -4,16 +4,21 @@ import { Button } from '@proton/atoms/Button/Button';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
+import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
+import {
+    PermissionPromptStatus,
+    selectPermissionPromptStatus,
+    setPermissionPromptStatus,
+} from '@proton/meet/store/slices/uiStateSlice';
 
 import { useMediaManagementContext } from '../../contexts/MediaManagementProvider/MediaManagementContext';
-import { useUIStateContext } from '../../contexts/UIStateContext';
 import { useRequestPermission } from '../../hooks/useRequestPermission';
-import { PermissionPromptStatus } from '../../types';
 
 import './PermissionRequest.scss';
 
 export const PermissionRequest = () => {
-    const { permissionPromptStatus, setPermissionPromptStatus } = useUIStateContext();
+    const dispatch = useMeetDispatch();
+    const permissionPromptStatus = useMeetSelector(selectPermissionPromptStatus);
 
     const { toggleVideo, toggleAudio, handleDevicePermissionChange } = useMediaManagementContext();
 
@@ -80,7 +85,7 @@ export const PermissionRequest = () => {
         <ModalTwo
             open={true}
             onClose={() => {
-                setPermissionPromptStatus(PermissionPromptStatus.CLOSED);
+                dispatch(setPermissionPromptStatus(PermissionPromptStatus.CLOSED));
             }}
             rootClassName="permission-request-backdrop"
             className="permission-request-modal border border-norm"
@@ -107,7 +112,7 @@ export const PermissionRequest = () => {
                 <Button
                     className="do-not-request-permission-button text-bold color-primary w-full rounded-full text-semibold"
                     shape="ghost"
-                    onClick={() => setPermissionPromptStatus(PermissionPromptStatus.CLOSED)}
+                    onClick={() => dispatch(setPermissionPromptStatus(PermissionPromptStatus.CLOSED))}
                 >
                     {continueWithoutDeviceAction}
                 </Button>

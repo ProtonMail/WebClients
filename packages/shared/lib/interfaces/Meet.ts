@@ -45,6 +45,7 @@ export enum MeetingType {
     PERSONAL = 1,
     SCHEDULED = 2,
     RECURRING = 3,
+    PERMANENT = 4,
 }
 
 export interface MeetingPayload {
@@ -67,6 +68,8 @@ export interface MeetingPayload {
 }
 
 export interface Meeting extends Omit<MeetingPayload, 'Name'> {
+    CreateTime: number;
+    LastUsedTime: number | null;
     ID: string;
     MeetingName: string;
     MeetingLinkName: string;

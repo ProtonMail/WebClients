@@ -11,6 +11,7 @@ export { useGetActiveMeetings } from './hooks/useGetActiveMeetings';
 export { useGetMeetingByLinkName } from './hooks/useGetMeetingByLinkName';
 export { parseMeetingLink } from './utils/parseMeetingLink';
 export { getMeetingLink } from './utils/getMeetingLink';
+export { generateMeetingLinkFromMeeting } from './utils/generateMeetingLinkFromMeeting';
 export { useMeetErrorReporting } from './hooks/useMeetErrorReporting';
 export { isUrlPasswordValid } from './utils/isUrlPasswordValid';
 

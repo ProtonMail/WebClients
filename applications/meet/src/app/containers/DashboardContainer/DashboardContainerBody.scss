@@ -1,0 +1,44 @@
+.meet-dashboard-header-wrapper {
+	margin-block: 1.5rem;
+	margin-inline: 0;
+
+	.meet-dashboard-headline {
+		font-weight: 600;
+		font-style: var(--font-weight-semibold);
+		font-size: 2.75rem;
+		line-height: 100%;
+		letter-spacing: 0;
+		text-align: center;
+		color: var(--text-norm);
+	}
+
+	.meet-dashboard-headline-emphasized {
+		color: var(--interaction-norm);
+	}
+
+	.meet-dashboard-subtitle {
+		font-weight: 500;
+		font-size: 1.5rem;
+		line-height: 1.875rem;
+		letter-spacing: 0;
+		text-align: center;
+		color: var(--text-hint);
+	}
+
+	.join-via-link-button {
+		background-color: var(--background-card);
+		border: 1px solid var(--border-norm);
+		color: var(--text-norm);
+
+		&:hover,
+		&:active {
+			background-color: var(--background-weak);
+		}
+	}
+
+	.meet-dashboard-cta-wrapper {
+		@media (width <= 48em) {
+			flex-direction: column;
+		}
+	}
+}

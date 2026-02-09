@@ -61,6 +61,14 @@ const slice = createSlice({
         setDisableVideos: (state, action: PayloadAction<boolean>) => {
             state.disableVideos = action.payload;
         },
+        disableParticipantVideo: (state, action: PayloadAction<string>) => {
+            state.participantsWithDisabledVideos = [...state.participantsWithDisabledVideos, action.payload];
+        },
+        enableParticipantVideo: (state, action: PayloadAction<string>) => {
+            state.participantsWithDisabledVideos = state.participantsWithDisabledVideos.filter(
+                (id) => id !== action.payload
+            );
+        },
         setParticipantsWithDisabledVideos: (state, action: PayloadAction<string[]>) => {
             state.participantsWithDisabledVideos = action.payload;
         },
@@ -81,8 +89,15 @@ const slice = createSlice({
     },
 });
 
-export const { setDisableVideos, setParticipantsWithDisabledVideos, setSelfView, setMeetingLocked, setPipEnabled } =
-    slice.actions;
+export const {
+    setDisableVideos,
+    disableParticipantVideo,
+    enableParticipantVideo,
+    setParticipantsWithDisabledVideos,
+    setSelfView,
+    setMeetingLocked,
+    setPipEnabled,
+} = slice.actions;
 
 export const selectMeetSettings = (state: MeetState) => state.meetSettings;
 export const selectParticipantsWithDisabledVideos = (state: MeetState) =>

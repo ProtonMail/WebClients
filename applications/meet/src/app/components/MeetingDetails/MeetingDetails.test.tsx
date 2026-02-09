@@ -1,10 +1,13 @@
+import { Provider } from 'react-redux';
+
+import { configureStore } from '@reduxjs/toolkit';
 import { render, screen } from '@testing-library/react';
 
 import NotificationsProvider from '@proton/components/containers/notifications/Provider';
+import { MeetingSideBars, uiStateReducer } from '@proton/meet/store/slices/uiStateSlice';
+import { ProtonStoreContext } from '@proton/react-redux-store';
 
 import { MeetContext } from '../../contexts/MeetContext';
-import { UIStateContext } from '../../contexts/UIStateContext';
-import { MeetingSideBars } from '../../types';
 import { WrappedMeetingDetails } from './MeetingDetails';
 
 const mockMeetingName = 'Mock Meeting Name';
@@ -25,24 +28,56 @@ vi.mock('@proton/meet/store/hooks/useMeetings', () => ({
     ],
 }));
 
+const createMockStore = (sideBarOpen = false) => {
+    return configureStore({
+        // @ts-expect-error - mock data
+        reducer: {
+            ...uiStateReducer,
+        },
+        preloadedState: {
+            uiState: {
+                meetingReadyPopupOpen: false,
+                sideBarState: {
+                    [MeetingSideBars.Participants]: false,
+                    [MeetingSideBars.AssignHost]: false,
+                    [MeetingSideBars.Settings]: false,
+                    [MeetingSideBars.Chat]: false,
+                    [MeetingSideBars.MeetingDetails]: sideBarOpen,
+                },
+                popupState: {
+                    Microphone: false,
+                    Camera: false,
+                    LeaveMeeting: false,
+                    LeaveMeetingParticipant: false,
+                    ScreenShareLeaveWarning: false,
+                    EndMeeting: false,
+                },
+                permissionPromptStatus: 'CLOSED',
+                noDeviceDetected: 'CLOSED',
+            },
+        },
+    });
+};
+
 describe('MeetingDetails', () => {
     it('should return null if not open', () => {
+        const store = createMockStore(false);
+
         render(<WrappedMeetingDetails />, {
             wrapper: ({ children }) => (
-                <NotificationsProvider>
-                    <MeetContext.Provider
-                        // @ts-expect-error - mock data
-                        value={{
-                            meetingLink: mockLink,
-                            roomName: mockMeetingName,
-                        }}
-                    >
-                        {/* @ts-expect-error - mock data */}
-                        <UIStateContext.Provider value={{ sideBarState: { [MeetingSideBars.MeetingDetails]: false } }}>
+                <Provider context={ProtonStoreContext} store={store}>
+                    <NotificationsProvider>
+                        <MeetContext.Provider
+                            // @ts-expect-error - mock data
+                            value={{
+                                meetingLink: mockLink,
+                                roomName: mockMeetingName,
+                            }}
+                        >
                             {children}
-                        </UIStateContext.Provider>
-                    </MeetContext.Provider>
-                </NotificationsProvider>
+                        </MeetContext.Provider>
+                    </NotificationsProvider>
+                </Provider>
             ),
         });
 
@@ -50,24 +85,23 @@ describe('MeetingDetails', () => {
     });
 
     it('should display the meeting name and the meeting link', () => {
+        const store = createMockStore(true);
+
         render(<WrappedMeetingDetails />, {
             wrapper: ({ children }) => (
-                <NotificationsProvider>
-                    <MeetContext.Provider
-                        // @ts-expect-error\
-                        value={{
-                            meetingLink: mockLink,
-                            roomName: mockMeetingName,
-                        }}
-                    >
-                        <UIStateContext.Provider
-                            // @ts-expect-error - mock data
-                            value={{ sideBarState: { [MeetingSideBars.MeetingDetails]: true } }}
+                <Provider context={ProtonStoreContext} store={store}>
+                    <NotificationsProvider>
+                        <MeetContext.Provider
+                            // @ts-expect-error\
+                            value={{
+                                meetingLink: mockLink,
+                                roomName: mockMeetingName,
+                            }}
                         >
                             {children}
-                        </UIStateContext.Provider>
-                    </MeetContext.Provider>
-                </NotificationsProvider>
+                        </MeetContext.Provider>
+                    </NotificationsProvider>
+                </Provider>
             ),
         });
 
@@ -76,21 +110,20 @@ describe('MeetingDetails', () => {
     });
 
     it('should display the meeting details', () => {
+        const store = createMockStore(true);
+
         render(<WrappedMeetingDetails />, {
             wrapper: ({ children }) => (
-                <NotificationsProvider>
-                    <MeetContext.Provider
-                        // @ts-expect-error - mock data
-                        value={{ meetingLink: mockLink, roomName: mockMeetingName, passphrase: '123' }}
-                    >
-                        <UIStateContext.Provider
+                <Provider context={ProtonStoreContext} store={store}>
+                    <NotificationsProvider>
+                        <MeetContext.Provider
                             // @ts-expect-error - mock data
-                            value={{ sideBarState: { [MeetingSideBars.MeetingDetails]: true } }}
+                            value={{ meetingLink: mockLink, roomName: mockMeetingName, passphrase: '123' }}
                         >
                             {children}
-                        </UIStateContext.Provider>
-                    </MeetContext.Provider>
-                </NotificationsProvider>
+                        </MeetContext.Provider>
+                    </NotificationsProvider>
+                </Provider>
             ),
         });
 

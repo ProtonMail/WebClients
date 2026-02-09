@@ -9,7 +9,9 @@ import TableBody from '@proton/components/components/table/TableBody';
 import TableCell from '@proton/components/components/table/TableCell';
 import TableRow from '@proton/components/components/table/TableRow';
 import { IcMeetCopy } from '@proton/icons/icons/IcMeetCopy';
+import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
 import { useMeetings } from '@proton/meet/store/hooks/useMeetings';
+import { MeetingSideBars, selectSideBarState, toggleSideBarState } from '@proton/meet/store/slices/uiStateSlice';
 import { parseMeetingLink } from '@proton/meet/utils/parseMeetingLink';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import type { Meeting } from '@proton/shared/lib/interfaces/Meet';
@@ -17,13 +19,13 @@ import { useFlag } from '@proton/unleash';
 
 import { SideBar } from '../../atoms/SideBar/SideBar';
 import { useMeetContext } from '../../contexts/MeetContext';
-import { useUIStateContext } from '../../contexts/UIStateContext';
 import { useCopyTextToClipboard } from '../../hooks/useCopyTextToClipboard';
-import { type KeyRotationLog, MeetingSideBars } from '../../types';
+import type { KeyRotationLog } from '../../types';
 
 import './MeetingDetails.scss';
 
 export const MeetingDetails = ({ currentMeeting }: { currentMeeting?: Meeting }) => {
+    const dispatch = useMeetDispatch();
     const isMeetShowMLSLogsEnabled = useFlag('MeetShowMLSLogs');
     const isMeetAllowMLSLogExportEnabled = useFlag('MeetAllowMLSLogExport');
     const copyTextToClipboard = useCopyTextToClipboard();
@@ -31,7 +33,7 @@ export const MeetingDetails = ({ currentMeeting }: { currentMeeting?: Meeting })
     const { meetingLink, roomName, passphrase, mlsGroupState, keyRotationLogs, getKeychainIndexInformation } =
         useMeetContext();
 
-    const { sideBarState, toggleSideBarState } = useUIStateContext();
+    const sideBarState = useMeetSelector(selectSideBarState);
 
     const timeZone = currentMeeting?.Timezone ?? Intl.DateTimeFormat().resolvedOptions().timeZone;
 
@@ -79,7 +81,7 @@ export const MeetingDetails = ({ currentMeeting }: { currentMeeting?: Meeting })
 
     return (
         <SideBar
-            onClose={() => toggleSideBarState(MeetingSideBars.MeetingDetails)}
+            onClose={() => dispatch(toggleSideBarState(MeetingSideBars.MeetingDetails))}
             paddingClassName="py-4"
             paddingHeaderClassName="px-4"
             header={

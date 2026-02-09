@@ -6,8 +6,8 @@ import { LogLevel, Room, setLogLevel } from 'livekit-client';
 import useFlag from '@proton/unleash/useFlag';
 
 import { MediaManagementProvider } from '../../contexts/MediaManagementProvider/MediaManagementProvider';
+import { SortedParticipantsProvider } from '../../contexts/ParticipantsProvider/SortedParticipantsProvider';
 import { SubscriptionManagementProvider } from '../../contexts/SubscriptionManagementProvider';
-import { UIStateProvider } from '../../contexts/UIStateContext';
 import { audioQuality, legacyQualityConstants, qualityConstants, screenShareQuality } from '../../qualityConstants';
 import type { KeyRotationLog } from '../../types';
 import { QualityScenarios } from '../../types';
@@ -92,13 +92,13 @@ export const WrappedProtonMeetContainer = ({ guestMode }: { guestMode?: boolean 
         <RoomContext.Provider value={roomRef.current}>
             <SubscriptionManagementProvider>
                 <MediaManagementProvider>
-                    <UIStateProvider instantMeeting={false}>
+                    <SortedParticipantsProvider>
                         {guestMode ? (
                             <ProtonMeetContainer
                                 guestMode={true}
                                 room={roomRef.current}
                                 keyProvider={keyProviderRef.current}
-                                hasSubscription={false}
+                                paidUser={false}
                                 keyRotationLogs={keyRotationLogs}
                                 setKeyRotationLogs={setKeyRotationLogs}
                             />
@@ -111,7 +111,7 @@ export const WrappedProtonMeetContainer = ({ guestMode }: { guestMode?: boolean 
                                 setKeyRotationLogs={setKeyRotationLogs}
                             />
                         )}
-                    </UIStateProvider>
+                    </SortedParticipantsProvider>
                 </MediaManagementProvider>
             </SubscriptionManagementProvider>
         </RoomContext.Provider>

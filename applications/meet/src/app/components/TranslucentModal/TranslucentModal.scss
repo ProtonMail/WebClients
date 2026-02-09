@@ -1,0 +1,9 @@
+.translucent-modal {
+	backdrop-filter: blur(15px);
+	background-color: rgb(0 0 0 / 0.1);
+
+	.modal-two-dialog-container,
+	.modal-two-dialog {
+		background-color: transparent;
+	}
+}
