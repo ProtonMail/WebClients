@@ -24,7 +24,6 @@ interface Arguments {
     showVPNDashboardVariant: VPNDashboardVariant | 'disabled' | undefined;
     isB2BTrial: boolean;
     isReferralProgramEnabled: boolean;
-    isBreachesAccountDashboardEnabled: boolean;
     isZoomIntegrationEnabled: boolean;
     isProtonMeetIntegrationEnabled: boolean;
     organization?: OrganizationExtended;
@@ -46,7 +45,6 @@ export const getRoutes = ({
     isB2BTrial,
     isReferralProgramEnabled,
     referralInfo,
-    isBreachesAccountDashboardEnabled,
     isZoomIntegrationEnabled,
     isProtonMeetIntegrationEnabled,
     organization,
@@ -345,7 +343,7 @@ export const getRoutes = ({
                 {
                     text: DARK_WEB_MONITORING_NAME,
                     id: 'breaches',
-                    available: isBreachesAccountDashboardEnabled && !isSSOUser,
+                    available: !isSSOUser,
                 },
                 {
                     text: c('sso').t`Devices management`,
