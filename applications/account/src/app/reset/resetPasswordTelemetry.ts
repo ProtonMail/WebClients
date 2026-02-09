@@ -14,6 +14,9 @@ export const useResetPasswordTelemetry = () => {
     const sendResetPasswordPageLoad = useCallback(() => {
         void sendTelemetryReport({
             api,
+            dimensions: {
+                variant: 'A',
+            },
             measurementGroup: TelemetryMeasurementGroups.accountResetPassword,
             event: TelemetryResetPasswordEvents.page_load,
             delay: false,
@@ -36,6 +39,7 @@ export const useResetPasswordTelemetry = () => {
                 dimensions: {
                     hasPasswordResetMethod: String(hasPasswordResetMethod),
                     hasDataRecoveryMethod: String(hasDataRecoveryMethod),
+                    variant: 'A',
                 },
                 delay: false,
             });
@@ -64,7 +68,7 @@ export const useResetPasswordTelemetry = () => {
                 api,
                 measurementGroup: TelemetryMeasurementGroups.accountResetPassword,
                 event: TelemetryResetPasswordEvents.method_validated,
-                dimensions: { method },
+                dimensions: { method, variant: 'A' },
                 delay: false,
             });
             void telemetryReportsBatchQueue.flush();
@@ -78,7 +82,7 @@ export const useResetPasswordTelemetry = () => {
                 api,
                 measurementGroup: TelemetryMeasurementGroups.accountResetPassword,
                 event: TelemetryResetPasswordEvents.success,
-                dimensions: { method },
+                dimensions: { method, variant: 'A' },
                 delay: false,
             });
             void telemetryReportsBatchQueue.flush();
@@ -92,7 +96,7 @@ export const useResetPasswordTelemetry = () => {
                 api,
                 measurementGroup: TelemetryMeasurementGroups.accountResetPassword,
                 event: TelemetryResetPasswordEvents.failure,
-                dimensions: { step, method },
+                dimensions: { step, method, variant: 'A' },
                 delay: false,
             });
             void telemetryReportsBatchQueue.flush();

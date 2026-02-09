@@ -10,6 +10,7 @@ export const useRecoverySettingsTelemetry = () => {
     const sendRecoveryPageLoad = useCallback(() => {
         void sendTelemetryReport({
             api,
+            dimensions: { variant: 'A' },
             measurementGroup: TelemetryMeasurementGroups.accountRecoverySettings,
             event: TelemetryRecoverySettingsEvents.page_load,
             delay: false,
@@ -24,7 +25,7 @@ export const useRecoverySettingsTelemetry = () => {
                 api,
                 measurementGroup: TelemetryMeasurementGroups.accountRecoverySettings,
                 event: TelemetryRecoverySettingsEvents.setting_enabled,
-                dimensions: { setting },
+                dimensions: { setting, variant: 'A' },
                 delay: false,
             });
 
