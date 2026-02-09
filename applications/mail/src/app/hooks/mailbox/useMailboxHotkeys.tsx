@@ -28,7 +28,6 @@ import { useApplyLocation } from '../actions/applyLocation/useApplyLocation';
 import { usePermanentDelete } from '../actions/delete/usePermanentDelete';
 import { useMarkAs } from '../actions/markAs/useMarkAs';
 import { useMoveToFolder } from '../actions/move/useMoveToFolder';
-import { useStar } from '../actions/useStar';
 import { useGetElementsFromIDs } from './useElements';
 import { useFolderNavigationHotkeys } from './useFolderNavigationHotkeys';
 
@@ -103,10 +102,9 @@ export const useMailboxHotkeys = (
     const folderNavigationHotkeys = useFolderNavigationHotkeys();
     const elementIDForList = checkedIDs.length ? undefined : elementID;
     const elementRef = useRef<HTMLDivElement>(null);
-    const { applyOptimisticLocationEnabled, applyLocation } = useApplyLocation();
+    const { applyLocation } = useApplyLocation();
     const { moveToFolder, moveScheduledModal, moveSnoozedModal, moveToSpamModal, selectAllMoveModal } =
         useMoveToFolder();
-    const star = useStar();
     const { markAs, selectAllMarkModal } = useMarkAs();
     const { handleDelete: permanentDelete, deleteAllModal, deleteSelectionModal } = usePermanentDelete(labelID);
 
@@ -134,9 +132,7 @@ export const useMailboxHotkeys = (
 
         const folderName = getFolderName(LabelID, folders);
 
-        if (applyOptimisticLocationEnabled && !selectAll) {
-            await applyLocation({ type: APPLY_LOCATION_TYPES.MOVE, elements, destinationLabelID: LabelID });
-        } else {
+        if (selectAll) {
             await moveToFolder({
                 elements,
                 sourceLabelID: labelID,
@@ -150,6 +146,8 @@ export const useMailboxHotkeys = (
             if (elementIDForList) {
                 handleBack();
             }
+        } else {
+            await applyLocation({ type: APPLY_LOCATION_TYPES.MOVE, elements, destinationLabelID: LabelID });
         }
     };
 
@@ -386,17 +384,13 @@ export const useMailboxHotkeys = (
                     e.stopPropagation();
                     const isAllStarred = elements.filter((element) => isStarred(element)).length === elements.length;
 
-                    if (applyOptimisticLocationEnabled) {
-                        await applyLocation({
-                            type: APPLY_LOCATION_TYPES.STAR,
-                            removeLabel: isAllStarred,
-                            elements,
-                            destinationLabelID: MAILBOX_LABEL_IDS.STARRED,
-                            showSuccessNotification: false,
-                        });
-                    } else {
-                        await star(elements, !isAllStarred, labelID, SOURCE_ACTION.SHORTCUTS);
-                    }
+                    await applyLocation({
+                        type: APPLY_LOCATION_TYPES.STAR,
+                        removeLabel: isAllStarred,
+                        elements,
+                        destinationLabelID: MAILBOX_LABEL_IDS.STARRED,
+                        showSuccessNotification: false,
+                    });
                 }
             },
         ],

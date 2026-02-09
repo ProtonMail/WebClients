@@ -34,7 +34,6 @@ import ItemLocation from './ItemLocation';
 import ItemStar from './ItemStar';
 import ItemUnread from './ItemUnread';
 import ItemExpiration from './item-expiration/ItemExpiration';
-import { SOURCE_ACTION } from './list-telemetry/useListTelemetry';
 
 interface Props {
     labelID: string;
@@ -214,11 +213,7 @@ const ItemColumnLayout = ({
                                 )}
                                 <span className="flex *:flex self-center my-auto empty:hidden">
                                     {isStarred && !isSnoozeDropdownOpen && (
-                                        <ItemStar
-                                            element={element}
-                                            labelID={labelID}
-                                            sourceAction={SOURCE_ACTION.MESSAGE_VIEW}
-                                        />
+                                        <ItemStar element={element} labelID={labelID} />
                                     )}
                                 </span>
                             </span>
@@ -238,11 +233,7 @@ const ItemColumnLayout = ({
                                 className="ml-1 self-center"
                             />
                             <span className="ml-1 flex *:flex self-center my-auto empty:hidden">
-                                <ItemStar
-                                    element={element}
-                                    sourceAction={SOURCE_ACTION.MESSAGE_VIEW}
-                                    labelID={labelID}
-                                />
+                                <ItemStar element={element} labelID={labelID} />
                             </span>
                         </div>
                     </div>

@@ -53,7 +53,7 @@ export const useElementActions = ({ params, navigation, elementsData }: Params) 
 
     const { markAs, selectAllMarkModal } = useMarkAs();
     const getElementsFromIDs = useGetElementsFromIDs();
-    const { applyOptimisticLocationEnabled, applyLocation } = useApplyLocation();
+    const { applyLocation } = useApplyLocation();
     const { moveToFolder, moveToSpamModal, moveSnoozedModal, moveScheduledModal, selectAllMoveModal } =
         useMoveToFolder();
     const onCompose = useOnCompose();
@@ -164,13 +164,7 @@ export const useElementActions = ({ params, navigation, elementsData }: Params) 
 
     const handleMove = useCallback(
         async (newLabelID: string, sourceAction: SOURCE_ACTION): Promise<void> => {
-            if (applyOptimisticLocationEnabled && !selectAll) {
-                await applyLocation({
-                    type: APPLY_LOCATION_TYPES.MOVE,
-                    elements: getElementsFromIDs(selectedIDs),
-                    destinationLabelID: newLabelID,
-                });
-            } else {
+            if (selectAll) {
                 await moveToFolder({
                     elements: getElementsFromIDs(selectedIDs),
                     sourceLabelID: labelID,
@@ -183,6 +177,12 @@ export const useElementActions = ({ params, navigation, elementsData }: Params) 
                 if (selectedIDs.includes(elementID || '')) {
                     handleBack();
                 }
+            } else {
+                await applyLocation({
+                    type: APPLY_LOCATION_TYPES.MOVE,
+                    elements: getElementsFromIDs(selectedIDs),
+                    destinationLabelID: newLabelID,
+                });
             }
         },
         // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-1485DD
