@@ -2,13 +2,14 @@ import { all, call } from 'redux-saga/effects';
 
 import { PendingFileLinkTracker } from '@proton/pass/lib/file-attachments/file-link.tracker';
 import { getItemKey } from '@proton/pass/lib/items/item.utils';
+import type { RootSagaOptions } from '@proton/pass/store/types';
 import type { SyncEventListOutput } from '@proton/pass/types';
 
 import { processAliasNoteChanged, processPendingAliasToCreate } from './user-events.alias';
 import { processFoldersDeleted, processFoldersUpdated } from './user-events.folders';
 import { processItemsDeleted, processItemsUpdated } from './user-events.items';
 import { processSharesCreated, processSharesDeleted, processSharesUpdated } from './user-events.shares';
-import { processBreachUpdate, processUserRefresh } from './user-events.user';
+import { processBreachUpdate, processOrganizationInfoChanged, processUserRefresh } from './user-events.user';
 
 export type ProcessResult = { status: 'processed'; ok: boolean } | { status: 'skipped'; reason: string };
 
@@ -31,7 +32,7 @@ const shouldSkipEvent = (events: SyncEventListOutput): boolean => {
  * Returns `true` if all processors succeeded, `false` otherwise.
  * When returning `false`, the caller should NOT update the eventID
  * so that the same events are retried on the next poll. */
-export function* processUserEvents(event: SyncEventListOutput) {
+export function* processUserEvents(event: SyncEventListOutput, options: RootSagaOptions) {
     if (shouldSkipEvent(event)) return false;
 
     /** Trigger full sync and update `LastEventID` */
@@ -50,6 +51,7 @@ export function* processUserEvents(event: SyncEventListOutput) {
         call(processFoldersUpdated, event.FoldersUpdated),
         call(processFoldersDeleted, event.FoldersDeleted),
         call(processUserRefresh, event.RefreshUser),
+        call(processOrganizationInfoChanged, event.OrganizationInfoChanged, options),
     ]);
 
     return results.every(Boolean);
