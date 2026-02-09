@@ -54,7 +54,7 @@ const MailSidebarList = ({ postItems, collapsed = false, onClickExpandNav }: Pro
     const [foldersUI, setFoldersUI] = useState<Folder[]>([]);
     const foldersTreeview = useMemo(() => buildTreeview(foldersUI), [foldersUI]);
     const { applyLabels, applyLabelsToAllModal } = useApplyLabels();
-    const { applyOptimisticLocationEnabled, applyLocation } = useApplyLocation();
+    const { applyLocation } = useApplyLocation();
     const { moveToFolder, moveScheduledModal, moveSnoozedModal, moveToSpamModal, selectAllMoveModal } =
         useMoveToFolder();
 
@@ -254,25 +254,25 @@ const MailSidebarList = ({ postItems, collapsed = false, onClickExpandNav }: Pro
                         onToggleMoreItems={toggleDisplayMoreItems}
                         collapsed={collapsed}
                         applyLabels={(params) =>
-                            applyOptimisticLocationEnabled && !params.selectAll
-                                ? applyLocation({
+                            params.selectAll
+                                ? applyLabels(params)
+                                : applyLocation({
                                       type: APPLY_LOCATION_TYPES.APPLY_LABEL,
                                       changes: params.changes,
                                       elements: params.elements,
                                       destinationLabelID: params.destinationLabelID!, // TODO: Improve this when removing old apply labels function
                                       createFilters: params.createFilters,
                                   })
-                                : applyLabels(params)
                         }
                         moveToFolder={(params) =>
-                            applyOptimisticLocationEnabled && !params.selectAll
-                                ? applyLocation({
+                            params.selectAll
+                                ? moveToFolder(params)
+                                : applyLocation({
                                       type: APPLY_LOCATION_TYPES.MOVE,
                                       elements: params.elements,
                                       destinationLabelID: params.destinationLabelID!, // TODO: Improve this when removing old apply labels function
                                       createFilters: params.createFilters,
                                   })
-                                : moveToFolder(params)
                         }
                     />
 
@@ -305,25 +305,25 @@ const MailSidebarList = ({ postItems, collapsed = false, onClickExpandNav }: Pro
                                     handleToggleFolder={handleToggleFolder}
                                     foldersTreeview={foldersTreeview}
                                     applyLabels={(params) =>
-                                        applyOptimisticLocationEnabled && !params.selectAll
-                                            ? applyLocation({
+                                        params.selectAll
+                                            ? applyLabels(params)
+                                            : applyLocation({
                                                   type: APPLY_LOCATION_TYPES.APPLY_LABEL,
                                                   changes: params.changes,
                                                   elements: params.elements,
                                                   destinationLabelID: params.destinationLabelID!, // TODO: Improve this when removing old apply labels function
                                                   createFilters: params.createFilters,
                                               })
-                                            : applyLabels(params)
                                     }
                                     moveToFolder={(params) =>
-                                        applyOptimisticLocationEnabled && !params.selectAll
-                                            ? applyLocation({
+                                        params.selectAll
+                                            ? moveToFolder(params)
+                                            : applyLocation({
                                                   type: APPLY_LOCATION_TYPES.MOVE,
                                                   elements: params.elements,
                                                   destinationLabelID: params.destinationLabelID!, // TODO: Improve this when removing old apply labels function
                                                   createFilters: params.createFilters,
                                               })
-                                            : moveToFolder(params)
                                     }
                                 />
                             )}
@@ -354,25 +354,25 @@ const MailSidebarList = ({ postItems, collapsed = false, onClickExpandNav }: Pro
                                     labels={labels || []}
                                     updateFocusItem={updateFocusItem}
                                     applyLabels={(params) =>
-                                        applyOptimisticLocationEnabled && !params.selectAll
-                                            ? applyLocation({
+                                        params.selectAll
+                                            ? applyLabels(params)
+                                            : applyLocation({
                                                   type: APPLY_LOCATION_TYPES.APPLY_LABEL,
                                                   changes: params.changes,
                                                   elements: params.elements,
                                                   destinationLabelID: params.destinationLabelID!, // TODO: Improve this when removing old apply labels function
                                                   createFilters: params.createFilters,
                                               })
-                                            : applyLabels(params)
                                     }
                                     moveToFolder={(params) =>
-                                        applyOptimisticLocationEnabled && !params.selectAll
-                                            ? applyLocation({
+                                        params.selectAll
+                                            ? moveToFolder(params)
+                                            : applyLocation({
                                                   type: APPLY_LOCATION_TYPES.MOVE,
                                                   elements: params.elements,
                                                   destinationLabelID: params.destinationLabelID!, // TODO: Improve this when removing old apply labels function
                                                   createFilters: params.createFilters,
                                               })
-                                            : moveToFolder(params)
                                     }
                                 />
                             )}

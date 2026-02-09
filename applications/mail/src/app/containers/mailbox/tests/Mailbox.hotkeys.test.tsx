@@ -3,6 +3,8 @@ import { act, fireEvent, waitFor } from '@testing-library/react';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
+import * as mailboxActions from 'proton-mail/store/mailbox/mailboxActions';
+
 import { addApiMock, assertCheck, assertFocus, clearAll, tick } from '../../../helpers/test/helper';
 import { RouterMailboxContainer } from '../../../router/RouterMailboxContainer';
 import type { SetupArgs } from './Mailbox.test.helpers';
@@ -194,8 +196,7 @@ describe('Mailbox hotkeys', () => {
     });
 
     it('should allow to move elements with keyboard', async () => {
-        const labelSpy = jest.fn<any, any>(() => ({ UndoToken: 'token' }));
-        addApiMock('mail/v4/conversations/label', labelSpy, 'put');
+        const labelConversationsSpy = jest.spyOn(mailboxActions, 'labelConversations');
 
         const deleteSpy = jest.fn();
         addApiMock('mail/v4/conversations/delete', deleteSpy, 'put');
@@ -211,11 +212,9 @@ describe('Mailbox hotkeys', () => {
 
         const expectLabelCall = (LabelID: string) => {
             callTimes++;
-            expect(labelSpy).toHaveBeenCalledTimes(callTimes);
-            const result = labelSpy.mock.calls[callTimes - 1][0].data;
-            expect(result.LabelID).toBe(LabelID);
-
-            expect(result.IDs).toEqual([conversations[conversations.length - 1 * callTimes].ID]);
+            expect(labelConversationsSpy).toHaveBeenCalledTimes(callTimes);
+            const result = labelConversationsSpy.mock.calls[callTimes - 1][0];
+            expect(result.destinationLabelID).toBe(LabelID);
         };
 
         down();

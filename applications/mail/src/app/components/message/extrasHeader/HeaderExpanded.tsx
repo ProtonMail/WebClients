@@ -31,7 +31,6 @@ import { useFlag } from '@proton/unleash';
 import clsx from '@proton/utils/clsx';
 
 import { useCategoryViewExperiment } from 'proton-mail/components/categoryView/categoryBadge/useCategoryViewExperiment';
-import { SOURCE_ACTION } from 'proton-mail/components/list/list-telemetry/useListTelemetry';
 import { hasLabel } from 'proton-mail/helpers/elements';
 
 import { useOnCompose, useOnMailTo } from '../../../containers/ComposeProvider';
@@ -235,7 +234,7 @@ const HeaderExpanded = ({
                     </span>
                     <ItemDate element={message.data} labelID={labelID} useTooltip className="color-weak text-sm" />
                     <span className="message-header-star mr-2 inline-flex">
-                        <ItemStar element={message.data} sourceAction={SOURCE_ACTION.MESSAGE_VIEW} labelID={labelID} />
+                        <ItemStar element={message.data} labelID={labelID} />
                     </span>
                 </div>
             )}
@@ -262,11 +261,7 @@ const HeaderExpanded = ({
                         data-testid="message:message-header-metas"
                     >
                         <span className="message-header-star mr-2 inline-flex">
-                            <ItemStar
-                                sourceAction={SOURCE_ACTION.MESSAGE_VIEW}
-                                element={message.data}
-                                labelID={labelID}
-                            />
+                            <ItemStar element={message.data} labelID={labelID} />
                         </span>
                         {messageLoaded && (
                             <>

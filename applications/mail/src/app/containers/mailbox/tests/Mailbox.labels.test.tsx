@@ -1,8 +1,10 @@
-import { fireEvent, screen } from '@testing-library/react';
+import { fireEvent, screen, waitFor } from '@testing-library/react';
 
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 import { DEFAULT_MAIL_SETTINGS, VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
+
+import * as mailboxActions from 'proton-mail/store/mailbox/mailboxActions';
 
 import { addApiMock, clearAll, waitForSpyCall } from '../../../helpers/test/helper';
 import type { Element } from '../../../models/element';
@@ -91,8 +93,7 @@ describe('Mailbox labels actions', () => {
         };
 
         it('should add a label to two conversations', async () => {
-            const labelRequestSpy = jest.fn(() => ({ UndoToken: { Token: 'Token' } }));
-            addApiMock(`mail/v4/conversations/label`, labelRequestSpy, 'put');
+            const labelConversationsSpy = jest.spyOn(mailboxActions, 'labelConversations');
 
             const { getItems } = await setup({ conversations, labelID: label1.ID });
 
@@ -102,7 +103,9 @@ describe('Mailbox labels actions', () => {
 
             useLabelDropdown([label3.ID]);
 
-            await waitForSpyCall({ spy: labelRequestSpy });
+            await waitFor(() => {
+                expect(labelConversationsSpy).toHaveBeenCalled();
+            });
 
             expectLabels(getItems, {
                 [conversation1.ID as string]: { [label1.Name]: true, [label3.Name]: true },
@@ -110,19 +113,17 @@ describe('Mailbox labels actions', () => {
                 [conversation3.ID as string]: { [label1.Name]: true, [label3.Name]: false },
             });
 
-            expect(labelRequestSpy).toHaveBeenCalled();
-            // @ts-ignore
-            const { url, method, data } = labelRequestSpy.mock.calls[0][0];
-            expect({ url, method, data }).toEqual({
-                url: 'mail/v4/conversations/label',
-                method: 'put',
-                data: { IDs: [conversation1.ID, conversation2.ID], LabelID: label3.ID },
-            });
+            expect(labelConversationsSpy).toHaveBeenCalledWith(
+                expect.objectContaining({
+                    destinationLabelID: label3.ID,
+                })
+            );
+
+            labelConversationsSpy.mockRestore();
         });
 
         it('should remove a label to two conversations', async () => {
-            const labelRequestSpy = jest.fn(() => ({ UndoToken: { Token: 'Token' } }));
-            addApiMock(`mail/v4/conversations/unlabel`, labelRequestSpy, 'put');
+            const unlabelConversationsSpy = jest.spyOn(mailboxActions, 'unlabelConversations');
 
             const { getItems } = await setup({ conversations, labelID: label1.ID });
 
@@ -132,7 +133,9 @@ describe('Mailbox labels actions', () => {
 
             useLabelDropdown([label2.ID]);
 
-            await waitForSpyCall({ spy: labelRequestSpy });
+            await waitFor(() => {
+                expect(unlabelConversationsSpy).toHaveBeenCalled();
+            });
 
             expectLabels(getItems, {
                 [conversation1.ID as string]: { [label2.Name]: true },
@@ -140,21 +143,18 @@ describe('Mailbox labels actions', () => {
                 [conversation3.ID as string]: { [label2.Name]: false },
             });
 
-            expect(labelRequestSpy).toHaveBeenCalled();
-            // @ts-ignore
-            const { url, method, data } = labelRequestSpy.mock.calls[0][0];
-            expect({ url, method, data }).toEqual({
-                url: 'mail/v4/conversations/unlabel',
-                method: 'put',
-                data: { IDs: [conversation2.ID, conversation3.ID], LabelID: label2.ID },
-            });
+            expect(unlabelConversationsSpy).toHaveBeenCalledWith(
+                expect.objectContaining({
+                    destinationLabelID: label2.ID,
+                })
+            );
+
+            unlabelConversationsSpy.mockRestore();
         });
 
         it('should add and remove a label of a conversation', async () => {
-            const labelRequestSpy = jest.fn(() => ({ UndoToken: { Token: 'Token' } }));
-            const unlabelRequestSpy = jest.fn(() => ({ UndoToken: { Token: 'Token' } }));
-            addApiMock(`mail/v4/conversations/label`, labelRequestSpy, 'put');
-            addApiMock(`mail/v4/conversations/unlabel`, unlabelRequestSpy, 'put');
+            const labelConversationsSpy = jest.spyOn(mailboxActions, 'labelConversations');
+            const unlabelConversationsSpy = jest.spyOn(mailboxActions, 'unlabelConversations');
 
             const { getItems } = await setup({ conversations, labelID: label1.ID });
 
@@ -163,8 +163,10 @@ describe('Mailbox labels actions', () => {
 
             useLabelDropdown([label2.ID, label3.ID]);
 
-            await waitForSpyCall({ spy: labelRequestSpy });
-            await waitForSpyCall({ spy: unlabelRequestSpy });
+            await waitFor(() => {
+                expect(labelConversationsSpy).toHaveBeenCalled();
+                expect(unlabelConversationsSpy).toHaveBeenCalled();
+            });
 
             expectLabels(getItems, {
                 [conversation1.ID as string]: {
@@ -180,6 +182,9 @@ describe('Mailbox labels actions', () => {
                     [label4.Name]: false,
                 },
             });
+
+            labelConversationsSpy.mockRestore();
+            unlabelConversationsSpy.mockRestore();
         });
     });
 
@@ -200,8 +205,7 @@ describe('Mailbox labels actions', () => {
         };
 
         it('should move two conversations in a another folder', async () => {
-            const labelRequestSpy = jest.fn(() => ({ UndoToken: { Token: 'Token' } }));
-            addApiMock(`mail/v4/conversations/label`, labelRequestSpy, 'put');
+            const labelConversationsSpy = jest.spyOn(mailboxActions, 'labelConversations');
 
             const { getItems, store } = await setup({
                 conversations,
@@ -218,10 +222,18 @@ describe('Mailbox labels actions', () => {
 
             await sendEvent(store, { ConversationCounts: [{ LabelID: folder1.ID, Total: 1, Unread: 0 }] });
 
-            await waitForSpyCall({ spy: labelRequestSpy });
+            await waitFor(() => {
+                expect(labelConversationsSpy).toHaveBeenCalledWith(
+                    expect.objectContaining({
+                        destinationLabelID: folder2.ID,
+                    })
+                );
+            });
 
             const items = getItems();
             expect(items.length).toBe(1);
+
+            labelConversationsSpy.mockRestore();
         });
     });
 

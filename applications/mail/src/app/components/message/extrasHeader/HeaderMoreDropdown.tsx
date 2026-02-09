@@ -68,13 +68,11 @@ import { newsletterSubscriptionsActions } from 'proton-mail/store/newsletterSubs
 import { formatFileNameDate } from '../../../helpers/date';
 import { isStarred as IsMessageStarred, getDate } from '../../../helpers/elements';
 import { canSetExpiration, getExpirationTime } from '../../../helpers/expiration';
-import { getFolderName } from '../../../helpers/labels';
 import { isConversationMode } from '../../../helpers/mailSettings';
 import type { MessageViewIcons } from '../../../helpers/message/icon';
 import { exportBlob } from '../../../helpers/message/messageExport';
 import { useMarkAs } from '../../../hooks/actions/markAs/useMarkAs';
 import { useMoveToFolder } from '../../../hooks/actions/move/useMoveToFolder';
-import { useStar } from '../../../hooks/actions/useStar';
 import { useGetAttachment } from '../../../hooks/attachments/useAttachment';
 import { useGetMessageKeys } from '../../../hooks/message/useGetMessageKeys';
 import type { Element } from '../../../models/element';
@@ -135,12 +133,11 @@ const HeaderMoreDropdown = ({
     const { createNotification } = useNotifications();
     const dispatch = useMailDispatch();
     const [loading, withLoading] = useLoading();
-    const star = useStar();
-    const { applyOptimisticLocationEnabled, applyLocation } = useApplyLocation();
+    const { applyLocation } = useApplyLocation();
     const [user] = useUser();
     const { feature } = useFeature(FeatureCode.SetExpiration);
     const closeDropdown = useRef<() => void>();
-    const { moveToFolder, moveScheduledModal, moveSnoozedModal, moveToSpamModal } = useMoveToFolder();
+    const { moveScheduledModal, moveSnoozedModal, moveToSpamModal } = useMoveToFolder();
     const [folders = []] = useFolders();
     const { markAs } = useMarkAs();
     const getMessageKeys = useGetMessageKeys();
@@ -161,9 +158,8 @@ const HeaderMoreDropdown = ({
     const willExpire = !!message.data?.ExpirationTime;
     const willExpireByRetentionRule = dataRetentionPolicyEnabled && isExpiringByRetentionRule(message.data);
 
-    const handleMove = (folderID: string, fromFolderID: string) => async () => {
+    const handleMove = (folderID: string) => async () => {
         closeDropdown.current?.();
-        const folderName = getFolderName(folderID, folders);
 
         if (
             labelID === MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL &&
@@ -173,21 +169,11 @@ const HeaderMoreDropdown = ({
             dispatch(newsletterSubscriptionsActions.setSelectedElementId(undefined));
         }
 
-        if (applyOptimisticLocationEnabled) {
-            await applyLocation({
-                type: APPLY_LOCATION_TYPES.MOVE,
-                elements: [message.data || ({} as Element)],
-                destinationLabelID: folderID,
-            });
-        } else {
-            await moveToFolder({
-                elements: [message.data || ({} as Element)],
-                sourceLabelID: fromFolderID,
-                destinationLabelID: folderID,
-                folderName,
-                sourceAction: SOURCE_ACTION.MESSAGE_VIEW,
-            });
-        }
+        await applyLocation({
+            type: APPLY_LOCATION_TYPES.MOVE,
+            elements: [message.data || ({} as Element)],
+            destinationLabelID: folderID,
+        });
     };
 
     // TODO it is possible that this action triggers a move back in some cases.
@@ -228,19 +214,15 @@ const HeaderMoreDropdown = ({
             return;
         }
 
-        if (applyOptimisticLocationEnabled) {
-            void withLoading(
-                applyLocation({
-                    type: APPLY_LOCATION_TYPES.STAR,
-                    removeLabel: isStarred,
-                    elements: [message.data || ({} as Element)],
-                    destinationLabelID: MAILBOX_LABEL_IDS.STARRED,
-                    showSuccessNotification: false,
-                })
-            );
-        } else {
-            void withLoading(star([message.data || ({} as Element)], !isStarred, labelID, SOURCE_ACTION.MORE_DROPDOWN));
-        }
+        void withLoading(
+            applyLocation({
+                type: APPLY_LOCATION_TYPES.STAR,
+                removeLabel: isStarred,
+                elements: [message.data || ({} as Element)],
+                destinationLabelID: MAILBOX_LABEL_IDS.STARRED,
+                showSuccessNotification: false,
+            })
+        );
     };
 
     const handleExpire = (days: number) => {
@@ -390,7 +372,7 @@ const HeaderMoreDropdown = ({
                         <Button
                             icon
                             disabled={!messageLoaded}
-                            onClick={handleMove(MAILBOX_LABEL_IDS.INBOX, MAILBOX_LABEL_IDS.SPAM)}
+                            onClick={handleMove(MAILBOX_LABEL_IDS.INBOX)}
                             data-testid="message-header-expanded:move-spam-to-inbox"
                         >
                             <IcFireSlash alt={c('Title').t`Move to inbox (not spam)`} />
@@ -413,7 +395,7 @@ const HeaderMoreDropdown = ({
                         <Button
                             icon
                             disabled={!messageLoaded}
-                            onClick={handleMove(MAILBOX_LABEL_IDS.INBOX, MAILBOX_LABEL_IDS.TRASH)}
+                            onClick={handleMove(MAILBOX_LABEL_IDS.INBOX)}
                             data-testid="message-header-expanded:move-trashed-to-inbox"
                         >
                             <IcInbox alt={c('Title').t`Move to inbox`} />
@@ -424,7 +406,7 @@ const HeaderMoreDropdown = ({
                         <Button
                             icon
                             disabled={!messageLoaded}
-                            onClick={handleMove(MAILBOX_LABEL_IDS.TRASH, fromFolderID)}
+                            onClick={handleMove(MAILBOX_LABEL_IDS.TRASH)}
                             data-testid="message-header-expanded:move-to-trash"
                         >
                             <IcTrash alt={c('Title').t`Move to trash`} />
@@ -538,7 +520,7 @@ const HeaderMoreDropdown = ({
 
                                     <DropdownMenuButton
                                         className="text-left flex flex-nowrap items-center"
-                                        onClick={handleMove(MAILBOX_LABEL_IDS.ARCHIVE, fromFolderID)}
+                                        onClick={handleMove(MAILBOX_LABEL_IDS.ARCHIVE)}
                                         data-testid="message-view-more-dropdown:archive"
                                     >
                                         <IcArchiveBox className="mr-2" />
@@ -583,7 +565,7 @@ const HeaderMoreDropdown = ({
                                     ) : (
                                         <DropdownMenuButton
                                             className="text-left flex flex-nowrap items-center"
-                                            onClick={handleMove(MAILBOX_LABEL_IDS.SPAM, fromFolderID)}
+                                            onClick={handleMove(MAILBOX_LABEL_IDS.SPAM)}
                                             data-testid="message-view-more-dropdown:move-to-spam"
                                         >
                                             <IcFire className="mr-2" />

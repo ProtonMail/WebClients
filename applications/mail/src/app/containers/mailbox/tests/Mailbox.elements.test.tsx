@@ -1,10 +1,12 @@
-import { fireEvent, screen } from '@testing-library/react';
+import { fireEvent, screen, waitFor } from '@testing-library/react';
 
 import { queryConversations } from '@proton/shared/lib/api/conversations';
 import { DEFAULT_MAIL_PAGE_SIZE } from '@proton/shared/lib/constants';
 import type { Sort } from '@proton/shared/lib/mail/search';
 
-import { addApiMock, api, clearAll, waitForSpyCall } from '../../../helpers/test/helper';
+import * as mailboxActions from 'proton-mail/store/mailbox/mailboxActions';
+
+import { addApiMock, api, clearAll } from '../../../helpers/test/helper';
 import type { Element } from '../../../models/element';
 import { getElements, props, sendEvent, setup } from './Mailbox.test.helpers';
 
@@ -265,6 +267,8 @@ describe('Mailbox element list', () => {
         });
 
         it('should navigate on the previous one when the current one is emptied', async () => {
+            const labelConversationsSpy = jest.spyOn(mailboxActions, 'labelConversations');
+
             const conversations = getElements(DEFAULT_MAIL_PAGE_SIZE * 1.5);
             addApiMock(
                 'mail/v4/conversations',
@@ -290,10 +294,6 @@ describe('Mailbox element list', () => {
                 },
                 'get'
             );
-            const labelRequestSpy = jest.fn(() => ({
-                UndoToken: { Token: 'Token' },
-            }));
-            addApiMock(`mail/v4/conversations/label`, labelRequestSpy, 'put');
 
             const { store, history } = await setup({
                 conversations,
@@ -317,9 +317,13 @@ describe('Mailbox element list', () => {
                 ],
             });
 
-            await waitForSpyCall({ spy: labelRequestSpy });
+            await waitFor(() => {
+                expect(labelConversationsSpy).toHaveBeenCalled();
+            });
 
             expect(history.location.hash).toBe('');
+
+            labelConversationsSpy.mockRestore();
         });
 
         it('should show correct number of placeholder navigating on last page', async () => {
