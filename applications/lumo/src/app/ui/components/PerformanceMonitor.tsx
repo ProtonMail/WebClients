@@ -2,8 +2,13 @@ import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { generateSpaceKeyBase64 } from '../../crypto';
 import { LAG0 } from '../../lib/lumo-api-client/core/transforms/smoothing';
-import { useLumoSelector } from '../../redux/hooks';
+import { useLumoDispatch, useLumoSelector } from '../../redux/hooks';
+import { addConversation } from '../../redux/slices/core/conversations';
+import {addSpace, newSpaceId } from '../../redux/slices/core/spaces';
+import type { Conversation, Space } from '../../types';
+import { ConversationStatus } from '../../types';
 import { SearchIndexDebugModal } from './SettingsModal/SearchIndex/SearchIndexDebugModal';
 
 import './PerformanceMonitor.scss';
@@ -235,6 +240,7 @@ const Sparkline = ({
 };
 
 const PerformanceMonitor = () => {
+    const dispatch = useLumoDispatch();
     const [metrics, setMetrics] = useState<PerformanceMetrics>({
         tokensPerSecond: 0,
         totalTokens: 0,
@@ -482,6 +488,96 @@ const PerformanceMonitor = () => {
         return 'debug-view-value--danger';
     };
 
+    const handleCreateTestChats = () => {
+        const now = new Date();
+        const testSpaceId = newSpaceId();
+        const spaceKey = generateSpaceKeyBase64();
+
+        // Create a test space
+        const testSpace: Space = {
+            id: testSpaceId,
+            createdAt: new Date(now.getTime() - 8 * 24 * 60 * 60 * 1000).toISOString(),
+            updatedAt: new Date(now.getTime() - 8 * 24 * 60 * 60 * 1000).toISOString(),
+            spaceKey,
+            isProject: true,
+            projectName: 'Test Space (Expiring Chats)',
+            projectIcon: 'test',
+        };
+
+        dispatch(addSpace(testSpace));
+
+        // Create test conversations with different ages
+        const testConversations: Conversation[] = [
+            // Today
+            {
+                id: newSpaceId(),
+                spaceId: testSpaceId,
+                title: 'Recent conversation about React hooks',
+                createdAt: new Date(now.getTime() - 2 * 60 * 60 * 1000).toISOString(), // 2 hours ago
+                updatedAt: new Date(now.getTime() - 2 * 60 * 60 * 1000).toISOString(),
+                starred: false,
+                status: ConversationStatus.COMPLETED,
+            },
+            // 3 days old - safe
+            {
+                id: newSpaceId(),
+                spaceId: testSpaceId,
+                title: 'Help with TypeScript generics',
+                createdAt: new Date(now.getTime() - 3 * 24 * 60 * 60 * 1000).toISOString(),
+                updatedAt: new Date(now.getTime() - 3 * 24 * 60 * 60 * 1000).toISOString(),
+                starred: false,
+                status: ConversationStatus.COMPLETED,
+            },
+            // 5 days old - expires in 2 days
+            {
+                id: newSpaceId(),
+                spaceId: testSpaceId,
+                title: 'Database optimization strategies',
+                createdAt: new Date(now.getTime() - 5 * 24 * 60 * 60 * 1000).toISOString(),
+                updatedAt: new Date(now.getTime() - 5 * 24 * 60 * 60 * 1000).toISOString(),
+                starred: false,
+                status: ConversationStatus.COMPLETED,
+            },
+            // 6 days old - expires tomorrow
+            {
+                id: newSpaceId(),
+                spaceId: testSpaceId,
+                title: 'API design best practices',
+                createdAt: new Date(now.getTime() - 6 * 24 * 60 * 60 * 1000).toISOString(),
+                updatedAt: new Date(now.getTime() - 6 * 24 * 60 * 60 * 1000).toISOString(),
+                starred: false,
+                status: ConversationStatus.COMPLETED,
+            },
+            // 6.9 days old - expires today
+            {
+                id: newSpaceId(),
+                spaceId: testSpaceId,
+                title: 'CSS Grid vs Flexbox comparison',
+                createdAt: new Date(now.getTime() - 6.9 * 24 * 60 * 60 * 1000).toISOString(),
+                updatedAt: new Date(now.getTime() - 6.9 * 24 * 60 * 60 * 1000).toISOString(),
+                starred: false,
+                status: ConversationStatus.COMPLETED,
+            },
+            // 8 days old - already expired for free users
+            {
+                id: newSpaceId(),
+                spaceId: testSpaceId,
+                title: 'Docker container networking',
+                createdAt: new Date(now.getTime() - 8 * 24 * 60 * 60 * 1000).toISOString(),
+                updatedAt: new Date(now.getTime() - 8 * 24 * 60 * 60 * 1000).toISOString(),
+                starred: false,
+                status: ConversationStatus.COMPLETED,
+            },
+        ];
+
+        testConversations.forEach((conv) => {
+            dispatch(addConversation(conv));
+        });
+
+        // eslint-disable-next-line no-alert
+        alert(`Created ${testConversations.length} test conversations!\n\nCheck the sidebar to see:\n- Today section (1 chat)\n- Last 7 days (1 chat)\n- Expiring Soon (3 chats) ⚠️\n- Last 30 days (1 chat - hidden for free users)`);
+    };
+
     return (
         <div className="debug-view">
             <div className="debug-view-header">
@@ -694,6 +790,13 @@ const PerformanceMonitor = () => {
                     onClick={() => setShowSearchIndexDebug(true)}
                 >
                     🔍 {c('lumo: Debug View').t`Search Index Debug`}
+                </button>
+                <button
+                    className="debug-view-btn debug-view-btn--primary"
+                    onClick={handleCreateTestChats}
+                    style={{ background: 'var(--signal-warning)' }}
+                >
+                    ⚠️ {c('lumo: Debug View').t`Create Test Chats`}
                 </button>
                 <div className="debug-view-hint">
                     <strong>Cmd/Ctrl + Shift + P</strong> {c('lumo: Debug View').t`to toggle`}

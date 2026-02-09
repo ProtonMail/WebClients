@@ -18,6 +18,7 @@ import { ChatHistoryGuestUserUpsell } from '../components/ChatHistoryUpsell.tsx/
 import { LumoChatHistoryUpsell } from '../upsells/composed/LumoChatHistoryUpsell';
 import RecentChatsList from './RecentChatsList';
 import { categorizeConversations, searchConversations } from './helpers';
+import { Icon } from '@proton/components';
 
 interface Props {
     refInputSearch: React.RefObject<HTMLInputElement>;
@@ -87,16 +88,16 @@ export const ChatHistory = ({ onItemClick, searchInput = '' }: Props) => {
         // Exclude favorites from history - they appear in a separate section
         const nonFavorites = sortedConversations.filter((conversation) => !conversation.starred);
         const filteredConversations = searchConversations(nonFavorites, searchInput);
-        const categorizedConversations = categorizeConversations(filteredConversations);
+        const categorizedConversations = categorizeConversations(filteredConversations, hasLumoPlus);
 
         return {
             categorizedConversations,
             noConversationAtAll: sortedConversations.length === 0,
             noSearchMatch: filteredConversations.length === 0 && nonFavorites.length > 0,
         };
-    }, [conversationMap, spaceMap, searchInput, isGuest, conversationId, isGhostChatMode, showProjectConversationsInHistory]);
+    }, [conversationMap, spaceMap, searchInput, isGuest, conversationId, isGhostChatMode, showProjectConversationsInHistory, hasLumoPlus]);
 
-    const { today, lastWeek, lastMonth, earlier } = categorizedConversations;
+    const { today, lastWeek, expiringSoon, lastMonth, earlier } = categorizedConversations;
 
     if (isLoading) {
         return <ChatHistorySkeleton />;
@@ -110,7 +111,7 @@ export const ChatHistory = ({ onItemClick, searchInput = '' }: Props) => {
 
                 {!isGuest && noConversationAtAll && (
                     <>
-                        <div className="color-weak text-sm my-2 ml-3">
+                        <div className="color-weak text-sm my-2 ml-3 pl-6">
                             {c('collider_2025:Title').t`No chat history yet. Let's start chatting!`}
                         </div>
                     </>
@@ -136,7 +137,7 @@ export const ChatHistory = ({ onItemClick, searchInput = '' }: Props) => {
                     {lastWeek.length > 0 && (
                         <>
                             <h4 className="block color-weak text-sm mt-3 mb-2 ml-3">
-                                {c('collider_2025:Title').t`Last 7 days`}
+                                {!hasLumoPlus ? c('collider_2025:Title').t`Last 5 days` : c('collider_2025:Title').t`Last 7 days`}
                             </h4>
                             <RecentChatsList
                                 conversations={lastWeek}
@@ -145,21 +146,36 @@ export const ChatHistory = ({ onItemClick, searchInput = '' }: Props) => {
                             />
                         </>
                     )}
+                    {/* Expiring Soon section for free users - chats that will be deleted in 0-2 days */}
+                    {!hasLumoPlus && expiringSoon.length > 0 && (
+                        <>
+                            <div className="flex items-center justify-space-between mt-3 mb-2 ml-3 mr-3">
+                                <h4 className="flex items-center gap-1 color-weak text-sm mb-0">
+                                    <Icon name="hourglass" size={3} className="color-weak shrink-0" alt={c('collider_2025:Icon').t`Expiring soon`} />
+                                    <span>{c('collider_2025:Title').t`Expiring Soon`}</span>
+                                </h4>
+                            </div>
+
+                            <LumoChatHistoryUpsell />
+
+                            <RecentChatsList
+                                conversations={expiringSoon}
+                                selectedConversationId={conversationId}
+                                onItemClick={onItemClick}
+                            />
+                        </>
+                    )}
                     {/* For free users, an upsell is shown when they have conversations beyond 30 days */}
-                    {lastMonth.length > 0 && (
+                    {hasLumoPlus && lastMonth.length > 0 && (
                         <>
                             <h4 className="block color-weak text-sm mt-4 mb-2 ml-3">
                                 {c('collider_2025:Title').t`Last 30 days`}
                             </h4>
-                            {hasLumoPlus ? (
-                                <RecentChatsList
-                                    conversations={lastMonth}
-                                    selectedConversationId={conversationId}
-                                    onItemClick={onItemClick}
-                                />
-                            ) : (
-                                <LumoChatHistoryUpsell />
-                            )}
+                            <RecentChatsList
+                                conversations={lastMonth}
+                                selectedConversationId={conversationId}
+                                onItemClick={onItemClick}
+                            />
                         </>
                     )}
 

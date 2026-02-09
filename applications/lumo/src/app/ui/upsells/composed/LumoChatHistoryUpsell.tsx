@@ -22,7 +22,7 @@ interface ChatHistoryUpsellContainerProps {
 }
 
 const ChatHistoryUpsellContainer = ({ children }: ChatHistoryUpsellContainerProps) => (
-    <div className="chat-history-upsell rounded-sm mt-4 ml-2 mr-2 mb-0 mx-auto">
+    <div className="chat-history-upsell rounded-sm mt-2 ml-2 mr-2 mb-2 mx-auto">
         <div className="p-3 rounded-sm text-sm text-hint">
             <p className="m-0">{children}</p>
         </div>
@@ -39,7 +39,7 @@ export const LumoChatHistoryUpsell = ({
     const descriptiveText =
         text ||
         c('collider_2025: Upsell')
-            .t`Your chat history is limited to 7 days. For extended chat history and other premium features, `;
+            .t`Your chat history is limited to 7 days. For unlimited chat history and other premium features, `;
 
     if (canShowTalkToAdminLumoUpsell) {
         return (
