@@ -4,6 +4,14 @@ import type { UnprivatizeMemberPayload } from '../keys/unprivatization';
 import queryPages from './helpers/queryPages';
 import type { PaginationParams } from './interface';
 
+export const searchMembers = (keywords?: string) => ({
+    method: 'get',
+    url: 'core/v4/members/search',
+    params: {
+        q: keywords,
+    },
+});
+
 export const queryMembers = (params?: PaginationParams) => ({
     method: 'get',
     url: 'core/v4/members',
