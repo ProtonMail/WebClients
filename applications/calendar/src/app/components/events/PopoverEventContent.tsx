@@ -3,7 +3,7 @@ import { useMemo } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { useVideoConferencingWidget } from '@proton/calendar';
+import { useVideoConferencingWidget } from '@proton/calendar/videoConferencing/widget';
 import {
     Collapsible,
     CollapsibleContent,

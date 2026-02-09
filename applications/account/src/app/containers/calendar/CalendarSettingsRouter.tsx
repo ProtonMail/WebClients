@@ -3,7 +3,7 @@ import { useEffect, useMemo } from 'react';
 import { Route, Switch, useRouteMatch } from 'react-router-dom';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
-import { VideoConferenceToggle } from '@proton/calendar';
+import { VideoConferenceToggle } from '@proton/calendar/zoomIntegration/VideoConferenceToggle';
 import { useCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
 import { useCalendars } from '@proton/calendar/calendars/hooks';
 import { useGetHolidaysDirectory } from '@proton/calendar/holidaysDirectory/hooks';

@@ -2,9 +2,9 @@ import { useEffect, useState } from 'react';
 
 import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 import { useGetAddresses } from '@proton/account/addresses/hooks';
+import { useGetCalendars } from '@proton/calendar/calendars/hooks';
 import { useGetCalendarBootstrap } from '@proton/calendar/calendarBootstrap/hooks';
 import { useGetCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
-import { useGetCalendars } from '@proton/calendar/calendars/hooks';
 import { useGetHolidaysDirectory } from '@proton/calendar/holidaysDirectory/hooks';
 import { LoaderPage, StandardLoadErrorPage, useEventManager } from '@proton/components';
 import { useSilentApi } from '@proton/components/hooks/useSilentApi';
