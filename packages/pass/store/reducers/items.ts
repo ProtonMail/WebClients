@@ -33,7 +33,8 @@ import {
     resolveAddressMonitor,
     restoreTrashProgress,
     setItemFlags,
-    shareEventDelete,
+    shareCreated,
+    shareDeleted,
     shareLeaveSuccess,
     sharesEventNew,
     syncSuccess,
@@ -115,6 +116,13 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
         if (bootSuccess.match(action) && action.payload?.items !== undefined) return action.payload.items;
         if (syncSuccess.match(action)) return action.payload.items;
         if (sharesEventNew.match(action)) return fullMerge(state, action.payload.items);
+
+        if (shareCreated.match(action)) {
+            const { share, items } = action.payload;
+            return fullMerge(state, { [share.shareId]: toMap(items, 'itemId') });
+        }
+
+        if (shareDeleted.match(action)) return objectDelete(state, action.payload.shareId);
 
         if (itemCreate.intent.match(action)) {
             const { shareId, optimisticId, optimisticTime, files, ...item } = action.payload;
@@ -269,7 +277,7 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
             return updateItem({ shareId, itemId, lastUseTime: getEpoch() })(state);
         }
 
-        if (or(vaultDeleteSuccess.match, shareEventDelete.match, shareLeaveSuccess.match)(action)) {
+        if (or(vaultDeleteSuccess.match, shareLeaveSuccess.match)(action)) {
             return objectDelete(state, action.payload.shareId);
         }
 

@@ -14,8 +14,8 @@ import {
     itemsDeleteEvent,
     itemsUpdated,
     itemsUsedEvent,
+    shareDeleted,
     shareEvent,
-    shareEventDelete,
     shareEventUpdate,
     vaultDeleteSuccess,
 } from '@proton/pass/store/actions';
@@ -135,7 +135,7 @@ const onShareEventError = (shareId: string, tasks: () => Task) =>
             if (share) {
                 onItemsUpdated?.();
                 yield discardDrafts(shareId);
-                yield put(shareEventDelete(share));
+                yield put(shareDeleted(share));
             }
 
             yield cancel(tasks());
