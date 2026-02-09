@@ -23,27 +23,31 @@ interface Feature {
 const features: Feature[] = [
     {
         icon: 'globe',
-        getText: () => c('collider_2025: Feature').t`Web search`,
+        getText: () => c('collider_2025: Feature').t`Get answers with real-time web search`,
     },
     {
         icon: 'speech-bubble',
-        getText: () => c('collider_2025: Feature').t`Unlimited weekly chats`,
+        getText: () => c('collider_2025: Feature').t`Chat as much as you need with no limits`,
     },
     {
         icon: 'clock-rotate-left',
-        getText: () => c('collider_2025: Feature').t`Unlimited chat history`,
+        getText: () => c('collider_2025: Feature').t`Access all your past conversations anytime`,
+    },
+    {
+        icon: 'folder',
+        getText: () => c('collider_2025: Feature').t`Organize work in projects with custom instructions`,
     },
     {
         icon: 'star',
-        getText: () => c('collider_2025: Feature').t`Unlimited favourite chats`,
+        getText: () => c('collider_2025: Feature').t`Save unlimited conversations as favorites`,
     },
     {
         icon: 'arrow-up-line',
-        getText: () => c('collider_2025: Feature').t`Large file uploads`,
+        getText: () => c('collider_2025: Feature').t`Upload and analyze larger files`,
     },
     {
         icon: 'chip',
-        getText: () => c('collider_2025: Feature').t`Advanced models`,
+        getText: () => c('collider_2025: Feature').t`Use the most advanced AI models`,
     },
 ];
 

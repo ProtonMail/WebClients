@@ -18,10 +18,11 @@ import {
     usePopperAnchor,
 } from '@proton/components';
 import useApi from '@proton/components/hooks/useApi';
-import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
+import { LUMO_SHORT_APP_NAME, LUMO_UPSELL_PATHS } from '@proton/shared/lib/constants';
 import lumoProjects from '@proton/styles/assets/img/lumo/lumo-projects.svg';
 
 import { useIsLumoSmallScreen } from '../../hooks/useIsLumoSmallScreen';
+import { useLumoPlan } from '../../hooks/useLumoPlan';
 import { DragAreaProvider } from '../../providers/DragAreaProvider';
 import { PandocProvider } from '../../providers/PandocProvider';
 import { WebSearchProvider, useWebSearch } from '../../providers/WebSearchProvider';
@@ -40,6 +41,8 @@ import {
 import { addSpace, pullSpaceRequest, pushSpaceRequest } from '../../redux/slices/core/spaces';
 import { getProjectInfo } from '../../types';
 import { type ConversationGroup, SelectableConversationList } from '../components/Conversations';
+import { applyRetentionPolicy, categorizeConversations } from '../sidepanel/helpers';
+import { openLumoUpsellModal } from '../upsells/providers/LumoUpsellModalProvider';
 import { FilesManagementView } from '../components/Files/KnowledgeBase/FilesManagementView';
 import { HeaderWrapper } from '../header/HeaderWrapper';
 import { ComposerComponent } from '../interactiveConversation/composer/ComposerComponent';
@@ -125,6 +128,7 @@ const ProjectDetailViewInner = () => {
     const space = useLumoSelector(selectSpaceById(projectId));
     const conversations = useLumoSelector(selectConversationsBySpaceId(projectId));
     const allConversations = Object.values(conversations);
+    const { hasLumoPlus } = useLumoPlan();
 
     // Project data
     const { project } = getProjectInfo(space);
@@ -132,36 +136,22 @@ const ProjectDetailViewInner = () => {
     const projectInstructions = project?.projectInstructions || '';
     const category = getProjectCategory(project?.projectIcon);
 
-    // Sort conversations by date (most recent first)
-    const sortedConversations = [...allConversations].sort((a, b) => {
-        return new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime();
+    // Apply retention policy (free users only see last 7 days)
+    const filteredConversations = applyRetentionPolicy(allConversations, hasLumoPlus);
+
+    // Sort conversations by updatedAt (most recently updated first)
+    const sortedConversations = [...filteredConversations].sort((a, b) => {
+        return new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime();
     });
 
-    // Group conversations by date sections
-    const now = new Date();
-    const todayStart = new Date(now.getFullYear(), now.getMonth(), now.getDate());
-    const sevenDaysAgo = new Date(todayStart);
-    sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 7);
+    // Categorize conversations using the same logic as the sidebar
+    const { today, lastWeek, expiringSoon, lastMonth, earlier } = categorizeConversations(sortedConversations, hasLumoPlus);
 
-    const todayConversations: typeof sortedConversations = [];
-    const last7DaysConversations: typeof sortedConversations = [];
-    const olderConversations: typeof sortedConversations = [];
-
-    sortedConversations.forEach((conversation) => {
-        const createdAt = new Date(conversation.createdAt);
-        const conversationDate = new Date(createdAt.getFullYear(), createdAt.getMonth(), createdAt.getDate());
-        const conversationTime = conversationDate.getTime();
-        const todayTime = todayStart.getTime();
-        const sevenDaysAgoTime = sevenDaysAgo.getTime();
-
-        if (conversationTime === todayTime) {
-            todayConversations.push(conversation);
-        } else if (conversationTime >= sevenDaysAgoTime) {
-            last7DaysConversations.push(conversation);
-        } else {
-            olderConversations.push(conversation);
-        }
-    });
+    // Combine for display (free users won't see lastMonth/earlier due to retention policy)
+    const todayConversations = today;
+    const last7DaysConversations = lastWeek;
+    const expiringSoonConversations = expiringSoon;
+    const olderConversations = [...lastMonth, ...earlier];
 
     const spaceAttachments = useLumoSelector(selectAttachmentsBySpaceId(projectId));
     const provisionalAttachments = useLumoSelector(selectProvisionalAttachments);
@@ -173,7 +163,7 @@ const ProjectDetailViewInner = () => {
     // This ensures project-level data (files, settings, linked folders) stays in sync across browsers
     useEffect(() => {
         if (!projectId || projectId === 'undefined') return;
-        
+
         console.log(`Project navigation: pulling specific space to sync project ${projectId}`);
         dispatch(pullSpaceRequest({ id: projectId }));
     }, [dispatch, projectId]);
@@ -292,12 +282,13 @@ const ProjectDetailViewInner = () => {
     const promptSuggestions = sortedConversations.length === 0 ? getPromptSuggestionsForCategory(category.id) : [];
 
     // Create a Project object for the delete modal
+    // Use allConversations.length for the total count (not filtered by retention policy)
     const projectForModal: Project = {
         id: projectId,
         name: projectName,
         description: projectInstructions,
         fileCount,
-        conversationCount: sortedConversations.length,
+        conversationCount: allConversations.length,
         spaceId: projectId,
     };
 
@@ -342,6 +333,10 @@ const ProjectDetailViewInner = () => {
             setIsEditingTitle(false);
             setEditedTitle(projectName);
         }
+    };
+
+    const handleUpgradeClick = () => {
+        openLumoUpsellModal(LUMO_UPSELL_PATHS.CHAT_HISTORY);
     };
 
     return (
@@ -471,11 +466,25 @@ const ProjectDetailViewInner = () => {
                                                     title: c('collider_2025:Title').t`Last 7 days`,
                                                     conversations: last7DaysConversations,
                                                 },
+                                                !hasLumoPlus && expiringSoonConversations.length > 0
+                                                    ? {
+                                                          title: c('collider_2025:Title').t`Expiring Soon`,
+                                                          conversations: expiringSoonConversations,
+                                                          headerAction: (
+                                                              <button
+                                                                  className="keep-projects-button text-sm color-weak bg-transparent border-none cursor-pointer p-0"
+                                                                  onClick={handleUpgradeClick}
+                                                              >
+                                                                  {c('collider_2025:Action').t`Keep these chats`}
+                                                              </button>
+                                                          ),
+                                                      }
+                                                    : null,
                                                 {
                                                     title: c('collider_2025:Title').t`Older`,
                                                     conversations: olderConversations,
                                                 },
-                                            ].filter((g) => g.conversations.length > 0) as ConversationGroup[]
+                                            ].filter((g) => g && g.conversations.length > 0) as ConversationGroup[]
                                         }
                                         onConversationClick={(id) => history.push(`/c/${id}`)}
                                         onDeleteSelected={handleDeleteSelectedConversations}

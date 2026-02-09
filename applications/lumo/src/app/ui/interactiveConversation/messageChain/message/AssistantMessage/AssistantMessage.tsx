@@ -219,7 +219,7 @@ const AssistantMessage = ({
                 >
                     <div
                         ref={markdownContainerRef}
-                        className="markdown-rendering flex *:min-size-auto flex-nowrap items-start flex-column gap-2"
+                        className="markdown-rendering w-full flex *:min-size-auto flex-nowrap items-start flex-column gap-2"
                     >
                         {
                             // eslint-disable-next-line no-nested-ternary

@@ -1,28 +1,22 @@
 import { isToday, isWithinInterval, subDays, subMonths } from 'date-fns';
 
-import type { ConversationMap } from '../../redux/slices/core/conversations';
 import type { Conversation } from '../../types';
-
-export const mostRecentConversations = (conversations: ConversationMap) => {
-    return Object.values(conversations)
-        .map((conv) => [new Date(conv.createdAt).getTime(), conv] as [number, Conversation])
-        .sort((a, b) => b[0] - a[0]) // desc
-        .map(([, item]) => item);
-};
 
 export type DateBucketedConversations = {
     today: Conversation[];
     lastWeek: Conversation[];
+    expiringSoon: Conversation[]; // 5-7 days old (will be deleted in 0-2 days for free users)
     lastMonth: Conversation[];
     earlier: Conversation[];
 };
 
-export const categorizeConversations = (conversations: Conversation[]): DateBucketedConversations => {
+export const categorizeConversations = (conversations: Conversation[], hasLumoPlus: boolean = false): DateBucketedConversations => {
     const now = new Date();
 
     const result: DateBucketedConversations = {
         today: [],
         lastWeek: [],
+        expiringSoon: [],
         lastMonth: [],
         earlier: [],
     };
@@ -32,9 +26,20 @@ export const categorizeConversations = (conversations: Conversation[]): DateBuck
 
         if (isToday(createdAt)) {
             result.today.push(c);
-        } else if (isWithinInterval(createdAt, { start: subDays(now, 7), end: now })) {
-            result.lastWeek.push(c);
-        } else if (isWithinInterval(createdAt, { start: subMonths(now, 1), end: now })) {
+        } else if (isWithinInterval(createdAt, { start: subDays(now, 7), end: subDays(now, 1) })) {
+            // Days 1-7 ago
+            if (hasLumoPlus) {
+                result.lastWeek.push(c);
+            } else {
+                // Free users: split into "Last 7 days" (1-4 days) and "Expiring Soon" (5-7 days)
+                if (isWithinInterval(createdAt, { start: subDays(now, 5), end: subDays(now, 1) })) {
+                    result.lastWeek.push(c);
+                } else {
+                    result.expiringSoon.push(c);
+                }
+            }
+        } else if (isWithinInterval(createdAt, { start: subMonths(now, 1), end: subDays(now, 7) })) {
+            // 8-30 days ago
             result.lastMonth.push(c);
         } else {
             result.earlier.push(c);
@@ -57,7 +62,7 @@ export const searchConversations = (conversations: Conversation[], searchInput: 
 export const filterConversationsWithin7Days = (conversations: Conversation[]): Conversation[] => {
     const now = new Date();
     const sevenDaysAgo = subDays(now, 7);
-    
+
     return conversations.filter((conversation) => {
         const createdAt = new Date(conversation.createdAt);
         return createdAt >= sevenDaysAgo;
