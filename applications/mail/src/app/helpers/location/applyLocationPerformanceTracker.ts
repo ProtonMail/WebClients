@@ -1,6 +1,7 @@
 import { MINUTE } from '@proton/shared/lib/constants';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
-import { SentryMailPerformanceInitiatives, captureMessage } from '@proton/shared/lib/helpers/sentry';
+import { SentryMailPerformanceInitiatives, spanToJSON, startInactiveSpan } from '@proton/shared/lib/helpers/sentry';
+import type { Span } from '@proton/shared/lib/helpers/sentry';
 
 import { isElementMessage } from 'proton-mail/helpers/elements';
 import { getLabelID } from 'proton-mail/metrics/mailMetricsHelper';
@@ -14,9 +15,13 @@ export interface ApplyLocationMarkDetail {
     isCategoryViewEnabled: boolean;
 }
 
-export const APPLY_LABEL_MARK_PREFIX = 'apply-label-start-';
-
 class ApplyLocationPerformanceTracker {
+    private spans: Map<string, Span> = new Map();
+
+    getSpanName(elementID: string) {
+        return `APPLY_LOCATION_${elementID}`;
+    }
+
     mark({
         elements,
         actionType,
@@ -39,57 +44,49 @@ class ApplyLocationPerformanceTracker {
                 elementID = element.ConversationID;
             }
 
-            // Clear potential existing marks to prevent having a false time
-            performance.clearMarks(`${APPLY_LABEL_MARK_PREFIX}${elementID}`);
-            performance.mark(`${APPLY_LABEL_MARK_PREFIX}${elementID}`, {
-                detail: {
-                    // Anonymize custom label and folders name
-                    sourceLabelID: getLabelID(sourceLabelID),
-                    destinationLabelID: getLabelID(destinationLabelID),
-                    type: actionType,
-                    isDesktopApp: isElectronApp.toString(),
-                    isCategoryViewEnabled: isCategoryViewEnabled.toString(),
-                },
+            const spanName = this.getSpanName(elementID);
+            const span = startInactiveSpan(spanName, SentryMailPerformanceInitiatives.APPLY_LOCATION_PERFORMANCE, {
+                destinationLabelID: getLabelID(destinationLabelID),
+                isDesktopApp: isElectronApp.toString(),
+                isCategoryViewEnabled: isCategoryViewEnabled.toString(),
+                sourceLabelID: getLabelID(sourceLabelID),
+                type: actionType,
             });
+
+            if (span) {
+                this.spans.set(spanName, span);
+            }
         });
 
         queueMicrotask(() => this.cleanup());
     }
 
-    measure(elementID: string): { duration: number; detail: ApplyLocationMarkDetail } | null {
-        const markName = `${APPLY_LABEL_MARK_PREFIX}${elementID}`;
-        const marks = performance.getEntriesByName(markName);
+    measure(elementID: string): void {
+        const spanName = this.getSpanName(elementID);
+        const span = this.spans.get(spanName);
 
-        if (marks.length === 0) {
-            return null;
+        if (span) {
+            span.end();
+            this.spans.delete(spanName);
         }
-
-        const mark = marks[0] as PerformanceMark & { detail: ApplyLocationMarkDetail };
-        const duration = performance.now() - mark.startTime;
-
-        captureMessage('Apply location performance', {
-            tags: {
-                initiative: SentryMailPerformanceInitiatives.APPLY_LOCATION_PERFORMANCE,
-            },
-            extra: {
-                ...mark.detail,
-                durationMs: Math.ceil(duration),
-            },
-        });
-
-        performance.clearMarks(markName);
-
-        return { duration, detail: mark.detail };
     }
 
     private cleanup() {
+        const now = Date.now();
         // Periodically clear marks created when applying an optimistic action that is not moving the message from the list.
         // E.g., Removing a custom label will not move the item out from the list, except if the current label is the custom label
-        performance
-            .getEntriesByType('mark')
-            // Clean items which at least went through one event loop update
-            .filter((m) => m.name.startsWith(APPLY_LABEL_MARK_PREFIX) && performance.now() - m.startTime > MINUTE)
-            .forEach((m) => performance.clearMarks(m.name));
+        this.spans.forEach((span, name) => {
+            // @ts-expect-error - spanToJSON is not typed correctly
+            const spanData = spanToJSON(span);
+
+            if (spanData.start_timestamp !== undefined) {
+                if (now - spanData.start_timestamp * 1000 > MINUTE) {
+                    span.setStatus('deadline_exceeded');
+                    span.end();
+                    this.spans.delete(name);
+                }
+            }
+        });
     }
 }
 
