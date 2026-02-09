@@ -7,7 +7,6 @@ import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { undoActions } from '@proton/shared/lib/api/mailUndoActions';
 import type { Message, MessageMetadata } from '@proton/shared/lib/interfaces/mail/Message';
 import type { SPAM_ACTION } from '@proton/shared/lib/mail/mailSettings';
-import useFlag from '@proton/unleash/useFlag';
 import isTruthy from '@proton/utils/isTruthy';
 import unique from '@proton/utils/unique';
 
@@ -51,7 +50,6 @@ import {
 export const useApplyLocation = () => {
     const [mailSettings] = useMailSettings();
     const categoriesData = useCategoriesData();
-    const flagState = useFlag('ApplyLabelsOptimisticRefactoring');
     const dispatch = useMailDispatch();
     const [labels = []] = useLabels();
     const [folders = []] = useFolders();
@@ -485,5 +483,5 @@ export const useApplyLocation = () => {
         return Promise.all(promises);
     };
 
-    return { applyOptimisticLocationEnabled: flagState, applyLocation, applyMultipleLocations };
+    return { applyLocation, applyMultipleLocations };
 };

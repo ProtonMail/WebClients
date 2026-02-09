@@ -5,7 +5,6 @@ import { c } from 'ttag';
 
 import type { HotkeyTuple } from '@proton/components';
 import { useEventManager, useHotkeys, useNotifications } from '@proton/components';
-import { useFolders } from '@proton/mail';
 import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
@@ -25,13 +24,11 @@ import {
 
 import { useOnCompose } from '../../containers/ComposeProvider';
 import { hasLabel, isStarred } from '../../helpers/elements';
-import { getFolderName } from '../../helpers/labels';
 import type { Element } from '../../models/element';
 import { APPLY_LOCATION_TYPES } from '../actions/applyLocation/interface';
 import { useApplyLocation } from '../actions/applyLocation/useApplyLocation';
 import { useMarkAs } from '../actions/markAs/useMarkAs';
 import { useMoveToFolder } from '../actions/move/useMoveToFolder';
-import { useStar } from '../actions/useStar';
 import { ComposeTypes } from '../composer/useCompose';
 
 enum ARROW_SCROLL_DIRECTIONS {
@@ -81,7 +78,6 @@ export const useMessageHotkeys = (
         handleLoadEmbeddedImages,
     }: MessageHotkeysHandlers
 ) => {
-    const [folders] = useFolders();
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
     const labelDropdownToggleRef = useRef<() => void>(noop);
@@ -89,9 +85,8 @@ export const useMessageHotkeys = (
     const filterDropdownToggleRef = useRef<() => void>(noop);
 
     const { markAs } = useMarkAs();
-    const { applyOptimisticLocationEnabled, applyLocation } = useApplyLocation();
-    const { moveToFolder, moveScheduledModal, moveSnoozedModal, moveToSpamModal } = useMoveToFolder();
-    const star = useStar();
+    const { applyLocation } = useApplyLocation();
+    const { moveScheduledModal, moveSnoozedModal, moveToSpamModal } = useMoveToFolder();
 
     const onCompose = useOnCompose();
     const isRetentionPoliciesEnabled = useFlag('DataRetentionPolicy');
@@ -108,23 +103,11 @@ export const useMessageHotkeys = (
             return;
         }
 
-        const folderName = getFolderName(LabelID, folders);
-
-        if (applyOptimisticLocationEnabled) {
-            await applyLocation({
-                type: APPLY_LOCATION_TYPES.MOVE,
-                elements: [message.data],
-                destinationLabelID: LabelID,
-            });
-        } else {
-            await moveToFolder({
-                elements: [message.data],
-                sourceLabelID: labelID,
-                destinationLabelID: LabelID,
-                folderName,
-                sourceAction: SOURCE_ACTION.SHORTCUTS,
-            });
-        }
+        await applyLocation({
+            type: APPLY_LOCATION_TYPES.MOVE,
+            elements: [message.data],
+            destinationLabelID: LabelID,
+        });
     };
 
     const shouldStopPropagation = (e: KeyboardEvent, direction: ARROW_SCROLL_DIRECTIONS) => {
@@ -275,22 +258,13 @@ export const useMessageHotkeys = (
                 if (hotkeysEnabledAndMessageReady && message.data) {
                     e.stopPropagation();
 
-                    if (applyOptimisticLocationEnabled) {
-                        await applyLocation({
-                            type: APPLY_LOCATION_TYPES.STAR,
-                            removeLabel: isStarred(message.data),
-                            elements: [message.data as Element],
-                            destinationLabelID: MAILBOX_LABEL_IDS.STARRED,
-                            showSuccessNotification: false,
-                        });
-                    } else {
-                        await star(
-                            [message.data as Element],
-                            !isStarred(message.data),
-                            labelID,
-                            SOURCE_ACTION.SHORTCUTS
-                        );
-                    }
+                    await applyLocation({
+                        type: APPLY_LOCATION_TYPES.STAR,
+                        removeLabel: isStarred(message.data),
+                        elements: [message.data as Element],
+                        destinationLabelID: MAILBOX_LABEL_IDS.STARRED,
+                        showSuccessNotification: false,
+                    });
                 }
             },
         ],

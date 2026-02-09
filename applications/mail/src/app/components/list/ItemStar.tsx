@@ -17,21 +17,17 @@ import { APPLY_LOCATION_TYPES } from 'proton-mail/hooks/actions/applyLocation/in
 import { useApplyLocation } from 'proton-mail/hooks/actions/applyLocation/useApplyLocation';
 
 import { isElementMessage, isInDeletedFolder, isStarred as testIsStarred } from '../../helpers/elements';
-import { useStar } from '../../hooks/actions/useStar';
 import type { Element } from '../../models/element';
-import type { SOURCE_ACTION } from './list-telemetry/useListTelemetry';
 
 interface Props {
     element?: Element;
     labelID: string;
     size?: IconSize;
-    sourceAction: SOURCE_ACTION;
 }
 
-const ItemStar = ({ element, size, labelID, sourceAction }: Props) => {
+const ItemStar = ({ element, size, labelID }: Props) => {
     const [loading, withLoading] = useLoading();
-    const { applyOptimisticLocationEnabled, applyLocation } = useApplyLocation();
-    const star = useStar();
+    const { applyLocation } = useApplyLocation();
     const [{ Shortcuts }] = useMailSettings();
     const isRetentionPoliciesEnabled = useFlag('DataRetentionPolicy');
 
@@ -54,19 +50,15 @@ const ItemStar = ({ element, size, labelID, sourceAction }: Props) => {
             return;
         }
 
-        if (applyOptimisticLocationEnabled) {
-            void withLoading(
-                applyLocation({
-                    type: APPLY_LOCATION_TYPES.STAR,
-                    removeLabel: isStarred,
-                    elements: [element || ({} as Element)],
-                    destinationLabelID: MAILBOX_LABEL_IDS.STARRED,
-                    showSuccessNotification: false,
-                })
-            );
-        } else {
-            void withLoading(star([element || ({} as Element)], !isStarred, labelID, sourceAction));
-        }
+        void withLoading(
+            applyLocation({
+                type: APPLY_LOCATION_TYPES.STAR,
+                removeLabel: isStarred,
+                elements: [element || ({} as Element)],
+                destinationLabelID: MAILBOX_LABEL_IDS.STARRED,
+                showSuccessNotification: false,
+            })
+        );
     };
 
     if (isInDeletedFolder(isRetentionPoliciesEnabled, labelID)) {

@@ -31,7 +31,6 @@ import ItemLocation from './ItemLocation';
 import ItemStar from './ItemStar';
 import ItemUnread from './ItemUnread';
 import ItemExpiration from './item-expiration/ItemExpiration';
-import { SOURCE_ACTION } from './list-telemetry/useListTelemetry';
 
 interface Props {
     isCompactView: boolean;
@@ -100,7 +99,7 @@ const ItemRowLayout = ({
         <div className={clsx('flex flex-nowrap flex-column w-full my-auto', showThumbnails && 'mt-1')}>
             <div className="flex items-center justify-start flex-nowrap flex-row item-titlesender w-full gap-3">
                 <div className="my-auto flex shrink-0" data-testid={unread}>
-                    <ItemStar element={element} sourceAction={SOURCE_ACTION.MESSAGE_VIEW} labelID={labelID} />
+                    <ItemStar element={element} labelID={labelID} />
                 </div>
                 <div
                     className={clsx(['item-senders flex flex-nowrap shrink-0 w-custom', unread && 'text-semibold'])}
