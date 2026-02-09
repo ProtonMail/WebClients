@@ -48,6 +48,7 @@ export const useCameraPreview = ({
             // ignore processor stop errors during cleanup
         } finally {
             track.stop();
+            track.detach();
         }
     };
 
