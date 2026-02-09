@@ -3,6 +3,7 @@ import type { ThunkAction, UnknownAction } from '@reduxjs/toolkit';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { addDomain } from '@proton/shared/lib/api/domains';
 import { createGroup as createGroupCall, editGroup as editGroupCall } from '@proton/shared/lib/api/groups';
+import { USER_ROLES } from '@proton/shared/lib/constants';
 import type {
     Api,
     Domain,
@@ -15,6 +16,7 @@ import { createGroupAddressKey } from '@proton/shared/lib/keys/groupKeys';
 
 import { domainsThunk } from '../domains';
 import { organizationKeyThunk } from '../organizationKey';
+import { userThunk } from '../user';
 import type { GroupsState } from './index';
 
 interface SaveGroupPayload {
@@ -46,12 +48,13 @@ const saveGroup =
         api: Api;
     }): ThunkAction<Promise<Group>, GroupsState, ProtonThunkArguments, UnknownAction> => {
         return async (dispatch) => {
-            const [domains] = await Promise.all([dispatch(domainsThunk())]);
+            const [domains, user] = await Promise.all([dispatch(domainsThunk()), dispatch(userThunk())]);
 
             const isGroupDomain = GROUPS_DOMAIN_REGEX.test(groupPayload.domain);
             const isDomainInDomains = domains?.some((domain) => domain.DomainName === groupPayload.domain);
 
-            if (!isGroupDomain && !isDomainInDomains) {
+            const isAdmin = user.Role === USER_ROLES.ADMIN_ROLE;
+            if (isAdmin && !isGroupDomain && !isDomainInDomains) {
                 await addSubdomain(api, groupPayload.domain);
             }
 
@@ -74,14 +77,14 @@ const saveGroup =
                 group = (await api<{ Group: Group }>(createGroupCall(groupData))).Group;
             }
 
-            const cachedOrganizationKey = await dispatch(organizationKeyThunk());
-            const organizationKey = cachedOrganizationKey?.privateKey;
+            if (isAdmin && !editMode) {
+                const cachedOrganizationKey = await dispatch(organizationKeyThunk());
+                const organizationKey = cachedOrganizationKey?.privateKey;
 
-            if (!organizationKey) {
-                throw new Error('Missing organization private key');
-            }
+                if (!organizationKey) {
+                    throw new Error('Missing organization private key');
+                }
 
-            if (!editMode) {
                 group.Address.Keys = await createGroupAddressKey({
                     api,
                     organizationKey: cachedOrganizationKey,
