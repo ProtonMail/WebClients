@@ -3,6 +3,7 @@ import type { Task } from 'redux-saga';
 import { all, cancel, fork, put, select, take } from 'redux-saga/effects';
 
 import { PassErrorCode } from '@proton/pass/lib/api/errors';
+import { PassCrypto } from '@proton/pass/lib/crypto';
 import type { EventManagerEvent } from '@proton/pass/lib/events/manager/manager';
 import { PendingFileLinkTracker } from '@proton/pass/lib/file-attachments/file-link.tracker';
 import { parseItemRevision } from '@proton/pass/lib/items/item.parser';
@@ -136,6 +137,7 @@ const onShareEventError = (shareId: string, tasks: () => Task) =>
                 onItemsUpdated?.();
                 yield discardDrafts(shareId);
                 yield put(shareDeleted(share));
+                PassCrypto.removeShare(shareId);
             }
 
             yield cancel(tasks());
