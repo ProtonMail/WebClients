@@ -46,7 +46,7 @@ export const useVideoToggle = (
     const prevEnabled = useRef<boolean | null>(null);
     const preventAutoApplyingBlur = useRef(false);
 
-    const backgroundBlurProcessorInstanceRef = useRef<BackgroundBlurProcessor | null>(createBackgroundProcessor());
+    const backgroundBlurProcessorInstanceRef = useRef<BackgroundBlurProcessor | null>(null);
 
     const getCurrentVideoTrack = () => {
         return getVideoTrackPublications(room.localParticipant).filter(
@@ -265,6 +265,14 @@ export const useVideoToggle = (
             localParticipant.off(RoomEvent.LocalTrackPublished, handleTrackPublished);
         };
     }, [localParticipant, backgroundBlur]);
+
+    useEffect(() => {
+        backgroundBlurProcessorInstanceRef.current = createBackgroundProcessor();
+        return () => {
+            backgroundBlurProcessorInstanceRef.current?.disable?.();
+            void backgroundBlurProcessorInstanceRef.current?.destroy?.();
+        };
+    }, []);
 
     // Too frequent toggling can freeze the page completely
     const debouncedToggleBackgroundBlur = useMemo(
