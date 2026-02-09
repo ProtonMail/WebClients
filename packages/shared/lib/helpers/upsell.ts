@@ -133,6 +133,8 @@ export const getUpsellRefFromApp = ({
         return getUpsellRef({ app: APP_UPSELL_REF_PATH.DRIVE_UPSELL_REF_PATH, feature, component });
     } else if (app === APPS.PROTONLUMO) {
         return getUpsellRef({ app: APP_UPSELL_REF_PATH.LUMO_UPSELL_REF_PATH, feature, component });
+    } else if (app === APPS.PROTONVPN_SETTINGS) {
+        return getUpsellRef({ app: APP_UPSELL_REF_PATH.VPN_UPSELL_REF_PATH, feature, component });
     } else if (app === APPS.PROTONACCOUNT && fromApp) {
         if (fromApp === APPS.PROTONMAIL) {
             return getUpsellRef({
