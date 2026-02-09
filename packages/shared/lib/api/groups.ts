@@ -184,3 +184,15 @@ export const acceptGroupOwnerInvite = (inviteID: string, params: AcceptGroupOwne
     url: `core/v4/groups/owners/accept/${inviteID}`,
     data: params,
 });
+
+export interface AddGroupOwnerParameters {
+    MemberID: string;
+    TokenKeyPacket: string;
+    TokenSignaturePacket: string;
+}
+
+export const addGroupOwner = (groupMemberID: string, params: AddGroupOwnerParameters) => ({
+    method: 'post',
+    url: `core/v4/groups/owners/add/${groupMemberID}`,
+    data: params,
+});
