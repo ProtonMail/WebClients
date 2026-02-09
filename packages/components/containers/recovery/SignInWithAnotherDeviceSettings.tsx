@@ -14,7 +14,7 @@ import { useLoading } from '@proton/hooks/index';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { updateFlags } from '@proton/shared/lib/api/settings';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import type { UserSettings } from '@proton/shared/lib/interfaces';
+import { EDM_VALUE, type UserSettings } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
 import SignInWithAnotherDeviceModal from './SignInWithAnotherDeviceModal';
@@ -27,12 +27,15 @@ const SignInWithAnotherDeviceSettings = () => {
     const { createNotification } = useNotifications();
     const [modalProps, setModalState, renderModalState] = useModalState();
 
-    const handleEDMToggle = async (value: 0 | 1) => {
+    const handleEDMToggle = async (value: EDM_VALUE) => {
         await api<{ UserSettings: UserSettings }>(updateFlags({ EdmOptOut: value }));
         dispatch(userSettingsActions.update({ UserSettings: { Flags: { EdmOptOut: value } } }));
         createNotification({
             type: 'info',
-            text: value ? c('edm').t`QR code sign-in disabled` : c('edm').t`QR code sign-in enabled`,
+            text:
+                value === EDM_VALUE.DISABLED
+                    ? c('edm').t`QR code sign-in disabled`
+                    : c('edm').t`QR code sign-in enabled`,
         });
     };
 
@@ -43,6 +46,7 @@ const SignInWithAnotherDeviceSettings = () => {
             {renderModalState && <SignInWithAnotherDeviceModal {...modalProps} />}
             <SettingsLayout>
                 <SettingsLayoutLeft>
+                    {/* eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions, jsx-a11y/click-events-have-key-events -- Cmd/Ctrl+click shortcut to open modal; label remains for toggle association */}
                     <label
                         className="text-semibold"
                         htmlFor="edmToggle"
@@ -64,7 +68,9 @@ const SignInWithAnotherDeviceSettings = () => {
                             checked={allowScanningQrCode}
                             id="edmToggle"
                             onChange={({ target: { checked } }) =>
-                                withLoadingEDM(handleEDMToggle(!checked ? 1 : 0).catch(noop))
+                                withLoadingEDM(
+                                    handleEDMToggle(!checked ? EDM_VALUE.DISABLED : EDM_VALUE.ENABLED).catch(noop)
+                                )
                             }
                         />
                         <label htmlFor="edmToggle" className="flex-1">

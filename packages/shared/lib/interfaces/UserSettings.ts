@@ -70,10 +70,15 @@ export const enum DRAWER_VISIBILITY {
     HIDE = 1,
 }
 
+export enum EDM_VALUE {
+    ENABLED = 0,
+    DISABLED = 1,
+}
+
 export interface Flags {
     Welcomed: number;
     SupportPgpV6Keys: 0 | 1;
-    EdmOptOut: 0 | 1;
+    EdmOptOut: EDM_VALUE;
     DisplayTrialEndModal: 0 | 1;
 }
 
