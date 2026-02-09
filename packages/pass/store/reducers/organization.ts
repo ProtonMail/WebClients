@@ -1,7 +1,7 @@
 import type { Reducer } from 'redux';
 
 import { getUserAccessSuccess, userEvent } from '@proton/pass/store/actions';
-import { getOrganizationSettings } from '@proton/pass/store/actions/creators/organization';
+import { getOrganizationSettings, setOrganizationSettings } from '@proton/pass/store/actions/creators/organization';
 import {
     type MaybeNull,
     OrganizationAliasCreateMode,
@@ -13,6 +13,7 @@ import {
     PlanType,
 } from '@proton/pass/types';
 import type { OrganizationSettings } from '@proton/pass/types/data/organization';
+import { or } from '@proton/pass/utils/fp/predicates';
 import { PLANS } from '@proton/payments/index';
 import type { Organization } from '@proton/shared/lib/interfaces';
 
@@ -50,7 +51,7 @@ const organizationReducer: Reducer<MaybeNull<OrganizationState>> = (state = null
             return { ...state, organization: action.payload.Organization };
         }
 
-        if (getOrganizationSettings.success.match(action)) {
+        if (or(setOrganizationSettings.match, getOrganizationSettings.success.match)(action)) {
             return { ...state, settings: action.payload.Settings, canUpdate: action.payload.CanUpdate };
         }
     }

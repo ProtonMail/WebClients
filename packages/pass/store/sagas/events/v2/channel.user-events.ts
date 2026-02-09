@@ -28,7 +28,7 @@ export function* userEventsChannel(_: Api, options: RootSagaOptions): Generator 
 
             /** 3. Process user events */
             logger.debug(`[${CHANNEL_ID}] Processing events up to ${logId(events.LastEventID)} `);
-            const processed: boolean = yield call(processUserEvents, events);
+            const processed: boolean = yield call(processUserEvents, events, options);
 
             /** 4. Update state with new eventID only if all events were processed */
             if (processed) yield put(setUserEventID(events.LastEventID));
