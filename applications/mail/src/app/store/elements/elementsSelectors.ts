@@ -30,6 +30,17 @@ import { getTotal } from './helpers/elementTotal';
 
 export const params = (state: MailState) => state.elements.params;
 
+export const selectLabelID = createSelector([params], (params) => params.labelID);
+export const selectElementID = createSelector([params], (params) => params.elementID);
+export const selectMessageID = createSelector([params], (params) => params.messageID);
+export const selectConversationMode = createSelector([params], (params) => params.conversationMode);
+export const selectSort = createSelector([params], (params) => params.sort);
+export const selectFilter = createSelector([params], (params) => params.filter);
+export const selectSearch = createSelector([params], (params) => params.search);
+export const selectESEnabled = createSelector([params], (params) => params.esEnabled);
+export const selectisSearching = createSelector([params], (params) => params.isSearching);
+export const selectNewsletterSubscriptionID = createSelector([params], (params) => params.newsletterSubscriptionID);
+
 const beforeFirstLoad = (state: MailState) => state.elements.beforeFirstLoad;
 export const elementsMap = (state: MailState) => state.elements.elements;
 const page = (state: MailState) => state.elements.page;
