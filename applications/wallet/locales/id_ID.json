@@ -6,7 +6,7 @@
   "contexts": {
     "Account statement": {
       "Account statement successfully generated": [
-        "Laporan akun berhasil dihasilkan"
+        "Laporan akun berhasil dibuat"
       ],
       "Download": [
         "Unduh"
@@ -32,13 +32,13 @@
         "Tambah"
       ],
       "Add account": [
-        "Tambah akun"
+        "Tambahkan akun"
       ],
       "Add another account": [
         "Tambah akun lainnya"
       ],
       "Add credit / debit card": [
-        "Tambah kartu kredit / debit"
+        "Tambahkan kartu kredit/debit"
       ],
       "Apply": [
         "Terapkan"
@@ -80,7 +80,7 @@
         "Kolaborasikan dokumen"
       ],
       "Collapse wallets": [
-        "Tutup dompet"
+        "Ciutkan dompet"
       ],
       "Confirm": [
         "Konfirmasi"
@@ -119,7 +119,7 @@
         "Hapus"
       ],
       "Dismiss": [
-        "Abaikan"
+        "Tutup"
       ],
       "Done": [
         "Selesai"
@@ -338,7 +338,7 @@
         "Tampilkan lebih banyak manfaat"
       ],
       "Show QRCode": [
-        "Tampilkan kode QR"
+        "Tampilkan Kode QR"
       ],
       "Sign message": [
         "Tanda tangani pesan"
@@ -480,7 +480,7 @@
         "Status"
       ],
       "Toggle keychain": [
-        "Saklar rantai kunci"
+        "Aktifkan/nonaktifkan rantai kunci"
       ],
       "Used": [
         "Digunakan"
@@ -578,10 +578,10 @@
     },
     "bitcoin buy": {
       "${ serviceFeePercentage }% Azteco service fee": [
-        "Biaya layanan Azteco ${ serviceFeePercentage }%"
+        "${ serviceFeePercentage }% biaya layanan Azteco"
       ],
       "${ WALLET_APP_NAME } has partnered with ${ rampLink }, ${ banxaLink } and ${ moonpayLink }, three registered crypto asset services, to facilitate the purchase of BTC. Please enter your region to see the available providers and payment methods.": [
-        "${ WALLET_APP_NAME } telah bermitra dengan ${ rampLink }, ${ banxaLink }, dan ${ moonpayLink }, tiga layanan aset kripto terdaftar, untuk memfasilitasi pembelian BTC. Silakan masukkan wilayah Anda untuk melihat daftar penyedia layanan dan metode pembayaran yang tersedia."
+        "${ WALLET_APP_NAME } telah bermitra dengan ${ rampLink }, ${ banxaLink }, dan ${ moonpayLink }, tiga layanan aset kripto terdaftar, untuk memfasilitasi pembelian BTC. Silakan masukkan wilayah Anda untuk melihat penyedia dan metode pembayaran yang tersedia."
       ],
       "2% bank transfer fee": [
         "Biaya transfer bank 2%"
@@ -590,13 +590,13 @@
         "Biaya kartu kredit 4%"
       ],
       "Amount": [
-        "Nominal"
+        "Jumlah"
       ],
       "An error occurred while confirming this quote, please select another provider and try again.": [
-        "Terdapat kesalahan pada saat mengonfirmasi kutipan harga ini. Silakan pilih penyedia lain dan coba lagi."
+        "Terjadi kesalahan saat mengonfirmasi kutipan ini, silakan pilih penyedia lain dan coba lagi."
       ],
       "As a paid user, you are saving ${ serviceFeeAmount } ${ selectedQuote.FiatCurrencySymbol } on Azteco service fee!": [
-        "Selaku pengguna berbayar, Anda menghemat ${ serviceFeeAmount }${ selectedQuote.FiatCurrencySymbol } dalam biaya layanan Azteco!"
+        "Sebagai pengguna berbayar, Anda menghemat ${ serviceFeeAmount } ${ selectedQuote.FiatCurrencySymbol } untuk biaya layanan Azteco!"
       ],
       "Bank transfer": [
         "Transfer bank"
@@ -617,7 +617,7 @@
         "Beli voucher Azteco"
       ],
       "Buying BTC through ${ WALLET_APP_NAME } is currently unavailable to UK residents due to FCA regulations.": [
-        "Pembelian BTC melalui ${ WALLET_APP_NAME } untuk saat ini tidak tersedia di Inggris Raya karena peraturan FCA."
+        "Pembelian BTC melalui ${ WALLET_APP_NAME } saat ini tidak tersedia bagi penduduk Inggris Raya karena peraturan FCA."
       ],
       "Choose a country": [
         "Pilih negara"
@@ -629,16 +629,16 @@
         "Konfirmasi"
       ],
       "Continue": [
-        "Lanjut"
+        "Lanjutkan"
       ],
       "Continue with ${ providerName }": [
-        "Lanjut dengan ${ providerName }"
+        "Lanjutkan dengan ${ providerName }"
       ],
       "Credit card": [
         "Kartu kredit"
       ],
       "Finally, you will complete the Buy process on the provider’s site and any purchased BTC will be sent to a BTC address generated from your wallet account.": [
-        "Terakhir, Anda akan menyelesaikan proses Pembelian di situs mitra dan BTC yang sudah dibeli akan dikirim ke alamat BTC yang dibuat dari akun dompet Anda."
+        "Terakhir, Anda akan menyelesaikan proses Pembelian di situs penyedia dan BTC apa pun yang dibeli akan dikirim ke alamat BTC yang dibuat dari akun dompet Anda."
       ],
       "Instant payment": [
         "Pembayaran instan"
@@ -659,7 +659,7 @@
         "Rincian pembayaran"
       ],
       "Please enter your region to see the available BTC providers and payment methods. Any purchased BTC will be sent to a BTC address of this wallet account.": [
-        "Silakan masukkan wilayah Anda untuk melhat daftar penyedia BTC dan metode pembayaran yang tersedia. Segala BTC yang dibeli akan dikirim ke alamat BTC milik akun dompet ini."
+        "Silakan masukkan wilayah Anda untuk melihat penyedia BTC dan metode pembayaran yang tersedia. Setiap BTC yang dibeli akan dikirim ke alamat BTC dari akun dompet ini."
       ],
       "Ramp Network": [
         "Jaringan Ramp"
@@ -668,7 +668,7 @@
         "Penerima"
       ],
       "Review": [
-        "Ulas"
+        "Tinjau"
       ],
       "See details": [
         "Lihat rincian"
@@ -680,13 +680,13 @@
         "Kutipan harga ini valid untuk 5 menit ke depan"
       ],
       "Upgrade to Visionary plan to reduce Azteco service fee to 3%": [
-        "Tingkatkan ke paket Visionary untuk menurunkan biaya layanan Azteco ke 3%"
+        "Tingkatkan ke paket Visionary untuk mengurangi biaya layanan Azteco menjadi 3%"
       ],
       "You can also buy BTC on exchanges like ${ binanceLink }, ${ coinbaseLink }, or ${ krakenLink } and then send the BTC to your Receive address.": [
         "Anda juga dapat membeli BTC di berbagai layanan penukaran seperti ${ binanceLink }, ${ coinbaseLink }, atau ${ krakenLink } dan lalu mengirimkan BTC ini ke alamat Penerimaan Anda."
       ],
       "You got 25% off": [
-        "Anda memperoleh potongan harga 25%"
+        "Anda memperoleh diskon 25%"
       ],
       "You pay": [
         "Anda membayar"
@@ -706,7 +706,7 @@
         "Tidak ada kutipan harga yang tersedia untuk jumlah yang diminta"
       ],
       "The selected currency is not supported in your country or the requested amount is too low": [
-        "Mata uang yang dipilih tidak didukung pada negara Anda atau jumlah yang diminta terlalu rendah"
+        "Mata uang yang dipilih tidak didukung di negara Anda atau jumlah yang diminta terlalu rendah"
       ]
     },
     "Bitcoin Script Type": {
@@ -717,7 +717,7 @@
         "Segwit Lawas"
       ],
       "Native Segwit": [
-        "Segwit Natif"
+        "Segwit Asli"
       ],
       "Taproot": [
         "Taproot"
@@ -725,7 +725,7 @@
     },
     "Bitcoin Script Type Description": {
       "Latest format with enhanced privacy but not as widely adopted. Address starts with \"bc1p\".": [
-        "Format terkini dengan privasi yang ditingkatkan tetapi kurang banyak digunakan. Alamat diawali dengan \"bc1p\"."
+        "Format terbaru dengan privasi yang ditingkatkan tetapi belum diadopsi secara luas. Alamat diawali dengan \"bc1p\"."
       ],
       "Lower fees and compatible with older systems. Address starts with \"3\".": [
         "Biaya lebih rendah dan kompatibel dengan sistem lama. Alamat diawali dengan “3”."
@@ -742,7 +742,7 @@
         "Tambahkan penerima"
       ],
       "Invitation could not be sent to recipient. Please check details and try again.": [
-        "Undangan tidak dapat dikirim ke penerima. Silakan periksa rincian undangan dan coba lagi."
+        "Undangan tidak dapat dikirim ke penerima. Silakan periksa rincian dan coba lagi."
       ],
       "Invitation could not be sent. Please check details and try again.": [
         "Undangan tidak dapat dikirim. Silakan periksa detail dan coba lagi."
@@ -760,7 +760,7 @@
         "Buka pembaca kode QR"
       ],
       "Recipient email or BTC address": [
-        "Alamat email atau BTC penerima"
+        "Alamat email atau alamat BTC penerima"
       ],
       "Send invite email": [
         "Kirim email undangan"
@@ -769,7 +769,7 @@
         "Kirim undangan ke ${ email }"
       ],
       "This email is not using a ${ WALLET_APP_NAME } yet. Invite them to create their own wallet for easier transactions.": [
-        "Email ini belum menggunakan ${ WALLET_APP_NAME }. Undang mereka untuk membuat dompet mereka sendiri untuk transaksi yang lebih mudah."
+        "Email ini belum menggunakan ${ WALLET_APP_NAME }. Undang mereka untuk membuat dompet mereka sendiri agar transaksi lebih mudah."
       ],
       "This user may not have a ${ WALLET_APP_NAME } integrated with their email yet. Send them an email to tell them you would like to send them bitcoin.": [
         "Pengguna ini mungkin belum mengintegrasikan ${ WALLET_APP_NAME } dengan email mereka. Kirimi mereka email untuk memberi tahu bahwa Anda ingin mengirim bitcoin."
@@ -788,10 +788,10 @@
     },
     "Bitcoin Signing Type Description": {
       "Electrum is a compatibility signature format": [
-        "Elecctrum merupakan format tanda tangan yang digunakan untuk kompatibilitas"
+        "Electrum adalah format tanda tangan kompatibilitas"
       ],
       "Trezor is the standard signature format according to BIP 137": [
-        "Trezor merupakan format tanda tangan yang baku berdasarkan standar BIP 137"
+        "Trezor adalah format tanda tangan standar sesuai BIP 137"
       ]
     },
     "Bitcoin Unit": {
@@ -869,7 +869,7 @@
         "Masalah pembayaran"
       ],
       "Sheets problem": [
-        "Masalah lembar kerja"
+        "Masalah lembar"
       ],
       "Sign in problem": [
         "Masalah masuk"
@@ -921,7 +921,7 @@
     },
     "Buy confirm": {
       "Buy more bitcoin": [
-        "Beli lebih banyak bitcoin"
+        "Beli bitcoin lagi"
       ],
       "For any issues with the purchasing process, please contact ${ support }.": [
         "Untuk masalah apa pun dalam proses pembelian, silakan hubungi ${ support }."
@@ -939,7 +939,7 @@
         "Terima kasih telah membeli voucher Azteco.\nKami akan menukarkan voucher Anda sekarang dan Azteco akan mengirim BTC ke dompet Anda.\nKami juga akan mengirim email berisi detail pembelian."
       ],
       "Thank you for your purchase attempt with our partner.\nYou can track the status of your order via the confirmation email sent to you by our partner.\nIf the transaction fails, you may try again or choose an alternative partner.": [
-        "Terima kasih atas upaya pembelian Anda melalui rekan kami.\nAnda dapat melacak status pemesanan Anda melalui email konfimasi yang dikirim kepada Anda oleh rekan kami.\nApabila transaksi Anda gagal, Anda dapat mencoba kembali atau memilih rekan yang berbeda."
+        "Terima kasih atas upaya pembelian Anda melalui mitra kami.\nAnda dapat melacak status pesanan Anda melalui email konfirmasi yang dikirimkan oleh mitra kami.\nJika transaksi gagal, Anda dapat mencoba lagi atau memilih mitra alternatif."
       ]
     },
     "Buy in progress": {
@@ -953,7 +953,7 @@
         "Dalam proses pembelian"
       ],
       "Thank you for your purchase attempt for an Azteco voucher.\nAs soon as we receive your payment, we will create and redeem the voucher based on BTC price at that time.\nThen Azteco will send the BTC to your wallet.": [
-        "Terima kasih atas upaya pembelian voucher Azteco Anda.\nSegera setelah kami menerima pembayaran Anda, kami akan membuat dan menukarkan voucher ini berdasarkan harga BTC yang berlaku pada saat itu.\nAzteco kemudian akan mengirim BTC yang Anda beli ke dompet Anda."
+        "Terima kasih atas upaya pembelian voucher Azteco Anda.\nSegera setelah kami menerima pembayaran Anda, kami akan membuat dan menukarkan voucher berdasarkan harga BTC pada saat itu.\nKemudian Azteco akan mengirimkan BTC ke dompet Anda."
       ]
     },
     "Cancellation upsell": {
@@ -2070,7 +2070,7 @@
         "Bantu tim Anda menyimpan kata sandi bisnis dan informasi klien yang sensitif secara aman."
       ],
       "Let's you instantly add meeting links to your event invitations.": [
-        "Memungkinkan Anda untuk menambahkan tautan pertemuan secara instan ke undangan acara Anda."
+        "Memungkinkan Anda untuk menambahkan tautan rapat secara instan ke undangan acara Anda."
       ],
       "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
         "Siapkan akun untuk seluruh pengguna dan undang mereka untuk bergabung dengan ${ BRAND_NAME }"
@@ -2093,10 +2093,10 @@
         "Model keamanan ${ WALLET_APP_NAME }"
       ],
       "Bitcoin guide for newcomers": [
-        "Panduan Bitcoin untuk pemula"
+        "Panduan Bitcoin untuk pendatang baru"
       ],
       "Bitcoin is an innovative payment network that leverages peer-to-peer transactions to remove the need for a central bank. Bitcoin has revolutionized the core principles of value exchange by showing that a network of fully independent nodes can operate payments in a trustless and secure way.": [
-        "Bitcoin merupakan jaringan pembayaran inovatif yang menggunakan transaksi mitra ke mitra untuk menghilangkan keperluan bank sentral. Bitcoin telah merevolusikan prinsip-prinsip inti dari pertukaran nilai dengan menunjukkan bahwa jaringan terdiri dari simpul-simpul yang tersendiri dapat menjalankan pembayaran dengan cara aman dan tanpa kepercayaan."
+        "Bitcoin adalah jaringan pembayaran inovatif yang memanfaatkan transaksi peer-to-peer untuk menghilangkan kebutuhan akan bank sentral. Bitcoin telah merevolusi prinsip inti pertukaran nilai dengan menunjukkan bahwa jaringan node yang sepenuhnya independen dapat mengoperasikan pembayaran dengan cara yang aman dan tanpa kepercayaan."
       ],
       "Bitcoin via Email": [
         "Bitcoin via Email"
@@ -2105,22 +2105,22 @@
         "Bitcoin melalui Email adalah fitur unik di ${ WALLET_APP_NAME } yang membuat pengiriman bitcoin semudah mengirim email. Setiap pengguna ${ WALLET_APP_NAME } dapat menerima bitcoin dengan mudah melalui email mereka."
       ],
       "Discover": [
-        "Jelajahi"
+        "Telusuri"
       ],
       "How to protect your ${ WALLET_APP_NAME }": [
         "Cara melindungi ${ WALLET_APP_NAME } Anda"
       ],
       "We explain why ${ WALLET_APP_NAME } was created and what benefits it can bring to the ${ BRAND_NAME } community.": [
-        "Kami menjelaskan mengapa ${ WALLET_APP_NAME } dibuat dan manfaat apa saja bagi komunitas ${ BRAND_NAME }."
+        "Kami menjelaskan alasan ${ WALLET_APP_NAME } dibuat dan manfaat yang dapat diberikannya kepada komunitas ${ BRAND_NAME }."
       ],
       "We review how to secure your wallets and Bitcoin, including important recovery methods in case you ever forget your password.": [
-        "Kita meninjau cara mengamankan dompet dan Bitcoin Anda, termasuk metode pemulihan yang penting jika Anda melupakan kata sandi Anda."
+        "Kami meninjau cara mengamankan dompet dan Bitcoin Anda, termasuk metode pemulihan penting jika Anda lupa kata sandi."
       ],
       "We review some important history and features of Bitcoin for newcomers. We also look at how Bitcoin enables financial sovereignty and freedom. Finally, we explore the challenges facing Bitcoin and its future potential.": [
-        "Kita meninjau beberapa riwayat dan fitur penting dari Bitcoin bagi pemula. Kita juga melihat bagaimana Bitcoin memungkinkan kedaulatan dan kebebasan finansial. Terakhir, kita menjelajahi tantangan terhadap Bitcoin dan potensial masa depannya."
+        "Kami mengulas beberapa sejarah penting dan fitur Bitcoin untuk pendatang baru. Kami juga membahas cara Bitcoin memungkinkan kedaulatan dan kebebasan finansial. Terakhir, kami mengeksplorasi tantangan yang dihadapi Bitcoin serta potensi masa depannya."
       ],
       "We review the key features and security architecture that make ${ WALLET_APP_NAME } a private and secure wallet that is as easy to use as email.": [
-        "Kita meninjau fitur dan arsitektur utama yang membuat ${ WALLET_APP_NAME } sebuah dompet yang privat dan aman yang juga mudah digunakan seperti email."
+        "Kami meninjau fitur utama dan arsitektur keamanan yang menjadikan ${ WALLET_APP_NAME } dompet yang pribadi dan aman yang mudah digunakan seperti email."
       ],
       "What is Bitcoin?": [
         "Apa itu Bitcoin?"
@@ -2161,7 +2161,7 @@
         "Biaya berlangganan terlalu mahal"
       ],
       "Switching to a different provider": [
-        "Saya telah berpindah ke layanan penyedia email lainnya"
+        "Beralih ke penyedia yang berbeda"
       ],
       "Temporary need, may come back in the future": [
         "Saya hanya bermaksud menurunkan jenis akun saya untuk sementara waktu"
@@ -2210,7 +2210,7 @@
         "Nominal di bawah nilai minimum (${ minimumAmount })."
       ],
       "Bitcoin via Email to self is not supported": [
-        "Pengiriman Bitcoin via Email ke diri sendiri tidak didukung"
+        "Bitcoin via Email ke diri sendiri tidak didukung"
       ],
       "Checkout expired, please try again": [
         "Sesi pembayaran telah kedaluwarsa, silakan coba lagi"
@@ -2231,7 +2231,7 @@
         "Masukkan 6 digit"
       ],
       "Error connecting to the Bitcoin API.": [
-        "Terdapat kesalahan dalam menghubungkan ke API Bitcoin."
+        "Terjadi kesalahan saat menghubungkan ke API Bitcoin."
       ],
       "Incorrect username": [
         "Nama pengguna salah"
@@ -2321,7 +2321,7 @@
         "Verifikasi tanda tangan gagal"
       ],
       "Something went wrong. Please try again.": [
-        "Terdapat suatu kesalahan. Silakan coba lagi"
+        "Terjadi kesalahan. Silakan coba lagi."
       ],
       "Tab closed": [
         "Tab ditutup"
@@ -2336,7 +2336,7 @@
         "Jumlah kredit minimum yang dapat ditambahkan adalah ${ price }"
       ],
       "The passphrases do not match": [
-        "Frasa sandi tidak sesuai"
+        "Frasa sandi tidak cocok"
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Isi kolom ini melebihi panjang maksimal ${ maximumLength } karakter."
@@ -2363,7 +2363,7 @@
         "Nama pengguna harus diakhiri dengan huruf atau angka"
       ],
       "ZIP code is required": [
-        "Kode pos diperlukan"
+        "Kode pos wajib diisi"
       ]
     },
     "Error message": {
@@ -2377,13 +2377,13 @@
         "Aduh, ada yang tidak beres"
       ],
       "Open in browser": [
-        "Buka di browser"
+        "Buka di peramban"
       ],
       "Please refresh the page or try again later.": [
         "Silakan muat ulang halaman ini atau coba lagi nanti."
       ],
       "Something went wrong": [
-        "Terdapat suatu kesalahan"
+        "Terjadi kesalahan"
       ],
       "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
         "Untuk menggunakan ${ MAIL_APP_NAME } atau ${ CALENDAR_APP_NAME }, beralihlah ke versi web."
@@ -2402,7 +2402,7 @@
         "Deskriptor disalin ke papan klip"
       ],
       "I want the ${ prefix } instead": [
-        "Saya ingin menggunakan ${ prefix }"
+        "Saya ingin ${ prefix } saja"
       ],
       "Import this descriptor into other wallet software to monitor your balance and generate receiving addresses without exposing your private keys.": [
         "Impor deskriptor ini ke perangkat lunak dompet lain untuk memonitor saldo Anda dan membuat alamat penerimaan tanpa mengekspos kunci privat Anda."
@@ -2411,7 +2411,7 @@
         "Kunci publik (${ prefix }) disalin ke papan klip"
       ],
       "Verify the first few derived addresses match those in ${ WALLET_APP_NAME } before proceeding.": [
-        "Periksa apakah beberapa alamat turunan pertama ini sesuai dengan alamat yang ada pada ${ WALLET_APP_NAME } sebelum melanjutkan."
+        "Verifikasi bahwa beberapa alamat turunan pertama cocok dengan yang ada di ${ WALLET_APP_NAME } sebelum melanjutkan."
       ],
       "We strongly recommend using the descriptor above instead, as it contains all necessary information to ensure correct address generation. xpub, ypub, and zpub are not part of standard BIPs and should only be used with caution.": [
         "Kami sangat menyarankan penggunaan deskriptor di atas karena mencakup seluruh informasi yang diperlukan untuk memastikan pembuatan alamat yang tepat. xpub, ypub, dan zpub bukan bagian dari BIP standar dan hanya disarankan untuk digunakan dengan hati-hati."
@@ -2461,7 +2461,7 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Terdapat kesalahan dalam mengautentikasi kunci keamanan Anda. Silakan coba lagi."
+        "Terjadi kesalahan saat melakukan autentikasi dengan kunci keamanan Anda. Silakan coba lagi."
       ]
     },
     "fido2: Info": {
@@ -2546,7 +2546,7 @@
         "Dukungan ${ WALLET_APP_NAME }"
       ],
       "As soon as your payment is received, ${ WALLET_APP_NAME } will redeem the voucher according to the market price of BTC and network fee at that time.\nThe redeemed BTC will then be sent by ${ azteco } to your wallet.\nFor any questions related to Azteco bitcoin vouchers, please contact ${ support }.": [
-        "Segera setelah pembayaran Anda diterima, ${ WALLET_APP_NAME } akan menukarkan voucher ini sesuai dengan harga pasar BTD dan harga jaringan yang berlaku pada saat itu.\nBTC yang ditukarkan akan kemudian dikirimkan oleh ${ azteco } ke dompet Anda.\nUntuk segala pertanyaan yang berhubungan dengan voucher bitcoin Azteco, silakan hubungi ${ support }."
+        "Segera setelah pembayaran Anda diterima, ${ WALLET_APP_NAME } akan menukarkan voucher sesuai dengan harga pasar BTC dan biaya jaringan pada saat itu.\nBTC yang ditukarkan kemudian akan dikirimkan oleh ${ azteco } ke dompet Anda.\nUntuk pertanyaan terkait voucher bitcoin Azteco, silakan hubungi ${ support }."
       ],
       "Confirm": [
         "Konfirmasi"
@@ -2564,10 +2564,10 @@
         "Tidak sekarang"
       ],
       "You are now leaving ${ WALLET_APP_NAME } for ${ providerName } (${ websiteLink }).\nServices related to card payments, bank transfers, and any other fiat transactions are provided by ${ providerName },\na separate third-party platform. By proceeding and procuring services from ${ providerName },\nyou acknowledge that you have read and agreed to ${ providerName }'s Terms of Service (${ termOfUseLink })\nand Privacy and Cookies Policy (${ privacyAndCookiesPolicyLink }).\nFor any questions related to ${ providerName }'s services, please contact ${ providerName } at ${ supportEmailLink }": [
-        "Anda kini akan meninggalkan ${ WALLET_APP_NAME } dan menuju ke ${ providerName } (${ websiteLink }). Segala layanan yang berhubungan dengan pembayaran kartu, transfer bank, dan transaksi tunai lainnya akan disediakan oleh ${ providerName }, \nyang merupakan platform pihak ketiga yang terpisah. Dengan melanjutkan dan menggunakan layanan dari ${ providerName }, Anda membenarkan bahwa Anda telah membaca dan menyetujui Ketentuan Penggunaan (${ termOfUseLink })\nserta Kebijakan Privasi dan Cookie (${ privacyAndCookiesPolicyLink }) ${ providerName }.\nUntuk pertanyaan apa pun yang terkait dengan layanan ${ providerName }, silakan hubungi ${ providerName } di ${ supportEmailLink }"
+        "Anda sekarang meninggalkan ${ WALLET_APP_NAME } menuju ${ providerName } (${ websiteLink }).\nLayanan terkait pembayaran kartu, transfer bank, dan transaksi fiat lainnya disediakan oleh ${ providerName },\nsebuah platform pihak ketiga yang terpisah. Dengan melanjutkan dan menggunakan layanan dari ${ providerName },\nAnda menyatakan telah membaca dan menyetujui Ketentuan Layanan ${ providerName } (${ termOfUseLink })\nserta Kebijakan Privasi dan Cookie (${ privacyAndCookiesPolicyLink }).\nUntuk pertanyaan terkait layanan ${ providerName }, silakan hubungi ${ providerName } di ${ supportEmailLink }."
       ],
       "You will now buy an Azteco bitcoin voucher with ${ WALLET_APP_NAME }. This works similar to a gift card and is one of the easiest and most private way to obtain BTC.": [
-        "Anda kini akan membeli voucher bitcoin Azteco dengan ${ WALLET_APP_NAME }. Voucher ini berlaku seperti kartu hadiah (gift card) dan merupakan salah satu cara yang paling mudah dan paling privat untuk memperoleh BTC."
+        "Anda kini akan membeli voucher bitcoin Azteco dengan ${ WALLET_APP_NAME }. Ini berfungsi mirip dengan kartu hadiah dan merupakan salah satu cara termudah dan paling pribadi untuk mendapatkan BTC."
       ]
     },
     "Group": {
@@ -2624,7 +2624,7 @@
         "${ PROTON_SENTINEL_NAME } melindungi akun Anda dengan pengawasan yang telaten terhadap aktivitas yang mencurigakan."
       ],
       "${ storage } storage": [
-        "Kuota penyimpanan ${ storage }"
+        "Penyimpanan ${ storage }"
       ],
       "(${ memberCount } member)": [
         "(${ memberCount } anggota)"
@@ -2645,7 +2645,7 @@
         "Masing-masing nomor telepon hanya dapat digunakan untuk memverifikasi satu akun ${ BRAND_NAME }"
       ],
       "A user is an account associated with a single username, mailbox, and person": [
-        "Pengguna di sini didefinisikan sebagai akun yang terhubung dengan nama pengguna, kotak surat, dan individu tunggal"
+        "Pengguna adalah akun yang terkait dengan satu nama pengguna, kotak surat, dan satu orang."
       ],
       "Account successfully updated": [
         "Akun berhasil diperbarui"
@@ -2687,7 +2687,7 @@
         "Bitcoin"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
-        "Dengan menurunkan ke paket Free, Anda akan kehilangan berbagai manfaat berikut secara permanen, bahkan apabila Anda kembali meningkatkan jenis akun Anda di kemudian hari."
+        "Dengan menurunkan paket ke Gratis, Anda akan kehilangan manfaat ini secara permanen, meskipun Anda meningkatkan paket lagi di masa mendatang."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klik \"Minta kode baru\" untuk mendapatkan kode verifikasi baru yang akan dikirim ke ${ strong }. Apabila nomor telepon ini tidak sesuai, klik \"Edit\" untuk mengubahnya."
@@ -2726,7 +2726,7 @@
         "Logo Discover ProtectBuy"
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
-        "Tidak melihat layar apapun? Jangan lupa untuk menonaktifkan pemblokir pop-up Anda."
+        "Tidak melihat apa pun? Ingatlah untuk menonaktifkan pemblokir pop-up."
       ],
       "Downgrade": [
         "Turunkan"
@@ -2741,7 +2741,7 @@
         "Unduh aplikasi favorit Anda sekarang juga dan bawa privasi ke mana pun Anda pergi."
       ],
       "Each code can only be used once": [
-        "Masing-masing kode hanya dapat digunakan satu kali"
+        "Setiap kode hanya dapat digunakan satu kali"
       ],
       "Edit email address": [
         "Sunting alamat email"
@@ -2840,7 +2840,7 @@
         "Baru"
       ],
       "No payment is required at this time.": [
-        "Tidak ada pembayaran yang diperlukan untuk saat ini."
+        "Saat ini tidak diperlukan pembayaran."
       ],
       "No results found": [
         "Tidak ada hasil yang ditemukan"
@@ -2870,7 +2870,7 @@
         "Silakan autentikasi pembayaran Anda pada tab verifikasi."
       ],
       "Please fill in all required fields.": [
-        "Silakan ini seluruh kolom yang dibutuhkan."
+        "Harap isi semua kolom yang diwajibkan."
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Silakan coba lagi dengan menggunakan metode pembayaran lainnya, atau hubungi bank Anda."
@@ -3059,7 +3059,7 @@
         "Langganan ${ plan } Anda akan digantikan dengan ${ PASS_SHORT_APP_NAME } Lifetime. Sisa saldo langganan Anda akan ditambahkan ke akun Anda. Paket Lifetime ${ PASS_SHORT_APP_NAME } adalah pembayaran satu kali tanpa biaya perpanjangan untuk akses seumur hidup ke ${ PASS_SHORT_APP_NAME }."
       ],
       "Your checkout has opened in a new tab. Please complete your payment there and return to this page when finished.": [
-        "Pembayaran Anda telah terbuka pada tab baru. Silakan selesaikan pembayaran Anda pada tab ini dan kembali ke halaman ini pada saat pembayaran telah selesai."
+        "Pembayaran Anda telah terbuka di tab baru. Silakan selesaikan pembayaran Anda di sana dan kembali ke halaman ini setelah selesai."
       ],
       "Your email will only be used for this one-time verification.": [
         "Email Anda hanya akan digunakan satu kali ini untuk keperluan verifikasi."
@@ -3184,7 +3184,7 @@
         "Salin"
       ],
       "Could you please let us know which provider?": [
-        "Dapatkah Anda memberitahu kami layanan penyedia email mana yang Anda maksud?"
+        "Dapatkah Anda memberi tahu kami penyedia mana?"
       ],
       "Could you please specify which streaming service?": [
         "Dapatkah Anda memberitahu kami layanan streaming mana yang Anda maksud?"
@@ -3286,7 +3286,7 @@
         "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva"
       ],
       "Show QRCode": [
-        "Tampilkan kode QR"
+        "Tampilkan Kode QR"
       ],
       "Sign message": [
         "Tanda tangani pesan"
@@ -3295,7 +3295,7 @@
         "Tanggal mulai"
       ],
       "State": [
-        "Keadaan"
+        "Negara bagian/provinsi"
       ],
       "Street address": [
         "Alamat jalan"
@@ -3448,7 +3448,7 @@
         "Jumlah"
       ],
       "Secondary amount": [
-        "Akun sekunder"
+        "Jumlah sekunder"
       ]
     },
     "mail_signup_2024: Info": {
@@ -3708,7 +3708,7 @@
         "Penjenamaan ruang kerja yang disesuaikan"
       ],
       "Data breach monitoring": [
-        "Monitoring kebocoran data"
+        "Monitoring pembobolan data"
       ],
       "Dedicated servers optimized for streaming": [
         "Server khusus yang dioptimalkan untuk streaming"
@@ -3801,7 +3801,7 @@
         "Pengelola kata sandi untuk menyimpan informasi kredensial"
       ],
       "Password-protected Emails": [
-        "Email yang terlindung oleh kata sandi"
+        "Email yang dilindungi kata sandi"
       ],
       "Priority email support": [
         "Dukungan email prioritas"
@@ -3882,7 +3882,7 @@
         "Tanpa batasan jumlah folder"
       ],
       "Unlimited folders, labels, and filters": [
-        "Tanpa batasan jumlah folder, label, dan filter"
+        "Folder, label, dan filter tanpa batas"
       ],
       "Unlimited labels": [
         "Tanpa batasan jumlah label"
@@ -3891,7 +3891,7 @@
         "Tanpa batasan jumlah login, catatan, dan kartu kredit"
       ],
       "Unlimited messages per day": [
-        "Tanpa batasan jumlah pesan per harinya"
+        "Pesan tak terbatas per hari"
       ],
       "Unlimited shared ${ PASS_SHORT_APP_NAME } vaults per user": [
         "Brankas ${ PASS_SHORT_APP_NAME } terbagi tanpa batasan jumlah per pengguna"
@@ -4087,7 +4087,7 @@
         "Memungkinkan Anda untuk menyiapkan pesan balasan otomatis (auto-reply) bagi seluruh pesan yang Anda terima"
       ],
       "Automatically clear out messages older than 30 days from Trash and Spam": [
-        "Hapus pesan yang telah berusia lebih dari 30 hari secara otomatis dari Sampah dan Spam"
+        "Hapus otomatis pesan yang berusia lebih dari 30 hari dari Sampah dan Spam"
       ],
       "Automatically forward emails sent to your ${ MAIL_APP_NAME } account to any other email address.": [
         "Terusken email yang terkirim pada akun ${ MAIL_APP_NAME } Anda ke alamat email lainnya secara otomatis."
@@ -4207,7 +4207,7 @@
         "Mengharuskan Anda untuk memasukkan kode yang terkirim ke ponsel Anda sebelum Anda dapat masuk. Hal ini memastikan bahwa bahkan apabila kata sandi Anda sampai bocor sekalipun, akun Anda akan tetap aman."
       ],
       "Reset user passwords and reset two-factor authentication on users": [
-        "Atur ulang kata sandi dan status autentikasi dua faktor pengguna"
+        "Atur ulang kata sandi pengguna dan autentikasi dua faktor pada pengguna"
       ],
       "Route your internet traffic through the Tor network with a single click": [
         "Arahkan lalu lintas internet Anda melalui jaringan Tor dengan satu klik"
@@ -4243,7 +4243,7 @@
         "Ruang penyimpanan terbagi antara ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, dan ${ PASS_APP_NAME }."
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
-        "Ruang penyimpanan terbagi antar ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, dan ${ DRIVE_APP_NAME }. Para administrator akan dapat mengatur besar kuota penyimpanan yang dimiliki oleh masing-masing pengguna di dalam organisasi mereka"
+        "Ruang penyimpanan dibagikan di antara ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, dan ${ DRIVE_APP_NAME }. Administrator dapat mengalokasikan jumlah penyimpanan yang berbeda kepada pengguna di organisasi mereka"
       ],
       "Storage space is shared between users across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }": [
         "Ruang penyimpanan terbagi untuk seluruh pengguna antara ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, dan ${ PASS_APP_NAME }."
@@ -4502,7 +4502,7 @@
         "Lebih banyak paket tersedia pada mata uang lainnya"
       ],
       "Payment method required for the subscription to be activated after the trial ends.": [
-        "Metode pembayaran dibutuhkan bagi langganan untuk dapat diaktifkan setelah masa uji coba berakhir."
+        "Metode pembayaran diperlukan agar langganan dapat diaktifkan setelah uji coba berakhir."
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Silakan aktifkan kembali langganan Anda terlebih dahulu untuk menurunkan jumlah pengaya."
@@ -4588,7 +4588,7 @@
         "Kode keamanan tidak valid"
       ],
       "Something went wrong. Please try again later.": [
-        "Terdapat suatu kesalahan. Silakan coba lagi nanti."
+        "Terjadi kesalahan. Silakan coba lagi nanti."
       ],
       "We are unable to authenticate your payment method. Please choose a different payment method or try again.": [
         "Kami tidak dapat mengautentikasi metode pembayaran Anda. Silakan coba metode pembayaran lainnya atau coba lagi."
@@ -4748,7 +4748,7 @@
         "Pilih negara"
       ],
       "Select state": [
-        "Pilih negara bagian"
+        "Pilih negara bagian/provinsi"
       ],
       "Share what you think could make ${ BRAND_NAME } better": [
         "Berikan pendapatmu tentang apa yang bisa membuat ${ BRAND_NAME } menjadi lebih baik"
@@ -4795,7 +4795,7 @@
     },
     "QRCode Reader": {
       "Could not find an available camera on your device": [
-        "Kamera yang tersedia tidak dapat ditemukan pada perangkat Anda"
+        "Kamera yang tersedia tidak dapat ditemukan di perangkat Anda"
       ],
       "Could not run QR code reader": [
         "Tidak dapat menjalankan pembaca kode QR"
@@ -4811,7 +4811,7 @@
     },
     "Receive bitcoin": {
       "Below is the last generated Bitcoin address. For better privacy, use a different address for each transaction.": [
-        "Berikut merupakan alamat Bitcoin yang terakhir dibuat. Untuk privasi yang lebih baik, gunakan alamat yang berbeda untuk masing-masing transaksi."
+        "Berikut adalah alamat Bitcoin terakhir yang dibuat. Untuk privasi yang lebih baik, gunakan alamat yang berbeda untuk setiap transaksi."
       ],
       "Receive Bitcoin": [
         "Terima Bitcoin"
@@ -4899,10 +4899,10 @@
         "Salin tanda tangan"
       ],
       "Enter or paste the message you want to sign.": [
-        "Tulis atau salin pesan yang ingin Anda tanda tangani."
+        "Masukkan atau salin pesan yang ingin Anda tanda tangani."
       ],
       "Generate signature": [
-        "Hasilkan tanda tangan"
+        "Buat tanda tangan"
       ],
       "Message": [
         "Pesan"
@@ -4920,10 +4920,10 @@
         "Jenis penandatanganan"
       ],
       "This signature verifies your ownership of this Bitcoin address without revealing your private key.": [
-        "Tanda tangan ini memverifikasi kepemilikan Anda terhadap alamat Bitcoin ini tanpa memaparkan kunci pribadi milik Anda."
+        "Tanda tangan ini memverifikasi kepemilikan Anda terhadap alamat Bitcoin ini tanpa memaparkan kunci pribadi Anda."
       ],
       "We default to Electrum signing method because it's the easiest and most common method requested by banks. BIP 137 is used for signing transactions offline and is more advanced.": [
-        "Secara bawaan, kami menggunakan metode penandatanganan Electrum karena metode ini merupakan metode yang termudah dan yang paling sering diminta oleh bank. BIP 137 digunakan untuk menandatangani transaksi secara luring dan lebih rumit dalam penerapannya."
+        "Secara bawaan kami menggunakan metode penandatanganan Electrum karena merupakan metode paling mudah dan paling sering diminta oleh bank. BIP 137 digunakan untuk penandatanganan transaksi secara luring dan lebih canggih."
       ]
     },
     "specialoffer: Deal details": {
@@ -4977,7 +4977,7 @@
     },
     "storage_split: action": {
       "Keep ${ currentPlanName }": [
-        "Pertahankan paket ${ currentPlanName }"
+        "Pertahankan ${ currentPlanName }"
       ]
     },
     "storage_split: feature": {
@@ -5141,7 +5141,7 @@
         "Nonaktifkan"
       ],
       "Enable auto-pay support": [
-        "Aktifkan dukungan autodebet"
+        "Aktifkan dukungan pembayaran otomatis"
       ],
       "Keep auto-pay": [
         "Tetap aktifkan autodebet"
@@ -5220,13 +5220,13 @@
         "Konfirmasi dan impor"
       ],
       "Continue": [
-        "Lanjut"
+        "Lanjutkan"
       ],
       "Import paper wallet": [
         "Impor dompet kertas"
       ],
       "Invalid private key": [
-        "Kunci privat tidak valid"
+        "Kunci pribadi tidak valid"
       ],
       "No funds available": [
         "Tidak ada dana yang tersedia"
@@ -5235,7 +5235,7 @@
         "Dana dompet kertas berhasil diimpor"
       ],
       "Please grant camera permission to use QR Code scanner": [
-        "Silakan berikan izin kepada kamera untuk menggunakan pemindai kode QR"
+        "Silakan berikan izin kamera untuk menggunakan pemindai Kode QR"
       ],
       "You receive": [
         "Anda menerima"
@@ -5356,7 +5356,7 @@
         "Hadiah"
       ],
       "Go to settings and recovery keys": [
-        "Pergi ke pengaturan dan kunci pemulihan"
+        "Buka pengaturan dan kunci pemulihan"
       ],
       "Help and feedback": [
         "Bantuan dan saran"
@@ -5490,7 +5490,7 @@
     },
     "Unknown sender": {
       "Add a name so you can remember who it was from.": [
-        "Tambahkan nama supaya Anda ingat siapa asalnya."
+        "Tambahkan nama agar Anda ingat siapa pengirimnya."
       ],
       "Add their email address or leave empty": [
         "Tambahkan alamat email mereka atau biarkan kosong"
@@ -5505,7 +5505,7 @@
         "Alamat email tidak valid"
       ],
       "Give a name to this sender": [
-        "Berikan nama kepada pengirim ini"
+        "Berikan nama untuk pengirim ini"
       ],
       "Name": [
         "Nama"
@@ -5526,7 +5526,7 @@
         "Pengirim transaksi berhasil diperbarui"
       ],
       "Unknown sender": [
-        "Pengirim yang tidak dikenal"
+        "Pengirim tidak dikenal"
       ]
     },
     "unprivatization": {
@@ -5583,7 +5583,7 @@
     },
     "Wallet": {
       "An error occurred whilst syncing your wallet. Please try again.": [
-        "Terjadi kesalahan pada saat menyinkronkan dompet Anda. Silakan coba lagi."
+        "Terjadi kesalahan saat menyinkronkan dompet Anda. Silakan coba lagi."
       ],
       "Close": [
         "Tutup"
@@ -5592,7 +5592,7 @@
         "Lanjutkan"
       ],
       "Could not fetch wallets data": [
-        "Data dompet tidak dapat diperoleh"
+        "Tidak dapat mengambil data dompet"
       ],
       "Syncing new data": [
         "Menyinkronkan data baru"
@@ -5615,7 +5615,7 @@
         "Batalkan"
       ],
       "Create multiple wallet accounts to separate your financial activities for better privacy and organization.": [
-        "Buat beberapa akun dompet untuk memisahkan aktivitas finansial Anda untuk privasi dan pengelolaan yang lebih baik."
+        "Buat beberapa akun dompet untuk memisahkan aktivitas finansial Anda demi privasi dan organisasi yang lebih baik."
       ],
       "Create wallet account": [
         "Buat akun dompet"
@@ -5624,19 +5624,19 @@
         "Indeks akun kustom"
       ],
       "Custom index": [
-        "Indeks kustom"
+        "Indeks khusus"
       ],
       "Error adding account to wallet. Please try again.": [
-        "Terjadi kesalahan menambahkan akun ke dompet. Silakan coba lagi."
+        "Terjadi kesalahan saat menambahkan akun ke dompet. Silakan coba lagi."
       ],
       "If you want to receive Bitcoin via Email with multiple email addresses, then you need to create a wallet account for each email.": [
-        "Jika Anda ingin menerima Bitcoin via Email dengan beberapa alamat email, Anda perlu membuat akun dompet untuk setiap email."
+        "Jika Anda ingin menerima Bitcoin melalui Email dengan beberapa alamat email, maka Anda perlu membuat akun dompet untuk setiap email."
       ],
       "Name": [
         "Nama"
       ],
       "Savings for holiday": [
-        "Tabungan liburan"
+        "Tabungan untuk liburan"
       ],
       "Your account was successfully created": [
         "Akun Anda berhasil dibuat"
@@ -5659,7 +5659,7 @@
         "Akun ini telah dibuat"
       ],
       "We default to Native Segwit, which has the lowest network fees. You can change this to receive bitcoin from other services that only support other types.": [
-        "Secara bawaan, kami menggunakan Native Segwit, yang memiliki biaya jaringan yang paling rendah. Anda dapat mengubah hal ini untuk menerima Bitcoin dari layanan lainnya yang hanya mendukung jenis alamat yang berbeda."
+        "Secara bawaan kami menggunakan Native SegWit, yang memiliki biaya jaringan paling rendah. Anda dapat mengubahnya untuk menerima bitcoin dari layanan lain yang hanya mendukung jenis alamat lainnya."
       ],
       "We default to the next unused index. You can change this to recover or to skip a previous account.": [
         "Secara bawaan, kami menggunakan indeks selanjutnya yang tidak digunakan. Anda dapat mengubah hal ini untuk memulihkan atau melewati akun sebelumnya."
@@ -5670,10 +5670,10 @@
         "Alamat Bitcoin tidak ada. Silakan muat ulang dan coba lagi atau hubungi layanan dukungan"
       ],
       "Missing country. Please refresh and try again or contact support": [
-        "Negara tidak ada. Silakan muat ulang dan coba lagi atau hubungi layanan dukungan"
+        "Negara tidak ada. Silakan muat ulang dan coba lagi atau hubungi dukungan"
       ],
       "Missing quote. Please refresh and try again or contact support": [
-        "Kutipan harga hilang. Silakan muat ulang dan coba lagi atau hubungi layanan dukungan"
+        "Kutipan harga hilang. Silakan segarkan dan coba lagi atau hubungi dukungan"
       ]
     },
     "wallet dashboard": {
@@ -5695,7 +5695,7 @@
         "Harga saat ini"
       ],
       "Receive": [
-        "Penerimaan"
+        "Terima"
       ],
       "Send": [
         "Kirim"
@@ -5703,7 +5703,7 @@
     },
     "Wallet deletion": {
       "Are you sure you want to delete \"${ wallet.Wallet.Name }\"": [
-        "Apakah Anda yakin ingin menghapus \"${ wallet.Wallet.Name }\"?"
+        "Apakah Anda yakin ingin menghapus \"${ wallet.Wallet.Name }\""
       ],
       "Are you sure you want to delete this wallet": [
         "Apakah Anda yakin ingin menghapus dompet ini"
@@ -5717,7 +5717,7 @@
         "Cadangkan data akun ${ BRAND_NAME } Anda"
       ],
       "Discover": [
-        "Jelajahi"
+        "Telusuri"
       ],
       "Secure your wallet": [
         "Amankan dompet Anda"
@@ -5731,7 +5731,7 @@
         "Amankan dompet Anda"
       ],
       "The passphrase is incorrect. Please try again.": [
-        "Frasa sandi tidak benar. Silakan coba lagi."
+        "Frasa sandi salah. Silakan coba lagi."
       ],
       "This wallet needs a passphrase to be used.": [
         "Dompet ini memerlukan frasa sandi untuk dapat digunakan."
@@ -5740,13 +5740,13 @@
         "Tingkatkan"
       ],
       "View change addresses": [
-        "Tampilkan alamat perubah"
+        "Lihat alamat perubahan"
       ],
       "View receive addresses": [
-        "Tampilkan alamat penerima"
+        "Lihat alamat penerimaan"
       ],
       "We are having trouble opening your wallet. Please refresh the page or try again later.": [
-        "Kami mengalami masalah dalam membuka dompet Anda. Silakan muat ulang halaman atau coba lagi nanti."
+        "Kami mengalami kesulitan membuka dompet Anda. Silakan segarkan halaman atau coba lagi nanti."
       ]
     },
     "Wallet import": {
@@ -5761,13 +5761,13 @@
     },
     "Wallet information": {
       "A wallet passphrase is an extra password you create to add security to your cryptocurrency wallet. It works alongside your seed phrase. Store it securely, as losing it can lock you out of your wallet.": [
-        "Frasa sandi dompet merupakan kata sandi tambahan yang Anda buat untuk menambah keamanan pada dompet mata uang kripto Anda. Ini bekerja dengan frasa benih Anda. Simpan dengan aman, karena Anda dapat terkunci dari dompet Anda jika hilang."
+        "Frasa sandi dompet adalah kata sandi tambahan yang Anda buat untuk menambah keamanan pada dompet kripto Anda. Frasa ini bekerja bersama frasa benih Anda. Simpan dengan aman, karena kehilangan frasa ini dapat mengunci Anda dari dompet Anda."
       ],
       "A wallet seed phrase is a sequence of 12 to 24 words generated by your wallet. It acts as a master key, allowing you to recover your funds. Keep it safe and never share it, as it grants access to your funds.": [
-        "Frasa benih dompet merupakan rangkaian 12 atau 24 kata yang dihasilkan oleh dompet Anda. Frasa ini berfungsi sebagai kunci utama yang memungkinkan Anda untuk memulihkan dana Anda. Jaga frasa ini dengan aman dan jangan bagikan frasa ini dengan siapa pun, karena membagikan frasa ini sama halnya dengan memberikan akses ke dana Anda."
+        "Frasa benih dompet adalah rangkaian 12 hingga 24 kata yang dibuat oleh dompet Anda. Frasa ini bertindak sebagai kunci utama, memungkinkan Anda untuk memulihkan dana Anda. Jaga kerahasiaannya dan jangan pernah membagikannya, karena frasa ini memberikan akses ke dana Anda."
       ],
       "What’s a wallet passphrase?": [
-        "Apa itu sebuah frasa sandi dompet?"
+        "Apa itu frasa sandi dompet?"
       ],
       "What’s a wallet seed phrase?": [
         "Apa itu frasa benih dompet?"
@@ -5784,13 +5784,13 @@
         "Alamat email tidak valid"
       ],
       "Email address is required": [
-        "Alamat email diperlukan"
+        "Alamat email wajib diisi"
       ],
       "Invitation sent to ${ email }": [
         "Undangan dikirim ke ${ email }"
       ],
       "Invite your friends and family to ${ WALLET_APP_NAME } so you can all send Bitcoin via Email.": [
-        "Undang teman dan sanak keluarga Anda ke ${ WALLET_APP_NAME } agar Anda semua dapat mengirim Bitcoin via Email."
+        "Undang teman dan keluarga Anda ke ${ WALLET_APP_NAME } agar Anda semua dapat mengirim Bitcoin via Email."
       ],
       "Invites": [
         "Undangan"
@@ -5799,7 +5799,7 @@
         "Tidak sekarang"
       ],
       "Please let them know to check their email and follow the instruction to set up their ${ WALLET_APP_NAME } with Bitcoin via Email.": [
-        "Silakan beri tahu untuk memeriksa emailnya dan mengikuti petunjuk penyiapan ${ WALLET_APP_NAME } dengan Bitcoin via Email."
+        "Silakan beri tahu mereka untuk memeriksa email mereka dan mengikuti instruksi untuk menyiapkan ${ WALLET_APP_NAME } dengan Bitcoin via Email."
       ],
       "Send invite email now": [
         "Kirim email undangan sekarang"
@@ -5811,10 +5811,10 @@
         "Email ini dapat menerima Bitcoin via Email"
       ],
       "Warning: the recipient will not be able to send Bitcoin via Email to this email.": [
-        "Peringatan: penerima tidak akan dapat mengirimkan Bitcoin via Email ke email ini."
+        "Peringatan: penerima tidak akan dapat mengirimkan Bitcoin via Email ke alamat email ini."
       ],
       "You need to select an email to send from": [
-        "Anda perlu memilih email sebagai asal pengirim"
+        "Anda perlu memilih email asal pengirim"
       ],
       "Your email (visible to recipient)": [
         "Email Anda (dapat dilihat oleh penerima)"
@@ -5836,7 +5836,7 @@
         "Frasa sandi dompet saya"
       ],
       "To use this wallet, you need to input the passphrase": [
-        "Untuk menggunakan dompet ini, Anda perlu untuk memasukkan frasa sandi"
+        "Untuk menggunakan dompet ini, Anda perlu memasukkan frasa sandi"
       ],
       "Wallet passphrase": [
         "Frasa sandi dompet"
@@ -5953,30 +5953,30 @@
         "Alamat Bitcoin"
       ],
       "For better privacy, generate a new address for each transaction.": [
-        "Untuk privasi yang lebih baik, buatlah alamat baru untuk masing-masing transaksi."
+        "Untuk privasi yang lebih baik, buatlah alamat baru untuk setiap transaksi."
       ],
       "Generate new address": [
-        "Hasilkan alamat baru"
+        "Buar alamat baru"
       ],
       "Import paper wallet": [
         "Impor dompet kertas"
       ],
       "More options": [
-        "Pilihan lainnya"
+        "Opsi lainnya"
       ],
       "Receive to": [
         "Terima ke"
       ],
       "To prevent a large gap, generating new addresses has been disabled. You can either use this address or a previously generated one": [
-        "Untuk mencegah selisih biaya yang besar, pembuatan alamat baru telah dinonaktifkan. Anda dapat menggunakan alamat ini atau alamat yang sebelumnya telah dihasilkan"
+        "Untuk mencegah loncatan besar dalam urutan alamat, pembuatan alamat baru telah dinonaktifkan."
       ],
       "To prevent a large gap, you should either use this address or a previously generated one": [
-        "Untuk mencegah selisih biaya yang besar, Anda sebaiknya menggunakan alamat ini atau alamat yang sebelumnya telah dihasilkan"
+        "Untuk mencegah kesenjangan yang besar, Anda sebaiknya menggunakan alamat ini atau alamat yang sebelumnya telah dibuat"
       ]
     },
     "Wallet receive": {
       "Address generation in progress": [
-        "Pembuatan alamat dalam proses"
+        "Pembuatan alamat sedang diproses"
       ],
       "Copy Bitcoin address": [
         "Salin alamat Bitcoin"
@@ -5990,13 +5990,13 @@
         "10+ jam"
       ],
       "Add a message": [
-        "Tambah pesan"
+        "Tambahkan pesan"
       ],
       "Add a note": [
-        "Tambah catatan"
+        "Tambahkan catatan"
       ],
       "Add private note to myself": [
-        "Tambah catatan pribadi untuk diri sendiri"
+        "Tambahkan catatan pribadi untuk diri sendiri"
       ],
       "Address is neither a valid bitcoin or email address": [
         "Alamat bukan merupakan alamat Bitcoin atau email yang valid"
@@ -6014,7 +6014,7 @@
         "Tingkatkan prioritas transaksi"
       ],
       "By increasing the network fee, you can prioritize your transaction's speed, helping it get processed and confirmed faster.": [
-        "Dengan meningkatkan biaya jaringan, Anda dapat memprioritaskan kecepatan transaksi Anda, yang membantu transaksi ini untuk dapat diproses dan dikonfirmasi secara lebih cepat."
+        "Dengan meningkatkan biaya jaringan, Anda dapat memprioritaskan kecepatan transaksi Anda, membantu transaksi tersebut diproses dan dikonfirmasi lebih cepat."
       ],
       "Cannot use QRCode scanner. Please check browser compatibility": [
         "Pemindai kode QR tidak dapat digunakan. Silakan periksa kompatibilitas peramban"
@@ -6032,7 +6032,7 @@
         "PSBT tidak dapat dibuat"
       ],
       "Could not speed up transaction. Please sync your wallet and try again": [
-        "Transaksi tidak dapat dipercepat. Silakan sinkronkan dompet Anda dan coba lagi"
+        "Transaksi tidak dapat dipercepat. Harap sinkronkan dompet Anda dan coba lagi"
       ],
       "Current fee": [
         "Biaya saat ini"
@@ -6050,7 +6050,7 @@
         "Prioritas tinggi"
       ],
       "How much are you sending?": [
-        "Seberapa banyak yang ingin Anda kirim?"
+        "Berapa banyak yang Anda kirim?"
       ],
       "Low": [
         "Rendah"
@@ -6059,7 +6059,7 @@
         "Prioritas rendah"
       ],
       "Max recipients per transaction limit reached (${ MAX_RECIPIENTS_PER_TRANSACTIONS })": [
-        "Batas maksimum penerima per transaksi tercapai (${ MAX_RECIPIENTS_PER_TRANSACTIONS })"
+        "Batas maksimum penerima per transaksi terlampaui (${ MAX_RECIPIENTS_PER_TRANSACTIONS })"
       ],
       "Median priority": [
         "Prioritas menengah"
@@ -6077,13 +6077,13 @@
         "Normal"
       ],
       "One of recipient's amount is below minimum value": [
-        "Salah satu nominal penerima berada di bawah nilai minimum"
+        "Salah satu jumlah penerima di bawah nilai minimum"
       ],
       "Please grant camera permission to use QRCode scanner": [
-        "Silakan berikan izin kepada kamera untuk menggunakan pemindai kode QR"
+        "Silakan berikan izin kamera untuk menggunakan pemindai Kode QR"
       ],
       "Please setup an email address in your account settings in order to send messages": [
-        "Silakan siapkan alamat email dalam pengaturan akun Anda untuk mengirim pesan"
+        "Silakan siapkan alamat email di pengaturan akun Anda agar dapat mengirim pesan"
       ],
       "Recent recipients": [
         "Penerima terkini"
@@ -6107,10 +6107,10 @@
         "Kirim semua"
       ],
       "The transaction could not be sent. Please try again later": [
-        "Transaksi ini tidak dapat dikirim. Silakan coba lagi nanti"
+        "Transaksi tidak dapat dikirim. Silakan coba lagi nanti"
       ],
       "Transaction was successfully boosted": [
-        "Prioritas transaksi berhasil ditingkatkan"
+        "Transaksi berhasil ditingkatkan prioritasnya"
       ],
       "Transaction was successfully sent": [
         "Transaksi berhasil dikirim"
@@ -6122,13 +6122,13 @@
         "Selagi Anda menunggu, undang keluarga dan teman Anda ke ${ WALLET_APP_NAME } agar Anda semua dapat mengirimkan Bitcoin via Email."
       ],
       "Who are you sending Bitcoin to?": [
-        "Kepada siapa Anda ingin mengirim Bitcoin?"
+        "Kepada siapa Anda mengirim Bitcoin?"
       ],
       "You are sending": [
         "Anda mengirimkan"
       ],
       "You do not have enough BTC in this account to fund the transaction and the required network fee of ${ feesToReserveElement }.": [
-        "Anda tidak memiliki cukup BTC pada akun ini untuk mendanai transaksi dan biaya jaringan yang diperlukan senilai ${ feesToReserveElement }."
+        "Anda tidak memiliki cukup BTC di akun ini untuk mendanai transaksi dan biaya jaringan yang diperlukan sebesar ${ feesToReserveElement }."
       ],
       "You do not have enough funds. Please choose a lower network fee and try again": [
         "Anda tidak memiliki cukup dana. Silakan pilih biaya jaringan yang lebih rendah dan coba lagi"
@@ -6137,7 +6137,7 @@
         "Bitcoin Anda sedang dalam perjalanan!"
       ],
       "Your transaction has been broadcasted to the Bitcoin network. It may take around one hour for the network to confirm the transaction.": [
-        "Transaksi Anda telah disiarkan ke jaringan Bitcoin. Transaksi ini dapat memerlukan waktu sekitar satu jam untuk dikonfirmasi oleh jaringan."
+        "Transaksi Anda telah disiarkan ke jaringan Bitcoin. Mungkin perlu waktu sekitar satu jam agar jaringan mengonfirmasi transaksi tersebut."
       ],
       "~${ minutes } minute": [
         "~${ minutes } menit"
@@ -6151,18 +6151,18 @@
         "Tidak dapat menandatangani transaksi"
       ],
       "You must send at least ${ constrainedMinElement } to each recipient": [
-        "Anda harus mengirim setidaknya ${ constrainedMinElement } ke masing-masing penerima"
+        "Anda harus mengirim setidaknya ${ constrainedMinElement } ke setiap penerima"
       ]
     },
     "Wallet Settings": {
       "Account name changed": [
-        "Nama akun berubah"
+        "Nama akun diubah"
       ],
       "Account was deleted": [
         "Akun telah dihapus"
       ],
       "An error occurred while modifying with your Bitcoin via Email address. Please check details and try again.": [
-        "Terjadi kesalahan saat mengubah alamat Bitcoin via Email Anda. Silakan periksa detail dan coba lagi."
+        "Terjadi kesalahan saat memodifikasi alamat Bitcoin via Email Anda. Silakan periksa detail dan coba lagi."
       ],
       "Bitcoin via Email": [
         "Bitcoin via Email"
@@ -6174,7 +6174,7 @@
         "Tidak dapat mengisi pool setelah penambahan alamat email"
       ],
       "Could not fill the pool after email address replacement": [
-        "Tidak dapat memenuhi tampungan setelah penggantian alamat email"
+        "Tidak dapat mengisi kumpulan setelah penggantian alamat email"
       ],
       "Create new email address": [
         "Buat alamat email baru"
@@ -6186,19 +6186,19 @@
         "Alamat email tidak dapat dihapus. Silakan coba lagi."
       ],
       "Email address has been added": [
-        "Alamat email sudah digunakan"
+        "Alamat email telah ditambahkan"
       ],
       "Email address has been removed": [
         "Alamat email sudah dihapus"
       ],
       "Email address has been replaced": [
-        "Alamat email sudah diganti"
+        "Alamat email telah diganti"
       ],
       "Fiat currency could not be updated. Please try again.": [
         "Mata uang fiat tidak dapat diperbarui. Silakan coba lagi."
       ],
       "Link an email to this wallet account so other ${ WALLET_APP_NAME } users can easily send bitcoin to your email.": [
-        "Tautkan email ke akun dompet ini supaya pengguna ${ WALLET_APP_NAME } lainnya dapat mengirimkan Bitcoin ke email Anda dengan mudah."
+        "Tautkan email ke akun dompet ini agar pengguna ${ WALLET_APP_NAME } lain dapat dengan mudah mengirimkan Bitcoin ke email Anda."
       ],
       "New fiat currency applied": [
         "Mata uang fiat baru diterapkan"
@@ -6210,7 +6210,7 @@
         "Unit bitcoin pilihan telah diubah"
       ],
       "Select an available email or create a new email address.": [
-        "Pilih alamat email yang tersedia atau buat alamat email baru."
+        "Pilih email yang tersedia atau buat alamat email baru."
       ],
       "Select this address": [
         "Pilih alamat ini"
@@ -6250,7 +6250,7 @@
         "Tambahkan frasa sandi (opsional)"
       ],
       "Bitcoin via Email": [
-        "Bitcoin via e-mail"
+        "Bitcoin via Email"
       ],
       "Choose a name and default currency.": [
         "Pilih nama dan mata uang bawaan."
@@ -6265,7 +6265,7 @@
         "Buat dompet baru"
       ],
       "Deleting this wallet will remove all its data from ${ BRAND_NAME }'s servers. You can recover the wallet at a later stage using the seed phrase.": [
-        "Dengan menghapus dompet ini, seluruh data yang terhubung dengan dompet juga akan dihapus dari server ${ BRAND_NAME }. Anda akan dapat memulihkan dompet ini di kemudian hari apabila Anda memiliki frasa seed dompet."
+        "Menghapus dompet ini akan menghapus semua datanya dari server ${ BRAND_NAME }. Anda dapat memulihkan dompet di kemudian hari menggunakan frasa benih."
       ],
       "Deleting this wallet will remove all its data from ${ BRAND_NAME }'s servers. You can recover the wallet by reactivating the keys used during wallet creation in your account.": [
         "Menghapus dompet ini akan menghapus semua datanya dari server ${ BRAND_NAME }. Anda dapat memulihkan dompet dengan mengaktifkan kembali kunci yang digunakan selama pembuatan dompet di akun Anda."
@@ -6274,10 +6274,10 @@
         "Selesai"
       ],
       "Email address could not be linked to wallet account. Please try again.": [
-        "Alamat email tidak dapat ditautkan dengan akun dompet. Silakan coba lagi."
+        "Alamat email tidak dapat ditautkan ke akun dompet. Silakan coba lagi."
       ],
       "Error creating your wallet account. Please try again.": [
-        "Terjadi kesalahan membuat akun dompet Anda. Silakan coba lagi."
+        "Terjadi kesalahan saat membuat akun dompet Anda. Silakan coba lagi."
       ],
       "Give a name to this wallet": [
         "Berikan nama untuk dompet ini"
@@ -6292,7 +6292,7 @@
         "Undang teman"
       ],
       "Learn more": [
-        "Lebih lanjut"
+        "Pelajari lebih lanjut"
       ],
       "My wallet had a passphrase": [
         "Dompet saya memiliki frasa sandi"
@@ -6301,7 +6301,7 @@
         "Nama"
       ],
       "Never give them to anyone else. ${ BRAND_NAME } will never ask you for them. Write them down carefully and hide it in a safe place.": [
-        "Jangan pernah bagikan kode ini kepada siapa pun. ${ BRAND_NAME } tidak akan pernah meminta Anda untuk membagikan kode ini. Catat kode ini baik-baik dan sembunyikan kode ini di tempat yang aman."
+        "Jangan pernah memberikannya kepada orang lain. ${ BRAND_NAME } tidak akan pernah memintanya dari Anda. Tulis dengan hati-hati dan sembunyikan di tempat yang aman."
       ],
       "Not now": [
         "Tidak sekarang"
@@ -6310,7 +6310,7 @@
         "Frasa sandi"
       ],
       "Pick a default currency so we can display the value of your Bitcoin transactions using the latest market data at transaction time.": [
-        "Pilih mata uang bawaan supaya kami dapat menampilkan nilai transaksi Bitcoin Anda menggunakan data pasaran pada waktu transaksi."
+        "Pilih mata uang bawaan agar kami dapat menampilkan nilai transaksi Bitcoin Anda menggunakan data pasar pada saat transaksi."
       ],
       "Please transfer your bitcoins to another wallet before deleting. Deleting this wallet will remove all its data from ${ BRAND_NAME }'s servers. You can recover this wallet at a later stage using the seed phrase.": [
         "Harap transfer bitcoin Anda ke dompet lain sebelum menghapus. Menghapus dompet ini akan menghapus semua datanya dari server ${ BRAND_NAME }. Anda dapat memulihkan dompet ini di kemudian hari menggunakan frasa benih."
@@ -6319,22 +6319,22 @@
         "Akun utama"
       ],
       "Seed phrase (12 to 24 words, separated by space)": [
-        "Frasa benih (12 - 24 kata, terpisah oleh spasi)"
+        "Frasa benih (12 hingga 24 kata, dipisahkan oleh spasi)"
       ],
       "These 12 words should only be used to recover the assets of this wallet as a last resort, such as if you lose access to your ${ BRAND_NAME } account.": [
-        "12 kata ini seharusnya hanya digunakan untuk memulihkan aset dompet ini sebagai upaya terakhir, seperti jika Anda kehilangan akses ke akun ${ BRAND_NAME }."
+        "Kata-kata 12 ini seharusnya hanya digunakan untuk memulihkan aset dompet ini sebagai upaya terakhir, seperti jika Anda kehilangan akses ke akun ${ BRAND_NAME }."
       ],
       "This wallet is not decryptable anymore. To get it decryptable again, you need to recover the keys used during its creation in your account. Else you can also remove it to free one wallet space.": [
-        "Dompet ini tidak dapat didekripsikan lagi. Untuk mendekripsikan ulang, Anda perlu memulihkan kunci yang digunakan saat pembuatan dalam akun Anda. Selain itu Anda dapat menghapusnya untuk membebaskan satu ruang dompet."
+        "Dompet ini tidak dapat didekripsikan lagi. Untuk membuatnya dapat didekripsikan kembali, Anda perlu memulihkan kunci yang digunakan selama pembuatannya di akun Anda. Atau Anda dapat menghapusnya untuk membebaskan satu ruang dompet."
       ],
       "This wallet seems to still have assets.": [
-        "Dompet ini sepertinya masih mengandung aset."
+        "Dompet ini sepertinya masih memiliki aset."
       ],
       "Transfer your paper wallet funds to your account. Paste your private key or scan your QR code.": [
-        "Pindahkan dana dari dompet kertas Anda ke akun Anda. Salin kunci privat Anda pada kolom di bawah ini atau salin kode QR Anda."
+        "Transfer dana dompet kertas Anda ke akun Anda. Tempel kunci pribadi Anda atau pindai kode QR Anda."
       ],
       "View wallet seed phrase": [
-        "Lihat frasa seed dompet"
+        "Lihat frasa benih dompet"
       ],
       "Wallet could not be created. Please try again.": [
         "Dompet tidak dapat dibuat. Silakan coba lagi."
@@ -6343,34 +6343,34 @@
         "Frasa benih dompet"
       ],
       "Wallet seed phrase checksum is invalid. We only accept BIP39 seed phrases and do not support Electrum ones.": [
-        "Checksum frasa benih dompet tidak valid. Kami hanya menerima frasa benih BIP39 dan tidak mendukung frasa benih Electrum."
+        "Checksum frasa benih dompet tidak valid. Kami hanya menerima frasa benih BIP39 dan tidak mendukung frasa Electrum."
       ],
       "Wallet seed phrase contains an unknown word: ${ word }. We only support the BIP39 English word list.": [
-        "Frasa benih dompet mengandung kata yang tidak dikenal: ${ word }. Kami hanya mendukung kata yang terliput dalam daftar kata BIP39 English."
+        "Frasa benih dompet berisi kata yang tidak dikenal: ${ word }. Kami hanya mendukung daftar kata BIP39 Bahasa Inggris."
       ],
       "Wallet seed phrase encode the private key that controls your digital assets.": [
-        "Frasa benih dompet mengode kunci pribadi yang mengendalikan aset digital Anda."
+        "Frasa benih dompet mengodekan kunci pribadi yang mengontrol aset digital Anda."
       ],
       "Wallet seed phrase entropy is invalid. It should be between 128 and 256 bits in length.": [
-        "Entropi frasa benih dompet tidak valid. Panjang frasa ini harus berada di antara 128 - 256 bit."
+        "Entropi frasa benih dompet tidak valid. Harus antara 128 hingga 256 bit."
       ],
       "Wallet seed phrase is incorrect. Please check it and try again.": [
-        "Frasa benih dompet salah. Silakan periksa frasa ini dan coba lagi."
+        "Frasa benih dompet salah. Silakan periksa dan coba lagi."
       ],
       "Wallet seed phrase language is not supported.": [
         "Bahasa frasa sandi dompet tidak didukung."
       ],
       "Wallet seed phrase length is invalid. It should be between 12 and 24 words.": [
-        "Panjang frasa benih dompet tidak valid. Frasa ini harus mengandung antara 12 - 24 kata."
+        "Panjang frasa benih dompet tidak valid. Seharusnya antara 12 hingga 24 kata."
       ],
       "Wallet setup": [
-        "Penyiapan dompet"
+        "Pengaturan dompet"
       ],
       "What's a wallet passphrase?": [
         "Apa itu frasa sandi dompet?"
       ],
       "What's a wallet seed phrase?": [
-        "Apa itu frasa seed dompet?"
+        "Apa itu frasa benih dompet?"
       ],
       "You can use the seed phrase to import your wallet on any wallet app.": [
         "Anda dapat menggunakan frasa benih untuk mengimpor dompet Anda di aplikasi dompet apa pun."
@@ -6379,18 +6379,18 @@
         "Kunci Anda, koin Anda."
       ],
       "Your private key": [
-        "Kunci privat Anda"
+        "Kunci pribadi Anda"
       ]
     },
     "Wallet Sidebar": {
       "Contact Support": [
-        "Hubungi Layanan Dukungan"
+        "Hubungi Dukungan"
       ],
       "Create a new wallet": [
         "Buat dompet baru"
       ],
       "Discover": [
-        "Jelajahi"
+        "Telusuri"
       ],
       "Expand user settings": [
         "Buka pengaturan pengguna"
@@ -6405,10 +6405,10 @@
         "Keamanan"
       ],
       "Sign out": [
-        "Keluar dari akun"
+        "Keluar"
       ],
       "Upgrade": [
-        "Tingkatkan Akun"
+        "Tingkatkan"
       ],
       "User settings": [
         "Pengaturan pengguna"
@@ -6419,23 +6419,23 @@
     },
     "Wallet sidebar": {
       "Add account": [
-        "Tambah akun"
+        "Tambahkan akun"
       ]
     },
     "Wallet Terms and Conditions": {
       "This is a self-custodial Bitcoin wallet, meaning any BTC you buy or receive will be fully controlled by you. Not even ${ BRAND_NAME } can seize your assets.": [
-        "Dompet ini merupakan dompet Bitcoin mandiri, yang berarti bahwa seluruh BTC yang Anda beli atau terima akan sepenuhnya dikendalikan oleh Anda. Bahkan ${ BRAND_NAME } pun tidak dapat menyita aset Anda."
+        "Ini adalah dompet Bitcoin swakelola, yang berarti BTC apa pun yang Anda beli atau terima akan sepenuhnya dikendalikan oleh Anda. Bahkan ${ BRAND_NAME } tidak dapat menyita aset Anda."
       ],
       "To avoid losing assets due to forgetting your password or other access issues, back up your ${ BRAND_NAME } recovery phrase and wallet seed phrase.": [
-        "Untuk menghindari kehilangan aset karena melupakan kata sandi Anda atau masalah akses lainnya, cadangkan frasa pemulihan ${ BRAND_NAME } dan frasa benih dompet."
+        "Untuk menghindari kehilangan aset karena lupa kata sandi Anda atau masalah akses lainnya, cadangkan frasa pemulihan ${ BRAND_NAME } dan frasa benih dompet Anda."
       ],
       "We have created two BTC accounts for you. A primary account, and a second account for receiving Bitcoin via Email (at ${ emailEl }) from other ${ WALLET_APP_NAME } users.": [
-        "Kami telah membuat dua akun BTC untuk Anda. Akun utama, dan akun kedua untuk menerima Bitcoin melalui email (di ${ emailEl }) dari pengguna ${ WALLET_APP_NAME } lainnya."
+        "Kami telah membuat dua akun BTC untuk Anda. Akun utama, dan akun kedua untuk menerima Bitcoin via Email (di ${ emailEl }) dari pengguna ${ WALLET_APP_NAME } lainnya."
       ]
     },
     "Wallet terms and conditions": {
       "Error with Terms and Conditions acceptance. Please try again.": [
-        "Terjadi kesalahan dengan penyetujuan syarat dan ketentuan. Silakan coba lagi."
+        "Terjadi kesalahan saat menerima Syarat dan Ketentuan. Silakan coba lagi."
       ],
       "Terms and conditions were accepted": [
         "Syarat dan ketentuan telah disetujui"
@@ -6446,16 +6446,16 @@
         "${ address } (saya)"
       ],
       "+ Add": [
-        "+ Tambah"
+        "+ Tambahkan"
       ],
       "Add bitcoins to your wallet": [
-        "Tambahkan Bitcoin ke dompet Anda"
+        "Tambahkan bitcoin ke dompet Anda"
       ],
       "Add note": [
-        "Tambah catatan"
+        "Tambahkan catatan"
       ],
       "Amount": [
-        "Nominal"
+        "Jumlah"
       ],
       "Anonymous sender": [
         "Pengirim anonim"
@@ -6524,10 +6524,10 @@
         "Kepada: ${ senderOrRecipientName }"
       ],
       "Total (Amount + fee)": [
-        "Jumlah (Nominal + biaya transaksi)"
+        "Total (Nominal + biaya)"
       ],
       "Total (sent amount + fee)": [
-        "Total (nominal yang dikirimkan + biaya transaksi)"
+        "Total (jumlah yang dikirimkan + biaya)"
       ],
       "Transaction note": [
         "Catatan transaksi"
@@ -6539,7 +6539,7 @@
         "Lihat lebih banyak"
       ],
       "We are currently experiencing difficulties in calculating network fees. Please try again later. If the issue persists, contact our support team for assistance.": [
-        "Kami sedang mengalami masalah dalam menghitung biaya jaringan. Silakan coba lagi nanti. Apabila masalah ini terus berlanjut, hubungi tim layanan dukungan kami untuk memperoleh bantuan."
+        "Kami sedang mengalami kesulitan dalam menghitung biaya jaringan. Silakan coba lagi nanti. Jika masalah berlanjut, hubungi tim dukungan kami untuk mendapatkan bantuan."
       ],
       "You received": [
         "Anda menerima"
@@ -6550,7 +6550,7 @@
     },
     "Wallet Transaction": {
       "Could not update transaction label": [
-        "Label transaksi tidak dapat diperbarui"
+        "Tidak dapat memperbarui label transaksi"
       ],
       "Transaction label successfully updated": [
         "Label transaksi berhasil diperbarui"
@@ -6580,12 +6580,12 @@
         "Sinkronkan"
       ],
       "Syncing in progress. Please wait": [
-        "Sinkronsisasi sedang berlangsung. Silakan tunggu"
+        "Sinkronisasi sedang berlangsung. Mohon tunggu"
       ]
     },
     "Wallet Upgrade": {
       "By continuing, you agree to our ${ termsAndConditionsLink }": [
-        "Dengan melanjutkan, Anda menyatakan diri setuju terhadap ${ termsAndConditionsLink } kami"
+        "Dengan melanjutkan, Anda menyetujui ${ termsAndConditionsLink } kami"
       ],
       "Upgrade to support financial freedom": [
         "Tingkatkan untuk mendukung kebebasan finansial"
@@ -6599,31 +6599,31 @@
     },
     "Wallet upgrade": {
       "Account limit reached": [
-        "Batas jumlah akun tercapai"
+        "Batas akun tercapai"
       ],
       "Contact your administrator to upgrade": [
         "Hubungi administrator Anda untuk meningkatkan"
       ],
       "Expand your address limit": [
-        "Tingkatkan batas jumlah alamat email Anda"
+        "Perluas batas alamat Anda"
       ],
       "Wallet limit reached": [
         "Batas jumlah dompet tercapai"
       ],
       "You have reached the maximum number of accounts supported by your current plan.": [
-        "Anda telah mencapai batas jumlah akun maksimal yang didukung oleh paket Anda saat ini."
+        "Anda telah mencapai jumlah akun maksimum yang didukung oleh paket Anda saat ini."
       ],
       "You have reached the maximum number of accounts supported by your current plan. Please upgrade to create more. Your support will also be essential for our fight to protect financial privacy and freedom.": [
-        "Anda telah mencapai batas jumlah akun maksimal yang didukung oleh paket Anda saat ini. Silakan tingkatkan paket Anda untuk membuat lebih banyak akun. Dukungan Anda juga akan sangat penting bagi perjuangan kami untuk melindungi privasi dan kebebasan finansial."
+        "Anda telah mencapai jumlah maksimum akun yang didukung oleh paket Anda saat ini. Silakan tingkatkan untuk membuat lebih banyak. Dukungan Anda juga sangat penting bagi perjuangan kami melindungi privasi finansial dan kebebasan."
       ],
       "You have reached the maximum number of email addresses supported by your current plan. Please upgrade to create more. Your support will also be essential for our fight to protect financial privacy and freedom.": [
-        "Anda telah mencapai batas jumlah alamat email yang didukung oleh paket Anda saat ini. Silakan tingkatkan paket Anda untuk membuat lebih banyak alamat. Dukungan Anda juga akan sangat penting bagi perjuangan kami untuk melindungi privasi dan kebebasan finansial."
+        "Anda telah mencapai jumlah maksimum alamat email yang didukung oleh paket Anda saat ini. Silakan tingkatkan untuk membuat lebih banyak. Dukungan Anda juga sangat penting bagi perjuangan kami melindungi privasi finansial dan kebebasan."
       ],
       "You have reached the maximum number of wallets supported by your current plan.": [
-        "Anda telah mencapai batas jumlah dompet maksimal yang didukung oleh paket Anda saat ini."
+        "Anda telah mencapai jumlah maksimum dompet yang didukung oleh paket Anda saat ini."
       ],
       "You have reached the maximum number of wallets supported by your current plan. Please upgrade to create more. Your support will also be essential for our fight to protect financial privacy and freedom.": [
-        "Anda telah mencapai batas jumlah dompet maksimum yang didukung oleh paket Anda saat ini. Silakan tingkatkan paket Anda untuk membuat lebih banyak dompet. Dukungan Anda juga akan sangat penting bagi perjuangan kami untuk melindungi privasi dan kebebasan finansial."
+        "Anda telah mencapai jumlah maksimum dompet yang didukung oleh paket Anda saat ini. Silakan tingkatkan untuk membuat lebih banyak. Dukungan Anda juga sangat penting bagi perjuangan kami melindungi privasi finansial dan kebebasan"
       ]
     },
     "Wallet Welcome": {
@@ -6666,7 +6666,7 @@
         "Akun ${ indexStr }"
       ],
       "My imported wallet${ indexStr }": [
-        "Dompet terimpor saya${ indexStr }"
+        "Dompet terimpor saya ${ indexStr }"
       ],
       "My wallet${ indexStr }": [
         "Dompet saya${ indexStr }"

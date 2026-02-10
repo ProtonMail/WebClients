@@ -500,8 +500,26 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "试用期于 ${ formattedDate1 } 结束后，将转为每 ${ renewCycle } 个月自动续费的付费订阅。若在 ${ formattedDate2 } 之前取消，则不会被收费。"
+      ],
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "试用期于 ${ formattedDate1 } 结束后，将转为每月自动续费的付费订阅。若在 ${ formattedDate2 } 之前取消，则不会被收费。"
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "您在试用期内最多可拥有 ${ TRIAL_MAX_DEDICATED_IPS } 个专用服务器。"
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "您在试用期内最多可拥有 ${ TRIAL_MAX_LUMO_SEATS } 个 ${ LUMO_SHORT_APP_NAME } 席位"
+      ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "您在试用期内可以使用到达${ TRIAL_MAX_SCRIBE_SEATS }个Scribe席位。"
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "您在试用期内最多可拥有 ${ TRIAL_MAX_USERS } 位用户"
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "您在试用期内无法添加自定义域名"
       ],
       "You have reached the trial limit.": [
         "您已达到试用上限。"
@@ -799,6 +817,9 @@
       "Application problem": [
         "应用程序问题"
       ],
+      "Authenticator problem": [
+        "验证器问题"
+      ],
       "Bridge problem": [
         "Bridge 问题"
       ],
@@ -939,6 +960,9 @@
       "${ maxSpaceTB } storage": [
         "${ maxSpaceTB } 存储空间"
       ],
+      "${ numberOfUsers } user": [
+        "最多 ${ numberOfUsers } 位用户"
+      ],
       "${ planMaxSpace } email storage": [
         "${ planMaxSpace } 电子邮件存储空间"
       ],
@@ -1002,8 +1026,70 @@
       ]
     },
     "collider_2025: feature": {
+      "Access to advanced AI models": [
+        "访问高级 AI 模型"
+      ],
+      "Basic chat history": [
+        "基础聊天记录"
+      ],
+      "Built and based in Europe": [
+        "在欧洲构建并运营"
+      ],
+      "Compliance with data protection regulations": [
+        "符合数据保护法规要求"
+      ],
+      "Data never used for AI training": [
+        "数据绝不用于 AI 训练"
+      ],
+      "Full chat history with search": [
+        "完整聊天记录（支持搜索）"
+      ],
+      "Large file upload support": [
+        "支持大文件上传"
+      ],
+      "Limited daily chats": [
+        "每日聊天次数有限"
+      ],
+      "Limited favorites": [
+        "收藏数量有限"
+      ],
+      "Strict no-logs policy": [
+        "严格的无日志政策"
+      ],
       "Unlimited daily chats": [
         "无限聊天次数"
+      ],
+      "Unlimited favorites for quick access": [
+        "无限收藏，快速访问"
+      ],
+      "Upload and query multiple large files": [
+        "上传并查询多个大型文件"
+      ],
+      "Upload and query small files": [
+        "上传并查询小型文件"
+      ],
+      "Web search access": [
+        "网页搜索访问权限"
+      ],
+      "Zero-access encryption": [
+        "零访问加密"
+      ]
+    },
+    "collider_2025: Info": {
+      "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
+        "${ LUMO_APP_NAME } 是一款隐私优先的 AI，帮助您提高效率，同时保障数据安全。解锁其全部潜能，并享受新功能的早期访问权限。"
+      ],
+      "Add ${ LUMO_APP_NAME }": [
+        "添加 ${ LUMO_APP_NAME }"
+      ],
+      "Advanced account and network security in one plan": [
+        "高级账户与网络安全，合而为一"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "高速聊天和高级 AI 功能"
+      ],
+      "Private video calls for the conversations that matter.": [
+        "私密视频通话，用于重要的对话。"
       ]
     },
     "color": {
@@ -1899,6 +1985,11 @@
         "适用于 ${ MAIL_APP_NAME }"
       ]
     },
+    "customer_support.feature.meet": {
+      "For ${ MEET_APP_NAME }": [
+        "适用于 ${ MEET_APP_NAME }"
+      ]
+    },
     "customer_support.feature.pass": {
       "For ${ PASS_APP_NAME }": [
         "适用于 ${ PASS_APP_NAME }"
@@ -2103,6 +2194,11 @@
         "文本字段为选填字段。您在此表单中提供的信息只会更改您选择的发票，而不会更改您未来的发票详细信息。"
       ]
     },
+    "emergency_access": {
+      "Trusted contact": [
+        "已信任联系人"
+      ]
+    },
     "Error": {
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name } 是您的用户名。要创建 ${ emailAddress }，请进入设置 > 身份和地址 > 短域 (pm.me)"
@@ -2250,6 +2346,9 @@
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "该字段至少需要 ${ minimumLength } 个字符。"
+      ],
+      "This offer is not available in your country": [
+        "此优惠在您所在的国家/地区不可用"
       ],
       "Try using only letters, numerals, and _.-": [
         "请使用英文字母、阿拉伯数字或 _ . - 符号"
@@ -2671,11 +2770,17 @@
       "Enter your own password (as organization admin).": [
         "请输入您自己的密码（作为组织管理员）。"
       ],
+      "Enter your own password (as trusted contact).": [
+        "输入您自己的密码（作为可信联系人）"
+      ],
       "Everything in ${ planOrAppName }": [
         "一切尽在 ${ planOrAppName }"
       ],
       "Expired": [
         "已过期"
+      ],
+      "Google Pay mark": [
+        "Google Pay 标记"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "若您创建账户存在困难，请提交注册申请，我们将在一个工作日内回复。"
@@ -3012,6 +3117,9 @@
       "${ n } month": [
         "${ n } 个月"
       ],
+      "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
+        "通过终端安全访问 ${ PASS_APP_NAME }，是脚本、自动化和开发工作流程的理想选择"
+      ],
       "Account holder": [
         "账户持有人"
       ],
@@ -3065,6 +3173,9 @@
       ],
       "Colors": [
         "颜色"
+      ],
+      "Command line interface (CLI)": [
+        "命令行界面 (CLI)"
       ],
       "Company": [
         "公司"
@@ -3213,6 +3324,9 @@
       "Your password (admin)": [
         "您的密码（管理员）"
       ],
+      "Your password (trusted contact)": [
+        "您的密码（可信联系人）"
+      ],
       "ZIP code": [
         "邮政编码"
       ]
@@ -3352,6 +3466,56 @@
       ],
       "for ${ price }": [
         "总计 ${ price }"
+      ]
+    },
+    "meet_2025: Feature": {
+      "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
+        "${ MEET_APP_NAME }：用于重要对话的保密视频会议"
+      ],
+      "${ n } active meeting at a time": [
+        "同时进行 ${ n } 场活跃会议"
+      ],
+      "${ n } participant": [
+        "${ n } 位参与者"
+      ],
+      "24 hours per meeting": [
+        "每次会议最长 24 小时"
+      ],
+      "60 minutes per meeting": [
+        "每次会议最长 60 分钟"
+      ],
+      "Appointment scheduling": [
+        "预约安排"
+      ],
+      "Booking pages": [
+        "预约页面"
+      ],
+      "Browser, mobile, and desktop apps": [
+        "浏览器、移动端和桌面端应用"
+      ],
+      "Built-in chat": [
+        "内置聊天"
+      ],
+      "End-to-end encrypted screen sharing and ephemeral in-call chat": [
+        "端到端加密的屏幕共享和临时会议内聊天"
+      ],
+      "Meeting recording": [
+        "会议录制"
+      ],
+      "One active meeting at a time": [
+        "同时只能进行一场活跃会议"
+      ],
+      "Screen-sharing": [
+        "屏幕共享"
+      ],
+      "Unlimited meetings per day": [
+        "每日不限会议次数"
+      ],
+      "Up to ${ n } meeting per day": [
+        "每天最多 ${ n } 场会议"
+      ],
+      "Up to ${ n } participant": [
+        "最多 ${ n } 位参与者"
       ]
     },
     "New Label form": {
@@ -3591,6 +3755,9 @@
       "End-to-end encryption": [
         "端到端加密"
       ],
+      "Existing ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } benefits": [
+        "现有的 ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } 权益"
+      ],
       "Fast P2P/BitTorrent downloads": [
         "通过 P2P/BitTorrent 高速下载"
       ],
@@ -3648,6 +3815,9 @@
       "Password-protected Emails": [
         "邮件密码保护"
       ],
+      "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
+        "电话支持 (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ 用户)"
+      ],
       "Priority email support": [
         "优先享受邮件客服"
       ],
@@ -3686,6 +3856,9 @@
       ],
       "Share files with no size limit": [
         "共享文件无大小限制"
+      ],
+      "Short domain (@pm.me)": [
+        "短域名 (@pm.me)"
       ],
       "Sign in as user": [
         "代替用户登录"
@@ -4024,6 +4197,9 @@
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "在邮件落款中加入图标、照片、链接、社交网络标识等个性化元素"
       ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } or more users": [
+        "对于拥有 ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } 位或更多用户的客户，${ BRAND_NAME } 客户支持团队可在欧洲工作时间提供电话支持。"
+      ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "防止 ${ BRAND_NAME } 以及任何第三方窥探您的邮件。只有通信双方能够得知邮件内容。"
       ],
@@ -4285,6 +4461,9 @@
       "Credit/debit card": [
         "信用卡/借记卡"
       ],
+      "Google Pay": [
+        "Google Pay"
+      ],
       "New credit/debit card": [
         "添加信用卡/借记卡"
       ]
@@ -4298,6 +4477,9 @@
       ]
     },
     "Payments": {
+      "Amount due after trial on ${ formattedDate }": [
+        "试用期结束后 ${ formattedDate } 的应付金额"
+      ],
       "Billing Country": [
         "计费国家/地区"
       ],
@@ -4313,17 +4495,32 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "在此期间，您将无法修改或取消订阅。请待付款完成后再尝试进行任何操作。感谢您的耐心等待。"
       ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "不含 ${ taxRate }% ${ taxName }：${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "不含 ${ taxRate }% 税费：${ taxAmount }"
+      ],
       "Got it": [
         "了解"
       ],
       "I'm purchasing as a business": [
         "以企业身份购买"
       ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "包含 ${ taxRate }% ${ taxName }：${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "包含 ${ taxRate }% 税费：${ taxAmount }"
+      ],
       "MM/YY": [
         "月/年"
       ],
       "More plans are available in other currencies": [
         "更多计划以及其他货币提供"
+      ],
+      "Payment method required for the subscription to be activated after the trial ends.": [
+        "您需要提供付款方式，以便试用期结束后激活订阅。"
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "请先重新激活您的订阅以减少附加功能。"
@@ -4334,14 +4531,26 @@
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "续费价格是${ renewPriceStr }，可随时取消。"
       ],
+      "Taxes": [
+        "税费"
+      ],
       "terms and conditions": [
         "服务条款"
+      ],
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "此折扣适用于 ${ renewalsWithCoupon } 次续订。"
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "此特惠价格有效期 ${ couponRedemptions } 个月，之后将自动以 ${ renewPriceStr } 每月续订。您可以随时取消。"
       ],
       "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
         "特惠价格仅限前 ${ subscriptionLength } 个月有效。"
       ],
       "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "特别优惠价仅在首月有效。之后将每月自动以${ renewPriceStr }的价格续订。您可以随时取消。"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "${ priceWithDiscount } 的特惠价格有效期 ${ couponRedemptions } 个月，之后将自动以 ${ renewPriceStr } 每月续订。您可以随时取消。"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "Proton 用户的专属优惠：${ priceWithDiscount }特惠价格仅限订阅前${ subscriptionLength }个月有效。"
@@ -4352,8 +4561,14 @@
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "您的订阅将在到期后自动以${ renewPriceStr }的价格续订\n${ renewalLength }个月。您可随时取消订阅。"
       ],
+      "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
+        "此操作将扩展您现有的订阅。您只需支付新增附加项的费用以及当前计费周期剩余时间的费用。您的订阅续订日期将不会改变。"
+      ],
       "This number will be shown on all future invoices": [
         "此编号将显示在所有未来的发票上。"
+      ],
+      "This offer is not available with your current plan.": [
+        "此优惠不适用于您当前的套餐"
       ],
       "This payment method will become your new default for all future renewals.": [
         "此付款方式将成为您未来所有续订的新默认方式。"
@@ -4361,11 +4576,32 @@
       "Timeout exceeded": [
         "超时"
       ],
+      "VAT": [
+        "增值税"
+      ],
+      "VAT number": [
+        "增值税号"
+      ],
+      "You already have a subscription to this plan.": [
+        "您已订阅此套餐"
+      ],
+      "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
+        "您已订阅此套餐，您可以在 ${ subscriptionPlatform } 上更改您的订阅。"
+      ],
+      "You will soon be redirected to PayPal to verify your payment.": [
+        "您即将被重定向至 PayPal 以验证付款。"
+      ],
+      "You will soon be redirected to verify your payment.": [
+        "您即将被重定向以验证付款"
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "您的货币已更改为欧元 (€)，因为 SEPA 银行转账只支持欧元支付。"
       ],
       "Your payment is still being processed": [
         "您的付款正在处理中"
+      ],
+      "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
+        "您当前的订阅已享有一个现有折扣，转用此新促销意味着现有折扣将不再适用。"
       ]
     },
     "Payments.Error": {
@@ -4388,9 +4624,34 @@
         "您的卡已被拒绝。请尝试其他卡或与您的银行联系以授权收费."
       ]
     },
+    "Payments.error": {
+      "Something went wrong. Google Pay verification failed.": [
+        "出错了，Google Pay 验证失败。"
+      ]
+    },
+    "Payments.info": {
+      "Credit for the unused portion of your previous plan subscription": [
+        "您先前套餐订阅未使用部分的抵扣金额"
+      ],
+      "Credits will be added to your balance": [
+        "积分将添加到您的账户余额"
+      ]
+    },
     "Payments.ModificationWarning": {
       "Are you sure you want to proceed?": [
         "您确定要继续操作吗？"
+      ],
+      "If you choose to modify your ${ planTitle } plan, you may lose access to some features.": [
+        "如果您选择修改您的 ${ planTitle } 套餐，可能会失去某些功能的访问权限。"
+      ],
+      "Keep ${ planTitle }": [
+        "保留 ${ planTitle }"
+      ],
+      "Yes, I'm sure": [
+        "是的，我确定"
+      ],
+      "Your plan includes this feature already.": [
+        "您的套餐已包含此功能"
       ]
     },
     "Payments.plan_name": {
@@ -4404,6 +4665,9 @@
       ],
       "Bank transfer - ${ details }": [
         "银行转账 - ${ details }"
+      ],
+      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Google Pay - 卡号末四位 ${ paymentMethod.Details.Last4 }"
       ]
     },
     "Payments.Sepa": {
@@ -4418,8 +4682,32 @@
       "ABN": [
         "澳大利亚商业编号 (ABN)"
       ],
+      "Add ABN": [
+        "添加 ABN"
+      ],
+      "Add Business Number": [
+        "添加商业编号"
+      ],
+      "Add EIN": [
+        "添加 EIN"
+      ],
+      "Add VAT number": [
+        "添加增值税号"
+      ],
       "Business Number": [
         "商业编号"
+      ],
+      "Edit ABN": [
+        "编辑 ABN"
+      ],
+      "Edit Business Number": [
+        "编辑商业编号"
+      ],
+      "Edit EIN": [
+        "编辑 EIN"
+      ],
+      "Edit VAT number": [
+        "编辑增值税号"
       ],
       "EIN": [
         "雇主识别号码 (EIN)"
@@ -4483,6 +4771,9 @@
       "Select a reason": [
         "请选择原因"
       ],
+      "Select country": [
+        "选择国家/地区"
+      ],
       "Select state": [
         "请选择省份"
       ],
@@ -4516,6 +4807,12 @@
       ]
     },
     "plus_block": {
+      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and more ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
+        "作为 **${ currentPlanTitle }** 订阅者，您可以通过升级到 **${ upsellPlanTitle }** 来解锁 **${ unlockPlanTitle }** 以及更多 ${ BRAND_NAME } 服务。"
+      ],
+      "More ${ BRAND_NAME } services.${ br }One easy subscription.": [
+        "更多 ${ BRAND_NAME } 服务，${ br }仅需一次简单的订阅。"
+      ],
       "Stay on ${ currentPlanTitle }": [
         "继续使用 ${ currentPlanTitle }"
       ],
@@ -4689,7 +4986,7 @@
         "登录到您的组织"
       ],
       "You'll be redirected to your third-party SSO provider.": [
-        "您将被重定向到您的第三方SSO提供商。"
+        "您将被重定向到您的第三方 SSO 提供商。"
       ]
     },
     "State": {
@@ -4725,6 +5022,9 @@
       "${ app } storage": [
         "${ app } 储存空间"
       ],
+      "${ app } storage used": [
+        "${ app } 存储空间已使用"
+      ],
       "${ storage } ${ percentage }% full": [
         "${ storage }已使用 ${ percentage }%"
       ],
@@ -4733,6 +5033,9 @@
       ],
       "For all ${ BRAND_NAME } services": [
         "用于所有 ${ BRAND_NAME } 服务"
+      ],
+      "Storage used": [
+        "已用存储空间"
       ],
       "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
         "我们会将剩余时间的点数计入您的 ${ BRAND_NAME } 账户。"
@@ -4989,6 +5292,9 @@
       "Account restricted": [
         "账户受限"
       ],
+      "Account temporarily locked": [
+        "账户暂时锁定"
+      ],
       "Add credit/debit card": [
         "添加信用卡/借记卡"
       ],
@@ -5194,6 +5500,9 @@
       ]
     },
     "tooltip": {
+      "${ LUMO_APP_NAME }: AI assistant that respects your privacy": [
+        "${ LUMO_APP_NAME }：尊重您隐私的 AI 助手"
+      ],
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: 安全登录您的所有设备。包括无限邮箱别名、共享、集成 2FA 等等。"
       ]
@@ -6361,6 +6670,12 @@
       ],
       "Bitcoin via Email": [
         "通过电子邮件获取比特币"
+      ],
+      "Encrypted and secure ${ MAIL_APP_NAME } email address. You can easily send Bitcoin to anyone with just their ${ BRAND_NAME } name.": [
+        "加密且安全的 ${ MAIL_APP_NAME } 邮箱地址。您可以仅凭对方的 ${ BRAND_NAME } 名称轻松向任何人发送比特币。"
+      ],
+      "Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error": [
+        "通过电子邮件安全地交换比特币，代替复杂且易错的 26 字符比特币地址"
       ]
     },
     "wallet_signup_2024:app-switcher": {
