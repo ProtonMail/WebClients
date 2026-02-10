@@ -92,6 +92,12 @@ export const ParticipantTile = ({ participant, viewSize = 'large' }: Participant
     const participantName =
         participantNameMap[participant.identity] ?? (isLocalParticipant ? displayName : c('Info').t`Loading...`);
 
+    const { width, height } = cameraVideoPublication?.dimensions ?? {
+        width: 0,
+        height: 0,
+    };
+    const isVideoVertical = width < height;
+
     // Queue-based subscription: ParticipantTile enqueues work by registering the remote publication.
     // Provider is responsible for subscribing/enabling/quality selection & stuck resets.
     useEffect(() => {
@@ -162,7 +168,10 @@ export const ParticipantTile = ({ participant, viewSize = 'large' }: Participant
                     <div className="gradient-overlay absolute top-0 left-0 w-full h-full z-1" />
                     <VideoTrack
                         key={cameraVideoPublication?.trackSid}
-                        className="participant-tile-body__video bg-strong w-full h-full rounded-xl"
+                        className={clsx(
+                            'participant-tile-body__video w-full h-full rounded-xl',
+                            isVideoVertical && 'vertical-video'
+                        )}
                         trackRef={cameraTrackRef}
                         manageSubscription={false}
                         muted={participant.isLocal}
