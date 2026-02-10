@@ -49,7 +49,11 @@ export const useResetPasswordTelemetry = () => {
     );
 
     const sendResetPasswordCodeSent = useCallback(
-        ({ method }: { method: RecoveryMethod }) => {
+        ({ method }: { method: RecoveryMethod | undefined }) => {
+            if (method === undefined) {
+                return;
+            }
+
             void sendTelemetryReport({
                 api,
                 measurementGroup: TelemetryMeasurementGroups.accountResetPassword,
@@ -63,7 +67,11 @@ export const useResetPasswordTelemetry = () => {
     );
 
     const sendResetPasswordMethodValidated = useCallback(
-        ({ method }: { method: RecoveryMethod }) => {
+        ({ method }: { method: RecoveryMethod | undefined }) => {
+            if (method === undefined) {
+                return;
+            }
+
             void sendTelemetryReport({
                 api,
                 measurementGroup: TelemetryMeasurementGroups.accountResetPassword,
@@ -77,7 +85,11 @@ export const useResetPasswordTelemetry = () => {
     );
 
     const sendResetPasswordSuccess = useCallback(
-        ({ method }: { method: RecoveryMethod }) => {
+        ({ method }: { method: RecoveryMethod | undefined }) => {
+            if (method === undefined) {
+                return;
+            }
+
             void sendTelemetryReport({
                 api,
                 measurementGroup: TelemetryMeasurementGroups.accountResetPassword,
@@ -91,7 +103,11 @@ export const useResetPasswordTelemetry = () => {
     );
 
     const sendResetPasswordFailure = useCallback(
-        ({ step, method }: { step: string; method: RecoveryMethod }) => {
+        ({ step, method }: { step: string; method: RecoveryMethod | undefined }) => {
+            if (method === undefined) {
+                return;
+            }
+
             void sendTelemetryReport({
                 api,
                 measurementGroup: TelemetryMeasurementGroups.accountResetPassword,
