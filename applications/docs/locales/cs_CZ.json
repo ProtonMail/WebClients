@@ -2898,6 +2898,9 @@
       "External invitations are temporarily disabled. Please try again later": [
         "Externí pozvánky jsou dočasně zakázány. Zkuste to prosím později"
       ],
+      "Failed loading group members": [
+        "Načtení členů skupiny selhalo"
+      ],
       "Failed to copy photo to album": [
         "Kopírování fotky do alba selhalo"
       ],
@@ -2981,6 +2984,9 @@
       ],
       "Name is required": [
         "Název je povinný"
+      ],
+      "Network error": [
+        "Chyba sítě"
       ],
       "No calendars found to import": [
         "Nebyly nalezeny žádné kalendáře k importu"
@@ -8137,8 +8143,8 @@
       "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
         "Speciálně zvýhodněná cena ${ priceWithDiscount } platí ${ couponRedemptions } měsíc. Poté se automaticky obnoví za ${ renewPriceStr } na 1 měsíc. Službu můžete kdykoli zrušit.",
         "Speciálně zvýhodněná cena ${ priceWithDiscount } platí ${ couponRedemptions } měsíce. Poté se automaticky obnoví za ${ renewPriceStr } na 1 měsíc. Službu můžete kdykoli zrušit.",
-        "Zvýhodněná cena ${ priceWithDiscount } platí po dobu ${ couponRedemptions } měsíců. Poté se automaticky obnoví za ${ renewPriceStr } na 1 měsíc. Službu můžete kdykoli zrušit.",
-        "Zvýhodněná cena ${ priceWithDiscount } platí po dobu ${ couponRedemptions } měsíců. Poté se automaticky obnoví za ${ renewPriceStr } na 1 měsíc. Službu můžete kdykoli zrušit."
+        "Speciálně zvýhodněná cena ${ priceWithDiscount } platí ${ couponRedemptions } měsíců. Poté se automaticky obnoví za ${ renewPriceStr } na 1 měsíc. Službu můžete kdykoli zrušit.",
+        "Speciálně zvýhodněná cena ${ priceWithDiscount } platí ${ couponRedemptions } měsíců. Poté se automaticky obnoví za ${ renewPriceStr } na 1 měsíc. Službu můžete kdykoli zrušit."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "Speciální zvýhodněná cena ${ priceWithDiscount } platí pro první ${ subscriptionLength } měsíc.",
