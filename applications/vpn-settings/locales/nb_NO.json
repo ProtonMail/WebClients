@@ -5895,10 +5895,6 @@
       "${ storage } storage": [
         "${ storage } lagringsplass"
       ],
-      "${ userFound } user found": [
-        "${ userFound } bruker funnet",
-        "${ userFound } brukere funnet"
-      ],
       "${ vaultLink } created": [
         "${ vaultLink } opprettet"
       ],
@@ -8241,6 +8237,9 @@
       "Your phone number will only be used for this one-time verification.": [
         "Telefonnummeret ditt vil kun bli brukt til denne engangsbekreftelsen."
       ],
+      "Your recent changes have been published. They will be visible to users in the next few hours.": [
+        "Dine nylige endringer er publisert. De vil være synlige for brukere i løpet av de neste timene."
+      ],
       "Your recovery phrase": [
         "Din gjenopprettingsfrase"
       ],
@@ -8375,6 +8374,9 @@
     "invitation status": {
       "Declined": [
         "Avslått"
+      ],
+      "Owner": [
+        "Eier"
       ],
       "Paused": [
         "Satt på pause"
@@ -16163,6 +16165,9 @@
       ],
       "User declined invitation": [
         "Brukeren avslo invitasjonen"
+      ],
+      "User is a group": [
+        "Brukeren er en gruppe"
       ],
       "Waiting for user to accept the invitation": [
         "Venter på at brukeren godtar invitasjonen"

@@ -5895,9 +5895,9 @@
       "${ storage } storage": [
         "${ storage } αποθηκευτικού χώρου"
       ],
-      "${ userFound } user found": [
-        "${ userFound } χρήστης βρέθηκε",
-        "${ userFound } χρήστες βρέθηκαν"
+      "${ total } user found": [
+        "${ total } χρήστης βρέθηκε",
+        "${ total } χρήστες βρέθηκαν"
       ],
       "${ vaultLink } created": [
         "Η κρύπτη ${ vaultLink } δημιουργήθηκε"
@@ -8378,6 +8378,9 @@
     "invitation status": {
       "Declined": [
         "Απορρίφθηκε"
+      ],
+      "Owner": [
+        "Ιδιοκτήτης"
       ],
       "Paused": [
         "Σε παύση"
@@ -16178,6 +16181,9 @@
       ],
       "User declined invitation": [
         "Ο χρήστης απέρριψε την πρόσκληση"
+      ],
+      "User is a group": [
+        "Ο χρήστης είναι μια ομάδα"
       ],
       "Waiting for user to accept the invitation": [
         "Αναμονή για αποδοχή της πρόσκλησης από τον χρήστη"

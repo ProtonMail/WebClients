@@ -426,7 +426,7 @@
         "Rediger brugere"
       ],
       "enable desktop notifications": [
-        "aktivér skrivebordsmeddelelser"
+        "at aktivere skrivebordsmeddelelser"
       ],
       "Enable multi-user support": [
         "Aktivér understøttelse af flere brugere"
@@ -5895,10 +5895,6 @@
       "${ storage } storage": [
         "${ storage } lagerplads"
       ],
-      "${ userFound } user found": [
-        "${ userFound } bruger fundet",
-        "${ userFound } brugere fundet"
-      ],
       "${ vaultLink } created": [
         "${ vaultLink } oprettet"
       ],
@@ -8378,6 +8374,9 @@
     "invitation status": {
       "Declined": [
         "Afvist"
+      ],
+      "Owner": [
+        "Ejer"
       ],
       "Paused": [
         "Sat på pause"
@@ -16174,6 +16173,9 @@
       ],
       "User declined invitation": [
         "Brugeren afviste invitationen"
+      ],
+      "User is a group": [
+        "Brugeren er en gruppe"
       ],
       "Waiting for user to accept the invitation": [
         "Venter på, at brugeren accepterer invitationen"

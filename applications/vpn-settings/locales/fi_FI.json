@@ -5725,10 +5725,6 @@
       "${ storage } storage": [
         "${ storage } tallennustilaa"
       ],
-      "${ userFound } user found": [
-        "Löytyi ${ userFound } käyttäjä",
-        "Löytyi ${ userFound } käyttäjää"
-      ],
       "${ vaultLink } created": [
         "${ vaultLink } luotiin"
       ],
@@ -7067,6 +7063,9 @@
       "Secure your ${ BRAND_NAME } Account": [
         "Suojaa ${ BRAND_NAME }-tilisi"
       ],
+      "Secure, end-to-end encrypted video conferencing": [
+        "Suojattu, päästä päähän -salattu videoneuvottelu"
+      ],
       "Securing your account": [
         "Suojataan tiliä"
       ],
@@ -7872,6 +7871,10 @@
         "Silloin sinua laskutetaan joka ${ renewCycle } kuukausi ${ renewAmountStr }.",
         "Silloin sinua laskutetaan joka ${ renewCycle } kuukausi ${ renewAmountStr }."
       ],
+      "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
+        "Olet ottanut käyttöön edelleenlähetyksen ${ MAX_SYNC_PAID_USER } Gmail-osoitteessa. Lisätäksesi toisen, sinun on ensin poistettava jokin niistä käytöstä.",
+        "Olet ottanut käyttöön edelleenlähetyksen ${ MAX_SYNC_PAID_USER } Gmail-osoitteissa. Lisätäksesi uuden osoitteen, sinun on ensin poistettava jokin niistä käytöstä."
+      ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "${ BRAND_NAME }-tilisi on jäädytetty, ja 28 päivän kuluttua postilaatikkosi ei enää vastaanota viestejä ja Drive-jakolinkit sekä uusien tiedostojen tallennus estetään. Palauttaaksesi tilisi normaalin toiminnan, maksa maksamattomat laskut."
       ],
@@ -7898,6 +7901,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "Tiedostosi salataan ja tallennetaan"
+      ],
+      "Your free trial includes 1 dedicated server.": [
+        "Ilmainen kokeilujaksosi sisältää 1 oman palvelimen."
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Tietosi ovat turvassa meillä. Otamme sinuun yhteyttä vain, kun se on tarpeen palveluidemme tarjoamiseksi."
@@ -8039,9 +8045,17 @@
         "Virheellinen sähköpostiosoite"
       ]
     },
+    "Input title": {
+      "What is your organization's name?": [
+        "Mikä on organisaatiosi nimi?"
+      ]
+    },
     "invitation status": {
       "Declined": [
         "Kieltäydytty"
+      ],
+      "Owner": [
+        "Omistaja"
       ],
       "Paused": [
         "Pysäytetty"
@@ -8115,6 +8129,10 @@
       ]
     },
     "Label": {
+      "${ addressesAvailable } of ${ maxAddresses } email address available": [
+        "${ addressesAvailable } / ${ maxAddresses } käytettävissä oleva sähköpostiosoite",
+        "${ addressesAvailable } / ${ maxAddresses } käytettävissä olevaa sähköpostiosoitetta"
+      ],
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME }-käyttäjätunnus"
       ],
@@ -8766,6 +8784,9 @@
       "Share your referral link": [
         "Jaa suosittelulinkkisi"
       ],
+      "Shared between ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ WALLET_SHORT_APP_NAME }.": [
+        "Jaettu ${ MAIL_SHORT_APP_NAME }:n, ${ CALENDAR_SHORT_APP_NAME }:n, ${ PASS_SHORT_APP_NAME }:n ja ${ WALLET_SHORT_APP_NAME }:n kesken."
+      ],
       "Show ${ n } administrator": [
         "Näytä ${ n } ylläpitäjä",
         "Näytä ${ n } ylläpitäjää"
@@ -8907,6 +8928,12 @@
     "Label (end date/advanced search)": {
       "To": [
         "Vastaanottaja"
+      ]
+    },
+    "Label BYOE": {
+      "${ byoeAddressesAvailableCount } of ${ maxBYOEAddresses } email address available": [
+        "${ byoeAddressesAvailableCount } / ${ maxBYOEAddresses } käytettävissä oleva sähköpostiosoite",
+        "${ byoeAddressesAvailableCount } / ${ maxBYOEAddresses } käytettävissä olevaa sähköpostiosoitetta"
       ]
     },
     "Label for adding a new custom domain": {
@@ -11880,6 +11907,10 @@
       ],
       "You can get up to **${ maxRewardAmount }** in credit.": [
         "Voit ansaita jopa **${ maxRewardAmount }** krediitteinä."
+      ],
+      "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "Sinulla on **${ daysRemaining } päivä aikaa** tutustua kaikkiin **${ planTitle }** -palvelun tehokkaisiin ominaisuuksiin.",
+        "Sinulla on **${ daysRemaining } päivää aikaa** tutustua kaikkiin **${ planTitle }** -palvelun tehokkaisiin ominaisuuksiin."
       ],
       "your subscription": [
         "tilauksesi"
@@ -15242,6 +15273,9 @@
       ]
     },
     "Tooltip": {
+      "A change on the Gmail side is blocking ${ BRAND_NAME } from connecting. Grant permission to reestablish email functionality": [
+        "Gmailin muutos estää ${ BRAND_NAME }:a yhdistämästä. Salli yhteys sähköpostitoiminnon palauttamiseksi"
+      ],
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Ylläpitäjät voivat hallita käyttäjätilejä ja antaa ylläpito-oikeuksia muille käyttäjille. Vain ensisijainen ylläpitäjä voi muokata organisaation tilausta."
       ],
@@ -15344,6 +15378,9 @@
       "This can be caused by a password reset or the user not logging in yet.": [
         "Tämä voi johtua salasanan nollauksesta tai siitä, että käyttäjä ei ole vielä kirjautunut sisään."
       ],
+      "This email address can only be used to sign in to your ${ BRAND_NAME } account.": [
+        "Tätä sähköpostiosoitetta voidaan käyttää ainoastaan sisäänkirjautumiseen ${ BRAND_NAME }-tilillesi."
+      ],
       "This email address will be shown to all organization members when performing account management operations.": [
         "Tämä sähköpostiosoite näytetään kaikille organisaation jäsenille tilinhallintatoimintoja suoritettaessa."
       ],
@@ -15390,6 +15427,9 @@
       ],
       "User declined invitation": [
         "Käyttäjä hylkäsi kutsun"
+      ],
+      "User is a group": [
+        "Käyttäjä on ryhmä"
       ],
       "Waiting for user to accept the invitation": [
         "Odotetaan, että käyttäjä hyväksyy kutsun"

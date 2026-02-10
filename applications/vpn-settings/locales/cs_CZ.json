@@ -4575,7 +4575,7 @@
     },
     "Error message": {
       "Account is deleted or disabled": [
-        "Účet je smazán nebo zakázán"
+        "Účet je smazán nebo deaktivován"
       ],
       "App currently unavailable": [
         "Aplikace je momentálně nedostupná"
@@ -6040,12 +6040,6 @@
       ],
       "${ storage } storage": [
         "${ storage } úložiště"
-      ],
-      "${ userFound } user found": [
-        "Nalezen ${ userFound } uživatel",
-        "Nalezeni ${ userFound } uživatelé",
-        "Nalezeno ${ userFound } uživatelů",
-        "Nalezeno ${ userFound } uživatelů"
       ],
       "${ vaultLink } created": [
         "${ vaultLink } byl vytvořen"
@@ -8608,6 +8602,9 @@
     "invitation status": {
       "Declined": [
         "Odmítnuto"
+      ],
+      "Owner": [
+        "Vlastník"
       ],
       "Paused": [
         "Pozastaveno"
@@ -12191,8 +12188,8 @@
       "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
         "Speciálně zvýhodněná cena ${ priceWithDiscount } platí ${ couponRedemptions } měsíc. Poté se automaticky obnoví za ${ renewPriceStr } na 1 měsíc. Službu můžete kdykoli zrušit.",
         "Speciálně zvýhodněná cena ${ priceWithDiscount } platí ${ couponRedemptions } měsíce. Poté se automaticky obnoví za ${ renewPriceStr } na 1 měsíc. Službu můžete kdykoli zrušit.",
-        "Zvýhodněná cena ${ priceWithDiscount } platí po dobu ${ couponRedemptions } měsíců. Poté se automaticky obnoví za ${ renewPriceStr } na 1 měsíc. Službu můžete kdykoli zrušit.",
-        "Zvýhodněná cena ${ priceWithDiscount } platí po dobu ${ couponRedemptions } měsíců. Poté se automaticky obnoví za ${ renewPriceStr } na 1 měsíc. Službu můžete kdykoli zrušit."
+        "Speciálně zvýhodněná cena ${ priceWithDiscount } platí ${ couponRedemptions } měsíců. Poté se automaticky obnoví za ${ renewPriceStr } na 1 měsíc. Službu můžete kdykoli zrušit.",
+        "Speciálně zvýhodněná cena ${ priceWithDiscount } platí ${ couponRedemptions } měsíců. Poté se automaticky obnoví za ${ renewPriceStr } na 1 měsíc. Službu můžete kdykoli zrušit."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "Speciální zvýhodněná cena ${ priceWithDiscount } platí pro první ${ subscriptionLength } měsíc.",
@@ -15217,7 +15214,7 @@
         "Světlý"
       ],
       "Mode: Auto": [
-        "Režim: Automaticky"
+        "Režim: Automatický"
       ],
       "Mode: Dark": [
         "Režim: Tmavý"
@@ -16623,6 +16620,9 @@
       ],
       "User declined invitation": [
         "Uživatel odmítl pozvání"
+      ],
+      "User is a group": [
+        "Uživatel je skupina"
       ],
       "Waiting for user to accept the invitation": [
         "Čekání na přijetí pozvánky uživatelem"
