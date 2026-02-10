@@ -1248,26 +1248,29 @@
       ]
     },
     "collider_2025: Feature": {
-      "Advanced models": [
-        "Geavanceerde modellen"
+      "Access all your past conversations anytime": [
+        "Krijg toegang tot al uw eerdere gesprekken op elk moment"
       ],
-      "Large file uploads": [
-        "Grote bestandsuploads"
+      "Chat as much as you need with no limits": [
+        "Chat onbeperkt zoveel als u wilt"
+      ],
+      "Get answers with real-time web search": [
+        "Krijg antwoorden met realtime web zoekopdrachten"
       ],
       "New": [
         "Nieuw"
       ],
-      "Unlimited chat history": [
-        "Onbeperkte gespreksgeschiedenis"
+      "Organize work in projects with custom instructions": [
+        "Organiseer werk in projecten met aangepaste instructies"
       ],
-      "Unlimited favourite chats": [
-        "Onbeperkt aantal favoriete gesprekken"
+      "Save unlimited conversations as favorites": [
+        "Sla onbeperkt gesprekken op als favorieten"
       ],
-      "Unlimited weekly chats": [
-        "Onbeperkt aantal wekelijkse gesprekken"
+      "Upload and analyze larger files": [
+        "Grotere bestanden uploaden en analyseren"
       ],
-      "Web search": [
-        "Zoeken op het web"
+      "Use the most advanced AI models": [
+        "Gebruik de meest geavanceerde AI-modellen"
       ]
     },
     "collider_2025: Guest Signin": {
@@ -1992,8 +1995,8 @@
       "Upgrade": [
         "Upgraden"
       ],
-      "Your chat history is limited to 7 days. For extended chat history and other premium features, ": [
-        "Uw gespreksgeschiedenis is beperkt tot 7 dagen. Voor een uitgebreide gespreksgeschiedenis en andere premiumfuncties, "
+      "Your chat history is limited to 7 days. For unlimited chat history and other premium features, ": [
+        "Uw chatgeschiedenis is beperkt tot 7 dagen. Voor onbeperkte chatgeschiedenis en andere premiumfuncties, "
       ]
     },
     "collider_2025: Upsell Title": {
@@ -2095,6 +2098,9 @@
       ],
       "Hide sidebar": [
         "Zijbalk verbergen"
+      ],
+      "Keep these chats": [
+        "Behoud deze chats"
       ],
       "Manage chats": [
         "Gesprekken beheren"
@@ -2283,6 +2289,9 @@
       "Cannot link the root folder. Please select a subfolder.": [
         "Kan de hoofdmap niet koppelen. Selecteer een submap."
       ],
+      "Database connection lost. Please refresh the page to continue.": [
+        "Databaseverbinding verbroken. Vernieuw de pagina om door te gaan."
+      ],
       "Error processing file: ${ file.name }": [
         "Fout bij het verwerken van bestand: ${ file.name }"
       ],
@@ -2343,6 +2352,11 @@
       ],
       "Tailored responses based on your project’s files and instructions.": [
         "Op maat gemaakte reacties op basis van de bestanden en instructies van uw project."
+      ]
+    },
+    "collider_2025:Icon": {
+      "Expiring soon": [
+        "Verloopt binnenkort"
       ]
     },
     "collider_2025:Info": {
@@ -2689,6 +2703,9 @@
       "All files removed from project": [
         "Alle bestanden verwijderd uit project"
       ],
+      "Database connection restored.": [
+        "Databaseverbinding hersteld."
+      ],
       "Drive folder linked successfully": [
         "Drive-map succesvol gekoppeld"
       ],
@@ -2736,6 +2753,9 @@
       "Edit Project": [
         "Edit Project"
       ],
+      "Expiring Soon": [
+        "Verloopt binnenkort"
+      ],
       "Favorites": [
         "Favorieten"
       ],
@@ -2768,6 +2788,9 @@
       ],
       "Last 30 days": [
         "Afgelopen 30 dagen"
+      ],
+      "Last 5 days": [
+        "Afgelopen 5 dagen"
       ],
       "Last 7 days": [
         "Afgelopen 7 dagen"
@@ -5169,6 +5192,11 @@
         "Wat is dit?"
       ]
     },
+    "Loading": {
+      "Loading ${ LUMO_APP_NAME }": [
+        "${ LUMO_APP_NAME } laden"
+      ]
+    },
     "lumo: Debug View": {
       "Acceleration": [
         "Versnelling"
@@ -5178,6 +5206,9 @@
       ],
       "Clear History": [
         "Geschiedenis verwijderen"
+      ],
+      "Create Test Chats": [
+        "Maak Test Chats"
       ],
       "Debug View": [
         "Debug-weergave"

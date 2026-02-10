@@ -1268,26 +1268,14 @@
       ]
     },
     "collider_2025: Feature": {
-      "Advanced models": [
-        "Pokročilé modely"
-      ],
-      "Large file uploads": [
-        "Nahrávání velkých souborů"
-      ],
       "New": [
         "Nové"
       ],
-      "Unlimited chat history": [
-        "Neomezená historie konverzací"
+      "Upload and analyze larger files": [
+        "Nahrát a analyzovat větší soubory"
       ],
-      "Unlimited favourite chats": [
-        "Neomezené oblíbené konverzace"
-      ],
-      "Unlimited weekly chats": [
-        "Neomezený týdenní limit konverzací"
-      ],
-      "Web search": [
-        "Vyhledat na webu"
+      "Use the most advanced AI models": [
+        "Používejte nejpokročilejší AI modely"
       ]
     },
     "collider_2025: Guest Signin": {
@@ -1613,7 +1601,7 @@
         "E-mailová adresa je neplatná"
       ],
       "Email address is required": [
-        "Je vyžadována e-mailová adresa"
+        "E-mailová adresa je povinná"
       ]
     },
     "collider_2025: Invite Button": {
@@ -2011,9 +1999,6 @@
       ],
       "Upgrade": [
         "Navýšit"
-      ],
-      "Your chat history is limited to 7 days. For extended chat history and other premium features, ": [
-        "Vaše historie konverzací je omezena na 7 dní. Pro rozšířenou historii konverzací a další prémiové funkce, "
       ]
     },
     "collider_2025: Upsell Title": {
@@ -2306,7 +2291,7 @@
         "Nelze propojit kořenovou složku. Vyberte podsložku."
       ],
       "Database connection lost. Please refresh the page to continue.": [
-        "Připojení k databázi bylo ztraceno. Obnovte stránku pro pokračování."
+        "Připojení k databázi ztraceno. Obnovte stránku pro pokračování."
       ],
       "Error processing file: ${ file.name }": [
         "Chyba při zpracování souboru: ${ file.name }"
@@ -2766,6 +2751,9 @@
       "Edit Project": [
         "Upravit projekt"
       ],
+      "Expiring Soon": [
+        "Brzy vyprší"
+      ],
       "Favorites": [
         "Oblíbené"
       ],
@@ -2798,6 +2786,9 @@
       ],
       "Last 30 days": [
         "Posledních 30 dnů"
+      ],
+      "Last 5 days": [
+        "Posledních 5 dní"
       ],
       "Last 7 days": [
         "Posledních 7 dnů"
@@ -6544,8 +6535,8 @@
       "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
         "Speciálně zvýhodněná cena ${ priceWithDiscount } platí ${ couponRedemptions } měsíc. Poté se automaticky obnoví za ${ renewPriceStr } na 1 měsíc. Službu můžete kdykoli zrušit.",
         "Speciálně zvýhodněná cena ${ priceWithDiscount } platí ${ couponRedemptions } měsíce. Poté se automaticky obnoví za ${ renewPriceStr } na 1 měsíc. Službu můžete kdykoli zrušit.",
-        "Zvýhodněná cena ${ priceWithDiscount } platí po dobu ${ couponRedemptions } měsíců. Poté se automaticky obnoví za ${ renewPriceStr } na 1 měsíc. Službu můžete kdykoli zrušit.",
-        "Zvýhodněná cena ${ priceWithDiscount } platí po dobu ${ couponRedemptions } měsíců. Poté se automaticky obnoví za ${ renewPriceStr } na 1 měsíc. Službu můžete kdykoli zrušit."
+        "Speciálně zvýhodněná cena ${ priceWithDiscount } platí ${ couponRedemptions } měsíců. Poté se automaticky obnoví za ${ renewPriceStr } na 1 měsíc. Službu můžete kdykoli zrušit.",
+        "Speciálně zvýhodněná cena ${ priceWithDiscount } platí ${ couponRedemptions } měsíců. Poté se automaticky obnoví za ${ renewPriceStr } na 1 měsíc. Službu můžete kdykoli zrušit."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "Speciální zvýhodněná cena ${ priceWithDiscount } platí pro první ${ subscriptionLength } měsíc.",
