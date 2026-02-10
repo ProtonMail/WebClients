@@ -7,7 +7,7 @@ import { useWelcomeFlags } from '@proton/account';
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useGetUserKeys } from '@proton/account/userKeys/hooks';
-import { useApi, useISESEnabledElectron, useSubscribeEventManager } from '@proton/components';
+import { useApi, useSubscribeEventManager } from '@proton/components';
 import {
     checkVersionedESDB,
     contentIndexingProgress,
@@ -31,6 +31,7 @@ import ESDeletedConversationsCache from 'proton-mail/helpers/encryptedSearch/ESD
 import { defaultESContextMail, defaultESMailStatus } from '../constants';
 import { convertEventType, getESCallbacks, getESFreeBlobKey, parseSearchParams } from '../helpers/encryptedSearch';
 import { useGetMessageKeys } from '../hooks/message/useGetMessageKeys';
+import useISESEnabledElectron from '../hooks/useISESEnabledElectron';
 import type {
     ESBaseMessage,
     ESDBStatusMail,
