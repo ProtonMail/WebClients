@@ -88,7 +88,7 @@ export interface RootSagaOptions {
     onBetaUpdated?: (enabled: boolean) => MaybePromise<void>;
 
     /** Callback for handling notification effects */
-    onNotification?: (notification: Notification) => void;
+    onNotification: (notification: Notification) => void;
 
     /** Callback for propagating feature flags updates */
     onFeatureFlags?: (features: FeatureFlagState) => void;

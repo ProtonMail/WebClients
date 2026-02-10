@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 
-import { c, msgid } from 'ttag';
+import { c } from 'ttag';
 
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import Info from '@proton/components/components/link/Info';
@@ -61,7 +61,7 @@ export const ShareMember: FC<Props> = ({
     userShareId,
     isGroupShare,
 }) => {
-    const { open, isGroup, name, avatar, members, membersCount, onClick, onClose } = useGroupMembersModal(
+    const { open, isGroup, groupId, name, label, avatar, members, onClick, onClose } = useGroupMembersModal(
         email,
         isGroupShare
     );
@@ -104,13 +104,9 @@ export const ShareMember: FC<Props> = ({
 
             <div className="flex-1">
                 <div className="flex flex-nowrap flex-1 items-center gap-2">
-                    {isGroup ? (
+                    {groupId ? (
                         <button onClick={onClick} className="text-ellipsis">
-                            {`${name} ${c('Info').ngettext(
-                                msgid`(${membersCount} member)`,
-                                `(${membersCount} members)`,
-                                membersCount
-                            )}`}
+                            {label}
                         </button>
                     ) : (
                         <>

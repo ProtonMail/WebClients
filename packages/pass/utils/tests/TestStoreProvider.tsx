@@ -53,6 +53,7 @@ export const TestStoreProvider: FC<PropsWithChildren> = ({ children }) => {
                 getSettings: () => ({}) as ProxiedSettings,
                 getTelemetry: () => null,
                 setCache: async () => undefined,
+                onNotification: () => {},
             })
         );
 
