@@ -21,7 +21,7 @@
         "Lanjutkan"
       ],
       "Dismiss": [
-        "Abaikan"
+        "Tutup"
       ],
       "Edit email address": [
         "Edit alamat email"
@@ -915,7 +915,7 @@
         "Silakan muat ulang halaman ini atau coba lagi nanti."
       ],
       "Something went wrong": [
-        "Terdapat suatu kesalahan"
+        "Terjadi kesalahan"
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Kami tidak dapat memuat halaman ini. Silakan muat ulang halaman atau periksa koneksi internet Anda."
@@ -923,7 +923,7 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Terdapat kesalahan dalam mengautentikasi kunci keamanan Anda. Silakan coba lagi."
+        "Terjadi kesalahan saat melakukan autentikasi dengan kunci keamanan Anda. Silakan coba lagi."
       ]
     },
     "fido2: Info": {
@@ -1032,7 +1032,7 @@
         "Membuat lebih dari satu akun gratis tidak diizinkan oleh ${ termsLink } kami."
       ],
       "Each code can only be used once": [
-        "Masing-masing kode hanya dapat digunakan satu kali"
+        "Setiap kode hanya dapat digunakan satu kali"
       ],
       "Edit email address": [
         "Sunting alamat email"
@@ -1303,7 +1303,7 @@
         "Kesehatan kata sandi"
       ],
       "Password-protected Emails": [
-        "Email yang terlindung oleh kata sandi"
+        "Email yang dilindungi kata sandi"
       ],
       "Private photo backup": [
         "Pencadangan foto pribadi"
@@ -1348,13 +1348,13 @@
         "Tanpa batasan jumlah folder"
       ],
       "Unlimited folders, labels, and filters": [
-        "Tanpa batasan jumlah folder, label, dan filter"
+        "Folder, label, dan filter tanpa batas"
       ],
       "Unlimited labels": [
         "Tanpa batasan jumlah label"
       ],
       "Unlimited messages per day": [
-        "Tanpa batasan jumlah pesan per harinya"
+        "Pesan tak terbatas per hari"
       ],
       "Up to ${ totalStorageSize } storage": [
         "Ruang penyimpanan hingga ${ totalStorageSize }"
@@ -1388,7 +1388,7 @@
         "Memungkinkan Anda untuk menyiapkan pesan balasan otomatis (auto-reply) bagi seluruh pesan yang Anda terima"
       ],
       "Automatically clear out messages older than 30 days from Trash and Spam": [
-        "Hapus pesan yang telah berusia lebih dari 30 hari secara otomatis dari Sampah dan Spam"
+        "Hapus otomatis pesan yang berusia lebih dari 30 hari dari Sampah dan Spam"
       ],
       "Automatically forward emails sent to your ${ MAIL_APP_NAME } account to any other email address.": [
         "Terusken email yang terkirim pada akun ${ MAIL_APP_NAME } Anda ke alamat email lainnya secara otomatis."
@@ -1451,7 +1451,7 @@
         "Ruang penyimpanan terbagi antara ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, dan ${ PASS_APP_NAME }."
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
-        "Ruang penyimpanan terbagi antar ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, dan ${ DRIVE_APP_NAME }. Para administrator akan dapat mengatur besar kuota penyimpanan yang dimiliki oleh masing-masing pengguna di dalam organisasi mereka"
+        "Ruang penyimpanan dibagikan di antara ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, dan ${ DRIVE_APP_NAME }. Administrator dapat mengalokasikan jumlah penyimpanan yang berbeda kepada pengguna di organisasi mereka"
       ],
       "Storage space is shared between users across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }": [
         "Ruang penyimpanan terbagi untuk seluruh pengguna antara ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, dan ${ PASS_APP_NAME }."
