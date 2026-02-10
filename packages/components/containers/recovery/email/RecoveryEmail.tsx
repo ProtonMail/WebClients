@@ -69,6 +69,7 @@ interface Props {
     inputProps?: Partial<Pick<InputFieldProps<typeof Input>, 'label'>>;
     disableVerifyCta?: boolean;
     persistPasswordScope?: boolean;
+    canSubmit?: (input: string) => boolean;
 }
 
 const RecoveryEmail = ({
@@ -83,6 +84,7 @@ const RecoveryEmail = ({
     inputProps,
     disableVerifyCta,
     persistPasswordScope = false,
+    canSubmit,
 }: Props) => {
     const api = useApi();
     const dispatch = useDispatch();
@@ -134,6 +136,9 @@ const RecoveryEmail = ({
                 onSubmit: (e) => {
                     e.preventDefault();
                     if (!onFormSubmit()) {
+                        return;
+                    }
+                    if (canSubmit && !canSubmit(input)) {
                         return;
                     }
                     if (confirmStep) {

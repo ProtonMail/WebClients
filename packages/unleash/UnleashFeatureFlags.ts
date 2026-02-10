@@ -103,6 +103,7 @@ enum AccountFlag {
     DriveDashboard = 'DriveDashboard',
     MeetDashboard = 'MeetDashboard',
     FirstEmail = 'FirstEmail',
+    SocialRecovery = 'SocialRecovery',
     Ipv6ForWgConfig = 'Ipv6ForWgConfig',
     MembersRemote = 'MembersRemote',
 }

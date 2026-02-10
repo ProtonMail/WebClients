@@ -2,6 +2,8 @@ import { type ReactNode, createContext, useCallback, useContext, useRef } from '
 
 import createListeners, { type Listeners } from '@proton/shared/lib/helpers/listeners';
 
+import { useUser } from '../../user/hooks';
+import { getIsOutgoingDelegatedAccessAvailable } from '../available';
 import type { ActionListener, ActionPayload } from './incoming/interface';
 import { useIncomingItems } from './incoming/useIncomingItems';
 
@@ -10,6 +12,9 @@ export interface IncomingDelegatedAccessProviderValue {
     subscribe: (cb: ActionListener) => void;
     items: ReturnType<typeof useIncomingItems>['items'];
     loading: boolean;
+    meta: {
+        available: boolean;
+    };
 }
 
 export const IncomingControllerContext = createContext<IncomingDelegatedAccessProviderValue>({} as any);
@@ -17,6 +22,7 @@ export const IncomingControllerContext = createContext<IncomingDelegatedAccessPr
 export const IncomingDelegatedAccessProvider = ({ children }: { children: ReactNode }) => {
     const listenersRef = useRef<Listeners<[ActionPayload], undefined> | null>(null);
     const { items, loading } = useIncomingItems();
+    const [user] = useUser();
 
     const incomingController: IncomingDelegatedAccessProviderValue = {
         notify: useCallback((payload) => {
@@ -30,6 +36,9 @@ export const IncomingDelegatedAccessProvider = ({ children }: { children: ReactN
         }, []),
         items,
         loading,
+        meta: {
+            available: getIsOutgoingDelegatedAccessAvailable(user),
+        },
     };
 
     return (

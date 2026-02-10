@@ -141,7 +141,7 @@ const OutgoingItem = ({
                             },
                             canDelete && {
                                 text: c('Action').t`Remove`,
-                                onClick: () => notify({ type: 'delete', value }),
+                                onClick: () => notify({ type: 'delete-emergency-contact', value }),
                             },
                             canChangeWaitTime && {
                                 text: c('emergency_access').t`Change wait time`,
@@ -204,6 +204,7 @@ const OutgoingTable = ({ controller }: { controller: OutgoingDelegatedAccessProv
                     const meta = getMetaOutgoingDelegatedAccess({
                         now,
                         value,
+                        userContext: controller.meta.userContext,
                     });
                     return (
                         <OutgoingItem

@@ -3,6 +3,7 @@ import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { AccessAction } from './incoming/actions/AccessAction';
 import { CancelAction } from './incoming/actions/CancelAction';
 import { DeleteAction } from './incoming/actions/DeleteAction';
+import { RecoverAction } from './incoming/actions/RecoverAction';
 import { RequestAction } from './incoming/actions/RequestAction';
 
 export const IncomingDelegatedAccessActions = ({ app }: { app: APP_NAMES }) => {
@@ -12,6 +13,7 @@ export const IncomingDelegatedAccessActions = ({ app }: { app: APP_NAMES }) => {
             <RequestAction />
             <CancelAction />
             <AccessAction app={app} />
+            <RecoverAction />
         </>
     );
 };

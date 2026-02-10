@@ -12,6 +12,7 @@ import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useNotifications from '@proton/components/hooks/useNotifications';
+import useLoading from '@proton/hooks/useLoading';
 import { BRAND_NAME, SECOND } from '@proton/shared/lib/constants';
 
 import ValidationError from '../../../ValidationError';
@@ -46,7 +47,7 @@ export const CreateOutgoingEmergencyContactModal = ({
     const [submitted, setSubmitted] = useState<boolean>(false);
     const dispatch = useDispatch();
     const [asyncError, setAsyncError] = useState<{ email: string; errorMessage: string } | null>(null);
-    const [loading, setLoading] = useState(false);
+    const [loading, withLoading] = useLoading();
     const handleError = useErrorHandler();
     const { createNotification } = useNotifications();
 
@@ -65,27 +66,26 @@ export const CreateOutgoingEmergencyContactModal = ({
                 if (hasError || loading) {
                     return;
                 }
-                void (async () => {
-                    const payload = {
-                        targetEmail,
-                        triggerDelay: waitTime / SECOND,
-                        types: DelegatedAccessTypeEnum.EmergencyAccess,
-                    };
-                    try {
-                        setLoading(true);
-                        await dispatch(addDelegatedAccessThunk(payload));
-                        createNotification({ text: c('emergency_access').t`Emergency contact added` });
-                        rest.onClose?.();
-                    } catch (e) {
-                        if (e instanceof ValidationError) {
-                            setAsyncError({ email: payload.targetEmail, errorMessage: e.message });
-                        } else {
-                            handleError(e);
+                void withLoading(
+                    (async function run() {
+                        const payload = {
+                            targetEmail,
+                            triggerDelay: waitTime / SECOND,
+                            types: DelegatedAccessTypeEnum.EmergencyAccess,
+                        };
+                        try {
+                            await dispatch(addDelegatedAccessThunk(payload));
+                            createNotification({ text: c('emergency_access').t`Emergency contact added` });
+                            rest.onClose?.();
+                        } catch (e) {
+                            if (e instanceof ValidationError) {
+                                setAsyncError({ email: payload.targetEmail, errorMessage: e.message });
+                            } else {
+                                handleError(e);
+                            }
                         }
-                    } finally {
-                        setLoading(false);
-                    }
-                })();
+                    })()
+                );
             }}
         >
             <ModalTwoHeader />

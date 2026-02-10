@@ -4,7 +4,8 @@ import SettingsLink from '@proton/components/components/link/SettingsLink';
 import TopBanner from '@proton/components/containers/topBanners/TopBanner';
 
 import { useUser } from '../../../user/hooks';
-import { getIsOutgoingDelegatedAccessAvailable, getViewTrustedContactRoute } from '../../available';
+import { getIsOutgoingDelegatedAccessAvailable } from '../../available';
+import { getViewEmergencyAccessRoute } from '../../routes';
 import { getMetaOutgoingDelegatedAccess } from '../../shared/outgoing/helper';
 import { useOutgoingItems } from '../../shared/outgoing/useOutgoingItems';
 
@@ -14,7 +15,7 @@ const InnerOutgoingEmergencyAccessTopBanner = () => {
     const now = Date.now();
     const parsedItems = items.emergencyContacts.map((item) => {
         return {
-            meta: getMetaOutgoingDelegatedAccess({ now, value: item }),
+            meta: getMetaOutgoingDelegatedAccess({ now, value: item, userContext: { hasInactiveKeys: null } }),
             item,
         };
     });
@@ -31,7 +32,7 @@ const InnerOutgoingEmergencyAccessTopBanner = () => {
         <TopBanner className="bg-warning">
             {c('emergency_access').t`Your emergency contact ${name} is requesting access to your account.`}{' '}
             <SettingsLink
-                path={getViewTrustedContactRoute(firstAccessRequested.item.outgoingDelegatedAccess.DelegatedAccessID)}
+                path={getViewEmergencyAccessRoute(firstAccessRequested.item.outgoingDelegatedAccess.DelegatedAccessID)}
                 className="color-inherit"
             >
                 {c('emergency_access').t`View request`}

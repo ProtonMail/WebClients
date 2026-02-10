@@ -1,45 +1,16 @@
-import { useCallback, useEffect, useState } from 'react';
-
-import { c } from 'ttag';
+import { useEffect, useState } from 'react';
 
 import useModalState from '@proton/components/components/modalTwo/useModalState';
-import useErrorHandler from '@proton/components/hooks/useErrorHandler';
-import useNotifications from '@proton/components/hooks/useNotifications';
 
-import {
-    EditOutgoingEmergencyContactModal,
-    type EditOutgoingEmergencyContactModalProps,
-} from '../../../emergencyContact/outgoing/modals/EditOutgoingEmergencyContactModal';
-import { editDelegatedAccessThunk } from '../../../outgoingActions';
-import { useDispatch } from '../../../useDispatch';
+import { EditOutgoingEmergencyContactModal } from '../../../emergencyContact/outgoing/modals/EditOutgoingEmergencyContactModal';
 import { useOutgoingController } from '../../OutgoingDelegatedAccessProvider';
 import type { EnrichedOutgoingDelegatedAccess } from '../interface';
 
 export const EditAction = () => {
     const { subscribe } = useOutgoingController();
     const [modal, setModalOpen, renderModal] = useModalState();
-
-    const handleError = useErrorHandler();
-    const dispatch = useDispatch();
-    const { createNotification } = useNotifications();
-
     const [tmpOutgoingDelegatedAccess, setTmpOutgoingDelegatedAccess] =
         useState<EnrichedOutgoingDelegatedAccess | null>(null);
-
-    const [loading, setLoading] = useState(false);
-
-    const action = useCallback(async (payload: Parameters<EditOutgoingEmergencyContactModalProps['onEdit']>[0]) => {
-        try {
-            setLoading(true);
-            await dispatch(editDelegatedAccessThunk(payload));
-            createNotification({ text: c('emergency_access').t`Wait time saved` });
-            modal.onClose?.();
-        } catch (e) {
-            handleError(e);
-        } finally {
-            setLoading(false);
-        }
-    }, []);
 
     useEffect(() => {
         return subscribe((payload) => {
@@ -56,10 +27,9 @@ export const EditAction = () => {
                 <EditOutgoingEmergencyContactModal
                     {...modal}
                     value={tmpOutgoingDelegatedAccess}
-                    loading={loading}
-                    onEdit={action}
                     onExit={() => {
                         modal.onExit();
+                        setTmpOutgoingDelegatedAccess(null);
                     }}
                 />
             )}

@@ -10,31 +10,29 @@ import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
+import useErrorHandler from '@proton/components/hooks/useErrorHandler';
+import useNotifications from '@proton/components/hooks/useNotifications';
+import useLoading from '@proton/hooks/useLoading';
 import { SECOND } from '@proton/shared/lib/constants';
 
-import type { DelegatedAccessTypeEnum, OutgoingDelegatedAccessOutput } from '../../../interface';
+import { editDelegatedAccessThunk } from '../../../outgoingActions';
 import type { EnrichedOutgoingDelegatedAccess } from '../../../shared/outgoing/interface';
+import { useDispatch } from '../../../useDispatch';
 import { getDefaultWaitTimeOptionValue, getWaitTimeOptions } from './getWaitTimeOptions';
 
 export interface EditOutgoingEmergencyContactModalProps extends Omit<
     ModalProps<'form'>,
     'children' | 'buttons' | 'onSubmit'
 > {
-    onEdit: (value: {
-        outgoingDelegatedAccess: OutgoingDelegatedAccessOutput;
-        triggerDelay: number;
-        types: DelegatedAccessTypeEnum;
-    }) => void;
     value: EnrichedOutgoingDelegatedAccess;
-    loading: boolean;
 }
 
-export const EditOutgoingEmergencyContactModal = ({
-    loading,
-    value,
-    onEdit,
-    ...rest
-}: EditOutgoingEmergencyContactModalProps) => {
+export const EditOutgoingEmergencyContactModal = ({ value, ...rest }: EditOutgoingEmergencyContactModalProps) => {
+    const handleError = useErrorHandler();
+    const dispatch = useDispatch();
+    const { createNotification } = useNotifications();
+    const [loading, withLoading] = useLoading();
+
     const waitTimeOptions = getWaitTimeOptions();
     const [waitTime, setWaitTime] = useState(() => {
         const existingValue = waitTimeOptions.find(
@@ -61,11 +59,23 @@ export const EditOutgoingEmergencyContactModal = ({
                 if (loading) {
                     return;
                 }
-                onEdit({
-                    triggerDelay: waitTime / SECOND,
-                    outgoingDelegatedAccess: value.outgoingDelegatedAccess,
-                    types: value.outgoingDelegatedAccess.Types,
-                });
+                void withLoading(
+                    (async function run() {
+                        try {
+                            await dispatch(
+                                editDelegatedAccessThunk({
+                                    triggerDelay: waitTime / SECOND,
+                                    outgoingDelegatedAccess: value.outgoingDelegatedAccess,
+                                    types: value.outgoingDelegatedAccess.Types,
+                                })
+                            );
+                            createNotification({ text: c('emergency_access').t`Wait time saved` });
+                            rest.onClose?.();
+                        } catch (e) {
+                            handleError(e);
+                        }
+                    })()
+                );
             }}
         >
             <ModalTwoHeader title={c('emergency_access').t`Change access wait time`} />

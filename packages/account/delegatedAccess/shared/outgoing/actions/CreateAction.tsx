@@ -5,7 +5,9 @@ import { useContactEmails } from '@proton/mail/store/contactEmails/hooks';
 
 import { useAddresses } from '../../../../addresses/hooks';
 import { useProtonDomains } from '../../../../protonDomains/hooks';
+import { useUser } from '../../../../user/hooks';
 import { CreateOutgoingEmergencyContactModal } from '../../../emergencyContact/outgoing/modals/CreateOutgoingEmergencyContactModal';
+import { CreateOutgoingRecoveryContactModal } from '../../../recoveryContact/outgoing/modals/CreateOutgoingRecoveryContactModal';
 import { useOutgoingController } from '../../OutgoingDelegatedAccessProvider';
 import type { AddActionPayload } from '../interface';
 
@@ -14,6 +16,7 @@ export const CreateAction = () => {
     const [modal, setModalOpen, renderModal] = useModalState();
     const [actionPayload, setActionPayload] = useState<AddActionPayload['value'] | null>(null);
 
+    const [user] = useUser();
     const [addresses] = useAddresses();
     const [contactEmails] = useContactEmails();
     const [{ protonDomains, premiumDomains }] = useProtonDomains();
@@ -25,8 +28,12 @@ export const CreateAction = () => {
         const emergencyContacts = new Set(
             items.emergencyContacts.map((value) => value.outgoingDelegatedAccess.TargetEmail)
         );
+        const recoveryContacts = new Set(
+            items.recoveryContacts.map((value) => value.outgoingDelegatedAccess.TargetEmail)
+        );
         return {
             emergencyContacts,
+            recoveryContacts,
         };
     }, [items]);
 
@@ -48,6 +55,20 @@ export const CreateAction = () => {
                     protonDomains={domains}
                     contactEmails={contactEmails}
                     existingOutgoingTargetEmails={existingOutgoingTargetEmails.emergencyContacts}
+                    onExit={() => {
+                        modal.onExit();
+                        setActionPayload(null);
+                    }}
+                />
+            )}
+            {renderModal && actionPayload === 'recovery-contact' && (
+                <CreateOutgoingRecoveryContactModal
+                    {...modal}
+                    addresses={addresses}
+                    protonDomains={domains}
+                    contactEmails={contactEmails}
+                    existingOutgoingTargetEmails={existingOutgoingTargetEmails.recoveryContacts}
+                    email={user.Email}
                     onExit={() => {
                         modal.onExit();
                         setActionPayload(null);
