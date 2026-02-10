@@ -1238,6 +1238,12 @@
       ],
       "Zoom out": [
         "Oddialiť"
+      ],
+      "Set password or expiration date": [
+        "Nastaviť heslo alebo dátum exspirácie"
+      ],
+      "Sharing is end-to-end encrypted": [
+        "Zdieľanie je end-to-end šifrované"
       ]
     },
     "Action: Docs": {
@@ -3898,6 +3904,12 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Nerozšifrovateľný názov"
+      ],
+      "Failed loading group members": [
+        "Chyba pri načítavaní členov skupiny"
+      ],
+      "Network error": [
+        "Chyba siete"
       ]
     },
     "error": {
@@ -7003,6 +7015,15 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Stále si budete môcť prezerať svoje vlastné údaje, ale všetky používateľské účty budú z vašej organizácie odstránené."
+      ],
+      "Link copied": [
+        "Odkaz bol skopírovaný"
+      ],
+      "owner": [
+        "vlastník"
+      ],
+      "Who has access": [
+        "Kto má prístup"
       ]
     },
     "info": {
@@ -7753,6 +7774,27 @@
       ],
       "ZIP code": [
         "PSČ"
+      ],
+      "Active": [
+        "Aktívne"
+      ],
+      "admin": [
+        "správca"
+      ],
+      "Anyone on the Internet with the link": [
+        "Ktokoľvek na internete s odkazom"
+      ],
+      "can edit": [
+        "môže upravovať"
+      ],
+      "can view": [
+        "môže zobraziť"
+      ],
+      "Delete link and remove access for everyone": [
+        "Odstrániť odkaz a zrušiť pre všetkých prístup"
+      ],
+      "Not active": [
+        "Neaktívne"
       ]
     },
     "Label for contact group color": {
@@ -13265,6 +13307,15 @@
       ],
       "You’ve got 5 GB of storage": [
         "Máte k dispozícii 5 GB úložného priestoru"
+      ],
+      "Public link": [
+        "Verejný odkaz"
+      ],
+      "Public link settings": [
+        "Nastavenia verejného odkazu"
+      ],
+      "Settings for ${ sharedFileName }": [
+        "Nastavenia pre ${ sharedFileName }"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -13602,6 +13653,14 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Vaše skúšobné obdobie skončí dňa ${ textDate }. Ak ho zrušíte pred ${ textDate }, nebudú vám účtované žiadne poplatky. ${ action }"
+      ]
+    },
+    "Status": {
+      "accepted": [
+        "prijaté"
+      ],
+      "pending": [
+        "čakajúce"
       ]
     }
   }

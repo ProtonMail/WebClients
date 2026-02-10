@@ -3546,6 +3546,12 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️無法解密的名字"
+      ],
+      "Failed loading group members": [
+        "無法再入群組成員"
+      ],
+      "Network error": [
+        "網路連線錯誤"
       ]
     },
     "error": {
@@ -6901,6 +6907,9 @@
       ],
       "ZIP code": [
         "郵遞區號"
+      ],
+      "can view": [
+        "可以查看"
       ]
     },
     "Label for contact group color": {
@@ -8570,6 +8579,9 @@
       ],
       "Your settings have been changed successfully": [
         "您的設定已成功變更。"
+      ],
+      "Failed to remove device": [
+        "移除裝置失敗"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -11592,6 +11604,12 @@
       ],
       "You’ve got 5 GB of storage": [
         "您已獲得 5 GB 的儲存空間"
+      ],
+      "Cancel all transfers?": [
+        "取消全部匯款?"
+      ],
+      "Diagnostics": [
+        "診斷"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -11865,6 +11883,11 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "您的試用將於 ${ textDate } 結束。若您在 ${ textDate } 前取消，則不會收費。${ action }"
+      ]
+    },
+    "Status": {
+      "pending": [
+        "待處理"
       ]
     }
   }

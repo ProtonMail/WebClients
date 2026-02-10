@@ -1223,6 +1223,15 @@
       ],
       "Zoom out": [
         "დაპატარავება"
+      ],
+      "Scan & Download (${ nbSelected })": [
+        "სკანირება და გადმოწერა (${ nbSelected })"
+      ],
+      "Set password or expiration date": [
+        "პაროლის, ან ვადის ამოწურვის თარიღის დაყენება"
+      ],
+      "Sharing is end-to-end encrypted": [
+        "გაზიარება გამჭოლად დაშიფრულია"
       ]
     },
     "Action: Docs": {
@@ -3807,6 +3816,18 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ არგაშიფვრადი სახელი"
+      ],
+      "Failed loading group members": [
+        "ჯგუფის წევრების ჩატვირთვა ჩავარდა"
+      ],
+      "Network error": [
+        "ქსელის შეცდომა"
+      ],
+      "We cannot retrieve this item": [
+        "ამ ელემენტის მიღება შეუძლებელია"
+      ],
+      "We were not able to load some search results": [
+        "ზოგიერთი ძებნის შედეგის ჩატვირთვა ვერ მოხერხდა"
       ]
     },
     "error": {
@@ -4576,6 +4597,9 @@
       ],
       "Your password is correct.": [
         "პაროლი სწორია."
+      ],
+      "Two-factor authentication is enabled in your external email account.": [
+        "თქვენი ელფოსტის გარე ანგარიშში ჩართულია 2FA."
       ]
     },
     "Import instructions": {
@@ -6641,6 +6665,25 @@
       ],
       "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
         "დაკარგავთ წვდომას ${ boldPlanTitle }-სთან. თარიღი: ${ boldEndDate }."
+      ],
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "შემოტანილი იქნება ყველა თქვენი კონტაქტი. ლიმიტია ${ maxContact }",
+        "შემოტანილი იქნება ყველა თქვენი კონტაქტი. ლიმიტია ${ maxContact }"
+      ],
+      "Computed hash does not match XAttr": [
+        "გამოთვლილი ჰეში არ ემთხვევა XAttr-ს"
+      ],
+      "Link copied": [
+        "ბმული დაკოპირებულია"
+      ],
+      "owner": [
+        "მფლობელი"
+      ],
+      "This will cancel any remaining downloads.": [
+        "ეს ყველა დარჩენილ გადმოწერას გააუქმებს."
+      ],
+      "Who has access": [
+        "ვის აქვს წვდომა"
       ]
     },
     "info": {
@@ -7376,6 +7419,27 @@
       ],
       "ZIP code": [
         "საფოსტო კოდი"
+      ],
+      "Active": [
+        "აქტიური"
+      ],
+      "admin": [
+        "ადმინი"
+      ],
+      "Anyone on the Internet with the link": [
+        "ბმულის მქონე ნებისმიერ პირს ინტერნეტში"
+      ],
+      "can edit": [
+        "შეუძლია, ჩაასწოროს"
+      ],
+      "can view": [
+        "შეუძლია, ნახოს"
+      ],
+      "Delete link and remove access for everyone": [
+        "ბმულის წაშლა და ყველასთვის წვდომის შეწყვეტა"
+      ],
+      "Not active": [
+        "აქტიური არაა"
       ]
     },
     "Label for contact group color": {
@@ -8416,6 +8480,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "ჩვენ ვასკანერებთ ბნელ ვებს, რომ აღმოვაჩინოთ, არის თუ არა თქვენი ${ BRAND_NAME }-ის მისამართები ან ფსევდონიმები გაჟონილი და გაგაფრთხილოთ, თუ რამეს აღმოვაჩენთ."
+      ],
+      "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
+        "სატელეფონო მხარდაჭერა (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ მომხმარებელი)"
       ]
     },
     "new_plans: feature highlight": {
@@ -9780,6 +9847,10 @@
       ],
       "Your payment is still being processed": [
         "თქვენი გადახდა ჯერ კიდევ მუშავდება"
+      ],
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "ფასდაკლება მოქმედებს ${ renewalsWithCoupon } განახლებაზე.",
+        "ფასდაკლება მოქმედებს ${ renewalsWithCoupon } განახლებაზე."
       ]
     },
     "Payments.Error": {
@@ -12526,6 +12597,28 @@
       ],
       "You’ve got 5 GB of storage": [
         "გაქვთ 5გბ საცავი"
+      ],
+      "Found ${ resultCount } result": [
+        "ნაპოვნია ${ resultCount } შედეგი",
+        "ნაპოვნია ${ resultCount } შედეგი"
+      ],
+      "Public link": [
+        "საჯარო ბმული"
+      ],
+      "Public link settings": [
+        "საჯარო ბმულის მორგება"
+      ],
+      "Settings for ${ sharedFileName }": [
+        "პარამეტრები ${ sharedFileName }-ისთვის"
+      ],
+      "This is likely due to the account or address having been deleted.": [
+        "ეს სავარაუდოდ იმიტომ ხდება, რომ ანგარიში ან მისამართი წაიშალა."
+      ],
+      "Your ${ planTitle } subscription has started": [
+        "თქვვენი ${ planTitle } გამოწერა დაიწყო"
+      ],
+      "Your download includes ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME } files": [
+        "თქვენი გადმოწერა შეიცავს ${ DOCS_APP_NAME } ან ${ SHEETS_APP_NAME } ფაილს"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -12827,6 +12920,14 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "თქვენი საცდელი პერიოდი დასრულდება: ${ textDate }. თუ გააუქმებთ ${ textDate }-მდე, თანხა არ ჩამოგეჭრებათ. ${ action }"
+      ]
+    },
+    "Status": {
+      "accepted": [
+        "დადასტურებულია"
+      ],
+      "pending": [
+        "რიგში"
       ]
     }
   }
