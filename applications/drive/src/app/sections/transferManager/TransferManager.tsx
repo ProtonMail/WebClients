@@ -4,12 +4,11 @@ import { c } from 'ttag';
 
 import { useBeforeUnload, useConfirmActionModal } from '@proton/components';
 import { splitNodeUid } from '@proton/drive/index';
+import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
 import { uploadManager } from '@proton/drive/modules/upload';
 
 import { useUploadConflictModal } from '../../modals/UploadConflictModal';
 import { useDriveEventManager } from '../../store';
-import { getActionEventManager } from '../../utils/ActionEventManager/ActionEventManager';
-import { ActionEventName } from '../../utils/ActionEventManager/ActionEventManagerTypes';
 import { TransferManagerHeader } from './transferManagerHeader/transferManagerHeader';
 import { TransferManagerList } from './transferManagerList/transferManagerList';
 import { useTransferManagerActions } from './useTransferManagerActions';
@@ -56,11 +55,11 @@ export const TransferManager = ({ drawerWidth = 0, deprecatedRootShareId }: Tran
             });
         });
 
-        const actionEventManager = getActionEventManager();
+        const busDriver = getBusDriver();
         uploadManager.subscribeToEvents('transfer-manager', async (event) => {
             if (event.type === 'file:complete' && event.isUpdatedNode) {
-                await actionEventManager.emit({
-                    type: ActionEventName.UPDATED_NODES,
+                await busDriver.emit({
+                    type: BusDriverEventName.UPDATED_NODES,
                     items: [{ uid: event.nodeUid, parentUid: event.parentUid }],
                 });
             } else if (event.type === 'file:complete' && event.isForPhotos) {
@@ -68,8 +67,8 @@ export const TransferManager = ({ drawerWidth = 0, deprecatedRootShareId }: Tran
                 const { volumeId } = splitNodeUid(event.nodeUid);
                 await driveEventManager.pollEvents.volumes(volumeId);
             } else if (event.type === 'file:complete' || event.type === 'folder:complete') {
-                await actionEventManager.emit({
-                    type: ActionEventName.CREATED_NODES,
+                await busDriver.emit({
+                    type: BusDriverEventName.CREATED_NODES,
                     items: [{ uid: event.nodeUid, parentUid: event.parentUid }],
                 });
             }

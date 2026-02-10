@@ -16,7 +16,10 @@ const mockedHandleSdkError = jest.mocked(handleSdkError);
 jest.mock('../../utils/errorHandling');
 jest.mocked(sendErrorReport);
 
-jest.mock('../../utils/ActionEventManager/ActionEventManager');
+jest.mock('@proton/drive/internal/BusDriver', () => ({
+    ...jest.requireActual('@proton/drive/internal/BusDriver'),
+    getBusDriver: jest.fn(),
+}));
 
 const { directoryTreeFactory } = jest.requireActual('./useDirectoryTree');
 

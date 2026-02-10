@@ -1,7 +1,6 @@
 import { getDrive } from '@proton/drive/index';
+import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
 
-import { getActionEventManager } from '../../utils/ActionEventManager/ActionEventManager';
-import { ActionEventName } from '../../utils/ActionEventManager/ActionEventManagerTypes';
 import { handleSdkError } from '../../utils/errorHandling/useSdkErrorHandler';
 import { getNodeEntity, isPhotoNode } from '../../utils/sdk/getNodeEntity';
 import { trashLogDebug } from './trashLogger';
@@ -20,20 +19,20 @@ const getNode = async (uid: string) => {
 };
 
 export const subscribeToTrashEvents = () => {
-    const eventManager = getActionEventManager();
+    const eventManager = getBusDriver();
     void eventManager.subscribeSdkEventsMyUpdates('trashFiles');
     void eventManager.subscribePhotosEventsMyUpdates('trashPhotos');
-    const unsubscribeFromEvents = eventManager.subscribe(ActionEventName.ALL, async (event) => {
+    const unsubscribeFromEvents = eventManager.subscribe(BusDriverEventName.ALL, async (event) => {
         const trashPhotoStore = useTrashStore.getState();
         const trashFilesStore = useTrashPhotosStore.getState();
         trashLogDebug('trash event', { event });
         switch (event.type) {
-            case ActionEventName.RESTORED_NODES:
+            case BusDriverEventName.RESTORED_NODES:
                 const uids = event.items.map((t) => t.uid);
                 trashPhotoStore.removeNodes(uids);
                 trashFilesStore.removeNodes(uids);
                 break;
-            case ActionEventName.TRASHED_NODES:
+            case BusDriverEventName.TRASHED_NODES:
                 for (const uid of event.uids) {
                     const node = await getNode(uid);
                     if (node) {
@@ -45,7 +44,7 @@ export const subscribeToTrashEvents = () => {
                     }
                 }
                 break;
-            case ActionEventName.DELETED_NODES:
+            case BusDriverEventName.DELETED_NODES:
                 trashPhotoStore.removeNodes(event.uids);
                 trashFilesStore.removeNodes(event.uids);
                 break;
@@ -54,7 +53,7 @@ export const subscribeToTrashEvents = () => {
 
     return () => {
         unsubscribeFromEvents();
-        void getActionEventManager().unsubscribeSdkEventsMyUpdates('trashFiles');
-        void getActionEventManager().unsubscribePhotosEventsMyUpdates('trashPhotos');
+        void getBusDriver().unsubscribeSdkEventsMyUpdates('trashFiles');
+        void getBusDriver().unsubscribePhotosEventsMyUpdates('trashPhotos');
     };
 };

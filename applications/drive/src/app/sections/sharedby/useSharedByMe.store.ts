@@ -2,8 +2,8 @@ import { create } from 'zustand';
 import { devtools } from 'zustand/middleware';
 
 import type { NodeType } from '@proton/drive';
+import { getBusDriver } from '@proton/drive/internal/BusDriver';
 
-import { getActionEventManager } from '../../utils/ActionEventManager/ActionEventManager';
 import { subscribeToSharedByMeEvents } from './subscribeToSharedByMeEvents';
 
 export type SharedByMeItem = {
@@ -192,14 +192,14 @@ export const useSharedByMeStore = create<SharedByMeStore>()(
                     return;
                 }
 
-                const eventManager = getActionEventManager();
+                const eventManager = getBusDriver();
                 await eventManager.subscribeSdkEventsMyUpdates(context);
 
                 const unsubscribeFromEvents = subscribeToSharedByMeEvents();
                 set({ eventSubscription: unsubscribeFromEvents });
             },
             unsubscribeToEvents: async (context: string) => {
-                const eventManager = getActionEventManager();
+                const eventManager = getBusDriver();
                 await eventManager.unsubscribeSdkEventsMyUpdates(context);
 
                 const { activeContexts, eventSubscription } = get();

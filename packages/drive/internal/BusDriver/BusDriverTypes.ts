@@ -11,7 +11,7 @@
 
 export type NodeEventMeta = { uid: string; parentUid: string | undefined; isTrashed?: boolean; isShared?: boolean };
 
-export enum ActionEventName {
+export enum BusDriverEventName {
     // Specific events that update only a part of the view, can be optimistic or not
     MOVED_NODES = 'MOVED_NODES',
     TRASHED_NODES = 'TRASHED_NODES',
@@ -45,73 +45,73 @@ export enum ActionEventName {
 }
 
 export interface MovedNodesEvent {
-    type: ActionEventName.MOVED_NODES;
+    type: BusDriverEventName.MOVED_NODES;
     items: { uid: string; parentUid: string | undefined }[];
 }
 
 export interface TrashedNodesEvent {
-    type: ActionEventName.TRASHED_NODES;
+    type: BusDriverEventName.TRASHED_NODES;
     uids: string[];
 }
 export interface RestoredNodesEvent {
-    type: ActionEventName.RESTORED_NODES;
+    type: BusDriverEventName.RESTORED_NODES;
     items: { uid: string; parentUid: string | undefined }[];
 }
 
 export interface RenamedNodesEvent {
-    type: ActionEventName.RENAMED_NODES;
+    type: BusDriverEventName.RENAMED_NODES;
     items: { newName: string; uid: string }[];
 }
 
 export interface UpdatedNodesEvent {
-    type: ActionEventName.UPDATED_NODES;
+    type: BusDriverEventName.UPDATED_NODES;
     items: NodeEventMeta[];
 }
 
 export interface CreatedNodesEvent {
-    type: ActionEventName.CREATED_NODES;
+    type: BusDriverEventName.CREATED_NODES;
     items: NodeEventMeta[];
 }
 
 export interface DeletedNodesEvent {
-    type: ActionEventName.DELETED_NODES;
+    type: BusDriverEventName.DELETED_NODES;
     uids: string[];
 }
 
 export interface RenamedDevicesEvent {
-    type: ActionEventName.RENAMED_DEVICES;
+    type: BusDriverEventName.RENAMED_DEVICES;
     items: { newName: string; deviceUid: string }[];
 }
 
 export interface RemovedDevicesEvent {
-    type: ActionEventName.REMOVED_DEVICES;
+    type: BusDriverEventName.REMOVED_DEVICES;
     deviceUids: string[];
 }
 export interface DeleteBookmarksEvent {
-    type: ActionEventName.DELETE_BOOKMARKS;
+    type: BusDriverEventName.DELETE_BOOKMARKS;
     uids: string[];
 }
 
 export interface AcceptInvitationsEvent {
-    type: ActionEventName.ACCEPT_INVITATIONS;
+    type: BusDriverEventName.ACCEPT_INVITATIONS;
     uids: string[];
 }
 
 export interface RejectInvitationsEvent {
-    type: ActionEventName.REJECT_INVITATIONS;
+    type: BusDriverEventName.REJECT_INVITATIONS;
     uids: string[];
 }
 
 export interface RemoveMeEvent {
-    type: ActionEventName.REMOVE_ME;
+    type: BusDriverEventName.REMOVE_ME;
     uids: string[];
 }
 
 export interface RefreshShareWithMeEvent {
-    type: ActionEventName.REFRESH_SHARED_WITH_ME;
+    type: BusDriverEventName.REFRESH_SHARED_WITH_ME;
 }
 
-export type ActionEvent =
+export type BusDriverEvent =
     | MovedNodesEvent
     | TrashedNodesEvent
     | RestoredNodesEvent
@@ -127,22 +127,22 @@ export type ActionEvent =
     | RemoveMeEvent
     | RefreshShareWithMeEvent;
 
-export type ActionEventListener<T extends ActionEvent> = (event: T) => Promise<void>;
+export type BusDriverEventListener<T extends BusDriverEvent> = (event: T) => Promise<void>;
 
-export type ActionEventMap = {
-    [ActionEventName.MOVED_NODES]: MovedNodesEvent;
-    [ActionEventName.TRASHED_NODES]: TrashedNodesEvent;
-    [ActionEventName.RESTORED_NODES]: RestoredNodesEvent;
-    [ActionEventName.RENAMED_NODES]: RenamedNodesEvent;
-    [ActionEventName.UPDATED_NODES]: UpdatedNodesEvent;
-    [ActionEventName.CREATED_NODES]: CreatedNodesEvent;
-    [ActionEventName.DELETED_NODES]: DeletedNodesEvent;
-    [ActionEventName.RENAMED_DEVICES]: RenamedDevicesEvent;
-    [ActionEventName.REMOVED_DEVICES]: RemovedDevicesEvent;
-    [ActionEventName.DELETE_BOOKMARKS]: DeleteBookmarksEvent;
-    [ActionEventName.ACCEPT_INVITATIONS]: AcceptInvitationsEvent;
-    [ActionEventName.REJECT_INVITATIONS]: RejectInvitationsEvent;
-    [ActionEventName.REMOVE_ME]: RemoveMeEvent;
-    [ActionEventName.REFRESH_SHARED_WITH_ME]: RefreshShareWithMeEvent;
-    [ActionEventName.ALL]: ActionEvent;
+export type BusDriverEventMap = {
+    [BusDriverEventName.MOVED_NODES]: MovedNodesEvent;
+    [BusDriverEventName.TRASHED_NODES]: TrashedNodesEvent;
+    [BusDriverEventName.RESTORED_NODES]: RestoredNodesEvent;
+    [BusDriverEventName.RENAMED_NODES]: RenamedNodesEvent;
+    [BusDriverEventName.UPDATED_NODES]: UpdatedNodesEvent;
+    [BusDriverEventName.CREATED_NODES]: CreatedNodesEvent;
+    [BusDriverEventName.DELETED_NODES]: DeletedNodesEvent;
+    [BusDriverEventName.RENAMED_DEVICES]: RenamedDevicesEvent;
+    [BusDriverEventName.REMOVED_DEVICES]: RemovedDevicesEvent;
+    [BusDriverEventName.DELETE_BOOKMARKS]: DeleteBookmarksEvent;
+    [BusDriverEventName.ACCEPT_INVITATIONS]: AcceptInvitationsEvent;
+    [BusDriverEventName.REJECT_INVITATIONS]: RejectInvitationsEvent;
+    [BusDriverEventName.REMOVE_ME]: RemoveMeEvent;
+    [BusDriverEventName.REFRESH_SHARED_WITH_ME]: RefreshShareWithMeEvent;
+    [BusDriverEventName.ALL]: BusDriverEvent;
 };

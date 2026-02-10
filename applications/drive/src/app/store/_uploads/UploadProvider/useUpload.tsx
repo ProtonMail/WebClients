@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { useGetUser } from '@proton/account/user/hooks';
 import { useEventManager, useNotifications, useOnline, usePreventLeave } from '@proton/components';
 import { useDrive } from '@proton/drive';
+import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
 import { APPS } from '@proton/shared/lib/constants';
 import { MAX_SAFE_UPLOADING_FILE_COUNT, MAX_SAFE_UPLOADING_FILE_SIZE } from '@proton/shared/lib/drive/constants';
 import { HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
@@ -15,8 +16,6 @@ import { TransferCancel, TransferSkipped, TransferState } from '../../../compone
 import type { FileThresholdModalType } from '../../../components/modals/FileThresholdModal';
 import { useFileThresholdModal } from '../../../components/modals/FileThresholdModal';
 import { useIsFreeUploadInProgress } from '../../../hooks/drive/freeUpload/useIsFreeUploadInProgress';
-import { getActionEventManager } from '../../../utils/ActionEventManager/ActionEventManager';
-import { ActionEventName } from '../../../utils/ActionEventManager/ActionEventManagerTypes';
 import { sendErrorReport } from '../../../utils/errorHandling';
 import { useSdkErrorHandler } from '../../../utils/errorHandling/useSdkErrorHandler';
 import { getIsPublicContext } from '../../../utils/getIsPublicContext';
@@ -259,8 +258,8 @@ function useBaseUpload(
                                 nextFolderUpload.shareId,
                                 nextFolderUpload.parentId
                             );
-                            await getActionEventManager().emit({
-                                type: ActionEventName.CREATED_NODES,
+                            await getBusDriver().emit({
+                                type: BusDriverEventName.CREATED_NODES,
                                 items: [{ uid, parentUid }],
                             });
                         } catch (e) {
@@ -337,8 +336,10 @@ function useBaseUpload(
                             if (!file.isNewFile) {
                                 await unsafeRemoveNodeFromCache(uid);
                             }
-                            await getActionEventManager().emit({
-                                type: file.isNewFile ? ActionEventName.CREATED_NODES : ActionEventName.UPDATED_NODES,
+                            await getBusDriver().emit({
+                                type: file.isNewFile
+                                    ? BusDriverEventName.CREATED_NODES
+                                    : BusDriverEventName.UPDATED_NODES,
                                 items: [{ uid, parentUid }],
                             });
                         } catch (e) {
