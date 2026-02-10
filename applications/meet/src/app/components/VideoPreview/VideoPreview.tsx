@@ -14,13 +14,19 @@ interface VideoPreviewProps {
 export const VideoPreview = ({ selectedCameraId, facingMode }: VideoPreviewProps) => {
     const videoRef = useRef<HTMLVideoElement>(null);
 
-    const { handlePreviewCameraToggle } = useMediaManagementContext();
+    const { handlePreviewCameraToggle, cleanupPreviewTrack } = useMediaManagementContext();
 
     useEffect(() => {
         if (videoRef.current) {
             void handlePreviewCameraToggle(videoRef.current);
         }
     }, [selectedCameraId, facingMode]);
+
+    useEffect(() => {
+        return () => {
+            void cleanupPreviewTrack();
+        };
+    }, []);
 
     return (
         <>
