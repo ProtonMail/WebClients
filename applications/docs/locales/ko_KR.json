@@ -90,6 +90,9 @@
       "Apply": [
         "적용"
       ],
+      "Ask me next time": [
+        "다음에 내게 묻기"
+      ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "연락처 그룹 당 최대 ${ maxContacts }개 연락처가 허용됩니다"
       ],
@@ -362,6 +365,9 @@
       ],
       "Export selection as .vcf": [
         "선택한 항목을 .vcf로 내보내기"
+      ],
+      "Export this version (as xlsx)": [
+        "이 버전을 xlsx로 내보내기"
       ],
       "Forgot password?": [
         "비밀번호를 잊으셨나요?"
@@ -2919,6 +2925,9 @@
       "Name is required": [
         "이름은 필수입니다"
       ],
+      "Network error": [
+        "네트워크 오류"
+      ],
       "No calendars found to import": [
         "불러올 캘린더를 찾을 수 없음"
       ],
@@ -4229,6 +4238,9 @@
       "Continue": [
         "계속"
       ],
+      "Converting document...": [
+        "문서를 변환하는 중..."
+      ],
       "Copy the link to clipboard": [
         "복사한 링크 붙이기"
       ],
@@ -4273,6 +4285,9 @@
       ],
       "Creating link to folder": [
         "폴더 링크를 만드는 중"
+      ],
+      "Creating new document...": [
+        "새로운 문서를 생성하는 중..."
       ],
       "Current plan": [
         "현재 플랜"
@@ -4367,6 +4382,12 @@
       "Enter your own password (as trusted contact).": [
         "사용자 고유의 비밀번호 입력 (신뢰할 수 있는 연락처로서)"
       ],
+      "Error converting document: ${ errorMessage }": [
+        "문서 변환 오류: ${ errorMessage }"
+      ],
+      "Error loading document: ${ errorDetail }": [
+        "문서 로딩 오류: ${ errorDetail }"
+      ],
       "Error Syncing": [
         "동기화 오류"
       ],
@@ -4426,6 +4447,12 @@
       ],
       "Geoblocking": [
         "차단된 콘텐츠"
+      ],
+      "Get email updates for comments and suggestions added to your documents.": [
+        "문서에 추가된 댓글 및 제안 사항에 대한 이메일 업데이트를 받아보세요."
+      ],
+      "Get Notified About Comments": [
+        "댓글 알림 받기"
       ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "정부와 ISP가 사용자의 온라인 활동을 모니터링할 수 있습니다. 실제 IP를 숨기고 활동을 암호화함으로서 브라우징이 비공개화 됩니다."
@@ -4565,6 +4592,9 @@
       "Low Priority": [
         "중요도 낮음"
       ],
+      "Making a copy...": [
+        "복사본을 생성하는 중..."
+      ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "최대 ${ MAX_SHARED_URL_PASSWORD_LENGTH }자"
       ],
@@ -4594,6 +4624,9 @@
       ],
       "No contacts added yet": [
         "아직 추가된 연락처가 없습니다"
+      ],
+      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
+        "URL에 제공된 문서가 없습니다. ${ DRIVE_APP_NAME }로 돌아가서 문서를 선택하세요."
       ],
       "No email address": [
         "이메일 주소 없음"
@@ -4876,6 +4909,9 @@
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "이 주소의 주인이 종단 간 암호화를 비활성화 시켰습니다. 따라서 이 주소로 암호화된 이메일을 보내려면, 해당 주소 주인이 종단 간 암호화 재활성화를 해야합니다."
+      ],
+      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
+        "입력된 URL이 Slack에서 잘못 복사된 것으로 추정됩니다. Slack에서 긴 링크를 복사할 때 링크를 마우스 오른쪽 버튼으로 클릭한 다음 잘린 URL 텍스트를 직접 복사하는 대신 \"링크 복사\"를 선택하세요."
       ],
       "There are no documents in the trash.": [
         "휴지통 내에 문서가 존재하지 않습니다."
@@ -5491,6 +5527,9 @@
       "Emails (last month)": [
         "이마일 (지난 달)"
       ],
+      "Enable email notifications": [
+        "이메일 알림 활성화"
+      ],
       "Encrypt emails": [
         "이메일 암호화"
       ],
@@ -5538,6 +5577,9 @@
       ],
       "Include application logs in bug report": [
         "버그 신고에 애플리케이션 로그 포함"
+      ],
+      "Include document name in notification": [
+        "알림에서 문서 이름 포함"
       ],
       "Include message and file name in invite email": [
         "초대 이메일에 메시지 및 파일 이름을 포함하기"
@@ -9815,7 +9857,7 @@
         "이 스프레드시트의 모든 데이터가 대체됩니다"
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
-        "안타깝게도, 현재 온라인이 아닙니다. 겪고 계신 문제를 설명하기 위해 아래 양식을 작성해 주시면, 다시 온라인에 접속하실 때 살펴보고 연락드리겠습니다."
+        "송구스럽지만, 현재 대기 중인 상담원이 없습니다. 겪고 계신 문제를 아래 양식을 통해 작성해 주시면, 차후 상담원이 돌아왔을 때 살펴보고 연락드리겠습니다."
       ],
       "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
         "메일 서버를 인증할 수 없습니다. 해당 서버를 신뢰하신다면, 이 인증을 건너뛸 수도 있습니다."
