@@ -37,6 +37,9 @@
       "Accept and view the item": [
         "Aceitar e ver esse item"
       ],
+      "Accept invitation": [
+        "Aceitar convite"
+      ],
       "Account": [
         "Conta"
       ],
@@ -986,6 +989,9 @@
       "Error reporting problem": [
         "Erro ao relatar o problema"
       ],
+      "Failed loading group members": [
+        "Falha ao carregar membros do grupo"
+      ],
       "Failed removing the invite.": [
         "Falha ao remover o convite."
       ],
@@ -1381,8 +1387,17 @@
         "${ forwardedEmailsCount } encaminhado",
         "${ forwardedEmailsCount } encaminhados"
       ],
+      "${ inviterEmail } wants to share an item with a group you administer.": [
+        "${ inviterEmail } quer compartilhar um item com um grupo que você administra."
+      ],
+      "${ inviterEmail } wants to share an item with the group ${ invitedGroup.Name }.": [
+        "${ inviterEmail } quer compartilhar um item com o grupo ${ invitedGroup.Name }."
+      ],
       "${ inviterEmail } wants to share an item with you.": [
         "${ inviterEmail } deseja compartilhar um item com você."
+      ],
+      "${ maybeVaultName } has been shared with a group you are member of": [
+        "${ maybeVaultName } foi compartilhado com um grupo do qual você faz parte"
       ],
       "${ memberCount } member": [
         "${ memberCount } membro",
@@ -1391,6 +1406,9 @@
       "${ n } item": [
         "${ n } item",
         "${ n } itens"
+      ],
+      "${ newGroupSharesCount } new shares have been shared with a group you are member of": [
+        "${ newGroupSharesCount } novos compartilhamentos foram feitos com um grupo do qual você faz parte"
       ],
       "${ PASS_APP_NAME } will always be accessible": [
         "${ PASS_APP_NAME } sempre será acessível."
@@ -1427,6 +1445,10 @@
       "${ row.breachCount } breach detected": [
         "${ row.breachCount } violação detectada",
         "${ row.breachCount } violações detectadas"
+      ],
+      "(${ membersCount } member)": [
+        "(${ membersCount } membro)",
+        "(${ membersCount } membros)"
       ],
       "(Empty)": [
         "(Vazio)"
@@ -1810,6 +1832,9 @@
       ],
       "Invite successfully resent": [
         "O convite foi enviado."
+      ],
+      "invites the group ${ invitedGroup.Name } to access items in": [
+        "convida o grupo ${ invitedGroup.Name } a acessar itens em"
       ],
       "invites you to access items in": [
         "convida você a acessar itens em"
@@ -2274,6 +2299,9 @@
         "O seguinte item ${ totalIgnored } não pôde ser importado:",
         "Os seguintes itens ${ totalIgnored } não puderam ser importados:"
       ],
+      "The group is invited to a vault.": [
+        "O grupo é convidado para um cofre."
+      ],
       "The secure link has been removed": [
         "O link seguro foi removido"
       ],
@@ -2324,6 +2352,9 @@
       ],
       "This will reload the application.": [
         "Isso recarregará o aplicativo"
+      ],
+      "This will trigger a check for new beta releases.": [
+        "Isso acionará uma verificação de novas versões beta."
       ],
       "To keep receiving emails transfer these aliases to a different mailbox:": [
         "Para continuar recebendo e-mails, transfira esses aliases para uma caixa de correio diferente:"
@@ -4616,6 +4647,9 @@
       ],
       "Vault": [
         "Cofre"
+      ],
+      "Vault shared with a group you administer": [
+        "Cofre compartilhado com um grupo que você administra"
       ],
       "Vault shared with you": [
         "Cofre compartilhado com você"

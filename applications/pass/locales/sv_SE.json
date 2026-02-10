@@ -37,6 +37,9 @@
       "Accept and view the item": [
         "Acceptera och visa objektet"
       ],
+      "Accept invitation": [
+        "Acceptera inbjudan"
+      ],
       "Account": [
         "Konto"
       ],
@@ -986,6 +989,9 @@
       "Error reporting problem": [
         "Gick inte rapportera problem"
       ],
+      "Failed loading group members": [
+        "Misslyckades att ladda gruppmedlemmar"
+      ],
       "Failed removing the invite.": [
         "Misslyckades ta bort inbjudan."
       ],
@@ -1381,8 +1387,17 @@
         "${ forwardedEmailsCount } vidarebefordrat",
         "${ forwardedEmailsCount } vidarebefordrade"
       ],
+      "${ inviterEmail } wants to share an item with a group you administer.": [
+        "${ inviterEmail } vill dela ett objekt med en grupp du administrerar."
+      ],
+      "${ inviterEmail } wants to share an item with the group ${ invitedGroup.Name }.": [
+        "${ inviterEmail } vill dela ett objekt med gruppen ${ invitedGroup.Name }."
+      ],
       "${ inviterEmail } wants to share an item with you.": [
         "${ inviterEmail } vill dela ett objekt med dig."
+      ],
+      "${ maybeVaultName } has been shared with a group you are member of": [
+        "${ maybeVaultName } har delats med en grupp du är medlem i"
       ],
       "${ memberCount } member": [
         "${ memberCount } medlem",
@@ -1391,6 +1406,9 @@
       "${ n } item": [
         "${ n } objekt",
         "${ n } objekt"
+      ],
+      "${ newGroupSharesCount } new shares have been shared with a group you are member of": [
+        "${ newGroupSharesCount } nya delningar har delats med en grupp du är medlem i"
       ],
       "${ PASS_APP_NAME } will always be accessible": [
         "${ PASS_APP_NAME } kommer alltid vara åtkomlig"
@@ -1427,6 +1445,10 @@
       "${ row.breachCount } breach detected": [
         "${ row.breachCount } intrång upptäckt",
         "${ row.breachCount } intrång upptäckta"
+      ],
+      "(${ membersCount } member)": [
+        "(${ membersCount } medlem)",
+        "(${ membersCount } medlemmar)"
       ],
       "(Empty)": [
         "(Tom)"
@@ -1807,6 +1829,9 @@
       ],
       "Invite successfully resent": [
         "Inbjudan skickad"
+      ],
+      "invites the group ${ invitedGroup.Name } to access items in": [
+        "bjuder in gruppen ${ invitedGroup.Name } att komma åt objekt i"
       ],
       "invites you to access items in": [
         "bjöd in dig för att komma åt objekt i detta valv"
@@ -2265,6 +2290,9 @@
         "Följande ${ totalIgnored } objekt kunde inte importeras:",
         "Följande ${ totalIgnored } objekten kunde inte importeras:"
       ],
+      "The group is invited to a vault.": [
+        "Gruppen är inbjuden till ett valv."
+      ],
       "The secure link has been removed": [
         "Den säkra länken har tagits bort"
       ],
@@ -2333,6 +2361,9 @@
       ],
       "Trusted by over 50,000 business users and 100 million accounts around the world.": [
         "Betrodd av över 50 000 företagsanvändare och 100 miljoner konton runt om i världen."
+      ],
+      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public.": [
+        "Prova nya ${ BRAND_NAME }-funktioner, uppdateringar och produkter innan de släpps för allmänheten."
       ],
       "Unable to copy to clipboard": [
         "Kan inte kopiera till urklipp"
@@ -4604,6 +4635,9 @@
       ],
       "Vault": [
         "Valv"
+      ],
+      "Vault shared with a group you administer": [
+        "Valv delat med en grupp du administrerar"
       ],
       "Vault shared with you": [
         "Valv delade med dig"
