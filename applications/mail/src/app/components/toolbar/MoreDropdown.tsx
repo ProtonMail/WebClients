@@ -104,12 +104,6 @@ const MoreDropdown = ({
         delete: canEmpty(labelID, elementIDs, selectedIDs, isSearch),
     };
 
-    const none = Object.values(inMore).every((visible) => !visible);
-
-    if (none) {
-        return null;
-    }
-
     const handleEmptyLabel = () => {
         sendSimpleActionReport({
             actionType: ACTION_TYPE.DELETE_PERMANENTLY,
@@ -259,6 +253,8 @@ const MoreDropdown = ({
         });
     }
 
+    const none = Object.values(inMore).every((visible) => !visible);
+
     return (
         <>
             <ToolbarDropdown
@@ -267,6 +263,8 @@ const MoreDropdown = ({
                 data-testid="toolbar:more-dropdown"
                 hasCaret={false}
                 additionalDropdowns={additionalDropdowns}
+                className={none ? 'visibility-hidden' : ''}
+                disabled={none}
             >
                 {{
                     render: ({ onOpenAdditional }) => (
