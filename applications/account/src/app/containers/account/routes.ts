@@ -180,6 +180,7 @@ export const getAccountAppRoutes = ({
     app,
     user,
     isSessionRecoveryAvailable,
+    isRecoveryContactsEnabled,
     subscription,
     isDataRecoveryAvailable,
     isReferralProgramEnabled,
@@ -207,6 +208,7 @@ export const getAccountAppRoutes = ({
     addresses?: Address[];
     subscription?: Subscription;
     isDataRecoveryAvailable: boolean;
+    isRecoveryContactsEnabled: boolean;
     isSessionRecoveryAvailable: boolean;
     isReferralProgramEnabled: boolean;
     recoveryNotification?: ThemeColor;
@@ -283,7 +285,9 @@ export const getAccountAppRoutes = ({
 
     const isAccountRecoveryAvailable = getIsAccountRecoveryAvailable(user);
     const isEmergencyAccessAvailable = user.isPrivate && getIsOutgoingDelegatedAccessAvailable(user);
+    const isRecoveryContactsAvailable = isRecoveryContactsEnabled && isEmergencyAccessAvailable;
     const isNonPrivateEmergencyAccessAvailable = !user.isPrivate && getIsIncomingDelegatedAccessAvailable(user);
+    const isNonPrivateRecoveryContactsAvailable = isRecoveryContactsEnabled && isNonPrivateEmergencyAccessAvailable;
 
     const paymentsSectionAvailable =
         isFamilyOrDuoPlanMember ||
@@ -491,6 +495,11 @@ export const getAccountAppRoutes = ({
                         available: isEmergencyAccessAvailable,
                     },
                     {
+                        text: c('emergency_access').t`Recovery contacts`,
+                        id: recoveryIds.recoveryContacts,
+                        available: isRecoveryContactsAvailable,
+                    },
+                    {
                         text: c('Title').t`Password reset settings`,
                         id: 'password-reset',
                         available: isSessionRecoveryAvailable,
@@ -529,6 +538,11 @@ export const getAccountAppRoutes = ({
                         id: 'emergency-access',
                         // This is a special section for non-private users that only contains incoming delegated access
                         available: isNonPrivateEmergencyAccessAvailable,
+                    },
+                    {
+                        text: c('emergency_access').t`Recovery contacts`,
+                        id: recoveryIds.recoveryContacts,
+                        available: isNonPrivateRecoveryContactsAvailable,
                     },
                     {
                         text: isFamilyOrg

@@ -1,5 +1,8 @@
 import { c } from 'ttag';
 
+import { RecoveryMethodWarningModal } from '@proton/account/delegatedAccess/recoveryContact/RecoveryMethodWarningModal';
+import { getCanDisableRecovery } from '@proton/account/delegatedAccess/recoveryContact/getCanDisableRecovery';
+import { useOutgoingItems } from '@proton/account/delegatedAccess/shared/outgoing/useOutgoingItems';
 import { userSettingsThunk } from '@proton/account/userSettings';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import Loader from '@proton/components/components/loader/Loader';
@@ -20,6 +23,7 @@ import { CacheType } from '@proton/redux-utilities';
 import { updateResetEmail, updateResetPhone } from '@proton/shared/lib/api/settings';
 import noop from '@proton/utils/noop';
 
+import useModalState from '../../components/modalTwo/useModalState';
 import SignInWithAnotherDeviceSettings from './SignInWithAnotherDeviceSettings';
 import RecoveryEmail from './email/RecoveryEmail';
 import RecoveryPhone from './phone/RecoveryPhone';
@@ -32,6 +36,12 @@ export const AccountRecoverySection = ({ divider = true }: { divider?: boolean }
     const { createNotification } = useNotifications();
     const defaultCountry = useMyCountry();
     const [authModal, showAuthModal] = useModalTwoPromise<{ config: any }, AuthModalResult>();
+    const outgoingItems = useOutgoingItems();
+    const canDisableRecovery = getCanDisableRecovery({
+        recoveryContacts: outgoingItems.items.recoveryContacts,
+        userSettings,
+    });
+    const [renderProps, showRecoveryContactWarning, renderModal] = useModalState();
 
     if (loadingUserSettings || !userSettings) {
         return <Loader />;
@@ -61,6 +71,7 @@ export const AccountRecoverySection = ({ divider = true }: { divider?: boolean }
             {authModal(({ onResolve, onReject, ...props }) => {
                 return <AuthModal {...props} scope="password" onCancel={onReject} onSuccess={onResolve} />;
             })}
+            {renderModal && <RecoveryMethodWarningModal {...renderProps} />}
             <SettingsSection>
                 <SettingsDivider enabled={divider}>
                     <SignInWithAnotherDeviceSettings />
@@ -77,6 +88,13 @@ export const AccountRecoverySection = ({ divider = true }: { divider?: boolean }
                                 email={userSettings.Email}
                                 hasReset={!!userSettings.Email.Reset}
                                 hasNotify={!!userSettings.Email.Notify}
+                                canSubmit={(value) => {
+                                    if (!value && !canDisableRecovery.canDisableEmail) {
+                                        showRecoveryContactWarning(true);
+                                        return false;
+                                    }
+                                    return true;
+                                }}
                             />
                             <div className="flex items-center">
                                 <Toggle
@@ -84,9 +102,15 @@ export const AccountRecoverySection = ({ divider = true }: { divider?: boolean }
                                     loading={loadingEmailReset}
                                     checked={!!userSettings.Email.Reset && !!userSettings.Email.Value}
                                     id="passwordEmailResetToggle"
-                                    onChange={({ target: { checked } }) =>
-                                        withLoadingEmailReset(handleChangePasswordEmailToggle(+checked).catch(noop))
-                                    }
+                                    onChange={({ target: { checked } }) => {
+                                        if (!checked && !canDisableRecovery.canDisableEmail) {
+                                            showRecoveryContactWarning(true);
+                                            return;
+                                        }
+                                        return withLoadingEmailReset(
+                                            handleChangePasswordEmailToggle(+checked).catch(noop)
+                                        );
+                                    }}
                                 />
                                 <label htmlFor="passwordEmailResetToggle" className="flex-1">
                                     {c('Label').t`Allow recovery by email`}
@@ -107,6 +131,13 @@ export const AccountRecoverySection = ({ divider = true }: { divider?: boolean }
                                 defaultCountry={defaultCountry}
                                 phone={userSettings.Phone}
                                 hasReset={!!userSettings.Phone.Reset}
+                                canSubmit={(value) => {
+                                    if (!value && !canDisableRecovery.canDisablePhone) {
+                                        showRecoveryContactWarning(true);
+                                        return false;
+                                    }
+                                    return true;
+                                }}
                             />
                             <div className="flex items-center">
                                 <Toggle
@@ -114,9 +145,15 @@ export const AccountRecoverySection = ({ divider = true }: { divider?: boolean }
                                     loading={loadingPhoneReset}
                                     checked={!!userSettings.Phone.Reset && !!userSettings.Phone.Value}
                                     id="passwordPhoneResetToggle"
-                                    onChange={({ target: { checked } }) =>
-                                        withLoadingPhoneReset(handleChangePasswordPhoneToggle(+checked).catch(noop))
-                                    }
+                                    onChange={({ target: { checked } }) => {
+                                        if (!checked && !canDisableRecovery.canDisablePhone) {
+                                            showRecoveryContactWarning(true);
+                                            return;
+                                        }
+                                        return withLoadingPhoneReset(
+                                            handleChangePasswordPhoneToggle(+checked).catch(noop)
+                                        );
+                                    }}
                                 />
                                 <label htmlFor="passwordPhoneResetToggle" className="flex-1">
                                     {c('Label').t`Allow recovery by phone`}

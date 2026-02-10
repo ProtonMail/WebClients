@@ -1,7 +1,5 @@
 import { c } from 'ttag';
 
-import { usePreviousSubscription } from '@proton/account/previousSubscription/hooks';
-import { useSubscription } from '@proton/account/subscription/hooks';
 import { Banner } from '@proton/atoms/Banner/Banner';
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
@@ -16,6 +14,8 @@ import { subscriptionExpires } from '@proton/payments';
 import { SECOND } from '@proton/shared/lib/constants';
 import isBetween from '@proton/utils/isBetween';
 
+import { usePreviousSubscription } from '../../../previousSubscription/hooks';
+import { useSubscription } from '../../../subscription/hooks';
 import { useOutgoingController } from '../../shared/OutgoingDelegatedAccessProvider';
 
 const subscriptionDaysLeftBeforeWarning = 7;

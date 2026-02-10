@@ -1,11 +1,12 @@
-import { type ReactNode, createContext, useCallback, useContext, useRef } from 'react';
+import { type ReactNode, createContext, useCallback, useContext, useMemo, useRef } from 'react';
 
 import createListeners, { type Listeners } from '@proton/shared/lib/helpers/listeners';
+import { getLikelyHasKeysToReactivate } from '@proton/shared/lib/keys/getInactiveKeys';
 import { hasPaidPass } from '@proton/shared/lib/user/helpers';
 
 import { useUser } from '../../user/hooks';
 import { getIsOutgoingDelegatedAccessAvailable } from '../available';
-import { maxOutgoingEmergencyContacts } from '../constants';
+import { maxOutgoingEmergencyContacts, maxOutgoingRecoveryContacts } from '../constants';
 import type { ActionListener, ActionPayload } from './outgoing/interface';
 import { useOutgoingItems } from './outgoing/useOutgoingItems';
 
@@ -22,6 +23,14 @@ export interface OutgoingDelegatedAccessProviderValue {
             hasReachedLimit: boolean;
             limit: number;
         };
+        recoveryContacts: {
+            hasAccess: boolean;
+            hasReachedLimit: boolean;
+            limit: number;
+        };
+        userContext: {
+            hasInactiveKeys: boolean;
+        };
         count: number;
     };
 }
@@ -32,6 +41,7 @@ export const OutgoingDelegatedAccessProvider = ({ children }: { children: ReactN
     const listenersRef = useRef<Listeners<[ActionPayload], undefined> | null>(null);
     const { items, loading } = useOutgoingItems();
     const [user] = useUser();
+    const hasInactiveKeys = useMemo(() => Boolean(getLikelyHasKeysToReactivate(user)), [user]);
 
     const outgoingDelegatedAccessCount = items.emergencyContacts.length + items.recoveryContacts.length;
 
@@ -54,6 +64,14 @@ export const OutgoingDelegatedAccessProvider = ({ children }: { children: ReactN
                 hasUpsell: user.canPay && !hasEmergencyContactAccess,
                 hasReachedLimit: items.emergencyContacts.length === maxOutgoingEmergencyContacts,
                 limit: maxOutgoingEmergencyContacts,
+            },
+            recoveryContacts: {
+                hasAccess: true,
+                hasReachedLimit: items.recoveryContacts.length === maxOutgoingRecoveryContacts,
+                limit: maxOutgoingRecoveryContacts,
+            },
+            userContext: {
+                hasInactiveKeys,
             },
             count: outgoingDelegatedAccessCount,
         },

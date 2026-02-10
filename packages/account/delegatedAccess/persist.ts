@@ -7,7 +7,7 @@ export const selectDelegatedAccessPersist = (state: DelegatedAccessState['delega
     if (selectPersistModel(state.incomingDelegatedAccess) || selectPersistModel(state.outgoingDelegatedAccess)) {
         return {
             incomingDelegatedAccess: omit(state.incomingDelegatedAccess, ['ephemeral']),
-            outgoingDelegatedAccess: state.outgoingDelegatedAccess,
+            outgoingDelegatedAccess: omit(state.outgoingDelegatedAccess, ['ephemeral']),
         };
     }
 };
