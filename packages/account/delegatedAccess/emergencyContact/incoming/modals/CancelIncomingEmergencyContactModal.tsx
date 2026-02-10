@@ -2,16 +2,24 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import Prompt, { type PromptProps } from '@proton/components/components/prompt/Prompt';
+import useErrorHandler from '@proton/components/hooks/useErrorHandler';
+import useNotifications from '@proton/components/hooks/useNotifications';
+import useLoading from '@proton/hooks/useLoading';
 
+import { resetDelegatedAccessThunk } from '../../../incomingActions';
 import type { EnrichedIncomingDelegatedAccess } from '../../../shared/incoming/interface';
+import { useDispatch } from '../../../useDispatch';
 
 interface Props extends Omit<PromptProps, 'children' | 'buttons'> {
     value: EnrichedIncomingDelegatedAccess;
-    onCancel: (value: EnrichedIncomingDelegatedAccess) => void;
-    loading: boolean;
 }
 
-export const CancelIncomingEmergencyContactModal = ({ value, loading, onCancel, ...rest }: Props) => {
+export const CancelIncomingEmergencyContactModal = ({ value, ...rest }: Props) => {
+    const handleError = useErrorHandler();
+    const dispatch = useDispatch();
+    const { createNotification } = useNotifications();
+    const [loading, withLoading] = useLoading();
+
     const user = (
         <span key="user" className="text-bold text-break">
             {value.parsedIncomingDelegatedAccess.contact.formatted}
@@ -27,7 +35,21 @@ export const CancelIncomingEmergencyContactModal = ({ value, loading, onCancel, 
                     color="danger"
                     loading={loading}
                     onClick={() => {
-                        onCancel(value);
+                        void withLoading(
+                            (async function run() {
+                                try {
+                                    await dispatch(
+                                        resetDelegatedAccessThunk({
+                                            id: value.incomingDelegatedAccess.DelegatedAccessID,
+                                        })
+                                    );
+                                    createNotification({ text: c('emergency_access').t`Access request canceled` });
+                                    rest.onClose?.();
+                                } catch (e) {
+                                    handleError(e);
+                                }
+                            })()
+                        );
                     }}
                 >
                     {c('Action').t`Cancel request`}

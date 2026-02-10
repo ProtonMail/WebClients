@@ -6,6 +6,7 @@ import { IncomingDelegatedAccessProvider } from '../shared/IncomingDelegatedAcce
 import { OutgoingDelegatedAccessActions } from '../shared/OutgoingDelegatedAccessActions';
 import { OutgoingDelegatedAccessProvider } from '../shared/OutgoingDelegatedAccessProvider';
 import { IncomingEmergencyContactSettings } from './incoming/IncomingEmergencyContactSettings';
+import { OutgoingEmergencyContactSearchParams } from './outgoing/OutgoingEmergencyAccessParams';
 import { OutgoingEmergencyContactSettings } from './outgoing/OutgoingEmergencyContactSettings';
 import { OutgoingEmergencyContactUpsell } from './outgoing/OutgoingEmergencyContactUpsell';
 
@@ -16,6 +17,7 @@ export const EmergencyContactSection = ({ app }: { app: APP_NAMES }) => {
                 <OutgoingDelegatedAccessProvider>
                     <OutgoingEmergencyContactUpsell app={app} />
                     <OutgoingDelegatedAccessActions />
+                    <OutgoingEmergencyContactSearchParams />
                     <OutgoingEmergencyContactSettings />
                 </OutgoingDelegatedAccessProvider>
             </SettingsSectionWide>

@@ -1,7 +1,7 @@
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 
-import { getContact, getParsedAccessibleTime } from '../../emergencyContact/helper';
+import { getContact, getParsedDateTime } from '../../emergencyContact/helper';
 import {
     DelegatedAccessStateEnum,
     DelegatedAccessTypeEnum,
@@ -9,15 +9,16 @@ import {
     type IncomingEphemeral,
 } from '../../interface';
 
-export const getDelegatedAccessType = (value: IncomingDelegatedAccessOutput) => {
-    if (value.Types === DelegatedAccessTypeEnum.SocialRecovery) {
-        return DelegatedAccessTypeEnum.SocialRecovery;
+export const getIsRecoveryContact = (value: IncomingDelegatedAccessOutput) => {
+    if (hasBit(value.Types, DelegatedAccessTypeEnum.SocialRecovery)) {
+        return true;
     }
+};
+
+export const getIsEmergencyContact = (value: IncomingDelegatedAccessOutput) => {
     if (hasBit(value.Types, DelegatedAccessTypeEnum.EmergencyAccess)) {
-        return DelegatedAccessTypeEnum.EmergencyAccess;
+        return true;
     }
-    // Unknown type
-    return null;
 };
 
 export const getParsedIncomingDelegatedAccess = (
@@ -25,9 +26,10 @@ export const getParsedIncomingDelegatedAccess = (
     contactEmail: ContactEmail | undefined
 ) => {
     const email = value.SourceEmail || '';
-    const accessibleAtDate = getParsedAccessibleTime(value.AccessibleTime);
+    const accessibleAtDate = getParsedDateTime(value.AccessibleTime);
     const accessibleTriggerDelayMs = (value.TriggerDelay || 0) * 1000;
     const createdAtMs = (value.CreateTime || 0) * 1000;
+    const isEnabled = value.State === DelegatedAccessStateEnum.Enabled;
     const isDisabled = value.State === DelegatedAccessStateEnum.Disabled;
 
     return {
@@ -35,8 +37,10 @@ export const getParsedIncomingDelegatedAccess = (
         createdAtDate: new Date(createdAtMs),
         accessibleAtDate,
         accessibleTriggerDelayMs,
+        isEnabled,
         isDisabled,
-        type: getDelegatedAccessType(value),
+        isRecoveryContact: getIsRecoveryContact(value),
+        isEmergencyContact: getIsEmergencyContact(value),
     };
 };
 
@@ -56,10 +60,22 @@ export const getEnrichedIncomingDelegatedAccess = (
     };
 };
 
+export const getCanIncomingDelegatedAccessRecover = ({
+    incomingDelegatedAccess,
+    parsedIncomingDelegatedAccess,
+}: ReturnType<typeof getEnrichedIncomingDelegatedAccess>) => {
+    return (
+        parsedIncomingDelegatedAccess.isRecoveryContact &&
+        incomingDelegatedAccess.State === DelegatedAccessStateEnum.Recoverable &&
+        !incomingDelegatedAccess.RecoveryToken
+    );
+};
+
 export const getMetaIncomingDelegatedAccess = ({
     now,
+    value,
     value: {
-        parsedIncomingDelegatedAccess: { isDisabled, accessibleAtDate, type },
+        parsedIncomingDelegatedAccess: { isDisabled, accessibleAtDate },
     },
 }: {
     now: number;
@@ -79,6 +95,6 @@ export const getMetaIncomingDelegatedAccess = ({
         canRequestAccess: !isDisabled && canRequestAccess,
         canCancelRequestAccess: !isDisabled && hasRequestedAccess,
         canDelete: true,
-        canRecover: type === DelegatedAccessTypeEnum.SocialRecovery,
+        canRecover: getCanIncomingDelegatedAccessRecover(value),
     };
 };

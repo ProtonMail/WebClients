@@ -4,8 +4,7 @@ import { selectContactEmailsMap } from '@proton/mail/store/contactEmails/selecto
 import { getContactEmailKey } from '@proton/shared/lib/contacts/getContactEmailsMap';
 
 import { selectIncomingDelegatedAccess } from '../../index';
-import { DelegatedAccessTypeEnum } from '../../interface';
-import { getDelegatedAccessType, getEnrichedIncomingDelegatedAccess } from './helper';
+import { getEnrichedIncomingDelegatedAccess } from './helper';
 import type { EnrichedIncomingDelegatedAccess } from './interface';
 
 export interface EnrichedIncomingDelegatedAccessReturnValue {
@@ -27,10 +26,11 @@ export const selectEnrichedIncomingDelegatedAccess = createSelector(
                 (acc, incomingDelegatedAccess) => {
                     const contactEmail = contactEmailsMap[getContactEmailKey(incomingDelegatedAccess.SourceEmail)]?.[0];
                     const value = getEnrichedIncomingDelegatedAccess(incomingDelegatedAccess, contactEmail, ephemeral);
-                    const type = getDelegatedAccessType(incomingDelegatedAccess);
-                    if (type === DelegatedAccessTypeEnum.EmergencyAccess) {
+                    // Can be both emergency contact and recovery contact
+                    if (value.parsedIncomingDelegatedAccess.isEmergencyContact) {
                         acc.emergencyContacts.push(value);
-                    } else if (type === DelegatedAccessTypeEnum.SocialRecovery) {
+                    }
+                    if (value.parsedIncomingDelegatedAccess.isRecoveryContact) {
                         acc.recoveryContacts.push(value);
                     }
                     return acc;

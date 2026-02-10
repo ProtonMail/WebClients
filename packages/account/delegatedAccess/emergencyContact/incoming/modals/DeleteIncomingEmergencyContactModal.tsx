@@ -1,13 +1,13 @@
-import { useState } from 'react';
-
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import Prompt, { type PromptProps } from '@proton/components/components/prompt/Prompt';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useNotifications from '@proton/components/hooks/useNotifications';
+import useLoading from '@proton/hooks/useLoading';
 
 import { deleteDelegatedAccessThunk } from '../../../incomingActions';
+import { DelegatedAccessTypeEnum } from '../../../interface';
 import type { EnrichedIncomingDelegatedAccess } from '../../../shared/incoming/interface';
 import { useDispatch } from '../../../useDispatch';
 
@@ -16,7 +16,7 @@ interface Props extends Omit<PromptProps, 'children' | 'buttons'> {
 }
 
 export const DeleteIncomingEmergencyContactModal = ({ value, ...rest }: Props) => {
-    const [loading, setLoading] = useState(false);
+    const [loading, withLoading] = useLoading();
     const dispatch = useDispatch();
     const { createNotification } = useNotifications();
     const handleError = useErrorHandler();
@@ -36,23 +36,25 @@ export const DeleteIncomingEmergencyContactModal = ({ value, ...rest }: Props) =
                     color="danger"
                     loading={loading}
                     onClick={() => {
-                        void (async () => {
-                            try {
-                                setLoading(true);
-                                await dispatch(
-                                    deleteDelegatedAccessThunk({ id: value.incomingDelegatedAccess.DelegatedAccessID })
-                                );
-                                const user = value.parsedIncomingDelegatedAccess.contact.formatted;
-                                createNotification({
-                                    text: c('emergency_access').t`Emergency access for ${user} removed`,
-                                });
-                                rest.onClose?.();
-                            } catch (e) {
-                                handleError(e);
-                            } finally {
-                                setLoading(false);
-                            }
-                        })();
+                        void withLoading(
+                            (async function run() {
+                                try {
+                                    await dispatch(
+                                        deleteDelegatedAccessThunk({
+                                            id: value.incomingDelegatedAccess.DelegatedAccessID,
+                                            types: DelegatedAccessTypeEnum.EmergencyAccess,
+                                        })
+                                    );
+                                    const user = value.parsedIncomingDelegatedAccess.contact.formatted;
+                                    createNotification({
+                                        text: c('emergency_access').t`Emergency access for ${user} removed`,
+                                    });
+                                    rest.onClose?.();
+                                } catch (e) {
+                                    handleError(e);
+                                }
+                            })()
+                        );
                     }}
                 >
                     {c('Action').t`Opt out`}

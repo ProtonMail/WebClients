@@ -1,15 +1,8 @@
-import { useCallback, useEffect, useState } from 'react';
-
-import { c } from 'ttag';
+import { useEffect, useState } from 'react';
 
 import useModalState from '@proton/components/components/modalTwo/useModalState';
-import useErrorHandler from '@proton/components/hooks/useErrorHandler';
-import useNotifications from '@proton/components/hooks/useNotifications';
-import noop from '@proton/utils/noop';
 
 import { CancelIncomingEmergencyContactModal } from '../../../emergencyContact/incoming/modals/CancelIncomingEmergencyContactModal';
-import { resetDelegatedAccessThunk } from '../../../incomingActions';
-import { useDispatch } from '../../../useDispatch';
 import { useIncomingController } from '../../IncomingDelegatedAccessProvider';
 import type { EnrichedIncomingDelegatedAccess } from '../interface';
 
@@ -17,27 +10,8 @@ export const CancelAction = () => {
     const [modal, setOpen, renderModal] = useModalState();
     const { subscribe } = useIncomingController();
 
-    const handleError = useErrorHandler();
-    const dispatch = useDispatch();
-    const { createNotification } = useNotifications();
-
-    const [loading, setLoading] = useState(false);
-
     const [tmpIncomingDelegatedAccess, setTmpIncomingDelegatedAccess] =
         useState<EnrichedIncomingDelegatedAccess | null>(null);
-
-    const action = useCallback(async ({ incomingDelegatedAccess }: NonNullable<typeof tmpIncomingDelegatedAccess>) => {
-        try {
-            setLoading(true);
-            await dispatch(resetDelegatedAccessThunk({ id: incomingDelegatedAccess.DelegatedAccessID }));
-            createNotification({ text: c('emergency_access').t`Access request canceled` });
-            modal.onClose();
-        } catch (e) {
-            handleError(e);
-        } finally {
-            setLoading(false);
-        }
-    }, []);
 
     useEffect(() => {
         return subscribe((payload) => {
@@ -54,10 +28,6 @@ export const CancelAction = () => {
                 <CancelIncomingEmergencyContactModal
                     {...modal}
                     value={tmpIncomingDelegatedAccess}
-                    onCancel={(value) => {
-                        action(value).catch(noop);
-                    }}
-                    loading={loading}
                     onExit={() => {
                         modal.onExit();
                         setTmpIncomingDelegatedAccess(null);

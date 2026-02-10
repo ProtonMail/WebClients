@@ -101,22 +101,22 @@ const IncomingDelegatedAccessActions = ({
             <DropdownActions
                 list={[
                     canRequestAccess && {
-                        text: c('Action').t`Request access`,
+                        text: c('emergency_access').t`Request access`,
                         onClick: () => notify({ type: 'request-access', value }),
                     },
                     canCancelRequestAccess && {
-                        text: c('Action').t`Cancel request`,
+                        text: c('emergency_access').t`Cancel request`,
                         onClick: () => notify({ type: 'cancel-request-access', value }),
                     },
                     canLogin && {
                         loading: value.loading.access,
-                        text: c('Action').t`Access account`,
+                        text: c('emergency_access').t`Access account`,
                         onClick: () => notify({ type: 'access', value }),
                     },
                     canDelete && {
                         actionType: 'delete' as const,
-                        text: c('Action').t`Stop being trusted contact`,
-                        onClick: () => notify({ type: 'delete', value }),
+                        text: c('emergency_access').t`Stop being trusted contact`,
+                        onClick: () => notify({ type: 'delete-emergency-contact', value }),
                     },
                 ].filter(isTruthy)}
                 size="small"

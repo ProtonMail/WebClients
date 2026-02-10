@@ -40,7 +40,7 @@ export const getTriggerDelayLabel = (value: number) => {
     return getDaysLabel(getDaysFromMilliseconds(value));
 };
 
-export const getParsedAccessibleTime = (value: IncomingDelegatedAccessOutput['AccessibleTime']) => {
+export const getParsedDateTime = (value: IncomingDelegatedAccessOutput['AccessibleTime']) => {
     if (!value) {
         return null;
     }

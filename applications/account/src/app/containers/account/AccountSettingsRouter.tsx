@@ -5,6 +5,7 @@ import type { Location } from 'history';
 import { c } from 'ttag';
 
 import { EmergencyContactSection } from '@proton/account/delegatedAccess/emergencyContact/EmergencyContactSection';
+import { RecoveryContactSection } from '@proton/account/delegatedAccess/recoveryContact/RecoveryContactSection';
 import AuthDevicesSettings from '@proton/account/sso/AuthDevicesSettings';
 import { EasySwitchSettingsArea } from '@proton/activation';
 import OLESOnboarding from '@proton/activation/src/oles/components/DashboardGuide/DashboardGuide';
@@ -65,6 +66,7 @@ import DashboardComparePlansCTA from '@proton/components/containers/payments/sub
 import SignInWithAnotherDeviceSettings from '@proton/components/containers/recovery/SignInWithAnotherDeviceSettings';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 
+import { recoveryIds } from './recoveryIds';
 import type { getAccountAppRoutes } from './routes';
 
 const shouldRedirectToSubscriptions = (location: Location<unknown>, path: string, dashboard: SectionConfig) => {
@@ -214,6 +216,7 @@ const AccountSettingsRouter = ({
                         <AccountRecoverySection />
                         <DataRecoverySection />
                         <EmergencyContactSection app={app} />
+                        <RecoveryContactSection app={app} accountRecoveryId={recoveryIds.account} />
                         <SessionRecoverySection />
                     </PrivateMainSettingsArea>
                 </Route>
@@ -230,6 +233,7 @@ const AccountSettingsRouter = ({
                         <NonPrivateRecoverySection />
                         <SignInWithAnotherDeviceSettings />
                         <EmergencyContactSection app={app} />
+                        <RecoveryContactSection app={app} accountRecoveryId={null} />
                         <FamilyPlanSection />
                         {/* Those 3 sections are here for members of family plan that don't have access to the dashboard any more */}
                         <PaymentMethodsSection app={app} />
