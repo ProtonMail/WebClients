@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import clsx from '@proton/utils/clsx';
 
 import { DashboardMeetingListTab } from './types';
@@ -12,27 +13,41 @@ interface TabButtonProps {
     handleClick: () => void;
     tabName: string;
     tabCounter: number;
+    tooltipTitle?: string;
 }
 
-const TabButton = ({ isActive, handleClick, tabName, tabCounter }: TabButtonProps) => {
+const ConditionalTooltip = ({ children, title }: { children: React.ReactElement; title?: string }) => {
+    if (!title) {
+        return children;
+    }
     return (
-        <Button
-            className={clsx(
-                'flex items-center rounded-full gap-2',
-                isActive ? 'meeting-tab-button-active' : 'meeting-tab-button-disabled'
-            )}
-            shape="ghost"
-            size="large"
-            onClick={handleClick}
-        >
-            {tabName}
-            <div
-                className="meeting-list-tab-counter w-custom h-custom rounded-full flex items-center justify-center"
-                style={{ '--w-custom': '1.5rem', '--h-custom': '1.5rem' }}
+        <Tooltip title={title} openDelay={200} closeDelay={200}>
+            {children}
+        </Tooltip>
+    );
+};
+
+const TabButton = ({ isActive, handleClick, tabName, tabCounter, tooltipTitle }: TabButtonProps) => {
+    return (
+        <ConditionalTooltip title={tooltipTitle}>
+            <Button
+                className={clsx(
+                    'flex items-center rounded-full gap-2',
+                    isActive ? 'meeting-tab-button-active' : 'meeting-tab-button-disabled'
+                )}
+                shape="ghost"
+                size="large"
+                onClick={handleClick}
             >
-                {tabCounter}
-            </div>
-        </Button>
+                {tabName}
+                <div
+                    className="meeting-list-tab-counter w-custom h-custom rounded-full flex items-center justify-center"
+                    style={{ '--w-custom': '1.5rem', '--h-custom': '1.5rem' }}
+                >
+                    {tabCounter}
+                </div>
+            </Button>
+        </ConditionalTooltip>
     );
 };
 
@@ -56,6 +71,7 @@ export const DashboardMeetingListTabs = ({
                 handleClick={() => setActiveTab(DashboardMeetingListTab.TimeBased)}
                 tabName={c('Info').t`My meetings`}
                 tabCounter={timeBasedMeetingsCount}
+                tooltipTitle={c('Info').t`Only meetings you created appear here`}
             />
             <TabButton
                 isActive={activeTab === DashboardMeetingListTab.MeetingRooms}
