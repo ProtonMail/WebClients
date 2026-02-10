@@ -37,6 +37,9 @@
       "Accept and view the item": [
         "Přijmout a zobrazit položku"
       ],
+      "Accept invitation": [
+        "Přijmout pozvánku"
+      ],
       "Account": [
         "Účet"
       ],
@@ -996,6 +999,9 @@
       "Error reporting problem": [
         "Chyba při hlášení problému"
       ],
+      "Failed loading group members": [
+        "Načtení členů skupiny selhalo"
+      ],
       "Failed removing the invite.": [
         "Odstranění pozvánky selhalo."
       ],
@@ -1413,8 +1419,17 @@
         "${ forwardedEmailsCount } přeposláno",
         "${ forwardedEmailsCount } přeposláno"
       ],
+      "${ inviterEmail } wants to share an item with a group you administer.": [
+        "${ inviterEmail } chce sdílet položku se skupinou, kterou spravujete."
+      ],
+      "${ inviterEmail } wants to share an item with the group ${ invitedGroup.Name }.": [
+        "${ inviterEmail } si přeje sdílet položku se skupinou ${ invitedGroup.Name }."
+      ],
       "${ inviterEmail } wants to share an item with you.": [
         "${ inviterEmail } chce s vámi sdílet položku."
+      ],
+      "${ maybeVaultName } has been shared with a group you are member of": [
+        "${ maybeVaultName } byl sdílen se skupinou, jejímž jste členem"
       ],
       "${ memberCount } member": [
         "${ memberCount } člen",
@@ -1427,6 +1442,9 @@
         "${ n } položky",
         "${ n } položek",
         "${ n } položek"
+      ],
+      "${ newGroupSharesCount } new shares have been shared with a group you are member of": [
+        "Bylo sdíleno ${ newGroupSharesCount } nových sdílení se skupinou, jejíž jste členem"
       ],
       "${ PASS_APP_NAME } will always be accessible": [
         "${ PASS_APP_NAME } bude vždy přístupný"
@@ -1469,6 +1487,12 @@
         "Zjištěny ${ row.breachCount } úniky informací",
         "Zjištěno ${ row.breachCount } úniků informací",
         "Zjištěno ${ row.breachCount } úniků informací"
+      ],
+      "(${ membersCount } member)": [
+        "(${ membersCount } člen)",
+        "(${ membersCount } členové)",
+        "(${ membersCount } členů)",
+        "(${ membersCount } členů)"
       ],
       "(Empty)": [
         "(Prázdné)"
@@ -1856,6 +1880,9 @@
       ],
       "Invite successfully resent": [
         "Pozvánka byla úspěšně odeslána"
+      ],
+      "invites the group ${ invitedGroup.Name } to access items in": [
+        "pozve skupinu ${ invitedGroup.Name } k přístupu k položkám v"
       ],
       "invites you to access items in": [
         "vás zve k přístupu k položkám v"
@@ -2328,6 +2355,9 @@
         "Následujících ${ totalIgnored } položek nebylo možné importovat:",
         "Následujících ${ totalIgnored } položek nebylo možné importovat:"
       ],
+      "The group is invited to a vault.": [
+        "Skupina je pozvána do trezoru."
+      ],
       "The secure link has been removed": [
         "Bezpečný odkaz byl odebrán"
       ],
@@ -2377,7 +2407,7 @@
         "Tím zamítnete zařízení **${ name }**, které se **${ date }** pokusilo přihlásit k vašemu účtu ${ BRAND_NAME }."
       ],
       "This will reload the application.": [
-        "Toto znovu načte aplikaci."
+        "Tím se znovu načte aplikace."
       ],
       "This will trigger a check for new beta releases.": [
         "Tímto se spustí kontrola nových beta verzí."
@@ -4729,6 +4759,9 @@
       ],
       "Vault": [
         "Trezor"
+      ],
+      "Vault shared with a group you administer": [
+        "Trezor sdílený se skupinou, kterou spravujete"
       ],
       "Vault shared with you": [
         "Trezor sdílený s vámi"
