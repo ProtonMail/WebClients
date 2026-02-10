@@ -516,6 +516,9 @@
       "Disable": [
         "Désactiver"
       ],
+      "Disable categories": [
+        "Désactiver les catégories"
+      ],
       "Disable recovery phrase": [
         "Désactiver la phrase de récupération"
       ],
@@ -908,6 +911,9 @@
       ],
       "Keep": [
         "Conserver"
+      ],
+      "Keep categories": [
+        "Conserver les catégories"
       ],
       "Keep Editing": [
         "Poursuivre les modifications"
@@ -6185,6 +6191,9 @@
       "Expired": [
         "Expiré"
       ],
+      "Failed loading group members": [
+        "Le chargement des membres du groupe n'a pas abouti."
+      ],
       "Failed to add group member": [
         "L'ajout d'un membre au groupe n'a pas abouti."
       ],
@@ -6320,6 +6329,9 @@
       ],
       "Name required": [
         "Le nom est nécessaire."
+      ],
+      "Network error": [
+        "Erreur de réseau "
       ],
       "No active sessions": [
         "Aucune session n'est active."
@@ -8727,15 +8739,15 @@
       "${ storage } storage": [
         "${ storage } d'espace de stockage"
       ],
+      "${ total } user found": [
+        "${ total } utilisateur trouvé",
+        "${ total } utilisateurs trouvés"
+      ],
       "${ url } added.": [
         "${ url } a été ajouté."
       ],
       "${ url } deleted.": [
         "${ url } a été supprimé."
-      ],
-      "${ userFound } user found": [
-        "${ userFound } utilisateur trouvé",
-        "${ userFound } utilisateurs trouvés"
       ],
       "${ vaultLink } created": [
         "${ vaultLink } a été créé."
@@ -8955,6 +8967,9 @@
       ],
       "All members have been added.": [
         "Tous les membres ont été ajoutés."
+      ],
+      "All messages will be shown in Inbox, and the category tabs and tags will no longer be visible. ": [
+        "Tous les messages seront affichés dans la Boîte de réception, les onglets de catégorie et les étiquettes ne seront plus visibles. "
       ],
       "All users": [
         "Tous les utilisateurs"
@@ -11955,6 +11970,9 @@
     "invitation status": {
       "Declined": [
         "Refusé"
+      ],
+      "Owner": [
+        "Propriétaire"
       ],
       "Paused": [
         "Suspendu"
@@ -22302,6 +22320,9 @@
       "Disable activity monitor?": [
         "Désactiver la surveillance des activités ?"
       ],
+      "Disable categories?": [
+        "Désactiver les catégories ?"
+      ],
       "Disable two-factor authentication": [
         "Désactiver l'authentification à deux facteurs"
       ],
@@ -23779,6 +23800,9 @@
       ],
       "User declined invitation": [
         "L'utilisateur a refusé l'invitation."
+      ],
+      "User is a group": [
+        "L’utilisateur est un groupe"
       ],
       "Waiting for user to accept the invitation": [
         "En attente de l’acceptation de l’invitation par l’utilisateur"

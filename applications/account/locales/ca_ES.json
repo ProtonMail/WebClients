@@ -516,6 +516,9 @@
       "Disable": [
         "Desactiva"
       ],
+      "Disable categories": [
+        "Desactiveu les categories"
+      ],
       "Disable recovery phrase": [
         "Desactivar la frase de recuperació"
       ],
@@ -908,6 +911,9 @@
       ],
       "Keep": [
         "Mantenir"
+      ],
+      "Keep categories": [
+        "Conserveu les categories"
       ],
       "Keep Editing": [
         "Continua editant"
@@ -6185,6 +6191,9 @@
       "Expired": [
         "Caducat"
       ],
+      "Failed loading group members": [
+        "No s'han pogut carregar els membres del grup"
+      ],
       "Failed to add group member": [
         "No s'ha pogut afegir el membre al grup"
       ],
@@ -6320,6 +6329,9 @@
       ],
       "Name required": [
         "Nom requerit"
+      ],
+      "Network error": [
+        "Error de xarxa"
       ],
       "No active sessions": [
         "No hi ha sessions actives"
@@ -8724,15 +8736,15 @@
       "${ storage } storage": [
         "${ storage } d'emmagatzematge"
       ],
+      "${ total } user found": [
+        "S'ha trobat ${ total } usuari",
+        "S'han trobat ${ total } usuaris"
+      ],
       "${ url } added.": [
         "S'ha afegit ${ url }."
       ],
       "${ url } deleted.": [
         "S'ha eliminat ${ url }."
-      ],
-      "${ userFound } user found": [
-        "S'ha trobat ${ userFound } usuari",
-        "S'han trobat ${ userFound } usuaris"
       ],
       "${ vaultLink } created": [
         "S'ha creat ${ vaultLink }"
@@ -8952,6 +8964,9 @@
       ],
       "All members have been added.": [
         "S'han afegit tots els membres."
+      ],
+      "All messages will be shown in Inbox, and the category tabs and tags will no longer be visible. ": [
+        "Tots els missatges es mostraran a la safata d'entrada i les pestanyes i etiquetes de categoria ja no seran visibles. "
       ],
       "All users": [
         "Tots els usuaris"
@@ -11952,6 +11967,9 @@
     "invitation status": {
       "Declined": [
         "Rebutjat"
+      ],
+      "Owner": [
+        "Propietari"
       ],
       "Paused": [
         "En pausa"
@@ -22299,6 +22317,9 @@
       "Disable activity monitor?": [
         "Voleu desactivar el monitor d'activitats?"
       ],
+      "Disable categories?": [
+        "Voleu desactivar les categories?"
+      ],
       "Disable two-factor authentication": [
         "Desactiva l'autenticació en dos passos"
       ],
@@ -23776,6 +23797,9 @@
       ],
       "User declined invitation": [
         "L'usuari ha rebutjat la invitació."
+      ],
+      "User is a group": [
+        "L'usuari és un grup"
       ],
       "Waiting for user to accept the invitation": [
         "S'està esperant que l'usuari accepti la invitació."

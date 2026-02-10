@@ -2488,6 +2488,14 @@
         "Rozwiń"
       ]
     },
+    "collider_2025: feature": {
+      "Basic chat history": [
+        "Podstawowa historia czatów"
+      ],
+      "Strict no-logs policy": [
+        "Polityka braku przechowywania logów"
+      ]
+    },
     "collider_2025: Info": {
       "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
         "${ LUMO_APP_NAME } to sztuczna inteligencja stawiająca na prywatność, która pomaga Ci osiągać więcej, dbając jednocześnie o bezpieczeństwo Twoich danych. Odblokuj jej pełny potencjał i ciesz się wczesnym dostępem do nowych funkcji, gdy tylko zostaną wprowadzone."
@@ -4540,6 +4548,11 @@
         "Nie będziesz otrzymywać wiadomości automatycznie przekierowanych z adresu ${ boldForwarderEmail }."
       ]
     },
+    "email_forwarding_2023: Link": {
+      "Learn more": [
+        "Dowiedz się więcej"
+      ]
+    },
     "email_forwarding_2023: Title": {
       "Email forwarding deactivated": [
         "Przekierowanie zostało wyłączone"
@@ -5026,6 +5039,9 @@
       ],
       "Name required": [
         "Nazwa jest wymagana"
+      ],
+      "Network error": [
+        "Błąd sieci"
       ],
       "No active sessions": [
         "Brak aktywnych sesji"
@@ -6505,6 +6521,9 @@
       "Device": [
         "Urządzenie"
       ],
+      "Domain": [
+        "Domena"
+      ],
       "Enter your email address": [
         "Wpisz adres e-mail"
       ],
@@ -6519,6 +6538,9 @@
       ],
       "Key type": [
         "Typ klucza"
+      ],
+      "Label": [
+        "Etykieta"
       ],
       "Location": [
         "Lokalizacja"
@@ -7277,12 +7299,6 @@
       "${ storage } storage": [
         "${ storage } przestrzeni dyskowej"
       ],
-      "${ userFound } user found": [
-        "Znaleziono ${ userFound } użytkownika",
-        "Znaleziono ${ userFound } użytkowników",
-        "Znaleziono ${ userFound } użytkowników",
-        "Znaleziono ${ userFound } użytkowników"
-      ],
       "${ vaultLink } created": [
         "Utworzenie sejfu ${ vaultLink }"
       ],
@@ -8009,6 +8025,9 @@
       "Enabling recovery by phrase again will generate a new recovery phrase.": [
         "Włączenie odzyskiwania za pomocą hasła wygeneruje nowe hasło odzyskiwania."
       ],
+      "Encryption setting updated": [
+        "Ustawienia szyfrowania zostały zaktualizowane"
+      ],
       "End date": [
         "Data zakończenia"
       ],
@@ -8663,6 +8682,9 @@
       "One time import": [
         "Jednorazowy import"
       ],
+      "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
+        "Zmień te ustawienia tylko, gdy używasz PGP z odbiorcami spoza ${ BRAND_NAME }."
+      ],
       "Open source": [
         "Otwarty kod źródłowy"
       ],
@@ -8749,6 +8771,9 @@
       ],
       "per month, billed at ${ price }": [
         "miesięcznie, płatne ${ price }"
+      ],
+      "PGP clients are more likely to automatically detect your PGP keys if outgoing messages are signed.": [
+        "Podpisywanie wiadomości wychodzących ułatwi klientom PGP automatyczne rozpoznanie Twoich kluczy PGP."
       ],
       "Phone number": [
         "Numer telefonu"
@@ -10607,6 +10632,9 @@
       "Assertion Consumer Service URL": [
         "Adres URL usługi ACS"
       ],
+      "Attach public key": [
+        "Dołącz klucz publiczny"
+      ],
       "Attach screenshot(s)": [
         "Dołącz zrzuty ekranu"
       ],
@@ -10801,6 +10829,9 @@
       ],
       "Default language": [
         "Język domyślny"
+      ],
+      "Default PGP scheme": [
+        "Domyślny schemat PGP"
       ],
       "Default scrollbars": [
         "Domyślne paski przewijania"
@@ -11252,6 +11283,9 @@
       "Promotions": [
         "Promocje"
       ],
+      "Prompt to trust keys": [
+        "Podpowiadaj dodawanie kluczy do zaufanych"
+      ],
       "Proration": [
         "Dzielenie proporcjonalne"
       ],
@@ -11338,6 +11372,9 @@
       ],
       "Show week numbers": [
         "Pokaż numery tygodni"
+      ],
+      "Sign external messages": [
+        "Podpisz zewnętrzne wiadomości"
       ],
       "Signature": [
         "Podpis"
@@ -11464,6 +11501,9 @@
       ],
       "Verification code": [
         "Kod weryfikacyjny"
+      ],
+      "Verify keys with Key Transparency": [
+        "Weryfikacja kluczy za pomocą systemu Key Transparency"
       ],
       "Vulnerable": [
         "Bardzo słabe"
@@ -12076,6 +12116,11 @@
       ],
       "This feature is temporarily unavailable": [
         "Funkcja jest tymczasowo niedostępna"
+      ]
+    },
+    "meet_2025: Feature": {
+      "Screen-sharing": [
+        "Udostępnianie ekranu"
       ]
     },
     "Member action": {
@@ -14694,6 +14739,9 @@
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Odnowienie za ${ renewPriceStr }. Anuluj w dowolnym momencie."
       ],
+      "Taxes": [
+        "Podatki"
+      ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "Specjalna obniżona cena ${ priceWithDiscount } ważna przez pierwszy ${ subscriptionLength } miesiąc.",
         "Specjalna obniżona cena ${ priceWithDiscount } ważna przez pierwsze ${ subscriptionLength } miesiące.",
@@ -14752,6 +14800,11 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Karta została odrzucona. Spróbuj użyć innej karty lub skontaktuj się z bankiem, aby autoryzować opłaty."
+      ]
+    },
+    "Payments.ModificationWarning": {
+      "Keep ${ planTitle }": [
+        "Zachowaj plan ${ planTitle }"
       ]
     },
     "Payments.plan_name": {
@@ -18715,6 +18768,9 @@
       "Auto-reply": [
         "Autoresponder"
       ],
+      "Automatically sign outgoing messages?": [
+        "Czy chcesz automatycznie podpisywać wiadomości wychodzące?"
+      ],
       "Backup and export": [
         "Kopia zapasowa i eksport"
       ],
@@ -20187,6 +20243,16 @@
       ],
       "Waiting for user to accept the invitation": [
         "Oczekiwanie na zaakceptowanie zaproszenia"
+      ]
+    },
+    "Tooltip default pgp scheme": {
+      "Select the default PGP settings used to sign or encrypt messages with non-${ BRAND_NAME } PGP users. Note that Inline PGP forces plain text messages.": [
+        "Wybierz ustawienia domyślne PGP, które będą używane do podpisywania i szyfrowania wiadomości dla użytkowników PGP spoza ${ BRAND_NAME }. Pamiętaj, że schemat PGP/Inline wymusza wysyłanie wiadomości w trybie zwykłego tekstu."
+      ]
+    },
+    "Tooltip sign external messages": {
+      "Automatically sign all your outgoing messages so users can verify the authenticity of your messages. This is done in combination with the default PGP settings which can be configured below.": [
+        "Automatycznie podpisuj wszystkie wychodzące wiadomości, aby użytkownicy mogli zweryfikować ich autentyczność. Ta operacja jest połączona z domyślnymi ustawieniami PGP, które możesz ustawić poniżej."
       ]
     },
     "Tooltip; share calendar modal ": {

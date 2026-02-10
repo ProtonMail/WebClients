@@ -4670,6 +4670,9 @@
       "Name required": [
         "Требуется имя"
       ],
+      "Network error": [
+        "Ошибка сети"
+      ],
       "No active sessions": [
         "Нет активных сеансов"
       ],
@@ -6859,12 +6862,6 @@
       ],
       "${ storage } storage": [
         "${ storage } хранилище"
-      ],
-      "${ userFound } user found": [
-        "${ userFound } пользователь найден",
-        "${ userFound } пользователя найдено",
-        "${ userFound } пользователей найдено",
-        "${ userFound } пользователей найдено"
       ],
       "${ vaultLink } created": [
         "Фильтр ${ vaultLink } создан"

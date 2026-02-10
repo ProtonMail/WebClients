@@ -661,7 +661,7 @@
         "Aktiver ${ darkWebMonitoring }"
       ],
       "enable desktop notifications": [
-        "aktivér skrivebordsmeddelelser"
+        "at aktivere skrivebordsmeddelelser"
       ],
       "Enable device-based recovery": [
         "Aktivér enhedsbaseret gendannelse"
@@ -6185,6 +6185,9 @@
       "Expired": [
         "Udløbet"
       ],
+      "Failed loading group members": [
+        "Kunne ikke indlæse gruppemedlemmer"
+      ],
       "Failed to add group member": [
         "Kunne ikke tilføje gruppemedlem"
       ],
@@ -6320,6 +6323,9 @@
       ],
       "Name required": [
         "Navn påkrævet"
+      ],
+      "Network error": [
+        "Netværksfejl"
       ],
       "No active sessions": [
         "Ingen aktive sessioner"
@@ -8732,10 +8738,6 @@
       ],
       "${ url } deleted.": [
         "${ url } slettet."
-      ],
-      "${ userFound } user found": [
-        "${ userFound } bruger fundet",
-        "${ userFound } brugere fundet"
       ],
       "${ vaultLink } created": [
         "${ vaultLink } oprettet"
@@ -11955,6 +11957,9 @@
     "invitation status": {
       "Declined": [
         "Afvist"
+      ],
+      "Owner": [
+        "Ejer"
       ],
       "Paused": [
         "Sat på pause"
@@ -23776,6 +23781,9 @@
       ],
       "User declined invitation": [
         "Brugeren afviste invitationen"
+      ],
+      "User is a group": [
+        "Brugeren er en gruppe"
       ],
       "Waiting for user to accept the invitation": [
         "Venter på, at brugeren accepterer invitationen"

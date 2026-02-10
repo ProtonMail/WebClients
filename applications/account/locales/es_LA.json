@@ -516,6 +516,9 @@
       "Disable": [
         "Desactivar"
       ],
+      "Disable categories": [
+        "Desactivar categorías"
+      ],
       "Disable recovery phrase": [
         "Desactivar frase de recuperación"
       ],
@@ -908,6 +911,9 @@
       ],
       "Keep": [
         "Conservar"
+      ],
+      "Keep categories": [
+        "Mantener categorías"
       ],
       "Keep Editing": [
         "Seguir editando"
@@ -6185,6 +6191,9 @@
       "Expired": [
         "Expirado"
       ],
+      "Failed loading group members": [
+        "Error al cargar los miembros del grupo"
+      ],
       "Failed to add group member": [
         "No se pudo añadir miembro al grupo"
       ],
@@ -6320,6 +6329,9 @@
       ],
       "Name required": [
         "Nombre requerido"
+      ],
+      "Network error": [
+        "Error de red"
       ],
       "No active sessions": [
         "No hay sesiones activas"
@@ -8733,10 +8745,6 @@
       "${ url } deleted.": [
         "${ url } eliminado."
       ],
-      "${ userFound } user found": [
-        "${ userFound } usuario encontrado",
-        "${ userFound } usuarios encontrados"
-      ],
       "${ vaultLink } created": [
         "${ vaultLink } creado"
       ],
@@ -8955,6 +8963,9 @@
       ],
       "All members have been added.": [
         "Se han agregado todos los miembros."
+      ],
+      "All messages will be shown in Inbox, and the category tabs and tags will no longer be visible. ": [
+        "Todos los mensajes se mostrarán en la bandeja de entrada y las pestañas de categorías y etiquetas dejarán de estar visibles. "
       ],
       "All users": [
         "Todos los usuarios"
@@ -11955,6 +11966,9 @@
     "invitation status": {
       "Declined": [
         "Rechazada"
+      ],
+      "Owner": [
+        "Propietario"
       ],
       "Paused": [
         "En pausa"
@@ -22299,6 +22313,9 @@
       "Disable activity monitor?": [
         "¿Desactivar el monitor de actividades?"
       ],
+      "Disable categories?": [
+        "¿Desactivar categorías?"
+      ],
       "Disable two-factor authentication": [
         "Desactivar autenticación de dos factores"
       ],
@@ -23776,6 +23793,9 @@
       ],
       "User declined invitation": [
         "El usuario rechazó la invitación."
+      ],
+      "User is a group": [
+        "El usuario es un grupo"
       ],
       "Waiting for user to accept the invitation": [
         "Se está esperando que el usuario acepte la invitación."

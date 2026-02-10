@@ -2334,6 +2334,10 @@
       ]
     },
     "Billing cycle": {
+      "Renews automatically at ${ renewPrice }, for ${ renewCycle } month": [
+        "განახლდება ${ renewPrice }-ით, ${ renewCycle } თვის განმავლობაში",
+        "განახლდება ${ renewPrice }-ით, ${ renewCycle } თვის განმავლობაში"
+      ],
       "Renews automatically on ${ subscriptionManagerName }": [
         "ავტომატური განახლების დრო ${ subscriptionManagerName }"
       ]
@@ -2526,6 +2530,9 @@
       ],
       "Take advantage of advanced email alias feature in ${ PASS_APP_NAME }": [
         "გამოიყენეთ დამატებით ელფოსტის ფსევდონიმის ფუნქციონალი ${ PASS_APP_NAME }-ში"
+      ],
+      "The most private and secure way to communicate online is by using end-to-end encryption. If you send an end-to-end encrypted email, it’s encrypted on your device (your iPhone, Android, or laptop) and isn’t decrypted until it reaches the device of the person you sent the message to.": [
+        "ონლაინ კომუნიკაციის ყველაზე კერძო და უსაფრთხო გზაა გამჭოლი დაშიფვრის გამოყენება. თუ გააგზავნით გამჭოლად დაშიფრულ ელფოსტას, ის დაშიფრული იქნება თქვენს მოწყობილობაზე (თქვენს iPhone-ზე, Android-ზე ან ლეპტოპზე) და არ გაიშიფრება მანამ, სანამ არ მიაღწევს იმ მოწყობილობას, რომელზეც შეტყობინება გაგზავნეთ."
       ],
       "This article has been updated to include the WireGuard and Stealth VPN protocols.": [
         "ეს სტატია განახლდა და ახლა WireGuard-ის და Stealth VPN-ის პროტოკოლებს შეიცავს."
@@ -4941,6 +4948,9 @@
       "macOS": [
         "macOS"
       ],
+      "macOS 14 (Sonoma) or newer": [
+        "macOS 14 (Sonoma) ან უფრო ახალი"
+      ],
       "macOS Big Sur": [
         "macOS Big Sur"
       ],
@@ -4952,6 +4962,9 @@
       ],
       "macOS Monterey": [
         "macOS Monterey"
+      ],
+      "macOS Ventura": [
+        "macOS Ventura"
       ],
       "Mail": [
         "ელფოსტა"
@@ -6031,6 +6044,9 @@
       "Expired": [
         "ვადაგასულია"
       ],
+      "Failed loading group members": [
+        "ჯგუფის წევრების ჩატვირთვა ჩავარდა"
+      ],
       "Failed to add group member": [
         "ჯგუფის წევრის დამატება ჩავარდა"
       ],
@@ -6166,6 +6182,9 @@
       ],
       "Name required": [
         "სახელი აუცილებელია"
+      ],
+      "Network error": [
+        "ქსელის შეცდომა"
       ],
       "No active sessions": [
         "აქტიური სესიების გარეშე"
@@ -6688,6 +6707,9 @@
       ]
     },
     "Error message": {
+      "Account is deleted or disabled": [
+        "ანგარიში წაშლილია, ან გამორთულია"
+      ],
       "App currently unavailable": [
         "აპი ამჟამად ხელმიუწვდომელია"
       ],
@@ -8130,6 +8152,9 @@
       "Two-factor authentication is enabled in your external account.": [
         "თქვენს გარე ანგარიშში ჩართულია 2FA."
       ],
+      "Two-factor authentication is enabled in your external email account.": [
+        "თქვენი ელფოსტის გარე ანგარიშში ჩართულია 2FA."
+      ],
       "Use your app password if:": [
         "გამოვიყენოთ აპის პაროლი, თუ:"
       ],
@@ -8542,10 +8567,6 @@
       "${ url } deleted.": [
         "${ url } წაიშალა."
       ],
-      "${ userFound } user found": [
-        "აღმოჩენილია ${ userFound } მომხმარებელი",
-        "აღმოჩენილია ${ userFound } მომხმარებელი"
-      ],
       "${ vaultLink } created": [
         "${ vaultLink } შეიქმნა"
       ],
@@ -8758,6 +8779,10 @@
       ],
       "All your changes will be lost.": [
         "ყველა თქვენი ცვლილება დაიკარგება."
+      ],
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "შემოტანილი იქნება ყველა თქვენი კონტაქტი. ლიმიტია ${ maxContact }",
+        "შემოტანილი იქნება ყველა თქვენი კონტაქტი. ლიმიტია ${ maxContact }"
       ],
       "Allocated": [
         "გამოყოფილი"
@@ -11605,6 +11630,9 @@
     "invitation status": {
       "Declined": [
         "უარყოფილია"
+      ],
+      "Owner": [
+        "მფლობელი"
       ],
       "Paused": [
         "შეჩერებულია"
@@ -14925,6 +14953,9 @@
       "Password-protected Emails": [
         "პაროლით დაცული ელფოსტები"
       ],
+      "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
+        "სატელეფონო მხარდაჭერა (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ მომხმარებელი)"
+      ],
       "Priority email support": [
         "პრიორიტეტული ელფოსტის მხარდაჭერა"
       ],
@@ -17044,6 +17075,9 @@
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "განახლების დრო ${ renewPriceStr }. გააუქმეთ ნებისმიერ დროს."
       ],
+      "Sorry, this offer is not available for your account.": [
+        "უკაცრავად, ეს შემოთავაზება თქვენს ანგარიშზე ხელმისაწვდომი არაა."
+      ],
       "Sorry, this offer is not available with your current plan.": [
         "უკაცრავად, ეს შემოთავაზება ხელმიუწვდომელია თქვენი მიმდინარე სატარიფო გეგმით."
       ],
@@ -17052,6 +17086,10 @@
       ],
       "terms and conditions": [
         "პირობები და წესები"
+      ],
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "ფასდაკლება მოქმედებს ${ renewalsWithCoupon } განახლებაზე.",
+        "ფასდაკლება მოქმედებს ${ renewalsWithCoupon } განახლებაზე."
       ],
       "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
         "სპეციალურად დაკლებული ფასები ვარგისია პირველ ${ subscriptionLength } თვეში.",
@@ -21153,11 +21191,29 @@
       ]
     },
     "Theme": {
+      "Auto": [
+        "ავტო"
+      ],
       "Dark": [
         "მუქი"
       ],
       "Light": [
         "ღია"
+      ],
+      "Mode: Auto": [
+        "რეჟიმი: ავტო"
+      ],
+      "Mode: Dark": [
+        "რეჟიმი: მუქი"
+      ],
+      "Mode: Light": [
+        "რეჟიმი: ღია"
+      ],
+      "Sync with system": [
+        "სისტემასთან სინქრონიზაცია"
+      ],
+      "Use ${ BRAND_NAME } settings": [
+        "${ BRAND_NAME }-ის პარამეტრების გამოყენება"
       ]
     },
     "Time unit": {
@@ -22801,6 +22857,9 @@
       "Your ${ planName } free trial ends on ${ textDate }": [
         "თქვენი ${ planName }-ის უფასო სატესტო პერიოდი ${ textDate }-ზე სრულდება"
       ],
+      "Your ${ planTitle } subscription has started": [
+        "თქვვენი ${ planTitle } გამოწერა დაიწყო"
+      ],
       "Your calendar link": [
         "თქვენი კალენდრის ბმული"
       ],
@@ -23196,6 +23255,9 @@
       "User declined invitation": [
         "მომხმარებელმა უარჰყო მოსაწვევი"
       ],
+      "User is a group": [
+        "მომხმარებელი ჯგუფია"
+      ],
       "Waiting for user to accept the invitation": [
         "მომხმარებლის დადასტურების მოლოდინი"
       ]
@@ -23430,6 +23492,9 @@
       ]
     },
     "Upsell": {
+      "${ BRAND_NAME } for Business": [
+        "${ BRAND_NAME } for Business"
+      ],
       "**Save up to ${ priceString }** with a longer subscription. Same premium features, lower price.": [
         "**დაზოგეთ ${ priceString }-მდე** უფრო გრძელვადიანი გამოწერით. იგივე ფასიანი ფუნქციონალი უფრო დაბალ ფასად."
       ],
@@ -23865,6 +23930,9 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME }-ი გადაიტანს იმდენ მონაცემს, უკანასკნელი შეტყობინებებით დაწყებული, რამდენიც ეს შესაძლებელი იქნება."
+      ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } offer has ended": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] }-ის შეთავაზების ვადა ამოიწურა"
       ],
       "Are you sure you want to delete the phone number?": [
         "დარწმუნებული ბრძანდებით, რომ გნებავთ მონიშნული ტელეფონის ნომრის წაშლა?"
