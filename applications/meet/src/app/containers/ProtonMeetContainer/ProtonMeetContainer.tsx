@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 
 import { type GroupKeyInfo, JoinTypeInfo, MeetCoreErrorEnum } from '@proton-meet/proton-meet-core';
-import { DisconnectReason, type Room, Track } from 'livekit-client';
+import { DisconnectReason, type Room, RoomEvent, Track } from 'livekit-client';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
@@ -190,7 +190,6 @@ export const ProtonMeetContainer = ({
 
     const joinBlockedRef = useRef(false);
     const lastEpochRef = useRef<bigint | null>(null);
-    const refetchedParticipantNameMapRef = useRef(false);
     const joinedRoomLoggedRef = useRef(false);
 
     const loadingStartTimeRef = useRef(0);
@@ -591,10 +590,12 @@ export const ProtonMeetContainer = ({
                 originalOnTokenRefresh?.(token);
             };
 
-            room.on('disconnected', (reason?: DisconnectReason) => {
+            room.on(RoomEvent.Disconnected, (reason?: DisconnectReason) => {
                 instantMeetingRef.current = false;
                 mlsSetupDone.current = false;
                 disallowHealthCheck();
+
+                setJoinedRoom(false);
 
                 joinedRoomLoggedRef.current = false;
                 void wasmApp?.leaveMeeting();
@@ -872,6 +873,8 @@ export const ProtonMeetContainer = ({
             keyRotationSchedulerRef.current.clean();
         }
 
+        setJoinedRoom(false);
+
         keyProvider.cleanCurrent();
 
         prepareUpsell();
@@ -916,6 +919,8 @@ export const ProtonMeetContainer = ({
         instantMeetingRef.current = false;
         resetParticipantNameMap();
         mlsSetupDone.current = false; // need to set mls again after leave meeting
+
+        setJoinedRoom(false);
 
         keyProvider.cleanCurrent();
 
@@ -965,17 +970,6 @@ export const ProtonMeetContainer = ({
             window.removeEventListener('unload', handleUnload);
         };
     }, [joinedRoom, room, wasmApp, reportMeetError]);
-
-    useEffect(() => {
-        if (refetchedParticipantNameMapRef.current) {
-            return;
-        }
-
-        if (joinedRoom && room && !participantNameMap[room.localParticipant.identity as string]) {
-            refetchedParticipantNameMapRef.current = true;
-            void getParticipants(token);
-        }
-    }, [getParticipants, token, participantNameMap, joinedRoom]);
 
     const handleInstantJoin = async () => {
         if (isInstantJoin) {
