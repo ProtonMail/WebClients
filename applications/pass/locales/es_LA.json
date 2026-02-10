@@ -37,6 +37,9 @@
       "Accept and view the item": [
         "Aceptar y ver el elemento"
       ],
+      "Accept invitation": [
+        "Aceptar la invitación"
+      ],
       "Account": [
         "Cuenta"
       ],
@@ -986,6 +989,9 @@
       "Error reporting problem": [
         "Error al reportar el problema"
       ],
+      "Failed loading group members": [
+        "Error al cargar los miembros del grupo"
+      ],
       "Failed removing the invite.": [
         "Error al eliminar la invitación."
       ],
@@ -1381,8 +1387,17 @@
         "${ forwardedEmailsCount } reenvío",
         "${ forwardedEmailsCount } reenvíos"
       ],
+      "${ inviterEmail } wants to share an item with a group you administer.": [
+        "${ inviterEmail } desea compartir un elemento con un grupo que usted administra."
+      ],
+      "${ inviterEmail } wants to share an item with the group ${ invitedGroup.Name }.": [
+        "${ inviterEmail } desea compartir un elemento con el grupo ${ invitedGroup.Name }."
+      ],
       "${ inviterEmail } wants to share an item with you.": [
         "${ inviterEmail } desea compartir un elemento con usted."
+      ],
+      "${ maybeVaultName } has been shared with a group you are member of": [
+        "${ maybeVaultName } se compartió con un grupo al que pertenece"
       ],
       "${ memberCount } member": [
         "${ memberCount } miembro",
@@ -1391,6 +1406,9 @@
       "${ n } item": [
         "${ n } elemento",
         "${ n } elementos"
+      ],
+      "${ newGroupSharesCount } new shares have been shared with a group you are member of": [
+        "Se compartieron ${ newGroupSharesCount } elementos nuevos con un grupo al que pertenece"
       ],
       "${ PASS_APP_NAME } will always be accessible": [
         "${ PASS_APP_NAME } siempre será accesible"
@@ -1427,6 +1445,10 @@
       "${ row.breachCount } breach detected": [
         "${ row.breachCount } vulneración detectada",
         "${ row.breachCount } vulneraciones detectadas"
+      ],
+      "(${ membersCount } member)": [
+        "(${ membersCount } miembro)",
+        "(${ membersCount } miembros)"
       ],
       "(Empty)": [
         "(Vacío)"
@@ -1810,6 +1832,9 @@
       ],
       "Invite successfully resent": [
         "La invitación fue enviada."
+      ],
+      "invites the group ${ invitedGroup.Name } to access items in": [
+        "invita al grupo ${ invitedGroup.Name } a acceder a los elementos en"
       ],
       "invites you to access items in": [
         "le invita a acceder a elementos de"
@@ -2270,6 +2295,9 @@
       "The following ${ totalIgnored } item could not be imported:": [
         "${ totalIgnored } elemento no se pudo importar:",
         "${ totalIgnored } elementos no se pudieron importar:"
+      ],
+      "The group is invited to a vault.": [
+        "Se invitó al grupo a una bóveda."
       ],
       "The secure link has been removed": [
         "El enlace seguro fue eliminado."
@@ -4616,6 +4644,9 @@
       ],
       "Vault": [
         "Bóveda"
+      ],
+      "Vault shared with a group you administer": [
+        "Bóveda compartida con un grupo que administra"
       ],
       "Vault shared with you": [
         "Bóveda compartida con usted"

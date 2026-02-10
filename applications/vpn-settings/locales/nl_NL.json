@@ -5895,9 +5895,9 @@
       "${ storage } storage": [
         "${ storage } opslag"
       ],
-      "${ userFound } user found": [
-        "${ userFound } gebruiker gevonden",
-        "${ userFound } gebruikers gevonden"
+      "${ total } user found": [
+        "${ total } gebruiker gevonden",
+        "${ total } gebruikers gevonden"
       ],
       "${ vaultLink } created": [
         "${ vaultLink } aangemaakt"
@@ -8241,6 +8241,9 @@
       "Your phone number will only be used for this one-time verification.": [
         "Uw telefoonnummer wordt alleen gebruikt voor deze eenmalige verificatie."
       ],
+      "Your recent changes have been published. They will be visible to users in the next few hours.": [
+        "Uw recente wijzigingen zijn gepubliceerd. Ze zijn in de komende uren zichtbaar voor gebruikers."
+      ],
       "Your recovery phrase": [
         "Uw herstelzin"
       ],
@@ -8375,6 +8378,9 @@
     "invitation status": {
       "Declined": [
         "Afgewezen"
+      ],
+      "Owner": [
+        "Eigenaar"
       ],
       "Paused": [
         "Onderbroken"
@@ -16151,6 +16157,9 @@
       ],
       "User declined invitation": [
         "Gebruiker weigerde uitnodiging"
+      ],
+      "User is a group": [
+        "Gebruiker is een groep"
       ],
       "Waiting for user to accept the invitation": [
         "Wachten tot gebruiker de uitnodiging accepteert"

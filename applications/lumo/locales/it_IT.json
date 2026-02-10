@@ -1248,26 +1248,29 @@
       ]
     },
     "collider_2025: Feature": {
-      "Advanced models": [
-        "Modelli avanzati"
+      "Access all your past conversations anytime": [
+        "Accedi a tutte le tue conversazioni passate in qualsiasi momento"
       ],
-      "Large file uploads": [
-        "Caricamenti di file di grandi dimensioni"
+      "Chat as much as you need with no limits": [
+        "Chiacchiera quanto vuoi senza limiti"
+      ],
+      "Get answers with real-time web search": [
+        "Ottieni risposte con la ricerca web in tempo reale"
       ],
       "New": [
         "Novità"
       ],
-      "Unlimited chat history": [
-        "Cronologia chat illimitata"
+      "Organize work in projects with custom instructions": [
+        "Organizza il lavoro in progetti con istruzioni personalizzate"
       ],
-      "Unlimited favourite chats": [
-        "Numero illimitato di chat"
+      "Save unlimited conversations as favorites": [
+        "Salva conversazioni illimitate come preferiti"
       ],
-      "Unlimited weekly chats": [
-        "Numero illimitato di chat a settimana"
+      "Upload and analyze larger files": [
+        "Carica e analizza file più grandi"
       ],
-      "Web search": [
-        "Ricerca web"
+      "Use the most advanced AI models": [
+        "Usa i modelli IA più avanzati"
       ]
     },
     "collider_2025: Guest Signin": {
@@ -1992,8 +1995,8 @@
       "Upgrade": [
         "Effettua l'upgrade"
       ],
-      "Your chat history is limited to 7 days. For extended chat history and other premium features, ": [
-        "La tua cronologia chat è limitata a 7 giorni. Per la cronologia chat estesa e altre funzionalità premium, "
+      "Your chat history is limited to 7 days. For unlimited chat history and other premium features, ": [
+        "La tua cronologia chat è limitata a 7 giorni. Per cronologia chat illimitata e altre funzionalità premium, "
       ]
     },
     "collider_2025: Upsell Title": {
@@ -2095,6 +2098,9 @@
       ],
       "Hide sidebar": [
         "Nascondi barra laterale"
+      ],
+      "Keep these chats": [
+        "Mantieni queste chat"
       ],
       "Manage chats": [
         "Gestisci chat"
@@ -2283,6 +2289,9 @@
       "Cannot link the root folder. Please select a subfolder.": [
         "Impossibile collegare la cartella principale. Seleziona una sottocartella."
       ],
+      "Database connection lost. Please refresh the page to continue.": [
+        "Connessione al database persa. Aggiorna la pagina per continuare."
+      ],
       "Error processing file: ${ file.name }": [
         "Errore durante l'elaborazione del file: ${ file.name }"
       ],
@@ -2332,6 +2341,11 @@
       ],
       "Unlimited projects": [
         "Progetti illimitati"
+      ]
+    },
+    "collider_2025:Icon": {
+      "Expiring soon": [
+        "Prossima scadenza"
       ]
     },
     "collider_2025:Info": {
@@ -2678,6 +2692,9 @@
       "All files removed from project": [
         "Tutti i file rimossi dal progetto"
       ],
+      "Database connection restored.": [
+        "Database connection restored."
+      ],
       "Drive folder linked successfully": [
         "Cartella drive collegata con successo"
       ],
@@ -2725,6 +2742,9 @@
       "Edit Project": [
         "Modifica progetto"
       ],
+      "Expiring Soon": [
+        "Scadenza imminente"
+      ],
       "Favorites": [
         "Preferiti"
       ],
@@ -2757,6 +2777,9 @@
       ],
       "Last 30 days": [
         "Ultimi 30 giorni"
+      ],
+      "Last 5 days": [
+        "Ultimi 5 giorni"
       ],
       "Last 7 days": [
         "Ultimi 7 giorni"
@@ -5158,6 +5181,11 @@
         "Cos'è questo?"
       ]
     },
+    "Loading": {
+      "Loading ${ LUMO_APP_NAME }": [
+        "Caricamento di ${ LUMO_APP_NAME } in corso"
+      ]
+    },
     "lumo: Debug View": {
       "Acceleration": [
         "Accelerazione"
@@ -5167,6 +5195,9 @@
       ],
       "Clear History": [
         "Cancella Cronologia"
+      ],
+      "Create Test Chats": [
+        "Crea chat di test"
       ],
       "Debug View": [
         "Vista di debug"
@@ -5617,6 +5648,9 @@
       "Password-protected Emails": [
         "Email protette da password"
       ],
+      "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
+        "Supporto telefonico (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ utenti)"
+      ],
       "Priority email support": [
         "Assistenza email prioritaria"
       ],
@@ -6003,6 +6037,9 @@
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Personalizza la tua firma email con loghi, immagini, icone di social media, link ai tuoi dettagli di contatto e molto altro"
+      ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } or more users": [
+        "Il supporto telefonico è disponibile dal team di assistenza clienti di ${ BRAND_NAME } durante l'orario lavorativo europeo, per i clienti con ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } o più utenti"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Impedisce l'accesso ai messaggi da parte di ${ BRAND_NAME } o di terzi. Le uniche persone che possono leggere i messaggi sono il mittente e il destinatario."

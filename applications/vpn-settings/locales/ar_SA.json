@@ -5929,14 +5929,6 @@
       "${ storage } storage": [
         "تخزين ${ storage }"
       ],
-      "${ userFound } users found": [
-        "عُثر على ${ userFound } من المستخدمين",
-        "عُثر على مستخدم واحد (${ userFound })",
-        "عُثر على مستخدمين (${ userFound })",
-        "عُثر على ${ userFound } مستخدمين",
-        "عُثر على ${ userFound } مستخدمًا",
-        "عُثر على ${ userFound } مستخدمًا"
-      ],
       "${ vaultLink } created": [
         "تم إنشاء ${ vaultLink }"
       ],
@@ -8393,6 +8385,9 @@
       "Your phone number will only be used for this one-time verification.": [
         "سيتم استخدام رقم هاتفك فقط لهذا التحقق لمرة واحدة."
       ],
+      "Your recent changes have been published. They will be visible to users in the next few hours.": [
+        "تم نشر التغييرات الأخيرة. ستظهر للمستخدمين خلال الساعات القليلة القادمة."
+      ],
       "Your recovery phrase": [
         "عبارة استردادك"
       ],
@@ -8534,6 +8529,9 @@
     "invitation status": {
       "Declined": [
         "مرفوض"
+      ],
+      "Owner": [
+        "المالك"
       ],
       "Paused": [
         "متوقف مؤقتاً"
@@ -16557,6 +16555,9 @@
       ],
       "User declined invitation": [
         "رفض المستخدم الدعوة"
+      ],
+      "User is a group": [
+        "المستخدم هو مجموعة"
       ],
       "Waiting for user to accept the invitation": [
         "في انتظار قبول المستخدم للدعوة"

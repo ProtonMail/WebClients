@@ -5562,6 +5562,9 @@
       "Name required": [
         "الاسم مطلوب"
       ],
+      "Network error": [
+        "خلل في الشبكة"
+      ],
       "No active sessions": [
         "لا توجد جلسات نشطة"
       ],
@@ -7963,14 +7966,6 @@
       ],
       "${ storage } storage": [
         "تخزين ${ storage }"
-      ],
-      "${ userFound } users found": [
-        "عُثر على ${ userFound } من المستخدمين",
-        "عُثر على مستخدم واحد (${ userFound })",
-        "عُثر على مستخدمين (${ userFound })",
-        "عُثر على ${ userFound } مستخدمين",
-        "عُثر على ${ userFound } مستخدمًا",
-        "عُثر على ${ userFound } مستخدمًا"
       ],
       "${ vaultLink } created": [
         "تم إنشاء ${ vaultLink }"
@@ -10895,6 +10890,9 @@
       "Your plan is limited to 10 versions for up to 7 days": [
         "خطتك تقتصر على 10 إصدارات لمدة تصل إلى 7 أيام"
       ],
+      "Your recent changes have been published. They will be visible to users in the next few hours.": [
+        "تم نشر التغييرات الأخيرة. ستظهر للمستخدمين خلال الساعات القليلة القادمة."
+      ],
       "Your recovery phrase": [
         "عبارة استردادك"
       ],
@@ -11060,6 +11058,9 @@
     "invitation status": {
       "Declined": [
         "مرفوض"
+      ],
+      "Owner": [
+        "المالك"
       ],
       "Paused": [
         "متوقف مؤقتاً"
@@ -21301,6 +21302,9 @@
       "Passwords made easy": [
         "كلمات المرور أصبحت سهلة"
       ],
+      "Pause list": [
+        "إيقاف القائمة مؤقتًا"
+      ],
       "Pay invoice": [
         "دفع الفاتورة"
       ],
@@ -22106,6 +22110,9 @@
       ],
       "User declined invitation": [
         "رفض المستخدم الدعوة"
+      ],
+      "User is a group": [
+        "المستخدم هو مجموعة"
       ],
       "Waiting for user to accept the invitation": [
         "في انتظار قبول المستخدم للدعوة"

@@ -199,9 +199,6 @@
       "Change email": [
         "Endre e-post"
       ],
-      "Change page": [
-        "Endre side"
-      ],
       "Change password": [
         "Endre passord"
       ],
@@ -385,9 +382,6 @@
       "Customize": [
         "Tilpass"
       ],
-      "Customize categories": [
-        "Tilpass kategorier"
-      ],
       "Customize import": [
         "Tilpass import"
       ],
@@ -444,9 +438,6 @@
       "Disable alias": [
         "Deaktiver alias"
       ],
-      "Disable categories": [
-        "Deaktiver kategorier"
-      ],
       "Disabling alias": [
         "Deaktiverer alias"
       ],
@@ -497,9 +488,6 @@
       ],
       "Edit address": [
         "Rediger adresse"
-      ],
-      "Edit categories": [
-        "Rediger kategorier"
       ],
       "Edit draft": [
         "Rediger utkast"
@@ -783,9 +771,6 @@
       ],
       "Join with ${ MEET_APP_NAME }": [
         "Bli med med ${ MEET_APP_NAME }"
-      ],
-      "Keep categories": [
-        "Behold kategorier"
       ],
       "Keep inbox as before": [
         "Behold innboksen som før"
@@ -1221,9 +1206,6 @@
       ],
       "Save": [
         "Lagre"
-      ],
-      "Save preferences": [
-        "Lagre preferanser"
       ],
       "Saving${ ellipsis }": [
         "Lagrer${ ellipsis }"
@@ -4604,6 +4586,9 @@
       "Error while uploading attachments. Message is not sent.": [
         "Feil under opplasting av vedlegg. Melding er ikke sendt."
       ],
+      "Failed loading group members": [
+        "Kunne ikke laste inn gruppemedlemmer"
+      ],
       "Failed to encrypt attachment. Please try again.": [
         "Kryptering av vedlegg mislyktes. Forsøk igjen."
       ],
@@ -4706,6 +4691,9 @@
       ],
       "Name is required": [
         "Navn kreves"
+      ],
+      "Network error": [
+        "Nettverksfeil"
       ],
       "Network error: Please check your connection and try again.": [
         "Nettverksfeil: kontroller tilkoblingen og prøv på nytt."
@@ -6730,9 +6718,6 @@
       "All messages stored with this label will be permanently deleted.": [
         "Alle meldinger som er lagret med denne etiketten vil bli slettet permanent."
       ],
-      "All messages will be shown in Inbox, and the category tabs and tags will no longer be visible. ": [
-        "Alle meldinger vises i innboksen, og kategorifanene og -taggene vil ikke lenger være synlige. "
-      ],
       "All your calendars are disabled.": [
         "Alle kalenderene dine er deaktivert."
       ],
@@ -7858,9 +7843,6 @@
       ],
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Ta kontakt med oss for å få hjelp med hva som helst ${ BRAND_NAME }."
-      ],
-      "Receive notifications for ${ categoryLabel }": [
-        "Motta varsler for ${ categoryLabel }"
       ],
       "Recipient: ": [
         "Mottaker: "
@@ -9180,9 +9162,6 @@
       "Add image URL": [
         "Legg til bildenettadresse"
       ],
-      "Add or remove categories. Set or turn off notifications. Adjust anytime in the ${ menuIcon } menu.": [
-        "Legg til eller fjern kategorier. Angi eller slå av varsler. Juster når som helst i ${ menuIcon }-menyen."
-      ],
       "Add to group": [
         "Legg til gruppe"
       ],
@@ -9287,9 +9266,6 @@
       ],
       "Cash": [
         "Kontant"
-      ],
-      "Categories": [
-        "Kategorier"
       ],
       "Categories badge": [
         "Kategorietikett"
@@ -9654,9 +9630,6 @@
       "Notification": [
         "Varsel"
       ],
-      "Notifications": [
-        "Varsler"
-      ],
       "Notifications are disabled, to enable them change the browser settings.": [
         "Varsler er deaktivert, for å aktivere dem, endre nettleserinnstillingene."
       ],
@@ -9770,9 +9743,6 @@
       ],
       "Search in": [
         "Søk i"
-      ],
-      "Select the categories to include and manage notifications for new emails.": [
-        "Velg kategoriene som skal inkluderes og administrer varsler for nye e-poster."
       ],
       "Send auto-reply": [
         "Send autosvar"
@@ -14777,9 +14747,6 @@
       "Apply gift code": [
         "Legg til gavekode"
       ],
-      "Archive": [
-        "Arkiv"
-      ],
       "Archive all messages?": [
         "Arkivere alle meldinger?"
       ],
@@ -14915,12 +14882,6 @@
       "Customize calendar import": [
         "Tilpass kalenderimport"
       ],
-      "Customize categories": [
-        "Tilpass kategorier"
-      ],
-      "Customize categories to fit your needs": [
-        "Tilpass kategorier etter dine behov"
-      ],
       "Customize your mail import": [
         "Tilpass e-postimporten din"
       ],
@@ -14979,9 +14940,6 @@
       ],
       "Desktop": [
         "Skrivebord"
-      ],
-      "Disable categories?": [
-        "Deaktivere kategorier?"
       ],
       "Discover your subscription benefits": [
         "Oppdag abonnementsfordelene dine"
@@ -15583,9 +15541,6 @@
       ],
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "For å forhåndsvise dette regnearket, åpne det i ${ SHEETS_APP_NAME } eller last det ned."
-      ],
-      "Trash": [
-        "Papirkurv"
       ],
       "Trash all messages?": [
         "Slette alle meldinger?"

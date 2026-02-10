@@ -201,9 +201,6 @@
       "Change email": [
         "Zmeniť email"
       ],
-      "Change page": [
-        "Zmeniť stranu"
-      ],
       "Change password": [
         "Zmeniť heslo"
       ],
@@ -387,9 +384,6 @@
       "Customize": [
         "Prispôsobiť"
       ],
-      "Customize categories": [
-        "Prispôsobenie kategórií"
-      ],
       "Customize import": [
         "Prispôsobiť import"
       ],
@@ -450,9 +444,6 @@
       "Disable alias": [
         "Vypnúť alias"
       ],
-      "Disable categories": [
-        "Deaktivovať kategórie"
-      ],
       "Disabling alias": [
         "Vypínanie aliasu"
       ],
@@ -503,9 +494,6 @@
       ],
       "Edit address": [
         "Upraviť adresu"
-      ],
-      "Edit categories": [
-        "Upraviť kategórie"
       ],
       "Edit draft": [
         "Upraviť koncept"
@@ -791,9 +779,6 @@
       ],
       "Join with ${ MEET_APP_NAME }": [
         "Pripojte sa k ${ MEET_APP_NAME }"
-      ],
-      "Keep categories": [
-        "Ponechať kategórie"
       ],
       "Keep inbox as before": [
         "Ponechať doručenú poštu ako predtým"
@@ -1229,9 +1214,6 @@
       ],
       "Save": [
         "Uložiť"
-      ],
-      "Save preferences": [
-        "Uložiť preferencie"
       ],
       "Saving${ ellipsis }": [
         "Ukladanie${ ellipsis }"
@@ -4658,6 +4640,9 @@
       "Error while uploading attachments. Message is not sent.": [
         "Chyba pri nahrávaní prílohy. Správa nebola odoslaná."
       ],
+      "Failed loading group members": [
+        "Chyba pri načítavaní členov skupiny"
+      ],
       "Failed to encrypt attachment. Please try again.": [
         "Zlyhalo rozšifrovanie správy, skúste to znova."
       ],
@@ -4762,6 +4747,9 @@
       ],
       "Name is required": [
         "Názov je povinný"
+      ],
+      "Network error": [
+        "Chyba siete"
       ],
       "Network error: Please check your connection and try again.": [
         "Chyba siete, skontrolujte pripojenie a skúste to znova."
@@ -6938,9 +6926,6 @@
       "All messages stored with this label will be permanently deleted.": [
         "Všetky správy uložené s týmto štítkom budú natrvalo odstránené."
       ],
-      "All messages will be shown in Inbox, and the category tabs and tags will no longer be visible. ": [
-        "Všetky správy sa zobrazia v priečinku Doručená pošta a záložky kategórií a značky už nebudú viditeľné. "
-      ],
       "All your calendars are disabled.": [
         "Všetky Vaše kalendáre sú zakázané."
       ],
@@ -8098,9 +8083,6 @@
       ],
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Obráťte sa na nás, ak potrebujete pomoc s čímkoľvek od ${ BRAND_NAME }."
-      ],
-      "Receive notifications for ${ categoryLabel }": [
-        "Prijímať upozornenia pre kategóriu ${ categoryLabel }"
       ],
       "Recipient: ": [
         "Príjemca: "
@@ -9480,9 +9462,6 @@
       "Add image URL": [
         "Pridať URL adresu obrázka"
       ],
-      "Add or remove categories. Set or turn off notifications. Adjust anytime in the ${ menuIcon } menu.": [
-        "Pridajte alebo odstráňte kategórie. Nastavte alebo vypnite upozornenia. Upravujte kedykoľvek v ponuke ${ menuIcon }."
-      ],
       "Add to group": [
         "Pridať do skupiny"
       ],
@@ -9587,9 +9566,6 @@
       ],
       "Cash": [
         "Hotovosť"
-      ],
-      "Categories": [
-        "Kategórie"
       ],
       "Categories badge": [
         "Odznak kategórií"
@@ -9954,9 +9930,6 @@
       "Notification": [
         "Notifikácia"
       ],
-      "Notifications": [
-        "Notifikácie"
-      ],
       "Notifications are disabled, to enable them change the browser settings.": [
         "Notifikácie sú deaktivované. Ak ich chcete povoliť, zmeňte nastavenia prehliadača."
       ],
@@ -10070,9 +10043,6 @@
       ],
       "Search in": [
         "Hľadať v"
-      ],
-      "Select the categories to include and manage notifications for new emails.": [
-        "Vyberte kategórie, ktoré chcete zahrnúť, a spravujte notifikácie na nové emaily."
       ],
       "Send auto-reply": [
         "Poslať automatickú odpoveď"
@@ -15341,9 +15311,6 @@
       "Apply gift code": [
         "Použiť darčekový kód"
       ],
-      "Archive": [
-        "Archivovať"
-      ],
       "Archive all messages?": [
         "Archivovať všetky správy?"
       ],
@@ -15479,12 +15446,6 @@
       "Customize calendar import": [
         "Prispôsobiť import kalendára"
       ],
-      "Customize categories": [
-        "Prispôsobenie kategórií"
-      ],
-      "Customize categories to fit your needs": [
-        "Prispôsobte kategórie svojim potrebám"
-      ],
       "Customize your mail import": [
         "Prispôsobiť import vášho emailu"
       ],
@@ -15553,9 +15514,6 @@
       ],
       "Desktop": [
         "Počítač"
-      ],
-      "Disable categories?": [
-        "Deaktivovať kategórie?"
       ],
       "Discover your subscription benefits": [
         "Spoznajte výhody vášho predplatného"
@@ -16159,9 +16117,6 @@
       ],
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "Ak chcete zobraziť náhľad tejto tabuľky, otvorte ju v aplikácii ${ SHEETS_APP_NAME } alebo si ju stiahnite."
-      ],
-      "Trash": [
-        "Kôš"
       ],
       "Trash all messages?": [
         "Presunúť všetky správy do koša?"

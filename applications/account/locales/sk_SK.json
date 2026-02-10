@@ -6255,6 +6255,9 @@
       "Expired": [
         "Platnosť vypršala"
       ],
+      "Failed loading group members": [
+        "Chyba pri načítavaní členov skupiny"
+      ],
       "Failed to add group member": [
         "Nepodarilo sa pridať člena skupiny"
       ],
@@ -6392,6 +6395,9 @@
       ],
       "Name required": [
         "Názov je povinný"
+      ],
+      "Network error": [
+        "Chyba siete"
       ],
       "No active sessions": [
         "Žiadne aktívne relácie"
@@ -8903,12 +8909,6 @@
       ],
       "${ url } deleted.": [
         "${ url } vymazaná."
-      ],
-      "${ userFound } user found": [
-        "${ userFound } nájdený používateľ",
-        "${ userFound } nájdení používatelia",
-        "${ userFound } nájdených používateľov",
-        "${ userFound } nájdených používateľov"
       ],
       "${ vaultLink } created": [
         "${ vaultLink } bol vytvorený"
@@ -12045,6 +12045,9 @@
       "Your plan is limited to 10 versions for up to 7 days": [
         "Váš plán je limitovaný na 10 verzií do 7 dní"
       ],
+      "Your recent changes have been published. They will be visible to users in the next few hours.": [
+        "Vaše nedávne zmeny boli publikované. Budú viditeľné pre používateľov v priebehu nasledujúcich niekoľkých hodín."
+      ],
       "Your recovery phrase": [
         "Vaša obnovovacia fráza"
       ],
@@ -12209,6 +12212,9 @@
     "invitation status": {
       "Declined": [
         "Odmietnuté"
+      ],
+      "Owner": [
+        "Vlastník"
       ],
       "Paused": [
         "Pozastavené"
@@ -24338,6 +24344,9 @@
       ],
       "User declined invitation": [
         "Používateľ odmietol pozvánku"
+      ],
+      "User is a group": [
+        "Používateľ je skupina"
       ],
       "Waiting for user to accept the invitation": [
         "Čakanie na prijatie pozvania zo strany používateľa"

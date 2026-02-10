@@ -466,6 +466,9 @@
       "Disable": [
         "Desactivar"
       ],
+      "Disable categories": [
+        "Desactivar categorías"
+      ],
       "Disable recovery phrase": [
         "Desactivar la frase de recuperación"
       ],
@@ -633,6 +636,9 @@
       ],
       "Extend": [
         "Ampliar"
+      ],
+      "Filters are being applied. This might take a few minutes.": [
+        "Se están aplicando los filtros. Esto puede tardar unos minutos."
       ],
       "Fit to window": [
         "Ajustar a la ventana"
@@ -825,6 +831,9 @@
       ],
       "Keep": [
         "Conservar"
+      ],
+      "Keep categories": [
+        "Conservar categorías"
       ],
       "Keep Editing": [
         "Seguir editando"
@@ -5283,6 +5292,9 @@
       ]
     },
     "email_forwarding_2023: Info": {
+      "Automatically forward emails to another email address.": [
+        "Reenvía automáticamente correos electrónicos a otra dirección de correo"
+      ],
       "For compatibility, post-quantum encryption has been disabled, and a new encryption key has been generated for ${ boldForwarderEmail }.": [
         "Por motivos de compatibilidad, el cifrado poscuántico se ha desactivado y se ha generado una nueva clave de cifrado para ${ boldForwarderEmail }."
       ],
@@ -5764,6 +5776,9 @@
       "Expired": [
         "Expirado"
       ],
+      "Failed loading group members": [
+        "Error al cargar los miembros del grupo"
+      ],
       "Failed to add group member": [
         "No se pudo añadir miembro al grupo"
       ],
@@ -5893,6 +5908,9 @@
       ],
       "Name required": [
         "Nombre requerido"
+      ],
+      "Network error": [
+        "Error de red"
       ],
       "No active sessions": [
         "No hay sesiones activas"
@@ -8206,10 +8224,6 @@
       "${ storage } storage": [
         "${ storage } de almacenamiento"
       ],
-      "${ userFound } user found": [
-        "${ userFound } usuario encontrado",
-        "${ userFound } usuarios encontrados"
-      ],
       "${ vaultLink } created": [
         "${ vaultLink } creado"
       ],
@@ -8422,6 +8436,9 @@
       ],
       "All members have been added.": [
         "Se han añadido todos los miembros."
+      ],
+      "All messages will be shown in Inbox, and the category tabs and tags will no longer be visible. ": [
+        "Los mensajes aparecerán en la Bandeja de entrada. Las pestañas y etiquetas de categorías dejarán de ser visibles. "
       ],
       "All users": [
         "Todos los usuarios"
@@ -9746,6 +9763,9 @@
       ],
       "Password copied to clipboard": [
         "Contraseña copiada en el portapapeles"
+      ],
+      "Password generator rules successfully saved": [
+        "Se han guardado correctamente las reglas del generador de contraseñas"
       ],
       "Password manager with extra account security": [
         "Gestor de contraseñas con seguridad de cuenta adicional"
@@ -11237,6 +11257,9 @@
       "Declined": [
         "Rechazado"
       ],
+      "Owner": [
+        "Propietario"
+      ],
       "Paused": [
         "En pausa"
       ],
@@ -11341,6 +11364,11 @@
     "Key type hint": {
       "Faster": [
         "Más rápido"
+      ]
+    },
+    "Key type option": {
+      "${ postQuantumProtection } (MLDSA/MLKEM + ECC Curve25519)": [
+        "${ postQuantumProtection } (MLDSA/MLKEM + ECC Curve25519)"
       ]
     },
     "Keyboard shortcut name": {
@@ -21072,6 +21100,9 @@
       "Disable activity monitor?": [
         "¿Desactivar el monitor de actividades?"
       ],
+      "Disable categories?": [
+        "¿Desactivar categorías?"
+      ],
       "Disable two-factor authentication": [
         "Desactivar la autenticación de dos factores"
       ],
@@ -22329,6 +22360,9 @@
       "Shared server policies can be applied to individual users or groups": [
         "Las políticas de servidor compartido se pueden aplicar a cada usuario o a grupos."
       ],
+      "Signatures produced by this key are treated as invalid and this key cannot be used for encryption": [
+        "Las firmas producidas por esta clave se tratan como no válidas y esta clave no se puede usar para el cifrado"
+      ],
       "Specify the domain which is allowed to authenticate with SAML SSO": [
         "Especifica el dominio que puede autenticarse con SAML SSO."
       ],
@@ -22435,6 +22469,9 @@
       ],
       "User declined invitation": [
         "El usuario ha rechazado la invitación."
+      ],
+      "User is a group": [
+        "El usuario es un grupo"
       ],
       "Waiting for user to accept the invitation": [
         "Se está esperando que el usuario acepte la invitación."

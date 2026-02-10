@@ -37,6 +37,9 @@
       "Accept and view the item": [
         "Прыняць і паглядзець элемент"
       ],
+      "Accept invitation": [
+        "Прыняць запрашэнне"
+      ],
       "Account": [
         "Уліковы запіс"
       ],
@@ -476,7 +479,7 @@
         "Пратэрмінаваныя спасылкі адсутнічаюць"
       ],
       "Not now": [
-        "Не зараз"
+        "Не цяпер"
       ],
       "OK": [
         "OK"
@@ -996,6 +999,9 @@
       "Error reporting problem": [
         "Памылка адпраўкі справаздачы аб праблеме"
       ],
+      "Failed loading group members": [
+        "Збой загрузкі членаў групы"
+      ],
       "Failed removing the invite.": [
         "Збой выдалення запрашэння."
       ],
@@ -1413,8 +1419,17 @@
         "${ forwardedEmailsCount } пераслана",
         "${ forwardedEmailsCount } пераслана"
       ],
+      "${ inviterEmail } wants to share an item with a group you administer.": [
+        "${ inviterEmail } хоча абагуліць элемент з групай, якую вы адмініструеце."
+      ],
+      "${ inviterEmail } wants to share an item with the group ${ invitedGroup.Name }.": [
+        "${ inviterEmail } хоча абагуліць элемент з групай ${ invitedGroup.Name }."
+      ],
       "${ inviterEmail } wants to share an item with you.": [
         "${ inviterEmail } хоча абагуліць элемент з вамі."
+      ],
+      "${ maybeVaultName } has been shared with a group you are member of": [
+        "${ maybeVaultName } абагульваўся з групай, у якую вы ўваходзіце"
       ],
       "${ memberCount } member": [
         "${ memberCount } удзельнік",
@@ -1470,6 +1485,12 @@
         "Выяўлена ${ row.breachCount } парушэнняў",
         "Выяўлена ${ row.breachCount } парушэнняў"
       ],
+      "(${ membersCount } member)": [
+        "(${ membersCount } удзельнік)",
+        "(${ membersCount } удзельнікі)",
+        "(${ membersCount } удзельнікаў)",
+        "(${ membersCount } удзельнікаў)"
+      ],
       "(Empty)": [
         "(пуста)"
       ],
@@ -1478,6 +1499,9 @@
       ],
       "A contact is created for every email address that sends emails to or receives emails from ${ aliasEmail }.": [
         "Кантакт створаны для кожнага адраса электроннай пошты, які адпраўляе або атрымлівае лісты ад ${ aliasEmail }."
+      ],
+      "A new version is being downloaded. Once the download completes, it will be available on next restart.": [
+        "Новая версія спампоўваецца. Як толькі спампоўка завершыцца, яна будзе даступна пры наступным перазапуску."
       ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "Даступна новая версія ${ PASS_APP_NAME }. Абнавіце праграму да апошняй версіі, каб паспрабаваць новыя функцыі і выпраўленыя памылкі."
@@ -1854,6 +1878,9 @@
       "Invite successfully resent": [
         "Запрашэнне адпраўлена паўторна"
       ],
+      "invites the group ${ invitedGroup.Name } to access items in": [
+        "запрашае групу ${ invitedGroup.Name } для доступу да элементаў у"
+      ],
       "invites you to access items in": [
         "запрасіў вас атрымаць доступ да элементаў у"
       ],
@@ -1976,6 +2003,9 @@
       ],
       "No network connection": [
         "Адсутнічае падключэнне да сеткі"
+      ],
+      "No new versions are available at the moment.": [
+        "У цяперашні момант новыя версіі недаступны."
       ],
       "None": [
         "Няма"
@@ -2319,6 +2349,9 @@
         "Не ўдалося імпартаваць наступных ${ totalIgnored } элементаў:",
         "Не ўдалося імпартаваць наступных ${ totalIgnored } элементаў:"
       ],
+      "The group is invited to a vault.": [
+        "Група запрошана ў сховішча."
+      ],
       "The secure link has been removed": [
         "Бяспечная спасылка выдалена"
       ],
@@ -2367,6 +2400,12 @@
       "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
         "Гэта прывядзе да адхілення прылады з назвай **${ name }**, якая **${ date }** спрабавала ўвайсці ў ваш уліковы запіс ${ BRAND_NAME }"
       ],
+      "This will reload the application.": [
+        "Гэта дзеянне перазагрузіць праграму."
+      ],
+      "This will trigger a check for new beta releases.": [
+        "Гэта дзеянне запусціць праверку новых бэта-версій."
+      ],
       "To keep receiving emails transfer these aliases to a different mailbox:": [
         "Перанясіце гэтыя псеўданімы ў іншую паштовую скрыню, каб працягваць атрымліваць лісты:"
       ],
@@ -2381,6 +2420,9 @@
       ],
       "Trusted by over 50,000 business users and 100 million accounts around the world.": [
         "Нам давяраюць больш за 50 000 карыстальнікаў у сферы бізнесу і 100 мільёнаў уліковых запісаў па ўсім свеце."
+      ],
+      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public.": [
+        "Паспрабуйце новыя функцыі, абнаўленні і прадукты ${ BRAND_NAME } перад тым, як яны будуць выпушчаны для шырокага кола карыстальнікаў."
       ],
       "Unable to copy to clipboard": [
         "Немагчыма скапіяваць у буфер абмену"
@@ -2455,7 +2497,7 @@
         "Абагуленае сховішча: ${ vaultMembersCount } удзельнікаў"
       ],
       "Verification code sent.": [
-        "Код спраўджання."
+        "Код спраўджання адпраўлены."
       ],
       "Viewer": [
         "Праглядальнік"
@@ -3320,7 +3362,7 @@
         "Гісторыя пустая"
       ],
       "None": [
-        "Няма"
+        "Адсутнічае"
       ],
       "Not selected": [
         "Не выбрана"
@@ -4712,6 +4754,9 @@
       "Vault": [
         "Сховішча"
       ],
+      "Vault shared with a group you administer": [
+        "Сховішча абагулена з групай, якую вы адмініструеце"
+      ],
       "Vault shared with you": [
         "Сховішча абагуленае з вамі"
       ],
@@ -5004,7 +5049,7 @@
         "Абнавіце пашырэнне да апошняй версіі"
       ],
       "Please verify your email address in order to use email aliases": [
-        "Спращдзіце свой адрас электроннай пошты, каб карыстацца псеўданімамі."
+        "Спраўдзіце свой адрас электроннай пошты, каб карыстацца псеўданімамі"
       ],
       "Removing your extra password will log you out from all devices and end all active sessions.": [
         "Выдаленне вашага дадатковага пароля прывядзе да выхаду з усіх прылад і завершыць усе актыўныя сеансы."

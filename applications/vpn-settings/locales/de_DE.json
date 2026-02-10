@@ -5895,9 +5895,9 @@
       "${ storage } storage": [
         "${ storage } Speicherplatz"
       ],
-      "${ userFound } user found": [
-        "${ userFound } Benutzer gefunden",
-        "${ userFound } Benutzer gefunden"
+      "${ total } user found": [
+        "${ total } Benutzer gefunden",
+        "${ total } Benutzer gefunden"
       ],
       "${ vaultLink } created": [
         "${ vaultLink } erstellt."
@@ -8378,6 +8378,9 @@
     "invitation status": {
       "Declined": [
         "Abgelehnt"
+      ],
+      "Owner": [
+        "Besitzer"
       ],
       "Paused": [
         "Angehalten"
@@ -16166,6 +16169,9 @@
       ],
       "User declined invitation": [
         "Der Benutzer hat die Einladung abgelehnt"
+      ],
+      "User is a group": [
+        "Benutzer ist eine Gruppe"
       ],
       "Waiting for user to accept the invitation": [
         "Warten auf die Annahme der Einladung durch den Benutzer"

@@ -516,6 +516,9 @@
       "Disable": [
         "Desativar"
       ],
+      "Disable categories": [
+        "Desativar categorias"
+      ],
       "Disable recovery phrase": [
         "Desativar a frase de recuperação"
       ],
@@ -908,6 +911,9 @@
       ],
       "Keep": [
         "Manter"
+      ],
+      "Keep categories": [
+        "Manter categorias"
       ],
       "Keep Editing": [
         "Continuar editando"
@@ -6185,6 +6191,9 @@
       "Expired": [
         "Expirado"
       ],
+      "Failed loading group members": [
+        "Falha ao carregar membros do grupo"
+      ],
       "Failed to add group member": [
         "Falha ao adicionar membro do grupo"
       ],
@@ -6320,6 +6329,9 @@
       ],
       "Name required": [
         "Nome obrigatório"
+      ],
+      "Network error": [
+        "Erro de rede"
       ],
       "No active sessions": [
         "Não há sessões ativas"
@@ -8727,15 +8739,15 @@
       "${ storage } storage": [
         "${ storage } de armazenamento"
       ],
+      "${ total } user found": [
+        "${ total } usuário encontrado",
+        "${ total } usuários encontrados"
+      ],
       "${ url } added.": [
         "${ url } adicionado."
       ],
       "${ url } deleted.": [
         "${ url } excluído."
-      ],
-      "${ userFound } user found": [
-        "${ userFound } usuário encontrado",
-        "${ userFound } usuários encontrados"
       ],
       "${ vaultLink } created": [
         "${ vaultLink } criado"
@@ -8955,6 +8967,9 @@
       ],
       "All members have been added.": [
         "Todos os membros foram adicionados"
+      ],
+      "All messages will be shown in Inbox, and the category tabs and tags will no longer be visible. ": [
+        "Todas as mensagens serão mostradas na Inbox, e as abas e tags de categorias não serão mais visíveis. "
       ],
       "All users": [
         "Todos os usuários"
@@ -11794,6 +11809,9 @@
       "Your plan is limited to 10 versions for up to 7 days": [
         "Seu plano é limitado a 10 versões por até 7 dias"
       ],
+      "Your recent changes have been published. They will be visible to users in the next few hours.": [
+        "Suas alterações recentes foram publicadas. Elas ficarão visíveis para os usuários nas próximas horas."
+      ],
       "Your recovery phrase": [
         "Sua frase de recuperação"
       ],
@@ -11952,6 +11970,9 @@
     "invitation status": {
       "Declined": [
         "Recusado"
+      ],
+      "Owner": [
+        "Proprietário"
       ],
       "Paused": [
         "Pausado"
@@ -22308,6 +22329,9 @@
       "Disable activity monitor?": [
         "Desativar o monitor de atividade?"
       ],
+      "Disable categories?": [
+        "Desativar categorias?"
+      ],
       "Disable two-factor authentication": [
         "Desativar autenticação de dois fatores"
       ],
@@ -23791,6 +23815,9 @@
       ],
       "User declined invitation": [
         "O usuário rejeitou o convite"
+      ],
+      "User is a group": [
+        "Usuário é um grupo"
       ],
       "Waiting for user to accept the invitation": [
         "Esperando o usuário aceitar o convite"

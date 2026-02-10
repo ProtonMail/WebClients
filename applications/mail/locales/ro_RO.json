@@ -200,9 +200,6 @@
       "Change email": [
         "Modificare e-mail"
       ],
-      "Change page": [
-        "Schimbare pagină"
-      ],
       "Change password": [
         "Schimbare parolă"
       ],
@@ -252,7 +249,7 @@
         "Golire căutare"
       ],
       "Clear selection": [
-        "Golire selectate"
+        "Anulare selecție"
       ],
       "Click here.": [
         "Apăsați aici."
@@ -386,9 +383,6 @@
       "Customize": [
         "Personalizare"
       ],
-      "Customize categories": [
-        "Personalizare categorii"
-      ],
       "Customize import": [
         "Personalizare importare"
       ],
@@ -447,9 +441,6 @@
       "Disable alias": [
         "Dezactivare alias"
       ],
-      "Disable categories": [
-        "Dezactivare categorii"
-      ],
       "Disabling alias": [
         "Dezactivare alias"
       ],
@@ -500,9 +491,6 @@
       ],
       "Edit address": [
         "Editare adresă"
-      ],
-      "Edit categories": [
-        "Editare categorii"
       ],
       "Edit draft": [
         "Editare ciornă"
@@ -787,9 +775,6 @@
       ],
       "Join with ${ MEET_APP_NAME }": [
         "Alăturați-vă cu ${ MEET_APP_NAME }"
-      ],
-      "Keep categories": [
-        "Păstrare categorii"
       ],
       "Keep inbox as before": [
         "Păstrare mesaje ca înainte"
@@ -1225,9 +1210,6 @@
       ],
       "Save": [
         "Salvare"
-      ],
-      "Save preferences": [
-        "Salvare preferințe"
       ],
       "Saving${ ellipsis }": [
         "Se salvează${ ellipsis }"
@@ -4631,6 +4613,9 @@
       "Error while uploading attachments. Message is not sent.": [
         "Eroare la încărcarea atașamentelor. Mesajul nu este trimis."
       ],
+      "Failed loading group members": [
+        "Eroare la încărcarea membrilor grupului."
+      ],
       "Failed to encrypt attachment. Please try again.": [
         "Eșuare criptare atașament. Reîncercați."
       ],
@@ -4734,6 +4719,9 @@
       ],
       "Name is required": [
         "Numele este obligatoriu."
+      ],
+      "Network error": [
+        "Eroare de rețea."
       ],
       "Network error: Please check your connection and try again.": [
         "Eroare rețea: verificați conexiunea și reîncercați."
@@ -4946,6 +4934,9 @@
       ],
       "Thanks for the feedback!": [
         "Mulțumim pentru feedback!"
+      ],
+      "That action can't be performed on emails in this folder": [
+        "Această acțiune nu poate fi efectuată pe mesajele din acest folder."
       ],
       "The amount due has changed. Please try again.": [
         "Suma datorată s-a schimbat. Mai încercați."
@@ -6831,9 +6822,6 @@
       "All messages stored with this label will be permanently deleted.": [
         "Toate mesajele stocate cu această etichetă vor fi șterse definitiv."
       ],
-      "All messages will be shown in Inbox, and the category tabs and tags will no longer be visible. ": [
-        "Toate mesajele vor fi afișate în „Primite”, iar filele de categorii și etichetele nu vor mai fi vizibile."
-      ],
       "All your calendars are disabled.": [
         "Toate calendarele sunt dezactivate."
       ],
@@ -7026,7 +7014,7 @@
         "Ștergere date"
       ],
       "Clear selection": [
-        "Golire selectate"
+        "Anulare selecție"
       ],
       "Clearing browser data also deactivates message content search on this device. All messages will need to be downloaded again to search within them.": [
         "Ștergerea datelor din navigator dezactivează și căutarea în conținutul din mesaje pe acest dispozitiv. Toate mesajele vor trebui să fie descărcate din nou pentru a căuta în ele."
@@ -7404,7 +7392,7 @@
         "Primiți notificări dacă parola sau alte date v-au fost divulgate de la un serviciu terță parte."
       ],
       "Give incoming bills a color-coded label, such as “${ suggestedLabelName }“. Once they're paid, change the label to “${ suggestedPaidLabelName }“.": [
-        "Asociați facturilor primite o etichetă cu coduri de culoare, cum ar fi „${ suggestedLabelName }“. După ce sunt plătite, schimbați eticheta cu „${ suggestedPaidLabelName }“."
+        "Asociați facturilor primite o etichetă cu coduri de culoare, cum ar fi „${ suggestedLabelName }“ sau „De plătit”. După ce sunt plătite, schimbați eticheta cu „${ suggestedPaidLabelName }“ sau „Plătită”."
       ],
       "Google Pay mark": [
         "Marcare Google Pay"
@@ -7749,6 +7737,9 @@
       "No links cleaned": [
         "Nu au fost curățate legături web"
       ],
+      "No messages found": [
+        "Nu au fost găsite mesaje"
+      ],
       "No messages to show": [
         "Nu sunt mesaje de afișat"
       ],
@@ -7972,9 +7963,6 @@
       ],
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Contactați-ne pentru ajutor despre orice din ${ BRAND_NAME }."
-      ],
-      "Receive notifications for ${ categoryLabel }": [
-        "Primire notificări pentru ${ categoryLabel }"
       ],
       "Recipient: ": [
         "Destinatar: "
@@ -9324,9 +9312,6 @@
       "Add image URL": [
         "Adăugare URL imagine"
       ],
-      "Add or remove categories. Set or turn off notifications. Adjust anytime in the ${ menuIcon } menu.": [
-        "Adăugați sau eliminați categorii. Activați sau dezactivați notificări. Ajustați oricând în meniul ${ menuIcon }."
-      ],
       "Add to group": [
         "Adăugare la grup"
       ],
@@ -9431,9 +9416,6 @@
       ],
       "Cash": [
         "Numerar"
-      ],
-      "Categories": [
-        "Categorii"
       ],
       "Categories badge": [
         "Etichetă categorii"
@@ -9798,9 +9780,6 @@
       "Notification": [
         "Notificare"
       ],
-      "Notifications": [
-        "Notificări"
-      ],
       "Notifications are disabled, to enable them change the browser settings.": [
         "Notificările sunt dezactivate. Pentru a le activa modificați setările navigatorului web."
       ],
@@ -9914,9 +9893,6 @@
       ],
       "Search in": [
         "Căutare în"
-      ],
-      "Select the categories to include and manage notifications for new emails.": [
-        "Selectați categoriile de inclus și gestionați notificările pentru mesajele noi."
       ],
       "Send auto-reply": [
         "Trimitere autorăspuns"
@@ -11178,6 +11154,9 @@
       "Password-protected Emails": [
         "Mesaje protejate prin parolă"
       ],
+      "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
+        "Asistență telefonică (peste ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } utilizatori)"
+      ],
       "Priority email support": [
         "Asistență pe e-mail prioritară"
       ],
@@ -11617,6 +11596,9 @@
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Vă puteți personaliza semnătura de e-mail cu sigle, imagini, pictograme de rețele sociale, legături web către datele de contact și multe altele."
+      ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } or more users": [
+        "Asistența telefonică este disponibilă de la echipa de asistență pentru clienți ${ BRAND_NAME } în timpul programului de lucru european, pentru clienții cu ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } sau mai mulți utilizatori."
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Împiedică accesarea mesajelor de către ${ BRAND_NAME } sau de către terți. Singurele persoane care pot citi mesajele sunt expeditorul și destinatarul specificat."
@@ -14933,7 +14915,7 @@
         "Creați un alias"
       ],
       "Create label “${ suggestedLabelName }“": [
-        "Creați eticheta „${ suggestedLabelName }”"
+        "Creați eticheta „${ suggestedLabelName }” sau „De plătit”"
       ],
       "Create new email address": [
         "Creare adresă de e-mail"
@@ -15046,9 +15028,6 @@
       ],
       "Apply gift code": [
         "Aplicare cod cadou"
-      ],
-      "Archive": [
-        "Arhivă"
       ],
       "Archive all messages?": [
         "Arhivați toate mesajele?"
@@ -15185,12 +15164,6 @@
       "Customize calendar import": [
         "Personalizare importare calendar"
       ],
-      "Customize categories": [
-        "Personalizare categorii"
-      ],
-      "Customize categories to fit your needs": [
-        "Personalizați categoriile pentru a se potrivi nevoilor personale"
-      ],
       "Customize your mail import": [
         "Personalizare importare mesaje"
       ],
@@ -15254,9 +15227,6 @@
       ],
       "Desktop": [
         "Desktop"
-      ],
-      "Disable categories?": [
-        "Dezactivați categoriile?"
       ],
       "Discover your subscription benefits": [
         "Descoperiți-vă beneficiile abonamentului"
@@ -15859,9 +15829,6 @@
       ],
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "Pentru a examina această foaie de calcul, deschideți-o în ${ SHEETS_APP_NAME } sau descărcați-o."
-      ],
-      "Trash": [
-        "Gunoi"
       ],
       "Trash all messages?": [
         "Ștergeți toate mesajele?"

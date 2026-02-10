@@ -199,9 +199,6 @@
       "Change email": [
         "E-posta adresini değiştir"
       ],
-      "Change page": [
-        "Sayfayı değiştir"
-      ],
       "Change password": [
         "Parolayı değiştir"
       ],
@@ -385,9 +382,6 @@
       "Customize": [
         "Özelleştir"
       ],
-      "Customize categories": [
-        "Kategorileri özelleştir"
-      ],
       "Customize import": [
         "İçe aktarmayı özelleştir"
       ],
@@ -444,9 +438,6 @@
       "Disable alias": [
         "Takma adı kullanımdan kaldır"
       ],
-      "Disable categories": [
-        "Kategorileri kapat"
-      ],
       "Disabling alias": [
         "Takma ad kullanımdan kaldırılıyor"
       ],
@@ -497,9 +488,6 @@
       ],
       "Edit address": [
         "Adresi düzenle"
-      ],
-      "Edit categories": [
-        "Kategorileri düzenle"
       ],
       "Edit draft": [
         "Taslağı düzenle"
@@ -783,9 +771,6 @@
       ],
       "Join with ${ MEET_APP_NAME }": [
         "${ MEET_APP_NAME } ile katıl"
-      ],
-      "Keep categories": [
-        "Kategorileri kullan"
       ],
       "Keep inbox as before": [
         "Gelen kutusu eskisi gibi kalsın"
@@ -1221,9 +1206,6 @@
       ],
       "Save": [
         "Kaydet"
-      ],
-      "Save preferences": [
-        "Ayarları kaydet"
       ],
       "Saving${ ellipsis }": [
         "Kaydediliyor${ ellipsis }"
@@ -4604,6 +4586,9 @@
       "Error while uploading attachments. Message is not sent.": [
         "Ek dosyalar yüklenirken sorun çıktı. İleti gönderilmedi."
       ],
+      "Failed loading group members": [
+        "Grup üyeleri yüklenemedi"
+      ],
       "Failed to encrypt attachment. Please try again.": [
         "Ek dosya şifrelenemedi. Lütfen yeniden deneyin."
       ],
@@ -4706,6 +4691,9 @@
       ],
       "Name is required": [
         "Adın yazılması zorunludur"
+      ],
+      "Network error": [
+        "Ağ sorunu"
       ],
       "Network error: Please check your connection and try again.": [
         "Ağ sorunu: Lütfen bağlantınızı denetleyip yeniden deneyin."
@@ -6730,9 +6718,6 @@
       "All messages stored with this label will be permanently deleted.": [
         "Bu etiket ile kaydedilmiş tüm iletiler kalıcı olarak silinecek."
       ],
-      "All messages will be shown in Inbox, and the category tabs and tags will no longer be visible. ": [
-        "Tüm iletiler Gelen kutusunda görüntülenecek ve kategori sekmeleri ile etiketler artık görüntülenmeyecek. "
-      ],
       "All your calendars are disabled.": [
         "Tüm takvimleriniz kullanım dışı bırakılmış."
       ],
@@ -7858,9 +7843,6 @@
       ],
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "${ BRAND_NAME } ile ilgili her konuda yardım almak için bizimle görüşün."
-      ],
-      "Receive notifications for ${ categoryLabel }": [
-        "${ categoryLabel } bildirimlerini al"
       ],
       "Recipient: ": [
         "Alıcı: "
@@ -9180,9 +9162,6 @@
       "Add image URL": [
         "Adresten görsel ekle"
       ],
-      "Add or remove categories. Set or turn off notifications. Adjust anytime in the ${ menuIcon } menu.": [
-        "Kategorileri ekleyin veya kaldırın. Bildirimleri açın veya kapatın. ${ menuIcon } menüsünden istediğiniz zaman ayarlayın."
-      ],
       "Add to group": [
         "Gruba ekle"
       ],
@@ -9287,9 +9266,6 @@
       ],
       "Cash": [
         "Nakit"
-      ],
-      "Categories": [
-        "Kategoriler"
       ],
       "Categories badge": [
         "Kategoriler etiketi"
@@ -9654,9 +9630,6 @@
       "Notification": [
         "Bildirim"
       ],
-      "Notifications": [
-        "Bildirimler"
-      ],
       "Notifications are disabled, to enable them change the browser settings.": [
         "Bildirimler kapatılmış. Bunları açmak için tarayıcı ayarlarını değiştirin."
       ],
@@ -9770,9 +9743,6 @@
       ],
       "Search in": [
         "Şurada ara"
-      ],
-      "Select the categories to include and manage notifications for new emails.": [
-        "Yeni e-postaların katılacağı kategorileri seçin ve bildirimleri yönetin."
       ],
       "Send auto-reply": [
         "Otomatik yanıtlansın"
@@ -14777,9 +14747,6 @@
       "Apply gift code": [
         "Hediye kodunu uygula"
       ],
-      "Archive": [
-        "Arşivle"
-      ],
       "Archive all messages?": [
         "Tüm iletiler arşivlensin mi?"
       ],
@@ -14915,12 +14882,6 @@
       "Customize calendar import": [
         "Takvim içe aktarma işlemini özelleştirin"
       ],
-      "Customize categories": [
-        "Kategorileri özelleştir"
-      ],
-      "Customize categories to fit your needs": [
-        "Eklentileri gereksinimlerinize göre özelleştirin"
-      ],
       "Customize your mail import": [
         "Posta içe aktarma işleminizi özelleştirin"
       ],
@@ -14979,9 +14940,6 @@
       ],
       "Desktop": [
         "Bilgisayar"
-      ],
-      "Disable categories?": [
-        "Kategoriler kapatılsın mı?"
       ],
       "Discover your subscription benefits": [
         "Aboneliğinizin avantajlarını keşfedin."
@@ -15583,9 +15541,6 @@
       ],
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "Bu hesap tablosunu ön izlemek için ${ SHEETS_APP_NAME } uygulaması ile açın ya da indirin."
-      ],
-      "Trash": [
-        "Çöpe at"
       ],
       "Trash all messages?": [
         "Tüm iletiler çöpe atılsın mı?"

@@ -284,6 +284,9 @@
       "Deselect all": [
         "Odznači vse"
       ],
+      "Disable auto-add ${ MEET_APP_NAME } links feature": [
+        "Onemogoči funkcijo samodejnega dodajanja povezav ${ MEET_APP_NAME }"
+      ],
       "Discard": [
         "Zavrzi"
       ],
@@ -814,6 +817,9 @@
       ],
       "Try another method": [
         "Poskusi z drugim načinom"
+      ],
+      "Turn off auto-add": [
+        "Izklopi samodejno dodajanje"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Vklopi ${ DARK_WEB_MONITORING_NAME }"
@@ -2721,10 +2727,10 @@
         "Vsak dan, ${ untilString }"
       ],
       "Every ${ interval } day, ${ untilString }": [
-        "Vsak ${ interval }. dan, ${ untilString }",
-        "Vsak ${ interval }. dan, ${ untilString }",
-        "Vsak ${ interval }. dan, ${ untilString }",
-        "Vsak ${ interval }. dan, ${ untilString }"
+        "Vsak ${ interval } dan, ${ untilString }",
+        "Vsaka ${ interval } dni, ${ untilString }",
+        "Vsake ${ interval } dni, ${ untilString }",
+        "Vsakih ${ interval } dni, ${ untilString }"
       ]
     },
     "Day": {
@@ -3273,6 +3279,9 @@
       "Event not found": [
         "Dogodek ni bil najden"
       ],
+      "Failed to add existing ${ MEET_APP_NAME } video conference": [
+        "Ni uspelo dodati obstoječe video konference ${ MEET_APP_NAME }"
+      ],
       "Failed to create meeting": [
         "Ni uspelo ustvariti sestanka."
       ],
@@ -3284,6 +3293,9 @@
       ],
       "Failed to load OAuth modal.": [
         "Ni bilo mogoče naložiti modal OAuth."
+      ],
+      "Failed to update settings": [
+        "Posodobitev nastavitev ni uspela"
       ],
       "First name is too long": [
         "Ime je predolgo"
@@ -3377,6 +3389,9 @@
       ],
       "Name required": [
         "Ime je obvezno"
+      ],
+      "Network error": [
+        "Omrežna napaka"
       ],
       "No calendars found to import": [
         "Ni najdenih koledarjev za uvoz."
@@ -3617,6 +3632,9 @@
         "Sporočilo lahko pošljete največ ${ maxContacts } prejemnikoma.",
         "Sporočilo lahko pošljete največ ${ maxContacts } prejemnikom.",
         "Sporočilo lahko pošljete največ ${ maxContacts } prejemnikom."
+      ],
+      "You cannot enter the organizer's email": [
+        "Ne morete vnesti e-pošte organizatorja"
       ],
       "You have reached the maximum number of calendars.": [
         "Dosegli ste največje število koledarjev."
@@ -4866,6 +4884,9 @@
       "Billing cycle: ${ text }": [
         "Obračunski cikel: ${ text }."
       ],
+      "Booking contact email: ${ selectedCalendar.Email }": [
+        "E-poštni stik za rezervacijo: ${ selectedCalendar.Email }"
+      ],
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Okrepite prepoznavnost blagovne znamke vaše organizacije in ustvarite doslednejšo spletno izkušnjo za svoje uporabnike."
       ],
@@ -5115,6 +5136,9 @@
       "High Priority": [
         "Visoka pomembnost"
       ],
+      "How far in advance can someone book?": [
+        "Koliko vnaprej lahko nekdo rezervira?"
+      ],
       "If keyboard shortcuts are enabled, you can use the following keys for quick actions or to jump to different views. ${ metaKey } + K is always enabled.": [
         "Če so bližnjice na tipkovnici omogočene, lahko uporabite naslednje tipke za hitra dejanja ali za skok na različne poglede. ${ metaKey } + K je vedno omogočeno."
       ],
@@ -5183,6 +5207,9 @@
       ],
       "Internet connection restored.": [
         "Internetna povezava je spet vzpostavljena."
+      ],
+      "It's better to have:": [
+        "Bolje je imeti:"
       ],
       "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
         "Najbolje je VPN uporabljati ves čas. Tukaj pa so kibernetske grožnje lahko največje:"
@@ -5253,6 +5280,12 @@
       "Merged": [
         "Združeno"
       ],
+      "Min. 2 hours before": [
+        "Najmanj 2 uri pred"
+      ],
+      "Min. 48 hours before": [
+        "Najmanj 48 ur pred"
+      ],
       "Monitor accounts": [
         "Nadzor računov"
       ],
@@ -5294,6 +5327,9 @@
       ],
       "Not connected": [
         "Niste povezani"
+      ],
+      "Not on the same day": [
+        "Ne na isti dan"
       ],
       "Number of dedicated servers in the organization": [
         "Število namenskih strežnikov v organizaciji"
@@ -5655,6 +5691,9 @@
       "Warning": [
         "Opozorilo"
       ],
+      "We automatically added a ${ MEET_APP_NAME } link": [
+        "Samodejno smo dodali povezavo ${ MEET_APP_NAME }"
+      ],
       "We couldn’t process your payment.": [
         "Vašega plačila ni bilo mogoče obdelati."
       ],
@@ -5693,6 +5732,9 @@
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Ko nastavite dvojno preverjanje pristnosti, nudimo obnovitvene kode, ki jih lahko uporabite za prijavo, če izgubite dostop do aplikacije za preverjanje pristnosti."
+      ],
+      "Which calendars should block bookings?": [
+        "Kateri koledarji naj blokirajo rezervacije?"
       ],
       "Which event would you like to delete?": [
         "Kateri dogodek želite izbrisati?"
@@ -6118,6 +6160,9 @@
       "Add image URL": [
         "Dodajte URL slike"
       ],
+      "Add notice period": [
+        "Dodaj obdobje obveščanja"
+      ],
       "Add to group": [
         "Dodaj v skupino"
       ],
@@ -6180,6 +6225,9 @@
       ],
       "Category": [
         "Vrsta napake"
+      ],
+      "Check additional calendars for availability": [
+        "Preveri dodatne koledarje za razpoložljivost"
       ],
       "City": [
         "Mesto"
@@ -8582,7 +8630,7 @@
         "Skrbniška plošča za upravljanje uporabnikov in naročnin"
       ],
       "Advanced account protection": [
-        "Napredni program za zaščito računa"
+        "Napredna zaščita računa"
       ],
       "Team policies": [
         "Pravilniki skupine"
@@ -9012,6 +9060,9 @@
       ]
     },
     "Referral": {
+      "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
+        "**Če naročilo oddate pred tem datumom,** prejmete **${ referrerRewardAmount }** dobropisa."
+      ],
       "Invited friends": [
         "Povabljeni prijatelji"
       ],
@@ -10189,6 +10240,9 @@
       "Answer sent and event deleted": [
         "Odgovor je poslan in dogodek izbrisan"
       ],
+      "Auto-add ${ MEET_APP_NAME } links disabled": [
+        "Samodejno dodajanje povezav ${ MEET_APP_NAME } je onemogočeno"
+      ],
       "Calendar added. It might take a few minutes to sync.": [
         "Koledar je dodan. Sinhronizacija lahko traja nekaj minut."
       ],
@@ -10839,6 +10893,9 @@
       ],
       "How does it work?": [
         "Kako deluje?"
+      ],
+      "How your free trial works": [
+        "Kako deluje vaš brezplačni preizkus"
       ],
       "Human verification": [
         "Ali si človek"

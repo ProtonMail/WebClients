@@ -977,6 +977,9 @@
       "Set as cover": [
         "Imposta come copertina"
       ],
+      "Set password or expiration date": [
+        "Imposta password o data di scadenza"
+      ],
       "Set recovery methods": [
         "Imposta i metodi di recupero"
       ],
@@ -1012,6 +1015,9 @@
       ],
       "Share your calendar with your team": [
         "Condividi il tuo calendario con il tuo team"
+      ],
+      "Sharing is end-to-end encrypted": [
+        "La condivisione è crittografata end-to-end"
       ],
       "Sharing options": [
         "Opzioni di condivisione"
@@ -3372,6 +3378,9 @@
       "External invitations are temporarily disabled. Please try again later": [
         "Gli inviti esterni sono temporaneamente disabilitati. Riprova più tardi"
       ],
+      "Failed loading group members": [
+        "Impossibile caricare i membri del gruppo"
+      ],
       "Failed to copy photo to album": [
         "Impossibile copiare la foto nell'album"
       ],
@@ -3510,6 +3519,9 @@
       ],
       "Name is required": [
         "Il nome è obbligatorio"
+      ],
+      "Network error": [
+        "Errore di rete"
       ],
       "No calendars found to import": [
         "Nessun calendario trovato da importare"
@@ -5196,6 +5208,9 @@
       "Collaborate efficiently while protecting your client and business data from breaches, ransomware, and surveillance.": [
         "Collabora in modo efficiente proteggendo i dati dei tuoi clienti e aziendali da violazioni, ransomware e sorveglianza."
       ],
+      "Computed hash does not match XAttr": [
+        "L'hash calcolato non corrisponde a XAttr"
+      ],
       "Conflict": [
         "Conflitto"
       ],
@@ -5663,6 +5678,9 @@
       "Learn what to do ${ dataLeakedLink }": [
         "Scopri cosa fare ${ dataLeakedLink }"
       ],
+      "Link copied": [
+        "Link copiato"
+      ],
       "Link copied to clipboard": [
         "Link copiato negli appunti"
       ],
@@ -5837,6 +5855,9 @@
       ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "I nostri avvisi danno priorità alla sicurezza. Se non riconosci nessuna delle informazioni violate, puoi tranquillamente ignorare questa segnalazione."
+      ],
+      "owner": [
+        "Proprietario"
       ],
       "password": [
         "password"
@@ -6558,6 +6579,9 @@
       "who": [
         "chi"
       ],
+      "Who has access": [
+        "Chi ha accesso"
+      ],
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
         "verrà ripristinato alla versione del ${ formattedRevisionDate }. Tutte le altre versioni saranno salvate."
       ],
@@ -6936,6 +6960,9 @@
       "Account holder": [
         "Titolare del conto"
       ],
+      "Active": [
+        "Attivo"
+      ],
       "Add email address": [
         "Aggiungi indirizzo email"
       ],
@@ -6948,6 +6975,9 @@
       "Address": [
         "Indirizzo"
       ],
+      "admin": [
+        "Amministratore"
+      ],
       "Alias title": [
         "Titolo dell'alias"
       ],
@@ -6959,6 +6989,9 @@
       ],
       "Anonymous": [
         "Anonimo"
+      ],
+      "Anyone on the Internet with the link": [
+        "Chiunque su Internet con il link"
       ],
       "App password": [
         "Password app"
@@ -7004,6 +7037,12 @@
       ],
       "Calendars": [
         "Calendari"
+      ],
+      "can edit": [
+        "può modificare"
+      ],
+      "can view": [
+        "posso vedere"
       ],
       "Cancel download": [
         "Annulla il download"
@@ -7086,6 +7125,9 @@
       "Delete drive?": [
         "Eliminare spazio?",
         "Eliminare spazi?"
+      ],
+      "Delete link and remove access for everyone": [
+        "Elimina il link e rimuovi l'accesso per tutti"
       ],
       "Delete recovery-related information.": [
         "Elimina le informazioni di recupero."
@@ -7287,6 +7329,9 @@
       ],
       "New password": [
         "Nuova password"
+      ],
+      "Not active": [
+        "Inattivo"
       ],
       "Note": [
         "Nota"
@@ -8479,6 +8524,9 @@
       "Password-protected Emails": [
         "Email protette da password"
       ],
+      "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
+        "Supporto telefonico (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ utenti)"
+      ],
       "Priority email support": [
         "Assistenza email prioritaria"
       ],
@@ -8905,6 +8953,9 @@
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Personalizza la tua firma email con loghi, immagini, icone di social media, link ai tuoi dettagli di contatto e molto altro"
+      ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } or more users": [
+        "Il supporto telefonico è disponibile dal team di assistenza clienti di ${ BRAND_NAME } durante l'orario lavorativo europeo, per i clienti con ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } o più utenti"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Impedisce l'accesso ai messaggi da parte di ${ BRAND_NAME } o di terzi. Le uniche persone che possono leggere i messaggi sono il mittente e il destinatario."
@@ -11013,6 +11064,14 @@
         "Annullamento dell'abbonamento in corso, attendere prego"
       ]
     },
+    "Status": {
+      "accepted": [
+        "accettato"
+      ],
+      "pending": [
+        "in sospeso"
+      ]
+    },
     "Storage": {
       "Get more storage": [
         "Ottieni più spazio di archiviazione"
@@ -12482,6 +12541,12 @@
       "Processing...": [
         "Elaborazione..."
       ],
+      "Public link": [
+        "Link pubblico"
+      ],
+      "Public link settings": [
+        "Impostazioni link pubblico"
+      ],
       "Public shared link status": [
         "Stato del collegamento condiviso pubblico"
       ],
@@ -12572,6 +12637,9 @@
       ],
       "Settings": [
         "Impostazioni"
+      ],
+      "Settings for ${ sharedFileName }": [
+        "Impostazioni per ${ sharedFileName }"
       ],
       "SHA1": [
         "SHA1"
@@ -12809,6 +12877,9 @@
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "La tua prova gratuita di ${ planName } termina il giorno ${ textDate }"
+      ],
+      "Your ${ planTitle } subscription has started": [
+        "Il tuo abbonamento ${ planTitle } è iniziato"
       ],
       "Your 3 GB bonus": [
         "Il tuo bonus di 3 GB"

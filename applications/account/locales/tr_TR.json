@@ -516,6 +516,9 @@
       "Disable": [
         "Kapat"
       ],
+      "Disable categories": [
+        "Kategorileri devre dışı bırak"
+      ],
       "Disable recovery phrase": [
         "Kurtarma ifadesini kapat"
       ],
@@ -908,6 +911,9 @@
       ],
       "Keep": [
         "Tut"
+      ],
+      "Keep categories": [
+        "Kategorileri koru"
       ],
       "Keep Editing": [
         "Düzenlemeyi sürdür"
@@ -6185,6 +6191,9 @@
       "Expired": [
         "Geçerlilik süresi dolmuş"
       ],
+      "Failed loading group members": [
+        "Grup üyeleri yüklenemedi"
+      ],
       "Failed to add group member": [
         "Grup üyesi eklenemedi"
       ],
@@ -6320,6 +6329,9 @@
       ],
       "Name required": [
         "Ad zorunludur"
+      ],
+      "Network error": [
+        "Ağ sorunu"
       ],
       "No active sessions": [
         "Herhangi bir etkin oturum yok"
@@ -8724,15 +8736,15 @@
       "${ storage } storage": [
         "${ storage } depolama alanı"
       ],
+      "${ total } user found": [
+        "${ total } kullanıcı bulundu",
+        "${ total } kullanıcı bulundu"
+      ],
       "${ url } added.": [
         "${ url } eklendi."
       ],
       "${ url } deleted.": [
         "${ url } silindi."
-      ],
-      "${ userFound } user found": [
-        "${ userFound } kullanıcı bulundu",
-        "${ userFound } kullanıcı bulundu"
       ],
       "${ vaultLink } created": [
         "${ vaultLink } eklendi"
@@ -8952,6 +8964,9 @@
       ],
       "All members have been added.": [
         "Tüm üyeler eklendi."
+      ],
+      "All messages will be shown in Inbox, and the category tabs and tags will no longer be visible. ": [
+        "Tüm iletiler Gelen Kutusu'nda gösterilecek ve kategori sekmeleri ile etiketler artık görünmeyecek. "
       ],
       "All users": [
         "Tüm Kullanıcılar"
@@ -11952,6 +11967,9 @@
     "invitation status": {
       "Declined": [
         "Reddedildi"
+      ],
+      "Owner": [
+        "Sahip"
       ],
       "Paused": [
         "Duraklatılmış"
@@ -22296,6 +22314,9 @@
       "Disable activity monitor?": [
         "Etkinlik izleyici kapatılsın mı?"
       ],
+      "Disable categories?": [
+        "Kategoriler devre dışı bırakılsın mı?"
+      ],
       "Disable two-factor authentication": [
         "İki adımlı doğrulamayı kapat"
       ],
@@ -23773,6 +23794,9 @@
       ],
       "User declined invitation": [
         "Kullanıcı daveti reddetti"
+      ],
+      "User is a group": [
+        "Kullanıcı bir gruptur"
       ],
       "Waiting for user to accept the invitation": [
         "Kullanıcının daveti kabul etmesi bekleniyor"

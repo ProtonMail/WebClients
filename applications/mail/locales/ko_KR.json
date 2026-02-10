@@ -198,9 +198,6 @@
       "Change email": [
         "이메일 변경"
       ],
-      "Change page": [
-        "페이지 변경"
-      ],
       "Change password": [
         "비밀번호 변경"
       ],
@@ -384,9 +381,6 @@
       "Customize": [
         "맞춤화"
       ],
-      "Customize categories": [
-        "카테고리 맞춤 설정"
-      ],
       "Customize import": [
         "사용자 지정 설정값 가져오기"
       ],
@@ -441,9 +435,6 @@
       "Disable alias": [
         "별칭 비활성화"
       ],
-      "Disable categories": [
-        "카테고리 비활성화"
-      ],
       "Disabling alias": [
         "별칭 비활성화하기"
       ],
@@ -494,9 +485,6 @@
       ],
       "Edit address": [
         "주소 편집"
-      ],
-      "Edit categories": [
-        "카테고리 편집"
       ],
       "Edit draft": [
         "초안 편집"
@@ -779,9 +767,6 @@
       ],
       "Join with ${ MEET_APP_NAME }": [
         "${ MEET_APP_NAME }로 참여하기"
-      ],
-      "Keep categories": [
-        "카테고리 유지"
       ],
       "Keep inbox as before": [
         "기존처럼 받은 편지함 유지"
@@ -1217,9 +1202,6 @@
       ],
       "Save": [
         "저장"
-      ],
-      "Save preferences": [
-        "환경 설정 저장"
       ],
       "Saving${ ellipsis }": [
         "저장 중${ ellipsis }"
@@ -4676,6 +4658,9 @@
       "Name is required": [
         "이름은 필수입니다"
       ],
+      "Network error": [
+        "네트워크 오류"
+      ],
       "Network error: Please check your connection and try again.": [
         "네트워크 오류: 연결 상태를 확인한 후 다시 시도해 주세요."
       ],
@@ -6623,9 +6608,6 @@
       "All messages stored with this label will be permanently deleted.": [
         "라벨이 저장된 모든 메시지들이 완전히 삭제되었습니다."
       ],
-      "All messages will be shown in Inbox, and the category tabs and tags will no longer be visible. ": [
-        "모든 메시지가 받은 편지함에 표시되며, 카테고리 탭과 태그는 더 이상 표시되지 않습니다. "
-      ],
       "All your calendars are disabled.": [
         "사용자의 모든 캘린더가 비활성화 되었습니다."
       ],
@@ -6960,7 +6942,7 @@
         "지금 중요한 이메일을 집중해서 읽을 시간이 없더라도 잊어버리지 않고 싶다면? 나중에 받은 편지함에 나타날 수 있도록 더 나은 시간을 설정하세요."
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
-        "아무것도 보지 못하셨나요? 팝업 차단기를 비활성화 하는 것을 잊지 마세요."
+        "아무 화면도 보지 못하셨나요? 팝업 차단기를 비활성화 하는 것을 잊지 마세요. Google Pay로 결제하는 경우, 국내에서 지원되지 않는 서비스이므로 결제 진행이 되지 않을 수 있습니다."
       ],
       "Downgrade": [
         "다운그레이드"
@@ -7735,9 +7717,6 @@
       ],
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "${ BRAND_NAME }에 대한 도움이 필요하면 저희에게 연락하세요."
-      ],
-      "Receive notifications for ${ categoryLabel }": [
-        "${ categoryLabel }에 대한 알림 받기"
       ],
       "Recipient: ": [
         "입금처: "
@@ -9027,9 +9006,6 @@
       "Add image URL": [
         "이미지 URL 추가"
       ],
-      "Add or remove categories. Set or turn off notifications. Adjust anytime in the ${ menuIcon } menu.": [
-        "카테고리를 추가하거나 제거하세요. 또는 알림을 설정하거나 해제하세요. 언제든 ${ menuIcon } 매뉴에서 설정을 변경할 수 있어요."
-      ],
       "Add to group": [
         "그룹에 추가"
       ],
@@ -9134,9 +9110,6 @@
       ],
       "Cash": [
         "현금"
-      ],
-      "Categories": [
-        "카테고리"
       ],
       "Categories badge": [
         "카테고리 배지"
@@ -9501,9 +9474,6 @@
       "Notification": [
         "알림"
       ],
-      "Notifications": [
-        "알림"
-      ],
       "Notifications are disabled, to enable them change the browser settings.": [
         "알림이 비활성화되었습니다. 활성화하려면 브라우저 설정을 변경하십시오."
       ],
@@ -9617,9 +9587,6 @@
       ],
       "Search in": [
         "검색"
-      ],
-      "Select the categories to include and manage notifications for new emails.": [
-        "새 이메일에 대한 알림을 받을 수 있도록 포함할 카테고리를 선택하고 관리하세요."
       ],
       "Send auto-reply": [
         "자동 회신 보내기"
@@ -14492,9 +14459,6 @@
       "Apply gift code": [
         "기프트 코드 적용"
       ],
-      "Archive": [
-        "보관 편지함"
-      ],
       "Archive all messages?": [
         "모든 메시지를 보관하시겠어요?"
       ],
@@ -14630,12 +14594,6 @@
       "Customize calendar import": [
         "사용자 캘린더 가져오기"
       ],
-      "Customize categories": [
-        "카테고리 맞춤 설정"
-      ],
-      "Customize categories to fit your needs": [
-        "필요에 맞게 카테고리 사용자 지정"
-      ],
       "Customize your mail import": [
         "사용자 메일 가져오기"
       ],
@@ -14689,9 +14647,6 @@
       ],
       "Desktop": [
         "데스크톱"
-      ],
-      "Disable categories?": [
-        "카테고리를 비활성화하시겠어요?"
       ],
       "Discover your subscription benefits": [
         "구독 혜택을 알아보세요"
@@ -15293,9 +15248,6 @@
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "이 스프레드시트를 미리보려면, ${ SHEETS_APP_NAME }에서 열거나 다운로드하세요."
       ],
-      "Trash": [
-        "휴지통"
-      ],
       "Trash all messages?": [
         "모든 메시지를 휴지통으로 이동하시겠어요?"
       ],
@@ -15707,7 +15659,7 @@
         "이 불러오기가 현재 ${ BRAND_NAME } 계정에서의 저장 공간을 초과할 수 있습니다. 불러올 파일들을 선별하는 것을 고려해 보세요."
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
-        "안타깝게도, 현재 온라인이 아닙니다. 겪고 계신 문제를 설명하기 위해 아래 양식을 작성해 주시면, 다시 온라인에 접속하실 때 살펴보고 연락드리겠습니다."
+        "송구스럽지만, 현재 대기 중인 상담원이 없습니다. 겪고 계신 문제를 아래 양식을 통해 작성해 주시면, 차후 상담원이 돌아왔을 때 살펴보고 연락드리겠습니다."
       ],
       "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
         "메일 서버를 인증할 수 없습니다. 해당 서버를 신뢰하신다면, 이 인증을 건너뛸 수도 있습니다."

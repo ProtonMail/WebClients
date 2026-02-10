@@ -516,6 +516,9 @@
       "Disable": [
         "Dezactivare"
       ],
+      "Disable categories": [
+        "Dezactivare categorii"
+      ],
       "Disable recovery phrase": [
         "Dezactivare fraze de recuperare"
       ],
@@ -908,6 +911,9 @@
       ],
       "Keep": [
         "Păstrare"
+      ],
+      "Keep categories": [
+        "Păstrare categorii"
       ],
       "Keep Editing": [
         "Continuare editare"
@@ -5071,6 +5077,9 @@
       "macOS": [
         "macOS"
       ],
+      "macOS 14 (Sonoma) or newer": [
+        "macOS 14 (Sonoma) sau mai recent"
+      ],
       "macOS Big Sur": [
         "macOS Big Sur"
       ],
@@ -5082,6 +5091,9 @@
       ],
       "macOS Monterey": [
         "macOS Monterey"
+      ],
+      "macOS Ventura": [
+        "macOS Ventura"
       ],
       "Mail": [
         "Mail"
@@ -6214,6 +6226,9 @@
       "Expired": [
         "Expirat."
       ],
+      "Failed loading group members": [
+        "Eroare la încărcarea membrilor grupului."
+      ],
       "Failed to add group member": [
         "Membrul nu s-a putut adăuga în grup"
       ],
@@ -6350,6 +6365,9 @@
       ],
       "Name required": [
         "Numele este obligatoriu"
+      ],
+      "Network error": [
+        "Eroare de rețea."
       ],
       "No active sessions": [
         "Nu sunt sesiuni active."
@@ -8805,16 +8823,16 @@
       "${ storage } storage": [
         "Stocare ${ storage }"
       ],
+      "${ total } user found": [
+        "Utilizatori găsiți: ${ total }",
+        "Utilizatori găsiți: ${ total }",
+        "Utilizatori găsiți: ${ total }"
+      ],
       "${ url } added.": [
         "S-a adăugat ${ url }."
       ],
       "${ url } deleted.": [
         "S-a șters ${ url }."
-      ],
-      "${ userFound } user found": [
-        "S-a găsit ${ userFound } utilizator",
-        "S-au găsit ${ userFound } utilizatori",
-        "S-au găsit ${ userFound } de utilizatori"
       ],
       "${ vaultLink } created": [
         "${ vaultLink } creată"
@@ -9043,6 +9061,9 @@
       ],
       "All members have been added.": [
         "Au fost adăugați toți membrii."
+      ],
+      "All messages will be shown in Inbox, and the category tabs and tags will no longer be visible. ": [
+        "Toate mesajele vor fi afișate în „Primite”, iar filele de categorii și etichetele nu vor mai fi vizibile."
       ],
       "All users": [
         "Toți utilizatorii"
@@ -10965,7 +10986,7 @@
         "Vă mulțumim că ne susțineți misiunea de a construi un internet mai bun unde confidențialitatea și libertatea primează."
       ],
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
-        "Mesajul ${ boldDataLocked } nu va mai fi afișat, dar încă puteți să vă deblocați datele de la ${ encryptionAndKeysLink }."
+        "Mesajul ${ boldDataLocked } nu va mai fi afișat, dar încă puteți să vă deblocați datele din ${ encryptionAndKeysLink }."
       ],
       "The ${ MAIL_APP_NAME } Export Tool lets you export decrypted emails from your ${ MAIL_APP_NAME } account to your device. You can then view the messages or import them into another email account or email client.": [
         "Unealta de exportare a ${ MAIL_APP_NAME } vă permite să exportați mesajele decriptate din contul ${ MAIL_APP_NAME } pe dispozitiv. Apoi puteți vizualiza mesajele sau le puteți importa într-un alt cont sau client de e-mail."
@@ -11912,6 +11933,9 @@
       "Your plan is limited to 10 versions for up to 7 days": [
         "Planul este limitat la 10 versiuni pentru maxim 7 zile."
       ],
+      "Your recent changes have been published. They will be visible to users in the next few hours.": [
+        "Modificările recente au fost publicate. Vor fi vizibile utilizatorilor în următoarele câteva ore."
+      ],
       "Your recovery phrase": [
         "Fraza de recuperare"
       ],
@@ -12073,6 +12097,9 @@
     "invitation status": {
       "Declined": [
         "Refuzată"
+      ],
+      "Owner": [
+        "Proprietar"
       ],
       "Paused": [
         "Suspendată"
@@ -15475,6 +15502,9 @@
       "Password-protected Emails": [
         "Mesaje protejate prin parolă"
       ],
+      "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
+        "Asistență telefonică (peste ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } utilizatori)"
+      ],
       "Priority email support": [
         "Asistență pe e-mail prioritară"
       ],
@@ -15990,6 +16020,9 @@
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Vă puteți personaliza semnătura de e-mail cu sigle, imagini, pictograme de rețele sociale, legături web către datele de contact și multe altele."
+      ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } or more users": [
+        "Asistența telefonică este disponibilă de la echipa de asistență pentru clienți ${ BRAND_NAME } în timpul programului de lucru european, pentru clienții cu ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } sau mai mulți utilizatori."
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Împiedică accesarea mesajelor de către ${ BRAND_NAME } sau de către terți. Singurele persoane care pot citi mesajele sunt expeditorul și destinatarul specificat."
@@ -22562,6 +22595,9 @@
       "Disable activity monitor?": [
         "Dezactivați monitorizarea activității?"
       ],
+      "Disable categories?": [
+        "Dezactivați categoriile?"
+      ],
       "Disable two-factor authentication": [
         "Dezactivare autentificare cu doi factori"
       ],
@@ -24042,6 +24078,9 @@
       ],
       "User declined invitation": [
         "Utilizatorul a refuzat invitația"
+      ],
+      "User is a group": [
+        "Utilizatorul este un grup"
       ],
       "Waiting for user to accept the invitation": [
         "Se așteaptă ca utilizatorul să accepte invitația"

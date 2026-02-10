@@ -199,9 +199,6 @@
       "Change email": [
         "Cambiar la dirección de correo"
       ],
-      "Change page": [
-        "Cambiar página"
-      ],
       "Change password": [
         "Cambiar contraseña"
       ],
@@ -385,9 +382,6 @@
       "Customize": [
         "Personalizar"
       ],
-      "Customize categories": [
-        "Personalizar categorías"
-      ],
       "Customize import": [
         "Personalizar importación"
       ],
@@ -444,9 +438,6 @@
       "Disable alias": [
         "Desactivar el alias"
       ],
-      "Disable categories": [
-        "Desactivar las categorías"
-      ],
       "Disabling alias": [
         "Desactivación del alias"
       ],
@@ -497,9 +488,6 @@
       ],
       "Edit address": [
         "Editar la dirección"
-      ],
-      "Edit categories": [
-        "Editar categorías"
       ],
       "Edit draft": [
         "Editar borrador"
@@ -783,9 +771,6 @@
       ],
       "Join with ${ MEET_APP_NAME }": [
         "Únete con ${ MEET_APP_NAME }"
-      ],
-      "Keep categories": [
-        "Mantener las categorías"
       ],
       "Keep inbox as before": [
         "Mantener la bandeja de entrada como antes"
@@ -1221,9 +1206,6 @@
       ],
       "Save": [
         "Guardar"
-      ],
-      "Save preferences": [
-        "Guardar las preferencias"
       ],
       "Saving${ ellipsis }": [
         "Guardando${ ellipsis }"
@@ -4604,6 +4586,9 @@
       "Error while uploading attachments. Message is not sent.": [
         "Error al cargar archivos adjuntos. El mensaje no se ha enviado."
       ],
+      "Failed loading group members": [
+        "Error al cargar los miembros del grupo"
+      ],
       "Failed to encrypt attachment. Please try again.": [
         "Error al cifrar el archivo adjunto. Inténtalo de nuevo."
       ],
@@ -4706,6 +4691,9 @@
       ],
       "Name is required": [
         "El nombre es obligatorio."
+      ],
+      "Network error": [
+        "Error de red"
       ],
       "Network error: Please check your connection and try again.": [
         "Error de red: verifica tu conexión e inténtalo de nuevo."
@@ -6730,9 +6718,6 @@
       "All messages stored with this label will be permanently deleted.": [
         "Todos los mensajes guardados con esta etiqueta se eliminarán permanentemente."
       ],
-      "All messages will be shown in Inbox, and the category tabs and tags will no longer be visible. ": [
-        "Todos los mensajes se mostrarán en la Bandeja de entrada y las pestañas de categorías y etiquetas dejarán de estar visibles. "
-      ],
       "All your calendars are disabled.": [
         "Todos tus calendarios están desactivados."
       ],
@@ -7858,9 +7843,6 @@
       ],
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Contáctanos para obtener ayuda con cualquier cosa de ${ BRAND_NAME }."
-      ],
-      "Receive notifications for ${ categoryLabel }": [
-        "Recibe notificaciones para ${ categoryLabel }"
       ],
       "Recipient: ": [
         "Destinatario: "
@@ -9180,9 +9162,6 @@
       "Add image URL": [
         "Añadir URL de la imagen"
       ],
-      "Add or remove categories. Set or turn off notifications. Adjust anytime in the ${ menuIcon } menu.": [
-        "Añade o elimina categorías. Configura o desactiva las notificaciones. Ajústalo en cualquier momento en el menú de ${ menuIcon }."
-      ],
       "Add to group": [
         "Añadir al grupo"
       ],
@@ -9287,9 +9266,6 @@
       ],
       "Cash": [
         "Efectivo"
-      ],
-      "Categories": [
-        "Categorías"
       ],
       "Categories badge": [
         "Distintivo de las categorías"
@@ -9654,9 +9630,6 @@
       "Notification": [
         "Notificación"
       ],
-      "Notifications": [
-        "Notificaciones"
-      ],
       "Notifications are disabled, to enable them change the browser settings.": [
         "Las notificaciones están desactivadas. Para activarlas cambia los ajustes del navegador."
       ],
@@ -9770,9 +9743,6 @@
       ],
       "Search in": [
         "Buscar en"
-      ],
-      "Select the categories to include and manage notifications for new emails.": [
-        "Selecciona las categorías que quieres incluir y gestiona las notificaciones de los nuevos correos."
       ],
       "Send auto-reply": [
         "Enviar respuesta automática"
@@ -14777,9 +14747,6 @@
       "Apply gift code": [
         "Aplicar código de regalo"
       ],
-      "Archive": [
-        "Archivo"
-      ],
       "Archive all messages?": [
         "¿Archivar todos los mensajes?"
       ],
@@ -14915,12 +14882,6 @@
       "Customize calendar import": [
         "Personalizar la importación de tu calendario"
       ],
-      "Customize categories": [
-        "Personalizar categorías"
-      ],
-      "Customize categories to fit your needs": [
-        "Personaliza las categorías para adaptarlas a tus necesidades"
-      ],
       "Customize your mail import": [
         "Personalizar la importación de tu correo"
       ],
@@ -14979,9 +14940,6 @@
       ],
       "Desktop": [
         "Escritorio"
-      ],
-      "Disable categories?": [
-        "¿Desactivar las categorías?"
       ],
       "Discover your subscription benefits": [
         "Descubre los beneficios de tu suscripción"
@@ -15583,9 +15541,6 @@
       ],
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "Para previsualizar esta hoja de cálculo, ábrela en ${ SHEETS_APP_NAME } o descárgala."
-      ],
-      "Trash": [
-        "Papelera"
       ],
       "Trash all messages?": [
         "¿Enviar todos los mensajes a la papelera?"

@@ -6041,12 +6041,6 @@
       "${ storage } storage": [
         "${ storage } úložisko"
       ],
-      "${ userFound } user found": [
-        "${ userFound } nájdený používateľ",
-        "${ userFound } nájdení používatelia",
-        "${ userFound } nájdených používateľov",
-        "${ userFound } nájdených používateľov"
-      ],
       "${ vaultLink } created": [
         "${ vaultLink } bol vytvorený"
       ],
@@ -8465,6 +8459,9 @@
       "Your phone number will only be used for this one-time verification.": [
         "Vaše telefónne číslo bude použité iba pre toto jednorazové overenie."
       ],
+      "Your recent changes have been published. They will be visible to users in the next few hours.": [
+        "Vaše nedávne zmeny boli publikované. Budú viditeľné pre používateľov v priebehu nasledujúcich niekoľkých hodín."
+      ],
       "Your recovery phrase": [
         "Vaša obnovovacia fráza"
       ],
@@ -8605,6 +8602,9 @@
     "invitation status": {
       "Declined": [
         "Odmietnuté"
+      ],
+      "Owner": [
+        "Vlastník"
       ],
       "Paused": [
         "Pozastavené"
@@ -16629,6 +16629,9 @@
       ],
       "User declined invitation": [
         "Používateľ odmietol pozvánku"
+      ],
+      "User is a group": [
+        "Používateľ je skupina"
       ],
       "Waiting for user to accept the invitation": [
         "Čakanie na prijatie pozvania zo strany používateľa"

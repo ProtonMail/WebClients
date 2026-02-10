@@ -4516,6 +4516,9 @@
       ]
     },
     "Error message": {
+      "Account is deleted or disabled": [
+        "Account eliminato o disattivato"
+      ],
       "App currently unavailable": [
         "App attualmente non disponibile"
       ],
@@ -5886,9 +5889,9 @@
       "${ storage } storage": [
         "${ storage } di archiviazione"
       ],
-      "${ userFound } user found": [
-        "${ userFound } utente trovato",
-        "${ userFound } utenti trovati"
+      "${ total } user found": [
+        "${ total } utente trovato",
+        "${ total } utenti trovati"
       ],
       "${ vaultLink } created": [
         "${ vaultLink } creato"
@@ -8232,6 +8235,9 @@
       "Your phone number will only be used for this one-time verification.": [
         "Questo numero di telefono verrà utilizzato esclusivamente per questa unica verifica."
       ],
+      "Your recent changes have been published. They will be visible to users in the next few hours.": [
+        "Le tue modifiche recenti sono state pubblicate. Saranno visibili agli utenti nelle prossime ore."
+      ],
       "Your recovery phrase": [
         "La tua frase di recupero"
       ],
@@ -8366,6 +8372,9 @@
     "invitation status": {
       "Declined": [
         "Rifiutato"
+      ],
+      "Owner": [
+        "Proprietario"
       ],
       "Paused": [
         "In pausa"
@@ -10329,6 +10338,9 @@
       "Password-protected Emails": [
         "Email protette da password"
       ],
+      "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
+        "Supporto telefonico (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ utenti)"
+      ],
       "Priority email support": [
         "Assistenza email prioritaria"
       ],
@@ -10811,6 +10823,9 @@
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Personalizza la tua firma email con loghi, immagini, icone di social media, link ai tuoi dettagli di contatto e molto altro"
+      ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } or more users": [
+        "Il supporto telefonico è disponibile dal team di assistenza clienti di ${ BRAND_NAME } durante l'orario lavorativo europeo, per i clienti con ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } o più utenti"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Impedisce l'accesso ai messaggi da parte di ${ BRAND_NAME } o di terzi. Le uniche persone che possono leggere i messaggi sono il mittente e il destinatario."
@@ -14775,11 +14790,29 @@
       ]
     },
     "Theme": {
+      "Auto": [
+        "Automatico"
+      ],
       "Dark": [
         "Scuro"
       ],
       "Light": [
         "Chiaro"
+      ],
+      "Mode: Auto": [
+        "Modalità: Auto"
+      ],
+      "Mode: Dark": [
+        "Modalità: Scuro"
+      ],
+      "Mode: Light": [
+        "Modalità: Chiaro"
+      ],
+      "Sync with system": [
+        "Sincronizza con il sistema"
+      ],
+      "Use ${ BRAND_NAME } settings": [
+        "Usa le impostazioni di ${ BRAND_NAME }"
       ]
     },
     "Themes": {
@@ -16149,6 +16182,9 @@
       ],
       "User declined invitation": [
         "L'utente ha rifiutato l'invito"
+      ],
+      "User is a group": [
+        "L'utente è un gruppo"
       ],
       "Waiting for user to accept the invitation": [
         "In attesa che l'utente accetti l'invito"

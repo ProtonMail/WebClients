@@ -37,6 +37,9 @@
       "Accept and view the item": [
         "Aksepter og se elementet"
       ],
+      "Accept invitation": [
+        "Godta invitasjon"
+      ],
       "Account": [
         "Konto"
       ],
@@ -1031,6 +1034,9 @@
       "Error reporting problem": [
         "Problem med feilrapportering"
       ],
+      "Failed loading group members": [
+        "Kunne ikke laste inn gruppemedlemmer"
+      ],
       "Failed removing the invite.": [
         "Fjerning av invitasjonen mislyktes."
       ],
@@ -1453,8 +1459,17 @@
         "${ forwardedEmailsCount } videresendt",
         "${ forwardedEmailsCount } videresendte"
       ],
+      "${ inviterEmail } wants to share an item with a group you administer.": [
+        "${ inviterEmail } ønsker å dele et element med en gruppe du administrerer."
+      ],
+      "${ inviterEmail } wants to share an item with the group ${ invitedGroup.Name }.": [
+        "${ inviterEmail } ønsker å dele et element med gruppen ${ invitedGroup.Name }."
+      ],
       "${ inviterEmail } wants to share an item with you.": [
         "${ inviterEmail } ønsker å dele et element med deg."
+      ],
+      "${ maybeVaultName } has been shared with a group you are member of": [
+        "${ maybeVaultName } er delt med en gruppe du er medlem av"
       ],
       "${ memberCount } member": [
         "${ memberCount } medlem",
@@ -1463,6 +1478,9 @@
       "${ n } item": [
         "${ n } element",
         "${ n } elementer"
+      ],
+      "${ newGroupSharesCount } new shares have been shared with a group you are member of": [
+        "${ newGroupSharesCount } nye delinger er delt med en gruppe du er medlem av"
       ],
       "${ PASS_APP_NAME } will always be accessible": [
         "${ PASS_APP_NAME } vil alltid være tilgjengelig"
@@ -1518,6 +1536,10 @@
       "${ trialDaysLeft } day left": [
         "${ trialDaysLeft } dag igjen",
         "${ trialDaysLeft } dager igjen"
+      ],
+      "(${ membersCount } member)": [
+        "(${ membersCount } medlem)",
+        "(${ membersCount } medlemmer)"
       ],
       "(Empty)": [
         "(Tom)"
@@ -1938,6 +1960,9 @@
       "Invite successfully resent": [
         "Invitasjon sendt på nytt"
       ],
+      "invites the group ${ invitedGroup.Name } to access items in": [
+        "inviterer gruppen ${ invitedGroup.Name } til å få tilgang til elementer i"
+      ],
       "invites you to access items in": [
         "inviterer deg til å få tilgang til elementer i"
       ],
@@ -2032,10 +2057,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Flytter alle elementer fra \"${ payload.content.name }\""
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Hvis du flytter et element til et annet hvelv, slettes de sikre koblingene.",
-        "Hvis du flytter elementer til et annet hvelv, slettes de sikre koblingene."
       ],
       "Moving items": [
         "Flytter elementer"
@@ -2431,6 +2452,9 @@
       "The following ${ totalIgnored } item could not be imported:": [
         "Følgende ${ totalIgnored } element kunne ikke importeres:",
         "Følgende ${ totalIgnored } elementer kunne ikke importeres:"
+      ],
+      "The group is invited to a vault.": [
+        "Gruppen er invitert til et hvelv."
       ],
       "The secure link has been removed": [
         "Den sikre koblingen er fjernet"
@@ -4775,6 +4799,9 @@
       ],
       "Vault": [
         "Hvelv"
+      ],
+      "Vault shared with a group you administer": [
+        "Hvelv delt med en gruppe du administrerer"
       ],
       "Vault shared with you": [
         "Hvelv delt med deg"

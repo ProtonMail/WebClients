@@ -199,9 +199,6 @@
       "Change email": [
         "Vaihda sähköpostiosoitteesi"
       ],
-      "Change page": [
-        "Vaihda sivua"
-      ],
       "Change password": [
         "Vaihda salasana"
       ],
@@ -385,9 +382,6 @@
       "Customize": [
         "Mukauta"
       ],
-      "Customize categories": [
-        "Mukauta luokkia"
-      ],
       "Customize import": [
         "Mukauta tuontia"
       ],
@@ -444,9 +438,6 @@
       "Disable alias": [
         "Poista alias käytöstä"
       ],
-      "Disable categories": [
-        "Poista luokat käytöstä"
-      ],
       "Disabling alias": [
         "Aliasta poistetaan käytöstä"
       ],
@@ -497,9 +488,6 @@
       ],
       "Edit address": [
         "Muokkaa osoitetta"
-      ],
-      "Edit categories": [
-        "Muokkaa luokkia"
       ],
       "Edit draft": [
         "Muokkaa luonnosta"
@@ -783,9 +771,6 @@
       ],
       "Join with ${ MEET_APP_NAME }": [
         "Liity ${ MEET_APP_NAME }llä"
-      ],
-      "Keep categories": [
-        "Säilytä luokat"
       ],
       "Keep inbox as before": [
         "Säilytä saapuneet ennallaan"
@@ -1221,9 +1206,6 @@
       ],
       "Save": [
         "Tallenna"
-      ],
-      "Save preferences": [
-        "Tallenna asetukset"
       ],
       "Saving${ ellipsis }": [
         "Tallennetaan${ ellipsis }"
@@ -4659,6 +4641,9 @@
       "Name is required": [
         "Nimi vaaditaan"
       ],
+      "Network error": [
+        "Verkkovirhe"
+      ],
       "Network error: Please check your connection and try again.": [
         "Verkkovirhe: tarkista yhteytesi ja yritä uudelleen."
       ],
@@ -6667,9 +6652,6 @@
       "All messages stored with this label will be permanently deleted.": [
         "Kaikki tunnisteella merkityt viestit poistetaan pysyvästi."
       ],
-      "All messages will be shown in Inbox, and the category tabs and tags will no longer be visible. ": [
-        "Kaikki viestit tullaan näyttämään saapuneissa, eikä kategorioiden välikehtiä tai tägejä enää näytetä. "
-      ],
       "All your calendars are disabled.": [
         "Kaikki kalenterisi on poistettu käytöstä."
       ],
@@ -7786,9 +7768,6 @@
       ],
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Ota meihin yhteyttä saadaksesi apua mihin tahansa ${ BRAND_NAME }."
-      ],
-      "Receive notifications for ${ categoryLabel }": [
-        "Vastaanota ilmoituksia kategoriasta ${ categoryLabel }"
       ],
       "Recipient: ": [
         "Vastaanottaja: "
@@ -9093,9 +9072,6 @@
       "Add image URL": [
         "Lisää kuvan URL"
       ],
-      "Add or remove categories. Set or turn off notifications. Adjust anytime in the ${ menuIcon } menu.": [
-        "Lisää tai poista luokkia. Ota tai poista ilmoitukset käytöstä. Säädä milloin tahansa ${ menuIcon }-valikosta."
-      ],
       "Add to group": [
         "Lisää ryhmään"
       ],
@@ -9200,9 +9176,6 @@
       ],
       "Cash": [
         "Käteinen"
-      ],
-      "Categories": [
-        "Kategoriat"
       ],
       "Categories badge": [
         "Luokat-merkki"
@@ -9564,9 +9537,6 @@
       "Notification": [
         "Ilmoitus"
       ],
-      "Notifications": [
-        "Ilmoitukset"
-      ],
       "Notifications are disabled, to enable them change the browser settings.": [
         "Ilmoitukset on poistettu käytöstä. Voit ottaa ne käyttöön selaimen asetuksissa."
       ],
@@ -9680,9 +9650,6 @@
       ],
       "Search in": [
         "Etsi kohteesta"
-      ],
-      "Select the categories to include and manage notifications for new emails.": [
-        "Valitse sisällytettävät kategoriat ja hallitse uusien sähköpostien ilmoituksia."
       ],
       "Send auto-reply": [
         "Lähetä automaattivastaus"
@@ -12595,6 +12562,10 @@
       "You can get up to **${ maxRewardAmount }** in credit.": [
         "Voit ansaita jopa **${ maxRewardAmount }** krediitteinä."
       ],
+      "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "Sinulla on **${ daysRemaining } päivä aikaa** tutustua kaikkiin **${ planTitle }** -palvelun tehokkaisiin ominaisuuksiin.",
+        "Sinulla on **${ daysRemaining } päivää aikaa** tutustua kaikkiin **${ planTitle }** -palvelun tehokkaisiin ominaisuuksiin."
+      ],
       "your subscription": [
         "tilauksesi"
       ]
@@ -14516,9 +14487,6 @@
       "Apply gift code": [
         "Käytä lahjakoodia"
       ],
-      "Archive": [
-        "Pakattu"
-      ],
       "Archive all messages?": [
         "Arkistoidaanko kaikki viestit?"
       ],
@@ -14654,12 +14622,6 @@
       "Customize calendar import": [
         "Mukauta kalenterin tuontia"
       ],
-      "Customize categories": [
-        "Mukauta luokkia"
-      ],
-      "Customize categories to fit your needs": [
-        "Mukauta luokkia tarpeisiisi sopiviksi"
-      ],
       "Customize your mail import": [
         "Mukauta viestien tuontia"
       ],
@@ -14718,9 +14680,6 @@
       ],
       "Desktop": [
         "Työpöytä"
-      ],
-      "Disable categories?": [
-        "Poistetaanko luokat käytöstä?"
       ],
       "Discover your subscription benefits": [
         "Tutustu tilauksesi etuihin"
@@ -15322,9 +15281,6 @@
       ],
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "Esikatsellaksesi tätä laskentataulukkoa, avaa se ${ SHEETS_APP_NAME } -sovelluksessa tai lataa se."
-      ],
-      "Trash": [
-        "Roskakori"
       ],
       "Trash all messages?": [
         "Poistetaanko kaikki viestit?"

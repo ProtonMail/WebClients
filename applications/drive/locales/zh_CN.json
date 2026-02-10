@@ -135,13 +135,22 @@
       "Cancel download": [
         "取消下载"
       ],
+      "Cancel downloads": [
+        "取消下载"
+      ],
       "Cancel subscription": [
         "取消订阅"
+      ],
+      "Cancel transfers": [
+        "取消传输"
       ],
       "Cancel trial and pay": [
         "取消试用并支付"
       ],
       "Cancel upload": [
+        "取消上传"
+      ],
+      "Cancel uploads": [
         "取消上传"
       ],
       "Change": [
@@ -158,6 +167,12 @@
       ],
       "Choose a file or drag it here": [
         "选择文件或将文件拖至此处"
+      ],
+      "Claim this address": [
+        "认领此地址"
+      ],
+      "Claim your free ${ BRAND_NAME } address": [
+        "认领您的免费 ${ BRAND_NAME } 地址"
       ],
       "Clear": [
         "清除"
@@ -228,6 +243,9 @@
       "Continue import": [
         "继续导入"
       ],
+      "Continue on web": [
+        "在网页版继续"
+      ],
       "Continue transfers": [
         "继续传输"
       ],
@@ -269,6 +287,9 @@
       ],
       "Create and copy alias": [
         "创建并复制别名"
+      ],
+      "Create business account": [
+        "创建企业账户"
       ],
       "Create folder": [
         "新建文件夹"
@@ -339,6 +360,9 @@
       "Details": [
         "详细信息"
       ],
+      "Diagnostics": [
+        "诊断"
+      ],
       "Discard": [
         "放弃"
       ],
@@ -366,11 +390,32 @@
       "Download ${ DRIVE_APP_NAME } apps": [
         "下载 ${ DRIVE_APP_NAME } 应用"
       ],
+      "Download (${ nbSelected })": [
+        "下载 (${ nbSelected })"
+      ],
       "Download anyway": [
         "仍要下载"
       ],
+      "Download app": [
+        "下载应用程序"
+      ],
+      "Download for Mac": [
+        "下载 Mac 版"
+      ],
+      "Download for MacOS": [
+        "下载 MacOS 版"
+      ],
+      "Download for Windows": [
+        "下载 Windows 版"
+      ],
+      "Download info": [
+        "下载信息"
+      ],
       "Download logs": [
         "下载日志"
+      ],
+      "Download results": [
+        "下载结果"
       ],
       "Drive Locked": [
         "网盘已锁定"
@@ -411,6 +456,9 @@
       "Expand folder": [
         "展开文件夹"
       ],
+      "Explore more": [
+        "探索更多"
+      ],
       "Explore other plans": [
         "浏览其他套餐"
       ],
@@ -435,6 +483,9 @@
       "Forward as attachment": [
         "作为附件转发"
       ],
+      "Full data": [
+        "完整数据"
+      ],
       "Generate password": [
         "生成密码"
       ],
@@ -443,6 +494,12 @@
       ],
       "Get ${ planOrAppName }": [
         "开通 ${ planOrAppName }"
+      ],
+      "Get a free ${ BRAND_NAME } address": [
+        "获取免费 ${ BRAND_NAME } 地址"
+      ],
+      "Get Drive for Business": [
+        "获取 Drive for Business"
       ],
       "Get in touch": [
         "保持联系"
@@ -687,6 +744,9 @@
       "Next page": [
         "下一页"
       ],
+      "No sensitive data": [
+        "无敏感数据"
+      ],
       "Not now": [
         "以后再说"
       ],
@@ -852,6 +912,12 @@
       "Retry": [
         "重试"
       ],
+      "Retry failed items": [
+        "重试失败的项目"
+      ],
+      "Run diagnostics": [
+        "运行诊断"
+      ],
       "Save": [
         "保存"
       ],
@@ -866,6 +932,9 @@
       ],
       "Scan & Download": [
         "扫描并下载"
+      ],
+      "Scan & Download (${ nbSelected })": [
+        "扫描并下载 (${ nbSelected })"
       ],
       "Search": [
         "搜索"
@@ -903,6 +972,9 @@
       "Set as cover": [
         "设为封面"
       ],
+      "Set password or expiration date": [
+        "设置密码或过期日期"
+      ],
       "Set recovery methods": [
         "设置恢复方式"
       ],
@@ -938,6 +1010,9 @@
       ],
       "Share your calendar with your team": [
         "与团队共享日历"
+      ],
+      "Sharing is end-to-end encrypted": [
+        "共享采用端到端加密"
       ],
       "Sharing options": [
         "共享选项"
@@ -996,6 +1071,9 @@
       "Submit report": [
         "提交报告"
       ],
+      "Subscribe now": [
+        "立即订阅"
+      ],
       "Switch or add account": [
         "切换或添加账户"
       ],
@@ -1010,6 +1088,9 @@
       ],
       "Toggle Contacts app": [
         "打开联系人应用"
+      ],
+      "Toggle referral": [
+        "切换推荐功能"
       ],
       "Toggle settings": [
         "打开/关闭设置"
@@ -1052,6 +1133,9 @@
       ],
       "Upgrade": [
         "升级账户"
+      ],
+      "Upgrade for 200GB": [
+        "升级至 200 GB 存储空间"
       ],
       "Upgrade now": [
         "立即升级账户"
@@ -1125,6 +1209,12 @@
       "What do I get?": [
         "我可获得什么？"
       ],
+      "Windows 11 (ARM64)": [
+        "Windows 11 (ARM64)"
+      ],
+      "Windows 11/10 (x64)": [
+        "Windows 11/10 (x64)"
+      ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "您不能发送超过 ${ maxAttachments } 个联系人的 vCard 文件"
       ],
@@ -1136,6 +1226,16 @@
       ],
       "Zoom out": [
         "缩小"
+      ]
+    },
+    "Action: Docs": {
+      "Open in ${ DOCS_APP_NAME }": [
+        "在 ${ DOCS_APP_NAME } 中打开"
+      ]
+    },
+    "Action: Sheets": {
+      "Open in ${ SHEETS_APP_NAME }": [
+        "在 ${ SHEETS_APP_NAME } 中打开"
       ]
     },
     "Actions": {
@@ -1233,8 +1333,26 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "试用期于 ${ formattedDate1 } 结束后，将转为每 ${ renewCycle } 个月自动续费的付费订阅。若在 ${ formattedDate2 } 之前取消，则不会被收费。"
+      ],
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "试用期于 ${ formattedDate1 } 结束后，将转为每月自动续费的付费订阅。若在 ${ formattedDate2 } 之前取消，则不会被收费。"
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "您在试用期内最多可拥有 ${ TRIAL_MAX_DEDICATED_IPS } 个专用服务器。"
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "您在试用期内最多可拥有 ${ TRIAL_MAX_LUMO_SEATS } 个 ${ LUMO_SHORT_APP_NAME } 席位"
+      ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "您在试用期内可以使用到达${ TRIAL_MAX_SCRIBE_SEATS }个Scribe席位。"
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "您在试用期内最多可拥有 ${ TRIAL_MAX_USERS } 位用户"
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "您在试用期内无法添加自定义域名"
       ],
       "You have reached the trial limit.": [
         "您已达到试用上限。"
@@ -1283,17 +1401,32 @@
       "${ storageSize } storage": [
         "${ storageSize } 存储空间"
       ],
+      "1 user account": [
+        "1 个账户"
+      ],
       "200 GB storage: 40x your current plan": [
         "200 GB 存储空间：您当前套餐的 40 倍"
       ],
+      "6 user accounts": [
+        "6 个账户"
+      ],
+      "Admin panel to manage your family": [
+        "用于管理家人的管理员面板"
+      ],
       "Advanced account protection": [
         "高级账户保护"
+      ],
+      "Easily add or remove users": [
+        "轻松添加或移除用户"
       ],
       "One-time payment, lifetime deal": [
         "一次性付款，终身有效"
       ],
       "Online document editor": [
         "在线文档编辑器"
+      ],
+      "Password health alerts": [
+        "密码健康警报"
       ],
       "Recover previous file versions": [
         "恢复先前的文件版本"
@@ -1323,11 +1456,23 @@
       "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
         "在所有设备上安全登录。包括无限制 hide-my-email 别名、共享、集成 2FA、${ DARK_WEB_MONITORING_NAME } 等功能。"
       ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "使用端到端加密保护您的电子邮件和日程安排。包含 ${ addresses } 个邮箱地址、自定义邮箱域名支持、${ BRAND_NAME } Scribe 写作助手、无限的 hide-my-email  别名等功能。"
+      ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "采用端到端加密技术保护您的邮件安全和日程规划，并且支持自有域名、 ${ addresses } 个邮箱地址、无限量的 hide-my-email邮箱别名等高级功能。"
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "采用端到端加密技术守护您的邮件安全，并且支持自有域名、15 个邮箱地址、无限量的 hide-my-email 邮箱别名、${ BRAND_NAME } Scribe 写作助手等高级功能。"
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "使用端到端加密保护您的电子邮件和日程安排。包含 15 个邮箱地址、自定义邮箱域名支持、无限的 hide-my-email 别名等功能。"
+      ],
+      "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
+        "使用加密云存储保护您的文件。包含在线文档编辑器、照片备份、版本历史记录、加密文件共享等功能。"
+      ],
+      "Storage space is shared across all ${ BRAND_NAME } services.": [
+        "存储空间在所有 ${ BRAND_NAME } 服务之间共享"
       ]
     },
     "BF2025: Deal details": {
@@ -1407,6 +1552,9 @@
       ],
       "Application problem": [
         "应用程序问题"
+      ],
+      "Authenticator problem": [
+        "验证器问题"
       ],
       "Bridge problem": [
         "Bridge 问题"
@@ -1534,6 +1682,9 @@
       "${ maxSpaceTB } storage": [
         "${ maxSpaceTB } 存储空间"
       ],
+      "${ numberOfUsers } user": [
+        "最多 ${ numberOfUsers } 位用户"
+      ],
       "${ planMaxSpace } email storage": [
         "${ planMaxSpace } 电子邮件存储空间"
       ],
@@ -1597,8 +1748,70 @@
       ]
     },
     "collider_2025: feature": {
+      "Access to advanced AI models": [
+        "访问高级 AI 模型"
+      ],
+      "Basic chat history": [
+        "基础聊天记录"
+      ],
+      "Built and based in Europe": [
+        "在欧洲构建并运营"
+      ],
+      "Compliance with data protection regulations": [
+        "符合数据保护法规要求"
+      ],
+      "Data never used for AI training": [
+        "数据绝不用于 AI 训练"
+      ],
+      "Full chat history with search": [
+        "完整聊天记录（支持搜索）"
+      ],
+      "Large file upload support": [
+        "支持大文件上传"
+      ],
+      "Limited daily chats": [
+        "每日聊天次数有限"
+      ],
+      "Limited favorites": [
+        "收藏数量有限"
+      ],
+      "Strict no-logs policy": [
+        "严格的无日志政策"
+      ],
       "Unlimited daily chats": [
         "无限聊天次数"
+      ],
+      "Unlimited favorites for quick access": [
+        "无限收藏，快速访问"
+      ],
+      "Upload and query multiple large files": [
+        "上传并查询多个大型文件"
+      ],
+      "Upload and query small files": [
+        "上传并查询小型文件"
+      ],
+      "Web search access": [
+        "网页搜索访问权限"
+      ],
+      "Zero-access encryption": [
+        "零访问加密"
+      ]
+    },
+    "collider_2025: Info": {
+      "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
+        "${ LUMO_APP_NAME } 是一款隐私优先的 AI，帮助您提高效率，同时保障数据安全。解锁其全部潜能，并享受新功能的早期访问权限。"
+      ],
+      "Add ${ LUMO_APP_NAME }": [
+        "添加 ${ LUMO_APP_NAME }"
+      ],
+      "Advanced account and network security in one plan": [
+        "高级账户与网络安全，合而为一"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "高速聊天和高级 AI 功能"
+      ],
+      "Private video calls for the conversations that matter.": [
+        "私密视频通话，用于重要的对话。"
       ]
     },
     "color": {
@@ -2585,6 +2798,11 @@
         "适用于 ${ MAIL_APP_NAME }"
       ]
     },
+    "customer_support.feature.meet": {
+      "For ${ MEET_APP_NAME }": [
+        "适用于 ${ MEET_APP_NAME }"
+      ]
+    },
     "customer_support.feature.pass": {
       "For ${ PASS_APP_NAME }": [
         "适用于 ${ PASS_APP_NAME }"
@@ -2860,6 +3078,9 @@
       "/month": [
         "/月"
       ],
+      "2 TB of storage to share": [
+        "2 TB 共享存储空间"
+      ],
       "2 user accounts": [
         "2 个用户账户"
       ],
@@ -2871,11 +3092,17 @@
       ]
     },
     "Duo offer: Link": {
+      "Get 4x more storage": [
+        "获得 4 倍存储空间"
+      ],
       "Share your plan": [
         "分享您的套餐"
       ]
     },
     "Duo offer: Title": {
+      "Get 4x more storage with ${ BRAND_NAME } Duo": [
+        "使用 ${ BRAND_NAME } Duo 获得 4 倍存储空间"
+      ],
       "Share your plan benefits with ${ BRAND_NAME } Duo": [
         "使用 ${ BRAND_NAME } Duo 分享您的套餐"
       ]
@@ -2895,8 +3122,14 @@
       "All events in this series were updated.": [
         "此系列中的所有事件都已更新。"
       ],
+      "DESCRIPTION:": [
+        "说明："
+      ],
       "Here's what changed:": [
         "新变化："
+      ],
+      "LOCATION:": [
+        "位置："
       ],
       "NOTE:": [
         "注意："
@@ -2909,6 +3142,15 @@
       ],
       "This event was updated.": [
         "此事件已更新。"
+      ],
+      "TIME:": [
+        "时间："
+      ],
+      "TITLE:": [
+        "标题："
+      ],
+      "You are invited to": [
+        "您被邀请至"
       ]
     },
     "Email body for invitation (date part)": {
@@ -2956,6 +3198,11 @@
       ],
       "Update for an event starting on ${ formattedStart }": [
         "更新开始于 ${ formattedStart } 的活动"
+      ]
+    },
+    "emergency_access": {
+      "Trusted contact": [
+        "已信任联系人"
       ]
     },
     "Error": {
@@ -3007,6 +3254,9 @@
       "Amount below minimum (${ minimumAmount }).": [
         "金额 (${ minimumAmount }) 过小。"
       ],
+      "An error occurred": [
+        "发生错误"
+      ],
       "An error occurred while loading alias options": [
         "加载别名选项时发生错误"
       ],
@@ -3021,6 +3271,9 @@
       ],
       "Calendar limit reached": [
         "日历数量达到上限"
+      ],
+      "Can't find any secure link": [
+        "找不到任何安全链接"
       ],
       "Cannot export this contact": [
         "无法导出此联系人"
@@ -3064,8 +3317,14 @@
       "Device name does not match": [
         "设备名称不匹配"
       ],
+      "Diagnostics failed": [
+        "诊断失败"
+      ],
       "Domain not available, try again later": [
         "域名不可用，请稍后再试"
+      ],
+      "Downloads of desktop apps are currently unavailable": [
+        "桌面应用程序下载当前不可用"
       ],
       "Editing billing address is not available at the moment. Please try again later.": [
         "目前无法编辑帐单地址。请稍后重试。"
@@ -3085,6 +3344,12 @@
       "Error decrypting a computer": [
         "解密计算机时出错"
       ],
+      "Error reading file": [
+        "读取文件时出错"
+      ],
+      "Expected structure attached": [
+        "预期结构已附加"
+      ],
       "External accounts are not supported yet": [
         "尚不支持外部账户"
       ],
@@ -3093,6 +3358,9 @@
       ],
       "External invitations are temporarily disabled. Please try again later": [
         "外部邀请暂时禁用。请稍后重试"
+      ],
+      "Failed loading group members": [
+        "加载群组成员失败"
       ],
       "Failed to copy photo to album": [
         "无法将照片复制到相册"
@@ -3103,14 +3371,26 @@
       "Failed to create public share node": [
         "未能创建公开共享节点"
       ],
+      "Failed to expand folder": [
+        "展开文件夹失败"
+      ],
       "Failed to fetch node": [
         "获取节点失败"
       ],
       "Failed to fetch sharing info": [
         "无法获取共享信息"
       ],
+      "Failed to get details, please try again later": [
+        "获取详情失败，请稍后重试"
+      ],
+      "Failed to load signature details, please try again later": [
+        "加载签名详情失败，请稍后重试"
+      ],
       "Failed to load the STL preview": [
         "加载 STL 预览失败"
+      ],
+      "Failed to open to contact": [
+        "无法打开以联系"
       ],
       "Failed to resend invitation": [
         "重新发送邀请失败"
@@ -3181,6 +3461,9 @@
       "Invalid IBAN": [
         "无效IBAN"
       ],
+      "Invalid JSON file": [
+        "无效的 JSON 文件"
+      ],
       "Invalid name": [
         "名称无效"
       ],
@@ -3216,6 +3499,9 @@
       ],
       "Name is required": [
         "名称为必填项"
+      ],
+      "Network error": [
+        "网络错误"
       ],
       "No calendars found to import": [
         "未找到可导入的日历"
@@ -3355,6 +3641,9 @@
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "部分标签名称超过了 ${ MAIL_APP_NAME } 的字数限制，请在导入内容中予以更改。"
       ],
+      "Something went wrong during folder listing": [
+        "列出文件夹内容时出错"
+      ],
       "Something went wrong. Please try again.": [
         "出错了，请再试一次。"
       ],
@@ -3442,6 +3731,9 @@
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "此邮件含有浏览器不能打开的链接."
       ],
+      "This offer is not available in your country": [
+        "此优惠在您所在的国家/地区不可用"
+      ],
       "Try using only letters, numerals, and _.-": [
         "请使用英文字母、阿拉伯数字或 _ . - 符号"
       ],
@@ -3454,11 +3746,23 @@
       "Unexpected error, we can't import the contacts": [
         "意外错误，无法导入联系人"
       ],
+      "Unknown conflict strategy: ${ strategy }": [
+        "未知冲突策略：${ strategy }"
+      ],
       "Unknown error": [
         "未知错误"
       ],
+      "Unknown location": [
+        "未知位置"
+      ],
+      "Unknown number of downloads": [
+        "下载次数未知"
+      ],
       "Unknown payment token status": [
         "支付状态不明"
+      ],
+      "Upload failed": [
+        "上传失败"
       ],
       "Upload for this folder is temporarily disabled": [
         "此文件夹的上传功能暂时被禁止"
@@ -3472,8 +3776,38 @@
       "Validation error": [
         "验证失败"
       ],
+      "We cannot retrieve this item": [
+        "我们无法检索此项目"
+      ],
+      "We were not able to load some invitations": [
+        "我们无法加载部分邀请"
+      ],
+      "We were not able to load some items": [
+        "我们无法加载部分项目"
+      ],
+      "We were not able to load some items shared with you": [
+        "我们无法加载与您共享的部分项目"
+      ],
+      "We were not able to load some of your bookmarks": [
+        "我们无法加载您的部分书签"
+      ],
+      "We were not able to load some of your invitation to shared items": [
+        "我们无法加载您收到的部分共享项目邀请"
+      ],
+      "We were not able to load some of your saved shared links": [
+        "我们无法加载您部分已保存的共享链接"
+      ],
+      "We were not able to load some of your shared items": [
+        "我们无法加载您部分已共享的项目"
+      ],
+      "We were not able to load some search results": [
+        "我们无法加载部分搜索结果"
+      ],
       "We were not able to load the folder contents": [
         "无法加载文件夹内容"
+      ],
+      "We're sorry, but free upload is not available right now.": [
+        "很抱歉，当前无法使用免费上传功能。"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "邮件收件人不能超过 ${ maxContacts } 位"
@@ -3496,8 +3830,19 @@
       "ZIP code is required": [
         "必须填写邮政编码"
       ],
+      "⚠️ Undecryptable device": [
+        "⚠️ 无法解密的设备"
+      ],
       "⚠️ Undecryptable name": [
         "⚠️ 无法解密的名称"
+      ]
+    },
+    "error": {
+      "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
+        "请使用已设置转发至 ${ MAIL_APP_NAME } 的 Gmail 地址登录"
+      ],
+      "Please sign in with the same Gmail address you originally connected": [
+        "请使用您最初连接时使用的相同 Gmail 地址登录"
       ]
     },
     "Error importing calendar": {
@@ -3779,6 +4124,9 @@
       "customer support": [
         "客户支持"
       ],
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "家庭计划目前不支持外部账户，请先创建 ${ BRAND_NAME } 地址后再加入。${ link }"
+      ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "如果您接受邀请，我们将为您退订当前账户等级，并将剩余时长折算为余额存入您的账户。"
       ],
@@ -3802,6 +4150,9 @@
       ],
       "The subscription will be billed to the primary admin of this plan.": [
         "订购费用将向该计划的主要管理员收取。"
+      ],
+      "View the invitation": [
+        "查看邀请"
       ],
       "You are invited to join ${ invite.OrganizationName }": [
         "有人邀请您加入 ${ invite.OrganizationName }"
@@ -3858,6 +4209,9 @@
     "familyOffer_2023:Tooltip": {
       "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
         "连接全球逾 65 个国家的 2700 台服务器，多达 10 台设备同时在线，畅享全球流媒体服务，拦截恶意软件和广告，还有更多功能等您体验。"
+      ],
+      "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
+        "包含 3 个自定义邮箱域名、90 个邮箱地址、无限的 hide-my-email 别名、日历共享等功能的支持。"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "使用加密的云存储保护您的文件。 包括自动同步、加密文件共享等。"
@@ -4212,6 +4566,12 @@
       "Too many recent requests. Please try again in a few moments.": [
         "请求过于频繁，请稍后再试。"
       ],
+      "Two-factor authentication is enabled in your external account.": [
+        "您的外部账户已启用 2FA"
+      ],
+      "Two-factor authentication is enabled in your external email account.": [
+        "您的外部邮箱账户已启用 2FA"
+      ],
       "Use your app password if:": [
         "在以下情况下使用您的应用密码："
       ],
@@ -4382,6 +4742,12 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME } 的前沿加密技术意味着没有人能够窃取您的密码，包括我们自己。"
       ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
+        "${ CALENDAR_APP_NAME } 需要 ${ BRAND_NAME } 地址以实现安全的事件同步和加密。${ claimAddressButton }。"
+      ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. Claim your free ${ MAIL_APP_NAME } address now.": [
+        "${ CALENDAR_APP_NAME } 需要 ${ BRAND_NAME } 地址以实现安全的事件同步和加密。立即认领您的免费 ${ MAIL_APP_NAME } 地址。"
+      ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } 个新日历"
       ],
@@ -4390,6 +4756,9 @@
       ],
       "${ canceledCount } canceled": [
         "${ canceledCount } 项已取消"
+      ],
+      "${ completedItems.length } of ${ items.length } transfers completed": [
+        "${ completedItems.length } / ${ items.length } 个传输已完成"
       ],
       "${ contactCount } contact contains multiple email addresses.": [
         "${ contactCount } 名联系人各有多个邮箱地址。"
@@ -4405,6 +4774,9 @@
       ],
       "${ contactsLength } contact": [
         "${ contactsLength } 位联系人"
+      ],
+      "${ DOCS_APP_NAME } and ${ SHEETS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
+        "${ DOCS_APP_NAME } 和 ${ SHEETS_APP_NAME } 文件无法直接下载，且不会包含在此次下载中。您可以点击“继续下载”来下载其他文件。"
       ],
       "${ doneCount } finished": [
         "${ doneCount } 项已完成"
@@ -4441,6 +4813,9 @@
       ],
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } 内置 ${ BRAND_NAME } Scribe 写作助手"
+      ],
+      "${ normalizedProgress }% completed": [
+        "已完成 ${ normalizedProgress }%"
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "${ PASS_SHORT_APP_NAME } 终身优惠没有续订价格，只需一次性付款即可终身访问 ${ PASS_SHORT_APP_NAME }。"
@@ -4520,6 +4895,21 @@
       "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
         "**Kill switch**：当 VPN 意外断开时，立即阻断互联网连接，防止数据泄漏。"
       ],
+      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
+        "**第一步：** 使用您的推荐链接邀请朋友加入 ${ BRAND_NAME }"
+      ],
+      "**Step 2:** Your friends get 2 weeks for free on their chosen ${ BRAND_NAME } plan.": [
+        "**第二步：** 您的朋友可在其选定的 ${ BRAND_NAME } 套餐上免费试用 2 周"
+      ],
+      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
+        "**第二步：** 您的朋友可在其套餐上免费试用 2 周"
+      ],
+      "**Step 3:** Get ${ referrerRewardAmount } credits for every friend that subscribes to a plan.": [
+        "**第三步：** 每位朋友订阅套餐，您即可获得 ${ referrerRewardAmount } 积分"
+      ],
+      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
+        "**第三步：** 每人订阅套餐，您即可获得 ${ referrerRewardAmount } 积分"
+      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } 特权存储空间"
       ],
@@ -4582,6 +4972,12 @@
       ],
       "All your contacts will be imported, up to a limit of ${ maxContact }": [
         "您的所有联系人都将被导入，最多可达 ${ maxContact } 人"
+      ],
+      "Already in this folder": [
+        "已在此文件夹中"
+      ],
+      "Already in your library": [
+        "已在您的资料库中"
       ],
       "Also try looking in Trash.": [
         "或者查看回收站中是否有您需要的文件。"
@@ -4664,6 +5060,9 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "重新接收验证码前，请先检查垃圾邮件文件夹，并确认邮箱地址 ${ strong } 是否正确。"
       ],
+      "Better in the app": [
+        "在应用中体验更佳"
+      ],
       "Billing cycle: ${ text }": [
         "计费周期：${ text }"
       ],
@@ -4678,6 +5077,9 @@
       ],
       "Calendar side panel": [
         "日历侧边栏"
+      ],
+      "Can't move a folder into itself": [
+        "无法将文件夹移动到其自身内部"
       ],
       "Canceled": [
         "已取消"
@@ -4723,6 +5125,15 @@
       ],
       "Close this screen to exit.": [
         "关闭这个窗口以退出"
+      ],
+      "Cloud storage for businesses that take security seriously": [
+        "为注重安全的企业打造的云存储"
+      ],
+      "Collaborate efficiently while protecting your client and business data from breaches, ransomware, and surveillance.": [
+        "高效协作，同时保护您的客户和业务数据免受泄露、勒索软件和监控的侵害。"
+      ],
+      "Computed hash does not match XAttr": [
+        "计算出的哈希值与 XAttr 不匹配"
       ],
       "Conflict": [
         "冲突"
@@ -4826,6 +5237,9 @@
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy 图标"
       ],
+      "Done": [
+        "完成"
+      ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "没有跳转？请先关闭弹出窗口屏蔽插件。"
       ],
@@ -4840,6 +5254,9 @@
       ],
       "Download current logs": [
         "下载当前日志"
+      ],
+      "Download Failed": [
+        "下载失败"
       ],
       "Download of ${ downloadFileName } will be aborted": [
         "${ downloadFileName } 的下载进程将被中止"
@@ -4907,6 +5324,9 @@
       "End-to-end encrypted": [
         "端到端加密"
       ],
+      "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
+        "确保完全私密且加密的通信。立即认领您的免费 ${ BRAND_NAME } 邮箱地址。"
+      ],
       "Enter password": [
         "输入密码"
       ],
@@ -4924,6 +5344,9 @@
       ],
       "Enter your own password (as organization admin).": [
         "请输入您自己的密码（作为组织管理员）。"
+      ],
+      "Enter your own password (as trusted contact).": [
+        "输入您自己的密码（作为可信联系人）"
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "预计剩余时间：${ estimatedMinutes } 分钟"
@@ -4997,6 +5420,9 @@
       "Geoblocking": [
         "地理限制"
       ],
+      "Get logs and other information for technical support and troubleshooting": [
+        "获取日志和其他信息以用于技术支持与故障排除"
+      ],
       "Get the app to backup photos from your phone or upload them here.": [
         "获取应用程序以备份手机中的照片或将其上传到此处。"
       ],
@@ -5008,6 +5434,9 @@
       ],
       "Go to \"My files\" and upload some files first.": [
         "请先转到“我的文件”并上传一些文件。"
+      ],
+      "Google Pay mark": [
+        "Google Pay 标记"
       ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "政府和网络供应商可以监视您的在线活动。Proton 通过隐藏您的真实 IP 地址并加密网络活动，让您的浏览私密无忧。"
@@ -5066,6 +5495,9 @@
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "将您的数据从 ${ fromEmail } 导入至 ${ toEmail }。"
       ],
+      "In progress": [
+        "进行中"
+      ],
       "In restrictive countries": [
         "在网络受限的国家"
       ],
@@ -5084,6 +5516,9 @@
       "Initializing": [
         "正在初始化"
       ],
+      "Integrity issues found": [
+        "发现完整性问题"
+      ],
       "Internet connection lost": [
         "网络连接已断开"
       ],
@@ -5095,6 +5530,12 @@
       ],
       "Invite link copied": [
         "邀请链接已复制"
+      ],
+      "iOS and Android Apps": [
+        "iOS 和 Android 应用"
+      ],
+      "Issues found": [
+        "发现问题"
       ],
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "您最近似乎曾尝试上传 ${ uploadName }，如果上传失败，请${ replaceFile }。如果上传仍在进行中，替换文件将导致上传中止。"
@@ -5156,6 +5597,9 @@
       "Learn what to do ${ dataLeakedLink }": [
         "请通过 ${ dataLeakedLink } 了解应对措施"
       ],
+      "Link copied": [
+        "链接已复制"
+      ],
       "Link copied to clipboard": [
         "链接已复制到剪贴板"
       ],
@@ -5188,6 +5632,9 @@
       ],
       "Makes your account safer": [
         "增强账户安全性"
+      ],
+      "Malware detected": [
+        "检测到恶意软件"
       ],
       "Mar": [
         "三月"
@@ -5251,6 +5698,9 @@
       ],
       "No group found": [
         "未找到群组"
+      ],
+      "No issue found": [
+        "未发现问题"
       ],
       "No payment is required at this time.": [
         "目前不需要支付。"
@@ -5323,6 +5773,9 @@
       ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "我们的警报以安全为先。若您不认识任何被泄露的信息，则可以安全地忽略这份报告。"
+      ],
+      "owner": [
+        "所有者"
       ],
       "password": [
         "密码"
@@ -5501,6 +5954,9 @@
       "Restoring Photos... Please keep the tab open": [
         "正在恢复照片...请保持选项卡打开"
       ],
+      "Running diagnostics...": [
+        "正在运行诊断…"
+      ],
       "Saving...": [
         "保存中..."
       ],
@@ -5510,11 +5966,20 @@
       "Scan the QR code with your mobile device": [
         "请使用移动设备扫描二维码"
       ],
+      "Scan to download": [
+        "扫描以下载"
+      ],
       "Search cannot be enabled in this browser": [
         "此浏览器无法启用搜索功能"
       ],
       "Search Enabled": [
         "搜索已启用"
+      ],
+      "Select a destination folder": [
+        "选择目标文件夹"
+      ],
+      "Select a folder to make the copy in": [
+        "选择一个文件夹来存放副本"
       ],
       "Select a folder to move to.": [
         "选择要移动到的文件夹。"
@@ -5612,6 +6077,9 @@
       "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
         "某些国家/地区会屏蔽或限制访问某些网站。Proton VPN 能够帮助您突破网络审查，同时保护您的网络活动和身份隐私。"
       ],
+      "Some items failed": [
+        "部分项目失败"
+      ],
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "您的某些文件无法再访问，请恢复对其的访问权限。${ StartRecoveryButton }"
       ],
@@ -5642,6 +6110,12 @@
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "您的账户等级即将失效：${ byDate } 前重新激活即可继续享受 ${ planName } 权益。${ reactivateLink }"
       ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Apple App Store by ${ byDate }. ${ reactivateLink }": [
+        "订阅即将结束：为保留您的 ${ planName } 权益，请在 ${ byDate } 前通过 Apple App Store 重新开启您的订阅。${ reactivateLink }"
+      ],
+      "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
+        "订阅即将结束：为保留您的 ${ planName } 权益，请在 ${ byDate } 前通过 Google Play 商店重新开启您的订阅。${ reactivateLink }"
+      ],
       "Surveillance": [
         "监控"
       ],
@@ -5656,6 +6130,9 @@
       ],
       "Thank you for subscribing. Secure browsing starts now.": [
         "感谢您成为订阅用户，安全浏览即刻开启。"
+      ],
+      "that": [
+        "那个"
       ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "该账户可能有一个新密钥，或是以下内容可能已被篡改：${ items }。请务必在信任的情况下打开。"
@@ -5741,6 +6218,15 @@
       "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
         "这段独特的识别码可能会被网站和互联网服务提供商（ISP）利用，将您的地理位置和浏览历史记录与您的设备相关联，从而导致您的隐私信息被追踪。"
       ],
+      "This will cancel any remaining downloads.": [
+        "此操作将取消所有剩余的下载"
+      ],
+      "This will cancel any remaining uploads and downloads. Cancelled uploads won't be saved in ${ DRIVE_APP_NAME }.": [
+        "此操作将取消所有剩余的上传和下载，已取消的上传将不会保存到 ${ DRIVE_APP_NAME } 中。"
+      ],
+      "This will cancel any remaining uploads. Cancelled files won't be saved in ${ DRIVE_APP_NAME }.": [
+        "此操作将取消所有剩余的上传，已取消的文件将不会保存到 ${ DRIVE_APP_NAME } 中。"
+      ],
       "This will only delete the album. Your photos will remain in your timeline. This action cannot be undone.": [
         "这只会删除相册。您的照片将保留在时间轴中。此操作无法撤销。"
       ],
@@ -5755,6 +6241,12 @@
       ],
       "This will replace the existing file with the folder": [
         "这将用该文件夹替换现有文件"
+      ],
+      "This will replace the existing folder or file with the file": [
+        "此操作将用此文件替换现有的文件夹或文件"
+      ],
+      "This will replace the existing folder or file with the folder": [
+        "此操作将用此文件夹替换现有的文件夹或文件"
       ],
       "This will replace the existing folder with the file": [
         "这将用该文件替换现有文件夹"
@@ -5774,6 +6266,9 @@
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "要完成付款，请发送 ${ btcAmountBold } 至以下地址。"
       ],
+      "To download these files, open them in ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME } and export them.": [
+        "若要下载这些文件，请在 ${ DOCS_APP_NAME } 或 ${ SHEETS_APP_NAME } 中打开并导出它们。"
+      ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
         "为了在搜索过程中保护您的隐私，${ DRIVE_APP_NAME } 需要将文件下载至本设备后进行索引。"
       ],
@@ -5782,6 +6277,9 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "为了防止垃圾邮件和滥用行为，请进行人机验证。"
+      ],
+      "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it's still best to download files only from trusted sources. ": [
+        "为帮助保护您，${ DRIVE_APP_NAME } 能够以保护隐私的方式扫描您的文件并阻止恶意文件。然而，最好仍仅从受信任的来源下载文件。"
       ],
       "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it’s still best to download files only from trusted sources. ": [
         "为了保护您的隐私，${ DRIVE_APP_NAME } 可以以保护隐私的方式扫描您的文件并阻止恶意文件。不过，最好还是只从可信来源下载文件。 "
@@ -5876,6 +6374,9 @@
       "upgrade your storage": [
         "升级您的存储空间"
       ],
+      "Upload Failed": [
+        "上传失败"
+      ],
       "Uploaded": [
         "已上传"
       ],
@@ -5921,6 +6422,9 @@
       "VPN IP": [
         "VPN IP 地址"
       ],
+      "Waiting": [
+        "等待中"
+      ],
       "Want to sync files faster?": [
         "想要更快地同步文件吗？"
       ],
@@ -5932,6 +6436,9 @@
       ],
       "We are experiencing technical issues. Any albums related actions are temporarily disabled.": [
         "我们遇到了技术问题。任何与相册相关的操作都将暂时关闭。"
+      ],
+      "We couldn't verify ${ nameAuthor } uploaded ${ node.name }. The following may have been tampered with: file data order. Only open if you trust it.": [
+        "我们无法验证 ${ nameAuthor } 上传了 ${ node.name }。以下内容可能已被篡改：文件数据顺序。请仅在信任的情况下打开。"
       ],
       "We couldn’t process your payment.": [
         "我们未能处理您的支付。"
@@ -5966,6 +6473,9 @@
       "Week": [
         "周"
       ],
+      "Welcome to ${ DRIVE_APP_NAME }, for the first 10 minutes, any files you upload don't count toward your storage quota.": [
+        "欢迎使用 ${ DRIVE_APP_NAME }，在最初的 10 分钟内，您上传的任何文件均不计入存储配额。"
+      ],
       "What do you want to do?": [
         "您希望如何处理？"
       ],
@@ -5983,6 +6493,12 @@
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "当您设置双因素身份验证时，我们会提供恢复代码，当您无法访问身份验证应用时，可以使用这些代码登录。"
+      ],
+      "who": [
+        "谁"
+      ],
+      "Who has access": [
+        "谁有权访问"
       ],
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
         "将恢复到 ${ formattedRevisionDate } 开始的版本。所有其他版本仍将被保存。"
@@ -6065,6 +6581,9 @@
       "You cannot undo this action.": [
         "您无法撤销此操作。"
       ],
+      "You don’t have permission to copy files to this folder.": [
+        "您无权将文件复制到此文件夹"
+      ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "如果你的密码或其他数据从第三方服务泄露，你会收到通知。"
       ],
@@ -6127,6 +6646,9 @@
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "您的账户有逾期未支付的账单，很快将被限制使用。${ payInvoiceLink }"
+      ],
+      "Your current browser does not support the downloading of large files/multiple files. Download the desktop app for seamless uploads and downloads.": [
+        "您当前的浏览器不支持下载大型文件/多个文件，请下载桌面应用程序以获得流畅的上传和下载体验。"
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "您的数据可以从 ${ importedEmailAddressStrong } 导入 ${ BRAND_NAME } 账户了。"
@@ -6253,6 +6775,14 @@
         "仅查看"
       ]
     },
+    "Into": {
+      "Can view and edit": [
+        "可以查看和编辑"
+      ],
+      "Can view only": [
+        "仅可查看"
+      ]
+    },
     "Item": {
       "file attributes": [
         "文件属性"
@@ -6330,8 +6860,14 @@
       "(Temporarily unavailable. Please check back later.)": [
         "（暂时不可用。请稍后再试。）"
       ],
+      "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
+        "通过终端安全访问 ${ PASS_APP_NAME }，是脚本、自动化和开发工作流程的理想选择"
+      ],
       "Account holder": [
         "账户持有人"
+      ],
+      "Active": [
+        "活跃"
       ],
       "Add email address": [
         "添加邮箱地址"
@@ -6345,6 +6881,9 @@
       "Address": [
         "地址"
       ],
+      "admin": [
+        "管理员"
+      ],
       "Alias title": [
         "别名标题"
       ],
@@ -6357,8 +6896,14 @@
       "Anonymous": [
         "匿名用户"
       ],
+      "Anyone on the Internet with the link": [
+        "互联网上任何拥有此链接的人"
+      ],
       "App password": [
         "应用密码"
+      ],
+      "Applications in a business setting": [
+        "商业环境中的应用"
       ],
       "Apply to all duplicated files": [
         "应用于所有重复的文件"
@@ -6399,6 +6944,12 @@
       "Calendars": [
         "日历"
       ],
+      "can edit": [
+        "可以编辑"
+      ],
+      "can view": [
+        "可以查看"
+      ],
       "Cancel download": [
         "取消下载"
       ],
@@ -6428,6 +6979,9 @@
       ],
       "Colors": [
         "颜色"
+      ],
+      "Command line interface (CLI)": [
+        "命令行界面 (CLI)"
       ],
       "Comment": [
         "评论"
@@ -6476,6 +7030,9 @@
       ],
       "Delete drive?": [
         "删除网盘?"
+      ],
+      "Delete link and remove access for everyone": [
+        "删除链接并移除所有人的访问权限"
       ],
       "Delete recovery-related information.": [
         "删除恢复相关的数据"
@@ -6554,6 +7111,9 @@
       ],
       "File name": [
         "文件名"
+      ],
+      "File transfer overview": [
+        "文件传输概览"
       ],
       "First name": [
         "名"
@@ -6675,6 +7235,9 @@
       "New password": [
         "新密码"
       ],
+      "Not active": [
+        "未激活"
+      ],
       "Note": [
         "笔记"
       ],
@@ -6755,6 +7318,9 @@
       ],
       "Replace existing folder": [
         "替换现有文件夹"
+      ],
+      "Replace existing folder or file": [
+        "替换现有文件夹或文件"
       ],
       "Reveal password": [
         "显示密码"
@@ -6921,6 +7487,9 @@
       "Your password (admin)": [
         "您的密码（管理员）"
       ],
+      "Your password (trusted contact)": [
+        "您的密码（可信联系人）"
+      ],
       "ZIP code": [
         "邮政编码"
       ]
@@ -7065,6 +7634,9 @@
       "Request an invite": [
         "申请注册"
       ],
+      "Resume now": [
+        "立即恢复"
+      ],
       "settings": [
         "设置"
       ],
@@ -7073,6 +7645,9 @@
       ],
       "Shared with me": [
         "与我共享"
+      ],
+      "Terms and conditions": [
+        "条款与条件"
       ],
       "Trash": [
         "回收站"
@@ -7115,6 +7690,9 @@
     "locked_state_storage_banner: info": {
       "Learn more": [
         "了解更多信息"
+      ],
+      "To continue using ${ BRAND_NAME }, please make sure your premium features are no longer in use or upgrade your plan.": [
+        "若要继续使用 ${ BRAND_NAME }，请确保您已不再使用高级功能或升级您的套餐。"
       ],
       "upgrade for more storage": [
         "付费扩容"
@@ -7169,6 +7747,56 @@
       ],
       "for ${ price }": [
         "总计 ${ price }"
+      ]
+    },
+    "meet_2025: Feature": {
+      "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
+        "${ MEET_APP_NAME }：用于重要对话的保密视频会议"
+      ],
+      "${ n } active meeting at a time": [
+        "同时进行 ${ n } 场活跃会议"
+      ],
+      "${ n } participant": [
+        "${ n } 位参与者"
+      ],
+      "24 hours per meeting": [
+        "每次会议最长 24 小时"
+      ],
+      "60 minutes per meeting": [
+        "每次会议最长 60 分钟"
+      ],
+      "Appointment scheduling": [
+        "预约安排"
+      ],
+      "Booking pages": [
+        "预约页面"
+      ],
+      "Browser, mobile, and desktop apps": [
+        "浏览器、移动端和桌面端应用"
+      ],
+      "Built-in chat": [
+        "内置聊天"
+      ],
+      "End-to-end encrypted screen sharing and ephemeral in-call chat": [
+        "端到端加密的屏幕共享和临时会议内聊天"
+      ],
+      "Meeting recording": [
+        "会议录制"
+      ],
+      "One active meeting at a time": [
+        "同时只能进行一场活跃会议"
+      ],
+      "Screen-sharing": [
+        "屏幕共享"
+      ],
+      "Unlimited meetings per day": [
+        "每日不限会议次数"
+      ],
+      "Up to ${ n } meeting per day": [
+        "每天最多 ${ n } 场会议"
+      ],
+      "Up to ${ n } participant": [
+        "最多 ${ n } 位参与者"
       ]
     },
     "Message": {
@@ -7664,6 +8292,9 @@
       "End-to-end encryption": [
         "端到端加密"
       ],
+      "Existing ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } benefits": [
+        "现有的 ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } 权益"
+      ],
       "Fast P2P/BitTorrent downloads": [
         "通过 P2P/BitTorrent 高速下载"
       ],
@@ -7724,6 +8355,9 @@
       "Password-protected Emails": [
         "邮件密码保护"
       ],
+      "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
+        "电话支持 (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ 用户)"
+      ],
       "Priority email support": [
         "优先享受邮件客服"
       ],
@@ -7777,6 +8411,9 @@
       ],
       "Share files with no size limit": [
         "共享文件无大小限制"
+      ],
+      "Short domain (@pm.me)": [
+        "短域名 (@pm.me)"
       ],
       "Sign in as user": [
         "代替用户登录"
@@ -8140,6 +8777,9 @@
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "在邮件落款中加入图标、照片、链接、社交网络标识等个性化元素"
       ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } or more users": [
+        "对于拥有 ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } 位或更多用户的客户，${ BRAND_NAME } 客户支持团队可在欧洲工作时间提供电话支持。"
+      ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "防止 ${ BRAND_NAME } 以及任何第三方窥探您的邮件。只有通信双方能够得知邮件内容。"
       ],
@@ -8324,6 +8964,9 @@
       "\"${ name }\" saved successfully": [
         "${ name } 已成功保存"
       ],
+      "\"${ name }\" successfully copied": [
+        "\"${ name }\" 复制成功"
+      ],
       "\"${ name }\" successfully moved": [
         "\"${ name }\" 移动成功"
       ],
@@ -8336,6 +8979,12 @@
       "${ count } item failed to be decrypted": [
         "${ count } 个项目解密失败"
       ],
+      "${ errors.length } item failed to be copied": [
+        "${ errors.length } 个项目复制失败"
+      ],
+      "${ errors.length } item failed to be trashed": [
+        "${ errors.length } 个项目移至回收站失败"
+      ],
       "${ nbFailures } photo could not be removed from \"${ albumLink.name }\"": [
         "${ nbFailures } 张照片无法从 \"${ albumLink.name }\" 相册中移除"
       ],
@@ -8347,6 +8996,9 @@
       ],
       "${ nbSuccesses } photo have been removed from \"${ albumLink.name }\"": [
         "${ nbSuccesses } 张照片已从 \"${ albumLink.name }\" 移除"
+      ],
+      "${ numberOfItems } copied item moved to trash": [
+        "${ numberOfItems } 个已复制的项目已移至回收站"
       ],
       "${ numberOfItems } item deleted": [
         "${ numberOfItems } 项目已删除"
@@ -8378,6 +9030,9 @@
       "${ numberOfItems } item restored from trash": [
         "从回收站还原了${ numberOfItems } 个项目"
       ],
+      "${ numberOfItems } item successfully copied": [
+        "${ numberOfItems } 个项目复制成功"
+      ],
       "${ numberOfItems } item successfully moved": [
         "${ numberOfItems } 个项目移动成功"
       ],
@@ -8402,6 +9057,9 @@
       "Album renamed successfully": [
         "相册重命名成功"
       ],
+      "All items deleted permanently from trash": [
+        "所有项目已从回收站永久删除"
+      ],
       "An invitation has been sent": [
         "邀请已发送"
       ],
@@ -8416,6 +9074,9 @@
       ],
       "Contact group updated": [
         "群组已更改"
+      ],
+      "Copy of \"${ name }\" moved to trash": [
+        "\"${ name }\" 的副本已移至回收站"
       ],
       "Device failed to be removed": [
         "设备移除失败"
@@ -8510,6 +9171,12 @@
       "Root folder failed to be loaded": [
         "加载根目录失败"
       ],
+      "Selected item was not removed from your list": [
+        "所选项目未能从您的列表中移除"
+      ],
+      "Selected items were successfully removed from your list": [
+        "所选项目已成功从您的列表中移除"
+      ],
       "Selected photo(s) already in \"${ albumName }\"": [
         "所选照片已在“${ albumName }”中"
       ],
@@ -8542,6 +9209,9 @@
       ],
       "The spreadsheet failed to be created": [
         "电子表格创建失败"
+      ],
+      "This secure link expired, please change expire date in sharing settings": [
+        "此安全链接已过期，请在共享设置中更改过期日期"
       ],
       "Trash failed to be emptied": [
         "未能清空回收站"
@@ -8613,6 +9283,9 @@
       "Limited-time offer": [
         "限时特惠"
       ],
+      "Limited-time offer, valid for your first month": [
+        "限时优惠，仅首月有效"
+      ],
       "Maybe later": [
         "以后再说"
       ],
@@ -8633,6 +9306,12 @@
       ],
       "This offer won't be shown again.": [
         "此优惠不再显示。"
+      ],
+      "Upgrade your productivity for just ${ pricingTitle } with ${ planName }": [
+        "升级您的生产力，仅需 ${ pricingTitle } 即可获得 ${ planName } 计划"
+      ],
+      "Upgrade your storage for just ${ pricingTitle } with ${ planName }": [
+        "升级您的存储空间，仅需 ${ pricingTitle } 即可获得 ${ planName } 计划"
       ],
       "When you switch from a monthly to annual subscription.": [
         "当您从每月订阅切换到年度订阅时。"
@@ -8659,11 +9338,20 @@
       "Advanced threat protection": [
         "高级威胁保护"
       ],
+      "Collaborate with non-${ BRAND_NAME } users": [
+        "与非 ${ BRAND_NAME } 用户协作"
+      ],
       "Custom email domain": [
         "自定义电子邮件域"
       ],
+      "Edit docs online": [
+        "在线编辑文档"
+      ],
       "Email addresses": [
         "邮箱地址"
+      ],
+      "File version history (over 1 week)": [
+        "文件版本历史记录（超过 1 周）"
       ],
       "Free": [
         "Free"
@@ -8728,9 +9416,15 @@
       ],
       "Upload folder": [
         "上传文件夹"
+      ],
+      "Upload more files": [
+        "上传更多文件"
       ]
     },
     "Onboarding Info": {
+      "10 minutes": [
+        "10 分钟"
+      ],
       "Access your files on the go": [
         "随时访问您的文件"
       ],
@@ -8760,6 +9454,12 @@
       ],
       "Faster uploads for large or multiple files": [
         "更快上传大文件或多个文件"
+      ],
+      "Files uploaded during this time won’t count towards your storage limit.": [
+        "在此期间上传的文件将不计入您的存储空间限额"
+      ],
+      "Files uploaded now will not count towards your storage limit": [
+        "现在上传的文件将不计入您的存储空间限额"
       ],
       "Final approval in progress": [
         "正在进行最后审批"
@@ -8793,6 +9493,9 @@
       ],
       "Invite team members": [
         "邀请团队成员"
+      ],
+      "Keep the momentum going by uploading more files using the storage included with your plan.": [
+        "使用您计划包含的存储空间上传更多文件，保持良好势头。"
       ],
       "Manage access": [
         "管理访问权限"
@@ -8829,6 +9532,9 @@
       ],
       "Work together": [
         "携手合作"
+      ],
+      "You just snagged some free data and secured your files with end-to-end encryption － in record time!": [
+        "您刚刚快速获取了一些免费数据，并以端到端加密保护了您的文件！"
       ]
     },
     "Onboarding Trial": {
@@ -8888,11 +9594,29 @@
       "Create new group": [
         "创建群组"
       ],
+      "Expected strcuture": [
+        "预期结构"
+      ],
       "Ignore group": [
         "忽略分组"
       ],
       "No parent folder": [
         "无上层文件夹"
+      ],
+      "Only current location": [
+        "仅当前位置"
+      ],
+      "Only current location: ${ name }": [
+        "仅当前位置：${ name }"
+      ],
+      "Select JSON file": [
+        "选择 JSON 文件"
+      ],
+      "Verify content": [
+        "验证内容"
+      ],
+      "Verify thumbnails": [
+        "验证缩略图"
       ]
     },
     "Option group label": {
@@ -9003,6 +9727,9 @@
       "Credit/debit card": [
         "信用卡/借记卡"
       ],
+      "Google Pay": [
+        "Google Pay"
+      ],
       "New credit/debit card": [
         "添加信用卡/借记卡"
       ]
@@ -9016,6 +9743,9 @@
       ]
     },
     "Payments": {
+      "Amount due after trial on ${ formattedDate }": [
+        "试用期结束后 ${ formattedDate } 的应付金额"
+      ],
       "Billing Country": [
         "计费国家/地区"
       ],
@@ -9031,17 +9761,32 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "在此期间，您将无法修改或取消订阅。请待付款完成后再尝试进行任何操作。感谢您的耐心等待。"
       ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "不含 ${ taxRate }% ${ taxName }：${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "不含 ${ taxRate }% 税费：${ taxAmount }"
+      ],
       "Got it": [
         "了解"
       ],
       "I'm purchasing as a business": [
         "以企业身份购买"
       ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "包含 ${ taxRate }% ${ taxName }：${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "包含 ${ taxRate }% 税费：${ taxAmount }"
+      ],
       "MM/YY": [
         "月/年"
       ],
       "More plans are available in other currencies": [
         "更多计划以及其他货币提供"
+      ],
+      "Payment method required for the subscription to be activated after the trial ends.": [
+        "您需要提供付款方式，以便试用期结束后激活订阅。"
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "请先重新激活您的订阅以减少附加功能。"
@@ -9052,14 +9797,26 @@
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "续费价格是${ renewPriceStr }，可随时取消。"
       ],
+      "Taxes": [
+        "税费"
+      ],
       "terms and conditions": [
         "服务条款"
+      ],
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "此折扣适用于 ${ renewalsWithCoupon } 次续订。"
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "此特惠价格有效期 ${ couponRedemptions } 个月，之后将自动以 ${ renewPriceStr } 每月续订。您可以随时取消。"
       ],
       "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
         "特惠价格仅限前 ${ subscriptionLength } 个月有效。"
       ],
       "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "特别优惠价仅在首月有效。之后将每月自动以${ renewPriceStr }的价格续订。您可以随时取消。"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "${ priceWithDiscount } 的特惠价格有效期 ${ couponRedemptions } 个月，之后将自动以 ${ renewPriceStr } 每月续订。您可以随时取消。"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "Proton 用户的专属优惠：${ priceWithDiscount }特惠价格仅限订阅前${ subscriptionLength }个月有效。"
@@ -9070,8 +9827,14 @@
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "您的订阅将在到期后自动以${ renewPriceStr }的价格续订\n${ renewalLength }个月。您可随时取消订阅。"
       ],
+      "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
+        "此操作将扩展您现有的订阅。您只需支付新增附加项的费用以及当前计费周期剩余时间的费用。您的订阅续订日期将不会改变。"
+      ],
       "This number will be shown on all future invoices": [
         "此编号将显示在所有未来的发票上。"
+      ],
+      "This offer is not available with your current plan.": [
+        "此优惠不适用于您当前的套餐"
       ],
       "This payment method will become your new default for all future renewals.": [
         "此付款方式将成为您未来所有续订的新默认方式。"
@@ -9079,11 +9842,32 @@
       "Timeout exceeded": [
         "超时"
       ],
+      "VAT": [
+        "增值税"
+      ],
+      "VAT number": [
+        "增值税号"
+      ],
+      "You already have a subscription to this plan.": [
+        "您已订阅此套餐"
+      ],
+      "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
+        "您已订阅此套餐，您可以在 ${ subscriptionPlatform } 上更改您的订阅。"
+      ],
+      "You will soon be redirected to PayPal to verify your payment.": [
+        "您即将被重定向至 PayPal 以验证付款。"
+      ],
+      "You will soon be redirected to verify your payment.": [
+        "您即将被重定向以验证付款"
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "您的货币已更改为欧元 (€)，因为 SEPA 银行转账只支持欧元支付。"
       ],
       "Your payment is still being processed": [
         "您的付款正在处理中"
+      ],
+      "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
+        "您当前的订阅已享有一个现有折扣，转用此新促销意味着现有折扣将不再适用。"
       ]
     },
     "Payments.Error": {
@@ -9106,9 +9890,34 @@
         "您的卡已被拒绝。请尝试其他卡或与您的银行联系以授权收费."
       ]
     },
+    "Payments.error": {
+      "Something went wrong. Google Pay verification failed.": [
+        "出错了，Google Pay 验证失败。"
+      ]
+    },
+    "Payments.info": {
+      "Credit for the unused portion of your previous plan subscription": [
+        "您先前套餐订阅未使用部分的抵扣金额"
+      ],
+      "Credits will be added to your balance": [
+        "积分将添加到您的账户余额"
+      ]
+    },
     "Payments.ModificationWarning": {
       "Are you sure you want to proceed?": [
         "您确定要继续操作吗？"
+      ],
+      "If you choose to modify your ${ planTitle } plan, you may lose access to some features.": [
+        "如果您选择修改您的 ${ planTitle } 套餐，可能会失去某些功能的访问权限。"
+      ],
+      "Keep ${ planTitle }": [
+        "保留 ${ planTitle }"
+      ],
+      "Yes, I'm sure": [
+        "是的，我确定"
+      ],
+      "Your plan includes this feature already.": [
+        "您的套餐已包含此功能"
       ]
     },
     "Payments.plan_name": {
@@ -9122,6 +9931,9 @@
       ],
       "Bank transfer - ${ details }": [
         "银行转账 - ${ details }"
+      ],
+      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Google Pay - 卡号末四位 ${ paymentMethod.Details.Last4 }"
       ]
     },
     "Payments.Sepa": {
@@ -9136,8 +9948,32 @@
       "ABN": [
         "澳大利亚商业编号 (ABN)"
       ],
+      "Add ABN": [
+        "添加 ABN"
+      ],
+      "Add Business Number": [
+        "添加商业编号"
+      ],
+      "Add EIN": [
+        "添加 EIN"
+      ],
+      "Add VAT number": [
+        "添加增值税号"
+      ],
       "Business Number": [
         "商业编号"
+      ],
+      "Edit ABN": [
+        "编辑 ABN"
+      ],
+      "Edit Business Number": [
+        "编辑商业编号"
+      ],
+      "Edit EIN": [
+        "编辑 EIN"
+      ],
+      "Edit VAT number": [
+        "编辑增值税号"
       ],
       "EIN": [
         "雇主识别号码 (EIN)"
@@ -9270,6 +10106,9 @@
       "Select a reason": [
         "请选择原因"
       ],
+      "Select country": [
+        "选择国家/地区"
+      ],
       "Select state": [
         "请选择省份"
       ],
@@ -9311,6 +10150,12 @@
       ]
     },
     "plus_block": {
+      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and more ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
+        "作为 **${ currentPlanTitle }** 订阅者，您可以通过升级到 **${ upsellPlanTitle }** 来解锁 **${ unlockPlanTitle }** 以及更多 ${ BRAND_NAME } 服务。"
+      ],
+      "More ${ BRAND_NAME } services.${ br }One easy subscription.": [
+        "更多 ${ BRAND_NAME } 服务，${ br }仅需一次简单的订阅。"
+      ],
       "Stay on ${ currentPlanTitle }": [
         "继续使用 ${ currentPlanTitle }"
       ],
@@ -9379,11 +10224,44 @@
       ]
     },
     "Referral": {
+      "${ referrerRewardAmount } per referral": [
+        "每成功推荐 ${ referrerRewardAmount }"
+      ],
+      "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
+        "**如果您在此日期之前取消，** 试用期结束后您将被 **降级** 至 ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } 套餐。"
+      ],
+      "**If you don't subscribe,** you'll be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
+        "**如果您不订阅，** 您的服务将被 **降级** 为 ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }。"
+      ],
+      "**If you don’t cancel,** your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
+        "**如果您不取消，** 您的完整套餐将生效，并且您将获得 **${ referrerRewardAmount }** 积分。"
+      ],
+      "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
+        "**如果您在此日期之前订阅，** 您将获得 **${ referrerRewardAmount }** 积分。"
+      ],
+      "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
+        "此后，您的账户将降级为 **${ BRAND_NAME } Free**。如果您改变主意，可以 **重新激活您的订阅** 以继续使用高级功能。"
+      ],
+      "Earn up to ${ maxRewardAmount } in credit. You’ll get ${ referrerRewardAmount } when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
+        "最高可赚取 ${ maxRewardAmount } 积分。您邀请的人订阅 ${ BRAND_NAME } 套餐后，您将获得 ${ referrerRewardAmount }。"
+      ],
+      "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
+        "免费享受 **${ planTitle }** 直至 **${ textDate }**。"
+      ],
       "Friend joined": [
         "好友已加入"
       ],
       "Friend subscribed": [
         "已订阅的好友"
+      ],
+      "Invite friends. Get credits.": [
+        "邀请朋友，获取积分。"
+      ],
+      "Invited friends": [
+        "已邀请的朋友"
+      ],
+      "Last chance to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "探索 **${ planTitle }** 套餐所有强大功能的最后机会。"
       ],
       "More sharing options": [
         "更多分享方式"
@@ -9391,8 +10269,20 @@
       "Once your full subscription starts, you can still cancel within 30 days and get a prorated refund.": [
         "一旦您的完整订阅开始，您仍然可以在 30 天内取消并获得按比例的退款。"
       ],
+      "Refer friends": [
+        "推荐朋友"
+      ],
+      "Start earning credits": [
+        "开始赚取积分"
+      ],
+      "You can get up to **${ maxRewardAmount }** in credit.": [
+        "您最高可获得 **${ maxRewardAmount }** 积分！"
+      ],
       "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
         "您还有**${ daysRemaining }天**的时间，可以尽情探索**${ planTitle }**提供的所有强大功能。"
+      ],
+      "your subscription": [
+        "您的订阅"
       ]
     },
     "Safety review": {
@@ -9896,6 +10786,12 @@
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
         "突破网络封锁，保护线上隐私。可连接全球逾 60 个国家的 1700 台服务器，10 台设备可同时在线，畅享全球流媒体服务，拦截恶意软件和广告，还有更多功能等您体验。"
       ],
+      "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
+        "包含我们所有高级服务及其最高限制：100 个邮箱地址、支持 10 个自定义邮箱域名、无限的  hide-my-email 别名、日历共享、加密云存储和文件共享等功能。"
+      ],
+      "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "包含 3 个自定义邮箱域名、15 个邮箱地址、无限的 hide-my-email 别名、日历共享等功能的支持。"
+      ],
       "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
         "适合家庭与小型团队，每个人都能拥有各自的邮箱和地址。需要使用自有域名。"
       ],
@@ -9925,12 +10821,20 @@
         "登录到您的组织"
       ],
       "You'll be redirected to your third-party SSO provider.": [
-        "您将被重定向到您的第三方SSO提供商。"
+        "您将被重定向到您的第三方 SSO 提供商。"
       ]
     },
     "State": {
       "Canceling your subscription, please wait": [
         "正在取消您的订阅，请稍候。"
+      ]
+    },
+    "Status": {
+      "accepted": [
+        "已接受"
+      ],
+      "pending": [
+        "待处理"
       ]
     },
     "Storage": {
@@ -9964,6 +10868,9 @@
       "${ app } storage": [
         "${ app } 储存空间"
       ],
+      "${ app } storage used": [
+        "${ app } 存储空间已使用"
+      ],
       "${ storage } ${ percentage }% full": [
         "${ storage }已使用 ${ percentage }%"
       ],
@@ -9975,6 +10882,9 @@
       ],
       "For all ${ BRAND_NAME } services": [
         "用于所有 ${ BRAND_NAME } 服务"
+      ],
+      "Storage used": [
+        "已用存储空间"
       ],
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
         "要继续上传和同步文件，请释放存储空间或升级以获取更多存储空间。"
@@ -10439,6 +11349,9 @@
       "Securely share your favorite moments with friends and family using Albums.": [
         "使用相册安全地与朋友和家人分享您最喜欢的时刻。"
       ],
+      "Shared by ${ sharedBy }": [
+        "由 ${ sharedBy } 共享"
+      ],
       "Your favorited photos will appear here": [
         "您收藏的照片将在此处显示"
       ],
@@ -10714,6 +11627,9 @@
       "${ feature } is now active": [
         "${ feature } 已激活"
       ],
+      "${ freeUploadLength } of free uploads.": [
+        "免费上传 ${ freeUploadLength } 个文件"
+      ],
       "${ numberOfFailedTransfer.total } failed download": [
         "${ numberOfFailedTransfer.total } 个失败的下载"
       ],
@@ -10731,6 +11647,9 @@
       ],
       "Account security": [
         "账户安全"
+      ],
+      "Account temporarily locked": [
+        "账户暂时锁定"
       ],
       "Active": [
         "进行中"
@@ -10755,6 +11674,9 @@
       ],
       "Addresses": [
         "地址"
+      ],
+      "Advanced details": [
+        "高级详情"
       ],
       "Album": [
         "相册"
@@ -10807,6 +11729,15 @@
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "取消 ${ MAIL_SHORT_APP_NAME } 订阅"
       ],
+      "Cancel all downloads?": [
+        "取消所有下载？"
+      ],
+      "Cancel all transfers?": [
+        "取消所有传输？"
+      ],
+      "Cancel all uploads?": [
+        "取消所有上传？"
+      ],
       "Cancel subscription?": [
         "取消订阅?"
       ],
@@ -10827,6 +11758,9 @@
       ],
       "Check for malicious files": [
         "检查恶意文件"
+      ],
+      "Claim your ${ MAIL_APP_NAME } address": [
+        "认领您的 ${ MAIL_APP_NAME } 地址"
       ],
       "Clearing data": [
         "数据清除中"
@@ -10945,6 +11879,33 @@
       "Devices": [
         "设备"
       ],
+      "Diagnostics": [
+        "诊断"
+      ],
+      "Digital signature partially verified. This file was created using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "数字签名已部分验证。此文件是通过公开访问的共享链接由无 ${ BRAND_NAME } 账户的用户创建的，因此无法验证其身份。"
+      ],
+      "Digital signature partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "数字签名已部分验证。此文件是通过公开访问的共享链接由无 ${ BRAND_NAME } 账户的用户上传的，因此无法验证其身份。"
+      ],
+      "Digital signature partially verified. This folder was created using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "数字签名已部分验证。此文件夹是通过公开访问的共享链接由无 ${ BRAND_NAME } 账户的用户创建的，因此无法验证其身份。"
+      ],
+      "Digital signature partially verified. This folder was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "数字签名已部分验证。此文件夹是通过公开访问的共享链接由无 ${ BRAND_NAME } 账户的用户上传的，因此无法验证其身份。"
+      ],
+      "Digital signature verified. This file was securely created by <strong>${ emailAddress }</strong>.": [
+        "数字签名已验证。此文件由 <strong>${ emailAddress }</strong> 安全创建。"
+      ],
+      "Digital signature verified. This file was securely uploaded by <strong>${ emailAddress }</strong>.": [
+        "数字签名已验证。此文件由 <strong>${ emailAddress }</strong> 安全上传。"
+      ],
+      "Digital signature verified. This folder was securely created by <strong>${ emailAddress }</strong>.": [
+        "数字签名已验证，此文件夹由 <strong>${ emailAddress }</strong> 安全创建。"
+      ],
+      "Digital signature verified. This folder was securely uploaded by <strong>${ emailAddress }</strong>.": [
+        "数字签名已验证。此文件夹由 <strong>${ emailAddress }</strong> 安全上传。"
+      ],
       "Discard": [
         "放弃"
       ],
@@ -10962,6 +11923,9 @@
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "下载 ${ DRIVE_APP_NAME } 应用"
+      ],
+      "Download details": [
+        "下载详情"
       ],
       "Download the app": [
         "下载 APP"
@@ -11047,11 +12011,26 @@
       "Folder details": [
         "文件夹详细信息"
       ],
+      "Found ${ resultCount } result": [
+        "找到 ${ resultCount } 个结果"
+      ],
+      "Get ${ DRIVE_SHORT_APP_NAME } on your phone": [
+        "在您的手机上获取 ${ DRIVE_SHORT_APP_NAME }"
+      ],
       "Get **${ referralInfo.uiData.refereeRewardAmount }** in credits with ${ planTitle }": [
         "配合${ planTitle }获得**${ referralInfo.uiData.refereeRewardAmount }**余额奖励。"
       ],
+      "Get full access to ${ CALENDAR_APP_NAME }": [
+        "获取 ${ CALENDAR_APP_NAME } 的完整访问权限"
+      ],
+      "Get mobile and desktop apps": [
+        "获取移动和桌面应用程序"
+      ],
       "Get more from your VPN": [
         "从您的 VPN 获取更多信息"
+      ],
+      "Get started with 10 minutes of free uploads, on the house.": [
+        "开始享受 10 分钟的免费上传，由我们买单。"
       ],
       "Get the apps": [
         "下载应用"
@@ -11079,6 +12058,9 @@
       ],
       "How does it work?": [
         "如何操作？"
+      ],
+      "How your free trial works": [
+        "您的免费试用如何运作"
       ],
       "Human verification": [
         "身份验证"
@@ -11113,6 +12095,9 @@
       "Last edited by": [
         "最后编辑者"
       ],
+      "Last uploaded by": [
+        "最后上传者"
+      ],
       "Level": [
         "等级"
       ],
@@ -11128,11 +12113,17 @@
       "Logs": [
         "日志"
       ],
+      "Make a copy": [
+        "制作副本"
+      ],
       "Make a secure connection your default": [
         "将安全连接设为默认首选"
       ],
       "Manage secure link": [
         "管理安全链接"
+      ],
+      "Media type": [
+        "媒体类型"
       ],
       "Merge contacts": [
         "合并联系人"
@@ -11221,6 +12212,9 @@
       "Notes": [
         "便签"
       ],
+      "Number of downloads": [
+        "下载次数"
+      ],
       "Number of items": [
         "项目数"
       ],
@@ -11241,6 +12235,9 @@
       ],
       "Original size": [
         "原始尺寸"
+      ],
+      "Original size in bytes": [
+        "原始字节大小"
       ],
       "Other information": [
         "其他信息"
@@ -11281,6 +12278,12 @@
       "Processing...": [
         "正在处理..."
       ],
+      "Public link": [
+        "公开链接"
+      ],
+      "Public link settings": [
+        "公开链接设置"
+      ],
       "Public shared link status": [
         "将共享链接状态公开"
       ],
@@ -11289,6 +12292,9 @@
       ],
       "Re-signing contacts": [
         "重新签署联系人"
+      ],
+      "Ready, set, upload.": [
+        "准备就绪，开始上传。"
       ],
       "Recommended": [
         "推荐"
@@ -11301,6 +12307,9 @@
       ],
       "Recover data": [
         "恢复数据"
+      ],
+      "Referral": [
+        "推荐"
       ],
       "Remove device?": [
         "移除设备？"
@@ -11365,11 +12374,20 @@
       "Settings": [
         "设置"
       ],
+      "Settings for ${ sharedFileName }": [
+        "${ sharedFileName } 的设置"
+      ],
+      "SHA1": [
+        "SHA1"
+      ],
       "Share ${ name }": [
         "共享 ${ name }"
       ],
       "Share your calendar with your team": [
         "与团队共享日历"
+      ],
+      "Share your link": [
+        "分享您的链接"
       ],
       "Shared": [
         "共享"
@@ -11394,6 +12412,9 @@
       ],
       "Size": [
         "大小"
+      ],
+      "Size in bytes": [
+        "字节大小"
       ],
       "Sort files/folders": [
         "文件/文件夹排序"
@@ -11431,11 +12452,20 @@
       "This folder has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "此文件夹的签名缺失或无效，请转至菜单 (⋮) → 详细信息以获取相关信息。"
       ],
+      "This is likely due to the account or address having been deleted.": [
+        "这很可能是因为账户或地址已被删除"
+      ],
       "This link is password protected": [
         "此链接受密码保护"
       ],
       "Time": [
         "时间"
+      ],
+      "To preview this spreadsheet, download it.": [
+        "要预览此电子表格，请下载它"
+      ],
+      "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
+        "要预览此电子表格，请在 ${ SHEETS_APP_NAME } 中打开或下载它。"
       ],
       "Total size": [
         "总大小"
@@ -11451,6 +12481,9 @@
       ],
       "Type": [
         "类型"
+      ],
+      "UID": [
+        "用户标识符"
       ],
       "Unknown user": [
         "未知用户"
@@ -11469,6 +12502,12 @@
       ],
       "Upgrade to keep your premium benefits.": [
         "升级以保留您的高级权益。"
+      ],
+      "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
+        "升级您的生产力，仅需 ${ formattedPrice } 即可获得 ${ planName } 计划"
+      ],
+      "Upgrade your storage for ${ formattedPrice } with ${ planName }": [
+        "升级您的存储空间，仅需 ${ formattedPrice } 即可获得 ${ planName } 计划"
       ],
       "Upload and share files": [
         "上传并分享文件"
@@ -11512,6 +12551,39 @@
       "We couldn’t verify that <strong>${ emailAddress }</strong> created this file.": [
         "我们无法验证 <strong>${ emailAddress }</strong> 创建了此文件。"
       ],
+      "We couldn’t verify that <strong>${ emailAddress }</strong> created this folder.": [
+        "我们无法验证此文件夹是由 <strong>${ emailAddress }</strong> 创建的。"
+      ],
+      "We couldn’t verify that <strong>${ emailAddress }</strong> uploaded this file.": [
+        "我们无法验证此文件是由 <strong>${ emailAddress }</strong> 上传的。"
+      ],
+      "We couldn’t verify that <strong>${ emailAddress }</strong> uploaded this folder.": [
+        "我们无法验证此文件夹是由 <strong>${ emailAddress }</strong> 上传的"
+      ],
+      "We couldn’t verify that an anonymous user created this file.": [
+        "我们无法验证此文件是由匿名用户创建的"
+      ],
+      "We couldn’t verify that an anonymous user created this folder.": [
+        "我们无法验证此文件夹是由匿名用户创建的"
+      ],
+      "We couldn’t verify that an anonymous user uploaded this file.": [
+        "我们无法验证此文件是由匿名用户上传的"
+      ],
+      "We couldn’t verify that an anonymous user uploaded this folder.": [
+        "我们无法验证此文件夹是由匿名用户上传的"
+      ],
+      "We weren’t able to confirm that the file content was uploaded by ${ claimedContentAuthor }. The reason is: ${ activeRevision.contentAuthor.error.error }": [
+        "我们无法确认此文件内容是由 ${ claimedContentAuthor } 上传的。原因是：${ activeRevision.contentAuthor.error.error }"
+      ],
+      "We weren’t able to confirm that the name was created or modified by ${ claimedNameAuthor }. The reason is: ${ nodeEntity.nameAuthor.error.error }": [
+        "我们无法确认此名称是由 ${ claimedNameAuthor } 创建或修改的。原因是：${ nodeEntity.nameAuthor.error.error }"
+      ],
+      "We weren’t able to confirm that the node was created by ${ claimedKeyAuthor }. The reason is: ${ nodeEntity.keyAuthor.error.error }": [
+        "我们无法确认此节点是由 ${ claimedKeyAuthor } 创建的。原因是：${ nodeEntity.keyAuthor.error.error }"
+      ],
+      "Welcome offer": [
+        "迎新优惠"
+      ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "欢迎使用 ${ BRAND_NAME } 商业版"
       ],
@@ -11519,7 +12591,7 @@
         "VPN 能为您防护哪些威胁？"
       ],
       "What is a VPN?": [
-        "什么是VPN？\n"
+        "什么是 VPN？\n"
       ],
       "What would you like to import?": [
         "您需要导入哪些信息？"
@@ -11542,6 +12614,9 @@
       "Your ${ planName } free trial ends on ${ textDate }": [
         "您的 ${ planName } 免费试用期将于 ${ textDate } 结束"
       ],
+      "Your ${ planTitle } subscription has started": [
+        "您的 ${ planTitle } 订阅已开始"
+      ],
       "Your 3 GB bonus": [
         "您的 3 GB 奖金"
       ],
@@ -11550,6 +12625,9 @@
       ],
       "Your changes are not synced yet": [
         "您的改动尚未同步"
+      ],
+      "Your download includes ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME } files": [
+        "您的下载包含 ${ DOCS_APP_NAME } 或 ${ SHEETS_APP_NAME } 文件"
       ],
       "Your exposed information": [
         "您的泄露信息"
@@ -11562,6 +12640,9 @@
       ],
       "Your welcome actions": [
         "您的新人礼包"
+      ],
+      "You’re off to a great start!": [
+        "您拥有了美好的开端！"
       ],
       "You’ve got 5 GB of storage": [
         "您已获得 5 GB 存储空间"
@@ -11662,6 +12743,9 @@
       ]
     },
     "tooltip": {
+      "${ LUMO_APP_NAME }: AI assistant that respects your privacy": [
+        "${ LUMO_APP_NAME }：尊重您隐私的 AI 助手"
+      ],
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: 安全登录您的所有设备。包括无限邮箱别名、共享、集成 2FA 等等。"
       ]
@@ -11682,6 +12766,11 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "管理员无法访问私人用户的数据，也无法重置他们的密码。"
+      ]
+    },
+    "Upsell": {
+      "Get Drive for Business": [
+        "获取 Drive for Business"
       ]
     },
     "Validation": {
@@ -11762,6 +12851,12 @@
       ],
       "Bitcoin via Email": [
         "通过电子邮件获取比特币"
+      ],
+      "Encrypted and secure ${ MAIL_APP_NAME } email address. You can easily send Bitcoin to anyone with just their ${ BRAND_NAME } name.": [
+        "加密且安全的 ${ MAIL_APP_NAME } 邮箱地址。您可以仅凭对方的 ${ BRAND_NAME } 名称轻松向任何人发送比特币。"
+      ],
+      "Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error": [
+        "通过电子邮件安全地交换比特币，代替复杂且易错的 26 字符比特币地址"
       ]
     },
     "wallet_signup_2024:app-switcher": {

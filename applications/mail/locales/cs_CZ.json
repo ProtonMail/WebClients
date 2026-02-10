@@ -201,9 +201,6 @@
       "Change email": [
         "Změnit e-mail"
       ],
-      "Change page": [
-        "Změnit stránku"
-      ],
       "Change password": [
         "Změnit heslo"
       ],
@@ -387,9 +384,6 @@
       "Customize": [
         "Přizpůsobit"
       ],
-      "Customize categories": [
-        "Přizpůsobit kategore"
-      ],
       "Customize import": [
         "Přizpůsobit import"
       ],
@@ -450,9 +444,6 @@
       "Disable alias": [
         "Deaktivovat alias"
       ],
-      "Disable categories": [
-        "Deaktivovat kategorie"
-      ],
       "Disabling alias": [
         "Deaktivace aliasu"
       ],
@@ -503,9 +494,6 @@
       ],
       "Edit address": [
         "Upravit adresu"
-      ],
-      "Edit categories": [
-        "Upravit kategorie"
       ],
       "Edit draft": [
         "Upravit koncept"
@@ -791,9 +779,6 @@
       ],
       "Join with ${ MEET_APP_NAME }": [
         "Připojte se pomocí ${ MEET_APP_NAME }"
-      ],
-      "Keep categories": [
-        "Zachovat kategorie"
       ],
       "Keep inbox as before": [
         "Ponechat doručenou poštu beze změn"
@@ -1229,9 +1214,6 @@
       ],
       "Save": [
         "Uložit"
-      ],
-      "Save preferences": [
-        "Uložit předvolby"
       ],
       "Saving${ ellipsis }": [
         "Ukládání${ ellipsis }"
@@ -4658,6 +4640,9 @@
       "Error while uploading attachments. Message is not sent.": [
         "Chyba při nahrávání přílohy. Zpráva nebyla odeslána."
       ],
+      "Failed loading group members": [
+        "Načtení členů skupiny selhalo"
+      ],
       "Failed to encrypt attachment. Please try again.": [
         "Šifrování přílohy selhalo. Zkuste to prosím znovu."
       ],
@@ -4762,6 +4747,9 @@
       ],
       "Name is required": [
         "Název je povinný"
+      ],
+      "Network error": [
+        "Chyba sítě"
       ],
       "Network error: Please check your connection and try again.": [
         "Chyba sítě, zkontrolujte přípojení a zkuste to znovu."
@@ -6938,9 +6926,6 @@
       "All messages stored with this label will be permanently deleted.": [
         "Všechny zprávy s tímto štítkem budou trvale smazány."
       ],
-      "All messages will be shown in Inbox, and the category tabs and tags will no longer be visible. ": [
-        "Všechny zprávy se zobrazí v doručené poště a záložky kategorií a štítků již nebudou viditelné. "
-      ],
       "All your calendars are disabled.": [
         "Všechny vaše kalendáře jsou deaktivovány."
       ],
@@ -8098,9 +8083,6 @@
       ],
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Obraťte se na nás pro pomoc s čímkoli od ${ BRAND_NAME }"
-      ],
-      "Receive notifications for ${ categoryLabel }": [
-        "Přijímat oznámení ohledně ${ categoryLabel }"
       ],
       "Recipient: ": [
         "Příjemce: "
@@ -9480,9 +9462,6 @@
       "Add image URL": [
         "Přidat odkaz obrázku"
       ],
-      "Add or remove categories. Set or turn off notifications. Adjust anytime in the ${ menuIcon } menu.": [
-        "Přidávejte nebo odebírejte kategorie. Nastavujte nebo vypínejte upozornění. Upravujte kdykoli v menu ${ menuIcon }."
-      ],
       "Add to group": [
         "Přidat do skupiny"
       ],
@@ -9587,9 +9566,6 @@
       ],
       "Cash": [
         "Hotovost"
-      ],
-      "Categories": [
-        "Kategorie"
       ],
       "Categories badge": [
         "Štítek kategorií"
@@ -9954,9 +9930,6 @@
       "Notification": [
         "Oznámení"
       ],
-      "Notifications": [
-        "Upozornění"
-      ],
       "Notifications are disabled, to enable them change the browser settings.": [
         "Upozornění jsou deaktivována, chcete-li je povolit, změňte nastavení prohlížeče."
       ],
@@ -10070,9 +10043,6 @@
       ],
       "Search in": [
         "Hledat v"
-      ],
-      "Select the categories to include and manage notifications for new emails.": [
-        "Vyberte kategorie, které chcete zahrnout, a spravujte oznámení o nových e-mailech."
       ],
       "Send auto-reply": [
         "Poslat automatickou odpověď"
@@ -12651,8 +12621,8 @@
       "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
         "Speciálně zvýhodněná cena ${ priceWithDiscount } platí ${ couponRedemptions } měsíc. Poté se automaticky obnoví za ${ renewPriceStr } na 1 měsíc. Službu můžete kdykoli zrušit.",
         "Speciálně zvýhodněná cena ${ priceWithDiscount } platí ${ couponRedemptions } měsíce. Poté se automaticky obnoví za ${ renewPriceStr } na 1 měsíc. Službu můžete kdykoli zrušit.",
-        "Zvýhodněná cena ${ priceWithDiscount } platí po dobu ${ couponRedemptions } měsíců. Poté se automaticky obnoví za ${ renewPriceStr } na 1 měsíc. Službu můžete kdykoli zrušit.",
-        "Zvýhodněná cena ${ priceWithDiscount } platí po dobu ${ couponRedemptions } měsíců. Poté se automaticky obnoví za ${ renewPriceStr } na 1 měsíc. Službu můžete kdykoli zrušit."
+        "Speciálně zvýhodněná cena ${ priceWithDiscount } platí ${ couponRedemptions } měsíců. Poté se automaticky obnoví za ${ renewPriceStr } na 1 měsíc. Službu můžete kdykoli zrušit.",
+        "Speciálně zvýhodněná cena ${ priceWithDiscount } platí ${ couponRedemptions } měsíců. Poté se automaticky obnoví za ${ renewPriceStr } na 1 měsíc. Službu můžete kdykoli zrušit."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "Speciální zvýhodněná cena ${ priceWithDiscount } platí pro první ${ subscriptionLength } měsíc.",
@@ -15341,9 +15311,6 @@
       "Apply gift code": [
         "Použít dárkový kód"
       ],
-      "Archive": [
-        "Archivovat"
-      ],
       "Archive all messages?": [
         "Archivovat všechny zprávy?"
       ],
@@ -15479,12 +15446,6 @@
       "Customize calendar import": [
         "Přizpůsobit proces importování kalendáře"
       ],
-      "Customize categories": [
-        "Přizpůsobení kategorií"
-      ],
-      "Customize categories to fit your needs": [
-        "Přizpůsobte kategorie svým potřebám"
-      ],
       "Customize your mail import": [
         "Přizpůsobte si proces importování e-mailů"
       ],
@@ -15553,9 +15514,6 @@
       ],
       "Desktop": [
         "Desktop"
-      ],
-      "Disable categories?": [
-        "Deaktivovat kategorie?"
       ],
       "Discover your subscription benefits": [
         "Objevte výhody předplatného"
@@ -16159,9 +16117,6 @@
       ],
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "Chcete-li si tuto tabulku prohlédnout, otevřete ji v aplikaci ${ SHEETS_APP_NAME } nebo ji stáhněte."
-      ],
-      "Trash": [
-        "Koš"
       ],
       "Trash all messages?": [
         "Přesunout všechny zprávy do koše?"

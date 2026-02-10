@@ -193,7 +193,7 @@
         "Ștergere interogare"
       ],
       "Clear selection": [
-        "Golire selectate"
+        "Anulare selecție"
       ],
       "Click here.": [
         "Apăsați aici."
@@ -982,6 +982,9 @@
       "Set as cover": [
         "Stabilire ca și copertă"
       ],
+      "Set password or expiration date": [
+        "Setare parolă sau dată de expirare"
+      ],
       "Set recovery methods": [
         "Setați metode de recuperare"
       ],
@@ -1017,6 +1020,9 @@
       ],
       "Share your calendar with your team": [
         "Partajați-vă calendarul cu echipa proprie"
+      ],
+      "Sharing is end-to-end encrypted": [
+        "Partajarea este criptată bilateral"
       ],
       "Sharing options": [
         "Opțiuni de partajare"
@@ -3391,6 +3397,9 @@
       "External invitations are temporarily disabled. Please try again later": [
         "Invitațiile externe sunt dezactivate temporar. Reîncercați mai târziu."
       ],
+      "Failed loading group members": [
+        "Eroare la încărcarea membrilor grupului."
+      ],
       "Failed to copy photo to album": [
         "Fotografia nu s-a putut copia în album."
       ],
@@ -3530,6 +3539,9 @@
       ],
       "Name is required": [
         "Numele este obligatoriu."
+      ],
+      "Network error": [
+        "Eroare de rețea."
       ],
       "No calendars found to import": [
         "Nu s-au găsit calendare de importat."
@@ -3835,6 +3847,9 @@
       ],
       "We were not able to load some of your shared items": [
         "Nu sau putut încărca unele dintre articolele partajate."
+      ],
+      "We were not able to load some search results": [
+        "Nu s-au putut încărca unele rezultate ale căutării."
       ],
       "We were not able to load the folder contents": [
         "Conținutul folderului nu s-a putut încărca."
@@ -5750,6 +5765,9 @@
       "Learn what to do ${ dataLeakedLink }": [
         "Aflați ce aveți de făcut ${ dataLeakedLink }"
       ],
+      "Link copied": [
+        "Legătura web a fost copiată."
+      ],
       "Link copied to clipboard": [
         "Legătura a fost copiată în memorie."
       ],
@@ -5925,6 +5943,9 @@
       ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Alertele noastre au ca prioritate siguranța. Dacă nu recunoașteți niciuna dintre informațiile divulgate, puteți ignora acest raport."
+      ],
+      "owner": [
+        "proprietar"
       ],
       "password": [
         "parola"
@@ -6433,6 +6454,9 @@
       "To fight spam and abuse, please verify you are human.": [
         "Pentru a combate abuzurile, dovediți că sunteți o persoană."
       ],
+      "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it's still best to download files only from trusted sources. ": [
+        "Pentru a vă proteja, ${ DRIVE_APP_NAME } vă poate scana fișierele într-un mod care să păstreze confidențialitatea și să blocheze fișierele rău intenționate. Cu toate acestea, cel mai bine este să descărcați fișiere numai din surse de încredere. "
+      ],
       "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it’s still best to download files only from trusted sources. ": [
         "Pentru a vă proteja, ${ DRIVE_APP_NAME } vă poate scana fișierele într-un mod care să păstreze confidențialitatea și să blocheze fișierele rău intenționate. Totuși, cel mai bine este să descărcați fișiere numai din surse de încredere."
       ],
@@ -6648,6 +6672,9 @@
       ],
       "who": [
         "cine"
+      ],
+      "Who has access": [
+        "Cine are acces"
       ],
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
         "va fi restaurat de la versiunea din ${ formattedRevisionDate }. Toate celelalte versiuni vor fi salvate în continuare."
@@ -7039,6 +7066,9 @@
       "Account holder": [
         "Titular cont"
       ],
+      "Active": [
+        "Activ"
+      ],
       "Add email address": [
         "Adăugare e-mail"
       ],
@@ -7051,6 +7081,9 @@
       "Address": [
         "Adresa"
       ],
+      "admin": [
+        "administrator"
+      ],
       "Alias title": [
         "Titlu alias"
       ],
@@ -7062,6 +7095,9 @@
       ],
       "Anonymous": [
         "Anonim"
+      ],
+      "Anyone on the Internet with the link": [
+        "Oricine de pe internet care are legătura web"
       ],
       "App password": [
         "Parola aplicației"
@@ -7107,6 +7143,12 @@
       ],
       "Calendars": [
         "Calendare"
+      ],
+      "can edit": [
+        "poate edita"
+      ],
+      "can view": [
+        "poate vedea"
       ],
       "Cancel download": [
         "Anulare descărcare"
@@ -7190,6 +7232,9 @@
         "Ștergeți unitatea?",
         "Ștergeți unitățile?",
         "Ștergeți unitățile?"
+      ],
+      "Delete link and remove access for everyone": [
+        "Ștergere legătură web și anulare acces pentru toți"
       ],
       "Delete recovery-related information.": [
         "Ștergere informații privind recuperarea."
@@ -7391,6 +7436,9 @@
       ],
       "New password": [
         "Parola nouă"
+      ],
+      "Not active": [
+        "Inactiv"
       ],
       "Note": [
         "Notiță"
@@ -8561,6 +8609,9 @@
       "Password-protected Emails": [
         "Mesaje protejate prin parolă"
       ],
+      "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
+        "Asistență telefonică (peste ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } utilizatori)"
+      ],
       "Priority email support": [
         "Asistență pe e-mail prioritară"
       ],
@@ -8995,6 +9046,9 @@
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Vă puteți personaliza semnătura de e-mail cu sigle, imagini, pictograme de rețele sociale, legături web către datele de contact și multe altele."
+      ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } or more users": [
+        "Asistența telefonică este disponibilă de la echipa de asistență pentru clienți ${ BRAND_NAME } în timpul programului de lucru european, pentru clienții cu ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } sau mai mulți utilizatori."
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Împiedică accesarea mesajelor de către ${ BRAND_NAME } sau de către terți. Singurele persoane care pot citi mesajele sunt expeditorul și destinatarul specificat."
@@ -11161,6 +11215,14 @@
         "Vi se anulează abonamentul, așteptați."
       ]
     },
+    "Status": {
+      "accepted": [
+        "acceptat"
+      ],
+      "pending": [
+        "în așteptare"
+      ]
+    },
     "Storage": {
       "Get more storage": [
         "Obțineți mai mult spațiu de stocare"
@@ -12395,6 +12457,11 @@
       "Folder details": [
         "Detalii folder"
       ],
+      "Found ${ resultCount } result": [
+        "Rezultate găsite: ${ resultCount }",
+        "Rezultate găsite: ${ resultCount }",
+        "Rezultate găsite: ${ resultCount }"
+      ],
       "Get ${ DRIVE_SHORT_APP_NAME } on your phone": [
         "Luați ${ DRIVE_SHORT_APP_NAME } pe telefon"
       ],
@@ -12661,6 +12728,12 @@
       "Processing...": [
         "Se procesează..."
       ],
+      "Public link": [
+        "Legătură web publică"
+      ],
+      "Public link settings": [
+        "Setări legătură web publică"
+      ],
       "Public shared link status": [
         "Stare legătură web partajată"
       ],
@@ -12752,6 +12825,9 @@
       ],
       "Settings": [
         "Setări"
+      ],
+      "Settings for ${ sharedFileName }": [
+        "Setări pentru ${ sharedFileName }"
       ],
       "SHA1": [
         "SHA1"

@@ -37,6 +37,9 @@
       "Accept and view the item": [
         "Acceptare și vizualizare articol"
       ],
+      "Accept invitation": [
+        "Acceptare invitație"
+      ],
       "Account": [
         "Cont"
       ],
@@ -1041,6 +1044,9 @@
       "Error reporting problem": [
         "Problemă de raportare a erorii."
       ],
+      "Failed loading group members": [
+        "Eroare la încărcarea membrilor grupului."
+      ],
       "Failed removing the invite.": [
         "Eșuare eliminare invitație."
       ],
@@ -1472,8 +1478,17 @@
         "Transferate: ${ forwardedEmailsCount }",
         "Transferate: ${ forwardedEmailsCount }"
       ],
+      "${ inviterEmail } wants to share an item with a group you administer.": [
+        "${ inviterEmail } dorește să partajeze un articol cu un grup pe care îl administrați."
+      ],
+      "${ inviterEmail } wants to share an item with the group ${ invitedGroup.Name }.": [
+        "${ inviterEmail } dorește să partajeze un articol cu grupul ${ invitedGroup.Name }."
+      ],
       "${ inviterEmail } wants to share an item with you.": [
         "${ inviterEmail } dorește să vă partajeze un articol."
+      ],
+      "${ maybeVaultName } has been shared with a group you are member of": [
+        "${ maybeVaultName } a fost partajat cu un grup din care faceți parte"
       ],
       "${ memberCount } member": [
         "${ memberCount } membru",
@@ -1484,6 +1499,9 @@
         "${ n } articol",
         "${ n } articole",
         "${ n } de articole"
+      ],
+      "${ newGroupSharesCount } new shares have been shared with a group you are member of": [
+        "${ newGroupSharesCount } partajări noi au fost partajate cu un grup din care faceți parte."
       ],
       "${ PASS_APP_NAME } will always be accessible": [
         "${ PASS_APP_NAME } va fi disponibil oricând"
@@ -1524,6 +1542,11 @@
         "${ row.breachCount } divulgări detectate",
         "${ row.breachCount } de divulgări detectate"
       ],
+      "(${ membersCount } member)": [
+        "(${ membersCount } membru)",
+        "(${ membersCount } membri)",
+        "(${ membersCount } de membri)"
+      ],
       "(Empty)": [
         "(Gol)"
       ],
@@ -1532,6 +1555,9 @@
       ],
       "A contact is created for every email address that sends emails to or receives emails from ${ aliasEmail }.": [
         "Este creat un contact pentru fiecare adresă de e-mail care trimite mesaje către sau primește de la ${ aliasEmail }."
+      ],
+      "A new version is being downloaded. Once the download completes, it will be available on next restart.": [
+        "O nouă versiune este în curs de descărcare. După finalizarea descărcării, va fi disponibilă la următoarea repornire."
       ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "Este disponibilă o versiune nouă ${ PASS_APP_NAME }. Actualizați-o pentru a vă bucura de cele mai recente caracteristici și remedieri de erori."
@@ -1909,6 +1935,9 @@
       "Invite successfully resent": [
         "Invitația a fost retrimisă."
       ],
+      "invites the group ${ invitedGroup.Name } to access items in": [
+        "invită grupul ${ invitedGroup.Name } să acceseze articolele din"
+      ],
       "invites you to access items in": [
         "vă invită să accesați articolele din"
       ],
@@ -2035,6 +2064,9 @@
       ],
       "No network connection": [
         "Nu există conexiune la rețea."
+      ],
+      "No new versions are available at the moment.": [
+        "În acest moment, nu există versiuni noi disponibile."
       ],
       "None": [
         "Fără"
@@ -2379,6 +2411,9 @@
         "Nu s-au putut importa ${ totalIgnored } articole:",
         "Nu s-au putut importa ${ totalIgnored } de articole:"
       ],
+      "The group is invited to a vault.": [
+        "Grupul este invitat la un seif."
+      ],
       "The secure link has been removed": [
         "Legătura web securizată a fost eliminată."
       ],
@@ -2427,6 +2462,12 @@
       "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
         "Aceasta va respinge dispozitivul **${ name }** care a încercat să se conecteze la contul personal ${ BRAND_NAME } la **${ date }**."
       ],
+      "This will reload the application.": [
+        "Aceasta va reîncărca aplicația."
+      ],
+      "This will trigger a check for new beta releases.": [
+        "Aceasta va declanșa o verificare a noilor versiuni beta."
+      ],
       "To keep receiving emails transfer these aliases to a different mailbox:": [
         "Pentru a continua să primiți mesaje pe e-mail, transferați aceste aliasuri la un alt cont de e-mail:"
       ],
@@ -2441,6 +2482,9 @@
       ],
       "Trusted by over 50,000 business users and 100 million accounts around the world.": [
         "Aprobat de peste 50.000 de utilizatori de afaceri și 100 de milioane de conturi din întreaga lume."
+      ],
+      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public.": [
+        "Încercați noile funcții, actualizări și produse ${ BRAND_NAME } înainte ca acestea să fie lansate publicului."
       ],
       "Unable to copy to clipboard": [
         "Nu se poate copia în memorie."
@@ -4820,6 +4864,9 @@
       ],
       "Vault": [
         "Seif"
+      ],
+      "Vault shared with a group you administer": [
+        "Seif partajat cu un grup pe care îl administrați"
       ],
       "Vault shared with you": [
         "Seif partajat cu dvs."

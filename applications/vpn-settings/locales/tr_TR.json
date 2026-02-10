@@ -5895,9 +5895,9 @@
       "${ storage } storage": [
         "${ storage } depolama alanı"
       ],
-      "${ userFound } user found": [
-        "${ userFound } kullanıcı bulundu",
-        "${ userFound } kullanıcı bulundu"
+      "${ total } user found": [
+        "${ total } kullanıcı bulundu",
+        "${ total } kullanıcı bulundu"
       ],
       "${ vaultLink } created": [
         "${ vaultLink } eklendi"
@@ -8378,6 +8378,9 @@
     "invitation status": {
       "Declined": [
         "Reddedildi"
+      ],
+      "Owner": [
+        "Sahip"
       ],
       "Paused": [
         "Duraklatılmış"
@@ -16158,6 +16161,9 @@
       ],
       "User declined invitation": [
         "Kullanıcı daveti reddetti"
+      ],
+      "User is a group": [
+        "Kullanıcı bir gruptur"
       ],
       "Waiting for user to accept the invitation": [
         "Kullanıcının daveti kabul etmesi bekleniyor"

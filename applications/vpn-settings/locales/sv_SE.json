@@ -5877,10 +5877,6 @@
       "${ storage } storage": [
         "${ storage } lagringsutrymme"
       ],
-      "${ userFound } user found": [
-        "${ userFound } användare hittades",
-        "${ userFound } användare hittades"
-      ],
       "${ vaultLink } created": [
         "${ vaultLink } skapad"
       ],
@@ -8338,6 +8334,9 @@
     "invitation status": {
       "Declined": [
         "Avböjd"
+      ],
+      "Owner": [
+        "Ägare"
       ],
       "Paused": [
         "Pausad"
@@ -16100,6 +16099,9 @@
       ],
       "User declined invitation": [
         "Användare avböjde inbjudan"
+      ],
+      "User is a group": [
+        "Användare är en grupp"
       ],
       "Waiting for user to accept the invitation": [
         "Väntar på att användaren ska acceptera inbjudan"

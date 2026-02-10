@@ -516,6 +516,9 @@
       "Disable": [
         "Vypnout"
       ],
+      "Disable categories": [
+        "Deaktivovat kategorie"
+      ],
       "Disable recovery phrase": [
         "Deaktivace obnovovací fráze"
       ],
@@ -908,6 +911,9 @@
       ],
       "Keep": [
         "Zachovat"
+      ],
+      "Keep categories": [
+        "Zachovat kategorie"
       ],
       "Keep Editing": [
         "Pokračovat v úpravách"
@@ -6255,6 +6261,9 @@
       "Expired": [
         "Platnost vypršela"
       ],
+      "Failed loading group members": [
+        "Načtení členů skupiny selhalo"
+      ],
       "Failed to add group member": [
         "Přidání člena skupiny selhalo"
       ],
@@ -6392,6 +6401,9 @@
       ],
       "Name required": [
         "Název je povinný"
+      ],
+      "Network error": [
+        "Chyba sítě"
       ],
       "No active sessions": [
         "Žádné aktivní relace"
@@ -6927,7 +6939,7 @@
     },
     "Error message": {
       "Account is deleted or disabled": [
-        "Účet je smazán nebo zakázán"
+        "Účet je smazán nebo deaktivován"
       ],
       "App currently unavailable": [
         "Aplikace je momentálně nedostupná"
@@ -8904,12 +8916,6 @@
       "${ url } deleted.": [
         "Doména ${ url } smazána."
       ],
-      "${ userFound } user found": [
-        "Nalezen ${ userFound } uživatel",
-        "Nalezeni ${ userFound } uživatelé",
-        "Nalezeno ${ userFound } uživatelů",
-        "Nalezeno ${ userFound } uživatelů"
-      ],
       "${ vaultLink } created": [
         "${ vaultLink } byl vytvořen"
       ],
@@ -9146,6 +9152,9 @@
       ],
       "All members have been added.": [
         "Všichni členové byli přidáni"
+      ],
+      "All messages will be shown in Inbox, and the category tabs and tags will no longer be visible. ": [
+        "Všechny zprávy se zobrazí ve složce Doručená pošta a záložky kategorií a štítků již nebudou viditelné. "
       ],
       "All users": [
         "Všichni uživatelé"
@@ -12212,6 +12221,9 @@
     "invitation status": {
       "Declined": [
         "Odmítnuto"
+      ],
+      "Owner": [
+        "Vlastník"
       ],
       "Paused": [
         "Pozastaveno"
@@ -17872,8 +17884,8 @@
       "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
         "Speciálně zvýhodněná cena ${ priceWithDiscount } platí ${ couponRedemptions } měsíc. Poté se automaticky obnoví za ${ renewPriceStr } na 1 měsíc. Službu můžete kdykoli zrušit.",
         "Speciálně zvýhodněná cena ${ priceWithDiscount } platí ${ couponRedemptions } měsíce. Poté se automaticky obnoví za ${ renewPriceStr } na 1 měsíc. Službu můžete kdykoli zrušit.",
-        "Zvýhodněná cena ${ priceWithDiscount } platí po dobu ${ couponRedemptions } měsíců. Poté se automaticky obnoví za ${ renewPriceStr } na 1 měsíc. Službu můžete kdykoli zrušit.",
-        "Zvýhodněná cena ${ priceWithDiscount } platí po dobu ${ couponRedemptions } měsíců. Poté se automaticky obnoví za ${ renewPriceStr } na 1 měsíc. Službu můžete kdykoli zrušit."
+        "Speciálně zvýhodněná cena ${ priceWithDiscount } platí ${ couponRedemptions } měsíců. Poté se automaticky obnoví za ${ renewPriceStr } na 1 měsíc. Službu můžete kdykoli zrušit.",
+        "Speciálně zvýhodněná cena ${ priceWithDiscount } platí ${ couponRedemptions } měsíců. Poté se automaticky obnoví za ${ renewPriceStr } na 1 měsíc. Službu můžete kdykoli zrušit."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "Speciální zvýhodněná cena ${ priceWithDiscount } platí pro první ${ subscriptionLength } měsíc.",
@@ -22225,7 +22237,7 @@
         "Světlý"
       ],
       "Mode: Auto": [
-        "Režim: Automaticky"
+        "Režim: Automatický"
       ],
       "Mode: Dark": [
         "Režim: Tmavý"
@@ -22857,6 +22869,9 @@
       ],
       "Disable activity monitor?": [
         "Deaktivovat monitor aktivity?"
+      ],
+      "Disable categories?": [
+        "Deaktivovat kategorie?"
       ],
       "Disable two-factor authentication": [
         "Zakázat dvoufázové ověření"
@@ -24341,6 +24356,9 @@
       ],
       "User declined invitation": [
         "Uživatel odmítl pozvání"
+      ],
+      "User is a group": [
+        "Uživatel je skupina"
       ],
       "Waiting for user to accept the invitation": [
         "Čekání na přijetí pozvánky uživatelem"

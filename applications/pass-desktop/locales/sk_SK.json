@@ -37,6 +37,9 @@
       "Accept and view the item": [
         "Prijať a zobraziť novú položku"
       ],
+      "Accept invitation": [
+        "Prijať pozvánku"
+      ],
       "Account": [
         "Účet"
       ],
@@ -1046,6 +1049,9 @@
       "Error reporting problem": [
         "Chyba pri nahlasovaní problému"
       ],
+      "Failed loading group members": [
+        "Chyba pri načítavaní členov skupiny"
+      ],
       "Failed removing the invite.": [
         "Odstránenie pozvánky zlyhalo."
       ],
@@ -1488,8 +1494,17 @@
         "${ forwardedEmailsCount } preposlaných",
         "${ forwardedEmailsCount } preposlaných"
       ],
+      "${ inviterEmail } wants to share an item with a group you administer.": [
+        "${ inviterEmail } chce zdieľať položku so skupinou, ktorú spravujete."
+      ],
+      "${ inviterEmail } wants to share an item with the group ${ invitedGroup.Name }.": [
+        "${ inviterEmail } chce zdieľať položku v skupine ${ invitedGroup.Name }."
+      ],
       "${ inviterEmail } wants to share an item with you.": [
         "${ inviterEmail } chce s vami zdieľať položku."
+      ],
+      "${ maybeVaultName } has been shared with a group you are member of": [
+        "${ maybeVaultName } bol zdieľaný so skupinou, ktorej ste členom"
       ],
       "${ memberCount } member": [
         "${ memberCount } člen",
@@ -1502,6 +1517,9 @@
         "${ n } položky",
         "${ n } položiek ",
         "${ n } položiek "
+      ],
+      "${ newGroupSharesCount } new shares have been shared with a group you are member of": [
+        "${ newGroupSharesCount } nových zdieľaní bolo zdieľaných so skupinou, ktorej ste členom"
       ],
       "${ PASS_APP_NAME } will always be accessible": [
         "${ PASS_APP_NAME } bude vždy dostupný"
@@ -1545,6 +1563,12 @@
         "${ row.breachCount } zistené úniky",
         "${ row.breachCount } zistených únikov"
       ],
+      "(${ membersCount } member)": [
+        "(${ membersCount } člen)",
+        "(${ membersCount } členovia)",
+        "(${ membersCount } členov)",
+        "(${ membersCount } členov)"
+      ],
       "(Empty)": [
         "(Prázdne)"
       ],
@@ -1553,6 +1577,9 @@
       ],
       "A contact is created for every email address that sends emails to or receives emails from ${ aliasEmail }.": [
         "Pre každú emailovú adresu, na ktorú sa odosielajú alebo prijímajú emaily z ${ aliasEmail }, sa vytvorí kontakt."
+      ],
+      "A new version is being downloaded. Once the download completes, it will be available on next restart.": [
+        "Sťahuje sa nová verzia. Po dokončení sťahovania bude k dispozícii po ďalšom reštarte."
       ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "K dispozícii je nová verzia ${ PASS_APP_NAME }. Aktualizujte a využívajte najnovšie funkcie a opravy chýb."
@@ -1932,6 +1959,9 @@
       "Invite successfully resent": [
         "Pozvánka bola znova úspešne odoslaná"
       ],
+      "invites the group ${ invitedGroup.Name } to access items in": [
+        "pozýva skupinu ${ invitedGroup.Name } na prístup k položkám v"
+      ],
       "invites you to access items in": [
         "vás pozýva na prístup k položkám v"
       ],
@@ -2060,6 +2090,9 @@
       ],
       "No network connection": [
         "Žiadne sieťové pripojenie"
+      ],
+      "No new versions are available at the moment.": [
+        "V súčasnosti nie sú k dispozícii žiadne nové verzie."
       ],
       "None": [
         "Nezamykať"
@@ -2406,6 +2439,9 @@
         "Nasledujúcich ${ totalIgnored } položiek nebolo možné importovať:",
         "Nasledujúcich ${ totalIgnored } položiek nebolo možné importovať:"
       ],
+      "The group is invited to a vault.": [
+        "Skupina je pozvaná do trezora."
+      ],
       "The secure link has been removed": [
         "Bezpečný odkaz bol odstránený"
       ],
@@ -2454,6 +2490,12 @@
       "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
         "Tým zamietnete zariadenie **${ name }**, ktoré sa **${ date }** pokúsilo prihlásiť k vášmu ${ BRAND_NAME } účtu."
       ],
+      "This will reload the application.": [
+        "Týmto dôjde k opätovnému načítaniu aplikácie."
+      ],
+      "This will trigger a check for new beta releases.": [
+        "Tento krok spustí kontrolu nových beta verzií."
+      ],
       "To keep receiving emails transfer these aliases to a different mailbox:": [
         "Ak chcete aj naďalej dostávať emaily, presuňte tieto aliasy do inej poštovej schránky:"
       ],
@@ -2468,6 +2510,9 @@
       ],
       "Trusted by over 50,000 business users and 100 million accounts around the world.": [
         "Má dôveru viac ako 50 000 firemných používateľov a 100 miliónov účtov na celom svete."
+      ],
+      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public.": [
+        "Vyskúšajte nové ${ BRAND_NAME } funkcie, aktualizácie a produkty pred ich zverejnením."
       ],
       "Unable to copy to clipboard": [
         "Nedá sa kopírovať do schránky"
@@ -4875,6 +4920,9 @@
       ],
       "Vault": [
         "Trezor"
+      ],
+      "Vault shared with a group you administer": [
+        "Trezor zdieľaný so skupinou, ktorú spravujete"
       ],
       "Vault shared with you": [
         "Trezor zdieľaný s vami"
