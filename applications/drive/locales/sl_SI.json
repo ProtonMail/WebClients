@@ -2812,13 +2812,13 @@
     },
     "Drawer tab, Action": {
       "Download for Linux": [
-        "Naloži za Linux"
+        "Prenesi za Linux"
       ],
       "Download for macOS": [
-        "Naloži za macOS"
+        "Prenesi za macOS"
       ],
       "Download for Windows": [
-        "Naloži za Windows"
+        "Prenesi za Windows"
       ]
     },
     "drive:action": {
@@ -3421,6 +3421,12 @@
       ],
       "Your import will not be processed.": [
         "Vaš uvoz ne bo obdelan."
+      ],
+      "Network error": [
+        "Omrežna napaka"
+      ],
+      "Unable to load VPN dashboard. Please check your connection and try again.": [
+        "Ni mogoče naložiti nadzorne plošče VPN. Preverite svojo povezavo in poskusite znova."
       ]
     },
     "error": {
@@ -6199,6 +6205,9 @@
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "Vaše preizkusno obdobje se bo končalo čez ${ timeRemaining }."
+      ],
+      "It's better to have:": [
+        "Bolje je imeti:"
       ]
     },
     "info": {
@@ -8634,6 +8643,9 @@
       ],
       "Your settings have been changed successfully": [
         "Vaše nastavitve so bile uspešno spremenjene"
+      ],
+      "The spreadsheet failed to be created": [
+        "Ustvarjanje preglednice ni uspelo"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -8949,7 +8961,7 @@
         "Skrbniška plošča za upravljanje uporabnikov in naročnin"
       ],
       "Advanced account protection": [
-        "Napredni program za zaščito računa"
+        "Napredna zaščita računa"
       ],
       "Team policies": [
         "Pravilniki skupine"
@@ -9379,6 +9391,9 @@
       ],
       "your subscription": [
         "vaša naročnina"
+      ],
+      "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
+        "**Če naročilo oddate pred tem datumom,** prejmete **${ referrerRewardAmount }** dobropisa."
       ]
     },
     "Safety review": {
@@ -9925,6 +9940,9 @@
       ],
       "Sign in to your organization": [
         "Prijavite se v svojo organizacijo"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Preusmerjeni boste k ponudniku SSO tretje osebe."
       ]
     },
     "State": {
@@ -11578,6 +11596,12 @@
       ],
       "You’ve got 5 GB of storage": [
         "Pridobili ste pet GB prostora za shranjevanje."
+      ],
+      "How your free trial works": [
+        "Kako deluje vaš brezplačni preizkus"
+      ],
+      "Untitled spreadsheet ${ date }": [
+        "Neimenovana preglednica ${ date }"
       ]
     },
     "Today icon tooltip in mini calendar": {

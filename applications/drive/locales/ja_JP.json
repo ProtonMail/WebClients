@@ -1220,6 +1220,18 @@
       ],
       "Zoom out": [
         "縮小"
+      ],
+      "Cancel downloads": [
+        "ダウンロードをキャンセル"
+      ],
+      "Cancel transfers": [
+        "転送をキャンセル"
+      ],
+      "Download (${ nbSelected })": [
+        "ダウンロード (${ nbSelected })"
+      ],
+      "Scan & Download (${ nbSelected })": [
+        "スキャンしてダウンロード (${ nbSelected })"
       ]
     },
     "Action: Docs": {
@@ -2958,6 +2970,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "すでに 10 個のエリアスを作成しました。${ BRAND_NAME }Unlimitedで無制限のエイリアスと 500 GBのストレージを獲得しましょう。"
+      ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "CSVファイルおよびVCFファイルでインポートするには、ファイルが${ MAX_IMPORT_FILE_SIZE_STRING }または${ maxContactString }件の連絡先を超えないようにしてください。ファイルが大きすぎる場合は、小さいファイルに分割してください。${ learnMoreLink }"
       ]
     },
     "description": {
@@ -3814,6 +3829,15 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ 復号できない名前"
+      ],
+      "Network error": [
+        "ネットワークエラーが発生しました"
+      ],
+      "This offer is not available in your country": [
+        "このオファーはお住まいの国ではご利用いただけません"
+      ],
+      "We cannot retrieve this item": [
+        "このアイテムを取得できませんでした"
       ]
     },
     "error": {
@@ -3888,6 +3912,9 @@
       ],
       "Your file ${ formattedFilename } is empty.": [
         "ファイル${ formattedFilename } は空です。"
+      ],
+      "Your file ${ formattedFilename } contains more than ${ maxContactString } contacts.": [
+        "あなたのファイル ${ formattedFilename } には${ maxContactString } 以上の連絡先が含まれています。"
       ]
     },
     "Error importing event": {
@@ -6700,6 +6727,18 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "お客様ご自身のアカウントデータは引き続き表示できますが、すべてのユーザーアカウントがお客様の組織から削除されます。"
+      ],
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "${ maxContact } の制限まで、すべての連絡先がインポートされます"
+      ],
+      "Malware detected": [
+        "マルウェアが検出されました"
+      ],
+      "This will cancel any remaining downloads.": [
+        "これにより、残りのダウンロードがすべてキャンセルされます。"
+      ],
+      "This will cancel any remaining uploads and downloads. Cancelled uploads won't be saved in ${ DRIVE_APP_NAME }.": [
+        "これにより、残りのすべてのアップロードとダウンロードがキャンセルされます。キャンセルされたアップロードは${ DRIVE_APP_NAME }に保存されません。"
       ]
     },
     "info": {
@@ -7746,6 +7785,15 @@
       ],
       "Up to ${ n } participant": [
         "最大${ n }人の参加者"
+      ],
+      "${ n } participant": [
+        "${ n }人の参加者"
+      ],
+      "Booking pages": [
+        "予約ページ"
+      ],
+      "Meeting recording": [
+        "ミーティング録画"
       ]
     },
     "Message": {
@@ -9817,6 +9865,15 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "あなたのサブスクリプションは現在、割引が適用されています。この新しいプロモーションに移行すると、既存の割引は適用されなくなります。"
+      ],
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "この割引は ${ renewalsWithCoupon } の更新で有効です。"
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "特別割引価格は${ couponRedemptions }ヶ月間有効です。その後、1ヶ月${ renewPriceStr }で自動更新されます。いつでもキャンセル可能です。"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "${ priceWithDiscount }の特別割引価格は${ couponRedemptions }ヶ月間有効です。その後、1ヶ月${ renewPriceStr }で自動更新されます。いつでもキャンセル可能です。"
       ]
     },
     "Payments.Error": {
@@ -12580,6 +12637,12 @@
       ],
       "You’ve got 5 GB of storage": [
         "5 GB のストレージを手に入れました"
+      ],
+      "Cancel all downloads?": [
+        "すべてのダウンロードをキャンセルしますか?"
+      ],
+      "Cancel all transfers?": [
+        "すべての転送をキャンセルしますか?"
       ]
     },
     "Today icon tooltip in mini calendar": {
