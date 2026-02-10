@@ -37,6 +37,9 @@
       "Accept and view the item": [
         "Αποδοχή και προβολή αντικειμένου"
       ],
+      "Accept invitation": [
+        "Αποδοχή πρόσκλησης"
+      ],
       "Account": [
         "Λογαριασμός"
       ],
@@ -1036,6 +1039,9 @@
       "Error reporting problem": [
         "Πρόβλημα αναφοράς σφαλμάτων"
       ],
+      "Failed loading group members": [
+        "Αποτυχία φόρτωσης μελών ομάδας"
+      ],
       "Failed removing the invite.": [
         "Απέτυχε η κατάργηση της πρόσκλησης."
       ],
@@ -1456,8 +1462,17 @@
         "${ forwardedEmailsCount } προωθήθηκε",
         "${ forwardedEmailsCount } προωθήθηκαν"
       ],
+      "${ inviterEmail } wants to share an item with a group you administer.": [
+        "Ο ${ inviterEmail } θέλει να μοιραστεί ένα στοιχείο με μια ομάδα που διαχειρίζεστε."
+      ],
+      "${ inviterEmail } wants to share an item with the group ${ invitedGroup.Name }.": [
+        "Ο ${ inviterEmail } θέλει να μοιραστεί ένα στοιχείο με την ομάδα ${ invitedGroup.Name }."
+      ],
       "${ inviterEmail } wants to share an item with you.": [
         "Ο ${ inviterEmail } θέλει να μοιραστεί μαζί σας ένα αντικείμενο."
+      ],
+      "${ maybeVaultName } has been shared with a group you are member of": [
+        "Η ${ maybeVaultName } έχει κοινοποιηθεί σε μια ομάδα της οποίας είστε μέλος."
       ],
       "${ memberCount } member": [
         "${ memberCount } μέλος",
@@ -1466,6 +1481,9 @@
       "${ n } item": [
         "${ n } στοιχείο",
         "${ n } στοιχεία"
+      ],
+      "${ newGroupSharesCount } new shares have been shared with a group you are member of": [
+        "${ newGroupSharesCount } νέες κοινοποιήσεις έχουν μοιραστεί με μια ομάδα της οποίας είστε μέλος"
       ],
       "${ PASS_APP_NAME } will always be accessible": [
         "Το ${ PASS_APP_NAME } θα είναι πάντα προσβάσιμο"
@@ -1502,6 +1520,10 @@
       "${ row.breachCount } breach detected": [
         "${ row.breachCount } παραβίαση εντοπίστηκε",
         "${ row.breachCount } παραβιάσεις εντοπίστηκαν"
+      ],
+      "(${ membersCount } member)": [
+        "(${ membersCount } μέλος)",
+        "(${ membersCount } μέλη)"
       ],
       "(Empty)": [
         "(Άδειο)"
@@ -1888,6 +1910,9 @@
       ],
       "Invite successfully resent": [
         "Επιτυχής αποστολή πρόσκλησης εκ νέου"
+      ],
+      "invites the group ${ invitedGroup.Name } to access items in": [
+        "προσκαλεί την ομάδα ${ invitedGroup.Name } να έχει πρόσβαση σε στοιχεία στη"
       ],
       "invites you to access items in": [
         "σας προσκαλεί να αποκτήσετε πρόσβαση σε στοιχεία στη"
@@ -2357,6 +2382,9 @@
       "The following ${ totalIgnored } item could not be imported:": [
         "Δεν ήταν δυνατή η εισαγωγή του ${ totalIgnored } στοιχείου:",
         "Δεν ήταν δυνατή η εισαγωγή των ${ totalIgnored } στοιχείων:"
+      ],
+      "The group is invited to a vault.": [
+        "Η ομάδα προσκαλείται σε μία κρύπτη."
       ],
       "The secure link has been removed": [
         "Ο ασφαλής σύνδεσμος καταργήθηκε"
@@ -4765,6 +4793,9 @@
       ],
       "Vault": [
         "Κρύπτη"
+      ],
+      "Vault shared with a group you administer": [
+        "Κρύπτη που κοινοποιήθηκε με μια ομάδα που διαχειρίζεστε"
       ],
       "Vault shared with you": [
         "Η κρύπτη που έχει κοινοποιηθεί σε εσάς"
