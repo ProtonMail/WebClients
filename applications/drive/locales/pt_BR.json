@@ -1238,6 +1238,12 @@
       ],
       "Scan & Download (${ nbSelected })": [
         "Escanear e Baixar (${ nbSelected })"
+      ],
+      "Set password or expiration date": [
+        "Definir senha ou data de expiração"
+      ],
+      "Sharing is end-to-end encrypted": [
+        "O compartilhado com criptografia ponta a ponta"
       ]
     },
     "Action: Docs": {
@@ -3863,6 +3869,12 @@
       ],
       "We're sorry, but free upload is not available right now.": [
         "Desculpe, o upload gratuito não está disponível no momento."
+      ],
+      "Failed loading group members": [
+        "Falha ao carregar membros do grupo"
+      ],
+      "Network error": [
+        "Erro de rede"
       ]
     },
     "error": {
@@ -6847,6 +6859,15 @@
       ],
       "We couldn't verify ${ nameAuthor } uploaded ${ node.name }. The following may have been tampered with: file data order. Only open if you trust it.": [
         "Não foi possível verificar se ${ nameAuthor } enviou ${ node.name }. Os seguintes dados podem ter sido adulterados: ordem dos dados do arquivo. Abra somente se confiar no conteúdo."
+      ],
+      "Link copied": [
+        "Link copiado"
+      ],
+      "owner": [
+        "proprietário"
+      ],
+      "Who has access": [
+        "Quem tem acesso"
       ]
     },
     "info": {
@@ -7606,6 +7627,27 @@
       ],
       "ZIP code": [
         "CEP"
+      ],
+      "Active": [
+        "ativo"
+      ],
+      "admin": [
+        "administrador"
+      ],
+      "Anyone on the Internet with the link": [
+        "Qualquer pessoa na internet com este link"
+      ],
+      "can edit": [
+        "pode editar"
+      ],
+      "can view": [
+        "pode ver"
+      ],
+      "Delete link and remove access for everyone": [
+        "Excluir o link e remover o acesso para todos"
+      ],
+      "Not active": [
+        "Não ativo"
       ]
     },
     "Label for contact group color": {
@@ -11116,6 +11158,12 @@
       ],
       "Pending": [
         "Pendente"
+      ],
+      "accepted": [
+        "aceito"
+      ],
+      "pending": [
+        "pendente"
       ]
     },
     "Storage": {
@@ -12958,6 +13006,15 @@
       ],
       "Your ${ planTitle } subscription has started": [
         "Sua assinatura ${ planTitle } começou"
+      ],
+      "Public link": [
+        "Link público"
+      ],
+      "Public link settings": [
+        "Configurações de link público"
+      ],
+      "Settings for ${ sharedFileName }": [
+        "Configurações para ${ sharedFileName }"
       ]
     },
     "Today icon tooltip in mini calendar": {

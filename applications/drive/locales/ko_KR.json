@@ -1229,6 +1229,12 @@
       ],
       "Scan & Download (${ nbSelected })": [
         "스캔 및 다운로드 (${ nbSelected }개)"
+      ],
+      "Set password or expiration date": [
+        "비밀번호 또는 만료 시간 설정"
+      ],
+      "Sharing is end-to-end encrypted": [
+        "공유가 종단간 암호화됩니다"
       ]
     },
     "Actions": {
@@ -3819,6 +3825,12 @@
       ],
       "We're sorry, but free upload is not available right now.": [
         "죄송합니다. 현재 무료 업로드를 사용할 수 없습니다."
+      ],
+      "Network error": [
+        "네트워크 오류"
+      ],
+      "We were not able to load some search results": [
+        "일부 검색 결과를 불러올 수 없습니다."
       ]
     },
     "error": {
@@ -5219,7 +5231,7 @@
         "완료"
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
-        "아무것도 보지 못하셨나요? 팝업 차단기를 비활성화 하는 것을 잊지 마세요."
+        "아무 화면도 보지 못하셨나요? 팝업 차단기를 비활성화 하는 것을 잊지 마세요. Google Pay로 결제하는 경우, 국내에서 지원되지 않는 서비스이므로 결제 진행이 되지 않을 수 있습니다."
       ],
       "Downgrade": [
         "다운그레이드"
@@ -6717,6 +6729,21 @@
       ],
       "Welcome to ${ DRIVE_APP_NAME }, for the first 10 minutes, any files you upload don't count toward your storage quota.": [
         "${ DRIVE_APP_NAME }에 오신 것을 환영해요! 처음 10분 동안 업로드하는 파일은 저장공간 할당량에 포함되지 않아요."
+      ],
+      "Computed hash does not match XAttr": [
+        "계산된 해시가 XAttr와 일치하지 않습니다."
+      ],
+      "Link copied": [
+        "링크를 복사했습니다"
+      ],
+      "owner": [
+        "소유자"
+      ],
+      "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it's still best to download files only from trusted sources. ": [
+        "사용자를 보호하는데 도움이 되도록 ${ DRIVE_APP_NAME }가 개인정보를 보호하는 방식으로 파일을 스캔하고 멀웨어 파일을 차단합니다. 여전히 신뢰된 출처에서만 파일을 다운로드해야 합니다. "
+      ],
+      "Who has access": [
+        "접근 가능한 사용자"
       ]
     },
     "info": {
@@ -7467,6 +7494,27 @@
       ],
       "Anonymous": [
         "익명"
+      ],
+      "Active": [
+        "활성"
+      ],
+      "admin": [
+        "관리자"
+      ],
+      "Anyone on the Internet with the link": [
+        "인터넷에서 링크를 가진 누구나"
+      ],
+      "can edit": [
+        "편집 가능"
+      ],
+      "can view": [
+        "보기 가능"
+      ],
+      "Delete link and remove access for everyone": [
+        "링크를 삭제하고 모두의 접근 권한을 삭제합니다"
+      ],
+      "Not active": [
+        "비활성"
       ]
     },
     "Label for contact group color": {
@@ -8485,6 +8533,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "${ BRAND_NAME } 주소나 별칭이 유출되었는지 확인하기 위해 다크 웹을 탐색하며 발견한 것이 있다면 즉시 알려드립니다."
+      ],
+      "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
+        "전화 지원 (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }명 이상 사용자)"
       ]
     },
     "new_plans: feature highlight": {
@@ -8844,6 +8895,9 @@
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "한 명 이상의 관리자를 생성할 수 있습니다. 모든 관리자들은 사용자들을 추가 및 관리할 수 있으나 오직 기본 관리자만이 청구를 관리할 수 있습니다."
+      ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } or more users": [
+        "전화 지원은 유럽 표준시 업무 시간 동안 ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }명 이상의 사용자가 있는 고객을 대상으로 ${ BRAND_NAME } 고객 지원팀에서 이용할 수 있습니다."
       ]
     },
     "new_plans: Upsell attribute": {
@@ -10819,6 +10873,12 @@
       ],
       "Pending": [
         "대기 중"
+      ],
+      "accepted": [
+        "수락됨"
+      ],
+      "pending": [
+        "대기 중"
       ]
     },
     "Storage": {
@@ -12621,6 +12681,21 @@
       ],
       "Your download includes ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME } files": [
         "다운로드에 ${ DOCS_APP_NAME } 또는 ${ SHEETS_APP_NAME } 파일이 포함되어 있습니다."
+      ],
+      "Found ${ resultCount } result": [
+        "${ resultCount }개의 결과 찾음"
+      ],
+      "Public link": [
+        "공개 링크"
+      ],
+      "Public link settings": [
+        "공개 링크 설정"
+      ],
+      "Settings for ${ sharedFileName }": [
+        "${ sharedFileName }에 대한 설정"
+      ],
+      "Your ${ planTitle } subscription has started": [
+        "${ planTitle } 구독이 시작되었습니다"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -12900,7 +12975,7 @@
         "이 불러오기가 현재 ${ BRAND_NAME } 계정에서의 저장 공간을 초과할 수 있습니다. 불러올 파일들을 선별하는 것을 고려해 보세요."
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
-        "안타깝게도, 현재 온라인이 아닙니다. 겪고 계신 문제를 설명하기 위해 아래 양식을 작성해 주시면, 다시 온라인에 접속하실 때 살펴보고 연락드리겠습니다."
+        "송구스럽지만, 현재 대기 중인 상담원이 없습니다. 겪고 계신 문제를 아래 양식을 통해 작성해 주시면, 차후 상담원이 돌아왔을 때 살펴보고 연락드리겠습니다."
       ],
       "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
         "메일 서버를 인증할 수 없습니다. 해당 서버를 신뢰하신다면, 이 인증을 건너뛸 수도 있습니다."

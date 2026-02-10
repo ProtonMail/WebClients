@@ -1250,6 +1250,12 @@
       ],
       "Scan & Download (${ nbSelected })": [
         "Skenovať a stiahnuť (${ nbSelected })"
+      ],
+      "Set password or expiration date": [
+        "Nastaviť heslo alebo dátum exspirácie"
+      ],
+      "Sharing is end-to-end encrypted": [
+        "Zdieľanie je end-to-end šifrované"
       ]
     },
     "Action: Docs": {
@@ -3913,6 +3919,12 @@
       ],
       "We were not able to load some search results": [
         "Niektoré výsledky vyhľadávania sa nám nepodarilo načítať."
+      ],
+      "Failed loading group members": [
+        "Chyba pri načítavaní členov skupiny"
+      ],
+      "Network error": [
+        "Chyba siete"
       ]
     },
     "error": {
@@ -7039,6 +7051,15 @@
       ],
       "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it's still best to download files only from trusted sources. ": [
         "Na vašu ochranu môže ${ DRIVE_APP_NAME } skenovať vaše súbory spôsobom zachovávajúcim súkromie a blokovať škodlivé súbory. Stále je však najlepšie sťahovať súbory len z dôveryhodných zdrojov. "
+      ],
+      "Link copied": [
+        "Odkaz bol skopírovaný"
+      ],
+      "owner": [
+        "vlastník"
+      ],
+      "Who has access": [
+        "Kto má prístup"
       ]
     },
     "info": {
@@ -7807,6 +7828,27 @@
       ],
       "ZIP code": [
         "PSČ"
+      ],
+      "Active": [
+        "Aktívne"
+      ],
+      "admin": [
+        "správca"
+      ],
+      "Anyone on the Internet with the link": [
+        "Ktokoľvek na internete s odkazom"
+      ],
+      "can edit": [
+        "môže upravovať"
+      ],
+      "can view": [
+        "môže zobraziť"
+      ],
+      "Delete link and remove access for everyone": [
+        "Odstrániť odkaz a zrušiť pre všetkých prístup"
+      ],
+      "Not active": [
+        "Neaktívne"
       ]
     },
     "Label for contact group color": {
@@ -11450,6 +11492,12 @@
       ],
       "Pending": [
         "Čakajúce"
+      ],
+      "accepted": [
+        "prijaté"
+      ],
+      "pending": [
+        "čakajúce"
       ]
     },
     "Storage": {
@@ -13360,6 +13408,15 @@
       ],
       "Your ${ planTitle } subscription has started": [
         "Vaše predplatné ${ planTitle } začalo"
+      ],
+      "Public link": [
+        "Verejný odkaz"
+      ],
+      "Public link settings": [
+        "Nastavenia verejného odkazu"
+      ],
+      "Settings for ${ sharedFileName }": [
+        "Nastavenia pre ${ sharedFileName }"
       ]
     },
     "Today icon tooltip in mini calendar": {

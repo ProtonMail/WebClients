@@ -1238,6 +1238,12 @@
       ],
       "Scan & Download (${ nbSelected })": [
         "Scan & download (${ nbSelected })"
+      ],
+      "Set password or expiration date": [
+        "Stel wachtwoord of vervaldatum in"
+      ],
+      "Sharing is end-to-end encrypted": [
+        "Delen is end-to-end versleuteld"
       ]
     },
     "Action: Docs": {
@@ -3863,6 +3869,12 @@
       ],
       "We were not able to load some search results": [
         "Sommige zoekresultaten konden niet geladen worden."
+      ],
+      "Failed loading group members": [
+        "Kon geen groepslid toevoegen."
+      ],
+      "Network error": [
+        "Netwerkfout"
       ]
     },
     "error": {
@@ -6847,6 +6859,15 @@
       ],
       "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it's still best to download files only from trusted sources. ": [
         "Om u te beschermen, kan ${ DRIVE_APP_NAME } uw bestanden op een privacyvriendelijke manier scannen en schadelijke bestanden blokkeren. Het is echter nog steeds het beste om bestanden alleen van vertrouwde bronnen te downloaden. "
+      ],
+      "Link copied": [
+        "Link gekopieerd"
+      ],
+      "owner": [
+        "eigenaar"
+      ],
+      "Who has access": [
+        "Wie heeft toegang"
       ]
     },
     "info": {
@@ -7603,6 +7624,27 @@
       ],
       "ZIP code": [
         "Postcode"
+      ],
+      "Active": [
+        "Actief"
+      ],
+      "admin": [
+        "beheerder"
+      ],
+      "Anyone on the Internet with the link": [
+        "Iedereen op het internet met de link"
+      ],
+      "can edit": [
+        "kan bewerken"
+      ],
+      "can view": [
+        "kan bekijken"
+      ],
+      "Delete link and remove access for everyone": [
+        "Link verwijderen en iedereen toegang ontnemen"
+      ],
+      "Not active": [
+        "Niet actief"
       ]
     },
     "Label for contact group color": {
@@ -11056,6 +11098,12 @@
       ],
       "Pending": [
         "In behandeling"
+      ],
+      "accepted": [
+        "geaccepteerd"
+      ],
+      "pending": [
+        "in behandeling"
       ]
     },
     "Storage": {
@@ -12898,6 +12946,15 @@
       ],
       "Your ${ planTitle } subscription has started": [
         "Uw ${ planTitle }-abonnement is nu gestart."
+      ],
+      "Public link": [
+        "Publieke link"
+      ],
+      "Public link settings": [
+        "Instellingen voor publieke link"
+      ],
+      "Settings for ${ sharedFileName }": [
+        "Instellingen voor ${ sharedFileName }"
       ]
     },
     "Today icon tooltip in mini calendar": {

@@ -1238,6 +1238,12 @@
       ],
       "Scan & Download (${ nbSelected })": [
         "Skann og last ned (${ nbSelected })"
+      ],
+      "Set password or expiration date": [
+        "Angi passord eller utløpsdato"
+      ],
+      "Sharing is end-to-end encrypted": [
+        "Deling er ende-til-ende-kryptert"
       ]
     },
     "Action: Docs": {
@@ -3860,6 +3866,15 @@
       ],
       "We cannot retrieve this item": [
         "Vi kan ikke hente dette elementet"
+      ],
+      "Failed loading group members": [
+        "Kunne ikke laste inn gruppemedlemmer"
+      ],
+      "Network error": [
+        "Nettverksfeil"
+      ],
+      "We were not able to load some search results": [
+        "Vi kunne ikke laste inn enkelte søkeresultater"
       ]
     },
     "error": {
@@ -6838,6 +6853,21 @@
       ],
       "This will cancel any remaining uploads and downloads. Cancelled uploads won't be saved in ${ DRIVE_APP_NAME }.": [
         "Dette vil avbryte alle gjenværende opplastinger og nedlastinger. Avbrutte opplastinger blir ikke lagret i ${ DRIVE_APP_NAME }."
+      ],
+      "Computed hash does not match XAttr": [
+        "Beregnet hash stemmer ikke overens med XAttr"
+      ],
+      "Link copied": [
+        "Kobling kopiert"
+      ],
+      "owner": [
+        "eier"
+      ],
+      "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it's still best to download files only from trusted sources. ": [
+        "For å beskytte deg kan ${ DRIVE_APP_NAME } skanne filene dine på en personvernbevarende måte og blokkere skadelige filer. Det er likevel best å laste ned filer kun fra klarerte kilder. "
+      ],
+      "Who has access": [
+        "Hvem har tilgang"
       ]
     },
     "info": {
@@ -7594,6 +7624,27 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Active": [
+        "Aktiv"
+      ],
+      "admin": [
+        "administrator"
+      ],
+      "Anyone on the Internet with the link": [
+        "Alle på internett med koblingen"
+      ],
+      "can edit": [
+        "kan redigere"
+      ],
+      "can view": [
+        "kan se"
+      ],
+      "Delete link and remove access for everyone": [
+        "Slett kobling og fjern tilgang for alle"
+      ],
+      "Not active": [
+        "Ikke aktiv"
       ]
     },
     "Label for contact group color": {
@@ -8700,6 +8751,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Vi skanner det mørke nettet for å sjekke om ${ BRAND_NAME }-adressene eller aliasene dine har blitt lekket, og varsler deg umiddelbart hvis vi finner noe."
+      ],
+      "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
+        "Telefonstøtte (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ brukere)"
       ]
     },
     "new_plans: feature highlight": {
@@ -9062,6 +9116,9 @@
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "Du kan ha mer enn en administrator. Alle administratorere kan legge til og behandle brukere, men kun primæradministratoren har kontroll på fakturering."
+      ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } or more users": [
+        "Telefonstøtte er tilgjengelig fra kundestøtteteamet til ${ BRAND_NAME } i europeisk åpningstid for kunder med ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } eller flere brukere."
       ]
     },
     "new_plans: Upsell attribute": {
@@ -11098,6 +11155,12 @@
       ],
       "Pending": [
         "Venter"
+      ],
+      "accepted": [
+        "akseptert"
+      ],
+      "pending": [
+        "ventende"
       ]
     },
     "Storage": {
@@ -12933,6 +12996,22 @@
       ],
       "Cancel all transfers?": [
         "Avbryte alle overføringer?"
+      ],
+      "Found ${ resultCount } result": [
+        "Fant ${ resultCount } resultat",
+        "Fant ${ resultCount } resultater"
+      ],
+      "Public link": [
+        "Offentlig kobling"
+      ],
+      "Public link settings": [
+        "Innstillinger for offentlig kobling"
+      ],
+      "Settings for ${ sharedFileName }": [
+        "Innstillinger for ${ sharedFileName }"
+      ],
+      "Your ${ planTitle } subscription has started": [
+        "Abonnementet ditt på ${ planTitle } har startet"
       ]
     },
     "Today icon tooltip in mini calendar": {

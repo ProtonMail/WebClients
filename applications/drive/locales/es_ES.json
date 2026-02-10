@@ -1238,6 +1238,12 @@
       ],
       "Scan & Download (${ nbSelected })": [
         "Escanear y descargar (${ nbSelected })"
+      ],
+      "Set password or expiration date": [
+        "Establecer contraseña o fecha de expiración"
+      ],
+      "Sharing is end-to-end encrypted": [
+        "El contenido compartido tiene cifrado de extremo a extremo"
       ]
     },
     "Action: Docs": {
@@ -3863,6 +3869,12 @@
       ],
       "We were not able to load some search results": [
         "No se han podido cargar algunos resultados de búsqueda"
+      ],
+      "Failed loading group members": [
+        "Error al cargar los miembros del grupo"
+      ],
+      "Network error": [
+        "Error de red"
       ]
     },
     "error": {
@@ -6847,6 +6859,15 @@
       ],
       "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it's still best to download files only from trusted sources. ": [
         "Para ayudar a protegerte, ${ DRIVE_APP_NAME } puede analizar tus archivos de forma que se preserve tu privacidad y bloquear los que sean maliciosos. No obstante, te recomendamos descargar archivos únicamente de fuentes de confianza. "
+      ],
+      "Link copied": [
+        "Enlace copiado"
+      ],
+      "owner": [
+        "propietario"
+      ],
+      "Who has access": [
+        "Quién tiene acceso"
       ]
     },
     "info": {
@@ -7606,6 +7627,27 @@
       ],
       "ZIP code": [
         "Código postal"
+      ],
+      "Active": [
+        "Activo"
+      ],
+      "admin": [
+        "administrador"
+      ],
+      "Anyone on the Internet with the link": [
+        "Cualquier persona en Internet que tenga el enlace"
+      ],
+      "can edit": [
+        "se puede editar"
+      ],
+      "can view": [
+        "puede ver"
+      ],
+      "Delete link and remove access for everyone": [
+        "Eliminar enlace y quitar el acceso a todos"
+      ],
+      "Not active": [
+        "Inactivo"
       ]
     },
     "Label for contact group color": {
@@ -11116,6 +11158,12 @@
       ],
       "Pending": [
         "Pendiente"
+      ],
+      "accepted": [
+        "aceptado"
+      ],
+      "pending": [
+        "pendiente"
       ]
     },
     "Storage": {
@@ -12958,6 +13006,15 @@
       ],
       "Your ${ planTitle } subscription has started": [
         "Tu suscripción a ${ planTitle } ha comenzado"
+      ],
+      "Public link": [
+        "Enlace público"
+      ],
+      "Public link settings": [
+        "Configuración del enlace público"
+      ],
+      "Settings for ${ sharedFileName }": [
+        "Ajustes para ${ sharedFileName }"
       ]
     },
     "Today icon tooltip in mini calendar": {

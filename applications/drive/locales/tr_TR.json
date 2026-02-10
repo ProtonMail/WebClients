@@ -1238,6 +1238,12 @@
       ],
       "Scan & Download (${ nbSelected })": [
         "Tara ve indir (${ nbSelected })"
+      ],
+      "Set password or expiration date": [
+        "Parola veya geçerlilik süresi belirleyin"
+      ],
+      "Sharing is end-to-end encrypted": [
+        "Paylaşım uçtan uca şifrelenir"
       ]
     },
     "Action: Docs": {
@@ -3863,6 +3869,12 @@
       ],
       "We were not able to load some search results": [
         "Bazı arama sonuçlarını yükleyemedik"
+      ],
+      "Failed loading group members": [
+        "Grup üyeleri yüklenemedi"
+      ],
+      "Network error": [
+        "Ağ sorunu"
       ]
     },
     "error": {
@@ -6847,6 +6859,15 @@
       ],
       "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it's still best to download files only from trusted sources. ": [
         "${ DRIVE_APP_NAME } sizi korumak için dosyalarınızı gizliliğinizi koruyacak şekilde tarayabilir ve kötü amaçlı dosyaları engelleyebilir. Ancak yine de dosyaları yalnızca güvenilir kaynaklardan indirmek en iyisidir. "
+      ],
+      "Link copied": [
+        "Bağlantı kopyalandı"
+      ],
+      "owner": [
+        "sahip"
+      ],
+      "Who has access": [
+        "Erişimi olanlar"
       ]
     },
     "info": {
@@ -7603,6 +7624,27 @@
       ],
       "ZIP code": [
         "Posta kodu"
+      ],
+      "Active": [
+        "Etkin"
+      ],
+      "admin": [
+        "yönetici"
+      ],
+      "Anyone on the Internet with the link": [
+        "İnternette bu bağlantıya sahip olan herkes"
+      ],
+      "can edit": [
+        "düzenlenebilir"
+      ],
+      "can view": [
+        "görüntülenebilir"
+      ],
+      "Delete link and remove access for everyone": [
+        "Bağlantıyı sil ve herkesin erişimini kaldır"
+      ],
+      "Not active": [
+        "Etkin değil"
       ]
     },
     "Label for contact group color": {
@@ -11056,6 +11098,12 @@
       ],
       "Pending": [
         "Bekliyor"
+      ],
+      "accepted": [
+        "kabul edildi"
+      ],
+      "pending": [
+        "beklemede"
       ]
     },
     "Storage": {
@@ -12898,6 +12946,15 @@
       ],
       "Your ${ planTitle } subscription has started": [
         "${ planTitle } aboneliğiniz başladı"
+      ],
+      "Public link": [
+        "Herkese açık bağlantı"
+      ],
+      "Public link settings": [
+        "Herkese açık bağlantı ayarları"
+      ],
+      "Settings for ${ sharedFileName }": [
+        "${ sharedFileName } için ayarlar"
       ]
     },
     "Today icon tooltip in mini calendar": {

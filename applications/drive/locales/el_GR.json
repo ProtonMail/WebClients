@@ -1238,6 +1238,12 @@
       ],
       "Scan & Download (${ nbSelected })": [
         "Σάρωση & Λήψη (${ nbSelected })"
+      ],
+      "Set password or expiration date": [
+        "Ορισμός κωδικού πρόσβασης ή ημερομηνίας λήξης"
+      ],
+      "Sharing is end-to-end encrypted": [
+        "Η κοινοποίηση είναι, διατερματικά κρυπτογραφημένη"
       ]
     },
     "Action: Docs": {
@@ -3863,6 +3869,12 @@
       ],
       "We were not able to load some search results": [
         "Δεν ήταν δυνατή η φόρτωση ορισμένων αποτελεσμάτων αναζήτησης"
+      ],
+      "Failed loading group members": [
+        "Αποτυχία φόρτωσης μελών ομάδας"
+      ],
+      "Network error": [
+        "Σφάλμα δικτύου"
       ]
     },
     "error": {
@@ -6847,6 +6859,15 @@
       ],
       "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it's still best to download files only from trusted sources. ": [
         "Για την προστασία σας, το ${ DRIVE_APP_NAME } μπορεί να σαρώσει τα αρχεία σας με τρόπο που διατηρεί το απόρρητο και να αποκλείσει κακόβουλα αρχεία. Ωστόσο, εξακολουθεί να είναι καλύτερο να κάνετε λήψη αρχείων μόνο από αξιόπιστες πηγές. "
+      ],
+      "Link copied": [
+        "Ο σύνδεσμος αντιγράφηκε"
+      ],
+      "owner": [
+        "ιδιοκτήτης"
+      ],
+      "Who has access": [
+        "Ποιος έχει πρόσβαση"
       ]
     },
     "info": {
@@ -7603,6 +7624,27 @@
       ],
       "ZIP code": [
         "Τ.Κ."
+      ],
+      "Active": [
+        "Ενεργό"
+      ],
+      "admin": [
+        "διαχειριστής"
+      ],
+      "Anyone on the Internet with the link": [
+        "Οποιοσδήποτε στο Διαδίκτυο με τον σύνδεσμο"
+      ],
+      "can edit": [
+        "μπορεί να επεξεργαστεί"
+      ],
+      "can view": [
+        "μπορεί να δει"
+      ],
+      "Delete link and remove access for everyone": [
+        "Διαγραφή συνδέσμου και κατάργηση πρόσβασης για όλους"
+      ],
+      "Not active": [
+        "Μη ενεργό"
       ]
     },
     "Label for contact group color": {
@@ -11056,6 +11098,12 @@
       ],
       "Pending": [
         "Σε εκκρεμότητα"
+      ],
+      "accepted": [
+        "αποδέχθηκε"
+      ],
+      "pending": [
+        "εκκρεμεί"
       ]
     },
     "Storage": {
@@ -12898,6 +12946,15 @@
       ],
       "Your ${ planTitle } subscription has started": [
         "Η ${ planTitle } συνδρομή σας έχει ξεκινήσει"
+      ],
+      "Public link": [
+        "Δημόσιος σύνδεσμος"
+      ],
+      "Public link settings": [
+        "Ρυθμίσεις δημοσιευμένου συνδέσμου"
+      ],
+      "Settings for ${ sharedFileName }": [
+        "Ρυθμίσεις για ${ sharedFileName }"
       ]
     },
     "Today icon tooltip in mini calendar": {

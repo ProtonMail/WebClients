@@ -1238,6 +1238,12 @@
       ],
       "Scan & Download (${ nbSelected })": [
         "Escanegeu i descarregueu (${ nbSelected })"
+      ],
+      "Set password or expiration date": [
+        "Establiu una contrasenya o una data de caducitat"
+      ],
+      "Sharing is end-to-end encrypted": [
+        "La compartició està xifrada d’extrem a extrem"
       ]
     },
     "Action: Docs": {
@@ -3863,6 +3869,12 @@
       ],
       "We were not able to load some search results": [
         "No s'han pogut carregar alguns resultats de la cerca"
+      ],
+      "Failed loading group members": [
+        "No s'han pogut carregar els membres del grup"
+      ],
+      "Network error": [
+        "Error de xarxa"
       ]
     },
     "error": {
@@ -6847,6 +6859,15 @@
       ],
       "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it's still best to download files only from trusted sources. ": [
         "Per ajudar a protegir-vos, ${ DRIVE_APP_NAME } pot escanejar els vostres fitxers de manera que en preservi la privadesa i bloquegi fitxers maliciosos. De totes maneres, sempre és millor descarregar fitxers només de fonts de confiança. "
+      ],
+      "Link copied": [
+        "S'ha copiat l'enllaç"
+      ],
+      "owner": [
+        "propietari/ària"
+      ],
+      "Who has access": [
+        "Qui hi té accés"
       ]
     },
     "info": {
@@ -7606,6 +7627,27 @@
       ],
       "ZIP code": [
         "Codi postal"
+      ],
+      "Active": [
+        "Actiu"
+      ],
+      "admin": [
+        "administrador/a"
+      ],
+      "Anyone on the Internet with the link": [
+        "Qualsevol persona a Internet amb l'enllaç"
+      ],
+      "can edit": [
+        "es pot editar"
+      ],
+      "can view": [
+        "pot veure"
+      ],
+      "Delete link and remove access for everyone": [
+        "Elimineu l'enllaç i esborreu l'accés per a tothom"
+      ],
+      "Not active": [
+        "No està actiu"
       ]
     },
     "Label for contact group color": {
@@ -11116,6 +11158,12 @@
       ],
       "Pending": [
         "Pendent"
+      ],
+      "accepted": [
+        "s'ha acceptat"
+      ],
+      "pending": [
+        "pendent"
       ]
     },
     "Storage": {
@@ -12958,6 +13006,15 @@
       ],
       "Your ${ planTitle } subscription has started": [
         "La vostra subscripció a ${ planTitle } ha començat"
+      ],
+      "Public link": [
+        "Enllaç públic"
+      ],
+      "Public link settings": [
+        "Preferències de l'enllaç públic"
+      ],
+      "Settings for ${ sharedFileName }": [
+        "Preferències de ${ sharedFileName }"
       ]
     },
     "Today icon tooltip in mini calendar": {

@@ -1238,6 +1238,12 @@
       ],
       "Scan & Download (${ nbSelected })": [
         "Scanner et télécharger (${ nbSelected })"
+      ],
+      "Set password or expiration date": [
+        "Définir le mot de passe ou la date d'expiration"
+      ],
+      "Sharing is end-to-end encrypted": [
+        "Le partage est chiffré de bout en bout"
       ]
     },
     "Action: Docs": {
@@ -3863,6 +3869,12 @@
       ],
       "We were not able to load some search results": [
         "Nous n'avons pas pu charger certains résultats de recherche"
+      ],
+      "Failed loading group members": [
+        "Le chargement des membres du groupe n'a pas abouti."
+      ],
+      "Network error": [
+        "Erreur de réseau "
       ]
     },
     "error": {
@@ -6837,7 +6849,7 @@
         "Tous vos contacts seront importés, dans la limite de ${ maxContact }"
       ],
       "Computed hash does not match XAttr": [
-        "Le hachage calculé ne correspond pas à XAttr"
+        "Le hachage calculé ne correspond pas au XAttr"
       ],
       "This will cancel any remaining downloads.": [
         "Ceci annulera tous les téléchargements restants."
@@ -6847,6 +6859,15 @@
       ],
       "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it's still best to download files only from trusted sources. ": [
         "Pour vous aider à vous protéger, ${ DRIVE_APP_NAME } peut analyser vos fichiers d'une manière respectueuse de la vie privée et bloquer les fichiers malveillants. Cependant, il est toujours préférable de télécharger des fichiers uniquement à partir de sources de confiance. "
+      ],
+      "Link copied": [
+        "Lien copié"
+      ],
+      "owner": [
+        "propriétaire"
+      ],
+      "Who has access": [
+        "Qui a accès"
       ]
     },
     "info": {
@@ -7606,6 +7627,27 @@
       ],
       "ZIP code": [
         "Code postal"
+      ],
+      "Active": [
+        "Actif"
+      ],
+      "admin": [
+        "admin"
+      ],
+      "Anyone on the Internet with the link": [
+        "Toute personne sur Internet disposant du lien"
+      ],
+      "can edit": [
+        "peut modifier"
+      ],
+      "can view": [
+        "peut consulter"
+      ],
+      "Delete link and remove access for everyone": [
+        "Supprimer le lien et retirer l'accès pour tous"
+      ],
+      "Not active": [
+        "Inactif"
       ]
     },
     "Label for contact group color": {
@@ -11116,6 +11158,12 @@
       ],
       "Pending": [
         "En attente"
+      ],
+      "accepted": [
+        "accepté"
+      ],
+      "pending": [
+        "en attente"
       ]
     },
     "Storage": {
@@ -12958,6 +13006,15 @@
       ],
       "Your ${ planTitle } subscription has started": [
         "Votre abonnement ${ planTitle } a commencé."
+      ],
+      "Public link": [
+        "Lien public"
+      ],
+      "Public link settings": [
+        "Paramètres de lien public"
+      ],
+      "Settings for ${ sharedFileName }": [
+        "Paramètres de ${ sharedFileName }"
       ]
     },
     "Today icon tooltip in mini calendar": {
