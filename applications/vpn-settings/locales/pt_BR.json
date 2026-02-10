@@ -5895,9 +5895,9 @@
       "${ storage } storage": [
         "${ storage } de armazenamento"
       ],
-      "${ userFound } user found": [
-        "${ userFound } usuário encontrado",
-        "${ userFound } usuários encontrados"
+      "${ total } user found": [
+        "${ total } usuário encontrado",
+        "${ total } usuários encontrados"
       ],
       "${ vaultLink } created": [
         "${ vaultLink } criado"
@@ -8241,6 +8241,9 @@
       "Your phone number will only be used for this one-time verification.": [
         "Seu número de telefone somente será usado nessa verificação única."
       ],
+      "Your recent changes have been published. They will be visible to users in the next few hours.": [
+        "Suas alterações recentes foram publicadas. Elas ficarão visíveis para os usuários nas próximas horas."
+      ],
       "Your recovery phrase": [
         "Sua frase de recuperação"
       ],
@@ -8375,6 +8378,9 @@
     "invitation status": {
       "Declined": [
         "Recusado"
+      ],
+      "Owner": [
+        "Proprietário"
       ],
       "Paused": [
         "Pausado"
@@ -16182,6 +16188,9 @@
       ],
       "User declined invitation": [
         "O usuário rejeitou o convite"
+      ],
+      "User is a group": [
+        "Usuário é um grupo"
       ],
       "Waiting for user to accept the invitation": [
         "Esperando o usuário aceitar o convite"

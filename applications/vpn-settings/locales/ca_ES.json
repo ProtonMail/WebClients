@@ -5895,9 +5895,9 @@
       "${ storage } storage": [
         "${ storage } d'emmagatzematge"
       ],
-      "${ userFound } user found": [
-        "S'ha trobat ${ userFound } usuari",
-        "S'han trobat ${ userFound } usuaris"
+      "${ total } user found": [
+        "S'ha trobat ${ total } usuari",
+        "S'han trobat ${ total } usuaris"
       ],
       "${ vaultLink } created": [
         "S'ha creat ${ vaultLink }"
@@ -8378,6 +8378,9 @@
     "invitation status": {
       "Declined": [
         "Rebutjat"
+      ],
+      "Owner": [
+        "Propietari"
       ],
       "Paused": [
         "En pausa"
@@ -16188,6 +16191,9 @@
       ],
       "User declined invitation": [
         "L'usuari ha rebutjat la invitació."
+      ],
+      "User is a group": [
+        "L'usuari és un grup"
       ],
       "Waiting for user to accept the invitation": [
         "S'està esperant que l'usuari accepti la invitació."
