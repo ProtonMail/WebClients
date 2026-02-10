@@ -11,15 +11,23 @@ import { sendTelemetryReport, telemetryReportsBatchQueue } from '@proton/shared/
 export const useResetPasswordTelemetry = () => {
     const api = useApi();
 
+    const commonProps = {
+        api,
+        measurementGroup: TelemetryMeasurementGroups.accountResetPassword,
+        delay: false,
+    };
+
+    const commonDimensions = {
+        variant: 'A',
+    };
+
     const sendResetPasswordPageLoad = useCallback(() => {
         void sendTelemetryReport({
-            api,
+            ...commonProps,
             dimensions: {
-                variant: 'A',
+                ...commonDimensions,
             },
-            measurementGroup: TelemetryMeasurementGroups.accountResetPassword,
             event: TelemetryResetPasswordEvents.page_load,
-            delay: false,
         });
         void telemetryReportsBatchQueue.flush();
     }, [api]);
@@ -33,15 +41,14 @@ export const useResetPasswordTelemetry = () => {
             hasDataRecoveryMethod: boolean;
         }) => {
             void sendTelemetryReport({
-                api,
-                measurementGroup: TelemetryMeasurementGroups.accountResetPassword,
+                ...commonProps,
+
                 event: TelemetryResetPasswordEvents.recovery_methods_requested,
                 dimensions: {
                     hasPasswordResetMethod: String(hasPasswordResetMethod),
                     hasDataRecoveryMethod: String(hasDataRecoveryMethod),
-                    variant: 'A',
+                    ...commonDimensions,
                 },
-                delay: false,
             });
             void telemetryReportsBatchQueue.flush();
         },
@@ -55,11 +62,10 @@ export const useResetPasswordTelemetry = () => {
             }
 
             void sendTelemetryReport({
-                api,
-                measurementGroup: TelemetryMeasurementGroups.accountResetPassword,
+                ...commonProps,
+
                 event: TelemetryResetPasswordEvents.code_sent,
-                dimensions: { method, variant: 'A' },
-                delay: false,
+                dimensions: { method, ...commonDimensions },
             });
             void telemetryReportsBatchQueue.flush();
         },
@@ -73,11 +79,9 @@ export const useResetPasswordTelemetry = () => {
             }
 
             void sendTelemetryReport({
-                api,
-                measurementGroup: TelemetryMeasurementGroups.accountResetPassword,
+                ...commonProps,
                 event: TelemetryResetPasswordEvents.method_validated,
-                dimensions: { method, variant: 'A' },
-                delay: false,
+                dimensions: { method, ...commonDimensions },
             });
             void telemetryReportsBatchQueue.flush();
         },
@@ -91,11 +95,9 @@ export const useResetPasswordTelemetry = () => {
             }
 
             void sendTelemetryReport({
-                api,
-                measurementGroup: TelemetryMeasurementGroups.accountResetPassword,
+                ...commonProps,
                 event: TelemetryResetPasswordEvents.success,
-                dimensions: { method, variant: 'A' },
-                delay: false,
+                dimensions: { method, ...commonDimensions },
             });
             void telemetryReportsBatchQueue.flush();
         },
@@ -109,11 +111,9 @@ export const useResetPasswordTelemetry = () => {
             }
 
             void sendTelemetryReport({
-                api,
-                measurementGroup: TelemetryMeasurementGroups.accountResetPassword,
+                ...commonProps,
                 event: TelemetryResetPasswordEvents.failure,
-                dimensions: { step, method, variant: 'A' },
-                delay: false,
+                dimensions: { step, method, ...commonDimensions },
             });
             void telemetryReportsBatchQueue.flush();
         },
