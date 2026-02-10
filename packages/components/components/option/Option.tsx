@@ -19,6 +19,10 @@ export interface OptionProps<V> extends Omit<ComponentPropsWithoutRef<'button'>,
     disableFocusOnActive?: boolean;
     searchStrings?: string[];
     preventScroll?: boolean;
+    /**
+     * Class name applied to the wrapper of the option.
+     */
+    optionWrapperClassName?: string;
 }
 
 const Option = <V,>({
@@ -34,6 +38,7 @@ const Option = <V,>({
     searchStrings,
     className,
     preventScroll = false,
+    optionWrapperClassName = '',
     ...rest
 }: OptionProps<V>) => {
     const ref = useRef<HTMLButtonElement | null>(null);
@@ -54,7 +59,7 @@ const Option = <V,>({
     };
 
     return (
-        <li className="dropdown-item">
+        <li className={clsx(['dropdown-item', optionWrapperClassName])}>
             <DropdownMenuButton
                 ref={ref}
                 type={type}
