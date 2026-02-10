@@ -2,12 +2,11 @@ import { create } from 'zustand';
 import { devtools } from 'zustand/middleware';
 
 import { type NodeType, getDrive } from '@proton/drive';
+import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 
 import { type SortConfig, SortField, sortItems } from '../../modules/sorting';
 import { getSharedWithMeSortValue } from '../../sections/sharedWith/sharedWithMe.sorting';
-import { getActionEventManager } from '../../utils/ActionEventManager/ActionEventManager';
-import { ActionEventName } from '../../utils/ActionEventManager/ActionEventManagerTypes';
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
 import { handleSdkError } from '../../utils/errorHandling/useSdkErrorHandler';
 import { getNodeEntity } from '../../utils/sdk/getNodeEntity';
@@ -386,11 +385,11 @@ export const useSharedWithMeListingStore = create<SharedWithMeListingStore>()(
                     return;
                 }
 
-                const eventManager = getActionEventManager();
+                const eventManager = getBusDriver();
                 await eventManager.subscribeSdkDriveEvents(context);
 
                 const deleteBookmarksSubscription = eventManager.subscribe(
-                    ActionEventName.DELETE_BOOKMARKS,
+                    BusDriverEventName.DELETE_BOOKMARKS,
                     async (event) => {
                         const store = get();
                         for (const uid of event.uids) {
@@ -400,7 +399,7 @@ export const useSharedWithMeListingStore = create<SharedWithMeListingStore>()(
                 );
 
                 const rejectInvitationsSubscription = eventManager.subscribe(
-                    ActionEventName.REJECT_INVITATIONS,
+                    BusDriverEventName.REJECT_INVITATIONS,
                     async (event) => {
                         const store = get();
                         for (const uid of event.uids) {
@@ -409,7 +408,7 @@ export const useSharedWithMeListingStore = create<SharedWithMeListingStore>()(
                     }
                 );
 
-                const removeMeSubscription = eventManager.subscribe(ActionEventName.REMOVE_ME, async (event) => {
+                const removeMeSubscription = eventManager.subscribe(BusDriverEventName.REMOVE_ME, async (event) => {
                     const store = get();
                     for (const uid of event.uids) {
                         store.removeSharedWithMeItem(uid);
@@ -417,7 +416,7 @@ export const useSharedWithMeListingStore = create<SharedWithMeListingStore>()(
                 });
 
                 const acceptInvitationsSubscription = eventManager.subscribe(
-                    ActionEventName.ACCEPT_INVITATIONS,
+                    BusDriverEventName.ACCEPT_INVITATIONS,
                     async (event) => {
                         const store = get();
                         for (const uid of event.uids) {
@@ -472,7 +471,7 @@ export const useSharedWithMeListingStore = create<SharedWithMeListingStore>()(
                 );
 
                 const refreshSharedWithMeSubscription = eventManager.subscribe(
-                    ActionEventName.REFRESH_SHARED_WITH_ME,
+                    BusDriverEventName.REFRESH_SHARED_WITH_ME,
                     async () => {
                         const { refreshCallbacks } = get();
                         const callbacks = Array.from(refreshCallbacks.values());
@@ -492,7 +491,7 @@ export const useSharedWithMeListingStore = create<SharedWithMeListingStore>()(
             },
 
             unsubscribeToEvents: async (context: string) => {
-                const eventManager = getActionEventManager();
+                const eventManager = getBusDriver();
                 await eventManager.unsubscribeSdkDriveEvents(context);
 
                 const { activeContexts, eventSubscriptions, refreshCallbacks } = get();

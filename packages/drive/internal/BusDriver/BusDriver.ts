@@ -1,56 +1,55 @@
 import type { DriveEvent } from '@protontech/drive-sdk';
 import type { EventSubscription } from '@protontech/drive-sdk/dist/internal/events/interface';
 
-import { DriveEventType, getDrive, getDriveForPhotos } from '@proton/drive';
 import { getItem } from '@proton/shared/lib/helpers/storage';
 
-import { logging } from '../../modules/logging';
-import { sendErrorReport } from '../errorHandling';
-import { EnrichedError } from '../errorHandling/EnrichedError';
-import { handleSdkError } from '../errorHandling/useSdkErrorHandler';
+import { DriveEventType, getDrive, getDriveForPhotos } from '../..';
+import { Logging } from '../../modules/logging';
 import {
-    type ActionEvent,
-    type ActionEventListener,
-    type ActionEventMap,
-    ActionEventName,
-} from './ActionEventManagerTypes';
+    type BusDriverEvent,
+    type BusDriverEventListener,
+    type BusDriverEventMap,
+    BusDriverEventName,
+} from './BusDriverTypes';
+import { sendErrorReport } from './errorHandling';
 
-const logger = logging.getLogger('action-event-manager');
+const logging = new Logging({ sentryComponent: 'drive-web-log' });
+const logger = logging.getLogger('bus-driver');
 export const logDebug = (label: string, rest: string | Record<string, unknown> = '') => {
     logger.debug(`${label}: ${JSON.stringify(rest)}`);
 };
 export const logWarning = (label: string, rest: string | Record<string, unknown> = '') => {
-    logger.debug(`${label}: ${JSON.stringify(rest)}`);
+    logger.warn(`${label}: ${JSON.stringify(rest)}`);
 };
 
 /**
- * ActionEventManager - A type-safe event bus system for folder actions
+ * BusDriver - Provides a centralized and type-safe way to emit and listen to application events.
  *
  * Provides a centralized way to emit and listen to folder-related actions throughout the application.
  * Each event type has a specific shape that is enforced at compile time.
  *
  * @example
  * // Basic usage with the singleton instance
- * import { getActionEventManager, ActionEventName } from './ActionEventManager';
+ * import { getBusDriver, BusDriverEventName } from './BusDriver';
  *
- * const eventBus = getActionEventManager();
+ * const eventBus = getBusDriver();
  *
  * // Subscribe to specific events
- * eventBus.subscribe(ActionEventName.TRASH_NODES_OPTIMISTIC, (event) => {
+ * eventBus.subscribe(BusDriverEventName.TRASH_NODES_OPTIMISTIC, (event) => {
  *    event.uids.forEach((uid) => {
  *        useFolderStore.getState().removeItem(uid);
  *    });
  * });
  *
  * // Subscribe to all events
- * eventBus.subscribe(ActionEventName.ALL, (event) => {
+ * eventBus.subscribe(BusDriverEventName.ALL, (event) => {
  *     switch (event.type) {
- *         case ActionEventName.TRASH_NODES_OPTIMISTIC:
+ *         case BusDriverEventName.TRASH_NODES_OPTIMISTIC:
  *             event.uids.forEach((uid) => {
  *                 useFolderStore.getState().removeItem(uid);
  *             });
  *             break;
- *         case ActionEventName.CREATED_NODES:
+ *         case BusDriverEventName.CREATED_NODES:
  *             event.nodes.forEach((node) => {
  *                 useFolderStore.getState().addNode(node);
  *             });
@@ -63,32 +62,32 @@ export const logWarning = (label: string, rest: string | Record<string, unknown>
  *
  * // Emit events
  * eventBus.emit({
- *   type: ActionEventName.TRASH_NODES_OPTIMISTIC,
+ *   type: BusDriverEventName.TRASH_NODES_OPTIMISTIC,
  *   uids: ['123', '456']
  * });
  *
  *
  * @example
  * // Different event types with their specific shapes
- * import { getActionEventManager, ActionEventName } from './ActionEventManager';
+ * import { getBusDriver, BusDriverEventName } from './BusDriver';
  *
- * const eventBus = getActionEventManager();
+ * const eventBus = getBusDriver();
  *
  * // Trash items event
  * eventBus.emit({
- *   type: ActionEventName.TRASH_NODES_OPTIMISTIC,
+ *   type: BusDriverEventName.TRASH_NODES_OPTIMISTIC,
  *   uids: ['1', '2']
  * });
  *
  * // Create nodes event
  * eventBus.emit({
- *   type: ActionEventName.CREATED_NODES,
+ *   type: BusDriverEventName.CREATED_NODES,
  *   nodes: [getNodeEntity(maybeNode)]
  * });
 
  */
-class ActionEventManager {
-    private listeners = new Map<string, ActionEventListener<ActionEvent>[]>();
+class BusDriver {
+    private listeners = new Map<string, BusDriverEventListener<BusDriverEvent>[]>();
 
     private myFilesRootFolderTreeEventScopeId: string | undefined;
 
@@ -117,9 +116,9 @@ class ActionEventManager {
         this.debugMode = debugValue === 'true';
     }
 
-    async emit(event: ActionEvent): Promise<void> {
+    async emit(event: BusDriverEvent): Promise<void> {
         const eventListeners = this.listeners.get(event.type) || [];
-        const allEventListeners = this.listeners.get(ActionEventName.ALL) || [];
+        const allEventListeners = this.listeners.get(BusDriverEventName.ALL) || [];
 
         const allListeners = [...eventListeners, ...allEventListeners];
 
@@ -131,7 +130,7 @@ class ActionEventManager {
                 try {
                     await listener(event);
                 } catch (error) {
-                    sendErrorReport(new EnrichedError('Error in action event listener', { extra: { event, error } }));
+                    sendErrorReport(new Error('Error in action event listener'));
                 }
             })
         );
@@ -144,9 +143,9 @@ class ActionEventManager {
      * @param listener - The callback function to execute when the event is emitted
      * @returns A function that can be called to unsubscribe the listener
      */
-    subscribe<K extends keyof ActionEventMap>(
+    subscribe<K extends keyof BusDriverEventMap>(
         eventType: K,
-        listener: (event: ActionEventMap[K]) => Promise<void>
+        listener: (event: BusDriverEventMap[K]) => Promise<void>
     ): () => void {
         if (!this.listeners.has(eventType)) {
             this.listeners.set(eventType, []);
@@ -156,7 +155,7 @@ class ActionEventManager {
             if (listeners.some((l) => l === listener)) {
                 throw new Error(`The same event listener for ${eventType} event has been added twice`);
             }
-            listeners.push(listener as ActionEventListener<ActionEvent>);
+            listeners.push(listener as BusDriverEventListener<BusDriverEvent>);
         }
 
         return () => this.unsubscribe(eventType, listener);
@@ -169,13 +168,13 @@ class ActionEventManager {
      * @param eventType - The type of event to stop listening for
      * @param listener - The callback function to remove
      */
-    private unsubscribe<K extends keyof ActionEventMap>(
+    private unsubscribe<K extends keyof BusDriverEventMap>(
         eventType: K,
-        listener: (event: ActionEventMap[K]) => Promise<void>
+        listener: (event: BusDriverEventMap[K]) => Promise<void>
     ): void {
         const eventListeners = this.listeners.get(eventType);
         if (eventListeners) {
-            const index = eventListeners.indexOf(listener as ActionEventListener<ActionEvent>);
+            const index = eventListeners.indexOf(listener as BusDriverEventListener<BusDriverEvent>);
             if (index > -1) {
                 eventListeners.splice(index, 1);
             }
@@ -208,7 +207,7 @@ class ActionEventManager {
             }
             this.subscribeSdkEventsScope(treeEventScopeId, context);
         } catch (error) {
-            handleSdkError(error);
+            sendErrorReport(error);
         }
     }
 
@@ -229,7 +228,7 @@ class ActionEventManager {
             }
             this.subscribePhotosEventsScope(treeEventScopeId, context);
         } catch (error) {
-            handleSdkError(error);
+            sendErrorReport(error);
         }
     }
 
@@ -241,7 +240,7 @@ class ActionEventManager {
     async unsubscribeSdkEventsMyUpdates(context: string): Promise<void> {
         if (!this.myFilesRootFolderTreeEventScopeId) {
             logWarning(
-                `[ActionEventManager] Trying to unsubscribe to SdkEventsMyUpdates without having the treeEventScopeId for it`,
+                `[BusDriver] Trying to unsubscribe to SdkEventsMyUpdates without having the treeEventScopeId for it`,
                 { context }
             );
             return;
@@ -265,7 +264,7 @@ class ActionEventManager {
 
         if (!treeEventScopeId) {
             logWarning(
-                `[ActionEventManager] Trying to unsubscribe to PhotosEventsMyUpdates without having the treeEventScopeId for it`,
+                `[BusDriver] Trying to unsubscribe to PhotosEventsMyUpdates without having the treeEventScopeId for it`,
                 { context }
             );
             return;
@@ -291,7 +290,7 @@ class ActionEventManager {
         if (existing) {
             if (existing.contexts.has(context)) {
                 if (this.debugMode) {
-                    logDebug('[ActionEventManager] Given context already exist for SDK scope subscription', {
+                    logDebug('[BusDriver] Given context already exist for SDK scope subscription', {
                         context,
                         totalContexts: existing.contexts.size,
                         allContexts: Array.from(existing.contexts),
@@ -301,7 +300,7 @@ class ActionEventManager {
             }
             existing.contexts.add(context);
             if (this.debugMode) {
-                logDebug('[ActionEventManager] Added context to existing SDK scope subscription', {
+                logDebug('[BusDriver] Added context to existing SDK scope subscription', {
                     treeEventScopeId,
                     context,
                     totalContexts: existing.contexts.size,
@@ -322,7 +321,7 @@ class ActionEventManager {
         });
 
         if (this.debugMode) {
-            logDebug('[ActionEventManager] Subscribed to new SDK scope events', {
+            logDebug('[BusDriver] Subscribed to new SDK scope events', {
                 treeEventScopeId,
                 context,
                 totalScopes: this.treeEventSubscriptions.size,
@@ -341,7 +340,7 @@ class ActionEventManager {
         if (existing) {
             if (existing.contexts.has(context)) {
                 if (this.debugMode) {
-                    logDebug('[ActionEventManager] Given context already exist for Photos scope subscription', {
+                    logDebug('[BusDriver] Given context already exist for Photos scope subscription', {
                         context,
                         totalContexts: existing.contexts.size,
                         allContexts: Array.from(existing.contexts),
@@ -351,7 +350,7 @@ class ActionEventManager {
             }
             existing.contexts.add(context);
             if (this.debugMode) {
-                logDebug('[ActionEventManager] Added context to existing Photos scope subscription', {
+                logDebug('[BusDriver] Added context to existing Photos scope subscription', {
                     treeEventScopeId,
                     context,
                     totalContexts: existing.contexts.size,
@@ -371,7 +370,7 @@ class ActionEventManager {
         });
 
         if (this.debugMode) {
-            logDebug('[ActionEventManager] Subscribed to new Photos scope events', {
+            logDebug('[BusDriver] Subscribed to new Photos scope events', {
                 treeEventScopeId,
                 context,
                 totalScopes: this.treeEventSubscriptions.size,
@@ -393,9 +392,13 @@ class ActionEventManager {
         const key = this.getTreeSubscriptionKey(treeEventScopeId, client);
         const existing = this.treeEventSubscriptions.get(key);
         if (!existing) {
-            console.warn(
-                `[ActionEventManager] Trying to unsubscribe to SdkEventsScope without having the treeEventScopeId for it`,
-                { treeEventScopeId, context, client }
+            logWarning(
+                '[BusDriver] Trying to unsubscribe to SdkEventsScope without having the treeEventScopeId for it',
+                {
+                    treeEventScopeId,
+                    context,
+                    client,
+                }
             );
             return;
         }
@@ -406,13 +409,13 @@ class ActionEventManager {
             await existing.subscription.then(({ dispose }) => dispose());
             this.treeEventSubscriptions.delete(key);
             if (this.debugMode) {
-                logDebug('[ActionEventManager] Unsubscribed from SDK scope events', {
+                logDebug('[BusDriver] Unsubscribed from SDK scope events', {
                     treeEventScopeId,
                     remainingScopes: this.treeEventSubscriptions.size,
                 });
             }
         } else if (this.debugMode) {
-            logDebug('[ActionEventManager] Removed context from SDK scope subscription', {
+            logDebug('[BusDriver] Removed context from SDK scope subscription', {
                 treeEventScopeId,
                 removedContext: context,
                 remainingContexts: existing.contexts.size,
@@ -429,7 +432,7 @@ class ActionEventManager {
         if (this.driveEventSubscription) {
             if (this.driveEventSubscription.contexts.has(context)) {
                 if (this.debugMode) {
-                    logDebug('[ActionEventManager] Given context already exist for SDK drive events subscription', {
+                    logDebug('[BusDriver] Given context already exist for SDK drive events subscription', {
                         context,
                         totalContexts: this.driveEventSubscription.contexts.size,
                         allContexts: Array.from(this.driveEventSubscription.contexts),
@@ -439,7 +442,7 @@ class ActionEventManager {
             }
             this.driveEventSubscription.contexts.add(context);
             if (this.debugMode) {
-                logDebug('[ActionEventManager] Added context to existing SDK drive events subscription', {
+                logDebug('[BusDriver] Added context to existing SDK drive events subscription', {
                     context,
                     totalContexts: this.driveEventSubscription.contexts.size,
                     allContexts: Array.from(this.driveEventSubscription.contexts),
@@ -455,7 +458,7 @@ class ActionEventManager {
                 contexts: new Set([context]),
             };
             if (this.debugMode) {
-                logDebug('[ActionEventManager] Subscribed to SDK drive events', { context });
+                logDebug('[BusDriver] Subscribed to SDK drive events', { context });
             }
         }
     }
@@ -471,9 +474,11 @@ class ActionEventManager {
     async unsubscribeSdkDriveEvents(context: string): Promise<void> {
         const existing = this.driveEventSubscription;
         if (!existing) {
-            console.warn(
-                `[ActionEventManager] Trying to unsubscribe to general drive sdk event without having the treeEventScopeId for it`,
-                { context }
+            logWarning(
+                '[BusDriver] Trying to unsubscribe to general drive sdk event without having the treeEventScopeId for it',
+                {
+                    context,
+                }
             );
             return;
         }
@@ -484,10 +489,10 @@ class ActionEventManager {
             await existing.subscription.then(({ dispose }) => dispose());
             this.driveEventSubscription = undefined;
             if (this.debugMode) {
-                logDebug('[ActionEventManager] Unsubscribed from SDK drive events');
+                logDebug('[BusDriver] Unsubscribed from SDK drive events');
             }
         } else if (this.debugMode) {
-            logDebug('[ActionEventManager] Removed context from SDK drive events subscription', {
+            logDebug('[BusDriver] Removed context from SDK drive events subscription', {
                 removedContext: context,
                 remainingContexts: existing.contexts.size,
                 allContexts: Array.from(existing.contexts),
@@ -496,11 +501,11 @@ class ActionEventManager {
     }
 
     /**
-     * Handle incoming SDK events and emit corresponding ActionEvents
+     * Handle incoming SDK events and emit corresponding BusDriverEvents
      */
     private async handleSdkEvent(event: DriveEvent): Promise<void> {
         if (this.debugMode) {
-            logDebug('[ActionEventManager] Handling SDK event', {
+            logDebug('[BusDriver] Handling SDK event', {
                 eventType: event.type,
                 nodeUid: 'nodeUid' in event ? event.nodeUid : undefined,
             });
@@ -510,7 +515,7 @@ class ActionEventManager {
             switch (event.type) {
                 case DriveEventType.NodeCreated:
                     await this.emit({
-                        type: ActionEventName.CREATED_NODES,
+                        type: BusDriverEventName.CREATED_NODES,
                         items: [
                             {
                                 uid: event.nodeUid,
@@ -523,7 +528,7 @@ class ActionEventManager {
                     break;
                 case DriveEventType.NodeUpdated:
                     await this.emit({
-                        type: ActionEventName.UPDATED_NODES,
+                        type: BusDriverEventName.UPDATED_NODES,
                         items: [
                             {
                                 uid: event.nodeUid,
@@ -536,33 +541,33 @@ class ActionEventManager {
                     break;
                 case DriveEventType.NodeDeleted:
                     await this.emit({
-                        type: ActionEventName.DELETED_NODES,
+                        type: BusDriverEventName.DELETED_NODES,
                         uids: [event.nodeUid],
                     });
                     break;
                 case DriveEventType.SharedWithMeUpdated:
                     await this.emit({
-                        type: ActionEventName.REFRESH_SHARED_WITH_ME,
+                        type: BusDriverEventName.REFRESH_SHARED_WITH_ME,
                     });
                     break;
             }
         } catch (error) {
-            sendErrorReport(new EnrichedError('Error handling SDK event', { extra: { event, error } }));
+            sendErrorReport(new Error('Error handling SDK event'));
         }
     }
 }
 
-let ActionEventManagerInstance: ActionEventManager | null = null;
+let BusDriverInstance: BusDriver | null = null;
 
 /**
- * Gets the singleton instance of the ActionEventManager.
+ * Gets the singleton instance of the BusDriver.
  * Creates a new instance if one doesn't exist.
  *
- * @returns The ActionEventManager singleton instance
+ * @returns The BusDriver singleton instance
  */
-export function getActionEventManager(): ActionEventManager {
-    if (!ActionEventManagerInstance) {
-        ActionEventManagerInstance = new ActionEventManager();
+export function getBusDriver(): BusDriver {
+    if (!BusDriverInstance) {
+        BusDriverInstance = new BusDriver();
     }
-    return ActionEventManagerInstance;
+    return BusDriverInstance;
 }

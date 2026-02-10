@@ -2,9 +2,8 @@ import { renderHook } from '@testing-library/react';
 
 import { useNotifications } from '@proton/components';
 import { useDrive } from '@proton/drive/index';
+import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
 
-import { getActionEventManager } from '../../../utils/ActionEventManager/ActionEventManager';
-import { ActionEventName } from '../../../utils/ActionEventManager/ActionEventManagerTypes';
 import { sendErrorReport } from '../../../utils/errorHandling';
 import { Actions, countActionWithTelemetry } from '../../../utils/telemetry';
 import { useBookmarksActions } from './useBookmarksActions';
@@ -17,8 +16,9 @@ jest.mock('@proton/drive/index', () => ({
     useDrive: jest.fn(),
 }));
 
-jest.mock('../../../utils/ActionEventManager/ActionEventManager', () => ({
-    getActionEventManager: jest.fn(),
+jest.mock('@proton/drive/internal/BusDriver', () => ({
+    ...jest.requireActual('@proton/drive/internal/BusDriver'),
+    getBusDriver: jest.fn(),
 }));
 
 jest.mock('../../../utils/errorHandling', () => ({
@@ -56,7 +56,7 @@ describe('useBookmarksActions', () => {
             },
         } as any);
 
-        jest.mocked(getActionEventManager).mockReturnValue(mockEventManager as any);
+        jest.mocked(getBusDriver).mockReturnValue(mockEventManager as any);
 
         Object.defineProperty(window, 'location', {
             value: {
@@ -107,7 +107,7 @@ describe('useBookmarksActions', () => {
 
             expect(mockRemoveBookmark).toHaveBeenCalledWith(uid);
             expect(mockEventManagerEmit).toHaveBeenCalledWith({
-                type: ActionEventName.DELETE_BOOKMARKS,
+                type: BusDriverEventName.DELETE_BOOKMARKS,
                 uids: [uid],
             });
             expect(countActionWithTelemetry).toHaveBeenCalledWith(Actions.DeleteBookmarkFromSharedWithMe, 1);
@@ -143,7 +143,7 @@ describe('useBookmarksActions', () => {
             expect(mockRemoveBookmark).toHaveBeenCalledWith(uids[0]);
             expect(mockRemoveBookmark).toHaveBeenCalledWith(uids[1]);
             expect(mockEventManagerEmit).toHaveBeenCalledWith({
-                type: ActionEventName.DELETE_BOOKMARKS,
+                type: BusDriverEventName.DELETE_BOOKMARKS,
                 uids: uids,
             });
             expect(countActionWithTelemetry).toHaveBeenCalledWith(Actions.DeleteBookmarkFromSharedWithMe, 2);
@@ -169,7 +169,7 @@ describe('useBookmarksActions', () => {
             await onSubmit();
 
             expect(mockEventManagerEmit).toHaveBeenCalledWith({
-                type: ActionEventName.DELETE_BOOKMARKS,
+                type: BusDriverEventName.DELETE_BOOKMARKS,
                 uids: ['bookmark-uid-1', 'bookmark-uid-3'],
             });
             expect(countActionWithTelemetry).toHaveBeenCalledWith(Actions.DeleteBookmarkFromSharedWithMe, 2);

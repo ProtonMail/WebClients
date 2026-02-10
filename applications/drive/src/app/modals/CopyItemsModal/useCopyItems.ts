@@ -1,7 +1,6 @@
 import { NodeWithSameNameExistsValidationError, useDrive } from '@proton/drive';
+import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
 
-import { getActionEventManager } from '../../utils/ActionEventManager/ActionEventManager';
-import { ActionEventName } from '../../utils/ActionEventManager/ActionEventManagerTypes';
 import { handleSdkError } from '../../utils/errorHandling/useSdkErrorHandler';
 import { useCopiedItemsNotification } from './useCopiedItemsNotification';
 
@@ -82,7 +81,7 @@ export const useCopyItems = () => {
         }
 
         const copiesList = Object.values(copies);
-        await getActionEventManager().emit({ type: ActionEventName.CREATED_NODES, items: copiesList });
+        await getBusDriver().emit({ type: BusDriverEventName.CREATED_NODES, items: copiesList });
         const undoHandler = async () => {
             await undoCopy(copiesList);
         };

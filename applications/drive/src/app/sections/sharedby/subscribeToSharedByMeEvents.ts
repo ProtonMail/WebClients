@@ -1,7 +1,6 @@
 import { getDrive } from '@proton/drive';
+import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
 
-import { getActionEventManager } from '../../utils/ActionEventManager/ActionEventManager';
-import { ActionEventName } from '../../utils/ActionEventManager/ActionEventManagerTypes';
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
 import { handleSdkError } from '../../utils/errorHandling/useSdkErrorHandler';
 import { getNodeEntity } from '../../utils/sdk/getNodeEntity';
@@ -62,9 +61,9 @@ const createSharedByMeItemFromNode = async (nodeUid: string): Promise<SharedByMe
 };
 
 export const subscribeToSharedByMeEvents = () => {
-    const eventManager = getActionEventManager();
+    const eventManager = getBusDriver();
 
-    const createSubscription = eventManager.subscribe(ActionEventName.CREATED_NODES, async (event) => {
+    const createSubscription = eventManager.subscribe(BusDriverEventName.CREATED_NODES, async (event) => {
         const store = useSharedByMeStore.getState();
 
         for (const item of event.items) {
@@ -77,7 +76,7 @@ export const subscribeToSharedByMeEvents = () => {
         }
     });
 
-    const updateSubscription = eventManager.subscribe(ActionEventName.UPDATED_NODES, async (event) => {
+    const updateSubscription = eventManager.subscribe(BusDriverEventName.UPDATED_NODES, async (event) => {
         const store = useSharedByMeStore.getState();
 
         for (const item of event.items) {
@@ -92,7 +91,7 @@ export const subscribeToSharedByMeEvents = () => {
         }
     });
 
-    const deleteSubscription = eventManager.subscribe(ActionEventName.DELETED_NODES, async (event) => {
+    const deleteSubscription = eventManager.subscribe(BusDriverEventName.DELETED_NODES, async (event) => {
         const store = useSharedByMeStore.getState();
 
         for (const uid of event.uids) {

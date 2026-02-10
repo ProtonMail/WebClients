@@ -1,9 +1,8 @@
 import { useModalTwoStatic } from '@proton/components';
 import { getDrive } from '@proton/drive';
+import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
 
 import { withHoc } from '../../hooks/withHoc';
-import { getActionEventManager } from '../../utils/ActionEventManager/ActionEventManager';
-import { ActionEventName } from '../../utils/ActionEventManager/ActionEventManagerTypes';
 import { getNodeEntity } from '../../utils/sdk/getNodeEntity';
 import { CreateFolderModalView, type CreateFolderModalViewProps } from './CreateFolderModalView';
 import type { CreateFolderModalInnerProps } from './useCreateFolderModalState';
@@ -24,8 +23,8 @@ export const useCreateFolderModal = () => {
                 throw new Error('Missing uid in onSuccess callback for create folder modal');
             }
             const { node } = getNodeEntity(await drive.getNode(uid));
-            await getActionEventManager().emit({
-                type: ActionEventName.CREATED_NODES,
+            await getBusDriver().emit({
+                type: BusDriverEventName.CREATED_NODES,
                 items: [{ uid: node.uid, parentUid: node.parentUid, isShared: node.isShared, isTrashed: false }],
             });
             onSuccess?.({ uid, nodeId, name });
