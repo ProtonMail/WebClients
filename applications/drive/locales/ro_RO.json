@@ -187,7 +187,7 @@
         "Ștergere interogare"
       ],
       "Clear selection": [
-        "Golire selectate"
+        "Anulare selecție"
       ],
       "Click here.": [
         "Apăsați aici."
@@ -1232,6 +1232,24 @@
       ],
       "Zoom out": [
         "Micșorare"
+      ],
+      "Cancel downloads": [
+        "Anulare descărcări"
+      ],
+      "Cancel transfers": [
+        "Anulare transferuri"
+      ],
+      "Download (${ nbSelected })": [
+        "Descărcare (${ nbSelected })"
+      ],
+      "Scan & Download (${ nbSelected })": [
+        "Scanare și descărcare (${ nbSelected })"
+      ],
+      "Set password or expiration date": [
+        "Setare parolă sau dată de expirare"
+      ],
+      "Sharing is end-to-end encrypted": [
+        "Partajarea este criptată bilateral"
       ]
     },
     "Action: Docs": {
@@ -2992,6 +3010,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ați creat deja 10 aliasuri. Obțineți aliasuri nelimitate și 500 GiB de spațiu de stocare cu ${ BRAND_NAME } Unlimited."
+      ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Pentru a importa prin fișier CSV sau VCF, asigurați-vă că fișierul nu depășește ${ MAX_IMPORT_FILE_SIZE_STRING } sau ${ maxContactString } de contacte. Dacă fișierul este mai mare, împărțiți-l în fișiere mai mici. ${ learnMoreLink }."
       ]
     },
     "description": {
@@ -3867,6 +3888,18 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Nume nedecriptabil."
+      ],
+      "Failed loading group members": [
+        "Eroare la încărcarea membrilor grupului."
+      ],
+      "Network error": [
+        "Eroare de rețea."
+      ],
+      "We cannot retrieve this item": [
+        "Acest articol nu se poate prelua."
+      ],
+      "We were not able to load some search results": [
+        "Nu s-au putut încărca unele rezultate ale căutării."
       ]
     },
     "error": {
@@ -3943,6 +3976,9 @@
       ],
       "Your file ${ formattedFilename } is empty.": [
         "Fișierul ${ formattedFilename } este gol."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ maxContactString } contacts.": [
+        "Fișierul ${ formattedFilename } conține mai mult de ${ maxContactString } de contacte."
       ]
     },
     "Error importing event": {
@@ -6902,6 +6938,32 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Veți putea totuși să vă vizualizați datele propriului cont, dar toate conturile de utilizator vor fi eliminate din organizație."
+      ],
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "Vor fi importate toate contactele, până la limita de ${ maxContact }.",
+        "Vor fi importate toate contactele, până la limita de ${ maxContact }.",
+        "Vor fi importate toate contactele, până la limita de ${ maxContact }."
+      ],
+      "Computed hash does not match XAttr": [
+        "Hash-ul calculat nu corespunde cu XAttr."
+      ],
+      "Link copied": [
+        "Legătura web a fost copiată."
+      ],
+      "owner": [
+        "proprietar"
+      ],
+      "This will cancel any remaining downloads.": [
+        "Aceasta va anula toate descărcările rămase."
+      ],
+      "This will cancel any remaining uploads and downloads. Cancelled uploads won't be saved in ${ DRIVE_APP_NAME }.": [
+        "Aceasta va anula toate încărcările și descărcările rămase. Încărcările anulate nu vor fi salvate în ${ DRIVE_APP_NAME }."
+      ],
+      "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it's still best to download files only from trusted sources. ": [
+        "Pentru a vă proteja, ${ DRIVE_APP_NAME } vă poate scana fișierele într-un mod care să păstreze confidențialitatea și să blocheze fișierele rău intenționate. Cu toate acestea, cel mai bine este să descărcați fișiere numai din surse de încredere. "
+      ],
+      "Who has access": [
+        "Cine are acces"
       ]
     },
     "info": {
@@ -7570,7 +7632,7 @@
         "Opțiuni abonament"
       ],
       "Sync with system": [
-        "Ca cea din sistem"
+        "Ca în sistem"
       ],
       "System information": [
         "Informații sistem"
@@ -7664,6 +7726,27 @@
       ],
       "ZIP code": [
         "Cod poștal"
+      ],
+      "Active": [
+        "Activ"
+      ],
+      "admin": [
+        "administrator"
+      ],
+      "Anyone on the Internet with the link": [
+        "Oricine de pe internet care are legătura web"
+      ],
+      "can edit": [
+        "poate edita"
+      ],
+      "can view": [
+        "poate vedea"
+      ],
+      "Delete link and remove access for everyone": [
+        "Ștergere legătură web și anulare acces pentru toți"
+      ],
+      "Not active": [
+        "Inactiv"
       ]
     },
     "Label for contact group color": {
@@ -7976,6 +8059,17 @@
         "Maxim participanți: ${ n }",
         "Maxim participanți: ${ n }",
         "Maxim participanți: ${ n }"
+      ],
+      "${ n } participant": [
+        "${ n } participant",
+        "${ n } participanți",
+        "${ n } de participanți"
+      ],
+      "Booking pages": [
+        "Pagini de rezervare"
+      ],
+      "Meeting recording": [
+        "Înregistrare conferință"
       ]
     },
     "Message": {
@@ -8733,6 +8827,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Scanăm internetul ascuns pentru a verifica dacă adresele sau aliasurile ${ BRAND_NAME } v-au fost divulgate și vă avertizăm imediat dacă găsim ceva."
+      ],
+      "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
+        "Asistență telefonică (peste ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } utilizatori)"
       ]
     },
     "new_plans: feature highlight": {
@@ -9098,6 +9195,9 @@
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "Puteți avea mai mulți administratori. Toți administratorii pot adăuga și gestiona utilizatorii, dar numai administratorul principal are control asupra facturării."
+      ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } or more users": [
+        "Asistența telefonică este disponibilă de la echipa de asistență pentru clienți ${ BRAND_NAME } în timpul programului de lucru european, pentru clienții cu ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } sau mai mulți utilizatori."
       ]
     },
     "new_plans: Upsell attribute": {
@@ -10169,6 +10269,21 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Abonamentul actual are în prezent o reducere existentă. Trecerea la această nouă promoție înseamnă că reducerea curentă nu va mai fi aplicată."
+      ],
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "Reducerea este valabilă pentru ${ renewalsWithCoupon } reînnoire.",
+        "Reducerea este valabilă pentru ${ renewalsWithCoupon } reînnoiri.",
+        "Reducerea este valabilă pentru ${ renewalsWithCoupon } de reînnoiri."
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Prețul cu reducerea specială este valabil pentru ${ couponRedemptions } lună. Apoi va fi reînnoit automat cu ${ renewPriceStr } pentru o lună. Puteți anula oricând.",
+        "Prețul cu reducerea specială este valabil pentru ${ couponRedemptions } luni. Apoi va fi reînnoit automat cu ${ renewPriceStr } pentru o lună. Puteți anula oricând.",
+        "Prețul cu reducerea specială este valabil pentru ${ couponRedemptions } de luni. Apoi va fi reînnoit automat cu ${ renewPriceStr } pentru o lună. Puteți anula oricând."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Prețul cu reducerea specială de ${ priceWithDiscount } este valabil pentru ${ couponRedemptions } lună. Apoi va fi reînnoit automat cu ${ renewPriceStr } pentru o lună. Puteți anula oricând.",
+        "Prețul special redus de ${ priceWithDiscount } este valabil pentru ${ couponRedemptions } luni. Apoi va fi reînnoit automat la ${ renewPriceStr } pentru o lună. Puteți anula oricând.",
+        "Prețul special redus de ${ priceWithDiscount } este valabil pentru ${ couponRedemptions } de luni. Apoi va fi reînnoit automat la ${ renewPriceStr } pentru o lună. Puteți anula oricând."
       ]
     },
     "Payments.Error": {
@@ -11180,6 +11295,12 @@
       ],
       "Pending": [
         "În așteptare"
+      ],
+      "accepted": [
+        "acceptat"
+      ],
+      "pending": [
+        "în așteptare"
       ]
     },
     "Storage": {
@@ -13042,6 +13163,29 @@
       ],
       "You’ve got 5 GB of storage": [
         "Ați primit 5 GiB spațiu de stocare"
+      ],
+      "Cancel all downloads?": [
+        "Anulați toate descărcările?"
+      ],
+      "Cancel all transfers?": [
+        "Anulați toate transferurile?"
+      ],
+      "Found ${ resultCount } result": [
+        "Rezultate găsite: ${ resultCount }",
+        "Rezultate găsite: ${ resultCount }",
+        "Rezultate găsite: ${ resultCount }"
+      ],
+      "Public link": [
+        "Legătură web publică"
+      ],
+      "Public link settings": [
+        "Setări legătură web publică"
+      ],
+      "Settings for ${ sharedFileName }": [
+        "Setări pentru ${ sharedFileName }"
+      ],
+      "Your ${ planTitle } subscription has started": [
+        "Abonamentul ${ planTitle } a început"
       ]
     },
     "Today icon tooltip in mini calendar": {

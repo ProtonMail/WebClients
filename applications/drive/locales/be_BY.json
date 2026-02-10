@@ -757,7 +757,7 @@
         "Няма канфідэнцыяльных даных"
       ],
       "Not now": [
-        "Не зараз"
+        "Не цяпер"
       ],
       "OK": [
         "OK"
@@ -1238,6 +1238,24 @@
       ],
       "Zoom out": [
         "Паменшыць"
+      ],
+      "Cancel downloads": [
+        "Скасаваць спампоўкі"
+      ],
+      "Cancel transfers": [
+        "Скасаваць перадачы"
+      ],
+      "Download (${ nbSelected })": [
+        "Спампаваць (${ nbSelected })"
+      ],
+      "Scan & Download (${ nbSelected })": [
+        "Сканіраваць і спампаваць (${ nbSelected })"
+      ],
+      "Set password or expiration date": [
+        "Задаць пароль або тэрмін дзеяння"
+      ],
+      "Sharing is end-to-end encrypted": [
+        "Абагуліць са скразным шыфраваннем"
       ]
     },
     "Action: Docs": {
@@ -3009,6 +3027,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Вы ўжо стварылі 10 псеўданімаў. Атрымайце неабмежаваную колькасць псеўданімаў і 500 ГБ сховішча з ${ BRAND_NAME } Unlimited."
+      ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Пераканайцеся, што файл не перавышае аб'ем у ${ MAX_IMPORT_FILE_SIZE_STRING } або ${ maxContactString } кантакты для імпартавання праз файл CSV і VCF. Раздзяліце яго на меншыя файлы, калі файл перавышае максімальны аб'ём. ${ learnMoreLink }"
       ]
     },
     "description": {
@@ -3892,6 +3913,18 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Назва не паддаецца расшыфроўцы"
+      ],
+      "Failed loading group members": [
+        "Збой загрузкі членаў групы"
+      ],
+      "Network error": [
+        "Памылка сеткі"
+      ],
+      "We cannot retrieve this item": [
+        "Немагчыма атрымаць гэты элемент"
+      ],
+      "We were not able to load some search results": [
+        "Не ўдалося загрузіць некаторыя вынікі пошуку"
       ]
     },
     "error": {
@@ -3969,6 +4002,9 @@
       ],
       "Your file ${ formattedFilename } is empty.": [
         "Ваш файл ${ formattedFilename } пусты."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ maxContactString } contacts.": [
+        "Ваш файл ${ formattedFilename } змяшчае больш за ${ maxContactString } кантактаў."
       ]
     },
     "Error importing event": {
@@ -5823,7 +5859,7 @@
         "Вялікае імпартаванне можа заняць некалькі дзён."
       ],
       "Last week": [
-        "Апошні тыдзень"
+        "На мінулым тыдні"
       ],
       "Learn more": [
         "Даведацца больш"
@@ -5913,7 +5949,7 @@
         "Праблема з сеткай"
       ],
       "New": [
-        "Новае"
+        "Новы"
       ],
       "No": [
         "Не"
@@ -6991,6 +7027,39 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Вы ўсё яшчэ зможаце праглядаць даныя свайго ўласнага ўліковага запісу, але ўсе ўліковыя запісы карыстальнікаў будуць выдалены з вашай арганізацыі."
+      ],
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "Усе вашы кантакты будуць імпартаваны. Абмежаванне імпартавання складае да ${ maxContact }",
+        "Усе вашы кантакты будуць імпартаваны. Абмежаванне імпартавання складае да ${ maxContact }",
+        "Усе вашы кантакты будуць імпартаваны. Абмежаванне імпартавання складае да ${ maxContact }",
+        "Усе вашы кантакты будуць імпартаваны. Абмежаванне імпартавання складае да ${ maxContact }"
+      ],
+      "Computed hash does not match XAttr": [
+        "Разлічаны хэш не супадае з XAttr"
+      ],
+      "Link copied": [
+        "Спасылка скапіявана"
+      ],
+      "Malware detected": [
+        "Выяўлена шкодная праграма"
+      ],
+      "owner": [
+        "уладальнік"
+      ],
+      "This will cancel any remaining downloads.": [
+        "Гэта скасуе ўсе спампоўкі, якія засталіся."
+      ],
+      "This will cancel any remaining uploads and downloads. Cancelled uploads won't be saved in ${ DRIVE_APP_NAME }.": [
+        "Гэта скасуе ўсе астатнія запампоўкі і спампоўкі. Скасаваныя запампоўкі не будуць захаваны ў ${ DRIVE_APP_NAME }."
+      ],
+      "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it's still best to download files only from trusted sources. ": [
+        "${ DRIVE_APP_NAME } можа сканіраваць вашы файлы з захаваннем прыватнасці і блакіраваць шкодныя файлы, каб дапамагчы абараніць вас. Аднак, лепш спампоўваць файлы толькі з надзейных крыніц. "
+      ],
+      "We couldn't verify ${ nameAuthor } uploaded ${ node.name }. The following may have been tampered with: file data order. Only open if you trust it.": [
+        "Немагчыма спраўдзіць, што ${ nameAuthor } запампаваў ${ node.name }. Наступныя элементы могуць быць падробленымі: парадак даных файла. Адкрывайце іх толькі тады, калі давяраеце гэтаму змесціву."
+      ],
+      "Who has access": [
+        "Хто мае доступ"
       ]
     },
     "info": {
@@ -7759,6 +7828,27 @@
       ],
       "ZIP code": [
         "Паштовы індэкс"
+      ],
+      "Active": [
+        "Актыўна"
+      ],
+      "admin": [
+        "адміністратар"
+      ],
+      "Anyone on the Internet with the link": [
+        "Любы карыстальнік у інтэрнэце з гэтай спасылкай"
+      ],
+      "can edit": [
+        "можа рэдагаваць"
+      ],
+      "can view": [
+        "можа праглядаць"
+      ],
+      "Delete link and remove access for everyone": [
+        "Выдаліць спасылку і доступ для кожнага ўдзельніка"
+      ],
+      "Not active": [
+        "Не актыўна"
       ]
     },
     "Label for contact group color": {
@@ -8079,6 +8169,18 @@
         "Да ${ n } удзельнікаў",
         "Да ${ n } удзельнікаў",
         "Да ${ n } удзельнікаў"
+      ],
+      "${ n } participant": [
+        "${ n } удзельнік",
+        "${ n } удзельнікі",
+        "${ n } удзельнікаў",
+        "${ n } удзельнікаў"
+      ],
+      "Booking pages": [
+        "Старонкі браніравання"
+      ],
+      "Meeting recording": [
+        "Запіс сустрэчы"
       ]
     },
     "Message": {
@@ -8909,6 +9011,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Наша сістэма сканіруе цёмную сетку для праверкі на прадмет уцечкі адрасоў і псеўданімаў ${ BRAND_NAME }. Вы неадкладна будзеце апавешчаны ў выпадку, калі нешта будзе выяўлена."
+      ],
+      "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
+        "Падтрымка па тэлефоне (ад ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } карыстальнікаў)"
       ]
     },
     "new_plans: feature highlight": {
@@ -9277,6 +9382,9 @@
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "У вас можа быць некалькі адміністратараў. Усе адміністратары могуць дадаваць і кіраваць карыстальнікамі, але толькі асноўны адміністратар кантралюе аплату."
+      ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } or more users": [
+        "Служба падтрымкі кліентаў ${ BRAND_NAME } ажыццяўляе падтрымку па тэлефоне ў працоўны час (еўрапейскі часавы пояс) для кліентаў ад ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } карыстальнікаў і больш."
       ]
     },
     "new_plans: Upsell attribute": {
@@ -9445,7 +9553,7 @@
         "${ numberOfItems } элементаў выдалена"
       ],
       "${ numberOfItems } item deleted permanently": [
-        "${ numberOfItems } элемента выдалены незваротна",
+        "${ numberOfItems } элемент выдалены незваротна",
         "${ numberOfItems } элементы выдалены незваротна",
         "${ numberOfItems } элементаў выдалены незваротна",
         "${ numberOfItems } элементаў выдалены незваротна"
@@ -10384,6 +10492,24 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Ваша падпіска мае бягучую скідку. Пераход на гэту новую акцыю азначае, што ранейшая скідка больш не будзе ўжывацца."
+      ],
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "Скідка дзейнічае для ${ renewalsWithCoupon } падаўжэння.",
+        "Скідка дзейнічае для ${ renewalsWithCoupon } падаўжэнняў.",
+        "Скідка дзейнічае для ${ renewalsWithCoupon } падаўжэнняў.",
+        "Скідка дзейнічае для ${ renewalsWithCoupon } падаўжэнняў."
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Спецыяльны зніжаны кошт дзейнічае на працягу ${ couponRedemptions } месяца. Пасля гэтага адбудзецца аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы час.",
+        "Спецыяльны зніжаны кошт дзейнічае на працягу ${ couponRedemptions } месяцаў. Пасля гэтага адбудзецца аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы час.",
+        "Спецыяльны зніжаны кошт дзейнічае на працягу ${ couponRedemptions } месяцаў. Пасля гэтага адбудзецца аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы час.",
+        "Спецыяльны зніжаны кошт дзейнічае на працягу ${ couponRedemptions } месяцаў. Пасля гэтага адбудзецца аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы час."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Спецыяльны зніжаны кошт у памеры ${ priceWithDiscount } дзейнічае на працягу ${ couponRedemptions } месяца. Пасля гэтага адбудзецца аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы час.",
+        "Спецыяльны зніжаны кошт у памеры ${ priceWithDiscount } дзейнічае на працягу ${ couponRedemptions } месяцаў. Пасля гэтага адбудзецца аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы час.",
+        "Спецыяльны зніжаны кошт у памеры ${ priceWithDiscount } дзейнічае на працягу ${ couponRedemptions } месяцаў. Пасля гэтага адбудзецца аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы час.",
+        "Спецыяльны зніжаны кошт у памеры ${ priceWithDiscount } дзейнічае на працягу ${ couponRedemptions } месяцаў. Пасля гэтага адбудзецца аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы час."
       ]
     },
     "Payments.Error": {
@@ -11417,6 +11543,12 @@
       ],
       "Pending": [
         "У чаканні"
+      ],
+      "accepted": [
+        "прынята"
+      ],
+      "pending": [
+        "у чаканні"
       ]
     },
     "Storage": {
@@ -13312,6 +13444,30 @@
       ],
       "You’ve got 5 GB of storage": [
         "Вы атрымалі 5 ГБ сховішча"
+      ],
+      "Cancel all downloads?": [
+        "Скасаваць усе спампоўванні?"
+      ],
+      "Cancel all transfers?": [
+        "Скасаваць усе перадачы?"
+      ],
+      "Found ${ resultCount } result": [
+        "Знойдзены ${ resultCount } вынік",
+        "Знойдзены ${ resultCount } вынікі",
+        "Знойдзены ${ resultCount } вынікаў",
+        "Знойдзены ${ resultCount } вынікаў"
+      ],
+      "Public link": [
+        "Публічная спасылка"
+      ],
+      "Public link settings": [
+        "Налады публічнай спасылкі"
+      ],
+      "Settings for ${ sharedFileName }": [
+        "Налады для ${ sharedFileName }"
+      ],
+      "Your ${ planTitle } subscription has started": [
+        "Ваша падпіска з тарыфным планам ${ planTitle } пачалася"
       ]
     },
     "Today icon tooltip in mini calendar": {

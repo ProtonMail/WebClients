@@ -1226,6 +1226,24 @@
       ],
       "Zoom out": [
         "Alejar"
+      ],
+      "Cancel downloads": [
+        "Cancelar descargas"
+      ],
+      "Cancel transfers": [
+        "Cancelar transferencias"
+      ],
+      "Download (${ nbSelected })": [
+        "Descargar (${ nbSelected })"
+      ],
+      "Scan & Download (${ nbSelected })": [
+        "Escanear y descargar (${ nbSelected })"
+      ],
+      "Set password or expiration date": [
+        "Establecer contraseña o fecha de expiración"
+      ],
+      "Sharing is end-to-end encrypted": [
+        "Compartido con cifrado de extremo a extremo"
       ]
     },
     "Action: Docs": {
@@ -2975,6 +2993,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ya ha creado 10 alias. Obtenga alias ilimitados y 500 GB de almacenamiento con ${ BRAND_NAME } Ilimitado."
+      ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Para importar mediante un archivo CSV o VCF, asegúrese de que este no supere los ${ MAX_IMPORT_FILE_SIZE_STRING } o los ${ maxContactString } contactos. Si el archivo es más grande, divídalo en varios archivos más pequeños. ${ learnMoreLink }."
       ]
     },
     "description": {
@@ -3842,6 +3863,18 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Nombre indescifrable"
+      ],
+      "Failed loading group members": [
+        "Error al cargar los miembros del grupo"
+      ],
+      "Network error": [
+        "Error de red"
+      ],
+      "We cannot retrieve this item": [
+        "No se puede recuperar este elemento"
+      ],
+      "We were not able to load some search results": [
+        "No pudimos cargar algunos resultados de búsqueda"
       ]
     },
     "error": {
@@ -3917,6 +3950,9 @@
       ],
       "Your file ${ formattedFilename } is empty.": [
         "El archivo ${ formattedFilename } está vacío."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ maxContactString } contacts.": [
+        "Su archivo ${ formattedFilename } contiene más de ${ maxContactString } contactos."
       ]
     },
     "Error importing event": {
@@ -6807,6 +6843,31 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Podrá seguir viendo los datos de su propia cuenta, pero todas las cuentas de usuario serán eliminadas de su organización."
+      ],
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "Se importarán todos sus contactos, hasta un máximo de ${ maxContact }",
+        "Se importarán todos sus contactos, hasta un máximo de ${ maxContact }"
+      ],
+      "Computed hash does not match XAttr": [
+        "El hash calculado no coincide con XAttr"
+      ],
+      "Link copied": [
+        "Enlace copiado"
+      ],
+      "owner": [
+        "propietario"
+      ],
+      "This will cancel any remaining downloads.": [
+        "Esto cancelará las descargas restantes."
+      ],
+      "This will cancel any remaining uploads and downloads. Cancelled uploads won't be saved in ${ DRIVE_APP_NAME }.": [
+        "Esto cancelará cualquier carga o descarga restante. Las cargas canceladas no se guardarán en ${ DRIVE_APP_NAME }."
+      ],
+      "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it's still best to download files only from trusted sources. ": [
+        "Para ayudarle a protegerse, ${ DRIVE_APP_NAME } puede escanear sus archivos de manera que su privacidad se mantenga y los archivos maliciosos sean bloqueados. Sin embargo, sigue siendo mejor descargar archivos solo de fuentes confiables. "
+      ],
+      "Who has access": [
+        "Quién tiene acceso"
       ]
     },
     "info": {
@@ -7566,6 +7627,27 @@
       ],
       "ZIP code": [
         "Código postal"
+      ],
+      "Active": [
+        "Activo"
+      ],
+      "admin": [
+        "admin"
+      ],
+      "Anyone on the Internet with the link": [
+        "Cualquier persona en Internet con el enlace"
+      ],
+      "can edit": [
+        "puede editar"
+      ],
+      "can view": [
+        "puede ver"
+      ],
+      "Delete link and remove access for everyone": [
+        "Eliminar el enlace y el acceso para todos"
+      ],
+      "Not active": [
+        "No activo"
       ]
     },
     "Label for contact group color": {
@@ -8672,6 +8754,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Escaneamos la dark web para verificar si sus direcciones o alias de ${ BRAND_NAME } han sido filtrados y alertarle de inmediato si encontramos algo."
+      ],
+      "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
+        "Soporte telefónico (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ usuarios)"
       ]
     },
     "new_plans: feature highlight": {
@@ -9034,6 +9119,9 @@
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "Puede tener varios administradores. Todos tienen permiso para agregar y gestionar usuarios, pero solo el administrador principal puede controlar la facturación."
+      ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } or more users": [
+        "El equipo de atención al cliente de ${ BRAND_NAME } ofrece asistencia telefónica durante el horario laboral europeo para clientes con ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } o más usuarios"
       ]
     },
     "new_plans: Upsell attribute": {
@@ -10069,6 +10157,18 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Su suscripción actualmente tiene un descuento. Cambiar a esta promoción nueva significa que el descuento existente ya no se aplicará."
+      ],
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "El descuento es válido para ${ renewalsWithCoupon } renovación.",
+        "El descuento es válido para ${ renewalsWithCoupon } renovaciones."
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "El precio con descuento especial es válido durante ${ couponRedemptions } mes. Después se renovará automáticamente por ${ renewPriceStr } por 1 mes. Puede cancelar en cualquier momento.",
+        "El precio con descuento especial es válido durante ${ couponRedemptions } meses. Después se renovará automáticamente por ${ renewPriceStr } por 1 mes. Puede cancelar en cualquier momento."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "El precio con descuento especial de ${ priceWithDiscount } es válido durante ${ couponRedemptions } mes. Después se renovará automáticamente por ${ renewPriceStr } por 1 mes. Puede cancelar en cualquier momento.",
+        "El precio con descuento especial de ${ priceWithDiscount } es válido durante ${ couponRedemptions } meses. Después se renovará automáticamente por ${ renewPriceStr } por 1 mes. Puede cancelar en cualquier momento."
       ]
     },
     "Payments.Error": {
@@ -11058,6 +11158,12 @@
       ],
       "Pending": [
         "Pendiente"
+      ],
+      "accepted": [
+        "aceptado"
+      ],
+      "pending": [
+        "pendiente"
       ]
     },
     "Storage": {
@@ -12887,6 +12993,28 @@
       ],
       "You’ve got 5 GB of storage": [
         "Ha obtenido 5 GB de almacenamiento"
+      ],
+      "Cancel all downloads?": [
+        "¿Cancelar todas las descargas?"
+      ],
+      "Cancel all transfers?": [
+        "¿Cancelar todas las transferencias?"
+      ],
+      "Found ${ resultCount } result": [
+        "${ resultCount } resultado encontrado",
+        "Se encontraron ${ resultCount } resultados"
+      ],
+      "Public link": [
+        "Enlace público"
+      ],
+      "Public link settings": [
+        "Ajustes del enlace público"
+      ],
+      "Settings for ${ sharedFileName }": [
+        "Ajustes para ${ sharedFileName }"
+      ],
+      "Your ${ planTitle } subscription has started": [
+        "Su suscripción ${ planTitle } ha comenzado"
       ]
     },
     "Today icon tooltip in mini calendar": {
