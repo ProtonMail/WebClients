@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import Icon from '@proton/components/components/icon/Icon';
 import Checkbox from '@proton/components/components/input/Checkbox';
 import Label from '@proton/components/components/label/Label';
@@ -9,34 +10,35 @@ import {
     getDescriptionFromCategoryId,
     getLabelFromCategoryId,
 } from '@proton/mail/features/categoriesView/categoriesStringHelpers';
-import clsx from '@proton/utils/clsx';
+import noop from '@proton/utils/noop';
 
 interface CategoryItemProps {
     category: CategoryTab;
     loading: boolean;
     onUpdate: (category: CategoryTab) => void;
-    isLast: boolean;
 }
 
-export const CategorySettingsItem = ({ category, loading, onUpdate, isLast }: CategoryItemProps) => {
+export const CategorySettingsItem = ({ category, loading, onUpdate }: CategoryItemProps) => {
     const categoryLabel = getLabelFromCategoryId(category.id);
 
     return (
-        <div
-            key={category.id}
-            className={clsx(
-                'flex border-bottom border-left border-right border-weak px-4 py-2',
-                isLast && 'category-last'
-            )}
-        >
-            <Toggle
-                id={`enable-${category.id}`}
-                className="self-center mr-3"
-                checked={category.display}
-                onClick={() => onUpdate({ ...category, display: !category.display })}
-                data-testid={`${category.id}-display`}
-                disabled={loading}
-            />
+        <div key={category.id} className="flex px-4 py-2">
+            {/* This is intentionally not translated, will be removed after the alpha */}
+            <Tooltip title="Categories cannot be disabled during the alpha testing">
+                <div>
+                    <Toggle
+                        id={`enable-${category.id}`}
+                        className="self-center mr-3"
+                        // checked={category.display}
+                        checked={true}
+                        // onClick={() => onUpdate({ ...category, display: !category.display })}
+                        onClick={noop}
+                        data-testid={`${category.id}-display`}
+                        // disabled={loading}
+                        disabled={true}
+                    />
+                </div>
+            </Tooltip>
 
             <Label htmlFor={`enable-${category.id}`} className="p-0 flex-1 flex gap-3">
                 <Icon
