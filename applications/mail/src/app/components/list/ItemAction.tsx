@@ -26,17 +26,23 @@ const ItemAction = ({ element, className }: Props) => {
         <div className={clsx(['flex flex-nowrap', className])}>
             {!!element.IsReplied && (
                 <Tooltip title={c('Alt').t`Replied to`}>
-                    <IcArrowUpAndLeftBig alt={c('Alt').t`Replied to`} className="shrink-0 mr-1" />
+                    <span className="shrink-0 mr-1">
+                        <IcArrowUpAndLeftBig alt={c('Alt').t`Replied to`} />
+                    </span>
                 </Tooltip>
             )}
             {!!element.IsRepliedAll && (
                 <Tooltip title={c('Alt').t`Replied to all`}>
-                    <IcArrowsUpAndLeftBig alt={c('Alt').t`Replied to all`} className="shrink-0 mr-1" />
+                    <span className="shrink-0 mr-1">
+                        <IcArrowsUpAndLeftBig alt={c('Alt').t`Replied to all`} />
+                    </span>
                 </Tooltip>
             )}
             {!!element.IsForwarded && (
                 <Tooltip title={c('Alt').t`Forwarded`}>
-                    <IcArrowUpAndLeftBig alt={c('Alt').t`Forwarded`} className="mirror shrink-0 mr-1" />
+                    <span className="mirror shrink-0 mr-1">
+                        <IcArrowUpAndLeftBig alt={c('Alt').t`Forwarded`} />
+                    </span>
                 </Tooltip>
             )}
         </div>
