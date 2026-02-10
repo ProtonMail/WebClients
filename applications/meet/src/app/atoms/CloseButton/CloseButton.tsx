@@ -23,7 +23,7 @@ export const CloseButton = ({ onClose, className, style }: CloseButtonProps) => 
             aria-label={c('Alt').t`Close`}
             onClick={onClose}
         >
-            <IcCross className="color-hint" size={5} alt={c('Action').t`Close`} />
+            <IcCross size={5} alt={c('Action').t`Close`} />
         </Button>
     );
 };
