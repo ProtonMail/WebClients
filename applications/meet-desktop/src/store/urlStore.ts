@@ -1,7 +1,7 @@
 import { PROTON_LOCAL_DOMAIN } from "@proton/shared/lib/localDev";
 import Store from "electron-store";
 import { z } from "zod";
-import { mainLogger } from "../utils/log";
+import { mainLogger, sanitizeUrlForLogging } from "../utils/log";
 import { updateSettings } from "./settingsStore";
 
 const BASE_LOCAL_URL = process.env.BASE_LOCAL_URL || PROTON_LOCAL_DOMAIN;
@@ -42,7 +42,21 @@ const validateURL = (override?: unknown): null | URLConfig => {
     try {
         return urlSchema.parse(override);
     } catch (error) {
-        mainLogger.error("Invalid URL override", error);
+        const errorName = error instanceof Error ? error.name : "Unknown error";
+        const errorMessage = error instanceof Error ? error.message : String(error);
+
+        const sanitize = (data: string) => {
+            return data
+                .split(/\s+/)
+                .map((word) => {
+                    const hasProtocol = word.includes("://") || word.startsWith("http");
+
+                    return hasProtocol ? sanitizeUrlForLogging(word) : word;
+                })
+                .join(" ");
+        };
+
+        mainLogger.error("Invalid URL override:", sanitize(errorName), sanitize(errorMessage));
         updateSettings({ overrideError: true });
 
         return null;

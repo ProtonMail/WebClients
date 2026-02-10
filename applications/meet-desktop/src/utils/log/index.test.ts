@@ -1,6 +1,6 @@
 import { describe } from "@jest/globals";
 import { LogMessage } from "electron-log";
-import { filterSensitiveLogMessageTestOnly } from "./index";
+import { filterSensitiveLogMessageTestOnly, sanitizeUrlForLogging } from "./index";
 import { app } from "electron";
 
 jest.mock("electron", () => ({
@@ -317,5 +317,32 @@ describe("filter sensitive data", () => {
         expect(resultData.events[1].message).toContain("__HOME_ASCII_");
         expect(resultData.config.paths.data).toContain("__HOME_ASCII_");
         expect(resultData.config.paths.cache).toContain("__HOME_ASCII_");
+    });
+});
+
+describe("sanitizeUrlForLogging", () => {
+    it("should return [blocked-protocol] for non-http/https URLs", () => {
+        expect(sanitizeUrlForLogging("file://localhost/path")).toBe("[blocked-protocol]");
+        expect(sanitizeUrlForLogging("ftp://example.com")).toBe("[blocked-protocol]");
+        expect(sanitizeUrlForLogging("mailto:user@example.com")).toBe("[blocked-protocol]");
+    });
+
+    it("should return [invalid-url] for invalid URLs", () => {
+        expect(sanitizeUrlForLogging("invalid-url")).toBe("[invalid-url]");
+    });
+
+    it("should return the protocol and hostname for valid URLs", () => {
+        expect(sanitizeUrlForLogging("https://example.com")).toBe("https://example.com/");
+        expect(sanitizeUrlForLogging("http://example.com")).toBe("http://example.com/");
+    });
+
+    it("should remove the query parameters for valid URLs", () => {
+        expect(sanitizeUrlForLogging("https://example.com/url/path?param=value")).toBe("https://example.com/url/path");
+        expect(sanitizeUrlForLogging("http://example.com/url/path?param=value")).toBe("http://example.com/url/path");
+    });
+
+    it("should remove the hash for valid URLs", () => {
+        expect(sanitizeUrlForLogging("https://example.com/url/path#hash")).toBe("https://example.com/url/path");
+        expect(sanitizeUrlForLogging("http://example.com/url/path#hash")).toBe("http://example.com/url/path");
     });
 });

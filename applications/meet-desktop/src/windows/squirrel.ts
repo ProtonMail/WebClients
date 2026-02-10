@@ -79,23 +79,23 @@ export async function handleSquirrelEvents() {
 
     switch (squirrelCommand) {
         case SQUIRREL_INSTALL:
-            squirrelLogger.info("Install:", process.argv);
+            squirrelLogger.info("Install");
             await handleInstallShortcuts();
             break;
         case SQUIRREL_UPDATED:
-            squirrelLogger.info("Updated:", process.argv);
+            squirrelLogger.info("Updated");
             // During update the path to exe can change. Therefore we want to
             // update the lnk if they exists.
             await handleUpdatedShortcuts();
             break;
         case SQUIRREL_UNINSTALL: {
-            squirrelLogger.info("Uninstall:", process.argv);
+            squirrelLogger.info("Uninstall");
             await handleUninstallShortcuts();
             await spawnUninstallProcess();
             break;
         }
         case SQUIRREL_OBSOLETE:
-            squirrelLogger.info("Obsolete:", process.argv);
+            squirrelLogger.info("Obsolete");
             break;
     }
 
