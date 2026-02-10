@@ -42,13 +42,19 @@ interface Params {
     senderAddress: string;
 }
 
+const getFirstAttachedKeyMatchingSender = (senderAddress: string, attachedPublicKeys: PublicKeyReference[]) =>
+    attachedPublicKeys.find((key) =>
+        key.getUserIDs().some((userID) => userID.includes(canonicalizeInternalEmail(senderAddress)))
+    );
+
 const getPromptKeyPinningType = ({
     messageVerification,
     mailSettings,
     addresses,
     senderAddress,
 }: Params): PROMPT_KEY_PINNING_TYPE | undefined => {
-    if (addresses?.find(({ Email }) => canonicalizeInternalEmail(Email) === canonicalizeInternalEmail(senderAddress))) {
+    const canonicalizedSenderAddress = canonicalizeInternalEmail(senderAddress);
+    if (addresses?.find(({ Email }) => canonicalizeInternalEmail(Email) === canonicalizedSenderAddress)) {
         // Do not pin keys for own addresses
         return undefined;
     }
@@ -60,54 +66,65 @@ const getPromptKeyPinningType = ({
         signingPublicKey,
         verificationStatus,
     } = messageVerification;
-    const senderHasPinnedKeys = !!senderPinnedKeys.length;
-    const firstAttachedPublicKey = attachedPublicKeys.length ? attachedPublicKeys[0] : undefined;
-    const isSignedByAttachedKey =
-        !!signingPublicKey && attachedPublicKeys?.some((key) => signingPublicKey?.equals(key));
-    const isAttachedKeyPinned =
-        firstAttachedPublicKey && senderPinnedKeys.some((key) => firstAttachedPublicKey.equals(key));
-
+    const findKey = (keyToFind: PublicKeyReference, keys: PublicKeyReference[]) =>
+        keys.find((key) => keyToFind.equals(key, true));
     switch (verificationStatus) {
         case undefined:
             return;
         case MAIL_VERIFICATION_STATUS.SIGNED_AND_VALID: {
-            // with KT enabled, verification will succeed even with no pinned keys;
+            // This case occurs if KT is enabled, or if pinned keys are present.
+            // With KT enabled, verification will succeed even with no pinned keys;
             // we still want to prompt for key pinning if the user has opted-in for that
-            const signingFingerprint = signingPublicKey!.getFingerprint();
-            const isSigningKeyPinned = senderPinnedKeys.find((key) => key.getFingerprint() === signingFingerprint);
+            if (!signingPublicKey) {
+                throw new Error('signing public key expected');
+            }
+            const isSigningKeyPinned = !!findKey(signingPublicKey, senderPinnedKeys);
             if (!isSigningKeyPinned && PromptPin) {
                 return PROMPT_KEY_PINNING_TYPE.AUTOPROMPT;
             }
+            break;
         }
-        case MAIL_VERIFICATION_STATUS.SIGNED_AND_INVALID:
-        case MAIL_VERIFICATION_STATUS.NOT_VERIFIED: {
+        case MAIL_VERIFICATION_STATUS.SIGNED_AND_INVALID: {
+            // This case occurs if KT is enabled, or if pinned keys are present.
+            // It might be that the signature is invalid (due to data corruption) or simply
+            // that the signing key does not match any of the verification keys.
             if (!signingPublicKey) {
-                if (firstAttachedPublicKey) {
-                    return PROMPT_KEY_PINNING_TYPE.PIN_ATTACHED;
-                }
+                // none of the available keys matches the signing keyID
                 return;
             }
-            const signingFingerprint = signingPublicKey.getFingerprint();
+            const senderHasPinnedKeys = !!senderPinnedKeys.length;
             if (senderHasPinnedKeys) {
-                if (senderPinnableKeys.find((key) => key.getFingerprint() === signingFingerprint)) {
-                    // TODO: Exclude case where signature is invalid due to message modification (cf. OpenPGP.js v5)
-                    return PROMPT_KEY_PINNING_TYPE.PIN_UNSEEN;
-                } else {
-                    return;
-                }
+                const isSignedByPinnableApiKeys = !!findKey(signingPublicKey, senderPinnableKeys);
+                return isSignedByPinnableApiKeys ? PROMPT_KEY_PINNING_TYPE.PIN_UNSEEN : undefined;
             }
+            const isSignedByAttachedKey = !!findKey(signingPublicKey, attachedPublicKeys);
             if (isSignedByAttachedKey) {
                 return PROMPT_KEY_PINNING_TYPE.PIN_ATTACHED_SIGNING;
             }
-            if (PromptPin) {
-                return PROMPT_KEY_PINNING_TYPE.AUTOPROMPT;
-            }
+            break;
         }
-        case MAIL_VERIFICATION_STATUS.NOT_SIGNED: {
-            if (!firstAttachedPublicKey || isAttachedKeyPinned) {
+        case MAIL_VERIFICATION_STATUS.NOT_VERIFIED: {
+            // This case occurs when KT is not enabled, and no pinned keys are present,
+            // but API keys, as well as attached or autocrypt keys might be available
+            if (!signingPublicKey) {
+                // no verification keys are actually available
                 return;
             }
-            return PROMPT_KEY_PINNING_TYPE.PIN_ATTACHED;
+            const isSignedByPinnableApiKeys = senderPinnableKeys.some((key) => signingPublicKey.equals(key, true));
+            if (PromptPin && isSignedByPinnableApiKeys) {
+                return PROMPT_KEY_PINNING_TYPE.AUTOPROMPT;
+            }
+            const isSignedByAttachedKey = !!findKey(signingPublicKey, attachedPublicKeys);
+            if (isSignedByAttachedKey) {
+                return PROMPT_KEY_PINNING_TYPE.PIN_ATTACHED_SIGNING;
+            }
+            break;
+        }
+        case MAIL_VERIFICATION_STATUS.NOT_SIGNED: {
+            if (getFirstAttachedKeyMatchingSender(senderAddress, attachedPublicKeys)) {
+                return PROMPT_KEY_PINNING_TYPE.PIN_ATTACHED;
+            }
+            break;
         }
         default:
             throw new Error('Unknown verification status');
@@ -122,7 +139,7 @@ const getBannerMessage = (promptKeyPinningType: PROMPT_KEY_PINNING_TYPE) => {
         return c('Info').t`This message is signed by the key attached, that has not been trusted yet.`;
     }
     if (promptKeyPinningType === PROMPT_KEY_PINNING_TYPE.PIN_ATTACHED) {
-        return c('Info').t`An unknown public key has been detected for this recipient.`;
+        return c('Info').t`This message has a key attached, that has not been trusted yet.`;
     }
     if (promptKeyPinningType === PROMPT_KEY_PINNING_TYPE.AUTOPROMPT) {
         return c('Info').t`This sender's public key has not been trusted yet.`;
@@ -166,16 +183,17 @@ const ExtraPinKey = ({ message, messageVerification }: Props) => {
         return getPromptKeyPinningType({ messageVerification, mailSettings, addresses, senderAddress });
     }, [messageVerification, mailSettings, addresses, senderAddress]);
     const isPinUnseen = promptKeyPinningType === PROMPT_KEY_PINNING_TYPE.PIN_UNSEEN;
-    const firstAttachedPublicKey = messageVerification?.attachedPublicKeys?.length
-        ? messageVerification.attachedPublicKeys[0]
-        : undefined;
-    const bePinnedPublicKey = messageVerification?.signingPublicKey || firstAttachedPublicKey;
+    const firstAttachedPublicKeyMatchingSender = getFirstAttachedKeyMatchingSender(
+        senderAddress,
+        messageVerification?.attachedPublicKeys ?? []
+    );
+    const bePinnedPublicKey = messageVerification?.signingPublicKey || firstAttachedPublicKeyMatchingSender;
     const loading = loadingDisablePromptPin || !senderAddress || (isPinUnseen && !contactID) || !bePinnedPublicKey;
 
     // Prevent to propose an already pinned key even if for a strange reason,
     // the suggested key is already pinned yet the verification still fails
     const signingPublicKeyAlreadyPinned = messageVerification?.senderPinnedKeys?.some((pinKey) =>
-        bePinnedPublicKey?.equals(pinKey)
+        bePinnedPublicKey?.equals(pinKey, true)
     );
 
     const contact = useMemo<ContactWithBePinnedPublicKey>(() => {

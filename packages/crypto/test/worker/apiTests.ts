@@ -16,7 +16,7 @@ import {
 
 import type { CryptoApiInterface, PrivateKeyReferenceV4, PrivateKeyReferenceV6, SessionKey } from '../../lib';
 import { ARGON2_PARAMS, KeyCompatibilityLevel, S2kTypeForConfig, VERIFICATION_STATUS } from '../../lib';
-import { binaryStringToUint8Array, utf8StringToUint8Array, uint8ArrayToUtf8String } from '../../lib/utils';
+import { binaryStringToUint8Array, uint8ArrayToUtf8String, utf8StringToUint8Array } from '../../lib/utils';
 import {
     ecc25519Key,
     eddsaElGamalSubkey,
@@ -1245,7 +1245,7 @@ AQDFe4bzH3MY16IqrIq70QSCxqLJ0Ao+NYb1whc/mXYOAA==
             armoredKey: forwardeeKey,
             passphrase: 'passphrase',
         });
-        expect(charlieKey.equals(bobKey)).to.be.false; // sanity check
+        expect(charlieKey.equals(bobKey, false)).to.be.false; // sanity check
         expect(charlieKey.subkeys.length).to.equal(1);
         expect(proxyInstances[0].keyVersion).to.equal(4);
         expect(proxyInstances[0].forwarderKeyFingerprint.toHex()).to.include(bobKey.subkeys[0].getKeyID());
@@ -1297,7 +1297,7 @@ RudYbmMe/pzU8NRMIy8Ldd06k4vd0sClRAeGDg==
             armoredKey: forwardeeKey,
             passphrase: 'passphrase',
         });
-        expect(charlieKey.equals(bobKey)).to.be.false; // sanity check
+        expect(charlieKey.equals(bobKey, false)).to.be.false; // sanity check
         expect(charlieKey.subkeys.length).to.equal(2);
 
         proxyInstances.forEach((proxyInstance, i) => {
@@ -1763,7 +1763,7 @@ fzUCGwwAIQkQXHnmw8RpeUoWIQT490w0irDiMLKqqe5ceebDxGl5Sl9wAQC+
                 passphrase: null,
             });
             const publicKeyRef = await CryptoApiImplementation.importPublicKey({ armoredKey: publicKey.armor() });
-            expect(privateKeyRef.equals(publicKeyRef)).to.be.true;
+            expect(privateKeyRef.equals(publicKeyRef, false)).to.be.true;
 
             // change expiration time
             const { privateKey: armoredReformattedKey } = await reformatKey({
@@ -1775,7 +1775,7 @@ fzUCGwwAIQkQXHnmw8RpeUoWIQT490w0irDiMLKqqe5ceebDxGl5Sl9wAQC+
                 armoredKey: armoredReformattedKey,
                 passphrase: null,
             });
-            expect(privateKeyRef.equals(reformattedKeyRef)).to.be.false;
+            expect(privateKeyRef.equals(reformattedKeyRef, false)).to.be.false;
         });
 
         it('equals - can ignore third-party certifications', async () => {
@@ -1790,7 +1790,7 @@ fzUCGwwAIQkQXHnmw8RpeUoWIQT490w0irDiMLKqqe5ceebDxGl5Sl9wAQC+
                 armoredKey: keyWithThirdPartyCertifications,
             });
 
-            expect(certifiedPublicKeyRef.equals(publicKeyRef)).to.be.false;
+            expect(certifiedPublicKeyRef.equals(publicKeyRef, false)).to.be.false;
             expect(certifiedPublicKeyRef.equals(publicKeyRef, true)).to.be.true;
         });
 
