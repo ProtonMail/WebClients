@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 import { useMemo } from 'react';
 
-import { c, msgid } from 'ttag';
+import { c } from 'ttag';
 
 import { Avatar } from '@proton/atoms/Avatar/Avatar';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
@@ -14,6 +14,7 @@ import { GroupMembersModal, useGroupMembersModal } from '@proton/pass/components
 import type { AccessTarget } from '@proton/pass/lib/access/types';
 import type { InviteFormMemberItem } from '@proton/pass/types';
 import { ShareRole } from '@proton/pass/types';
+import generateUID from '@proton/utils/generateUID';
 
 export type InviteMemberProps = InviteFormMemberItem & {
     target: AccessTarget;
@@ -23,14 +24,15 @@ export type InviteMemberProps = InviteFormMemberItem & {
 
 export const InviteMember: FC<InviteMemberProps> = ({ target, value, onRemove, onRoleChange }) => {
     const { role, email } = value;
-    const { open, isGroup, name, avatar, members, membersCount, onClick, onClose } = useGroupMembersModal(email);
+    const { open, groupId, name, label, avatar, members, onClick, onClose } = useGroupMembersModal(email);
     // TODO: Remove this in IDTEAM-4660
     const labels = useInviteLabels();
     const { title: roleLabel } = useMemo(() => getShareRoleDefinition(target, labels)[role], [role]);
+    const nameId = generateUID('InviteMemberName');
 
     return (
         <div className="flex gap-3 flex-nowrap items-center  py-3 w-full">
-            <button onClick={onClick}>
+            <button onClick={onClick} aria-labelledby={nameId}>
                 <IconBox size={5} mode="icon" className="shrink-0 ui-primary flex items-center justify-center">
                     <Avatar className="rounded-lg pass-member--avatar">{avatar}</Avatar>
                 </IconBox>
@@ -38,16 +40,12 @@ export const InviteMember: FC<InviteMemberProps> = ({ target, value, onRemove, o
 
             <div className="flex-1">
                 <div className="flex flex-nowrap flex-1 items-center gap-2">
-                    {isGroup ? (
-                        <button onClick={onClick} className="text-ellipsis">
-                            {`${name} ${c('Info').ngettext(
-                                msgid`(${membersCount} member)`,
-                                `(${membersCount} members)`,
-                                membersCount
-                            )}`}
+                    {groupId ? (
+                        <button onClick={onClick} className="text-ellipsis" id={nameId}>
+                            {label}
                         </button>
                     ) : (
-                        <Tooltip openDelay={100} originalPlacement="bottom-start" title={email}>
+                        <Tooltip openDelay={100} originalPlacement="bottom-start" title={email} id={nameId}>
                             <div className="text-ellipsis">{name}</div>
                         </Tooltip>
                     )}

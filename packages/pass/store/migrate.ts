@@ -28,6 +28,8 @@ export const cacheGuard = (encryptedCache: Partial<EncryptedPassCache>, appVersi
 export const migrate = (state: State, snapshot: SerializedCryptoContext<PassCryptoSnapshot>, versions: { from?: string; to: string }) => {
     const user = selectUser(state);
     const plan = selectPassPlan(state);
+    /** All shares from crypto serialized context */
+    const shares = Object.fromEntries(snapshot.shareManagers);
 
     /** Sanity migration :
      * Sanitize the item state to ensure we have no invalid item
@@ -107,6 +109,7 @@ export const migrate = (state: State, snapshot: SerializedCryptoContext<PassCryp
 
     for (const shareId in state.shares) {
         const share = state.shares[shareId];
+        const match = shares[shareId]?.share;
 
         /** v1.28.0 migration */
         if ('invites' in share) delete share.invites;
@@ -114,14 +117,13 @@ export const migrate = (state: State, snapshot: SerializedCryptoContext<PassCryp
         if ('members' in share) delete share.members;
 
         /** v1.34.x AddressID migration */
-        if (!share.addressId) {
-            const shares = Object.fromEntries(snapshot.shareManagers);
-            const match = shares[shareId]?.share;
-            if (match) {
-                logger.debug(`[Migration] Auto-hydrated addressID from crypto snapshot for share ${logId(shareId)}`);
-                share.addressId = match.addressId;
-            }
+        if (!share.addressId && match) {
+            logger.debug(`[Migration] Auto-hydrated addressID from crypto snapshot for share ${logId(shareId)}`);
+            share.addressId = match.addressId;
         }
+
+        /** v1.34.x permission migration */
+        share.permission = match.permission ?? 0b1111111;
     }
 
     return state;
