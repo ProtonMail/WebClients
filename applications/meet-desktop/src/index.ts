@@ -96,9 +96,6 @@ import {
     });
 
     app.on("second-instance", (_ev, argv) => {
-        mainLogger.info("Second instance called", argv);
-
-        // Check for deep link in second instance
         const deepLinkUrl = handleSecondInstanceDeepLink(argv);
         if (deepLinkUrl) {
             showView("meet", deepLinkUrl);
@@ -153,10 +150,7 @@ import {
         }
     });
 
-    app.on("open-url", (_e: Event, url: string) => {
-        mainLogger.info("Open URL event", url);
-        // Deep link handling is set up in handleDeepLink()
-        // Bring window to focus
+    app.on("open-url", (_e: Event) => {
         bringWindowToFront();
     });
 
