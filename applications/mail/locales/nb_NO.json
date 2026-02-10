@@ -1690,6 +1690,10 @@
       ],
       "Zoom out": [
         "Zoom ut"
+      ],
+      "Trust key": [
+        "Klarér nøkkel",
+        "Klarér nøkler"
       ]
     },
     "action": {
@@ -4149,6 +4153,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du har allerede opprettet 10 aliaser. Få ubegrensede aliaser og 500 GB lagringsplass med ${ BRAND_NAME } Unlimited."
+      ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "For å importere via en CSV- og VCF-fil, forsikre deg om at filen ikke overskrider ${ MAX_IMPORT_FILE_SIZE_STRING } eller ${ maxContactString } kontakter. Hvis filen er større, del den opp i mindre filer. ${ learnMoreLink }."
       ]
     },
     "description": {
@@ -5049,6 +5056,18 @@
       ],
       "Unable to load VPN dashboard. Please check your connection and try again.": [
         "Kan ikke laste VPN-kontrollpanelet. Kontroller tilkoblingen og prøv på nytt."
+      ],
+      "Failed loading group members": [
+        "Kunne ikke laste inn gruppemedlemmer"
+      ],
+      "Network error": [
+        "Nettverksfeil"
+      ],
+      "That action can't be performed on emails in this folder": [
+        "Den handlingen kan ikke utføres på e-poster i denne mappen"
+      ],
+      "This offer is not available in your country": [
+        "Dette tilbudet er ikke tilgjengelig i landet ditt"
       ]
     },
     "error": {
@@ -5147,6 +5166,9 @@
       ],
       "Your file ${ formattedFilename } is empty.": [
         "Filen ${ formattedFilename } er tom."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ maxContactString } contacts.": [
+        "Filen ${ formattedFilename } inneholder mer enn ${ maxContactString } kontakter."
       ]
     },
     "Error importing event": {
@@ -7355,8 +7377,7 @@
         "Initialiserer…"
       ],
       "Insert image": [
-        "Sett inn bilde",
-        "Sett inn bilder"
+        "Sett inn bilde"
       ],
       "Insert link": [
         "Sett inn kobling"
@@ -8829,6 +8850,16 @@
       ],
       "Your physical location is visible and can be used to restrict your access to the internet.": [
         "Din fysiske plassering er synlig og kan brukes til å begrense tilgangen din til internett."
+      ],
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "Alle kontaktene dine blir importert, opptil en grense på ${ maxContact }.",
+        "Alle kontaktene dine blir importert, opptil en grense på ${ maxContact }."
+      ],
+      "No messages found": [
+        "Ingen meldinger funnet"
+      ],
+      "Please wait for the action to be completed": [
+        "Vent til handlingen er fullført"
       ]
     },
     "info": {
@@ -10417,6 +10448,16 @@
       "Up to ${ n } participant": [
         "Opptil ${ n } deltaker",
         "Opptil ${ n } deltakere"
+      ],
+      "${ n } participant": [
+        "${ n } deltaker",
+        "${ n } deltakere"
+      ],
+      "Booking pages": [
+        "Bestillingssider"
+      ],
+      "Meeting recording": [
+        "Opptak av møte"
       ]
     },
     "Message": {
@@ -11129,6 +11170,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Vi skanner det mørke nettet for å sjekke om ${ BRAND_NAME }-adressene eller aliasene dine har blitt lekket, og varsler deg umiddelbart hvis vi finner noe."
+      ],
+      "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
+        "Telefonstøtte (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ brukere)"
       ]
     },
     "new_plans: feature highlight": {
@@ -11496,6 +11540,9 @@
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "Du kan ha mer enn en administrator. Alle administratorere kan legge til og behandle brukere, men kun primæradministratoren har kontroll på fakturering."
+      ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } or more users": [
+        "Telefonstøtte er tilgjengelig fra kundestøtteteamet til ${ BRAND_NAME } i europeisk åpningstid for kunder med ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } eller flere brukere."
       ]
     },
     "new_plans: Upsell attribute": {
@@ -12282,6 +12329,18 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Abonnementet ditt har for øyeblikket en eksisterende rabatt. Hvis du flytter til denne nye kampanjen, vil den eksisterende rabatten ikke lenger gjelde."
+      ],
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "Rabatten er gyldig for ${ renewalsWithCoupon } fornyelse.",
+        "Rabatten er gyldig for ${ renewalsWithCoupon } fornyelser."
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Den spesielt rabatterte prisen er gyldig i ${ couponRedemptions } måned. Deretter fornyes den automatisk til ${ renewPriceStr } for 1 måned. Du kan avbryte når som helst.",
+        "Den spesielt rabatterte prisen er gyldig i ${ couponRedemptions } måneder. Deretter fornyes den automatisk til ${ renewPriceStr } for 1 måned. Du kan avbryte når som helst."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Den spesielt rabatterte prisen på ${ priceWithDiscount } er gyldig for ${ couponRedemptions } måned. Deretter vil den automatisk bli fornyet til ${ renewPriceStr } for 1 måned. Du kan avbryte når som helst.",
+        "Den spesielt rabatterte prisen på ${ priceWithDiscount } er gyldig i ${ couponRedemptions } måneder. Deretter vil den automatisk bli fornyet til ${ renewPriceStr } for 1 måned. Du kan avbryte når som helst."
       ]
     },
     "Payments.Error": {
@@ -12854,6 +12913,9 @@
       ],
       "No unread messages found": [
         "Ingen uleste meldinger funnet"
+      ],
+      "An action is being processed": [
+        "En handling blir behandlet"
       ]
     },
     "Section": {
@@ -15681,6 +15743,9 @@
       ],
       "When is it most important to use a VPN?": [
         "Når er det viktigst å bruke et VPN?"
+      ],
+      "Your ${ planTitle } subscription has started": [
+        "Abonnementet ditt på ${ planTitle } har startet"
       ]
     },
     "Today icon tooltip in mini calendar": {

@@ -1484,7 +1484,8 @@
         "Megbízható"
       ],
       "Trust key": [
-        "Megbízható kulcs"
+        "Kulcs megjelölése megbízhatóként",
+        "Kulcsok megjelölése megbízhatóként"
       ],
       "Trust public key": [
         "Nyilvános kulcs megjelölése megbízhatóként"
@@ -4911,6 +4912,9 @@
       ],
       "Unable to load VPN dashboard. Please check your connection and try again.": [
         "Nem sikerült betölteni a VPN vezérlőpultot. Ellenőrizze a kapcsolatot és próbálkozzon újra."
+      ],
+      "Network error": [
+        "Hálózati hiba"
       ]
     },
     "error": {
@@ -7195,7 +7199,6 @@
         "Inicializálás…"
       ],
       "Insert image": [
-        "Kép beillesztése",
         "Kép beillesztése"
       ],
       "Insert link": [

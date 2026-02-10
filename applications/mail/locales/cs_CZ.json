@@ -1510,7 +1510,10 @@
         "Důvěřovat"
       ],
       "Trust key": [
-        "Důvěřovat klíči"
+        "Důvěřovat klíči",
+        "Důvěřovat klíčům",
+        "Důvěřovat klíčům",
+        "Důvěřovat klíčům"
       ],
       "Trust public key": [
         "Důvěřovat veřejnému klíči"
@@ -4194,6 +4197,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Vytvořili jste již 10 aliasů. Získejte neomezený počet aliasů a 500 GB úložného prostoru s ${ BRAND_NAME } Unlimited."
+      ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Pro importování prostřednictvím souborů CSV a VCF zajistěte, aby velikost souboru nepřesáhla ${ MAX_IMPORT_FILE_SIZE_STRING } nebo ${ maxContactString } kontaktů. Pokud je váš soubor větší, rozdělte jej na menší soubory. ${ learnMoreLink }."
       ]
     },
     "description": {
@@ -4741,7 +4747,7 @@
         "Chyba při zpracování zprávy."
       ],
       "Missing key packet": [
-        "Chybějící paket klíčů"
+        "Chybějící paket klíče"
       ],
       "Missing signature": [
         "Chybí podpis"
@@ -5123,6 +5129,15 @@
       ],
       "Unable to load VPN dashboard. Please check your connection and try again.": [
         "Nelze načíst ovládací panel VPN. Zkontrolujte prosím své připojení a zkuste to znovu."
+      ],
+      "Failed loading group members": [
+        "Načtení členů skupiny selhalo"
+      ],
+      "Network error": [
+        "Chyba sítě"
+      ],
+      "That action can't be performed on emails in this folder": [
+        "Tuto akci nelze provést u e-mailů v této složce"
       ]
     },
     "error": {
@@ -5225,6 +5240,9 @@
       ],
       "Your file ${ formattedFilename } is empty.": [
         "Váš soubor ${ formattedFilename } je prázdný."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ maxContactString } contacts.": [
+        "Váš soubor ${ formattedFilename } obsahuje více než ${ maxContactString } kontaktů."
       ]
     },
     "Error importing event": {
@@ -7597,10 +7615,7 @@
         "Inicializace..."
       ],
       "Insert image": [
-        "Vložit obrázek",
-        "Vložit obrázky",
-        "Vložit obrázky",
-        "Vložit obrázky"
+        "Vložit obrázek"
       ],
       "Insert link": [
         "Vložit odkaz"
@@ -7975,7 +7990,7 @@
         "Použijte jiný prohlížeč nebo si soubor stáhněte."
       ],
       "Please wait for the action to be completed": [
-        "Počkejte prosím, než se akce dokončí"
+        "Počkejte prosím na dokončení akce"
       ],
       "Please wait till your changes are synced with the server.": [
         "Počkejte prosím, dokud se vaše změny nesynchronizují se serverem."
@@ -9122,6 +9137,15 @@
       ],
       "Your physical location is visible and can be used to restrict your access to the internet.": [
         "Vaše fyzická poloha je viditelná a může být použita k omezení vašeho přístupu k internetu."
+      ],
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "Budou importovány všechny vaše kontakty až do limitu ${ maxContact }",
+        "Budou importovány všechny vaše kontakty až do limitu ${ maxContact }",
+        "Budou importovány všechny vaše kontakty až do limitu ${ maxContact }",
+        "Budou importovány všechny vaše kontakty až do limitu ${ maxContact }"
+      ],
+      "No messages found": [
+        "Nenalezeny žádné zprávy"
       ]
     },
     "info": {
@@ -11516,6 +11540,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Prohledáváme dark web a kontrolujeme, zda nedošlo k úniku vašich adres nebo aliasů ${ BRAND_NAME }, pokud něco najdeme, okamžitě vás upozorníme."
+      ],
+      "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
+        "Telefonická podpora (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ uživatelů)"
       ]
     },
     "new_plans: feature highlight": {
@@ -11889,6 +11916,9 @@
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "Můžete mít více než jednoho správce. Všichni správci mohou přidávat a spravovat uživatele ale jen hlavní správce může spravovat platby."
+      ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } or more users": [
+        "Telefonická podpora je dostupná od týmu zákaznické podpory ${ BRAND_NAME } během evropské pracovní doby, pro zákazníky s ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } nebo více uživateli"
       ]
     },
     "new_plans: Upsell attribute": {
@@ -12693,6 +12723,24 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Vaše předplatné má v současné době platnou slevu. Přechodem na tuto novou akci bude stávající sleva zrušena."
+      ],
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "Sleva je platná pro ${ renewalsWithCoupon } obnovení.",
+        "Sleva je platná pro ${ renewalsWithCoupon } obnovení.",
+        "Sleva je platná pro ${ renewalsWithCoupon } obnovení.",
+        "Sleva je platná pro ${ renewalsWithCoupon } obnovení."
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Speciální zvýhodněná cena platí ${ couponRedemptions } měsíc. Poté dojde každý měsíc k automatickému obnovení za ${ renewPriceStr }. Předplatné můžete kdykoli zrušit.",
+        "Speciální zvýhodněná cena platí ${ couponRedemptions } měsíce. Poté dojde každý měsíc k automatickému obnovení za ${ renewPriceStr }. Předplatné můžete kdykoli zrušit.",
+        "Speciální zvýhodněná cena platí ${ couponRedemptions } měsíců. Poté dojde každý měsíc k automatickému obnovení za ${ renewPriceStr }. Předplatné můžete kdykoli zrušit.",
+        "Speciální zvýhodněná cena platí ${ couponRedemptions } měsíců. Poté dojde každý měsíc k automatickému obnovení za ${ renewPriceStr }. Předplatné můžete kdykoli zrušit."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Speciálně zvýhodněná cena ${ priceWithDiscount } platí ${ couponRedemptions } měsíc. Poté se automaticky obnoví za ${ renewPriceStr } na 1 měsíc. Službu můžete kdykoli zrušit.",
+        "Speciálně zvýhodněná cena ${ priceWithDiscount } platí ${ couponRedemptions } měsíce. Poté se automaticky obnoví za ${ renewPriceStr } na 1 měsíc. Službu můžete kdykoli zrušit.",
+        "Speciálně zvýhodněná cena ${ priceWithDiscount } platí ${ couponRedemptions } měsíců. Poté se automaticky obnoví za ${ renewPriceStr } na 1 měsíc. Službu můžete kdykoli zrušit.",
+        "Speciálně zvýhodněná cena ${ priceWithDiscount } platí ${ couponRedemptions } měsíců. Poté se automaticky obnoví za ${ renewPriceStr } na 1 měsíc. Službu můžete kdykoli zrušit."
       ]
     },
     "Payments.Error": {
@@ -13266,7 +13314,7 @@
     },
     "Search - no results": {
       "An action is being processed": [
-        "Akce se zpracovává"
+        "Probíhá zpracování akce"
       ],
       "No messages found": [
         "Nenalezena žádná zpráva"
@@ -16283,6 +16331,9 @@
       ],
       "When is it most important to use a VPN?": [
         "Kdy je nejdůležitější používat VPN?"
+      ],
+      "Your ${ planTitle } subscription has started": [
+        "Vaše předplatné ${ planTitle } bylo zahájeno"
       ]
     },
     "Today icon tooltip in mini calendar": {

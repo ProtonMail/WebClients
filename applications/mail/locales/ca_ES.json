@@ -1502,7 +1502,8 @@
         "De confiança"
       ],
       "Trust key": [
-        "Marca com a clau de confiança"
+        "Clau de confiança",
+        "Claus de confiança"
       ],
       "Trust public key": [
         "Confia en la clau pública"
@@ -5058,6 +5059,15 @@
       ],
       "Unable to load VPN dashboard. Please check your connection and try again.": [
         "No es pot carregar el tauler de control de VPN. Comproveu la vostra connexió i torneu-ho a provar."
+      ],
+      "Failed loading group members": [
+        "No s'han pogut carregar els membres del grup"
+      ],
+      "Network error": [
+        "Error de xarxa"
+      ],
+      "That action can't be performed on emails in this folder": [
+        "Aquesta acció no es pot realitzar en correus electrònics d'aquesta carpeta"
       ]
     },
     "error": {
@@ -7367,8 +7377,7 @@
         "S'està inicialitzant…"
       ],
       "Insert image": [
-        "Insereix una imatge",
-        "Insereix imatges"
+        "Insereix una imatge"
       ],
       "Insert link": [
         "Insereix un enllaç"
@@ -8848,6 +8857,9 @@
       ],
       "Your physical location is visible and can be used to restrict your access to the internet.": [
         "La vostra ubicació física és visible i es pot utilitzar per restringir l'accés a internet."
+      ],
+      "No messages found": [
+        "No s'ha trobat cap missatge"
       ]
     },
     "info": {
@@ -11158,6 +11170,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Escanegem el web fosc per a comprovar si les vostres adreces o àlies de ${ BRAND_NAME } s'han filtrat i us avisem immediatament si trobem alguna cosa."
+      ],
+      "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
+        "Suport telefònic (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ usuaris)"
       ]
     },
     "new_plans: feature highlight": {
@@ -11525,6 +11540,9 @@
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "Podeu tenir més d'un administrador. Tots els administradors poden afegir i gestionar usuaris, però només l'administrador principal té control sobre la facturació."
+      ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } or more users": [
+        "El servei d'atenció al client de ${ BRAND_NAME } ofereix assistència telefònica durant l'horari laboral europeu, per a clients amb ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } o més usuaris"
       ]
     },
     "new_plans: Upsell attribute": {
@@ -12311,6 +12329,18 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "La vostra subscripció ja té un descompte aplicat. Canviar a aquesta nova promoció implica que el descompte actual ja no s'aplicarà."
+      ],
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "El descompte és vàlid per a ${ renewalsWithCoupon } renovació.",
+        "El descompte és vàlid per a ${ renewalsWithCoupon } renovacions."
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "El preu amb descompte especial és vàlid durant ${ couponRedemptions } mes. Després, es renovarà automàticament a ${ renewPriceStr } per un període d'1 mes. Podeu cancel·lar la subscripció en qualsevol moment.",
+        "El preu amb descompte especial és vàlid durant ${ couponRedemptions } mesos. Després, es renovarà automàticament a ${ renewPriceStr } per un període d'1 mes. Podeu cancel·lar la subscripció en qualsevol moment."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "El preu amb descompte especial de ${ priceWithDiscount } és vàlid durant ${ couponRedemptions } mes. Després, es renovarà automàticament a ${ renewPriceStr } per un període d'1 mes. Podeu cancel·lar la subscripció en qualsevol moment.",
+        "El preu amb descompte especial de ${ priceWithDiscount } és vàlid durant ${ couponRedemptions } mesos. Després, es renovarà automàticament a ${ renewPriceStr } per un període d'1 mes. Podeu cancel·lar la subscripció en qualsevol moment."
       ]
     },
     "Payments.Error": {
@@ -15713,6 +15743,9 @@
       ],
       "When is it most important to use a VPN?": [
         "Quan és més important utilitzar una VPN?"
+      ],
+      "Your ${ planTitle } subscription has started": [
+        "La vostra subscripció a ${ planTitle } ha començat"
       ]
     },
     "Today icon tooltip in mini calendar": {
