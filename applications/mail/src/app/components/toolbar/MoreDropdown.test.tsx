@@ -16,7 +16,6 @@ jest.mock('../../hooks/actions/move/useMoveAllToFolder', () => ({
 }));
 
 const props = {
-    labelID: '1',
     elementIDs: [''],
     selectedIDs: ['a', 'b'],
     isSearch: false,
