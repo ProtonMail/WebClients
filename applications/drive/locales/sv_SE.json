@@ -1238,6 +1238,12 @@
       ],
       "Scan & Download (${ nbSelected })": [
         "Skanna och ladda ner (${ nbSelected })"
+      ],
+      "Set password or expiration date": [
+        "Ställ in lösenord eller utgångsdatum"
+      ],
+      "Sharing is end-to-end encrypted": [
+        "Delning är end-to-end-krypterad"
       ]
     },
     "Action: Docs": {
@@ -3848,6 +3854,12 @@
       ],
       "We were not able to load some search results": [
         "Vi kunde inte ladda några sökresultat"
+      ],
+      "Failed loading group members": [
+        "Misslyckades att ladda gruppmedlemmar"
+      ],
+      "Network error": [
+        "Nätverksfel"
       ]
     },
     "error": {
@@ -6811,6 +6823,18 @@
       ],
       "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it's still best to download files only from trusted sources. ": [
         "För att hjälpa till att skydda dig kan ${ DRIVE_APP_NAME } skanna dina filer på ett integritetsbevarande sätt och blockera skadliga filer. Men det är fortfarande bäst att bara ladda ner filer från betrodda källor. "
+      ],
+      "Link copied": [
+        "Länk kopierad"
+      ],
+      "owner": [
+        "ägare"
+      ],
+      "that": [
+        "vem"
+      ],
+      "Who has access": [
+        "Vem har åtkomst"
       ]
     },
     "info": {
@@ -7564,6 +7588,27 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Active": [
+        "Aktiv"
+      ],
+      "admin": [
+        "admin"
+      ],
+      "Anyone on the Internet with the link": [
+        "Vem som helst på internet med länken"
+      ],
+      "can edit": [
+        "kan redigera"
+      ],
+      "can view": [
+        "kan visa"
+      ],
+      "Delete link and remove access for everyone": [
+        "Ta bort länk och ta bort åtkomst för alla"
+      ],
+      "Not active": [
+        "Inte aktiv"
       ]
     },
     "Label for contact group color": {
@@ -11055,6 +11100,12 @@
       ],
       "Pending": [
         "Väntande"
+      ],
+      "accepted": [
+        "accepterad"
+      ],
+      "pending": [
+        "väntande"
       ]
     },
     "Storage": {
@@ -12897,6 +12948,15 @@
       ],
       "Your ${ planTitle } subscription has started": [
         "Din ${ planTitle }-prenumeration har startat"
+      ],
+      "Public link": [
+        "Offentlig länk"
+      ],
+      "Public link settings": [
+        "Inställning för offentlig länk"
+      ],
+      "Settings for ${ sharedFileName }": [
+        "Inställningar för ${ sharedFileName }"
       ]
     },
     "Today icon tooltip in mini calendar": {

@@ -1121,6 +1121,21 @@
       ],
       "Share your calendar with your team": [
         "與團隊共享您的行事曆"
+      ],
+      "Cancel transfers": [
+        "取消匯款"
+      ],
+      "Download info": [
+        "下載資訊"
+      ],
+      "Name your album": [
+        "命名相簿"
+      ],
+      "Run diagnostics": [
+        "執行診斷"
+      ],
+      "Toggle referral": [
+        "切換推薦"
       ]
     },
     "Actions": {
@@ -1662,6 +1677,9 @@
       ],
       "Limited favorites": [
         "有限的收藏"
+      ],
+      "Access to advanced AI models": [
+        "存取進階 AI 模型"
       ]
     },
     "collider_2025: Info": {
@@ -1673,6 +1691,9 @@
       ],
       "High-speed chats and advanced AI features.": [
         "高速聊天和先進的人工智慧功能。"
+      ],
+      "Private video calls for the conversations that matter.": [
+        "用於重要交談的私密視訊。"
       ]
     },
     "color": {
@@ -3532,6 +3553,15 @@
       ],
       "ZIP code is required": [
         "郵遞區號為必要項目"
+      ],
+      "Failed loading group members": [
+        "無法再入群組成員"
+      ],
+      "Network error": [
+        "網路連線錯誤"
+      ],
+      "⚠️ Undecryptable name": [
+        "⚠️無法解密的名字"
       ]
     },
     "error": {
@@ -4555,19 +4585,19 @@
         "**自動連線**：在您開啟裝置時，即可開啟並連線至 VPN。"
       ],
       "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
-        "**第一步：**使用您的推薦連結邀請您的朋友加入 ${ BRAND_NAME }。"
+        "**第一步：**使用您的推薦連結邀請朋友加入 ${ BRAND_NAME }。"
       ],
       "**Step 2:** Your friends get 2 weeks for free on their chosen ${ BRAND_NAME } plan.": [
-        "**步驟 2 ** 您的朋友取得 ${ BRAND_NAME } 方案的 2 週免費。"
+        "**第二步：**您的朋友將取得 ${ BRAND_NAME } 方案的 2 週免費。"
       ],
       "**Step 2:** Your friends get 2 weeks for free on their plan.": [
-        "**步驟 2 ** 您的朋友取計畫外的 2 週免費。"
+        "**第二步：**您的朋友將取得該方案的 2 週免費。"
       ],
       "**Step 3:** Get ${ referrerRewardAmount } credits for every friend that subscribes to a plan.": [
         "**第三步：**每當有朋友訂閱方案時，您將獲得 ${ referrerRewardAmount } 額度。"
       ],
       "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
-        "**第三步：**每當有使者訂閱方案時，您將獲得 ${ referrerRewardAmount } 額度。"
+        "**第三步：**每當有使用者訂閱方案時，您將獲得 ${ referrerRewardAmount } 額度。"
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } 附贈的儲存空間"
@@ -6923,6 +6953,9 @@
       ],
       "Your password (trusted contact)": [
         "您的密碼 (信任的內容)"
+      ],
+      "can view": [
+        "可以查看"
       ]
     },
     "Label for contact group color": {
@@ -7219,6 +7252,9 @@
       ],
       "Booking pages": [
         "預定頁面"
+      ],
+      "Meeting recording": [
+        "會議錄影"
       ]
     },
     "Message": {
@@ -8577,6 +8613,27 @@
       ],
       "Selected items were successfully removed from your list": [
         "選取項目已成功從清單移除"
+      ],
+      "${ errors.length } item failed to be copied": [
+        "${ errors.length } 個項目複製失敗"
+      ],
+      "${ errors.length } item failed to be trashed": [
+        "${ errors.length } 個項目刪除失敗"
+      ],
+      "${ numberOfItems } copied item moved to trash": [
+        "${ numberOfItems } 個複製項目已移動到垃圾桶"
+      ],
+      "${ numberOfItems } item deleted permanently": [
+        "${ numberOfItems } 個項目已永久刪除"
+      ],
+      "${ numberOfItems } item successfully copied": [
+        "${ numberOfItems } 個項目已成功複製"
+      ],
+      "Failed to remove device": [
+        "移除裝置失敗"
+      ],
+      "Failed to rename device": [
+        "無法重新命名裝置"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -9158,6 +9215,9 @@
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
         "享受特惠折扣 ${ priceWithDiscount } ${ couponRedemptions } 個月。而後將以每 1 月 ${ renewPriceStr } 的價格自動續約。您可以在任何時候取消訂閱。"
+      ],
+      "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
+        "您的訂閱已套用現有折扣。若轉換至新的促銷方案，現有折扣將不再套用。"
       ]
     },
     "Payments.Error": {
@@ -10055,6 +10115,9 @@
       ],
       "Pending": [
         "擱置中"
+      ],
+      "pending": [
+        "待處理"
       ]
     },
     "Storage": {
@@ -11605,6 +11668,18 @@
       ],
       "Upload and share files": [
         "上傳並共享檔案"
+      ],
+      "Cancel all transfers?": [
+        "取消全部匯款?"
+      ],
+      "Diagnostics": [
+        "診斷"
+      ],
+      "Found ${ resultCount } result": [
+        "找到 ${ resultCount } 個結果"
+      ],
+      "Your ${ planTitle } subscription has started": [
+        "您的 ${ planTitle } 訂閱已開始"
       ]
     },
     "Today icon tooltip in mini calendar": {
