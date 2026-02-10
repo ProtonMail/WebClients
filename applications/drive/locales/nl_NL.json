@@ -977,6 +977,9 @@
       "Set as cover": [
         "Instellen als omslag"
       ],
+      "Set password or expiration date": [
+        "Stel wachtwoord of vervaldatum in"
+      ],
       "Set recovery methods": [
         "Herstelmethoden instellen"
       ],
@@ -1012,6 +1015,9 @@
       ],
       "Share your calendar with your team": [
         "Deel uw agenda met uw team"
+      ],
+      "Sharing is end-to-end encrypted": [
+        "Delen is end-to-end versleuteld"
       ],
       "Sharing options": [
         "Opties voor delen"
@@ -3372,6 +3378,9 @@
       "External invitations are temporarily disabled. Please try again later": [
         "Externe uitnodigingen zijn tijdelijk uitgeschakeld. Probeer het later opnieuw"
       ],
+      "Failed loading group members": [
+        "Kon geen groepslid toevoegen."
+      ],
       "Failed to copy photo to album": [
         "Kopiëren van foto naar album is mislukt."
       ],
@@ -3510,6 +3519,9 @@
       ],
       "Name is required": [
         "Naam is verplicht"
+      ],
+      "Network error": [
+        "Netwerkfout"
       ],
       "No calendars found to import": [
         "Geen agenda's gevonden om te importeren"
@@ -5669,6 +5681,9 @@
       "Learn what to do ${ dataLeakedLink }": [
         "Leer wat te doen ${ dataLeakedLink }"
       ],
+      "Link copied": [
+        "Link gekopieerd"
+      ],
       "Link copied to clipboard": [
         "Link gekopieerd naar klembord"
       ],
@@ -5843,6 +5858,9 @@
       ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Onze waarschuwingen geven prioriteit aan veiligheid. Als u de geschonden informatie niet herkent, kunt u dit rapport gerust negeren."
+      ],
+      "owner": [
+        "eigenaar"
       ],
       "password": [
         "wachtwoord"
@@ -6567,6 +6585,9 @@
       "who": [
         "wie"
       ],
+      "Who has access": [
+        "Wie heeft toegang"
+      ],
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
         "wordt hersteld naar de versie van ${ formattedRevisionDate }. Alle andere versies blijven bewaard."
       ],
@@ -6945,6 +6966,9 @@
       "Account holder": [
         "Rekeninghouder"
       ],
+      "Active": [
+        "Actief"
+      ],
       "Add email address": [
         "E-mailadres toevoegen"
       ],
@@ -6957,6 +6981,9 @@
       "Address": [
         "Adres"
       ],
+      "admin": [
+        "beheerder"
+      ],
       "Alias title": [
         "Alias titel"
       ],
@@ -6968,6 +6995,9 @@
       ],
       "Anonymous": [
         "Anoniem"
+      ],
+      "Anyone on the Internet with the link": [
+        "Iedereen op het internet met de link"
       ],
       "App password": [
         "App-wachtwoord"
@@ -7013,6 +7043,12 @@
       ],
       "Calendars": [
         "Agenda's"
+      ],
+      "can edit": [
+        "kan bewerken"
+      ],
+      "can view": [
+        "kan bekijken"
       ],
       "Cancel download": [
         "Download annuleren"
@@ -7095,6 +7131,9 @@
       "Delete drive?": [
         "Drive verwijderen?",
         "Drives verwijderen?"
+      ],
+      "Delete link and remove access for everyone": [
+        "Link verwijderen en iedereen toegang ontnemen"
       ],
       "Delete recovery-related information.": [
         "Verwijder herstel-gerelateerde informatie."
@@ -7296,6 +7335,9 @@
       ],
       "New password": [
         "Nieuw wachtwoord"
+      ],
+      "Not active": [
+        "Niet actief"
       ],
       "Note": [
         "Notitie"
@@ -10980,6 +11022,14 @@
         "Uw abonnement wordt geannuleerd, even geduld"
       ]
     },
+    "Status": {
+      "accepted": [
+        "geaccepteerd"
+      ],
+      "pending": [
+        "in behandeling"
+      ]
+    },
     "Storage": {
       "Get more storage": [
         "Krijg meer opslag"
@@ -12453,6 +12503,12 @@
       "Processing...": [
         "Wordt verwerkt..."
       ],
+      "Public link": [
+        "Publieke link"
+      ],
+      "Public link settings": [
+        "Instellingen voor publieke link"
+      ],
       "Public shared link status": [
         "Status van openbare gedeelde link"
       ],
@@ -12543,6 +12599,9 @@
       ],
       "Settings": [
         "Instellingen"
+      ],
+      "Settings for ${ sharedFileName }": [
+        "Instellingen voor ${ sharedFileName }"
       ],
       "SHA1": [
         "SHA1"

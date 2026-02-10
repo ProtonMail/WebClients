@@ -977,6 +977,9 @@
       "Set as cover": [
         "Angi som omslag"
       ],
+      "Set password or expiration date": [
+        "Angi passord eller utløpsdato"
+      ],
       "Set recovery methods": [
         "Angi gjenopprettingsmetoder"
       ],
@@ -1012,6 +1015,9 @@
       ],
       "Share your calendar with your team": [
         "Del kalenderen din med teamet ditt"
+      ],
+      "Sharing is end-to-end encrypted": [
+        "Deling er ende-til-ende-kryptert"
       ],
       "Sharing options": [
         "Delingsalternativer"
@@ -3372,6 +3378,9 @@
       "External invitations are temporarily disabled. Please try again later": [
         "Eksterne invitasjoner er midlertidig deaktivert. Prøv igjen senere."
       ],
+      "Failed loading group members": [
+        "Kunne ikke laste inn gruppemedlemmer"
+      ],
       "Failed to copy photo to album": [
         "Kunne ikke kopiere bildet til albumet"
       ],
@@ -3510,6 +3519,9 @@
       ],
       "Name is required": [
         "Navn kreves"
+      ],
+      "Network error": [
+        "Nettverksfeil"
       ],
       "No calendars found to import": [
         "Fant ingen kalendere å importere"
@@ -5669,6 +5681,9 @@
       "Learn what to do ${ dataLeakedLink }": [
         "Finn ut hva du kan gjøre ${ dataLeakedLink }"
       ],
+      "Link copied": [
+        "Kobling kopiert"
+      ],
       "Link copied to clipboard": [
         "Kobling kopiert til utklippstavlen"
       ],
@@ -5843,6 +5858,9 @@
       ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Våre varsler prioriterer sikkerhet. Hvis du ikke gjenkjenner noe av informasjonen som er brutt, kan du trygt ignorere denne rapporten."
+      ],
+      "owner": [
+        "eier"
       ],
       "password": [
         "passord"
@@ -6567,6 +6585,9 @@
       "who": [
         "hvem"
       ],
+      "Who has access": [
+        "Hvem har tilgang"
+      ],
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
         "vil bli gjenopprettet til versjonen fra ${ formattedRevisionDate }. Alle andre versjoner lagres fortsatt."
       ],
@@ -6945,6 +6966,9 @@
       "Account holder": [
         "Kontoinnehaver"
       ],
+      "Active": [
+        "Aktiv"
+      ],
       "Add email address": [
         "Legg til e-postadresse"
       ],
@@ -6957,6 +6981,9 @@
       "Address": [
         "Adresse"
       ],
+      "admin": [
+        "administrator"
+      ],
       "Alias title": [
         "Aliastittel"
       ],
@@ -6968,6 +6995,9 @@
       ],
       "Anonymous": [
         "Anonym"
+      ],
+      "Anyone on the Internet with the link": [
+        "Alle på internett med koblingen"
       ],
       "App password": [
         "App-passord"
@@ -7013,6 +7043,12 @@
       ],
       "Calendars": [
         "Kalendere"
+      ],
+      "can edit": [
+        "kan redigere"
+      ],
+      "can view": [
+        "kan se"
       ],
       "Cancel download": [
         "Avbryt nedlasting"
@@ -7095,6 +7131,9 @@
       "Delete drive?": [
         "Slette stasjon?",
         "Slette stasjoner?"
+      ],
+      "Delete link and remove access for everyone": [
+        "Slett kobling og fjern tilgang for alle"
       ],
       "Delete recovery-related information.": [
         "Slett gjenopprettingsrelatert informasjon."
@@ -7296,6 +7335,9 @@
       ],
       "New password": [
         "Nytt passord"
+      ],
+      "Not active": [
+        "Ikke aktiv"
       ],
       "Note": [
         "Notat"
@@ -11037,6 +11079,14 @@
         "Kansellerer abonnementet ditt, vent litt"
       ]
     },
+    "Status": {
+      "accepted": [
+        "akseptert"
+      ],
+      "pending": [
+        "ventende"
+      ]
+    },
     "Storage": {
       "Get more storage": [
         "Få mer lagringskapasitet"
@@ -12510,6 +12560,12 @@
       "Processing...": [
         "Behandler..."
       ],
+      "Public link": [
+        "Offentlig kobling"
+      ],
+      "Public link settings": [
+        "Innstillinger for offentlig kobling"
+      ],
       "Public shared link status": [
         "Status for offentlig delt kobling"
       ],
@@ -12600,6 +12656,9 @@
       ],
       "Settings": [
         "Innstillinger"
+      ],
+      "Settings for ${ sharedFileName }": [
+        "Innstillinger for ${ sharedFileName }"
       ],
       "SHA1": [
         "SHA1"
