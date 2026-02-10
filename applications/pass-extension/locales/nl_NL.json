@@ -37,6 +37,9 @@
       "Accept and view the item": [
         "Accepteer en bekijk item"
       ],
+      "Accept invitation": [
+        "Accepteer uitnodiging"
+      ],
       "Account": [
         "Account"
       ],
@@ -1031,6 +1034,9 @@
       "Error reporting problem": [
         "Fout bij melden van het probleem"
       ],
+      "Failed loading group members": [
+        "Kon geen groepslid toevoegen."
+      ],
       "Failed removing the invite.": [
         "Het verwijderen van de uitnodiging mislukte."
       ],
@@ -1453,8 +1459,17 @@
         "${ forwardedEmailsCount } doorgestuurd",
         "${ forwardedEmailsCount } doorgestuurd"
       ],
+      "${ inviterEmail } wants to share an item with a group you administer.": [
+        "${ inviterEmail } wil een item delen met een groep die u beheert."
+      ],
+      "${ inviterEmail } wants to share an item with the group ${ invitedGroup.Name }.": [
+        "${ inviterEmail } wil een item delen met de groep ${ invitedGroup.Name }."
+      ],
       "${ inviterEmail } wants to share an item with you.": [
         "${ inviterEmail } wil een kluis delen met u."
+      ],
+      "${ maybeVaultName } has been shared with a group you are member of": [
+        "${ maybeVaultName } is gedeeld met een groep waarvan u lid bent"
       ],
       "${ memberCount } member": [
         "${ memberCount } lid",
@@ -1463,6 +1478,9 @@
       "${ n } item": [
         "${ n } item",
         "${ n } items"
+      ],
+      "${ newGroupSharesCount } new shares have been shared with a group you are member of": [
+        "${ newGroupSharesCount } nieuwe shares zijn gedeeld met een groep waarvan u lid bent"
       ],
       "${ PASS_APP_NAME } will always be accessible": [
         "${ PASS_APP_NAME } zal altijd toegankelijk zijn"
@@ -1518,6 +1536,10 @@
       "${ trialDaysLeft } day left": [
         "${ trialDaysLeft } dag over",
         "${ trialDaysLeft } dagen over"
+      ],
+      "(${ membersCount } member)": [
+        "(${ membersCount } lid)",
+        "(${ membersCount } leden)"
       ],
       "(Empty)": [
         "(Leeg)"
@@ -1938,6 +1960,9 @@
       "Invite successfully resent": [
         "Uitnodiging succesvol herverzonden"
       ],
+      "invites the group ${ invitedGroup.Name } to access items in": [
+        "nodigt de groep ${ invitedGroup.Name } voor toegang tot items in"
+      ],
       "invites you to access items in": [
         "nodigt u uit met toegang tot items in"
       ],
@@ -2034,8 +2059,7 @@
         "Alle items uit \"${ payload.content.name }\" verplaatsen"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Het verplaatsen van een item naar een andere kluis verwijdert zijn geschiedenis.",
-        "Het verplaatsen van items naar een andere kluis verwijdert hun geschiedenis."
+        "Het verplaatsen van een item naar een andere kluis verwijdert zijn beveiligde links."
       ],
       "Moving items": [
         "Items verplaatsen"
@@ -2431,6 +2455,9 @@
       "The following ${ totalIgnored } item could not be imported:": [
         "Het volgende ${ totalIgnored } item kon niet geïmporteerd worden:",
         "De volgende ${ totalIgnored } items konden niet geïmporteerd worden:"
+      ],
+      "The group is invited to a vault.": [
+        "De groep wordt uitgenodigd tot een kluis."
       ],
       "The secure link has been removed": [
         "De beveiligde link is verwijderd"
@@ -4775,6 +4802,9 @@
       ],
       "Vault": [
         "Kluis"
+      ],
+      "Vault shared with a group you administer": [
+        "Kluis gedeeld met een groep die u beheert"
       ],
       "Vault shared with you": [
         "Kluis gedeeld met u"

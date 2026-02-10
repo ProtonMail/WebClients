@@ -37,6 +37,9 @@
       "Accept and view the item": [
         "接受并查看项目"
       ],
+      "Accept invitation": [
+        "接受邀请"
+      ],
       "Account": [
         "账户"
       ],
@@ -84,6 +87,9 @@
       ],
       "Advanced options": [
         "高级选项"
+      ],
+      "Allow access": [
+        "允许访问"
       ],
       "and": [
         "和"
@@ -300,6 +306,12 @@
       ],
       "Dismiss": [
         "忽略"
+      ],
+      "Do not show again": [
+        "不再显示"
+      ],
+      "Do not show again when I press": [
+        "当我按下时不再显示"
       ],
       "Do not show on this website": [
         "请勿在本网站上显示"
@@ -791,6 +803,11 @@
         "展开"
       ]
     },
+    "Confirm": {
+      "Do you want your clipboard automatically cleared after ${ timeoutDurationHumanReadable }?": [
+        "您希望剪贴板在 ${ timeoutDurationHumanReadable } 后自动清除吗？"
+      ]
+    },
     "Description": {
       "${ DARK_WEB_MONITORING_NAME } is available with a paid plan. Upgrade for immediate access.": [
         "${ DARK_WEB_MONITORING_NAME } 通过付费计划提供。升级后可立即访问。"
@@ -869,6 +886,9 @@
       ],
       "These items remain at risk": [
         "这些项目仍然处于危险中"
+      ],
+      "These vaults will not be accessible and their content won’t be available to Search or Autofill.": [
+        "这些保险库将无法访问，且其内容将不会对搜索或自动填充功能可用。"
       ],
       "This account is vulnerable, visit the service and change your password.": [
         "该账户存在漏洞，请访问该服务并更改密码。"
@@ -1008,6 +1028,9 @@
       ],
       "Error reporting problem": [
         "错误报告"
+      ],
+      "Failed loading group members": [
+        "加载群组成员失败"
       ],
       "Failed removing the invite.": [
         "移除邀请失败。"
@@ -1150,6 +1173,9 @@
       "Importing items failed": [
         "导入项目失败"
       ],
+      "In order to continue, ${ PASS_APP_NAME } requires these extension permissions: ${ permissionsJSX }": [
+        "为了继续，${ PASS_APP_NAME } 需要以下扩展权限：${ permissionsJSX }"
+      ],
       "Inactive secure links could not be removed.": [
         "无法删除非活动安全链接。"
       ],
@@ -1188,6 +1214,12 @@
       ],
       "Passphrase is incorrect": [
         "密码不正确"
+      ],
+      "Permission denied for ${ domainsJSX } website access.": [
+        "权限被拒绝，无法访问 ${ domainsJSX } 网站"
+      ],
+      "Permission denied for website access.": [
+        "访问网站的权限被拒绝"
       ],
       "PIN codes do not match": [
         "两次输入的 PIN 码不一致"
@@ -1411,14 +1443,26 @@
       "${ forwardedEmailsCount } forwarded": [
         "${ forwardedEmailsCount } 已转发"
       ],
+      "${ inviterEmail } wants to share an item with a group you administer.": [
+        "${ inviterEmail } 希望与您管理的群组共享一个项目"
+      ],
+      "${ inviterEmail } wants to share an item with the group ${ invitedGroup.Name }.": [
+        "${ inviterEmail } 希望与群组 ${ invitedGroup.Name } 共享一个项目"
+      ],
       "${ inviterEmail } wants to share an item with you.": [
         "${ inviterEmail } 希望与您分享一个项目。"
+      ],
+      "${ maybeVaultName } has been shared with a group you are member of": [
+        "您所在的群组已获得保险库 ${ maybeVaultName } 的共享访问权限"
       ],
       "${ memberCount } member": [
         "${ memberCount } 位成员"
       ],
       "${ n } item": [
         "${ n } 项"
+      ],
+      "${ newGroupSharesCount } new shares have been shared with a group you are member of": [
+        "您所在的群组获得了 ${ newGroupSharesCount } 项新的共享内容"
       ],
       "${ PASS_APP_NAME } will always be accessible": [
         "${ PASS_APP_NAME } 将始终可以访问"
@@ -1471,6 +1515,9 @@
       "${ trialDaysLeft } day left": [
         "剩余 ${ trialDaysLeft } 天"
       ],
+      "(${ membersCount } member)": [
+        "(${ membersCount } 位成员)"
+      ],
       "(Empty)": [
         "（空）"
       ],
@@ -1488,6 +1535,9 @@
       ],
       "Access successfully confirmed": [
         "访问已成功确认"
+      ],
+      "access to ${ domains }.": [
+        "访问 ${ domains }"
       ],
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
         "访问 ${ PASS_APP_NAME } 将始终需要您的 ${ BRAND_NAME } 密码。"
@@ -1512,6 +1562,9 @@
       ],
       "Admin": [
         "管理员"
+      ],
+      "After confirming, you will need to accept a permission prompt for ${ PASS_APP_NAME }.": [
+        "确认后，您需要为 ${ PASS_APP_NAME } 接受一个权限提示"
       ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "成功导入数据后，为安全起见，您可以删除包含密码的 CSV 文件。"
@@ -1581,6 +1634,9 @@
       ],
       "Automatically copy the generated password to the clipboard": [
         "自动将生成的密码复制到剪贴板"
+      ],
+      "Automatically fill in your saved payment information.": [
+        "自动填充您保存的付款信息"
       ],
       "Autosaved on ${ url }": [
         "已在 ${ url } 上自动保存"
@@ -1657,6 +1713,9 @@
       "Copied to clipboard": [
         "已复制到剪贴板"
       ],
+      "Copied to clipboard (expires in ${ timeoutDurationHumanReadable })": [
+        "已复制到剪贴板（将在 ${ timeoutDurationHumanReadable } 后过期）"
+      ],
       "Coupon successfully applied!": [
         "优惠券已成功应用！"
       ],
@@ -1698,6 +1757,9 @@
       ],
       "Disabling offline mode...": [
         "正在关闭离线模式..."
+      ],
+      "Discover ${ PASS_APP_NAME } video": [
+        "探索 ${ PASS_APP_NAME } 视频"
       ],
       "DNS changes could take up to 24 hours to update.": [
         "DNS更改可能需要长达24小时才能更新。"
@@ -1873,6 +1935,9 @@
       "Invite successfully resent": [
         "已重新发送邀请"
       ],
+      "invites the group ${ invitedGroup.Name } to access items in": [
+        "邀请群组 ${ invitedGroup.Name } 访问项目"
+      ],
       "invites you to access items in": [
         "邀请您访问其中的项目"
       ],
@@ -1967,7 +2032,7 @@
         "正在从 \"${ payload.content.name }\" 移动所有项目"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "将项目移动到另一个保险库会删除其安全链接。"
+        "将项目移至其他保险库会清除其安全链接。"
       ],
       "Moving items": [
         "正在移动"
@@ -1981,6 +2046,9 @@
       "Moving items to trash": [
         "将项目移动至回收站"
       ],
+      "Navigate to your browser's extension settings and enable site permissions for ${ PASS_SHORT_APP_NAME }.": [
+        "导航至您浏览器的扩展设置，并为 ${ PASS_SHORT_APP_NAME } 启用网站权限。"
+      ],
       "Need to email someone but don’t want them to see your email address? Set up a contact alias.": [
         "需要给某人发送电子邮件，但又不想让对方看到您的电子邮件地址？设置联系人别名。"
       ],
@@ -1989,6 +2057,9 @@
       ],
       "No breaches detected": [
         "未检测到数据泄露"
+      ],
+      "No credit cards found": [
+        "未找到信用卡"
       ],
       "No identity item found": [
         "未找到身份信息"
@@ -2019,6 +2090,9 @@
       ],
       "Open the Extensions menu": [
         "打开扩展菜单"
+      ],
+      "Open the Safari settings, find ${ PASS_APP_NAME }, go to \"Permissions\" and enable site permissions.": [
+        "打开 Safari 设置，找到 ${ PASS_APP_NAME }，进入“权限”并启用网站权限"
       ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "我们的警报以安全为先。若您不认识任何被泄露的信息，则可以安全地忽略这份报告。"
@@ -2164,8 +2238,17 @@
       "Please follow the steps below to set up your domain.": [
         "请按照下面的步骤设置您的域。"
       ],
+      "Please keep ${ PASS_APP_NAME } open so the clipboard can be automatically cleared.": [
+        "请保持 ${ PASS_APP_NAME } 开启，以便自动清除剪贴板"
+      ],
       "Please keep this window open while your data is being imported. This process may take a few minutes.": [
         "在导入数据时，请不要关闭此窗口。这个过程可能需要几分钟。"
+      ],
+      "Please keep your browser open so the clipboard can be automatically cleared.": [
+        "请保持浏览器开启，以便自动清除剪贴板"
+      ],
+      "Please make sure the previously active window is where you want to autotype and your cursor was focused on the login field.": [
+        "请确保之前活跃的窗口是您想要执行自动输入的位置，并且您的光标已聚焦在登录字段上"
       ],
       "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
         "请注意别名一旦删除就无法恢复。也许您想禁用别名？"
@@ -2223,6 +2306,12 @@
       ],
       "Restoring trashed items...": [
         "正在还原回收站中的项目..."
+      ],
+      "Right-click the extension icon and select \"Manage extension\". Navigate to \"Permissions & data\" and enable site permissions.": [
+        "右键单击扩展图标并选择“管理扩展”，导航至“权限与数据”并启用网站权限。"
+      ],
+      "Right-click the extension icon and select \"Manage extension\". Navigate to \"Site access\" and enable site permissions.": [
+        "右键单击扩展图标并选择“管理扩展”，导航至“网站访问”并启用网站权限。"
       ],
       "Save login": [
         "保存登录信息"
@@ -2338,6 +2427,9 @@
       "The following ${ totalIgnored } item could not be imported:": [
         "无法导入以下 ${ totalIgnored } 项："
       ],
+      "The group is invited to a vault.": [
+        "该群组已被邀请访问一个保险库"
+      ],
       "The secure link has been removed": [
         "安全链接已删除"
       ],
@@ -2349,6 +2441,9 @@
       ],
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "该导出文件未经加密，任何可以访问您导出文件的人都可以看到您的密码。为了安全起见，请在使用完毕后将其删除。"
+      ],
+      "This feature is currently experimental on Linux. Please ensure your system is up-to-date.": [
+        "此功能目前在 Linux 上处于实验阶段，请确保您的系统是最新的。"
       ],
       "This item is not currently shared with anyone. Invite people to share it with others.": [
         "此项目目前未与任何人共享。请与他人共享。"
@@ -2548,6 +2643,9 @@
       "You may close this tab.": [
         "您可以关闭此标签页。"
       ],
+      "You may need to grant accessiblity permission to ${ PASS_APP_NAME }.": [
+        "您可能需要授予 ${ PASS_APP_NAME } 辅助功能权限"
+      ],
       "You need a vault with edit permission before you can import items.": [
         "在导入项目之前，您需要拥有一个具备编辑权限的加密库。"
       ],
@@ -2568,6 +2666,9 @@
       ],
       "You will no longer be notified of data breaches for this email address.": [
         "您将不再收到该电子邮件地址的数据泄露通知。"
+      ],
+      "You will no longer have access to sharing, 2FA and other advanced features in ${ PASS_APP_NAME }": [
+        "您将无法再访问 ${ PASS_APP_NAME } 中的共享、2FA 和其他高级功能"
       ],
       "You will no longer have access to sharing, 2FA, credit card and other advanced features in ${ PASS_APP_NAME }": [
         "您将无法再访问 ${ PASS_APP_NAME } 中的共享、2FA、信用卡和其他高级功能"
@@ -2598,6 +2699,14 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "您的组织要求您确保您对 ${ PASS_APP_NAME }的访问"
+      ]
+    },
+    "Keyboard key": {
+      "SHIFT": [
+        "SHIFT"
+      ],
+      "V": [
+        "V"
       ]
     },
     "Label": {
@@ -2889,6 +2998,9 @@
       "Created at": [
         "创建于"
       ],
+      "Credit-card autofill": [
+        "信用卡自动填充"
+      ],
       "Crypto Wallet": [
         "加密钱包"
       ],
@@ -3122,6 +3234,9 @@
       ],
       "Language": [
         "语言"
+      ],
+      "Larger window": [
+        "更大窗口"
       ],
       "Last 2 weeks": [
         "最近两周"
@@ -3890,6 +4005,11 @@
         "保存文件后，您可以关闭此窗口。"
       ]
     },
+    "Permission": {
+      "Will require a permission from your browser": [
+        "将需要您的浏览器授予权限"
+      ]
+    },
     "Placeholder": {
       "Add 2FA secret key": [
         "添加 2FA 密钥"
@@ -4221,6 +4341,9 @@
       "Change your lock method": [
         "更改您的锁定方式"
       ],
+      "Clear clipboard": [
+        "清除剪贴板"
+      ],
       "Confirm extra password": [
         "确认额外密码"
       ],
@@ -4346,6 +4469,9 @@
       ],
       "Grant permissions": [
         "授予权限"
+      ],
+      "Hidden vaults": [
+        "隐藏保险库"
       ],
       "Hide my email": [
         "隐藏我的邮箱"
@@ -4482,6 +4608,9 @@
       "Pending access to the shared data": [
         "等待访问共享数据"
       ],
+      "Perform autotype?": [
+        "执行自动输入？"
+      ],
       "Permanently remove all items?": [
         "是否永久移除所有项目？"
       ],
@@ -4614,8 +4743,14 @@
       "Vault": [
         "保险库"
       ],
+      "Vault shared with a group you administer": [
+        "保险库已与您管理的群组共享"
+      ],
       "Vault shared with you": [
         "与您共享的保险库"
+      ],
+      "Visible vaults": [
+        "可视化保险库"
       ],
       "Want to learn more?": [
         "想详细了解？"
@@ -4805,6 +4940,9 @@
       ],
       "Failed to load breaches.": [
         "加载泄露信息失败"
+      ],
+      "Grant clipboard access to enable automatic clearing of copied passwords and data.": [
+        "授予剪贴板访问权限以启用自动清除已复制的密码和数据"
       ],
       "Invalid alias prefix": [
         "无效的别名前缀"

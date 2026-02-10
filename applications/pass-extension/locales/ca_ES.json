@@ -37,6 +37,9 @@
       "Accept and view the item": [
         "Accepta i mostra l'element"
       ],
+      "Accept invitation": [
+        "Accepta invitació"
+      ],
       "Account": [
         "Compte"
       ],
@@ -1031,6 +1034,9 @@
       "Error reporting problem": [
         "S'ha produït un error en informar del problema"
       ],
+      "Failed loading group members": [
+        "No s'han pogut carregar els membres del grup"
+      ],
       "Failed removing the invite.": [
         "No s'ha pogut suprimir la invitació."
       ],
@@ -1453,8 +1459,17 @@
         "${ forwardedEmailsCount } reenviat",
         "${ forwardedEmailsCount } reenviats"
       ],
+      "${ inviterEmail } wants to share an item with a group you administer.": [
+        "${ inviterEmail } vol compartir un element amb un grup que administreu."
+      ],
+      "${ inviterEmail } wants to share an item with the group ${ invitedGroup.Name }.": [
+        "${ inviterEmail } vol compartir un element amb el grup ${ invitedGroup.Name }."
+      ],
       "${ inviterEmail } wants to share an item with you.": [
         "${ inviterEmail } vol compartir un element amb vosaltres."
+      ],
+      "${ maybeVaultName } has been shared with a group you are member of": [
+        "${ maybeVaultName } s'ha compartit amb un grup del qual sou membre"
       ],
       "${ memberCount } member": [
         "${ memberCount } membre",
@@ -1463,6 +1478,9 @@
       "${ n } item": [
         "${ n } element",
         "${ n } elements"
+      ],
+      "${ newGroupSharesCount } new shares have been shared with a group you are member of": [
+        "S'han compartit ${ newGroupSharesCount } elements nous amb un grup del qual sou membres"
       ],
       "${ PASS_APP_NAME } will always be accessible": [
         "${ PASS_APP_NAME } sempre serà accessible"
@@ -1518,6 +1536,10 @@
       "${ trialDaysLeft } day left": [
         "Queda ${ trialDaysLeft } dia",
         "Queden ${ trialDaysLeft } dies"
+      ],
+      "(${ membersCount } member)": [
+        "(${ membersCount } membre)",
+        "(${ membersCount } membres)"
       ],
       "(Empty)": [
         "(Buit)"
@@ -1938,6 +1960,9 @@
       "Invite successfully resent": [
         "S'ha reenviat la invitació."
       ],
+      "invites the group ${ invitedGroup.Name } to access items in": [
+        "convideu el grup ${ invitedGroup.Name } a accedir als elements de"
+      ],
       "invites you to access items in": [
         "us convida a accedir a elements a"
       ],
@@ -2034,8 +2059,7 @@
         "S'estan movent tots els elements de «${ payload.content.name }»"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Si moveu un element a una altra caixa forta, se n'esborrarà els enllaces segurs.",
-        "Si moveu els elements a una altra caixa forta, se n'esborrarà els enllaces segurs."
+        "Si moveu un element a una altra caixa forta, se n'esborrarà els enllaces segurs."
       ],
       "Moving items": [
         "S'estan movent elements"
@@ -2431,6 +2455,9 @@
       "The following ${ totalIgnored } item could not be imported:": [
         "No s'ha pogut importar ${ totalIgnored } element:",
         "No s'han pogut importar els ${ totalIgnored } elements següents:"
+      ],
+      "The group is invited to a vault.": [
+        "El grup és convidat a una caixa forta."
       ],
       "The secure link has been removed": [
         "S'ha eliminat l'enllaç segur."
@@ -4775,6 +4802,9 @@
       ],
       "Vault": [
         "Caixa forta"
+      ],
+      "Vault shared with a group you administer": [
+        "S'ha compartit una caixa forta amb un grup que administreu"
       ],
       "Vault shared with you": [
         "Caixa forta compartida amb vosaltres"

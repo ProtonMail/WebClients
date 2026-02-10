@@ -37,6 +37,9 @@
       "Accept and view the item": [
         "Acceptare și vizualizare articol"
       ],
+      "Accept invitation": [
+        "Acceptare invitație"
+      ],
       "Account": [
         "Cont"
       ],
@@ -1036,6 +1039,9 @@
       "Error reporting problem": [
         "Problemă de raportare a erorii."
       ],
+      "Failed loading group members": [
+        "Eroare la încărcarea membrilor grupului."
+      ],
       "Failed removing the invite.": [
         "Eșuare eliminare invitație."
       ],
@@ -1469,8 +1475,17 @@
         "Transferate: ${ forwardedEmailsCount }",
         "Transferate: ${ forwardedEmailsCount }"
       ],
+      "${ inviterEmail } wants to share an item with a group you administer.": [
+        "${ inviterEmail } dorește să partajeze un articol cu un grup pe care îl administrați."
+      ],
+      "${ inviterEmail } wants to share an item with the group ${ invitedGroup.Name }.": [
+        "${ inviterEmail } dorește să partajeze un articol cu grupul ${ invitedGroup.Name }."
+      ],
       "${ inviterEmail } wants to share an item with you.": [
         "${ inviterEmail } dorește să vă partajeze un articol."
+      ],
+      "${ maybeVaultName } has been shared with a group you are member of": [
+        "${ maybeVaultName } a fost partajat cu un grup din care faceți parte"
       ],
       "${ memberCount } member": [
         "${ memberCount } membru",
@@ -1481,6 +1496,9 @@
         "${ n } articol",
         "${ n } articole",
         "${ n } de articole"
+      ],
+      "${ newGroupSharesCount } new shares have been shared with a group you are member of": [
+        "${ newGroupSharesCount } partajări noi au fost partajate cu un grup din care faceți parte."
       ],
       "${ PASS_APP_NAME } will always be accessible": [
         "${ PASS_APP_NAME } va fi disponibil oricând"
@@ -1540,6 +1558,11 @@
         "A mai rămas ${ trialDaysLeft } zi",
         "Au mai rămas ${ trialDaysLeft } zile",
         "Au mai rămas ${ trialDaysLeft } de zile"
+      ],
+      "(${ membersCount } member)": [
+        "(${ membersCount } membru)",
+        "(${ membersCount } membri)",
+        "(${ membersCount } de membri)"
       ],
       "(Empty)": [
         "(Gol)"
@@ -1962,6 +1985,9 @@
       "Invite successfully resent": [
         "Invitația a fost retrimisă."
       ],
+      "invites the group ${ invitedGroup.Name } to access items in": [
+        "invită grupul ${ invitedGroup.Name } să acceseze articolele din"
+      ],
       "invites you to access items in": [
         "vă invită să accesați articolele din"
       ],
@@ -2058,11 +2084,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Se mută toate articolele din „${ payload.content.name }”."
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Mutarea unui articol într-un alt seif îi va șterge legăturile web securizate.",
-        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate.",
-        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate."
       ],
       "Moving items": [
         "Se mută articolele."
@@ -2460,6 +2481,9 @@
         "Nu s-a putut importa ${ totalIgnored } articol:",
         "Nu s-au putut importa ${ totalIgnored } articole:",
         "Nu s-au putut importa ${ totalIgnored } de articole:"
+      ],
+      "The group is invited to a vault.": [
+        "Grupul este invitat la un seif."
       ],
       "The secure link has been removed": [
         "Legătura web securizată a fost eliminată."
@@ -4832,6 +4856,9 @@
       ],
       "Vault": [
         "Seif"
+      ],
+      "Vault shared with a group you administer": [
+        "Seif partajat cu un grup pe care îl administrați"
       ],
       "Vault shared with you": [
         "Seif partajat cu dvs."
