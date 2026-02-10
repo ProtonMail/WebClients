@@ -6,6 +6,11 @@
 .participant-tile-body__video {
 	display: block;
 	object-fit: cover;
+	background-color: var(--backdrop-norm);
+
+	&.vertical-video {
+		object-fit: contain;
+	}
 }
 
 .radius-normal {
