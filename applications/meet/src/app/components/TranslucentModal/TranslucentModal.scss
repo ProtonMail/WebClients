@@ -1,9 +1,13 @@
 .translucent-modal {
-	backdrop-filter: blur(15px);
-	background-color: rgb(0 0 0 / 0.1);
+	backdrop-filter: blur(48px);
+	background-color: rgb(0 0 0 / 0.3);
 
 	.modal-two-dialog-container,
 	.modal-two-dialog {
 		background-color: transparent;
+	}
+
+	.close-button {
+		color: color-mix(in srgb, var(--text-norm) 80%, transparent);
 	}
 }
