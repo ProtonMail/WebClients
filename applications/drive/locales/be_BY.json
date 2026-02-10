@@ -757,7 +757,7 @@
         "Няма канфідэнцыяльных даных"
       ],
       "Not now": [
-        "Не зараз"
+        "Не цяпер"
       ],
       "OK": [
         "OK"
@@ -1250,6 +1250,12 @@
       ],
       "Scan & Download (${ nbSelected })": [
         "Сканіраваць і спампаваць (${ nbSelected })"
+      ],
+      "Set password or expiration date": [
+        "Задаць пароль або тэрмін дзеяння"
+      ],
+      "Sharing is end-to-end encrypted": [
+        "Абагуліць са скразным шыфраваннем"
       ]
     },
     "Action: Docs": {
@@ -3910,6 +3916,15 @@
       ],
       "We cannot retrieve this item": [
         "Немагчыма атрымаць гэты элемент"
+      ],
+      "Failed loading group members": [
+        "Збой загрузкі членаў групы"
+      ],
+      "Network error": [
+        "Памылка сеткі"
+      ],
+      "We were not able to load some search results": [
+        "Не ўдалося загрузіць некаторыя вынікі пошуку"
       ]
     },
     "error": {
@@ -5844,7 +5859,7 @@
         "Вялікае імпартаванне можа заняць некалькі дзён."
       ],
       "Last week": [
-        "Апошні тыдзень"
+        "На мінулым тыдні"
       ],
       "Learn more": [
         "Даведацца больш"
@@ -5934,7 +5949,7 @@
         "Праблема з сеткай"
       ],
       "New": [
-        "Новае"
+        "Новы"
       ],
       "No": [
         "Не"
@@ -7030,6 +7045,21 @@
       ],
       "We couldn't verify ${ nameAuthor } uploaded ${ node.name }. The following may have been tampered with: file data order. Only open if you trust it.": [
         "Немагчыма спраўдзіць, што ${ nameAuthor } запампаваў ${ node.name }. Наступныя элементы могуць быць падробленымі: парадак даных файла. Адкрывайце іх толькі тады, калі давяраеце гэтаму змесціву."
+      ],
+      "Computed hash does not match XAttr": [
+        "Разлічаны хэш не супадае з XAttr"
+      ],
+      "Link copied": [
+        "Спасылка скапіявана"
+      ],
+      "owner": [
+        "уладальнік"
+      ],
+      "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it's still best to download files only from trusted sources. ": [
+        "${ DRIVE_APP_NAME } можа сканіраваць вашы файлы з захаваннем прыватнасці і блакіраваць шкодныя файлы, каб дапамагчы абараніць вас. Аднак, лепш спампоўваць файлы толькі з надзейных крыніц. "
+      ],
+      "Who has access": [
+        "Хто мае доступ"
       ]
     },
     "info": {
@@ -7798,6 +7828,27 @@
       ],
       "ZIP code": [
         "Паштовы індэкс"
+      ],
+      "Active": [
+        "Актыўна"
+      ],
+      "admin": [
+        "адміністратар"
+      ],
+      "Anyone on the Internet with the link": [
+        "Любы карыстальнік у інтэрнэце з гэтай спасылкай"
+      ],
+      "can edit": [
+        "можа рэдагаваць"
+      ],
+      "can view": [
+        "можа праглядаць"
+      ],
+      "Delete link and remove access for everyone": [
+        "Выдаліць спасылку і доступ для кожнага ўдзельніка"
+      ],
+      "Not active": [
+        "Не актыўна"
       ]
     },
     "Label for contact group color": {
@@ -8960,6 +9011,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Наша сістэма сканіруе цёмную сетку для праверкі на прадмет уцечкі адрасоў і псеўданімаў ${ BRAND_NAME }. Вы неадкладна будзеце апавешчаны ў выпадку, калі нешта будзе выяўлена."
+      ],
+      "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
+        "Падтрымка па тэлефоне (ад ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } карыстальнікаў)"
       ]
     },
     "new_plans: feature highlight": {
@@ -9328,6 +9382,9 @@
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "У вас можа быць некалькі адміністратараў. Усе адміністратары могуць дадаваць і кіраваць карыстальнікамі, але толькі асноўны адміністратар кантралюе аплату."
+      ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } or more users": [
+        "Служба падтрымкі кліентаў ${ BRAND_NAME } ажыццяўляе падтрымку па тэлефоне ў працоўны час (еўрапейскі часавы пояс) для кліентаў ад ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } карыстальнікаў і больш."
       ]
     },
     "new_plans: Upsell attribute": {
@@ -10444,7 +10501,7 @@
       ],
       "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
         "Спецыяльны зніжаны кошт дзейнічае на працягу ${ couponRedemptions } месяца. Пасля гэтага адбудзецца аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы час.",
-        "Спецыяльны зніжаны кошт дзейнічае на працягу ${ couponRedemptions } месяцы. Пасля гэтага адбудзецца аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы час.",
+        "Спецыяльны зніжаны кошт дзейнічае на працягу ${ couponRedemptions } месяцаў. Пасля гэтага адбудзецца аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы час.",
         "Спецыяльны зніжаны кошт дзейнічае на працягу ${ couponRedemptions } месяцаў. Пасля гэтага адбудзецца аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы час.",
         "Спецыяльны зніжаны кошт дзейнічае на працягу ${ couponRedemptions } месяцаў. Пасля гэтага адбудзецца аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы час."
       ],
@@ -11486,6 +11543,12 @@
       ],
       "Pending": [
         "У чаканні"
+      ],
+      "accepted": [
+        "прынята"
+      ],
+      "pending": [
+        "у чаканні"
       ]
     },
     "Storage": {
@@ -13387,6 +13450,24 @@
       ],
       "Cancel all transfers?": [
         "Скасаваць усе перадачы?"
+      ],
+      "Found ${ resultCount } result": [
+        "Знойдзены ${ resultCount } вынік",
+        "Знойдзены ${ resultCount } вынікі",
+        "Знойдзены ${ resultCount } вынікаў",
+        "Знойдзены ${ resultCount } вынікаў"
+      ],
+      "Public link": [
+        "Публічная спасылка"
+      ],
+      "Public link settings": [
+        "Налады публічнай спасылкі"
+      ],
+      "Settings for ${ sharedFileName }": [
+        "Налады для ${ sharedFileName }"
+      ],
+      "Your ${ planTitle } subscription has started": [
+        "Ваша падпіска з тарыфным планам ${ planTitle } пачалася"
       ]
     },
     "Today icon tooltip in mini calendar": {

@@ -1250,6 +1250,12 @@
       ],
       "Scan & Download (${ nbSelected })": [
         "Skenovať a stiahnuť (${ nbSelected })"
+      ],
+      "Set password or expiration date": [
+        "Nastaviť heslo alebo dátum exspirácie"
+      ],
+      "Sharing is end-to-end encrypted": [
+        "Zdieľanie je end-to-end šifrované"
       ]
     },
     "Action: Docs": {
@@ -3910,6 +3916,15 @@
       ],
       "We cannot retrieve this item": [
         "Túto položku sa nám nepodarilo získať"
+      ],
+      "Failed loading group members": [
+        "Chyba pri načítavaní členov skupiny"
+      ],
+      "Network error": [
+        "Chyba siete"
+      ],
+      "We were not able to load some search results": [
+        "Niektoré výsledky vyhľadávania sa nám nepodarilo načítať."
       ]
     },
     "error": {
@@ -7030,6 +7045,21 @@
       ],
       "This will cancel any remaining uploads and downloads. Cancelled uploads won't be saved in ${ DRIVE_APP_NAME }.": [
         "Týmto sa zrušia všetky zostávajúce nahrávania a sťahovania. Zrušené nahrávania nebudú uložené v ${ DRIVE_APP_NAME }."
+      ],
+      "Computed hash does not match XAttr": [
+        "Vypočítaný hash sa nezhoduje s XAttr"
+      ],
+      "Link copied": [
+        "Odkaz bol skopírovaný"
+      ],
+      "owner": [
+        "vlastník"
+      ],
+      "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it's still best to download files only from trusted sources. ": [
+        "Na vašu ochranu môže ${ DRIVE_APP_NAME } skenovať vaše súbory spôsobom zachovávajúcim súkromie a blokovať škodlivé súbory. Stále je však najlepšie sťahovať súbory len z dôveryhodných zdrojov. "
+      ],
+      "Who has access": [
+        "Kto má prístup"
       ]
     },
     "info": {
@@ -7798,6 +7828,27 @@
       ],
       "ZIP code": [
         "PSČ"
+      ],
+      "Active": [
+        "Aktívne"
+      ],
+      "admin": [
+        "správca"
+      ],
+      "Anyone on the Internet with the link": [
+        "Ktokoľvek na internete s odkazom"
+      ],
+      "can edit": [
+        "môže upravovať"
+      ],
+      "can view": [
+        "môže zobraziť"
+      ],
+      "Delete link and remove access for everyone": [
+        "Odstrániť odkaz a zrušiť pre všetkých prístup"
+      ],
+      "Not active": [
+        "Neaktívne"
       ]
     },
     "Label for contact group color": {
@@ -8909,6 +8960,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Skenujeme dark web a kontrolujeme, či nedošlo k úniku vašich adries alebo aliasov ${ BRAND_NAME }, a ak niečo nájdeme, okamžite vás upozorníme."
+      ],
+      "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
+        "Telefónna podpora (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ používateľov)"
       ]
     },
     "new_plans: feature highlight": {
@@ -9277,6 +9331,9 @@
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "Môžete mať viac ako jedného správcu. Všetci správcovia môžu pridávať a spravovať používateľov, ale iba primárny správca má kontrolu nad fakturáciou."
+      ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } or more users": [
+        "Telefonická podpora od tímu zákazníckej podpory ${ BRAND_NAME } je k dispozícii počas európskych pracovných hodín pre zákazníkov s minimálne ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } používateľmi."
       ]
     },
     "new_plans: Upsell attribute": {
@@ -11435,6 +11492,12 @@
       ],
       "Pending": [
         "Čakajúce"
+      ],
+      "accepted": [
+        "prijaté"
+      ],
+      "pending": [
+        "čakajúce"
       ]
     },
     "Storage": {
@@ -13336,6 +13399,24 @@
       ],
       "Cancel all transfers?": [
         "Zrušiť všetky prenosy?"
+      ],
+      "Found ${ resultCount } result": [
+        "Nájdený ${ resultCount } výsledok",
+        "Nájdené ${ resultCount } výsledky",
+        "Nájdených ${ resultCount } výsledkov",
+        "Nájdených ${ resultCount } výsledkov"
+      ],
+      "Public link": [
+        "Verejný odkaz"
+      ],
+      "Public link settings": [
+        "Nastavenia verejného odkazu"
+      ],
+      "Settings for ${ sharedFileName }": [
+        "Nastavenia pre ${ sharedFileName }"
+      ],
+      "Your ${ planTitle } subscription has started": [
+        "Vaše predplatné ${ planTitle } začalo"
       ]
     },
     "Today icon tooltip in mini calendar": {

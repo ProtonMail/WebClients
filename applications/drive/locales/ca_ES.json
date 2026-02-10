@@ -1238,6 +1238,12 @@
       ],
       "Scan & Download (${ nbSelected })": [
         "Escanegeu i descarregueu (${ nbSelected })"
+      ],
+      "Set password or expiration date": [
+        "Establiu una contrasenya o una data de caducitat"
+      ],
+      "Sharing is end-to-end encrypted": [
+        "La compartició està xifrada d’extrem a extrem"
       ]
     },
     "Action: Docs": {
@@ -3860,6 +3866,15 @@
       ],
       "We cannot retrieve this item": [
         "No s'ha pogut recuperar aquest element"
+      ],
+      "Failed loading group members": [
+        "No s'han pogut carregar els membres del grup"
+      ],
+      "Network error": [
+        "Error de xarxa"
+      ],
+      "We were not able to load some search results": [
+        "No s'han pogut carregar alguns resultats de la cerca"
       ]
     },
     "error": {
@@ -6838,6 +6853,21 @@
       ],
       "This will cancel any remaining uploads and downloads. Cancelled uploads won't be saved in ${ DRIVE_APP_NAME }.": [
         "Això cancel·larà qualsevol càrrega i descàrrega pendent. Les càrregues cancel·lades no es desaran a ${ DRIVE_APP_NAME }."
+      ],
+      "Computed hash does not match XAttr": [
+        "L'empremta electrònica calculada no coincideix amb XAttr"
+      ],
+      "Link copied": [
+        "S'ha copiat l'enllaç"
+      ],
+      "owner": [
+        "propietari/ària"
+      ],
+      "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it's still best to download files only from trusted sources. ": [
+        "Per ajudar a protegir-vos, ${ DRIVE_APP_NAME } pot escanejar els vostres fitxers de manera que en preservi la privadesa i bloquegi fitxers maliciosos. De totes maneres, sempre és millor descarregar fitxers només de fonts de confiança. "
+      ],
+      "Who has access": [
+        "Qui hi té accés"
       ]
     },
     "info": {
@@ -7597,6 +7627,27 @@
       ],
       "ZIP code": [
         "Codi postal"
+      ],
+      "Active": [
+        "Actiu"
+      ],
+      "admin": [
+        "administrador/a"
+      ],
+      "Anyone on the Internet with the link": [
+        "Qualsevol persona a Internet amb l'enllaç"
+      ],
+      "can edit": [
+        "es pot editar"
+      ],
+      "can view": [
+        "pot veure"
+      ],
+      "Delete link and remove access for everyone": [
+        "Elimineu l'enllaç i esborreu l'accés per a tothom"
+      ],
+      "Not active": [
+        "No està actiu"
       ]
     },
     "Label for contact group color": {
@@ -8703,6 +8754,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Escanegem el web fosc per a comprovar si les vostres adreces o àlies de ${ BRAND_NAME } s'han filtrat i us avisem immediatament si trobem alguna cosa."
+      ],
+      "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
+        "Suport telefònic (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ usuaris)"
       ]
     },
     "new_plans: feature highlight": {
@@ -9065,6 +9119,9 @@
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "Podeu tenir més d'un administrador. Tots els administradors poden afegir i gestionar usuaris, però només l'administrador principal té control sobre la facturació."
+      ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } or more users": [
+        "El servei d'atenció al client de ${ BRAND_NAME } ofereix assistència telefònica durant l'horari laboral europeu, per a clients amb ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } o més usuaris"
       ]
     },
     "new_plans: Upsell attribute": {
@@ -11101,6 +11158,12 @@
       ],
       "Pending": [
         "Pendent"
+      ],
+      "accepted": [
+        "s'ha acceptat"
+      ],
+      "pending": [
+        "pendent"
       ]
     },
     "Storage": {
@@ -12936,6 +12999,22 @@
       ],
       "Cancel all transfers?": [
         "Voleu cancel·lar totes les transferències?"
+      ],
+      "Found ${ resultCount } result": [
+        "S'ha trobat ${ resultCount } resultat",
+        "S'han trobat ${ resultCount } resultats"
+      ],
+      "Public link": [
+        "Enllaç públic"
+      ],
+      "Public link settings": [
+        "Preferències de l'enllaç públic"
+      ],
+      "Settings for ${ sharedFileName }": [
+        "Preferències de ${ sharedFileName }"
+      ],
+      "Your ${ planTitle } subscription has started": [
+        "La vostra subscripció a ${ planTitle } ha començat"
       ]
     },
     "Today icon tooltip in mini calendar": {

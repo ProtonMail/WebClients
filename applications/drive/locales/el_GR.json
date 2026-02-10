@@ -1238,6 +1238,12 @@
       ],
       "Scan & Download (${ nbSelected })": [
         "Σάρωση & Λήψη (${ nbSelected })"
+      ],
+      "Set password or expiration date": [
+        "Ορισμός κωδικού πρόσβασης ή ημερομηνίας λήξης"
+      ],
+      "Sharing is end-to-end encrypted": [
+        "Η κοινοποίηση είναι, διατερματικά κρυπτογραφημένη"
       ]
     },
     "Action: Docs": {
@@ -3860,6 +3866,15 @@
       ],
       "We cannot retrieve this item": [
         "Δεν είναι δυνατή η ανάκτηση αυτού του στοιχείου"
+      ],
+      "Failed loading group members": [
+        "Αποτυχία φόρτωσης μελών ομάδας"
+      ],
+      "Network error": [
+        "Σφάλμα δικτύου"
+      ],
+      "We were not able to load some search results": [
+        "Δεν ήταν δυνατή η φόρτωση ορισμένων αποτελεσμάτων αναζήτησης"
       ]
     },
     "error": {
@@ -6838,6 +6853,21 @@
       ],
       "This will cancel any remaining uploads and downloads. Cancelled uploads won't be saved in ${ DRIVE_APP_NAME }.": [
         "Αυτό θα ακυρώσει τυχόν εναπομείναντα ανεβασμένα και κατεβασμένα αρχεία. Τα ακυρωμένα ανεβασμένα αρχεία δε θα αποθηκευτούν στο ${ DRIVE_APP_NAME }."
+      ],
+      "Computed hash does not match XAttr": [
+        "Ο υπολογισμένος κατακερματισμός δεν ταιριάζει με το XAttr"
+      ],
+      "Link copied": [
+        "Ο σύνδεσμος αντιγράφηκε"
+      ],
+      "owner": [
+        "ιδιοκτήτης"
+      ],
+      "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it's still best to download files only from trusted sources. ": [
+        "Για την προστασία σας, το ${ DRIVE_APP_NAME } μπορεί να σαρώσει τα αρχεία σας με τρόπο που διατηρεί το απόρρητο και να αποκλείσει κακόβουλα αρχεία. Ωστόσο, εξακολουθεί να είναι καλύτερο να κάνετε λήψη αρχείων μόνο από αξιόπιστες πηγές. "
+      ],
+      "Who has access": [
+        "Ποιος έχει πρόσβαση"
       ]
     },
     "info": {
@@ -7594,6 +7624,27 @@
       ],
       "ZIP code": [
         "Τ.Κ."
+      ],
+      "Active": [
+        "Ενεργό"
+      ],
+      "admin": [
+        "διαχειριστής"
+      ],
+      "Anyone on the Internet with the link": [
+        "Οποιοσδήποτε στο Διαδίκτυο με τον σύνδεσμο"
+      ],
+      "can edit": [
+        "μπορεί να επεξεργαστεί"
+      ],
+      "can view": [
+        "μπορεί να δει"
+      ],
+      "Delete link and remove access for everyone": [
+        "Διαγραφή συνδέσμου και κατάργηση πρόσβασης για όλους"
+      ],
+      "Not active": [
+        "Μη ενεργό"
       ]
     },
     "Label for contact group color": {
@@ -8643,6 +8694,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Σαρώνουμε τον σκοτεινό ιστό για να ελέγξουμε εάν οι διευθύνσεις ή τα ψευδώνυμά σας ${ BRAND_NAME } έχουν διαρρεύσει και σας ειδοποιούμε αμέσως αν βρούμε κάτι."
+      ],
+      "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
+        "Τηλεφωνική υποστήριξη (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ χρήστες)"
       ]
     },
     "new_plans: feature highlight": {
@@ -9005,6 +9059,9 @@
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "Μπορείτε να έχετε περισσότερους από έναν διαχειριστές. Όλοι οι διαχειριστές μπορούν να προσθέτουν και να διαχειρίζονται χρήστες, αλλά μόνο ο κύριος διαχειριστής έχει τον έλεγχο της χρέωσης."
+      ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } or more users": [
+        "Η τηλεφωνική υποστήριξη είναι διαθέσιμη από την ομάδα υποστήριξης πελατών της ${ BRAND_NAME } κατά τις ευρωπαϊκές εργάσιμες ώρες, για πελάτες με ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } ή περισσότερους χρήστες."
       ]
     },
     "new_plans: Upsell attribute": {
@@ -11041,6 +11098,12 @@
       ],
       "Pending": [
         "Σε εκκρεμότητα"
+      ],
+      "accepted": [
+        "αποδέχθηκε"
+      ],
+      "pending": [
+        "εκκρεμεί"
       ]
     },
     "Storage": {
@@ -12876,6 +12939,22 @@
       ],
       "Cancel all transfers?": [
         "Ακύρωση όλων των μεταφορών;"
+      ],
+      "Found ${ resultCount } result": [
+        "Βρέθηκε ${ resultCount } αποτέλεσμα",
+        "Βρέθηκαν ${ resultCount } αποτελέσματα"
+      ],
+      "Public link": [
+        "Δημόσιος σύνδεσμος"
+      ],
+      "Public link settings": [
+        "Ρυθμίσεις δημοσιευμένου συνδέσμου"
+      ],
+      "Settings for ${ sharedFileName }": [
+        "Ρυθμίσεις για ${ sharedFileName }"
+      ],
+      "Your ${ planTitle } subscription has started": [
+        "Η ${ planTitle } συνδρομή σας έχει ξεκινήσει"
       ]
     },
     "Today icon tooltip in mini calendar": {

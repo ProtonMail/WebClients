@@ -1238,6 +1238,12 @@
       ],
       "Scan & Download (${ nbSelected })": [
         "Scan & download (${ nbSelected })"
+      ],
+      "Set password or expiration date": [
+        "Stel wachtwoord of vervaldatum in"
+      ],
+      "Sharing is end-to-end encrypted": [
+        "Delen is end-to-end versleuteld"
       ]
     },
     "Action: Docs": {
@@ -3860,6 +3866,15 @@
       ],
       "We cannot retrieve this item": [
         "We kunnen dit item niet raadplegen"
+      ],
+      "Failed loading group members": [
+        "Kon geen groepslid toevoegen."
+      ],
+      "Network error": [
+        "Netwerkfout"
+      ],
+      "We were not able to load some search results": [
+        "Sommige zoekresultaten konden niet geladen worden."
       ]
     },
     "error": {
@@ -6838,6 +6853,21 @@
       ],
       "This will cancel any remaining uploads and downloads. Cancelled uploads won't be saved in ${ DRIVE_APP_NAME }.": [
         "Dit zal alle resterende uploads en downloads annuleren. Geannuleerde uploads worden niet opgeslagen in ${ DRIVE_APP_NAME }."
+      ],
+      "Computed hash does not match XAttr": [
+        "Berekende hash komt niet overeen met XAttr"
+      ],
+      "Link copied": [
+        "Link gekopieerd"
+      ],
+      "owner": [
+        "eigenaar"
+      ],
+      "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it's still best to download files only from trusted sources. ": [
+        "Om u te beschermen, kan ${ DRIVE_APP_NAME } uw bestanden op een privacyvriendelijke manier scannen en schadelijke bestanden blokkeren. Het is echter nog steeds het beste om bestanden alleen van vertrouwde bronnen te downloaden. "
+      ],
+      "Who has access": [
+        "Wie heeft toegang"
       ]
     },
     "info": {
@@ -7594,6 +7624,27 @@
       ],
       "ZIP code": [
         "Postcode"
+      ],
+      "Active": [
+        "Actief"
+      ],
+      "admin": [
+        "beheerder"
+      ],
+      "Anyone on the Internet with the link": [
+        "Iedereen op het internet met de link"
+      ],
+      "can edit": [
+        "kan bewerken"
+      ],
+      "can view": [
+        "kan bekijken"
+      ],
+      "Delete link and remove access for everyone": [
+        "Link verwijderen en iedereen toegang ontnemen"
+      ],
+      "Not active": [
+        "Niet actief"
       ]
     },
     "Label for contact group color": {
@@ -8643,6 +8694,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "We scannen het dark web om te controleren of uw ${ BRAND_NAME } adressen of aliassen zijn gelekt en waarschuwen u onmiddellijk wanneer we iets vinden."
+      ],
+      "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
+        "Telefonische ondersteuning (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ gebruikers)"
       ]
     },
     "new_plans: feature highlight": {
@@ -9005,6 +9059,9 @@
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "U kunt meerdere beheerders hebben. Alle beheerders kunnen gebruikers toevoegen en beheren, maar alleen de primaire beheerder kan de facturatie beheren."
+      ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } or more users": [
+        "Telefonische ondersteuning is beschikbaar vanuit het ${ BRAND_NAME } Klantenservice team tijdens Europese kantooruren, voor klanten met ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } of meer gebruikers"
       ]
     },
     "new_plans: Upsell attribute": {
@@ -11041,6 +11098,12 @@
       ],
       "Pending": [
         "In behandeling"
+      ],
+      "accepted": [
+        "geaccepteerd"
+      ],
+      "pending": [
+        "in behandeling"
       ]
     },
     "Storage": {
@@ -12876,6 +12939,22 @@
       ],
       "Cancel all transfers?": [
         "Alle overdrachten annuleren?"
+      ],
+      "Found ${ resultCount } result": [
+        "${ resultCount } zoekresultaat",
+        "${ resultCount } zoekresultaten"
+      ],
+      "Public link": [
+        "Publieke link"
+      ],
+      "Public link settings": [
+        "Instellingen voor publieke link"
+      ],
+      "Settings for ${ sharedFileName }": [
+        "Instellingen voor ${ sharedFileName }"
+      ],
+      "Your ${ planTitle } subscription has started": [
+        "Uw ${ planTitle }-abonnement is nu gestart."
       ]
     },
     "Today icon tooltip in mini calendar": {

@@ -1229,6 +1229,9 @@
       ],
       "Scan & Download (${ nbSelected })": [
         "Skannaa ja lataa (${ nbSelected })"
+      ],
+      "Get mobile and desktop apps": [
+        "Hanki mobiili- ja työpöytäsovellukset"
       ]
     },
     "Action: Docs": {
@@ -1627,6 +1630,9 @@
       ],
       "Website access problem": [
         "Verkkosivuston avautumisongelma"
+      ],
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "${ LUMO_SHORT_APP_NAME } -ongelma"
       ]
     },
     "Button": {
@@ -1783,6 +1789,9 @@
       ],
       "Web search access": [
         "Verkkohakuun pääsy"
+      ],
+      "Zero-access encryption": [
+        "Zero Access -salaus"
       ]
     },
     "collider_2025: Info": {
@@ -3743,6 +3752,24 @@
       ],
       "We're sorry, but free upload is not available right now.": [
         "Valitettavasti ilmainen lataus ei ole tällä hetkellä saatavilla."
+      ],
+      "Failed to resend invitation": [
+        "Kutsun uudelleenlähettäminen epäonnistui"
+      ],
+      "Network error": [
+        "Verkkovirhe"
+      ],
+      "No file to upload": [
+        "Ei lähetettävää tiedostoa"
+      ],
+      "Please enter a valid postal code": [
+        "Syötä kelvollinen postinumero"
+      ],
+      "Unknown number of downloads": [
+        "Tuntematon määrä latauksia"
+      ],
+      "We were not able to load some search results": [
+        "Emme voineet ladata joitain hakutuloksia"
       ]
     },
     "error": {
@@ -6643,6 +6670,15 @@
       ],
       "This will cancel any remaining uploads and downloads. Cancelled uploads won't be saved in ${ DRIVE_APP_NAME }.": [
         "Tämä peruuttaa kaikki jäljellä olevat lataukset ja lähetykset. Peruutetut lataukset eivät tallennu ${ DRIVE_APP_NAME }en."
+      ],
+      "Computed hash does not match XAttr": [
+        "Laskettu hajautusarvo ei vastaa XAttr-arvoa"
+      ],
+      "Done": [
+        "Valmis"
+      ],
+      "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it's still best to download files only from trusted sources. ": [
+        "Suojellakseen sinua ${ DRIVE_APP_NAME } voi skannata tiedostojasi yksityisyyttä suojaavalla tavalla, ja estää haitallisia tiedostoja. On silti parasta ladata tiedostoja vain luotettavista lähteistä. "
       ]
     },
     "info": {
@@ -7387,6 +7423,9 @@
       ],
       "Anonymous": [
         "Anonyymi"
+      ],
+      "Replace existing folder or file": [
+        "Korvaa olemassa oleva kansio tai tiedosto"
       ]
     },
     "Label for contact group color": {
@@ -8376,6 +8415,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Skannaamme pimeää verkkoa tarkistaaksemme, onko ${ BRAND_NAME } -osoitteesi tai -aliaksesi vuotaneet ja hälytämme välittömästi, jos löydämme jotain."
+      ],
+      "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
+        "Puhelintuki (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ käyttäjää)"
       ]
     },
     "new_plans: feature highlight": {
@@ -8732,6 +8774,9 @@
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "Sinulla voi olla useita ylläpitäjiä. Kaikki ylläpitäjät voivat lisätä ja poistaa käyttäjiä, mutta vain ensisijainen ylläpitäjä voi hallita laskutusta."
+      ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } or more users": [
+        "Puhelintuki on saatavilla ${ BRAND_NAME } -asiakastukitiimiltä Euroopan työaikana asiakkaille, joilla on vähintään ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } käyttäjää."
       ]
     },
     "new_plans: Upsell attribute": {
@@ -9259,6 +9304,9 @@
       ],
       "Upload folder": [
         "Lähetä kansio"
+      ],
+      "Upload more files": [
+        "Lähetä enemmän tiedostoja"
       ]
     },
     "Onboarding Info": {
@@ -10052,6 +10100,13 @@
       ],
       "You can get up to **${ maxRewardAmount }** in credit.": [
         "Voit ansaita jopa **${ maxRewardAmount }** krediitteinä."
+      ],
+      "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "Sinulla on **${ daysRemaining } päivä aikaa** tutustua kaikkiin **${ planTitle }** -palvelun tehokkaisiin ominaisuuksiin.",
+        "Sinulla on **${ daysRemaining } päivää aikaa** tutustua kaikkiin **${ planTitle }** -palvelun tehokkaisiin ominaisuuksiin."
+      ],
+      "your subscription": [
+        "tilauksesi"
       ]
     },
     "Safety review": {
@@ -12371,6 +12426,16 @@
       ],
       "Cancel all transfers?": [
         "Peruuta kaikki siirrot?"
+      ],
+      "Found ${ resultCount } result": [
+        "Löytyi ${ resultCount } tulos",
+        "Löytyi ${ resultCount } tulosta"
+      ],
+      "How your free trial works": [
+        "Miten ilmainen kokeilujakso toimii"
+      ],
+      "Your ${ planTitle } subscription has started": [
+        "${ planTitle }-tilauksesi on alkanut"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -12684,6 +12749,12 @@
       ],
       "Meeting recording": [
         "Kokoustallenne"
+      ],
+      "Browser, mobile, and desktop apps": [
+        "Selain, mobiili- ja työpöytäsovellukset"
+      ],
+      "Screen-sharing": [
+        "Näytön jakaminen"
       ]
     }
   }

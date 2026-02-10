@@ -1238,6 +1238,24 @@
       ],
       "Zoom out": [
         "Oddálit"
+      ],
+      "Cancel downloads": [
+        "Zrušit stahování"
+      ],
+      "Cancel transfers": [
+        "Zrušit přenosy"
+      ],
+      "Download (${ nbSelected })": [
+        "Stáhnout (${ nbSelected })"
+      ],
+      "Scan & Download (${ nbSelected })": [
+        "Skenovat a stáhnout (${ nbSelected })"
+      ],
+      "Set password or expiration date": [
+        "Nastavit heslo nebo datum vypršení platnosti"
+      ],
+      "Sharing is end-to-end encrypted": [
+        "Sdílení je koncově šifrované"
       ]
     },
     "Action: Docs": {
@@ -3009,6 +3027,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Vytvořili jste již 10 aliasů. Získejte neomezený počet aliasů a 500 GB úložného prostoru s ${ BRAND_NAME } Unlimited."
+      ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Pro importování prostřednictvím souborů CSV a VCF zajistěte, aby velikost souboru nepřesáhla ${ MAX_IMPORT_FILE_SIZE_STRING } nebo ${ maxContactString } kontaktů. Pokud je váš soubor větší, rozdělte jej na menší soubory. ${ learnMoreLink }."
       ]
     },
     "description": {
@@ -3543,7 +3564,7 @@
         "Sloučit alespoň ${ calendarsToFixCount } kalendářů s ${ BRAND_NAME } existujícími kalendáři"
       ],
       "Missing key packet": [
-        "Chybějící paket klíčů"
+        "Chybějící paket klíče"
       ],
       "Missing signature": [
         "Chybí podpis"
@@ -3892,6 +3913,18 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Nerozšifrovatelný název"
+      ],
+      "Failed loading group members": [
+        "Načtení členů skupiny selhalo"
+      ],
+      "Network error": [
+        "Chyba sítě"
+      ],
+      "We cannot retrieve this item": [
+        "Tuto položku se nepodařilo načíst"
+      ],
+      "We were not able to load some search results": [
+        "Některé výsledky vyhledávání se nám nepodařilo načíst"
       ]
     },
     "error": {
@@ -3969,6 +4002,9 @@
       ],
       "Your file ${ formattedFilename } is empty.": [
         "Váš soubor ${ formattedFilename } je prázdný."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ maxContactString } contacts.": [
+        "Váš soubor ${ formattedFilename } obsahuje více než ${ maxContactString } kontaktů."
       ]
     },
     "Error importing event": {
@@ -6997,6 +7033,33 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Stále budete moci prohlížet data vlastního účtu, ale všechny uživatelské účty budou z vaší organizace odebrány."
+      ],
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "Budou importovány všechny vaše kontakty až do limitu ${ maxContact }",
+        "Budou importovány všechny vaše kontakty až do limitu ${ maxContact }",
+        "Budou importovány všechny vaše kontakty až do limitu ${ maxContact }",
+        "Budou importovány všechny vaše kontakty až do limitu ${ maxContact }"
+      ],
+      "Computed hash does not match XAttr": [
+        "Vypočtený hash neodpovídá atributu XAttr"
+      ],
+      "Link copied": [
+        "Odkaz zkopírován"
+      ],
+      "owner": [
+        "vlastník"
+      ],
+      "This will cancel any remaining downloads.": [
+        "Tímto se zruší všechna zbývající stahování."
+      ],
+      "This will cancel any remaining uploads and downloads. Cancelled uploads won't be saved in ${ DRIVE_APP_NAME }.": [
+        "Tímto budou zrušena všechna zbývající nahrávání a stahování. Zrušená nahrávání nebudou v ${ DRIVE_APP_NAME } uložena."
+      ],
+      "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it's still best to download files only from trusted sources. ": [
+        "Abyste byli chráněni, může ${ DRIVE_APP_NAME } skenovat vaše soubory způsobem, který zachovává soukromí, a blokuje škodlivé soubory. Přesto je lepší stahovat soubory pouze z důvěryhodných zdrojů. "
+      ],
+      "Who has access": [
+        "Kdo má přístup"
       ]
     },
     "info": {
@@ -7765,6 +7828,27 @@
       ],
       "ZIP code": [
         "PSČ"
+      ],
+      "Active": [
+        "Aktivní"
+      ],
+      "admin": [
+        "správce"
+      ],
+      "Anyone on the Internet with the link": [
+        "Kdokoli na internetu s odkazem"
+      ],
+      "can edit": [
+        "může upravovat"
+      ],
+      "can view": [
+        "může prohlížet"
+      ],
+      "Delete link and remove access for everyone": [
+        "Smazat odkaz a odebrat všem přístup"
+      ],
+      "Not active": [
+        "Neaktivní"
       ]
     },
     "Label for contact group color": {
@@ -8876,6 +8960,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Prohledáváme dark web a kontrolujeme, zda nedošlo k úniku vašich adres nebo aliasů ${ BRAND_NAME }, pokud něco najdeme, okamžitě vás upozorníme."
+      ],
+      "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
+        "Telefonická podpora (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ uživatelů)"
       ]
     },
     "new_plans: feature highlight": {
@@ -9244,6 +9331,9 @@
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "Můžete mít více než jednoho správce. Všichni správci mohou přidávat a spravovat uživatele ale jen hlavní správce může spravovat platby."
+      ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } or more users": [
+        "Telefonická podpora je dostupná od týmu zákaznické podpory ${ BRAND_NAME } během evropské pracovní doby, pro zákazníky s ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } nebo více uživateli"
       ]
     },
     "new_plans: Upsell attribute": {
@@ -10351,6 +10441,24 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Vaše předplatné má v současné době platnou slevu. Přechodem na tuto novou akci bude stávající sleva zrušena."
+      ],
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "Sleva je platná pro ${ renewalsWithCoupon } obnovení.",
+        "Sleva je platná pro ${ renewalsWithCoupon } obnovení.",
+        "Sleva je platná pro ${ renewalsWithCoupon } obnovení.",
+        "Sleva je platná pro ${ renewalsWithCoupon } obnovení."
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Speciální zvýhodněná cena platí ${ couponRedemptions } měsíc. Poté dojde každý měsíc k automatickému obnovení za ${ renewPriceStr }. Předplatné můžete kdykoli zrušit.",
+        "Speciální zvýhodněná cena platí ${ couponRedemptions } měsíce. Poté dojde každý měsíc k automatickému obnovení za ${ renewPriceStr }. Předplatné můžete kdykoli zrušit.",
+        "Speciální zvýhodněná cena platí ${ couponRedemptions } měsíců. Poté dojde každý měsíc k automatickému obnovení za ${ renewPriceStr }. Předplatné můžete kdykoli zrušit.",
+        "Speciální zvýhodněná cena platí ${ couponRedemptions } měsíců. Poté dojde každý měsíc k automatickému obnovení za ${ renewPriceStr }. Předplatné můžete kdykoli zrušit."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Speciálně zvýhodněná cena ${ priceWithDiscount } platí ${ couponRedemptions } měsíc. Poté se automaticky obnoví za ${ renewPriceStr } na 1 měsíc. Službu můžete kdykoli zrušit.",
+        "Speciálně zvýhodněná cena ${ priceWithDiscount } platí ${ couponRedemptions } měsíce. Poté se automaticky obnoví za ${ renewPriceStr } na 1 měsíc. Službu můžete kdykoli zrušit.",
+        "Speciálně zvýhodněná cena ${ priceWithDiscount } platí ${ couponRedemptions } měsíců. Poté se automaticky obnoví za ${ renewPriceStr } na 1 měsíc. Službu můžete kdykoli zrušit.",
+        "Speciálně zvýhodněná cena ${ priceWithDiscount } platí ${ couponRedemptions } měsíců. Poté se automaticky obnoví za ${ renewPriceStr } na 1 měsíc. Službu můžete kdykoli zrušit."
       ]
     },
     "Payments.Error": {
@@ -11384,6 +11492,12 @@
       ],
       "Pending": [
         "Čekající"
+      ],
+      "accepted": [
+        "přijato"
+      ],
+      "pending": [
+        "čeká na vyřízení"
       ]
     },
     "Storage": {
@@ -13279,6 +13393,30 @@
       ],
       "You’ve got 5 GB of storage": [
         "Máte k dispozici 5 GB úložného prostoru"
+      ],
+      "Cancel all downloads?": [
+        "Zrušit všechna stahování?"
+      ],
+      "Cancel all transfers?": [
+        "Zrušit všechny přenosy?"
+      ],
+      "Found ${ resultCount } result": [
+        "Nalezen ${ resultCount } výsledek",
+        "Nalezeny ${ resultCount } výsledky",
+        "Nalezeno ${ resultCount } výsledků",
+        "Nalezeno ${ resultCount } výsledků"
+      ],
+      "Public link": [
+        "Veřejný odkaz"
+      ],
+      "Public link settings": [
+        "Nastavení veřejného odkazu"
+      ],
+      "Settings for ${ sharedFileName }": [
+        "Nastavení pro ${ sharedFileName }"
+      ],
+      "Your ${ planTitle } subscription has started": [
+        "Vaše předplatné ${ planTitle } bylo zahájeno"
       ]
     },
     "Today icon tooltip in mini calendar": {
