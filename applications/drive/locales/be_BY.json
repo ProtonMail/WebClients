@@ -763,7 +763,7 @@
         "Няма канфідэнцыяльных даных"
       ],
       "Not now": [
-        "Не зараз"
+        "Не цяпер"
       ],
       "OK": [
         "OK"
@@ -1238,6 +1238,12 @@
       ],
       "Zoom out": [
         "Паменшыць"
+      ],
+      "Set password or expiration date": [
+        "Задаць пароль або тэрмін дзеяння"
+      ],
+      "Sharing is end-to-end encrypted": [
+        "Абагуліць са скразным шыфраваннем"
       ]
     },
     "Action: Docs": {
@@ -3898,6 +3904,12 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Назва не паддаецца расшыфроўцы"
+      ],
+      "Failed loading group members": [
+        "Збой загрузкі членаў групы"
+      ],
+      "Network error": [
+        "Памылка сеткі"
       ]
     },
     "error": {
@@ -5829,7 +5841,7 @@
         "Вялікае імпартаванне можа заняць некалькі дзён."
       ],
       "Last week": [
-        "Апошні тыдзень"
+        "На мінулым тыдні"
       ],
       "Learn more": [
         "Даведацца больш"
@@ -5922,7 +5934,7 @@
         "Праблема з сеткай"
       ],
       "New": [
-        "Новае"
+        "Новы"
       ],
       "No": [
         "Не"
@@ -7003,6 +7015,15 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Вы ўсё яшчэ зможаце праглядаць даныя свайго ўласнага ўліковага запісу, але ўсе ўліковыя запісы карыстальнікаў будуць выдалены з вашай арганізацыі."
+      ],
+      "Link copied": [
+        "Спасылка скапіявана"
+      ],
+      "owner": [
+        "уладальнік"
+      ],
+      "Who has access": [
+        "Хто мае доступ"
       ]
     },
     "info": {
@@ -7753,6 +7774,27 @@
       ],
       "ZIP code": [
         "Паштовы індэкс"
+      ],
+      "Active": [
+        "Актыўна"
+      ],
+      "admin": [
+        "адміністратар"
+      ],
+      "Anyone on the Internet with the link": [
+        "Любы карыстальнік у інтэрнэце з гэтай спасылкай"
+      ],
+      "can edit": [
+        "можа рэдагаваць"
+      ],
+      "can view": [
+        "можа праглядаць"
+      ],
+      "Delete link and remove access for everyone": [
+        "Выдаліць спасылку і доступ для кожнага ўдзельніка"
+      ],
+      "Not active": [
+        "Не актыўна"
       ]
     },
     "Label for contact group color": {
@@ -10315,7 +10357,7 @@
       ],
       "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
         "Спецыяльны зніжаны кошт дзейнічае на працягу ${ couponRedemptions } месяца. Пасля гэтага адбудзецца аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы час.",
-        "Спецыяльны зніжаны кошт дзейнічае на працягу ${ couponRedemptions } месяцы. Пасля гэтага адбудзецца аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы час.",
+        "Спецыяльны зніжаны кошт дзейнічае на працягу ${ couponRedemptions } месяцаў. Пасля гэтага адбудзецца аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы час.",
         "Спецыяльны зніжаны кошт дзейнічае на працягу ${ couponRedemptions } месяцаў. Пасля гэтага адбудзецца аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы час.",
         "Спецыяльны зніжаны кошт дзейнічае на працягу ${ couponRedemptions } месяцаў. Пасля гэтага адбудзецца аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы час."
       ],
@@ -13316,6 +13358,15 @@
       ],
       "You’ve got 5 GB of storage": [
         "Вы атрымалі 5 ГБ сховішча"
+      ],
+      "Public link": [
+        "Публічная спасылка"
+      ],
+      "Public link settings": [
+        "Налады публічнай спасылкі"
+      ],
+      "Settings for ${ sharedFileName }": [
+        "Налады для ${ sharedFileName }"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -13653,6 +13704,14 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Ваш пробны перыяд завершыцца ${ textDate }. З вас не будзе спаганяцца плата, калі вы адмовіцеся да ${ textDate }. ${ action }"
+      ]
+    },
+    "Status": {
+      "accepted": [
+        "прынята"
+      ],
+      "pending": [
+        "у чаканні"
       ]
     }
   }

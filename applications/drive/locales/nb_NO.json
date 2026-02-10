@@ -1226,6 +1226,12 @@
       ],
       "Zoom out": [
         "Zoom ut"
+      ],
+      "Set password or expiration date": [
+        "Angi passord eller utløpsdato"
+      ],
+      "Sharing is end-to-end encrypted": [
+        "Deling er ende-til-ende-kryptert"
       ]
     },
     "Action: Docs": {
@@ -3848,6 +3854,12 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Navn som ikke kan dekrypteres"
+      ],
+      "Failed loading group members": [
+        "Kunne ikke laste inn gruppemedlemmer"
+      ],
+      "Network error": [
+        "Nettverksfeil"
       ]
     },
     "error": {
@@ -6813,6 +6825,15 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Du vil fortsatt kunne se dine egne kontodata, men alle brukerkontoer vil bli fjernet fra organisasjonen din."
+      ],
+      "Link copied": [
+        "Kobling kopiert"
+      ],
+      "owner": [
+        "eier"
+      ],
+      "Who has access": [
+        "Hvem har tilgang"
       ]
     },
     "info": {
@@ -7551,6 +7572,27 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Active": [
+        "Aktiv"
+      ],
+      "admin": [
+        "administrator"
+      ],
+      "Anyone on the Internet with the link": [
+        "Alle på internett med koblingen"
+      ],
+      "can edit": [
+        "kan redigere"
+      ],
+      "can view": [
+        "kan se"
+      ],
+      "Delete link and remove access for everyone": [
+        "Slett kobling og fjern tilgang for alle"
+      ],
+      "Not active": [
+        "Ikke aktiv"
       ]
     },
     "Label for contact group color": {
@@ -12870,6 +12912,15 @@
       ],
       "You’ve got 5 GB of storage": [
         "Du har fått 5 GB lagringsplass"
+      ],
+      "Public link": [
+        "Offentlig kobling"
+      ],
+      "Public link settings": [
+        "Innstillinger for offentlig kobling"
+      ],
+      "Settings for ${ sharedFileName }": [
+        "Innstillinger for ${ sharedFileName }"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -13177,6 +13228,14 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Prøveperioden avsluttes ${ textDate }. Du blir ikke belastet hvis du avbryter før ${ textDate }. ${ action }"
+      ]
+    },
+    "Status": {
+      "accepted": [
+        "akseptert"
+      ],
+      "pending": [
+        "ventende"
       ]
     }
   }

@@ -1226,6 +1226,12 @@
       ],
       "Zoom out": [
         "Zoom uit"
+      ],
+      "Set password or expiration date": [
+        "Stel wachtwoord of vervaldatum in"
+      ],
+      "Sharing is end-to-end encrypted": [
+        "Delen is end-to-end versleuteld"
       ]
     },
     "Action: Docs": {
@@ -3848,6 +3854,12 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Onversleutelbare naam"
+      ],
+      "Failed loading group members": [
+        "Kon geen groepslid toevoegen."
+      ],
+      "Network error": [
+        "Netwerkfout"
       ]
     },
     "error": {
@@ -6813,6 +6825,15 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "U kunt nog steeds uw eigen accountgegevens bekijken, maar alle gebruikersaccounts worden verwijderd uit uw organisatie."
+      ],
+      "Link copied": [
+        "Link gekopieerd"
+      ],
+      "owner": [
+        "eigenaar"
+      ],
+      "Who has access": [
+        "Wie heeft toegang"
       ]
     },
     "info": {
@@ -7551,6 +7572,27 @@
       ],
       "ZIP code": [
         "Postcode"
+      ],
+      "Active": [
+        "Actief"
+      ],
+      "admin": [
+        "beheerder"
+      ],
+      "Anyone on the Internet with the link": [
+        "Iedereen op het internet met de link"
+      ],
+      "can edit": [
+        "kan bewerken"
+      ],
+      "can view": [
+        "kan bekijken"
+      ],
+      "Delete link and remove access for everyone": [
+        "Link verwijderen en iedereen toegang ontnemen"
+      ],
+      "Not active": [
+        "Niet actief"
       ]
     },
     "Label for contact group color": {
@@ -12813,6 +12855,15 @@
       ],
       "You’ve got 5 GB of storage": [
         "U heeft 5 GB aan opslag"
+      ],
+      "Public link": [
+        "Publieke link"
+      ],
+      "Public link settings": [
+        "Instellingen voor publieke link"
+      ],
+      "Settings for ${ sharedFileName }": [
+        "Instellingen voor ${ sharedFileName }"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -13120,6 +13171,14 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Uw proefversie eindigt op ${ textDate }. U wordt niet in rekening gebracht als u annuleert vóór ${ textDate }. ${ action }"
+      ]
+    },
+    "Status": {
+      "accepted": [
+        "geaccepteerd"
+      ],
+      "pending": [
+        "in behandeling"
       ]
     }
   }

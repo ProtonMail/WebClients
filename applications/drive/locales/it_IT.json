@@ -1226,6 +1226,12 @@
       ],
       "Zoom out": [
         "Zoom indietro"
+      ],
+      "Set password or expiration date": [
+        "Imposta password o data di scadenza"
+      ],
+      "Sharing is end-to-end encrypted": [
+        "La condivisione è crittografata end-to-end"
       ]
     },
     "Action: Docs": {
@@ -3845,6 +3851,12 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Nome indecifrabile"
+      ],
+      "Failed loading group members": [
+        "Impossibile caricare i membri del gruppo"
+      ],
+      "Network error": [
+        "Errore di rete"
       ]
     },
     "error": {
@@ -6804,6 +6816,18 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Potrai ancora visualizzare i dati del tuo account, ma tutti gli account utente verranno rimossi dalla tua organizzazione."
+      ],
+      "Computed hash does not match XAttr": [
+        "L'hash calcolato non corrisponde a XAttr"
+      ],
+      "Link copied": [
+        "Link copiato"
+      ],
+      "owner": [
+        "Proprietario"
+      ],
+      "Who has access": [
+        "Chi ha accesso"
       ]
     },
     "info": {
@@ -7542,6 +7566,27 @@
       ],
       "ZIP code": [
         "Codice postale"
+      ],
+      "Active": [
+        "Attivo"
+      ],
+      "admin": [
+        "Amministratore"
+      ],
+      "Anyone on the Internet with the link": [
+        "Chiunque su Internet con il link"
+      ],
+      "can edit": [
+        "può modificare"
+      ],
+      "can view": [
+        "posso vedere"
+      ],
+      "Delete link and remove access for everyone": [
+        "Elimina il link e rimuovi l'accesso per tutti"
+      ],
+      "Not active": [
+        "Inattivo"
       ]
     },
     "Label for contact group color": {
@@ -8636,6 +8681,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Monitoriamo il dark web per verificare se i tuoi indirizzi o alias ${ BRAND_NAME } vengono diffusi e ti avvisiamo immediatamente se troviamo qualcosa."
+      ],
+      "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
+        "Supporto telefonico (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ utenti)"
       ]
     },
     "new_plans: feature highlight": {
@@ -8995,6 +9043,9 @@
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "Puoi avere più di un amministratore. Tutti gli amministratori possono aggiungere e gestire gli utenti, ma solo l'amministratore principale ha il controllo sulla fatturazione."
+      ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } or more users": [
+        "Il supporto telefonico è disponibile dal team di assistenza clienti di ${ BRAND_NAME } durante l'orario lavorativo europeo, per i clienti con ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } o più utenti"
       ]
     },
     "new_plans: Upsell attribute": {
@@ -12839,6 +12890,18 @@
       ],
       "You’ve got 5 GB of storage": [
         "Hai 5 GB di spazio archiviazione"
+      ],
+      "Public link": [
+        "Link pubblico"
+      ],
+      "Public link settings": [
+        "Impostazioni link pubblico"
+      ],
+      "Settings for ${ sharedFileName }": [
+        "Impostazioni per ${ sharedFileName }"
+      ],
+      "Your ${ planTitle } subscription has started": [
+        "Il tuo abbonamento ${ planTitle } è iniziato"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -13146,6 +13209,14 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "La tua prova finirà il ${ textDate }. Non ti verrà addebitato alcun costo se annulli prima del ${ textDate }. ${ action }"
+      ]
+    },
+    "Status": {
+      "accepted": [
+        "accettato"
+      ],
+      "pending": [
+        "in sospeso"
       ]
     }
   }
