@@ -6,6 +6,7 @@ import useConfig from '@proton/components/hooks/useConfig';
 import useModals from '@proton/components/hooks/useModals';
 import {
     type ADDON_NAMES,
+    type AvailablePaymentMethod,
     type BillingAddress,
     type ChargeablePaymentParameters,
     type ChargebeeIframeEvents,
@@ -109,6 +110,7 @@ type PaymentFacadeProps = {
     isTrial?: boolean;
     product: ProductParam;
     telemetryContext: PaymentTelemetryContext;
+    sortNewMethods?: (methods: AvailablePaymentMethod[]) => AvailablePaymentMethod[];
 };
 
 /**
@@ -141,6 +143,7 @@ export const usePaymentFacade = ({
     isTrial: isTrialOverride,
     product,
     telemetryContext,
+    sortNewMethods,
 }: PaymentFacadeProps) => {
     const { APP_NAME } = useConfig();
 
@@ -261,6 +264,7 @@ export const usePaymentFacade = ({
                 reportPaymentEvent('payment_declined', selectedMethodType, selectedMethodValue),
             onValidationFailed: ({ selectedMethodType, selectedMethodValue }) =>
                 reportPaymentEvent('attempt_declined_invalid_data', selectedMethodType, selectedMethodValue),
+            sortNewMethods,
         },
         {
             api,

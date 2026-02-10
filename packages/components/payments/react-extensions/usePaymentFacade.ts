@@ -5,6 +5,7 @@ import type {
     ADDON_NAMES,
     AmountAndCurrency,
     ApplePayModalHandles,
+    AvailablePaymentMethod,
     BillingAddress,
     ChargeablePaymentParameters,
     ChargebeeIframeEvents,
@@ -231,6 +232,7 @@ export const usePaymentFacade = (
         onDeclined,
         onValidationFailed,
         telemetryContext,
+        sortNewMethods,
     }: {
         amount: number;
         currency: Currency;
@@ -278,6 +280,7 @@ export const usePaymentFacade = (
             selectedMethodType: PlainPaymentMethodType;
             selectedMethodValue: PaymentMethodType;
         }) => void;
+        sortNewMethods?: (methods: AvailablePaymentMethod[]) => AvailablePaymentMethod[];
     },
     {
         api,
@@ -338,6 +341,7 @@ export const usePaymentFacade = (
             isTrial,
             enablePaypalRegionalCurrenciesBatch3,
             enablePaypalKrw,
+            sortNewMethods,
         },
         {
             api,

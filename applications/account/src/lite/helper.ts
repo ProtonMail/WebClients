@@ -55,13 +55,3 @@ export const getApp = ({
     }
     return 'generic';
 };
-
-const getIsDarkLayout = (searchParams: URLSearchParams) => {
-    const action = searchParams.get('action') || undefined;
-
-    const dark = action === SupportedActions.SubscribeAccount || action === SupportedActions.SubscribeAccountLink;
-
-    return dark;
-};
-
-export default getIsDarkLayout;

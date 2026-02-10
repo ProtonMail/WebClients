@@ -106,6 +106,7 @@ enum AccountFlag {
     SocialRecovery = 'SocialRecovery',
     Ipv6ForWgConfig = 'Ipv6ForWgConfig',
     MembersRemote = 'MembersRemote',
+    ShowLiteAppCheckoutV2 = 'ShowLiteAppCheckoutV2',
 }
 
 enum PaymentsFlag {

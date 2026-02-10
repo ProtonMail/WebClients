@@ -44,14 +44,7 @@ const FeatureList = ({
     tooltip,
     itemClassName,
 }: FeatureListProps) => (
-    <ul
-        className={clsx(
-            'unstyled flex flex-column',
-            className,
-            odd && 'odd:bg-weak',
-            margin ? 'mt-4 mb-0 md:mb-6' : 'm-0'
-        )}
-    >
+    <ul className={clsx('unstyled flex flex-column', className, odd && 'odd:bg-weak', margin ? 'mt-4 mb-6' : 'm-0')}>
         {featureArray.map((feature, i) => {
             const iconToDisplay = (() => {
                 if (

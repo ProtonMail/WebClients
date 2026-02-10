@@ -50,6 +50,7 @@ export interface Props {
     isTrial?: boolean;
     enablePaypalRegionalCurrenciesBatch3: boolean;
     enablePaypalKrw: boolean;
+    sortNewMethods?: (methods: AvailablePaymentMethod[]) => AvailablePaymentMethod[];
 }
 
 interface Dependencies {
@@ -105,6 +106,7 @@ export const useMethods = (
         isTrial,
         enablePaypalRegionalCurrenciesBatch3,
         enablePaypalKrw,
+        sortNewMethods,
     }: Props,
     { api, isAuthenticated }: Dependencies
 ): MethodsHook => {
@@ -143,14 +145,15 @@ export const useMethods = (
 
     const getComputedMethods = (availableMethodsParam?: UsedAndNewMethods) => {
         const { usedMethods, newMethods } = availableMethodsParam ?? availableMethods;
-        const allMethods = [...usedMethods, ...newMethods];
+        const sortedNewMethods = sortNewMethods ? sortNewMethods(newMethods) : newMethods;
+        const allMethods = [...usedMethods, ...sortedNewMethods];
         const lastUsedMethod = usedMethods[usedMethods.length - 1];
 
         return {
             allMethods,
             lastUsedMethod,
             usedMethods,
-            newMethods,
+            newMethods: sortedNewMethods,
         };
     };
 

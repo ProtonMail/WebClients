@@ -125,6 +125,7 @@ interface Props {
     paymentStatus: PaymentStatus;
     paymentsApi: PaymentsApi;
     coupon?: string;
+    showShortPlan?: boolean;
 }
 
 const getCycleSelectorOptions = () => {
@@ -482,6 +483,7 @@ const PlanSelection = (props: Props) => {
         onChangeSelectedProductPlans,
         filter,
         coupon,
+        showShortPlan,
     } = props;
 
     // strict plans map doens't have plan fallback if currency is missing. If there is no plan for specified currency,
@@ -667,7 +669,10 @@ const PlanSelection = (props: Props) => {
         );
 
         const featuresElement =
-            mode === 'settings' || mode === 'upsell-modal' || (audience === Audience.B2B && isVpnSettingsApp) ? (
+            mode === 'settings' ||
+            mode === 'upsell-modal' ||
+            (audience === Audience.B2B && isVpnSettingsApp) ||
+            showShortPlan ? (
                 <PlanCardFeaturesShort plan={shortPlan} icon />
             ) : (
                 <PlanCardFeatures audience={audience} features={features} planName={shortPlan.plan} app={app} />
