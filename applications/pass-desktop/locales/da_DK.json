@@ -37,6 +37,9 @@
       "Accept and view the item": [
         "Accepter og se elementet"
       ],
+      "Accept invitation": [
+        "Accepter invitation"
+      ],
       "Account": [
         "Konto"
       ],
@@ -1036,6 +1039,9 @@
       "Error reporting problem": [
         "Problem med fejlrapportering"
       ],
+      "Failed loading group members": [
+        "Kunne ikke indlæse gruppemedlemmer"
+      ],
       "Failed removing the invite.": [
         "Kunne ikke fjerne invitationen."
       ],
@@ -1456,8 +1462,17 @@
         "${ forwardedEmailsCount } videresendt",
         "${ forwardedEmailsCount } videresendte"
       ],
+      "${ inviterEmail } wants to share an item with a group you administer.": [
+        "${ inviterEmail } ønsker at dele et element med en gruppe, som du administrerer."
+      ],
+      "${ inviterEmail } wants to share an item with the group ${ invitedGroup.Name }.": [
+        "${ inviterEmail } ønsker at dele et element med gruppen ${ invitedGroup.Name }."
+      ],
       "${ inviterEmail } wants to share an item with you.": [
         "${ inviterEmail } ønsker at dele et element med dig."
+      ],
+      "${ maybeVaultName } has been shared with a group you are member of": [
+        "${ maybeVaultName } er blevet delt med en gruppe, du er medlem af"
       ],
       "${ memberCount } member": [
         "${ memberCount } medlem",
@@ -1466,6 +1481,9 @@
       "${ n } item": [
         "${ n } element",
         "${ n } elementer"
+      ],
+      "${ newGroupSharesCount } new shares have been shared with a group you are member of": [
+        "${ newGroupSharesCount } nye delinger er blevet delt med en gruppe, du er medlem af"
       ],
       "${ PASS_APP_NAME } will always be accessible": [
         "${ PASS_APP_NAME } vil altid være tilgængelig"
@@ -1885,6 +1903,9 @@
       ],
       "Invite successfully resent": [
         "Invitation sendt igen"
+      ],
+      "invites the group ${ invitedGroup.Name } to access items in": [
+        "inviterer gruppen ${ invitedGroup.Name } til at få adgang til elementer i"
       ],
       "invites you to access items in": [
         "inviterer dig til at tilgå elementer i"
@@ -2351,6 +2372,9 @@
       "The following ${ totalIgnored } item could not be imported:": [
         "Følgende ${ totalIgnored } element kunne ikke importeres:",
         "Følgende ${ totalIgnored } elementer kunne ikke importeres:"
+      ],
+      "The group is invited to a vault.": [
+        "Gruppen er inviteret til en boks."
       ],
       "The secure link has been removed": [
         "Det sikre link er blevet fjernet"
@@ -4765,6 +4789,9 @@
       ],
       "Vault": [
         "Boks"
+      ],
+      "Vault shared with a group you administer": [
+        "Boks delt med en gruppe, du administrerer"
       ],
       "Vault shared with you": [
         "Boks delt med dig"
