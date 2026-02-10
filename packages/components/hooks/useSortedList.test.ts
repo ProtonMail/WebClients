@@ -62,4 +62,26 @@ describe('useSortedList hook', () => {
         ]);
         expect(result.current.sortConfig).toEqual({ key: 'k', direction: SORT_DIRECTION.ASC });
     });
+
+    it('should use initial compare when switching back to the initial key after sorting by another column', () => {
+        const list = [
+            { ID: 1, Load: 10 },
+            { ID: 10, Load: 5 },
+            { ID: 2, Load: 20 },
+        ];
+        const numericCompare = (a: number, b: number) => a - b;
+        const { result } = renderHook(() =>
+            useSortedList(list, { key: 'ID', direction: SORT_DIRECTION.ASC, compare: numericCompare })
+        );
+        expect(result.current.sortedList.map((r) => r.ID)).toEqual([1, 2, 10]);
+
+        act(() => result.current.toggleSort('Load'));
+
+        expect(result.current.sortConfig?.key).toBe('Load');
+
+        act(() => result.current.toggleSort('ID'));
+
+        expect(result.current.sortedList.map((r) => r.ID)).toEqual([1, 2, 10]);
+        expect(result.current.sortConfig?.compare).toBe(numericCompare);
+    });
 });

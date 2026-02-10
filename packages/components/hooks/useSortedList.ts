@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useMemo, useRef, useState } from 'react';
 
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 
@@ -57,23 +57,39 @@ export const useMultiSortedList = <T>(list: T[], initialConfig: SortConfig<T>[] 
  * Handles sorting logic for lists.
  */
 const useSortedList = <T>(list: T[], initialConfig?: SortConfig<T>) => {
+    const initialConfigRef = useRef(initialConfig);
+    initialConfigRef.current = initialConfig;
+
     const { setConfigs, sortConfigs, sortedList } = useMultiSortedList(list, initialConfig && [initialConfig]);
+
+    const configForKey = (key: keyof T, direction: SORT_DIRECTION): SortConfig<T> => {
+        const initial = initialConfigRef.current;
+        const useInitialCompare = initial?.key === key && initial?.compare;
+        return useInitialCompare ? { key, direction, compare: initial.compare } : { key, direction };
+    };
 
     const toggleSort = (key: keyof T) => {
         if (key === sortConfigs[0]?.key) {
             setConfigs((configs) => [
                 {
+                    ...configs[0],
                     key,
                     direction: configs[0]?.direction === SORT_DIRECTION.ASC ? SORT_DIRECTION.DESC : SORT_DIRECTION.ASC,
                 },
             ]);
         } else {
-            setConfigs([{ key, direction: SORT_DIRECTION.ASC }]);
+            setConfigs([configForKey(key, SORT_DIRECTION.ASC)]);
         }
     };
 
     const setSort = (key: keyof T, direction: SORT_DIRECTION) => {
-        setConfigs([{ key, direction }]);
+        setConfigs((configs) => {
+            const existing = configs[0];
+            if (existing?.key === key && existing.compare) {
+                return [{ ...existing, key, direction }];
+            }
+            return [configForKey(key, direction)];
+        });
     };
 
     return { sortConfig: sortConfigs[0], sortedList, setSort, toggleSort };
