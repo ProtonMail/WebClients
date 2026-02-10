@@ -133,7 +133,7 @@
         "Zastosuj"
       ],
       "Archive": [
-        "Archiwum"
+        "Przenieś do archiwum"
       ],
       "As Scheduled": [
         "Zgodnie z planem"
@@ -1646,6 +1646,9 @@
       ],
       "Zoom out": [
         "Pomniejsz"
+      ],
+      "Send Feedback": [
+        "Wyślij opinię"
       ]
     },
     "action": {
@@ -4884,6 +4887,9 @@
       ],
       "Unable to load VPN dashboard. Please check your connection and try again.": [
         "Nie można załadować pulpitu VPN. Sprawdź połączenie i spróbuj ponownie."
+      ],
+      "Network error": [
+        "Błąd sieci"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -5782,6 +5788,9 @@
       ],
       "Tell us more": [
         "Napisz więcej"
+      ],
+      "Domain": [
+        "Domena"
       ]
     },
     "Hint": {
@@ -7278,10 +7287,7 @@
         "Inicjowanie…"
       ],
       "Insert image": [
-        "Wstaw obraz",
-        "Wstaw obrazy",
-        "Wstaw obrazy",
-        "Wstaw obrazy"
+        "Wstaw obraz"
       ],
       "Insert link": [
         "Wstaw link"
@@ -12049,6 +12055,9 @@
       ],
       "Your payment is still being processed": [
         "Twoja płatność jest wciąż przetwarzana"
+      ],
+      "Taxes": [
+        "Podatki"
       ]
     },
     "Payments.Error": {
@@ -16036,6 +16045,24 @@
       ],
       "Download for Windows": [
         "Pobierz na Windowsa"
+      ]
+    },
+    "collider_2025: feature": {
+      "Basic chat history": [
+        "Podstawowa historia czatów"
+      ],
+      "Strict no-logs policy": [
+        "Polityka braku przechowywania logów"
+      ]
+    },
+    "meet_2025: Feature": {
+      "Screen-sharing": [
+        "Udostępnianie ekranu"
+      ]
+    },
+    "Payments.ModificationWarning": {
+      "Keep ${ planTitle }": [
+        "Zachowaj plan ${ planTitle }"
       ]
     }
   }

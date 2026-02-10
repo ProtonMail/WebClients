@@ -538,7 +538,7 @@
         "Aktiver ${ darkWebMonitoring }"
       ],
       "enable desktop notifications": [
-        "aktivér skrivebordsmeddelelser"
+        "at aktivere skrivebordsmeddelelser"
       ],
       "Encryption": [
         "Kryptering"
@@ -1502,7 +1502,8 @@
         "Hav tillid til"
       ],
       "Trust key": [
-        "Stol på nøgle"
+        "Betroet nøgle",
+        "Betroede nøgler"
       ],
       "Trust public key": [
         "Hav tillid til offentlig nøgle"
@@ -5058,6 +5059,15 @@
       ],
       "Unable to load VPN dashboard. Please check your connection and try again.": [
         "Kunne ikke indlæse VPN-kontrolpanel. Kontrollér din forbindelse, og forsøg igen."
+      ],
+      "Failed loading group members": [
+        "Kunne ikke indlæse gruppemedlemmer"
+      ],
+      "Network error": [
+        "Netværksfejl"
+      ],
+      "That action can't be performed on emails in this folder": [
+        "Denne handling kan ikke udføres på e-mails i denne mappe"
       ]
     },
     "error": {
@@ -7367,8 +7377,7 @@
         "Igangsætter..."
       ],
       "Insert image": [
-        "Indsæt billede",
-        "Indsæt billeder"
+        "Indsæt billede"
       ],
       "Insert link": [
         "Indsæt link"
@@ -8848,6 +8857,9 @@
       ],
       "Your physical location is visible and can be used to restrict your access to the internet.": [
         "Din fysiske placering er synlig og kan bruges til at begrænse din adgang til internettet."
+      ],
+      "No messages found": [
+        "Ingen beskeder fundet"
       ]
     },
     "info": {
@@ -11158,6 +11170,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Vi scanner det mørke web for at tjekke, om dine ${ BRAND_NAME }-adresser eller aliasser er blevet lækket, og giver dig straks besked, hvis vi finder noget."
+      ],
+      "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
+        "Telefonsupport (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ brugere)"
       ]
     },
     "new_plans: feature highlight": {
@@ -11525,6 +11540,9 @@
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "Du kan have mere end én administrator. Alle administratorer kan tilføje og administrere brugere, men kun den primære administrator har kontrol over fakturering."
+      ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } or more users": [
+        "Telefonsupport er tilgængelig fra ${ BRAND_NAME } Kundesupport-team i den europæiske åbningstid for kunder med ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } eller flere brugere"
       ]
     },
     "new_plans: Upsell attribute": {
@@ -12311,6 +12329,18 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Dit abonnement har i øjeblikket en eksisterende rabat. Ved at skifte til denne nye kampagne vil den eksisterende rabat ikke længere blive anvendt."
+      ],
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "Rabatten er gyldig for ${ renewalsWithCoupon } fornyelse.",
+        "Rabatten er gyldig for ${ renewalsWithCoupon } fornyelser."
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Den særligt nedsatte pris er gyldig i ${ couponRedemptions } måned. Derefter fornys den automatisk til ${ renewPriceStr } for 1 måned. Du kan opsige når som helst.",
+        "Den særligt nedsatte pris er gyldig i ${ couponRedemptions } måneder. Derefter fornys den automatisk til ${ renewPriceStr } for 1 måned. Du kan opsige når som helst."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Den særligt nedsatte pris på ${ priceWithDiscount } er gyldig i ${ couponRedemptions } måned. Derefter fornys den automatisk til ${ renewPriceStr } for 1 måned. Du kan opsige når som helst.",
+        "Den særligt nedsatte pris på ${ priceWithDiscount } er gyldig i ${ couponRedemptions } måneder. Derefter fornys den automatisk til ${ renewPriceStr } for 1 måned. Du kan opsige når som helst."
       ]
     },
     "Payments.Error": {
@@ -15713,6 +15743,9 @@
       ],
       "When is it most important to use a VPN?": [
         "Hvornår er det vigtigst at bruge en VPN?"
+      ],
+      "Your ${ planTitle } subscription has started": [
+        "Dit ${ planTitle }-abonnement er startet"
       ]
     },
     "Today icon tooltip in mini calendar": {

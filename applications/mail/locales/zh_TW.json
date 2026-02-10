@@ -1649,6 +1649,24 @@
       ],
       "Manage advanced account protections": [
         "管理進階帳戶保護"
+      ],
+      "Copy alias “${ name }”": [
+        "複製別名 \"${ name }\""
+      ],
+      "Manage users/addresses": [
+        "管理使用者/電子郵件地址"
+      ],
+      "Set up a custom domain": [
+        "設置個自訂域名"
+      ],
+      "Share your calendar with your team": [
+        "與團隊共享您的行事曆"
+      ],
+      "Toggle referral": [
+        "切換推薦"
+      ],
+      "Trust key": [
+        "信任金鑰"
       ]
     },
     "action": {
@@ -1947,6 +1965,12 @@
       ],
       "Unlimited logins, credit cards, hide-my-email aliases and more": [
         "無上限登入、信用卡、 hide-my-email 別名和更多"
+      ],
+      "Admin panel to manage your family": [
+        "管理員面板以管理您的家庭"
+      ],
+      "Use your own email domain": [
+        "使用您的電子郵件網域"
       ]
     },
     "BF2024: Offers": {
@@ -1972,6 +1996,9 @@
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "透過端對端加密保護電子郵件及行事曆。包含 15 電子郵件地址、支援自訂電子郵件網域、無限hide-my-email別名及更多"
+      ],
+      "Storage space is shared across all ${ BRAND_NAME } services.": [
+        "儲存空間於全部的 ${ BRAND_NAME } 服務。"
       ]
     },
     "BF2025: Deal details": {
@@ -2556,6 +2583,12 @@
       ],
       "Zero-access encryption": [
         "零存取加密"
+      ],
+      "Access to advanced AI models": [
+        "存取進階 AI 模型"
+      ],
+      "Limited favorites": [
+        "有限的收藏"
       ]
     },
     "collider_2025: Info": {
@@ -2567,6 +2600,9 @@
       ],
       "High-speed chats and advanced AI features.": [
         "高速聊天和先進的人工智慧功能。"
+      ],
+      "Private video calls for the conversations that matter.": [
+        "用於重要交談的私密視訊。"
       ]
     },
     "color": {
@@ -4024,6 +4060,9 @@
       ],
       "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
         "添加資料夾和檔案至 ${ DRIVE_APP_NAME } 和邀請成員瀏覽或編輯。"
+      ],
+      "Create groups you can email with a single address.": [
+        "創建您可透單一位址傳送電子郵件的群組"
       ]
     },
     "description": {
@@ -4894,6 +4933,15 @@
       ],
       "Unable to load VPN dashboard. Please check your connection and try again.": [
         "無法載入 VPN 儀表板。請檢查您的連線，然後重試。"
+      ],
+      "Failed loading group members": [
+        "無法再入群組成員"
+      ],
+      "Network error": [
+        "網路連線錯誤"
+      ],
+      "Your message cannot be decrypted. The key used to encrypt this message does not match any of the keys associated with your address. If you deleted any of your address keys, try ${ reimportKeyLink } them. ${ learnMoreLink }": [
+        "您的訊息無法被解密。此用來加密此訊息的金鑰與其他與您的位址關聯的金鑰不符。若您刪除任何您的位址金鑰，請重新匯入 ${ reimportKeyLink } 它。 ${ learnMoreLink }"
       ]
     },
     "error": {
@@ -4987,6 +5035,9 @@
       ],
       "Your file ${ formattedFilename } is empty.": [
         "您的檔案 ${ formattedFilename } 是空的。"
+      ],
+      "Your file ${ formattedFilename } contains more than ${ maxContactString } contacts.": [
+        "您的檔案 ${ formattedFilename } 包含多於 ${ maxContactString } 位聯絡人。"
       ]
     },
     "Error importing event": {
@@ -6349,19 +6400,19 @@
         "**${ total }** 筆總數出現在 ${ labelName }"
       ],
       "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
-        "**第一步：**使用您的推薦連結邀請您的朋友加入 ${ BRAND_NAME }。"
+        "**第一步：**使用您的推薦連結邀請朋友加入 ${ BRAND_NAME }。"
       ],
       "**Step 2:** Your friends get 2 weeks for free on their chosen ${ BRAND_NAME } plan.": [
-        "**步驟 2 ** 您的朋友取得 ${ BRAND_NAME } 方案的 2 週免費。"
+        "**第二步：**您的朋友將取得 ${ BRAND_NAME } 方案的 2 週免費。"
       ],
       "**Step 2:** Your friends get 2 weeks for free on their plan.": [
-        "**步驟 2 ** 您的朋友取計畫外的 2 週免費。"
+        "**第二步：**您的朋友將取得該方案的 2 週免費。"
       ],
       "**Step 3:** Get ${ referrerRewardAmount } credits for every friend that subscribes to a plan.": [
         "**第三步：**每當有朋友訂閱方案時，您將獲得 ${ referrerRewardAmount } 額度。"
       ],
       "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
-        "**第三步：**每當有使者訂閱方案時，您將獲得 ${ referrerRewardAmount } 額度。"
+        "**第三步：**每當有使用者訂閱方案時，您將獲得 ${ referrerRewardAmount } 額度。"
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } 附贈的儲存空間"
@@ -7069,7 +7120,7 @@
         "正在初始化 ..."
       ],
       "Insert image": [
-        "插入影像"
+        "插入圖像"
       ],
       "Insert link": [
         "插入連結"
@@ -7783,13 +7834,13 @@
         "此往來對話包含了排定傳送的郵件。此郵件的傳送將會被取消。"
       ],
       "This conversation contains non-trashed messages.": [
-        "這對話內容含有非拉圾訊息。"
+        "此往來對話群組包含非垃圾郵件。"
       ],
       "This conversation contains one or more expiring messages": [
         "此交談包含了一個或更多過期的訊息"
       ],
       "This conversation contains trashed messages.": [
-        "這對話內容含有拉圾訊息。"
+        "此往來對話群組包含已移至「垃圾桶」的郵件."
       ],
       "This conversation will be marked as spam. Would you also like to unsubscribe from future emails?": [
         "這些往來對話將標記為垃圾信件。請問您也想退訂日後相關的電郵嗎？"
@@ -8459,6 +8510,33 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "您仍可瀏覽您的帳號資料，但所有使用者帳號將被從貴組織移除。"
+      ],
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "所有聯絡人將被匯入，至多 ${ maxContact }"
+      ],
+      "Includes news recaps and other non-promotional content. ": [
+        "包含新聞摘要和其他非促銷內容。 "
+      ],
+      "Includes updates from social networks and media-sharing sites.": [
+        "包含來自社群網路和媒體分享網站的更新。"
+      ],
+      "Message view": [
+        "郵件瀏覽"
+      ],
+      "No messages found": [
+        "未找到郵件"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "團隊專用的 VPN 伺服器數量"
+      ],
+      "This message will be purged today at ${ value }": [
+        "這封郵件將於今日的 ${ value } 清除"
+      ],
+      "With new email categories, only important messages land in your primary inbox. Everything else is organized into categories.": [
+        "透過新的電子郵件分類，只有重要郵件會進入您的主要收件匣。其它訊息將被整理到不同的類別中。"
+      ],
+      "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
+        "您將失去存取於 ${ boldEndDate } 的 ${ boldPlanTitle }"
       ]
     },
     "info": {
@@ -9498,6 +9576,21 @@
       ],
       "Your location": [
         "您的位置"
+      ],
+      "Go to Newsletters": [
+        "前往電子報"
+      ],
+      "Password strength": [
+        "密碼強度"
+      ],
+      "Video conference": [
+        "視訊會議"
+      ],
+      "We’re improving how emails are categorized. Your feedback helps make it smarter and more accurate.": [
+        "我們正在提升電子郵件如何被分類。您的意見回饋將使它更智慧和精確。"
+      ],
+      "Your password (trusted contact)": [
+        "您的密碼 (信任的內容)"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9579,6 +9672,9 @@
       ],
       "You don't have any newsletters or mailing list subscriptions.": [
         "您沒有來自任何電子報和訂閱郵件清單的內容。"
+      ],
+      "Newsletters or mailing lists you unsubscribe from will show up here.": [
+        "您取消訂閱的電子報或郵寄清單將顯示於此。"
       ]
     },
     "Landmarks": {
@@ -9818,6 +9914,21 @@
       ],
       "if your data is leaked": [
         "若您的資料外洩"
+      ],
+      "How to migrate to ${ BRAND_NAME }": [
+        "如何遷移至 ${ BRAND_NAME }"
+      ],
+      "How to set up ${ VPN_APP_NAME }": [
+        "如何設定 ${ VPN_APP_NAME }"
+      ],
+      "How to set up a custom domain": [
+        "如何設置個自訂域名"
+      ],
+      "How to share a calendar": [
+        "如何共享行事曆"
+      ],
+      "How to use ${ PASS_APP_NAME } for Business": [
+        "如何將 ${ PASS_APP_NAME } 用於商務"
       ]
     },
     "Link to calendar event": {
@@ -9968,6 +10079,12 @@
       ],
       "Booking pages": [
         "預定頁面"
+      ],
+      "${ n } participant": [
+        "${ n } 位參與者"
+      ],
+      "Meeting recording": [
+        "會議錄影"
       ]
     },
     "Message": {
@@ -11192,6 +11309,12 @@
       ],
       "Upgrade your storage for just ${ pricingTitle } with ${ planName }": [
         "以 ${ planName } 的 ${ pricingTitle } 方案升級您的儲存空間"
+      ],
+      "${ BRAND_NAME } Unlimited for 12 months": [
+        "十二個月的 ${ BRAND_NAME } Unlimited"
+      ],
+      "Upgrade your productivity for just ${ pricingTitle } with ${ planName }": [
+        "以 ${ pricingTitle } 的 ${ planName } 方案提升您的工作效率"
       ]
     },
     "Offer fearue": {
@@ -11226,6 +11349,12 @@
       ],
       "Storage": [
         "雲端儲存"
+      ],
+      "Edit docs online": [
+        "線上編輯文件"
+      ],
+      "Ultrafast VPN servers in 110+ countries": [
+        "在110 多個國家提供極速 VPN 伺服器"
       ]
     },
     "Onboarding List Placeholder": {
@@ -11432,6 +11561,9 @@
       ],
       "Your free trial has started": [
         "您的免費試用已開始"
+      ],
+      "Cancel anytime before ${ cancelDate }.": [
+        "於 ${ cancelDate } 前隨時取消。"
       ]
     },
     "Online accounts": {
@@ -11727,6 +11859,18 @@
       ],
       "Your payment is still being processed": [
         "您的付款仍在處理中"
+      ],
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "此折扣可適用續約訂購 ${ renewalsWithCoupon } 。"
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "特殊折扣將套用於 ${ couponRedemptions } 個月。其後以 1 個月 ${ renewPriceStr } 自動續約。您可以在任何時候取消。"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "享受特惠折扣 ${ priceWithDiscount } ${ couponRedemptions } 個月。而後將以每 1 月 ${ renewPriceStr } 的價格自動續約。您可以在任何時候取消訂閱。"
+      ],
+      "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
+        "您的訂閱已套用現有折扣。若轉換至新的促銷方案，現有折扣將不再套用。"
       ]
     },
     "Payments.Error": {
@@ -11774,6 +11918,9 @@
       ],
       "Yes, I'm sure": [
         "是的，我確定"
+      ],
+      "Your plan includes this feature already.": [
+        "您的方案以包含此功能。"
       ]
     },
     "Payments.plan_name": {
@@ -11784,6 +11931,12 @@
     "Payments.Saved payment method details": {
       "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
         "Google Pay - 卡片於 ${ paymentMethod.Details.Last4 } 結束"
+      ],
+      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "APPle Pay - 卡片於 ${ paymentMethod.Details.Last4 } 結束"
+      ],
+      "Bank transfer - ${ details }": [
+        "匯款 - ${ details }"
       ]
     },
     "Payments.Sepa": {
@@ -12030,6 +12183,9 @@
       ],
       "ZIP code": [
         "郵遞區號"
+      ],
+      "Your organization name": [
+        "貴組織名稱"
       ]
     },
     "Placeholder for contact group name": {
@@ -12750,6 +12906,9 @@
       ],
       "Upgrade for ${ pricingTitle }": [
         "升級至${ pricingTitle }"
+      ],
+      "Browse securely": [
+        "安全地瀏覽"
       ]
     },
     "specialoffer: Offers": {
@@ -14890,6 +15049,18 @@
       ],
       "When is it most important to use a VPN?": [
         "何時最適合使用 VPN？"
+      ],
+      "Enable advanced account protection": [
+        "啟用進階帳戶保護"
+      ],
+      "Upload and share files": [
+        "上傳並共享檔案"
+      ],
+      "Your ${ planTitle } subscription has started": [
+        "您的 ${ planTitle } 訂閱已開始"
+      ],
+      "Your newsletters in one place": [
+        "您的電子報集中在一處"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15422,6 +15593,16 @@
       ],
       "Download for Windows": [
         "適用於 Windows 的下載"
+      ]
+    },
+    "Action: Sheets": {
+      "Open in ${ SHEETS_APP_NAME }": [
+        "於 ${ SHEETS_APP_NAME } 開啟"
+      ]
+    },
+    "Plan description": {
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "您的頂級質子版服務源自於 ${ BRAND_NAME } 、 ${ MAIL_SHORT_APP_NAME } 、 ${ PASS_SHORT_APP_NAME } 、 ${ VPN_SHORT_APP_NAME } 、 ${ DRIVE_SHORT_APP_NAME } 和 ${ CALENDAR_SHORT_APP_NAME }"
       ]
     }
   }

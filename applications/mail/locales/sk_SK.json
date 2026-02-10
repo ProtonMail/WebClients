@@ -1510,7 +1510,10 @@
         "Dôverovať"
       ],
       "Trust key": [
-        "Dôveryhodný kľúč"
+        "Dôveryhodný kľúč",
+        "Dôveryhodné kľúče",
+        "Dôveryhodné kľúče",
+        "Dôveryhodné kľúče"
       ],
       "Trust public key": [
         "Dôverovať verejnému kľúču"
@@ -4194,6 +4197,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Už ste vytvorili 10 aliasov. Získajte neobmedzený počet aliasov a 500 GB úložiska s ${ BRAND_NAME } Unlimited."
+      ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Pre importovanie prostredníctvom súborov CSV a VCF zabezpečte, aby veľkosť súboru nepresiahla ${ MAX_IMPORT_FILE_SIZE_STRING } alebo ${ maxContactString } kontaktov. Ak je váš súbor väčší, rozdeľte ho na menšie súbory. ${ learnMoreLink }."
       ]
     },
     "description": {
@@ -5123,6 +5129,15 @@
       ],
       "Unable to load VPN dashboard. Please check your connection and try again.": [
         "Nie je možné načítať VPN nástenku. Skontrolujte vaše pripojenie a skúste to znova, prosím."
+      ],
+      "Failed loading group members": [
+        "Chyba pri načítavaní členov skupiny"
+      ],
+      "Network error": [
+        "Chyba siete"
+      ],
+      "That action can't be performed on emails in this folder": [
+        "Túto akciu nie je možné vykonať na emailoch v tejto zložke."
       ]
     },
     "error": {
@@ -5225,6 +5240,9 @@
       ],
       "Your file ${ formattedFilename } is empty.": [
         "Váš súbor ${ formattedFilename } je prázdny."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ maxContactString } contacts.": [
+        "Váš súbor ${ formattedFilename } obsahuje viac ako ${ maxContactString } kontaktov."
       ]
     },
     "Error importing event": {
@@ -7597,10 +7615,7 @@
         "Inicializácia…"
       ],
       "Insert image": [
-        "Vložiť obrázok",
-        "Vložiť obrázky",
-        "Vložiť obrázky",
-        "Vložiť obrázky"
+        "Vložiť obrázok"
       ],
       "Insert link": [
         "Vložiť odkaz"
@@ -9122,6 +9137,15 @@
       ],
       "Your physical location is visible and can be used to restrict your access to the internet.": [
         "Vaša fyzická poloha je viditeľná a môže sa použiť na obmedzenie vášho prístupu na internet."
+      ],
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "Všetky vaše kontakty budú importované až do limitu ${ maxContact }",
+        "Všetky vaše kontakty budú importované až do limitu ${ maxContact }",
+        "Všetky vaše kontakty budú importované až do limitu ${ maxContact }",
+        "Všetky vaše kontakty budú importované až do limitu ${ maxContact }"
+      ],
+      "No messages found": [
+        "Neboli nájdené žiadne správy"
       ]
     },
     "info": {
@@ -10742,6 +10766,18 @@
         "Až do ${ n } účastníkov",
         "Až do ${ n } účastníkov",
         "Až do ${ n } účastníkov"
+      ],
+      "${ n } participant": [
+        "${ n } účastník",
+        "${ n } účastníci",
+        "${ n } účastníkov",
+        "${ n } účastníkov"
+      ],
+      "Booking pages": [
+        "Stránky rezervácií"
+      ],
+      "Meeting recording": [
+        "Nahrávanie schôdze"
       ]
     },
     "Message": {
@@ -11504,6 +11540,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Skenujeme dark web a kontrolujeme, či nedošlo k úniku vašich adries alebo aliasov ${ BRAND_NAME }, a ak niečo nájdeme, okamžite vás upozorníme."
+      ],
+      "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
+        "Telefónna podpora (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ používateľov)"
       ]
     },
     "new_plans: feature highlight": {
@@ -11877,6 +11916,9 @@
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "Môžete mať viac ako jedného správcu. Všetci správcovia môžu pridávať a spravovať používateľov, ale iba primárny správca má kontrolu nad fakturáciou."
+      ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } or more users": [
+        "Telefonická podpora od tímu zákazníckej podpory ${ BRAND_NAME } je k dispozícii počas európskych pracovných hodín pre zákazníkov s minimálne ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } používateľmi."
       ]
     },
     "new_plans: Upsell attribute": {
@@ -12681,6 +12723,24 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Vaše predplatné má v súčasnosti platnú zľavu. Prechodom na túto novú akciu sa existujúca zľava prestane uplatňovať."
+      ],
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "Zľava je platná na ${ renewalsWithCoupon } obnovenie.",
+        "Zľava je platná na ${ renewalsWithCoupon } obnovenia.",
+        "Zľava je platná na ${ renewalsWithCoupon } obnovení.",
+        "Zľava je platná na ${ renewalsWithCoupon } obnovení."
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Špeciálne zľavnená cena platí ${ couponRedemptions } mesiac. Potom sa každý mesiac automaticky obnoví za ${ renewPriceStr } na 1 mesiac. Službu môžete kedykoľvek zrušiť.",
+        "Špeciálne zľavnená cena platí ${ couponRedemptions } mesiace. Potom sa každý mesiac automaticky obnoví za ${ renewPriceStr } na 1 mesiac. Službu môžete kedykoľvek zrušiť.",
+        "Špeciálne zľavnená cena platí ${ couponRedemptions } mesiacov. Potom sa každý mesiac automaticky obnoví za ${ renewPriceStr } na 1 mesiac. Službu môžete kedykoľvek zrušiť.",
+        "Špeciálne zľavnená cena platí ${ couponRedemptions } mesiacov. Potom sa každý mesiac automaticky obnoví za ${ renewPriceStr } na 1 mesiac. Službu môžete kedykoľvek zrušiť."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Špeciálne zľavnená cena ${ priceWithDiscount } platí ${ couponRedemptions } mesiac. Potom sa každý mesiac automaticky obnoví za ${ renewPriceStr } na 1 mesiac. Službu môžete kedykoľvek zrušiť.",
+        "Špeciálne zľavnená cena ${ priceWithDiscount } platí ${ couponRedemptions } mesiace. Potom sa každý mesiac automaticky obnoví za ${ renewPriceStr } na 1 mesiac. Službu môžete kedykoľvek zrušiť.",
+        "Špeciálne zľavnená cena ${ priceWithDiscount } platí ${ couponRedemptions } mesiacov. Potom sa každý mesiac automaticky obnoví za ${ renewPriceStr } na 1 mesiac. Službu môžete kedykoľvek zrušiť.",
+        "Špeciálne zľavnená cena ${ priceWithDiscount } platí ${ couponRedemptions } mesiacov. Potom sa každý mesiac automaticky obnoví za ${ renewPriceStr } na 1 mesiac. Službu môžete kedykoľvek zrušiť."
       ]
     },
     "Payments.Error": {
@@ -16271,6 +16331,9 @@
       ],
       "When is it most important to use a VPN?": [
         "Kedy je najdôležitejšie používať VPN?"
+      ],
+      "Your ${ planTitle } subscription has started": [
+        "Vaše predplatné ${ planTitle } začalo"
       ]
     },
     "Today icon tooltip in mini calendar": {
