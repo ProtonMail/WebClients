@@ -1,38 +1,44 @@
+import { useMemo } from 'react';
+
 import { c } from 'ttag';
 
 import { DropdownMenu, DropdownMenuButton, useModalState } from '@proton/components';
-import { IcArchiveBox } from '@proton/icons/icons/IcArchiveBox';
 import { IcBell } from '@proton/icons/icons/IcBell';
-import { IcCrossCircle } from '@proton/icons/icons/IcCrossCircle';
-import { IcFire } from '@proton/icons/icons/IcFire';
-import { IcFireSlash } from '@proton/icons/icons/IcFireSlash';
 import { IcFolderArrowIn } from '@proton/icons/icons/IcFolderArrowIn';
-import { IcInbox } from '@proton/icons/icons/IcInbox';
 import { IcTag } from '@proton/icons/icons/IcTag';
 import { IcThreeDotsHorizontal } from '@proton/icons/icons/IcThreeDotsHorizontal';
-import { IcTrash } from '@proton/icons/icons/IcTrash';
 import { labelIncludes } from '@proton/mail/helpers/location';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
-import { TelemetryMailSelectAllEvents } from '@proton/shared/lib/api/telemetry';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
 import { isConversationMode } from 'proton-mail/helpers/mailSettings';
-import { MoveAllType, useMoveAllToFolder } from 'proton-mail/hooks/actions/move/useMoveAllToFolder';
 import { useSelectAll } from 'proton-mail/hooks/useSelectAll';
+import { selectLabelID } from 'proton-mail/store/elements/elementsSelectors';
+import { useMailSelector } from 'proton-mail/store/hooks';
 
 import { canMoveAll } from '../../helpers/labels';
-import { useEmptyLabel } from '../../hooks/actions/useEmptyLabel';
 import useSnooze from '../../hooks/actions/useSnooze';
 import { useLabelActions } from '../../hooks/useLabelActions';
 import LabelDropdown, { labelDropdownContentProps } from '../dropdown/LabelDropdown';
 import MoveDropdown, { moveDropdownContentProps } from '../dropdown/MoveDropdown';
-import useListTelemetry, { ACTION_TYPE, SELECTED_RANGE, SOURCE_ACTION } from '../list/list-telemetry/useListTelemetry';
+import type { SOURCE_ACTION } from '../list/list-telemetry/useListTelemetry';
 import SnoozeUpsellModal from '../list/snooze/components/SnoozeUpsellModal';
 import SnoozeToolbarDropdownStepWrapper, {
     SnoozeToolbarDropdownStepWrapperProps,
 } from '../list/snooze/containers/SnoozeToolbarDropdownStepWrapper';
 import type { DropdownRender } from '../message/extrasHeader/HeaderDropdown';
+import {
+    ArchiveAction,
+    DeleteAction,
+    DeleteAllAction,
+    InboxAction,
+    MoveAllToArchiveAction,
+    MoveAllToTrashAction,
+    NoSpamAction,
+    SpamAction,
+    TrashAction,
+} from './MoreDropdown/MoreDropdownActions';
 import ToolbarDropdown from './ToolbarDropdown';
 
 const canEmpty = (labelID: string, elementIDs: string[], selectedIDs: string[], isSearch: boolean) => {
@@ -57,7 +63,6 @@ const canEmpty = (labelID: string, elementIDs: string[], selectedIDs: string[], 
 };
 
 interface Props {
-    labelID: string;
     elementIDs: string[];
     selectedIDs: string[];
     isSearch: boolean;
@@ -70,7 +75,6 @@ interface Props {
 }
 
 const MoreDropdown = ({
-    labelID,
     elementIDs,
     selectedIDs,
     isSearch,
@@ -80,8 +84,11 @@ const MoreDropdown = ({
     onDelete,
     onCheckAll,
 }: Props) => {
+    const labelID = useMailSelector(selectLabelID);
+
     const [mailSettings] = useMailSettings();
     const { selectAll } = useSelectAll({ labelID });
+
     let [firstActions, actions] = useLabelActions(labelID);
     if (isExtraTiny) {
         actions = [...firstActions, ...actions];
@@ -89,157 +96,48 @@ const MoreDropdown = ({
 
     const { canSnooze, canUnsnooze } = useSnooze();
 
-    const { emptyLabel, modal: deleteAllModal } = useEmptyLabel();
-    const { moveAllToFolder, moveAllModal } = useMoveAllToFolder();
-
-    const { sendSimpleActionReport } = useListTelemetry();
-
     const [upsellModalProps, handleUpsellModalDisplay, renderUpsellModal] = useModalState();
 
-    const inMore = {
-        move: actions.length > 0 && selectedIDs.length > 0,
-        additionalDropdowns: isTiny && selectedIDs.length > 0,
-        moveAllToArchive: canMoveAll(labelID, MAILBOX_LABEL_IDS.ARCHIVE, elementIDs, selectedIDs, isSearch),
-        moveAllToTrash: canMoveAll(labelID, MAILBOX_LABEL_IDS.TRASH, elementIDs, selectedIDs, isSearch),
-        delete: canEmpty(labelID, elementIDs, selectedIDs, isSearch),
-    };
+    const showMove = actions.length > 0 && selectedIDs.length > 0;
+    const showAdditionalDropdowns = isTiny && selectedIDs.length > 0;
+    const showMoveAllToArchive = canMoveAll(labelID, MAILBOX_LABEL_IDS.ARCHIVE, elementIDs, selectedIDs, isSearch);
+    const showMoveAllToTrash = canMoveAll(labelID, MAILBOX_LABEL_IDS.TRASH, elementIDs, selectedIDs, isSearch);
+    const showDelete = canEmpty(labelID, elementIDs, selectedIDs, isSearch);
+    const none = !showMove && !showAdditionalDropdowns && !showMoveAllToArchive && !showMoveAllToTrash && !showDelete;
 
-    const handleEmptyLabel = () => {
-        sendSimpleActionReport({
-            actionType: ACTION_TYPE.DELETE_PERMANENTLY,
-            actionLocation: SOURCE_ACTION.TOOLBAR,
-            numberMessage: SELECTED_RANGE.ALL,
+    const additionalDropdowns: DropdownRender[] = [];
+    if (showAdditionalDropdowns) {
+        additionalDropdowns.push({
+            contentProps: moveDropdownContentProps,
+            render: ({ onClose, onLock }) => (
+                <MoveDropdown
+                    labelID={labelID}
+                    selectedIDs={selectedIDs}
+                    onClose={onClose}
+                    onLock={onLock}
+                    isMessage={!isConversationMode(labelID, mailSettings)}
+                    selectAll={selectAll}
+                    onCheckAll={onCheckAll}
+                />
+            ),
         });
-        void emptyLabel(labelID);
-    };
 
-    const handleMoveAllToArchive = () => {
-        void moveAllToFolder({
-            type: MoveAllType.moveAll,
-            sourceLabelID: labelID,
-            destinationLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
-            telemetryEvent: TelemetryMailSelectAllEvents.button_move_to_archive,
-            sourceAction: SOURCE_ACTION.MORE_DROPDOWN,
+        additionalDropdowns.push({
+            contentProps: labelDropdownContentProps,
+            render: ({ onClose, onLock }) => (
+                <LabelDropdown
+                    labelID={labelID}
+                    selectedIDs={selectedIDs}
+                    onClose={onClose}
+                    onLock={onLock}
+                    selectAll={selectAll}
+                />
+            ),
         });
-    };
-    const handleMoveAllToTrash = () => {
-        void moveAllToFolder({
-            type: MoveAllType.moveAll,
-            sourceLabelID: labelID,
-            destinationLabelID: MAILBOX_LABEL_IDS.TRASH,
-            telemetryEvent: TelemetryMailSelectAllEvents.button_move_to_trash,
-            sourceAction: SOURCE_ACTION.MORE_DROPDOWN,
-        });
-    };
-
-    const inbox = (
-        <DropdownMenuButton
-            key="context-menu-inbox"
-            className="text-left"
-            onClick={() => onMove(MAILBOX_LABEL_IDS.INBOX, SOURCE_ACTION.TOOLBAR)}
-            data-testid="toolbar:more-dropdown--movetoinbox"
-        >
-            <IcInbox className="mr-2" />
-            {c('Action').t`Move to inbox`}
-        </DropdownMenuButton>
-    );
-
-    const nospam = (
-        <DropdownMenuButton
-            key="context-menu-nospam"
-            className="text-left"
-            onClick={() => onMove(MAILBOX_LABEL_IDS.INBOX, SOURCE_ACTION.TOOLBAR)}
-            data-testid="toolbar:more-dropdown--movetonospam"
-        >
-            <IcFireSlash className="mr-2" />
-            {c('Action').t`Move to inbox (not spam)`}
-        </DropdownMenuButton>
-    );
-
-    const archive = (
-        <DropdownMenuButton
-            key="context-menu-archive"
-            className="text-left"
-            onClick={() => onMove(MAILBOX_LABEL_IDS.ARCHIVE, SOURCE_ACTION.TOOLBAR)}
-            data-testid="toolbar:more-dropdown--movetonoarchive"
-        >
-            <IcArchiveBox className="mr-2" />
-            {c('Action').t`Move to archive`}
-        </DropdownMenuButton>
-    );
-
-    const trash = (
-        <DropdownMenuButton
-            key="context-menu-trash"
-            className="text-left"
-            onClick={() => onMove(MAILBOX_LABEL_IDS.TRASH, SOURCE_ACTION.TOOLBAR)}
-            data-testid="toolbar:more-dropdown--movetotrash"
-        >
-            <IcTrash className="mr-2" />
-            {c('Action').t`Move to trash`}
-        </DropdownMenuButton>
-    );
-
-    const spam = (
-        <DropdownMenuButton
-            key="context-menu-spam"
-            className="text-left"
-            onClick={() => onMove(MAILBOX_LABEL_IDS.SPAM, SOURCE_ACTION.TOOLBAR)}
-            data-testid="toolbar:more-dropdown--movetospam"
-        >
-            <IcFire className="mr-2" />
-            {c('Action').t`Move to spam`}
-        </DropdownMenuButton>
-    );
-
-    const deleteButton = (
-        <DropdownMenuButton
-            key="context-menu-delete"
-            className="text-left"
-            onClick={() => onDelete(SOURCE_ACTION.TOOLBAR)}
-            data-testid="toolbar:more-dropdown--delete"
-        >
-            <IcCrossCircle className="mr-2" />
-            {c('Action').t`Delete`}
-        </DropdownMenuButton>
-    );
-
-    const allMoveButtons = { inbox, trash, archive, spam, nospam, delete: deleteButton };
-    const moveButtons = actions.map((action) => allMoveButtons[action]);
-
-    const additionalDropdowns: DropdownRender[] | undefined = inMore.additionalDropdowns
-        ? [
-              {
-                  contentProps: moveDropdownContentProps,
-                  render: ({ onClose, onLock }) => (
-                      <MoveDropdown
-                          labelID={labelID}
-                          selectedIDs={selectedIDs}
-                          onClose={onClose}
-                          onLock={onLock}
-                          isMessage={!isConversationMode(labelID, mailSettings)}
-                          selectAll={selectAll}
-                          onCheckAll={onCheckAll}
-                      />
-                  ),
-              },
-              {
-                  contentProps: labelDropdownContentProps,
-                  render: ({ onClose, onLock }) => (
-                      <LabelDropdown
-                          labelID={labelID}
-                          selectedIDs={selectedIDs}
-                          onClose={onClose}
-                          onLock={onLock}
-                          selectAll={selectAll}
-                      />
-                  ),
-              },
-          ]
-        : undefined;
+    }
 
     if (selectedIDs.length && (canSnooze || canUnsnooze)) {
-        additionalDropdowns?.push({
+        additionalDropdowns.push({
             contentProps: SnoozeToolbarDropdownStepWrapperProps,
             render: ({ onClose, onLock }) => (
                 <SnoozeToolbarDropdownStepWrapper
@@ -252,7 +150,17 @@ const MoreDropdown = ({
         });
     }
 
-    const none = Object.values(inMore).every((visible) => !visible);
+    const allMoveButtons = useMemo(
+        () => ({
+            inbox: <InboxAction onMove={onMove} />,
+            trash: <TrashAction onMove={onMove} />,
+            archive: <ArchiveAction onMove={onMove} />,
+            spam: <SpamAction onMove={onMove} />,
+            nospam: <NoSpamAction onMove={onMove} />,
+            delete: <DeleteAction onDelete={onDelete} />,
+        }),
+        [onMove, onDelete]
+    );
 
     return (
         <>
@@ -268,14 +176,11 @@ const MoreDropdown = ({
                 {{
                     render: ({ onOpenAdditional }) => (
                         <DropdownMenu>
-                            {inMore.move ? moveButtons : null}
-                            {inMore.additionalDropdowns ? (
+                            {showMove ? actions.map((action) => allMoveButtons[action]) : null}
+                            {showAdditionalDropdowns ? (
                                 <>
                                     <DropdownMenuButton
-                                        className={clsx(
-                                            'text-left inline-flex flex-nowrap',
-                                            inMore.move && 'border-top'
-                                        )}
+                                        className={clsx('text-left inline-flex flex-nowrap', showMove && 'border-top')}
                                         onClick={() => onOpenAdditional(0)}
                                         data-testid="toolbar:more-dropdown--moveto"
                                     >
@@ -302,54 +207,14 @@ const MoreDropdown = ({
                                     )}
                                 </>
                             ) : null}
-                            {inMore.moveAllToTrash ? (
-                                <DropdownMenuButton
-                                    className="text-left inline-flex flex-nowrap"
-                                    onClick={handleMoveAllToTrash}
-                                    data-testid="toolbar:moveAllToTrash"
-                                >
-                                    <IcTrash className="mr-2 shrink-0 mt-0.5" />
-                                    <span className="flex-1">
-                                        {
-                                            // translator: This action will move all messages from the location to trash
-                                            // Beware when translating this one because we might also have a button below,
-                                            // which is deleting all messages. This is different
-                                            c('Action').t`Move all to trash`
-                                        }
-                                    </span>
-                                </DropdownMenuButton>
-                            ) : null}
-                            {inMore.moveAllToArchive ? (
-                                <DropdownMenuButton
-                                    className="text-left inline-flex flex-nowrap"
-                                    onClick={handleMoveAllToArchive}
-                                    data-testid="toolbar:moveAllToArchive"
-                                >
-                                    <IcArchiveBox className="mr-2 shrink-0 mt-0.5" />
-                                    <span className="flex-1">{c('Action').t`Move all to archive`}</span>
-                                </DropdownMenuButton>
-                            ) : null}
-                            {inMore.delete ? (
-                                <DropdownMenuButton
-                                    className="text-left inline-flex flex-nowrap color-danger"
-                                    onClick={handleEmptyLabel}
-                                    data-testid="toolbar:more-empty"
-                                >
-                                    <IcCrossCircle className="mr-2 shrink-0 mt-0.5" />
-                                    <span className="flex-1">{
-                                        // translator: This action will delete permanently all messages from the location
-                                        // Beware when translating this one because we might also have a button on top,
-                                        // which is moving messages to trash. This is different
-                                        c('Action').t`Delete all`
-                                    }</span>
-                                </DropdownMenuButton>
-                            ) : null}
+
+                            {showMoveAllToTrash ? <MoveAllToTrashAction labelID={labelID} /> : null}
+                            {showMoveAllToArchive ? <MoveAllToArchiveAction labelID={labelID} /> : null}
+                            {showDelete ? <DeleteAllAction labelID={labelID} /> : null}
                         </DropdownMenu>
                     ),
                 }}
             </ToolbarDropdown>
-            {deleteAllModal}
-            {moveAllModal}
             {renderUpsellModal && <SnoozeUpsellModal {...upsellModalProps} />}
         </>
     );

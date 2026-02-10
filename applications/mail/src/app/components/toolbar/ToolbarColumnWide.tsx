@@ -106,7 +106,6 @@ const ToolbarColumnWide = ({
                                 <SnoozeToolbarDropdown labelID={labelID} selectedIDs={selectedIDs} />
                             )}
                             <MoreDropdown
-                                labelID={labelID}
                                 elementIDs={elementIDs}
                                 selectedIDs={selectedIDs}
                                 isSearch={isSearch}
