@@ -41,6 +41,9 @@
       "Close": [
         "Cerrar"
       ],
+      "Close this banner": [
+        "Cerrar este banner"
+      ],
       "Continue": [
         "Continuar"
       ],
@@ -50,20 +53,23 @@
       "Continue without microphone": [
         "Continuar sin micrófono"
       ],
-      "Copied": [
-        "Copiado"
-      ],
-      "Copy ${ title }": [
-        "Copiar ${ title }"
-      ],
       "Copy address": [
         "Copiar la dirección"
       ],
       "Copy link": [
         "Copiar enlace"
       ],
+      "Copy link and close": [
+        "Copiar enlace y cerrar"
+      ],
       "Create a free account": [
         "Crear una cuenta gratuita"
+      ],
+      "Create an account": [
+        "Crear una cuenta"
+      ],
+      "Delete": [
+        "Eliminar"
       ],
       "Disable ${ participantName }'s video": [
         "Desactivar el vídeo de ${ participantName }"
@@ -76,6 +82,9 @@
       ],
       "Done": [
         "Hecho"
+      ],
+      "Download app": [
+        "Descargar aplicación"
       ],
       "Download local participant report": [
         "Descargar informe de participante local"
@@ -212,8 +221,8 @@
       "Resend code": [
         "Reenviar código"
       ],
-      "Save meeting": [
-        "Guardar reunión"
+      "Save": [
+        "Guardar"
       ],
       "Schedule": [
         "Programar"
@@ -241,9 +250,6 @@
       ],
       "Sign out of all accounts": [
         "Cerrar la sesión de todas las cuentas"
-      ],
-      "Start": [
-        "Iniciar"
       ],
       "Start a meeting": [
         "Iniciar una reunión"
@@ -283,6 +289,9 @@
       ],
       "Turn off incoming video": [
         "Desactivar video entrante"
+      ],
+      "Upgrade": [
+        "Actualizar"
       ],
       "Use authentication code": [
         "Usar código de autenticación"
@@ -330,9 +339,6 @@
       ],
       "Go to dashboard": [
         "Ir al panel de control"
-      ],
-      "Leave": [
-        "Salir"
       ],
       "Leave Meeting": [
         "Salir de la reunión"
@@ -400,6 +406,11 @@
     "Badge": {
       "Active": [
         "Activo"
+      ]
+    },
+    "Banner": {
+      "Connected via TURN relay mode due to your network restrictions. This may increase latency and affect call quality.": [
+        "Conexión mediante modo de retransmisión TURN debido a restricciones en su red. Esto puede aumentar la latencia y afectar a la calidad de la llamada."
       ]
     },
     "Browser": {
@@ -1339,23 +1350,11 @@
       ]
     },
     "Description": {
-      "An always available meeting room for people you trust.": [
-        "Una sala de reuniones siempre disponible para personas de confianza."
-      ],
-      "Plan meetings and send invites with ${ CALENDAR_APP_NAME }.": [
-        "Planifique reuniones y envíe invitaciones con ${ CALENDAR_APP_NAME }."
-      ],
       "Rotating group encryption key for best security": [
         "Rotando la clave de cifrado del grupo para mejor seguridad"
       ],
       "Setting up group end-to-end encryption with advanced Messaging Layer Security (MLS)": [
         "Configurando el cifrado de extremo a extremo del grupo con seguridad de capa de mensajería (MLS) avanzada"
-      ],
-      "Start a call immediately then share the link with others.": [
-        "Comenzar una llamada de inmediato y luego compartir el enlace con otros."
-      ],
-      "Use a link to join a meeting.": [
-        "Use un enlace para unirse a una reunión."
       ]
     },
     "emergency_access": {
@@ -1607,9 +1606,6 @@
       "${ presenterName } is presenting": [
         "${ presenterName } está presentando"
       ],
-      "${ user.DisplayName }'s Meeting": [
-        "Reunión de ${ user.DisplayName }"
-      ],
       "(You)": [
         "(Usted)"
       ],
@@ -1715,8 +1711,11 @@
       "Enter your own password (as trusted contact).": [
         "Ingrese su propia contraseña (como contacto de confianza)."
       ],
-      "Every call, screen share, and chat is end-to-end encrypted to protect your most important connections.": [
-        "Cada llamada, compartir pantalla y chat está cifrado de extremo a extremo para proteger sus conexiones más importantes."
+      "Failed to update meeting name": [
+        "Error al actualizar el nombre de la reunión"
+      ],
+      "Failed to update meeting password": [
+        "Error al actualizar la contraseña de la reunión"
       ],
       "Free meeting": [
         "Reunión gratuita"
@@ -1774,9 +1773,6 @@
       ],
       "Meet without restrictions": [
         "Reúnase sin restricciones"
-      ],
-      "Meeting created": [
-        "Reunión creada"
       ],
       "Meeting full (${ maxParticipants } participants)": [
         "Reunión llena (${ maxParticipants } participantes)"
@@ -1970,6 +1966,9 @@
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Cuando configura la autenticación de dos factores, nosotros proporcionamos códigos de recuperación que podrá usar para iniciar sesión si llega a perder acceso a la aplicación de autenticación."
       ],
+      "Would you like to delete this event?": [
+        "¿Quiere eliminar este evento?"
+      ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "¿Quiere recibir un código de verificación nuevo o usar un método de verificación alternativo?"
       ],
@@ -2043,6 +2042,15 @@
       ],
       "Connection Quality": [
         "Calidad de la conexión"
+      ],
+      "Copy all activity events": [
+        "Copiar todos los eventos de actividad"
+      ],
+      "Copy invite link": [
+        "Copiar enlace de invitación"
+      ],
+      "Created": [
+        "Creado"
       ],
       "Delete": [
         "Eliminar"
@@ -2240,9 +2248,6 @@
       "Find...": [
         "Buscar..."
       ],
-      "https://meet.proton.me/join/id-abc#pwd-123": [
-        "https://meet.proton.me/join/id-abc#pwd-123"
-      ],
       "Loading...": [
         "Cargando..."
       ],
@@ -2254,6 +2259,9 @@
       ],
       "Schedule in ${ CALENDAR_APP_NAME }": [
         "Programar en ${ CALENDAR_APP_NAME }"
+      ],
+      "Search": [
+        "Buscar"
       ],
       "Select": [
         "Seleccionar"
@@ -2433,9 +2441,6 @@
       "Join meeting": [
         "Unirse a la reunión"
       ],
-      "Join with link": [
-        "Unirse con un enlace"
-      ],
       "Joined at epoch ${ log.epoch }": [
         "Se unió en epoch ${ log.epoch }"
       ],
@@ -2447,6 +2452,9 @@
       ],
       "Meeting details": [
         "Detalles de la reunión"
+      ],
+      "Messaging Layer Security": [
+        "Messaging Layer Security (MLS)"
       ],
       "Minicalendar": [
         "Minicalendario"
@@ -2462,9 +2470,6 @@
       ],
       "Personal meeting": [
         "Reunión personal"
-      ],
-      "Personal meeting link": [
-        "Enlace de reunión personal"
       ],
       "Personal meeting room": [
         "Sala de reuniones personal"
@@ -2487,9 +2492,6 @@
       "Schedule a meeting": [
         "Programar una reunión"
       ],
-      "Schedule meeting": [
-        "Programar reunión"
-      ],
       "Secure meeting": [
         "Reunión segura"
       ],
@@ -2505,9 +2507,6 @@
       "Sign out": [
         "Cerrar sesión"
       ],
-      "Start secure meeting": [
-        "Iniciar reunión segura"
-      ],
       "Starting meeting as the first participant…": [
         "Iniciando la reunión como primer participante…"
       ],
@@ -2522,9 +2521,6 @@
       ],
       "Two-factor authentication": [
         "Autenticación de dos factores"
-      ],
-      "Upcoming meetings": [
-        "Próximas reuniones"
       ],
       "Video": [
         "Video"
@@ -2544,11 +2540,6 @@
       ],
       "Recurring meeting": [
         "Reunión recurrente"
-      ]
-    },
-    "Upgrade Button": {
-      "Upgrade": [
-        "Mejorar"
       ]
     },
     "Validation": {
