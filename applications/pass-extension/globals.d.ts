@@ -20,4 +20,12 @@ declare global {
 
     declare const HTTP_DEBUGGER_PORT: number;
     declare const HTTP_DEBUGGER: boolean;
+
+    /** WebAuthN overrides: although the "name" properties are non-nullable
+     * some websites (eg: paypal.com) may produce null values */
+    interface PublicKeyCredentialUserEntity extends PublicKeyCredentialEntity {
+        name?: string;
+        displayName?: string;
+        id: BufferSource;
+    }
 }
