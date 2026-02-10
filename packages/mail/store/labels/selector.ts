@@ -15,8 +15,10 @@ export const selectCategoriesLabel = createSelector([selectCategories], (categor
     return sortSystemCategories(onlyCategories);
 });
 
-export const selectDisabledCategoriesIDs = createSelector([selectCategoriesLabel], (categories): string[] => {
-    return categories.filter((category) => !category.Display).map((category) => category.ID);
+export const selectDisabledCategoriesIDs = createSelector([selectCategoriesLabel], (): string[] => {
+    // TODO enable this again once the alpha is done
+    // return categories.filter((category) => !category.Display).map((category) => category.ID);
+    return [];
 });
 
 export const selectCategoriesTabs = createSelector([selectCategoriesLabel], (categoriesStore) => {
