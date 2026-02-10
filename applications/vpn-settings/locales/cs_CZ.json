@@ -3895,6 +3895,21 @@
     "emergency_access": {
       "Trusted contact": [
         "Důvěryhodný kontakt"
+      ],
+      "${ n } day": [
+        "${ n } den",
+        "${ n } dny",
+        "${ n } dnů",
+        "${ n } dnů"
+      ],
+      "Added on ${ formattedDate }": [
+        "Přidáno ${ formattedDate }"
+      ],
+      "Immediate": [
+        "Okamžitě"
+      ],
+      "Less than a day": [
+        "Méně než den"
       ]
     },
     "Empty group name": {

@@ -3853,6 +3853,19 @@
     "emergency_access": {
       "Trusted contact": [
         "Vertrouwd contact"
+      ],
+      "${ n } day": [
+        "${ n } dag",
+        "${ n } dagen"
+      ],
+      "Added on ${ formattedDate }": [
+        "Toegevoegd op ${ formattedDate }"
+      ],
+      "Immediate": [
+        "Onmiddellijk"
+      ],
+      "Less than a day": [
+        "Minder dan een dag"
       ]
     },
     "Empty group name": {

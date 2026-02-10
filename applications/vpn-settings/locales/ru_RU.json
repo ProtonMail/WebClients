@@ -15118,6 +15118,14 @@
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "После успешной проверки не удаляйте эту TXT-запись, так как она необходима для подтверждения того, что вы остаётесь владельцем домена."
       ]
+    },
+    "emergency_access": {
+      "${ n } day": [
+        "${ n } день",
+        "${ n } дня",
+        "${ n } дней",
+        "${ n } дней"
+      ]
     }
   }
 }

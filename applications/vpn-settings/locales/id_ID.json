@@ -3818,6 +3818,18 @@
     "emergency_access": {
       "Trusted contact": [
         "Kontak tepercaya"
+      ],
+      "${ n } day": [
+        "${ n } hari"
+      ],
+      "Added on ${ formattedDate }": [
+        "Ditambahkan pada ${ formattedDate }"
+      ],
+      "Immediate": [
+        "Segera"
+      ],
+      "Less than a day": [
+        "Kurang dari satu hari"
       ]
     },
     "Empty group name": {

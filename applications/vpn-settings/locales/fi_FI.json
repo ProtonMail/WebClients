@@ -3719,6 +3719,19 @@
     "emergency_access": {
       "Trusted contact": [
         "Luotettu yhteyshenkilö"
+      ],
+      "${ n } day": [
+        "${ n } vuorokausi",
+        "${ n } vuorokautta"
+      ],
+      "Added on ${ formattedDate }": [
+        "Lisätty ${ formattedDate }"
+      ],
+      "Immediate": [
+        "Välitön"
+      ],
+      "Less than a day": [
+        "Alle päivä"
       ]
     },
     "Empty group name": {

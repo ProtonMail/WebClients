@@ -3853,6 +3853,19 @@
     "emergency_access": {
       "Trusted contact": [
         "Güvenilir kişi"
+      ],
+      "${ n } day": [
+        "${ n } gün",
+        "${ n } gün"
+      ],
+      "Added on ${ formattedDate }": [
+        "${ formattedDate } tarihinde eklendi"
+      ],
+      "Immediate": [
+        "Hemen"
+      ],
+      "Less than a day": [
+        "Bir günden daha az"
       ]
     },
     "Empty group name": {

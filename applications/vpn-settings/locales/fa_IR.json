@@ -7507,6 +7507,12 @@
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "پس از تایید موفقیت آمیز، این سابقه TXT را حذف نکنید زیرا برای تایید ادامه مالکیت دامنه لازم است."
       ]
+    },
+    "emergency_access": {
+      "${ n } day": [
+        "${ n } روز",
+        "${ n } روز"
+      ]
     }
   }
 }
