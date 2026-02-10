@@ -21,6 +21,7 @@ import {
 } from '@proton/components';
 import { InAppText } from '@proton/components/containers/payments/subscription/InAppPurchaseModal';
 import SubscriptionContainer from '@proton/components/containers/payments/subscription/SubscriptionContainer';
+import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
 import {
@@ -52,6 +53,8 @@ import {
 import { replaceUrl } from '@proton/shared/lib/helpers/browser';
 import type { UserModel } from '@proton/shared/lib/interfaces';
 import { canPay } from '@proton/shared/lib/user/helpers';
+import { useVariant } from '@proton/unleash';
+import type { FeatureFlagVariant } from '@proton/unleash/UnleashFeatureFlagsVariants';
 import clsx from '@proton/utils/clsx';
 
 import broadcast, { MessageType } from '../broadcast';
@@ -59,6 +62,7 @@ import LiteBox from '../components/LiteBox';
 import PromotionAlreadyApplied from '../components/PromotionAlreadyApplied';
 import SubscribeAccountDone from '../components/SubscribeAccountDone';
 import { SubscribeType } from '../types/SubscribeType';
+import SubscriptionCheckout from './subscription/SubscriptionCheckout';
 
 import './SubscribeAccount.scss';
 
@@ -71,6 +75,7 @@ interface Props {
     layout: (children: ReactNode, props: any) => ReactNode;
     onSubscribed?: () => void;
     childOverride?: ReactNode;
+    protonLogoScale: number;
 }
 
 const plusPlans = [PLANS.VPN2024, PLANS.MAIL, PLANS.DRIVE, PLANS.PASS, PLANS.VPN_PASS_BUNDLE, PLANS.LUMO];
@@ -109,7 +114,16 @@ export const SubscribeAccountHeader = ({
     );
 };
 
-const SubscribeAccount = ({ app, redirect, searchParams, loader, layout, childOverride, onSubscribed }: Props) => {
+const SubscribeAccount = ({
+    app,
+    redirect,
+    searchParams,
+    loader,
+    layout,
+    childOverride,
+    onSubscribed,
+    protonLogoScale,
+}: Props) => {
     const onceCloseRef = useRef(false);
     const topRef = useRef<HTMLDivElement>(null);
     const [user] = useUser();
@@ -126,6 +140,10 @@ const SubscribeAccount = ({ app, redirect, searchParams, loader, layout, childOv
     const { paymentsApi } = usePaymentsApi();
 
     const canEdit = canPay(user);
+    const { viewportWidth } = useActiveBreakpoint();
+
+    const variant: FeatureFlagVariant<'ShowLiteAppCheckoutV2'> = useVariant('ShowLiteAppCheckoutV2');
+    const showCheckoutV2 = variant.name === 'show';
 
     useEffect(() => {
         async function run() {
@@ -164,7 +182,7 @@ const SubscribeAccount = ({ app, redirect, searchParams, loader, layout, childOv
     const parsedCycle = cycleParam ? getValidCycle(cycleParam) : undefined;
 
     const minimumCycleParam = parseInt(searchParams.get('minimumCycle') as any, 10);
-    const parsedMinimumCycle = cycleParam ? getValidCycle(minimumCycleParam) : undefined;
+    const parsedMinimumCycle = minimumCycleParam ? getValidCycle(minimumCycleParam) : undefined;
 
     const coupon = searchParams.get('coupon') || undefined;
 
@@ -214,8 +232,8 @@ const SubscribeAccount = ({ app, redirect, searchParams, loader, layout, childOv
             bgClassName: 'subscribe-account--bf-bg subscribe-account--mail-bg',
             logo: (
                 <>
-                    <ProtonLogo color="brand" className="block sm:hidden" />
-                    <ProtonLogo color="invert" className="hidden sm:block" />
+                    <ProtonLogo scale={protonLogoScale} color="brand" className="block sm:hidden" />
+                    <ProtonLogo scale={protonLogoScale} color="invert" className="hidden sm:block" />
                 </>
             ),
         };
@@ -285,7 +303,12 @@ const SubscribeAccount = ({ app, redirect, searchParams, loader, layout, childOv
         activeSubscriptionSameCoupon;
 
     const isVisionaryDowngrade =
-        activeSubscriptionPlan?.Name === PLANS.VISIONARY && !!maybePlanName && plan !== PLANS.VISIONARY;
+        activeSubscriptionPlan?.Name === PLANS.VISIONARY &&
+        !!maybePlanName &&
+        plan !== PLANS.VISIONARY &&
+        activeSubscriptionSameCoupon;
+
+    const showMobileCheckoutV2 = showCheckoutV2 && viewportWidth['<=small'];
 
     if (takingSameOffer || isBundleDowngrade || isFamilyDowngrade || isVisionaryDowngrade) {
         return <PromotionAlreadyApplied />;
@@ -354,6 +377,8 @@ const SubscribeAccount = ({ app, redirect, searchParams, loader, layout, childOv
                                     disablePlanSelection={disablePlanSelectionValue}
                                     disableCycleSelector={disableCycleSelectorValue}
                                     disableThanksStep
+                                    showShortPlan={showMobileCheckoutV2}
+                                    skipPlanTransitionChecks={showMobileCheckoutV2}
                                     onSubscribed={handleSuccess}
                                     onUnsubscribed={handleSuccess}
                                     onCancel={handleClose}
@@ -408,20 +433,42 @@ const SubscribeAccount = ({ app, redirect, searchParams, loader, layout, childOv
                                     metrics={{
                                         source: 'lite-subscribe',
                                     }}
-                                    render={({ onSubmit, title, content, footer, step }) => {
+                                    render={({ onSubmit, title, content, footer, step, model, onModelUpdate }) => {
                                         return (
                                             <LiteBox
                                                 maxWidth={step === SUBSCRIPTION_STEPS.PLAN_SELECTION ? 72 : undefined}
                                             >
-                                                <SubscribeAccountHeader
-                                                    user={user}
-                                                    title={title}
-                                                    onClose={hideClose ? undefined : handleClose}
-                                                />
-                                                <form onSubmit={onSubmit}>
-                                                    <div>{content}</div>
-                                                    {footer && <div className="mt-8">{footer}</div>}
-                                                </form>
+                                                {showMobileCheckoutV2 && step === SUBSCRIPTION_STEPS.CHECKOUT ? (
+                                                    <SubscriptionCheckout
+                                                        minimumCycle={parsedMinimumCycle}
+                                                        subscription={subscription}
+                                                        checkoutModel={model}
+                                                        onClose={handleClose}
+                                                        onSubscribed={handleSuccess}
+                                                        onUnsubscribed={handleSuccess}
+                                                        onStepChange={(nextStep: SUBSCRIPTION_STEPS) =>
+                                                            onModelUpdate({
+                                                                ...model,
+                                                                step: nextStep,
+                                                            })
+                                                        }
+                                                        metrics={{
+                                                            source: 'lite-subscribe',
+                                                        }}
+                                                    />
+                                                ) : (
+                                                    <>
+                                                        <SubscribeAccountHeader
+                                                            user={user}
+                                                            title={title}
+                                                            onClose={hideClose ? undefined : handleClose}
+                                                        />
+                                                        <form onSubmit={onSubmit}>
+                                                            <div>{content}</div>
+                                                            {footer && <div className="mt-8">{footer}</div>}
+                                                        </form>
+                                                    </>
+                                                )}
                                             </LiteBox>
                                         );
                                     }}
@@ -480,8 +527,4 @@ const SubscribeAccount = ({ app, redirect, searchParams, loader, layout, childOv
     );
 };
 
-const SubscribeAccountWithProviders = (props: Props) => {
-    return <SubscribeAccount {...props} />;
-};
-
-export default SubscribeAccountWithProviders;
+export default SubscribeAccount;

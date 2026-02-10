@@ -17,7 +17,7 @@ interface VatNumberHookProps {
     isAuthenticated?: boolean;
     paymentsApi?: PaymentsApi;
     taxCountry: TaxCountryHook;
-    onVatUpdated?: () => unknown | Promise<unknown>;
+    onVatUpdated?: (vatNumber: string | null) => unknown | Promise<unknown>;
 }
 
 export type VatNumberHook = ReturnType<typeof useVatNumber>;
@@ -119,7 +119,7 @@ export const useVatNumber = ({
         const vatNumber = await fetchVatNumber();
         onChange?.(vatNumber ?? '');
         if (isAuthenticated) {
-            await onVatUpdated?.();
+            await onVatUpdated?.(vatNumber);
         }
     };
 

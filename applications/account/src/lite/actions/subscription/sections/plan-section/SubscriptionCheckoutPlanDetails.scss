@@ -1,0 +1,11 @@
+.lite-app-plan-card {
+	> :first-child {
+		border-start-start-radius: var(--border-radius-lg);
+		border-start-end-radius: var(--border-radius-lg);
+	}
+}
+
+.lite-app-fixed-plan-header {
+	border-end-start-radius: var(--border-radius-lg);
+	border-end-end-radius: var(--border-radius-lg);
+}

@@ -1,3 +1,5 @@
+import type { PropsWithChildren } from 'react';
+
 import { c } from 'ttag';
 
 import Alert from '@proton/components/components/alert/Alert';
@@ -9,15 +11,13 @@ import {
     getMinPaypalAmountInhouse,
 } from '@proton/payments/core/amount-limits';
 
-import PayPalInfoMessage from './PayPalInfoMessage';
-
 interface Props {
     amount: number;
     currency: Currency;
     method: PlainPaymentMethodType;
 }
 
-const PayPalView = ({ amount, currency, method }: Props) => {
+const PayPalView = ({ amount, currency, method, children }: PropsWithChildren<Props>) => {
     const isChargebeePaypal = method === PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL;
     const minAmount = isChargebeePaypal ? getMinPaypalAmountChargebee(currency) : getMinPaypalAmountInhouse(currency);
 
@@ -39,11 +39,7 @@ const PayPalView = ({ amount, currency, method }: Props) => {
         return <Alert className="mb-4" type="error">{c('Error').t`Amount above the maximum.`}</Alert>;
     }
 
-    return (
-        <div className="p-4 border rounded bg-weak mb-4" data-testid="paypal-view">
-            <PayPalInfoMessage />
-        </div>
-    );
+    return children;
 };
 
 export default PayPalView;

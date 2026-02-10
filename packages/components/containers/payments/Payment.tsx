@@ -6,6 +6,7 @@ import { Banner, BannerVariants } from '@proton/atoms/Banner/Banner';
 import Alert from '@proton/components/components/alert/Alert';
 import Loader from '@proton/components/components/loader/Loader';
 import Price from '@proton/components/components/price/Price';
+import PayPalInfoMessage from '@proton/components/containers/payments/PayPalInfoMessage';
 import { type DirectDebitProps, SepaDirectDebit } from '@proton/components/payments/chargebee/SepaDirectDebit';
 import type { ThemeCode, ViewPaymentMethod } from '@proton/components/payments/client-extensions';
 import { BilledUserInlineMessage } from '@proton/components/payments/client-extensions/billed-user';
@@ -220,7 +221,9 @@ export const PaymentsNoApi = ({
         <VatNumberInput taxCountry={taxCountry} {...vatNumber} />
     );
 
-    const billingCountryInput = showTaxCountry && taxCountry && <TaxCountrySelector className="mb-2" {...taxCountry} />;
+    const billingCountryInput = showTaxCountry && taxCountry && (
+        <TaxCountrySelector className="mb-2" {...taxCountry} defaultCollapsed={true} showCountryFlag={false} />
+    );
 
     const infoMessages = (
         <>
@@ -353,7 +356,11 @@ export const PaymentsNoApi = ({
                                 {billingCountryInput}
                                 {vatInput}
                                 {showPaypalView ? (
-                                    <PayPalView method={method} amount={amount} currency={currency} />
+                                    <PayPalView method={method} amount={amount} currency={currency}>
+                                        <div className="p-4 border rounded bg-weak mb-4" data-testid="paypal-view">
+                                            <PayPalInfoMessage />
+                                        </div>
+                                    </PayPalView>
                                 ) : null}
                             </>
                         )}

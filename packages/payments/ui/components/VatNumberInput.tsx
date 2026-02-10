@@ -9,7 +9,7 @@ import { useEditBillingAddressModal } from '@proton/components/containers/invoic
 import type { TaxCountryHook } from '../hooks/useTaxCountry';
 import type { VatNumberHook } from '../hooks/useVatNumber';
 
-function getVatPlaceholder(countryCode: string) {
+export function getVatPlaceholder(countryCode: string) {
     const placeholders: Record<string, string> = {
         AT: 'ATU12345678',
         AU: '12345678912',
