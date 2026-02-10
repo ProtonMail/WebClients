@@ -1,18 +1,23 @@
 import { type ReactNode, createContext, useContext, useEffect, useRef, useState } from 'react';
 
 import { createSelector } from '@reduxjs/toolkit';
+import { c } from 'ttag';
 
+import { selectOrganization } from '@proton/account/organization';
 import { paymentStatusThunk, selectPaymentStatus } from '@proton/account/paymentStatus';
 import { plansThunk, selectPlans } from '@proton/account/plans';
 import { selectSubscription, subscriptionThunk } from '@proton/account/subscription';
 import { selectUser } from '@proton/account/user';
+import { useCouponConfig } from '@proton/components/containers/payments/subscription/coupon-config/useCouponConfig';
 import useApi from '@proton/components/hooks/useApi';
 import useConfig from '@proton/components/hooks/useConfig';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { getPreferredPlansMap } from '@proton/components/hooks/usePreferredPlansMap';
 import type { GetPreferredCurrencyParamsHook, OnChargeable } from '@proton/components/payments/client-extensions';
 import { useCurrencies } from '@proton/components/payments/client-extensions/useCurrencies';
 import { InvalidZipCodeError } from '@proton/components/payments/react-extensions/errors';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
+import useLoading from '@proton/hooks/useLoading';
 import { useDispatch, useSelector } from '@proton/redux-shared-store/sharedProvider';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import type { Api } from '@proton/shared/lib/interfaces';
@@ -38,13 +43,18 @@ import type {
     PaymentsApi,
     PlanIDs,
 } from '../../core/interface';
-import { getPlanFromPlanIDs } from '../../core/plan/helpers';
+import { getPlanFromPlanIDs, shouldPassIsTrial } from '../../core/plan/helpers';
 import type { FreePlanDefault, Plan, PlansMap } from '../../core/plan/interface';
 import { hasFreePlanIDs, planIDsPositiveDifference } from '../../core/planIDs';
 import { getPrice } from '../../core/price-helpers';
 import { SubscriptionMode } from '../../core/subscription/constants';
 import { FREE_PLAN } from '../../core/subscription/freePlans';
-import { getAutoCoupon, isSubscriptionCheckForbidden } from '../../core/subscription/helpers';
+import {
+    getAutoCoupon,
+    getPlanIDs,
+    isSubscriptionCheckForbidden,
+    isSubscriptionCheckForbiddenWithReason,
+} from '../../core/subscription/helpers';
 import type {
     EnrichedCheckResponse,
     FullPlansMap,
@@ -56,6 +66,7 @@ import { isFreeSubscription } from '../../core/type-guards';
 import type { PaymentTelemetryContext } from '../../telemetry/helpers';
 import type { EstimationChangeAction } from '../../telemetry/shared-checkout-telemetry';
 import { checkoutTelemetry } from '../../telemetry/telemetry';
+import useIsB2BTrial from '../hooks/useIsB2BTrial';
 import { type MultiCheckGroupsResult, useMultiCheckGroups } from './useMultiCheckGroups';
 
 export interface PlanToCheck {
@@ -318,6 +329,7 @@ export interface PaymentsContextTypeInner {
 
     // Newly added
     freePlan: FreePlanDefault;
+    reRunPaymentChecks: () => Promise<EnrichedCheckResponse | void>;
     selectNewPlan: (
         newPlanToCheck: PlanToCheck & { billingAddress?: BillingAddress },
         {}: { subscription: Subscription | FreeSubscription }
@@ -335,6 +347,11 @@ export interface PaymentsContextTypeInner {
     vatNumber: string | undefined;
 
     telemetryContext: PaymentTelemetryContext;
+    loading: boolean;
+    getIsTrial: (planIds: PlanIDs, cycle: Cycle, canDowngrade: boolean) => boolean;
+    coupon: string;
+    selectCoupon: (coupon: string) => Promise<void>;
+    couponConfig: ReturnType<typeof useCouponConfig>;
 }
 
 export type PaymentsContextType = Pick<
@@ -386,14 +403,15 @@ interface PaymentsContextProviderState {
 }
 
 export const selectData = createSelector(
-    [selectUser, selectSubscription, selectPlans, selectPaymentStatus],
-    (user, subscription, plans, paymentStatus) => {
+    [selectUser, selectSubscription, selectPlans, selectPaymentStatus, selectOrganization],
+    (user, subscription, plans, paymentStatus, organization) => {
         return {
             // NOTE: with optionals due to user, subscription not being initialized in account's public app
             user: user?.value,
             subscription: subscription?.value,
             plans: plans?.value,
             paymentStatus: paymentStatus?.value,
+            organization: organization?.value,
         };
     }
 );
@@ -410,6 +428,7 @@ export const PaymentsContextProvider = ({
 
     const {
         user,
+        organization,
         paymentStatus: paymentStatusInitial,
         subscription: subscriptionInitial,
         plans: plansInitial,
@@ -424,6 +443,10 @@ export const PaymentsContextProvider = ({
     const [subscription, setSubscription] = useState<Subscription | FreeSubscription>(
         subscriptionInitial || FREE_SUBSCRIPTION
     );
+    const { createNotification } = useNotifications();
+    const [loading, withLoading] = useLoading();
+    const isB2BTrial = useIsB2BTrial(subscription, organization);
+    const [couponCode, setCouponCode] = useState('');
 
     const [, rerender] = useState<{}>({});
     const stateRef = useRef<PaymentsContextProviderState>({
@@ -447,7 +470,8 @@ export const PaymentsContextProvider = ({
     const [initialized, setInitialized] = useState(false);
     const hasEssentialData = plans.length > 0 && paymentStatus !== undefined && subscription !== undefined;
 
-    const initialPlanIDs = { [PLANS.MAIL]: 1 };
+    const initialPlanIDs =
+        subscription && !isFreeSubscription(subscription) ? getPlanIDs(subscription) : { [PLANS.MAIL]: 1 };
 
     const { getPreferredCurrency, getAvailableCurrencies } = useCurrencies();
 
@@ -478,6 +502,11 @@ export const PaymentsContextProvider = ({
         });
         const plansMap = getLocalizedPlansMap({ paramCurrency: autoCurrency });
 
+        /** The `trial` property here does not refer to the current trail status of the subscription.
+         * Use this value if you want to start a new trial as part of the transaction.
+         * As PaymentContext does not have any use-case where we need to start a trial, it is set to `undefined`
+         * In the future iterations, if it still remains unused, we will eventually remove it
+         **/
         const trial = undefined;
         const planToCheck = {
             cycle: CYCLE.MONTHLY,
@@ -507,10 +536,17 @@ export const PaymentsContextProvider = ({
     const selectedPlan = new SelectedPlan(planToCheck.planIDs, plansMap, planToCheck.cycle, planToCheck.currency);
 
     const [availableCurrencies, setAvailableCurrencies] = useState<readonly Currency[]>(mainCurrencies);
+    const couponConfig = useCouponConfig({ checkResult, planIDs: planToCheck.planIDs, plansMap });
 
     const multiCheckGroups = useMultiCheckGroups();
 
     const subscriptionState = subscription;
+
+    const getOptimisticCheckResult: PaymentsContextTypeInner['getOptimisticCheckResult'] = (planToCheck) => {
+        const plansMap = getLocalizedPlansMap({ paramCurrency: planToCheck.currency });
+        return computeOptimisticCheckResult({ plansMap, ...planToCheck }, subscription, { isTrial: planToCheck.trial });
+    };
+
     const selectNewPlan = async (
         newPlanToCheck: PlanToCheck & { billingAddress?: BillingAddress },
         { subscription }: { subscription: Subscription | FreeSubscription } = { subscription: subscriptionState }
@@ -584,15 +620,37 @@ export const PaymentsContextProvider = ({
             { ...newPlanToCheck, ValidateZipCode: true },
             stateRef.current.billingAddress
         );
+
+        const paymentForbiddenReason = isSubscriptionCheckForbiddenWithReason(
+            subscription,
+            newPlanToCheck.planIDs,
+            newPlanToCheck.cycle
+        );
+
+        if (paymentForbiddenReason.forbidden) {
+            const newCheckResult = {
+                ...getOptimisticCheckResult(newPlanToCheck),
+                Currency: newPlanToCheck.currency,
+                PeriodEnd: 0,
+                AmountDue: 0,
+            };
+            setPlanToCheck({ planToCheck: newPlanToCheck, checkResult: newCheckResult, zipCodeValid: true });
+            return newCheckResult;
+        }
+
         const newBillingAddress = newPlanToCheck.billingAddress;
         if (newBillingAddress) {
             setState({ billingAddress: newBillingAddress });
         }
 
         try {
-            const newCheckResult = await paymentsApiRef.current.checkSubscription(subscriptionData);
-            setPlanToCheck({ planToCheck: newPlanToCheck, checkResult: newCheckResult, zipCodeValid: true });
-            paymentsApiRef.current.cacheMultiCheck(subscriptionData, newCheckResult);
+            const newCheckResult = (await withLoading(
+                paymentsApiRef.current.checkSubscription(subscriptionData)
+            )) as EnrichedCheckResponse;
+            if (newCheckResult) {
+                setPlanToCheck({ planToCheck: newPlanToCheck, checkResult: newCheckResult, zipCodeValid: true });
+                paymentsApiRef.current.cacheMultiCheck(subscriptionData, newCheckResult);
+            }
             return newCheckResult;
         } catch (error) {
             if (error instanceof InvalidZipCodeError) {
@@ -781,6 +839,22 @@ export const PaymentsContextProvider = ({
         });
     };
 
+    const selectCoupon = async (coupon: string) => {
+        setCouponCode(coupon);
+        const checkResult = await selectNewPlan({
+            ...planToCheck,
+            coupon,
+        });
+        if (
+            checkResult &&
+            coupon &&
+            coupon.toLowerCase() !== checkResult.Coupon?.Code.toLowerCase() &&
+            !checkResult.Gift
+        ) {
+            createNotification({ text: c('Error').t`Invalid code`, type: 'error' });
+        }
+    };
+
     const getFallbackPrice: PaymentsContextTypeInner['getFallbackPrice'] = (planToCheck): PricesResult => {
         const localizedPlansMap = getLocalizedPlansMap({ paramCurrency: planToCheck.currency });
         const checkResult = computeOptimisticCheckResult(
@@ -835,22 +909,43 @@ export const PaymentsContextProvider = ({
         })?.Coupon?.Code;
     };
 
+    const getIsTrial = (planIDs: PlanIDs, cycle: Cycle, canDowngrade: boolean) => {
+        if (!isB2BTrial) {
+            return false;
+        }
+
+        const oldSubscription = subscription?.UpcomingSubscription ?? subscription;
+
+        if (!oldSubscription) {
+            return false;
+        }
+
+        return shouldPassIsTrial({
+            plansMap,
+            newPlanIDs: planIDs,
+            oldPlanIDs: getPlanIDs(subscription),
+            newCycle: cycle,
+            oldCycle: oldSubscription.Cycle,
+            downgradeIsTrial: canDowngrade,
+        });
+    };
+
     const isGroupLoading = multiCheckGroups.isGroupLoading;
     const isGroupChecked = multiCheckGroups.isGroupChecked;
 
-    const getOptimisticCheckResult: PaymentsContextTypeInner['getOptimisticCheckResult'] = (planToCheck) => {
-        const plansMap = getLocalizedPlansMap({ paramCurrency: planToCheck.currency });
-        return computeOptimisticCheckResult({ plansMap, ...planToCheck }, subscription, { isTrial: planToCheck.trial });
-    };
-
     const setVatNumber = (vatNumber: string) => {
         setVatNumberInner(vatNumber);
+    };
+
+    const reRunPaymentChecks = async () => {
+        return selectNewPlan(planToCheck);
     };
 
     const value: PaymentsContextTypeInner = {
         createSubscription: async () => {},
         initialize,
         initialized,
+        couponConfig,
         selectPlanIDs,
         selectCycle,
         selectedPlan,
@@ -899,7 +994,11 @@ export const PaymentsContextProvider = ({
         // paymentFacade,
         billingAddress: stateRef.current.billingAddress,
         uiData: {
-            checkout: getCheckout({ planIDs: checkResult.requestData.Plans, plansMap, checkResult }),
+            checkout: getCheckout({
+                planIDs: checkResult?.requestData.Plans ?? planToCheck.planIDs,
+                plansMap,
+                checkResult,
+            }),
         },
         paymentStatus,
         paymentsApi: paymentsApiRef.current,
@@ -910,6 +1009,11 @@ export const PaymentsContextProvider = ({
         setVatNumber,
         vatNumber,
         telemetryContext: stateRef.current.telemetryContext,
+        coupon: couponCode,
+        selectCoupon,
+        loading,
+        getIsTrial,
+        reRunPaymentChecks: reRunPaymentChecks,
     };
 
     return <PaymentsContext.Provider value={value}>{children}</PaymentsContext.Provider>;

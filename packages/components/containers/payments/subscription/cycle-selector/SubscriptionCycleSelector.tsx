@@ -53,6 +53,7 @@ export interface Props {
     additionalCheckResults: SubscriptionCheckResponse[] | undefined;
     allowedCycles: CYCLE[];
     checkResult: SubscriptionCheckResponse | undefined;
+    listItemClassName?: string;
 }
 
 const SubscriptionCycleSelector = ({
@@ -68,6 +69,7 @@ const SubscriptionCycleSelector = ({
     additionalCheckResults = [],
     allowedCycles,
     checkResult: checkResultProp,
+    listItemClassName,
 }: Props) => {
     const calculateCheckout = (cycle: CYCLE): PaymentsCheckout => {
         const checkResult =
@@ -87,6 +89,7 @@ const SubscriptionCycleSelector = ({
     };
 
     const fadedClasses = clsx(faded && 'opacity-50 *:pointer-events-none');
+    const listItemClasses = listItemClassName ?? 'flex items-stretch mb-4';
 
     if (mode === 'select') {
         const selectedCycleCheckout = calculateCheckout(selectedCycle);
@@ -133,7 +136,7 @@ const SubscriptionCycleSelector = ({
                 const ariaLabel = c('Action').t`Select billing cycle ${billingText}`;
 
                 return (
-                    <li key={`${cycle}`} className="flex items-stretch mb-4" data-testid={`cycle-${cycle}`}>
+                    <li key={`${cycle}`} className={listItemClasses} data-testid={`cycle-${cycle}`}>
                         <button
                             className={clsx([
                                 'w-full p-4 plan-cycle-button flex flex-nowrap border rounded text-left',

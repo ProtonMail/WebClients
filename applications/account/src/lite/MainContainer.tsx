@@ -42,7 +42,14 @@ const MainContainer = ({ action, redirect, app, searchParams, loader, layout }: 
             )}
             {action === SupportedActions.DeleteAccount && <DeleteAccount />}
             {action === SupportedActions.VPNLite && (
-                <VPNLite app={app} redirect={redirect} searchParams={searchParams} loader={loader} layout={layout} />
+                <VPNLite
+                    protonLogoScale={1}
+                    app={app}
+                    redirect={redirect}
+                    searchParams={searchParams}
+                    loader={loader}
+                    layout={layout}
+                />
             )}
             {(action === SupportedActions.SubscribeAccount || action === SupportedActions.SubscribeAccountLink) && (
                 <SubscribeAccount
@@ -51,6 +58,7 @@ const MainContainer = ({ action, redirect, app, searchParams, loader, layout }: 
                     searchParams={searchParams}
                     loader={loader}
                     layout={layout}
+                    protonLogoScale={0.66}
                 />
             )}
         </>

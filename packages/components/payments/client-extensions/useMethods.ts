@@ -5,6 +5,8 @@ import useAuthentication from '@proton/components/hooks/useAuthentication';
 import type { IconName } from '@proton/icons/types';
 import type { AvailablePaymentMethod, PaymentMethodFlow, SavedPaymentMethod, SepaDetails } from '@proton/payments';
 import { PAYMENT_METHOD_TYPES, isSignupFlow } from '@proton/payments';
+import { isAndroid, isIos } from '@proton/shared/lib/helpers/browser';
+import isTruthy from '@proton/utils/isTruthy';
 
 import type { MethodsHook, Props } from '../react-extensions/useMethods';
 import { useMethods as _useMethods } from '../react-extensions/useMethods';
@@ -211,4 +213,20 @@ export const useMethods = (props: Props): ClientMethodsHook => {
     const internalResult = _useMethods(props, { api, isAuthenticated });
 
     return wrapMethods(internalResult, props.flow);
+};
+
+export const sortMethodsBasedOnDevice = (availablePaymentMethods: AvailablePaymentMethod[]) => {
+    const applePay = availablePaymentMethods.find(({ type }) => type === PAYMENT_METHOD_TYPES.APPLE_PAY);
+    const googlePay = availablePaymentMethods.find(({ type }) => type === PAYMENT_METHOD_TYPES.GOOGLE_PAY);
+    const everythingElse = availablePaymentMethods.filter(
+        ({ type }) => type !== PAYMENT_METHOD_TYPES.APPLE_PAY && type !== PAYMENT_METHOD_TYPES.GOOGLE_PAY
+    );
+
+    let sortedPaymentMethods: (AvailablePaymentMethod | undefined)[] = availablePaymentMethods;
+    if (isIos()) {
+        sortedPaymentMethods = [applePay, ...everythingElse, googlePay];
+    } else if (isAndroid()) {
+        sortedPaymentMethods = [googlePay, ...everythingElse, applePay];
+    }
+    return sortedPaymentMethods.filter(isTruthy);
 };

@@ -3,7 +3,6 @@ import { c } from 'ttag';
 import { BannerVariants } from '@proton/atoms/Banner/Banner';
 import { Button } from '@proton/atoms/Button/Button';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
-import useConfig from '@proton/components/hooks/useConfig';
 import type { PaymentFacade } from '@proton/components/payments/client-extensions';
 import {
     type Currency,
@@ -20,7 +19,6 @@ import {
 } from '@proton/payments';
 import { InclusiveVatText, PayButton, type TaxCountryHook } from '@proton/payments/ui';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
-import { APPS } from '@proton/shared/lib/constants';
 
 import { getSubscriptionManagerName } from '../InAppPurchaseModal';
 import { getVisionaryDowngradeWarningTextElement } from '../VisionaryDowngradeWarningModal';
@@ -59,8 +57,6 @@ export const SubscriptionSubmitButton = ({
     showVisionaryWarning,
     app,
 }: Props) => {
-    const { APP_NAME } = useConfig();
-
     if (paymentForbiddenReason.forbidden) {
         const info = (() => {
             let text = '';
@@ -86,17 +82,6 @@ export const SubscriptionSubmitButton = ({
 
             return <InfoBanner>{text}</InfoBanner>;
         })();
-
-        // If the user is on the ProtonAccountLite app, the user should not be able to close the modal
-        if (APP_NAME === APPS.PROTONACCOUNTLITE) {
-            return (
-                <>
-                    <Button color="norm" className={className} disabled={true} loading={loading}>{c('Action')
-                        .t`Done`}</Button>
-                    {info}
-                </>
-            );
-        }
 
         return (
             <>

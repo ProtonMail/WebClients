@@ -36,8 +36,7 @@ import Setup from './Setup';
 import broadcast, { MessageType } from './broadcast';
 import LiteLayout from './components/LiteLayout';
 import LiteLoaderPage from './components/LiteLoaderPage';
-import type { SupportedActions } from './helper';
-import { getApp } from './helper';
+import { SupportedActions, getApp } from './helper';
 
 const bootstrapApp = ({ appVersion, app }: { appVersion: string | null; app: ProductParam }) => {
     const defaultHeaders = appVersion ? getAppVersionHeader(appVersion) : undefined;
@@ -148,7 +147,13 @@ const App = () => {
         );
     };
 
-    const loader = layout(<LiteLoaderPage />);
+    const loader = layout(
+        <LiteLoaderPage
+            showProtonLogo={
+                !!action && [SupportedActions.SubscribeAccount, SupportedActions.SubscribeAccountLink].includes(action)
+            }
+        />
+    );
 
     return (
         <ProtonStoreProvider store={store}>

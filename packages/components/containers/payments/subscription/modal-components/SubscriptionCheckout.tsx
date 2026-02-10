@@ -30,9 +30,7 @@ import {
     TaxInclusive,
     formatTax,
     getCheckout,
-    getIsVpnPlan,
     getPlanFromPlanIDs,
-    getPlanNameFromIDs,
     hasPlanIDs,
     isFreeSubscription,
     isLifetimePlanSelected,
@@ -51,7 +49,9 @@ import { AddonTooltip } from './helpers/AddonTooltip';
 import { BilledCycleText } from './helpers/BilledCycleText';
 import CheckoutRow from './helpers/CheckoutRow';
 import { PlanDescription } from './helpers/PlanDescription';
+import { checkoutGetTotalAmount } from './helpers/checkoutGetTotalAmount';
 import { getWhatsIncluded } from './helpers/included';
+import { show30DaysMoneyBackGuarantee } from './helpers/show30DaysMoneyBackGuarantee';
 
 type Props = {
     freePlan: FreePlanDefault;
@@ -135,7 +135,6 @@ const SubscriptionCheckout = ({
         addons,
         membersPerMonth,
         couponDiscount,
-        withDiscountPerCycle,
         withDiscountPerMonth,
         withDiscountMembersPerMonth,
         discountTarget,
@@ -152,31 +151,10 @@ const SubscriptionCheckout = ({
     const isFreePlanSelected = !isPaidPlanSelected;
     const lifetimePlan = isLifetimePlanSelected(planIDs);
 
-    const planName = getPlanNameFromIDs(planIDs);
-
-    const selectedPlan = new SelectedPlan(planIDs, plansMap, cycle, currency);
-    const currentPlan = SelectedPlan.createFromSubscription(subscription, plansMap);
-
-    const addonsModification =
-        selectedPlan.getPlanName() === currentPlan.getPlanName() && !selectedPlan.isEqualTo(currentPlan);
-    const hasGuarantee = getIsVpnPlan(planName) && !addonsModification && !paymentForbiddenReason.forbidden;
-
     const proration = checkResult.Proration ?? 0;
     const unusedCredit = checkResult.UnusedCredit ?? 0;
     const credit = checkResult.Credit ?? 0;
-    const amount = (() => {
-        if (checkResult.Amount === 0 && trial) {
-            // the fallback should technically never be used, but in case if BaseRenewAmount is still somehow null while
-            // trial is selected, then we will use the full optimistic amount
-            return checkResult.BaseRenewAmount ?? checkout.regularAmountPerCycleOptimistic;
-        }
-
-        if (couponConfig?.hidden) {
-            return withDiscountPerCycle;
-        }
-
-        return checkResult.Amount;
-    })();
+    const totalAmount = checkoutGetTotalAmount(checkout, trial, couponConfig);
     const amountDue = checkResult.AmountDue || 0;
     const giftValue = Math.abs(checkResult.Gift || 0);
 
@@ -200,7 +178,13 @@ const SubscriptionCheckout = ({
             currencies={currencies}
             onChangeCurrency={onChangeCurrency}
             loading={loading}
-            hasGuarantee={hasGuarantee}
+            hasGuarantee={show30DaysMoneyBackGuarantee({
+                planIDs,
+                plansMap,
+                subscription,
+                selectedPlan: new SelectedPlan(planIDs, plansMap, cycle, currency),
+                paymentForbiddenReason,
+            })}
             description={showPlanDescription ? <PlanDescription list={list} /> : null}
             paymentMethods={paymentMethods}
             planIDs={planIDs}
@@ -302,7 +286,7 @@ const SubscriptionCheckout = ({
                                 ) : null}
                             </>
                         }
-                        amount={amount}
+                        amount={totalAmount}
                         currency={currency}
                         loading={loading}
                         data-testid="price"
@@ -407,7 +391,7 @@ const SubscriptionCheckout = ({
                 );
             })()}
             <div className="my-4">{submit}</div>
-            {amount > 0 && gift ? gift : null}
+            {totalAmount > 0 && gift ? gift : null}
         </Checkout>
     );
 };

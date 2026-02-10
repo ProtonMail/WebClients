@@ -21,6 +21,8 @@ export type TaxCountrySelectorProps = TaxCountryHook &
         buttonClassName?: string;
         spacingClassName?: string;
         forceExpand?: boolean;
+        defaultCollapsed: boolean;
+        showCountryFlag: boolean;
     };
 
 export const TaxCountrySelector = ({
@@ -40,11 +42,13 @@ export const TaxCountrySelector = ({
     allowedCountries,
     disabledCountries,
     offerUnavailableErrorMessage,
+    defaultCollapsed,
+    showCountryFlag,
 }: TaxCountrySelectorProps) => {
     const showStateCode = isCountryWithStates(selectedCountryCode);
     const showZipCode = isCountryWithRequiredPostalCode(selectedCountryCode);
 
-    const [collapsed, setCollapsed] = useState(true);
+    const [collapsed, setCollapsed] = useState(defaultCollapsed);
 
     useEffect(() => {
         if (!collapsed) {
@@ -109,7 +113,7 @@ export const TaxCountrySelector = ({
         placeholder: selectedCountryCode === 'US' ? c('Placeholder').t`ZIP code` : c('Placeholder').t`Postal code`,
         'data-testid': 'tax-zip-code',
         error: shouldShowError,
-        className: 'zip-input',
+        className: 'zip-input region-input-stacked',
         onBlur: () => setPostalCodeInputDirty(true),
     };
 
@@ -125,6 +129,8 @@ export const TaxCountrySelector = ({
     if (offerUnavailableErrorMessage?.hideBillingCountry) {
         return null;
     }
+
+    const shouldStackCountriesField = showBoth || showStateCode || showZipCode;
 
     return (
         <div className={clsx('field-two-container tax-country-selector', className)}>
@@ -158,28 +164,29 @@ export const TaxCountrySelector = ({
                         onOpen={() => setIsCountriesDropdownOpen(true)}
                         onClose={() => setIsCountriesDropdownOpen(false)}
                         data-testid="tax-country-dropdown"
-                        className={clsx('country-selector', showBoth && 'country-selector--triplet')}
+                        className={clsx('country-selector', shouldStackCountriesField && 'country-selector-stacked')}
+                        showCountryFlag={showCountryFlag}
                         allowedCountries={allowedCountries}
                         disabledCountries={disabledCountries}
                     />
-                    {showStateCode && !showBoth ? <StateSelector {...commonStateProps} className="mt-1" /> : null}
+                    {showStateCode && !showBoth ? (
+                        <StateSelector {...commonStateProps} className="mt-1 region-input-stacked" />
+                    ) : null}
                     {showZipCode && !showBoth ? <Input {...commonZipProps} /> : null}
                     {showBoth ? (
                         <InputWithSelectorPrefix
                             prefix={<StateSelector {...commonStateProps} unstyled className="zip ml-4 mr-1" />}
                             {...commonZipProps}
-                            className={clsx(commonZipProps.className, showBoth && 'zip-input--triplet')}
+                            className={clsx(commonZipProps.className, 'region-input-stacked')}
                             showError={false}
                         />
                     ) : null}
-                    <div className="error-container mt-1 text-semibold text-sm flex">
-                        {billingAddressErrorMessage && (
-                            <>
-                                <WarningIcon className="mr-1" />
-                                <span data-testid="billing-country-error">{billingAddressErrorMessage}</span>
-                            </>
-                        )}
-                    </div>
+                    {billingAddressErrorMessage && (
+                        <div className="error-container mt-1 text-semibold text-sm flex">
+                            <WarningIcon className="mr-1" />
+                            <span data-testid="billing-country-error">{billingAddressErrorMessage}</span>
+                        </div>
+                    )}
                 </>
             )}
         </div>
