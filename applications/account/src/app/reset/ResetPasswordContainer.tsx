@@ -154,11 +154,11 @@ const ResetPasswordContainer = ({
             const destination = result.cache.value;
             if (destination) {
                 createNotification({ text: c('Info').t`Done! We sent a code to ${destination}.`, expiration: 5000 });
-                sendResetPasswordCodeSent({ method: result.cache.method! });
+                sendResetPasswordCodeSent({ method: result.cache.method });
             }
         }
         if (result.to === STEPS.NEW_PASSWORD) {
-            sendResetPasswordMethodValidated({ method: result.cache.method! });
+            sendResetPasswordMethodValidated({ method: result.cache.method });
         }
 
         cacheRef.current = result.cache;
@@ -169,7 +169,7 @@ const ResetPasswordContainer = ({
         errorHandler(e);
         const { code } = getApiError(e);
         setErrorCode(code);
-        sendResetPasswordFailure({ step: STEPS[step], method: cacheRef.current?.method! });
+        sendResetPasswordFailure({ step: STEPS[step], method: cacheRef.current?.method });
         setStep((step) => {
             if (step === STEPS.NEW_PASSWORD) {
                 return STEPS.ERROR;
@@ -559,7 +559,7 @@ const ResetPasswordContainer = ({
                                         cache,
                                     });
                                     if (validateFlow()) {
-                                        sendResetPasswordSuccess({ method: cache.method! });
+                                        sendResetPasswordSuccess({ method: cache.method });
                                         return await handleResult(result);
                                     }
                                 } catch (e) {
