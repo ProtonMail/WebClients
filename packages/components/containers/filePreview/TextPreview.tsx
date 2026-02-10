@@ -17,7 +17,7 @@ const TextPreview = ({ contents = [], onNewContents }: Props) => {
     const handleChange = (event: any) => {
         const newValue = event.target.value as string;
         setValue(newValue);
-        const content = Uint8Array.from(newValue.split('').map((x) => x.charCodeAt(0)));
+        const content = new TextEncoder().encode(newValue);
         onNewContents?.([content]);
     };
 
