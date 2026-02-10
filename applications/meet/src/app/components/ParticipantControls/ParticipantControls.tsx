@@ -38,7 +38,7 @@ import { AudioSettings } from '../AudioSettings/AudioSettings';
 import { ChatButton } from '../ChatButton';
 import { InfoButton } from '../InfoButton/InfoButton';
 import { LeaveMeetingPopup } from '../LeaveMeetingPopup/LeaveMeetingPopup';
-import { MeetingDuration } from '../MeetingDuration';
+import { MeetingTitle } from '../MeetingTitle/MeetingTitle';
 import { MicrophoneWithVolumeWithMicrophoneState } from '../MicrophoneWithVolume';
 import { ParticipantsButton, WrappedParticipantsButton } from '../ParticipantsButton';
 import { RecordingControls } from '../RecordingControls/RecordingControls';
@@ -53,7 +53,7 @@ import './ParticipantControls.scss';
 export const ParticipantControls = () => {
     const dispatch = useMeetDispatch();
     const { isMicrophoneEnabled, isCameraEnabled } = useLocalParticipant();
-    const { roomName, isScreenShare, guestMode, isGuestAdmin } = useMeetContext();
+    const { isScreenShare, guestMode, isGuestAdmin } = useMeetContext();
     const page = useMeetSelector(selectPage);
     const { selfView } = useMeetSelector(selectMeetSettings);
     const isLargerThanMd = useIsLargerThanMd();
@@ -141,13 +141,8 @@ export const ParticipantControls = () => {
     }
 
     const meetingTitle = (
-        <div className="flex h3 items-center gap-2 pl-4 flex-nowrap">
-            <span className="participant-controls-title text-ellipsis">{roomName}</span>
-            {hasAdminPermission && (
-                <div className="ml-2 shrink-0">
-                    <MeetingDuration />
-                </div>
-            )}
+        <div className="flex items-baseline gap-2 pl-4 flex-nowrap">
+            <MeetingTitle />
         </div>
     );
 
