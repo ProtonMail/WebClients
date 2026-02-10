@@ -179,17 +179,17 @@ export const MeetingRow = ({
         <>
             <div
                 className={clsx(
-                    'meeting-row border-card w-full flex flex-column md:flex-row flex-nowrap justify-center items-start md:items-center md:justify-space-between gap-6 min-h-custom p-4 md:p-6 h-fit-content shrink-0 relative',
+                    'meeting-row border-card w-full flex flex-column *:min-size-auto md:flex-row flex-nowrap justify-center items-start md:items-center md:justify-space-between gap-6 min-h-custom p-4 md:p-6 h-fit-content shrink-0 relative',
                     isFirst && 'meeting-row--first',
                     isFirst && isRoom && 'personal-meeting-row',
                     isLast && 'meeting-row--last'
                 )}
                 style={{ '--min-h-custom': '6.75rem' }}
             >
-                <div className="flex flex-column md:flex-row items-start md:items-center shrink-0 gap-6">
+                <div className="flex md:flex-row flex-1 items-start md:items-center shrink-0 gap-6">
                     <div
                         className={clsx(
-                            'flex flex-column items-center justify-center w-custom h-custom profile-radius color-white',
+                            'flex flex-column flex-nowrap items-center justify-center w-custom h-custom profile-radius color-white shrink-0',
                             isRoom && `meet-room-background-${colorIndex}`,
                             !isRoom && `meet-background-${colorIndex}`
                         )}
@@ -208,7 +208,7 @@ export const MeetingRow = ({
                             </>
                         )}
                     </div>
-                    <div className="flex flex-column gap-2">
+                    <div className="flex-1 flex flex-column flex-nowrap *:min-size-auto gap-2">
                         <div className="text-xl color-norm text-semibold">
                             {meeting.MeetingName ? meeting.MeetingName : c('Title').t`Secure meeting`}
                         </div>
@@ -239,32 +239,29 @@ export const MeetingRow = ({
 
                 <div className="flex items-center gap-2 shrink-0 w-full md:w-auto">
                     <div
-                        className="hidden-meeting-row-actions absolute top-custom right-custom md:static gap-2 items-center color-norm flex"
-                        style={{
-                            '--top-custom': '0.75rem',
-                            '--right-custom': '0.75rem',
-                        }}
+                        className="hidden-meeting-row-actions gap-2 grow-custom md:grow-1 items-center color-norm flex flex-1 md:flex-none"
+                        style={{ '--grow-custom': '3' }}
                     >
                         {meeting.Type !== MeetingType.PERSONAL && (
                             <>
                                 <Button
-                                    className="action-button-new meeting-row-action color-norm rounded-full delete-button"
+                                    className="action-button-new meeting-row-action color-norm rounded-full flex-1 md:flex-none delete-button"
                                     size="medium"
                                     shape="ghost"
                                     icon
                                     onClick={() => setIsDeleteMeetingModalOpen(true)}
                                 >
-                                    <IcTrash alt={c('Action').t`Delete meeting`} />
+                                    <IcTrash alt={c('Action').t`Delete meeting`} className="m-auto" />
                                 </Button>
 
                                 <Button
-                                    className="action-button-new meeting-row-action color-norm rounded-full"
+                                    className="action-button-new meeting-row-action color-norm rounded-full flex-1 md:flex-none"
                                     size="medium"
                                     shape="ghost"
                                     icon
                                     onClick={() => handleEditMeeting()}
                                 >
-                                    <IcPenSquare alt={c('Action').t`Edit meeting`} />
+                                    <IcPenSquare alt={c('Action').t`Edit meeting`} className="m-auto" />
                                 </Button>
                             </>
                         )}
@@ -287,7 +284,7 @@ export const MeetingRow = ({
                             )}
                     </div>
                     <Button
-                        className="action-button-new meeting-row-action color-norm rounded-full copy-link-button flex-1 md:flex-none flex justify-center items-center md:mr-2"
+                        className="action-button-new meeting-row-action color-norm rounded-full copy-link-button flex-1 md:flex-none flex justify-center items-center"
                         size="medium"
                         onClick={handleCopyLink}
                         icon
