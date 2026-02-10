@@ -59,9 +59,9 @@ export const CategoriesViewSections = () => {
         <>
             <div className="categories-section">
                 <CategoryViewToggle />
-                <div className={clsx('wrapper', mailSettings.MailCategoryView && 'is-open')}>
+                <div className={clsx('wrapper border border-weak', mailSettings.MailCategoryView && 'is-open')}>
                     <div className="inner">
-                        <div className="categories-header flex justify-space-between items-center border border-weak p-4">
+                        <div className="categories-header flex justify-space-between items-center border-bottom border-weak p-4">
                             <p className="m-0 text-semibold text-sm">{c('Label').t`Categories`}</p>
                             <p className="m-0 text-semibold text-sm">
                                 {c('Label').t`Notifications`} <Info title={c('Tooltip').t`System notification`} />
@@ -70,9 +70,8 @@ export const CategoriesViewSections = () => {
 
                         {categoriesStore
                             .filter((category) => category.ID !== MAILBOX_LABEL_IDS.CATEGORY_DEFAULT)
-                            .map((tmp, index, arr) => {
+                            .map((tmp) => {
                                 const category = getCategoryTabFromLabel(tmp);
-                                const isLast = index === arr.length - 1;
 
                                 return (
                                     <CategorySettingsItem
@@ -80,7 +79,6 @@ export const CategoriesViewSections = () => {
                                         onUpdate={handleCategoryUpdate}
                                         category={category}
                                         loading={loading}
-                                        isLast={isLast}
                                     />
                                 );
                             })}
