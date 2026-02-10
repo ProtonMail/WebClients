@@ -11,7 +11,6 @@ import type {
 } from '@rowsncolumns/common-types'
 import { SidebarDialog, SidebarDialogHeader } from './SidebarDialog'
 import { type BorderLocation, ColorSelector, getStringifiedColor, type VerticalAlign } from '@rowsncolumns/spreadsheet'
-import { MdBorderClear } from '@rowsncolumns/icons'
 import { getDefaultDateFormat, ssfFormat, ssfFormatColor, supplant } from '@rowsncolumns/utils'
 import { forwardRef, Fragment, useMemo, useState } from 'react'
 import * as Icons from '../icons'
@@ -688,29 +687,24 @@ function CellFormatEditor({
                 <FormGroup>
                   <Ariakit.RadioProvider>
                     <div className="grid grid-cols-6">
-                      {BORDER_LOCATIONS.map(({ location, icon: BorderIcon }) => {
+                      {BORDER_LOCATIONS.map(({ location, icon }) => {
                         return (
                           <BorderLocationButton
                             key={location}
-                            value={location}
+                            value={location ?? 'clear'}
                             onClick={() => {
-                              setSelectedBorderLocation(location)
+                              if (location) {
+                                setSelectedBorderLocation(location)
+                              } else {
+                                setBorder('all', undefined, undefined)
+                              }
                               setBorder(location ? location : 'all', selectedColor, selectedBorderStyle)
                             }}
                           >
-                            <BorderIcon />
+                            {icon}
                           </BorderLocationButton>
                         )
                       })}
-
-                      <BorderLocationButton
-                        value="clear"
-                        onClick={() => {
-                          setBorder('all', undefined, undefined)
-                        }}
-                      >
-                        <MdBorderClear />
-                      </BorderLocationButton>
                     </div>
                   </Ariakit.RadioProvider>
                 </FormGroup>

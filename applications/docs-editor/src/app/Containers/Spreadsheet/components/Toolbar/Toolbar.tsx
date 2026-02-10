@@ -13,7 +13,6 @@ import { useUI } from '../../ui-store'
 import { createComponent } from '../utils'
 import { FormulaBar } from './FormulaBar'
 import {
-  BorderSelectorContent,
   getStringifiedColor,
   TextHorizontalAlignSelectorContent,
   TextVerticalAlignSelectorContent,
@@ -27,6 +26,7 @@ import { MergeMenuItems } from '../shared/MergeMenuItems'
 import type { EditorRequiresClientMethods } from '@proton/docs-shared'
 import { EditingDisabledButton } from '../misc/EditingDisabledButton'
 import { ColorPicker } from '../shared/ColorPicker'
+import { BorderSelectorContent } from '../shared/BorderSelector'
 
 export interface ToolbarProps extends ComponentPropsWithRef<'div'> {
   clientInvoker: EditorRequiresClientMethods
