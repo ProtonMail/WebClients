@@ -54,7 +54,7 @@
         "Tambah tanggal"
       ],
       "Add account": [
-        "Tambah akun"
+        "Tambahkan akun"
       ],
       "Add address": [
         "Tambah alamat"
@@ -72,7 +72,7 @@
         "Tambah kontak"
       ],
       "Add credit / debit card": [
-        "Tambah kartu kredit / debit"
+        "Tambahkan kartu kredit/debit"
       ],
       "Add email": [
         "Tambah email"
@@ -96,7 +96,7 @@
         "Tambahkan hari libur umum"
       ],
       "Add secret passphrase": [
-        "Tambah frasa sandi rahasia"
+        "Tambahkan frasa sandi secret"
       ],
       "Add to group": [
         "Tambahkan ke grup"
@@ -333,7 +333,7 @@
         "Buang"
       ],
       "Dismiss": [
-        "Abaikan"
+        "Tutup"
       ],
       "Display navigation bar": [
         "Tampilkan bilah navigasi"
@@ -411,7 +411,7 @@
         "Teruskan sebagai lampiran"
       ],
       "Generate password": [
-        "Hasilkan kata sandi"
+        "Buat kata sandi"
       ],
       "Get ${ planName } for ${ priceCoupon }": [
         "Dapatkan ${ planName } dengan harga ${ priceCoupon }"
@@ -939,7 +939,7 @@
         "Perbarui frasa pemulihan"
       ],
       "Update secret passphrase": [
-        "Perbarui frasa sandi rahasia"
+        "Perbarui frasa sandi secret"
       ],
       "Upgrade": [
         "Tingkatkan"
@@ -1455,7 +1455,7 @@
         "Masalah pembayaran"
       ],
       "Sheets problem": [
-        "Masalah lembar kerja"
+        "Masalah lembar"
       ],
       "Sign in problem": [
         "Masalah masuk"
@@ -3006,7 +3006,7 @@
         "Hubungkan CRM, situs web, printer, dan berbagai hal lainnya yang Anda miliki dengan mudah."
       ],
       "Create a Zoom meeting and add joining details to your event with one click.": [
-        "Buat pertemuan Zoom dan tambahkan rincian untuk bergabung ke acara Anda hanya dengan sekali klik."
+        "Buat rapat Zoom dan tambahkan rincian untuk bergabung ke acara Anda hanya dengan satu klik."
       ],
       "Create groups you can email with a single address.": [
         "Buat grup yang dapat Anda kirimi email dengan satu alamat."
@@ -3051,7 +3051,7 @@
         "Sepertinya daftar kontak yang Anda impor mengandung beberapa grup. Mohon periksa bagaimana grup ini diimpor."
       ],
       "Let's you instantly add meeting links to your event invitations.": [
-        "Memungkinkan Anda untuk menambahkan tautan pertemuan secara instan ke undangan acara Anda."
+        "Memungkinkan Anda untuk menambahkan tautan rapat secara instan ke undangan acara Anda."
       ],
       "Loading availability": [
         "Memuat ketersediaan"
@@ -3179,7 +3179,7 @@
         "Biaya berlangganan terlalu mahal"
       ],
       "Switching to a different provider": [
-        "Saya telah berpindah ke layanan penyedia email lainnya"
+        "Beralih ke penyedia yang berbeda"
       ],
       "Temporary need, may come back in the future": [
         "Saya hanya bermaksud menurunkan jenis akun saya untuk sementara waktu"
@@ -3454,7 +3454,7 @@
         "Terjadi kesalahan saat memuat opsi alias"
       ],
       "An error occurred while saving your alias": [
-        "Terdapat kesalahan pada saat menyimpan alias Anda"
+        "Terjadi kesalahan saat menyimpan alias Anda"
       ],
       "Answer failed to be sent": [
         "Jawaban gagal dikirim"
@@ -3499,7 +3499,7 @@
         "Pencarian konten tidak dapat diaktifkan. Silakan mulai ulang aplikasi atau hapus data."
       ],
       "Could not open created vault": [
-        "Brankas yang dibuat tidak dapat dibuka"
+        "Tidak dapat membuka brankas yang dibuat"
       ],
       "Could not open updated vault": [
         "Brankas yang diperbarui tidak dapat dibuka"
@@ -3523,7 +3523,7 @@
         "Alamat email dinonaktifkan"
       ],
       "Email address is required": [
-        "Alamat email diperlukan"
+        "Alamat email wajib diisi"
       ],
       "Email is not valid": [
         "Email tidak valid"
@@ -3541,7 +3541,7 @@
         "Kesalahan"
       ],
       "Error connecting to the Bitcoin API.": [
-        "Terdapat kesalahan dalam menghubungkan ke API Bitcoin."
+        "Terjadi kesalahan saat menghubungkan ke API Bitcoin."
       ],
       "Error: ${ errorMessage }": [
         "Kesalahan: ${ errorMessage }"
@@ -3550,16 +3550,16 @@
         "Acara tidak ditemukan"
       ],
       "Failed to add existing ${ MEET_APP_NAME } video conference": [
-        "Konferensi video ${ MEET_APP_NAME } yang sudah ada gagal ditambahkan"
+        "Gagal menambahkan konferensi video ${ MEET_APP_NAME } yang sudah ada"
       ],
       "Failed to create ${ MEET_APP_NAME } video conference": [
         "Konferensi video ${ MEET_APP_NAME } gagal dibuat"
       ],
       "Failed to create meeting": [
-        "Pertemuan gagal dibuat"
+        "Gagal membuat pertemuan"
       ],
       "Failed to decrypt session key": [
-        "Kunci sesi gagal didekripsi"
+        "Gagal mendekripsi kunci sesi"
       ],
       "Failed to get event": [
         "Acara gagal diperoleh"
@@ -3586,13 +3586,13 @@
         "Nama folder tidak boleh kosong."
       ],
       "Forward address is required": [
-        "Alamat penerusan dibutuhkan"
+        "Alamat penerusan wajib diisi"
       ],
       "Image upload failed": [
         "Pengunggahan gambar gagal"
       ],
       "IMAP server is required": [
-        "Server IMAP diperlukan"
+        "Server IMAP wajib diisi"
       ],
       "Incorrect username": [
         "Nama pengguna salah"
@@ -3673,7 +3673,10 @@
         "Nama wajib diisi"
       ],
       "Name required": [
-        "Nama dibutuhkan"
+        "Nama wajib diisi"
+      ],
+      "Network error": [
+        "Kesalahan jaringan"
       ],
       "No booking page data received": [
         "Tidak ada data halaman pemesanan yang diterima"
@@ -3715,7 +3718,7 @@
         "Frasa sandi tidak tersedia"
       ],
       "Password is required": [
-        "Kata sandi diperlukan"
+        "Kata sandi wajib diisi"
       ],
       "Passwords do not match": [
         "Kata sandi tidak sesuai"
@@ -3769,7 +3772,7 @@
         "Silakan pilih negara bagian penagihan"
       ],
       "Port is required": [
-        "Nomor port diperlukan"
+        "Port wajib diisi"
       ],
       "Postal code is required": [
         "Kode pos wajib diisi"
@@ -3826,7 +3829,7 @@
         "Sebagian nama label Anda melebihi batas jumlah karakter yang diperbolehkan oleh ${ MAIL_APP_NAME }. Mohon ubah nama-nama ini dengan menyesuaikan parameter impor Anda."
       ],
       "Something went wrong. Please try again.": [
-        "Terdapat suatu kesalahan. Silakan coba lagi"
+        "Terjadi kesalahan. Silakan coba lagi."
       ],
       "Start time must be before end time": [
         "Waktu mulai harus sebelum waktu selesai"
@@ -3868,7 +3871,7 @@
         "Ada terlalu banyak folder di dalam akun eksternal Anda. Mohon sesuaikan parameter impor Anda agar sebagian folder dapat terhapus."
       ],
       "There was an error when exporting the contacts vCards": [
-        "Terdapat kesalahan pada saat mengekspor kontak vCard"
+        "Terjadi kesalahan saat mengekspor vCard kontak"
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Isi kolom ini melebihi panjang maksimal ${ maximumLength } karakter."
@@ -3898,7 +3901,7 @@
         "Dasbor VPN tidak dapat dimuat. Silakan periksa koneksi Anda dan coba lagi."
       ],
       "Unexpected error, we can't import the contacts": [
-        "Terdapat kesalahan yang tidak diduga. Kami tidak dapat mengimpor kontak"
+        "Terjadi kesalahan tak terduga, kami tidak dapat mengimpor kontak"
       ],
       "Unknown error": [
         "Kesalahan yang tidak diketahui"
@@ -3943,7 +3946,7 @@
         "Koneksi Zoom Anda telah kedaluwarsa. Silakan hubungkan ulang untuk melanjutkan."
       ],
       "ZIP code is required": [
-        "Kode pos diperlukan"
+        "Kode pos wajib diisi"
       ]
     },
     "error": {
@@ -3966,19 +3969,19 @@
     },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
-        "Terdapat kesalahan dalam membaca file \"${ formattedFilename }\" milik Anda. Format file tidak sesuai."
+        "Terjadi kesalahan saat membaca file ${ formattedFilename }. Format file tidak benar."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
-        "Terdapat kesalahan pada saat mengunggah file ${ formattedFilename }. Ukuran berkas tidak boleh melebihi ${ MAX_IMPORT_FILE_SIZE_STRING }."
+        "Terjadi kesalahan saat mengunggah file ${ formattedFilename }. Ukuran file maksimum adalah ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Only ICS file formats are allowed.": [
-        "Terdapat kesalahan pada saat mengunggah file ${ formattedFilename }. Hanya format file ICS yang diizinkan."
+        "Terjadi kesalahan saat mengunggah file ${ formattedFilename }. Hanya format file ICS yang diizinkan."
       ],
       "An error occurred uploading your file. No file has been selected.": [
-        "Terdapat kesalahan pada saat mengunggah file. Tidak ada file yang dipilih."
+        "Terjadi kesalahan saat mengunggah file. Tidak ada file yang dipilih."
       ],
       "An unexpected error occurred. Import must be restarted.": [
-        "Terdapat kesalahan yang tidak terduga. Proses impor harus diulang."
+        "Terjadi kesalahan tak terduga. Impor harus dimulai ulang."
       ],
       "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } event.": [
         "File ${ formattedFilename } milik Anda mengandung lebih dari ${ MAX_IMPORT_EVENTS } acara."
@@ -4009,16 +4012,16 @@
     },
     "Error importing contacts": {
       "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
-        "Terdapat kesalahan pada saat membaca file \"${ formattedFilename }\" milik Anda. Format file tidak sesuai."
+        "Terjadi kesalahan saat membaca file ${ formattedFilename }. Format file tidak benar."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
-        "Terdapat kesalahan pada saat mengunggah file ${ formattedFilename }. Ukuran file tidak boleh melebihi ${ MAX_IMPORT_FILE_SIZE_STRING }."
+        "Terjadi kesalahan saat mengunggah file ${ formattedFilename }. Ukuran file maksimum adalah ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
       "An error occurred uploading your file ${ formattedFilename }. No .csv or .vcf file selected": [
-        "Terdapat kesalahan pada saat mengunggah file ${ formattedFilename } milik Anda. Tidak ada file .csv atau .vcf yang dipilih"
+        "Terjadi kesalahan saat mengunggah file ${ formattedFilename }. Tidak ada file .csv atau .vcf yang dipilih."
       ],
       "An error occurred uploading your file. No file has been selected.": [
-        "Terdapat kesalahan pada saat mengunggah file. Tidak ada file yang dipilih."
+        "Terjadi kesalahan saat mengunggah file. Tidak ada file yang dipilih."
       ],
       "Your file ${ formattedFilename } has no contacts to be imported.": [
         "File ${ formattedFilename } Anda tidak memiliki kontak untuk diimpor."
@@ -4100,13 +4103,13 @@
         "Aduh, ada yang tidak beres"
       ],
       "Open in browser": [
-        "Buka di browser"
+        "Buka di peramban"
       ],
       "Please refresh the page or try again later.": [
         "Silakan muat ulang halaman ini atau coba lagi nanti."
       ],
       "Something went wrong": [
-        "Terdapat suatu kesalahan"
+        "Terjadi kesalahan"
       ],
       "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
         "Untuk menggunakan ${ MAIL_APP_NAME } atau ${ CALENDAR_APP_NAME }, beralihlah ke versi web."
@@ -4164,7 +4167,7 @@
     },
     "Event invistation error": {
       "Unexpected error": [
-        "Kesalahan tidak terduga"
+        "Terjadi kesalahan tak terduga"
       ]
     },
     "Event invitation error": {
@@ -4398,7 +4401,7 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Terdapat kesalahan dalam mengautentikasi kunci keamanan Anda. Silakan coba lagi."
+        "Terjadi kesalahan saat melakukan autentikasi dengan kunci keamanan Anda. Silakan coba lagi."
       ]
     },
     "fido2: Info": {
@@ -4497,7 +4500,7 @@
         "Host pertemuan:"
       ],
       "Meeting link:": [
-        "Tautan undangan:"
+        "Tautan rapat:"
       ],
       "More details": [
         "Lebih banyak rincian"
@@ -4626,10 +4629,10 @@
         "Terjadi kesalahan pada saat mengimpor dan menambahkan acara Anda. ${ totalImported } acara dari total ${ totalToImport } acara berhasil diimpor."
       ],
       "An error occurred while encrypting and adding your event. No event could be imported.": [
-        "Terdapat kesalahan pada saat mengenkripsi dan menambahkan acara Anda. Tidak ada acara yang dapat diimpor."
+        "Terjadi kesalahan saat mengenkripsi dan menambahkan acara Anda. Tidak ada acara yang dapat diimpor."
       ],
       "An error occurred while encrypting and adding your events. No event could be imported.": [
-        "Terdapat kesalahan pada saat mengimpor dan menambahkan acara Anda. Tidak ada acara yang berhasil diimpor."
+        "Terjadi kesalahan saat mengenkripsi dan menambahkan acara Anda. Tidak ada acara yang dapat diimpor."
       ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "Mengenkripsi dan menambah kontak: ${ totalImported }/${ totalToImport }"
@@ -4674,10 +4677,10 @@
         "${ totalImported }/${ totalToImport } kontak dienkripsi dan ditambahkan ke daftar kontak"
       ],
       "An error occurred while encrypting and adding your contact. No contact could be imported.": [
-        "Terdapat kesalahan pada saat mengenkripsi dan menambahkan kontak Anda. Tidak ada kontak yang dapat diimpor."
+        "Terjadi kesalahan saat mengenkripsi dan menambahkan kontak Anda. Tidak ada kontak yang dapat diimpor."
       ],
       "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
-        "Terdapat kesalahan saat mengenkripsi dan menambahkan kontak Anda. ${ totalImported } dari ${ totalToImport } berhasil diimpor."
+        "Terjadi kesalahan saat mengenkripsi dan menambahkan kontak Anda. ${ totalImported } dari ${ totalToImport } kontak berhasil diimpor."
       ],
       "An error occurred while encrypting and adding your contacts. No contact could be imported.": [
         "Terjadi kesalahan saat mengenkripsi dan menambahkan kontak Anda. Tidak ada kontak yang dapat diimpor."
@@ -4953,7 +4956,7 @@
         "${ planName } akan kedaluwarsa dalam ${ daysLeft } hari."
       ],
       "${ planName } expires today.": [
-        "${ planName } akan kedaluwarsa hari ini."
+        "${ planName } berakhir hari ini."
       ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME } melindungi akun Anda dengan pengawasan yang telaten terhadap aktivitas yang mencurigakan."
@@ -4977,13 +4980,13 @@
         "${ selectedFoldersCountLocalized } label dipilih"
       ],
       "${ storage } storage": [
-        "Kuota penyimpanan ${ storage }"
+        "Penyimpanan ${ storage }"
       ],
       "${ updated } contact updated successfully.": [
         "${ updated } kontak berhasil diperbarui."
       ],
       "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
-        "${ VPN_APP_NAME } sedang menyamarkan alamat IP Anda, sehingga situs web yang Anda kunjungi tidak akan dapat mengenali diri Anda."
+        "${ VPN_APP_NAME } menyamarkan alamat IP Anda, sehingga situs web tidak dapat mengidentifikasi Anda."
       ],
       "(${ memberCount } member)": [
         "(${ memberCount } anggota)"
@@ -4992,7 +4995,7 @@
         "(${ serverPrice }/bulan)"
       ],
       "**Auto-connect**: Opens and connects to VPN as soon as you turn on your device.": [
-        "**Sambungan otomatis**: Membuka aplikasi dan menghubungkan Anda ke VPN segera setelah Anda menyalakan perangkat Anda."
+        "**Koneksi otomatis**: Membuka dan langsung terhubung ke VPN segera setelah Anda menyalakan perangkat."
       ],
       "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
         "**Kill switch**: Menghentikan kebocoran data dengan memblokir internet Anda apabila koneski VPN terputus secara tiba-tiba."
@@ -5034,19 +5037,19 @@
         "Masing-masing nomor telepon hanya dapat digunakan untuk memverifikasi satu akun ${ BRAND_NAME }"
       ],
       "A secure connection is essential when working remotely. A VPN protects company data from cyber threats and keeps your work private.": [
-        "Koneksi yang aman sangat penting pada saat bekerja secara remote. VPN melindungi data perusahaan Anda dari ancaman siber dan menjaga pekerjaan Anda tetap privat."
+        "Koneksi yang aman sangat penting saat bekerja dari jarak jauh. VPN melindungi data perusahaan dari ancaman siber dan menjaga pekerjaan Anda tetap pribadi."
       ],
       "A user is an account associated with a single username, mailbox, and person": [
-        "Pengguna di sini didefinisikan sebagai akun yang terhubung dengan nama pengguna, kotak surat, dan individu tunggal"
+        "Pengguna adalah akun yang terkait dengan satu nama pengguna, kotak surat, dan satu orang."
       ],
       "A VPN encrypts your connection and hides your IP address, making it much harder for anyone to track or monitor your browsing.": [
-        "VPN mengenkripsi koneksi Anda dan menyembunyikan alamat IP Anda, yang mempersulit siapa pun untuk melacak atau memantau aktivitas penjelajahan Anda."
+        "VPN mengenkripsi koneksi Anda dan menyembunyikan alamat IP Anda, sehingga mempersulit siapa pun untuk melacak atau memantau penjelajahan Anda."
       ],
       "A VPN hides your IP address and encrypts your browsing activity, making it harder for websites, advertisers, and ISPs to track you over time.": [
-        "VPN menyembunyikan alamat IP Anda dan mengenkripsi aktivitas penjelajahan Anda, yang mempersulit situs web, pengiklan, dan ISP untuk dapat melacak Anda seiring waktu."
+        "VPN menyembunyikan alamat IP Anda dan mengenkripsi aktivitas penjelajahan Anda, sehingga lebih sulit bagi situs web, pengiklan, dan ISP untuk melacak Anda seiring waktu."
       ],
       "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
-        "VPN merupakan terowongan yang aman antara perangkat Anda dan jaringan internet. VPN menyembunyikan lokasi dan aktivitas Anda dari penyedia layanan internet (ISP) dan situs web yang Anda kunjungi."
+        "VPN adalah terowongan aman antara perangkat Anda dan internet. Ini menyembunyikan lokasi dan aktivitas Anda dari penyedia layanan internet (ISP) dan situs web yang Anda kunjungi."
       ],
       "Account successfully updated": [
         "Akun berhasil diperbarui"
@@ -5067,7 +5070,7 @@
         "Verifikasi Alamat dengan Kunci Tepercaya sudah diaktifkan untuk alamat ini. Agar dapat mengirim ke alamat ini, percayai terlebih dahulu kunci publik yang akan dipakai untuk mengirim pesan."
       ],
       "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
-        "Para pengiklan dapat melacak penjelajahan Anda untuk menampilkan iklan yang ditargetkan. ${ VPN_APP_NAME } memblokir program pelacak dan iklan, yang mempercepat koneksi Anda dan meningkatkan pengalaman daring Anda."
+        "Iklan melacak penjelajahan Anda untuk menampilkan iklan yang ditargetkan. ${ VPN_APP_NAME } memblokir pelacak dan iklan, membuat koneksi Anda lebih cepat dan meningkatkan pengalaman daring Anda."
       ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "Asisten berteknologi AI yang membantu Anda merancang email yang lebih baik secara cepat dan mudah."
@@ -5118,7 +5121,7 @@
         "Apakah Anda yakin ingin membuang impor Anda?"
       ],
       "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar.": [
-        "Minta admin Anda meningkatkan paket atau menghapus halaman dari sidebar halaman Pemesanan."
+        "Minta admin Anda meningkatkan paket atau menghapus halaman dari bilah samping halaman Pemesanan."
       ],
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Setidaknya ${ BETTER_PASSWORD_LENGTH } karakter"
@@ -5163,7 +5166,7 @@
         "Bawa pesan, kontak, dan kalender Anda ke ${ BRAND_NAME }."
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
-        "Dengan menurunkan ke paket Free, Anda akan kehilangan berbagai manfaat berikut secara permanen, bahkan apabila Anda kembali meningkatkan jenis akun Anda di kemudian hari."
+        "Dengan menurunkan paket ke Gratis, Anda akan kehilangan manfaat ini secara permanen, meskipun Anda meningkatkan paket lagi di masa mendatang."
       ],
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "Dengan membagikan rincian acara kalender ini secara menyeluruh, Anda mengizinkan ${ BRAND_NAME } untuk mengakses informasi terenkripsi yang terdapat pada kalender ini."
@@ -5307,7 +5310,7 @@
         "Tampilkan acara untuk kalender ${ Name }"
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
-        "Tidak melihat layar apapun? Jangan lupa untuk menonaktifkan pemblokir pop-up Anda."
+        "Tidak melihat apa pun? Ingatlah untuk menonaktifkan pemblokir pop-up."
       ],
       "Downgrade": [
         "Turunkan"
@@ -5331,7 +5334,7 @@
         "Kunci duplikat diperbarui"
       ],
       "Each code can only be used once": [
-        "Masing-masing kode hanya dapat digunakan satu kali"
+        "Setiap kode hanya dapat digunakan satu kali"
       ],
       "Edit email address": [
         "Sunting alamat email"
@@ -5397,10 +5400,10 @@
         "Kedaluwarsa"
       ],
       "Failed to update meeting name": [
-        "Nama pertemuan gagal diperbarui"
+        "Nama rapat gagal diperbarui"
       ],
       "Failed to update meeting password": [
-        "Kata sandi pertemuan gagal diperbarui"
+        "Kata sandi rapat gagal diperbarui"
       ],
       "finance": [
         "keuangan"
@@ -5418,7 +5421,7 @@
         "Tanda Google Pay"
       ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
-        "Pemerintah dan ISP dapat memantau aktivitas daring Anda. Dengan menyembunyikan alamat IP asli dan mengenkripsi aktivitas Anda, penjelajahan internet Anda akan menjadi privat."
+        "Pemerintah dan ISP dapat memonitor aktivitas daring Anda. Dengan menyembunyikan IP asli Anda dan mengenkripsi aktivitas Anda, penjelajahan Anda menjadi pribadi."
       ],
       "here": [
         "di sini"
@@ -5430,7 +5433,7 @@
         "Tuan rumah"
       ],
       "How far in advance can someone book?": [
-        "Seberapa jauh sebelumnya pemesanan dapat dibuat?"
+        "Berapa lama sebelumnya seseorang dapat melakukan pemesanan"
       ],
       "How long should an appointment last?": [
         "Seberapa lama janji temu ini akan berlangsung?"
@@ -5508,7 +5511,7 @@
         "Kata sandi Anda sebaiknya mengandung:"
       ],
       "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
-        "Tidak ada waktu yang tidak tepat untuk menggunakan VPN. Meskipun demikian, terdapat beberapa lokasi dan situasi di mana ancaman kejahatan siber dapat sangat membahayakan:"
+        "Sebaiknya gunakan VPN setiap saat. Tetapi inilah saat ancaman keamanan siber bisa paling tinggi:"
       ],
       "JCB logo": [
         "Logo JCB"
@@ -5589,7 +5592,7 @@
         "Pesan ke semua alamat email Anda akan menuju ke kotak masuk Anda."
       ],
       "Min. 2 hours before": [
-        "Min. 2 jama sebelumnya"
+        "Min. 2 jam sebelumnya"
       ],
       "Min. 48 hours before": [
         "Min. 48 jam sebelumnya"
@@ -5601,7 +5604,7 @@
         "Bulanan ${ onDayString }"
       ],
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
-        "Sebagian besar jaringan WiFi publik dapat diakses secara aman, namun jaringan tertentu yang kurang aman dapat memaparkan diri Anda ke berbagai ancaman siber. VPN melindungi lalu lintas jaringan Anda, yang membuat diri Anda tetap terlindung atas ancaman ini."
+        "Sebagian besar jaringan WiFi publik aman, tetapi beberapa di antaranya kurang aman, sehingga mengekspos Anda pada ancaman siber. VPN mengenkripsi lalu lintas Anda, menjaga Anda tetap terlindungi."
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Beri nama folder baru Anda dan pilih folder induk yang Anda ingin masukkan ke dalamnya. Jika Anda tidak memilih folder induk, folder baru ini akan dibuat sebagai folder level paling atas."
@@ -5631,7 +5634,7 @@
         "Tidak ada grup yang ditemukan"
       ],
       "No payment is required at this time.": [
-        "Tidak ada pembayaran yang diperlukan untuk saat ini."
+        "Saat ini tidak diperlukan pembayaran."
       ],
       "No results found": [
         "Tidak ada hasil yang ditemukan"
@@ -5649,7 +5652,7 @@
         "Tidak terhubung"
       ],
       "Not on the same day": [
-        "Tidak dalam hari yang sama"
+        "Tidak pada hari yang sama"
       ],
       "Number of dedicated servers in the organization": [
         "Jumlah server khusus pada organisasi"
@@ -5724,7 +5727,7 @@
         "Silakan autentikasi pembayaran Anda pada tab verifikasi."
       ],
       "Please fill in all required fields.": [
-        "Silakan ini seluruh kolom yang dibutuhkan."
+        "Harap isi semua kolom yang diwajibkan."
       ],
       "Please note that addresses assigned to these groups will NOT be deleted.": [
         "Harap diperhatikan bahwa alamat yang terhubung ke grup ini TIDAK akan dihapus."
@@ -5817,7 +5820,7 @@
         "Menyimpan acara"
       ],
       "Scan the QR code with your mobile device": [
-        "Pindai kode QR dengan perangkat seluler Anda"
+        "Pindai kode QR ini dengan perangkat seluler Anda"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Pilih format email yang akan digunakan setiap kali Anda mengirim email ke alamat ini."
@@ -5856,19 +5859,19 @@
         "Berhubung Anda telah menjadi pengguna yang setia, akun Anda akan memiliki berbagai fitur tambahan yang dapat Anda gunakan."
       ],
       "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
-        "Pemerintahan tertentu dapat memblokir atau membatasi akses ke situs web yang spesifik. VPN dapat membantu Anda untuk menangkal sensor selagi menjaga aktivitas dan identitas Anda tetap privat."
+        "Beberapa pemerintah memblokir atau membatasi akses ke situs web tertentu. VPN membantu melewati sensor sambil menjaga aktivitas dan identitas Anda tetap pribadi."
       ],
       "Some of your answers to occurrences previously updated by the organizer will be lost.": [
         "Beberapa jawaban Anda untuk kejadian sebelumnya yang diperbarui oleh penyelenggara akan hilang."
       ],
       "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
-        "Situs web dan layanan streaming tertentu dapat memblokir konten berdasarkan wilayah. VPN memungkinkan Anda untuk melewati pembatasan ini dan mengakses internet secara bebas."
+        "Beberapa situs web dan layanan streaming memblokir konten berdasarkan wilayah. VPN memungkinkan Anda melewati batasan ini dan mengakses internet dengan bebas."
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Mulai membagikan dengan kontak Anda dan gunakan untuk layanan daring."
       ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
-        "Buat diri Anda selalu terhubung tanpa harus repot dengan mengaktifkan pengaturan VPN berikut:"
+        "Tetap terhubung tanpa hambatan dengan mengaktifkan pengaturan VPN berikut:"
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Kirimkan deposit melalui alamat berikut atau pindai kode QR di bawah ini. Deposit Anda akan muncul pada akun setelah terkonfirmasi."
@@ -5889,7 +5892,7 @@
         "Langganan akan segera berakhir: Untuk mempertahankan manfaat ${ planName } Anda, langgan kembali paket Anda di Google Play Store sebelum ${ byDate }. ${ reactivateLink }"
       ],
       "Surveillance": [
-        "Monitoring"
+        "Pengawasan"
       ],
       "Symbols (#$&)": [
         "Simbol (#$&)"
@@ -5976,10 +5979,10 @@
         "Tautan ini mungkin serangan homograf. Mohon verifikasi tautan yang ingin Anda kunjungi, atau jangan kunjungi sama sekali."
       ],
       "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
-        "Hal ini berarti bahwa ISP Anda dan situs web yang Anda kunjungi tidak akan dapat mengaitkan informasi pribadi Anda dengan aktivitas daring Anda."
+        "Hal ini berarti bahwa ISP Anda dan situs web yang Anda kunjungi tidak dapat menghubungkan informasi pribadi Anda dengan aktivitas daring Anda."
       ],
       "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
-        "Kode unik ini dapat digunakan oleh situs web dan penyedia layanan internet (ISP) untuk menautkan lokasi dan riwayat penjelajahan Anda ke perangkat Anda"
+        "Kode unik ini dapat digunakan oleh situs web dan ISP (penyedia layanan internet) untuk menautkan lokasi dan riwayat penjelajahan Anda ke perangkat Anda"
       ],
       "This will sign you out of all accounts currently logged in.": [
         "Tindakan ini akan mengeluarkan seluruh akun milik Anda yang sedang terhubung masuk."
@@ -6066,7 +6069,7 @@
         "Peringatan"
       ],
       "We automatically added a ${ MEET_APP_NAME } link": [
-        "Kami telah menambahkan tautan ${ MEET_APP_NAME } secara otomatis"
+        "Kami secara otomatis menambahkan tautan ${ MEET_APP_NAME }"
       ],
       "We couldn’t process your payment.": [
         "Kami tidak dapat memproses pembayaran Anda."
@@ -6105,10 +6108,10 @@
         "Kapan janji temu ini dapat dipesan?"
       ],
       "When working remotely": [
-        "Pada saat bekerja secara remote"
+        "Saat bekerja dari jarak jauh"
       ],
       "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
-        "Pada saat Anda terhubung ke VPN, aplikasi VPN akan menggunakan teknologi enkripsi untuk menyembunyikan alamat IP (yang merupakan kode unik perangkat) milik Anda."
+        "Saat Anda terhubung ke VPN, teknologi enkripsi digunakan untuk menyembunyikan alamat IP Anda (kode unik yang ditetapkan pada perangkat Anda)."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Pada saat Anda menyiapkan autentikasi dua faktor, kami akan menyediakan beberapa kode pemulihan yang dapat Anda gunakan untuk masuk apabila Anda kehilangan akses ke aplikasi otentikator Anda."
@@ -6117,7 +6120,7 @@
         "Di mana janji temu ini akan berlangsung?"
       ],
       "Which calendars should block bookings?": [
-        "Kalender mana saja yang harus memblokir pemesanan?"
+        "Kalender mana yang harus memblokir pemesanan?"
       ],
       "Which event would you like to delete?": [
         "Acara mana yang ingin dihapus?"
@@ -6312,13 +6315,13 @@
         "Informasi Anda ditemukan pada tanggal ${ displayedDate }"
       ],
       "Your internet service provider can monitor and sometimes sell your data, or even restrict what websites you can access.": [
-        "Penyedia layanan internet Anda dapat memantau dan terkadang menjual data Anda, atau bahkan membatasi situs web mana saja yang dapat Anda akses."
+        "Penyedia layanan internet Anda dapat memonitor dan terkadang menjual data Anda, atau bahkan membatasi situs web mana saja yang dapat Anda akses."
       ],
       "Your IP": [
         "IP Anda"
       ],
       "Your IP address is visible and can be used to track your online activity.": [
-        "Alamat IP Anda sedang terlihat dan dapat digunakan untuk melacak aktivitas daring Anda."
+        "Alamat IP Anda terlihat dan dapat digunakan untuk melacak aktivitas online Anda."
       ],
       "Your login information will not be saved after the import is completed.": [
         "Informasi seputar login Anda tidak akan disimpan setelah impor selesai."
@@ -6330,7 +6333,7 @@
         "Tanggal penagihan berikutnya adalah ${ renewalTime }. Silakan hubungi dukungan jika Anda memerlukan perubahan paket segera."
       ],
       "Your online activity is protected": [
-        "Aktivitas daring Anda terlindung"
+        "Aktivitas daring Anda terlindungi"
       ],
       "Your password was leaked:": [
         "Kata sandi Anda telah bocor:"
@@ -6339,7 +6342,7 @@
         "Nomor telepon Anda hanya akan digunakan satu kali ini untuk keperluan verifikasi."
       ],
       "Your physical location is visible and can be used to restrict your access to the internet.": [
-        "Lokasi fisik Anda sedang terlihat dan dapat digunakan untuk membatasi akses internet Anda."
+        "Lokasi fisik Anda terlihat dan dapat digunakan untuk membatasi akses Anda ke internet."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
         "Paket terjadwal Anda dimulai pada ${ renewalTime } dan akan diperbarui secara otomatis setiap ${ cycle } bulan."
@@ -6565,7 +6568,7 @@
         "Tambahkan ke grup"
       ],
       "Add Zoom meeting": [
-        "Tambah pertemuan Zoom"
+        "Tambahkan rapat Zoom"
       ],
       "Address": [
         "Alamat"
@@ -6667,7 +6670,7 @@
         "Salin tautan ini atau kelola halaman Anda dari layar ini kapan saja."
       ],
       "Could you please let us know which provider?": [
-        "Dapatkah Anda memberitahu kami layanan penyedia email mana yang Anda maksud?"
+        "Dapatkah Anda memberi tahu kami penyedia mana?"
       ],
       "Could you please specify which streaming service?": [
         "Dapatkah Anda memberitahu kami layanan streaming mana yang Anda maksud?"
@@ -6982,7 +6985,7 @@
         "Tanggal mulai"
       ],
       "State": [
-        "Keadaan"
+        "Negara bagian/provinsi"
       ],
       "Street address": [
         "Alamat jalan"
@@ -7090,7 +7093,7 @@
         "Kode pos"
       ],
       "Zoom meeting": [
-        "Pertemuan Zoom"
+        "Rapat Zoom"
       ]
     },
     "label": {
@@ -7312,7 +7315,7 @@
     },
     "locked_state_storage_banner: info": {
       "Learn more": [
-        "Pelajari selengkapnya"
+        "Pelajari lebih lanjut"
       ],
       "To continue using ${ BRAND_NAME }, please make sure your premium features are no longer in use or upgrade your plan.": [
         "Untuk terus menggunakan ${ BRAND_NAME }, silakan pastikan seluruh fitur premium Anda sudah tidak lagi digunakan atau tingkatkan paket Anda."
@@ -7864,7 +7867,7 @@
         "Penjenamaan ruang kerja yang disesuaikan"
       ],
       "Data breach monitoring": [
-        "Monitoring kebocoran data"
+        "Monitoring pembobolan data"
       ],
       "Dedicated servers optimized for streaming": [
         "Server khusus yang dioptimalkan untuk streaming"
@@ -7960,7 +7963,7 @@
         "Pengelola kata sandi untuk menyimpan informasi kredensial"
       ],
       "Password-protected Emails": [
-        "Email yang terlindung oleh kata sandi"
+        "Email yang dilindungi kata sandi"
       ],
       "Priority email support": [
         "Dukungan email prioritas"
@@ -8059,7 +8062,7 @@
         "Tanpa batasan jumlah folder"
       ],
       "Unlimited folders, labels, and filters": [
-        "Tanpa batasan jumlah folder, label, dan filter"
+        "Folder, label, dan filter tanpa batas"
       ],
       "Unlimited labels": [
         "Tanpa batasan jumlah label"
@@ -8068,7 +8071,7 @@
         "Tanpa batasan jumlah login, catatan, dan kartu kredit"
       ],
       "Unlimited messages per day": [
-        "Tanpa batasan jumlah pesan per harinya"
+        "Pesan tak terbatas per hari"
       ],
       "Unlimited shared ${ PASS_SHORT_APP_NAME } vaults per user": [
         "Brankas ${ PASS_SHORT_APP_NAME } terbagi tanpa batasan jumlah per pengguna"
@@ -8291,7 +8294,7 @@
         "Memungkinkan Anda untuk menyiapkan pesan balasan otomatis (auto-reply) bagi seluruh pesan yang Anda terima"
       ],
       "Automatically clear out messages older than 30 days from Trash and Spam": [
-        "Hapus pesan yang telah berusia lebih dari 30 hari secara otomatis dari Sampah dan Spam"
+        "Hapus otomatis pesan yang berusia lebih dari 30 hari dari Sampah dan Spam"
       ],
       "Automatically forward emails sent to your ${ MAIL_APP_NAME } account to any other email address.": [
         "Terusken email yang terkirim pada akun ${ MAIL_APP_NAME } Anda ke alamat email lainnya secara otomatis."
@@ -8411,7 +8414,7 @@
         "Mengharuskan Anda untuk memasukkan kode yang terkirim ke ponsel Anda sebelum Anda dapat masuk. Hal ini memastikan bahwa bahkan apabila kata sandi Anda sampai bocor sekalipun, akun Anda akan tetap aman."
       ],
       "Reset user passwords and reset two-factor authentication on users": [
-        "Atur ulang kata sandi dan status autentikasi dua faktor pengguna"
+        "Atur ulang kata sandi pengguna dan autentikasi dua faktor pada pengguna"
       ],
       "Route your internet traffic through the Tor network with a single click": [
         "Arahkan lalu lintas internet Anda melalui jaringan Tor dengan satu klik"
@@ -8447,7 +8450,7 @@
         "Ruang penyimpanan terbagi antara ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, dan ${ PASS_APP_NAME }."
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
-        "Ruang penyimpanan terbagi antar ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, dan ${ DRIVE_APP_NAME }. Para administrator akan dapat mengatur besar kuota penyimpanan yang dimiliki oleh masing-masing pengguna di dalam organisasi mereka"
+        "Ruang penyimpanan dibagikan di antara ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, dan ${ DRIVE_APP_NAME }. Administrator dapat mengalokasikan jumlah penyimpanan yang berbeda kepada pengguna di organisasi mereka"
       ],
       "Storage space is shared between users across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }": [
         "Ruang penyimpanan terbagi untuk seluruh pengguna antara ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, dan ${ PASS_APP_NAME }."
@@ -8549,10 +8552,10 @@
         "Tautan disalin ke papan klip"
       ],
       "Meeting host copied to clipboard": [
-        "Host pertemuan disalin ke papan klip"
+        "Host rapat disalin ke papan klip"
       ],
       "Meeting ID copied to clipboard": [
-        "ID pertemuan disalin ke papan klip"
+        "ID rapat disalin ke papan klip"
       ],
       "Passcode copied to clipboard": [
         "Kode sandi disalin ke papan klip"
@@ -9150,7 +9153,7 @@
         "Lebih banyak paket tersedia pada mata uang lainnya"
       ],
       "Payment method required for the subscription to be activated after the trial ends.": [
-        "Metode pembayaran dibutuhkan bagi langganan untuk dapat diaktifkan setelah masa uji coba berakhir."
+        "Metode pembayaran diperlukan agar langganan dapat diaktifkan setelah uji coba berakhir."
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Silakan aktifkan kembali langganan Anda terlebih dahulu untuk menurunkan jumlah pengaya."
@@ -9236,7 +9239,7 @@
         "Kode keamanan tidak valid"
       ],
       "Something went wrong. Please try again later.": [
-        "Terdapat suatu kesalahan. Silakan coba lagi nanti."
+        "Terjadi kesalahan. Silakan coba lagi nanti."
       ],
       "We are unable to authenticate your payment method. Please choose a different payment method or try again.": [
         "Kami tidak dapat mengautentikasi metode pembayaran Anda. Silakan coba metode pembayaran lainnya atau coba lagi."
@@ -9489,7 +9492,7 @@
         "Pilih negara"
       ],
       "Select state": [
-        "Pilih negara bagian"
+        "Pilih negara bagian/provinsi"
       ],
       "Share what you think could make ${ BRAND_NAME } better": [
         "Berikan pendapatmu tentang apa yang bisa membuat ${ BRAND_NAME } menjadi lebih baik"
@@ -9891,7 +9894,7 @@
         "Paham"
       ],
       "Learn more": [
-        "Pelajari selengkapnya"
+        "Pelajari lebih lanjut"
       ]
     },
     "session_recovery:in_progress:info": {
@@ -10296,7 +10299,7 @@
     },
     "storage_split: action": {
       "Keep ${ currentPlanName }": [
-        "Pertahankan paket ${ currentPlanName }"
+        "Pertahankan ${ currentPlanName }"
       ]
     },
     "storage_split: feature": {
@@ -10618,7 +10621,7 @@
         "Buat tim Anda aman di mana pun dengan aplikasi kami untuk web, iOS, Android, Windows, Mac, dan Linux."
       ],
       "Learn more": [
-        "Pelajari selengkapnya"
+        "Pelajari lebih lanjut"
       ],
       "Learn more about our impact": [
         "Pelajari lebih lanjut seputar dampak kami"
@@ -10678,7 +10681,7 @@
         "Mengunggah file baru"
       ],
       "User subscriptions are ${ BRAND_NAME }'s sole revenue. Your support keeps us independent, furthers our mission for online privacy, and aids activists and organizations fighting for freedom.": [
-        "Langganan pengguna merupakan sumber pemasukan ${ BRAND_NAME } satu-satunya. Dukungan Anda menjaga kami agar tetap independen, mendorong misi kami dalam mewujudkan privasi daring, serta melindungi para aktivis dan organisasi yang berjuang demi kebebasan."
+        "Langganan pengguna menggunakan satu-satunya sumber pendapatan ${ BRAND_NAME }. Dukungan Anda membantu kami tetap independen, memajukan misi privasi daring kami, serta mendukung para aktivis dan organisasi yang memperjuangkan kebebasan."
       ],
       "Users won’t be able to manage their calendars": [
         "Pengguna tidak akan dapat mengelola kalender mereka"
@@ -10731,7 +10734,7 @@
         "Penerusan email otomatis ${ strongText }"
       ],
       "Data breach alerts ${ strongArgument }": [
-        "Peringatan kebocoran data ${ strongArgument }"
+        "Peringatan pembobolan data ${ strongArgument }"
       ],
       "Desktop app": [
         "Aplikasi desktop"
@@ -10775,7 +10778,7 @@
         "Nonaktifkan"
       ],
       "Enable auto-pay support": [
-        "Aktifkan dukungan autodebet"
+        "Aktifkan dukungan pembayaran otomatis"
       ],
       "Keep auto-pay": [
         "Tetap aktifkan autodebet"
@@ -10971,7 +10974,7 @@
         "Masalah dilaporkan"
       ],
       "Secret passphrase updated": [
-        "Frasa sandi rahasia diperbarui"
+        "Frasa sandi secret diperbarui"
       ],
       "Undo in progress": [
         "Pengurungan sedang berlangsung"
@@ -11087,7 +11090,7 @@
     },
     "Teams": {
       "Join Teams meeting": [
-        "Ikuti pertemuan Teams"
+        "Ikuti rapat Teams"
       ]
     },
     "Text": {
@@ -11507,7 +11510,7 @@
         "Impor grup"
       ],
       "Information exposed in breach": [
-        "Informasi yang terpapar dalam kebocoran data"
+        "Informasi yang terpapar dalam pembobolan data"
       ],
       "Introducing booking pages": [
         "Memperkenalkan halaman pemesanan"
@@ -11522,7 +11525,7 @@
         "Lokasi"
       ],
       "Make a secure connection your default": [
-        "Jadikan koneksi yang aman sebagai koneksi bawaan Anda"
+        "Jadikan koneksi aman sebagai koneksi bawaan Anda"
       ],
       "Merge contacts": [
         "Gabungkan kontak"
@@ -11549,7 +11552,7 @@
         "Tema malam"
       ],
       "No breaches detected": [
-        "Tidak ada kebocoran yang terdeteksi"
+        "Tidak ada pembobolan yang terdeteksi"
       ],
       "Notes": [
         "Catatan"
@@ -12397,7 +12400,7 @@
     },
     "Zoom": {
       "Join Zoom meeting": [
-        "Gabung ke pertemuan Zoom"
+        "Bergabung ke rapat Zoom"
       ]
     },
     "Zoom Meeting": {
